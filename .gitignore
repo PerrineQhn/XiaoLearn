@@ -1,0 +1,43 @@
+.venv
+.audio_cache
+.claude
+# Node / Vite
+node_modules/
+dist/
+.vite/
+
+# Environment / tooling
+.DS_Store
+.env*
+.env.local
+.env.*.local
+.venv/
+
+# Audio & generated assets
+# NOTE: Ces fichiers DOIVENT être versionnés pour le déploiement !
+# public/audio/      ← Commenté pour permettre le déploiement
+public/data/manifest.json
+# public/icons/      ← Commenté pour permettre le déploiement
+# public/logos/      ← Commenté pour permettre le déploiement
+
+# Data caches & generated JSON (recreated via scripts)
+# NOTE: Ces fichiers DOIVENT être versionnés pour le build !
+# data/hsk1.json     ← Commenté pour permettre le build
+# data/hsk2.json
+# data/hsk3.json
+# data/hsk4.json
+# data/hsk5.json
+# data/hsk6.json
+# data/hsk7.json
+data/translation-cache.json
+data/translation-zh-cache.json
+data/cfdict.xml
+data/hsk30-expanded.csv
+data/pinyin/
+data/ecriture/
+
+# Logs / temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json

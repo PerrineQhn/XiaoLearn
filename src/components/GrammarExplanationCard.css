@@ -1,0 +1,113 @@
+.grammar-explanation-card {
+  background: var(--panel-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--lesson-card-padding);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--panel-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) auto 0;
+  width: 100%;
+  max-width: var(--lesson-card-max-width);
+}
+
+.explanation-section {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--panel-border);
+}
+
+.explanation-section.when-to-use {
+  background: linear-gradient(135deg, var(--primary-red-light), var(--bg-secondary));
+  border-left: 4px solid var(--primary-red);
+}
+
+.explanation-section.how-to-use {
+  background: linear-gradient(135deg, var(--jade-green-light), var(--bg-secondary));
+  border-left: 4px solid var(--jade-green);
+}
+
+.explanation-section.common-mistakes {
+  background: linear-gradient(135deg, var(--gold-accent), rgba(255, 255, 255, 0.8));
+  border-left: 4px solid var(--gold-accent);
+}
+
+.explanation-section.tips {
+  background: linear-gradient(135deg, var(--jade-green-light), rgba(255, 255, 255, 0.85));
+  border-left: 4px solid var(--jade-green);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-icon {
+  font-size: 1.5rem;
+}
+
+.section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.section-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.section-content p {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+}
+
+.section-content p:first-child {
+  margin-top: 0;
+}
+
+.section-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mise en forme spéciale pour les erreurs */
+.mistakes-content p {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+}
+
+/* Mise en forme spéciale pour les astuces */
+.tips-content {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grammar-explanation-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .explanation-section {
+    padding: var(--spacing-sm);
+  }
+
+  .section-header h3 {
+    font-size: 1rem;
+  }
+
+  .section-content {
+    font-size: 0.9rem;
+  }
+
+  .section-icon {
+    font-size: 1.25rem;
+  }
+}

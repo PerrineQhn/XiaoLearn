@@ -1,0 +1,74 @@
+[
+  {
+    "text": "现在是九点",
+    "audio": "audio/phrases/number_xianzaijiudian.wav"
+  },
+  {
+    "text": "没关系",
+    "audio": "audio/phrases/polite_meiguanxi.wav"
+  },
+  {
+    "text": "早上好",
+    "audio": "audio/phrases/greeting_zaoshanghao.wav"
+  },
+  {
+    "text": "请给我两杯水",
+    "audio": "audio/phrases/number_qinggeiliangbei.wav"
+  },
+  {
+    "text": "你好",
+    "audio": "audio/phrases/greeting_nihao.wav"
+  },
+  {
+    "text": "可以，我帮你",
+    "audio": "audio/phrases/yesno_keyi.wav"
+  },
+  {
+    "text": "他是谁",
+    "audio": "audio/phrases/question_tashishui.wav"
+  },
+  {
+    "text": "我叫李华",
+    "audio": "audio/phrases/intro_wojiaolihua.wav"
+  },
+  {
+    "text": "不是，我不是学生",
+    "audio": "audio/phrases/yesno_bushi.wav"
+  },
+  {
+    "text": "谢谢你",
+    "audio": "audio/phrases/polite_xiexie.wav"
+  },
+  {
+    "text": "再见",
+    "audio": "audio/phrases/greeting_zaijian.wav"
+  },
+  {
+    "text": "我们十点见",
+    "audio": "audio/phrases/number_womenshidian.wav"
+  },
+  {
+    "text": "很高兴认识你",
+    "audio": "audio/phrases/intro_hengaoxing.wav"
+  },
+  {
+    "text": "不客气",
+    "audio": "audio/phrases/polite_bukeqi.wav"
+  },
+  {
+    "text": "你想喝什么",
+    "audio": "audio/phrases/question_nixiangheshenme.wav"
+  },
+  {
+    "text": "我是法国人",
+    "audio": "audio/phrases/intro_woshifaguoren.wav"
+  },
+  {
+    "text": "是的，我是老师",
+    "audio": "audio/phrases/yesno_shide.wav"
+  },
+  {
+    "text": "你什么时候回来",
+    "audio": "audio/phrases/question_nishenmeshihou.wav"
+  }
+]

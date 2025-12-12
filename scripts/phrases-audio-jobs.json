@@ -1,0 +1,26 @@
+[
+  {
+    "text": "晚上好",
+    "audio": "audio/phrases/greeting_wanshanghao.wav"
+  },
+  {
+    "text": "你叫什么名字",
+    "audio": "audio/phrases/intro_nijiaoshenme.wav"
+  },
+  {
+    "text": "对不起",
+    "audio": "audio/phrases/polite_duibuqi.wav"
+  },
+  {
+    "text": "洗手间在哪儿",
+    "audio": "audio/phrases/question_xishoujian.wav"
+  },
+  {
+    "text": "你是老师吗",
+    "audio": "audio/phrases/yesno_nishilaoshima.wav"
+  },
+  {
+    "text": "我有三个",
+    "audio": "audio/phrases/number_woyousange.wav"
+  }
+]

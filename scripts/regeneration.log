@@ -1,0 +1,145 @@
+============================================================
+Starting audio generation
+Jobs: 76
+Mode: Cloud (Google TTS)
+Speech rate: 0.95x
+Voice: cmn-CN-Wavenet-A
+============================================================
+
+✅ Google Cloud TTS initialized
+[1/76] ⏭️  Skipped (exists): audio/phrases/greeting_nihao.wav
+[2/76] ⏭️  Skipped (exists): audio/phrases/greeting_wanshanghao.wav
+[3/76] ⏭️  Skipped (exists): audio/phrases/greeting_zaijian.wav
+[4/76] ⏭️  Skipped (exists): audio/phrases/greeting_zaoshanghao.wav
+[5/76] 🎙️  Generating: audio/phrases/hsk1-phrase-013.wav - '我想喝水'
+  ✅ google-cloud-tts - 0.96s
+[6/76] 🎙️  Generating: audio/phrases/hsk1-phrase-014.wav - '他是我爸爸'
+  ✅ google-cloud-tts - 1.13s
+[7/76] 🎙️  Generating: audio/phrases/hsk1-phrase-015.wav - '她是我妈妈'
+  ✅ google-cloud-tts - 1.14s
+[8/76] 🎙️  Generating: audio/phrases/hsk1-phrase-018.wav - '现在三点'
+  ✅ google-cloud-tts - 1.18s
+[9/76] 🎙️  Generating: audio/phrases/hsk1-phrase-019.wav - '我去学校'
+  ✅ google-cloud-tts - 0.98s
+[10/76] 🎙️  Generating: audio/phrases/hsk1-phrase-022.wav - '今天星期几'
+  ✅ google-cloud-tts - 1.30s
+[11/76] 🎙️  Generating: audio/phrases/hsk1-phrase-024.wav - '明天见'
+  ✅ google-cloud-tts - 0.83s
+[12/76] 🎙️  Generating: audio/phrases/hsk1-phrase-028.wav - '多少钱'
+  ✅ google-cloud-tts - 0.89s
+[13/76] 🎙️  Generating: audio/phrases/hsk1-phrase-030.wav - '我想买水'
+  ✅ google-cloud-tts - 0.98s
+[14/76] 🎙️  Generating: audio/phrases/hsk1-phrase-046.wav - '他们都很好'
+  ✅ google-cloud-tts - 1.18s
+[15/76] 🎙️  Generating: audio/phrases/hsk1-phrase-047.wav - '我要回家'
+  ✅ google-cloud-tts - 0.95s
+[16/76] 🎙️  Generating: audio/phrases/hsk1-phrase-048.wav - '你来我家'
+  ✅ google-cloud-tts - 0.94s
+[17/76] 🎙️  Generating: audio/phrases/hsk1-phrase-049.wav - '我们一起去'
+  ✅ google-cloud-tts - 1.02s
+[18/76] 🎙️  Generating: audio/phrases/hsk2-phrase-001.wav - '你在做什么'
+  ✅ google-cloud-tts - 1.06s
+[19/76] 🎙️  Generating: audio/phrases/hsk2-phrase-002.wav - '我正在看书'
+  ✅ google-cloud-tts - 1.19s
+[20/76] 🎙️  Generating: audio/phrases/hsk2-phrase-003.wav - '天气怎么样'
+  ✅ google-cloud-tts - 1.13s
+[21/76] 🎙️  Generating: audio/phrases/hsk2-phrase-004.wav - '我觉得很冷'
+  ✅ google-cloud-tts - 1.08s
+[22/76] 🎙️  Generating: audio/phrases/hsk2-phrase-005.wav - '你喜欢吃什么'
+  ✅ google-cloud-tts - 1.27s
+[23/76] 🎙️  Generating: audio/phrases/hsk2-phrase-006.wav - '我喜欢吃中国菜'
+  ✅ google-cloud-tts - 1.63s
+[24/76] 🎙️  Generating: audio/phrases/hsk2-phrase-007.wav - '请给我一杯咖啡'
+  ✅ google-cloud-tts - 1.56s
+[25/76] 🎙️  Generating: audio/phrases/hsk2-phrase-012.wav - '能便宜一点吗'
+  ✅ google-cloud-tts - 1.24s
+[26/76] 🎙️  Generating: audio/phrases/hsk2-phrase-013.wav - '我需要帮助'
+  ✅ google-cloud-tts - 1.09s
+[27/76] 🎙️  Generating: audio/phrases/hsk2-phrase-014.wav - '你能帮我吗'
+  ✅ google-cloud-tts - 1.02s
+[28/76] 🎙️  Generating: audio/phrases/hsk2-phrase-015.wav - '当然可以'
+  ✅ google-cloud-tts - 1.01s
+[29/76] 🎙️  Generating: audio/phrases/hsk2-phrase-016.wav - '我听不懂'
+  ✅ google-cloud-tts - 0.93s
+[30/76] 🎙️  Generating: audio/phrases/hsk2-phrase-017.wav - '请说慢一点'
+  ✅ google-cloud-tts - 1.24s
+[31/76] 🎙️  Generating: audio/phrases/hsk2-phrase-018.wav - '你的汉语说得很好'
+  ✅ google-cloud-tts - 1.75s
+[32/76] 🎙️  Generating: audio/phrases/hsk2-phrase-019.wav - '我在学习中文'
+  ✅ google-cloud-tts - 1.42s
+[33/76] 🎙️  Generating: audio/phrases/hsk2-phrase-020.wav - '这个问题很难'
+  ✅ google-cloud-tts - 1.40s
+[34/76] 🎙️  Generating: audio/phrases/hsk2-phrase-021.wav - '我们一起努力吧'
+  ✅ google-cloud-tts - 1.34s
+[35/76] 🎙️  Generating: audio/phrases/hsk2-phrase-022.wav - '医院在哪里'
+  ✅ google-cloud-tts - 1.24s
+[36/76] 🎙️  Generating: audio/phrases/hsk2-phrase-023.wav - '一直往前走'
+  ✅ google-cloud-tts - 1.27s
+[37/76] 🎙️  Generating: audio/phrases/hsk2-phrase-024.wav - '你要去哪儿'
+  ✅ google-cloud-tts - 0.95s
+[38/76] 🎙️  Generating: audio/phrases/hsk2-phrase-025.wav - '我想去火车站'
+  ✅ google-cloud-tts - 1.38s
+[39/76] 🎙️  Generating: audio/phrases/hsk2-phrase-027.wav - '今天我很忙'
+  ✅ google-cloud-tts - 1.31s
+[40/76] 🎙️  Generating: audio/phrases/hsk2-phrase-028.wav - '明天我有时间'
+  ✅ google-cloud-tts - 1.40s
+[41/76] 🎙️  Generating: audio/phrases/hsk2-phrase-029.wav - '我们什么时候见面'
+  ✅ google-cloud-tts - 1.56s
+[42/76] 🎙️  Generating: audio/phrases/hsk2-phrase-030.wav - '下午三点怎么样'
+  ✅ google-cloud-tts - 1.60s
+[43/76] 🎙️  Generating: audio/phrases/hsk2-phrase-031.wav - '没问题'
+  ✅ google-cloud-tts - 0.83s
+[44/76] 🎙️  Generating: audio/phrases/hsk2-phrase-032.wav - '我身体不舒服'
+  ✅ google-cloud-tts - 1.52s
+[45/76] 🎙️  Generating: audio/phrases/hsk2-phrase-033.wav - '你应该去看医生'
+  ✅ google-cloud-tts - 1.64s
+[46/76] 🎙️  Generating: audio/phrases/hsk2-phrase-036.wav - '我想换一个房间'
+  ✅ google-cloud-tts - 1.52s
+[47/76] 🎙️  Generating: audio/phrases/hsk2-phrase-037.wav - '我要一张票'
+  ✅ google-cloud-tts - 1.10s
+[48/76] 🎙️  Generating: audio/phrases/hsk2-phrase-040.wav - '外面下雨了'
+  ✅ google-cloud-tts - 1.19s
+[49/76] 🎙️  Generating: audio/phrases/hsk2-phrase-041.wav - '别忘了带伞'
+  ✅ google-cloud-tts - 1.14s
+[50/76] 🎙️  Generating: audio/phrases/hsk2-phrase-042.wav - '我想休息一下'
+  ✅ google-cloud-tts - 1.29s
+[51/76] 🎙️  Generating: audio/phrases/hsk2-phrase-045.wav - '你的工作怎么样'
+  ✅ google-cloud-tts - 1.33s
+[52/76] 🎙️  Generating: audio/phrases/hsk2-phrase-046.wav - '工作很有意思'
+  ✅ google-cloud-tts - 1.47s
+[53/76] 🎙️  Generating: audio/phrases/hsk2-phrase-047.wav - '我想学做中国菜'
+  ✅ google-cloud-tts - 1.69s
+[54/76] 🎙️  Generating: audio/phrases/hsk2-phrase-048.wav - '我可以教你'
+  ✅ google-cloud-tts - 1.09s
+[55/76] 🎙️  Generating: audio/phrases/hsk2-phrase-049.wav - '周末你有什么打算'
+  ✅ google-cloud-tts - 1.76s
+[56/76] 🎙️  Generating: audio/phrases/hsk2-phrase-050.wav - '我打算去爬山'
+  ✅ google-cloud-tts - 1.57s
+[57/76] ⏭️  Skipped (exists): audio/phrases/intro_hengaoxing.wav
+[58/76] ⏭️  Skipped (exists): audio/phrases/intro_nijiaoshenme.wav
+[59/76] ⏭️  Skipped (exists): audio/phrases/intro_wojiaolihua.wav
+[60/76] ⏭️  Skipped (exists): audio/phrases/intro_woshifaguoren.wav
+[61/76] ⏭️  Skipped (exists): audio/phrases/number_qinggeiliangbei.wav
+[62/76] ⏭️  Skipped (exists): audio/phrases/number_womenshidian.wav
+[63/76] ⏭️  Skipped (exists): audio/phrases/number_woyousange.wav
+[64/76] ⏭️  Skipped (exists): audio/phrases/number_xianzaijiudian.wav
+[65/76] ⏭️  Skipped (exists): audio/phrases/polite_bukeqi.wav
+[66/76] ⏭️  Skipped (exists): audio/phrases/polite_duibuqi.wav
+[67/76] ⏭️  Skipped (exists): audio/phrases/polite_meiguanxi.wav
+[68/76] ⏭️  Skipped (exists): audio/phrases/polite_xiexie.wav
+[69/76] ⏭️  Skipped (exists): audio/phrases/question_nishenmeshihou.wav
+[70/76] ⏭️  Skipped (exists): audio/phrases/question_nixiangheshenme.wav
+[71/76] ⏭️  Skipped (exists): audio/phrases/question_tashishui.wav
+[72/76] ⏭️  Skipped (exists): audio/phrases/question_xishoujian.wav
+[73/76] ⏭️  Skipped (exists): audio/phrases/yesno_bushi.wav
+[74/76] ⏭️  Skipped (exists): audio/phrases/yesno_keyi.wav
+[75/76] ⏭️  Skipped (exists): audio/phrases/yesno_nishilaoshima.wav
+[76/76] ⏭️  Skipped (exists): audio/phrases/yesno_shide.wav
+
+============================================================
+Generation complete!
+Generated: 52/76
+Skipped: 24
+Total duration: 64.7s
+Avg duration: 1.24s
+============================================================

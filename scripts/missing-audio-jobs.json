@@ -1,0 +1,38 @@
+[
+  {
+    "text": "现在是十点",
+    "audio": "audio/hsk1/hsk1_几点.wav"
+  },
+  {
+    "text": "个",
+    "audio": "audio/grammar/measure-words.wav"
+  },
+  {
+    "text": "明天",
+    "audio": "audio/grammar/time-expressions.wav"
+  },
+  {
+    "text": "在",
+    "audio": "audio/grammar/progressive.wav"
+  },
+  {
+    "text": "我学了两年中文",
+    "audio": "audio/grammar/duration.wav"
+  },
+  {
+    "text": "到",
+    "audio": "audio/grammar/resultative.wav"
+  },
+  {
+    "text": "但是很好",
+    "audio": "audio/grammar/complex-conjunctions.wav"
+  },
+  {
+    "text": "我学习",
+    "audio": "audio/grammar/subject-verb.wav"
+  },
+  {
+    "text": "很",
+    "audio": "audio/grammar/adjectives.wav"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "text": "不",
+    "audio": "grammar/bu.wav"
+  },
+  {
+    "text": "没",
+    "audio": "grammar/mei.wav"
+  },
+  {
+    "text": "的",
+    "audio": "grammar/de.wav"
+  },
+  {
+    "text": "吗",
+    "audio": "grammar/ma.wav"
+  },
+  {
+    "text": "在",
+    "audio": "grammar/zai.wav"
+  },
+  {
+    "text": "了",
+    "audio": "grammar/le.wav"
+  },
+  {
+    "text": "比",
+    "audio": "grammar/bi.wav"
+  },
+  {
+    "text": "因为",
+    "audio": "grammar/yinwei.wav"
+  },
+  {
+    "text": "所以",
+    "audio": "grammar/suoyi.wav"
+  },
+  {
+    "text": "会",
+    "audio": "grammar/hui.wav"
+  }
+]
