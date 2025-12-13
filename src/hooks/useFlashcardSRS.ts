@@ -28,16 +28,8 @@ const STORAGE_KEY = 'flashcard_progress';
 const DAILY_NEW_CARDS = 10;
 
 const buildDefaultProgressMap = () => {
-  const today = new Date().toISOString().split('T')[0];
-  const defaultEntries = dataset.lessons.map<FlashcardProgress>((lesson) => ({
-    wordId: lesson.id,
-    level: 4,
-    nextReviewDate: today,
-    lastReviewed: today,
-    easeFactor: 2.3,
-    reviewCount: 5
-  }));
-  return new Map(defaultEntries.map(entry => [entry.wordId, entry]));
+  // Return empty map - words without entries are considered "new" and unlearned
+  return new Map<string, FlashcardProgress>();
 };
 
 const initializeProgressMap = (): Map<string, FlashcardProgress> => {

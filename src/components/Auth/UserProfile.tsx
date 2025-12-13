@@ -5,9 +5,10 @@ import type { Language } from '../../i18n';
 interface UserProfileProps {
   language: Language;
   onOpenLogin: () => void;
+  onOpenSettings: () => void;
 }
 
-export default function UserProfile({ language, onOpenLogin }: UserProfileProps) {
+export default function UserProfile({ language, onOpenLogin, onOpenSettings }: UserProfileProps) {
   const { user, signOut } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -42,6 +43,10 @@ export default function UserProfile({ language, onOpenLogin }: UserProfileProps)
             <div className="user-menu-email">{user.email}</div>
           </div>
           <div className="user-menu-divider" />
+          <button className="user-menu-item" onClick={() => { setShowMenu(false); onOpenSettings(); }}>
+            <span>⚙️</span>
+            {language === 'fr' ? 'Paramètres' : 'Settings'}
+          </button>
           <button className="user-menu-item" onClick={signOut}>
             <span>🚪</span>
             {language === 'fr' ? 'Se déconnecter' : 'Sign Out'}

@@ -70,6 +70,7 @@ const SettingsPage = ({ language, onLanguageChange, currentTheme, onThemeChange 
   const [offlineMode, setOfflineMode] = useState(true);
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   const activeThemeInfo = colorThemes.find((theme) => theme.id === currentTheme);
 
   const displayName = user?.displayName || user?.email?.split('@')[0] || 'User';
@@ -115,6 +116,33 @@ const SettingsPage = ({ language, onLanguageChange, currentTheme, onThemeChange 
     } finally {
       setUploading(false);
     }
+  };
+
+  const handleResetProgress = () => {
+    // Effacer toutes les données de progression du localStorage
+    const keysToRemove = [
+      'flashcard_progress',
+      'lesson-progress-index',
+      'learned-lessons',
+      'daily-minutes',
+      'total-minutes',
+      'learningStreak',
+      'lastLearningDate',
+      'completedLessons',
+      'review-srs-state',
+      'customLists',
+      'lastVisitDate'
+    ];
+
+    keysToRemove.forEach(key => {
+      window.localStorage.removeItem(key);
+    });
+
+    // Fermer la modale de confirmation
+    setShowResetConfirm(false);
+
+    // Recharger la page pour appliquer les changements
+    window.location.reload();
   };
   const quickStats = [
     {
@@ -305,6 +333,70 @@ const SettingsPage = ({ language, onLanguageChange, currentTheme, onThemeChange 
           ))}
         </div>
       </section>
+
+      <section className="settings-section modern">
+        <div className="settings-section-header">
+          <h2 className="settings-section-title">
+            {language === 'fr' ? 'Zone de danger' : 'Danger zone'}
+          </h2>
+          <p className="settings-section-description">
+            {language === 'fr'
+              ? 'Actions irréversibles sur vos données d\'apprentissage.'
+              : 'Irreversible actions on your learning data.'}
+          </p>
+        </div>
+
+        <div className="settings-card-grid">
+          <div className="settings-card settings-card-wide danger-card">
+            <div className="settings-card-header">
+              <h3>{language === 'fr' ? 'Réinitialiser la progression' : 'Reset progress'}</h3>
+              <p>
+                {language === 'fr'
+                  ? 'Supprime toutes vos données de progression (leçons complétées, révisions SRS, statistiques). Cette action est irréversible.'
+                  : 'Deletes all your progress data (completed lessons, SRS reviews, statistics). This action is irreversible.'}
+              </p>
+            </div>
+            <button
+              type="button"
+              className="btn-danger"
+              onClick={() => setShowResetConfirm(true)}
+            >
+              {language === 'fr' ? 'Réinitialiser' : 'Reset'}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {showResetConfirm && (
+        <div className="modal-overlay" onClick={() => setShowResetConfirm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2 className="modal-title">
+              {language === 'fr' ? 'Confirmer la réinitialisation' : 'Confirm reset'}
+            </h2>
+            <p className="modal-description">
+              {language === 'fr'
+                ? 'Êtes-vous sûr de vouloir réinitialiser toute votre progression ? Toutes vos leçons complétées, révisions et statistiques seront définitivement supprimées.'
+                : 'Are you sure you want to reset all your progress? All your completed lessons, reviews and statistics will be permanently deleted.'}
+            </p>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={() => setShowResetConfirm(false)}
+              >
+                {language === 'fr' ? 'Annuler' : 'Cancel'}
+              </button>
+              <button
+                type="button"
+                className="btn-danger"
+                onClick={handleResetProgress}
+              >
+                {language === 'fr' ? 'Oui, réinitialiser' : 'Yes, reset'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

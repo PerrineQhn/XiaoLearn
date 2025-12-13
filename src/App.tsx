@@ -442,6 +442,7 @@ function App() {
         <UserProfile
           language={language}
           onOpenLogin={() => setShowLoginModal(true)}
+          onOpenSettings={() => setView('settings')}
         />
 
         <nav className="sidebar-nav">

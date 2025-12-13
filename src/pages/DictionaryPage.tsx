@@ -5,6 +5,12 @@ import type { Language } from '../i18n';
 import AudioButton from '../components/AudioButton';
 import LevelBadge from '../components/LevelBadge';
 import type { CustomList } from '../hooks/useCustomLists';
+import {
+  calculateRelevanceScore,
+  addToSearchHistory,
+  getSearchHistory,
+  clearSearchHistory
+} from '../utils/searchUtils';
 
 interface DictionaryPageProps {
   copy: Record<string, string>;
@@ -17,40 +23,83 @@ interface DictionaryPageProps {
 const levelFilters = ['all', 'hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'] as const;
 type LevelFilter = (typeof levelFilters)[number];
 
+const searchTypeFilters = ['all', 'hanzi', 'pinyin', 'fr', 'en'] as const;
+type SearchTypeFilter = (typeof searchTypeFilters)[number];
+
 function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordToList }: DictionaryPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedEntry, setSelectedEntry] = useState<LessonItem | null>(null);
   const [levelFilter, setLevelFilter] = useState<LevelFilter>('all');
+  const [searchTypeFilter, setSearchTypeFilter] = useState<SearchTypeFilter>('all');
   const [selectedListId, setSelectedListId] = useState<string>('');
   const [listMessage, setListMessage] = useState('');
   const [newListName, setNewListName] = useState('');
   const [listPickerOpen, setListPickerOpen] = useState(false);
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
+  const [showHistory, setShowHistory] = useState(false);
   const allLessons = useMemo(() => getAllLessons(), []);
   const trimmedQuery = searchQuery.trim();
   const hasSearch = trimmedQuery.length > 0;
   const totalWords = allLessons.length;
 
-  // Recherche intelligente : hanzi, pinyin, traduction
+  // Load search history on mount
+  useEffect(() => {
+    setSearchHistory(getSearchHistory());
+  }, []);
+
+  // Recherche intelligente avec tri par pertinence et fuzzy matching
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
 
-    const query = searchQuery.toLowerCase().trim();
+    const query = searchQuery.trim();
     let filtered = allLessons;
     if (levelFilter !== 'all') {
       filtered = filtered.filter((lesson) => lesson.level === levelFilter);
     }
 
-    return filtered
-      .filter((lesson) => {
-        const matchHanzi = lesson.hanzi.includes(query);
-        const matchPinyin = lesson.pinyin.toLowerCase().includes(query);
-        const matchTranslation = lesson.translation.toLowerCase().includes(query);
-        const matchTranslationFr = lesson.translationFr.toLowerCase().includes(query);
+    // Calculate relevance score for each lesson based on search type filter
+    const scoredResults = filtered
+      .map((lesson) => {
+        let score = 0;
 
-        return matchHanzi || matchPinyin || matchTranslation || matchTranslationFr;
+        // Apply search based on selected type
+        if (searchTypeFilter === 'all') {
+          // Search in all fields
+          const result = calculateRelevanceScore(
+            query,
+            lesson.hanzi,
+            lesson.pinyin,
+            lesson.translation,
+            lesson.translationFr
+          );
+          score = result.score;
+        } else if (searchTypeFilter === 'hanzi') {
+          // Search only in hanzi
+          const result = calculateRelevanceScore(query, lesson.hanzi, '', '', '');
+          score = result.score;
+        } else if (searchTypeFilter === 'pinyin') {
+          // Search only in pinyin
+          const result = calculateRelevanceScore(query, '', lesson.pinyin, '', '');
+          score = result.score;
+        } else if (searchTypeFilter === 'fr') {
+          // Search only in French translation
+          const result = calculateRelevanceScore(query, '', '', '', lesson.translationFr);
+          score = result.score;
+        } else if (searchTypeFilter === 'en') {
+          // Search only in English translation
+          const result = calculateRelevanceScore(query, '', '', lesson.translation, '');
+          score = result.score;
+        }
+
+        return { lesson, score };
       })
-      .slice(0, 50); // Limiter à 50 résultats
-  }, [searchQuery, allLessons, levelFilter]);
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score) // Sort by relevance (highest first)
+      .slice(0, 100) // Increased limit from 50 to 100
+      .map(({ lesson }) => lesson);
+
+    return scoredResults;
+  }, [searchQuery, allLessons, levelFilter, searchTypeFilter]);
 
   useEffect(() => {
     if (!selectedListId && customLists.length > 0) {
@@ -89,6 +138,25 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
     }
   };
 
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setShowHistory(false);
+    if (query.trim()) {
+      addToSearchHistory(query.trim());
+      setSearchHistory(getSearchHistory());
+    }
+  };
+
+  const handleSelectFromHistory = (query: string) => {
+    setSearchQuery(query);
+    setShowHistory(false);
+  };
+
+  const handleClearHistory = () => {
+    clearSearchHistory();
+    setSearchHistory([]);
+  };
+
   return (
     <div className="dictionary-page">
       <div className="dictionary-header">
@@ -104,7 +172,9 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
             type="text"
             placeholder={copy.searchPlaceholder || 'Rechercher...'}
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => handleSearch(e.target.value)}
+            onFocus={() => setShowHistory(true)}
+            onBlur={() => setTimeout(() => setShowHistory(false), 200)}
             className="dictionary-search-input"
             autoFocus
           />
@@ -120,18 +190,76 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
               ✕
             </button>
           )}
+          {showHistory && !searchQuery && searchHistory.length > 0 && (
+            <div className="search-history-dropdown">
+              <div className="search-history-header">
+                <span>{language === 'fr' ? 'Recherches récentes' : 'Recent searches'}</span>
+                <button
+                  type="button"
+                  className="search-history-clear"
+                  onClick={handleClearHistory}
+                >
+                  {language === 'fr' ? 'Effacer' : 'Clear'}
+                </button>
+              </div>
+              {searchHistory.map((query, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className="search-history-item"
+                  onClick={() => handleSelectFromHistory(query)}
+                >
+                  <span>🕐</span>
+                  <span>{query}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
-        <div className="dictionary-level-filters">
-          {levelFilters.map((level) => (
-            <button
-              key={level}
-              type="button"
-              className={`level-chip ${levelFilter === level ? 'active' : ''}`}
-              onClick={() => setLevelFilter(level)}
-            >
-              {level === 'all' ? (language === 'fr' ? 'Tous' : 'All') : level.toUpperCase()}
-            </button>
-          ))}
+
+        <div className="dictionary-filter-group">
+          <label className="filter-label">
+            {language === 'fr' ? 'Type de recherche' : 'Search type'}
+          </label>
+          <div className="dictionary-search-type-filters">
+            {searchTypeFilters.map((type) => {
+              const labels: Record<SearchTypeFilter, { fr: string; en: string }> = {
+                all: { fr: 'Tout', en: 'All' },
+                hanzi: { fr: '汉字 Caractères', en: '汉字 Hanzi' },
+                pinyin: { fr: 'Pinyin', en: 'Pinyin' },
+                fr: { fr: 'Français', en: 'French' },
+                en: { fr: 'Anglais', en: 'English' }
+              };
+              return (
+                <button
+                  key={type}
+                  type="button"
+                  className={`search-type-chip ${searchTypeFilter === type ? 'active' : ''}`}
+                  onClick={() => setSearchTypeFilter(type)}
+                >
+                  {language === 'fr' ? labels[type].fr : labels[type].en}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="dictionary-filter-group">
+          <label className="filter-label">
+            {language === 'fr' ? 'Niveau HSK' : 'HSK Level'}
+          </label>
+          <div className="dictionary-level-filters">
+            {levelFilters.map((level) => (
+              <button
+                key={level}
+                type="button"
+                className={`level-chip ${levelFilter === level ? 'active' : ''}`}
+                onClick={() => setLevelFilter(level)}
+              >
+                {level === 'all' ? (language === 'fr' ? 'Tous' : 'All') : level.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
