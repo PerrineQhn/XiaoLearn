@@ -30,18 +30,38 @@ const GEMINI_MODEL = 'gemini-2.5-flash'; // Updated to latest free model
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 // System prompt to guide Gemini's behavior for Chinese learning
-const SYSTEM_INSTRUCTION = `Tu es un assistant IA spécialisé dans l'enseignement du chinois mandarin.
-Tu aides les apprenants francophones et anglophones à comprendre:
-- La grammaire chinoise
-- Le vocabulaire et les caractères (汉字)
-- La prononciation et les tons
-- Les particules grammaticales (了, 过, 着, 的, etc.)
-- La structure des phrases
-- Les classificateurs (量词)
-- La culture chinoise
+const SYSTEM_INSTRUCTION = `Tu es un assistant IA spécialisé UNIQUEMENT dans l'enseignement du chinois mandarin et la culture chinoise.
 
-Réponds de manière claire, pédagogique et concise. Utilise des exemples en caractères chinois avec pinyin et traductions.
-Formate tes réponses avec du markdown pour une meilleure lisibilité (gras, listes, code blocks pour les exemples).`;
+TU DOIS RÉPONDRE UNIQUEMENT aux questions concernant :
+- La langue chinoise (grammaire, vocabulaire, caractères 汉字, prononciation, tons)
+- Les particules grammaticales (了, 过, 着, 的, etc.)
+- La structure des phrases et la syntaxe chinoise
+- Les classificateurs (量词)
+- La culture chinoise, l'histoire de la Chine, les traditions
+- Les conseils d'apprentissage du chinois
+- Les différences entre chinois mandarin et autres dialectes
+
+TU DOIS REFUSER POLIMENT toute question hors sujet :
+- Si la question n'est PAS liée au chinois ou à la Chine, réponds TOUJOURS :
+  "Désolé, je suis un assistant spécialisé dans l'apprentissage du chinois. Je ne peux répondre qu'aux questions sur la langue chinoise, la grammaire, le vocabulaire ou la culture chinoise."
+
+Quand tu réponds à une question valide sur le chinois :
+- Sois clair, pédagogique et concis
+- Utilise des exemples en caractères chinois avec pinyin et traductions
+- Formate avec du markdown (gras, listes, code blocks)
+- N'utilise PAS d'émojis sauf demande explicite
+
+Exemples de questions ACCEPTÉES :
+✅ "Comment dire bonjour en chinois ?"
+✅ "Explique la particule 了"
+✅ "Quelle est la culture du thé en Chine ?"
+
+Exemples de questions REFUSÉES :
+❌ "Quelle est la capitale de la France ?"
+❌ "Comment faire une pizza ?"
+❌ "Qui es-tu ?"
+❌ "Quel temps fait-il ?"`;
+
 
 /**
  * Convert app messages to Gemini format
@@ -163,7 +183,34 @@ export async function generateGeminiResponse(
 function getFallbackResponse(userQuestion: string): string {
   const question = userQuestion.toLowerCase();
 
-  // Pattern matching for common questions
+  // Check if question is related to Chinese/China
+  const chineseKeywords = ['chinois', 'chinese', 'china', 'chine', '中文', '汉语', 'mandarin', 'hsk',
+                           'ton', 'pinyin', 'hanzi', '汉字', 'particule', 'caractère', 'grammaire',
+                           '了', '过', '着', '的', '吗', '呢', 'classifier', 'classificateur'];
+
+  const hasChineseKeyword = chineseKeywords.some(keyword => question.includes(keyword));
+
+  // Refuse off-topic questions
+  if (!hasChineseKeyword && question.length > 3) {
+    // Check for obvious off-topic indicators
+    const offTopicIndicators = ['pizza', 'météo', 'weather', 'capital', 'france', 'italie',
+                                'football', 'sport', 'recette', 'recipe', 'mathématique', 'math'];
+
+    const isOffTopic = offTopicIndicators.some(indicator => question.includes(indicator));
+
+    if (isOffTopic || (!hasChineseKeyword && !question.includes('aide') && !question.includes('help'))) {
+      return `Désolé, je suis un assistant spécialisé dans l'apprentissage du chinois. Je ne peux répondre qu'aux questions sur la langue chinoise, la grammaire, le vocabulaire ou la culture chinoise.
+
+N'hésitez pas à me poser des questions sur :
+- La prononciation et les tons
+- La grammaire chinoise
+- Les caractères (汉字)
+- Le vocabulaire HSK
+- La culture chinoise`;
+    }
+  }
+
+  // Pattern matching for common questions about Chinese
   if (question.includes('ton') || question.includes('prononc')) {
     return `Le chinois mandarin utilise **4 tons principaux** + 1 ton neutre :
 
@@ -178,7 +225,7 @@ Exemple avec "ma" :
 - mǎ (马) = cheval
 - mà (骂) = gronder
 
-Le ton change complètement le sens du mot ! 🎵`;
+Le ton change complètement le sens du mot !`;
   }
 
   if (question.includes('了') || question.includes('le particle')) {
@@ -254,7 +301,7 @@ Classificateurs les plus courants :
 - **杯 (bēi)** : tasse, verre
   - 一杯茶 (yì bēi chá) = une tasse de thé
 
-Astuce : quand on hésite, **个 (gè)** fonctionne souvent ! 😊`;
+Astuce : quand on hésite, **个 (gè)** fonctionne souvent !`;
   }
 
   if (question.includes('aime') || question.includes('like') || question.includes('喜欢')) {
@@ -279,16 +326,18 @@ Exemples :
 - 我不喜欢运动。= Je n'aime pas le sport.`;
   }
 
-  // Default response
-  return `Je suis désolé, je ne peux pas répondre à cette question pour le moment (mode hors ligne).
+  // Default response for questions about Chinese that we don't have specific answers for
+  return `Je peux vous aider avec vos questions sur le chinois !
 
-Voici quelques questions courantes que je peux traiter :
+Voici quelques exemples de questions que je peux traiter :
 - Comment prononcer les tons ?
 - Quelle est la différence entre 了 et 过 ?
-- Comment former une question ?
+- Comment former une question en chinois ?
 - Explique la structure de phrase
 - Quels sont les classificateurs courants ?
-- Comment dire "j'aime" ?
+- Comment dire "j'aime" en chinois ?
+- Quelle est l'histoire de la Chine ?
+- Comment fonctionne le système d'écriture chinois ?
 
-N'hésitez pas à reformuler ou à poser une autre question ! 😊`;
+N'hésitez pas à reformuler votre question ou à en poser une autre sur le chinois !`;
 }
