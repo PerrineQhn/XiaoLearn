@@ -391,7 +391,7 @@ function App() {
           <div className="login-header">
             {!logoErrored ? (
               <img
-                src={`/logos/logo_${colorTheme}_1024x1024.svg`}
+                src={`/logos/logo_${colorTheme}.png`}
                 alt="XiaoLearn"
                 className="login-logo"
                 onError={() => setLogoErrored(true)}
@@ -427,14 +427,14 @@ function App() {
           <button className="app-logo" type="button" onClick={() => setView('home')} aria-label="XiaoLearn Home">
             {!logoErrored ? (
               <img
-                src={`/logos/logo_${colorTheme}_1024x1024.svg`}
+                src={`/logos/logo_${colorTheme}.png`}
                 alt="XiaoLearn"
                 className="app-logo-image"
                 onError={() => setLogoErrored(true)}
                 draggable="false"
               />
             ) : (
-              <span className="logo-icon">🌸</span>
+              <span className="logo-icon">🐼</span>
             )}
           </button>
         </div>
