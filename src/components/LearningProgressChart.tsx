@@ -151,7 +151,7 @@ const LearningProgressChart = ({ language }: LearningProgressChartProps) => {
               allowDecimals={false}
             />
             <Tooltip
-              formatter={(value: number) => [value, language === 'fr' ? 'mots' : 'words'] as [number, string]}
+              formatter={(value) => [value, language === 'fr' ? 'mots' : 'words']}
               labelFormatter={(label) => language === 'fr' ? `Date: ${label}` : `Date: ${label}`}
               contentStyle={{
                 backgroundColor: 'var(--bg-primary)',
