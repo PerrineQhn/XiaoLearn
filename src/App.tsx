@@ -13,6 +13,7 @@ import DictationGamePage from './pages/DictationGamePage';
 import SettingsPage from './pages/SettingsPage';
 import MiniGamesPage from './pages/MiniGamesPage';
 import FlashcardPage from './pages/FlashcardPage';
+import CulturePage from './pages/CulturePage';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import LoginModal from './components/Auth/LoginModal';
@@ -24,7 +25,7 @@ import { lessonPaths, getLessonModuleById } from './data/lesson-paths';
 import { getCopy, type Language } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 
-export type View = 'home' | 'lessons' | 'lesson' | 'review' | 'themes' | 'dictionary' | 'assistant' | 'settings' | 'games' | 'flashcards';
+export type View = 'home' | 'lessons' | 'lesson' | 'review' | 'themes' | 'culture' | 'dictionary' | 'assistant' | 'settings' | 'games' | 'flashcards';
 
 const themeSummaries = getThemeSummaries();
 const defaultTheme = themeSummaries[0]?.theme ?? null;
@@ -211,6 +212,7 @@ function App() {
       { id: 'games', label: language === 'fr' ? 'Mini-Jeux' : 'Mini-Games', iconSlug: 'jeux', fallback: '🎮' },
       { id: 'assistant', label: language === 'fr' ? 'Assistant IA' : 'AI Assistant', iconSlug: 'ia', fallback: '🤖' },
       { id: 'themes', label: language === 'fr' ? 'Thèmes' : 'Themes', iconSlug: 'themes', fallback: '🗂️' },
+      { id: 'culture', label: language === 'fr' ? 'Culture' : 'Culture', iconSlug: 'culture', fallback: '🏮' },
       { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' }
     ],
     [language]
@@ -317,6 +319,18 @@ function App() {
           customLists={customLists.lists}
           onAddWordToList={customLists.addItemToList}
           onCreateList={customLists.createList}
+        />
+      );
+      break;
+    case 'culture':
+      content = (
+        <CulturePage
+          language={language}
+          copy={copy}
+          customLists={customLists.lists}
+          onAddWordToList={customLists.addItemToList}
+          onCreateList={customLists.createList}
+          colorTheme={colorTheme}
         />
       );
       break;

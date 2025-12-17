@@ -43,6 +43,29 @@ export const themeLabels: Record<Language, Record<string, string>> = {
   }
 };
 
+export const cultureLabels: Record<Language, Record<string, string>> = {
+  fr: {
+    festivals: 'Festivals',
+    superstitions: 'Superstitions',
+    etiquette: 'Étiquette',
+    traditions: 'Traditions',
+    philosophy: 'Philosophie',
+    arts: 'Arts',
+    cuisine: 'Cuisine',
+    all: 'Tous'
+  },
+  en: {
+    festivals: 'Festivals',
+    superstitions: 'Superstitions',
+    etiquette: 'Etiquette',
+    traditions: 'Traditions',
+    philosophy: 'Philosophy',
+    arts: 'Arts',
+    cuisine: 'Cuisine',
+    all: 'All'
+  }
+};
+
 const copies = {
   fr: {
     tagline: 'Hors-ligne, ludique, motivant',
@@ -90,7 +113,23 @@ const copies = {
     category: 'Catégorie',
     level: 'Niveau',
     tags: 'Tags',
-    examples: 'Exemples'
+    examples: 'Exemples',
+    culturePageTitle: 'Culture & Traditions',
+    culturePageSubtitle: 'Explorez la richesse culturelle chinoise',
+    cultureTopic: 'Sujet culturel',
+    readTime: 'Temps de lecture',
+    difficulty: 'Difficulté',
+    relatedVocab: 'Vocabulaire associé',
+    culturalNote: 'Note culturelle',
+    learnMore: 'En savoir plus',
+    backToTopics: 'Retour aux sujets',
+    allTopics: 'Tous les sujets',
+    beginner: 'Débutant',
+    intermediate: 'Intermédiaire',
+    advanced: 'Avancé',
+    minutes: 'min',
+    introduction: 'Introduction',
+    sections: 'Sections'
   },
   en: {
     tagline: 'Offline, playful, motivating',
@@ -138,7 +177,23 @@ const copies = {
     category: 'Category',
     level: 'Level',
     tags: 'Tags',
-    examples: 'Examples'
+    examples: 'Examples',
+    culturePageTitle: 'Culture & Traditions',
+    culturePageSubtitle: 'Explore the richness of Chinese culture',
+    cultureTopic: 'Cultural topic',
+    readTime: 'Read time',
+    difficulty: 'Difficulty',
+    relatedVocab: 'Related vocabulary',
+    culturalNote: 'Cultural note',
+    learnMore: 'Learn more',
+    backToTopics: 'Back to topics',
+    allTopics: 'All topics',
+    beginner: 'Beginner',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced',
+    minutes: 'min',
+    introduction: 'Introduction',
+    sections: 'Sections'
   }
 };
 

@@ -1,4 +1,4 @@
-# 🌸 XiaoLearn - Application d'apprentissage du chinois HSK 3.0
+# 🐼 XiaoLearn - Application d'apprentissage du chinois HSK 3.0
 
 <div align="center">
 
