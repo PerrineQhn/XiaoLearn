@@ -5,19 +5,53 @@ import hsk4 from '../../data/hsk4.json';
 import hsk5 from '../../data/hsk5.json';
 import hsk6 from '../../data/hsk6.json';
 import hsk7 from '../../data/hsk7.json';
-import type { DatasetManifest, LessonItem, LevelId, ThemeSummary } from '../types';
+import type { DatasetManifest, LessonExample, LessonItem, LevelId, ThemeSummary } from '../types';
 import { enrichExamplesWithAudio } from '../utils/exampleAudio';
 
 export const levelIds: LevelId[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'];
 
+type RawLessonExample = {
+  hanzi?: string;
+  chinese?: string;
+  pinyin?: string;
+  translation?: string;
+  audio?: string;
+};
+
+type RawLessonItem = Omit<LessonItem, 'examples' | 'level'> & {
+  level?: string;
+  examples?: RawLessonExample[];
+};
+
+const normalizeExample = (example: RawLessonExample): LessonExample => ({
+  hanzi: example.hanzi ?? example.chinese ?? '',
+  pinyin: example.pinyin ?? '',
+  translation: example.translation ?? '',
+  ...(example.audio ? { audio: example.audio } : {})
+});
+
+const normalizeLevel = (level: string | undefined, fallbackLevel: LevelId): LevelId => {
+  if (level && levelIds.includes(level as LevelId)) {
+    return level as LevelId;
+  }
+  return fallbackLevel;
+};
+
+const normalizeLessons = (items: unknown[], fallbackLevel: LevelId): LessonItem[] =>
+  (items as RawLessonItem[]).map((item) => ({
+    ...item,
+    level: normalizeLevel(item.level, fallbackLevel),
+    examples: (item.examples ?? []).map(normalizeExample)
+  }));
+
 const grouped: Record<LevelId, LessonItem[]> = {
-  hsk1: hsk1 as LessonItem[],
-  hsk2: hsk2 as LessonItem[],
-  hsk3: hsk3 as LessonItem[],
-  hsk4: hsk4 as LessonItem[],
-  hsk5: hsk5 as LessonItem[],
-  hsk6: hsk6 as LessonItem[],
-  hsk7: hsk7 as LessonItem[]
+  hsk1: normalizeLessons(hsk1 as unknown[], 'hsk1'),
+  hsk2: normalizeLessons(hsk2 as unknown[], 'hsk2'),
+  hsk3: normalizeLessons(hsk3 as unknown[], 'hsk3'),
+  hsk4: normalizeLessons(hsk4 as unknown[], 'hsk4'),
+  hsk5: normalizeLessons(hsk5 as unknown[], 'hsk5'),
+  hsk6: normalizeLessons(hsk6 as unknown[], 'hsk6'),
+  hsk7: normalizeLessons(hsk7 as unknown[], 'hsk7')
 };
 
 const attachExampleAudio = (lessons: LessonItem[]) =>
