@@ -15,8 +15,7 @@ export const mainNav: NavItem[] = [
   { label: 'Grammaire', href: '/grammaire' },
   { label: 'Nuances', href: '/nuances' },
   { label: 'Culture', href: '/culture' },
-  { label: 'Ressources', href: '/ressources' },
-  { label: 'Produits', href: 'https://shop.xiaolearn.com', external: true },
+  { label: 'Ressources & Produits', href: '/ressources' },
 ];
 
 export const externalLinks: NavItem[] = [];
@@ -37,14 +36,14 @@ export const footerSections: FooterSection[] = [
       { label: 'Grammaire', href: '/grammaire' },
       { label: 'Nuances', href: '/nuances' },
       { label: 'Culture', href: '/culture' },
-      { label: 'Ressources', href: '/ressources' },
+      { label: 'Ressources & Produits', href: '/ressources' },
     ],
   },
   {
     title: 'XiaoLearn',
     links: [
-      { label: 'Produits', href: 'https://shop.xiaolearn.com', external: true },
       { label: 'Application', href: 'https://xiaolearn.com', external: true },
+      { label: 'Boutique', href: 'https://shop.xiaolearn.com', external: true },
     ],
   },
 ];
