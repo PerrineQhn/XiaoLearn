@@ -12,7 +12,7 @@ export interface HSKQuiz {
 
 export interface HSKEntry {
   id: string;
-  level: 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4';
+  level: 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5';
   hanzi: string;
   pinyin: string;
   translation: string;
@@ -28,7 +28,7 @@ export interface HSKEntry {
   theme: string;
 }
 
-export type HSKLevel = 1 | 2 | 3 | 4;
+export type HSKLevel = 1 | 2 | 3 | 4 | 5;
 
 export interface HSKLevelInfo {
   level: HSKLevel;
@@ -71,6 +71,14 @@ export const HSK_LEVELS: HSKLevelInfo[] = [
     description: 'Niveau intermédiaire avancé - 1200 mots',
     color: '#C2185B',
     bgColor: '#FCE4EC',
+  },
+  {
+    level: 5,
+    name: 'HSK 5',
+    slug: 'hsk5',
+    description: 'Niveau avancé - vocabulaire étendu',
+    color: '#6A1B9A',
+    bgColor: '#F3E5F5',
   },
 ];
 

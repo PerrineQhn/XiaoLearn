@@ -15,7 +15,6 @@ export const mainNav: NavItem[] = [
   { label: 'Grammaire', href: '/grammaire' },
   { label: 'Nuances', href: '/nuances' },
   { label: 'Culture', href: '/culture' },
-  { label: 'Ressources & Produits', href: '/ressources' },
 ];
 
 export const externalLinks: NavItem[] = [];
@@ -28,6 +27,7 @@ export const footerSections: FooterSection[] = [
       { label: 'HSK 2', href: '/dictionnaire/hsk2' },
       { label: 'HSK 3', href: '/dictionnaire/hsk3' },
       { label: 'HSK 4', href: '/dictionnaire/hsk4' },
+      { label: 'HSK 5', href: '/dictionnaire/hsk5' },
     ],
   },
   {

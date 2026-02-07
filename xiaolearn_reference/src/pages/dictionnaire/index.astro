@@ -10,12 +10,14 @@ import hsk1Data from '../../data/hsk1.json';
 import hsk2Data from '../../data/hsk2.json';
 import hsk3Data from '../../data/hsk3.json';
 import hsk4Data from '../../data/hsk4.json';
+import hsk5Data from '../../data/hsk5.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
   ...hsk2Data as HSKEntry[],
   ...hsk3Data as HSKEntry[],
   ...hsk4Data as HSKEntry[],
+  ...hsk5Data as HSKEntry[],
 ];
 
 const stats = {
@@ -24,19 +26,20 @@ const stats = {
   hsk2: hsk2Data.length,
   hsk3: hsk3Data.length,
   hsk4: hsk4Data.length,
+  hsk5: hsk5Data.length,
 };
 ---
 
 <BaseLayout
   title="Dictionnaire"
-  description="Dictionnaire chinois-français complet avec plus de 2500 mots du HSK 1 au HSK 4. Recherchez par caractère, pinyin ou traduction."
+  description="Dictionnaire chinois-français complet avec les niveaux HSK 1 à HSK 5. Recherchez par caractère, pinyin ou traduction."
 >
   <section class="page-header">
     <div class="container">
       <Breadcrumb items={[{ label: 'Dictionnaire' }]} />
       <h1>Dictionnaire <span class="text-gradient">chinois-français</span></h1>
       <p>
-        Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 4 avec pinyin,
+        Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 5 avec pinyin,
         traductions et exemples d'utilisation.
       </p>
     </div>
@@ -83,7 +86,7 @@ const stats = {
 
   .level-overview {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
   }
@@ -217,6 +220,11 @@ const stats = {
   .level-btn-hsk4.active {
     background: #C2185B;
     border-color: #C2185B;
+  }
+
+  .level-btn-hsk5.active {
+    background: #6A1B9A;
+    border-color: #6A1B9A;
   }
 
   .search-results-info {

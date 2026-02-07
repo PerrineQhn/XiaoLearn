@@ -8,12 +8,14 @@ import hsk1Data from '../data/hsk1.json';
 import hsk2Data from '../data/hsk2.json';
 import hsk3Data from '../data/hsk3.json';
 import hsk4Data from '../data/hsk4.json';
+import hsk5Data from '../data/hsk5.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
   ...hsk2Data as HSKEntry[],
   ...hsk3Data as HSKEntry[],
   ...hsk4Data as HSKEntry[],
+  ...hsk5Data as HSKEntry[],
 ];
 
 function getNextFestivalDistance(monthStart: number, fromMonth: number): number {

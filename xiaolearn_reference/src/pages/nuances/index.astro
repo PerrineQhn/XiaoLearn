@@ -33,11 +33,64 @@ const sortedNuances = allNuances.sort((a, b) => {
   <section class="section">
     <div class="container">
       {sortedNuances.length > 0 ? (
-        <div class="nuances-grid">
-          {sortedNuances.map(entry => (
-            <NuanceCard entry={entry} />
-          ))}
-        </div>
+        <>
+          <div class="filter-panel card">
+            <div class="filter-grid">
+              <label class="filter-control">
+                <span>Recherche</span>
+                <input
+                  id="nuances-search"
+                  type="search"
+                  placeholder="Ex: 会, 能, 可以, bù, méi..."
+                />
+              </label>
+
+              <label class="filter-control">
+                <span>Niveau</span>
+                <select id="nuances-level">
+                  <option value="all">Tous les niveaux</option>
+                  <option value="1">HSK 1</option>
+                  <option value="2">HSK 2</option>
+                  <option value="3">HSK 3</option>
+                  <option value="4">HSK 4</option>
+                </select>
+              </label>
+
+              <label class="filter-control">
+                <span>Catégorie</span>
+                <select id="nuances-category">
+                  <option value="all">Toutes</option>
+                  <option value="synonymes">Synonymes</option>
+                  <option value="homophones">Homophones</option>
+                  <option value="caracteres-similaires">Caractères similaires</option>
+                  <option value="grammaire-proche">Grammaire proche</option>
+                </select>
+              </label>
+
+              <button id="nuances-reset" class="btn btn-secondary btn-sm filter-reset" type="button">
+                Réinitialiser
+              </button>
+            </div>
+            <p id="nuances-count" class="results-count">{sortedNuances.length} nuances affichées</p>
+          </div>
+
+          <div class="nuances-grid" id="nuances-grid">
+            {sortedNuances.map(entry => (
+              <div
+                class="nuance-item"
+                data-level={String(entry.data.level)}
+                data-category={entry.data.category}
+                data-search={`${entry.data.title} ${entry.data.words.join(' ')} ${entry.data.pinyin.join(' ')} ${entry.data.summary}`.toLowerCase()}
+              >
+                <NuanceCard entry={entry} />
+              </div>
+            ))}
+          </div>
+
+          <p id="nuances-empty" class="empty-note hidden">
+            Aucun résultat. Modifiez les filtres ou la recherche.
+          </p>
+        </>
       ) : (
         <div class="empty-state">
           <span class="empty-icon">🔍</span>
@@ -79,6 +132,60 @@ const sortedNuances = allNuances.sort((a, b) => {
   </section>
 </BaseLayout>
 
+<script is:inline>
+  (() => {
+    const cards = Array.from(document.querySelectorAll('.nuance-item'));
+    const searchInput = document.getElementById('nuances-search');
+    const levelSelect = document.getElementById('nuances-level');
+    const categorySelect = document.getElementById('nuances-category');
+    const resetButton = document.getElementById('nuances-reset');
+    const countNode = document.getElementById('nuances-count');
+    const emptyNode = document.getElementById('nuances-empty');
+
+    if (!cards.length || !searchInput || !levelSelect || !categorySelect || !countNode || !emptyNode) {
+      return;
+    }
+
+    const applyFilters = () => {
+      const query = String(searchInput.value || '').toLowerCase().trim();
+      const level = String(levelSelect.value || 'all');
+      const category = String(categorySelect.value || 'all');
+
+      let visible = 0;
+      cards.forEach((card) => {
+        const cardLevel = String(card.getAttribute('data-level') || '');
+        const cardCategory = String(card.getAttribute('data-category') || '');
+        const searchable = String(card.getAttribute('data-search') || '');
+
+        const matchesQuery = !query || searchable.includes(query);
+        const matchesLevel = level === 'all' || cardLevel === level;
+        const matchesCategory = category === 'all' || cardCategory === category;
+        const show = matchesQuery && matchesLevel && matchesCategory;
+
+        card.classList.toggle('hidden', !show);
+        if (show) visible += 1;
+      });
+
+      countNode.textContent = visible + ' nuance' + (visible > 1 ? 's' : '') + ' affichée' + (visible > 1 ? 's' : '');
+      emptyNode.classList.toggle('hidden', visible !== 0);
+    };
+
+    const onChange = () => applyFilters();
+    searchInput.addEventListener('input', onChange);
+    levelSelect.addEventListener('change', onChange);
+    categorySelect.addEventListener('change', onChange);
+
+    resetButton?.addEventListener('click', () => {
+      searchInput.value = '';
+      levelSelect.value = 'all';
+      categorySelect.value = 'all';
+      applyFilters();
+    });
+
+    applyFilters();
+  })();
+</script>
+
 <style>
   .page-header {
     background: linear-gradient(135deg, var(--jade-green-light), var(--bg-secondary));
@@ -94,10 +201,65 @@ const sortedNuances = allNuances.sort((a, b) => {
     max-width: 600px;
   }
 
+  .filter-panel {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: var(--spacing-md);
+    align-items: end;
+  }
+
+  .filter-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .filter-control span {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  .filter-control input,
+  .filter-control select {
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: 0 var(--spacing-md);
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+  }
+
+  .filter-reset {
+    height: 44px;
+    align-self: end;
+  }
+
+  .results-count {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
   .nuances-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--spacing-xl);
+  }
+
+  .empty-note {
+    margin-top: var(--spacing-lg);
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+  }
+
+  .hidden {
+    display: none !important;
   }
 
   .empty-state {
@@ -169,5 +331,25 @@ const sortedNuances = allNuances.sort((a, b) => {
   .tip p {
     font-size: 0.9rem;
     color: var(--text-secondary);
+  }
+
+  @media (max-width: 960px) {
+    .filter-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-reset {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .filter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-reset {
+      grid-column: auto;
+    }
   }
 </style>
