@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import type { Language } from '../i18n';
 import type { LessonItem, LessonExerciseGrammar } from '../types';
 import { dataset } from '../data/lessons';
@@ -12,6 +12,7 @@ import PinyinTypingGame from '../components/games/PinyinTypingGame';
 interface MiniGamesPageProps {
   language: Language;
   reviewItems: LessonItem[];
+  availableGameIds?: string[];
 }
 
 type GameType = 'menu' | 'memory' | 'speed-quiz' | 'falling' | 'sentence-builder' | 'pinyin-typing';
@@ -81,7 +82,7 @@ const generateSentenceCards = (): LessonItem[] => {
   return cards;
 };
 
-const MiniGamesPage = ({ language, reviewItems = [] }: MiniGamesPageProps) => {
+const MiniGamesPage = ({ language, reviewItems = [], availableGameIds }: MiniGamesPageProps) => {
   console.log('🎮 MiniGamesPage render - reviewItems:', reviewItems?.length || 0);
 
   const [currentGame, setCurrentGame] = useState<GameType>('menu');
@@ -180,55 +181,70 @@ const MiniGamesPage = ({ language, reviewItems = [] }: MiniGamesPageProps) => {
     return result;
   }, [expandedItems, baseItems]);
 
-  const games: GameDefinition[] = useMemo(() => [
-    {
-      id: 'memory' as GameType,
-      icon: '🧠',
-      name: language === 'fr' ? 'Memory' : 'Memory Match',
-      description: language === 'fr'
-        ? 'Trouve les paires de caractères et traductions'
-        : 'Match character pairs with their translations',
-      minItems: 6
-    },
-    {
-      id: 'speed-quiz' as GameType,
-      icon: '⚡',
-      name: language === 'fr' ? 'Quiz Rapide' : 'Speed Quiz',
-      description: language === 'fr'
-        ? 'Réponds vite aux questions avant la fin du temps'
-        : 'Answer questions quickly before time runs out',
-      minItems: 4
-    },
-    {
-      id: 'falling' as GameType,
-      icon: '🎯',
-      name: language === 'fr' ? 'Attrape-Caractères' : 'Character Catcher',
-      description: language === 'fr'
-        ? 'Attrape les bons caractères qui tombent'
-        : 'Catch the correct falling characters',
-      minItems: 5
-    },
-    {
-      id: 'sentence-builder' as GameType,
-      icon: '🧩',
-      name: language === 'fr' ? 'Puzzle Pinyin' : 'Pinyin Puzzle',
-      description: language === 'fr'
-        ? 'Replace les syllabes pour former la phrase correcte'
-        : 'Reorder the syllables to rebuild the sentence',
-      minItems: 4,
-      needExamples: 3
-    },
-    {
-      id: 'pinyin-typing' as GameType,
-      icon: '⌨️',
-      name: language === 'fr' ? 'Sprint Pinyin' : 'Pinyin Sprint',
-      description: language === 'fr'
-        ? 'Tape le pinyin exact à partir des caractères'
-        : 'Type the exact pinyin for each character',
-      minItems: 4,
-      needMultiSyllable: 2
+  const games: GameDefinition[] = useMemo(() => {
+    const allGames: GameDefinition[] = [
+      {
+        id: 'memory' as GameType,
+        icon: '🧠',
+        name: language === 'fr' ? 'Memory' : 'Memory Match',
+        description: language === 'fr'
+          ? 'Trouve les paires de caractères et traductions'
+          : 'Match character pairs with their translations',
+        minItems: 6
+      },
+      {
+        id: 'speed-quiz' as GameType,
+        icon: '⚡',
+        name: language === 'fr' ? 'Quiz Rapide' : 'Speed Quiz',
+        description: language === 'fr'
+          ? 'Réponds vite aux questions avant la fin du temps'
+          : 'Answer questions quickly before time runs out',
+        minItems: 4
+      },
+      {
+        id: 'falling' as GameType,
+        icon: '🎯',
+        name: language === 'fr' ? 'Attrape-Caractères' : 'Character Catcher',
+        description: language === 'fr'
+          ? 'Attrape les bons caractères qui tombent'
+          : 'Catch the correct falling characters',
+        minItems: 5
+      },
+      {
+        id: 'sentence-builder' as GameType,
+        icon: '🧩',
+        name: language === 'fr' ? 'Puzzle Pinyin' : 'Pinyin Puzzle',
+        description: language === 'fr'
+          ? 'Replace les syllabes pour former la phrase correcte'
+          : 'Reorder the syllables to rebuild the sentence',
+        minItems: 4,
+        needExamples: 3
+      },
+      {
+        id: 'pinyin-typing' as GameType,
+        icon: '⌨️',
+        name: language === 'fr' ? 'Sprint Pinyin' : 'Pinyin Sprint',
+        description: language === 'fr'
+          ? 'Tape le pinyin exact à partir des caractères'
+          : 'Type the exact pinyin for each character',
+        minItems: 4,
+        needMultiSyllable: 2
+      }
+    ];
+    if (!availableGameIds || availableGameIds.length === 0) {
+      return allGames;
     }
-  ], [language]);
+    const allowed = new Set(availableGameIds);
+    return allGames.filter((game) => allowed.has(game.id));
+  }, [language, availableGameIds]);
+
+  useEffect(() => {
+    if (currentGame === 'menu') return;
+    if (!games.some((game) => game.id === currentGame)) {
+      setCurrentGame('menu');
+      setShowResults(false);
+    }
+  }, [currentGame, games]);
 
   const handleGameComplete = (game: string, score: number) => {
     const newScore: GameScore = {
@@ -383,6 +399,13 @@ const MiniGamesPage = ({ language, reviewItems = [] }: MiniGamesPageProps) => {
             ? 'Apprends en t\'amusant avec tes mots à réviser'
             : 'Learn while having fun with your review words'}
         </p>
+        {availableGameIds && availableGameIds.length === 1 && (
+          <p className="page-subtitle">
+            {language === 'fr'
+              ? 'Mode gratuit: 1 mini-jeu disponible'
+              : 'Free mode: 1 mini-game available'}
+          </p>
+        )}
       </header>
 
       {false ? (

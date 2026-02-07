@@ -71,7 +71,12 @@ const initializeProgressMap = (): Map<string, FlashcardProgress> => {
 export function useFlashcardSRS(
   hskLevel: LevelId,
   allWords: LessonItem[],
-  onWordLearned?: (wordId: string) => void
+  onWordLearned?: (wordId: string) => void,
+  options?: {
+    dailyNewCards?: number;
+    maxUnlockedLevel?: LevelId;
+    syncEnabled?: boolean;
+  }
 ) {
   const [progressMap, setProgressMap] = useState<Map<string, FlashcardProgress>>(initializeProgressMap);
   const [session, setSession] = useState<FlashcardSession>({
@@ -84,24 +89,28 @@ export function useFlashcardSRS(
   });
 
   // Setup Firestore sync for flashcard progress
-  const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
-    // When Firestore data changes, update local state
-    if (data && typeof data === 'object') {
-      try {
-        const entries = Object.entries(data).reduce<[string, FlashcardProgress][]>((acc, [key, value]) => {
-          if (value && typeof value === 'object') {
-            acc.push([key, value as FlashcardProgress]);
+  const { saveToFirestore } = useFirestoreSync(
+    STORAGE_KEY,
+    (data) => {
+      // When Firestore data changes, update local state
+      if (data && typeof data === 'object') {
+        try {
+          const entries = Object.entries(data).reduce<[string, FlashcardProgress][]>((acc, [key, value]) => {
+            if (value && typeof value === 'object') {
+              acc.push([key, value as FlashcardProgress]);
+            }
+            return acc;
+          }, []);
+          if (entries.length > 0) {
+            setProgressMap(new Map(entries));
           }
-          return acc;
-        }, []);
-        if (entries.length > 0) {
-          setProgressMap(new Map(entries));
+        } catch (error) {
+          console.error('Failed to parse synced flashcard progress:', error);
         }
-      } catch (error) {
-        console.error('Failed to parse synced flashcard progress:', error);
       }
-    }
-  });
+    },
+    { enabled: options?.syncEnabled ?? true }
+  );
 
   // Save progress to localStorage and Firestore
   const saveProgress = useCallback((map: Map<string, FlashcardProgress>) => {
@@ -124,8 +133,9 @@ export function useFlashcardSRS(
   const getNewCards = useCallback((): LessonItem[] => {
     const learnedIds = new Set(progressMap.keys());
     const newWords = allWords.filter(word => !learnedIds.has(word.id));
-    return newWords.slice(0, DAILY_NEW_CARDS);
-  }, [progressMap, allWords]);
+    const limit = options?.dailyNewCards ?? DAILY_NEW_CARDS;
+    return newWords.slice(0, limit);
+  }, [progressMap, allWords, options?.dailyNewCards]);
 
   // Initialize a new session
   const startSession = useCallback(() => {
@@ -258,6 +268,15 @@ export function useFlashcardSRS(
 
   // Check if level is unlocked (80% of previous level must be mature)
   const isLevelUnlocked = useCallback((level: LevelId): boolean => {
+    if (options?.maxUnlockedLevel) {
+      const levels: LevelId[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'];
+      const maxIndex = levels.indexOf(options.maxUnlockedLevel);
+      const levelIndex = levels.indexOf(level);
+      if (maxIndex >= 0 && levelIndex > maxIndex) {
+        return false;
+      }
+    }
+
     // HSK1 is always unlocked
     if (level === 'hsk1') return true;
 
@@ -279,7 +298,7 @@ export function useFlashcardSRS(
 
     const completionRate = matureCount / prevLevelWords.length;
     return completionRate >= 0.8; // 80% must be mature
-  }, [progressMap]);
+  }, [progressMap, options?.maxUnlockedLevel]);
 
   return {
     session,

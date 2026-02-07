@@ -9,6 +9,9 @@ import './FlashcardPage.css';
 interface FlashcardPageProps {
   language: Language;
   onWordLearned?: (wordId: string) => void;
+  limitedMode?: boolean;
+  dailyNewCardsLimit?: number;
+  syncEnabled?: boolean;
 }
 
 const LEVEL_NAMES: Record<LevelId, { fr: string; en: string }> = {
@@ -21,10 +24,17 @@ const LEVEL_NAMES: Record<LevelId, { fr: string; en: string }> = {
   hsk7: { fr: 'HSK 7 - Expert', en: 'HSK 7 - Expert' }
 };
 
-export default function FlashcardPage({ language, onWordLearned }: FlashcardPageProps) {
+export default function FlashcardPage({
+  language,
+  onWordLearned,
+  limitedMode = false,
+  dailyNewCardsLimit = 10,
+  syncEnabled = true
+}: FlashcardPageProps) {
   const [selectedLevel, setSelectedLevel] = useState<LevelId>('hsk1');
   const [isSessionActive, setIsSessionActive] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const availableLevels: LevelId[] = limitedMode ? ['hsk1'] : levelIds;
 
   const levelWords = getLessonsByLevel(selectedLevel);
   const {
@@ -33,7 +43,17 @@ export default function FlashcardPage({ language, onWordLearned }: FlashcardPage
     answerCard,
     getLevelStats,
     isLevelUnlocked
-  } = useFlashcardSRS(selectedLevel, levelWords, onWordLearned);
+  } = useFlashcardSRS(selectedLevel, levelWords, onWordLearned, {
+    dailyNewCards: dailyNewCardsLimit,
+    maxUnlockedLevel: limitedMode ? 'hsk1' : undefined,
+    syncEnabled
+  });
+
+  useEffect(() => {
+    if (!availableLevels.includes(selectedLevel)) {
+      setSelectedLevel('hsk1');
+    }
+  }, [availableLevels, selectedLevel]);
 
   const stats = getLevelStats();
   const progressPercent = stats.total > 0
@@ -69,9 +89,16 @@ export default function FlashcardPage({ language, onWordLearned }: FlashcardPage
           ? 'Apprenez le vocabulaire HSK avec un système de répétition espacée'
           : 'Learn HSK vocabulary with spaced repetition'}
       </p>
+      {limitedMode && (
+        <p className="page-subtitle" style={{ marginTop: 8 }}>
+          {language === 'fr'
+            ? `Mode gratuit: HSK 1 et ${dailyNewCardsLimit} nouvelles cartes par jour`
+            : `Free mode: HSK 1 and ${dailyNewCardsLimit} new cards per day`}
+        </p>
+      )}
 
       <div className="level-grid">
-        {levelIds.map((level) => {
+        {availableLevels.map((level) => {
           const unlocked = isLevelUnlocked(level);
           const levelStats = getLevelStats(level);
           const completion = levelStats.total > 0

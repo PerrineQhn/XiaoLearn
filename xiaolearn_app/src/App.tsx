@@ -20,7 +20,6 @@ import AIFloatingChat from './components/AIFloatingChat';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import LoginModal from './components/Auth/LoginModal';
 import UserProfile from './components/Auth/UserProfile';
-import SubscriptionGate from './components/SubscriptionGate';
 import { useLessonProgress } from './hooks/useLessonProgress';
 import { useQuizEngine } from './hooks/useQuizEngine';
 import { useEntitlements } from './hooks/useEntitlements';
@@ -30,6 +29,7 @@ import { lessonPaths, getLessonModuleById } from './data/lesson-paths';
 import { getCopy, type Language } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 import { createCheckoutSession, createPortalSession } from './services/payments';
+import { buildAppAccess } from './utils/access';
 
 export type View = 'home' | 'lessons' | 'lesson' | 'review' | 'themes' | 'culture' | 'dictionary' | 'assistant' | 'settings' | 'games' | 'flashcards';
 
@@ -58,12 +58,21 @@ const readCompletedLessons = (): string[] => {
   }
 };
 
-const buildLessonPathsState = (completedIds: string[]) => {
+const buildLessonPathsState = (completedIds: string[], hasFullLessonAccess: boolean, hsk1LessonLimit: number) => {
   const completedSet = new Set(completedIds);
+  let unlockedHsk1Count = 0;
   return lessonPaths.map((path) => {
-    const lessons = path.lessons.map((lesson, index) => {
+    const lessons = path.lessons.map((lesson) => {
       const completed = completedSet.has(lesson.id);
-      const unlocked = true;
+      let unlocked = hasFullLessonAccess;
+      if (!hasFullLessonAccess) {
+        if (lesson.hskLevel === 1 && unlockedHsk1Count < hsk1LessonLimit) {
+          unlocked = true;
+          unlockedHsk1Count += 1;
+        } else {
+          unlocked = false;
+        }
+      }
       return {
         ...lesson,
         completed,
@@ -168,8 +177,12 @@ function App() {
   const copy = getCopy(language);
   const [focusedTheme, setFocusedTheme] = useState<string | null>(defaultTheme);
   const [completedLessons, setCompletedLessons] = useState<string[]>(() => readCompletedLessons());
-  const lessonPathsState = useMemo(() => buildLessonPathsState(completedLessons), [completedLessons]);
-  const lessonProgress = useLessonProgress(3);
+  const appAccess = useMemo(() => buildAppAccess(user, entitlements?.app ?? null), [user, entitlements]);
+  const lessonPathsState = useMemo(
+    () => buildLessonPathsState(completedLessons, appAccess.canAccessAllLessons, appAccess.hsk1LessonLimit),
+    [completedLessons, appAccess.canAccessAllLessons, appAccess.hsk1LessonLimit]
+  );
+  const lessonProgress = useLessonProgress(3, 6, { syncEnabled: appAccess.syncEnabled });
   const customLists = useCustomLists();
   const customReviewLists = useMemo(
     () =>
@@ -186,7 +199,6 @@ function App() {
   const quiz = useQuizEngine(language);
   const [learningStats, setLearningStats] = useState<LearningStats>(() => readLearningStats());
   const topThemes = themeSummaries.slice(0, 4);
-  const hasAppAccess = entitlements?.app?.active ?? false;
 
   useEffect(() => {
     document.body.classList.toggle('dark-theme', darkMode);
@@ -213,19 +225,30 @@ function App() {
   }, [colorTheme]);
 
   const navEntries = useMemo<{ id: View; label: string; iconSlug: string; fallback: string }[]>(
-    () => [
-      { id: 'home', label: language === 'fr' ? 'Accueil' : 'Home', iconSlug: 'home', fallback: '🏠' },
-      { id: 'lessons', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
-      { id: 'flashcards', label: language === 'fr' ? 'Cartes Mémoire' : 'Flashcards', iconSlug: 'flash-card', fallback: '🎴' },
-      { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🔄' },
-      { id: 'games', label: language === 'fr' ? 'Mini-Jeux' : 'Mini-Games', iconSlug: 'jeux', fallback: '🎮' },
-      { id: 'assistant', label: language === 'fr' ? 'Assistant IA' : 'AI Assistant', iconSlug: 'ia', fallback: '🤖' },
-      { id: 'themes', label: language === 'fr' ? 'Thèmes' : 'Themes', iconSlug: 'themes', fallback: '🗂️' },
-      { id: 'culture', label: language === 'fr' ? 'Culture' : 'Culture', iconSlug: 'culture', fallback: '🏮' },
-      { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' }
-    ],
-    [language]
+    () =>
+      [
+        { id: 'home', label: language === 'fr' ? 'Accueil' : 'Home', iconSlug: 'home', fallback: '🏠' },
+        { id: 'lessons', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
+        { id: 'flashcards', label: language === 'fr' ? 'Cartes Mémoire' : 'Flashcards', iconSlug: 'flash-card', fallback: '🎴' },
+        { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🔄' },
+        { id: 'games', label: language === 'fr' ? 'Mini-Jeux' : 'Mini-Games', iconSlug: 'jeux', fallback: '🎮' },
+        ...(appAccess.canUseAI
+          ? [{ id: 'assistant', label: language === 'fr' ? 'Assistant IA' : 'AI Assistant', iconSlug: 'ia', fallback: '🤖' } as const]
+          : []),
+        { id: 'themes', label: language === 'fr' ? 'Thèmes' : 'Themes', iconSlug: 'themes', fallback: '🗂️' },
+        { id: 'culture', label: language === 'fr' ? 'Culture' : 'Culture', iconSlug: 'culture', fallback: '🏮' },
+        { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' }
+      ] satisfies { id: View; label: string; iconSlug: string; fallback: string }[],
+    [language, appAccess.canUseAI]
   );
+  const reviewItemsForPlan =
+    appAccess.reviewItemLimit === null
+      ? lessonProgress.allLearnedItems
+      : lessonProgress.allLearnedItems.slice(0, appAccess.reviewItemLimit);
+  const availableMiniGameIds =
+    appAccess.maxMiniGames === 1
+      ? ['memory']
+      : ['memory', 'speed-quiz', 'falling', 'sentence-builder', 'pinyin-typing'];
 
   const handleOpenThemes = (theme?: string) => {
     setFocusedTheme(theme ?? defaultTheme);
@@ -233,6 +256,11 @@ function App() {
   };
 
   const handleSelectLesson = (pathId: string, lessonId: string) => {
+    const path = lessonPathsState.find((entry) => entry.id === pathId);
+    const lesson = path?.lessons.find((entry) => entry.id === lessonId);
+    if (!lesson || lesson.locked) {
+      return;
+    }
     setSelectedLesson({ pathId, lessonId });
     setView('lesson');
   };
@@ -299,24 +327,6 @@ function App() {
     );
   }
 
-  if (!entitlementsLoading && !hasAppAccess) {
-    return (
-      <div className="app-container">
-        <SubscriptionGate
-          language={language}
-          isAuthenticated={Boolean(user)}
-          onLogin={() => setShowLoginModal(true)}
-          onSubscribe={handleSubscribe}
-        />
-        <LoginModal
-          isOpen={showLoginModal}
-          onClose={() => setShowLoginModal(false)}
-          language={language}
-        />
-      </div>
-    );
-  }
-
   let content: JSX.Element;
   switch (view) {
     case 'lessons':
@@ -359,7 +369,7 @@ function App() {
     case 'review':
       content = (
         <ReviewPage
-          reviewItems={lessonProgress.allLearnedItems}
+          reviewItems={reviewItemsForPlan}
           totals={lessonProgress.totals}
           copy={copy}
           language={language}
@@ -409,13 +419,22 @@ function App() {
       );
       break;
     case 'assistant':
-      content = <AIAssistantPage language={language} />;
+      content = appAccess.canUseAI ? (
+        <AIAssistantPage language={language} />
+      ) : (
+        <div className="subscription-loading">
+          {language === 'fr'
+            ? 'Assistant IA disponible en essai/premium'
+            : 'AI Assistant is available in trial/premium'}
+        </div>
+      );
       break;
     case 'games':
       content = (
         <MiniGamesPage
           language={language}
           reviewItems={lessonProgress.allLearnedItems}
+          availableGameIds={availableMiniGameIds}
         />
       );
       break;
@@ -424,6 +443,9 @@ function App() {
         <FlashcardPage
           language={language}
           onWordLearned={(wordId) => lessonProgress.addLearnedWords([wordId])}
+          limitedMode={appAccess.srsMode === 'limited'}
+          dailyNewCardsLimit={appAccess.flashcardDailyNewLimit}
+          syncEnabled={appAccess.syncEnabled}
         />
       );
       break;
@@ -435,6 +457,9 @@ function App() {
           currentTheme={colorTheme}
           onThemeChange={setColorTheme}
           subscription={entitlements?.app ?? null}
+          accessTier={appAccess.tier}
+          trialDaysLeft={appAccess.trialDaysLeft}
+          trialEndsAt={appAccess.trialEndsAt}
           onSubscribe={handleSubscribe}
           onManageSubscription={handleManageSubscription}
         />
@@ -459,6 +484,7 @@ function App() {
           pendingReviews={lessonProgress.reviewItems.length}
           nextLesson={lessonProgress.todaySummary[0]}
           colorTheme={colorTheme}
+          showAdvancedStats={appAccess.showAdvancedStats}
         />
       );
   }
@@ -594,7 +620,7 @@ function App() {
       />
 
       {/* Floating AI Chat - available on all pages except AI Assistant page */}
-      {view !== 'assistant' && <AIFloatingChat language={language} />}
+      {appAccess.canUseAI && view !== 'assistant' && <AIFloatingChat language={language} />}
     </div>
   );
 }

@@ -22,6 +22,7 @@ interface HomePageProps {
   pendingReviews: number;
   nextLesson?: LessonItem;
   colorTheme: string;
+  showAdvancedStats: boolean;
 }
 
 const themeSecondaryMap: Record<string, string> = {
@@ -48,7 +49,8 @@ const HomePage = ({
   streak,
   pendingReviews,
   nextLesson,
-  colorTheme
+  colorTheme,
+  showAdvancedStats
 }: HomePageProps) => {
   const { user } = useAuth();
   const displayName = user?.displayName || user?.email?.split('@')[0] || 'Utilisateur';
@@ -95,7 +97,22 @@ const secondaryCircle = themeSecondaryMap[colorTheme] || 'rgba(0,0,0,0.08)';
       </button>
 
       {/* Learning Progress Chart */}
-      <LearningProgressChart language={language} />
+      {showAdvancedStats ? (
+        <LearningProgressChart language={language} />
+      ) : (
+        <section className="progress-section">
+          <h2 className="section-title">
+            {language === 'fr' ? 'Statistiques' : 'Statistics'}
+          </h2>
+          <div className="progress-summary">
+            <p className="total-label">
+              {language === 'fr'
+                ? 'Mode gratuit: statistiques avancées disponibles en premium'
+                : 'Free mode: advanced statistics are available in premium'}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Stats Grid */}
       <div className="stats-grid">

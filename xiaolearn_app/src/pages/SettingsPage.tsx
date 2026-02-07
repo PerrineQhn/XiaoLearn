@@ -6,6 +6,7 @@ import { storage } from '../firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
 import type { EntitlementStatus } from '../hooks/useEntitlements';
+import type { AccessTier } from '../utils/access';
 
 interface SettingsPageProps {
   language: Language;
@@ -13,6 +14,9 @@ interface SettingsPageProps {
   currentTheme: string;
   onThemeChange: (theme: string) => void;
   subscription: EntitlementStatus | null;
+  accessTier: AccessTier;
+  trialDaysLeft: number;
+  trialEndsAt: string | null;
   onSubscribe: (planId: string) => void;
   onManageSubscription: () => void;
 }
@@ -74,6 +78,9 @@ const SettingsPage = ({
   currentTheme,
   onThemeChange,
   subscription,
+  accessTier,
+  trialDaysLeft,
+  trialEndsAt,
   onSubscribe,
   onManageSubscription
 }: SettingsPageProps) => {
@@ -84,12 +91,20 @@ const SettingsPage = ({
   const [uploading, setUploading] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const activeThemeInfo = colorThemes.find((theme) => theme.id === currentTheme);
-  const subscriptionActive = subscription?.active ?? false;
+  const subscriptionActive = accessTier === 'premium';
   const hasSubscription = Boolean(subscription?.subscriptionId);
   const hasLifetimeAccess = subscriptionActive && !hasSubscription;
   const renewalDate = subscription?.currentPeriodEnd ? new Date(subscription.currentPeriodEnd) : null;
   const renewalLabel = renewalDate
     ? renewalDate.toLocaleDateString(language === 'fr' ? 'fr-FR' : 'en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    : null;
+  const trialEndDate = trialEndsAt ? new Date(trialEndsAt) : null;
+  const trialEndLabel = trialEndDate
+    ? trialEndDate.toLocaleDateString(language === 'fr' ? 'fr-FR' : 'en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
@@ -261,13 +276,17 @@ const SettingsPage = ({
               <div>
                 <h3>{language === 'fr' ? 'Statut' : 'Status'}</h3>
                 <p className={subscriptionActive ? 'status-active' : 'status-inactive'}>
-                  {subscriptionActive
+                  {accessTier === 'premium'
                     ? language === 'fr'
-                      ? 'Actif'
-                      : 'Active'
+                      ? 'Premium actif'
+                      : 'Premium active'
+                    : accessTier === 'trial'
+                    ? language === 'fr'
+                      ? `Essai (${trialDaysLeft} jour${trialDaysLeft > 1 ? 's' : ''} restant${trialDaysLeft > 1 ? 's' : ''})`
+                      : `Trial (${trialDaysLeft} day${trialDaysLeft > 1 ? 's' : ''} left)`
                     : language === 'fr'
-                      ? 'Inactif'
-                      : 'Inactive'}
+                    ? 'Gratuit'
+                    : 'Free'}
                 </p>
                 {renewalLabel && (
                   <p className="subscription-renewal">
@@ -279,6 +298,13 @@ const SettingsPage = ({
                 {hasLifetimeAccess && (
                   <p className="subscription-renewal">
                     {language === 'fr' ? 'Accès à vie' : 'Lifetime access'}
+                  </p>
+                )}
+                {!subscriptionActive && accessTier === 'trial' && trialEndLabel && (
+                  <p className="subscription-renewal">
+                    {language === 'fr'
+                      ? `Fin de l'essai le ${trialEndLabel}`
+                      : `Trial ends on ${trialEndLabel}`}
                   </p>
                 )}
               </div>
@@ -313,6 +339,65 @@ const SettingsPage = ({
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="settings-card-grid" style={{ marginTop: 16 }}>
+          <div className="settings-card settings-card-wide">
+            <h3>{language === 'fr' ? 'Comparatif Gratuit vs Premium' : 'Free vs Premium'}</h3>
+            <div className="subscription-comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>{language === 'fr' ? 'Fonctionnalité' : 'Feature'}</th>
+                    <th>{language === 'fr' ? 'Gratuit' : 'Free'}</th>
+                    <th>{language === 'fr' ? 'Premium' : 'Premium'}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Leçons HSK 1</td>
+                    <td>{language === 'fr' ? '5 premières' : 'First 5'}</td>
+                    <td>{language === 'fr' ? 'Toutes (30+)' : 'All (30+)'}</td>
+                  </tr>
+                  <tr>
+                    <td>Leçons HSK 2-3</td>
+                    <td>❌</td>
+                    <td>✓ 70+</td>
+                  </tr>
+                  <tr>
+                    <td>Système SRS</td>
+                    <td>{language === 'fr' ? 'Limité' : 'Limited'}</td>
+                    <td>{language === 'fr' ? 'Complet' : 'Complete'}</td>
+                  </tr>
+                  <tr>
+                    <td>Assistant IA</td>
+                    <td>❌</td>
+                    <td>{language === 'fr' ? '✓ Illimité' : '✓ Unlimited'}</td>
+                  </tr>
+                  <tr>
+                    <td>{language === 'fr' ? 'Mini-jeux' : 'Mini-games'}</td>
+                    <td>1</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>{language === 'fr' ? 'Statistiques' : 'Statistics'}</td>
+                    <td>{language === 'fr' ? 'Basiques' : 'Basic'}</td>
+                    <td>{language === 'fr' ? 'Avancées' : 'Advanced'}</td>
+                  </tr>
+                  <tr>
+                    <td>{language === 'fr' ? 'Synchronisation' : 'Sync'}</td>
+                    <td>❌</td>
+                    <td>{language === 'fr' ? '✓ Multi-appareils' : '✓ Multi-device'}</td>
+                  </tr>
+                  <tr>
+                    <td>{language === 'fr' ? 'Support prioritaire' : 'Priority support'}</td>
+                    <td>❌</td>
+                    <td>✓</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

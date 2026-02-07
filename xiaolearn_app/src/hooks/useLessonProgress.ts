@@ -30,16 +30,24 @@ const readLearnedWordIds = (): string[] => {
 
 const lessonMap = new Map(dataset.lessons.map((lesson) => [lesson.id, lesson]));
 
-export const useLessonProgress = (dailyGoal: number, reviewGoal = 6) => {
+export const useLessonProgress = (
+  dailyGoal: number,
+  reviewGoal = 6,
+  options?: { syncEnabled?: boolean }
+) => {
   const [cursor, setCursor] = useState<number>(readInitialIndex);
   const [learnedWordIds, setLearnedWordIds] = useState<string[]>(readLearnedWordIds);
 
   // Setup Firestore sync for learned words
-  const { saveToFirestore } = useFirestoreSync(LEARNED_KEY, (data) => {
-    if (Array.isArray(data) && data.length > 0) {
-      setLearnedWordIds(data);
-    }
-  });
+  const { saveToFirestore } = useFirestoreSync(
+    LEARNED_KEY,
+    (data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        setLearnedWordIds(data);
+      }
+    },
+    { enabled: options?.syncEnabled ?? true }
+  );
 
   const persistLearnedWordIds = (ids: string[]) => {
     if (typeof window !== 'undefined') {

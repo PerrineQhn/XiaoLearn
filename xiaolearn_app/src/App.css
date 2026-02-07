@@ -6514,3 +6514,26 @@ select:focus {
   font-weight: 600;
   color: #6b7280;
 }
+
+.subscription-comparison-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.subscription-comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.subscription-comparison-table th,
+.subscription-comparison-table td {
+  border: 1px solid var(--border-primary);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.subscription-comparison-table thead th {
+  background: var(--bg-tertiary);
+  font-weight: 700;
+}

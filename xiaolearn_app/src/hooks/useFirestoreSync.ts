@@ -9,12 +9,17 @@ import { useAuth } from '../contexts/AuthContext';
  * @param key - Clé localStorage à synchroniser
  * @param onUpdate - Callback appelé quand les données sont mises à jour depuis Firestore
  */
-export function useFirestoreSync(key: string, onUpdate?: (data: any) => void) {
+export function useFirestoreSync(
+  key: string,
+  onUpdate?: (data: any) => void,
+  options?: { enabled?: boolean }
+) {
   const { user } = useAuth();
+  const enabled = options?.enabled ?? true;
 
   // Synchroniser les données locales vers Firestore quand l'utilisateur se connecte
   useEffect(() => {
-    if (!user) return;
+    if (!user || !enabled) return;
 
     const syncLocalToFirestore = async () => {
       const localData = localStorage.getItem(key);
@@ -41,11 +46,11 @@ export function useFirestoreSync(key: string, onUpdate?: (data: any) => void) {
     };
 
     syncLocalToFirestore();
-  }, [user, key]);
+  }, [user, key, enabled]);
 
   // Écouter les changements Firestore et mettre à jour localStorage
   useEffect(() => {
-    if (!user) return;
+    if (!user || !enabled) return;
 
     const userDocRef = doc(db, 'users', user.uid);
 
@@ -70,11 +75,11 @@ export function useFirestoreSync(key: string, onUpdate?: (data: any) => void) {
     });
 
     return () => unsubscribe();
-  }, [user, key, onUpdate]);
+  }, [user, key, onUpdate, enabled]);
 
   // Fonction pour sauvegarder dans Firestore
   const saveToFirestore = async (data: any) => {
-    if (!user) {
+    if (!user || !enabled) {
       // Pas connecté, sauvegarder seulement en local
       const stringData = typeof data === 'string' ? data : JSON.stringify(data);
       localStorage.setItem(key, stringData);
