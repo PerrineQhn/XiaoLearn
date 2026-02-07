@@ -6,7 +6,6 @@ import { mainNav, externalLinks } from '../data/navigation';
   <div class="header-container">
     <a href="/" class="logo">
       <img src="/logos/logo_asian-red.png" alt="XiaoLearn" class="logo-img" />
-      <span class="logo-text">Reference</span>
     </a>
 
     <nav class="nav">
@@ -105,9 +104,9 @@ import { mainNav, externalLinks } from '../data/navigation';
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: var(--spacing-xl);
   }
 
@@ -116,6 +115,7 @@ import { mainNav, externalLinks } from '../data/navigation';
     align-items: center;
     gap: var(--spacing-sm);
     flex-shrink: 0;
+    justify-self: start;
   }
 
   .logo-img {
@@ -123,19 +123,11 @@ import { mainNav, externalLinks } from '../data/navigation';
     width: auto;
   }
 
-  .logo-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-tertiary);
-    padding: var(--spacing-xxs) var(--spacing-sm);
-    background: var(--bg-accent);
-    border-radius: var(--radius-sm);
-  }
-
   .nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    justify-self: center;
   }
 
   .nav-link {
@@ -158,6 +150,7 @@ import { mainNav, externalLinks } from '../data/navigation';
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    justify-self: end;
   }
 
   .mobile-menu-btn {
@@ -168,6 +161,7 @@ import { mainNav, externalLinks } from '../data/navigation';
     background: none;
     border: none;
     cursor: pointer;
+    justify-self: end;
   }
 
   .mobile-menu-btn span {
@@ -244,6 +238,11 @@ import { mainNav, externalLinks } from '../data/navigation';
   }
 
   @media (max-width: 900px) {
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .nav,
     .header-actions {
       display: none;

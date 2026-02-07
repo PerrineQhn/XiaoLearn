@@ -195,6 +195,10 @@ for (const group of grammarGroups) {
         })}
       </div>
 
+      <div class="catalog-actions">
+        <button id="grammar-load-more" class="btn btn-secondary" type="button">Voir plus</button>
+      </div>
+
       <p id="grammar-empty" class="empty-note hidden">
         Aucun résultat. Ajustez les filtres ou relancez avec "Tous".
       </p>
@@ -227,20 +231,25 @@ for (const group of grammarGroups) {
       const countNode = document.getElementById('grammar-count');
       const emptyNode = document.getElementById('grammar-empty');
       const resetButton = document.getElementById('grammar-reset');
+      const loadMoreButton = document.getElementById('grammar-load-more');
       const levelButtons = Array.from(document.querySelectorAll('[data-level]'));
 
       if (!cards.length || !searchInput || !categorySelect || !typeSelect || !countNode || !emptyNode) {
         return;
       }
 
+      const PAGE_SIZE = 12;
       let selectedLevel = 'all';
+      let visibleLimit = PAGE_SIZE;
 
-      const applyFilters = () => {
+      const applyFilters = ({ resetLimit = false } = {}) => {
+        if (resetLimit) {
+          visibleLimit = PAGE_SIZE;
+        }
+
         const query = String(searchInput.value || '').toLowerCase().trim();
         const selectedCategory = String(categorySelect.value || 'all');
         const selectedType = String(typeSelect.value || 'all');
-
-        let visible = 0;
 
         cards.forEach((card) => {
           const levels = String(card.getAttribute('data-levels') || '').split(',').filter(Boolean);
@@ -253,24 +262,45 @@ for (const group of grammarGroups) {
           const typeOk = selectedType === 'all' || type === selectedType;
           const queryOk = !query || searchable.includes(query);
 
-          const show = levelOk && categoryOk && typeOk && queryOk;
-          card.classList.toggle('hidden', !show);
-          if (show) visible += 1;
+          card.classList.toggle('hidden', !(levelOk && categoryOk && typeOk && queryOk));
         });
 
-        countNode.textContent = visible + ' element' + (visible > 1 ? 's' : '') + ' affiche' + (visible > 1 ? 's' : '');
-        emptyNode.classList.toggle('hidden', visible !== 0);
+        const filteredCards = cards.filter((card) => !card.classList.contains('hidden'));
+        filteredCards.forEach((card, index) => {
+          card.classList.toggle('hidden', index >= visibleLimit);
+        });
+
+        const visibleCount = Math.min(filteredCards.length, visibleLimit);
+        const totalMatches = filteredCards.length;
+
+        if (totalMatches === 0) {
+          countNode.textContent = '0 element affiche';
+        } else {
+          countNode.textContent =
+            visibleCount +
+            ' element' +
+            (visibleCount > 1 ? 's' : '') +
+            ' affiche' +
+            (visibleCount > 1 ? 's' : '') +
+            ' sur ' +
+            totalMatches;
+        }
+
+        emptyNode.classList.toggle('hidden', totalMatches !== 0);
+        if (loadMoreButton) {
+          loadMoreButton.classList.toggle('hidden', totalMatches === 0 || visibleLimit >= totalMatches);
+        }
       };
 
       levelButtons.forEach((button) => {
         button.addEventListener('click', () => {
           selectedLevel = String(button.getAttribute('data-level') || 'all');
           levelButtons.forEach((candidate) => candidate.classList.toggle('active', candidate === button));
-          applyFilters();
+          applyFilters({ resetLimit: true });
         });
       });
 
-      const onControlChange = () => applyFilters();
+      const onControlChange = () => applyFilters({ resetLimit: true });
       searchInput.addEventListener('input', onControlChange);
       categorySelect.addEventListener('change', onControlChange);
       typeSelect.addEventListener('change', onControlChange);
@@ -281,10 +311,15 @@ for (const group of grammarGroups) {
         categorySelect.value = 'all';
         typeSelect.value = 'all';
         levelButtons.forEach((button) => button.classList.toggle('active', button.getAttribute('data-level') === 'all'));
+        applyFilters({ resetLimit: true });
+      });
+
+      loadMoreButton?.addEventListener('click', () => {
+        visibleLimit += PAGE_SIZE;
         applyFilters();
       });
 
-      applyFilters();
+      applyFilters({ resetLimit: true });
     })();
   </script>
 </BaseLayout>
@@ -476,6 +511,12 @@ for (const group of grammarGroups) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: var(--spacing-md);
+  }
+
+  .catalog-actions {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
   }
 
   .point-card {
