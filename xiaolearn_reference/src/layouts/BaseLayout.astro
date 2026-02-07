@@ -6,14 +6,18 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
 const {
   title,
-  description = "Apprenez le chinois mandarin : dictionnaire, grammaire et nuances expliquées en français pour les francophones."
+  description = "Apprenez le chinois mandarin : dictionnaire, grammaire et nuances expliquées en français pour les francophones.",
+  canonical,
 } = Astro.props;
 
 const fullTitle = title === 'Accueil' ? 'XiaoLearn Référence - Apprendre le mandarin' : `${title} | XiaoLearn Référence`;
+const siteOrigin = Astro.site?.toString() || 'https://xiaolearn.com';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteOrigin).toString();
 ---
 
 <!DOCTYPE html>
@@ -22,13 +26,19 @@ const fullTitle = title === 'Accueil' ? 'XiaoLearn Référence - Apprendre le ma
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href={canonicalUrl} />
 
   <!-- Open Graph -->
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="XiaoLearn Référence" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logos/logo_onglet.png" />
