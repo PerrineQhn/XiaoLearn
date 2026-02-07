@@ -1,0 +1,63 @@
+# Global monorepo ignores for XiaoLearn
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Root local tooling folders
+.audio_cache/
+.claude/
+.venv_hsk/
+.git_nested_backups/
+
+# Dependencies
+**/node_modules/
+
+# Build outputs and framework caches
+**/dist/
+**/build/
+**/.astro/
+**/.vite/
+**/.cache/
+**/.parcel-cache/
+**/.next/
+**/.nuxt/
+**/.svelte-kit/
+**/.expo/
+**/web-build/
+**/.turbo/
+
+# Logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# Environment files
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/venv/
+
+# TypeScript
+**/*.tsbuildinfo
+
+# Test coverage
+**/coverage/
+
+# Large local assets (kept locally, not versioned on GitHub)
+xiaolearn_pdfs/manuel/mandarin_volume1_dictionary.pdf
+xiaolearn_reference/新版HSK口语/新版HSK（四级）口语音频.wav
+xiaolearn_reference/新版HSK口语/新版HSK（五级）口语音频.wav
+xiaolearn_reference/新版HSK口语/新版HSK（六级）口语音频.wav

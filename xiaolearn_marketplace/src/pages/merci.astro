@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const paymentsBaseUrl = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || 'https://pay.xiaolearn.com';
+---
+
+<BaseLayout title="Merci pour votre achat - XiaoLearn Shop">
+  <section class="thank-you-section">
+    <div class="container">
+      <div class="thank-you-box">
+        <div class="success-icon">✓</div>
+        <h1>Merci pour votre achat !</h1>
+        <p class="subtitle">
+          Votre paiement a été confirmé. Vous allez recevoir un email de confirmation
+          avec les détails de votre commande.
+        </p>
+
+        <div class="download-box" id="download-box" hidden>
+          <h2>Votre téléchargement est prêt</h2>
+          <p>Si votre achat inclut des fichiers, vous pouvez les récupérer ici.</p>
+          <div class="download-links" id="download-links"></div>
+        </div>
+
+        <div class="next-steps">
+          <h2>Prochaines étapes</h2>
+
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-icon">📧</div>
+              <h3>Vérifiez votre email</h3>
+              <p>Un email de confirmation avec votre reçu a été envoyé à votre adresse.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-icon">📥</div>
+              <h3>Téléchargez vos fichiers</h3>
+              <p>Pour les PDFs et decks Anki, un lien est disponible ici et dans l'email.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-icon">🚀</div>
+              <h3>Commencez à apprendre</h3>
+              <p>Rendez-vous sur xiaolearn.com pour accéder à votre contenu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="https://xiaolearn.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            Accéder à l'application
+            <span class="arrow">→</span>
+          </a>
+          <a href="/" class="btn btn-secondary">
+            Retour à la boutique
+          </a>
+        </div>
+
+        <div class="support-note">
+          <p>
+            Une question ? Contactez-nous à
+            <a href="mailto:support@xiaolearn.com">support@xiaolearn.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const paymentsBaseUrl = {JSON.stringify(paymentsBaseUrl)};
+    const downloadBox = document.getElementById('download-box');
+    const downloadLinks = document.getElementById('download-links');
+    const sessionId = new URLSearchParams(window.location.search).get('session_id');
+
+    if (sessionId && paymentsBaseUrl) {
+      fetch(`${paymentsBaseUrl}/api/downloads?session_id=${encodeURIComponent(sessionId)}`)
+        .then((response) => response.ok ? response.json() : null)
+        .then((data) => {
+          if (!data || !Array.isArray(data.downloads) || data.downloads.length === 0) return;
+          downloadLinks.innerHTML = '';
+          data.downloads.forEach((item) => {
+            const link = document.createElement('a');
+            link.className = 'btn btn-primary download-link';
+            link.href = item.url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.textContent = `Télécharger ${item.label}`;
+            downloadLinks.appendChild(link);
+          });
+          downloadBox.hidden = false;
+        })
+        .catch(() => {});
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  .thank-you-section {
+    min-height: calc(100vh - var(--header-height) - 200px);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .thank-you-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(120deg, var(--jade-green), var(--jade-green-hover));
+    color: var(--text-inverse);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .thank-you-box h1 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .next-steps {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .download-box {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    background: linear-gradient(140deg, rgba(216, 72, 62, 0.12), rgba(47, 157, 138, 0.12));
+  }
+
+  .download-box h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .download-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+  }
+
+  .download-link {
+    white-space: nowrap;
+  }
+
+  .next-steps h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .step-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .step-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .step-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .step-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .step-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 640px) {
+    .step-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .support-note {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+  }
+
+  .support-note a {
+    color: var(--primary-red);
+  }
+</style>

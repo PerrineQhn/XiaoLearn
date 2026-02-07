@@ -1,0 +1,125 @@
+---
+const navItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Produits', href: '/produits' },
+  { label: 'Tarifs', href: '/tarifs' },
+  { label: 'FAQ', href: '/faq' },
+];
+---
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <img src="/logos/logo_asian-red.png" alt="XiaoLearn" class="logo-img" />
+    </a>
+
+    <nav class="nav">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://xiaolearn.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">
+        Ouvrir l'app
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-primary);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    height: var(--header-height);
+  }
+
+  .header-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-link {
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .nav-link:hover {
+    color: var(--primary-red);
+    background: var(--primary-red-light);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--spacing-sm);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+  }
+
+  @media (max-width: 768px) {
+    .nav,
+    .header-actions {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+  }
+</style>

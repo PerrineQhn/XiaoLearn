@@ -1,0 +1,601 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  allProducts,
+  buildProductPageLink,
+  type Product,
+} from '../../data/products';
+import { buildCheckoutLink } from '../../data/payments';
+
+export async function getStaticPaths() {
+  return allProducts.map((product) => ({
+    params: { id: product.id },
+    props: { product },
+  }));
+}
+
+interface DetailContent {
+  intro: string;
+  audienceTitle: string;
+  audience: string[];
+  roadmapTitle: string;
+  roadmap: string[];
+  faq: Array<{ question: string; answer: string }>;
+}
+
+const { product } = Astro.props as { product: Product };
+
+const typeLabels: Record<Product['type'], string> = {
+  subscription: 'Abonnement',
+  pdf: 'Manuel PDF',
+  anki: 'Deck Anki',
+};
+
+const typeEmojis: Record<Product['type'], string> = {
+  subscription: '📱',
+  pdf: '📄',
+  anki: '🎴',
+};
+
+const detailByType: Record<Product['type'], DetailContent> = {
+  subscription: {
+    intro: 'Cet abonnement donne accès à l’écosystème XiaoLearn avec un parcours guidé, de la pratique active et un suivi de progression pour installer une routine régulière.',
+    audienceTitle: 'Pour qui ?',
+    audience: [
+      'Débutants qui veulent une méthode structurée',
+      'Apprenants intermédiaires qui veulent consolider les bases',
+      'Étudiants qui préparent un passage de niveau HSK',
+    ],
+    roadmapTitle: 'Comment l’utiliser',
+    roadmap: [
+      'Suivre 20 à 30 minutes de leçon active par jour',
+      'Faire une session de révision SRS juste après',
+      'Bloquer 1 séance hebdo de consolidation et expression',
+    ],
+    faq: [
+      {
+        question: 'Puis-je changer de formule plus tard ?',
+        answer: 'Oui, vous pouvez passer d’une formule à une autre depuis votre espace client.',
+      },
+      {
+        question: 'Ai-je accès aux nouveautés ?',
+        answer: 'Oui, les nouvelles leçons et améliorations sont incluses dans la formule active.',
+      },
+    ],
+  },
+  pdf: {
+    intro: 'Un format orienté étude : clair, imprimable, et pensé pour réviser sans distraction. Vous avancez avec une progression pédagogique alignée sur les niveaux HSK.',
+    audienceTitle: 'Pour qui ?',
+    audience: [
+      'Apprenants qui préfèrent un support papier',
+      'Professeurs qui veulent un contenu prêt à l’emploi',
+      'Étudiants qui révisent hors ligne',
+    ],
+    roadmapTitle: 'Plan de travail recommandé',
+    roadmap: [
+      'Choisir le niveau cible et le volume de pages par semaine',
+      'Étudier les notions puis faire les exercices immédiatement',
+      'Revenir 48h plus tard sur les erreurs pour ancrer',
+    ],
+    faq: [
+      {
+        question: 'Le PDF est-il imprimable ?',
+        answer: 'Oui, la mise en page est conçue pour une impression propre au format standard.',
+      },
+      {
+        question: 'Puis-je l’utiliser sur tablette ?',
+        answer: 'Oui, vous pouvez l’annoter directement dans n’importe quel lecteur PDF.',
+      },
+    ],
+  },
+  anki: {
+    intro: 'Ce deck est conçu pour la mémorisation longue durée avec répétition espacée. Vous gardez un rythme stable sans surcharge et suivez votre progression carte par carte.',
+    audienceTitle: 'Pour qui ?',
+    audience: [
+      'Apprenants qui veulent automatiser le vocabulaire',
+      'Utilisateurs d’Anki desktop et mobile',
+      'Étudiants qui veulent un réservoir de révision quotidien',
+    ],
+    roadmapTitle: 'Routine recommandée',
+    roadmap: [
+      'Fixer une limite quotidienne de nouvelles cartes',
+      'Ne jamais sauter la révision du jour',
+      'Augmenter progressivement le volume selon votre charge',
+    ],
+    faq: [
+      {
+        question: 'Le deck fonctionne-t-il sur mobile ?',
+        answer: 'Oui, il est compatible Anki Desktop, AnkiDroid et AnkiMobile.',
+      },
+      {
+        question: 'Y a-t-il de l’audio ?',
+        answer: 'Oui, l’audio est inclus pour guider la prononciation.',
+      },
+    ],
+  },
+};
+
+const detailContent = detailByType[product.type];
+const relatedProducts = allProducts
+  .filter((candidate) => candidate.id !== product.id && candidate.type === product.type)
+  .slice(0, 3);
+
+const levelOptions = product.levels ?? [];
+const requiresLevelSelection = new Set(['vocabulary-one-hsk', 'writing-one-hsk', 'vocabulary-writing-one-hsk']).has(product.id);
+
+const defaultLevel = !requiresLevelSelection && levelOptions.length > 0 ? levelOptions[0] : '';
+const checkoutBase = buildCheckoutLink(product.id);
+
+const formatPrice = (value: number) =>
+  new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: product.currency,
+    minimumFractionDigits: 2,
+  }).format(value);
+---
+
+<BaseLayout title={`${product.name} - XiaoLearn Shop`} description={product.longDescription || product.description}>
+  <section class="product-hero">
+    <div class="container">
+      <a href="/produits" class="breadcrumb">← Tous les produits</a>
+      <div class="hero-meta">
+        <span class="badge badge-accent">{typeEmojis[product.type]} {typeLabels[product.type]}</span>
+        {product.badge && <span class="badge badge-secondary">{product.badge}</span>}
+      </div>
+      <h1>{product.name}</h1>
+      <p>{product.longDescription || product.description}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container product-layout">
+      <div class="product-main">
+        <div class="cover-card">
+          {product.image ? (
+            <img src={product.image} alt={product.name} loading="lazy" />
+          ) : (
+            <div class="cover-placeholder">
+              <span>{typeEmojis[product.type]}</span>
+              <p>{product.name}</p>
+            </div>
+          )}
+        </div>
+
+        <div class="panel">
+          <h2>Pourquoi ce produit</h2>
+          <p>{detailContent.intro}</p>
+          <p>{product.description}</p>
+        </div>
+
+        <div class="panel">
+          <h2>Ce que vous recevez</h2>
+          <ul class="feature-list">
+            {(product.features || []).map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+        </div>
+
+        {levelOptions.length > 0 && (
+          <div class="panel">
+            <h2>Niveaux disponibles</h2>
+            <div class="levels-grid">
+              {levelOptions.map((level) => (
+                <span>{level}</span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="panel split-panel">
+          <div>
+            <h2>{detailContent.audienceTitle}</h2>
+            <ul class="feature-list">
+              {detailContent.audience.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2>{detailContent.roadmapTitle}</h2>
+            <ol class="roadmap-list">
+              {detailContent.roadmap.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Questions fréquentes</h2>
+          <div class="faq-list">
+            {detailContent.faq.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <aside class="purchase-column">
+        <div class="purchase-card">
+          <h3>Commander</h3>
+          <p class="purchase-name">{product.name}</p>
+
+          <div class="price-row">
+            {product.originalPrice && (
+              <span class="original-price">{formatPrice(product.originalPrice)}</span>
+            )}
+            <span class="current-price">{formatPrice(product.price)}</span>
+            {product.interval && (
+              <span class="price-interval">/{product.interval === 'month' ? 'mois' : 'an'}</span>
+            )}
+          </div>
+
+          {levelOptions.length > 0 && (
+            <label class="level-picker">
+              <span>Choisir un niveau</span>
+              <select id="level-select" data-required={String(requiresLevelSelection)}>
+                {requiresLevelSelection && <option value="">Sélectionnez un niveau</option>}
+                {levelOptions.map((level) => (
+                  <option value={level} selected={level === defaultLevel}>{level}</option>
+                ))}
+              </select>
+            </label>
+          )}
+
+          <a
+            id="checkout-link"
+            href={checkoutBase}
+            class:list={['btn', 'btn-primary', 'buy-btn', { disabled: requiresLevelSelection && !defaultLevel }]}
+            data-base={checkoutBase}
+            data-product-id={product.id}
+          >
+            Acheter maintenant
+            <span class="arrow">→</span>
+          </a>
+
+          <p class="purchase-note">
+            Paiement sécurisé via Stripe. Accès immédiat après confirmation.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {relatedProducts.length > 0 && (
+    <section class="section related-section">
+      <div class="container">
+        <h2>Produits similaires</h2>
+        <div class="related-grid">
+          {relatedProducts.map((item) => (
+            <a href={buildProductPageLink(item.id)} class="related-card">
+              <span class="badge badge-secondary">{typeLabels[item.type]}</span>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <span class="price">{formatPrice(item.price)}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script is:inline>
+    (() => {
+      const checkoutLink = document.getElementById('checkout-link');
+      if (!(checkoutLink instanceof HTMLAnchorElement)) return;
+
+      const levelSelect = document.getElementById('level-select');
+      if (!(levelSelect instanceof HTMLSelectElement)) return;
+
+      const updateLink = () => {
+        const url = new URL(checkoutLink.dataset.base || checkoutLink.href);
+        const selectedLevel = levelSelect.value.trim();
+        const required = levelSelect.dataset.required === 'true';
+
+        if (selectedLevel) {
+          url.searchParams.set('level', selectedLevel);
+        } else {
+          url.searchParams.delete('level');
+        }
+
+        const locked = required && !selectedLevel;
+        checkoutLink.classList.toggle('disabled', locked);
+        checkoutLink.setAttribute('aria-disabled', locked ? 'true' : 'false');
+        checkoutLink.href = url.toString();
+      };
+
+      levelSelect.addEventListener('change', updateLink);
+      updateLink();
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .product-hero {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.16), rgba(240, 183, 98, 0.2));
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .breadcrumb {
+    display: inline-flex;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .product-hero h1 {
+    margin-bottom: var(--spacing-sm);
+    max-width: 900px;
+  }
+
+  .product-hero p {
+    max-width: 760px;
+    font-size: 1.08rem;
+  }
+
+  .product-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .product-main {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .cover-card,
+  .panel,
+  .purchase-card,
+  .related-card {
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .cover-card {
+    overflow: hidden;
+  }
+
+  .cover-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .cover-placeholder {
+    min-height: 260px;
+    display: grid;
+    place-content: center;
+    gap: var(--spacing-sm);
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-red-light), var(--bg-accent));
+  }
+
+  .cover-placeholder span {
+    font-size: 3rem;
+  }
+
+  .panel {
+    padding: var(--spacing-xl);
+  }
+
+  .panel h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+
+  .feature-list li::before {
+    content: '✓';
+    color: var(--jade-green);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .levels-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .levels-grid span {
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.85rem;
+  }
+
+  .split-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .roadmap-list {
+    padding-left: 1.2rem;
+    color: var(--text-secondary);
+    display: grid;
+    gap: var(--spacing-sm);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: var(--spacing-sm);
+  }
+
+  .faq-list details {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: var(--spacing-md);
+  }
+
+  .faq-list p {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    font-size: 0.95rem;
+  }
+
+  .purchase-column {
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-md));
+  }
+
+  .purchase-card {
+    padding: var(--spacing-xl);
+  }
+
+  .purchase-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .purchase-name {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .original-price {
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+  }
+
+  .current-price {
+    color: var(--primary-red);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .price-interval {
+    color: var(--text-secondary);
+  }
+
+  .level-picker {
+    display: grid;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .level-picker span {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  .level-picker select {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+  }
+
+  .buy-btn {
+    width: 100%;
+  }
+
+  .buy-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .purchase-note {
+    margin-top: var(--spacing-sm);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  .related-section {
+    padding-top: 0;
+  }
+
+  .related-section h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .related-card {
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .related-card h3 {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.05rem;
+  }
+
+  .related-card p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .related-card .price {
+    font-weight: 700;
+    color: var(--primary-red);
+  }
+
+  @media (max-width: 1024px) {
+    .product-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .purchase-column {
+      position: static;
+    }
+
+    .split-panel {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

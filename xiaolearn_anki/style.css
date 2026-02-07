@@ -1,0 +1,612 @@
+/* ==========================================
+   🎨 CSS COMPLET - 3 TYPES DE CARTES ANKI
+   Version Canvas Multiples Carrés Séparés
+   ========================================== */
+
+:root {
+  --vocab-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --grammar-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --recog-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --pinyin-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* ========== STYLES COMMUNS ========== */
+
+.card-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== STYLES PAR TYPE DE CARTE ========== */
+
+.recog-card {
+  background: var(--recog-gradient);
+}
+
+.prod-card.vocab-card {
+  background: var(--vocab-gradient);
+}
+
+.prod-card.grammar-card {
+  background: var(--grammar-gradient);
+}
+
+.pinyin-card {
+  background: var(--pinyin-gradient);
+}
+
+/* ========== BADGE HSK ========== */
+
+.hsk-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.vocab-card .hsk-badge { color: #11998e; }
+.grammar-card .hsk-badge { color: #f5576c; }
+.recog-card .hsk-badge { color: #667eea; }
+.pinyin-card .hsk-badge { color: #fa709a; }
+
+/* ========== INDICATEUR DE TYPE ========== */
+
+.type-indicator {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.recog-type { color: #667eea; }
+.vocab-card .prod-type { color: #11998e; }
+.grammar-card .prod-type { color: #f5576c; }
+.pinyin-type { color: #fa709a; }
+
+/* ========== CARACTÈRES CHINOIS ========== */
+
+.chinese-main {
+  font-size: 120px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  margin: 60px 0 30px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Noto Sans SC', 'SimSun', sans-serif;
+  letter-spacing: 5px;
+}
+
+.chinese-answer {
+  font-size: 80px;
+  font-weight: 300;
+  text-align: center;
+  color: #2c3e50;
+  font-family: 'Noto Sans SC', 'SimSun', sans-serif;
+  margin: 10px 0;
+  letter-spacing: 5px;
+}
+
+/* ========== PINYIN ========== */
+
+.pinyin-hint {
+  font-size: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.pinyin-answer {
+  font-size: 28px;
+  text-align: center;
+  color: #7f8c8d;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+.pinyin-main {
+  font-size: 80px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  margin: 60px 0 30px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;
+}
+
+/* ========== MEANING ========== */
+
+.meaning-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.meaning-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid;
+}
+
+.recog-card .meaning-title { color: #667eea; border-color: #667eea; }
+.vocab-card .meaning-title { color: #11998e; border-color: #11998e; }
+.grammar-card .meaning-title { color: #f5576c; border-color: #f5576c; }
+.pinyin-card .meaning-title { color: #fa709a; border-color: #fa709a; }
+
+.meaning-content {
+  font-size: 28px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.meaning-question {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  margin: 40px 0 30px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.meaning-reminder {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+/* ========== QUESTION PROMPT ========== */
+
+.question-prompt {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 30px 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ========== HINT SECTION ========== */
+
+.hint-section {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 300px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.hint-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+}
+
+.hint-content {
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+}
+
+/* ========== EXAMPLES ========== */
+
+.examples-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.examples-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid;
+}
+
+.recog-card .examples-title { color: #667eea; border-color: #667eea; }
+.vocab-card .examples-title { color: #11998e; border-color: #11998e; }
+.grammar-card .examples-title { color: #f5576c; border-color: #f5576c; }
+.pinyin-card .examples-title { color: #fa709a; border-color: #fa709a; }
+
+.examples-content {
+  font-size: 16px;
+  line-height: 2;
+  color: #2c3e50;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+/* ==========================================
+   🎨 CANVAS MULTIPLES - SECTION CRITIQUE
+   ========================================== */
+
+/* ========== CONTENEUR GRILLE ========== */
+
+.canvas-grid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px auto;
+  max-width: 650px;
+  width: 100%;
+}
+
+/* ========== CANVAS ITEMS - DIMENSIONS EXPLICITES ========== */
+
+/* 1 caractère : 1 carré 300×300px CENTRÉ */
+.canvas-grid-1 {
+  justify-content: center;
+  width: 100%;
+}
+
+.canvas-grid-1 .canvas-item {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* 2 caractères : 2 carrés 150×150px */
+.canvas-grid-2 {
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.canvas-grid-2 .canvas-item {
+  width: 150px;
+  height: 150px;
+}
+
+/* 3 caractères : 3 carrés 100×100px */
+.canvas-grid-3 {
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.canvas-grid-3 .canvas-item {
+  width: 100px;
+  height: 100px;
+}
+
+/* 4 caractères : 4 carrés 150×150px en grille 2×2 */
+.canvas-grid-4 {
+  justify-content: center;
+  max-width: 330px; /* 150 + 15 gap + 150 + marges */
+  margin: 30px auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.canvas-grid-4 .canvas-item {
+  width: 150px;
+  height: 150px;
+}
+
+/* ========== ITEM CANVAS - STRUCTURE ========== */
+
+.canvas-item {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  flex-shrink: 0; /* Empêche le rétrécissement */
+}
+
+.canvas-item canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+  z-index: 3;
+}
+
+/* ========== GRILLE SUR CHAQUE CANVAS ========== */
+
+.canvas-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background-image: 
+    /* Croix centrale */
+    linear-gradient(rgba(100, 100, 100, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 100, 100, 0.3) 1px, transparent 1px),
+    /* Petite grille */
+    linear-gradient(rgba(200, 200, 200, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 200, 200, 0.2) 1px, transparent 1px);
+  background-size: 
+    100% 100%,
+    100% 100%,
+    20px 20px,
+    20px 20px;
+  background-position: 
+    50% 50%,
+    50% 50%,
+    0 0,
+    0 0;
+}
+
+/* ========== GUIDE DU CARACTÈRE (VERSO) ========== */
+
+.char-guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans SC', 'SimSun', sans-serif;
+  color: #2c3e50;
+  opacity: 0.15;
+  font-weight: 300;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ========== CONTRÔLES DU CANVAS ========== */
+
+.canvas-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.canvas-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.canvas-controls button:active {
+  transform: translateY(0);
+}
+
+.btn-clear {
+  background: rgba(231, 76, 60, 0.2) !important;
+  border-color: rgba(231, 76, 60, 0.4) !important;
+}
+
+.btn-clear:hover {
+  background: rgba(231, 76, 60, 0.3) !important;
+}
+
+.btn-undo {
+  background: rgba(52, 152, 219, 0.2) !important;
+  border-color: rgba(52, 152, 219, 0.4) !important;
+}
+
+.btn-undo:hover {
+  background: rgba(52, 152, 219, 0.3) !important;
+}
+
+/* ========== SECTION RÉPONSE ========== */
+
+.comparison-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.correct-answer-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.correct-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vocab-card .correct-label { color: #11998e; }
+.grammar-card .correct-label { color: #f5576c; }
+
+/* ========== TAGS ========== */
+
+.tags {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin: 10px 0;
+  backdrop-filter: blur(10px);
+}
+
+/* ========== PROGRESS BAR ========== */
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 75%;
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 10px;
+  animation: progress-grow 1s ease-out;
+}
+
+@keyframes progress-grow {
+  from { width: 0%; }
+  to { width: 75%; }
+}
+
+/* ========== MOTIVATION TEXT ========== */
+
+.motivation-text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+/* ========== FOOTER ========== */
+
+.card-footer {
+  margin-top: 30px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 600px) {
+  .card-container {
+    padding: 30px 20px;
+  }
+  
+  .chinese-main {
+    font-size: 80px;
+  }
+  
+  .chinese-answer {
+    font-size: 60px;
+  }
+  
+  .pinyin-main {
+    font-size: 60px;
+  }
+  
+  .meaning-question {
+    font-size: 36px;
+  }
+  
+  /* Canvas responsive */
+  .canvas-grid-1 {
+    width: 100%;
+  }
+  
+  .canvas-grid-1 .canvas-item {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+  }
+  
+  .canvas-grid-2 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .canvas-grid-2 .canvas-item {
+    width: 135px;
+    height: 135px;
+  }
+  
+  .canvas-grid-3 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .canvas-grid-3 .canvas-item {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .canvas-grid-4 {
+    max-width: 290px;
+    margin: 30px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .canvas-grid-4 .canvas-item {
+    width: 135px;
+    height: 135px;
+  }
+  
+  .canvas-controls button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}

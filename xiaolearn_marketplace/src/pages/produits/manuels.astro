@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { pdfs } from '../../data/products';
+---
+
+<BaseLayout title="Manuels PDF - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">📄 Manuels PDF</span>
+      <h1>Ressources d'étude imprimables</h1>
+      <p>Des guides complets pour étudier le chinois hors ligne et préparer vos examens HSK</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        {pdfs.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantages -->
+  <section class="section benefits-section">
+    <div class="container">
+      <h2 class="text-center">Pourquoi choisir nos manuels ?</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">🎨</div>
+          <h3>Illustrations mnémotechniques</h3>
+          <p>Chaque caractère est associé à une image mémorable pour faciliter la mémorisation à long terme.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📝</div>
+          <h3>Ordre des traits</h3>
+          <p>Apprenez à écrire correctement chaque caractère avec les diagrammes d'ordre des traits.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🖨️</div>
+          <h3>Format imprimable</h3>
+          <p>PDFs optimisés pour l'impression, étudiez partout sans écran.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📱</div>
+          <h3>QR codes audio</h3>
+          <p>Scannez les QR codes pour écouter la prononciation native des caractères.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Besoin de l'application complète ?</h2>
+        <p>Combinez nos manuels avec l'abonnement XiaoLearn pour une expérience d'apprentissage optimale.</p>
+        <a href="/produits/abonnements" class="btn btn-primary btn-lg">
+          Voir les abonnements
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(47, 157, 138, 0.1), rgba(240, 183, 98, 0.1));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+  }
+
+  .page-badge {
+    display: inline-block;
+    background: var(--jade-green-light);
+    color: var(--jade-green);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .benefits-section {
+    background: var(--bg-secondary);
+  }
+
+  .benefits-section h2 {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .benefit {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .benefit h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .benefit p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, var(--jade-green), var(--gold-accent));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--text-inverse);
+  }
+
+  .cta-box h2 {
+    color: var(--text-inverse);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-box .btn-primary {
+    background: var(--text-inverse);
+    color: var(--jade-green);
+  }
+</style>

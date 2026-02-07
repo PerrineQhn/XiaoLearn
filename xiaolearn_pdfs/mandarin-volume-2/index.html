@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mandarin Volume 2 – Dictionnaire</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const app = document.getElementById("app");
+    let pageNo = 0;
+
+    function createPage({ showNumber = true } = {}) {
+      const page = document.createElement("section");
+      page.className = "page";
+      const inner = document.createElement("div");
+      inner.className = "page-inner";
+      page.appendChild(inner);
+
+      if (showNumber) {
+        const pn = document.createElement("div");
+        pn.className = "pagenum";
+        page.appendChild(pn);
+      }
+      return { page, inner };
+    }
+
+    function mountPage({ page, inner }, showNumber = true) {
+      pageNo += 1;
+      if (showNumber) {
+        const pn = page.querySelector(".pagenum");
+        if (pn) pn.textContent = String(pageNo);
+      }
+      app.appendChild(page);
+    }
+
+    function h(tag, className, text) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (text != null) el.textContent = text;
+      return el;
+    }
+
+    function parseExampleText(value) {
+      let text = String(value || "").trim();
+      if (text.includes("→")) {
+        text = text.split("→").slice(-1)[0].trim();
+      }
+      const match = text.match(/^(.+?)\s*\(([^()]*)\)\s*(?:\(([^()]*)\))?\s*$/);
+      if (!match) return { zh: text, pinyin: "", fr: "" };
+      const zh = match[1].trim();
+      const mid = (match[2] || "").trim();
+      const last = (match[3] || "").trim();
+      if (last) return { zh, pinyin: mid, fr: last };
+      const isPinyin = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜa-z]/i.test(mid) && !/[\u4e00-\u9fff]/.test(mid);
+      return { zh, pinyin: isPinyin ? mid : "", fr: isPinyin ? "" : mid };
+    }
+
+    function addTopbar(inner, dayLabel, zh, fr) {
+      const bar = document.createElement("div");
+      bar.className = "topbar";
+      const left = document.createElement("div");
+      left.className = "left";
+      left.textContent = dayLabel;
+
+      const right = document.createElement("div");
+      right.className = "right";
+
+      const zhEl = document.createElement("div");
+      zhEl.className = "zh";
+      zhEl.textContent = zh;
+
+      const frEl = document.createElement("div");
+      frEl.className = "fr";
+      frEl.textContent = fr;
+
+      right.appendChild(zhEl);
+      right.appendChild(frEl);
+
+      bar.appendChild(left);
+      bar.appendChild(right);
+
+      inner.appendChild(bar);
+    }
+
+    function chunk(arr, size) {
+      const out = [];
+      for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+      return out;
+    }
+
+    function renderCover(data) {
+      const { page, inner } = createPage({ showNumber: false });
+      page.classList.add("page-cover");
+      inner.classList.add("page-inner-cover");
+      const fm = data.frontMatter || {};
+      const meta = data.meta || {};
+
+      const wrap = document.createElement("div");
+      wrap.className = "cover cover-dictionary";
+
+      const top = document.createElement("div");
+      top.className = "cover-top";
+
+      const zh = document.createElement("div");
+      zh.className = "cover-title-zh";
+      zh.textContent = meta.titleZh || "中文视觉词典";
+      top.appendChild(zh);
+
+      const fr = document.createElement("div");
+      fr.className = "cover-title-fr";
+      fr.textContent = fm.coverTitleFr || meta.titleFr || "Dictionnaire visuel – Mandarin";
+      top.appendChild(fr);
+
+      if (fm.coverSubtitleFr) {
+        const sub = document.createElement("div");
+        sub.className = "cover-subtitle-fr";
+        sub.textContent = fm.coverSubtitleFr;
+        top.appendChild(sub);
+      }
+
+      const vol = document.createElement("div");
+      vol.className = "cover-volume";
+      vol.textContent = `VOLUME ${meta.volume || "02"}`;
+      top.appendChild(vol);
+
+      const bottom = document.createElement("div");
+      bottom.className = "cover-content";
+      const brand = document.createElement("div");
+      brand.className = "brand";
+      brand.textContent = "XiaoLearn";
+      bottom.appendChild(brand);
+
+      const badgeList = Array.isArray(fm.badges)
+        ? fm.badges
+        : fm.badge
+          ? [fm.badge]
+          : [];
+
+      if (badgeList.length) {
+        const badges = document.createElement("div");
+        badges.className = "meta";
+        badgeList.forEach(b => {
+          const badge = document.createElement("span");
+          badge.className = "badge";
+          badge.textContent = b;
+          badges.appendChild(badge);
+        });
+        bottom.appendChild(badges);
+      }
+
+      wrap.appendChild(top);
+      wrap.appendChild(bottom);
+
+      inner.appendChild(wrap);
+      mountPage({ page, inner }, false);
+    }
+
+    function renderTextSection(section) {
+      if (!section) return;
+      const { page, inner } = createPage();
+      if (section.id) page.id = `section-${section.id}`;
+      inner.appendChild(h("div", "h1", section.titleFr));
+      inner.appendChild(h("div", "small", section.titleZh || ""));
+
+      if (section.introFr) {
+        inner.appendChild(h("p", "p", section.introFr));
+      }
+
+      inner.appendChild(h("hr", "sep"));
+      (section.paragraphsFr || []).forEach(p => inner.appendChild(h("p", "p", p)));
+
+      if (section.callout) {
+        const c = document.createElement("div");
+        c.className = "callout";
+        c.appendChild(h("div", "title", section.callout.titleFr));
+        const ul = document.createElement("ul");
+        ul.className = "clean";
+        (section.callout.bulletsFr || []).forEach(b => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          ul.appendChild(li);
+        });
+        c.appendChild(ul);
+        inner.appendChild(c);
+      }
+
+      mountPage({ page, inner }, true);
+    }
+
+    function renderReferenceTable(section) {
+      const { page, inner } = createPage();
+      if (section.id) page.id = `section-${section.id}`;
+      inner.appendChild(h("div", "h1", section.titleFr));
+      inner.appendChild(h("div", "small", section.titleZh || ""));
+
+      const layout = document.createElement("div");
+      layout.className = "ref-layout";
+
+      if (section.introFr) {
+        const lead = document.createElement("div");
+        lead.className = "ref-lead";
+        lead.appendChild(h("div", "ref-title", "En bref"));
+        lead.appendChild(h("p", "p", section.introFr));
+        layout.appendChild(lead);
+      }
+
+      const hasCallout = section.callout && (section.callout.bulletsFr || []).length;
+      if (hasCallout) {
+        const explain = document.createElement("div");
+        explain.className = "ref-explain";
+        explain.appendChild(h("div", "ref-title", section.callout.titleFr || "À retenir"));
+        const ul = document.createElement("ul");
+        ul.className = "clean";
+        (section.callout.bulletsFr || []).forEach(b => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          ul.appendChild(li);
+        });
+        explain.appendChild(ul);
+        layout.appendChild(explain);
+      } else {
+        layout.classList.add("no-explain");
+      }
+
+      if (section.examples && section.examples.length) {
+        const ex = document.createElement("div");
+        ex.className = "ref-examples";
+        ex.appendChild(h("div", "ref-title", "Exemples"));
+        const grid = document.createElement("div");
+        grid.className = "examples-grid";
+        const maxExamples = 6;
+        const shown = section.examples.slice(0, maxExamples);
+        shown.forEach(item => {
+          const { zh, pinyin, fr } = parseExampleText(item);
+          const card = document.createElement("div");
+          card.className = "example-card";
+          card.appendChild(h("div", "example-zh", zh));
+          if (pinyin) card.appendChild(h("div", "example-pinyin", pinyin));
+          if (fr) card.appendChild(h("div", "example-fr", fr));
+          grid.appendChild(card);
+        });
+        ex.appendChild(grid);
+        layout.appendChild(ex);
+      }
+
+      const tableWrap = document.createElement("div");
+      tableWrap.className = "ref-table-wrap";
+      tableWrap.appendChild(h("div", "ref-title", "Vocabulaire clé"));
+
+      const table = document.createElement("table");
+      table.className = "table ref-table";
+
+      const thead = document.createElement("thead");
+      const trh = document.createElement("tr");
+      (section.columns || []).forEach(col => {
+        const th = document.createElement("th");
+        th.textContent = col;
+        trh.appendChild(th);
+      });
+      thead.appendChild(trh);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      (section.rows || []).forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      tableWrap.appendChild(table);
+      layout.appendChild(tableWrap);
+
+      inner.appendChild(layout);
+
+      mountPage({ page, inner }, true);
+    }
+
+    function renderSommaire(data) {
+      const { page, inner } = createPage();
+      const toc = document.createElement("div");
+      toc.className = "toc";
+
+      const title = document.createElement("div");
+      title.className = "toc-title";
+      title.textContent = "Sommaire — Références";
+      toc.appendChild(title);
+
+      const subtitle = document.createElement("div");
+      subtitle.className = "toc-subtitle";
+      subtitle.textContent = "Sections de base avant le vocabulaire.";
+      toc.appendChild(subtitle);
+
+      const group = document.createElement("div");
+      group.className = "toc-group";
+      const groupTitle = document.createElement("div");
+      groupTitle.className = "toc-group-title";
+      groupTitle.textContent = "Références";
+      group.appendChild(groupTitle);
+
+      const list = document.createElement("ul");
+      list.className = "toc-list";
+      (data.sections || []).forEach(s => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = s.id ? `#section-${s.id}` : "#";
+
+        if (s.titleZh) {
+          const zh = document.createElement("span");
+          zh.className = "toc-lesson-zh";
+          zh.textContent = s.titleZh;
+          link.appendChild(zh);
+        }
+
+        const fr = document.createElement("span");
+        fr.className = "toc-text";
+        fr.textContent = s.titleFr;
+        link.appendChild(fr);
+
+        li.appendChild(link);
+        list.appendChild(li);
+      });
+      group.appendChild(list);
+      toc.appendChild(group);
+
+      inner.appendChild(toc);
+      mountPage({ page, inner }, true);
+
+      const { page: vocabPage, inner: vocabInner } = createPage();
+      const vocabToc = document.createElement("div");
+      vocabToc.className = "toc";
+
+      const vocabTitle = document.createElement("div");
+      vocabTitle.className = "toc-title";
+      vocabTitle.textContent = "Sommaire — Vocabulaire";
+      vocabToc.appendChild(vocabTitle);
+
+      const vocabSubtitle = document.createElement("div");
+      vocabSubtitle.className = "toc-subtitle";
+      vocabSubtitle.textContent = "25 jours thématiques.";
+      vocabToc.appendChild(vocabSubtitle);
+
+      const vocabGroup = document.createElement("div");
+      vocabGroup.className = "toc-group-title toc-group-title-centered";
+      vocabGroup.textContent = "Vocabulaire — 25 jours";
+      vocabToc.appendChild(vocabGroup);
+
+      const grid = document.createElement("div");
+      grid.className = "toc-days-grid";
+      (data.days || []).forEach(d => {
+        const card = document.createElement("a");
+        card.className = "toc-day-card";
+        card.href = `#day-${d.day}`;
+
+        const num = document.createElement("div");
+        num.className = "toc-day-num";
+        num.textContent = `Jour ${d.day}`;
+        card.appendChild(num);
+
+        if (d.themeZh) {
+          const zh = document.createElement("div");
+          zh.className = "toc-zh";
+          zh.textContent = d.themeZh;
+          card.appendChild(zh);
+        }
+
+        const fr = document.createElement("div");
+        fr.className = "toc-text";
+        fr.textContent = d.themeFr;
+        card.appendChild(fr);
+
+        grid.appendChild(card);
+      });
+      vocabToc.appendChild(grid);
+
+      vocabInner.appendChild(vocabToc);
+      mountPage({ page: vocabPage, inner: vocabInner }, true);
+    }
+
+    function renderDayDivider(day) {
+      const { page, inner } = createPage();
+      page.id = `day-${day.day}`;
+      const wrap = document.createElement("div");
+      wrap.className = "day-divider";
+
+      const circle = document.createElement("div");
+      circle.className = "circle";
+      const n = document.createElement("div");
+      n.className = "day";
+      n.textContent = String(day.day);
+      circle.appendChild(n);
+
+      const theme = document.createElement("div");
+      theme.className = "theme";
+      const zh = document.createElement("div");
+      zh.textContent = day.themeZh;
+      const fr = document.createElement("div");
+      fr.className = "fr";
+      fr.textContent = day.themeFr;
+      theme.appendChild(zh);
+      theme.appendChild(fr);
+
+      wrap.appendChild(circle);
+      wrap.appendChild(theme);
+      inner.appendChild(wrap);
+
+      mountPage({ page, inner }, true);
+    }
+
+    function renderVocabTablePage(dayLabel, day, rows) {
+      const { page, inner } = createPage();
+      addTopbar(inner, dayLabel, day.themeZh, day.themeFr);
+
+      const table = document.createElement("table");
+      table.className = "table";
+
+      const thead = document.createElement("thead");
+      const trh = document.createElement("tr");
+      ["#", "Mot (汉字)", "Pinyin", "Définition (FR)"].forEach(col => {
+        const th = document.createElement("th");
+        th.textContent = col;
+        trh.appendChild(th);
+      });
+      thead.appendChild(trh);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      rows.forEach((it) => {
+        const tr = document.createElement("tr");
+
+        const td0 = document.createElement("td");
+        td0.textContent = String(it._index);
+        tr.appendChild(td0);
+
+        const td1 = document.createElement("td");
+        const han = document.createElement("div");
+        han.className = "hanzi";
+        han.textContent = it.hanzi;
+        td1.appendChild(han);
+        tr.appendChild(td1);
+
+        const td2 = document.createElement("td");
+        const py = document.createElement("div");
+        py.className = "pinyin";
+        py.textContent = it.pinyin;
+        td2.appendChild(py);
+        tr.appendChild(td2);
+
+        const td3 = document.createElement("td");
+        const head = document.createElement("div");
+        const pos = document.createElement("span");
+        pos.className = "pos";
+        pos.textContent = it.pos || "";
+        const fr = document.createElement("span");
+        fr.textContent = it.fr || "";
+        head.appendChild(pos);
+        head.appendChild(fr);
+        td3.appendChild(head);
+
+        if (it.note) {
+          const note = document.createElement("div");
+          note.className = "note";
+          note.textContent = "Note : " + it.note;
+          td3.appendChild(note);
+        }
+
+        tr.appendChild(td3);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      inner.appendChild(table);
+
+      mountPage({ page, inner }, true);
+    }
+
+    async function main() {
+      const res = await fetch("./content.json");
+      const data = await res.json();
+
+      renderCover(data);
+      renderTextSection(data.sections.find(s => s.id === "avant"));
+      renderTextSection(data.sections.find(s => s.id === "intro"));
+      renderSommaire(data);
+
+      for (const s of data.sections) {
+        if (["avant", "intro"].includes(s.id)) continue;
+        if (s.type === "referenceTable") renderReferenceTable(s);
+        if (s.type === "text") renderTextSection(s);
+      }
+
+      const rowsPerPage = 14;
+      for (const day of data.days) {
+        renderDayDivider(day);
+
+        const vocab = (day.vocab || []).map((v, i) => ({...v, _index: i + 1}));
+        const pages = chunk(vocab, rowsPerPage);
+
+        pages.forEach((rows) => {
+          const label = "JOUR " + day.day;
+          renderVocabTablePage(label, day, rows);
+        });
+      }
+    }
+
+    main().catch(err => {
+      console.error(err);
+      const { page, inner } = createPage();
+      inner.appendChild(h("div", "h1", "Erreur de chargement"));
+      inner.appendChild(h("p", "p", "Impossible de charger content.json. Lance un serveur local : python3 -m http.server"));
+      inner.appendChild(h("p", "small", String(err)));
+      mountPage({ page, inner }, true);
+    });
+  </script>
+</body>
+</html>

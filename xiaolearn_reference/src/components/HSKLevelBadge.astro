@@ -1,0 +1,45 @@
+---
+import { getHSKLevelInfo, type HSKLevel } from '../types/hsk';
+
+interface Props {
+  level: HSKLevel | string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { level, size = 'md' } = Astro.props;
+const levelInfo = getHSKLevelInfo(level);
+const levelNum = typeof level === 'string' ? level.replace('hsk', '') : level;
+---
+
+<span
+  class:list={['hsk-badge', `hsk-badge-${size}`, `badge-hsk${levelNum}`]}
+>
+  HSK {levelNum}
+</span>
+
+<style>
+  .hsk-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hsk-badge-sm {
+    padding: var(--spacing-xxs) var(--spacing-sm);
+    font-size: 0.7rem;
+  }
+
+  .hsk-badge-md {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.75rem;
+  }
+
+  .hsk-badge-lg {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.85rem;
+  }
+</style>

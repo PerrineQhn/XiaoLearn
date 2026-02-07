@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
+import type { HSKEntry } from '../../types/hsk';
+import { getHSKLevelInfo } from '../../types/hsk';
+
+import hsk1Data from '../../data/hsk1.json';
+import hsk2Data from '../../data/hsk2.json';
+import hsk3Data from '../../data/hsk3.json';
+import hsk4Data from '../../data/hsk4.json';
+
+export function getStaticPaths() {
+  const allEntries: HSKEntry[] = [
+    ...hsk1Data as HSKEntry[],
+    ...hsk2Data as HSKEntry[],
+    ...hsk3Data as HSKEntry[],
+    ...hsk4Data as HSKEntry[],
+  ];
+
+  return allEntries.map(entry => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: HSKEntry;
+}
+
+const { entry } = Astro.props;
+const levelInfo = getHSKLevelInfo(entry.level);
+---
+
+<BaseLayout
+  title={`${entry.hanzi} (${entry.pinyin}) - ${entry.translationFr}`}
+  description={`Définition et exemples pour ${entry.hanzi} (${entry.pinyin}): ${entry.translationFr}. Niveau ${entry.level.toUpperCase()}.`}
+>
+  <section class="page-header" style={`--level-color: ${levelInfo?.color}; --level-bg: ${levelInfo?.bgColor}`}>
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Dictionnaire', href: '/dictionnaire' },
+        { label: levelInfo?.name || '', href: `/dictionnaire/${entry.level}` },
+        { label: entry.hanzi }
+      ]} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="word-layout">
+        <!-- Main Content -->
+        <article class="word-main">
+          <header class="word-header">
+            <div class="word-title">
+              <h1 class="hanzi">{entry.hanzi}</h1>
+              <HSKLevelBadge level={entry.level} size="lg" />
+            </div>
+            <p class="pinyin">{entry.pinyin}</p>
+            <p class="translation">{entry.translationFr}</p>
+          </header>
+
+          {entry.translationFrAlt && entry.translationFrAlt.length > 0 && (
+            <div class="alt-translations">
+              <h3>Autrès traductions</h3>
+              <ul>
+                {entry.translationFrAlt.map(alt => (
+                  <li>{alt}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {entry.explanationFr && (
+            <div class="explanation">
+              <h3>Explication</h3>
+              <p>{entry.explanationFr}</p>
+            </div>
+          )}
+
+          {entry.examples && entry.examples.length > 0 && (
+            <div class="examples">
+              <h3>Exemples</h3>
+              {entry.examples.map(example => (
+                <div class="example">
+                  <p class="example-chinese">{example.chinese}</p>
+                  <p class="example-pinyin">{example.pinyin}</p>
+                  <p class="example-translation">{example.translation}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="word-sidebar">
+          <div class="info-card">
+            <h4>Informations</h4>
+            <dl>
+              <dt>Niveau</dt>
+              <dd><HSKLevelBadge level={entry.level} size="sm" /></dd>
+
+              <dt>Catégorie</dt>
+              <dd class="capitalize">{entry.category}</dd>
+
+              {entry.theme && (
+                <>
+                  <dt>Thème</dt>
+                  <dd class="capitalize">{entry.theme}</dd>
+                </>
+              )}
+            </dl>
+          </div>
+
+          {entry.tags && entry.tags.length > 0 && (
+            <div class="tags-card">
+              <h4>Tags</h4>
+              <div class="tags">
+                {entry.tags.filter(t => !t.startsWith('level:')).map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="nav-card">
+            <a href={`/dictionnaire/${entry.level}`} class="btn btn-secondary btn-sm">
+              ← Retour à {levelInfo?.name}
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--level-bg), var(--bg-secondary));
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .word-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .word-main {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .word-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .word-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hanzi {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .pinyin {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .translation {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .word-main h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .alt-translations,
+  .explanation,
+  .examples {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .alt-translations ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .alt-translations li {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-accent);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .explanation p {
+    line-height: 1.7;
+  }
+
+  .example {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid var(--jade-green);
+  }
+
+  .example-chinese {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .example-pinyin {
+    font-style: italic;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .example-translation {
+    color: var(--text-secondary);
+  }
+
+  /* Sidebar */
+  .word-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .info-card,
+  .tags-card,
+  .nav-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .info-card h4,
+  .tags-card h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-sm) var(--spacing-md);
+    align-items: center;
+  }
+
+  .info-card dt {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  .info-card dd {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .tag {
+    padding: var(--spacing-xxs) var(--spacing-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .word-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .word-sidebar {
+      order: -1;
+    }
+
+    .hanzi {
+      font-size: 3rem;
+    }
+  }
+</style>

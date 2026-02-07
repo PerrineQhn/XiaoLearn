@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Fete du Printemps</title>
+  <desc id="desc">Illustration festive rouge et or pour le Nouvel An chinois.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff4ec"/>
+      <stop offset="100%" stop-color="#ffe0d5"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d8483e"/>
+      <stop offset="100%" stop-color="#f0b762"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1360" cy="180" r="180" fill="#ffffff" opacity="0.6"/>
+  <circle cx="220" cy="740" r="220" fill="#ffffff" opacity="0.4"/>
+  <text x="120" y="390" fill="url(#ink)" font-size="220" font-family="Noto Serif SC, serif">春节</text>
+  <text x="120" y="500" fill="#1f2233" font-size="68" font-family="Plus Jakarta Sans, sans-serif">Chūnjié · Nouvel An chinois</text>
+</svg>

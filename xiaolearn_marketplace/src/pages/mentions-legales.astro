@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mentions légales - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <h1>Mentions légales</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <h2>Éditeur du site</h2>
+      <p>
+        <strong>XiaoLearn</strong><br>
+        [Votre nom ou raison sociale]<br>
+        [Votre adresse]<br>
+        [Code postal, Ville]<br>
+        France
+      </p>
+      <p>
+        <strong>Email :</strong> contact@xiaolearn.com<br>
+        <strong>SIRET :</strong> [Votre numéro SIRET]<br>
+        <strong>N° TVA intracommunautaire :</strong> [Votre numéro de TVA]
+      </p>
+
+      <h2>Directeur de la publication</h2>
+      <p>[Votre nom]</p>
+
+      <h2>Hébergeur</h2>
+      <p>
+        <strong>GitHub, Inc.</strong><br>
+        88 Colin P Kelly Jr St<br>
+        San Francisco, CA 94107<br>
+        États-Unis
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble des contenus présents sur le site XiaoLearn Shop (textes, images, logos, illustrations,
+        fichiers PDF, decks Anki) sont la propriété exclusive de XiaoLearn ou de ses partenaires et
+        sont protégés par le droit d'auteur.
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, publication, transmission, ou plus généralement
+        toute exploitation non autorisée du site ou de son contenu, par quelque procédé que ce soit,
+        est interdite et constituerait une contrefaçon sanctionnée par les articles L.335-2 et suivants
+        du Code de la Propriété Intellectuelle.
+      </p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit
+        d'accès, de rectification, d'opposition et de suppression des données vous concernant.
+      </p>
+      <p>
+        Pour exercer ces droits ou pour toute question relative à la protection de vos données personnelles,
+        vous pouvez nous contacter à l'adresse : contact@xiaolearn.com
+      </p>
+      <p>
+        Pour plus d'informations, consultez notre <a href="/politique-confidentialite">Politique de confidentialité</a>.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Ce site utilise des cookies techniques nécessaires à son bon fonctionnement. Ces cookies ne
+        collectent pas de données personnelles à des fins publicitaires.
+      </p>
+
+      <h2>Liens hypertextes</h2>
+      <p>
+        Le site peut contenir des liens vers d'autres sites. XiaoLearn n'est pas responsable du contenu
+        de ces sites externes.
+      </p>
+
+      <h2>Droit applicable</h2>
+      <p>
+        Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux
+        français seront seuls compétents.
+      </p>
+
+      <p class="update-date">
+        <em>Dernière mise à jour : Février 2026</em>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--bg-secondary);
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .page-header h1 {
+    margin: 0;
+  }
+
+  .content {
+    max-width: 800px;
+  }
+
+  .content h2 {
+    font-size: 1.25rem;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-red);
+  }
+
+  .content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+  }
+
+  .content a {
+    color: var(--primary-red);
+    text-decoration: underline;
+  }
+
+  .content a:hover {
+    text-decoration: none;
+  }
+
+  .update-date {
+    margin-top: var(--spacing-2xl);
+    color: var(--text-tertiary);
+  }
+</style>

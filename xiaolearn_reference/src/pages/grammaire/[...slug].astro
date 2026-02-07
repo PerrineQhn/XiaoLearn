@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
+import { getCollection } from 'astro:content';
+import { getHSKLevelInfo } from '../../types/hsk';
+
+export async function getStaticPaths() {
+  const grammarEntries = await getCollection('grammaire');
+  return grammarEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { data } = entry;
+const levelInfo = getHSKLevelInfo(data.level);
+
+// Get related grammar entries
+const allGrammar = await getCollection('grammaire');
+const relatedEntries = data.relatedGrammar
+  ? allGrammar.filter(g => data.relatedGrammar?.includes(g.slug.split('/')[1]))
+  : [];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.summary}
+>
+  <section class="page-header" style={`--level-color: ${levelInfo?.color}; --level-bg: ${levelInfo?.bgColor}`}>
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Grammaire', href: '/grammaire' },
+        { label: levelInfo?.name || '', href: `/grammaire#${levelInfo?.slug}` },
+        { label: data.title }
+      ]} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-main">
+          <header class="article-header">
+            <div class="header-meta">
+              <HSKLevelBadge level={data.level} size="md" />
+              <span class="category">{data.category.replace(/-/g, ' ')}</span>
+              <span class="difficulty">{data.difficulty}</span>
+            </div>
+            <h1>{data.title}</h1>
+            <p class="summary">{data.summary}</p>
+
+            {data.keyPoints && data.keyPoints.length > 0 && (
+              <div class="key-points">
+                <h4>Points clés</h4>
+                <ul>
+                  {data.keyPoints.map(point => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </header>
+
+          <div class="prose">
+            <Content />
+          </div>
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Navigation</h4>
+            <a href="/grammaire" class="btn btn-secondary btn-sm">
+              ← Toutes les fiches
+            </a>
+          </div>
+
+          {relatedEntries.length > 0 && (
+            <div class="sidebar-card">
+              <h4>Fiches liées</h4>
+              <ul class="related-list">
+                {relatedEntries.map(related => (
+                  <li>
+                    <a href={`/grammaire/${related.slug}`}>
+                      {related.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="sidebar-card">
+            <h4>Niveau</h4>
+            <p style={`color: ${levelInfo?.color}`}>{levelInfo?.name}</p>
+            <p class="small">{levelInfo?.description}</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--level-bg), var(--bg-secondary));
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .article-main {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .article-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .category,
+  .difficulty {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+  }
+
+  .article-header h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .summary {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .key-points {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--jade-green-light);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--jade-green);
+  }
+
+  .key-points h4 {
+    font-size: 0.9rem;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .key-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .key-points li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .key-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--jade-green);
+    font-weight: 700;
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .sidebar-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .sidebar-card h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .sidebar-card .small {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin-top: var(--spacing-xs);
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .related-list li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .related-list a {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    transition: opacity var(--transition-fast);
+  }
+
+  .related-list a:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      order: -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+</style>

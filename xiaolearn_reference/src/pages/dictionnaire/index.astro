@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import DictionarySearch from '../../components/react/DictionarySearch';
+import { HSK_LEVELS } from '../../types/hsk';
+import type { HSKEntry } from '../../types/hsk';
+
+// Import all HSK data
+import hsk1Data from '../../data/hsk1.json';
+import hsk2Data from '../../data/hsk2.json';
+import hsk3Data from '../../data/hsk3.json';
+import hsk4Data from '../../data/hsk4.json';
+
+const allEntries: HSKEntry[] = [
+  ...hsk1Data as HSKEntry[],
+  ...hsk2Data as HSKEntry[],
+  ...hsk3Data as HSKEntry[],
+  ...hsk4Data as HSKEntry[],
+];
+
+const stats = {
+  total: allEntries.length,
+  hsk1: hsk1Data.length,
+  hsk2: hsk2Data.length,
+  hsk3: hsk3Data.length,
+  hsk4: hsk4Data.length,
+};
+---
+
+<BaseLayout
+  title="Dictionnaire"
+  description="Dictionnaire chinois-français complet avec plus de 2500 mots du HSK 1 au HSK 4. Recherchez par caractère, pinyin ou traduction."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Dictionnaire' }]} />
+      <h1>Dictionnaire <span class="text-gradient">chinois-français</span></h1>
+      <p>
+        Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 4 avec pinyin,
+        traductions et exemples d'utilisation.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Level Overview -->
+      <div class="level-overview">
+        {HSK_LEVELS.map(level => (
+          <a
+            href={`/dictionnaire/${level.slug}`}
+            class="level-card"
+            style={`--level-color: ${level.color}; --level-bg: ${level.bgColor}`}
+          >
+            <span class="level-count">{stats[level.slug as keyof typeof stats]}</span>
+            <span class="level-name">{level.name}</span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Search Component -->
+      <div class="search-section">
+        <DictionarySearch client:load entries={allEntries} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 600px;
+  }
+
+  .level-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .level-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--level-bg);
+    border-radius: var(--radius-lg);
+    border: 2px solid transparent;
+    transition: all var(--transition-base);
+    text-align: center;
+  }
+
+  .level-card:hover {
+    border-color: var(--level-color);
+    transform: translateY(-2px);
+  }
+
+  .level-count {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--level-color);
+  }
+
+  .level-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .search-section {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-light);
+  }
+
+  @media (max-width: 768px) {
+    .level-overview {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<style is:global>
+  /* Styles for React DictionarySearch component */
+  .dictionary-search {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .search-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .search-input-wrapper {
+    position: relative;
+  }
+
+  .search-input-wrapper .search-input {
+    width: 100%;
+    padding-right: 3rem;
+  }
+
+  .search-clear {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .search-clear:hover {
+    color: var(--text-primary);
+  }
+
+  .level-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .level-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .level-btn:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  .level-btn.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
+  }
+
+  .level-btn-hsk1.active {
+    background: #2E7D32;
+    border-color: #2E7D32;
+  }
+
+  .level-btn-hsk2.active {
+    background: #1565C0;
+    border-color: #1565C0;
+  }
+
+  .level-btn-hsk3.active {
+    background: #E65100;
+    border-color: #E65100;
+  }
+
+  .level-btn-hsk4.active {
+    background: #C2185B;
+    border-color: #C2185B;
+  }
+
+  .search-results-info {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  .results-limited {
+    font-style: italic;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .result-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+  }
+
+  .result-card:hover {
+    border-color: var(--primary-red-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .result-hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+
+  .result-level {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  .result-pinyin {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .result-translation {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-tertiary);
+  }
+
+  .no-results-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .no-results-hint {
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+  }
+</style>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Fete des bateaux-dragons</title>
+  <desc id="desc">Illustration nautique pour Duanwu.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ecf6ff"/>
+      <stop offset="100%" stop-color="#d8eeff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 620 C180 600 320 700 500 680 C700 650 840 580 1040 610 C1220 640 1400 730 1600 700 L1600 900 L0 900 Z" fill="#4ba3d9" opacity="0.45"/>
+  <path d="M280 560 C360 520 470 520 560 560 C470 600 360 600 280 560 Z" fill="#d8483e" opacity="0.85"/>
+  <text x="120" y="360" fill="#d8483e" font-size="210" font-family="Noto Serif SC, serif">端午节</text>
+  <text x="120" y="460" fill="#1f2233" font-size="62" font-family="Plus Jakarta Sans, sans-serif">Duānwǔ jié · Bateaux-dragons</text>
+</svg>

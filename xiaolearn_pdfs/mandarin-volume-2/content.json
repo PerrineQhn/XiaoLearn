@@ -1,0 +1,4736 @@
+{
+  "meta": {
+    "titleFr": "Mandarin – Dictionnaire & pratique",
+    "titleZh": "汉语学习",
+    "volume": "02",
+    "editionFr": "Template XiaoLearn",
+    "cultureNoteFr": "Contenu conçu pour le mandarin (Chine) – aucun contenu coréen."
+  },
+  "frontMatter": {
+    "coverHanzi": "汉",
+    "coverTitleFr": "Dictionnaire visuel – Mandarin",
+    "badges": [
+      "Workbook : Vocabulaire + grammaire"
+    ]
+  },
+  "sections": [
+    {
+      "id": "avant",
+      "titleFr": "Avant de commencer",
+      "titleZh": "开始之前",
+      "type": "text",
+      "introFr": "Prenez 2 minutes pour préparer votre support : cela change tout pour l’apprentissage.",
+      "paragraphsFr": [
+        "Bienvenue dans le Volume 2 de votre Dictionnaire Mandarin Interactif.",
+        "Si vous êtes ici, c’est que vous avez déjà fait un premier pas avec le Volume 1 — bravo. Ce deuxième volume vous guide plus loin, avec une progression douce et des explications très simples.",
+        "Le mandarin repose sur trois piliers : les sons/tons, le pinyin, puis les caractères. Ici, tout est organisé pour les apprendre dans le bon ordre.",
+        "Conseil simple : 10 à 15 minutes par jour valent mieux qu’une grosse session de temps en temps.",
+        "Approche recommandée : écoute → répète → lis → écris (tianzige).",
+        "Rythme conseillé : 1 fiche de référence + 1 jour de vocabulaire + 5 à 10 caractères à écrire.",
+        "Objectif : comprendre, prononcer, puis automatiser l’écriture sans stress."
+      ],
+      "callout": {
+        "titleFr": "Bien choisir son support",
+        "bulletsFr": [
+          "Idéal sur tablette avec un stylet pour écrire directement sur les pages d’exercices.",
+          "Sur ordinateur ou mobile, vous pouvez lire et écouter, mais l’écriture sera moins confortable.",
+          "Si vous imprimez : sélectionnez l’option “arrière‑plan” pour garder les lignes de la grille.",
+          "Astuce : utilisez un surligneur pour repérer les mots essentiels du jour.",
+          "Gardez une page ‘révision’ pour recopier vos mots préférés chaque semaine."
+        ]
+      }
+    },
+    {
+      "id": "intro",
+      "titleFr": "Introduction",
+      "titleZh": "介绍",
+      "type": "text",
+      "introFr": "Un programme simple, clair et progressif pour installer des bases solides.",
+      "paragraphsFr": [
+        "Bienvenue dans le Volume 2 de votre Dictionnaire Mandarin Interactif.",
+        "Ce n’est pas un simple PDF de vocabulaire : c’est un plan d’apprentissage sur 25 jours, avec une étape par jour.",
+        "Chaque jour, vous découvrez une série de mots essentiels, présentés de façon claire, progressive et pratique.",
+        "Vous verrez chaque mot en contexte, puis vous passerez à l’écriture pour le mémoriser durablement.",
+        "Les fiches de référence vous aident à comprendre rapidement la grammaire de base.",
+        "Ce dictionnaire a été pensé comme un compagnon de route : court, régulier, efficace."
+      ],
+      "callout": {
+        "titleFr": "Dans ce volume, vous allez pouvoir :",
+        "bulletsFr": [
+          "Voir chaque mot avec sa traduction et son pinyin.",
+          "Lire des exemples simples (avec pinyin) pour comprendre l’usage réel.",
+          "Écrire à la main grâce aux pages d’exercices (tianzige).",
+          "Revenir facilement sur les fiches de grammaire de base.",
+          "Suivre une progression douce : 10 minutes par jour suffisent pour avancer."
+        ]
+      }
+    },
+    {
+      "id": "ref_traits",
+      "titleFr": "Ordre des traits (écriture)",
+      "titleZh": "笔画顺序",
+      "type": "text",
+      "introFr": "Bien écrire aide à mieux mémoriser. Suis l’ordre des traits.",
+      "paragraphsFr": [
+        "1. De haut en bas (例 : 三).",
+        "2. De gauche à droite (例 : 他).",
+        "3. Horizontal avant vertical (例 : 十).",
+        "4. L’extérieur avant l’intérieur (例 : 园).",
+        "5. Fermer le cadre en dernier (例 : 口, 团).",
+        "6. Le point vient souvent à la fin (例 : 主, 玉).",
+        "7. Pour un caractère symétrique, commence par le centre (例 : 水).",
+        "8. Grande diagonale avant petite (例 : 人)."
+      ],
+      "callout": {
+        "titleFr": "Astuce pratique",
+        "bulletsFr": [
+          "Écris lentement au début.",
+          "Reste au centre de la case 田字格.",
+          "Si tu hésites, regarde l’animation des traits."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "一",
+          "pinyin": "yī",
+          "fr": "trait horizontal"
+        },
+        {
+          "hanzi": "十",
+          "pinyin": "shí",
+          "fr": "dix"
+        },
+        {
+          "hanzi": "口",
+          "pinyin": "kǒu",
+          "fr": "bouche"
+        },
+        {
+          "hanzi": "人",
+          "pinyin": "rén",
+          "fr": "personne"
+        }
+      ]
+    },
+    {
+      "id": "ref_pronoms",
+      "titleFr": "Les pronoms personnels",
+      "titleZh": "人称代词",
+      "type": "referenceTable",
+      "introFr": "Petits mots indispensables pour se présenter et parler des autres, avec une formule polie simple pour les situations formelles.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "je / moi",
+          "我",
+          "wǒ"
+        ],
+        [
+          "tu / toi",
+          "你",
+          "nǐ"
+        ],
+        [
+          "vous (poli)",
+          "您",
+          "nín"
+        ],
+        [
+          "il",
+          "他",
+          "tā"
+        ],
+        [
+          "elle",
+          "她",
+          "tā"
+        ],
+        [
+          "nous",
+          "我们",
+          "wǒmen"
+        ],
+        [
+          "vous (pl.)",
+          "你们",
+          "nǐmen"
+        ],
+        [
+          "ils / elles",
+          "他们 / 她们",
+          "tāmen"
+        ],
+        [
+          "il / elle (objet, animal)",
+          "它",
+          "tā"
+        ]
+      ],
+      "callout": {
+        "titleFr": "Point grammaire",
+        "bulletsFr": [
+          "们 (men) met le pluriel des personnes : 我们, 你们, 他们…",
+          "您 (nín) est la forme polie pour parler à une personne (client, professeur, personne âgée).",
+          "他/她/它 se prononcent tous tā : à l’oral, seul le contexte aide."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "我",
+          "pinyin": "wǒ",
+          "fr": "je / moi"
+        },
+        {
+          "hanzi": "你",
+          "pinyin": "nǐ",
+          "fr": "tu / toi"
+        },
+        {
+          "hanzi": "他",
+          "pinyin": "tā",
+          "fr": "il"
+        },
+        {
+          "hanzi": "她",
+          "pinyin": "tā",
+          "fr": "elle"
+        },
+        {
+          "hanzi": "它",
+          "pinyin": "tā",
+          "fr": "il / elle (objet, animal)"
+        },
+        {
+          "hanzi": "他们",
+          "pinyin": "tāmen",
+          "fr": "ils"
+        },
+        {
+          "hanzi": "她们",
+          "pinyin": "tāmen",
+          "fr": "elles"
+        }
+      ],
+      "practiceChars": [
+        "我",
+        "你",
+        "您",
+        "他",
+        "她",
+        "们",
+        "吗"
+      ],
+      "examples": [
+        "我是学生。(Wǒ shì xuéshēng.) (Je suis étudiant.)",
+        "你好吗？(Nǐ hǎo ma?) (Comment ça va ?)",
+        "您好！(Nín hǎo!) (Bonjour.)",
+        "他是老师。(Tā shì lǎoshī.) (Il est professeur.)",
+        "她是医生。(Tā shì yīshēng.) (Elle est médecin.)",
+        "我们走吧。(Wǒmen zǒu ba.) (Allons‑y.)",
+        "你们要喝什么？(Nǐmen yào hē shénme?) (Vous voulez boire quoi ?)",
+        "他们是朋友。(Tāmen shì péngyou.) (Ils sont amis.)",
+        "它很可爱。(Tā hěn kě'ài.) (Il/Elle est mignon.ne.)"
+      ]
+    },
+    {
+      "id": "ref_verbes",
+      "titleFr": "Verbes & structures essentielles",
+      "titleZh": "核心动词与结构",
+      "type": "referenceTable",
+      "introFr": "Ces verbes reviennent partout : en les maîtrisant, tu peux déjà construire beaucoup de phrases utiles au quotidien.",
+      "callout": {
+        "titleFr": "Ordre des mots (très utile)",
+        "bulletsFr": [
+          "Ordre de base : sujet + verbe + objet.",
+          "Lieu/temps se mettent souvent avant le verbe : 今天在家学习。(Jīntiān zài jiā xuéxí.)",
+          "Négation : 不 (bù) au présent/futur, 没(有) pour le passé/la possession."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "是",
+          "pinyin": "shì",
+          "fr": "être / c’est"
+        },
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "fr": "être à / se trouver"
+        },
+        {
+          "hanzi": "有",
+          "pinyin": "yǒu",
+          "fr": "avoir"
+        },
+        {
+          "hanzi": "想",
+          "pinyin": "xiǎng",
+          "fr": "vouloir / penser"
+        },
+        {
+          "hanzi": "可以",
+          "pinyin": "kěyǐ",
+          "fr": "pouvoir / permission"
+        },
+        {
+          "hanzi": "会",
+          "pinyin": "huì",
+          "fr": "savoir faire / futur"
+        },
+        {
+          "hanzi": "要",
+          "pinyin": "yào",
+          "fr": "vouloir / avoir besoin"
+        },
+        {
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "fr": "aimer / apprécier"
+        }
+      ],
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "être / c’est",
+          "是",
+          "shì"
+        ],
+        [
+          "être à / se trouver",
+          "在",
+          "zài"
+        ],
+        [
+          "avoir",
+          "有",
+          "yǒu"
+        ],
+        [
+          "vouloir / penser",
+          "想",
+          "xiǎng"
+        ],
+        [
+          "pouvoir / permission",
+          "可以",
+          "kěyǐ"
+        ],
+        [
+          "savoir faire / futur",
+          "会",
+          "huì"
+        ],
+        [
+          "vouloir / avoir besoin",
+          "要",
+          "yào"
+        ],
+        [
+          "aimer / apprécier",
+          "喜欢",
+          "xǐhuan"
+        ]
+      ],
+      "examples": [
+        "是 (shì) : être / c’est… → 我是学生。(Wǒ shì xuéshēng.) (Je suis étudiant.)",
+        "在 (zài) : être à / se trouver → 他在北京。(Tā zài Běijīng.) (Il est à Pékin.)",
+        "有 / 没有 (yǒu / méiyǒu) : avoir / ne pas avoir → 你有时间吗？(Nǐ yǒu shíjiān ma?) (Tu as du temps ?)",
+        "想 (xiǎng) : vouloir / avoir envie / penser → 我想喝茶。(Wǒ xiǎng hē chá.) (J’ai envie de boire du thé.)",
+        "可以 (kěyǐ) : pouvoir / permission → 这里可以拍照吗？(Zhèlǐ kěyǐ pāizhào ma?) (On peut prendre des photos ici ?)",
+        "会 (huì) : savoir faire / futur → 我会说中文。(Wǒ huì shuō Zhōngwén.) (Je sais parler chinois.)",
+        "要 (yào) : vouloir / avoir besoin → 我要水。(Wǒ yào shuǐ.) (Je veux de l’eau.)",
+        "喜欢 (xǐhuan) : aimer / apprécier → 我喜欢这本书。(Wǒ xǐhuan zhè běn shū.)"
+      ]
+    },
+    {
+      "id": "ref_questions",
+      "titleFr": "Questions (interrogatifs)",
+      "titleZh": "疑问词",
+      "type": "referenceTable",
+      "introFr": "Les mots interrogatifs se placent comme le mot qu’ils remplacent : c’est simple et très naturel à utiliser.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "quoi",
+          "什么",
+          "shénme"
+        ],
+        [
+          "qui",
+          "谁",
+          "shéi"
+        ],
+        [
+          "où (lieu)",
+          "哪里",
+          "nǎlǐ"
+        ],
+        [
+          "quel (lequel)",
+          "哪",
+          "nǎ"
+        ],
+        [
+          "pourquoi",
+          "为什么",
+          "wèishénme"
+        ],
+        [
+          "comment",
+          "怎么",
+          "zěnme"
+        ],
+        [
+          "combien",
+          "多少 / 几",
+          "duōshao / jǐ"
+        ],
+        [
+          "quand",
+          "什么时候",
+          "shénme shíhou"
+        ],
+        [
+          "quel âge",
+          "多大",
+          "duō dà"
+        ],
+        [
+          "combien de temps",
+          "多久",
+          "duō jiǔ"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "什么",
+          "pinyin": "shénme",
+          "fr": "quoi"
+        },
+        {
+          "hanzi": "谁",
+          "pinyin": "shéi",
+          "fr": "qui"
+        },
+        {
+          "hanzi": "哪里",
+          "pinyin": "nǎlǐ",
+          "fr": "où"
+        },
+        {
+          "hanzi": "什么时候",
+          "pinyin": "shénme shíhou",
+          "fr": "quand"
+        }
+      ],
+      "practiceChars": [
+        "什",
+        "么",
+        "谁",
+        "哪",
+        "里",
+        "怎",
+        "多",
+        "少"
+      ],
+      "examples": [
+        "你想吃什么？(Nǐ xiǎng chī shénme?)",
+        "他是谁？(Tā shì shéi?)",
+        "你住在哪里？(Nǐ zhù zài nǎlǐ?)",
+        "你要哪一个？(Nǐ yào nǎ yí ge?)",
+        "你为什么学中文？(Nǐ wèishénme xué Zhōngwén?)",
+        "这个怎么做？(Zhège zěnme zuò?)",
+        "多少钱？(Duōshao qián?)",
+        "你什么时候来？(Nǐ shénme shíhou lái?)",
+        "你多大？(Nǐ duō dà?)",
+        "你学了多久？(Nǐ xué le duō jiǔ?)"
+      ]
+    },
+    {
+      "id": "ref_adverbes",
+      "titleFr": "Adverbes de liaison",
+      "titleZh": "连接副词",
+      "type": "referenceTable",
+      "introFr": "Pour relier deux idées et rendre tes phrases plus fluides, commence avec ces connecteurs très fréquents.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "parce que… donc…",
+          "因为…所以…",
+          "yīnwèi… suǒyǐ…"
+        ],
+        [
+          "mais / cependant",
+          "但是",
+          "dànshì"
+        ],
+        [
+          "puis / ensuite",
+          "然后",
+          "ránhòu"
+        ],
+        [
+          "donc / par conséquent",
+          "所以",
+          "suǒyǐ"
+        ],
+        [
+          "si… alors…",
+          "如果…就…",
+          "rúguǒ… jiù…"
+        ],
+        [
+          "bien que… mais…",
+          "虽然…但是…",
+          "suīrán… dànshì…"
+        ],
+        [
+          "en plus / de plus",
+          "而且",
+          "érqiě"
+        ],
+        [
+          "par conséquent",
+          "因此",
+          "yīncǐ"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "因为",
+          "pinyin": "yīnwèi",
+          "fr": "parce que"
+        },
+        {
+          "hanzi": "所以",
+          "pinyin": "suǒyǐ",
+          "fr": "donc"
+        },
+        {
+          "hanzi": "但是",
+          "pinyin": "dànshì",
+          "fr": "mais"
+        },
+        {
+          "hanzi": "然后",
+          "pinyin": "ránhòu",
+          "fr": "puis / ensuite"
+        }
+      ],
+      "examples": [
+        "因为下雨，所以不去。(Yīnwèi xià yǔ, suǒyǐ bù qù.)",
+        "我很忙，但是会来。(Wǒ hěn máng, dànshì huì lái.)",
+        "我们先吃饭，然后看电影。(Wǒmen xiān chīfàn, ránhòu kàn diànyǐng.)",
+        "他迟到了，所以没赶上。(Tā chídào le, suǒyǐ méi gǎnshàng.)",
+        "如果有时间，就联系我。(Rúguǒ yǒu shíjiān, jiù liánxì wǒ.)",
+        "虽然很累，但是很开心。(Suīrán hěn lèi, dànshì hěn kāixīn.)",
+        "她聪明，而且很努力。(Tā cōngming, érqiě hěn nǔlì.)",
+        "他生病了，因此没来。(Tā shēngbìng le, yīncǐ méi lái.)"
+      ]
+    },
+    {
+      "id": "ref_expressions",
+      "titleFr": "Expressions utiles",
+      "titleZh": "常用表达",
+      "type": "referenceTable",
+      "introFr": "Des phrases prêtes à l’emploi pour réagir vite et sonner naturel dès le début.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "d’accord / OK",
+          "好的",
+          "hǎo de"
+        ],
+        [
+          "pas de problème",
+          "没问题",
+          "méi wèntí"
+        ],
+        [
+          "attends un instant",
+          "等一下",
+          "děng yíxià"
+        ],
+        [
+          "vraiment",
+          "真的",
+          "zhēn de"
+        ],
+        [
+          "peut-être / possible",
+          "可能",
+          "kěnéng"
+        ],
+        [
+          "j’ai compris",
+          "明白了",
+          "míngbai le"
+        ],
+        [
+          "ce n’est pas grave",
+          "没关系",
+          "méi guānxi"
+        ],
+        [
+          "s’il vous plaît / je vous en prie",
+          "请",
+          "qǐng"
+        ],
+        [
+          "excusez-moi (poliment)",
+          "不好意思",
+          "bù hǎo yìsi"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "好的",
+          "pinyin": "hǎo de",
+          "fr": "d’accord / OK"
+        },
+        {
+          "hanzi": "没问题",
+          "pinyin": "méi wèntí",
+          "fr": "pas de problème"
+        },
+        {
+          "hanzi": "等一下",
+          "pinyin": "děng yíxià",
+          "fr": "attends un instant"
+        },
+        {
+          "hanzi": "明白了",
+          "pinyin": "míngbai le",
+          "fr": "j’ai compris"
+        }
+      ],
+      "examples": [
+        "好的，我们走吧。(Hǎo de, wǒmen zǒu ba.)",
+        "没问题，我来。(Méi wèntí, wǒ lái.)",
+        "等一下，我马上来。(Děng yíxià, wǒ mǎshàng lái.)",
+        "真的？太好了！(Zhēn de? Tài hǎo le!)",
+        "他可能在家。(Tā kěnéng zài jiā.)",
+        "明白了，谢谢！(Míngbai le, xièxie!)",
+        "没关系，下次注意。(Méi guānxi, xiàcì zhùyì.)",
+        "请坐。(Qǐng zuò.)",
+        "不好意思，打扰一下。(Bù hǎo yìsi, dǎrǎo yíxià.)"
+      ]
+    },
+    {
+      "id": "ref_conversation",
+      "titleFr": "La conversation",
+      "titleZh": "对话用语",
+      "type": "referenceTable",
+      "introFr": "Les formules essentielles pour saluer, remercier, s’excuser et poursuivre une conversation simple.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "bonjour",
+          "你好",
+          "nǐ hǎo"
+        ],
+        [
+          "comment ça va ?",
+          "你好吗？",
+          "nǐ hǎo ma"
+        ],
+        [
+          "merci",
+          "谢谢",
+          "xièxie"
+        ],
+        [
+          "de rien",
+          "不客气",
+          "bú kèqi"
+        ],
+        [
+          "désolé",
+          "对不起",
+          "duìbuqǐ"
+        ],
+        [
+          "ce n’est pas grave",
+          "没关系",
+          "méi guānxi"
+        ],
+        [
+          "au revoir",
+          "再见",
+          "zàijiàn"
+        ],
+        [
+          "excusez-moi (pour demander)",
+          "请问",
+          "qǐngwèn"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "你好",
+          "pinyin": "nǐ hǎo",
+          "fr": "bonjour"
+        },
+        {
+          "hanzi": "你好吗",
+          "pinyin": "nǐ hǎo ma",
+          "fr": "comment ça va ?"
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xièxie",
+          "fr": "merci"
+        },
+        {
+          "hanzi": "对不起",
+          "pinyin": "duìbuqǐ",
+          "fr": "désolé"
+        }
+      ],
+      "examples": [
+        "你好！你怎么样？(Nǐ hǎo! Nǐ zěnmeyàng?)",
+        "你好吗？我很好。(Nǐ hǎo ma? Wǒ hěn hǎo.)",
+        "谢谢你的帮助。(Xièxie nǐ de bāngzhù.)",
+        "不用谢，不客气。(Búyòng xiè, bú kèqi.)",
+        "对不起，我迟到了。(Duìbuqǐ, wǒ chídào le.)",
+        "没关系，下次注意。(Méi guānxi, xiàcì zhùyì.)",
+        "再见，明天见。(Zàijiàn, míngtiān jiàn.)",
+        "请问，地铁站在哪儿？(Qǐngwèn, dìtiězhàn zài nǎr?)"
+      ]
+    },
+    {
+      "id": "ref_determinants_interrogatifs",
+      "titleFr": "Déterminants / pronoms interrogatifs",
+      "titleZh": "疑问限定词",
+      "type": "referenceTable",
+      "introFr": "Pour demander un choix, une quantité ou une catégorie avec des questions claires et courtes.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "lequel / quel (avec classificateur)",
+          "哪个",
+          "nǎge"
+        ],
+        [
+          "lesquels / quels (pl.)",
+          "哪些",
+          "nǎxiē"
+        ],
+        [
+          "quel genre / de quel type",
+          "什么样",
+          "shénme yàng"
+        ],
+        [
+          "combien (quantité / prix)",
+          "多少",
+          "duōshao"
+        ],
+        [
+          "combien (petit nombre)",
+          "几",
+          "jǐ"
+        ],
+        [
+          "quelle taille / quel âge",
+          "多大",
+          "duō dà"
+        ],
+        [
+          "à quelle distance",
+          "多远",
+          "duō yuǎn"
+        ],
+        [
+          "quelle longueur / durée",
+          "多长",
+          "duō cháng"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "哪个",
+          "pinyin": "nǎge",
+          "fr": "lequel / quel"
+        },
+        {
+          "hanzi": "哪些",
+          "pinyin": "nǎxiē",
+          "fr": "lesquels / quels"
+        },
+        {
+          "hanzi": "什么样",
+          "pinyin": "shénme yàng",
+          "fr": "quel genre"
+        },
+        {
+          "hanzi": "多少",
+          "pinyin": "duōshao",
+          "fr": "combien"
+        }
+      ],
+      "examples": [
+        "你要哪个？(Nǐ yào nǎge?)",
+        "你喜欢哪些城市？(Nǐ xǐhuan nǎxiē chéngshì?)",
+        "你喜欢什么样的音乐？(Nǐ xǐhuan shénme yàng de yīnyuè?)",
+        "这个多少钱？(Zhège duōshao qián?)",
+        "你有几个朋友？(Nǐ yǒu jǐ ge péngyou?)",
+        "你多大？(Nǐ duō dà?)",
+        "学校离家多远？(Xuéxiào lí jiā duō yuǎn?)",
+        "这条路多长？(Zhè tiáo lù duō cháng?)"
+      ]
+    },
+    {
+      "id": "ref_essentiels",
+      "titleFr": "Les mots essentiels",
+      "titleZh": "核心词汇",
+      "type": "referenceTable",
+      "introFr": "Petits mots très utiles pour montrer, situer et nuancer ce que tu dis.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "ce / cela",
+          "这 / 那",
+          "zhè / nà"
+        ],
+        [
+          "ici / là-bas / où",
+          "这里 / 那里 / 哪里",
+          "zhèlǐ / nàlǐ / nǎlǐ"
+        ],
+        [
+          "ceci / cela (avec classificateur)",
+          "这个 / 那个",
+          "zhège / nàge"
+        ],
+        [
+          "comme ça / comme ça-là / comment",
+          "这样 / 那样 / 怎样",
+          "zhèyàng / nàyàng / zěnyàng"
+        ],
+        [
+          "aussi / tous",
+          "也 / 都",
+          "yě / dōu"
+        ],
+        [
+          "très / trop",
+          "很 / 太",
+          "hěn / tài"
+        ],
+        [
+          "déjà / encore",
+          "已经 / 还",
+          "yǐjīng / hái"
+        ],
+        [
+          "un peu / un instant",
+          "一下",
+          "yíxià"
+        ]
+      ],
+      "practiceTerms": [
+        {
+          "hanzi": "这",
+          "pinyin": "zhè",
+          "fr": "ce / cette"
+        },
+        {
+          "hanzi": "那",
+          "pinyin": "nà",
+          "fr": "ce / cela-là"
+        },
+        {
+          "hanzi": "这里",
+          "pinyin": "zhèlǐ",
+          "fr": "ici"
+        },
+        {
+          "hanzi": "哪里",
+          "pinyin": "nǎlǐ",
+          "fr": "où"
+        }
+      ],
+      "examples": [
+        "这本书很好。那本也不错。(Zhè běn shū hěn hǎo. Nà běn yě búcuò.)",
+        "你住在哪里？(Nǐ zhù zài nǎlǐ?)",
+        "我要这个。(Wǒ yào zhège.)",
+        "这样做可以吗？(Zhèyàng zuò kěyǐ ma?)",
+        "我们也都喜欢。(Wǒmen yě dōu xǐhuan.)",
+        "这个很有趣。(Zhège hěn yǒuqù.)",
+        "我已经吃了，还不饿。(Wǒ yǐjīng chī le, hái bù è.)",
+        "等一下。(Děng yíxià.)"
+      ]
+    },
+    {
+      "id": "ref_chiffres",
+      "titleFr": "Les chiffres et nombres",
+      "titleZh": "数字",
+      "type": "referenceTable",
+      "introFr": "La base pour parler des prix, de l’heure et des dates : commence par 0–10 puis les dizaines.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "0 (zéro)",
+          "零",
+          "líng"
+        ],
+        [
+          "1 (un) — devient yāo au téléphone",
+          "一",
+          "yī"
+        ],
+        [
+          "2 (deux) — 两 devant classificateur",
+          "二 / 两",
+          "èr / liǎng"
+        ],
+        [
+          "3 (trois)",
+          "三",
+          "sān"
+        ],
+        [
+          "4 (quatre) — évité (死 sǐ = mort)",
+          "四",
+          "sì"
+        ],
+        [
+          "5 (cinq)",
+          "五",
+          "wǔ"
+        ],
+        [
+          "6 (six) — porte-bonheur",
+          "六",
+          "liù"
+        ],
+        [
+          "7 (sept)",
+          "七",
+          "qī"
+        ],
+        [
+          "8 (huit) — très chanceux (发 fā)",
+          "八",
+          "bā"
+        ],
+        [
+          "9 (neuf) — longévité (久 jiǔ)",
+          "九",
+          "jiǔ"
+        ],
+        [
+          "10 (dix)",
+          "十",
+          "shí"
+        ],
+        [
+          "100 (cent) — 一百 = 100",
+          "百",
+          "bǎi"
+        ],
+        [
+          "1000 (mille) — 一千 = 1000",
+          "千",
+          "qiān"
+        ],
+        [
+          "10000 (dix mille) — 一万 = 10 000",
+          "万",
+          "wàn"
+        ]
+      ],
+      "callout": {
+        "titleFr": "Règles importantes",
+        "bulletsFr": [
+          "2 + classificateur : 两 (liǎng) → 两个人 (deux personnes).",
+          "11 = 十一, 21 = 二十一, 99 = 九十九.",
+          "Le système est décimal : 12 345 = 一万两千三百四十五."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "一",
+          "pinyin": "yī",
+          "fr": "un"
+        },
+        {
+          "hanzi": "二",
+          "pinyin": "èr",
+          "fr": "deux"
+        },
+        {
+          "hanzi": "三",
+          "pinyin": "sān",
+          "fr": "trois"
+        },
+        {
+          "hanzi": "十",
+          "pinyin": "shí",
+          "fr": "dix"
+        },
+        {
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "fr": "cent"
+        },
+        {
+          "hanzi": "千",
+          "pinyin": "qiān",
+          "fr": "mille"
+        }
+      ]
+    },
+    {
+      "id": "ref_classificateurs",
+      "titleFr": "Les classificateurs (spécificatifs)",
+      "titleZh": "量词",
+      "type": "referenceTable",
+      "introFr": "En chinois, on compte avec un classificateur : cette liste te donne les plus utiles et quand les utiliser.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "universel (personnes, objets)",
+          "个",
+          "gè"
+        ],
+        [
+          "livres, cahiers",
+          "本",
+          "běn"
+        ],
+        [
+          "objets plats (papier, table, photo)",
+          "张",
+          "zhāng"
+        ],
+        [
+          "vêtements (haut), affaires",
+          "件",
+          "jiàn"
+        ],
+        [
+          "objets longs (route, poisson, pantalon)",
+          "条",
+          "tiáo"
+        ],
+        [
+          "animaux (petits), objets en paire",
+          "只",
+          "zhī"
+        ],
+        [
+          "verres, tasses",
+          "杯",
+          "bēi"
+        ],
+        [
+          "bouteilles",
+          "瓶",
+          "píng"
+        ],
+        [
+          "morceaux, yuan (argent)",
+          "块",
+          "kuài"
+        ],
+        [
+          "personnes (poli)",
+          "位",
+          "wèi"
+        ]
+      ],
+      "callout": {
+        "titleFr": "Astuce",
+        "bulletsFr": [
+          "Si tu hésites, utilise 个 (gè).",
+          "这/那 + classificateur + nom : 这本书 (ce livre).",
+          "哪 + classificateur : 哪个？(nǎge) (lequel ?)"
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "个",
+          "pinyin": "gè",
+          "fr": "classificateur universel"
+        },
+        {
+          "hanzi": "本",
+          "pinyin": "běn",
+          "fr": "livres"
+        },
+        {
+          "hanzi": "张",
+          "pinyin": "zhāng",
+          "fr": "objets plats"
+        },
+        {
+          "hanzi": "杯",
+          "pinyin": "bēi",
+          "fr": "verres/tasses"
+        },
+        {
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "fr": "morceaux/yuans"
+        }
+      ],
+      "examples": [
+        "一个人 (une personne)",
+        "三本书 (trois livres)",
+        "两张票 (deux billets)",
+        "一件衣服 (un vêtement)",
+        "一条裤子 (un pantalon)",
+        "一只猫 (un chat)",
+        "一杯水 (un verre d'eau)",
+        "一瓶啤酒 (une bouteille de bière)",
+        "十块钱 (dix yuans)",
+        "三位客人 (trois invités)"
+      ]
+    },
+    {
+      "id": "ref_negation",
+      "titleFr": "Les négations",
+      "titleZh": "否定",
+      "type": "referenceTable",
+      "introFr": "Deux outils suffisent pour débuter : 不 pour le présent/futur, 没(有) pour le passé et la possession.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "négation générale (présent, futur, habitude)",
+          "不",
+          "bù"
+        ],
+        [
+          "négation du passé / de possession",
+          "没 / 没有",
+          "méi / méiyǒu"
+        ],
+        [
+          "impératif négatif (ne fais pas)",
+          "别",
+          "bié"
+        ],
+        [
+          "interdiction / ne pas vouloir",
+          "不要",
+          "búyào"
+        ],
+        [
+          "ce n'est pas",
+          "不是",
+          "bú shì"
+        ],
+        [
+          "ce n'est pas grave",
+          "没关系",
+          "méi guānxi"
+        ],
+        [
+          "pas besoin de",
+          "不用",
+          "búyòng"
+        ],
+        [
+          "pas très / pas trop",
+          "不太",
+          "bú tài"
+        ]
+      ],
+      "callout": {
+        "titleFr": "不 vs 没 – Règle clé",
+        "bulletsFr": [
+          "不 (bù) : présent, habitude, futur.",
+          "没 (méi) : passé ou possession (没有).",
+          "Exception : 不是 (ce n'est pas) même pour le passé."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "fr": "ne pas (général)"
+        },
+        {
+          "hanzi": "没",
+          "pinyin": "méi",
+          "fr": "ne pas (passé)"
+        },
+        {
+          "hanzi": "别",
+          "pinyin": "bié",
+          "fr": "ne fais pas"
+        },
+        {
+          "hanzi": "不用",
+          "pinyin": "búyòng",
+          "fr": "pas besoin"
+        }
+      ],
+      "examples": [
+        "我不喜欢。(Wǒ bù xǐhuan.) (Je n'aime pas.)",
+        "我没去。(Wǒ méi qù.) (Je n'y suis pas allé.)",
+        "别走！(Bié zǒu!) (Ne pars pas !)",
+        "不要说话。(Búyào shuōhuà.) (Ne parle pas.)",
+        "这不是我的。(Zhè bú shì wǒ de.) (Ce n'est pas le mien.)",
+        "没关系，别担心。(Méi guānxi, bié dānxīn.)",
+        "不用谢。(Búyòng xiè.) (De rien.)",
+        "不太好。(Bú tài hǎo.) (Pas très bien.)"
+      ]
+    },
+    {
+      "id": "ref_aspect",
+      "titleFr": "Temps et aspect",
+      "titleZh": "时态与体",
+      "type": "text",
+      "introFr": "Le chinois n’a pas de conjugaison : on ajoute de petites particules pour préciser le moment de l’action.",
+      "paragraphsFr": [
+        "了 (le) : action terminée → 我吃了。(Wǒ chī le.) (J'ai mangé.)",
+        "过 (guo) : expérience déjà vécue → 我去过中国。(Wǒ qù guò Zhōngguó.)",
+        "正在 (zhèngzài) : action en cours → 我正在学习。(Wǒ zhèngzài xuéxí.)",
+        "着 (zhe) : état qui continue → 门开着。(Mén kāi zhe.)",
+        "要…了 (yào…le) : futur proche → 我要走了。(Wǒ yào zǒu le.)",
+        "会 (huì) : futur probable / capacité → 明天会下雨。(Míngtiān huì xià yǔ.)",
+        "快…了 (kuài…le) : bientôt → 快到了！(Kuài dào le!)"
+      ],
+      "callout": {
+        "titleFr": "了 – Double usage",
+        "bulletsFr": [
+          "了 après le verbe : action terminée (我吃了饭).",
+          "了 en fin de phrase : changement d’état (下雨了 = il pleut maintenant).",
+          "On peut avoir les deux : 我吃了饭了."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "了",
+          "pinyin": "le",
+          "fr": "accompli / changement"
+        },
+        {
+          "hanzi": "过",
+          "pinyin": "guo",
+          "fr": "expérience"
+        },
+        {
+          "hanzi": "正在",
+          "pinyin": "zhèngzài",
+          "fr": "en train de"
+        },
+        {
+          "hanzi": "着",
+          "pinyin": "zhe",
+          "fr": "état continu"
+        }
+      ]
+    },
+    {
+      "id": "ref_comparaison",
+      "titleFr": "Les comparaisons",
+      "titleZh": "比较",
+      "type": "referenceTable",
+      "introFr": "Pour comparer simplement, pense à la structure avec 比 et à ses variantes.",
+      "columns": [
+        "Français",
+        "Chinois",
+        "Pinyin"
+      ],
+      "rows": [
+        [
+          "A est plus … que B",
+          "A 比 B + adj.",
+          "bǐ"
+        ],
+        [
+          "A n'est pas aussi … que B",
+          "A 没有 B + adj.",
+          "méiyǒu"
+        ],
+        [
+          "A est aussi … que B",
+          "A 和 B 一样 + adj.",
+          "yíyàng"
+        ],
+        [
+          "A est un peu plus … que B",
+          "A 比 B + adj. + 一点",
+          "yìdiǎn"
+        ],
+        [
+          "A est beaucoup plus … que B",
+          "A 比 B + adj. + 多了",
+          "duō le"
+        ],
+        [
+          "le/la plus …",
+          "最 + adj.",
+          "zuì"
+        ],
+        [
+          "encore plus …",
+          "更 + adj.",
+          "gèng"
+        ],
+        [
+          "de plus en plus …",
+          "越来越 + adj.",
+          "yuèláiyuè"
+        ]
+      ],
+      "callout": {
+        "titleFr": "Points clés",
+        "bulletsFr": [
+          "比 (bǐ) se place entre les deux éléments.",
+          "Ne mets pas 比…更 ensemble (c’est redondant).",
+          "Pour dire « pas aussi », utilise 没有."
+        ]
+      },
+      "practiceTerms": [
+        {
+          "hanzi": "比",
+          "pinyin": "bǐ",
+          "fr": "comparer / plus que"
+        },
+        {
+          "hanzi": "一样",
+          "pinyin": "yíyàng",
+          "fr": "pareil / aussi"
+        },
+        {
+          "hanzi": "最",
+          "pinyin": "zuì",
+          "fr": "le plus"
+        },
+        {
+          "hanzi": "更",
+          "pinyin": "gèng",
+          "fr": "encore plus"
+        }
+      ],
+      "examples": [
+        "他比我高。(Tā bǐ wǒ gāo.) (Il est plus grand que moi.)",
+        "我没有他高。(Wǒ méiyǒu tā gāo.) (Je ne suis pas aussi grand.)",
+        "他和我一样高。(Tā hé wǒ yíyàng gāo.) (Il est aussi grand que moi.)",
+        "这个比那个贵一点。(Zhège bǐ nàge guì yìdiǎn.)",
+        "今天比昨天热多了。(Jīntiān bǐ zuótiān rè duō le.)",
+        "她最漂亮。(Tā zuì piàoliang.) (Elle est la plus belle.)",
+        "这个更好。(Zhège gèng hǎo.) (Celui-ci est encore mieux.)",
+        "天气越来越冷。(Tiānqì yuèláiyuè lěng.) (Le temps est de plus en plus froid.)"
+      ]
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "themeZh": "人物",
+      "themeFr": "Les personnes",
+      "vocab": [
+        {
+          "hanzi": "人",
+          "pinyin": "rén",
+          "pos": "n.",
+          "fr": "personne",
+          "example": "他是中国人。Tā shì Zhōngguó rén. (Il est chinois.)",
+          "note": "Très courant : 中国人 (Chinois), 法国人 (Français), 美国人 (Américain)."
+        },
+        {
+          "hanzi": "先生",
+          "pinyin": "xiānsheng",
+          "pos": "n.",
+          "fr": "Monsieur",
+          "example": "王先生好！Wáng xiānsheng hǎo! (Bonjour M. Wang !)",
+          "note": "S'utilise après le nom de famille. Peut aussi signifier « mari » (我先生 = mon mari)."
+        },
+        {
+          "hanzi": "女士",
+          "pinyin": "nǚshì",
+          "pos": "n.",
+          "fr": "Madame",
+          "example": "李女士，请坐。Lǐ nǚshì, qǐng zuò. (Mme Li, asseyez-vous.)",
+          "note": "Formel. Pour « petite amie », on dit 女朋友 (nǚpéngyou)."
+        },
+        {
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "pos": "n.",
+          "fr": "ami·e",
+          "example": "他是我的好朋友。Tā shì wǒ de hǎo péngyou. (C'est mon bon ami.)",
+          "note": "男朋友 = petit ami, 女朋友 = petite amie."
+        },
+        {
+          "hanzi": "同学",
+          "pinyin": "tóngxué",
+          "pos": "n.",
+          "fr": "camarade de classe",
+          "example": "我们是同学。Wǒmen shì tóngxué. (Nous sommes camarades.)",
+          "note": "Littéralement « même étude ». Garde ce lien même après l'école."
+        },
+        {
+          "hanzi": "孩子",
+          "pinyin": "háizi",
+          "pos": "n.",
+          "fr": "enfant",
+          "example": "她有两个孩子。Tā yǒu liǎng ge háizi. (Elle a deux enfants.)",
+          "note": "Neutre (garçon ou fille). Pour « petit enfant » : 小孩 (xiǎohái)."
+        },
+        {
+          "hanzi": "外国人",
+          "pinyin": "wàiguórén",
+          "pos": "n.",
+          "fr": "étranger / étrangère",
+          "example": "他是外国人。Tā shì wàiguórén. (Il est étranger.)",
+          "note": "外 = extérieur, 国 = pays. Neutre, non péjoratif."
+        },
+        {
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "pos": "pr.",
+          "fr": "tout le monde",
+          "example": "大家好！Dàjiā hǎo! (Bonjour à tous !)",
+          "note": "Très utilisé pour s'adresser à un groupe. ≠ 大 (grand) + 家 (maison)."
+        },
+        {
+          "hanzi": "自己",
+          "pinyin": "zìjǐ",
+          "pos": "pr.",
+          "fr": "soi-même",
+          "example": "我自己做。Wǒ zìjǐ zuò. (Je le fais moi-même.)",
+          "note": "Renforce le sujet. 他自己 = lui-même, 她自己 = elle-même."
+        },
+        {
+          "hanzi": "名字",
+          "pinyin": "míngzi",
+          "pos": "n.",
+          "fr": "nom (prénom)",
+          "example": "你叫什么名字？Nǐ jiào shénme míngzi? (Comment t'appelles-tu ?)",
+          "note": "En Chine, le nom de famille (姓 xìng) vient AVANT le prénom."
+        },
+        {
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "pos": "n.",
+          "fr": "professeur",
+          "example": "老师好！Lǎoshī hǎo! (Bonjour professeur !)",
+          "note": "Titre respectueux. S'utilise aussi pour les experts : 王老师 = M. Wang (le prof)."
+        },
+        {
+          "hanzi": "学生",
+          "pinyin": "xuéshēng",
+          "pos": "n.",
+          "fr": "élève / étudiant",
+          "example": "我是学生。Wǒ shì xuéshēng. (Je suis étudiant.)",
+          "note": "学 = étudier, 生 = personne. 大学生 = étudiant universitaire."
+        },
+        {
+          "hanzi": "小姐",
+          "pinyin": "xiǎojiě",
+          "pos": "n.",
+          "fr": "mademoiselle",
+          "example": "王小姐，您好。Wáng xiǎojiě, nín hǎo. (Bonjour Mlle Wang.)",
+          "note": "Attention : dans certains contextes peut être mal perçu. Préférer 女士 en situation formelle."
+        },
+        {
+          "hanzi": "男人",
+          "pinyin": "nánrén",
+          "pos": "n.",
+          "fr": "homme (adulte)",
+          "example": "那个男人是谁？Nàge nánrén shì shéi? (Qui est cet homme ?)",
+          "note": "男 = masculin. 男孩 (nánhái) = garçon."
+        },
+        {
+          "hanzi": "女人",
+          "pinyin": "nǚrén",
+          "pos": "n.",
+          "fr": "femme (adulte)",
+          "example": "她是一个很好的女人。Tā shì yī ge hěn hǎo de nǚrén. (C'est une femme bien.)",
+          "note": "女 = féminin. 女孩 (nǚhái) = fille."
+        },
+        {
+          "hanzi": "别人",
+          "pinyin": "biérén",
+          "pos": "pr.",
+          "fr": "les autres / autrui",
+          "example": "别人怎么想？Biérén zěnme xiǎng? (Qu'en pensent les autres ?)",
+          "note": "别 = autre, différent. 别的 = autre chose."
+        },
+        {
+          "hanzi": "客人",
+          "pinyin": "kèrén",
+          "pos": "n.",
+          "fr": "invité / client",
+          "example": "家里有客人。Jiālǐ yǒu kèrén. (Il y a des invités à la maison.)",
+          "note": "客 = invité. 客气 (kèqi) = poli."
+        },
+        {
+          "hanzi": "邻居",
+          "pinyin": "línjū",
+          "pos": "n.",
+          "fr": "voisin",
+          "example": "我的邻居很友好。Wǒ de línjū hěn yǒuhǎo. (Mon voisin est très sympathique.)",
+          "note": "邻 = proche, 居 = habiter. 隔壁 (gébì) = d'à côté."
+        },
+        {
+          "hanzi": "年轻人",
+          "pinyin": "niánqīngrén",
+          "pos": "n.",
+          "fr": "jeune (personne)",
+          "example": "年轻人喜欢运动。Niánqīngrén xǐhuan yùndòng. (Les jeunes aiment le sport.)",
+          "note": "年轻 = jeune (âge). Opposé : 老人 (lǎorén) = personne âgée."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "themeZh": "家庭",
+      "themeFr": "La famille",
+      "vocab": [
+        {
+          "hanzi": "家",
+          "pinyin": "jiā",
+          "pos": "n.",
+          "fr": "famille / maison",
+          "example": "我回家了。Wǒ huí jiā le. (Je rentre à la maison.)",
+          "note": "Double sens : lieu (maison) et personnes (famille). 回家 = rentrer chez soi."
+        },
+        {
+          "hanzi": "家人",
+          "pinyin": "jiārén",
+          "pos": "n.",
+          "fr": "membres de la famille",
+          "example": "我和家人住一起。Wǒ hé jiārén zhù yìqǐ. (J'habite avec ma famille.)",
+          "note": "Plus affectif que 家庭 (jiātíng) qui est plus administratif."
+        },
+        {
+          "hanzi": "爸爸",
+          "pinyin": "bàba",
+          "pos": "n.",
+          "fr": "papa",
+          "example": "爸爸在家吗？Bàba zài jiā ma? (Papa est à la maison ?)",
+          "note": "Familier. Formel : 父亲 (fùqīn). Le redoublement rend le mot affectueux."
+        },
+        {
+          "hanzi": "妈妈",
+          "pinyin": "māma",
+          "pos": "n.",
+          "fr": "maman",
+          "example": "妈妈做饭很好吃。Māma zuòfàn hěn hǎochī. (Ma mère cuisine très bien.)",
+          "note": "Familier. Formel : 母亲 (mǔqīn). En Chine, la mère a un rôle central."
+        },
+        {
+          "hanzi": "哥哥",
+          "pinyin": "gēge",
+          "pos": "n.",
+          "fr": "grand frère",
+          "example": "我哥哥二十岁。Wǒ gēge èrshí suì. (Mon grand frère a 20 ans.)",
+          "note": "Important : 哥哥 = frère AÎNÉ. En Chine, l'ordre de naissance compte beaucoup."
+        },
+        {
+          "hanzi": "弟弟",
+          "pinyin": "dìdi",
+          "pos": "n.",
+          "fr": "petit frère",
+          "example": "弟弟比我小三岁。Dìdi bǐ wǒ xiǎo sān suì. (Mon petit frère a 3 ans de moins.)",
+          "note": "弟弟 = frère CADET. Pas d'équivalent neutre comme « frère » en français."
+        },
+        {
+          "hanzi": "姐姐",
+          "pinyin": "jiějie",
+          "pos": "n.",
+          "fr": "grande sœur",
+          "example": "姐姐很漂亮。Jiějie hěn piàoliang. (Ma grande sœur est très jolie.)",
+          "note": "Sœur AÎNÉE. Peut être utilisé pour une femme plus âgée (politesse)."
+        },
+        {
+          "hanzi": "妹妹",
+          "pinyin": "mèimei",
+          "pos": "n.",
+          "fr": "petite sœur",
+          "example": "我有一个妹妹。Wǒ yǒu yí ge mèimei. (J'ai une petite sœur.)",
+          "note": "Sœur CADETTE. Le ton mèi (4e ton) ≠ měi (美 = beau, 3e ton)."
+        },
+        {
+          "hanzi": "儿子",
+          "pinyin": "érzi",
+          "pos": "n.",
+          "fr": "fils",
+          "example": "他的儿子很高。Tā de érzi hěn gāo. (Son fils est très grand.)",
+          "note": "儿 seul peut signifier « enfant » dans certains mots composés."
+        },
+        {
+          "hanzi": "女儿",
+          "pinyin": "nǚ'ér",
+          "pos": "n.",
+          "fr": "fille",
+          "example": "我女儿五岁了。Wǒ nǚ'ér wǔ suì le. (Ma fille a 5 ans.)",
+          "note": "Attention à l'apostrophe qui sépare les syllabes : nǚ'ér (pas nǚér)."
+        },
+        {
+          "hanzi": "爷爷",
+          "pinyin": "yéye",
+          "pos": "n.",
+          "fr": "grand-père (paternel)",
+          "example": "爷爷今年八十岁。Yéye jīnnián bāshí suì. (Grand-père a 80 ans cette année.)",
+          "note": "Côté paternel. Grand-père maternel : 外公 (wàigōng) ou 姥爷 (lǎoye)."
+        },
+        {
+          "hanzi": "奶奶",
+          "pinyin": "nǎinai",
+          "pos": "n.",
+          "fr": "grand-mère (paternelle)",
+          "example": "奶奶做的菜很好吃。Nǎinai zuò de cài hěn hǎochī. (La cuisine de grand-mère est délicieuse.)",
+          "note": "Côté paternel. Grand-mère maternelle : 外婆 (wàipó) ou 姥姥 (lǎolao)."
+        },
+        {
+          "hanzi": "叔叔",
+          "pinyin": "shūshu",
+          "pos": "n.",
+          "fr": "oncle (paternel plus jeune)",
+          "example": "叔叔住在上海。Shūshu zhù zài Shànghǎi. (Mon oncle habite à Shanghai.)",
+          "note": "Oncle plus jeune que le père. Plus âgé : 伯伯 (bóbo). Côté maternel : 舅舅 (jiùjiu)."
+        },
+        {
+          "hanzi": "阿姨",
+          "pinyin": "āyí",
+          "pos": "n.",
+          "fr": "tante / madame",
+          "example": "阿姨好！Āyí hǎo! (Bonjour madame !)",
+          "note": "Aussi utilisé poliment pour les femmes d'âge moyen. Tante paternelle : 姑姑 (gūgu)."
+        },
+        {
+          "hanzi": "丈夫",
+          "pinyin": "zhàngfu",
+          "pos": "n.",
+          "fr": "mari / époux",
+          "example": "她的丈夫是医生。Tā de zhàngfu shì yīshēng. (Son mari est médecin.)",
+          "note": "Plus formel que 老公 (lǎogōng) qui est familier."
+        },
+        {
+          "hanzi": "妻子",
+          "pinyin": "qīzi",
+          "pos": "n.",
+          "fr": "épouse / femme",
+          "example": "他和妻子结婚十年了。Tā hé qīzi jiéhūn shí nián le. (Il est marié depuis 10 ans.)",
+          "note": "Plus formel que 老婆 (lǎopo) qui est familier."
+        },
+        {
+          "hanzi": "孙子",
+          "pinyin": "sūnzi",
+          "pos": "n.",
+          "fr": "petit-fils",
+          "example": "我有两个孙子。Wǒ yǒu liǎng ge sūnzi. (J'ai deux petits-fils.)",
+          "note": "孙女 (sūnnǚ) = petite-fille. 孙 désigne la génération des petits-enfants."
+        },
+        {
+          "hanzi": "表弟",
+          "pinyin": "biǎodì",
+          "pos": "n.",
+          "fr": "cousin (plus jeune)",
+          "example": "我表弟在北京上大学。Wǒ biǎodì zài Běijīng shàng dàxué. (Mon cousin fait ses études à Pékin.)",
+          "note": "表 = cousins du côté maternel ou filles mariées. 堂 = cousins paternels portant le même nom."
+        },
+        {
+          "hanzi": "亲戚",
+          "pinyin": "qīnqi",
+          "pos": "n.",
+          "fr": "parent / proche",
+          "example": "过年要去看亲戚。Guònián yào qù kàn qīnqi. (Au Nouvel An, on rend visite à la famille.)",
+          "note": "Terme général pour la famille élargie et les proches."
+        },
+        {
+          "hanzi": "独生子女",
+          "pinyin": "dúshēng zǐnǚ",
+          "pos": "n.",
+          "fr": "enfant unique",
+          "example": "她是独生子女。Tā shì dúshēng zǐnǚ. (Elle est enfant unique.)",
+          "note": "Très courant en Chine due à la politique de l'enfant unique (1979-2015)."
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "themeZh": "身体",
+      "themeFr": "Le corps",
+      "vocab": [
+        {
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "pos": "n.",
+          "fr": "tête",
+          "example": "我头疼。Wǒ tóu téng. (J'ai mal à la tête.)",
+          "note": "头疼 (tóuténg) = mal de tête. Aussi utilisé dans 头发 (tóufa = cheveux)."
+        },
+        {
+          "hanzi": "眼睛",
+          "pinyin": "yǎnjing",
+          "pos": "n.",
+          "fr": "yeux",
+          "example": "她的眼睛很大。Tā de yǎnjing hěn dà. (Elle a de grands yeux.)",
+          "note": "睛 se prononce jing (ton neutre). ≠ 眼镜 yǎnjìng (lunettes) avec jìng (4e ton)."
+        },
+        {
+          "hanzi": "耳朵",
+          "pinyin": "ěrduo",
+          "pos": "n.",
+          "fr": "oreilles",
+          "example": "你的耳朵很小。Nǐ de ěrduo hěn xiǎo. (Tu as de petites oreilles.)",
+          "note": "朵 est le classificateur des fleurs, mais ici c'est juste partie du mot."
+        },
+        {
+          "hanzi": "鼻子",
+          "pinyin": "bízi",
+          "pos": "n.",
+          "fr": "nez",
+          "example": "他鼻子很高。Tā bízi hěn gāo. (Il a un nez aquilin.)",
+          "note": "En Chine, un « grand nez » (高鼻子) est souvent considéré comme beau."
+        },
+        {
+          "hanzi": "嘴",
+          "pinyin": "zuǐ",
+          "pos": "n.",
+          "fr": "bouche",
+          "example": "闭上嘴！Bì shàng zuǐ! (Ferme la bouche !)",
+          "note": "嘴巴 (zuǐba) est plus courant à l'oral. 嘴 seul est plus direct."
+        },
+        {
+          "hanzi": "手",
+          "pinyin": "shǒu",
+          "pos": "n.",
+          "fr": "main",
+          "example": "请洗手。Qǐng xǐ shǒu. (Lavez-vous les mains.)",
+          "note": "左手 = main gauche, 右手 = main droite. 手机 (shǒujī) = téléphone portable."
+        },
+        {
+          "hanzi": "腿",
+          "pinyin": "tuǐ",
+          "pos": "n.",
+          "fr": "jambe",
+          "example": "我的腿很酸。Wǒ de tuǐ hěn suān. (J'ai des courbatures aux jambes.)",
+          "note": "大腿 = cuisse, 小腿 = mollet. 鸡腿 = cuisse de poulet."
+        },
+        {
+          "hanzi": "脚",
+          "pinyin": "jiǎo",
+          "pos": "n.",
+          "fr": "pied",
+          "example": "脚很冷。Jiǎo hěn lěng. (J'ai froid aux pieds.)",
+          "note": "脚 = pied entier. En Chine, on enlève toujours ses chaussures en entrant chez quelqu'un."
+        },
+        {
+          "hanzi": "心",
+          "pinyin": "xīn",
+          "pos": "n.",
+          "fr": "cœur",
+          "example": "我很开心。Wǒ hěn kāixīn. (Je suis très content.)",
+          "note": "Cœur au sens émotionnel. 开心 = joyeux, 小心 = attention, 心脏 = cœur (organe)."
+        },
+        {
+          "hanzi": "肚子",
+          "pinyin": "dùzi",
+          "pos": "n.",
+          "fr": "ventre",
+          "example": "我肚子饿了。Wǒ dùzi è le. (J'ai faim.)",
+          "note": "肚子疼 = mal au ventre. Expression courante : 肚子饿 (avoir faim)."
+        },
+        {
+          "hanzi": "皮肤",
+          "pinyin": "pífū",
+          "pos": "n.",
+          "fr": "peau",
+          "example": "她的皮肤很白。Tā de pífū hěn bái. (Elle a la peau très blanche.)",
+          "note": "En Chine, la peau claire est traditionnellement considérée comme un critère de beauté."
+        },
+        {
+          "hanzi": "脖子",
+          "pinyin": "bózi",
+          "pos": "n.",
+          "fr": "cou",
+          "example": "我脖子疼。Wǒ bózi téng. (J'ai mal au cou.)",
+          "note": "围巾 (wéijīn) = écharpe (ce qui entoure le cou)."
+        },
+        {
+          "hanzi": "肩膀",
+          "pinyin": "jiānbǎng",
+          "pos": "n.",
+          "fr": "épaule",
+          "example": "他的肩膀很宽。Tā de jiānbǎng hěn kuān. (Il a les épaules larges.)",
+          "note": "耸肩 (sǒngjiān) = hausser les épaules."
+        },
+        {
+          "hanzi": "背",
+          "pinyin": "bèi",
+          "pos": "n.",
+          "fr": "dos",
+          "example": "背疼是因为坐太久。Bèi téng shì yīnwèi zuò tài jiǔ. (J'ai mal au dos à force de rester assis.)",
+          "note": "背后 (bèihòu) = derrière, dans le dos. 背包 (bēibāo) = sac à dos (ton différent !)."
+        },
+        {
+          "hanzi": "膝盖",
+          "pinyin": "xīgài",
+          "pos": "n.",
+          "fr": "genou",
+          "example": "跑步后膝盖疼。Pǎobù hòu xīgài téng. (J'ai mal aux genoux après avoir couru.)",
+          "note": "下跪 (xiàguì) = s'agenouiller."
+        },
+        {
+          "hanzi": "脚",
+          "pinyin": "jiǎo",
+          "pos": "n.",
+          "fr": "pied",
+          "example": "我的脚很大。Wǒ de jiǎo hěn dà. (J'ai de grands pieds.)",
+          "note": "脚趾 (jiǎozhǐ) = orteil. 赤脚 (chìjiǎo) = pieds nus."
+        },
+        {
+          "hanzi": "手指",
+          "pinyin": "shǒuzhǐ",
+          "pos": "n.",
+          "fr": "doigt",
+          "example": "他用手指指着我。Tā yòng shǒuzhǐ zhǐzhe wǒ. (Il me montre du doigt.)",
+          "note": "大拇指 (dàmuzhǐ) = pouce. En Chine, pointer du doigt est impoli."
+        },
+        {
+          "hanzi": "舌头",
+          "pinyin": "shétou",
+          "pos": "n.",
+          "fr": "langue",
+          "example": "吃辣的舌头疼。Chī là de shétou téng. (La langue brûle après avoir mangé épicé.)",
+          "note": "伸舌头 (shēn shétou) = tirer la langue."
+        },
+        {
+          "hanzi": "牙齿",
+          "pinyin": "yáchǐ",
+          "pos": "n.",
+          "fr": "dent",
+          "example": "要每天刷牙齿。Yào měitiān shuā yáchǐ. (Il faut se brosser les dents tous les jours.)",
+          "note": "牙医 (yáyī) = dentiste. 智齿 (zhìchǐ) = dent de sagesse."
+        },
+        {
+          "hanzi": "声音",
+          "pinyin": "shēngyīn",
+          "pos": "n.",
+          "fr": "voix / son",
+          "example": "她的声音很好听。Tā de shēngyīn hěn hǎotīng. (Elle a une belle voix.)",
+          "note": "大声 (dàshēng) = fort (volume). 小声 (xiǎoshēng) = doucement."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "themeZh": "外貌",
+      "themeFr": "L'apparence",
+      "vocab": [
+        {
+          "hanzi": "高",
+          "pinyin": "gāo",
+          "pos": "adj.",
+          "fr": "grand / haut",
+          "example": "他很高。Tā hěn gāo. (Il est grand.)",
+          "note": "Pour la taille des personnes. ≠ 大 (dà) qui désigne la grandeur/taille des objets."
+        },
+        {
+          "hanzi": "矮",
+          "pinyin": "ǎi",
+          "pos": "adj.",
+          "fr": "petit (taille)",
+          "example": "我比他矮。Wǒ bǐ tā ǎi. (Je suis plus petit que lui.)",
+          "note": "Seulement pour la hauteur. ≠ 小 (xiǎo) = petit en général. Peut être impoli !"
+        },
+        {
+          "hanzi": "胖",
+          "pinyin": "pàng",
+          "pos": "adj.",
+          "fr": "rond / corpulent",
+          "example": "我最近胖了。Wǒ zuìjìn pàng le. (J'ai grossi récemment.)",
+          "note": "En Chine, dire « 你胖了 » n'est pas forcément impoli, c'est une observation."
+        },
+        {
+          "hanzi": "瘦",
+          "pinyin": "shòu",
+          "pos": "adj.",
+          "fr": "mince",
+          "example": "她很瘦。Tā hěn shòu. (Elle est mince.)",
+          "note": "Souvent positif. 太瘦 = trop maigre. En Chine, « tu as maigri » peut être un compliment."
+        },
+        {
+          "hanzi": "漂亮",
+          "pinyin": "piàoliang",
+          "pos": "adj.",
+          "fr": "joli·e",
+          "example": "这件衣服很漂亮。Zhè jiàn yīfu hěn piàoliang. (Ce vêtement est joli.)",
+          "note": "Pour les personnes (surtout femmes) et les choses. ≠ 帅 (shuài) pour les hommes."
+        },
+        {
+          "hanzi": "帅",
+          "pinyin": "shuài",
+          "pos": "adj.",
+          "fr": "beau (souvent pour un homme)",
+          "example": "他很帅！Tā hěn shuài! (Il est beau !)",
+          "note": "Principalement pour les hommes. Pour une femme, on dit plutôt 漂亮 ou 美."
+        },
+        {
+          "hanzi": "长",
+          "pinyin": "cháng",
+          "pos": "adj.",
+          "fr": "long",
+          "example": "她的头发很长。Tā de tóufa hěn cháng. (Elle a les cheveux longs.)",
+          "note": "Attention : 长 se lit cháng (long) ou zhǎng (grandir). Contexte important !"
+        },
+        {
+          "hanzi": "短",
+          "pinyin": "duǎn",
+          "pos": "adj.",
+          "fr": "court",
+          "example": "这条裤子太短了。Zhè tiáo kùzi tài duǎn le. (Ce pantalon est trop court.)",
+          "note": "Longueur uniquement. Pour « bref » (temps), on dit aussi 短 : 时间很短."
+        },
+        {
+          "hanzi": "眼镜",
+          "pinyin": "yǎnjìng",
+          "pos": "n.",
+          "fr": "lunettes",
+          "example": "我要戴眼镜。Wǒ yào dài yǎnjìng. (Je dois porter des lunettes.)",
+          "note": "镜 = miroir/verre. ≠ 眼睛 yǎnjing (yeux) - le ton de jìng/jing fait la différence !"
+        },
+        {
+          "hanzi": "头发",
+          "pinyin": "tóufa",
+          "pos": "n.",
+          "fr": "cheveux",
+          "example": "我要剪头发。Wǒ yào jiǎn tóufa. (Je veux me couper les cheveux.)",
+          "note": "发 se lit fà (cheveux) ou fā (développer). 理发 = coiffure, 发型 = style de coiffure."
+        },
+        {
+          "hanzi": "身材",
+          "pinyin": "shēncái",
+          "pos": "n.",
+          "fr": "silhouette / corps",
+          "example": "她的身材很好。Tā de shēncái hěn hǎo. (Elle a une belle silhouette.)",
+          "note": "身材好 = bien fait. Plus précis que 身体 qui désigne le corps en général."
+        },
+        {
+          "hanzi": "年龄",
+          "pinyin": "niánlíng",
+          "pos": "n.",
+          "fr": "âge",
+          "example": "她看起来比实际年龄小。Tā kànqǐlái bǐ shíjì niánlíng xiǎo. (Elle fait plus jeune que son âge.)",
+          "note": "Plus formel que 岁 (suì). 年龄段 = tranche d'âge."
+        },
+        {
+          "hanzi": "长相",
+          "pinyin": "zhǎngxiàng",
+          "pos": "n.",
+          "fr": "apparence / physique",
+          "example": "他的长相很普通。Tā de zhǎngxiàng hěn pǔtōng. (Il a un physique ordinaire.)",
+          "note": "Décrit les traits du visage. 长得 + adj = avoir l'air de."
+        },
+        {
+          "hanzi": "皱纹",
+          "pinyin": "zhòuwén",
+          "pos": "n.",
+          "fr": "ride",
+          "example": "她脸上有皱纹了。Tā liǎn shang yǒu zhòuwén le. (Elle a des rides sur le visage.)",
+          "note": "皱 = plisser. 抬头纹 = rides du front."
+        },
+        {
+          "hanzi": "胡子",
+          "pinyin": "húzi",
+          "pos": "n.",
+          "fr": "barbe / moustache",
+          "example": "他留着胡子。Tā liúzhe húzi. (Il porte la barbe.)",
+          "note": "刮胡子 (guā húzi) = se raser."
+        },
+        {
+          "hanzi": "卷发",
+          "pinyin": "juǎnfà",
+          "pos": "n.",
+          "fr": "cheveux bouclés",
+          "example": "她有自然的卷发。Tā yǒu zìrán de juǎnfà. (Elle a des boucles naturelles.)",
+          "note": "直发 (zhífà) = cheveux raides. 烫发 (tàngfà) = permanente."
+        },
+        {
+          "hanzi": "黑",
+          "pinyin": "hēi",
+          "pos": "adj.",
+          "fr": "noir / bronzé",
+          "example": "他晒黑了。Tā shàihēi le. (Il a bronzé.)",
+          "note": "黑眼睛 = yeux noirs. 黑头发 = cheveux noirs."
+        },
+        {
+          "hanzi": "白",
+          "pinyin": "bái",
+          "pos": "adj.",
+          "fr": "blanc / pâle",
+          "example": "她的皮肤很白。Tā de pífū hěn bái. (Elle a la peau très blanche.)",
+          "note": "白头发 = cheveux blancs. 明白 (míngbai) = comprendre."
+        },
+        {
+          "hanzi": "化妆",
+          "pinyin": "huàzhuāng",
+          "pos": "v.",
+          "fr": "se maquiller",
+          "example": "她每天都化妆。Tā měitiān dōu huàzhuāng. (Elle se maquille tous les jours.)",
+          "note": "化妆品 = cosmétiques. 卸妆 (xièzhuāng) = se démaquiller."
+        },
+        {
+          "hanzi": "打扮",
+          "pinyin": "dǎban",
+          "pos": "v.",
+          "fr": "s'habiller / se parer",
+          "example": "她打扮得很漂亮。Tā dǎban de hěn piàoliang. (Elle est très bien habillée.)",
+          "note": "打扮一下 = se faire beau/belle."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "themeZh": "性格与状态",
+      "themeFr": "Personnalité & états",
+      "vocab": [
+        {
+          "hanzi": "开心",
+          "pinyin": "kāixīn",
+          "pos": "adj.",
+          "fr": "content / heureux",
+          "example": "今天我很开心！Jīntiān wǒ hěn kāixīn! (Aujourd'hui je suis content !)",
+          "note": "Littéralement « cœur ouvert ». Synonymes : 高兴 (gāoxìng), 快乐 (kuàilè)."
+        },
+        {
+          "hanzi": "生气",
+          "pinyin": "shēngqì",
+          "pos": "v./adj.",
+          "fr": "être en colère",
+          "example": "别生气！Bié shēngqì! (Ne te fâche pas !)",
+          "note": "Littéralement « générer de l'énergie/air ». 气 = souffle, énergie vitale (qi)."
+        },
+        {
+          "hanzi": "累",
+          "pinyin": "lèi",
+          "pos": "adj.",
+          "fr": "fatigué",
+          "example": "我很累，想睡觉。Wǒ hěn lèi, xiǎng shuìjiào. (Je suis fatigué, j'ai envie de dormir.)",
+          "note": "Fatigue physique. Pour la fatigue mentale : 烦 (fán) = agacé, las."
+        },
+        {
+          "hanzi": "害羞",
+          "pinyin": "hàixiū",
+          "pos": "adj.",
+          "fr": "timide",
+          "example": "她有点害羞。Tā yǒudiǎn hàixiū. (Elle est un peu timide.)",
+          "note": "Temporaire (gêne). Pour un trait de caractère permanent : 内向 (nèixiàng) = introverti."
+        },
+        {
+          "hanzi": "聪明",
+          "pinyin": "cōngming",
+          "pos": "adj.",
+          "fr": "intelligent",
+          "example": "这个孩子很聪明。Zhège háizi hěn cōngming. (Cet enfant est intelligent.)",
+          "note": "聪 = oreilles fines, 明 = yeux clairs. Compliment très apprécié en Chine."
+        },
+        {
+          "hanzi": "认真",
+          "pinyin": "rènzhēn",
+          "pos": "adj.",
+          "fr": "sérieux / appliqué",
+          "example": "他学习很认真。Tā xuéxí hěn rènzhēn. (Il étudie sérieusement.)",
+          "note": "Valeur importante en Chine. 认真工作 = travailler sérieusement."
+        },
+        {
+          "hanzi": "友好",
+          "pinyin": "yǒuhǎo",
+          "pos": "adj.",
+          "fr": "aimable",
+          "example": "中国人很友好。Zhōngguórén hěn yǒuhǎo. (Les Chinois sont aimables.)",
+          "note": "友 = ami, 好 = bon. Aussi pour les relations diplomatiques : 友好国家."
+        },
+        {
+          "hanzi": "安静",
+          "pinyin": "ānjìng",
+          "pos": "adj.",
+          "fr": "calme",
+          "example": "请安静！Qǐng ānjìng! (Silence s'il vous plaît !)",
+          "note": "Pour un lieu ou une personne. ≠ 平静 (píngjìng) = serein (émotionnellement)."
+        },
+        {
+          "hanzi": "热情",
+          "pinyin": "rèqíng",
+          "pos": "adj.",
+          "fr": "chaleureux",
+          "example": "他对人很热情。Tā duì rén hěn rèqíng. (Il est chaleureux avec les gens.)",
+          "note": "热 = chaud, 情 = sentiment. L'hospitalité chinoise est souvent décrite ainsi."
+        },
+        {
+          "hanzi": "紧张",
+          "pinyin": "jǐnzhāng",
+          "pos": "adj.",
+          "fr": "stressé",
+          "example": "考试前我很紧张。Kǎoshì qián wǒ hěn jǐnzhāng. (Je suis stressé avant l'examen.)",
+          "note": "Aussi : tendu (situation). 别紧张 = ne sois pas nerveux, détends-toi."
+        },
+        {
+          "hanzi": "勇敢",
+          "pinyin": "yǒnggǎn",
+          "pos": "adj.",
+          "fr": "courageux",
+          "example": "他很勇敢。Tā hěn yǒnggǎn. (Il est très courageux.)",
+          "note": "勇气 (yǒngqì) = courage. 勇士 (yǒngshì) = brave, guerrier."
+        },
+        {
+          "hanzi": "诚实",
+          "pinyin": "chéngshí",
+          "pos": "adj.",
+          "fr": "honnête",
+          "example": "他是一个诚实的人。Tā shì yī ge chéngshí de rén. (C'est quelqu'un d'honnête.)",
+          "note": "诚信 (chéngxìn) = intégrité. Valeur très importante en Chine."
+        },
+        {
+          "hanzi": "骄傲",
+          "pinyin": "jiāo'ào",
+          "pos": "adj.",
+          "fr": "fier / orgueilleux",
+          "example": "我为你感到骄傲。Wǒ wèi nǐ gǎndào jiāo'ào. (Je suis fier de toi.)",
+          "note": "Positif (fier) ou négatif (arrogant) selon le contexte."
+        },
+        {
+          "hanzi": "害羞",
+          "pinyin": "hàixiū",
+          "pos": "adj.",
+          "fr": "timide / gêné",
+          "example": "她很害羞，不敢说话。Tā hěn hàixiū, bù gǎn shuōhuà. (Elle est timide, elle n'ose pas parler.)",
+          "note": "害 = craindre, 羞 = honte. 不好意思 = gêné (moins fort)."
+        },
+        {
+          "hanzi": "无聊",
+          "pinyin": "wúliáo",
+          "pos": "adj.",
+          "fr": "ennuyeux / s'ennuyer",
+          "example": "这部电影很无聊。Zhè bù diànyǐng hěn wúliáo. (Ce film est ennuyeux.)",
+          "note": "我好无聊 = Je m'ennuie. ≠ 有意思 (intéressant)."
+        },
+        {
+          "hanzi": "激动",
+          "pinyin": "jīdòng",
+          "pos": "adj.",
+          "fr": "excité / ému",
+          "example": "她激动得哭了。Tā jīdòng de kū le. (Elle était si émue qu'elle a pleuré.)",
+          "note": "Émotion forte, positive ou négative. 令人激动 = passionnant."
+        },
+        {
+          "hanzi": "温柔",
+          "pinyin": "wēnróu",
+          "pos": "adj.",
+          "fr": "doux / tendre",
+          "example": "她对孩子很温柔。Tā duì háizi hěn wēnróu. (Elle est douce avec les enfants.)",
+          "note": "Souvent utilisé pour décrire les femmes. 温和 = plus neutre."
+        },
+        {
+          "hanzi": "严格",
+          "pinyin": "yángé",
+          "pos": "adj.",
+          "fr": "strict",
+          "example": "老师很严格。Lǎoshī hěn yángé. (Le professeur est strict.)",
+          "note": "严格要求 = être exigeant. 严厉 (yánlì) = sévère."
+        },
+        {
+          "hanzi": "安静",
+          "pinyin": "ānjìng",
+          "pos": "adj.",
+          "fr": "calme / silencieux",
+          "example": "请安静！Qǐng ānjìng! (Silence s'il vous plaît !)",
+          "note": "安静一点 = sois plus calme. 安心 = tranquille d'esprit."
+        },
+        {
+          "hanzi": "吵",
+          "pinyin": "chǎo",
+          "pos": "adj./v.",
+          "fr": "bruyant / se disputer",
+          "example": "这里太吵了。Zhèlǐ tài chǎo le. (C'est trop bruyant ici.)",
+          "note": "吵架 (chǎojià) = se disputer. 吵闹 = faire du bruit."
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "themeZh": "职业",
+      "themeFr": "Professions",
+      "vocab": [
+        {
+          "hanzi": "学生",
+          "pinyin": "xuésheng",
+          "pos": "n.",
+          "fr": "étudiant",
+          "example": "我是学生。Wǒ shì xuésheng. (Je suis étudiant.)",
+          "note": "小学生 = écolier, 中学生 = collégien/lycéen, 大学生 = universitaire."
+        },
+        {
+          "hanzi": "老师",
+          "pinyin": "lǎoshī",
+          "pos": "n.",
+          "fr": "professeur",
+          "example": "老师好！Lǎoshī hǎo! (Bonjour professeur !)",
+          "note": "Titre très respecté en Chine. On salue le prof en se levant en classe."
+        },
+        {
+          "hanzi": "医生",
+          "pinyin": "yīshēng",
+          "pos": "n.",
+          "fr": "médecin",
+          "example": "我要去看医生。Wǒ yào qù kàn yīshēng. (Je dois aller voir le médecin.)",
+          "note": "看医生 = consulter un médecin. 大夫 (dàifu) est plus familier."
+        },
+        {
+          "hanzi": "工程师",
+          "pinyin": "gōngchéngshī",
+          "pos": "n.",
+          "fr": "ingénieur",
+          "example": "他是软件工程师。Tā shì ruǎnjiàn gōngchéngshī. (Il est ingénieur logiciel.)",
+          "note": "Profession très valorisée. 师 = maître, expert (aussi dans 老师, 厨师)."
+        },
+        {
+          "hanzi": "司机",
+          "pinyin": "sījī",
+          "pos": "n.",
+          "fr": "chauffeur",
+          "example": "出租车司机很忙。Chūzūchē sījī hěn máng. (Le chauffeur de taxi est occupé.)",
+          "note": "司 = gérer, 机 = machine. Pour les taxis : 师傅 (shīfu) est plus poli."
+        },
+        {
+          "hanzi": "厨师",
+          "pinyin": "chúshī",
+          "pos": "n.",
+          "fr": "cuisinier",
+          "example": "这个厨师做的菜很好吃。Zhège chúshī zuò de cài hěn hǎochī. (Ce chef cuisine très bien.)",
+          "note": "厨 = cuisine. Pour dire « cuisinier à la maison », on utilise 做饭的人."
+        },
+        {
+          "hanzi": "服务员",
+          "pinyin": "fúwùyuán",
+          "pos": "n.",
+          "fr": "serveur / serveuse",
+          "example": "服务员，买单！Fúwùyuán, mǎidān! (Serveur, l'addition !)",
+          "note": "Au restaurant, on appelle « 服务员! » pour attirer l'attention. C'est normal en Chine."
+        },
+        {
+          "hanzi": "警察",
+          "pinyin": "jǐngchá",
+          "pos": "n.",
+          "fr": "policier",
+          "example": "有问题找警察。Yǒu wèntí zhǎo jǐngchá. (En cas de problème, trouvez un policier.)",
+          "note": "公安 (gōng'ān) désigne la sécurité publique. Numéro d'urgence : 110."
+        },
+        {
+          "hanzi": "经理",
+          "pinyin": "jīnglǐ",
+          "pos": "n.",
+          "fr": "manager",
+          "example": "我想见经理。Wǒ xiǎng jiàn jīnglǐ. (Je voudrais voir le manager.)",
+          "note": "经 = gérer, 理 = organiser. 总经理 (zǒngjīnglǐ) = directeur général."
+        },
+        {
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "pos": "n./v.",
+          "fr": "travail / travailler",
+          "example": "你在哪儿工作？Nǐ zài nǎr gōngzuò? (Où travailles-tu ?)",
+          "note": "Nom et verbe. 找工作 = chercher un travail, 工作忙 = travail chargé."
+        },
+        {
+          "hanzi": "农民",
+          "pinyin": "nóngmín",
+          "pos": "n.",
+          "fr": "agriculteur / paysan",
+          "example": "中国有很多农民。Zhōngguó yǒu hěn duō nóngmín. (Il y a beaucoup de paysans en Chine.)",
+          "note": "农 = agriculture, 民 = peuple. 农村 (nóngcūn) = campagne."
+        },
+        {
+          "hanzi": "厨师",
+          "pinyin": "chúshī",
+          "pos": "n.",
+          "fr": "cuisinier / chef",
+          "example": "这个厨师做的菜很好吃。Zhège chúshī zuò de cài hěn hǎochī. (La cuisine de ce chef est délicieuse.)",
+          "note": "厨房 (chúfáng) = cuisine (pièce). 大厨 = chef cuisinier."
+        },
+        {
+          "hanzi": "警察",
+          "pinyin": "jǐngchá",
+          "pos": "n.",
+          "fr": "policier",
+          "example": "警察来了。Jǐngchá lái le. (La police est arrivée.)",
+          "note": "报警 (bàojǐng) = appeler la police. 警察局 = commissariat."
+        },
+        {
+          "hanzi": "护士",
+          "pinyin": "hùshi",
+          "pos": "n.",
+          "fr": "infirmier/ère",
+          "example": "护士很细心。Hùshi hěn xìxīn. (L'infirmière est attentionnée.)",
+          "note": "护 = protéger. 护理 = soins infirmiers."
+        },
+        {
+          "hanzi": "记者",
+          "pinyin": "jìzhě",
+          "pos": "n.",
+          "fr": "journaliste",
+          "example": "记者采访了他。Jìzhě cǎifǎng le tā. (Le journaliste l'a interviewé.)",
+          "note": "记 = noter, 者 = celui qui. 新闻记者 = reporter."
+        },
+        {
+          "hanzi": "翻译",
+          "pinyin": "fānyì",
+          "pos": "n./v.",
+          "fr": "traducteur / traduire",
+          "example": "她是法语翻译。Tā shì Fǎyǔ fānyì. (Elle est traductrice de français.)",
+          "note": "口译 (kǒuyì) = interprétation. 笔译 (bǐyì) = traduction écrite."
+        },
+        {
+          "hanzi": "演员",
+          "pinyin": "yǎnyuán",
+          "pos": "n.",
+          "fr": "acteur / actrice",
+          "example": "她是有名的演员。Tā shì yǒumíng de yǎnyuán. (C'est une actrice célèbre.)",
+          "note": "演 = jouer (rôle). 电影演员 = acteur de cinéma."
+        },
+        {
+          "hanzi": "设计师",
+          "pinyin": "shèjìshī",
+          "pos": "n.",
+          "fr": "designer / concepteur",
+          "example": "他是服装设计师。Tā shì fúzhuāng shèjìshī. (Il est styliste de mode.)",
+          "note": "设计 = concevoir. 平面设计 = design graphique."
+        },
+        {
+          "hanzi": "律师",
+          "pinyin": "lǜshī",
+          "pos": "n.",
+          "fr": "avocat",
+          "example": "我需要一个律师。Wǒ xūyào yī ge lǜshī. (J'ai besoin d'un avocat.)",
+          "note": "律 = loi. 律师事务所 = cabinet d'avocats."
+        },
+        {
+          "hanzi": "会计",
+          "pinyin": "kuàijì",
+          "pos": "n.",
+          "fr": "comptable",
+          "example": "公司的会计很忙。Gōngsī de kuàijì hěn máng. (Le comptable de l'entreprise est très occupé.)",
+          "note": "会计师 = expert-comptable. 财务 (cáiwù) = finances."
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "themeZh": "日常",
+      "themeFr": "Routine",
+      "vocab": [
+        {
+          "hanzi": "起床",
+          "pinyin": "qǐchuáng",
+          "pos": "v.",
+          "fr": "se lever",
+          "example": "我早上七点起床。Wǒ zǎoshang qī diǎn qǐchuáng. (Je me lève à 7h le matin.)",
+          "note": "起 = se lever, 床 = lit. ≠ 起来 (qǐlai) qui est plus général (se lever debout)."
+        },
+        {
+          "hanzi": "睡觉",
+          "pinyin": "shuìjiào",
+          "pos": "v.",
+          "fr": "dormir",
+          "example": "晚安，我要睡觉了。Wǎn'ān, wǒ yào shuìjiào le. (Bonne nuit, je vais dormir.)",
+          "note": "睡 seul = dormir. 觉 ici se prononce jiào. 睡午觉 = faire la sieste."
+        },
+        {
+          "hanzi": "吃饭",
+          "pinyin": "chīfàn",
+          "pos": "v.",
+          "fr": "manger (repas)",
+          "example": "你吃饭了吗？Nǐ chīfàn le ma? (Tu as mangé ?)",
+          "note": "Question très courante en Chine, comme « ça va ? » en France. Marque d'attention."
+        },
+        {
+          "hanzi": "上班",
+          "pinyin": "shàngbān",
+          "pos": "v.",
+          "fr": "aller au travail",
+          "example": "我每天九点上班。Wǒ měitiān jiǔ diǎn shàngbān. (Je travaille à 9h chaque jour.)",
+          "note": "上 = monter/commencer, 班 = poste. Opposé : 下班. Culture 996 = 9h-21h, 6j/sem."
+        },
+        {
+          "hanzi": "下班",
+          "pinyin": "xiàbān",
+          "pos": "v.",
+          "fr": "finir le travail",
+          "example": "你几点下班？Nǐ jǐ diǎn xiàbān? (À quelle heure finis-tu le travail ?)",
+          "note": "下 = descendre/finir. 下班后 = après le travail."
+        },
+        {
+          "hanzi": "上课",
+          "pinyin": "shàngkè",
+          "pos": "v.",
+          "fr": "avoir cours",
+          "example": "我在上课，等一下。Wǒ zài shàngkè, děng yíxià. (Je suis en cours, attends.)",
+          "note": "上课 = suivre un cours, 下课 = finir le cours. Le prof dit : 上课了！ = On commence !"
+        },
+        {
+          "hanzi": "学习",
+          "pinyin": "xuéxí",
+          "pos": "v.",
+          "fr": "étudier",
+          "example": "我在学习中文。Wǒ zài xuéxí Zhōngwén. (J'étudie le chinois.)",
+          "note": "学 = apprendre, 习 = pratiquer. 好好学习，天天向上 = Étudie bien, progresse chaque jour."
+        },
+        {
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "pos": "v.",
+          "fr": "se reposer",
+          "example": "周末我想休息。Zhōumò wǒ xiǎng xiūxi. (Le week-end je veux me reposer.)",
+          "note": "休 = se reposer, 息 = souffle. 休息一下 = fais une pause."
+        },
+        {
+          "hanzi": "运动",
+          "pinyin": "yùndòng",
+          "pos": "n./v.",
+          "fr": "sport / faire du sport",
+          "example": "你喜欢什么运动？Nǐ xǐhuan shénme yùndòng? (Quel sport aimes-tu ?)",
+          "note": "运 = mouvement, 动 = bouger. Aussi utilisé pour « mouvement » politique/social."
+        },
+        {
+          "hanzi": "做饭",
+          "pinyin": "zuòfàn",
+          "pos": "v.",
+          "fr": "cuisiner",
+          "example": "谁做饭？Shéi zuòfàn? (Qui fait la cuisine ?)",
+          "note": "做 = faire, 饭 = riz/repas. En Chine, cuisiner à la maison reste très courant."
+        },
+        {
+          "hanzi": "刷牙",
+          "pinyin": "shuāyá",
+          "pos": "v.",
+          "fr": "se brosser les dents",
+          "example": "早上要刷牙。Zǎoshang yào shuāyá. (Il faut se brosser les dents le matin.)",
+          "note": "刷 = brosser, 牙 = dent. 牙刷 (yáshuā) = brosse à dents."
+        },
+        {
+          "hanzi": "洗澡",
+          "pinyin": "xǐzǎo",
+          "pos": "v.",
+          "fr": "se doucher / prendre un bain",
+          "example": "我每天晚上洗澡。Wǒ měitiān wǎnshang xǐzǎo. (Je me douche tous les soirs.)",
+          "note": "洗 = laver, 澡 = bain. En Chine, beaucoup se douchent le soir plutôt que le matin."
+        },
+        {
+          "hanzi": "穿衣服",
+          "pinyin": "chuān yīfu",
+          "pos": "v.",
+          "fr": "s'habiller",
+          "example": "快穿衣服！Kuài chuān yīfu! (Habille-toi vite !)",
+          "note": "穿 = porter/enfiler. Contraire : 脱 (tuō) = enlever."
+        },
+        {
+          "hanzi": "出门",
+          "pinyin": "chūmén",
+          "pos": "v.",
+          "fr": "sortir (de chez soi)",
+          "example": "我八点出门。Wǒ bā diǎn chūmén. (Je sors à 8h.)",
+          "note": "出 = sortir, 门 = porte. 出去 = sortir (plus général)."
+        },
+        {
+          "hanzi": "回家",
+          "pinyin": "huíjiā",
+          "pos": "v.",
+          "fr": "rentrer à la maison",
+          "example": "我六点回家。Wǒ liù diǎn huíjiā. (Je rentre à 18h.)",
+          "note": "回 = retourner. 回来 = revenir ici. 回去 = retourner là-bas."
+        },
+        {
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "pos": "v.",
+          "fr": "se reposer",
+          "example": "周末我想休息。Zhōumò wǒ xiǎng xiūxi. (Je veux me reposer le week-end.)",
+          "note": "休息一下 = se reposer un peu. 休息日 = jour de repos."
+        },
+        {
+          "hanzi": "锻炼",
+          "pinyin": "duànliàn",
+          "pos": "v.",
+          "fr": "s'entraîner / faire de l'exercice",
+          "example": "我每天锻炼身体。Wǒ měitiān duànliàn shēntǐ. (Je fais de l'exercice tous les jours.)",
+          "note": "Plus spécifique que 运动. 锻炼身体 = expression complète courante."
+        },
+        {
+          "hanzi": "打扫",
+          "pinyin": "dǎsǎo",
+          "pos": "v.",
+          "fr": "nettoyer / faire le ménage",
+          "example": "周末要打扫房间。Zhōumò yào dǎsǎo fángjiān. (Le week-end, il faut nettoyer la chambre.)",
+          "note": "打扫卫生 = faire le ménage. 扫地 = balayer."
+        },
+        {
+          "hanzi": "上网",
+          "pinyin": "shàngwǎng",
+          "pos": "v.",
+          "fr": "aller sur internet",
+          "example": "他每天上网两小时。Tā měitiān shàngwǎng liǎng xiǎoshí. (Il surfe 2h par jour.)",
+          "note": "上 = monter/aller sur, 网 = réseau/internet. 网络 = réseau internet."
+        },
+        {
+          "hanzi": "看电视",
+          "pinyin": "kàn diànshì",
+          "pos": "v.",
+          "fr": "regarder la télé",
+          "example": "晚上我们看电视。Wǎnshang wǒmen kàn diànshì. (Le soir, on regarde la télé.)",
+          "note": "电视剧 (diànshìjù) = série télévisée. 电视节目 = émission TV."
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "themeZh": "移动",
+      "themeFr": "Se déplacer",
+      "vocab": [
+        {
+          "hanzi": "去",
+          "pinyin": "qù",
+          "pos": "v.",
+          "fr": "aller",
+          "example": "我去学校。Wǒ qù xuéxiào. (Je vais à l'école.)",
+          "note": "Direction : s'éloigner du locuteur. ≠ 来 (venir vers le locuteur)."
+        },
+        {
+          "hanzi": "来",
+          "pinyin": "lái",
+          "pos": "v.",
+          "fr": "venir",
+          "example": "请进来！Qǐng jìnlai! (Entrez !)",
+          "note": "Direction : vers le locuteur. 来了！ = J'arrive ! (très courant)."
+        },
+        {
+          "hanzi": "走",
+          "pinyin": "zǒu",
+          "pos": "v.",
+          "fr": "marcher",
+          "example": "我们走吧！Wǒmen zǒu ba! (Allons-y !)",
+          "note": "Aussi « partir » : 他走了 = Il est parti. 走路 = marcher (à pied)."
+        },
+        {
+          "hanzi": "跑",
+          "pinyin": "pǎo",
+          "pos": "v.",
+          "fr": "courir",
+          "example": "他跑得很快。Tā pǎo de hěn kuài. (Il court très vite.)",
+          "note": "跑步 = faire du jogging. Aussi : 跑掉 = s'enfuir."
+        },
+        {
+          "hanzi": "坐",
+          "pinyin": "zuò",
+          "pos": "v.",
+          "fr": "s'asseoir / prendre (transport)",
+          "example": "我坐地铁上班。Wǒ zuò dìtiě shàngbān. (Je prends le métro pour aller au travail.)",
+          "note": "Double sens : s'asseoir + prendre un transport. 坐飞机 = prendre l'avion."
+        },
+        {
+          "hanzi": "站",
+          "pinyin": "zhàn",
+          "pos": "v.",
+          "fr": "se tenir debout",
+          "example": "请站起来。Qǐng zhàn qǐlai. (Levez-vous s'il vous plaît.)",
+          "note": "Aussi nom : 车站 = gare/arrêt. 地铁站 = station de métro."
+        },
+        {
+          "hanzi": "进",
+          "pinyin": "jìn",
+          "pos": "v.",
+          "fr": "entrer",
+          "example": "请进！Qǐng jìn! (Entrez !)",
+          "note": "进来 = entrer (vers moi), 进去 = entrer (s'éloigner). Opposé : 出."
+        },
+        {
+          "hanzi": "出",
+          "pinyin": "chū",
+          "pos": "v.",
+          "fr": "sortir",
+          "example": "我出去一下。Wǒ chūqu yíxià. (Je sors un instant.)",
+          "note": "出来 = sortir (vers moi), 出去 = sortir (s'éloigner). 出口 = sortie."
+        },
+        {
+          "hanzi": "回",
+          "pinyin": "huí",
+          "pos": "v.",
+          "fr": "retourner",
+          "example": "我要回家。Wǒ yào huí jiā. (Je veux rentrer à la maison.)",
+          "note": "Implique un retour au point de départ. 回来 = revenir, 回去 = repartir."
+        },
+        {
+          "hanzi": "旅行",
+          "pinyin": "lǚxíng",
+          "pos": "v./n.",
+          "fr": "voyager / voyage",
+          "example": "我想去中国旅行。Wǒ xiǎng qù Zhōngguó lǚxíng. (Je veux voyager en Chine.)",
+          "note": "旅游 (lǚyóu) = tourisme (plus loisir). 旅行 peut être pour affaires aussi."
+        },
+        {
+          "hanzi": "骑",
+          "pinyin": "qí",
+          "pos": "v.",
+          "fr": "monter (vélo, cheval)",
+          "example": "我骑自行车上班。Wǒ qí zìxíngchē shàngbān. (Je vais au travail à vélo.)",
+          "note": "骑马 = monter à cheval. 骑车 = faire du vélo."
+        },
+        {
+          "hanzi": "飞机",
+          "pinyin": "fēijī",
+          "pos": "n.",
+          "fr": "avion",
+          "example": "我坐飞机去北京。Wǒ zuò fēijī qù Běijīng. (Je prends l'avion pour Pékin.)",
+          "note": "飞 = voler, 机 = machine. 机场 (jīchǎng) = aéroport."
+        },
+        {
+          "hanzi": "火车",
+          "pinyin": "huǒchē",
+          "pos": "n.",
+          "fr": "train",
+          "example": "火车比飞机便宜。Huǒchē bǐ fēijī piányi. (Le train est moins cher que l'avion.)",
+          "note": "火车站 = gare. 高铁 (gāotiě) = TGV chinois."
+        },
+        {
+          "hanzi": "地铁",
+          "pinyin": "dìtiě",
+          "pos": "n.",
+          "fr": "métro",
+          "example": "北京的地铁很方便。Běijīng de dìtiě hěn fāngbiàn. (Le métro de Pékin est très pratique.)",
+          "note": "地 = terre, 铁 = fer. 地铁站 = station de métro."
+        },
+        {
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "pos": "n.",
+          "fr": "taxi",
+          "example": "我们打出租车吧。Wǒmen dǎ chūzūchē ba. (Prenons un taxi.)",
+          "note": "打车 = prendre un taxi (familier). 网约车 = VTC (Didi)."
+        },
+        {
+          "hanzi": "公交车",
+          "pinyin": "gōngjiāochē",
+          "pos": "n.",
+          "fr": "bus",
+          "example": "公交车站在哪儿？Gōngjiāochē zhàn zài nǎr? (Où est l'arrêt de bus ?)",
+          "note": "公共汽车 = forme complète. 公交卡 = carte de transport."
+        },
+        {
+          "hanzi": "转",
+          "pinyin": "zhuǎn",
+          "pos": "v.",
+          "fr": "tourner / changer",
+          "example": "往右转。Wǎng yòu zhuǎn. (Tournez à droite.)",
+          "note": "转车 = changer de transport. 转弯 = tourner (à un virage)."
+        },
+        {
+          "hanzi": "路",
+          "pinyin": "lù",
+          "pos": "n.",
+          "fr": "route / chemin",
+          "example": "这条路很长。Zhè tiáo lù hěn cháng. (Cette route est longue.)",
+          "note": "马路 = rue. 问路 = demander son chemin. 一路平安 = bon voyage."
+        },
+        {
+          "hanzi": "方向",
+          "pinyin": "fāngxiàng",
+          "pos": "n.",
+          "fr": "direction",
+          "example": "你走错方向了。Nǐ zǒu cuò fāngxiàng le. (Tu es parti dans la mauvaise direction.)",
+          "note": "东西南北 = les 4 directions cardinales."
+        },
+        {
+          "hanzi": "停",
+          "pinyin": "tíng",
+          "pos": "v.",
+          "fr": "s'arrêter",
+          "example": "请在这里停车。Qǐng zài zhèlǐ tíngchē. (Arrêtez-vous ici s'il vous plaît.)",
+          "note": "停车 = se garer. 停车场 = parking."
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "themeZh": "地点",
+      "themeFr": "Lieux",
+      "vocab": [
+        {
+          "hanzi": "这里",
+          "pinyin": "zhèlǐ",
+          "pos": "adv.",
+          "fr": "ici",
+          "example": "我在这里。Wǒ zài zhèlǐ. (Je suis ici.)",
+          "note": "这儿 (zhèr) est la variante du nord (Pékin). 这里 est plus standard."
+        },
+        {
+          "hanzi": "那里",
+          "pinyin": "nàlǐ",
+          "pos": "adv.",
+          "fr": "là-bas",
+          "example": "他在那里。Tā zài nàlǐ. (Il est là-bas.)",
+          "note": "那儿 (nàr) variante du nord. Attention au ton : 那 (nà) ≠ 哪 (nǎ)."
+        },
+        {
+          "hanzi": "哪里",
+          "pinyin": "nǎlǐ",
+          "pos": "adv.",
+          "fr": "où ?",
+          "example": "你在哪里？Nǐ zài nǎlǐ? (Où es-tu ?)",
+          "note": "3e ton (nǎ). Aussi utilisé pour la modestie : 哪里哪里！= Mais non, pas du tout !"
+        },
+        {
+          "hanzi": "学校",
+          "pinyin": "xuéxiào",
+          "pos": "n.",
+          "fr": "école",
+          "example": "学校很大。Xuéxiào hěn dà. (L'école est grande.)",
+          "note": "小学 = école primaire, 中学 = collège/lycée, 大学 = université."
+        },
+        {
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "pos": "n.",
+          "fr": "entreprise",
+          "example": "我在一家公司工作。Wǒ zài yì jiā gōngsī gōngzuò. (Je travaille dans une entreprise.)",
+          "note": "公 = public, 司 = gérer. Classificateur : 家 (jiā)."
+        },
+        {
+          "hanzi": "商店",
+          "pinyin": "shāngdiàn",
+          "pos": "n.",
+          "fr": "magasin",
+          "example": "商店几点开门？Shāngdiàn jǐ diǎn kāimén? (À quelle heure ouvre le magasin ?)",
+          "note": "商 = commerce, 店 = boutique. 超市 (chāoshì) = supermarché."
+        },
+        {
+          "hanzi": "餐厅",
+          "pinyin": "cāntīng",
+          "pos": "n.",
+          "fr": "restaurant",
+          "example": "这个餐厅很好吃。Zhège cāntīng hěn hǎochī. (Ce restaurant est bon.)",
+          "note": "餐 = repas, 厅 = salle. 饭店 (fàndiàn) peut signifier restaurant OU hôtel."
+        },
+        {
+          "hanzi": "医院",
+          "pinyin": "yīyuàn",
+          "pos": "n.",
+          "fr": "hôpital",
+          "example": "他在医院工作。Tā zài yīyuàn gōngzuò. (Il travaille à l'hôpital.)",
+          "note": "医 = médical, 院 = établissement. 诊所 (zhěnsuǒ) = clinique."
+        },
+        {
+          "hanzi": "车站",
+          "pinyin": "chēzhàn",
+          "pos": "n.",
+          "fr": "gare / station",
+          "example": "车站在哪里？Chēzhàn zài nǎlǐ? (Où est la gare ?)",
+          "note": "火车站 = gare ferroviaire, 汽车站 = gare routière, 地铁站 = station de métro."
+        },
+        {
+          "hanzi": "公园",
+          "pinyin": "gōngyuán",
+          "pos": "n.",
+          "fr": "parc",
+          "example": "我们去公园吧。Wǒmen qù gōngyuán ba. (Allons au parc.)",
+          "note": "公 = public, 园 = jardin. Les parcs chinois sont très animés le matin (taichi, danse)."
+        },
+        {
+          "hanzi": "电影院",
+          "pinyin": "diànyǐngyuàn",
+          "pos": "n.",
+          "fr": "cinéma",
+          "example": "我们去电影院看电影。Wǒmen qù diànyǐngyuàn kàn diànyǐng. (Allons au cinéma.)",
+          "note": "电影 = film, 院 = établissement. 看电影 = regarder un film."
+        },
+        {
+          "hanzi": "图书馆",
+          "pinyin": "túshūguǎn",
+          "pos": "n.",
+          "fr": "bibliothèque",
+          "example": "图书馆很安静。Túshūguǎn hěn ānjìng. (La bibliothèque est calme.)",
+          "note": "图书 = livres, 馆 = bâtiment public. 借书 = emprunter un livre."
+        },
+        {
+          "hanzi": "博物馆",
+          "pinyin": "bówùguǎn",
+          "pos": "n.",
+          "fr": "musée",
+          "example": "北京有很多博物馆。Běijīng yǒu hěn duō bówùguǎn. (Il y a beaucoup de musées à Pékin.)",
+          "note": "故宫 (Gùgōng) = Cité interdite, le plus célèbre musée de Chine."
+        },
+        {
+          "hanzi": "咖啡馆",
+          "pinyin": "kāfēiguǎn",
+          "pos": "n.",
+          "fr": "café (lieu)",
+          "example": "我们去咖啡馆坐坐。Wǒmen qù kāfēiguǎn zuòzuo. (Allons prendre un café.)",
+          "note": "Aussi appelé 咖啡厅 (kāfēitīng). 咖啡 = café (boisson)."
+        },
+        {
+          "hanzi": "健身房",
+          "pinyin": "jiànshēnfáng",
+          "pos": "n.",
+          "fr": "salle de sport / gym",
+          "example": "我每周去健身房三次。Wǒ měi zhōu qù jiànshēnfáng sān cì. (Je vais à la gym 3 fois par semaine.)",
+          "note": "健身 = fitness. 健身器材 = équipement de sport."
+        },
+        {
+          "hanzi": "邮局",
+          "pinyin": "yóujú",
+          "pos": "n.",
+          "fr": "bureau de poste",
+          "example": "我要去邮局寄信。Wǒ yào qù yóujú jìxìn. (Je dois aller à la poste envoyer une lettre.)",
+          "note": "邮 = postal, 局 = bureau. 邮件 = courrier/mail."
+        },
+        {
+          "hanzi": "药店",
+          "pinyin": "yàodiàn",
+          "pos": "n.",
+          "fr": "pharmacie",
+          "example": "药店在超市旁边。Yàodiàn zài chāoshì pángbiān. (La pharmacie est à côté du supermarché.)",
+          "note": "药 = médicament. 药房 = forme alternative."
+        },
+        {
+          "hanzi": "广场",
+          "pinyin": "guǎngchǎng",
+          "pos": "n.",
+          "fr": "place / square",
+          "example": "天安门广场很大。Tiān'ānmén Guǎngchǎng hěn dà. (La place Tiananmen est très grande.)",
+          "note": "广 = vaste, 场 = terrain. Les Chinois aiment danser sur les 广场 le soir."
+        },
+        {
+          "hanzi": "教堂",
+          "pinyin": "jiàotáng",
+          "pos": "n.",
+          "fr": "église",
+          "example": "这座教堂很古老。Zhè zuò jiàotáng hěn gǔlǎo. (Cette église est très ancienne.)",
+          "note": "寺庙 (sìmiào) = temple bouddhiste."
+        },
+        {
+          "hanzi": "小区",
+          "pinyin": "xiǎoqū",
+          "pos": "n.",
+          "fr": "résidence / quartier",
+          "example": "我住在这个小区。Wǒ zhù zài zhège xiǎoqū. (J'habite dans cette résidence.)",
+          "note": "Ensemble résidentiel fermé, très courant en Chine. 小区门口 = entrée de la résidence."
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "themeZh": "家",
+      "themeFr": "La maison",
+      "vocab": [
+        {
+          "hanzi": "房子",
+          "pinyin": "fángzi",
+          "pos": "n.",
+          "fr": "maison (bâtiment)",
+          "example": "这个房子很大。Zhège fángzi hěn dà. (Cette maison est grande.)",
+          "note": "Le bâtiment. ≠ 家 (jiā) qui est plus affectif (foyer, famille)."
+        },
+        {
+          "hanzi": "房间",
+          "pinyin": "fángjiān",
+          "pos": "n.",
+          "fr": "pièce",
+          "example": "我的房间很小。Wǒ de fángjiān hěn xiǎo. (Ma chambre est petite.)",
+          "note": "间 = espace entre. Peut désigner n'importe quelle pièce."
+        },
+        {
+          "hanzi": "厨房",
+          "pinyin": "chúfáng",
+          "pos": "n.",
+          "fr": "cuisine",
+          "example": "妈妈在厨房做饭。Māma zài chúfáng zuòfàn. (Maman cuisine dans la cuisine.)",
+          "note": "厨 = cuisine (lieu), 房 = pièce. La cuisine est centrale dans la culture chinoise."
+        },
+        {
+          "hanzi": "卧室",
+          "pinyin": "wòshì",
+          "pos": "n.",
+          "fr": "chambre",
+          "example": "卧室有一张床。Wòshì yǒu yì zhāng chuáng. (La chambre a un lit.)",
+          "note": "卧 = couché, 室 = pièce. Plus formel que 房间 pour désigner une chambre."
+        },
+        {
+          "hanzi": "客厅",
+          "pinyin": "kètīng",
+          "pos": "n.",
+          "fr": "salon",
+          "example": "请在客厅坐。Qǐng zài kètīng zuò. (Asseyez-vous dans le salon.)",
+          "note": "客 = invité, 厅 = salle. La pièce pour recevoir les invités."
+        },
+        {
+          "hanzi": "浴室",
+          "pinyin": "yùshì",
+          "pos": "n.",
+          "fr": "salle de bain",
+          "example": "浴室在哪里？Yùshì zài nǎlǐ? (Où sont les toilettes/salle de bain ?)",
+          "note": "浴 = bain. 卫生间 (wèishēngjiān) ou 洗手间 (xǐshǒujiān) = toilettes."
+        },
+        {
+          "hanzi": "桌子",
+          "pinyin": "zhuōzi",
+          "pos": "n.",
+          "fr": "table",
+          "example": "书在桌子上。Shū zài zhuōzi shàng. (Le livre est sur la table.)",
+          "note": "桌子 = table générique. 书桌 = bureau, 餐桌 = table à manger."
+        },
+        {
+          "hanzi": "椅子",
+          "pinyin": "yǐzi",
+          "pos": "n.",
+          "fr": "chaise",
+          "example": "请坐椅子上。Qǐng zuò yǐzi shàng. (Asseyez-vous sur la chaise.)",
+          "note": "椅 = chaise. 沙发 (shāfā) = canapé (du mot anglais sofa)."
+        },
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "pos": "n.",
+          "fr": "porte",
+          "example": "请关门。Qǐng guān mén. (Fermez la porte.)",
+          "note": "开门 = ouvrir, 关门 = fermer. En Chine, frapper avant d'entrer est important."
+        },
+        {
+          "hanzi": "窗户",
+          "pinyin": "chuānghu",
+          "pos": "n.",
+          "fr": "fenêtre",
+          "example": "打开窗户。Dǎkāi chuānghu. (Ouvre la fenêtre.)",
+          "note": "窗 seul suffit souvent. 户 ajoute l'idée d'ouverture/battant."
+        },
+        {
+          "hanzi": "阳台",
+          "pinyin": "yángtái",
+          "pos": "n.",
+          "fr": "balcon",
+          "example": "阳台上有很多花。Yángtái shang yǒu hěn duō huā. (Il y a beaucoup de fleurs sur le balcon.)",
+          "note": "阳 = soleil. Les balcons chinois servent souvent à faire sécher le linge."
+        },
+        {
+          "hanzi": "楼",
+          "pinyin": "lóu",
+          "pos": "n.",
+          "fr": "étage / bâtiment",
+          "example": "我住在三楼。Wǒ zhù zài sān lóu. (J'habite au 3e étage.)",
+          "note": "一楼 = rez-de-chaussée en Chine. 楼上/楼下 = en haut/en bas."
+        },
+        {
+          "hanzi": "电梯",
+          "pinyin": "diàntī",
+          "pos": "n.",
+          "fr": "ascenseur",
+          "example": "电梯在哪儿？Diàntī zài nǎr? (Où est l'ascenseur ?)",
+          "note": "电 = électrique, 梯 = échelle. 扶梯 (fútī) = escalator."
+        },
+        {
+          "hanzi": "楼梯",
+          "pinyin": "lóutī",
+          "pos": "n.",
+          "fr": "escalier",
+          "example": "我们走楼梯吧。Wǒmen zǒu lóutī ba. (Prenons les escaliers.)",
+          "note": "上楼梯 = monter, 下楼梯 = descendre."
+        },
+        {
+          "hanzi": "家具",
+          "pinyin": "jiājù",
+          "pos": "n.",
+          "fr": "meuble",
+          "example": "这家家具店很大。Zhè jiā jiājùdiàn hěn dà. (Ce magasin de meubles est grand.)",
+          "note": "家 = maison, 具 = outil. IKEA est très populaire en Chine : 宜家 (Yíjiā)."
+        },
+        {
+          "hanzi": "沙发",
+          "pinyin": "shāfā",
+          "pos": "n.",
+          "fr": "canapé",
+          "example": "我想躺在沙发上。Wǒ xiǎng tǎng zài shāfā shang. (Je veux m'allonger sur le canapé.)",
+          "note": "Transcription phonétique de 'sofa'. 躺沙发 = se vautrer dans le canapé."
+        },
+        {
+          "hanzi": "冰箱",
+          "pinyin": "bīngxiāng",
+          "pos": "n.",
+          "fr": "réfrigérateur",
+          "example": "牛奶在冰箱里。Niúnǎi zài bīngxiāng lǐ. (Le lait est dans le frigo.)",
+          "note": "冰 = glace, 箱 = boîte. 冷冻 = congélation."
+        },
+        {
+          "hanzi": "洗衣机",
+          "pinyin": "xǐyījī",
+          "pos": "n.",
+          "fr": "machine à laver",
+          "example": "洗衣机坏了。Xǐyījī huài le. (La machine à laver est en panne.)",
+          "note": "洗衣 = laver le linge, 机 = machine."
+        },
+        {
+          "hanzi": "空调",
+          "pinyin": "kōngtiáo",
+          "pos": "n.",
+          "fr": "climatisation",
+          "example": "开空调吧，太热了。Kāi kōngtiáo ba, tài rè le. (Mets la clim, il fait trop chaud.)",
+          "note": "空气 = air, 调节 = réguler. Essentiel en été en Chine."
+        },
+        {
+          "hanzi": "灯",
+          "pinyin": "dēng",
+          "pos": "n.",
+          "fr": "lampe / lumière",
+          "example": "请开灯。Qǐng kāi dēng. (Allume la lumière.)",
+          "note": "红绿灯 = feu tricolore. 台灯 = lampe de bureau."
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "themeZh": "衣着",
+      "themeFr": "Vêtements",
+      "vocab": [
+        {
+          "hanzi": "衣服",
+          "pinyin": "yīfu",
+          "pos": "n.",
+          "fr": "vêtements",
+          "example": "这件衣服很漂亮。Zhè jiàn yīfu hěn piàoliang. (Ce vêtement est joli.)",
+          "note": "Terme général. Classificateur : 件 (jiàn). 洗衣服 = faire la lessive."
+        },
+        {
+          "hanzi": "裤子",
+          "pinyin": "kùzi",
+          "pos": "n.",
+          "fr": "pantalon",
+          "example": "我买了一条裤子。Wǒ mǎi le yì tiáo kùzi. (J'ai acheté un pantalon.)",
+          "note": "Classificateur : 条 (tiáo) pour les objets longs. 短裤 = short, 牛仔裤 = jean."
+        },
+        {
+          "hanzi": "裙子",
+          "pinyin": "qúnzi",
+          "pos": "n.",
+          "fr": "jupe",
+          "example": "她穿裙子。Tā chuān qúnzi. (Elle porte une jupe.)",
+          "note": "Classificateur : 条. 连衣裙 = robe (littéralement jupe connectée)."
+        },
+        {
+          "hanzi": "鞋",
+          "pinyin": "xié",
+          "pos": "n.",
+          "fr": "chaussures",
+          "example": "请脱鞋。Qǐng tuō xié. (Enlevez vos chaussures.)",
+          "note": "En Chine, on enlève ses chaussures en entrant chez quelqu'un. 双 = paire."
+        },
+        {
+          "hanzi": "袜子",
+          "pinyin": "wàzi",
+          "pos": "n.",
+          "fr": "chaussettes",
+          "example": "袜子在哪里？Wàzi zài nǎlǐ? (Où sont les chaussettes ?)",
+          "note": "Classificateur : 双 (shuāng) = paire, ou 只 (zhī) pour une seule."
+        },
+        {
+          "hanzi": "外套",
+          "pinyin": "wàitào",
+          "pos": "n.",
+          "fr": "manteau / veste",
+          "example": "今天冷，穿外套。Jīntiān lěng, chuān wàitào. (Il fait froid, mets ta veste.)",
+          "note": "外 = extérieur, 套 = envelopper. 大衣 (dàyī) = manteau long."
+        },
+        {
+          "hanzi": "帽子",
+          "pinyin": "màozi",
+          "pos": "n.",
+          "fr": "chapeau",
+          "example": "戴帽子。Dài màozi. (Porter un chapeau.)",
+          "note": "戴 (dài) = porter sur la tête/accessoire. ≠ 穿 pour les vêtements."
+        },
+        {
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "pos": "v.",
+          "fr": "porter (vêtement)",
+          "example": "你今天穿什么？Nǐ jīntiān chuān shénme? (Qu'est-ce que tu portes aujourd'hui ?)",
+          "note": "Pour les vêtements. ≠ 戴 (accessoires : lunettes, chapeau, montre)."
+        },
+        {
+          "hanzi": "脱",
+          "pinyin": "tuō",
+          "pos": "v.",
+          "fr": "enlever (vêtement)",
+          "example": "脱外套吧。Tuō wàitào ba. (Enlève ta veste.)",
+          "note": "Opposé de 穿. 脱鞋 = enlever ses chaussures (très courant en Chine)."
+        },
+        {
+          "hanzi": "尺码",
+          "pinyin": "chǐmǎ",
+          "pos": "n.",
+          "fr": "taille (vêtements)",
+          "example": "你穿多大尺码？Nǐ chuān duō dà chǐmǎ? (Quelle taille portes-tu ?)",
+          "note": "Les tailles chinoises diffèrent des tailles européennes. S/M/L sont courants."
+        },
+        {
+          "hanzi": "试衣间",
+          "pinyin": "shìyījiān",
+          "pos": "n.",
+          "fr": "cabine d'essayage",
+          "example": "试衣间在哪儿？Shìyījiān zài nǎr? (Où sont les cabines d'essayage ?)",
+          "note": "试 = essayer, 衣 = vêtement, 间 = pièce."
+        },
+        {
+          "hanzi": "毛衣",
+          "pinyin": "máoyī",
+          "pos": "n.",
+          "fr": "pull-over",
+          "example": "冬天要穿毛衣。Dōngtiān yào chuān máoyī. (En hiver, il faut porter un pull.)",
+          "note": "毛 = laine/poil. 羊毛 = laine de mouton."
+        },
+        {
+          "hanzi": "夹克",
+          "pinyin": "jiákè",
+          "pos": "n.",
+          "fr": "veste / blouson",
+          "example": "这件夹克很酷。Zhè jiàn jiákè hěn kù. (Cette veste est cool.)",
+          "note": "Transcription phonétique de 'jacket'."
+        },
+        {
+          "hanzi": "西装",
+          "pinyin": "xīzhuāng",
+          "pos": "n.",
+          "fr": "costume (homme)",
+          "example": "他穿西装很帅。Tā chuān xīzhuāng hěn shuài. (Il est beau en costume.)",
+          "note": "西 = occidental. 正装 = tenue formelle."
+        },
+        {
+          "hanzi": "领带",
+          "pinyin": "lǐngdài",
+          "pos": "n.",
+          "fr": "cravate",
+          "example": "你的领带很漂亮。Nǐ de lǐngdài hěn piàoliang. (Ta cravate est jolie.)",
+          "note": "领 = col, 带 = ceinture/bande. 打领带 = nouer une cravate."
+        },
+        {
+          "hanzi": "袜子",
+          "pinyin": "wàzi",
+          "pos": "n.",
+          "fr": "chaussettes",
+          "example": "我买了五双袜子。Wǒ mǎile wǔ shuāng wàzi. (J'ai acheté 5 paires de chaussettes.)",
+          "note": "Classificateur : 双 (paire). 丝袜 = collants."
+        },
+        {
+          "hanzi": "内衣",
+          "pinyin": "nèiyī",
+          "pos": "n.",
+          "fr": "sous-vêtements",
+          "example": "内衣在哪个柜台？Nèiyī zài nǎge guìtái? (Où est le rayon sous-vêtements ?)",
+          "note": "内 = intérieur. 内裤 = slip/caleçon."
+        },
+        {
+          "hanzi": "口袋",
+          "pinyin": "kǒudài",
+          "pos": "n.",
+          "fr": "poche",
+          "example": "钱在口袋里。Qián zài kǒudài lǐ. (L'argent est dans la poche.)",
+          "note": "口 = bouche/ouverture, 袋 = sac."
+        },
+        {
+          "hanzi": "拉链",
+          "pinyin": "lāliàn",
+          "pos": "n.",
+          "fr": "fermeture éclair",
+          "example": "拉链坏了。Lāliàn huài le. (La fermeture éclair est cassée.)",
+          "note": "拉 = tirer, 链 = chaîne."
+        },
+        {
+          "hanzi": "布",
+          "pinyin": "bù",
+          "pos": "n.",
+          "fr": "tissu",
+          "example": "这布很软。Zhè bù hěn ruǎn. (Ce tissu est doux.)",
+          "note": "棉布 = coton, 丝绸 = soie, 皮革 = cuir."
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "themeZh": "办公室",
+      "themeFr": "Bureau",
+      "vocab": [
+        {
+          "hanzi": "办公室",
+          "pinyin": "bàngōngshì",
+          "pos": "n.",
+          "fr": "bureau (lieu)",
+          "example": "我在办公室工作。Wǒ zài bàngōngshì gōngzuò. (Je travaille au bureau.)",
+          "note": "办公 = travailler, 室 = pièce. Pour le meuble : 办公桌 (bàngōngzhuō)."
+        },
+        {
+          "hanzi": "电脑",
+          "pinyin": "diànnǎo",
+          "pos": "n.",
+          "fr": "ordinateur",
+          "example": "我的电脑坏了。Wǒ de diànnǎo huài le. (Mon ordinateur est cassé.)",
+          "note": "电 = électrique, 脑 = cerveau. 笔记本电脑 = ordinateur portable."
+        },
+        {
+          "hanzi": "文件",
+          "pinyin": "wénjiàn",
+          "pos": "n.",
+          "fr": "document / fichier",
+          "example": "请发文件给我。Qǐng fā wénjiàn gěi wǒ. (Envoyez-moi le document.)",
+          "note": "Aussi pour fichiers informatiques. 文件夹 = dossier."
+        },
+        {
+          "hanzi": "会议",
+          "pinyin": "huìyì",
+          "pos": "n.",
+          "fr": "réunion",
+          "example": "下午有会议。Xiàwǔ yǒu huìyì. (Il y a une réunion cet après-midi.)",
+          "note": "开会 = tenir une réunion. 会议室 = salle de réunion."
+        },
+        {
+          "hanzi": "邮件",
+          "pinyin": "yóujiàn",
+          "pos": "n.",
+          "fr": "email / courrier",
+          "example": "我收到你的邮件了。Wǒ shōudào nǐ de yóujiàn le. (J'ai reçu ton email.)",
+          "note": "电子邮件 = email (complet). En Chine, WeChat est souvent préféré aux emails."
+        },
+        {
+          "hanzi": "项目",
+          "pinyin": "xiàngmù",
+          "pos": "n.",
+          "fr": "projet",
+          "example": "这个项目很重要。Zhège xiàngmù hěn zhòngyào. (Ce projet est important.)",
+          "note": "项 = article/item, 目 = catégorie. Utilisé en entreprise et en informatique."
+        },
+        {
+          "hanzi": "计划",
+          "pinyin": "jìhuà",
+          "pos": "n.",
+          "fr": "plan",
+          "example": "你有什么计划？Nǐ yǒu shénme jìhuà? (Quels sont tes projets ?)",
+          "note": "Aussi verbe : 我计划去旅行 = Je prévois de voyager."
+        },
+        {
+          "hanzi": "报告",
+          "pinyin": "bàogào",
+          "pos": "n.",
+          "fr": "rapport",
+          "example": "请写一份报告。Qǐng xiě yí fèn bàogào. (Écrivez un rapport.)",
+          "note": "报 = rapporter, 告 = informer. Aussi : faire une présentation."
+        },
+        {
+          "hanzi": "客户",
+          "pinyin": "kèhù",
+          "pos": "n.",
+          "fr": "client",
+          "example": "客户很满意。Kèhù hěn mǎnyì. (Le client est satisfait.)",
+          "note": "客 = invité, 户 = foyer. Pour un magasin : 顾客 (gùkè)."
+        },
+        {
+          "hanzi": "任务",
+          "pinyin": "rènwu",
+          "pos": "n.",
+          "fr": "tâche",
+          "example": "完成任务了。Wánchéng rènwu le. (J'ai terminé la tâche.)",
+          "note": "任 = assumer, 务 = affaire. Mission accomplie = 任务完成!"
+        },
+        {
+          "hanzi": "打印",
+          "pinyin": "dǎyìn",
+          "pos": "v.",
+          "fr": "imprimer",
+          "example": "请帮我打印这个文件。Qǐng bāng wǒ dǎyìn zhège wénjiàn. (Imprimez ce document pour moi.)",
+          "note": "打印机 = imprimante. 复印 = photocopier."
+        },
+        {
+          "hanzi": "发送",
+          "pinyin": "fāsòng",
+          "pos": "v.",
+          "fr": "envoyer",
+          "example": "我已经发送邮件了。Wǒ yǐjīng fāsòng yóujiàn le. (J'ai déjà envoyé l'email.)",
+          "note": "发 = émettre, 送 = transmettre. 发送失败 = échec d'envoi."
+        },
+        {
+          "hanzi": "接收",
+          "pinyin": "jiēshōu",
+          "pos": "v.",
+          "fr": "recevoir",
+          "example": "我没有接收到文件。Wǒ méiyǒu jiēshōu dào wénjiàn. (Je n'ai pas reçu le fichier.)",
+          "note": "接 = recevoir, 收 = collecter."
+        },
+        {
+          "hanzi": "截止日期",
+          "pinyin": "jiézhǐ rìqī",
+          "pos": "n.",
+          "fr": "date limite / deadline",
+          "example": "截止日期是什么时候？Jiézhǐ rìqī shì shénme shíhou? (C'est quand la deadline ?)",
+          "note": "截止 = couper/arrêter. Très utilisé dans le monde du travail."
+        },
+        {
+          "hanzi": "加班",
+          "pinyin": "jiābān",
+          "pos": "v.",
+          "fr": "faire des heures sup",
+          "example": "今天要加班。Jīntiān yào jiābān. (Je dois faire des heures sup aujourd'hui.)",
+          "note": "Très courant en Chine. 加班费 = rémunération des heures sup."
+        },
+        {
+          "hanzi": "请假",
+          "pinyin": "qǐngjià",
+          "pos": "v.",
+          "fr": "demander un congé",
+          "example": "我想请假一天。Wǒ xiǎng qǐngjià yī tiān. (Je voudrais prendre un jour de congé.)",
+          "note": "病假 = congé maladie. 年假 = congés annuels."
+        },
+        {
+          "hanzi": "工资",
+          "pinyin": "gōngzī",
+          "pos": "n.",
+          "fr": "salaire",
+          "example": "工资什么时候发？Gōngzī shénme shíhou fā? (Quand est versé le salaire ?)",
+          "note": "月薪 = salaire mensuel. 年薪 = salaire annuel."
+        },
+        {
+          "hanzi": "老板",
+          "pinyin": "lǎobǎn",
+          "pos": "n.",
+          "fr": "patron / boss",
+          "example": "老板在开会。Lǎobǎn zài kāihuì. (Le patron est en réunion.)",
+          "note": "Aussi utilisé pour les commerçants. 女老板 = patronne."
+        },
+        {
+          "hanzi": "同事",
+          "pinyin": "tóngshì",
+          "pos": "n.",
+          "fr": "collègue",
+          "example": "她是我的同事。Tā shì wǒ de tóngshì. (C'est ma collègue.)",
+          "note": "同 = même, 事 = affaire. 同事们 = les collègues."
+        },
+        {
+          "hanzi": "面试",
+          "pinyin": "miànshì",
+          "pos": "n./v.",
+          "fr": "entretien d'embauche",
+          "example": "明天有面试。Míngtiān yǒu miànshì. (J'ai un entretien demain.)",
+          "note": "面 = face, 试 = tester. 面试官 = recruteur."
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "themeZh": "人际",
+      "themeFr": "Relations",
+      "vocab": [
+        {
+          "hanzi": "认识",
+          "pinyin": "rènshi",
+          "pos": "v.",
+          "fr": "connaître (qqn)",
+          "example": "很高兴认识你！Hěn gāoxìng rènshi nǐ! (Enchanté de te connaître !)",
+          "note": "Pour les personnes. Pour les choses/lieux : 知道 (zhīdào) = savoir."
+        },
+        {
+          "hanzi": "见面",
+          "pinyin": "jiànmiàn",
+          "pos": "v.",
+          "fr": "se voir / se rencontrer",
+          "example": "我们明天见面吧。Wǒmen míngtiān jiànmiàn ba. (Retrouvons-nous demain.)",
+          "note": "见 = voir, 面 = visage. 见！ou 再见！= À bientôt !"
+        },
+        {
+          "hanzi": "帮助",
+          "pinyin": "bāngzhù",
+          "pos": "v./n.",
+          "fr": "aider / aide",
+          "example": "谢谢你的帮助。Xièxie nǐ de bāngzhù. (Merci pour ton aide.)",
+          "note": "帮 seul suffit souvent à l'oral : 帮我一下 = Aide-moi."
+        },
+        {
+          "hanzi": "关心",
+          "pinyin": "guānxīn",
+          "pos": "v.",
+          "fr": "se soucier de",
+          "example": "谢谢你关心我。Xièxie nǐ guānxīn wǒ. (Merci de te soucier de moi.)",
+          "note": "关 = concerner, 心 = cœur. Marque d'affection importante en Chine."
+        },
+        {
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "pos": "v.",
+          "fr": "aimer (apprécier)",
+          "example": "我喜欢中国菜。Wǒ xǐhuan Zhōngguó cài. (J'aime la cuisine chinoise.)",
+          "note": "Pour les goûts, préférences. ≠ 爱 qui est plus fort (amour)."
+        },
+        {
+          "hanzi": "爱",
+          "pinyin": "ài",
+          "pos": "v.",
+          "fr": "aimer (fort)",
+          "example": "我爱你。Wǒ ài nǐ. (Je t'aime.)",
+          "note": "Amour profond. En Chine, on dit rarement 我爱你 aux parents, mais on le montre."
+        },
+        {
+          "hanzi": "请",
+          "pinyin": "qǐng",
+          "pos": "v.",
+          "fr": "s'il vous plaît / inviter",
+          "example": "请坐！Qǐng zuò! (Asseyez-vous !)",
+          "note": "Très poli. 请问 = excusez-moi (pour poser une question). 请客 = inviter (payer)."
+        },
+        {
+          "hanzi": "谢谢",
+          "pinyin": "xièxie",
+          "pos": "interj.",
+          "fr": "merci",
+          "example": "谢谢你！Xièxie nǐ! (Merci !)",
+          "note": "Redoublé pour l'emphase. On peut répondre 不客气 ou 不用谢."
+        },
+        {
+          "hanzi": "对不起",
+          "pinyin": "duìbuqǐ",
+          "pos": "interj.",
+          "fr": "désolé",
+          "example": "对不起，我迟到了。Duìbuqǐ, wǒ chídào le. (Désolé, je suis en retard.)",
+          "note": "Excuses sincères. Pour s'excuser légèrement : 不好意思 (bù hǎo yìsi)."
+        },
+        {
+          "hanzi": "没关系",
+          "pinyin": "méiguānxi",
+          "pos": "expr.",
+          "fr": "ce n'est pas grave",
+          "example": "没关系，别担心。Méiguānxi, bié dānxīn. (Ce n'est rien, ne t'inquiète pas.)",
+          "note": "Réponse à 对不起. 关系 = relation, donc « pas de relation/importance »."
+        },
+        {
+          "hanzi": "约会",
+          "pinyin": "yuēhuì",
+          "pos": "n./v.",
+          "fr": "rendez-vous (amoureux)",
+          "example": "今晚有约会。Jīnwǎn yǒu yuēhuì. (J'ai un rendez-vous ce soir.)",
+          "note": "约 = convenir, 会 = rencontrer. Pour RDV professionnel : 预约 (yùyuē)."
+        },
+        {
+          "hanzi": "结婚",
+          "pinyin": "jiéhūn",
+          "pos": "v.",
+          "fr": "se marier",
+          "example": "他们明年结婚。Tāmen míngnián jiéhūn. (Ils se marient l'année prochaine.)",
+          "note": "结 = nouer, 婚 = mariage. 婚礼 = cérémonie de mariage."
+        },
+        {
+          "hanzi": "离婚",
+          "pinyin": "líhūn",
+          "pos": "v.",
+          "fr": "divorcer",
+          "example": "他们离婚了。Tāmen líhūn le. (Ils ont divorcé.)",
+          "note": "离 = séparer. 离婚率 = taux de divorce."
+        },
+        {
+          "hanzi": "吵架",
+          "pinyin": "chǎojià",
+          "pos": "v.",
+          "fr": "se disputer",
+          "example": "他们又吵架了。Tāmen yòu chǎojià le. (Ils se sont encore disputés.)",
+          "note": "吵 = bruyant, 架 = bagarre. 和好 = se réconcilier."
+        },
+        {
+          "hanzi": "分手",
+          "pinyin": "fēnshǒu",
+          "pos": "v.",
+          "fr": "rompre / se séparer",
+          "example": "我们分手了。Wǒmen fēnshǒu le. (On s'est séparés.)",
+          "note": "分 = séparer, 手 = main. 前任 (qiánrèn) = ex."
+        },
+        {
+          "hanzi": "联系",
+          "pinyin": "liánxì",
+          "pos": "v./n.",
+          "fr": "contacter / contact",
+          "example": "保持联系！Bǎochí liánxì! (Restons en contact !)",
+          "note": "联系方式 = coordonnées. 微信 est le moyen de contact principal en Chine."
+        },
+        {
+          "hanzi": "相信",
+          "pinyin": "xiāngxìn",
+          "pos": "v.",
+          "fr": "croire / faire confiance",
+          "example": "我相信你。Wǒ xiāngxìn nǐ. (Je te fais confiance.)",
+          "note": "相 = mutuellement, 信 = croire. 信任 = confiance."
+        },
+        {
+          "hanzi": "担心",
+          "pinyin": "dānxīn",
+          "pos": "v.",
+          "fr": "s'inquiéter",
+          "example": "别担心！Bié dānxīn! (Ne t'inquiète pas !)",
+          "note": "担 = porter, 心 = cœur. 担忧 = plus formel."
+        },
+        {
+          "hanzi": "生气",
+          "pinyin": "shēngqì",
+          "pos": "v./adj.",
+          "fr": "être en colère",
+          "example": "你生气了吗？Nǐ shēngqì le ma? (Tu es fâché ?)",
+          "note": "生 = produire, 气 = souffle/colère. 别生气 = ne sois pas fâché."
+        },
+        {
+          "hanzi": "原谅",
+          "pinyin": "yuánliàng",
+          "pos": "v.",
+          "fr": "pardonner",
+          "example": "请原谅我。Qǐng yuánliàng wǒ. (Pardonne-moi s'il te plaît.)",
+          "note": "原 = origine, 谅 = comprendre. 宽恕 = plus formel."
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "themeZh": "吃喝",
+      "themeFr": "Manger & boire",
+      "vocab": [
+        {
+          "hanzi": "米饭",
+          "pinyin": "mǐfàn",
+          "pos": "n.",
+          "fr": "riz (cuit)",
+          "example": "来一碗米饭。Lái yì wǎn mǐfàn. (Un bol de riz, s'il vous plaît.)",
+          "note": "米 = grain de riz, 饭 = repas. Le riz est la base de l'alimentation dans le sud de la Chine."
+        },
+        {
+          "hanzi": "面条",
+          "pinyin": "miàntiáo",
+          "pos": "n.",
+          "fr": "nouilles",
+          "example": "我想吃面条。Wǒ xiǎng chī miàntiáo. (Je veux manger des nouilles.)",
+          "note": "面 = farine/nouilles, 条 = bande. Le nord de la Chine préfère les nouilles au riz."
+        },
+        {
+          "hanzi": "饺子",
+          "pinyin": "jiǎozi",
+          "pos": "n.",
+          "fr": "raviolis chinois",
+          "example": "春节吃饺子。Chūnjié chī jiǎozi. (On mange des raviolis au Nouvel An chinois.)",
+          "note": "Plat traditionnel du nord, symbole de richesse (forme de lingot d'or)."
+        },
+        {
+          "hanzi": "汤",
+          "pinyin": "tāng",
+          "pos": "n.",
+          "fr": "soupe",
+          "example": "喝汤。Hē tāng. (Boire de la soupe.)",
+          "note": "En Chine, on « boit » la soupe (喝), on ne la « mange » pas. 蛋花汤 = soupe aux œufs."
+        },
+        {
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "pos": "n.",
+          "fr": "plat / légumes",
+          "example": "这个菜很好吃。Zhège cài hěn hǎochī. (Ce plat est délicieux.)",
+          "note": "Double sens : légumes (蔬菜 shūcài) ou plat cuisiné. 点菜 = commander."
+        },
+        {
+          "hanzi": "肉",
+          "pinyin": "ròu",
+          "pos": "n.",
+          "fr": "viande",
+          "example": "我不吃肉。Wǒ bù chī ròu. (Je ne mange pas de viande.)",
+          "note": "猪肉 = porc (le plus courant), 牛肉 = bœuf, 鸡肉 = poulet."
+        },
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "pos": "n.",
+          "fr": "eau",
+          "example": "请给我一杯水。Qǐng gěi wǒ yì bēi shuǐ. (Un verre d'eau, s'il vous plaît.)",
+          "note": "En Chine, on boit l'eau chaude (热水 rè shuǐ). C'est une tradition de santé."
+        },
+        {
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "pos": "n.",
+          "fr": "thé",
+          "example": "你要喝茶吗？Nǐ yào hē chá ma? (Tu veux du thé ?)",
+          "note": "Boisson nationale. 绿茶 = thé vert, 红茶 = thé noir. La cérémonie du thé est un art."
+        },
+        {
+          "hanzi": "辣",
+          "pinyin": "là",
+          "pos": "adj.",
+          "fr": "épicé",
+          "example": "四川菜很辣。Sìchuān cài hěn là. (La cuisine du Sichuan est épicée.)",
+          "note": "不要辣 = pas épicé. 微辣 = légèrement épicé. Le Sichuan et le Hunan sont réputés épicés."
+        },
+        {
+          "hanzi": "好吃",
+          "pinyin": "hǎochī",
+          "pos": "adj.",
+          "fr": "délicieux",
+          "example": "真好吃！Zhēn hǎochī! (C'est vraiment bon !)",
+          "note": "好 + verbe = agréable à... 好喝 = bon à boire, 好看 = beau à voir."
+        },
+        {
+          "hanzi": "饿",
+          "pinyin": "è",
+          "pos": "adj.",
+          "fr": "avoir faim",
+          "example": "我饿了。Wǒ è le. (J'ai faim.)",
+          "note": "饿死了 = mourir de faim (exagération). 饥饿 = faim (plus formel)."
+        },
+        {
+          "hanzi": "渴",
+          "pinyin": "kě",
+          "pos": "adj.",
+          "fr": "avoir soif",
+          "example": "你渴不渴？Nǐ kě bu kě? (Tu as soif ?)",
+          "note": "口渴 = avoir soif. 渴望 = désirer ardemment."
+        },
+        {
+          "hanzi": "饱",
+          "pinyin": "bǎo",
+          "pos": "adj.",
+          "fr": "être rassasié",
+          "example": "我吃饱了。Wǒ chībǎo le. (Je suis rassasié.)",
+          "note": "Phrase classique après un repas. 吃饱喝足 = avoir bien mangé et bu."
+        },
+        {
+          "hanzi": "素食",
+          "pinyin": "sùshí",
+          "pos": "n.",
+          "fr": "végétarien",
+          "example": "这是素食餐厅。Zhè shì sùshí cāntīng. (C'est un restaurant végétarien.)",
+          "note": "素 = nature/simple. 吃素 = être végétarien. Le bouddhisme influence cette pratique."
+        },
+        {
+          "hanzi": "小吃",
+          "pinyin": "xiǎochī",
+          "pos": "n.",
+          "fr": "en-cas / snack",
+          "example": "这条街有很多小吃。Zhè tiáo jiē yǒu hěn duō xiǎochī. (Cette rue a beaucoup de snacks.)",
+          "note": "小吃街 = rue des snacks. Chaque région a ses spécialités."
+        },
+        {
+          "hanzi": "外卖",
+          "pinyin": "wàimài",
+          "pos": "n.",
+          "fr": "livraison de repas",
+          "example": "我们点外卖吧。Wǒmen diǎn wàimài ba. (Commandons à livrer.)",
+          "note": "外 = extérieur, 卖 = vendre. 美团, 饿了么 = apps populaires."
+        },
+        {
+          "hanzi": "筷子",
+          "pinyin": "kuàizi",
+          "pos": "n.",
+          "fr": "baguettes",
+          "example": "你会用筷子吗？Nǐ huì yòng kuàizi ma? (Tu sais utiliser les baguettes ?)",
+          "note": "一双筷子 = une paire de baguettes. Ne jamais les planter dans le riz !"
+        },
+        {
+          "hanzi": "碗",
+          "pinyin": "wǎn",
+          "pos": "n.",
+          "fr": "bol",
+          "example": "再来一碗米饭。Zài lái yī wǎn mǐfàn. (Un autre bol de riz.)",
+          "note": "Classificateur pour les bols de nourriture. 饭碗 = bol de riz."
+        },
+        {
+          "hanzi": "盘子",
+          "pinyin": "pánzi",
+          "pos": "n.",
+          "fr": "assiette",
+          "example": "盘子空了。Pánzi kōng le. (L'assiette est vide.)",
+          "note": "一盘菜 = un plat. En Chine, les plats sont partagés."
+        },
+        {
+          "hanzi": "杯子",
+          "pinyin": "bēizi",
+          "pos": "n.",
+          "fr": "verre / tasse",
+          "example": "请给我一杯水。Qǐng gěi wǒ yī bēi shuǐ. (Un verre d'eau s'il vous plaît.)",
+          "note": "一杯 = un verre de. 杯子 = le récipient."
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "themeZh": "做饭",
+      "themeFr": "Cuisine",
+      "vocab": [
+        {
+          "hanzi": "烧",
+          "pinyin": "shāo",
+          "pos": "v.",
+          "fr": "faire cuire / braiser",
+          "example": "红烧肉很好吃。Hóngshāo ròu hěn hǎochī. (Le porc braisé est délicieux.)",
+          "note": "Cuisson avec sauce. 红烧 = braisé à la sauce soja. 发烧 = avoir de la fièvre."
+        },
+        {
+          "hanzi": "炒",
+          "pinyin": "chǎo",
+          "pos": "v.",
+          "fr": "sauter (wok)",
+          "example": "炒菜用大火。Chǎo cài yòng dà huǒ. (On fait sauter les légumes à feu vif.)",
+          "note": "Technique chinoise par excellence. 炒饭 = riz sauté, 炒面 = nouilles sautées."
+        },
+        {
+          "hanzi": "煮",
+          "pinyin": "zhǔ",
+          "pos": "v.",
+          "fr": "bouillir",
+          "example": "煮鸡蛋。Zhǔ jīdàn. (Faire bouillir des œufs.)",
+          "note": "Cuisson dans l'eau. 煮饭 = cuire le riz. 煮面 = cuire des nouilles."
+        },
+        {
+          "hanzi": "切",
+          "pinyin": "qiē",
+          "pos": "v.",
+          "fr": "couper",
+          "example": "先切菜。Xiān qiē cài. (D'abord, coupe les légumes.)",
+          "note": "切片 = couper en tranches, 切丝 = couper en julienne. Le découpage est un art en Chine."
+        },
+        {
+          "hanzi": "放",
+          "pinyin": "fàng",
+          "pos": "v.",
+          "fr": "mettre / poser",
+          "example": "放点盐。Fàng diǎn yán. (Mets un peu de sel.)",
+          "note": "Aussi : libérer, laisser. 放假 = avoir congé. 放心 = être rassuré."
+        },
+        {
+          "hanzi": "加",
+          "pinyin": "jiā",
+          "pos": "v.",
+          "fr": "ajouter",
+          "example": "加点水。Jiā diǎn shuǐ. (Ajoute un peu d'eau.)",
+          "note": "加油！= Courage ! (littéralement « ajoute de l'essence »). 加班 = faire des heures sup."
+        },
+        {
+          "hanzi": "盐",
+          "pinyin": "yán",
+          "pos": "n.",
+          "fr": "sel",
+          "example": "盐太多了。Yán tài duō le. (Il y a trop de sel.)",
+          "note": "Condiment essentiel. 咸 (xián) = salé (goût). 盐少一点 = moins de sel."
+        },
+        {
+          "hanzi": "糖",
+          "pinyin": "táng",
+          "pos": "n.",
+          "fr": "sucre",
+          "example": "我不加糖。Wǒ bù jiā táng. (Je ne mets pas de sucre.)",
+          "note": "白糖 = sucre blanc, 红糖 = sucre brun. 甜 (tián) = sucré (goût)."
+        },
+        {
+          "hanzi": "油",
+          "pinyin": "yóu",
+          "pos": "n.",
+          "fr": "huile",
+          "example": "少放点油。Shǎo fàng diǎn yóu. (Mets moins d'huile.)",
+          "note": "La cuisine chinoise utilise beaucoup d'huile. 花生油 = huile d'arachide, 菜油 = huile de colza."
+        },
+        {
+          "hanzi": "味道",
+          "pinyin": "wèidào",
+          "pos": "n.",
+          "fr": "goût / saveur",
+          "example": "味道怎么样？Wèidào zěnmeyàng? (Comment c'est, le goût ?)",
+          "note": "味 = goût, 道 = voie. Les 5 saveurs : 酸甜苦辣咸 (acide, sucré, amer, épicé, salé)."
+        },
+        {
+          "hanzi": "蒸",
+          "pinyin": "zhēng",
+          "pos": "v.",
+          "fr": "cuire à la vapeur",
+          "example": "蒸鱼很健康。Zhēng yú hěn jiànkāng. (Le poisson vapeur est sain.)",
+          "note": "清蒸 = cuit à la vapeur nature. Méthode très utilisée en cuisine cantonaise."
+        },
+        {
+          "hanzi": "煮",
+          "pinyin": "zhǔ",
+          "pos": "v.",
+          "fr": "bouillir / cuire",
+          "example": "煮饺子要多长时间？Zhǔ jiǎozi yào duō cháng shíjiān? (Combien de temps pour cuire les raviolis ?)",
+          "note": "煮熟 = cuire jusqu'à ce que ce soit prêt. 煮面 = cuire des nouilles."
+        },
+        {
+          "hanzi": "烤",
+          "pinyin": "kǎo",
+          "pos": "v.",
+          "fr": "griller / rôtir",
+          "example": "我喜欢吃烤鸭。Wǒ xǐhuan chī kǎoyā. (J'aime le canard laqué.)",
+          "note": "北京烤鸭 = canard laqué de Pékin. 烧烤 = barbecue."
+        },
+        {
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "pos": "adj.",
+          "fr": "froid",
+          "example": "菜冷了。Cài lěng le. (Le plat a refroidi.)",
+          "note": "冷盘 = plat froid. 冰 = glacé."
+        },
+        {
+          "hanzi": "热",
+          "pinyin": "rè",
+          "pos": "adj.",
+          "fr": "chaud",
+          "example": "小心，很热！Xiǎoxīn, hěn rè! (Attention, c'est chaud !)",
+          "note": "热水 = eau chaude. Les Chinois boivent souvent de l'eau chaude."
+        },
+        {
+          "hanzi": "调料",
+          "pinyin": "tiáoliào",
+          "pos": "n.",
+          "fr": "assaisonnement",
+          "example": "需要什么调料？Xūyào shénme tiáoliào? (Quel assaisonnement faut-il ?)",
+          "note": "酱油 = sauce soja, 醋 = vinaigre, 花椒 = poivre du Sichuan."
+        },
+        {
+          "hanzi": "刀",
+          "pinyin": "dāo",
+          "pos": "n.",
+          "fr": "couteau",
+          "example": "切菜的刀在哪儿？Qiē cài de dāo zài nǎr? (Où est le couteau à légumes ?)",
+          "note": "菜刀 = couperet chinois. 切 = couper."
+        },
+        {
+          "hanzi": "锅",
+          "pinyin": "guō",
+          "pos": "n.",
+          "fr": "casserole / wok",
+          "example": "火锅很受欢迎。Huǒguō hěn shòu huānyíng. (La fondue chinoise est très populaire.)",
+          "note": "炒锅 = wok. 火锅 = fondue chinoise (très populaire !)."
+        },
+        {
+          "hanzi": "食材",
+          "pinyin": "shícái",
+          "pos": "n.",
+          "fr": "ingrédients",
+          "example": "食材很新鲜。Shícái hěn xīnxiān. (Les ingrédients sont frais.)",
+          "note": "食 = nourriture, 材 = matériau. 原材料 = matières premières."
+        },
+        {
+          "hanzi": "食谱",
+          "pinyin": "shípǔ",
+          "pos": "n.",
+          "fr": "recette",
+          "example": "这个食谱很简单。Zhège shípǔ hěn jiǎndān. (Cette recette est simple.)",
+          "note": "谱 = partition/guide. 菜谱 = menu (au restaurant)."
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "themeZh": "餐厅",
+      "themeFr": "Au restaurant",
+      "vocab": [
+        {
+          "hanzi": "菜单",
+          "pinyin": "càidān",
+          "pos": "n.",
+          "fr": "menu",
+          "example": "请给我菜单。Qǐng gěi wǒ càidān. (Le menu, s'il vous plaît.)",
+          "note": "菜 = plats, 单 = liste. En Chine, le menu a souvent des photos des plats."
+        },
+        {
+          "hanzi": "点菜",
+          "pinyin": "diǎncài",
+          "pos": "v.",
+          "fr": "commander (plats)",
+          "example": "我们点菜吧。Wǒmen diǎncài ba. (Commandons.)",
+          "note": "点 = pointer/choisir. En Chine, on commande souvent plusieurs plats à partager."
+        },
+        {
+          "hanzi": "预订",
+          "pinyin": "yùdìng",
+          "pos": "v.",
+          "fr": "réserver",
+          "example": "我想预订一桌。Wǒ xiǎng yùdìng yì zhuō. (Je voudrais réserver une table.)",
+          "note": "预 = à l'avance. 订 peut s'utiliser seul : 订位 = réserver une place."
+        },
+        {
+          "hanzi": "包间",
+          "pinyin": "bāojiān",
+          "pos": "n.",
+          "fr": "salon privé",
+          "example": "有包间吗？Yǒu bāojiān ma? (Avez-vous un salon privé ?)",
+          "note": "Très courant en Chine pour les repas d'affaires ou en famille. Plus intime."
+        },
+        {
+          "hanzi": "打包",
+          "pinyin": "dǎbāo",
+          "pos": "v.",
+          "fr": "à emporter",
+          "example": "请帮我打包。Qǐng bāng wǒ dǎbāo. (Emballez les restes, s'il vous plaît.)",
+          "note": "Très courant en Chine. Pas honteux d'emporter les restes, c'est même conseillé."
+        },
+        {
+          "hanzi": "买单",
+          "pinyin": "mǎidān",
+          "pos": "v.",
+          "fr": "payer l'addition",
+          "example": "服务员，买单！Fúwùyuán, mǎidān! (Serveur, l'addition !)",
+          "note": "买单 (sud) = 结账 jiézhàng (nord). En Chine, on se bat souvent pour payer l'addition !"
+        },
+        {
+          "hanzi": "发票",
+          "pinyin": "fāpiào",
+          "pos": "n.",
+          "fr": "facture (souvent demandée)",
+          "example": "请开发票。Qǐng kāi fāpiào. (Une facture, s'il vous plaît.)",
+          "note": "Importante en Chine pour les remboursements professionnels. 发票 = facture officielle."
+        },
+        {
+          "hanzi": "口味",
+          "pinyin": "kǒuwèi",
+          "pos": "n.",
+          "fr": "goût / préférence",
+          "example": "你喜欢什么口味？Nǐ xǐhuan shénme kǒuwèi? (Quel goût préfères-tu ?)",
+          "note": "口 = bouche, 味 = saveur. 口味重 = goût prononcé (épicé, salé)."
+        },
+        {
+          "hanzi": "服务",
+          "pinyin": "fúwù",
+          "pos": "n.",
+          "fr": "service",
+          "example": "这里服务很好。Zhèlǐ fúwù hěn hǎo. (Le service ici est bon.)",
+          "note": "服务员 = serveur. En Chine, on appelle « 服务员! » pour attirer l'attention."
+        },
+        {
+          "hanzi": "小费",
+          "pinyin": "xiǎofèi",
+          "pos": "n.",
+          "fr": "pourboire",
+          "example": "在中国不用给小费。Zài Zhōngguó búyòng gěi xiǎofèi. (En Chine, pas besoin de pourboire.)",
+          "note": "Pas de culture du pourboire en Chine, parfois même refusé. Différent des pays occidentaux."
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "themeZh": "水果蔬菜",
+      "themeFr": "Fruits & légumes",
+      "vocab": [
+        {
+          "hanzi": "苹果",
+          "pinyin": "píngguǒ",
+          "pos": "n.",
+          "fr": "pomme",
+          "example": "我想吃苹果。Wǒ xiǎng chī píngguǒ. (Je veux manger une pomme.)",
+          "note": "苹果手机 (píngguǒ shǒujī) = iPhone. Le caractère 苹 est rare en dehors de ce mot."
+        },
+        {
+          "hanzi": "香蕉",
+          "pinyin": "xiāngjiāo",
+          "pos": "n.",
+          "fr": "banane",
+          "example": "香蕉很甜。Xiāngjiāo hěn tián. (La banane est sucrée.)",
+          "note": "香 (xiāng) = parfumé, 蕉 = bananier. Littéralement 'fruit parfumé'."
+        },
+        {
+          "hanzi": "橙子",
+          "pinyin": "chéngzi",
+          "pos": "n.",
+          "fr": "orange",
+          "example": "我买了两个橙子。Wǒ mǎile liǎng ge chéngzi. (J'ai acheté deux oranges.)",
+          "note": "橙色 (chéngsè) = couleur orange. Ne pas confondre avec 橘子 (júzi) = mandarine."
+        },
+        {
+          "hanzi": "葡萄",
+          "pinyin": "pútao",
+          "pos": "n.",
+          "fr": "raisin",
+          "example": "这葡萄很新鲜。Zhè pútao hěn xīnxiān. (Ce raisin est très frais.)",
+          "note": "葡萄酒 (pútaojiǔ) = vin. 葡萄干 (pútaogān) = raisins secs."
+        },
+        {
+          "hanzi": "西红柿",
+          "pinyin": "xīhóngshì",
+          "pos": "n.",
+          "fr": "tomate",
+          "example": "西红柿炒鸡蛋。Xīhóngshì chǎo jīdàn. (Tomates sautées aux œufs.)",
+          "note": "Plat classique chinois ! Aussi appelé 番茄 (fānqié) dans le sud."
+        },
+        {
+          "hanzi": "黄瓜",
+          "pinyin": "huánggua",
+          "pos": "n.",
+          "fr": "concombre",
+          "example": "黄瓜很清爽。Huánggua hěn qīngshuǎng. (Le concombre est rafraîchissant.)",
+          "note": "黄 (huáng) = jaune, 瓜 (guā) = courge. Souvent servi en salade froide (凉拌黄瓜)."
+        },
+        {
+          "hanzi": "土豆",
+          "pinyin": "tǔdòu",
+          "pos": "n.",
+          "fr": "pomme de terre",
+          "example": "土豆丝很好吃。Tǔdòusī hěn hǎochī. (Les pommes de terre râpées sont délicieuses.)",
+          "note": "土 (tǔ) = terre, 豆 (dòu) = haricot. On dit aussi 马铃薯 (mǎlíngshǔ) en langage formel."
+        },
+        {
+          "hanzi": "胡萝卜",
+          "pinyin": "húluóbo",
+          "pos": "n.",
+          "fr": "carotte",
+          "example": "兔子爱吃胡萝卜。Tùzi ài chī húluóbo. (Les lapins aiment les carottes.)",
+          "note": "胡 indique une origine étrangère (comme pour 胡椒 = poivre). 萝卜 seul = radis blanc."
+        },
+        {
+          "hanzi": "新鲜",
+          "pinyin": "xīnxiān",
+          "pos": "adj.",
+          "fr": "frais",
+          "example": "这个水果很新鲜。Zhège shuǐguǒ hěn xīnxiān. (Ce fruit est très frais.)",
+          "note": "S'utilise aussi au sens figuré : 新鲜事 (xīnxiān shì) = chose nouvelle, inédite."
+        },
+        {
+          "hanzi": "甜",
+          "pinyin": "tián",
+          "pos": "adj.",
+          "fr": "sucré",
+          "example": "中国的葡萄很甜。Zhōngguó de pútao hěn tián. (Les raisins de Chine sont très sucrés.)",
+          "note": "甜点 (tiándiǎn) = dessert. Opposé : 苦 (kǔ) = amer."
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "themeZh": "星期与时段",
+      "themeFr": "Jours & moments",
+      "vocab": [
+        {
+          "hanzi": "今天",
+          "pinyin": "jīntiān",
+          "pos": "n.",
+          "fr": "aujourd'hui",
+          "example": "今天天气很好。Jīntiān tiānqì hěn hǎo. (Il fait beau aujourd'hui.)",
+          "note": "今 (jīn) = maintenant/présent. Série : 今天, 今年 (cette année), 今晚 (ce soir)."
+        },
+        {
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "pos": "n.",
+          "fr": "demain",
+          "example": "明天见！Míngtiān jiàn! (À demain !)",
+          "note": "明 (míng) = lumineux/clair. 后天 (hòutiān) = après-demain."
+        },
+        {
+          "hanzi": "昨天",
+          "pinyin": "zuótiān",
+          "pos": "n.",
+          "fr": "hier",
+          "example": "昨天我很忙。Zuótiān wǒ hěn máng. (J'étais très occupé hier.)",
+          "note": "前天 (qiántiān) = avant-hier. Le temps est exprimé AVANT le verbe en chinois."
+        },
+        {
+          "hanzi": "星期",
+          "pinyin": "xīngqī",
+          "pos": "n.",
+          "fr": "semaine / jour de semaine",
+          "example": "今天星期几？Jīntiān xīngqī jǐ? (Quel jour sommes-nous ?)",
+          "note": "星期一 à 六 pour lundi à samedi. Dimanche = 星期天 ou 星期日. On dit aussi 周 (zhōu)."
+        },
+        {
+          "hanzi": "周末",
+          "pinyin": "zhōumò",
+          "pos": "n.",
+          "fr": "week-end",
+          "example": "周末你做什么？Zhōumò nǐ zuò shénme? (Tu fais quoi ce week-end ?)",
+          "note": "周 (zhōu) = semaine, 末 (mò) = fin. 周一, 周二... = forme plus courte pour les jours."
+        },
+        {
+          "hanzi": "早上",
+          "pinyin": "zǎoshang",
+          "pos": "n.",
+          "fr": "matin",
+          "example": "早上好！Zǎoshang hǎo! (Bonjour ! - le matin)",
+          "note": "早 (zǎo) = tôt. 上午 (shàngwǔ) = matinée (plus formel, avant midi)."
+        },
+        {
+          "hanzi": "下午",
+          "pinyin": "xiàwǔ",
+          "pos": "n.",
+          "fr": "après-midi",
+          "example": "下午三点见。Xiàwǔ sān diǎn jiàn. (Rendez-vous à 15h.)",
+          "note": "下 (xià) = dessous, après. 中午 (zhōngwǔ) = midi."
+        },
+        {
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "pos": "n.",
+          "fr": "soir",
+          "example": "晚上好！Wǎnshang hǎo! (Bonsoir !)",
+          "note": "晚 (wǎn) = tard. 傍晚 (bàngwǎn) = début de soirée (17h-19h)."
+        },
+        {
+          "hanzi": "现在",
+          "pinyin": "xiànzài",
+          "pos": "adv.",
+          "fr": "maintenant",
+          "example": "现在几点？Xiànzài jǐ diǎn? (Quelle heure est-il ?)",
+          "note": "现 (xiàn) = actuel, 在 (zài) = être à. Se place AVANT le verbe."
+        },
+        {
+          "hanzi": "以后",
+          "pinyin": "yǐhòu",
+          "pos": "adv.",
+          "fr": "plus tard",
+          "example": "以后再说。Yǐhòu zài shuō. (On en reparle plus tard.)",
+          "note": "以前 (yǐqián) = avant/autrefois. Structure : [temps] + 以后/以前."
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "themeZh": "日期与节日",
+      "themeFr": "Dates & fêtes",
+      "vocab": [
+        {
+          "hanzi": "年",
+          "pinyin": "nián",
+          "pos": "n.",
+          "fr": "année",
+          "example": "今年是2024年。Jīnnián shì èr líng èr sì nián. (Cette année c'est 2024.)",
+          "note": "Les années se lisent chiffre par chiffre : 2024 = 二零二四. 去年 (qùnián) = l'année dernière."
+        },
+        {
+          "hanzi": "月",
+          "pinyin": "yuè",
+          "pos": "n.",
+          "fr": "mois",
+          "example": "我是五月出生的。Wǒ shì wǔ yuè chūshēng de. (Je suis né en mai.)",
+          "note": "Les mois = chiffre + 月 : 一月 (janvier), 十二月 (décembre). 月亮 (yuèliang) = la lune."
+        },
+        {
+          "hanzi": "日",
+          "pinyin": "rì",
+          "pos": "n.",
+          "fr": "jour (formel)",
+          "example": "2024年1月1日。Èr líng èr sì nián yī yuè yī rì. (1er janvier 2024.)",
+          "note": "日 est utilisé à l'écrit et dans les dates officielles. À l'oral, on préfère 号."
+        },
+        {
+          "hanzi": "号",
+          "pinyin": "hào",
+          "pos": "n.",
+          "fr": "jour du mois",
+          "example": "今天几号？Jīntiān jǐ hào? (On est le combien ?)",
+          "note": "号 est familier. 五号 = le 5 (du mois). Aussi utilisé pour les numéros : 几号房？= quelle chambre ?"
+        },
+        {
+          "hanzi": "生日",
+          "pinyin": "shēngrì",
+          "pos": "n.",
+          "fr": "anniversaire",
+          "example": "生日快乐！Shēngrì kuàilè! (Joyeux anniversaire !)",
+          "note": "生 (shēng) = naître, 日 = jour. En Chine, on mange des nouilles longues (长寿面) pour symboliser la longévité."
+        },
+        {
+          "hanzi": "新年",
+          "pinyin": "xīnnián",
+          "pos": "n.",
+          "fr": "nouvel an",
+          "example": "新年快乐！Xīnnián kuàilè! (Bonne année !)",
+          "note": "Peut désigner le 1er janvier OU le Nouvel An chinois selon le contexte."
+        },
+        {
+          "hanzi": "春节",
+          "pinyin": "Chūnjié",
+          "pos": "n.",
+          "fr": "Fête du Printemps",
+          "example": "春节我回老家。Chūnjié wǒ huí lǎojiā. (Je rentre chez moi pour le Nouvel An chinois.)",
+          "note": "La plus grande fête chinoise ! Basée sur le calendrier lunaire (fin janvier - mi-février). On offre des 红包 (hóngbāo) = enveloppes rouges."
+        },
+        {
+          "hanzi": "中秋节",
+          "pinyin": "Zhōngqiūjié",
+          "pos": "n.",
+          "fr": "Fête de la Mi-Automne",
+          "example": "中秋节我们吃月饼。Zhōngqiūjié wǒmen chī yuèbǐng. (À la Fête de la Lune, on mange des gâteaux de lune.)",
+          "note": "Fête de la pleine lune (15e jour du 8e mois lunaire, vers septembre). On contemple la lune en famille."
+        },
+        {
+          "hanzi": "国庆节",
+          "pinyin": "Guóqìngjié",
+          "pos": "n.",
+          "fr": "Fête nationale",
+          "example": "国庆节放假七天。Guóqìngjié fàngjià qī tiān. (7 jours de congé pour la Fête nationale.)",
+          "note": "Le 1er octobre, anniversaire de la République populaire de Chine (1949). Semaine de vacances appelée 黄金周 (semaine d'or)."
+        },
+        {
+          "hanzi": "假期",
+          "pinyin": "jiàqī",
+          "pos": "n.",
+          "fr": "vacances",
+          "example": "假期你去哪儿？Jiàqī nǐ qù nǎr? (Où vas-tu pendant les vacances ?)",
+          "note": "假 (jià) = congé. 放假 (fàngjià) = être en vacances. 请假 (qǐngjià) = demander un congé."
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "themeZh": "时间",
+      "themeFr": "L'heure",
+      "vocab": [
+        {
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "pos": "n.",
+          "fr": "heure (pile)",
+          "example": "现在三点。Xiànzài sān diǎn. (Il est 3 heures.)",
+          "note": "Structure : [nombre] + 点. 三点 = 3h. On utilise le format 24h ou précise 上午/下午."
+        },
+        {
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "pos": "n.",
+          "fr": "minute",
+          "example": "现在十点二十分。Xiànzài shí diǎn èrshí fēn. (Il est 10h20.)",
+          "note": "Pour le quart d'heure : 一刻 (yī kè) = 15 min. 三点一刻 = 3h15."
+        },
+        {
+          "hanzi": "半",
+          "pinyin": "bàn",
+          "pos": "n.",
+          "fr": "demi (…et demie)",
+          "example": "八点半见。Bā diǎn bàn jiàn. (Rendez-vous à 8h30.)",
+          "note": "Se place APRÈS 点 : 两点半 = 2h30. 半个小时 = une demi-heure."
+        },
+        {
+          "hanzi": "时候",
+          "pinyin": "shíhou",
+          "pos": "n.",
+          "fr": "moment / quand",
+          "example": "小时候我住在北京。Xiǎo shíhou wǒ zhù zài Běijīng. (Quand j'étais petit, j'habitais à Pékin.)",
+          "note": "小时候 = enfance. 有时候 (yǒu shíhou) = parfois. 的时候 = quand/au moment où."
+        },
+        {
+          "hanzi": "早",
+          "pinyin": "zǎo",
+          "pos": "adj.",
+          "fr": "tôt",
+          "example": "太早了！Tài zǎo le! (C'est trop tôt !)",
+          "note": "早！= Salut ! (le matin). 早点 (zǎodiǎn) = petit-déjeuner."
+        },
+        {
+          "hanzi": "晚",
+          "pinyin": "wǎn",
+          "pos": "adj.",
+          "fr": "tard",
+          "example": "不晚不晚。Bù wǎn bù wǎn. (Ce n'est pas tard du tout.)",
+          "note": "晚安 (wǎn'ān) = bonne nuit. 晚饭 (wǎnfàn) = dîner."
+        },
+        {
+          "hanzi": "迟到",
+          "pinyin": "chídào",
+          "pos": "v.",
+          "fr": "être en retard",
+          "example": "对不起，我迟到了。Duìbuqǐ, wǒ chídào le. (Pardon, je suis en retard.)",
+          "note": "迟 (chí) = lent/tard, 到 (dào) = arriver. Contraire : 早到 (zǎodào) = arriver en avance."
+        },
+        {
+          "hanzi": "等",
+          "pinyin": "děng",
+          "pos": "v.",
+          "fr": "attendre",
+          "example": "请等一下。Qǐng děng yīxià. (Attendez un instant s'il vous plaît.)",
+          "note": "等等 (děngděng) = attends/et cætera. 等一会儿 = attendre un moment."
+        },
+        {
+          "hanzi": "赶时间",
+          "pinyin": "gǎnshíjiān",
+          "pos": "expr.",
+          "fr": "être pressé",
+          "example": "我赶时间，先走了。Wǒ gǎn shíjiān, xiān zǒu le. (Je suis pressé, je dois y aller.)",
+          "note": "赶 (gǎn) = se dépêcher pour attraper. 赶火车 = attraper un train."
+        },
+        {
+          "hanzi": "什么时候",
+          "pinyin": "shénme shíhou",
+          "pos": "adv.",
+          "fr": "quand ?",
+          "example": "你什么时候回来？Nǐ shénme shíhou huílái? (Quand reviens-tu ?)",
+          "note": "Se place AVANT le verbe. Réponse possible : 明天 (demain), 下周 (la semaine prochaine)..."
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "themeZh": "物品",
+      "themeFr": "Objets utiles",
+      "vocab": [
+        {
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "pos": "n.",
+          "fr": "téléphone",
+          "example": "我的手机没电了。Wǒ de shǒujī méi diàn le. (Mon téléphone n'a plus de batterie.)",
+          "note": "手 (shǒu) = main, 机 (jī) = machine. En Chine, WeChat (微信) est indispensable sur le 手机."
+        },
+        {
+          "hanzi": "钥匙",
+          "pinyin": "yàoshi",
+          "pos": "n.",
+          "fr": "clé",
+          "example": "钥匙在哪儿？Yàoshi zài nǎr? (Où sont les clés ?)",
+          "note": "Attention à la prononciation : shi se prononce comme 'che' légèrement rétroflexe."
+        },
+        {
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "pos": "n.",
+          "fr": "argent",
+          "example": "多少钱？Duōshao qián? (Combien ça coûte ?)",
+          "note": "En Chine, le paiement mobile (微信支付, 支付宝) a remplacé l'argent liquide presque partout."
+        },
+        {
+          "hanzi": "卡",
+          "pinyin": "kǎ",
+          "pos": "n.",
+          "fr": "carte",
+          "example": "你有银行卡吗？Nǐ yǒu yínháng kǎ ma? (Tu as une carte bancaire ?)",
+          "note": "信用卡 (xìnyòngkǎ) = carte de crédit. 身份证 (shēnfènzhèng) = carte d'identité."
+        },
+        {
+          "hanzi": "书",
+          "pinyin": "shū",
+          "pos": "n.",
+          "fr": "livre",
+          "example": "这本书很有意思。Zhè běn shū hěn yǒu yìsi. (Ce livre est intéressant.)",
+          "note": "书店 (shūdiàn) = librairie. 图书馆 (túshūguǎn) = bibliothèque. Classificateur : 本 (běn)."
+        },
+        {
+          "hanzi": "笔",
+          "pinyin": "bǐ",
+          "pos": "n.",
+          "fr": "stylo",
+          "example": "借我一支笔。Jiè wǒ yī zhī bǐ. (Prête-moi un stylo.)",
+          "note": "铅笔 (qiānbǐ) = crayon. 毛笔 (máobǐ) = pinceau de calligraphie. Classificateur : 支 (zhī)."
+        },
+        {
+          "hanzi": "包",
+          "pinyin": "bāo",
+          "pos": "n.",
+          "fr": "sac",
+          "example": "你的包真好看。Nǐ de bāo zhēn hǎokàn. (Ton sac est vraiment joli.)",
+          "note": "书包 (shūbāo) = cartable. 手提包 (shǒutíbāo) = sac à main. 红包 = enveloppe rouge (argent cadeau)."
+        },
+        {
+          "hanzi": "伞",
+          "pinyin": "sǎn",
+          "pos": "n.",
+          "fr": "parapluie",
+          "example": "下雨了，带伞！Xià yǔ le, dài sǎn! (Il pleut, prends un parapluie !)",
+          "note": "雨伞 (yǔsǎn) = parapluie (forme complète). 太阳伞 (tàiyángsǎn) = parasol."
+        },
+        {
+          "hanzi": "充电器",
+          "pinyin": "chōngdiànqì",
+          "pos": "n.",
+          "fr": "chargeur",
+          "example": "充电器忘带了。Chōngdiànqì wàng dài le. (J'ai oublié mon chargeur.)",
+          "note": "充电 (chōngdiàn) = recharger. 充电宝 (chōngdiànbǎo) = batterie externe (power bank)."
+        },
+        {
+          "hanzi": "票",
+          "pinyin": "piào",
+          "pos": "n.",
+          "fr": "billet",
+          "example": "火车票买好了吗？Huǒchēpiào mǎi hǎo le ma? (Tu as acheté les billets de train ?)",
+          "note": "电影票 (diànyǐngpiào) = ticket de cinéma. 门票 (ménpiào) = billet d'entrée."
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "themeZh": "形容",
+      "themeFr": "Décrire",
+      "vocab": [
+        {
+          "hanzi": "大",
+          "pinyin": "dà",
+          "pos": "adj.",
+          "fr": "grand",
+          "example": "这个房间很大。Zhège fángjiān hěn dà. (Cette pièce est grande.)",
+          "note": "大人 (dàrén) = adulte. 大学 (dàxué) = université. 大家 (dàjiā) = tout le monde."
+        },
+        {
+          "hanzi": "小",
+          "pinyin": "xiǎo",
+          "pos": "adj.",
+          "fr": "petit",
+          "example": "我有一只小狗。Wǒ yǒu yī zhī xiǎo gǒu. (J'ai un petit chien.)",
+          "note": "小姐 (xiǎojiě) = mademoiselle. 小心 (xiǎoxīn) = attention/prudent. 小时 (xiǎoshí) = heure."
+        },
+        {
+          "hanzi": "多",
+          "pinyin": "duō",
+          "pos": "adj.",
+          "fr": "beaucoup",
+          "example": "人很多。Rén hěn duō. (Il y a beaucoup de monde.)",
+          "note": "多少 (duōshao) = combien. 多大 (duō dà) = quel âge. 多久 (duō jiǔ) = combien de temps."
+        },
+        {
+          "hanzi": "少",
+          "pinyin": "shǎo",
+          "pos": "adj.",
+          "fr": "peu",
+          "example": "他的钱很少。Tā de qián hěn shǎo. (Il a peu d'argent.)",
+          "note": "Attention : 年少 (niánshào, ton 4) = jeunesse. 少年 (shàonián) = adolescent."
+        },
+        {
+          "hanzi": "远",
+          "pinyin": "yuǎn",
+          "pos": "adj.",
+          "fr": "loin",
+          "example": "学校离这儿很远。Xuéxiào lí zhèr hěn yuǎn. (L'école est loin d'ici.)",
+          "note": "离...远 = loin de... 很远 = très loin. 远方 (yuǎnfāng) = lointain, contrées lointaines."
+        },
+        {
+          "hanzi": "近",
+          "pinyin": "jìn",
+          "pos": "adj.",
+          "fr": "près",
+          "example": "超市离我家很近。Chāoshì lí wǒ jiā hěn jìn. (Le supermarché est près de chez moi.)",
+          "note": "附近 (fùjìn) = aux alentours, à proximité. 最近 (zuìjìn) = récemment."
+        },
+        {
+          "hanzi": "快",
+          "pinyin": "kuài",
+          "pos": "adj.",
+          "fr": "rapide",
+          "example": "他跑得很快。Tā pǎo de hěn kuài. (Il court très vite.)",
+          "note": "快乐 (kuàilè) = heureux. 快点！(Kuài diǎn!) = Dépêche-toi ! 筷子 (kuàizi) = baguettes (même son)."
+        },
+        {
+          "hanzi": "慢",
+          "pinyin": "màn",
+          "pos": "adj.",
+          "fr": "lent",
+          "example": "请说慢一点。Qǐng shuō màn yīdiǎn. (Parle plus lentement s'il te plaît.)",
+          "note": "慢慢 (mànman) = doucement, lentement. 慢走 (màn zǒu) = au revoir (lit. marche doucement)."
+        },
+        {
+          "hanzi": "新",
+          "pinyin": "xīn",
+          "pos": "adj.",
+          "fr": "neuf",
+          "example": "这是我的新手机。Zhè shì wǒ de xīn shǒujī. (C'est mon nouveau téléphone.)",
+          "note": "新年 (xīnnián) = nouvel an. 新闻 (xīnwén) = informations/actualités."
+        },
+        {
+          "hanzi": "旧",
+          "pinyin": "jiù",
+          "pos": "adj.",
+          "fr": "vieux (objet)",
+          "example": "这件衣服太旧了。Zhè jiàn yīfu tài jiù le. (Ce vêtement est trop vieux.)",
+          "note": "Pour les objets seulement ! Pour les personnes âgées, on dit 老 (lǎo)."
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "themeZh": "位置",
+      "themeFr": "Se situer",
+      "vocab": [
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "pos": "prep.",
+          "fr": "à / être à",
+          "example": "我在家。Wǒ zài jiā. (Je suis à la maison.)",
+          "note": "Verbe ET préposition ! Structure : 在 + lieu + verbe. Ex: 我在北京工作 (Je travaille à Pékin)."
+        },
+        {
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "pos": "n./prep.",
+          "fr": "dessus / sur",
+          "example": "书在桌子上。Shū zài zhuōzi shàng. (Le livre est sur la table.)",
+          "note": "上班 (shàngbān) = aller au travail. 上学 (shàngxué) = aller à l'école. 上面 = dessus."
+        },
+        {
+          "hanzi": "下",
+          "pinyin": "xià",
+          "pos": "n./prep.",
+          "fr": "dessous / sous",
+          "example": "猫在床下。Māo zài chuáng xià. (Le chat est sous le lit.)",
+          "note": "下班 (xiàbān) = finir le travail. 下雨 (xià yǔ) = il pleut. 下面 = dessous."
+        },
+        {
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "pos": "n./prep.",
+          "fr": "dans",
+          "example": "钥匙在包里。Yàoshi zài bāo lǐ. (Les clés sont dans le sac.)",
+          "note": "里面 (lǐmiàn) = intérieur. 家里 = à la maison. Aussi unité de distance : 1里 ≈ 500m."
+        },
+        {
+          "hanzi": "外",
+          "pinyin": "wài",
+          "pos": "n./prep.",
+          "fr": "dehors",
+          "example": "外面下雨了。Wàimiàn xià yǔ le. (Il pleut dehors.)",
+          "note": "外国 (wàiguó) = étranger (pays). 外国人 (wàiguórén) = étranger (personne). 外面 = dehors."
+        },
+        {
+          "hanzi": "前面",
+          "pinyin": "qiánmiàn",
+          "pos": "n.",
+          "fr": "devant",
+          "example": "超市在银行前面。Chāoshì zài yínháng qiánmiàn. (Le supermarché est devant la banque.)",
+          "note": "前 seul = avant (temps). 以前 (yǐqián) = autrefois. Structure : A 在 B 前面 = A est devant B."
+        },
+        {
+          "hanzi": "后面",
+          "pinyin": "hòumiàn",
+          "pos": "n.",
+          "fr": "derrière",
+          "example": "厕所在餐厅后面。Cèsuǒ zài cāntīng hòumiàn. (Les toilettes sont derrière le restaurant.)",
+          "note": "以后 (yǐhòu) = plus tard. 后来 (hòulái) = ensuite. 后天 (hòutiān) = après-demain."
+        },
+        {
+          "hanzi": "左边",
+          "pinyin": "zuǒbian",
+          "pos": "n.",
+          "fr": "à gauche",
+          "example": "往左边走。Wǎng zuǒbian zǒu. (Allez à gauche.)",
+          "note": "左 (zuǒ) = gauche. 左手 (zuǒshǒu) = main gauche. En Chine, on roule à droite."
+        },
+        {
+          "hanzi": "右边",
+          "pinyin": "yòubian",
+          "pos": "n.",
+          "fr": "à droite",
+          "example": "药店在右边。Yàodiàn zài yòubian. (La pharmacie est à droite.)",
+          "note": "右 (yòu) = droite. 左右 (zuǒyòu) = environ. Ex: 三十块左右 = environ 30 yuans."
+        },
+        {
+          "hanzi": "中间",
+          "pinyin": "zhōngjiān",
+          "pos": "n.",
+          "fr": "au milieu",
+          "example": "我坐在中间。Wǒ zuò zài zhōngjiān. (Je suis assis au milieu.)",
+          "note": "中 (zhōng) = centre. 中国 (Zhōngguó) = Chine (lit. pays du milieu). 中文 = chinois (langue)."
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "themeZh": "副词",
+      "themeFr": "Adverbes fréquents",
+      "vocab": [
+        {
+          "hanzi": "很",
+          "pinyin": "hěn",
+          "pos": "adv.",
+          "fr": "très (liaison adjectif)",
+          "example": "他很高。Tā hěn gāo. (Il est grand.)",
+          "note": "En chinois, 很 est souvent requis comme 'liant' entre sujet et adjectif, même sans sens intensif."
+        },
+        {
+          "hanzi": "也",
+          "pinyin": "yě",
+          "pos": "adv.",
+          "fr": "aussi",
+          "example": "我也是学生。Wǒ yě shì xuésheng. (Je suis étudiant aussi.)",
+          "note": "Se place AVANT le verbe. Ordre : Sujet + 也 + verbe. 也不 = non plus."
+        },
+        {
+          "hanzi": "都",
+          "pinyin": "dōu",
+          "pos": "adv.",
+          "fr": "tous / déjà (selon contexte)",
+          "example": "我们都是中国人。Wǒmen dōu shì Zhōngguórén. (Nous sommes tous chinois.)",
+          "note": "都...了 = déjà (nuance). Ex: 都八点了！= Il est déjà 8h ! Ordre : 也都 (jamais 都也)."
+        },
+        {
+          "hanzi": "只",
+          "pinyin": "zhǐ",
+          "pos": "adv.",
+          "fr": "seulement",
+          "example": "我只会说一点中文。Wǒ zhǐ huì shuō yīdiǎn Zhōngwén. (Je ne parle qu'un peu chinois.)",
+          "note": "只有 (zhǐyǒu) = seulement, il n'y a que. Ne confondez pas avec 只 (zhī) = classificateur d'animaux."
+        },
+        {
+          "hanzi": "才",
+          "pinyin": "cái",
+          "pos": "adv.",
+          "fr": "seulement (tard / juste)",
+          "example": "他九点才来。Tā jiǔ diǎn cái lái. (Il n'est venu qu'à 9h - c'est tard.)",
+          "note": "才 exprime que c'est tard/peu. Contraste avec 就 (tôt/beaucoup). 才 = seulement maintenant."
+        },
+        {
+          "hanzi": "再",
+          "pinyin": "zài",
+          "pos": "adv.",
+          "fr": "encore / de nouveau",
+          "example": "再见！Zàijiàn! (Au revoir ! - lit. 'voir encore')",
+          "note": "再 = futur (répétition à venir). 又 (yòu) = passé (répétition déjà faite). 再说 = on verra."
+        },
+        {
+          "hanzi": "就",
+          "pinyin": "jiù",
+          "pos": "adv.",
+          "fr": "alors / justement",
+          "example": "他七点就来了。Tā qī diǎn jiù lái le. (Il est venu dès 7h - c'est tôt.)",
+          "note": "就 indique que c'est rapide/tôt/immédiat. 就是 = c'est justement. Contraste avec 才."
+        },
+        {
+          "hanzi": "还",
+          "pinyin": "hái",
+          "pos": "adv.",
+          "fr": "encore",
+          "example": "你还要吗？Nǐ hái yào ma? (Tu en veux encore ?)",
+          "note": "还是 (háishi) = ou bien (question). 还有 = il y a aussi, en plus. 还可以 = ça va, passable."
+        },
+        {
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "pos": "adv.",
+          "fr": "déjà",
+          "example": "我已经吃过了。Wǒ yǐjīng chī guò le. (J'ai déjà mangé.)",
+          "note": "Souvent suivi de 了. 已经...了 = c'est fait, c'est accompli. Se place avant le verbe."
+        },
+        {
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "pos": "adv.",
+          "fr": "peut-être",
+          "example": "他可能不来了。Tā kěnéng bù lái le. (Il ne viendra peut-être pas.)",
+          "note": "Peut être adverbe ou nom (la possibilité). 不可能 (bù kěnéng) = impossible !"
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "themeZh": "常用词",
+      "themeFr": "Mots essentiels",
+      "vocab": [
+        {
+          "hanzi": "可以",
+          "pinyin": "kěyǐ",
+          "pos": "v.",
+          "fr": "pouvoir / autorisation",
+          "example": "可以进来吗？Kěyǐ jìnlái ma? (Puis-je entrer ?)",
+          "note": "可以 = permission/possibilité. 能 (néng) = capacité physique. 可以！= D'accord ! / OK !"
+        },
+        {
+          "hanzi": "要",
+          "pinyin": "yào",
+          "pos": "v.",
+          "fr": "vouloir / devoir",
+          "example": "我要一杯咖啡。Wǒ yào yī bēi kāfēi. (Je veux un café.)",
+          "note": "要 = vouloir ou devoir (intention future). 要...了 = sur le point de. 我要走了 = Je vais partir."
+        },
+        {
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "pos": "v.",
+          "fr": "ne pas vouloir / interdiction",
+          "example": "不要说话！Búyào shuōhuà! (Ne parle pas !)",
+          "note": "Impératif négatif = 不要 ou 别 (bié). 别客气！= Pas de politesse ! (formule de bienvenue)."
+        },
+        {
+          "hanzi": "有",
+          "pinyin": "yǒu",
+          "pos": "v.",
+          "fr": "avoir / il y a",
+          "example": "这儿有厕所吗？Zhèr yǒu cèsuǒ ma? (Y a-t-il des toilettes ici ?)",
+          "note": "有 n'utilise JAMAIS 不 pour la négation, toujours 没. 有意思 (yǒu yìsi) = intéressant."
+        },
+        {
+          "hanzi": "没有",
+          "pinyin": "méiyǒu",
+          "pos": "v.",
+          "fr": "ne pas avoir / il n'y a pas",
+          "example": "我没有时间。Wǒ méiyǒu shíjiān. (Je n'ai pas le temps.)",
+          "note": "没 (méi) nie le passé ou 有. 没关系 (méi guānxi) = ce n'est rien, pas grave."
+        },
+        {
+          "hanzi": "会",
+          "pinyin": "huì",
+          "pos": "v.",
+          "fr": "savoir / futur probable",
+          "example": "你会说中文吗？Nǐ huì shuō Zhōngwén ma? (Tu sais parler chinois ?)",
+          "note": "会 = compétence apprise ou prédiction. 明天会下雨 = Il pleuvra demain (probable)."
+        },
+        {
+          "hanzi": "想",
+          "pinyin": "xiǎng",
+          "pos": "v.",
+          "fr": "avoir envie / penser",
+          "example": "我想你。Wǒ xiǎng nǐ. (Tu me manques.)",
+          "note": "想 + verbe = vouloir, avoir envie. 想 + nom = penser à, manquer. 我想想 = laisse-moi réfléchir."
+        },
+        {
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "pos": "v.",
+          "fr": "trouver / penser (avis)",
+          "example": "你觉得怎么样？Nǐ juéde zěnmeyàng? (Qu'en penses-tu ?)",
+          "note": "觉得 = opinion personnelle. 睡觉 (shuìjiào) = dormir (même caractère 觉 mais ton différent : jué/jiào)."
+        },
+        {
+          "hanzi": "因为",
+          "pinyin": "yīnwèi",
+          "pos": "conj.",
+          "fr": "parce que",
+          "example": "因为下雨，我不去了。Yīnwèi xià yǔ, wǒ bù qù le. (Je n'y vais pas parce qu'il pleut.)",
+          "note": "Structure : 因为 A，所以 B. En chinois, la cause vient AVANT l'effet (l'inverse du français)."
+        },
+        {
+          "hanzi": "所以",
+          "pinyin": "suǒyǐ",
+          "pos": "conj.",
+          "fr": "donc",
+          "example": "我很累，所以想休息。Wǒ hěn lèi, suǒyǐ xiǎng xiūxi. (Je suis fatigué, donc je veux me reposer.)",
+          "note": "因为...所以... = parce que...donc... On peut omettre l'un des deux (mais pas les deux)."
+        }
+      ]
+    }
+  ]
+}

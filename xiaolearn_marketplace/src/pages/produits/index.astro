@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { subscriptions, pdfs, ankiDecks } from '../../data/products';
+---
+
+<BaseLayout title="Tous nos produits - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <h1>Nos Produits</h1>
+      <p>Découvrez tous nos outils pour apprendre le chinois mandarin efficacement</p>
+    </div>
+  </section>
+
+  <!-- Navigation Categories -->
+  <section class="categories-nav">
+    <div class="container">
+      <div class="categories">
+        <a href="#abonnements" class="category-link">📱 Abonnements</a>
+        <a href="#manuels" class="category-link">📄 Manuels PDF</a>
+        <a href="#flashcards" class="category-link">🎴 Decks Anki</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abonnements -->
+  <section id="abonnements" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Abonnements</span>
+        <h2>Applications XiaoLearn</h2>
+        <p>Accès complet à nos applications d'apprentissage avec toutes les fonctionnalités premium</p>
+      </div>
+
+      <div class="grid grid-2">
+        {subscriptions.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Manuels PDF -->
+  <section id="manuels" class="section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Manuels PDF</span>
+        <h2>Ressources d'étude</h2>
+        <p>Des guides complets à télécharger et imprimer pour étudier partout</p>
+      </div>
+
+      <div class="grid grid-2">
+        {pdfs.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Decks Anki -->
+  <section id="flashcards" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Decks Anki</span>
+        <h2>Flashcards intelligentes</h2>
+        <p>Mémorisez efficacement avec le système de répétition espacée</p>
+      </div>
+
+      <div class="grid grid-2">
+        {ankiDecks.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.1), rgba(240, 183, 98, 0.1));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .categories-nav {
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 50;
+    padding: var(--spacing-md) 0;
+  }
+
+  .categories {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .category-link {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+  }
+
+  .category-link:hover {
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+</style>

@@ -1,0 +1,9 @@
+{
+  "name": "XiaoLearn App",
+  "short_name": "Chinese",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#f9fafb",
+  "theme_color": "#6366f1",
+  "icons": []
+}

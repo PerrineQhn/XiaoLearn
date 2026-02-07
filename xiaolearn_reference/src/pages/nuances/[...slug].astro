@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
+import { getCollection } from 'astro:content';
+import { getHSKLevelInfo } from '../../types/hsk';
+
+export async function getStaticPaths() {
+  const nuanceEntries = await getCollection('nuances');
+  return nuanceEntries.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const levelInfo = getHSKLevelInfo(data.level);
+
+// Get related nuances
+const allNuances = await getCollection('nuances');
+const relatedEntries = data.relatedNuances
+  ? allNuances.filter(n => data.relatedNuances?.includes(n.id))
+  : [];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.summary}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Nuances', href: '/nuances' },
+        { label: data.words.join(' vs ') }
+      ]} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-main">
+          <header class="article-header">
+            <div class="header-meta">
+              <HSKLevelBadge level={data.level} size="md" />
+              <span class="category">{data.category.replace(/-/g, ' ')}</span>
+            </div>
+
+            <div class="words-hero">
+              {data.words.map((word, i) => (
+                <>
+                  <div class="word-item">
+                    <span class="word-hanzi">{word}</span>
+                    <span class="word-pinyin">{data.pinyin[i]}</span>
+                  </div>
+                  {i < data.words.length - 1 && <span class="vs">vs</span>}
+                </>
+              ))}
+            </div>
+
+            <h1>{data.title}</h1>
+            <p class="summary">{data.summary}</p>
+          </header>
+
+          <div class="prose" set:html={data.html}></div>
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Navigation</h4>
+            <a href="/nuances" class="btn btn-secondary btn-sm">
+              ← Toutes les nuances
+            </a>
+          </div>
+
+          <div class="sidebar-card words-sidebar">
+            <h4>Mots comparés</h4>
+            {data.words.map((word, i) => (
+              <div class="word-entry">
+                <span class="hanzi">{word}</span>
+                <span class="pinyin">{data.pinyin[i]}</span>
+              </div>
+            ))}
+          </div>
+
+          {relatedEntries.length > 0 && (
+            <div class="sidebar-card">
+              <h4>Nuances liées</h4>
+              <ul class="related-list">
+                {relatedEntries.map(related => (
+                  <li>
+                    <a href={`/nuances/${related.id}`}>
+                      {related.data.words.join(' vs ')}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="sidebar-card">
+            <h4>Niveau minimum</h4>
+            <p style={`color: ${levelInfo?.color}`}>{levelInfo?.name}</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--jade-green-light), var(--bg-secondary));
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .article-main {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .article-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .category {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+  }
+
+  .words-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+  }
+
+  .word-item {
+    text-align: center;
+  }
+
+  .word-hanzi {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+
+  .word-pinyin {
+    display: block;
+    font-style: italic;
+    color: var(--jade-green);
+    margin-top: var(--spacing-sm);
+  }
+
+  .vs {
+    font-size: 1.25rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  .article-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .summary {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .sidebar-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .sidebar-card h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .words-sidebar .word-entry {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .words-sidebar .word-entry:last-child {
+    border-bottom: none;
+  }
+
+  .words-sidebar .hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+  }
+
+  .words-sidebar .pinyin {
+    font-style: italic;
+    color: var(--jade-green);
+    font-size: 0.9rem;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .related-list li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .related-list a {
+    color: var(--jade-green);
+    font-size: 0.9rem;
+    transition: opacity var(--transition-fast);
+  }
+
+  .related-list a:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      order: -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .word-hanzi {
+      font-size: 3rem;
+    }
+  }
+</style>

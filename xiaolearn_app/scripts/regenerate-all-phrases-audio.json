@@ -1,0 +1,306 @@
+[
+  {
+    "text": "你好",
+    "audio": "audio/phrases/greeting_nihao.wav"
+  },
+  {
+    "text": "晚上好",
+    "audio": "audio/phrases/greeting_wanshanghao.wav"
+  },
+  {
+    "text": "再见",
+    "audio": "audio/phrases/greeting_zaijian.wav"
+  },
+  {
+    "text": "早上好",
+    "audio": "audio/phrases/greeting_zaoshanghao.wav"
+  },
+  {
+    "text": "我想喝水",
+    "audio": "audio/phrases/hsk1-phrase-013.wav"
+  },
+  {
+    "text": "他是我爸爸",
+    "audio": "audio/phrases/hsk1-phrase-014.wav"
+  },
+  {
+    "text": "她是我妈妈",
+    "audio": "audio/phrases/hsk1-phrase-015.wav"
+  },
+  {
+    "text": "现在三点",
+    "audio": "audio/phrases/hsk1-phrase-018.wav"
+  },
+  {
+    "text": "我去学校",
+    "audio": "audio/phrases/hsk1-phrase-019.wav"
+  },
+  {
+    "text": "今天星期几",
+    "audio": "audio/phrases/hsk1-phrase-022.wav"
+  },
+  {
+    "text": "明天见",
+    "audio": "audio/phrases/hsk1-phrase-024.wav"
+  },
+  {
+    "text": "多少钱",
+    "audio": "audio/phrases/hsk1-phrase-028.wav"
+  },
+  {
+    "text": "我想买水",
+    "audio": "audio/phrases/hsk1-phrase-030.wav"
+  },
+  {
+    "text": "他们都很好",
+    "audio": "audio/phrases/hsk1-phrase-046.wav"
+  },
+  {
+    "text": "我要回家",
+    "audio": "audio/phrases/hsk1-phrase-047.wav"
+  },
+  {
+    "text": "你来我家",
+    "audio": "audio/phrases/hsk1-phrase-048.wav"
+  },
+  {
+    "text": "我们一起去",
+    "audio": "audio/phrases/hsk1-phrase-049.wav"
+  },
+  {
+    "text": "你在做什么",
+    "audio": "audio/phrases/hsk2-phrase-001.wav"
+  },
+  {
+    "text": "我正在看书",
+    "audio": "audio/phrases/hsk2-phrase-002.wav"
+  },
+  {
+    "text": "天气怎么样",
+    "audio": "audio/phrases/hsk2-phrase-003.wav"
+  },
+  {
+    "text": "我觉得很冷",
+    "audio": "audio/phrases/hsk2-phrase-004.wav"
+  },
+  {
+    "text": "你喜欢吃什么",
+    "audio": "audio/phrases/hsk2-phrase-005.wav"
+  },
+  {
+    "text": "我喜欢吃中国菜",
+    "audio": "audio/phrases/hsk2-phrase-006.wav"
+  },
+  {
+    "text": "请给我一杯咖啡",
+    "audio": "audio/phrases/hsk2-phrase-007.wav"
+  },
+  {
+    "text": "能便宜一点吗",
+    "audio": "audio/phrases/hsk2-phrase-012.wav"
+  },
+  {
+    "text": "我需要帮助",
+    "audio": "audio/phrases/hsk2-phrase-013.wav"
+  },
+  {
+    "text": "你能帮我吗",
+    "audio": "audio/phrases/hsk2-phrase-014.wav"
+  },
+  {
+    "text": "当然可以",
+    "audio": "audio/phrases/hsk2-phrase-015.wav"
+  },
+  {
+    "text": "我听不懂",
+    "audio": "audio/phrases/hsk2-phrase-016.wav"
+  },
+  {
+    "text": "请说慢一点",
+    "audio": "audio/phrases/hsk2-phrase-017.wav"
+  },
+  {
+    "text": "你的汉语说得很好",
+    "audio": "audio/phrases/hsk2-phrase-018.wav"
+  },
+  {
+    "text": "我在学习中文",
+    "audio": "audio/phrases/hsk2-phrase-019.wav"
+  },
+  {
+    "text": "这个问题很难",
+    "audio": "audio/phrases/hsk2-phrase-020.wav"
+  },
+  {
+    "text": "我们一起努力吧",
+    "audio": "audio/phrases/hsk2-phrase-021.wav"
+  },
+  {
+    "text": "医院在哪里",
+    "audio": "audio/phrases/hsk2-phrase-022.wav"
+  },
+  {
+    "text": "一直往前走",
+    "audio": "audio/phrases/hsk2-phrase-023.wav"
+  },
+  {
+    "text": "你要去哪儿",
+    "audio": "audio/phrases/hsk2-phrase-024.wav"
+  },
+  {
+    "text": "我想去火车站",
+    "audio": "audio/phrases/hsk2-phrase-025.wav"
+  },
+  {
+    "text": "今天我很忙",
+    "audio": "audio/phrases/hsk2-phrase-027.wav"
+  },
+  {
+    "text": "明天我有时间",
+    "audio": "audio/phrases/hsk2-phrase-028.wav"
+  },
+  {
+    "text": "我们什么时候见面",
+    "audio": "audio/phrases/hsk2-phrase-029.wav"
+  },
+  {
+    "text": "下午三点怎么样",
+    "audio": "audio/phrases/hsk2-phrase-030.wav"
+  },
+  {
+    "text": "没问题",
+    "audio": "audio/phrases/hsk2-phrase-031.wav"
+  },
+  {
+    "text": "我身体不舒服",
+    "audio": "audio/phrases/hsk2-phrase-032.wav"
+  },
+  {
+    "text": "你应该去看医生",
+    "audio": "audio/phrases/hsk2-phrase-033.wav"
+  },
+  {
+    "text": "我想换一个房间",
+    "audio": "audio/phrases/hsk2-phrase-036.wav"
+  },
+  {
+    "text": "我要一张票",
+    "audio": "audio/phrases/hsk2-phrase-037.wav"
+  },
+  {
+    "text": "外面下雨了",
+    "audio": "audio/phrases/hsk2-phrase-040.wav"
+  },
+  {
+    "text": "别忘了带伞",
+    "audio": "audio/phrases/hsk2-phrase-041.wav"
+  },
+  {
+    "text": "我想休息一下",
+    "audio": "audio/phrases/hsk2-phrase-042.wav"
+  },
+  {
+    "text": "你的工作怎么样",
+    "audio": "audio/phrases/hsk2-phrase-045.wav"
+  },
+  {
+    "text": "工作很有意思",
+    "audio": "audio/phrases/hsk2-phrase-046.wav"
+  },
+  {
+    "text": "我想学做中国菜",
+    "audio": "audio/phrases/hsk2-phrase-047.wav"
+  },
+  {
+    "text": "我可以教你",
+    "audio": "audio/phrases/hsk2-phrase-048.wav"
+  },
+  {
+    "text": "周末你有什么打算",
+    "audio": "audio/phrases/hsk2-phrase-049.wav"
+  },
+  {
+    "text": "我打算去爬山",
+    "audio": "audio/phrases/hsk2-phrase-050.wav"
+  },
+  {
+    "text": "很高兴认识你",
+    "audio": "audio/phrases/intro_hengaoxing.wav"
+  },
+  {
+    "text": "你叫什么名字",
+    "audio": "audio/phrases/intro_nijiaoshenme.wav"
+  },
+  {
+    "text": "我认识他",
+    "audio": "audio/phrases/intro_wojiaolihua.wav"
+  },
+  {
+    "text": "我是法国人",
+    "audio": "audio/phrases/intro_woshifaguoren.wav"
+  },
+  {
+    "text": "请给我两杯水",
+    "audio": "audio/phrases/number_qinggeiliangbei.wav"
+  },
+  {
+    "text": "我们十点见",
+    "audio": "audio/phrases/number_womenshidian.wav"
+  },
+  {
+    "text": "我可以进来吗",
+    "audio": "audio/phrases/number_woyousange.wav"
+  },
+  {
+    "text": "现在是九点",
+    "audio": "audio/phrases/number_xianzaijiudian.wav"
+  },
+  {
+    "text": "不客气",
+    "audio": "audio/phrases/polite_bukeqi.wav"
+  },
+  {
+    "text": "对不起",
+    "audio": "audio/phrases/polite_duibuqi.wav"
+  },
+  {
+    "text": "没关系",
+    "audio": "audio/phrases/polite_meiguanxi.wav"
+  },
+  {
+    "text": "他很客气",
+    "audio": "audio/phrases/polite_xiexie.wav"
+  },
+  {
+    "text": "你什么时候回来",
+    "audio": "audio/phrases/question_nishenmeshihou.wav"
+  },
+  {
+    "text": "你什么时候来",
+    "audio": "audio/phrases/question_nixiangheshenme.wav"
+  },
+  {
+    "text": "他是谁",
+    "audio": "audio/phrases/question_tashishui.wav"
+  },
+  {
+    "text": "洗手间在哪儿",
+    "audio": "audio/phrases/question_xishoujian.wav"
+  },
+  {
+    "text": "不是，我不是学生",
+    "audio": "audio/phrases/yesno_bushi.wav"
+  },
+  {
+    "text": "可以，我帮你",
+    "audio": "audio/phrases/yesno_keyi.wav"
+  },
+  {
+    "text": "你是老师吗",
+    "audio": "audio/phrases/yesno_nishilaoshima.wav"
+  },
+  {
+    "text": "是的，我是老师",
+    "audio": "audio/phrases/yesno_shide.wav"
+  }
+]

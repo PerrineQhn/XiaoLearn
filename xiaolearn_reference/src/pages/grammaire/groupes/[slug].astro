@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import {
+  formatHSKLevelLabel,
+  formatInlineGrammarText,
+  getGrammarGroups,
+  getGrammarPoints,
+  type GrammarGroup,
+} from '../../../data/grammarCatalog';
+
+export async function getStaticPaths() {
+  return getGrammarGroups().map((group) => ({
+    params: { slug: group.slug },
+    props: { group },
+  }));
+}
+
+const { group } = Astro.props as { group: GrammarGroup };
+const pointsById = new Map(getGrammarPoints().map((point) => [point.id, point]));
+const points = group.pointIds
+  .map((pointId) => pointsById.get(pointId))
+  .filter((point): point is NonNullable<typeof point> => point !== undefined);
+const levelLabelByValue = new Map<number, string>();
+for (const point of points) {
+  if (!levelLabelByValue.has(point.level) || point.levelLabel.includes('-')) {
+    levelLabelByValue.set(point.level, point.levelLabel);
+  }
+}
+---
+
+<BaseLayout
+  title={`${group.title} - Groupe de grammaire`}
+  description={group.summary}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Grammaire', href: '/grammaire' },
+        { label: 'Regroupements', href: '/grammaire' },
+        { label: group.title },
+      ]} />
+      <h1>{group.title}</h1>
+      <p>{group.summary}</p>
+      <div class="meta-row">
+        <span class="badge badge-accent">Groupe</span>
+        <span>{points.length} points relies</span>
+        <span>{group.levelSet.map((level) => formatHSKLevelLabel(levelLabelByValue.get(level) || `HSK ${level}`)).join(' • ')}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="points-grid">
+        {points.map((point) => (
+          <article class="point-block">
+            <header class="point-header">
+              <div class="point-meta">
+                <span class={`badge badge-hsk${point.level}`}>{formatHSKLevelLabel(point.levelLabel)}</span>
+                <span class="point-cat">{point.category}</span>
+              </div>
+              <h2>{point.title}</h2>
+              <p set:html={formatInlineGrammarText(point.objective || point.structure)}></p>
+            </header>
+
+            {point.elements.length > 0 && (
+              <div class="elements">
+                {point.elements.map((element) => (
+                  <span>{element}</span>
+                ))}
+              </div>
+            )}
+
+            {point.structure && <pre>{point.structure}</pre>}
+
+            {point.examples.length > 0 && (
+              <div class="examples">
+                {point.examples.slice(0, 2).map((example) => (
+                  <div class="example">
+                    <p class="cn">{example.chinese}</p>
+                    <p class="fr">{example.french}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <a href={`/grammaire/points/${point.id}`} class="btn btn-secondary btn-sm">
+              Ouvrir la fiche detaillee
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--primary-red-light), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin: var(--spacing-sm) 0;
+  }
+
+  .page-header p {
+    max-width: 760px;
+  }
+
+  .meta-row {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+  }
+
+  .points-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .point-block {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .point-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .point-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .point-cat {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+  }
+
+  .point-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .point-header p {
+    max-width: 900px;
+  }
+
+  .elements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .elements span {
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  pre {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  .examples {
+    display: grid;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .example {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .example .cn {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+  }
+
+  .example .fr {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+</style>

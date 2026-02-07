@@ -1,0 +1,104 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import HSKLevelBadge from './HSKLevelBadge.astro';
+
+interface Props {
+  entry: CollectionEntry<'grammaire'>;
+}
+
+const { entry } = Astro.props;
+const { data, slug } = entry;
+
+// Extract level folder from slug (e.g., "hsk1/particule-de" -> "hsk1")
+const levelFolder = slug.split('/')[0];
+---
+
+<a href={`/grammaire/${slug}`} class="grammar-card">
+  <div class="card-header">
+    <HSKLevelBadge level={data.level} size="sm" />
+    <span class="category">{data.category.replace(/-/g, ' ')}</span>
+  </div>
+
+  <h3 class="card-title">{data.title}</h3>
+  <p class="card-summary">{data.summary}</p>
+
+  <div class="card-footer">
+    <span class="difficulty">{data.difficulty}</span>
+    <span class="arrow">→</span>
+  </div>
+</a>
+
+<style>
+  .grammar-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .grammar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-red-light);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .category {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+
+  .card-summary {
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .difficulty {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+  }
+
+  .arrow {
+    color: var(--primary-red);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all var(--transition-base);
+  }
+
+  .grammar-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>

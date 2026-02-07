@@ -1,0 +1,38 @@
+<div class="card-container recog-card" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator recog-type">🔵 RECONNAISSANCE</div>
+  
+  <div class="chinese-main">
+    {{Simplified}}
+  </div>
+  
+  <div class="pinyin-hint">
+    {{Pinyin}}
+  </div>
+  
+  <div class="question-prompt">
+    💭 Quel est le sens ?
+  </div>
+  
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="motivation-text">加油！ (Jiāyóu!)</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const tags = '{{Tags}}'.toLowerCase();
+  const isGrammar = tags.includes('particule') || 
+                    tags.includes('grammaire') || 
+                    tags.includes('conjonction') ||
+                    tags.includes('mesure');
+  
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+})();
+</script>

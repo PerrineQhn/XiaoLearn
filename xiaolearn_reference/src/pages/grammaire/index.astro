@@ -1,0 +1,587 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import GrammarCard from '../../components/GrammarCard.astro';
+import { getCollection } from 'astro:content';
+import {
+  formatHSKLevelLabel,
+  formatInlineGrammarText,
+  getFeaturedGrammarPoints,
+  getGrammarGroups,
+  getGrammarPoints,
+} from '../../data/grammarCatalog';
+
+const editorialGuides = (await getCollection('grammaire')).sort((a, b) => a.data.order - b.data.order);
+const grammarPoints = getGrammarPoints();
+const grammarGroups = getGrammarGroups();
+const featuredPoints = getFeaturedGrammarPoints();
+
+const levelLabelByValue = new Map<number, string>();
+for (const point of grammarPoints) {
+  const existing = levelLabelByValue.get(point.level);
+  if (!existing || point.levelLabel.includes('-')) {
+    levelLabelByValue.set(point.level, point.levelLabel);
+  }
+}
+const levelOptions = Array.from(levelLabelByValue.entries())
+  .sort((a, b) => a[0] - b[0])
+  .map(([value, label]) => ({ value, label: formatHSKLevelLabel(label) }));
+const categories = Array.from(new Set(grammarPoints.map((point) => point.category))).sort();
+const groupByPointId = new Map<string, string[]>();
+
+for (const group of grammarGroups) {
+  for (const pointId of group.pointIds) {
+    const list = groupByPointId.get(pointId) ?? [];
+    list.push(group.title);
+    groupByPointId.set(pointId, list);
+  }
+}
+---
+
+<BaseLayout
+  title="Grammaire chinoise"
+  description="Page vitrine des points de grammaire HSK avec filtres par niveau et pages détaillées par point."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Grammaire' }]} />
+      <h1>Points de <span class="text-gradient">grammaire</span></h1>
+      <p>
+        Une vitrine claire des structures essentielles du mandarin, puis un catalogue
+        complet filtrable par niveau HSK, catégorie et type de contenu.
+      </p>
+    </div>
+  </section>
+
+  <section class="section showcase">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Points cruciaux à maîtriser</h2>
+        <p>Ces points reviennent en permanence en lecture, en écoute et en conversation.</p>
+      </div>
+      <div class="showcase-grid">
+        {featuredPoints.map(point => (
+          <a class="showcase-card" href={`/grammaire/points/${point.id}`}>
+            <div class="showcase-meta">
+              <span class={`badge badge-hsk${point.level}`}>{formatHSKLevelLabel(point.levelLabel)}</span>
+              <span class="showcase-cat">{point.category}</span>
+            </div>
+            <h3>{point.title}</h3>
+            <p set:html={formatInlineGrammarText(point.objective || point.structure || 'Point central de grammaire pour progresser rapidement.')}></p>
+          </a>
+        ))}
+      </div>
+
+      {grammarGroups.length > 0 && (
+        <div class="group-strip">
+          <h3>Regroupements utiles</h3>
+          <div class="group-list">
+            {grammarGroups.map(group => (
+              <a href={`/grammaire/groupes/${group.slug}`} class="group-chip">
+                <span>{group.title}</span>
+                <small>{group.pointIds.length} points</small>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section catalog-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Catalogue complet</h2>
+        <p>Filtrez les points à afficher puis ouvrez chaque fiche en page détail.</p>
+      </div>
+
+      <div class="filter-panel card">
+        <div class="filter-grid">
+          <label class="filter-control">
+            <span>Recherche</span>
+            <input id="grammar-search" type="search" placeholder="Ex: 了, 比, 左, 右, classificateur..." />
+          </label>
+
+          <label class="filter-control">
+            <span>Catégorie</span>
+            <select id="grammar-category">
+              <option value="all">Toutes</option>
+              <option value="Regroupements">Regroupements</option>
+              {categories.map(category => (
+                <option value={category}>{category}</option>
+              ))}
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Type</span>
+            <select id="grammar-type">
+              <option value="all">Points + groupes</option>
+              <option value="point">Points individuels</option>
+              <option value="group">Groupes</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="levels-row">
+          <span class="levels-label">Niveaux</span>
+          <div class="level-chips" id="grammar-levels">
+            <button class="level-chip active" data-level="all" type="button">Tous</button>
+            {levelOptions.map(level => (
+              <button class="level-chip" data-level={String(level.value)} type="button">{level.label}</button>
+            ))}
+          </div>
+          <button id="grammar-reset" class="btn btn-sm btn-secondary" type="button">Réinitialiser</button>
+        </div>
+      </div>
+
+      <div class="catalog-meta">
+        <p id="grammar-count">{grammarPoints.length + grammarGroups.length} éléments affichés</p>
+      </div>
+
+      <div class="catalog-grid" id="grammar-cards">
+        {grammarGroups.map(group => (
+          <a
+            href={`/grammaire/groupes/${group.slug}`}
+            class="point-card group-card"
+            data-type="group"
+            data-levels={group.levelSet.join(',')}
+            data-category="Regroupements"
+            data-search={`${group.title} ${group.summary}`.toLowerCase()}
+          >
+            <div class="point-meta">
+              <span class="badge badge-accent">Groupe</span>
+              <span class="levels-inline">{group.levelSet.map(level => formatHSKLevelLabel(levelLabelByValue.get(level) || `HSK ${level}`)).join(' • ')}</span>
+            </div>
+            <h3>{group.title}</h3>
+            <p>{group.summary}</p>
+            <div class="point-footer">
+              <span>{group.pointIds.length} points liés</span>
+              <span class="arrow">→</span>
+            </div>
+          </a>
+        ))}
+
+        {grammarPoints.map(point => {
+          const groups = groupByPointId.get(point.id) ?? [];
+          return (
+            <a
+              href={`/grammaire/points/${point.id}`}
+              class="point-card"
+              data-type="point"
+              data-levels={String(point.level)}
+              data-category={point.category}
+              data-search={point.searchableText}
+            >
+              <div class="point-meta">
+                <span class={`badge badge-hsk${point.level}`}>{formatHSKLevelLabel(point.levelLabel)}</span>
+                <span class="point-cat">{point.category}</span>
+              </div>
+              <h3>{point.title}</h3>
+              <p set:html={formatInlineGrammarText(point.objective || point.structure || 'Voir les explications et exemples.')}></p>
+              {groups.length > 0 && (
+                <div class="point-groups">
+                  {groups.map(groupTitle => (
+                    <span>{groupTitle}</span>
+                  ))}
+                </div>
+              )}
+              <div class="point-footer">
+                <span>Voir la fiche</span>
+                <span class="arrow">→</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <p id="grammar-empty" class="empty-note hidden">
+        Aucun résultat. Ajustez les filtres ou relancez avec "Tous".
+      </p>
+    </div>
+  </section>
+
+  {editorialGuides.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Fiches approfondies</h2>
+          <p>Quelques leçons rédigées plus longuement pour consolider les bases.</p>
+        </div>
+
+        <div class="editorial-grid">
+          {editorialGuides.map(entry => (
+            <GrammarCard entry={entry} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script is:inline>
+    (() => {
+      const cards = Array.from(document.querySelectorAll('[data-type]'));
+      const searchInput = document.getElementById('grammar-search');
+      const categorySelect = document.getElementById('grammar-category');
+      const typeSelect = document.getElementById('grammar-type');
+      const countNode = document.getElementById('grammar-count');
+      const emptyNode = document.getElementById('grammar-empty');
+      const resetButton = document.getElementById('grammar-reset');
+      const levelButtons = Array.from(document.querySelectorAll('[data-level]'));
+
+      if (!cards.length || !searchInput || !categorySelect || !typeSelect || !countNode || !emptyNode) {
+        return;
+      }
+
+      let selectedLevel = 'all';
+
+      const applyFilters = () => {
+        const query = String(searchInput.value || '').toLowerCase().trim();
+        const selectedCategory = String(categorySelect.value || 'all');
+        const selectedType = String(typeSelect.value || 'all');
+
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const levels = String(card.getAttribute('data-levels') || '').split(',').filter(Boolean);
+          const category = String(card.getAttribute('data-category') || '');
+          const type = String(card.getAttribute('data-type') || '');
+          const searchable = String(card.getAttribute('data-search') || '');
+
+          const levelOk = selectedLevel === 'all' || levels.includes(selectedLevel);
+          const categoryOk = selectedCategory === 'all' || category === selectedCategory;
+          const typeOk = selectedType === 'all' || type === selectedType;
+          const queryOk = !query || searchable.includes(query);
+
+          const show = levelOk && categoryOk && typeOk && queryOk;
+          card.classList.toggle('hidden', !show);
+          if (show) visible += 1;
+        });
+
+        countNode.textContent = visible + ' element' + (visible > 1 ? 's' : '') + ' affiche' + (visible > 1 ? 's' : '');
+        emptyNode.classList.toggle('hidden', visible !== 0);
+      };
+
+      levelButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selectedLevel = String(button.getAttribute('data-level') || 'all');
+          levelButtons.forEach((candidate) => candidate.classList.toggle('active', candidate === button));
+          applyFilters();
+        });
+      });
+
+      const onControlChange = () => applyFilters();
+      searchInput.addEventListener('input', onControlChange);
+      categorySelect.addEventListener('change', onControlChange);
+      typeSelect.addEventListener('change', onControlChange);
+
+      resetButton?.addEventListener('click', () => {
+        selectedLevel = 'all';
+        searchInput.value = '';
+        categorySelect.value = 'all';
+        typeSelect.value = 'all';
+        levelButtons.forEach((button) => button.classList.toggle('active', button.getAttribute('data-level') === 'all'));
+        applyFilters();
+      });
+
+      applyFilters();
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 600px;
+  }
+
+  .section-heading {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-heading p {
+    max-width: 760px;
+  }
+
+  .showcase {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .showcase-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .showcase-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .showcase-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.8rem;
+  }
+
+  .showcase-cat {
+    color: var(--text-tertiary);
+  }
+
+  .showcase-card h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.15rem;
+  }
+
+  .showcase-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .group-strip h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .group-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .group-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    font-size: 0.85rem;
+  }
+
+  .group-chip small {
+    color: var(--text-tertiary);
+    font-size: 0.75rem;
+  }
+
+  .catalog-section {
+    padding-top: var(--spacing-xl);
+  }
+
+  .filter-panel {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .filter-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .filter-control span {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  .filter-control input,
+  .filter-control select {
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: 0 var(--spacing-md);
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+  }
+
+  .levels-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .levels-label {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  .level-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .level-chip {
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .level-chip.active,
+  .level-chip:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+    background: var(--primary-red-light);
+  }
+
+  .catalog-meta {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .catalog-meta p {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .point-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+  }
+
+  .point-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-red-light);
+  }
+
+  .group-card {
+    background: linear-gradient(140deg, var(--primary-red-light), var(--bg-primary));
+  }
+
+  .point-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .levels-inline,
+  .point-cat {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  .point-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .point-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .point-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .point-groups span {
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--jade-green-light);
+    color: var(--jade-green);
+    font-size: 0.72rem;
+  }
+
+  .point-footer {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  .point-footer .arrow {
+    color: var(--primary-red);
+  }
+
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .empty-note {
+    margin-top: var(--spacing-lg);
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  @media (max-width: 960px) {
+    .filter-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .levels-row {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

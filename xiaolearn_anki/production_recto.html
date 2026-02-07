@@ -1,0 +1,222 @@
+<div class="card-container prod-card" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator prod-type">🟢 PRODUCTION</div>
+  
+  <div class="meaning-question">
+    {{Meaning}}
+  </div>
+  
+  <div class="question-prompt">
+    ✍️ Écris chaque caractère dans son carré
+  </div>
+  
+  <!-- Conteneur pour les canvas multiples -->
+  <div class="canvas-grid-container" id="canvasGridContainer"></div>
+  
+  <!-- Contrôles -->
+  <div class="canvas-controls">
+    <button onclick="clearAllCanvas()" class="btn-clear">
+      🗑️ Tout effacer
+    </button>
+    <button onclick="undoLastCanvas()" class="btn-undo">
+      ↶ Annuler dernier
+    </button>
+  </div>
+  
+  <div class="hint-section">
+    <div class="hint-label">💡 Prononciation :</div>
+    <div class="hint-content">{{Pinyin}}</div>
+  </div>
+  
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="motivation-text">✍️ Un caractère par carré !</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const simplified = '{{Simplified}}';
+  const chars = simplified.split('');
+  const charCount = chars.length;
+  const tags = '{{Tags}}'.toLowerCase();
+  
+  // Détecter le type
+  const isGrammar = tags.includes('particule') || 
+                    tags.includes('grammaire') || 
+                    tags.includes('conjonction') ||
+                    tags.includes('mesure');
+  
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+  
+  // Conteneur principal
+  const container = document.getElementById('canvasGridContainer');
+  
+  // Déterminer la taille selon le nombre de caractères
+  let canvasSize, gridClass;
+  if (charCount === 1) {
+    canvasSize = 300;
+    gridClass = 'canvas-grid-1';
+  } else if (charCount === 2) {
+    canvasSize = 150;
+    gridClass = 'canvas-grid-2';
+  } else if (charCount === 3) {
+    canvasSize = 100;
+    gridClass = 'canvas-grid-3';
+  } else {
+    canvasSize = 150;
+    gridClass = 'canvas-grid-4';
+  }
+  
+  // ✅ CORRECTION ICI : Ajouter la classe au lieu de la remplacer
+  container.classList.add(gridClass);
+  
+  // Tableau pour stocker les managers
+  window.canvasManagers = [];
+  
+  // Créer un canvas pour chaque caractère
+  chars.forEach((char, index) => {
+    // Wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'canvas-item';
+    
+    // Canvas
+    const canvas = document.createElement('canvas');
+    canvas.id = `canvas-${index}`;
+    canvas.width = canvasSize * 2;  // Haute résolution
+    canvas.height = canvasSize * 2;
+    canvas.style.width = `${canvasSize}px`;
+    canvas.style.height = `${canvasSize}px`;
+    
+    // Grille
+    const grid = document.createElement('div');
+    grid.className = 'canvas-grid';
+    
+    wrapper.appendChild(canvas);
+    wrapper.appendChild(grid);
+    container.appendChild(wrapper);
+    
+    // Initialiser le dessin
+    const manager = initCanvasManager(canvas);
+    window.canvasManagers.push(manager);
+  });
+  
+  // Fonction pour initialiser un canvas
+  function initCanvasManager(canvas) {
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let strokes = [];
+    let currentStroke = [];
+    
+    // Configuration
+    ctx.strokeStyle = '#2c3e50';
+    ctx.lineWidth = 20; // Plus épais (haute résolution)
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      
+      let clientX, clientY;
+      if (e.touches && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+      
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+      };
+    }
+    
+    function startDrawing(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      isDrawing = true;
+      currentStroke = [];
+      const pos = getPos(e);
+      currentStroke.push(pos);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    }
+    
+    function draw(e) {
+      if (!isDrawing) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const pos = getPos(e);
+      currentStroke.push(pos);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    }
+    
+    function stopDrawing(e) {
+      if (!isDrawing) return;
+      e.preventDefault();
+      e.stopPropagation();
+      isDrawing = false;
+      if (currentStroke.length > 0) {
+        strokes.push([...currentStroke]);
+      }
+    }
+    
+    // Événements souris
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+    canvas.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+    
+    // Événements tactiles
+    canvas.addEventListener('touchstart', startDrawing, {passive: false});
+    canvas.addEventListener('touchmove', draw, {passive: false});
+    canvas.addEventListener('touchend', stopDrawing, {passive: false});
+    canvas.addEventListener('touchcancel', stopDrawing, {passive: false});
+    
+    return {
+      canvas,
+      ctx,
+      clear: function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        strokes = [];
+      },
+      undo: function() {
+        if (strokes.length === 0) return;
+        strokes.pop();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        strokes.forEach(stroke => {
+          if (stroke.length === 0) return;
+          ctx.beginPath();
+          ctx.moveTo(stroke[0].x, stroke[0].y);
+          stroke.forEach(point => ctx.lineTo(point.x, point.y));
+          ctx.stroke();
+        });
+      }
+    };
+  }
+  
+  // Fonctions globales
+  window.clearAllCanvas = function() {
+    window.canvasManagers.forEach(m => m.clear());
+  };
+  
+  window.undoLastCanvas = function() {
+    // Annuler sur le dernier canvas
+    const lastManager = window.canvasManagers[window.canvasManagers.length - 1];
+    if (lastManager) lastManager.undo();
+  };
+})();
+</script>

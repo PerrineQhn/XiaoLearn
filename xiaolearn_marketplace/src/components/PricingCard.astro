@@ -1,0 +1,193 @@
+---
+import { buildProductPageLink, type Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const productPageLink = buildProductPageLink(product.id);
+
+const formatPrice = (value: number) =>
+  new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: product.currency,
+    minimumFractionDigits: 2
+  }).format(value);
+---
+
+<div class:list={['pricing-card', { 'pricing-card-popular': product.popular }]}>
+  {product.popular && (
+    <div class="popular-badge">Le plus populaire</div>
+  )}
+
+  <h3 class="pricing-name">{product.name}</h3>
+
+  <div class="pricing-price">
+    {product.originalPrice && (
+      <span class="original-price">{formatPrice(product.originalPrice)}</span>
+    )}
+    <span class="price-amount">{formatPrice(product.price)}</span>
+    {product.interval && (
+      <span class="price-interval">/{product.interval === 'month' ? 'mois' : 'an'}</span>
+    )}
+  </div>
+
+  {product.interval === 'year' && (
+    <p class="price-monthly">
+      Soit {(product.price / 12).toFixed(2)}€/mois
+    </p>
+  )}
+
+  {product.features && (
+    <ul class="pricing-features">
+      {product.features.map(feature => (
+        <li class="pricing-feature">
+          <span class="feature-check">✓</span>
+          {feature}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class="pricing-actions">
+    <a href={productPageLink} class="btn btn-primary pricing-cta">
+      Voir les détails
+      <span class="arrow">→</span>
+    </a>
+    <a href={product.stripePaymentLink} class="quick-buy">
+      {product.interval ? "Abonnement rapide" : 'Achat rapide'}
+    </a>
+  </div>
+
+  <p class="pricing-guarantee">
+    Satisfait ou remboursé sous 14 jours
+  </p>
+</div>
+
+<style>
+  .pricing-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .pricing-card-popular {
+    border-color: var(--primary-red);
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.02);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(120deg, var(--primary-red), var(--gold-accent));
+    color: var(--text-inverse);
+    padding: var(--spacing-xs) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .pricing-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pricing-price {
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .original-price {
+    font-size: 1rem;
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+    margin-right: var(--spacing-sm);
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+  }
+
+  .price-interval {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  .price-monthly {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--jade-green);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-xl) 0;
+    flex: 1;
+  }
+
+  .pricing-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .feature-check {
+    color: var(--jade-green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pricing-actions {
+    display: grid;
+    gap: var(--spacing-xs);
+  }
+
+  .pricing-cta {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .quick-buy {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quick-buy:hover {
+    color: var(--primary-red);
+  }
+
+  .pricing-guarantee {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+</style>

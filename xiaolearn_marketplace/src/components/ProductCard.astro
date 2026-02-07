@@ -1,0 +1,258 @@
+---
+import { buildProductPageLink, type Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const productPageLink = buildProductPageLink(product.id);
+
+const typeLabels = {
+  subscription: 'Abonnement',
+  pdf: 'PDF',
+  anki: 'Anki',
+};
+
+const typeEmojis = {
+  subscription: '📱',
+  pdf: '📄',
+  anki: '🎴',
+};
+
+const formatPrice = (value: number) =>
+  new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: product.currency,
+    minimumFractionDigits: 2
+  }).format(value);
+---
+
+<article class="product-card">
+  {product.badge && (
+    <span class="product-badge">{product.badge}</span>
+  )}
+
+  <div class="product-image-wrapper">
+    {product.image ? (
+      <img src={product.image} alt={product.name} loading="lazy" class="product-image" />
+    ) : (
+      <div class="product-image-placeholder">
+        <span class="placeholder-emoji">{typeEmojis[product.type]}</span>
+        <span class="placeholder-text">{product.name}</span>
+      </div>
+    )}
+  </div>
+
+  <div class="product-content">
+    <span class="product-type">
+      {typeEmojis[product.type]} {typeLabels[product.type]}
+    </span>
+
+    <h3 class="product-title">{product.name}</h3>
+    <p class="product-description">{product.description}</p>
+
+    {product.levels && (
+      <div class="product-levels">
+        <span class="levels-label">Niveaux disponibles</span>
+        <ul class="levels-list">
+          {product.levels.map(level => (
+            <li>{level}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="product-pricing">
+      {product.originalPrice && (
+        <span class="original-price">{formatPrice(product.originalPrice)}</span>
+      )}
+      <span class="current-price">{formatPrice(product.price)}</span>
+      {product.interval && (
+        <span class="price-interval">/{product.interval === 'month' ? 'mois' : 'an'}</span>
+      )}
+    </div>
+
+    <div class="product-actions">
+      <a href={productPageLink} class="btn btn-primary product-cta">
+        Voir les détails
+        <span class="arrow">→</span>
+      </a>
+      <a href={product.stripePaymentLink} class="quick-buy">
+        Achat rapide
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    position: relative;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: linear-gradient(120deg, var(--primary-red), var(--gold-accent));
+    color: var(--text-inverse);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.8rem;
+    z-index: 2;
+  }
+
+  .product-image-wrapper {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-red-light), var(--bg-accent));
+  }
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+  }
+
+  .placeholder-emoji {
+    font-size: 3rem;
+  }
+
+  .placeholder-text {
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .product-content {
+    padding: var(--spacing-lg);
+  }
+
+  .product-type {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .product-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.3;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .product-levels {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .levels-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .levels-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    column-count: 2;
+    column-gap: var(--spacing-lg);
+  }
+
+  .levels-list li {
+    break-inside: avoid;
+    padding: 2px 0;
+  }
+
+  .original-price {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+  }
+
+  .current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+  }
+
+  .price-interval {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .product-actions {
+    display: grid;
+    gap: var(--spacing-xs);
+  }
+
+  .product-cta {
+    width: 100%;
+  }
+
+  .quick-buy {
+    font-size: 0.82rem;
+    text-align: center;
+    color: var(--text-tertiary);
+  }
+
+  .quick-buy:hover {
+    color: var(--primary-red);
+  }
+</style>

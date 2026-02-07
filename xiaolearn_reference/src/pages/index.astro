@@ -1,0 +1,568 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DictionarySearch from '../components/react/DictionarySearch';
+import type { HSKEntry } from '../types/hsk';
+import { getCollection } from 'astro:content';
+
+import hsk1Data from '../data/hsk1.json';
+import hsk2Data from '../data/hsk2.json';
+import hsk3Data from '../data/hsk3.json';
+import hsk4Data from '../data/hsk4.json';
+
+const allEntries: HSKEntry[] = [
+  ...hsk1Data as HSKEntry[],
+  ...hsk2Data as HSKEntry[],
+  ...hsk3Data as HSKEntry[],
+  ...hsk4Data as HSKEntry[],
+];
+
+function getNextFestivalDistance(monthStart: number, fromMonth: number): number {
+  if (monthStart < 1 || monthStart > 12) return 99;
+  if (monthStart >= fromMonth) return monthStart - fromMonth;
+  return 12 - fromMonth + monthStart;
+}
+
+const cultureEntries = await getCollection('culture');
+const currentMonth = new Date().getMonth() + 1;
+
+const upcomingFestivals = cultureEntries
+  .filter((entry) => entry.data.category === 'fete')
+  .map((entry) => ({
+    slug: entry.id,
+    name: entry.data.title,
+    hanzi: entry.data.hanzi ?? '',
+    periodLabel: entry.data.period ?? '',
+    summary: entry.data.summary,
+    monthStart: entry.data.monthStart ?? 13,
+  }))
+  .sort((a, b) => {
+    const distanceA = getNextFestivalDistance(a.monthStart, currentMonth);
+    const distanceB = getNextFestivalDistance(b.monthStart, currentMonth);
+    if (distanceA !== distanceB) return distanceA - distanceB;
+    return a.monthStart - b.monthStart;
+  })
+  .slice(0, 4);
+
+const highlightOrder = ['calendrier-fetes', 'rituels-famille', 'calligraphie', 'culture-du-the'];
+const cultureHighlights = cultureEntries
+  .filter((entry) => entry.data.category === 'repere')
+  .map((entry) => ({
+    slug: entry.id,
+    title: entry.data.title,
+    summary: entry.data.summary,
+    icon: entry.data.icon ?? '文',
+  }))
+  .sort((a, b) => {
+    const orderA = highlightOrder.indexOf(a.slug);
+    const orderB = highlightOrder.indexOf(b.slug);
+    const safeA = orderA >= 0 ? orderA : Number.MAX_SAFE_INTEGER;
+    const safeB = orderB >= 0 ? orderB : Number.MAX_SAFE_INTEGER;
+    if (safeA !== safeB) return safeA - safeB;
+    return a.title.localeCompare(b.title, 'fr');
+  });
+---
+
+<BaseLayout title="Accueil">
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Langue + Culture chinoise</span>
+        <h1>Votre site de <span class="highlight">référence</span> pour le mandarin</h1>
+        <p class="hero-subtitle">
+          Recherchez un caractère, comprenez la grammaire, comparez les mots proches
+          et suivez les repères culturels chinois au même endroit.
+        </p>
+
+        <div class="hero-search">
+          <h2>Recherche rapide de caractères</h2>
+          <p>Entrez du hanzi, du pinyin ou un mot français.</p>
+          <DictionarySearch
+            client:load
+            entries={allEntries}
+            maxResults={8}
+            showLevelFilters={false}
+            hideResultsUntilQuery={true}
+          />
+          <a href="/dictionnaire" class="quick-link">Ouvrir le dictionnaire complet →</a>
+        </div>
+      </div>
+
+      <div class="hero-ornament">汉</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">Explorer</span>
+        <h2>4 piliers d'apprentissage</h2>
+        <p>Une navigation simple orientée apprentissage et pratique quotidienne.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <a href="/dictionnaire" class="feature-card">
+          <div class="feature-icon"><span>辞</span></div>
+          <h3>Dictionnaire</h3>
+          <p>Trouvez rapidement traduction, pinyin et contexte d'usage des caractères.</p>
+        </a>
+
+        <a href="/grammaire" class="feature-card">
+          <div class="feature-icon"><span>文</span></div>
+          <h3>Grammaire</h3>
+          <p>Points clés HSK, filtres par niveau et fiches détaillées pour chaque structure.</p>
+        </a>
+
+        <a href="/nuances" class="feature-card">
+          <div class="feature-icon"><span>辨</span></div>
+          <h3>Mots similaires</h3>
+          <p>Évitez les confusions fréquentes avec des comparaisons claires et exemples.</p>
+        </a>
+
+        <a href="/culture" class="feature-card">
+          <div class="feature-icon"><span>礼</span></div>
+          <h3>Culture</h3>
+          <p>Fêtes, codes sociaux, symboles et repères concrets pour lire la Chine actuelle.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-secondary">À venir</span>
+        <h2>Fêtes chinoises à suivre</h2>
+        <p>Repérez les prochains temps forts pour relier la langue au contexte culturel.</p>
+      </div>
+
+      <div class="festival-grid">
+        {upcomingFestivals.map((festival) => (
+          <article class="festival-card">
+            <div class="festival-top">
+              <span class="festival-hanzi">{festival.hanzi}</span>
+            </div>
+            <h3>{festival.name}</h3>
+            <p class="festival-period">{festival.periodLabel}</p>
+            <p>{festival.summary}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container dual-grid">
+      <article class="focus-card">
+        <h2>Questions de grammaire</h2>
+        <p>Travaillez les structures les plus utiles, niveau par niveau, avec des exemples directs.</p>
+        <ul>
+          <li>Quand utiliser 不 vs 没（有） ?</li>
+          <li>Comment différencier 了1 et 了2 ?</li>
+          <li>Quels patrons utiliser pour la comparaison ?</li>
+        </ul>
+        <a href="/grammaire" class="btn btn-primary">Voir les points de grammaire</a>
+      </article>
+
+      <article class="focus-card">
+        <h2>Mots proches et nuances</h2>
+        <p>Comprenez les nuances de sens et d'usage qui changent la précision de vos phrases.</p>
+        <ul>
+          <li>会 / 能 / 可以</li>
+          <li>是 / 有</li>
+          <li>这 / 那 et leurs variantes contextuelles</li>
+        </ul>
+        <a href="/nuances" class="btn btn-secondary">Comparer les mots similaires</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section culture-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Culture chinoise en pratique</h2>
+        <p>Une progression linguistique plus solide quand les références culturelles deviennent concrètes.</p>
+      </div>
+      <div class="highlight-grid">
+        {cultureHighlights.map((item) => (
+          <article class="highlight-item">
+            <span class="highlight-icon">{item.icon}</span>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+          </article>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/culture" class="btn btn-primary btn-lg">
+          Explorer la section culture
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.9), rgba(240, 183, 98, 0.74));
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.35), transparent 45%),
+      radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.25), transparent 45%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+  }
+
+  .hero-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 860px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-inverse);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 6vw, 3.4rem);
+    color: var(--text-inverse);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero .highlight {
+    color: var(--gold-accent);
+    text-shadow: 0 2px 20px rgba(240, 183, 98, 0.4);
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.12rem;
+    max-width: 740px;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-search {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(6px);
+    padding: var(--spacing-lg);
+  }
+
+  .hero-search h2 {
+    color: var(--text-inverse);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero-search > p {
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quick-link {
+    display: inline-flex;
+    color: rgba(255, 255, 255, 0.94);
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .hero-ornament {
+    position: absolute;
+    right: 6%;
+    top: 12%;
+    font-size: 10rem;
+    font-family: var(--font-serif);
+    color: rgba(255, 255, 255, 0.14);
+    pointer-events: none;
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, var(--primary-red-light), var(--bg-accent));
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .feature-icon span {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--primary-red);
+  }
+
+  .feature-card h3 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+
+  .festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .festival-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+  }
+
+  .festival-top {
+    min-height: 2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .festival-hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    color: var(--primary-red);
+  }
+
+  .festival-period {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .focus-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-xl);
+  }
+
+  .focus-card h2 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .focus-card ul {
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+    padding-left: 1.1rem;
+    color: var(--text-secondary);
+  }
+
+  .culture-preview {
+    background: linear-gradient(135deg, rgba(47, 157, 138, 0.12), rgba(216, 72, 62, 0.1));
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .highlight-item {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+  }
+
+  .highlight-icon {
+    font-family: var(--font-serif);
+    color: var(--primary-red);
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-cta {
+    margin-top: var(--spacing-xl);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    .hero-ornament {
+      display: none;
+    }
+
+    .dual-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<style is:global>
+  .hero-search .dictionary-search {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-search .search-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-search .search-input-wrapper {
+    position: relative;
+  }
+
+  .hero-search .search-input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text-primary);
+    font: inherit;
+    padding: 0 2.8rem 0 0.9rem;
+  }
+
+  .hero-search .search-input::placeholder {
+    color: #798097;
+  }
+
+  .hero-search .search-clear {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.35rem;
+    color: var(--text-tertiary);
+    cursor: pointer;
+  }
+
+  .hero-search .search-results-info {
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-search .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: var(--spacing-sm);
+  }
+
+  .hero-search .result-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-sm);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .hero-search .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .hero-search .result-hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    color: #fff;
+  }
+
+  .hero-search .result-level {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.24);
+    color: #fff;
+  }
+
+  .hero-search .result-pinyin {
+    font-size: 0.82rem;
+    color: #fff5dc;
+  }
+
+  .hero-search .result-translation {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-search .no-results {
+    border: 1px dashed rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero-search .no-results-icon {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    margin-bottom: 4px;
+  }
+
+  .hero-search .no-results-hint {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+</style>

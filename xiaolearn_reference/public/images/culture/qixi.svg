@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Qixi</title>
+  <desc id="desc">Illustration nocturne de Qixi avec etoiles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b2140"/>
+      <stop offset="100%" stop-color="#2d3768"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="300" cy="190" r="6" fill="#fff"/>
+  <circle cx="420" cy="260" r="7" fill="#fff"/>
+  <circle cx="1280" cy="180" r="7" fill="#fff"/>
+  <circle cx="1160" cy="260" r="6" fill="#fff"/>
+  <path d="M360 230 C560 290 980 290 1240 220" stroke="#f0b762" stroke-width="3" fill="none" opacity="0.9"/>
+  <text x="120" y="430" fill="#f0b762" font-size="210" font-family="Noto Serif SC, serif">七夕</text>
+  <text x="120" y="530" fill="#ffffff" font-size="62" font-family="Plus Jakarta Sans, sans-serif">Qīxī · Pont des pies</text>
+</svg>

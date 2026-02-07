@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Ressources"
+  description="Conseils, méthodes et liens utiles pour apprendre le chinois mandarin efficacement."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Ressources' }]} />
+      <h1>Ressources pour <span class="text-gradient">apprendre</span></h1>
+      <p>
+        Conseils pratiques, méthodes d'étude et liens utiles pour progresser
+        efficacement en chinois mandarin.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Learning Tips -->
+      <div class="resource-section">
+        <h2>Conseils pour débutants</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <span class="tip-number">1</span>
+            <h3>Maîtrisez le pinyin d'abord</h3>
+            <p>
+              Le pinyin est le système de romanisation du chinois. C'est votre
+              outil pour apprendre la prononciation. Passez du temps à bien
+              comprendre les tons (les 4 tons + le ton neutre) avant d'avancer.
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <span class="tip-number">2</span>
+            <h3>Écoutez beaucoup</h3>
+            <p>
+              Le chinois est une langue tonale. Écoutez des natifs parler,
+              des podcasts, des séries. Même si vous ne comprenez pas tout,
+              votre oreille s'habitue aux sons et aux rythmes.
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <span class="tip-number">3</span>
+            <h3>Apprenez les caractères progressivement</h3>
+            <p>
+              N'essayez pas d'apprendre 50 caractères par jour. 5 à 10 nouveaux
+              caractères bien révisés valent mieux que 50 oubliés. Utilisez
+              la répétition espacée (SRS).
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <span class="tip-number">4</span>
+            <h3>Pratiquez quotidiennement</h3>
+            <p>
+              15 minutes chaque jour sont plus efficaces que 2 heures le weekend.
+              La régularité est la clé pour mémoriser les caractères et
+              développer l'intuition grammaticale.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Study Methods -->
+      <div class="resource-section">
+        <h2>Méthodes d'étude recommandées</h2>
+        <div class="methods-grid">
+          <div class="method-card">
+            <div class="method-icon">🔄</div>
+            <h3>Répétition espacée (SRS)</h3>
+            <p>
+              Utilisez des applications comme Anki ou notre application XiaoLearn
+              pour réviser les caractères. Le système vous montre les mots
+              juste avant que vous les oubliez.
+            </p>
+            <a href="https://shop.xiaolearn.com/produits/flashcards" class="method-link" target="_blank" rel="noopener">
+              Voir nos decks Anki →
+            </a>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">✍️</div>
+            <h3>Écriture manuscrite</h3>
+            <p>
+              Écrire les caractères à la main aide énormément a les mémoriser.
+              Respectez l'ordre des traits - ce n'est pas arbitraire, ca
+              facilite l'écriture fluide.
+            </p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">🎧</div>
+            <h3>Immersion passive</h3>
+            <p>
+              Écoutez du chinois en arrière-plan : musique, podcasts, séries.
+              Même sans comprendre, votre cerveau s'habitue aux sons et
+              aux patterns de la langue.
+            </p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">💬</div>
+            <h3>Pratique active</h3>
+            <p>
+              Parlez ! Avec un tuteur, un partenaire d'échange linguistique,
+              ou même seul devant un miroir. La production orale est essentielle
+              pour progresser.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HSK Info -->
+      <div class="resource-section">
+        <h2>Le nouveau HSK 3.0</h2>
+        <div class="hsk-info">
+          <p>
+            Le HSK (Hanyu Shuiping Kaoshi) est l'examen standardisé de chinois
+            reconnu internationalement. Depuis 2021, le nouveau HSK 3.0 comprend
+            9 niveaux au lieu de 6.
+          </p>
+
+          <div class="hsk-levels">
+            <div class="hsk-group">
+              <h4>Débutant</h4>
+              <ul>
+                <li><strong>HSK 1</strong> - 500 caractères</li>
+                <li><strong>HSK 2</strong> - 1,272 caractères</li>
+                <li><strong>HSK 3</strong> - 2,245 caractères</li>
+              </ul>
+            </div>
+            <div class="hsk-group">
+              <h4>Intermédiaire</h4>
+              <ul>
+                <li><strong>HSK 4</strong> - 3,245 caractères</li>
+                <li><strong>HSK 5</strong> - 4,316 caractères</li>
+                <li><strong>HSK 6</strong> - 5,456 caractères</li>
+              </ul>
+            </div>
+            <div class="hsk-group">
+              <h4>Avancé</h4>
+              <ul>
+                <li><strong>HSK 7-9</strong> - 11,092 caractères</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="note">
+            Note : Ce site couvre actuellement les niveaux HSK 1 à 4, correspondant
+            aux niveaux débutant et intermédiaire du HSK 3.0.
+          </p>
+        </div>
+      </div>
+
+      <!-- External Links -->
+      <div class="resource-section">
+        <h2>Liens utiles</h2>
+        <div class="links-grid">
+          <a href="https://xiaolearn.com" class="link-card" target="_blank" rel="noopener">
+            <div class="link-icon">📱</div>
+            <h3>Application XiaoLearn</h3>
+            <p>Notre application complète pour apprendre le chinois avec leçons, exercices et IA.</p>
+          </a>
+
+          <a href="https://shop.xiaolearn.com" class="link-card" target="_blank" rel="noopener">
+            <div class="link-icon">🛒</div>
+            <h3>Boutique XiaoLearn</h3>
+            <p>Decks Anki, manuels PDF et abonnements pour accélérer votre apprentissage.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--gold-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 600px;
+  }
+
+  .resource-section {
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .resource-section h2 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  /* Tips Grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .tip-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-light);
+    position: relative;
+  }
+
+  .tip-number {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-red);
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: var(--spacing-sm);
+    padding-right: 40px;
+  }
+
+  .tip-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Methods Grid */
+  .methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .method-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .method-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .method-card h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .method-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .method-link {
+    color: var(--primary-red);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .method-link:hover {
+    text-decoration: underline;
+  }
+
+  /* HSK Info */
+  .hsk-info {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .hsk-info > p {
+    max-width: 700px;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hsk-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hsk-group h4 {
+    color: var(--primary-red);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+  }
+
+  .hsk-group ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .hsk-group li {
+    padding: var(--spacing-xs) 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+  }
+
+  /* Links Grid */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .link-card {
+    display: block;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+  }
+
+  .link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-red-light);
+  }
+
+  .link-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .link-card h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .link-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

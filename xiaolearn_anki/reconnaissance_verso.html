@@ -1,0 +1,51 @@
+<div class="card-container recog-card back" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator recog-type">🔵 RECONNAISSANCE</div>
+  
+  <div class="chinese-main">
+    {{Simplified}}
+  </div>
+  
+  <div class="pinyin-answer">
+    {{Pinyin}}
+  </div>
+  
+  <div class="meaning-box">
+    <div class="meaning-title">📖 SENS</div>
+    <div class="meaning-content">
+      {{Meaning}}
+    </div>
+  </div>
+  
+  <div class="examples-section">
+    <div class="examples-title">📚 Exemples</div>
+    <div class="examples-content">
+      {{Examples}}
+    </div>
+  </div>
+  
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="motivation-text">🌟 Excellent ! Continue !</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const tags = '{{Tags}}'.toLowerCase();
+  const isGrammar = tags.includes('particule') || 
+                    tags.includes('grammaire') || 
+                    tags.includes('conjonction') ||
+                    tags.includes('mesure');
+  
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+})();
+</script>

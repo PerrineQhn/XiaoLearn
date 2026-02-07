@@ -1,0 +1,184 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText?: string;
+  ctaLink?: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText = "Découvrir nos produits",
+  ctaLink = "/produits",
+  secondaryCtaText,
+  secondaryCtaLink
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title" set:html={title} />
+      <p class="hero-subtitle">{subtitle}</p>
+
+      <div class="hero-actions">
+        <a href={ctaLink} class="btn btn-primary btn-lg">
+          {ctaText}
+          <span class="arrow">→</span>
+        </a>
+        {secondaryCtaText && secondaryCtaLink && (
+          <a href={secondaryCtaLink} class="btn btn-secondary btn-lg">
+            {secondaryCtaText}
+          </a>
+        )}
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">100+</span>
+          <span class="stat-label">Leçons</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">HSK 1-3</span>
+          <span class="stat-label">Niveaux</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">5000+</span>
+          <span class="stat-label">Utilisateurs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-ornament">学</div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.92), rgba(240, 183, 98, 0.7));
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.35), transparent 45%),
+      radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.25), transparent 45%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+  }
+
+  .hero-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-inverse);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.03em;
+  }
+
+  .hero-title :global(.highlight) {
+    color: var(--gold-accent);
+    text-shadow: 0 2px 20px rgba(240, 183, 98, 0.4);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .hero .btn-primary {
+    background: var(--text-inverse);
+    color: var(--primary-red);
+  }
+
+  .hero .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero .btn-secondary {
+    background: transparent;
+    color: var(--text-inverse);
+    border-color: var(--text-inverse);
+  }
+
+  .hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--spacing-2xl);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-inverse);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .hero-ornament {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15rem;
+    font-family: var(--font-serif);
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-stats {
+      gap: var(--spacing-lg);
+    }
+
+    .hero-ornament {
+      font-size: 10rem;
+      right: -5%;
+      opacity: 0.5;
+    }
+  }
+</style>

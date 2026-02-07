@@ -1,0 +1,247 @@
+:root {
+  --ink: #1b1b1b;
+  --muted: #6c6a66;
+  --accent: #9b2335;
+  --border: #cfcac2;
+  --grid-line: rgba(40, 40, 40, 0.08);
+  --grid-diag: rgba(40, 40, 40, 0.05);
+  --page: #ffffff;
+  --cell: 12mm;
+  --gap: 2mm;
+  --latin-font: "Source Serif 4", "Source Serif Pro", "Cormorant", "Iowan Old Style", "Georgia", serif;
+  --hanzi-font: "Noto Serif SC", "Songti SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--latin-font);
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 12mm auto;
+  padding: 12mm;
+  background: var(--page);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  break-after: page;
+  position: relative;
+  padding-bottom: 20mm;
+}
+
+.page-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0 14px 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.page-header .meta {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.worksheet {
+  display: grid;
+  gap: 6mm;
+}
+
+.note {
+  margin: 4mm 0 4mm 0;
+  padding: 3.5mm 4mm;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  background: rgba(155, 35, 53, 0.05);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.note strong {
+  color: var(--ink);
+}
+
+.hanzi-row {
+  display: grid;
+  grid-template-columns: 36mm 1fr;
+  gap: 6mm;
+  align-items: start;
+  break-inside: avoid;
+}
+
+.hanzi-row .meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4mm;
+  padding-top: 2mm;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.hanzi-row .index {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hanzi-row .hanzi {
+  font-family: var(--hanzi-font);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.hanzi-line {
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+}
+
+.gloss {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+.gloss .pinyin {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gloss .meaning {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.grids {
+  display: grid;
+  gap: 3mm;
+}
+
+.progress-grid,
+.practice-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.progress-grid {
+  grid-template-columns: repeat(var(--progress-cols, 10), var(--cell));
+}
+
+.practice-grid {
+  grid-template-columns: repeat(var(--practice-cols, 8), var(--cell));
+}
+
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  border: 1px solid var(--border);
+  position: relative;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' shape-rendering='crispEdges'%3E%3Cg fill='none' stroke='rgba(40,40,40,0.18)' stroke-width='1' vector-effect='non-scaling-stroke'%3E%3Cline x1='50' y1='0' x2='50' y2='100'/%3E%3Cline x1='0' y1='50' x2='100' y2='50'/%3E%3C/g%3E%3Cg fill='none' stroke='rgba(40,40,40,0.12)' stroke-width='1' vector-effect='non-scaling-stroke'%3E%3Cline x1='0' y1='0' x2='100' y2='100'/%3E%3Cline x1='100' y1='0' x2='0' y2='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.cell svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cell.missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--hanzi-font);
+  font-size: 20px;
+  color: #b7b2aa;
+}
+
+.page-footer {
+  position: absolute;
+  right: 12mm;
+  bottom: 10mm;
+  left: 12mm;
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-footer .brand {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.page-footer .page-number {
+  color: var(--accent);
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 12mm 12mm 20mm 12mm;
+    box-shadow: none;
+    border-radius: 0;
+    break-after: page;
+  }
+
+  .page:last-child {
+    break-after: auto;
+  }
+}

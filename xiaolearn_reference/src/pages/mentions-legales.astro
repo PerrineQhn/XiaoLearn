@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales du site XiaoLearn Référence."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Mentions légales' }]} />
+      <h1>Mentions légales</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="legal-content">
+        <div class="legal-section">
+          <h2>Éditeur du site</h2>
+          <p>
+            Le site XiaoLearn Référence est édité par XiaoLearn.<br />
+            Site web : <a href="https://xiaolearn.com">xiaolearn.com</a>
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Hébergement</h2>
+          <p>
+            Ce site est hébergé par [Nom de l'hébergeur].<br />
+            Adresse : [Adresse de l'hébergeur]
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Propriété intellectuelle</h2>
+          <p>
+            L'ensemble du contenu de ce site (textes, images, graphiques, etc.)
+            est protégé par le droit d'auteur. Toute reproduction ou
+            représentation, même partielle, est interdite sans autorisation
+            préalable.
+          </p>
+          <p>
+            Les données HSK utilisées sur ce site proviennent de sources
+            publiques et sont utilisées à des fins éducatives.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Données personnelles</h2>
+          <p>
+            Ce site ne collecte aucune donnee personnelle. Aucun cookie
+            de tracking n'est utilisé. Seuls des cookies techniques
+            strictement nécessaires au fonctionnement du site peuvent être
+            utilisés.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Contact</h2>
+          <p>
+            Pour toute question concernant ce site, vous pouvez nous contacter
+            via le site principal : <a href="https://xiaolearn.com">xiaolearn.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--bg-secondary);
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .legal-content {
+    max-width: 800px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .legal-section {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .legal-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .legal-section p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .legal-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-section a {
+    color: var(--primary-red);
+  }
+
+  .legal-section a:hover {
+    text-decoration: underline;
+  }
+</style>

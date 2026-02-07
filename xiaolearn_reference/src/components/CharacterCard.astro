@@ -1,0 +1,108 @@
+---
+import type { HSKEntry } from '../types/hsk';
+import HSKLevelBadge from './HSKLevelBadge.astro';
+
+interface Props {
+  entry: HSKEntry;
+  showLevel?: boolean;
+}
+
+const { entry, showLevel = true } = Astro.props;
+---
+
+<a href={`/dictionnaire/${entry.id}`} class="character-card">
+  <div class="card-header">
+    <span class="hanzi">{entry.hanzi}</span>
+    {showLevel && <HSKLevelBadge level={entry.level} size="sm" />}
+  </div>
+
+  <div class="card-body">
+    <span class="pinyin">{entry.pinyin}</span>
+    <p class="translation">{entry.translationFr}</p>
+  </div>
+
+  <div class="card-footer">
+    <span class="category">{entry.category}</span>
+    <span class="arrow">→</span>
+  </div>
+</a>
+
+<style>
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .character-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-red-light);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hanzi {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--text-primary);
+  }
+
+  .card-body {
+    flex: 1;
+  }
+
+  .pinyin {
+    display: block;
+    font-style: italic;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .translation {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .category {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    text-transform: capitalize;
+  }
+
+  .arrow {
+    color: var(--primary-red);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all var(--transition-base);
+  }
+
+  .character-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>

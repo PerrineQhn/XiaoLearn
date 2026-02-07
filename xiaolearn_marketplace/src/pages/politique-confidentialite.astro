@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Politique de confidentialité - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <h1>Politique de confidentialité</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <p class="intro">
+        XiaoLearn s'engage à protéger votre vie privée. Cette politique explique comment nous
+        collectons, utilisons et protégeons vos données personnelles.
+      </p>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données est XiaoLearn, joignable à l'adresse :
+        contact@xiaolearn.com
+      </p>
+
+      <h2>2. Données collectées</h2>
+      <p>Nous collectons les données suivantes :</p>
+      <ul>
+        <li><strong>Données d'identification :</strong> nom, prénom, adresse email</li>
+        <li><strong>Données de facturation :</strong> traitées par Stripe (nous n'avons pas accès à vos données bancaires)</li>
+        <li><strong>Données d'utilisation :</strong> historique d'achats, accès aux produits</li>
+        <li><strong>Données techniques :</strong> adresse IP, type de navigateur (pour la sécurité)</li>
+      </ul>
+
+      <h2>3. Finalités du traitement</h2>
+      <p>Vos données sont utilisées pour :</p>
+      <ul>
+        <li>Traiter vos commandes et vous donner accès aux produits achetés</li>
+        <li>Vous envoyer les confirmations de commande et factures</li>
+        <li>Répondre à vos demandes de support</li>
+        <li>Améliorer nos services et votre expérience utilisateur</li>
+        <li>Vous informer des mises à jour importantes concernant vos produits</li>
+      </ul>
+
+      <h2>4. Base légale du traitement</h2>
+      <p>Le traitement de vos données repose sur :</p>
+      <ul>
+        <li><strong>L'exécution du contrat :</strong> pour la gestion de vos achats</li>
+        <li><strong>L'obligation légale :</strong> conservation des factures</li>
+        <li><strong>L'intérêt légitime :</strong> amélioration de nos services, sécurité</li>
+        <li><strong>Votre consentement :</strong> pour les communications marketing (optionnel)</li>
+      </ul>
+
+      <h2>5. Destinataires des données</h2>
+      <p>Vos données peuvent être partagées avec :</p>
+      <ul>
+        <li><strong>Stripe :</strong> pour le traitement des paiements</li>
+        <li><strong>Prestataires d'hébergement :</strong> pour l'hébergement du site</li>
+        <li><strong>Service email :</strong> pour l'envoi des confirmations et factures</li>
+      </ul>
+      <p>
+        Ces prestataires sont soumis à des obligations de confidentialité et ne peuvent utiliser
+        vos données que pour les finalités prévues.
+      </p>
+
+      <h2>6. Transferts hors UE</h2>
+      <p>
+        Certains de nos prestataires (Stripe, GitHub) peuvent traiter des données aux États-Unis.
+        Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne.
+      </p>
+
+      <h2>7. Durée de conservation</h2>
+      <ul>
+        <li><strong>Données de compte :</strong> conservées tant que le compte est actif, puis 3 ans</li>
+        <li><strong>Données de facturation :</strong> 10 ans (obligation légale)</li>
+        <li><strong>Données de connexion :</strong> 1 an</li>
+      </ul>
+
+      <h2>8. Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès :</strong> obtenir une copie de vos données</li>
+        <li><strong>Droit de rectification :</strong> corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
+        <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+        <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
+        <li><strong>Droit à la limitation :</strong> limiter le traitement de vos données</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez-nous à : contact@xiaolearn.com
+      </p>
+
+      <h2>9. Cookies</h2>
+      <p>
+        Ce site utilise uniquement des cookies techniques essentiels au fonctionnement du site.
+        Aucun cookie publicitaire ou de tracking n'est utilisé.
+      </p>
+
+      <h2>10. Sécurité</h2>
+      <p>
+        Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données :
+        chiffrement HTTPS, accès restreint aux données, surveillance des accès.
+      </p>
+
+      <h2>11. Réclamation</h2>
+      <p>
+        Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une
+        réclamation auprès de la CNIL (www.cnil.fr).
+      </p>
+
+      <h2>12. Modifications</h2>
+      <p>
+        Cette politique peut être modifiée à tout moment. Les modifications significatives
+        vous seront notifiées par email.
+      </p>
+
+      <p class="update-date">
+        <em>Dernière mise à jour : Février 2026</em>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--bg-secondary);
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .page-header h1 {
+    margin: 0;
+  }
+
+  .content {
+    max-width: 800px;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-red);
+  }
+
+  .content h2 {
+    font-size: 1.25rem;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-red);
+  }
+
+  .content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+  }
+
+  .content ul {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+  }
+
+  .content li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .content a {
+    color: var(--primary-red);
+    text-decoration: underline;
+  }
+
+  .content a:hover {
+    text-decoration: none;
+  }
+
+  .update-date {
+    margin-top: var(--spacing-2xl);
+    color: var(--text-tertiary);
+  }
+</style>

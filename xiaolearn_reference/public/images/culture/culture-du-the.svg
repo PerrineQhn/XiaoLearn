@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Culture du the</title>
+  <desc id="desc">Illustration d une tasse de the et vapeur.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eef9f4"/>
+      <stop offset="100%" stop-color="#def2e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="500" y="430" width="520" height="210" rx="40" fill="#2f9d8a" opacity="0.85"/>
+  <path d="M1030 490 C1120 500 1120 590 1030 600" stroke="#2f9d8a" stroke-width="24" fill="none"/>
+  <path d="M610 300 C650 240 640 200 610 160" stroke="#f0b762" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M740 300 C780 240 770 200 740 160" stroke="#f0b762" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <text x="120" y="250" fill="#2f9d8a" font-size="190" font-family="Noto Serif SC, serif">茶</text>
+  <text x="300" y="245" fill="#1f2233" font-size="68" font-family="Plus Jakarta Sans, sans-serif">Culture du thé · Chá</text>
+</svg>

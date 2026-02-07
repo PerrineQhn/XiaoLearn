@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cultureEntries = await getCollection('culture');
+  return cultureEntries
+    .filter((entry) => entry.data.category === 'repere')
+    .map((entry) => ({
+      params: { slug: entry.id },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+---
+
+<BaseLayout title={`${data.title} | Culture chinoise`} description={data.summary}>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb
+        items={[
+          { label: 'Culture', href: '/culture' },
+          { label: 'Repères', href: '/culture' },
+          { label: data.title },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-main">
+          <header class="article-header">
+            <div class="header-meta">
+              <span class="pill">Repère culturel</span>
+            </div>
+
+            <div class="title-wrap">
+              {data.icon && <span class="icon">{data.icon}</span>}
+              <h1>{data.title}</h1>
+            </div>
+
+            <p class="summary">{data.summary}</p>
+          </header>
+
+          <div class="prose" set:html={data.html}></div>
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Navigation</h4>
+            <a href="/culture" class="btn btn-secondary btn-sm">← Retour à la culture</a>
+          </div>
+
+          {data.keyPoints && data.keyPoints.length > 0 && (
+            <div class="sidebar-card">
+              <h4>Points clés</h4>
+              <ul class="compact-list">
+                {data.keyPoints.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.sources && data.sources.length > 0 && (
+            <div class="sidebar-card">
+              <h4>Sources</h4>
+              <ul class="source-list">
+                {data.sources.map((source) => (
+                  <li>
+                    <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .article-main {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .article-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-meta {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .title-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .icon {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    color: var(--primary-red);
+    line-height: 1;
+  }
+
+  .summary {
+    color: var(--text-secondary);
+    max-width: 760px;
+  }
+
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .sidebar-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .sidebar-card h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .compact-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.45rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  .source-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .source-list a {
+    color: var(--jade-green);
+    font-size: 0.9rem;
+  }
+
+  .source-list a:hover {
+    color: var(--primary-red);
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      order: -1;
+    }
+  }
+</style>

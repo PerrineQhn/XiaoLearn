@@ -1,0 +1,48 @@
+<div class="card-container pinyin-card back" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator pinyin-type">🟡 PINYIN</div>
+  
+  <div class="chinese-answer">
+    {{Simplified}}
+  </div>
+  
+  <div class="pinyin-answer">
+    {{Pinyin}}
+  </div>
+  
+  <div class="meaning-reminder">
+    📖 {{Meaning}}
+  </div>
+  
+  <div class="examples-section">
+    <div class="examples-title">📚 Écoute en contexte</div>
+    <div class="examples-content">
+      {{Examples}}
+    </div>
+  </div>
+  
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="motivation-text">👂 Ton oreille s'améliore !</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const tags = '{{Tags}}'.toLowerCase();
+  const isGrammar = tags.includes('particule') || 
+                    tags.includes('grammaire') || 
+                    tags.includes('conjonction') ||
+                    tags.includes('mesure');
+  
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+})();
+</script>

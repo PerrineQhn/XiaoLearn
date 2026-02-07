@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Apprenez le chinois mandarin avec XiaoLearn - Applications, manuels PDF et decks Anki pour maîtriser le HSK" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logos/logo_onglet.png" />
+
+  <title>{title}</title>
+</head>
+<body>
+  <Header />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+</body>
+</html>
+
+<style>
+  main {
+    min-height: calc(100vh - var(--header-height) - 200px);
+  }
+</style>

@@ -1,0 +1,1970 @@
+[
+  {
+    "text": "外公",
+    "audio": "hsk1/hsk1_外公.wav"
+  },
+  {
+    "text": "外婆",
+    "audio": "hsk1/hsk1_外婆.wav"
+  },
+  {
+    "text": "丈夫",
+    "audio": "hsk1/hsk1_丈夫.wav"
+  },
+  {
+    "text": "妻子",
+    "audio": "hsk1/hsk1_妻子.wav"
+  },
+  {
+    "text": "叔叔",
+    "audio": "hsk1/hsk1_叔叔.wav"
+  },
+  {
+    "text": "阿姨",
+    "audio": "hsk1/hsk1_阿姨.wav"
+  },
+  {
+    "text": "同事",
+    "audio": "hsk1/hsk1_同事.wav"
+  },
+  {
+    "text": "邻居",
+    "audio": "hsk1/hsk1_邻居.wav"
+  },
+  {
+    "text": "司机",
+    "audio": "hsk1/hsk1_司机.wav"
+  },
+  {
+    "text": "服务员",
+    "audio": "hsk1/hsk1_服务员.wav"
+  },
+  {
+    "text": "经理",
+    "audio": "hsk1/hsk1_经理.wav"
+  },
+  {
+    "text": "律师",
+    "audio": "hsk1/hsk1_律师.wav"
+  },
+  {
+    "text": "记者",
+    "audio": "hsk1/hsk1_记者.wav"
+  },
+  {
+    "text": "演员",
+    "audio": "hsk1/hsk1_演员.wav"
+  },
+  {
+    "text": "警察",
+    "audio": "hsk1/hsk1_警察.wav"
+  },
+  {
+    "text": "网络",
+    "audio": "hsk1/hsk1_网络.wav"
+  },
+  {
+    "text": "相机",
+    "audio": "hsk1/hsk1_相机.wav"
+  },
+  {
+    "text": "空调",
+    "audio": "hsk1/hsk1_空调.wav"
+  },
+  {
+    "text": "冰箱",
+    "audio": "hsk1/hsk1_冰箱.wav"
+  },
+  {
+    "text": "洗衣机",
+    "audio": "hsk1/hsk1_洗衣机.wav"
+  },
+  {
+    "text": "报纸",
+    "audio": "hsk1/hsk1_报纸.wav"
+  },
+  {
+    "text": "杂志",
+    "audio": "hsk1/hsk1_杂志.wav"
+  },
+  {
+    "text": "词典",
+    "audio": "hsk1/hsk1_词典.wav"
+  },
+  {
+    "text": "笔",
+    "audio": "hsk1/hsk1_笔.wav"
+  },
+  {
+    "text": "铅笔",
+    "audio": "hsk1/hsk1_铅笔.wav"
+  },
+  {
+    "text": "纸",
+    "audio": "hsk1/hsk1_纸.wav"
+  },
+  {
+    "text": "厨房",
+    "audio": "hsk1/hsk1_厨房.wav"
+  },
+  {
+    "text": "卫生间",
+    "audio": "hsk1/hsk1_卫生间.wav"
+  },
+  {
+    "text": "客厅",
+    "audio": "hsk1/hsk1_客厅.wav"
+  },
+  {
+    "text": "裤子",
+    "audio": "hsk1/hsk1_裤子.wav"
+  },
+  {
+    "text": "裙子",
+    "audio": "hsk1/hsk1_裙子.wav"
+  },
+  {
+    "text": "帽子",
+    "audio": "hsk1/hsk1_帽子.wav"
+  },
+  {
+    "text": "眼镜",
+    "audio": "hsk1/hsk1_眼镜.wav"
+  },
+  {
+    "text": "手表",
+    "audio": "hsk1/hsk1_手表.wav"
+  },
+  {
+    "text": "钥匙",
+    "audio": "hsk1/hsk1_钥匙.wav"
+  },
+  {
+    "text": "雨伞",
+    "audio": "hsk1/hsk1_雨伞.wav"
+  },
+  {
+    "text": "红绿灯",
+    "audio": "hsk1/hsk1_红绿灯.wav"
+  },
+  {
+    "text": "灰",
+    "audio": "hsk1/hsk1_灰.wav"
+  },
+  {
+    "text": "粉",
+    "audio": "hsk1/hsk1_粉.wav"
+  },
+  {
+    "text": "紫",
+    "audio": "hsk1/hsk1_紫.wav"
+  },
+  {
+    "text": "橙",
+    "audio": "hsk1/hsk1_橙.wav"
+  },
+  {
+    "text": "暖和",
+    "audio": "hsk1/hsk1_暖和.wav"
+  },
+  {
+    "text": "凉快",
+    "audio": "hsk1/hsk1_凉快.wav"
+  },
+  {
+    "text": "刮风",
+    "audio": "hsk1/hsk1_刮风.wav"
+  },
+  {
+    "text": "春天",
+    "audio": "hsk1/hsk1_春天.wav"
+  },
+  {
+    "text": "夏天",
+    "audio": "hsk1/hsk1_夏天.wav"
+  },
+  {
+    "text": "秋天",
+    "audio": "hsk1/hsk1_秋天.wav"
+  },
+  {
+    "text": "冬天",
+    "audio": "hsk1/hsk1_冬天.wav"
+  },
+  {
+    "text": "开心",
+    "audio": "hsk1/hsk1_开心.wav"
+  },
+  {
+    "text": "快乐",
+    "audio": "hsk1/hsk1_快乐.wav"
+  },
+  {
+    "text": "幸福",
+    "audio": "hsk1/hsk1_幸福.wav"
+  },
+  {
+    "text": "伤心",
+    "audio": "hsk1/hsk1_伤心.wav"
+  },
+  {
+    "text": "担心",
+    "audio": "hsk1/hsk1_担心.wav"
+  },
+  {
+    "text": "紧张",
+    "audio": "hsk1/hsk1_紧张.wav"
+  },
+  {
+    "text": "害怕",
+    "audio": "hsk1/hsk1_害怕.wav"
+  },
+  {
+    "text": "着急",
+    "audio": "hsk1/hsk1_着急.wav"
+  },
+  {
+    "text": "惊讶",
+    "audio": "hsk1/hsk1_惊讶.wav"
+  },
+  {
+    "text": "失望",
+    "audio": "hsk1/hsk1_失望.wav"
+  },
+  {
+    "text": "帅",
+    "audio": "hsk1/hsk1_帅.wav"
+  },
+  {
+    "text": "可爱",
+    "audio": "hsk1/hsk1_可爱.wav"
+  },
+  {
+    "text": "聪明",
+    "audio": "hsk1/hsk1_聪明.wav"
+  },
+  {
+    "text": "努力",
+    "audio": "hsk1/hsk1_努力.wav"
+  },
+  {
+    "text": "简单",
+    "audio": "hsk1/hsk1_简单.wav"
+  },
+  {
+    "text": "复杂",
+    "audio": "hsk1/hsk1_复杂.wav"
+  },
+  {
+    "text": "胖",
+    "audio": "hsk1/hsk1_胖.wav"
+  },
+  {
+    "text": "瘦",
+    "audio": "hsk1/hsk1_瘦.wav"
+  },
+  {
+    "text": "厚",
+    "audio": "hsk1/hsk1_厚.wav"
+  },
+  {
+    "text": "薄",
+    "audio": "hsk1/hsk1_薄.wav"
+  },
+  {
+    "text": "轻",
+    "audio": "hsk1/hsk1_轻.wav"
+  },
+  {
+    "text": "安静",
+    "audio": "hsk1/hsk1_安静.wav"
+  },
+  {
+    "text": "热闹",
+    "audio": "hsk1/hsk1_热闹.wav"
+  },
+  {
+    "text": "舒服",
+    "audio": "hsk1/hsk1_舒服.wav"
+  },
+  {
+    "text": "头疼",
+    "audio": "hsk1/hsk1_头疼.wav"
+  },
+  {
+    "text": "肚子疼",
+    "audio": "hsk1/hsk1_肚子疼.wav"
+  },
+  {
+    "text": "检查",
+    "audio": "hsk1/hsk1_检查.wav"
+  },
+  {
+    "text": "锻炼",
+    "audio": "hsk1/hsk1_锻炼.wav"
+  },
+  {
+    "text": "运动",
+    "audio": "hsk1/hsk1_运动.wav"
+  },
+  {
+    "text": "篮球",
+    "audio": "hsk1/hsk1_篮球.wav"
+  },
+  {
+    "text": "足球",
+    "audio": "hsk1/hsk1_足球.wav"
+  },
+  {
+    "text": "比赛",
+    "audio": "hsk1/hsk1_比赛.wav"
+  },
+  {
+    "text": "输",
+    "audio": "hsk1/hsk1_输.wav"
+  },
+  {
+    "text": "赢",
+    "audio": "hsk1/hsk1_赢.wav"
+  },
+  {
+    "text": "付钱",
+    "audio": "hsk1/hsk1_付钱.wav"
+  },
+  {
+    "text": "现金",
+    "audio": "hsk1/hsk1_现金.wav"
+  },
+  {
+    "text": "刷卡",
+    "audio": "hsk1/hsk1_刷卡.wav"
+  },
+  {
+    "text": "微信支付",
+    "audio": "hsk1/hsk1_微信支付.wav"
+  },
+  {
+    "text": "支付宝",
+    "audio": "hsk1/hsk1_支付宝.wav"
+  },
+  {
+    "text": "打折",
+    "audio": "hsk1/hsk1_打折.wav"
+  },
+  {
+    "text": "便宜点儿",
+    "audio": "hsk1/hsk1_便宜点儿.wav"
+  },
+  {
+    "text": "换",
+    "audio": "hsk1/hsk1_换.wav"
+  },
+  {
+    "text": "退",
+    "audio": "hsk1/hsk1_退.wav"
+  },
+  {
+    "text": "网购",
+    "audio": "hsk1/hsk1_网购.wav"
+  },
+  {
+    "text": "快递",
+    "audio": "hsk1/hsk1_快递.wav"
+  },
+  {
+    "text": "会议",
+    "audio": "hsk1/hsk1_会议.wav"
+  },
+  {
+    "text": "加班",
+    "audio": "hsk1/hsk1_加班.wav"
+  },
+  {
+    "text": "出差",
+    "audio": "hsk1/hsk1_出差.wav"
+  },
+  {
+    "text": "辞职",
+    "audio": "hsk1/hsk1_辞职.wav"
+  },
+  {
+    "text": "面试",
+    "audio": "hsk1/hsk1_面试.wav"
+  },
+  {
+    "text": "工资",
+    "audio": "hsk1/hsk1_工资.wav"
+  },
+  {
+    "text": "老板",
+    "audio": "hsk1/hsk1_老板.wav"
+  },
+  {
+    "text": "客户",
+    "audio": "hsk1/hsk1_客户.wav"
+  },
+  {
+    "text": "项目",
+    "audio": "hsk1/hsk1_项目.wav"
+  },
+  {
+    "text": "任务",
+    "audio": "hsk1/hsk1_任务.wav"
+  },
+  {
+    "text": "合同",
+    "audio": "hsk1/hsk1_合同.wav"
+  },
+  {
+    "text": "报告",
+    "audio": "hsk1/hsk1_报告.wav"
+  },
+  {
+    "text": "邮件",
+    "audio": "hsk1/hsk1_邮件.wav"
+  },
+  {
+    "text": "电脑软件",
+    "audio": "hsk1/hsk1_电脑软件.wav"
+  },
+  {
+    "text": "网站",
+    "audio": "hsk1/hsk1_网站.wav"
+  },
+  {
+    "text": "密码",
+    "audio": "hsk1/hsk1_密码.wav"
+  },
+  {
+    "text": "注册",
+    "audio": "hsk1/hsk1_注册.wav"
+  },
+  {
+    "text": "登录",
+    "audio": "hsk1/hsk1_登录.wav"
+  },
+  {
+    "text": "下载",
+    "audio": "hsk1/hsk1_下载.wav"
+  },
+  {
+    "text": "上传",
+    "audio": "hsk1/hsk1_上传.wav"
+  },
+  {
+    "text": "视频",
+    "audio": "hsk1/hsk1_视频.wav"
+  },
+  {
+    "text": "照片",
+    "audio": "hsk1/hsk1_照片.wav"
+  },
+  {
+    "text": "聊天",
+    "audio": "hsk1/hsk1_聊天.wav"
+  },
+  {
+    "text": "发短信",
+    "audio": "hsk1/hsk1_发短信.wav"
+  },
+  {
+    "text": "约会",
+    "audio": "hsk1/hsk1_约会.wav"
+  },
+  {
+    "text": "欢迎",
+    "audio": "hsk1/hsk1_欢迎.wav"
+  },
+  {
+    "text": "祝",
+    "audio": "hsk1/hsk1_祝.wav"
+  },
+  {
+    "text": "讨厌",
+    "audio": "hsk1/hsk1_讨厌.wav"
+  },
+  {
+    "text": "了解",
+    "audio": "hsk1/hsk1_了解.wav"
+  },
+  {
+    "text": "懂",
+    "audio": "hsk1/hsk1_懂.wav"
+  },
+  {
+    "text": "希望",
+    "audio": "hsk1/hsk1_希望.wav"
+  },
+  {
+    "text": "计划",
+    "audio": "hsk1/hsk1_计划.wav"
+  },
+  {
+    "text": "完成",
+    "audio": "hsk1/hsk1_完成.wav"
+  },
+  {
+    "text": "开始",
+    "audio": "hsk1/hsk1_开始.wav"
+  },
+  {
+    "text": "结束",
+    "audio": "hsk1/hsk1_结束.wav"
+  },
+  {
+    "text": "继续",
+    "audio": "hsk1/hsk1_继续.wav"
+  },
+  {
+    "text": "停止",
+    "audio": "hsk1/hsk1_停止.wav"
+  },
+  {
+    "text": "注意",
+    "audio": "hsk1/hsk1_注意.wav"
+  },
+  {
+    "text": "小心",
+    "audio": "hsk1/hsk1_小心.wav"
+  },
+  {
+    "text": "反对",
+    "audio": "hsk1/hsk1_反对.wav"
+  },
+  {
+    "text": "支持",
+    "audio": "hsk1/hsk1_支持.wav"
+  },
+  {
+    "text": "处理",
+    "audio": "hsk1/hsk1_处理.wav"
+  },
+  {
+    "text": "安排",
+    "audio": "hsk1/hsk1_安排.wav"
+  },
+  {
+    "text": "联系",
+    "audio": "hsk1/hsk1_联系.wav"
+  },
+  {
+    "text": "邀请",
+    "audio": "hsk1/hsk1_邀请.wav"
+  },
+  {
+    "text": "答应",
+    "audio": "hsk1/hsk1_答应.wav"
+  },
+  {
+    "text": "道歉",
+    "audio": "hsk1/hsk1_道歉.wav"
+  },
+  {
+    "text": "原谅",
+    "audio": "hsk1/hsk1_原谅.wav"
+  },
+  {
+    "text": "感谢",
+    "audio": "hsk1/hsk1_感谢.wav"
+  },
+  {
+    "text": "放心",
+    "audio": "hsk1/hsk1_放心.wav"
+  },
+  {
+    "text": "旅游",
+    "audio": "hsk1/hsk1_旅游.wav"
+  },
+  {
+    "text": "旅行",
+    "audio": "hsk1/hsk1_旅行.wav"
+  },
+  {
+    "text": "护照",
+    "audio": "hsk1/hsk1_护照.wav"
+  },
+  {
+    "text": "签证",
+    "audio": "hsk1/hsk1_签证.wav"
+  },
+  {
+    "text": "预订",
+    "audio": "hsk1/hsk1_预订.wav"
+  },
+  {
+    "text": "行李",
+    "audio": "hsk1/hsk1_行李.wav"
+  },
+  {
+    "text": "景点",
+    "audio": "hsk1/hsk1_景点.wav"
+  },
+  {
+    "text": "导游",
+    "audio": "hsk1/hsk1_导游.wav"
+  },
+  {
+    "text": "第一",
+    "audio": "hsk1/hsk1_第一.wav"
+  },
+  {
+    "text": "对面",
+    "audio": "hsk1/hsk1_对面.wav"
+  },
+  {
+    "text": "除了...以外",
+    "audio": "hsk1/hsk1_除了...以外.wav"
+  },
+  {
+    "text": "一边...一边",
+    "audio": "hsk1/hsk1_一边...一边.wav"
+  },
+  {
+    "text": "特别",
+    "audio": "hsk1/hsk1_特别.wav"
+  },
+  {
+    "text": "十分",
+    "audio": "hsk1/hsk1_十分.wav"
+  },
+  {
+    "text": "刚才",
+    "audio": "hsk1/hsk1_刚才.wav"
+  },
+  {
+    "text": "立刻",
+    "audio": "hsk1/hsk1_立刻.wav"
+  },
+  {
+    "text": "也许",
+    "audio": "hsk1/hsk1_也许.wav"
+  },
+  {
+    "text": "当然",
+    "audio": "hsk1/hsk1_当然.wav"
+  },
+  {
+    "text": "其实",
+    "audio": "hsk1/hsk1_其实.wav"
+  },
+  {
+    "text": "终于",
+    "audio": "hsk1/hsk1_终于.wav"
+  },
+  {
+    "text": "果然",
+    "audio": "hsk1/hsk1_果然.wav"
+  },
+  {
+    "text": "居然",
+    "audio": "hsk1/hsk1_居然.wav"
+  },
+  {
+    "text": "只",
+    "audio": "hsk1/hsk1_只.wav"
+  },
+  {
+    "text": "仅仅",
+    "audio": "hsk1/hsk1_仅仅.wav"
+  },
+  {
+    "text": "互相",
+    "audio": "hsk1/hsk1_互相.wav"
+  },
+  {
+    "text": "各",
+    "audio": "hsk1/hsk1_各.wav"
+  },
+  {
+    "text": "整个",
+    "audio": "hsk1/hsk1_整个.wav"
+  },
+  {
+    "text": "全部",
+    "audio": "hsk1/hsk1_全部.wav"
+  },
+  {
+    "text": "根本",
+    "audio": "hsk1/hsk1_根本.wav"
+  },
+  {
+    "text": "完全",
+    "audio": "hsk1/hsk1_完全.wav"
+  },
+  {
+    "text": "确实",
+    "audio": "hsk1/hsk1_确实.wav"
+  },
+  {
+    "text": "离",
+    "audio": "hsk1/hsk1_离.wav"
+  },
+  {
+    "text": "往",
+    "audio": "hsk1/hsk1_往.wav"
+  },
+  {
+    "text": "向",
+    "audio": "hsk1/hsk1_向.wav"
+  },
+  {
+    "text": "为了",
+    "audio": "hsk1/hsk1_为了.wav"
+  },
+  {
+    "text": "把",
+    "audio": "hsk1/hsk1_把.wav"
+  },
+  {
+    "text": "被",
+    "audio": "hsk1/hsk1_被.wav"
+  },
+  {
+    "text": "啊",
+    "audio": "hsk1/hsk1_啊.wav"
+  },
+  {
+    "text": "嘛",
+    "audio": "hsk1/hsk1_嘛.wav"
+  },
+  {
+    "text": "头发",
+    "audio": "hsk1/hsk1_头发.wav"
+  },
+  {
+    "text": "牙齿",
+    "audio": "hsk1/hsk1_牙齿.wav"
+  },
+  {
+    "text": "腿",
+    "audio": "hsk1/hsk1_腿.wav"
+  },
+  {
+    "text": "心脏",
+    "audio": "hsk1/hsk1_心脏.wav"
+  },
+  {
+    "text": "肚子",
+    "audio": "hsk1/hsk1_肚子.wav"
+  },
+  {
+    "text": "背",
+    "audio": "hsk1/hsk1_背.wav"
+  },
+  {
+    "text": "肩膀",
+    "audio": "hsk1/hsk1_肩膀.wav"
+  },
+  {
+    "text": "健康",
+    "audio": "hsk1/hsk1_健康.wav"
+  },
+  {
+    "text": "安全",
+    "audio": "hsk1/hsk1_安全.wav"
+  },
+  {
+    "text": "危险",
+    "audio": "hsk1/hsk1_危险.wav"
+  },
+  {
+    "text": "意外",
+    "audio": "hsk1/hsk1_意外.wav"
+  },
+  {
+    "text": "小偷",
+    "audio": "hsk1/hsk1_小偷.wav"
+  },
+  {
+    "text": "丢",
+    "audio": "hsk1/hsk1_丢.wav"
+  },
+  {
+    "text": "报警",
+    "audio": "hsk1/hsk1_报警.wav"
+  },
+  {
+    "text": "教育",
+    "audio": "hsk1/hsk1_教育.wav"
+  },
+  {
+    "text": "成绩",
+    "audio": "hsk1/hsk1_成绩.wav"
+  },
+  {
+    "text": "毕业",
+    "audio": "hsk1/hsk1_毕业.wav"
+  },
+  {
+    "text": "专业",
+    "audio": "hsk1/hsk1_专业.wav"
+  },
+  {
+    "text": "预习",
+    "audio": "hsk1/hsk1_预习.wav"
+  },
+  {
+    "text": "作业",
+    "audio": "hsk1/hsk1_作业.wav"
+  },
+  {
+    "text": "题",
+    "audio": "hsk1/hsk1_题.wav"
+  },
+  {
+    "text": "答案",
+    "audio": "hsk1/hsk1_答案.wav"
+  },
+  {
+    "text": "错误",
+    "audio": "hsk1/hsk1_错误.wav"
+  },
+  {
+    "text": "正确",
+    "audio": "hsk1/hsk1_正确.wav"
+  },
+  {
+    "text": "文化",
+    "audio": "hsk1/hsk1_文化.wav"
+  },
+  {
+    "text": "历史",
+    "audio": "hsk1/hsk1_历史.wav"
+  },
+  {
+    "text": "艺术",
+    "audio": "hsk1/hsk1_艺术.wav"
+  },
+  {
+    "text": "跳舞",
+    "audio": "hsk1/hsk1_跳舞.wav"
+  },
+  {
+    "text": "画画",
+    "audio": "hsk1/hsk1_画画.wav"
+  },
+  {
+    "text": "拍照",
+    "audio": "hsk1/hsk1_拍照.wav"
+  },
+  {
+    "text": "节日",
+    "audio": "hsk1/hsk1_节日.wav"
+  },
+  {
+    "text": "春节",
+    "audio": "hsk1/hsk1_春节.wav"
+  },
+  {
+    "text": "中秋节",
+    "audio": "hsk1/hsk1_中秋节.wav"
+  },
+  {
+    "text": "结婚",
+    "audio": "hsk1/hsk1_结婚.wav"
+  },
+  {
+    "text": "收",
+    "audio": "hsk1/hsk1_收.wav"
+  },
+  {
+    "text": "借",
+    "audio": "hsk1/hsk1_借.wav"
+  },
+  {
+    "text": "带",
+    "audio": "hsk1/hsk1_带.wav"
+  },
+  {
+    "text": "修理",
+    "audio": "hsk1/hsk1_修理.wav"
+  },
+  {
+    "text": "打扫",
+    "audio": "hsk1/hsk1_打扫.wav"
+  },
+  {
+    "text": "整理",
+    "audio": "hsk1/hsk1_整理.wav"
+  },
+  {
+    "text": "搬",
+    "audio": "hsk1/hsk1_搬.wav"
+  },
+  {
+    "text": "租",
+    "audio": "hsk1/hsk1_租.wav"
+  },
+  {
+    "text": "位置",
+    "audio": "hsk1/hsk1_位置.wav"
+  },
+  {
+    "text": "环境",
+    "audio": "hsk1/hsk1_环境.wav"
+  },
+  {
+    "text": "城市",
+    "audio": "hsk1/hsk1_城市.wav"
+  },
+  {
+    "text": "农村",
+    "audio": "hsk1/hsk1_农村.wav"
+  },
+  {
+    "text": "上海",
+    "audio": "hsk1/hsk1_上海.wav"
+  },
+  {
+    "text": "法国",
+    "audio": "hsk1/hsk1_法国.wav"
+  },
+  {
+    "text": "美国",
+    "audio": "hsk1/hsk1_美国.wav"
+  },
+  {
+    "text": "英国",
+    "audio": "hsk1/hsk1_英国.wav"
+  },
+  {
+    "text": "日本",
+    "audio": "hsk1/hsk1_日本.wav"
+  },
+  {
+    "text": "韩国",
+    "audio": "hsk1/hsk1_韩国.wav"
+  },
+  {
+    "text": "世界",
+    "audio": "hsk1/hsk1_世界.wav"
+  },
+  {
+    "text": "英语",
+    "audio": "hsk1/hsk1_英语.wav"
+  },
+  {
+    "text": "法语",
+    "audio": "hsk1/hsk1_法语.wav"
+  },
+  {
+    "text": "句子",
+    "audio": "hsk1/hsk1_句子.wav"
+  },
+  {
+    "text": "词语",
+    "audio": "hsk1/hsk1_词语.wav"
+  },
+  {
+    "text": "发音",
+    "audio": "hsk1/hsk1_发音.wav"
+  },
+  {
+    "text": "翻译",
+    "audio": "hsk1/hsk1_翻译.wav"
+  },
+  {
+    "text": "意思",
+    "audio": "hsk1/hsk1_意思.wav"
+  },
+  {
+    "text": "经济",
+    "audio": "hsk1/hsk1_经济.wav"
+  },
+  {
+    "text": "市场",
+    "audio": "hsk1/hsk1_市场.wav"
+  },
+  {
+    "text": "竞争",
+    "audio": "hsk1/hsk1_竞争.wav"
+  },
+  {
+    "text": "进步",
+    "audio": "hsk1/hsk1_进步.wav"
+  },
+  {
+    "text": "降低",
+    "audio": "hsk1/hsk1_降低.wav"
+  },
+  {
+    "text": "增加",
+    "audio": "hsk1/hsk1_增加.wav"
+  },
+  {
+    "text": "减少",
+    "audio": "hsk1/hsk1_减少.wav"
+  },
+  {
+    "text": "改善",
+    "audio": "hsk1/hsk1_改善.wav"
+  },
+  {
+    "text": "节约",
+    "audio": "hsk1/hsk1_节约.wav"
+  },
+  {
+    "text": "浪费",
+    "audio": "hsk1/hsk1_浪费.wav"
+  },
+  {
+    "text": "效率",
+    "audio": "hsk1/hsk1_效率.wav"
+  },
+  {
+    "text": "质量",
+    "audio": "hsk1/hsk1_质量.wav"
+  },
+  {
+    "text": "数量",
+    "audio": "hsk1/hsk1_数量.wav"
+  },
+  {
+    "text": "价格",
+    "audio": "hsk1/hsk1_价格.wav"
+  },
+  {
+    "text": "成本",
+    "audio": "hsk1/hsk1_成本.wav"
+  },
+  {
+    "text": "利润",
+    "audio": "hsk1/hsk1_利润.wav"
+  },
+  {
+    "text": "投资",
+    "audio": "hsk1/hsk1_投资.wav"
+  },
+  {
+    "text": "收入",
+    "audio": "hsk1/hsk1_收入.wav"
+  },
+  {
+    "text": "支出",
+    "audio": "hsk1/hsk1_支出.wav"
+  },
+  {
+    "text": "产品",
+    "audio": "hsk1/hsk1_产品.wav"
+  },
+  {
+    "text": "服务",
+    "audio": "hsk1/hsk1_服务.wav"
+  },
+  {
+    "text": "合作",
+    "audio": "hsk1/hsk1_合作.wav"
+  },
+  {
+    "text": "交流",
+    "audio": "hsk1/hsk1_交流.wav"
+  },
+  {
+    "text": "意见",
+    "audio": "hsk1/hsk1_意见.wav"
+  },
+  {
+    "text": "观点",
+    "audio": "hsk1/hsk1_观点.wav"
+  },
+  {
+    "text": "态度",
+    "audio": "hsk1/hsk1_态度.wav"
+  },
+  {
+    "text": "方式",
+    "audio": "hsk1/hsk1_方式.wav"
+  },
+  {
+    "text": "方法",
+    "audio": "hsk1/hsk1_方法.wav"
+  },
+  {
+    "text": "经验",
+    "audio": "hsk1/hsk1_经验.wav"
+  },
+  {
+    "text": "能力",
+    "audio": "hsk1/hsk1_能力.wav"
+  },
+  {
+    "text": "水平",
+    "audio": "hsk1/hsk1_水平.wav"
+  },
+  {
+    "text": "压力",
+    "audio": "hsk1/hsk1_压力.wav"
+  },
+  {
+    "text": "困难",
+    "audio": "hsk1/hsk1_困难.wav"
+  },
+  {
+    "text": "问题",
+    "audio": "hsk1/hsk1_问题.wav"
+  },
+  {
+    "text": "原因",
+    "audio": "hsk1/hsk1_原因.wav"
+  },
+  {
+    "text": "结果",
+    "audio": "hsk1/hsk1_结果.wav"
+  },
+  {
+    "text": "作用",
+    "audio": "hsk1/hsk1_作用.wav"
+  },
+  {
+    "text": "情况",
+    "audio": "hsk1/hsk1_情况.wav"
+  },
+  {
+    "text": "条件",
+    "audio": "hsk1/hsk1_条件.wav"
+  },
+  {
+    "text": "机会",
+    "audio": "hsk1/hsk1_机会.wav"
+  },
+  {
+    "text": "目标",
+    "audio": "hsk1/hsk1_目标.wav"
+  },
+  {
+    "text": "规定",
+    "audio": "hsk1/hsk1_规定.wav"
+  },
+  {
+    "text": "责任",
+    "audio": "hsk1/hsk1_责任.wav"
+  },
+  {
+    "text": "法律",
+    "audio": "hsk1/hsk1_法律.wav"
+  },
+  {
+    "text": "政府",
+    "audio": "hsk1/hsk1_政府.wav"
+  },
+  {
+    "text": "社会",
+    "audio": "hsk1/hsk1_社会.wav"
+  },
+  {
+    "text": "国际",
+    "audio": "hsk1/hsk1_国际.wav"
+  },
+  {
+    "text": "关系",
+    "audio": "hsk1/hsk1_关系.wav"
+  },
+  {
+    "text": "传统",
+    "audio": "hsk1/hsk1_传统.wav"
+  },
+  {
+    "text": "现代",
+    "audio": "hsk1/hsk1_现代.wav"
+  },
+  {
+    "text": "科技",
+    "audio": "hsk1/hsk1_科技.wav"
+  },
+  {
+    "text": "科学",
+    "audio": "hsk1/hsk1_科学.wav"
+  },
+  {
+    "text": "技术",
+    "audio": "hsk1/hsk1_技术.wav"
+  },
+  {
+    "text": "信息",
+    "audio": "hsk1/hsk1_信息.wav"
+  },
+  {
+    "text": "数据",
+    "audio": "hsk1/hsk1_数据.wav"
+  },
+  {
+    "text": "程序",
+    "audio": "hsk1/hsk1_程序.wav"
+  },
+  {
+    "text": "系统",
+    "audio": "hsk1/hsk1_系统.wav"
+  },
+  {
+    "text": "资料",
+    "audio": "hsk1/hsk1_资料.wav"
+  },
+  {
+    "text": "文件",
+    "audio": "hsk1/hsk1_文件.wav"
+  },
+  {
+    "text": "内容",
+    "audio": "hsk1/hsk1_内容.wav"
+  },
+  {
+    "text": "文章",
+    "audio": "hsk1/hsk1_文章.wav"
+  },
+  {
+    "text": "新闻",
+    "audio": "hsk1/hsk1_新闻.wav"
+  },
+  {
+    "text": "广告",
+    "audio": "hsk1/hsk1_广告.wav"
+  },
+  {
+    "text": "节目",
+    "audio": "hsk1/hsk1_节目.wav"
+  },
+  {
+    "text": "表演",
+    "audio": "hsk1/hsk1_表演.wav"
+  },
+  {
+    "text": "观众",
+    "audio": "hsk1/hsk1_观众.wav"
+  },
+  {
+    "text": "精彩",
+    "audio": "hsk1/hsk1_精彩.wav"
+  },
+  {
+    "text": "丰富",
+    "audio": "hsk1/hsk1_丰富.wav"
+  },
+  {
+    "text": "普通",
+    "audio": "hsk1/hsk1_普通.wav"
+  },
+  {
+    "text": "特殊",
+    "audio": "hsk1/hsk1_特殊.wav"
+  },
+  {
+    "text": "正常",
+    "audio": "hsk1/hsk1_正常.wav"
+  },
+  {
+    "text": "主要",
+    "audio": "hsk1/hsk1_主要.wav"
+  },
+  {
+    "text": "严重",
+    "audio": "hsk1/hsk1_严重.wav"
+  },
+  {
+    "text": "明显",
+    "audio": "hsk1/hsk1_明显.wav"
+  },
+  {
+    "text": "具体",
+    "audio": "hsk1/hsk1_具体.wav"
+  },
+  {
+    "text": "实际",
+    "audio": "hsk1/hsk1_实际.wav"
+  },
+  {
+    "text": "有效",
+    "audio": "hsk1/hsk1_有效.wav"
+  },
+  {
+    "text": "基本",
+    "audio": "hsk1/hsk1_基本.wav"
+  },
+  {
+    "text": "全面",
+    "audio": "hsk1/hsk1_全面.wav"
+  },
+  {
+    "text": "长期",
+    "audio": "hsk1/hsk1_长期.wav"
+  },
+  {
+    "text": "短期",
+    "audio": "hsk1/hsk1_短期.wav"
+  },
+  {
+    "text": "直接",
+    "audio": "hsk1/hsk1_直接.wav"
+  },
+  {
+    "text": "间接",
+    "audio": "hsk1/hsk1_间接.wav"
+  },
+  {
+    "text": "尽量",
+    "audio": "hsk1/hsk1_尽量.wav"
+  },
+  {
+    "text": "逐渐",
+    "audio": "hsk1/hsk1_逐渐.wav"
+  },
+  {
+    "text": "首先",
+    "audio": "hsk1/hsk1_首先.wav"
+  },
+  {
+    "text": "其次",
+    "audio": "hsk1/hsk1_其次.wav"
+  },
+  {
+    "text": "总之",
+    "audio": "hsk1/hsk1_总之.wav"
+  },
+  {
+    "text": "另外",
+    "audio": "hsk1/hsk1_另外.wav"
+  },
+  {
+    "text": "否则",
+    "audio": "hsk1/hsk1_否则.wav"
+  },
+  {
+    "text": "于是",
+    "audio": "hsk1/hsk1_于是.wav"
+  },
+  {
+    "text": "只要",
+    "audio": "hsk1/hsk1_只要.wav"
+  },
+  {
+    "text": "只有",
+    "audio": "hsk1/hsk1_只有.wav"
+  },
+  {
+    "text": "无论",
+    "audio": "hsk1/hsk1_无论.wav"
+  },
+  {
+    "text": "不管",
+    "audio": "hsk1/hsk1_不管.wav"
+  },
+  {
+    "text": "考虑",
+    "audio": "hsk1/hsk1_考虑.wav"
+  },
+  {
+    "text": "认为",
+    "audio": "hsk1/hsk1_认为.wav"
+  },
+  {
+    "text": "感觉",
+    "audio": "hsk1/hsk1_感觉.wav"
+  },
+  {
+    "text": "表达",
+    "audio": "hsk1/hsk1_表达.wav"
+  },
+  {
+    "text": "说明",
+    "audio": "hsk1/hsk1_说明.wav"
+  },
+  {
+    "text": "确定",
+    "audio": "hsk1/hsk1_确定.wav"
+  },
+  {
+    "text": "保证",
+    "audio": "hsk1/hsk1_保证.wav"
+  },
+  {
+    "text": "负责",
+    "audio": "hsk1/hsk1_负责.wav"
+  },
+  {
+    "text": "管理",
+    "audio": "hsk1/hsk1_管理.wav"
+  },
+  {
+    "text": "组织",
+    "audio": "hsk1/hsk1_组织.wav"
+  },
+  {
+    "text": "调查",
+    "audio": "hsk1/hsk1_调查.wav"
+  },
+  {
+    "text": "分析",
+    "audio": "hsk1/hsk1_分析.wav"
+  },
+  {
+    "text": "描述",
+    "audio": "hsk1/hsk1_描述.wav"
+  },
+  {
+    "text": "总结",
+    "audio": "hsk1/hsk1_总结.wav"
+  },
+  {
+    "text": "坚持",
+    "audio": "hsk1/hsk1_坚持.wav"
+  },
+  {
+    "text": "放弃",
+    "audio": "hsk1/hsk1_放弃.wav"
+  },
+  {
+    "text": "尝试",
+    "audio": "hsk1/hsk1_尝试.wav"
+  },
+  {
+    "text": "挑战",
+    "audio": "hsk1/hsk1_挑战.wav"
+  },
+  {
+    "text": "克服",
+    "audio": "hsk1/hsk1_克服.wav"
+  },
+  {
+    "text": "适应",
+    "audio": "hsk1/hsk1_适应.wav"
+  },
+  {
+    "text": "提供",
+    "audio": "hsk1/hsk1_提供.wav"
+  },
+  {
+    "text": "创造",
+    "audio": "hsk1/hsk1_创造.wav"
+  },
+  {
+    "text": "建立",
+    "audio": "hsk1/hsk1_建立.wav"
+  },
+  {
+    "text": "保持",
+    "audio": "hsk1/hsk1_保持.wav"
+  },
+  {
+    "text": "恢复",
+    "audio": "hsk1/hsk1_恢复.wav"
+  },
+  {
+    "text": "取消",
+    "audio": "hsk1/hsk1_取消.wav"
+  },
+  {
+    "text": "代替",
+    "audio": "hsk1/hsk1_代替.wav"
+  },
+  {
+    "text": "吸引",
+    "audio": "hsk1/hsk1_吸引.wav"
+  },
+  {
+    "text": "推荐",
+    "audio": "hsk1/hsk1_推荐.wav"
+  },
+  {
+    "text": "欣赏",
+    "audio": "hsk1/hsk1_欣赏.wav"
+  },
+  {
+    "text": "尊重",
+    "audio": "hsk1/hsk1_尊重.wav"
+  },
+  {
+    "text": "误会",
+    "audio": "hsk1/hsk1_误会.wav"
+  },
+  {
+    "text": "吵架",
+    "audio": "hsk1/hsk1_吵架.wav"
+  },
+  {
+    "text": "打扰",
+    "audio": "hsk1/hsk1_打扰.wav"
+  },
+  {
+    "text": "抱歉",
+    "audio": "hsk1/hsk1_抱歉.wav"
+  },
+  {
+    "text": "感动",
+    "audio": "hsk1/hsk1_感动.wav"
+  },
+  {
+    "text": "羡慕",
+    "audio": "hsk1/hsk1_羡慕.wav"
+  },
+  {
+    "text": "骄傲",
+    "audio": "hsk1/hsk1_骄傲.wav"
+  },
+  {
+    "text": "自信",
+    "audio": "hsk1/hsk1_自信.wav"
+  },
+  {
+    "text": "勇敢",
+    "audio": "hsk1/hsk1_勇敢.wav"
+  },
+  {
+    "text": "诚实",
+    "audio": "hsk1/hsk1_诚实.wav"
+  },
+  {
+    "text": "耐心",
+    "audio": "hsk1/hsk1_耐心.wav"
+  },
+  {
+    "text": "细心",
+    "audio": "hsk1/hsk1_细心.wav"
+  },
+  {
+    "text": "热情",
+    "audio": "hsk1/hsk1_热情.wav"
+  },
+  {
+    "text": "友好",
+    "audio": "hsk1/hsk1_友好.wav"
+  },
+  {
+    "text": "活泼",
+    "audio": "hsk1/hsk1_活泼.wav"
+  },
+  {
+    "text": "懒",
+    "audio": "hsk1/hsk1_懒.wav"
+  },
+  {
+    "text": "幽默",
+    "audio": "hsk1/hsk1_幽默.wav"
+  },
+  {
+    "text": "无聊",
+    "audio": "hsk1/hsk1_无聊.wav"
+  },
+  {
+    "text": "有趣",
+    "audio": "hsk1/hsk1_有趣.wav"
+  },
+  {
+    "text": "奇怪",
+    "audio": "hsk1/hsk1_奇怪.wav"
+  },
+  {
+    "text": "可怜",
+    "audio": "hsk1/hsk1_可怜.wav"
+  },
+  {
+    "text": "后悔",
+    "audio": "hsk1/hsk1_后悔.wav"
+  },
+  {
+    "text": "表情",
+    "audio": "hsk1/hsk1_表情.wav"
+  },
+  {
+    "text": "气氛",
+    "audio": "hsk1/hsk1_气氛.wav"
+  },
+  {
+    "text": "沟通",
+    "audio": "hsk1/hsk1_沟通.wav"
+  },
+  {
+    "text": "协商",
+    "audio": "hsk1/hsk1_协商.wav"
+  },
+  {
+    "text": "妥协",
+    "audio": "hsk1/hsk1_妥协.wav"
+  },
+  {
+    "text": "矛盾",
+    "audio": "hsk1/hsk1_矛盾.wav"
+  },
+  {
+    "text": "冲突",
+    "audio": "hsk1/hsk1_冲突.wav"
+  },
+  {
+    "text": "争论",
+    "audio": "hsk1/hsk1_争论.wav"
+  },
+  {
+    "text": "批评",
+    "audio": "hsk1/hsk1_批评.wav"
+  },
+  {
+    "text": "表扬",
+    "audio": "hsk1/hsk1_表扬.wav"
+  },
+  {
+    "text": "鼓励",
+    "audio": "hsk1/hsk1_鼓励.wav"
+  },
+  {
+    "text": "安慰",
+    "audio": "hsk1/hsk1_安慰.wav"
+  },
+  {
+    "text": "劝",
+    "audio": "hsk1/hsk1_劝.wav"
+  },
+  {
+    "text": "启发",
+    "audio": "hsk1/hsk1_启发.wav"
+  },
+  {
+    "text": "影响力",
+    "audio": "hsk1/hsk1_影响力.wav"
+  },
+  {
+    "text": "贡献",
+    "audio": "hsk1/hsk1_贡献.wav"
+  },
+  {
+    "text": "牺牲",
+    "audio": "hsk1/hsk1_牺牲.wav"
+  },
+  {
+    "text": "奋斗",
+    "audio": "hsk1/hsk1_奋斗.wav"
+  },
+  {
+    "text": "追求",
+    "audio": "hsk1/hsk1_追求.wav"
+  },
+  {
+    "text": "实践",
+    "audio": "hsk1/hsk1_实践.wav"
+  },
+  {
+    "text": "理论",
+    "audio": "hsk1/hsk1_理论.wav"
+  },
+  {
+    "text": "概念",
+    "audio": "hsk1/hsk1_概念.wav"
+  },
+  {
+    "text": "原则",
+    "audio": "hsk1/hsk1_原则.wav"
+  },
+  {
+    "text": "标准",
+    "audio": "hsk1/hsk1_标准.wav"
+  },
+  {
+    "text": "规模",
+    "audio": "hsk1/hsk1_规模.wav"
+  },
+  {
+    "text": "范围",
+    "audio": "hsk1/hsk1_范围.wav"
+  },
+  {
+    "text": "程度",
+    "audio": "hsk1/hsk1_程度.wav"
+  },
+  {
+    "text": "比例",
+    "audio": "hsk1/hsk1_比例.wav"
+  },
+  {
+    "text": "趋势",
+    "audio": "hsk1/hsk1_趋势.wav"
+  },
+  {
+    "text": "现象",
+    "audio": "hsk1/hsk1_现象.wav"
+  },
+  {
+    "text": "本质",
+    "audio": "hsk1/hsk1_本质.wav"
+  },
+  {
+    "text": "特征",
+    "audio": "hsk1/hsk1_特征.wav"
+  },
+  {
+    "text": "属于",
+    "audio": "hsk1/hsk1_属于.wav"
+  },
+  {
+    "text": "包括",
+    "audio": "hsk1/hsk1_包括.wav"
+  },
+  {
+    "text": "涉及",
+    "audio": "hsk1/hsk1_涉及.wav"
+  },
+  {
+    "text": "围绕",
+    "audio": "hsk1/hsk1_围绕.wav"
+  },
+  {
+    "text": "结合",
+    "audio": "hsk1/hsk1_结合.wav"
+  },
+  {
+    "text": "统一",
+    "audio": "hsk1/hsk1_统一.wav"
+  },
+  {
+    "text": "区分",
+    "audio": "hsk1/hsk1_区分.wav"
+  },
+  {
+    "text": "区别",
+    "audio": "hsk1/hsk1_区别.wav"
+  },
+  {
+    "text": "相似",
+    "audio": "hsk1/hsk1_相似.wav"
+  },
+  {
+    "text": "相反",
+    "audio": "hsk1/hsk1_相反.wav"
+  },
+  {
+    "text": "相同",
+    "audio": "hsk1/hsk1_相同.wav"
+  },
+  {
+    "text": "相当",
+    "audio": "hsk1/hsk1_相当.wav"
+  },
+  {
+    "text": "格外",
+    "audio": "hsk1/hsk1_格外.wav"
+  },
+  {
+    "text": "极其",
+    "audio": "hsk1/hsk1_极其.wav"
+  },
+  {
+    "text": "尤其",
+    "audio": "hsk1/hsk1_尤其.wav"
+  },
+  {
+    "text": "往往",
+    "audio": "hsk1/hsk1_往往.wav"
+  },
+  {
+    "text": "始终",
+    "audio": "hsk1/hsk1_始终.wav"
+  },
+  {
+    "text": "从而",
+    "audio": "hsk1/hsk1_从而.wav"
+  },
+  {
+    "text": "进而",
+    "audio": "hsk1/hsk1_进而.wav"
+  },
+  {
+    "text": "恐怕",
+    "audio": "hsk1/hsk1_恐怕.wav"
+  },
+  {
+    "text": "大概",
+    "audio": "hsk1/hsk1_大概.wav"
+  },
+  {
+    "text": "显然",
+    "audio": "hsk1/hsk1_显然.wav"
+  },
+  {
+    "text": "必然",
+    "audio": "hsk1/hsk1_必然.wav"
+  },
+  {
+    "text": "偶然",
+    "audio": "hsk1/hsk1_偶然.wav"
+  },
+  {
+    "text": "依然",
+    "audio": "hsk1/hsk1_依然.wav"
+  },
+  {
+    "text": "仍然",
+    "audio": "hsk1/hsk1_仍然.wav"
+  },
+  {
+    "text": "究竟",
+    "audio": "hsk1/hsk1_究竟.wav"
+  },
+  {
+    "text": "到底",
+    "audio": "hsk1/hsk1_到底.wav"
+  },
+  {
+    "text": "干脆",
+    "audio": "hsk1/hsk1_干脆.wav"
+  },
+  {
+    "text": "索性",
+    "audio": "hsk1/hsk1_索性.wav"
+  },
+  {
+    "text": "反正",
+    "audio": "hsk1/hsk1_反正.wav"
+  },
+  {
+    "text": "甚至",
+    "audio": "hsk1/hsk1_甚至.wav"
+  },
+  {
+    "text": "简直",
+    "audio": "hsk1/hsk1_简直.wav"
+  },
+  {
+    "text": "之所以",
+    "audio": "hsk1/hsk1_之所以.wav"
+  },
+  {
+    "text": "以至于",
+    "audio": "hsk1/hsk1_以至于.wav"
+  },
+  {
+    "text": "动物",
+    "audio": "hsk1/hsk1_动物.wav"
+  },
+  {
+    "text": "鸟",
+    "audio": "hsk1/hsk1_鸟.wav"
+  },
+  {
+    "text": "马",
+    "audio": "hsk1/hsk1_马.wav"
+  },
+  {
+    "text": "牛",
+    "audio": "hsk1/hsk1_牛.wav"
+  },
+  {
+    "text": "羊",
+    "audio": "hsk1/hsk1_羊.wav"
+  },
+  {
+    "text": "猪",
+    "audio": "hsk1/hsk1_猪.wav"
+  },
+  {
+    "text": "草",
+    "audio": "hsk1/hsk1_草.wav"
+  },
+  {
+    "text": "河",
+    "audio": "hsk1/hsk1_河.wav"
+  },
+  {
+    "text": "海",
+    "audio": "hsk1/hsk1_海.wav"
+  },
+  {
+    "text": "湖",
+    "audio": "hsk1/hsk1_湖.wav"
+  },
+  {
+    "text": "太阳",
+    "audio": "hsk1/hsk1_太阳.wav"
+  },
+  {
+    "text": "月亮",
+    "audio": "hsk1/hsk1_月亮.wav"
+  },
+  {
+    "text": "星星",
+    "audio": "hsk1/hsk1_星星.wav"
+  },
+  {
+    "text": "空气",
+    "audio": "hsk1/hsk1_空气.wav"
+  },
+  {
+    "text": "污染",
+    "audio": "hsk1/hsk1_污染.wav"
+  },
+  {
+    "text": "资源",
+    "audio": "hsk1/hsk1_资源.wav"
+  },
+  {
+    "text": "能源",
+    "audio": "hsk1/hsk1_能源.wav"
+  },
+  {
+    "text": "气候",
+    "audio": "hsk1/hsk1_气候.wav"
+  },
+  {
+    "text": "温度",
+    "audio": "hsk1/hsk1_温度.wav"
+  },
+  {
+    "text": "度",
+    "audio": "hsk1/hsk1_度.wav"
+  },
+  {
+    "text": "公里",
+    "audio": "hsk1/hsk1_公里.wav"
+  },
+  {
+    "text": "米",
+    "audio": "hsk1/hsk1_米.wav"
+  },
+  {
+    "text": "公斤",
+    "audio": "hsk1/hsk1_公斤.wav"
+  },
+  {
+    "text": "斤",
+    "audio": "hsk1/hsk1_斤.wav"
+  },
+  {
+    "text": "条",
+    "audio": "hsk1/hsk1_条.wav"
+  },
+  {
+    "text": "张",
+    "audio": "hsk1/hsk1_张.wav"
+  },
+  {
+    "text": "双",
+    "audio": "hsk1/hsk1_双.wav"
+  },
+  {
+    "text": "盘",
+    "audio": "hsk1/hsk1_盘.wav"
+  },
+  {
+    "text": "辆",
+    "audio": "hsk1/hsk1_辆.wav"
+  },
+  {
+    "text": "位",
+    "audio": "hsk1/hsk1_位.wav"
+  },
+  {
+    "text": "份",
+    "audio": "hsk1/hsk1_份.wav"
+  },
+  {
+    "text": "遍",
+    "audio": "hsk1/hsk1_遍.wav"
+  },
+  {
+    "text": "层",
+    "audio": "hsk1/hsk1_层.wav"
+  },
+  {
+    "text": "种",
+    "audio": "hsk1/hsk1_种.wav"
+  },
+  {
+    "text": "刻",
+    "audio": "hsk1/hsk1_刻.wav"
+  }
+]

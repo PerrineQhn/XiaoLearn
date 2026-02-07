@@ -1,0 +1,39 @@
+<div class="card-container pinyin-card" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator pinyin-type">🟡 PINYIN</div>
+  
+  <div class="pinyin-main">
+    {{Pinyin}}
+  </div>
+  
+  <div class="question-prompt">
+    👂 Quel est le caractère ?
+  </div>
+  
+  <div class="hint-section">
+    <div class="hint-label">💡 Signifie :</div>
+    <div class="hint-content">{{Meaning}}</div>
+  </div>
+  
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="motivation-text">🔊 Prononce à voix haute !</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const tags = '{{Tags}}'.toLowerCase();
+  const isGrammar = tags.includes('particule') || 
+                    tags.includes('grammaire') || 
+                    tags.includes('conjonction') ||
+                    tags.includes('mesure');
+  
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+})();
+</script>

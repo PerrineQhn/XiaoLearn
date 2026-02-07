@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import NuanceCard from '../../components/NuanceCard.astro';
+import { getCollection } from 'astro:content';
+
+const allNuances = await getCollection('nuances');
+
+// Sort by level then alphabetically
+const sortedNuances = allNuances.sort((a, b) => {
+  if (a.data.level !== b.data.level) {
+    return a.data.level - b.data.level;
+  }
+  return a.data.title.localeCompare(b.data.title);
+});
+---
+
+<BaseLayout
+  title="Nuances et synonymes"
+  description="Comprendre les différences entre mots chinois similaires : 是/有, 会/能/可以, et bien d'autres. Explications claires en français."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Nuances' }]} />
+      <h1>Nuances et <span class="text-gradient">synonymes</span></h1>
+      <p>
+        Comprendre les subtilités entre mots chinois qui semblent similaires.
+        Des explications détaillées avec exemples pour ne plus confondre.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {sortedNuances.length > 0 ? (
+        <div class="nuances-grid">
+          {sortedNuances.map(entry => (
+            <NuanceCard entry={entry} />
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <span class="empty-icon">🔍</span>
+          <h3>Fiches en cours de rédaction</h3>
+          <p>Les comparaisons de nuances sont en cours de création. Revenez bientôt !</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="info-box">
+        <h2>Pourquoi ces nuances sont importantes ?</h2>
+        <p>
+          En chinois, de nombreux mots peuvent se traduire de la même façon en français,
+          mais leur utilisation est très différente. Par exemple, "pouvoir" peut se dire
+          会, 能 ou 可以 selon le contexte. Maîtriser ces nuances est essentiel pour
+          parler un chinois naturel et précis.
+        </p>
+        <div class="tips">
+          <div class="tip">
+            <span class="tip-icon">💡</span>
+            <div>
+              <h4>Conseil</h4>
+              <p>Apprenez ces nuances par les exemples plutôt que par les règles abstraites.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">📝</span>
+            <div>
+              <h4>Pratique</h4>
+              <p>Essayez de créer vos propres phrases avec chaque mot pour bien comprendre les différences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--jade-green-light), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 600px;
+  }
+
+  .nuances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+  }
+
+  .empty-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .empty-state h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .empty-state p {
+    color: var(--text-tertiary);
+  }
+
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+
+  .info-box {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .info-box h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-box > p {
+    max-width: 700px;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .tip {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-accent);
+    border-radius: var(--radius-lg);
+  }
+
+  .tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .tip h4 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .tip p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+</style>

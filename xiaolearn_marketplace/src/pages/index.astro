@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProductCard from '../components/ProductCard.astro';
+import PricingCard from '../components/PricingCard.astro';
+import { featuredProducts, subscriptions, pdfs, ankiDecks } from '../data/products';
+---
+
+<BaseLayout title="XiaoLearn Shop - Apprenez le chinois mandarin">
+  <Hero
+    title="Apprenez le chinois <span class='highlight'>efficacement</span>"
+    subtitle="Découvrez nos applications, manuels PDF et decks Anki pour maîtriser le mandarin et réussir le HSK."
+    ctaText="Voir les produits"
+    ctaLink="/produits"
+    secondaryCtaText="Essayer gratuitement"
+    secondaryCtaLink="https://xiaolearn.com"
+  />
+
+  <!-- Section Produits Vedettes -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos produits vedettes</h2>
+        <p>Tout ce dont vous avez besoin pour progresser en chinois mandarin</p>
+      </div>
+
+      <div class="grid grid-3">
+        {featuredProducts.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+
+      <div class="section-cta">
+        <a href="/produits" class="btn btn-secondary">
+          Voir tous les produits
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Abonnements -->
+  <section class="section pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Abonnements</span>
+        <h2>Accès complet à l'application XiaoLearn</h2>
+        <p>Choisissez la formule qui vous convient pour progresser à votre rythme</p>
+      </div>
+
+      <div class="pricing-grid">
+        {subscriptions.map(sub => (
+          <PricingCard product={sub} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Confiance -->
+  <section class="section trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <h3>Paiement sécurisé</h3>
+          <p>Vos transactions sont protégées par Stripe, leader mondial du paiement en ligne.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <h3>Accès immédiat</h3>
+          <p>Recevez vos produits numériques instantanément après votre achat.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💰</div>
+          <h3>Satisfait ou remboursé</h3>
+          <p>14 jours pour changer d'avis, conformément à la législation française.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">📧</div>
+          <h3>Support réactif</h3>
+          <p>Une question ? Notre équipe vous répond sous 24h maximum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section PDFs -->
+  <section class="section products-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Manuels PDF</span>
+        <h2>Ressources d'étude imprimables</h2>
+        <p>Des guides complets pour étudier hors ligne et préparer les examens HSK</p>
+      </div>
+
+      <div class="grid grid-2">
+        {pdfs.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Anki -->
+  <section class="section products-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Decks Anki</span>
+        <h2>Flashcards intelligentes</h2>
+        <p>Mémorisez efficacement avec le système de répétition espacée Anki</p>
+      </div>
+
+      <div class="grid grid-2">
+        {ankiDecks.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Prêt à commencer votre apprentissage ?</h2>
+        <p>Rejoignez des milliers d'apprenants qui progressent chaque jour avec XiaoLearn.</p>
+        <div class="cta-actions">
+          <a href="/produits" class="btn btn-primary btn-lg">
+            Découvrir nos produits
+            <span class="arrow">→</span>
+          </a>
+          <a href="https://xiaolearn.com" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">
+            Essayer l'app gratuitement
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+  }
+
+  /* Pricing Section */
+  .pricing-section {
+    background: var(--bg-secondary);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Trust Section */
+  .trust-section {
+    background: var(--bg-primary);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .trust-item {
+    text-align: center;
+  }
+
+  .trust-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .trust-item h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .trust-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .trust-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Alt Background */
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.92), rgba(240, 183, 98, 0.7));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.35), transparent 45%);
+    mix-blend-mode: screen;
+  }
+
+  .cta-box h2 {
+    color: var(--text-inverse);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+  }
+
+  .cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    position: relative;
+  }
+
+  .cta-box .btn-primary {
+    background: var(--text-inverse);
+    color: var(--primary-red);
+  }
+
+  .cta-box .btn-secondary {
+    background: transparent;
+    color: var(--text-inverse);
+    border-color: var(--text-inverse);
+  }
+</style>

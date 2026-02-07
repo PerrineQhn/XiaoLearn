@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqCategories = [
+  {
+    title: 'Produits & Accès',
+    questions: [
+      {
+        q: 'Quelle est la différence entre l\'application web et le dictionnaire mobile ?',
+        a: 'L\'application web (xiaolearn.com) est une plateforme complète d\'apprentissage avec leçons, exercices, mini-jeux et assistant IA. Le dictionnaire mobile est une application native pour iOS/Android dédiée à la recherche de caractères et mots chinois.'
+      },
+      {
+        q: 'Les produits sont-ils accessibles hors ligne ?',
+        a: 'Les manuels PDF et decks Anki sont téléchargeables et utilisables hors ligne. L\'application web nécessite une connexion internet pour la plupart des fonctionnalités.'
+      },
+      {
+        q: 'Puis-je partager mon abonnement avec quelqu\'un ?',
+        a: 'Non, l\'abonnement est personnel et lié à un compte unique. Le partage de compte est interdit par nos conditions d\'utilisation.'
+      }
+    ]
+  },
+  {
+    title: 'Paiement & Facturation',
+    questions: [
+      {
+        q: 'Quels moyens de paiement acceptez-vous ?',
+        a: 'Nous acceptons les cartes bancaires (Visa, Mastercard, American Express), ainsi que les paiements via Apple Pay et Google Pay, le tout sécurisé par Stripe.'
+      },
+      {
+        q: 'Comment obtenir une facture ?',
+        a: 'Une facture est automatiquement envoyée par email après chaque achat. Vous pouvez également retrouver toutes vos factures dans votre espace client Stripe.'
+      },
+      {
+        q: 'Les prix incluent-ils la TVA ?',
+        a: 'Oui, tous les prix affichés sont TTC et incluent la TVA applicable selon votre pays de résidence.'
+      }
+    ]
+  },
+  {
+    title: 'Remboursement & Annulation',
+    questions: [
+      {
+        q: 'Comment demander un remboursement ?',
+        a: 'Contactez-nous par email dans les 14 jours suivant votre achat. Nous traiterons votre demande sous 48h et le remboursement sera effectué sous 5-10 jours ouvrés.'
+      },
+      {
+        q: 'Que se passe-t-il si j\'annule mon abonnement ?',
+        a: 'Vous conservez l\'accès premium jusqu\'à la fin de votre période de facturation en cours. Après cette date, votre compte repasse en version gratuite.'
+      },
+      {
+        q: 'Puis-je récupérer mes données après annulation ?',
+        a: 'Oui, vos données de progression sont conservées même après annulation. Si vous vous réabonnez plus tard, vous retrouverez votre historique.'
+      }
+    ]
+  },
+  {
+    title: 'Support & Contact',
+    questions: [
+      {
+        q: 'Comment contacter le support ?',
+        a: 'Envoyez-nous un email à support@xiaolearn.com. Nous répondons généralement sous 24h les jours ouvrés.'
+      },
+      {
+        q: 'Proposez-vous des formations ou cours en direct ?',
+        a: 'Pour le moment, nous nous concentrons sur les outils d\'auto-apprentissage. Des cours en direct pourraient être proposés à l\'avenir.'
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title="FAQ - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <h1>Questions fréquentes</h1>
+      <p>Trouvez rapidement les réponses à vos questions sur nos produits et services</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {faqCategories.map(category => (
+        <div class="faq-category">
+          <h2>{category.title}</h2>
+          <div class="faq-list">
+            {category.questions.map(item => (
+              <details class="faq-item">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Vous ne trouvez pas votre réponse ?</h2>
+        <p>Notre équipe est là pour vous aider. N'hésitez pas à nous contacter.</p>
+        <a href="mailto:support@xiaolearn.com" class="btn btn-primary btn-lg">
+          Nous contacter
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.1), rgba(240, 183, 98, 0.1));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq-category {
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .faq-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-category h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-red);
+    display: inline-block;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .faq-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: var(--spacing-lg);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--primary-red);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .contact-section {
+    background: var(--bg-secondary);
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, rgba(216, 72, 62, 0.92), rgba(240, 183, 98, 0.7));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--text-inverse);
+  }
+
+  .contact-box h2 {
+    color: var(--text-inverse);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-box .btn-primary {
+    background: var(--text-inverse);
+    color: var(--primary-red);
+  }
+</style>
