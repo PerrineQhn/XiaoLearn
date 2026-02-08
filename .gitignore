@@ -38,6 +38,7 @@
 # Environment files
 **/.env
 **/.env.*
+**/.dev.vars
 !**/.env.example
 !**/.env.*.example
 

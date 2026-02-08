@@ -36,7 +36,8 @@ export const PRODUCTS = {
     entitlement: 'download:vocabulary-one-hsk',
     successBaseEnv: 'MARKETPLACE_BASE_URL',
     cancelBaseEnv: 'MARKETPLACE_BASE_URL',
-    downloadKey: 'vocabulary-one-hsk'
+    downloadKey: 'vocabulary-one-hsk',
+    requiresLevel: true
   },
   'writing-all-hsk': {
     mode: 'payment',
@@ -52,7 +53,8 @@ export const PRODUCTS = {
     entitlement: 'download:writing-one-hsk',
     successBaseEnv: 'MARKETPLACE_BASE_URL',
     cancelBaseEnv: 'MARKETPLACE_BASE_URL',
-    downloadKey: 'writing-one-hsk'
+    downloadKey: 'writing-one-hsk',
+    requiresLevel: true
   },
   'vocabulary-writing-all-hsk': {
     mode: 'payment',
@@ -68,7 +70,8 @@ export const PRODUCTS = {
     entitlement: 'download:vocabulary-writing-one-hsk',
     successBaseEnv: 'MARKETPLACE_BASE_URL',
     cancelBaseEnv: 'MARKETPLACE_BASE_URL',
-    downloadKey: 'vocabulary-writing-one-hsk'
+    downloadKey: 'vocabulary-writing-one-hsk',
+    requiresLevel: true
   },
   anki: {
     mode: 'payment',

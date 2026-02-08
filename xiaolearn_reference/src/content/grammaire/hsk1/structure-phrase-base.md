@@ -11,7 +11,7 @@ keyPoints:
 relatedGrammar:
   - "negation-bu-mei"
   - "particule-de"
-difficulty: "debutant"
+difficulty: "débutant"
 lastUpdated: 2024-02-01
 ---
 

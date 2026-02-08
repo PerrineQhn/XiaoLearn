@@ -12,6 +12,7 @@ export interface Product {
   interval?: 'month' | 'year';
   stripePaymentLink: string;
   image?: string;
+  imageScale?: number;
   badge?: string;
   popular?: boolean;
   features?: string[];
@@ -95,6 +96,7 @@ export const pdfs: Product[] = [
     type: 'pdf',
     stripePaymentLink: buildCheckoutLink('vocabulary-all-hsk'),
     image: '/images/products/vocabulaire-hsk.png',
+    imageScale: 1.14,
     levels: hsk30LevelsWithAll,
     features: [
       'Tous les niveaux HSK',
@@ -112,6 +114,7 @@ export const pdfs: Product[] = [
     type: 'pdf',
     stripePaymentLink: buildCheckoutLink('vocabulary-one-hsk'),
     image: '/images/products/vocabulaire-hsk.png',
+    imageScale: 1.14,
     levels: hsk30Levels,
     features: [
       'Choisissez un niveau HSK',
@@ -129,6 +132,7 @@ export const pdfs: Product[] = [
     type: 'pdf',
     stripePaymentLink: buildCheckoutLink('writing-all-hsk'),
     image: '/images/products/vocabulaire-ecriture-hsk.png',
+    imageScale: 1.14,
     levels: hsk30LevelsWithAll,
     features: [
       'Tous les niveaux HSK',
@@ -146,6 +150,7 @@ export const pdfs: Product[] = [
     type: 'pdf',
     stripePaymentLink: buildCheckoutLink('writing-one-hsk'),
     image: '/images/products/ecriture-hsk.png',
+    imageScale: 1.14,
     levels: hsk30Levels,
     features: [
       'Choisissez un niveau HSK',

@@ -1,2 +1,2 @@
-/produits /tarifs 302
-/produits/* /tarifs 302
+# Les pages /produits et /produits/[id] existent dans Astro.
+# Ne pas rediriger ces routes vers /tarifs.

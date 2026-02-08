@@ -11,7 +11,7 @@ keyPoints:
   - "没有 est la forme complète de 没"
 relatedGrammar:
   - "structure-phrase-base"
-difficulty: "debutant"
+difficulty: "débutant"
 lastUpdated: 2024-02-01
 ---
 

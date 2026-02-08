@@ -1,4 +1,4 @@
-const defaultBaseUrl = 'https://pay.xiaolearn.com';
+const defaultBaseUrl = 'https://payments.xiaolearn.com';
 
 export const PAYMENTS_BASE_URL = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || defaultBaseUrl;
 

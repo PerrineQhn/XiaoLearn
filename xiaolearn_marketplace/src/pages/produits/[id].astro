@@ -122,6 +122,7 @@ const relatedProducts = allProducts
 
 const levelOptions = product.levels ?? [];
 const requiresLevelSelection = new Set(['vocabulary-one-hsk', 'writing-one-hsk', 'vocabulary-writing-one-hsk']).has(product.id);
+const supportsCart = product.id !== 'app-yearly';
 
 const defaultLevel = !requiresLevelSelection && levelOptions.length > 0 ? levelOptions[0] : '';
 const checkoutBase = buildCheckoutLink(product.id);
@@ -150,7 +151,7 @@ const formatPrice = (value: number) =>
   <section class="section">
     <div class="container product-layout">
       <div class="product-main">
-        <div class="cover-card">
+        <div class="cover-card" style={`--product-image-scale:${product.imageScale ?? 1};`}>
           {product.image ? (
             <img src={product.image} alt={product.name} loading="lazy" />
           ) : (
@@ -257,6 +258,17 @@ const formatPrice = (value: number) =>
             <span class="arrow">→</span>
           </a>
 
+          {supportsCart && (
+            <button
+              id="add-to-cart-btn"
+              type="button"
+              class:list={['btn', 'btn-secondary', 'add-to-cart-btn', { disabled: requiresLevelSelection && !defaultLevel }]}
+              data-product-id={product.id}
+            >
+              Ajouter au panier
+            </button>
+          )}
+
           <p class="purchase-note">
             Paiement sécurisé via Stripe. Accès immédiat après confirmation.
           </p>
@@ -285,16 +297,42 @@ const formatPrice = (value: number) =>
 
   <script is:inline>
     (() => {
+      const CART_STORAGE_KEY = 'xiaolearn_cart_v1';
       const checkoutLink = document.getElementById('checkout-link');
       if (!(checkoutLink instanceof HTMLAnchorElement)) return;
 
       const levelSelect = document.getElementById('level-select');
-      if (!(levelSelect instanceof HTMLSelectElement)) return;
+      const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+      const readCart = () => {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      };
+
+      const writeCart = (items) => {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      };
+
+      const upsertCartItem = (item) => {
+        const cart = readCart();
+        const key = `${item.productId}::${item.level || ''}`;
+        const next = new Map();
+        cart.forEach((entry) => {
+          const entryKey = `${entry.productId}::${entry.level || ''}`;
+          next.set(entryKey, entry);
+        });
+        next.set(key, item);
+        writeCart(Array.from(next.values()));
+      };
 
       const updateLink = () => {
         const url = new URL(checkoutLink.dataset.base || checkoutLink.href);
-        const selectedLevel = levelSelect.value.trim();
-        const required = levelSelect.dataset.required === 'true';
+        const selectedLevel = levelSelect instanceof HTMLSelectElement ? levelSelect.value.trim() : '';
+        const required = levelSelect instanceof HTMLSelectElement ? levelSelect.dataset.required === 'true' : false;
 
         if (selectedLevel) {
           url.searchParams.set('level', selectedLevel);
@@ -306,9 +344,30 @@ const formatPrice = (value: number) =>
         checkoutLink.classList.toggle('disabled', locked);
         checkoutLink.setAttribute('aria-disabled', locked ? 'true' : 'false');
         checkoutLink.href = url.toString();
+
+        if (addToCartBtn instanceof HTMLButtonElement) {
+          addToCartBtn.classList.toggle('disabled', locked);
+          addToCartBtn.disabled = locked;
+        }
       };
 
-      levelSelect.addEventListener('change', updateLink);
+      if (levelSelect instanceof HTMLSelectElement) {
+        levelSelect.addEventListener('change', updateLink);
+      }
+
+      if (addToCartBtn instanceof HTMLButtonElement) {
+        addToCartBtn.addEventListener('click', () => {
+          const productId = addToCartBtn.dataset.productId || checkoutLink.dataset.productId || '';
+          if (!productId) return;
+          const selectedLevel = levelSelect instanceof HTMLSelectElement ? levelSelect.value.trim() : '';
+          const required = levelSelect instanceof HTMLSelectElement ? levelSelect.dataset.required === 'true' : false;
+          if (required && !selectedLevel) return;
+
+          upsertCartItem(selectedLevel ? { productId, level: selectedLevel } : { productId });
+          window.location.href = '/panier';
+        });
+      }
+
       updateLink();
     })();
   </script>
@@ -368,13 +427,19 @@ const formatPrice = (value: number) =>
   }
 
   .cover-card {
+    --product-image-scale: 1;
     overflow: hidden;
   }
 
   .cover-card img {
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    padding: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--primary-red-light), var(--bg-accent));
+    transform: scale(var(--product-image-scale));
+    transform-origin: center;
   }
 
   .cover-placeholder {
@@ -529,7 +594,17 @@ const formatPrice = (value: number) =>
     width: 100%;
   }
 
+  .add-to-cart-btn {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+  }
+
   .buy-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .add-to-cart-btn.disabled {
     pointer-events: none;
     opacity: 0.5;
   }

@@ -7,6 +7,45 @@ interface GrammarExplanationCardProps {
   language: Language;
 }
 
+function renderSectionContent(text: string) {
+  const blocks: JSX.Element[] = [];
+  let listItems: string[] = [];
+  let keyCounter = 0;
+
+  const flushList = () => {
+    if (listItems.length === 0) return;
+
+    blocks.push(
+      <ul key={`list-${keyCounter++}`} className="section-list">
+        {listItems.map((item, index) => (
+          <li key={`item-${index}`}>{item}</li>
+        ))}
+      </ul>,
+    );
+    listItems = [];
+  };
+
+  for (const rawLine of text.split('\n')) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushList();
+      continue;
+    }
+
+    if (line.startsWith('• ') || line.startsWith('- ')) {
+      listItems.push(line.slice(2).trim());
+      continue;
+    }
+
+    flushList();
+    blocks.push(<p key={`p-${keyCounter++}`}>{line}</p>);
+  }
+
+  flushList();
+  return blocks;
+}
+
 export default function GrammarExplanationCard({ explanation, language }: GrammarExplanationCardProps) {
   return (
     <div className="grammar-explanation-card">
@@ -16,11 +55,7 @@ export default function GrammarExplanationCard({ explanation, language }: Gramma
           <h3>{language === 'fr' ? 'Quand l\'utiliser' : 'When to use'}</h3>
         </div>
         <div className="section-content">
-          {(language === 'fr' ? explanation.whenToUse : explanation.whenToUseEn)
-            .split('\n')
-            .map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
+          {renderSectionContent(language === 'fr' ? explanation.whenToUse : explanation.whenToUseEn)}
         </div>
       </div>
 
@@ -30,11 +65,7 @@ export default function GrammarExplanationCard({ explanation, language }: Gramma
           <h3>{language === 'fr' ? 'Comment l\'utiliser' : 'How to use'}</h3>
         </div>
         <div className="section-content">
-          {(language === 'fr' ? explanation.howToUse : explanation.howToUseEn)
-            .split('\n')
-            .map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
+          {renderSectionContent(language === 'fr' ? explanation.howToUse : explanation.howToUseEn)}
         </div>
       </div>
 
@@ -45,11 +76,7 @@ export default function GrammarExplanationCard({ explanation, language }: Gramma
             <h3>{language === 'fr' ? 'Erreurs courantes' : 'Common mistakes'}</h3>
           </div>
           <div className="section-content mistakes-content">
-            {(language === 'fr' ? explanation.commonMistakes : explanation.commonMistakesEn || explanation.commonMistakes)
-              .split('\n')
-              .map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
+            {renderSectionContent(language === 'fr' ? explanation.commonMistakes : explanation.commonMistakesEn || explanation.commonMistakes)}
           </div>
         </div>
       )}
@@ -61,11 +88,7 @@ export default function GrammarExplanationCard({ explanation, language }: Gramma
             <h3>{language === 'fr' ? 'Astuces' : 'Tips'}</h3>
           </div>
           <div className="section-content tips-content">
-            {(language === 'fr' ? explanation.tips : explanation.tipsEn || explanation.tips)
-              .split('\n')
-              .map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
+            {renderSectionContent(language === 'fr' ? explanation.tips : explanation.tipsEn || explanation.tips)}
           </div>
         </div>
       )}

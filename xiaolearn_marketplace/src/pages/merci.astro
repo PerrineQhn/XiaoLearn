@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const paymentsBaseUrl = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || 'https://pay.xiaolearn.com';
+const paymentsBaseUrl = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || 'https://payments.xiaolearn.com';
 ---
 
 <BaseLayout title="Merci pour votre achat - XiaoLearn Shop">
@@ -65,13 +65,12 @@ const paymentsBaseUrl = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || 'https://pay
     </div>
   </section>
 
-  <script is:inline>
-    const paymentsBaseUrl = {JSON.stringify(paymentsBaseUrl)};
+  <script define:vars={{ paymentsBaseUrl }}>
     const downloadBox = document.getElementById('download-box');
     const downloadLinks = document.getElementById('download-links');
     const sessionId = new URLSearchParams(window.location.search).get('session_id');
 
-    if (sessionId && paymentsBaseUrl) {
+    if (sessionId && paymentsBaseUrl && downloadBox && downloadLinks) {
       fetch(`${paymentsBaseUrl}/api/downloads?session_id=${encodeURIComponent(sessionId)}`)
         .then((response) => response.ok ? response.json() : null)
         .then((data) => {

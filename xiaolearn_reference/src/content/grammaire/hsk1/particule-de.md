@@ -11,7 +11,7 @@ keyPoints:
   - "Peut être omise dans certains cas"
 relatedGrammar:
   - "structure-phrase-base"
-difficulty: "debutant"
+difficulty: "débutant"
 lastUpdated: 2024-02-01
 ---
 

@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node src/server.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "dev:node": "node src/server.js",
     "start": "node src/server.js"
   },
   "dependencies": {
@@ -13,5 +15,8 @@
     "express": "^4.19.2",
     "firebase-admin": "^12.5.0",
     "stripe": "^16.2.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.63.0"
   }
 }

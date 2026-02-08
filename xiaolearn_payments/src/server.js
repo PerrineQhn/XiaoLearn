@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import Stripe from 'stripe';
 import admin from 'firebase-admin';
-import { DOWNLOADS, buildDownloadUrl } from './downloads.js';
+import { resolveDownloadsForPurchase } from './downloads.js';
 import { resolveProduct } from './products.js';
 
 const {
@@ -14,7 +14,10 @@ const {
   FIREBASE_PRIVATE_KEY,
   APP_BASE_URL,
   MARKETPLACE_BASE_URL,
-  DOWNLOADS_BASE_URL
+  DOWNLOADS_BASE_URL,
+  RESEND_API_KEY,
+  PURCHASE_EMAIL_FROM,
+  PURCHASE_EMAIL_REPLY_TO
 } = process.env;
 
 if (!STRIPE_SECRET_KEY) {
@@ -84,6 +87,162 @@ const buildMetadata = (product, uid, email, level) => {
   return metadata;
 };
 
+const PRODUCT_LABELS = {
+  'app-yearly': 'XiaoLearn App - Licence 1 an',
+  'app-lifetime': 'XiaoLearn App - Accès à vie',
+  'manuels-v1-v2': 'Pack Manuels XiaoLearn Vol.1 & Vol.2',
+  'vocabulary-all-hsk': 'Vocabulaire HSK - Pack complet',
+  'vocabulary-one-hsk': 'Vocabulaire HSK - Niveau au choix',
+  'writing-all-hsk': 'Écriture HSK - Pack complet',
+  'writing-one-hsk': 'Écriture HSK - Niveau au choix',
+  'vocabulary-writing-all-hsk': 'Pack Vocabulaire + Écriture HSK',
+  'vocabulary-writing-one-hsk': 'Vocabulaire + Écriture HSK - Niveau au choix',
+  anki: 'Deck Anki XiaoLearn'
+};
+
+const escapeHtml = (value) =>
+  String(value || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+
+const resolveRecipientEmail = (session) => {
+  const candidates = [session?.customer_details?.email, session?.customer_email, session?.metadata?.email];
+  return candidates.find((value) => typeof value === 'string' && value.includes('@')) || null;
+};
+
+const buildMerciUrl = (sessionId) => {
+  const base = getBaseUrl(MARKETPLACE_BASE_URL);
+  if (!base || !sessionId) return null;
+  return `${base}/merci?session_id=${encodeURIComponent(sessionId)}`;
+};
+
+const formatAmount = (amountTotal, currency) => {
+  if (typeof amountTotal !== 'number') return null;
+  const code = typeof currency === 'string' && currency ? currency.toUpperCase() : 'EUR';
+  try {
+    return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: code }).format(amountTotal / 100);
+  } catch {
+    return `${(amountTotal / 100).toFixed(2)} ${code}`;
+  }
+};
+
+const sendPurchaseEmail = async ({ session, product, downloads }) => {
+  if (!RESEND_API_KEY || !PURCHASE_EMAIL_FROM) return;
+  const to = resolveRecipientEmail(session);
+  if (!to) return;
+
+  const productName = PRODUCT_LABELS[product.id] || product.id;
+  const merciUrl = buildMerciUrl(session?.id);
+  const amount = formatAmount(session?.amount_total, session?.currency);
+  const links = Array.isArray(downloads) ? downloads.filter((item) => item?.label && item?.url) : [];
+  const supportEmail = PURCHASE_EMAIL_REPLY_TO || 'support@xiaolearn.com';
+  const hasDownloads = links.length > 0;
+  const customerNameRaw = typeof session?.customer_details?.name === 'string' ? session.customer_details.name.trim() : '';
+  const firstName = customerNameRaw ? customerNameRaw.split(/\s+/)[0] : '';
+  const greeting = firstName ? `Bonjour ${firstName},` : 'Bonjour,';
+  const greetingHtml = firstName ? `Bonjour ${escapeHtml(firstName)},` : 'Bonjour,';
+  const orderRef = session?.id || null;
+
+  const textLines = [
+    greeting,
+    '',
+    'Merci beaucoup pour votre confiance.',
+    'Votre commande XiaoLearn est confirmée et vos accès sont disponibles ci-dessous.',
+    '',
+    'Récapitulatif de commande',
+    `- Produit: ${productName}`,
+    amount ? `- Montant payé: ${amount}` : null,
+    orderRef ? `- Référence: ${orderRef}` : null,
+    '',
+    hasDownloads ? 'Liens de téléchargement personnels:' : "Aucun lien de téléchargement n'est disponible pour le moment.",
+    hasDownloads ? links.map((item) => `- ${item.label}: ${item.url}`).join('\n') : null,
+    merciUrl ? `Récapitulatif complet: ${merciUrl}` : null,
+    '',
+    `Besoin d'aide ? Écrivez-nous à ${supportEmail}.`,
+    '',
+    'Avec toute notre gratitude,',
+    'L\'équipe XiaoLearn'
+  ];
+  const text = textLines.filter(Boolean).join('\n');
+
+  const linksHtml = hasDownloads
+    ? `<div style="margin: 10px 0 0;">${links
+        .map(
+          (item) =>
+            `<p style="margin:0 0 10px;"><a href="${escapeHtml(item.url)}" style="display:inline-block; background:#f5ecea; color:#8f1f1f; text-decoration:none; padding:9px 12px; border-radius:8px; border:1px solid #efdad6; font-weight:600;">Télécharger: ${escapeHtml(item.label)}</a></p>`
+        )
+        .join('')}</div>`
+    : '<p style="margin:8px 0 0; color:#444;">Votre commande est bien enregistrée. Nous vous remercions pour votre confiance.</p>';
+
+  const recapButtonHtml = merciUrl
+    ? `<p style="margin: 18px 0 0;"><a href="${escapeHtml(
+        merciUrl
+      )}" style="display:inline-block; background:#b22222; color:#fff; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:600;">Voir mon récapitulatif complet</a></p>`
+    : '';
+
+  const amountHtml = amount
+    ? `<p style="margin:8px 0 0; color:#222;"><strong>Montant payé:</strong> ${escapeHtml(amount)}</p>`
+    : '';
+
+  const referenceHtml = orderRef
+    ? `<p style="margin:8px 0 0; color:#222;"><strong>Référence:</strong> ${escapeHtml(orderRef)}</p>`
+    : '';
+
+  const html = `
+    <div style="font-family: Arial, Helvetica, sans-serif; line-height: 1.55; color: #111; background:#f4f1ef; padding:24px;">
+      <div style="max-width:640px; margin:0 auto; background:#ffffff; border:1px solid #ececec; border-radius:12px; overflow:hidden;">
+        <div style="padding:18px 22px; background:linear-gradient(120deg,#b22222,#d94f3d); color:#fff;">
+          <p style="margin:0; font-size:15px; opacity:0.95;">XiaoLearn</p>
+          <h2 style="margin:6px 0 0; font-size:20px;">Commande confirmée</h2>
+        </div>
+        <div style="padding:22px;">
+          <p style="margin:0 0 12px;">${greetingHtml}</p>
+          <p style="margin:0 0 12px;">Merci beaucoup pour votre confiance. Votre commande XiaoLearn est confirmée.</p>
+          <div style="margin:0; padding:14px; border:1px solid #efe7e4; border-radius:10px; background:#fcfaf9;">
+            <p style="margin:0; color:#111;"><strong>Récapitulatif de commande</strong></p>
+            <p style="margin:8px 0 0; color:#222;"><strong>Produit:</strong> ${escapeHtml(productName)}</p>
+            ${amountHtml}
+            ${referenceHtml}
+          </div>
+          <h3 style="margin:18px 0 0; font-size:16px;">Vos liens de téléchargement</h3>
+          ${linksHtml}
+          ${recapButtonHtml}
+          <p style="margin:20px 0 0; color:#444;">Si vous avez la moindre question, écrivez-nous à <a href="mailto:${escapeHtml(
+            supportEmail
+          )}" style="color:#b22222; text-decoration:none;">${escapeHtml(supportEmail)}</a>.</p>
+          <p style="margin:16px 0 0; color:#444;">Avec toute notre gratitude,<br/>L'équipe XiaoLearn</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const payload = {
+    from: PURCHASE_EMAIL_FROM,
+    to: [to],
+    subject: `Commande confirmée XiaoLearn - ${productName}`,
+    html,
+    text
+  };
+  if (PURCHASE_EMAIL_REPLY_TO) payload.reply_to = PURCHASE_EMAIL_REPLY_TO;
+
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${RESEND_API_KEY}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Email achat impossible (${response.status}): ${errorText}`);
+  }
+};
+
 const resolveCheckoutSession = async ({ productId, uid, email, level }) => {
   const product = resolveProduct(productId, process.env);
   const { successUrl, cancelUrl } = getCheckoutUrls(product);
@@ -91,7 +250,12 @@ const resolveCheckoutSession = async ({ productId, uid, email, level }) => {
     throw new Error('URLs de redirection manquantes');
   }
 
-  const metadata = buildMetadata(product, uid, email, level);
+  const checkoutLevel = typeof level === 'string' ? level.trim() : '';
+  if (product.requiresLevel && !checkoutLevel) {
+    throw new Error('level requis pour ce produit');
+  }
+
+  const metadata = buildMetadata(product, uid, email, checkoutLevel);
 
   const params = {
     mode: product.mode,
@@ -267,6 +431,13 @@ const handleCheckoutCompleted = async (session) => {
   const product = resolveProduct(productId, process.env);
   const uid = session.client_reference_id || session?.metadata?.uid || null;
   const email = session.customer_details?.email || session.customer_email || null;
+  const downloads = product.downloadKey
+    ? resolveDownloadsForPurchase({
+        downloadKey: product.downloadKey,
+        level: session?.metadata?.level,
+        baseUrl: DOWNLOADS_BASE_URL
+      })
+    : [];
 
   if (product.mode === 'subscription') {
     const subscriptionId = session.subscription;
@@ -281,6 +452,11 @@ const handleCheckoutCompleted = async (session) => {
       customerId: session.customer,
       priceId
     });
+    try {
+      await sendPurchaseEmail({ session, product, downloads });
+    } catch (error) {
+      console.error(error);
+    }
   } else {
     await storePurchase({
       uid,
@@ -298,6 +474,12 @@ const handleCheckoutCompleted = async (session) => {
         customerId: session.customer,
         priceId: product.priceId
       });
+    }
+
+    try {
+      await sendPurchaseEmail({ session, product, downloads });
+    } catch (error) {
+      console.error(error);
     }
   }
 };
@@ -431,7 +613,7 @@ app.get('/api/downloads', async (req, res) => {
       return;
     }
     const session = await stripe.checkout.sessions.retrieve(sessionId);
-    if (session.payment_status !== 'paid') {
+    if (!['paid', 'no_payment_required'].includes(session.payment_status)) {
       res.status(403).json({ error: 'Paiement non confirmé' });
       return;
     }
@@ -445,13 +627,12 @@ app.get('/api/downloads', async (req, res) => {
       res.json({ downloads: [] });
       return;
     }
-    const download = DOWNLOADS[product.downloadKey];
-    const url = buildDownloadUrl(DOWNLOADS_BASE_URL, download?.file);
-    if (!download || !url) {
-      res.json({ downloads: [] });
-      return;
-    }
-    res.json({ downloads: [{ label: download.label, url }] });
+    const downloads = resolveDownloadsForPurchase({
+      downloadKey: product.downloadKey,
+      level: session.metadata?.level,
+      baseUrl: DOWNLOADS_BASE_URL
+    });
+    res.json({ downloads });
   } catch (error) {
     res.status(400).json({ error: error.message || 'Erreur téléchargement' });
   }

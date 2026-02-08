@@ -1,4 +1,4 @@
-const DEFAULT_PAYMENTS_BASE_URL = 'https://pay.xiaolearn.com';
+const DEFAULT_PAYMENTS_BASE_URL = 'https://payments.xiaolearn.com';
 
 const PAYMENTS_BASE_URL = import.meta.env.VITE_PAYMENTS_BASE_URL || DEFAULT_PAYMENTS_BASE_URL;
 

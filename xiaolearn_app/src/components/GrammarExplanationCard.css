@@ -68,6 +68,16 @@
   white-space: pre-wrap;
 }
 
+.section-content .section-list {
+  margin: 0.4rem 0 0.6rem 1.2rem;
+  padding: 0;
+}
+
+.section-content .section-list li {
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
 .section-content p:first-child {
   margin-top: 0;
 }
@@ -78,6 +88,10 @@
 
 /* Mise en forme spéciale pour les erreurs */
 .mistakes-content p {
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+}
+
+.mistakes-content li {
   font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
 }
 

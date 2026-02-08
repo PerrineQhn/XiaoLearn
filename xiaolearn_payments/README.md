@@ -1,29 +1,87 @@
 # XiaoLearn Payments
 
-Service Node/Express pour créer des sessions Stripe Checkout, gérer les webhooks et mettre à jour Firestore.
+Service Stripe + Firestore compatible Cloudflare Workers.
 
-## Démarrage rapide
+## Mode Free (Cloudflare)
+
+1. Installer les dépendances:
+
+```bash
+npm install
+```
+
+2. Se connecter à Cloudflare:
+
+```bash
+npx wrangler login
+npx wrangler whoami
+```
+
+3. Configurer les variables/secrets:
+
+```bash
+npx wrangler secret put STRIPE_SECRET_KEY
+npx wrangler secret put STRIPE_WEBHOOK_SECRET
+npx wrangler secret put FIREBASE_PRIVATE_KEY
+npx wrangler secret put FIREBASE_PROJECT_ID
+npx wrangler secret put FIREBASE_CLIENT_EMAIL
+npx wrangler secret put STRIPE_PRICE_APP_YEARLY
+npx wrangler secret put STRIPE_PRICE_APP_LIFETIME
+npx wrangler secret put STRIPE_PRICE_MANUELS_V1_V2
+npx wrangler secret put STRIPE_PRICE_VOCABULARY_ALL_HSK
+npx wrangler secret put STRIPE_PRICE_VOCABULARY_ONE_HSK
+npx wrangler secret put STRIPE_PRICE_WRITING_ALL_HSK
+npx wrangler secret put STRIPE_PRICE_WRITING_ONE_HSK
+npx wrangler secret put STRIPE_PRICE_VOCABULARY_WRITING_ALL_HSK
+npx wrangler secret put STRIPE_PRICE_VOCABULARY_WRITING_ONE_HSK
+npx wrangler secret put STRIPE_PRICE_ANKI
+npx wrangler secret put RESEND_API_KEY
+npx wrangler secret put PURCHASE_EMAIL_FROM
+npx wrangler secret put PURCHASE_EMAIL_REPLY_TO
+```
+
+4. Vérifier les variables non sensibles dans `wrangler.toml` (`APP_BASE_URL`, `MARKETPLACE_BASE_URL`, `DOWNLOADS_BASE_URL`).
+
+5. Déployer:
+
+```bash
+npm run deploy
+```
+
+6. Stripe webhook:
+- endpoint: `https://payments.xiaolearn.com/api/webhook`
+- events minimum: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`.
+
+## Développement local Worker
+
+```bash
+npm run dev
+```
+
+## Développement Node (legacy)
 
 ```bash
 cp .env.example .env
-npm install
-npm run dev
+npm run dev:node
 ```
 
 ## Endpoints
 
-- `GET /checkout?productId=app-yearly&uid=...&email=...` → redirige vers Stripe Checkout.
-- `POST /api/checkout` → retourne `{ url }` pour rediriger côté client.
-- `POST /api/webhook` → webhook Stripe (raw body).
-- `GET /api/downloads?session_id=...` → renvoie les liens de téléchargement payés.
-- `POST /api/portal` → crée un lien vers le portail client Stripe.
+- `GET /checkout?productId=app-yearly&uid=...&email=...` -> redirection Stripe Checkout.
+- `POST /api/checkout` -> retourne `{ url }`.
+- `POST /api/webhook` -> webhook Stripe (signature vérifiée).
+- `GET /api/downloads?session_id=...` -> retourne les téléchargements autorisés.
+- `POST /api/portal` -> ouvre le portail client Stripe.
 
-## Produits
+## Liens de téléchargement (PDF/Anki)
 
-Les identifiants produits sont définis dans `src/products.js`.
-Renseignez les `STRIPE_PRICE_*` correspondants dans `.env`.
+- Le mapping produit -> fichiers est centralisé dans `src/downloads.js`.
+- `GET /api/downloads` lit `session.metadata.productId` (et `session.metadata.level` si présent) puis renvoie `downloads: [{ label, url }]`.
+- Les produits `vocabulary-one-hsk`, `writing-one-hsk` et `vocabulary-writing-one-hsk` exigent `level` au checkout.
+- Pour un produit bundle, l'API peut renvoyer plusieurs liens dans `downloads`.
 
-## Notes
+## Email post-achat
 
-- `MARKETPLACE_BASE_URL` et `APP_BASE_URL` servent aux redirections après paiement.
-- `DOWNLOADS_BASE_URL` doit pointer vers l'endroit où vous hébergez les fichiers PDF/Anki.
+- Le webhook `checkout.session.completed` peut envoyer un email de confirmation avec les liens d'acces.
+- L'envoi est actif si `RESEND_API_KEY` et `PURCHASE_EMAIL_FROM` sont configures.
+- `PURCHASE_EMAIL_REPLY_TO` est optionnel.

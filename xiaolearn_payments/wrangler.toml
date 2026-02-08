@@ -1,0 +1,13 @@
+name = "xiaolearn-payments"
+main = "src/worker.js"
+compatibility_date = "2026-02-07"
+compatibility_flags = ["nodejs_compat"]
+
+routes = [
+  { pattern = "payments.xiaolearn.com/*", zone_name = "xiaolearn.com" }
+]
+
+[vars]
+APP_BASE_URL = "https://app.xiaolearn.com"
+MARKETPLACE_BASE_URL = "https://shop.xiaolearn.com"
+DOWNLOADS_BASE_URL = "https://downloads.xiaolearn.com"
