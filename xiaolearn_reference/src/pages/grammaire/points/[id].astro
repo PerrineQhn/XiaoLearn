@@ -53,6 +53,15 @@ const exerciseQuestions = buildGrammarPointExercises({
   examples: point.examples,
   usage: point.usage,
 });
+
+const pageSections: Array<{ id: string; label: string }> = [];
+if (point.structure) pageSections.push({ id: 'structure', label: 'Structure' });
+if (point.elements.length > 0) pageSections.push({ id: 'elements-concernes', label: 'Éléments concernés' });
+if (point.usage.length > 0) pageSections.push({ id: 'utilisation', label: "Comment l'utiliser" });
+if (point.examples.length > 0) pageSections.push({ id: 'exemples', label: 'Exemples' });
+if (noteItems.length > 0) pageSections.push({ id: 'notes-exceptions', label: 'Notes et exceptions' });
+if (mistakeItems.length > 0) pageSections.push({ id: 'erreurs-frequentes', label: 'Erreurs fréquentes' });
+if (exerciseQuestions.length > 0) pageSections.push({ id: 'exercice-application', label: "Exercice d'application" });
 ---
 
 <BaseLayout
@@ -85,14 +94,14 @@ const exerciseQuestions = buildGrammarPointExercises({
         </header>
 
         {point.structure && (
-          <section class="block">
+          <section id="structure" class="block">
             <h2>Structure</h2>
             <pre>{point.structure}</pre>
           </section>
         )}
 
         {point.elements.length > 0 && (
-          <section class="block">
+          <section id="elements-concernes" class="block">
             <h2>Éléments concernés</h2>
             <div class="element-pills">
               {point.elements.map((element) => (
@@ -103,7 +112,7 @@ const exerciseQuestions = buildGrammarPointExercises({
         )}
 
         {point.usage.length > 0 && (
-          <section class="block">
+          <section id="utilisation" class="block">
             <h2>Comment l'utiliser</h2>
             <ul>
               {point.usage.map((item) => (
@@ -114,7 +123,7 @@ const exerciseQuestions = buildGrammarPointExercises({
         )}
 
         {point.examples.length > 0 && (
-          <section class="block">
+          <section id="exemples" class="block">
             <h2>Exemples</h2>
             <div class="example-grid">
               {point.examples.map((example) => (
@@ -128,17 +137,8 @@ const exerciseQuestions = buildGrammarPointExercises({
           </section>
         )}
 
-        {exerciseQuestions.length > 0 && (
-          <ExerciseQuiz
-            title="Exercice d'application"
-            intro="Choisis le bon élément dans chaque phrase, puis termine l'exercice pour afficher la correction."
-            questions={exerciseQuestions}
-            quizId={`grammar-${point.id}`}
-          />
-        )}
-
         {noteItems.length > 0 && (
-          <section class="block">
+          <section id="notes-exceptions" class="block">
             <h2>Notes et exceptions</h2>
             <ul>
               {noteItems.map((note) => (
@@ -149,7 +149,7 @@ const exerciseQuestions = buildGrammarPointExercises({
         )}
 
         {mistakeItems.length > 0 && (
-          <section class="block warning-block">
+          <section id="erreurs-frequentes" class="block warning-block">
             <h2>Erreurs fréquentes</h2>
             <ul>
               {mistakeItems.map((mistake) => (
@@ -158,9 +158,33 @@ const exerciseQuestions = buildGrammarPointExercises({
             </ul>
           </section>
         )}
+
+        {exerciseQuestions.length > 0 && (
+          <section id="exercice-application" class="block">
+            <ExerciseQuiz
+              title="Exercice d'application"
+              intro="Choisis le bon élément dans chaque phrase, puis termine l'exercice pour afficher la correction."
+              questions={exerciseQuestions}
+              quizId={`grammar-${point.id}`}
+            />
+          </section>
+        )}
       </article>
 
       <aside class="article-sidebar">
+        {pageSections.length > 0 && (
+          <div class="sidebar-card">
+            <h3>Sommaire</h3>
+            <ul class="summary-list">
+              {pageSections.map((section) => (
+                <li>
+                  <a href={`#${section.id}`}>{section.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div class="sidebar-card">
           <h3>Niveau</h3>
           <p class="level-name">{formatHSKLevelLabel(point.levelLabel)}</p>
@@ -268,6 +292,10 @@ const exerciseQuestions = buildGrammarPointExercises({
     margin-bottom: var(--spacing-sm);
   }
 
+  .block {
+    scroll-margin-top: 90px;
+  }
+
   .block pre {
     background: var(--bg-secondary);
     border: 1px solid var(--border-light);
@@ -371,12 +399,29 @@ const exerciseQuestions = buildGrammarPointExercises({
     gap: var(--spacing-xs);
   }
 
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--spacing-xs);
+  }
+
   .link-list a {
     color: var(--primary-red);
     font-size: 0.9rem;
   }
 
+  .summary-list a {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+  }
+
   .link-list a:hover {
+    opacity: 0.7;
+  }
+
+  .summary-list a:hover {
     opacity: 0.7;
   }
 
