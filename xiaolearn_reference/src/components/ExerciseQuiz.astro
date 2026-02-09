@@ -14,6 +14,25 @@ const {
   questions = [],
   quizId = `quiz-${Math.random().toString(36).slice(2, 10)}`,
 } = Astro.props;
+
+function splitPrompt(prompt: string): { main: string; translation: string } {
+  const lines = prompt
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length === 0) {
+    return { main: '', translation: '' };
+  }
+
+  const [main, ...rest] = lines;
+  const translation = rest
+    .join(' ')
+    .replace(/^\((.*)\)$/, '$1')
+    .trim();
+
+  return { main, translation };
+}
 ---
 
 {questions.length > 0 && (
@@ -22,31 +41,33 @@ const {
     <p class="quiz-intro">{intro}</p>
 
     <div class="exercise-questions">
-      {questions.map((question, questionIndex) => (
-        <fieldset
-          class="exercise-question-block"
-          data-question-index={questionIndex}
-          data-correct-index={question.correctIndex}
-          data-explanation={question.explanation || ''}
-        >
-          <legend class="quiz-question">
-            {questionIndex + 1}. {question.prompt}
-          </legend>
+      {questions.map((question, questionIndex) => {
+        const { main, translation } = splitPrompt(question.prompt);
+        return (
+          <fieldset
+            class="exercise-question-block"
+            data-question-index={questionIndex}
+            data-correct-index={question.correctIndex}
+            data-explanation={question.explanation || ''}
+          >
+            <legend class="quiz-question">{questionIndex + 1}. {main || question.prompt}</legend>
+            {translation && <p class="quiz-translation">({translation})</p>}
 
-          <div class="quiz-options">
-            {question.options.map((option, optionIndex) => (
-              <label class="quiz-option">
-                <input
-                  type="radio"
-                  name={`${quizId}-q-${questionIndex}`}
-                  value={optionIndex}
-                />
-                <span>{option}</span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
-      ))}
+            <div class="quiz-options">
+              {question.options.map((option, optionIndex) => (
+                <label class="quiz-option">
+                  <input
+                    type="radio"
+                    name={`${quizId}-q-${questionIndex}`}
+                    value={optionIndex}
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        );
+      })}
     </div>
 
     <div class="exercise-actions">
@@ -187,9 +208,16 @@ const {
   }
 
   .exercise-question-block .quiz-question {
-    white-space: pre-line;
+    white-space: normal;
     line-height: 1.55;
     margin-bottom: var(--spacing-sm);
+  }
+
+  .exercise-question-block .quiz-translation {
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-sm);
+    line-height: 1.45;
+    font-size: 0.98rem;
   }
 
   .exercise-question-block .quiz-option {
