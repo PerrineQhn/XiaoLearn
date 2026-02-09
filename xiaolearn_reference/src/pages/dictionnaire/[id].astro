@@ -4,23 +4,10 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
 import type { HSKEntry } from '../../types/hsk';
 import { getHSKLevelInfo } from '../../types/hsk';
-
-import hsk1Data from '../../data/hsk1.json';
-import hsk2Data from '../../data/hsk2.json';
-import hsk3Data from '../../data/hsk3.json';
-import hsk4Data from '../../data/hsk4.json';
-import hsk5Data from '../../data/hsk5.json';
+import { ALL_HSK_ENTRIES } from '../../data/allHskEntries';
 
 export function getStaticPaths() {
-  const allEntries: HSKEntry[] = [
-    ...hsk1Data as HSKEntry[],
-    ...hsk2Data as HSKEntry[],
-    ...hsk3Data as HSKEntry[],
-    ...hsk4Data as HSKEntry[],
-    ...hsk5Data as HSKEntry[],
-  ];
-
-  return allEntries.map(entry => ({
+  return ALL_HSK_ENTRIES.map(entry => ({
     params: { id: entry.id },
     props: { entry },
   }));
@@ -32,12 +19,31 @@ interface Props {
 
 const { entry } = Astro.props;
 const levelInfo = getHSKLevelInfo(entry.level);
+const levelEntries = ALL_HSK_ENTRIES.filter(item => item.level === entry.level);
+const currentIndex = levelEntries.findIndex(item => item.id === entry.id);
+const previousEntry = currentIndex > 0 ? levelEntries[currentIndex - 1] : undefined;
+const nextEntry = currentIndex >= 0 && currentIndex < levelEntries.length - 1
+  ? levelEntries[currentIndex + 1]
+  : undefined;
+const canonicalUrl = `https://xiaolearn.com/dictionnaire/${entry.id}`;
+const definedTermSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: entry.hanzi,
+  alternateName: entry.pinyin,
+  termCode: entry.id,
+  description: `Mot ${entry.hanzi} (${entry.pinyin}) : ${entry.translationFr}.`,
+  inDefinedTermSet: 'https://xiaolearn.com/dictionnaire',
+  url: canonicalUrl,
+};
 ---
 
 <BaseLayout
   title={`${entry.hanzi} (${entry.pinyin}) - ${entry.translationFr}`}
   description={`Définition et exemples pour ${entry.hanzi} (${entry.pinyin}): ${entry.translationFr}. Niveau ${entry.level.toUpperCase()}.`}
+  canonical={canonicalUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
   <section class="page-header" style={`--level-color: ${levelInfo?.color}; --level-bg: ${levelInfo?.bgColor}`}>
     <div class="container">
       <Breadcrumb items={[
@@ -64,7 +70,7 @@ const levelInfo = getHSKLevelInfo(entry.level);
 
           {entry.translationFrAlt && entry.translationFrAlt.length > 0 && (
             <div class="alt-translations">
-              <h3>Autrès traductions</h3>
+              <h3>Autres traductions</h3>
               <ul>
                 {entry.translationFrAlt.map(alt => (
                   <li>{alt}</li>
@@ -130,6 +136,25 @@ const levelInfo = getHSKLevelInfo(entry.level);
               ← Retour à {levelInfo?.name}
             </a>
           </div>
+          {(previousEntry || nextEntry) && (
+            <div class="nav-card">
+              <h4>Navigation</h4>
+              <div class="entry-nav">
+                {previousEntry && (
+                  <a href={`/dictionnaire/${previousEntry.id}`} class="entry-link">
+                    <span class="entry-label">Précédent</span>
+                    <span class="entry-value">{previousEntry.hanzi} · {previousEntry.pinyin}</span>
+                  </a>
+                )}
+                {nextEntry && (
+                  <a href={`/dictionnaire/${nextEntry.id}`} class="entry-link">
+                    <span class="entry-label">Suivant</span>
+                    <span class="entry-value">{nextEntry.hanzi} · {nextEntry.pinyin}</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </aside>
       </div>
     </div>
@@ -305,6 +330,39 @@ const levelInfo = getHSKLevelInfo(entry.level);
     border-radius: var(--radius-sm);
     font-size: 0.8rem;
     color: var(--text-secondary);
+  }
+
+  .entry-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+  }
+
+  .entry-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+  }
+
+  .entry-link:hover {
+    border-color: var(--primary-red-light);
+  }
+
+  .entry-label {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .entry-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
   }
 
   @media (max-width: 900px) {

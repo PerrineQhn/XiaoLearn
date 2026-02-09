@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 export interface GrammarExample {
   chinese: string;
   french: string;
+  pinyin?: string;
 }
 
 export interface GrammarPoint {
@@ -24,6 +25,7 @@ export interface GrammarPoint {
   usage: string[];
   elements: string[];
   examples: GrammarExample[];
+  termVariations: string[];
   notes: string[];
   commonMistakes: string[];
   searchableText: string;
@@ -50,6 +52,12 @@ interface SectionBlock {
   heading: string;
   normalizedHeading: string;
   content: string;
+}
+
+interface HSKTermInfo {
+  term: string;
+  translationFr: string;
+  explanationFr: string;
 }
 
 const SOURCE_FILE = 'hsk_grammar_hsk1_to_hsk7_9_articles.html';
@@ -79,6 +87,60 @@ const NON_LEXICAL_TERMS = new Set([
   '结果',
   '程度',
 ]);
+
+const PARTICLE_HINT_LABELS: Array<[string, string]> = [
+  ['了', '了 (aspect/changement)'],
+  ['着', '着 (duratif)'],
+  ['过', '过 (expérience)'],
+  ['吗', '吗 (interrogation)'],
+  ['呢', '呢 (progressif/insistance)'],
+  ['不', '不 (négation générale)'],
+  ['没', '没/没有 (négation du passé)'],
+  ['把', '把 (mise en avant de l’objet)'],
+  ['被', '被 (passif)'],
+  ['得', '得 (degré/complément)'],
+];
+
+const TERM_CONTRAST_HINTS: Record<string, string[]> = {
+  '在|正在': [
+    '在 + verbe et 正在 + verbe indiquent une action en cours.',
+    '正在 insiste davantage sur l’action en cours (souvent plus explicite/formel).',
+    'Pour la localisation, on utilise 在 + lieu (pas *正在 + lieu).',
+  ],
+  '会|能': [
+    '会 met l’accent sur une capacité acquise (savoir-faire).',
+    '能 exprime surtout la possibilité/capacité concrète selon la situation.',
+  ],
+  '会|能|可以': [
+    '会 : compétence apprise.',
+    '能 : possibilité/capacité concrète.',
+    '可以 : permission / autorisation.',
+  ],
+  '不|没': [
+    '不 sert surtout pour le présent/futur, les habitudes et les états.',
+    '没/没有 sert surtout pour nier un fait passé ou l’existence/possession.',
+  ],
+  '不|没有': [
+    '不 sert surtout pour le présent/futur, les habitudes et les états.',
+    '没有 sert surtout pour nier un fait passé ou la possession/existence.',
+  ],
+  '没|没有': [
+    '没 est la forme courte fréquente à l’oral.',
+    '没有 est la forme complète, souvent plus explicite.',
+  ],
+  '想|要': [
+    '想 exprime plutôt une intention, une envie ou une pensée.',
+    '要 est généralement plus direct (volonté, besoin, exigence imminente).',
+  ],
+  '再|又': [
+    '又 renvoie souvent à une répétition déjà réalisée.',
+    '再 renvoie plus souvent à une répétition future/à venir.',
+  ],
+  '快|快要': [
+    '快 + adjectif/verbe peut exprimer la rapidité ou l’imminence selon le contexte.',
+    '快要 + verbe insiste sur “sur le point de”.',
+  ],
+};
 
 const GROUP_DEFINITIONS: GroupDefinition[] = [
   {
@@ -298,7 +360,11 @@ const TITLE_HEAD_TRANSLATIONS: Record<string, string> = {
   '其 他': 'Autres',
 };
 
+const HSK_PINYIN_LEXICON = buildHSKPinyinLexicon();
+const HSK_PINYIN_MAX_KEY_LENGTH = getMaxLexiconKeyLength(HSK_PINYIN_LEXICON);
 const HSK_EXAMPLE_INDEX = buildHSKExampleIndex();
+const HSK_TERM_INFO_INDEX = buildHSKTermInfoIndex();
+const HSK_SENTENCE_INDEX = buildHSKSentenceIndex(HSK_EXAMPLE_INDEX);
 const CATALOG = buildCatalog();
 
 function buildCatalog() {
@@ -345,7 +411,9 @@ function parseGrammarFile(fileName: string): GrammarPoint[] {
     const elements = getSectionElements(sections, sourceTitle);
     const objective = buildObjective(objectiveRaw, sourceTitle, categoryRaw, subRaw, elements);
     const examples = buildRelevantExamples(extractExamples(body), elements, sourceTitle);
-    const notes = getSectionList(sections, ['notes', 'remarques', 'attention']);
+    const termVariations = buildTermVariations(elements, sourceTitle, examples);
+    const notes = dedupe(getSectionList(sections, ['notes', 'remarques', 'attention']).concat(termVariations));
+    const effectiveUsage = usage.length > 0 ? usage : buildFallbackUsage(elements, sourceTitle, examples);
     const commonMistakes = getSectionList(sections, ['pieges frequents', 'erreurs frequentes']);
 
     const category = buildCategoryLabel(categoryRaw, subRaw);
@@ -364,8 +432,9 @@ function parseGrammarFile(fileName: string): GrammarPoint[] {
       detail,
       stripInlineMarkdown(objective),
       structure,
-      usage.map((item) => stripInlineMarkdown(item)).join(' '),
+      effectiveUsage.map((item) => stripInlineMarkdown(item)).join(' '),
       elements.join(' '),
+      termVariations.map((item) => stripInlineMarkdown(item)).join(' '),
       notes.map((item) => stripInlineMarkdown(item)).join(' '),
       commonMistakes.map((item) => stripInlineMarkdown(item)).join(' '),
       examples.map((example) => `${example.chinese} ${example.french}`).join(' '),
@@ -388,9 +457,10 @@ function parseGrammarFile(fileName: string): GrammarPoint[] {
       detail,
       objective,
       structure,
-      usage,
+      usage: effectiveUsage,
       elements,
       examples,
+      termVariations,
       notes,
       commonMistakes,
       searchableText,
@@ -672,11 +742,147 @@ function extractExamples(body: string): GrammarExample[] {
   return Array.from(
     body.matchAll(/<div\s+class=['"]ex['"]>[\s\S]*?<div\s+class=['"]zh['"]>([\s\S]*?)<\/div>[\s\S]*?<div\s+class=['"]fr['"]>([\s\S]*?)<\/div>[\s\S]*?<\/div>/g),
   )
-    .map((example) => ({
-      chinese: cleanText(example[1]),
-      french: cleanText(example[2]),
-    }))
+    .map((example) => {
+      const chinese = cleanText(example[1]);
+      const french = cleanText(example[2]);
+      const fallback = HSK_SENTENCE_INDEX.get(chinese)
+        || HSK_SENTENCE_INDEX.get(normalizeChineseSentence(chinese));
+      const guessedPinyin = guessExamplePinyin(chinese);
+      return {
+        chinese,
+        french,
+        pinyin: fallback?.pinyin || guessedPinyin || undefined,
+      };
+    })
     .filter((example) => example.chinese || example.french);
+}
+
+function buildHSKPinyinLexicon(): Map<string, string> {
+  const lexicon = new Map<string, string>();
+
+  for (const fileName of HSK_EXAMPLE_FILES) {
+    const fileCandidates: Array<string | URL> = [
+      new URL(`./${fileName}`, import.meta.url),
+      resolve(process.cwd(), 'src', 'data', fileName),
+      resolve(process.cwd(), 'xiaolearn_reference', 'src', 'data', fileName),
+    ];
+    const existingFile = fileCandidates.find((candidate) => existsSync(candidate));
+    if (!existingFile) continue;
+
+    let records: unknown;
+    try {
+      records = JSON.parse(readFileSync(existingFile, 'utf-8'));
+    } catch {
+      continue;
+    }
+
+    if (!Array.isArray(records)) continue;
+
+    for (const record of records) {
+      if (!record || typeof record !== 'object') continue;
+
+      const rawHanzi = cleanText(String((record as { hanzi?: unknown }).hanzi || ''));
+      const basePinyin = cleanText(String((record as { pinyin?: unknown }).pinyin || ''));
+      if (rawHanzi && basePinyin) {
+        for (const term of extractHanziVariants(rawHanzi)) {
+          setBestPinyin(lexicon, term, basePinyin);
+        }
+      }
+
+      const examplesRaw = (record as { examples?: unknown }).examples;
+      if (!Array.isArray(examplesRaw)) continue;
+      for (const example of examplesRaw) {
+        if (!example || typeof example !== 'object') continue;
+        const chinese = cleanText(String((example as { chinese?: unknown }).chinese || ''));
+        const pinyin = cleanText(String((example as { pinyin?: unknown }).pinyin || ''));
+        if (chinese && pinyin) {
+          setBestPinyin(lexicon, chinese, pinyin);
+        }
+      }
+    }
+  }
+
+  return lexicon;
+}
+
+function getMaxLexiconKeyLength(lexicon: Map<string, string>): number {
+  let max = 1;
+  for (const key of lexicon.keys()) {
+    if (key.length > max) max = key.length;
+  }
+  return max;
+}
+
+function pinyinQualityScore(value: string): number {
+  return value.replace(/\s+/g, ' ').trim().length;
+}
+
+function setBestPinyin(lexicon: Map<string, string>, hanzi: string, pinyin: string): void {
+  if (!hanzi || !pinyin) return;
+  const existing = lexicon.get(hanzi);
+  if (!existing || pinyinQualityScore(pinyin) > pinyinQualityScore(existing)) {
+    lexicon.set(hanzi, pinyin);
+  }
+}
+
+function guessExamplePinyin(chinese: string): string {
+  const text = cleanText(chinese);
+  if (!text) return '';
+
+  const tokens: string[] = [];
+  let index = 0;
+  let totalHanzi = 0;
+  let matchedHanzi = 0;
+
+  while (index < text.length) {
+    const char = text[index];
+    if (/[，,。.!！？?、；;：:“”"'’‘（）()【】\[\]\s]/.test(char)) {
+      tokens.push(char);
+      index += 1;
+      continue;
+    }
+
+    if (!/[\u3400-\u9fff]/.test(char)) {
+      index += 1;
+      continue;
+    }
+
+    totalHanzi += 1;
+    let matchedLength = 0;
+    let matchedPinyin = '';
+    const maxLength = Math.min(HSK_PINYIN_MAX_KEY_LENGTH, text.length - index);
+    for (let length = maxLength; length >= 1; length -= 1) {
+      const segment = text.slice(index, index + length);
+      const pinyin = HSK_PINYIN_LEXICON.get(segment);
+      if (!pinyin) continue;
+      matchedLength = length;
+      matchedPinyin = pinyin;
+      break;
+    }
+
+    if (matchedLength > 0) {
+      tokens.push(matchedPinyin);
+      matchedHanzi += matchedLength;
+      if (matchedLength > 1) {
+        totalHanzi += matchedLength - 1;
+      }
+      index += matchedLength;
+      continue;
+    }
+
+    index += 1;
+  }
+
+  if (totalHanzi === 0 || matchedHanzi === 0) return '';
+  if (matchedHanzi / totalHanzi < 0.65) return '';
+
+  return tokens
+    .join(' ')
+    .replace(/\s+([,.;!?，。！？；：])/g, '$1')
+    .replace(/([（(])\s+/g, '$1')
+    .replace(/\s+([）)])/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function buildHSKExampleIndex(): Map<string, GrammarExample[]> {
@@ -721,8 +927,13 @@ function buildHSKExampleIndex(): Map<string, GrammarExample[]> {
                 || '',
             ),
           );
+          const pinyin = cleanText(String((example as { pinyin?: unknown }).pinyin || ''));
           if (!chinese || !french) return null;
-          return { chinese, french };
+          return {
+            chinese,
+            french,
+            pinyin: pinyin || guessExamplePinyin(chinese) || undefined,
+          };
         })
         .filter((example): example is GrammarExample => example !== null);
 
@@ -740,6 +951,217 @@ function buildHSKExampleIndex(): Map<string, GrammarExample[]> {
   }
 
   return index;
+}
+
+function buildHSKSentenceIndex(termIndex: Map<string, GrammarExample[]>): Map<string, GrammarExample> {
+  const sentenceIndex = new Map<string, GrammarExample>();
+  for (const examples of termIndex.values()) {
+    for (const example of examples) {
+      if (!sentenceIndex.has(example.chinese)) {
+        sentenceIndex.set(example.chinese, example);
+      }
+      const normalizedChinese = normalizeChineseSentence(example.chinese);
+      if (normalizedChinese && !sentenceIndex.has(normalizedChinese)) {
+        sentenceIndex.set(normalizedChinese, example);
+      }
+    }
+  }
+  return sentenceIndex;
+}
+
+function normalizeChineseSentence(value: string): string {
+  return value
+    .replace(/[，,。.!！？?、；;：:“”"'’‘（）()【】\[\]\s]/g, '')
+    .trim();
+}
+
+function buildHSKTermInfoIndex(): Map<string, HSKTermInfo> {
+  const infoIndex = new Map<string, HSKTermInfo>();
+
+  for (const fileName of HSK_EXAMPLE_FILES) {
+    const fileCandidates: Array<string | URL> = [
+      new URL(`./${fileName}`, import.meta.url),
+      resolve(process.cwd(), 'src', 'data', fileName),
+      resolve(process.cwd(), 'xiaolearn_reference', 'src', 'data', fileName),
+    ];
+    const existingFile = fileCandidates.find((candidate) => existsSync(candidate));
+    if (!existingFile) continue;
+
+    let records: unknown;
+    try {
+      records = JSON.parse(readFileSync(existingFile, 'utf-8'));
+    } catch {
+      continue;
+    }
+
+    if (!Array.isArray(records)) continue;
+
+    for (const record of records) {
+      if (!record || typeof record !== 'object') continue;
+      const rawHanzi = typeof (record as { hanzi?: unknown }).hanzi === 'string'
+        ? cleanText(String((record as { hanzi: string }).hanzi))
+        : '';
+      if (!rawHanzi) continue;
+
+      const variants = extractHanziVariants(rawHanzi);
+      if (variants.length === 0) continue;
+
+      const translationFr = cleanText(
+        String(
+          (record as { translationFr?: unknown }).translationFr
+            || (record as { translation?: unknown }).translation
+            || '',
+        ),
+      );
+      const explanationFrRaw = cleanText(String((record as { explanationFr?: unknown }).explanationFr || ''));
+      const explanationFr = shortFrenchExplanation(explanationFrRaw);
+
+      for (const variant of variants) {
+        const existing = infoIndex.get(variant);
+        const candidate: HSKTermInfo = {
+          term: variant,
+          translationFr,
+          explanationFr,
+        };
+        if (!existing) {
+          infoIndex.set(variant, candidate);
+          continue;
+        }
+
+        // Prefer entries with richer French metadata.
+        const existingScore = Number(Boolean(existing.translationFr)) + Number(Boolean(existing.explanationFr));
+        const candidateScore = Number(Boolean(candidate.translationFr)) + Number(Boolean(candidate.explanationFr));
+        if (candidateScore > existingScore) {
+          infoIndex.set(variant, candidate);
+        }
+      }
+    }
+  }
+
+  return infoIndex;
+}
+
+function shortFrenchExplanation(value: string): string {
+  if (!value) return '';
+  const firstSentence = value.split(/(?<=[.!?])\s+/)[0]?.trim() || value.trim();
+  if (!firstSentence) return '';
+
+  const compact = firstSentence.replace(/\s+/g, ' ');
+  if (compact.length <= 140) return compact;
+  return `${compact.slice(0, 137).trim()}...`;
+}
+
+function normalizeGrammarTerm(value: string): string {
+  return cleanText(value)
+    .replace(/[0-9]+$/g, '')
+    .replace(/[（(][^)）]*[)）]/g, '')
+    .replace(/\s+/g, '');
+}
+
+function displayGrammarTerm(value: string): string {
+  const normalized = normalizeGrammarTerm(value);
+  return normalized || cleanText(value);
+}
+
+function findTermInfo(variants: string[]): HSKTermInfo | null {
+  let best: HSKTermInfo | null = null;
+
+  for (const variant of variants) {
+    const info = HSK_TERM_INFO_INDEX.get(variant);
+    if (!info) continue;
+    if (!best) {
+      best = info;
+      continue;
+    }
+
+    const bestScore = Number(Boolean(best.translationFr)) + Number(Boolean(best.explanationFr));
+    const infoScore = Number(Boolean(info.translationFr)) + Number(Boolean(info.explanationFr));
+    if (infoScore > bestScore) {
+      best = info;
+    }
+  }
+
+  return best;
+}
+
+function buildParticleHintsForTerm(variants: string[], examples: GrammarExample[]): string {
+  const related = examples.filter((example) => variants.some((variant) => example.chinese.includes(variant)));
+  if (related.length === 0) return '';
+
+  const foundLabels = PARTICLE_HINT_LABELS
+    .filter(([token]) => related.some((example) => example.chinese.includes(token)))
+    .map(([, label]) => label)
+    .slice(0, 5);
+
+  if (foundLabels.length === 0) return '';
+  return `Combinaisons fréquentes observées : ${foundLabels.join(', ')}.`;
+}
+
+function buildTermVariations(elements: string[], sourceTitle: string, examples: GrammarExample[]): string[] {
+  const terms = collectExampleTerms(elements, sourceTitle);
+  if (terms.length === 0) return [];
+
+  const normalizedTerms = dedupe(terms.map((term) => normalizeGrammarTerm(term)).filter(Boolean));
+  const cappedTerms = normalizedTerms.slice(0, 8);
+  const key = cappedTerms.slice().sort((a, b) => a.localeCompare(b)).join('|');
+  const guidance: string[] = [];
+
+  if (TERM_CONTRAST_HINTS[key]) {
+    guidance.push(...TERM_CONTRAST_HINTS[key]);
+  }
+
+  for (const term of cappedTerms) {
+    const variants = extractHanziVariants(term);
+    const info = findTermInfo(variants.length > 0 ? variants : [term]);
+    const particleHint = buildParticleHintsForTerm(variants.length > 0 ? variants : [term], examples);
+
+    let line = `**${term}**`;
+    if (info?.translationFr) {
+      line += ` : ${info.translationFr}.`;
+    } else {
+      line += ' : emploi à distinguer selon le contexte.';
+    }
+    if (info?.explanationFr) {
+      line += ` ${info.explanationFr}`;
+    }
+    if (particleHint) {
+      line += ` ${particleHint}`;
+    }
+
+    guidance.push(line.trim());
+  }
+
+  if (normalizedTerms.length > cappedTerms.length) {
+    guidance.push('D’autres termes de cette leçon suivent le même principe : compare-les avec les exemples pour valider le contexte.');
+  }
+
+  return dedupe(guidance);
+}
+
+function buildFallbackUsage(elements: string[], sourceTitle: string, examples: GrammarExample[]): string[] {
+  const terms = collectExampleTerms(elements, sourceTitle).map((term) => normalizeGrammarTerm(term)).filter(Boolean);
+  const uniqueTerms = dedupe(terms);
+  if (uniqueTerms.length <= 1) return [];
+
+  const key = uniqueTerms.slice(0, 8).sort((a, b) => a.localeCompare(b)).join('|');
+  if (TERM_CONTRAST_HINTS[key]) {
+    return TERM_CONTRAST_HINTS[key].slice(0, 3);
+  }
+
+  const firstTerm = uniqueTerms[0];
+  const secondTerm = uniqueTerms[1];
+  const hasParticleContrast = examples.some((example) => /[了吗不没把被]/.test(example.chinese));
+
+  const generic = [
+    `Comparer **${firstTerm}** et **${secondTerm}** avant de remplacer un terme par un autre dans une même phrase.`,
+    'Vérifier la position dans la phrase (avant le verbe, après le verbe, ou dans le groupe nominal).',
+  ];
+
+  if (hasParticleContrast) {
+    generic.push('Tester aussi la compatibilité avec les particules visibles dans les exemples (了, 吗, 不/没, etc.).');
+  }
+
+  return generic;
 }
 
 function extractHanziVariants(value: string): string[] {
@@ -803,14 +1225,15 @@ function buildRelevantExamples(rawExamples: GrammarExample[], elements: string[]
   const terms = collectExampleTerms(elements, sourceTitle);
   const baseExamples = dedupeExamples(rawExamples);
   if (terms.length === 0) {
-    return baseExamples;
+    return baseExamples.map(attachPinyinToExample);
   }
 
   const termFilteredBase = baseExamples.filter((example) => terms.some((term) => example.chinese.includes(term)));
   const fromLexicon = dedupeExamples(
     terms.flatMap((term) => HSK_EXAMPLE_INDEX.get(term) ?? []),
   );
-  const candidatePool = dedupeExamples(termFilteredBase.concat(fromLexicon));
+  const candidatePool = dedupeExamples(fromLexicon.concat(termFilteredBase))
+    .sort((a, b) => Number(Boolean(b.pinyin)) - Number(Boolean(a.pinyin)));
   const desiredPerTerm = terms.length === 1 ? 2 : 1;
   const selected: GrammarExample[] = [];
 
@@ -832,7 +1255,14 @@ function buildRelevantExamples(rawExamples: GrammarExample[], elements: string[]
     selected.push(example);
   }
 
-  return selected.length > 0 ? selected : baseExamples;
+  return (selected.length > 0 ? selected : baseExamples).map(attachPinyinToExample);
+}
+
+function attachPinyinToExample(example: GrammarExample): GrammarExample {
+  if (example.pinyin) return example;
+  const guessedPinyin = guessExamplePinyin(example.chinese);
+  if (!guessedPinyin) return example;
+  return { ...example, pinyin: guessedPinyin };
 }
 
 function buildGroups(points: GrammarPoint[]): GrammarGroup[] {

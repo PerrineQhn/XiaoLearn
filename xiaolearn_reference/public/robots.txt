@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://xiaolearn.com/sitemap.xml
+Sitemap: https://xiaolearn.com/sitemaps/dictionnaire.xml
+Sitemap: https://xiaolearn.com/sitemaps/grammaire.xml
+Sitemap: https://xiaolearn.com/sitemaps/contenu.xml

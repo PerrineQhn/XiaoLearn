@@ -31,6 +31,7 @@ function splitCompactListItems(items: string[]): string[] {
   return items.flatMap((item) => {
     const text = item.trim();
     if (!text) return [];
+    if (text.startsWith('**')) return [text];
 
     const sentenceChunks = text
       .split(/(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Ý]|Avec\b|Sans\b|Pour\b|Quand\b|Si\b|En\b|Au\b|À\b)/)
@@ -111,6 +112,7 @@ const mistakeItems = splitCompactListItems(point.commonMistakes);
               {point.examples.map((example) => (
                 <article class="example-card">
                   <p class="cn">{example.chinese}</p>
+                  {example.pinyin && <p class="py">{example.pinyin}</p>}
                   <p class="fr">{example.french}</p>
                 </article>
               ))}
@@ -296,6 +298,13 @@ const mistakeItems = splitCompactListItems(point.commonMistakes);
   .example-card .cn {
     font-size: 1.1rem;
     color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  .example-card .py {
+    font-size: 0.88rem;
+    color: var(--text-tertiary);
+    font-style: italic;
     margin-bottom: 2px;
   }
 
