@@ -57,6 +57,9 @@
 # Test coverage
 **/coverage/
 
+# PDFs are local-only assets and must never be versioned
+**/*.pdf
+
 # Large local assets (kept locally, not versioned on GitHub)
 xiaolearn_pdfs/manuel/mandarin_volume1_dictionary.pdf
 xiaolearn_reference/新版HSK口语/新版HSK（三级）口语音频.wav
