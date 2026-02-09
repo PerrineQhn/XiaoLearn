@@ -44,13 +44,15 @@ function splitPrompt(prompt: string): { main: string; translation: string } {
       {questions.map((question, questionIndex) => {
         const { main, translation } = splitPrompt(question.prompt);
         return (
-          <fieldset
+          <div
             class="exercise-question-block"
+            role="group"
+            aria-label={`Question ${questionIndex + 1}`}
             data-question-index={questionIndex}
             data-correct-index={question.correctIndex}
             data-explanation={question.explanation || ''}
           >
-            <legend class="quiz-question">{questionIndex + 1}. {main || question.prompt}</legend>
+            <p class="quiz-question">{questionIndex + 1}. {main || question.prompt}</p>
             {translation && <p class="quiz-translation">({translation})</p>}
 
             <div class="quiz-options">
@@ -65,7 +67,7 @@ function splitPrompt(prompt: string): { main: string; translation: string } {
                 </label>
               ))}
             </div>
-          </fieldset>
+          </div>
         );
       })}
     </div>
