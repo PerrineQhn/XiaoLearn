@@ -1,0 +1,232 @@
+---
+import type { ExerciseQuestion } from '../utils/exercises';
+
+interface Props {
+  title?: string;
+  intro?: string;
+  questions: ExerciseQuestion[];
+  quizId?: string;
+}
+
+const {
+  title = 'Exercices',
+  intro = "Réponds à toutes les questions, puis clique sur « Terminer l'exercice » pour afficher la correction complète.",
+  questions = [],
+  quizId = `quiz-${Math.random().toString(36).slice(2, 10)}`,
+} = Astro.props;
+---
+
+{questions.length > 0 && (
+  <section class="quiz exercise-quiz" data-exercise-quiz data-quiz-id={quizId}>
+    <h2>{title}</h2>
+    <p class="quiz-intro">{intro}</p>
+
+    <div class="exercise-questions">
+      {questions.map((question, questionIndex) => (
+        <fieldset
+          class="exercise-question-block"
+          data-question-index={questionIndex}
+          data-correct-index={question.correctIndex}
+          data-explanation={question.explanation || ''}
+        >
+          <legend class="quiz-question">
+            {questionIndex + 1}. {question.prompt}
+          </legend>
+
+          <div class="quiz-options">
+            {question.options.map((option, optionIndex) => (
+              <label class="quiz-option">
+                <input
+                  type="radio"
+                  name={`${quizId}-q-${questionIndex}`}
+                  value={optionIndex}
+                />
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+    </div>
+
+    <div class="exercise-actions">
+      <button type="button" class="btn btn-primary btn-sm" data-submit>Terminer l'exercice</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-restart hidden>Recommencer</button>
+    </div>
+
+    <p class="exercise-status" data-status></p>
+
+    <div class="quiz-explanation exercise-results" data-results hidden>
+      <p class="exercise-score" data-score></p>
+      <ol class="exercise-corrections" data-corrections></ol>
+    </div>
+  </section>
+)}
+
+<script>
+  function setupExerciseQuiz(section) {
+    const submitButton = section.querySelector('[data-submit]');
+    const restartButton = section.querySelector('[data-restart]');
+    const statusNode = section.querySelector('[data-status]');
+    const resultsNode = section.querySelector('[data-results]');
+    const scoreNode = section.querySelector('[data-score]');
+    const correctionsNode = section.querySelector('[data-corrections]');
+    const questionNodes = Array.from(section.querySelectorAll('[data-question-index]'));
+
+    if (!submitButton || !statusNode || !resultsNode || !scoreNode || !correctionsNode || questionNodes.length === 0) return;
+
+    function resetQuiz() {
+      questionNodes.forEach((questionNode) => {
+        const labels = Array.from(questionNode.querySelectorAll('.quiz-option'));
+        labels.forEach((label) => label.classList.remove('correct', 'incorrect'));
+        const radios = Array.from(questionNode.querySelectorAll('input[type="radio"]'));
+        radios.forEach((radio) => {
+          radio.checked = false;
+          radio.disabled = false;
+        });
+      });
+
+      statusNode.textContent = '';
+      scoreNode.textContent = '';
+      correctionsNode.innerHTML = '';
+      resultsNode.hidden = true;
+      submitButton.disabled = false;
+      if (restartButton) restartButton.hidden = true;
+    }
+
+    function finalizeQuiz() {
+      const userAnswers = [];
+      let missingAnswers = false;
+
+      questionNodes.forEach((questionNode) => {
+        const selected = questionNode.querySelector('input[type="radio"]:checked');
+        if (!selected) {
+          missingAnswers = true;
+          userAnswers.push(-1);
+          return;
+        }
+        userAnswers.push(Number(selected.value));
+      });
+
+      if (missingAnswers) {
+        statusNode.textContent = 'Réponds à toutes les questions avant de terminer.';
+        return;
+      }
+
+      let score = 0;
+      correctionsNode.innerHTML = '';
+
+      questionNodes.forEach((questionNode, questionIndex) => {
+        const correctIndex = Number(questionNode.dataset.correctIndex || -1);
+        const selectedIndex = userAnswers[questionIndex];
+        const labels = Array.from(questionNode.querySelectorAll('.quiz-option'));
+
+        labels.forEach((label, optionIndex) => {
+          label.classList.remove('correct', 'incorrect');
+          if (optionIndex === correctIndex) label.classList.add('correct');
+          if (optionIndex === selectedIndex && selectedIndex !== correctIndex) {
+            label.classList.add('incorrect');
+          }
+        });
+
+        if (selectedIndex === correctIndex) score += 1;
+
+        const selectedText = labels[selectedIndex]?.textContent?.trim() || '—';
+        const correctText = labels[correctIndex]?.textContent?.trim() || '—';
+        const explanation = (questionNode.dataset.explanation || '').trim();
+        const prompt = questionNode.querySelector('.quiz-question')?.textContent?.trim() || `Question ${questionIndex + 1}`;
+
+        const correctionItem = document.createElement('li');
+        correctionItem.innerHTML =
+          `<strong>${prompt}</strong><br>` +
+          `Ta réponse : ${selectedText}<br>` +
+          `Bonne réponse : ${correctText}` +
+          (explanation ? `<br>${explanation}` : '');
+        correctionsNode.appendChild(correctionItem);
+
+        const radios = Array.from(questionNode.querySelectorAll('input[type="radio"]'));
+        radios.forEach((radio) => {
+          radio.disabled = true;
+        });
+      });
+
+      statusNode.textContent = '';
+      scoreNode.textContent = `Score : ${score} / ${questionNodes.length}`;
+      resultsNode.hidden = false;
+      submitButton.disabled = true;
+      if (restartButton) restartButton.hidden = false;
+    }
+
+    submitButton.addEventListener('click', finalizeQuiz);
+    if (restartButton) restartButton.addEventListener('click', resetQuiz);
+  }
+
+  document.querySelectorAll('[data-exercise-quiz]').forEach(setupExerciseQuiz);
+</script>
+
+<style>
+  .exercise-quiz h2 {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .quiz-intro {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .exercise-questions {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .exercise-question-block {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+  }
+
+  .exercise-question-block .quiz-question {
+    white-space: pre-line;
+    line-height: 1.55;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .exercise-question-block .quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .exercise-question-block .quiz-option input {
+    margin-top: 2px;
+  }
+
+  .exercise-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+
+  .exercise-status {
+    color: var(--primary-red);
+    margin-top: var(--spacing-sm);
+    min-height: 1.2em;
+  }
+
+  .exercise-results {
+    margin-top: var(--spacing-md);
+  }
+
+  .exercise-score {
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .exercise-corrections {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: var(--spacing-sm);
+  }
+</style>

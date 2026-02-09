@@ -2,8 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
+import ExerciseQuiz from '../../components/ExerciseQuiz.astro';
 import { getCollection } from 'astro:content';
 import { getHSKLevelInfo } from '../../types/hsk';
+import { buildNuanceExercises } from '../../utils/exercises';
 
 export async function getStaticPaths() {
   const nuanceEntries = await getCollection('nuances');
@@ -16,6 +18,11 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data } = entry;
 const levelInfo = getHSKLevelInfo(data.level);
+const exerciseQuestions = buildNuanceExercises({
+  words: data.words,
+  pinyin: data.pinyin,
+  html: data.html,
+});
 
 // Get related nuances
 const allNuances = await getCollection('nuances');
@@ -64,6 +71,13 @@ const relatedEntries = data.relatedNuances
           </header>
 
           <div class="prose" set:html={data.html}></div>
+
+          <ExerciseQuiz
+            title="Exercices de nuance"
+            intro="Complète les phrases avec le bon terme, puis termine l'exercice pour voir toutes les réponses."
+            questions={exerciseQuestions}
+            quizId={`nuance-${entry.id}`}
+          />
         </article>
 
         <aside class="article-sidebar">

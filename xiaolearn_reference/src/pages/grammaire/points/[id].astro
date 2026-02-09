@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
+import ExerciseQuiz from '../../../components/ExerciseQuiz.astro';
 import {
   formatHSKLevelLabel,
   formatInlineGrammarText,
@@ -10,6 +11,7 @@ import {
   type GrammarPoint,
 } from '../../../data/grammarCatalog';
 import { getHSKLevelInfo } from '../../../types/hsk';
+import { buildGrammarPointExercises } from '../../../utils/exercises';
 
 export async function getStaticPaths() {
   return getGrammarPoints().map((point) => ({
@@ -45,6 +47,12 @@ function splitCompactListItems(items: string[]): string[] {
 
 const noteItems = splitCompactListItems(point.notes);
 const mistakeItems = splitCompactListItems(point.commonMistakes);
+const exerciseQuestions = buildGrammarPointExercises({
+  title: point.title,
+  elements: point.elements,
+  examples: point.examples,
+  usage: point.usage,
+});
 ---
 
 <BaseLayout
@@ -118,6 +126,15 @@ const mistakeItems = splitCompactListItems(point.commonMistakes);
               ))}
             </div>
           </section>
+        )}
+
+        {exerciseQuestions.length > 0 && (
+          <ExerciseQuiz
+            title="Exercice d'application"
+            intro="Choisis le bon élément dans chaque phrase, puis termine l'exercice pour afficher la correction."
+            questions={exerciseQuestions}
+            quizId={`grammar-${point.id}`}
+          />
         )}
 
         {noteItems.length > 0 && (
