@@ -26,6 +26,24 @@ const relatedPoints = allPoints
   .filter((candidate) => candidate.id !== point.id)
   .filter((candidate) => candidate.category === point.category || candidate.level === point.level)
   .slice(0, 8);
+
+function splitCompactListItems(items: string[]): string[] {
+  return items.flatMap((item) => {
+    const text = item.trim();
+    if (!text) return [];
+
+    const sentenceChunks = text
+      .split(/(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Ý]|Avec\b|Sans\b|Pour\b|Quand\b|Si\b|En\b|Au\b|À\b)/)
+      .flatMap((chunk) => chunk.split(/\s*;\s+/))
+      .map((chunk) => chunk.trim())
+      .filter(Boolean);
+
+    return sentenceChunks.length > 1 ? sentenceChunks : [text];
+  });
+}
+
+const noteItems = splitCompactListItems(point.notes);
+const mistakeItems = splitCompactListItems(point.commonMistakes);
 ---
 
 <BaseLayout
@@ -66,7 +84,7 @@ const relatedPoints = allPoints
 
         {point.elements.length > 0 && (
           <section class="block">
-            <h2>Elements concernes</h2>
+            <h2>Éléments concernés</h2>
             <div class="element-pills">
               {point.elements.map((element) => (
                 <span>{element}</span>
@@ -100,22 +118,22 @@ const relatedPoints = allPoints
           </section>
         )}
 
-        {point.notes.length > 0 && (
+        {noteItems.length > 0 && (
           <section class="block">
             <h2>Notes et exceptions</h2>
             <ul>
-              {point.notes.map((note) => (
+              {noteItems.map((note) => (
                 <li set:html={formatInlineGrammarText(note)}></li>
               ))}
             </ul>
           </section>
         )}
 
-        {point.commonMistakes.length > 0 && (
+        {mistakeItems.length > 0 && (
           <section class="block warning-block">
             <h2>Erreurs fréquentes</h2>
             <ul>
-              {point.commonMistakes.map((mistake) => (
+              {mistakeItems.map((mistake) => (
                 <li set:html={formatInlineGrammarText(mistake)}></li>
               ))}
             </ul>

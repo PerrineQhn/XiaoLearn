@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 export interface GrammarExample {
   chinese: string;
@@ -52,6 +53,32 @@ interface SectionBlock {
 }
 
 const SOURCE_FILE = 'hsk_grammar_hsk1_to_hsk7_9_articles.html';
+const HSK_EXAMPLE_FILES = ['hsk1.json', 'hsk2.json', 'hsk3.json', 'hsk4.json', 'hsk5.json'];
+const NON_LEXICAL_TERMS = new Set([
+  '语法',
+  '结构',
+  '句子',
+  '短语',
+  '主语',
+  '谓语',
+  '宾语',
+  '补语',
+  '动词',
+  '名词',
+  '副词',
+  '形容词',
+  '代词',
+  '连词',
+  '助词',
+  '时间',
+  '处所',
+  '方向',
+  '数量',
+  '状态',
+  '可能',
+  '结果',
+  '程度',
+]);
 
 const GROUP_DEFINITIONS: GroupDefinition[] = [
   {
@@ -271,6 +298,7 @@ const TITLE_HEAD_TRANSLATIONS: Record<string, string> = {
   '其 他': 'Autres',
 };
 
+const HSK_EXAMPLE_INDEX = buildHSKExampleIndex();
 const CATALOG = buildCatalog();
 
 function buildCatalog() {
@@ -316,7 +344,7 @@ function parseGrammarFile(fileName: string): GrammarPoint[] {
     const usage = getSectionList(sections, ['comment lutiliser', 'emploi', 'usage']);
     const elements = getSectionElements(sections, sourceTitle);
     const objective = buildObjective(objectiveRaw, sourceTitle, categoryRaw, subRaw, elements);
-    const examples = extractExamples(body);
+    const examples = buildRelevantExamples(extractExamples(body), elements, sourceTitle);
     const notes = getSectionList(sections, ['notes', 'remarques', 'attention']);
     const commonMistakes = getSectionList(sections, ['pieges frequents', 'erreurs frequentes']);
 
@@ -649,6 +677,162 @@ function extractExamples(body: string): GrammarExample[] {
       french: cleanText(example[2]),
     }))
     .filter((example) => example.chinese || example.french);
+}
+
+function buildHSKExampleIndex(): Map<string, GrammarExample[]> {
+  const index = new Map<string, GrammarExample[]>();
+
+  for (const fileName of HSK_EXAMPLE_FILES) {
+    const fileCandidates: Array<string | URL> = [
+      new URL(`./${fileName}`, import.meta.url),
+      resolve(process.cwd(), 'src', 'data', fileName),
+      resolve(process.cwd(), 'xiaolearn_reference', 'src', 'data', fileName),
+    ];
+    const existingFile = fileCandidates.find((candidate) => existsSync(candidate));
+    if (!existingFile) continue;
+
+    let records: unknown;
+    try {
+      records = JSON.parse(readFileSync(existingFile, 'utf-8'));
+    } catch {
+      continue;
+    }
+
+    if (!Array.isArray(records)) continue;
+
+    for (const record of records) {
+      if (!record || typeof record !== 'object') continue;
+      const hanzi = typeof (record as { hanzi?: unknown }).hanzi === 'string'
+        ? cleanText(String((record as { hanzi: string }).hanzi))
+        : '';
+      if (!hanzi) continue;
+
+      const examplesRaw = (record as { examples?: unknown }).examples;
+      if (!Array.isArray(examplesRaw) || examplesRaw.length === 0) continue;
+
+      const entryExamples = examplesRaw
+        .map((example) => {
+          if (!example || typeof example !== 'object') return null;
+          const chinese = cleanText(String((example as { chinese?: unknown }).chinese || ''));
+          const french = cleanText(
+            String(
+              (example as { translationFr?: unknown }).translationFr
+                || (example as { translation?: unknown }).translation
+                || '',
+            ),
+          );
+          if (!chinese || !french) return null;
+          return { chinese, french };
+        })
+        .filter((example): example is GrammarExample => example !== null);
+
+      if (entryExamples.length === 0) continue;
+
+      const terms = extractHanziVariants(hanzi);
+      for (const term of terms) {
+        const relatedExamples = entryExamples.filter((example) => example.chinese.includes(term));
+        if (relatedExamples.length === 0) continue;
+
+        const previous = index.get(term) ?? [];
+        index.set(term, dedupeExamples(previous.concat(relatedExamples)));
+      }
+    }
+  }
+
+  return index;
+}
+
+function extractHanziVariants(value: string): string[] {
+  const text = cleanText(value);
+  if (!text) return [];
+
+  const chunks = text.match(/[\u4e00-\u9fff]+/g) ?? [];
+  if (chunks.length === 0) return [];
+
+  const hasListDelimiter = /[、,，/]/.test(text);
+  const hasOptionalMarker = /[（(].*[）)]/.test(text);
+  const variants = new Set<string>();
+
+  chunks.forEach((chunk, index) => {
+    if (hasOptionalMarker && !hasListDelimiter && chunks.length > 1 && chunk.length === 1 && index > 0) {
+      return;
+    }
+    variants.add(chunk);
+  });
+
+  if (hasOptionalMarker && !hasListDelimiter && chunks.length > 1) {
+    const compact = chunks.join('');
+    if (compact.length > 1) {
+      variants.add(compact);
+    }
+  }
+
+  return Array.from(variants);
+}
+
+function collectExampleTerms(elements: string[], sourceTitle: string): string[] {
+  const titleTokens = extractTitleTokens(sourceTitle).flatMap((token) => extractHanziVariants(token));
+  const rawTerms = dedupe(elements.flatMap((term) => extractHanziVariants(term)).concat(titleTokens));
+
+  return rawTerms.filter((term) => {
+    if (!term) return false;
+    if (NON_LEXICAL_TERMS.has(term)) return false;
+    return /[\u4e00-\u9fff]/.test(term);
+  });
+}
+
+function dedupeExamples(examples: GrammarExample[]): GrammarExample[] {
+  const seen = new Set<string>();
+  const output: GrammarExample[] = [];
+
+  for (const example of examples) {
+    const key = `${example.chinese}|||${example.french}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(example);
+  }
+
+  return output;
+}
+
+function countExamplesForTerm(examples: GrammarExample[], term: string): number {
+  return examples.reduce((count, example) => (example.chinese.includes(term) ? count + 1 : count), 0);
+}
+
+function buildRelevantExamples(rawExamples: GrammarExample[], elements: string[], sourceTitle: string): GrammarExample[] {
+  const terms = collectExampleTerms(elements, sourceTitle);
+  const baseExamples = dedupeExamples(rawExamples);
+  if (terms.length === 0) {
+    return baseExamples;
+  }
+
+  const termFilteredBase = baseExamples.filter((example) => terms.some((term) => example.chinese.includes(term)));
+  const fromLexicon = dedupeExamples(
+    terms.flatMap((term) => HSK_EXAMPLE_INDEX.get(term) ?? []),
+  );
+  const candidatePool = dedupeExamples(termFilteredBase.concat(fromLexicon));
+  const desiredPerTerm = terms.length === 1 ? 2 : 1;
+  const selected: GrammarExample[] = [];
+
+  for (const term of terms) {
+    for (const example of candidatePool) {
+      if (!example.chinese.includes(term)) continue;
+      if (selected.some((item) => item.chinese === example.chinese && item.french === example.french)) continue;
+
+      selected.push(example);
+      if (countExamplesForTerm(selected, term) >= desiredPerTerm) break;
+    }
+  }
+
+  // Keep a little extra context when available, while prioritizing term coverage.
+  const targetMin = Math.max(terms.length * desiredPerTerm, 2);
+  for (const example of candidatePool) {
+    if (selected.length >= targetMin + 2) break;
+    if (selected.some((item) => item.chinese === example.chinese && item.french === example.french)) continue;
+    selected.push(example);
+  }
+
+  return selected.length > 0 ? selected : baseExamples;
 }
 
 function buildGroups(points: GrammarPoint[]): GrammarGroup[] {

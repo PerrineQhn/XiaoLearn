@@ -44,7 +44,7 @@ const grammaireCollection = defineCollection({
     keyPoints: z.array(z.string()),
     relatedGrammar: z.array(z.string()).optional(),
     relatedWords: z.array(z.string()).optional(),
-    difficulty: z.enum(['debutant', 'intermediaire']),
+    difficulty: z.enum(['debutant', 'débutant', 'intermediaire', 'intermédiaire']),
     lastUpdated: z.date(),
   }),
 });
