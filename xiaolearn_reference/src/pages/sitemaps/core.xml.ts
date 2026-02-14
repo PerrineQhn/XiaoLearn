@@ -16,9 +16,12 @@ const STATIC_PATHS = [
   '/dictionnaire/hsk3',
   '/dictionnaire/hsk4',
   '/dictionnaire/hsk5',
+  '/dictionnaire/hsk6',
+  '/dictionnaire/hsk7',
   '/grammaire',
   '/nuances',
   '/culture',
+  '/recherche',
   '/mentions-legales',
   '/ressources',
 ];

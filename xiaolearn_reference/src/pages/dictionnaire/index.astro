@@ -11,6 +11,8 @@ import hsk2Data from '../../data/hsk2.json';
 import hsk3Data from '../../data/hsk3.json';
 import hsk4Data from '../../data/hsk4.json';
 import hsk5Data from '../../data/hsk5.json';
+import hsk6Data from '../../data/hsk6.json';
+import hsk7Data from '../../data/hsk7.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -18,6 +20,8 @@ const allEntries: HSKEntry[] = [
   ...hsk3Data as HSKEntry[],
   ...hsk4Data as HSKEntry[],
   ...hsk5Data as HSKEntry[],
+  ...hsk6Data as HSKEntry[],
+  ...hsk7Data as HSKEntry[],
 ];
 
 const stats = {
@@ -27,19 +31,21 @@ const stats = {
   hsk3: hsk3Data.length,
   hsk4: hsk4Data.length,
   hsk5: hsk5Data.length,
+  hsk6: hsk6Data.length,
+  hsk7: hsk7Data.length,
 };
 ---
 
 <BaseLayout
   title="Dictionnaire"
-  description="Dictionnaire chinois-français complet avec les niveaux HSK 1 à HSK 5. Recherchez par caractère, pinyin ou traduction."
+  description="Dictionnaire chinois-français complet avec les niveaux HSK 1 à HSK 7-9. Recherchez par caractère, pinyin ou traduction."
 >
   <section class="page-header">
     <div class="container">
       <Breadcrumb items={[{ label: 'Dictionnaire' }]} />
       <h1>Dictionnaire <span class="text-gradient">chinois-français</span></h1>
       <p>
-        Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 5 avec pinyin,
+        Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 7-9 avec pinyin,
         traductions et exemples d'utilisation.
       </p>
     </div>
@@ -225,6 +231,16 @@ const stats = {
   .level-btn-hsk5.active {
     background: #6A1B9A;
     border-color: #6A1B9A;
+  }
+
+  .level-btn-hsk6.active {
+    background: #006064;
+    border-color: #006064;
+  }
+
+  .level-btn-hsk7.active {
+    background: #BF360C;
+    border-color: #BF360C;
   }
 
   .search-results-info {

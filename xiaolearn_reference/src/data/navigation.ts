@@ -28,6 +28,8 @@ export const footerSections: FooterSection[] = [
       { label: 'HSK 3', href: '/dictionnaire/hsk3' },
       { label: 'HSK 4', href: '/dictionnaire/hsk4' },
       { label: 'HSK 5', href: '/dictionnaire/hsk5' },
+      { label: 'HSK 6', href: '/dictionnaire/hsk6' },
+      { label: 'HSK 7-9', href: '/dictionnaire/hsk7' },
     ],
   },
   {

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CharacterCard from '../../components/CharacterCard.astro';
+import type { HSKEntry } from '../../types/hsk';
+import { getHSKLevelInfo } from '../../types/hsk';
+
+import hskData from '../../data/hsk7.json';
+
+const entries = hskData as HSKEntry[];
+const levelInfo = getHSKLevelInfo(7)!;
+---
+
+<BaseLayout
+  title={`Dictionnaire ${levelInfo.name}`}
+  description={`Liste complète des ${entries.length} mots du ${levelInfo.name}. ${levelInfo.description}.`}
+>
+  <section class="page-header" style={`--level-color: ${levelInfo.color}; --level-bg: ${levelInfo.bgColor}`}>
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Dictionnaire', href: '/dictionnaire' },
+        { label: levelInfo.name }
+      ]} />
+      <div class="header-content">
+        <span class="level-badge">{levelInfo.name}</span>
+        <h1>Vocabulaire {levelInfo.name}</h1>
+        <p>{levelInfo.description}</p>
+        <div class="header-stats">
+          <span class="stat">{entries.length} mots</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="words-grid">
+        {entries.map(entry => (
+          <CharacterCard entry={entry} showLevel={false} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--level-bg), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-content {
+    max-width: 600px;
+  }
+
+  .level-badge {
+    display: inline-block;
+    background: var(--level-color);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .header-stats {
+    margin-top: var(--spacing-md);
+  }
+
+  .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .words-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+  }
+</style>
