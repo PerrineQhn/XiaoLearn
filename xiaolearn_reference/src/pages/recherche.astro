@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SiteWideSearch from '../components/react/SiteWideSearch';
+---
+
+<BaseLayout
+  title="Recherche globale"
+  description="Recherchez dans tout XiaoLearn Référence : dictionnaire, grammaire, nuances et culture."
+  robots="noindex,follow"
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Recherche' }]} />
+      <h1>Recherche <span class="text-gradient">globale</span></h1>
+      <p>Trouvez rapidement une entrée du dictionnaire, un point de grammaire ou un article culturel.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SiteWideSearch client:load />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 760px;
+  }
+</style>
+
+<style is:global>
+  .site-search {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .site-search-controls {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .site-search-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .site-search-input-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .site-search-clear {
+    height: 48px;
+    padding: 0 var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font: inherit;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .site-search-clear:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  .site-search-meta {
+    margin-top: var(--spacing-sm);
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+  }
+
+  .site-search-error {
+    margin-top: var(--spacing-xs);
+    color: var(--primary-red);
+    font-size: 0.9rem;
+  }
+
+  .site-search-empty {
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .site-search-empty h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+  }
+
+  .site-result-section {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .site-result-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .site-result-section h2 span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  .site-result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .site-result-card {
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    display: grid;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-base);
+  }
+
+  .site-result-card:hover {
+    border-color: var(--primary-red);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+  }
+
+  .site-result-badge {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    font-weight: 600;
+  }
+
+  .site-result-card h3 {
+    font-size: 1.02rem;
+  }
+
+  .site-result-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .site-search-controls {
+      padding: var(--spacing-lg);
+    }
+
+    .site-search-input-row {
+      grid-template-columns: 1fr;
+    }
+
+    .site-search-clear {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { getDictionaryIndexPageCount } from '../../../utils/dictionaryCatalog';
+
+const totalPages = getDictionaryIndexPageCount();
+---
+
+<BaseLayout
+  title="Indexation du dictionnaire"
+  description="Pages de liens internes pour faciliter l'exploration complète du dictionnaire XiaoLearn."
+  robots="noindex,follow"
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb
+        items={[
+          { label: 'Dictionnaire', href: '/dictionnaire' },
+          { label: 'Indexation' },
+        ]}
+      />
+      <h1>Indexation du dictionnaire</h1>
+      <p>
+        Cet index interne est découpé en {totalPages} pages pour aider les robots à découvrir
+        l'ensemble des entrées du dictionnaire.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="pagination-grid">
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+          <a href={`/dictionnaire/indexation/${page}`} class="page-link">
+            Page {page}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 760px;
+  }
+
+  .pagination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+  }
+
+  .page-link:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+    transform: translateY(-2px);
+  }
+</style>

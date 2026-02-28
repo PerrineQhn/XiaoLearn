@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import {
+  getDictionaryIndexPage,
+  getDictionaryIndexPageCount,
+} from '../../../utils/dictionaryCatalog';
+
+export function getStaticPaths() {
+  const totalPages = getDictionaryIndexPageCount();
+  return Array.from({ length: totalPages }, (_, index) => ({
+    params: { page: String(index + 1) },
+  }));
+}
+
+const pageNumber = Number(Astro.params.page || 1);
+const totalPages = getDictionaryIndexPageCount();
+const entries = getDictionaryIndexPage(pageNumber);
+
+const previousPage = pageNumber > 1 ? pageNumber - 1 : undefined;
+const nextPage = pageNumber < totalPages ? pageNumber + 1 : undefined;
+
+const pageWindowStart = Math.max(1, pageNumber - 3);
+const pageWindowEnd = Math.min(totalPages, pageNumber + 3);
+const visiblePages = Array.from(
+  { length: pageWindowEnd - pageWindowStart + 1 },
+  (_, index) => pageWindowStart + index,
+);
+---
+
+<BaseLayout
+  title={`Indexation dictionnaire - page ${pageNumber}`}
+  description={`Liens internes du dictionnaire XiaoLearn, page ${pageNumber} sur ${totalPages}.`}
+  robots="noindex,follow"
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb
+        items={[
+          { label: 'Dictionnaire', href: '/dictionnaire' },
+          { label: 'Indexation', href: '/dictionnaire/indexation' },
+          { label: `Page ${pageNumber}` },
+        ]}
+      />
+      <h1>Indexation dictionnaire - page {pageNumber}</h1>
+      <p>Page {pageNumber} sur {totalPages}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <nav class="pager" aria-label="Pagination indexation">
+        {previousPage && (
+          <a href={`/dictionnaire/indexation/${previousPage}`} class="pager-link">
+            ← Page {previousPage}
+          </a>
+        )}
+
+        <div class="pager-pages">
+          {visiblePages.map((page) => (
+            <a
+              href={`/dictionnaire/indexation/${page}`}
+              class={`pager-page ${page === pageNumber ? 'active' : ''}`}
+              aria-current={page === pageNumber ? 'page' : undefined}
+            >
+              {page}
+            </a>
+          ))}
+        </div>
+
+        {nextPage && (
+          <a href={`/dictionnaire/indexation/${nextPage}`} class="pager-link">
+            Page {nextPage} →
+          </a>
+        )}
+      </nav>
+
+      <ul class="entry-list">
+        {entries.map((entry) => (
+          <li>
+            <a href={`/dictionnaire/${entry.id}`}>
+              {entry.hanzi} ({entry.pinyin}) - {entry.translationFr}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+  }
+
+  .pager-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .pager-link:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  .pager-pages {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .pager-page {
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    font-weight: 600;
+  }
+
+  .pager-page:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  .pager-page.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: #fff;
+  }
+
+  .entry-list {
+    display: grid;
+    gap: var(--spacing-xs);
+    padding-left: 1.2rem;
+  }
+
+  .entry-list li a {
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .entry-list li a:hover {
+    color: var(--primary-red);
+  }
+</style>
