@@ -6,25 +6,47 @@ import type { HSKEntry } from '../../types/hsk';
 import { getHSKLevelInfo } from '../../types/hsk';
 import { ALL_HSK_ENTRIES } from '../../data/allHskEntries';
 
+const ENTRY_BY_ID = new Map<string, HSKEntry>();
+const PREVIOUS_BY_ID = new Map<string, HSKEntry>();
+const NEXT_BY_ID = new Map<string, HSKEntry>();
+const entriesByLevel = new Map<string, HSKEntry[]>();
+
+for (const entry of ALL_HSK_ENTRIES) {
+  ENTRY_BY_ID.set(entry.id, entry);
+  const bucket = entriesByLevel.get(entry.level);
+  if (bucket) {
+    bucket.push(entry);
+  } else {
+    entriesByLevel.set(entry.level, [entry]);
+  }
+}
+
+for (const levelEntries of entriesByLevel.values()) {
+  for (let index = 0; index < levelEntries.length; index += 1) {
+    const current = levelEntries[index];
+    if (index > 0) {
+      PREVIOUS_BY_ID.set(current.id, levelEntries[index - 1]);
+    }
+    if (index < levelEntries.length - 1) {
+      NEXT_BY_ID.set(current.id, levelEntries[index + 1]);
+    }
+  }
+}
+
 export function getStaticPaths() {
-  return ALL_HSK_ENTRIES.map(entry => ({
+  return ALL_HSK_ENTRIES.map((entry) => ({
     params: { id: entry.id },
-    props: { entry },
   }));
 }
 
-interface Props {
-  entry: HSKEntry;
+const entryId = Astro.params.id || '';
+const entry = ENTRY_BY_ID.get(entryId);
+if (!entry) {
+  throw new Error(`Unknown dictionary entry id: ${entryId}`);
 }
-
-const { entry } = Astro.props;
 const levelInfo = getHSKLevelInfo(entry.level);
-const levelEntries = ALL_HSK_ENTRIES.filter(item => item.level === entry.level);
-const currentIndex = levelEntries.findIndex(item => item.id === entry.id);
-const previousEntry = currentIndex > 0 ? levelEntries[currentIndex - 1] : undefined;
-const nextEntry = currentIndex >= 0 && currentIndex < levelEntries.length - 1
-  ? levelEntries[currentIndex + 1]
-  : undefined;
+const previousEntry = PREVIOUS_BY_ID.get(entry.id);
+const nextEntry = NEXT_BY_ID.get(entry.id);
 const canonicalUrl = `https://xiaolearn.com/dictionnaire/${entry.id}`;
 const definedTermSchema = {
   '@context': 'https://schema.org',

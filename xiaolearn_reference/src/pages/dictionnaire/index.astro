@@ -13,7 +13,6 @@ import hsk4Data from '../../data/hsk4.json';
 import hsk5Data from '../../data/hsk5.json';
 import hsk6Data from '../../data/hsk6.json';
 import hsk7Data from '../../data/hsk7.json';
-import horsHskData from '../../data/hors-hsk.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -23,7 +22,6 @@ const allEntries: HSKEntry[] = [
   ...hsk5Data as HSKEntry[],
   ...hsk6Data as HSKEntry[],
   ...hsk7Data as HSKEntry[],
-  ...horsHskData as HSKEntry[],
 ];
 
 const stats = {
@@ -35,13 +33,12 @@ const stats = {
   hsk5: hsk5Data.length,
   hsk6: hsk6Data.length,
   hsk7: hsk7Data.length,
-  'hors-hsk': horsHskData.length,
 };
 ---
 
 <BaseLayout
   title="Dictionnaire"
-  description="Dictionnaire chinois-français complet avec les niveaux HSK 1 à HSK 7-9. Recherchez par caractère, pinyin ou traduction."
+  description="Dictionnaire chinois-français des niveaux HSK 1 à HSK 7-9. La section Hors-HSK est disponible via une page dédiée."
 >
   <section class="page-header">
     <div class="container">
@@ -50,6 +47,9 @@ const stats = {
       <p>
         Plus de {stats.total.toLocaleString()} mots du HSK 1 au HSK 7-9 avec pinyin,
         traductions et exemples d'utilisation.
+      </p>
+      <p>
+        Les termes Hors-HSK restent accessibles depuis la section dédiée.
       </p>
     </div>
   </section>
@@ -64,7 +64,9 @@ const stats = {
             class="level-card"
             style={`--level-color: ${level.color}; --level-bg: ${level.bgColor}`}
           >
-            <span class="level-count">{stats[level.slug as keyof typeof stats]}</span>
+            <span class="level-count">
+              {level.slug === 'hors-hsk' ? '→' : stats[level.slug as keyof typeof stats]}
+            </span>
             <span class="level-name">{level.name}</span>
           </a>
         ))}

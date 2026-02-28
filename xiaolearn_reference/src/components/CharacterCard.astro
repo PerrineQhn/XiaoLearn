@@ -5,27 +5,47 @@ import HSKLevelBadge from './HSKLevelBadge.astro';
 interface Props {
   entry: HSKEntry;
   showLevel?: boolean;
+  href?: string | null;
 }
 
-const { entry, showLevel = true } = Astro.props;
+const { entry, showLevel = true, href } = Astro.props;
+const targetHref = href === undefined ? `/dictionnaire/${entry.id}` : href;
 ---
 
-<a href={`/dictionnaire/${entry.id}`} class="character-card">
-  <div class="card-header">
-    <span class="hanzi">{entry.hanzi}</span>
-    {showLevel && <HSKLevelBadge level={entry.level} size="sm" />}
-  </div>
+{targetHref ? (
+  <a href={targetHref} class="character-card">
+    <div class="card-header">
+      <span class="hanzi">{entry.hanzi}</span>
+      {showLevel && <HSKLevelBadge level={entry.level} size="sm" />}
+    </div>
 
-  <div class="card-body">
-    <span class="pinyin">{entry.pinyin}</span>
-    <p class="translation">{entry.translationFr}</p>
-  </div>
+    <div class="card-body">
+      <span class="pinyin">{entry.pinyin}</span>
+      <p class="translation">{entry.translationFr}</p>
+    </div>
 
-  <div class="card-footer">
-    <span class="category">{entry.category}</span>
-    <span class="arrow">→</span>
-  </div>
-</a>
+    <div class="card-footer">
+      <span class="category">{entry.category}</span>
+      <span class="arrow">→</span>
+    </div>
+  </a>
+) : (
+  <article class="character-card static-card">
+    <div class="card-header">
+      <span class="hanzi">{entry.hanzi}</span>
+      {showLevel && <HSKLevelBadge level={entry.level} size="sm" />}
+    </div>
+
+    <div class="card-body">
+      <span class="pinyin">{entry.pinyin}</span>
+      <p class="translation">{entry.translationFr}</p>
+    </div>
+
+    <div class="card-footer">
+      <span class="category">{entry.category}</span>
+    </div>
+  </article>
+)}
 
 <style>
   .character-card {
@@ -104,5 +124,11 @@ const { entry, showLevel = true } = Astro.props;
   .character-card:hover .arrow {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  .static-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border-light);
   }
 </style>
