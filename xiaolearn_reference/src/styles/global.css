@@ -303,6 +303,11 @@ p {
   color: #BF360C;
 }
 
+.badge-hors-hsk {
+  background: #ECEFF1;
+  color: #546E7A;
+}
+
 /* ===== Container ===== */
 .container {
   width: 100%;

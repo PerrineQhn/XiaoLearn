@@ -13,6 +13,7 @@ import hsk4Data from '../../data/hsk4.json';
 import hsk5Data from '../../data/hsk5.json';
 import hsk6Data from '../../data/hsk6.json';
 import hsk7Data from '../../data/hsk7.json';
+import horsHskData from '../../data/hors-hsk.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -22,6 +23,7 @@ const allEntries: HSKEntry[] = [
   ...hsk5Data as HSKEntry[],
   ...hsk6Data as HSKEntry[],
   ...hsk7Data as HSKEntry[],
+  ...horsHskData as HSKEntry[],
 ];
 
 const stats = {
@@ -33,6 +35,7 @@ const stats = {
   hsk5: hsk5Data.length,
   hsk6: hsk6Data.length,
   hsk7: hsk7Data.length,
+  'hors-hsk': horsHskData.length,
 };
 ---
 
@@ -71,6 +74,7 @@ const stats = {
       <div class="search-section">
         <DictionarySearch client:load entries={allEntries} />
       </div>
+
     </div>
   </section>
 </BaseLayout>
@@ -241,6 +245,11 @@ const stats = {
   .level-btn-hsk7.active {
     background: #BF360C;
     border-color: #BF360C;
+  }
+
+  .level-btn-hors-hsk.active {
+    background: #546E7A;
+    border-color: #546E7A;
   }
 
   .search-results-info {

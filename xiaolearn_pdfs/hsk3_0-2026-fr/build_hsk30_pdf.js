@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { LEVEL_COLORS } = require("./level_colors");
 
 const templatePath = path.resolve(__dirname, "template.html");
 
@@ -13,13 +14,43 @@ function escapeHtml(value) {
 }
 
 function pickFrench(item) {
-  if (item.translationFr && item.translationFr.trim()) return item.translationFr.trim();
+  if (item.translationFr && item.translationFr.trim()) return compactFrench(item.translationFr);
   if (Array.isArray(item.translationFrAlt) && item.translationFrAlt.length) {
     const alt = item.translationFrAlt.find((value) => String(value).trim());
-    if (alt) return String(alt).trim();
+    if (alt) return compactFrench(alt);
   }
-  if (item.translation && item.translation.trim()) return item.translation.trim();
+  if (item.translation && item.translation.trim()) return compactFrench(item.translation);
   return "";
+}
+
+function compactFrench(value) {
+  let text = String(value || "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+
+  // Keep cards readable by removing long explanatory notes.
+  text = text.replace(/\s*\(([^)]{24,})\)/g, "");
+  text = text.replace(/\s+/g, " ").trim();
+
+  if (text.length > 72) {
+    const firstSentence = text.split(/(?<=[.!?])\s+/)[0];
+    if (firstSentence && firstSentence.length >= 24) {
+      text = firstSentence.trim();
+    }
+  }
+
+  const senses = text.split(/\s*;\s*/).filter(Boolean);
+  if (text.length > 72 && senses.length > 4) {
+    text = senses.slice(0, 4).join("; ");
+  }
+
+  const hardMax = 84;
+  if (text.length > hardMax) {
+    const head = text.slice(0, hardMax);
+    const cut = Math.max(head.lastIndexOf("; "), head.lastIndexOf(", "), head.lastIndexOf(" "));
+    text = (cut > 40 ? head.slice(0, cut) : head).trim() + "...";
+  }
+
+  return text;
 }
 
 function sanitizeHanzi(value) {
@@ -28,7 +59,7 @@ function sanitizeHanzi(value) {
 }
 
 const GRID_COLUMNS = 16;
-const MAX_SPAN = 6;
+const MAX_SPAN = 8;
 const DEFAULT_ROWS_PER_PAGE = 8;
 const LEVEL_ROWS = {
   1: 8,
@@ -39,16 +70,16 @@ const LEVEL_ROWS = {
   6: 8,
   7: 8
 };
-const LEVEL_COLORS = {
-  1: "#9b2335",
-  2: "#ddb802",
-  3: "#c26a14",
-  4: "#28a165",
-  5: "#6a3c8b",
-  6: "#0bafd8",
-  7: "#ac6c35"
-};
+const ALL_LEVELS = [1, 2, 3, 4, 5, 6, 7];
 const BRAND_TEXT = "XiaoLearn";
+
+function displayLevel(level) {
+  return level === 7 ? "7-9" : String(level);
+}
+
+function defaultOutFile(level) {
+  return level === 7 ? "index_hsk79.html" : `index_hsk${level}.html`;
+}
 
 function hanziSpan(hanzi) {
   const length = Array.from(hanzi).length;
@@ -65,11 +96,12 @@ function textLength(value) {
 function computeSpan({ hanzi, pinyin, fr }) {
   let span = hanziSpan(hanzi);
   const frLen = textLength(fr);
-  if (frLen > 28) span += 2;
-  else if (frLen > 18) span += 1;
+  if (frLen > 54) span += 3;
+  else if (frLen > 40) span += 2;
+  else if (frLen > 24) span += 1;
 
   const pinyinLen = textLength(String(pinyin || "").replace(/\s+/g, ""));
-  if (pinyinLen > 10) span += 1;
+  if (pinyinLen > 12) span += 1;
 
   return Math.min(MAX_SPAN, span);
 }
@@ -155,7 +187,7 @@ function buildOne({ level, accent, outFile, rowsPerPage }) {
       <header class="page-header">
         <div class="badge">New HSK 3.0</div>
         <div class="title">
-          <h1>Niveau ${level} · Vocabulaire</h1>
+          <h1>Niveau ${displayLevel(level)} · Vocabulaire</h1>
           <p class="subtitle">${items.length} mots · chinois · pinyin · français</p>
         </div>
         <div class="meta">2026</div>
@@ -191,12 +223,12 @@ const isAll = process.argv.includes("--all");
 const rowsArg = Number(getArg("rows")) || null;
 
 if (isAll) {
-  [1, 2, 3, 4, 5].forEach((level) => {
+  ALL_LEVELS.forEach((level) => {
     const accent = getArg("accent") || LEVEL_COLORS[level] || LEVEL_COLORS[1];
-    const outFile = `index_hsk${level}.html`;
+    const outFile = defaultOutFile(level);
     const rowsPerPage = rowsArg || LEVEL_ROWS[level] || DEFAULT_ROWS_PER_PAGE;
     const result = buildOne({ level, accent, outFile, rowsPerPage });
-    console.log(`OK -> HSK${level} (${result.count} cartes) -> ${result.outPath}`);
+    console.log(`OK -> HSK${displayLevel(level)} (${result.count} cartes) -> ${result.outPath}`);
   });
 } else {
   const level = Number(getArg("level")) || 1;
@@ -204,5 +236,5 @@ if (isAll) {
   const outFile = getArg("out") || "index.html";
   const rowsPerPage = rowsArg || LEVEL_ROWS[level] || DEFAULT_ROWS_PER_PAGE;
   const result = buildOne({ level, accent, outFile, rowsPerPage });
-  console.log(`OK -> HSK${level} (${result.count} cartes) -> ${result.outPath}`);
+  console.log(`OK -> HSK${displayLevel(level)} (${result.count} cartes) -> ${result.outPath}`);
 }

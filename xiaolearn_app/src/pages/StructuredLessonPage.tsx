@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import type { Language } from '../i18n';
-import type { LessonExercise, LessonItem } from '../types';
-import type { LessonModule, LessonPhase } from '../types/lesson-structure';
+import type { LessonExercise, LessonExerciseDialogue, LessonItem } from '../types';
+import type { LessonCategory, LessonModule, LessonPhase } from '../types/lesson-structure';
 import { getLessonsByHanziList } from '../data/lessons';
 import { getGrammarLessonById } from '../data/grammar-lessons';
 import { getSimpleLessonById } from '../data/simple-lessons';
@@ -28,8 +28,79 @@ interface LessonExerciseSectionProps {
   onAnswer: (correct: boolean) => void;
 }
 
+interface QuizEntry {
+  word: LessonItem;
+  options: string[];
+}
+
+interface LessonExplanationStep {
+  id: string;
+  title: string;
+  content: string;
+  bullets: string[];
+}
+
+const CATEGORY_ICON: Record<LessonCategory, string> = {
+  pronunciation: '🔤',
+  grammar: '📘',
+  conversation: '💬',
+  vocabulary: '🧠',
+  culture: '🏮',
+  writing: '✍️',
+  reading: '📖'
+};
+
+const buildQuizOptions = (word: LessonItem | undefined, words: LessonItem[], language: Language) => {
+  if (!word) return [];
+  const correctAnswer = language === 'fr' ? word.translationFr : word.translation;
+  const wrongAnswers = words
+    .filter((entry) => entry.id !== word.id)
+    .map((entry) => (language === 'fr' ? entry.translationFr : entry.translation));
+  const uniqueWrong = Array.from(new Set(wrongAnswers)).slice(0, 3);
+  const allOptions = [correctAnswer, ...uniqueWrong];
+
+  for (let i = allOptions.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allOptions[i], allOptions[j]] = [allOptions[j], allOptions[i]];
+  }
+
+  return allOptions;
+};
+
+const buildAutoDialogueExercise = (lesson: LessonModule, words: LessonItem[]): LessonExerciseDialogue | null => {
+  const primary = words[0];
+  const secondary = words[1] ?? primary;
+  if (!primary) return null;
+
+  const hasTwoKeywords = secondary.id !== primary.id;
+  const promptFr = hasTwoKeywords
+    ? `Complète le mini-dialogue avec « ${primary.hanzi} » et « ${secondary.hanzi} ».`
+    : `Complète le mini-dialogue autour de « ${primary.hanzi} ».`;
+  const promptEn = hasTwoKeywords
+    ? `Complete the mini dialogue using “${primary.hanzi}” and “${secondary.hanzi}”.`
+    : `Complete the mini dialogue around “${primary.hanzi}”.`;
+
+  const contextFr = `Conversation guidée liée à la leçon « ${lesson.title} ».`;
+  const contextEn = `Guided conversation for lesson “${lesson.titleEn}”.`;
+
+  return {
+    id: `${lesson.id}-auto-dialogue`,
+    type: 'dialogue',
+    mode: 'role-play',
+    promptFr,
+    promptEn,
+    context: contextFr,
+    contextEn,
+    dialogue: [
+      { speaker: 'A', text: `我们来练习一下：${primary.hanzi}。` },
+      { speaker: 'B', text: '' },
+      { speaker: 'A', text: hasTwoKeywords ? `很好！再试试：${secondary.hanzi}。` : '很好！请再说一次。' },
+      { speaker: 'B', text: '' }
+    ]
+  };
+};
+
 function LessonExerciseSection({ exercise, language, onAnswer }: LessonExerciseSectionProps) {
-  // Handle new exercise types
   if (exercise.type === 'writing') {
     return <WritingExercise exercise={exercise} language={language} onAnswer={onAnswer} />;
   }
@@ -51,23 +122,14 @@ function LessonExerciseSection({ exercise, language, onAnswer }: LessonExerciseS
   }
 
   if (exercise.type === 'grammar') {
-    return (
-      <GrammarQuizComponent
-        key={exercise.id}
-        quiz={exercise.quiz}
-        language={language}
-        onAnswer={onAnswer}
-      />
-    );
+    return <GrammarQuizComponent key={exercise.id} quiz={exercise.quiz} language={language} onAnswer={onAnswer} />;
   }
 
-  // Handle listening and text-mcq exercises
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
 
   const prompt = language === 'fr' ? exercise.promptFr : exercise.promptEn;
-  const explanation =
-    language === 'fr' ? exercise.explanationFr : exercise.explanationEn;
+  const explanation = language === 'fr' ? exercise.explanationFr : exercise.explanationEn;
 
   const handleChoice = (index: number) => {
     if (answered) return;
@@ -77,74 +139,57 @@ function LessonExerciseSection({ exercise, language, onAnswer }: LessonExerciseS
   };
 
   return (
-    <div className="quiz-container">
+    <div className="quiz-container quiz-container-modern lesson-exercise-card">
       <h2 className="quiz-question">{prompt}</h2>
+
       {exercise.type === 'listening' && (
-        <div className="quiz-word" style={{ justifyContent: 'center' }}>
-          <AudioButton
-            src={`/${exercise.audio}`}
-            label={language === 'fr' ? 'Écouter' : 'Listen'}
-          />
+        <div className="quiz-word quiz-audio-only">
+          <AudioButton src={`/${exercise.audio}`} label={language === 'fr' ? 'Écouter' : 'Listen'} />
         </div>
       )}
+
+      {answered && explanation && (
+        <div className={`answer-feedback ${selectedIndex === exercise.correctChoiceIndex ? 'correct' : 'incorrect'}`}>
+          <span className="feedback-icon">{selectedIndex === exercise.correctChoiceIndex ? '✓' : '✗'}</span>
+          <div>{explanation}</div>
+        </div>
+      )}
+
       <div className="quiz-options">
         {exercise.choices.map((choice, index) => {
           const isCorrect = index === exercise.correctChoiceIndex;
           const isSelected = index === selectedIndex;
-          let optionClass = '';
-          if (answered) {
-            if (isCorrect) optionClass = 'correct';
-            else if (isSelected) optionClass = 'incorrect';
-          }
+          const optionState = answered && isCorrect ? 'correct' : answered && isSelected ? 'incorrect' : '';
 
           return (
             <button
               key={`${exercise.id}-${index}`}
-              className={`quiz-option ${optionClass}`}
+              className={`quiz-option quiz-option-modern ${optionState}`}
               onClick={() => handleChoice(index)}
               disabled={answered}
             >
-              {exercise.choiceLabels?.[index] ?? choice}
+              <span className="quiz-option-letter">{String.fromCharCode(65 + index)}</span>
+              <span className="quiz-option-text">{exercise.choiceLabels?.[index] ?? choice}</span>
+              {answered && isCorrect && <span className="quiz-option-status">✓</span>}
+              {answered && isSelected && !isCorrect && <span className="quiz-option-status">✗</span>}
             </button>
           );
         })}
       </div>
-      {answered && explanation && (
-        <div className={`answer-feedback ${selectedIndex === exercise.correctChoiceIndex ? 'correct' : 'incorrect'}`}>
-          <span className="feedback-icon">
-            {selectedIndex === exercise.correctChoiceIndex ? '✓' : '✗'}
-          </span>
-          <div>{explanation}</div>
-        </div>
-      )}
     </div>
   );
 }
 
-const buildQuizOptions = (word: LessonItem | undefined, words: LessonItem[], language: Language) => {
-  if (!word) return [];
-  const correctAnswer = language === 'fr' ? word.translationFr : word.translation;
-  const wrongAnswers = words
-    .filter((w) => w.id !== word.id)
-    .map((w) => (language === 'fr' ? w.translationFr : w.translation));
-  const uniqueWrong = Array.from(new Set(wrongAnswers)).slice(0, 3);
-  const allOptions = [correctAnswer, ...uniqueWrong];
-  for (let i = allOptions.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [allOptions[i], allOptions[j]] = [allOptions[j], allOptions[i]];
-  }
-  return allOptions;
-};
-
 export default function StructuredLessonPage({ lesson, language, onComplete, onExit }: StructuredLessonPageProps) {
   const [phase, setPhase] = useState<LessonPhase>('intro');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [learnedCards, setLearnedCards] = useState<string[]>([]);
+  const [isCardFlipped, setIsCardFlipped] = useState(false);
+  const [explanationIndex, setExplanationIndex] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, boolean>>({});
+  const [quizSelections, setQuizSelections] = useState<Record<number, string>>({});
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [exerciseResults, setExerciseResults] = useState<Record<string, boolean>>({});
 
-  // Charger les mots de la leçon en utilisant les hanzi
   const lessonWords = useMemo<LessonItem[]>(() => {
     const simpleLesson = getSimpleLessonById(lesson.id);
     if (simpleLesson) {
@@ -155,46 +200,128 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
         return getLessonsByHanziList(simpleLesson.words);
       }
     }
-    // Fallback: si la leçon utilise des IDs
+
     return lesson.flashcards
       .map((identifier) => {
-        // D'abord vérifier si c'est une leçon de grammaire dédiée
         const grammarLesson = getGrammarLessonById(identifier);
-        if (grammarLesson) {
-          return grammarLesson;
-        }
-        // Sinon, rechercher par hanzi dans les leçons classiques
+        if (grammarLesson) return grammarLesson;
         const words = getLessonsByHanziList([identifier]);
         return words.length > 0 ? words[0] : null;
       })
       .filter((word): word is LessonItem => Boolean(word));
   }, [lesson.flashcards, lesson.id]);
 
-  const customExercises = lessonExercises[lesson.id] ?? [];
+  const shouldHaveConversationStep = useMemo(() => {
+    const normalizedTags = (lesson.tags ?? []).map((tag) => tag.toLowerCase());
+
+    if (normalizedTags.includes('no-dialogue')) return false;
+    return lesson.category !== 'pronunciation';
+  }, [lesson.category, lesson.tags]);
+
+  const customExercises = useMemo(() => {
+    const baseExercises = lessonExercises[lesson.id] ?? [];
+    const filteredExercises = shouldHaveConversationStep
+      ? baseExercises
+      : baseExercises.filter((exercise) => exercise.type !== 'dialogue');
+
+    if (!shouldHaveConversationStep) return filteredExercises;
+    if (filteredExercises.some((exercise) => exercise.type === 'dialogue')) return filteredExercises;
+
+    const generatedDialogue = buildAutoDialogueExercise(lesson, lessonWords);
+    if (!generatedDialogue) return filteredExercises;
+
+    return [...filteredExercises, generatedDialogue];
+  }, [lesson, lesson.id, lessonWords, shouldHaveConversationStep]);
+
+  const explanationSteps = useMemo<LessonExplanationStep[]>(() => {
+    const steps: LessonExplanationStep[] = [];
+    const introContent = language === 'fr' ? lesson.introduction.content : lesson.introduction.contentEn;
+    const introObjectives = language === 'fr' ? lesson.introduction.objectives : lesson.introduction.objectivesEn;
+
+    steps.push({
+      id: 'intro',
+      title: language === 'fr' ? 'Introduction' : 'Introduction',
+      content: introContent,
+      bullets: introObjectives.slice(0, 5)
+    });
+
+    const grammarWord = lessonWords.find((word) => Boolean(word.grammarExplanation));
+    const grammarExplanation = grammarWord?.grammarExplanation;
+    if (grammarExplanation) {
+      const whenToUse = language === 'fr' ? grammarExplanation.whenToUse : grammarExplanation.whenToUseEn;
+      const howToUse = language === 'fr' ? grammarExplanation.howToUse : grammarExplanation.howToUseEn;
+      const commonMistakes = language === 'fr' ? grammarExplanation.commonMistakes : grammarExplanation.commonMistakesEn;
+      const tips = language === 'fr' ? grammarExplanation.tips : grammarExplanation.tipsEn;
+
+      steps.push({
+        id: 'grammar-rules',
+        title: language === 'fr' ? 'Règles de grammaire' : 'Grammar rules',
+        content: howToUse,
+        bullets: [whenToUse, commonMistakes, tips].filter((item): item is string => Boolean(item))
+      });
+    }
+
+    return steps;
+  }, [language, lesson.introduction.content, lesson.introduction.contentEn, lesson.introduction.objectives, lesson.introduction.objectivesEn, lessonWords]);
+
   const totalCustomExercises = customExercises.length;
-
-  const currentWord = lessonWords[currentCardIndex];
+  const estimatedXp = Math.max(20, lesson.quizQuestions * 10);
   const desiredQuizCount = Math.min(lesson.quizQuestions, lessonWords.length);
+  const currentWord = lessonWords[currentCardIndex];
 
-  const quizData = useMemo(() => {
+  const quizData = useMemo<QuizEntry[]>(() => {
     if (desiredQuizCount === 0) return [];
+
     return Array.from({ length: desiredQuizCount })
       .map((_, idx) => {
         const word = lessonWords[idx];
         if (!word) return null;
-        const options = buildQuizOptions(word, lessonWords, language);
-        return {
-          word,
-          options
-        };
+        return { word, options: buildQuizOptions(word, lessonWords, language) };
       })
       .filter(
-        (entry): entry is { word: LessonItem; options: string[] } =>
-          Boolean(entry?.word) && (Boolean(entry?.word?.grammarQuiz) || (entry?.options?.length ?? 0) >= 2)
+        (entry): entry is QuizEntry =>
+          Boolean(entry?.word) && (Boolean(entry?.word.grammarQuiz) || (entry?.options.length ?? 0) >= 2)
       );
-  }, [lessonWords, desiredQuizCount, language]);
+  }, [desiredQuizCount, language, lessonWords]);
 
   const totalQuizQuestions = quizData.length;
+  const totalExplanationSteps = explanationSteps.length;
+  const totalLearnSteps = totalExplanationSteps + lessonWords.length;
+  const isOnExplanationStep = explanationIndex < totalExplanationSteps;
+  const learnedStep = isOnExplanationStep
+    ? explanationIndex + 1
+    : totalExplanationSteps + currentCardIndex + 1;
+  const customStep = totalLearnSteps + exerciseIndex + 1;
+  const quizStep = totalLearnSteps + totalCustomExercises + currentCardIndex + 1;
+  const totalSteps = Math.max(totalLearnSteps + totalCustomExercises + totalQuizQuestions, 1);
+
+  const resetQuizState = () => {
+    setCurrentCardIndex(0);
+    setExplanationIndex(totalExplanationSteps);
+    setQuizAnswers({});
+    setQuizSelections({});
+    setExerciseIndex(0);
+    setExerciseResults({});
+  };
+
+  const renderTopProgress = (currentStep: number, onBack: () => void) => {
+    const boundedStep = Math.max(1, Math.min(currentStep, totalSteps));
+    const progress = (boundedStep / totalSteps) * 100;
+
+    return (
+      <div className="lesson-top-progress">
+        <button className="lesson-close-btn" onClick={onBack} aria-label={language === 'fr' ? 'Fermer' : 'Close'}>
+          ×
+        </button>
+        <div className="lesson-top-progress-track">
+          <div className="lesson-top-progress-fill" style={{ width: `${progress}%` }} />
+        </div>
+        <span className="lesson-top-progress-count">
+          {boundedStep}/{totalSteps}
+        </span>
+      </div>
+    );
+  };
 
   if (lessonWords.length === 0) {
     return (
@@ -208,53 +335,39 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
     );
   }
 
-  // Phase 1: Introduction
   if (phase === 'intro') {
+    const categoryLabel = lesson.category.toUpperCase();
+    const introContent = language === 'fr' ? lesson.introduction.content : lesson.introduction.contentEn;
+
     return (
       <div className="structured-lesson">
-        <div className="lesson-intro-container">
-          <div className="intro-header">
-            <button className="back-btn" onClick={onExit}>← Retour</button>
-            <div className="lesson-badge">
-              {language === 'fr' ? lesson.title : lesson.titleEn}
+        <div className="lesson-intro-container lesson-intro-centered">
+          <div className="lesson-intro-hero">
+            <div className="lesson-intro-icon">{CATEGORY_ICON[lesson.category] ?? '📘'}</div>
+            <p className="lesson-badge">{categoryLabel}</p>
+            <h1 className="intro-title">{language === 'fr' ? lesson.title : lesson.titleEn}</h1>
+            <p className="intro-text">{introContent}</p>
+            <div className="lesson-intro-meta">
+              <span>⏱ {lesson.duration} min</span>
+              <span>•</span>
+              <span>✨ +{estimatedXp} XP</span>
             </div>
           </div>
 
-          <div className="intro-content">
-            <h1 className="intro-title">
-              {language === 'fr' ? lesson.introduction.title : lesson.introduction.titleEn}
-            </h1>
-
-            <p className="intro-text">
-              {language === 'fr' ? lesson.introduction.content : lesson.introduction.contentEn}
-            </p>
-
-            <div className="objectives-section">
-              <h3>{language === 'fr' ? 'Objectifs de cette leçon :' : 'Lesson objectives:'}</h3>
-              <ul className="objectives-list">
-                {(language === 'fr' ? lesson.introduction.objectives : lesson.introduction.objectivesEn).map((obj, i) => (
-                  <li key={i}>✓ {obj}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lesson-stats">
-              <div className="stat">
-                <span className="stat-icon">📝</span>
-                <span className="stat-text">
-                  {lesson.flashcards.length} {language === 'fr' ? 'mots à apprendre' : 'words to learn'}
-                </span>
-              </div>
-              <div className="stat">
-                <span className="stat-icon">⏱️</span>
-                <span className="stat-text">
-                  {lesson.duration} min
-                </span>
-              </div>
-            </div>
-
-            <button className="start-lesson-btn" onClick={() => setPhase('learn')}>
-              {language === 'fr' ? 'Commencer la leçon' : 'Start lesson'} →
+          <div className="lesson-intro-actions">
+            <button className="btn-secondary" onClick={onExit}>
+              {language === 'fr' ? 'Retour' : 'Back'}
+            </button>
+            <button
+              className="start-lesson-btn"
+              onClick={() => {
+                setCurrentCardIndex(0);
+                setIsCardFlipped(false);
+                setExplanationIndex(0);
+                setPhase('learn');
+              }}
+            >
+              {language === 'fr' ? 'Commencer' : 'Start'}
             </button>
           </div>
         </div>
@@ -262,196 +375,215 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
     );
   }
 
-  // Phase 2: Apprentissage (Flashcards)
   if (phase === 'learn') {
-    const progress = ((currentCardIndex + 1) / lessonWords.length) * 100;
+    if (isOnExplanationStep) {
+      const step = explanationSteps[explanationIndex];
+      if (!step) {
+        return (
+          <div className="structured-lesson">
+            <div className="lesson-empty-state">
+              {language === 'fr' ? 'Explications indisponibles.' : 'Explanation unavailable.'}
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className="structured-lesson">
+          {renderTopProgress(learnedStep, onExit)}
+
+          <div className="lesson-phase-shell lesson-phase-shell--explanation">
+            <div className="lesson-explanation-header">
+              <span className="lesson-explanation-header-icon" aria-hidden="true">
+                📘
+              </span>
+              <h3 className="lesson-explanation-header-title">{step.title}</h3>
+            </div>
+
+            <div className="lesson-explanation-card">
+              <p className="lesson-explanation-content">{step.content}</p>
+
+              {step.bullets.length > 0 && (
+                <ul className="lesson-explanation-list">
+                  {step.bullets.map((bullet, index) => (
+                    <li key={`${step.id}-${index}`}>{bullet}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div className="lesson-flashcard-actions lesson-nav-modern">
+              {explanationIndex > 0 ? (
+                <button className="btn-secondary" onClick={() => setExplanationIndex((prev) => prev - 1)}>
+                  {language === 'fr' ? 'Précédent' : 'Previous'}
+                </button>
+              ) : (
+                <span />
+              )}
+
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  if (explanationIndex < totalExplanationSteps - 1) {
+                    setExplanationIndex((prev) => prev + 1);
+                    return;
+                  }
+                  setExplanationIndex(totalExplanationSteps);
+                  setCurrentCardIndex(0);
+                }}
+              >
+                {language === 'fr' ? 'Suivant' : 'Next'}
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (!currentWord) {
+      return (
+        <div className="structured-lesson">
+          <div className="lesson-empty-state">
+            {language === 'fr' ? 'Aucun mot à apprendre.' : 'No words to learn.'}
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="structured-lesson">
-        <div className="lesson-header">
-          <button className="back-btn" onClick={() => setPhase('intro')}>← Retour</button>
-          <div className="progress-indicator">
-            <div className="progress-bar-bg">
-              <div className="progress-bar-fg" style={{ width: `${progress}%` }}></div>
+        {renderTopProgress(learnedStep, onExit)}
+
+        <div className="lesson-phase-shell">
+          <p className="lesson-step-label">
+            {language === 'fr' ? 'Mot' : 'Word'} {currentCardIndex + 1} {language === 'fr' ? 'sur' : 'of'} {lessonWords.length}
+          </p>
+
+          <div
+            className={`lesson-flip-card ${isCardFlipped ? 'flipped' : ''}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => setIsCardFlipped((prev) => !prev)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                setIsCardFlipped((prev) => !prev);
+              }
+            }}
+          >
+            <div className="lesson-flip-audio" onClick={(event) => event.stopPropagation()}>
+              <AudioButton src={`/${currentWord.audioLetter || currentWord.audio}`} label={language === 'fr' ? 'Audio' : 'Audio'} />
             </div>
-            <span className="progress-text">{currentCardIndex + 1} / {lessonWords.length}</span>
+
+            <div className="lesson-flip-hanzi">{currentWord.hanzi}</div>
+            {!isCardFlipped ? (
+              <div className="lesson-flip-hint">{language === 'fr' ? 'Touchez pour retourner' : 'Tap to flip'}</div>
+            ) : (
+              <>
+                <div className="lesson-flip-pinyin">{currentWord.pinyin}</div>
+                <div className="lesson-flip-translation">
+                  {language === 'fr' ? currentWord.translationFr : currentWord.translation}
+                </div>
+                {currentWord.explanation && <div className="lesson-flip-explanation">{currentWord.explanation}</div>}
+              </>
+            )}
           </div>
-        </div>
 
-        {currentWord && (
-          <div className="lesson-flashcard-container">
-            <div className="lesson-flashcard">
-              <div className="card-hanzi">{currentWord.hanzi}</div>
-              <div className="card-pinyin">{currentWord.pinyin}</div>
-              <div className="card-audio-stack">
-                {currentWord.audioLetter ? (
-                  <AudioButton
-                    src={`/${currentWord.audioLetter}`}
-                    label={language === 'fr' ? 'Audio' : 'Audio'}
-                  />
-                ) : (
-                  <AudioButton
-                    src={`/${currentWord.audio}`}
-                    label={language === 'fr' ? 'Audio' : 'Audio'}
-                  />
-                )}
-              </div>
-              <div className="card-translation">
-                {language === 'fr' ? currentWord.translationFr : currentWord.translation}
-              </div>
-              {currentWord.explanation && (
-                <div className="card-explanation">{currentWord.explanation}</div>
-              )}
-              {currentWord.examples &&
-                currentWord.examples.length > 0 &&
-                (() => {
-                  const example = currentWord.examples[0];
-                  const isDuplicate =
-                    example.hanzi === currentWord.hanzi &&
-                    example.pinyin === currentWord.pinyin &&
-                    example.translation === currentWord.translationFr;
-                  return !isDuplicate ? (
-                    <div className="card-examples">
-                      <h4>{language === 'fr' ? 'Exemple :' : 'Example:'}</h4>
-                      <div className="example-item">
-                        <div>{example.hanzi}</div>
-                        <div className="example-pinyin">{example.pinyin}</div>
-                        <div className="example-translation">{example.translation}</div>
-                        {example.audio && (
-                          <AudioButton
-                            src={`/${example.audio}`}
-                            label={language === 'fr' ? 'Exemple' : 'Example'}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  ) : null;
-                })()}
-            </div>
+          <div className="lesson-learn-toolbar">
+            <button className="lesson-flip-reset" onClick={() => setIsCardFlipped(false)} aria-label={language === 'fr' ? 'Retourner' : 'Reset'}>
+              ↻
+            </button>
+          </div>
 
-            {currentWord.grammarExplanation && (
-              <GrammarExplanationCard
-                explanation={currentWord.grammarExplanation}
-                language={language}
-              />
+          {currentWord.grammarExplanation && isCardFlipped && (
+            <GrammarExplanationCard explanation={currentWord.grammarExplanation} language={language} />
+          )}
+
+          <div className="lesson-flashcard-actions lesson-nav-modern">
+            {currentCardIndex > 0 || totalExplanationSteps > 0 ? (
+              <button
+                className="btn-secondary"
+                onClick={() => {
+                  if (currentCardIndex === 0 && totalExplanationSteps > 0) {
+                    setExplanationIndex(totalExplanationSteps - 1);
+                    return;
+                  }
+                  setCurrentCardIndex((prev) => prev - 1);
+                  setIsCardFlipped(false);
+                }}
+              >
+                {language === 'fr' ? 'Précédent' : 'Previous'}
+              </button>
+            ) : (
+              <span />
             )}
 
-            <div
-              className="lesson-flashcard-actions"
-              style={{ justifyContent: currentCardIndex > 0 ? 'space-between' : 'flex-end' }}
-            >
-              {currentCardIndex > 0 && (
-                <button
-                  className="btn-secondary"
-                  onClick={() => setCurrentCardIndex(currentCardIndex - 1)}
-                >
-                  ← {language === 'fr' ? 'Précédent' : 'Previous'}
-                </button>
-              )}
-              {currentCardIndex < lessonWords.length - 1 ? (
-                <button
-                  className="btn-primary"
-                  onClick={() => {
-                    if (!learnedCards.includes(currentWord.id)) {
-                      setLearnedCards([...learnedCards, currentWord.id]);
-                    }
-                    setCurrentCardIndex(currentCardIndex + 1);
-                  }}
-                >
-                  {language === 'fr' ? 'Suivant' : 'Next'} →
-                </button>
-              ) : (
-                <button
-                  className="btn-primary"
-                  onClick={() => {
-                    if (!learnedCards.includes(currentWord.id)) {
-                      setLearnedCards([...learnedCards, currentWord.id]);
-                    }
-                    setPhase('quiz');
-                    setCurrentCardIndex(0);
-                    setQuizAnswers({});
-                    setExerciseIndex(0);
-                    setExerciseResults({});
-                  }}
-                >
-                  {language === 'fr' ? 'Passer au quiz' : 'Go to quiz'} →
-                </button>
-              )}
-            </div>
+            {currentCardIndex < lessonWords.length - 1 ? (
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  setCurrentCardIndex((prev) => prev + 1);
+                  setIsCardFlipped(false);
+                }}
+              >
+                {language === 'fr' ? 'Suivant' : 'Next'}
+              </button>
+            ) : (
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  setPhase('quiz');
+                  resetQuizState();
+                }}
+              >
+                {language === 'fr' ? 'Passer au quiz' : 'Go to quiz'}
+              </button>
+            )}
           </div>
-        )}
+        </div>
       </div>
     );
   }
 
-  // Phase 3: Quiz
   if (phase === 'quiz') {
-    if (lessonWords.length < 1 && totalCustomExercises === 0) {
-      return (
-        <div className="structured-lesson">
-          <div className="lesson-empty-state">
-            {language === 'fr'
-              ? 'Aucun contenu disponible pour lancer le quiz.'
-              : 'No content available to start the quiz.'}
-          </div>
-        </div>
-      );
-    }
-
     if (lessonWords.length < 2 && totalCustomExercises === 0) {
       return (
         <div className="structured-lesson">
           <div className="lesson-empty-state">
-            {language === 'fr'
-              ? 'Il faut au moins 2 mots pour faire un quiz.'
-              : 'At least 2 words are needed for a quiz.'}
+            {language === 'fr' ? 'Il faut au moins 2 mots pour faire un quiz.' : 'At least 2 words are needed for a quiz.'}
           </div>
         </div>
       );
     }
 
-    const totalSteps = totalCustomExercises + totalQuizQuestions;
-    const safeTotalSteps = Math.max(totalSteps, 1);
+    const safeTotalSteps = Math.max(totalCustomExercises + totalQuizQuestions, 1);
 
     const handleCustomAnswered = (exercise: LessonExercise, correct: boolean) => {
       setExerciseResults((prev) => ({ ...prev, [exercise.id]: correct }));
 
       setTimeout(() => {
         const nextIndex = exerciseIndex + 1;
-        setExerciseIndex(nextIndex);
-
-        if (nextIndex >= totalCustomExercises) {
-          if (totalQuizQuestions === 0) {
-            setPhase('complete');
-          }
+        if (nextIndex < totalCustomExercises) {
+          setExerciseIndex(nextIndex);
+          return;
         }
-      }, exercise.type === 'grammar' ? 1800 : 1000);
+        if (totalQuizQuestions > 0) {
+          setExerciseIndex(nextIndex);
+          setCurrentCardIndex(0);
+          return;
+        }
+        setPhase('complete');
+      }, exercise.type === 'grammar' ? 1700 : 900);
     };
 
     if (exerciseIndex < totalCustomExercises) {
       const exercise = customExercises[exerciseIndex];
-      const stepNumber = exerciseIndex + 1;
-      const progress = (stepNumber / safeTotalSteps) * 100;
-
       return (
         <div className="structured-lesson">
-          <div className="lesson-header">
-            <button className="back-btn" onClick={() => setPhase('learn')}>← Retour</button>
-            <div className="progress-indicator">
-              <div className="progress-bar-bg">
-                <div className="progress-bar-fg" style={{ width: `${progress}%` }}></div>
-              </div>
-              <span className="progress-text">
-                {stepNumber} / {safeTotalSteps}
-              </span>
-            </div>
+          {renderTopProgress(customStep, () => setPhase('learn'))}
+          <div className="lesson-phase-shell lesson-exercise-shell">
+            <LessonExerciseSection key={exercise.id} exercise={exercise} language={language} onAnswer={(result) => handleCustomAnswered(exercise, result)} />
           </div>
-          <LessonExerciseSection
-            key={exercise.id}
-            exercise={exercise}
-            language={language}
-            onAnswer={(result) => handleCustomAnswered(exercise, result)}
-          />
         </div>
       );
     }
@@ -461,8 +593,8 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
         <div className="structured-lesson">
           <div className="lesson-empty-state">
             {language === 'fr'
-              ? 'Exercices terminés, bravo !'
-              : 'All custom exercises completed!'}
+              ? 'Les exercices sont terminés.'
+              : 'Exercises are complete.'}
           </div>
         </div>
       );
@@ -484,99 +616,143 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
       );
     }
 
-    const quizStepNumber = totalCustomExercises + currentCardIndex + 1;
-    const progress = (quizStepNumber / safeTotalSteps) * 100;
+    const answered = quizAnswers[currentCardIndex] !== undefined;
+    const correctTranslation = language === 'fr' ? quizWord.translationFr : quizWord.translation;
+    const hasGrammarQuiz = Boolean(quizWord.grammarQuiz);
 
-    const handleAnswer = (answer: string) => {
-      const correct = answer === (language === 'fr' ? quizWord.translationFr : quizWord.translation);
-      setQuizAnswers({ ...quizAnswers, [currentCardIndex]: correct });
-
-      setTimeout(() => {
-        if (currentCardIndex < totalQuizQuestions - 1) {
-          setCurrentCardIndex(currentCardIndex + 1);
-        } else {
-          setPhase('complete');
-        }
-      }, 1200);
+    const goToNextQuizQuestion = () => {
+      if (currentCardIndex < totalQuizQuestions - 1) {
+        setCurrentCardIndex((prev) => prev + 1);
+        return;
+      }
+      setPhase('complete');
     };
 
-    const handleGrammarAnswer = (correct: boolean) => {
-      setQuizAnswers({ ...quizAnswers, [currentCardIndex]: correct });
-
-      setTimeout(() => {
-        if (currentCardIndex < totalQuizQuestions - 1) {
-          setCurrentCardIndex(currentCardIndex + 1);
-        } else {
-          setPhase('complete');
-        }
-      }, 2000);
+    const handleWordAnswer = (answer: string) => {
+      if (answered) return;
+      const isCorrect = answer === correctTranslation;
+      setQuizSelections((prev) => ({ ...prev, [currentCardIndex]: answer }));
+      setQuizAnswers((prev) => ({ ...prev, [currentCardIndex]: isCorrect }));
     };
 
-    const hasGrammarQuiz = quizWord?.grammarQuiz !== undefined;
+    const handleGrammarAnswer = (isCorrect: boolean) => {
+      setQuizAnswers((prev) => ({ ...prev, [currentCardIndex]: isCorrect }));
+    };
 
     return (
       <div className="structured-lesson">
-        <div className="lesson-header">
-          <button className="back-btn" onClick={() => setPhase('learn')}>← Retour</button>
-          <div className="progress-indicator">
-            <div className="progress-bar-bg">
-              <div className="progress-bar-fg" style={{ width: `${progress}%` }}></div>
-            </div>
-            <span className="progress-text">
-              {quizStepNumber} / {safeTotalSteps}
-            </span>
-          </div>
-        </div>
+        {renderTopProgress(quizStep, () => setPhase('learn'))}
 
         {hasGrammarQuiz && quizWord.grammarQuiz ? (
-          <GrammarQuizComponent
-            key={`${quizWord.id}-grammar-${currentCardIndex}`}
-            quiz={quizWord.grammarQuiz}
-            language={language}
-            onAnswer={handleGrammarAnswer}
-          />
-        ) : (
-          <div className="quiz-container">
-            <h2 className="quiz-question">
-              {quizWord.theme === 'pinyin'
-                ? language === 'fr'
-                  ? 'Quel son entendez-vous ?'
-                  : 'Which sound do you hear?'
-                : language === 'fr'
-                ? 'Quelle est la traduction de :'
-                : 'What is the translation of:'}
-            </h2>
-            <div className={`quiz-word ${quizWord.theme === 'pinyin' ? 'quiz-audio-only' : ''}`}>
-              {quizWord.theme !== 'pinyin' && (
-                <>
-                  <div className="quiz-hanzi">{quizWord.hanzi}</div>
-                  <div className="quiz-pinyin">{quizWord.pinyin}</div>
-                </>
+          <div className="lesson-phase-shell lesson-exercise-shell">
+            <GrammarQuizComponent
+              key={`${quizWord.id}-grammar-${currentCardIndex}`}
+              quiz={quizWord.grammarQuiz}
+              language={language}
+              onAnswer={handleGrammarAnswer}
+            />
+            <div className="lesson-bottom-actions">
+              {currentCardIndex > 0 && !answered ? (
+                <button className="btn-secondary lesson-quiz-nav-btn" onClick={() => setCurrentCardIndex((prev) => prev - 1)}>
+                  {language === 'fr' ? 'Précédent' : 'Previous'}
+                </button>
+              ) : (
+                <span />
               )}
-              <AudioButton
-                src={`/${quizWord.audioLetter || quizWord.audio}`}
-                label={language === 'fr' ? 'Écouter' : 'Listen'}
-              />
+              {answered && (
+                <button className="btn-primary lesson-quiz-nav-btn" onClick={goToNextQuizQuestion}>
+                  {currentCardIndex < totalQuizQuestions - 1
+                    ? language === 'fr'
+                      ? 'Suivant'
+                      : 'Next'
+                    : language === 'fr'
+                      ? 'Terminer'
+                      : 'Finish'}
+                </button>
+              )}
             </div>
-            <div className="quiz-options">
-              {options.map((option, index) => {
-                const correctTranslation = language === 'fr' ? quizWord.translationFr : quizWord.translation;
-                const answered = quizAnswers[currentCardIndex] !== undefined;
-                const isCorrect = option === correctTranslation;
-                const optionClass =
-                  answered && isCorrect ? 'correct' : answered && !isCorrect ? 'incorrect' : '';
+          </div>
+        ) : (
+          <div className="lesson-phase-shell">
+            <div className="quiz-container quiz-container-modern">
+              <p className="quiz-question-counter">
+                {language === 'fr' ? 'Question' : 'Question'} {currentCardIndex + 1}/{safeTotalSteps - totalCustomExercises}
+              </p>
+              <h2 className="quiz-question">
+                {quizWord.theme === 'pinyin'
+                  ? language === 'fr'
+                    ? 'Quel son entendez-vous ?'
+                    : 'Which sound do you hear?'
+                  : language === 'fr'
+                    ? 'Quelle est la traduction de :'
+                    : 'What is the translation of:'}
+              </h2>
 
-                return (
-                  <button
-                    key={`${option}-${index}`}
-                    className={`quiz-option ${optionClass}`}
-                    onClick={() => !answered && handleAnswer(option)}
-                    disabled={answered}
-                  >
-                    {option}
+              <div className={`quiz-word ${quizWord.theme === 'pinyin' ? 'quiz-audio-only' : ''}`}>
+                {quizWord.theme !== 'pinyin' && (
+                  <>
+                    <div className="quiz-hanzi">{quizWord.hanzi}</div>
+                    <div className="quiz-pinyin">{quizWord.pinyin}</div>
+                  </>
+                )}
+                <AudioButton src={`/${quizWord.audioLetter || quizWord.audio}`} label={language === 'fr' ? 'Écouter' : 'Listen'} />
+              </div>
+
+              {answered && (
+                <div className={`quiz-answer-banner ${quizAnswers[currentCardIndex] ? 'success' : 'warning'}`}>
+                  {quizAnswers[currentCardIndex]
+                    ? language === 'fr'
+                      ? 'Bonne réponse'
+                      : 'Correct answer'
+                    : language === 'fr'
+                      ? 'La bonne réponse est en vert ci-dessous'
+                      : 'Correct answer is highlighted in green'}
+                </div>
+              )}
+
+              <div className="quiz-options">
+                {options.map((option, index) => {
+                  const isCorrect = option === correctTranslation;
+                  const isSelected = quizSelections[currentCardIndex] === option;
+                  const optionClass =
+                    answered && isCorrect ? 'correct' : answered && isSelected && !isCorrect ? 'incorrect' : '';
+
+                  return (
+                    <button
+                      key={`${option}-${index}`}
+                      className={`quiz-option quiz-option-modern ${optionClass}`}
+                      onClick={() => handleWordAnswer(option)}
+                      disabled={answered}
+                    >
+                      <span className="quiz-option-letter">{String.fromCharCode(65 + index)}</span>
+                      <span className="quiz-option-text">{option}</span>
+                      {answered && isCorrect && <span className="quiz-option-status">✓</span>}
+                      {answered && isSelected && !isCorrect && <span className="quiz-option-status">✗</span>}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="lesson-bottom-actions">
+                {currentCardIndex > 0 && !answered ? (
+                  <button className="btn-secondary lesson-quiz-nav-btn" onClick={() => setCurrentCardIndex((prev) => prev - 1)}>
+                    {language === 'fr' ? 'Précédent' : 'Previous'}
                   </button>
-                );
-              })}
+                ) : (
+                  <span />
+                )}
+                {answered && (
+                  <button className="btn-primary lesson-quiz-nav-btn" onClick={goToNextQuizQuestion}>
+                    {currentCardIndex < totalQuizQuestions - 1
+                      ? language === 'fr'
+                        ? 'Suivant'
+                        : 'Next'
+                      : language === 'fr'
+                        ? 'Terminer'
+                        : 'Finish'}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         )}
@@ -584,11 +760,13 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
     );
   }
 
-  // Phase 4: Completion
   const restartLesson = () => {
     setPhase('learn');
     setCurrentCardIndex(0);
+    setIsCardFlipped(false);
+    setExplanationIndex(0);
     setQuizAnswers({});
+    setQuizSelections({});
     setExerciseIndex(0);
     setExerciseResults({});
   };
@@ -597,6 +775,7 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
     setPhase('quiz');
     setCurrentCardIndex(0);
     setQuizAnswers({});
+    setQuizSelections({});
     setExerciseIndex(0);
     setExerciseResults({});
   };
@@ -611,50 +790,69 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
 
   return (
     <div className="structured-lesson">
-      <div className="completion-container">
-        <div className="completion-icon">🎉</div>
-        <h1 className="completion-title">
-          {language === 'fr' ? 'Leçon terminée !' : 'Lesson complete!'}
-        </h1>
-        <div className="completion-score">
-          <div className="score-circle">
-            <span className="score-value">{percentage}%</span>
+      {renderTopProgress(totalSteps, onExit)}
+      <div className="lesson-phase-shell">
+        <div className="completion-container completion-container-modern">
+          <div className="completion-icon">⭐</div>
+          <h1 className="completion-title">
+            {passed
+              ? language === 'fr'
+                ? 'Excellent travail !'
+                : 'Great work!'
+              : language === 'fr'
+                ? 'Bon effort !'
+                : 'Good effort!'}
+          </h1>
+          <p className="completion-lesson-name">{language === 'fr' ? lesson.title : lesson.titleEn}</p>
+
+          <div className="completion-score">
+            <div className="completion-metric">
+              <span>{percentage}%</span>
+              <small>{language === 'fr' ? 'Score' : 'Score'}</small>
+            </div>
+            <div className="completion-metric xp">
+              <span>+{estimatedXp}</span>
+              <small>XP</small>
+            </div>
+            <div className="completion-metric correct">
+              <span>{score}/{safeTotal}</span>
+              <small>{language === 'fr' ? 'Correct' : 'Correct'}</small>
+            </div>
           </div>
-          <p className="score-text">
-            {score} / {safeTotal} {language === 'fr' ? 'bonnes réponses' : 'correct answers'}
-          </p>
-        </div>
-        {!passed && (
-          <p className="completion-warning">
-            {language === 'fr'
-              ? 'Atteignez au moins 80% pour débloquer la prochaine leçon.'
-              : 'Reach at least 80% to unlock the next lesson.'}
-          </p>
-        )}
-        <div className="completion-actions">
-          <button className="btn-secondary" onClick={onExit}>
-            {language === 'fr' ? 'Retour à l\'accueil' : 'Back to home'}
-          </button>
-          {passed ? (
-            <button
-              className="btn-primary"
-              onClick={() => {
-                const learnedIds = Array.from(new Set(lessonWords.map((word) => word.id)));
-                onComplete({ learnedWordIds: learnedIds, duration: lesson.duration });
-              }}
-            >
-              {language === 'fr' ? 'Leçon suivante' : 'Next lesson'} →
-            </button>
-          ) : (
-            <>
-              <button className="btn-secondary" onClick={restartLesson}>
-                {language === 'fr' ? 'Revoir la leçon' : 'Review lesson'}
-              </button>
-              <button className="btn-primary" onClick={retryQuiz}>
-                {language === 'fr' ? 'Reprendre le quiz' : 'Retry quiz'} →
-              </button>
-            </>
+
+          {!passed && (
+            <p className="completion-warning">
+              {language === 'fr'
+                ? 'Atteignez au moins 80% pour débloquer la prochaine leçon.'
+                : 'Reach at least 80% to unlock the next lesson.'}
+            </p>
           )}
+
+          <div className="completion-actions">
+            <button className="btn-secondary" onClick={onExit}>
+              {language === 'fr' ? 'Retour aux leçons' : 'Back to lessons'}
+            </button>
+            {passed ? (
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  const learnedIds = Array.from(new Set(lessonWords.map((word) => word.id)));
+                  onComplete({ learnedWordIds: learnedIds, duration: lesson.duration });
+                }}
+              >
+                {language === 'fr' ? 'Terminer' : 'Finish'} →
+              </button>
+            ) : (
+              <>
+                <button className="btn-secondary" onClick={restartLesson}>
+                  {language === 'fr' ? 'Revoir la leçon' : 'Review lesson'}
+                </button>
+                <button className="btn-primary" onClick={retryQuiz}>
+                  {language === 'fr' ? 'Reprendre le quiz' : 'Retry quiz'} →
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

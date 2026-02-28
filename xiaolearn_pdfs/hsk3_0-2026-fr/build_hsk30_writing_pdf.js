@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { LEVEL_COLORS, GROUP_COLORS } = require("./level_colors");
 
 const templatePath = path.resolve(__dirname, "template_writing.html");
 const strokesPath = path.resolve(
@@ -30,14 +31,6 @@ const DEFAULT_PROGRESS_MIN = 1;
 const DEFAULT_PRACTICE = 10;
 const DEFAULT_ROWS_PER_PAGE = 7;
 const DEFAULT_FIRST_PAGE_ROWS = 6;
-const LEVEL_COLORS = {
-  "1-2": "#9b2335",
-  "3": "#c26a14",
-  "4": "#1f7a4d",
-  "5": "#1d4e89",
-  "6": "#6a3c8b",
-  "7-9": "#000000"
-};
 const LEVEL_TO_GROUP = {
   1: "1-2",
   2: "1-2",
@@ -541,7 +534,11 @@ const group = groupArg || LEVEL_TO_GROUP[levelArg] || "1-2";
 const rowsPerPage = Number(getArg("rows")) || DEFAULT_ROWS_PER_PAGE;
 const firstPageRows =
   Number(getArg("rows-first")) || DEFAULT_FIRST_PAGE_ROWS;
-const accent = getArg("accent") || LEVEL_COLORS[group] || LEVEL_COLORS["1-2"];
+const accent =
+  getArg("accent") ||
+  (levelArg && LEVEL_COLORS[levelArg]) ||
+  GROUP_COLORS[group] ||
+  GROUP_COLORS["1-2"];
 let progressMax = Number(getArg("progress")) || DEFAULT_PROGRESS_MAX;
 let progressMin = Number(getArg("progress-min")) || DEFAULT_PROGRESS_MIN;
 if (progressMax < 1) progressMax = 1;
@@ -566,7 +563,7 @@ if (isAll) {
       rowsPerPage,
       firstPageRows,
       outFile: outName,
-      accent: getArg("accent") || LEVEL_COLORS[groupName] || LEVEL_COLORS["1-2"],
+      accent: getArg("accent") || GROUP_COLORS[groupName] || GROUP_COLORS["1-2"],
       progressMin,
       progressMax,
       practiceCount

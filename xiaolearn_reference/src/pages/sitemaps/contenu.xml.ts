@@ -4,14 +4,12 @@ import {
   getBaseUrl,
   renderSitemapXml,
   toAbsoluteUrl,
-  todayIsoDate,
 } from '../../utils/sitemap';
 
 export const prerender = true;
 
 export const GET: APIRoute = async ({ site }) => {
   const base = getBaseUrl(site);
-  const lastmod = todayIsoDate();
   const urls = new Set<string>();
 
   urls.add(toAbsoluteUrl(base, '/culture'));
@@ -34,7 +32,6 @@ export const GET: APIRoute = async ({ site }) => {
       .sort((a, b) => a.localeCompare(b, 'en'))
       .map((loc) => ({
         loc,
-        lastmod,
         changefreq: 'weekly' as const,
         priority: 0.7,
       })),

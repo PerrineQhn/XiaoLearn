@@ -10,7 +10,7 @@ interface FilterChipsProps {
   onClearFilters?: () => void;
 }
 
-const HSK_LEVELS: HSKLevel[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'];
+const HSK_LEVELS: HSKLevel[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7', 'hors-hsk'];
 
 export const FilterChips: React.FC<FilterChipsProps> = ({
   selectedLevels,

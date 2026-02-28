@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 export interface GrammarExample {
@@ -60,7 +60,7 @@ interface HSKTermInfo {
   explanationFr: string;
 }
 
-const SOURCE_FILE = 'hsk_grammar_hsk1_to_hsk7_9_articles.html';
+const SOURCE_POINTS_DIR = 'points';
 const HSK_EXAMPLE_FILES = ['hsk1.json', 'hsk2.json', 'hsk3.json', 'hsk4.json', 'hsk5.json'];
 const NON_LEXICAL_TERMS = new Set([
   '语法',
@@ -70,6 +70,8 @@ const NON_LEXICAL_TERMS = new Set([
   '主语',
   '谓语',
   '宾语',
+  '施事',
+  '受事',
   '补语',
   '动词',
   '名词',
@@ -87,6 +89,14 @@ const NON_LEXICAL_TERMS = new Set([
   '结果',
   '程度',
 ]);
+const NON_EXAMPLE_TERM_SUFFIXES = ['表示法', '表达法', '句型', '结构', '语法', '格式'];
+const META_DESCRIPTOR_FRAGMENTS = ['表示', '动作', '行为', '意义', '用法', '开始', '持续', '引申', '伴随', '施事', '受事'];
+const CONTEXTUAL_TERM_TRANSLATIONS: Record<string, string> = {
+  小数: 'décimal',
+  分数: 'fraction',
+  百分数: 'pourcentage',
+  倍数: 'multiple',
+};
 
 const PARTICLE_HINT_LABELS: Array<[string, string]> = [
   ['了', '了 (aspect/changement)'],
@@ -368,7 +378,15 @@ const HSK_SENTENCE_INDEX = buildHSKSentenceIndex(HSK_EXAMPLE_INDEX);
 const CATALOG = buildCatalog();
 
 function buildCatalog() {
-  const points = parseGrammarFile(SOURCE_FILE)
+  const pointFiles = listGrammarPointFiles();
+  if (pointFiles.length === 0) {
+    throw new Error(
+      `Aucun fichier de fiche trouvé dans grammar_articles/${SOURCE_POINTS_DIR} (attendu: 1 fiche = 1 fichier HTML).`,
+    );
+  }
+
+  const points = pointFiles
+    .flatMap((fileName) => parseGrammarFile(fileName))
     .sort((a, b) => (a.level === b.level ? a.id.localeCompare(b.id) : a.level - b.level));
   const pointsById = new Map(points.map((point) => [point.id, point]));
   const groups = buildGroups(points);
@@ -382,6 +400,18 @@ function buildCatalog() {
     pointGroups,
     featuredPoints,
   };
+}
+
+function listGrammarPointFiles(): string[] {
+  const dirUrl = new URL(`../../grammar_articles/${SOURCE_POINTS_DIR}/`, import.meta.url);
+  if (!existsSync(dirUrl)) {
+    return [];
+  }
+
+  return readdirSync(dirUrl, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+    .map((entry) => `${SOURCE_POINTS_DIR}/${entry.name}`)
+    .sort((a, b) => a.localeCompare(b, 'en'));
 }
 
 function parseGrammarFile(fileName: string): GrammarPoint[] {
@@ -407,14 +437,54 @@ function parseGrammarFile(fileName: string): GrammarPoint[] {
     const sections = extractSections(body);
     const objectiveRaw = getSectionParagraph(sections, ['idee generale', 'objectif']);
     const structure = getSectionStructure(sections);
-    const usage = getSectionList(sections, ['comment lutiliser', 'emploi', 'usage']);
+    const usage = getSectionList(sections, ['comment lutiliser', 'comment l utiliser', 'emploi', 'usage'])
+      .filter((item) => !isTemplateUsage(item));
     const elements = getSectionElements(sections, sourceTitle);
+    const rawExamples = extractExamples(body);
+    const filteredExamples = rawExamples.filter((example) => !isTemplateExample(example));
+    const fixedExpressionPoint = isFixedExpressionStylePoint(sourceTitle);
+    const hasFixedExpressionExamples = fixedExpressionPoint
+      ? hasFixedExpressionContextExample(filteredExamples, sourceTitle, elements)
+      : true;
+    const isTemplatePoint = isTemplateObjective(objectiveRaw)
+      || filteredExamples.length < rawExamples.length
+      || (fixedExpressionPoint && filteredExamples.length > 0 && !hasFixedExpressionExamples);
+    const numericNotationPoint = isNumericNotationTitle(sourceTitle);
     const objective = buildObjective(objectiveRaw, sourceTitle, categoryRaw, subRaw, elements);
-    const examples = buildRelevantExamples(extractExamples(body), elements, sourceTitle);
-    const termVariations = buildTermVariations(elements, sourceTitle, examples);
-    const notes = dedupe(getSectionList(sections, ['notes', 'remarques', 'attention']).concat(termVariations));
-    const effectiveUsage = usage.length > 0 ? usage : buildFallbackUsage(elements, sourceTitle, examples);
-    const commonMistakes = getSectionList(sections, ['pieges frequents', 'erreurs frequentes']);
+    const generatedTemplateExamples = isTemplatePoint
+      ? buildTemplateExamplesFromStructure(structure, sourceTitle, elements)
+      : [];
+    let examples = dedupeExamples(
+      generatedTemplateExamples.concat(
+        buildRelevantExamples(filteredExamples, elements, sourceTitle, { preferSentences: isTemplatePoint }),
+      ),
+    ).slice(0, 6);
+    if (numericNotationPoint) {
+      const filteredNumericExamples = examples.filter(
+        (example) => isSentenceLikeExample(example) || /(?:百分之|分之|点[零一二三四五六七八九十百千万两0-9]|倍)/.test(example.chinese),
+      );
+      if (filteredNumericExamples.length >= 3) {
+        examples = filteredNumericExamples.slice(0, 6);
+      }
+    }
+    const termVariations = isTemplatePoint ? [] : buildTermVariations(elements, sourceTitle, examples);
+    const noteContextTerms = new Set(collectExampleTerms(elements, sourceTitle));
+    const notesFromSections = getSectionList(sections, ['notes', 'remarques', 'attention'])
+      .filter((item) => !isTemplateNote(item))
+      .filter((item) => (isTemplatePoint ? isContextualTemplateNote(item, noteContextTerms, examples) : true));
+    const notes = dedupe(notesFromSections.concat(termVariations));
+    const effectiveUsage = usage.length > 0
+      ? usage
+      : (
+          isTemplatePoint
+            ? buildTemplateUsageFromStructure(structure, elements, sourceTitle, examples)
+            : buildFallbackUsage(elements, sourceTitle, examples, structure)
+        );
+    const rawMistakes = getSectionList(sections, ['pieges frequents', 'erreurs frequentes'])
+      .filter((item) => !isTemplateMistake(item));
+    const commonMistakes = rawMistakes.length > 0
+      ? rawMistakes
+      : (isTemplatePoint ? buildFallbackCommonMistakes(elements, sourceTitle, structure) : []);
 
     const category = buildCategoryLabel(categoryRaw, subRaw);
     const subcategorySource = cleanText(subRaw);
@@ -618,8 +688,245 @@ function buildObjective(
 
 function isTemplateObjective(value: string): boolean {
   const normalized = normalizeHeading(stripInlineMarkdown(value));
-  return normalized.includes('ici on regroupe des mots')
-    && normalized.includes('meme comportement grammatical');
+  return (
+    normalized.includes('ici on regroupe des mots') && normalized.includes('meme comportement grammatical')
+  ) || normalized.includes('ici on traite d un schema fige')
+    || normalized.includes('ici on traite d une expression structuree')
+    || normalized.includes('ici on traite d un type de phrase')
+    || normalized.includes('ici on traite des elements morphologiques');
+}
+
+function isTemplateExample(example: GrammarExample): boolean {
+  const zh = normalizeHeading(example.chinese);
+  const fr = normalizeHeading(example.french);
+  return zh === normalizeHeading('我今天学习中文')
+    && fr.includes(normalizeHeading('Aujourd’hui j’étudie le chinois'));
+}
+
+function isTemplateUsage(value: string): boolean {
+  const normalized = normalizeHeading(stripInlineMarkdown(value));
+  return normalized.includes('verifier la position dans la phrase')
+    || normalized.includes('verifier la position des blocs')
+    || normalized.includes('tester aussi la compatibilite avec les particules visibles')
+    || normalized.includes('tester la compatibilite avec les particules')
+    || normalized.includes('avant le verbe apres le verbe ou dans le groupe nominal')
+    || (normalized.includes('comparer') && normalized.includes('avant de remplacer'))
+    || (normalized.includes('comparer') && normalized.includes('dans une meme phrase') && normalized.includes('remplacer'))
+    || normalized.includes('partir du patron')
+    || normalized.includes('reprends une phrase modele')
+    || normalized.includes('copier une phrase modele')
+    || normalized.includes('remplace seulement les informations variables')
+    || normalized.includes('en gardant la meme charpente')
+    || normalized.includes('ne pas permuter');
+}
+
+function isTemplateNote(value: string): boolean {
+  const normalized = normalizeHeading(stripInlineMarkdown(value));
+  return (
+    normalized.includes('de determination')
+    && normalized.includes('relie un modifieur a un nom')
+  ) || normalized.includes('emploi a distinguer selon le contexte')
+    || normalized.includes('emploi a distingeur selon le contexte')
+    || normalized.includes('attention a la place des groupes longs');
+}
+
+function isTemplateMistake(value: string): boolean {
+  const normalized = normalizeHeading(stripInlineMarkdown(value));
+  return normalized.includes('ne pas confondre la fonction categorie structure avec le vocabulaire')
+    || normalized.includes('verifier la place dans la phrase')
+    || normalized.includes('eviter une phrase trop courte qui sonne artificielle')
+    || normalized.includes('ne pas intervertir')
+    || normalized.includes('verifier l ordre des elements')
+    || normalized.includes('utiliser une phrase complete pour valider la structure');
+}
+
+interface StructureEntry {
+  label: string;
+  pattern: string;
+  raw: string;
+}
+
+function parseStructureEntries(structure: string): StructureEntry[] {
+  const seen = new Set<string>();
+  return structure
+    .split('\n')
+    .map((line) => cleanText(line))
+    .filter(Boolean)
+    .map((line) => {
+      const [left, ...right] = line.split(/[：:]/);
+      if (right.length === 0) {
+        return { label: '', pattern: cleanText(left), raw: line };
+      }
+      return {
+        label: cleanText(left),
+        pattern: cleanText(right.join(':')),
+        raw: line,
+      };
+    })
+    .filter((entry) => {
+      const key = `${entry.label}|${entry.pattern}|${entry.raw}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function extractPatternSlots(pattern: string): string[] {
+  const rawSlots = cleanText(pattern).match(/[A-Z甲乙丙丁]/g) ?? [];
+  return dedupe(rawSlots);
+}
+
+function buildTemplateUsageFromStructure(
+  structure: string,
+  elements: string[],
+  sourceTitle: string,
+  examples: GrammarExample[],
+): string[] {
+  const entries = parseStructureEntries(structure);
+  const usage: string[] = [];
+
+  for (const entry of entries) {
+    const normalized = entry.pattern.replace(/\s+/g, '');
+    if (normalized.includes('点')) {
+      usage.push('Pour les décimaux (点), lire chaque chiffre après 点 séparément.');
+    }
+    if (normalized.includes('分之')) {
+      usage.push('En fraction, l’ordre est dénominateur puis numérateur : B分之A.');
+    }
+    if (normalized.includes('百分之')) {
+      usage.push('Pour un pourcentage, utiliser 百分之 + nombre.');
+    }
+    if (normalized.includes('倍')) {
+      usage.push('Pour les multiples, utiliser la comparaison complète avec 倍 (ex. A是B的X倍).');
+    }
+  }
+
+  if (entries.length > 0) {
+    const primaryPattern = entries[0]?.pattern || entries[0]?.raw || '';
+    usage.push(`Partir du patron : **${primaryPattern}**.`);
+    const slots = extractPatternSlots(primaryPattern);
+    if (slots.length > 0) {
+      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} selon le sens, sans changer l’ordre.`);
+    }
+    const placementHint = buildStructurePlacementHint(primaryPattern);
+    const structureContextHint = buildStructureContextHint(primaryPattern);
+    const contextHint = buildUsageContextHint(examples, sourceTitle, false);
+    if (placementHint) usage.push(placementHint);
+    if (structureContextHint) usage.push(structureContextHint);
+    else if (contextHint) usage.push(contextHint);
+  }
+
+  const fallback = usage.length > 0 ? usage : buildFallbackUsage(elements, sourceTitle, examples, structure);
+  if (fallback.length === 0 && entries.length > 0) {
+    fallback.push(`Suivre la structure **${entries[0].pattern || entries[0].raw}** en conservant l’ordre des éléments.`);
+  }
+  return dedupe(fallback).slice(0, 6);
+}
+
+function buildTemplateExamplesFromStructure(
+  structure: string,
+  sourceTitle = '',
+  elements: string[] = [],
+): GrammarExample[] {
+  const entries = parseStructureEntries(structure);
+  const generated: GrammarExample[] = [];
+
+  for (const entry of entries) {
+    const normalized = entry.pattern.replace(/\s+/g, '');
+
+    if (normalized.includes('百分之')) {
+      generated.push({
+        chinese: '这次调查的满意度是百分之八十。',
+        french: 'Le taux de satisfaction de cette enquête est de 80 %.',
+      });
+      continue;
+    }
+    if (normalized.includes('分之')) {
+      generated.push({
+        chinese: '三分之二的学生选择了线上课程。',
+        french: 'Deux tiers des étudiants ont choisi le cours en ligne.',
+      });
+      continue;
+    }
+    if (normalized.includes('点')) {
+      generated.push({
+        chinese: '今天的增长率是三点五。',
+        french: "Le taux de croissance aujourd'hui est de 3,5.",
+      });
+      continue;
+    }
+    if (normalized.includes('倍')) {
+      generated.push({
+        chinese: '今年的销量是去年的两倍。',
+        french: "Les ventes de cette année sont deux fois celles de l'année dernière.",
+      });
+    }
+  }
+
+  if (generated.length === 0 && isFixedExpressionStylePoint(sourceTitle)) {
+    const expression = getFixedExpressionSeed(sourceTitle, elements);
+    const variants = buildFixedExpressionVariants(expression).filter((value) => isConcreteFixedExpressionVariant(value));
+    const primary = variants[0];
+    const secondary = variants[1];
+
+    if (primary) {
+      generated.push({
+        chinese: `在口语里，常听到“${primary}”这种说法。`,
+        french: `À l’oral, on entend souvent la formule « ${primary} ».`,
+      });
+    }
+    if (secondary && secondary !== primary) {
+      generated.push({
+        chinese: `有些场合也会说“${secondary}”。`,
+        french: `Dans certains contextes, on utilise aussi « ${secondary} ».`,
+      });
+    }
+  }
+
+  return dedupeExamples(generated).map(attachPinyinToExample);
+}
+
+function buildFallbackCommonMistakes(elements: string[], sourceTitle: string, structure = ''): string[] {
+  const terms = collectExampleTerms(elements, sourceTitle).slice(0, 3);
+  const mistakes: string[] = [];
+  const entries = parseStructureEntries(structure);
+  const fixedExpressionPoint = isFixedExpressionStylePoint(sourceTitle) && entries.length === 0;
+
+  if (fixedExpressionPoint) {
+    const expression = getFixedExpressionSeed(sourceTitle, elements);
+    mistakes.push('Ne pas découper l’expression en mots isolés : elle fonctionne comme un bloc.');
+    mistakes.push('Éviter la traduction mot à mot et apprendre d’abord le sens global en contexte.');
+    if (/[（(].+[）)]/.test(expression)) {
+      mistakes.push('Quand une variante est entre parenthèses, mémoriser les deux formes possibles sans les mélanger.');
+    }
+    mistakes.push('Réutiliser la formule dans une phrase complète, pas comme un mot seul.');
+    return dedupe(mistakes);
+  }
+
+  if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('分之'))) {
+    mistakes.push('Dans une fraction, garder l’ordre dénominateur puis numérateur : 四分之三 = 3/4.');
+  }
+  if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('百分之'))) {
+    mistakes.push('Ne pas supprimer 百分之 dans les pourcentages formels.');
+  }
+  if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('点'))) {
+    mistakes.push('Après 点, lire les chiffres un par un (pas comme un entier).');
+  }
+  if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('倍'))) {
+    mistakes.push('A是B的两倍 signifie A = 2 × B, pas A + 2.');
+  }
+
+  const key = terms.slice(0, 8).sort((a, b) => a.localeCompare(b)).join('|');
+  const hasExplicitContrast = Boolean(TERM_CONTRAST_HINTS[key])
+    || entries.some((entry) => /[、/或]|A|B|甲|乙/.test(entry.pattern));
+
+  if (terms.length >= 2 && hasExplicitContrast) {
+    mistakes.push(`Ne pas intervertir **${terms[0]}** et **${terms[1]}** sans vérifier la structure exacte.`);
+  }
+
+  mistakes.push('Vérifier l’ordre des éléments avant de parler ou d’écrire.');
+  mistakes.push('Utiliser une phrase complète pour valider la structure en contexte réel.');
+  return dedupe(mistakes);
 }
 
 function buildFallbackObjective(
@@ -683,11 +990,15 @@ function getSectionStructure(sections: SectionBlock[]): string {
   const section = getMatchingSections(sections, ['structure', 'schema'])[0];
   if (!section) return '';
 
-  const codeMatch = section.content.match(/<pre[^>]*>([\s\S]*?)<\/pre>/)
-    || section.content.match(/<code>([\s\S]*?)<\/code>/)
+  const preMatch = section.content.match(/<pre[^>]*>([\s\S]*?)<\/pre>/);
+  if (preMatch) {
+    return normalizeStructureLayout(cleanMultilineText(preMatch[1]));
+  }
+
+  const codeMatch = section.content.match(/<code>([\s\S]*?)<\/code>/)
     || section.content.match(/<p[^>]*>([\s\S]*?)<\/p>/);
 
-  return codeMatch ? cleanText(codeMatch[1]).replace(/\s+/g, ' ') : '';
+  return codeMatch ? normalizeStructureLayout(cleanMultilineText(codeMatch[1])) : '';
 }
 
 function getSectionList(sections: SectionBlock[], headingTokens: string[]): string[] {
@@ -725,17 +1036,169 @@ function getSectionElements(sections: SectionBlock[], title: string): string[] {
     : [];
 
   if (fromPills.length > 0) {
-    return dedupe(fromPills);
+    return normalizeElementList(fromPills);
   }
 
   const tail = title.includes('—') ? title.split('—').slice(1).join('—') : title;
-  const fallback = tail
-    .replace(/\.\.\.|…/g, '')
-    .split(/[、,，/]/g)
+  const fallback = splitOutsideParentheses(
+    tail.replace(/\.\.\.|…/g, ''),
+    new Set(['、', ',', '，', '/']),
+  )
     .map((item) => cleanText(item))
     .filter(Boolean);
 
-  return dedupe(fallback);
+  return normalizeElementList(fallback);
+}
+
+function normalizeStructureLayout(value: string): string {
+  if (!value) return '';
+
+  const normalizedLines = mergeBrokenChunks(
+    value
+      .split('\n')
+      .map((line) => cleanText(line))
+      .filter(Boolean),
+  );
+  if (normalizedLines.length > 1) {
+    return normalizedLines.map((line) => repairCollapsedOptionalMarkers(line)).join('\n');
+  }
+
+  const compact = (normalizedLines[0] || value).replace(/\s+/g, ' ').trim();
+  const colonCount = (compact.match(/[：:]/g) || []).length;
+  if (colonCount < 2) return repairCollapsedOptionalMarkers(compact);
+
+  const chunks = mergeBrokenChunks(
+    compact
+    .split(/\s+(?=[^：:\n]{1,24}[：:])/g)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean),
+  );
+
+  if (chunks.length < 2) return compact;
+  return chunks.map((chunk) => repairCollapsedOptionalMarkers(chunk)).join('\n');
+}
+
+function normalizeElementList(values: string[]): string[] {
+  const mergedValues = mergeBrokenChunks(values);
+  return dedupe(
+    mergedValues
+      .flatMap((value) => splitElementValue(value))
+      .map((value) => value.replace(/[0-9]+$/g, '').trim())
+      .map((value) => repairCollapsedOptionalMarkers(value))
+      .map((value) => value.replace(/[（(](施事|受事|主语|谓语|宾语|定语|状语|补语|其他成分|成分)[）)]/g, '').trim())
+      .filter((value) => {
+        if (!value) return false;
+        if (NON_LEXICAL_TERMS.has(value)) return false;
+        if (isMetaDescriptorTerm(value)) return false;
+        return true;
+      }),
+  );
+}
+
+function splitElementValue(value: string): string[] {
+  const cleaned = cleanText(value)
+    .replace(/[“”"'`]/g, '')
+    .replace(/^\s*[（(]\d+[）)]\s*/g, '')
+    .trim();
+  if (!cleaned) return [];
+
+  const focused = /[：:]/.test(cleaned)
+    ? cleanText(cleaned.split(/[：:]/g).slice(-1)[0] || cleaned)
+    : cleaned;
+
+  return splitOutsideParentheses(focused, new Set(['、', '，', ',', '/']))
+    .map((segment) => cleanText(segment))
+    .flatMap((segment) => splitOutsideParentheses(segment, new Set(['+'])).map((part) => cleanText(part)))
+    .filter((segment) => segment !== '其他成分' && segment !== '表示');
+}
+
+function splitOutsideParentheses(value: string, delimiters: Set<string>): string[] {
+  const output: string[] = [];
+  let current = '';
+  let depth = 0;
+
+  for (const char of value) {
+    if (char === '（' || char === '(') {
+      depth += 1;
+      current += char;
+      continue;
+    }
+    if ((char === '）' || char === ')') && depth > 0) {
+      depth -= 1;
+      current += char;
+      continue;
+    }
+    if (depth === 0 && delimiters.has(char)) {
+      const cleaned = cleanText(current);
+      if (cleaned) output.push(cleaned);
+      current = '';
+      continue;
+    }
+    current += char;
+  }
+
+  const tail = cleanText(current);
+  if (tail) output.push(tail);
+  return output;
+}
+
+function parenthesisBalance(value: string): number {
+  let balance = 0;
+  for (const char of value) {
+    if (char === '（' || char === '(') balance += 1;
+    if ((char === '）' || char === ')') && balance > 0) balance -= 1;
+  }
+  return balance;
+}
+
+function mergeBrokenChunks(values: string[]): string[] {
+  const merged: string[] = [];
+
+  for (const rawValue of values) {
+    const value = cleanText(rawValue);
+    if (!value) continue;
+
+    if (merged.length === 0) {
+      merged.push(value);
+      continue;
+    }
+
+    const previous = merged[merged.length - 1];
+    const shouldMerge = parenthesisBalance(previous) > 0
+      || /[+/:：]$/.test(previous)
+      || /^[+)）]/.test(value)
+      || /^\+/.test(value);
+
+    if (shouldMerge) {
+      merged[merged.length - 1] = `${previous}${value}`.replace(/\s+/g, ' ').trim();
+    } else {
+      merged.push(value);
+    }
+  }
+
+  return merged;
+}
+
+function repairCollapsedOptionalMarkers(value: string): string {
+  if (!value) return value;
+  return value.replace(/([一二三四五六七八九十两])了(?=[）)])/g, '$1、了');
+}
+
+function isContextualTemplateNote(
+  note: string,
+  contextTerms: Set<string>,
+  examples: GrammarExample[],
+): boolean {
+  const noteTerm = extractLeadingNoteTerm(note);
+  if (!noteTerm) return true;
+  if (contextTerms.has(noteTerm)) return true;
+  return examples.some((example) => example.chinese.includes(noteTerm));
+}
+
+function extractLeadingNoteTerm(note: string): string {
+  const plain = cleanText(stripInlineMarkdown(note));
+  const match = plain.match(/^([\u4e00-\u9fff]{1,4})\s*[—:：-]/);
+  return match ? match[1] : '';
 }
 
 function extractExamples(body: string): GrammarExample[] {
@@ -1097,6 +1560,13 @@ function buildParticleHintsForTerm(variants: string[], examples: GrammarExample[
   return `Combinaisons fréquentes observées : ${foundLabels.join(', ')}.`;
 }
 
+function resolveContextualTermTranslation(term: string, sourceTitle: string): string {
+  if (/数的(?:表示法|表达法)/.test(sourceTitle) && CONTEXTUAL_TERM_TRANSLATIONS[term]) {
+    return CONTEXTUAL_TERM_TRANSLATIONS[term];
+  }
+  return '';
+}
+
 function buildTermVariations(elements: string[], sourceTitle: string, examples: GrammarExample[]): string[] {
   const terms = collectExampleTerms(elements, sourceTitle);
   if (terms.length === 0) return [];
@@ -1114,15 +1584,20 @@ function buildTermVariations(elements: string[], sourceTitle: string, examples: 
     const variants = extractHanziVariants(term);
     const info = findTermInfo(variants.length > 0 ? variants : [term]);
     const particleHint = buildParticleHintsForTerm(variants.length > 0 ? variants : [term], examples);
+    const contextualTranslation = resolveContextualTermTranslation(term, sourceTitle);
+    const translation = contextualTranslation || info?.translationFr || '';
+    const explanation = info?.explanationFr || '';
+
+    if (!translation && !explanation && !particleHint) {
+      continue;
+    }
 
     let line = `**${term}**`;
-    if (info?.translationFr) {
-      line += ` : ${info.translationFr}.`;
-    } else {
-      line += ' : emploi à distinguer selon le contexte.';
+    if (translation) {
+      line += ` : ${translation}.`;
     }
-    if (info?.explanationFr) {
-      line += ` ${info.explanationFr}`;
+    if (explanation) {
+      line += ` ${explanation}`;
     }
     if (particleHint) {
       line += ` ${particleHint}`;
@@ -1138,30 +1613,258 @@ function buildTermVariations(elements: string[], sourceTitle: string, examples: 
   return dedupe(guidance);
 }
 
-function buildFallbackUsage(elements: string[], sourceTitle: string, examples: GrammarExample[]): string[] {
+function buildFallbackUsage(
+  elements: string[],
+  sourceTitle: string,
+  examples: GrammarExample[],
+  structure = '',
+): string[] {
   const terms = collectExampleTerms(elements, sourceTitle).map((term) => normalizeGrammarTerm(term)).filter(Boolean);
   const uniqueTerms = dedupe(terms);
-  if (uniqueTerms.length <= 1) return [];
+  const entries = parseStructureEntries(structure);
+  const structureLine = entries[0]?.pattern || entries[0]?.raw || '';
+  const [headRaw] = splitTitleParts(sourceTitle);
+  const titleHead = cleanText(headRaw);
+  const fixedExpressionPoint = isFixedExpressionStylePoint(sourceTitle) && !structureLine;
+  if (uniqueTerms.length === 0 && !structureLine && examples.length === 0) return [];
 
-  const key = uniqueTerms.slice(0, 8).sort((a, b) => a.localeCompare(b)).join('|');
-  if (TERM_CONTRAST_HINTS[key]) {
-    return TERM_CONTRAST_HINTS[key].slice(0, 3);
+  const usage: string[] = [];
+
+  if (fixedExpressionPoint) {
+    const expression = getFixedExpressionSeed(sourceTitle, elements) || sourceTitle;
+    const variants = buildFixedExpressionVariants(expression).filter((value) => isConcreteFixedExpressionVariant(value));
+    const hasOptionalVariant = variants.length >= 2;
+    usage.push(`Utiliser **${expression}** comme une expression figée, sans changer l’ordre des caractères.`);
+    usage.push(`Placement : placer **${expression}** en tête de phrase ou en incise, juste avant l’idée que tu commentes.`);
+    usage.push(buildUsageContextHint(examples, sourceTitle, true));
+    usage.push('Commencer par mémoriser le sens global, puis réemployer la formule dans des phrases complètes.');
+    if (hasOptionalVariant) {
+      usage.push(`Mémoriser les variantes usuelles (**${variants[0]}** / **${variants[1]}**) et choisir une seule forme par phrase.`);
+    }
+    const contextualModel = examples.find((example) => hasFixedExpressionContextExample([example], sourceTitle, elements));
+    if (contextualModel) {
+      usage.push(
+        `Prendre une phrase modèle (**${cleanText(contextualModel.chinese)}**) puis remplacer uniquement le contexte `
+        + '(sujet, temps, situation).',
+      );
+    } else {
+      usage.push('Insérer la formule en bloc dans une phrase complète, sans la découper ni la réordonner.');
+    }
+    if (titleHead === '四字格') {
+      usage.push('Pour les 四字格, privilégier les contextes écrits/soutenus ou les citations.');
+    }
+    return dedupe(usage).slice(0, 7);
   }
 
-  const firstTerm = uniqueTerms[0];
-  const secondTerm = uniqueTerms[1];
+  if (structureLine) {
+    usage.push(`Partir du patron : **${structureLine}**.`);
+    const placementHint = buildStructurePlacementHint(structureLine);
+    if (placementHint) usage.push(placementHint);
+    const slots = extractPatternSlots(structureLine);
+    if (slots.length > 0) {
+      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} par tes mots/nombres, sans changer l’ordre.`);
+    }
+  }
+
+  if (!usage.some((line) => line.startsWith('Placement :'))) {
+    const categoryPlacement = buildCategoryPlacementHint(sourceTitle);
+    if (categoryPlacement) usage.push(categoryPlacement);
+  }
+
+  for (const term of uniqueTerms.slice(0, 2)) {
+    const model = examples.find((example) => exampleMatchesTerm(example.chinese, term, sourceTitle));
+    if (!model) continue;
+
+    usage.push(
+      `Pour **${term}**, reprends une phrase modèle comme **${cleanText(model.chinese)}** `
+      + `(${cleanText(model.french)}) puis remplace seulement les informations variables.`,
+    );
+  }
+
+  if (usage.length <= 1 && examples.length > 0) {
+    usage.push(
+      `Copier une phrase modèle (**${cleanText(examples[0].chinese)}**) puis remplacer `
+      + 'sujet/objet/temps en gardant la même charpente.',
+    );
+  }
+
+  const hasExplicitContrast = entries.some((entry) => /[、/或]|A|B|甲|乙/.test(entry.pattern));
+  if (uniqueTerms.length >= 2 && hasExplicitContrast) {
+    usage.push(`Ne pas permuter **${uniqueTerms[0]}** et **${uniqueTerms[1]}** : choisir l’élément selon le sens visé.`);
+  }
+
   const hasParticleContrast = examples.some((example) => /[了吗不没把被]/.test(example.chinese));
-
-  const generic = [
-    `Comparer **${firstTerm}** et **${secondTerm}** avant de remplacer un terme par un autre dans une même phrase.`,
-    'Vérifier la position dans la phrase (avant le verbe, après le verbe, ou dans le groupe nominal).',
-  ];
-
   if (hasParticleContrast) {
-    generic.push('Tester aussi la compatibilité avec les particules visibles dans les exemples (了, 吗, 不/没, etc.).');
+    usage.push('Après substitution, vérifier que 了 / 不 / 没 / 吗 restent cohérents avec le sens et le temps de la phrase.');
   }
 
-  return generic;
+  const structureContextHint = structureLine ? buildStructureContextHint(structureLine) : '';
+  const contextHint = buildUsageContextHint(examples, sourceTitle, false);
+  if (structureContextHint) usage.push(structureContextHint);
+  else if (contextHint) usage.push(contextHint);
+
+  return dedupe(usage).slice(0, 7);
+}
+
+function buildStructurePlacementHint(structureLine: string): string {
+  const line = cleanText(structureLine);
+  if (!line) return '';
+  const normalized = line.replace(/\s+/g, '');
+
+  if (normalized.includes('把') && normalized.includes('得')) {
+    return 'Placement : mettre 把 + objet avant le verbe, puis laisser le complément en 得 en fin de segment verbal.';
+  }
+  if (normalized.includes('把') && normalized.includes('动词')) {
+    return 'Placement : dans la structure 把, place 把 + complément avant le verbe principal, puis garde le résultat après le verbe.';
+  }
+  if (normalized.includes('被') && normalized.includes('动词')) {
+    return 'Placement : dans la passive en 被, place 被 avant le verbe, l’agent éventuel se met entre 被 et le verbe.';
+  }
+  if (normalized.includes('比') && (normalized.includes('形容词') || normalized.includes('动词'))) {
+    return 'Placement : dans une comparaison en 比, place A + 比 + B avant l’adjectif ou le verbe comparé.';
+  }
+  if (normalized.includes('主语') && normalized.includes('动词') && normalized.includes('宾语')) {
+    return 'Placement : suivre l’ordre sujet puis verbe puis objet indiqué par le patron, sans déplacer les blocs.';
+  }
+  if (normalized.includes('动词')) {
+    return 'Placement : garder ce qui précède 动词 avant le verbe, et ce qui suit 动词 après le verbe.';
+  }
+  const blocks = line.split('+').map((block) => cleanText(block)).filter(Boolean);
+  if (blocks.length >= 3) {
+    const first = blocks[0];
+    const last = blocks[blocks.length - 1];
+    return `Placement : garder l’ordre fixe **${blocks.join(' → ')}** ; placer **${first}** au début du segment et **${last}** à la fin.`;
+  }
+  if (line.includes('+')) {
+    return 'Placement : suivre strictement l’ordre des blocs du patron, de gauche à droite.';
+  }
+  return '';
+}
+
+function buildStructureContextHint(structureLine: string): string {
+  const normalized = cleanText(structureLine).replace(/\s+/g, '');
+  if (!normalized) return '';
+
+  if (normalized.includes('把') && normalized.includes('得') && (normalized.includes('看') || normalized.includes('瞧'))) {
+    return 'Contexte : surtout à l’oral pour commenter l’effet produit sur un objet, avec une nuance expressive.';
+  }
+  if (normalized.includes('把') && normalized.includes('得')) {
+    return 'Contexte : employer cette structure pour décrire le résultat concret d’une action sur un objet.';
+  }
+  if (normalized.includes('把')) {
+    return 'Contexte : utile quand on veut mettre en avant le traitement et l’issue liée à l’objet.';
+  }
+  if (normalized.includes('被')) {
+    return 'Contexte : utiliser la forme passive quand on focalise sur ce qui est subi.';
+  }
+  if (normalized.includes('比')) {
+    return 'Contexte : utiliser pour comparer explicitement deux éléments (niveau, qualité ou quantité).';
+  }
+  if (normalized.includes('百分之') || normalized.includes('分之') || normalized.includes('点') || normalized.includes('倍')) {
+    return 'Contexte : employer cette structure pour exprimer des chiffres, des proportions ou des comparaisons quantitatives.';
+  }
+  return '';
+}
+
+function buildCategoryPlacementHint(sourceTitle: string): string {
+  const title = cleanText(sourceTitle);
+  if (!title) return '';
+
+  if (/副词/.test(title)) {
+    return 'Placement : les adverbes se placent en général avant le verbe ou l’adjectif qu’ils modifient (souvent après le sujet).';
+  }
+  if (/连词/.test(title)) {
+    return 'Placement : les connecteurs se mettent en tête de proposition ou entre deux propositions à relier.';
+  }
+  if (/介词/.test(title)) {
+    return 'Placement : la préposition se place juste avant le groupe nominal (temps, lieu, moyen, destinataire).';
+  }
+  if (/助词/.test(title)) {
+    return 'Placement : la particule se place immédiatement après le mot ou le groupe qu’elle marque.';
+  }
+  if (/量词/.test(title)) {
+    return 'Placement : la structure standard est nombre/démonstratif + classificateur + nom.';
+  }
+  if (/动词/.test(title)) {
+    return 'Placement : le verbe principal se place en général après le sujet et avant l’objet.';
+  }
+  if (/形容词/.test(title)) {
+    return 'Placement : l’adjectif est souvent prédicatif après 很/真/太, ou attributif avant le nom avec 的.';
+  }
+  if (/名词/.test(title)) {
+    return 'Placement : ce terme nominal s’emploie surtout comme sujet ou objet dans la phrase.';
+  }
+  return '';
+}
+
+function inferSourceContexts(sourceTitle: string): string[] {
+  const title = cleanText(sourceTitle);
+  if (!title) return [];
+
+  const contexts: string[] = [];
+  if (/口语|会话|对话|日常/.test(title)) {
+    contexts.push('échange oral du quotidien');
+  }
+  if (/书面|书语|正式|公文|报道|新闻|报告/.test(title)) {
+    contexts.push('registre écrit ou formel');
+  }
+  if (/数的表示法|表达法|小数|分数|百分数|倍数|数字/.test(title)) {
+    contexts.push('chiffres, quantités et données');
+  }
+  if (/疑问|反问|设问|语气|感叹/.test(title)) {
+    contexts.push('questions, réactions et modalité');
+  }
+  if (/副词/.test(title)) {
+    contexts.push('nuance de degré, de temps ou de fréquence');
+  }
+  if (/连词/.test(title)) {
+    contexts.push('liaison logique entre propositions');
+  }
+  if (/介词/.test(title)) {
+    contexts.push('relation de temps, lieu, moyen ou destinataire');
+  }
+
+  return dedupe(contexts).slice(0, 2);
+}
+
+function buildUsageContextHint(
+  examples: GrammarExample[],
+  sourceTitle: string,
+  fixedExpressionPoint: boolean,
+): string {
+  if (fixedExpressionPoint) {
+    return 'Contexte : utiliser cette formule pour introduire un avis, une réaction ou une transition dans un échange.';
+  }
+
+  const sourceContexts = inferSourceContexts(sourceTitle);
+  const chineseCorpus = examples.map((example) => cleanText(example.chinese)).join(' ');
+  if (!chineseCorpus) {
+    if (sourceContexts.length > 0) {
+      return `Contexte : surtout en ${sourceContexts.join(' et ')}.`;
+    }
+    return 'Contexte : utiliser cette structure dans des phrases complètes liées à une situation concrète.';
+  }
+
+  const contexts: string[] = [];
+  if (/[？?]/.test(chineseCorpus)) {
+    contexts.push('questions et réponses');
+  }
+  if (/(因为|所以|如果|就|既然|因此|虽然|但是|尽管|即使)/.test(chineseCorpus)) {
+    contexts.push('explication et argumentation');
+  }
+  if (/(请|吧|别|不要)/.test(chineseCorpus)) {
+    contexts.push('interaction orale et consignes');
+  }
+  if (/(调查|报告|数据|比例|增长|下降|政策|法律)/.test(chineseCorpus)) {
+    contexts.push('registre formel et information');
+  }
+
+  const merged = dedupe([...contexts, ...sourceContexts]).slice(0, 2);
+  if (merged.length === 0) {
+    return 'Contexte : employer cette structure pour décrire des faits ou des actions dans une phrase complète.';
+  }
+
+  return `Contexte : surtout en ${merged.join(' et ')}.`;
 }
 
 function extractHanziVariants(value: string): string[] {
@@ -1193,14 +1896,34 @@ function extractHanziVariants(value: string): string[] {
 }
 
 function collectExampleTerms(elements: string[], sourceTitle: string): string[] {
+  if (isFixedExpressionStylePoint(sourceTitle)) {
+    const expression = getFixedExpressionSeed(sourceTitle, elements);
+    const fixedVariants = buildFixedExpressionVariants(expression)
+      .filter((term) => isConcreteFixedExpressionVariant(term))
+      .slice(0, 4);
+    if (fixedVariants.length > 0) {
+      return fixedVariants;
+    }
+  }
+
   const titleTokens = extractTitleTokens(sourceTitle).flatMap((token) => extractHanziVariants(token));
   const rawTerms = dedupe(elements.flatMap((term) => extractHanziVariants(term)).concat(titleTokens));
 
   return rawTerms.filter((term) => {
     if (!term) return false;
     if (NON_LEXICAL_TERMS.has(term)) return false;
+    if (!isNumericNotationTitle(sourceTitle) && /^[一二三四五六七八九十两]+$/.test(term)) return false;
+    if (/^[一二三四五六七八九十两]+了$/.test(term)) return false;
+    if (isMetaDescriptorTerm(term)) return false;
+    if (NON_EXAMPLE_TERM_SUFFIXES.some((suffix) => term.endsWith(suffix))) return false;
     return /[\u4e00-\u9fff]/.test(term);
   });
+}
+
+function isMetaDescriptorTerm(term: string): boolean {
+  if (!term) return false;
+  if (term.length >= 8) return true;
+  return META_DESCRIPTOR_FRAGMENTS.some((fragment) => term.includes(fragment));
 }
 
 function dedupeExamples(examples: GrammarExample[]): GrammarExample[] {
@@ -1217,33 +1940,198 @@ function dedupeExamples(examples: GrammarExample[]): GrammarExample[] {
   return output;
 }
 
-function countExamplesForTerm(examples: GrammarExample[], term: string): number {
-  return examples.reduce((count, example) => (example.chinese.includes(term) ? count + 1 : count), 0);
+function isSentenceLikeExample(example: GrammarExample): boolean {
+  const chinese = cleanText(example.chinese);
+  if (chinese.length >= 8) return true;
+  return /[。！？!?，,；;]/.test(chinese);
 }
 
-function buildRelevantExamples(rawExamples: GrammarExample[], elements: string[], sourceTitle: string): GrammarExample[] {
-  const terms = collectExampleTerms(elements, sourceTitle);
-  const baseExamples = dedupeExamples(rawExamples);
-  if (terms.length === 0) {
-    return baseExamples.map(attachPinyinToExample);
+function scoreExampleQuality(example: GrammarExample): number {
+  const chinese = cleanText(example.chinese);
+  let score = 0;
+
+  if (/[。！？!?]/.test(chinese)) score += 4;
+  if (/[，,；;]/.test(chinese)) score += 1;
+  if (chinese.length >= 8) score += 3;
+  if (/[的是了在把被给比跟对向让将]/.test(chinese)) score += 2;
+  if (chinese.length <= 4) score -= 3;
+  if (example.pinyin) score += 1;
+
+  return score;
+}
+
+interface ExampleBuildOptions {
+  preferSentences?: boolean;
+}
+
+function isNumericNotationTitle(sourceTitle: string): boolean {
+  return /数的(?:表示法|表达法)/.test(sourceTitle);
+}
+
+function isFixedExpressionStylePoint(sourceTitle: string): boolean {
+  const [headRaw] = splitTitleParts(sourceTitle);
+  const head = cleanText(headRaw);
+  return head === '四字格' || head === '其他';
+}
+
+function getFixedExpressionSeed(sourceTitle: string, elements: string[] = []): string {
+  const [, tailRaw] = splitTitleParts(sourceTitle);
+  const fromTitle = cleanText(tailRaw).replace(/\s+/g, '');
+  if (fromTitle) return fromTitle;
+
+  const fromElements = dedupe(elements.map((value) => cleanText(value).replace(/\s+/g, '')).filter(Boolean));
+  const firstChinese = fromElements.find((value) => /[\u4e00-\u9fff]/.test(value));
+  return firstChinese || '';
+}
+
+function expandOptionalSegments(value: string): string[] {
+  const text = cleanText(value).replace(/\s+/g, '');
+  if (!text) return [];
+
+  const match = text.match(/^(.*?)[（(]([^（）()]+)[）)](.*)$/);
+  if (!match) return [text];
+
+  const [, prefix, optional, suffix] = match;
+  return dedupe(expandOptionalSegments(`${prefix}${optional}${suffix}`).concat(expandOptionalSegments(`${prefix}${suffix}`)));
+}
+
+function buildFixedExpressionVariants(expression: string): string[] {
+  const seed = cleanText(expression).replace(/\s+/g, '');
+  if (!seed) return [];
+
+  const variants = new Set<string>();
+  for (const expanded of expandOptionalSegments(seed)) {
+    if (!expanded) continue;
+    variants.add(expanded);
   }
 
-  const termFilteredBase = baseExamples.filter((example) => terms.some((term) => example.chinese.includes(term)));
+  const prefixAlternative = seed.match(/^([\u4e00-\u9fff])(?:[（(]([\u4e00-\u9fff]{1,3})[）)])([\u4e00-\u9fff]{1,8})$/);
+  const baseVariant = cleanText(seed.replace(/[（(][^）)]+[）)]/g, '')).replace(/\s+/g, '');
+  const altVariant = prefixAlternative ? `${prefixAlternative[2]}${prefixAlternative[3]}` : '';
+  if (prefixAlternative) {
+    variants.add(altVariant);
+  }
+
+  const priority = (value: string): number => {
+    if (value === baseVariant) return 0;
+    if (altVariant && value === altVariant) return 1;
+    if (baseVariant && value.startsWith(baseVariant[0] || '')) return 2;
+    return 3;
+  };
+
+  return Array.from(variants)
+    .map((value) => cleanText(value).replace(/\s+/g, ''))
+    .filter(Boolean)
+    .sort((a, b) => {
+      const byPriority = priority(a) - priority(b);
+      if (byPriority !== 0) return byPriority;
+      const byLength = a.length - b.length;
+      if (byLength !== 0) return byLength;
+      return a.localeCompare(b, 'zh-Hans-CN');
+    });
+}
+
+function isConcreteFixedExpressionVariant(value: string): boolean {
+  const compact = cleanText(value).replace(/\s+/g, '');
+  if (!compact) return false;
+  if (!/[\u4e00-\u9fff]/.test(compact)) return false;
+  if (/[A-Z甲乙丙丁XYZ]/.test(compact)) return false;
+  if (/[…]/.test(compact)) return false;
+  return compact.length >= 2 && compact.length <= 12;
+}
+
+function hasFixedExpressionContextExample(
+  examples: GrammarExample[],
+  sourceTitle: string,
+  elements: string[],
+): boolean {
+  const expression = getFixedExpressionSeed(sourceTitle, elements);
+  const variants = buildFixedExpressionVariants(expression).filter((value) => isConcreteFixedExpressionVariant(value));
+  if (variants.length === 0) return false;
+  return examples.some((example) => variants.some((variant) => example.chinese.includes(variant)));
+}
+
+function exampleMatchesTerm(exampleChinese: string, term: string, sourceTitle: string): boolean {
+  if (exampleChinese.includes(term)) return true;
+  if (!isNumericNotationTitle(sourceTitle)) return false;
+
+  if (term === '小数') {
+    return /点[零一二三四五六七八九十百千万两0-9]/.test(exampleChinese);
+  }
+  if (term === '分数') {
+    return /分之/.test(exampleChinese) && !/百分之/.test(exampleChinese);
+  }
+  if (term === '百分数') {
+    return /百分之/.test(exampleChinese);
+  }
+  if (term === '倍数') {
+    return /倍/.test(exampleChinese);
+  }
+
+  return false;
+}
+
+function countExamplesForMatchedTerm(
+  examples: GrammarExample[],
+  term: string,
+  sourceTitle: string,
+): number {
+  return examples.reduce(
+    (count, example) => (exampleMatchesTerm(example.chinese, term, sourceTitle) ? count + 1 : count),
+    0,
+  );
+}
+
+function buildRelevantExamples(
+  rawExamples: GrammarExample[],
+  elements: string[],
+  sourceTitle: string,
+  options: ExampleBuildOptions = {},
+): GrammarExample[] {
+  const terms = collectExampleTerms(elements, sourceTitle);
+  const baseExamples = dedupeExamples(rawExamples);
+
+  if (isFixedExpressionStylePoint(sourceTitle)) {
+    const contextualBase = baseExamples
+      .filter((example) => hasFixedExpressionContextExample([example], sourceTitle, elements))
+      .sort((a, b) => scoreExampleQuality(b) - scoreExampleQuality(a));
+    if (contextualBase.length > 0) {
+      return contextualBase.map(attachPinyinToExample);
+    }
+    return [];
+  }
+
+  if (terms.length === 0) {
+    return baseExamples
+      .slice()
+      .sort((a, b) => scoreExampleQuality(b) - scoreExampleQuality(a))
+      .map(attachPinyinToExample);
+  }
+
+  const termFilteredBase = baseExamples.filter(
+    (example) => terms.some((term) => exampleMatchesTerm(example.chinese, term, sourceTitle)),
+  );
   const fromLexicon = dedupeExamples(
     terms.flatMap((term) => HSK_EXAMPLE_INDEX.get(term) ?? []),
   );
-  const candidatePool = dedupeExamples(fromLexicon.concat(termFilteredBase))
-    .sort((a, b) => Number(Boolean(b.pinyin)) - Number(Boolean(a.pinyin)));
+  const fullCandidatePool = dedupeExamples(termFilteredBase.concat(fromLexicon))
+    .sort((a, b) => scoreExampleQuality(b) - scoreExampleQuality(a));
+  const sentencePreferredPool = options.preferSentences
+    ? fullCandidatePool.filter((example) => isSentenceLikeExample(example))
+    : fullCandidatePool;
+  const candidatePool = sentencePreferredPool.length >= Math.min(2, fullCandidatePool.length)
+    ? sentencePreferredPool
+    : fullCandidatePool;
   const desiredPerTerm = terms.length === 1 ? 2 : 1;
   const selected: GrammarExample[] = [];
 
   for (const term of terms) {
     for (const example of candidatePool) {
-      if (!example.chinese.includes(term)) continue;
+      if (!exampleMatchesTerm(example.chinese, term, sourceTitle)) continue;
       if (selected.some((item) => item.chinese === example.chinese && item.french === example.french)) continue;
 
       selected.push(example);
-      if (countExamplesForTerm(selected, term) >= desiredPerTerm) break;
+      if (countExamplesForMatchedTerm(selected, term, sourceTitle) >= desiredPerTerm) break;
     }
   }
 
@@ -1351,9 +2239,10 @@ function buildFeaturedPoints(points: GrammarPoint[]): GrammarPoint[] {
 
 function extractTitleTokens(title: string): string[] {
   const tail = title.includes('—') ? title.split('—').slice(1).join('—') : title;
-  return tail
-    .replace(/\\.\\.\\.|…/g, '')
-    .split(/[、,，/]/g)
+  return splitOutsideParentheses(
+    tail.replace(/\\.\\.\\.|…/g, ''),
+    new Set(['、', ',', '，', '/']),
+  )
     .map((item) => cleanText(item))
     .filter(Boolean);
 }
@@ -1387,6 +2276,22 @@ function cleanText(value: string): string {
       .replace(/\s+/g, ' ')
       .trim(),
   );
+}
+
+function cleanMultilineText(value: string): string {
+  const normalized = decodeEntities(
+    value
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/p>/gi, '\n')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\r\n?/g, '\n'),
+  );
+
+  return normalized
+    .split('\n')
+    .map((line) => line.replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .join('\n');
 }
 
 function escapeHtml(value: string): string {

@@ -77,7 +77,7 @@ export interface UserProgress {
   lastReviewDate: string | null;
 }
 
-export type HSKLevel = 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7';
+export type HSKLevel = 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7' | 'hors-hsk';
 
 export type ReviewQuality = 0 | 1 | 2 | 3 | 4 | 5;
 

@@ -115,7 +115,7 @@ body {
   border: 1.5px solid var(--border);
   border-radius: 12px;
   padding: 8px 8px 10px 8px;
-  min-height: 88px;
+  min-height: 84px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -140,9 +140,12 @@ body {
 }
 
 .fr {
-  font-size: 11px;
+  font-size: 10.5px;
+  line-height: 1.2;
   color: var(--muted);
   text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @media print {
@@ -162,5 +165,10 @@ body {
 
   .page:last-child {
     break-after: auto;
+  }
+
+  .card {
+    box-shadow: none;
+    background: #ffffff;
   }
 }

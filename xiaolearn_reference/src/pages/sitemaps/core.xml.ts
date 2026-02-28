@@ -3,7 +3,6 @@ import {
   getBaseUrl,
   renderSitemapXml,
   toAbsoluteUrl,
-  todayIsoDate,
 } from '../../utils/sitemap';
 
 export const prerender = true;
@@ -21,18 +20,15 @@ const STATIC_PATHS = [
   '/grammaire',
   '/nuances',
   '/culture',
-  '/recherche',
   '/mentions-legales',
   '/ressources',
 ];
 
 export const GET: APIRoute = async ({ site }) => {
   const base = getBaseUrl(site);
-  const lastmod = todayIsoDate();
   const urls = STATIC_PATHS
     .map((path) => ({
       loc: toAbsoluteUrl(base, path),
-      lastmod,
       changefreq: 'weekly' as const,
       priority: path === '/' ? 1.0 : 0.8,
     }))

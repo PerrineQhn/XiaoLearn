@@ -377,9 +377,9 @@ export const lessonPaths: LessonPath[] = [
         duration: 15,
         completed: false,
         locked: false,
-        hskLevel: 2,
+        hskLevel: 1,
         category: 'conversation',
-        difficulty: 'elementary',
+        difficulty: 'beginner',
         tags: ["numbers"],
         introduction: {
           title: 'Compter en chinois',
@@ -1574,9 +1574,9 @@ export const lessonPaths: LessonPath[] = [
         duration: 25,
         completed: false,
         locked: false,
-        hskLevel: 3,
+        hskLevel: 2,
         category: 'conversation',
-        difficulty: 'intermediate',
+        difficulty: 'elementary',
         tags: ["general"],
         introduction: {
           title: 'Conversations avec des amis',

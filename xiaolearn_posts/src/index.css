@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Noto+Serif+SC:wght@500;700;900&family=ZCOOL+XiaoWei&display=swap');
+
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --ink-950: #1c1917;
+  --ink-700: #44403c;
+  --paper-100: #fdf8ec;
+  --paper-200: #f3e8d0;
+  --vermilion: #b42318;
+  --jade: #0f766e;
+  --gold: #a16207;
+  --mist: #d6d3d1;
+  --panel-border: rgba(141, 105, 53, 0.26);
+  --frame-border: rgba(141, 105, 53, 0.44);
+  --shadow: 0 24px 50px rgba(28, 25, 23, 0.22);
+  --font-body: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  --font-title: 'Noto Serif SC', 'Songti SC', serif;
+  --font-seal: 'ZCOOL XiaoWei', 'KaiTi', serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background-color: #f3f4f6;
+  color: var(--ink-950);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -17,9 +31,239 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #f3f4f6;
+  background: linear-gradient(160deg, #fdf8f0 0%, #f5ead8 100%);
+  font-family: var(--font-body);
 }
 
 #root {
   min-height: 100vh;
+}
+
+.xiao-posts-theme {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.xiao-posts-theme::before,
+.xiao-posts-theme::after {
+  content: '';
+  position: fixed;
+  top: 18vh;
+  width: 3px;
+  height: 46vh;
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent 0%, rgba(161, 98, 7, 0.3) 50%, transparent 100%);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.xiao-posts-theme::before {
+  left: 14px;
+}
+
+.xiao-posts-theme::after {
+  right: 14px;
+}
+
+.xiao-control-panel {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(161, 98, 7, 0.18);
+  box-shadow: 0 4px 20px rgba(41, 37, 36, 0.08);
+  z-index: 1;
+}
+
+.xiao-control-panel::before {
+  display: none;
+}
+
+.xiao-control-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(123, 35, 28, 0.85), rgba(161, 98, 7, 0.75), rgba(123, 35, 28, 0.85));
+  pointer-events: none;
+}
+
+.xiao-control-panel h1 {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
+}
+
+.xiao-control-panel label {
+  color: #0f766e !important;
+}
+
+.xiao-day-pill {
+  border: 1px solid rgba(161, 98, 7, 0.28);
+  background: rgba(255, 252, 245, 0.86);
+  font-family: var(--font-title);
+  letter-spacing: 0.04em;
+}
+
+.xiao-day-pill:hover {
+  border-color: rgba(180, 35, 24, 0.46);
+}
+
+.xiao-day-pill.ring-1 {
+  border-color: rgba(123, 35, 28, 0.5);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.95), rgba(250, 240, 220, 0.95));
+}
+
+.xiao-hint {
+  color: #57534e !important;
+  letter-spacing: 0.03em;
+}
+
+.xiao-slide {
+  background: linear-gradient(162deg, #ffffff 0%, #fdf6ea 60%, #f9ecd6 100%) !important;
+  border-radius: 0;
+  box-shadow: 0 12px 32px rgba(28, 25, 23, 0.13), 0 2px 6px rgba(28, 25, 23, 0.06);
+  isolation: isolate;
+  animation: ink-reveal 420ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.xiao-slide::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 0;
+  border: 1px solid rgba(161, 98, 7, 0.18);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.xiao-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  background: linear-gradient(138deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.xiao-slide > * {
+  position: relative;
+  z-index: 2;
+}
+
+.xiao-slide.is-active {
+  transform: translateY(-3px);
+  box-shadow:
+    0 20px 40px rgba(28, 25, 23, 0.18),
+    0 0 0 3px var(--theme-color);
+}
+
+.xiao-slide h2,
+.xiao-slide h3 {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.xiao-slide p {
+  color: #57534e;
+}
+
+.xiao-slide .xiao-brand {
+  font-family: var(--font-seal);
+  letter-spacing: 0.16em;
+  color: #fff !important;
+  background: linear-gradient(135deg, rgba(123, 35, 28, 0.95), rgba(180, 35, 24, 0.84));
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  padding: 3px 8px;
+  box-shadow: 0 10px 18px rgba(123, 35, 28, 0.28);
+}
+
+.xiao-slide .xiao-toplabel {
+  font-family: var(--font-seal);
+  letter-spacing: 0.16em;
+}
+
+.xiao-slide .bg-gray-50 {
+  background: rgba(243, 236, 221, 0.78) !important;
+}
+
+.xiao-slide .border-gray-100 {
+  border-color: rgba(161, 98, 7, 0.22) !important;
+}
+
+/* --- VOCAB CARD (style @hsklevel) --- */
+.xiao-vocab-hanzi {
+  font-family: var(--font-title);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.xiao-vocab-badge {
+  font-family: var(--font-seal);
+  letter-spacing: 0.12em;
+}
+
+.xiao-vocab-radical {
+  font-family: var(--font-title);
+  color: var(--vermilion);
+}
+
+/* --- CHENGYU CARD --- */
+.xiao-chengyu-chars {
+  font-family: var(--font-title);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+.xiao-chengyu-literal {
+  font-family: var(--font-seal);
+  letter-spacing: 0.06em;
+}
+
+.xiao-download {
+  border: 1px solid rgba(248, 236, 214, 0.56);
+  background: linear-gradient(126deg, #1f1a17, #3a2f29) !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.xiao-download:hover {
+  background: linear-gradient(126deg, #332924, #56443a) !important;
+}
+
+@keyframes ink-reveal {
+  from {
+    opacity: 0.6;
+    transform: translateY(8px) scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .xiao-posts-theme::before,
+  .xiao-posts-theme::after {
+    opacity: 0.18;
+  }
+}
+
+@media (max-width: 620px) {
+  .xiao-posts-theme::before,
+  .xiao-posts-theme::after {
+    display: none;
+  }
+
+  .xiao-slide {
+    width: min(500px, 92vw) !important;
+    height: min(500px, 92vw) !important;
+  }
 }

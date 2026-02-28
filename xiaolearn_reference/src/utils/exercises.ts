@@ -19,6 +19,29 @@ interface NuanceLike {
 }
 
 const GENERIC_CHINESE_OPTIONS = ['不', '没', '的', '了', '在', '是', '会', '能', '可以', '就'];
+const NON_QUIZ_TOKENS = new Set([
+  '语法',
+  '结构',
+  '句型',
+  '句子',
+  '成分',
+  '主语',
+  '谓语',
+  '宾语',
+  '补语',
+  '动词',
+  '名词',
+  '形容词',
+  '副词',
+  '代词',
+  '连词',
+  '助词',
+  '量词',
+  '数词',
+  '表示',
+  '用法',
+  '其他成分',
+]);
 
 function cleanText(value: string): string {
   return value
@@ -46,8 +69,64 @@ function dedupe(values: string[]): string[] {
 }
 
 function extractChineseTokens(value: string): string[] {
-  const chunks = value.match(/[\u4e00-\u9fff]+/g) ?? [];
-  return dedupe(chunks).filter((chunk) => chunk.length <= 4);
+  const text = cleanText(value);
+  if (!text) return [];
+
+  const chunks = text.match(/[\u4e00-\u9fff]+/g) ?? [];
+  const hasOptionalMarker = /[（(].+[）)]/.test(text);
+
+  if (hasOptionalMarker) {
+    const compact = text.replace(/\s+/g, '');
+    const withOptional = compact.replace(/[（）()]/g, '');
+    const withoutOptional = compact.replace(/[（(][^）)]+[）)]/g, '');
+    return dedupe([withOptional, withoutOptional])
+      .filter((chunk) => chunk.length >= 2 && chunk.length <= 8 && !NON_QUIZ_TOKENS.has(chunk));
+  }
+
+  return dedupe(chunks).filter((chunk) => chunk.length <= 4 && !NON_QUIZ_TOKENS.has(chunk));
+}
+
+function isNumericNotationTitle(title: string): boolean {
+  return /数的(?:表示法|表达法)/.test(title);
+}
+
+function matchScoreForToken(sentence: string, token: string, numericNotation: boolean): number {
+  if (sentence.includes(token)) {
+    return token.length + 2;
+  }
+  if (!numericNotation) {
+    return 0;
+  }
+
+  if (token === '百分数' && /百分之/.test(sentence)) {
+    return 5;
+  }
+  if (token === '分数' && /分之/.test(sentence) && !/百分之/.test(sentence)) {
+    return 4;
+  }
+  if (token === '倍数' && /倍/.test(sentence)) {
+    return 3;
+  }
+  if (token === '小数' && /点[零一二三四五六七八九十百千万两0-9]/.test(sentence)) {
+    return 3;
+  }
+
+  return 0;
+}
+
+function pickBestAnswerToken(sentence: string, optionsPool: string[], numericNotation: boolean): string {
+  let bestToken = '';
+  let bestScore = 0;
+
+  for (const token of optionsPool) {
+    const score = matchScoreForToken(sentence, token, numericNotation);
+    if (score > bestScore) {
+      bestScore = score;
+      bestToken = token;
+    }
+  }
+
+  return bestToken;
 }
 
 function buildOptions(
@@ -159,10 +238,14 @@ export function buildGrammarPointExercises(point: GrammarPointLike): ExerciseQue
   const elementTokens = dedupe(point.elements.flatMap((element) => extractChineseTokens(element)));
   const titleTokens = extractChineseTokens(point.title);
   const optionsPool = dedupe(elementTokens.concat(titleTokens));
+  const numericNotation = isNumericNotationTitle(point.title);
   const questions: ExerciseQuestion[] = [];
 
   for (const example of point.examples) {
-    const answer = optionsPool.find((token) => example.chinese.includes(token));
+    if (numericNotation && !/(?:百分之|分之|点[零一二三四五六七八九十百千万两0-9]|倍|。|，|；|！|？)/.test(example.chinese)) {
+      continue;
+    }
+    const answer = pickBestAnswerToken(example.chinese, optionsPool, numericNotation);
     if (!answer) continue;
     const question = buildClozeQuestion(
       example.chinese,

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import './styles/lesson-filters.css';
 import HomePage from './pages/HomePage';
+import CPlayerPage from './pages/CPlayerPage';
 import LessonPage from './pages/LessonPage';
 import LessonPathsPage from './pages/LessonPathsPage';
 import StructuredLessonPage from './pages/StructuredLessonPage';
@@ -31,7 +32,19 @@ import { useCustomLists } from './hooks/useCustomLists';
 import { createCheckoutSession, createPortalSession } from './services/payments';
 import { buildAppAccess } from './utils/access';
 
-export type View = 'home' | 'lessons' | 'lesson' | 'review' | 'themes' | 'culture' | 'dictionary' | 'assistant' | 'settings' | 'games' | 'flashcards';
+export type View =
+  | 'home'
+  | 'cplayer'
+  | 'lessons'
+  | 'lesson'
+  | 'review'
+  | 'themes'
+  | 'culture'
+  | 'dictionary'
+  | 'assistant'
+  | 'settings'
+  | 'games'
+  | 'flashcards';
 
 const themeSummaries = getThemeSummaries();
 const defaultTheme = themeSummaries[0]?.theme ?? null;
@@ -224,6 +237,20 @@ function App() {
     setLogoErrored(false);
   }, [colorTheme]);
 
+  useEffect(() => {
+    if (view === 'home') {
+      setLearningStats(readLearningStats());
+    }
+  }, [view]);
+
+  useEffect(() => {
+    const handleWindowFocus = () => {
+      setLearningStats(readLearningStats());
+    };
+    window.addEventListener('focus', handleWindowFocus);
+    return () => window.removeEventListener('focus', handleWindowFocus);
+  }, []);
+
   const navEntries = useMemo<{ id: View; label: string; iconSlug: string; fallback: string }[]>(
     () =>
       [
@@ -231,12 +258,9 @@ function App() {
         { id: 'lessons', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
         { id: 'flashcards', label: language === 'fr' ? 'Cartes Mémoire' : 'Flashcards', iconSlug: 'flash-card', fallback: '🎴' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🔄' },
-        { id: 'games', label: language === 'fr' ? 'Mini-Jeux' : 'Mini-Games', iconSlug: 'jeux', fallback: '🎮' },
         ...(appAccess.canUseAI
           ? [{ id: 'assistant', label: language === 'fr' ? 'Assistant IA' : 'AI Assistant', iconSlug: 'ia', fallback: '🤖' } as const]
           : []),
-        { id: 'themes', label: language === 'fr' ? 'Thèmes' : 'Themes', iconSlug: 'themes', fallback: '🗂️' },
-        { id: 'culture', label: language === 'fr' ? 'Culture' : 'Culture', iconSlug: 'culture', fallback: '🏮' },
         { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' }
       ] satisfies { id: View; label: string; iconSlug: string; fallback: string }[],
     [language, appAccess.canUseAI]
@@ -329,12 +353,18 @@ function App() {
 
   let content: JSX.Element;
   switch (view) {
+    case 'cplayer':
+      content = <CPlayerPage language={language} onBackHome={() => setView('home')} />;
+      break;
     case 'lessons':
       content = (
         <LessonPathsPage
           language={language}
           onSelectLesson={handleSelectLesson}
           paths={lessonPathsState}
+          streak={learningStats.streak}
+          minutesToday={learningStats.minutesToday}
+          dailyGoalMinutes={DAILY_GOAL_MINUTES}
         />
       );
       break;
@@ -473,6 +503,7 @@ function App() {
           totals={lessonProgress.totals}
           onContinue={() => setView('lessons')}
           onOpenReview={() => setView('review')}
+          onOpenCPlayer={() => setView('cplayer')}
           topThemes={topThemes}
           onOpenThemes={handleOpenThemes}
           copy={copy}
@@ -485,6 +516,7 @@ function App() {
           nextLesson={lessonProgress.todaySummary[0]}
           colorTheme={colorTheme}
           showAdvancedStats={appAccess.showAdvancedStats}
+          paths={lessonPathsState}
         />
       );
   }
@@ -620,7 +652,7 @@ function App() {
       />
 
       {/* Floating AI Chat - available on all pages except AI Assistant page */}
-      {appAccess.canUseAI && view !== 'assistant' && <AIFloatingChat language={language} />}
+      {appAccess.canUseFloatingChat && view !== 'assistant' && <AIFloatingChat language={language} />}
     </div>
   );
 }

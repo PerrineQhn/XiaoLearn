@@ -1,5 +1,7 @@
 ---
 import { mainNav, externalLinks } from '../data/navigation';
+
+const currentQuery = Astro.url.searchParams.get('q') || '';
 ---
 
 <header class="header">
@@ -21,6 +23,19 @@ import { mainNav, externalLinks } from '../data/navigation';
         </a>
       ))}
     </nav>
+
+    <form class="header-search" action="/recherche" method="get" role="search">
+      <label for="header-search-input" class="visually-hidden">Rechercher sur le site</label>
+      <input
+        id="header-search-input"
+        class="header-search-input"
+        type="search"
+        name="q"
+        value={currentQuery}
+        placeholder="Rechercher sur le site..."
+      />
+      <button type="submit" class="header-search-btn">OK</button>
+    </form>
 
     {externalLinks.length > 0 && (
       <div class="header-actions">
@@ -46,6 +61,19 @@ import { mainNav, externalLinks } from '../data/navigation';
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
+    <form class="mobile-search" action="/recherche" method="get" role="search">
+      <label for="mobile-search-input" class="visually-hidden">Rechercher sur le site</label>
+      <input
+        id="mobile-search-input"
+        class="mobile-search-input"
+        type="search"
+        name="q"
+        value={currentQuery}
+        placeholder="Rechercher..."
+      />
+      <button type="submit" class="mobile-search-btn">Rechercher</button>
+    </form>
+
     <nav class="mobile-nav">
       {mainNav.map(item => (
         <a
@@ -105,9 +133,9 @@ import { mainNav, externalLinks } from '../data/navigation';
     padding: 0 var(--spacing-lg);
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr minmax(230px, 310px) auto;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
   }
 
   .logo {
@@ -128,6 +156,8 @@ import { mainNav, externalLinks } from '../data/navigation';
     align-items: center;
     gap: var(--spacing-md);
     justify-self: center;
+    justify-content: center;
+    min-width: 0;
   }
 
   .nav-link {
@@ -151,6 +181,55 @@ import { mainNav, externalLinks } from '../data/navigation';
     align-items: center;
     gap: var(--spacing-sm);
     justify-self: end;
+  }
+
+  .header-search {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-xs);
+    align-items: center;
+    justify-self: end;
+    width: min(100%, 310px);
+  }
+
+  .header-search-input {
+    height: 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    padding: 0 var(--spacing-md);
+    min-width: 0;
+  }
+
+  .header-search-input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px var(--primary-red-light);
+  }
+
+  .header-search-input::placeholder {
+    color: var(--text-tertiary);
+  }
+
+  .header-search-btn {
+    height: 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font: inherit;
+    font-weight: 600;
+    padding: 0 var(--spacing-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .header-search-btn:hover {
+    color: var(--primary-red);
+    border-color: var(--primary-red);
+    background: var(--primary-red-light);
   }
 
   .mobile-menu-btn {
@@ -207,6 +286,40 @@ import { mainNav, externalLinks } from '../data/navigation';
     gap: var(--spacing-sm);
   }
 
+  .mobile-search {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mobile-search-input {
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    padding: 0 var(--spacing-md);
+  }
+
+  .mobile-search-input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px var(--primary-red-light);
+  }
+
+  .mobile-search-btn {
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font: inherit;
+    padding: 0 var(--spacing-md);
+    cursor: pointer;
+  }
+
   .mobile-nav hr {
     border: none;
     border-top: 1px solid var(--border-light);
@@ -237,6 +350,22 @@ import { mainNav, externalLinks } from '../data/navigation';
     opacity: 0.6;
   }
 
+  @media (max-width: 1180px) {
+    .header-container {
+      grid-template-columns: auto 1fr minmax(200px, 250px) auto;
+      gap: var(--spacing-md);
+    }
+
+    .nav {
+      gap: var(--spacing-sm);
+    }
+
+    .nav-link {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      font-size: 0.92rem;
+    }
+  }
+
   @media (max-width: 900px) {
     .header-container {
       display: flex;
@@ -244,12 +373,19 @@ import { mainNav, externalLinks } from '../data/navigation';
     }
 
     .nav,
+    .header-search,
     .header-actions {
       display: none;
     }
 
     .mobile-menu-btn {
       display: flex;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .mobile-search {
+      grid-template-columns: 1fr;
     }
   }
 </style>

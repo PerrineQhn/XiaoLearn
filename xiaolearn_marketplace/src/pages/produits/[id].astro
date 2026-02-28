@@ -121,10 +121,17 @@ const relatedProducts = allProducts
   .slice(0, 3);
 
 const levelOptions = product.levels ?? [];
-const requiresLevelSelection = new Set(['vocabulary-one-hsk', 'writing-one-hsk', 'vocabulary-writing-one-hsk']).has(product.id);
+const levelSelectionProductIds = new Set([
+  'vocabulary-one-hsk',
+  'writing-one-hsk',
+  'vocabulary-writing-one-hsk',
+]);
+const requiresLevelSelection = levelSelectionProductIds.has(product.id);
+const showLevelSelector = requiresLevelSelection && levelOptions.length > 0;
+const showLevelsPanel = requiresLevelSelection && levelOptions.length > 0;
 const supportsCart = product.id !== 'app-yearly';
 
-const defaultLevel = !requiresLevelSelection && levelOptions.length > 0 ? levelOptions[0] : '';
+const defaultLevel = '';
 const checkoutBase = buildCheckoutLink(product.id);
 
 const formatPrice = (value: number) =>
@@ -177,7 +184,7 @@ const formatPrice = (value: number) =>
           </ul>
         </div>
 
-        {levelOptions.length > 0 && (
+        {showLevelsPanel && (
           <div class="panel">
             <h2>Niveaux disponibles</h2>
             <div class="levels-grid">
@@ -235,13 +242,13 @@ const formatPrice = (value: number) =>
             )}
           </div>
 
-          {levelOptions.length > 0 && (
+          {showLevelSelector && (
             <label class="level-picker">
               <span>Choisir un niveau</span>
               <select id="level-select" data-required={String(requiresLevelSelection)}>
                 {requiresLevelSelection && <option value="">Sélectionnez un niveau</option>}
                 {levelOptions.map((level) => (
-                  <option value={level} selected={level === defaultLevel}>{level}</option>
+                  <option value={level}>{level}</option>
                 ))}
               </select>
             </label>
@@ -253,6 +260,7 @@ const formatPrice = (value: number) =>
             class:list={['btn', 'btn-primary', 'buy-btn', { disabled: requiresLevelSelection && !defaultLevel }]}
             data-base={checkoutBase}
             data-product-id={product.id}
+            data-level-required={String(requiresLevelSelection)}
           >
             Acheter maintenant
             <span class="arrow">→</span>
@@ -331,8 +339,8 @@ const formatPrice = (value: number) =>
 
       const updateLink = () => {
         const url = new URL(checkoutLink.dataset.base || checkoutLink.href);
+        const levelRequired = checkoutLink.dataset.levelRequired === 'true';
         const selectedLevel = levelSelect instanceof HTMLSelectElement ? levelSelect.value.trim() : '';
-        const required = levelSelect instanceof HTMLSelectElement ? levelSelect.dataset.required === 'true' : false;
 
         if (selectedLevel) {
           url.searchParams.set('level', selectedLevel);
@@ -340,7 +348,7 @@ const formatPrice = (value: number) =>
           url.searchParams.delete('level');
         }
 
-        const locked = required && !selectedLevel;
+        const locked = levelRequired && !selectedLevel;
         checkoutLink.classList.toggle('disabled', locked);
         checkoutLink.setAttribute('aria-disabled', locked ? 'true' : 'false');
         checkoutLink.href = url.toString();
@@ -359,9 +367,9 @@ const formatPrice = (value: number) =>
         addToCartBtn.addEventListener('click', () => {
           const productId = addToCartBtn.dataset.productId || checkoutLink.dataset.productId || '';
           if (!productId) return;
+          const levelRequired = checkoutLink.dataset.levelRequired === 'true';
           const selectedLevel = levelSelect instanceof HTMLSelectElement ? levelSelect.value.trim() : '';
-          const required = levelSelect instanceof HTMLSelectElement ? levelSelect.dataset.required === 'true' : false;
-          if (required && !selectedLevel) return;
+          if (levelRequired && !selectedLevel) return;
 
           upsertCartItem(selectedLevel ? { productId, level: selectedLevel } : { productId });
           window.location.href = '/panier';

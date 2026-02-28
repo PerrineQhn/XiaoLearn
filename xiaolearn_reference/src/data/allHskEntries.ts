@@ -6,6 +6,7 @@ import hsk4Data from './hsk4.json';
 import hsk5Data from './hsk5.json';
 import hsk6Data from './hsk6.json';
 import hsk7Data from './hsk7.json';
+import horsHskData from './hors-hsk.json';
 
 export const ALL_HSK_ENTRIES: HSKEntry[] = [
   ...(hsk1Data as HSKEntry[]),
@@ -15,4 +16,5 @@ export const ALL_HSK_ENTRIES: HSKEntry[] = [
   ...(hsk5Data as HSKEntry[]),
   ...(hsk6Data as HSKEntry[]),
   ...(hsk7Data as HSKEntry[]),
+  ...(horsHskData as HSKEntry[]),
 ];

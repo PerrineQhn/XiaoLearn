@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 import {
   User,
   signInWithPopup,
+  signInWithRedirect,
   signOut as firebaseSignOut,
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -48,7 +49,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    provider.setCustomParameters({ prompt: 'select_account' });
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error: any) {
+      if (error?.code === 'auth/popup-blocked') {
+        await signInWithRedirect(auth, provider);
+        return;
+      }
+      throw error;
+    }
   };
 
   const signInWithEmail = async (email: string, password: string) => {

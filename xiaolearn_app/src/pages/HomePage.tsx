@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 import type { LessonItem, LevelId, ThemeSummary } from '../types';
 import type { Language } from '../i18n';
-import { themeLabels, getCopy } from '../i18n';
-import { getLessonTranslation } from '../utils/lesson';
-import LearningProgressChart from '../components/LearningProgressChart';
+import { getCopy } from '../i18n';
+import type { LessonPath } from '../types/lesson-structure';
 import { useAuth } from '../contexts/AuthContext';
 
 interface HomePageProps {
@@ -11,6 +10,7 @@ interface HomePageProps {
   totals: Record<LevelId, number>;
   onContinue: () => void;
   onOpenReview: () => void;
+  onOpenCPlayer: () => void;
   topThemes: ThemeSummary[];
   onOpenThemes: (theme?: string) => void;
   copy: ReturnType<typeof getCopy>;
@@ -23,22 +23,15 @@ interface HomePageProps {
   nextLesson?: LessonItem;
   colorTheme: string;
   showAdvancedStats: boolean;
+  paths: LessonPath[];
 }
-
-const themeSecondaryMap: Record<string, string> = {
-  "asian-red": "#E3F5F2",
-  "jade-green": "#FFE3E0",
-  "royal-purple": "#F0E8FF",
-  "ocean-blue": "#DBEAFE",
-  "sunset-orange": "#FFE7D5",
-  "sakura-pink": "#FDE7F2"
-};
 
 const HomePage = ({
   todayLessons,
   totals,
   onContinue,
   onOpenReview,
+  onOpenCPlayer,
   topThemes,
   onOpenThemes,
   copy,
@@ -50,197 +43,223 @@ const HomePage = ({
   pendingReviews,
   nextLesson,
   colorTheme,
-  showAdvancedStats
+  showAdvancedStats,
+  paths
 }: HomePageProps) => {
   const { user } = useAuth();
-  const displayName = user?.displayName || user?.email?.split('@')[0] || 'Utilisateur';
+  const displayName = user?.displayName || user?.email?.split('@')[0] || (language === 'fr' ? 'Utilisateur' : 'User');
 
-  // Calculer les stats réelles
   const totalWords = useMemo(() => {
     return Object.values(totals).reduce((sum, count) => sum + count, 0);
   }, [totals]);
-  const targetLesson = nextLesson ?? todayLessons[0];
-  const nextLessonTitle = targetLesson ? targetLesson.hanzi : language === 'fr' ? 'Aucune leçon' : 'No lesson';
-  const nextLessonSubtitle = targetLesson ? getLessonTranslation(targetLesson, language) : '';
-  const reviewSubtitle =
-    pendingReviews > 0
-      ? language === 'fr'
-        ? `${pendingReviews} carte${pendingReviews > 1 ? 's' : ''} à revoir`
-        : `${pendingReviews} review${pendingReviews > 1 ? 's' : ''}`
-      : language === 'fr'
-      ? 'Aucune révision'
-      : 'No reviews';
 
-  const themedIcon = (slug: string) => `/icons/icon_${slug}_${colorTheme}.png`;
-const secondaryCircle = themeSecondaryMap[colorTheme] || 'rgba(0,0,0,0.08)';
+  const completedLessonCount = useMemo(
+    () => paths.flatMap((path) => path.lessons).filter((lesson) => lesson.completed).length,
+    [paths]
+  );
+  const totalLessonCount = useMemo(() => paths.flatMap((path) => path.lessons).length, [paths]);
+  const xpPerLevel = 250;
+  const xpTotal = completedLessonCount * 20;
+  const currentLevel = Math.max(1, Math.floor(xpTotal / xpPerLevel) + 1);
+  const xpInLevel = xpTotal % xpPerLevel;
+  const xpPercent = Math.min(100, Math.round((xpInLevel / xpPerLevel) * 100));
+  const realProgressPercent = totalLessonCount > 0 ? Math.round((completedLessonCount / totalLessonCount) * 100) : 0;
+  const progressDisplayPercent = Math.max(progressPercent, realProgressPercent);
+  const goalProgressPercent = Math.min(100, Math.round((Math.min(minutesToday, minuteGoal) / Math.max(minuteGoal, 1)) * 100));
+  const goalReached = minutesToday >= minuteGoal;
+  const streakLabel = language === 'fr' ? (streak > 1 ? 'jours' : 'jour') : streak > 1 ? 'days' : 'day';
+
+  const nextPathLesson = useMemo(() => {
+    for (const path of paths) {
+      const lesson = path.lessons.find((entry) => !entry.locked && !entry.completed);
+      if (lesson) return { path, lesson };
+    }
+    for (const path of paths) {
+      const lesson = path.lessons.find((entry) => !entry.locked);
+      if (lesson) return { path, lesson };
+    }
+    return null;
+  }, [paths]);
+
+  const fallbackLessonTitle = nextLesson?.hanzi ?? (language === 'fr' ? 'Aucune leçon disponible' : 'No lesson available');
+  const continueLessonTitle = nextPathLesson
+    ? language === 'fr'
+      ? nextPathLesson.lesson.title
+      : nextPathLesson.lesson.titleEn
+    : fallbackLessonTitle;
+  const continueLessonSubtitle = nextPathLesson
+    ? language === 'fr'
+      ? `${nextPathLesson.path.name} · ${nextPathLesson.lesson.duration} min`
+      : `${nextPathLesson.path.nameEn} · ${nextPathLesson.lesson.duration} min`
+    : language === 'fr'
+    ? 'Ouvre la section Leçons pour commencer.'
+    : 'Open Lessons to start.';
+
+  const levelProgress = useMemo(() => {
+    const byLevel = new Map<number, { total: number; completed: number }>();
+    for (const path of paths) {
+      for (const lesson of path.lessons) {
+        const current = byLevel.get(lesson.hskLevel) || { total: 0, completed: 0 };
+        current.total += 1;
+        if (lesson.completed) current.completed += 1;
+        byLevel.set(lesson.hskLevel, current);
+      }
+    }
+    return Array.from(byLevel.entries())
+      .sort((a, b) => a[0] - b[0])
+      .map(([level, values]) => ({
+        level,
+        total: values.total,
+        completed: values.completed,
+        percent: values.total > 0 ? Math.round((values.completed / values.total) * 100) : 0
+      }));
+  }, [paths]);
+
+  const levelLabel = (level: number) => {
+    if (language !== 'fr') return level <= 1 ? 'Foundations' : level === 2 ? 'Intermediate' : 'Advanced';
+    if (level <= 1) return 'Les bases';
+    if (level === 2) return 'Intermédiaire';
+    return 'Avancé';
+  };
+
+  void todayLessons;
+  void topThemes;
+  void onOpenThemes;
+  void copy;
+  void colorTheme;
+  void showAdvancedStats;
 
   return (
-    <div className="home-container">
-      {/* Hero Section */}
-      <section className="welcome-section">
-        <div className="welcome-ornament" aria-hidden="true">
-          学
-        </div>
-        <h1 className="welcome-title">
+    <div className="home-container home-k-dashboard">
+      <section className="home-k-header">
+        <h1 className="home-k-title">
           {language === 'fr' ? 'Bienvenue, ' : 'Welcome, '}
-          <span className="user-name">{displayName}</span>
+          <span className="home-k-name">{displayName}</span>
         </h1>
-        <p className="level-badge on-dark">
-          {language === 'fr' ? 'Niveau 0 — 0 / 100 XP (0% vers le niveau 1)' : 'Level 0 — 0 / 100 XP (0% to level 1)'}
+        <p className="home-k-subtitle">
+          {language === 'fr'
+            ? `Niveau ${currentLevel} - ${xpInLevel} / ${xpPerLevel} XP (${xpPercent}% vers le niveau ${currentLevel + 1})`
+            : `Level ${currentLevel} - ${xpInLevel} / ${xpPerLevel} XP (${xpPercent}% to level ${currentLevel + 1})`}
         </p>
       </section>
 
-      {/* CTA Button */}
-      <button className="main-cta" onClick={onContinue}>
-        {copy.heroCta}
-        <span className="arrow">→</span>
-      </button>
-
-      {/* Learning Progress Chart */}
-      {showAdvancedStats ? (
-        <LearningProgressChart language={language} />
-      ) : (
-        <section className="progress-section">
-          <h2 className="section-title">
-            {language === 'fr' ? 'Statistiques' : 'Statistics'}
-          </h2>
-          <div className="progress-summary">
-            <p className="total-label">
+      {goalReached && (
+        <section className="home-k-goal-alert" role="status" aria-live="polite">
+          <span className="home-k-goal-icon">🎉</span>
+          <div>
+            <strong>{language === 'fr' ? 'Objectif du jour atteint !' : 'Daily goal reached!'}</strong>
+            <small>
               {language === 'fr'
-                ? 'Mode gratuit: statistiques avancées disponibles en premium'
-                : 'Free mode: advanced statistics are available in premium'}
-            </p>
+                ? `Tu as étudié ${minutesToday} minutes aujourd'hui`
+                : `You studied ${minutesToday} minutes today`}
+            </small>
           </div>
         </section>
       )}
 
-      {/* Stats Grid */}
-      <div className="stats-grid">
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: secondaryCircle }}>
-            <img src={themedIcon('objectifs')} alt="" />
-          </div>
-          <div className="stat-content">
-            <div className="stat-label">{language === 'fr' ? 'Objectif' : 'Goal'}</div>
-            <div className="stat-value">
-              {Math.min(minutesToday, minuteGoal)}/{minuteGoal} min
-            </div>
+      <section className="home-k-stats-row">
+        <div className="home-k-stat">
+          <span className="home-k-stat-label">{language === 'fr' ? 'Objectif' : 'Goal'}</span>
+          <span className="home-k-stat-value">{Math.min(minutesToday, minuteGoal)}/{minuteGoal} min</span>
+          <div className="home-k-stat-progress">
+            <div style={{ width: `${goalProgressPercent}%` }} />
           </div>
         </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: secondaryCircle }}>
-            <img src={themedIcon('serie')} alt="" />
-          </div>
-          <div className="stat-content">
-            <div className="stat-label">{language === 'fr' ? 'Série' : 'Streak'}</div>
-            <div className="stat-value">{streak} {language === 'fr' ? 'jour' : 'day'}</div>
-          </div>
+        <div className="home-k-stat">
+          <span className="home-k-stat-label">{language === 'fr' ? 'Série' : 'Streak'}</span>
+          <span className="home-k-stat-value">{streak} {streakLabel}</span>
         </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: secondaryCircle }}>
-            <img src={themedIcon('progres')} alt="" />
-          </div>
-          <div className="stat-content">
-            <div className="stat-label">{language === 'fr' ? 'Progression' : 'Progress'}</div>
-            <div className="stat-value">{progressPercent}%</div>
-          </div>
+        <div className="home-k-stat">
+          <span className="home-k-stat-label">{language === 'fr' ? 'Progression' : 'Progress'}</span>
+          <span className="home-k-stat-value">{progressDisplayPercent}%</span>
         </div>
-
-        <div className="stat-card">
-          <div className="stat-icon" style={{ background: secondaryCircle }}>
-            <img src={themedIcon('today')} alt="" />
-          </div>
-          <div className="stat-content">
-            <div className="stat-label">{language === 'fr' ? "Aujourd'hui" : 'Today'}</div>
-            <div className="stat-value">
-              {minutesToday} {language === 'fr' ? 'min' : 'min'}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Next Lesson Card */}
-      <section className="next-lesson-section">
-        <div className="section-header-inline">
-          <span className="section-badge">{language === 'fr' ? 'NOUVELLE LEÇON' : 'NEW LESSON'}</span>
-        </div>
-        <div className="next-lesson-card" onClick={onContinue}>
-          <div className="play-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-          <div className="lesson-info">
-            <div className="lesson-title">{language === 'fr' ? 'Prochaine leçon' : 'Next lesson'}</div>
-            <div className="lesson-subtitle">
-              {nextLessonSubtitle || (language === 'fr' ? 'Choisissez une leçon' : 'Pick a lesson')}
-            </div>
-          </div>
+        <div className="home-k-stat">
+          <span className="home-k-stat-label">{language === 'fr' ? "Aujourd'hui" : 'Today'}</span>
+          <span className="home-k-stat-value">{minutesToday} min</span>
         </div>
       </section>
 
-      {/* Continue Section */}
-      <section className="continue-section">
-        <h2 className="section-title">{language === 'fr' ? 'CONTINUE ICI' : 'CONTINUE HERE'}</h2>
+      <section className="home-k-feature-grid">
+        <article className="home-k-card home-k-cplayer-card">
+          <p className="home-k-card-eyebrow">{language === 'fr' ? 'APPRENDRE AVEC CPLAYER' : 'LEARN WITH CPLAYER'}</p>
+          <h2 className="home-k-card-title">
+            {language === 'fr' ? 'Apprendre avec CPlayer' : 'Learn with CPlayer'}
+          </h2>
+          <p className="home-k-card-text">
+            {language === 'fr'
+              ? 'Module audio en préparation. Vous pourrez apprendre avec des pistes synchronisées.'
+              : 'Audio module in progress. You will learn with synchronized tracks soon.'}
+          </p>
+          <button type="button" className="home-k-card-btn" onClick={onOpenCPlayer}>
+            {language === 'fr' ? 'Ouvrir CPlayer' : 'Open CPlayer'}
+          </button>
+        </article>
 
-        <div className="continue-grid">
-          <div className="continue-card">
-            <div className="continue-icon" style={{ background: secondaryCircle }}>
-              <img src={themedIcon('lecons')} alt="" />
+        <article className="home-k-card home-k-vocab-card">
+          <p className="home-k-card-eyebrow">{language === 'fr' ? 'VOCABULEX' : 'VOCABULEX'}</p>
+          <div className="home-k-vocab-grid">
+            <div>
+              <span className="home-k-vocab-number">{totalWords}</span>
+              <span className="home-k-vocab-label">{language === 'fr' ? 'MOTS APPRIS' : 'WORDS LEARNED'}</span>
             </div>
-            <div className="continue-content">
-              <div className="continue-badge">{language === 'fr' ? 'LEÇON SUIVANTE' : 'NEXT LESSON'}</div>
-              <div className="continue-title">{nextLessonTitle}</div>
-              {nextLessonSubtitle && <p className="continue-subtitle">{nextLessonSubtitle}</p>}
-              <button className="continue-btn" onClick={onContinue}>
-                {language === 'fr' ? 'Continuer' : 'Continue'} →
-              </button>
+            <div>
+              <span className="home-k-vocab-number">{pendingReviews}</span>
+              <span className="home-k-vocab-label">{language === 'fr' ? 'À RÉVISER' : 'TO REVIEW'}</span>
             </div>
           </div>
-
-          <div className="continue-card">
-            <div className="continue-icon" style={{ background: secondaryCircle }}>
-              <img src={themedIcon('reviser')} alt="" />
-            </div>
-            <div className="continue-content">
-              <div className="continue-badge">{language === 'fr' ? 'RÉVISION DU JOUR' : 'DAILY REVIEW'}</div>
-              <div className="continue-title">{reviewSubtitle}</div>
-              <button
-                className={`continue-btn ${pendingReviews === 0 ? 'disabled' : ''}`}
-                onClick={() => pendingReviews > 0 && onOpenReview()}
-                disabled={pendingReviews === 0}
-              >
-                {language === 'fr' ? 'Réviser' : 'Review'} →
-              </button>
-            </div>
-          </div>
-
-          <div className="continue-card">
-            <div className="continue-icon" style={{ background: secondaryCircle }}>
-              <img src={themedIcon('jeux')} alt="" />
-            </div>
-            <div className="continue-content">
-              <div className="continue-badge">{language === 'fr' ? 'MINI-JEU DU JOUR' : 'DAILY MINI-GAME'}</div>
-              <div className="continue-title">{language === 'fr' ? 'Entraînement rapide' : 'Quick practice'}</div>
-              <button className="continue-btn">
-                {language === 'fr' ? 'Jouer' : 'Play'} →
-              </button>
-            </div>
-          </div>
-        </div>
+          <button
+            type="button"
+            className="home-k-card-btn"
+            onClick={onOpenReview}
+            disabled={pendingReviews === 0}
+          >
+            {language === 'fr' ? 'Voir mes révisions' : 'Open reviews'}
+          </button>
+        </article>
       </section>
 
-      {/* Progress Section */}
-      <section className="progress-section">
-        <h2 className="section-title">{language === 'fr' ? 'VOTRE PROGRESSION HSK' : 'YOUR HSK PROGRESS'}</h2>
-        <div className="progress-summary">
-          <div className="total-words">
-            <span className="total-number">{totalWords}</span>
-            <span className="total-label">{language === 'fr' ? 'mots disponibles' : 'words available'}</span>
-          </div>
+      <section className="home-k-lessons-panel">
+        <div className="home-k-panel-head">
+          <h2>{language === 'fr' ? 'LEÇONS' : 'LESSONS'}</h2>
+          <button type="button" onClick={onContinue}>
+            {language === 'fr' ? 'Voir tout' : 'See all'} →
+          </button>
         </div>
+
+        <button type="button" className="home-k-continue-row" onClick={onContinue}>
+          <span className="home-k-continue-icon">▶</span>
+          <span className="home-k-continue-text">
+            <strong>{language === 'fr' ? 'CONTINUER' : 'CONTINUE'}</strong>
+            <em>{continueLessonTitle}</em>
+            <small>{continueLessonSubtitle}</small>
+          </span>
+          <span className="home-k-continue-arrow">→</span>
+        </button>
+
+        <section className="home-k-levels">
+          <h3>{language === 'fr' ? 'PROGRESSION PAR NIVEAU' : 'LEVEL PROGRESS'}</h3>
+          {levelProgress.slice(0, 4).map((item) => (
+            <div key={item.level} className="home-k-level-row">
+              <div className="home-k-level-line">
+                <span>
+                  {language === 'fr' ? `Niveau ${item.level}` : `Level ${item.level}`} - {levelLabel(item.level)}
+                </span>
+                <span>{item.completed}/{item.total} {language === 'fr' ? 'leçons' : 'lessons'}</span>
+              </div>
+              <div className="home-k-level-bar">
+                <div style={{ width: `${item.percent}%` }}></div>
+              </div>
+              <p>{item.percent}%</p>
+            </div>
+          ))}
+          {levelProgress.length === 0 && (
+            <p className="home-k-empty-levels">
+              {language === 'fr'
+                ? 'Aucune donnée de progression pour le moment.'
+                : 'No level progress data yet.'}
+            </p>
+          )}
+        </section>
       </section>
     </div>
   );

@@ -5,10 +5,11 @@ import hsk4 from '../../data/hsk4.json';
 import hsk5 from '../../data/hsk5.json';
 import hsk6 from '../../data/hsk6.json';
 import hsk7 from '../../data/hsk7.json';
+import horsHsk from '../../data/hors-hsk.json';
 import type { DatasetManifest, LessonExample, LessonItem, LevelId, ThemeSummary } from '../types';
 import { enrichExamplesWithAudio } from '../utils/exampleAudio';
 
-export const levelIds: LevelId[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'];
+export const levelIds: LevelId[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7', 'hors-hsk'];
 
 type RawLessonExample = {
   hanzi?: string;
@@ -51,7 +52,8 @@ const grouped: Record<LevelId, LessonItem[]> = {
   hsk4: normalizeLessons(hsk4 as unknown[], 'hsk4'),
   hsk5: normalizeLessons(hsk5 as unknown[], 'hsk5'),
   hsk6: normalizeLessons(hsk6 as unknown[], 'hsk6'),
-  hsk7: normalizeLessons(hsk7 as unknown[], 'hsk7')
+  hsk7: normalizeLessons(hsk7 as unknown[], 'hsk7'),
+  'hors-hsk': normalizeLessons(horsHsk as unknown[], 'hors-hsk')
 };
 
 const attachExampleAudio = (lessons: LessonItem[]) =>

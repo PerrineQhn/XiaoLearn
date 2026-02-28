@@ -18,6 +18,48 @@ export default function LoginModal({ isOpen, onClose, language }: LoginModalProp
 
   if (!isOpen) return null;
 
+  const getGoogleErrorMessage = (code?: string) => {
+    if (!code) {
+      return language === 'fr'
+        ? 'Erreur Google: cause inconnue.'
+        : 'Google error: unknown cause.';
+    }
+
+    if (code === 'auth/popup-closed-by-user') {
+      return language === 'fr'
+        ? 'La fenêtre Google a été fermée avant la fin.'
+        : 'Google popup was closed before completion.';
+    }
+
+    if (code === 'auth/popup-blocked') {
+      return language === 'fr'
+        ? 'Popup bloquée par le navigateur. Autorise les popups pour ce site.'
+        : 'Popup blocked by browser. Allow popups for this site.';
+    }
+
+    if (code === 'auth/operation-not-allowed') {
+      return language === 'fr'
+        ? 'Google Sign-In n’est pas activé dans Firebase Authentication.'
+        : 'Google Sign-In is not enabled in Firebase Authentication.';
+    }
+
+    if (code === 'auth/invalid-origin' || code === 'auth/unauthorized-domain') {
+      return language === 'fr'
+        ? 'Domaine non autorisé par Firebase. Utilise localhost ou ajoute ce domaine dans Firebase Auth > Authorized domains.'
+        : 'Unauthorized domain in Firebase. Use localhost or add this domain in Firebase Auth > Authorized domains.';
+    }
+
+    if (code === 'auth/network-request-failed') {
+      return language === 'fr'
+        ? 'Échec réseau pendant la connexion Google.'
+        : 'Network failure during Google sign-in.';
+    }
+
+    return language === 'fr'
+      ? `Erreur Google (${code}).`
+      : `Google error (${code}).`;
+  };
+
   const handleGoogleSignIn = async () => {
     try {
       setLoading(true);
@@ -25,11 +67,8 @@ export default function LoginModal({ isOpen, onClose, language }: LoginModalProp
       await signInWithGoogle();
       onClose();
     } catch (err: any) {
-      setError(
-        language === 'fr'
-          ? 'Erreur lors de la connexion avec Google'
-          : 'Error signing in with Google'
-      );
+      console.error('Google sign-in error:', err?.code, err?.message);
+      setError(getGoogleErrorMessage(err?.code));
     } finally {
       setLoading(false);
     }

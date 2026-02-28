@@ -1,4 +1,4 @@
-export type LevelId = 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7';
+export type LevelId = 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7' | 'hors-hsk';
 
 export interface LessonExample {
   hanzi: string;

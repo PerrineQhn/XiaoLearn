@@ -7,6 +7,12 @@ interface Props {
 
 const { product } = Astro.props;
 const productPageLink = buildProductPageLink(product.id);
+const levelSelectionProductIds = new Set([
+  'vocabulary-one-hsk',
+  'writing-one-hsk',
+  'vocabulary-writing-one-hsk',
+]);
+const showLevels = levelSelectionProductIds.has(product.id) && Array.isArray(product.levels) && product.levels.length > 0;
 
 const typeLabels = {
   subscription: 'Abonnement',
@@ -52,11 +58,11 @@ const formatPrice = (value: number) =>
     <h3 class="product-title">{product.name}</h3>
     <p class="product-description">{product.description}</p>
 
-    {product.levels && (
+    {showLevels && (
       <div class="product-levels">
         <span class="levels-label">Niveaux disponibles</span>
         <ul class="levels-list">
-          {product.levels.map(level => (
+          {product.levels!.map(level => (
             <li>{level}</li>
           ))}
         </ul>

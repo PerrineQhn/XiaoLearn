@@ -12,7 +12,7 @@ export interface HSKQuiz {
 
 export interface HSKEntry {
   id: string;
-  level: 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7';
+  level: 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7' | 'hors-hsk';
   hanzi: string;
   pinyin: string;
   translation: string;
@@ -28,7 +28,7 @@ export interface HSKEntry {
   theme: string;
 }
 
-export type HSKLevel = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type HSKLevel = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export interface HSKLevelInfo {
   level: HSKLevel;
@@ -95,6 +95,14 @@ export const HSK_LEVELS: HSKLevelInfo[] = [
     description: 'Niveau expert - maîtrise étendue du mandarin',
     color: '#BF360C',
     bgColor: '#FFF8E1',
+  },
+  {
+    level: 8,
+    name: 'Hors-HSK',
+    slug: 'hors-hsk',
+    description: 'Vocabulaire courant hors programme HSK officiel',
+    color: '#546E7A',
+    bgColor: '#ECEFF1',
   },
 ];
 

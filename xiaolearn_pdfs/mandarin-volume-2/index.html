@@ -100,27 +100,21 @@
       const meta = data.meta || {};
 
       const wrap = document.createElement("div");
-      wrap.className = "cover cover-dictionary";
+      // Align the vocabulary cover with the workbook cover layout.
+      wrap.className = "cover cover-workbook";
 
       const top = document.createElement("div");
       top.className = "cover-top";
 
       const zh = document.createElement("div");
       zh.className = "cover-title-zh";
-      zh.textContent = meta.titleZh || "中文视觉词典";
+      zh.textContent = meta.titleZh || "汉语学习";
       top.appendChild(zh);
 
       const fr = document.createElement("div");
       fr.className = "cover-title-fr";
-      fr.textContent = fm.coverTitleFr || meta.titleFr || "Dictionnaire visuel – Mandarin";
+      fr.textContent = "Cahier d'écriture";
       top.appendChild(fr);
-
-      if (fm.coverSubtitleFr) {
-        const sub = document.createElement("div");
-        sub.className = "cover-subtitle-fr";
-        sub.textContent = fm.coverSubtitleFr;
-        top.appendChild(sub);
-      }
 
       const vol = document.createElement("div");
       vol.className = "cover-volume";

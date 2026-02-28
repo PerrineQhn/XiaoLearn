@@ -3,14 +3,12 @@ import {
   getBaseUrl,
   renderSitemapIndexXml,
   toAbsoluteUrl,
-  todayIsoDate,
 } from '../utils/sitemap';
 
 export const prerender = true;
 
 export const GET: APIRoute = async ({ site }) => {
   const base = getBaseUrl(site);
-  const lastmod = todayIsoDate();
   const sitemapPaths = [
     '/sitemaps/core.xml',
     '/sitemaps/dictionnaire.xml',
@@ -20,7 +18,6 @@ export const GET: APIRoute = async ({ site }) => {
   const xml = renderSitemapIndexXml(
     sitemapPaths.map((path) => ({
       loc: toAbsoluteUrl(base, path),
-      lastmod,
     })),
   );
 
