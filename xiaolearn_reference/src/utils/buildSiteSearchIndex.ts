@@ -106,7 +106,7 @@ const STATIC_PAGES: SiteSearchItem[] = [
     title: 'Ressources et produits',
     href: '/ressources',
     section: 'Pages',
-    summary: 'Méthodes d'étude, conseils pratiques et liens utiles pour progresser.',
+    summary: "Méthodes d'étude, conseils pratiques et liens utiles pour progresser.",
     keywords: ['ressources', 'conseils', 'methodes'],
     weight: 38,
   },
