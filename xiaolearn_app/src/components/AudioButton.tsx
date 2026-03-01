@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { resolveAudioSrc } from '../utils/audio';
+import { getAudioSrcCandidates, resolveAudioSrc } from '../utils/audio';
 
 interface AudioButtonProps {
   src: string;
@@ -12,20 +12,15 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
   const [error, setError] = useState<string | null>(null);
   const [srcIndex, setSrcIndex] = useState(0);
 
-  const resolvedSrc = resolveAudioSrc(src);
-  const srcCandidates = useMemo(() => {
-    const candidates = [resolvedSrc];
-    if (resolvedSrc.endsWith('.wav')) candidates.push(resolvedSrc.slice(0, -4) + '.mp3');
-    if (resolvedSrc.endsWith('.mp3')) candidates.push(resolvedSrc.slice(0, -4) + '.wav');
-    return Array.from(new Set(candidates));
-  }, [resolvedSrc]);
+  const resolvedSrc = useMemo(() => resolveAudioSrc(src), [src]);
+  const srcCandidates = useMemo(() => getAudioSrcCandidates(src), [src]);
   const activeSrc = srcCandidates[Math.min(srcIndex, srcCandidates.length - 1)] ?? resolvedSrc;
 
   useEffect(() => {
     setError(null);
     setIsPlaying(false);
     setSrcIndex(0);
-  }, [resolvedSrc]);
+  }, [src]);
 
   useEffect(() => {
     const audio = new Audio(activeSrc);

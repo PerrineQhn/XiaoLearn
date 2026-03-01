@@ -3,7 +3,7 @@ import type { Language } from '../i18n';
 import type { LevelId } from '../types';
 import { getPhrasesByLevel } from '../data/dictation-phrases';
 import LevelBadge from '../components/LevelBadge';
-import { resolveAudioSrc } from '../utils/audio';
+import { playAudioWithFallback } from '../utils/audio';
 
 interface DictationGamePageProps {
   language: Language;
@@ -44,17 +44,18 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
   const playAudio = () => {
     if (!currentPhrase || audioPlaying) return;
 
-    const audio = new Audio(resolveAudioSrc(currentPhrase.audio));
     setAudioPlaying(true);
 
-    audio.play().catch(err => {
-      console.error('Error playing audio:', err);
-      setAudioPlaying(false);
-    });
-
-    audio.onended = () => {
-      setAudioPlaying(false);
-    };
+    playAudioWithFallback(currentPhrase.audio)
+      .then((audio) => {
+        audio.onended = () => {
+          setAudioPlaying(false);
+        };
+      })
+      .catch(err => {
+        console.error('Error playing audio:', err);
+        setAudioPlaying(false);
+      });
   };
 
   useEffect(() => {

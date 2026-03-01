@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { LessonItem } from '../types';
-import { resolveAudioSrc } from '../utils/audio';
+import { playAudioWithFallback } from '../utils/audio';
 import './FlashcardItem.css';
 
 interface FlashcardItemProps {
@@ -29,8 +29,7 @@ export default function FlashcardItem({ card, onAnswer, language, isNewCard }: F
 
   const playAudio = () => {
     if (!card.audio) return;
-    const audio = new Audio(resolveAudioSrc(card.audio));
-    audio.play().catch(err => console.error('Audio play failed:', err));
+    playAudioWithFallback(card.audio).catch(err => console.error('Audio play failed:', err));
   };
 
   return (

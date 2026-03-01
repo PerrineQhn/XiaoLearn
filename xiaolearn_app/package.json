@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "npm run build:chunks",
+    "prebuild": "node scripts/prune-cloudflare-assets.mjs && npm run build:chunks",
     "build": "tsc && vite build",
     "build:chunks": "node scripts/split-hors-hsk.mjs",
     "preview": "vite preview",
