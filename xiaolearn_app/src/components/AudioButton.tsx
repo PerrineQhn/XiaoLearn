@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { resolveAudioSrc } from '../utils/audio';
 
 interface AudioButtonProps {
@@ -10,18 +10,40 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [srcIndex, setSrcIndex] = useState(0);
 
   const resolvedSrc = resolveAudioSrc(src);
+  const srcCandidates = useMemo(() => {
+    const candidates = [resolvedSrc];
+    if (resolvedSrc.endsWith('.wav')) candidates.push(resolvedSrc.slice(0, -4) + '.mp3');
+    if (resolvedSrc.endsWith('.mp3')) candidates.push(resolvedSrc.slice(0, -4) + '.wav');
+    return Array.from(new Set(candidates));
+  }, [resolvedSrc]);
+  const activeSrc = srcCandidates[Math.min(srcIndex, srcCandidates.length - 1)] ?? resolvedSrc;
 
   useEffect(() => {
-    const audio = new Audio(resolvedSrc);
-    audio.preload = 'auto';
+    setError(null);
+    setIsPlaying(false);
+    setSrcIndex(0);
+  }, [resolvedSrc]);
+
+  useEffect(() => {
+    const audio = new Audio(activeSrc);
+    audio.preload = 'metadata';
     audioRef.current = audio;
 
     const handleEnded = () => setIsPlaying(false);
     const handlePause = () => setIsPlaying(false);
     const handlePlay = () => setIsPlaying(true);
-    const handleError = () => setError('Audio introuvable');
+    const handleError = () => {
+      if (srcIndex < srcCandidates.length - 1) {
+        setError(null);
+        setSrcIndex(srcIndex + 1);
+        return;
+      }
+      setError('Audio introuvable');
+      setIsPlaying(false);
+    };
 
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('pause', handlePause);
@@ -36,10 +58,9 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
       audio.removeEventListener('error', handleError);
       audioRef.current = null;
     };
-  }, [resolvedSrc]);
+  }, [activeSrc, srcCandidates.length, srcIndex]);
 
   const handleClick = async () => {
-    if (error) return;
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -49,10 +70,18 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
     }
 
     try {
+      if (error) {
+        setError(null);
+        audio.load();
+      }
       audio.currentTime = 0;
       await audio.play();
     } catch (err) {
       console.error('Impossible de lire le fichier audio', err);
+      if (srcIndex < srcCandidates.length - 1) {
+        setSrcIndex(srcIndex + 1);
+        return;
+      }
       setError('Lecture impossible');
     }
   };
@@ -62,13 +91,12 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
       type="button"
       className={`audio-button ${isPlaying ? 'playing' : ''} ${error ? 'error' : ''}`}
       onClick={handleClick}
-      disabled={Boolean(error)}
     >
       <span className="audio-icon" aria-hidden="true">
         {error ? '⚠️' : isPlaying ? '🔊' : '🎧'}
       </span>
       <span className="audio-label">
-        {error ? error : isPlaying ? 'Pause' : label}
+        {error ? 'Réessayer' : isPlaying ? 'Pause' : label}
       </span>
       {isPlaying && <span className="audio-pulse" aria-hidden="true" />}
     </button>

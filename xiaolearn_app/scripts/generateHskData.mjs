@@ -256,9 +256,9 @@ function buildAudioFileName(levelKey, hanzi, index) {
 function createLessonObject({ row, levelKey, index, dictionaryEntry }) {
   const id = `${levelKey}-${String(index).padStart(PAD_LENGTH, '0')}`;
   const hanzi = row.Simplified.trim();
-  const translation = sanitizeTranslation(dictionaryEntry?.translation ?? 'Translation unavailable');
+  const translationEn = sanitizeTranslation(dictionaryEntry?.translation ?? 'Translation unavailable');
   const category = mapCategory(row.POS);
-  const theme = inferTheme(translation, hanzi);
+  const theme = inferTheme(translationEn, hanzi);
   const audioId = buildAudioFileName(levelKey, hanzi, index);
 
   return {
@@ -266,7 +266,7 @@ function createLessonObject({ row, levelKey, index, dictionaryEntry }) {
     level: levelKey,
     hanzi,
     pinyin: row.Pinyin ? prettifyPinyin(row.Pinyin.trim()) : dictionaryEntry?.pinyin || '',
-    translation,
+    translationEn,
     translationFr: '',
     category,
     explanation: dictionaryEntry?.explanation,
@@ -274,7 +274,7 @@ function createLessonObject({ row, levelKey, index, dictionaryEntry }) {
     examples: [],
     quiz: {
       prompt: `Sélectionne la bonne traduction pour « ${hanzi} »`,
-      choices: [translation],
+      choices: [translationEn],
       correctChoiceIndex: 0
     },
     tags: Array.from(new Set([theme, category, `level:${levelKey}`])),
@@ -284,11 +284,11 @@ function createLessonObject({ row, levelKey, index, dictionaryEntry }) {
 
 function applyQuizChoices(lessons) {
   lessons.forEach((lesson, _, arr) => {
-    const options = new Set([lesson.translation]);
+    const options = new Set([lesson.translationEn]);
     while (options.size < 4) {
       const candidate = arr[Math.floor(Math.random() * arr.length)];
       if (candidate && candidate.id !== lesson.id) {
-        options.add(candidate.translation);
+        options.add(candidate.translationEn);
       }
       if (arr.length <= 3) break;
     }
@@ -300,7 +300,7 @@ function applyQuizChoices(lessons) {
     lesson.quiz = {
       prompt: `Sélectionne la bonne traduction pour « ${lesson.hanzi} »`,
       choices,
-      correctChoiceIndex: choices.indexOf(lesson.translation)
+      correctChoiceIndex: choices.indexOf(lesson.translationEn)
     };
   });
 }
@@ -366,7 +366,7 @@ for (const row of rows) {
   let processed = 0;
   for (const levelLessons of Object.values(lessonsResult)) {
     for (const lesson of levelLessons) {
-      lesson.translationFr = await translateToFrench(lesson.translation);
+      lesson.translationFr = await translateToFrench(lesson.translationEn);
       processed += 1;
       if (processed % 100 === 0 || processed === totalLessons) {
         const percent = Math.round((processed / totalLessons) * 100);

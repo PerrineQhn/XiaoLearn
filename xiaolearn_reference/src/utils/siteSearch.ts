@@ -12,7 +12,7 @@ export function normalizeSearchText(value: string): string {
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
-    .replace(/['’`"]/g, ' ')
+    .replace(/[''`"]/g, ' ')
     .replace(/[.,/#!$%^&*;:{}=\-_~()|\[\]\\]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

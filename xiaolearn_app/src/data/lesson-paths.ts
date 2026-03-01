@@ -2221,6 +2221,38 @@ export const lessonPaths: LessonPath[] = [
         },
         flashcards: ['被', '让', '给', '受', '遭', '挨', '遇到', '发生'],
         quizQuestions: 8
+      },
+{
+        id: 'grammar-cgg-zenme',
+        title: '怎么 : Comment & Pourquoi',
+        titleEn: '怎么: How & Why',
+        duration: 20,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'grammar',
+        difficulty: 'elementary',
+        tags: ['grammar', 'question', 'zenme'],
+        introduction: {
+          title: 'Les multiples visages de 怎么',
+          titleEn: 'The Many Faces of 怎么',
+          content: 'Leçon complète sur 怎么 (zěnme) : méthode, surprise, reproche, impossibilité. Fusion CGG #107 + #108.',
+          contentEn: 'Complete lesson on 怎么 (zěnme): method, surprise, complaint, impossibility. Merged from CGG #107 + #108.',
+          objectives: [
+            'Demander comment faire quelque chose',
+            'Exprimer la surprise ou le reproche',
+            'Distinguer 怎么 de 为什么',
+            'Utiliser 怎么也 pour l\'impossibilité'
+          ],
+          objectivesEn: [
+            'Ask how to do something',
+            'Express surprise or complaint',
+            'Distinguish 怎么 from 为什么',
+            'Use 怎么也 for impossibility'
+          ]
+        },
+        flashcards: ['grammar-cgg-107-how-and-what-kind'],
+        quizQuestions: 0
       }
     ]
   },

@@ -3,8 +3,9 @@ import { pinyin } from 'pinyin-pro';
 import { Converter } from 'opencc-js';
 import type { Language } from '../i18n';
 import { cplayerSongs, type CPlayerLyricLine, type CPlayerSong } from '../data/cplayer-songs';
-import { getAllLessons, getLessonByHanzi } from '../data/lessons';
+import { getAllLessons, getAllLessonsIncludingHorsHsk } from '../data/lessons';
 import cfdictData from '../data/cfdict-compact.json';
+import type { LessonItem } from '../types';
 import {
   enrichLyricsWithAI,
   fetchYouTubeVideoMetadata,
@@ -192,8 +193,32 @@ export default function CPlayerPage({ language, onBackHome }: CPlayerPageProps) 
   const lineRefs = useRef<Map<number, HTMLButtonElement>>(new Map());
   const isLoopingRef = useRef(false);
 
-  const allLessons = useMemo(() => getAllLessons(), []);
+  const [allLessons, setAllLessons] = useState<LessonItem[]>(() => getAllLessons());
   const cfdict = cfdictData as Record<string, string>;
+
+  useEffect(() => {
+    let active = true;
+    getAllLessonsIncludingHorsHsk()
+      .then((lessons) => {
+        if (active) setAllLessons(lessons);
+      })
+      .catch((error) => {
+        console.warn('Impossible de charger hors-hsk pour CPlayer', error);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const lessonByHanziMap = useMemo(() => {
+    const map = new Map<string, LessonItem>();
+    for (const lesson of allLessons) {
+      if (!map.has(lesson.hanzi)) {
+        map.set(lesson.hanzi, lesson);
+      }
+    }
+    return map;
+  }, [allLessons]);
 
   // Keep looping ref in sync with state
   useEffect(() => { isLoopingRef.current = isLooping; }, [isLooping]);
@@ -228,7 +253,7 @@ export default function CPlayerPage({ language, onBackHome }: CPlayerPageProps) 
   }, [trackMeta, pushToHistory]);
 
   const fallbackCharMap = useMemo(() => {
-    const map = new Map<string, ReturnType<typeof getAllLessons>[number]>();
+    const map = new Map<string, LessonItem>();
     for (const lesson of allLessons) {
       for (const char of Array.from(lesson.hanzi)) {
         if (isChineseChar(char) && !map.has(char)) {
@@ -261,7 +286,7 @@ export default function CPlayerPage({ language, onBackHome }: CPlayerPageProps) 
       }
 
       // 1. Exact match on the full token (works for multi-char words like 微笑)
-      const exact = getLessonByHanzi(token);
+      const exact = lessonByHanziMap.get(token);
       if (exact) {
         const example = exact.examples?.[0];
         return {
@@ -315,7 +340,7 @@ export default function CPlayerPage({ language, onBackHome }: CPlayerPageProps) 
       // 4. Last resort: combine individual character meanings
       const charMeanings: string[] = [];
       for (const char of Array.from(simplified)) {
-        const charLesson = getLessonByHanzi(char) || fallbackCharMap.get(char);
+        const charLesson = lessonByHanziMap.get(char) || fallbackCharMap.get(char);
         const charCfdict = cfdict[char];
         if (charLesson) {
           const meaning = language === 'fr'
@@ -333,7 +358,7 @@ export default function CPlayerPage({ language, onBackHome }: CPlayerPageProps) 
         translation: charMeanings.length ? charMeanings.join(' · ') : ''
       };
     },
-    [fallbackCharMap, language]
+    [cfdict, fallbackCharMap, language, lessonByHanziMap]
   );
 
   const activeVideoId = useMemo(() => {

@@ -1,7 +1,8 @@
 export interface HSKExample {
   chinese: string;
   pinyin: string;
-  translation: string;
+  translationFr: string;
+  translation?: string;
 }
 
 export interface HSKQuiz {
@@ -15,7 +16,8 @@ export interface HSKEntry {
   level: 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4' | 'hsk5' | 'hsk6' | 'hsk7' | 'hors-hsk';
   hanzi: string;
   pinyin: string;
-  translation: string;
+  translationEn: string;
+  translation?: string;
   translationFr: string;
   translationFrAlt?: string[];
   category: string;
@@ -107,6 +109,9 @@ export const HSK_LEVELS: HSKLevelInfo[] = [
 ];
 
 export function getHSKLevelInfo(level: HSKLevel | string): HSKLevelInfo | undefined {
+  if (level === 'hors-hsk') {
+    return HSK_LEVELS.find(l => l.slug === 'hors-hsk');
+  }
   const levelNum = typeof level === 'string' ? parseInt(level.replace('hsk', '')) : level;
   return HSK_LEVELS.find(l => l.level === levelNum);
 }

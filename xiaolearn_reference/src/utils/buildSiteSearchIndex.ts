@@ -106,7 +106,7 @@ const STATIC_PAGES: SiteSearchItem[] = [
     title: 'Ressources et produits',
     href: '/ressources',
     section: 'Pages',
-    summary: 'Méthodes d’étude, conseils pratiques et liens utiles pour progresser.',
+    summary: 'Méthodes d'étude, conseils pratiques et liens utiles pour progresser.',
     keywords: ['ressources', 'conseils', 'methodes'],
     weight: 38,
   },
@@ -130,12 +130,12 @@ export async function buildSiteSearchIndex(): Promise<SiteSearchItem[]> {
       title: `${entry.hanzi} · ${entry.pinyin}`,
       href: `/dictionnaire/${entry.id}`,
       section: 'Dictionnaire',
-      summary: compact(entry.translationFr || entry.translation || ''),
+      summary: compact(entry.translationFr || entry.translationEn || entry.translation || ''),
       keywords: dedupeKeywords([
         entry.hanzi,
         entry.pinyin,
         entry.translationFr,
-        entry.translation,
+        entry.translationEn || entry.translation || '',
         ...(entry.translationFrAlt || []).slice(0, 2),
         ...(entry.tags || []).slice(0, 4),
         entry.level.toUpperCase(),
@@ -240,4 +240,3 @@ export async function buildSiteSearchIndex(): Promise<SiteSearchItem[]> {
 
   return dedupeByHref(items);
 }
-

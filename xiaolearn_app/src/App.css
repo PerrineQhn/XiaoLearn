@@ -7778,6 +7778,140 @@ select:focus {
   gap: 0.7rem;
 }
 
+/* ── Dialogue display (chat bubbles) ── */
+.structured-lesson .dialogue-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 0.85rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-secondary) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--panel-border) 85%, transparent);
+}
+
+.structured-lesson .dialogue-scene-label {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+}
+
+.structured-lesson .dialogue-bubble-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.55rem;
+}
+
+.structured-lesson .dialogue-bubble-row--b {
+  flex-direction: row-reverse;
+}
+
+.structured-lesson .dialogue-speaker-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.structured-lesson .dialogue-speaker-avatar--a {
+  background: color-mix(in srgb, var(--primary-red) 22%, var(--bg-primary));
+  color: var(--primary-red-hover);
+  border: 1px solid color-mix(in srgb, var(--primary-red) 38%, var(--panel-border));
+}
+
+.structured-lesson .dialogue-speaker-avatar--b {
+  background: color-mix(in srgb, var(--gold-accent) 30%, var(--bg-primary));
+  color: #8a5d1f;
+  border: 1px solid color-mix(in srgb, var(--gold-accent) 55%, var(--panel-border));
+}
+
+.structured-lesson .dialogue-bubble {
+  max-width: 74%;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: 0 8px 20px rgba(31, 34, 51, 0.08);
+}
+
+.structured-lesson .dialogue-speaker-name {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.structured-lesson .dialogue-bubble--a {
+  background: color-mix(in srgb, var(--primary-red-light) 46%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--primary-red) 24%, var(--panel-border));
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+.structured-lesson .dialogue-bubble--a .dialogue-speaker-name {
+  color: var(--primary-red-hover);
+}
+
+.structured-lesson .dialogue-bubble--b {
+  background: color-mix(in srgb, var(--gold-accent) 24%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--gold-accent) 48%, var(--panel-border));
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+.structured-lesson .dialogue-bubble--b .dialogue-speaker-name {
+  color: #8a5d1f;
+}
+
+.structured-lesson .dialogue-bubble-hanzi {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.structured-lesson .dialogue-bubble-pinyin {
+  margin: 0;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--primary-red-hover) 62%, var(--text-secondary));
+  line-height: 1.3;
+}
+
+.structured-lesson .dialogue-bubble-translation {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.structured-lesson .dialogue-bubble-audio {
+  margin-top: 0.25rem;
+  align-self: flex-start;
+}
+
+.structured-lesson .dialogue-bubble-audio .audio-button {
+  background: color-mix(in srgb, var(--bg-primary) 86%, var(--bg-secondary));
+  border-color: color-mix(in srgb, var(--border-medium) 80%, var(--panel-border));
+}
+
+.structured-lesson .dialogue-bubble--a .dialogue-bubble-audio .audio-button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--primary-red-light) 72%, var(--bg-primary));
+  border-color: color-mix(in srgb, var(--primary-red) 56%, var(--border-medium));
+  color: var(--primary-red-hover);
+}
+
+.structured-lesson .dialogue-bubble--b .dialogue-bubble-audio .audio-button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--gold-accent) 38%, var(--bg-primary));
+  border-color: color-mix(in srgb, var(--gold-accent) 62%, var(--border-medium));
+  color: #8a5d1f;
+}
+
 .structured-lesson .blank-input,
 .structured-lesson .role-play-input,
 .structured-lesson .writing-textarea,
@@ -8450,6 +8584,11 @@ select:focus {
 .structured-lesson .word-chip.available:hover:not(:disabled) {
   border-color: var(--primary-red) !important;
   background: color-mix(in srgb, var(--primary-red) 24%, var(--flow-control)) !important;
+}
+
+.structured-lesson .translation-prompt {
+  color: var(--flow-text-main) !important;
+  font-weight: 600 !important;
 }
 
 .structured-lesson .quiz-option-modern.correct,

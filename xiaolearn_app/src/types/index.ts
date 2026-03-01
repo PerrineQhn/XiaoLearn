@@ -4,6 +4,7 @@ export interface LessonExample {
   hanzi: string;
   pinyin: string;
   translation: string;
+  translationFr?: string;
   audio?: string;
 }
 
@@ -160,7 +161,11 @@ export interface LessonExerciseWriting {
 
 export interface DialogueLine {
   speaker: 'A' | 'B';
+  speakerName?: string;
   text: string;
+  pinyin?: string;
+  translationFr?: string;
+  translationEn?: string;
   audio?: string;
   isBlank?: boolean;
 }
@@ -168,7 +173,7 @@ export interface DialogueLine {
 export interface LessonExerciseDialogue {
   id: string;
   type: 'dialogue';
-  mode: 'role-play' | 'fill-blanks' | 'order';
+  mode: 'role-play' | 'fill-blanks' | 'order' | 'display';
   promptFr: string;
   promptEn: string;
   context: string;

@@ -5,7 +5,7 @@ import hsk4 from '../../data/hsk4.json';
 import hsk5 from '../../data/hsk5.json';
 import hsk6 from '../../data/hsk6.json';
 import hsk7 from '../../data/hsk7.json';
-import horsHsk from '../../data/hors-hsk.json';
+import horsHskUrl from '../../data/hors-hsk.json?url';
 import type { DatasetManifest, LessonExample, LessonItem, LevelId, ThemeSummary } from '../types';
 import { enrichExamplesWithAudio } from '../utils/exampleAudio';
 
@@ -16,20 +16,28 @@ type RawLessonExample = {
   chinese?: string;
   pinyin?: string;
   translation?: string;
+  translationFr?: string;
   audio?: string;
 };
 
-type RawLessonItem = Omit<LessonItem, 'examples' | 'level'> & {
+type RawLessonItem = Omit<LessonItem, 'examples' | 'level' | 'translation'> & {
   level?: string;
+  translation?: string;
+  translationEn?: string;
   examples?: RawLessonExample[];
 };
 
-const normalizeExample = (example: RawLessonExample): LessonExample => ({
-  hanzi: example.hanzi ?? example.chinese ?? '',
-  pinyin: example.pinyin ?? '',
-  translation: example.translation ?? '',
-  ...(example.audio ? { audio: example.audio } : {})
-});
+const normalizeExample = (example: RawLessonExample): LessonExample => {
+  const translationFr = example.translationFr ?? example.translation ?? '';
+  const translation = example.translation ?? example.translationFr ?? '';
+  return {
+    hanzi: example.hanzi ?? example.chinese ?? '',
+    pinyin: example.pinyin ?? '',
+    translation,
+    translationFr,
+    ...(example.audio ? { audio: example.audio } : {})
+  };
+};
 
 const normalizeLevel = (level: string | undefined, fallbackLevel: LevelId): LevelId => {
   if (level && levelIds.includes(level as LevelId)) {
@@ -39,11 +47,15 @@ const normalizeLevel = (level: string | undefined, fallbackLevel: LevelId): Leve
 };
 
 const normalizeLessons = (items: unknown[], fallbackLevel: LevelId): LessonItem[] =>
-  (items as RawLessonItem[]).map((item) => ({
-    ...item,
-    level: normalizeLevel(item.level, fallbackLevel),
-    examples: (item.examples ?? []).map(normalizeExample)
-  }));
+  (items as RawLessonItem[]).map((item) => {
+    const { translationEn, examples, ...rest } = item;
+    return {
+      ...rest,
+      translation: item.translation ?? translationEn ?? '',
+      level: normalizeLevel(item.level, fallbackLevel),
+      examples: (examples ?? []).map(normalizeExample)
+    };
+  });
 
 const grouped: Record<LevelId, LessonItem[]> = {
   hsk1: normalizeLessons(hsk1 as unknown[], 'hsk1'),
@@ -53,7 +65,7 @@ const grouped: Record<LevelId, LessonItem[]> = {
   hsk5: normalizeLessons(hsk5 as unknown[], 'hsk5'),
   hsk6: normalizeLessons(hsk6 as unknown[], 'hsk6'),
   hsk7: normalizeLessons(hsk7 as unknown[], 'hsk7'),
-  'hors-hsk': normalizeLessons(horsHsk as unknown[], 'hors-hsk')
+  'hors-hsk': []
 };
 
 const attachExampleAudio = (lessons: LessonItem[]) =>
@@ -86,38 +98,84 @@ export const dataset: DatasetManifest = {
   lessons: levelIds.flatMap((level) => grouped[level])
 };
 
+const lessonByIdIndex = new Map(dataset.lessons.map((entry) => [entry.id, entry]));
+const lessonByHanziIndex = new Map(dataset.lessons.map((entry) => [entry.hanzi, entry]));
+
+let horsHskLessonsCache: LessonItem[] | null = null;
+let horsHskByIdIndex = new Map<string, LessonItem>();
+let horsHskByHanziIndex = new Map<string, LessonItem>();
+let horsHskLoadingPromise: Promise<LessonItem[]> | null = null;
+
+const rebuildHorsIndexes = (lessons: LessonItem[]) => {
+  horsHskByIdIndex = new Map(lessons.map((entry) => [entry.id, entry]));
+  horsHskByHanziIndex = new Map(lessons.map((entry) => [entry.hanzi, entry]));
+};
+
+const getMergedLessons = () => (horsHskLessonsCache ? [...dataset.lessons, ...horsHskLessonsCache] : dataset.lessons);
+
+export const loadHorsHskLessons = async (): Promise<LessonItem[]> => {
+  if (horsHskLessonsCache) return horsHskLessonsCache;
+  if (horsHskLoadingPromise) return horsHskLoadingPromise;
+
+  horsHskLoadingPromise = fetch(horsHskUrl)
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`Impossible de charger hors-hsk.json (${response.status})`);
+      }
+      const payload = (await response.json()) as unknown[];
+      const normalized = attachExampleAudio(normalizeLessons(payload, 'hors-hsk'));
+      horsHskLessonsCache = normalized;
+      grouped['hors-hsk'] = normalized;
+      dataset.totals['hors-hsk'] = normalized.length;
+      rebuildHorsIndexes(normalized);
+      return normalized;
+    })
+    .finally(() => {
+      horsHskLoadingPromise = null;
+    });
+
+  return horsHskLoadingPromise;
+};
+
 export const getLessonsByLevel = (level: LevelId) => grouped[level];
 
-export const getLessonById = (id: string) => dataset.lessons.find((entry) => entry.id === id);
+export const getLessonById = (id: string) => lessonByIdIndex.get(id) ?? horsHskByIdIndex.get(id);
 
-export const getLessonByHanzi = (hanzi: string) => dataset.lessons.find((entry) => entry.hanzi === hanzi);
+export const getLessonByHanzi = (hanzi: string) => lessonByHanziIndex.get(hanzi) ?? horsHskByHanziIndex.get(hanzi);
 
 export const getLessonsByHanziList = (hanziList: string[]) => {
   return hanziList.map(hanzi => getLessonByHanzi(hanzi)).filter(Boolean) as LessonItem[];
 };
 
-export const getAllLessons = () => dataset.lessons;
+export const getAllLessons = () => getMergedLessons();
+
+export const getAllLessonsIncludingHorsHsk = async () => {
+  await loadHorsHskLessons();
+  return getMergedLessons();
+};
 
 export function getReviewList(limit = 6): LessonItem[] {
   // Stratégie ultra simple : on sélectionne une entrée sur n
-  const interval = Math.max(1, Math.floor(dataset.lessons.length / limit));
+  const allLessons = getMergedLessons();
+  const interval = Math.max(1, Math.floor(allLessons.length / limit));
   const selection: LessonItem[] = [];
-  for (let i = 0; i < dataset.lessons.length && selection.length < limit; i += interval) {
-    selection.push(dataset.lessons[i]);
+  for (let i = 0; i < allLessons.length && selection.length < limit; i += interval) {
+    selection.push(allLessons[i]);
   }
   return selection;
 }
 
-const themeIndex = dataset.lessons.reduce<Map<string, LessonItem[]>>((acc, lesson) => {
-  if (!acc.has(lesson.theme)) {
-    acc.set(lesson.theme, []);
-  }
-  acc.get(lesson.theme)!.push(lesson);
-  return acc;
-}, new Map());
+const buildThemeIndex = (items: LessonItem[]) =>
+  items.reduce<Map<string, LessonItem[]>>((acc, lesson) => {
+    if (!acc.has(lesson.theme)) {
+      acc.set(lesson.theme, []);
+    }
+    acc.get(lesson.theme)!.push(lesson);
+    return acc;
+  }, new Map());
 
 export function getThemeSummaries(): ThemeSummary[] {
-  return Array.from(themeIndex.entries())
+  return Array.from(buildThemeIndex(getMergedLessons()).entries())
     .map(([theme, lessons]) => {
       const levels = levelIds.reduce(
         (acc, level) => ({
@@ -139,5 +197,5 @@ export function getThemeSummaries(): ThemeSummary[] {
 }
 
 export function getLessonsByTheme(theme: string): LessonItem[] {
-  return themeIndex.get(theme) ?? [];
+  return buildThemeIndex(getMergedLessons()).get(theme) ?? [];
 }

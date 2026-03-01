@@ -83,7 +83,11 @@ export default function FlashcardItem({ card, onAnswer, language, isNewCard }: F
               {card.examples && card.examples.length > 0 && (
                 <div className="example-sentence">
                   <div className="example-hanzi">{card.examples[0].hanzi}</div>
-                  <div className="example-translation">{card.examples[0].translation}</div>
+                  <div className="example-translation">
+                    {language === 'fr'
+                      ? card.examples[0].translationFr || card.examples[0].translation
+                      : card.examples[0].translation || card.examples[0].translationFr}
+                  </div>
                 </div>
               )}
             </div>

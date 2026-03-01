@@ -125,7 +125,7 @@ export default function SiteWideSearch() {
         </div>
         <p className="site-search-meta">
           {loading
-            ? 'Chargement de l’index...'
+            ? 'Chargement de l'index...'
             : `${results.length} résultat${results.length > 1 ? 's' : ''}`}
         </p>
         {error && <p className="site-search-error">{error}</p>}

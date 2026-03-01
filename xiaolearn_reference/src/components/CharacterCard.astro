@@ -9,7 +9,10 @@ interface Props {
 }
 
 const { entry, showLevel = true, href } = Astro.props;
-const targetHref = href === undefined ? `/dictionnaire/${entry.id}` : href;
+const defaultHref = entry.level === 'hors-hsk'
+  ? `/dictionnaire/hors-hsk/${entry.id}`
+  : `/dictionnaire/${entry.id}`;
+const targetHref = href === undefined ? defaultHref : href;
 ---
 
 {targetHref ? (

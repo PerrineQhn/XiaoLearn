@@ -20,7 +20,8 @@ export interface Word {
 export interface Example {
   chinese: string;
   pinyin: string;
-  translation: string;
+  translationFr: string;
+  translation?: string;
 }
 
 export interface Quiz {

@@ -63,7 +63,17 @@ function formatNumericPinyin(segment) {
 }
 
 function prettifyPinyin(value = '') {
-  return value.split(/\s+/).filter(Boolean).map(formatNumericPinyin).join(' ').trim();
+  const normalized = value
+    .replace(/u:/gi, 'ü')
+    .replace(/([A-Za-z])\s*:\s*([1-5])/g, '$1:$2')
+    .replace(/([1-5])(?=[A-Za-züÜvV:])/g, '$1 ');
+
+  return normalized
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(formatNumericPinyin)
+    .join(' ')
+    .trim();
 }
 
 // ── CEDICT parser ──
@@ -101,7 +111,7 @@ function parseCfdict(text) {
     if (!simpMatch) continue;
     const simp = simpMatch[1].trim();
 
-    const frMatches = [...block.matchAll(/<fr><!\[CDATA\[([^\]]*)\]\]><\/fr>/g)];
+    const frMatches = [...block.matchAll(/<fr><!\[CDATA\[([\s\S]*?)\]\]><\/fr>/g)];
     if (frMatches.length === 0) continue;
 
     const translations = frMatches.map((m) => m[1].trim()).filter(Boolean);
@@ -168,6 +178,54 @@ function inferCategory(rawTranslations) {
 
 function sanitizeTranslation(value) {
   return value.replace(/\s*CL:.*$/i, '').trim();
+}
+
+function normalizeCedictPinyinInText(value = '') {
+  return value
+    .replace(/\[([^\]]+)\]/g, (_, pinyin) => `[${prettifyPinyin(String(pinyin))}]`)
+    .replace(/\s+\[/g, '[');
+}
+
+function cleanCedictReference(value = '') {
+  return value
+    .replace(/([^\s|/]+)\|([^\s|/]+)/g, '$2')
+    .replace(/\[([^\]]*)\]/g, (_, pinyin) => `[${prettifyPinyin(String(pinyin))}]`)
+    .replace(/\s+\[/g, '[')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*[,;:]\s*$/, '')
+    .trim();
+}
+
+function toFrenchLikeReference(english = '') {
+  const source = english.trim();
+  const oldVariant = source.match(/^old variant of\s+(.+)$/i);
+  if (oldVariant) return `ancienne variante de ${cleanCedictReference(oldVariant[1])}`;
+
+  const variant = source.match(/^variant of\s+(.+)$/i);
+  if (variant) return `variante de ${cleanCedictReference(variant[1])}`;
+
+  const see = source.match(/^see\s+(.+)$/i);
+  if (see) return `voir ${cleanCedictReference(see[1])}`;
+
+  const usedIn = source.match(/^used in\s+(.+)$/i);
+  if (usedIn) return `utilisé dans ${cleanCedictReference(usedIn[1])}`;
+
+  const abbr = source.match(/^abbr\.?\s*for\s+(.+)$/i);
+  if (abbr) return `abréviation de ${cleanCedictReference(abbr[1])}`;
+
+  return '';
+}
+
+function cleanFrenchNoise(value = '') {
+  return value
+    .replace(/\[[^\]]*]/g, '')
+    .replace(/,+/g, ', ')
+    .replace(/\s+,/g, ',')
+    .replace(/,\s*,+/g, ', ')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/^,\s*/, '')
+    .replace(/\s*[,，;:]\s*$/, '')
+    .trim();
 }
 
 // ── Translation helpers (fallback for entries not in CFDICT) ──
@@ -240,9 +298,9 @@ async function build() {
     if (hskHanziSet.has(hanzi)) continue;
     if (horsHskEntries.length >= MAX_ENTRIES) break;
 
-    const translation = sanitizeTranslation(entry.translation);
+    const translationEn = normalizeCedictPinyinInText(sanitizeTranslation(entry.translation));
     const category = inferCategory(entry.rawTranslations);
-    const theme = inferTheme(translation, hanzi);
+    const theme = inferTheme(translationEn, hanzi);
     const id = `${LEVEL_KEY}-${String(index).padStart(PAD_LENGTH, '0')}`;
 
     // Use CFDICT for French translation if available
@@ -260,7 +318,7 @@ async function build() {
       level: LEVEL_KEY,
       hanzi,
       pinyin: entry.pinyin,
-      translation,
+      translationEn,
       translationFr,
       ...(translationFrAlt ? { translationFrAlt } : {}),
       category,
@@ -269,7 +327,7 @@ async function build() {
       examples: [],
       quiz: {
         prompt: `Sélectionne la bonne traduction pour « ${hanzi} »`,
-        choices: [translation],
+        choices: [translationEn],
         correctChoiceIndex: 0
       },
       tags: Array.from(new Set([theme, category, `level:${LEVEL_KEY}`])),
@@ -285,12 +343,12 @@ async function build() {
   // Quiz choices
   console.log('Génération des choix de quiz…');
   horsHskEntries.forEach((lesson, _, arr) => {
-    const options = new Set([lesson.translation]);
+    const options = new Set([lesson.translationEn]);
     let attempts = 0;
     while (options.size < 4 && attempts < 20) {
       const candidate = arr[Math.floor(Math.random() * arr.length)];
       if (candidate && candidate.id !== lesson.id) {
-        options.add(candidate.translation);
+        options.add(candidate.translationEn);
       }
       attempts++;
     }
@@ -302,7 +360,7 @@ async function build() {
     lesson.quiz = {
       prompt: `Sélectionne la bonne traduction pour « ${lesson.hanzi} »`,
       choices,
-      correctChoiceIndex: choices.indexOf(lesson.translation)
+      correctChoiceIndex: choices.indexOf(lesson.translationEn)
     };
   });
 
@@ -311,7 +369,13 @@ async function build() {
   console.log(`Traductions automatiques EN→FR pour ${needTranslation.length} items restants…`);
   let processed = 0;
   for (const lesson of needTranslation) {
-    lesson.translationFr = await translateToFrench(lesson.translation);
+    const ruleBased = toFrenchLikeReference(lesson.translationEn);
+    if (ruleBased) {
+      lesson.translationFr = ruleBased;
+    } else {
+      const translated = await translateToFrench(lesson.translationEn);
+      lesson.translationFr = cleanFrenchNoise(translated) || translated;
+    }
     processed++;
     fallbackCount++;
     if (processed % CACHE_SAVE_INTERVAL === 0 || processed === needTranslation.length) {

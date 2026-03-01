@@ -98,7 +98,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({ word, onPlayAudio }) => {
                   {word.examples.slice(0, 2).map((example, index) => (
                     <View key={index} style={styles.example}>
                       <Text style={styles.exampleChinese}>{example.chinese}</Text>
-                      <Text style={styles.exampleTranslation}>{example.translation}</Text>
+                      <Text style={styles.exampleTranslation}>{example.translationFr || example.translation}</Text>
                     </View>
                   ))}
                 </View>

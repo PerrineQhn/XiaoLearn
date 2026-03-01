@@ -112,7 +112,7 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                       <Text style={styles.exampleChinese}>{example.chinese}</Text>
                       <Text style={styles.examplePinyin}>{example.pinyin}</Text>
                       <Text style={styles.exampleTranslation}>
-                        {example.translation}
+                        {example.translationFr || example.translation}
                       </Text>
                     </View>
                   ))}

@@ -51,12 +51,19 @@ export const migrateDataToSQLite = async (
         }
 
         for (let i = 0; i < data.length; i++) {
+          const examples = Array.isArray(data[i].examples)
+            ? data[i].examples.map((example: any) => ({
+                ...example,
+                translationFr: example.translationFr || example.translation || '',
+              }))
+            : [];
+
           const word: Word = {
             id: data[i].id,
             level: data[i].level,
             hanzi: data[i].hanzi,
             pinyin: data[i].pinyin,
-            translation: data[i].translation,
+            translation: data[i].translation || data[i].translationEn || '',
             translationFr: data[i].translationFr,
             category: data[i].category,
             explanation: data[i].explanation,
@@ -65,7 +72,7 @@ export const migrateDataToSQLite = async (
             theme: data[i].theme,
             tags: data[i].tags || [],
             translationFrAlt: data[i].translationFrAlt || [],
-            examples: data[i].examples || [],
+            examples,
           };
 
           await insertWord(word);

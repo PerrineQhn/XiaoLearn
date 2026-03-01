@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { getAllLessons } from '../data/lessons';
+import { getAllLessons, getAllLessonsIncludingHorsHsk } from '../data/lessons';
 import type { LessonItem } from '../types';
 import type { Language } from '../i18n';
 import AudioButton from '../components/AudioButton';
@@ -37,7 +37,7 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
   const [listPickerOpen, setListPickerOpen] = useState(false);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [showHistory, setShowHistory] = useState(false);
-  const allLessons = useMemo(() => getAllLessons(), []);
+  const [allLessons, setAllLessons] = useState<LessonItem[]>(() => getAllLessons());
   const trimmedQuery = searchQuery.trim();
   const hasSearch = trimmedQuery.length > 0;
   const totalWords = allLessons.length;
@@ -45,6 +45,20 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
   // Load search history on mount
   useEffect(() => {
     setSearchHistory(getSearchHistory());
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    getAllLessonsIncludingHorsHsk()
+      .then((lessons) => {
+        if (active) setAllLessons(lessons);
+      })
+      .catch((error) => {
+        console.warn('Impossible de charger hors-hsk pour le dictionnaire', error);
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
   // Recherche intelligente avec tri par pertinence et fuzzy matching
@@ -428,7 +442,11 @@ function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordTo
                       <div>
                         <div className="example-hanzi">{example.hanzi}</div>
                         <div className="example-pinyin">{example.pinyin}</div>
-                        <div className="example-translation">{example.translation}</div>
+                        <div className="example-translation">
+                          {language === 'fr'
+                            ? example.translationFr || example.translation
+                            : example.translation || example.translationFr}
+                        </div>
                       </div>
                       {example.audio && (
                         <AudioButton

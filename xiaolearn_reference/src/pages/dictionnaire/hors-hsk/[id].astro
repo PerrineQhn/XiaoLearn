@@ -1,0 +1,320 @@
+---
+export const prerender = false;
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import HSKLevelBadge from '../../../components/HSKLevelBadge.astro';
+import type { HSKEntry } from '../../../types/hsk';
+import { getHSKLevelInfo } from '../../../types/hsk';
+
+const TOTAL_ENTRIES = 109709;
+const CHUNK_SIZE = 1000;
+
+const entryId = Astro.params.id ?? '';
+
+// Extract the numeric part from "hors-hsk-XXXXXX"
+const match = entryId.match(/^hors-hsk-(\d+)$/);
+if (!match) {
+  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+}
+
+const entryNum = parseInt(match[1], 10);
+if (entryNum < 1 || entryNum > TOTAL_ENTRIES) {
+  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+}
+
+// Load the correct chunk
+const chunkIndex = Math.ceil(entryNum / CHUNK_SIZE);
+const chunkNum = String(chunkIndex).padStart(3, '0');
+const chunkUrl = new URL(`/data/hors-hsk/chunk-${chunkNum}.json`, Astro.url);
+
+let entry: HSKEntry | undefined;
+try {
+  const res = await fetch(chunkUrl.toString());
+  const chunk = await res.json() as Record<string, HSKEntry>;
+  entry = chunk[entryId];
+} catch {
+  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+}
+
+if (!entry) {
+  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+}
+
+// Compute prev/next IDs (sequential, no extra fetch needed)
+const prevNum = entryNum > 1 ? entryNum - 1 : null;
+const nextNum = entryNum < TOTAL_ENTRIES ? entryNum + 1 : null;
+const prevId = prevNum ? `hors-hsk-${String(prevNum).padStart(6, '0')}` : null;
+const nextId = nextNum ? `hors-hsk-${String(nextNum).padStart(6, '0')}` : null;
+
+const levelInfo = getHSKLevelInfo('hors-hsk');
+const canonicalUrl = `https://xiaolearn.com/dictionnaire/hors-hsk/${entry.id}`;
+const definedTermSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: entry.hanzi,
+  alternateName: entry.pinyin,
+  termCode: entry.id,
+  description: `Mot ${entry.hanzi} (${entry.pinyin}) : ${entry.translationFr}.`,
+  inDefinedTermSet: 'https://xiaolearn.com/dictionnaire',
+  url: canonicalUrl,
+};
+---
+
+<BaseLayout
+  title={`${entry.hanzi} (${entry.pinyin}) - ${entry.translationFr}`}
+  description={`Définition de ${entry.hanzi} (${entry.pinyin}) : ${entry.translationFr}. Vocabulaire hors-HSK.`}
+  canonical={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
+  <section class="page-header" style={`--level-color: ${levelInfo?.color}; --level-bg: ${levelInfo?.bgColor}`}>
+    <div class="container">
+      <Breadcrumb items={[
+        { label: 'Dictionnaire', href: '/dictionnaire' },
+        { label: 'Hors-HSK', href: '/dictionnaire/hors-hsk' },
+        { label: entry.hanzi }
+      ]} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="word-layout">
+        <!-- Main Content -->
+        <article class="word-main">
+          <header class="word-header">
+            <div class="word-title">
+              <h1 class="hanzi">{entry.hanzi}</h1>
+              <HSKLevelBadge level={entry.level} size="lg" />
+            </div>
+            <p class="pinyin">{entry.pinyin}</p>
+            <p class="translation">{entry.translationFr}</p>
+          </header>
+
+          {entry.translationFrAlt && entry.translationFrAlt.length > 0 && (
+            <div class="alt-translations">
+              <h3>Autres traductions</h3>
+              <ul>
+                {entry.translationFrAlt.map(alt => (
+                  <li>{alt}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {entry.explanationFr && (
+            <div class="explanation">
+              <h3>Explication</h3>
+              <p>{entry.explanationFr}</p>
+            </div>
+          )}
+
+          {entry.examples && entry.examples.length > 0 && (
+            <div class="examples">
+              <h3>Exemples</h3>
+              {entry.examples.map(example => (
+                <div class="example">
+                  <p class="example-chinese">{example.chinese}</p>
+                  <p class="example-pinyin">{example.pinyin}</p>
+                  <p class="example-translation">{example.translation}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="word-sidebar">
+          <div class="info-card">
+            <h4>Informations</h4>
+            <dl>
+              <dt>Niveau</dt>
+              <dd><HSKLevelBadge level={entry.level} size="sm" /></dd>
+
+              <dt>Catégorie</dt>
+              <dd class="capitalize">{entry.category}</dd>
+
+              {entry.theme && (
+                <>
+                  <dt>Thème</dt>
+                  <dd class="capitalize">{entry.theme}</dd>
+                </>
+              )}
+            </dl>
+          </div>
+
+          {entry.tags && entry.tags.length > 0 && (
+            <div class="tags-card">
+              <h4>Tags</h4>
+              <div class="tags">
+                {entry.tags.filter((t: string) => !t.startsWith('level:')).map((tag: string) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="nav-card">
+            <a href="/dictionnaire/hors-hsk" class="btn btn-secondary btn-sm">
+              ← Retour à Hors-HSK
+            </a>
+          </div>
+
+          {(prevId || nextId) && (
+            <div class="nav-card">
+              <h4>Navigation</h4>
+              <div class="entry-nav">
+                {prevId && (
+                  <a href={`/dictionnaire/hors-hsk/${prevId}`} class="entry-link">
+                    <span class="entry-label">Précédent</span>
+                    <span class="entry-value">{prevId}</span>
+                  </a>
+                )}
+                {nextId && (
+                  <a href={`/dictionnaire/hors-hsk/${nextId}`} class="entry-link">
+                    <span class="entry-label">Suivant</span>
+                    <span class="entry-value">{nextId}</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--level-bg), var(--bg-secondary));
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .word-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .word-main {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .word-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .word-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hanzi {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .pinyin {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .translation {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .word-main h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .alt-translations,
+  .explanation,
+  .examples {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .alt-translations ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .alt-translations li {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-accent);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .example {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid var(--jade-green);
+  }
+
+  .word-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .info-card,
+  .tags-card,
+  .nav-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+  }
+
+  .info-card h4,
+  .tags-card h4,
+  .nav-card h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  dl { display: grid; grid-template-columns: auto 1fr; gap: var(--spacing-sm) var(--spacing-md); align-items: center; }
+  dt { font-size: 0.85rem; color: var(--text-tertiary); }
+  dd { font-size: 0.9rem; }
+  .capitalize { text-transform: capitalize; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
+  .tag { padding: var(--spacing-xxs) var(--spacing-sm); background: var(--bg-accent); border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); }
+
+  .entry-nav { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+  .entry-link { display: flex; flex-direction: column; gap: 2px; padding: var(--spacing-sm); border-radius: var(--radius-md); border: 1px solid var(--border-light); }
+  .entry-link:hover { border-color: var(--primary-red-light); }
+  .entry-label { font-size: 0.75rem; color: var(--text-tertiary); }
+  .entry-value { font-size: 0.9rem; color: var(--text-primary); }
+
+  @media (max-width: 768px) {
+    .word-layout { grid-template-columns: 1fr; }
+  }
+</style>

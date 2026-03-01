@@ -13,6 +13,7 @@ import hsk4Data from '../../data/hsk4.json';
 import hsk5Data from '../../data/hsk5.json';
 import hsk6Data from '../../data/hsk6.json';
 import hsk7Data from '../../data/hsk7.json';
+import horsHskData from '../../data/hors-hsk.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -33,6 +34,7 @@ const stats = {
   hsk5: hsk5Data.length,
   hsk6: hsk6Data.length,
   hsk7: hsk7Data.length,
+  'hors-hsk': horsHskData.length,
 };
 ---
 
@@ -65,7 +67,7 @@ const stats = {
             style={`--level-color: ${level.color}; --level-bg: ${level.bgColor}`}
           >
             <span class="level-count">
-              {level.slug === 'hors-hsk' ? '→' : stats[level.slug as keyof typeof stats]}
+              {stats[level.slug as keyof typeof stats]?.toLocaleString()}
             </span>
             <span class="level-name">{level.name}</span>
           </a>

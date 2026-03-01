@@ -59,6 +59,54 @@ export default function DialogueExercise({ exercise, language, onAnswer }: Dialo
     onAnswer(correct);
   };
 
+  if (exercise.mode === 'display') {
+    return (
+      <div className="dialogue-exercise">
+        <div className="exercise-header">
+          <h2 className="exercise-prompt">{prompt}</h2>
+        </div>
+
+        <div className="dialogue-display">
+          {context && <p className="dialogue-scene-label">{context}</p>}
+          {exercise.dialogue.map((line, index) => {
+            const speakerName = line.speakerName ?? line.speaker;
+            const avatarLabel = line.speakerName
+              ? line.speakerName.startsWith('小') && line.speakerName.length > 1
+                ? line.speakerName.slice(1, 2)
+                : line.speakerName.slice(0, 1)
+              : line.speaker;
+            return (
+              <div key={index} className={`dialogue-bubble-row dialogue-bubble-row--${line.speaker.toLowerCase()}`}>
+                <div className={`dialogue-speaker-avatar dialogue-speaker-avatar--${line.speaker.toLowerCase()}`}>
+                  {avatarLabel}
+                </div>
+                <div className={`dialogue-bubble dialogue-bubble--${line.speaker.toLowerCase()}`}>
+                  <p className="dialogue-speaker-name">{speakerName}</p>
+                  <p className="dialogue-bubble-hanzi">{line.text}</p>
+                  {line.pinyin && <p className="dialogue-bubble-pinyin">{line.pinyin}</p>}
+                  {(language === 'fr' ? line.translationFr : line.translationEn) && (
+                    <p className="dialogue-bubble-translation">
+                      {language === 'fr' ? line.translationFr : line.translationEn}
+                    </p>
+                  )}
+                  {line.audio && (
+                    <div className="dialogue-bubble-audio">
+                      <AudioButton src={`/${line.audio}`} label="🔊" />
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <button className="btn-primary" onClick={() => onAnswer(true)}>
+          {language === 'fr' ? 'Continuer' : 'Continue'} →
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="dialogue-exercise">
       <div className="exercise-header">

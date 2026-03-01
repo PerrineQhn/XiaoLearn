@@ -163,7 +163,7 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
 
           <div className="dictation-overview">
             <div>
-              <h3>{language === 'fr' ? 'Objectif du jour' : 'Today’s target'}</h3>
+              <h3>{language === 'fr' ? 'Objectif du jour' : "Today's target"}</h3>
               <p>
                 {language === 'fr'
                   ? '10 phrases authentiques à écouter et retranscrire'

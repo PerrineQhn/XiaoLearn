@@ -1155,6 +1155,21 @@ export const lessonExercises: Record<string, LessonExercise[]> = {
         correctOrder: ['你', '的', '汉语', '说得', '很好', '。'],
         pinyin: 'nǐ de hànyǔ shuō de hěn hǎo.'
       }
+    },
+    {
+      id: 'convo-10-opinions-dialogue',
+      type: 'dialogue',
+      mode: 'display',
+      promptFr: 'Dialogue : Donner son avis',
+      promptEn: 'Dialogue: Giving Opinions',
+      context: 'Débattre d\'un film',
+      contextEn: 'Debating a movie',
+      dialogue: [
+        { speaker: 'A', speakerName: '小明', text: '你觉得这部电影怎么样？', pinyin: 'Nǐ juéde zhè bù diànyǐng zěnmeyàng?', translationFr: 'Que penses-tu de ce film ?' },
+        { speaker: 'B', speakerName: '小红', text: '我觉得很好看！故事很有意思。', pinyin: 'Wǒ juéde hěn hǎo kàn! Gùshi hěn yǒu yìsi.', translationFr: 'Je trouve ça très bien ! L\'histoire est intéressante.' },
+        { speaker: 'A', speakerName: '小明', text: '真的吗？我认为有点无聊。', pinyin: 'Zhēn de ma? Wǒ rènwéi yǒudiǎn wúliáo.', translationFr: 'Vraiment ? Je trouve ça un peu ennuyeux.' },
+        { speaker: 'B', speakerName: '小红', text: '哈哈，我们看法不同！', pinyin: 'Hāhā, wǒmen kànfǎ bù tóng!', translationFr: 'Ha ha, nos avis diffèrent !' },
+      ],
     }
   ]
 };

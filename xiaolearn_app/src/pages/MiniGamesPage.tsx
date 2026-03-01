@@ -150,8 +150,8 @@ const MiniGamesPage = ({ language, reviewItems = [], availableGameIds }: MiniGam
             id: `${item.id}-example-${index}`,
             hanzi: example.hanzi,
             pinyin: examplePinyin,
-            translation: example.translation,
-            translationFr: example.translation,
+            translation: example.translation || example.translationFr || '',
+            translationFr: example.translationFr || example.translation || '',
             examples: [],
             quiz: item.quiz
           });

@@ -106,7 +106,7 @@ const PARTICLE_HINT_LABELS: Array<[string, string]> = [
   ['呢', '呢 (progressif/insistance)'],
   ['不', '不 (négation générale)'],
   ['没', '没/没有 (négation du passé)'],
-  ['把', '把 (mise en avant de l’objet)'],
+  ['把', '把 (mise en avant de l'objet)'],
   ['被', '被 (passif)'],
   ['得', '得 (degré/complément)'],
 ];
@@ -114,11 +114,11 @@ const PARTICLE_HINT_LABELS: Array<[string, string]> = [
 const TERM_CONTRAST_HINTS: Record<string, string[]> = {
   '在|正在': [
     '在 + verbe et 正在 + verbe indiquent une action en cours.',
-    '正在 insiste davantage sur l’action en cours (souvent plus explicite/formel).',
+    '正在 insiste davantage sur l'action en cours (souvent plus explicite/formel).',
     'Pour la localisation, on utilise 在 + lieu (pas *正在 + lieu).',
   ],
   '会|能': [
-    '会 met l’accent sur une capacité acquise (savoir-faire).',
+    '会 met l'accent sur une capacité acquise (savoir-faire).',
     '能 exprime surtout la possibilité/capacité concrète selon la situation.',
   ],
   '会|能|可以': [
@@ -128,14 +128,14 @@ const TERM_CONTRAST_HINTS: Record<string, string[]> = {
   ],
   '不|没': [
     '不 sert surtout pour le présent/futur, les habitudes et les états.',
-    '没/没有 sert surtout pour nier un fait passé ou l’existence/possession.',
+    '没/没有 sert surtout pour nier un fait passé ou l'existence/possession.',
   ],
   '不|没有': [
     '不 sert surtout pour le présent/futur, les habitudes et les états.',
     '没有 sert surtout pour nier un fait passé ou la possession/existence.',
   ],
   '没|没有': [
-    '没 est la forme courte fréquente à l’oral.',
+    '没 est la forme courte fréquente à l'oral.',
     '没有 est la forme complète, souvent plus explicite.',
   ],
   '想|要': [
@@ -147,7 +147,7 @@ const TERM_CONTRAST_HINTS: Record<string, string[]> = {
     '再 renvoie plus souvent à une répétition future/à venir.',
   ],
   '快|快要': [
-    '快 + adjectif/verbe peut exprimer la rapidité ou l’imminence selon le contexte.',
+    '快 + adjectif/verbe peut exprimer la rapidité ou l'imminence selon le contexte.',
     '快要 + verbe insiste sur “sur le point de”.',
   ],
 };
@@ -700,7 +700,7 @@ function isTemplateExample(example: GrammarExample): boolean {
   const zh = normalizeHeading(example.chinese);
   const fr = normalizeHeading(example.french);
   return zh === normalizeHeading('我今天学习中文')
-    && fr.includes(normalizeHeading('Aujourd’hui j’étudie le chinois'));
+    && fr.includes(normalizeHeading('Aujourd'hui j'étudie le chinois'));
 }
 
 function isTemplateUsage(value: string): boolean {
@@ -791,7 +791,7 @@ function buildTemplateUsageFromStructure(
       usage.push('Pour les décimaux (点), lire chaque chiffre après 点 séparément.');
     }
     if (normalized.includes('分之')) {
-      usage.push('En fraction, l’ordre est dénominateur puis numérateur : B分之A.');
+      usage.push('En fraction, l'ordre est dénominateur puis numérateur : B分之A.');
     }
     if (normalized.includes('百分之')) {
       usage.push('Pour un pourcentage, utiliser 百分之 + nombre.');
@@ -806,7 +806,7 @@ function buildTemplateUsageFromStructure(
     usage.push(`Partir du patron : **${primaryPattern}**.`);
     const slots = extractPatternSlots(primaryPattern);
     if (slots.length > 0) {
-      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} selon le sens, sans changer l’ordre.`);
+      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} selon le sens, sans changer l'ordre.`);
     }
     const placementHint = buildStructurePlacementHint(primaryPattern);
     const structureContextHint = buildStructureContextHint(primaryPattern);
@@ -818,7 +818,7 @@ function buildTemplateUsageFromStructure(
 
   const fallback = usage.length > 0 ? usage : buildFallbackUsage(elements, sourceTitle, examples, structure);
   if (fallback.length === 0 && entries.length > 0) {
-    fallback.push(`Suivre la structure **${entries[0].pattern || entries[0].raw}** en conservant l’ordre des éléments.`);
+    fallback.push(`Suivre la structure **${entries[0].pattern || entries[0].raw}** en conservant l'ordre des éléments.`);
   }
   return dedupe(fallback).slice(0, 6);
 }
@@ -872,7 +872,7 @@ function buildTemplateExamplesFromStructure(
     if (primary) {
       generated.push({
         chinese: `在口语里，常听到“${primary}”这种说法。`,
-        french: `À l’oral, on entend souvent la formule « ${primary} ».`,
+        french: `À l'oral, on entend souvent la formule « ${primary} ».`,
       });
     }
     if (secondary && secondary !== primary) {
@@ -894,8 +894,8 @@ function buildFallbackCommonMistakes(elements: string[], sourceTitle: string, st
 
   if (fixedExpressionPoint) {
     const expression = getFixedExpressionSeed(sourceTitle, elements);
-    mistakes.push('Ne pas découper l’expression en mots isolés : elle fonctionne comme un bloc.');
-    mistakes.push('Éviter la traduction mot à mot et apprendre d’abord le sens global en contexte.');
+    mistakes.push('Ne pas découper l'expression en mots isolés : elle fonctionne comme un bloc.');
+    mistakes.push('Éviter la traduction mot à mot et apprendre d'abord le sens global en contexte.');
     if (/[（(].+[）)]/.test(expression)) {
       mistakes.push('Quand une variante est entre parenthèses, mémoriser les deux formes possibles sans les mélanger.');
     }
@@ -904,7 +904,7 @@ function buildFallbackCommonMistakes(elements: string[], sourceTitle: string, st
   }
 
   if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('分之'))) {
-    mistakes.push('Dans une fraction, garder l’ordre dénominateur puis numérateur : 四分之三 = 3/4.');
+    mistakes.push('Dans une fraction, garder l'ordre dénominateur puis numérateur : 四分之三 = 3/4.');
   }
   if (entries.some((entry) => entry.pattern.replace(/\s+/g, '').includes('百分之'))) {
     mistakes.push('Ne pas supprimer 百分之 dans les pourcentages formels.');
@@ -924,7 +924,7 @@ function buildFallbackCommonMistakes(elements: string[], sourceTitle: string, st
     mistakes.push(`Ne pas intervertir **${terms[0]}** et **${terms[1]}** sans vérifier la structure exacte.`);
   }
 
-  mistakes.push('Vérifier l’ordre des éléments avant de parler ou d’écrire.');
+  mistakes.push('Vérifier l'ordre des éléments avant de parler ou d'écrire.');
   mistakes.push('Utiliser une phrase complète pour valider la structure en contexte réel.');
   return dedupe(mistakes);
 }
@@ -1299,7 +1299,7 @@ function guessExamplePinyin(chinese: string): string {
 
   while (index < text.length) {
     const char = text[index];
-    if (/[，,。.!！？?、；;：:“”"'’‘（）()【】\[\]\s]/.test(char)) {
+    if (/[，,。.!！？?、；;：:“”"'''（）()【】\[\]\s]/.test(char)) {
       tokens.push(char);
       index += 1;
       continue;
@@ -1434,7 +1434,7 @@ function buildHSKSentenceIndex(termIndex: Map<string, GrammarExample[]>): Map<st
 
 function normalizeChineseSentence(value: string): string {
   return value
-    .replace(/[，,。.!！？?、；;：:“”"'’‘（）()【】\[\]\s]/g, '')
+    .replace(/[，,。.!！？?、；;：:“”"'''（）()【】\[\]\s]/g, '')
     .trim();
 }
 
@@ -1607,7 +1607,7 @@ function buildTermVariations(elements: string[], sourceTitle: string, examples: 
   }
 
   if (normalizedTerms.length > cappedTerms.length) {
-    guidance.push('D’autres termes de cette leçon suivent le même principe : compare-les avec les exemples pour valider le contexte.');
+    guidance.push('D'autres termes de cette leçon suivent le même principe : compare-les avec les exemples pour valider le contexte.');
   }
 
   return dedupe(guidance);
@@ -1634,8 +1634,8 @@ function buildFallbackUsage(
     const expression = getFixedExpressionSeed(sourceTitle, elements) || sourceTitle;
     const variants = buildFixedExpressionVariants(expression).filter((value) => isConcreteFixedExpressionVariant(value));
     const hasOptionalVariant = variants.length >= 2;
-    usage.push(`Utiliser **${expression}** comme une expression figée, sans changer l’ordre des caractères.`);
-    usage.push(`Placement : placer **${expression}** en tête de phrase ou en incise, juste avant l’idée que tu commentes.`);
+    usage.push(`Utiliser **${expression}** comme une expression figée, sans changer l'ordre des caractères.`);
+    usage.push(`Placement : placer **${expression}** en tête de phrase ou en incise, juste avant l'idée que tu commentes.`);
     usage.push(buildUsageContextHint(examples, sourceTitle, true));
     usage.push('Commencer par mémoriser le sens global, puis réemployer la formule dans des phrases complètes.');
     if (hasOptionalVariant) {
@@ -1662,7 +1662,7 @@ function buildFallbackUsage(
     if (placementHint) usage.push(placementHint);
     const slots = extractPatternSlots(structureLine);
     if (slots.length > 0) {
-      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} par tes mots/nombres, sans changer l’ordre.`);
+      usage.push(`Remplacer ${slots.map((slot) => `**${slot}**`).join(', ')} par tes mots/nombres, sans changer l'ordre.`);
     }
   }
 
@@ -1690,7 +1690,7 @@ function buildFallbackUsage(
 
   const hasExplicitContrast = entries.some((entry) => /[、/或]|A|B|甲|乙/.test(entry.pattern));
   if (uniqueTerms.length >= 2 && hasExplicitContrast) {
-    usage.push(`Ne pas permuter **${uniqueTerms[0]}** et **${uniqueTerms[1]}** : choisir l’élément selon le sens visé.`);
+    usage.push(`Ne pas permuter **${uniqueTerms[0]}** et **${uniqueTerms[1]}** : choisir l'élément selon le sens visé.`);
   }
 
   const hasParticleContrast = examples.some((example) => /[了吗不没把被]/.test(example.chinese));
@@ -1718,13 +1718,13 @@ function buildStructurePlacementHint(structureLine: string): string {
     return 'Placement : dans la structure 把, place 把 + complément avant le verbe principal, puis garde le résultat après le verbe.';
   }
   if (normalized.includes('被') && normalized.includes('动词')) {
-    return 'Placement : dans la passive en 被, place 被 avant le verbe, l’agent éventuel se met entre 被 et le verbe.';
+    return 'Placement : dans la passive en 被, place 被 avant le verbe, l'agent éventuel se met entre 被 et le verbe.';
   }
   if (normalized.includes('比') && (normalized.includes('形容词') || normalized.includes('动词'))) {
-    return 'Placement : dans une comparaison en 比, place A + 比 + B avant l’adjectif ou le verbe comparé.';
+    return 'Placement : dans une comparaison en 比, place A + 比 + B avant l'adjectif ou le verbe comparé.';
   }
   if (normalized.includes('主语') && normalized.includes('动词') && normalized.includes('宾语')) {
-    return 'Placement : suivre l’ordre sujet puis verbe puis objet indiqué par le patron, sans déplacer les blocs.';
+    return 'Placement : suivre l'ordre sujet puis verbe puis objet indiqué par le patron, sans déplacer les blocs.';
   }
   if (normalized.includes('动词')) {
     return 'Placement : garder ce qui précède 动词 avant le verbe, et ce qui suit 动词 après le verbe.';
@@ -1733,10 +1733,10 @@ function buildStructurePlacementHint(structureLine: string): string {
   if (blocks.length >= 3) {
     const first = blocks[0];
     const last = blocks[blocks.length - 1];
-    return `Placement : garder l’ordre fixe **${blocks.join(' → ')}** ; placer **${first}** au début du segment et **${last}** à la fin.`;
+    return `Placement : garder l'ordre fixe **${blocks.join(' → ')}** ; placer **${first}** au début du segment et **${last}** à la fin.`;
   }
   if (line.includes('+')) {
-    return 'Placement : suivre strictement l’ordre des blocs du patron, de gauche à droite.';
+    return 'Placement : suivre strictement l'ordre des blocs du patron, de gauche à droite.';
   }
   return '';
 }
@@ -1746,13 +1746,13 @@ function buildStructureContextHint(structureLine: string): string {
   if (!normalized) return '';
 
   if (normalized.includes('把') && normalized.includes('得') && (normalized.includes('看') || normalized.includes('瞧'))) {
-    return 'Contexte : surtout à l’oral pour commenter l’effet produit sur un objet, avec une nuance expressive.';
+    return 'Contexte : surtout à l'oral pour commenter l'effet produit sur un objet, avec une nuance expressive.';
   }
   if (normalized.includes('把') && normalized.includes('得')) {
-    return 'Contexte : employer cette structure pour décrire le résultat concret d’une action sur un objet.';
+    return 'Contexte : employer cette structure pour décrire le résultat concret d'une action sur un objet.';
   }
   if (normalized.includes('把')) {
-    return 'Contexte : utile quand on veut mettre en avant le traitement et l’issue liée à l’objet.';
+    return 'Contexte : utile quand on veut mettre en avant le traitement et l'issue liée à l'objet.';
   }
   if (normalized.includes('被')) {
     return 'Contexte : utiliser la forme passive quand on focalise sur ce qui est subi.';
@@ -1771,7 +1771,7 @@ function buildCategoryPlacementHint(sourceTitle: string): string {
   if (!title) return '';
 
   if (/副词/.test(title)) {
-    return 'Placement : les adverbes se placent en général avant le verbe ou l’adjectif qu’ils modifient (souvent après le sujet).';
+    return 'Placement : les adverbes se placent en général avant le verbe ou l'adjectif qu'ils modifient (souvent après le sujet).';
   }
   if (/连词/.test(title)) {
     return 'Placement : les connecteurs se mettent en tête de proposition ou entre deux propositions à relier.';
@@ -1780,19 +1780,19 @@ function buildCategoryPlacementHint(sourceTitle: string): string {
     return 'Placement : la préposition se place juste avant le groupe nominal (temps, lieu, moyen, destinataire).';
   }
   if (/助词/.test(title)) {
-    return 'Placement : la particule se place immédiatement après le mot ou le groupe qu’elle marque.';
+    return 'Placement : la particule se place immédiatement après le mot ou le groupe qu'elle marque.';
   }
   if (/量词/.test(title)) {
     return 'Placement : la structure standard est nombre/démonstratif + classificateur + nom.';
   }
   if (/动词/.test(title)) {
-    return 'Placement : le verbe principal se place en général après le sujet et avant l’objet.';
+    return 'Placement : le verbe principal se place en général après le sujet et avant l'objet.';
   }
   if (/形容词/.test(title)) {
-    return 'Placement : l’adjectif est souvent prédicatif après 很/真/太, ou attributif avant le nom avec 的.';
+    return 'Placement : l'adjectif est souvent prédicatif après 很/真/太, ou attributif avant le nom avec 的.';
   }
   if (/名词/.test(title)) {
-    return 'Placement : ce terme nominal s’emploie surtout comme sujet ou objet dans la phrase.';
+    return 'Placement : ce terme nominal s'emploie surtout comme sujet ou objet dans la phrase.';
   }
   return '';
 }

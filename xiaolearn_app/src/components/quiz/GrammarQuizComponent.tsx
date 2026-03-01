@@ -12,6 +12,11 @@ interface GrammarQuizComponentProps {
 export default function GrammarQuizComponent({ quiz, language, onAnswer }: GrammarQuizComponentProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
+  const getLocalizedTranslation = (translation: string, translationEn: string) => {
+    const fr = translation?.trim() ?? '';
+    const en = translationEn?.trim() ?? '';
+    return language === 'fr' ? fr || en : en || fr;
+  };
 
   // ============================================
   // RECONSTRUCTION DE PHRASE
@@ -50,7 +55,7 @@ export default function GrammarQuizComponent({ quiz, language, onAnswer }: Gramm
         </h2>
 
         <div className="translation-prompt">
-          {language === 'fr' ? quiz.translation : quiz.translationEn}
+          {getLocalizedTranslation(quiz.translation, quiz.translationEn)}
         </div>
 
         <div className="sentence-construction-area">
@@ -147,7 +152,7 @@ export default function GrammarQuizComponent({ quiz, language, onAnswer }: Gramm
         </h2>
 
         <div className="translation-prompt">
-          {language === 'fr' ? quiz.translation : quiz.translationEn}
+          {getLocalizedTranslation(quiz.translation, quiz.translationEn)}
         </div>
 
         <div className="sentence-with-blank">
@@ -216,7 +221,7 @@ export default function GrammarQuizComponent({ quiz, language, onAnswer }: Gramm
         </h2>
 
         <div className="translation-prompt">
-          {language === 'fr' ? quiz.translation : quiz.translationEn}
+          {getLocalizedTranslation(quiz.translation, quiz.translationEn)}
         </div>
 
         <div className="sentence-display">
@@ -283,7 +288,7 @@ export default function GrammarQuizComponent({ quiz, language, onAnswer }: Gramm
         </h2>
 
         <div className="translation-prompt large">
-          {language === 'fr' ? quiz.translation : quiz.translationEn}
+          {getLocalizedTranslation(quiz.translation, quiz.translationEn)}
         </div>
 
         <div className="translation-choices">

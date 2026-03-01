@@ -10,7 +10,7 @@ const apiKey = process.env.GOOGLE_TTS_API_KEY;
 const forceMode = process.argv.includes('--force');
 
 if (!apiKey) {
-  console.error('✗ GOOGLE_TTS_API_KEY est requis pour appeler l’API Google Text-to-Speech.');
+  console.error('✗ GOOGLE_TTS_API_KEY est requis pour appeler l'API Google Text-to-Speech.');
   process.exit(1);
 }
 
@@ -92,7 +92,7 @@ const grammarEntries = [
 ];
 
 const tasks = [
-  { label: 'Syllabes d’entraînement', entries: trainingInitials },
+  { label: 'Syllabes d'entraînement', entries: trainingInitials },
   { label: 'Voyelles finales', entries: pinyinFinals },
   { label: 'Tons du mandarin', entries: toneExamples },
   { label: 'Combinaisons complexes', entries: complexInitials },

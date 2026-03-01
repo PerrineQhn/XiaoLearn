@@ -1,4 +1,5 @@
 import type { LessonItem } from '../types';
+import { grammarLessonsSubstack } from './grammar-lessons-substack';
 import { grammarLessonsExtended } from './grammar-lessons-extended';
 
 /**
@@ -609,6 +610,7 @@ const grammarLessonsBase: LessonItem[] = [
 
 // Fusionner les leçons de base avec les leçons étendues
 export const grammarLessons: LessonItem[] = [
+  ...grammarLessonsSubstack,
   ...grammarLessonsBase,
   ...grammarLessonsExtended
 ];

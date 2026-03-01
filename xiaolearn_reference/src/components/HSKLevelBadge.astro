@@ -9,12 +9,14 @@ interface Props {
 const { level, size = 'md' } = Astro.props;
 const levelInfo = getHSKLevelInfo(level);
 const levelNum = typeof level === 'string' ? level.replace('hsk', '') : level;
+const displayText = levelInfo?.name ?? `HSK ${levelNum}`;
 ---
 
 <span
   class:list={['hsk-badge', `hsk-badge-${size}`, `badge-hsk${levelNum}`]}
+  style={levelInfo ? `background-color: ${levelInfo.color}20; color: ${levelInfo.color}` : undefined}
 >
-  HSK {levelNum}
+  {displayText}
 </span>
 
 <style>

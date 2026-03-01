@@ -40,7 +40,7 @@ const SentenceBuilderGame = ({ language, items = [], onComplete }: SentenceBuild
           candidates.push({
             id: `${item.id}-${index}`,
             hanzi: example.hanzi,
-            translation: example.translation,
+            translation: example.translationFr || example.translation,
             tokens,
             shuffled
           });

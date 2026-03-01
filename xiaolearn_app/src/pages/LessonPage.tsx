@@ -46,7 +46,7 @@ const LessonPage = ({ lesson, progress, onNext, onPrevious, language, copy }: Le
             <div className="example-text">
               <strong>{example.hanzi}</strong>
               <p>{example.pinyin}</p>
-              <p>{example.translation}</p>
+              <p>{language === 'fr' ? example.translationFr || example.translation : example.translation || example.translationFr}</p>
             </div>
             {example.audio && (
               <AudioButton src={`/${example.audio}`} label={copy.audio} />

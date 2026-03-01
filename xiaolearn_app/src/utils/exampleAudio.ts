@@ -1,7 +1,7 @@
 import { dictationPhrases } from '../data/dictation-phrases';
 import type { LessonExample } from '../types';
 
-const cleanupPattern = /[\s！？!？。．,.，、；;："“”'’`´·…-]/g;
+const cleanupPattern = /[\s！？!？。．,.，、；;："“”''`´·…-]/g;
 
 const audioMap = new Map<string, string>();
 

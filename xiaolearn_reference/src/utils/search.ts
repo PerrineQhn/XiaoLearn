@@ -28,7 +28,8 @@ export function searchEntries(entries: HSKEntry[], query: string): HSKEntry[] {
     )) return true;
 
     // Search in English translation
-    if (entry.translation.toLowerCase().includes(normalizedQuery)) return true;
+    const english = (entry.translationEn || entry.translation || '').toLowerCase();
+    if (english.includes(normalizedQuery)) return true;
 
     // Search in tags
     if (entry.tags.some(tag =>

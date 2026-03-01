@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Language } from '../i18n';
-import type { LevelId } from '../types';
-import { getLessonsByLevel, levelIds } from '../data/lessons';
+import type { LevelId, LessonItem } from '../types';
+import { getLessonsByLevel, levelIds, loadHorsHskLessons } from '../data/lessons';
 import { useFlashcardSRS } from '../hooks/useFlashcardSRS';
 import FlashcardItem from '../components/FlashcardItem';
 import './FlashcardPage.css';
@@ -21,7 +21,8 @@ const LEVEL_NAMES: Record<LevelId, { fr: string; en: string }> = {
   hsk4: { fr: 'HSK 4 - Intermédiaire supérieur', en: 'HSK 4 - Upper Intermediate' },
   hsk5: { fr: 'HSK 5 - Avancé', en: 'HSK 5 - Advanced' },
   hsk6: { fr: 'HSK 6 - Supérieur', en: 'HSK 6 - Superior' },
-  hsk7: { fr: 'HSK 7 - Expert', en: 'HSK 7 - Expert' }
+  hsk7: { fr: 'HSK 7 - Expert', en: 'HSK 7 - Expert' },
+  'hors-hsk': { fr: 'Hors HSK', en: 'Non-HSK' }
 };
 
 export default function FlashcardPage({
@@ -34,9 +35,9 @@ export default function FlashcardPage({
   const [selectedLevel, setSelectedLevel] = useState<LevelId>('hsk1');
   const [isSessionActive, setIsSessionActive] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const [levelWords, setLevelWords] = useState<LessonItem[]>(() => getLessonsByLevel('hsk1'));
   const availableLevels: LevelId[] = limitedMode ? ['hsk1'] : levelIds;
 
-  const levelWords = getLessonsByLevel(selectedLevel);
   const {
     session,
     startSession,
@@ -54,6 +55,29 @@ export default function FlashcardPage({
       setSelectedLevel('hsk1');
     }
   }, [availableLevels, selectedLevel]);
+
+  useEffect(() => {
+    let active = true;
+    if (selectedLevel !== 'hors-hsk') {
+      setLevelWords(getLessonsByLevel(selectedLevel));
+      return () => {
+        active = false;
+      };
+    }
+
+    loadHorsHskLessons()
+      .then(() => {
+        if (active) setLevelWords(getLessonsByLevel('hors-hsk'));
+      })
+      .catch((error) => {
+        console.warn('Impossible de charger hors-hsk pour les flashcards', error);
+        if (active) setLevelWords([]);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [selectedLevel]);
 
   const stats = getLevelStats();
   const progressPercent = stats.total > 0
