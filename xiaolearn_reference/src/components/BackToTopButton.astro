@@ -1,0 +1,72 @@
+---
+interface Props {
+  label?: string;
+  showAfter?: number;
+}
+
+const {
+  label = 'Haut',
+  showAfter = 500,
+} = Astro.props;
+---
+
+<button type="button" class="back-to-top" data-back-to-top aria-label="Retour en haut">
+  ↑ {label}
+</button>
+
+<script is:inline define:vars={{ showAfter }}>
+  (() => {
+    const button = document.querySelector('[data-back-to-top]');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    const toggleVisibility = () => {
+      button.classList.toggle('visible', window.scrollY > showAfter);
+    };
+
+    toggleVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    button.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 40;
+    border: 1px solid var(--border-light);
+    border-radius: 999px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.65rem 0.95rem;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .back-to-top:hover {
+    border-color: var(--primary-red-light);
+  }
+
+  @media (max-width: 768px) {
+    .back-to-top {
+      right: 0.9rem;
+      bottom: 0.9rem;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.82rem;
+    }
+  }
+</style>

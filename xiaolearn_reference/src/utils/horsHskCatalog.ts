@@ -1,7 +1,7 @@
 import horsHskData from '../data/hors-hsk.json';
 import type { HSKEntry } from '../types/hsk';
 
-export const HORS_HSK_PAGE_SIZE = 300;
+export const HORS_HSK_PAGE_SIZE = 120;
 
 const HORS_HSK_ENTRIES = horsHskData as HSKEntry[];
 
