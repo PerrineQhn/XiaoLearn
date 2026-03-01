@@ -5,7 +5,6 @@ import hsk4 from '../../data/hsk4.json';
 import hsk5 from '../../data/hsk5.json';
 import hsk6 from '../../data/hsk6.json';
 import hsk7 from '../../data/hsk7.json';
-import horsHskUrl from '../../data/hors-hsk.json?url';
 import type { DatasetManifest, LessonExample, LessonItem, LevelId, ThemeSummary } from '../types';
 import { enrichExamplesWithAudio } from '../utils/exampleAudio';
 
@@ -25,6 +24,13 @@ type RawLessonItem = Omit<LessonItem, 'examples' | 'level' | 'translation'> & {
   translation?: string;
   translationEn?: string;
   examples?: RawLessonExample[];
+};
+
+type HorsHskManifest = {
+  version: number;
+  chunkSize: number;
+  totalEntries: number;
+  chunks: string[];
 };
 
 const normalizeExample = (example: RawLessonExample): LessonExample => {
@@ -113,16 +119,43 @@ const rebuildHorsIndexes = (lessons: LessonItem[]) => {
 
 const getMergedLessons = () => (horsHskLessonsCache ? [...dataset.lessons, ...horsHskLessonsCache] : dataset.lessons);
 
+const HORS_HSK_BASE_PATH = '/data/hors-hsk';
+
+const fetchJsonOrThrow = async <T>(url: string, label: string): Promise<T> => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Impossible de charger ${label} (${response.status})`);
+  }
+  return (await response.json()) as T;
+};
+
 export const loadHorsHskLessons = async (): Promise<LessonItem[]> => {
   if (horsHskLessonsCache) return horsHskLessonsCache;
   if (horsHskLoadingPromise) return horsHskLoadingPromise;
 
-  horsHskLoadingPromise = fetch(horsHskUrl)
-    .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`Impossible de charger hors-hsk.json (${response.status})`);
+  horsHskLoadingPromise = fetchJsonOrThrow<HorsHskManifest>(
+    `${HORS_HSK_BASE_PATH}/manifest.json`,
+    'le manifest hors-hsk'
+  )
+    .then(async (manifest) => {
+      if (!Array.isArray(manifest.chunks) || manifest.chunks.length === 0) {
+        throw new Error('Manifest hors-hsk invalide: aucun chunk trouvé.');
       }
-      const payload = (await response.json()) as unknown[];
+
+      const chunkPayloads = await Promise.all(
+        manifest.chunks.map(async (chunkFile) => {
+          const chunk = await fetchJsonOrThrow<unknown[]>(
+            `${HORS_HSK_BASE_PATH}/${chunkFile}`,
+            `le chunk ${chunkFile}`
+          );
+          if (!Array.isArray(chunk)) {
+            throw new Error(`Chunk invalide: ${chunkFile}`);
+          }
+          return chunk;
+        })
+      );
+
+      const payload = chunkPayloads.flat();
       const normalized = attachExampleAudio(normalizeLessons(payload, 'hors-hsk'));
       horsHskLessonsCache = normalized;
       grouped['hors-hsk'] = normalized;

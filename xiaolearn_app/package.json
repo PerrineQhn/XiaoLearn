@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run build:chunks",
     "build": "tsc && vite build",
+    "build:chunks": "node scripts/split-hors-hsk.mjs",
     "preview": "vite preview",
     "build:data": "node scripts/buildDataset.mjs",
     "sync:hsk": "node scripts/generateHskData.mjs",
