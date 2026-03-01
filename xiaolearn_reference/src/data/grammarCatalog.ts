@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export interface GrammarExample {
   chinese: string;
@@ -61,6 +62,7 @@ interface HSKTermInfo {
 }
 
 const SOURCE_POINTS_DIR = 'points';
+const FALLBACK_GRAMMAR_FILE = 'hsk_grammar_hsk1_to_hsk7_9_articles.html';
 const HSK_EXAMPLE_FILES = ['hsk1.json', 'hsk2.json', 'hsk3.json', 'hsk4.json', 'hsk5.json'];
 const NON_LEXICAL_TERMS = new Set([
   '语法',
@@ -375,17 +377,31 @@ const HSK_PINYIN_MAX_KEY_LENGTH = getMaxLexiconKeyLength(HSK_PINYIN_LEXICON);
 const HSK_EXAMPLE_INDEX = buildHSKExampleIndex();
 const HSK_TERM_INFO_INDEX = buildHSKTermInfoIndex();
 const HSK_SENTENCE_INDEX = buildHSKSentenceIndex(HSK_EXAMPLE_INDEX);
+const GRAMMAR_ARTICLES_DIR = resolveGrammarArticlesDir();
+const GRAMMAR_POINTS_DIR = GRAMMAR_ARTICLES_DIR
+  ? resolve(GRAMMAR_ARTICLES_DIR, SOURCE_POINTS_DIR)
+  : null;
 const CATALOG = buildCatalog();
 
 function buildCatalog() {
-  const pointFiles = listGrammarPointFiles();
-  if (pointFiles.length === 0) {
+  const pointFiles = listGrammarPointFiles(GRAMMAR_POINTS_DIR);
+  const sourceFiles = pointFiles.length > 0
+    ? pointFiles
+    : listFallbackGrammarFiles(GRAMMAR_ARTICLES_DIR);
+
+  if (sourceFiles.length === 0) {
     throw new Error(
       `Aucun fichier de fiche trouvé dans grammar_articles/${SOURCE_POINTS_DIR} (attendu: 1 fiche = 1 fichier HTML).`,
     );
   }
 
-  const points = pointFiles
+  if (pointFiles.length === 0) {
+    console.warn(
+      `Aucun fichier trouvé dans grammar_articles/${SOURCE_POINTS_DIR}; fallback sur ${FALLBACK_GRAMMAR_FILE}.`,
+    );
+  }
+
+  const points = sourceFiles
     .flatMap((fileName) => parseGrammarFile(fileName))
     .sort((a, b) => (a.level === b.level ? a.id.localeCompare(b.id) : a.level - b.level));
   const pointsById = new Map(points.map((point) => [point.id, point]));
@@ -402,25 +418,52 @@ function buildCatalog() {
   };
 }
 
-function listGrammarPointFiles(): string[] {
-  const dirUrl = new URL(`../../grammar_articles/${SOURCE_POINTS_DIR}/`, import.meta.url);
-  if (!existsSync(dirUrl)) {
+function resolveGrammarArticlesDir(): string | null {
+  const moduleDir = dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    resolve(process.cwd(), 'grammar_articles'),
+    resolve(process.cwd(), 'xiaolearn_reference', 'grammar_articles'),
+    resolve(moduleDir, '../../grammar_articles'),
+    resolve(moduleDir, '../../../grammar_articles'),
+    resolve(moduleDir, '../../../../grammar_articles'),
+  ];
+
+  return candidates.find((candidate) => existsSync(candidate)) ?? null;
+}
+
+function listGrammarPointFiles(pointsDir: string | null): string[] {
+  if (!pointsDir || !existsSync(pointsDir)) {
     return [];
   }
 
-  return readdirSync(dirUrl, { withFileTypes: true })
+  return readdirSync(pointsDir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
-    .map((entry) => `${SOURCE_POINTS_DIR}/${entry.name}`)
+    .map((entry) => resolve(pointsDir, entry.name))
     .sort((a, b) => a.localeCompare(b, 'en'));
 }
 
-function parseGrammarFile(fileName: string): GrammarPoint[] {
-  const sourceUrl = new URL(`../../grammar_articles/${fileName}`, import.meta.url);
-  if (!existsSync(sourceUrl)) {
+function listFallbackGrammarFiles(grammarDir: string | null): string[] {
+  if (!grammarDir || !existsSync(grammarDir)) {
     return [];
   }
 
-  const html = readFileSync(sourceUrl, 'utf-8');
+  const preferredPath = resolve(grammarDir, FALLBACK_GRAMMAR_FILE);
+  if (existsSync(preferredPath)) {
+    return [preferredPath];
+  }
+
+  return readdirSync(grammarDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+    .map((entry) => resolve(grammarDir, entry.name))
+    .sort((a, b) => a.localeCompare(b, 'en'));
+}
+
+function parseGrammarFile(filePath: string): GrammarPoint[] {
+  if (!existsSync(filePath)) {
+    return [];
+  }
+
+  const html = readFileSync(filePath, 'utf-8');
   const articleRegex = /<article\s+class="gp"\s+id="([^"]+)"\s+data-level="([^"]+)"\s+data-cat="([^"]*)"\s+data-sub="([^"]*)"\s+data-detail="([^"]*)"\s*>([\s\S]*?)<\/article>/g;
 
   const points: GrammarPoint[] = [];
