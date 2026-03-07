@@ -16,6 +16,58 @@ interface Props {
   resultBasePath?: string;
 }
 
+type HskMeta = {
+  chunkSize?: number;
+  levels?: Record<string, number>;
+};
+
+async function fetchJson<T>(url: string): Promise<T | null> {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    return (await response.json()) as T;
+  } catch {
+    return null;
+  }
+}
+
+async function loadEntriesWithFallback(entriesUrl: string): Promise<HSKEntry[]> {
+  const fromPrimary = await fetchJson<HSKEntry[]>(entriesUrl);
+  if (Array.isArray(fromPrimary) && fromPrimary.length > 0) {
+    return fromPrimary;
+  }
+
+  const meta = await fetchJson<HskMeta>('/data/hsk/meta.json');
+  const levels = meta?.levels ? Object.keys(meta.levels) : [];
+  if (levels.length === 0) {
+    return [];
+  }
+
+  const levelResponses = await Promise.all(
+    levels.map((level) => fetchJson<HSKEntry[]>(`/data/hsk/levels/${level}.json`)),
+  );
+  const fromLevels = levelResponses.flatMap((entries) => (Array.isArray(entries) ? entries : []));
+  if (fromLevels.length > 0) {
+    return fromLevels;
+  }
+
+  const chunkSize = Number(meta?.chunkSize) || 500;
+  const chunkRequests: string[] = [];
+  for (const level of levels) {
+    const levelCount = Number(meta?.levels?.[level] ?? 0);
+    const chunkCount = Math.ceil(levelCount / chunkSize);
+    for (let index = 1; index <= chunkCount; index += 1) {
+      chunkRequests.push(`/data/hsk/${level}/chunk-${String(index).padStart(3, '0')}.json`);
+    }
+  }
+
+  const chunkResponses = await Promise.all(
+    chunkRequests.map((url) => fetchJson<Record<string, HSKEntry>>(url)),
+  );
+
+  return chunkResponses.flatMap((chunk) => (chunk ? Object.values(chunk) : []));
+}
+
 export default function DictionarySearch({
   entries = [],
   entriesUrl,
@@ -47,11 +99,7 @@ export default function DictionarySearch({
     let isActive = true;
     setIsLoadingEntries(true);
 
-    fetch(entriesUrl)
-      .then(async (response) => {
-        if (!response.ok) return [];
-        return (await response.json()) as HSKEntry[];
-      })
+    loadEntriesWithFallback(entriesUrl)
       .then((remoteEntries) => {
         if (!isActive || !Array.isArray(remoteEntries)) return;
         setSourceEntries(remoteEntries);
