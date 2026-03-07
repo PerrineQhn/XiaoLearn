@@ -16,6 +16,8 @@ interface Props {
   resultBasePath?: string;
 }
 
+const EMPTY_ENTRIES: HSKEntry[] = [];
+
 type HskMeta = {
   chunkSize?: number;
   levels?: Record<string, number>;
@@ -69,7 +71,7 @@ async function loadEntriesWithFallback(entriesUrl: string): Promise<HSKEntry[]> 
 }
 
 export default function DictionarySearch({
-  entries = [],
+  entries = EMPTY_ENTRIES,
   entriesUrl,
   initialLevel,
   initialQuery,
@@ -87,8 +89,11 @@ export default function DictionarySearch({
   const copy = locale === 'en' ? EN_COPY : FR_COPY;
 
   useEffect(() => {
+    if (entriesUrl && entries.length === 0) {
+      return;
+    }
     setSourceEntries(entries);
-  }, [entries]);
+  }, [entries, entriesUrl]);
 
   useEffect(() => {
     if (!entriesUrl || entries.length > 0) {
