@@ -12,6 +12,10 @@ const CHUNK_SIZE = 1000;
 
 const entryId = Astro.params.id ?? '';
 
+if (/^\d+$/.test(entryId)) {
+  return Astro.redirect(`/dictionnaire/hors-hsk/page/${entryId}`, 302);
+}
+
 // Extract the numeric part from "hors-hsk-XXXXXX"
 const match = entryId.match(/^hors-hsk-(\d+)$/);
 if (!match) {

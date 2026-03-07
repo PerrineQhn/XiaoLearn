@@ -53,7 +53,7 @@ const visiblePages = Array.from(
         <div class="pager-pages">
           {visiblePages.map((page) => (
             <a
-              href={page === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/${page}`}
+              href={page === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/page/${page}`}
               class={`pager-page ${page === pageNumber ? 'active' : ''}`}
               aria-current={page === pageNumber ? 'page' : undefined}
             >
@@ -63,7 +63,7 @@ const visiblePages = Array.from(
         </div>
 
         {nextPage && (
-          <a href={`/dictionnaire/hors-hsk/${nextPage}`} class="pager-link">
+          <a href={`/dictionnaire/hors-hsk/page/${nextPage}`} class="pager-link">
             Page {nextPage} →
           </a>
         )}

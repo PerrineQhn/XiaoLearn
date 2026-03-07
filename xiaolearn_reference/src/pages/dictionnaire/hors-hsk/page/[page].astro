@@ -1,25 +1,25 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
-import CharacterCard from '../../../components/CharacterCard.astro';
-import BackToTopButton from '../../../components/BackToTopButton.astro';
-import { getHSKLevelInfo } from '../../../types/hsk';
+export const prerender = false;
+
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import CharacterCard from '../../../../components/CharacterCard.astro';
+import BackToTopButton from '../../../../components/BackToTopButton.astro';
+import { getHSKLevelInfo } from '../../../../types/hsk';
 import {
   getHorsHskCount,
   getHorsHskPage,
   getHorsHskPageCount,
-} from '../../../utils/horsHskCatalog';
-
-export function getStaticPaths() {
-  const totalPages = getHorsHskPageCount();
-  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
-    params: { page: String(index + 2) },
-  }));
-}
+} from '../../../../utils/horsHskCatalog';
 
 const levelInfo = getHSKLevelInfo(8)!;
 const pageNumber = Number(Astro.params.page || 2);
 const totalPages = getHorsHskPageCount();
+
+if (!Number.isInteger(pageNumber) || pageNumber < 2 || pageNumber > totalPages) {
+  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+}
+
 const entries = getHorsHskPage(pageNumber);
 
 const previousPage = pageNumber > 1 ? pageNumber - 1 : undefined;
@@ -61,7 +61,7 @@ const visiblePages = Array.from(
     <div class="container">
       <nav class="pager" aria-label="Pagination Hors-HSK">
         {previousPage && (
-          <a href={previousPage === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/${previousPage}`} class="pager-link">
+          <a href={previousPage === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/page/${previousPage}`} class="pager-link">
             ← Page {previousPage}
           </a>
         )}
@@ -69,7 +69,7 @@ const visiblePages = Array.from(
         <div class="pager-pages">
           {visiblePages.map((page) => (
             <a
-              href={page === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/${page}`}
+              href={page === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/page/${page}`}
               class={`pager-page ${page === pageNumber ? 'active' : ''}`}
               aria-current={page === pageNumber ? 'page' : undefined}
             >
@@ -79,7 +79,7 @@ const visiblePages = Array.from(
         </div>
 
         {nextPage && (
-          <a href={`/dictionnaire/hors-hsk/${nextPage}`} class="pager-link">
+          <a href={`/dictionnaire/hors-hsk/page/${nextPage}`} class="pager-link">
             Page {nextPage} →
           </a>
         )}

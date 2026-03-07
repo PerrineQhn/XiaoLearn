@@ -6,6 +6,8 @@ import type { HSKEntry } from '../../types/hsk';
 import { getHSKLevelInfo } from '../../types/hsk';
 import { ALL_HSK_ENTRIES } from '../../data/allHskEntries';
 
+export const prerender = false;
+
 const ENTRY_BY_ID = new Map<string, HSKEntry>();
 const PREVIOUS_BY_ID = new Map<string, HSKEntry>();
 const NEXT_BY_ID = new Map<string, HSKEntry>();
@@ -33,16 +35,10 @@ for (const levelEntries of entriesByLevel.values()) {
   }
 }
 
-export function getStaticPaths() {
-  return ALL_HSK_ENTRIES.map((entry) => ({
-    params: { id: entry.id },
-  }));
-}
-
 const entryId = Astro.params.id || '';
 const entry = ENTRY_BY_ID.get(entryId);
 if (!entry) {
-  throw new Error(`Unknown dictionary entry id: ${entryId}`);
+  return Astro.redirect('/dictionnaire');
 }
 const locale = 'fr';
 const levelInfo = getHSKLevelInfo(entry.level);

@@ -4,7 +4,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://xiaolearn.com',
-  output: 'static',
+  output: 'server',
   adapter: cloudflare(),
   integrations: [react()],
 });
