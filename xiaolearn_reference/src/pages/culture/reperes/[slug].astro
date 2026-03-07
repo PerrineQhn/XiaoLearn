@@ -3,17 +3,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 
-export async function getStaticPaths() {
-  const cultureEntries = await getCollection('culture');
-  return cultureEntries
-    .filter((entry) => entry.data.category === 'repere')
-    .map((entry) => ({
-      params: { slug: entry.id },
-      props: { entry },
-    }));
+const slug = Astro.params.slug || '';
+const cultureEntries = await getCollection('culture');
+const entry = cultureEntries.find(
+  (item) => item.id === slug && item.data.category === 'repere',
+);
+if (!entry) {
+  return Astro.redirect('/culture');
 }
-
-const { entry } = Astro.props;
 const { data } = entry;
 ---
 
