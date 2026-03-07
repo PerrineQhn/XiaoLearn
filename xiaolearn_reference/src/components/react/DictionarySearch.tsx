@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { HSKEntry } from '../../types/hsk';
-import { searchEntries, filterByLevel } from '../../utils/search';
+import { searchEntries, filterByLevel, type DictionarySearchMode } from '../../utils/search';
 import type { Locale } from '../../utils/locale';
 
 interface Props {
@@ -84,6 +84,7 @@ export default function DictionarySearch({
 }: Props) {
   const [query, setQuery] = useState(initialQuery || '');
   const [selectedLevel, setSelectedLevel] = useState<string | null>(initialLevel || null);
+  const [searchMode, setSearchMode] = useState<DictionarySearchMode>('auto');
   const [sourceEntries, setSourceEntries] = useState<HSKEntry[]>(entries);
   const [isLoadingEntries, setIsLoadingEntries] = useState<boolean>(Boolean(entriesUrl && entries.length === 0));
   const copy = locale === 'en' ? EN_COPY : FR_COPY;
@@ -147,11 +148,11 @@ export default function DictionarySearch({
     }
 
     if (query) {
-      result = searchEntries(result, query);
+      result = searchEntries(result, query, searchMode);
     }
 
     return result.slice(0, maxResults);
-  }, [sourceEntries, query, selectedLevel, maxResults, hideResultsUntilQuery]);
+  }, [sourceEntries, query, selectedLevel, maxResults, hideResultsUntilQuery, searchMode]);
   const hasQuery = query.trim().length > 0;
   const showInitialEmptyState = !hasQuery;
 
@@ -184,6 +185,29 @@ export default function DictionarySearch({
             </button>
           )}
         </div>
+
+        {showLevelFilters && (
+          <div className="level-filters search-mode-filters" role="group" aria-label={copy.searchModeAria}>
+            <button
+              className={`level-btn search-mode-btn ${searchMode === 'auto' ? 'active' : ''}`}
+              onClick={() => setSearchMode('auto')}
+            >
+              {copy.searchModeAuto}
+            </button>
+            <button
+              className={`level-btn search-mode-btn ${searchMode === 'pinyin' ? 'active' : ''}`}
+              onClick={() => setSearchMode('pinyin')}
+            >
+              {copy.searchModePinyin}
+            </button>
+            <button
+              className={`level-btn search-mode-btn ${searchMode === 'translation' ? 'active' : ''}`}
+              onClick={() => setSearchMode('translation')}
+            >
+              {copy.searchModeTranslation}
+            </button>
+          </div>
+        )}
 
         {showLevelFilters && (
           <div className="level-filters">
@@ -259,6 +283,10 @@ export default function DictionarySearch({
 const FR_COPY = {
   placeholder: 'Rechercher (hanzi, pinyin, francais...)',
   clearAria: 'Effacer la recherche',
+  searchModeAria: 'Mode de recherche',
+  searchModeAuto: 'Auto',
+  searchModePinyin: 'Pinyin',
+  searchModeTranslation: 'FR/EN',
   allLevels: 'Tous',
   resultsCount: (count: number) => `${count} resultat${count > 1 ? 's' : ''}`,
   limit: (maxResults: number) => `(limite a ${maxResults})`,
@@ -272,6 +300,10 @@ const FR_COPY = {
 const EN_COPY = {
   placeholder: 'Search (hanzi, pinyin, english...)',
   clearAria: 'Clear search',
+  searchModeAria: 'Search mode',
+  searchModeAuto: 'Auto',
+  searchModePinyin: 'Pinyin',
+  searchModeTranslation: 'FR/EN',
   allLevels: 'All',
   resultsCount: (count: number) => `${count} result${count > 1 ? 's' : ''}`,
   limit: (maxResults: number) => `(limited to ${maxResults})`,

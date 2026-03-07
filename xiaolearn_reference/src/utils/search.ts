@@ -20,6 +20,8 @@ type QueryInfo = {
   toneQuery: ToneQuery | null;
 };
 
+export type DictionarySearchMode = 'auto' | 'pinyin' | 'translation';
+
 const COMBINING_MARKS_REGEX = /[\u0300-\u036f]/g;
 const WHITESPACE_REGEX = /\s+/g;
 
@@ -61,7 +63,11 @@ const TONE_CHAR_BY_VOWEL: Record<'a' | 'e' | 'i' | 'o' | 'u' | 'v', Record<ToneD
 
 const TONES_FOR_VARIANTS: ToneDigit[] = ['1', '2', '3', '4', '5'];
 
-export function searchEntries(entries: HSKEntry[], query: string): HSKEntry[] {
+export function searchEntries(
+  entries: HSKEntry[],
+  query: string,
+  mode: DictionarySearchMode = 'auto',
+): HSKEntry[] {
   const queryInfo = buildQueryInfo(query);
   if (!queryInfo.raw) {
     return entries;
@@ -69,7 +75,7 @@ export function searchEntries(entries: HSKEntry[], query: string): HSKEntry[] {
 
   const ranked = entries
     .map((entry, index) => {
-      const rank = rankEntry(entry, queryInfo);
+      const rank = rankEntry(entry, queryInfo, mode);
       return { entry, index, ...rank };
     })
     .filter((item) => item.score > 0);
@@ -119,15 +125,25 @@ export function getUniqueThemes(entries: HSKEntry[]): string[] {
   return Array.from(themes).sort();
 }
 
-function rankEntry(entry: HSKEntry, query: QueryInfo): { score: number; pinyinRank: number } {
-  const hanziScore = scoreHanzi(entry.hanzi, query.raw);
-  const pinyinMatch = scorePinyin(entry.pinyin, query);
-  const translationScore = Math.max(
-    scoreTextField(entry.translationFr, query.latinNoDigits),
-    scoreTextField(entry.translationEn || entry.translation || '', query.latinNoDigits),
-    scoreAlternatives(entry.translationFrAlt, query.latinNoDigits),
-  );
-  const tagScore = scoreTags(entry.tags, query.latinNoDigits);
+function rankEntry(
+  entry: HSKEntry,
+  query: QueryInfo,
+  mode: DictionarySearchMode,
+): { score: number; pinyinRank: number } {
+  const canUsePinyin = mode !== 'translation';
+  const canUseTranslations = mode !== 'pinyin';
+  const canUseHanzi = mode !== 'translation';
+
+  const hanziScore = canUseHanzi ? scoreHanzi(entry.hanzi, query.raw) : 0;
+  const pinyinMatch = canUsePinyin ? scorePinyin(entry.pinyin, query) : { score: 0, rank: 99 };
+  const translationScore = canUseTranslations
+    ? Math.max(
+      scoreTextField(entry.translationFr, query.latinNoDigits),
+      scoreEnglishTextField(entry.translationEn || entry.translation || '', query.latinNoDigits),
+      scoreAlternatives(entry.translationFrAlt, query.latinNoDigits),
+    )
+    : 0;
+  const tagScore = canUseTranslations ? scoreTags(entry.tags, query.latinNoDigits) : 0;
 
   return {
     score: Math.max(hanziScore, pinyinMatch.score, translationScore, tagScore),
@@ -226,6 +242,19 @@ function scoreTextField(value: string, query: string): number {
   if (hasWordBoundaryMatch(text, query)) return 108;
   if (text.includes(query)) return 94;
   return 0;
+}
+
+function scoreEnglishTextField(value: string, query: string): number {
+  if (!value || !query) return 0;
+  const text = normalizeTextField(value);
+  if (!text) return 0;
+
+  const infinitive = `to ${query}`;
+  if (text === infinitive) return 154;
+  if (text.startsWith(`${infinitive} `)) return 146;
+  if (text.includes(` ${infinitive} `)) return 130;
+
+  return scoreTextField(value, query);
 }
 
 function hasWordBoundaryMatch(text: string, query: string): boolean {
