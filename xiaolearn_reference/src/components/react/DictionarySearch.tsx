@@ -99,7 +99,8 @@ export default function DictionarySearch({
 
     return result.slice(0, maxResults);
   }, [sourceEntries, query, selectedLevel, maxResults, hideResultsUntilQuery]);
-  const showInitialEmptyState = hideResultsUntilQuery && !query.trim();
+  const hasQuery = query.trim().length > 0;
+  const showInitialEmptyState = !hasQuery;
 
   const levels = useMemo(
     () => Array.from(new Set(sourceEntries.map((entry) => entry.level))).sort(),
@@ -165,7 +166,7 @@ export default function DictionarySearch({
             <span className="no-results-icon">汉</span>
             <p>{copy.loadingEntries}</p>
           </div>
-        ) : filteredEntries.length === 0 && showInitialEmptyState ? (
+        ) : showInitialEmptyState ? (
           <div className={`no-results ${heroMode ? 'hero-empty' : ''}`}>
             <span className="no-results-icon">汉</span>
             <p>{copy.startTyping}</p>
