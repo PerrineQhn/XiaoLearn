@@ -1,87 +1,88 @@
 ---
-export const prerender = false;
-
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../../components/HSKLevelBadge.astro';
 import type { HSKEntry } from '../../../types/hsk';
 import { getHSKLevelInfo } from '../../../types/hsk';
+import { ALL_HSK_ENTRIES } from '../../../data/allHskEntries';
 
-const TOTAL_ENTRIES = 109709;
-const CHUNK_SIZE = 1000;
+const ENTRY_BY_ID = new Map<string, HSKEntry>();
+const PREVIOUS_BY_ID = new Map<string, HSKEntry>();
+const NEXT_BY_ID = new Map<string, HSKEntry>();
+const entriesByLevel = new Map<string, HSKEntry[]>();
 
-const entryId = Astro.params.id ?? '';
-
-// Extract the numeric part from "hors-hsk-XXXXXX"
-const match = entryId.match(/^hors-hsk-(\d+)$/);
-if (!match) {
-  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+for (const entry of ALL_HSK_ENTRIES) {
+  ENTRY_BY_ID.set(entry.id, entry);
+  const bucket = entriesByLevel.get(entry.level);
+  if (bucket) {
+    bucket.push(entry);
+  } else {
+    entriesByLevel.set(entry.level, [entry]);
+  }
 }
 
-const entryNum = parseInt(match[1], 10);
-if (entryNum < 1 || entryNum > TOTAL_ENTRIES) {
-  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+for (const levelEntries of entriesByLevel.values()) {
+  for (let index = 0; index < levelEntries.length; index += 1) {
+    const current = levelEntries[index];
+    if (index > 0) {
+      PREVIOUS_BY_ID.set(current.id, levelEntries[index - 1]);
+    }
+    if (index < levelEntries.length - 1) {
+      NEXT_BY_ID.set(current.id, levelEntries[index + 1]);
+    }
+  }
 }
 
-// Load the correct chunk
-const chunkIndex = Math.ceil(entryNum / CHUNK_SIZE);
-const chunkNum = String(chunkIndex).padStart(3, '0');
-const chunkUrl = new URL(`/data/hors-hsk/chunk-${chunkNum}.json`, Astro.url);
-
-let entry: HSKEntry | undefined;
-try {
-  const res = await fetch(chunkUrl.toString());
-  const chunk = await res.json() as Record<string, HSKEntry>;
-  entry = chunk[entryId];
-} catch {
-  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+export function getStaticPaths() {
+  return ALL_HSK_ENTRIES.map((entry) => ({
+    params: { id: entry.id },
+  }));
 }
 
+const entryId = Astro.params.id || '';
+const entry = ENTRY_BY_ID.get(entryId);
 if (!entry) {
-  return Astro.redirect('/dictionnaire/hors-hsk', 302);
+  throw new Error(`Unknown dictionary entry id: ${entryId}`);
 }
 
-// Compute prev/next IDs (sequential, no extra fetch needed)
-const prevNum = entryNum > 1 ? entryNum - 1 : null;
-const nextNum = entryNum < TOTAL_ENTRIES ? entryNum + 1 : null;
-const prevId = prevNum ? `hors-hsk-${String(prevNum).padStart(6, '0')}` : null;
-const nextId = nextNum ? `hors-hsk-${String(nextNum).padStart(6, '0')}` : null;
-
-const locale = 'fr';
-const levelInfo = getHSKLevelInfo('hors-hsk');
-const canonicalUrl = `https://xiaolearn.com/dictionnaire/hors-hsk/${entry.id}`;
+const levelInfo = getHSKLevelInfo(entry.level);
+const previousEntry = PREVIOUS_BY_ID.get(entry.id);
+const nextEntry = NEXT_BY_ID.get(entry.id);
+const translation = entry.translationEn || entry.translation || entry.translationFr;
+const explanation = entry.explanation || entry.explanationFr;
+const canonicalUrl = `https://xiaolearn.com/en/dictionnaire/${entry.id}`;
 const definedTermSchema = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTerm',
   name: entry.hanzi,
   alternateName: entry.pinyin,
   termCode: entry.id,
-  description: `Mot ${entry.hanzi} (${entry.pinyin}) : ${entry.translationFr}.`,
-  inDefinedTermSet: 'https://xiaolearn.com/dictionnaire',
+  description: `Word ${entry.hanzi} (${entry.pinyin}): ${translation}.`,
+  inDefinedTermSet: 'https://xiaolearn.com/en/dictionnaire',
   url: canonicalUrl,
 };
 ---
 
 <BaseLayout
-  title={`${entry.hanzi} (${entry.pinyin}) - ${entry.translationFr}`}
-  description={`Définition de ${entry.hanzi} (${entry.pinyin}) : ${entry.translationFr}. Vocabulaire hors-HSK.`}
+  title={`${entry.hanzi} (${entry.pinyin}) - ${translation}`}
+  description={`Definition and examples for ${entry.hanzi} (${entry.pinyin}): ${translation}. Level ${entry.level.toUpperCase()}.`}
   canonical={canonicalUrl}
+  lang="en"
 >
   <script type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
   <section class="page-header" style={`--level-color: ${levelInfo?.color}; --level-bg: ${levelInfo?.bgColor}`}>
     <div class="container">
       <Breadcrumb items={[
-        { label: 'Dictionnaire', href: '/dictionnaire' },
-        { label: 'Hors-HSK', href: '/dictionnaire/hors-hsk' },
+        { label: 'Dictionary', href: '/en/dictionnaire' },
+        { label: levelInfo?.name || '', href: `/en/dictionnaire?level=${entry.level}` },
         { label: entry.hanzi }
-      ]} locale={locale} />
+      ]} locale="en" />
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="word-layout">
-        <!-- Main Content -->
         <article class="word-main">
           <header class="word-header">
             <div class="word-title">
@@ -89,12 +90,12 @@ const definedTermSchema = {
               <HSKLevelBadge level={entry.level} size="lg" />
             </div>
             <p class="pinyin">{entry.pinyin}</p>
-            <p class="translation">{entry.translationFr || entry.translationEn || entry.translation}</p>
+            <p class="translation">{translation}</p>
           </header>
 
           {entry.translationFrAlt && entry.translationFrAlt.length > 0 && (
             <div class="alt-translations">
-              <h3>Autres traductions</h3>
+              <h3>Alternative translations</h3>
               <ul>
                 {entry.translationFrAlt.map(alt => (
                   <li>{alt}</li>
@@ -103,41 +104,40 @@ const definedTermSchema = {
             </div>
           )}
 
-          {entry.explanationFr && (
+          {explanation && (
             <div class="explanation">
-              <h3>Explication</h3>
-              <p>{entry.explanationFr}</p>
+              <h3>Explanation</h3>
+              <p>{explanation}</p>
             </div>
           )}
 
           {entry.examples && entry.examples.length > 0 && (
             <div class="examples">
-              <h3>Exemples</h3>
+              <h3>Examples</h3>
               {entry.examples.map(example => (
                 <div class="example">
                   <p class="example-chinese">{example.chinese}</p>
                   <p class="example-pinyin">{example.pinyin}</p>
-                  <p class="example-translation">{example.translationFr || example.translationEn || example.translation}</p>
+                  <p class="example-translation">{example.translationEn || example.translation || example.translationFr}</p>
                 </div>
               ))}
             </div>
           )}
         </article>
 
-        <!-- Sidebar -->
         <aside class="word-sidebar">
           <div class="info-card">
-            <h4>Informations</h4>
+            <h4>Information</h4>
             <dl>
-              <dt>Niveau</dt>
+              <dt>Level</dt>
               <dd><HSKLevelBadge level={entry.level} size="sm" /></dd>
 
-              <dt>Catégorie</dt>
+              <dt>Category</dt>
               <dd class="capitalize">{entry.category}</dd>
 
               {entry.theme && (
                 <>
-                  <dt>Thème</dt>
+                  <dt>Theme</dt>
                   <dd class="capitalize">{entry.theme}</dd>
                 </>
               )}
@@ -148,7 +148,7 @@ const definedTermSchema = {
             <div class="tags-card">
               <h4>Tags</h4>
               <div class="tags">
-                {entry.tags.filter((t: string) => !t.startsWith('level:')).map((tag: string) => (
+                {entry.tags.filter(t => !t.startsWith('level:')).map(tag => (
                   <span class="tag">{tag}</span>
                 ))}
               </div>
@@ -156,25 +156,24 @@ const definedTermSchema = {
           )}
 
           <div class="nav-card">
-            <a href="/dictionnaire/hors-hsk" class="btn btn-secondary btn-sm">
-              ← Retour à Hors-HSK
+            <a href={`/en/dictionnaire?level=${entry.level}`} class="btn btn-secondary btn-sm">
+              ← Back to {levelInfo?.name}
             </a>
           </div>
-
-          {(prevId || nextId) && (
+          {(previousEntry || nextEntry) && (
             <div class="nav-card">
               <h4>Navigation</h4>
               <div class="entry-nav">
-                {prevId && (
-                  <a href={`/dictionnaire/hors-hsk/${prevId}`} class="entry-link">
-                    <span class="entry-label">Précédent</span>
-                    <span class="entry-value">{prevId}</span>
+                {previousEntry && (
+                  <a href={`/en/dictionnaire/${previousEntry.id}`} class="entry-link">
+                    <span class="entry-label">Previous</span>
+                    <span class="entry-value">{previousEntry.hanzi} · {previousEntry.pinyin}</span>
                   </a>
                 )}
-                {nextId && (
-                  <a href={`/dictionnaire/hors-hsk/${nextId}`} class="entry-link">
-                    <span class="entry-label">Suivant</span>
-                    <span class="entry-value">{nextId}</span>
+                {nextEntry && (
+                  <a href={`/en/dictionnaire/${nextEntry.id}`} class="entry-link">
+                    <span class="entry-label">Next</span>
+                    <span class="entry-value">{nextEntry.hanzi} · {nextEntry.pinyin}</span>
                   </a>
                 )}
               </div>
@@ -276,6 +275,22 @@ const definedTermSchema = {
     border-left: 4px solid var(--jade-green);
   }
 
+  .example-chinese {
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .example-pinyin {
+    font-style: italic;
+    color: var(--jade-green);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .example-translation {
+    color: var(--text-secondary);
+  }
+
   .word-sidebar {
     display: flex;
     flex-direction: column;
@@ -301,21 +316,79 @@ const definedTermSchema = {
     margin-bottom: var(--spacing-md);
   }
 
-  dl { display: grid; grid-template-columns: auto 1fr; gap: var(--spacing-sm) var(--spacing-md); align-items: center; }
-  dt { font-size: 0.85rem; color: var(--text-tertiary); }
-  dd { font-size: 0.9rem; }
-  .capitalize { text-transform: capitalize; }
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-sm) var(--spacing-md);
+    align-items: center;
+  }
 
-  .tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
-  .tag { padding: var(--spacing-xxs) var(--spacing-sm); background: var(--bg-accent); border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); }
+  dt {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
 
-  .entry-nav { display: flex; flex-direction: column; gap: var(--spacing-sm); }
-  .entry-link { display: flex; flex-direction: column; gap: 2px; padding: var(--spacing-sm); border-radius: var(--radius-md); border: 1px solid var(--border-light); }
-  .entry-link:hover { border-color: var(--primary-red-light); }
-  .entry-label { font-size: 0.75rem; color: var(--text-tertiary); }
-  .entry-value { font-size: 0.9rem; color: var(--text-primary); }
+  dd {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
 
-  @media (max-width: 768px) {
-    .word-layout { grid-template-columns: 1fr; }
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .tag {
+    padding: var(--spacing-xxs) var(--spacing-sm);
+    background: var(--bg-accent);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .entry-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .entry-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .entry-link:hover {
+    border-color: var(--primary-red-light);
+    background: var(--bg-accent);
+  }
+
+  .entry-label {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+
+  .entry-value {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 900px) {
+    .word-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .word-sidebar {
+      order: -1;
+    }
   }
 </style>

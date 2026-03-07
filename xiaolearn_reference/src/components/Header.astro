@@ -1,12 +1,30 @@
 ---
-import { mainNav, externalLinks } from '../data/navigation';
+import { externalLinks, getMainNav } from '../data/navigation';
+import { getLocaleSwitchPath, localizePath, type Locale } from '../utils/locale';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const mainNav = getMainNav(locale);
 
 const currentQuery = Astro.url.searchParams.get('q') || '';
+const homeHref = localizePath('/', locale);
+const searchAction = locale === 'en' ? '/en/dictionnaire' : '/recherche';
+const searchLabel = locale === 'en' ? 'Search the website' : 'Rechercher sur le site';
+const searchPlaceholder = locale === 'en' ? 'Search by hanzi, pinyin, translation...' : 'Rechercher sur le site...';
+const searchButton = 'OK';
+const mobileSearchPlaceholder = locale === 'en' ? 'Search...' : 'Rechercher...';
+const mobileSearchButton = locale === 'en' ? 'Search' : 'Rechercher';
+const languageSwitchLabel = locale === 'en' ? 'Choose interface language' : "Choisir la langue de l'interface";
+const frHref = getLocaleSwitchPath(Astro.url.pathname, 'fr');
+const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
 ---
 
 <header class="header">
   <div class="header-container">
-    <a href="/" class="logo">
+    <a href={homeHref} class="logo">
       <img src="/logos/logo_asian-red.png" alt="XiaoLearn" class="logo-img" />
     </a>
 
@@ -24,33 +42,36 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
       ))}
     </nav>
 
-    <form class="header-search" action="/recherche" method="get" role="search">
-      <label for="header-search-input" class="visually-hidden">Rechercher sur le site</label>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label={languageSwitchLabel}>
+        <a href={frHref} class={`lang-link ${locale === 'fr' ? 'active' : ''}`}>FR</a>
+        <span class="lang-separator">/</span>
+        <a href={enHref} class={`lang-link ${locale === 'en' ? 'active' : ''}`}>EN</a>
+      </div>
+      {externalLinks.map(link => (
+        <a
+          href={link.href}
+          class="btn btn-sm btn-secondary"
+          target="_blank"
+          rel="noopener"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <form class="header-search" action={searchAction} method="get" role="search">
+      <label for="header-search-input" class="visually-hidden">{searchLabel}</label>
       <input
         id="header-search-input"
         class="header-search-input"
         type="search"
         name="q"
         value={currentQuery}
-        placeholder="Rechercher sur le site..."
+        placeholder={searchPlaceholder}
       />
-      <button type="submit" class="header-search-btn">OK</button>
+      <button type="submit" class="header-search-btn">{searchButton}</button>
     </form>
-
-    {externalLinks.length > 0 && (
-      <div class="header-actions">
-        {externalLinks.map(link => (
-          <a
-            href={link.href}
-            class="btn btn-sm btn-secondary"
-            target="_blank"
-            rel="noopener"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    )}
 
     <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
       <span></span>
@@ -61,18 +82,23 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <form class="mobile-search" action="/recherche" method="get" role="search">
-      <label for="mobile-search-input" class="visually-hidden">Rechercher sur le site</label>
+    <form class="mobile-search" action={searchAction} method="get" role="search">
+      <label for="mobile-search-input" class="visually-hidden">{searchLabel}</label>
       <input
         id="mobile-search-input"
         class="mobile-search-input"
         type="search"
         name="q"
         value={currentQuery}
-        placeholder="Rechercher..."
+        placeholder={mobileSearchPlaceholder}
       />
-      <button type="submit" class="mobile-search-btn">Rechercher</button>
+      <button type="submit" class="mobile-search-btn">{mobileSearchButton}</button>
     </form>
+
+    <div class="mobile-locale">
+      <a href={frHref} class={`mobile-nav-link locale ${locale === 'fr' ? 'active' : ''}`}>Francais (FR)</a>
+      <a href={enHref} class={`mobile-nav-link locale ${locale === 'en' ? 'active' : ''}`}>English (EN)</a>
+    </div>
 
     <nav class="mobile-nav">
       {mainNav.map(item => (
@@ -133,7 +159,7 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
     padding: 0 var(--spacing-lg);
     height: 100%;
     display: grid;
-    grid-template-columns: auto 1fr minmax(230px, 310px) auto;
+    grid-template-columns: auto 1fr auto minmax(230px, 310px) auto;
     align-items: center;
     gap: var(--spacing-lg);
   }
@@ -181,6 +207,38 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
     align-items: center;
     gap: var(--spacing-sm);
     justify-self: end;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+  }
+
+  .lang-link {
+    color: var(--text-tertiary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1;
+    transition: color var(--transition-fast);
+  }
+
+  .lang-link:hover {
+    color: var(--primary-red);
+  }
+
+  .lang-link.active {
+    color: var(--text-primary);
+  }
+
+  .lang-separator {
+    color: var(--text-tertiary);
+    font-size: 0.72rem;
+    line-height: 1;
   }
 
   .header-search {
@@ -286,6 +344,12 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
     gap: var(--spacing-sm);
   }
 
+  .mobile-locale {
+    display: grid;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+  }
+
   .mobile-search {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -341,6 +405,12 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
     color: var(--primary-red);
   }
 
+  .mobile-nav-link.locale.active {
+    background: var(--bg-accent);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+  }
+
   .external-icon {
     font-size: 0.9rem;
   }
@@ -352,7 +422,7 @@ const currentQuery = Astro.url.searchParams.get('q') || '';
 
   @media (max-width: 1180px) {
     .header-container {
-      grid-template-columns: auto 1fr minmax(200px, 250px) auto;
+      grid-template-columns: auto 1fr auto minmax(200px, 250px) auto;
       gap: var(--spacing-md);
     }
 

@@ -1,18 +1,33 @@
 ---
-import { footerSections, legalLinks } from '../data/navigation';
+import { getFooterSections, getLegalLinks } from '../data/navigation';
+import { localizePath, type Locale } from '../utils/locale';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'fr' } = Astro.props;
+const footerSections = getFooterSections(locale);
+const legalLinks = getLegalLinks(locale);
 
 const currentYear = new Date().getFullYear();
+const homeHref = localizePath('/', locale);
+const tagline = locale === 'en'
+  ? 'The reference site to learn Mandarin Chinese. Dictionary, grammar cards, lexical nuances and cultural context.'
+  : 'Le site de reference pour apprendre le chinois mandarin en francais. Dictionnaire complet, fiches de grammaire, nuances lexicales et reperes culturels.';
+const freeBadge = locale === 'en' ? 'Free content' : 'Contenu gratuit';
+const hskBadge = locale === 'en' ? 'Official HSK 3.0' : 'HSK 3.0 officiel';
+const rights = locale === 'en' ? 'All rights reserved.' : 'Tous droits reserves.';
 ---
 
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <a href="/" class="footer-logo">
+      <a href={homeHref} class="footer-logo">
         <img src="/logos/logo_asian-red.png" alt="XiaoLearn" />
       </a>
       <p class="footer-tagline">
-        Le site de référence pour apprendre le chinois mandarin en français.
-        Dictionnaire complet, fiches de grammaire, nuances lexicales et repères culturels.
+        {tagline}
       </p>
       <div class="footer-badges">
         <span class="trust-badge">
@@ -20,14 +35,14 @@ const currentYear = new Date().getFullYear();
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
-          Contenu gratuit
+          {freeBadge}
         </span>
         <span class="trust-badge">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <path d="M9 12l2 2 4-4"/>
           </svg>
-          HSK 3.0 officiel
+          {hskBadge}
         </span>
       </div>
     </div>
@@ -57,7 +72,7 @@ const currentYear = new Date().getFullYear();
 
   <div class="footer-bottom">
     <div class="footer-bottom-container">
-      <p>&copy; {currentYear} XiaoLearn. Tous droits réservés.</p>
+      <p>&copy; {currentYear} XiaoLearn. {rights}</p>
       <div class="footer-legal">
         {legalLinks.map(link => (
           <a href={link.href}>{link.label}</a>

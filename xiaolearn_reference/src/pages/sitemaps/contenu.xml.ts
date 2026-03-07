@@ -14,17 +14,21 @@ export const GET: APIRoute = async ({ site }) => {
 
   urls.add(toAbsoluteUrl(base, '/culture'));
   urls.add(toAbsoluteUrl(base, '/nuances'));
+  urls.add(toAbsoluteUrl(base, '/en/culture'));
+  urls.add(toAbsoluteUrl(base, '/en/nuances'));
   urls.add(toAbsoluteUrl(base, '/ressources'));
 
   const nuanceEntries = await getCollection('nuances');
   nuanceEntries.forEach((entry) => {
     urls.add(toAbsoluteUrl(base, `/nuances/${entry.id}`));
+    urls.add(toAbsoluteUrl(base, `/en/nuances/${entry.id}`));
   });
 
   const cultureEntries = await getCollection('culture');
   cultureEntries.forEach((entry) => {
     const prefix = entry.data.category === 'fete' ? 'fetes' : 'reperes';
     urls.add(toAbsoluteUrl(base, `/culture/${prefix}/${entry.id}`));
+    urls.add(toAbsoluteUrl(base, `/en/culture/${prefix}/${entry.id}`));
   });
 
   const xml = renderSitemapXml(

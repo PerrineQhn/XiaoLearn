@@ -1,18 +1,24 @@
 ---
 import type { HSKEntry } from '../types/hsk';
 import HSKLevelBadge from './HSKLevelBadge.astro';
+import { localizePath, type Locale } from '../utils/locale';
 
 interface Props {
   entry: HSKEntry;
   showLevel?: boolean;
   href?: string | null;
+  locale?: Locale;
 }
 
-const { entry, showLevel = true, href } = Astro.props;
-const defaultHref = entry.level === 'hors-hsk'
+const { entry, showLevel = true, href, locale = 'fr' } = Astro.props;
+const baseHref = entry.level === 'hors-hsk'
   ? `/dictionnaire/hors-hsk/${entry.id}`
   : `/dictionnaire/${entry.id}`;
+const defaultHref = localizePath(baseHref, locale);
 const targetHref = href === undefined ? defaultHref : href;
+const displayTranslation = locale === 'en'
+  ? (entry.translationEn || entry.translation || entry.translationFr)
+  : (entry.translationFr || entry.translationEn || entry.translation || '');
 ---
 
 {targetHref ? (
@@ -24,7 +30,7 @@ const targetHref = href === undefined ? defaultHref : href;
 
     <div class="card-body">
       <span class="pinyin">{entry.pinyin}</span>
-      <p class="translation">{entry.translationFr}</p>
+      <p class="translation">{displayTranslation}</p>
     </div>
 
     <div class="card-footer">
@@ -41,7 +47,7 @@ const targetHref = href === undefined ? defaultHref : href;
 
     <div class="card-body">
       <span class="pinyin">{entry.pinyin}</span>
-      <p class="translation">{entry.translationFr}</p>
+      <p class="translation">{displayTranslation}</p>
     </div>
 
     <div class="card-footer">

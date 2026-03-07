@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import DictionarySearch from '../components/react/DictionarySearch';
-import type { HSKEntry } from '../types/hsk';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DictionarySearch from '../../components/react/DictionarySearch';
+import type { HSKEntry } from '../../types/hsk';
 import { getCollection } from 'astro:content';
+import { getCultureEntryEn } from '../../utils/enContentTranslations';
 
-import hsk1Data from '../data/hsk1.json';
-import hsk2Data from '../data/hsk2.json';
-import hsk3Data from '../data/hsk3.json';
-import hsk4Data from '../data/hsk4.json';
-import hsk5Data from '../data/hsk5.json';
+import hsk1Data from '../../data/hsk1.json';
+import hsk2Data from '../../data/hsk2.json';
+import hsk3Data from '../../data/hsk3.json';
+import hsk4Data from '../../data/hsk4.json';
+import hsk5Data from '../../data/hsk5.json';
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -29,14 +30,17 @@ const currentMonth = new Date().getMonth() + 1;
 
 const upcomingFestivals = cultureEntries
   .filter((entry) => entry.data.category === 'fete')
-  .map((entry) => ({
-    slug: entry.id,
-    name: entry.data.title,
-    hanzi: entry.data.hanzi ?? '',
-    periodLabel: entry.data.period ?? '',
-    summary: entry.data.summary,
-    monthStart: entry.data.monthStart ?? 13,
-  }))
+  .map((entry) => {
+    const translated = getCultureEntryEn(entry);
+    return {
+      slug: entry.id,
+      name: translated.title,
+      hanzi: entry.data.hanzi ?? '',
+      periodLabel: translated.period,
+      summary: translated.summary,
+      monthStart: entry.data.monthStart ?? 13,
+    };
+  })
   .sort((a, b) => {
     const distanceA = getNextFestivalDistance(a.monthStart, currentMonth);
     const distanceB = getNextFestivalDistance(b.monthStart, currentMonth);
@@ -48,36 +52,39 @@ const upcomingFestivals = cultureEntries
 const highlightOrder = ['calendrier-fetes', 'rituels-famille', 'calligraphie', 'culture-du-the'];
 const cultureHighlights = cultureEntries
   .filter((entry) => entry.data.category === 'repere')
-  .map((entry) => ({
-    slug: entry.id,
-    title: entry.data.title,
-    summary: entry.data.summary,
-    icon: entry.data.icon ?? '文',
-  }))
+  .map((entry) => {
+    const translated = getCultureEntryEn(entry);
+    return {
+      slug: entry.id,
+      title: translated.title,
+      summary: translated.summary,
+      icon: entry.data.icon ?? '文',
+    };
+  })
   .sort((a, b) => {
     const orderA = highlightOrder.indexOf(a.slug);
     const orderB = highlightOrder.indexOf(b.slug);
     const safeA = orderA >= 0 ? orderA : Number.MAX_SAFE_INTEGER;
     const safeB = orderB >= 0 ? orderB : Number.MAX_SAFE_INTEGER;
     if (safeA !== safeB) return safeA - safeB;
-    return a.title.localeCompare(b.title, 'fr');
+    return a.title.localeCompare(b.title, 'en');
   });
 ---
 
-<BaseLayout title="Accueil">
+<BaseLayout title="Home" lang="en">
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <span class="hero-badge">Langue + Culture chinoise</span>
-        <h1>Votre site de <span class="highlight">référence</span> pour le mandarin</h1>
+        <span class="hero-badge">Mandarin + Chinese culture</span>
+        <h1>Your <span class="highlight">reference</span> site for Mandarin</h1>
         <p class="hero-subtitle">
-          Recherchez un caractère, comprenez la grammaire, comparez les mots proches
-          et suivez les repères culturels chinois au même endroit.
+          Search a character, understand grammar, compare similar words,
+          and follow key Chinese cultural landmarks in one place.
         </p>
 
         <div class="hero-search">
-          <h2>Recherche rapide de caractères</h2>
-          <p>Entrez du hanzi, du pinyin ou un mot français.</p>
+          <h2>Quick character search</h2>
+          <p>Enter hanzi, pinyin or an English word.</p>
           <DictionarySearch
             client:load
             entries={allEntries}
@@ -85,8 +92,10 @@ const cultureHighlights = cultureEntries
             showLevelFilters={false}
             hideResultsUntilQuery={true}
             heroMode={true}
+            locale="en"
+            resultBasePath="/en/dictionnaire"
           />
-          <a href="/dictionnaire" class="quick-link">Ouvrir le dictionnaire complet →</a>
+          <a href="/en/dictionnaire" class="quick-link">Open full dictionary →</a>
         </div>
       </div>
 
@@ -97,34 +106,34 @@ const cultureHighlights = cultureEntries
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="badge badge-primary">Explorer</span>
-        <h2>4 piliers d'apprentissage</h2>
-        <p>Une navigation simple orientée apprentissage et pratique quotidienne.</p>
+        <span class="badge badge-primary">Explore</span>
+        <h2>4 learning pillars</h2>
+        <p>Simple navigation designed for practical daily study.</p>
       </div>
 
       <div class="grid grid-4">
-        <a href="/dictionnaire" class="feature-card">
+        <a href="/en/dictionnaire" class="feature-card">
           <div class="feature-icon"><span>辞</span></div>
-          <h3>Dictionnaire</h3>
-          <p>Trouvez rapidement traduction, pinyin et contexte d'usage des caractères.</p>
+          <h3>Dictionary</h3>
+          <p>Find translations, pinyin and usage context quickly.</p>
         </a>
 
-        <a href="/grammaire" class="feature-card">
+        <a href="/en/grammaire" class="feature-card">
           <div class="feature-icon"><span>文</span></div>
-          <h3>Grammaire</h3>
-          <p>Points clés HSK, filtres par niveau et fiches détaillées pour chaque structure.</p>
+          <h3>Grammar</h3>
+          <p>Key HSK points, level filters and detailed structure pages.</p>
         </a>
 
-        <a href="/nuances" class="feature-card">
+        <a href="/en/nuances" class="feature-card">
           <div class="feature-icon"><span>辨</span></div>
-          <h3>Mots similaires</h3>
-          <p>Évitez les confusions fréquentes avec des comparaisons claires et exemples.</p>
+          <h3>Similar words</h3>
+          <p>Avoid frequent confusion with clear comparisons and examples.</p>
         </a>
 
-        <a href="/culture" class="feature-card">
+        <a href="/en/culture" class="feature-card">
           <div class="feature-icon"><span>礼</span></div>
           <h3>Culture</h3>
-          <p>Fêtes, codes sociaux, symboles et repères concrets pour lire la Chine actuelle.</p>
+          <p>Festivals, social codes, symbols and practical references.</p>
         </a>
       </div>
     </div>
@@ -133,9 +142,9 @@ const cultureHighlights = cultureEntries
   <section class="section alt-bg">
     <div class="container">
       <div class="section-header">
-        <span class="badge badge-secondary">À venir</span>
-        <h2>Fêtes chinoises à suivre</h2>
-        <p>Repérez les prochains temps forts pour relier la langue au contexte culturel.</p>
+        <span class="badge badge-secondary">Coming up</span>
+        <h2>Chinese festivals to follow</h2>
+        <p>Track upcoming key moments and connect language to cultural context.</p>
       </div>
 
       <div class="festival-grid">
@@ -156,25 +165,25 @@ const cultureHighlights = cultureEntries
   <section class="section">
     <div class="container dual-grid">
       <article class="focus-card">
-        <h2>Questions de grammaire</h2>
-        <p>Travaillez les structures les plus utiles, niveau par niveau, avec des exemples directs.</p>
+        <h2>Grammar questions</h2>
+        <p>Practice the most useful structures level by level with direct examples.</p>
         <ul>
-          <li>Quand utiliser 不 vs 没（有） ?</li>
-          <li>Comment différencier 了1 et 了2 ?</li>
-          <li>Quels patrons utiliser pour la comparaison ?</li>
+          <li>When to use 不 vs 没（有）?</li>
+          <li>How to distinguish 了1 and 了2?</li>
+          <li>Which patterns to use for comparison?</li>
         </ul>
-        <a href="/grammaire" class="btn btn-primary">Voir les points de grammaire</a>
+        <a href="/en/grammaire" class="btn btn-primary">View grammar points</a>
       </article>
 
       <article class="focus-card">
-        <h2>Mots proches et nuances</h2>
-        <p>Comprenez les nuances de sens et d'usage qui changent la précision de vos phrases.</p>
+        <h2>Similar words and nuances</h2>
+        <p>Understand usage and meaning details that improve sentence precision.</p>
         <ul>
           <li>会 / 能 / 可以</li>
           <li>是 / 有</li>
-          <li>这 / 那 et leurs variantes contextuelles</li>
+          <li>这 / 那 and their contextual variants</li>
         </ul>
-        <a href="/nuances" class="btn btn-secondary">Comparer les mots similaires</a>
+        <a href="/en/nuances" class="btn btn-secondary">Compare similar words</a>
       </article>
     </div>
   </section>
@@ -182,8 +191,8 @@ const cultureHighlights = cultureEntries
   <section class="section culture-preview">
     <div class="container">
       <div class="section-header">
-        <h2>Culture chinoise en pratique</h2>
-        <p>Une progression linguistique plus solide quand les références culturelles deviennent concrètes.</p>
+        <h2>Chinese culture in practice</h2>
+        <p>Language progress gets stronger when cultural references become concrete.</p>
       </div>
       <div class="highlight-grid">
         {cultureHighlights.map((item) => (
@@ -195,8 +204,8 @@ const cultureHighlights = cultureEntries
         ))}
       </div>
       <div class="section-cta">
-        <a href="/culture" class="btn btn-primary btn-lg">
-          Explorer la section culture
+        <a href="/en/culture" class="btn btn-primary btn-lg">
+          Explore the culture section
           <span class="arrow">→</span>
         </a>
       </div>
@@ -337,6 +346,11 @@ const cultureHighlights = cultureEntries
 
   .feature-card h3 {
     margin-bottom: var(--spacing-xs);
+  }
+
+  .feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
   }
 
   .alt-bg {

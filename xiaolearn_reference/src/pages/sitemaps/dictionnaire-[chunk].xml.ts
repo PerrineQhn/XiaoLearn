@@ -26,12 +26,21 @@ export const GET: APIRoute = async ({ params, site }) => {
   }
 
   const base = getBaseUrl(site);
-  const xml = renderSitemapXml(
-    entries.map((entry) => ({
+  const urls = entries.flatMap((entry) => ([
+    {
       loc: toAbsoluteUrl(base, `/dictionnaire/${entry.id}`),
       changefreq: 'monthly' as const,
       priority: 0.7,
-    })),
+    },
+    {
+      loc: toAbsoluteUrl(base, `/en/dictionnaire/${entry.id}`),
+      changefreq: 'monthly' as const,
+      priority: 0.6,
+    },
+  ]));
+
+  const xml = renderSitemapXml(
+    urls,
   );
 
   return new Response(xml, {

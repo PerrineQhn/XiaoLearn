@@ -9,7 +9,9 @@ export const prerender = true;
 
 const STATIC_PATHS = [
   '/',
+  '/en',
   '/dictionnaire',
+  '/en/dictionnaire',
   '/dictionnaire/hsk1',
   '/dictionnaire/hsk2',
   '/dictionnaire/hsk3',
@@ -17,6 +19,9 @@ const STATIC_PATHS = [
   '/dictionnaire/hsk5',
   '/dictionnaire/hsk6',
   '/dictionnaire/hsk7',
+  '/en/grammaire',
+  '/en/nuances',
+  '/en/culture',
   '/grammaire',
   '/nuances',
   '/culture',

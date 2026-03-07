@@ -14,16 +14,20 @@ export const GET: APIRoute = async ({ site }) => {
   const urls = new Set<string>();
 
   urls.add(toAbsoluteUrl(base, '/grammaire'));
+  urls.add(toAbsoluteUrl(base, '/en/grammaire'));
   getGrammarPoints().forEach((point) => {
     urls.add(toAbsoluteUrl(base, `/grammaire/points/${point.id}`));
+    urls.add(toAbsoluteUrl(base, `/en/grammaire/points/${point.id}`));
   });
   getGrammarGroups().forEach((group) => {
     urls.add(toAbsoluteUrl(base, `/grammaire/groupes/${group.slug}`));
+    urls.add(toAbsoluteUrl(base, `/en/grammaire/groupes/${group.slug}`));
   });
 
   const grammarEditorial = await getCollection('grammaire');
   grammarEditorial.forEach((entry) => {
     urls.add(toAbsoluteUrl(base, `/grammaire/${entry.id}`));
+    urls.add(toAbsoluteUrl(base, `/en/grammaire/${entry.id}`));
   });
 
   const xml = renderSitemapXml(

@@ -1,4 +1,6 @@
 ---
+import { localizePath, type Locale } from '../utils/locale';
+
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -6,14 +8,17 @@ interface BreadcrumbItem {
 
 interface Props {
   items: BreadcrumbItem[];
+  locale?: Locale;
 }
 
-const { items } = Astro.props;
+const { items, locale = 'fr' } = Astro.props;
+const homeLabel = locale === 'en' ? 'Home' : 'Accueil';
+const ariaLabel = locale === 'en' ? 'Breadcrumb' : "Fil d'Ariane";
 ---
 
-<nav class="breadcrumb" aria-label="Fil d'Ariane">
-  <a href="/">Accueil</a>
-  {items.map((item, index) => (
+<nav class="breadcrumb" aria-label={ariaLabel}>
+  <a href={localizePath('/', locale)}>{homeLabel}</a>
+  {items.map((item) => (
     <>
       <span class="breadcrumb-separator">/</span>
       {item.href ? (

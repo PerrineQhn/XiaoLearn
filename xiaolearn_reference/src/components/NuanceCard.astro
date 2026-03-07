@@ -1,22 +1,30 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import HSKLevelBadge from './HSKLevelBadge.astro';
+import { localizePath, type Locale } from '../utils/locale';
+import { getNuanceCategoryLabelEn, getNuanceEntryEn } from '../utils/enContentTranslations';
 
 interface Props {
   entry: CollectionEntry<'nuances'>;
+  locale?: Locale;
 }
 
-const { entry } = Astro.props;
+const { entry, locale = 'fr' } = Astro.props;
 const { data, id } = entry;
+const translated = locale === 'en' ? getNuanceEntryEn(entry) : null;
+const summary = translated?.summary || data.summary;
+const categoryLabel = locale === 'en' ? getNuanceCategoryLabelEn(data.category) : data.category.replace(/-/g, ' ');
 const maxWordLength = data.words.reduce((max, word) => Math.max(max, word.length), 0);
 const totalWordLength = data.words.reduce((sum, word) => sum + word.length, 0);
 const hasLatinWord = data.words.some((word) => /[A-Za-z]/.test(word));
+const href = localizePath(`/nuances/${id}`, locale);
+const ctaLabel = locale === 'en' ? 'Understand the difference' : 'Comprendre la différence';
 ---
 
-<a href={`/nuances/${id}`} class="nuance-card">
+<a href={href} class="nuance-card">
   <div class="card-header">
     <HSKLevelBadge level={data.level} size="sm" />
-    <span class="category">{data.category.replace(/-/g, ' ')}</span>
+    <span class="category">{categoryLabel}</span>
   </div>
 
   <div class:list={[
@@ -42,10 +50,10 @@ const hasLatinWord = data.words.some((word) => /[A-Za-z]/.test(word));
     {data.pinyin.join(' / ')}
   </div>
 
-  <p class="card-summary">{data.summary}</p>
+  <p class="card-summary">{summary}</p>
 
   <div class="card-footer">
-    <span class="cta">Comprendre la différence</span>
+    <span class="cta">{ctaLabel}</span>
     <span class="arrow">→</span>
   </div>
 </a>

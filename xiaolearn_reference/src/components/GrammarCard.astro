@@ -1,19 +1,20 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import HSKLevelBadge from './HSKLevelBadge.astro';
+import { localizePath, type Locale } from '../utils/locale';
 
 interface Props {
   entry: CollectionEntry<'grammaire'>;
+  locale?: Locale;
 }
 
-const { entry } = Astro.props;
+const { entry, locale = 'fr' } = Astro.props;
 const { data, slug } = entry;
-
-// Extract level folder from slug (e.g., "hsk1/particule-de" -> "hsk1")
-const levelFolder = slug.split('/')[0];
+const href = localizePath(`/grammaire/${slug}`, locale);
+const difficultyLabel = locale === 'en' ? 'French source content' : data.difficulty;
 ---
 
-<a href={`/grammaire/${slug}`} class="grammar-card">
+<a href={href} class="grammar-card">
   <div class="card-header">
     <HSKLevelBadge level={data.level} size="sm" />
     <span class="category">{data.category.replace(/-/g, ' ')}</span>
@@ -23,7 +24,7 @@ const levelFolder = slug.split('/')[0];
   <p class="card-summary">{data.summary}</p>
 
   <div class="card-footer">
-    <span class="difficulty">{data.difficulty}</span>
+    <span class="difficulty">{difficultyLabel}</span>
     <span class="arrow">→</span>
   </div>
 </a>

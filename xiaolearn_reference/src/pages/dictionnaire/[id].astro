@@ -44,6 +44,7 @@ const entry = ENTRY_BY_ID.get(entryId);
 if (!entry) {
   throw new Error(`Unknown dictionary entry id: ${entryId}`);
 }
+const locale = 'fr';
 const levelInfo = getHSKLevelInfo(entry.level);
 const previousEntry = PREVIOUS_BY_ID.get(entry.id);
 const nextEntry = NEXT_BY_ID.get(entry.id);
@@ -72,7 +73,7 @@ const definedTermSchema = {
         { label: 'Dictionnaire', href: '/dictionnaire' },
         { label: levelInfo?.name || '', href: `/dictionnaire/${entry.level}` },
         { label: entry.hanzi }
-      ]} />
+      ]} locale={locale} />
     </div>
   </section>
 
@@ -87,7 +88,7 @@ const definedTermSchema = {
               <HSKLevelBadge level={entry.level} size="lg" />
             </div>
             <p class="pinyin">{entry.pinyin}</p>
-            <p class="translation">{entry.translationFr}</p>
+            <p class="translation">{entry.translationFr || entry.translationEn || entry.translation}</p>
           </header>
 
           {entry.translationFrAlt && entry.translationFrAlt.length > 0 && (
@@ -115,7 +116,7 @@ const definedTermSchema = {
                 <div class="example">
                   <p class="example-chinese">{example.chinese}</p>
                   <p class="example-pinyin">{example.pinyin}</p>
-                  <p class="example-translation">{example.translation}</p>
+                  <p class="example-translation">{example.translationFr || example.translationEn || example.translation}</p>
                 </div>
               ))}
             </div>
