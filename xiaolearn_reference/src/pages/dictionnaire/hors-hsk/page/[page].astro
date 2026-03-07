@@ -7,20 +7,28 @@ import CharacterCard from '../../../../components/CharacterCard.astro';
 import BackToTopButton from '../../../../components/BackToTopButton.astro';
 import { getHSKLevelInfo } from '../../../../types/hsk';
 import {
-  getHorsHskCount,
+  getHorsHskMeta,
   getHorsHskPage,
   getHorsHskPageCount,
 } from '../../../../utils/horsHskCatalog';
 
 const levelInfo = getHSKLevelInfo(8)!;
 const pageNumber = Number(Astro.params.page || 2);
-const totalPages = getHorsHskPageCount();
+const horsHskMeta = await getHorsHskMeta(Astro.url);
+const totalEntries = horsHskMeta.totalEntries;
+const totalPages = getHorsHskPageCount(totalEntries, horsHskMeta.pageSize);
 
 if (!Number.isInteger(pageNumber) || pageNumber < 2 || pageNumber > totalPages) {
   return Astro.redirect('/dictionnaire/hors-hsk', 302);
 }
 
-const entries = getHorsHskPage(pageNumber);
+const entries = await getHorsHskPage(
+  pageNumber,
+  Astro.url,
+  totalEntries,
+  horsHskMeta.chunkSize,
+  horsHskMeta.pageSize,
+);
 
 const previousPage = pageNumber > 1 ? pageNumber - 1 : undefined;
 const nextPage = pageNumber < totalPages ? pageNumber + 1 : undefined;
@@ -51,7 +59,7 @@ const visiblePages = Array.from(
         <span class="level-badge">{levelInfo.name}</span>
         <h1>Vocabulaire {levelInfo.name} - page {pageNumber}</h1>
         <p>
-          {getHorsHskCount().toLocaleString()} termes disponibles.
+          {totalEntries.toLocaleString()} termes disponibles.
         </p>
       </div>
     </div>

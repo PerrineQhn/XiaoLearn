@@ -4,6 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import DictionarySearch from '../../components/react/DictionarySearch';
 import { HSK_LEVELS } from '../../types/hsk';
 import type { HSKEntry } from '../../types/hsk';
+import { getHorsHskMeta } from '../../utils/horsHskCatalog';
 
 // Import all HSK data
 import hsk1Data from '../../data/hsk1.json';
@@ -13,7 +14,8 @@ import hsk4Data from '../../data/hsk4.json';
 import hsk5Data from '../../data/hsk5.json';
 import hsk6Data from '../../data/hsk6.json';
 import hsk7Data from '../../data/hsk7.json';
-import horsHskData from '../../data/hors-hsk.json';
+
+const horsHskMeta = await getHorsHskMeta(Astro.url);
 
 const allEntries: HSKEntry[] = [
   ...hsk1Data as HSKEntry[],
@@ -34,7 +36,7 @@ const stats = {
   hsk5: hsk5Data.length,
   hsk6: hsk6Data.length,
   hsk7: hsk7Data.length,
-  'hors-hsk': horsHskData.length,
+  'hors-hsk': horsHskMeta.totalEntries,
 };
 ---
 

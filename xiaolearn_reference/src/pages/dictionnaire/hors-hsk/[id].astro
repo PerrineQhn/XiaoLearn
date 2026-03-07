@@ -6,9 +6,11 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../../components/HSKLevelBadge.astro';
 import type { HSKEntry } from '../../../types/hsk';
 import { getHSKLevelInfo } from '../../../types/hsk';
+import { getHorsHskMeta } from '../../../utils/horsHskCatalog';
 
-const TOTAL_ENTRIES = 109709;
-const CHUNK_SIZE = 1000;
+const horsHskMeta = await getHorsHskMeta(Astro.url);
+const TOTAL_ENTRIES = horsHskMeta.totalEntries;
+const CHUNK_SIZE = horsHskMeta.chunkSize;
 
 const entryId = Astro.params.id ?? '';
 
