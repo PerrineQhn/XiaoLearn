@@ -5,9 +5,9 @@ import CharacterCard from '../../components/CharacterCard.astro';
 import type { HSKEntry } from '../../types/hsk';
 import { getHSKLevelInfo } from '../../types/hsk';
 
-import hskData from '../../data/hsk1.json';
+import { getHskLevelEntries } from '../../utils/hskCatalog';
 
-const entries = hskData as HSKEntry[];
+const entries = await getHskLevelEntries('hsk1', Astro.url);
 const levelInfo = getHSKLevelInfo(1)!;
 ---
 

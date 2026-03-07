@@ -2,48 +2,25 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../../components/HSKLevelBadge.astro';
-import type { HSKEntry } from '../../../types/hsk';
 import { getHSKLevelInfo } from '../../../types/hsk';
-import { ALL_HSK_ENTRIES } from '../../../data/allHskEntries';
+import { formatHskId, getHskEntryById } from '../../../utils/hskCatalog';
 
 export const prerender = false;
 
-const ENTRY_BY_ID = new Map<string, HSKEntry>();
-const PREVIOUS_BY_ID = new Map<string, HSKEntry>();
-const NEXT_BY_ID = new Map<string, HSKEntry>();
-const entriesByLevel = new Map<string, HSKEntry[]>();
-
-for (const entry of ALL_HSK_ENTRIES) {
-  ENTRY_BY_ID.set(entry.id, entry);
-  const bucket = entriesByLevel.get(entry.level);
-  if (bucket) {
-    bucket.push(entry);
-  } else {
-    entriesByLevel.set(entry.level, [entry]);
-  }
-}
-
-for (const levelEntries of entriesByLevel.values()) {
-  for (let index = 0; index < levelEntries.length; index += 1) {
-    const current = levelEntries[index];
-    if (index > 0) {
-      PREVIOUS_BY_ID.set(current.id, levelEntries[index - 1]);
-    }
-    if (index < levelEntries.length - 1) {
-      NEXT_BY_ID.set(current.id, levelEntries[index + 1]);
-    }
-  }
-}
-
 const entryId = Astro.params.id || '';
-const entry = ENTRY_BY_ID.get(entryId);
-if (!entry) {
+const resolvedEntry = await getHskEntryById(entryId, Astro.url);
+if (!resolvedEntry) {
   return Astro.redirect('/en/dictionnaire');
 }
+const entry = resolvedEntry.entry;
 
 const levelInfo = getHSKLevelInfo(entry.level);
-const previousEntry = PREVIOUS_BY_ID.get(entry.id);
-const nextEntry = NEXT_BY_ID.get(entry.id);
+const previousEntryId = resolvedEntry.index > 1 ? formatHskId(resolvedEntry.level, resolvedEntry.index - 1) : null;
+const nextEntryId = resolvedEntry.index < resolvedEntry.levelCount
+  ? formatHskId(resolvedEntry.level, resolvedEntry.index + 1)
+  : null;
+const previousEntry = previousEntryId ? await getHskEntryById(previousEntryId, Astro.url) : null;
+const nextEntry = nextEntryId ? await getHskEntryById(nextEntryId, Astro.url) : null;
 const translation = entry.translationEn || entry.translation || entry.translationFr;
 const explanation = entry.explanation || entry.explanationFr;
 const canonicalUrl = `https://xiaolearn.com/en/dictionnaire/${entry.id}`;
@@ -161,15 +138,15 @@ const definedTermSchema = {
               <h4>Navigation</h4>
               <div class="entry-nav">
                 {previousEntry && (
-                  <a href={`/en/dictionnaire/${previousEntry.id}`} class="entry-link">
+                  <a href={`/en/dictionnaire/${previousEntry.entry.id}`} class="entry-link">
                     <span class="entry-label">Previous</span>
-                    <span class="entry-value">{previousEntry.hanzi} · {previousEntry.pinyin}</span>
+                    <span class="entry-value">{previousEntry.entry.hanzi} · {previousEntry.entry.pinyin}</span>
                   </a>
                 )}
                 {nextEntry && (
-                  <a href={`/en/dictionnaire/${nextEntry.id}`} class="entry-link">
+                  <a href={`/en/dictionnaire/${nextEntry.entry.id}`} class="entry-link">
                     <span class="entry-label">Next</span>
-                    <span class="entry-value">{nextEntry.hanzi} · {nextEntry.pinyin}</span>
+                    <span class="entry-value">{nextEntry.entry.hanzi} · {nextEntry.entry.pinyin}</span>
                   </a>
                 )}
               </div>

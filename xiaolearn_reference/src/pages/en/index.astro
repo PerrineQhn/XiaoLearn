@@ -1,23 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DictionarySearch from '../../components/react/DictionarySearch';
-import type { HSKEntry } from '../../types/hsk';
 import { getCollection } from 'astro:content';
 import { getCultureEntryEn } from '../../utils/enContentTranslations';
 
-import hsk1Data from '../../data/hsk1.json';
-import hsk2Data from '../../data/hsk2.json';
-import hsk3Data from '../../data/hsk3.json';
-import hsk4Data from '../../data/hsk4.json';
-import hsk5Data from '../../data/hsk5.json';
-
-const allEntries: HSKEntry[] = [
-  ...hsk1Data as HSKEntry[],
-  ...hsk2Data as HSKEntry[],
-  ...hsk3Data as HSKEntry[],
-  ...hsk4Data as HSKEntry[],
-  ...hsk5Data as HSKEntry[],
-];
+export const prerender = true;
 
 function getNextFestivalDistance(monthStart: number, fromMonth: number): number {
   if (monthStart < 1 || monthStart > 12) return 99;
@@ -87,7 +74,7 @@ const cultureHighlights = cultureEntries
           <p>Enter hanzi, pinyin or an English word.</p>
           <DictionarySearch
             client:load
-            entries={allEntries}
+            entriesUrl="/data/hsk/all.json"
             maxResults={8}
             showLevelFilters={false}
             hideResultsUntilQuery={true}

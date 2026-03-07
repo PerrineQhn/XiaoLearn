@@ -6,6 +6,8 @@ import {
   getDictionaryIndexPageCount,
 } from '../../../utils/dictionaryCatalog';
 
+export const prerender = true;
+
 export function getStaticPaths() {
   const totalPages = getDictionaryIndexPageCount();
   return Array.from({ length: totalPages }, (_, index) => ({

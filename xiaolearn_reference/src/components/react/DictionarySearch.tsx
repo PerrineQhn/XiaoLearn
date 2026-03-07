@@ -4,7 +4,8 @@ import { searchEntries, filterByLevel } from '../../utils/search';
 import type { Locale } from '../../utils/locale';
 
 interface Props {
-  entries: HSKEntry[];
+  entries?: HSKEntry[];
+  entriesUrl?: string;
   initialLevel?: string;
   initialQuery?: string;
   maxResults?: number;
@@ -16,7 +17,8 @@ interface Props {
 }
 
 export default function DictionarySearch({
-  entries,
+  entries = [],
+  entriesUrl,
   initialLevel,
   initialQuery,
   maxResults = 50,
@@ -28,7 +30,43 @@ export default function DictionarySearch({
 }: Props) {
   const [query, setQuery] = useState(initialQuery || '');
   const [selectedLevel, setSelectedLevel] = useState<string | null>(initialLevel || null);
+  const [sourceEntries, setSourceEntries] = useState<HSKEntry[]>(entries);
+  const [isLoadingEntries, setIsLoadingEntries] = useState<boolean>(Boolean(entriesUrl && entries.length === 0));
   const copy = locale === 'en' ? EN_COPY : FR_COPY;
+
+  useEffect(() => {
+    setSourceEntries(entries);
+  }, [entries]);
+
+  useEffect(() => {
+    if (!entriesUrl || entries.length > 0) {
+      setIsLoadingEntries(false);
+      return;
+    }
+
+    let isActive = true;
+    setIsLoadingEntries(true);
+
+    fetch(entriesUrl)
+      .then(async (response) => {
+        if (!response.ok) return [];
+        return (await response.json()) as HSKEntry[];
+      })
+      .then((remoteEntries) => {
+        if (!isActive || !Array.isArray(remoteEntries)) return;
+        setSourceEntries(remoteEntries);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (isActive) {
+          setIsLoadingEntries(false);
+        }
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [entries.length, entriesUrl]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -49,7 +87,7 @@ export default function DictionarySearch({
       return [];
     }
 
-    let result = entries;
+    let result = sourceEntries;
 
     if (selectedLevel) {
       result = filterByLevel(result, selectedLevel);
@@ -60,16 +98,19 @@ export default function DictionarySearch({
     }
 
     return result.slice(0, maxResults);
-  }, [entries, query, selectedLevel, maxResults, hideResultsUntilQuery]);
+  }, [sourceEntries, query, selectedLevel, maxResults, hideResultsUntilQuery]);
   const showInitialEmptyState = hideResultsUntilQuery && !query.trim();
 
   const levels = useMemo(
-    () => Array.from(new Set(entries.map((entry) => entry.level))).sort(),
-    [entries],
+    () => Array.from(new Set(sourceEntries.map((entry) => entry.level))).sort(),
+    [sourceEntries],
   );
 
   return (
     <div className="dictionary-search">
+      {isLoadingEntries && sourceEntries.length === 0 && (
+        <div className="search-results-info">{copy.loadingEntries}</div>
+      )}
       <div className="search-controls">
         <div className="search-input-wrapper">
           <input
@@ -119,7 +160,12 @@ export default function DictionarySearch({
       </div>
 
       <div className="search-results">
-        {filteredEntries.length === 0 && showInitialEmptyState ? (
+        {isLoadingEntries && sourceEntries.length === 0 ? (
+          <div className="no-results">
+            <span className="no-results-icon">汉</span>
+            <p>{copy.loadingEntries}</p>
+          </div>
+        ) : filteredEntries.length === 0 && showInitialEmptyState ? (
           <div className={`no-results ${heroMode ? 'hero-empty' : ''}`}>
             <span className="no-results-icon">汉</span>
             <p>{copy.startTyping}</p>
@@ -166,6 +212,7 @@ const FR_COPY = {
   examplesHint: 'Exemples : 学, xue, etudier',
   noResults: (query: string) => `Aucun resultat pour "${query}"`,
   noResultsHint: 'Essayez avec un autre terme ou modifiez les filtres.',
+  loadingEntries: 'Chargement du dictionnaire...',
 };
 
 const EN_COPY = {
@@ -178,4 +225,5 @@ const EN_COPY = {
   examplesHint: 'Examples: 学, xue, study',
   noResults: (query: string) => `No results for "${query}"`,
   noResultsHint: 'Try a different term or change the filters.',
+  loadingEntries: 'Loading dictionary entries...',
 };

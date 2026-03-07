@@ -3,38 +3,23 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import DictionarySearch from '../../../components/react/DictionarySearch';
 import { HSK_LEVELS } from '../../../types/hsk';
-import type { HSKEntry } from '../../../types/hsk';
 import { getHorsHskMeta } from '../../../utils/horsHskCatalog';
+import { getHskMeta } from '../../../utils/hskCatalog';
 
-import hsk1Data from '../../../data/hsk1.json';
-import hsk2Data from '../../../data/hsk2.json';
-import hsk3Data from '../../../data/hsk3.json';
-import hsk4Data from '../../../data/hsk4.json';
-import hsk5Data from '../../../data/hsk5.json';
-import hsk6Data from '../../../data/hsk6.json';
-import hsk7Data from '../../../data/hsk7.json';
+export const prerender = true;
 
 const horsHskMeta = await getHorsHskMeta(Astro.url);
-
-const allEntries: HSKEntry[] = [
-  ...hsk1Data as HSKEntry[],
-  ...hsk2Data as HSKEntry[],
-  ...hsk3Data as HSKEntry[],
-  ...hsk4Data as HSKEntry[],
-  ...hsk5Data as HSKEntry[],
-  ...hsk6Data as HSKEntry[],
-  ...hsk7Data as HSKEntry[],
-];
+const hskMeta = await getHskMeta(Astro.url);
 
 const stats = {
-  total: allEntries.length,
-  hsk1: hsk1Data.length,
-  hsk2: hsk2Data.length,
-  hsk3: hsk3Data.length,
-  hsk4: hsk4Data.length,
-  hsk5: hsk5Data.length,
-  hsk6: hsk6Data.length,
-  hsk7: hsk7Data.length,
+  total: Object.values(hskMeta.levels).reduce((sum, count) => sum + count, 0),
+  hsk1: hskMeta.levels.hsk1,
+  hsk2: hskMeta.levels.hsk2,
+  hsk3: hskMeta.levels.hsk3,
+  hsk4: hskMeta.levels.hsk4,
+  hsk5: hskMeta.levels.hsk5,
+  hsk6: hskMeta.levels.hsk6,
+  hsk7: hskMeta.levels.hsk7,
   'hors-hsk': horsHskMeta.totalEntries,
 };
 ---
@@ -90,7 +75,7 @@ const stats = {
       <div class="search-section">
         <DictionarySearch
           client:load
-          entries={allEntries}
+          entriesUrl="/data/hsk/all.json"
           locale="en"
           resultBasePath="/en/dictionnaire"
         />

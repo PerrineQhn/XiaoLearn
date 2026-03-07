@@ -3,6 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { getDictionaryIndexPageCount } from '../../../utils/dictionaryCatalog';
 
+export const prerender = true;
+
 const totalPages = getDictionaryIndexPageCount();
 ---
 
