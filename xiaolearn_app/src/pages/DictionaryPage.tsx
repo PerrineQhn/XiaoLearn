@@ -1,16 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
-import { getAllLessons, getAllLessonsIncludingHorsHsk } from '../data/lessons';
-import type { LessonItem } from '../types';
+import { FormEvent, useMemo, useState } from 'react';
 import type { Language } from '../i18n';
-import AudioButton from '../components/AudioButton';
-import LevelBadge from '../components/LevelBadge';
 import type { CustomList } from '../hooks/useCustomLists';
-import {
-  calculateRelevanceScore,
-  addToSearchHistory,
-  getSearchHistory,
-  clearSearchHistory
-} from '../utils/searchUtils';
+import { translateFrZh, type TranslationDirection, type TranslationRegister, type TranslationResult } from '../services/translationService';
 
 interface DictionaryPageProps {
   copy: Record<string, string>;
@@ -20,450 +11,262 @@ interface DictionaryPageProps {
   onAddWordToList: (listId: string, lessonId: string) => void;
 }
 
-const levelFilters = ['all', 'hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'] as const;
-type LevelFilter = (typeof levelFilters)[number];
+const EXAMPLES_FR_TO_ZH = [
+  'Je voudrais réserver une table pour deux personnes.',
+  'Pouvez-vous parler un peu moins vite, s il vous plaît ?',
+  'Je dois prendre le métro ligne 2.'
+];
 
-const searchTypeFilters = ['all', 'hanzi', 'pinyin', 'fr', 'en'] as const;
-type SearchTypeFilter = (typeof searchTypeFilters)[number];
+const EXAMPLES_ZH_TO_FR = [
+  '我想换一间安静一点的房间。',
+  '请问，这附近有地铁站吗？',
+  '这个表达听起来太正式了吗？'
+];
 
-function DictionaryPage({ copy, language, customLists, onCreateList, onAddWordToList }: DictionaryPageProps) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedEntry, setSelectedEntry] = useState<LessonItem | null>(null);
-  const [levelFilter, setLevelFilter] = useState<LevelFilter>('all');
-  const [searchTypeFilter, setSearchTypeFilter] = useState<SearchTypeFilter>('all');
-  const [selectedListId, setSelectedListId] = useState<string>('');
-  const [listMessage, setListMessage] = useState('');
-  const [newListName, setNewListName] = useState('');
-  const [listPickerOpen, setListPickerOpen] = useState(false);
-  const [searchHistory, setSearchHistory] = useState<string[]>([]);
-  const [showHistory, setShowHistory] = useState(false);
-  const [allLessons, setAllLessons] = useState<LessonItem[]>(() => getAllLessons());
-  const trimmedQuery = searchQuery.trim();
-  const hasSearch = trimmedQuery.length > 0;
-  const totalWords = allLessons.length;
+function DictionaryPage({ language }: DictionaryPageProps) {
+  const [direction, setDirection] = useState<TranslationDirection>('fr-zh');
+  const [register, setRegister] = useState<TranslationRegister>('neutral');
+  const [sourceText, setSourceText] = useState('');
+  const [result, setResult] = useState<TranslationResult | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  // Load search history on mount
-  useEffect(() => {
-    setSearchHistory(getSearchHistory());
-  }, []);
+  const uiCopy = useMemo(
+    () =>
+      language === 'fr'
+        ? {
+            title: 'Traduction FR ↔ Chinois',
+            subtitle: 'Moteur de traduction de phrases complètes, spécialisé mandarin.',
+            sourceLabel: 'Texte à traduire',
+            sourcePlaceholderFr: 'Ex: Demain je vais arriver vers 18h, garde-moi une place près de la fenêtre.',
+            sourcePlaceholderZh: '例：明天我大概六点到，请帮我留一个靠窗的位置。',
+            directionFrZh: 'Français → Chinois',
+            directionZhFr: 'Chinois → Français',
+            registerLabel: 'Registre',
+            regNeutral: 'Neutre',
+            regFormal: 'Formel',
+            regCasual: 'Familier',
+            translate: 'Traduire',
+            translating: 'Traduction...',
+            swap: 'Inverser',
+            examplesLabel: 'Exemples rapides',
+            outputTitle: 'Résultat',
+            outputPlaceholder: 'Le résultat de traduction apparaîtra ici.',
+            pinyin: 'Pinyin',
+            alternatives: 'Variantes naturelles',
+            notes: 'Notes linguistiques',
+            technicalInfo: 'Moteur IA',
+            emptyError: 'Ajoute une phrase avant de lancer la traduction.'
+          }
+        : {
+            title: 'FR ↔ Chinese Translation',
+            subtitle: 'Sentence-level translation engine specialized for Mandarin.',
+            sourceLabel: 'Text to translate',
+            sourcePlaceholderFr: 'Ex: I will arrive around 6 PM tomorrow, please keep me a seat by the window.',
+            sourcePlaceholderZh: 'Ex: 明天我大概六点到，请帮我留一个靠窗的位置。',
+            directionFrZh: 'French → Chinese',
+            directionZhFr: 'Chinese → French',
+            registerLabel: 'Register',
+            regNeutral: 'Neutral',
+            regFormal: 'Formal',
+            regCasual: 'Casual',
+            translate: 'Translate',
+            translating: 'Translating...',
+            swap: 'Swap',
+            examplesLabel: 'Quick examples',
+            outputTitle: 'Result',
+            outputPlaceholder: 'The translation result will appear here.',
+            pinyin: 'Pinyin',
+            alternatives: 'Natural alternatives',
+            notes: 'Language notes',
+            technicalInfo: 'AI engine',
+            emptyError: 'Please add a sentence before translating.'
+          },
+    [language]
+  );
 
-  useEffect(() => {
-    let active = true;
-    getAllLessonsIncludingHorsHsk()
-      .then((lessons) => {
-        if (active) setAllLessons(lessons);
-      })
-      .catch((error) => {
-        console.warn('Impossible de charger hors-hsk pour le dictionnaire', error);
+  const sourcePlaceholder = direction === 'fr-zh' ? uiCopy.sourcePlaceholderFr : uiCopy.sourcePlaceholderZh;
+  const examples = direction === 'fr-zh' ? EXAMPLES_FR_TO_ZH : EXAMPLES_ZH_TO_FR;
+
+  const handleSwapDirection = () => {
+    setDirection((prev) => (prev === 'fr-zh' ? 'zh-fr' : 'fr-zh'));
+    if (result?.translation) {
+      setSourceText(result.translation);
+      setResult(null);
+    }
+    setError('');
+  };
+
+  const handleTranslate = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const cleanInput = sourceText.trim();
+    if (!cleanInput) {
+      setError(uiCopy.emptyError);
+      return;
+    }
+
+    setError('');
+    setIsLoading(true);
+    try {
+      const translated = await translateFrZh({
+        text: cleanInput,
+        direction,
+        register,
+        uiLanguage: language
       });
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  // Recherche intelligente avec tri par pertinence et fuzzy matching
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-
-    const query = searchQuery.trim();
-    let filtered = allLessons;
-    if (levelFilter !== 'all') {
-      filtered = filtered.filter((lesson) => lesson.level === levelFilter);
+      setResult(translated);
+    } catch (translationError) {
+      const message = translationError instanceof Error ? translationError.message : '';
+      setError(
+        message ||
+          (language === 'fr'
+            ? 'Impossible de générer la traduction pour le moment.'
+            : 'Unable to generate translation right now.')
+      );
+      setResult(null);
+    } finally {
+      setIsLoading(false);
     }
-
-    // Calculate relevance score for each lesson based on search type filter
-    const scoredResults = filtered
-      .map((lesson) => {
-        let score = 0;
-
-        // Apply search based on selected type
-        if (searchTypeFilter === 'all') {
-          // Search in all fields
-          const result = calculateRelevanceScore(
-            query,
-            lesson.hanzi,
-            lesson.pinyin,
-            lesson.translation,
-            lesson.translationFr
-          );
-          score = result.score;
-        } else if (searchTypeFilter === 'hanzi') {
-          // Search only in hanzi
-          const result = calculateRelevanceScore(query, lesson.hanzi, '', '', '');
-          score = result.score;
-        } else if (searchTypeFilter === 'pinyin') {
-          // Search only in pinyin
-          const result = calculateRelevanceScore(query, '', lesson.pinyin, '', '');
-          score = result.score;
-        } else if (searchTypeFilter === 'fr') {
-          // Search only in French translation
-          const result = calculateRelevanceScore(query, '', '', '', lesson.translationFr);
-          score = result.score;
-        } else if (searchTypeFilter === 'en') {
-          // Search only in English translation
-          const result = calculateRelevanceScore(query, '', '', lesson.translation, '');
-          score = result.score;
-        }
-
-        return { lesson, score };
-      })
-      .filter(({ score }) => score > 0)
-      .sort((a, b) => b.score - a.score) // Sort by relevance (highest first)
-      .slice(0, 100) // Increased limit from 50 to 100
-      .map(({ lesson }) => lesson);
-
-    return scoredResults;
-  }, [searchQuery, allLessons, levelFilter, searchTypeFilter]);
-
-  useEffect(() => {
-    if (!selectedListId && customLists.length > 0) {
-      setSelectedListId(customLists[0].id);
-    } else if (selectedListId && !customLists.some((list) => list.id === selectedListId)) {
-      setSelectedListId(customLists[0]?.id ?? '');
-    }
-    if (customLists.length === 0) {
-      setListPickerOpen(false);
-    }
-  }, [customLists, selectedListId]);
-
-  useEffect(() => {
-    setListMessage('');
-  }, [selectedEntry, selectedListId]);
-
-  const handleAddToList = () => {
-    if (!selectedEntry || !selectedListId) return;
-    onAddWordToList(selectedListId, selectedEntry.id);
-    const listName = customLists.find((list) => list.id === selectedListId)?.name ?? '';
-    setListMessage(
-      language === 'fr' ? `Ajouté à ${listName || 'la liste'}` : `Added to ${listName || 'list'}`
-    );
-    setTimeout(() => setListMessage(''), 2000);
-  };
-
-  const handleCreateList = () => {
-    if (!newListName.trim()) return;
-    const created = onCreateList(newListName.trim());
-    if (created) {
-      setSelectedListId(created.id);
-      setNewListName('');
-      setListPickerOpen(true);
-      setListMessage(language === 'fr' ? 'Liste créée' : 'List created');
-      setTimeout(() => setListMessage(''), 2000);
-    }
-  };
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    setShowHistory(false);
-    if (query.trim()) {
-      addToSearchHistory(query.trim());
-      setSearchHistory(getSearchHistory());
-    }
-  };
-
-  const handleSelectFromHistory = (query: string) => {
-    setSearchQuery(query);
-    setShowHistory(false);
-  };
-
-  const handleClearHistory = () => {
-    clearSearchHistory();
-    setSearchHistory([]);
   };
 
   return (
     <div className="dictionary-page">
       <div className="dictionary-header">
-        <h2>{copy.dictionaryTitle || 'Dictionnaire'}</h2>
-        <p className="dictionary-subtitle">
-          {copy.dictionarySubtitle || 'Recherchez par caractère, pinyin ou traduction'}
-        </p>
+        <h2>{uiCopy.title}</h2>
+        <p className="dictionary-subtitle">{uiCopy.subtitle}</p>
       </div>
 
-      <div className="dictionary-search">
-        <div className="dictionary-search-box">
-          <input
-            type="text"
-            placeholder={copy.searchPlaceholder || 'Rechercher...'}
-            value={searchQuery}
-            onChange={(e) => handleSearch(e.target.value)}
-            onFocus={() => setShowHistory(true)}
-            onBlur={() => setTimeout(() => setShowHistory(false), 200)}
-            className="dictionary-search-input"
-            autoFocus
-          />
-          {searchQuery && (
-            <button
-              type="button"
-              className="dictionary-clear-btn"
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedEntry(null);
-              }}
-            >
-              ✕
-            </button>
-          )}
-          {showHistory && !searchQuery && searchHistory.length > 0 && (
-            <div className="search-history-dropdown">
-              <div className="search-history-header">
-                <span>{language === 'fr' ? 'Recherches récentes' : 'Recent searches'}</span>
-                <button
-                  type="button"
-                  className="search-history-clear"
-                  onClick={handleClearHistory}
-                >
-                  {language === 'fr' ? 'Effacer' : 'Clear'}
-                </button>
-              </div>
-              {searchHistory.map((query, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  className="search-history-item"
-                  onClick={() => handleSelectFromHistory(query)}
-                >
-                  <span>🕐</span>
-                  <span>{query}</span>
-                </button>
-              ))}
-            </div>
-          )}
+      <form className="translation-engine-panel" onSubmit={handleTranslate}>
+        <div className="translation-direction-row">
+          <button
+            type="button"
+            className={`translation-direction-btn ${direction === 'fr-zh' ? 'active' : ''}`}
+            onClick={() => setDirection('fr-zh')}
+          >
+            {uiCopy.directionFrZh}
+          </button>
+          <button
+            type="button"
+            className={`translation-direction-btn ${direction === 'zh-fr' ? 'active' : ''}`}
+            onClick={() => setDirection('zh-fr')}
+          >
+            {uiCopy.directionZhFr}
+          </button>
+          <button type="button" className="translation-swap-btn" onClick={handleSwapDirection}>
+            ⇄ {uiCopy.swap}
+          </button>
         </div>
 
-        <div className="dictionary-filter-group">
-          <label className="filter-label">
-            {language === 'fr' ? 'Type de recherche' : 'Search type'}
-          </label>
-          <div className="dictionary-search-type-filters">
-            {searchTypeFilters.map((type) => {
-              const labels: Record<SearchTypeFilter, { fr: string; en: string }> = {
-                all: { fr: 'Tout', en: 'All' },
-                hanzi: { fr: '汉字 Caractères', en: '汉字 Hanzi' },
-                pinyin: { fr: 'Pinyin', en: 'Pinyin' },
-                fr: { fr: 'Français', en: 'French' },
-                en: { fr: 'Anglais', en: 'English' }
-              };
-              return (
-                <button
-                  key={type}
-                  type="button"
-                  className={`search-type-chip ${searchTypeFilter === type ? 'active' : ''}`}
-                  onClick={() => setSearchTypeFilter(type)}
-                >
-                  {language === 'fr' ? labels[type].fr : labels[type].en}
-                </button>
-              );
-            })}
+        <label className="translation-source-label" htmlFor="translation-source">
+          {uiCopy.sourceLabel}
+        </label>
+        <textarea
+          id="translation-source"
+          className="translation-source-input"
+          value={sourceText}
+          onChange={(event) => setSourceText(event.target.value)}
+          placeholder={sourcePlaceholder}
+          rows={5}
+        />
+
+        <div className="translation-register-row">
+          <span>{uiCopy.registerLabel}</span>
+          <div className="translation-register-buttons">
+            <button
+              type="button"
+              className={`search-type-chip ${register === 'neutral' ? 'active' : ''}`}
+              onClick={() => setRegister('neutral')}
+            >
+              {uiCopy.regNeutral}
+            </button>
+            <button
+              type="button"
+              className={`search-type-chip ${register === 'formal' ? 'active' : ''}`}
+              onClick={() => setRegister('formal')}
+            >
+              {uiCopy.regFormal}
+            </button>
+            <button
+              type="button"
+              className={`search-type-chip ${register === 'casual' ? 'active' : ''}`}
+              onClick={() => setRegister('casual')}
+            >
+              {uiCopy.regCasual}
+            </button>
           </div>
         </div>
 
-        <div className="dictionary-filter-group">
-          <label className="filter-label">
-            {language === 'fr' ? 'Niveau HSK' : 'HSK Level'}
-          </label>
-          <div className="dictionary-level-filters">
-            {levelFilters.map((level) => (
+        <div className="translation-actions">
+          <button type="submit" className="btn-primary" disabled={isLoading}>
+            {isLoading ? uiCopy.translating : uiCopy.translate}
+          </button>
+        </div>
+
+        <div className="translation-examples">
+          <p>{uiCopy.examplesLabel}</p>
+          <div className="translation-example-list">
+            {examples.map((example) => (
               <button
-                key={level}
+                key={example}
                 type="button"
-                className={`level-chip ${levelFilter === level ? 'active' : ''}`}
-                onClick={() => setLevelFilter(level)}
+                className="translation-example-btn"
+                onClick={() => setSourceText(example)}
               >
-                {level === 'all' ? (language === 'fr' ? 'Tous' : 'All') : level.toUpperCase()}
+                {example}
               </button>
             ))}
           </div>
         </div>
-      </div>
+      </form>
 
-      {!hasSearch && (
-        <div className="dictionary-tip">
-          <div className="tip-icon">💡</div>
-          <div>
-            <p className="tip-title">{copy.dictionaryHint || 'Commencez à taper pour rechercher'}</p>
-            <p className="tip-subtitle">
-              {totalWords.toLocaleString()} {copy.dictionaryTotal || 'mots disponibles'}
+      <section className="translation-result-panel">
+        <h3>{uiCopy.outputTitle}</h3>
+        {error && <p className="support-error-message">{error}</p>}
+
+        {!result && !error && <p className="dictionary-placeholder">{uiCopy.outputPlaceholder}</p>}
+
+        {result && (
+          <div className="translation-result-content">
+            <p className="translation-main-output">{result.translation}</p>
+
+            {result.pinyin && (
+              <div className="detail-section">
+                <div className="detail-label">{uiCopy.pinyin}</div>
+                <div className="detail-value">{result.pinyin}</div>
+              </div>
+            )}
+
+            {result.alternatives.length > 0 && (
+              <div className="detail-section">
+                <div className="detail-label">{uiCopy.alternatives}</div>
+                <ul className="translation-result-list">
+                  {result.alternatives.map((alt, idx) => (
+                    <li key={`${alt}-${idx}`}>{alt}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {result.notes.length > 0 && (
+              <div className="detail-section">
+                <div className="detail-label">{uiCopy.notes}</div>
+                <ul className="translation-result-list">
+                  {result.notes.map((note, idx) => (
+                    <li key={`${note}-${idx}`}>{note}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <p className="translation-engine-meta">
+              {uiCopy.technicalInfo}: <strong>{result.modelUsed}</strong>
             </p>
           </div>
-        </div>
-      )}
-
-      <div className="dictionary-content">
-        {/* Liste des résultats */}
-        <div className="dictionary-results">
-          {hasSearch && searchResults.length === 0 && (
-            <div className="dictionary-empty">
-              <p>🔍 {copy.noResults || 'Aucun résultat trouvé'}</p>
-            </div>
-          )}
-
-          {!hasSearch && (
-            <div className="dictionary-placeholder">
-              {copy.dictionaryHint || 'Aucun résultat trouvé. Commencez à taper pour rechercher.'}
-            </div>
-          )}
-
-          {searchResults.map((lesson) => (
-            <button
-              key={lesson.id}
-              type="button"
-              className={`dictionary-result-item ${selectedEntry?.id === lesson.id ? 'active' : ''}`}
-              onClick={() => setSelectedEntry(lesson)}
-            >
-              <div className="result-hanzi">{lesson.hanzi}</div>
-              <div className="result-details">
-                <div className="result-pinyin">{lesson.pinyin}</div>
-                <div className="result-translation">
-                  {language === 'fr' ? lesson.translationFr : lesson.translation}
-                </div>
-              </div>
-              <div className="result-level">
-                <LevelBadge level={lesson.level} />
-              </div>
-            </button>
-          ))}
-        </div>
-
-        {/* Détails de l'entrée sélectionnée */}
-        {selectedEntry && (
-          <div className="dictionary-detail">
-              <div className="detail-header">
-              <div className="detail-hanzi-large">{selectedEntry.hanzi}</div>
-              <AudioButton src={`/${selectedEntry.audio}`} />
-            </div>
-
-            <div className="detail-section">
-              <div className="detail-label">{copy.pinyin || 'Pinyin'}</div>
-              <div className="detail-value">{selectedEntry.pinyin}</div>
-            </div>
-
-            <div className="detail-section">
-              <div className="detail-label">{copy.translation || 'Traduction'}</div>
-              <div className="detail-value">
-                {language === 'fr' ? selectedEntry.translationFr : selectedEntry.translation}
-              </div>
-            </div>
-
-            <div className="detail-section">
-              <div className="detail-label">
-                {language === 'fr' ? 'Listes personnalisées' : 'Custom lists'}
-              </div>
-              <button
-                type="button"
-                className="btn-secondary"
-                onClick={() => {
-                  setListPickerOpen((prev) => !prev);
-                  if (!listPickerOpen && customLists.length > 0) {
-                    setSelectedListId(customLists[0].id);
-                  }
-                }}
-                disabled={!selectedEntry}
-              >
-                {language === 'fr' ? 'Ajouter à une liste' : 'Add to list'}
-              </button>
-              {listPickerOpen && (
-                <div className="list-picker-panel compact">
-                  {customLists.length === 0 ? (
-                    <p className="list-empty-hint">
-                      {language === 'fr'
-                        ? 'Créez une liste puis réessayez.'
-                        : 'Create a list then try again.'}
-                    </p>
-                  ) : (
-                    <div className="list-manager">
-                      <select value={selectedListId} onChange={(event) => setSelectedListId(event.target.value)}>
-                        <option value="">{language === 'fr' ? 'Choisir une liste' : 'Choose a list'}</option>
-                        {customLists.map((list) => (
-                          <option key={list.id} value={list.id}>
-                            {list.name} ({list.itemIds.length})
-                          </option>
-                        ))}
-                      </select>
-                      <button type="button" className="btn-primary" onClick={handleAddToList} disabled={!selectedListId}>
-                        {language === 'fr' ? 'Ajouter' : 'Add'}
-                      </button>
-                    </div>
-                  )}
-                  <div className="list-create">
-                    <input
-                      type="text"
-                      value={newListName}
-                      onChange={(event) => setNewListName(event.target.value)}
-                      placeholder={language === 'fr' ? 'Nom de la liste' : 'List name'}
-                    />
-                    <button type="button" className="btn-secondary" onClick={handleCreateList}>
-                      {language === 'fr' ? 'Créer' : 'Create'}
-                    </button>
-                  </div>
-                  {listMessage && <p className="list-feedback">{listMessage}</p>}
-                </div>
-              )}
-            </div>
-
-            {selectedEntry.explanation && (
-              <div className="detail-section">
-                <div className="detail-label">{copy.explanation || 'Explication'}</div>
-                <div className="detail-value detail-explanation">{selectedEntry.explanation}</div>
-              </div>
-            )}
-
-            <div className="detail-section">
-              <div className="detail-label">{copy.category || 'Catégorie'}</div>
-              <div className="detail-value">{selectedEntry.category}</div>
-            </div>
-
-            <div className="detail-section">
-              <div className="detail-label">{copy.level || 'Niveau'}</div>
-              <div className="detail-value">
-                <LevelBadge level={selectedEntry.level} />
-              </div>
-            </div>
-
-            {selectedEntry.tags && selectedEntry.tags.length > 0 && (
-              <div className="detail-section">
-                <div className="detail-label">{copy.tags || 'Tags'}</div>
-                <div className="detail-tags">
-                  {selectedEntry.tags.map((tag) => (
-                    <span key={tag} className="detail-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {selectedEntry.examples && selectedEntry.examples.length > 0 && (
-              <div className="detail-section">
-                <div className="detail-label">{copy.examples || 'Exemples'}</div>
-                <div className="detail-examples">
-                  {selectedEntry.examples.map((example, idx) => (
-                    <div key={idx} className="detail-example">
-                      <div>
-                        <div className="example-hanzi">{example.hanzi}</div>
-                        <div className="example-pinyin">{example.pinyin}</div>
-                        <div className="example-translation">
-                          {language === 'fr'
-                            ? example.translationFr || example.translation
-                            : example.translation || example.translationFr}
-                        </div>
-                      </div>
-                      {example.audio && (
-                        <AudioButton
-                          src={`/${example.audio}`}
-                          label={language === 'fr' ? 'Écouter' : 'Listen'}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         )}
-      </div>
+      </section>
     </div>
   );
 }
 
 export default DictionaryPage;
+

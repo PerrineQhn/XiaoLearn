@@ -21,9 +21,9 @@ import time
 import zipfile
 from pathlib import Path
 
-SOURCE_NOTETYPE_ID = 1769257547756
+SOURCE_NOTETYPE_ID = 1769257547757
 TARGET_NOTETYPE_ID = 1769257547757
-TARGET_NOTETYPE_NAME = "My Way v2"
+TARGET_NOTETYPE_NAME = "My Way"
 TARGET_DECK_ID = 1769259529782
 TARGET_DECK_NAME = "My Way v2 HQ"
 MY_WAY_FIELD_NAMES = [
@@ -395,11 +395,21 @@ def main() -> int:
         nt = con.execute("SELECT COUNT(*) FROM notetypes WHERE id = ?", (SOURCE_NOTETYPE_ID,)).fetchone()[0]
         if nt == 0:
             raise SystemExit(f"Notetype {SOURCE_NOTETYPE_ID} not found in template DB.")
-        # Create/refresh target note type from source so imports don't conflict with old local model.
+        # Read source data BEFORE any deletions (important when source == target).
         source_row = con.execute(
             "SELECT mtime_secs, usn, config FROM notetypes WHERE id = ?",
             (SOURCE_NOTETYPE_ID,),
         ).fetchone()
+        source_fields = con.execute(
+            "SELECT ord, name, config FROM fields WHERE ntid = ? ORDER BY ord",
+            (SOURCE_NOTETYPE_ID,),
+        ).fetchall()
+        source_templates = con.execute(
+            "SELECT ord, name, mtime_secs, usn, config FROM templates WHERE ntid = ? ORDER BY ord",
+            (SOURCE_NOTETYPE_ID,),
+        ).fetchall()
+
+        # Create/refresh target note type from source so imports don't conflict with old local model.
         tgt_exists = con.execute(
             "SELECT COUNT(*) FROM notetypes WHERE id = ?",
             (TARGET_NOTETYPE_ID,),
@@ -416,19 +426,11 @@ def main() -> int:
                 "INSERT INTO notetypes (id, name, mtime_secs, usn, config) VALUES (?, ?, ?, ?, ?)",
                 (TARGET_NOTETYPE_ID, TARGET_NOTETYPE_NAME, epoch_secs, 0, source_row[2]),
             )
-        source_fields = con.execute(
-            "SELECT ord, name, config FROM fields WHERE ntid = ? ORDER BY ord",
-            (SOURCE_NOTETYPE_ID,),
-        ).fetchall()
         for ord_, name, cfg in source_fields:
             con.execute(
                 "INSERT INTO fields (ntid, ord, name, config) VALUES (?, ?, ?, ?)",
                 (TARGET_NOTETYPE_ID, ord_, name, cfg),
             )
-        source_templates = con.execute(
-            "SELECT ord, name, mtime_secs, usn, config FROM templates WHERE ntid = ? ORDER BY ord",
-            (SOURCE_NOTETYPE_ID,),
-        ).fetchall()
         for ord_, name, mtime, usn, cfg in source_templates:
             con.execute(
                 "INSERT INTO templates (ntid, ord, name, mtime_secs, usn, config) VALUES (?, ?, ?, ?, ?, ?)",
@@ -469,17 +471,18 @@ def main() -> int:
                 (TARGET_NOTETYPE_ID, ord_, name, cfg),
             )
 
-        # Ensure each My Way card template explicitly renders {{Audio}}.
-        tpl_rows = con.execute(
-            "SELECT ord, config FROM templates WHERE ntid = ? ORDER BY ord",
-            (TARGET_NOTETYPE_ID,),
-        ).fetchall()
-        for ord_, cfg in tpl_rows:
-            patched = inject_audio_token_in_template_config(bytes(cfg))
-            if patched != bytes(cfg):
-                con.execute(
-                    "UPDATE templates SET config = ?, mtime_secs = ? WHERE ntid = ? AND ord = ?",
-                    (patched, epoch_secs, TARGET_NOTETYPE_ID, ord_),
+        # Ensure each My Way card template explicitly renders {{Audio}} (skip when --skip-audio).
+        if not args.skip_audio:
+            tpl_rows = con.execute(
+                "SELECT ord, config FROM templates WHERE ntid = ? ORDER BY ord",
+                (TARGET_NOTETYPE_ID,),
+            ).fetchall()
+            for ord_, cfg in tpl_rows:
+                patched = inject_audio_token_in_template_config(bytes(cfg))
+                if patched != bytes(cfg):
+                    con.execute(
+                        "UPDATE templates SET config = ?, mtime_secs = ? WHERE ntid = ? AND ord = ?",
+                        (patched, epoch_secs, TARGET_NOTETYPE_ID, ord_),
                 )
 
         # Reset study data and existing notes/cards.

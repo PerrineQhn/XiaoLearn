@@ -1,0 +1,306 @@
+{
+  "subtitle": {
+    "fr": "Apprends le chinois en voyageant",
+    "en": "Learn Chinese through travel"
+  },
+  "btn_new_game": {
+    "fr": "Nouvelle Partie",
+    "en": "New Game"
+  },
+  "btn_continue": {
+    "fr": "Continuer",
+    "en": "Continue"
+  },
+  "btn_settings": {
+    "fr": "Paramètres",
+    "en": "Settings"
+  },
+  "btn_credits": {
+    "fr": "Crédits",
+    "en": "Credits"
+  },
+  "btn_enter_region": {
+    "fr": "Entrer dans la région",
+    "en": "Enter region"
+  },
+  "btn_back": {
+    "fr": "Retour",
+    "en": "Back"
+  },
+  "btn_close": {
+    "fr": "Fermer",
+    "en": "Close"
+  },
+  "btn_next": {
+    "fr": "Suite ▶",
+    "en": "Next ▶"
+  },
+  "btn_skip": {
+    "fr": "Passer",
+    "en": "Skip"
+  },
+  "btn_listen": {
+    "fr": "🔊 Écouter",
+    "en": "🔊 Listen"
+  },
+  "world_map_title": {
+    "fr": "Carte de Chine",
+    "en": "Map of China"
+  },
+  "requires_hsk": {
+    "fr": "Requiert HSK",
+    "en": "Requires HSK"
+  },
+  "hsk_level_1": {
+    "fr": "HSK 1 — Débutant",
+    "en": "HSK 1 — Beginner"
+  },
+  "hsk_level_2": {
+    "fr": "HSK 2 — Élémentaire",
+    "en": "HSK 2 — Elementary"
+  },
+  "hsk_level_3": {
+    "fr": "HSK 3 — Intermédiaire",
+    "en": "HSK 3 — Intermediate"
+  },
+  "hsk_level_4": {
+    "fr": "HSK 4 — Avancé",
+    "en": "HSK 4 — Advanced"
+  },
+  "hsk_level_5": {
+    "fr": "HSK 5 — Expert",
+    "en": "HSK 5 — Expert"
+  },
+  "filter_all": {
+    "fr": "Tous",
+    "en": "All"
+  },
+  "word_count": {
+    "fr": "{count} mots appris",
+    "en": "{count} words learned"
+  },
+  "quiz_direction_cn_fr": {
+    "fr": "Chinois → Français",
+    "en": "Chinese → French"
+  },
+  "quiz_direction_fr_cn": {
+    "fr": "Français → Chinois",
+    "en": "French → Chinese"
+  },
+  "quiz_direction_pinyin_cn": {
+    "fr": "Pinyin → Chinois",
+    "en": "Pinyin → Chinese"
+  },
+  "quiz_correct": {
+    "fr": "Correct ! ✓",
+    "en": "Correct! ✓"
+  },
+  "quiz_wrong": {
+    "fr": "Pas tout à fait…",
+    "en": "Not quite…"
+  },
+  "quiz_title": {
+    "fr": "Quelle est la traduction ?",
+    "en": "What is the translation?"
+  },
+  "quest_new": {
+    "fr": "Nouvelle quête : {title}",
+    "en": "New quest: {title}"
+  },
+  "quest_objective_done": {
+    "fr": "Objectif accompli !",
+    "en": "Objective complete!"
+  },
+  "quest_complete": {
+    "fr": "Quête terminée : {title}",
+    "en": "Quest complete: {title}"
+  },
+  "word_new": {
+    "fr": "Nouveau mot",
+    "en": "New word"
+  },
+  "word_mastered": {
+    "fr": "Maîtrisé !",
+    "en": "Mastered!"
+  },
+  "word_state_new": {
+    "fr": "Nouveau",
+    "en": "New"
+  },
+  "word_state_seen": {
+    "fr": "Vu",
+    "en": "Seen"
+  },
+  "word_state_practiced": {
+    "fr": "Pratiqué",
+    "en": "Practiced"
+  },
+  "word_state_mastered": {
+    "fr": "Maîtrisé",
+    "en": "Mastered"
+  },
+  "hsk_unlocked": {
+    "fr": "HSK {level} déverrouillé !",
+    "en": "HSK {level} unlocked!"
+  },
+  "region_unlocked": {
+    "fr": "{region} déverrouillé !",
+    "en": "{region} unlocked!"
+  },
+  "hud_interact": {
+    "fr": "E\n交流",
+    "en": "E\nTalk"
+  },
+  "hud_notebook": {
+    "fr": "词典",
+    "en": "Vocab"
+  },
+  "settings_music": {
+    "fr": "Musique",
+    "en": "Music"
+  },
+  "settings_sfx": {
+    "fr": "Effets sonores",
+    "en": "Sound effects"
+  },
+  "settings_language": {
+    "fr": "Langue de l'interface",
+    "en": "Interface language"
+  },
+  "save_success": {
+    "fr": "Partie sauvegardée",
+    "en": "Game saved"
+  },
+  "save_failed": {
+    "fr": "Erreur lors de la sauvegarde",
+    "en": "Save error"
+  },
+  "load_success": {
+    "fr": "Partie chargée",
+    "en": "Game loaded"
+  },
+  "load_failed": {
+    "fr": "Impossible de charger la partie",
+    "en": "Cannot load game"
+  },
+  "confirm_new_game": {
+    "fr": "Commencer une nouvelle partie effacera votre progression. Continuer ?",
+    "en": "Starting a new game will erase your progress. Continue?"
+  },
+  "notebook_title": {
+    "fr": "词典 · Vocabulaire",
+    "en": "词典 · Vocabulary"
+  },
+  "notebook_search": {
+    "fr": "Rechercher…",
+    "en": "Search…"
+  },
+  "example_label": {
+    "fr": "Exemple :",
+    "en": "Example:"
+  },
+  "part_of_speech_noun": {
+    "fr": "Nom",
+    "en": "Noun"
+  },
+  "part_of_speech_verb": {
+    "fr": "Verbe",
+    "en": "Verb"
+  },
+  "part_of_speech_adj": {
+    "fr": "Adjectif",
+    "en": "Adjective"
+  },
+  "part_of_speech_adv": {
+    "fr": "Adverbe",
+    "en": "Adverb"
+  },
+  "part_of_speech_particle": {
+    "fr": "Particule",
+    "en": "Particle"
+  },
+  "part_of_speech_pronoun": {
+    "fr": "Pronom",
+    "en": "Pronoun"
+  },
+  "part_of_speech_numeral": {
+    "fr": "Numéral",
+    "en": "Numeral"
+  },
+  "part_of_speech_interjection": {
+    "fr": "Interjection",
+    "en": "Interjection"
+  },
+  "region_beijing_title": {
+    "fr": "北京 · Pékin",
+    "en": "北京 · Beijing"
+  },
+  "region_shanghai_title": {
+    "fr": "上海 · Shanghai",
+    "en": "上海 · Shanghai"
+  },
+  "region_xian_title": {
+    "fr": "西安 · Xi'an",
+    "en": "西安 · Xi'an"
+  },
+  "region_chengdu_title": {
+    "fr": "成都 · Chengdu",
+    "en": "成都 · Chengdu"
+  },
+  "region_guilin_title": {
+    "fr": "桂林 · Guilin",
+    "en": "桂林 · Guilin"
+  },
+  "locked_region_hint": {
+    "fr": "Atteignez HSK {level} pour débloquer cette région !",
+    "en": "Reach HSK {level} to unlock this region!"
+  },
+  "progress_label": {
+    "fr": "Progression HSK{level} : {percent}%",
+    "en": "HSK{level} progress: {percent}%"
+  },
+  "total_words_seen": {
+    "fr": "Mots découverts : {count}",
+    "en": "Words discovered: {count}"
+  },
+  "credits_title": {
+    "fr": "Crédits",
+    "en": "Credits"
+  },
+  "name_input_prompt": {
+    "fr": "Votre nom de voyageur :",
+    "en": "Your traveler's name:"
+  },
+  "name_placeholder": {
+    "fr": "Voyageur",
+    "en": "Traveler"
+  },
+  "start_adventure": {
+    "fr": "Commencer l'aventure",
+    "en": "Start the adventure"
+  },
+  "cancel": {
+    "fr": "Annuler",
+    "en": "Cancel"
+  },
+  "tone_1_name": {
+    "fr": "Ton plat (1er ton)",
+    "en": "Flat tone (1st tone)"
+  },
+  "tone_2_name": {
+    "fr": "Ton montant (2e ton)",
+    "en": "Rising tone (2nd tone)"
+  },
+  "tone_3_name": {
+    "fr": "Ton creux (3e ton)",
+    "en": "Dipping tone (3rd tone)"
+  },
+  "tone_4_name": {
+    "fr": "Ton descendant (4e ton)",
+    "en": "Falling tone (4th tone)"
+  },
+  "tone_neutral_name": {
+    "fr": "Ton neutre",
+    "en": "Neutral tone"
+  }
+}

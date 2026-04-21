@@ -301,6 +301,55 @@ const initialConsonantBase: InitialConsonantEntry[] = [
     syllable: 'xi',
     note: 'Fricative douce, bouche étirée.',
     example: { hanzi: '西', pinyin: 'xī', translation: 'ouest', audio: 'audio/hsk1/hsk1_西.wav' }
+  },
+  {
+    id: 'py-initial-z',
+    letter: 'z',
+    syllable: 'zi',
+    note: 'Prononcez « dz » (sourd), pointe de la langue derrière les dents.',
+    example: { hanzi: '字', pinyin: 'zì', translation: 'caractère', audio: 'audio/hsk1/hsk1_字.wav' }
+  },
+  {
+    id: 'py-initial-c',
+    letter: 'c',
+    syllable: 'ci',
+    note: 'Prononcez « ts » avec souffle marqué — version aspirée de z.',
+    example: { hanzi: '菜', pinyin: 'cài', translation: 'plat / légume', audio: 'audio/hsk1/hsk1_菜.wav' }
+  },
+  {
+    id: 'py-initial-s',
+    letter: 's',
+    syllable: 'si',
+    note: 'Sifflante claire comme le s français, langue derrière les dents.',
+    example: { hanzi: '三', pinyin: 'sān', translation: 'trois', audio: 'audio/hsk1/hsk1_三.wav' }
+  },
+  {
+    id: 'py-initial-zh',
+    letter: 'zh',
+    syllable: 'zhi',
+    note: 'Rétroflexe : langue recourbée vers le palais, son « dj » sourd.',
+    example: { hanzi: '中国', pinyin: 'zhōngguó', translation: 'Chine', audio: 'audio/hsk1/hsk1_中国.wav' }
+  },
+  {
+    id: 'py-initial-ch',
+    letter: 'ch',
+    syllable: 'chi',
+    note: 'Rétroflexe aspirée : version soufflée de zh (« tch »).',
+    example: { hanzi: '吃', pinyin: 'chī', translation: 'manger', audio: 'audio/hsk1/hsk1_吃.wav' }
+  },
+  {
+    id: 'py-initial-sh',
+    letter: 'sh',
+    syllable: 'shi',
+    note: 'Rétroflexe fricative : langue recourbée, proche du « ch » français mais plus grave.',
+    example: { hanzi: '是', pinyin: 'shì', translation: 'être', audio: 'audio/hsk1/hsk1_是.wav' }
+  },
+  {
+    id: 'py-initial-r',
+    letter: 'r',
+    syllable: 'ri',
+    note: 'Rétroflexe sonore : proche du « j » français mais la langue est recourbée.',
+    example: { hanzi: '日', pinyin: 'rì', translation: 'jour / soleil', audio: 'audio/hsk1/hsk1_日.wav' }
   }
 ];
 

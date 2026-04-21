@@ -1,0 +1,650 @@
+/**
+ * flashcards-v3.css — Styles additionnels pour FlashcardPageV3 (V7)
+ * -------------------------------------------------------------------
+ * Repose sur flashcards-v2.css (classes fc2-*) et ajoute les nouvelles
+ * capacités V7 : direction toggle, tab "mes cartes", onglet phrases,
+ * modal CRUD personnelle, quota bar.
+ *
+ * Scoping : .flashcards-v3 (ajouté en tant que classe sœur de .flashcards-v2
+ * sur le conteneur root). Palette : #c6302c (rouge chinois), #d4a537 (gold),
+ * #2f8f6b (jade), #fffaf3 (crème).
+ */
+
+:root {
+  --fc3-primary: #c6302c;
+  --fc3-gold: #d4a537;
+  --fc3-gold-soft: #fcebc6;
+  --fc3-jade: #2f8f6b;
+  --fc3-jade-soft: #d7ede0;
+  --fc3-cream: #fffaf3;
+  --fc3-ink: #1f1b16;
+  --fc3-muted: #6b6459;
+  --fc3-line: #e9e0cf;
+  --fc3-amber-soft: #fdecc8;
+}
+
+/* =========================================================================
+ *  HEADER + DIRECTION TOGGLE
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-header {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.flashcards-v3 .fc3-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  min-width: 320px;
+}
+
+.flashcards-v3 .fc3-direction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--fc3-line);
+  border-radius: 12px;
+  background: var(--fc3-cream);
+  min-width: 260px;
+}
+
+.flashcards-v3 .fc3-direction-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fc3-muted);
+}
+
+.flashcards-v3 .fc3-direction-pills {
+  display: inline-flex;
+  background: #f5ecd7;
+  border-radius: 999px;
+  padding: 3px;
+  border: 1px solid var(--fc3-line);
+}
+
+.flashcards-v3 .fc3-direction-pill {
+  border: 0;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fc3-muted);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.flashcards-v3 .fc3-direction-pill:hover {
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-direction-pill--active {
+  background: var(--fc3-primary);
+  color: white;
+  box-shadow: 0 2px 6px rgba(198, 48, 44, 0.25);
+}
+
+.flashcards-v3 .fc3-direction-hint {
+  font-size: 12px;
+  color: var(--fc3-muted);
+  font-style: italic;
+  max-width: 240px;
+  text-align: right;
+}
+
+/* =========================================================================
+ *  TABS V3 (3 onglets)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-tabs {
+  gap: 6px;
+}
+
+.flashcards-v3 .fc3-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  padding: 1px 6px;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fc3-muted);
+}
+
+.flashcards-v3 .fc2-tab--active .fc3-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+/* =========================================================================
+ *  SOURCE ROW (placeholder pour onglets non-words)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-source-placeholder {
+  flex: 1;
+  min-height: 1px;
+}
+
+/* =========================================================================
+ *  QUOTA BAR (onglet personal)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-quota {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: var(--fc3-gold-soft);
+  border: 1px solid var(--fc3-gold);
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.flashcards-v3 .fc3-quota-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(212, 165, 55, 0.25);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.flashcards-v3 .fc3-quota-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--fc3-gold), var(--fc3-primary));
+  transition: width 0.25s ease;
+}
+
+.flashcards-v3 .fc3-quota-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fc3-ink);
+  white-space: nowrap;
+}
+
+.flashcards-v3 .fc3-quota-left {
+  font-weight: 400;
+  color: var(--fc3-muted);
+  margin-left: 4px;
+}
+
+/* =========================================================================
+ *  CONTENT AREA
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-content {
+  min-height: 240px;
+}
+
+/* =========================================================================
+ *  ONGLET PHRASES
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-sentence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flashcards-v3 .fc3-sentence {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--fc3-line);
+  border-left: 4px solid var(--fc3-primary);
+  border-radius: 12px;
+  background: var(--fc3-cream);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.flashcards-v3 .fc3-sentence:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 27, 22, 0.08);
+}
+
+.flashcards-v3 .fc3-sentence--ok {
+  border-left-color: var(--fc3-jade);
+  background: var(--fc3-jade-soft);
+}
+
+.flashcards-v3 .fc3-sentence--due {
+  border-left-color: var(--fc3-primary);
+  background: #fdecec;
+}
+
+.flashcards-v3 .fc3-sentence--fresh {
+  border-left-color: var(--fc3-gold);
+  background: var(--fc3-gold-soft);
+}
+
+.flashcards-v3 .fc3-sentence-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flashcards-v3 .fc3-sentence-hanzi {
+  font-family: 'Noto Serif SC', 'Noto Serif', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-sentence-pinyin {
+  font-size: 14px;
+  color: var(--fc3-muted);
+  font-style: italic;
+}
+
+.flashcards-v3 .fc3-sentence-translation {
+  font-size: 15px;
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-sentence-translation--primary {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.flashcards-v3 .fc3-sentence-hint {
+  font-size: 13px;
+  color: var(--fc3-muted);
+  font-style: italic;
+}
+
+.flashcards-v3 .fc3-sentence-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--fc3-muted);
+}
+
+.flashcards-v3 .fc3-sentence-speaker {
+  padding: 2px 8px;
+  background: rgba(47, 143, 107, 0.12);
+  color: var(--fc3-jade);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.flashcards-v3 .fc3-sentence-lesson {
+  font-style: italic;
+}
+
+.flashcards-v3 .fc3-sentence-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+}
+
+.flashcards-v3 .fc3-sentence--ok .fc3-sentence-badge {
+  background: var(--fc3-jade);
+}
+
+.flashcards-v3 .fc3-sentence--due .fc3-sentence-badge {
+  background: var(--fc3-primary);
+}
+
+.flashcards-v3 .fc3-sentence--fresh .fc3-sentence-badge {
+  background: var(--fc3-gold);
+}
+
+/* =========================================================================
+ *  ONGLET MES CARTES (PERSONAL)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-personal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flashcards-v3 .fc3-personal-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--fc3-line);
+  border-left: 4px solid var(--fc3-gold);
+  border-radius: 12px;
+  background: var(--fc3-cream);
+  transition: box-shadow 0.15s ease;
+}
+
+.flashcards-v3 .fc3-personal-row:hover {
+  box-shadow: 0 4px 12px rgba(31, 27, 22, 0.08);
+}
+
+.flashcards-v3 .fc3-personal-row--ok {
+  border-left-color: var(--fc3-jade);
+  background: var(--fc3-jade-soft);
+}
+
+.flashcards-v3 .fc3-personal-row--due {
+  border-left-color: var(--fc3-primary);
+  background: #fdecec;
+}
+
+.flashcards-v3 .fc3-personal-row--fresh {
+  border-left-color: var(--fc3-gold);
+}
+
+.flashcards-v3 .fc3-personal-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.flashcards-v3 .fc3-personal-hanzi {
+  font-family: 'Noto Serif SC', 'Noto Serif', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-personal-hanzi--masked {
+  color: rgba(31, 27, 22, 0.25);
+  letter-spacing: 0.2em;
+  user-select: none;
+}
+
+.flashcards-v3 .fc3-personal-pinyin {
+  font-size: 14px;
+  color: var(--fc3-muted);
+  font-style: italic;
+}
+
+.flashcards-v3 .fc3-personal-translation {
+  font-size: 15px;
+  color: var(--fc3-ink);
+  margin-top: 2px;
+}
+
+.flashcards-v3 .fc3-personal-translation--primary {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.flashcards-v3 .fc3-personal-hint {
+  font-size: 12px;
+  color: var(--fc3-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.flashcards-v3 .fc3-personal-note {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(212, 165, 55, 0.15);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--fc3-ink);
+  line-height: 1.4;
+}
+
+.flashcards-v3 .fc3-personal-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--fc3-muted);
+  display: flex;
+  gap: 4px;
+}
+
+.flashcards-v3 .fc3-personal-meta-dot {
+  font-weight: 600;
+}
+
+.flashcards-v3 .fc3-personal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.flashcards-v3 .fc3-personal-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--fc3-line);
+  background: white;
+  color: var(--fc3-ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.flashcards-v3 .fc3-personal-btn:hover {
+  background: var(--fc3-cream);
+}
+
+.flashcards-v3 .fc3-personal-btn--edit:hover {
+  border-color: var(--fc3-gold);
+  color: #b8882c;
+}
+
+.flashcards-v3 .fc3-personal-btn--delete {
+  color: var(--fc3-primary);
+}
+
+.flashcards-v3 .fc3-personal-btn--delete:hover {
+  background: #fdecec;
+  border-color: var(--fc3-primary);
+}
+
+/* =========================================================================
+ *  EMPTY STATE (mes cartes)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-empty-personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  background: var(--fc3-cream);
+  border: 2px dashed var(--fc3-line);
+  border-radius: 16px;
+  gap: 12px;
+}
+
+.flashcards-v3 .fc3-empty-personal-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.flashcards-v3 .fc3-empty-personal h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-empty-personal p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--fc3-muted);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* =========================================================================
+ *  MODAL CRUD PERSONNELLE
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-personal-modal {
+  max-width: 520px;
+  width: 92vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.flashcards-v3 .fc3-personal-modal h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: var(--fc3-ink);
+}
+
+.flashcards-v3 .fc3-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.flashcards-v3 .fc3-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fc3-muted);
+}
+
+.flashcards-v3 .fc3-field-row {
+  display: flex;
+  gap: 8px;
+}
+
+.flashcards-v3 .fc3-field-input {
+  flex: 1;
+  font-family: inherit;
+}
+
+.flashcards-v3 .fc3-field-input--hanzi {
+  font-family: 'Noto Serif SC', 'Noto Serif', serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.flashcards-v3 .fc3-field-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.flashcards-v3 .fc3-field-auto {
+  padding: 0 14px;
+  border: 1px solid var(--fc3-gold);
+  border-radius: 8px;
+  background: var(--fc3-gold-soft);
+  color: #b8882c;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.flashcards-v3 .fc3-field-auto:hover:not(:disabled) {
+  background: var(--fc3-gold);
+  color: white;
+}
+
+.flashcards-v3 .fc3-field-auto:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================================
+ *  BOUTON DÉSACTIVÉ (plafond atteint)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-btn--disabled,
+.flashcards-v3 .fc3-btn--disabled:hover {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+/* =========================================================================
+ *  EMPTY STATE (phrases)
+ * ========================================================================= */
+
+.flashcards-v3 .fc3-content .fc2-empty {
+  padding: 40px 24px;
+  color: var(--fc3-muted);
+  text-align: center;
+  font-style: italic;
+  background: var(--fc3-cream);
+  border: 2px dashed var(--fc3-line);
+  border-radius: 16px;
+}
+
+/* =========================================================================
+ *  RESPONSIVE
+ * ========================================================================= */
+
+@media (max-width: 720px) {
+  .flashcards-v3 .fc3-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flashcards-v3 .fc3-header-actions {
+    align-items: stretch;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .flashcards-v3 .fc3-direction {
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .flashcards-v3 .fc3-direction-hint {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .flashcards-v3 .fc3-personal-row {
+    flex-direction: column;
+  }
+
+  .flashcards-v3 .fc3-personal-actions {
+    flex-direction: row;
+    align-self: stretch;
+  }
+
+  .flashcards-v3 .fc3-personal-btn {
+    flex: 1;
+  }
+
+  .flashcards-v3 .fc3-sentence {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .flashcards-v3 .fc3-sentence-badge {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .flashcards-v3 .fc3-direction-pills {
+    width: 100%;
+  }
+
+  .flashcards-v3 .fc3-direction-pill {
+    flex: 1;
+  }
+}

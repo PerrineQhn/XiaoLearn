@@ -1,0 +1,40 @@
+<div class="card-container recog-card" id="cardContainer">
+  <div class="hsk-badge">{{HSK_Level}}</div>
+  <div class="type-indicator recog-type">🔵 RECOGNITION</div>
+
+  <div class="chinese-main">
+    {{Simplified}}
+  </div>
+
+  <div class="pinyin-hint">
+    {{Pinyin}}
+  </div>
+
+  <div class="question-prompt">
+    💭 What does it mean?
+  </div>
+
+  <div class="auto-audio" style="display:none;">{{Audio}}</div>
+
+  <div class="card-footer">
+    <div class="tags">{{Tags}}</div>
+    <div class="motivation-text">加油！ (Jiāyóu!)</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const tags = '{{Tags}}'.toLowerCase();
+  const isGrammar = tags.includes('particle') ||
+                    tags.includes('grammar') ||
+                    tags.includes('conjunction') ||
+                    tags.includes('measure');
+
+  const card = document.getElementById('cardContainer');
+  if (isGrammar) {
+    card.classList.add('grammar-card');
+  } else {
+    card.classList.add('vocab-card');
+  }
+})();
+</script>

@@ -1,0 +1,216 @@
+/* politeness-register.css — scoped sous .preg-*
+   ------------------------------------------------
+   Palettes :
+   - casual          : bleu ciel détendu
+   - neutral-polite  : vert XiaoLearn (défaut)
+   - formal          : violet
+   - business        : indigo / slate
+*/
+
+.preg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.1;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  background: #f3f4f6;
+  color: #1f2937;
+  cursor: default;
+}
+
+.preg-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+.preg-badge--compact {
+  padding: 2px 7px;
+  font-size: 0.65rem;
+}
+
+/* Registre : casual ------------------------------------------------------- */
+.preg-badge--casual {
+  background: #e0f2fe;
+  color: #075985;
+  border-color: #bae6fd;
+}
+
+/* Registre : neutral-polite (par défaut — jade XiaoLearn) ---------------- */
+.preg-badge--neutral-polite {
+  background: #e3f5ec;
+  color: #1f6d4a;
+  border-color: #b8e4cf;
+}
+
+/* Registre : formal ------------------------------------------------------- */
+.preg-badge--formal {
+  background: #ede9fe;
+  color: #5b21b6;
+  border-color: #ddd6fe;
+}
+
+/* Registre : business ----------------------------------------------------- */
+.preg-badge--business {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-color: #c7d2fe;
+}
+
+/* ==========================================================================
+   Cheatsheet repliable — aligné sur la palette XiaoLearn
+   ========================================================================== */
+
+.preg-cheatsheet {
+  border: 1px solid #ece5dc;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(31, 26, 22, 0.04);
+}
+
+.preg-cheatsheet-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #faf3ea;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background 120ms ease-in-out;
+}
+
+.preg-cheatsheet-header:hover {
+  background: #fde9e8;
+}
+
+.preg-cheatsheet-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1f1a16;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.preg-cheatsheet-toggle {
+  font-size: 0.78rem;
+  color: #6a655f;
+  font-weight: 600;
+}
+
+.preg-cheatsheet.is-open .preg-cheatsheet-header {
+  border-bottom: 1px solid #ece5dc;
+}
+
+.preg-cheatsheet-sub {
+  margin: 0;
+  padding: 10px 16px 12px;
+  font-size: 0.82rem;
+  color: #6a655f;
+}
+
+.preg-cheatsheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 12px 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.preg-cheatsheet-item {
+  border: 1px solid #ece5dc;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fdfdfd;
+  transition: box-shadow 120ms ease-in-out, border-color 120ms ease-in-out;
+}
+
+.preg-cheatsheet-item.is-highlight {
+  border-color: #c8342e;
+  box-shadow: 0 0 0 3px rgba(200, 52, 46, 0.12);
+  background: #fde9e8;
+}
+
+.preg-cheatsheet-item-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.preg-cheatsheet-short {
+  font-size: 0.78rem;
+  color: #6a655f;
+  font-style: italic;
+}
+
+.preg-cheatsheet-long {
+  margin: 6px 0 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #1f1a16;
+}
+
+.preg-cheatsheet-example {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #fbf1cf;
+  border: 1px dashed #e8cf6d;
+  border-radius: 8px;
+  font-size: 0.86rem;
+}
+
+.preg-cheatsheet-example-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6f10;
+}
+
+.preg-cheatsheet-example-hanzi {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f1a16;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.preg-cheatsheet-example-pinyin {
+  color: #2f9e6a;
+  font-style: italic;
+}
+
+.preg-cheatsheet-example-tr {
+  color: #6a655f;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .preg-cheatsheet-header {
+    padding: 10px 12px;
+  }
+  .preg-cheatsheet-list {
+    padding: 6px 8px 10px;
+  }
+  .preg-cheatsheet-example {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

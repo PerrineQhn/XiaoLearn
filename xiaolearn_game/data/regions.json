@@ -1,0 +1,74 @@
+{
+  "regions": [
+    {
+      "id": "beijing",
+      "name_cn": "北京",
+      "name_pinyin": "Běijīng",
+      "name_fr": "Pékin",
+      "name_en": "Beijing",
+      "hsk_required": 1,
+      "description_fr": "La capitale impériale — temples, hutongs et les premières bases du mandarin.",
+      "description_en": "The imperial capital — temples, hutongs, and the first steps of Mandarin.",
+      "scene": "res://scenes/regions/beijing.tscn",
+      "vocabulary_pack": "hsk1_beijing",
+      "music": "res://assets/audio/music/beijing_theme.ogg",
+      "locations": ["gugong", "tiananmen", "wangfujing"]
+    },
+    {
+      "id": "shanghai",
+      "name_cn": "上海",
+      "name_pinyin": "Shànghǎi",
+      "name_fr": "Shanghai",
+      "name_en": "Shanghai",
+      "hsk_required": 2,
+      "description_fr": "La métropole moderne — commerce, transport et vie quotidienne en HSK2.",
+      "description_en": "The modern metropolis — commerce, transport, and daily life in HSK2.",
+      "scene": "res://scenes/regions/shanghai.tscn",
+      "vocabulary_pack": "hsk2_shanghai",
+      "music": "res://assets/audio/music/shanghai_theme.ogg",
+      "locations": ["waitan", "yuyuan", "nanjinglu"]
+    },
+    {
+      "id": "xian",
+      "name_cn": "西安",
+      "name_pinyin": "Xī'ān",
+      "name_fr": "Xi'an",
+      "name_en": "Xi'an",
+      "hsk_required": 3,
+      "description_fr": "L'ancienne capitale — histoire, gastronomie et expressions HSK3.",
+      "description_en": "The ancient capital — history, gastronomy, and HSK3 expressions.",
+      "scene": "res://scenes/regions/xian.tscn",
+      "vocabulary_pack": "hsk3_xian",
+      "music": "res://assets/audio/music/xian_theme.ogg",
+      "locations": ["bingmayong", "chengqiang", "huiminjie"]
+    },
+    {
+      "id": "chengdu",
+      "name_cn": "成都",
+      "name_pinyin": "Chéngdū",
+      "name_fr": "Chengdu",
+      "name_en": "Chengdu",
+      "hsk_required": 4,
+      "description_fr": "La cité détendue — pandas, piments et conversations HSK4.",
+      "description_en": "The relaxed city — pandas, spices, and HSK4 conversations.",
+      "scene": "res://scenes/regions/chengdu.tscn",
+      "vocabulary_pack": "hsk4_chengdu",
+      "music": "res://assets/audio/music/chengdu_theme.ogg",
+      "locations": ["panda_base", "kuanzhai", "jinli"]
+    },
+    {
+      "id": "guilin",
+      "name_cn": "桂林",
+      "name_pinyin": "Guìlín",
+      "name_fr": "Guilin",
+      "name_en": "Guilin",
+      "hsk_required": 5,
+      "description_fr": "Les paysages poétiques — nature, art et maîtrise du HSK5.",
+      "description_en": "The poetic landscapes — nature, art, and HSK5 mastery.",
+      "scene": "res://scenes/regions/guilin.tscn",
+      "vocabulary_pack": "hsk5_guilin",
+      "music": "res://assets/audio/music/guilin_theme.ogg",
+      "locations": ["lijiang", "elephant_hill", "longji"]
+    }
+  ]
+}

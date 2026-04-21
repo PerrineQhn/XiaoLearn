@@ -2,28 +2,25 @@
   <div class="hsk-badge">{{HSK_Level}}</div>
   <div class="type-indicator recog-type">🔵 RECONNAISSANCE</div>
   
-  <div class="chinese-main">
-    {{Simplified}}
+  <div class="correct-answer-section compact">
+    <div class="correct-label">✅ Réponse correcte</div>
+    <div class="chinese-answer compact">{{Simplified}}</div>
+    <div class="pinyin-answer">{{Pinyin}}</div>
   </div>
-  
-  <div class="pinyin-answer">
-    {{Pinyin}}
+
+  <div class="meaning-reminder">
+    📖 {{Meaning}}
   </div>
-  
-  <div class="meaning-box">
-    <div class="meaning-title">📖 SENS</div>
-    <div class="meaning-content">
-      {{Meaning}}
-    </div>
-  </div>
-  
-  <div class="examples-section">
+
+  <div class="examples-section compact">
     <div class="examples-title">📚 Exemples</div>
     <div class="examples-content">
       {{Examples}}
     </div>
   </div>
   
+  <div class="auto-audio" style="display:none;">{{Audio}}</div>
+
   <div class="card-footer">
     <div class="tags">{{Tags}}</div>
     <div class="progress-bar">

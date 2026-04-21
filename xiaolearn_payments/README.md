@@ -38,6 +38,8 @@ npx wrangler secret put STRIPE_PRICE_ANKI
 npx wrangler secret put RESEND_API_KEY
 npx wrangler secret put PURCHASE_EMAIL_FROM
 npx wrangler secret put PURCHASE_EMAIL_REPLY_TO
+npx wrangler secret put SUPPORT_REPORT_FROM
+npx wrangler secret put SUPPORT_REPORT_TO
 ```
 
 4. Vérifier les variables non sensibles dans `wrangler.toml` (`APP_BASE_URL`, `MARKETPLACE_BASE_URL`, `DOWNLOADS_BASE_URL`).
@@ -72,6 +74,7 @@ npm run dev:node
 - `POST /api/webhook` -> webhook Stripe (signature vérifiée).
 - `GET /api/downloads?session_id=...` -> retourne les téléchargements autorisés.
 - `POST /api/portal` -> ouvre le portail client Stripe.
+- `POST /api/support-report` -> envoie un signalement bug par email à l'équipe support.
 
 ## Liens de téléchargement (PDF/Anki)
 
@@ -85,3 +88,10 @@ npm run dev:node
 - Le webhook `checkout.session.completed` peut envoyer un email de confirmation avec les liens d'acces.
 - L'envoi est actif si `RESEND_API_KEY` et `PURCHASE_EMAIL_FROM` sont configures.
 - `PURCHASE_EMAIL_REPLY_TO` est optionnel.
+
+## Email support (signalements bug)
+
+- Endpoint: `POST /api/support-report`
+- Champs attendus: `title`, `description`, `severity` (`low|medium|high|critical`), et métadonnées optionnelles (`language`, `pageUrl`, `userAgent`, `reporterEmail`, `reporterName`, `reporterUid`, `occurredAt`).
+- L'envoi est actif si `RESEND_API_KEY` + `SUPPORT_REPORT_FROM` (ou `PURCHASE_EMAIL_FROM`) sont configurés.
+- Destinataire: `SUPPORT_REPORT_TO` (par défaut `xiaolearn.mandarin@support.com`).

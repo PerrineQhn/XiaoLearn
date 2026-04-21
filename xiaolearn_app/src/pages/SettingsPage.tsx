@@ -5,112 +5,26 @@ import { useAuth } from '../contexts/AuthContext';
 import { storage } from '../firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
-import type { EntitlementStatus } from '../hooks/useEntitlements';
-import type { AccessTier } from '../utils/access';
+import { useSrsPreferences, SRS_PRESETS } from '../hooks/useSrsPreferences';
+import '../styles/settings-srs.css';
 
 interface SettingsPageProps {
   language: Language;
   onLanguageChange: (language: Language) => void;
-  currentTheme: string;
-  onThemeChange: (theme: string) => void;
-  subscription: EntitlementStatus | null;
-  accessTier: AccessTier;
-  trialDaysLeft: number;
-  trialEndsAt: string | null;
-  onSubscribe: (planId: string) => void;
-  onManageSubscription: () => void;
 }
-
-const colorThemes = [
-  {
-    id: 'asian-red',
-    name: 'Rouge Asiatique',
-    nameEn: 'Asian Red',
-    primary: '#D8483E',
-    secondary: '#2F9D8A',
-    accent: '#F0B762'
-  },
-  {
-    id: 'jade-green',
-    name: 'Jade Impérial',
-    nameEn: 'Imperial Jade',
-    primary: '#2F9D8A',
-    secondary: '#D8483E',
-    accent: '#F4A261'
-  },
-  {
-    id: 'royal-purple',
-    name: 'Pourpre Royal',
-    nameEn: 'Royal Purple',
-    primary: '#8B5CF6',
-    secondary: '#EC4899',
-    accent: '#F59E0B'
-  },
-  {
-    id: 'ocean-blue',
-    name: 'Bleu Océan',
-    nameEn: 'Ocean Blue',
-    primary: '#3B82F6',
-    secondary: '#06B6D4',
-    accent: '#10B981'
-  },
-  {
-    id: 'sunset-orange',
-    name: 'Orange Coucher de Soleil',
-    nameEn: 'Sunset Orange',
-    primary: '#F97316',
-    secondary: '#EF4444',
-    accent: '#FBBF24'
-  },
-  {
-    id: 'sakura-pink',
-    name: 'Rose Sakura',
-    nameEn: 'Sakura Pink',
-    primary: '#EC4899',
-    secondary: '#F472B6',
-    accent: '#FDE047'
-  }
-];
 
 const SettingsPage = ({
   language,
-  onLanguageChange,
-  currentTheme,
-  onThemeChange,
-  subscription,
-  accessTier,
-  trialDaysLeft,
-  trialEndsAt,
-  onSubscribe,
-  onManageSubscription
+  onLanguageChange
 }: SettingsPageProps) => {
   const { user } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [offlineMode, setOfflineMode] = useState(true);
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
+  // V6 — Cadence SRS (nouvelles cartes par jour). Persistée via localStorage.
+  const { preferences: srsPrefs, setPreset: setSrsPreset, setCustomDailyNewCards } = useSrsPreferences();
   const [uploading, setUploading] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
-  const activeThemeInfo = colorThemes.find((theme) => theme.id === currentTheme);
-  const subscriptionActive = accessTier === 'premium';
-  const hasSubscription = Boolean(subscription?.subscriptionId);
-  const hasLifetimeAccess = subscriptionActive && !hasSubscription;
-  const renewalDate = subscription?.currentPeriodEnd ? new Date(subscription.currentPeriodEnd) : null;
-  const renewalLabel = renewalDate
-    ? renewalDate.toLocaleDateString(language === 'fr' ? 'fr-FR' : 'en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : null;
-  const trialEndDate = trialEndsAt ? new Date(trialEndsAt) : null;
-  const trialEndLabel = trialEndDate
-    ? trialEndDate.toLocaleDateString(language === 'fr' ? 'fr-FR' : 'en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : null;
-
   const displayName = user?.displayName || user?.email?.split('@')[0] || 'User';
   const photoURL = user?.photoURL;
   const userInitial = displayName.charAt(0).toUpperCase();
@@ -193,10 +107,9 @@ const SettingsPage = ({
     },
     {
       label: language === 'fr' ? 'Thème' : 'Theme',
-      value: language === 'fr' ? activeThemeInfo?.name ?? 'Rouge Asiatique' : activeThemeInfo?.nameEn ?? 'Asian Red'
+      value: language === 'fr' ? 'Rouge Asiatique' : 'Asian Red'
     }
   ];
-
   return (
     <div className="settings-page">
       <header className="settings-header">
@@ -255,151 +168,6 @@ const SettingsPage = ({
               <span className="stat-value">{stat.value}</span>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="settings-section modern">
-        <div className="settings-section-header">
-          <h2 className="settings-section-title">
-            {language === 'fr' ? 'Abonnement' : 'Subscription'}
-          </h2>
-          <p className="settings-section-description">
-            {language === 'fr'
-              ? 'Gérez votre accès premium à l’application.'
-              : 'Manage your premium access to the app.'}
-          </p>
-        </div>
-
-        <div className="settings-card-grid">
-          <div className="settings-card settings-card-wide subscription-card-panel">
-            <div className="subscription-status-row">
-              <div>
-                <h3>{language === 'fr' ? 'Statut' : 'Status'}</h3>
-                <p className={subscriptionActive ? 'status-active' : 'status-inactive'}>
-                  {accessTier === 'premium'
-                    ? language === 'fr'
-                      ? 'Premium actif'
-                      : 'Premium active'
-                    : accessTier === 'trial'
-                    ? language === 'fr'
-                      ? `Essai (${trialDaysLeft} jour${trialDaysLeft > 1 ? 's' : ''} restant${trialDaysLeft > 1 ? 's' : ''})`
-                      : `Trial (${trialDaysLeft} day${trialDaysLeft > 1 ? 's' : ''} left)`
-                    : language === 'fr'
-                    ? 'Gratuit'
-                    : 'Free'}
-                </p>
-                {renewalLabel && (
-                  <p className="subscription-renewal">
-                    {language === 'fr'
-                      ? `Renouvellement le ${renewalLabel}`
-                      : `Renews on ${renewalLabel}`}
-                  </p>
-                )}
-                {hasLifetimeAccess && (
-                  <p className="subscription-renewal">
-                    {language === 'fr' ? 'Accès à vie' : 'Lifetime access'}
-                  </p>
-                )}
-                {!subscriptionActive && accessTier === 'trial' && trialEndLabel && (
-                  <p className="subscription-renewal">
-                    {language === 'fr'
-                      ? `Fin de l'essai le ${trialEndLabel}`
-                      : `Trial ends on ${trialEndLabel}`}
-                  </p>
-                )}
-              </div>
-
-              <div className="subscription-actions">
-                {subscriptionActive ? (
-                  hasSubscription ? (
-                    <button type="button" className="btn-secondary" onClick={onManageSubscription}>
-                      {language === 'fr' ? 'Gérer mon abonnement' : 'Manage subscription'}
-                    </button>
-                  ) : (
-                    <span className="subscription-lifetime">
-                      {language === 'fr' ? 'Accès à vie actif' : 'Lifetime access active'}
-                    </span>
-                  )
-                ) : (
-                  <div className="subscription-plan-buttons">
-                    <button
-                      type="button"
-                      className="btn-primary"
-                      onClick={() => onSubscribe('app-lifetime')}
-                    >
-                      {language === 'fr' ? 'Accès à vie' : 'Lifetime'}
-                    </button>
-                    <button
-                      type="button"
-                      className="btn-secondary"
-                      onClick={() => onSubscribe('app-yearly')}
-                    >
-                      {language === 'fr' ? 'Licence 1 an' : '1-year license'}
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="settings-card-grid" style={{ marginTop: 16 }}>
-          <div className="settings-card settings-card-wide">
-            <h3>{language === 'fr' ? 'Comparatif Gratuit vs Premium' : 'Free vs Premium'}</h3>
-            <div className="subscription-comparison-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>{language === 'fr' ? 'Fonctionnalité' : 'Feature'}</th>
-                    <th>{language === 'fr' ? 'Gratuit' : 'Free'}</th>
-                    <th>{language === 'fr' ? 'Premium' : 'Premium'}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Leçons HSK 1</td>
-                    <td>{language === 'fr' ? '5 premières' : 'First 5'}</td>
-                    <td>{language === 'fr' ? 'Toutes (30+)' : 'All (30+)'}</td>
-                  </tr>
-                  <tr>
-                    <td>Leçons HSK 2-3</td>
-                    <td>❌</td>
-                    <td>✓ 70+</td>
-                  </tr>
-                  <tr>
-                    <td>Système SRS</td>
-                    <td>{language === 'fr' ? 'Limité' : 'Limited'}</td>
-                    <td>{language === 'fr' ? 'Complet' : 'Complete'}</td>
-                  </tr>
-                  <tr>
-                    <td>Assistant IA</td>
-                    <td>❌</td>
-                    <td>{language === 'fr' ? '✓ Illimité' : '✓ Unlimited'}</td>
-                  </tr>
-                  <tr>
-                    <td>{language === 'fr' ? 'Mini-jeux' : 'Mini-games'}</td>
-                    <td>1</td>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <td>{language === 'fr' ? 'Statistiques' : 'Statistics'}</td>
-                    <td>{language === 'fr' ? 'Basiques' : 'Basic'}</td>
-                    <td>{language === 'fr' ? 'Avancées' : 'Advanced'}</td>
-                  </tr>
-                  <tr>
-                    <td>{language === 'fr' ? 'Synchronisation' : 'Sync'}</td>
-                    <td>❌</td>
-                    <td>{language === 'fr' ? '✓ Multi-appareils' : '✓ Multi-device'}</td>
-                  </tr>
-                  <tr>
-                    <td>{language === 'fr' ? 'Support prioritaire' : 'Priority support'}</td>
-                    <td>❌</td>
-                    <td>✓</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -483,37 +251,67 @@ const SettingsPage = ({
       <section className="settings-section modern">
         <div className="settings-section-header">
           <h2 className="settings-section-title">
-            {language === 'fr' ? 'Thème de couleurs' : 'Color theme'}
+            {language === 'fr' ? 'Cadence de révision SRS' : 'SRS review pace'}
           </h2>
           <p className="settings-section-description">
             {language === 'fr'
-              ? 'Personnalisez l\'apparence de l\'application avec votre palette préférée.'
-              : 'Personalize the interface with your preferred palette.'}
+              ? "Choisis combien de nouvelles cartes apparaissent chaque jour dans ton deck de révision. Tu peux changer à tout moment — ton historique de révisions n'est pas affecté."
+              : 'Pick how many new cards appear in your review deck each day. You can change this at any time — your review history is preserved.'}
           </p>
         </div>
 
-        <div className="theme-grid settings-theme-grid">
-          {colorThemes.map((theme) => (
-            <button
-              key={theme.id}
-              className={`theme-card ${currentTheme === theme.id ? 'active' : ''}`}
-              onClick={() => onThemeChange(theme.id)}
-            >
-              <div className="theme-preview">
-                <div className="theme-color" style={{ backgroundColor: theme.primary }} />
-                <div className="theme-color" style={{ backgroundColor: theme.secondary }} />
-                <div className="theme-color" style={{ backgroundColor: theme.accent }} />
-              </div>
-              <div className="theme-info">
-                <p className="theme-name">{language === 'fr' ? theme.name : theme.nameEn}</p>
-                {currentTheme === theme.id && (
-                  <span className="theme-active-badge">
-                    ✓ {language === 'fr' ? 'Actif' : 'Active'}
-                  </span>
-                )}
-              </div>
-            </button>
-          ))}
+        <div className="settings-card-grid">
+          {SRS_PRESETS.map((preset) => {
+            const isActive = srsPrefs.preset === preset.key;
+            return (
+              <button
+                key={preset.key}
+                type="button"
+                className={`settings-card settings-srs-preset ${isActive ? 'settings-srs-preset--active' : ''}`}
+                onClick={() => setSrsPreset(preset.key)}
+                aria-pressed={isActive}
+              >
+                <div className="settings-card-header">
+                  <h3>
+                    {language === 'fr' ? preset.labelFr : preset.labelEn}
+                    <span className="settings-srs-count"> · {preset.dailyNewCards}/j</span>
+                  </h3>
+                  <p>{language === 'fr' ? preset.descFr : preset.descEn}</p>
+                </div>
+                <span className="settings-srs-indicator" aria-hidden>
+                  {isActive ? '●' : '○'}
+                </span>
+              </button>
+            );
+          })}
+          <div className="settings-card settings-card-wide settings-srs-custom">
+            <div className="settings-card-header">
+              <h3>{language === 'fr' ? 'Personnaliser' : 'Custom'}</h3>
+              <p>
+                {language === 'fr'
+                  ? "Règle finement ta cadence (1 à 200 nouvelles cartes / jour)."
+                  : 'Fine-tune your pace (1 to 200 new cards / day).'}
+              </p>
+            </div>
+            <div className="settings-srs-custom-controls">
+              <input
+                type="number"
+                min={1}
+                max={200}
+                step={1}
+                value={srsPrefs.dailyNewCards}
+                onChange={(e) => {
+                  const v = parseInt(e.target.value, 10);
+                  if (!Number.isNaN(v)) setCustomDailyNewCards(v);
+                }}
+                className="settings-srs-input"
+                aria-label={language === 'fr' ? 'Nouvelles cartes par jour' : 'New cards per day'}
+              />
+              <span className="settings-srs-unit">
+                {language === 'fr' ? 'cartes / jour' : 'cards / day'}
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 

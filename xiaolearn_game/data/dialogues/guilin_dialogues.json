@@ -1,0 +1,625 @@
+{
+  "region": "guilin",
+  "npcs": [
+    {
+      "npc_id": "npc_guilin_guide",
+      "npc_name_cn": "导游",
+      "npc_name_fr": "Guide",
+      "portrait": "res://assets/portraits/guide.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来桂林！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái Guìlín!",
+              "fr": "Bonjour ! Bienvenue à Guilin !",
+              "audio": "",
+              "teaches": ["hsk5_001", "hsk5_002"]
+            },
+            {
+              "cn": "桂林的风景甲天下。不仅山水如画，而且历史悠久。",
+              "pinyin": "Guìlín de fēngjǐng jiǎ tiānxià. bújǐn shānnshuǐ rúhuà, érqiě lìshǐ yōujiǔ.",
+              "fr": "Les paysages de Guilin sont les plus beaux sous le ciel. Non seulement les montagnes et l'eau sont pittoresques, mais l'histoire est longue.",
+              "audio": "",
+              "teaches": ["hsk5_003", "hsk5_004", "hsk5_005"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'est-ce que je vais voir ?",
+              "text_cn": "我将看到什么？",
+              "next": "sights"
+            },
+            {
+              "text_fr": "Pouvez-vous en parler davantage ?",
+              "text_cn": "你能详细介绍吗？",
+              "next": "detail"
+            }
+          ]
+        },
+        "sights": {
+          "lines": [
+            {
+              "cn": "漓江的水比任何江都清。象鼻山只有在桂林才能看到。",
+              "pinyin": "Líjiāng de shuǐ bǐ rènhé jiāng dōu qīng. Xiàngbí shān zhǐyǒu zài Guìlín cáinéng kàndào.",
+              "fr": "L'eau de la Lijiang est plus claire que toute autre rivière. La montagne de la trompe d'éléphant ne peut être vue qu'à Guilin.",
+              "audio": "",
+              "teaches": ["hsk5_006", "hsk5_007", "hsk5_008"]
+            }
+          ],
+          "next": "end"
+        },
+        "detail": {
+          "lines": [
+            {
+              "cn": "当然。桂林曾经是几个朝代的首都。其文化底蕴深厚。",
+              "pinyin": "Dāngrán. Guìlín céngjīng shì jǐ ge cháodài de shǒudū. Qī wénhuà dǐyùn shēnhòu.",
+              "fr": "Bien sûr. Guilin a autrefois été la capitale de plusieurs dynasties. Sa richesse culturelle est profonde.",
+              "audio": "",
+              "teaches": ["hsk5_009", "hsk5_010", "hsk5_011"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_boat_captain",
+      "npc_name_cn": "船长",
+      "npc_name_fr": "Capitaine de bateau",
+      "portrait": "res://assets/portraits/boat_captain.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是竹筏的船长。",
+              "pinyin": "Nǐ hǎo! Wǒ shì zhúfá de chuánzhǎng.",
+              "fr": "Bonjour ! Je suis capitaine de radeau en bambou.",
+              "audio": "",
+              "teaches": ["hsk5_012", "hsk5_013"]
+            },
+            {
+              "cn": "虽然已经五十多年，我仍然热爱这份工作。在漓江上，无论时代如何变化，风景都是永恒的。",
+              "pinyin": "Suīrán yǐjīng wǔshí duō nián, wǒ réngránrán règài zhè fèn gōngzuò. Zài Líjiāng shàng, wúlùn shídài rúhé biànhuà, fēngjǐng dōu shì yǒnghéng de.",
+              "fr": "Bien qu'après plus de 50 ans, j'aime toujours ce travail. Sur la Lijiang, peu importe comment l'époque change, les paysages sont éternels.",
+              "audio": "",
+              "teaches": ["hsk5_014", "hsk5_015", "hsk5_016"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Vous naviguez depuis longtemps ?",
+              "text_cn": "你航海多久了？",
+              "next": "years"
+            },
+            {
+              "text_fr": "La rivière a-t-elle changé ?",
+              "text_cn": "河流改变过吗？",
+              "next": "changed"
+            }
+          ]
+        },
+        "years": {
+          "lines": [
+            {
+              "cn": "五十多年了。我见证了漓江的每个季节，成千上万次。",
+              "pinyin": "Wǔshí duō nián le. Wǒ jiànzhèng le Líjiāng de měi ge jìjié, chéng qiān shàng wàn cì.",
+              "fr": "Plus de 50 ans. J'ai witness chaque saison de la Lijiang des milliers de fois.",
+              "audio": "",
+              "teaches": ["hsk5_017", "hsk5_018"]
+            }
+          ],
+          "next": "end"
+        },
+        "changed": {
+          "lines": [
+            {
+              "cn": "变化很大。环境污染越来越严重，但政府已开始采取行动保护。",
+              "pinyin": "Biànhuà hěn dà. Huánjìng wūrǎn yuèláiyuè yánzhòng, búguò zhèngfǔ yǐ kāishǐ cǎiqǔ xíngdòng bǎohù.",
+              "fr": "De nombreux changements. La pollution s'aggrave, mais le gouvernement a commencé à prendre des mesures pour protéger.",
+              "audio": "",
+              "teaches": ["hsk5_019", "hsk5_020", "hsk5_021"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_painter",
+      "npc_name_cn": "画家",
+      "npc_name_fr": "Peintre",
+      "portrait": "res://assets/portraits/painter.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是风景画家。",
+              "pinyin": "Nǐ hǎo! Wǒ shì fēngjǐng huàjiā.",
+              "fr": "Bonjour ! Je suis peintre paysagiste.",
+              "audio": "",
+              "teaches": ["hsk5_022", "hsk5_023"]
+            },
+            {
+              "cn": "我在这里待了十年，试图用笔墨捕捉桂林的灵魂。每次看待这些山水，我都有新的发现。",
+              "pinyin": "Wǒ zài zhèlǐ dāi le shí nián, shìtú yòng bǐmò būzhuō Guìlín de línghuó. Měi cì kàndài zhèxiē shānnshuǐ, wǒ dōu yǒu xīn de fāxiàn.",
+              "fr": "Je suis ici depuis 10 ans, essayant de capturer l'âme de Guilin avec le pinceau et l'encre. Chaque fois que je vois ces montagnes et eaux, j'ai de nouvelles découvertes.",
+              "audio": "",
+              "teaches": ["hsk5_024", "hsk5_025", "hsk5_026"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Comment inspiriez-vous vos œuvres ?",
+              "text_cn": "你的灵感从哪来？",
+              "next": "inspiration"
+            },
+            {
+              "text_fr": "Qu'est-ce qui vous fascine le plus ?",
+              "text_cn": "什么最吸引你？",
+              "next": "fascination"
+            }
+          ]
+        },
+        "inspiration": {
+          "lines": [
+            {
+              "cn": "灵感来自大自然本身。不仅来自景物，也来自那些游历于此的人们的故事。",
+              "pinyin": "Língǎn láizì dà zìránxìng běnshēn. bújǐn láizì jǐngwù, yě láizì nàxiē yóulì yú cǐ de rénmen de gùshì.",
+              "fr": "L'inspiration vient de la nature elle-même. Non seulement des paysages, mais aussi des histoires des gens qui voyagent ici.",
+              "audio": "",
+              "teaches": ["hsk5_027", "hsk5_028", "hsk5_029"]
+            }
+          ],
+          "next": "end"
+        },
+        "fascination": {
+          "lines": [
+            {
+              "cn": "山与水的和谐。从古至今，这种和谐都启发了艺术家和诗人。",
+              "pinyin": "Shān yǔ shuǐ de héxié. Cóng gǔ zhì jīn, zhè zhǒng héxié dōu qǐfā le yìshùjiā hé shīrén.",
+              "fr": "L'harmonie entre les montagnes et l'eau. Depuis l'antiquité, cette harmonie a inspiré les artistes et poètes.",
+              "audio": "",
+              "teaches": ["hsk5_030", "hsk5_031"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_village_elder",
+      "npc_name_cn": "村长",
+      "npc_name_fr": "Chef du village",
+      "portrait": "res://assets/portraits/elder.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是这个村子的村长。",
+              "pinyin": "Nǐ hǎo! Wǒ shì zhège cūnzi de cūnzhǎng.",
+              "fr": "Bonjour ! Je suis chef de ce village.",
+              "audio": "",
+              "teaches": ["hsk5_032", "hsk5_033"]
+            },
+            {
+              "cn": "我们村虽然小，但有悠久的传统。不仅保留了古老的习俗，也发展了新的经济。",
+              "pinyin": "Wǒmen cūn suīrán xiǎo, búguò yǒu yōujiǔ de chuántǒng. bújǐn bǎoliú le gǔlǎo de xísú, yě fāzhǎn le xīn de jīngjì.",
+              "fr": "Notre village est petit mais a une longue tradition. Non seulement il préserve les anciennes coutumes, mais se développe aussi économiquement.",
+              "audio": "",
+              "teaches": ["hsk5_034", "hsk5_035", "hsk5_036"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quelles traditions avez-vous ?",
+              "text_cn": "你们有什么传统？",
+              "next": "traditions"
+            },
+            {
+              "text_fr": "Comment la vie a-t-elle changé ?",
+              "text_cn": "生活怎样变化了？",
+              "next": "changes"
+            }
+          ]
+        },
+        "traditions": {
+          "lines": [
+            {
+              "cn": "我们有龙舟竞赛、山歌会和竹编工艺。这些技艺已传承千年。",
+              "pinyin": "Wǒmen yǒu lóngchuán jìngsài, shānggē huì hé zhúbiān gōngyì. Zhèxiē jìyì yǐ chuánchéng qiān nián.",
+              "fr": "Nous avons les courses de bateaux dragons, les concerts de chansons folkloriques et l'artisanat du tissage en bambou. Ces techniques sont transmises depuis des millénaires.",
+              "audio": "",
+              "teaches": ["hsk5_037", "hsk5_038"]
+            }
+          ],
+          "next": "end"
+        },
+        "changes": {
+          "lines": [
+            {
+              "cn": "改变很大。年轻人以前必须离开找工作，现在越来越多留下来经营旅游。",
+              "pinyin": "Gǎibiàn hěn dà. Niánqīng rén yǐqián bìxū líkāi zhǎo gōngzuò, xiànzài yuèláiyuè duō liúxiàlai jīngyíng lǚyóu.",
+              "fr": "De grands changements. Autrefois, les jeunes devaient partir travailler. Maintenant, de plus en plus restent pour développer le tourisme.",
+              "audio": "",
+              "teaches": ["hsk5_039", "hsk5_040", "hsk5_041"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_rice_farmer",
+      "npc_name_cn": "水稻农民",
+      "npc_name_fr": "Agriculteur",
+      "portrait": "res://assets/portraits/farmer.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是水稻农民。",
+              "pinyin": "Nǐ hǎo! Wǒ shì shuǐdào nóngmín.",
+              "fr": "Bonjour ! Je suis agriculteur.",
+              "audio": "",
+              "teaches": ["hsk5_042", "hsk5_043"]
+            },
+            {
+              "cn": "我在这片梯田劳作已经三十年。虽然辛苦，但不仅养活了家人，也为这片山谷添增了色彩。",
+              "pinyin": "Wǒ zài zhè piàn tītián láozuò yǐjīng sānshí nián. Suīrán xīnkǔ, búguò bújǐn yǎnghuó le jiārén, yě wèi zhè piàn shāngyǔ tiānzēng le sècǎi.",
+              "fr": "J'ai travaillé dans ces champs en terrasse pendant 30 ans. C'est dur, mais non seulement j'ai nourri ma famille, mais j'ai aussi ajouté de la couleur à cette vallée.",
+              "audio": "",
+              "teaches": ["hsk5_044", "hsk5_045", "hsk5_046"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quels sont les défis ?",
+              "text_cn": "有什么困难？",
+              "next": "challenges"
+            },
+            {
+              "text_fr": "Les jeunes veulent faire agriculture ?",
+              "text_cn": "年轻人想做农业吗？",
+              "next": "youth"
+            }
+          ]
+        },
+        "challenges": {
+          "lines": [
+            {
+              "cn": "气候变化、病虫害，还有市场竞争。但我们已习以为常，继续奋斗。",
+              "pinyin": "Qìhòu biànhuà, bìngchónghai, háiyǒu shìchǎng jìngzhēng. Búguò wǒmen yǐ xíyǐ wéi cháng, jìxù fèndòu.",
+              "fr": "Changement climatique, parasites, et concurrence du marché. Mais nous nous y sommes habitués et continuons à lutter.",
+              "audio": "",
+              "teaches": ["hsk5_047", "hsk5_048", "hsk5_049"]
+            }
+          ],
+          "next": "end"
+        },
+        "youth": {
+          "lines": [
+            {
+              "cn": "很少。大多数年轻人都去城市了。这令我担心农业的未来。",
+              "pinyin": "Hěn shǎo. Dàduōshù niánqīng rén dōu qù chéngshì le. Zhè lìng wǒ dānxīn nóngyè de wèilái.",
+              "fr": "Très peu. La plupart des jeunes sont allés en ville. Cela m'inquiète pour l'avenir de l'agriculture.",
+              "audio": "",
+              "teaches": ["hsk5_050", "hsk5_051"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_poet",
+      "npc_name_cn": "诗人",
+      "npc_name_fr": "Poète",
+      "portrait": "res://assets/portraits/poet.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是诗人。",
+              "pinyin": "Nǐ hǎo! Wǒ shì shīrén.",
+              "fr": "Bonjour ! Je suis poète.",
+              "audio": "",
+              "teaches": ["hsk5_052", "hsk5_053"]
+            },
+            {
+              "cn": "在桂林，我找到了诗歌的源泉。这里的山水激发了我的创作。不仅是古人，现在的诗人也被此地的美所吸引。",
+              "pinyin": "Zài Guìlín, wǒ zhǎodào le shīgē de yuánnquán. Zhèlǐ de shānnshuǐ jīfā le wǒ de chuàngzuò. bújǐn shì gǔ rén, xiànzài de shīrén yě bèi cǐ dì de měi suǒ xīyǐn.",
+              "fr": "À Guilin, j'ai trouvé la source de la poésie. Les montagnes et l'eau ici inspirent ma créativité. Non seulement les anciens, mais les poètes modernes sont aussi attirés par la beauté de ce lieu.",
+              "audio": "",
+              "teaches": ["hsk5_054", "hsk5_055", "hsk5_056"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Pouvez-vous réciter un poème ?",
+              "text_cn": "你能背一首诗吗？",
+              "next": "recite"
+            },
+            {
+              "text_fr": "Comment écrivez-vous vos poèmes ?",
+              "text_cn": "你怎样写诗？",
+              "next": "process"
+            }
+          ]
+        },
+        "recite": {
+          "lines": [
+            {
+              "cn": "好的。'漓江清如玉，山峰如笔端。诗歌在此生，永恒在心间。'",
+              "pinyin": "Hǎo de. 'Líjiāng qīng rú yù, shānfēng rú bǐ duān. Shīgē zài cǐ shēng, yǒnghéng zài xīnjiān.'",
+              "fr": "D'accord. 'La Lijiang est claire comme du jade, les pics ressemblent à la pointe d'une brosse. Les poèmes naissent ici, l'éternité dans le cœur.'",
+              "audio": "",
+              "teaches": ["hsk5_057", "hsk5_058"]
+            }
+          ],
+          "next": "end"
+        },
+        "process": {
+          "lines": [
+            {
+              "cn": "我漫步于山间，观察光影的变化，感受风的低语。诗歌自然而然地流淌于笔端。",
+              "pinyin": "Wǒ màn bù yú shānjiān, guānchá guāngyǐng de biànhuà, gǎnshòu fēng de dī yǔ. Shīgē zìránérrán de liútǎng yú bǐ duān.",
+              "fr": "Je me promène à travers les montagnes, observant les jeux de lumière, sentant les murmures du vent. Les poèmes coulent naturellement du pinceau.",
+              "audio": "",
+              "teaches": ["hsk5_059", "hsk5_060", "hsk5_061"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_hermit",
+      "npc_name_cn": "隐士",
+      "npc_name_fr": "Ermite",
+      "portrait": "res://assets/portraits/hermit.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好。我是隐士。我隐居于此已七十年。",
+              "pinyin": "Nǐ hǎo. Wǒ shì yǐnshì. Wǒ yǐnjū yú cǐ yǐ qīshí nián.",
+              "fr": "Bonjour. Je suis ermite. J'ai vécu retiré ici pendant 70 ans.",
+              "audio": "",
+              "teaches": ["hsk5_062", "hsk5_063"]
+            },
+            {
+              "cn": "我舍弃了世俗的名利，寻求心灵的宁静。在这里，我找到了真正的自我。虽然简朴，却充满意义。",
+              "pinyin": "Wǒ shěqì le shìsú de mínglì, xúnqiú xīnlíng de níngj jìng. Zài zhèlǐ, wǒ zhǎodào le zhēnzhèng de zìwǒ. Suīrán jiǎnpǔ,却 chōngmǎn yìyì.",
+              "fr": "J'ai renoncé aux gloires mondaines et cherche la paix spirituelle. Ici, j'ai trouvé mon véritable moi. Bien que simple, c'est très significatif.",
+              "audio": "",
+              "teaches": ["hsk5_064", "hsk5_065", "hsk5_066"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Vous regrettez jamais ?",
+              "text_cn": "你后悔过吗？",
+              "next": "regret"
+            },
+            {
+              "text_fr": "Quelle sagesse avez-vous acquise ?",
+              "text_cn": "你学到了什么智慧？",
+              "next": "wisdom"
+            }
+          ]
+        },
+        "regret": {
+          "lines": [
+            {
+              "cn": "从不。每个日出和日落都提醒我选择的正确。凡世之人常被欲望所困，而我自由。",
+              "pinyin": "Cóngbuì. Měi ge rìchū hé rìluò dōu tíxǐng wǒ xuǎnzé de zhèngquè. Fánshì zhī rén cháng bèi yùwàng suǒ kùn, érwǒ zìyóu.",
+              "fr": "Jamais. Chaque lever et coucher de soleil me rappelle que j'ai bien choisi. Les gens du monde sont souvent piégés par les désirs, tandis que je suis libre.",
+              "audio": "",
+              "teaches": ["hsk5_067", "hsk5_068", "hsk5_069"]
+            }
+          ],
+          "next": "end"
+        },
+        "wisdom": {
+          "lines": [
+            {
+              "cn": "我学到了简单即复杂，复杂即简单。自然本身就是最大的老师。无为而治，方为至高之道。",
+              "pinyin": "Wǒ xuéle le jiǎndān jì fùzá, fùzá jì jiǎndān. Zìránè běnshēn jiùshì zuì dà de lǎoshī. Wúwéi érzhì, fāng wéi zhìgāo zhī dào.",
+              "fr": "J'ai appris que le simple est complexe et le complexe est simple. La nature elle-même est le plus grand enseignant. Le non-agir est la voie suprême.",
+              "audio": "",
+              "teaches": ["hsk5_070", "hsk5_071", "hsk5_072"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_fisherman",
+      "npc_name_cn": "渔夫",
+      "npc_name_fr": "Pêcheur",
+      "portrait": "res://assets/portraits/fisherman.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是渔夫。我用鸬鹚捕鱼已有四十年。",
+              "pinyin": "Nǐ hǎo! Wǒ shì yúfū. Wǒ yòng lúcí búyú yǐyǒu sìshí nián.",
+              "fr": "Bonjour ! Je suis pêcheur. Je pêche avec des cormorans depuis 40 ans.",
+              "audio": "",
+              "teaches": ["hsk5_073", "hsk5_074"]
+            },
+            {
+              "cn": "这是古老的技艺，但现在很少人学。不仅是生计，也是一种文化遗产。",
+              "pinyin": "Zhè shì gǔlǎo de jìyì, búguò xiànzài hěn shǎo rén xué. bújǐn shì shēngjì, yě shì yī zhǒng wénhuà yíchǎn.",
+              "fr": "C'est un art ancien, mais peu de gens l'apprennent maintenant. C'est non seulement un moyen de subsistance, mais aussi un patrimoine culturel.",
+              "audio": "",
+              "teaches": ["hsk5_075", "hsk5_076"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Comment ça fonctionne ?",
+              "text_cn": "这是怎样工作的？",
+              "next": "how"
+            },
+            {
+              "text_fr": "Voulez-vous enseigner ?",
+              "text_cn": "你想教人吗？",
+              "next": "teach"
+            }
+          ]
+        },
+        "how": {
+          "lines": [
+            {
+              "cn": "鸬鹚有锐利的眼睛。我在它们的脖子上系绳子，防止它们吞下大鱼。",
+              "pinyin": "Lúcí yǒu ruìlì de yǎnjing. Wǒ zài tāmen de bózi shàng xì shéngzi, fángzhǐ tāmen tūnxià dà yú.",
+              "fr": "Les cormorans ont une vue perçante. J'attache une corde autour de leur cou pour les empêcher d'avaler les gros poissons.",
+              "audio": "",
+              "teaches": ["hsk5_077", "hsk5_078", "hsk5_079"]
+            }
+          ],
+          "next": "end"
+        },
+        "teach": {
+          "lines": [
+            {
+              "cn": "我很想教，但需要有真心的学徒。这技艺需要耐心、毅力和对自然的尊重。",
+              "pinyin": "Wǒ hěn xiǎng jiāo, búguò xūyào yǒu zhēnxīn de xuétú. Zhè jìyì xūyào nàixīn, yìlì hé duì zìránè de zūnjìng.",
+              "fr": "Je voudrais vraiment enseigner, mais j'ai besoin d'apprentis sincères. Cet art nécessite de la patience, de la persévérance et du respect pour la nature.",
+              "audio": "",
+              "teaches": ["hsk5_080", "hsk5_081"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_craftsman",
+      "npc_name_cn": "工艺师",
+      "npc_name_fr": "Artisan maître",
+      "portrait": "res://assets/portraits/craftsman.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是竹编工艺师。",
+              "pinyin": "Nǐ hǎo! Wǒ shì zhúbiān gōngyìshī.",
+              "fr": "Bonjour ! Je suis maître du tissage de bambou.",
+              "audio": "",
+              "teaches": ["hsk5_082", "hsk5_083"]
+            },
+            {
+              "cn": "每一件作品都需要三个月的时间。虽然辛苦，但每次看到成品时，所有的努力都值得。",
+              "pinyin": "Měi yī jiàn zuòpǐn dōu xūyào sān ge yuè de shíjiān. Suīrán xīnkǔ, búguò měi cì kàndào chénpǐn shí, suǒyǒu de nǔlì dōu zhíde.",
+              "fr": "Chaque pièce prend trois mois. C'est difficile, mais chaque fois que je vois le produit fini, tous les efforts valent le coup.",
+              "audio": "",
+              "teaches": ["hsk5_084", "hsk5_085"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quelles sont vos créations ?",
+              "text_cn": "你创作什么？",
+              "next": "creations"
+            },
+            {
+              "text_fr": "Où vendez-vous votre travail ?",
+              "text_cn": "你在哪里卖作品？",
+              "next": "selling"
+            }
+          ]
+        },
+        "creations": {
+          "lines": [
+            {
+              "cn": "篮子、装饰品、甚至是家具。不仅实用，每件都是艺术品。传统技艺与现代设计相结合。",
+              "pinyin": "Lánzi, zhuāngshìpǐn, shènzhì shì jiājù. bújǐn shíyòng, měi jiàn dōu shì yìshùpǐn. Chuántǒng jìyì yǔ xiàndài shèjì xiāng jiéhé.",
+              "fr": "Paniers, objets de décoration, même meubles. Non seulement utiles, chaque pièce est une œuvre d'art. La technique traditionnelle se combine avec le design moderne.",
+              "audio": "",
+              "teaches": ["hsk5_086", "hsk5_087", "hsk5_088"]
+            }
+          ],
+          "next": "end"
+        },
+        "selling": {
+          "lines": [
+            {
+              "cn": "主要通过旅游商店和在线平台。越来越多外国人喜欢我的作品。",
+              "pinyin": "Zhǔyào tōngguò lǚyóu shāngdiàn hé zàixiàn píng tái. Yuèláiyuè duō wàiguó rén xǐhuān wǒ de zuòpǐn.",
+              "fr": "Principalement via les boutiques touristiques et les plateformes en ligne. De plus en plus d'étrangers aiment mes œuvres.",
+              "audio": "",
+              "teaches": ["hsk5_089", "hsk5_090"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_scholar",
+      "npc_name_cn": "学者",
+      "npc_name_fr": "Érudit",
+      "portrait": "res://assets/portraits/scholar.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是研究桂林地方文化的学者。",
+              "pinyin": "Nǐ hǎo! Wǒ shì yánjiū Guìlín dìfāng wénhuà de xuézhě.",
+              "fr": "Bonjour ! Je suis un érudit qui étudie la culture locale de Guilin.",
+              "audio": "",
+              "teaches": ["hsk5_091", "hsk5_092"]
+            },
+            {
+              "cn": "我已花费二十年研究这个地区。我发现不仅本地人的智慧深厚，而且与中国南方的文化脉络紧密相连。",
+              "pinyin": "Wǒ yǐ huāfèi èrshí nián yánjiū zhège dìqū. Wǒ fāxiàn bújǐn běndì rén de zhìhuì shēnhòu, érqiě yǔ Zhōngguó nánfāng de wénhuà màiluò jǐnmì xiāngliánuò.",
+              "fr": "J'ai passé 20 ans à étudier cette région. J'ai découvert que non seulement la sagesse locale est profonde, mais elle est aussi étroitement liée au contexte culturel du sud de la Chine.",
+              "audio": "",
+              "teaches": ["hsk5_093", "hsk5_094", "hsk5_095"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'avez-vous découvert de spécial ?",
+              "text_cn": "你发现了什么特别的？",
+              "next": "discoveries"
+            },
+            {
+              "text_fr": "Écrivez-vous des livres ?",
+              "text_cn": "你写书吗？",
+              "next": "books"
+            }
+          ]
+        },
+        "discoveries": {
+          "lines": [
+            {
+              "cn": "最重要的是，桂林的山水哲学影响了无数文人墨客。这不仅体现在艺术中，也体现在日常生活的智慧中。",
+              "pinyin": "Zuì zhòngyào de shì, Guìlín de shānnshuǐ zhéxué yǐngxiǎng le wúshù wénrén mòkè. Zhè bújǐn tǐxiàn zài yìshù zhōng, yě tǐxiàn zài rìcháng shēnghuó de zhìhuì zhōng.",
+              "fr": "Le plus important est que la philosophie paysagiste de Guilin a influencé d'innombrables lettrés et artistes. Cela se reflète non seulement dans l'art, mais aussi dans la sagesse de la vie quotidienne.",
+              "audio": "",
+              "teaches": ["hsk5_096", "hsk5_097", "hsk5_098"]
+            }
+          ],
+          "next": "end"
+        },
+        "books": {
+          "lines": [
+            {
+              "cn": "是的。我已出版三本关于桂林文化的著作。目前在撰写第四本，探讨气候与文化的关系。",
+              "pinyin": "Shì de. Wǒ yǐ chūbǎn sān běn guānyú Guìlín wénhuà de zhùzuò. Mùqián zài zhuànxiě dì sì běn, tàntǎo qìhòu yǔ wénhuà de guānxi.",
+              "fr": "Oui. J'ai publié trois ouvrages sur la culture de Guilin. Je suis actuellement en train d'écrire le quatrième, explorant la relation entre le climat et la culture.",
+              "audio": "",
+              "teaches": ["hsk5_099", "hsk5_100"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "dlg-a1-hello": {
+    "voices": {
+      "小明": "zh-CN-XiaoxiaoNeural",
+      "王丽": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-a1-hello/0.mp3",
+      "/audio/dialogues/dlg-a1-hello/1.mp3",
+      "/audio/dialogues/dlg-a1-hello/2.mp3",
+      "/audio/dialogues/dlg-a1-hello/3.mp3",
+      "/audio/dialogues/dlg-a1-hello/4.mp3"
+    ]
+  },
+  "dlg-a1-family": {
+    "voices": {
+      "老师": "zh-CN-XiaohanNeural",
+      "学生": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-a1-family/0.mp3",
+      "/audio/dialogues/dlg-a1-family/1.mp3",
+      "/audio/dialogues/dlg-a1-family/2.mp3",
+      "/audio/dialogues/dlg-a1-family/3.mp3",
+      "/audio/dialogues/dlg-a1-family/4.mp3"
+    ]
+  },
+  "dlg-a2-restaurant": {
+    "voices": {
+      "服务员": "zh-CN-XiaoyiNeural",
+      "客人": "zh-CN-YunjianNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-a2-restaurant/0.mp3",
+      "/audio/dialogues/dlg-a2-restaurant/1.mp3",
+      "/audio/dialogues/dlg-a2-restaurant/2.mp3",
+      "/audio/dialogues/dlg-a2-restaurant/3.mp3",
+      "/audio/dialogues/dlg-a2-restaurant/4.mp3",
+      "/audio/dialogues/dlg-a2-restaurant/5.mp3"
+    ]
+  },
+  "dlg-a2-metro": {
+    "voices": {
+      "游客": "zh-CN-XiaoxiaoNeural",
+      "工作人员": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-a2-metro/0.mp3",
+      "/audio/dialogues/dlg-a2-metro/1.mp3",
+      "/audio/dialogues/dlg-a2-metro/2.mp3",
+      "/audio/dialogues/dlg-a2-metro/3.mp3",
+      "/audio/dialogues/dlg-a2-metro/4.mp3",
+      "/audio/dialogues/dlg-a2-metro/5.mp3"
+    ]
+  },
+  "dlg-b11-interview": {
+    "voices": {
+      "经理": "zh-CN-XiaoxiaoNeural",
+      "应聘者": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b11-interview/0.mp3",
+      "/audio/dialogues/dlg-b11-interview/1.mp3",
+      "/audio/dialogues/dlg-b11-interview/2.mp3",
+      "/audio/dialogues/dlg-b11-interview/3.mp3",
+      "/audio/dialogues/dlg-b11-interview/4.mp3",
+      "/audio/dialogues/dlg-b11-interview/5.mp3"
+    ]
+  },
+  "dlg-b12-generations": {
+    "voices": {
+      "小李": "zh-CN-XiaoxiaoNeural",
+      "小王": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b12-generations/0.mp3",
+      "/audio/dialogues/dlg-b12-generations/1.mp3",
+      "/audio/dialogues/dlg-b12-generations/2.mp3",
+      "/audio/dialogues/dlg-b12-generations/3.mp3",
+      "/audio/dialogues/dlg-b12-generations/4.mp3"
+    ]
+  },
+  "dlg-b21-environment": {
+    "voices": {
+      "张经理": "zh-CN-XiaoxiaoNeural",
+      "李工程师": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b21-environment/0.mp3",
+      "/audio/dialogues/dlg-b21-environment/1.mp3",
+      "/audio/dialogues/dlg-b21-environment/2.mp3",
+      "/audio/dialogues/dlg-b21-environment/3.mp3",
+      "/audio/dialogues/dlg-b21-environment/4.mp3",
+      "/audio/dialogues/dlg-b21-environment/5.mp3"
+    ]
+  },
+  "dlg-b21-startup-pitch": {
+    "voices": {
+      "张军": "zh-CN-XiaoxiaoNeural",
+      "王蒙": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b21-startup-pitch/0.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/1.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/2.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/3.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/4.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/5.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/6.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/7.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/8.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/9.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/10.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/11.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/12.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/13.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/14.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/15.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/16.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/17.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/18.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/19.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/20.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/21.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/22.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/23.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/24.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/25.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/26.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/27.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/28.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/29.mp3",
+      "/audio/dialogues/dlg-b21-startup-pitch/30.mp3"
+    ]
+  },
+  "dlg-b22-mental-health-debate": {
+    "voices": {
+      "李娜": "zh-CN-XiaoxiaoNeural",
+      "陈先生": "zh-CN-YunxiNeural",
+      "周医生": "zh-CN-XiaoyiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b22-mental-health-debate/0.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/1.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/2.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/3.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/4.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/5.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/6.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/7.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/8.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/9.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/10.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/11.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/12.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/13.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/14.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/15.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/16.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/17.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/18.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/19.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/20.mp3",
+      "/audio/dialogues/dlg-b22-mental-health-debate/21.mp3"
+    ]
+  },
+  "dlg-a2-hotel": {
+    "voices": {
+      "客人": "zh-CN-YunjianNeural",
+      "服务员": "zh-CN-XiaoyiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-a2-hotel/0.mp3",
+      "/audio/dialogues/dlg-a2-hotel/1.mp3",
+      "/audio/dialogues/dlg-a2-hotel/2.mp3",
+      "/audio/dialogues/dlg-a2-hotel/3.mp3",
+      "/audio/dialogues/dlg-a2-hotel/4.mp3",
+      "/audio/dialogues/dlg-a2-hotel/5.mp3",
+      "/audio/dialogues/dlg-a2-hotel/6.mp3",
+      "/audio/dialogues/dlg-a2-hotel/7.mp3",
+      "/audio/dialogues/dlg-a2-hotel/8.mp3",
+      "/audio/dialogues/dlg-a2-hotel/9.mp3",
+      "/audio/dialogues/dlg-a2-hotel/10.mp3"
+    ]
+  },
+  "dlg-b12-doctor": {
+    "voices": {
+      "医生": "zh-CN-XiaohanNeural",
+      "病人": "zh-CN-YunjianNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b12-doctor/0.mp3",
+      "/audio/dialogues/dlg-b12-doctor/1.mp3",
+      "/audio/dialogues/dlg-b12-doctor/2.mp3",
+      "/audio/dialogues/dlg-b12-doctor/3.mp3",
+      "/audio/dialogues/dlg-b12-doctor/4.mp3",
+      "/audio/dialogues/dlg-b12-doctor/5.mp3",
+      "/audio/dialogues/dlg-b12-doctor/6.mp3",
+      "/audio/dialogues/dlg-b12-doctor/7.mp3",
+      "/audio/dialogues/dlg-b12-doctor/8.mp3",
+      "/audio/dialogues/dlg-b12-doctor/9.mp3",
+      "/audio/dialogues/dlg-b12-doctor/10.mp3",
+      "/audio/dialogues/dlg-b12-doctor/11.mp3",
+      "/audio/dialogues/dlg-b12-doctor/12.mp3",
+      "/audio/dialogues/dlg-b12-doctor/13.mp3",
+      "/audio/dialogues/dlg-b12-doctor/14.mp3"
+    ]
+  },
+  "dlg-b22-tea-culture": {
+    "voices": {
+      "师父": "zh-CN-XiaoxiaoNeural",
+      "小陈": "zh-CN-YunxiNeural"
+    },
+    "lines": [
+      "/audio/dialogues/dlg-b22-tea-culture/0.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/1.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/2.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/3.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/4.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/5.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/6.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/7.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/8.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/9.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/10.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/11.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/12.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/13.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/14.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/15.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/16.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/17.mp3",
+      "/audio/dialogues/dlg-b22-tea-culture/18.mp3"
+    ]
+  }
+}

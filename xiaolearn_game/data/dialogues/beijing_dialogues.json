@@ -1,0 +1,812 @@
+{
+  "region": "beijing",
+  "npcs": [
+    {
+      "npc_id": "npc_palace_guard",
+      "npc_name_cn": "卫兵",
+      "npc_name_fr": "Garde Impérial",
+      "portrait": "res://assets/portraits/guard.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来北京！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái Běijīng!",
+              "fr": "Bonjour ! Bienvenue à Pékin !",
+              "audio": "dialogue_guard_001.ogg",
+              "teaches": ["hsk1_001", "hsk1_027", "hsk1_026"]
+            },
+            {
+              "cn": "我是故宫的卫兵。今天天气很好！",
+              "pinyin": "Wǒ shì Gùgōng de wèibīng. Jīntiān tiānqì hěn hǎo!",
+              "fr": "Je suis la garde de la Cité Interdite. Il fait beau aujourd'hui !",
+              "audio": "dialogue_guard_002.ogg",
+              "teaches": ["hsk1_004", "hsk1_008", "hsk1_033"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Bonjour ! Je suis ravi d'être à Beijing.",
+              "text_cn": "你好！我很高兴来北京。",
+              "next": "response_greeting"
+            },
+            {
+              "text_fr": "Qu'est-ce que la Cité Interdite ?",
+              "text_cn": "故宫是什么？",
+              "next": "explain_gugong"
+            }
+          ]
+        },
+        "response_greeting": {
+          "lines": [
+            {
+              "cn": "太好了！你是哪国人？",
+              "pinyin": "Tài hǎo le! Nǐ shì nǎ guó rén?",
+              "fr": "Parfait ! De quel pays venez-vous ?",
+              "audio": "dialogue_guard_003.ogg",
+              "teaches": ["hsk1_031"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je suis français(e).",
+              "text_cn": "我是法国人。",
+              "next": "player_french",
+              "teaches": ["hsk1_004", "hsk1_008"]
+            },
+            {
+              "text_fr": "Je suis étudiant(e) en chinois.",
+              "text_cn": "我是学汉语的学生。",
+              "next": "player_student",
+              "teaches": ["hsk1_039", "hsk1_038"]
+            }
+          ]
+        },
+        "player_french": {
+          "lines": [
+            {
+              "cn": "法国！很好！法国人很喜欢中国。",
+              "pinyin": "Fǎguó! Hěn hǎo! Fǎguó rén hěn xǐ huān Zhōngguó.",
+              "fr": "La France ! Très bien ! Les Français aiment beaucoup la Chine.",
+              "audio": "dialogue_guard_004.ogg",
+              "teaches": ["hsk1_031", "hsk1_032", "hsk1_025"]
+            },
+            {
+              "cn": "祝你在北京学习愉快！再见！",
+              "pinyin": "Zhù nǐ zài Běijīng xuéxí yúkuài! Zài jiàn!",
+              "fr": "Bon apprentissage à Beijing ! Au revoir !",
+              "audio": "dialogue_guard_005.ogg",
+              "teaches": ["hsk1_003", "hsk1_038"]
+            }
+          ],
+          "next": "end"
+        },
+        "player_student": {
+          "lines": [
+            {
+              "cn": "学汉语很好！汉语很有用。",
+              "pinyin": "Xué Hànyǔ hěn hǎo! Hànyǔ hěn yǒuyòng.",
+              "fr": "Apprendre le mandarin, c'est très bien ! Le mandarin est très utile.",
+              "audio": "dialogue_guard_006.ogg",
+              "teaches": ["hsk1_039", "hsk1_031"]
+            },
+            {
+              "cn": "加油！再见！",
+              "pinyin": "Jiā yóu! Zài jiàn!",
+              "fr": "Courage ! Au revoir !",
+              "audio": "dialogue_guard_007.ogg",
+              "teaches": ["hsk1_003"]
+            }
+          ],
+          "next": "end"
+        },
+        "explain_gugong": {
+          "lines": [
+            {
+              "cn": "故宫是中国古代皇帝住的地方。",
+              "pinyin": "Gùgōng shì Zhōngguó gǔdài huángdì zhù de dìfāng.",
+              "fr": "La Cité Interdite est l'endroit où vivaient les empereurs de la Chine ancienne.",
+              "audio": "dialogue_guard_008.ogg",
+              "teaches": ["hsk1_025", "hsk1_008"]
+            },
+            {
+              "cn": "很大！里面有九千多个房间！",
+              "pinyin": "Hěn dà! Lǐmiàn yǒu jiǔ qiān duō gè fángjiān!",
+              "fr": "Très grand ! Il y a plus de neuf mille pièces à l'intérieur !",
+              "audio": "dialogue_guard_009.ogg",
+              "teaches": ["hsk1_022", "hsk1_010", "hsk1_020"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Impressionnant ! Merci.",
+              "text_cn": "太厉害了！谢谢！",
+              "next": "end_thanks",
+              "teaches": ["hsk1_002"]
+            }
+          ]
+        },
+        "end_thanks": {
+          "lines": [
+            {
+              "cn": "不客气！好好游览！",
+              "pinyin": "Bù kèqì! Hǎohǎo yóulǎn!",
+              "fr": "De rien ! Profitez bien de votre visite !",
+              "audio": "dialogue_guard_010.ogg",
+              "teaches": ["hsk1_009", "hsk1_031"]
+            }
+          ],
+          "next": "end"
+        },
+        "completed": {
+          "lines": [
+            {
+              "cn": "欢迎再来！北京很大，慢慢看！",
+              "pinyin": "Huānyíng zài lái! Běijīng hěn dà, màn màn kàn!",
+              "fr": "Revenez quand vous voulez ! Beijing est grande, prenez le temps de la découvrir !",
+              "audio": "dialogue_guard_011.ogg"
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_tea_merchant",
+      "npc_name_cn": "茶商",
+      "npc_name_fr": "Marchand de thé",
+      "portrait": "res://assets/portraits/merchant.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！买茶吗？我这里有很多好茶！",
+              "pinyin": "Nǐ hǎo! Mǎi chá ma? Wǒ zhèlǐ yǒu hěn duō hǎo chá!",
+              "fr": "Bonjour ! Vous voulez du thé ? J'ai de très bons thés ici !",
+              "audio": "dialogue_merchant_001.ogg",
+              "teaches": ["hsk1_001", "hsk1_010", "hsk1_031"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Combien coûte une tasse ?",
+              "text_cn": "一杯多少钱？",
+              "next": "price_question"
+            },
+            {
+              "text_fr": "Quels types de thé avez-vous ?",
+              "text_cn": "你有什么茶？",
+              "next": "tea_types"
+            },
+            {
+              "text_fr": "Non merci, au revoir.",
+              "text_cn": "不，谢谢。再见！",
+              "next": "end_polite",
+              "teaches": ["hsk1_009", "hsk1_002", "hsk1_003"]
+            }
+          ]
+        },
+        "price_question": {
+          "lines": [
+            {
+              "cn": "一杯茶十块钱。",
+              "pinyin": "Yī bēi chá shí kuài qián.",
+              "fr": "Une tasse de thé coûte dix yuans.",
+              "audio": "dialogue_merchant_002.ogg",
+              "teaches": ["hsk1_012", "hsk1_021"]
+            },
+            {
+              "cn": "三杯二十五块，很划算！",
+              "pinyin": "Sān bēi èrshíwǔ kuài, hěn huásuàn!",
+              "fr": "Trois tasses pour vingt-cinq yuans, c'est très avantageux !",
+              "audio": "dialogue_merchant_003.ogg",
+              "teaches": ["hsk1_014", "hsk1_013"]
+            }
+          ],
+          "type": "quiz",
+          "quiz_data": {
+            "quiz_id": "quiz_numbers_001",
+            "question_word_id": "hsk1_021",
+            "question_type": "cn_to_fr",
+            "question_cn": "十",
+            "question_pinyin": "shí",
+            "options": []
+          },
+          "on_correct": "quiz_correct_numbers",
+          "on_wrong": "quiz_wrong_numbers"
+        },
+        "quiz_correct_numbers": {
+          "lines": [
+            {
+              "cn": "对！你的汉语很好！",
+              "pinyin": "Duì! Nǐ de Hànyǔ hěn hǎo!",
+              "fr": "Exact ! Votre chinois est très bon !",
+              "audio": "dialogue_merchant_004.ogg",
+              "teaches": ["hsk1_039", "hsk1_031"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je voudrais deux tasses s'il vous plaît.",
+              "text_cn": "我要两杯，谢谢！",
+              "next": "buy_tea",
+              "teaches": ["hsk1_013", "hsk1_002"]
+            }
+          ]
+        },
+        "quiz_wrong_numbers": {
+          "lines": [
+            {
+              "cn": "不对。十 是 shí，是十块钱。",
+              "pinyin": "Bú duì. Shí shì shí, shì shí kuài qián.",
+              "fr": "Pas tout à fait. 十 se dit 'shí', et ça veut dire dix yuans.",
+              "audio": "dialogue_merchant_005.ogg",
+              "teaches": ["hsk1_009", "hsk1_021"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Ah je comprends maintenant, merci !",
+              "text_cn": "啊，我明白了，谢谢！",
+              "next": "buy_tea"
+            }
+          ]
+        },
+        "buy_tea": {
+          "lines": [
+            {
+              "cn": "好！请坐，我给你拿来。",
+              "pinyin": "Hǎo! Qǐng zuò, wǒ gěi nǐ ná lái.",
+              "fr": "D'accord ! Asseyez-vous, je vous l'apporte.",
+              "audio": "dialogue_merchant_006.ogg",
+              "teaches": ["hsk1_031"]
+            }
+          ],
+          "next": "end"
+        },
+        "tea_types": {
+          "lines": [
+            {
+              "cn": "我有龙井、普洱、茉莉花茶。",
+              "pinyin": "Wǒ yǒu Lóngjǐng, Pǔ'ěr, Mòlìhuā chá.",
+              "fr": "J'ai du Longjing, du Pu'er, et du thé au jasmin.",
+              "audio": "dialogue_merchant_007.ogg",
+              "teaches": ["hsk1_010"]
+            },
+            {
+              "cn": "你喜欢哪种茶？",
+              "pinyin": "Nǐ xǐ huān nǎ zhǒng chá?",
+              "fr": "Quel type de thé aimez-vous ?",
+              "audio": "dialogue_merchant_008.ogg",
+              "teaches": ["hsk1_032"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je voudrais du Longjing.",
+              "text_cn": "我要龙井。",
+              "next": "buy_tea"
+            },
+            {
+              "text_fr": "Du thé au jasmin, s'il vous plaît.",
+              "text_cn": "茉莉花茶，谢谢。",
+              "next": "buy_tea",
+              "teaches": ["hsk1_002"]
+            }
+          ]
+        },
+        "end_polite": {
+          "lines": [
+            {
+              "cn": "没关系！再见！",
+              "pinyin": "Méi guānxi! Zài jiàn!",
+              "fr": "Pas de problème ! Au revoir !",
+              "audio": "dialogue_merchant_009.ogg",
+              "teaches": ["hsk1_003"]
+            }
+          ],
+          "next": "end"
+        },
+        "completed": {
+          "lines": [
+            {
+              "cn": "又来了！今天喝什么茶？",
+              "pinyin": "Yòu lái le! Jīntiān hē shénme chá?",
+              "fr": "Vous revoilà ! Quel thé aujourd'hui ?",
+              "audio": "dialogue_merchant_010.ogg",
+              "teaches": ["hsk1_033", "hsk1_030"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Du Longjing s'il vous plaît !",
+              "text_cn": "龙井，谢谢！",
+              "next": "buy_tea"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "npc_id": "npc_student",
+      "npc_name_cn": "学生",
+      "npc_name_fr": "Étudiant(e)",
+      "portrait": "res://assets/portraits/student.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "嗨！你好！我叫小雨。你叫什么名字？",
+              "pinyin": "Hāi! Nǐ hǎo! Wǒ jiào Xiǎo Yǔ. Nǐ jiào shénme míngzì?",
+              "fr": "Hé ! Bonjour ! Je m'appelle Xiao Yu. Comment vous appelez-vous ?",
+              "audio": "dialogue_student_001.ogg",
+              "teaches": ["hsk1_001", "hsk1_004", "hsk1_005"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je m'appelle [votre nom]. Enchanté(e) !",
+              "text_cn": "我叫……很高兴认识你！",
+              "next": "intro_exchange",
+              "teaches": ["hsk1_004"]
+            },
+            {
+              "text_fr": "Tu étudies ici ?",
+              "text_cn": "你在这里学习吗？",
+              "next": "study_question",
+              "teaches": ["hsk1_038"]
+            }
+          ]
+        },
+        "intro_exchange": {
+          "lines": [
+            {
+              "cn": "很高兴认识你！你是哪国人？",
+              "pinyin": "Hěn gāoxìng rènshì nǐ! Nǐ shì nǎ guó rén?",
+              "fr": "Ravi(e) de vous rencontrer ! De quel pays êtes-vous ?",
+              "audio": "dialogue_student_002.ogg",
+              "teaches": ["hsk1_005", "hsk1_008"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je suis français(e). J'apprends le chinois.",
+              "text_cn": "我是法国人。我学汉语。",
+              "next": "student_reaction",
+              "teaches": ["hsk1_004", "hsk1_039", "hsk1_038"]
+            }
+          ]
+        },
+        "student_reaction": {
+          "lines": [
+            {
+              "cn": "哇！你的汉语很好！你喜欢北京吗？",
+              "pinyin": "Wā! Nǐ de Hànyǔ hěn hǎo! Nǐ xǐhuān Běijīng ma?",
+              "fr": "Waou ! Votre chinois est très bon ! Vous aimez Beijing ?",
+              "audio": "dialogue_student_003.ogg",
+              "teaches": ["hsk1_039", "hsk1_031", "hsk1_032", "hsk1_026"]
+            }
+          ],
+          "type": "quiz",
+          "quiz_data": {
+            "quiz_id": "quiz_intro_001",
+            "question_word_id": "hsk1_004",
+            "question_type": "fr_to_cn",
+            "options": []
+          },
+          "on_correct": "quiz_intro_correct",
+          "on_wrong": "quiz_intro_wrong"
+        },
+        "quiz_intro_correct": {
+          "lines": [
+            {
+              "cn": "棒极了！你真的很聪明！我们是朋友了！",
+              "pinyin": "Bàng jí le! Nǐ zhēn de hěn cōngmíng! Wǒmen shì péngyǒu le!",
+              "fr": "Excellent ! Vous êtes vraiment intelligent(e) ! Nous sommes amis maintenant !",
+              "audio": "dialogue_student_004.ogg",
+              "teaches": ["hsk1_040"]
+            }
+          ],
+          "next": "end"
+        },
+        "quiz_intro_wrong": {
+          "lines": [
+            {
+              "cn": "没关系！我 就是 'wǒ'，意思是 Je。",
+              "pinyin": "Méi guānxi! Wǒ jiù shì 'wǒ', yìsi shì Je.",
+              "fr": "Pas grave ! 我 se prononce 'wǒ' et veut dire 'Je'.",
+              "audio": "dialogue_student_005.ogg",
+              "teaches": ["hsk1_004"]
+            },
+            {
+              "cn": "继续加油！你一定能学好汉语！",
+              "pinyin": "Jìxù jiā yóu! Nǐ yīdìng néng xuéhǎo Hànyǔ!",
+              "fr": "Continuez vos efforts ! Vous réussirez à maîtriser le mandarin !",
+              "audio": "dialogue_student_006.ogg"
+            }
+          ],
+          "next": "end"
+        },
+        "study_question": {
+          "lines": [
+            {
+              "cn": "对！我在北京大学学中文。你也学中文吗？",
+              "pinyin": "Duì! Wǒ zài Běijīng Dàxué xué Zhōngwén. Nǐ yě xué Zhōngwén ma?",
+              "fr": "Oui ! J'étudie le chinois à l'Université de Beijing. Vous aussi vous apprenez le chinois ?",
+              "audio": "dialogue_student_007.ogg",
+              "teaches": ["hsk1_038", "hsk1_026"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Oui ! J'aime beaucoup le chinois !",
+              "text_cn": "对！我很喜欢汉语！",
+              "next": "student_reaction",
+              "teaches": ["hsk1_032", "hsk1_039"]
+            }
+          ]
+        },
+        "completed": {
+          "lines": [
+            {
+              "cn": "朋友！你的汉语越来越好了！",
+              "pinyin": "Péngyǒu! Nǐ de Hànyǔ yuèláiyuè hǎo le!",
+              "fr": "Mon ami(e) ! Votre chinois s'améliore de plus en plus !",
+              "audio": "dialogue_student_008.ogg",
+              "teaches": ["hsk1_040", "hsk1_039", "hsk1_031"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_food_vendor",
+      "npc_name_cn": "小贩",
+      "npc_name_fr": "Vendeur de rue",
+      "portrait": "res://assets/portraits/vendor.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "来来来！北京小吃，好吃极了！",
+              "pinyin": "Lái lái lái! Běijīng xiǎo chī, hǎo chī jí le!",
+              "fr": "Venez venez venez ! Les snacks de Beijing, c'est délicieux !",
+              "audio": "dialogue_vendor_001.ogg",
+              "teaches": ["hsk1_027", "hsk1_029", "hsk1_031"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'est-ce que vous vendez ?",
+              "text_cn": "你卖什么？",
+              "next": "food_list"
+            },
+            {
+              "text_fr": "Un baozi s'il vous plaît !",
+              "text_cn": "我要一个包子！",
+              "next": "buy_baozi",
+              "teaches": ["hsk1_012"]
+            },
+            {
+              "text_fr": "Je n'ai pas faim, merci.",
+              "text_cn": "我不饿，谢谢。",
+              "next": "end_polite",
+              "teaches": ["hsk1_009", "hsk1_002"]
+            }
+          ]
+        },
+        "food_list": {
+          "lines": [
+            {
+              "cn": "我卖包子、糖葫芦、北京烤鸭！",
+              "pinyin": "Wǒ mài bāozi, tánghúlu, Běijīng kǎoyā!",
+              "fr": "Je vends des baozi, des tanghulu, et du canard laqué de Beijing !",
+              "audio": "dialogue_vendor_002.ogg",
+              "teaches": ["hsk1_029"]
+            },
+            {
+              "cn": "你喜欢吃什么？",
+              "pinyin": "Nǐ xǐ huān chī shénme?",
+              "fr": "Qu'est-ce que vous aimez manger ?",
+              "audio": "dialogue_vendor_003.ogg",
+              "teaches": ["hsk1_032", "hsk1_029"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je veux trois baozi !",
+              "text_cn": "我要三个包子！",
+              "next": "order_three",
+              "teaches": ["hsk1_014", "hsk1_023"]
+            },
+            {
+              "text_fr": "Combien coûtent les tanghulu ?",
+              "text_cn": "糖葫芦多少钱？",
+              "next": "tanghulu_price"
+            }
+          ]
+        },
+        "order_three": {
+          "lines": [
+            {
+              "cn": "三个包子，一共九块！",
+              "pinyin": "Sān gè bāozi, yīgòng jiǔ kuài!",
+              "fr": "Trois baozi, neuf yuans en tout !",
+              "audio": "dialogue_vendor_004.ogg",
+              "teaches": ["hsk1_014", "hsk1_020"]
+            }
+          ],
+          "type": "quiz",
+          "quiz_data": {
+            "quiz_id": "quiz_food_numbers",
+            "question_word_id": "hsk1_014",
+            "question_type": "cn_to_fr",
+            "question_cn": "三",
+            "question_pinyin": "sān",
+            "options": []
+          },
+          "on_correct": "food_quiz_correct",
+          "on_wrong": "food_quiz_wrong"
+        },
+        "food_quiz_correct": {
+          "lines": [
+            {
+              "cn": "对！三 就是 three！你的数字学得很好！",
+              "pinyin": "Duì! Sān jiù shì three! Nǐ de shùzì xué de hěn hǎo!",
+              "fr": "Exact ! 三 veut bien dire trois ! Vous apprenez très bien les chiffres !",
+              "audio": "dialogue_vendor_005.ogg",
+              "teaches": ["hsk1_031"]
+            },
+            {
+              "cn": "给你三个包子，好好吃！",
+              "pinyin": "Gěi nǐ sān gè bāozi, hǎo hǎo chī!",
+              "fr": "Voici vos trois baozi, régalez-vous !",
+              "audio": "dialogue_vendor_006.ogg",
+              "teaches": ["hsk1_029", "hsk1_031"]
+            }
+          ],
+          "next": "end"
+        },
+        "food_quiz_wrong": {
+          "lines": [
+            {
+              "cn": "三 念 sān，是三个的意思。",
+              "pinyin": "Sān niàn sān, shì sān gè de yìsi.",
+              "fr": "三 se prononce 'sān' et veut dire 'trois'.",
+              "audio": "dialogue_vendor_007.ogg",
+              "teaches": ["hsk1_014"]
+            },
+            {
+              "cn": "没关系，吃了就记住了！给你包子！",
+              "pinyin": "Méi guānxi, chī le jiù jì zhù le! Gěi nǐ bāozi!",
+              "fr": "Pas grave, en mangeant on s'en souvient ! Voici votre baozi !",
+              "audio": "dialogue_vendor_008.ogg",
+              "teaches": ["hsk1_029"]
+            }
+          ],
+          "next": "end"
+        },
+        "buy_baozi": {
+          "lines": [
+            {
+              "cn": "好的！一个包子三块钱，好吃极了！",
+              "pinyin": "Hǎo de! Yī gè bāozi sān kuài qián, hǎo chī jí le!",
+              "fr": "Bien sûr ! Un baozi pour trois yuans, c'est délicieux !",
+              "audio": "dialogue_vendor_009.ogg",
+              "teaches": ["hsk1_012", "hsk1_014", "hsk1_031"]
+            }
+          ],
+          "next": "end"
+        },
+        "tanghulu_price": {
+          "lines": [
+            {
+              "cn": "糖葫芦五块一串，酸酸甜甜！",
+              "pinyin": "Tánghúlu wǔ kuài yī chuàn, suānsuan tiántián!",
+              "fr": "Les tanghulu, cinq yuans la brochette, aigre-douces !",
+              "audio": "dialogue_vendor_010.ogg",
+              "teaches": ["hsk1_016"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je vais en prendre deux !",
+              "text_cn": "我要两串！",
+              "next": "end",
+              "teaches": ["hsk1_013"]
+            }
+          ]
+        },
+        "end_polite": {
+          "lines": [
+            {
+              "cn": "没事！下次再来！",
+              "pinyin": "Méi shì! Xià cì zài lái!",
+              "fr": "Pas de souci ! Revenez une prochaine fois !",
+              "audio": "dialogue_vendor_011.ogg",
+              "teaches": ["hsk1_027"]
+            }
+          ],
+          "next": "end"
+        },
+        "completed": {
+          "lines": [
+            {
+              "cn": "老顾客来了！今天吃什么？",
+              "pinyin": "Lǎo gùkè lái le! Jīntiān chī shénme?",
+              "fr": "Un habitué ! Qu'est-ce que vous mangez aujourd'hui ?",
+              "audio": "dialogue_vendor_012.ogg",
+              "teaches": ["hsk1_033", "hsk1_029"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Les mêmes baozi qu'avant !",
+              "text_cn": "还是包子！",
+              "next": "buy_baozi"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "npc_id": "npc_elder",
+      "npc_name_cn": "老人",
+      "npc_name_fr": "Le Sage",
+      "portrait": "res://assets/portraits/elder.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "年轻人，欢迎来天安门广场。",
+              "pinyin": "Niánqīngrén, huānyíng lái Tiān'ānmén guǎngchǎng.",
+              "fr": "Jeune ami, bienvenue sur la place Tian'anmen.",
+              "audio": "dialogue_elder_001.ogg",
+              "teaches": ["hsk1_027"]
+            },
+            {
+              "cn": "我在这里住了六十年了。",
+              "pinyin": "Wǒ zài zhèlǐ zhù le liùshí nián le.",
+              "fr": "J'habite ici depuis soixante ans.",
+              "audio": "dialogue_elder_002.ogg",
+              "teaches": ["hsk1_017", "hsk1_035"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est une belle place !",
+              "text_cn": "这里很美！",
+              "next": "beauty_of_place"
+            },
+            {
+              "text_fr": "Parlez-moi de Beijing.",
+              "text_cn": "请给我讲讲北京。",
+              "next": "tell_about_beijing"
+            },
+            {
+              "text_fr": "D'où venez-vous ?",
+              "text_cn": "您是哪里人？",
+              "next": "origin_question"
+            }
+          ]
+        },
+        "beauty_of_place": {
+          "lines": [
+            {
+              "cn": "是的！北京是一座很大的城市。",
+              "pinyin": "Shì de! Běijīng shì yī zuò hěn dà de chéngshì.",
+              "fr": "En effet ! Beijing est une très grande ville.",
+              "audio": "dialogue_elder_003.ogg",
+              "teaches": ["hsk1_026", "hsk1_022", "hsk1_008"]
+            },
+            {
+              "cn": "有故宫、长城、颐和园……很多好地方。",
+              "pinyin": "Yǒu Gùgōng, Chángchéng, Yíhéyuán... hěn duō hǎo dìfāng.",
+              "fr": "Il y a la Cité Interdite, la Grande Muraille, le Palais d'Été... beaucoup d'endroits magnifiques.",
+              "audio": "dialogue_elder_004.ogg",
+              "teaches": ["hsk1_010", "hsk1_031"]
+            }
+          ],
+          "next": "history_lesson"
+        },
+        "tell_about_beijing": {
+          "lines": [
+            {
+              "cn": "北京是中国的首都，有三千多年历史。",
+              "pinyin": "Běijīng shì Zhōngguó de shǒudū, yǒu sānqiān duō nián lìshǐ.",
+              "fr": "Beijing est la capitale de la Chine, avec plus de trois mille ans d'histoire.",
+              "audio": "dialogue_elder_005.ogg",
+              "teaches": ["hsk1_026", "hsk1_025", "hsk1_008", "hsk1_010", "hsk1_035"]
+            }
+          ],
+          "next": "history_lesson"
+        },
+        "origin_question": {
+          "lines": [
+            {
+              "cn": "我是北京人，土生土长！",
+              "pinyin": "Wǒ shì Běijīng rén, tǔshēng tǔzhǎng!",
+              "fr": "Je suis natif de Beijing, j'y suis né et j'y ai grandi !",
+              "audio": "dialogue_elder_006.ogg",
+              "teaches": ["hsk1_004", "hsk1_008", "hsk1_026", "hsk1_024"]
+            }
+          ],
+          "next": "history_lesson"
+        },
+        "history_lesson": {
+          "lines": [
+            {
+              "cn": "你知道'中国'是什么意思吗？",
+              "pinyin": "Nǐ zhīdào 'Zhōngguó' shì shénme yìsi ma?",
+              "fr": "Savez-vous ce que signifie 'Zhōngguó' ?",
+              "audio": "dialogue_elder_007.ogg",
+              "teaches": ["hsk1_025"]
+            }
+          ],
+          "type": "quiz",
+          "quiz_data": {
+            "quiz_id": "quiz_china_word",
+            "question_word_id": "hsk1_025",
+            "question_type": "cn_to_fr",
+            "question_cn": "中国",
+            "question_pinyin": "Zhōngguó",
+            "options": []
+          },
+          "on_correct": "china_quiz_correct",
+          "on_wrong": "china_quiz_wrong"
+        },
+        "china_quiz_correct": {
+          "lines": [
+            {
+              "cn": "非常好！中国 就是 'Pays du Milieu'。",
+              "pinyin": "Fēicháng hǎo! Zhōngguó jiù shì 'Pays du Milieu'.",
+              "fr": "Excellent ! 中国 signifie bien 'le Pays du Milieu'.",
+              "audio": "dialogue_elder_008.ogg",
+              "teaches": ["hsk1_025", "hsk1_031"]
+            },
+            {
+              "cn": "你学汉语很有天赋！好好学，将来一定有用！",
+              "pinyin": "Nǐ xué Hànyǔ hěn yǒu tiānfù! Hǎohǎo xué, jiānglái yīdìng yǒuyòng!",
+              "fr": "Vous avez un don pour le mandarin ! Étudiez bien, cela vous servira !",
+              "audio": "dialogue_elder_009.ogg",
+              "teaches": ["hsk1_039", "hsk1_038", "hsk1_010"]
+            }
+          ],
+          "next": "end"
+        },
+        "china_quiz_wrong": {
+          "lines": [
+            {
+              "cn": "中国 念 Zhōngguó，意思是 '中间的国家'，就是 Pays du Milieu。",
+              "pinyin": "Zhōngguó niàn Zhōngguó, yìsi shì 'zhōngjiān de guójiā', jiù shì Pays du Milieu.",
+              "fr": "中国 se prononce 'Zhōngguó' et signifie 'le pays du milieu'.",
+              "audio": "dialogue_elder_010.ogg",
+              "teaches": ["hsk1_025"]
+            },
+            {
+              "cn": "没关系，慢慢来。学汉语需要时间。",
+              "pinyin": "Méi guānxi, mànmàn lái. Xué Hànyǔ xūyào shíjiān.",
+              "fr": "Ce n'est pas grave, prenez votre temps. Apprendre le mandarin demande du temps.",
+              "audio": "dialogue_elder_011.ogg",
+              "teaches": ["hsk1_039"]
+            }
+          ],
+          "next": "end"
+        },
+        "completed": {
+          "lines": [
+            {
+              "cn": "年轻人，你回来了！你的汉语进步很大！",
+              "pinyin": "Niánqīngrén, nǐ huí lái le! Nǐ de Hànyǔ jìnbù hěn dà!",
+              "fr": "Mon jeune ami, vous voilà de retour ! Vos progrès en mandarin sont remarquables !",
+              "audio": "dialogue_elder_012.ogg",
+              "teaches": ["hsk1_039", "hsk1_022"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    }
+  ]
+}

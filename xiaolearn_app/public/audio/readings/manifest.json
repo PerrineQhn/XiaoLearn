@@ -1,0 +1,124 @@
+{
+  "rd-a1-my-day": {
+    "voice": "zh-CN-XiaohanNeural",
+    "segments": [
+      "/audio/readings/rd-a1-my-day/0.mp3",
+      "/audio/readings/rd-a1-my-day/1.mp3",
+      "/audio/readings/rd-a1-my-day/2.mp3",
+      "/audio/readings/rd-a1-my-day/3.mp3",
+      "/audio/readings/rd-a1-my-day/4.mp3",
+      "/audio/readings/rd-a1-my-day/5.mp3"
+    ]
+  },
+  "rd-a2-travel": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "segments": [
+      "/audio/readings/rd-a2-travel/0.mp3",
+      "/audio/readings/rd-a2-travel/1.mp3",
+      "/audio/readings/rd-a2-travel/2.mp3",
+      "/audio/readings/rd-a2-travel/3.mp3",
+      "/audio/readings/rd-a2-travel/4.mp3",
+      "/audio/readings/rd-a2-travel/5.mp3",
+      "/audio/readings/rd-a2-travel/6.mp3"
+    ]
+  },
+  "rd-b11-work": {
+    "voice": "zh-CN-XiaomoNeural",
+    "segments": [
+      "/audio/readings/rd-b11-work/0.mp3",
+      "/audio/readings/rd-b11-work/1.mp3",
+      "/audio/readings/rd-b11-work/2.mp3",
+      "/audio/readings/rd-b11-work/3.mp3",
+      "/audio/readings/rd-b11-work/4.mp3",
+      "/audio/readings/rd-b11-work/5.mp3"
+    ]
+  },
+  "rd-b12-gaokao": {
+    "voice": "zh-CN-XiaohanNeural",
+    "segments": [
+      "/audio/readings/rd-b12-gaokao/0.mp3",
+      "/audio/readings/rd-b12-gaokao/1.mp3",
+      "/audio/readings/rd-b12-gaokao/2.mp3",
+      "/audio/readings/rd-b12-gaokao/3.mp3",
+      "/audio/readings/rd-b12-gaokao/4.mp3",
+      "/audio/readings/rd-b12-gaokao/5.mp3",
+      "/audio/readings/rd-b12-gaokao/6.mp3"
+    ]
+  },
+  "rd-b21-environment": {
+    "voice": "zh-CN-XiaomoNeural",
+    "segments": [
+      "/audio/readings/rd-b21-environment/0.mp3",
+      "/audio/readings/rd-b21-environment/1.mp3",
+      "/audio/readings/rd-b21-environment/2.mp3",
+      "/audio/readings/rd-b21-environment/3.mp3",
+      "/audio/readings/rd-b21-environment/4.mp3",
+      "/audio/readings/rd-b21-environment/5.mp3",
+      "/audio/readings/rd-b21-environment/6.mp3"
+    ]
+  },
+  "rd-b21-ai-work": {
+    "voice": "zh-CN-YunjianNeural",
+    "segments": [
+      "/audio/readings/rd-b21-ai-work/0.mp3",
+      "/audio/readings/rd-b21-ai-work/1.mp3",
+      "/audio/readings/rd-b21-ai-work/2.mp3",
+      "/audio/readings/rd-b21-ai-work/3.mp3",
+      "/audio/readings/rd-b21-ai-work/4.mp3",
+      "/audio/readings/rd-b21-ai-work/5.mp3",
+      "/audio/readings/rd-b21-ai-work/6.mp3",
+      "/audio/readings/rd-b21-ai-work/7.mp3",
+      "/audio/readings/rd-b21-ai-work/8.mp3",
+      "/audio/readings/rd-b21-ai-work/9.mp3",
+      "/audio/readings/rd-b21-ai-work/10.mp3",
+      "/audio/readings/rd-b21-ai-work/11.mp3",
+      "/audio/readings/rd-b21-ai-work/12.mp3"
+    ]
+  },
+  "rd-b21-post-pandemic-economy": {
+    "voice": "zh-CN-YunyangNeural",
+    "segments": [
+      "/audio/readings/rd-b21-post-pandemic-economy/0.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/1.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/2.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/3.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/4.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/5.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/6.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/7.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/8.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/9.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/10.mp3",
+      "/audio/readings/rd-b21-post-pandemic-economy/11.mp3"
+    ]
+  },
+  "rd-b21-analects-excerpt": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "segments": [
+      "/audio/readings/rd-b21-analects-excerpt/0.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/1.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/2.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/3.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/4.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/5.mp3",
+      "/audio/readings/rd-b21-analects-excerpt/6.mp3"
+    ]
+  },
+  "rd-b22-intangible-heritage": {
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "segments": [
+      "/audio/readings/rd-b22-intangible-heritage/0.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/1.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/2.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/3.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/4.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/5.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/6.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/7.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/8.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/9.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/10.mp3",
+      "/audio/readings/rd-b22-intangible-heritage/11.mp3"
+    ]
+  }
+}

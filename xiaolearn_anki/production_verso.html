@@ -1,15 +1,15 @@
 <div class="card-container prod-card back" id="cardContainer">
   <div class="hsk-badge">{{HSK_Level}}</div>
   <div class="type-indicator prod-type">🟢 PRODUCTION</div>
-  
+
   <div class="comparison-title">
     Trace par-dessus le guide pour comparer
   </div>
-  
-  <!-- Conteneur pour les canvas avec guides -->
+
+  <!-- Conteneur unifié : canvas avec HanziWriter intégré -->
   <div class="canvas-grid-container" id="canvasGridContainer"></div>
-  
-  <!-- Contrôles au verso aussi ! -->
+
+  <!-- Contrôles -->
   <div class="canvas-controls">
     <button onclick="clearAllCanvas()" class="btn-clear">
       🗑️ Effacer
@@ -17,25 +17,30 @@
     <button onclick="undoLastStroke()" class="btn-undo">
       ↶ Annuler
     </button>
+    <button onclick="replayStrokeOrder()" class="btn-replay">
+      🔄 Rejouer
+    </button>
   </div>
-  
-  <div class="correct-answer-section">
+
+  <div class="correct-answer-section compact">
     <div class="correct-label">✅ Réponse correcte</div>
-    <div class="chinese-answer">{{Simplified}}</div>
+    <div class="chinese-answer compact">{{Simplified}}</div>
     <div class="pinyin-answer">{{Pinyin}}</div>
   </div>
-  
+
   <div class="meaning-reminder">
     📖 {{Meaning}}
   </div>
-  
-  <div class="examples-section">
+
+  <div class="auto-audio" style="display:none;">{{Audio}}</div>
+
+  <div class="examples-section compact">
     <div class="examples-title">📚 Exemples</div>
     <div class="examples-content">
       {{Examples}}
     </div>
   </div>
-  
+
   <div class="card-footer">
     <div class="tags">{{Tags}}</div>
     <div class="progress-bar">
@@ -47,105 +52,99 @@
 
 <script>
 (function() {
-  const simplified = '{{Simplified}}';
-  const chars = simplified.split('');
-  const charCount = chars.length;
-  const tags = '{{Tags}}'.toLowerCase();
-  
-  // Détecter le type
-  const isGrammar = tags.includes('particule') || 
-                    tags.includes('grammaire') || 
-                    tags.includes('conjonction') ||
-                    tags.includes('mesure');
-  
-  const card = document.getElementById('cardContainer');
+  var simplified = '{{Simplified}}';
+  var chars = simplified.split('');
+  var charCount = chars.length;
+  var tags = '{{Tags}}'.toLowerCase();
+
+  var isGrammar = tags.includes('particule') ||
+                  tags.includes('grammaire') ||
+                  tags.includes('conjonction') ||
+                  tags.includes('mesure');
+
+  var card = document.getElementById('cardContainer');
   if (isGrammar) {
     card.classList.add('grammar-card');
   } else {
     card.classList.add('vocab-card');
   }
-  
-  // Conteneur principal
-  const container = document.getElementById('canvasGridContainer');
-  
-  // Déterminer la taille selon le nombre de caractères
-  let canvasSize, gridClass, fontSize;
+
+  var container = document.getElementById('canvasGridContainer');
+
+  var canvasSize, gridClass;
   if (charCount === 1) {
-    canvasSize = 300;
-    gridClass = 'canvas-grid-1';
-    fontSize = 200;
+    canvasSize = 300; gridClass = 'canvas-grid-1';
   } else if (charCount === 2) {
-    canvasSize = 150;
-    gridClass = 'canvas-grid-2';
-    fontSize = 100;
+    canvasSize = 150; gridClass = 'canvas-grid-2';
   } else if (charCount === 3) {
-    canvasSize = 100;
-    gridClass = 'canvas-grid-3';
-    fontSize = 70;
+    canvasSize = 100; gridClass = 'canvas-grid-3';
   } else {
-    canvasSize = 150;
-    gridClass = 'canvas-grid-4';
-    fontSize = 100;
+    canvasSize = 150; gridClass = 'canvas-grid-4';
   }
-  
-  // Ajouter la classe
+
   container.classList.add(gridClass);
-  
-  // ✅ NOUVEAU : Tableau pour stocker les managers de dessin
+
+  function isCJK(ch) {
+    var code = ch.charCodeAt(0);
+    return (code >= 0x4E00 && code <= 0x9FFF) ||
+           (code >= 0x3400 && code <= 0x4DBF) ||
+           (code >= 0x20000 && code <= 0x2A6DF);
+  }
+
   window.canvasManagers = [];
-  
-  // Créer un canvas avec guide ET système de dessin pour chaque caractère
-  chars.forEach((char, index) => {
-    const wrapper = document.createElement('div');
+  window.hanziWriters = [];
+  var writerTargets = [];
+
+  chars.forEach(function(char, index) {
+    if (!isCJK(char)) return;
+
+    var wrapper = document.createElement('div');
     wrapper.className = 'canvas-item';
-    
-    // Guide du caractère
-    const guide = document.createElement('div');
-    guide.className = 'char-guide';
-    guide.textContent = char;
-    guide.style.fontSize = `${fontSize}px`;
-    
-    // Canvas avec DESSIN ACTIVÉ
-    const canvas = document.createElement('canvas');
-    canvas.id = `canvas-back-${index}`;
+
+    // Zone pour HanziWriter (remplace le char-guide)
+    var hanziDiv = document.createElement('div');
+    hanziDiv.className = 'hanzi-guide';
+    hanziDiv.id = 'hanzi-guide-' + index;
+
+    // Canvas de dessin par-dessus
+    var canvas = document.createElement('canvas');
+    canvas.id = 'canvas-back-' + index;
     canvas.width = canvasSize * 2;
     canvas.height = canvasSize * 2;
-    canvas.style.width = `${canvasSize}px`;
-    canvas.style.height = `${canvasSize}px`;
-    
+    canvas.style.width = canvasSize + 'px';
+    canvas.style.height = canvasSize + 'px';
+
     // Grille
-    const grid = document.createElement('div');
+    var grid = document.createElement('div');
     grid.className = 'canvas-grid';
-    
-    wrapper.appendChild(guide);
+
+    wrapper.appendChild(hanziDiv);
     wrapper.appendChild(canvas);
     wrapper.appendChild(grid);
     container.appendChild(wrapper);
-    
-    // ✅ NOUVEAU : Initialiser le système de dessin pour ce canvas
-    const manager = initCanvasManager(canvas);
+
+    writerTargets.push({ id: hanziDiv.id, char: char, size: canvasSize });
+
+    var manager = initCanvasManager(canvas);
     window.canvasManagers.push(manager);
   });
-  
-  // ✅ NOUVEAU : Fonction pour initialiser le dessin sur un canvas
+
   function initCanvasManager(canvas) {
-    const ctx = canvas.getContext('2d');
-    let isDrawing = false;
-    let strokes = [];
-    let currentStroke = [];
-    
-    // Configuration du pinceau
+    var ctx = canvas.getContext('2d');
+    var isDrawing = false;
+    var strokes = [];
+    var currentStroke = [];
+
     ctx.strokeStyle = '#2c3e50';
-    ctx.lineWidth = 20;
+    ctx.lineWidth = 10;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
-    
+
     function getPos(e) {
-      const rect = canvas.getBoundingClientRect();
-      const scaleX = canvas.width / rect.width;
-      const scaleY = canvas.height / rect.height;
-      
-      let clientX, clientY;
+      var rect = canvas.getBoundingClientRect();
+      var scaleX = canvas.width / rect.width;
+      var scaleY = canvas.height / rect.height;
+      var clientX, clientY;
       if (e.touches && e.touches.length > 0) {
         clientX = e.touches[0].clientX;
         clientY = e.touches[0].clientY;
@@ -153,90 +152,118 @@
         clientX = e.clientX;
         clientY = e.clientY;
       }
-      
       return {
         x: (clientX - rect.left) * scaleX,
         y: (clientY - rect.top) * scaleY
       };
     }
-    
+
     function startDrawing(e) {
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       isDrawing = true;
       currentStroke = [];
-      const pos = getPos(e);
+      var pos = getPos(e);
       currentStroke.push(pos);
       ctx.beginPath();
       ctx.moveTo(pos.x, pos.y);
     }
-    
+
     function draw(e) {
       if (!isDrawing) return;
-      e.preventDefault();
-      e.stopPropagation();
-      const pos = getPos(e);
+      e.preventDefault(); e.stopPropagation();
+      var pos = getPos(e);
       currentStroke.push(pos);
       ctx.lineTo(pos.x, pos.y);
       ctx.stroke();
     }
-    
+
     function stopDrawing(e) {
       if (!isDrawing) return;
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       isDrawing = false;
       if (currentStroke.length > 0) {
-        strokes.push([...currentStroke]);
+        strokes.push(currentStroke.slice());
       }
     }
-    
-    // Événements souris
+
     canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', draw);
     canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mouseout', stopDrawing);
-    canvas.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-    });
-    
-    // Événements tactiles
+    canvas.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); });
     canvas.addEventListener('touchstart', startDrawing, {passive: false});
     canvas.addEventListener('touchmove', draw, {passive: false});
     canvas.addEventListener('touchend', stopDrawing, {passive: false});
     canvas.addEventListener('touchcancel', stopDrawing, {passive: false});
-    
+
     return {
-      canvas,
-      ctx,
-      clear: function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        strokes = [];
-      },
+      canvas: canvas, ctx: ctx,
+      clear: function() { ctx.clearRect(0, 0, canvas.width, canvas.height); strokes = []; },
       undo: function() {
         if (strokes.length === 0) return;
         strokes.pop();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        strokes.forEach(stroke => {
+        strokes.forEach(function(stroke) {
           if (stroke.length === 0) return;
           ctx.beginPath();
           ctx.moveTo(stroke[0].x, stroke[0].y);
-          stroke.forEach(point => ctx.lineTo(point.x, point.y));
+          stroke.forEach(function(point) { ctx.lineTo(point.x, point.y); });
           ctx.stroke();
         });
       }
     };
   }
-  
-  // ✅ NOUVEAU : Fonctions globales pour les boutons
+
   window.clearAllCanvas = function() {
-    window.canvasManagers.forEach(m => m.clear());
+    window.canvasManagers.forEach(function(m) { m.clear(); });
   };
-  
+
   window.undoLastStroke = function() {
-    // Annuler sur tous les canvas (ou juste le dernier si tu préfères)
-    window.canvasManagers.forEach(m => m.undo());
+    window.canvasManagers.forEach(function(m) { m.undo(); });
   };
+
+  // HanziWriter directement dans chaque carré
+  function loadHanziWriter(callback) {
+    if (window.HanziWriter) { callback(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js';
+    s.onload = callback;
+    document.head.appendChild(s);
+  }
+
+  function initStrokeOrder() {
+    loadHanziWriter(function() {
+      writerTargets.forEach(function(t) {
+        var writer = HanziWriter.create(t.id, t.char, {
+          width: t.size,
+          height: t.size,
+          padding: 10,
+          showOutline: true,
+          showCharacter: false,
+          strokeAnimationSpeed: 1,
+          delayBetweenStrokes: 300,
+          strokeColor: '#b0b0b0',
+          outlineColor: '#e0e0e0',
+          drawingColor: '#c0392b'
+        });
+        window.hanziWriters.push(writer);
+      });
+      animateSequentially(0);
+    });
+  }
+
+  function animateSequentially(index) {
+    if (index >= window.hanziWriters.length) return;
+    window.hanziWriters[index].animateCharacter({
+      onComplete: function() { animateSequentially(index + 1); }
+    });
+  }
+
+  window.replayStrokeOrder = function() {
+    window.hanziWriters.forEach(function(w) { w.hideCharacter(); });
+    animateSequentially(0);
+  };
+
+  initStrokeOrder();
 })();
 </script>

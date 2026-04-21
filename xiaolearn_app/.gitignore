@@ -32,6 +32,9 @@ public/data/manifest.json
 # data/hsk7.json
 data/translation-cache.json
 data/translation-zh-cache.json
+
+# Scripts : cache local de transpilation TS (generate-dialogue-audio.mjs)
+scripts/.cache-dialogue-audio/
 data/cfdict.xml
 data/hsk30-expanded.csv
 data/pinyin/

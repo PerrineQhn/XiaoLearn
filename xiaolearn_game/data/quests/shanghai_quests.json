@@ -1,0 +1,28 @@
+{
+  "region": "shanghai",
+  "quests": [
+    {
+      "id": "shanghai_quest_001",
+      "title_fr": "Première exploration",
+      "title_cn": "初步探索",
+      "description_fr": "Explorez la région et parlez avec les habitants.",
+      "description_cn": "探索这个地区，与当地人交谈。",
+      "region": "shanghai",
+      "auto_start": true,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "id": "obj_explore_shanghai",
+          "type": "visit_location",
+          "target_location": "shanghai_main",
+          "description_fr": "Explorer la zone principale",
+          "description_cn": "探索主要区域"
+        }
+      ],
+      "rewards": {
+        "message_fr": "Vous avez commencé à explorer cette région !",
+        "message_cn": "你已经开始探索这个地区了！"
+      }
+    }
+  ]
+}

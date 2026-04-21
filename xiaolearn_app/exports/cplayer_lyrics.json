@@ -1,0 +1,1878 @@
+{
+  "exportedAt": "2026-03-08T14:04:31.595Z",
+  "projectId": "xiaolearn-db9e6",
+  "collection": "cplayer_lyrics",
+  "reviewedOnly": false,
+  "count": 6,
+  "docs": [
+    {
+      "id": "6D79CYTxvOM",
+      "videoId": "6D79CYTxvOM",
+      "title": "爱人错过",
+      "artist": "告五人",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T13:43:35.514Z",
+      "updatedAt": "2026-03-08T13:52:51.006Z",
+      "lines": [
+        {
+          "time": 16.84,
+          "hanzi": "我肯定在几百年前就说过爱你",
+          "pinyin": "wǒ kěndìng zài jǐbǎi niánqián jiù shuō guò ài nǐ",
+          "translationFr": "Je suis certaine que je t’ai déjà dit « je t’aime » il y a plusieurs centaines d’années",
+          "translationEn": "I’m sure I already told you I loved you hundreds of years ago"
+        },
+        {
+          "time": 24.28,
+          "hanzi": "只是你忘了 我也没记起",
+          "pinyin": "zhǐshì nǐ wàngle wǒ yě méi jìqǐ",
+          "translationFr": "C’est juste que tu l’as oublié, et moi non plus je ne m’en suis pas souvenue",
+          "translationEn": "It’s just that you forgot, and I didn’t remember either"
+        },
+        {
+          "time": 32.52,
+          "hanzi": "我肯定在几百年前就说过爱你",
+          "pinyin": "wǒ kěndìng zài jǐbǎi niánqián jiù shuō guò ài nǐ",
+          "translationFr": "Je suis certaine que je t’ai déjà dit « je t’aime » il y a plusieurs centaines d’années",
+          "translationEn": "I’m sure I already told you I loved you hundreds of years ago"
+        },
+        {
+          "time": 40.02,
+          "hanzi": "只是你忘了 我也没记起",
+          "pinyin": "zhǐshì nǐ wàngle wǒ yě méi jìqǐ",
+          "translationFr": "C’est juste que tu l’as oublié, et moi non plus je ne m’en suis pas souvenue",
+          "translationEn": "It’s just that you forgot, and I didn’t remember either"
+        },
+        {
+          "time": 47.99,
+          "hanzi": "走过 路过 没遇过",
+          "pinyin": "zǒuguò lùguò méi yùguò",
+          "translationFr": "On s’est croisés, dépassés, sans jamais vraiment se rencontrer",
+          "translationEn": "We passed by, crossed paths, yet never truly met"
+        },
+        {
+          "time": 52.59,
+          "hanzi": "回头 转头 还是错",
+          "pinyin": "huítóu zhuǎntóu háishì cuò",
+          "translationFr": "Se retourner, tourner la tête, et malgré tout se tromper encore",
+          "translationEn": "Turning back, turning around, and still getting it wrong"
+        },
+        {
+          "time": 56.47,
+          "hanzi": "你我不曾感受过",
+          "pinyin": "nǐ wǒ bùcéng gǎnshòu guò",
+          "translationFr": "Toi et moi ne l’avons jamais vraiment ressenti",
+          "translationEn": "You and I never truly felt it"
+        },
+        {
+          "time": 60.3,
+          "hanzi": "相撞在街口 相撞在街口",
+          "pinyin": "xiāngzhuàng zài jiēkǒu xiāngzhuàng zài jiēkǒu",
+          "translationFr": "Se percuter au coin de la rue, se percuter au coin de la rue",
+          "translationEn": "Bumping into each other at the street corner, bumping into each other at the street corner"
+        },
+        {
+          "time": 64.55,
+          "hanzi": "你妈没有告诉你",
+          "pinyin": "nǐ mā méiyǒu gàosù nǐ",
+          "translationFr": "Ta mère ne t’a donc pas dit",
+          "translationEn": "Didn’t your mother tell you"
+        },
+        {
+          "time": 68.55,
+          "hanzi": "撞到人要说对不起",
+          "pinyin": "zhuàngdào rén yào shuō duìbuqǐ",
+          "translationFr": "Que quand on percute quelqu’un, il faut dire pardon ?",
+          "translationEn": "That when you bump into someone, you should say sorry?"
+        },
+        {
+          "time": 72.47,
+          "hanzi": "本来今天好好的",
+          "pinyin": "běnlái jīntiān hǎohǎo de",
+          "translationFr": "Au départ, aujourd’hui se passait très bien",
+          "translationEn": "Today was going perfectly fine at first"
+        },
+        {
+          "time": 76.31,
+          "hanzi": "爱人就错过",
+          "pinyin": "ài rén jiù cuòguò",
+          "translationFr": "Et voilà que l’être aimé est encore manqué",
+          "translationEn": "And just like that, the one you love is missed again"
+        },
+        {
+          "time": 78.22,
+          "hanzi": "爱人就错过",
+          "pinyin": "ài rén jiù cuòguò",
+          "translationFr": "Et voilà que l’être aimé est encore manqué",
+          "translationEn": "And just like that, the one you love is missed again"
+        },
+        {
+          "time": 96.91,
+          "hanzi": "我肯定在几百年前就说过爱你",
+          "pinyin": "wǒ kěndìng zài jǐbǎi niánqián jiù shuō guò ài nǐ",
+          "translationFr": "Je suis certaine que je t’ai déjà dit « je t’aime » il y a plusieurs centaines d’années",
+          "translationEn": "I’m sure I already told you I loved you hundreds of years ago"
+        },
+        {
+          "time": 103.87,
+          "hanzi": "只是你忘了 我也没记起",
+          "pinyin": "zhǐshì nǐ wàngle wǒ yě méi jìqǐ",
+          "translationFr": "C’est juste que tu l’as oublié, et moi non plus je ne m’en suis pas souvenue",
+          "translationEn": "It’s just that you forgot, and I didn’t remember either"
+        },
+        {
+          "time": 112.27,
+          "hanzi": "我肯定在几百年前就说过爱你",
+          "pinyin": "wǒ kěndìng zài jǐbǎi niánqián jiù shuō guò ài nǐ",
+          "translationFr": "Je suis certaine que je t’ai déjà dit « je t’aime » il y a plusieurs centaines d’années",
+          "translationEn": "I’m sure I already told you I loved you hundreds of years ago"
+        },
+        {
+          "time": 119.88,
+          "hanzi": "只是你忘了 我也没记起",
+          "pinyin": "zhǐshì nǐ wàngle wǒ yě méi jìqǐ",
+          "translationFr": "C’est juste que tu l’as oublié, et moi non plus je ne m’en suis pas souvenue",
+          "translationEn": "It’s just that you forgot, and I didn’t remember either"
+        },
+        {
+          "time": 128.6,
+          "hanzi": "哈",
+          "pinyin": "hā",
+          "translationFr": "Ha",
+          "translationEn": "Ha"
+        },
+        {
+          "time": 132.47,
+          "hanzi": "哈",
+          "pinyin": "hā",
+          "translationFr": "Ha",
+          "translationEn": "Ha"
+        },
+        {
+          "time": 136.05,
+          "hanzi": "哈哈",
+          "pinyin": "hāhā",
+          "translationFr": "Haha",
+          "translationEn": "Haha"
+        },
+        {
+          "time": 144.8,
+          "hanzi": "走过 路过 没遇过",
+          "pinyin": "zǒuguò lùguò méi yùguò",
+          "translationFr": "On s’est croisés, dépassés, sans jamais vraiment se rencontrer",
+          "translationEn": "We passed by, crossed paths, yet never truly met"
+        },
+        {
+          "time": 148.69,
+          "hanzi": "回头 转头 还是错",
+          "pinyin": "huítóu zhuǎntóu háishì cuò",
+          "translationFr": "Se retourner, tourner la tête, et malgré tout se tromper encore",
+          "translationEn": "Turning back, turning around, and still getting it wrong"
+        },
+        {
+          "time": 152.47,
+          "hanzi": "你我不曾感受过",
+          "pinyin": "nǐ wǒ bùcéng gǎnshòu guò",
+          "translationFr": "Toi et moi ne l’avons jamais vraiment ressenti",
+          "translationEn": "You and I never truly felt it"
+        },
+        {
+          "time": 156.27,
+          "hanzi": "相撞在街口 相撞在街口",
+          "pinyin": "xiāngzhuàng zài jiēkǒu xiāngzhuàng zài jiēkǒu",
+          "translationFr": "Se percuter au coin de la rue, se percuter au coin de la rue",
+          "translationEn": "Bumping into each other at the street corner, bumping into each other at the street corner"
+        },
+        {
+          "time": 160.54,
+          "hanzi": "你妈没有告诉你",
+          "pinyin": "nǐ mā méiyǒu gàosù nǐ",
+          "translationFr": "Ta mère ne t’a donc pas dit",
+          "translationEn": "Didn’t your mother tell you"
+        },
+        {
+          "time": 164.67,
+          "hanzi": "撞到人要说对不起",
+          "pinyin": "zhuàngdào rén yào shuō duìbuqǐ",
+          "translationFr": "Que quand on percute quelqu’un, il faut dire pardon ?",
+          "translationEn": "That when you bump into someone, you should say sorry?"
+        },
+        {
+          "time": 168.62,
+          "hanzi": "本来今天好好的",
+          "pinyin": "běnlái jīntiān hǎohǎo de",
+          "translationFr": "Au départ, aujourd’hui se passait très bien",
+          "translationEn": "Today was going perfectly fine at first"
+        },
+        {
+          "time": 172.36,
+          "hanzi": "爱人就错过",
+          "pinyin": "ài rén jiù cuòguò",
+          "translationFr": "Et voilà que l’être aimé est encore manqué",
+          "translationEn": "And just like that, the one you love is missed again"
+        },
+        {
+          "time": 174.27,
+          "hanzi": "爱人就错过",
+          "pinyin": "ài rén jiù cuòguò",
+          "translationFr": "Et voilà que l’être aimé est encore manqué",
+          "translationEn": "And just like that, the one you love is missed again"
+        },
+        {
+          "time": 196.84,
+          "hanzi": "我肯定在几百年前就说过爱你",
+          "pinyin": "wǒ kěndìng zài jǐbǎi niánqián jiù shuō guò ài nǐ",
+          "translationFr": "Je suis certaine que je t’ai déjà dit « je t’aime » il y a plusieurs centaines d’années",
+          "translationEn": "I’m sure I already told you I loved you hundreds of years ago"
+        },
+        {
+          "time": 204.7,
+          "hanzi": "爱你",
+          "pinyin": "ài nǐ",
+          "translationFr": "Je t’aime",
+          "translationEn": "I love you"
+        },
+        {
+          "time": 207.13,
+          "hanzi": "爱你",
+          "pinyin": "ài nǐ",
+          "translationFr": "Je t’aime",
+          "translationEn": "I love you"
+        },
+        {
+          "time": 208.86,
+          "hanzi": "爱你",
+          "pinyin": "ài nǐ",
+          "translationFr": "Je t’aime",
+          "translationEn": "I love you"
+        }
+      ]
+    },
+    {
+      "id": "Hlp8XD0R5qo",
+      "videoId": "Hlp8XD0R5qo",
+      "title": "孤勇者",
+      "artist": "陈奕迅",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T13:38:28.293Z",
+      "updatedAt": "2026-03-08T13:42:45.879Z",
+      "lines": [
+        {
+          "time": 22.15,
+          "hanzi": "都是勇敢的",
+          "pinyin": "dōu shì yǒnggǎn de",
+          "translationFr": "Tout cela est courageux",
+          "translationEn": "All of it is brave"
+        },
+        {
+          "time": 28.58,
+          "hanzi": "你额头的伤口 你的不同 你犯的错",
+          "pinyin": "nǐ étóu de shāngkǒu nǐ de bùtóng nǐ fàn de cuò",
+          "translationFr": "La blessure sur ton front, ta différence, les erreurs que tu as commises",
+          "translationEn": "The wound on your forehead, your differences, the mistakes you made"
+        },
+        {
+          "time": 36.63,
+          "hanzi": "都不必隐藏",
+          "pinyin": "dōu búbì yǐncáng",
+          "translationFr": "Rien de tout cela n’a besoin d’être caché",
+          "translationEn": "None of it needs to be hidden"
+        },
+        {
+          "time": 43.19,
+          "hanzi": "你破旧的玩偶 你的面具 你的自我",
+          "pinyin": "nǐ pòjiù de wánǒu nǐ de miànjù nǐ de zìwǒ",
+          "translationFr": "Ton vieux jouet usé, ton masque, ton vrai toi",
+          "translationEn": "Your worn-out toy, your mask, your true self"
+        },
+        {
+          "time": 51.75,
+          "hanzi": "他们说 要带着光 驯服每一头怪兽",
+          "pinyin": "tāmen shuō yào dài zhe guāng xùnfú měi yì tóu guàishòu",
+          "translationFr": "Ils disent qu’il faut porter la lumière pour dompter chaque monstre",
+          "translationEn": "They say you must carry light to tame every monster"
+        },
+        {
+          "time": 58.66,
+          "hanzi": "他们说 要缝好你的伤 没有人爱小丑",
+          "pinyin": "tāmen shuō yào féng hǎo nǐ de shāng méi yǒu rén ài xiǎochǒu",
+          "translationFr": "Ils disent qu’il faut recoudre tes blessures, que personne n’aime les clowns",
+          "translationEn": "They say you must stitch up your wounds, that no one loves clowns"
+        },
+        {
+          "time": 65.81,
+          "hanzi": "为何孤独不可光荣?",
+          "pinyin": "wèihé gūdú bùkě guāngróng?",
+          "translationFr": "Pourquoi la solitude ne pourrait-elle pas être honorable ?",
+          "translationEn": "Why can’t loneliness be honorable?"
+        },
+        {
+          "time": 69.08,
+          "hanzi": "人只有不完美 值得歌颂",
+          "pinyin": "rén zhǐyǒu bù wánměi zhídé gēsòng",
+          "translationFr": "Ce sont justement les imperfections humaines qui méritent d’être chantées",
+          "translationEn": "It is precisely human imperfection that deserves to be praised"
+        },
+        {
+          "time": 73.38,
+          "hanzi": "谁说污泥满身的不算英雄?",
+          "pinyin": "shuí shuō wūní mǎnshēn de bú suàn yīngxióng?",
+          "translationFr": "Qui a dit que celui qui est couvert de boue n’est pas un héros ?",
+          "translationEn": "Who says someone covered in mud doesn’t count as a hero?"
+        },
+        {
+          "time": 80.69,
+          "hanzi": "爱你孤身走暗巷 爱你不跪的模样",
+          "pinyin": "ài nǐ gūshēn zǒu ànxiàng ài nǐ bù guì de múyàng",
+          "translationFr": "J’aime te voir marcher seule dans les ruelles sombres, j’aime ta manière de ne jamais t’agenouiller",
+          "translationEn": "I love that you walk alone through dark alleys, I love the way you never kneel"
+        },
+        {
+          "time": 84.61,
+          "hanzi": "爱你对峙过绝望 不肯哭一场",
+          "pinyin": "ài nǐ duìzhì guò juéwàng bùkěn kū yì chǎng",
+          "translationFr": "J’aime que tu aies affronté le désespoir sans vouloir t’effondrer en larmes",
+          "translationEn": "I love that you faced despair and refused to break down in tears"
+        },
+        {
+          "time": 88.1,
+          "hanzi": "爱你破烂的衣裳 却敢堵命运的枪",
+          "pinyin": "ài nǐ pòlàn de yīshang què gǎn dǔ mìngyùn de qiāng",
+          "translationFr": "J’aime tes vêtements en lambeaux, et le courage avec lequel tu oses faire face au fusil du destin",
+          "translationEn": "I love your ragged clothes, and how you dare face the gun of fate"
+        },
+        {
+          "time": 91.92,
+          "hanzi": "爱你和我那么像 缺口都一样",
+          "pinyin": "ài nǐ hé wǒ nàme xiàng quēkǒu dōu yíyàng",
+          "translationFr": "J’aime à quel point tu me ressembles, avec les mêmes failles",
+          "translationEn": "I love how much you resemble me, with the same scars and gaps"
+        },
+        {
+          "time": 95.69,
+          "hanzi": "去吗? 配吗? 这褴褛的披风",
+          "pinyin": "qù ma? pèi ma? zhè lánlǚ de pīfēng",
+          "translationFr": "Y aller ? En suis-je digne ? Avec cette cape en lambeaux",
+          "translationEn": "Go? Am I worthy? With this tattered cape"
+        },
+        {
+          "time": 99.46,
+          "hanzi": "战吗? 战啊! 以最卑微的梦",
+          "pinyin": "zhàn ma? zhàn a! yǐ zuì bēiwēi de mèng",
+          "translationFr": "Se battre ? Battons-nous ! Avec le rêve le plus humble",
+          "translationEn": "Fight? Then fight! With the humblest dream"
+        },
+        {
+          "time": 102.92,
+          "hanzi": "致那黑夜中的呜咽与怒吼",
+          "pinyin": "zhì nà hēiyè zhōng de wūyè yǔ nùhǒu",
+          "translationFr": "À ces sanglots étouffés et ces rugissements de colère dans la nuit",
+          "translationEn": "To the sobs and roars in the dark night"
+        },
+        {
+          "time": 110.23,
+          "hanzi": "谁说站在光里的才算英雄?",
+          "pinyin": "shuí shuō zhàn zài guāng lǐ de cái suàn yīngxióng?",
+          "translationFr": "Qui a dit que seuls ceux qui se tiennent dans la lumière sont des héros ?",
+          "translationEn": "Who says only those standing in the light count as heroes?"
+        },
+        {
+          "time": 128.75,
+          "hanzi": "他们说 要戒了你的狂 就像擦掉了污垢",
+          "pinyin": "tāmen shuō yào jiè le nǐ de kuáng jiùxiàng cādiào le wūgòu",
+          "translationFr": "Ils disent qu’il faut te débarrasser de ta fougue, comme on efface une saleté",
+          "translationEn": "They say you must get rid of your wildness, as if wiping away dirt"
+        },
+        {
+          "time": 136.1,
+          "hanzi": "他们说 要顺台阶而上 而代价是低头",
+          "pinyin": "tāmen shuō yào shùn táijiē ér shàng ér dàijià shì dītóu",
+          "translationFr": "Ils disent qu’il faut monter marche après marche, mais que le prix à payer est de baisser la tête",
+          "translationEn": "They say you must climb step by step, but the price is bowing your head"
+        },
+        {
+          "time": 143.31,
+          "hanzi": "那就让我不可乘风",
+          "pinyin": "nà jiù ràng wǒ bù kě chéngfēng",
+          "translationFr": "Alors qu’importe si je ne peux pas m’élever avec le vent",
+          "translationEn": "Then so be it if I cannot ride the wind"
+        },
+        {
+          "time": 146.64,
+          "hanzi": "你一样骄傲着 那种孤勇",
+          "pinyin": "nǐ yíyàng jiāoào zhe nà zhǒng gūyǒng",
+          "translationFr": "Tu portes avec la même fierté ce courage solitaire",
+          "translationEn": "You carry that lonely courage with the same pride"
+        },
+        {
+          "time": 150.71,
+          "hanzi": "谁说对弈平凡的不算英雄?",
+          "pinyin": "shuí shuō duìyì píngfán de bú suàn yīngxióng?",
+          "translationFr": "Qui a dit que ceux qui affrontent l’ordinaire ne sont pas des héros ?",
+          "translationEn": "Who says those who contend with ordinary life are not heroes?"
+        },
+        {
+          "time": 158.45,
+          "hanzi": "爱你孤身走暗巷 爱你不跪的模样",
+          "pinyin": "ài nǐ gūshēn zǒu ànxiàng ài nǐ bù guì de múyàng",
+          "translationFr": "J’aime te voir marcher seule dans les ruelles sombres, j’aime ta manière de ne jamais t’agenouiller",
+          "translationEn": "I love that you walk alone through dark alleys, I love the way you never kneel"
+        },
+        {
+          "time": 161.93,
+          "hanzi": "爱你对峙过绝望 不肯哭一场",
+          "pinyin": "ài nǐ duìzhì guò juéwàng bùkěn kū yì chǎng",
+          "translationFr": "J’aime que tu aies affronté le désespoir sans vouloir t’effondrer en larmes",
+          "translationEn": "I love that you faced despair and refused to break down in tears"
+        },
+        {
+          "time": 165.77,
+          "hanzi": "爱你破烂的衣裳 却敢堵命运的枪",
+          "pinyin": "ài nǐ pòlàn de yīshang què gǎn dǔ mìngyùn de qiāng",
+          "translationFr": "J’aime tes vêtements en lambeaux, et le courage avec lequel tu oses faire face au fusil du destin",
+          "translationEn": "I love your ragged clothes, and how you dare face the gun of fate"
+        },
+        {
+          "time": 169.51,
+          "hanzi": "爱你和我那么像 缺口都一样",
+          "pinyin": "ài nǐ hé wǒ nàme xiàng quēkǒu dōu yíyàng",
+          "translationFr": "J’aime à quel point tu me ressembles, avec les mêmes failles",
+          "translationEn": "I love how much you resemble me, with the same scars and gaps"
+        },
+        {
+          "time": 173.03,
+          "hanzi": "去吗? 配吗? 这褴褛的披风",
+          "pinyin": "qù ma? pèi ma? zhè lánlǚ de pīfēng",
+          "translationFr": "Y aller ? En suis-je digne ? Avec cette cape en lambeaux",
+          "translationEn": "Go? Am I worthy? With this tattered cape"
+        },
+        {
+          "time": 176.82,
+          "hanzi": "战吗? 战啊! 以最卑微的梦",
+          "pinyin": "zhàn ma? zhàn a! yǐ zuì bēiwēi de mèng",
+          "translationFr": "Se battre ? Battons-nous ! Avec le rêve le plus humble",
+          "translationEn": "Fight? Then fight! With the humblest dream"
+        },
+        {
+          "time": 180.43,
+          "hanzi": "致那黑夜中的呜咽与怒吼",
+          "pinyin": "zhì nà hēiyè zhōng de wūyè yǔ nùhǒu",
+          "translationFr": "À ces sanglots étouffés et ces rugissements de colère dans la nuit",
+          "translationEn": "To the sobs and roars in the dark night"
+        },
+        {
+          "time": 187.71,
+          "hanzi": "谁说站在光里的才算英雄?",
+          "pinyin": "shuí shuō zhàn zài guāng lǐ de cái suàn yīngxióng?",
+          "translationFr": "Qui a dit que seuls ceux qui se tiennent dans la lumière sont des héros ?",
+          "translationEn": "Who says only those standing in the light count as heroes?"
+        },
+        {
+          "time": 192.44,
+          "hanzi": "你的斑驳与众不同",
+          "pinyin": "nǐ de bānbó yǔ zhòng bùtóng",
+          "translationFr": "Tes marques, tes fissures, te rendent différent des autres",
+          "translationEn": "Your mottled scars and marks make you different from everyone else"
+        },
+        {
+          "time": 199.78,
+          "hanzi": "你的沉默震耳欲聋 (you are the hero)",
+          "pinyin": "nǐ de chénmò zhèněryùlóng (you are the hero)",
+          "translationFr": "Ton silence est assourdissant (you are the hero)",
+          "translationEn": "Your silence is deafening (you are the hero)"
+        },
+        {
+          "time": 206.3,
+          "hanzi": "爱你孤身走暗巷 爱你不跪的模样",
+          "pinyin": "ài nǐ gūshēn zǒu ànxiàng ài nǐ bù guì de múyàng",
+          "translationFr": "J’aime te voir marcher seule dans les ruelles sombres, j’aime ta manière de ne jamais t’agenouiller",
+          "translationEn": "I love that you walk alone through dark alleys, I love the way you never kneel"
+        },
+        {
+          "time": 210.08,
+          "hanzi": "爱你对峙过绝望 不肯哭一场 (you are the hero)",
+          "pinyin": "ài nǐ duìzhì guò juéwàng bùkěn kū yì chǎng (you are the hero)",
+          "translationFr": "J’aime que tu aies affronté le désespoir sans vouloir t’effondrer en larmes (you are the hero)",
+          "translationEn": "I love that you faced despair and refused to break down in tears (you are the hero)"
+        },
+        {
+          "time": 213.88,
+          "hanzi": "爱你来自于蛮荒 一生不借谁的光",
+          "pinyin": "ài nǐ láizìyú mánhuāng yìshēng bù jiè shuí de guāng",
+          "translationFr": "J’aime le fait que tu viennes des terres sauvages et que tu ne vives jamais à la lumière de quelqu’un d’autre",
+          "translationEn": "I love that you come from the wild and never borrow anyone else’s light"
+        },
+        {
+          "time": 217.45,
+          "hanzi": "你将造你的城邦 在废墟之上",
+          "pinyin": "nǐ jiāng zào nǐ de chéngbāng zài fèixū zhī shàng",
+          "translationFr": "Tu bâtiras ton propre royaume sur les ruines",
+          "translationEn": "You will build your own kingdom upon the ruins"
+        },
+        {
+          "time": 221.04,
+          "hanzi": "去吗? 去啊! 以最卑微的梦",
+          "pinyin": "qù ma? qù a! yǐ zuì bēiwēi de mèng",
+          "translationFr": "Y aller ? Allons-y ! Avec le rêve le plus humble",
+          "translationEn": "Go? Go on then! With the humblest dream"
+        },
+        {
+          "time": 224.79,
+          "hanzi": "战吗? 战啊! 以最孤高的梦",
+          "pinyin": "zhàn ma? zhàn a! yǐ zuì gūgāo de mèng",
+          "translationFr": "Se battre ? Battons-nous ! Avec le rêve le plus fier et le plus solitaire",
+          "translationEn": "Fight? Then fight! With the proudest and loneliest dream"
+        },
+        {
+          "time": 228.64,
+          "hanzi": "致那黑夜中的呜咽与怒吼",
+          "pinyin": "zhì nà hēiyè zhōng de wūyè yǔ nùhǒu",
+          "translationFr": "À ces sanglots étouffés et ces rugissements de colère dans la nuit",
+          "translationEn": "To the sobs and roars in the dark night"
+        },
+        {
+          "time": 235.61,
+          "hanzi": "谁说站在光里的才算英雄?",
+          "pinyin": "shuí shuō zhàn zài guāng lǐ de cái suàn yīngxióng?",
+          "translationFr": "Qui a dit que seuls ceux qui se tiennent dans la lumière sont des héros ?",
+          "translationEn": "Who says only those standing in the light count as heroes?"
+        }
+      ]
+    },
+    {
+      "id": "T4SimnaiktU",
+      "videoId": "T4SimnaiktU",
+      "title": "光年之外",
+      "artist": "G.E.M. 邓紫棋",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T12:44:15.348Z",
+      "updatedAt": "2026-03-08T12:47:31.818Z",
+      "lines": [
+        {
+          "time": 12.69,
+          "hanzi": "感受停在我发端的指尖",
+          "pinyin": "gǎnshòu tíngzài wǒ fā duānde zhǐjiān",
+          "translationFr": "Je sens le bout de tes doigts s'arrêter au bout de mes cheveux",
+          "translationEn": "I feel your fingertips pausing at the ends of my hair"
+        },
+        {
+          "time": 16.64,
+          "hanzi": "如何瞬间冻结时间?",
+          "pinyin": "rúhé shùnjiān dòngjié shíjiān ?",
+          "translationFr": "Comment figer le temps en un instant ?",
+          "translationEn": "How can time be frozen in an instant?"
+        },
+        {
+          "time": 23.31,
+          "hanzi": "记住望着我坚定的双眼",
+          "pinyin": "jìzhù wàng zhe wǒ jiāndìng de shuāngyǎn",
+          "translationFr": "Souviens-toi de mes yeux déterminés fixés sur toi",
+          "translationEn": "Remember my determined eyes looking at you"
+        },
+        {
+          "time": 27.59,
+          "hanzi": "也许已经没有明天",
+          "pinyin": "yěxǔ yǐjīng méiyǒu míngtiān",
+          "translationFr": "Peut-être qu'il n'y a déjà plus de lendemain",
+          "translationEn": "Maybe there is already no tomorrow"
+        },
+        {
+          "time": 33.95,
+          "hanzi": "面对浩瀚的星海",
+          "pinyin": "miànduì hàohàn de xīng hǎi",
+          "translationFr": "Face à l'immensité de la mer d'étoiles",
+          "translationEn": "Facing the vast sea of stars"
+        },
+        {
+          "time": 36.62,
+          "hanzi": "我们微小得像尘埃",
+          "pinyin": "wǒmen wēixiǎo dé xiàng chénāi",
+          "translationFr": "Nous sommes infimes comme de la poussière",
+          "translationEn": "We are as tiny as dust"
+        },
+        {
+          "time": 38.92,
+          "hanzi": "漂浮在一片无奈",
+          "pinyin": "piāofú zài yípiàn wúnài",
+          "translationFr": "Flottant dans une immense impuissance",
+          "translationEn": "Floating in a sea of helplessness"
+        },
+        {
+          "time": 45.04,
+          "hanzi": "缘分让我们相遇乱世以外",
+          "pinyin": "yuánfèn ràng wǒmen xiāngyù luànshì yǐwài",
+          "translationFr": "Le destin nous a fait nous rencontrer au-delà du monde en chaos",
+          "translationEn": "Fate let us meet beyond this troubled world"
+        },
+        {
+          "time": 50.38,
+          "hanzi": "命运却要我们危难中相爱",
+          "pinyin": "mìngyùn quèyào wǒmen wēinàn zhōng xiāngài",
+          "translationFr": "Mais le destin veut que nous nous aimions au cœur du danger",
+          "translationEn": "Yet fate wants us to fall in love in the midst of danger"
+        },
+        {
+          "time": 55.84,
+          "hanzi": "也许未来遥远在光年之外",
+          "pinyin": "yěxǔ wèilái yáoyuǎn zài guāng nián zhīwài",
+          "translationFr": "Peut-être que l'avenir est lointain, à des années-lumière d'ici",
+          "translationEn": "Maybe the future is far away, beyond light-years"
+        },
+        {
+          "time": 61.38,
+          "hanzi": "我愿守候未知里为你等待",
+          "pinyin": "wǒ yuàn shǒuhòu wèizhī lǐ wèi nǐ děngdài",
+          "translationFr": "Je veux veiller dans l'inconnu et t'y attendre",
+          "translationEn": "I am willing to keep watch in the unknown and wait there for you"
+        },
+        {
+          "time": 65.24,
+          "hanzi": "我没想到 为了你 我能疯狂到",
+          "pinyin": "wǒ méixiǎngdào   wèile nǐ   wǒnéng fēngkuáng dào",
+          "translationFr": "Je n'aurais jamais pensé pouvoir devenir folle à ce point pour toi",
+          "translationEn": "I never thought I could go this crazy for you"
+        },
+        {
+          "time": 70.75,
+          "hanzi": "山崩海啸 没有你 根本不想逃",
+          "pinyin": "shānbēng hǎixiào   méiyǒu nǐ   gēnběn bùxiǎng táo",
+          "translationFr": "Même si les montagnes s'effondrent et que la mer rugit, sans toi je n'ai même pas envie de fuir",
+          "translationEn": "Even if mountains collapse and tsunamis roar, without you I don't even want to run"
+        },
+        {
+          "time": 76.09,
+          "hanzi": "我的大脑 为了你 已经疯狂到",
+          "pinyin": "wǒde dànǎo   wèile nǐ   yǐjīng fēngkuáng dào",
+          "translationFr": "Mon esprit, pour toi, est déjà devenu fou au point de",
+          "translationEn": "My mind, for you, has already gone so crazy that"
+        },
+        {
+          "time": 81.79,
+          "hanzi": "脉搏心跳 没有你 根本不重要",
+          "pinyin": "màibó xīntiào   méiyǒu nǐ   gēnběn bù zhòngyào",
+          "translationFr": "Battements de cœur et pulsations, sans toi, tout cela n'a aucune importance",
+          "translationEn": "Pulse and heartbeat mean nothing at all without you"
+        },
+        {
+          "time": 89.05,
+          "hanzi": "一双围在我胸口的臂弯",
+          "pinyin": "yìshuāng wéi zài wǒ xiōngkǒu de bìwān",
+          "translationFr": "Une paire de bras serrés autour de ma poitrine",
+          "translationEn": "A pair of arms wrapped around my chest"
+        },
+        {
+          "time": 92.94,
+          "hanzi": "足够抵挡天旋地转",
+          "pinyin": "zúgòu dǐdǎng tiān xuán dì zhuǎn",
+          "translationFr": "Suffit à résister au monde qui chavire",
+          "translationEn": "Is enough to withstand the world spinning upside down"
+        },
+        {
+          "time": 99.91,
+          "hanzi": "一种执迷不放手的倔强",
+          "pinyin": "yìzhǒng zhímí bù fàngshǒu de juéjiàng",
+          "translationFr": "Une obstination entêtée qui refuse de lâcher prise",
+          "translationEn": "A stubborn obsession that refuses to let go"
+        },
+        {
+          "time": 103.73,
+          "hanzi": "足以点燃所有希望",
+          "pinyin": "zúyǐ diǎnrán suǒyǒu xīwàng",
+          "translationFr": "Assez forte pour allumer tous les espoirs",
+          "translationEn": "Strong enough to ignite every hope"
+        },
+        {
+          "time": 110.36,
+          "hanzi": "宇宙磅礴而冷漠",
+          "pinyin": "yǔzhòu bàngbō ér lěngmò",
+          "translationFr": "L'univers est grandiose et indifférent",
+          "translationEn": "The universe is magnificent and indifferent"
+        },
+        {
+          "time": 112.95,
+          "hanzi": "我们的爱微小却闪烁",
+          "pinyin": "wǒmen de ài wēixiǎo què shǎnshuò",
+          "translationFr": "Notre amour est infime, mais il scintille",
+          "translationEn": "Our love is tiny, yet it sparkles"
+        },
+        {
+          "time": 115.25,
+          "hanzi": "颠簸却如此忘我",
+          "pinyin": "diānbǒ què rúcǐ wàngwǒ",
+          "translationFr": "Ballottés, et pourtant si complètement absorbés",
+          "translationEn": "Tossed about, yet so utterly lost in it"
+        },
+        {
+          "time": 121.1,
+          "hanzi": "缘分让我们相遇乱世以外",
+          "pinyin": "yuánfèn ràng wǒmen xiāngyù luànshì yǐwài",
+          "translationFr": "Le destin nous a fait nous rencontrer au-delà du monde en chaos",
+          "translationEn": "Fate let us meet beyond this troubled world"
+        },
+        {
+          "time": 126.66,
+          "hanzi": "命运却要我们危难中相爱",
+          "pinyin": "mìngyùn quèyào wǒmen wēinàn zhōng xiāngài",
+          "translationFr": "Mais le destin veut que nous nous aimions au cœur du danger",
+          "translationEn": "Yet fate wants us to fall in love in the midst of danger"
+        },
+        {
+          "time": 132.11,
+          "hanzi": "也许未来遥远在光年之外",
+          "pinyin": "yěxǔ wèilái yáoyuǎn zài guāng nián zhīwài",
+          "translationFr": "Peut-être que l'avenir est lointain, à des années-lumière d'ici",
+          "translationEn": "Maybe the future is far away, beyond light-years"
+        },
+        {
+          "time": 137.79,
+          "hanzi": "我愿守候未知里为你等待",
+          "pinyin": "wǒ yuàn shǒuhòu wèizhī lǐ wèi nǐ děngdài",
+          "translationFr": "Je veux veiller dans l'inconnu et t'y attendre",
+          "translationEn": "I am willing to keep watch in the unknown and wait there for you"
+        },
+        {
+          "time": 141.67,
+          "hanzi": "我没想到 为了你 我能疯狂到",
+          "pinyin": "wǒ méixiǎngdào   wèile nǐ   wǒnéng fēngkuáng dào",
+          "translationFr": "Je n'aurais jamais pensé pouvoir devenir folle à ce point pour toi",
+          "translationEn": "I never thought I could go this crazy for you"
+        },
+        {
+          "time": 147.08,
+          "hanzi": "山崩海啸 没有你 根本不想逃",
+          "pinyin": "shānbēng hǎixiào   méiyǒu nǐ   gēnběn bùxiǎng táo",
+          "translationFr": "Même si les montagnes s'effondrent et que la mer rugit, sans toi je n'ai même pas envie de fuir",
+          "translationEn": "Even if mountains collapse and tsunamis roar, without you I don't even want to run"
+        },
+        {
+          "time": 152.57,
+          "hanzi": "我的大脑 为了你 已经疯狂到",
+          "pinyin": "wǒde dànǎo   wèile nǐ   yǐjīng fēngkuáng dào",
+          "translationFr": "Mon esprit, pour toi, est déjà devenu fou au point de",
+          "translationEn": "My mind, for you, has already gone so crazy that"
+        },
+        {
+          "time": 158.02,
+          "hanzi": "脉搏心跳 没有你 根本不重要",
+          "pinyin": "màibó xīntiào   méiyǒu nǐ   gēnběn bù zhòngyào",
+          "translationFr": "Battements de cœur et pulsations, sans toi, tout cela n'a aucune importance",
+          "translationEn": "Pulse and heartbeat mean nothing at all without you"
+        },
+        {
+          "time": 164.22,
+          "hanzi": "也许航道以外 是醒不来的梦",
+          "pinyin": "yěxǔ hángdào yǐwài   shì xǐng bù lái de mèng",
+          "translationFr": "Peut-être qu'au-delà de la trajectoire, ce n'est qu'un rêve dont on ne se réveille pas",
+          "translationEn": "Maybe beyond the route lies a dream we can never wake from"
+        },
+        {
+          "time": 176.57,
+          "hanzi": "乱世以外 是纯粹的相拥",
+          "pinyin": "luànshì yǐwài   shì chúncuì de xiāng yōng",
+          "translationFr": "Au-delà du chaos, il ne reste qu'une étreinte pure",
+          "translationEn": "Beyond the troubled world, there is only a pure embrace"
+        },
+        {
+          "time": 185.46,
+          "hanzi": "我没想到 为了你 我能疯狂到",
+          "pinyin": "wǒ méixiǎngdào   wèile nǐ   wǒnéng fēngkuáng dào",
+          "translationFr": "Je n'aurais jamais pensé pouvoir devenir folle à ce point pour toi",
+          "translationEn": "I never thought I could go this crazy for you"
+        },
+        {
+          "time": 190.64,
+          "hanzi": "山崩海啸 没有你 根本不想逃",
+          "pinyin": "shānbēng hǎixiào   méiyǒu nǐ   gēnběn bùxiǎng táo",
+          "translationFr": "Même si les montagnes s'effondrent et que la mer rugit, sans toi je n'ai même pas envie de fuir",
+          "translationEn": "Even if mountains collapse and tsunamis roar, without you I don't even want to run"
+        },
+        {
+          "time": 196.26,
+          "hanzi": "我的大脑 为了你 已经疯狂到",
+          "pinyin": "wǒde dànǎo   wèile nǐ   yǐjīng fēngkuáng dào",
+          "translationFr": "Mon esprit, pour toi, est déjà devenu fou au point de",
+          "translationEn": "My mind, for you, has already gone so crazy that"
+        },
+        {
+          "time": 201.71,
+          "hanzi": "脉搏心跳 没有你 根本不重要",
+          "pinyin": "màibó xīntiào   méiyǒu nǐ   gēnběn bù zhòngyào",
+          "translationFr": "Battements de cœur et pulsations, sans toi, tout cela n'a aucune importance",
+          "translationEn": "Pulse and heartbeat mean nothing at all without you"
+        },
+        {
+          "time": 207.16,
+          "hanzi": "(我没想到 为了你 我能疯狂到) 相遇乱世以外",
+          "pinyin": "( wǒ méixiǎngdào   wèile nǐ   wǒnéng fēngkuáng dào )   xiāngyù luànshì yǐwài",
+          "translationFr": "(Je n'aurais jamais pensé pouvoir devenir folle à ce point pour toi) nous rencontrer au-delà du chaos",
+          "translationEn": "(I never thought I could go this crazy for you) to meet beyond this troubled world"
+        },
+        {
+          "time": 212.58,
+          "hanzi": "(山崩海啸 没有你 根本不想逃) 危难中相爱",
+          "pinyin": "( shānbēng hǎixiào   méiyǒu nǐ   gēnběn bùxiǎng táo )   wēinàn zhōng xiāngài",
+          "translationFr": "(Même si les montagnes s'effondrent et que la mer rugit, sans toi je n'ai même pas envie de fuir) nous aimer dans le danger",
+          "translationEn": "(Even if mountains collapse and tsunamis roar, without you I don't even want to run) to love in the midst of danger"
+        },
+        {
+          "time": 218.46,
+          "hanzi": "(我没想到 为了你 我能疯狂到) 相遇乱世以外",
+          "pinyin": "( wǒ méixiǎngdào   wèile nǐ   wǒnéng fēngkuáng dào )   xiāngyù luànshì yǐwài",
+          "translationFr": "(Je n'aurais jamais pensé pouvoir devenir folle à ce point pour toi) nous rencontrer au-delà du chaos",
+          "translationEn": "(I never thought I could go this crazy for you) to meet beyond this troubled world"
+        },
+        {
+          "time": 223.45,
+          "hanzi": "(山崩海啸 没有你 根本不想逃) 危难中相爱",
+          "pinyin": "( shānbēng hǎixiào   méiyǒu nǐ   gēnběn bùxiǎng táo )   wēinàn zhōng xiāngài",
+          "translationFr": "(Même si les montagnes s'effondrent et que la mer rugit, sans toi je n'ai même pas envie de fuir) nous aimer dans le danger",
+          "translationEn": "(Even if mountains collapse and tsunamis roar, without you I don't even want to run) to love in the midst of danger"
+        },
+        {
+          "time": 229.03,
+          "hanzi": "我没想到",
+          "pinyin": "wǒ méixiǎngdào",
+          "translationFr": "Je ne m'y attendais pas",
+          "translationEn": "I never expected it"
+        }
+      ]
+    },
+    {
+      "id": "T8jJFEMKCuQ",
+      "videoId": "T8jJFEMKCuQ",
+      "title": "如果可以",
+      "artist": "韦礼安",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T13:28:42.114Z",
+      "updatedAt": "2026-03-08T13:38:18.320Z",
+      "lines": [
+        {
+          "time": 16.34,
+          "hanzi": "你的声音解开了故事的谜语",
+          "pinyin": "nǐ de shēngyīn jiěkāi le gùshì de míyǔ",
+          "translationFr": "Ta voix a dénoué l’énigme de l’histoire",
+          "translationEn": "Your voice unraveled the riddle of the story"
+        },
+        {
+          "time": 23.2,
+          "hanzi": "落下一万年的约定",
+          "pinyin": "luòxià yíwàn nián de yuēdìng",
+          "translationFr": "Laissant derrière elle une promesse de dix mille ans",
+          "translationEn": "Leaving behind a promise for ten thousand years"
+        },
+        {
+          "time": 28.69,
+          "hanzi": "大树下的你 红色围巾 手心里捧的雨",
+          "pinyin": "dà shù xià de nǐ hóngsè wéijīn shǒuxīn lǐ pěng de yǔ",
+          "translationFr": "Toi sous le grand arbre, ton écharpe rouge, la pluie recueillie au creux de tes mains",
+          "translationEn": "You beneath the big tree, your red scarf, the rain cupped in your palms"
+        },
+        {
+          "time": 35.36,
+          "hanzi": "哭了笑了 除了你还是你",
+          "pinyin": "kū le xiào le chúle nǐ háishì nǐ",
+          "translationFr": "J’ai pleuré, j’ai souri, mais en dehors de toi il n’y a toujours que toi",
+          "translationEn": "I cried, I smiled, but apart from you it is still only you"
+        },
+        {
+          "time": 42.14,
+          "hanzi": "我们如果又一次错过",
+          "pinyin": "wǒmen rúguǒ yòu yícì cuòguò",
+          "translationFr": "Si nous nous manquons encore une fois",
+          "translationEn": "If we miss each other once again"
+        },
+        {
+          "time": 47.21,
+          "hanzi": "不敢牵起你的手",
+          "pinyin": "bùgǎn qiānqǐ nǐ de shǒu",
+          "translationFr": "Je n’ose pas prendre ta main",
+          "translationEn": "I don’t dare take your hand"
+        },
+        {
+          "time": 50.73,
+          "hanzi": "我会多么寂寞 等待红线来的时候",
+          "pinyin": "wǒ huì duōme jìmò děngdài hóngxiàn lái de shíhòu",
+          "translationFr": "Comme je serais seule, en attendant que le fil rouge arrive",
+          "translationEn": "How lonely I would be, waiting for the red thread to come"
+        },
+        {
+          "time": 55.77,
+          "hanzi": "如果可以 我想和你回到那天相遇",
+          "pinyin": "rúguǒ kěyǐ wǒ xiǎng hé nǐ huídào nà tiān xiāngyù",
+          "translationFr": "Si c’était possible, je voudrais revenir avec toi au jour de notre rencontre",
+          "translationEn": "If I could, I would go back with you to the day we met"
+        },
+        {
+          "time": 62.56,
+          "hanzi": "让时间停止那一场雨",
+          "pinyin": "ràng shíjiān tíngzhǐ nà yì chǎng yǔ",
+          "translationFr": "Faire arrêter le temps dans cette pluie-là",
+          "translationEn": "Let time stop in that rain"
+        },
+        {
+          "time": 67.26,
+          "hanzi": "只想拥抱你在身边的证据 吻你的呼吸",
+          "pinyin": "zhǐ xiǎng yōngbào nǐ zài shēnbiān de zhèngjù wěn nǐ de hūxī",
+          "translationFr": "Je veux seulement serrer contre moi la preuve que tu es à mes côtés, et embrasser ton souffle",
+          "translationEn": "I only want to hold the proof that you are by my side, and kiss your breath"
+        },
+        {
+          "time": 75.31,
+          "hanzi": "一眨眼 (一眨眼) 一瞬间 (一瞬间) 你说好就是永远不会变",
+          "pinyin": "yìzhǎyǎn (yìzhǎyǎn) yíshùnjiān (yíshùnjiān) nǐ shuō hǎo jiù shì yǒngyuǎn bú huì biàn",
+          "translationFr": "En un clin d’œil, en un instant, tu as dit que « oui » voulait dire pour toujours, sans jamais changer",
+          "translationEn": "In the blink of an eye, in a single instant, you said that yes meant forever and would never change"
+        },
+        {
+          "time": 105.17,
+          "hanzi": "大树下的你 红色围巾 手心里捧的雨",
+          "pinyin": "dà shù xià de nǐ hóngsè wéijīn shǒuxīn lǐ pěng de yǔ",
+          "translationFr": "Toi sous le grand arbre, ton écharpe rouge, la pluie recueillie au creux de tes mains",
+          "translationEn": "You beneath the big tree, your red scarf, the rain cupped in your palms"
+        },
+        {
+          "time": 112.01,
+          "hanzi": "哭了笑了 除了你还是你",
+          "pinyin": "kū le xiào le chúle nǐ háishì nǐ",
+          "translationFr": "J’ai pleuré, j’ai souri, mais en dehors de toi il n’y a toujours que toi",
+          "translationEn": "I cried, I smiled, but apart from you it is still only you"
+        },
+        {
+          "time": 118.79,
+          "hanzi": "我们如果又一次错过",
+          "pinyin": "wǒmen rúguǒ yòu yícì cuòguò",
+          "translationFr": "Si nous nous manquons encore une fois",
+          "translationEn": "If we miss each other once again"
+        },
+        {
+          "time": 124.07,
+          "hanzi": "不敢牵起你的手",
+          "pinyin": "bùgǎn qiānqǐ nǐ de shǒu",
+          "translationFr": "Je n’ose pas prendre ta main",
+          "translationEn": "I don’t dare take your hand"
+        },
+        {
+          "time": 127.29,
+          "hanzi": "如果没有如果 等到红线来的时候",
+          "pinyin": "rúguǒ méiyǒu rúguǒ děngdào hóngxiàn lái de shíhòu",
+          "translationFr": "S’il n’y avait pas de « si », quand viendrait enfin le fil rouge",
+          "translationEn": "If there were no 'if', by the time the red thread arrives"
+        },
+        {
+          "time": 132.37,
+          "hanzi": "如果可以 我想和你回到那天相遇",
+          "pinyin": "rúguǒ kěyǐ wǒ xiǎng hé nǐ huídào nà tiān xiāngyù",
+          "translationFr": "Si c’était possible, je voudrais revenir avec toi au jour de notre rencontre",
+          "translationEn": "If I could, I would go back with you to the day we met"
+        },
+        {
+          "time": 138.93,
+          "hanzi": "让时间停止那一场雨",
+          "pinyin": "ràng shíjiān tíngzhǐ nà yì chǎng yǔ",
+          "translationFr": "Faire arrêter le temps dans cette pluie-là",
+          "translationEn": "Let time stop in that rain"
+        },
+        {
+          "time": 144.02,
+          "hanzi": "只想拥抱你在身边的证据 吻你的呼吸",
+          "pinyin": "zhǐ xiǎng yōngbào nǐ zài shēnbiān de zhèngjù wěn nǐ de hūxī",
+          "translationFr": "Je veux seulement serrer contre moi la preuve que tu es à mes côtés, et embrasser ton souffle",
+          "translationEn": "I only want to hold the proof that you are by my side, and kiss your breath"
+        },
+        {
+          "time": 151.98,
+          "hanzi": "一眨眼 (一眨眼) 一瞬间 (一瞬间) 你说好就是永远",
+          "pinyin": "yìzhǎyǎn (yìzhǎyǎn) yíshùnjiān (yíshùnjiān) nǐ shuō hǎo jiù shì yǒngyuǎn",
+          "translationFr": "En un clin d’œil, en un instant, tu as dit que « oui » voulait dire pour toujours",
+          "translationEn": "In the blink of an eye, in a single instant, you said that yes meant forever"
+        },
+        {
+          "time": 159.16,
+          "hanzi": "如果可以 茫茫人海千年一眼相遇",
+          "pinyin": "rúguǒ kěyǐ mángmáng rénhǎi qiānnián yì yǎn xiāngyù",
+          "translationFr": "Si c’était possible, dans l’immensité de la foule, un seul regard suffirait pour se retrouver après mille ans",
+          "translationEn": "If I could, then in the vast sea of people, a single glance would let us meet across a thousand years"
+        },
+        {
+          "time": 165.74,
+          "hanzi": "月光下转身 那就是你",
+          "pinyin": "yuèguāng xià zhuǎnshēn nà jiù shì nǐ",
+          "translationFr": "Je me retourne sous la lune, et c’est toi",
+          "translationEn": "I turn around under the moonlight, and it is you"
+        },
+        {
+          "time": 170.87,
+          "hanzi": "红线划过深藏轮回的秘密 我挥霍运气",
+          "pinyin": "hóngxiàn huáguò shēncáng lúnhuí de mìmì wǒ huīhuò yùnqì",
+          "translationFr": "Le fil rouge traverse le secret profondément enfoui des renaissances, et je gaspille toute ma chance",
+          "translationEn": "The red thread crosses the deeply hidden secret of reincarnation, and I squander all my luck"
+        },
+        {
+          "time": 178.62,
+          "hanzi": "因为你才让我背对命运 不害怕",
+          "pinyin": "yīnwèi nǐ cái ràng wǒ bèiduì mìngyùn bù hàipà",
+          "translationFr": "C’est grâce à toi que j’ose tourner le dos au destin, sans avoir peur",
+          "translationEn": "It is because of you that I dare turn my back on fate without fear"
+        },
+        {
+          "time": 185.37,
+          "hanzi": "靠近了 相信了",
+          "pinyin": "kàojìn le xiāngxìn le",
+          "translationFr": "Je me suis approchée, j’y ai cru",
+          "translationEn": "I drew closer, I believed"
+        },
+        {
+          "time": 188.58,
+          "hanzi": "到底我们爱得有多狼狈",
+          "pinyin": "dàodǐ wǒmen ài de yǒu duō lángbèi",
+          "translationFr": "Jusqu’à quel point notre amour est-il devenu si éprouvant ?",
+          "translationEn": "Just how battered and desperate has our love become?"
+        },
+        {
+          "time": 195.46,
+          "hanzi": "暴雨狂风也不想防备",
+          "pinyin": "bàoyǔ kuángfēng yě bùxiǎng fángbèi",
+          "translationFr": "Même sous la pluie battante et les vents violents, je n’ai pas envie de me protéger",
+          "translationEn": "Even in torrential rain and raging wind, I do not want to shield myself"
+        },
+        {
+          "time": 199.06,
+          "hanzi": "爱了就爱了",
+          "pinyin": "ài le jiù ài le",
+          "translationFr": "Puisque j’ai aimé, alors j’ai aimé",
+          "translationEn": "If I loved, then I loved"
+        },
+        {
+          "time": 201.93,
+          "hanzi": "只刻在我们泪光的约定",
+          "pinyin": "zhǐ kè zài wǒmen lèiguāng de yuēdìng",
+          "translationFr": "Une promesse gravée seulement dans l’éclat de nos larmes",
+          "translationEn": "A promise engraved only in the shimmer of our tears"
+        },
+        {
+          "time": 207.45,
+          "hanzi": "火开出了花",
+          "pinyin": "huǒ kāi chū le huā",
+          "translationFr": "Le feu a fait éclore des fleurs",
+          "translationEn": "Fire blossomed into flowers"
+        },
+        {
+          "time": 215.6,
+          "hanzi": "如果可以 我想和你回到那天相遇",
+          "pinyin": "rúguǒ kěyǐ wǒ xiǎng hé nǐ huídào nà tiān xiāngyù",
+          "translationFr": "Si c’était possible, je voudrais revenir avec toi au jour de notre rencontre",
+          "translationEn": "If I could, I would go back with you to the day we met"
+        },
+        {
+          "time": 222.28,
+          "hanzi": "让时间停止那一场雨",
+          "pinyin": "ràng shíjiān tíngzhǐ nà yì chǎng yǔ",
+          "translationFr": "Faire arrêter le temps dans cette pluie-là",
+          "translationEn": "Let time stop in that rain"
+        },
+        {
+          "time": 227.34,
+          "hanzi": "只想拥抱你在身边的证据 吻你的呼吸",
+          "pinyin": "zhǐ xiǎng yōngbào nǐ zài shēnbiān de zhèngjù wěn nǐ de hūxī",
+          "translationFr": "Je veux seulement serrer contre moi la preuve que tu es à mes côtés, et embrasser ton souffle",
+          "translationEn": "I only want to hold the proof that you are by my side, and kiss your breath"
+        },
+        {
+          "time": 235.4,
+          "hanzi": "一眨眼 一万年留给我 别困住你",
+          "pinyin": "yìzhǎyǎn yíwàn nián liú gěi wǒ bié kùnzhù nǐ",
+          "translationFr": "En un clin d’œil, dix mille ans me sont laissés ; ne te laisse pas emprisonner",
+          "translationEn": "In the blink of an eye, ten thousand years are left to me; do not let yourself be trapped"
+        },
+        {
+          "time": 242.43,
+          "hanzi": "如果可以茫茫人海千年一眼相遇",
+          "pinyin": "rúguǒ kěyǐ mángmáng rénhǎi qiānnián yì yǎn xiāngyù",
+          "translationFr": "Si c’était possible, dans l’immensité de la foule, un seul regard suffirait pour se retrouver après mille ans",
+          "translationEn": "If I could, then in the vast sea of people, a single glance would let us meet across a thousand years"
+        },
+        {
+          "time": 249.08,
+          "hanzi": "月光下转身 那就是你 (那就是你)",
+          "pinyin": "yuèguāng xià zhuǎnshēn nà jiù shì nǐ (nà jiù shì nǐ)",
+          "translationFr": "Je me retourne sous la lune, et c’est toi (oui, c’est toi)",
+          "translationEn": "I turn around under the moonlight, and it is you (yes, it is you)"
+        },
+        {
+          "time": 254.11,
+          "hanzi": "红线划过深藏轮回的秘密 我花光运气",
+          "pinyin": "hóngxiàn huáguò shēncáng lúnhuí de mìmì wǒ huāguāng yùnqì",
+          "translationFr": "Le fil rouge traverse le secret profondément enfoui des renaissances, et j’ai dépensé toute ma chance",
+          "translationEn": "The red thread crosses the deeply hidden secret of reincarnation, and I have used up all my luck"
+        },
+        {
+          "time": 261.87,
+          "hanzi": "你是我 (你是我) 赌上世界的决定",
+          "pinyin": "nǐ shì wǒ (nǐ shì wǒ) dǔ shàng shìjiè de juédìng",
+          "translationFr": "Tu es celle pour qui j’ai décidé de miser le monde entier",
+          "translationEn": "You are the one I decided to stake my whole world on"
+        }
+      ]
+    },
+    {
+      "id": "bu7nU9Mhpyo",
+      "videoId": "bu7nU9Mhpyo",
+      "title": "告白气球",
+      "artist": "周杰伦",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T12:36:56.154Z",
+      "updatedAt": "2026-03-08T12:43:32.912Z",
+      "lines": [
+        {
+          "time": 0,
+          "hanzi": "告白气球 - 周杰伦 (Jay Chou)",
+          "pinyin": "gàobái qìqiú - zhōu jiélún (Jay Chou)",
+          "translationFr": "Ballon de confession - Jay Chou",
+          "translationEn": "Love Confession Balloon - Jay Chou"
+        },
+        {
+          "time": 5.89,
+          "hanzi": "词：方文山",
+          "pinyin": "cí: fāng wénshān",
+          "translationFr": "Paroles : Fang Wenshan",
+          "translationEn": "Lyrics: Fang Wenshan"
+        },
+        {
+          "time": 11.79,
+          "hanzi": "曲：周杰伦",
+          "pinyin": "qǔ: zhōu jiélún",
+          "translationFr": "Musique : Jay Chou",
+          "translationEn": "Music: Jay Chou"
+        },
+        {
+          "time": 17.69,
+          "hanzi": "编曲：林迈可",
+          "pinyin": "biānqǔ: lín màikě",
+          "translationFr": "Arrangement : Michael Lin",
+          "translationEn": "Arrangement: Michael Lin"
+        },
+        {
+          "time": 23.59,
+          "hanzi": "塞纳河畔 左岸的咖啡",
+          "pinyin": "sāinàhé pàn zuǒ'àn de kāfēi",
+          "translationFr": "Le café de la rive gauche, au bord de la Seine",
+          "translationEn": "The coffee on the left bank of the Seine"
+        },
+        {
+          "time": 26.16,
+          "hanzi": "我手一杯 品尝你的美",
+          "pinyin": "wǒ shǒu yì bēi pǐncháng nǐ de měi",
+          "translationFr": "Une tasse à la main, je savoure ta beauté",
+          "translationEn": "With a cup in my hand, I savor your beauty"
+        },
+        {
+          "time": 29.33,
+          "hanzi": "留下唇印的嘴",
+          "pinyin": "liúxià chúnyìn de zuǐ",
+          "translationFr": "Tes lèvres qui ont laissé une empreinte",
+          "translationEn": "Your lips that left a lipstick mark"
+        },
+        {
+          "time": 34.27,
+          "hanzi": "花店玫瑰 名字写错谁",
+          "pinyin": "huādiàn méiguī míngzi xiěcuò shuí",
+          "translationFr": "À qui destinait-on cette rose du fleuriste dont le nom a été mal écrit ?",
+          "translationEn": "For whom was the florist's rose whose name was written wrong?"
+        },
+        {
+          "time": 36.9,
+          "hanzi": "告白气球 风吹到对街",
+          "pinyin": "gàobái qìqiú fēng chuīdào duì jiē",
+          "translationFr": "Le ballon de confession est poussé par le vent jusqu'en face",
+          "translationEn": "The confession balloon is blown across the street"
+        },
+        {
+          "time": 40.01,
+          "hanzi": "微笑在天上飞",
+          "pinyin": "wēixiào zài tiānshàng fēi",
+          "translationFr": "Les sourires s'envolent dans le ciel",
+          "translationEn": "Smiles are flying in the sky"
+        },
+        {
+          "time": 44.01,
+          "hanzi": "你说你有点难追",
+          "pinyin": "nǐ shuō nǐ yǒudiǎn nán zhuī",
+          "translationFr": "Tu dis qu'il est un peu difficile de te conquérir",
+          "translationEn": "You say you're a little hard to win over"
+        },
+        {
+          "time": 46.57,
+          "hanzi": "想让我知难而退",
+          "pinyin": "xiǎng ràng wǒ zhīnán'értuì",
+          "translationFr": "Tu voudrais que je renonce face à la difficulté",
+          "translationEn": "You want me to back off when things get difficult"
+        },
+        {
+          "time": 49.22,
+          "hanzi": "礼物不需挑最贵",
+          "pinyin": "lǐwù bù xū tiāo zuì guì",
+          "translationFr": "Pas besoin de choisir le cadeau le plus cher",
+          "translationEn": "There's no need to choose the most expensive gift"
+        },
+        {
+          "time": 51.89,
+          "hanzi": "只要香榭的落叶",
+          "pinyin": "zhǐyào xiāngxiè de luòyè",
+          "translationFr": "Il suffit des feuilles tombées sur les Champs-Élysées",
+          "translationEn": "All I need is the fallen leaves on the Champs-Élysées"
+        },
+        {
+          "time": 54.56,
+          "hanzi": "喔 营造浪漫的约会",
+          "pinyin": "ō yíngzào làngmàn de yuēhuì",
+          "translationFr": "Oh, créer un rendez-vous romantique",
+          "translationEn": "Oh, creating a romantic date"
+        },
+        {
+          "time": 57.26,
+          "hanzi": "不害怕搞砸一切",
+          "pinyin": "bù hàipà gǎozá yíqiè",
+          "translationFr": "Sans avoir peur de tout gâcher",
+          "translationEn": "Not afraid of messing everything up"
+        },
+        {
+          "time": 59.93,
+          "hanzi": "拥有你就拥有全世界",
+          "pinyin": "yōngyǒu nǐ jiù yōngyǒu quán shìjiè",
+          "translationFr": "T'avoir, c'est avoir le monde entier",
+          "translationEn": "Having you is like having the whole world"
+        },
+        {
+          "time": 65.01,
+          "hanzi": "亲爱的 爱上你",
+          "pinyin": "qīn'ài de àishàng nǐ",
+          "translationFr": "Mon amour, je suis tombé amoureux de toi",
+          "translationEn": "My dear, I've fallen in love with you"
+        },
+        {
+          "time": 68.17,
+          "hanzi": "从那天起",
+          "pinyin": "cóng nà tiān qǐ",
+          "translationFr": "Depuis ce jour-là",
+          "translationEn": "Since that day"
+        },
+        {
+          "time": 71.33,
+          "hanzi": "甜蜜的很轻易",
+          "pinyin": "tiánmì de hěn qīngyì",
+          "translationFr": "Tout est devenu doucement sucré, presque sans effort",
+          "translationEn": "Sweetness came so easily"
+        },
+        {
+          "time": 75.69,
+          "hanzi": "亲爱的 别任性",
+          "pinyin": "qīn'ài de bié rènxìng",
+          "translationFr": "Mon amour, ne sois pas si capricieuse",
+          "translationEn": "My dear, don't be so willful"
+        },
+        {
+          "time": 78.85,
+          "hanzi": "你的眼睛",
+          "pinyin": "nǐ de yǎnjīng",
+          "translationFr": "Tes yeux",
+          "translationEn": "Your eyes"
+        },
+        {
+          "time": 81.94,
+          "hanzi": "在说我愿意",
+          "pinyin": "zài shuō wǒ yuànyì",
+          "translationFr": "Sont en train de dire : « oui, je le veux »",
+          "translationEn": "Are saying, 'I do'"
+        },
+        {
+          "time": 108.9,
+          "hanzi": "塞纳河畔 左岸的咖啡",
+          "pinyin": "sāinàhé pàn zuǒ'àn de kāfēi",
+          "translationFr": "Le café de la rive gauche, au bord de la Seine",
+          "translationEn": "The coffee on the left bank of the Seine"
+        },
+        {
+          "time": 111.46,
+          "hanzi": "我手一杯 品尝你的美",
+          "pinyin": "wǒ shǒu yì bēi pǐncháng nǐ de měi",
+          "translationFr": "Une tasse à la main, je savoure ta beauté",
+          "translationEn": "With a cup in my hand, I savor your beauty"
+        },
+        {
+          "time": 114.43,
+          "hanzi": "留下唇印的嘴",
+          "pinyin": "liúxià chúnyìn de zuǐ",
+          "translationFr": "Tes lèvres qui ont laissé une empreinte",
+          "translationEn": "Your lips that left a lipstick mark"
+        },
+        {
+          "time": 119.56,
+          "hanzi": "花店玫瑰 名字写错谁",
+          "pinyin": "huādiàn méiguī míngzi xiěcuò shuí",
+          "translationFr": "À qui destinait-on cette rose du fleuriste dont le nom a été mal écrit ?",
+          "translationEn": "For whom was the florist's rose whose name was written wrong?"
+        },
+        {
+          "time": 122.14,
+          "hanzi": "告白气球 风吹到对街",
+          "pinyin": "gàobái qìqiú fēng chuīdào duì jiē",
+          "translationFr": "Le ballon de confession est poussé par le vent jusqu'en face",
+          "translationEn": "The confession balloon is blown across the street"
+        },
+        {
+          "time": 125.23,
+          "hanzi": "微笑在天上飞",
+          "pinyin": "wēixiào zài tiānshàng fēi",
+          "translationFr": "Les sourires s'envolent dans le ciel",
+          "translationEn": "Smiles are flying in the sky"
+        },
+        {
+          "time": 129.29,
+          "hanzi": "你说你有点难追",
+          "pinyin": "nǐ shuō nǐ yǒudiǎn nán zhuī",
+          "translationFr": "Tu dis qu'il est un peu difficile de te conquérir",
+          "translationEn": "You say you're a little hard to win over"
+        },
+        {
+          "time": 131.9,
+          "hanzi": "想让我知难而退",
+          "pinyin": "xiǎng ràng wǒ zhīnán'értuì",
+          "translationFr": "Tu voudrais que je renonce face à la difficulté",
+          "translationEn": "You want me to back off when things get difficult"
+        },
+        {
+          "time": 134.6,
+          "hanzi": "礼物不需挑最贵",
+          "pinyin": "lǐwù bù xū tiāo zuì guì",
+          "translationFr": "Pas besoin de choisir le cadeau le plus cher",
+          "translationEn": "There's no need to choose the most expensive gift"
+        },
+        {
+          "time": 137.26,
+          "hanzi": "只要香榭的落叶",
+          "pinyin": "zhǐyào xiāngxiè de luòyè",
+          "translationFr": "Il suffit des feuilles tombées sur les Champs-Élysées",
+          "translationEn": "All I need is the fallen leaves on the Champs-Élysées"
+        },
+        {
+          "time": 139.93,
+          "hanzi": "喔 营造浪漫的约会",
+          "pinyin": "ō yíngzào làngmàn de yuēhuì",
+          "translationFr": "Oh, créer un rendez-vous romantique",
+          "translationEn": "Oh, creating a romantic date"
+        },
+        {
+          "time": 142.65,
+          "hanzi": "不害怕搞砸一切",
+          "pinyin": "bù hàipà gǎozá yíqiè",
+          "translationFr": "Sans avoir peur de tout gâcher",
+          "translationEn": "Not afraid of messing everything up"
+        },
+        {
+          "time": 145.27,
+          "hanzi": "拥有你就拥有全世界",
+          "pinyin": "yōngyǒu nǐ jiù yōngyǒu quán shìjiè",
+          "translationFr": "T'avoir, c'est avoir le monde entier",
+          "translationEn": "Having you is like having the whole world"
+        },
+        {
+          "time": 150.31,
+          "hanzi": "亲爱的 爱上你",
+          "pinyin": "qīn'ài de àishàng nǐ",
+          "translationFr": "Mon amour, je suis tombé amoureux de toi",
+          "translationEn": "My dear, I've fallen in love with you"
+        },
+        {
+          "time": 153.58,
+          "hanzi": "从那天起",
+          "pinyin": "cóng nà tiān qǐ",
+          "translationFr": "Depuis ce jour-là",
+          "translationEn": "Since that day"
+        },
+        {
+          "time": 156.6,
+          "hanzi": "甜蜜的很轻易",
+          "pinyin": "tiánmì de hěn qīngyì",
+          "translationFr": "Tout est devenu doucement sucré, presque sans effort",
+          "translationEn": "Sweetness came so easily"
+        },
+        {
+          "time": 160.94,
+          "hanzi": "亲爱的 别任性",
+          "pinyin": "qīn'ài de bié rènxìng",
+          "translationFr": "Mon amour, ne sois pas si capricieuse",
+          "translationEn": "My dear, don't be so willful"
+        },
+        {
+          "time": 164.2,
+          "hanzi": "你的眼睛",
+          "pinyin": "nǐ de yǎnjīng",
+          "translationFr": "Tes yeux",
+          "translationEn": "Your eyes"
+        },
+        {
+          "time": 167.26,
+          "hanzi": "在说我愿意",
+          "pinyin": "zài shuō wǒ yuànyì",
+          "translationFr": "Sont en train de dire : « oui, je le veux »",
+          "translationEn": "Are saying, 'I do'"
+        },
+        {
+          "time": 171.76,
+          "hanzi": "亲爱的 爱上你",
+          "pinyin": "qīn'ài de àishàng nǐ",
+          "translationFr": "Mon amour, je suis tombé amoureux de toi",
+          "translationEn": "My dear, I've fallen in love with you"
+        },
+        {
+          "time": 175.05,
+          "hanzi": "恋爱日记",
+          "pinyin": "liàn'ài rìjì",
+          "translationFr": "Journal d'amour",
+          "translationEn": "Love diary"
+        },
+        {
+          "time": 177.93,
+          "hanzi": "飘香水的回忆",
+          "pinyin": "piāo xiāngshuǐ de huíyì",
+          "translationFr": "Des souvenirs baignés dans le parfum",
+          "translationEn": "Memories scented with perfume"
+        },
+        {
+          "time": 182.33,
+          "hanzi": "一整瓶的梦境",
+          "pinyin": "yì zhěng píng de mèngjìng",
+          "translationFr": "Tout un flacon de rêves",
+          "translationEn": "A whole bottle of dreams"
+        },
+        {
+          "time": 185.42,
+          "hanzi": "全都有你",
+          "pinyin": "quán dōu yǒu nǐ",
+          "translationFr": "Tout est rempli de toi",
+          "translationEn": "Everything is filled with you"
+        },
+        {
+          "time": 188.64,
+          "hanzi": "搅拌在一起",
+          "pinyin": "jiǎobàn zài yìqǐ",
+          "translationFr": "Mélangé ensemble",
+          "translationEn": "Mixed together"
+        },
+        {
+          "time": 193.02,
+          "hanzi": "亲爱的别任性",
+          "pinyin": "qīn'ài de bié rènxìng",
+          "translationFr": "Mon amour, ne sois pas si capricieuse",
+          "translationEn": "My dear, don't be so willful"
+        },
+        {
+          "time": 196.23,
+          "hanzi": "你的眼睛",
+          "pinyin": "nǐ de yǎnjīng",
+          "translationFr": "Tes yeux",
+          "translationEn": "Your eyes"
+        },
+        {
+          "time": 201.31,
+          "hanzi": "在说我愿意",
+          "pinyin": "zài shuō wǒ yuànyì",
+          "translationFr": "Sont en train de dire : « oui, je le veux »",
+          "translationEn": "Are saying, 'I do'"
+        }
+      ]
+    },
+    {
+      "id": "sHD_z90ZKV0",
+      "videoId": "sHD_z90ZKV0",
+      "title": "稻香",
+      "artist": "周杰伦",
+      "source": "human-reviewed",
+      "reviewed": true,
+      "revision": 2,
+      "updatedBy": "p.quenn27@gmail.com",
+      "createdAt": "2026-03-08T14:01:25.384Z",
+      "updatedAt": "2026-03-08T14:04:20.047Z",
+      "lines": [
+        {
+          "time": 31.05,
+          "hanzi": "在这个世界如果你有太多的抱怨",
+          "pinyin": "zài zhège shìjiè rúguǒ nǐ yǒu tài duō de bàoyuàn",
+          "translationFr": "Dans ce monde, si tu as trop de plaintes",
+          "translationEn": "In this world, if you have too many complaints"
+        },
+        {
+          "time": 34.03,
+          "hanzi": "跌倒了就不敢继续往前走",
+          "pinyin": "diēdǎo le jiù bùgǎn jìxù wǎng qián zǒu",
+          "translationFr": "Une fois tombé, tu n’oses plus continuer d’avancer",
+          "translationEn": "Once you fall, you no longer dare keep moving forward"
+        },
+        {
+          "time": 37.06,
+          "hanzi": "为什么人要这么的脆弱堕落",
+          "pinyin": "wèishénme rén yào zhème de cuìruò duòluò",
+          "translationFr": "Pourquoi les gens doivent-ils être à ce point fragiles et abattus ?",
+          "translationEn": "Why do people have to be so fragile and broken?"
+        },
+        {
+          "time": 41.3,
+          "hanzi": "请你打开电视看看",
+          "pinyin": "qǐng nǐ dǎkāi diànshì kànkan",
+          "translationFr": "Allume donc la télévision et regarde",
+          "translationEn": "Please turn on the TV and take a look"
+        },
+        {
+          "time": 42.99,
+          "hanzi": "多少人为生命在努力勇敢的走下去",
+          "pinyin": "duōshǎo rén wèi shēngmìng zài nǔlì yǒnggǎn de zǒu xiàqu",
+          "translationFr": "Combien de gens luttent courageusement pour continuer à vivre",
+          "translationEn": "So many people are striving bravely just to keep living"
+        },
+        {
+          "time": 46.75,
+          "hanzi": "我们是不是该知足",
+          "pinyin": "wǒmen shì bù shì gāi zhīzú",
+          "translationFr": "Ne devrions-nous pas apprendre à nous contenter de ce que nous avons ?",
+          "translationEn": "Shouldn’t we learn to be content?"
+        },
+        {
+          "time": 49.58,
+          "hanzi": "珍惜一切",
+          "pinyin": "zhēnxī yíqiè",
+          "translationFr": "Chérir tout ce qu’on a",
+          "translationEn": "Cherish everything"
+        },
+        {
+          "time": 50.59,
+          "hanzi": "就算没有拥有",
+          "pinyin": "jiùsuàn méiyǒu yōngyǒu",
+          "translationFr": "Même si on ne le possède pas vraiment",
+          "translationEn": "Even if you don’t truly have it"
+        },
+        {
+          "time": 54.05,
+          "hanzi": "还记得你说家是唯一的城堡",
+          "pinyin": "hái jìde nǐ shuō jiā shì wéiyī de chéngbǎo",
+          "translationFr": "Tu te souviens encore quand tu disais que la maison était l’unique château",
+          "translationEn": "Remember when you said home was the only castle"
+        },
+        {
+          "time": 57.44,
+          "hanzi": "随着稻香河流继续奔跑",
+          "pinyin": "suízhe dàoxiāng héliú jìxù bēnpǎo",
+          "translationFr": "Continue à courir en suivant le parfum du riz et le cours de la rivière",
+          "translationEn": "Keep running, following the scent of rice and the river"
+        },
+        {
+          "time": 60.34,
+          "hanzi": "微微笑",
+          "pinyin": "wēiwēi xiào",
+          "translationFr": "Esquisse un léger sourire",
+          "translationEn": "Give a little smile"
+        },
+        {
+          "time": 61.34,
+          "hanzi": "小时候的梦我知道",
+          "pinyin": "xiǎoshíhou de mèng wǒ zhīdào",
+          "translationFr": "Je connais les rêves que tu avais enfant",
+          "translationEn": "I know the dreams you had as a child"
+        },
+        {
+          "time": 65.74,
+          "hanzi": "不要哭让萤火虫带着你逃跑",
+          "pinyin": "búyào kū ràng yínghuǒchóng dài zhe nǐ táopǎo",
+          "translationFr": "Ne pleure pas, laisse les lucioles t’emporter loin d’ici",
+          "translationEn": "Don’t cry, let the fireflies carry you away"
+        },
+        {
+          "time": 69.18,
+          "hanzi": "乡间的歌谣永远的依靠",
+          "pinyin": "xiāngjiān de gēyáo yǒngyuǎn de yīkào",
+          "translationFr": "Les chansons de la campagne seront toujours un refuge",
+          "translationEn": "The songs of the countryside are an everlasting comfort"
+        },
+        {
+          "time": 72.14,
+          "hanzi": "回家吧",
+          "pinyin": "huíjiā ba",
+          "translationFr": "Rentre à la maison",
+          "translationEn": "Go home"
+        },
+        {
+          "time": 73.21,
+          "hanzi": "回到最初的美好",
+          "pinyin": "huídào zuìchū de měihǎo",
+          "translationFr": "Retourne à la beauté des débuts",
+          "translationEn": "Go back to the beauty of the beginning"
+        },
+        {
+          "time": 101.27,
+          "hanzi": "不要这么容易就想放弃",
+          "pinyin": "búyào zhème róngyì jiù xiǎng fàngqì",
+          "translationFr": "N’aie pas si vite envie d’abandonner",
+          "translationEn": "Don’t think about giving up so easily"
+        },
+        {
+          "time": 102.82,
+          "hanzi": "就像我说的",
+          "pinyin": "jiùxiàng wǒ shuō de",
+          "translationFr": "Comme je l’ai dit",
+          "translationEn": "Just like I said"
+        },
+        {
+          "time": 104.62,
+          "hanzi": "追不到的梦想",
+          "pinyin": "zhuī bú dào de mèngxiǎng",
+          "translationFr": "Les rêves qu’on n’arrive pas à atteindre",
+          "translationEn": "Dreams you can’t reach"
+        },
+        {
+          "time": 105.94,
+          "hanzi": "换个梦不就得了",
+          "pinyin": "huàn ge mèng bù jiù dé le",
+          "translationFr": "Il suffit d’en changer, non ?",
+          "translationEn": "Then just change your dream, isn’t that enough?"
+        },
+        {
+          "time": 107.66,
+          "hanzi": "为自己的人生鲜艳上色",
+          "pinyin": "wèi zìjǐ de rénshēng xiānyàn shàngsè",
+          "translationFr": "Donne des couleurs éclatantes à ta propre vie",
+          "translationEn": "Paint your own life in bright colors"
+        },
+        {
+          "time": 109.87,
+          "hanzi": "先把爱涂上喜欢的颜色",
+          "pinyin": "xiān bǎ ài tú shàng xǐhuan de yánsè",
+          "translationFr": "Commence par peindre l’amour avec les couleurs que tu aimes",
+          "translationEn": "First paint love in the color you like"
+        },
+        {
+          "time": 111.79,
+          "hanzi": "笑一个吧",
+          "pinyin": "xiào yí ge ba",
+          "translationFr": "Allez, souris un peu",
+          "translationEn": "Come on, give me a smile"
+        },
+        {
+          "time": 114.08,
+          "hanzi": "功成名就不是目的",
+          "pinyin": "gōngchéngmíngjiù bú shì mùdì",
+          "translationFr": "Le succès et la gloire ne sont pas le but",
+          "translationEn": "Success and fame are not the goal"
+        },
+        {
+          "time": 115.52,
+          "hanzi": "让自己快乐快乐这才叫做意义",
+          "pinyin": "ràng zìjǐ kuàilè kuàilè zhè cái jiàozuò yìyì",
+          "translationFr": "Se rendre heureux, voilà ce qui donne vraiment du sens à la vie",
+          "translationEn": "Making yourself happy, that is what truly gives life meaning"
+        },
+        {
+          "time": 118.52,
+          "hanzi": "童年的纸飞机",
+          "pinyin": "tóngnián de zhǐfēijī",
+          "translationFr": "L’avion en papier de l’enfance",
+          "translationEn": "The paper plane of childhood"
+        },
+        {
+          "time": 120.38,
+          "hanzi": "现在终于飞回我手里",
+          "pinyin": "xiànzài zhōngyú fēi huí wǒ shǒulǐ",
+          "translationFr": "Est enfin revenu voler jusqu’à mes mains",
+          "translationEn": "Has finally flown back into my hands"
+        },
+        {
+          "time": 124.28,
+          "hanzi": "所谓的那快乐",
+          "pinyin": "suǒwèi de nà kuàilè",
+          "translationFr": "Ce qu’on appelle le bonheur",
+          "translationEn": "That so-called happiness"
+        },
+        {
+          "time": 125.5,
+          "hanzi": "赤脚在田里追蜻蜓追到累了",
+          "pinyin": "chìjiǎo zài tiánlǐ zhuī qīngtíng zhuī dào lèi le",
+          "translationFr": "Courir pieds nus dans les champs après les libellules jusqu’à en être épuisé",
+          "translationEn": "Running barefoot through the fields chasing dragonflies until you’re tired out"
+        },
+        {
+          "time": 128.4,
+          "hanzi": "偷摘水果被蜜蜂给叮到怕了",
+          "pinyin": "tōu zhāi shuǐguǒ bèi mìfēng gěi dīng dào pà le",
+          "translationFr": "Voler des fruits et se faire piquer par les abeilles jusqu’à en avoir peur",
+          "translationEn": "Sneaking fruit and getting stung by bees until you’re scared"
+        },
+        {
+          "time": 131.17,
+          "hanzi": "谁在偷笑呢",
+          "pinyin": "shuí zài tōuxiào ne",
+          "translationFr": "Qui est en train de rire en cachette ?",
+          "translationEn": "Who is secretly laughing?"
+        },
+        {
+          "time": 133.03,
+          "hanzi": "我靠着稻草人吹着风唱着歌睡着了",
+          "pinyin": "wǒ kào zhe dàocǎorén chuī zhe fēng chàng zhe gē shuìzháo le",
+          "translationFr": "Adossé à l’épouvantail, bercé par le vent, je chantais puis je me suis endormi",
+          "translationEn": "Leaning against the scarecrow, in the breeze, singing songs, I fell asleep"
+        },
+        {
+          "time": 137.06,
+          "hanzi": "哦 哦 午后吉他在虫鸣中更清脆",
+          "pinyin": "ò ò wǔhòu jítā zài chóngmíng zhōng gèng qīngcuì",
+          "translationFr": "Oh, oh, l’après-midi la guitare sonne encore plus claire au milieu du chant des insectes",
+          "translationEn": "Oh, oh, in the afternoon the guitar sounds even clearer among the insects’ song"
+        },
+        {
+          "time": 139.52,
+          "hanzi": "哦 哦 阳光洒在路上就不怕心碎",
+          "pinyin": "ò ò yángguāng sǎ zài lùshang jiù búpà xīnsuì",
+          "translationFr": "Oh, oh, quand le soleil se répand sur la route, on n’a plus peur d’avoir le cœur brisé",
+          "translationEn": "Oh, oh, when sunlight spills onto the road, you no longer fear heartbreak"
+        },
+        {
+          "time": 142.36,
+          "hanzi": "珍惜一切",
+          "pinyin": "zhēnxī yíqiè",
+          "translationFr": "Chérir tout ce qu’on a",
+          "translationEn": "Cherish everything"
+        },
+        {
+          "time": 144.45,
+          "hanzi": "就算没有拥有",
+          "pinyin": "jiùsuàn méiyǒu yōngyǒu",
+          "translationFr": "Même si on ne le possède pas vraiment",
+          "translationEn": "Even if you don’t truly have it"
+        },
+        {
+          "time": 147.68,
+          "hanzi": "还记得你说家是唯一的城堡",
+          "pinyin": "hái jìde nǐ shuō jiā shì wéiyī de chéngbǎo",
+          "translationFr": "Tu te souviens encore quand tu disais que la maison était l’unique château",
+          "translationEn": "Remember when you said home was the only castle"
+        },
+        {
+          "time": 151.17,
+          "hanzi": "随着稻香河流继续奔跑",
+          "pinyin": "suízhe dàoxiāng héliú jìxù bēnpǎo",
+          "translationFr": "Continue à courir en suivant le parfum du riz et le cours de la rivière",
+          "translationEn": "Keep running, following the scent of rice and the river"
+        },
+        {
+          "time": 153.96,
+          "hanzi": "微微笑",
+          "pinyin": "wēiwēi xiào",
+          "translationFr": "Esquisse un léger sourire",
+          "translationEn": "Give a little smile"
+        },
+        {
+          "time": 154.98,
+          "hanzi": "小时候的梦我知道",
+          "pinyin": "xiǎoshíhou de mèng wǒ zhīdào",
+          "translationFr": "Je connais les rêves que tu avais enfant",
+          "translationEn": "I know the dreams you had as a child"
+        },
+        {
+          "time": 159.36,
+          "hanzi": "不要哭让萤火虫带着你逃跑",
+          "pinyin": "búyào kū ràng yínghuǒchóng dài zhe nǐ táopǎo",
+          "translationFr": "Ne pleure pas, laisse les lucioles t’emporter loin d’ici",
+          "translationEn": "Don’t cry, let the fireflies carry you away"
+        },
+        {
+          "time": 162.72,
+          "hanzi": "乡间的歌谣永远的依靠",
+          "pinyin": "xiāngjiān de gēyáo yǒngyuǎn de yīkào",
+          "translationFr": "Les chansons de la campagne seront toujours un refuge",
+          "translationEn": "The songs of the countryside are an everlasting comfort"
+        },
+        {
+          "time": 165.71,
+          "hanzi": "回家吧",
+          "pinyin": "huíjiā ba",
+          "translationFr": "Rentre à la maison",
+          "translationEn": "Go home"
+        },
+        {
+          "time": 166.85,
+          "hanzi": "回到最初的美好",
+          "pinyin": "huídào zuìchū de měihǎo",
+          "translationFr": "Retourne à la beauté des débuts",
+          "translationEn": "Go back to the beauty of the beginning"
+        },
+        {
+          "time": 171.14,
+          "hanzi": "还记得你说家是唯一的城堡",
+          "pinyin": "hái jìde nǐ shuō jiā shì wéiyī de chéngbǎo",
+          "translationFr": "Tu te souviens encore quand tu disais que la maison était l’unique château",
+          "translationEn": "Remember when you said home was the only castle"
+        },
+        {
+          "time": 174.68,
+          "hanzi": "随着稻香河流继续奔跑",
+          "pinyin": "suízhe dàoxiāng héliú jìxù bēnpǎo",
+          "translationFr": "Continue à courir en suivant le parfum du riz et le cours de la rivière",
+          "translationEn": "Keep running, following the scent of rice and the river"
+        },
+        {
+          "time": 177.65,
+          "hanzi": "微微笑",
+          "pinyin": "wēiwēi xiào",
+          "translationFr": "Esquisse un léger sourire",
+          "translationEn": "Give a little smile"
+        },
+        {
+          "time": 178.79,
+          "hanzi": "小时候的梦我知道",
+          "pinyin": "xiǎoshíhou de mèng wǒ zhīdào",
+          "translationFr": "Je connais les rêves que tu avais enfant",
+          "translationEn": "I know the dreams you had as a child"
+        },
+        {
+          "time": 182.72,
+          "hanzi": "不要哭让萤火虫带着你逃跑",
+          "pinyin": "búyào kū ràng yínghuǒchóng dài zhe nǐ táopǎo",
+          "translationFr": "Ne pleure pas, laisse les lucioles t’emporter loin d’ici",
+          "translationEn": "Don’t cry, let the fireflies carry you away"
+        },
+        {
+          "time": 186.18,
+          "hanzi": "乡间的歌谣永远的依靠",
+          "pinyin": "xiāngjiān de gēyáo yǒngyuǎn de yīkào",
+          "translationFr": "Les chansons de la campagne seront toujours un refuge",
+          "translationEn": "The songs of the countryside are an everlasting comfort"
+        },
+        {
+          "time": 189.03,
+          "hanzi": "回家吧",
+          "pinyin": "huíjiā ba",
+          "translationFr": "Rentre à la maison",
+          "translationEn": "Go home"
+        },
+        {
+          "time": 190.18,
+          "hanzi": "回家吧",
+          "pinyin": "huíjiā ba",
+          "translationFr": "Rentre à la maison",
+          "translationEn": "Go home"
+        }
+      ]
+    }
+  ]
+}

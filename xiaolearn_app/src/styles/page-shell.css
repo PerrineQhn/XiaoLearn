@@ -1,0 +1,231 @@
+/* =========================================================================
+   page-shell.css — V9.7 — Uniformisation STRICTE des en-têtes V2
+   -------------------------------------------------------------------------
+   Objectif : que les TITRES de toutes les sections V2 tombent EXACTEMENT
+   au même endroit Y sur la page, peu importe que la section ait ou non un
+   bouton "← Retour", et que le bouton retour soit TOUJOURS à la même
+   position visuelle dans le coin haut-gauche quand il est présent.
+
+   Stratégie :
+     1. Tous les wrappers V2 partagent le même padding horizontal, le même
+        max-width (1200 px) et le même padding-top (48 px) qui RÉSERVE
+        la zone du bouton retour.
+     2. Le bouton retour passe en "position: absolute" dans le coin haut-
+        gauche de chaque wrapper → il sort du flux normal donc le titre
+        commence TOUJOURS au même Y, qu'il y ait ou non un bouton retour.
+     3. La typographie du H1 et du sous-titre est strictement uniforme.
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1. WRAPPER — même gabarit partout, avec topbar réservé (48 px)
+   ------------------------------------------------------------------------- */
+.dashboard-v2,
+.sim-v2,
+.ai-tutor-v2,
+.report-v2,
+.grammar-drills-v2,
+.evaluation-v2,
+.community-v2,
+.dialogue-v2,
+.reading-v2,
+.lesson-v2,
+.fc5-root,
+.lp-page {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px clamp(16px, 3vw, 40px) 80px;
+}
+
+/* -------------------------------------------------------------------------
+   1.a. FOND CRÈME UNIFORME — Accueil / Simulateur / Prof. Xiao / Leçons /
+        FlashCards partagent désormais le même "bloc de fond" Seonsaengnim-
+        style (crème chaud #fffaf3, plein écran, coins arrondis doux).
+        C'est le seul point où Leçons + FlashCards rejoignent les autres
+        pages V2 côté visuel.
+   ------------------------------------------------------------------------- */
+.dashboard-v2,
+.sim-v2,
+.ai-tutor-v2,
+.fc5-root,
+.lp-page {
+  background: #fffaf3 !important;
+  min-height: calc(100vh - 48px);
+}
+
+/* -------------------------------------------------------------------------
+   1.b. HEADERS — forcer position: static pour que les boutons absolus
+        soient positionnés relatif au WRAPPER et non au header.
+   ------------------------------------------------------------------------- */
+.sim-v2 .sim-v2-catalog-header,
+.sim-v2 .sim-v2-conv-header,
+.ai-tutor-v2 .at2-header,
+.report-v2 .rp2-hero,
+.grammar-drills-v2 .gd2-header,
+.evaluation-v2 .ev2-landing,
+.community-v2 .cm2-hero,
+.dialogue-v2 .dr-header,
+.reading-v2 .dr-header {
+  position: static !important;
+}
+
+/* -------------------------------------------------------------------------
+   1.c. NEUTRALISER LES EMOJIS/DÉCORATIONS PSEUDO-ELEMENTS
+        Simulator mettait un 🎭 en ::before + une ligne dégradée en ::after,
+        ce qui cassait l'uniformité.
+   ------------------------------------------------------------------------- */
+.sim-v2 .sim-v2-catalog-header h1::before,
+.sim-v2 .sim-v2-catalog-header::after,
+.sim-v2 .sim-v2-conv-header::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------
+   2. BOUTON "← RETOUR" — absolute top-left, même position partout
+   ------------------------------------------------------------------------- */
+.sim-v2 .sim-v2-catalog-header > .sim-v2-btn--link,
+.sim-v2 .sim-v2-catalog-header > .sim-v2-catalog-back,
+.sim-v2 .sim-v2-conv-header > .sim-v2-btn--link,
+.ai-tutor-v2 .at2-header > .at2-btn--link,
+.report-v2 > .rp2-topbar,
+.grammar-drills-v2 .gd2-header > .gd2-btn--link,
+.evaluation-v2 .ev2-landing > .ev2-btn--link,
+.community-v2 > .cm2-btn--link,
+.dialogue-v2 .dr-header > .dr-btn--link,
+.reading-v2 .dr-header > .dr-btn--link {
+  position: absolute;
+  top: 16px;
+  left: clamp(16px, 3vw, 40px);
+  margin: 0 !important;
+  z-index: 3;
+
+  /* Apparence unifiée */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Le report-v2 a un conteneur .rp2-topbar (avec 2 boutons) — il faut
+   contraindre son positionnement sans casser la disposition interne.     */
+.report-v2 > .rp2-topbar {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+}
+
+/* -------------------------------------------------------------------------
+   3. TITRE DE SECTION — police, taille, graisse, marge : tout uniforme
+   ------------------------------------------------------------------------- */
+.dash-header .dash-greet,
+.sim-v2 .sim-v2-catalog-header h1,
+.sim-v2 .sim-v2-conv-header h1,
+.ai-tutor-v2 .at2-hero h1,
+.report-v2 .rp2-hero h1,
+.grammar-drills-v2 .gd2-header h1,
+.evaluation-v2 .ev2-landing-title,
+.community-v2 .cm2-hero h1,
+.dialogue-v2 .dr-header h1,
+.reading-v2 .dr-header h1,
+.fc5-root .fc5-title,
+.lp-page .lp-title {
+  font-size: clamp(26px, 2.6vw, 30px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+  margin: 0 0 6px !important;
+  /* Nettoie tout gap/display qui aurait décalé le titre sur certaines pages */
+  display: block !important;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------------------
+   4. SOUS-TITRE — même gabarit
+   ------------------------------------------------------------------------- */
+.dash-header .dash-sub,
+.sim-v2 .sim-v2-catalog-header p,
+.ai-tutor-v2 .at2-hero p,
+.report-v2 .rp2-hero p,
+.grammar-drills-v2 .gd2-header p,
+.evaluation-v2 .ev2-landing-subtitle,
+.community-v2 .cm2-hero p,
+.dialogue-v2 .dr-header p,
+.reading-v2 .dr-header p,
+.fc5-root .fc5-subline,
+.lp-page .lp-subtitle {
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* -------------------------------------------------------------------------
+   5. BLOC D'EN-TÊTE — marge uniforme avant le contenu suivant
+   ------------------------------------------------------------------------- */
+.dash-header,
+.sim-v2 .sim-v2-catalog-header,
+.ai-tutor-v2 .at2-header,
+.report-v2 .rp2-hero,
+.grammar-drills-v2 .gd2-header,
+.community-v2 .cm2-hero,
+.dialogue-v2 .dr-header,
+.reading-v2 .dr-header,
+.fc5-root .fc5-header {
+  margin-bottom: 24px !important;
+  padding-top: 0 !important;
+}
+
+/* AiTutor : aligne l'avatar sur le haut pour que le H1 soit au même Y
+   que les autres pages (et non décalé par le centrage vertical)          */
+.ai-tutor-v2 .at2-hero {
+  align-items: flex-start !important;
+}
+
+/* -------------------------------------------------------------------------
+   5.b. APLATIR LES HEROS BOXÉS (Community, Report, Evaluation)
+   -----------------------------------------------------------------
+   Ces trois pages avaient un encart gradient qui poussait le titre de
+   ~30 px vers le bas par rapport aux autres pages. On retire le cadre
+   pour que le H1 tombe au même Y partout.
+   ------------------------------------------------------------------------- */
+.community-v2 .cm2-hero,
+.report-v2 .rp2-hero,
+.evaluation-v2 .ev2-landing {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+  box-shadow: none !important;
+}
+
+/* Le streak-chip de Home se positionne en absolute dans le coin haut-droit
+   pour ne pas pousser le titre vers le bas                                  */
+.dashboard-v2 .dash-header {
+  display: block !important;
+}
+.dashboard-v2 .dash-header > .streak-chip {
+  position: absolute;
+  top: 16px;
+  right: clamp(16px, 3vw, 40px);
+  z-index: 2;
+}
+
+/* -------------------------------------------------------------------------
+   6. EMOJI DANS TITRE — supprimer le .dash-wave (homogénéité : tous les
+      titres sont texte pur). Les emojis des titres Dialogue/Reading/
+      Flashcards sont retirés côté JSX (plus propre).
+   ------------------------------------------------------------------------- */
+.dashboard-v2 .dash-header .dash-greet .dash-wave {
+  display: none;
+}

@@ -147,7 +147,7 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
         <div className="floating-chat-window">
           <div className="floating-chat-header">
             <div className="floating-chat-title">
-              <span className="chat-avatar">🤖</span>
+              {/* <span className="chat-avatar">🤖</span> */}
               <div className="chat-title-text">
                 <div className="chat-title-main">
                   {language === 'fr' ? 'Assistant IA' : 'AI Assistant'}

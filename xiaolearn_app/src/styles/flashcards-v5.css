@@ -1,0 +1,2788 @@
+/* ============================================================================
+ *  FLASHCARDS V5 — Structure Seonsaengnim × identité XiaoLearn
+ *  Palette rouge/jade/gold sur fond cream/peach (App.css brand colors)
+ *  Préfixe fc5-* pour isolation stricte (pas d'interaction avec fc4-/fc3-)
+ * ============================================================================ */
+
+.fc5-root {
+  /* --- Surfaces (inspiré de --app-bg + panels App.css) ------------------- */
+  --fc5-bg: transparent;               /* laisse transparaître l'app-bg */
+  --fc5-surface: #ffffff;              /* cartes principales */
+  --fc5-surface-alt: #fef3ea;          /* surface crème chaude */
+  --fc5-surface-muted: #fbe4d2;        /* pêche clair (decks sans focus) */
+  --fc5-border: #ead2c4;               /* --border-light XiaoLearn */
+  --fc5-border-soft: rgba(234, 210, 196, 0.55);
+
+  /* --- Textes (App.css --text-*) ---------------------------------------- */
+  --fc5-text: #1F2233;                 /* --text-primary */
+  --fc5-text-muted: #5E6075;           /* --text-secondary */
+  --fc5-text-faint: #8A8C9F;           /* --text-tertiary */
+  --fc5-text-ghost: #b4a89e;           /* ton pêche assourdi */
+
+  /* --- Primary = Rouge chinois XiaoLearn (D8483E) ----------------------- */
+  --fc5-primary: #D8483E;
+  --fc5-primary-dark: #C53830;
+  --fc5-primary-tint: rgba(216, 72, 62, 0.10);
+
+  /* --- Accents sémantiques alignés sur la palette temple ---------------- */
+  --fc5-warn: #F0B762;                 /* --gold-accent */
+  --fc5-warn-tint: rgba(240, 183, 98, 0.18);
+  --fc5-success: #2F9D8A;               /* --jade-green */
+  --fc5-success-tint: rgba(47, 157, 138, 0.12);
+  --fc5-danger: #D8483E;                /* rouge XiaoLearn (urgent = primary) */
+  --fc5-danger-tint: rgba(216, 72, 62, 0.10);
+  --fc5-info: #2F9D8A;                  /* jade pour "info/new" (pas de bleu) */
+  --fc5-info-tint: rgba(47, 157, 138, 0.12);
+  --fc5-purple: #E0952C;                /* gold foncé pour jalons "Mot du jour" */
+  --fc5-purple-tint: rgba(224, 149, 44, 0.12);
+
+  /* --- Ombres teintées rouge (cohérent avec --shadow-sm App.css) -------- */
+  --fc5-shadow-sm: 0 4px 10px rgba(216, 72, 62, 0.06);
+  --fc5-shadow-md: 0 8px 20px rgba(216, 72, 62, 0.08);
+  --fc5-shadow-lg: 0 15px 30px rgba(31, 34, 51, 0.10);
+  --fc5-shadow-hover: 0 12px 24px rgba(216, 72, 62, 0.14);
+
+  --fc5-radius-sm: 10px;
+  --fc5-radius-md: 12px;
+  --fc5-radius-lg: 18px;               /* aligné sur --radius-lg XiaoLearn */
+  --fc5-radius-xl: 28px;               /* aligné sur --radius-xl XiaoLearn */
+
+  background: var(--fc5-bg);
+  color: var(--fc5-text);
+  padding: 32px 24px 120px;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, sans-serif);
+  animation: fc5-fade-in 0.3s ease-out;
+}
+
+@keyframes fc5-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================  HEADER  ==================== */
+
+.fc5-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.fc5-header-main {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.fc5-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fc5-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--fc5-text);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.fc5-subline {
+  font-size: 14px;
+  color: var(--fc5-text-muted);
+  margin: 0;
+}
+
+.fc5-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.fc5-btn-add {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.fc5-btn-add:hover {
+  background: var(--fc5-surface-muted);
+  border-color: var(--fc5-primary);
+}
+
+.fc5-btn-study-now {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fc5-primary) 0%, var(--fc5-primary-dark) 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(216, 72, 62, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.fc5-btn-study-now:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(216, 72, 62, 0.4);
+  transform: translateY(-1px);
+}
+.fc5-btn-study-now:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ====================  TABS Mots / Phrases  ==================== */
+
+.fc5-tabs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.fc5-tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.fc5-tab:hover:not(.is-active) {
+  background: var(--fc5-surface-muted);
+}
+.fc5-tab.is-active {
+  background: var(--fc5-primary);
+  color: #fff;
+  border-color: var(--fc5-primary);
+  box-shadow: var(--fc5-shadow-sm);
+}
+
+.fc5-tab-count-total {
+  font-size: 13px;
+  color: var(--fc5-text-muted);
+  margin-left: 4px;
+}
+
+/* ====================  PREVIEW BANNER  ==================== */
+
+.fc5-preview-banner {
+  background: var(--fc5-warn-tint);
+  border: 1px solid var(--fc5-warn);
+  color: #92400e;
+  padding: 12px 16px;
+  border-radius: var(--fc5-radius-md);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* ====================  STAT GRID 4 cards  ==================== */
+
+.fc5-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .fc5-stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.fc5-stat-card {
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-md);
+  padding: 16px;
+  box-shadow: var(--fc5-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.fc5-stat-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--fc5-shadow-hover);
+}
+
+.fc5-stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--fc5-text);
+  line-height: 1.1;
+}
+.fc5-stat-value.is-warn { color: var(--fc5-warn); }
+.fc5-stat-value.is-success { color: var(--fc5-success); }
+
+.fc5-stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fc5-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ====================  SEARCH BAR  ==================== */
+
+.fc5-search-row {
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.fc5-search-input {
+  width: 100%;
+  padding: 12px 44px 12px 44px;
+  border-radius: 999px;
+  border: 1px solid var(--fc5-border);
+  background: var(--fc5-surface);
+  color: var(--fc5-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.fc5-search-input::placeholder { color: var(--fc5-text-faint); }
+.fc5-search-input:focus {
+  border-color: var(--fc5-primary);
+  box-shadow: 0 0 0 3px var(--fc5-primary-tint);
+}
+
+.fc5-search-icon {
+  position: absolute;
+  left: 16px;
+  font-size: 16px;
+  color: var(--fc5-text-faint);
+  pointer-events: none;
+}
+
+.fc5-search-clear {
+  position: absolute;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--fc5-surface-muted);
+  border: none;
+  color: var(--fc5-text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.fc5-search-clear:hover { background: var(--fc5-border); }
+
+/* ====================  SOURCE PILLS  ==================== */
+
+.fc5-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.fc5-pill {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.fc5-pill:hover:not(.is-active) {
+  background: var(--fc5-surface-muted);
+}
+.fc5-pill.is-active {
+  background: var(--fc5-primary);
+  color: #fff;
+  border-color: var(--fc5-primary);
+  box-shadow: var(--fc5-shadow-sm);
+}
+
+.fc5-pill-count {
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+/* ====================  DECK GRID  ==================== */
+
+.fc5-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fc5-decks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) { .fc5-decks-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .fc5-decks-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.fc5-deck {
+  background: var(--fc5-surface-alt);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-lg);
+  padding: 20px;
+  box-shadow: var(--fc5-shadow-md);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 140px;
+}
+.fc5-deck:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fc5-shadow-hover);
+}
+.fc5-deck:focus-visible {
+  outline: 2px solid var(--fc5-primary);
+  outline-offset: 2px;
+}
+
+.fc5-deck-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fc5-deck-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.fc5-deck-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  line-height: 1.3;
+  /* Two-line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* --- Badge CEFR (A1..C2+) à la place de HSK ---------------------------- */
+.fc5-deck-cefr {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--fc5-surface-muted);
+  color: var(--fc5-text);
+  border: 1px solid var(--fc5-border);
+}
+.fc5-deck-cefr--a1 { background: #FDE7E2; color: #A42A20; border-color: #F4B9B1; }
+.fc5-deck-cefr--a2 { background: #FFE7C7; color: #8A5A1A; border-color: #F4C98A; }
+.fc5-deck-cefr--b1 { background: #E3F5F2; color: #1E6B5E; border-color: #A7D9CF; }
+.fc5-deck-cefr--b2 { background: #D4ECE6; color: #1E6B5E; border-color: #7EC1B1; }
+.fc5-deck-cefr--c1 { background: #E8E0F5; color: #553399; border-color: #C2B1E0; }
+.fc5-deck-cefr--c2,
+.fc5-deck-cefr--c2plus { background: #F0E0D0; color: #5C3A14; border-color: #CFAE86; }
+
+.fc5-deck-body { margin-top: auto; }
+
+.fc5-deck-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.fc5-deck-progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--fc5-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fc5-deck-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--fc5-primary) 0%, var(--fc5-warn) 100%);
+  border-radius: 999px;
+  transition: width 0.6s ease-out;
+}
+
+.fc5-deck-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fc5-primary);
+}
+
+.fc5-deck-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--fc5-text-muted);
+}
+
+.fc5-deck-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--fc5-border-soft);
+}
+
+.fc5-deck-status {
+  font-size: 11px;
+  color: var(--fc5-text-faint);
+}
+.fc5-deck-status.is-progress { color: var(--fc5-info); font-weight: 600; }
+.fc5-deck-status.is-mastered { color: var(--fc5-success); font-weight: 600; }
+
+.fc5-deck-cta {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fc5-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.fc5-deck:hover .fc5-deck-cta { text-decoration: underline; }
+
+.fc5-decks-empty {
+  background: var(--fc5-surface);
+  border: 1px dashed var(--fc5-border);
+  border-radius: var(--fc5-radius-lg);
+  padding: 32px;
+  color: var(--fc5-text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ====================  SESSION SETUP MODAL  ==================== */
+
+.fc5-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fc5-fade-in 0.2s ease-out;
+}
+
+.fc5-modal {
+  background: var(--fc5-surface-alt);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-xl);
+  padding: 24px;
+  box-shadow: var(--fc5-shadow-lg);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+@media (min-width: 768px) { .fc5-modal { padding: 32px; } }
+
+.fc5-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--fc5-text-muted);
+  cursor: pointer;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.fc5-modal-close:hover { background: var(--fc5-surface-muted); }
+
+.fc5-modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--fc5-text);
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.fc5-modal-h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+/* --- Mode tiles dans le modal --- */
+
+.fc5-mode-tiles { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+.fc5-mode-tile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--fc5-radius-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--fc5-border);
+  cursor: pointer;
+  transition: all 0.15s;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+}
+.fc5-mode-tile:hover:not(.is-active):not(:disabled) {
+  background: #fff;
+  border-color: var(--fc5-border);
+}
+.fc5-mode-tile.is-active {
+  background: #fff;
+  border-color: var(--fc5-primary);
+  box-shadow: 0 0 0 1px var(--fc5-primary), var(--fc5-shadow-sm);
+}
+.fc5-mode-tile:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fc5-mode-tile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--fc5-surface-alt);
+  color: var(--fc5-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.fc5-mode-tile.is-active .fc5-mode-tile-icon {
+  background: var(--fc5-primary-tint);
+  color: var(--fc5-primary);
+}
+
+.fc5-mode-tile-main { flex: 1; min-width: 0; }
+
+.fc5-mode-tile-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  line-height: 1.3;
+}
+
+.fc5-mode-tile-sub {
+  font-size: 13px;
+  color: var(--fc5-text-muted);
+  margin-top: 2px;
+}
+
+.fc5-mode-tile-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.fc5-mode-tile-badge.is-recommend { background: var(--fc5-success-tint); color: var(--fc5-success); }
+.fc5-mode-tile-badge.is-new { background: var(--fc5-info-tint); color: var(--fc5-info); }
+.fc5-mode-tile-badge.is-difficult { background: var(--fc5-danger-tint); color: var(--fc5-danger); }
+
+/* --- Count selector --- */
+
+.fc5-modal-section { margin-bottom: 28px; }
+
+.fc5-count-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.fc5-count-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--fc5-border);
+  background: var(--fc5-surface);
+  color: var(--fc5-text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fc5-count-btn:hover:not(.is-active):not(:disabled) { background: var(--fc5-surface-muted); }
+.fc5-count-btn.is-active {
+  background: var(--fc5-primary);
+  color: #fff;
+  border-color: var(--fc5-primary);
+}
+.fc5-count-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.fc5-count-hint {
+  font-size: 12px;
+  color: var(--fc5-warn);
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* --- Direction buttons --- */
+
+.fc5-dir-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.fc5-dir-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--fc5-border);
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  font: inherit;
+}
+.fc5-dir-btn:hover:not(.is-active) {
+  background: #fff;
+  border-color: var(--fc5-border);
+}
+.fc5-dir-btn.is-active {
+  background: #fff;
+  border-color: var(--fc5-primary);
+  box-shadow: 0 0 0 1px var(--fc5-primary), var(--fc5-shadow-sm);
+}
+
+.fc5-dir-btn-emoji {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.fc5-dir-btn-label {
+  font-size: 11px;
+  color: var(--fc5-text-muted);
+}
+
+/* --- Mode grid (QCM, typing, etc.) --- */
+
+.fc5-studymode-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+@media (max-width: 540px) { .fc5-studymode-row { grid-template-columns: repeat(3, 1fr); } }
+
+.fc5-studymode-btn {
+  padding: 10px 4px;
+  border-radius: var(--fc5-radius-sm);
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+.fc5-studymode-btn:hover:not(.is-active) {
+  background: var(--fc5-surface-muted);
+}
+.fc5-studymode-btn.is-active {
+  background: var(--fc5-primary);
+  color: #fff;
+  border-color: var(--fc5-primary);
+}
+.fc5-studymode-btn-icon { font-size: 18px; }
+
+/* --- Primary CTA --- */
+
+.fc5-cta-primary {
+  width: 100%;
+  padding: 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--fc5-primary) 0%, var(--fc5-primary-dark) 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(216, 72, 62, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.fc5-cta-primary:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(216, 72, 62, 0.4);
+  transform: translateY(-1px);
+}
+.fc5-cta-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ====================  SECONDARY SECTIONS (heatmap, badges, WOTD)  ==================== */
+
+.fc5-section {
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-lg);
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: var(--fc5-shadow-sm);
+}
+
+.fc5-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.fc5-section-h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  margin: 0;
+}
+
+/* --- WOTD --- */
+
+.fc5-wotd {
+  background: linear-gradient(135deg, var(--fc5-primary) 0%, var(--fc5-primary-dark) 55%, var(--fc5-primary) 100%);
+  color: #fff;
+  border-radius: var(--fc5-radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 10px 28px rgba(216, 72, 62, 0.28);
+  margin-bottom: 24px;
+}
+
+.fc5-wotd-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.fc5-wotd-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.fc5-wotd-body { display: flex; align-items: center; gap: 16px; }
+
+.fc5-wotd-hanzi {
+  font-size: 40px;
+  font-weight: 800;
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+
+.fc5-wotd-aside { display: flex; flex-direction: column; gap: 4px; }
+
+.fc5-wotd-pinyin { font-size: 16px; opacity: 0.85; }
+.fc5-wotd-meaning { font-size: 15px; font-weight: 600; }
+
+.fc5-wotd-play {
+  margin-top: 8px;
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fc5-wotd-play:hover { background: rgba(255, 255, 255, 0.25); }
+
+.fc5-wotd-empty {
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* --- Heatmap (réutilise la structure v4 mais avec palette v5) --- */
+
+.fc5-heatmap { display: flex; flex-direction: column; gap: 12px; }
+.fc5-heatmap-grid { display: flex; gap: 8px; }
+
+.fc5-heatmap-daylabels {
+  display: grid;
+  grid-template-rows: repeat(7, 16px);
+  gap: 2px;
+  font-size: 10px;
+  color: var(--fc5-text-faint);
+  padding-top: 2px;
+}
+
+.fc5-heatmap-cells {
+  display: flex;
+  gap: 2px;
+  flex: 1;
+}
+
+.fc5-heatmap-row {
+  display: grid;
+  grid-template-rows: repeat(7, 16px);
+  gap: 2px;
+  flex: 1;
+}
+
+.fc5-heatmap-cell {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #f3e6da;              /* peach-neutral empty cell */
+}
+.fc5-heatmap-cell--0 { background: #f3e6da; }
+.fc5-heatmap-cell--1 { background: #d5ece6; }   /* pale jade */
+.fc5-heatmap-cell--2 { background: #7ecbbe; }   /* mid jade */
+.fc5-heatmap-cell--3 { background: var(--fc5-success); } /* XiaoLearn jade */
+.fc5-heatmap-cell--4 { background: var(--fc5-primary); } /* rouge XiaoLearn */
+.fc5-heatmap-cell.is-today { outline: 2px solid var(--fc5-warn); }
+.fc5-heatmap-cell.is-future { opacity: 0.4; background: transparent; border: 1px dashed var(--fc5-border); }
+
+.fc5-heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--fc5-text-faint);
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+/* --- Badges grid --- */
+
+.fc5-badges-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media (min-width: 640px) { .fc5-badges-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .fc5-badges-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.fc5-badge {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--fc5-radius-md);
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  align-items: flex-start;
+  transition: border-color 0.15s;
+}
+.fc5-badge--earned { border-color: var(--fc5-success); background: var(--fc5-success-tint); }
+.fc5-badge--locked { opacity: 0.85; }
+
+.fc5-badge-icon { font-size: 22px; flex-shrink: 0; }
+.fc5-badge-meta { flex: 1; min-width: 0; }
+.fc5-badge-label { font-size: 13px; font-weight: 700; color: var(--fc5-text); }
+.fc5-badge-desc { font-size: 11px; color: var(--fc5-text-muted); margin-top: 2px; }
+.fc5-badge-progress { margin-top: 6px; position: relative; height: 4px; background: var(--fc5-border); border-radius: 999px; }
+.fc5-badge-progress-fill { height: 100%; background: var(--fc5-primary); border-radius: 999px; transition: width 0.4s; }
+.fc5-badge-progress-label { display: block; font-size: 10px; color: var(--fc5-text-faint); margin-top: 4px; }
+
+.fc5-badges-count {
+  font-size: 12px;
+  color: var(--fc5-text-muted);
+  font-weight: 600;
+}
+
+/* ============================================================================
+ *  SESSION VIEW (pendant la session)  —  Conteneur global
+ *  Note : SessionView réutilise la structure v4 mais avec le style Seonsaengnim
+ * ============================================================================ */
+
+.fc5-session-root {
+  background: var(--fc5-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Noto Sans KR', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+.fc5-session-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 12px;
+}
+
+.fc5-session-quit {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--fc5-text);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.fc5-session-quit:hover { background: rgba(0, 0, 0, 0.05); }
+
+.fc5-session-counter {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fc5-text);
+  letter-spacing: 0.2em;
+}
+
+.fc5-session-dir {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ============================================================================
+ *  UTILITIES
+ * ============================================================================ */
+
+.fc5-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fc5-divider {
+  height: 1px;
+  background: var(--fc5-border);
+  margin: 24px 0;
+}
+
+/* ============================================================================
+ *  SESSION V9.4 — Pixel-parity Seonsaengnim, repeint aux couleurs XiaoLearn
+ *  ----------------------------------------------------------------------------
+ *  FlashcardPageV5 enveloppe SessionView/SpeedRound/Summary dans
+ *  `.fc5-root.fc5-session-shell`. Les enfants utilisent les classes fc4-*.
+ *  Ce bloc redessine ENTIÈREMENT la session pour reproduire la mise en page
+ *  Seonsaengnim :
+ *
+ *    ┌─────────────────────────────────────────────────────────────────┐
+ *    │ ✕ Quitter   🇨🇳→🇫🇷  ━━━━━━━━━━━━━━━━━━━━  1 / 8   +42 XP      │ ← topbar
+ *    │                                                                 │
+ *    │                  ┌─────────────────────────┐                    │
+ *    │                  │ [mot]              🔊   │                    │
+ *    │                  │         你好             │                    │
+ *    │                  │        nǐ hǎo           │                    │
+ *    │                  │ 📖 Leçon 1    Retourner ↩│                    │
+ *    │                  └─────────────────────────┘                    │
+ *    │                                                                 │
+ *    │              [✗ Je ne sais pas]   [✓ Je sais]                   │
+ *    │                                                                 │
+ *    │     Espace : retourner · ← : je ne sais pas · → : je sais       │
+ *    └─────────────────────────────────────────────────────────────────┘
+ *
+ *  Carte : 520 × 340 (aspect ≈ 23/15, landscape, 24px radius).
+ *  Back   : gradient rouge foncé XiaoLearn (Seonsaengnim = vert sombre).
+ *  Ratings: 2 boutons seulement (Je ne sais pas / Je sais), style soft-tint.
+ *  Clavier: hints explicites sous la carte une fois révélée.
+ * ============================================================================ */
+
+.fc5-session-shell {
+  background: #fffaf3;
+}
+
+/* Neutralise le fond sombre hérité de .fc4-session. */
+.fc5-session-shell .fc4-session,
+.fc5-session-shell .fc4-speed {
+  background: transparent;
+  min-height: auto;
+  padding: 0;
+  color: var(--fc5-text);
+  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------
+   1. TOPBAR — Quitter · drapeau · progress · counter · XP
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-session-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 820px;
+  padding: 4px 0 8px;
+}
+
+.fc5-session-shell .fc4-session-abort {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--fc5-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+}
+.fc5-session-shell .fc4-session-abort:hover {
+  background: #f1e6d5;
+  color: #1F1A16;
+  border-color: #e0cfb8;
+}
+.fc5-session-shell .fc4-session-abort--placeholder {
+  width: 80px;
+  pointer-events: none;
+}
+
+.fc5-session-shell .fc4-session-dirflag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid var(--fc5-border);
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--fc5-text-muted);
+  flex-shrink: 0;
+}
+
+.fc5-session-shell .fc4-session-progress {
+  flex: 1;
+  min-width: 0;
+}
+.fc5-session-shell .fc4-session-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #f1e6d5;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.fc5-session-shell .fc4-session-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #D8483E 0%, #E0952C 100%);
+  transition: width 0.28s ease;
+}
+
+.fc5-session-shell .fc4-session-counter {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fc5-text-muted);
+  white-space: nowrap;
+  min-width: 48px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.fc5-session-shell .fc4-session-xp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fc5-primary-tint);
+  color: var(--fc5-primary-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------------------
+   2. STAGE — scène de la carte active, centrée, ample
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-session-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 360px;
+  padding: 28px 0 8px;
+}
+
+/* -------------------------------------------------------------------------
+   3. FLIP CARD — landscape (520 × 340), front blanc / back rouge foncé
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-flip-card {
+  width: min(520px, 92vw);
+  aspect-ratio: 23 / 15;  /* landscape, comme Seonsaengnim (460x320) */
+  perspective: 1800px;
+  cursor: pointer;
+  position: relative;
+}
+
+.fc5-session-shell .fc4-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+.fc5-session-shell .fc4-flip-card.is-flipped .fc4-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.fc5-session-shell .fc4-flip-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.fc5-session-shell .fc4-flip-face::before { content: none; } /* pas de barre accent */
+
+.fc5-session-shell .fc4-flip-front {
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  box-shadow:
+    0 4px 12px rgba(31, 26, 22, 0.04),
+    0 12px 32px rgba(31, 26, 22, 0.08);
+  color: #1F1A16;
+}
+
+.fc5-session-shell .fc4-flip-back {
+  background:
+    linear-gradient(135deg, #6B1B13 0%, #8A2820 50%, #6B1B13 100%);
+  border: none;
+  box-shadow:
+    0 4px 12px rgba(107, 27, 19, 0.12),
+    0 12px 32px rgba(107, 27, 19, 0.25);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+/* --- Topbar interne (badge + 🔊) ----------------------------------------- */
+
+.fc5-session-shell .fc4-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.fc5-session-shell .fc4-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(216, 72, 62, 0.1);
+  color: #8A2820;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.fc5-session-shell .fc4-card-badge--inverse {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffe9e5;
+}
+
+.fc5-session-shell .fc4-card-speaker {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffaf3;
+  border: 1px solid #e5e0d5;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1F1A16;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+.fc5-session-shell .fc4-card-speaker:hover { background: #fff; transform: scale(1.06); }
+.fc5-session-shell .fc4-card-speaker--inverse {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.fc5-session-shell .fc4-card-speaker--inverse:hover { background: rgba(255, 255, 255, 0.22); }
+
+/* --- Body (hanzi/meaning/example) --------------------------------------- */
+
+.fc5-session-shell .fc4-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 4px;
+  min-height: 0;
+}
+
+/* Typo FRONT : hanzi gros au centre + pinyin gris dessous */
+.fc5-session-shell .fc4-front-hanzi {
+  font-size: clamp(44px, 7vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1A1A1A;
+  font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.fc5-session-shell .fc4-front-pinyin {
+  font-size: 18px;
+  color: #9CA3AF;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.fc5-session-shell .fc4-front-meaning {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: #1F1A16;
+  text-align: center;
+  padding: 0 12px;
+}
+
+/* Typo BACK : traduction grosse blanche + hanzi en rappel + pinyin + exemple */
+.fc5-session-shell .fc4-back-meaning {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 12px;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.fc5-session-shell .fc4-back-hanzi {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+}
+
+.fc5-session-shell .fc4-back-pinyin {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.fc5-session-shell .fc4-back-example {
+  margin-top: 6px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+}
+.fc5-session-shell .fc4-example-hanzi {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+  font-style: italic;
+  opacity: 0.92;
+}
+.fc5-session-shell .fc4-example-trans {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* --- Footer (breadcrumb + hint Retourner) ------------------------------- */
+
+.fc5-session-shell .fc4-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.fc5-session-shell .fc4-card-breadcrumb {
+  font-size: 11px;
+  color: #9CA3AF;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+.fc5-session-shell .fc4-card-breadcrumb--inverse {
+  color: rgba(255, 255, 255, 0.65);
+}
+.fc5-session-shell .fc4-card-breadcrumb--empty {
+  visibility: hidden; /* garde l'espace pour centrer le hint */
+}
+.fc5-session-shell .fc4-card-flip-hint {
+  font-size: 11px;
+  color: #9CA3AF;
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.fc5-session-shell .fc4-card-flip-hint--inverse {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Le vieil indice .fc4-flip-hint (hérité de V4) n'est plus utilisé, on le masque. */
+.fc5-session-shell .fc4-flip-hint { display: none; }
+
+/* -------------------------------------------------------------------------
+   4. BOUTONS RATING — 2 seuls (Je ne sais pas / Je sais), style soft-tint
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-session-ratings {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.fc5-session-shell .fc4-session-ratings.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fc5-session-shell .fc4-rating {
+  flex: 1;
+  max-width: 240px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease, color 0.15s ease;
+  box-shadow: none;
+  background: transparent;
+}
+.fc5-session-shell .fc4-rating:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.fc5-session-shell .fc4-rating-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+.fc5-session-shell .fc4-rating-label {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* "Je ne sais pas" — rouge XiaoLearn en soft tint */
+.fc5-session-shell .fc4-rating--again {
+  background: rgba(216, 72, 62, 0.065);
+  border: 2px solid rgba(216, 72, 62, 0.22);
+  color: #C53830;
+}
+.fc5-session-shell .fc4-rating--again:hover:not(:disabled) {
+  background: rgba(216, 72, 62, 0.12);
+  border-color: rgba(216, 72, 62, 0.4);
+  transform: translateY(-1px);
+}
+
+/* "Je sais" — jade */
+.fc5-session-shell .fc4-rating--good {
+  background: rgba(47, 157, 138, 0.08);
+  border: 2px solid rgba(47, 157, 138, 0.24);
+  color: #247d6d;
+}
+.fc5-session-shell .fc4-rating--good:hover:not(:disabled) {
+  background: rgba(47, 157, 138, 0.14);
+  border-color: rgba(47, 157, 138, 0.42);
+  transform: translateY(-1px);
+}
+
+.fc5-session-shell .fc4-rating--forbidden {
+  background: #f1e6d5 !important;
+  color: var(--fc5-text-faint) !important;
+  border-color: transparent !important;
+}
+
+/* -------------------------------------------------------------------------
+   5. INDICES CLAVIER — ligne sous les boutons, discrète
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-session-kbd {
+  font-size: 12px;
+  color: var(--fc5-text-faint);
+  text-align: center;
+  letter-spacing: 0.01em;
+  padding: 6px 0 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.fc5-session-shell .fc4-session-kbd.is-visible { opacity: 1; }
+
+/* -------------------------------------------------------------------------
+   6. MCQ / Typing / Listening — conteneurs clairs (inchangé, fond blanc)
+   ------------------------------------------------------------------------- */
+
+/* Le conteneur extérieur n'a plus de fond/bordure : il sert juste de layout
+   vertical pour empiler le "stage" (carte blanche) + les widgets d'action. */
+.fc5-session-shell .fc4-mcq-card,
+.fc5-session-shell .fc4-typing-card,
+.fc5-session-shell .fc4-listening-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  width: min(520px, 92vw);
+  color: var(--fc5-text);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Stage : carte blanche pixel-parity avec la front face d'une flashcard.
+   Utilisée par Mcq / Typing / Listening pour un style de carte unifié. */
+.fc5-session-shell .fc4-study-stage {
+  width: 100%;
+  aspect-ratio: 23 / 15;
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  border-radius: 24px;
+  padding: 20px 28px;
+  box-shadow:
+    0 4px 12px rgba(31, 26, 22, 0.04),
+    0 12px 32px rgba(31, 26, 22, 0.08);
+  display: flex;
+  flex-direction: column;
+  color: #1F1A16;
+  overflow: hidden;
+}
+
+/* Spacer pour aligner le badge à gauche quand il n'y a pas de bouton à droite
+   (utilisé dans ListeningCard où le "speaker" principal est dans le body). */
+.fc5-session-shell .fc4-card-topbar-spacer {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+/* Prompt area : on n'a plus besoin des classes legacy .fc4-mcq-prompt /
+   .fc4-typing-prompt / .fc4-listening-visual — le body du stage s'en charge.
+   On garde quand même un override pour les rares cas où l'ancien DOM serait
+   encore rendu (e.g. composant tiers). */
+.fc5-session-shell .fc4-mcq-prompt,
+.fc5-session-shell .fc4-typing-prompt {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fc5-session-shell .fc4-mcq-hanzi,
+.fc5-session-shell .fc4-typing-hanzi {
+  font-size: clamp(48px, 9vw, 84px);
+  font-weight: 600;
+  color: #1F2233;
+  font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+  display: block;
+}
+
+.fc5-session-shell .fc4-mcq-pinyin {
+  margin-top: 6px;
+  font-size: 18px;
+  color: #D8483E;
+  font-weight: 600;
+}
+
+.fc5-session-shell .fc4-mcq-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fc5-session-shell .fc4-mcq-choice {
+  background: #fffaf3;
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text);
+  border-radius: 12px;
+  padding: 14px 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+}
+.fc5-session-shell .fc4-mcq-choice:hover:not(:disabled) {
+  background: #fff;
+  border-color: #D8483E;
+  color: #D8483E;
+  transform: translateY(-1px);
+}
+.fc5-session-shell .fc4-mcq-choice--correct {
+  background: #e3f5ec !important;
+  border-color: #2F9D8A !important;
+  color: #1f6d4a !important;
+}
+.fc5-session-shell .fc4-mcq-choice--wrong {
+  background: #fde9e8 !important;
+  border-color: #D8483E !important;
+  color: #7a1f1b !important;
+}
+.fc5-session-shell .fc4-mcq-choice--dim { opacity: 0.45; }
+
+.fc5-session-shell .fc4-typing-instruction {
+  color: var(--fc5-text-muted);
+  font-size: 13px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.fc5-session-shell .fc4-typing-meaning {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: #1F2233;
+}
+
+.fc5-session-shell .fc4-typing-row {
+  display: flex;
+  gap: 10px;
+}
+.fc5-session-shell .fc4-typing-input {
+  flex: 1;
+  background: #fffaf3;
+  border: 1px solid var(--fc5-border);
+  color: var(--fc5-text);
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.fc5-session-shell .fc4-typing-input:focus {
+  border-color: #D8483E;
+  box-shadow: 0 0 0 3px var(--fc5-primary-tint);
+}
+.fc5-session-shell .fc4-typing-input--correct {
+  border-color: #2F9D8A;
+  background: #e3f5ec;
+}
+.fc5-session-shell .fc4-typing-input--wrong {
+  border-color: #D8483E;
+  background: #fde9e8;
+}
+.fc5-session-shell .fc4-typing-submit {
+  background: linear-gradient(135deg, #D8483E, #C53830);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(216, 72, 62, 0.25);
+}
+.fc5-session-shell .fc4-typing-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.fc5-session-shell .fc4-typing-feedback {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+.fc5-session-shell .fc4-typing-feedback--correct {
+  background: #e3f5ec;
+  color: #1f6d4a;
+}
+.fc5-session-shell .fc4-typing-feedback--wrong {
+  background: #fde9e8;
+  color: #7a1f1b;
+}
+/* Override `.fc4-back-hanzi` (blanc hérité de l'ancienne carte bordeaux) pour
+   que le hanzi reste lisible dans le feedback clair vert / rose. */
+.fc5-session-shell .fc4-typing-feedback--correct .fc4-typing-feedback-value,
+.fc5-session-shell .fc4-typing-feedback--correct .fc4-back-hanzi {
+  color: #1f6d4a;
+}
+.fc5-session-shell .fc4-typing-feedback--wrong .fc4-typing-feedback-value,
+.fc5-session-shell .fc4-typing-feedback--wrong .fc4-back-hanzi {
+  color: #7a1f1b;
+}
+.fc5-session-shell .fc4-typing-feedback-line--muted {
+  color: var(--fc5-text-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Défense en profondeur : si un composant applique encore la classe legacy
+   .fc4-listening-visual (v4 la peint en sombre avec var(--fc4-panel)=#161a23),
+   on neutralise le background en dérive clair cohérent avec le thème v5. */
+.fc5-session-shell .fc4-listening-visual,
+.fc5-session-shell .fc4-typing-prompt {
+  background: transparent !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.fc5-session-shell .fc4-listening-play {
+  background: linear-gradient(135deg, #fff, #fffaf3);
+  border: 1px solid #e5e0d5;
+  color: #D8483E;
+  font-size: 44px;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, transform 0.08s ease;
+  box-shadow: 0 6px 18px rgba(216, 72, 62, 0.16);
+}
+.fc5-session-shell .fc4-listening-play:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+.fc5-session-shell .fc4-listening-instruction {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--fc5-text-muted);
+  text-align: center;
+  max-width: 80%;
+}
+
+/* -------------------------------------------------------------------------
+   7. SPEED ROUND — même esthétique que la flip card (landscape, barre rouge)
+   ------------------------------------------------------------------------- */
+
+.fc5-session-shell .fc4-speed-card {
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  border-radius: 24px;
+  box-shadow:
+    0 4px 12px rgba(31, 26, 22, 0.04),
+    0 12px 32px rgba(31, 26, 22, 0.08);
+  width: min(520px, 92vw);
+  aspect-ratio: 23 / 15;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px;
+  position: relative;
+}
+.fc5-session-shell .fc4-speed-hanzi {
+  font-size: clamp(56px, 11vw, 92px);
+  font-weight: 700;
+  color: #1A1A1A;
+  font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+}
+.fc5-session-shell .fc4-speed-pinyin {
+  font-size: 22px;
+  color: #9CA3AF;
+  font-weight: 400;
+}
+.fc5-session-shell .fc4-speed-meaning {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #1F1A16;
+  text-align: center;
+}
+.fc5-session-shell .fc4-speed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+.fc5-session-shell .fc4-speed-timer-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #D8483E;
+}
+.fc5-session-shell .fc4-speed-timer-unit {
+  font-size: 14px;
+  color: var(--fc5-text-muted);
+  margin-left: 2px;
+}
+.fc5-session-shell .fc4-speed-score-good { color: #2F9D8A; font-weight: 700; }
+.fc5-session-shell .fc4-speed-score-missed { color: #D8483E; font-weight: 700; }
+.fc5-session-shell .fc4-speed-score-sep { color: var(--fc5-text-faint); margin: 0 4px; }
+.fc5-session-shell .fc4-speed-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+.fc5-session-shell .fc4-speed-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 16px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+}
+.fc5-session-shell .fc4-speed-btn--miss {
+  background: rgba(216, 72, 62, 0.08);
+  border: 2px solid rgba(216, 72, 62, 0.22);
+  color: #C53830;
+}
+.fc5-session-shell .fc4-speed-btn--good {
+  background: rgba(47, 157, 138, 0.1);
+  border: 2px solid rgba(47, 157, 138, 0.24);
+  color: #247d6d;
+}
+
+/* -------------------------------------------------------------------------
+   8. MOBILE — carte toujours landscape mais adaptée
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .fc5-session-shell .fc4-flip-card { aspect-ratio: 4 / 3; }
+  .fc5-session-shell .fc4-speed-card { aspect-ratio: 4 / 3; }
+  .fc5-session-shell .fc4-mcq-choices { grid-template-columns: 1fr; }
+  .fc5-session-shell .fc4-front-hanzi { font-size: clamp(40px, 10vw, 56px); }
+  .fc5-session-shell .fc4-session-header { flex-wrap: wrap; }
+  .fc5-session-shell .fc4-session-progress { order: 5; width: 100%; flex-basis: 100%; }
+  .fc5-session-shell .fc4-rating { padding: 14px 16px; font-size: 14px; }
+}
+
+/* ============================================================================
+   DECK DETAIL VIEW — hero card + status chips + filter tabs + word table
+   Inspiration Seonsaengnim : /collection/:id (page détail)
+   ============================================================================ */
+
+.fc5-deck-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Bouton retour ---- */
+.fc5-deck-back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fc5-text-muted);
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+.fc5-deck-back:hover { color: var(--fc5-text); }
+.fc5-deck-back:focus-visible {
+  outline: 2px solid var(--fc5-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---- Hero card ---- */
+.fc5-deck-hero {
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--fc5-shadow-sm);
+}
+@media (min-width: 720px) {
+  .fc5-deck-hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+  }
+}
+
+.fc5-deck-hero-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fc5-deck-hero-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--fc5-primary-tint);
+  color: var(--fc5-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.fc5-deck-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.fc5-deck-hero-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--fc5-text);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 720px) {
+  .fc5-deck-hero-title { font-size: 24px; }
+}
+
+.fc5-deck-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--fc5-text-muted);
+  flex-wrap: wrap;
+}
+.fc5-deck-hero-sep { opacity: 0.5; }
+
+.fc5-deck-hero-cta {
+  background: linear-gradient(135deg, var(--fc5-primary) 0%, var(--fc5-primary-dark) 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(216, 72, 62, 0.25);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  white-space: nowrap;
+}
+.fc5-deck-hero-cta:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(216, 72, 62, 0.32);
+}
+.fc5-deck-hero-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---- Status chips (4 pastilles : maîtrisés / en cours / nouveaux / difficiles) ---- */
+.fc5-deck-statchips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fc5-deck-statchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: var(--fc5-surface-muted);
+  color: var(--fc5-text);
+}
+.fc5-deck-statchip.is-mastered {
+  background: var(--fc5-success-tint);
+  color: var(--fc5-success);
+  border-color: rgba(47, 157, 138, 0.2);
+}
+.fc5-deck-statchip.is-progress {
+  background: var(--fc5-info-tint);
+  color: var(--fc5-info);
+  border-color: rgba(201, 162, 39, 0.22);
+}
+.fc5-deck-statchip.is-new {
+  background: rgba(47, 157, 138, 0.06);
+  color: var(--fc5-text-muted);
+  border-color: rgba(31, 26, 22, 0.08);
+}
+.fc5-deck-statchip.is-difficult {
+  background: var(--fc5-danger-tint);
+  color: var(--fc5-danger);
+  border-color: rgba(216, 72, 62, 0.2);
+}
+
+/* ---- Filter tabs ---- */
+.fc5-deck-filtertabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--fc5-surface-muted);
+  border-radius: 12px;
+  border: 1px solid var(--fc5-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.fc5-deck-filtertabs::-webkit-scrollbar { display: none; }
+
+.fc5-deck-filtertab {
+  flex: 1 0 auto;
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fc5-text-muted);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+.fc5-deck-filtertab:hover:not(.is-active) {
+  color: var(--fc5-text);
+}
+.fc5-deck-filtertab.is-active {
+  background: var(--fc5-surface);
+  color: var(--fc5-text);
+  box-shadow: 0 1px 3px rgba(31, 26, 22, 0.08);
+}
+
+/* ---- Table des mots ---- */
+.fc5-deck-table {
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--fc5-shadow-sm);
+}
+
+.fc5-deck-table-head,
+.fc5-deck-table-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 80px;
+  gap: 12px;
+  padding: 14px 18px;
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .fc5-deck-table-head,
+  .fc5-deck-table-row {
+    grid-template-columns: 100px 1.2fr 1fr 56px;
+    padding: 12px 14px;
+    gap: 8px;
+  }
+}
+
+.fc5-deck-table-head {
+  background: var(--fc5-surface-muted);
+  border-bottom: 1px solid var(--fc5-border);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fc5-text-muted);
+}
+
+.fc5-deck-table-row {
+  border-bottom: 1px solid var(--fc5-border-soft, rgba(31, 26, 22, 0.06));
+  transition: background 140ms ease;
+}
+.fc5-deck-table-row:last-child { border-bottom: none; }
+.fc5-deck-table-row:hover { background: var(--fc5-surface-muted); }
+
+.fc5-deck-col {
+  min-width: 0;
+  overflow: hidden;
+}
+.fc5-deck-col--status { display: flex; align-items: center; }
+.fc5-deck-col--word { display: flex; flex-direction: column; gap: 2px; }
+.fc5-deck-col--trans {
+  color: var(--fc5-text);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.fc5-deck-col--actions { display: flex; justify-content: flex-end; gap: 6px; }
+
+.fc5-deck-word-hanzi {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  line-height: 1.2;
+}
+.fc5-deck-word-pinyin {
+  font-size: 12px;
+  color: var(--fc5-text-muted);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Pastille de statut par mot */
+.fc5-deck-wordstatus {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.fc5-deck-wordstatus.is-mastered {
+  background: var(--fc5-success-tint);
+  color: var(--fc5-success);
+  border-color: rgba(47, 157, 138, 0.22);
+}
+.fc5-deck-wordstatus.is-progress {
+  background: var(--fc5-info-tint);
+  color: var(--fc5-info);
+  border-color: rgba(201, 162, 39, 0.24);
+}
+.fc5-deck-wordstatus.is-new {
+  background: var(--fc5-surface-muted);
+  color: var(--fc5-text-muted);
+  border-color: var(--fc5-border);
+}
+.fc5-deck-wordstatus.is-difficult {
+  background: var(--fc5-danger-tint);
+  color: var(--fc5-danger);
+  border-color: rgba(216, 72, 62, 0.2);
+}
+
+/* Bouton rond dans la colonne Actions */
+.fc5-deck-rowbtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--fc5-border);
+  background: var(--fc5-surface);
+  color: var(--fc5-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.fc5-deck-rowbtn:hover {
+  background: var(--fc5-primary-tint);
+  color: var(--fc5-primary);
+  border-color: rgba(216, 72, 62, 0.22);
+  transform: scale(1.05);
+}
+.fc5-deck-rowbtn:focus-visible {
+  outline: 2px solid var(--fc5-primary);
+  outline-offset: 2px;
+}
+
+.fc5-deck-table-empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--fc5-text-muted);
+  font-size: 14px;
+}
+
+/* ============================================================================
+   MODAL — refonte Seonsaengnim
+   (tile "Collection actuelle" quand une collection est sélectionnée)
+   ============================================================================ */
+
+.fc5-mode-tile-badge.is-collection {
+  background: var(--fc5-primary-tint);
+  color: var(--fc5-primary);
+}
+
+/* Count buttons — forme circulaire façon Seonsaengnim (10 / 20 / 30 / 50) */
+.fc5-count-row .fc5-count-btn {
+  min-width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   FreeLearningPage — tuiles de modes + modal de setup
+   ========================================================================== */
+.fl-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 720px) {
+  .fl-mode-grid { grid-template-columns: 1fr; }
+}
+.fl-mode-tile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fffaf3;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.fl-mode-tile:hover {
+  transform: translateY(-1px);
+  border-color: rgba(200, 52, 46, 0.25);
+  box-shadow: 0 6px 18px rgba(200, 52, 46, 0.08);
+}
+.fl-mode-tile-icon {
+  font-size: 28px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(200, 52, 46, 0.08);
+}
+.fl-mode-tile-body { display: flex; flex-direction: column; gap: 4px; }
+.fl-mode-tile-title { font-weight: 700; font-size: 16px; color: #1b1b1f; }
+.fl-mode-tile-sub { font-size: 13px; color: #5f5f67; }
+.fl-mode-tile-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #c9a227;
+  color: #fffaf3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.fl-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 27, 31, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  padding: 24px;
+}
+.fl-modal {
+  width: min(520px, 100%);
+  background: #fffaf3;
+  border-radius: 22px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+.fl-modal-title { margin: 0; font-size: 20px; font-weight: 700; color: #1b1b1f; }
+.fl-modal-row { display: flex; flex-direction: column; gap: 8px; }
+.fl-modal-label { font-size: 13px; font-weight: 600; color: #4a4a52; }
+.fl-modal-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.fl-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1b1b1f;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.fl-pill:hover { border-color: rgba(200, 52, 46, 0.3); }
+.fl-pill.is-active {
+  background: #c8342e;
+  color: #fffaf3;
+  border-color: #c8342e;
+}
+.fl-modal-meta { font-size: 12px; color: #777; text-align: right; }
+.fl-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+.fl-btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 14px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.fl-btn-ghost {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #1b1b1f;
+}
+.fl-btn-ghost:hover { border-color: rgba(0, 0, 0, 0.25); }
+.fl-btn-primary { background: #c8342e; color: #fffaf3; }
+.fl-btn-primary:hover { background: #b72d27; }
+.fl-btn-primary:disabled { background: #c8342e99; cursor: not-allowed; }
+
+/* ==========================================================================
+   FreeLearningPage — surfaces génériques (page / summary / empty)
+   ========================================================================== */
+.fc5-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+.fc5-page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.fc5-page-title { font-size: 28px; font-weight: 700; color: #1b1b1f; margin: 0; }
+.fc5-page-sub { font-size: 14px; color: #5f5f67; margin: 0; }
+.fc5-empty-card {
+  margin-top: 24px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  background: #fffaf3;
+  color: #5f5f67;
+  font-size: 14px;
+}
+.fc5-summary {
+  max-width: 560px;
+  margin: 64px auto;
+  padding: 32px;
+  background: #fffaf3;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.fc5-summary-title { font-size: 24px; font-weight: 700; color: #1b1b1f; margin: 0; }
+.fc5-summary-sub { font-size: 14px; color: #5f5f67; margin: 0; }
+.fc5-summary-xp {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c9a227;
+  margin: 8px 0;
+}
+.fc5-summary-back {
+  align-self: center;
+  padding: 10px 22px;
+  border-radius: 12px;
+  background: #c8342e;
+  color: #fffaf3;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.fc5-summary-back:hover { background: #b72d27; }
+
+/* ==========================================================================
+   FreeLearningPage — catalogues Dialogue/Reading + players
+   ========================================================================== */
+
+/* --- Back row (entre catalogue et bouton retour) --- */
+.fl-backrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* --- Catalogue générique (cartes cliquables) --- */
+.fl-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.fl-catalog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  background: #fffaf3;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+.fl-catalog-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(200, 52, 46, 0.35);
+  box-shadow: 0 10px 24px rgba(200, 52, 46, 0.08);
+}
+.fl-catalog-row1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fl-catalog-level {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  background: #c8342e;
+  color: #fffaf3;
+  border-radius: 8px;
+}
+.fl-catalog-theme {
+  font-size: 12px;
+  color: #5f5f67;
+}
+.fl-catalog-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1b1b1f;
+  line-height: 1.3;
+}
+.fl-catalog-meta {
+  font-size: 12px;
+  color: #8a8a92;
+}
+
+/* --- Player commun (dialogue + reading) --- */
+.fl-player {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 24px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.fl-player-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.fl-player-back {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  font-size: 13px;
+  color: #1b1b1f;
+  cursor: pointer;
+}
+.fl-player-back:hover { background: rgba(0, 0, 0, 0.04); }
+.fl-player-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fl-player-level {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: #1b1b1f;
+  color: #fffaf3;
+  border-radius: 8px;
+}
+.fl-player-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b1b1f;
+  margin: 0;
+}
+.fl-player-context {
+  background: rgba(200, 52, 46, 0.06);
+  border: 1px solid rgba(200, 52, 46, 0.14);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #3a3a40;
+}
+.fl-player-context-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #c8342e;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.fl-player-context p { margin: 0; line-height: 1.5; }
+
+/* --- Dialogue player --- */
+.fl-dlg-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fl-dlg-line {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 14px;
+  padding: 12px 14px;
+  background: #fffaf3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+.fl-dlg-line:hover { background: #fff4e3; }
+.fl-dlg-line.is-active {
+  border-color: rgba(200, 52, 46, 0.55);
+  background: #fff4e3;
+  box-shadow: 0 8px 24px rgba(200, 52, 46, 0.12);
+}
+.fl-dlg-speaker {
+  font-weight: 700;
+  font-size: 14px;
+  color: #c8342e;
+}
+.fl-dlg-body { display: flex; flex-direction: column; gap: 4px; }
+.fl-dlg-hanzi {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1b1f;
+  line-height: 1.4;
+}
+.fl-dlg-pinyin { font-size: 13px; color: #5f5f67; }
+.fl-dlg-translation { font-size: 13px; color: #3a3a40; font-style: italic; }
+
+/* --- Player footer (controls + toggles) --- */
+.fl-player-footer {
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(to top, #f4edd8 60%, rgba(244, 237, 216, 0));
+  padding: 16px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.fl-player-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.fl-player-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.fl-player-meta {
+  font-size: 12px;
+  color: #5f5f67;
+}
+.fl-player-note { color: #8a6b14; }
+.fl-player-disclaimer {
+  font-size: 11px;
+  color: #8a8a92;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+/* --- Reading player --- */
+.fl-reading-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.fl-reading-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fl-reading-segment {
+  position: relative;
+  padding: 14px 16px;
+  background: #fffaf3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+}
+.fl-reading-segment.is-active {
+  border-color: rgba(200, 52, 46, 0.35);
+  background: #fff4e3;
+}
+.fl-reading-hanzi {
+  font-size: 22px;
+  line-height: 1.8;
+  color: #1b1b1f;
+  word-break: break-word;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+}
+.fl-reading-static { white-space: pre; }
+.fl-reading-token {
+  display: inline-block;
+  padding: 0 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+  outline: none;
+}
+.fl-reading-token:hover { background: rgba(200, 52, 46, 0.12); }
+.fl-reading-token:focus-visible { background: rgba(200, 52, 46, 0.18); }
+.fl-reading-token.is-selected {
+  background: #c8342e;
+  color: #fffaf3;
+}
+.fl-reading-speak {
+  display: inline-flex;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+}
+.fl-reading-speak:hover { background: rgba(0, 0, 0, 0.04); }
+.fl-reading-pinyin {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #5f5f67;
+}
+.fl-reading-translation {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #3a3a40;
+  font-style: italic;
+}
+
+/* --- Word popover (click-to-translate) --- */
+.fl-word-popover {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: #1b1b1f;
+  color: #fffaf3;
+  border-radius: 14px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fl-pop-in 140ms ease-out;
+}
+@keyframes fl-pop-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fl-word-popover-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fl-word-popover-hanzi {
+  font-size: 22px;
+  font-weight: 700;
+}
+.fl-word-popover-pinyin {
+  font-size: 13px;
+  color: #e8dcbe;
+  flex: 1;
+}
+.fl-word-popover-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fffaf3;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.fl-word-popover-close:hover { background: rgba(255, 255, 255, 0.16); }
+.fl-word-popover-translation {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.fl-word-popover-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fl-word-popover-actions .fl-pill {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fffaf3;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.fl-word-popover-actions .fl-pill:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.fl-word-popover-source {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e8dcbe;
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 640px) {
+  .fl-player { padding: 18px 14px 88px; }
+  .fl-dlg-line { grid-template-columns: 72px 1fr; }
+  .fl-dlg-hanzi { font-size: 18px; }
+  .fl-reading-hanzi { font-size: 20px; line-height: 1.7; }
+}
+
+/* --- Grammar note block (dialogue player) --- */
+.fl-player-grammar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: #fef6e3;
+  border: 1px solid rgba(200, 162, 39, 0.35);
+  border-left: 4px solid #c9a227;
+  border-radius: 12px;
+  animation: fl-pop-in 160ms ease-out;
+}
+.fl-player-grammar-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #8a6b14;
+  text-transform: uppercase;
+}
+.fl-player-grammar-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #3a3a40;
+}
+
+/* --- Note badge sur les répliques qui ont une note de grammaire --- */
+.fl-dlg-note-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 14px;
+  vertical-align: middle;
+  opacity: 0.85;
+  filter: saturate(0.9);
+  transform: translateY(-1px);
+}
+.fl-dlg-line.is-active .fl-dlg-note-badge { opacity: 1; }
+
+/* --- Coloration du speaker par data-speaker-idx (mini effet teinte) --- */
+.fl-dlg-line[data-speaker-idx="0"] .fl-dlg-speaker { color: #c8342e; }
+.fl-dlg-line[data-speaker-idx="1"] .fl-dlg-speaker { color: #1f7a5e; }
+.fl-dlg-line[data-speaker-idx="2"] .fl-dlg-speaker { color: #2f5bb8; }
+.fl-dlg-line[data-speaker-idx="3"] .fl-dlg-speaker { color: #8a5a12; }
+.fl-dlg-line[data-speaker-idx="4"] .fl-dlg-speaker { color: #7b3d8a; }
+.fl-dlg-line[data-speaker-idx="5"] .fl-dlg-speaker { color: #466a1e; }

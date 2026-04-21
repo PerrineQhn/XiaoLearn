@@ -15,10 +15,14 @@
     "generate:audio:cloud": "node scripts/generateAudioAI.mjs --cloud",
     "generate:audio:core": "node scripts/generateCoreAudio.mjs",
     "generate:audio:phrases": "node scripts/generate-phrase-audio.mjs",
+    "generate:audio:dialogues": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs",
+    "generate:audio:readings": "node --env-file=.env.local scripts/generate-reading-audio.mjs",
+    "generate:audio:all": "node --env-file=.env.local scripts/generate-all-audio.mjs",
     "generate:audio:test": "node scripts/test_generate_sample.mjs",
     "test:audio": "python3 scripts/test_audio.py",
     "analyze:audio": "python3 scripts/compare_audio_quality.py",
-    "check:google": "./scripts/check_google_cloud.sh"
+    "check:google": "./scripts/check_google_cloud.sh",
+    "export:cplayer-lyrics": "node scripts/export_cplayer_lyrics_json.mjs"
   },
   "dependencies": {
     "@xenova/transformers": "^2.17.2",
@@ -35,6 +39,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "firebase-admin": "^13.7.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.8"
   }

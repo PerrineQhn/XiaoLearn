@@ -28,6 +28,8 @@
     <div class="hint-content">{{Pinyin}}</div>
   </div>
   
+  <div class="auto-audio" style="display:none;">{{Audio}}</div>
+
   <div class="card-footer">
     <div class="tags">{{Tags}}</div>
     <div class="motivation-text">✍️ Un caractère par carré !</div>
@@ -76,15 +78,25 @@
   // ✅ CORRECTION ICI : Ajouter la classe au lieu de la remplacer
   container.classList.add(gridClass);
   
+  // Teste si un caractère est un CJK (chinois) — exclut chiffres, lettres, ponctuation
+  function isCJK(ch) {
+    var code = ch.charCodeAt(0);
+    return (code >= 0x4E00 && code <= 0x9FFF) ||
+           (code >= 0x3400 && code <= 0x4DBF) ||
+           (code >= 0x20000 && code <= 0x2A6DF);
+  }
+
   // Tableau pour stocker les managers
   window.canvasManagers = [];
-  
+
   // Créer un canvas pour chaque caractère
   chars.forEach((char, index) => {
+    if (!isCJK(char)) return;
+
     // Wrapper
     const wrapper = document.createElement('div');
     wrapper.className = 'canvas-item';
-    
+
     // Canvas
     const canvas = document.createElement('canvas');
     canvas.id = `canvas-${index}`;
@@ -92,15 +104,15 @@
     canvas.height = canvasSize * 2;
     canvas.style.width = `${canvasSize}px`;
     canvas.style.height = `${canvasSize}px`;
-    
+
     // Grille
     const grid = document.createElement('div');
     grid.className = 'canvas-grid';
-    
+
     wrapper.appendChild(canvas);
     wrapper.appendChild(grid);
     container.appendChild(wrapper);
-    
+
     // Initialiser le dessin
     const manager = initCanvasManager(canvas);
     window.canvasManagers.push(manager);
@@ -115,7 +127,7 @@
     
     // Configuration
     ctx.strokeStyle = '#2c3e50';
-    ctx.lineWidth = 20; // Plus épais (haute résolution)
+    ctx.lineWidth = 10; // Plus épais (haute résolution)
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     

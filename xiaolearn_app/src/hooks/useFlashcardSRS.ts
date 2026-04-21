@@ -25,7 +25,11 @@ export interface FlashcardSession {
 }
 
 const STORAGE_KEY = 'flashcard_progress';
-const DAILY_NEW_CARDS = 10;
+// V6 — Volume quotidien par défaut augmenté de 10 → 20 nouvelles cartes.
+// La cadence reste tunable par appelant via `options.dailyNewCards`, et par
+// l'utilisateur final via `useSrsPreferences` (relaxed 10 / standard 20 /
+// intensive 30 / marathon 50). Cf. docs/V6.md.
+const DAILY_NEW_CARDS = 20;
 
 const buildDefaultProgressMap = () => {
   // Return empty map - words without entries are considered "new" and unlearned

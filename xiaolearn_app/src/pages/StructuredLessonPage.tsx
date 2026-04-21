@@ -6,6 +6,7 @@ import { getLessonByHanzi, getLessonsByHanziList } from '../data/lessons';
 import { getGrammarLessonById } from '../data/grammar-lessons';
 import { getSimpleLessonById } from '../data/simple-lessons';
 import { lessonExercises } from '../data/lesson-exercises';
+import { level1LessonWordBank } from '../data/level1-course';
 import { findExampleAudio } from '../utils/exampleAudio';
 import AudioButton from '../components/AudioButton';
 import GrammarQuizComponent from '../components/quiz/GrammarQuizComponent';
@@ -15,6 +16,7 @@ import DialogueExercise from '../components/exercises/DialogueExercise';
 import ReadingExercise from '../components/exercises/ReadingExercise';
 import SpeakingExercise from '../components/exercises/SpeakingExercise';
 import DictationExercise from '../components/exercises/DictationExercise';
+import { parseMarkdown } from '../utils/markdownUtils';
 
 interface StructuredLessonPageProps {
   lesson: LessonModule;
@@ -50,6 +52,12 @@ const CATEGORY_ICON: Record<LessonCategory, string> = {
   writing: '✍️',
   reading: '📖'
 };
+
+const normalizeLessonRichText = (text: string) =>
+  text
+    .replace(/\r\n/g, '\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .trim();
 
 const buildQuizOptions = (word: LessonItem | undefined, words: LessonItem[], language: Language) => {
   if (!word) return [];
@@ -842,6 +850,11 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
       }
     }
 
+    const level1Words = level1LessonWordBank[lesson.id];
+    if (level1Words && level1Words.length > 0) {
+      return level1Words;
+    }
+
     return lesson.flashcards
       .map((identifier) => {
         const grammarLesson = getGrammarLessonById(identifier);
@@ -882,7 +895,9 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
 
   const explanationSteps = useMemo<LessonExplanationStep[]>(() => {
     const steps: LessonExplanationStep[] = [];
-    const introContent = language === 'fr' ? lesson.introduction.content : lesson.introduction.contentEn;
+    const introContent = language === 'fr'
+      ? lesson.introduction.lessonIntro ?? lesson.introduction.content
+      : lesson.introduction.lessonIntroEn ?? lesson.introduction.contentEn;
     const introObjectives = language === 'fr' ? lesson.introduction.objectives : lesson.introduction.objectivesEn;
 
     steps.push({
@@ -909,7 +924,16 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
     }
 
     return steps;
-  }, [language, lesson.introduction.content, lesson.introduction.contentEn, lesson.introduction.objectives, lesson.introduction.objectivesEn, lessonWords]);
+  }, [
+    language,
+    lesson.introduction.lessonIntro,
+    lesson.introduction.lessonIntroEn,
+    lesson.introduction.content,
+    lesson.introduction.contentEn,
+    lesson.introduction.objectives,
+    lesson.introduction.objectivesEn,
+    lessonWords
+  ]);
 
   const totalCustomExercises = customExercises.length;
   const estimatedXp = Math.max(20, lesson.quizQuestions * 10);
@@ -984,7 +1008,9 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
 
   if (phase === 'intro') {
     const categoryLabel = lesson.category.toUpperCase();
-    const introContent = language === 'fr' ? lesson.introduction.content : lesson.introduction.contentEn;
+    const introContent = language === 'fr'
+      ? lesson.introduction.quickIntro ?? lesson.introduction.content
+      : lesson.introduction.quickIntroEn ?? lesson.introduction.contentEn;
 
     return (
       <div className="structured-lesson">
@@ -993,7 +1019,9 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
             <div className="lesson-intro-icon">{CATEGORY_ICON[lesson.category] ?? '📘'}</div>
             <p className="lesson-badge">{categoryLabel}</p>
             <h1 className="intro-title">{language === 'fr' ? lesson.title : lesson.titleEn}</h1>
-            <p className="intro-text">{introContent}</p>
+            <div className="intro-text intro-text-rich">
+              {parseMarkdown(normalizeLessonRichText(introContent))}
+            </div>
             <div className="lesson-intro-meta">
               <span>⏱ {lesson.duration} min</span>
               <span>•</span>
@@ -1048,7 +1076,9 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
             </div>
 
             <div className="lesson-explanation-card">
-              <p className="lesson-explanation-content">{step.content}</p>
+              <div className="lesson-explanation-content lesson-explanation-rich">
+                {parseMarkdown(normalizeLessonRichText(step.content))}
+              </div>
 
               {step.bullets.length > 0 && (
                 <ul className="lesson-explanation-list">
@@ -1118,9 +1148,11 @@ export default function StructuredLessonPage({ lesson, language, onComplete, onE
               }
             }}
           >
-            <div className="lesson-flip-audio" onClick={(event) => event.stopPropagation()}>
-              <AudioButton src={`/${currentWord.audioLetter || currentWord.audio}`} label={language === 'fr' ? 'Audio' : 'Audio'} />
-            </div>
+            {(currentWord.audioLetter || currentWord.audio) && (
+              <div className="lesson-flip-audio" onClick={(event) => event.stopPropagation()}>
+                <AudioButton src={`/${currentWord.audioLetter || currentWord.audio}`} label={language === 'fr' ? 'Audio' : 'Audio'} />
+              </div>
+            )}
 
             <div className="lesson-flip-hanzi">{currentWord.hanzi}</div>
             {!isCardFlipped ? (

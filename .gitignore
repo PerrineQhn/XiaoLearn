@@ -78,6 +78,9 @@ xiaolearn_app/data/translation-zh-cache.json
 xiaolearn_dictionnary/**/translation-cache.json
 xiaolearn_dictionnary/**/translation-zh-cache.json
 
-
+xiaolearn_app/exports/audio_cplayer
 xiaolearn_pdfs/
 xiaolearn_posts/
+
+# Anki decks générés — trop volumineux pour GitHub
+xiaolearn_anki/*.apkg

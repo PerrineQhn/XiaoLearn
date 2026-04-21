@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CharacterCard from '../../../components/CharacterCard.astro';
+import BackToTopButton from '../../../components/BackToTopButton.astro';
+import { getHSKLevelInfo } from '../../../types/hsk';
+import {
+  getHorsHskCount,
+  getHorsHskPage,
+  getHorsHskPageCount,
+} from '../../../utils/horsHskCatalog';
+
+export function getStaticPaths() {
+  const totalPages = getHorsHskPageCount();
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+    params: { page: String(index + 2) },
+  }));
+}
+
+const levelInfo = getHSKLevelInfo(8)!;
+const pageNumber = Number(Astro.params.page || 2);
+const totalPages = getHorsHskPageCount();
+const entries = getHorsHskPage(pageNumber);
+
+const previousPage = pageNumber > 1 ? pageNumber - 1 : undefined;
+const nextPage = pageNumber < totalPages ? pageNumber + 1 : undefined;
+
+const pageWindowStart = Math.max(1, pageNumber - 3);
+const pageWindowEnd = Math.min(totalPages, pageNumber + 3);
+const visiblePages = Array.from(
+  { length: pageWindowEnd - pageWindowStart + 1 },
+  (_, index) => pageWindowStart + index,
+);
+---
+
+<BaseLayout
+  title={`Dictionnaire ${levelInfo.name} - page ${pageNumber}`}
+  description={`Page ${pageNumber} sur ${totalPages} des termes hors HSK.`}
+  robots="noindex,follow"
+>
+  <section class="page-header" style={`--level-color: ${levelInfo.color}; --level-bg: ${levelInfo.bgColor}`}>
+    <div class="container">
+      <Breadcrumb
+        items={[
+          { label: 'Dictionnaire', href: '/dictionnaire' },
+          { label: levelInfo.name, href: '/dictionnaire/hors-hsk' },
+          { label: `Page ${pageNumber}` },
+        ]}
+      />
+      <div class="header-content">
+        <span class="level-badge">{levelInfo.name}</span>
+        <h1>Vocabulaire {levelInfo.name} - page {pageNumber}</h1>
+        <p>
+          {getHorsHskCount().toLocaleString()} termes disponibles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style={`--level-color: ${levelInfo.color}; --level-bg: ${levelInfo.bgColor}`}>
+    <div class="container">
+      <nav class="pager" aria-label="Pagination Hors-HSK">
+        {previousPage && (
+          <a href={previousPage === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/${previousPage}`} class="pager-link">
+            ← Page {previousPage}
+          </a>
+        )}
+
+        <div class="pager-pages">
+          {visiblePages.map((page) => (
+            <a
+              href={page === 1 ? '/dictionnaire/hors-hsk' : `/dictionnaire/hors-hsk/${page}`}
+              class={`pager-page ${page === pageNumber ? 'active' : ''}`}
+              aria-current={page === pageNumber ? 'page' : undefined}
+            >
+              {page}
+            </a>
+          ))}
+        </div>
+
+        {nextPage && (
+          <a href={`/dictionnaire/hors-hsk/${nextPage}`} class="pager-link">
+            Page {nextPage} →
+          </a>
+        )}
+      </nav>
+
+      <div class="words-grid">
+        {entries.map((entry) => (
+          <CharacterCard entry={entry} showLevel={false} />
+        ))}
+      </div>
+    </div>
+
+    <BackToTopButton label="Haut de page" />
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--level-bg), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .header-content {
+    max-width: 700px;
+  }
+
+  .level-badge {
+    display: inline-block;
+    background: var(--level-color);
+    color: #fff;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+  }
+
+  .pager-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .pager-link:hover {
+    border-color: var(--level-color);
+    color: var(--level-color);
+  }
+
+  .pager-pages {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .pager-page {
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    font-weight: 600;
+  }
+
+  .pager-page:hover {
+    border-color: var(--level-color);
+    color: var(--level-color);
+  }
+
+  .pager-page.active {
+    background: var(--level-color);
+    border-color: var(--level-color);
+    color: #fff;
+  }
+
+  .words-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+  }
+</style>

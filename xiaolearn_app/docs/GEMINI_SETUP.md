@@ -66,7 +66,7 @@ Ouvrez la console du navigateur (F12) :
 
 ```
 ┌─────────────────────────────────────┐
-│    AIAssistantPage.tsx              │
+│    AssistancePage.tsx              │
 │  (Interface utilisateur)            │
 └────────────┬────────────────────────┘
              │
@@ -187,4 +187,4 @@ Vous avez dépassé le quota :
 Pour toute question sur l'intégration Gemini :
 - Documentation officielle : [https://ai.google.dev/docs](https://ai.google.dev/docs)
 - Code source : `src/services/geminiService.ts`
-- Interface : `src/pages/AIAssistantPage.tsx`
+- Interface : `src/pages/AssistancePage.tsx`

@@ -1,4 +1,25 @@
 import type { LessonPath } from '../types/lesson-structure';
+import {
+  pinyinInitialsLearnSections,
+  pinyinFinalsLearnSections,
+  pinyinTonesLearnSections,
+  pinyinCombinationsLearnSections,
+  pinyinPracticeLearnSections,
+} from './pinyin-learn-sections';
+import {
+  greetingsLearnSections,
+  introductionsLearnSections,
+  politenessLearnSections,
+  questionsLearnSections,
+  yesNoLearnSections,
+  numbersLearnSections,
+  timeLearnSections,
+  familyLearnSections,
+  foodDrinksLearnSections,
+  wantsNeedsLearnSections,
+  commonVerbsLearnSections,
+  dailyActionsLearnSections,
+} from './first-steps-learn-sections';
 
 export const lessonPaths: LessonPath[] = [
   // ============================================
@@ -65,7 +86,8 @@ export const lessonPaths: LessonPath[] = [
           'py-initial-q',
           'py-initial-x'
         ],
-        quizQuestions: 6
+        quizQuestions: 6,
+        learnSections: pinyinInitialsLearnSections
       },
 {
         id: 'pinyin-2-finals',
@@ -97,7 +119,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['py-final-a', 'py-final-o', 'py-final-e', 'py-final-i', 'py-final-u', 'py-final-umlaut'],
-        quizQuestions: 5
+        quizQuestions: 5,
+        learnSections: pinyinFinalsLearnSections
       },
 {
         id: 'pinyin-3-tones',
@@ -129,7 +152,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['py-tone-1', 'py-tone-2', 'py-tone-3', 'py-tone-4'],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: pinyinTonesLearnSections
       },
 {
         id: 'pinyin-4-combinations',
@@ -161,7 +185,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['py-combo-zh', 'py-combo-ch', 'py-combo-sh', 'py-combo-r', 'py-combo-z', 'py-combo-c', 'py-combo-s'],
-        quizQuestions: 7
+        quizQuestions: 7,
+        learnSections: pinyinCombinationsLearnSections
       },
 {
         id: 'pinyin-5-practice',
@@ -193,7 +218,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['妈', '爸', '朋友', '老师', '茶', '喝', '吃', '中国'],
-        quizQuestions: 10
+        quizQuestions: 10,
+        learnSections: pinyinPracticeLearnSections
       }
     ]
   },
@@ -240,7 +266,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['你好', '早', '晚上好', '再见', '您', '谢谢'],
-        quizQuestions: 6
+        quizQuestions: 6,
+        learnSections: greetingsLearnSections
       },
 {
         id: 'phrases-2-introductions',
@@ -272,7 +299,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['你好', '我', '你', '叫', '名字', '是'],
-        quizQuestions: 6
+        quizQuestions: 6,
+        learnSections: introductionsLearnSections
       },
 {
         id: 'phrases-3-politeness',
@@ -304,7 +332,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['谢谢', '对不起', '请', '不客气', '没关系', '麻烦'],
-        quizQuestions: 6
+        quizQuestions: 6,
+        learnSections: politenessLearnSections
       },
 {
         id: 'phrases-4-questions',
@@ -336,7 +365,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['什么', '谁', '哪', '怎么', '几', '多少', '吗', '哪儿'],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: questionsLearnSections
       },
 {
         id: 'phrases-5-yes-no',
@@ -368,7 +398,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['是', '不是', '对', '好', '可以', '行'],
-        quizQuestions: 5
+        quizQuestions: 5,
+        learnSections: yesNoLearnSections
       },
 {
         id: 'phrases-6-numbers-1-10',
@@ -400,7 +431,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
-        quizQuestions: 10
+        quizQuestions: 10,
+        learnSections: numbersLearnSections
       },
 {
         id: 'phrases-7-time',
@@ -432,7 +464,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: timeLearnSections
       },
 {
         id: 'phrases-8-family',
@@ -464,7 +497,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: familyLearnSections
       },
 {
         id: 'phrases-9-food-drinks',
@@ -496,7 +530,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 7
+        quizQuestions: 7,
+        learnSections: foodDrinksLearnSections
       },
 {
         id: 'phrases-10-wants-needs',
@@ -528,7 +563,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: wantsNeedsLearnSections
       },
 {
         id: 'phrases-11-common-verbs',
@@ -560,7 +596,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 8
+        quizQuestions: 8,
+        learnSections: commonVerbsLearnSections
       },
 {
         id: 'phrases-12-daily-actions',
@@ -592,7 +629,8 @@ export const lessonPaths: LessonPath[] = [
           ]
         },
         flashcards: [],
-        quizQuestions: 6
+        quizQuestions: 6,
+        learnSections: dailyActionsLearnSections
       }
     ]
   },
@@ -4619,6 +4657,354 @@ export const lessonPaths: LessonPath[] = [
         },
         flashcards: ['当代', '潮流', '都市', '网络文化', '流行', '时尚', '青年', '多元'],
         quizQuestions: 15
+      }
+    ]
+  },
+  // ============================================
+  // PATH 9: CULTURE CHINOISE
+  // ============================================
+  {
+    id: 'chinese-culture',
+    name: 'Culture Chinoise',
+    nameEn: 'Chinese Culture',
+    description: 'Fêtes, étiquette, symboles — comprendre la culture derrière la langue',
+    descriptionEn: 'Festivals, etiquette, symbolism — understand the culture behind the language',
+    icon: '🏮',
+    color: '#dc2626',
+    lessons: [
+      {
+        id: 'cult-spring-festival',
+        title: 'Nouvel An chinois 🧧',
+        titleEn: 'Chinese New Year 🧧',
+        duration: 20,
+        completed: false,
+        locked: false,
+        hskLevel: 1,
+        category: 'culture',
+        difficulty: 'beginner',
+        tags: ['culture', 'festivals', 'spring-festival'],
+        introduction: {
+          title: 'La fête la plus importante de l\'année',
+          titleEn: 'The most important festival of the year',
+          content: 'Le Nouvel An chinois (春节 chūnjié) marque le début de la nouvelle année lunaire. Découvrez les enveloppes rouges, les raviolis, le dîner de réunion familiale et les décorations qui font vibrer toute la Chine pendant 15 jours.',
+          contentEn: 'Chinese New Year (春节 chūnjié) marks the start of the lunar year. Discover red envelopes, dumplings, the family reunion dinner and the decorations that bring all of China alive for 15 days.',
+          objectives: [
+            'Connaître le vocabulaire de la fête',
+            'Comprendre les rituels clés (红包, 年夜饭)',
+            'Maîtriser les voeux du Nouvel An',
+            'Éviter les faux-pas culturels'
+          ],
+          objectivesEn: [
+            'Know the festival vocabulary',
+            'Understand key rituals (红包, 年夜饭)',
+            'Master New Year greetings',
+            'Avoid cultural missteps'
+          ]
+        },
+        flashcards: ['过年', '红包', '饺子', '年夜饭', '鞭炮', '福', '团圆', '家人'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-mid-autumn',
+        title: 'Fête de la Mi-Automne 🥮',
+        titleEn: 'Mid-Autumn Festival 🥮',
+        duration: 18,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'culture',
+        difficulty: 'beginner',
+        tags: ['culture', 'festivals', 'mid-autumn'],
+        introduction: {
+          title: 'La fête de la lune et des retrouvailles',
+          titleEn: 'The festival of the moon and reunions',
+          content: 'Le 15e jour du 8e mois lunaire, les familles se réunissent pour admirer la pleine lune et partager des gâteaux de lune (月饼). C\'est une fête d\'harmonie, d\'amour familial et de remerciement pour les récoltes.',
+          contentEn: 'On the 15th day of the 8th lunar month, families gather to admire the full moon and share mooncakes (月饼). It\'s a festival of harmony, family love, and thanksgiving for the harvest.',
+          objectives: [
+            'Connaître la symbolique de la lune pleine',
+            'Identifier les plats et traditions clés',
+            'Parler des retrouvailles familiales',
+            'Raconter la légende de Chang\'e'
+          ],
+          objectivesEn: [
+            'Know the symbolism of the full moon',
+            'Identify key foods and traditions',
+            'Talk about family reunions',
+            'Tell the legend of Chang\'e'
+          ]
+        },
+        flashcards: ['月饼', '团圆', '月', '家人', '节日', '庆祝', '亲戚', '长寿'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-dragon-boat',
+        title: 'Fête des Bateaux-Dragons 🐉',
+        titleEn: 'Dragon Boat Festival 🐉',
+        duration: 20,
+        completed: false,
+        locked: false,
+        hskLevel: 3,
+        category: 'culture',
+        difficulty: 'intermediate',
+        tags: ['culture', 'festivals', 'dragon-boat'],
+        introduction: {
+          title: 'Héros, courses nautiques et zongzi',
+          titleEn: 'Heroes, boat races and zongzi',
+          content: 'Le 5e jour du 5e mois lunaire, la Chine célèbre le poète Qu Yuan (屈原). On mange des zongzi (粽子) — riz gluant enveloppé dans des feuilles de bambou — et on regarde les courses de bateaux-dragons sur les rivières.',
+          contentEn: 'On the 5th day of the 5th lunar month, China honors the poet Qu Yuan (屈原). People eat zongzi (粽子) — sticky rice wrapped in bamboo leaves — and watch dragon boat races on the rivers.',
+          objectives: [
+            'Connaître la légende de Qu Yuan',
+            'Décrire la tradition des zongzi',
+            'Parler des courses de bateaux',
+            'Relier la fête aux valeurs de loyauté'
+          ],
+          objectivesEn: [
+            'Know the legend of Qu Yuan',
+            'Describe the zongzi tradition',
+            'Talk about the boat races',
+            'Connect the festival to values of loyalty'
+          ]
+        },
+        flashcards: ['粽子', '龙', '船', '英雄', '传统', '节日', '习俗', '庆祝'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-numbers',
+        title: 'Chiffres porte-bonheur 🔢',
+        titleEn: 'Lucky Numbers 🔢',
+        duration: 15,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'culture',
+        difficulty: 'beginner',
+        tags: ['culture', 'superstitions', 'numbers'],
+        introduction: {
+          title: 'Pourquoi 8 attire la chance et 4 fait peur',
+          titleEn: 'Why 8 attracts luck and 4 scares people',
+          content: 'En Chine, les chiffres ont une puissance quasi magique liée à leur homophonie. 8 (八 bā) sonne comme « prospérité » (发 fā), 4 (四 sì) sonne comme « mort » (死 sǐ). Cela influence les plaques, les étages, les prix, et même les cadeaux.',
+          contentEn: 'In China, numbers carry an almost magical power through homophony. 8 (八 bā) sounds like "prosperity" (发 fā); 4 (四 sì) sounds like "death" (死 sǐ). This affects license plates, floors, prices, and even gifts.',
+          objectives: [
+            'Identifier les chiffres auspicieux',
+            'Comprendre l\'homophonie (四/死, 八/发)',
+            'Éviter les cadeaux de 4 objets',
+            'Reconnaître la symbolique dans la vie quotidienne'
+          ],
+          objectivesEn: [
+            'Identify auspicious numbers',
+            'Understand homophony (四/死, 八/发)',
+            'Avoid gifts of 4 items',
+            'Recognize symbolism in daily life'
+          ]
+        },
+        flashcards: ['四', '八', '六', '九', '发财', '吉利', '倒霉', '幸运'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-colors',
+        title: 'Symbolique des couleurs 🎨',
+        titleEn: 'Color Symbolism 🎨',
+        duration: 15,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'culture',
+        difficulty: 'beginner',
+        tags: ['culture', 'superstitions', 'colors'],
+        introduction: {
+          title: 'Rouge pour la joie, blanc pour le deuil',
+          titleEn: 'Red for joy, white for mourning',
+          content: 'Les couleurs en Chine portent des significations très différentes de l\'Occident. Le rouge (红色) symbolise la chance et est porté pour les mariages ; le blanc (白色) est associé au deuil ; le jaune impérial (黄色) était réservé à l\'empereur.',
+          contentEn: 'Colors in China carry meanings very different from the West. Red (红色) symbolizes luck and is worn at weddings; white (白色) is associated with mourning; imperial yellow (黄色) was reserved for the emperor.',
+          objectives: [
+            'Associer chaque couleur à son symbole',
+            'Éviter les erreurs (ex : emballage blanc)',
+            'Comprendre le rouge au mariage',
+            'Connaître le tabou du jaune'
+          ],
+          objectivesEn: [
+            'Link each color to its symbol',
+            'Avoid mistakes (e.g., white wrapping)',
+            'Understand red at weddings',
+            'Know the yellow taboo'
+          ]
+        },
+        flashcards: ['红色', '白色', '黑色', '黄色', '颜色', '红', '白', '黑'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-dining',
+        title: 'Étiquette à table 🥢',
+        titleEn: 'Dining Etiquette 🥢',
+        duration: 20,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'culture',
+        difficulty: 'intermediate',
+        tags: ['culture', 'etiquette', 'dining'],
+        introduction: {
+          title: 'Bien se comporter à un repas chinois',
+          titleEn: 'Behaving well at a Chinese meal',
+          content: 'Le repas chinois est une scène codifiée : ne jamais planter les baguettes verticalement dans le riz, laisser l\'hôte servir, trinquer avec 干杯, refuser poliment avant d\'accepter un plat. Ces gestes montrent votre respect pour la culture.',
+          contentEn: 'A Chinese meal is a coded scene: never stick chopsticks vertically in rice, let the host serve, toast with 干杯, politely refuse before accepting a dish. These gestures show respect for the culture.',
+          objectives: [
+            'Manipuler les baguettes correctement',
+            'Savoir trinquer et remercier',
+            'Comprendre le rôle de l\'hôte',
+            'Éviter les tabous les plus graves'
+          ],
+          objectivesEn: [
+            'Handle chopsticks correctly',
+            'Know how to toast and thank',
+            'Understand the host\'s role',
+            'Avoid the most serious taboos'
+          ]
+        },
+        flashcards: ['筷子', '干杯', '好吃', '茶', '喝', '吃', '菜', '主人'],
+        quizQuestions: 8
+      },
+      {
+        id: 'cult-gifts',
+        title: 'Offrir un cadeau 🎁',
+        titleEn: 'Gift Giving 🎁',
+        duration: 18,
+        completed: false,
+        locked: false,
+        hskLevel: 3,
+        category: 'culture',
+        difficulty: 'intermediate',
+        tags: ['culture', 'etiquette', 'gifts'],
+        introduction: {
+          title: 'Offrir sans commettre d\'impair',
+          titleEn: 'Giving gifts without missteps',
+          content: 'Offrir un cadeau en Chine suit des règles : pas d\'horloges (送钟 sonne comme « funérailles »), pas de couteaux (couper les liens), jamais de blanc pour emballer. Les hongbao (红包) remplacent souvent les cadeaux à la famille proche.',
+          contentEn: 'Giving gifts in China follows rules: no clocks (送钟 sounds like "funeral"), no knives (cutting ties), never white wrapping. Hongbao (红包) often replace gifts to close family.',
+          objectives: [
+            'Choisir un cadeau approprié',
+            'Éviter les cadeaux tabous',
+            'Comprendre les hongbao (红包)',
+            'Présenter un cadeau des deux mains'
+          ],
+          objectivesEn: [
+            'Choose an appropriate gift',
+            'Avoid taboo gifts',
+            'Understand hongbao (红包)',
+            'Present a gift with both hands'
+          ]
+        },
+        flashcards: ['礼物', '红包', '包装', '送', '贵', '亲戚', '客人', '祝'],
+        quizQuestions: 8
+      }
+    ]
+  },
+  // ============================================
+  // PATH 10: DICTÉE & COMPRÉHENSION ORALE
+  // ============================================
+  {
+    id: 'dictation-practice',
+    name: 'Dictée & Compréhension Orale',
+    nameEn: 'Dictation & Listening',
+    description: 'Écoute, transcris, et améliore ta précision sur 150 phrases HSK1–3',
+    descriptionEn: 'Listen, transcribe, and sharpen your accuracy on 150 HSK1–3 phrases',
+    icon: '🎧',
+    color: '#0891b2',
+    lessons: [
+      {
+        id: 'dict-hsk1-basics',
+        title: 'Dictée HSK1 — Bases quotidiennes',
+        titleEn: 'HSK1 Dictation — Daily Basics',
+        duration: 25,
+        completed: false,
+        locked: false,
+        hskLevel: 1,
+        category: 'writing',
+        difficulty: 'beginner',
+        tags: ['dictation', 'listening', 'writing'],
+        introduction: {
+          title: 'Transcrire ce que tu entends',
+          titleEn: 'Transcribe what you hear',
+          content: 'La dictée force l\'oreille à distinguer les tons et les finales. Cette leçon couvre 50 phrases HSK1 : salutations, présentations, questions simples. Écoute, écris, puis vérifie — l\'erreur est ton meilleur professeur.',
+          contentEn: 'Dictation forces your ear to distinguish tones and finals. This lesson covers 50 HSK1 phrases: greetings, introductions, simple questions. Listen, write, then verify — your mistakes are your best teacher.',
+          objectives: [
+            'Distinguer les 4 tons à l\'écoute',
+            'Écrire les phrases HSK1 courantes',
+            'Repérer les finales nasales (-n, -ng)',
+            'Gagner en précision d\'écoute'
+          ],
+          objectivesEn: [
+            'Distinguish the 4 tones by ear',
+            'Write common HSK1 phrases',
+            'Spot nasal finals (-n, -ng)',
+            'Gain listening precision'
+          ]
+        },
+        flashcards: ['你好', '谢谢', '再见', '学生', '什么', '这', '那', '水'],
+        quizQuestions: 10
+      },
+      {
+        id: 'dict-hsk2-structures',
+        title: 'Dictée HSK2 — Structures courantes',
+        titleEn: 'HSK2 Dictation — Common Structures',
+        duration: 30,
+        completed: false,
+        locked: false,
+        hskLevel: 2,
+        category: 'writing',
+        difficulty: 'elementary',
+        tags: ['dictation', 'listening', 'writing'],
+        introduction: {
+          title: 'Affiner l\'écoute sur des phrases plus longues',
+          titleEn: 'Sharpening listening on longer sentences',
+          content: 'Les 50 phrases HSK2 introduisent des structures clés : 正在, 过, 得, comparaisons, 把 léger. Chaque dictée combine grammaire + vocabulaire — tu mobilises tout à la fois.',
+          contentEn: 'The 50 HSK2 phrases introduce key structures: 正在, 过, 得, comparisons, light 把. Each dictation combines grammar + vocabulary — you mobilize everything at once.',
+          objectives: [
+            'Reconnaître les structures 正在 / 过',
+            'Transcrire des phrases de 6–10 caractères',
+            'Distinguer les minimal pairs (shi/xi, zhi/zi)',
+            'Maîtriser les ponctuations'
+          ],
+          objectivesEn: [
+            'Recognize 正在 / 过 structures',
+            'Transcribe 6–10 character sentences',
+            'Distinguish minimal pairs (shi/xi, zhi/zi)',
+            'Master punctuation'
+          ]
+        },
+        flashcards: ['天气', '喜欢', '请', '菜', '已经', '便宜', '贵', '慢'],
+        quizQuestions: 10
+      },
+      {
+        id: 'dict-hsk3-complex',
+        title: 'Dictée HSK3 — Phrases complexes',
+        titleEn: 'HSK3 Dictation — Complex Sentences',
+        duration: 35,
+        completed: false,
+        locked: false,
+        hskLevel: 3,
+        category: 'writing',
+        difficulty: 'intermediate',
+        tags: ['dictation', 'listening', 'writing'],
+        introduction: {
+          title: 'Transcrire des phrases à plusieurs propositions',
+          titleEn: 'Transcribing multi-clause sentences',
+          content: 'Les 50 phrases HSK3 combinent conjonctions (虽然…但是…, 如果…就…, 因为…所以…) et vocabulaire plus abstrait. Tu t\'entraînes à segmenter un flux oral en clauses et à orthographier correctement.',
+          contentEn: 'The 50 HSK3 phrases combine conjunctions (虽然…但是…, 如果…就…, 因为…所以…) and more abstract vocabulary. You train to segment a spoken stream into clauses and spell correctly.',
+          objectives: [
+            'Segmenter les phrases complexes',
+            'Gérer les conjonctions corrélatives',
+            'Écrire 15–20 caractères sans erreur',
+            'Gagner en vitesse de transcription'
+          ],
+          objectivesEn: [
+            'Segment complex sentences',
+            'Handle correlative conjunctions',
+            'Write 15–20 characters without error',
+            'Gain transcription speed'
+          ]
+        },
+        flashcards: ['环境', '习惯', '希望', '准备', '参加', '留学', '提高', '健康'],
+        quizQuestions: 10
       }
     ]
   }

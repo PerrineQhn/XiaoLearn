@@ -8,7 +8,11 @@ interface UserProfileProps {
   onOpenSettings: () => void;
 }
 
-export default function UserProfile({ language, onOpenLogin, onOpenSettings }: UserProfileProps) {
+export default function UserProfile({
+  language,
+  onOpenLogin,
+  onOpenSettings
+}: UserProfileProps) {
   const { user, signOut } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
 

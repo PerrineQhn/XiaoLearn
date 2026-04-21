@@ -2,6 +2,16 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isCPlayerOwner() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/app_config/cplayer_owner)
+        && get(/databases/$(database)/documents/app_config/cplayer_owner).data.ownerUid == request.auth.uid;
+    }
+
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
@@ -9,6 +19,32 @@ service cloud.firestore {
     match /pending_entitlements/{email} {
       allow read, update: if request.auth != null && request.auth.token.email == email;
       allow create, delete: if false;
+    }
+
+    match /app_config/{docId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && docId == "cplayer_owner"
+        && !exists(/databases/$(database)/documents/app_config/cplayer_owner)
+        && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if isSignedIn()
+        && docId == "cplayer_owner"
+        && resource.data.ownerUid == request.auth.uid
+        && request.resource.data.ownerUid == resource.data.ownerUid;
+      allow delete: if false;
+    }
+
+    match /cplayer_lyrics/{videoId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.resource.data.videoId == videoId
+        && request.resource.data.lines is list
+        && request.resource.data.reviewed == false
+        && request.resource.data.source in ["ai-generated", "runtime-cache"];
+      allow update: if isCPlayerOwner()
+        && request.resource.data.videoId == videoId
+        && request.resource.data.lines is list;
+      allow delete: if false;
     }
   }
 }

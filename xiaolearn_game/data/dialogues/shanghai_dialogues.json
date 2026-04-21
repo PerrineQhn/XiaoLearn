@@ -1,0 +1,624 @@
+{
+  "region": "shanghai",
+  "npcs": [
+    {
+      "npc_id": "npc_shanghai_guide",
+      "npc_name_cn": "导游",
+      "npc_name_fr": "Guide",
+      "portrait": "res://assets/portraits/guide.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来上海！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái Shànghǎi!",
+              "fr": "Bonjour ! Bienvenue à Shanghai !",
+              "audio": "",
+              "teaches": ["hsk2_001", "hsk2_002"]
+            },
+            {
+              "cn": "我是上海导游。这是一个很大的城市。",
+              "pinyin": "Wǒ shì Shànghǎi dǎoyóu. Zhè shì yīgè hěn dà de chéngshì.",
+              "fr": "Je suis guide à Shanghai. C'est une très grande ville.",
+              "audio": "",
+              "teaches": ["hsk2_003", "hsk2_004"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Bonjour ! Enchanté.",
+              "text_cn": "你好！很高兴。",
+              "next": "welcome"
+            },
+            {
+              "text_fr": "Qu'est-ce que je dois voir ?",
+              "text_cn": "我应该看什么？",
+              "next": "attractions"
+            }
+          ]
+        },
+        "welcome": {
+          "lines": [
+            {
+              "cn": "欢迎来我们的城市！你来自哪里？",
+              "pinyin": "Huānyíng lái wǒmen de chéngshì! Nǐ lái zì nǎlǐ?",
+              "fr": "Bienvenue dans notre ville ! D'où venez-vous ?",
+              "audio": "",
+              "teaches": ["hsk2_005", "hsk2_006"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je viens de France.",
+              "text_cn": "我来自法国。",
+              "next": "end"
+            },
+            {
+              "text_fr": "Je viens de loin.",
+              "text_cn": "我来自很远的地方。",
+              "next": "end"
+            }
+          ]
+        },
+        "attractions": {
+          "lines": [
+            {
+              "cn": "你可以看外滩、浦东和城隍庙。",
+              "pinyin": "Nǐ kěyǐ kàn Wàitān, Pǔdōng hé Chénghuáng miào.",
+              "fr": "Vous pouvez voir le Bund, Pudong et le temple Chenghuang.",
+              "audio": "",
+              "teaches": ["hsk2_007", "hsk2_008"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_port_worker",
+      "npc_name_cn": "港口工人",
+      "npc_name_fr": "Ouvrier portuaire",
+      "portrait": "res://assets/portraits/worker.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我在港口工作。",
+              "pinyin": "Nǐ hǎo! Wǒ zài gǎngkǒu gōngzuò.",
+              "fr": "Bonjour ! Je travaille au port.",
+              "audio": "",
+              "teaches": ["hsk2_009", "hsk2_010"]
+            },
+            {
+              "cn": "这里每天很忙。很多船来和去。",
+              "pinyin": "Zhèlǐ měi tiān hěn máng. Hěn duō chuán lái hé qù.",
+              "fr": "C'est très occupé ici tous les jours. Beaucoup de navires arrivent et repartent.",
+              "audio": "",
+              "teaches": ["hsk2_011", "hsk2_012", "hsk2_013"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est intéressant !",
+              "text_cn": "这很有意思！",
+              "next": "interesting"
+            },
+            {
+              "text_fr": "D'où viennent les navires ?",
+              "text_cn": "船来自哪里？",
+              "next": "ships"
+            }
+          ]
+        },
+        "interesting": {
+          "lines": [
+            {
+              "cn": "对！我很喜欢这个工作。",
+              "pinyin": "Duì! Wǒ hěn xǐhuān zhège gōngzuò.",
+              "fr": "Oui ! J'aime beaucoup ce travail.",
+              "audio": "",
+              "teaches": ["hsk2_014", "hsk2_015"]
+            }
+          ],
+          "next": "end"
+        },
+        "ships": {
+          "lines": [
+            {
+              "cn": "我们的船来自世界各地。",
+              "pinyin": "Wǒmen de chuán lái zì shìjiè gè dì.",
+              "fr": "Nos navires viennent du monde entier.",
+              "audio": "",
+              "teaches": ["hsk2_016", "hsk2_017"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_shop_owner",
+      "npc_name_cn": "店主",
+      "npc_name_fr": "Commerçant",
+      "portrait": "res://assets/portraits/shopkeeper.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "欢迎光临！你要买什么？",
+              "pinyin": "Huānyíng guānglín! Nǐ yào mǎi shénme?",
+              "fr": "Bienvenue ! Qu'est-ce que vous voulez acheter ?",
+              "audio": "",
+              "teaches": ["hsk2_018", "hsk2_019"]
+            },
+            {
+              "cn": "我有很多好东西。",
+              "pinyin": "Wǒ yǒu hěn duō hǎo dōngxi.",
+              "fr": "J'ai beaucoup de bonnes choses.",
+              "audio": "",
+              "teaches": ["hsk2_020", "hsk2_021"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Combien ça coûte ?",
+              "text_cn": "多少钱？",
+              "next": "price"
+            },
+            {
+              "text_fr": "Je regarde seulement.",
+              "text_cn": "我只是看看。",
+              "next": "browsing"
+            }
+          ]
+        },
+        "price": {
+          "lines": [
+            {
+              "cn": "这个不贵。只要二十块。",
+              "pinyin": "Zhège bù guì. Zhǐyào èrshí kuài.",
+              "fr": "Ce n'est pas cher. Seulement vingt yuans.",
+              "audio": "",
+              "teaches": ["hsk2_022", "hsk2_023"]
+            }
+          ],
+          "next": "end"
+        },
+        "browsing": {
+          "lines": [
+            {
+              "cn": "没问题。随便看。如果你想要什么，就跟我说。",
+              "pinyin": "Méi wèntí. Suíbiàn kàn. Rúguǒ nǐ xiǎngyào shénme, jiù gēn wǒ shuō.",
+              "fr": "Pas de problème. Regardez librement. Si vous voulez quelque chose, dites-le moi.",
+              "audio": "",
+              "teaches": ["hsk2_024", "hsk2_025", "hsk2_026"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_tourist_guide",
+      "npc_name_cn": "旅游指南",
+      "npc_name_fr": "Guide touristique",
+      "portrait": "res://assets/portraits/guide.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！需要地图吗？",
+              "pinyin": "Nǐ hǎo! Xūyào dìtú ma?",
+              "fr": "Bonjour ! Vous avez besoin d'une carte ?",
+              "audio": "",
+              "teaches": ["hsk2_027", "hsk2_028"]
+            },
+            {
+              "cn": "我可以给你一个免费的地图。",
+              "pinyin": "Wǒ kěyǐ gěi nǐ yīgè miǎnfèi de dìtú.",
+              "fr": "Je peux vous donner une carte gratuite.",
+              "audio": "",
+              "teaches": ["hsk2_029", "hsk2_030"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Oui, s'il vous plaît !",
+              "text_cn": "好的，谢谢！",
+              "next": "give_map"
+            },
+            {
+              "text_fr": "Non merci, je connais déjà le chemin.",
+              "text_cn": "不，谢谢。我已经知道。",
+              "next": "end"
+            }
+          ]
+        },
+        "give_map": {
+          "lines": [
+            {
+              "cn": "这是地图。红点是最好的景点。",
+              "pinyin": "Zhè shì dìtú. Hóng diǎn shì zuì hǎo de jǐngdiǎn.",
+              "fr": "Voici la carte. Les points rouges sont les meilleurs sites.",
+              "audio": "",
+              "teaches": ["hsk2_031", "hsk2_032", "hsk2_033"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_fisherman",
+      "npc_name_cn": "渔民",
+      "npc_name_fr": "Pêcheur",
+      "portrait": "res://assets/portraits/fisherman.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我在这里钓鱼。",
+              "pinyin": "Nǐ hǎo! Wǒ zài zhèlǐ diàoyú.",
+              "fr": "Bonjour ! Je pêche ici.",
+              "audio": "",
+              "teaches": ["hsk2_034", "hsk2_035"]
+            },
+            {
+              "cn": "今天天气真好！",
+              "pinyin": "Jīntiān tiānqì zhēn hǎo!",
+              "fr": "Il fait vraiment beau aujourd'hui !",
+              "audio": "",
+              "teaches": ["hsk2_036", "hsk2_037"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Vous pêchez souvent ?",
+              "text_cn": "你经常钓鱼吗？",
+              "next": "frequency"
+            },
+            {
+              "text_fr": "C'est un beau endroit.",
+              "text_cn": "这是个漂亮的地方。",
+              "next": "beautiful"
+            }
+          ]
+        },
+        "frequency": {
+          "lines": [
+            {
+              "cn": "我每个星期钓三次鱼。",
+              "pinyin": "Wǒ měi ge xīngqī diào sān cì yú.",
+              "fr": "Je pêche trois fois par semaine.",
+              "audio": "",
+              "teaches": ["hsk2_038", "hsk2_039", "hsk2_040"]
+            }
+          ],
+          "next": "end"
+        },
+        "beautiful": {
+          "lines": [
+            {
+              "cn": "对！上海的江很美。",
+              "pinyin": "Duì! Shànghǎi de jiāng hěn měi.",
+              "fr": "Oui ! Le fleuve de Shanghai est très beau.",
+              "audio": "",
+              "teaches": ["hsk2_041", "hsk2_042"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_banker",
+      "npc_name_cn": "银行员",
+      "npc_name_fr": "Banquier",
+      "portrait": "res://assets/portraits/banker.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来银行。",
+              "pinyin": "Nǐ hǎo! Huānyíng lái yínháng.",
+              "fr": "Bonjour ! Bienvenue à la banque.",
+              "audio": "",
+              "teaches": ["hsk2_043", "hsk2_044"]
+            },
+            {
+              "cn": "我可以帮你什么？",
+              "pinyin": "Wǒ kěyǐ bāng nǐ shénme?",
+              "fr": "Comment puis-je vous aider ?",
+              "audio": "",
+              "teaches": ["hsk2_045", "hsk2_046"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Je voudrais changer de l'argent.",
+              "text_cn": "我要换钱。",
+              "next": "exchange"
+            },
+            {
+              "text_fr": "Quel est le taux de change ?",
+              "text_cn": "汇率是多少？",
+              "next": "rate"
+            }
+          ]
+        },
+        "exchange": {
+          "lines": [
+            {
+              "cn": "没问题。你有护照吗？",
+              "pinyin": "Méi wèntí. Nǐ yǒu hùzhào ma?",
+              "fr": "Pas de problème. Avez-vous un passeport ?",
+              "audio": "",
+              "teaches": ["hsk2_047", "hsk2_048"]
+            }
+          ],
+          "next": "end"
+        },
+        "rate": {
+          "lines": [
+            {
+              "cn": "今天的汇率是一欧元换八块钱。",
+              "pinyin": "Jīntiān de huìlǜ shì yī ōuyuán huàn bā kuài qián.",
+              "fr": "Le taux d'aujourd'hui est un euro pour huit yuans.",
+              "audio": "",
+              "teaches": ["hsk2_049", "hsk2_050", "hsk2_051"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_merchant",
+      "npc_name_cn": "商人",
+      "npc_name_fr": "Marchand",
+      "portrait": "res://assets/portraits/merchant.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是商人。我卖很多东西。",
+              "pinyin": "Nǐ hǎo! Wǒ shì shāngrén. Wǒ mài hěn duō dōngxi.",
+              "fr": "Bonjour ! Je suis marchand. Je vends beaucoup de choses.",
+              "audio": "",
+              "teaches": ["hsk2_052", "hsk2_053"]
+            },
+            {
+              "cn": "你想要什么商品？",
+              "pinyin": "Nǐ xiǎngyào shénme shāngyǐn?",
+              "fr": "Quel produit voulez-vous ?",
+              "audio": "",
+              "teaches": ["hsk2_054", "hsk2_055"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Montrez-moi vos meilleurs produits.",
+              "text_cn": "给我看最好的商品。",
+              "next": "best"
+            },
+            {
+              "text_fr": "Quel est le prix ?",
+              "text_cn": "价格是多少？",
+              "next": "price"
+            }
+          ]
+        },
+        "best": {
+          "lines": [
+            {
+              "cn": "这些是我们最好的。质量很好。",
+              "pinyin": "Zhèxiē shì wǒmen zuì hǎo de. Zhìliàng hěn hǎo.",
+              "fr": "Ce sont nos meilleurs produits. La qualité est très bonne.",
+              "audio": "",
+              "teaches": ["hsk2_056", "hsk2_057", "hsk2_058"]
+            }
+          ],
+          "next": "end"
+        },
+        "price": {
+          "lines": [
+            {
+              "cn": "价格都很合理。你看这个。",
+              "pinyin": "Jiàgé dōu hěn héli. Nǐ kàn zhège.",
+              "fr": "Les prix sont tous raisonnables. Regardez celui-ci.",
+              "audio": "",
+              "teaches": ["hsk2_059", "hsk2_060"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_cook",
+      "npc_name_cn": "厨师",
+      "npc_name_fr": "Cuisinier",
+      "portrait": "res://assets/portraits/cook.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的餐厅！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de cāntīng!",
+              "fr": "Bonjour ! Bienvenue dans mon restaurant !",
+              "audio": "",
+              "teaches": ["hsk2_061", "hsk2_062"]
+            },
+            {
+              "cn": "你饿吗？我做的菜很好吃。",
+              "pinyin": "Nǐ è ma? Wǒ zuò de cài hěn hǎochī.",
+              "fr": "Vous avez faim ? Mes plats sont délicieux.",
+              "audio": "",
+              "teaches": ["hsk2_063", "hsk2_064", "hsk2_065"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'est-ce que vous recommandez ?",
+              "text_cn": "你推荐什么？",
+              "next": "recommend"
+            },
+            {
+              "text_fr": "Je suis très affamé !",
+              "text_cn": "我很饿！",
+              "next": "hungry"
+            }
+          ]
+        },
+        "recommend": {
+          "lines": [
+            {
+              "cn": "我推荐红烧肉和春卷。都很有名。",
+              "pinyin": "Wǒ tuījiàn hóngshāo ròu hé chūnjuǎn. Dōu hěn yǒumíng.",
+              "fr": "Je recommande le porc braisé et les rouleaux de printemps. Ils sont tous très célèbres.",
+              "audio": "",
+              "teaches": ["hsk2_066", "hsk2_067", "hsk2_068"]
+            }
+          ],
+          "next": "end"
+        },
+        "hungry": {
+          "lines": [
+            {
+              "cn": "好！我马上给你做饭。",
+              "pinyin": "Hǎo! Wǒ mǎshàng gěi nǐ zuò fàn.",
+              "fr": "D'accord ! Je vous cuisine tout de suite.",
+              "audio": "",
+              "teaches": ["hsk2_069", "hsk2_070"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_artist",
+      "npc_name_cn": "艺术家",
+      "npc_name_fr": "Artiste",
+      "portrait": "res://assets/portraits/artist.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是艺术家。我喜欢画画。",
+              "pinyin": "Nǐ hǎo! Wǒ shì yìshùjiā. Wǒ xǐhuān huàhuà.",
+              "fr": "Bonjour ! Je suis artiste. J'aime peindre.",
+              "audio": "",
+              "teaches": ["hsk2_071", "hsk2_072", "hsk2_073"]
+            },
+            {
+              "cn": "这是我的作品。你喜欢吗？",
+              "pinyin": "Zhè shì wǒ de zuòpǐn. Nǐ xǐhuān ma?",
+              "fr": "Ceci est mon œuvre. Vous aimez ?",
+              "audio": "",
+              "teaches": ["hsk2_074", "hsk2_075"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est très beau !",
+              "text_cn": "太漂亮了！",
+              "next": "beautiful"
+            },
+            {
+              "text_fr": "Quel est votre style ?",
+              "text_cn": "你的风格是什么？",
+              "next": "style"
+            }
+          ]
+        },
+        "beautiful": {
+          "lines": [
+            {
+              "cn": "谢谢！我画了很多年。",
+              "pinyin": "Xièxie! Wǒ huà le hěn duō nián.",
+              "fr": "Merci ! Je peins depuis longtemps.",
+              "audio": "",
+              "teaches": ["hsk2_076", "hsk2_077"]
+            }
+          ],
+          "next": "end"
+        },
+        "style": {
+          "lines": [
+            {
+              "cn": "我喜欢画中国传统的风景。",
+              "pinyin": "Wǒ xǐhuān huà Zhōngguó chuántǒng de fēngjǐng.",
+              "fr": "J'aime peindre des paysages traditionnels chinois.",
+              "audio": "",
+              "teaches": ["hsk2_078", "hsk2_079", "hsk2_080"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_student",
+      "npc_name_cn": "学生",
+      "npc_name_fr": "Étudiant",
+      "portrait": "res://assets/portraits/student.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是学生。我学习汉语。",
+              "pinyin": "Nǐ hǎo! Wǒ shì xuésheng. Wǒ xuéxí Hànyǔ.",
+              "fr": "Bonjour ! Je suis étudiant. J'étudie le chinois.",
+              "audio": "",
+              "teaches": ["hsk2_081", "hsk2_082"]
+            },
+            {
+              "cn": "学习很困难，但是很有趣。",
+              "pinyin": "Xuéxí hěn kùnnan, búguò hěn yǒuqù.",
+              "fr": "C'est difficile mais intéressant.",
+              "audio": "",
+              "teaches": ["hsk2_083", "hsk2_084", "hsk2_085"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Bravo ! C'est fantastique.",
+              "text_cn": "太好了！",
+              "next": "praise"
+            },
+            {
+              "text_fr": "Ça fait combien de temps que vous l'apprenez ?",
+              "text_cn": "你学了多长时间？",
+              "next": "duration"
+            }
+          ]
+        },
+        "praise": {
+          "lines": [
+            {
+              "cn": "谢谢！我很努力学习。",
+              "pinyin": "Xièxie! Wǒ hěn nǔlì xuéxí.",
+              "fr": "Merci ! J'étudie dur.",
+              "audio": "",
+              "teaches": ["hsk2_086", "hsk2_087"]
+            }
+          ],
+          "next": "end"
+        },
+        "duration": {
+          "lines": [
+            {
+              "cn": "我学了两年。还要继续学。",
+              "pinyin": "Wǒ xué le liǎng nián. Háiyào jìxù xué.",
+              "fr": "J'apprends depuis deux ans. Je dois continuer.",
+              "audio": "",
+              "teaches": ["hsk2_088", "hsk2_089", "hsk2_090"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    }
+  ]
+}

@@ -7,6 +7,8 @@ import hsk6 from '../../data/hsk6.json';
 import hsk7 from '../../data/hsk7.json';
 import type { DatasetManifest, LessonExample, LessonItem, LevelId, ThemeSummary } from '../types';
 import { enrichExamplesWithAudio } from '../utils/exampleAudio';
+import { supplementLessons } from './supplement-flashcards';
+import { cecrB2VocabAll } from './cecr-b2-vocab';
 
 export const levelIds: LevelId[] = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7', 'hors-hsk'];
 
@@ -104,8 +106,27 @@ export const dataset: DatasetManifest = {
   lessons: levelIds.flatMap((level) => grouped[level])
 };
 
-const lessonByIdIndex = new Map(dataset.lessons.map((entry) => [entry.id, entry]));
-const lessonByHanziIndex = new Map(dataset.lessons.map((entry) => [entry.hanzi, entry]));
+// Indexer dataset HSK + supplement (lessons-paths, level1-course, etc.)
+// Le supplement couvre les 314 flashcards référencées mais absentes du dataset HSK.
+const lessonByIdIndex = new Map<string, LessonItem>();
+const lessonByHanziIndex = new Map<string, LessonItem>();
+
+for (const entry of dataset.lessons) {
+  lessonByIdIndex.set(entry.id, entry);
+  lessonByHanziIndex.set(entry.hanzi, entry);
+}
+// Le supplement est ajouté après le HSK pour qu'il puisse combler les trous
+// sans écraser les entrées HSK prioritaires.
+for (const entry of supplementLessons) {
+  if (!lessonByIdIndex.has(entry.id)) lessonByIdIndex.set(entry.id, entry);
+  if (!lessonByHanziIndex.has(entry.hanzi)) lessonByHanziIndex.set(entry.hanzi, entry);
+}
+// V8 : enrichissement ciblé B2.1 (tech, env, éco, registre formel).
+// Même règle que le supplément : n'écrase jamais une entrée HSK existante.
+for (const entry of cecrB2VocabAll) {
+  if (!lessonByIdIndex.has(entry.id)) lessonByIdIndex.set(entry.id, entry);
+  if (!lessonByHanziIndex.has(entry.hanzi)) lessonByHanziIndex.set(entry.hanzi, entry);
+}
 
 let horsHskLessonsCache: LessonItem[] | null = null;
 let horsHskByIdIndex = new Map<string, LessonItem>();
@@ -186,6 +207,14 @@ export const getAllLessonsIncludingHorsHsk = async () => {
   await loadHorsHskLessons();
   return getMergedLessons();
 };
+
+export function getWordOfDay(): LessonItem | null {
+  const all = getMergedLessons();
+  if (all.length === 0) return null;
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  return all[seed % all.length];
+}
 
 export function getReviewList(limit = 6): LessonItem[] {
   // Stratégie ultra simple : on sélectionne une entrée sur n

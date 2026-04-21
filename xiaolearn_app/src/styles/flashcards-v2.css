@@ -1,0 +1,355 @@
+/*
+ * flashcards-v2.css — scoped sous `.flashcards-v2`
+ * Palette alignée rouge chinois / crème / or.
+ */
+
+.flashcards-v2 {
+  --fc2-bg: #fffaf3;
+  --fc2-card-bg: #ffffff;
+  --fc2-text: #1f2937;
+  --fc2-text-muted: #6b7280;
+  --fc2-border: #f0e6d4;
+  --fc2-primary: #c6302c;
+  --fc2-primary-dark: #9c2521;
+  --fc2-gold: #d4a537;
+  --fc2-gold-soft: #fbe9b8;
+  --fc2-radius: 14px;
+  --fc2-radius-sm: 10px;
+  color: var(--fc2-text);
+  background: var(--fc2-bg);
+  min-height: 100%;
+  padding: 24px 16px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+.flashcards-v2 .fc2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.flashcards-v2 .fc2-header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+.flashcards-v2 .fc2-header p {
+  margin: 0;
+  color: var(--fc2-text-muted);
+  font-size: 14px;
+}
+
+/* Buttons */
+.flashcards-v2 .fc2-btn {
+  border: none;
+  border-radius: var(--fc2-radius-sm);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 120ms ease, transform 120ms ease;
+}
+.flashcards-v2 .fc2-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.flashcards-v2 .fc2-btn--primary {
+  background: var(--fc2-primary);
+  color: #fff;
+}
+.flashcards-v2 .fc2-btn--primary:hover:not(:disabled) {
+  background: var(--fc2-primary-dark);
+}
+.flashcards-v2 .fc2-btn--ghost {
+  background: transparent;
+  color: var(--fc2-text);
+  border: 1px solid var(--fc2-border);
+}
+.flashcards-v2 .fc2-btn--ghost:hover {
+  background: var(--fc2-border);
+}
+.flashcards-v2 .fc2-btn--lg {
+  padding: 12px 18px;
+  font-size: 15px;
+}
+.flashcards-v2 .fc2-btn-badge {
+  background: #fff;
+  color: var(--fc2-primary);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Stats */
+.flashcards-v2 .fc2-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.flashcards-v2 .fc2-stat {
+  background: var(--fc2-card-bg);
+  border: 1px solid var(--fc2-border);
+  border-left: 4px solid var(--fc2-border);
+  border-radius: var(--fc2-radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+.flashcards-v2 .fc2-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+}
+.flashcards-v2 .fc2-stat-label {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--fc2-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tabs */
+.flashcards-v2 .fc2-tabs {
+  display: inline-flex;
+  background: var(--fc2-border);
+  border-radius: var(--fc2-radius-sm);
+  padding: 4px;
+  margin-bottom: 14px;
+}
+.flashcards-v2 .fc2-tab {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fc2-text-muted);
+}
+.flashcards-v2 .fc2-tab--active {
+  background: var(--fc2-card-bg);
+  color: var(--fc2-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Filters (SRS state) */
+.flashcards-v2 .fc2-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.flashcards-v2 .fc2-filter {
+  border: 1px solid var(--fc2-border);
+  background: var(--fc2-card-bg);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.flashcards-v2 .fc2-filter--active {
+  background: var(--fc2-primary);
+  color: #fff;
+  border-color: var(--fc2-primary);
+}
+.flashcards-v2 .fc2-filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.flashcards-v2 .fc2-filter:not(.fc2-filter--active) .fc2-filter-count {
+  background: var(--fc2-border);
+  color: var(--fc2-text);
+}
+
+/* Source tabs + search */
+.flashcards-v2 .fc2-source-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.flashcards-v2 .fc2-source-tabs {
+  display: inline-flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.flashcards-v2 .fc2-source-tab {
+  background: transparent;
+  border: 1px solid var(--fc2-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--fc2-text-muted);
+}
+.flashcards-v2 .fc2-source-tab--active {
+  background: var(--fc2-gold-soft);
+  color: #7a5a0b;
+  border-color: var(--fc2-gold);
+  font-weight: 700;
+}
+.flashcards-v2 .fc2-source-actions {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.flashcards-v2 .fc2-search {
+  border: 1px solid var(--fc2-border);
+  border-radius: var(--fc2-radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  min-width: 180px;
+  background: var(--fc2-card-bg);
+}
+.flashcards-v2 .fc2-search:focus {
+  outline: 2px solid var(--fc2-primary);
+  outline-offset: 1px;
+}
+
+/* Decks list */
+.flashcards-v2 .fc2-decks {
+  display: grid;
+  gap: 10px;
+}
+.flashcards-v2 .fc2-empty {
+  text-align: center;
+  padding: 30px;
+  color: var(--fc2-text-muted);
+  background: var(--fc2-card-bg);
+  border: 1px dashed var(--fc2-border);
+  border-radius: var(--fc2-radius-sm);
+}
+
+/* Deck row */
+.flashcards-v2 .fc2-deck {
+  background: var(--fc2-card-bg);
+  border: 1px solid var(--fc2-border);
+  border-left: 5px solid var(--fc2-accent, var(--fc2-primary));
+  border-radius: var(--fc2-radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.flashcards-v2 .fc2-deck:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.flashcards-v2 .fc2-deck-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.flashcards-v2 .fc2-deck-label {
+  font-size: 15px;
+  font-weight: 700;
+}
+.flashcards-v2 .fc2-deck-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--fc2-text-muted);
+}
+.flashcards-v2 .fc2-deck-due {
+  color: var(--fc2-primary);
+  font-weight: 700;
+}
+.flashcards-v2 .fc2-deck-track {
+  height: 4px;
+  background: var(--fc2-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.flashcards-v2 .fc2-deck-fill {
+  height: 100%;
+  background: var(--fc2-accent, var(--fc2-primary));
+}
+.flashcards-v2 .fc2-deck-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.flashcards-v2 .fc2-deck-pct {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--fc2-accent, var(--fc2-primary));
+}
+.flashcards-v2 .fc2-deck-open {
+  font-size: 12px;
+  color: var(--fc2-text-muted);
+}
+
+/* Modal */
+.flashcards-v2 .fc2-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.flashcards-v2 .fc2-modal {
+  background: #fff;
+  border-radius: var(--fc2-radius);
+  padding: 24px;
+  width: min(400px, calc(100% - 32px));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+.flashcards-v2 .fc2-modal h3 {
+  margin: 0 0 16px;
+}
+.flashcards-v2 .fc2-modal-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--fc2-border);
+  border-radius: var(--fc2-radius-sm);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.flashcards-v2 .fc2-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .flashcards-v2 .fc2-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .flashcards-v2 .fc2-deck {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .flashcards-v2 .fc2-deck-right {
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+}

@@ -8,6 +8,8 @@ const CORS_HEADERS = {
   'access-control-allow-methods': 'GET,POST,OPTIONS',
   'access-control-allow-headers': 'Content-Type, Authorization'
 };
+const SUPPORT_EMAIL_DEFAULT_TO = 'xiaolearn.mandarin@support.com';
+const SUPPORT_SEVERITY_VALUES = new Set(['low', 'medium', 'high', 'critical']);
 
 const encoder = new TextEncoder();
 const GOOGLE_TOKEN_AUD = 'https://oauth2.googleapis.com/token';
@@ -111,6 +113,140 @@ const buildMerciUrl = (env, sessionId) => {
   const base = normalizeBaseUrl(env.MARKETPLACE_BASE_URL);
   if (!base || !sessionId) return null;
   return `${base}/merci?session_id=${encodeURIComponent(sessionId)}`;
+};
+
+const normalizeTextValue = (value, maxLength) => {
+  if (typeof value !== 'string') return '';
+  return value.trim().slice(0, maxLength);
+};
+
+const normalizeOptionalTextValue = (value, maxLength) => {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().slice(0, maxLength);
+  return normalized.length > 0 ? normalized : null;
+};
+
+const normalizeSupportReport = (payload = {}) => {
+  const title = normalizeTextValue(payload.title, 180);
+  const description = normalizeTextValue(payload.description, 5000);
+  const severity = SUPPORT_SEVERITY_VALUES.has(payload.severity) ? payload.severity : 'medium';
+  const language = payload.language === 'en' ? 'en' : 'fr';
+  const pageUrl = normalizeOptionalTextValue(payload.pageUrl, 500);
+  const userAgent = normalizeOptionalTextValue(payload.userAgent, 500);
+  const reporterEmail = normalizeOptionalTextValue(payload.reporterEmail, 320);
+  const reporterName = normalizeOptionalTextValue(payload.reporterName, 180);
+  const reporterUid = normalizeOptionalTextValue(payload.reporterUid, 128);
+  const occurredAt = normalizeOptionalTextValue(payload.occurredAt, 80);
+
+  if (!title || !description) {
+    throw new Error('title et description requis');
+  }
+
+  return {
+    title,
+    description,
+    severity,
+    language,
+    pageUrl,
+    userAgent,
+    reporterEmail,
+    reporterName,
+    reporterUid,
+    occurredAt
+  };
+};
+
+const buildSupportReportEmail = ({ env, report, reportId }) => {
+  const to = env.SUPPORT_REPORT_TO || SUPPORT_EMAIL_DEFAULT_TO;
+  const from = env.SUPPORT_REPORT_FROM || env.PURCHASE_EMAIL_FROM;
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey || !from || !to) {
+    throw new Error('Configuration email support incomplète');
+  }
+
+  const severityLabel =
+    report.severity === 'critical'
+      ? 'Critique'
+      : report.severity === 'high'
+      ? 'Élevée'
+      : report.severity === 'low'
+      ? 'Faible'
+      : 'Moyenne';
+  const submittedAt = new Date().toISOString();
+  const subjectPrefix = report.language === 'en' ? '[XiaoLearn Support] Bug report' : '[XiaoLearn Support] Signalement bug';
+  const subject = `${subjectPrefix} (${severityLabel}) - ${report.title}`;
+
+  const reportLines = [
+    `ID: ${reportId}`,
+    `Date: ${submittedAt}`,
+    `Gravité: ${severityLabel} (${report.severity})`,
+    report.reporterName ? `Nom: ${report.reporterName}` : null,
+    report.reporterEmail ? `Email: ${report.reporterEmail}` : null,
+    report.reporterUid ? `UID: ${report.reporterUid}` : null,
+    report.pageUrl ? `Page: ${report.pageUrl}` : null,
+    report.occurredAt ? `Date client: ${report.occurredAt}` : null,
+    report.userAgent ? `User-Agent: ${report.userAgent}` : null,
+    '',
+    `Titre: ${report.title}`,
+    '',
+    'Description:',
+    report.description
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  const html = `
+    <div style="font-family: Arial, Helvetica, sans-serif; line-height: 1.5; color:#121212; background:#f7f5f4; padding:20px;">
+      <div style="max-width:720px; margin:0 auto; background:#fff; border:1px solid #ece7e5; border-radius:12px;">
+        <div style="padding:14px 18px; background:linear-gradient(120deg,#b22222,#d94f3d); color:#fff;">
+          <h2 style="margin:0; font-size:18px;">Nouveau signalement XiaoLearn</h2>
+        </div>
+        <div style="padding:18px;">
+          <p style="margin:0 0 10px;"><strong>ID:</strong> ${escapeHtml(reportId)}</p>
+          <p style="margin:0 0 10px;"><strong>Gravité:</strong> ${escapeHtml(severityLabel)} (${escapeHtml(report.severity)})</p>
+          ${report.reporterName ? `<p style="margin:0 0 10px;"><strong>Nom:</strong> ${escapeHtml(report.reporterName)}</p>` : ''}
+          ${report.reporterEmail ? `<p style="margin:0 0 10px;"><strong>Email:</strong> ${escapeHtml(report.reporterEmail)}</p>` : ''}
+          ${report.reporterUid ? `<p style="margin:0 0 10px;"><strong>UID:</strong> ${escapeHtml(report.reporterUid)}</p>` : ''}
+          ${report.pageUrl ? `<p style="margin:0 0 10px;"><strong>Page:</strong> ${escapeHtml(report.pageUrl)}</p>` : ''}
+          ${report.occurredAt ? `<p style="margin:0 0 10px;"><strong>Date client:</strong> ${escapeHtml(report.occurredAt)}</p>` : ''}
+          ${report.userAgent ? `<p style="margin:0 0 10px;"><strong>User-Agent:</strong> ${escapeHtml(report.userAgent)}</p>` : ''}
+          <hr style="border:none; border-top:1px solid #eee; margin:14px 0;" />
+          <p style="margin:0 0 8px;"><strong>Titre:</strong> ${escapeHtml(report.title)}</p>
+          <p style="margin:0;"><strong>Description:</strong></p>
+          <pre style="white-space:pre-wrap; font-family:inherit; margin:8px 0 0; background:#faf9f8; border:1px solid #eee; border-radius:8px; padding:12px;">${escapeHtml(
+            report.description
+          )}</pre>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const payload = {
+    from,
+    to: [to],
+    subject,
+    text: reportLines,
+    html
+  };
+  if (report.reporterEmail) payload.reply_to = report.reporterEmail;
+  return { apiKey, payload };
+};
+
+const sendSupportReportEmail = async ({ env, report, reportId }) => {
+  const { apiKey, payload } = buildSupportReportEmail({ env, report, reportId });
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${apiKey}`,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Email support impossible (${response.status}): ${errorText}`);
+  }
 };
 
 const formatAmount = (amountTotal, currency) => {
@@ -1066,6 +1202,34 @@ export default {
           return_url: returnUrl || env.APP_BASE_URL || env.MARKETPLACE_BASE_URL
         });
         return json({ url: session.url });
+      }
+
+      if (request.method === 'POST' && path === '/api/support-report') {
+        const body = await request.json().catch(() => ({}));
+        let report;
+        try {
+          report = normalizeSupportReport(body);
+        } catch (error) {
+          return json({ error: error.message || 'Signalement invalide' }, 400);
+        }
+
+        const reportId = `support-${Date.now()}-${crypto.randomUUID?.() || Math.random().toString(36).slice(2, 10)}`;
+        await sendSupportReportEmail({ env, report, reportId });
+
+        if (firestoreConfigured(env)) {
+          try {
+            await patchDocument(env, 'support_reports', reportId, {
+              ...report,
+              reportId,
+              createdAt: new Date().toISOString(),
+              source: 'xiaolearn_app'
+            });
+          } catch (error) {
+            console.error('support_report firestore_write_failed', error);
+          }
+        }
+
+        return json({ ok: true, reportId });
       }
 
       if (request.method === 'GET' && path === '/api/downloads') {

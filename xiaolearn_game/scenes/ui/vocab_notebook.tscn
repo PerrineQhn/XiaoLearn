@@ -1,0 +1,182 @@
+[gd_scene load_steps=3 format=3 uid="uid://vocab_notebook_001"]
+
+[ext_resource type="Script" path="res://scripts/VocabNotebook.gd" id="1_notebook"]
+[ext_resource type="Script" path="res://scripts/ToneHighlighter.gd" id="2_tonehigh"]
+
+[node name="VocabNotebook" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_notebook")
+visible = false
+
+[node name="BackgroundDim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TopBar" type="HBoxContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+custom_minimum_size = Vector2(0, 48)
+
+[node name="TitleLabel" type="Label" parent="MainPanel/VBox/TopBar"]
+layout_mode = 2
+text = "词典 · Vocabulaire"
+theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="MainPanel/VBox/TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(44, 44)
+text = "✕"
+theme_override_font_sizes/font_size = 18
+
+[node name="SearchField" type="LineEdit" parent="MainPanel/VBox"]
+layout_mode = 2
+placeholder_text = "Rechercher…"
+custom_minimum_size = Vector2(0, 40)
+
+[node name="HSKFilters" type="HBoxContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+custom_minimum_size = Vector2(0, 40)
+
+[node name="WordCountLabel" type="Label" parent="MainPanel/VBox"]
+layout_mode = 2
+text = "0 mots appris"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1.0)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 200)
+
+[node name="WordGrid" type="GridContainer" parent="MainPanel/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="DetailPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+visible = false
+
+[node name="VBox" type="VBoxContainer" parent="DetailPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Hanzi" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "你好"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 48
+
+[node name="Pinyin" type="RichTextLabel" parent="DetailPanel/VBox"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]nǐ hǎo[/center]"
+theme_override_font_sizes/font_size = 18
+fit_content = true
+custom_minimum_size = Vector2(0, 32)
+
+[node name="Translation" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "Bonjour / Salut"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9, 0.85, 0.7, 1.0)
+
+[node name="HSKBadge" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "HSK 1"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="PartOfSpeech" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "interjection"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1.0)
+
+[node name="Separator1" type="HSeparator" parent="DetailPanel/VBox"]
+layout_mode = 2
+
+[node name="ExampleLabel" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "Exemple :"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1.0)
+
+[node name="ExampleCN" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
+[node name="ExamplePinyin" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1.0)
+autowrap_mode = 3
+
+[node name="ExampleFR" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7, 0.75, 0.7, 1.0)
+autowrap_mode = 3
+
+[node name="MasteryLabel" type="Label" parent="DetailPanel/VBox"]
+layout_mode = 2
+text = "Maîtrisé"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="BtnRow" type="HBoxContainer" parent="DetailPanel/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="AudioButton" type="Button" parent="DetailPanel/VBox/BtnRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 44)
+text = "🔊 Écouter"
+theme_override_font_sizes/font_size = 14
+
+[node name="CloseButton" type="Button" parent="DetailPanel/VBox/BtnRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 44)
+text = "✕ Fermer"
+theme_override_font_sizes/font_size = 14
+
+[node name="ToneHighlighter" type="Node" parent="."]
+script = ExtResource("2_tonehigh")

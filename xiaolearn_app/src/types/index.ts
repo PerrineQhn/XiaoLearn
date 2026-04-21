@@ -48,8 +48,11 @@ export interface FillBlankQuiz {
   translationEn: string;        // Traduction en anglais
   choices: string[];            // Mots/particules possibles
   correctChoice: string;        // Le bon mot
-  pinyin: string;               // Pinyin de la phrase complète
+  // Optionnel : certains exercices CECR générés n'ont pas de pinyin phrase.
+  // La page de rendu doit gérer l'absence (cf. GrammarQuizComponent).
+  pinyin?: string;              // Pinyin de la phrase complète
   explanation?: string;         // Optionnel : précision pédagogique
+  hint?: string;                // Indice pédagogique (meaning hint, cf. cecr-exercises.ts)
 }
 
 export interface TranslationToChineseQuiz {
@@ -94,7 +97,10 @@ export interface LessonItem {
   audio?: string;  // Audio principal (optionnel si audioLetter est fourni)
   audioLetter?: string;  // Audio pour la lettre ou le son isolé (utilisé pour le pinyin)
   examples: LessonExample[];
-  quiz: QuizData;
+  // Quiz optionnel : certaines entrées supplément (V5/V6) sont des cartes
+  // de vocabulaire pures sans quiz associé — les pages consommatrices
+  // doivent gérer l'absence (cf. FlashcardPage, StructuredLessonPage).
+  quiz?: QuizData;
   grammarQuiz?: GrammarQuiz;  // Quiz de grammaire optionnel (pour les leçons de grammaire)
   tags: string[];
   theme: string;

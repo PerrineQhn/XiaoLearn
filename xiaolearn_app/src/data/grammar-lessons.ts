@@ -36,12 +36,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我不喜欢咖啡',
         pinyin: 'wǒ bù xǐhuan kāfēi',
-        translation: 'Je n\'aime pas le café'
+        translation: 'I don\'t like coffee',
+        translationFr: 'Je n\'aime pas le café'
       },
       {
         hanzi: '他不是老师',
         pinyin: 'tā bú shì lǎoshī',
-        translation: 'Il n\'est pas professeur'
+        translation: 'He is not a teacher',
+        translationFr: 'Il n\'est pas professeur'
       }
     ],
     quiz: {
@@ -87,12 +89,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我没吃饭',
         pinyin: 'wǒ méi chī fàn',
-        translation: 'Je n\'ai pas mangé'
+        translation: 'I haven\'t eaten',
+        translationFr: 'Je n\'ai pas mangé'
       },
       {
         hanzi: '他没来',
         pinyin: 'tā méi lái',
-        translation: 'Il n\'est pas venu'
+        translation: 'He didn\'t come',
+        translationFr: 'Il n\'est pas venu'
       }
     ],
     quiz: {
@@ -147,7 +151,8 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '老师的电脑',
         pinyin: 'lǎoshī de diànnǎo',
-        translation: 'l\'ordinateur du professeur'
+        translation: 'the teacher\'s computer',
+        translationFr: 'l\'ordinateur du professeur'
       }
     ],
     quiz: {
@@ -195,12 +200,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '你好吗？',
         pinyin: 'nǐ hǎo ma?',
-        translation: 'Comment vas-tu ?'
+        translation: 'How are you?',
+        translationFr: 'Comment vas-tu ?'
       },
       {
         hanzi: '你是学生吗？',
         pinyin: 'nǐ shì xuésheng ma?',
-        translation: 'Es-tu étudiant ?'
+        translation: 'Are you a student?',
+        translationFr: 'Es-tu étudiant ?'
       }
     ],
     quiz: {
@@ -248,12 +255,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我在家',
         pinyin: 'wǒ zài jiā',
-        translation: 'Je suis à la maison'
+        translation: 'I am at home',
+        translationFr: 'Je suis à la maison'
       },
       {
         hanzi: '他在学校',
         pinyin: 'tā zài xuéxiào',
-        translation: 'Il est à l\'école'
+        translation: 'He is at school',
+        translationFr: 'Il est à l\'école'
       }
     ],
     quiz: {
@@ -302,12 +311,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我吃了饭',
         pinyin: 'wǒ chī le fàn',
-        translation: 'J\'ai mangé'
+        translation: 'I have eaten',
+        translationFr: 'J\'ai mangé'
       },
       {
         hanzi: '她来了',
         pinyin: 'tā lái le',
-        translation: 'Elle est venue'
+        translation: 'She came',
+        translationFr: 'Elle est venue'
       }
     ],
     quiz: {
@@ -357,12 +368,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我比他高',
         pinyin: 'wǒ bǐ tā gāo',
-        translation: 'Je suis plus grand que lui'
+        translation: 'I am taller than him',
+        translationFr: 'Je suis plus grand que lui'
       },
       {
         hanzi: '今天比昨天冷',
         pinyin: 'jīntiān bǐ zuótiān lěng',
-        translation: 'Aujourd\'hui il fait plus froid qu\'hier'
+        translation: 'Today it\'s colder than yesterday',
+        translationFr: 'Aujourd\'hui il fait plus froid qu\'hier'
       }
     ],
     quiz: {
@@ -410,12 +423,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '因为下雨，所以我不去',
         pinyin: 'yīnwèi xiàyǔ, suǒyǐ wǒ bú qù',
-        translation: 'Parce qu\'il pleut, je n\'y vais pas'
+        translation: 'Because it\'s raining, I\'m not going',
+        translationFr: 'Parce qu\'il pleut, je n\'y vais pas'
       },
       {
         hanzi: '因为很累，所以想睡觉',
         pinyin: 'yīnwèi hěn lèi, suǒyǐ xiǎng shuìjiào',
-        translation: 'Parce que je suis fatigué, je veux dormir'
+        translation: 'Because I\'m tired, I want to sleep',
+        translationFr: 'Parce que je suis fatigué, je veux dormir'
       }
     ],
     quiz: {
@@ -464,12 +479,14 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我会说中文',
         pinyin: 'wǒ huì shuō zhōngwén',
-        translation: 'Je sais parler chinois'
+        translation: 'I can speak Chinese',
+        translationFr: 'Je sais parler chinois'
       },
       {
         hanzi: '他会游泳',
         pinyin: 'tā huì yóuyǒng',
-        translation: 'Il sait nager'
+        translation: 'He can swim',
+        translationFr: 'Il sait nager'
       }
     ],
     quiz: {
@@ -517,17 +534,20 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '我学习',
         pinyin: 'wǒ xuéxí',
-        translation: 'J\'étudie'
+        translation: 'I study',
+        translationFr: 'J\'étudie'
       },
       {
         hanzi: '他吃饭',
         pinyin: 'tā chī fàn',
-        translation: 'Il mange'
+        translation: 'He eats',
+        translationFr: 'Il mange'
       },
       {
         hanzi: '老师工作',
         pinyin: 'lǎoshī gōngzuò',
-        translation: 'Le professeur travaille'
+        translation: 'The teacher is working',
+        translationFr: 'Le professeur travaille'
       }
     ],
     quiz: {
@@ -575,17 +595,20 @@ const grammarLessonsBase: LessonItem[] = [
       {
         hanzi: '他很高',
         pinyin: 'tā hěn gāo',
-        translation: 'Il est grand'
+        translation: 'He is tall',
+        translationFr: 'Il est grand'
       },
       {
         hanzi: '这个很好',
         pinyin: 'zhège hěn hǎo',
-        translation: 'Celui-ci est bien'
+        translation: 'This one is good',
+        translationFr: 'Celui-ci est bien'
       },
       {
         hanzi: '天气很冷',
         pinyin: 'tiānqì hěn lěng',
-        translation: 'Il fait froid'
+        translation: 'It\'s cold',
+        translationFr: 'Il fait froid'
       }
     ],
     quiz: {
