@@ -100,9 +100,10 @@ const probeCache = new Map<string, boolean>();
 
 /**
  * HEAD request avec timeout court et cache. Résout à true si la ressource
- * existe (HTTP 200-299), false sinon (404, erreur réseau, timeout).
+ * existe (HTTP 200-299), false sinon (404, 403 jsdelivr pour fichier absent,
+ * erreur réseau, timeout).
  */
-async function probeUrl(url: string, timeoutMs = 5000): Promise<boolean> {
+async function probeUrl(url: string, timeoutMs = 2000): Promise<boolean> {
   if (probeCache.has(url)) return probeCache.get(url)!;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -126,19 +127,29 @@ async function probeUrl(url: string, timeoutMs = 5000): Promise<boolean> {
 }
 
 /**
- * Lance des HEAD requests en parallèle sur toutes les candidates et renvoie
- * la PREMIÈRE qui existe selon l'ordre fourni (pas la plus rapide à répondre).
- * Garantit la même sélection qu'un test séquentiel, mais avec la latence
- * d'un test parallèle.
+ * Lance des HEAD requests en PARALLÈLE sur toutes les candidates (elles
+ * partent toutes en même temps, pas séquentiellement), puis `await` leurs
+ * résultats dans l'ordre de priorité et renvoie la PREMIÈRE qui répond 200.
+ *
+ * Avantage majeur vs `Promise.all` : on résout dès que la plus prioritaire
+ * répond OK, sans attendre les probes plus lentes. Dans le cas optimiste
+ * (la 1ère URL est bonne), la latence = 1 RTT (~100-300ms) au lieu d'attendre
+ * ~50 probes dont certaines peuvent timeout.
+ *
+ * Garantit la même sélection qu'un test séquentiel pur : ordre de priorité
+ * respecté, donc c'est toujours le même fichier qui est joué.
  */
 async function findFirstExistingUrl(candidates: string[]): Promise<string | null> {
   if (candidates.length === 0) return null;
-  if (candidates.length === 1) {
-    return (await probeUrl(candidates[0])) ? candidates[0] : null;
+  // Démarre toutes les probes en parallèle immédiatement.
+  const probes = candidates.map((url) => probeUrl(url));
+  // Itère dans l'ordre de priorité et retourne dès qu'une priorité haute
+  // est confirmée true. Les probes moins prioritaires continuent en fond
+  // (résultats mis en cache pour la prochaine fois) mais on n'attend pas.
+  for (let i = 0; i < candidates.length; i++) {
+    if (await probes[i]) return candidates[i];
   }
-  const results = await Promise.all(candidates.map((url) => probeUrl(url)));
-  const idx = results.findIndex(Boolean);
-  return idx === -1 ? null : candidates[idx];
+  return null;
 }
 
 /**
@@ -231,31 +242,57 @@ function rememberPreloaded(hanzi: string, audio: HTMLAudioElement) {
 }
 
 /**
+ * Construit les candidats pour une URL en version LOCALE uniquement (même
+ * origine que le site). Local = extensions .mp3/.wav, pas de CDN.
+ */
+function getLocalCandidates(src: string): string[] {
+  const localSrc = resolveAudioSrc(src);
+  return withAlternateExtension(localSrc);
+}
+
+/**
+ * Idem mais pour les URLs REMOTE (jsdelivr CDN).
+ */
+function getRemoteCandidates(src: string): string[] {
+  const remoteSrc = resolveRemoteAudioSrc(src);
+  if (!remoteSrc) return [];
+  return withAlternateExtension(remoteSrc);
+}
+
+/**
  * Construit la liste complète des URLs candidates pour un hanzi, dans
- * l'ordre de priorité. L'ordre est IDENTIQUE à l'ancien code pour garantir
- * qu'on sélectionne toujours le même fichier (donc le même son).
+ * l'ordre de priorité. L'ordre garantit que c'est toujours le même fichier
+ * qui est sélectionné — donc le même son qu'avant le refactor.
  *
  * Priorité :
  *   1. URL explicite (champ `audio:` sur l'item), si fournie
  *   2. `audio/examples/<hash>.mp3` si hanzi > 3 caractères (phrase)
  *   3. Conventions HSK 1 → 7-9
  *
- * Chaque entrée est développée en variantes .mp3/.wav × local/CDN via
- * `getAudioSrcCandidates`.
+ * Organisation : on teste TOUS les chemins LOCAUX d'abord (même origine,
+ * HEAD en ~50ms), puis tous les CDN en fallback. Sur le site déployé avec
+ * les fichiers audio bundlés (cas normal), on ne touche jamais jsdelivr —
+ * la résolution d'une URL prend <100ms parallèles au lieu de ~500ms.
+ *
+ * Avant : [hsk1.local.mp3, hsk1.local.wav, hsk1.cdn.mp3, hsk1.cdn.wav,
+ *          hsk2.local.mp3, ...] → on intercale local/CDN par convention
+ * Après : [hsk1.local.mp3, hsk1.local.wav, hsk2.local.mp3, ..., hsk7-9.local.wav,
+ *          hsk1.cdn.mp3, hsk1.cdn.wav, ..., hsk7-9.cdn.wav]
  */
 function buildHanziCandidates(hanzi: string, explicitUrl?: string | null): string[] {
-  const all: string[] = [];
-  if (explicitUrl) {
-    all.push(...getAudioSrcCandidates(explicitUrl));
-  }
+  const locals: string[] = [];
+  const remotes: string[] = [];
+  const add = (src: string) => {
+    locals.push(...getLocalCandidates(src));
+    remotes.push(...getRemoteCandidates(src));
+  };
+
+  if (explicitUrl) add(explicitUrl);
   const cleanHanzi = hanzi.replace(/\d+$/, '').trim();
-  if (cleanHanzi.length > 3) {
-    all.push(...getAudioSrcCandidates(getExampleAudioUrl(cleanHanzi)));
-  }
-  for (const build of HANZI_AUDIO_CONVENTIONS) {
-    all.push(...getAudioSrcCandidates(build(hanzi)));
-  }
-  return dedupe(all);
+  if (cleanHanzi.length > 3) add(getExampleAudioUrl(cleanHanzi));
+  for (const build of HANZI_AUDIO_CONVENTIONS) add(build(hanzi));
+
+  return dedupe([...locals, ...remotes]);
 }
 
 /**
