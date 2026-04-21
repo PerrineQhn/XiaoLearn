@@ -99,24 +99,51 @@ export const getAudioSrcCandidates = (src: string): string[] => {
 const probeCache = new Map<string, boolean>();
 
 /**
- * HEAD request avec timeout court et cache. Résout à true si la ressource
- * existe (HTTP 200-299), false sinon (404, 403 jsdelivr pour fichier absent,
- * erreur réseau, timeout).
+ * Probe une URL avec GET Range 0-3 + vérification des magic bytes.
+ *
+ * Pourquoi pas juste HEAD + response.ok ?
+ * --------------------------------------
+ * Cloudflare Pages applique la règle SPA `/* → /index.html 200` sur toute URL
+ * inconnue. Si le fichier audio n'existe pas (prune, typo, etc.), le serveur
+ * renvoie quand même 200 avec le HTML de l'app. `response.ok` serait true,
+ * puis Audio(url) échouerait avec NotSupportedError à la lecture.
+ *
+ * En téléchargeant les 4 premiers octets (Range: 0-3 = 4 bytes, coût négligeable,
+ * le navigateur cache), on peut distinguer :
+ *   - MP3 : commence par `ID3` ou `FF Fx` (MPEG frame sync)
+ *   - WAV : commence par `RIFF`
+ *   - HTML SPA fallback : commence par `<!DO` (`<!doctype>`)
+ *   - jsdelivr "file not found" : 403 avec "Package ..." — déjà capturé par !response.ok
  */
-async function probeUrl(url: string, timeoutMs = 2000): Promise<boolean> {
+async function probeUrl(url: string, timeoutMs = 2500): Promise<boolean> {
   if (probeCache.has(url)) return probeCache.get(url)!;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(url, {
-      method: 'HEAD',
+      method: 'GET',
+      headers: { Range: 'bytes=0-3' },
       signal: controller.signal,
-      // Permet au cache HTTP navigateur de servir la réponse.
       cache: 'default'
     });
-    const ok = response.ok;
-    probeCache.set(url, ok);
-    return ok;
+    if (!response.ok && response.status !== 206) {
+      probeCache.set(url, false);
+      return false;
+    }
+    const buf = await response.arrayBuffer();
+    const bytes = new Uint8Array(buf);
+    // Besoin d'au moins 3 bytes pour faire la différence. Si on a moins (rare,
+    // fichier tronqué), on considère invalide pour éviter un faux positif.
+    if (bytes.length < 3) {
+      probeCache.set(url, false);
+      return false;
+    }
+    const isMp3 = bytes[0] === 0x49 && bytes[1] === 0x44 && bytes[2] === 0x33; // "ID3"
+    const isMp3Frame = bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0;         // MPEG sync
+    const isWav = bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46;  // "RIF(F)"
+    const isAudio = isMp3 || isMp3Frame || isWav;
+    probeCache.set(url, isAudio);
+    return isAudio;
   } catch {
     // Échec réseau / abort → on ne cache pas (transient), mais on renvoie
     // false pour passer à la suivante.

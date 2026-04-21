@@ -1,3 +1,18 @@
-# Redirections pour SPA (Single Page Application)
-# Redirige toutes les routes vers index.html
+# Cloudflare Pages routing rules
+#
+# IMPORTANT — /audio/* redirect vers jsdelivr
+# ------------------------------------------
+# Le script scripts/prune-cloudflare-assets.mjs supprime public/audio/ pendant
+# le build Cloudflare Pages (22k+ fichiers > limite 20k de Pages). Sans
+# redirection ici, une requête /audio/foo.mp3 tomberait sur le SPA fallback
+# ci-dessous et renverrait index.html avec status 200, ce qui ferait croire
+# au code qu'il a trouvé l'audio et échouerait ensuite à la lecture
+# (NotSupportedError : HTML au lieu de MP3).
+#
+# La redirection 302 envoie directement vers jsdelivr qui sert les vrais
+# fichiers audio depuis le repo GitHub. Les 302 sont suivies automatiquement
+# par fetch() et <audio>, donc l'app ne voit pas la redirection.
+/audio/*  https://cdn.jsdelivr.net/gh/PerrineQhn/XiaoLearn@main/xiaolearn_app/public/audio/:splat  302
+
+# SPA fallback pour toutes les autres routes — React Router côté client
 /*    /index.html   200
