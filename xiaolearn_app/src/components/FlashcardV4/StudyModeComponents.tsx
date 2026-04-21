@@ -24,7 +24,7 @@
 import type { MouseEvent as ReactMouseEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
-import { playHanziAudio } from '../../utils/audio';
+import { playHanziAudio, preloadHanziAudio } from '../../utils/audio';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -131,6 +131,13 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
   useEffect(() => {
     setFlipped(false);
   }, [card.id]);
+
+  // Précharge l'audio en tâche de fond dès que la carte s'affiche : quand
+  // l'utilisateur clique sur 🔊 (généralement 1-3s plus tard), le fichier
+  // est déjà résolu + bufferé → lecture quasi instantanée.
+  useEffect(() => {
+    preloadHanziAudio(card.hanzi, card.audio);
+  }, [card.hanzi, card.audio]);
 
   const handleReveal = () => {
     if (flipped) return;
@@ -296,6 +303,11 @@ export function McqCard({ card, direction, language, onReveal, onSubmit, distrac
     revealedRef.current = false;
   }, [card.id]);
 
+  // Preload audio pendant que l'utilisateur lit les choix (cf. FlipCard).
+  useEffect(() => {
+    preloadHanziAudio(card.hanzi, card.audio);
+  }, [card.hanzi, card.audio]);
+
   const answerFor = (c: StudyCard) =>
     frontFr
       ? language === 'fr'
@@ -393,6 +405,11 @@ export function TypingCard({ card, direction, language, onReveal, onSubmit }: St
     const t = window.setTimeout(() => inputRef.current?.focus(), 60);
     return () => window.clearTimeout(t);
   }, [card.id]);
+
+  // Preload audio pendant que l'utilisateur tape (cf. FlipCard).
+  useEffect(() => {
+    preloadHanziAudio(card.hanzi, card.audio);
+  }, [card.hanzi, card.audio]);
 
   const expected = frontFr
     ? card.pinyin
