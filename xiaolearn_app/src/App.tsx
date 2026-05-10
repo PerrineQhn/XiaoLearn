@@ -8,10 +8,13 @@ import StructuredLessonPageV2 from './pages/StructuredLessonPageV2';
 // L'import par défaut n'est plus nécessaire ; on conserve uniquement les
 // types/mappers exportés depuis ce module (via utils/v2-mappers).
 import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './pages/AiTutorPageV2';
-import ReportPageV2 from './pages/ReportPageV2';
 import GrammarDrillsPageV2 from './pages/GrammarDrillsPageV2';
-import EvaluationPageV2 from './pages/EvaluationPageV2';
+import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
+import BattlesPage from './pages/BattlesPage';
+import BattleSessionPage from './pages/BattleSessionPage';
+import BattleSessionPageLocal from './pages/BattleSessionPageLocal';
+import LeaderboardPage from './pages/LeaderboardPage';
 import DialoguePageV2 from './pages/DialoguePageV2';
 import ReadingPageV2 from './pages/ReadingPageV2';
 import SimulatorPageV2 from './pages/SimulatorPageV2';
@@ -24,10 +27,13 @@ import FreeLearningPage from './pages/FreeLearningPage';
 import { lookupPinyinForHanzi } from './pages/FlashcardPageV3';
 import LevelBilanPage from './pages/LevelBilanPage';
 import LevelBilanBanner from './components/LevelBilanBanner';
+import BilanIndexPage from './pages/BilanIndexPage';
 import { useLessonMastery } from './hooks/useLessonMastery';
 import { useLevelBilans } from './hooks/useLevelBilans';
 import { usePersonalFlashcards } from './hooks/usePersonalFlashcards';
 import type { CecrLevelSlug } from './types/simulator';
+import type { LessonMasteryMap } from './types/review-v3';
+import type { BilanCompletionMap } from './types/bilan';
 import type { SentenceFlashcard } from './types/flashcard-v3';
 // --- Pages V1 conservées (pas de variante V2 à ce jour) --------------------
 import CPlayerPage from './pages/CPlayerPage';
@@ -41,6 +47,7 @@ import AssistancePage from './pages/AssistancePage';
 import DictationGamePage from './pages/DictationGamePage';
 import SettingsPage from './pages/SettingsPage';
 import SubscriptionPage from './pages/SubscriptionPage';
+import ProfilePage from './pages/ProfilePage';
 import MiniGamesPage from './pages/MiniGamesPage';
 import CulturePage from './pages/CulturePage';
 // V9.6 — Overlay d'harmonisation des en-têtes. Importé APRÈS toutes les pages
@@ -49,7 +56,17 @@ import CulturePage from './pages/CulturePage';
 import './styles/page-shell.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import AIFloatingChat from './components/AIFloatingChat';
+import WritingCorrectorPage from './pages/WritingCorrectorPage';
+import ConversationPartnerPage from './pages/ConversationPartnerPage';
+import AiQuizPage from './pages/AiQuizPage';
+import PronunciationCoachPage from './pages/PronunciationCoachPage';
+import FloatingTimer from './components/FloatingTimer';
+import { StreakMilestoneToast } from './components/StreakBonus';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { NotificationsProvider, useNotifications } from './contexts/NotificationsContext';
+import NotificationBell from './components/NotificationBell';
+import NotificationToasts from './components/NotificationToasts';
+import { useNotificationEvents } from './hooks/useNotificationEvents';
 import LoginModal from './components/Auth/LoginModal';
 import UserProfile from './components/Auth/UserProfile';
 import { useLessonProgress } from './hooks/useLessonProgress';
@@ -59,6 +76,8 @@ import { useWordSRS } from './hooks/useWordSRS';
 import { useQuizEngine } from './hooks/useQuizEngine';
 import { useEntitlements } from './hooks/useEntitlements';
 import { useUserProfileSync } from './hooks/useUserProfileSync';
+import { useLeaderboard } from './hooks/useLeaderboard';
+import { useAnnouncementsRead } from './hooks/useAnnouncementsRead';
 import { getThemeSummaries, getLessonById, getLessonsByHanziList } from './data/lessons';
 import { lessonPaths } from './data/lesson-paths';
 import { level1LessonPaths, level1LessonWordBank } from './data/level1-course';
@@ -76,18 +95,27 @@ import { getGrammarLessonById } from './data/grammar-lessons';
 import { getCopy, type Language } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 import { useDashboardState } from './hooks/useDashboardState';
+import { useBattleStats } from './hooks/useBattleStats';
+import { useBattleMatchmaking } from './hooks/useBattleMatchmaking';
+import { usePublicProfileSync } from './hooks/usePublicProfileSync';
+import { buildBattleWordPool, FALLBACK_BATTLE_POOL } from './utils/battleWords';
+import { loadDialogueManifest, type DialogueAudioManifest } from './utils/dialogue-audio';
+import { getWeekStart } from './types/community';
+import type { BattleMatch } from './types/community';
+import type { BattleWordSourceItem } from './utils/battleWords';
 import { createCheckoutSession, createPortalSession } from './services/payments';
-import { buildAppAccess } from './utils/access';
+import { buildAppAccess, applyDevMode } from './utils/access';
+import { useDevMode } from './hooks/useDevMode';
+import DevModeToggle from './components/DevModeToggle';
+import { buildDevBotPublicProfile, isDevBotMatch, DEV_BOT_PLAYER } from './utils/devBot';
 import { playAudioWithFallback } from './utils/audio';
 import {
   lessonModuleToV2,
   lessonItemToFlashcardV2,
   DEFAULT_GRAMMAR_DRILLS,
-  buildDefaultEvaluation,
   DEFAULT_ANNOUNCEMENTS,
   DEFAULT_CHALLENGES,
-  DEFAULT_LEADERBOARD,
-  buildReportData
+  DEFAULT_LEADERBOARD
 } from './utils/v2-mappers';
 import type { LessonPath, LessonModule } from './types/lesson-structure';
 import type { LessonItem } from './types';
@@ -108,10 +136,21 @@ export type View =
   | 'free-learning'
   // Nouveaux écrans V2
   | 'tutor'
-  | 'report'
   | 'drills'
   | 'evaluation'
+  // Phase 1B IA — correcteur d'écriture (Gemini structuré)
+  | 'writing-corrector'
+  // Phase 2 IA — partenaire de conversation (Gemini joue un rôle, scénarios)
+  | 'conversation-partner'
+  // Phase 3B IA — générateur de quiz personnalisés
+  | 'ai-quiz'
+  // Phase 4 IA — coach de prononciation (Gemini multimodal audio, archi swappable)
+  | 'pronunciation-coach'
   | 'community'
+  | 'battles'
+  | 'battleSession'
+  | 'battleSessionLocal'
+  | 'leaderboard'
   | 'dialogue'
   | 'reading'
   | 'simulator'
@@ -121,7 +160,11 @@ export type View =
   // ne sont plus accessibles via la navigation.
   | 'cecr'
   // V7 — Bilan de fin de niveau (10 questions, 80% requis, +60 XP one-time).
-  | 'bilan';
+  | 'bilan'
+  // Index de sélection de niveau pour lancer un bilan depuis la sidebar.
+  | 'bilanIndex'
+  // Profil utilisateur (clic sur le nom dans la sidebar).
+  | 'profile';
 
 const themeSummaries = getThemeSummaries();
 const defaultTheme = themeSummaries[0]?.theme ?? null;
@@ -151,26 +194,80 @@ const mergeStructuredPaths = (paths: LessonPath[]): LessonPath[] => {
   return [...level1LessonPaths, ...level2LessonPaths, ...withoutLevel1And2];
 };
 
+/** Seuil de réussite pour débloquer la leçon suivante dans une section. */
+const LESSON_UNLOCK_THRESHOLD = 80;
+
+/**
+ * Construit l'état d'un ensemble de parcours avec 3 couches de verrouillage :
+ *  1. Abonnement (`hasFullLessonAccess` / `hsk1LessonLimit`)
+ *  2. Niveau CECR (`unlockedLevels`) — si le niveau n'est pas débloqué, toutes
+ *     ses leçons sont lockées.
+ *  3. Progression 80% séquentielle intra-section : la 1ère leçon est toujours
+ *     accessible si les couches 1 et 2 le permettent ; la Nième ne l'est que
+ *     si la (N-1)ème est `completed` OU a un dernier score ≥ 80. Rétrocompat :
+ *     les leçons `completedLessons` existantes débloquent la suivante même
+ *     sans entrée dans `masteryMap`.
+ */
 const buildLessonPathsState = (
   paths: LessonPath[],
   completedIds: string[],
   hasFullLessonAccess: boolean,
-  hsk1LessonLimit: number
+  hsk1LessonLimit: number,
+  options?: {
+    masteryMap?: LessonMasteryMap;
+    unlockedLevels?: Set<CecrLevelSlug>;
+    /** Retourne le niveau CECR d'un pathId (pour appliquer la couche 2). */
+    levelOfPath?: (pathId: string) => CecrLevelSlug | null;
+    /**
+     * DEV mode (admin uniquement — cf. useDevMode) : court-circuite TOUTES
+     * les couches de verrouillage. Chaque leçon est renvoyée avec
+     * `locked: false`, la progression/bilan restent trackés mais n'imposent
+     * plus rien.
+     */
+    devMode?: boolean;
+  }
 ) => {
   const completedSet = new Set(completedIds);
+  const masteryMap = options?.masteryMap ?? {};
+  const devMode = options?.devMode === true;
   let unlockedHsk1Count = 0;
   return paths.map((path) => {
-    const lessons = path.lessons.map((lesson) => {
-      const completed = completedSet.has(lesson.id);
-      let unlocked = hasFullLessonAccess;
-      if (!hasFullLessonAccess) {
-        if (lesson.hskLevel === 1 && unlockedHsk1Count < hsk1LessonLimit) {
-          unlocked = true;
-          unlockedHsk1Count += 1;
-        } else {
-          unlocked = false;
-        }
+    const levelSlug = options?.levelOfPath ? options.levelOfPath(path.id) : null;
+    // Si on a une info de niveau ET un set de niveaux débloqués : on respecte.
+    // Sinon on considère que la couche 2 n'impose rien (path HSK, ou cecr sans
+    // meta).
+    const levelUnlocked =
+      levelSlug && options?.unlockedLevels ? options.unlockedLevels.has(levelSlug) : true;
+
+    // Premier passage : calcule la couche 1 (abonnement) pour chaque leçon.
+    const subscriptionUnlocked: boolean[] = path.lessons.map((lesson) => {
+      if (devMode) return true;
+      if (hasFullLessonAccess) return true;
+      if (lesson.hskLevel === 1 && unlockedHsk1Count < hsk1LessonLimit) {
+        unlockedHsk1Count += 1;
+        return true;
       }
+      return false;
+    });
+
+    // Deuxième passage : cascade de la couche 3 (progression 80% intra-section).
+    let progressionOpen = true;
+    const lessons = path.lessons.map((lesson, idx) => {
+      const completed = completedSet.has(lesson.id);
+      let unlocked = subscriptionUnlocked[idx];
+      if (!devMode && !levelUnlocked) unlocked = false;
+      if (!devMode && !progressionOpen) unlocked = false;
+      if (devMode) unlocked = true;
+
+      // Cette leçon passe-t-elle le seuil pour débloquer la SUIVANTE ?
+      // Rétrocompat : completed (legacy) suffit, même sans mastery.
+      const recent = masteryMap[lesson.id]?.recentScores ?? [];
+      const lastScore = recent.length > 0 ? recent[recent.length - 1] : 0;
+      const passedThreshold = completed || lastScore >= LESSON_UNLOCK_THRESHOLD;
+      if (!passedThreshold) {
+        progressionOpen = false;
+      }
+
       return {
         ...lesson,
         completed,
@@ -201,6 +298,13 @@ function App() {
   const copy = getCopy(language);
   const [focusedTheme, setFocusedTheme] = useState<string | null>(defaultTheme);
   const [completedLessons, setCompletedLessons] = useState<string[]>(() => readCompletedLessons());
+  // Set mémoisé pour passer aux pages enfants — sans ça `new Set(...)` à
+  // chaque render leur ferait perdre toute leur mémoisation (pickLessonsForMode
+  // re-shuffle, useMemos invalidés, etc.).
+  const completedLessonsSet = useMemo(
+    () => new Set(completedLessons),
+    [completedLessons]
+  );
   // Sync Firestore pour la liste des leçons complétées : quand l'utilisateur
   // travaille sur Chrome puis rouvre Safari (même compte), il retrouve ses
   // leçons terminées. Le onSnapshot callback met à jour le state local.
@@ -221,17 +325,99 @@ function App() {
   // Hook unifié pour streak / minutes / daily activity (sync Firestore).
   const { learningStats, applyLearningSession: applyLearningSessionSync } =
     useLearningStats();
-  const appAccess = useMemo(() => buildAppAccess(user, entitlements?.app ?? null), [user, entitlements]);
+  // Toggle DEV/PROD (admin NoComment uniquement — cf. useDevMode).
+  const devMode = useDevMode();
+  const appAccess = useMemo(() => {
+    const base = buildAppAccess(user, entitlements?.app ?? null);
+    return devMode.isActive ? applyDevMode(base) : base;
+  }, [user, entitlements, devMode.isActive]);
   const mergedLessonPaths = useMemo(() => mergeStructuredPaths(lessonPaths), []);
+
+  // Hooks de maîtrise / bilans montés ICI (et pas plus bas comme avant) car
+  // `buildLessonPathsState` en dépend pour calculer le verrouillage 80%.
+  // Le callback `onFirstPass` a besoin de `dashboardState.awardXp` qui n'est
+  // déclaré qu'après → on utilise un ref mis à jour par un useEffect plus bas.
+  const awardXpRef = useRef<(xp: number) => void>(() => undefined);
+  const lessonMastery = useLessonMastery({ syncEnabled: appAccess.syncEnabled });
+  const levelBilans = useLevelBilans({
+    onFirstPass: (_level, xp) => awardXpRef.current(xp)
+  });
+
+  // Map pathId → niveau CECR, pour déterminer quelle section appartient à
+  // quel niveau lors du calcul du gate.
+  const levelOfPath = useMemo(() => {
+    const map = new Map<string, CecrLevelSlug>();
+    for (const meta of cecrLevels) {
+      for (const pathId of meta.pathIds) {
+        map.set(pathId, meta.level as CecrLevelSlug);
+      }
+    }
+    return map;
+  }, []);
+  const getLevelOfPath = useCallback(
+    (pathId: string) => levelOfPath.get(pathId) ?? null,
+    [levelOfPath]
+  );
+
+  // Niveaux CECR débloqués :
+  //  - a1 toujours ouvert
+  //  - niveau N ouvert si bilan de N-1 est `passed` (≥80% ou legacyRecognized)
+  //    OU si l'utilisateur a déjà une leçon complétée dans N (rétrocompat).
+  //  - Mode DEV : tous les niveaux sont ouverts d'office.
+  const unlockedLevels = useMemo(() => {
+    const set = new Set<CecrLevelSlug>();
+    const sorted = [...cecrLevels].sort((a, b) => a.order - b.order);
+
+    if (devMode.isActive) {
+      sorted.forEach((meta) => set.add(meta.level as CecrLevelSlug));
+      return set;
+    }
+
+    const completedSet = new Set(completedLessons);
+    const hasCompletedInLevel = (meta: (typeof cecrLevels)[number]): boolean =>
+      meta.pathIds.some((pathId) => {
+        const path = cecrLessonPaths.find((p) => p.id === pathId);
+        return path?.lessons.some((l) => completedSet.has(l.id)) ?? false;
+      });
+
+    // Premier niveau toujours ouvert.
+    if (sorted.length > 0) set.add(sorted[0].level as CecrLevelSlug);
+    for (let i = 1; i < sorted.length; i += 1) {
+      const prev = sorted[i - 1];
+      const current = sorted[i];
+      const prevBilan = levelBilans.bilans[prev.level as CecrLevelSlug];
+      const prevPassed = prevBilan?.passed === true;
+      if (prevPassed || hasCompletedInLevel(current)) {
+        set.add(current.level as CecrLevelSlug);
+      }
+    }
+    return set;
+  }, [levelBilans.bilans, completedLessons, devMode.isActive]);
+
   const lessonPathsState = useMemo(
     () =>
       buildLessonPathsState(
         mergedLessonPaths,
         completedLessons,
         appAccess.canAccessAllLessons,
-        appAccess.hsk1LessonLimit
+        appAccess.hsk1LessonLimit,
+        {
+          masteryMap: lessonMastery.masteryMap,
+          unlockedLevels,
+          levelOfPath: getLevelOfPath,
+          devMode: devMode.isActive
+        }
       ),
-    [mergedLessonPaths, completedLessons, appAccess.canAccessAllLessons, appAccess.hsk1LessonLimit]
+    [
+      mergedLessonPaths,
+      completedLessons,
+      appAccess.canAccessAllLessons,
+      appAccess.hsk1LessonLimit,
+      lessonMastery.masteryMap,
+      unlockedLevels,
+      getLevelOfPath,
+      devMode.isActive
+    ]
   );
   // Parcours CECR — taxonomie exposée à l'utilisateur. `lessonPathsState` (HSK)
   // reste calculé pour servir de pool de vocabulaire et de résolveur fallback
@@ -243,9 +429,23 @@ function App() {
         cecrLessonPaths,
         completedLessons,
         appAccess.canAccessAllLessons,
-        appAccess.hsk1LessonLimit
+        appAccess.hsk1LessonLimit,
+        {
+          masteryMap: lessonMastery.masteryMap,
+          unlockedLevels,
+          levelOfPath: getLevelOfPath,
+          devMode: devMode.isActive
+        }
       ),
-    [completedLessons, appAccess.canAccessAllLessons, appAccess.hsk1LessonLimit]
+    [
+      completedLessons,
+      appAccess.canAccessAllLessons,
+      appAccess.hsk1LessonLimit,
+      lessonMastery.masteryMap,
+      unlockedLevels,
+      getLevelOfPath,
+      devMode.isActive
+    ]
   );
   const lessonProgress = useLessonProgress(3, 6, { syncEnabled: appAccess.syncEnabled });
   // SRS par mot (alimente dueIds/masteredIds/difficultIds + onRate pour V5)
@@ -321,10 +521,41 @@ function App() {
     [customLists.lists]
   );
   const quiz = useQuizEngine(language);
+  // Détermine la prochaine leçon CECR à reprendre : première leçon non-complétée
+  // et non-verrouillée dans le premier parcours CECR qui en contient une. Sinon
+  // on retombe sur le pool HSK (lessonPathsState). Le hanzi du mot SRS courant
+  // n'est PAS un titre de leçon (confusion historique entre LessonItem "mot"
+  // et LessonModule "module pédagogique").
+  const nextLessonToResume = useMemo(() => {
+    const scan = [...cecrPathsState, ...lessonPathsState];
+    for (const path of scan) {
+      const next = path.lessons.find((lesson) => !lesson.completed && !lesson.locked);
+      if (next) {
+        const title = language === 'fr' ? next.title : next.titleEn || next.title;
+        return { id: next.id, title };
+      }
+    }
+    return null;
+  }, [cecrPathsState, lessonPathsState, language]);
   const dashboardState = useDashboardState({
     dueCardsCount: lessonProgress.reviewItems.length,
-    nextLessonTitle: lessonProgress.todaySummary[0]?.translationFr,
-    nextLessonId: lessonProgress.todaySummary[0]?.id
+    nextLessonTitle: nextLessonToResume?.title,
+    nextLessonId: nextLessonToResume?.id
+  });
+
+  // --- Centre de notifications — push() d'événements dérivés de l'état ------
+  // Bataille est pushé directement depuis handleMatchEnded ; ici on ne câble
+  // que les événements qui dérivent uniquement de dashboardState / SRS.
+  const notifications = useNotifications();
+  useNotificationEvents({
+    language: language === 'en' ? 'en' : 'fr',
+    totalXp: dashboardState.xp.xp,
+    level: dashboardState.xp.level,
+    streakCurrent: dashboardState.streak.current,
+    lastMilestoneAward: dashboardState.bonus.lastMilestoneAward,
+    lastDailyBonusAt: dashboardState.bonus.lastDailyBonusAt,
+    dueSrsCount: lessonProgress.reviewItems.length,
+    isAuthed: !!user
   });
   // `learningStats` vient maintenant du hook useLearningStats déclaré plus haut
   // (sync Firestore). L'ancien setLearningStats impératif est remplacé par
@@ -332,16 +563,266 @@ function App() {
   const topThemes = themeSummaries.slice(0, 4);
 
   // --- V7 hooks : SRS par leçon, bilans de niveau, flashcards perso -------
-  const lessonMastery = useLessonMastery({ syncEnabled: appAccess.syncEnabled });
-  const levelBilans = useLevelBilans({
-    onFirstPass: (_level, xp) => dashboardState.awardXp(xp)
-  });
+  // (useLessonMastery et useLevelBilans sont instanciés plus haut car leurs
+  //  données alimentent le gating 80% de `buildLessonPathsState`.)
+  // Sync du ref `awardXpRef` vers le vrai awardXp une fois dashboardState monté
+  // — ainsi le onFirstPass du bilan peut verser les XP correctement.
+  useEffect(() => {
+    awardXpRef.current = dashboardState.awardXp;
+  }, [dashboardState.awardXp]);
   const personalFlashcards = usePersonalFlashcards({
     syncEnabled: appAccess.syncEnabled,
     lookupPinyin: lookupPinyinForHanzi
   });
   // Sélection en cours pour la page Bilan (niveau CECR à passer).
   const [bilanLevel, setBilanLevel] = useState<CecrLevelSlug | null>(null);
+
+  // --- Batailles (task #44) ------------------------------------------------
+  // État du match actif (matchId Firestore). Quand matchId est posé, on
+  // navigue automatiquement sur la page 'battleSession'. Reset à null après
+  // la fin d'une partie ou si l'user retourne au hub.
+  const [activeMatchId, setActiveMatchId] = useState<string | null>(null);
+
+  // DEV — Match local contre le bot (task #56, option 3). Stocke le BattleMatch
+  // complet en state React ; aucun write Firestore. Utilisé exclusivement quand
+  // l'admin clique sur "Défier le bot (DEV)". Reset à null après fin / retour.
+  const [localBotMatch, setLocalBotMatch] = useState<BattleMatch | null>(null);
+
+  // Stats locales (compteurs + historique 20 dernières parties) — sync
+  // Firestore interne.
+  const battleStats = useBattleStats();
+
+  // Pool de vocabulaire utilisable en bataille. On privilégie :
+  //   1. completedLessonWordPool (items des leçons complétées)
+  //   2. fallback HSK1 embarqué si encore < 10 mots (première connexion).
+  const battleWordSources = useMemo<BattleWordSourceItem[]>(() => {
+    const mapped: BattleWordSourceItem[] = completedLessonWordPool.map((item) => ({
+      id: item.id,
+      hanzi: item.hanzi,
+      pinyin: item.pinyin,
+      translation: item.translationFr || item.translation,
+      translationEn: item.translation,
+      theme: item.theme,
+      category: item.category
+    }));
+    // Si l'user a moins de 10 mots distincts (première connexion ou très
+    // peu de leçons faites), on complète avec le pool de fallback HSK1
+    // pour que la bataille reste jouable en démo.
+    if (mapped.length < 10) {
+      const existingHanzi = new Set(mapped.map((m) => m.hanzi));
+      for (const fb of FALLBACK_BATTLE_POOL) {
+        if (!existingHanzi.has(fb.hanzi)) mapped.push(fb);
+        if (mapped.length >= 30) break;
+      }
+    }
+    return mapped;
+  }, [completedLessonWordPool]);
+
+  // Langue communauté (fr/en aligné sur la langue UI).
+  const communityLanguage = language === 'en' ? 'en' : 'fr';
+
+  // XP de la semaine ISO en cours (dérivé de dashboardState.activity =
+  // {YYYY-MM-DD: xp}). On reconstruit la date de lundi UTC puis on somme tous
+  // les jours >= cette date. Pur dérivé — aucun stockage dédié.
+  const weeklyXpStats = useMemo(() => {
+    const weekStart = getWeekStart();
+    const activity = dashboardState.activity ?? {};
+    let weekly = 0;
+    for (const [date, xp] of Object.entries(activity)) {
+      if (date >= weekStart) weekly += Math.max(0, Number(xp) || 0);
+    }
+    return { weeklyXp: weekly, weekStart };
+  }, [dashboardState.activity]);
+
+  // Sync du profil public Firestore — alimente leaderboard + matchmaking.
+  usePublicProfileSync({
+    totalXp: dashboardState.xp.xp,
+    streakCurrent: dashboardState.streak.current,
+    streakBest: dashboardState.streak.best,
+    vocabSize: wordSrs.masteredIds.size,
+    lessonsCompleted: completedLessons.length,
+    weeklyXp: weeklyXpStats.weeklyXp,
+    weekStart: weeklyXpStats.weekStart,
+    battlesPlayed: battleStats.stats.played,
+    battlesWon: battleStats.stats.won,
+    battlesDraw: battleStats.stats.draw,
+    language: communityLanguage
+  });
+
+  // Matchmaking (queue + transaction de match). Le callback onMatchFound
+  // propulse l'user sur la page 'battleSession' dès qu'un adversaire est
+  // trouvé côté Firestore. `buildWordPool` n'est appelé qu'à la création du
+  // match (par l'initiateur de la transaction), d'où la closure.
+  const battleMatchmaking = useBattleMatchmaking({
+    buildWordPool: () => {
+      const pool = buildBattleWordPool(battleWordSources, {
+        language: communityLanguage,
+        maxWords: 10
+      });
+      return pool;
+    },
+    language: communityLanguage,
+    vocabLevel: completedLessons.length,
+    onMatchFound: (matchId) => {
+      setActiveMatchId(matchId);
+      setView('battleSession');
+    }
+  });
+
+  // Helper : démarre la queue et bascule l'UI sur "en recherche".
+  const handleStartBattle = useCallback(() => {
+    void battleMatchmaking.startQueue();
+  }, [battleMatchmaking]);
+
+  // Helper : annule la queue manuellement.
+  const handleCancelBattleQueue = useCallback(() => {
+    void battleMatchmaking.cancelQueue();
+  }, [battleMatchmaking]);
+
+  // DEV : lance une bataille 100% locale contre le bot (admin uniquement).
+  // Aucun write Firestore — tout le state vit dans `localBotMatch` + le hook
+  // `useLocalBotSession`. Résilient au quota / offline.
+  const handleStartBotBattle = useCallback(() => {
+    if (!user) {
+      console.warn('[bot] user not connected — cannot start bot match');
+      return;
+    }
+    // Si une queue Firestore est en cours, on la cancel d'abord pour éviter
+    // qu'un vrai match arrive pendant qu'on joue le bot.
+    if (battleMatchmaking.status === 'queueing') {
+      void battleMatchmaking.cancelQueue();
+    }
+
+    // Pool de mots : pool user, fallback HSK1 si < 10 (première connexion).
+    let words = buildBattleWordPool(battleWordSources, {
+      language: communityLanguage,
+      maxWords: 10
+    });
+    if (words.length < 10) {
+      words = buildBattleWordPool(FALLBACK_BATTLE_POOL, {
+        language: communityLanguage,
+        maxWords: 10
+      });
+    }
+    if (words.length < 10) {
+      console.warn('[bot] cannot build 10-word pool, aborting');
+      return;
+    }
+
+    const id = `__devbot_local_${Date.now()}`;
+    const match: BattleMatch = {
+      id,
+      status: 'active',
+      p1: {
+        uid: user.uid,
+        displayName:
+          user.displayName || user.email?.split('@')[0] || 'Apprenant',
+        photoURL: user.photoURL || null
+      },
+      p2: DEV_BOT_PLAYER,
+      words: words.slice(0, 10),
+      p1Answers: [],
+      p2Answers: [],
+      p1Score: 0,
+      p2Score: 0,
+      winner: null,
+      startedAt: Date.now(),
+      finishedAt: null,
+      language: communityLanguage
+    };
+
+    setLocalBotMatch(match);
+    setView('battleSessionLocal');
+  }, [user, battleMatchmaking, battleWordSources, communityLanguage]);
+
+  // DEV : profil bot injecté dans le classement côté client (pas de write
+  // Firestore). Recomposé si la langue communautaire change.
+  const devBotProfiles = useMemo(
+    () => (devMode.isActive ? [buildDevBotPublicProfile(communityLanguage)] : []),
+    [devMode.isActive, communityLanguage]
+  );
+
+  // Classement live — alimente le badge "#N" à côté de l'entrée Classement
+  // dans la sidebar. La même souscription est ré-utilisée par LeaderboardPage
+  // (Firestore SDK dédupe les snapshots côté client, pas de double-coût).
+  const sidebarLeaderboard = useLeaderboard({ injectExtra: devBotProfiles });
+  const myRankPosition = sidebarLeaderboard.mePositions.totalXp;
+
+  // Annonces : compteur non-lues pour le badge "Annonces".
+  const announcementsRead = useAnnouncementsRead({
+    syncEnabled: appAccess.syncEnabled
+  });
+  const unreadAnnouncements = announcementsRead.unreadCount(DEFAULT_ANNOUNCEMENTS);
+
+  // Helper : fin de partie — enregistre le résultat dans les stats locales +
+  // sync Firestore, verse l'XP correspondant dans dashboardState.
+  const handleMatchEnded = useCallback(
+    (payload: {
+      match: BattleMatch;
+      outcome: 'win' | 'loss' | 'draw';
+      xp: number;
+      perfect: boolean;
+      myScore: number;
+      oppScore: number;
+    }) => {
+      if (!user) return;
+      // DEV : les matchs contre le bot ne doivent PAS polluer les stats réelles
+      // ni verser de l'XP — sinon le compte admin accumule des victoires fictives.
+      if (isDevBotMatch(payload.match)) return;
+      battleStats.recordBattleResult(
+        payload.match,
+        user.uid,
+        payload.outcome,
+        payload.xp,
+        payload.perfect
+      );
+      if (payload.xp > 0) {
+        dashboardState.awardXp(payload.xp, 'battleEnded');
+      }
+      // --- Notification centre de notifications -------------------------------
+      // On push le résultat de la bataille. Icône + teinte varient selon issue.
+      const oppSnap = payload.match.p1.uid === user.uid ? payload.match.p2 : payload.match.p1;
+      const oppName = oppSnap.displayName || (language === 'fr' ? 'un adversaire' : 'an opponent');
+      const isFr = language === 'fr';
+      let title: string;
+      let body: string;
+      let icon: string;
+      if (payload.outcome === 'win') {
+        icon = payload.perfect ? '👑' : '🏆';
+        title = isFr
+          ? payload.perfect
+            ? `Victoire parfaite contre ${oppName} !`
+            : `Victoire contre ${oppName} !`
+          : payload.perfect
+            ? `Flawless win vs ${oppName}!`
+            : `Win vs ${oppName}!`;
+        body = isFr
+          ? `Score ${payload.myScore}–${payload.oppScore} · +${payload.xp} XP`
+          : `Score ${payload.myScore}–${payload.oppScore} · +${payload.xp} XP`;
+      } else if (payload.outcome === 'draw') {
+        icon = '🤝';
+        title = isFr ? `Match nul avec ${oppName}` : `Draw with ${oppName}`;
+        body = isFr
+          ? `Score ${payload.myScore}–${payload.oppScore} · +${payload.xp} XP`
+          : `Score ${payload.myScore}–${payload.oppScore} · +${payload.xp} XP`;
+      } else {
+        icon = '💥';
+        title = isFr ? `Défaite contre ${oppName}` : `Loss vs ${oppName}`;
+        body = isFr
+          ? `Score ${payload.myScore}–${payload.oppScore} · la revanche t'attend !`
+          : `Score ${payload.myScore}–${payload.oppScore} · time for a rematch!`;
+      }
+      notifications.push({
+        kind: 'battle',
+        icon,
+        title,
+        body,
+        dedupKey: `battle-${payload.match.id}`,
+        link: { kind: 'view', view: 'battles' }
+      });
+    },
+    [user, battleStats, dashboardState, notifications, language]
+  );
 
   // --- État AI Tutor (messages contrôlés côté parent) ----------------------
   const [tutorMessages, setTutorMessages] = useState<AiTutorV2Message[]>([]);
@@ -498,10 +979,28 @@ function App() {
     return map;
   }, [cecrPathsState]);
 
+  // Manifest des audios de dialogues (chargé une fois, mémoisé). Permet de
+  // résoudre l'URL MP3 pré-générée d'une phrase depuis son (dialogueId, idx)
+  // pour que le bouton 🔊 dans Flashcards/Phrases lise la bonne piste plutôt
+  // que de tomber sur les conventions HSK qui ne couvrent que les mots seuls.
+  const [dialogueManifest, setDialogueManifest] =
+    useState<DialogueAudioManifest | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    loadDialogueManifest().then((m) => {
+      if (!cancelled) setDialogueManifest(m);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   /**
    * Phrases extraites des dialogues des leçons complétées, présentées comme
    * SentenceFlashcard dans l'onglet "Phrases" de FlashcardPageV3.
    * - Fusionne SRS persisté sur `cl_sentence_flashcards_v7` si présent.
+   * - Enrichit chaque carte avec l'URL MP3 du manifest si disponible
+   *   (sinon `audio: undefined` → playHanziAudio retombera en silence).
    */
   const sentenceCards = useMemo<SentenceFlashcard[]>(() => {
     if (completedLessons.length === 0) return [];
@@ -513,9 +1012,16 @@ function App() {
     for (const lessonId of completedLessons) {
       const lesson = lessonsById.get(lessonId);
       if (!lesson?.dialogue?.lines) continue;
+      const dialogueId = lesson.dialogue.id;
+      const manifestEntry = dialogueId
+        ? dialogueManifest?.[dialogueId]
+        : undefined;
       lesson.dialogue.lines.forEach((line, idx) => {
+        const manifestUrl = manifestEntry?.lines?.[idx];
+        const sentId = `sent-${lessonId}-${idx}`;
+        const srsEntry = wordSrs.map[sentId];
         out.push({
-          id: `sent-${lessonId}-${idx}`,
+          id: sentId,
           lessonId,
           lessonTitleFr: lesson.title,
           lessonTitleEn: lesson.titleEn,
@@ -523,13 +1029,21 @@ function App() {
           pinyin: line.pinyin,
           translationFr: line.translationFr,
           translationEn: line.translationEn,
+          // Priorité : URL explicite sur la ligne (override manuel) > manifest.
+          audio: line.audioUrl ?? manifestUrl ?? undefined,
+          // Timestamp réel de la dernière révision (depuis la SRS) — alimente
+          // la mention « Étudié il y a Nj » sur les tuiles regroupées.
+          lastReviewedAt:
+            srsEntry?.lastReviewedAt && srsEntry.lastReviewedAt > 0
+              ? srsEntry.lastReviewedAt
+              : undefined,
           speaker: line.speaker,
           contextFr: lesson.dialogue?.context
         });
       });
     }
     return out;
-  }, [completedLessons, cecrPathsState]);
+  }, [completedLessons, cecrPathsState, dialogueManifest, wordSrs.map]);
 
   // --- Résolveur de flashcards (string[] → LessonItem[]) ---
   const resolveFlashcards = useCallback(
@@ -586,37 +1100,86 @@ function App() {
   // `learningStats` est maintenant réactif via le hook — plus besoin d'effets
   // de rafraîchissement à la navigation ou au focus fenêtre.
 
-  const primaryNavEntries = useMemo<{ id: View; label: string; iconSlug: string; fallback: string }[]>(
+  // Structure alignée sur Seonsaengnim (dashboard de référence) :
+  //   APPRENDRE / COMMUNAUTÉ / EXCLUSIF (premium).
+  // Structure alignée sur Seonsaengnim (dashboard de référence) :
+  //   APPRENDRE / COMMUNAUTÉ / EXCLUSIF (premium).
+  //
+  // Chaque entrée mappe sur un slug dont le PNG existe dans /public/icons
+  // (`icon_{slug}_{theme}.png`) pour éviter tout fallback emoji à l'affichage.
+  // Type d'une entrée de navigation : quand `icon` est défini, on utilise ce fichier
+  // directement (ex: /icons/grammar.png) au lieu du pattern icon_<slug>_<theme>.png.
+  type NavEntry = {
+    id: View;
+    label: string;
+    iconSlug: string;
+    fallback: string;
+    icon?: string; // nom de fichier direct dans /public/icons (prioritaire sur iconSlug)
+    /** Badge optionnel à droite de l'entrée (ex: rang, compteur non-lus). */
+    badge?: { text: string; tone: 'rank' | 'unread' };
+  };
+  const primaryNavEntries = useMemo<NavEntry[]>(
     () =>
       [
         { id: 'home', label: language === 'fr' ? 'Accueil' : 'Home', iconSlug: 'home', fallback: '🏠' },
         { id: 'cecr', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
-        { id: 'free-learning', label: language === 'fr' ? 'Apprentissage libre' : 'Free learning', iconSlug: 'evaluation', fallback: '🎯' },
-        { id: 'simulator', label: language === 'fr' ? 'Simulateur' : 'Simulator', iconSlug: 'simulateur', fallback: '🎭' },
-        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ai', fallback: '💬' }
-        // 🗑️ « Traduction » retirée de la nav primaire (demande NoComment) :
-        // la vue 'dictionary' reste accessible via routes/liens internes si besoin,
-        // mais n'est plus proposée comme onglet principal.
-      ] satisfies { id: View; label: string; iconSlug: string; fallback: string }[],
+        { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
+        { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
+        { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
+        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
+        // Onglets retirés (routes conservées pour deep links éventuels) :
+        //   - 'writing-corrector'    → Correcteur IA
+        //   - 'conversation-partner' → Partenaire IA
+        //   - 'ai-quiz'              → Quiz IA
+        //   - 'pronunciation-coach'  → Prononciation IA
+      ] satisfies NavEntry[],
     [language]
   );
-  const practiceNavEntries = useMemo<{ id: View; label: string; iconSlug: string; fallback: string }[]>(
+  const communityNavEntries = useMemo<NavEntry[]>(
     () =>
       [
-        { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'grammaire', fallback: '📐' },
-        { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'quiz', fallback: '🎯' },
-        { id: 'report', label: language === 'fr' ? 'Bilan' : 'Report', iconSlug: 'objectifs', fallback: '📊' },
-        { id: 'community', label: language === 'fr' ? 'Communauté' : 'Community', iconSlug: 'communaute', fallback: '👥' }
-      ] satisfies { id: View; label: string; iconSlug: string; fallback: string }[],
+        {
+          id: 'community',
+          label: language === 'fr' ? 'Annonces' : 'Announcements',
+          iconSlug: 'culture',
+          fallback: '📣',
+          icon: 'annoucement.png',
+          badge:
+            unreadAnnouncements > 0
+              ? { text: String(unreadAnnouncements), tone: 'unread' }
+              : undefined
+        },
+        { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
+        {
+          id: 'leaderboard',
+          label: language === 'fr' ? 'Classement' : 'Leaderboard',
+          iconSlug: 'culture',
+          fallback: '🏆',
+          icon: 'trophy.png',
+          badge:
+            myRankPosition && myRankPosition > 0
+              ? { text: `#${myRankPosition}`, tone: 'rank' }
+              : undefined
+        },
+        { id: 'bilanIndex', label: language === 'fr' ? 'Bilan' : 'Level check', iconSlug: 'objectifs', fallback: '🎯' }
+      ] satisfies NavEntry[],
+    [language, unreadAnnouncements, myRankPosition]
+  );
+  const exclusiveNavEntries = useMemo<NavEntry[]>(
+    () =>
+      [
+        { id: 'simulator', label: language === 'fr' ? 'Simulateur' : 'Simulator', iconSlug: 'themes', fallback: '🎭', icon: 'simulator.png' },
+        { id: 'free-learning', label: language === 'fr' ? 'Apprentissage libre' : 'Free learning', iconSlug: 'today', fallback: '🎯', icon: 'self-learning.png' }
+      ] satisfies NavEntry[],
     [language]
   );
-  const secondaryNavEntries = useMemo<{ id: View; label: string; iconSlug: string; fallback: string }[]>(
+  const secondaryNavEntries = useMemo<NavEntry[]>(
     () =>
       [
         { id: 'settings', label: language === 'fr' ? 'Réglages' : 'Settings', iconSlug: 'settings', fallback: '⚙️' },
-        { id: 'assistant', label: language === 'fr' ? 'Assistance' : 'Support', iconSlug: 'bouee-de-sauvetage', fallback: '🛟' }
-      ] satisfies { id: View; label: string; iconSlug: string; fallback: string }[],
+        { id: 'assistant', label: language === 'fr' ? 'Signaler un problème' : 'Report a problem', iconSlug: 'bouee-de-sauvetage', fallback: '🛟' }
+      ] satisfies NavEntry[],
     [language]
   );
   const reviewItemsForPlan =
@@ -827,7 +1390,7 @@ function App() {
       content = (
         <ReviewPageV3
           language={language}
-          completedLessonIds={new Set(completedLessons)}
+          completedLessonIds={completedLessonsSet}
           masteryMap={lessonMastery.masteryMap}
           onRecordSession={(lessonId, level, scorePct) =>
             lessonMastery.recordSessionResult(lessonId, level, scorePct)
@@ -899,7 +1462,14 @@ function App() {
         <FlashcardPageV5
           language={language}
           wordItems={allFlashcardItems.map((item) =>
-            lessonItemToFlashcardV2(item, wordSrs.masteredIds, wordSrs.difficultIds, learnedIdsSet)
+            lessonItemToFlashcardV2(
+              item,
+              wordSrs.masteredIds,
+              wordSrs.difficultIds,
+              learnedIdsSet,
+              wordSrs.reviewedIds,
+              wordSrs.map
+            )
           )}
           sentenceCards={sentenceCards}
           personalHook={personalFlashcards}
@@ -924,12 +1494,21 @@ function App() {
         <FreeLearningPage
           language={language}
           wordItems={allFlashcardItems.map((item) =>
-            lessonItemToFlashcardV2(item, wordSrs.masteredIds, wordSrs.difficultIds, learnedIdsSet)
+            lessonItemToFlashcardV2(
+              item,
+              wordSrs.masteredIds,
+              wordSrs.difficultIds,
+              learnedIdsSet,
+              wordSrs.reviewedIds,
+              wordSrs.map
+            )
           )}
           dueIds={wordSrs.dueIds}
           masteredIds={wordSrs.masteredIds}
           difficultIds={wordSrs.difficultIds}
           onRate={wordSrs.rate}
+          onOpenReading={() => setView('reading')}
+          onOpenDialogue={() => setView('dialogue')}
         />
       );
       break;
@@ -938,6 +1517,18 @@ function App() {
         <SettingsPage
           language={language}
           onLanguageChange={setLanguage}
+          onOpenSubscription={() => setView('subscription')}
+        />
+      );
+      break;
+    case 'profile':
+      content = (
+        <ProfilePage
+          language={language}
+          dashboard={dashboardState}
+          wordsMasteredCount={wordSrs.masteredIds.size}
+          lessonsCompletedCount={completedLessons.length}
+          onOpenSettings={() => setView('settings')}
         />
       );
       break;
@@ -970,28 +1561,56 @@ function App() {
         />
       );
       break;
-    case 'report': {
-      const heatmap = Object.entries(dashboardState.activity).map(([date, count]) => ({
-        date,
-        count: count as number
-      }));
-      // V9.9 — pages accessibles via sidebar secondaire, pas de "Retour".
+    case 'writing-corrector': {
+      // Phase 1B IA — page accessible en permanence depuis la sidebar.
+      // Le niveau CECR le plus haut débloqué (issu du Set unlockedLevels) est
+      // passé à Gemini pour calibrer la finesse des explications. Fallback B1
+      // si aucun niveau débloqué (ne devrait jamais arriver — A1 toujours ouvert).
+      const sortedLevels = [...cecrLevels].sort((a, b) => b.order - a.order);
+      const highestUnlocked = sortedLevels.find((m) =>
+        unlockedLevels.has(m.level as CecrLevelSlug)
+      );
+      const userLevelLabel = highestUnlocked
+        ? highestUnlocked.level.toUpperCase()
+        : 'B1';
       content = (
-        <ReportPageV2
-          {...buildReportData(
-            {
-              learnedThisMonth: lessonProgress.allLearnedItems.length,
-              masteredThisMonth: 0,
-              xpGained: dashboardState.xp.xp,
-              level: dashboardState.xp.level,
-              activeDays: heatmap.filter((d) => d.count > 0).length,
-              totals: lessonProgress.totals as Record<string, number>,
-              heatmap
-            },
-            language
-          )}
+        <WritingCorrectorPage
           language={language}
-          userDisplayName={user?.displayName ?? undefined}
+          userLevel={userLevelLabel}
+        />
+      );
+      break;
+    }
+    case 'conversation-partner':
+      // Phase 2 IA — partenaire de conversation (scénarios + chat en chinois).
+      // La page gère son propre niveau via le scénario sélectionné, donc on
+      // ne lui passe que la langue UI.
+      content = <ConversationPartnerPage language={language} />;
+      break;
+    case 'ai-quiz': {
+      // Phase 3B IA — générateur de quiz personnalisés.
+      // Niveau par défaut = niveau le plus haut débloqué (réutilise la même
+      // logique que la page Correcteur).
+      const sortedAq = [...cecrLevels].sort((a, b) => b.order - a.order);
+      const highestAq = sortedAq.find((m) =>
+        unlockedLevels.has(m.level as CecrLevelSlug)
+      );
+      const defaultLvl = highestAq ? highestAq.level.toUpperCase() : 'B1';
+      content = <AiQuizPage language={language} defaultLevel={defaultLvl} />;
+      break;
+    }
+    case 'pronunciation-coach': {
+      // Phase 4 IA — coach de prononciation (Gemini multimodal audio).
+      // Architecture swappable : voir src/services/pronunciation/.
+      const sortedPc = [...cecrLevels].sort((a, b) => b.order - a.order);
+      const highestPc = sortedPc.find((m) =>
+        unlockedLevels.has(m.level as CecrLevelSlug)
+      );
+      const defaultLvlPc = highestPc ? highestPc.level.toUpperCase() : 'A1';
+      content = (
+        <PronunciationCoachPage
+          language={language}
+          defaultLevel={defaultLvlPc}
         />
       );
       break;
@@ -1006,8 +1625,7 @@ function App() {
       break;
     case 'evaluation':
       content = (
-        <EvaluationPageV2
-          evaluation={buildDefaultEvaluation('hsk1')}
+        <EvaluationHubPage
           language={language}
           userDisplayName={user?.displayName ?? undefined}
         />
@@ -1020,6 +1638,83 @@ function App() {
           announcements={DEFAULT_ANNOUNCEMENTS}
           challenges={DEFAULT_CHALLENGES}
           leaderboard={DEFAULT_LEADERBOARD}
+        />
+      );
+      break;
+    case 'battles':
+      content = (
+        <BattlesPage
+          language={communityLanguage}
+          lessonsCompleted={completedLessons.length}
+          battleWordSources={battleWordSources}
+          stats={battleStats.stats}
+          lost={battleStats.lost}
+          winRatePct={battleStats.winRatePct}
+          isQueueing={battleMatchmaking.status === 'queueing'}
+          queueSecondsLeft={battleMatchmaking.secondsLeft}
+          onStartBattle={handleStartBattle}
+          onCancelQueue={handleCancelBattleQueue}
+          onBack={() => setView('community')}
+          isDevMode={devMode.isActive}
+          onStartBotBattle={handleStartBotBattle}
+        />
+      );
+      break;
+    case 'battleSession':
+      if (!activeMatchId) {
+        // Garde-fou : pas de matchId → retour au hub
+        setView('battles');
+        content = <></>;
+        break;
+      }
+      content = (
+        <BattleSessionPage
+          matchId={activeMatchId}
+          language={communityLanguage}
+          onMatchEnded={handleMatchEnded}
+          onBack={() => {
+            setActiveMatchId(null);
+            setView('battles');
+          }}
+          onRematch={() => {
+            setActiveMatchId(null);
+            setView('battles');
+            // Laisse l'user cliquer à nouveau sur "Lancer" — évite de relancer
+            // une queue automatiquement (il peut vouloir consulter ses stats).
+          }}
+        />
+      );
+      break;
+    case 'battleSessionLocal':
+      if (!localBotMatch) {
+        // Garde-fou : pas de match local → retour au hub
+        setView('battles');
+        content = <></>;
+        break;
+      }
+      content = (
+        <BattleSessionPageLocal
+          initialMatch={localBotMatch}
+          language={communityLanguage}
+          onMatchEnded={handleMatchEnded}
+          onBack={() => {
+            setLocalBotMatch(null);
+            setView('battles');
+          }}
+          onRematch={() => {
+            setLocalBotMatch(null);
+            // Relance immédiatement un nouveau match local bot.
+            handleStartBotBattle();
+          }}
+        />
+      );
+      break;
+    case 'leaderboard':
+      content = (
+        <LeaderboardPage
+          language={communityLanguage}
+          onBack={() => setView('community')}
+          injectExtra={devBotProfiles}
         />
       );
       break;
@@ -1056,6 +1751,25 @@ function App() {
         />
       );
       break;
+    case 'bilanIndex': {
+      // Index des bilans de fin de niveau, accessible depuis la sidebar.
+      // L'utilisateur choisit un niveau et est renvoyé sur LevelBilanPage.
+      const entriesMap = levelBilans.bilans as Partial<
+        Record<CecrLevelSlug, typeof levelBilans.bilans[CecrLevelSlug]>
+      >;
+      content = (
+        <BilanIndexPage
+          language={language}
+          entries={entriesMap}
+          unlockedLevels={unlockedLevels}
+          onSelectLevel={(lvl) => {
+            setBilanLevel(lvl);
+            setView('bilan');
+          }}
+        />
+      );
+      break;
+    }
     case 'bilan': {
       // V7 — Bilan de fin de niveau. `bilanLevel` doit être sélectionné via la
       // bannière affichée dans LessonPathsPage (case 'cecr').
@@ -1113,7 +1827,7 @@ function App() {
           userDisplayName={user?.displayName ?? undefined}
           cecrPaths={cecrPathsState}
           cecrLevels={cecrLevels}
-          completedLessonIds={new Set(completedLessons)}
+          completedLessonIds={completedLessonsSet}
           onStartReview={() => setView('review')}
           onOpenLesson={(lessonId) => {
             // Cherche le parcours contenant cet id (CECR en priorité, HSK en fallback
@@ -1222,7 +1936,7 @@ function App() {
         <UserProfile
           language={language}
           onOpenLogin={() => setShowLoginModal(true)}
-          onOpenSettings={() => setView('settings')}
+          onOpenProfile={() => setView('profile')}
         />
 
         {/* CPlayer désactivé temporairement — réintégration prévue quand les pistes audio seront prêtes. */}
@@ -1243,10 +1957,10 @@ function App() {
         </div>
         */}
 
+        <div className="sidebar-scroll">
         <section className="sidebar-nav-section">
           <header className="sidebar-section-header">
             <span>{language === 'fr' ? 'APPRENDRE' : 'LEARN'}</span>
-            <span className="sidebar-section-chevron" aria-hidden="true">⌄</span>
           </header>
 
           <nav className="sidebar-nav">
@@ -1259,7 +1973,7 @@ function App() {
               >
                 <span className="nav-icon">
                   <img
-                    src={`/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
+                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
                     alt=""
                     loading="lazy"
                     draggable="false"
@@ -1270,6 +1984,11 @@ function App() {
                   />
                 </span>
                 <span className="nav-label">{entry.label}</span>
+                {entry.badge && (
+                  <span className={`nav-badge nav-badge--${entry.badge.tone}`}>
+                    {entry.badge.text}
+                  </span>
+                )}
               </button>
             ))}
           </nav>
@@ -1277,12 +1996,54 @@ function App() {
 
         <section className="sidebar-nav-section">
           <header className="sidebar-section-header">
-            <span>{language === 'fr' ? 'PRATIQUER' : 'PRACTICE'}</span>
-            <span className="sidebar-section-chevron" aria-hidden="true">⌄</span>
+            <span>{language === 'fr' ? 'COMMUNAUTÉ' : 'COMMUNITY'}</span>
           </header>
 
           <nav className="sidebar-nav">
-            {practiceNavEntries.map((entry) => (
+            {communityNavEntries.map((entry) => (
+              <button
+                key={entry.id}
+                type="button"
+                className={`nav-item ${entry.id === view ? 'active' : ''}`}
+                onClick={() => {
+                  // Marque les annonces comme lues dès que l'utilisateur entre
+                  // sur la page Annonces (l'icône cloche reste séparée).
+                  if (entry.id === 'community') {
+                    announcementsRead.markAllRead(DEFAULT_ANNOUNCEMENTS);
+                  }
+                  setView(entry.id);
+                }}
+              >
+                <span className="nav-icon">
+                  <img
+                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
+                    alt=""
+                    loading="lazy"
+                    draggable="false"
+                    onError={(event) => {
+                      (event.currentTarget as HTMLImageElement).style.display = 'none';
+                      (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
+                    }}
+                  />
+                </span>
+                <span className="nav-label">{entry.label}</span>
+                {entry.badge && (
+                  <span className={`nav-badge nav-badge--${entry.badge.tone}`}>
+                    {entry.badge.text}
+                  </span>
+                )}
+              </button>
+            ))}
+          </nav>
+        </section>
+
+        <section className="sidebar-nav-section">
+          <header className="sidebar-section-header">
+            <span>{language === 'fr' ? 'EXCLUSIF' : 'EXCLUSIVE'}</span>
+          </header>
+
+          <nav className="sidebar-nav">
+            {exclusiveNavEntries.map((entry) => (
               <button
                 key={entry.id}
                 type="button"
@@ -1291,7 +2052,7 @@ function App() {
               >
                 <span className="nav-icon">
                   <img
-                    src={`/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
+                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
                     alt=""
                     loading="lazy"
                     draggable="false"
@@ -1306,27 +2067,9 @@ function App() {
             ))}
           </nav>
         </section>
+        </div>
 
         <div className="sidebar-footer">
-          <button
-            type="button"
-            className={`nav-item ${view === 'subscription' ? 'active' : ''}`}
-            onClick={() => setView('subscription')}
-          >
-            <span className="nav-icon">
-              <img
-                src={`/icons/icon_objectifs_${colorTheme}.png`}
-                alt=""
-                loading="lazy"
-                draggable="false"
-                onError={(event) => {
-                  (event.currentTarget as HTMLImageElement).style.display = 'none';
-                  (event.currentTarget.parentElement ?? event.currentTarget).textContent = '💳';
-                }}
-              />
-            </span>
-            <span className="nav-label">{language === 'fr' ? 'Abonnement' : 'Subscription'}</span>
-          </button>
           {secondaryNavEntries.map((entry) => (
             <button
               key={entry.id}
@@ -1336,7 +2079,7 @@ function App() {
             >
               <span className="nav-icon">
                 <img
-                  src={`/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
+                  src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
                   alt=""
                   loading="lazy"
                   draggable="false"
@@ -1349,33 +2092,6 @@ function App() {
               <span className="nav-label">{entry.label}</span>
             </button>
           ))}
-          <button
-            type="button"
-            className="nav-item mode-toggle-item"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            <span className="nav-icon">
-              <img
-                src={`/icons/icon_${darkMode ? 'light' : 'dark'}_${colorTheme}.png`}
-                alt=""
-                loading="lazy"
-                draggable="false"
-                onError={(event) => {
-                  (event.currentTarget as HTMLImageElement).style.display = 'none';
-                  (event.currentTarget.parentElement ?? event.currentTarget).textContent = darkMode ? '☀️' : '🌙';
-                }}
-              />
-            </span>
-            <span className="nav-label">
-              {darkMode
-                ? language === 'fr'
-                  ? 'Mode clair'
-                  : 'Light mode'
-                : language === 'fr'
-                ? 'Mode sombre'
-                : 'Dark mode'}
-            </span>
-          </button>
           <button type="button" className="nav-item" onClick={() => void signOut()}>
             <span className="nav-icon">
               <img
@@ -1391,6 +2107,8 @@ function App() {
             </span>
             <span className="nav-label">{language === 'fr' ? 'Déconnexion' : 'Sign out'}</span>
           </button>
+          {/* Toggle DEV/PROD — visible uniquement pour l'admin (cf. DevModeToggle). */}
+          <DevModeToggle language={language} />
         </div>
       </aside>
 
@@ -1398,6 +2116,20 @@ function App() {
       <main className="main-content">
         {content}
       </main>
+
+      {/* Cloche de notifications — flottante en haut-droite, présente sur
+          toutes les pages. Navigation optionnelle sur clic d'une notif. */}
+      <NotificationBell
+        language={language === 'en' ? 'en' : 'fr'}
+        onNavigate={(v) => setView(v as typeof view)}
+      />
+
+      {/* Toasts transients en bas-droite — flashent à chaque push() */}
+      <NotificationToasts
+        language={language === 'en' ? 'en' : 'fr'}
+        onNavigate={(v) => setView(v as typeof view)}
+      />
+
 
       {/* Login Modal */}
       <LoginModal
@@ -1408,6 +2140,14 @@ function App() {
 
       {/* Floating AI Chat - available on all pages except AI Assistant page */}
       {appAccess.canUseFloatingChat && view !== 'assistant' && <AIFloatingChat language={language} />}
+
+      {/* Floating study timer — visible sur toutes les pages quand un timer est actif. */}
+      <FloatingTimer language={language} />
+
+      {/* Task #46 — Toast palier de série, visible sur TOUTES les pages
+          (les awardXp depuis review / leçons / flashcards peuvent débloquer
+          un palier alors que l'utilisateur n'est pas sur le dashboard). */}
+      <StreakMilestoneToast bonus={dashboardState.bonus} language={language} />
     </div>
   );
 }
@@ -1415,7 +2155,9 @@ function App() {
 function AppWithAuth() {
   return (
     <AuthProvider>
-      <App />
+      <NotificationsProvider>
+        <App />
+      </NotificationsProvider>
     </AuthProvider>
   );
 }

@@ -1,33 +1,45 @@
 /**
  * DialoguePageV2.tsx — page standalone des dialogues XiaoLearn
  * -----------------------------------------------------------
- * Liste filtrable par niveau CECR + vue détail avec toggle pinyin/traduction,
- * vocabulaire clé et question de compréhension masquable.
+ * V10 — UX refondue pour reprendre les patterns du Simulateur et de la page
+ * Lectures (ReadingPageV2) :
+ *   - Header catalogue avec tuile icône 💬 + titre + sous-titre
+ *   - Tabs niveaux CECR (pills avec (N))
+ *   - Sections groupées par niveau en mode « Tous »
+ *   - Cartes riches : emoji thème, badge niveau, contexte, stats
+ *     (nb de répliques, vocab, question de compréhension)
+ *   - Vue détail façon briefing : hero avec emoji rond bordé, badges
+ *     niveau / thème / répliques / vocab, bordure supérieure rouge→or
+ *   - Toggles pinyin / traduction dans un bandeau
+ *   - Lignes de dialogue : locuteur en pill rouge-or, bouton ▶ circulaire
  *
- * Audio : chaque ligne dispose d'un bouton ▶ qui lit en priorité la piste
- * MP3 pré-générée (Azure Neural TTS, via /audio/dialogues/manifest.json),
- * avec fallback automatique sur l'API Web Speech du navigateur si le fichier
- * est absent ou si l'autoplay est bloqué. Les helpers audio sont centralisés
- * dans `src/utils/dialogue-audio.ts` (partagés avec FreeLearningPage).
+ * Audio : chaque ligne dispose d'un bouton ▶ qui lit la piste MP3 pré-
+ * générée (Azure Neural TTS, via /audio/dialogues/manifest.json). Pas de
+ * fallback Web Speech (règle produit).
  *
  * Source de données : src/data/dialogues.ts (`dialogues` + helpers).
+ * Styles : ../styles/reading-v2.css (scoped sous `.reading-v2, .dialogue-v2`
+ * — le wrapper porte les deux classes pour bénéficier aussi des overrides
+ * existants de page-shell.css).
  *
  * Props :
  *   - language : 'fr' | 'en' (i18n UI + contenu)
  *   - onBack   : callback retour home
- *
- * Styles : ../styles/dialogue-reading-v2.css (scoped sous `.dialogue-v2`).
+ *   - initialDialogueId : deep-link optionnel
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import '../styles/dialogue-reading-v2.css';
+import '../styles/reading-v2.css';
 import { dialogues, type DialogueEntry } from '../data/dialogues';
 import {
   type DialogueAudioManifest,
+  type AudioSpeed,
   loadDialogueManifest,
+  isDialogueSlowAvailable,
   resolveDialogueAudioUrl,
   cancelTTS
 } from '../utils/dialogue-audio';
+import AudioSpeedToggle from '../components/AudioSpeedToggle';
 
 export type DialogueV2Language = 'fr' | 'en';
 
@@ -78,10 +90,20 @@ const COPY = {
 } as const;
 
 type CopyKey = keyof (typeof COPY)['fr'];
-const t = (lang: DialogueV2Language, k: CopyKey) => COPY[lang][k] ?? COPY.fr[k];
+const t = (lang: DialogueV2Language, k: CopyKey): string =>
+  COPY[lang][k] ?? COPY.fr[k];
+
+// Pluralisations séparées (t() ne renvoie que des strings).
+const fmtLines = (lang: DialogueV2Language, n: number): string =>
+  lang === 'en' ? `${n} line${n > 1 ? 's' : ''}` : `${n} réplique${n > 1 ? 's' : ''}`;
+
+const fmtVocab = (lang: DialogueV2Language, n: number): string =>
+  lang === 'en'
+    ? `${n} word${n > 1 ? 's' : ''}`
+    : `${n} mot${n > 1 ? 's' : ''}`;
 
 // ---------------------------------------------------------------------------
-// Niveaux exposés = niveaux effectivement présents dans dialogues.ts
+// Niveaux exposés
 // ---------------------------------------------------------------------------
 
 const LEVEL_ORDER: DialogueEntry['cecrLevel'][] = [
@@ -96,6 +118,35 @@ const LEVEL_LABEL: Record<DialogueEntry['cecrLevel'], string> = {
   'c2.1': 'C2.1', 'c2.2': 'C2.2'
 };
 
+/** Tranche (a / b / c) pour la palette de la carte. */
+const levelBlock = (lv: DialogueEntry['cecrLevel']): 'a' | 'b' | 'c' =>
+  lv.startsWith('a') ? 'a' : lv.startsWith('b') ? 'b' : 'c';
+
+// ---------------------------------------------------------------------------
+// Emoji par dialogue (ID d'abord, fallback générique)
+// ---------------------------------------------------------------------------
+
+const ID_EMOJI: Record<string, string> = {
+  'dlg-a1-hello': '👋',
+  'dlg-a1-family': '👨‍👩‍👧',
+  'dlg-a2-restaurant': '🍜',
+  'dlg-a2-hotel': '🏨',
+  'dlg-a2-metro': '🚇',
+  'dlg-b11-interview': '🎤',
+  'dlg-b12-doctor': '🩺',
+  'dlg-b12-generations': '👴',
+  'dlg-b21-environment': '🌱',
+  'dlg-b21-startup-pitch': '🚀',
+  'dlg-b22-mental-health-debate': '🧠',
+  'dlg-b22-tea-culture': '🍵'
+};
+
+const iconForEntry = (entry: DialogueEntry): string => {
+  const fromId = ID_EMOJI[entry.dialogue.id];
+  if (fromId) return fromId;
+  return '💬';
+};
+
 // ---------------------------------------------------------------------------
 // Composant principal
 // ---------------------------------------------------------------------------
@@ -108,38 +159,58 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
     return LEVEL_ORDER.filter((lv) => present.has(lv));
   }, []);
 
-  const [levelFilter, setLevelFilter] = useState<DialogueEntry['cecrLevel'] | 'all'>('all');
-  const [selectedId, setSelectedId] = useState<string | null>(initialDialogueId ?? null);
+  const countByLevel = useMemo(() => {
+    const counts: Partial<Record<DialogueEntry['cecrLevel'], number>> = {};
+    for (const d of dialogues) {
+      counts[d.cecrLevel] = (counts[d.cecrLevel] ?? 0) + 1;
+    }
+    return counts;
+  }, []);
+
+  const [levelFilter, setLevelFilter] = useState<
+    DialogueEntry['cecrLevel'] | 'all'
+  >('all');
+  const [selectedId, setSelectedId] = useState<string | null>(
+    initialDialogueId ?? null
+  );
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
   const [answerRevealed, setAnswerRevealed] = useState(false);
 
-  // Audio : manifest Azure + instance HTMLAudio courante + voix Web Speech.
-  // On crée une nouvelle instance `Audio()` à chaque lecture : réutiliser
-  // le même élément déclenche sur Chrome un event 'error' asynchrone quand
-  // on fait `src = ''` sur cancel, qui ensuite fuite sur le nouveau onerror
-  // et bascule à tort vers Web Speech (MP3 pourtant présent).
+  // Audio : manifest Azure + instance HTMLAudio courante.
   const [manifest, setManifest] = useState<DialogueAudioManifest | null>(null);
   const [playingIdx, setPlayingIdx] = useState<number | null>(null);
   const currentAudioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Chargement paresseux du manifest, une fois par montage.
+  // Vitesse audio (mode shadowing). Local au player — pas de persistance
+  // globale, comme convenu côté UX (chaque player garde son propre état).
+  const [audioSpeed, setAudioSpeed] = useState<AudioSpeed>('normal');
+  const [slowAvailable, setSlowAvailable] = useState(false);
+
+  // Chargement (re)paresseux du manifest selon la vitesse choisie.
   useEffect(() => {
     let cancelled = false;
-    loadDialogueManifest().then((m) => {
+    loadDialogueManifest(audioSpeed).then((m) => {
       if (!cancelled) setManifest(m);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [audioSpeed]);
+
+  // Sonde au mount : est-ce que le manifest slow contient au moins 1 entrée ?
+  // Détermine si le toggle est actif ou grisé.
+  useEffect(() => {
+    let cancelled = false;
+    isDialogueSlowAvailable().then((ok) => {
+      if (!cancelled) setSlowAvailable(ok);
     });
     return () => {
       cancelled = true;
     };
   }, []);
 
-  // Plus besoin de charger les voix speechSynthesis — tous les audios passent
-  // désormais par des MP3/WAV pré-générés (Azure TTS).
-
-  // Stop l'instance audio courante, sans toucher au `src` (sur Chrome, le
-  // reset `src = ''` émet un 'error' asynchrone susceptible de fuir sur le
-  // prochain play).
+  // Stop l'instance audio courante.
   const cancelAudio = useCallback(() => {
     const el = currentAudioRef.current;
     if (!el) return;
@@ -153,7 +224,7 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
     currentAudioRef.current = null;
   }, []);
 
-  // Nettoyage au démontage : stop audio + TTS.
+  // Nettoyage au démontage.
   useEffect(() => {
     return () => {
       cancelTTS();
@@ -161,29 +232,29 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
     };
   }, [cancelAudio]);
 
-  // Dialogue actuellement sélectionné.
+  // Dialogue sélectionné.
   const selected = useMemo(
     () => dialogues.find((d) => d.dialogue.id === selectedId) ?? null,
     [selectedId]
   );
-
-  // Liste ordonnée des personnages uniques du dialogue (ordre d'apparition) —
-  // conservée pour la teinte de bordure par locuteur.
-  const uniqueSpeakers = useMemo(() => {
-    if (!selected) return [];
-    const seen: string[] = [];
-    for (const line of selected.dialogue.lines) {
-      if (!seen.includes(line.speaker)) seen.push(line.speaker);
-    }
-    return seen;
-  }, [selected]);
 
   const filtered = useMemo(() => {
     if (levelFilter === 'all') return dialogues;
     return dialogues.filter((d) => d.cecrLevel === levelFilter);
   }, [levelFilter]);
 
-  // Lecture d'une ligne : MP3 pré-généré → fallback Web Speech.
+  const groupsAll = useMemo(
+    () =>
+      availableLevels
+        .map((lv) => ({
+          level: lv,
+          items: dialogues.filter((d) => d.cecrLevel === lv)
+        }))
+        .filter((g) => g.items.length > 0),
+    [availableLevels]
+  );
+
+  // Lecture d'une ligne : MP3 pré-généré uniquement.
   const handlePlayLine = useCallback(
     (idx: number) => {
       if (!selected) return;
@@ -191,7 +262,7 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
       const line = dialogue.lines[idx];
       if (!line) return;
 
-      // Si on reclique sur la ligne active, on stoppe tout.
+      // Re-click sur la ligne active → stop.
       if (playingIdx === idx) {
         cancelTTS();
         cancelAudio();
@@ -203,13 +274,10 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
       cancelAudio();
 
       const finish = () => setPlayingIdx((cur) => (cur === idx ? null : cur));
-
       const url = resolveDialogueAudioUrl(dialogue, idx, manifest);
       setPlayingIdx(idx);
 
       if (url) {
-        // Instance fraîche à chaque play : évite les fuites d'events 'error'
-        // asynchrones de Chrome entre deux lectures successives.
         const audio = new Audio(url);
         currentAudioRef.current = audio;
         audio.onended = () => {
@@ -218,7 +286,6 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
         };
         audio.onerror = () => {
           if (currentAudioRef.current !== audio) return;
-          // MP3 en erreur — règle produit : pas de fallback Web Speech.
           console.warn('[dialogue audio] MP3 failed');
           finish();
         };
@@ -230,27 +297,87 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
         return;
       }
 
-      // Aucun MP3 dispo → on reste silencieux (pas de synthèse vocale).
-      console.warn('[dialogue audio] no MP3 for line', idx, 'of dialogue', dialogue.id);
+      console.warn(
+        '[dialogue audio] no MP3 for line',
+        idx,
+        'of dialogue',
+        dialogue.id
+      );
       finish();
     },
     [selected, playingIdx, manifest, cancelAudio]
   );
 
   // -------------------------------------------------------------------------
-  // Vue détail
+  // CARD (helper de rendu, PAS un composant React)
+  // -------------------------------------------------------------------------
+  // Important : on ne déclare PAS un composant `Card` ici, sinon React verrait
+  // une nouvelle référence de composant à chaque re-render du parent (et donc
+  // démonterait/remonterait toutes les cartes à chaque changement de state —
+  // ce qui faisait que le clic n'enregistrait jamais setSelectedId).
+  // À la place, `renderCard` est juste une fonction qui retourne du JSX :
+  // React voit alors directement le <button> et fait un simple update.
+  const renderCard = (entry: DialogueEntry) => {
+    const title =
+      language === 'en' ? entry.dialogue.titleEn : entry.dialogue.title;
+    const context =
+      language === 'en' ? entry.dialogue.contextEn : entry.dialogue.context;
+    const theme = language === 'en' ? entry.themeEn : entry.theme;
+    const block = levelBlock(entry.cecrLevel);
+    const linesCount = entry.dialogue.lines.length;
+    const vocabCount = entry.dialogue.vocab?.length ?? 0;
+    return (
+      <button
+        key={entry.dialogue.id}
+        type="button"
+        className={`rv2-card rv2-card--${block}`}
+        onClick={() => {
+          setSelectedId(entry.dialogue.id);
+          setAnswerRevealed(false);
+        }}
+      >
+        <div className="rv2-card-top">
+          <span className="rv2-card-emoji-tile" aria-hidden>
+            {iconForEntry(entry)}
+          </span>
+          <span className="rv2-card-level">{LEVEL_LABEL[entry.cecrLevel]}</span>
+        </div>
+        <p className="rv2-card-theme">{theme}</p>
+        <h3 className="rv2-card-title">{title}</h3>
+        <p className="rv2-card-desc">{context}</p>
+        <div className="rv2-card-foot">
+          <span className="rv2-card-stat">
+            <span className="rv2-card-stat-icon" aria-hidden>💬</span>
+            {fmtLines(language, linesCount)}
+          </span>
+          {vocabCount > 0 && (
+            <span className="rv2-card-stat">
+              <span className="rv2-card-stat-icon" aria-hidden>📚</span>
+              {fmtVocab(language, vocabCount)}
+            </span>
+          )}
+        </div>
+      </button>
+    );
+  };
+
+  // -------------------------------------------------------------------------
+  // VUE DÉTAIL
   // -------------------------------------------------------------------------
   if (selected) {
     const { dialogue } = selected;
     const title = language === 'en' ? dialogue.titleEn : dialogue.title;
-    const context = language === 'en' ? dialogue.contextEn : dialogue.context;
+    const context =
+      language === 'en' ? dialogue.contextEn : dialogue.context;
+    const theme = language === 'en' ? selected.themeEn : selected.theme;
+    const block = levelBlock(selected.cecrLevel);
 
     return (
-      <div className="dialogue-v2">
-        <div className="dr-header">
+      <div className="reading-v2 dialogue-v2">
+        <div className="rv2-detail">
           <button
             type="button"
-            className="dr-btn dr-btn--link"
+            className="rv2-btn rv2-btn--link rv2-detail-back"
             onClick={() => {
               cancelTTS();
               cancelAudio();
@@ -261,97 +388,150 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
           >
             {t(language, 'backList')}
           </button>
-          <h1>{title}</h1>
-          <p>
-            <strong>{LEVEL_LABEL[selected.cecrLevel]}</strong> · {language === 'en' ? selected.themeEn : selected.theme}
-          </p>
-        </div>
 
-        <div className="dr-toggles">
-          <button
-            type="button"
-            className={`dr-toggle ${showPinyin ? 'is-on' : ''}`}
-            onClick={() => setShowPinyin((v) => !v)}
-          >
-            {showPinyin ? '🟢' : '⚪'} {t(language, 'togglePinyin')}
-          </button>
-          <button
-            type="button"
-            className={`dr-toggle ${showTranslation ? 'is-on' : ''}`}
-            onClick={() => setShowTranslation((v) => !v)}
-          >
-            {showTranslation ? '🟢' : '⚪'} {t(language, 'toggleTranslation')}
-          </button>
-        </div>
-
-        <div className="dr-detail">
-          <div className="dr-detail-head">
-            <h2 className="dr-detail-title">{title}</h2>
-            <p className="dr-detail-context">{t(language, 'context')} · {context}</p>
+          <div className={`rv2-detail-hero rv2-detail-hero--${block}`}>
+            <div className="rv2-detail-emoji-wrap" aria-hidden>
+              <div className="rv2-detail-emoji">{iconForEntry(selected)}</div>
+            </div>
+            <div className="rv2-detail-hero-body">
+              <h1>{title}</h1>
+              {context && <p className="rv2-detail-intro">{context}</p>}
+              <div className="rv2-detail-badges">
+                <span className="rv2-badge rv2-badge--level">
+                  {LEVEL_LABEL[selected.cecrLevel]}
+                </span>
+                <span className="rv2-badge rv2-badge--theme">
+                  <span aria-hidden>🏷️</span> {theme}
+                </span>
+                <span className="rv2-badge">
+                  <span aria-hidden>💬</span>{' '}
+                  {fmtLines(language, dialogue.lines.length)}
+                </span>
+                {dialogue.vocab && dialogue.vocab.length > 0 && (
+                  <span className="rv2-badge">
+                    <span aria-hidden>📚</span>{' '}
+                    {fmtVocab(language, dialogue.vocab.length)}
+                  </span>
+                )}
+                {dialogue.comprehension && (
+                  <span className="rv2-badge">
+                    <span aria-hidden>❓</span> 1
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
 
-          {dialogue.lines.map((line, i) => {
-            const isActive = playingIdx === i;
-            return (
-              <div key={i} className={`dr-line ${isActive ? 'dr-line--active' : ''}`}>
-                <div className="dr-speaker">{line.speaker}</div>
-                <div className="dr-line-body">
-                  <div className="dr-line-row">
-                    <button
-                      type="button"
-                      className={`dr-play ${isActive ? 'dr-play--on' : ''}`}
-                      onClick={() => handlePlayLine(i)}
-                      aria-label={isActive ? t(language, 'stop') : t(language, 'play')}
-                      title={isActive ? t(language, 'stop') : t(language, 'play')}
-                    >
-                      {isActive ? '⏸' : '▶'}
-                    </button>
-                    <div className="dr-hanzi">{line.hanzi}</div>
+          <div className="rv2-toggles">
+            <button
+              type="button"
+              className={`rv2-toggle ${showPinyin ? 'is-on' : ''}`}
+              onClick={() => setShowPinyin((v) => !v)}
+              aria-pressed={showPinyin}
+            >
+              <span className="rv2-toggle-dot" aria-hidden />
+              {t(language, 'togglePinyin')}
+            </button>
+            <button
+              type="button"
+              className={`rv2-toggle ${showTranslation ? 'is-on' : ''}`}
+              onClick={() => setShowTranslation((v) => !v)}
+              aria-pressed={showTranslation}
+            >
+              <span className="rv2-toggle-dot" aria-hidden />
+              {t(language, 'toggleTranslation')}
+            </button>
+            <AudioSpeedToggle
+              mode={audioSpeed}
+              onChange={(next) => {
+                // Si on change de vitesse pendant la lecture, on stoppe :
+                // évite que la lecture reste désynchronisée pendant que le
+                // manifest se recharge.
+                cancelTTS();
+                cancelAudio();
+                setPlayingIdx(null);
+                setAudioSpeed(next);
+              }}
+              slowAvailable={slowAvailable}
+            />
+          </div>
+
+          <div className="rv2-dlg-lines">
+            {dialogue.lines.map((line, i) => {
+              const isActive = playingIdx === i;
+              const note = language === 'en' ? line.noteEn ?? line.note : line.note;
+              return (
+                <div
+                  key={i}
+                  className={`rv2-dlg-line ${isActive ? 'is-playing' : ''}`}
+                >
+                  <div className="rv2-dlg-speaker">{line.speaker}</div>
+                  <div className="rv2-dlg-body">
+                    <div className="rv2-dlg-row">
+                      <button
+                        type="button"
+                        className={`rv2-dlg-play ${isActive ? 'is-on' : ''}`}
+                        onClick={() => handlePlayLine(i)}
+                        aria-label={
+                          isActive ? t(language, 'stop') : t(language, 'play')
+                        }
+                        title={
+                          isActive ? t(language, 'stop') : t(language, 'play')
+                        }
+                      >
+                        {isActive ? '⏸' : '▶'}
+                      </button>
+                      <div className="rv2-dlg-hanzi">{line.hanzi}</div>
+                    </div>
+                    {showPinyin && <div className="rv2-pinyin">{line.pinyin}</div>}
+                    {showTranslation && (
+                      <div className="rv2-translation">
+                        {language === 'en' ? line.translationEn : line.translationFr}
+                      </div>
+                    )}
+                    {note && (
+                      <div className="rv2-dlg-note">
+                        <span aria-hidden>💡</span> {note}
+                      </div>
+                    )}
                   </div>
-                  {showPinyin && <div className="dr-pinyin">{line.pinyin}</div>}
-                  {showTranslation && (
-                    <div className="dr-translation">
-                      {language === 'en' ? line.translationEn : line.translationFr}
-                    </div>
-                  )}
-                  {(language === 'en' ? line.noteEn : line.note) && (
-                    <div className="dr-note">
-                      💡 {language === 'en' ? line.noteEn ?? line.note : line.note}
-                    </div>
-                  )}
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
 
           {dialogue.vocab && dialogue.vocab.length > 0 && (
-            <div className="dr-section">
-              <h3>📚 {t(language, 'vocab')}</h3>
-              <div className="dr-vocab">
+            <div className="rv2-section-block">
+              <h3 className="rv2-section-head">📚 {t(language, 'vocab')}</h3>
+              <div className="rv2-vocab-list">
                 {dialogue.vocab.map((v) => (
-                  <span key={v}>{v}</span>
+                  <span key={v} className="rv2-vocab-chip">{v}</span>
                 ))}
               </div>
             </div>
           )}
 
           {dialogue.comprehension && (
-            <div className="dr-section">
-              <h3>❓ {t(language, 'comprehension')}</h3>
-              <div className="dr-qa">
-                <div className="dr-qa-q">
-                  {language === 'en'
-                    ? dialogue.comprehension.questionEn
-                    : dialogue.comprehension.questionFr}
-                </div>
-                <div
-                  className={`dr-qa-a ${answerRevealed ? '' : 'is-hidden'}`}
-                  onClick={() => setAnswerRevealed(true)}
-                  title={answerRevealed ? '' : t(language, 'revealAnswer')}
-                >
-                  {language === 'en'
-                    ? dialogue.comprehension.answerEn
-                    : dialogue.comprehension.answerFr}
+            <div className="rv2-section-block">
+              <h3 className="rv2-section-head">
+                ❓ {t(language, 'comprehension')}
+              </h3>
+              <div className="rv2-questions">
+                <div className="rv2-qa">
+                  <div className="rv2-qa-q">
+                    {language === 'en'
+                      ? dialogue.comprehension.questionEn
+                      : dialogue.comprehension.questionFr}
+                  </div>
+                  <div
+                    className={`rv2-qa-a ${answerRevealed ? '' : 'is-hidden'}`}
+                    onClick={() => setAnswerRevealed(true)}
+                    title={answerRevealed ? '' : t(language, 'revealAnswer')}
+                  >
+                    {language === 'en'
+                      ? dialogue.comprehension.answerEn
+                      : dialogue.comprehension.answerFr}
+                  </div>
                 </div>
               </div>
             </div>
@@ -362,29 +542,40 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
   }
 
   // -------------------------------------------------------------------------
-  // Vue liste
+  // VUE LISTE (catalogue)
   // -------------------------------------------------------------------------
-  return (
-    <div className="dialogue-v2">
-      <div className="dr-header">
-        {onBack && (
-          <button type="button" className="dr-btn dr-btn--link" onClick={onBack}>
-            {t(language, 'back')}
-          </button>
-        )}
-        <h1>{t(language, 'title')}</h1>
-        <p>{t(language, 'subtitle')}</p>
-      </div>
+  const totalCount = dialogues.length;
 
-      <div className="dr-filters" role="tablist">
+  return (
+    <div className="reading-v2 dialogue-v2">
+      {onBack && (
+        <button
+          type="button"
+          className="rv2-btn rv2-btn--link rv2-catalog-back"
+          onClick={onBack}
+        >
+          {t(language, 'back')}
+        </button>
+      )}
+
+      <header className="rv2-catalog-header">
+        <div className="rv2-catalog-icon" aria-hidden>💬</div>
+        <div className="rv2-catalog-head-text">
+          <h1>{t(language, 'title')}</h1>
+          <p>{t(language, 'subtitle')}</p>
+        </div>
+      </header>
+
+      <div className="rv2-tabs" role="tablist">
         <button
           type="button"
           role="tab"
           aria-selected={levelFilter === 'all'}
-          className={`dr-filter ${levelFilter === 'all' ? 'dr-filter--active' : ''}`}
+          className={`rv2-tab ${levelFilter === 'all' ? 'is-active' : ''}`}
           onClick={() => setLevelFilter('all')}
         >
-          {t(language, 'filterAll')}
+          <span>{t(language, 'filterAll')}</span>
+          <span className="rv2-tab-count">({totalCount})</span>
         </button>
         {availableLevels.map((lv) => (
           <button
@@ -392,38 +583,44 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
             type="button"
             role="tab"
             aria-selected={levelFilter === lv}
-            className={`dr-filter ${levelFilter === lv ? 'dr-filter--active' : ''}`}
+            className={`rv2-tab ${levelFilter === lv ? 'is-active' : ''}`}
             onClick={() => setLevelFilter(lv)}
           >
-            {LEVEL_LABEL[lv]}
+            <span>{LEVEL_LABEL[lv]}</span>
+            <span className="rv2-tab-count">({countByLevel[lv] ?? 0})</span>
           </button>
         ))}
       </div>
 
-      {filtered.length === 0 ? (
-        <div className="dr-empty">{t(language, 'empty')}</div>
-      ) : (
-        <div className="dr-list">
-          {filtered.map((entry) => {
-            const title = language === 'en' ? entry.dialogue.titleEn : entry.dialogue.title;
-            const context = language === 'en' ? entry.dialogue.contextEn : entry.dialogue.context;
+      {levelFilter === 'all' ? (
+        <div className="rv2-sections">
+          {groupsAll.map((group) => {
+            const block = levelBlock(group.level);
             return (
-              <button
-                key={entry.dialogue.id}
-                type="button"
-                className="dr-list-item"
-                onClick={() => {
-                  setSelectedId(entry.dialogue.id);
-                  setAnswerRevealed(false);
-                }}
+              <section
+                key={group.level}
+                className={`rv2-section rv2-card--${block}`}
               >
-                <div className="dr-list-level">{LEVEL_LABEL[entry.cecrLevel]}</div>
-                <div className="dr-list-theme">{language === 'en' ? entry.themeEn : entry.theme}</div>
-                <div className="dr-list-title">{title}</div>
-                <div className="dr-list-excerpt">{context}</div>
-              </button>
+                <h2 className="rv2-section-title">
+                  <span className="rv2-section-title-badge">
+                    {LEVEL_LABEL[group.level]}
+                  </span>
+                  <span className="rv2-section-title-count">
+                    {group.items.length}
+                  </span>
+                </h2>
+                <div className="rv2-grid">
+                  {group.items.map((e) => renderCard(e))}
+                </div>
+              </section>
             );
           })}
+        </div>
+      ) : filtered.length === 0 ? (
+        <div className="rv2-empty">{t(language, 'empty')}</div>
+      ) : (
+        <div className="rv2-grid">
+          {filtered.map((e) => renderCard(e))}
         </div>
       )}
     </div>

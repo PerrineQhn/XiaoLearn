@@ -46,5 +46,65 @@ service cloud.firestore {
         && request.resource.data.lines is list;
       allow delete: if false;
     }
+
+    // ========================================================================
+    //  COMMUNAUTÉ (task #44) — publicProfiles / battleQueue / battleMatches
+    //  Voir /FIRESTORE_RULES.md pour la doc humaine.
+    // ========================================================================
+
+    match /publicProfiles/{uid} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn()
+        && request.auth.uid == uid
+        && request.resource.data.uid == uid;
+      allow delete: if false;
+    }
+
+    match /battleQueue/{uid} {
+      allow get, list: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.auth.uid == uid
+        && request.resource.data.uid == uid
+        && request.resource.data.matchId == null;
+      allow delete: if isSignedIn() && request.auth.uid == uid;
+      allow update: if isSignedIn() && (
+        // cas 1 : le propriétaire met à jour ses propres champs
+        request.auth.uid == uid
+        ||
+        // cas 2 : un pair pose le matchId pendant la transaction de matching
+        (
+          request.resource.data.uid == resource.data.uid
+          && request.resource.data.queuedAt == resource.data.queuedAt
+          && resource.data.matchId == null
+          && request.resource.data.matchId is string
+        )
+      );
+    }
+
+    match /battleMatches/{matchId} {
+      allow read: if isSignedIn() && (
+        request.auth.uid == resource.data.p1.uid
+        || request.auth.uid == resource.data.p2.uid
+      );
+      allow create: if isSignedIn()
+        && request.resource.data.p1.uid == request.auth.uid
+        && request.resource.data.status == 'active'
+        && request.resource.data.p1Answers.size() == 0
+        && request.resource.data.p2Answers.size() == 0;
+      allow update: if isSignedIn() && (
+        request.auth.uid == resource.data.p1.uid
+        || request.auth.uid == resource.data.p2.uid
+      );
+      allow delete: if false;
+    }
+
+    // ========================================================================
+    //  EMAIL PREFERENCES (task #66) — lecture/écriture privée par user.
+    //  Une Cloud Function lira ce doc côté serveur pour filtrer les envois.
+    // ========================================================================
+
+    match /emailPrefs/{uid} {
+      allow read, write: if isSignedIn() && request.auth.uid == uid;
+    }
   }
 }

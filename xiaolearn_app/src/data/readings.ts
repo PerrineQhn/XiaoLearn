@@ -9,6 +9,10 @@
 import type { ReadingText } from '../types/lesson-structure';
 // Import différé pour éviter la circularité : cecr-b2-texts re-importe ReadingEntry.
 import { cecrB2ExtraReadings } from './cecr-b2-texts';
+// Task #43 : 12 textes supplémentaires couvrant A1 → C2.2.
+import { cecrExtraReadings } from './cecr-extra-readings';
+// Task #47 : +13 textes (vie quotidienne + contes classiques chinois).
+import { cecrTalesDailyReadings } from './cecr-tales-daily-readings';
 
 export interface ReadingEntry {
   cecrLevel: 'a1' | 'a2' | 'b1.1' | 'b1.2' | 'b2.1' | 'b2.2' | 'c1.1' | 'c1.2' | 'c2.1' | 'c2.2';
@@ -199,6 +203,10 @@ export const readings: ReadingEntry[] = [
 // extrait des Analectes). Ils sont dans cecr-b2-texts.ts pour préserver la
 // lisibilité de ce fichier.
 readings.push(...cecrB2ExtraReadings);
+// Task #43 : densification A1→B2 + initialisation C1/C2.
+readings.push(...cecrExtraReadings);
+// Task #47 : vie quotidienne (A1/A2/B1.1) + contes classiques (B1.2→C2.1).
+readings.push(...cecrTalesDailyReadings);
 
 export const getReadingById = (id: string) => readings.find((r) => r.reading.id === id)?.reading;
 export const getReadingsByLevel = (level: ReadingEntry['cecrLevel']) =>

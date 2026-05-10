@@ -516,7 +516,20 @@ const ToneContourSVG = ({
   );
 };
 
-/** Ligne d'exemple (hanzi + pinyin + traduction + play). */
+/**
+ * Ligne d'exemple (hanzi + pinyin + traduction + play).
+ *
+ * Le bouton 🔊 est TOUJOURS rendu : si `example.audio` est renseigné on le
+ * passe en priorité à `playHanziAudio`, sinon le resolver du module audio
+ * (`buildHanziCandidates`) essaie automatiquement `audio/examples/<hash>.mp3`
+ * (pour les phrases de +3 caractères) puis les conventions HSK. Ça évite de
+ * masquer le bouton quand le mapper V2 ne propage pas d'URL explicite (cas
+ * d'un `firstExample` multi-caractères sans champ `audio:`).
+ *
+ * Le prop `onPlay` reste accepté pour compat descendante (si le parent veut
+ * jouer une URL explicite), mais n'est plus nécessaire : par défaut on passe
+ * par `playHanziAudio(hanzi, audio?)`, qui gère MP3 → WAV fallback + preload.
+ */
 const ExampleRow = ({
   example,
   language,
@@ -525,27 +538,41 @@ const ExampleRow = ({
   example: LessonV2Example;
   language: LessonV2Language;
   onPlay?: (url: string) => void;
-}) => (
-  <div className="lv2-example">
-    <div className="lv2-example-main">
-      <div className="lv2-example-hanzi">{example.hanzi}</div>
-      <div className="lv2-example-pinyin">{example.pinyin}</div>
-      <div className="lv2-example-translation">
-        {language === 'en' && example.translationEn ? example.translationEn : example.translation}
+}) => {
+  const handlePlay = useCallback(() => {
+    // Si le parent fournit un handler + une URL explicite, on respecte sa logique.
+    if (onPlay && example.audio) {
+      onPlay(example.audio);
+      return;
+    }
+    // Sinon on laisse le resolver trouver l'audio à partir du hanzi (hash MP3
+    // pour les phrases, conventions HSK pour les mots). Silencieux si rien ne
+    // matche — pas de fallback Web Speech (cf. audio policy).
+    playHanziAudio(example.hanzi, example.audio).catch(() => {
+      /* silent: aucun fichier audio trouvé */
+    });
+  }, [example.audio, example.hanzi, onPlay]);
+
+  return (
+    <div className="lv2-example">
+      <div className="lv2-example-main">
+        <div className="lv2-example-hanzi">{example.hanzi}</div>
+        <div className="lv2-example-pinyin">{example.pinyin}</div>
+        <div className="lv2-example-translation">
+          {language === 'en' && example.translationEn ? example.translationEn : example.translation}
+        </div>
       </div>
-    </div>
-    {example.audio && onPlay && (
       <button
         className="lv2-example-audio"
         aria-label="Play audio"
-        onClick={() => onPlay(example.audio as string)}
+        onClick={handlePlay}
         type="button"
       >
         🔊
       </button>
-    )}
-  </div>
-);
+    </div>
+  );
+};
 
 /**
  * Row réutilisable pour les items d'une section "Apprentissage".
@@ -636,14 +663,29 @@ const MinimalPairsRow = ({
  */
 const LearnSectionView = ({
   section,
-  language
+  language,
+  lessonTitle
 }: {
   section: LessonV2LearnSection;
   language: LessonV2Language;
+  lessonTitle?: string;
 }) => {
   const title = language === 'en' && section.titleEn ? section.titleEn : section.title;
   const body = language === 'en' && section.bodyEn ? section.bodyEn : section.body;
   const tip = language === 'en' && section.tipEn ? section.tipEn : section.tip;
+  /**
+   * Ouvre l'AIFloatingChat avec un prompt contextuel basé sur la leçon et la
+   * section courantes. L'utilisateur peut éditer le prompt avant l'envoi.
+   */
+  const handleAskAi = useCallback(() => {
+    const lessonContext = lessonTitle ? `« ${lessonTitle} » — ` : '';
+    const prompt = language === 'en'
+      ? `About the lesson ${lessonContext}section "${title}": can you explain this point in more detail and give me 2 additional examples in Chinese with pinyin and translation?`
+      : `Concernant la leçon ${lessonContext}section « ${title} » : peux-tu m'expliquer ce point plus en détail et me donner 2 exemples supplémentaires en chinois avec pinyin et traduction ?`;
+    window.dispatchEvent(
+      new CustomEvent('xiaolearn:openAiChat', { detail: { prompt } })
+    );
+  }, [lessonTitle, title, language]);
   const firstItem = section.items?.[0];
   const handleTonePlay = useCallback(() => {
     if (!firstItem) return;
@@ -707,6 +749,18 @@ const LearnSectionView = ({
           <span className="lv2-learn-tip-text">{tip}</span>
         </div>
       )}
+
+      <div className="lv2-learn-ask-ai">
+        <button
+          type="button"
+          className="lv2-learn-ask-ai-btn"
+          onClick={handleAskAi}
+          aria-label={language === 'en' ? 'Ask AI about this section' : 'Demander à l\'IA sur cette section'}
+        >
+          <span aria-hidden="true">🤖</span>
+          <span>{language === 'en' ? 'Ask AI to explain' : 'Demander à l\'IA d\'expliquer'}</span>
+        </button>
+      </div>
     </article>
   );
 };
@@ -857,6 +911,29 @@ const InlineReading = ({
  * pour afficher un badge pédagogique (Grammaire / Traduction / etc.).
  * `order` dispose d'un rendu dédié (segments mélangés à taper dans l'ordre).
  */
+/**
+ * Phase 3A IA — helper qui ouvre le chat IA avec un prompt contextuel
+ * construit à partir d'un exercice raté. Réutilisé dans les 2 cards
+ * (MultipleChoice via ExerciseCard inline, et OrderExerciseCard).
+ */
+function dispatchAskAiWhy(args: {
+  language: LessonV2Language;
+  lessonTitle: string;
+  prompt: string;
+  userAnswer: string;
+  correctAnswer: string;
+}) {
+  const { language, lessonTitle, prompt, userAnswer, correctAnswer } = args;
+  const lessonCtx = lessonTitle ? `« ${lessonTitle} » — ` : '';
+  const text =
+    language === 'en'
+      ? `In the lesson ${lessonCtx}I had this exercise:\n\n"${prompt}"\n\nI answered: "${userAnswer}"\nThe correct answer was: "${correctAnswer}"\n\nCan you explain WHY my answer was wrong, in a clear and short way? If possible, give me a quick mnemonic or rule to remember it.`
+      : `Dans la leçon ${lessonCtx}j'ai eu cet exercice :\n\n« ${prompt} »\n\nMa réponse : « ${userAnswer} »\nBonne réponse : « ${correctAnswer} »\n\nPeux-tu m'expliquer POURQUOI ma réponse est fausse, de manière courte et claire ? Si possible, donne-moi un mnémo ou une règle simple à retenir.`;
+  window.dispatchEvent(
+    new CustomEvent('xiaolearn:openAiChat', { detail: { prompt: text } })
+  );
+}
+
 const ExerciseCard = ({
   exercise,
   language,
@@ -864,7 +941,8 @@ const ExerciseCard = ({
   selectedIndex,
   onSelect,
   onValidate,
-  onNext
+  onNext,
+  lessonTitle
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -873,6 +951,7 @@ const ExerciseCard = ({
   onSelect: (index: number) => void;
   onValidate: () => void;
   onNext: () => void;
+  lessonTitle?: string;
 }) => {
   // Rendu dédié pour le type 'order' — nécessite un état local (pile de segments).
   if (exercise.type === 'order') {
@@ -884,6 +963,7 @@ const ExerciseCard = ({
         onSelect={onSelect}
         onValidate={onValidate}
         onNext={onNext}
+        lessonTitle={lessonTitle}
       />
     );
   }
@@ -1027,6 +1107,26 @@ const ExerciseCard = ({
             </div>
           )}
           {explanationText && <div className="lv2-feedback-explanation">{explanationText}</div>}
+          {!isCorrect && lessonTitle && (
+            <button
+              type="button"
+              className="lv2-ask-ai-why-btn"
+              onClick={() =>
+                dispatchAskAiWhy({
+                  language,
+                  lessonTitle,
+                  prompt: promptText,
+                  userAnswer:
+                    selectedIndex !== null && selectedIndex >= 0
+                      ? exercise.choices[selectedIndex]
+                      : '(aucune réponse)',
+                  correctAnswer: exercise.choices[exercise.correctIndex]
+                })
+              }
+            >
+              🤖 {language === 'en' ? 'Ask AI: why?' : 'Demander à l\'IA : pourquoi ?'}
+            </button>
+          )}
         </div>
       )}
     </div>
@@ -1048,7 +1148,8 @@ const OrderExerciseCard = ({
   answered,
   onSelect,
   onValidate,
-  onNext
+  onNext,
+  lessonTitle
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -1056,6 +1157,7 @@ const OrderExerciseCard = ({
   onSelect: (index: number) => void;
   onValidate: () => void;
   onNext: () => void;
+  lessonTitle?: string;
 }) => {
   // Ordre mélangé, fixé une fois par exercice.id.
   const shuffledIndices = useMemo(() => {
@@ -1200,6 +1302,23 @@ const OrderExerciseCard = ({
             </>
           )}
           {explanationText && <div className="lv2-feedback-explanation">{explanationText}</div>}
+          {!isCorrect && lessonTitle && (
+            <button
+              type="button"
+              className="lv2-ask-ai-why-btn"
+              onClick={() =>
+                dispatchAskAiWhy({
+                  language,
+                  lessonTitle,
+                  prompt: promptText,
+                  userAnswer: picked.map((i) => exercise.choices[i]).join(' '),
+                  correctAnswer: exercise.choices.join(' ')
+                })
+              }
+            >
+              🤖 {language === 'en' ? 'Ask AI: why?' : 'Demander à l\'IA : pourquoi ?'}
+            </button>
+          )}
         </div>
       )}
     </div>
@@ -1421,7 +1540,7 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
             {getCopy(language, 'learnHint')}
           </p>
         </header>
-        <LearnSectionView section={section} language={language} />
+        <LearnSectionView section={section} language={language} lessonTitle={title} />
         <div className="lv2-section-actions">
           <button
             type="button"
@@ -1528,6 +1647,7 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
           }}
           onValidate={handleValidate}
           onNext={handleNextExercise}
+          lessonTitle={title}
         />
       </section>
     );

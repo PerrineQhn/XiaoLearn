@@ -775,7 +775,7 @@ export const lessonExercises: Record<string, LessonExercise[]> = {
       id: 'dialog-restaurant-greeting',
       type: 'listening',
       mode: 'dialogue',
-      audio: 'audio/dialogues/restaurant_greeting.wav',
+      audio: 'audio/dialogues/restaurant_greeting.mp3',
       promptFr: 'Quelle est la première question du serveur ?',
       promptEn: 'What is the waiter’s first question?',
       choices: [
@@ -792,7 +792,7 @@ export const lessonExercises: Record<string, LessonExercise[]> = {
       id: 'dialog-restaurant-order',
       type: 'listening',
       mode: 'dialogue',
-      audio: 'audio/dialogues/restaurant_order.wav',
+      audio: 'audio/dialogues/restaurant_order.mp3',
       promptFr: 'Que demande le client à la fin du dialogue ?',
       promptEn: 'What does the customer ask at the end of the dialogue?',
       choices: [

@@ -534,14 +534,36 @@
 /* -------------------------------------------------------------------- */
 /* Banner strip (on lesson paths page)                                   */
 /* -------------------------------------------------------------------- */
+/*
+ * Important — le banner est rendu sur `.lp-page` (LessonPathsPage), PAS
+ * sur `.lvb-page`. On doit donc redéclarer les variables `--lvb-*` à ce
+ * niveau pour qu'elles résolvent correctement (sinon `border-color` tombe
+ * sur `currentcolor` et la bordure devient invisible/noirâtre). On renforce
+ * aussi le rendu (bordure plus visible + ombrage léger) pour matcher le
+ * style des autres cartes de la page (.lp-global, .lp-continue-card).
+ */
 .lvb-banner-strip {
+  --lvb-border: #e8d4b8;
+  --lvb-primary: #c6302c;
+  --lvb-primary-dark: #9c2521;
+  --lvb-gold: #d4a537;
+  --lvb-gold-soft: #fbe9b8;
+  --lvb-jade: #2f8f6b;
+  --lvb-jade-soft: #d8efe4;
+  --lvb-amber-soft: #fff4dd;
+  --lvb-coral-soft: #ffe3d8;
+  --lvb-text: #1f2937;
+  --lvb-text-muted: #6b7280;
+  --lvb-radius: 14px;
+
   display: flex;
   gap: 16px;
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
   border-radius: var(--lvb-radius);
-  border: 1px solid var(--lvb-border);
+  border: 1.5px solid var(--lvb-border);
+  box-shadow: 0 1px 3px rgba(198, 48, 44, 0.05);
   margin: 16px 0;
   flex-wrap: wrap;
 }
@@ -645,5 +667,196 @@
   }
   .lvb-banner-strip-cta {
     align-self: stretch;
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* Bilan Index — sélection du niveau depuis la sidebar                  */
+/* -------------------------------------------------------------------- */
+
+.lvb-index-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  border: 1px solid var(--lvb-border);
+  border-radius: var(--lvb-radius-sm);
+  background: #fff;
+}
+.lvb-index-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lvb-index-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lvb-text);
+  font-variant-numeric: tabular-nums;
+}
+.lvb-index-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--lvb-text-muted);
+}
+
+.lvb-index-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lvb-index-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--lvb-border);
+  border-radius: var(--lvb-radius);
+  background: var(--lvb-card-bg);
+  box-shadow: 0 1px 3px rgba(198, 48, 44, 0.03);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.lvb-index-row:hover {
+  border-color: #e0c89a;
+}
+.lvb-index-row--locked {
+  opacity: 0.7;
+}
+.lvb-index-row--passed {
+  background: linear-gradient(90deg, var(--lvb-jade-soft) 0%, #ffffff 80%);
+  border-color: var(--lvb-jade);
+}
+.lvb-index-row--legacy {
+  background: linear-gradient(90deg, var(--lvb-amber-soft) 0%, #ffffff 80%);
+  border-color: var(--lvb-gold);
+}
+.lvb-index-row--tried {
+  background: linear-gradient(90deg, var(--lvb-coral-soft) 0%, #ffffff 80%);
+  border-color: #e8baa5;
+}
+
+.lvb-index-row-emoji {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--lvb-border);
+  border-radius: 14px;
+  font-size: 28px;
+}
+
+.lvb-index-row-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.lvb-index-row-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lvb-index-row-title strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--lvb-text);
+}
+.lvb-index-row-hsk {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--lvb-text-muted);
+  background: var(--lvb-border);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.lvb-index-row-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--lvb-text-muted);
+  line-height: 1.4;
+}
+.lvb-index-row-meta {
+  font-size: 12px;
+  color: var(--lvb-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.lvb-index-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.lvb-index-badge--pristine {
+  background: var(--lvb-gold-soft);
+  color: #8a6200;
+}
+.lvb-index-badge--tried {
+  background: var(--lvb-coral-soft);
+  color: #8a3a1a;
+}
+.lvb-index-badge--passed {
+  background: var(--lvb-jade);
+  color: #fff;
+}
+.lvb-index-badge--legacy {
+  background: var(--lvb-gold);
+  color: #fff;
+}
+.lvb-index-badge--locked {
+  background: var(--lvb-border);
+  color: var(--lvb-text-muted);
+}
+
+.lvb-index-cta {
+  flex-shrink: 0;
+  border: none;
+  background: var(--lvb-primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 120ms ease;
+  white-space: nowrap;
+}
+.lvb-index-cta:hover:not(:disabled) {
+  background: var(--lvb-primary-dark);
+}
+.lvb-index-cta:disabled {
+  background: var(--lvb-border);
+  color: var(--lvb-text-muted);
+  cursor: not-allowed;
+}
+.lvb-index-row--passed .lvb-index-cta,
+.lvb-index-row--legacy .lvb-index-cta {
+  background: var(--lvb-jade);
+}
+.lvb-index-row--passed .lvb-index-cta:hover:not(:disabled),
+.lvb-index-row--legacy .lvb-index-cta:hover:not(:disabled) {
+  background: #256a52;
+}
+
+@media (max-width: 560px) {
+  .lvb-index-row {
+    flex-wrap: wrap;
+  }
+  .lvb-index-cta {
+    flex-basis: 100%;
+    text-align: center;
   }
 }

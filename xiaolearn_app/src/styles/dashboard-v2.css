@@ -712,15 +712,35 @@
   border-radius: 8px;
   background: #f3ece0;
   position: relative;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
   font-size: 10px;
   color: rgba(0, 0, 0, 0.55);
+}
+.heatmap-grid .cell .cell-day {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.heatmap-grid .cell .cell-num {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.85;
+  line-height: 1;
 }
 .heatmap-grid .cell.intensity-1 { background: #fde9e8; }
 .heatmap-grid .cell.intensity-2 { background: #f9c4c1; }
 .heatmap-grid .cell.intensity-3 { background: #e57b76; color: #fff; }
 .heatmap-grid .cell.intensity-4 { background: var(--dv-accent); color: #fff; }
+.heatmap-grid .cell.out-of-month {
+  opacity: 0.35;
+}
+.heatmap-grid .cell.today {
+  box-shadow: 0 0 0 2px var(--dv-accent, #e57b76);
+}
 
 .heatmap-legend {
   display: flex;
@@ -1456,3 +1476,286 @@
 .dashboard-v2 .card-head h2 { font-size: 14px; }
 .dashboard-grid { gap: 16px; }
 .col { gap: 16px; }
+
+/* =========================================================================
+   Task #46 — Streak XP bonus (badge ⚡, panel, toast)
+   ========================================================================= */
+
+/* Badge ⚡ +X% — utilisé inline à côté de la flamme de série ------------ */
+.streak-mult-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff4c1 0%, #ffd98a 100%);
+  border: 1px solid #e7b948;
+  color: #6b4a0b;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(212, 165, 55, 0.35);
+}
+.streak-mult-badge--sm {
+  font-size: 11px;
+  padding: 2px 8px;
+  line-height: 1.4;
+}
+.streak-mult-badge--md {
+  font-size: 13px;
+  padding: 4px 10px;
+  line-height: 1.4;
+}
+.streak-mult-badge-spark {
+  font-size: 12px;
+  filter: drop-shadow(0 0 2px rgba(247, 180, 0, 0.6));
+}
+.streak-mult-badge--md .streak-mult-badge-spark {
+  font-size: 14px;
+}
+/* Petit placement dédié dans la carte Streak : sous le chiffre principal. */
+.streak-card-v2 .streak-mult-badge {
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+/* Panneau "Bonus XP de série" ----------------------------------------- */
+.streak-bonus-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.streak-bonus-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.streak-bonus-head-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.streak-bonus-head-title h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--dv-ink);
+}
+.streak-bonus-head-icon {
+  font-size: 20px;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff4c1 0%, #ffd98a 100%);
+  border: 1px solid #e7b948;
+}
+.streak-bonus-tagline {
+  margin: 0;
+  font-size: 12px;
+  color: var(--dv-muted);
+  font-style: italic;
+}
+
+.streak-bonus-mult {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff9ea 0%, #fff4d4 100%);
+  border: 1px solid #f3dfa2;
+}
+.streak-bonus-mult-label {
+  font-size: 11px;
+  color: var(--dv-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.streak-bonus-mult-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #6b4a0b;
+}
+.streak-bonus-mult-value strong {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+.streak-bonus-mult-pct {
+  font-size: 13px;
+  font-weight: 700;
+}
+.streak-bonus-mult-off {
+  font-size: 13px;
+  color: var(--dv-muted);
+}
+
+.streak-bonus-next {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.streak-bonus-next-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+}
+.streak-bonus-next-label {
+  color: var(--dv-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+}
+.streak-bonus-next-reward {
+  color: var(--dv-ink);
+  font-weight: 700;
+}
+.streak-bonus-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--dv-border);
+  overflow: hidden;
+}
+.streak-bonus-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c6302c 0%, #d4a537 100%);
+  transition: width 0.3s ease;
+}
+.streak-bonus-next-meta {
+  font-size: 11px;
+  color: var(--dv-muted);
+  text-align: right;
+}
+.streak-bonus-all-done {
+  font-size: 13px;
+  color: var(--dv-green);
+  font-weight: 700;
+  padding: 8px 0;
+}
+
+.streak-bonus-claimed {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px dashed var(--dv-border);
+  padding-top: 10px;
+}
+.streak-bonus-claimed-label {
+  font-size: 11px;
+  color: var(--dv-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.streak-bonus-claimed-empty {
+  font-size: 12px;
+  color: var(--dv-muted);
+  font-style: italic;
+}
+.streak-bonus-claimed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.streak-bonus-claimed-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #eef7f0;
+  color: #1e6b45;
+  border: 1px solid #bde3cc;
+  font-weight: 700;
+}
+.streak-bonus-claimed-days {
+  font-weight: 800;
+}
+.streak-bonus-claimed-reward {
+  font-weight: 600;
+}
+
+/* Toast global palier -------------------------------------------------- */
+.streak-milestone-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 280px;
+  max-width: 360px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff9ea 0%, #ffd98a 100%);
+  border: 1px solid #e7b948;
+  box-shadow: 0 10px 30px rgba(200, 52, 46, 0.18),
+              0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: streak-toast-in 0.3s ease-out;
+}
+@keyframes streak-toast-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.streak-milestone-toast-trophy {
+  font-size: 32px;
+  line-height: 1;
+}
+.streak-milestone-toast-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #5a3a0b;
+}
+.streak-milestone-toast-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #4a2f08;
+}
+.streak-milestone-toast-sub {
+  font-size: 12px;
+  color: #6b4a0b;
+}
+.streak-milestone-toast-xp {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9c2521;
+}
+.streak-milestone-toast-close {
+  background: transparent;
+  border: none;
+  color: #6b4a0b;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+}
+.streak-milestone-toast-close:hover {
+  background: rgba(107, 74, 11, 0.1);
+}
+@media (max-width: 600px) {
+  .streak-milestone-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
+}

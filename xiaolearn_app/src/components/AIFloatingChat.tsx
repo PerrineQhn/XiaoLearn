@@ -69,6 +69,31 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
     }
   }, [messages]);
 
+  /**
+   * Écoute l'événement global `xiaolearn:openAiChat` qui peut être déclenché
+   * depuis n'importe quel composant (ex : bouton « Demander à l'IA » sur une
+   * leçon). Le payload `prompt` est pré-rempli dans l'input et le focus est
+   * donné à l'utilisateur — il peut éditer avant d'envoyer.
+   */
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent<{ prompt?: string }>).detail;
+      if (!detail?.prompt) return;
+      setIsOpen(true);
+      setInput(detail.prompt);
+      setTimeout(() => {
+        inputRef.current?.focus();
+        // Place le curseur en fin de texte pour une édition immédiate.
+        if (inputRef.current) {
+          const len = inputRef.current.value.length;
+          inputRef.current.setSelectionRange(len, len);
+        }
+      }, 120);
+    };
+    window.addEventListener('xiaolearn:openAiChat', handler);
+    return () => window.removeEventListener('xiaolearn:openAiChat', handler);
+  }, []);
+
   const generateAIResponse = async (userQuestion: string, history: Message[]): Promise<string> => {
     const conversationHistory = history.filter(msg => msg.id !== '0');
     return await generateGeminiResponse(userQuestion, conversationHistory);

@@ -12,7 +12,9 @@
  * États dérivés exposés pour alimenter FlashcardV5 :
  *   - masteredIds : level >= 4 (cartes "solides")
  *   - dueIds      : level < 4 && dueAt <= now (à revoir)
- *   - difficultIds: consecutiveAgain >= 2 (cartes qui bloquent)
+ *   - difficultIds: consecutiveAgain >= 1 (toute carte "je ne sais pas"
+ *                   récente atterrit dans "Difficile", jusqu'à ce qu'un
+ *                   "j'ai su" remette le compteur à zéro)
  */
 import { useCallback, useMemo, useState } from 'react';
 import { useFirestoreSync } from './useFirestoreSync';
@@ -133,7 +135,18 @@ export const useWordSRS = (options: UseWordSrsOptions = {}) => {
   const difficultIds = useMemo(() => {
     const set = new Set<string>();
     for (const e of Object.values(map)) {
-      if (e.consecutiveAgain >= 2) set.add(e.id);
+      if (e.consecutiveAgain >= 1) set.add(e.id);
+    }
+    return set;
+  }, [map]);
+
+  // Tous les IDs qui ont été révisés au moins une fois (toute entrée SRS
+  // existante). Sert à distinguer "Nouveau" (jamais touché) de "Renforcé"
+  // (révisé ≥ 1 fois, pas encore maîtrisé) dans la table plate V5.
+  const reviewedIds = useMemo(() => {
+    const set = new Set<string>();
+    for (const e of Object.values(map)) {
+      if ((e.reviewCount ?? 0) > 0 || e.lastReviewedAt > 0) set.add(e.id);
     }
     return set;
   }, [map]);
@@ -149,6 +162,7 @@ export const useWordSRS = (options: UseWordSrsOptions = {}) => {
     masteredIds,
     dueIds,
     difficultIds,
+    reviewedIds,
     resetAll
   };
 };

@@ -36,11 +36,15 @@ import { getAllLessons } from '../data/lessons';
 import {
   type DialogueAudioManifest,
   type ReadingAudioManifest,
+  type AudioSpeed,
   loadDialogueManifest,
   loadReadingManifest,
+  isDialogueSlowAvailable,
+  isReadingSlowAvailable,
   resolveReadingSegmentUrl,
   cancelTTS
 } from '../utils/dialogue-audio';
+import AudioSpeedToggle from '../components/AudioSpeedToggle';
 import { playHanziAudio } from '../utils/audio';
 
 // Styles fc4-* (session, flip, mcq, typing, listening) et fc5-* (session shell)
@@ -139,7 +143,7 @@ const COPY: Record<Lang, CopyShape> = {
     speedSoonTitle: 'Speed round — bientôt disponible',
     speedSoonSub: 'Un chrono 60s pour réviser le plus de cartes possible. Reviens vite !',
     dialogueCatalogTitle: 'Écouter un dialogue',
-    dialogueCatalogSub: 'Choisis un dialogue — chaque réplique est jouée en audio synthétisé (voix zh-CN du navigateur).',
+    dialogueCatalogSub: 'Choisis un dialogue et écoute-le réplique par réplique.',
     dialogueLinesLabel: (n: number) => `${n} réplique${n > 1 ? 's' : ''}`,
     readingCatalogTitle: 'Lire un texte',
     readingCatalogSub: 'Choisis un texte — clique sur n\'importe quel mot pour voir sa traduction et son pinyin.',
@@ -198,7 +202,7 @@ const COPY: Record<Lang, CopyShape> = {
     speedSoonTitle: 'Speed round — coming soon',
     speedSoonSub: 'A 60s timer to burn through as many cards as you can. Back soon!',
     dialogueCatalogTitle: 'Listen to a dialogue',
-    dialogueCatalogSub: 'Pick a dialogue — each line is played with browser TTS (zh-CN voice).',
+    dialogueCatalogSub: 'Pick a dialogue and listen to it line by line.',
     dialogueLinesLabel: (n: number) => `${n} line${n > 1 ? 's' : ''}`,
     readingCatalogTitle: 'Read a text',
     readingCatalogSub: 'Pick a text — tap any word to see its translation and pinyin.',
@@ -254,6 +258,16 @@ export interface FreeLearningPageProps {
   masteredIds?: Set<string> | string[];
   difficultIds?: Set<string> | string[];
   onRate: (cardId: string, quality: 1 | 2 | 3 | 4) => void;
+  /**
+   * Callback optionnel pour ouvrir la page Lecture standalone
+   * (`ReadingPageV2`). Quand fourni, le tuile « Lire un texte »
+   * remonte la navigation au parent au lieu d'afficher le catalogue
+   * interne — ce qui évite d'avoir deux interfaces de lecture
+   * différentes (accueil vs. apprentissage libre).
+   */
+  onOpenReading?: () => void;
+  /** Idem pour les dialogues, pour rester cohérent. */
+  onOpenDialogue?: () => void;
 }
 
 const toSet = (v?: Set<string> | string[]): Set<string> =>
@@ -308,7 +322,9 @@ export function FreeLearningPage({
   dueIds,
   masteredIds,
   difficultIds,
-  onRate
+  onRate,
+  onOpenReading,
+  onOpenDialogue
 }: FreeLearningPageProps) {
   const copy = COPY[language];
 
@@ -538,10 +554,15 @@ export function FreeLearningPage({
     <div className="fc5-root">
       <div className="fc5-page">
         <header className="fc5-page-head">
-          <h1 className="fc5-page-title">{copy.title}</h1>
-          <p className="fc5-page-sub">
-            {copy.subtitle} · {copy.availableTotal(wordItems.length)}
-          </p>
+          <div className="xl-hero-row">
+            <div className="xl-hero-icon" aria-hidden="true">🧭</div>
+            <div className="xl-hero-head-text">
+              <h1 className="fc5-page-title">{copy.title}</h1>
+              <p className="fc5-page-sub">
+                {copy.subtitle} · {copy.availableTotal(wordItems.length)}
+              </p>
+            </div>
+          </div>
         </header>
 
         <section className="fl-mode-grid">
@@ -567,13 +588,22 @@ export function FreeLearningPage({
             icon={copy.modes.dialogue.icon}
             title={copy.modes.dialogue.title}
             sub={copy.modes.dialogue.sub}
-            onClick={() => setView('dialogue-list')}
+            onClick={() => {
+              if (onOpenDialogue) onOpenDialogue();
+              else setView('dialogue-list');
+            }}
           />
           <ModeTile
             icon={copy.modes.reading.icon}
             title={copy.modes.reading.title}
             sub={copy.modes.reading.sub}
-            onClick={() => setView('reading-list')}
+            onClick={() => {
+              // Quand App.tsx fournit `onOpenReading`, on délègue la navigation
+              // vers la page Lecture V2 standalone (celle ouverte aussi depuis
+              // la page d'accueil). Sinon, fallback sur le catalogue interne.
+              if (onOpenReading) onOpenReading();
+              else setView('reading-list');
+            }}
           />
           <ModeTile
             icon={copy.modes.speed.icon}
@@ -817,6 +847,9 @@ function DialoguePlayer({
   // Manifest chargé de /public/audio/dialogues/manifest.json. null = pas
   // encore tenté ; {} = tenté mais vide/absent.
   const [manifest, setManifest] = useState<DialogueAudioManifest | null>(null);
+  // Vitesse audio (mode shadowing) — local au DialoguePlayer.
+  const [audioSpeed, setAudioSpeed] = useState<AudioSpeed>('normal');
+  const [slowAvailable, setSlowAvailable] = useState(false);
   // Instance audio courante — recréée à chaque play. Réutiliser le même
   // élément + `src = ''` sur cancel déclenche un event 'error' asynchrone
   // sur Chrome qui fuit sur le onerror du prochain play et bascule à tort
@@ -844,11 +877,22 @@ function DialoguePlayer({
     };
   }, [cancelAudio]);
 
-  // Chargement du manifest une fois par montage.
+  // Recharge le manifest à chaque changement de vitesse (normal ↔ slow).
   useEffect(() => {
     let cancelled = false;
-    loadDialogueManifest().then((m) => {
+    loadDialogueManifest(audioSpeed).then((m) => {
       if (!cancelled) setManifest(m);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [audioSpeed]);
+
+  // Vérifie si le manifest slow contient au moins 1 entrée pour activer le toggle.
+  useEffect(() => {
+    let cancelled = false;
+    isDialogueSlowAvailable().then((ok) => {
+      if (!cancelled) setSlowAvailable(ok);
     });
     return () => {
       cancelled = true;
@@ -1087,6 +1131,17 @@ function DialoguePlayer({
           >
             {autoPlay ? copy.autoPlayOn : copy.autoPlayOff}
           </button>
+          <AudioSpeedToggle
+            mode={audioSpeed}
+            onChange={(next) => {
+              cancelTTS();
+              cancelAudio();
+              setIsPlaying(false);
+              setAudioSpeed(next);
+            }}
+            slowAvailable={slowAvailable}
+            size="compact"
+          />
         </div>
 
         <div className="fl-player-controls">
@@ -1205,10 +1260,26 @@ function ReadingPlayer({
   const [readingManifest, setReadingManifest] = useState<ReadingAudioManifest | null>(null);
   const readingAudioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Vitesse audio (mode shadowing) — local au ReadingPlayer.
+  const [audioSpeed, setAudioSpeed] = useState<AudioSpeed>('normal');
+  const [slowAvailable, setSlowAvailable] = useState(false);
+
+  // Recharge le manifest à chaque changement de vitesse.
   useEffect(() => {
     let cancelled = false;
-    loadReadingManifest().then((m) => {
+    loadReadingManifest(audioSpeed).then((m) => {
       if (!cancelled) setReadingManifest(m);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [audioSpeed]);
+
+  // Sonde au mount : le manifest slow contient-il au moins 1 entrée ?
+  useEffect(() => {
+    let cancelled = false;
+    isReadingSlowAvailable().then((ok) => {
+      if (!cancelled) setSlowAvailable(ok);
     });
     return () => {
       cancelled = true;
@@ -1495,6 +1566,15 @@ function ReadingPlayer({
         >
           🔊
         </button>
+        <AudioSpeedToggle
+          mode={audioSpeed}
+          onChange={(next) => {
+            stopReadingAudio();
+            setAudioSpeed(next);
+          }}
+          slowAvailable={slowAvailable}
+          size="compact"
+        />
       </div>
 
       <div className="fl-reading-body">

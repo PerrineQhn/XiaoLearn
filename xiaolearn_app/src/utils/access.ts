@@ -66,6 +66,30 @@ const getTrialEnd = (user: User | null): Date | null => {
   return new Date(start.getTime() + TRIAL_DURATION_DAYS * MS_PER_DAY);
 };
 
+/**
+ * Transforme un AppAccess en version "tout débloqué" — utilisée quand l'admin
+ * a activé le mode DEV (useDevMode). Simule un compte premium avec toutes
+ * les fonctionnalités maxées : accès leçons, AI, SRS complet, stats avancées.
+ *
+ * Ne persiste rien et ne touche pas à Stripe : c'est uniquement un wrapper
+ * en mémoire pour le runtime.
+ */
+export const applyDevMode = (access: AppAccess): AppAccess => ({
+  ...access,
+  tier: 'premium',
+  canUseAI: true,
+  canUseFloatingChat: true,
+  canAccessAllLessons: true,
+  hsk1LessonLimit: Number.MAX_SAFE_INTEGER,
+  srsMode: 'complete',
+  reviewItemLimit: null,
+  flashcardDailyNewLimit: 10,
+  maxMiniGames: 5,
+  showAdvancedStats: true,
+  syncEnabled: true,
+  hasPrioritySupport: true
+});
+
 export const buildAppAccess = (user: User | null, entitlement: EntitlementStatus | null): AppAccess => {
   const hasPremium = Boolean(entitlement?.active);
   const hasLessonOverride = hasLessonUnlockOverride(user);

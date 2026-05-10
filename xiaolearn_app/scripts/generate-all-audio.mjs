@@ -68,8 +68,8 @@ function parseFlag(prefix) {
   return raw.slice(prefix.length);
 }
 
-const ALL_CATEGORIES = ['hsk', 'phrases', 'grammar', 'readings', 'pinyin', 'examples'];
-const DEFAULT_CATEGORIES = ['hsk', 'phrases', 'grammar', 'pinyin', 'examples']; // readings a son propre script dédié
+const ALL_CATEGORIES = ['hsk', 'phrases', 'grammar', 'readings', 'pinyin', 'examples', 'dialogues'];
+const DEFAULT_CATEGORIES = ['hsk', 'phrases', 'grammar', 'pinyin', 'examples', 'dialogues']; // readings a son propre script dédié
 const categoryFilter =
   parseFlag('--category=')
     ?.split(',')
@@ -381,28 +381,51 @@ function hashExampleName(hanzi) {
 }
 
 /**
- * Scanne tous les .ts de src/data pour trouver les blocs `examples: [ {...} ]`.
- * Chaque example sans champ `audio:` génère un MP3 dans `public/audio/examples/`
- * avec un nom dérivé du hash du hanzi (même nom = réutilise le MP3).
+ * Scanne les blocs d'exemples pour générer un MP3 par hanzi via hash — à la
+ * fois dans les `.ts` de `src/data/` (champ `hanzi:`) ET dans les dictionnaires
+ * JSON `data/hsk*.json` + `data/hors-hsk.json` (champ `chinese:` normalisé vers
+ * `hanzi` au runtime, cf. `lessons.ts::normalizeExample`).
  *
- * Ne modifie PAS les .ts — côté app, c'est `getExampleAudioUrl(hanzi)` dans
- * audio.ts qui calcule l'URL en miroir.
+ * Sans le scan JSON, ~24k exemples (HSK1→HSK7 + hors-HSK) étaient muets : le
+ * bouton 🔊 de la phase Exemples restait caché par `ExampleRow` faute de
+ * fichier sur disque (cf. rapport audit-example-audio.mjs).
+ *
+ * Ne modifie PAS les sources — côté app, c'est `getExampleAudioUrl(hanzi)`
+ * dans audio.ts qui calcule l'URL en miroir.
  */
 function collectLessonExampleJobs() {
   const jobs = [];
   const seen = new Set();
 
-  function walk(dir) {
+  function pushJob(hanzi, sourceLabel) {
+    const cleanHanzi = hanzi.replace(/\d+$/, '').trim();
+    if (!cleanHanzi) return;
+    const name = hashExampleName(cleanHanzi);
+    if (seen.has(name)) return;
+    seen.add(name);
+    const outFile = path.join(publicAudioDir, 'examples', `${name}.mp3`);
+    jobs.push({
+      text: cleanHanzi,
+      outFile,
+      label: `${sourceLabel}:ex:${cleanHanzi.slice(0, 12)}`,
+      category: 'examples',
+      // Les exemples sont souvent des phrases entières → débit ralenti.
+      rate: cleanHanzi.length > 6 ? '-10%' : '-5%'
+    });
+  }
+
+  // ─── 1. Scan .ts (blocs `examples: [ { hanzi: "…" } ]`) ─────────────────
+  function walkTs(dir) {
     const out = [];
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) out.push(...walk(full));
+      if (entry.isDirectory()) out.push(...walkTs(full));
       else if (entry.name.endsWith('.ts')) out.push(full);
     }
     return out;
   }
 
-  const tsFiles = walk(srcDataRoot);
+  const tsFiles = walkTs(srcDataRoot);
   const blockRegex = /examples\s*:\s*\[/g;
 
   for (const file of tsFiles) {
@@ -410,7 +433,6 @@ function collectLessonExampleJobs() {
     blockRegex.lastIndex = 0;
     let m;
     while ((m = blockRegex.exec(content)) !== null) {
-      // Extraction naïve du tableau jusqu'au ']' de fermeture
       let depth = 1;
       let i = m.index + m[0].length;
       const start = i;
@@ -422,7 +444,6 @@ function collectLessonExampleJobs() {
       }
       const block = content.slice(start, i - 1);
 
-      // Sépare en objets { ... } au niveau 0
       let obj = '';
       let oDepth = 0;
       for (const ch of block) {
@@ -430,7 +451,11 @@ function collectLessonExampleJobs() {
         else if (ch === '}') {
           oDepth--; obj += ch;
           if (oDepth === 0) {
-            processObject(obj, file);
+            const hanziMatch = obj.match(/hanzi\s*:\s*['"]([^'"]+)['"]/);
+            const hasExplicitAudio = /\baudio\s*:\s*['"][^'"]+['"]/.test(obj);
+            if (hanziMatch && !hasExplicitAudio) {
+              pushJob(hanziMatch[1], path.basename(file));
+            }
             obj = '';
           }
         } else if (oDepth > 0) obj += ch;
@@ -438,31 +463,30 @@ function collectLessonExampleJobs() {
     }
   }
 
-  function processObject(o, file) {
-    const hanziMatch = o.match(/hanzi\s*:\s*['"]([^'"]+)['"]/);
-    if (!hanziMatch) return;
-    const hanzi = hanziMatch[1];
-    // Si l'exemple a déjà un champ audio, on ne génère rien (on respecte la
-    // valeur déclarée — ce sera scanné par collectFromTsSources si besoin).
-    if (/\baudio\s*:\s*['"][^'"]+['"]/.test(o)) return;
+  // ─── 2. Scan dictionnaires JSON (examples[].chinese) ─────────────────────
+  const jsonCandidates = fs
+    .readdirSync(dataRoot)
+    .filter((n) => /^hsk\d+\.json$/.test(n) || n === 'hors-hsk.json');
 
-    const cleanHanzi = hanzi.replace(/\d+$/, '').trim();
-    if (!cleanHanzi) return;
-
-    const name = hashExampleName(cleanHanzi);
-    const key = name;
-    if (seen.has(key)) return;
-    seen.add(key);
-
-    const outFile = path.join(publicAudioDir, 'examples', `${name}.mp3`);
-    jobs.push({
-      text: cleanHanzi,
-      outFile,
-      label: `${path.basename(file)}:ex:${cleanHanzi.slice(0, 12)}`,
-      category: 'examples',
-      // Les exemples sont souvent des phrases entières → débit ralenti.
-      rate: cleanHanzi.length > 6 ? '-10%' : '-5%'
-    });
+  for (const name of jsonCandidates) {
+    const full = path.join(dataRoot, name);
+    const raw = fs.readFileSync(full, 'utf8');
+    let data;
+    try { data = JSON.parse(raw); } catch { continue; }
+    if (!Array.isArray(data)) continue;
+    for (const item of data) {
+      const examples = item?.examples;
+      if (!Array.isArray(examples)) continue;
+      for (const ex of examples) {
+        const hanzi = ex?.hanzi ?? ex?.chinese;
+        if (!hanzi || typeof hanzi !== 'string') continue;
+        // Si l'exemple porte déjà un audio explicite on skip — collectFromTsSources
+        // ne scanne pas les JSON, donc ce cas reste tout de même rare (et le hash
+        // MP3 fait office de secours côté app).
+        if (ex?.audio) continue;
+        pushJob(hanzi, name);
+      }
+    }
   }
 
   return jobs;
@@ -521,6 +545,33 @@ async function main() {
     const exJobs = collectLessonExampleJobs();
     console.log(`  ✏️  Exemples de leçons : ${exJobs.length} phrases`);
     allJobs.push(...exJobs.slice(0, limit));
+  }
+
+  if (categoryFilter.includes('dialogues')) {
+    // Extraits explicites de dialogues référencés depuis lesson-exercises.ts
+    // (exercices de listening isolés — pas les dialogues complets qui ont
+    // leur propre script generate-dialogue-audio.mjs via manifest). On liste
+    // en dur pour garantir la fidélité du texte : le scan générique
+    // `collectFromTsSources` se trompe de phrase quand plusieurs exercices
+    // voisins ont chacun leur bout de hanzi dans `explanationFr`.
+    const dialogueJobs = [
+      {
+        text: '请问几位？',
+        outFile: path.join(projectRoot, 'public', 'audio', 'dialogues', 'restaurant_greeting.mp3'),
+        label: 'restaurant_greeting.mp3',
+        category: 'dialogues',
+        rate: '-5%'
+      },
+      {
+        text: '服务员，买单。',
+        outFile: path.join(projectRoot, 'public', 'audio', 'dialogues', 'restaurant_order.mp3'),
+        label: 'restaurant_order.mp3',
+        category: 'dialogues',
+        rate: '-5%'
+      }
+    ];
+    console.log(`  🗨️  Dialogues (extraits) : ${dialogueJobs.length} audios`);
+    allJobs.push(...dialogueJobs.slice(0, limit));
   }
 
   console.log(`\n  Total jobs : ${allJobs.length}\n`);

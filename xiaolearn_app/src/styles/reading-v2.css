@@ -1,0 +1,860 @@
+/* =========================================================================
+   reading-v2.css — Page "Lectures" XiaoLearn (V6)
+   -------------------------------------------------------------------------
+   Structure UX alignée sur SimulatorPageV2 : header avec tuile icône,
+   tabs niveaux avec (N), sections groupées, cartes avec emoji thème +
+   badge niveau, vue détail avec hero centré et badges.
+
+   Palette XiaoLearn (rouge + jade + or), tokens par bloc CECR :
+     A* → jade (familier)
+     B* → or (intermédiaire)
+     C* → rouge (avancé)
+   ========================================================================= */
+
+.reading-v2 {
+  --rv-bg: #fffaf3;
+  --rv-surface: #ffffff;
+  --rv-surface-2: #faf3ea;
+  --rv-border: #ece5dc;
+  --rv-border-strong: #d9cfc1;
+  --rv-ink: #1f1a16;
+  --rv-muted: #6a655f;
+
+  --rv-primary: #c8342e;
+  --rv-primary-dark: #a62820;
+  --rv-primary-soft: #fde9e8;
+  --rv-primary-ink: #7a1f1b;
+
+  --rv-jade: #2f9e6a;
+  --rv-jade-soft: #e3f5ec;
+  --rv-jade-ink: #1f6d4a;
+
+  --rv-gold: #c9a227;
+  --rv-gold-soft: #fbf1cf;
+  --rv-gold-ink: #8a6f10;
+
+  --rv-shadow-sm: 0 1px 2px rgba(31, 26, 22, 0.05), 0 4px 14px rgba(31, 26, 22, 0.04);
+  --rv-shadow-md: 0 8px 24px rgba(31, 26, 22, 0.08);
+  --rv-shadow-lg: 0 18px 40px rgba(31, 26, 22, 0.12);
+
+  --rv-radius: 16px;
+  --rv-radius-sm: 10px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px clamp(12px, 2.5vw, 32px) 40px;
+  color: var(--rv-ink);
+  font-family: inherit;
+  background: var(--rv-bg);
+}
+
+/* =========================================================================
+   BOUTONS
+   ========================================================================= */
+.reading-v2 .rv2-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--rv-radius-sm);
+  transition: background 0.18s ease, transform 0.08s ease,
+    box-shadow 0.18s ease, color 0.18s ease;
+  line-height: 1.2;
+}
+.reading-v2 .rv2-btn:active { transform: translateY(1px); }
+
+.reading-v2 .rv2-btn--link {
+  background: transparent;
+  color: var(--rv-primary);
+  padding: 6px 10px;
+  font-weight: 600;
+}
+.reading-v2 .rv2-btn--link:hover { background: var(--rv-primary-soft); }
+
+/* =========================================================================
+   CATALOG — header
+   ========================================================================= */
+.reading-v2 .rv2-catalog-back {
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.reading-v2 .rv2-catalog-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.reading-v2 .rv2-catalog-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fde9e8 0%, #fbf1cf 100%);
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  box-shadow: 0 6px 16px rgba(200, 52, 46, 0.18);
+  flex-shrink: 0;
+  border: 1px solid #f4c8c3;
+}
+.reading-v2 .rv2-catalog-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.reading-v2 .rv2-catalog-header h1 {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 28px);
+  color: var(--rv-ink);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.reading-v2 .rv2-catalog-header p {
+  margin: 0;
+  color: var(--rv-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================================
+   TABS niveau (pills avec counts)
+   ========================================================================= */
+.reading-v2 .rv2-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rv-border);
+}
+.reading-v2 .rv2-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rv-ink);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, box-shadow 0.15s ease, transform 0.08s ease;
+}
+.reading-v2 .rv2-tab:hover:not(.is-active) {
+  background: var(--rv-surface-2);
+  border-color: var(--rv-border-strong);
+}
+.reading-v2 .rv2-tab.is-active {
+  background: var(--rv-primary);
+  color: #fff;
+  border-color: var(--rv-primary);
+  box-shadow: 0 4px 12px rgba(200, 52, 46, 0.22);
+}
+.reading-v2 .rv2-tab-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rv-muted);
+  opacity: 0.85;
+}
+.reading-v2 .rv2-tab.is-active .rv2-tab-count {
+  color: #fff;
+  opacity: 0.88;
+}
+
+/* =========================================================================
+   SECTIONS groupées (mode "Tous")
+   ========================================================================= */
+.reading-v2 .rv2-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.reading-v2 .rv2-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.reading-v2 .rv2-section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--rv-ink);
+  letter-spacing: -0.005em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.reading-v2 .rv2-section-title-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--rv-card-accent-soft, var(--rv-primary-soft));
+  color: var(--rv-card-accent-ink, var(--rv-primary-ink));
+  border: 1px solid var(--rv-border);
+}
+.reading-v2 .rv2-section-title-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rv-muted);
+}
+
+/* État vide */
+.reading-v2 .rv2-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--rv-muted);
+  background: var(--rv-surface);
+  border: 1px dashed var(--rv-border-strong);
+  border-radius: var(--rv-radius);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* =========================================================================
+   GRILLE de cartes
+   ========================================================================= */
+.reading-v2 .rv2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Accent par bloc CECR, appliqué via modificateur sur la carte */
+.reading-v2 .rv2-card {
+  position: relative;
+  background: var(--rv-surface);
+  /* Border 1px qui ne change PAS de width au hover (seul le color varie via
+     box-shadow inset) — évite le sub-pixel reflow qui faisait trembler la
+     carte en boucle hover/unhover sur certains agents (Safari/Chrome). */
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  user-select: none;
+  box-shadow: 0 1px 2px rgba(31, 26, 22, 0.04);
+  /* Plus de transition sur transform (cf. règle :hover) — uniquement les
+     propriétés qui ne touchent pas à la mise en page. */
+  transition: box-shadow 0.2s ease, border-color 0.15s ease;
+  min-height: 210px;
+
+  /* par défaut : rouge */
+  --rv-card-accent: var(--rv-primary);
+  --rv-card-accent-soft: var(--rv-primary-soft);
+  --rv-card-accent-ink: var(--rv-primary-ink);
+}
+
+/* Tous les enfants directs sont décoratifs : on neutralise pointer-events
+   pour que CHAQUE clic finisse sur le <button> .rv2-card et déclenche le
+   onClick — sinon un clic sur un enfant peut capturer l'événement et
+   le clic semble "mort". */
+.reading-v2 .rv2-card > * {
+  pointer-events: none;
+}
+.reading-v2 .rv2-card--a {
+  --rv-card-accent: var(--rv-jade);
+  --rv-card-accent-soft: var(--rv-jade-soft);
+  --rv-card-accent-ink: var(--rv-jade-ink);
+}
+.reading-v2 .rv2-card--b {
+  --rv-card-accent: var(--rv-gold);
+  --rv-card-accent-soft: var(--rv-gold-soft);
+  --rv-card-accent-ink: var(--rv-gold-ink);
+}
+.reading-v2 .rv2-card--c {
+  --rv-card-accent: var(--rv-primary);
+  --rv-card-accent-soft: var(--rv-primary-soft);
+  --rv-card-accent-ink: var(--rv-primary-ink);
+}
+
+/* Pas de translateY au hover : ça faisait osciller la position de la carte
+   sous le curseur (translation de -2px → bord du bas qui passe au-dessus
+   du curseur → :hover perdu → carte revient → re-hover → boucle de
+   tremblement). On ne touche plus aux dimensions ni à la position. */
+.reading-v2 .rv2-card:hover {
+  /* Border colorée simulée via box-shadow inset (pas de reflow). */
+  border-color: transparent;
+  box-shadow:
+    inset 0 0 0 1px var(--rv-card-accent),
+    0 8px 22px rgba(31, 26, 22, 0.1);
+}
+
+.reading-v2 .rv2-card:focus-visible {
+  outline: 2px solid var(--rv-card-accent);
+  outline-offset: 2px;
+}
+
+.reading-v2 .rv2-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.reading-v2 .rv2-card-emoji-tile {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  background: var(--rv-card-accent-soft);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.reading-v2 .rv2-card:hover .rv2-card-emoji-tile {
+  transform: scale(1.05) rotate(-2deg);
+}
+.reading-v2 .rv2-card-level {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--rv-card-accent-soft);
+  color: var(--rv-card-accent-ink);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.reading-v2 .rv2-card-theme {
+  font-size: 11px;
+  color: var(--rv-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin: 0;
+}
+.reading-v2 .rv2-card-title {
+  margin: 2px 0 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--rv-ink);
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+.reading-v2 .rv2-card-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--rv-muted);
+  line-height: 1.5;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reading-v2 .rv2-card-foot {
+  padding-top: 10px;
+  border-top: 1px solid var(--rv-border);
+  font-size: 12px;
+  color: var(--rv-muted);
+  font-weight: 500;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.reading-v2 .rv2-card-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.reading-v2 .rv2-card-stat-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* =========================================================================
+   DETAIL — hero façon briefing simulateur
+   ========================================================================= */
+.reading-v2 .rv2-detail {
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius);
+  padding: 28px clamp(20px, 3vw, 32px) 32px;
+  /* On laisse la box prendre toute la largeur du conteneur parent
+     (`.reading-v2` plafonne déjà à 1080px), pour rester cohérent avec
+     les autres pages (Leçons, Évaluation, Bilans). */
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: var(--rv-shadow-md);
+  position: relative;
+}
+.reading-v2 .rv2-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rv-primary) 0%, var(--rv-gold) 100%);
+  border-radius: var(--rv-radius) var(--rv-radius) 0 0;
+}
+.reading-v2 .rv2-detail-back {
+  margin-bottom: 4px;
+}
+
+.reading-v2 .rv2-detail-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin: 14px 0 28px;
+  padding: 22px 16px 24px;
+  border-radius: var(--rv-radius);
+  background:
+    radial-gradient(circle at 50% 0%, var(--rv-card-accent-soft, var(--rv-primary-soft)) 0%, transparent 65%),
+    linear-gradient(180deg, #fefbf7 0%, var(--rv-surface) 100%);
+  border: 1px solid var(--rv-border);
+
+  /* override par niveau */
+  --rv-card-accent: var(--rv-primary);
+  --rv-card-accent-soft: var(--rv-primary-soft);
+  --rv-card-accent-ink: var(--rv-primary-ink);
+}
+.reading-v2 .rv2-detail-hero--a {
+  --rv-card-accent: var(--rv-jade);
+  --rv-card-accent-soft: var(--rv-jade-soft);
+  --rv-card-accent-ink: var(--rv-jade-ink);
+}
+.reading-v2 .rv2-detail-hero--b {
+  --rv-card-accent: var(--rv-gold);
+  --rv-card-accent-soft: var(--rv-gold-soft);
+  --rv-card-accent-ink: var(--rv-gold-ink);
+}
+.reading-v2 .rv2-detail-hero--c {
+  --rv-card-accent: var(--rv-primary);
+  --rv-card-accent-soft: var(--rv-primary-soft);
+  --rv-card-accent-ink: var(--rv-primary-ink);
+}
+
+.reading-v2 .rv2-detail-emoji-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--rv-surface);
+  border: 3px solid var(--rv-card-accent);
+  box-shadow: 0 4px 18px rgba(31, 26, 22, 0.12),
+    inset 0 0 0 4px var(--rv-card-accent-soft);
+  flex-shrink: 0;
+}
+.reading-v2 .rv2-detail-emoji {
+  font-size: 52px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(31, 26, 22, 0.12));
+}
+
+.reading-v2 .rv2-detail-hero-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+}
+.reading-v2 .rv2-detail-hero h1 {
+  margin: 0;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 800;
+  color: var(--rv-ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.reading-v2 .rv2-detail-intro {
+  margin: 0;
+  color: var(--rv-muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.reading-v2 .rv2-detail-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.reading-v2 .rv2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--rv-surface-2);
+  color: var(--rv-muted);
+  letter-spacing: 0.04em;
+  border: 1px solid var(--rv-border);
+}
+.reading-v2 .rv2-badge--level {
+  background: var(--rv-card-accent-soft);
+  color: var(--rv-card-accent-ink);
+  border-color: transparent;
+}
+.reading-v2 .rv2-badge--theme {
+  background: var(--rv-surface-2);
+  color: var(--rv-ink);
+}
+
+/* =========================================================================
+   DETAIL — toggles (pinyin / traduction)
+   ========================================================================= */
+.reading-v2 .rv2-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: var(--rv-surface-2);
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius-sm);
+}
+.reading-v2 .rv2-toggle {
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--rv-muted);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.reading-v2 .rv2-toggle:hover:not(.is-on) {
+  background: var(--rv-surface-2);
+  border-color: var(--rv-border-strong);
+}
+.reading-v2 .rv2-toggle.is-on {
+  background: var(--rv-gold-soft);
+  color: var(--rv-gold-ink);
+  border-color: var(--rv-gold);
+}
+.reading-v2 .rv2-toggle-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rv-border-strong);
+  transition: background 0.15s ease;
+}
+.reading-v2 .rv2-toggle.is-on .rv2-toggle-dot {
+  background: var(--rv-gold);
+}
+
+/* =========================================================================
+   DETAIL — segments
+   ========================================================================= */
+.reading-v2 .rv2-segments {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 22px;
+}
+.reading-v2 .rv2-segment {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--rv-border);
+}
+.reading-v2 .rv2-segment:last-child { border-bottom: none; }
+
+.reading-v2 .rv2-segment-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rv-muted);
+  padding-top: 4px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.reading-v2 .rv2-segment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.reading-v2 .rv2-hanzi {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--rv-ink);
+}
+.reading-v2 .rv2-pinyin {
+  font-size: 13px;
+  color: var(--rv-jade);
+  font-style: italic;
+  line-height: 1.4;
+}
+.reading-v2 .rv2-translation {
+  font-size: 14px;
+  color: var(--rv-muted);
+  line-height: 1.5;
+}
+
+/* =========================================================================
+   DETAIL — sections vocab + questions
+   ========================================================================= */
+.reading-v2 .rv2-section-block {
+  margin-top: 22px;
+}
+.reading-v2 .rv2-section-head {
+  font-size: 12px;
+  color: var(--rv-muted);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.reading-v2 .rv2-section-head::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background: var(--rv-primary);
+  border-radius: 2px;
+}
+
+.reading-v2 .rv2-vocab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reading-v2 .rv2-vocab-chip {
+  background: var(--rv-surface-2);
+  border: 1px solid var(--rv-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 15px;
+  color: var(--rv-ink);
+}
+
+.reading-v2 .rv2-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reading-v2 .rv2-qa {
+  background: var(--rv-surface-2);
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius-sm);
+  padding: 12px 14px;
+}
+.reading-v2 .rv2-qa-q {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--rv-ink);
+  font-size: 14px;
+}
+.reading-v2 .rv2-qa-a {
+  color: var(--rv-jade-ink);
+  font-size: 14px;
+  line-height: 1.5;
+  background: var(--rv-jade-soft);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-left: 3px solid var(--rv-jade);
+}
+.reading-v2 .rv2-qa-a.is-hidden {
+  filter: blur(5px);
+  cursor: pointer;
+  user-select: none;
+}
+.reading-v2 .rv2-qa-a:not(.is-hidden) {
+  cursor: pointer;
+}
+
+/* =========================================================================
+   MOBILE
+   ========================================================================= */
+@media (max-width: 640px) {
+  .reading-v2 {
+    padding: 16px 12px 80px;
+  }
+  .reading-v2 .rv2-detail {
+    padding: 22px 16px 24px;
+  }
+  .reading-v2 .rv2-detail-emoji-wrap {
+    width: 80px;
+    height: 80px;
+  }
+  .reading-v2 .rv2-detail-emoji {
+    font-size: 42px;
+  }
+  .reading-v2 .rv2-grid {
+    grid-template-columns: 1fr;
+  }
+  .reading-v2 .rv2-segment {
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+  }
+  .reading-v2 .rv2-hanzi {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================================
+   EXTENSION : lignes de dialogue (DialoguePageV2 réutilise ce fichier)
+   -------------------------------------------------------------------------
+   DialoguePageV2 utilise `<div className="reading-v2 dialogue-v2">` comme
+   wrapper pour hériter de TOUT reading-v2.css (header, tabs, grid, cards,
+   hero détail, vocab, QA…). Seule la représentation d'une « ligne » diffère :
+   chaque réplique a un locuteur + un bouton ▶ dédié.
+   ========================================================================= */
+.reading-v2 .rv2-dlg-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.reading-v2 .rv2-dlg-line {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--rv-radius-sm);
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+  transition: background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.reading-v2 .rv2-dlg-line:hover {
+  border-color: var(--rv-border-strong);
+  background: var(--rv-surface-2);
+}
+.reading-v2 .rv2-dlg-line.is-playing {
+  background: var(--rv-primary-soft);
+  border-color: var(--rv-primary);
+  box-shadow: 0 0 0 3px rgba(200, 52, 46, 0.12);
+}
+
+.reading-v2 .rv2-dlg-speaker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rv-primary-soft) 0%, var(--rv-gold-soft) 100%);
+  color: var(--rv-primary-ink);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.1;
+  min-height: 28px;
+  align-self: start;
+  text-align: center;
+  word-break: break-word;
+}
+
+.reading-v2 .rv2-dlg-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.reading-v2 .rv2-dlg-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reading-v2 .rv2-dlg-play {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--rv-border);
+  background: #fff;
+  color: var(--rv-primary);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+.reading-v2 .rv2-dlg-play:hover {
+  background: var(--rv-primary);
+  color: #fff;
+  border-color: var(--rv-primary);
+}
+.reading-v2 .rv2-dlg-play:active {
+  transform: scale(0.94);
+}
+.reading-v2 .rv2-dlg-play.is-on {
+  background: var(--rv-primary);
+  color: #fff;
+  border-color: var(--rv-primary);
+  box-shadow: 0 0 0 3px rgba(200, 52, 46, 0.18);
+}
+
+.reading-v2 .rv2-dlg-hanzi {
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--rv-ink);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.reading-v2 .rv2-dlg-note {
+  margin-top: 4px;
+  background: var(--rv-gold-soft);
+  border-left: 3px solid var(--rv-gold);
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: var(--rv-gold-ink);
+  border-radius: 6px;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .reading-v2 .rv2-dlg-line {
+    grid-template-columns: 72px 1fr;
+    gap: 8px;
+    padding: 10px;
+  }
+  .reading-v2 .rv2-dlg-speaker {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .reading-v2 .rv2-dlg-hanzi {
+    font-size: 18px;
+  }
+}

@@ -22,6 +22,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import type { CSSProperties } from 'react';
 import type {
   FlashcardV2Item,
   FlashcardV2CustomList,
@@ -31,7 +32,11 @@ import type {
   FlashcardDirection,
   SentenceFlashcard
 } from '../types/flashcard-v3';
-import type { UsePersonalFlashcardsReturn } from '../hooks/usePersonalFlashcards';
+import type {
+  CreatePersonalInput,
+  UsePersonalFlashcardsReturn
+} from '../hooks/usePersonalFlashcards';
+import { lookupPinyinForHanzi } from './FlashcardPageV3';
 import {
   type FlashcardSessionSummary,
   type WordOfTheDay
@@ -110,6 +115,12 @@ const COPY = {
     sentenceUnit: 'phrases',
     btnAdd: '+ Ajouter',
     btnStudyNow: '⚡ Étudier maintenant',
+    srsCardKicker: 'Répétition espacée',
+    srsCardTitle: (n: number, unit: string) =>
+      `${n} ${unit} à revoir aujourd'hui`,
+    srsCardSub:
+      "Ces cartes risquent d'être oubliées. Il est temps de rafraîchir ta mémoire.",
+    srsCardCta: 'Réviser maintenant →',
     statTotal: 'Total 📇',
     statMastered: 'Maîtrisés ✅',
     statDue: 'À revoir 🔄',
@@ -134,6 +145,8 @@ const COPY = {
     deckStatusNew: 'Pas encore étudié',
     deckStatusProgress: 'En cours',
     deckStatusMastered: 'Maîtrisé',
+    deckLastStudiedNever: 'Pas encore étudié',
+    deckLastStudiedRelative: (label: string) => `Étudié ${label}`,
     // Deck detail
     deckBack: '← Retour aux collections',
     deckStudyCta: 'Étudier la collection',
@@ -158,6 +171,25 @@ const COPY = {
     deckTableEmpty: 'Aucun mot dans ce filtre.',
     deckActionListen: 'Écouter',
     deckActionStar: 'Marquer difficile',
+    // Flat table (Seonsaengnim-style list view)
+    flatColStatus: 'STATUT',
+    flatColWord: 'MOT',
+    flatColTrans: 'TRADUCTION',
+    flatColSource: 'SOURCE',
+    flatStudyCta: 'Étudier →',
+    flatEmpty: 'Aucune carte pour ce filtre.',
+    flatSourceLesson: (title: string) => `📖 Leçon : ${title}`,
+    flatSourceSentence: (title: string) => `💬 ${title}`,
+    flatTitleWordsAll: 'Tous les mots',
+    flatTitleWordsMastered: 'Mots maîtrisés',
+    flatTitleWordsInProgress: 'Mots en cours',
+    flatTitleWordsNew: 'Nouveaux mots',
+    flatTitleWordsDifficult: 'Mots difficiles',
+    flatTitleSentencesAll: 'Toutes les phrases',
+    flatTitleSentencesMastered: 'Phrases maîtrisées',
+    flatTitleSentencesInProgress: 'Phrases en cours',
+    flatTitleSentencesNew: 'Nouvelles phrases',
+    flatTitleSentencesDifficult: 'Phrases difficiles',
     // Modal
     modalTitle: 'Que veux-tu étudier ?',
     modalClose: 'Fermer',
@@ -212,6 +244,12 @@ const COPY = {
     sentenceUnit: 'sentences',
     btnAdd: '+ Add',
     btnStudyNow: '⚡ Study now',
+    srsCardKicker: 'Spaced repetition',
+    srsCardTitle: (n: number, unit: string) =>
+      `${n} ${unit} due today`,
+    srsCardSub:
+      'These cards risk being forgotten. Time to refresh your memory.',
+    srsCardCta: 'Review now →',
     statTotal: 'Total 📇',
     statMastered: 'Mastered ✅',
     statDue: 'Due 🔄',
@@ -236,6 +274,8 @@ const COPY = {
     deckStatusNew: 'Not studied yet',
     deckStatusProgress: 'In progress',
     deckStatusMastered: 'Mastered',
+    deckLastStudiedNever: 'Not studied yet',
+    deckLastStudiedRelative: (label: string) => `Studied ${label}`,
     // Deck detail
     deckBack: '← Back to collections',
     deckStudyCta: 'Study collection',
@@ -260,6 +300,25 @@ const COPY = {
     deckTableEmpty: 'No word in this filter.',
     deckActionListen: 'Listen',
     deckActionStar: 'Flag difficult',
+    // Flat table (Seonsaengnim-style list view)
+    flatColStatus: 'STATUS',
+    flatColWord: 'WORD',
+    flatColTrans: 'TRANSLATION',
+    flatColSource: 'SOURCE',
+    flatStudyCta: 'Study →',
+    flatEmpty: 'No card for this filter.',
+    flatSourceLesson: (title: string) => `📖 Lesson: ${title}`,
+    flatSourceSentence: (title: string) => `💬 ${title}`,
+    flatTitleWordsAll: 'All words',
+    flatTitleWordsMastered: 'Mastered words',
+    flatTitleWordsInProgress: 'Words in progress',
+    flatTitleWordsNew: 'New words',
+    flatTitleWordsDifficult: 'Difficult words',
+    flatTitleSentencesAll: 'All sentences',
+    flatTitleSentencesMastered: 'Mastered sentences',
+    flatTitleSentencesInProgress: 'Sentences in progress',
+    flatTitleSentencesNew: 'New sentences',
+    flatTitleSentencesDifficult: 'Difficult sentences',
     modalTitle: 'What do you want to study?',
     modalClose: 'Close',
     modeCollection: 'Current collection',
@@ -334,8 +393,45 @@ function sentenceToStudyCard(s: SentenceFlashcard): StudyCard {
     hanzi: s.hanzi,
     pinyin: s.pinyin,
     translationFr: s.translationFr,
-    translationEn: s.translationEn
+    translationEn: s.translationEn,
+    // Propage l'URL MP3 pré-générée pour que le bouton 🔊 puisse lire la phrase
+    // au lieu de tenter de résoudre le hanzi via les conventions HSK.
+    audio: s.audio
   };
+}
+
+/**
+ * Formate un timestamp en label relatif court ("aujourd'hui", "hier", "il y a 3j",
+ * "il y a 2sem", "il y a 4mois"). Côté EN : "today", "yesterday", "3d ago"…
+ * Renvoie null si le timestamp est falsy (carte jamais étudiée).
+ */
+function formatRelativeStudyTime(
+  ts: number | null | undefined,
+  language: 'fr' | 'en'
+): string | null {
+  if (!ts || ts <= 0) return null;
+  // Garde-fou : un `lastReviewedAt` historiquement utilisé comme simple
+  // marqueur (valeur 1) afficherait "il y a 56 ans". On rejette tout ts
+  // antérieur au 1er janvier 2010 (ms = 1262304000000).
+  if (ts < 1_262_304_000_000) return null;
+  const diffMs = Math.max(0, Date.now() - ts);
+  const minutes = Math.floor(diffMs / 60_000);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  if (language === 'fr') {
+    if (days === 0) return "aujourd'hui";
+    if (days === 1) return 'hier';
+    if (days < 7) return `il y a ${days}j`;
+    if (days < 30) return `il y a ${Math.floor(days / 7)}sem`;
+    if (days < 365) return `il y a ${Math.floor(days / 30)}mois`;
+    return `il y a ${Math.floor(days / 365)}an${Math.floor(days / 365) > 1 ? 's' : ''}`;
+  }
+  if (days === 0) return 'today';
+  if (days === 1) return 'yesterday';
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
 }
 
 function hashStringToInt(s: string): number {
@@ -384,10 +480,57 @@ type DeckSummary = {
   newN: number;
   status: 'new' | 'progress' | 'mastered';
   items: StudyCard[];
+  /** Timestamp ms de la dernière étude (max sur les items du deck), ou null. */
+  lastStudiedAt?: number | null;
 };
 
 // ---- Filtre du tableau dans la vue détail d'une collection ----
 type DeckFilter = 'all' | 'mastered' | 'progress' | 'new' | 'difficult';
+
+// ---- Ligne de la vue table plate (inspiration Seonsaengnim) ----
+type FlatRowStatus = 'mastered' | 'progress' | 'new' | 'difficult';
+type FlatRow = {
+  id: string;
+  status: FlatRowStatus;
+  hanzi: string;
+  pinyin: string;
+  translation: string;
+  sourceLabel: string;
+  audio?: string;
+};
+
+function flatTableTitle(
+  activeTab: ActiveTab,
+  source: SessionSource,
+  copy: CopyType
+): string {
+  if (activeTab === 'sentences') {
+    switch (source) {
+      case 'mastered':
+        return copy.flatTitleSentencesMastered;
+      case 'in-progress':
+        return copy.flatTitleSentencesInProgress;
+      case 'new':
+        return copy.flatTitleSentencesNew;
+      case 'difficult':
+        return copy.flatTitleSentencesDifficult;
+      default:
+        return copy.flatTitleSentencesAll;
+    }
+  }
+  switch (source) {
+    case 'mastered':
+      return copy.flatTitleWordsMastered;
+    case 'in-progress':
+      return copy.flatTitleWordsInProgress;
+    case 'new':
+      return copy.flatTitleWordsNew;
+    case 'difficult':
+      return copy.flatTitleWordsDifficult;
+    default:
+      return copy.flatTitleWordsAll;
+  }
+}
 
 // ============================================================================
 //  COMPONENT
@@ -425,6 +568,10 @@ export default function FlashcardPageV5({
   const [modalMode, setModalMode] = useState<ModalMode>('revise');
   const [modalCount, setModalCount] = useState<number>(20);
   const [direction, setDirection] = useState<FlashcardDirection>('hanzi-to-fr');
+
+  // Modal "Ajouter une carte perso"
+  const [addOpen, setAddOpen] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
 
   // Active session data
   const [activeCards, setActiveCards] = useState<StudyCard[]>([]);
@@ -474,6 +621,44 @@ export default function FlashcardPageV5({
     const difficult = items.filter((it) => difficultSet.has(it.id)).length;
     return { due, inProgress, newN, difficult };
   }, [activeTab, wordItems, sentenceCards, dueSet, masteredSet, difficultSet]);
+
+  // Compteurs MOTS (indépendants de activeTab) — utilisés pour les pills
+  // "Maîtrisés / En cours / Nouveaux / Difficiles" sur l'onglet Mots.
+  const wordCounts = useMemo(() => {
+    const mastered = wordItems.filter((w) => masteredSet.has(w.id)).length;
+    const inProgress = wordItems.filter(
+      (w) => !masteredSet.has(w.id) && !dueSet.has(w.id) && w.lastReviewedAt
+    ).length;
+    const newN = wordItems.filter(
+      (w) => !masteredSet.has(w.id) && !dueSet.has(w.id) && !w.lastReviewedAt
+    ).length;
+    const difficult = wordItems.filter((w) => difficultSet.has(w.id)).length;
+    return { mastered, inProgress, newN, difficult };
+  }, [wordItems, dueSet, masteredSet, difficultSet]);
+
+  // Compteurs PHRASES — miroir de wordCounts pour l'onglet Phrases.
+  const sentenceCounts = useMemo(() => {
+    const mastered = sentenceCards.filter((s) => masteredSet.has(s.id)).length;
+    const inProgress = sentenceCards.filter(
+      (s) => !masteredSet.has(s.id) && !dueSet.has(s.id) && s.lastReviewedAt
+    ).length;
+    const newN = sentenceCards.filter(
+      (s) => !masteredSet.has(s.id) && !dueSet.has(s.id) && !s.lastReviewedAt
+    ).length;
+    const difficult = sentenceCards.filter((s) => difficultSet.has(s.id)).length;
+    return { mastered, inProgress, newN, difficult };
+  }, [sentenceCards, dueSet, masteredSet, difficultSet]);
+
+  // Map id → titre de leçon, pour la colonne SOURCE de la table plate (mots).
+  const wordSourceMap = useMemo<Map<string, string>>(() => {
+    const m = new Map<string, string>();
+    if (!lessonsFromUser) return m;
+    for (const lesson of lessonsFromUser) {
+      const title = language === 'en' && lesson.titleEn ? lesson.titleEn : lesson.title;
+      for (const id of lesson.itemIds) m.set(id, title);
+    }
+    return m;
+  }, [lessonsFromUser, language]);
 
   const masteredByHsk = useMemo(() => {
     const out: Record<string, number> = {};
@@ -661,6 +846,84 @@ export default function FlashcardPageV5({
       ];
     }
 
+    // Filtres de statut (mastered/in-progress/new/difficult) : table plate
+    // (FlatCardTable). La grille n'est utilisée que pour les vues "regroupées"
+    // (Tous / Leçons / Prof. Park / Manuel / Mes Cartes / Mot du jour).
+    if (
+      sessionSource === 'mastered' ||
+      sessionSource === 'in-progress' ||
+      sessionSource === 'new' ||
+      sessionSource === 'difficult'
+    ) {
+      return [];
+    }
+
+    // ===== Onglet Phrases + vue regroupée =====
+    // Une phrase = une ligne de dialogue d'une leçon complétée. On groupe par
+    // lessonId pour rendre une tuile par leçon (parité avec l'onglet Mots).
+    if (activeTab === 'sentences') {
+      if (sentenceCards.length === 0) return [];
+      type SentBucket = {
+        lessonId: string;
+        labelFr: string;
+        labelEn: string;
+        items: SentenceFlashcard[];
+      };
+      const buckets = new Map<string, SentBucket>();
+      for (const s of sentenceCards) {
+        let b = buckets.get(s.lessonId);
+        if (!b) {
+          b = {
+            lessonId: s.lessonId,
+            labelFr: s.lessonTitleFr,
+            labelEn: s.lessonTitleEn ?? s.lessonTitleFr,
+            items: []
+          };
+          buckets.set(s.lessonId, b);
+        }
+        b.items.push(s);
+      }
+      const out: DeckSummary[] = [];
+      for (const b of buckets.values()) {
+        let dueN = 0;
+        let masteredN = 0;
+        let newN = 0;
+        let lastStudiedAt = 0;
+        for (const s of b.items) {
+          if (masteredSet.has(s.id)) masteredN++;
+          else if (dueSet.has(s.id)) dueN++;
+          else if (!s.lastReviewedAt) newN++;
+          if ((s.lastReviewedAt ?? 0) > lastStudiedAt) {
+            lastStudiedAt = s.lastReviewedAt ?? 0;
+          }
+        }
+        const status: 'new' | 'progress' | 'mastered' =
+          masteredN === b.items.length
+            ? 'mastered'
+            : masteredN > 0 || dueN > 0 || b.items.length - newN > 0
+              ? 'progress'
+              : 'new';
+        const displayTitle = language === 'en' ? b.labelEn : b.labelFr;
+        out.push({
+          id: `sent-deck::${b.lessonId}`,
+          label: `${copy.deckTitlePrefix} ${displayTitle}`,
+          // Pas d'info de niveau CECR sur les phrases — étiquette neutre.
+          cefr: 'A1',
+          total: b.items.length,
+          dueN,
+          masteredN,
+          newN,
+          status,
+          lastStudiedAt: lastStudiedAt > 0 ? lastStudiedAt : null,
+          items: b.items.map(sentenceToStudyCard)
+        });
+      }
+      return out.sort((a, b) => {
+        if (b.dueN !== a.dueN) return b.dueN - a.dueN;
+        return a.label.localeCompare(b.label);
+      });
+    }
+
     if (lessonsFromUser && lessonsFromUser.length > 0 && activeTab === 'words') {
       // ===== Chemin canonique : une leçon = un deck =====
       const itemById = new Map<string, FlashcardV2Item>();
@@ -679,10 +942,14 @@ export default function FlashcardPageV5({
         let dueN = 0;
         let masteredN = 0;
         let newN = 0;
+        let lastStudiedAt = 0;
         for (const it of items) {
           if (masteredSet.has(it.id)) masteredN++;
           else if (dueSet.has(it.id)) dueN++;
           else if (!it.lastReviewedAt) newN++;
+          if ((it.lastReviewedAt ?? 0) > lastStudiedAt) {
+            lastStudiedAt = it.lastReviewedAt ?? 0;
+          }
         }
         const cefr = hskToCefr(`hsk${lesson.hskLevel}`);
         const status: 'new' | 'progress' | 'mastered' =
@@ -701,6 +968,7 @@ export default function FlashcardPageV5({
           masteredN,
           newN,
           status,
+          lastStudiedAt: lastStudiedAt > 0 ? lastStudiedAt : null,
           items: items.map(itemToStudyCard)
         });
       }
@@ -851,16 +1119,133 @@ export default function FlashcardPageV5({
     language,
     sessionSource,
     personalHook,
+    sentenceCards,
+    searchQuery,
     copy.deckTitlePrefix,
     copy.deckMixedLabel,
     copy.sourcePersonal,
-    copy.sourceWotd
+    copy.sourceWotd,
+    copy.sourceSentences,
+    copy.sourceMastered,
+    copy.sourceInProgress,
+    copy.sourceNew,
+    copy.sourceDifficult
   ]);
 
   const distractorPool = useMemo<StudyCard[]>(
     () => wordItems.slice(0, 200).map(itemToStudyCard),
     [wordItems]
   );
+
+  // Vue table plate (Seonsaengnim) : onglet Phrases OU filtre de statut Mots.
+  const isFlatTableView = useMemo<boolean>(() => {
+    // La table plate n'est utilisée QUE pour les filtres de statut. Toutes
+    // les vues regroupées (Tous / Leçons / Prof. Park / Manuel / Mes Cartes /
+    // Mot du jour) — y compris sur l'onglet Phrases — passent par DeckGrid.
+    return (
+      sessionSource === 'mastered' ||
+      sessionSource === 'in-progress' ||
+      sessionSource === 'new' ||
+      sessionSource === 'difficult'
+    );
+  }, [sessionSource]);
+
+  // Lignes de la table plate, respectant search + sessionSource.
+  const flatRows = useMemo<FlatRow[]>(() => {
+    const translationOf = (fr: string, en?: string) =>
+      language === 'en' && en ? en : fr;
+    const statusOfWord = (it: FlashcardV2Item): FlatRowStatus => {
+      if (masteredSet.has(it.id)) return 'mastered';
+      if (difficultSet.has(it.id)) return 'difficult';
+      if (dueSet.has(it.id) || it.lastReviewedAt) return 'progress';
+      return 'new';
+    };
+    const statusOfSent = (s: SentenceFlashcard): FlatRowStatus => {
+      if (masteredSet.has(s.id)) return 'mastered';
+      if (difficultSet.has(s.id)) return 'difficult';
+      if (dueSet.has(s.id) || s.lastReviewedAt) return 'progress';
+      return 'new';
+    };
+    const q = searchQuery.trim().toLowerCase();
+
+    if (activeTab === 'sentences') {
+      let base: SentenceFlashcard[] = sentenceCards;
+      switch (sessionSource) {
+        case 'mastered':
+          base = base.filter((s) => masteredSet.has(s.id));
+          break;
+        case 'in-progress':
+          base = base.filter(
+            (s) => !masteredSet.has(s.id) && (dueSet.has(s.id) || s.lastReviewedAt)
+          );
+          break;
+        case 'new':
+          base = base.filter(
+            (s) => !masteredSet.has(s.id) && !dueSet.has(s.id) && !s.lastReviewedAt
+          );
+          break;
+        case 'difficult':
+          base = base.filter((s) => difficultSet.has(s.id));
+          break;
+        default:
+          break;
+      }
+      if (q) {
+        base = base.filter(
+          (s) =>
+            s.hanzi.includes(searchQuery.trim()) ||
+            s.pinyin.toLowerCase().includes(q) ||
+            s.translationFr.toLowerCase().includes(q) ||
+            (s.translationEn?.toLowerCase().includes(q) ?? false)
+        );
+      }
+      return base.map((s) => {
+        const title =
+          language === 'en' && s.lessonTitleEn
+            ? s.lessonTitleEn
+            : s.lessonTitleFr;
+        return {
+          id: s.id,
+          status: statusOfSent(s),
+          hanzi: s.hanzi,
+          pinyin: s.pinyin,
+          translation: translationOf(s.translationFr, s.translationEn),
+          sourceLabel: copy.flatSourceSentence(title),
+          // URL audio MP3 pré-générée pour la phrase (manifest des dialogues).
+          // Sans ce passage, le bouton 🔊 tenterait de résoudre le hanzi via
+          // les conventions HSK qui ne couvrent pas les phrases multi-mots.
+          audio: s.audio
+        };
+      });
+    }
+
+    // Words view — réutilise filteredItems (qui respecte déjà sessionSource + search)
+    return filteredItems.map((it) => {
+      const lessonTitle = wordSourceMap.get(it.id);
+      return {
+        id: it.id,
+        status: statusOfWord(it),
+        hanzi: it.hanzi,
+        pinyin: it.pinyin,
+        translation: translationOf(it.translation, it.translationEn),
+        sourceLabel: lessonTitle ? copy.flatSourceLesson(lessonTitle) : '—',
+        audio: it.audio
+      };
+    });
+  }, [
+    activeTab,
+    sessionSource,
+    searchQuery,
+    sentenceCards,
+    filteredItems,
+    wordSourceMap,
+    masteredSet,
+    dueSet,
+    difficultSet,
+    language,
+    copy.flatSourceLesson,
+    copy.flatSourceSentence
+  ]);
 
   // Compte dispo pour le modal selon le mode sélectionné
   const modalAvailable = useMemo(() => {
@@ -893,6 +1278,14 @@ export default function FlashcardPageV5({
   }, [modalCounts]);
 
   const closeModal = useCallback(() => setModalOpen(false), []);
+
+  // Lance directement une session de révision sur les cartes dues. Pas de modal :
+  // c'est le CTA principal de la carte « Répétition espacée ».
+  const handleStartReviewNow = useCallback(() => {
+    setModalMode('revise');
+    setModalCount(20);
+    setModalOpen(true);
+  }, []);
 
   const pickModalPool = useCallback((): StudyCard[] => {
     // Cas spécial : la collection active pioche directement dans le deck sélectionné.
@@ -985,6 +1378,30 @@ export default function FlashcardPageV5({
     [activity]
   );
 
+  // Démarre une session depuis la table plate (onglet Phrases ou filtre statut).
+  // Ouvre le modal "Que veux-tu étudier ?" pré-sélectionné sur le mode le plus
+  // pertinent selon le filtre courant — l'utilisateur peut alors choisir entre
+  // nouveaux termes / en cours / difficiles.
+  const handleStudyFromFlat = useCallback(() => {
+    if (flatRows.length === 0) return;
+    const defaultMode: ModalMode =
+      sessionSource === 'new'
+        ? 'new'
+        : sessionSource === 'difficult'
+        ? 'difficult'
+        : sessionSource === 'in-progress'
+        ? 'revise'
+        : modalCounts.due + modalCounts.inProgress > 0
+        ? 'revise'
+        : modalCounts.newN > 0
+        ? 'new'
+        : modalCounts.difficult > 0
+        ? 'difficult'
+        : 'revise';
+    setModalMode(defaultMode);
+    setModalOpen(true);
+  }, [flatRows, sessionSource, modalCounts]);
+
   const handleAbort = useCallback(() => setView('dashboard'), []);
   const handleBackToDashboard = useCallback(() => {
     setLastSummary(null);
@@ -1064,19 +1481,31 @@ export default function FlashcardPageV5({
     <div className="fc5-root">
       <header className="fc5-header">
         <div className="fc5-header-main">
-          <div className="fc5-header-titles">
-            <h1 className="fc5-title">{copy.title}</h1>
-            <p className="fc5-subline">
-              {stats.total} {activeTab === 'words' ? copy.wordUnit : copy.sentenceUnit}
-            </p>
+          <div className="xl-hero-row">
+            <div className="xl-hero-icon" aria-hidden="true">🃏</div>
+            <div className="fc5-header-titles">
+              <h1 className="fc5-title">{copy.title}</h1>
+              <p className="fc5-subline">
+                {stats.total} {activeTab === 'words' ? copy.wordUnit : copy.sentenceUnit}
+              </p>
+            </div>
           </div>
           <div className="fc5-header-actions">
             <button
               type="button"
               className="fc5-btn-add"
-              onClick={onAddCard}
-              disabled={!onAddCard}
-              title={onAddCard ? copy.btnAdd : 'Ajouter (non disponible)'}
+              onClick={() => {
+                if (onAddCard) {
+                  onAddCard();
+                  return;
+                }
+                if (personalHook) {
+                  setAddError(null);
+                  setAddOpen(true);
+                }
+              }}
+              disabled={!onAddCard && !personalHook}
+              title={copy.btnAdd}
             >
               {copy.btnAdd}
             </button>
@@ -1095,14 +1524,28 @@ export default function FlashcardPageV5({
           <button
             type="button"
             className={`fc5-tab ${activeTab === 'words' ? 'is-active' : ''}`}
-            onClick={() => setActiveTab('words')}
+            onClick={() => {
+              setActiveTab('words');
+            }}
           >
             {copy.tabWords} ({wordItems.length})
           </button>
           <button
             type="button"
             className={`fc5-tab ${activeTab === 'sentences' ? 'is-active' : ''}`}
-            onClick={() => setActiveTab('sentences')}
+            onClick={() => {
+              setActiveTab('sentences');
+              // Source "lessons", "personal", "wotd" n'existent pas côté phrases
+              // → on retombe sur "Tous" pour éviter une liste vide.
+              if (
+                sessionSource === 'lessons' ||
+                sessionSource === 'personal' ||
+                sessionSource === 'wotd' ||
+                sessionSource === 'sentences'
+              ) {
+                setSessionSource('all');
+              }
+            }}
             disabled={sentenceCards.length === 0}
           >
             {copy.tabSentences} ({sentenceCards.length})
@@ -1119,6 +1562,9 @@ export default function FlashcardPageV5({
       <StatGrid stats={stats} copy={copy} />
 
       <div className="fc5-search-row">
+        {/* Layout flex: l'icône est un *vrai* enfant du flex container,
+            pas un élément absolu. Impossible qu'elle chevauche le texte de
+            l'input puisqu'elle occupe sa propre colonne. */}
         <span className="fc5-search-icon" aria-hidden="true">🔍</span>
         <input
           type="text"
@@ -1143,26 +1589,57 @@ export default function FlashcardPageV5({
 
       <SourcePills
         source={sessionSource}
-        setSource={setSessionSource}
-        counts={{
-          mastered: modalCounts.due === 0 ? masteredSet.size : masteredSet.size,
-          inProgress: modalCounts.inProgress,
-          newN: modalCounts.newN,
-          difficult: modalCounts.difficult,
-          lessons: lessonsFromUser?.length ?? 0,
-          sentences: sentenceCards.length,
-          personal: personalHook?.cards.length ?? 0
+        activeTab={activeTab}
+        setSource={(s) => {
+          setSessionSource(s);
         }}
+        counts={
+          activeTab === 'sentences'
+            ? {
+                mastered: sentenceCounts.mastered,
+                inProgress: sentenceCounts.inProgress,
+                newN: sentenceCounts.newN,
+                difficult: sentenceCounts.difficult,
+                lessons: 0,
+                personal: 0
+              }
+            : {
+                mastered: wordCounts.mastered,
+                inProgress: wordCounts.inProgress,
+                newN: wordCounts.newN,
+                difficult: wordCounts.difficult,
+                lessons: lessonsFromUser?.length ?? 0,
+                personal: personalHook?.cards.length ?? 0
+              }
+        }
         copy={copy}
-        hasPersonal={!!personalHook}
-        hasSentences={sentenceCards.length > 0}
-        hasWotd={!!wordOfTheDay}
+        hasPersonal={!!personalHook && activeTab === 'words'}
+        hasWotd={!!wordOfTheDay && activeTab === 'words'}
       />
 
-      {/* Decks grid — dernière section visible sur cette page
-          (WOTD / heatmap / badges absents de Seonsaengnim : ils vivent
-          ailleurs dans XiaoLearn — écran Home / Rapport). */}
-      <DeckGrid decks={decks} copy={copy} onOpen={handleOpenDeck} />
+      {/* Contenu principal : table plate (status filters / Phrases) ou grille de decks */}
+      {isFlatTableView ? (
+        <FlatCardTable
+          rows={flatRows}
+          copy={copy}
+          title={flatTableTitle(activeTab, sessionSource, copy)}
+          onStudy={handleStudyFromFlat}
+          canStudy={!!onRate}
+        />
+      ) : (
+        <DeckGrid
+          decks={decks}
+          copy={copy}
+          onOpen={handleOpenDeck}
+          language={language}
+          srsTile={{
+            dueCount: stats.due,
+            unit: activeTab === 'words' ? copy.wordUnit : copy.sentenceUnit,
+            onStart: handleStartReviewNow,
+            disabled: !onRate
+          }}
+        />
+      )}
 
       {/* Session setup modal */}
       {modalOpen ? (
@@ -1179,6 +1656,42 @@ export default function FlashcardPageV5({
           onClose={closeModal}
           onStart={startSession}
           language={language}
+        />
+      ) : null}
+
+      {/* Add personal card modal */}
+      {addOpen && personalHook ? (
+        <AddCardModal
+          language={language}
+          onClose={() => {
+            setAddOpen(false);
+            setAddError(null);
+          }}
+          onSave={(input) => {
+            const already = personalHook.cards.some(
+              (c) => c.hanzi.trim() === input.hanzi.trim()
+            );
+            if (already) {
+              setAddError(
+                language === 'fr'
+                  ? 'Cette carte existe déjà dans vos cartes perso.'
+                  : 'This card already exists in your personal cards.'
+              );
+              return;
+            }
+            if (personalHook.atCapacity) {
+              setAddError(
+                language === 'fr'
+                  ? 'Capacité maximale atteinte.'
+                  : 'Maximum capacity reached.'
+              );
+              return;
+            }
+            personalHook.addCard(input);
+            setAddOpen(false);
+            setAddError(null);
+          }}
+          errorMessage={addError}
         />
       ) : null}
     </div>
@@ -1222,14 +1735,15 @@ function StatGrid({
 
 function SourcePills({
   source,
+  activeTab,
   setSource,
   counts,
   copy,
   hasPersonal,
-  hasSentences,
   hasWotd
 }: {
   source: SessionSource;
+  activeTab: ActiveTab;
   setSource: (s: SessionSource) => void;
   counts: {
     mastered: number;
@@ -1237,25 +1751,25 @@ function SourcePills({
     newN: number;
     difficult: number;
     lessons: number;
-    sentences: number;
     personal: number;
   };
   copy: CopyType;
   hasPersonal: boolean;
-  hasSentences: boolean;
   hasWotd: boolean;
 }) {
   type Pill = { key: SessionSource; label: string; count?: number; show: boolean };
+  // Les pills "Leçons / Mes cartes / Mot du jour" n'ont pas de sens sur l'onglet
+  // Phrases (pas de regroupement par leçon ni de cartes perso pour les phrases).
+  const isWordsTab = activeTab === 'words';
   const pills: Pill[] = [
     { key: 'all', label: copy.sourceAll, show: true },
     { key: 'mastered', label: copy.sourceMastered, count: counts.mastered, show: true },
     { key: 'in-progress', label: copy.sourceInProgress, count: counts.inProgress, show: true },
     { key: 'new', label: copy.sourceNew, count: counts.newN, show: true },
     { key: 'difficult', label: copy.sourceDifficult, count: counts.difficult, show: counts.difficult > 0 },
-    { key: 'lessons', label: copy.sourceLessons, count: counts.lessons, show: true },
-    { key: 'sentences', label: copy.sourceSentences, count: counts.sentences, show: hasSentences },
-    { key: 'personal', label: copy.sourcePersonal, count: counts.personal, show: hasPersonal },
-    { key: 'wotd', label: copy.sourceWotd, show: hasWotd }
+    { key: 'lessons', label: copy.sourceLessons, count: counts.lessons, show: isWordsTab },
+    { key: 'personal', label: copy.sourcePersonal, count: counts.personal, show: isWordsTab && hasPersonal },
+    { key: 'wotd', label: copy.sourceWotd, count: hasWotd ? 1 : 0, show: isWordsTab && hasWotd }
   ];
   return (
     <div className="fc5-pills-row" role="tablist">
@@ -1281,31 +1795,206 @@ function SourcePills({
 }
 
 // ----------------------------------------------------------------------------
+//  FLAT CARD TABLE — style Seonsaengnim, affiche une liste plate de cartes
+//  (mots ou phrases) avec colonnes Statut / Mot / Traduction / Source.
+//  Utilisée sur l'onglet Phrases et sur les filtres de statut Mots.
+// ----------------------------------------------------------------------------
+
+function FlatCardTable({
+  rows,
+  copy,
+  title,
+  onStudy,
+  canStudy
+}: {
+  rows: FlatRow[];
+  copy: CopyType;
+  title: string;
+  onStudy: () => void;
+  canStudy: boolean;
+}) {
+  const playAudio = useCallback((text: string, audio?: string) => {
+    playHanziAudio(text, audio).catch((err) =>
+      console.warn('[flashcard audio]', err)
+    );
+  }, []);
+
+  return (
+    <section className="fc5-flat-view">
+      <div className="fc5-flat-header">
+        <h2 className="fc5-flat-title">
+          {title}{' '}
+          <span className="fc5-flat-count">({rows.length})</span>
+        </h2>
+        <button
+          type="button"
+          className="fc5-flat-cta"
+          onClick={onStudy}
+          disabled={!canStudy || rows.length === 0}
+        >
+          {copy.flatStudyCta}
+        </button>
+      </div>
+
+      <div className="fc5-flat-table" role="table">
+        <div className="fc5-flat-row fc5-flat-row--head" role="row">
+          <div
+            className="fc5-flat-col fc5-flat-col--status"
+            role="columnheader"
+          >
+            {copy.flatColStatus}
+          </div>
+          <div
+            className="fc5-flat-col fc5-flat-col--word"
+            role="columnheader"
+          >
+            {copy.flatColWord}
+          </div>
+          <div
+            className="fc5-flat-col fc5-flat-col--trans"
+            role="columnheader"
+          >
+            {copy.flatColTrans}
+          </div>
+          <div
+            className="fc5-flat-col fc5-flat-col--source"
+            role="columnheader"
+          >
+            {copy.flatColSource}
+          </div>
+        </div>
+
+        {rows.length === 0 ? (
+          <div className="fc5-flat-empty">{copy.flatEmpty}</div>
+        ) : (
+          rows.map((r) => (
+            <div
+              className="fc5-flat-row fc5-flat-row--clickable"
+              role="row"
+              key={r.id}
+              tabIndex={0}
+              onClick={() => playAudio(r.hanzi, r.audio)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  playAudio(r.hanzi, r.audio);
+                }
+              }}
+              aria-label={`${r.hanzi} — ${copy.deckActionListen}`}
+            >
+              <div
+                className="fc5-flat-col fc5-flat-col--status"
+                role="cell"
+              >
+                <span
+                  className={`fc5-flat-statusdot is-${r.status}`}
+                  aria-hidden="true"
+                />
+              </div>
+              <div
+                className="fc5-flat-col fc5-flat-col--word"
+                role="cell"
+              >
+                <span className="fc5-flat-hanzi">{r.hanzi}</span>
+                <span className="fc5-flat-pinyin">({r.pinyin})</span>
+                <span
+                  className="fc5-flat-audio-hint"
+                  aria-hidden="true"
+                >
+                  🔊
+                </span>
+              </div>
+              <div
+                className="fc5-flat-col fc5-flat-col--trans"
+                role="cell"
+                title={r.translation}
+              >
+                <span className="fc5-flat-trans-text">{r.translation}</span>
+              </div>
+              <div
+                className="fc5-flat-col fc5-flat-col--source"
+                role="cell"
+                title={r.sourceLabel}
+              >
+                {r.sourceLabel !== '—' ? (
+                  <span className="fc5-flat-source-chip">{r.sourceLabel}</span>
+                ) : (
+                  <span className="fc5-flat-source-none">—</span>
+                )}
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </section>
+  );
+}
+
+// ----------------------------------------------------------------------------
 //  DECK GRID
 // ----------------------------------------------------------------------------
 
 function DeckGrid({
   decks,
   copy,
-  onOpen
+  onOpen,
+  srsTile,
+  language
 }: {
   decks: DeckSummary[];
   copy: CopyType;
   onOpen: (deck: DeckSummary) => void;
+  /** Tuile « Répétition espacée » à insérer en première position. */
+  srsTile?: {
+    dueCount: number;
+    unit: string;
+    onStart: () => void;
+    disabled?: boolean;
+  };
+  language: 'fr' | 'en';
 }) {
-  if (decks.length === 0) {
+  // Cas vide : on affiche quand même la SRS tile si pertinent (rare mais cohérent
+  // — l'utilisateur peut avoir des cartes dues sans avoir de "deck" complet).
+  if (decks.length === 0 && (!srsTile || srsTile.dueCount === 0)) {
     return <div className="fc5-decks-empty">{copy.decksEmpty}</div>;
   }
   return (
     <div className="fc5-decks-grid">
+      {srsTile && srsTile.dueCount > 0 && (
+        <div
+          className="fc5-srs-tile"
+          role="region"
+          aria-label={copy.srsCardKicker}
+        >
+          <div className="fc5-srs-tile-head">
+            <div className="fc5-srs-tile-icon" aria-hidden="true">
+              🔄
+            </div>
+            <span className="fc5-srs-tile-kicker">{copy.srsCardKicker}</span>
+          </div>
+          <strong className="fc5-srs-tile-title">
+            {copy.srsCardTitle(srsTile.dueCount, srsTile.unit)}
+          </strong>
+          <span className="fc5-srs-tile-sub">{copy.srsCardSub}</span>
+          <button
+            type="button"
+            className="fc5-srs-tile-cta"
+            onClick={srsTile.onStart}
+            disabled={srsTile.disabled}
+          >
+            {copy.srsCardCta}
+          </button>
+        </div>
+      )}
       {decks.map((d) => {
         const pct = d.total > 0 ? Math.round((d.masteredN / d.total) * 100) : 0;
-        const statusLabel =
-          d.status === 'mastered'
-            ? copy.deckStatusMastered
-            : d.status === 'progress'
-            ? copy.deckStatusProgress
-            : copy.deckStatusNew;
+        // Le pied de tuile ne porte plus le statut (déjà encodé dans la barre
+        // de progression + le compteur "Nx"). On y met "Étudié il y a Nj" ou
+        // "Pas encore étudié" — parité avec Seonsaengnim.
+        const relLabel = formatRelativeStudyTime(d.lastStudiedAt, language);
+        const lastStudiedLabel = relLabel
+          ? copy.deckLastStudiedRelative(relLabel)
+          : copy.deckLastStudiedNever;
         const statusClass = d.status === 'mastered' ? 'is-mastered' : d.status === 'progress' ? 'is-progress' : '';
         return (
           <div
@@ -1345,7 +2034,7 @@ function DeckGrid({
                 </span>
               </div>
               <div className="fc5-deck-footer">
-                <span className={`fc5-deck-status ${statusClass}`}>{statusLabel}</span>
+                <span className={`fc5-deck-status ${statusClass}`}>{lastStudiedLabel}</span>
                 <button
                   type="button"
                   className="fc5-deck-cta"
@@ -2099,6 +2788,248 @@ function SummaryScreen({
         <button type="button" className="fc5-cta-primary" onClick={onBack}>
           {copy.summaryBack}
         </button>
+      </div>
+    </div>
+  );
+}
+
+// ----------------------------------------------------------------------------
+//  ADD PERSONAL CARD MODAL
+// ----------------------------------------------------------------------------
+
+function AddCardModal({
+  language,
+  onClose,
+  onSave,
+  errorMessage
+}: {
+  language: 'fr' | 'en';
+  onClose: () => void;
+  onSave: (input: CreatePersonalInput) => void;
+  errorMessage: string | null;
+}) {
+  const [hanzi, setHanzi] = useState('');
+  const [pinyin, setPinyin] = useState('');
+  const [translationFr, setTranslationFr] = useState('');
+  const [translationEn, setTranslationEn] = useState('');
+  const [note, setNote] = useState('');
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  const trimmedHanzi = hanzi.trim();
+  const trimmedTransFr = translationFr.trim();
+  const canSave = trimmedHanzi.length > 0 && trimmedTransFr.length > 0;
+
+  const autoPinyin = () => {
+    if (!trimmedHanzi) return;
+    const found = lookupPinyinForHanzi(trimmedHanzi);
+    if (found) setPinyin(found);
+  };
+
+  const submit = () => {
+    if (!canSave) return;
+    onSave({
+      hanzi: trimmedHanzi,
+      pinyin: pinyin.trim() || undefined,
+      translationFr: trimmedTransFr,
+      translationEn: translationEn.trim() || undefined,
+      note: note.trim() || undefined
+    });
+  };
+
+  const L = (fr: string, en: string) => (language === 'fr' ? fr : en);
+
+  const inputStyle: CSSProperties = {
+    width: '100%',
+    padding: '10px 12px',
+    borderRadius: 10,
+    border: '1px solid var(--fc5-border)',
+    background: '#fff',
+    fontSize: 15,
+    color: 'var(--fc5-text)',
+    boxSizing: 'border-box',
+    fontFamily: 'inherit'
+  };
+
+  const labelStyle: CSSProperties = {
+    display: 'block',
+    fontSize: 12,
+    fontWeight: 700,
+    color: 'var(--fc5-text-muted)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.04em',
+    marginBottom: 6
+  };
+
+  const fieldStyle: CSSProperties = { marginBottom: 16 };
+
+  return (
+    <div
+      className="fc5-modal-overlay"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div
+        className="fc5-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fc5-add-modal-title"
+      >
+        <button
+          type="button"
+          className="fc5-modal-close"
+          onClick={onClose}
+          aria-label={L('Fermer', 'Close')}
+        >
+          ✕
+        </button>
+
+        <h2 id="fc5-add-modal-title" className="fc5-modal-title">
+          {L('Ajouter une carte', 'Add a card')}
+        </h2>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle} htmlFor="fc5-add-hanzi">
+            {L('Hanzi (requis)', 'Hanzi (required)')}
+          </label>
+          <input
+            id="fc5-add-hanzi"
+            type="text"
+            value={hanzi}
+            onChange={(e) => setHanzi(e.target.value)}
+            placeholder="你好"
+            style={inputStyle}
+            autoFocus
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle} htmlFor="fc5-add-pinyin">
+            {L('Pinyin', 'Pinyin')}
+          </label>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <input
+              id="fc5-add-pinyin"
+              type="text"
+              value={pinyin}
+              onChange={(e) => setPinyin(e.target.value)}
+              placeholder="nǐ hǎo"
+              style={{ ...inputStyle, flex: 1 }}
+            />
+            <button
+              type="button"
+              onClick={autoPinyin}
+              disabled={!trimmedHanzi}
+              title={L('Remplir auto depuis CFDICT', 'Auto-fill from CFDICT')}
+              style={{
+                padding: '10px 14px',
+                borderRadius: 10,
+                border: '1px solid var(--fc5-border)',
+                background: trimmedHanzi ? 'var(--fc5-surface-muted)' : '#f3f0ea',
+                color: 'var(--fc5-text)',
+                fontSize: 16,
+                cursor: trimmedHanzi ? 'pointer' : 'not-allowed',
+                fontWeight: 600
+              }}
+            >
+              ⚡
+            </button>
+          </div>
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle} htmlFor="fc5-add-trans-fr">
+            {L('Traduction française (requise)', 'French translation (required)')}
+          </label>
+          <input
+            id="fc5-add-trans-fr"
+            type="text"
+            value={translationFr}
+            onChange={(e) => setTranslationFr(e.target.value)}
+            placeholder={L('Bonjour', 'Hello')}
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle} htmlFor="fc5-add-trans-en">
+            {L('Traduction anglaise', 'English translation')}
+          </label>
+          <input
+            id="fc5-add-trans-en"
+            type="text"
+            value={translationEn}
+            onChange={(e) => setTranslationEn(e.target.value)}
+            placeholder="Hello"
+            style={inputStyle}
+          />
+        </div>
+
+        <div style={fieldStyle}>
+          <label style={labelStyle} htmlFor="fc5-add-note">
+            {L('Note (optionnel)', 'Note (optional)')}
+          </label>
+          <textarea
+            id="fc5-add-note"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            rows={2}
+            placeholder={L('Mnémonique, exemple…', 'Mnemonic, example…')}
+            style={{ ...inputStyle, resize: 'vertical', minHeight: 60 }}
+          />
+        </div>
+
+        {errorMessage ? (
+          <div
+            style={{
+              background: '#fde9e7',
+              color: 'var(--fc5-danger)',
+              border: '1px solid #f7c9c5',
+              borderRadius: 10,
+              padding: '10px 12px',
+              fontSize: 13,
+              marginBottom: 12
+            }}
+          >
+            {errorMessage}
+          </div>
+        ) : null}
+
+        <div style={{ display: 'flex', gap: 12 }}>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              flex: 1,
+              padding: '12px 16px',
+              borderRadius: 12,
+              border: '1px solid var(--fc5-border)',
+              background: '#fff',
+              fontSize: 15,
+              fontWeight: 600,
+              color: 'var(--fc5-text)',
+              cursor: 'pointer'
+            }}
+          >
+            {L('Annuler', 'Cancel')}
+          </button>
+          <button
+            type="button"
+            onClick={submit}
+            disabled={!canSave}
+            className="fc5-cta-primary"
+            style={{ flex: 1, margin: 0 }}
+          >
+            {L('Enregistrer', 'Save')}
+          </button>
+        </div>
       </div>
     </div>
   );

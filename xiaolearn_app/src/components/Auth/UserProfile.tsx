@@ -1,20 +1,27 @@
-import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import type { Language } from '../../i18n';
 
 interface UserProfileProps {
   language: Language;
   onOpenLogin: () => void;
-  onOpenSettings: () => void;
+  /** V9.12 — clic sur le nom → page profil. (Anciennement dropdown Réglages/Déconnexion.) */
+  onOpenProfile: () => void;
 }
 
+/**
+ * UserProfile (sidebar footer)
+ * ----------------------------
+ * Avant V9.12 : ouvrait un dropdown Réglages / Déconnexion.
+ * Depuis V9.12 : le clic ouvre directement la page Profil, dans l'esprit
+ * Seonsaengnim. Les actions Réglages / Déconnexion sont désormais accessibles
+ * via la sidebar secondaire et la page Profil elle-même.
+ */
 export default function UserProfile({
   language,
   onOpenLogin,
-  onOpenSettings
+  onOpenProfile
 }: UserProfileProps) {
-  const { user, signOut } = useAuth();
-  const [showMenu, setShowMenu] = useState(false);
+  const { user } = useAuth();
 
   if (!user) {
     return (
@@ -29,7 +36,11 @@ export default function UserProfile({
 
   return (
     <div className="user-profile">
-      <button className="user-profile-button" onClick={() => setShowMenu(!showMenu)}>
+      <button
+        className="user-profile-button"
+        onClick={onOpenProfile}
+        title={language === 'fr' ? 'Voir mon profil' : 'View my profile'}
+      >
         {photoURL ? (
           <img src={photoURL} alt={displayName} className="user-avatar" />
         ) : (
@@ -39,24 +50,6 @@ export default function UserProfile({
         )}
         <span className="user-name">{displayName}</span>
       </button>
-
-      {showMenu && (
-        <div className="user-menu">
-          <div className="user-menu-header">
-            <div className="user-menu-name">{displayName}</div>
-            <div className="user-menu-email">{user.email}</div>
-          </div>
-          <div className="user-menu-divider" />
-          <button className="user-menu-item" onClick={() => { setShowMenu(false); onOpenSettings(); }}>
-            <span>⚙️</span>
-            {language === 'fr' ? 'Paramètres' : 'Settings'}
-          </button>
-          <button className="user-menu-item" onClick={signOut}>
-            <span>🚪</span>
-            {language === 'fr' ? 'Se déconnecter' : 'Sign Out'}
-          </button>
-        </div>
-      )}
     </div>
   );
 }

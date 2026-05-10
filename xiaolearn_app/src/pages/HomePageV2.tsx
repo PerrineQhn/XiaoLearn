@@ -41,6 +41,11 @@ import type { CecrLevelMeta } from '../data/cecr-course';
 import { getLessonTranslation } from '../utils/lesson';
 import LevelBadge from '../components/LevelBadge';
 import { useDashboardState } from '../hooks/useDashboardState';
+import { useStudyTimer } from '../hooks/useStudyTimer';
+import {
+  StreakMultiplierBadge,
+  StreakBonusPanel
+} from '../components/StreakBonus';
 import '../styles/dashboard-v2.css';
 
 // --------------------------------------------------------------------------
@@ -95,12 +100,14 @@ const DashboardHeader = ({
   language,
   userDisplayName,
   streakDays,
-  isAliveToday
+  isAliveToday,
+  bonus
 }: {
   language: Language;
   userDisplayName?: string;
   streakDays: number;
   isAliveToday: boolean;
+  bonus: ReturnType<typeof useDashboardState>['bonus'];
 }) => {
   const hello = language === 'fr' ? 'Bonjour' : 'Hello';
   const series =
@@ -115,6 +122,7 @@ const DashboardHeader = ({
       <p className={`dash-streak-line ${isAliveToday ? 'alive' : 'cold'}`}>
         <span className="dash-flame">{isAliveToday ? '🔥' : '❄️'}</span>
         <span>{series}</span>
+        <StreakMultiplierBadge bonus={bonus} language={language} size="md" />
       </p>
     </header>
   );
@@ -130,6 +138,7 @@ const DailyGoalCard = ({
   streakAlive,
   onStartReview,
   onOpenLesson,
+  onEditTimer,
   lessonToResumeId
 }: {
   language: Language;
@@ -137,8 +146,26 @@ const DailyGoalCard = ({
   streakAlive: boolean;
   onStartReview: () => void;
   onOpenLesson: (id: string) => void;
+  onEditTimer?: (minutes: number) => void;
   lessonToResumeId?: string;
 }) => {
+  // Picker inline pour le timer d'étude. On garde volontairement simple :
+  // une rangée de presets (5 / 10 / 15 / 20 / 25 / 30 min) qui se déplie
+  // sous le header. `open` vient d'un useState local (pas besoin de Firestore).
+  const [timerEditOpen, setTimerEditOpen] = useState(false);
+  const TIMER_PRESETS = [5, 10, 15, 20, 25, 30];
+
+  // Timer d'étude global (visible aussi via `<FloatingTimer />` sur toutes
+  // les pages). Le même hook est instancié ici pour que le DailyGoalCard
+  // reflète en live l'état running / paused / idle (localStorage = source
+  // de vérité partagée).
+  const studyTimer = useStudyTimer();
+  const displayMm = studyTimer.isRunning || studyTimer.isPaused
+    ? Math.floor(studyTimer.remainingMs / 60_000)
+    : goal.timerMinutes;
+  const displaySs = studyTimer.isRunning || studyTimer.isPaused
+    ? Math.floor((studyTimer.remainingMs % 60_000) / 1000)
+    : 0;
   const done =
     (goal.cardsDue.current === 0 ? 1 : 0) +
     (goal.xpGoal.current >= goal.xpGoal.target ? 1 : 0) +
@@ -172,10 +199,13 @@ const DailyGoalCard = ({
         ? 'Aucune leçon en cours'
         : 'No lesson in progress',
       action:
-        goal.lessonToResume && lessonToResumeId
+        goal.lessonToResume
           ? {
+              // Priorise l'id de la vraie leçon CECR portée par le goal. Si
+              // absent (ancien code), retombe sur le lessonToResumeId hérité
+              // (un id de mot SRS — imparfait mais historique).
               label: language === 'fr' ? 'Reprendre' : 'Resume',
-              onClick: () => onOpenLesson(lessonToResumeId)
+              onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
             }
           : null,
       done: false
@@ -226,36 +256,112 @@ const DailyGoalCard = ({
         <span className="timer-head-label">
           ⏱️ {language === 'fr' ? 'Timer d\u2019étude' : 'Study timer'} — {goal.timerMinutes} min
         </span>
-        <button type="button" className="btn-link-small timer-edit" disabled>
+        <button
+          type="button"
+          className="btn-link-small timer-edit"
+          onClick={() => setTimerEditOpen((v) => !v)}
+          aria-expanded={timerEditOpen}
+          disabled={!onEditTimer}
+        >
           ⚙ {language === 'fr' ? 'Modifier' : 'Edit'}
         </button>
       </div>
+      {timerEditOpen && onEditTimer && (
+        <div
+          className="timer-edit-row"
+          role="group"
+          aria-label={language === 'fr' ? 'Durée du timer' : 'Timer duration'}
+          style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}
+        >
+          {TIMER_PRESETS.map((min) => (
+            <button
+              key={min}
+              type="button"
+              className={`btn-chip${goal.timerMinutes === min ? ' is-active' : ''}`}
+              onClick={() => {
+                onEditTimer(min);
+                setTimerEditOpen(false);
+              }}
+            >
+              {min} min
+            </button>
+          ))}
+          <button
+            type="button"
+            className="btn-chip"
+            onClick={() => {
+              const raw = window.prompt(
+                language === 'fr'
+                  ? 'Durée du timer (en minutes, 1 à 120) :'
+                  : 'Timer duration (minutes, 1–120):',
+                String(goal.timerMinutes)
+              );
+              if (raw === null) return;
+              const parsed = Number.parseInt(raw, 10);
+              if (Number.isFinite(parsed) && parsed > 0) {
+                onEditTimer(parsed);
+                setTimerEditOpen(false);
+              }
+            }}
+          >
+            {language === 'fr' ? 'Autre…' : 'Other…'}
+          </button>
+        </div>
+      )}
 
       <div className="timer-row">
         <div className="timer-circle" aria-label="study timer">
-          <span className="timer-mm">{String(goal.timerMinutes).padStart(2, '0')}</span>
+          <span className="timer-mm">{String(displayMm).padStart(2, '0')}</span>
           <span className="timer-sep">:</span>
-          <span className="timer-ss">00</span>
+          <span className="timer-ss">{String(displaySs).padStart(2, '0')}</span>
         </div>
         <div className="timer-actions">
-          <button
-            type="button"
-            className="timer-btn timer-btn-play"
-            aria-label={language === 'fr' ? 'Démarrer' : 'Start'}
-            onClick={onStartReview}
-          >
-            ▶
-          </button>
+          {studyTimer.isRunning ? (
+            <button
+              type="button"
+              className="timer-btn timer-btn-play"
+              aria-label={language === 'fr' ? 'Pause' : 'Pause'}
+              onClick={studyTimer.pause}
+            >
+              ⏸
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="timer-btn timer-btn-play"
+              aria-label={language === 'fr' ? 'Démarrer' : 'Start'}
+              onClick={() => {
+                if (studyTimer.isPaused) {
+                  studyTimer.resume();
+                } else {
+                  studyTimer.start(goal.timerMinutes);
+                }
+              }}
+            >
+              ▶
+            </button>
+          )}
           <button
             type="button"
             className="timer-btn timer-btn-reset"
             aria-label={language === 'fr' ? 'Réinitialiser' : 'Reset'}
-            disabled
+            onClick={studyTimer.stop}
+            disabled={studyTimer.isIdle && !studyTimer.justFinished}
           >
             ⟲
           </button>
           <span className="timer-caption">
-            {language === 'fr' ? 'Prêt à étudier' : 'Ready to study'}
+            {studyTimer.isRunning
+              ? language === 'fr'
+                ? 'Étude en cours…'
+                : 'Studying…'
+              : studyTimer.isPaused
+              ? language === 'fr'
+                ? 'En pause'
+                : 'Paused'
+              : language === 'fr'
+              ? 'Prêt à étudier'
+              : 'Ready to study'}
           </span>
         </div>
       </div>
@@ -1023,10 +1129,12 @@ const WordOfTheDayCard = ({
 
 const StreakCard = ({
   language,
-  streak
+  streak,
+  bonus
 }: {
   language: Language;
   streak: ReturnType<typeof useDashboardState>['streak'];
+  bonus: ReturnType<typeof useDashboardState>['bonus'];
 }) => {
   const unit = language === 'fr'
     ? (streak.current > 1 ? 'jours' : 'jour')
@@ -1045,6 +1153,7 @@ const StreakCard = ({
           🏆 {language === 'fr' ? 'Record' : 'Best'} :{' '}
           {streak.best} {language === 'fr' ? (streak.best > 1 ? 'jours' : 'jour') : (streak.best > 1 ? 'days' : 'day')}
         </div>
+        <StreakMultiplierBadge bonus={bonus} language={language} size="sm" />
       </div>
     </section>
   );
@@ -1086,6 +1195,14 @@ const XpCard = ({
 // 📅 Heatmap calendrier
 // --------------------------------------------------------------------------
 
+// YYYY-MM-DD en local (éviter toISOString qui shift d'un jour sur TZ > UTC)
+const toLocalDateKey = (d: Date): string => {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+};
+
 const ActivityHeatmap = ({
   language,
   activity
@@ -1093,17 +1210,72 @@ const ActivityHeatmap = ({
   language: Language;
   activity: Record<string, number>;
 }) => {
-  // 5 semaines = 35 jours, terminant aujourd'hui
-  const days = useMemo(() => {
-    const arr: { key: string; date: Date; value: number }[] = [];
-    const today = new Date();
-    for (let i = 34; i >= 0; i -= 1) {
-      const d = new Date(today);
-      d.setDate(today.getDate() - i);
-      const key = d.toISOString().slice(0, 10);
-      arr.push({ key, date: d, value: activity[key] ?? 0 });
+  // Calendrier "réel" : le mois en cours, cases alignées sous L M M J V S D.
+  // Les jours qui débordent (fin du mois précédent / début du suivant) sont
+  // affichés en grisé pour garder des semaines pleines, comme un calendrier
+  // papier.
+  const { days, todayKey } = useMemo(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const tKey = toLocalDateKey(now);
+
+    const firstOfMonth = new Date(year, month, 1);
+    const lastOfMonth = new Date(year, month + 1, 0);
+    const daysInMonth = lastOfMonth.getDate();
+
+    // Colonne du 1er (lundi-first : 0 = lundi … 6 = dimanche)
+    const firstCol = (firstOfMonth.getDay() + 6) % 7;
+    const lastCol = (lastOfMonth.getDay() + 6) % 7;
+    const prePad = firstCol;
+    const postPad = 6 - lastCol;
+
+    const arr: {
+      key: string;
+      date: Date;
+      value: number;
+      inMonth: boolean;
+      isToday: boolean;
+    }[] = [];
+
+    // Fin du mois précédent (greyed)
+    for (let i = prePad; i > 0; i -= 1) {
+      const d = new Date(year, month, 1 - i);
+      const key = toLocalDateKey(d);
+      arr.push({
+        key,
+        date: d,
+        value: activity[key] ?? 0,
+        inMonth: false,
+        isToday: key === tKey
+      });
     }
-    return arr;
+    // Mois en cours
+    for (let day = 1; day <= daysInMonth; day += 1) {
+      const d = new Date(year, month, day);
+      const key = toLocalDateKey(d);
+      arr.push({
+        key,
+        date: d,
+        value: activity[key] ?? 0,
+        inMonth: true,
+        isToday: key === tKey
+      });
+    }
+    // Début du mois suivant (greyed)
+    for (let i = 1; i <= postPad; i += 1) {
+      const d = new Date(year, month + 1, i);
+      const key = toLocalDateKey(d);
+      arr.push({
+        key,
+        date: d,
+        value: activity[key] ?? 0,
+        inMonth: false,
+        isToday: key === tKey
+      });
+    }
+
+    return { days: arr, todayKey: tKey };
   }, [activity]);
 
   const intensity = (v: number) => {
@@ -1135,15 +1307,22 @@ const ActivityHeatmap = ({
           ))}
         </div>
         <div className="heatmap-grid">
-          {days.map((d) => (
-            <div
-              key={d.key}
-              className={`cell intensity-${intensity(d.value)}`}
-              title={`${d.key} • ${d.value} XP`}
-            >
-              {d.value > 0 && <span className="cell-num">{d.value}</span>}
-            </div>
-          ))}
+          {days.map((d) => {
+            const cls = [
+              'cell',
+              `intensity-${intensity(d.value)}`,
+              d.inMonth ? '' : 'out-of-month',
+              d.isToday ? 'today' : ''
+            ]
+              .filter(Boolean)
+              .join(' ');
+            return (
+              <div key={d.key} className={cls} title={`${d.key} • ${d.value} XP`}>
+                <span className="cell-day">{d.date.getDate()}</span>
+                {d.value > 0 && <span className="cell-num">{d.value}</span>}
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="heatmap-legend">
@@ -1223,10 +1402,27 @@ const HomePageV2 = (props: HomePageV2Props) => {
     onAddWordToFlashcards
   } = props;
 
+  // Trouve la prochaine vraie leçon CECR/HSK à reprendre (première non-complétée
+  // et non-verrouillée). Le hanzi du mot SRS courant n'est PAS un titre de
+  // leçon (confusion historique LessonItem vs LessonModule).
+  const nextLessonToResume = useMemo(() => {
+    if (!cecrPaths) return null;
+    const completedSet = completedLessonIds ?? new Set<string>();
+    for (const path of cecrPaths) {
+      for (const lesson of path.lessons) {
+        if (!completedSet.has(lesson.id)) {
+          const title = language === 'fr' ? lesson.title : (lesson.titleEn || lesson.title);
+          return { id: lesson.id, title };
+        }
+      }
+    }
+    return null;
+  }, [cecrPaths, completedLessonIds, language]);
+
   const dashboard = useDashboardState({
     dueCardsCount,
-    nextLessonTitle: progress.currentLesson?.hanzi,
-    nextLessonId: progress.currentLesson?.id
+    nextLessonTitle: nextLessonToResume?.title,
+    nextLessonId: nextLessonToResume?.id
   });
 
   // Ping "utilisateur vivant aujourd'hui" à chaque ouverture du dashboard.
@@ -1259,6 +1455,7 @@ const HomePageV2 = (props: HomePageV2Props) => {
         userDisplayName={userDisplayName}
         streakDays={dashboard.streak.current}
         isAliveToday={dashboard.streak.isAliveToday}
+        bonus={dashboard.bonus}
       />
 
       <div className="dashboard-grid">
@@ -1272,6 +1469,7 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakAlive={dashboard.streak.isAliveToday}
             onStartReview={onStartReview}
             onOpenLesson={onOpenLesson}
+            onEditTimer={dashboard.setTimerMinutes}
             lessonToResumeId={progress.currentLesson?.id}
           />
           {cecrPaths && cecrLevels ? (
@@ -1312,8 +1510,17 @@ const HomePageV2 = (props: HomePageV2Props) => {
             onAddToFlashcards={onAddWordToFlashcards}
             onOpenAiTutor={onOpenAiTutor}
           />
-          <StreakCard language={language} streak={dashboard.streak} />
+          <StreakCard
+            language={language}
+            streak={dashboard.streak}
+            bonus={dashboard.bonus}
+          />
           <XpCard language={language} xp={dashboard.xp} />
+          <StreakBonusPanel
+            language={language}
+            bonus={dashboard.bonus}
+            streakDays={dashboard.streak.current}
+          />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
           <CommunityCard language={language} />
         </div>

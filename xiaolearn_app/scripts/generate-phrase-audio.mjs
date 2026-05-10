@@ -1,10 +1,134 @@
-import { TextToSpeechClient } from '@google-cloud/text-to-speech';
+/**
+ * generate-phrase-audio.mjs
+ * -------------------------
+ * Génère les MP3 des phrases de dictée via Azure Neural TTS (cohérent avec
+ * les autres scripts d'audio : dialogues, readings, learn-sections).
+ *
+ * Usage :
+ *   npm run generate:audio:phrases          # mode normal, dossier phrases/
+ *   npm run generate:audio:phrases:slow     # mode shadowing, dossier phrases-slow/
+ *
+ * Charge automatiquement `.env.local` à la racine du projet pour récupérer
+ * AZURE_SPEECH_KEY (pas besoin de --env-file=.env.local).
+ */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+
+// ── .env.local loader (minimal, pas de dépendance dotenv) ────────────────────
+const envLocal = path.join(PROJECT_ROOT, '.env.local');
+if (fs.existsSync(envLocal)) {
+  for (const line of fs.readFileSync(envLocal, 'utf8').split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Z_][A-Z0-9_]*)=(.*)$/);
+    if (!m) continue;
+    if (!process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+}
+
+const AZURE_KEY = process.env.AZURE_SPEECH_KEY;
+const AZURE_REGION = process.env.AZURE_SPEECH_REGION || 'eastus';
+
+// ── CLI ─────────────────────────────────────────────────────────────────────
+// --slow active le mode shadowing : rate -35%, pauses sur ponctuation, sortie
+// vers `public/audio/phrases-slow/`. Sans le flag, comportement normal
+// (rate -10%, dossier phrases/).
+const argv = process.argv.slice(2);
+const slowMode = argv.includes('--slow');
+const dryRun = argv.includes('--dry-run');
+const PROSODY_RATE = slowMode ? '-35%' : '-10%';
+const SHADOWING_BREAK_MS = 350;
+const PHRASES_FOLDER = slowMode ? 'phrases-slow' : 'phrases';
+
+if (!AZURE_KEY && !dryRun) {
+  console.error('✗ AZURE_SPEECH_KEY manquant (ni env ni .env.local).');
+  console.error('  Export :   export AZURE_SPEECH_KEY="<ta clé>"');
+  console.error('  Ou utilise --dry-run pour prévisualiser sans appeler l\'API.');
+  process.exit(1);
+}
+
+/**
+ * Réécrit le chemin audio d'une phrase pour pointer vers le dossier slow
+ * sans toucher au reste de l'arborescence. Préserve `audio/phrases/foo.mp3`
+ * en `audio/phrases-slow/foo.mp3`.
+ */
+function toSlowAudioPath(rel) {
+  return rel.replace(/^audio\/phrases\//, 'audio/phrases-slow/');
+}
+
+// ── SSML ────────────────────────────────────────────────────────────────────
+function escapeXml(s) {
+  return s.replace(/[<>&'"]/g, (c) =>
+    ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' }[c])
+  );
+}
+
+/**
+ * En slow-mode, on insère un <break/> après chaque ponctuation chinoise
+ * forte (。，！？；：、) pour créer une pause respiratoire. Sans le mode,
+ * on retourne juste le texte échappé.
+ */
+function buildSsmlBody(text) {
+  if (!slowMode) return escapeXml(text);
+  const parts = text.split(/([。，！？；：、])/u).filter(Boolean);
+  let out = '';
+  for (const p of parts) {
+    out += escapeXml(p);
+    if (/[。，！？；：、]/u.test(p)) out += `<break time="${SHADOWING_BREAK_MS}ms"/>`;
+  }
+  return out;
+}
+
+// Voix Azure Neural féminine zh-CN par défaut (équivalent direct du
+// `cmn-CN-Wavenet-A` Google Cloud utilisé précédemment).
+const VOICE_NAME = 'zh-CN-XiaoxiaoNeural';
+
+function buildSsml(text) {
+  return [
+    '<speak version="1.0" xml:lang="zh-CN" xmlns:mstts="https://www.w3.org/2001/mstts">',
+    `  <voice name="${VOICE_NAME}">`,
+    `    <prosody rate="${PROSODY_RATE}">${buildSsmlBody(text)}</prosody>`,
+    '  </voice>',
+    '</speak>'
+  ].join('\n');
+}
+
+// ── Azure REST call ─────────────────────────────────────────────────────────
+async function synthesize(text) {
+  const url = `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Ocp-Apim-Subscription-Key': AZURE_KEY,
+      'Content-Type': 'application/ssml+xml',
+      'X-Microsoft-OutputFormat': 'audio-48khz-96kbitrate-mono-mp3',
+      'User-Agent': 'xiaolearn-phrase-audio'
+    },
+    body: buildSsml(text)
+  });
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    throw new Error(`Azure TTS ${res.status}: ${body.slice(0, 200)}`);
+  }
+  return Buffer.from(await res.arrayBuffer());
+}
+
+async function synthesizeWithRetry(text, label) {
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      return await synthesize(text);
+    } catch (err) {
+      lastErr = err;
+      console.warn(`  ⚠ tentative ${attempt} échec [${label}] : ${err.message.slice(0, 100)}`);
+      if (attempt < 3) await new Promise((r) => setTimeout(r, attempt * 800));
+    }
+  }
+  throw lastErr;
+}
 
 // Données des phrases de dictée
 const dictationPhrases = [
@@ -165,41 +289,28 @@ const dictationPhrases = [
   { id: 'hsk3-phrase-050', hanzi: '通过这次经历，我学到了很多', audio: 'audio/phrases/hsk3-phrase-050.mp3', level: 'hsk3' }
 ];
 
-// Initialisation du client Google Cloud TTS
-const client = new TextToSpeechClient();
-
 async function generateAudio(text, outputPath) {
-  const request = {
-    input: { text },
-    voice: {
-      languageCode: 'cmn-CN',
-      name: 'cmn-CN-Wavenet-A',
-      ssmlGender: 'FEMALE',
-    },
-    audioConfig: {
-      audioEncoding: 'MP3',
-      speakingRate: 0.9,
-      pitch: 0,
-      volumeGainDb: 0,
-    },
-  };
-
+  if (dryRun) {
+    console.log(`  · ${outputPath} (dry-run)`);
+    return;
+  }
   try {
-    const [response] = await client.synthesizeSpeech(request);
-    if (response.audioContent) {
-      fs.writeFileSync(outputPath, response.audioContent, 'binary');
-      console.log(`✓ Créé: ${outputPath}`);
-    }
+    const mp3 = await synthesizeWithRetry(text, path.basename(outputPath));
+    fs.writeFileSync(outputPath, mp3);
+    console.log(`✓ Créé: ${outputPath} (${(mp3.length / 1024).toFixed(0)} KiB)`);
   } catch (error) {
     console.error(`✗ Erreur pour ${outputPath}:`, error.message);
   }
 }
 
 async function main() {
-  console.log('🎵 Génération des fichiers audio pour les phrases de dictée...\n');
+  console.log('🎵 Génération des fichiers audio pour les phrases de dictée · Azure Neural TTS');
+  console.log(`   Mode   : ${slowMode ? '🐢 SHADOWING (slow)' : 'NORMAL'} · rate=${PROSODY_RATE}${dryRun ? ' · DRY-RUN' : ''}`);
+  console.log(`   Voice  : ${VOICE_NAME} · region=${AZURE_REGION}`);
+  console.log(`   Output : public/audio/${PHRASES_FOLDER}/\n`);
 
   // Créer les dossiers nécessaires
-  const audioDir = path.join(process.cwd(), 'public', 'audio', 'phrases');
+  const audioDir = path.join(process.cwd(), 'public', 'audio', PHRASES_FOLDER);
   if (!fs.existsSync(audioDir)) {
     fs.mkdirSync(audioDir, { recursive: true });
   }
@@ -209,11 +320,13 @@ async function main() {
 
   // Générer l'audio pour chaque phrase
   for (const phrase of dictationPhrases) {
-    const outputPath = path.join(process.cwd(), 'public', phrase.audio);
+    // En slow-mode, dévie chaque chemin vers `audio/phrases-slow/...`
+    const audioRel = slowMode ? toSlowAudioPath(phrase.audio) : phrase.audio;
+    const outputPath = path.join(process.cwd(), 'public', audioRel);
 
     // Vérifier si le fichier existe déjà
     if (fs.existsSync(outputPath)) {
-      console.log(`⊘ Existe déjà: ${phrase.audio}`);
+      console.log(`⊘ Existe déjà: ${audioRel}`);
       totalSkipped++;
       continue;
     }

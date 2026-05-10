@@ -47,6 +47,10 @@ type LevelSummary = {
   completedCount: number;
   durationMinutes: number;
   topCategories: LessonCategory[];
+  /** Toutes les leçons du niveau sont verrouillées (bilan du niveau précédent
+   * pas encore validé à 80%). Calculé depuis `lesson.locked` posé par
+   * `buildLessonPathsState` dans App.tsx. */
+  allLocked: boolean;
 };
 
 export default function LessonPathsPage({
@@ -112,7 +116,12 @@ export default function LessonPathsPage({
             topCategories: Object.entries(categoryCounts)
               .sort((a, b) => b[1] - a[1])
               .slice(0, 3)
-              .map(([cat]) => cat as LessonCategory)
+              .map(([cat]) => cat as LessonCategory),
+            // Niveau entièrement verrouillé si aucune leçon n'est débloquée.
+            // `buildLessonPathsState` (App.tsx) pose `locked:true` sur toutes
+            // les leçons d'un niveau CECR dont le bilan précédent n'est pas
+            // passé à ≥ 80%.
+            allLocked: lessons.length > 0 && lessons.every((l) => l.locked)
           };
         })
         .filter((e) => e.lessonCount > 0)
@@ -134,6 +143,13 @@ export default function LessonPathsPage({
         data.categoryCounts[lesson.category] = (data.categoryCounts[lesson.category] || 0) + 1;
       });
     });
+    // Pour le mode HSK, on calcule `allLocked` à partir des leçons de ce niveau.
+    const hskAllLocked = new Map<HskLevel, boolean>();
+    for (let level = 1 as HskLevel; level <= 7; level = (level + 1) as HskLevel) {
+      const levelLessons = paths.flatMap((p) => p.lessons).filter((l) => l.hskLevel === level);
+      hskAllLocked.set(level, levelLessons.length > 0 && levelLessons.every((l) => l.locked));
+    }
+
     return Array.from(levelMap.entries())
       .map(([level, data]) => ({
         level: level as LevelKey,
@@ -145,7 +161,8 @@ export default function LessonPathsPage({
         topCategories: Object.entries(data.categoryCounts)
           .sort((a, b) => b[1] - a[1])
           .slice(0, 3)
-          .map(([cat]) => cat as LessonCategory)
+          .map(([cat]) => cat as LessonCategory),
+        allLocked: hskAllLocked.get(level as HskLevel) ?? false
       }))
       .filter((e) => e.lessonCount > 0)
       .sort((a, b) => a.order - b.order);
@@ -266,13 +283,16 @@ export default function LessonPathsPage({
     <div className="lp-page">
       {/* Page header */}
       <header className="lp-header">
-        <div>
-          <h1 className="lp-title">{language === 'fr' ? 'Leçons' : 'Lessons'}</h1>
-          <p className="lp-subtitle">
-            {language === 'fr'
-              ? 'Progresse à ton rythme à travers les niveaux.'
-              : 'Progress at your own pace across levels.'}
-          </p>
+        <div className="xl-hero-row">
+          <div className="xl-hero-icon" aria-hidden="true">📚</div>
+          <div className="xl-hero-head-text">
+            <h1 className="lp-title">{language === 'fr' ? 'Leçons' : 'Lessons'}</h1>
+            <p className="lp-subtitle">
+              {language === 'fr'
+                ? 'Progresse à ton rythme à travers les niveaux.'
+                : 'Progress at your own pace across levels.'}
+            </p>
+          </div>
         </div>
       </header>
 
@@ -367,16 +387,39 @@ export default function LessonPathsPage({
         <div className="lp-level-tabs" ref={tabsRef}>
           {levelSummaries.map((s) => {
             const isSelected = s.level === selectedLevel;
-            const isLocked = s.completedCount === 0 && s.order > 1 && !selectedLevelPaths.some((p) => p.lessons.some((l) => !l.locked));
+            // `allLocked` = toutes les leçons de ce niveau sont `locked:true`
+            // (calculé en amont par buildLessonPathsState via le gate bilan 80%).
+            const isLocked = s.allLocked;
             const tabPercent = s.lessonCount > 0 ? Math.round((s.completedCount / s.lessonCount) * 100) : 0;
             return (
               <button
                 key={String(s.level)}
                 type="button"
                 className={`lp-level-tab${isSelected ? ' active' : ''}${isLocked ? ' locked' : ''}`}
-                onClick={() => setSelectedLevel(s.level)}
+                onClick={() => {
+                  if (isLocked) {
+                    alert(
+                      language === 'fr'
+                        ? 'Ce niveau est verrouillé. Termine le bilan du niveau précédent avec au moins 80% pour le débloquer.'
+                        : 'This level is locked. Pass the previous level\u2019s bilan with at least 80% to unlock it.'
+                    );
+                    return;
+                  }
+                  setSelectedLevel(s.level);
+                }}
+                aria-disabled={isLocked}
+                title={
+                  isLocked
+                    ? language === 'fr'
+                      ? 'Verrouillé — termine le bilan du niveau précédent (≥ 80%)'
+                      : 'Locked — pass the previous level\u2019s bilan (≥ 80%)'
+                    : undefined
+                }
               >
-                <span className="lp-tab-name">{s.label}</span>
+                <span className="lp-tab-name">
+                  {isLocked && <span aria-hidden style={{ marginRight: 4 }}>🔒</span>}
+                  {s.label}
+                </span>
                 <span className="lp-tab-meta">
                   {isLocked
                     ? (language === 'fr' ? 'Verrouillé' : 'Locked')

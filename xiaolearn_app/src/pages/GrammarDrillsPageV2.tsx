@@ -285,8 +285,13 @@ const GrammarDrillsPageV2 = (props: GrammarDrillsPageV2Props) => {
             {t(language, 'back')}
           </button>
         )}
-        <h1>{t(language, 'title')}</h1>
-        <p>{t(language, 'subtitle')}</p>
+        <div className="xl-hero-row">
+          <div className="xl-hero-icon" aria-hidden="true">📐</div>
+          <div className="xl-hero-head-text">
+            <h1>{t(language, 'title')}</h1>
+            <p>{t(language, 'subtitle')}</p>
+          </div>
+        </div>
       </div>
 
       {/* Tabs topics */}

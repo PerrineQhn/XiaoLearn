@@ -921,31 +921,38 @@ const B21_TECH_M1: LessonV2Exercise[] = [
     explanationEn: '无处不在 = ubiquitous.'
   },
   {
-    id: 'cecr-b21-tech-m1-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-tech-m1-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'En Chine, WeChat sert principalement à :',
-    promptEn: 'In China, WeChat is mainly used for:',
+    prompt: 'Trouve l\u2019usage INCORRECT de WeChat en Chine.',
+    promptEn: 'Find the INCORRECT use of WeChat in China.',
+    sentence: '\u5FAE\u4FE1\u5728\u4E2D\u56FD\u7684\u7528\u9014',
+    sentenceEn: 'Uses of WeChat in China',
     choices: [
-      'Uniquement envoyer des messages',
-      'Messagerie, paiement, ID, mini-programmes',
-      'Naviguer sur internet',
-      'Jouer aux jeux vidéo'
+      '\u53D1\u6D88\u606F (envoyer des messages)',
+      '\u652F\u4ED8 (paiement mobile)',
+      '\u5C0F\u7A0B\u5E8F (mini-programmes)',
+      '\u5B98\u65B9\u80A1\u7968\u4EA4\u6613\u6240 (bourse officielle des actions)'
     ],
-    correctIndex: 1,
-    explanation: 'WeChat est un super-app : tout-en-un (messaging, pay, ID, services).',
-    explanationEn: 'WeChat is a super-app: all-in-one (messaging, pay, ID, services).'
+    correctIndex: 3,
+    explanation: 'WeChat est un super-app (messagerie, paiement, mini-programmes, ID) mais pas une bourse officielle — les actions se tradent sur 上交所/深交所.',
+    explanationEn: 'WeChat is a super-app (messaging, pay, mini-apps, ID) but NOT a stock exchange — shares trade on the Shanghai/Shenzhen exchanges.'
   },
   {
-    id: 'cecr-b21-tech-m1-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: 'Synonyme de 网 (wǎng) :',
-    promptEn: 'Synonym of 网 (wǎng):',
-    choices: ['\u7535\u8111', '\u7F51\u7EDC', '\u624B\u673A', '\u952E\u76D8'],
+    id: 'cecr-b21-tech-m1-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Comment se forme l\u2019abréviation d\u2019un mot composé de 2 caractères en chinois moderne ?',
+    promptEn: 'How is a 2-character compound word abbreviated in modern Chinese?',
+    choices: [
+      'On garde le 2e caractère seulement',
+      'On garde le 1er caractère (ex : 网络 → 网, 电脑 → 电)',
+      'On utilise uniquement le pinyin',
+      'On ajoute 子 à la fin'
+    ],
     correctIndex: 1,
-    explanation: '网 est l\u2019abréviation de 网络 (réseau/web).',
-    explanationEn: '网 is the short form of 网络 (network/web).'
+    explanation: 'Règle courante : garder le 1er caractère-clé. Ex : 网络→网, 电视→电视 (pas d\u2019abrév), mais 手机号码→手机号.',
+    explanationEn: 'Common rule: keep the first key character. E.g. 网络→网 (net), 手机号码→手机号 (phone number).'
   }
 ];
 
@@ -1026,26 +1033,38 @@ const B21_TECH_M2: LessonV2Exercise[] = [
     explanationEn: '隐私 = privacy. 讨论 = debate/discussion.'
   },
   {
-    id: 'cecr-b21-tech-m2-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-tech-m2-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'Quel LLM est développé par Alibaba ?',
-    promptEn: 'Which LLM is developed by Alibaba?',
-    choices: ['\u6587\u5FC3\u4E00\u8A00', '\u901A\u4E49\u5343\u95EE', 'DeepSeek', 'ChatGPT'],
-    correctIndex: 1,
-    explanation: '通义千问 (Qwen) est d\u2019Alibaba. 文心一言 (Wenxin) est de Baidu.',
-    explanationEn: '通义千问 (Qwen) is Alibaba\u2019s. 文心一言 (Wenxin) is Baidu\u2019s.'
+    prompt: 'Trouve la paire LLM ↔ entreprise INCORRECTE.',
+    promptEn: 'Find the INCORRECT LLM ↔ company pairing.',
+    sentence: 'LLM chinois et leurs créateurs',
+    sentenceEn: 'Chinese LLMs and their makers',
+    choices: [
+      '通义千问 (Qwen) — Alibaba',
+      '文心一言 (Wenxin) — Baidu',
+      'DeepSeek — DeepSeek AI (Hangzhou)',
+      '盘古大模型 (Pangu) — Tencent'
+    ],
+    correctIndex: 3,
+    explanation: 'Pangu (盘古) est un LLM de Huawei, pas de Tencent. Tencent a Hunyuan (混元).',
+    explanationEn: 'Pangu (盘古) is Huawei\u2019s LLM, not Tencent\u2019s. Tencent has Hunyuan (混元).'
   },
   {
-    id: 'cecr-b21-tech-m2-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '云计算 se traduit par :',
-    promptEn: '云计算 translates as:',
-    choices: ['Cloud computing', 'Internet des objets', 'Réalité virtuelle', 'Blockchain'],
+    id: 'cecr-b21-tech-m2-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Quelle est la logique derrière les mots composés tech comme 云计算, 大数据 ?',
+    promptEn: 'What\u2019s the logic behind tech compounds like 云计算, 大数据?',
+    choices: [
+      'Adjectif/nom qualificateur + nom principal (modifier + head)',
+      'Verbe + complément d\u2019objet',
+      'Deux noms égaux sans hiérarchie',
+      'Préposition + nom'
+    ],
     correctIndex: 0,
-    explanation: '云 (nuage) + 计算 (calcul) = cloud computing.',
-    explanationEn: '云 (cloud) + 计算 (compute) = cloud computing.'
+    explanation: 'En chinois, le modificateur précède le nom : 云 (nuage) qualifie 计算 (calcul) ; 大 (grand) qualifie 数据 (données).',
+    explanationEn: 'In Chinese, the modifier precedes the head: 云 (cloud) modifies 计算 (compute); 大 (big) modifies 数据 (data).'
   }
 ];
 
@@ -1131,31 +1150,38 @@ const B21_TECH_M3: LessonV2Exercise[] = [
     explanationEn: '现金 = cash. 几乎消失了 = has almost disappeared.'
   },
   {
-    id: 'cecr-b21-tech-m3-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-tech-m3-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: '拼多多 se distingue de Taobao par :',
-    promptEn: '拼多多 differs from Taobao by:',
+    prompt: 'Trouve l\u2019association app ↔ domaine INCORRECTE.',
+    promptEn: 'Find the INCORRECT app ↔ domain pairing.',
+    sentence: 'Super-apps chinoises',
+    sentenceEn: 'Chinese super-apps',
     choices: [
-      'Ses produits de luxe',
-      'Ses achats groupés low-cost',
-      'Son focus B2B',
-      'Son service de livraison express'
+      '淘宝 — e-commerce grand public',
+      '美团 — livraison de repas (外卖)',
+      '支付宝 — paiement mobile',
+      '滴滴 — streaming vidéo'
     ],
-    correctIndex: 1,
-    explanation: 'Pinduoduo cible le marché bas de gamme avec des prix écrasés par les achats groupés.',
-    explanationEn: 'Pinduoduo targets the low-end market with crushed prices via group buys.'
+    correctIndex: 3,
+    explanation: '滴滴 (Didi) est du VTC (ride-hailing), pas du streaming. Le streaming, c\u2019est 爱奇艺 / 优酷 / 抖音.',
+    explanationEn: '滴滴 (Didi) is ride-hailing, not streaming. Streaming is iQiyi / Youku / Douyin.'
   },
   {
-    id: 'cecr-b21-tech-m3-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '转账 :',
-    promptEn: '转账:',
-    choices: ['Retirer de l\u2019argent', 'Faire un virement', 'Ouvrir un compte', 'Payer par carte'],
+    id: 'cecr-b21-tech-m3-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 扫码, 转账, 付款, quel est le rôle du 1er caractère ?',
+    promptEn: 'In 扫码, 转账, 付款, what role does the 1st character play?',
+    choices: [
+      'Nom — objet de l\u2019action',
+      'Verbe — action exécutée sur le 2e caractère (objet)',
+      'Adjectif qualifiant le 2e caractère',
+      'Particule grammaticale sans sens'
+    ],
     correctIndex: 1,
-    explanation: '转账 = virement (bank transfer).',
-    explanationEn: '转账 = bank transfer.'
+    explanation: 'Structure V-O (verbe + objet) : 扫 (scanner) + 码 (code), 转 (transférer) + 账 (compte), 付 (payer) + 款 (argent).',
+    explanationEn: 'V-O structure (verb + object): 扫 (scan) + 码 (code), 转 (transfer) + 账 (account), 付 (pay) + 款 (money).'
   }
 ];
 
@@ -1236,31 +1262,38 @@ const B21_TECH_M4: LessonV2Exercise[] = [
     explanationEn: '充电宝 = power bank. 共享充电宝 = shared version.'
   },
   {
-    id: 'cecr-b21-tech-m4-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-tech-m4-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: '华为 est principalement connue pour :',
-    promptEn: '华为 is mainly known for:',
+    prompt: 'Trouve l\u2019exemple d\u2019économie du partage (共享经济) INCORRECT.',
+    promptEn: 'Find the INCORRECT example of the sharing economy (共享经济).',
+    sentence: '共享经济',
+    sentenceEn: 'Sharing economy',
     choices: [
-      'E-commerce',
-      'Équipements télécoms et 5G',
-      'Jeux vidéo',
-      'Automobile'
+      '共享单车 (vélos partagés)',
+      '共享充电宝 (batteries partagées)',
+      '共享汽车 (voitures partagées)',
+      '共享身份证 (carte d\u2019identité partagée)'
     ],
-    correctIndex: 1,
-    explanation: 'Huawei est le leader mondial des équipements télécoms et de la 5G.',
-    explanationEn: 'Huawei is the global leader in telecom equipment and 5G.'
+    correctIndex: 3,
+    explanation: 'La carte d\u2019identité est strictement personnelle en Chine — aucune version « partagée ». Les 3 autres sont des services réels.',
+    explanationEn: 'The ID card is strictly personal in China — no «shared» version exists. The other three are real services.'
   },
   {
-    id: 'cecr-b21-tech-m4-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '« Partage » en chinois :',
-    promptEn: '«Sharing» in Chinese:',
-    choices: ['\u5171\u4EAB', '\u5171\u540C', '\u5206\u522B', '\u4EA4\u6362'],
-    correctIndex: 0,
-    explanation: '\u5171\u4EAB = partage ; p\u00e9p\u00e8re de l\u2019\u00e9conomie du partage.',
-    explanationEn: '\u5171\u4EAB = sharing; root of the sharing economy.'
+    id: 'cecr-b21-tech-m4-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 智慧城市, 智能家居, quel est le rôle de 智慧/智能 ?',
+    promptEn: 'In 智慧城市, 智能家居, what role do 智慧/智能 play?',
+    choices: [
+      'Verbe principal',
+      'Adjectif modifiant le nom qui suit (sans 的 requis pour 2+2 syllabes)',
+      'Complément de temps',
+      'Particule de politesse'
+    ],
+    correctIndex: 1,
+    explanation: '智慧 et 智能 sont des adjectifs (« intelligent ») modifiant directement le nom. Le 的 est optionnel pour ces composés techniques courants.',
+    explanationEn: '智慧 and 智能 are adjectives («smart») directly modifying the noun. 的 is optional in these set technical compounds.'
   }
 ];
 
@@ -1341,31 +1374,38 @@ const B21_ENV_M1: LessonV2Exercise[] = [
     explanationEn: '严重 = serious. 污染 = pollution.'
   },
   {
-    id: 'cecr-b21-env-m1-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-env-m1-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'L\u2019AQI à Pékin dans les années 2013-2015 dépassait régulièrement :',
-    promptEn: 'Beijing\u2019s AQI in 2013-2015 regularly exceeded:',
-    choices: ['100', '300', '500', '1000'],
-    correctIndex: 2,
-    explanation: 'Pics à > 500 (« au-delà de l\u2019échelle ») étaient réguliers.',
-    explanationEn: 'Peaks above 500 («off the scale») were common.'
+    prompt: 'Trouve l\u2019affirmation INCORRECTE sur le smog (雾霾) à Pékin.',
+    promptEn: 'Find the INCORRECT statement about Beijing\u2019s smog (雾霾).',
+    sentence: '\u5317\u4EAC\u7684\u96FE\u973E',
+    sentenceEn: 'Beijing\u2019s smog',
+    choices: [
+      'Les hivers 2013-2015 ont connu des AQI > 500',
+      'Le port du 口罩 était devenu banal',
+      'La Chine a depuis investi massivement dans le solaire et l\u2019éolien',
+      'Le smog provient uniquement des volcans locaux'
+    ],
+    correctIndex: 3,
+    explanation: 'Le smog vient surtout du charbon (chauffage hiver + centrales) et du trafic, pas de volcans. Pékin n\u2019a pas de volcan actif.',
+    explanationEn: 'Smog mainly comes from coal (winter heating + power plants) and traffic, not volcanoes. Beijing has no active volcano.'
   },
   {
-    id: 'cecr-b21-env-m1-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '环保 = ?',
-    promptEn: '环保 = ?',
+    id: 'cecr-b21-env-m1-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Comment se forme l\u2019abréviation 环保 à partir de 环境保护 ?',
+    promptEn: 'How is 环保 formed from 环境保护?',
     choices: [
-      'Enveloppe',
-      'Protection environnementale',
-      'Circulation',
-      'Chauffage'
+      'On prend les 2 premiers caractères',
+      'On prend les 2 derniers caractères',
+      'On prend le 1er caractère de chaque mot-clé (环境 + 保护 → 环 + 保)',
+      'On ajoute un suffixe aléatoire'
     ],
-    correctIndex: 1,
-    explanation: '环境 (environnement) + 保护 (protection) → abrégé en 环保.',
-    explanationEn: '环境 (environment) + 保护 (protection) → short form 环保.'
+    correctIndex: 2,
+    explanation: 'Règle productive : 1er caractère de chaque composant. 环境 + 保护 → 环保 ; 高速公路 → 高速 ; 空气污染 → 空污 (moins courant).',
+    explanationEn: 'Productive rule: 1st character of each component. 环境 + 保护 → 环保; 高速公路 → 高速 (highway).'
   }
 ];
 
@@ -1446,26 +1486,38 @@ const B21_ENV_M2: LessonV2Exercise[] = [
     explanationEn: '减少 = reduce. 二氧化碳 = CO2. 排放 = emissions.'
   },
   {
-    id: 'cecr-b21-env-m2-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-env-m2-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'Xi Jinping a annoncé les objectifs carbone en :',
-    promptEn: 'Xi Jinping announced carbon goals in:',
-    choices: ['2015', '2018', '2020', '2023'],
-    correctIndex: 2,
-    explanation: 'Septembre 2020, devant l\u2019ONU.',
-    explanationEn: 'September 2020, at the UN.'
+    prompt: 'Trouve la donnée INCORRECTE sur les objectifs climat de la Chine.',
+    promptEn: 'Find the INCORRECT data point on China\u2019s climate goals.',
+    sentence: '\u4E2D\u56FD\u7684\u6C14\u5019\u76EE\u6807',
+    sentenceEn: 'China\u2019s climate goals',
+    choices: [
+      '2030 : objectif de pic des émissions (碳达峰)',
+      '2060 : objectif de neutralité carbone (碳中和)',
+      'Annonce par Xi Jinping à l\u2019ONU en 2020',
+      '2040 : sortie totale du charbon déjà actée'
+    ],
+    correctIndex: 3,
+    explanation: 'La Chine n\u2019a PAS acté de sortie du charbon en 2040 — elle augmente même ses capacités charbon à court terme malgré la transition.',
+    explanationEn: 'China has NOT committed to a 2040 coal exit — it\u2019s even adding coal capacity short-term despite the transition.'
   },
   {
-    id: 'cecr-b21-env-m2-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '海平面上升 :',
-    promptEn: '海平面上升:',
-    choices: ['Montée des mers', 'Chute des marées', 'Courant marin', 'Tempête'],
+    id: 'cecr-b21-env-m2-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 海平面上升, 全球变暖, quelle est la structure grammaticale ?',
+    promptEn: 'In 海平面上升, 全球变暖, what\u2019s the grammatical structure?',
+    choices: [
+      'Sujet + verbe (action/changement d\u2019état)',
+      'Deux sujets juxtaposés',
+      'Verbe + complément de lieu',
+      'Nom + adjectif'
+    ],
     correctIndex: 0,
-    explanation: '海平面 (niveau de la mer) + 上升 (monter) = rising sea level.',
-    explanationEn: '海平面 (sea level) + 上升 (rise) = rising sea level.'
+    explanation: '海平面 (niveau de la mer, sujet) + 上升 (monter, verbe) ; 全球 (global, sujet) + 变暖 (se réchauffer, verbe). Structure S-V classique.',
+    explanationEn: '海平面 (sea level, subject) + 上升 (rise, verb); 全球 (global, subject) + 变暖 (warm, verb). Standard S-V structure.'
   }
 ];
 
@@ -1546,26 +1598,38 @@ const B21_ENV_M3: LessonV2Exercise[] = [
     explanationEn: '总是 = always. 环保袋 = eco-bag.'
   },
   {
-    id: 'cecr-b21-env-m3-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-env-m3-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'Combien de catégories de tri à Shanghai ?',
-    promptEn: 'How many sorting categories in Shanghai?',
-    choices: ['2', '3', '4', '5'],
-    correctIndex: 2,
-    explanation: 'Quatre : 可回收物 / 有害垃圾 / 湿垃圾 / 干垃圾.',
-    explanationEn: 'Four: 可回收物 / 有害垃圾 / 湿垃圾 / 干垃圾.'
+    prompt: 'Trouve la catégorie de tri INCORRECTE (à Shanghai, 4 catégories officielles).',
+    promptEn: 'Find the INCORRECT sorting category (Shanghai has 4 official ones).',
+    sentence: '\u4E0A\u6D77\u5783\u573E\u5206\u7C7B',
+    sentenceEn: 'Shanghai trash sorting',
+    choices: [
+      '\u53EF\u56DE\u6536\u7269 (recyclables)',
+      '\u6709\u5BB3\u5783\u573E (dangereux)',
+      '\u6E7F\u5783\u573E (humides)',
+      '\u7535\u5B50\u5783\u573E (e-déchets — catégorie séparée)'
+    ],
+    correctIndex: 3,
+    explanation: 'Les 4 catégories officielles sont 可回收物 / 有害垃圾 / 湿垃圾 / 干垃圾. Les e-déchets ne forment pas une 5e catégorie — ils rejoignent les recyclables ou les dangereux.',
+    explanationEn: 'The 4 official categories are 可回收物 / 有害垃圾 / 湿垃圾 / 干垃圾. E-waste is not a 5th category — it\u2019s sorted into recyclables or hazardous.'
   },
   {
-    id: 'cecr-b21-env-m3-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '塑料袋 :',
-    promptEn: '塑料袋:',
-    choices: ['Sac en cuir', 'Sac en plastique', 'Sac en tissu', 'Sac en papier'],
-    correctIndex: 1,
-    explanation: '塑料 (plastique) + 袋 (sac) = sac plastique.',
-    explanationEn: '塑料 (plastic) + 袋 (bag) = plastic bag.'
+    id: 'cecr-b21-env-m3-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 塑料袋, 环保袋, 纸袋, quel est le rôle du 1er élément (塑料/环保/纸) ?',
+    promptEn: 'In 塑料袋, 环保袋, 纸袋, what role does the 1st element (塑料/环保/纸) play?',
+    choices: [
+      'Adjectif descriptif',
+      'Verbe d\u2019action',
+      'Nom-modificateur décrivant la matière ou la fonction du nom suivant',
+      'Complément d\u2019objet direct'
+    ],
+    correctIndex: 2,
+    explanation: 'Noun-modifier structure : 塑料袋 (sac de plastique, matière) ; 环保袋 (sac écolo, fonction) ; 纸袋 (sac de papier, matière). Le 1er nom modifie le 2e.',
+    explanationEn: 'Noun-modifier structure: 塑料袋 (plastic bag, material); 环保袋 (eco bag, function); 纸袋 (paper bag, material). The 1st noun modifies the 2nd.'
   }
 ];
 
@@ -1646,26 +1710,38 @@ const B21_ECONOMICS_M1: LessonV2Exercise[] = [
     explanationEn: '利率 = rate. 上升 = rise.'
   },
   {
-    id: 'cecr-b21-economics-m1-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-economics-m1-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'La Chine a connu une croissance à deux chiffres entre :',
-    promptEn: 'China had double-digit growth between:',
-    choices: ['1980-2000', '1990-2010', '2000-2015', '2010-2020'],
-    correctIndex: 1,
-    explanation: 'Environ 1990-2010, puis ralentissement structurel.',
-    explanationEn: 'Roughly 1990-2010, then structural slowdown.'
+    prompt: 'Trouve l\u2019association INCORRECTE sur l\u2019économie chinoise.',
+    promptEn: 'Find the INCORRECT pairing about China\u2019s economy.',
+    sentence: '\u4E2D\u56FD\u7ECF\u6D4E',
+    sentenceEn: 'China\u2019s economy',
+    choices: [
+      'Croissance à deux chiffres : 1990-2010',
+      '国内生产总值 (GDP) : indicateur principal',
+      '通货膨胀 (inflation) : hausse générale des prix',
+      '股市 : marché du travail où l\u2019on échange du salaire'
+    ],
+    correctIndex: 3,
+    explanation: '股市 = marché des actions (stock market), pas le marché du travail. Le marché du travail se dit 劳动力市场.',
+    explanationEn: '股市 = stock market, not labour market. Labour market is 劳动力市场.'
   },
   {
-    id: 'cecr-b21-economics-m1-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '国内生产总值 abrégé :',
-    promptEn: '国内生产总值 abbreviated:',
-    choices: ['GDP (PIB)', 'CPI', 'VAT', 'M2'],
-    correctIndex: 0,
-    explanation: 'Littéralement « valeur totale de production intérieure » = GDP.',
-    explanationEn: 'Literally «total domestic production value» = GDP.'
+    id: 'cecr-b21-economics-m1-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 国内生产总值, comment lire la structure ?',
+    promptEn: 'In 国内生产总值, how do we parse the structure?',
+    choices: [
+      'Un bloc indivisible sans logique interne',
+      '国内 (intérieur du pays) + 生产 (production) + 总值 (valeur totale) — empilement modificateur → tête',
+      '4 caractères égaux en hiérarchie',
+      'Verbe + objet + particule'
+    ],
+    correctIndex: 1,
+    explanation: 'Lecture gauche→droite, chaque élément modifie le suivant : 国内 qualifie 生产, et l\u2019ensemble modifie 总值. C\u2019est typique du chinois économique.',
+    explanationEn: 'Read left-to-right, each element modifies the next: 国内 modifies 生产, and the whole modifies 总值. Typical of Chinese economic jargon.'
   }
 ];
 
@@ -1746,26 +1822,38 @@ const B21_ECONOMICS_M2: LessonV2Exercise[] = [
     explanationEn: '创业 = start a business. 勇气 = courage.'
   },
   {
-    id: 'cecr-b21-economics-m2-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-economics-m2-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: '深圳 est connue comme :',
-    promptEn: '深圳 is known as:',
-    choices: ['Capitale politique', 'Cœur tech de la Chine', 'Centre financier', 'Cité historique'],
-    correctIndex: 1,
-    explanation: 'Shenzhen : HQ de Tencent, BYD, Huawei, SF Express.',
-    explanationEn: 'Shenzhen: HQ of Tencent, BYD, Huawei, SF Express.'
+    prompt: 'Trouve l\u2019entreprise PAS basée à Shenzhen (深圳).',
+    promptEn: 'Find the company NOT headquartered in Shenzhen.',
+    sentence: '\u6DF1\u5733\u603B\u90E8\u7684\u516C\u53F8',
+    sentenceEn: 'Companies headquartered in Shenzhen',
+    choices: [
+      '腾讯 (Tencent)',
+      'BYD (比亚迪)',
+      '华为 (Huawei)',
+      '阿里巴巴 (Alibaba)'
+    ],
+    correctIndex: 3,
+    explanation: 'Alibaba est basé à Hangzhou (杭州), pas Shenzhen. Tencent, BYD et Huawei sont bien à Shenzhen.',
+    explanationEn: 'Alibaba is headquartered in Hangzhou (杭州), not Shenzhen. Tencent, BYD and Huawei are indeed in Shenzhen.'
   },
   {
-    id: 'cecr-b21-economics-m2-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '风险投资 :',
-    promptEn: '风险投资:',
-    choices: ['Prêt bancaire', 'Capital-risque (VC)', 'Assurance', 'Investissement immobilier'],
-    correctIndex: 1,
-    explanation: '风险 (risque) + 投资 (investir) = VC.',
-    explanationEn: '风险 (risk) + 投资 (invest) = VC.'
+    id: 'cecr-b21-economics-m2-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 风险投资 et 创始人, quelle règle de composition explique le sens ?',
+    promptEn: 'In 风险投资 and 创始人, which composition rule explains the meaning?',
+    choices: [
+      'Modificateur (adj/nom) + tête nominale (nom principal)',
+      'Deux verbes consécutifs',
+      'Verbe + adverbe',
+      'Préposition + complément'
+    ],
+    correctIndex: 0,
+    explanation: '风险 (risque, modificateur) + 投资 (investissement, tête) = investissement à risque (VC). 创始 (fonder, modificateur) + 人 (personne, tête) = fondateur.',
+    explanationEn: '风险 (risk, modifier) + 投资 (investment, head) = risk investment (VC). 创始 (found, modifier) + 人 (person, head) = founder.'
   }
 ];
 
@@ -1851,26 +1939,38 @@ const B21_ECONOMICS_M3: LessonV2Exercise[] = [
     explanationEn: '热点话题 = hot topic/widely debated.'
   },
   {
-    id: 'cecr-b21-economics-m3-mcq3',
-    type: 'mcq',
+    id: 'cecr-b21-economics-m3-err1',
+    type: 'error-correction',
     category: 'reading',
-    prompt: 'Qui a défendu le 996 comme « une bénédiction » en 2019 ?',
-    promptEn: 'Who defended 996 as a «blessing» in 2019?',
-    choices: ['Pony Ma', 'Jack Ma', 'Robin Li', 'Liu Qiangdong'],
-    correctIndex: 1,
-    explanation: 'Jack Ma (fondateur d\u2019Alibaba) l\u2019a défendu, provoquant un tollé.',
-    explanationEn: 'Jack Ma (Alibaba founder) defended it, causing outrage.'
+    prompt: 'Trouve l\u2019affirmation INCORRECTE sur le 996 en Chine.',
+    promptEn: 'Find the INCORRECT statement about 996 culture in China.',
+    sentence: '996\u5DE5\u4F5C\u5236',
+    sentenceEn: 'The 996 work system',
+    choices: [
+      'Signifie travailler de 9h à 21h, 6 jours/semaine',
+      'Jack Ma l\u2019a défendu comme une « bénédiction » en 2019',
+      'Emblématique de la tech (BAT, Pinduoduo, etc.)',
+      'Le code du travail chinois l\u2019autorise explicitement'
+    ],
+    correctIndex: 3,
+    explanation: 'Le 996 est en réalité illégal selon le code du travail chinois (40h/sem). Il est toléré en pratique, mais plusieurs jugements ont confirmé son illégalité depuis 2021.',
+    explanationEn: '996 is actually illegal under Chinese labour law (40h/wk). It\u2019s tolerated in practice, but multiple rulings since 2021 have confirmed its illegality.'
   },
   {
-    id: 'cecr-b21-economics-m3-mcq4',
-    type: 'mcq',
-    category: 'vocabulary',
-    prompt: '下属 :',
-    promptEn: '下属:',
-    choices: ['Sup\u00e9rieur', 'Subordonn\u00e9', 'Coll\u00e8gue', 'Client'],
+    id: 'cecr-b21-economics-m3-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Dans 下属 (subordonné) et 上司 (supérieur), quel est le rôle de 下/上 ?',
+    promptEn: 'In 下属 (subordinate) and 上司 (superior), what role do 下/上 play?',
+    choices: [
+      'Verbes de mouvement (descendre/monter)',
+      'Indicateurs spatiaux réutilisés pour exprimer une hiérarchie (inférieur/supérieur)',
+      'Prépositions de temps',
+      'Particules sans sens'
+    ],
     correctIndex: 1,
-    explanation: '\u4E0B (inf\u00e9rieur) + \u5C5E (appartenir) = subordonn\u00e9.',
-    explanationEn: '\u4E0B (below) + \u5C5E (belong) = subordinate.'
+    explanation: '上/下 (haut/bas) s\u2019appliquent à la hiérarchie. 上司 (chef/supérieur), 下属 (subordonné), 上级 (échelon supérieur), 下级 (échelon inférieur).',
+    explanationEn: '上/下 (up/down) extend to hierarchy. 上司 (boss), 下属 (subordinate), 上级 (higher rank), 下级 (lower rank).'
   }
 ];
 
@@ -2645,48 +2745,69 @@ const A1_PINYIN_M1_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m1-listen-tone2',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute et choisis le ton.',
-    promptEn: 'Listen and pick the tone.',
+    id: 'cecr-a1-pinyin-m1-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'Complète la transcription : 来 (venir) se prononce l__',
+    promptEn: 'Fill in: 来 (to come) is pronounced l__',
+    sentence: 'l__',
+    sentenceEn: 'l__',
+    choices: ['ā', 'á', 'ǎ', 'à'],
+    correctIndex: 1,
+    explanation: '来 = lái (ton 2, montant). La voix monte comme dans une question française « Vraiment ? ».',
+    explanationEn: '来 = lái (tone 2, rising). The voice rises as in an English «Really?».'
+  },
+  {
+    id: 'cecr-a1-pinyin-m1-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe par ton croissant (1→4) avec la syllabe « ma ».',
+    promptEn: 'Order by ascending tone (1→4) with the syllable «ma».',
+    sentence: 'Ton 1 → Ton 2 → Ton 3 → Ton 4',
+    sentenceEn: 'Tone 1 → Tone 2 → Tone 3 → Tone 4',
+    choices: ['mā (妈 mère)', 'má (麻 chanvre)', 'mǎ (马 cheval)', 'mà (骂 gronder)'],
+    correctIndex: 0,
+    explanation: 'Ordre canonique : mā/má/mǎ/mà = 妈/麻/马/骂. Illustre à quel point le ton change complètement le sens.',
+    explanationEn: 'Canonical order: mā/má/mǎ/mà = mother/hemp/horse/scold. Shows how tone fully changes meaning.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m1-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « bù shì » (不是) ?',
+    promptEn: 'What does «bù shì» (不是) mean?',
+    choices: ['Ce n\u2019est pas / non', 'C\u2019est / oui', 'Peut-être', 'Bonjour'],
+    correctIndex: 0,
+    explanation: '不是 = bù shì = « ce n\u2019est pas » / « non » (négation de 是 « être »). À l\u2019oral, sandhi : bú shì (不 passe au ton 2 devant ton 4).',
+    explanationEn: '不是 = bù shì = «is not» / «no» (negation of 是 «to be»). Spoken with sandhi: bú shì (不 shifts to tone 2 before tone 4).'
+  },
+  {
+    id: 'cecr-a1-pinyin-m1-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Combien de tons distinctifs existe-t-il en mandarin standard ?',
+    promptEn: 'How many distinctive tones are there in Standard Mandarin?',
     choices: [
-      'Ton 1 — aigu plat',
-      'Ton 2 — montant (comme une question)',
-      'Ton 3 — descendant-montant',
-      'Ton 4 — descendant'
+      '3 tons',
+      '4 tons + 1 ton neutre (l\u00E9ger)',
+      '5 tons distinctifs',
+      '6 tons comme en cantonais'
     ],
     correctIndex: 1,
-    explanation: '来 (lái, venir) = ton 2 : la voix monte, comme quand on pose une question en français (« Vraiment ? »).',
-    explanationEn: '来 (lái, to come) = tone 2: the voice rises, like asking «Really?» in English.',
-    audioHanzi: '来',
-    autoPlay: true
+    explanation: 'Le mandarin a 4 tons principaux (plat, montant, descendant-montant, descendant) + un ton l\u00E9ger dit \u00AB neutre \u00BB (ex. 的, 了). Changer le ton change le sens : mā/m\u00E1/m\u01CE/m\u00E0 = m\u00E8re/chanvre/cheval/gronder. Le cantonais en a 6-9, mais pas le mandarin.',
+    explanationEn: 'Mandarin has 4 main tones (flat, rising, dipping, falling) + a light «neutral» tone (e.g. 的, 了). Changing the tone changes the meaning: m\u0101/m\u00E1/m\u01CE/m\u00E0 = mother/hemp/horse/scold. Cantonese has 6-9, Mandarin doesn\u2019t.'
   },
   {
-    id: 'cecr-a1-pinyin-m1-listen-match1',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : quelle syllabe entends-tu ?',
-    promptEn: 'Listen: which syllable do you hear?',
-    choices: ['nǐ (ton 3)', 'ní (ton 2)', 'nī (ton 1)', 'nì (ton 4)'],
-    correctIndex: 0,
-    explanation: '你 se prononce nǐ au ton 3 (descendant-montant). Attention, dans 你好 il devient ní par sandhi (2 tons 3 consécutifs).',
-    explanationEn: '你 is nǐ, tone 3 (dipping). Note: in 你好 it becomes ní via sandhi (two consecutive tone-3s).',
-    audioHanzi: '你',
-    autoPlay: true
-  },
-  {
-    id: 'cecr-a1-pinyin-m1-listen-match2',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute bien : quelle syllabe entends-tu ?',
-    promptEn: 'Listen carefully: which syllable is it?',
-    choices: ['bù (ton 4)', 'bú (ton 2)', 'bū (ton 1)', 'bǔ (ton 3)'],
-    correctIndex: 0,
-    explanation: '不 se prononce bù au ton 4 par défaut. Il devient bú (ton 2) seulement devant une autre syllabe au ton 4.',
-    explanationEn: '不 is bù (tone 4) by default. It shifts to bú (tone 2) only before another tone-4 syllable.',
-    audioHanzi: '不',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m1-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Trouve la transcription INCORRECTE pour \u00AB maman \u00BB (\u5988).',
+    promptEn: 'Find the INCORRECT transcription for «mother» (\u5988).',
+    sentence: '\u5988',
+    choices: ['m\u0101', 'm\u00E1', 'm\u01CE', 'm\u00E0'],
+    correctIndex: 3,
+    explanation: '\u5988 (maman) se dit au ton 1 : m\u0101 (voix haute et plate). m\u00E0 (ton 4) signifie \u00AB gronder \u00BB. m\u00E1 = chanvre, m\u01CE = cheval. Illustre parfaitement pourquoi le ton est cl\u00E9.',
+    explanationEn: '\u5988 (mother) is tone 1: m\u0101 (high flat voice). m\u00E0 (tone 4) means «scold». m\u00E1 = hemp, m\u01CE = horse. Perfect illustration of why tones matter.'
   }
 ];
 
@@ -2719,30 +2840,41 @@ const A1_PINYIN_M2_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m2-listen-d',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : quelle initiale ?',
-    promptEn: 'Listen: which initial?',
-    choices: ['d- (non aspirée)', 't- (aspirée)', 'n-', 'l-'],
+    id: 'cecr-a1-pinyin-m2-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'Complète l\u2019initiale : 大 (grand) se prononce __à',
+    promptEn: 'Fill in the initial: 大 (big) is pronounced __à',
+    sentence: '__à',
+    sentenceEn: '__à',
+    choices: ['d', 't', 'n', 'l'],
     correctIndex: 0,
-    explanation: '大 (dà) commence par d- : la langue touche les dents du haut, pas de souffle qui suit. Contraste d/t comme pour b/p.',
-    explanationEn: '大 (dà) starts with d-: tongue touches upper teeth, no puff follows. Same d/t contrast as b/p.',
-    audioHanzi: '大',
-    autoPlay: true
+    explanation: '大 = dà : initiale d- (non aspirée). En mandarin, d/t contrastent par l\u2019ASPIRATION, pas par le voisement comme en français.',
+    explanationEn: '大 = dà: unaspirated initial d-. In Mandarin, d/t contrast by ASPIRATION, not voicing like in French.'
   },
   {
-    id: 'cecr-a1-pinyin-m2-listen-t',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute attentivement : d ou t ?',
-    promptEn: 'Listen carefully: d or t?',
-    choices: ['d- (silencieux)', 't- (avec souffle)', 'm-', 'n-'],
-    correctIndex: 1,
-    explanation: '他 (tā, il) commence par t- : le souffle est bien audible après la langue. Sans ce souffle, tu entendrais 大 (dà).',
-    explanationEn: '他 (tā, he) starts with t-: clear puff after the tongue release. Without the puff you\'d hear 大 (dà).',
-    audioHanzi: '他',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m2-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe par flux d\u2019air croissant : nasale → non aspirée → aspirée.',
+    promptEn: 'Order by increasing airflow: nasal → unaspirated → aspirated.',
+    sentence: 'Aucun air → peu d\u2019air → beaucoup d\u2019air',
+    sentenceEn: 'No airflow → little → lots',
+    choices: ['m- (nasale, aucun souffle oral)', 'b- (orale, non aspirée)', 'p- (orale, aspirée)', 'f- (fricative labiale)'],
+    correctIndex: 0,
+    explanation: 'Progression phonétique : m < b < p en flux d\u2019air, f ajoute une friction labio-dentale. Mets la main devant la bouche pour sentir la différence.',
+    explanationEn: 'Phonetic progression: m < b < p by airflow; f adds labiodental friction. Put your hand in front of your mouth to feel it.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m2-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « bà ba » (爸爸) ?',
+    promptEn: 'What does «bà ba» (爸爸) mean?',
+    choices: ['Papa', 'Maman', 'Grand frère', 'Grand-père'],
+    correctIndex: 0,
+    explanation: '爸爸 = bà ba = papa. Redoublement familier typique (cf. 妈妈 māma = maman, 哥哥 gēge = grand frère).',
+    explanationEn: '爸爸 = bà ba = dad. Typical familial reduplication (cf. 妈妈 māma = mom, 哥哥 gēge = big brother).'
   },
   {
     id: 'cecr-a1-pinyin-m2-listen-m',
@@ -2758,17 +2890,37 @@ const A1_PINYIN_M2_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m2-listen-n',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : m, n ou l ?',
-    promptEn: 'Listen: m, n or l?',
-    choices: ['m- (bilabiale nasale)', 'n- (dentale nasale)', 'l- (latérale)', 'd-'],
+    id: 'cecr-a1-pinyin-m2-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Qu\u2019est-ce qui distingue b- et p- en mandarin ?',
+    promptEn: 'What distinguishes b- and p- in Mandarin?',
+    choices: [
+      'b- est voisé, p- ne l\u2019est pas',
+      'b- est non aspir\u00E9e, p- est aspir\u00E9e (souffle d\u2019air)',
+      'b- est nasale, p- est orale',
+      'Ils sont identiques'
+    ],
     correctIndex: 1,
-    explanation: '你 (nǐ) commence par n- : la langue touche les dents du haut, air par le nez. Contraste fin avec l- où l\'air passe sur les côtés de la langue.',
-    explanationEn: '你 (nǐ) starts with n-: tongue on upper teeth, air through the nose. Subtle contrast with l- where air flows around the tongue sides.',
-    audioHanzi: '你',
-    autoPlay: true
+    explanation: 'En mandarin, ni b- ni p- ne sont voisés (contrairement au fran\u00E7ais). La diff\u00E9rence est l\u2019ASPIRATION : p- produit un souffle marqu\u00E9, b- non. Mets la main devant la bouche : tu sens l\u2019air sur p-, pas sur b-.',
+    explanationEn: 'In Mandarin, neither b- nor p- is voiced (unlike French). The difference is ASPIRATION: p- has a clear puff, b- doesn\u2019t. Put your hand before your mouth: you feel air on p-, not on b-.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m2-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Trouve la paire incorrecte (hanzi / initiale).',
+    promptEn: 'Find the mismatched pair (hanzi / initial).',
+    sentence: 'Paires caract\u00E8re - initiale',
+    choices: [
+      '\u7237 / y- (fran\u00E7ais)',
+      '\u4F60 / n-',
+      '\u5988 / p-',
+      '\u5927 / d-'
+    ],
+    correctIndex: 2,
+    explanation: '\u5988 commence par m- (ma\u0304), PAS par p-. m- est nasale, pas aspir\u00E9e. La confusion m/p vient parfois des transcriptions anciennes (Wade-Giles) mais en pinyin moderne, m\u5988 = m\u0101.',
+    explanationEn: '\u5988 starts with m- (m\u0101), NOT p-. m- is nasal, not aspirated. The m/p confusion comes from old Wade-Giles romanizations, but in modern pinyin \u5988 = m\u0101.'
   }
 ];
 
@@ -2788,17 +2940,17 @@ const A1_PINYIN_M3_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m3-listen-k',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : g ou k ?',
-    promptEn: 'Listen: g or k?',
-    choices: ['g- (silencieux)', 'k- (avec souffle marqué)', 'h-', 'q-'],
+    id: 'cecr-a1-pinyin-m3-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'Complète : 看 (regarder) se prononce __àn',
+    promptEn: 'Fill in: 看 (to watch) is pronounced __àn',
+    sentence: '__àn',
+    sentenceEn: '__àn',
+    choices: ['g', 'k', 'h', 'q'],
     correctIndex: 1,
-    explanation: '看 (kàn, regarder) commence par k- : souffle d\'air audible juste après la consonne. Sans ce souffle : 哥 (gē).',
-    explanationEn: '看 (kàn, to watch) starts with k-: audible puff right after. No puff → 哥 (gē).',
-    audioHanzi: '看',
-    autoPlay: true
+    explanation: '看 = kàn : k- aspirée. Souffle d\u2019air clair après la consonne. Sans souffle : gàn = 干 (faire).',
+    explanationEn: '看 = kàn: aspirated k-. Clear puff after the consonant. Without puff: gàn = 干 (to do).'
   },
   {
     id: 'cecr-a1-pinyin-m3-listen-h',
@@ -2827,30 +2979,56 @@ const A1_PINYIN_M3_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m3-listen-q',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : j, q ou x ?',
-    promptEn: 'Listen: j, q or x?',
-    choices: ['j- (dj doux)', 'q- (tch doux et soufflé)', 'x- (ch chuchoté)', 'k-'],
-    correctIndex: 1,
-    explanation: '去 (qù, aller) commence par q- : comme « j- » mais avec un souffle en plus. Pense à un « tchi » très doux. Souris en le prononçant !',
-    explanationEn: '去 (qù, to go) starts with q-: like «j-» plus a puff. Think of a very soft «tchi». Smile when you say it!',
-    audioHanzi: '去',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m3-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe par position de la langue : arrière (vélaire) → avant (palatale).',
+    promptEn: 'Order by tongue position: back (velar) → front (palatal).',
+    sentence: 'Vélaire arrière → palatale avant',
+    sentenceEn: 'Back velar → front palatal',
+    choices: ['g- (vélaire non aspirée)', 'k- (vélaire aspirée)', 'j- (palatale non aspirée)', 'q- (palatale aspirée)'],
+    correctIndex: 0,
+    explanation: 'g/k sont vélaires (dos de langue contre palais mou, arrière). j/q sont palatales (dos contre palais dur, avant). j/q/x ne prennent JAMAIS de vélaires — ki, gi n\u2019existent pas en pinyin.',
+    explanationEn: 'g/k are velars (tongue back against soft palate). j/q are palatals (tongue dorsum against hard palate, front). j/q/x never combine with velars — ki, gi don\u2019t exist in pinyin.'
   },
   {
-    id: 'cecr-a1-pinyin-m3-listen-x',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute bien : j, q ou x ?',
-    promptEn: 'Listen carefully: j, q or x?',
-    choices: ['j-', 'q-', 'x- (ch léger, presque chuchoté)', 'sh-'],
+    id: 'cecr-a1-pinyin-m3-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « xiǎo » (小) ?',
+    promptEn: 'What does «xiǎo» (小) mean?',
+    choices: ['Petit', 'Grand', 'Haut', 'Vieux'],
+    correctIndex: 0,
+    explanation: '小 = xiǎo = petit. Initiale x- (palatale chuchotée) + finale iao + ton 3. Souvent utilisé comme préfixe affectueux : 小王 (p\u2019tit Wang).',
+    explanationEn: '小 = xiǎo = small. Initial x- (whispered palatal) + final iao + tone 3. Often used as an affectionate prefix: 小王 (little Wang).'
+  },
+  {
+    id: 'cecr-a1-pinyin-m3-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Les initiales j- / q- / x- peuvent pr\u00E9c\u00E9der quelles voyelles ?',
+    promptEn: 'Which vowels can j- / q- / x- appear before?',
+    choices: [
+      'Toutes les voyelles',
+      'Seulement a, o, e',
+      'Seulement i et \u00FC',
+      'Seulement u et e'
+    ],
     correctIndex: 2,
-    explanation: '小 (xiǎo, petit) commence par x- : fricative très légère, comme un « ch » français chuchoté. C\'est le son le plus doux des trois.',
-    explanationEn: '小 (xiǎo, small) starts with x-: very light fricative, like a whispered English «sh». The softest of the three.',
-    audioHanzi: '小',
-    autoPlay: true
+    explanation: 'j/q/x sont des palatales : elles ne peuvent appara\u00EEtre QUE devant i ou \u00FC. En pinyin, le tr\u00E9ma est souvent omis apr\u00E8s j/q/x car la confusion est impossible : ju = j\u00FC, qu = q\u00FC, xu = x\u00FC. R\u00E8gle \u00E9cono-graphique.',
+    explanationEn: 'j/q/x are palatals: they can only appear before i or \u00FC. In pinyin, the umlaut is often dropped after j/q/x since there\u2019s no confusion: ju = j\u00FC, qu = q\u00FC, xu = x\u00FC. Economical spelling rule.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m3-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Quelle transcription est IMPOSSIBLE en pinyin standard ?',
+    promptEn: 'Which transcription is IMPOSSIBLE in standard pinyin?',
+    sentence: 'Candidates',
+    choices: ['ji\u0101 (\u5BB6)', 'q\u00F9 (\u53BB)', 'xi\u01CE (\u5C0F)', 'ja (syllable)'],
+    correctIndex: 3,
+    explanation: '\u00AB ja \u00BB n\u2019existe pas en pinyin : j- ne peut jamais pr\u00E9c\u00E9der \u00AB a \u00BB sans i. Forme correcte : jia. De m\u00EAme, qa, xa sont impossibles. Seules i ou \u00FC peuvent suivre j/q/x.',
+    explanationEn: '«ja» doesn\u2019t exist in pinyin: j- can never precede «a» without i. Correct form: jia. Similarly, qa, xa are impossible. Only i or \u00FC can follow j/q/x.'
   }
 ];
 
@@ -2896,43 +3074,74 @@ const A1_PINYIN_M4_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m4-listen-r',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : r chinois, l, ou autre ?',
-    promptEn: 'Listen: Chinese r, l, or other?',
-    choices: ['r- (rétroflexe, vibré très léger)', 'l-', 'n-', 'zh-'],
-    correctIndex: 0,
-    explanation: '人 (rén, personne) commence par r- : langue recourbée, son entre le « j » français de « je » et un « r » anglais. AUCUN rapport avec le « r » roulé français.',
-    explanationEn: '人 (rén, person) starts with r-: curled tongue, sound between French «j» in «je» and English «r». NOT the French rolled «r».',
-    audioHanzi: '人',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m4-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'Complète : 人 (personne) se prononce __én',
+    promptEn: 'Fill in: 人 (person) is pronounced __én',
+    sentence: '__én',
+    sentenceEn: '__én',
+    choices: ['zh', 'ch', 'sh', 'r'],
+    correctIndex: 3,
+    explanation: '人 = rén : initiale r- (rétroflexe, entre le « j » français et le « r » anglais). RIEN à voir avec le « r » roulé du français.',
+    explanationEn: '人 = rén: initial r- (retroflex, between French «j» and English «r»). NOT the French rolled «r».'
   },
   {
-    id: 'cecr-a1-pinyin-m4-listen-z',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : langue plate (sifflante) ou langue recourbée (rétroflexe) ?',
-    promptEn: 'Listen: flat tongue (sibilant) or curled tongue (retroflex)?',
-    choices: ['z- (sifflante, langue contre les dents du bas)', 'zh- (rétroflexe)', 'c-', 'j-'],
+    id: 'cecr-a1-pinyin-m4-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe par position de langue : plate (sifflante) → recourbée (rétroflexe).',
+    promptEn: 'Order by tongue position: flat (sibilant) → curled (retroflex).',
+    sentence: 'Plate → recourbée',
+    sentenceEn: 'Flat → curled',
+    choices: ['s- (fricative plate)', 'z- (affriquée plate)', 'sh- (fricative recourbée)', 'zh- (affriquée recourbée)'],
     correctIndex: 0,
-    explanation: '字 (zì, caractère) commence par z- : langue plate contre les dents du bas, son proche de « dz ». Sans voisement : s-.',
-    explanationEn: '字 (zì, character) starts with z-: flat tongue against the lower teeth, sounds like «dz». Unvoiced version: s-.',
-    audioHanzi: '字',
-    autoPlay: true
+    explanation: 'Sifflantes z/c/s : langue PLATE contre les dents du bas. Rétroflexes zh/ch/sh : langue RECOURBÉE vers le palais. Paires miroirs pour l\u2019apprentissage : s↔sh, z↔zh, c↔ch.',
+    explanationEn: 'Sibilants z/c/s: FLAT tongue against lower teeth. Retroflexes zh/ch/sh: CURLED tongue toward palate. Mirror pairs for drilling: s↔sh, z↔zh, c↔ch.'
   },
   {
-    id: 'cecr-a1-pinyin-m4-listen-sh2',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : s- ou sh- ?',
-    promptEn: 'Listen: s- or sh-?',
-    choices: ['s- (langue plate, claire)', 'sh- (langue recourbée, plus sourd)', 'x-', 'c-'],
+    id: 'cecr-a1-pinyin-m4-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « shì » (是) ?',
+    promptEn: 'What does «shì» (是) mean?',
+    choices: ['Être / oui', 'Quatre', 'Dix', 'Maison'],
+    correctIndex: 0,
+    explanation: '是 = shì = être / oui. Rétroflexe sh-. Ne pas confondre avec 四 sì (quatre, sifflante s-). Même ton 4, mais l\u2019initiale change complètement le sens.',
+    explanationEn: '是 = shì = to be / yes. Retroflex sh-. Don\u2019t confuse with 四 sì (four, sibilant s-). Same tone 4, but the initial totally changes meaning.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m4-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Qu\u2019est-ce qui distingue les r\u00E9troflexes (zh/ch/sh/r) des sifflantes (z/c/s) ?',
+    promptEn: 'What distinguishes retroflexes (zh/ch/sh/r) from sibilants (z/c/s)?',
+    choices: [
+      'Le volume sonore',
+      'La position de la langue (recourb\u00E9e vs plate)',
+      'L\u2019intonation',
+      'La voyelle qui suit'
+    ],
     correctIndex: 1,
-    explanation: '说 (shuō, parler) commence par sh-. Piège classique : 四 (sì, quatre) vs 是 (shì, être). Le contraste s/sh est vital en mandarin.',
-    explanationEn: '说 (shuō, to speak) starts with sh-. Classic trap: 四 (sì, four) vs 是 (shì, to be). The s/sh contrast is vital in Mandarin.',
-    audioHanzi: '说',
-    autoPlay: true
+    explanation: 'R\u00E9troflexes : langue RECOURB\u00C9E vers l\u2019arri\u00E8re du palais. Sifflantes : langue PLATE, pointe contre les incisives. M\u00EAme opposition aspir\u00E9e/non pour chaque paire (zh/z = non aspir\u00E9, ch/c = aspir\u00E9, sh/s = fricatives).',
+    explanationEn: 'Retroflexes: tongue CURLED back toward the palate. Sibilants: tongue FLAT, tip against incisors. Same aspirated/unaspirated opposition for each pair (zh/z = unaspirated, ch/c = aspirated, sh/s = fricatives).'
+  },
+  {
+    id: 'cecr-a1-pinyin-m4-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Trouve la mauvaise association hanzi / initiale.',
+    promptEn: 'Find the wrong hanzi / initial match.',
+    sentence: 'Paires',
+    choices: [
+      '\u4E2D / zh- (r\u00E9troflexe)',
+      '\u56DB / s- (sifflante)',
+      '\u662F / z- (sifflante)',
+      '\u4EBA / r-'
+    ],
+    correctIndex: 2,
+    explanation: '\u662F = sh\u00EC (r\u00E9troflexe), PAS z\u00EC. Erreur classique : confondre 是 et 四 (s\u00EC). Langue recourb\u00E9e pour shì, plate pour sì. Cette distinction change compl\u00E8tement le sens.',
+    explanationEn: '\u662F = sh\u00EC (retroflex), NOT z\u00EC. Classic mix-up: confusing 是 with 四 (s\u00EC). Tongue curled for shì, flat for sì. This distinction totally changes meaning.'
   }
 ];
 
@@ -2978,43 +3187,69 @@ const A1_PINYIN_M5_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m5-listen-eng',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : finale nasale -n ou -ng ?',
-    promptEn: 'Listen: nasal final -n or -ng?',
-    choices: ['-en (nasale claire, langue en avant)', '-eng (nasale profonde, dans le nez)', '-an', '-ang'],
+    id: 'cecr-a1-pinyin-m5-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'Complète : 能 (pouvoir) se prononce n__',
+    promptEn: 'Fill in: 能 (can) is pronounced n__',
+    sentence: 'n__',
+    sentenceEn: 'n__',
+    choices: ['én', 'éng', 'áng', 'ián'],
     correctIndex: 1,
-    explanation: '能 (néng, pouvoir) = finale -eng : la nasalisation se sent profondément dans le nez, bouche plus ouverte. En -en, la langue touche les dents du haut.',
-    explanationEn: '能 (néng, can) = final -eng: nasalization felt deep in the nose, mouth more open. In -en, the tongue touches the upper teeth.',
-    audioHanzi: '能',
-    autoPlay: true
+    explanation: '能 = néng, finale -eng : nasalisation profonde, bouche plus ouverte que -en. Contraste crucial avec 嫩 (nèn, tendre) ou 你 (nǐ).',
+    explanationEn: '能 = néng, final -eng: deep nasalization, mouth more open than -en. Crucial contrast with 嫩 (nèn, tender) or 你 (nǐ).'
   },
   {
-    id: 'cecr-a1-pinyin-m5-listen-eng2',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : -en ou -eng ?',
-    promptEn: 'Listen: -en or -eng?',
-    choices: ['-an', '-ang', '-en', '-eng'],
-    correctIndex: 3,
-    explanation: '冷 (lěng, froid) se termine par -eng : l-eng. Le -ng finale nasalise sans qu\'on prononce le « g », mais la bouche reste ouverte, son profond.',
-    explanationEn: '冷 (lěng, cold) ends in -eng: l-eng. Final -ng nasalizes without pronouncing «g», mouth stays open, deep sound.',
-    audioHanzi: '冷',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m5-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe les finales nasales du son le plus fermé au plus ouvert.',
+    promptEn: 'Order nasal finals from most closed to most open.',
+    sentence: 'Fermée → ouverte',
+    sentenceEn: 'Closed → open',
+    choices: ['-in (très fermé)', '-en (semi-fermé)', '-an (ouvert antérieur)', '-ang (ouvert postérieur)'],
+    correctIndex: 0,
+    explanation: 'Progression d\u2019aperture : -in (lèvres serrées) < -en < -an < -ang (bouche grande ouverte, son profond). Essentiel pour distinguer les paires minimales (xin/xing, ban/bang).',
+    explanationEn: 'Aperture progression: -in (tight lips) < -en < -an < -ang (wide open, deep sound). Essential for drilling minimal pairs (xin/xing, ban/bang).'
   },
   {
-    id: 'cecr-a1-pinyin-m5-listen-ou',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute : quelle finale ?',
-    promptEn: 'Listen: which final?',
-    choices: ['-ao (« aou »)', '-ou (« oou »)', '-uo (« ouo »)', '-iu'],
+    id: 'cecr-a1-pinyin-m5-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « yǒu » (有) ?',
+    promptEn: 'What does «yǒu» (有) mean?',
+    choices: ['Avoir / il y a', 'Vouloir', 'Être', 'Faire'],
+    correctIndex: 0,
+    explanation: '有 = yǒu = avoir / il y a. Finale -ou (proche de « yo » long). Verbe de base essentiel : 我有 (wǒ yǒu = j\u2019ai), 有人 (yǒu rén = il y a quelqu\u2019un).',
+    explanationEn: '有 = yǒu = to have / there is. Final -ou (close to a long «yo»). Essential base verb: 我有 (wǒ yǒu = I have), 有人 (yǒu rén = there\u2019s someone).'
+  },
+  {
+    id: 'cecr-a1-pinyin-m5-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Quelle est la diff\u00E9rence entre les finales -n et -ng ?',
+    promptEn: 'What\u2019s the difference between final -n and -ng?',
+    choices: [
+      'Aucune, elles sont identiques',
+      '-n : pointe de langue sur les dents ; -ng : bouche ouverte, r\u00E9sonance profonde',
+      '-n est aspir\u00E9e, -ng ne l\u2019est pas',
+      'Seul le ton change'
+    ],
     correctIndex: 1,
-    explanation: '有 (yǒu, avoir) = y + ou → [iou] qui sonne proche de [iou] ou « yo long ». Distinct de -uo (ouo, comme dans 我 wǒ).',
-    explanationEn: '有 (yǒu, to have) = y + ou → [iou], close to a long «yo». Distinct from -uo (as in 我 wǒ).',
-    audioHanzi: '有',
-    autoPlay: true
+    explanation: '-n (ex. 人 r\u00E9n) : pointe de langue contre les incisives. -ng (ex. 能 n\u00E9ng) : dos de la langue contre le palais mou, bouche plus ouverte, son profond. Contraste cr\u00E9e des paires oppos\u00E9es : fen/feng, shen/sheng, chen/cheng.',
+    explanationEn: '-n (e.g. 人 r\u00E9n): tongue tip against upper teeth. -ng (e.g. 能 n\u00E9ng): back of tongue against soft palate, mouth more open, deeper sound. Creates opposed pairs: fen/feng, shen/sheng, chen/cheng.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m5-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Trouve la transcription fauss\u00E9e par un umlaut manquant.',
+    promptEn: 'Find the transcription that\u2019s wrong due to a missing umlaut.',
+    sentence: 'Candidates',
+    choices: ['n\u01D0 (\u4F60)', 'lu (pour \u7EFF = vert)', 'xu\u00E9 (\u5B66)', 'ji\u0101 (\u5BB6)'],
+    correctIndex: 1,
+    explanation: '\u7EFF = l\u01DC (avec \u00FC), jamais \u00AB lu \u00BB. Apr\u00E8s l- et n-, le \u00FC reste \u00E9crit avec umlaut obligatoire car \u00AB lu \u00BB existe aussi (ex. 鹿 l\u00F9, cerf) et a un sens diff\u00E9rent. L\u2019umlaut n\u2019est omis qu\u2019apr\u00E8s j/q/x/y.',
+    explanationEn: '\u7EFF = l\u01DC (with \u00FC), never «lu». After l- and n-, \u00FC keeps the umlaut mandatorily because «lu» also exists (e.g. 鹿 l\u00F9, deer) with different meaning. Umlaut is dropped only after j/q/x/y.'
   }
 ];
 
@@ -3057,58 +3292,41 @@ const A1_PINYIN_M6_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m6-listen-buyao',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute 不要 : ton du 不 ?',
-    promptEn: 'Listen to 不要: tone of 不?',
-    choices: [
-      'bù yào (ton 4 + ton 4)',
-      'bú yào (ton 2 + ton 4) — sandhi appliqué',
-      'bū yào (ton 1)',
-      'bǔ yào (ton 3)'
-    ],
+    id: 'cecr-a1-pinyin-m6-fill1',
+    type: 'fill',
+    category: 'vocabulary',
+    prompt: 'À l\u2019oral, 不要 (ne veut pas) se prononce __ yào.',
+    promptEn: 'Spoken, 不要 (don\u2019t want) is pronounced __ yào.',
+    sentence: '__ yào',
+    sentenceEn: '__ yào',
+    choices: ['bù', 'bú', 'bī', 'bǔ'],
     correctIndex: 1,
-    explanation: '要 (yào) est ton 4 → 不 devient ton 2 : bú yào. Même règle automatique que bú shì. Tu l\'entendras partout en chinois courant.',
-    explanationEn: '要 (yào) is tone 4 → 不 becomes tone 2: bú yào. Same automatic rule as bú shì. You\'ll hear it everywhere in everyday Chinese.',
-    audioHanzi: '不要',
-    autoPlay: true
+    explanation: '要 = ton 4 → 不 passe du ton 4 au ton 2 : bú yào. Sandhi automatique du 不 devant un autre ton 4.',
+    explanationEn: '要 = tone 4 → 不 shifts from tone 4 to tone 2: bú yào. Automatic 不 sandhi before another tone 4.'
   },
   {
-    id: 'cecr-a1-pinyin-m6-listen-buhao',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute 不好 : ton du 不 ?',
-    promptEn: 'Listen to 不好: tone of 不?',
-    choices: [
-      'bù hǎo (不 reste ton 4)',
-      'bú hǎo (ton 2, sandhi)',
-      'bū hǎo (ton 1)',
-      'bǒ hǎo (ton 3)'
-    ],
+    id: 'cecr-a1-pinyin-m6-order1',
+    type: 'order',
+    category: 'vocabulary',
+    prompt: 'Classe par ton réel du 不 selon le ton du caractère qui suit.',
+    promptEn: 'Order by the actual tone of 不 depending on the following character\u2019s tone.',
+    sentence: 'Tons résultants de 不 + X',
+    sentenceEn: 'Resulting 不 + X tones',
+    choices: ['不 + ton 1 → bù', '不 + ton 2 → bù', '不 + ton 3 → bù', '不 + ton 4 → bú'],
     correctIndex: 0,
-    explanation: '好 (hǎo) est ton 3, PAS ton 4 → 不 reste bù. La règle ne s\'applique que devant un ton 4. Bonne habitude : écouter d\'abord le ton du 2e caractère.',
-    explanationEn: '好 (hǎo) is tone 3, NOT tone 4 → 不 stays bù. The rule only applies before tone 4. Good habit: listen first to the 2nd character\'s tone.',
-    audioHanzi: '不好',
-    autoPlay: true
+    explanation: '不 reste ton 4 (bù) dans 3 cas sur 4. Seul le cas « suivi d\u2019un ton 4 » déclenche le sandhi bù → bú. Règle symétrique à celle du 一.',
+    explanationEn: '不 stays tone 4 (bù) in 3 out of 4 cases. Only «followed by tone 4» triggers the bù → bú sandhi. Mirror rule to 一\u2019s.'
   },
   {
-    id: 'cecr-a1-pinyin-m6-listen-yiqi',
-    type: 'mcq',
-    category: 'listening',
-    prompt: 'Écoute 一起 : comment est prononcé 一 ?',
-    promptEn: 'Listen to 一起: how is 一 pronounced?',
-    choices: [
-      'yī qǐ (ton 1, de base)',
-      'yí qǐ (ton 2)',
-      'yì qǐ (ton 4, devant ton 1/2/3)',
-      'yǐ qǐ (ton 3)'
-    ],
-    correctIndex: 2,
-    explanation: 'Règle du 一 : devant tons 1/2/3 → 一 devient yì (ton 4) ; devant ton 4 → 一 devient yí (ton 2). 起 est ton 3, donc yì qǐ. Sa forme isolée est yī (ton 1).',
-    explanationEn: 'The 一 rule: before tones 1/2/3 → 一 = yì (tone 4); before tone 4 → 一 = yí (tone 2). 起 is tone 3, so yì qǐ. In isolation, 一 = yī (tone 1).',
-    audioHanzi: '一起',
-    autoPlay: true
+    id: 'cecr-a1-pinyin-m6-trans1',
+    type: 'translation',
+    category: 'translation',
+    prompt: 'Que signifie « yì qǐ » (一起) ?',
+    promptEn: 'What does «yì qǐ» (一起) mean?',
+    choices: ['Ensemble', 'Un', 'Différent', 'Seul'],
+    correctIndex: 0,
+    explanation: '一起 = yì qǐ = ensemble. 一 prend le ton 4 (yì) devant le ton 3 de qǐ — règle du 一 : yì devant tons 1/2/3, yí devant ton 4.',
+    explanationEn: '一起 = yì qǐ = together. 一 takes tone 4 (yì) before qǐ\u2019s tone 3 — the 一 rule: yì before tones 1/2/3, yí before tone 4.'
   },
   {
     id: 'cecr-a1-pinyin-m6-listen-yige',
@@ -3127,6 +3345,39 @@ const A1_PINYIN_M6_DISCRIM: LessonV2Exercise[] = [
     explanationEn: '个 (gè) is tone 4 → 一 becomes yí (tone 2). Mirror of the 不 rule. Mnemonic: «一 before a 4 rises».',
     audioHanzi: '一个',
     autoPlay: true
+  },
+  {
+    id: 'cecr-a1-pinyin-m6-grammar1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Quand 不 change-t-il de ton en mandarin ?',
+    promptEn: 'When does 不 change tone in Mandarin?',
+    choices: [
+      '\u00C0 chaque phrase',
+      'Devant un ton 4 uniquement (b\u00F9 \u2192 b\u00FA)',
+      'Devant un ton 3',
+      'Jamais'
+    ],
+    correctIndex: 1,
+    explanation: '不 est au ton 4 par d\u00E9faut. Devant un autre ton 4, il passe au ton 2 pour \u00E9viter la r\u00E9p\u00E9tition de descente : b\u00F9 + sh\u00EC \u2192 b\u00FA sh\u00EC. Devant tons 1/2/3, il reste b\u00F9. R\u00E8gle automatique, non marqu\u00E9e \u00E0 l\u2019\u00E9crit.',
+    explanationEn: '不 defaults to tone 4. Before another tone 4, it shifts to tone 2 to avoid a double fall: b\u00F9 + sh\u00EC \u2192 b\u00FA sh\u00EC. Before tones 1/2/3, it stays b\u00F9. Automatic rule, not marked in writing.'
+  },
+  {
+    id: 'cecr-a1-pinyin-m6-err1',
+    type: 'error-correction',
+    category: 'vocabulary',
+    prompt: 'Quelle transcription IGNORE un sandhi obligatoire \u00E0 l\u2019oral ?',
+    promptEn: 'Which transcription IGNORES a mandatory sandhi at speech?',
+    sentence: 'Paires hanzi / pinyin',
+    choices: [
+      '\u4F60\u597D \u2192 n\u01D0 h\u01CEo (\u00E9crit)',
+      '\u4E0D\u8981 \u2192 b\u00F9 y\u00E0o (prononc\u00E9)',
+      '\u4E00\u8D77 \u2192 y\u00EC q\u01D0 (prononc\u00E9)',
+      '\u4E0D\u597D \u2192 b\u00F9 h\u01CEo (prononc\u00E9)'
+    ],
+    correctIndex: 1,
+    explanation: '\u4E0D\u8981 \u00E0 l\u2019oral = b\u00FA y\u00E0o (ton 2 + ton 4), pas b\u00F9 y\u00E0o. Le 不 subit le sandhi devant 要 (ton 4). Les trois autres sont corrects : 你好 s\u2019\u00C9CRIT n\u01D0 h\u01CEo ; 一 devient y\u00EC devant ton 3 ; 不 reste b\u00F9 devant ton 3.',
+    explanationEn: '\u4E0D\u8981 spoken = b\u00FA y\u00E0o (tone 2 + tone 4), not b\u00F9 y\u00E0o. 不 triggers sandhi before 要 (tone 4). The others are correct: 你好 is WRITTEN n\u01D0 h\u01CEo; 一 becomes y\u00EC before tone 3; 不 stays b\u00F9 before tone 3.'
   }
 ];
 

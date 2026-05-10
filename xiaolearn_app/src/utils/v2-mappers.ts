@@ -35,11 +35,6 @@ import type {
   CommunityV2Challenge,
   CommunityV2LeaderboardEntry
 } from '../pages/CommunityPageV2';
-import type {
-  ReportV2Period,
-  ReportV2Metrics,
-  ReportV2LevelProgress
-} from '../pages/ReportPageV2';
 import { cecrExercisesV2All as cecrExercisesV2 } from '../data/cecr-exercises-all';
 
 // ---------------------------------------------------------------------------
@@ -185,12 +180,27 @@ export function lessonItemToFlashcardV2(
   item: LessonItem,
   masteredIds?: Set<string>,
   difficultIds?: Set<string>,
-  learnedIds?: Set<string>
+  learnedIds?: Set<string>,
+  reviewedIds?: Set<string>,
+  srsMap?: Record<string, { lastReviewedAt?: number }>
 ): FlashcardV2Item {
   let srsState: FlashcardV2SrsState = 'new';
   if (masteredIds?.has(item.id)) srsState = 'mastered';
   else if (difficultIds?.has(item.id)) srsState = 'difficult';
   else if (learnedIds?.has(item.id)) srsState = 'learning';
+
+  // Source canonique : timestamp réel issu de la SRS (`useWordSRS.map`).
+  // Fallback : marqueur arbitraire `1` (non-nul mais sans valeur métier) si
+  // la carte est dans `reviewedIds` mais qu'on n'a pas le map sous la main.
+  // Le marqueur reste compatible avec la table plate V5 (classement
+  // "En cours" vs "Nouveau") sans introduire de date erronée.
+  const realTs = srsMap?.[item.id]?.lastReviewedAt;
+  const lastReviewedAt =
+    realTs && realTs > 0
+      ? realTs
+      : reviewedIds?.has(item.id)
+        ? 1
+        : undefined;
 
   return {
     id: item.id,
@@ -202,6 +212,7 @@ export function lessonItemToFlashcardV2(
     theme: item.theme,
     tokens: item.hanzi.length,
     srsState,
+    lastReviewedAt,
     // Propagation de l'URL audio pré-enregistrée (WAV/MP3) vers les flashcards :
     // elle sera utilisée par ListeningCard / FlipCard au lieu de Web Speech quand
     // disponible, garantissant un son identique sur Chrome / Safari / mobile.
@@ -456,58 +467,3 @@ export const DEFAULT_CHALLENGES: CommunityV2Challenge[] = [
 
 export const DEFAULT_LEADERBOARD: CommunityV2LeaderboardEntry[] = [];
 
-// ---------------------------------------------------------------------------
-// Report defaults — bilan mensuel depuis useDashboardState + useLessonProgress
-// ---------------------------------------------------------------------------
-
-export interface BuildReportInput {
-  learnedThisMonth: number;
-  masteredThisMonth: number;
-  xpGained: number;
-  level: number;
-  activeDays: number;
-  totals: Record<string, number>;
-  heatmap: Array<{ date: string; count: number }>;
-}
-
-export function buildReportData(input: BuildReportInput, language: Language = 'fr'): {
-  period: ReportV2Period;
-  metrics: ReportV2Metrics;
-  byLevel: ReportV2LevelProgress[];
-  activityHeatmap: Array<{ date: string; count: number }>;
-} {
-  const now = new Date();
-  const monthLabel = now.toLocaleDateString(language === 'fr' ? 'fr-FR' : 'en-US', {
-    month: 'long',
-    year: 'numeric'
-  });
-
-  const byLevel: ReportV2LevelProgress[] = (['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7'] as const).map((level) => ({
-    level,
-    learnedThisPeriod: 0,
-    target: 50,
-    totalLearned: input.totals[level] ?? 0
-  }));
-
-  return {
-    period: {
-      label: monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1),
-      labelEn: monthLabel,
-      endsAt: new Date().toISOString().slice(0, 10)
-    },
-    metrics: {
-      wordsLearned: input.learnedThisMonth,
-      wordsMastered: input.masteredThisMonth,
-      xpGained: input.xpGained,
-      levelAtEnd: input.level,
-      activeDays: input.activeDays,
-      longestStreak: 0,
-      currentStreak: 0,
-      lessonsCompleted: 0,
-      cardsReviewed: 0,
-      averageAccuracy: 0
-    },
-    byLevel,
-    activityHeatmap: input.heatmap
-  };
-}

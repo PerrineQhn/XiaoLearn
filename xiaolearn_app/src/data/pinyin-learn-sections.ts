@@ -513,8 +513,8 @@ export const pinyinPracticeLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Pronunciation is trained by ear, not by theory. Going forward: listen to simple dialogues 10 minutes a day, repeat out loud, record yourself. Tones become automatic within 2–3 weeks.',
     tip:
-      'Les leçons Dialogue et Lecture de XiaoLearn sont faites pour ça — tous les audios sont des MP3/WAV natifs (Azure Neural TTS).',
+      'Les leçons Dialogue et Lecture de XiaoLearn sont faites pour ça.',
     tipEn:
-      'XiaoLearn\'s Dialogue and Reading lessons are built for this — every audio is native MP3/WAV (Azure Neural TTS).'
+      'XiaoLearn\'s Dialogue and Reading lessons are built for this.'
   }
 ];

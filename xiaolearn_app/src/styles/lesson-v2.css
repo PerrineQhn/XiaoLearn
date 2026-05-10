@@ -483,6 +483,29 @@
   opacity: 0.9;
 }
 
+/* Phase 3A IA — bouton « Demander à l'IA : pourquoi ? » dans le feedback
+   d'un exercice raté. Couleur sobre pour rester discret en bas du feedback,
+   mais cliquable. Dispatch xiaolearn:openAiChat avec le contexte de l'exo. */
+.lesson-v2 .lv2-ask-ai-why-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px dashed rgba(185, 28, 28, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.lesson-v2 .lv2-ask-ai-why-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(185, 28, 28, 0.7);
+}
+
 /* =========================
    V8 — badges & order type
    ========================= */
@@ -1107,6 +1130,35 @@
   font-size: 14px;
   color: #5a3f06;
   line-height: 1.45;
+}
+
+/* Bouton « Demander à l'IA » — placé en fin de section Apprendre, ouvre le
+   floating chat avec un prompt contextuel pré-rempli (event xiaolearn:openAiChat). */
+.lesson-v2 .lv2-learn-ask-ai {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.lesson-v2 .lv2-learn-ask-ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lv2-primary, #b91c1c);
+  background: rgba(185, 28, 28, 0.06);
+  border: 1px dashed rgba(185, 28, 28, 0.35);
+  border-radius: var(--lv2-radius-sm, 8px);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.lesson-v2 .lv2-learn-ask-ai-btn:hover {
+  background: rgba(185, 28, 28, 0.12);
+  border-color: rgba(185, 28, 28, 0.55);
+}
+.lesson-v2 .lv2-learn-ask-ai-btn:active {
+  transform: scale(0.97);
 }
 
 /* =========================

@@ -47,6 +47,13 @@ export interface SentenceFlashcard {
   pinyin: string;
   translationFr: string;
   translationEn?: string;
+  /**
+   * URL d'un MP3 pré-généré pour cette phrase (convention :
+   * `/audio/dialogues/{dialogueId}/{lineIndex}.mp3`). Quand renseignée, le
+   * lecteur joue directement ce fichier au lieu de tenter de résoudre le hanzi
+   * via les conventions HSK (qui ne couvrent pas les phrases multi-mots).
+   */
+  audio?: string;
   /** Contexte : locuteur + situation. */
   speaker?: string;
   contextFr?: string;

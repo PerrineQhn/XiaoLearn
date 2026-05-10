@@ -27,8 +27,6 @@ import ts from 'typescript';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const publicAudioDir = path.join(projectRoot, 'public', 'audio', 'readings');
-const manifestPath = path.join(publicAudioDir, 'manifest.json');
 
 // ---------------------------------------------------------------------------
 // CLI parsing
@@ -36,6 +34,9 @@ const manifestPath = path.join(publicAudioDir, 'manifest.json');
 const argv = process.argv.slice(2);
 const force = argv.includes('--force');
 const dryRun = argv.includes('--dry-run');
+// --slow active le mode shadowing : audio ralenti (rate -35% par défaut) avec
+// pauses respiratoires sur la ponctuation. Sortie vers `audio/readings-slow/`.
+const slowMode = argv.includes('--slow');
 
 function parseFlag(prefix) {
   const raw = argv.find((a) => a.startsWith(prefix));
@@ -47,6 +48,15 @@ const levelFilter = parseFlag('--level=')?.split(',').map((s) => s.trim().toLowe
 const readingFilter = parseFlag('--reading=')?.split(',').map((s) => s.trim()) ?? null;
 const limitFlag = parseFlag('--limit=');
 const limit = limitFlag ? Math.max(1, parseInt(limitFlag, 10) || 0) : Infinity;
+const rateOverride = parseFlag('--rate=');
+
+// -10% en lecture normale (déjà posé), -35% en shadowing.
+const PROSODY_RATE = rateOverride ?? (slowMode ? '-35%' : '-10%');
+const SHADOWING_BREAK_MS = 350;
+
+const folderName = slowMode ? 'readings-slow' : 'readings';
+const publicAudioDir = path.join(projectRoot, 'public', 'audio', folderName);
+const manifestPath = path.join(publicAudioDir, 'manifest.json');
 
 // ---------------------------------------------------------------------------
 // Azure credentials
@@ -94,6 +104,8 @@ function pickVoiceForReading(readingId) {
 async function loadReadings() {
   const readingsTs = path.join(projectRoot, 'src/data/readings.ts');
   const cecrB2Ts = path.join(projectRoot, 'src/data/cecr-b2-texts.ts');
+  const cecrExtraTs = path.join(projectRoot, 'src/data/cecr-extra-readings.ts');
+  const cecrTalesTs = path.join(projectRoot, 'src/data/cecr-tales-daily-readings.ts');
 
   const tmpDir = path.join(__dirname, '.cache-reading-audio');
   fs.mkdirSync(tmpDir, { recursive: true });
@@ -111,15 +123,29 @@ async function loadReadings() {
     return ts.transpileModule(src, { compilerOptions: compileOptions }).outputText;
   }
 
-  // cecr-b2-texts.ts exporte à la fois dialogues B2 et readings B2 — on le
-  // compile en premier puisque readings.ts en dépend.
+  // cecr-b2-texts.ts + cecr-extra-readings.ts sont des dépendances de readings.ts —
+  // on les compile d'abord avant d'ajuster les chemins d'import.
   const cecrOutPath = path.join(tmpDir, 'cecr-b2-texts.mjs');
   fs.writeFileSync(cecrOutPath, compile(cecrB2Ts));
+
+  const cecrExtraOutPath = path.join(tmpDir, 'cecr-extra-readings.mjs');
+  fs.writeFileSync(cecrExtraOutPath, compile(cecrExtraTs));
+
+  const cecrTalesOutPath = path.join(tmpDir, 'cecr-tales-daily-readings.mjs');
+  fs.writeFileSync(cecrTalesOutPath, compile(cecrTalesTs));
 
   let readingsJs = compile(readingsTs);
   readingsJs = readingsJs.replace(
     /from\s+['"]\.\/cecr-b2-texts['"]/g,
     `from './cecr-b2-texts.mjs'`
+  );
+  readingsJs = readingsJs.replace(
+    /from\s+['"]\.\/cecr-extra-readings['"]/g,
+    `from './cecr-extra-readings.mjs'`
+  );
+  readingsJs = readingsJs.replace(
+    /from\s+['"]\.\/cecr-tales-daily-readings['"]/g,
+    `from './cecr-tales-daily-readings.mjs'`
   );
   const readingsOutPath = path.join(tmpDir, 'readings.mjs');
   fs.writeFileSync(readingsOutPath, readingsJs);
@@ -137,13 +163,28 @@ function escapeXml(s) {
   ));
 }
 
+/**
+ * En shadowing, on ajoute une pause SSML après chaque ponctuation chinoise
+ * forte pour caler la respiration de l'apprenant.
+ */
+function buildSsmlBody(text) {
+  if (!slowMode) return escapeXml(text);
+  const parts = text.split(/([。，！？；：、])/u).filter(Boolean);
+  let out = '';
+  for (const p of parts) {
+    out += escapeXml(p);
+    if (/[。，！？；：、]/u.test(p)) {
+      out += `<break time="${SHADOWING_BREAK_MS}ms"/>`;
+    }
+  }
+  return out;
+}
+
 function buildSsml(text, voiceName) {
-  // Débit légèrement ralenti pour faciliter la compréhension, plus marqué
-  // que pour les dialogues (lecture posée).
   return [
     '<speak version="1.0" xml:lang="zh-CN" xmlns:mstts="https://www.w3.org/2001/mstts">',
     `  <voice name="${voiceName}">`,
-    `    <prosody rate="-10%">${escapeXml(text)}</prosody>`,
+    `    <prosody rate="${PROSODY_RATE}">${buildSsmlBody(text)}</prosody>`,
     '  </voice>',
     '</speak>'
   ].join('\n');
@@ -190,6 +231,8 @@ async function synthesizeWithRetry(text, voice, label) {
 async function main() {
   console.log('📖 Génération audio readings · Azure Neural TTS');
   console.log(`     Region : ${AZURE_REGION}${dryRun ? ' · DRY-RUN' : ''}`);
+  console.log(`     Mode   : ${slowMode ? '🐢 SHADOWING (slow)' : 'NORMAL'} · rate=${PROSODY_RATE}`);
+  console.log(`     Output : public/audio/${folderName}/`);
 
   const { entries, tmpDir } = await loadReadings();
   console.log(`     ${entries.length} textes chargés`);
@@ -233,7 +276,10 @@ async function main() {
     for (let i = 0; i < reading.segments.length; i++) {
       const seg = reading.segments[i];
       const outFile = path.join(dir, `${i}.mp3`);
-      const urlPath = `/audio/readings/${reading.id}/${i}.mp3`;
+      // L'URL servie au navigateur doit refléter le dossier réel (folderName)
+      // — en mode --slow, on doit générer /audio/readings-slow/... et non
+      // /audio/readings/... (sinon le manifest slow pointe vers le normal).
+      const urlPath = `/audio/${folderName}/${reading.id}/${i}.mp3`;
       segPaths.push(urlPath);
 
       if (!force && fs.existsSync(outFile)) {

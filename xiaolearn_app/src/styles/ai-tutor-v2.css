@@ -81,14 +81,16 @@
   align-items: center;
 }
 .ai-tutor-v2 .at2-hero-avatar {
-  font-size: 42px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--at2-gold-soft);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fde9e8 0%, #fbf1cf 100%);
+  border: 1px solid #f4c8c3;
+  box-shadow: 0 6px 16px rgba(200, 52, 46, 0.18);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 }
 .ai-tutor-v2 .at2-hero h1 {
   margin: 0 0 2px;

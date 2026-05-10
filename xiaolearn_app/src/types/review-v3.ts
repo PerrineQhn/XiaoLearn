@@ -65,6 +65,14 @@ export type ReviewQuestionSource = 'quiz' | 'dialogue' | 'vocab';
 export interface ReviewQuestion {
   id: string;
   source: ReviewQuestionSource;
+  /**
+   * Forme de l'interaction :
+   *  - 'mcq'   (défaut) : un seul clic, on compare `selectedIndex` à `correctIndex`.
+   *  - 'order' : l'utilisateur doit réordonner les fragments. Les `choices`
+   *    sont stockés dans l'ordre canonique (correct), affichés mélangés en UI ;
+   *    la réponse est la séquence d'indices, correcte si elle vaut [0, 1, …, n-1].
+   */
+  kind?: 'mcq' | 'order';
   /** Leçon d'origine (utilisée pour bloquer le recalcul de mastery). */
   lessonId: string;
   /** Niveau CECR de la leçon d'origine. */

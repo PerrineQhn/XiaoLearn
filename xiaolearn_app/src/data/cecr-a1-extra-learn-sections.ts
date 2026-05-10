@@ -631,3 +631,614 @@ export const classifiersLearnSections: LessonV2LearnSection[] = [
       'Watch out: 二 (èr) becomes 两 (liǎng) before a classifier. Say 两个人 (two people), NOT 二个人. Systematic rule — absorb it early.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// VAGUE A1 — Conversation + Nuances (pivot stratégique)
+// 14 nouvelles leçons : 7 Conversation + 7 Nuances. Audios à générer en 2e passe.
+// ═════════════════════════════════════════════════════════════════════════════
+
+// === CONVERSATION A1 =========================================================
+
+export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-politesse-base',
+    title: 'Les 4 mots qui rendent une journée fluide',
+    titleEn: 'The 4 words that make a day flow',
+    body:
+      '请 (qǐng, s\'il vous plaît / je vous en prie), 谢谢 (xièxie, merci), 不客气 (bú kèqi, de rien — réponse à 谢谢), 对不起 (duìbuqǐ, pardon). Ces 4 mots forment l\'ossature sociale chinoise. 请 ouvre une demande, jamais à la fin (≠ français « svp »). 不客气 est universel pour répondre à 谢谢. À ces 4 ajoute 没关系 (méi guānxi, ce n\'est rien — réponse à 对不起) et tu fonctionnes en société.',
+    bodyEn:
+      '请 (qǐng, please / go ahead), 谢谢 (xièxie, thank you), 不客气 (bú kèqi, you\'re welcome — reply to 谢谢), 对不起 (duìbuqǐ, sorry). These 4 are the social backbone in China. 请 opens a request, never at the end (≠ English «please» at end). 不客气 is universal as reply to 谢谢. Add 没关系 (méi guānxi, no problem — reply to 对不起) and you function socially.',
+    items: [
+      { hanzi: '请', pinyin: 'qǐng', meaning: 's\'il vous plaît', meaningEn: 'please', audio: 'audio/hsk1/hsk1_请.wav' },
+      { hanzi: '谢谢', pinyin: 'xiè xie', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
+      { hanzi: '不客气', pinyin: 'bú kè qi', meaning: 'de rien', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
+      { hanzi: '对不起', pinyin: 'duì bu qǐ', meaning: 'pardon', meaningEn: 'sorry', audio: 'audio/hsk1/hsk1_对不起.wav' },
+      { hanzi: '没关系', pinyin: 'méi guān xi', meaning: 'pas grave', meaningEn: 'no problem', audio: 'audio/hsk1/hsk1_没关系.wav' }
+    ],
+    tip:
+      '请 se place TOUJOURS au début de la phrase, jamais à la fin : 请坐 (asseyez-vous svp), pas 坐请. C\'est l\'inverse du français.',
+    tipEn:
+      '请 ALWAYS goes at the start of the phrase, never at the end: 请坐 (sit, please), not 坐请. Opposite of French structure.'
+  },
+  {
+    id: 'a1-politesse-quotidien',
+    title: 'Petites formules quotidiennes : 麻烦 / 辛苦了',
+    titleEn: 'Daily mini-phrases: 麻烦 / 辛苦了',
+    body:
+      '麻烦你 (máfan nǐ, je vous demande pardon de vous déranger) : pour demander un service, plus chaleureux que 请. 麻烦你帮我 = ça t\'embêterait de m\'aider. 辛苦了 (xīnkǔ le, merci pour le travail) : à un livreur, à un collègue qui a fini une tâche, au taxi qui dépose. Universel et chaleureux — l\'oublier sonne froid. 加油 (jiāyóu, courage / vas-y !) : pour encourager.',
+    bodyEn:
+      '麻烦你 (máfan nǐ, sorry to trouble you) : to ask a favor, warmer than 请. 麻烦你帮我 = would you mind helping me. 辛苦了 (xīnkǔ le, thanks for the work) : to a delivery person, a colleague after a task, the taxi driver dropping you off. Universal and warm — skipping it sounds cold. 加油 (jiāyóu, chin up / you got this) : to encourage.',
+    items: [
+      { hanzi: '麻烦', pinyin: 'má fan', meaning: 'déranger, ennui', meaningEn: 'trouble', audio: 'audio/hsk4/hsk4_麻烦.wav' },
+      { hanzi: '辛苦了', pinyin: 'xīn kǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for the work', audio: 'audio/hsk4/hsk4_辛苦.wav' },
+      { hanzi: '加油', pinyin: 'jiā yóu', meaning: 'bon courage', meaningEn: 'go for it', audio: 'audio/hsk2/hsk2_加油.wav' },
+      { hanzi: '帮', pinyin: 'bāng', meaning: 'aider', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮.wav' },
+      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir, OK', meaningEn: 'can, OK', audio: 'audio/hsk1/hsk1_可以.wav' }
+    ],
+    tip:
+      '辛苦了 est culturellement énorme. À retenir : DÈS qu\'un Chinois vient de faire quelque chose pour toi (te servir, te livrer, t\'aider), 辛苦了 est attendu. Plus chaud que 谢谢.',
+    tipEn:
+      '辛苦了 is culturally huge. AS SOON as a Chinese person has done something for you (served, delivered, helped), 辛苦了 is expected. Warmer than 谢谢.'
+  }
+];
+
+export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-clarifier',
+    title: 'Quand on n\'a pas compris : « 请再说一遍 »',
+    titleEn: 'When you didn\'t catch it: «请再说一遍»',
+    body:
+      'Phrases-bouées : 请再说一遍 (redites svp), 慢一点 (plus lentement), 我听不懂 (je ne comprends pas — auditivement), 你说什么？(qu\'est-ce que tu dis ?). Pour épeler un caractère : 这个字怎么写？(comment ça s\'écrit ?). Pour le sens : 这是什么意思？(qu\'est-ce que ça veut dire ?). Ces 5 phrases te sortent de presque toutes les impasses A1.',
+    bodyEn:
+      'Lifebuoy phrases: 请再说一遍 (please say it again), 慢一点 (slower), 我听不懂 (I don\'t catch what you\'re saying), 你说什么？(what did you say?). To spell a character: 这个字怎么写？(how do you write it?). For meaning: 这是什么意思？(what does it mean?). These 5 phrases get you out of almost any A1 jam.',
+    items: [
+      { hanzi: '再说一遍', pinyin: 'zài shuō yí biàn', meaning: 'redire, répéter', meaningEn: 'say again', audio: 'audio/hsk2/hsk2_再说.wav' },
+      { hanzi: '慢一点', pinyin: 'màn yì diǎn', meaning: 'plus lentement', meaningEn: 'slower', audio: 'audio/hsk2/hsk2_慢.wav' },
+      { hanzi: '听不懂', pinyin: 'tīng bu dǒng', meaning: 'ne pas comprendre (audio)', meaningEn: 'can\'t understand (audio)', audio: 'audio/hsk2/hsk2_听.wav' },
+      { hanzi: '意思', pinyin: 'yì si', meaning: 'sens, signification', meaningEn: 'meaning', audio: 'audio/hsk2/hsk2_意思.wav' },
+      { hanzi: '怎么写', pinyin: 'zěn me xiě', meaning: 'comment écrit-on', meaningEn: 'how to write', audio: 'audio/hsk1/hsk1_怎么.wav' }
+    ],
+    tip:
+      'Distinction CLÉ : 听不懂 (je n\'entends/comprends pas la langue) vs 不知道 (je ne sais pas). Si on te demande « où est la gare ? », réponds 不知道 ; si on te parle trop vite, réponds 我听不懂.',
+    tipEn:
+      'KEY distinction: 听不懂 (I can\'t make out the language) vs 不知道 (I don\'t know). If asked «where\'s the station?», reply 不知道; if spoken to too fast, reply 我听不懂.'
+  },
+  {
+    id: 'a1-pinyin-help',
+    title: 'Demander la prononciation ou le ton',
+    titleEn: 'Ask for pronunciation or tone',
+    body:
+      '怎么读 (zěnme dú, comment ça se prononce). 这个字怎么读？= ce caractère, comment se prononce-t-il ? Pour le ton : 第几声？(quel ton ?) — réponse : 第一声 (1er), 第二声 (2e), 第三声 (3e), 第四声 (4e). Pour confirmer : 是不是 X？(c\'est X, n\'est-ce pas ?). Phrase-magique pour l\'apprenant : 我学中文，所以我说得不太好 (j\'apprends, donc je parle pas très bien) — désarme l\'interlocuteur, ajuste son débit.',
+    bodyEn:
+      '怎么读 (zěnme dú, how is it pronounced). 这个字怎么读？= how is this character pronounced? For the tone: 第几声？(which tone?) — reply: 第一声 (1st), 第二声 (2nd), 第三声 (3rd), 第四声 (4th). To confirm: 是不是 X？(is it X?). Learner\'s magic phrase: 我学中文，所以我说得不太好 (I\'m learning, so I don\'t speak well yet) — disarms the listener, adjusts their pace.',
+    items: [
+      { hanzi: '怎么读', pinyin: 'zěn me dú', meaning: 'comment ça se prononce', meaningEn: 'how to pronounce', audio: 'audio/hsk1/hsk1_读.wav' },
+      { hanzi: '声', pinyin: 'shēng', meaning: 'ton, voix', meaningEn: 'tone, voice', audio: 'audio/hsk1/hsk1_声.wav' },
+      { hanzi: '第', pinyin: 'dì', meaning: 'préfixe ordinal', meaningEn: 'ordinal prefix', audio: 'audio/hsk2/hsk2_第.wav' },
+      { hanzi: '中文', pinyin: 'zhōng wén', meaning: 'chinois (langue)', meaningEn: 'Chinese (language)', audio: 'audio/hsk1/hsk1_中文.wav' },
+      { hanzi: '说', pinyin: 'shuō', meaning: 'dire, parler', meaningEn: 'speak', audio: 'audio/hsk1/hsk1_说.wav' }
+    ],
+    tip:
+      'Astuce d\'or : « 我学中文 » désarme tous les Chinois. Ils basculent automatiquement en mode « patient prof gentil » et ralentissent. Ne pas hésiter à le sortir tôt en conversation.',
+    tipEn:
+      'Golden tip: «我学中文» disarms every Chinese person. They auto-switch to «patient kind teacher» mode and slow down. Don\'t hesitate to drop it early in conversation.'
+  }
+];
+
+export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-confirmation',
+    title: 'Réponses courtes : 是, 对, 好, 行',
+    titleEn: 'Short answers: 是, 对, 好, 行',
+    body:
+      'Le chinois n\'a pas d\'équivalent strict de « oui ». 4 manières selon contexte : 是 (c\'est ça — pour confirmer une identité/fait), 对 (exact — pour confirmer une info), 好 (OK / bien — pour accepter), 行 (ça marche — accord pratique). 嗯 (mmm — d\'accord léger, oral). Pour dire « non » : reprendre le verbe avec 不 : « 你吃吗？ — 不吃 ». Pas de 不 isolé comme « non » en français.',
+    bodyEn:
+      'Chinese has no strict «yes». 4 ways depending on context: 是 (that\'s it — confirm identity/fact), 对 (right — confirm info), 好 (OK / fine — accept), 行 (works — practical agreement). 嗯 (mmm — light yes, oral). For «no»: repeat the verb with 不: «你吃吗？— 不吃». No standalone 不 as «no» like in English.',
+    items: [
+      { hanzi: '是', pinyin: 'shì', meaning: 'oui (être)', meaningEn: 'yes (be)', audio: 'audio/hsk1/hsk1_是.wav' },
+      { hanzi: '对', pinyin: 'duì', meaning: 'exact, juste', meaningEn: 'right', audio: 'audio/hsk1/hsk1_对.wav' },
+      { hanzi: '好', pinyin: 'hǎo', meaning: 'bien, OK', meaningEn: 'good, OK', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '行', pinyin: 'xíng', meaning: 'ça marche', meaningEn: 'OK, works', audio: 'audio/hsk2/hsk2_行.wav' },
+      { hanzi: '嗯', pinyin: 'ǹg', meaning: 'mmm (oui léger)', meaningEn: 'mmm (light yes)', audio: 'audio/hsk2/hsk2_嗯.wav' }
+    ],
+    tip:
+      'Erreur n°1 : utiliser 是 partout. Pour accepter une proposition (« On va au resto ? »), réponds 好 ou 行, pas 是. 是 sert SURTOUT à confirmer une identité ou un fait précis.',
+    tipEn:
+      'Mistake n°1: using 是 everywhere. To accept a suggestion («Let\'s go eat?»), reply 好 or 行, not 是. 是 is MOSTLY for confirming an identity or precise fact.'
+  },
+  {
+    id: 'a1-comprehension',
+    title: 'J\'ai compris : 明白了 / 知道了',
+    titleEn: 'I get it: 明白了 / 知道了',
+    body:
+      '明白了 (j\'ai compris — saisi le sens). 知道了 (j\'ai noté / OK je sais maintenant). Différence : 明白 = compréhension intellectuelle ; 知道 = connaissance/info reçue. Pour relancer : 然后呢？(et ensuite ?), 真的吗？(vraiment ?). Pour ponctuer : 哦 (ah !), 嗯 (OK), 是吗 (ah bon ?). Ces petits mots maintiennent une conversation vivante — sans eux, l\'autre pense que tu ne suis pas.',
+    bodyEn:
+      '明白了 (I got it — caught the meaning). 知道了 (noted / OK I know now). Difference: 明白 = intellectual understanding; 知道 = info received. To prompt more: 然后呢？(and then?), 真的吗？(really?). To punctuate: 哦 (ah!), 嗯 (OK), 是吗 (oh really?). These little words keep a conversation alive — without them, the other thinks you\'re lost.',
+    items: [
+      { hanzi: '明白', pinyin: 'míng bai', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
+      { hanzi: '知道', pinyin: 'zhī dào', meaning: 'savoir', meaningEn: 'know', audio: 'audio/hsk2/hsk2_知道.wav' },
+      { hanzi: '然后', pinyin: 'rán hòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
+      { hanzi: '真的', pinyin: 'zhēn de', meaning: 'vraiment', meaningEn: 'really', audio: 'audio/hsk2/hsk2_真.wav' },
+      { hanzi: '哦', pinyin: 'ò', meaning: 'ah ! (réaction)', meaningEn: 'oh!', audio: 'audio/hsk1/hsk1_哦.wav' }
+    ],
+    tip:
+      '知道了 quand on te donne une consigne (par ex. « 你要早点来 » → 知道了). 明白了 quand on t\'explique un concept (par ex. « 这个字是 X 的意思 » → 明白了).',
+    tipEn:
+      '知道了 when given an instruction (e.g. «你要早点来» → 知道了). 明白了 when something is explained (e.g. «这个字是 X 的意思» → 明白了).'
+  }
+];
+
+export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-fillers',
+    title: 'Hésiter sans se taire : 那个, 这个, 嗯',
+    titleEn: 'Hesitate without going silent: 那个, 这个, 嗯',
+    body:
+      'Les remplisseurs (fillers) chinois te donnent du temps de réfléchir SANS sembler perdu. 那个 (nèige, « euh… ») — l\'équivalent du « euh ». 这个 (zhèige, idem). 嗯… (ǹg) — son neutre quand tu cherches. 怎么说呢 (zěnme shuō ne, comment dire). Très important : sans ces remplisseurs, un silence trop long en chinois est interprété comme « il n\'a pas compris ». Avec eux, tu signales « je réfléchis, ça vient ».',
+    bodyEn:
+      'Chinese fillers buy you thinking time WITHOUT looking lost. 那个 (nèige, «uh…») — the equivalent of «um». 这个 (zhèige, same). 嗯… (ǹg) — neutral sound while searching. 怎么说呢 (zěnme shuō ne, how to put it). Crucial: without fillers, a long silence in Chinese is interpreted as «didn\'t understand». With them, you signal «I\'m thinking, it\'s coming».',
+    items: [
+      { hanzi: '那个', pinyin: 'nèi ge', meaning: 'euh, ce/cet', meaningEn: 'um, that', audio: 'audio/hsk1/hsk1_那.wav' },
+      { hanzi: '这个', pinyin: 'zhèi ge', meaning: 'euh, ce/cet', meaningEn: 'um, this', audio: 'audio/hsk1/hsk1_这.wav' },
+      { hanzi: '嗯', pinyin: 'ǹg', meaning: 'mmm (réflexion)', meaningEn: 'mmm (thinking)', audio: 'audio/hsk2/hsk2_嗯.wav' },
+      { hanzi: '怎么说', pinyin: 'zěn me shuō', meaning: 'comment dire', meaningEn: 'how to say', audio: 'audio/hsk1/hsk1_怎么.wav' },
+      { hanzi: '比如', pinyin: 'bǐ rú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk3/hsk3_比如.wav' }
+    ],
+    tip:
+      'Anecdote piège : 那个 (nèige) sonne phonétiquement comme l\'insulte raciste anglaise « n-word ». Aux États-Unis ou avec un anglophone, prononce 那个 plutôt « nàge » (ton 4) ou évite-le. En Chine, aucun problème.',
+    tipEn:
+      'Trap anecdote: 那个 (nèige) sounds phonetically like the racist English «n-word». In the US or with an English speaker, pronounce 那个 as «nàge» (tone 4) or avoid. In China, no issue.'
+  },
+  {
+    id: 'a1-extension',
+    title: 'Étendre une phrase : 然后, 还有, 比如',
+    titleEn: 'Extend a sentence: 然后, 还有, 比如',
+    body:
+      '然后 (ensuite). 还有 (et aussi / il y a encore). 比如 (par exemple). Ces 3 connecteurs te permettent d\'enchaîner plusieurs informations sans casser le rythme. « 我喜欢看书，然后听音乐，还有跑步，比如周末 ». Sans ces enchaînements, tu fais des phrases isolées sans fluidité. Bonus : 因为 (parce que) pour justifier — « 我学中文，因为我喜欢中国文化 ».',
+    bodyEn:
+      '然后 (then). 还有 (and also). 比如 (for example). These 3 connectors let you string multiple bits of info without breaking rhythm. «我喜欢看书，然后听音乐，还有跑步，比如周末». Without these connectors, you make isolated sentences with no flow. Bonus: 因为 (because) to justify — «我学中文，因为我喜欢中国文化».',
+    items: [
+      { hanzi: '然后', pinyin: 'rán hòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
+      { hanzi: '还有', pinyin: 'hái yǒu', meaning: 'et aussi', meaningEn: 'and also', audio: 'audio/hsk2/hsk2_还有.wav' },
+      { hanzi: '因为', pinyin: 'yīn wèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '所以', pinyin: 'suǒ yǐ', meaning: 'donc', meaningEn: 'so', audio: 'audio/hsk2/hsk2_所以.wav' },
+      { hanzi: '但是', pinyin: 'dàn shì', meaning: 'mais', meaningEn: 'but', audio: 'audio/hsk2/hsk2_但是.wav' }
+    ],
+    tip:
+      'En chinois, 因为 X 所以 Y va souvent ensemble (« parce que X, donc Y »), même quand le français se contenterait du seul « parce que ». Ça structure mieux la phrase.',
+    tipEn:
+      'In Chinese, 因为 X 所以 Y often go together («because X, therefore Y»), even when English would just use «because». It structures the sentence better.'
+  }
+];
+
+export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-cafe',
+    title: 'Commander au café : « 我要一杯咖啡 »',
+    titleEn: 'Ordering at a café: «我要一杯咖啡»',
+    body:
+      'Phrase-clé : 我要一杯 X (je veux un X — boisson). 杯 = classificateur tasse/verre. 我要一杯咖啡 (un café), 一杯茶 (un thé), 一杯水 (un verre d\'eau). Pour préciser : 大杯 (grand) / 小杯 (petit), 热的 (chaud) / 冰的 (glacé). Payer : 多少钱？(combien ?), 刷卡 (payer par carte), 微信支付 (WeChat Pay). Phrase de fin : 这是我的卡 (voici ma carte) ou simplement scan QR.',
+    bodyEn:
+      'Key phrase: 我要一杯 X (I want a X — drink). 杯 = cup/glass classifier. 我要一杯咖啡 (a coffee), 一杯茶 (a tea), 一杯水 (a glass of water). To specify: 大杯 (large) / 小杯 (small), 热的 (hot) / 冰的 (iced). Pay: 多少钱? (how much?), 刷卡 (card payment), 微信支付 (WeChat Pay). Closing: 这是我的卡 (here\'s my card) or just scan QR.',
+    items: [
+      { hanzi: '要', pinyin: 'yào', meaning: 'vouloir', meaningEn: 'want', audio: 'audio/hsk1/hsk1_要.wav' },
+      { hanzi: '杯', pinyin: 'bēi', meaning: 'tasse, verre', meaningEn: 'cup, glass', audio: 'audio/hsk1/hsk1_杯.wav' },
+      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk2/hsk2_咖啡.wav' },
+      { hanzi: '热', pinyin: 'rè', meaning: 'chaud', meaningEn: 'hot', audio: 'audio/hsk1/hsk1_热.wav' },
+      { hanzi: '冰', pinyin: 'bīng', meaning: 'glace, glacé', meaningEn: 'ice', audio: 'audio/hsk5/hsk5_冰.wav' }
+    ],
+    tip:
+      'En Chine, presque tout se paye au QR code WeChat ou Alipay. Si tu n\'as pas, dis « 我可以刷卡吗？» (je peux payer par carte ?) — pas toujours accepté en petits commerces.',
+    tipEn:
+      'In China, almost everything is paid by WeChat or Alipay QR code. If you don\'t have, say «我可以刷卡吗？» (can I pay by card?) — not always accepted in small shops.'
+  },
+  {
+    id: 'a1-taxi',
+    title: 'Prendre un taxi / Didi',
+    titleEn: 'Taking a taxi / Didi',
+    body:
+      '请去 X (allez à X svp). 请去机场 (à l\'aéroport), 请去人民广场 (place du peuple). Donner une adresse : 这是地址 (voici l\'adresse) + montrer le portable. Pendant le trajet : 慢一点 (plus lentement), 这里 (ici), 停一下 (arrêtez-vous). Arrivée : 多少钱？(combien ?), 收据 (reçu — pour les taxis officiels). Aujourd\'hui Didi 滴滴 a remplacé 80 % des taxis hélés à la rue : tu commandes via app, le prix s\'affiche.',
+    bodyEn:
+      '请去 X (please take me to X). 请去机场 (to the airport), 请去人民广场 (People\'s Square). Give an address: 这是地址 (here\'s the address) + show your phone. During the ride: 慢一点 (slower), 这里 (here), 停一下 (stop). Arrival: 多少钱? (how much?), 收据 (receipt — for official taxis). Today Didi 滴滴 has replaced 80% of street-hailed taxis: order via app, price shown.',
+    items: [
+      { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '机场', pinyin: 'jī chǎng', meaning: 'aéroport', meaningEn: 'airport', audio: 'audio/hsk2/hsk2_机场.wav' },
+      { hanzi: '地址', pinyin: 'dì zhǐ', meaning: 'adresse', meaningEn: 'address', audio: 'audio/hsk4/hsk4_地址.wav' },
+      { hanzi: '停', pinyin: 'tíng', meaning: 'arrêter', meaningEn: 'stop', audio: 'audio/hsk4/hsk4_停.wav' },
+      { hanzi: '滴滴', pinyin: 'dī dī', meaning: 'Didi (Uber chinois)', meaningEn: 'Didi (Chinese Uber)', audio: 'audio/hsk6/hsk6_滴滴.wav' }
+    ],
+    tip:
+      'Astuce : pour éviter de mal prononcer une adresse, montre l\'écran du téléphone au chauffeur en disant 这里 (zhèlǐ, ici). Plus efficace que de batailler avec les tons.',
+    tipEn:
+      'Tip: to avoid mispronouncing an address, show your phone screen to the driver saying 这里 (zhèlǐ, here). More efficient than struggling with tones.'
+  }
+];
+
+export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-conge',
+    title: '« 我先走了 » — partir poliment',
+    titleEn: '«我先走了» — leave politely',
+    body:
+      'Annoncer la sortie : 我先走了 (je m\'en vais d\'abord), 我得走了 (je dois y aller). Plus chaleureux que 拜拜 (qui sonne abrupt). Justifier brièvement : 我有事 (j\'ai à faire), 时间不早了 (il se fait tard). Préparer la suite : 改天见 (à un autre jour), 回头见 (à plus tard), 下次见 (à la prochaine).',
+    bodyEn:
+      'Announce exit: 我先走了 (I\'ll head out first), 我得走了 (I gotta go). Warmer than 拜拜 (which sounds abrupt). Briefly justify: 我有事 (I have something to do), 时间不早了 (it\'s getting late). Set up the next: 改天见 (see you another day), 回头见 (see you later), 下次见 (until next time).',
+    items: [
+      { hanzi: '先', pinyin: 'xiān', meaning: 'd\'abord', meaningEn: 'first', audio: 'audio/hsk2/hsk2_先.wav' },
+      { hanzi: '走', pinyin: 'zǒu', meaning: 'partir, marcher', meaningEn: 'leave, walk', audio: 'audio/hsk1/hsk1_走.wav' },
+      { hanzi: '改天', pinyin: 'gǎi tiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
+      { hanzi: '回头', pinyin: 'huí tóu', meaning: 'plus tard (oral)', meaningEn: 'later (spoken)', audio: 'audio/hsk5/hsk5_回头.wav' },
+      { hanzi: '下次', pinyin: 'xià cì', meaning: 'la prochaine fois', meaningEn: 'next time', audio: 'audio/hsk2/hsk2_下次.wav' }
+    ],
+    tip:
+      'Une vraie sortie chinoise = 3 temps : (1) annonce 我先走了, (2) raison brève 我有点事, (3) projection 改天见. Sauter une étape sonne brusque. Le tout en 5 secondes.',
+    tipEn:
+      'A real Chinese exit = 3 steps: (1) announce 我先走了, (2) brief reason 我有点事, (3) projection 改天见. Skipping a step sounds abrupt. All within 5 seconds.'
+  },
+  {
+    id: 'a1-care',
+    title: '« 路上小心 » — la formule chaleureuse universelle',
+    titleEn: '«路上小心» — the universal warm closer',
+    body:
+      '路上小心 (fais attention sur la route) : formule TOUJOURS appréciée. Dite par celui qui RESTE à celui qui PART. Marche pour un trajet de 5 min ou de 3 h. Variantes : 慢走 (va doucement — par les commerçants), 一路平安 (bon voyage en sécurité — pour un long trajet). Pour clore les réseaux : 保持联系 (on garde contact), 有空联系 (contacte-moi quand tu as le temps).',
+    bodyEn:
+      '路上小心 (take care on the way): a formula ALWAYS appreciated. Said by the one STAYING to the one LEAVING. Works for 5-min or 3-hour trips. Variants: 慢走 (take it easy — by shopkeepers), 一路平安 (safe travels — for a long trip). To close networks: 保持联系 (keep in touch), 有空联系 (hit me up when free).',
+    items: [
+      { hanzi: '路上', pinyin: 'lù shang', meaning: 'sur la route', meaningEn: 'on the road', audio: 'audio/hsk3/hsk3_路上.wav' },
+      { hanzi: '小心', pinyin: 'xiǎo xīn', meaning: 'fais attention', meaningEn: 'be careful', audio: 'audio/hsk3/hsk3_小心.wav' },
+      { hanzi: '慢走', pinyin: 'màn zǒu', meaning: 'va doucement', meaningEn: 'take it easy', audio: 'audio/hsk2/hsk2_慢走.wav' },
+      { hanzi: '联系', pinyin: 'lián xì', meaning: 'contact', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' },
+      { hanzi: '保持', pinyin: 'bǎo chí', meaning: 'maintenir', meaningEn: 'keep, maintain', audio: 'audio/hsk5/hsk5_保持.wav' }
+    ],
+    tip:
+      'Si tu sors d\'un magasin/restaurant chinois, le commerçant te dira presque toujours 慢走 (« va doucement »). Pas une vraie demande, juste une formule de politesse. Tu peux répondre 谢谢 ou un signe de tête.',
+    tipEn:
+      'When leaving a Chinese shop/restaurant, the owner will almost always say 慢走 («take it easy»). Not a real request, just a courtesy. Reply 谢谢 or a head nod.'
+  }
+];
+
+export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-service',
+    title: '« 能不能 X ? » — demander un service simple',
+    titleEn: '«能不能 X?» — ask for a simple favor',
+    body:
+      '能不能 + verbe (pouvez-vous… ?) : la formule la plus polie pour demander quelque chose à un inconnu. 能不能帮我？(puis-je vous demander de m\'aider ?). Variantes : 可不可以 + verbe, 麻烦你 + verbe. Pour décliner poliment une demande : 不好意思，我有事. Toujours commencer par 不好意思 = adoucit massivement.',
+    bodyEn:
+      '能不能 + verb (can you…?) : the politest way to ask something of a stranger. 能不能帮我？(could you help me?). Variants: 可不可以 + verb, 麻烦你 + verb. To politely decline: 不好意思，我有事. Always start with 不好意思 = massively softens.',
+    items: [
+      { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir', meaningEn: 'can, be able', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '可不可以', pinyin: 'kě bu kě yǐ', meaning: 'est-ce possible', meaningEn: 'is it possible', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '帮我', pinyin: 'bāng wǒ', meaning: 'm\'aider', meaningEn: 'help me', audio: 'audio/hsk2/hsk2_帮.wav' },
+      { hanzi: '不好意思', pinyin: 'bù hǎo yì si', meaning: 'pardon, désolé', meaningEn: 'excuse me, sorry', audio: 'audio/hsk2/hsk2_不好意思.wav' },
+      { hanzi: '事', pinyin: 'shì', meaning: 'affaire, chose', meaningEn: 'matter, thing', audio: 'audio/hsk1/hsk1_事.wav' }
+    ],
+    tip:
+      'La structure « 能不能 + V » est plus polie que « 你 + V » direct. Compare : 帮我 ! (impératif, sec) vs 能不能帮我 ? (poli, adouci). Pour demander à un inconnu, toujours la 2e forme.',
+    tipEn:
+      'The «能不能 + V» structure is politer than direct «你 + V». Compare: 帮我！(imperative, blunt) vs 能不能帮我？(polite, softened). To ask a stranger, always use the 2nd form.'
+  },
+  {
+    id: 'a1-direction',
+    title: 'Demander son chemin : « 在哪儿 ? »',
+    titleEn: 'Ask the way: «在哪儿?»',
+    body:
+      'Demander un lieu : X 在哪儿？(où est X ?). 厕所在哪儿？(les toilettes ?), 地铁站在哪儿？(la station de métro ?). Réponses possibles : 一直走 (tout droit), 左转 (à gauche), 右转 (à droite), 在 X 旁边 (à côté de X). Si tu ne comprends pas : 慢一点 + 怎么去？ ou 你能写一下吗？(tu peux l\'écrire ?).',
+    bodyEn:
+      'Ask for a place: X 在哪儿？(where is X?). 厕所在哪儿？(toilets?), 地铁站在哪儿？(metro station?). Possible replies: 一直走 (straight ahead), 左转 (turn left), 右转 (turn right), 在 X 旁边 (next to X). If you don\'t catch it: 慢一点 + 怎么去？ or 你能写一下吗？(can you write it?).',
+    items: [
+      { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où', meaningEn: 'where', audio: 'audio/hsk1/hsk1_哪儿.wav' },
+      { hanzi: '一直', pinyin: 'yì zhí', meaning: 'tout droit', meaningEn: 'straight', audio: 'audio/hsk3/hsk3_一直.wav' },
+      { hanzi: '左', pinyin: 'zuǒ', meaning: 'gauche', meaningEn: 'left', audio: 'audio/hsk2/hsk2_左.wav' },
+      { hanzi: '右', pinyin: 'yòu', meaning: 'droite', meaningEn: 'right', audio: 'audio/hsk2/hsk2_右.wav' },
+      { hanzi: '旁边', pinyin: 'páng biān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' }
+    ],
+    tip:
+      'Astuce : ouvre 高德地图 (Gāodé dìtú) ou 百度地图 (Bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
+    tipEn:
+      'Tip: open 高德地图 (Gāodé dìtú) or 百度地图 (Bǎidù dìtú) on your phone. More reliable than asking passers-by, since Chinese rarely give precise distances («not far», «not so close»).'
+  }
+];
+
+// === NUANCES A1 ==============================================================
+
+export const a1NuancesM1LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-er-liang',
+    title: '二 vs 两 — deux « deux » qui ne s\'utilisent pas pareil',
+    titleEn: '二 vs 两 — two «twos» used differently',
+    body:
+      '二 (èr) = le chiffre 2 dans l\'abstrait : compter (一二三 = 1, 2, 3), nombres composés (十二 = 12, 二十 = 20), positions ordinales (第二 = 2e), mois (二月 = février). 两 (liǎng) = 2 devant un classificateur. 两个人 (deux personnes), 两本书 (deux livres), 两次 (deux fois). RÈGLE D\'OR : 两 + classificateur. JAMAIS 二个人. Exception fréquente pour l\'heure : on dit 两点 (2 h) mais 二月 (février, mois) — le 月 fonctionne comme un ordinal pas un classificateur.',
+    bodyEn:
+      '二 (èr) = the number 2 in the abstract: counting (一二三 = 1, 2, 3), compound numbers (十二 = 12, 二十 = 20), ordinals (第二 = 2nd), months (二月 = February). 两 (liǎng) = 2 before a classifier. 两个人 (two people), 两本书 (two books), 两次 (twice). GOLDEN RULE: 两 + classifier. NEVER 二个人. Frequent exception for time: 两点 (2 o\'clock) but 二月 (February, the month) — the 月 functions as an ordinal, not a classifier.',
+    items: [
+      { hanzi: '二', pinyin: 'èr', meaning: 'deux (chiffre)', meaningEn: 'two (digit)', audio: 'audio/hsk1/hsk1_二.wav' },
+      { hanzi: '两', pinyin: 'liǎng', meaning: 'deux (+ classif.)', meaningEn: 'two (+ classif.)', audio: 'audio/hsk2/hsk2_两.wav' },
+      { hanzi: '个', pinyin: 'gè', meaning: 'classificateur général', meaningEn: 'general classifier', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '本', pinyin: 'běn', meaning: 'classif. livres', meaningEn: 'classif. books', audio: 'audio/hsk1/hsk1_本.wav' },
+      { hanzi: '次', pinyin: 'cì', meaning: 'fois', meaningEn: 'time(s)', audio: 'audio/hsk2/hsk2_次.wav' }
+    ],
+    tip:
+      'Test rapide : si tu peux remplacer le « deux » français par « 2e » (ordinal) ou par un chiffre dans une suite, c\'est 二. Si c\'est suivi d\'un mot quantifiable, c\'est 两.',
+    tipEn:
+      'Quick test: if you can replace English «two» by «2nd» (ordinal) or it\'s a digit in a sequence, use 二. If followed by a countable noun, use 两.'
+  },
+  {
+    id: 'a1-yiqian-liangqian',
+    title: 'Cas spéciaux : 200, 2000, et 22',
+    titleEn: 'Special cases: 200, 2000, and 22',
+    body:
+      'Les grands nombres : 200 = 二百 OU 两百 (les deux acceptés). 2000 = 两千 (préféré) ou 二千. 20 000 = 两万. Pour 22 : 二十二 (toujours 二, pas 两). Règle : devant 百/千/万 (centaines/milliers/dizaines de milliers), 两 prend le dessus, surtout en début de nombre. Mais 二十 (20), 二十二 (22) restent stables avec 二. Plus tu montes en grandeur, plus 两 est naturel. À l\'oral, suis ce que tu entends, ne te bats pas avec la règle.',
+    bodyEn:
+      'Big numbers: 200 = 二百 OR 两百 (both accepted). 2000 = 两千 (preferred) or 二千. 20,000 = 两万. For 22: 二十二 (always 二, not 两). Rule: before 百/千/万 (hundreds/thousands/tens of thousands), 两 takes over, especially at the start of a number. But 二十 (20), 二十二 (22) stay stable with 二. The bigger the number, the more 两 feels natural. In speech, follow what you hear.',
+    items: [
+      { hanzi: '百', pinyin: 'bǎi', meaning: 'cent', meaningEn: 'hundred', audio: 'audio/hsk2/hsk2_百.wav' },
+      { hanzi: '千', pinyin: 'qiān', meaning: 'mille', meaningEn: 'thousand', audio: 'audio/hsk2/hsk2_千.wav' },
+      { hanzi: '万', pinyin: 'wàn', meaning: 'dix mille', meaningEn: 'ten thousand', audio: 'audio/hsk3/hsk3_万.wav' },
+      { hanzi: '两百', pinyin: 'liǎng bǎi', meaning: '200', meaningEn: '200', audio: 'audio/hsk2/hsk2_两.wav' },
+      { hanzi: '两千', pinyin: 'liǎng qiān', meaning: '2000', meaningEn: '2000', audio: 'audio/hsk2/hsk2_两.wav' }
+    ],
+    tip:
+      'Au quotidien, dans les petits commerces : « 两百块 » (200 yuans) est plus courant que « 二百块 ». Pour 220, on dit « 两百二十 » (la seconde fois c\'est 二 dans la dizaine).',
+    tipEn:
+      'In daily life, in small shops: «两百块» (200 yuan) is more common than «二百块». For 220, say «两百二十» (the second one is 二 in the tens place).'
+  }
+];
+
+export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-ni-nin',
+    title: '你 vs 您 — tu et vous (poli)',
+    titleEn: '你 vs 您 — informal vs formal you',
+    body:
+      '你 (nǐ) = tu (informel, neutre par défaut entre adultes du même âge). 您 (nín) = vous (poli, marque de respect). Quand utiliser 您 : avec quelqu\'un de plus âgé, un supérieur hiérarchique, un client (si tu es vendeur), un inconnu visiblement plus âgé. 您 garde le « 您好 » (bonjour formel), JAMAIS « 您们 » au pluriel — on dit « 你们 ». Différence avec le français : entre amis et collègues du même rang, 你 est NORMAL, pas familier. Le « vous de politesse » français est plus large que 您.',
+    bodyEn:
+      '你 (nǐ) = you (informal, default neutral between adults of same age). 您 (nín) = formal you (respect marker). When to use 您: with someone older, a superior, a customer (if you\'re a seller), a visibly older stranger. 您 keeps «您好» (formal hello), NEVER «您们» plural — say «你们». Difference from English «you»: between friends and same-rank colleagues, 你 is NORMAL, not familiar.',
+    items: [
+      { hanzi: '你', pinyin: 'nǐ', meaning: 'tu', meaningEn: 'you (informal)', audio: 'audio/hsk1/hsk1_你.wav' },
+      { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli)', meaningEn: 'you (formal)', audio: 'audio/hsk1/hsk1_您.wav' },
+      { hanzi: '你们', pinyin: 'nǐ men', meaning: 'vous (pluriel)', meaningEn: 'you (plural)', audio: 'audio/hsk1/hsk1_你们.wav' },
+      { hanzi: '您好', pinyin: 'nín hǎo', meaning: 'bonjour (poli)', meaningEn: 'hello (formal)', audio: 'audio/hsk1/hsk1_您好.wav' },
+      { hanzi: '客户', pinyin: 'kè hù', meaning: 'client', meaningEn: 'customer', audio: 'audio/hsk5/hsk5_客户.wav' }
+    ],
+    tip:
+      'Si tu hésites en début de conversation, utilise 您 — tu peux toujours redescendre vers 你 si l\'autre te le propose (« 叫我 X 就行 »). L\'inverse (passer de 你 à 您) crée un froid.',
+    tipEn:
+      'If you hesitate at the start of a conversation, use 您 — you can always drop down to 你 if the other suggests it («叫我 X 就行»). The reverse (你 → 您) creates awkwardness.'
+  },
+  {
+    id: 'a1-titres-respect',
+    title: 'Marques de respect : 老师, 师傅, 先生',
+    titleEn: 'Marks of respect: 老师, 师傅, 先生',
+    body:
+      'Au-delà de 您, on respecte par des TITRES. 老师 (lǎoshī, professeur) — utilisé pour TOUT enseignant ou expert dans son domaine, même hors école. 师傅 (shīfu, maître) — pour les artisans, taxis, chauffeurs : 师傅，请去 X. 先生 (xiānsheng, monsieur) — Mr/sir, formel. 女士 (nǚshì, madame) — Mrs/ma\'am formel. 小姐 (xiǎojiě, mademoiselle) — DEVENU PIEGE : connote « péripatéticienne » dans certaines régions. Préfère 美女 (oral) ou 女士 (formel).',
+    bodyEn:
+      'Beyond 您, respect is shown via TITLES. 老师 (lǎoshī, teacher) — used for ANY educator or expert. 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X. 先生 (xiānsheng, mister) — Mr/sir, formal. 女士 (nǚshì, madam) — Mrs/ma\'am formal. 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions. Prefer 美女 (spoken) or 女士 (formal).',
+    items: [
+      { hanzi: '老师', pinyin: 'lǎo shī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' },
+      { hanzi: '师傅', pinyin: 'shī fu', meaning: 'maître, monsieur', meaningEn: 'master, sir', audio: 'audio/hsk5/hsk5_师傅.wav' },
+      { hanzi: '先生', pinyin: 'xiān sheng', meaning: 'monsieur', meaningEn: 'mister', audio: 'audio/hsk1/hsk1_先生.wav' },
+      { hanzi: '女士', pinyin: 'nǚ shì', meaning: 'madame', meaningEn: 'madam', audio: 'audio/hsk5/hsk5_女士.wav' },
+      { hanzi: '美女', pinyin: 'měi nǚ', meaning: 'mademoiselle (oral)', meaningEn: 'miss (spoken)', audio: 'audio/hsk4/hsk4_美女.wav' }
+    ],
+    tip:
+      'Astuce : devant un taxi/chauffeur Didi, dis « 师傅 ». C\'est le mot qui fluidifie tout. Plus chaleureux que 先生 et culturellement reconnu.',
+    tipEn:
+      'Tip: with a taxi/Didi driver, say «师傅». It\'s the word that smooths everything. Warmer than 先生 and culturally recognized.'
+  }
+];
+
+export const a1NuancesM3LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-shi-zai-you',
+    title: '是 vs 在 vs 有 — trois « être » différents',
+    titleEn: '是 vs 在 vs 有 — three different «be»',
+    body:
+      'Le français « être » se sépare en 3 verbes en chinois. 是 (être = identité). 我是法国人 = je suis français. 在 (être = position). 我在家 = je suis à la maison. 有 (il y a / avoir). 这里有一本书 = il y a un livre ici. PIÈGE FRÉQUENT : pour « il fait beau » → 天气很好 (PAS 天气是好) ; pour « j\'ai 20 ans » → 我二十岁 (PAS 我有二十岁). Le chinois préfère souvent l\'adjectif sans verbe quand on décrit une qualité.',
+    bodyEn:
+      'English «be» splits into 3 verbs in Chinese. 是 (be = identity). 我是法国人 = I am French. 在 (be = location). 我在家 = I am at home. 有 (there is / have). 这里有一本书 = there\'s a book here. COMMON TRAP: for «the weather is nice» → 天气很好 (NOT 天气是好); for «I am 20» → 我二十岁 (NOT 我有二十岁). Chinese often prefers an adjective without a verb when describing a quality.',
+    items: [
+      { hanzi: '是', pinyin: 'shì', meaning: 'être (identité)', meaningEn: 'be (identity)', audio: 'audio/hsk1/hsk1_是.wav' },
+      { hanzi: '在', pinyin: 'zài', meaning: 'être (lieu)', meaningEn: 'be (place)', audio: 'audio/hsk1/hsk1_在.wav' },
+      { hanzi: '有', pinyin: 'yǒu', meaning: 'avoir, il y a', meaningEn: 'have, there is', audio: 'audio/hsk1/hsk1_有.wav' },
+      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne pas avoir', meaningEn: 'not have', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '里', pinyin: 'lǐ', meaning: 'à l\'intérieur', meaningEn: 'inside', audio: 'audio/hsk1/hsk1_里.wav' }
+    ],
+    tip:
+      'Test simple : remplace en français « être » par « = » → 是 (X = Y). Par « se trouver à » → 在. Par « il y a » → 有. Si tu hésites avec un adjectif (« il est grand »), c\'est SOUVENT pas de verbe : 他高 ou 他很高.',
+    tipEn:
+      'Simple test: replace English «be» with «=» → 是 (X = Y). With «be located at» → 在. With «there is» → 有. If you hesitate with an adjective («he is tall»), it\'s OFTEN no verb: 他高 or 他很高.'
+  },
+  {
+    id: 'a1-very-vs-be',
+    title: 'Le 很 invisible : « 我很好 » sans « être »',
+    titleEn: 'The invisible 很: «我很好» with no «be»',
+    body:
+      '« 我很好 » (wǒ hěn hǎo) ne signifie PAS « je vais TRÈS bien » mais juste « je vais bien ». Le 很 (très) est un PIVOT GRAMMATICAL devant un adjectif quand il n\'y a pas de verbe « être ». Sans 很, la phrase devient une comparaison implicite (« je vais bien... contrairement à toi ? »). À RETENIR : adjectif seul = comparaison ; 很 + adjectif = état neutre. 你好吗 ? — 我很好 (je vais bien). 我好 (sous-entendu : et toi pas).',
+    bodyEn:
+      '«我很好» (wǒ hěn hǎo) does NOT mean «I\'m VERY well» but just «I\'m well». 很 (very) is a GRAMMATICAL PIVOT before an adjective when no «be» verb is present. Without 很, the sentence becomes an implicit comparison («I\'m fine... unlike you?»). REMEMBER: bare adjective = comparison; 很 + adjective = neutral state.',
+    items: [
+      { hanzi: '很', pinyin: 'hěn', meaning: 'très (souvent invisible)', meaningEn: 'very (often invisible)', audio: 'audio/hsk1/hsk1_很.wav' },
+      { hanzi: '好', pinyin: 'hǎo', meaning: 'bon, bien', meaningEn: 'good, well', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '高', pinyin: 'gāo', meaning: 'grand, haut', meaningEn: 'tall', audio: 'audio/hsk2/hsk2_高.wav' },
+      { hanzi: '累', pinyin: 'lèi', meaning: 'fatigué', meaningEn: 'tired', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '忙', pinyin: 'máng', meaning: 'occupé', meaningEn: 'busy', audio: 'audio/hsk1/hsk1_忙.wav' }
+    ],
+    tip:
+      'Pour dire « TRÈS bien » avec emphase réelle, monte d\'un cran : 我非常好 (très bien) ou 我特别好 (extrêmement bien). 我很好 = juste « ça va ».',
+    tipEn:
+      'To say «VERY well» with real emphasis, go up a notch: 我非常好 (very well) or 我特别好 (extremely well). 我很好 = just «I\'m fine».'
+  }
+];
+
+export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-ye-dou',
+    title: '也 vs 都 — aussi vs tous',
+    titleEn: '也 vs 都 — also vs all',
+    body:
+      '也 (yě, aussi). Lie un sujet à un précédent. 我喜欢茶，他也喜欢茶 = j\'aime le thé, il aime aussi le thé. 都 (dōu, tous). Récapitule plusieurs sujets en un seul verbe. 我们都喜欢茶 = nous aimons tous le thé. PIÈGE : ils peuvent COEXISTER. 我也都喜欢 = moi aussi je les aime tous. POSITION : 也 et 都 vont AVANT le verbe. Erreur classique francophone : « j\'aime aussi ça » → 我喜欢也 ✗ ; correct → 我也喜欢.',
+    bodyEn:
+      '也 (yě, also). Links a subject to a previous one. 我喜欢茶，他也喜欢茶 = I like tea, he also likes tea. 都 (dōu, all). Sums up several subjects into one verb. 我们都喜欢茶 = we all like tea. TRAP: they can COEXIST. 我也都喜欢 = me too I like them all. POSITION: 也 and 都 go BEFORE the verb. Common mistake: «I also like that» → 我喜欢也 ✗; correct → 我也喜欢.',
+    items: [
+      { hanzi: '也', pinyin: 'yě', meaning: 'aussi', meaningEn: 'also, too', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tout', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '我们', pinyin: 'wǒ men', meaning: 'nous', meaningEn: 'we', audio: 'audio/hsk1/hsk1_我们.wav' },
+      { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'aimer', meaningEn: 'like', audio: 'audio/hsk1/hsk1_喜欢.wav' },
+      { hanzi: '茶', pinyin: 'chá', meaning: 'thé', meaningEn: 'tea', audio: 'audio/hsk1/hsk1_茶.wav' }
+    ],
+    tip:
+      'Position OBLIGATOIRE : 也/都 sont des adverbes qui se placent ENTRE le sujet et le verbe. Sujet + 也/都 + verbe + reste. Pas de flexibilité.',
+    tipEn:
+      'MANDATORY position: 也/都 are adverbs placed BETWEEN subject and verb. Subject + 也/都 + verb + rest. No flexibility.'
+  },
+  {
+    id: 'a1-ye-bu-dou-bu',
+    title: 'Négation : 也不 vs 都不 vs 都没',
+    titleEn: 'Negation: 也不 vs 都不 vs 都没',
+    body:
+      '我不喜欢，他也不喜欢 = je n\'aime pas, lui non plus. 我们都不喜欢 = aucun de nous n\'aime. ATTENTION : 都不 ≠ 不都. 我都不去 = je n\'y vais à AUCUN. 我不都去 = je n\'y vais pas TOUS (mais à certains oui). Pour le passé : 都没. 他们都没来 = aucun d\'eux n\'est venu. Règle : 都 + 不 (présent) ou 都 + 没 (passé).',
+    bodyEn:
+      '我不喜欢，他也不喜欢 = I don\'t like, neither does he. 我们都不喜欢 = none of us like. CAREFUL: 都不 ≠ 不都. 我都不去 = I go to NONE. 我不都去 = I don\'t go to ALL (but I go to some). For the past: 都没. 他们都没来 = none of them came. Rule: 都 + 不 (present) or 都 + 没 (past).',
+    items: [
+      { hanzi: '不', pinyin: 'bù', meaning: 'ne pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' },
+      { hanzi: '没', pinyin: 'méi', meaning: 'ne pas (passé)', meaningEn: 'not (past)', audio: 'audio/hsk1/hsk1_没.wav' },
+      { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '他们', pinyin: 'tā men', meaning: 'ils, eux', meaningEn: 'they', audio: 'audio/hsk1/hsk1_他们.wav' }
+    ],
+    tip:
+      'Règle de fer : 不 pour le présent/futur (我不去 = je n\'y vais pas) et 没 pour le passé (我没去 = je n\'y suis pas allé). Confusion = signature débutant.',
+    tipEn:
+      'Iron rule: 不 for present/future (我不去 = I\'m not going) and 没 for past (我没去 = I didn\'t go). Mixing them = beginner signature.'
+  }
+];
+
+export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-duoshao-ji',
+    title: '多少 vs 几 — combien (grand) vs combien (petit)',
+    titleEn: '多少 vs 几 — how much (big) vs how many (small)',
+    body:
+      '几 (jǐ, combien — pour 1 à 10 environ) : utilisé quand tu attends un PETIT nombre. 你有几个朋友？ = combien d\'amis as-tu ? (3-4 attendus). Toujours suivi d\'un classificateur : 几 + classif + nom. 多少 (duōshao, combien — pour 10+, ou inconnu) : grand nombre, somme inconnue. 多少钱？ = combien d\'argent ? Pas obligatoirement suivi d\'un classificateur. Erreur classique : utiliser 几 pour un prix → 几钱 ✗ ; correct → 多少钱.',
+    bodyEn:
+      '几 (jǐ, how many — for 1 to 10 roughly): used when expecting a SMALL number. 你有几个朋友？ = how many friends? (3-4 expected). Always followed by a classifier. 多少 (duōshao, how much — for 10+, or unknown): big number, unknown sum. 多少钱？ = how much money? Not necessarily followed by a classifier. Common mistake: using 几 for a price → 几钱 ✗; correct → 多少钱.',
+    items: [
+      { hanzi: '多少', pinyin: 'duō shao', meaning: 'combien (grand)', meaningEn: 'how much (big)', audio: 'audio/hsk1/hsk1_多少.wav' },
+      { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (petit)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
+      { hanzi: '钱', pinyin: 'qián', meaning: 'argent', meaningEn: 'money', audio: 'audio/hsk1/hsk1_钱.wav' },
+      { hanzi: '朋友', pinyin: 'péng you', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' },
+      { hanzi: '人', pinyin: 'rén', meaning: 'personne', meaningEn: 'person', audio: 'audio/hsk1/hsk1_人.wav' }
+    ],
+    tip:
+      'Pour l\'heure et la date, on dit 几 (pas 多少) : 几点？ (quelle heure ?), 几号？ (quel jour du mois ?), 几月？ (quel mois ?). Ces nombres sont par nature petits (≤ 12 ou ≤ 31).',
+    tipEn:
+      'For time and date, use 几 (not 多少): 几点？ (what time?), 几号？ (what day of the month?), 几月？ (what month?). These numbers are inherently small (≤ 12 or ≤ 31).'
+  },
+  {
+    id: 'a1-duo-vs-shao',
+    title: '多 et 少 — beaucoup et peu (sans nombre exact)',
+    titleEn: '多 and 少 — many and few (no exact number)',
+    body:
+      'Sans demander un chiffre précis : 很多 (beaucoup) et 很少 (peu). 中国有很多人 = il y a beaucoup de monde en Chine. 我有很少时间 = j\'ai peu de temps. ATTENTION position : 多/少 + nom (sans 的). Pour comparer : X 比 Y 多 (X plus que Y), X 比 Y 少 (X moins que Y). À l\'oral, on dit aussi 不少 (pas peu = pas mal) qui signifie « beaucoup » de façon adoucie.',
+    bodyEn:
+      'Without asking a precise number: 很多 (many/a lot) and 很少 (few/little). 中国有很多人 = China has many people. 我有很少时间 = I have little time. CAREFUL position: 多/少 + noun (no 的). To compare: X 比 Y 多 (X more than Y), X 比 Y 少 (X less than Y). In speech, also 不少 (not few = quite a lot) which means «many» in a softened way.',
+    items: [
+      { hanzi: '多', pinyin: 'duō', meaning: 'beaucoup', meaningEn: 'many, much', audio: 'audio/hsk1/hsk1_多.wav' },
+      { hanzi: '少', pinyin: 'shǎo', meaning: 'peu', meaningEn: 'few, little', audio: 'audio/hsk1/hsk1_少.wav' },
+      { hanzi: '很多', pinyin: 'hěn duō', meaning: 'beaucoup de', meaningEn: 'many', audio: 'audio/hsk1/hsk1_很多.wav' },
+      { hanzi: '不少', pinyin: 'bù shǎo', meaning: 'pas mal, beaucoup', meaningEn: 'quite a lot', audio: 'audio/hsk2/hsk2_不少.wav' },
+      { hanzi: '比', pinyin: 'bǐ', meaning: 'que (compare)', meaningEn: 'than', audio: 'audio/hsk2/hsk2_比.wav' }
+    ],
+    tip:
+      'Astuce : « 多大 ? » (litt. « combien grand ? ») = quel âge ? Mais pour les enfants on dit « 几岁 ? » (petit nombre attendu). Pour ado/adulte : « 多大 ? ».',
+    tipEn:
+      'Tip: «多大?» (lit. «how big?») = how old? But for children say «几岁?» (small number expected). For teens/adults: «多大?».'
+  }
+];
+
+export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-qu-lai',
+    title: '去 vs 来 — du point de vue du locuteur',
+    titleEn: '去 vs 来 — from the speaker\'s POV',
+    body:
+      '去 (qù, aller) = mouvement LOIN du locuteur. 我去北京 = je vais à Pékin. 来 (lái, venir) = mouvement VERS le locuteur. 你来我家 = tu viens chez moi. PIÈGE FRANCAIS : « je viens à ton bureau » se dit 我去你的办公室 (du point de vue du LOCUTEUR, pas de l\'auditeur). En chinois, le pivot est TOUJOURS où le locuteur EST PHYSIQUEMENT, pas où il sera. Si tu téléphones de ta maison à un ami au resto et que tu vas le rejoindre : 我去找你.',
+    bodyEn:
+      '去 (qù, go) = movement AWAY from the speaker. 我去北京 = I\'m going to Beijing. 来 (lái, come) = movement TOWARDS the speaker. 你来我家 = you come to my place. ENGLISH TRAP: «I\'m coming to your office» is 我去你的办公室 (from the SPEAKER\'s POV, not the listener\'s). In Chinese, the pivot is ALWAYS where the speaker IS PHYSICALLY. If you phone from home to a friend at the restaurant: 我去找你.',
+    items: [
+      { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '到', pinyin: 'dào', meaning: 'arriver à', meaningEn: 'arrive at', audio: 'audio/hsk1/hsk1_到.wav' },
+      { hanzi: '回', pinyin: 'huí', meaning: 'rentrer, retourner', meaningEn: 'return', audio: 'audio/hsk1/hsk1_回.wav' },
+      { hanzi: '找', pinyin: 'zhǎo', meaning: 'chercher, trouver', meaningEn: 'look for, find', audio: 'audio/hsk2/hsk2_找.wav' }
+    ],
+    tip:
+      'Test rapide : si tu pars de l\'endroit OÙ TU ES en parlant, c\'est 去. Si tu te rapproches de l\'endroit où tu es, c\'est 来.',
+    tipEn:
+      'Quick test: if you leave from the spot WHERE YOU ARE while speaking, it\'s 去. If you approach where you are, it\'s 来.'
+  },
+  {
+    id: 'a1-direction-compose',
+    title: 'Composer le mouvement : 上来, 下去, 进来, 出去',
+    titleEn: 'Compose movement: 上来, 下去, 进来, 出去',
+    body:
+      '来/去 se combinent avec des verbes de direction : 上 (monter), 下 (descendre), 进 (entrer), 出 (sortir), 回 (rentrer). Quatre exemples canoniques : 上来 = monter VERS toi, 下去 = descendre AWAY (loin de toi), 进来 = entrer (vers le locuteur — « entrez ! »), 出去 = sortir (loin du locuteur — « sors ! »). Quand quelqu\'un frappe à la porte et tu cries « entrez » → 请进来. Toujours du POV du locuteur.',
+    bodyEn:
+      '来/去 combine with directional verbs: 上 (go up), 下 (go down), 进 (enter), 出 (exit), 回 (return). Four canonical examples: 上来 = come up TOWARD you, 下去 = go down AWAY, 进来 = enter (toward speaker — «come in!»), 出去 = exit (away from speaker — «get out!»). When someone knocks and you yell «come in» → 请进来. Always from speaker\'s POV.',
+    items: [
+      { hanzi: '上来', pinyin: 'shàng lái', meaning: 'monter (vers moi)', meaningEn: 'come up', audio: 'audio/hsk2/hsk2_上.wav' },
+      { hanzi: '下去', pinyin: 'xià qù', meaning: 'descendre (loin)', meaningEn: 'go down', audio: 'audio/hsk2/hsk2_下.wav' },
+      { hanzi: '进来', pinyin: 'jìn lái', meaning: 'entrer (vers moi)', meaningEn: 'come in', audio: 'audio/hsk2/hsk2_进.wav' },
+      { hanzi: '出去', pinyin: 'chū qù', meaning: 'sortir (loin)', meaningEn: 'go out', audio: 'audio/hsk2/hsk2_出.wav' },
+      { hanzi: '回来', pinyin: 'huí lái', meaning: 'revenir', meaningEn: 'come back', audio: 'audio/hsk1/hsk1_回.wav' }
+    ],
+    tip:
+      'Mnémotechnique : pense aux portes. Quelqu\'un frappe → 请进来 (entrez vers moi). Tu sors d\'une réunion → 我先出去 (je sors d\'abord, loin de la pièce). Toujours basé sur OÙ TU ES PHYSIQUEMENT.',
+    tipEn:
+      'Mnemonic: think doors. Someone knocks → 请进来. You leave a meeting → 我先出去. Always based on WHERE YOU ARE PHYSICALLY.'
+  }
+];
+
+export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a1-hui-neng',
+    title: '会 vs 能 — capacité acquise vs possible maintenant',
+    titleEn: '会 vs 能 — learned ability vs currently possible',
+    body:
+      '会 (huì, savoir faire — capacité ACQUISE par apprentissage). 我会说中文 = je sais parler chinois (j\'ai appris). 我会开车 = je sais conduire. 能 (néng, pouvoir — capacité POSSIBLE en ce moment). 我今天能来 = je peux venir aujourd\'hui (rien ne m\'en empêche). 我今天不能开车，我喝了酒 = je ne peux pas conduire, j\'ai bu. Différence radicale : 会 = APPRIS ; 能 = POSSIBLE maintenant. « Je peux conduire mais pas aujourd\'hui » → 我会开车，但今天不能.',
+    bodyEn:
+      '会 (huì, know how to — LEARNED ability). 我会说中文 = I can speak Chinese (I learned). 我会开车 = I can drive. 能 (néng, can — currently POSSIBLE). 我今天能来 = I can come today. 我今天不能开车，我喝了酒 = I can\'t drive today, I drank. Radical difference: 会 = LEARNED; 能 = POSSIBLE right now. «I can drive but not today» → 我会开车，但今天不能.',
+    items: [
+      { hanzi: '会', pinyin: 'huì', meaning: 'savoir faire', meaningEn: 'know how to', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir', meaningEn: 'can, be able', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '开车', pinyin: 'kāi chē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
+      { hanzi: '游泳', pinyin: 'yóu yǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
+      { hanzi: '说', pinyin: 'shuō', meaning: 'parler', meaningEn: 'speak', audio: 'audio/hsk1/hsk1_说.wav' }
+    ],
+    tip:
+      'Test rapide : « j\'ai appris à X » → 会. « rien ne m\'empêche de X maintenant » → 能. 我会游泳 = je sais nager ; 我能游一公里 = je peux nager 1 km.',
+    tipEn:
+      'Quick test: «I learned to X» → 会. «Nothing prevents me from X now» → 能. 我会游泳 = I know how to swim; 我能游一公里 = I can swim 1km.'
+  },
+  {
+    id: 'a1-keyi',
+    title: '可以 — la permission et l\'accord',
+    titleEn: '可以 — permission and agreement',
+    body:
+      '可以 (kěyǐ, être autorisé / pouvoir avec permission). 我可以坐这里吗？ = puis-je m\'asseoir ici ? Différence avec 能 : 可以 implique souvent une PERMISSION (sociale, légale), 能 une CAPACITÉ matérielle. 你可以走了 = tu peux partir (je te le permets). 你能走吗？ = es-tu capable de partir ? À l\'oral pour accepter : 可以 (OK), 不可以 (non, pas OK).',
+    bodyEn:
+      '可以 (kěyǐ, be allowed / can with permission). 我可以坐这里吗？= may I sit here? Difference from 能: 可以 often implies PERMISSION (social, legal), 能 a material CAPACITY. 你可以走了 = you may leave (I permit it). 你能走吗？= are you able to leave? In speech to accept: 可以 (OK), 不可以 (no, not OK).',
+    items: [
+      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir (permission)', meaningEn: 'can (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '坐', pinyin: 'zuò', meaning: 's\'asseoir', meaningEn: 'sit', audio: 'audio/hsk1/hsk1_坐.wav' },
+      { hanzi: '吸烟', pinyin: 'xī yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
+      { hanzi: '允许', pinyin: 'yǔn xǔ', meaning: 'permettre', meaningEn: 'allow', audio: 'audio/hsk5/hsk5_允许.wav' },
+      { hanzi: '禁止', pinyin: 'jìn zhǐ', meaning: 'interdire', meaningEn: 'forbid', audio: 'audio/hsk6/hsk6_禁止.wav' }
+    ],
+    tip:
+      'Récap : 会 = appris (skill) | 能 = capable maintenant (capacité) | 可以 = autorisé (permission). « 我会，但不能，因为不可以 » = je sais, mais je ne peux pas, parce que je n\'ai pas le droit. Phrase qui résume tout.',
+    tipEn:
+      'Recap: 会 = learned (skill) | 能 = able now (capacity) | 可以 = allowed (permission). «我会，但不能，因为不可以» = I know how, but I can\'t, because I\'m not allowed. The summary phrase.'
+  }
+];

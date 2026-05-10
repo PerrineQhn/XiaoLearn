@@ -1,0 +1,307 @@
+/**
+ * notifications.css — Cloche + panneau dropdown, style Seonsaengnim.
+ * Palette XiaoLearn : rouge #c6302c pour le badge et les accents,
+ * arrondis généreux, ombres douces.
+ */
+
+.xl-notif-root {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 1200;
+}
+
+/* ----- Bouton cloche ---------------------------------------------------- */
+.xl-notif-bell {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  color: #2d2d2d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.xl-notif-bell:hover {
+  background: #fafafa;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+.xl-notif-bell:active {
+  transform: translateY(0);
+}
+.xl-notif-bell-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Badge rouge */
+.xl-notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: #c6302c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(198, 48, 44, 0.35);
+  pointer-events: none;
+}
+
+/* ----- Panneau dropdown -------------------------------------------------- */
+.xl-notif-panel {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: min(380px, calc(100vw - 32px));
+  max-height: min(70vh, 600px);
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: xl-notif-slide-in 0.18s ease-out;
+}
+@keyframes xl-notif-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.xl-notif-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background: #fff;
+}
+.xl-notif-panel-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.xl-notif-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.xl-notif-mark-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f6a4b;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.12s ease;
+}
+.xl-notif-mark-all:hover {
+  background: rgba(31, 106, 75, 0.08);
+}
+.xl-notif-count-pill {
+  min-width: 28px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 11px;
+  background: #c6302c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* ----- Liste ------------------------------------------------------------ */
+.xl-notif-list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.xl-notif-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 6px;
+  border-radius: 12px;
+  margin-bottom: 2px;
+  transition: background 0.12s ease;
+}
+.xl-notif-item:hover {
+  background: #fafafa;
+}
+.xl-notif-item.is-unread {
+  background: rgba(198, 48, 44, 0.04);
+}
+
+.xl-notif-item-btn {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 12px 6px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+.xl-notif-item-btn:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.xl-notif-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.xl-notif-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.xl-notif-title {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 1.3;
+  /* 2 lignes max */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.xl-notif-body {
+  color: #6a6a6a;
+  font-size: 13px;
+  line-height: 1.35;
+  /* 1 ligne avec ellipse */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.xl-notif-time {
+  color: #9a9a9a;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.xl-notif-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+}
+.xl-notif-dot.is-unread {
+  background: #1f6a4b;
+  box-shadow: 0 0 0 2px rgba(31, 106, 75, 0.18);
+}
+
+.xl-notif-delete {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #b0b0b0;
+  border-radius: 8px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.xl-notif-delete:hover {
+  background: rgba(198, 48, 44, 0.08);
+  color: #c6302c;
+}
+
+/* ----- Empty state ------------------------------------------------------ */
+.xl-notif-empty {
+  padding: 40px 20px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.xl-notif-empty-icon {
+  font-size: 36px;
+  opacity: 0.6;
+}
+.xl-notif-empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+.xl-notif-empty-hint {
+  font-size: 13px;
+  color: #8a8a8a;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+/* ----- Mode sombre ------------------------------------------------------- */
+.dark-mode .xl-notif-bell {
+  background: #2a2a2a;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f0f0f0;
+}
+.dark-mode .xl-notif-bell:hover {
+  background: #333;
+}
+.dark-mode .xl-notif-panel {
+  background: #1f1f1f;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark-mode .xl-notif-panel-header {
+  background: #1f1f1f;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+.dark-mode .xl-notif-panel-title,
+.dark-mode .xl-notif-title {
+  color: #f0f0f0;
+}
+.dark-mode .xl-notif-body {
+  color: #a8a8a8;
+}
+.dark-mode .xl-notif-time,
+.dark-mode .xl-notif-delete {
+  color: #777;
+}
+.dark-mode .xl-notif-item:hover,
+.dark-mode .xl-notif-item-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.dark-mode .xl-notif-item.is-unread {
+  background: rgba(198, 48, 44, 0.08);
+}

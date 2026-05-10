@@ -48,6 +48,13 @@ export interface EvaluationV2Question {
   contextEn?: string;
   /** Audio pour listening. */
   audio?: string;
+  /**
+   * Texte chinois source associé à l'audio — utilisé uniquement par le pipeline
+   * de génération Azure TTS (`scripts/generate-all-audio.mjs`) pour synthétiser
+   * la phrase d'écoute. N'est pas affiché pendant la question (spoil) ; peut
+   * apparaître dans la correction (via `explanation`).
+   */
+  hanzi?: string;
   choices: string[];
   correctIndex: number;
   explanation?: string;

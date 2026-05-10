@@ -66,9 +66,26 @@ export const resolveRemoteAudioSrc = (src: string): string | null => {
   return `${normalizedBase}/${trimmed}`;
 };
 
+/**
+ * Mode "remote-only" : si `VITE_AUDIO_REMOTE_ONLY=true`, on n'essaie PAS les
+ * fichiers locaux. Utile en prod sur Vercel/Cloudflare quand `public/audio/`
+ * a été pruné du déploiement et qu'il n'y a aucune chance d'avoir une copie
+ * locale — évite ~50 probes 404 à chaque clic non-mis-en-cache.
+ *
+ * En dev (npm run dev) ou sur un déploiement qui inclut public/audio/, garde
+ * cette variable à false / non définie → ordre normal local-puis-remote.
+ */
+const REMOTE_ONLY = (() => {
+  const v = import.meta.env.VITE_AUDIO_REMOTE_ONLY;
+  return v === 'true' || v === '1' || v === true;
+})();
+
 export const getAudioSrcCandidates = (src: string): string[] => {
-  const localSrc = resolveAudioSrc(src);
   const remoteSrc = resolveRemoteAudioSrc(src);
+  if (REMOTE_ONLY && remoteSrc) {
+    return dedupe(withAlternateExtension(remoteSrc));
+  }
+  const localSrc = resolveAudioSrc(src);
   const candidates = [
     ...withAlternateExtension(localSrc),
     ...(remoteSrc ? withAlternateExtension(remoteSrc) : [])
@@ -293,7 +310,8 @@ function getRemoteCandidates(src: string): string[] {
  *
  * Priorité :
  *   1. URL explicite (champ `audio:` sur l'item), si fournie
- *   2. `audio/examples/<hash>.mp3` si hanzi > 3 caractères (phrase)
+ *   2. `audio/examples/<hash>.mp3` si hanzi >= 2 caractères (phrase ou mot
+ *      composé collecté par le script de génération — ex. `我是` → 60it0p.mp3)
  *   3. Conventions HSK 1 → 7-9
  *
  * Organisation : on teste TOUS les chemins LOCAUX d'abord (même origine,
@@ -310,15 +328,19 @@ function buildHanziCandidates(hanzi: string, explicitUrl?: string | null): strin
   const locals: string[] = [];
   const remotes: string[] = [];
   const add = (src: string) => {
-    locals.push(...getLocalCandidates(src));
+    if (!REMOTE_ONLY) locals.push(...getLocalCandidates(src));
     remotes.push(...getRemoteCandidates(src));
   };
 
   if (explicitUrl) add(explicitUrl);
   const cleanHanzi = hanzi.replace(/\d+$/, '').trim();
-  if (cleanHanzi.length > 3) add(getExampleAudioUrl(cleanHanzi));
+  // Seuil >= 2 : les phrases courtes comme `我是` (2 caractères) ont été
+  // collectées dans `audio/examples/<hash>.mp3` par le script de génération
+  // Azure. Les single-chars gardent leur résolution via HSK conventions.
+  if (cleanHanzi.length >= 2) add(getExampleAudioUrl(cleanHanzi));
   for (const build of HANZI_AUDIO_CONVENTIONS) add(build(hanzi));
 
+  // En remote-only, locals est vide → seul le CDN est probé (rapide).
   return dedupe([...locals, ...remotes]);
 }
 

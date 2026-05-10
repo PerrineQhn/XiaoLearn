@@ -1,0 +1,149 @@
+/**
+ * PronunciationScorecard.css — affichage du résultat d'analyse de prononciation.
+ */
+
+.ps-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ps-not-intelligible {
+  padding: 14px 16px;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 8px;
+  color: #92400e;
+  font-size: 14px;
+  text-align: center;
+}
+
+.ps-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.ps-score-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ps-score-inner {
+  width: 78px;
+  height: 78px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ps-score-value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+.ps-score-label {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.ps-section {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f3f4f6;
+}
+.ps-section-title {
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.ps-syllables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ps-syllable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  background: #ffffff;
+  min-width: 56px;
+}
+.ps-syllable--ko {
+  background: #fef9c3;
+}
+.ps-syllable-hanzi {
+  font-size: 20px;
+  color: #1f2937;
+  line-height: 1.2;
+}
+.ps-syllable-pinyin {
+  font-size: 11px;
+  color: #6b7280;
+  font-style: italic;
+}
+.ps-syllable-score {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.ps-syllable-issue {
+  font-size: 10px;
+  color: #b45309;
+  text-align: center;
+  margin-top: 2px;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.ps-issues {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ps-issues li {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.ps-advice {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #fef9c3;
+  border-left: 3px solid #facc15;
+  border-radius: 6px;
+}
+.ps-advice-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #854d0e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.ps-advice p {
+  margin: 0;
+  font-size: 13px;
+  color: #713f12;
+  line-height: 1.5;
+}

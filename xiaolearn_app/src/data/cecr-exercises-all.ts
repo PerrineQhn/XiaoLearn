@@ -19,23 +19,31 @@
 import type { LessonV2Exercise } from '../pages/StructuredLessonPageV2';
 import { cecrExercisesV2 } from './cecr-exercises';
 import { cecrExercisesEnriched } from './cecr-exercises-enriched';
+import { cecrExercisesEnrichedA1 } from './cecr-exercises-enriched-a1';
+import { cecrExercisesEnrichedA2 } from './cecr-exercises-enriched-a2';
 
 /**
  * Map consolidée des exercices par module CECR.
  * Enrichi > généré (override complet par clé).
+ *
+ * Ordre d'override : générés < enrichis (historique) < enrichis A1 < enrichis A2 (V9).
  */
 export const cecrExercisesV2All: Record<string, LessonV2Exercise[]> = {
   ...cecrExercisesV2,
-  ...cecrExercisesEnriched
+  ...cecrExercisesEnriched,
+  ...cecrExercisesEnrichedA1,
+  ...cecrExercisesEnrichedA2
 };
 
 /**
  * Liste des modules ayant reçu un pack enrichi V8.
  * Utile pour debug / badges UI / stats de couverture.
  */
-export const enrichedModuleIds: ReadonlySet<string> = new Set(
-  Object.keys(cecrExercisesEnriched)
-);
+export const enrichedModuleIds: ReadonlySet<string> = new Set([
+  ...Object.keys(cecrExercisesEnriched),
+  ...Object.keys(cecrExercisesEnrichedA1),
+  ...Object.keys(cecrExercisesEnrichedA2)
+]);
 
 /**
  * Helper : true si le module a un pack enrichi manuel (V8+), false si la

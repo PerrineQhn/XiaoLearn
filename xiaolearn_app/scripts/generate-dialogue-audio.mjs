@@ -30,8 +30,6 @@ import ts from 'typescript';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const publicAudioDir = path.join(projectRoot, 'public', 'audio', 'dialogues');
-const manifestPath = path.join(publicAudioDir, 'manifest.json');
 
 // ---------------------------------------------------------------------------
 // CLI parsing
@@ -39,6 +37,11 @@ const manifestPath = path.join(publicAudioDir, 'manifest.json');
 const argv = process.argv.slice(2);
 const force = argv.includes('--force');
 const dryRun = argv.includes('--dry-run');
+// --slow active le mode shadowing : audio ralenti (rate -35% par défaut) avec
+// pauses doublées sur la ponctuation (cf. SHADOWING_BREAK_MS). Les fichiers
+// vont dans `audio/dialogues-slow/` avec un manifest dédié, indépendant du
+// manifest normal.
+const slowMode = argv.includes('--slow');
 
 function parseFlag(prefix) {
   const raw = argv.find((a) => a.startsWith(prefix));
@@ -50,6 +53,20 @@ const levelFilter = parseFlag('--level=')?.split(',').map((s) => s.trim().toLowe
 const dialogueFilter = parseFlag('--dialogue=')?.split(',').map((s) => s.trim()) ?? null;
 const limitFlag = parseFlag('--limit=');
 const limit = limitFlag ? Math.max(1, parseInt(limitFlag, 10) || 0) : Infinity;
+// Permet d'override le rate via --rate=-40% etc. ; sinon défaut selon le mode.
+const rateOverride = parseFlag('--rate=');
+
+// Vitesse SSML : -8% en normal (compromis intelligibilité/naturel), -35% en
+// shadowing (assez lent pour décomposer les tons mandarin sans devenir
+// mécanique).
+const PROSODY_RATE = rateOverride ?? (slowMode ? '-35%' : '-8%');
+// Pauses additionnelles sur la ponctuation en mode shadowing : laisse le
+// temps de répéter chaque groupe de souffle.
+const SHADOWING_BREAK_MS = 350;
+
+const folderName = slowMode ? 'dialogues-slow' : 'dialogues';
+const publicAudioDir = path.join(projectRoot, 'public', 'audio', folderName);
+const manifestPath = path.join(publicAudioDir, 'manifest.json');
 
 // ---------------------------------------------------------------------------
 // Azure credentials
@@ -193,11 +210,35 @@ function escapeXml(s) {
   ));
 }
 
+/**
+ * En mode shadowing, on insère un <break/> SSML après chaque ponctuation
+ * forte chinoise (。，！？；：、) pour créer une pause respiratoire. Cela
+ * permet à l'apprenant de répéter chaque groupe de souffle sans courir
+ * derrière l'audio.
+ *
+ * Le texte est d'abord échappé XML par segment, puis recombiné avec les
+ * balises <break/> entre les morceaux.
+ */
+function buildSsmlBody(text) {
+  if (!slowMode) return escapeXml(text);
+  // Découpage : on garde la ponctuation collée au segment précédent.
+  const parts = text.split(/([。，！？；：、])/u).filter(Boolean);
+  let out = '';
+  for (let i = 0; i < parts.length; i++) {
+    const p = parts[i];
+    out += escapeXml(p);
+    if (/[。，！？；：、]/u.test(p)) {
+      out += `<break time="${SHADOWING_BREAK_MS}ms"/>`;
+    }
+  }
+  return out;
+}
+
 function buildSsml(text, voiceName) {
   return [
     '<speak version="1.0" xml:lang="zh-CN" xmlns:mstts="https://www.w3.org/2001/mstts">',
     `  <voice name="${voiceName}">`,
-    `    <prosody rate="-8%">${escapeXml(text)}</prosody>`,
+    `    <prosody rate="${PROSODY_RATE}">${buildSsmlBody(text)}</prosody>`,
     '  </voice>',
     '</speak>'
   ].join('\n');
@@ -245,6 +286,8 @@ async function synthesizeWithRetry(text, voice, label) {
 async function main() {
   console.log('🎙️  Génération audio dialogues · Azure Neural TTS');
   console.log(`     Region : ${AZURE_REGION}${dryRun ? ' · DRY-RUN' : ''}`);
+  console.log(`     Mode   : ${slowMode ? '🐢 SHADOWING (slow)' : 'NORMAL'} · rate=${PROSODY_RATE}`);
+  console.log(`     Output : public/audio/${folderName}/`);
 
   const { entries, tmpDir } = await loadDialogues();
   console.log(`     ${entries.length} dialogues chargés`);
@@ -296,7 +339,12 @@ async function main() {
     for (let i = 0; i < dlg.lines.length; i++) {
       const line = dlg.lines[i];
       const outFile = path.join(dlgDir, `${i}.mp3`);
-      const urlPath = `/audio/dialogues/${dlg.id}/${i}.mp3`;
+      // L'URL servie au navigateur doit refléter le dossier réel (folderName).
+      // Sans ça, en mode --slow, le manifest pointerait sur /audio/dialogues/...
+      // au lieu de /audio/dialogues-slow/... — bug observé qui faisait croire
+      // que l'audio lent ne fonctionnait pas (le toggle chargeait le bon
+      // manifest mais les URL ramenaient sur les MP3 normaux).
+      const urlPath = `/audio/${folderName}/${dlg.id}/${i}.mp3`;
       linePaths.push(urlPath);
 
       if (!force && fs.existsSync(outFile)) {

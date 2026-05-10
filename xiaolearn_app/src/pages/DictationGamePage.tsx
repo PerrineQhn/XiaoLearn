@@ -4,6 +4,8 @@ import type { LevelId } from '../types';
 import { getPhrasesByLevel } from '../data/dictation-phrases';
 import LevelBadge from '../components/LevelBadge';
 import { playAudioWithFallback } from '../utils/audio';
+import AudioSpeedToggle from '../components/AudioSpeedToggle';
+import { type AudioSpeed, toSlowPhraseAudioUrl, isPhraseSlowAvailable } from '../utils/dialogue-audio';
 
 interface DictationGamePageProps {
   language: Language;
@@ -28,6 +30,9 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [result, setResult] = useState<'correct' | 'incorrect' | null>(null);
+  // Vitesse audio (mode shadowing) — local au DictationGame.
+  const [audioSpeed, setAudioSpeed] = useState<AudioSpeed>('normal');
+  const [slowAvailable, setSlowAvailable] = useState(false);
   const normalizedLevel = useMemo<DictationLevel>(() => {
     return isDictationLevel(level) ? level : 'hsk1';
   }, [level]);
@@ -44,9 +49,17 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
   const playAudio = () => {
     if (!currentPhrase || audioPlaying) return;
 
+    // En mode shadowing, on dévie l'URL `audio/phrases/...` vers
+    // `audio/phrases-slow/...`. Si le fichier slow n'existe pas, le fallback
+    // de `playAudioWithFallback` se déclenche (et on reste sur le normal).
+    const audioUrl =
+      audioSpeed === 'slow'
+        ? toSlowPhraseAudioUrl(currentPhrase.audio) ?? currentPhrase.audio
+        : currentPhrase.audio;
+
     setAudioPlaying(true);
 
-    playAudioWithFallback(currentPhrase.audio)
+    playAudioWithFallback(audioUrl)
       .then((audio) => {
         audio.onended = () => {
           setAudioPlaying(false);
@@ -57,6 +70,20 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
         setAudioPlaying(false);
       });
   };
+
+  // Sonde si une variante slow existe pour la première phrase du set.
+  // Une seule requête HEAD par session (cf. cache dans dialogue-audio.ts).
+  useEffect(() => {
+    const probe = phrases[0]?.audio;
+    if (!probe) return;
+    let cancelled = false;
+    isPhraseSlowAvailable(`/${probe}`).then((ok) => {
+      if (!cancelled) setSlowAvailable(ok);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [phrases]);
 
   useEffect(() => {
     if (gameStarted && currentPhrase) {
@@ -279,6 +306,14 @@ export default function DictationGamePage({ language, level = 'hsk1', onBack }: 
               : (language === 'fr' ? 'Cliquez pour écouter' : 'Click to listen')}
           </span>
         </button>
+
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 8 }}>
+          <AudioSpeedToggle
+            mode={audioSpeed}
+            onChange={setAudioSpeed}
+            slowAvailable={slowAvailable}
+          />
+        </div>
 
         {!isRevealed ? (
           <div className="input-section">
