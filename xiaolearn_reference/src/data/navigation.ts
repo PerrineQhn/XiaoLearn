@@ -12,21 +12,41 @@ export interface FooterSection {
   links: NavItem[];
 }
 
+// Nav principale — concise. Culture est intégrée comme catégorie du Blog.
 const FR_MAIN_NAV: NavItem[] = [
-  { label: 'Accueil', href: '/' },
   { label: 'Dictionnaire', href: '/dictionnaire' },
   { label: 'Grammaire', href: '/grammaire' },
   { label: 'Nuances', href: '/nuances' },
-  { label: 'Culture', href: '/culture' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Tarifs', href: '/#pricing' },
 ];
 
 const EN_MAIN_NAV: NavItem[] = [
-  { label: 'Home', href: '/en' },
   { label: 'Dictionary', href: '/en/dictionnaire' },
   { label: 'Grammar', href: '/en/grammaire' },
   { label: 'Nuances', href: '/en/nuances' },
-  { label: 'Culture', href: '/en/culture' },
+  { label: 'Blog', href: '/en/blog' },
+  { label: 'Pricing', href: '/en#pricing' },
 ];
+
+// CTA links shown next to the main nav (login + signup)
+export interface CtaLink extends NavItem {
+  variant: 'ghost' | 'primary';
+}
+
+const FR_CTA_LINKS: CtaLink[] = [
+  { label: 'Se connecter', href: '/app/login', variant: 'ghost' },
+  { label: 'Commencer gratuitement', href: '/app', variant: 'primary' },
+];
+
+const EN_CTA_LINKS: CtaLink[] = [
+  { label: 'Sign in', href: '/app/login', variant: 'ghost' },
+  { label: 'Start free', href: '/app', variant: 'primary' },
+];
+
+export function getCtaLinks(locale: Locale): CtaLink[] {
+  return locale === 'en' ? EN_CTA_LINKS : FR_CTA_LINKS;
+}
 
 export const externalLinks: NavItem[] = [];
 
@@ -54,14 +74,18 @@ export function getFooterSections(locale: Locale): FooterSection[] {
         links: [
           { label: 'Grammar', href: '/en/grammaire' },
           { label: 'Nuances', href: '/en/nuances' },
-          { label: 'Culture', href: '/en/culture' },
+          { label: 'Blog', href: '/en/blog' },
+          { label: 'Chinese culture', href: '/en/blog?category=culture' },
           { label: 'Resources (FR)', href: '/ressources' },
         ],
       },
       {
         title: 'XiaoLearn',
         links: [
-          { label: 'App', href: 'https://xiaolearn.com', external: true },
+          { label: 'Web app', href: '/app' },
+          { label: 'Sign in', href: '/app/login' },
+          { label: 'Pricing', href: '/en#pricing' },
+          { label: 'Blog', href: '/en/blog' },
           { label: 'Shop', href: 'https://shop.xiaolearn.com', external: true },
         ],
       },
@@ -86,14 +110,17 @@ export function getFooterSections(locale: Locale): FooterSection[] {
       links: [
         { label: 'Grammaire', href: '/grammaire' },
         { label: 'Nuances', href: '/nuances' },
-        { label: 'Culture', href: '/culture' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Culture chinoise', href: '/blog?categorie=culture' },
         { label: 'Ressources & Produits', href: '/ressources' },
       ],
     },
     {
       title: 'XiaoLearn',
       links: [
-        { label: 'Application', href: 'https://xiaolearn.com', external: true },
+        { label: 'Application web', href: '/app' },
+        { label: 'Se connecter', href: '/app/login' },
+        { label: 'Tarifs', href: '/#pricing' },
         { label: 'Boutique', href: 'https://shop.xiaolearn.com', external: true },
       ],
     },

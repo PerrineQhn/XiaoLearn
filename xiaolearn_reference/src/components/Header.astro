@@ -1,5 +1,5 @@
 ---
-import { externalLinks, getMainNav } from '../data/navigation';
+import { externalLinks, getMainNav, getCtaLinks } from '../data/navigation';
 import { getLocaleSwitchPath, localizePath, type Locale } from '../utils/locale';
 
 interface Props {
@@ -8,13 +8,12 @@ interface Props {
 
 const { locale = 'fr' } = Astro.props;
 const mainNav = getMainNav(locale);
+const ctaLinks = getCtaLinks(locale);
 
 const currentQuery = Astro.url.searchParams.get('q') || '';
 const homeHref = localizePath('/', locale);
 const searchAction = locale === 'en' ? '/en/dictionnaire' : '/recherche';
 const searchLabel = locale === 'en' ? 'Search the website' : 'Rechercher sur le site';
-const searchPlaceholder = locale === 'en' ? 'Search by hanzi, pinyin, translation...' : 'Rechercher sur le site...';
-const searchButton = 'OK';
 const mobileSearchPlaceholder = locale === 'en' ? 'Search...' : 'Rechercher...';
 const mobileSearchButton = locale === 'en' ? 'Search' : 'Rechercher';
 const languageSwitchLabel = locale === 'en' ? 'Choose interface language' : "Choisir la langue de l'interface";
@@ -48,6 +47,14 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
         <span class="lang-separator">/</span>
         <a href={enHref} class={`lang-link ${locale === 'en' ? 'active' : ''}`}>EN</a>
       </div>
+      {ctaLinks.map(cta => (
+        <a
+          href={cta.href}
+          class={`btn btn-sm ${cta.variant === 'primary' ? 'btn-primary' : 'btn-ghost'}`}
+        >
+          {cta.label}
+        </a>
+      ))}
       {externalLinks.map(link => (
         <a
           href={link.href}
@@ -59,19 +66,6 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
         </a>
       ))}
     </div>
-
-    <form class="header-search" action={searchAction} method="get" role="search">
-      <label for="header-search-input" class="visually-hidden">{searchLabel}</label>
-      <input
-        id="header-search-input"
-        class="header-search-input"
-        type="search"
-        name="q"
-        value={currentQuery}
-        placeholder={searchPlaceholder}
-      />
-      <button type="submit" class="header-search-btn">{searchButton}</button>
-    </form>
 
     <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
       <span></span>
@@ -110,6 +104,15 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
         >
           {item.label}
           {item.external && <span class="external-icon">↗</span>}
+        </a>
+      ))}
+      <hr />
+      {ctaLinks.map(cta => (
+        <a
+          href={cta.href}
+          class={`mobile-nav-link mobile-cta ${cta.variant === 'primary' ? 'mobile-cta-primary' : ''}`}
+        >
+          {cta.label}
         </a>
       ))}
       {externalLinks.length > 0 && (
@@ -158,8 +161,7 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     height: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto minmax(230px, 310px) auto;
+    display: flex;
     align-items: center;
     gap: var(--spacing-lg);
   }
@@ -169,32 +171,33 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     align-items: center;
     gap: var(--spacing-sm);
     flex-shrink: 0;
-    justify-self: start;
   }
 
   .logo-img {
-    height: 45px;
+    height: 38px;
     width: auto;
   }
 
   .nav {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    justify-self: center;
+    gap: 4px;
+    flex: 1;
     justify-content: center;
     min-width: 0;
   }
 
   .nav-link {
     font-weight: 500;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 8px 14px;
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    white-space: nowrap;
   }
 
   .nav-link:hover {
@@ -206,7 +209,7 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    justify-self: end;
+    flex-shrink: 0;
   }
 
   .lang-switch {
@@ -298,7 +301,7 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     background: none;
     border: none;
     cursor: pointer;
-    justify-self: end;
+    margin-left: auto;
   }
 
   .mobile-menu-btn span {
@@ -420,37 +423,43 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     opacity: 0.6;
   }
 
+  .mobile-cta {
+    text-align: center;
+    justify-content: center;
+    border: 1.5px solid var(--border-medium);
+    margin-top: var(--spacing-xs);
+  }
+
+  .mobile-cta-primary {
+    background: linear-gradient(120deg, var(--primary-red), var(--gold-accent));
+    color: var(--text-inverse) !important;
+    border-color: transparent;
+  }
+
+  .mobile-cta-primary:hover {
+    background: linear-gradient(120deg, var(--primary-red-hover), var(--gold-hover));
+    color: var(--text-inverse) !important;
+  }
+
   @media (max-width: 1180px) {
-    .header-container {
-      grid-template-columns: auto 1fr auto minmax(200px, 250px) auto;
-      gap: var(--spacing-md);
-    }
+    .header-container { gap: var(--spacing-md); }
+    .nav-link { padding: 6px 10px; font-size: 0.9rem; }
+  }
 
-    .nav {
-      gap: var(--spacing-sm);
-    }
+  @media (max-width: 1080px) {
+    /* Hide secondary CTA (Se connecter / Sign in) to keep layout breathable */
+    .header-actions .btn-ghost { display: none; }
+  }
 
-    .nav-link {
-      padding: var(--spacing-xs) var(--spacing-sm);
-      font-size: 0.92rem;
-    }
+  @media (max-width: 980px) {
+    /* Hide language switch in tight desktop layouts; mobile menu has it */
+    .lang-switch { display: none; }
   }
 
   @media (max-width: 900px) {
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .nav,
-    .header-search,
-    .header-actions {
-      display: none;
-    }
-
-    .mobile-menu-btn {
-      display: flex;
-    }
+    .header-container { justify-content: space-between; }
+    .nav, .header-actions { display: none; }
+    .mobile-menu-btn { display: flex; }
   }
 
   @media (max-width: 520px) {

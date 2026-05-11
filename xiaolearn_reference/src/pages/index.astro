@@ -1,213 +1,361 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import DictionarySearch from '../components/react/DictionarySearch';
-import { getCollection } from 'astro:content';
 
 export const prerender = true;
 
-function getNextFestivalDistance(monthStart: number, fromMonth: number): number {
-  if (monthStart < 1 || monthStart > 12) return 99;
-  if (monthStart >= fromMonth) return monthStart - fromMonth;
-  return 12 - fromMonth + monthStart;
-}
-
-const cultureEntries = await getCollection('culture');
-const currentMonth = new Date().getMonth() + 1;
-
-const upcomingFestivals = cultureEntries
-  .filter((entry) => entry.data.category === 'fete')
-  .map((entry) => ({
-    slug: entry.id,
-    name: entry.data.title,
-    hanzi: entry.data.hanzi ?? '',
-    periodLabel: entry.data.period ?? '',
-    summary: entry.data.summary,
-    monthStart: entry.data.monthStart ?? 13,
-  }))
-  .sort((a, b) => {
-    const distanceA = getNextFestivalDistance(a.monthStart, currentMonth);
-    const distanceB = getNextFestivalDistance(b.monthStart, currentMonth);
-    if (distanceA !== distanceB) return distanceA - distanceB;
-    return a.monthStart - b.monthStart;
-  })
-  .slice(0, 4);
-
-const highlightOrder = ['calendrier-fetes', 'rituels-famille', 'calligraphie', 'culture-du-the'];
-const cultureHighlights = cultureEntries
-  .filter((entry) => entry.data.category === 'repere')
-  .map((entry) => ({
-    slug: entry.id,
-    title: entry.data.title,
-    summary: entry.data.summary,
-    icon: entry.data.icon ?? '文',
-  }))
-  .sort((a, b) => {
-    const orderA = highlightOrder.indexOf(a.slug);
-    const orderB = highlightOrder.indexOf(b.slug);
-    const safeA = orderA >= 0 ? orderA : Number.MAX_SAFE_INTEGER;
-    const safeB = orderB >= 0 ? orderB : Number.MAX_SAFE_INTEGER;
-    if (safeA !== safeB) return safeA - safeB;
-    return a.title.localeCompare(b.title, 'fr');
-  });
+// URL de l'application (le React/Vite build sera monté sous /app/)
+const APP_URL = '/app';
+const APP_LOGIN_URL = '/app/login';
 ---
 
 <BaseLayout title="Accueil">
+  <!-- ============================== HERO ============================== -->
   <section class="hero">
+    <div class="hero-ornament" aria-hidden="true">学</div>
     <div class="hero-container">
-      <div class="hero-content">
-        <span class="hero-badge">Langue + Culture chinoise</span>
-        <h1>Votre site de <span class="highlight">référence</span> pour le mandarin</h1>
-        <p class="hero-subtitle">
-          Recherchez un caractère, comprenez la grammaire, comparez les mots proches
-          et suivez les repères culturels chinois au même endroit.
-        </p>
-
-        <div class="hero-search">
-          <h2>Recherche rapide de caractères</h2>
-          <p>Entrez du hanzi, du pinyin ou un mot français.</p>
-          <DictionarySearch
-            client:load
-            entriesUrl="/data/hsk/all.json"
-            maxResults={8}
-            showLevelFilters={false}
-            hideResultsUntilQuery={true}
-            heroMode={true}
-          />
-          <a href="/dictionnaire" class="quick-link">Ouvrir le dictionnaire complet →</a>
-        </div>
+      <span class="hero-eyebrow">Mandarin · A1 → C2</span>
+      <h1 class="hero-title">
+        Apprends le mandarin.<br />
+        <span class="hero-accent">Du A1 jusqu'à courant.</span>
+      </h1>
+      <p class="hero-lead">
+        Passe de total débutant à un niveau courant grâce à un parcours
+        structuré, un dictionnaire complet et un professeur disponible 24h/24.
+        À ton rythme, en français.
+      </p>
+      <div class="hero-ctas">
+        <a href={APP_URL} class="btn btn-primary btn-lg">Commencer gratuitement</a>
+        <a href="#features" class="btn btn-ghost btn-lg">Découvrir la méthode</a>
       </div>
-
-      <div class="hero-ornament">汉</div>
+      <p class="hero-foot">Sans carte bancaire · Premières leçons offertes</p>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ============================ STATS BAR ============================ -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item"><strong>A1 → C2</strong><span>Niveaux CECR</span></div>
+      <div class="stat-item"><strong>11 000+</strong><span>Mots indexés (HSK 1 → 7-9)</span></div>
+      <div class="stat-item"><strong>500+</strong><span>Points de grammaire</span></div>
+      <div class="stat-item"><strong>100%</strong><span>En français</span></div>
+    </div>
+  </section>
+
+  <!-- ============================ PROBLÈME ============================ -->
+  <section class="section problem-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge badge-primary">Explorer</span>
-        <h2>4 piliers d'apprentissage</h2>
-        <p>Une navigation simple orientée apprentissage et pratique quotidienne.</p>
+        <h2>Apprendre le mandarin ne devrait pas te ruiner.</h2>
+        <p>Ni te faire perdre des mois sur des apps qui te récompensent au lieu de t'apprendre.</p>
       </div>
 
-      <div class="grid grid-4">
+      <div class="problem-grid">
+        <article class="problem-card">
+          <span class="problem-tag">Écoles de langue</span>
+          <p class="problem-price">1 500€<span>/trimestre</span></p>
+          <p>Classes surchargées, profs qui ne suivent pas ton rythme, budget qui s'envole.</p>
+          <p class="problem-tldr">→ Hors de prix</p>
+        </article>
+
+        <article class="problem-card">
+          <span class="problem-tag">Prof particulier</span>
+          <p class="problem-price">30–50€<span>/heure</span></p>
+          <p>Excellent, mais inaccessible au quotidien. 1h/semaine, et tu oublies entre deux.</p>
+          <p class="problem-tldr">→ Inaccessible</p>
+        </article>
+
+        <article class="problem-card">
+          <span class="problem-tag">Apps grand public</span>
+          <p class="problem-price">10€<span>/mois</span></p>
+          <p>Phrases absurdes, pas de structure CECR, pas de hanzi sérieux. Pour rendre accro, pas bilingue.</p>
+          <p class="problem-tldr">→ Illusion de progression</p>
+        </article>
+      </div>
+
+      <div class="vs-block">
+        <div class="vs-card vs-without">
+          <h3>Sans XiaoLearn</h3>
+          <ul>
+            <li><span aria-hidden="true">📑</span> 17 onglets entre Pleco, Yabla, YouTube, MDBG…</li>
+            <li><span aria-hidden="true">❓</span> "C'est quel ton sur 妈 ?" pour la 12ᵉ fois</li>
+            <li><span aria-hidden="true">😶</span> Tu apprends 谢谢 puis 量子力学</li>
+            <li><span aria-hidden="true">📉</span> 80% des mots de la semaine déjà oubliés</li>
+          </ul>
+        </div>
+        <div class="vs-card vs-with">
+          <h3>Avec XiaoLearn</h3>
+          <ul>
+            <li><span aria-hidden="true">🎯</span> Un parcours A1 → C2 en français, structuré</li>
+            <li><span aria-hidden="true">🔁</span> Révision espacée, tu n'oublies plus</li>
+            <li><span aria-hidden="true">🧠</span> Dictionnaire + grammaire + nuances au même endroit</li>
+            <li><span aria-hidden="true">🤖</span> Un prof IA qui répond en français, 24h/24</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FEATURES ============================ -->
+  <section id="features" class="section features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">La méthode</span>
+        <h2>Tout ce qu'il te faut.<br /><span class="muted">En un seul endroit.</span></h2>
+      </div>
+
+      <div class="features-grid">
         <a href="/dictionnaire" class="feature-card">
           <div class="feature-icon"><span>辞</span></div>
-          <h3>Dictionnaire</h3>
-          <p>Trouvez rapidement traduction, pinyin et contexte d'usage des caractères.</p>
+          <h3>Dictionnaire HSK 1 → 7-9</h3>
+          <p>Hanzi, pinyin avec tons, traductions, exemples. Accessible sans compte, indexé pour le SEO.</p>
+          <span class="feature-cta">Ouvrir le dictionnaire →</span>
         </a>
 
         <a href="/grammaire" class="feature-card">
           <div class="feature-icon"><span>文</span></div>
-          <h3>Grammaire</h3>
-          <p>Points clés HSK, filtres par niveau et fiches détaillées pour chaque structure.</p>
+          <h3>Grammaire mandarin</h3>
+          <p>了, 把, 被, 过, 着, classificateurs, structures — chaque point expliqué clairement, niveau par niveau.</p>
+          <span class="feature-cta">Voir la grammaire →</span>
         </a>
 
         <a href="/nuances" class="feature-card">
           <div class="feature-icon"><span>辨</span></div>
-          <h3>Mots similaires</h3>
-          <p>Évitez les confusions fréquentes avec des comparaisons claires et exemples.</p>
+          <h3>Nuances et faux-amis</h3>
+          <p>会 / 能 / 可以, 是 / 有, 这 / 那… Comprends les distinctions qui changent tout.</p>
+          <span class="feature-cta">Comparer les mots →</span>
         </a>
 
-        <a href="/culture" class="feature-card">
-          <div class="feature-icon"><span>礼</span></div>
-          <h3>Culture</h3>
-          <p>Fêtes, codes sociaux, symboles et repères concrets pour lire la Chine actuelle.</p>
+        <a href="/blog" class="feature-card">
+          <div class="feature-icon"><span>文</span></div>
+          <h3>Blog &amp; culture</h3>
+          <p>Guides, articles, repères culturels, fêtes chinoises. La langue prend tout son sens en contexte.</p>
+          <span class="feature-cta">Lire le blog →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section alt-bg">
+  <!-- ============================ APP PREVIEW ============================ -->
+  <section class="section app-section">
     <div class="container">
-      <div class="section-header">
-        <span class="badge badge-secondary">À venir</span>
-        <h2>Fêtes chinoises à suivre</h2>
-        <p>Repérez les prochains temps forts pour relier la langue au contexte culturel.</p>
-      </div>
+      <div class="app-grid">
+        <div class="app-copy">
+          <span class="badge badge-secondary">L'application web</span>
+          <h2>Et quand tu veux pratiquer pour de vrai…</h2>
+          <p class="app-lead">
+            …l'application XiaoLearn t'attend avec des leçons interactives, un
+            système de flashcards à révision espacée, des dialogues, des
+            exercices, et un tuteur IA disponible en français 24h/24.
+          </p>
 
-      <div class="festival-grid">
-        {upcomingFestivals.map((festival) => (
-          <article class="festival-card">
-            <div class="festival-top">
-              <span class="festival-hanzi">{festival.hanzi}</span>
+          <ul class="app-features">
+            <li><strong>Parcours structuré A1 → C2</strong> avec progression suivie</li>
+            <li><strong>Flashcards SRS</strong> calibrées sur ton oubli individuel</li>
+            <li><strong>Tuteur IA en français</strong> pour grammaire et tons</li>
+            <li><strong>Reconnaissance vocale</strong> pour entraîner la prononciation</li>
+            <li><strong>Communauté + battles</strong> pour progresser à plusieurs</li>
+          </ul>
+
+          <div class="app-ctas">
+            <a href={APP_URL} class="btn btn-primary btn-lg">Commencer gratuitement</a>
+            <a href={APP_LOGIN_URL} class="btn btn-ghost btn-lg">Se connecter</a>
+          </div>
+          <p class="app-note">Premières leçons offertes · pas de carte bancaire requise</p>
+        </div>
+
+        <div class="app-mockup" aria-hidden="true">
+          <div class="mockup-card mockup-card-1">
+            <div class="mockup-header">
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
             </div>
-            <h3>{festival.name}</h3>
-            <p class="festival-period">{festival.periodLabel}</p>
-            <p>{festival.summary}</p>
-          </article>
-        ))}
+            <div class="mockup-body">
+              <div class="mockup-hanzi">你好</div>
+              <div class="mockup-pinyin">nǐ hǎo</div>
+              <div class="mockup-fr">Bonjour</div>
+              <div class="mockup-tags">
+                <span class="mockup-tag">A1</span>
+                <span class="mockup-tag">À réviser dans 3j</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mockup-card mockup-card-2">
+            <div class="mockup-mini">
+              <p class="mockup-q">"Différence 了₁ vs 了₂ ?"</p>
+              <p class="mockup-a">了₁ marque l'accomplissement du verbe (我吃了 — j'ai mangé). 了₂ en fin de phrase signale un changement d'état (下雨了 — il s'est mis à pleuvoir)…</p>
+            </div>
+          </div>
+
+          <div class="mockup-card mockup-card-3">
+            <div class="mockup-streak">
+              <div class="streak-num">14</div>
+              <div class="streak-label">jours de série</div>
+            </div>
+            <div class="mockup-stats">
+              <div class="stat-mini"><strong>342</strong><span>Mots actifs</span></div>
+              <div class="stat-mini"><strong>B1</strong><span>Niveau</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container dual-grid">
-      <article class="focus-card">
-        <h2>Questions de grammaire</h2>
-        <p>Travaillez les structures les plus utiles, niveau par niveau, avec des exemples directs.</p>
-        <ul>
-          <li>Quand utiliser 不 vs 没（有） ?</li>
-          <li>Comment différencier 了1 et 了2 ?</li>
-          <li>Quels patrons utiliser pour la comparaison ?</li>
-        </ul>
-        <a href="/grammaire" class="btn btn-primary">Voir les points de grammaire</a>
-      </article>
-
-      <article class="focus-card">
-        <h2>Mots proches et nuances</h2>
-        <p>Comprenez les nuances de sens et d'usage qui changent la précision de vos phrases.</p>
-        <ul>
-          <li>会 / 能 / 可以</li>
-          <li>是 / 有</li>
-          <li>这 / 那 et leurs variantes contextuelles</li>
-        </ul>
-        <a href="/nuances" class="btn btn-secondary">Comparer les mots similaires</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section culture-preview">
+  <!-- ============================ COMMUNAUTÉ ============================ -->
+  <section id="community" class="section community-section">
     <div class="container">
       <div class="section-header">
-        <h2>Culture chinoise en pratique</h2>
-        <p>Une progression linguistique plus solide quand les références culturelles deviennent concrètes.</p>
+        <span class="badge badge-secondary">Communauté</span>
+        <h2>Tu n'apprends pas tout seul.</h2>
+        <p>Une communauté d'apprenants francophones du mandarin, motivés et bienveillants.</p>
       </div>
-      <div class="highlight-grid">
-        {cultureHighlights.map((item) => (
-          <article class="highlight-item">
-            <span class="highlight-icon">{item.icon}</span>
-            <h3>{item.title}</h3>
-            <p>{item.summary}</p>
-          </article>
-        ))}
+
+      <div class="community-grid">
+        <article class="community-card">
+          <h3>Battles de vocabulaire</h3>
+          <p>Défie un autre apprenant en 1v1. Le plus rapide à donner la bonne traduction marque les points.</p>
+        </article>
+        <article class="community-card">
+          <h3>Classements</h3>
+          <p>Gagne de l'XP à chaque action, monte les paliers, et débloque des récompenses.</p>
+        </article>
+        <article class="community-card">
+          <h3>Board d'entraide</h3>
+          <p>Pose tes questions sur les tons, la grammaire, les caractères. Réponds aux autres pour gagner de l'XP.</p>
+        </article>
       </div>
-      <div class="section-cta">
-        <a href="/culture" class="btn btn-primary btn-lg">
-          Explorer la section culture
-          <span class="arrow">→</span>
-        </a>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section faq-section">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <h2>Questions fréquentes</h2>
+      </div>
+
+      <details class="faq-item">
+        <summary>C'est quoi XiaoLearn ?</summary>
+        <p>Une plateforme française pour apprendre le mandarin : un dictionnaire complet HSK 1 → 7-9 accessible sans compte, des points de grammaire et de nuances expliqués clairement, et une application web avec un parcours CECR A1 → C2, des flashcards à révision espacée et un tuteur IA.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Pourquoi le CECR (A1 → C2) plutôt que le HSK ?</summary>
+        <p>Le CECR (Cadre Européen Commun de Référence) est le standard utilisé partout en France et en Europe pour mesurer un niveau de langue. Il est plus parlant qu'un niveau HSK pour un francophone. On garde toutefois le HSK comme référence dans le dictionnaire (puisque c'est l'organisation officielle des caractères chinois) et dans les contenus de grammaire.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Pourquoi pas de page "conjugaison" ?</summary>
+        <p>Parce que le mandarin <strong>n'a pas de conjugaison</strong> — pas d'accord en temps, en personne ou en nombre. La temporalité passe par des particules (了, 过, 着), des adverbes (已经, 正在), et le contexte. Tu retrouveras tout ça dans la section <a href="/grammaire">Grammaire</a>.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Est-ce que c'est adapté aux vrais débutants ?</summary>
+        <p>Oui. Le parcours commence à A1 (zéro caractère, zéro pinyin) et te conduit progressivement jusqu'à C2. L'application introduit les caractères et les tons sans présupposer aucune connaissance préalable.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Je peux essayer gratuitement ?</summary>
+        <p>Oui. Le dictionnaire, la grammaire, les nuances et le blog sont entièrement gratuits, sans compte. Pour l'application web (leçons interactives, flashcards, tuteur IA), les premières leçons sont gratuites — pas de carte bancaire requise.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>En quoi c'est différent de Pleco ou Duolingo ?</summary>
+        <p>Pleco est un excellent dictionnaire mais ne t'enseigne rien. Duolingo te fait traduire des phrases absurdes sans structure CECR ni grammaire claire. XiaoLearn combine un dictionnaire taillé pour francophones, un parcours pédagogique structuré, et un tuteur IA qui répond en français — au même endroit.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================ PRICING ============================ -->
+  <section id="pricing" class="section pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary">Tarifs</span>
+        <h2>Un prix simple. Sans surprise.</h2>
+        <p>Commence gratuitement, puis choisis le plan qui te convient.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card pricing-free">
+          <h3>Découverte</h3>
+          <p class="price"><strong>0€</strong><span>pour toujours</span></p>
+          <ul>
+            <li>Dictionnaire HSK 1 → 7-9 complet</li>
+            <li>Grammaire, nuances, blog, culture</li>
+            <li>Premières leçons de l'application</li>
+            <li>Recherche par hanzi / pinyin / français</li>
+          </ul>
+          <a href={APP_URL} class="btn btn-ghost btn-block">Commencer gratuitement</a>
+        </article>
+
+        <article class="pricing-card pricing-featured">
+          <span class="pricing-badge">Recommandé</span>
+          <h3>Mensuel</h3>
+          <p class="price"><strong>14€</strong><span>/ mois</span></p>
+          <ul>
+            <li>Tout l'accès gratuit</li>
+            <li>Toutes les leçons A1 → C2</li>
+            <li>Flashcards SRS illimitées</li>
+            <li>Tuteur IA en français 24/7</li>
+            <li>Communauté, battles, classements</li>
+          </ul>
+          <a href={APP_URL} class="btn btn-primary btn-block">Commencer l'essai</a>
+        </article>
+
+        <article class="pricing-card pricing-lifetime">
+          <span class="pricing-badge pricing-badge-gold">Meilleure offre</span>
+          <h3>À vie</h3>
+          <p class="price"><strong>99€</strong><span>une seule fois</span></p>
+          <ul>
+            <li>Tout le plan Mensuel</li>
+            <li>Toutes les futures fonctionnalités</li>
+            <li>Accès prioritaire aux nouveautés</li>
+            <li>Aucun engagement, aucun renouvellement</li>
+          </ul>
+          <a href={APP_URL} class="btn btn-secondary btn-block">Débloquer à vie</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FINAL CTA ============================ -->
+  <section class="section final-cta-section">
+    <div class="container final-cta-inner">
+      <h2>Prêt·e à vraiment apprendre le mandarin ?</h2>
+      <p>Sans engagement. Sans carte bancaire pour démarrer.</p>
+      <div class="final-ctas">
+        <a href={APP_URL} class="btn btn-primary btn-lg">Commencer gratuitement</a>
+        <a href="/dictionnaire" class="btn btn-ghost btn-lg">Explorer le dictionnaire</a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  /* ============================ HERO ============================ */
   .hero {
-    background: linear-gradient(135deg, rgba(216, 72, 62, 0.9), rgba(240, 183, 98, 0.74));
     position: relative;
     overflow: hidden;
-    padding: var(--spacing-3xl) 0;
+    padding: clamp(4rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+    background:
+      radial-gradient(circle at 85% 15%, rgba(240, 183, 98, 0.18), transparent 55%),
+      radial-gradient(circle at 10% 90%, rgba(216, 72, 62, 0.12), transparent 55%),
+      var(--app-bg);
   }
 
-  .hero::before {
-    content: '';
+  .hero-ornament {
     position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.35), transparent 45%),
-      radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.25), transparent 45%);
-    mix-blend-mode: screen;
-    opacity: 0.8;
+    right: -2vw;
+    bottom: -8vw;
+    font-family: var(--font-serif);
+    font-size: clamp(20rem, 40vw, 36rem);
+    color: rgba(216, 72, 62, 0.06);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .hero-container {
@@ -216,363 +364,766 @@ const cultureHighlights = cultureEntries
     padding: 0 var(--spacing-lg);
     position: relative;
     z-index: 1;
+    text-align: left;
   }
 
-  .hero-content {
-    max-width: 860px;
-  }
-
-  .hero-badge {
+  .hero-eyebrow {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--text-inverse);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primary-red);
+    background: var(--primary-red-light);
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.3rem, 6vw, 3.4rem);
-    color: var(--text-inverse);
-    line-height: 1.1;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero .highlight {
-    color: var(--gold-accent);
-    text-shadow: 0 2px 20px rgba(240, 183, 98, 0.4);
-  }
-
-  .hero-subtitle {
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 1.12rem;
-    max-width: 740px;
     margin-bottom: var(--spacing-xl);
   }
 
-  .hero-search {
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    border-radius: var(--radius-xl);
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(6px);
-    padding: var(--spacing-lg);
+  .hero-title {
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    max-width: 18ch;
   }
 
-  .hero-search h2 {
-    color: var(--text-inverse);
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-xs);
+  .hero-accent {
+    background: linear-gradient(120deg, var(--primary-red), var(--gold-hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
-  .hero-search > p {
-    color: rgba(255, 255, 255, 0.88);
+  .hero-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--text-secondary);
+    max-width: 56ch;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-md);
   }
 
-  .quick-link {
-    display: inline-flex;
-    color: rgba(255, 255, 255, 0.94);
-    margin-top: var(--spacing-sm);
+  .hero-foot {
     font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ============================ STATS BAR ============================ */
+  .stats-bar {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item strong {
+    display: block;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .stat-item span {
+    display: block;
+    color: var(--text-tertiary);
+    font-size: 0.88rem;
+    margin-top: 6px;
+  }
+
+  /* ============================ SECTIONS ============================ */
+  .section {
+    padding: clamp(4rem, 8vw, 6.5rem) 0;
+  }
+
+  .container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .container-narrow { max-width: 760px; }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+  }
+
+  .section-header h2 .muted {
+    color: var(--text-tertiary);
     font-weight: 600;
   }
 
-  .hero-ornament {
-    position: absolute;
-    right: 6%;
-    top: 12%;
-    font-size: 10rem;
-    font-family: var(--font-serif);
-    color: rgba(255, 255, 255, 0.14);
-    pointer-events: none;
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
-  .feature-card {
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-xl);
-    background: var(--bg-primary);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-base);
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
   }
 
-  .feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .feature-icon {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(120deg, var(--primary-red-light), var(--bg-accent));
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .feature-icon span {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
+  .badge-primary {
+    background: var(--primary-red-light);
     color: var(--primary-red);
   }
 
-  .feature-card h3 {
-    margin-bottom: var(--spacing-xs);
+  .badge-secondary {
+    background: var(--jade-green-light);
+    color: var(--jade-green);
   }
 
-  .alt-bg {
-    background: var(--bg-secondary);
-  }
-
-  .festival-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: var(--spacing-md);
-  }
-
-  .festival-card {
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-xl);
+  /* ============================ PROBLEM ============================ */
+  .problem-section {
     background: var(--bg-primary);
-    box-shadow: var(--shadow-sm);
-    padding: var(--spacing-lg);
   }
 
-  .festival-top {
-    min-height: 2rem;
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .problem-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .problem-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .problem-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .problem-price span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-left: 4px;
+  }
+
+  .problem-card p {
+    color: var(--text-secondary);
+    line-height: 1.55;
     margin-bottom: var(--spacing-sm);
   }
 
-  .festival-hanzi {
-    font-family: var(--font-serif);
-    font-size: 1.45rem;
-    color: var(--primary-red);
+  .problem-tldr {
+    margin-top: var(--spacing-md) !important;
+    color: var(--primary-red) !important;
+    font-weight: 700;
   }
 
-  .festival-period {
-    font-size: 0.78rem;
-    color: var(--text-tertiary);
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .dual-grid {
+  .vs-block {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
   }
 
-  .focus-card {
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-xl);
-    background: var(--bg-primary);
-    box-shadow: var(--shadow-sm);
+  .vs-card {
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
   }
 
-  .focus-card h2 {
-    font-size: 1.35rem;
-    margin-bottom: var(--spacing-xs);
+  .vs-without {
+    background: rgba(216, 72, 62, 0.05);
+    border: 1px solid rgba(216, 72, 62, 0.18);
   }
 
-  .focus-card ul {
-    margin: var(--spacing-md) 0 var(--spacing-lg);
-    padding-left: 1.1rem;
+  .vs-with {
+    background: rgba(47, 157, 138, 0.07);
+    border: 1px solid rgba(47, 157, 138, 0.22);
+  }
+
+  .vs-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+  }
+
+  .vs-without h3 { color: var(--primary-red); }
+  .vs-with h3 { color: var(--jade-green); }
+
+  .vs-card ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .vs-card li {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
     color: var(--text-secondary);
+    line-height: 1.5;
   }
 
-  .culture-preview {
-    background: linear-gradient(135deg, rgba(47, 157, 138, 0.12), rgba(216, 72, 62, 0.1));
+  /* ============================ FEATURES ============================ */
+  .features-section {
+    background: transparent;
   }
 
-  .highlight-grid {
+  .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--spacing-md);
-  }
-
-  .highlight-item {
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
-    background: var(--bg-primary);
-    padding: var(--spacing-lg);
-  }
-
-  .highlight-icon {
-    font-family: var(--font-serif);
-    color: var(--primary-red);
-    font-size: 2rem;
-    display: inline-block;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .section-cta {
-    margin-top: var(--spacing-xl);
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
-  }
-
-  .section-header h2 {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .section-header p {
-    max-width: 680px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 980px;
     margin: 0 auto;
   }
 
-  @media (max-width: 900px) {
-    .hero-ornament {
-      display: none;
-    }
-
-    .dual-grid {
-      grid-template-columns: 1fr;
-    }
+  .feature-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
   }
-</style>
 
-<style is:global>
-  .hero-search .dictionary-search {
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-red);
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+  }
+
+  .feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .feature-cta {
+    margin-top: var(--spacing-md);
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+
+  /* ============================ APP SECTION ============================ */
+  .app-section {
+    background: linear-gradient(135deg, rgba(47, 157, 138, 0.06), rgba(240, 183, 98, 0.07));
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .app-copy h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    color: var(--text-primary);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+  }
+
+  .app-lead {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .app-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
   }
 
-  .hero-search .search-controls {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .hero-search .search-input-wrapper {
+  .app-features li {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 1.6rem;
     position: relative;
   }
 
-  .hero-search .search-input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--text-primary);
-    font: inherit;
-    padding: 0 2.8rem 0 0.9rem;
-  }
-
-  .hero-search .search-input::placeholder {
-    color: #798097;
-  }
-
-  .hero-search .search-clear {
+  .app-features li::before {
+    content: '✓';
     position: absolute;
-    right: var(--spacing-md);
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 1.35rem;
+    left: 0;
+    color: var(--jade-green);
+    font-weight: 700;
+  }
+
+  .app-features strong { color: var(--text-primary); font-weight: 600; }
+
+  .app-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .app-note {
+    font-size: 0.85rem;
     color: var(--text-tertiary);
-    cursor: pointer;
   }
 
-  .hero-search .search-results-info {
-    font-size: 0.86rem;
-    color: rgba(255, 255, 255, 0.9);
+  .app-mockup {
+    position: relative;
+    height: 480px;
   }
 
-  .hero-search .results-grid {
+  .mockup-card {
+    position: absolute;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .mockup-card-1 {
+    top: 0;
+    left: 0;
+    width: 280px;
+    transform: rotate(-3deg);
+  }
+
+  .mockup-card-2 {
+    top: 80px;
+    right: 0;
+    width: 300px;
+    transform: rotate(2deg);
+  }
+
+  .mockup-card-3 {
+    bottom: 0;
+    left: 60px;
+    width: 280px;
+    transform: rotate(1deg);
+  }
+
+  .mockup-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-medium);
+  }
+
+  .mockup-hanzi {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .mockup-pinyin {
+    color: var(--primary-red);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .mockup-fr {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mockup-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .mockup-tag {
+    font-size: 0.7rem;
+    background: var(--primary-red-light);
+    color: var(--primary-red);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+  }
+
+  .mockup-q {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .mockup-a {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .mockup-streak {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .streak-num {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    line-height: 1;
+  }
+
+  .streak-label {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+  }
+
+  .mockup-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
   }
 
-  .hero-search .result-card {
+  .stat-mini {
+    text-align: center;
+    padding: var(--spacing-xs);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+  }
+
+  .stat-mini strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+  }
+
+  .stat-mini span {
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ============================ COMMUNITY ============================ */
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .community-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .community-card h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .community-card p {
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ============================ FAQ ============================ */
+  .faq-section {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+    background: var(--bg-secondary);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    position: relative;
+    padding-right: 3rem;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--spacing-lg);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: var(--primary-red);
+    transition: transform var(--transition-base);
+    line-height: 1;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0 var(--spacing-lg) var(--spacing-md);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .faq-item a {
+    color: var(--primary-red);
+    font-weight: 600;
+  }
+
+  /* ============================ PRICING ============================ */
+  .pricing-section {
+    background: var(--app-bg);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .pricing-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    position: relative;
     display: flex;
     flex-direction: column;
-    padding: var(--spacing-sm);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.16);
   }
 
-  .hero-search .result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2px;
+  .pricing-featured {
+    border: 2px solid var(--primary-red);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
   }
 
-  .hero-search .result-hanzi {
-    font-family: var(--font-serif);
-    font-size: 1.45rem;
-    color: #fff;
+  .pricing-lifetime {
+    background: linear-gradient(160deg, rgba(240, 183, 98, 0.10), rgba(216, 72, 62, 0.06));
+    border: 1px solid rgba(240, 183, 98, 0.4);
   }
 
-  .hero-search .result-level {
-    font-size: 0.68rem;
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-red);
+    color: var(--text-inverse);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 2px 6px;
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.24);
-    color: #fff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  .hero-search .result-pinyin {
-    font-size: 0.82rem;
-    color: #fff5dc;
+  .pricing-badge-gold {
+    background: linear-gradient(135deg, var(--gold-accent), var(--gold-hover));
   }
 
-  .hero-search .result-translation {
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.9);
+  .pricing-card h3 {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  .hero-search .no-results {
-    border: 1px dashed rgba(255, 255, 255, 0.35);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
+  .price {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .price strong {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .price span {
+    color: var(--text-tertiary);
+    margin-left: var(--spacing-xs);
+  }
+
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .pricing-card li {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+
+  .pricing-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--jade-green);
+    font-weight: 700;
+  }
+
+  /* ============================ FINAL CTA ============================ */
+  .final-cta-section {
+    background: linear-gradient(135deg, var(--primary-red), var(--gold-accent));
+    color: var(--text-inverse);
+  }
+
+  .final-cta-inner {
     text-align: center;
+  }
+
+  .final-cta-section h2 {
+    color: var(--text-inverse);
+    font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .final-cta-section p {
     color: rgba(255, 255, 255, 0.92);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xl);
   }
 
-  .hero-empty {
-    border: 1px dashed rgba(255, 255, 255, 0.35);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
-    text-align: center;
-    color: rgba(255, 255, 255, 0.92);
+  .final-ctas {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
   }
 
-  .hero-search .no-results-icon {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.9rem;
-    margin-bottom: 4px;
+  .final-cta-section .btn-ghost {
+    color: var(--text-inverse);
+    border-color: rgba(255, 255, 255, 0.55);
   }
 
-  .hero-empty .no-results-icon {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.9rem;
-    margin-bottom: 4px;
+  .final-cta-section .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-inverse);
   }
 
-  .hero-search .no-results-hint {
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.78);
+  /* ============================ RESPONSIVE ============================ */
+  @media (max-width: 960px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
+    .problem-grid { grid-template-columns: 1fr; }
+    .vs-block { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .app-grid { grid-template-columns: 1fr; }
+    .app-mockup { height: 420px; max-width: 360px; margin: 0 auto; }
+    .community-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+    .pricing-featured { transform: none; }
   }
 
-  .hero-empty .no-results-hint {
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.78);
+  @media (max-width: 600px) {
+    .hero-title { letter-spacing: -0.015em; }
+    .hero-ctas, .app-ctas, .final-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn, .app-ctas .btn, .final-ctas .btn { width: 100%; }
   }
 </style>

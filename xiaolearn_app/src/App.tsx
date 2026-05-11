@@ -56,6 +56,7 @@ import CulturePage from './pages/CulturePage';
 import './styles/page-shell.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import AIFloatingChat from './components/AIFloatingChat';
+import { generateGeminiResponse } from './services/geminiService';
 import WritingCorrectorPage from './pages/WritingCorrectorPage';
 import ConversationPartnerPage from './pages/ConversationPartnerPage';
 import AiQuizPage from './pages/AiQuizPage';
@@ -829,8 +830,28 @@ function App() {
   const [tutorTyping, setTutorTyping] = useState(false);
   const [tutorMode, setTutorMode] = useState<AiTutorV2Mode>('balanced');
 
+  // Hints injectés en préambule du message utilisateur pour orienter le ton
+  // de la réponse Gemini selon le mode choisi (Strict / Équilibré / Joueur).
+  // Volontairement court et discret — le SYSTEM_INSTRUCTION du service Gemini
+  // (qui restreint au domaine "chinois") reste prioritaire ; on n'altère que
+  // le registre.
+  const TUTOR_MODE_HINTS: Record<AiTutorV2Mode, { fr: string; en: string }> = {
+    strict: {
+      fr: '[Mode strict] Corrige systématiquement les erreurs, sois précis et formel.',
+      en: '[Strict mode] Correct mistakes systematically, be precise and formal.'
+    },
+    balanced: {
+      fr: '[Mode équilibré] Sois pédagogique, clair et bienveillant.',
+      en: '[Balanced mode] Be pedagogical, clear and supportive.'
+    },
+    playful: {
+      fr: '[Mode joueur] Utilise des analogies amusantes, sois enthousiaste et concret.',
+      en: '[Playful mode] Use fun analogies, be enthusiastic and concrete.'
+    }
+  };
+
   const handleTutorSend = useCallback(
-    (payload: { content: string; mode: AiTutorV2Mode }) => {
+    async (payload: { content: string; mode: AiTutorV2Mode }) => {
       const now = Date.now();
       const userMsg: AiTutorV2Message = {
         id: `user-${now}`,
@@ -838,29 +859,79 @@ function App() {
         content: payload.content,
         createdAt: now
       };
+
+      // Snapshot l'historique AVANT d'ajouter le message courant : sinon
+      // Gemini verrait le message à la fois dans `history` et dans
+      // `userMessage`, ce qui dégrade la qualité de la réponse.
+      // On ne passe que les messages user/assistant à Gemini (pas les
+      // messages 'system' éventuels).
+      const historyForGemini = tutorMessages
+        .filter((m) => m.role === 'user' || m.role === 'assistant')
+        .map((m) => ({
+          role: m.role as 'user' | 'assistant',
+          content: m.content
+        }));
+
       setTutorMessages((prev) => [...prev, userMsg]);
       setTutorTyping(true);
-      // Placeholder : la vraie intégration IA (OpenAI/Anthropic/Gemini) reste
-      // à brancher. On écho un message d'attente pour que l'UX ne paraisse
-      // pas cassée.
-      window.setTimeout(() => {
+
+      try {
+        // Préfixe le message user avec un hint de ton — solution simple qui
+        // ne touche pas au service Gemini partagé avec AIFloatingChat. Si le
+        // mode reste 'balanced' on ne préfixe pas (cas le plus fréquent →
+        // évite de polluer la conversation).
+        const hint = TUTOR_MODE_HINTS[payload.mode]?.[language];
+        const userMessageForGemini =
+          payload.mode === 'balanced' || !hint
+            ? payload.content
+            : `${hint}\n\n${payload.content}`;
+
+        const response = await generateGeminiResponse(
+          userMessageForGemini,
+          historyForGemini
+        );
+
         setTutorMessages((prev) => [
           ...prev,
           {
             id: `assistant-${Date.now()}`,
             role: 'assistant',
-            content:
-              language === 'fr'
-                ? 'Je suis connecté mais ma connexion IA n\'est pas encore branchée sur cette version. Utilise la boîte de chat flottante en attendant.'
-                : 'I am connected but the AI backend is not wired to this V2 page yet. Use the floating chat for now.',
+            content: response,
             createdAt: Date.now()
           }
         ]);
+      } catch (error) {
+        // Erreurs typiques : rate limit Gemini (429), clé API absente/invalide,
+        // network down. On affiche un message d'erreur dans la conv plutôt que
+        // de laisser l'UI en typing forever.
+        console.error('[Prof. Xiao] Gemini error:', error);
+        const errMsg =
+          error instanceof Error ? error.message : 'Unknown error';
+        setTutorMessages((prev) => [
+          ...prev,
+          {
+            id: `assistant-error-${Date.now()}`,
+            role: 'assistant',
+            content:
+              language === 'fr'
+                ? `Désolée, j'ai rencontré une erreur (${errMsg}). Peux-tu réessayer dans un instant ?`
+                : `Sorry, I encountered an error (${errMsg}). Could you try again in a moment?`,
+            createdAt: Date.now()
+          }
+        ]);
+      } finally {
         setTutorTyping(false);
-      }, 600);
+      }
     },
-    [language]
+    [language, tutorMessages]
   );
+
+  // "Nouvelle conversation" : on remet l'historique à vide. Le bouton est
+  // exposé par AiTutorPageV2 quand `onClear` est passé en prop.
+  const handleTutorClear = useCallback(() => {
+    setTutorMessages([]);
+    setTutorTyping(false);
+  }, []);
 
   // --- Liste plate de tous les mots déjà vus (pour le deck Flashcards V2) --
   const allFlashcardItems = useMemo<LessonItem[]>(() => {
@@ -1556,7 +1627,7 @@ function App() {
           isTyping={tutorTyping}
           mode={tutorMode}
           onChangeMode={setTutorMode}
-          onClear={() => setTutorMessages([])}
+          onClear={handleTutorClear}
           onSend={handleTutorSend}
         />
       );

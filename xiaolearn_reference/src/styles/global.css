@@ -213,6 +213,23 @@ p {
   border-radius: var(--radius-md);
 }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-medium);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+  background: var(--primary-red-light);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
 .btn .arrow {
   transition: transform var(--transition-base);
 }

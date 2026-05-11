@@ -18,6 +18,8 @@ dist_validation/
 # NOTE: Ces fichiers DOIVENT être versionnés pour le déploiement !
 # public/audio/      ← Commenté pour permettre le déploiement
 public/data/manifest.json
+public/audio/
+!public/audio/.gitkeep
 # public/icons/      ← Commenté pour permettre le déploiement
 # public/logos/      ← Commenté pour permettre le déploiement
 
