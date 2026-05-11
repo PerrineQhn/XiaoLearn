@@ -98,6 +98,32 @@ export interface ReadingSegment {
   translationEn: string;
 }
 
+/**
+ * Question de compréhension. Deux modes co-existent :
+ *   - QCM : si `choices` + `answerIndex` sont fournis → rendu mini-quiz à
+ *     boutons A/B/C/D façon Seonsaengnim, avec feedback rouge/vert et
+ *     explication contextuelle (champ optionnel `explanationFr/En`).
+ *   - Réponse libre : si `choices` est omis → rendu carte classique avec
+ *     bouton « Afficher la réponse » (rétro-compat des readings historiques).
+ *
+ * L'ancien champ `answerFr/En` reste obligatoire dans les deux modes : il
+ * contient la réponse canonique (texte court) qui sert d'explication par
+ * défaut quand `explanationFr/En` n'est pas fourni.
+ */
+export interface ReadingComprehensionQuestion {
+  questionFr: string;
+  questionEn: string;
+  answerFr: string;
+  answerEn: string;
+  /** Options pour le mode QCM (3 ou 4 propositions). */
+  choices?: Array<{ labelFr: string; labelEn: string }>;
+  /** Index de la bonne réponse dans `choices` (0-based). Requis si choices. */
+  answerIndex?: number;
+  /** Phrase d'explication affichée après réponse (fallback : `answerFr/En`). */
+  explanationFr?: string;
+  explanationEn?: string;
+}
+
 export interface ReadingText {
   id: string;
   title: string;
@@ -108,12 +134,7 @@ export interface ReadingText {
   /** Mots-clés à mémoriser après lecture. */
   vocab?: string[];
   /** Questions de compréhension optionnelles. */
-  questions?: Array<{
-    questionFr: string;
-    questionEn: string;
-    answerFr: string;
-    answerEn: string;
-  }>;
+  questions?: ReadingComprehensionQuestion[];
 }
 
 export interface LessonIntroduction {

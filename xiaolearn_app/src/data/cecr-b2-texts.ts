@@ -28,8 +28,8 @@ const AI_AND_WORK: ReadingEntry = {
   themeEn: 'AI and work',
   reading: {
     id: 'rd-b21-ai-work',
-    title: "L'IA au bureau : remplace-t-elle vraiment les employés ?",
-    titleEn: 'AI at the office: is it really replacing employees?',
+    title: "L'IA va-t-elle vraiment prendre nos boulots ?",
+    titleEn: 'Will AI really take our jobs?',
     intro: "Article original de niveau B2.1, inspiré de débats actuels sur l'IA générative et l'emploi. Rédigé pour XiaoLearn — vocabulaire technique et connecteurs formels.",
     introEn: 'Original B2.1 article inspired by current debates on generative AI and employment. Written for XiaoLearn — technical vocabulary and formal connectors.',
     segments: [
@@ -145,8 +145,8 @@ const POST_PANDEMIC_ECONOMY: ReadingEntry = {
   themeEn: 'Post-pandemic economy',
   reading: {
     id: 'rd-b21-post-pandemic-economy',
-    title: 'La reprise économique chinoise : entre espoirs et obstacles',
-    titleEn: "China's economic recovery: between hopes and hurdles",
+    title: "Après la pandémie, la Chine redémarre — vraiment ?",
+    titleEn: "Post-pandemic China: back on track, really?",
     intro: "Article d'analyse macro-économique B2.1. Chiffres fictifs (ordre de grandeur réaliste) pour illustrer le vocabulaire des marchés et des politiques publiques.",
     introEn: 'B2.1 macro-economic analysis article. Figures are illustrative (realistic orders of magnitude) to showcase market and public-policy vocabulary.',
     segments: [
@@ -254,8 +254,8 @@ const ANALECTS_EXCERPT: ReadingEntry = {
   themeEn: 'Confucius — classical wisdom',
   reading: {
     id: 'rd-b21-analects-excerpt',
-    title: 'Trois maximes des Analectes (extraits simplifiés)',
-    titleEn: 'Three maxims from the Analects (simplified excerpts)',
+    title: 'Trois pensées de Confucius',
+    titleEn: 'Three thoughts from Confucius',
     intro: "Passage d'introduction à la prose classique. Chaque maxime est suivie d'une glose moderne pour aider à la comprendre. Texte intégralement dans le domaine public (Analectes, ≈ -500 av. J.-C.) ; les gloses sont originales XiaoLearn.",
     introEn: 'Introduction to classical prose. Each maxim is followed by a modern gloss. The source text is in the public domain (Analects, ≈ 500 BCE); the glosses are original to XiaoLearn.',
     segments: [
@@ -332,8 +332,8 @@ const STARTUP_PITCH_DIALOGUE: DialogueEntry = {
   themeEn: 'Fundraising (tech)',
   dialogue: {
     id: 'dlg-b21-startup-pitch',
-    title: 'Premier tour de table',
-    titleEn: 'First funding round',
+    title: '150 millions pour une IA médicale',
+    titleEn: '150 million for a medical AI',
     context: "Wang Meng, fondatrice d'une start-up d'IA médicale, rencontre Zhang Jun, associé d'un fonds de capital-risque, pour discuter d'un éventuel investissement.",
     contextEn: 'Wang Meng, founder of a medical-AI startup, meets Zhang Jun, a partner at a venture-capital firm, to discuss a potential investment.',
     lines: [
@@ -393,8 +393,8 @@ const INTANGIBLE_HERITAGE: ReadingEntry = {
   themeEn: 'Intangible heritage',
   reading: {
     id: 'rd-b22-intangible-heritage',
-    title: "Sauvegarder les savoir-faire traditionnels à l'ère moderne",
-    titleEn: 'Preserving traditional crafts in the modern era',
+    title: "Quand l'artisanat résiste au temps",
+    titleEn: 'When craftsmanship outlasts time',
     intro: "Article original B2.2 sur le patrimoine culturel immatériel en Chine. Vocabulaire culturel, connecteurs argumentatifs, structures complexes.",
     introEn: 'Original B2.2 article on intangible cultural heritage in China. Cultural vocabulary, argumentative connectors, complex structures.',
     segments: [
@@ -496,8 +496,8 @@ const MENTAL_HEALTH_DEBATE: DialogueEntry = {
   themeEn: 'Workplace mental health debate',
   dialogue: {
     id: 'dlg-b22-mental-health-debate',
-    title: "Débat : « 996 » et santé mentale au travail",
-    titleEn: 'Debate: "996" culture and workplace mental health',
+    title: 'Plateau télé : la culture du 996 sur la sellette',
+    titleEn: 'Live TV: the 996 culture on trial',
     context: "Plateau télé. La journaliste Li Na anime un débat avec un DRH (M. Chen) et une psychologue du travail (Dr Zhou) sur l'impact du régime « 996 » sur la santé mentale.",
     contextEn: "TV studio. Journalist Li Na hosts a debate between an HR director (Mr. Chen) and a workplace psychologist (Dr. Zhou) about the impact of the '996' schedule on mental health.",
     lines: [
@@ -550,8 +550,8 @@ const TEA_CULTURE_DIALOGUE: DialogueEntry = {
   themeEn: 'Tea culture and transmission',
   dialogue: {
     id: 'dlg-b22-tea-culture',
-    title: "À l'atelier de thé : transmission et modernité",
-    titleEn: 'At the tea atelier: transmission and modernity',
+    title: 'Le thé contre le bubble tea',
+    titleEn: 'Tea vs. bubble tea',
     context: "Dans un petit atelier de thé à Hangzhou, un jeune apprenti (小陈) interroge son maître (师父) sur l'avenir de la culture du thé face à la montée des chaînes de bubble tea.",
     contextEn: 'In a small tea atelier in Hangzhou, a young apprentice (Xiao Chen) questions his master (Shifu) about the future of tea culture in the face of booming bubble-tea chains.',
     lines: [

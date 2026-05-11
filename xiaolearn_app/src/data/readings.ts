@@ -29,8 +29,8 @@ export const readings: ReadingEntry[] = [
     themeEn: 'My day',
     reading: {
       id: 'rd-a1-my-day',
-      title: 'La journée de Wang Lin',
-      titleEn: 'Wang Lin\'s day',
+      title: 'Une journée à Pékin',
+      titleEn: 'A day in Beijing',
       intro: 'Wang Lin est étudiante à Pékin. Elle raconte une journée typique.',
       introEn: 'Wang Lin is a student in Beijing. She tells about a typical day.',
       segments: [
@@ -98,8 +98,8 @@ export const readings: ReadingEntry[] = [
     themeEn: 'Work experience',
     reading: {
       id: 'rd-b11-work',
-      title: 'Mon premier stage',
-      titleEn: 'My first internship',
+      title: 'Trois mois pour grandir',
+      titleEn: 'Three months that changed me',
       intro: 'Li Hua, étudiante en master, raconte l\'expérience de son premier stage en entreprise.',
       introEn: 'Li Hua, a master\'s student, shares her first internship experience.',
       segments: [
@@ -173,8 +173,8 @@ export const readings: ReadingEntry[] = [
     themeEn: 'Environment',
     reading: {
       id: 'rd-b21-environment',
-      title: 'La Chine et les énergies renouvelables',
-      titleEn: 'China and renewable energy',
+      title: 'Le pari vert de la Chine',
+      titleEn: 'China\'s green bet',
       intro: 'Article d\'actualité sur la transition énergétique chinoise.',
       introEn: 'News article on China\'s energy transition.',
       segments: [

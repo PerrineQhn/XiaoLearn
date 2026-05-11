@@ -25,8 +25,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'At the restaurant',
     reading: {
       id: 'rd-a1-restaurant',
-      title: 'Un dîner au restaurant',
-      titleEn: 'Dinner at the restaurant',
+      title: 'On commande quoi ce soir ?',
+      titleEn: "What's for dinner tonight?",
       intro: 'Deux amis entrent dans un petit restaurant et commandent leur premier repas en chinois.',
       introEn: 'Two friends walk into a small restaurant and order their first meal in Chinese.',
       segments: [
@@ -59,8 +59,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Transport',
     reading: {
       id: 'rd-a1-subway',
-      title: 'Prendre le métro',
-      titleEn: 'Taking the subway',
+      title: 'Bondé, bruyant, ponctuel',
+      titleEn: 'Crowded, loud, on time',
       intro: 'Li Ming explique comment il va à l\'université chaque matin en métro.',
       introEn: 'Li Ming explains how he takes the subway to university every morning.',
       segments: [
@@ -92,8 +92,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Health',
     reading: {
       id: 'rd-a2-doctor-visit',
-      title: 'Une visite chez le médecin',
-      titleEn: 'A visit to the doctor',
+      title: 'Docteur, j\'ai mal au ventre',
+      titleEn: 'Doctor, my stomach hurts',
       intro: 'Xiao Wang ne se sent pas bien et va à l\'hôpital du quartier — un texte simple pour le vocabulaire médical de base.',
       introEn: 'Xiao Wang isn\'t feeling well and heads to the neighborhood clinic — a simple text for basic medical vocabulary.',
       segments: [
@@ -132,8 +132,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Celebrations',
     reading: {
       id: 'rd-a2-birthday',
-      title: 'L\'anniversaire de mon amie',
-      titleEn: 'My friend\'s birthday',
+      title: 'Karaoké, gâteau, et un cadeau surprise',
+      titleEn: 'Karaoke, cake, and a surprise gift',
       intro: 'Une soirée d\'anniversaire entre amis : cadeau, gâteau, karaoké — une page très commune de la vie chinoise urbaine.',
       introEn: 'A birthday evening among friends: gifts, cake, karaoke — a typical scene of urban Chinese life.',
       segments: [
@@ -166,8 +166,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Traditional festivals',
     reading: {
       id: 'rd-b11-mid-autumn',
-      title: 'La fête de la Mi-Automne',
-      titleEn: 'The Mid-Autumn Festival',
+      title: 'Lune pleine, gâteaux ronds',
+      titleEn: 'Full moon, round cakes',
       intro: 'Courte description d\'une soirée familiale lors de la Mi-Automne : gâteaux de lune, lanternes, et nostalgie du pays natal.',
       introEn: 'A short piece about a family evening during Mid-Autumn: mooncakes, lanterns, and homesickness.',
       segments: [
@@ -206,8 +206,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Chinese New Year',
     reading: {
       id: 'rd-b11-spring-festival',
-      title: 'Rentrer chez soi pour la fête du Printemps',
-      titleEn: 'Going home for Spring Festival',
+      title: 'Rentrer à la maison pour le Nouvel An',
+      titleEn: 'Going home for the Lunar New Year',
       intro: 'Lin Jia travaille à Shanghai, mais sa famille vit dans un village du Hunan. Chaque année, le grand voyage du Nouvel An.',
       introEn: 'Lin Jia works in Shanghai but her family lives in a Hunan village. Every year, the great New Year journey.',
       segments: [
@@ -418,8 +418,8 @@ export const cecrTalesDailyReadings: ReadingEntry[] = [
     themeEn: 'Classic tale',
     reading: {
       id: 'rd-c11-butterfly-lovers',
-      title: 'Liang Shanbo et Zhu Yingtai',
-      titleEn: 'Liang Shanbo and Zhu Yingtai',
+      title: 'Les amants-papillons',
+      titleEn: 'The Butterfly Lovers',
       intro: 'Récit littéraire de 梁山伯与祝英台, la « Roméo et Juliette » chinoise, qui se métamorphose en vol de papillons.',
       introEn: 'A literary retelling of *Liang Shanbo and Zhu Yingtai*, China\'s "Romeo and Juliet", transfigured into a flight of butterflies.',
       segments: [

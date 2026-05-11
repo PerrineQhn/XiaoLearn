@@ -31,6 +31,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import '../styles/reading-v2.css';
 import { dialogues, type DialogueEntry } from '../data/dialogues';
+import { getDialogueZhTitle } from '../data/dialogue-zh-titles';
+import { getDialogueQuiz } from '../data/dialogue-quizzes';
 import {
   type DialogueAudioManifest,
   type AudioSpeed,
@@ -40,6 +42,7 @@ import {
   cancelTTS
 } from '../utils/dialogue-audio';
 import AudioSpeedToggle from '../components/AudioSpeedToggle';
+import ComprehensionQuiz from '../components/reading/ComprehensionQuiz';
 
 export type DialogueV2Language = 'fr' | 'en';
 
@@ -48,6 +51,8 @@ export interface DialoguePageV2Props {
   onBack?: () => void;
   /** Dialogue pré-sélectionné (optionnel, ex : deep-link). */
   initialDialogueId?: string;
+  /** Verse de l'XP au dashboard quand le quiz est complété. */
+  onAwardXp?: (xp: number) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -152,7 +157,7 @@ const iconForEntry = (entry: DialogueEntry): string => {
 // ---------------------------------------------------------------------------
 
 const DialoguePageV2 = (props: DialoguePageV2Props) => {
-  const { language = 'fr', onBack, initialDialogueId } = props;
+  const { language = 'fr', onBack, initialDialogueId, onAwardXp } = props;
 
   const availableLevels = useMemo(() => {
     const present = new Set(dialogues.map((d) => d.cecrLevel));
@@ -173,9 +178,9 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
   const [selectedId, setSelectedId] = useState<string | null>(
     initialDialogueId ?? null
   );
-  const [showPinyin, setShowPinyin] = useState(true);
-  const [showTranslation, setShowTranslation] = useState(true);
-  const [answerRevealed, setAnswerRevealed] = useState(false);
+  // Pinyin et traduction OFF par défaut : on encourage l'écoute active.
+  const [showPinyin, setShowPinyin] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(false);
 
   // Audio : manifest Azure + instance HTMLAudio courante.
   const [manifest, setManifest] = useState<DialogueAudioManifest | null>(null);
@@ -320,12 +325,11 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
   const renderCard = (entry: DialogueEntry) => {
     const title =
       language === 'en' ? entry.dialogue.titleEn : entry.dialogue.title;
-    const context =
-      language === 'en' ? entry.dialogue.contextEn : entry.dialogue.context;
     const theme = language === 'en' ? entry.themeEn : entry.theme;
     const block = levelBlock(entry.cecrLevel);
     const linesCount = entry.dialogue.lines.length;
     const vocabCount = entry.dialogue.vocab?.length ?? 0;
+    const titleZh = getDialogueZhTitle(entry.dialogue.id);
     return (
       <button
         key={entry.dialogue.id}
@@ -333,7 +337,6 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
         className={`rv2-card rv2-card--${block}`}
         onClick={() => {
           setSelectedId(entry.dialogue.id);
-          setAnswerRevealed(false);
         }}
       >
         <div className="rv2-card-top">
@@ -343,8 +346,14 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
           <span className="rv2-card-level">{LEVEL_LABEL[entry.cecrLevel]}</span>
         </div>
         <p className="rv2-card-theme">{theme}</p>
-        <h3 className="rv2-card-title">{title}</h3>
-        <p className="rv2-card-desc">{context}</p>
+        {titleZh ? (
+          <>
+            <h3 className="rv2-card-title-zh" lang="zh-Hans">{titleZh}</h3>
+            <p className="rv2-card-title-translation">{title}</p>
+          </>
+        ) : (
+          <h3 className="rv2-card-title">{title}</h3>
+        )}
         <div className="rv2-card-foot">
           <span className="rv2-card-stat">
             <span className="rv2-card-stat-icon" aria-hidden>💬</span>
@@ -367,10 +376,14 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
   if (selected) {
     const { dialogue } = selected;
     const title = language === 'en' ? dialogue.titleEn : dialogue.title;
-    const context =
-      language === 'en' ? dialogue.contextEn : dialogue.context;
     const theme = language === 'en' ? selected.themeEn : selected.theme;
     const block = levelBlock(selected.cecrLevel);
+    const titleZh = getDialogueZhTitle(dialogue.id);
+    // Quiz QCM enrichi (en priorité), fallback sur la question inline.
+    const enrichedQuiz = getDialogueQuiz(dialogue.id);
+    const quizQuestions =
+      enrichedQuiz ??
+      (dialogue.comprehension ? [dialogue.comprehension] : []);
 
     return (
       <div className="reading-v2 dialogue-v2">
@@ -383,43 +396,33 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
               cancelAudio();
               setPlayingIdx(null);
               setSelectedId(null);
-              setAnswerRevealed(false);
             }}
           >
             {t(language, 'backList')}
           </button>
 
-          <div className={`rv2-detail-hero rv2-detail-hero--${block}`}>
-            <div className="rv2-detail-emoji-wrap" aria-hidden>
-              <div className="rv2-detail-emoji">{iconForEntry(selected)}</div>
+          {/* Hero "lean" : pas de résumé (anti-spoiler) — titre chinois +
+              traduction, façon Seonsaengnim. */}
+          <div
+            className={`rv2-detail-hero rv2-detail-hero--${block} rv2-detail-hero--lean`}
+          >
+            <div className="rv2-detail-kicker">
+              <span className="rv2-detail-kicker-level">
+                {LEVEL_LABEL[selected.cecrLevel]}
+              </span>
+              <span className="rv2-detail-kicker-dot" aria-hidden>·</span>
+              <span className="rv2-detail-kicker-theme">
+                {theme.toUpperCase()}
+              </span>
             </div>
-            <div className="rv2-detail-hero-body">
-              <h1>{title}</h1>
-              {context && <p className="rv2-detail-intro">{context}</p>}
-              <div className="rv2-detail-badges">
-                <span className="rv2-badge rv2-badge--level">
-                  {LEVEL_LABEL[selected.cecrLevel]}
-                </span>
-                <span className="rv2-badge rv2-badge--theme">
-                  <span aria-hidden>🏷️</span> {theme}
-                </span>
-                <span className="rv2-badge">
-                  <span aria-hidden>💬</span>{' '}
-                  {fmtLines(language, dialogue.lines.length)}
-                </span>
-                {dialogue.vocab && dialogue.vocab.length > 0 && (
-                  <span className="rv2-badge">
-                    <span aria-hidden>📚</span>{' '}
-                    {fmtVocab(language, dialogue.vocab.length)}
-                  </span>
-                )}
-                {dialogue.comprehension && (
-                  <span className="rv2-badge">
-                    <span aria-hidden>❓</span> 1
-                  </span>
-                )}
-              </div>
-            </div>
+            {titleZh ? (
+              <>
+                <h1 className="rv2-detail-title-zh" lang="zh-Hans">{titleZh}</h1>
+                <p className="rv2-detail-title-translation">{title}</p>
+              </>
+            ) : (
+              <h1 className="rv2-detail-title-fallback">{title}</h1>
+            )}
           </div>
 
           <div className="rv2-toggles">
@@ -511,30 +514,14 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
             </div>
           )}
 
-          {dialogue.comprehension && (
-            <div className="rv2-section-block">
-              <h3 className="rv2-section-head">
-                ❓ {t(language, 'comprehension')}
-              </h3>
-              <div className="rv2-questions">
-                <div className="rv2-qa">
-                  <div className="rv2-qa-q">
-                    {language === 'en'
-                      ? dialogue.comprehension.questionEn
-                      : dialogue.comprehension.questionFr}
-                  </div>
-                  <div
-                    className={`rv2-qa-a ${answerRevealed ? '' : 'is-hidden'}`}
-                    onClick={() => setAnswerRevealed(true)}
-                    title={answerRevealed ? '' : t(language, 'revealAnswer')}
-                  >
-                    {language === 'en'
-                      ? dialogue.comprehension.answerEn
-                      : dialogue.comprehension.answerFr}
-                  </div>
-                </div>
-              </div>
-            </div>
+          {quizQuestions.length > 0 && (
+            <ComprehensionQuiz
+              questions={quizQuestions}
+              entityId={dialogue.id}
+              language={language}
+              xpStoreKey="xl_dialogue_quiz_xp_v1"
+              onAwardXp={onAwardXp}
+            />
           )}
         </div>
       </div>

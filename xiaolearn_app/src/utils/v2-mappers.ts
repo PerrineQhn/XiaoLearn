@@ -434,6 +434,45 @@ export function buildDefaultEvaluation(level: 'hsk1' | 'hsk2' | 'hsk3' = 'hsk1')
 
 export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
   {
+    id: 'ann-reading-audio-player',
+    title: 'Player audio dans les Lectures — Normal / Lent',
+    titleEn: 'Audio player in Readings — Normal / Slow',
+    body:
+      'Chaque texte de la page Lecture embarque maintenant un lecteur compact au-dessus de l\'article : ' +
+      'Play/Pause, barre de progression cliquable, retour au début, compteur de temps. Deux vitesses ' +
+      'au choix — Normal pour l\'immersion façon locuteur natif, Lent pour le shadowing syllabe par ' +
+      'syllabe. Tu peux basculer entre les deux en plein milieu d\'une écoute : le player se replace ' +
+      'automatiquement à la même position dans la nouvelle version. Voix Azure Neural haut de gamme, ' +
+      'à des kilomètres des TTS robotiques.',
+    bodyEn:
+      'Every text in the Reading section now has a compact player above the article: Play/Pause, ' +
+      'clickable progress bar, restart, time counter. Two speeds — Normal for native-style immersion, ' +
+      'Slow for syllable-by-syllable shadowing. You can switch mid-listen and the player resumes ' +
+      'at the same spot in the new version. High-quality Azure Neural voice, light-years from robotic TTS.',
+    date: '2026-05-11',
+    tag: 'Lecture'
+  },
+  {
+    id: 'ann-reading-tap-translate',
+    title: 'Lectures interactives — tape un mot, ajoute-le à tes flashcards',
+    titleEn: 'Interactive readings — tap any word, add it to your flashcards',
+    body:
+      'Toute la page Lecture devient cliquable caractère par caractère. Tu tapes un hanzi (ou un mot ' +
+      'composé), tu obtiens son pinyin tonifié et sa traduction — d\'abord depuis nos leçons HSK (la ' +
+      'plus précise, contextualisée à la phrase), puis en fallback depuis CFDICT. Bouton ➕ pour ' +
+      'envoyer la carte dans tes flashcards perso en un clic, avec le titre de la lecture comme note. ' +
+      'En bonus : un mini-quiz QCM de 3 questions à la fin de chaque texte, qui rapporte +50 XP la ' +
+      'première fois et reste rejouable autant que tu veux. 33 textes du A1 au C2 — bonne lecture !',
+    bodyEn:
+      'The whole Reading page is now tappable character by character. Tap a hanzi (or compound word) ' +
+      'and you get its tone-marked pinyin plus a sentence-aware translation — first from our HSK lessons ' +
+      '(the precise one), then from CFDICT as a fallback. The ➕ button sends the card straight into ' +
+      'your personal flashcards with the reading title as a note. Bonus: a 3-question QCM mini-quiz at ' +
+      'the end of each text rewards +50 XP the first time and stays replayable. 33 texts from A1 to C2 — happy reading!',
+    date: '2026-05-11',
+    tag: 'Lecture'
+  },
+  {
     id: 'ann-1',
     title: 'Nouvelle refonte Culture + Dictée',
     titleEn: 'New Culture + Dictation paths',

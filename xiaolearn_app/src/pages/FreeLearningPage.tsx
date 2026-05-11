@@ -584,27 +584,9 @@ export function FreeLearningPage({
             sub={copy.modes.listening.sub}
             onClick={() => openSetup('listening')}
           />
-          <ModeTile
-            icon={copy.modes.dialogue.icon}
-            title={copy.modes.dialogue.title}
-            sub={copy.modes.dialogue.sub}
-            onClick={() => {
-              if (onOpenDialogue) onOpenDialogue();
-              else setView('dialogue-list');
-            }}
-          />
-          <ModeTile
-            icon={copy.modes.reading.icon}
-            title={copy.modes.reading.title}
-            sub={copy.modes.reading.sub}
-            onClick={() => {
-              // Quand App.tsx fournit `onOpenReading`, on délègue la navigation
-              // vers la page Lecture V2 standalone (celle ouverte aussi depuis
-              // la page d'accueil). Sinon, fallback sur le catalogue interne.
-              if (onOpenReading) onOpenReading();
-              else setView('reading-list');
-            }}
-          />
+          {/* V12 — Dialogue et Lecture sont désormais des onglets de
+              premier niveau dans la sidebar. On retire les tuiles d'ici
+              pour ne pas dupliquer l'entrée. */}
           <ModeTile
             icon={copy.modes.speed.icon}
             title={copy.modes.speed.title}

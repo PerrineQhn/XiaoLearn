@@ -1198,6 +1198,10 @@ function App() {
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
+        // V12 — Lecture & Dialogue sortent d'Apprentissage Libre : ce sont
+        // désormais des entrées de premier niveau, accessibles directement.
+        { id: 'reading', label: language === 'fr' ? 'Lectures' : 'Readings', iconSlug: 'carnet-de-notes', fallback: '📖', icon: 'carnet-de-notes.png' },
+        { id: 'dialogue', label: language === 'fr' ? 'Dialogues' : 'Dialogues', iconSlug: 'discussion-sur-les-bulles', fallback: '💬', icon: 'discussion-sur-les-bulles.png' },
         { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
         { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
         // Onglets retirés (routes conservées pour deep links éventuels) :
@@ -1802,6 +1806,7 @@ function App() {
         <DialoguePageV2
           language={language}
           onBack={() => setView('home')}
+          onAwardXp={(amount) => dashboardState.awardXp(amount)}
         />
       );
       break;
@@ -1810,6 +1815,10 @@ function App() {
         <ReadingPageV2
           language={language}
           onBack={() => setView('home')}
+          personalFlashcards={
+            appAccess.canCreateCustomFlashcards ? personalFlashcards : undefined
+          }
+          onAwardXp={(amount) => dashboardState.awardXp(amount)}
         />
       );
       break;

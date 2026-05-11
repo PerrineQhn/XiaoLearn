@@ -30,8 +30,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Greetings',
     dialogue: {
       id: 'dlg-a1-hello',
-      title: 'Premier bonjour',
-      titleEn: 'First hello',
+      title: 'Premier bonjour à la fac',
+      titleEn: 'First hello on campus',
       context: 'Deux étudiants se rencontrent pour la première fois à l\'université.',
       contextEn: 'Two students meet for the first time at university.',
       lines: [
@@ -56,8 +56,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Family',
     dialogue: {
       id: 'dlg-a1-family',
-      title: 'Ta famille',
-      titleEn: 'Your family',
+      title: 'Quatre à la maison',
+      titleEn: 'Four at home',
       context: 'Un étudiant chinois pose des questions sur la famille de son correspondant.',
       contextEn: 'A Chinese student asks about their pen pal\'s family.',
       lines: [
@@ -84,8 +84,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Restaurant',
     dialogue: {
       id: 'dlg-a2-restaurant',
-      title: 'Commander au restaurant',
-      titleEn: 'Ordering at a restaurant',
+      title: 'Poulet Kung Pao, s\'il vous plaît',
+      titleEn: 'Kung Pao chicken, please',
       context: 'Au restaurant, un client commande son repas au serveur.',
       contextEn: 'At a restaurant, a customer orders their meal from the waiter.',
       lines: [
@@ -111,8 +111,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Metro',
     dialogue: {
       id: 'dlg-a2-metro',
-      title: 'Prendre le métro',
-      titleEn: 'Taking the metro',
+      title: 'Pardon, comment va-t-on à Tian\'anmen ?',
+      titleEn: 'Excuse me, how do I get to Tian\'anmen?',
       context: 'Un touriste demande son chemin dans une station de métro à Pékin.',
       contextEn: 'A tourist asks for directions in a Beijing metro station.',
       lines: [
@@ -138,8 +138,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Hotel',
     dialogue: {
       id: 'dlg-a2-hotel',
-      title: "Enregistrement à l'hôtel",
-      titleEn: 'Hotel check-in',
+      title: 'Trois nuits, chambre 806',
+      titleEn: 'Three nights, room 806',
       context: "Un voyageur arrive dans un hôtel de Pékin le soir et se présente à la réception.",
       contextEn: 'A traveler arrives at a Beijing hotel in the evening and checks in at reception.',
       lines: [
@@ -172,8 +172,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Job interview',
     dialogue: {
       id: 'dlg-b11-interview',
-      title: 'Un premier entretien',
-      titleEn: 'A first job interview',
+      title: 'Premier entretien d\'embauche',
+      titleEn: 'First job interview',
       context: 'Un diplômé passe son premier entretien dans une entreprise privée.',
       contextEn: 'A graduate has their first interview at a private company.',
       lines: [
@@ -201,8 +201,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Generations',
     dialogue: {
       id: 'dlg-b12-generations',
-      title: '90后 et 00后',
-      titleEn: '90s & 00s kids',
+      title: 'TikTok ou Weibo, la guerre des générations',
+      titleEn: 'TikTok or Weibo, generation wars',
       context: 'Deux amis discutent des différences entre leurs générations.',
       contextEn: 'Two friends discuss the differences between their generations.',
       lines: [
@@ -227,8 +227,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Medical consultation',
     dialogue: {
       id: 'dlg-b12-doctor',
-      title: 'Chez le médecin',
-      titleEn: 'At the doctor\'s',
+      title: 'Toux, fièvre et 38,2 °C',
+      titleEn: 'Cough, fever and 38.2 °C',
       context: "Un patient se rend chez son médecin de quartier après plusieurs jours de toux et de fièvre.",
       contextEn: 'A patient visits their neighborhood doctor after several days of coughing and fever.',
       lines: [
@@ -265,8 +265,8 @@ export const dialogues: DialogueEntry[] = [
     themeEn: 'Environment',
     dialogue: {
       id: 'dlg-b21-environment',
-      title: 'Voiture électrique ou pas ?',
-      titleEn: 'Electric car or not?',
+      title: 'BYD ou Tesla, le grand dilemme',
+      titleEn: 'BYD or Tesla, the big dilemma',
       context: 'Deux collègues discutent de l\'achat d\'une voiture électrique à Shanghai.',
       contextEn: 'Two colleagues debate buying an electric car in Shanghai.',
       lines: [

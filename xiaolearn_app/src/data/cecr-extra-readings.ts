@@ -24,8 +24,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'My room',
     reading: {
       id: 'rd-a1-my-room',
-      title: 'Ma chambre',
-      titleEn: 'My room',
+      title: 'Bienvenue dans ma chambre',
+      titleEn: 'Welcome to my room',
       intro: 'Xiao Ming décrit sa petite chambre d\'étudiant — un texte simple pour pratiquer les lieux et les objets du quotidien.',
       introEn: 'Xiao Ming describes his small student room — a simple text to practice places and everyday objects.',
       segments: [
@@ -185,8 +185,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'Society',
     reading: {
       id: 'rd-b21-aging-society',
-      title: 'Une société qui vieillit',
-      titleEn: 'An aging society',
+      title: 'Vivre vieux, ensemble',
+      titleEn: 'Growing old, together',
       intro: 'Article d\'analyse sur les défis démographiques de la Chine : baisse de la natalité et vieillissement accéléré.',
       introEn: 'Analytical article on China\'s demographic challenges: falling birth rate and accelerated aging.',
       segments: [
@@ -226,8 +226,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'Urban technology',
     reading: {
       id: 'rd-b22-smart-city',
-      title: 'Les villes intelligentes chinoises',
-      titleEn: 'China\'s smart cities',
+      title: 'Quand la ville devient intelligente',
+      titleEn: 'When the city wakes up smart',
       intro: 'Panorama des expérimentations urbaines combinant big data, caméras et 5G, avec leurs promesses et leurs zones d\'ombre.',
       introEn: 'An overview of urban experiments combining big data, cameras and 5G, with their promises and grey areas.',
       segments: [
@@ -308,8 +308,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'Philosophy',
     reading: {
       id: 'rd-c11-laozi-wisdom',
-      title: 'Lire Laozi aujourd\'hui',
-      titleEn: 'Reading Laozi today',
+      title: 'Laozi parle encore',
+      titleEn: 'Laozi still speaks',
       intro: 'Courte réflexion pédagogique sur quelques idées-clés du *Dao De Jing* et leur résonance dans la vie contemporaine.',
       introEn: 'A short educational reflection on a few key ideas from the *Dao De Jing* and their relevance today.',
       segments: [
@@ -349,8 +349,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'International relations',
     reading: {
       id: 'rd-c12-china-france',
-      title: 'Soixante ans de relations sino-françaises',
-      titleEn: 'Sixty years of China–France relations',
+      title: 'Paris–Pékin, soixante ans d\'amitié',
+      titleEn: 'Paris–Beijing, sixty years of friendship',
       intro: 'Analyse rétrospective et prospective des liens diplomatiques, économiques et culturels entre Pékin et Paris depuis 1964.',
       introEn: 'A retrospective and forward-looking analysis of Beijing–Paris diplomatic, economic and cultural ties since 1964.',
       segments: [
@@ -390,8 +390,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'Education',
     reading: {
       id: 'rd-c12-education-21c',
-      title: 'Repenser l\'école au XXIᵉ siècle',
-      titleEn: 'Rethinking school in the 21st century',
+      title: 'L\'école de demain commence aujourd\'hui',
+      titleEn: 'The school of tomorrow starts today',
       intro: 'Tribune réflexive sur les limites du système éducatif chinois face à la révolution numérique et à la crise de sens des jeunes générations.',
       introEn: 'A reflective op-ed on the limits of China\'s education system in the face of digital disruption and youth disillusionment.',
       segments: [
@@ -472,8 +472,8 @@ export const cecrExtraReadings: ReadingEntry[] = [
     themeEn: 'Contemporary literature',
     reading: {
       id: 'rd-c22-hometown',
-      title: 'Retour au village natal',
-      titleEn: 'Return to the native village',
+      title: 'L\'odeur du village natal',
+      titleEn: 'The scent of home',
       intro: 'Nouvelle courte à la manière de la littérature des « racines » : un homme rentre au village après trente ans d\'absence et mesure ce que le temps a délogé.',
       introEn: 'A short story in the "roots" literature style: a man returns to his village after thirty years and measures what time has uprooted.',
       segments: [
