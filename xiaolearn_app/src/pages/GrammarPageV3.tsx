@@ -161,39 +161,10 @@ const cecrOf = (lesson: LessonItem): CecrSlot =>
   HSK_TO_CECR[String(lesson.level)] ?? 'a1';
 
 // ---------------------------------------------------------------------------
-// Emoji par catégorie / id
+// (Emojis retirés des tuiles : pas parlants pour les expressions grammaticales
+// — un 了, 把, 被 ne se "résume" pas à un emoji. La tuile met désormais en
+// avant le hanzi en grand, ce qui est nettement plus parlant.)
 // ---------------------------------------------------------------------------
-
-const ID_EMOJI_PREFIX: Array<[RegExp, string]> = [
-  [/-negation-/, '🚫'],
-  [/-aspect-|-progressive|-zhe-durative|-guo-experiential/, '⏳'],
-  [/-question-|-ma$/, '❓'],
-  [/-comparison|-bi$/, '⚖️'],
-  [/-measure-words/, '📏'],
-  [/-possession|-de$/, '🔗'],
-  [/-time-|-duration/, '⏰'],
-  [/-location|-zai/, '📍'],
-  [/-subject-verb/, '🧱'],
-  [/-conjunction|-yinwei|-suoyi|-budan|-erqie|-jinguan|-although/, '🔀'],
-  [/-modal|-hui/, '💪'],
-  [/-resultative/, '🎯'],
-  [/-ba-disposal|-bei-passive/, '🔄'],
-  [/-lian-dou|-chule|-yiwai/, '➕'],
-  [/-jiu-cai|-yi-jiu/, '➡️'],
-  [/-rang|-causative/, '👉'],
-  [/-yue-yue/, '📈'],
-  [/-faner|-jingran|-dao-contrary|-buguo|-surprise/, '😲'],
-  [/-wulun|-yaoshi|-dehua/, '🌀'],
-  [/-luxu|-zhujian|-successively|-gradually/, '🐢'],
-  [/-adjectives|-hen/, '🌟']
-];
-
-const iconForLesson = (lesson: LessonItem): string => {
-  for (const [re, emoji] of ID_EMOJI_PREFIX) {
-    if (re.test(lesson.id)) return emoji;
-  }
-  return '📐';
-};
 
 // ---------------------------------------------------------------------------
 // Rendu markdown léger : conserve les \n et puces, met les hanzi en évidence
@@ -326,9 +297,9 @@ const GrammarPageV3 = (props: GrammarPageV3Props) => {
         onClick={() => setSelectedId(lesson.id)}
       >
         <div className="rv2-card-top">
-          <span className="rv2-card-emoji-tile" aria-hidden>
-            {iconForLesson(lesson)}
-          </span>
+          {/* Emoji retiré — la tuile mise en avant est désormais le hanzi
+              en grand juste en dessous, ce qui est plus parlant que des
+              emojis arbitraires pour des expressions grammaticales. */}
           <span className="rv2-card-level">{LEVEL_LABEL[slot]}</span>
         </div>
         <p className="rv2-card-theme">{lesson.category}</p>
