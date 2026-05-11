@@ -22,6 +22,7 @@
  */
 
 import { useMemo, useRef, useState, useEffect, type KeyboardEvent } from 'react';
+import { parseMarkdown } from '../utils/markdownUtils';
 import '../styles/ai-tutor-v2.css';
 
 // ============================================================================
@@ -82,6 +83,12 @@ export interface AiTutorPageV2Props {
   /** Chips contextuelles (leçon en cours, mot du jour, etc.). */
   contextChips?: AiTutorV2ContextChip[];
   onBack?: () => void;
+  /**
+   * Photo de profil de l'utilisateur (Firebase Auth `user.photoURL`).
+   * Affichée dans les bulles user à la place de l'emoji 🧑. Si null/absent,
+   * fallback sur l'emoji.
+   */
+  userPhotoURL?: string | null;
 }
 
 // ============================================================================
@@ -239,26 +246,88 @@ export const DEFAULT_PROMPT_CATEGORIES: AiTutorV2PromptCategory[] = [
 //  SOUS-COMPOSANTS
 // ============================================================================
 
-const Avatar = ({ role }: { role: AiTutorV2Role }) => (
-  <div className={`at2-avatar at2-avatar--${role}`} aria-hidden>
-    {role === 'assistant' ? '👩‍🏫' : role === 'user' ? '🧑' : '⚙️'}
-  </div>
-);
+/**
+ * Chemin de l'image officielle de Prof. Xiao. Fichier servi statiquement par
+ * Cloudflare Pages (resté dans public/profs/, non concerné par le prune audio).
+ * En cas d'erreur de chargement, on retombe sur l'emoji 👩‍🏫 grâce à onError.
+ */
+const PROF_XIAO_IMAGE = '/profs/professeur_xiao_profil.png';
+
+const Avatar = ({
+  role,
+  userPhotoURL
+}: {
+  role: AiTutorV2Role;
+  userPhotoURL?: string | null;
+}) => {
+  // Pour l'assistant, on affiche toujours l'image officielle Prof. Xiao.
+  if (role === 'assistant') {
+    return (
+      <div className="at2-avatar at2-avatar--assistant at2-avatar--image" aria-hidden>
+        <img
+          src={PROF_XIAO_IMAGE}
+          alt=""
+          onError={(e) => {
+            // Si l'image ne charge pas (404, prune accidentel, etc.), on bascule
+            // sur l'emoji pour ne pas casser l'UI. Remplace le <img> par un
+            // span avec l'emoji.
+            const span = document.createElement('span');
+            span.textContent = '👩‍🏫';
+            e.currentTarget.replaceWith(span);
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Pour le user, on prend sa photo Firebase Auth si dispo, sinon emoji.
+  if (role === 'user' && userPhotoURL) {
+    return (
+      <div className="at2-avatar at2-avatar--user at2-avatar--image" aria-hidden>
+        <img
+          src={userPhotoURL}
+          alt=""
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            const span = document.createElement('span');
+            span.textContent = '🧑';
+            e.currentTarget.replaceWith(span);
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Fallback : emoji pour user sans photo, ou rôle 'system'.
+  return (
+    <div className={`at2-avatar at2-avatar--${role}`} aria-hidden>
+      {role === 'user' ? '🧑' : '⚙️'}
+    </div>
+  );
+};
 
 const MessageBubble = ({
   message,
-  language
+  language,
+  userPhotoURL
 }: {
   message: AiTutorV2Message;
   language: AiTutorV2Language;
+  userPhotoURL?: string | null;
 }) => (
   <div className={`at2-message at2-message--${message.role}`}>
-    <Avatar role={message.role} />
+    <Avatar role={message.role} userPhotoURL={userPhotoURL} />
     <div className="at2-message-body">
       <div className="at2-message-author">
         {message.role === 'assistant' ? t(language, 'prof') : t(language, 'you')}
       </div>
-      <div className="at2-message-text">{message.content}</div>
+      {/* Markdown rendu pour les réponses de l'IA (gras, listes, code blocks,
+          retours à la ligne). Les messages user restent en texte brut — il n'y
+          a aucune raison de leur appliquer un parseur (et ça évite que du
+          markdown collé par l'user soit interprété malgré lui). */}
+      <div className="at2-message-text">
+        {message.role === 'assistant' ? parseMarkdown(message.content) : message.content}
+      </div>
     </div>
   </div>
 );
@@ -278,7 +347,8 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
     onChangeMode,
     promptCategories,
     contextChips = [],
-    onBack
+    onBack,
+    userPhotoURL = null
   } = props;
 
   const categories = useMemo(
@@ -334,8 +404,17 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
           </button>
         )}
         <div className="at2-hero">
-          <div className="at2-hero-avatar" aria-hidden>
-            👩‍🏫
+          <div className="at2-hero-avatar at2-hero-avatar--image" aria-hidden>
+            <img
+              src={PROF_XIAO_IMAGE}
+              alt=""
+              onError={(e) => {
+                const span = document.createElement('span');
+                span.textContent = '👩‍🏫';
+                span.style.fontSize = '28px';
+                e.currentTarget.replaceWith(span);
+              }}
+            />
           </div>
           <div>
             <h1>{t(language, 'title')}</h1>
@@ -412,7 +491,12 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
           ) : (
             <div className="at2-messages">
               {messages.map((m) => (
-                <MessageBubble key={m.id} message={m} language={language} />
+                <MessageBubble
+                  key={m.id}
+                  message={m}
+                  language={language}
+                  userPhotoURL={userPhotoURL}
+                />
               ))}
               {isTyping && (
                 <div className="at2-typing">
