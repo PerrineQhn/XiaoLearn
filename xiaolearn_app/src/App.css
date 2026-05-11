@@ -1,6 +1,11 @@
 /*
  * Modern Asian Theme for XiaoLearn
  * Clean, contemporary design with excellent contrast and accessibility
+ *
+ * Build marker (sert à invalider le content-hash Vite quand Cloudflare Pages
+ * met le fichier en cache CDN cassé et refuse de le re-uploader ; un changement
+ * de byte ici → nouveau hash → upload propre).
+ * Last bump: 2026-05-11
  */
 
 /* ===== Modern Chinese Color Palette ===== */
