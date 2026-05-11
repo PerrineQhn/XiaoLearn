@@ -282,6 +282,35 @@
 .ai-tutor-v2 .at2-avatar--user {
   background: var(--at2-border);
 }
+
+/* Variante image : le <img> remplace l'emoji. object-fit:cover évite la
+   distorsion pour les photos non-carrées (souvent le cas des photos Google
+   qui sont rectangulaires). overflow:hidden + le border-radius:50% du
+   parent donnent l'effet rond clean. */
+.ai-tutor-v2 .at2-avatar--image {
+  overflow: hidden;
+  padding: 0;
+}
+.ai-tutor-v2 .at2-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero avatar (en-tête de la page, 56x56) : même logique mais avec le
+   border-radius spécifique du hero (14px) et sans cover trop agressif —
+   Prof. Xiao est dessiné, pas une photo, donc on veut le voir en entier. */
+.ai-tutor-v2 .at2-hero-avatar--image {
+  overflow: hidden;
+  padding: 0;
+}
+.ai-tutor-v2 .at2-hero-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .ai-tutor-v2 .at2-message-body {
   max-width: 70%;
   background: var(--at2-bg);

@@ -54,34 +54,42 @@ export default function SubscriptionPage({
       ? 'Gratuit'
       : 'Free';
 
+  // Plan Mensuel — la base premium accessible à tous les abonnés
+  const monthlyFeatures =
+    language === 'fr'
+      ? [
+          { label: 'Tous les cours A1 → C2' },
+          { label: 'Flashcards SRS illimitées', badge: 'Populaire' },
+          { label: 'Prof. Xiao IA 24/7' },
+          { label: 'C-Player illimité' },
+          { label: 'Communauté' }
+        ]
+      : [
+          { label: 'All A1 → C2 courses' },
+          { label: 'Unlimited SRS flashcards', badge: 'Popular' },
+          { label: 'Prof. Xiao AI 24/7' },
+          { label: 'Unlimited C-Player' },
+          { label: 'Community access' }
+        ];
+
+  // Plan Lifetime — la base + des features exclusives qui justifient
+  // l'achat one-time. À la Seonsaengnim : différenciation produit, pas
+  // juste de prix, pour ne pas faire passer le mensuel pour un "moins bon".
   const lifetimeFeatures =
     language === 'fr'
       ? [
-          { label: 'Accès à tous les cours' },
-          { label: 'C-Player illimité', badge: 'Populaire' },
-          { label: 'Questions illimitées à l’assistant' },
-          { label: 'Vocabulaire complet' }
+          { label: 'Tout du plan Mensuel' },
+          { label: 'Toutes les futures features incluses' },
+          { label: 'Accès prioritaire au nouveau contenu' },
+          { label: 'Simulateur de situations', badge: 'Exclusif Lifetime' },
+          { label: 'Créer ses propres flashcards', badge: 'Exclusif Lifetime' }
         ]
       : [
-          { label: 'Access to all courses' },
-          { label: 'Unlimited C-Player', badge: 'Popular' },
-          { label: 'Unlimited assistant questions' },
-          { label: 'Full vocabulary access' }
-        ];
-
-  const yearlyFeatures =
-    language === 'fr'
-      ? [
-          { label: 'Accès à tous les cours' },
-          { label: 'C-Player illimité', badge: 'Populaire' },
-          { label: 'Questions illimitées à l’assistant' },
-          { label: 'Vocabulaire complet' }
-        ]
-      : [
-          { label: 'Access to all courses' },
-          { label: 'Unlimited C-Player', badge: 'Popular' },
-          { label: 'Unlimited assistant questions' },
-          { label: 'Full vocabulary access' }
+          { label: 'Everything in Monthly' },
+          { label: 'All future features included' },
+          { label: 'Priority access to new content' },
+          { label: 'Situation Simulator', badge: 'Lifetime exclusive' },
+          { label: 'Create your own flashcards', badge: 'Lifetime exclusive' }
         ];
 
   const lifetimeButtonLabel = hasLifetimeAccess
@@ -96,7 +104,7 @@ export default function SubscriptionPage({
     ? 'Choisir cette offre'
     : 'Choose this plan';
 
-  const yearlyButtonLabel =
+  const monthlyButtonLabel =
     hasSubscription && subscriptionActive
       ? language === 'fr'
         ? 'Déjà inclus'
@@ -106,11 +114,11 @@ export default function SubscriptionPage({
         ? 'Inclus avec accès à vie'
         : 'Included with lifetime'
       : language === 'fr'
-      ? 'Choisir cette offre'
-      : 'Choose this plan';
+      ? 'Démarrer (7 jours gratuits)'
+      : 'Start (7 days free)';
 
   const lifetimeDisabled = hasLifetimeAccess;
-  const yearlyDisabled = (hasSubscription && subscriptionActive) || hasLifetimeAccess;
+  const monthlyDisabled = (hasSubscription && subscriptionActive) || hasLifetimeAccess;
 
   return (
     <div className="settings-page subscription-page">
@@ -177,7 +185,7 @@ export default function SubscriptionPage({
             </div>
 
             <div className="settings-subscription-price-row">
-              <span className="settings-subscription-price">{language === 'fr' ? '259€' : '€259'}</span>
+              <span className="settings-subscription-price">{language === 'fr' ? '99€' : '€99'}</span>
             </div>
             <p className="settings-subscription-price-note">
               {language === 'fr' ? 'Paiement unique' : 'One-time payment'}
@@ -218,22 +226,26 @@ export default function SubscriptionPage({
 
           <article className="settings-subscription-card">
             <div className="settings-subscription-card-head">
-              <h3>{language === 'fr' ? 'Licence 1 an' : '1-Year License'}</h3>
-              <p>{language === 'fr' ? 'Accès complet pendant 1 an' : 'Full access for 1 year'}</p>
+              <h3>{language === 'fr' ? 'Abonnement mensuel' : 'Monthly subscription'}</h3>
+              <p>
+                {language === 'fr'
+                  ? "7 jours d'essai gratuit, sans engagement"
+                  : '7-day free trial, no commitment'}
+              </p>
             </div>
 
             <div className="settings-subscription-price-row">
-              <span className="settings-subscription-price">{language === 'fr' ? '9€' : '€9'}</span>
+              <span className="settings-subscription-price">{language === 'fr' ? '14€' : '€14'}</span>
               <span className="settings-subscription-price-period">
                 {language === 'fr' ? '/mois' : '/month'}
               </span>
             </div>
             <p className="settings-subscription-price-note">
-              {language === 'fr' ? 'Facturé 108€/an' : 'Billed €108/year'}
+              {language === 'fr' ? 'Annulation à tout moment' : 'Cancel anytime'}
             </p>
 
             <ul className="settings-subscription-feature-list">
-              {yearlyFeatures.map((feature) => (
+              {monthlyFeatures.map((feature) => (
                 <li key={feature.label} className="settings-subscription-feature-item">
                   <span className="settings-subscription-check">✓</span>
                   <span>{feature.label}</span>
@@ -245,18 +257,18 @@ export default function SubscriptionPage({
             <button
               type="button"
               className="btn-secondary settings-subscription-cta"
-              onClick={() => onSubscribe('app-yearly')}
-              disabled={yearlyDisabled}
+              onClick={() => onSubscribe('app-monthly')}
+              disabled={monthlyDisabled}
             >
-              {yearlyButtonLabel}
+              {monthlyButtonLabel}
             </button>
           </article>
         </div>
 
         <p className="settings-subscription-disclaimer">
           {language === 'fr'
-            ? 'Paiement sécurisé. Annulation possible à tout moment pour la formule annuelle.'
-            : 'Secure billing. You can cancel anytime for the yearly plan.'}
+            ? 'Paiement sécurisé via Stripe. Annulation possible à tout moment depuis l\'app pour la formule mensuelle.'
+            : 'Secure billing via Stripe. Cancel anytime from the app for the monthly plan.'}
         </p>
 
         <div className="settings-subscription-proof">

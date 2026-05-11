@@ -1629,6 +1629,7 @@ function App() {
           onChangeMode={setTutorMode}
           onClear={handleTutorClear}
           onSend={handleTutorSend}
+          userPhotoURL={user?.photoURL ?? null}
         />
       );
       break;

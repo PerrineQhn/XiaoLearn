@@ -6,6 +6,12 @@ import { useAuth } from '../contexts/AuthContext';
 export interface EntitlementStatus {
   active: boolean;
   status?: string | null;
+  /**
+   * True quand l'utilisateur a acheté le plan Lifetime (one-time payment).
+   * False (ou absent) pour une subscription mensuelle.
+   * Posé par le webhook Stripe sur `checkout.session.completed`.
+   */
+  isLifetime?: boolean;
   currentPeriodEnd?: string | null;
   subscriptionId?: string | null;
   priceId?: string | null;

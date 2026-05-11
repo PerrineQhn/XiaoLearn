@@ -11,6 +11,16 @@ export type SrsMode = 'limited' | 'complete';
 
 export interface AppAccess {
   tier: AccessTier;
+  /**
+   * Distingue un premium "abonnement mensuel" (false) d'un premium "lifetime"
+   * (true). Source : `entitlements.app.isLifetime` posé par le webhook Stripe
+   * sur `checkout.session.completed` quand `mode === 'payment'`.
+   *
+   * Pourquoi un flag plutôt qu'un nouveau tier ? Parce que tout le code
+   * existant qui teste `tier === 'premium'` continue à marcher tel quel —
+   * un lifetime EST un premium, juste avec quelques features bonus.
+   */
+  isLifetime: boolean;
   canUseAI: boolean;
   canUseFloatingChat: boolean;
   canAccessAllLessons: boolean;
@@ -22,6 +32,13 @@ export interface AppAccess {
   showAdvancedStats: boolean;
   syncEnabled: boolean;
   hasPrioritySupport: boolean;
+  /**
+   * Features exclusives au plan Lifetime (à la Seonsaengnim) — justifient le
+   * prix one-time vs subscription. Pas dispo en mensuel ni en trial.
+   */
+  canUseSimulator: boolean;
+  canCreateCustomFlashcards: boolean;
+  hasPriorityNewContent: boolean;
   trialEndsAt: string | null;
   trialDaysLeft: number;
 }
@@ -77,6 +94,7 @@ const getTrialEnd = (user: User | null): Date | null => {
 export const applyDevMode = (access: AppAccess): AppAccess => ({
   ...access,
   tier: 'premium',
+  isLifetime: true,
   canUseAI: true,
   canUseFloatingChat: true,
   canAccessAllLessons: true,
@@ -87,11 +105,18 @@ export const applyDevMode = (access: AppAccess): AppAccess => ({
   maxMiniGames: 5,
   showAdvancedStats: true,
   syncEnabled: true,
-  hasPrioritySupport: true
+  hasPrioritySupport: true,
+  canUseSimulator: true,
+  canCreateCustomFlashcards: true,
+  hasPriorityNewContent: true
 });
 
 export const buildAppAccess = (user: User | null, entitlement: EntitlementStatus | null): AppAccess => {
   const hasPremium = Boolean(entitlement?.active);
+  // Source of truth pour distinguer lifetime vs subscription : le flag
+  // `isLifetime` posé par le webhook Stripe sur `checkout.session.completed`
+  // quand `mode === 'payment'`.
+  const isLifetime = hasPremium && Boolean(entitlement?.isLifetime);
   const hasLessonOverride = hasLessonUnlockOverride(user);
   const now = new Date();
   const trialEnd = getTrialEnd(user);
@@ -106,6 +131,7 @@ export const buildAppAccess = (user: User | null, entitlement: EntitlementStatus
 
   return {
     tier,
+    isLifetime,
     canUseAI: premiumLike,
     canUseFloatingChat: premiumLike || hasLessonOverride,
     canAccessAllLessons: premiumLike || hasLessonOverride,
@@ -117,6 +143,11 @@ export const buildAppAccess = (user: User | null, entitlement: EntitlementStatus
     showAdvancedStats: premiumLike,
     syncEnabled: premiumLike,
     hasPrioritySupport: tier === 'premium',
+    // Features lifetime-exclusives : pas accessibles en subscription, ni en
+    // trial. Cohérent avec la prop de valeur de l'offre Lifetime.
+    canUseSimulator: isLifetime,
+    canCreateCustomFlashcards: isLifetime,
+    hasPriorityNewContent: isLifetime,
     trialEndsAt: trialEnd ? trialEnd.toISOString() : null,
     trialDaysLeft
   };
