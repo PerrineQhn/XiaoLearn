@@ -1,4 +1,10 @@
 ---
+// Prerender forcé : génère toutes les pages slug au build-time via
+// getStaticPaths(). Sans ça, Astro avec output:'server' ignore
+// getStaticPaths() et passe en mode dynamique SSR, ce qui mène au même
+// genre de crash que l'index. Cohérent avec /grammaire/index.astro.
+export const prerender = true;
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../components/HSKLevelBadge.astro';

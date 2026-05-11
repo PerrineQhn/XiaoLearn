@@ -12,12 +12,24 @@ export interface FooterSection {
   links: NavItem[];
 }
 
+// URLs absolues vers l'app React (autre domaine que le site marketing).
+// On utilise des URLs absolues plutôt que /app pour deux raisons :
+//   1. Le site Astro n'a pas de route /app (et probablement n'en aura jamais —
+//      l'app vit sur son propre domaine Cloudflare Pages).
+//   2. Naviguer vers app.xiaolearn.com déclenche l'auth Firebase sur l'app,
+//      qui gère elle-même la redirection login/signup selon l'état session.
+const APP_BASE_URL_FR = 'https://app.xiaolearn.com';
+const APP_LOGIN_URL_FR = 'https://app.xiaolearn.com/login';
+const APP_BASE_URL_EN = 'https://app.xiaolearn.com?lang=en';
+const APP_LOGIN_URL_EN = 'https://app.xiaolearn.com/login?lang=en';
+
 // Nav principale — concise. Culture est intégrée comme catégorie du Blog.
+// Blog retiré tant que la route /blog n'existe pas côté Astro (créerait un
+// lien mort vers la home par fallback SSR).
 const FR_MAIN_NAV: NavItem[] = [
   { label: 'Dictionnaire', href: '/dictionnaire' },
   { label: 'Grammaire', href: '/grammaire' },
   { label: 'Nuances', href: '/nuances' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Tarifs', href: '/#pricing' },
 ];
 
@@ -25,23 +37,24 @@ const EN_MAIN_NAV: NavItem[] = [
   { label: 'Dictionary', href: '/en/dictionnaire' },
   { label: 'Grammar', href: '/en/grammaire' },
   { label: 'Nuances', href: '/en/nuances' },
-  { label: 'Blog', href: '/en/blog' },
   { label: 'Pricing', href: '/en#pricing' },
 ];
 
-// CTA links shown next to the main nav (login + signup)
+// CTA links shown next to the main nav (login + signup).
+// `external: false` (par défaut) → navigation dans la même fenêtre, comme
+// attendu pour une connexion qui amène à l'app.
 export interface CtaLink extends NavItem {
   variant: 'ghost' | 'primary';
 }
 
 const FR_CTA_LINKS: CtaLink[] = [
-  { label: 'Se connecter', href: '/app/login', variant: 'ghost' },
-  { label: 'Commencer gratuitement', href: '/app', variant: 'primary' },
+  { label: 'Se connecter', href: APP_LOGIN_URL_FR, variant: 'ghost' },
+  { label: 'Commencer gratuitement', href: APP_BASE_URL_FR, variant: 'primary' },
 ];
 
 const EN_CTA_LINKS: CtaLink[] = [
-  { label: 'Sign in', href: '/app/login', variant: 'ghost' },
-  { label: 'Start free', href: '/app', variant: 'primary' },
+  { label: 'Sign in', href: APP_LOGIN_URL_EN, variant: 'ghost' },
+  { label: 'Start free', href: APP_BASE_URL_EN, variant: 'primary' },
 ];
 
 export function getCtaLinks(locale: Locale): CtaLink[] {
@@ -74,19 +87,15 @@ export function getFooterSections(locale: Locale): FooterSection[] {
         links: [
           { label: 'Grammar', href: '/en/grammaire' },
           { label: 'Nuances', href: '/en/nuances' },
-          { label: 'Blog', href: '/en/blog' },
-          { label: 'Chinese culture', href: '/en/blog?category=culture' },
           { label: 'Resources (FR)', href: '/ressources' },
         ],
       },
       {
         title: 'XiaoLearn',
         links: [
-          { label: 'Web app', href: '/app' },
-          { label: 'Sign in', href: '/app/login' },
+          { label: 'Web app', href: APP_BASE_URL_EN },
+          { label: 'Sign in', href: APP_LOGIN_URL_EN },
           { label: 'Pricing', href: '/en#pricing' },
-          { label: 'Blog', href: '/en/blog' },
-          { label: 'Shop', href: 'https://shop.xiaolearn.com', external: true },
         ],
       },
     ];
@@ -110,18 +119,15 @@ export function getFooterSections(locale: Locale): FooterSection[] {
       links: [
         { label: 'Grammaire', href: '/grammaire' },
         { label: 'Nuances', href: '/nuances' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Culture chinoise', href: '/blog?categorie=culture' },
         { label: 'Ressources & Produits', href: '/ressources' },
       ],
     },
     {
       title: 'XiaoLearn',
       links: [
-        { label: 'Application web', href: '/app' },
-        { label: 'Se connecter', href: '/app/login' },
+        { label: 'Application web', href: APP_BASE_URL_FR },
+        { label: 'Se connecter', href: APP_LOGIN_URL_FR },
         { label: 'Tarifs', href: '/#pricing' },
-        { label: 'Boutique', href: 'https://shop.xiaolearn.com', external: true },
       ],
     },
   ];

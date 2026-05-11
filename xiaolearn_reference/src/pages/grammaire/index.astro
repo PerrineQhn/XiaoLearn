@@ -1,4 +1,14 @@
 ---
+// Prerender forcé : la page est générée au BUILD-TIME (statique) et non au
+// runtime SSR Cloudflare Workers. Sans ça, la page crashe en HTTP 500 sur
+// Cloudflare — probablement à cause d'un edge-case d'évaluation de
+// grammarCatalog.ts (83 KB) dans le contexte Workers v8 isolate (vs Node).
+// Le contenu de cette page est de toute façon quasi-statique (catalog des
+// points de grammaire HSK), donc prerender est même plus performant que SSR.
+// Cohérent avec /dictionnaire/index.astro et /index.astro qui sont aussi
+// prerender = true.
+export const prerender = true;
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import GrammarCard from '../../components/GrammarCard.astro';
