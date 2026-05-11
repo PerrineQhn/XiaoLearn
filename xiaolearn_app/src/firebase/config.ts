@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 // Configuration Firebase
@@ -20,7 +20,24 @@ const app = initializeApp(firebaseConfig);
 
 // Initialiser les services
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+
+// Firestore : on initialise avec experimentalAutoDetectLongPolling activé
+// pour contourner les bugs WebChannel sur Safari, certains adblockers, et
+// proxies d'entreprise. Symptôme du bug sans cette option :
+//   - RPC 'Listen' stream transport errored
+//   - Failed to load resource: /channel status 400
+//   - onSnapshot() ne reçoit jamais les data, useEntitlements retourne null
+// La REST API marche pendant ce temps (vu via fetch direct), confirmant que
+// c'est uniquement le transport WebChannel qui plante. L'option fait que le
+// SDK détecte automatiquement et bascule en long-polling HTTP si WebChannel
+// échoue → compatible Safari et adblockers.
+//
+// Documentation Firebase :
+// https://firebase.google.com/docs/reference/js/firestore_.firestoresettings#firestoresettingsexperimentalautodetectlongpolling
+export const db = initializeFirestore(app, {
+  experimentalAutoDetectLongPolling: true
+});
+
 export const storage = getStorage(app);
 
 export default app;
