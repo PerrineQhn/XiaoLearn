@@ -1,0 +1,232 @@
+/* =========================================================================
+   grammar-v3.css — Page Grammaire V3 (catalogue + détail)
+   -------------------------------------------------------------------------
+   Hérite des tokens et structures de reading-v2.css (wrapper porte aussi
+   .reading-v2). Surcharges spécifiques :
+     - Cartes : hanzi en grand au lieu d'un titre alphabétique
+     - Vue détail : pinyin sous le hanzi du hero, bouton 🔊 « écouter »
+     - Blocs d'explication colorés : when (jade) / how (gold) /
+       tips (gold pâle) / mistakes (rouge soft)
+   ========================================================================= */
+
+/* ==========================================================================
+   CARTES
+   ========================================================================== */
+.reading-v2.grammar-v3 .gr3-card {
+  min-height: 220px;
+}
+.reading-v2.grammar-v3 .gr3-card-hanzi {
+  margin: 6px 0 2px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--rv-ink);
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+}
+.reading-v2.grammar-v3 .gr3-card-pinyin {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--rv-jade-ink);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   DÉTAIL — hero overrides
+   ========================================================================== */
+.reading-v2.grammar-v3 .rv2-detail-title-zh {
+  font-size: clamp(38px, 6vw, 52px);
+  margin: 8px 0 4px;
+}
+.reading-v2.grammar-v3 .gr3-detail-pinyin {
+  margin: 0 0 4px;
+  font-size: 18px;
+  color: var(--rv-jade-ink);
+  font-style: italic;
+  font-weight: 600;
+}
+.reading-v2.grammar-v3 .gr3-detail-actions {
+  margin-top: 10px;
+}
+.reading-v2.grammar-v3 .gr3-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--rv-jade);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 12px rgba(47, 158, 106, 0.25);
+}
+.reading-v2.grammar-v3 .gr3-listen:hover {
+  background: #267b54;
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   BLOCS EXPLICATIFS
+   ========================================================================== */
+.reading-v2.grammar-v3 .gr3-block {
+  margin-top: 22px;
+  padding: 16px 18px 18px;
+  border-radius: var(--rv-radius-sm);
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+}
+.reading-v2.grammar-v3 .gr3-block-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--rv-ink);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.reading-v2.grammar-v3 .gr3-multiline {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--rv-ink);
+}
+
+/* Couleurs par type de bloc */
+.reading-v2.grammar-v3 .gr3-block--when {
+  background: var(--rv-jade-soft);
+  border-color: var(--rv-jade);
+}
+.reading-v2.grammar-v3 .gr3-block--when .gr3-block-title {
+  color: var(--rv-jade-ink);
+}
+
+.reading-v2.grammar-v3 .gr3-block--how {
+  background: linear-gradient(180deg, #fffaf0 0%, var(--rv-surface) 100%);
+  border-color: var(--rv-gold);
+}
+.reading-v2.grammar-v3 .gr3-block--how .gr3-block-title {
+  color: var(--rv-gold-ink);
+}
+
+.reading-v2.grammar-v3 .gr3-block--tips {
+  background: var(--rv-gold-soft);
+  border-color: var(--rv-gold);
+}
+.reading-v2.grammar-v3 .gr3-block--tips .gr3-block-title {
+  color: var(--rv-gold-ink);
+}
+
+.reading-v2.grammar-v3 .gr3-block--mistakes {
+  background: var(--rv-primary-soft);
+  border-color: var(--rv-primary);
+}
+.reading-v2.grammar-v3 .gr3-block--mistakes .gr3-block-title {
+  color: var(--rv-primary-ink);
+}
+
+/* ==========================================================================
+   EXEMPLES
+   ========================================================================== */
+.reading-v2.grammar-v3 .gr3-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.reading-v2.grammar-v3 .gr3-example {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--rv-border);
+}
+.reading-v2.grammar-v3 .gr3-example:last-child {
+  border-bottom: none;
+}
+.reading-v2.grammar-v3 .gr3-example-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rv-muted);
+  padding-top: 4px;
+  text-align: center;
+}
+.reading-v2.grammar-v3 .gr3-example-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.reading-v2.grammar-v3 .gr3-example-hanzi {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--rv-ink);
+  font-weight: 500;
+}
+.reading-v2.grammar-v3 .gr3-example-pinyin {
+  font-size: 13px;
+  color: var(--rv-jade);
+  font-style: italic;
+}
+.reading-v2.grammar-v3 .gr3-example-translation {
+  font-size: 13.5px;
+  color: var(--rv-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   RELATED
+   ========================================================================== */
+.reading-v2.grammar-v3 .gr3-related-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.reading-v2.grammar-v3 .gr3-related-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--rv-surface);
+  border: 1px solid var(--rv-border);
+  border-radius: var(--rv-radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--rv-ink);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.reading-v2.grammar-v3 .gr3-related-card:hover {
+  background: var(--rv-surface-2);
+  border-color: var(--rv-primary);
+  transform: translateY(-1px);
+}
+.reading-v2.grammar-v3 .gr3-related-hanzi {
+  font-size: 20px;
+  font-weight: 700;
+}
+.reading-v2.grammar-v3 .gr3-related-tr {
+  font-size: 12px;
+  color: var(--rv-muted);
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+@media (max-width: 640px) {
+  .reading-v2.grammar-v3 .gr3-card-hanzi {
+    font-size: 26px;
+  }
+  .reading-v2.grammar-v3 .gr3-block {
+    padding: 14px;
+  }
+  .reading-v2.grammar-v3 .gr3-multiline {
+    font-size: 14px;
+  }
+  .reading-v2.grammar-v3 .gr3-example-hanzi {
+    font-size: 18px;
+  }
+}

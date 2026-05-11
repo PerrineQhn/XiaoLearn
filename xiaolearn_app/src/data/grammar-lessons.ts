@@ -1,6 +1,7 @@
 import type { LessonItem } from '../types';
 import { grammarLessonsSubstack } from './grammar-lessons-substack';
 import { grammarLessonsExtended } from './grammar-lessons-extended';
+import { grammarLessonsExtra } from './grammar-lessons-extra';
 
 /**
  * Leçons de grammaire avec quiz adaptés
@@ -635,7 +636,10 @@ const grammarLessonsBase: LessonItem[] = [
 export const grammarLessons: LessonItem[] = [
   ...grammarLessonsSubstack,
   ...grammarLessonsBase,
-  ...grammarLessonsExtended
+  ...grammarLessonsExtended,
+  // V13 — 10 nouvelles leçons (也, 都, 一边...一边, 给, 是...的,
+  // 不仅...而且, 即使...也, 只要...就, 哪怕, 由于...因此)
+  ...grammarLessonsExtra
 ];
 
 // Fonction helper pour récupérer une leçon de grammaire par ID

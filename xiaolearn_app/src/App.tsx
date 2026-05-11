@@ -9,6 +9,7 @@ import StructuredLessonPageV2 from './pages/StructuredLessonPageV2';
 // types/mappers exportés depuis ce module (via utils/v2-mappers).
 import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './pages/AiTutorPageV2';
 import GrammarDrillsPageV2 from './pages/GrammarDrillsPageV2';
+import GrammarPageV3 from './pages/GrammarPageV3';
 import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import BattlesPage from './pages/BattlesPage';
@@ -139,6 +140,7 @@ export type View =
   // Nouveaux écrans V2
   | 'tutor'
   | 'drills'
+  | 'grammar-drills'
   | 'evaluation'
   // Phase 1B IA — correcteur d'écriture (Gemini structuré)
   | 'writing-corrector'
@@ -1699,6 +1701,19 @@ function App() {
       break;
     }
     case 'drills':
+      // V13 — la page « Grammaire » bascule sur GrammarPageV3 : catalogue
+      // riche (catalog × niveau CECR), vue détail avec when/how/tips/
+      // pitfalls + exemples + mini-quiz QCM. L'ancien GrammarDrillsPageV2
+      // reste importé pour les deep-links (route 'grammar-drills').
+      content = (
+        <GrammarPageV3
+          language={language}
+          onBack={() => setView('home')}
+          onAwardXp={(amount) => dashboardState.awardXp(amount)}
+        />
+      );
+      break;
+    case 'grammar-drills':
       content = (
         <GrammarDrillsPageV2
           topics={DEFAULT_GRAMMAR_DRILLS}
