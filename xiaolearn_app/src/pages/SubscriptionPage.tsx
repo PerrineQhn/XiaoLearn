@@ -54,38 +54,41 @@ export default function SubscriptionPage({
       ? 'Gratuit'
       : 'Free';
 
-  // Plan Mensuel — la base premium accessible à tous les abonnés
+  // Plan Mensuel — la base premium accessible à tous les abonnés.
+  // Features alignées sur les flags réellement câblés dans utils/access.ts
+  // (canAccessAllLessons, srsMode='complete', canUseAI, syncEnabled,
+  // canUseFloatingChat). Évite de mentionner C-Player puisque la feature
+  // est désactivée à date.
   const monthlyFeatures =
     language === 'fr'
       ? [
           { label: 'Tous les cours A1 → C2' },
           { label: 'Flashcards SRS illimitées', badge: 'Populaire' },
           { label: 'Prof. Xiao IA 24/7' },
-          { label: 'C-Player illimité' },
-          { label: 'Communauté' }
+          { label: 'Dictionnaire HSK complet' },
+          { label: 'Sync entre appareils' }
         ]
       : [
           { label: 'All A1 → C2 courses' },
           { label: 'Unlimited SRS flashcards', badge: 'Popular' },
           { label: 'Prof. Xiao AI 24/7' },
-          { label: 'Unlimited C-Player' },
-          { label: 'Community access' }
+          { label: 'Full HSK dictionary' },
+          { label: 'Cross-device sync' }
         ];
 
-  // Plan Lifetime — la base + des features exclusives qui justifient
-  // l'achat one-time. À la Seonsaengnim : différenciation produit, pas
-  // juste de prix, pour ne pas faire passer le mensuel pour un "moins bon".
-  const lifetimeFeatures =
+  // Plan Lifetime — UNIQUEMENT les bonus en plus du Mensuel. Le titre de
+  // la liste ("Tout du Mensuel, plus :") est rendu séparément pour bien
+  // visuellement séparer "ce que tu as déjà avec mensuel" de "ce que
+  // lifetime ajoute en exclusif". À la Seonsaengnim.
+  const lifetimeBonusFeatures =
     language === 'fr'
       ? [
-          { label: 'Tout du plan Mensuel' },
           { label: 'Toutes les futures features incluses' },
           { label: 'Accès prioritaire au nouveau contenu' },
           { label: 'Simulateur de situations', badge: 'Exclusif Lifetime' },
           { label: 'Créer ses propres flashcards', badge: 'Exclusif Lifetime' }
         ]
       : [
-          { label: 'Everything in Monthly' },
           { label: 'All future features included' },
           { label: 'Priority access to new content' },
           { label: 'Situation Simulator', badge: 'Lifetime exclusive' },
@@ -188,31 +191,43 @@ export default function SubscriptionPage({
               <span className="settings-subscription-price">{language === 'fr' ? '99€' : '€99'}</span>
             </div>
             <p className="settings-subscription-price-note">
-              {language === 'fr' ? 'Paiement unique' : 'One-time payment'}
+              {language === 'fr' ? 'Paiement unique, accès à vie' : 'One-time payment, lifetime access'}
+            </p>
+
+            {/* Comparaison de valeur — 99€ = ~7 mois de mensuel, mais à vie.
+                Aide à justifier le prix one-time face à l'option mensuelle. */}
+            <p className="settings-subscription-value-compare">
+              {language === 'fr'
+                ? 'Équivalent à ~7 mois d\'abonnement, mais à vie'
+                : 'Equivalent to ~7 months of subscription, but forever'}
             </p>
 
             <div className="settings-subscription-highlight-pill">
               ✓ {language === 'fr' ? 'Aucun abonnement mensuel' : 'No monthly subscription'}
             </div>
 
+            {/* Intro de la liste features : indique clairement que le lifetime
+                hérite de TOUT le mensuel, puis liste les bonus exclusifs. */}
+            <p className="settings-subscription-features-intro">
+              <strong>
+                {language === 'fr' ? 'Tout du plan Mensuel, plus :' : 'Everything in Monthly, plus:'}
+              </strong>
+            </p>
+
             <ul className="settings-subscription-feature-list">
-              {lifetimeFeatures.map((feature) => (
-                <li key={feature.label} className="settings-subscription-feature-item">
+              {lifetimeBonusFeatures.map((feature) => (
+                <li
+                  key={feature.label}
+                  className={`settings-subscription-feature-item${
+                    feature.badge ? ' is-exclusive' : ''
+                  }`}
+                >
                   <span className="settings-subscription-check">✓</span>
                   <span>{feature.label}</span>
                   {feature.badge && <span className="settings-subscription-feature-badge">{feature.badge}</span>}
                 </li>
               ))}
             </ul>
-
-            <div className="settings-subscription-bonus-list">
-              <p className="settings-subscription-bonus-item">
-                🎁 {language === 'fr' ? 'Dictionnaire interactif inclus' : 'Interactive dictionary included'}
-              </p>
-              <p className="settings-subscription-bonus-item">
-                📘 {language === 'fr' ? 'Bonus: pack de révision premium' : 'Bonus: premium review pack'}
-              </p>
-            </div>
 
             <button
               type="button"

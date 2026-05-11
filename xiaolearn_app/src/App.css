@@ -7410,6 +7410,44 @@ select:focus {
   font-weight: 700;
 }
 
+/* --- Différenciation Mensuel vs Lifetime (à la Seonsaengnim) --- */
+
+/* Comparaison de valeur sous le prix lifetime : "Équivalent à ~7 mois…".
+   Petit texte italique discret, pour suggérer la valeur sans crier. */
+.settings-subscription-value-compare {
+  margin: -0.2rem 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: color-mix(in srgb, var(--text-secondary) 80%, var(--gold-accent));
+}
+
+/* Intro de la liste features lifetime : "Tout du plan Mensuel, plus :".
+   Séparateur visuel + emphase pour bien dire que lifetime hérite du
+   mensuel — c'est le moment où l'utilisateur comprend que ce n'est pas
+   "OU mensuel OU lifetime" mais "lifetime = mensuel + bonus". */
+.settings-subscription-features-intro {
+  margin: 0.4rem 0 -0.15rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  padding-top: 0.7rem;
+  border-top: 1px dashed color-mix(in srgb, var(--gold-accent) 35%, var(--panel-border));
+}
+
+/* Features exclusives au Lifetime (Simulateur, Custom flashcards) : on
+   les rend plus visibles avec un fond léger doré pour qu'elles ne se
+   noient pas dans la liste. C'est ce qui justifie d'acheter Lifetime
+   vs Mensuel à 7 mois × 14 € seulement. */
+.settings-subscription-feature-item.is-exclusive {
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--gold-accent) 14%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--gold-accent) 70%, var(--primary-red));
+}
+.settings-subscription-feature-item.is-exclusive .settings-subscription-feature-badge {
+  background: color-mix(in srgb, var(--gold-accent) 55%, var(--bg-secondary));
+  color: var(--text-primary);
+}
+
 .settings-subscription-bonus-list {
   display: flex;
   flex-direction: column;
@@ -7449,6 +7487,78 @@ select:focus {
   border: 1px solid var(--border-light);
   background: color-mix(in srgb, var(--bg-secondary) 94%, transparent);
   font-weight: 600;
+}
+
+/* --- LifetimeFeatureGate (upsell affiché en place du Simulateur ou de
+   la création de flashcards pour les non-Lifetime) --- */
+
+.lifetime-gate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem 1rem;
+}
+
+.lifetime-gate__card {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  padding: 2.4rem 2rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-secondary) 90%, var(--gold-accent) 8%);
+  border: 1px solid color-mix(in srgb, var(--gold-accent) 38%, var(--panel-border));
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--gold-accent) 12%, transparent);
+}
+
+.lifetime-gate__icon {
+  font-size: 3rem;
+  margin-bottom: 0.4rem;
+}
+
+.lifetime-gate__badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gold-accent) 60%, var(--bg-secondary));
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lifetime-gate__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+.lifetime-gate__description {
+  margin: 0 0 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.lifetime-gate__pitch {
+  margin: 0 0 1.6rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.lifetime-gate__cta {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lifetime-gate__note {
+  margin: 0.8rem 0 0;
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
 }
 
 @media (max-width: 960px) {

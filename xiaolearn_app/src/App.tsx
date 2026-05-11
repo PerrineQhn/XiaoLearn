@@ -56,6 +56,7 @@ import CulturePage from './pages/CulturePage';
 import './styles/page-shell.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import AIFloatingChat from './components/AIFloatingChat';
+import LifetimeFeatureGate from './components/LifetimeFeatureGate';
 import { generateGeminiResponse } from './services/geminiService';
 import WritingCorrectorPage from './pages/WritingCorrectorPage';
 import ConversationPartnerPage from './pages/ConversationPartnerPage';
@@ -1543,7 +1544,13 @@ function App() {
             )
           )}
           sentenceCards={sentenceCards}
-          personalHook={personalFlashcards}
+          // Gate Lifetime : seuls les utilisateurs lifetime peuvent créer
+          // des flashcards personnalisées (canCreateCustomFlashcards). En
+          // passant undefined, le bouton "+Ajouter" dans FlashcardPageV5 est
+          // désactivé (cf. `disabled={!onAddCard && !personalHook}` ligne 1507).
+          // Les non-lifetime continuent de voir et réviser leurs cartes
+          // standard (HSK), seule la création custom est bloquée.
+          personalHook={appAccess.canCreateCustomFlashcards ? personalFlashcards : undefined}
           customLists={customLists.lists.map((list) => ({
             id: list.id,
             name: list.name,
@@ -1807,6 +1814,28 @@ function App() {
       );
       break;
     case 'simulator':
+      // Gate Lifetime : le Simulateur de situations est annoncé comme exclusif
+      // Lifetime dans SubscriptionPage. On affiche le LifetimeFeatureGate à la
+      // place du composant si l'utilisateur n'a pas isLifetime. Cohérent avec
+      // canUseSimulator dans utils/access.ts.
+      if (!appAccess.canUseSimulator) {
+        content = (
+          <LifetimeFeatureGate
+            language={language}
+            featureName="Simulateur de situations"
+            featureNameEn="Situation Simulator"
+            description={
+              language === 'fr'
+                ? 'Mets-toi en situation réelle : commande au restaurant, prends le métro, négocie au marché. Conversations contextuelles guidées en mandarin.'
+                : undefined
+            }
+            descriptionEn="Real-life situations: order at a restaurant, take the subway, negotiate at the market. Guided contextual conversations in Mandarin."
+            icon="🎭"
+            onSeePlans={() => setView('subscription')}
+          />
+        );
+        break;
+      }
       // V9.9 — Pas de bouton "Retour" au niveau catalogue (accessible en
       // permanence via sidebar). Le bouton "Retour aux scénarios" à l'intérieur
       // d'une conversation est conservé : c'est une navigation interne entre
