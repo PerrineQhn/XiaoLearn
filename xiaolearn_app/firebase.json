@@ -17,6 +17,51 @@
         "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }
+  ],
+  "hosting": [
+    {
+      "site": "xiaolearn-pay",
+      "public": "public-pay",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/api/checkout",
+          "function": {
+            "functionId": "createCheckout",
+            "region": "europe-west1"
+          }
+        },
+        {
+          "source": "/api/portal",
+          "function": {
+            "functionId": "createPortal",
+            "region": "europe-west1"
+          }
+        },
+        {
+          "source": "/api/webhook",
+          "function": {
+            "functionId": "stripeWebhook",
+            "region": "europe-west1"
+          }
+        }
+      ],
+      "headers": [
+        {
+          "source": "/**",
+          "headers": [
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
 

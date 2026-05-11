@@ -349,15 +349,27 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session): Promis
  */
 async function handleSubscriptionChange(sub: Stripe.Subscription): Promise<void> {
   const customerId = typeof sub.customer === 'string' ? sub.customer : sub.customer.id;
-  let uid = (sub.metadata?.uid as string) ?? null;
+  // Explicitement typé `string | null` — sinon TS infère `string` à partir de
+  // la première assignation et refuse l'assignation null du fallback.
+  let uid: string | null = (sub.metadata?.uid as string) ?? null;
   if (!uid) {
     // Fallback : retrouver l'uid via le customerId si jamais le metadata
     // s'est perdu en chemin (rare, mais possible).
     uid = await findUidByCustomerId(customerId);
   }
 
-  const priceId = sub.items.data[0]?.price.id ?? null;
+  const firstItem = sub.items.data[0];
+  const priceId = firstItem?.price.id ?? null;
   const active = ['active', 'trialing'].includes(sub.status);
+
+  // Depuis l'API Stripe 2025-10-29.acacia, `current_period_end` n'est plus
+  // sur la Subscription elle-même mais sur chaque Subscription Item (un
+  // subscription peut avoir plusieurs items facturés à des cadences
+  // différentes). Pour XiaoLearn on n'a qu'un seul item par subscription
+  // (mensuel ou rien), donc on lit le premier item.
+  const periodEnd =
+    (firstItem as { current_period_end?: number | null } | undefined)
+      ?.current_period_end ?? null;
 
   const entitlement: AppEntitlement = {
     active,
@@ -366,10 +378,7 @@ async function handleSubscriptionChange(sub: Stripe.Subscription): Promise<void>
     subscriptionId: sub.id,
     priceId,
     customerId,
-    // Stripe renvoie current_period_end en secondes Unix → on convertit en ISO.
-    currentPeriodEnd: sub.current_period_end
-      ? new Date(sub.current_period_end * 1000).toISOString()
-      : null,
+    currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
     cancelAtPeriodEnd: sub.cancel_at_period_end
   };
 
