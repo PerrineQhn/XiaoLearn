@@ -286,10 +286,9 @@ export default function SubscriptionPage({
             : 'Secure billing via Stripe. Cancel anytime from the app for the monthly plan.'}
         </p>
 
-        <div className="settings-subscription-proof">
-          <span>{language === 'fr' ? '900+ apprenants' : '900+ learners'}</span>
-          <span>★★★★★ 5/5</span>
-        </div>
+        {/* Social proof retirée tant qu'on n'a pas une vraie base d'utilisateurs.
+            À ré-ajouter quand on aura passé un cap réel (par ex. 100 users
+            actifs avec >5 reviews), avec un chiffre honnête. */}
       </section>
     </div>
   );

@@ -22,6 +22,9 @@ import { updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useSrsPreferences } from '../hooks/useSrsPreferences';
 import { useEmailPrefs } from '../hooks/useEmailPrefs';
+import { useEntitlements } from '../hooks/useEntitlements';
+import { useDevMode } from '../hooks/useDevMode';
+import { buildAppAccess, applyDevMode } from '../utils/access';
 
 type SettingsTab =
   | 'account'
@@ -65,6 +68,19 @@ const SettingsPage = ({
 }: SettingsPageProps) => {
   const { user } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // --- Entitlements + accès : permet d'afficher le VRAI statut dynamiquement
+  // (Gratuit / Trial 7j / Premium Mensuel / Premium Lifetime) plutôt qu'un
+  // hardcoded "Premium Lifetime" trompeur. Mêmes calculs que dans App.tsx
+  // pour rester cohérent (devMode forcé en lifetime quand activé).
+  const { entitlements } = useEntitlements();
+  const devMode = useDevMode();
+  const appAccess = (() => {
+    const base = buildAppAccess(user, entitlements?.app ?? null);
+    return devMode.isActive ? applyDevMode(base) : base;
+  })();
+  const planTier = appAccess.tier; // 'free' | 'trial' | 'premium'
+  const isLifetime = appAccess.isLifetime;
 
   // --- Onglet actif -------------------------------------------------
   const [activeTab, setActiveTab] = useState<SettingsTab>('account');
@@ -538,56 +554,183 @@ const SettingsPage = ({
           )}
 
           {/* ================== ABONNEMENT ================== */}
-          {activeTab === 'subscription' && (
-            <section className="settings-card-v9 settings-sub-plan-card">
-              <div className="settings-sub-plan-top">
-                <span className="settings-plan-pill">
-                  <span aria-hidden>👑</span> {language === 'fr' ? 'Premium Lifetime' : 'Premium Lifetime'}
-                </span>
-                <div className="settings-sub-plan-side">
-                  <div className="settings-sub-plan-side-title">
-                    {language === 'fr' ? 'Accès illimité à vie' : 'Unlimited lifetime access'}
-                  </div>
-                  <div className="settings-sub-plan-side-desc">
-                    {language === 'fr' ? 'Aucun renouvellement requis' : 'No renewal required'}
+          {activeTab === 'subscription' && (() => {
+            // Calcul dynamique du badge + features selon le VRAI statut de
+            // l'utilisateur. Plus de hardcoded "Premium Lifetime" pour tout
+            // le monde — chacun voit son plan réel.
+            type PlanInfo = {
+              badge: string;
+              icon: string;
+              sideTitle: string;
+              sideDesc: string;
+              features: string[];
+            };
+
+            const planInfo: PlanInfo = (() => {
+              if (planTier === 'premium' && isLifetime) {
+                return {
+                  badge: language === 'fr' ? 'Premium Lifetime' : 'Premium Lifetime',
+                  icon: '👑',
+                  sideTitle: language === 'fr' ? 'Accès illimité à vie' : 'Unlimited lifetime access',
+                  sideDesc: language === 'fr' ? 'Aucun renouvellement requis' : 'No renewal required',
+                  features:
+                    language === 'fr'
+                      ? [
+                          'Tous les cours A1 → C2',
+                          'Flashcards SRS illimitées',
+                          'Prof. Xiao IA 24/7',
+                          'Dictionnaire HSK complet',
+                          'Sync entre appareils',
+                          'Simulateur de situations',
+                          'Créer ses propres flashcards',
+                          'Toutes les futures features incluses'
+                        ]
+                      : [
+                          'All A1 → C2 courses',
+                          'Unlimited SRS flashcards',
+                          'Prof. Xiao AI 24/7',
+                          'Full HSK dictionary',
+                          'Cross-device sync',
+                          'Situation Simulator',
+                          'Create your own flashcards',
+                          'All future features included'
+                        ]
+                };
+              }
+              if (planTier === 'premium') {
+                return {
+                  badge: language === 'fr' ? 'Premium Mensuel' : 'Premium Monthly',
+                  icon: '⭐',
+                  sideTitle: language === 'fr' ? 'Accès complet' : 'Full access',
+                  sideDesc: language === 'fr' ? 'Renouvellement mensuel' : 'Monthly renewal',
+                  features:
+                    language === 'fr'
+                      ? [
+                          'Tous les cours A1 → C2',
+                          'Flashcards SRS illimitées',
+                          'Prof. Xiao IA 24/7',
+                          'Dictionnaire HSK complet',
+                          'Sync entre appareils'
+                        ]
+                      : [
+                          'All A1 → C2 courses',
+                          'Unlimited SRS flashcards',
+                          'Prof. Xiao AI 24/7',
+                          'Full HSK dictionary',
+                          'Cross-device sync'
+                        ]
+                };
+              }
+              if (planTier === 'trial') {
+                return {
+                  badge: language === 'fr' ? 'Essai gratuit' : 'Free trial',
+                  icon: '🎁',
+                  sideTitle:
+                    language === 'fr'
+                      ? `${appAccess.trialDaysLeft} jour${appAccess.trialDaysLeft > 1 ? 's' : ''} restant${appAccess.trialDaysLeft > 1 ? 's' : ''}`
+                      : `${appAccess.trialDaysLeft} day${appAccess.trialDaysLeft > 1 ? 's' : ''} left`,
+                  sideDesc:
+                    language === 'fr'
+                      ? "Accès complet pendant l'essai"
+                      : 'Full access during trial',
+                  features:
+                    language === 'fr'
+                      ? [
+                          'Accès Premium temporaire',
+                          'Prof. Xiao IA 24/7',
+                          'Flashcards SRS illimitées',
+                          'Tous les cours pendant 7 jours'
+                        ]
+                      : [
+                          'Temporary Premium access',
+                          'Prof. Xiao AI 24/7',
+                          'Unlimited SRS flashcards',
+                          'All courses for 7 days'
+                        ]
+                };
+              }
+              // Free
+              return {
+                badge: language === 'fr' ? 'Gratuit' : 'Free',
+                icon: '🌱',
+                sideTitle:
+                  language === 'fr' ? 'Accès limité' : 'Limited access',
+                sideDesc:
+                  language === 'fr'
+                    ? 'Passe en Premium pour tout débloquer'
+                    : 'Upgrade to Premium to unlock everything',
+                features:
+                  language === 'fr'
+                    ? [
+                        `${appAccess.hsk1LessonLimit} premières leçons HSK 1`,
+                        `${appAccess.flashcardDailyNewLimit} nouvelles cartes par jour`,
+                        `${appAccess.reviewItemLimit ?? '?'} mots en révision`,
+                        'Communauté en lecture seule'
+                      ]
+                    : [
+                        `First ${appAccess.hsk1LessonLimit} HSK 1 lessons`,
+                        `${appAccess.flashcardDailyNewLimit} new cards per day`,
+                        `${appAccess.reviewItemLimit ?? '?'} words in review`,
+                        'Community read-only'
+                      ]
+              };
+            })();
+
+            const planClass =
+              planTier === 'premium' && isLifetime
+                ? 'is-lifetime'
+                : planTier === 'premium'
+                ? 'is-monthly'
+                : planTier === 'trial'
+                ? 'is-trial'
+                : 'is-free';
+
+            return (
+              <section className={`settings-card-v9 settings-sub-plan-card ${planClass}`}>
+                <div className="settings-sub-plan-top">
+                  <span className="settings-plan-pill">
+                    <span aria-hidden>{planInfo.icon}</span> {planInfo.badge}
+                  </span>
+                  <div className="settings-sub-plan-side">
+                    <div className="settings-sub-plan-side-title">{planInfo.sideTitle}</div>
+                    <div className="settings-sub-plan-side-desc">{planInfo.sideDesc}</div>
                   </div>
                 </div>
-              </div>
 
-              <h2 className="settings-card-title">
-                {language === 'fr' ? 'Plan Actuel' : 'Current plan'}
-              </h2>
-              <p className="settings-card-subtitle">
-                {language === 'fr' ? `Membre depuis ${memberSinceLong}` : `Member since ${memberSinceLong}`}
-              </p>
+                <h2 className="settings-card-title">
+                  {language === 'fr' ? 'Plan Actuel' : 'Current plan'}
+                </h2>
+                <p className="settings-card-subtitle">
+                  {language === 'fr' ? `Membre depuis ${memberSinceLong}` : `Member since ${memberSinceLong}`}
+                </p>
 
-              <div className="settings-card-divider" />
+                <div className="settings-card-divider" />
 
-              <div className="settings-plan-grid">
-                {[
-                  language === 'fr' ? '122K flashcards natives' : '122K native flashcards',
-                  language === 'fr' ? '15K tableaux de conjugaison' : '15K conjugation tables',
-                  language === 'fr' ? 'Prof. Park illimité 24/7' : 'Prof. Park 24/7 unlimited',
-                  language === 'fr' ? 'Batailles multijoueur illimitées' : 'Unlimited multiplayer battles',
-                  language === 'fr' ? 'Cours complets et leçons audio' : 'Full courses and audio lessons',
-                  language === 'fr' ? 'Accès complet à la communauté' : 'Full community access'
-                ].map((item) => (
-                  <div key={item} className="settings-plan-feature">
-                    <span className="settings-plan-check" aria-hidden>✓</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              {onOpenSubscription && (
-                <div className="settings-card-actions">
-                  <button type="button" className="btn-outline-dark" onClick={onOpenSubscription}>
-                    {language === 'fr' ? 'Voir les détails' : 'View details'}
-                  </button>
+                <div className="settings-plan-grid">
+                  {planInfo.features.map((item) => (
+                    <div key={item} className="settings-plan-feature">
+                      <span className="settings-plan-check" aria-hidden>✓</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
-              )}
-            </section>
-          )}
+
+                {onOpenSubscription && (
+                  <div className="settings-card-actions">
+                    <button type="button" className="btn-outline-dark" onClick={onOpenSubscription}>
+                      {planTier === 'premium'
+                        ? language === 'fr'
+                          ? 'Voir les détails'
+                          : 'View details'
+                        : language === 'fr'
+                        ? 'Voir les formules'
+                        : 'See plans'}
+                    </button>
+                  </div>
+                )}
+              </section>
+            );
+          })()}
 
           {/* ================== NOTIFICATIONS ================== */}
           {activeTab === 'notifications' && (

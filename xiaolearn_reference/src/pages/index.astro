@@ -277,44 +277,53 @@ const APP_LOGIN_URL = '/app/login';
         <p>Commence gratuitement, puis choisis le plan qui te convient.</p>
       </div>
 
+      <!--
+        Pricing aligné sur la SubscriptionPage de l'app (xiaolearn_app).
+        Source unique de vérité côté features : si tu changes ici, change
+        aussi dans /xiaolearn_app/src/pages/SubscriptionPage.tsx pour rester
+        cohérent. Inspiration visuelle : seonsaengnim.com/pricing (2 cards
+        principales, Lifetime en avant comme "Meilleure offre").
+      -->
       <div class="pricing-grid">
         <article class="pricing-card pricing-free">
           <h3>Découverte</h3>
           <p class="price"><strong>0€</strong><span>pour toujours</span></p>
           <ul>
             <li>Dictionnaire HSK 1 → 7-9 complet</li>
-            <li>Grammaire, nuances, blog, culture</li>
-            <li>Premières leçons de l'application</li>
-            <li>Recherche par hanzi / pinyin / français</li>
+            <li>Grammaire, nuances, culture</li>
+            <li>5 premières leçons HSK 1</li>
+            <li>7 jours d'essai Premium offerts</li>
           </ul>
           <a href={APP_URL} class="btn btn-ghost btn-block">Commencer gratuitement</a>
         </article>
 
         <article class="pricing-card pricing-featured">
-          <span class="pricing-badge">Recommandé</span>
           <h3>Mensuel</h3>
           <p class="price"><strong>14€</strong><span>/ mois</span></p>
+          <p class="price-note">Annulation à tout moment</p>
           <ul>
-            <li>Tout l'accès gratuit</li>
-            <li>Toutes les leçons A1 → C2</li>
+            <li>Tous les cours A1 → C2</li>
             <li>Flashcards SRS illimitées</li>
-            <li>Tuteur IA en français 24/7</li>
-            <li>Communauté, battles, classements</li>
+            <li>Prof. Xiao IA 24/7</li>
+            <li>Dictionnaire HSK complet</li>
+            <li>Sync entre appareils</li>
           </ul>
-          <a href={APP_URL} class="btn btn-primary btn-block">Commencer l'essai</a>
+          <a href={APP_URL} class="btn btn-primary btn-block">Démarrer (7 jours gratuits)</a>
         </article>
 
         <article class="pricing-card pricing-lifetime">
-          <span class="pricing-badge pricing-badge-gold">Meilleure offre</span>
+          <span class="pricing-badge pricing-badge-gold">★ Meilleure offre</span>
           <h3>À vie</h3>
           <p class="price"><strong>99€</strong><span>une seule fois</span></p>
+          <p class="price-note">Équivalent à ~7 mois d'abonnement, mais à vie</p>
+          <p class="pricing-intro"><strong>Tout du plan Mensuel, plus :</strong></p>
           <ul>
-            <li>Tout le plan Mensuel</li>
-            <li>Toutes les futures fonctionnalités</li>
-            <li>Accès prioritaire aux nouveautés</li>
-            <li>Aucun engagement, aucun renouvellement</li>
+            <li>Toutes les futures features incluses</li>
+            <li>Accès prioritaire au nouveau contenu</li>
+            <li class="is-exclusive">Simulateur de situations <span class="exclusive-tag">Exclusif Lifetime</span></li>
+            <li class="is-exclusive">Créer ses propres flashcards <span class="exclusive-tag">Exclusif Lifetime</span></li>
           </ul>
-          <a href={APP_URL} class="btn btn-secondary btn-block">Débloquer à vie</a>
+          <a href={APP_URL} class="btn btn-secondary btn-block">Débloquer à vie — 99€</a>
         </article>
       </div>
     </div>
@@ -1049,6 +1058,47 @@ const APP_LOGIN_URL = '/app/login';
     flex-direction: column;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
+  }
+
+  /* --- Différenciation Lifetime à la Seonsaengnim (cohérent app) --- */
+  .price-note {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: -0.4rem 0 var(--spacing-md);
+  }
+
+  .pricing-intro {
+    margin: var(--spacing-sm) 0 0;
+    padding-top: var(--spacing-sm);
+    border-top: 1px dashed rgba(216, 72, 62, 0.25);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  /* Features lifetime-exclusives : fond doré + bordure latérale */
+  .pricing-card li.is-exclusive {
+    padding: 0.5rem 0.65rem 0.5rem 2rem;
+    background: rgba(240, 183, 98, 0.14);
+    border-left: 3px solid rgba(240, 183, 98, 0.7);
+    border-radius: 6px;
+  }
+
+  .pricing-card li.is-exclusive::before {
+    left: 0.65rem;
+  }
+
+  .exclusive-tag {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.1rem 0.5rem;
+    background: rgba(240, 183, 98, 0.5);
+    color: var(--text-primary);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .pricing-card li {
