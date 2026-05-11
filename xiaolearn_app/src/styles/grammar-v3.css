@@ -160,11 +160,44 @@
   flex-direction: column;
   gap: 3px;
 }
+.reading-v2.grammar-v3 .gr3-example-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reading-v2.grammar-v3 .gr3-example-play {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--rv-border);
+  background: var(--rv-surface);
+  color: var(--rv-jade-ink);
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, transform 0.1s ease;
+}
+.reading-v2.grammar-v3 .gr3-example-play:hover {
+  background: var(--rv-jade);
+  color: #fff;
+  border-color: var(--rv-jade);
+  transform: scale(1.05);
+}
+.reading-v2.grammar-v3 .gr3-example-play:active {
+  transform: scale(0.95);
+}
 .reading-v2.grammar-v3 .gr3-example-hanzi {
   font-size: 19px;
   line-height: 1.5;
   color: var(--rv-ink);
   font-weight: 500;
+  flex: 1;
+  min-width: 0;
 }
 .reading-v2.grammar-v3 .gr3-example-pinyin {
   font-size: 13px;

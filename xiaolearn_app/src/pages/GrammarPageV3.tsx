@@ -34,6 +34,44 @@ import { grammarLessons } from '../data/grammar-lessons';
 import type { LessonItem } from '../types';
 import { playHanziAudio } from '../utils/audio';
 import ComprehensionQuiz from '../components/reading/ComprehensionQuiz';
+
+/**
+ * playGrammarAudio — Lecture audio pour la grammaire avec fallback Web Speech.
+ *
+ * Ordre de priorité :
+ *   1. MP3 pré-généré (via playHanziAudio) — fonctionne pour les hanzi
+ *      simples (也, 都, 不) qui existent dans audio/hsk1/*.wav.
+ *   2. Web Speech API (zh-CN) — couvre les structures composées
+ *      (不仅...而且, 由于...因此) et les phrases d'exemples, pour
+ *      lesquelles aucun MP3 n'est pré-généré.
+ *
+ * Le fallback Web Speech est ASSUMÉ ici (alors qu'il est interdit ailleurs
+ * dans l'app) : pour la grammaire, la couverture exhaustive en MP3 n'est
+ * pas réaliste (chaque exemple = une phrase unique). Le compromis : pas
+ * d'audio premium pour la grammaire, mais TOUT est jouable.
+ */
+const playGrammarAudio = async (
+  hanzi: string,
+  explicitUrl?: string | null
+): Promise<void> => {
+  try {
+    await playHanziAudio(hanzi, explicitUrl ?? null);
+    return; // MP3 trouvé et lecture lancée → on s'arrête là.
+  } catch {
+    // Aucun MP3 → fallback Web Speech.
+  }
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  try {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(hanzi);
+    utter.lang = 'zh-CN';
+    utter.rate = 0.92;
+    utter.pitch = 1;
+    window.speechSynthesis.speak(utter);
+  } catch {
+    /* navigateur sans TTS — abandon silencieux */
+  }
+};
 import type { ReadingComprehensionQuestion } from '../types/lesson-structure';
 
 export type GrammarPageV3Language = 'fr' | 'en';
@@ -504,9 +542,7 @@ const GrammarDetail = ({
               type="button"
               className="gr3-listen"
               onClick={() => {
-                playHanziAudio(lesson.hanzi, lesson.audio).catch(() => {
-                  /* silent */
-                });
+                playGrammarAudio(lesson.hanzi, lesson.audio);
               }}
             >
               🔊 {t(language, 'listenWord')}
@@ -549,7 +585,7 @@ const GrammarDetail = ({
             <h3 className="gr3-block-title">📚 {t(language, 'examples')}</h3>
             <div className="gr3-examples">
               {lesson.examples.map((ex, i) => {
-                const t =
+                const tr =
                   language === 'en'
                     ? ex.translation || ex.translationFr || ''
                     : ex.translationFr || ex.translation || '';
@@ -557,13 +593,26 @@ const GrammarDetail = ({
                   <div key={i} className="gr3-example">
                     <div className="gr3-example-num">{i + 1}</div>
                     <div className="gr3-example-body">
-                      <div className="gr3-example-hanzi" lang="zh-Hans">
-                        {ex.hanzi}
+                      <div className="gr3-example-row">
+                        <button
+                          type="button"
+                          className="gr3-example-play"
+                          aria-label="play"
+                          title={t(language, 'listenWord')}
+                          onClick={() => {
+                            playGrammarAudio(ex.hanzi, ex.audio);
+                          }}
+                        >
+                          🔊
+                        </button>
+                        <span className="gr3-example-hanzi" lang="zh-Hans">
+                          {ex.hanzi}
+                        </span>
                       </div>
                       {ex.pinyin && (
                         <div className="gr3-example-pinyin">{ex.pinyin}</div>
                       )}
-                      {t && <div className="gr3-example-translation">{t}</div>}
+                      {tr && <div className="gr3-example-translation">{tr}</div>}
                     </div>
                   </div>
                 );
