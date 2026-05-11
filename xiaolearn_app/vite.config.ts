@@ -192,6 +192,37 @@ const createGeminiProxyPlugin = (apiKey: string) => ({
   }
 });
 
+const chunkNameForModule = (id: string): string | undefined => {
+  if (id.includes('/node_modules/')) {
+    if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/scheduler/')) {
+      return 'vendor-react';
+    }
+    if (id.includes('/firebase/') || id.includes('/@firebase/')) {
+      return 'vendor-firebase';
+    }
+    if (id.includes('/recharts/') || id.includes('/d3-') || id.includes('/victory-vendor/')) {
+      return 'vendor-charts';
+    }
+    if (id.includes('/pinyin-pro/') || id.includes('/opencc-js/')) {
+      return 'vendor-language';
+    }
+    if (id.includes('/@xenova/transformers/')) {
+      return 'vendor-transformers';
+    }
+    return 'vendor';
+  }
+
+  const hskJsonMatch = id.match(/\/data\/(hsk[1-7])\.json$/);
+  if (hskJsonMatch) {
+    return `data-${hskJsonMatch[1]}`;
+  }
+
+  // Keep application modules in Rollup's default chunk. Several data/page files
+  // intentionally mutate shared CECR structures at module load, so splitting
+  // them by folder can expose circular initialization order in production.
+  return undefined;
+};
+
 export default defineConfig(({ mode }) => {
   // Charger les variables d'environnement depuis .env.local ou .env.production
   const env = loadEnv(mode, process.cwd(), '');
@@ -213,7 +244,15 @@ export default defineConfig(({ mode }) => {
       port: 5173
     },
     build: {
-      chunkSizeWarningLimit: 6000
+      // The largest unavoidable static modules are hsk7.json (~6.1 MB) and the
+      // app shell (~6.5 MB after keeping CECR modules together to avoid circular
+      // initialization bugs). Keep the warning close to those known baselines.
+      chunkSizeWarningLimit: 6600,
+      rollupOptions: {
+        output: {
+          manualChunks: chunkNameForModule
+        }
+      }
     }
   };
 });

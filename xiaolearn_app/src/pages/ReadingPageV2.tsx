@@ -247,7 +247,10 @@ const iconForEntry = (entry: ReadingEntry): string => {
 // Segmentation / lookup
 // ---------------------------------------------------------------------------
 
-const hasChinese = (text: string) => /[㐀-鿿]/.test(text);
+// Échappements Unicode portables (vs caractères littéraux) : évite tout
+// risque de corruption d'octets par un minifieur, un proxy ou un Worker
+// qui réinterpréterait l'encodage du bundle.
+const hasChinese = (text: string) => /[\u3400-\u9fff]/.test(text);
 
 const segmentChinese = (text: string): string[] => {
   const IntlAny = Intl as unknown as {

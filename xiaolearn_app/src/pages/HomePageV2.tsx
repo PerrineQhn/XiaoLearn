@@ -39,6 +39,7 @@ import type { getCopy } from '../i18n';
 import type { LessonPath } from '../types/lesson-structure';
 import type { CecrLevelMeta } from '../data/cecr-course';
 import { getLessonTranslation } from '../utils/lesson';
+import { playHanziAudio } from '../utils/audio';
 import LevelBadge from '../components/LevelBadge';
 import { useDashboardState } from '../hooks/useDashboardState';
 import { useStudyTimer } from '../hooks/useStudyTimer';
@@ -1051,11 +1052,9 @@ const WordOfTheDayCard = ({
   // voix sur Chrome / Safari / mobile.
   const handleSpeak = () => {
     if (!word) return;
-    import('../utils/audio').then(({ playHanziAudio }) => {
-      playHanziAudio(word.hanzi, (word as { audio?: string }).audio).catch((err) =>
-        console.warn('[WOTD audio]', err)
-      );
-    });
+    playHanziAudio(word.hanzi, (word as { audio?: string }).audio).catch((err) =>
+      console.warn('[WOTD audio]', err)
+    );
   };
   return (
     <section className="card word-of-day-card word-of-day-dark">
