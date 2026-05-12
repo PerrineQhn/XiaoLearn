@@ -46,8 +46,14 @@ const slugify = (text: string): string =>
 
       <div class="post-meta-top">
         <span class="post-cat">📖 {BLOG_CATEGORY_LABEL[post.category]}</span>
-        <span class="post-meta-item">⏱ {post.readingMinutes} min de lecture</span>
-        <span class="post-meta-item">👁 {post.views} vues</span>
+        <span class="post-meta-item">
+          <svg class="post-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          {post.readingMinutes} min de lecture
+        </span>
+        <span class="post-meta-item">
+          <img src="/icons/oeil-ouvert.png" alt="" class="post-icon-img" aria-hidden="true" />
+          <span data-views-slug={post.slug} data-views-track="1">—</span> vues
+        </span>
       </div>
 
       <h1 class="post-title">{post.title}</h1>
@@ -160,6 +166,11 @@ const slugify = (text: string): string =>
   </article>
 </BaseLayout>
 
+<script>
+  // Charge le compteur de vues (mode track : incrémente puis affiche)
+  import('../../scripts/blog-views');
+</script>
+
 <style>
   .post {
     padding-bottom: var(--spacing-3xl);
@@ -207,7 +218,25 @@ const slugify = (text: string): string =>
     letter-spacing: 0.05em;
     font-size: 0.75rem;
   }
-  .post-meta-item { color: var(--text-tertiary); }
+  .post-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-tertiary);
+  }
+  .post-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+  .post-icon-img {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    opacity: 0.75;
+    display: inline-block;
+  }
 
   .post-title {
     margin: 0 0 var(--spacing-md);

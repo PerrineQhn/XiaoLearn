@@ -108,6 +108,27 @@ service cloud.firestore {
     }
 
     // ========================================================================
+    //  BLOG VIEWS — compteur public de vues d'articles
+    //  Accessible anonymement (le blog est public). Incrément autorisé
+    //  seulement de +1 par write, pour empêcher les boosts massifs.
+    // ========================================================================
+
+    match /blog_views/{slug} {
+      allow read: if true;
+
+      // Création : count == 0 (sera incrémenté juste après par un autre write)
+      allow create: if request.resource.data.count == 0
+        && request.resource.data.slug == slug;
+
+      // Update : seul `count` peut bouger, et uniquement de +1.
+      // Le fieldTransform `increment(1)` côté client passe par cette règle.
+      allow update: if request.resource.data.count == resource.data.count + 1
+        && request.resource.data.slug == resource.data.slug;
+
+      allow delete: if false;
+    }
+
+    // ========================================================================
     //  COMMUNITY IDEAS (task #4) — propositions de la communauté.
     //  Lecture publique pour utilisateurs connectés. Écriture restreinte :
     //  l'auteur crée, l'auteur peut modifier title/description tant que le

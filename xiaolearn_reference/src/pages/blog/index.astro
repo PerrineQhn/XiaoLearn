@@ -74,7 +74,7 @@ const formatDate = (iso: string) => {
 
       {/* Featured post — pleine largeur, image gauche, infos droite */}
       {featured && (
-        <a href={`/blog/${featured.slug}`} class="blog-featured" data-post-slug={featured.slug} data-post-category={featured.category}>
+        <a href={`/blog/${featured.slug}`} class="blog-featured" data-post-slug={featured.slug} data-post-category={featured.category} data-post-title={featured.title.toLowerCase()} data-post-lead={featured.lead.toLowerCase()}>
           {featured.heroImage ? (
             <div class="blog-featured-img" style={`background-image: url(${featured.heroImage});`} aria-hidden="true"></div>
           ) : (
@@ -88,8 +88,14 @@ const formatDate = (iso: string) => {
             <h2 class="blog-featured-title">{featured.title}</h2>
             <p class="blog-featured-lead">{featured.lead}</p>
             <div class="blog-card-footer">
-              <span class="blog-card-mins">⏱ {featured.readingMinutes} min de lecture</span>
-              <span class="blog-card-views">👁 {featured.views} vues</span>
+              <span class="blog-card-mins">
+                <svg class="blog-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                {featured.readingMinutes} min de lecture
+              </span>
+              <span class="blog-card-views">
+                <img src="/icons/oeil-ouvert.png" alt="" class="blog-icon-img" aria-hidden="true" />
+                <span data-views-slug={featured.slug}>—</span>
+              </span>
             </div>
           </div>
         </a>
@@ -119,8 +125,14 @@ const formatDate = (iso: string) => {
               <h3 class="blog-card-title">{post.title}</h3>
               <p class="blog-card-lead">{post.lead}</p>
               <div class="blog-card-footer">
-                <span class="blog-card-mins">⏱ {post.readingMinutes} min</span>
-                <span class="blog-card-views">👁 {post.views} vues</span>
+                <span class="blog-card-mins">
+                  <svg class="blog-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  {post.readingMinutes} min
+                </span>
+                <span class="blog-card-views">
+                  <img src="/icons/oeil-ouvert.png" alt="" class="blog-icon-img" aria-hidden="true" />
+                  <span data-views-slug={post.slug}>—</span>
+                </span>
               </div>
             </div>
           </a>
@@ -133,6 +145,11 @@ const formatDate = (iso: string) => {
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Charge le compteur de vues en arrière-plan (auto-bind via DOMContentLoaded)
+  import('../../scripts/blog-views');
+</script>
 
 <script>
   // Filtre client-side : recherche texte + filtre catégorie (cumulables).
@@ -393,6 +410,26 @@ const formatDate = (iso: string) => {
     border-top: 1px solid var(--border-light);
     font-size: 0.8rem;
     color: var(--text-tertiary);
+    gap: var(--spacing-sm);
+  }
+  .blog-card-mins,
+  .blog-card-views {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .blog-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+  .blog-icon-img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.75;
+    display: inline-block;
   }
 
   .blog-empty {
