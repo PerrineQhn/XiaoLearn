@@ -92,7 +92,7 @@ export const BLOG_CATEGORY_LABEL: Record<BlogCategory, string> = {
 };
 
 const DEFAULT_AUTHOR: BlogAuthor = {
-  name: 'Perrine Qhn',
+  name: 'Perrine',
   avatar: '/profs/perrine.jpg'
 };
 
@@ -2246,6 +2246,936 @@ const POST_PARTICULES_FINALES: BlogPost = {
   ]
 };
 
+const POST_THE_CHINOIS: BlogPost = {
+  slug: 'le-the-chinois-5000-ans-histoire',
+  category: 'culture',
+  title: 'Le thé chinois — 5 000 ans d\'histoire, 6 grandes familles',
+  lead:
+    'Du thé vert Longjing au pu-erh fermenté, le thé chinois n\'est pas une boisson : c\'est une civilisation. Voici le tour d\'horizon pour ne plus jamais commander "un thé chaud" comme un touriste.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 10,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1721434676608-23d5f3b9aefd?w=1600&q=80',
+  heroCaption: 'Théière et tasse de thé vert — l\'art de la dégustation chinoise',
+  intro:
+    'En Chine, dire « je veux du thé » sans préciser lequel, c\'est comme dire « je veux du vin » à un sommelier français. Il y a 6 familles principales, des centaines de variétés, et des codes culturels pour chacune. Voici l\'essentiel à connaître.',
+  sections: [
+    {
+      title: 'Une histoire qui commence avec Shennong',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Selon la légende, le thé aurait été découvert en 2737 av. J.-C. par l\'empereur 神农 (Shénnóng, « Divin Cultivateur »), qui aurait vu des feuilles tomber dans sa marmite d\'eau chaude. Au-delà du mythe, les archéologues ont confirmé une consommation de thé dans le Sichuan dès le Ier millénaire av. J.-C.'
+        },
+        {
+          type: 'p',
+          text: 'Sous la dynastie Tang (618-907), le moine bouddhiste 陆羽 (Lù Yǔ) rédige le 茶经 (Chájīng, « Classique du Thé »), premier traité au monde sur la culture, la préparation et la dégustation du thé. C\'est le point de bascule où le thé passe de boisson médicinale à art de vivre.'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Le thé est arrivé en Europe au XVIIe siècle via les marchands portugais et hollandais. La cérémonie japonaise du thé (chanoyu) est elle-même un héritage de la culture chinoise Song.'
+        }
+      ]
+    },
+    {
+      title: 'Les 6 grandes familles de thé',
+      blocks: [
+        {
+          type: 'p',
+          text: 'La classification chinoise se fait selon le degré de fermentation/oxydation des feuilles — pas selon la couleur de l\'infusion comme on le croit souvent.'
+        },
+        {
+          type: 'h3',
+          text: '1. Thé vert (绿茶 lǜchá) — non fermenté'
+        },
+        {
+          type: 'p',
+          text: 'Le plus consommé en Chine continentale (60-70 % du marché). Feuilles chauffées rapidement après cueillette pour stopper l\'oxydation. Goût végétal, parfois iodé.'
+        },
+        { type: 'example', hanzi: '龙井', pinyin: 'lóngjǐng', translationFr: 'Longjing (Puits du Dragon) — Hangzhou' },
+        { type: 'example', hanzi: '碧螺春', pinyin: 'bìluóchūn', translationFr: 'Biluochun (Spirale de Jade) — Suzhou' },
+        {
+          type: 'h3',
+          text: '2. Thé blanc (白茶 báichá) — très peu fermenté'
+        },
+        {
+          type: 'p',
+          text: 'Le moins transformé : juste séché au soleil. Feuilles couvertes d\'un duvet blanc. Saveur délicate, légèrement sucrée. Production concentrée dans le Fujian.'
+        },
+        { type: 'example', hanzi: '白毫银针', pinyin: 'báiháo yínzhēn', translationFr: 'Aiguilles d\'argent au duvet blanc' },
+        {
+          type: 'h3',
+          text: '3. Thé jaune (黄茶 huángchá) — légèrement fermenté'
+        },
+        {
+          type: 'p',
+          text: 'Famille la plus rare et la plus chère. Production artisanale, en voie de disparition. Goût doux, miellé. Le plus connu : 君山银针 (Junshan Yinzhen).'
+        },
+        {
+          type: 'h3',
+          text: '4. Thé Oolong (乌龙茶 wūlóngchá) — semi-fermenté'
+        },
+        {
+          type: 'p',
+          text: 'Entre vert et noir. Oxydation partielle (10 à 70 %). Famille immense, surtout produite à Taïwan et au Fujian. Goût floral, fruité ou torréfié selon les variétés.'
+        },
+        { type: 'example', hanzi: '铁观音', pinyin: 'tiěguānyīn', translationFr: 'Tieguanyin (Déesse de fer Guanyin)' },
+        { type: 'example', hanzi: '大红袍', pinyin: 'dàhóngpáo', translationFr: 'Da Hong Pao (Grande robe rouge) — Wuyi' },
+        {
+          type: 'h3',
+          text: '5. Thé rouge (红茶 hóngchá) — entièrement fermenté'
+        },
+        {
+          type: 'p',
+          text: 'C\'est ce qu\'on appelle "thé noir" en Occident. Oxydation complète. Le 正山小种 (Zhengshan Xiaozhong, ou Lapsang Souchong en Occident) est considéré comme le premier thé noir au monde, créé au Fujian au XVIIe siècle.'
+        },
+        {
+          type: 'h3',
+          text: '6. Thé sombre / post-fermenté (黑茶 hēichá) — le pu-erh'
+        },
+        {
+          type: 'p',
+          text: 'Fermenté ET vieilli, parfois pendant des décennies. Le 普洱 (pǔ\'ěr) du Yunnan est le plus célèbre. Goût terreux, profond. Un pu-erh ancien peut valoir des fortunes — comme un grand cru de Bordeaux.'
+        }
+      ]
+    },
+    {
+      title: 'Le vocabulaire essentiel du thé',
+      blocks: [
+        { type: 'example', hanzi: '茶', pinyin: 'chá', translationFr: 'thé' },
+        { type: 'example', hanzi: '泡茶', pinyin: 'pào chá', translationFr: 'infuser le thé' },
+        { type: 'example', hanzi: '茶叶', pinyin: 'cháyè', translationFr: 'feuilles de thé' },
+        { type: 'example', hanzi: '茶馆', pinyin: 'cháguǎn', translationFr: 'maison de thé' },
+        { type: 'example', hanzi: '茶壶', pinyin: 'cháhú', translationFr: 'théière' },
+        { type: 'example', hanzi: '茶杯', pinyin: 'chábēi', translationFr: 'tasse à thé' },
+        { type: 'example', hanzi: '功夫茶', pinyin: 'gōngfūchá', translationFr: 'cérémonie du thé Gongfu (Chaozhou/Fujian)' }
+      ]
+    },
+    {
+      title: 'Comment commander un thé en Chine sans passer pour un touriste',
+      blocks: [
+        {
+          type: 'ordered',
+          items: [
+            'Précise le type : 绿茶 (vert), 红茶 (noir), 乌龙 (oolong), etc. Sinon on te servira souvent du jasmin (花茶, huāchá) par défaut, qui est rarement bu par les Chinois eux-mêmes.',
+            'Demande la région si tu as une préférence : "我要西湖龙井" (wǒ yào Xīhú lóngjǐng, "je veux du Longjing du Lac de l\'Ouest").',
+            'Indique la concentration : 浓 (nóng, fort) ou 淡 (dàn, léger).',
+            'Évite de demander du sucre ou du lait. C\'est une hérésie en Chine. Le thé bubble tea, c\'est une autre catégorie totalement différente.'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Mon conseil de dégustation',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Commence par un Longjing (vert) ou un Tieguanyin (oolong) léger — ils sont approachables et représentatifs. Évite les pu-erh très âgés au début : ils sont puissants et l\'éducation gustative se fait par étapes.'
+        },
+        {
+          type: 'quote',
+          text: 'Une seule feuille tombée dans la marmite a changé le destin d\'une civilisation. Boire du thé en Chine, c\'est goûter cette histoire.',
+          author: 'Lu Yu, Classique du Thé (760 apr. J.-C.)'
+        }
+      ]
+    }
+  ]
+};
+
+const POST_CUISINES: BlogPost = {
+  slug: 'les-8-grandes-cuisines-regionales-chinoises',
+  category: 'culture',
+  title: 'Les 8 grandes cuisines régionales chinoises (八大菜系) — Le guide pour les distinguer',
+  lead:
+    '« Cuisine chinoise » n\'existe pas vraiment : il y a 8 grandes traditions régionales aussi différentes entre elles que la cuisine française l\'est de l\'italienne. Voici comment les reconnaître.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 11,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1707013533606-62919aa3aa29?w=1600&q=80',
+  heroCaption: 'Table chinoise traditionnelle — chaque région a ses techniques et ses saveurs propres',
+  intro:
+    'Si tu commandes "chinois" en France, tu as 90 % de chances de manger Cantonais ou Sichuanais. Mais la Chine compte 8 traditions culinaires officiellement reconnues — les 八大菜系 (bā dà càixì). Voici la carte gourmande.',
+  sections: [
+    {
+      title: 'Pourquoi 8 traditions et pas une seule "cuisine chinoise"',
+      blocks: [
+        {
+          type: 'p',
+          text: 'La Chine couvre 9,6 millions de km² avec des climats, des produits et des cultures radicalement différents. Le riz au sud, le blé au nord. Les piments dans les régions humides (Sichuan, Hunan), le fade au bord de mer (Cantonais). Le résultat : chaque grande région a forgé son propre style, transmis depuis des siècles.'
+        },
+        {
+          type: 'p',
+          text: 'La codification en "8 grandes cuisines" date de la dynastie Qing (XIXe siècle). Avant, on parlait de 4 cuisines. Aujourd\'hui certaines listes en ajoutent 2 ou 4 supplémentaires, mais les 8 restent le standard officiel.'
+        }
+      ]
+    },
+    {
+      title: '川菜 (Chuāncài) — Cuisine du Sichuan',
+      blocks: [
+        {
+          type: 'p',
+          text: 'La plus connue à l\'international. Province enclavée, humide et chaude, qui a inventé le piment + le poivre du Sichuan (花椒, huājiāo) pour ses effets digestifs. Goût emblématique : 麻辣 (málà) — « engourdissant et piquant ».'
+        },
+        { type: 'example', hanzi: '麻婆豆腐', pinyin: 'mápó dòufu', translationFr: 'Tofu de la mémé grêlée' },
+        { type: 'example', hanzi: '宫保鸡丁', pinyin: 'gōngbǎo jīdīng', translationFr: 'Poulet Kung Pao' },
+        { type: 'example', hanzi: '回锅肉', pinyin: 'huíguōròu', translationFr: 'Porc deux fois cuit' },
+        { type: 'example', hanzi: '火锅', pinyin: 'huǒguō', translationFr: 'Hot pot (fondue chinoise)' }
+      ]
+    },
+    {
+      title: '粤菜 (Yuècài) — Cuisine cantonaise',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Originaire du Guangdong (Canton). La plus diffusée mondialement via la diaspora. Philosophie : respecter le goût naturel des ingrédients. Cuisson rapide à la vapeur, sautés légers, peu d\'épices. Royaume du dim sum.'
+        },
+        { type: 'example', hanzi: '点心', pinyin: 'diǎnxīn', translationFr: 'Dim sum (petites bouchées)' },
+        { type: 'example', hanzi: '叉烧', pinyin: 'chāshāo', translationFr: 'Porc laqué (Char Siu)' },
+        { type: 'example', hanzi: '虾饺', pinyin: 'xiājiǎo', translationFr: 'Raviolis aux crevettes' },
+        { type: 'example', hanzi: '白切鸡', pinyin: 'báiqiē jī', translationFr: 'Poulet poché à la cantonaise' }
+      ]
+    },
+    {
+      title: '鲁菜 (Lǔcài) — Cuisine du Shandong',
+      blocks: [
+        {
+          type: 'p',
+          text: 'La plus ancienne des 8. Cuisine du Nord-Est, base de la cuisine impériale de Pékin. Privilégie le braisé, les soupes claires, les fruits de mer. Technique-clé : 爆 (bào, sauter à très haute température).'
+        },
+        { type: 'example', hanzi: '糖醋鱼', pinyin: 'tángcùyú', translationFr: 'Poisson aigre-doux' },
+        { type: 'example', hanzi: '九转大肠', pinyin: 'jiǔzhuǎn dàcháng', translationFr: 'Intestin de porc en 9 cuissons (plat signature)' }
+      ]
+    },
+    {
+      title: '苏菜 (Sūcài) — Cuisine du Jiangsu',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Région du Lac Tai et de Suzhou. Cuisine raffinée, présentation soignée, saveurs sucrées légères. Précision technique (découpe, cuisson lente). Privilégie poissons et crevettes d\'eau douce.'
+        },
+        { type: 'example', hanzi: '松鼠桂鱼', pinyin: 'sōngshǔ guìyú', translationFr: 'Poisson écureuil (escalopé en forme d\'écureuil)' },
+        { type: 'example', hanzi: '清炖蟹粉狮子头', pinyin: 'qīngdùn xièfěn shīzitóu', translationFr: 'Boulettes tête de lion au crabe' }
+      ]
+    },
+    {
+      title: '浙菜 (Zhècài) — Cuisine du Zhejiang',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Hangzhou + côte est. Légère, peu grasse, saveurs subtiles. Influence du thé Longjing. Goût plus sucré qu\'au nord, mais jamais lourd.'
+        },
+        { type: 'example', hanzi: '西湖醋鱼', pinyin: 'xīhú cùyú', translationFr: 'Poisson vinaigré du Lac de l\'Ouest' },
+        { type: 'example', hanzi: '东坡肉', pinyin: 'dōngpōròu', translationFr: 'Porc Dongpo (poitrine braisée au vin de riz)' }
+      ]
+    },
+    {
+      title: '闽菜 (Mǐncài) — Cuisine du Fujian',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Province côtière face à Taïwan. Reine des soupes et des bouillons. Saveurs umami (champignons, fruits de mer). Beaucoup d\'attention aux sauces.'
+        },
+        { type: 'example', hanzi: '佛跳墙', pinyin: 'fótiàoqiáng', translationFr: 'Bouddha saute le mur (soupe légendaire à 30+ ingrédients)' }
+      ]
+    },
+    {
+      title: '湘菜 (Xiāngcài) — Cuisine du Hunan',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Cousine du Sichuan mais sans le poivre engourdissant. Piquant pur, fumé, aigre. Mao Zedong était du Hunan — il faisait servir cette cuisine à ses dîners politiques.'
+        },
+        { type: 'example', hanzi: '剁椒鱼头', pinyin: 'duòjiāo yútóu', translationFr: 'Tête de poisson au piment haché' },
+        { type: 'example', hanzi: '毛氏红烧肉', pinyin: 'máoshì hóngshāoròu', translationFr: 'Porc braisé sauce soja "façon Mao"' }
+      ]
+    },
+    {
+      title: '徽菜 (Huīcài) — Cuisine de l\'Anhui',
+      blocks: [
+        {
+          type: 'p',
+          text: 'La moins connue à l\'international. Région montagneuse, sauvage. Spécialités à base de gibier, herbes des montagnes, légumes sauvages. Goûts forts, fermentés.'
+        },
+        { type: 'example', hanzi: '臭鳜鱼', pinyin: 'chòu guìyú', translationFr: 'Poisson mandarin "puant" (légèrement fermenté)' }
+      ]
+    },
+    {
+      title: 'Comment les distinguer en pratique',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            'Plat très épicé avec engourdissement de la langue → Sichuan (麻辣)',
+            'Plat épicé sans engourdissement, plus pur → Hunan',
+            'Dim sum + vapeur + légèreté → Cantonais',
+            'Plat sucré-salé raffiné → Jiangsu ou Zhejiang',
+            'Grosse soupe avec beaucoup d\'ingrédients → Fujian',
+            'Plat très lourd, braisé longuement → Shandong',
+            'Goût fumé, fermenté, sauvage → Anhui'
+          ]
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'En dehors des 8, il y a aussi la cuisine xinjiang (musulmane Hui), tibétaine, mongole, taïwanaise. Toutes valent le détour, surtout en région.'
+        }
+      ]
+    }
+  ]
+};
+
+const POST_BA_BEI: BlogPost = {
+  slug: 'ba-vs-bei-voix-active-passive-chinois',
+  category: 'grammaire',
+  title: '把 vs 被 — Les voix active et passive en mandarin sans s\'arracher les cheveux',
+  lead:
+    'Deux particules qui terrorisent les apprenants : 把 (manipuler activement un objet) et 被 (subir l\'action). Avec quelques règles claires, ça devient logique.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 8,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=1600&q=80',
+  heroCaption: 'Pinceau de calligraphie — 把 et 被 sont parmi les particules les plus utilisées en mandarin',
+  intro:
+    'Tu peux dire "je mange une pomme" simplement : 我吃苹果 (wǒ chī píngguǒ). Mais dès que tu veux dire "je l\'ai mangée, la pomme", "elle a été mangée par moi", ou "je l\'ai mangée jusqu\'au bout", il faut sortir l\'artillerie 把 et 被. Voici le mode d\'emploi.',
+  sections: [
+    {
+      title: 'La construction 把 (bǎ) — manipuler l\'objet',
+      blocks: [
+        {
+          type: 'p',
+          text: '把 est utilisée pour mettre l\'OBJET avant le verbe, et insister sur ce qu\'on FAIT à cet objet. La structure :'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Sujet + 把 + Objet + Verbe + Complément (résultat / direction / quantité)'
+        },
+        { type: 'example', hanzi: '我把苹果吃了', pinyin: 'wǒ bǎ píngguǒ chī le', translationFr: 'j\'ai mangé la pomme (entièrement)' },
+        { type: 'example', hanzi: '他把门关上了', pinyin: 'tā bǎ mén guānshàng le', translationFr: 'il a fermé la porte' },
+        { type: 'example', hanzi: '请把书放在桌子上', pinyin: 'qǐng bǎ shū fàng zài zhuōzi shàng', translationFr: 'mets le livre sur la table, s\'il te plaît' },
+        {
+          type: 'h3',
+          text: 'Pourquoi pas juste 我吃了苹果 ?'
+        },
+        {
+          type: 'p',
+          text: '我吃了苹果 = "j\'ai mangé une/des pommes" — peu importe lesquelles. Vague.'
+        },
+        {
+          type: 'p',
+          text: '我把苹果吃了 = "j\'ai mangé LA pomme (que tu connais, ou qui était sur la table)" — précis. L\'objet est défini et l\'action est complétée sur lui.'
+        }
+      ]
+    },
+    {
+      title: 'Quand utiliser 把 (les 4 cas typiques)',
+      blocks: [
+        {
+          type: 'ordered',
+          items: [
+            'Action de DÉPLACER un objet (mettre, ranger, sortir) → 把 quasi-obligatoire',
+            'Action qui CHANGE l\'état de l\'objet (manger, casser, finir) → 把 fortement recommandé',
+            'Objet DÉFINI (un objet précis, pas générique) → 把 préféré',
+            'Verbe nécessitant un COMPLÉMENT (de résultat, direction, durée)'
+          ]
+        },
+        { type: 'example', hanzi: '我把车开走了', pinyin: 'wǒ bǎ chē kāizǒu le', translationFr: 'je suis parti(e) avec la voiture (l\'ai conduite et partie)' },
+        { type: 'example', hanzi: '她把蛋糕切成八块', pinyin: 'tā bǎ dàngāo qiēchéng bā kuài', translationFr: 'elle a coupé le gâteau en 8 parts' }
+      ]
+    },
+    {
+      title: 'Les pièges classiques de 把',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            'Le verbe ne peut PAS être nu — il doit avoir un complément (了, 在 + lieu, un complément de résultat comme 完, 好, 到…)',
+            'Les verbes d\'état (是, 有, 喜欢, 知道) sont INCOMPATIBLES avec 把',
+            'Les verbes de perception (看, 听) le sont aussi sauf cas particuliers',
+            'L\'objet doit être DÉFINI (avec 这, 那, ou contexte clair) — pas générique'
+          ]
+        },
+        {
+          type: 'callout',
+          tone: 'warning',
+          text: 'Phrase incorrecte : ❌ 我把苹果喜欢. Il faut dire 我喜欢苹果.'
+        }
+      ]
+    },
+    {
+      title: 'La construction 被 (bèi) — subir l\'action',
+      blocks: [
+        {
+          type: 'p',
+          text: '被 marque la voix passive : « être X par Y ». Structure :'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Sujet (qui subit) + 被 + (Agent) + Verbe + Complément'
+        },
+        { type: 'example', hanzi: '苹果被我吃了', pinyin: 'píngguǒ bèi wǒ chī le', translationFr: 'la pomme a été mangée par moi' },
+        { type: 'example', hanzi: '他被老师批评了', pinyin: 'tā bèi lǎoshī pīpíng le', translationFr: 'il s\'est fait gronder par le professeur' },
+        { type: 'example', hanzi: '我的钱包被偷了', pinyin: 'wǒ de qiánbāo bèi tōu le', translationFr: 'mon portefeuille s\'est fait voler (agent omis)' },
+        {
+          type: 'p',
+          text: 'L\'agent peut être omis si inconnu/peu important (cas du dernier exemple).'
+        }
+      ]
+    },
+    {
+      title: 'Nuance culturelle : la voix passive en chinois',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Historiquement, 被 portait une connotation NÉGATIVE. On l\'utilisait surtout pour des choses subies de manière désavantageuse : être grondé, volé, battu, déçu.'
+        },
+        {
+          type: 'p',
+          text: 'Aujourd\'hui, sous l\'influence des traductions de l\'anglais, 被 est de plus en plus utilisé en contexte neutre (un livre est publié, une décision est prise). Mais à l\'oral courant, beaucoup de Chinois préfèrent encore une tournure active ou impersonnelle.'
+        },
+        { type: 'example', hanzi: '这本书写得很好', pinyin: 'zhè běn shū xiě de hěn hǎo', translationFr: 'ce livre est bien écrit (tournure préférée à "被写得好")' }
+      ]
+    },
+    {
+      title: 'Astuce mnémotechnique',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            '把 = "TAKE control" — tu manipules l\'objet activement',
+            '被 = "BE done to" — tu subis l\'action'
+          ]
+        },
+        {
+          type: 'p',
+          text: 'En pratique : si tu peux dire l\'action en français avec « prendre ... et le ... », c\'est 把. Si tu peux dire « être ...é par ... », c\'est 被.'
+        },
+        {
+          type: 'quote',
+          text: 'Une langue se maîtrise quand on cesse de chercher la règle et qu\'on commence à entendre la mélodie.',
+          author: 'Anonyme'
+        }
+      ]
+    }
+  ]
+};
+
+const POST_HSK1_GUIDE: BlogPost = {
+  slug: 'preparer-le-hsk-1-le-guide-complet',
+  category: 'hsk',
+  title: 'Préparer le HSK 1 — Le guide complet pour décrocher ton premier diplôme officiel',
+  lead:
+    'Le HSK 1 (HSK 3.0) demande 500 mots et 300 caractères. C\'est faisable en 3-6 mois avec une bonne méthode. Voici le plan concret.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 9,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1551295022-de5522c94e08?w=1600&q=80',
+  heroCaption: 'Préparer un examen — le HSK 1 est ton premier vrai cap en mandarin',
+  intro:
+    'Passer le HSK 1, ce n\'est pas juste cocher des cases : c\'est un check-point qui te force à structurer tes 3-6 premiers mois d\'apprentissage. Voici ce qu\'on te demandera vraiment le jour J — et comment t\'y préparer sans paniquer.',
+  sections: [
+    {
+      title: 'Ce que le HSK 1 demande (chiffres officiels)',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Selon le standard HSK 3.0 publié par le Hanban en 2021 :'
+        },
+        {
+          type: 'list',
+          items: [
+            '500 mots de vocabulaire (cumulé)',
+            '300 caractères à reconnaître',
+            'Grammaire de base : structure SVO, négation 不/没, particule 了, mesureur 个',
+            'Compréhension de phrases simples au présent + passé',
+            'Pas d\'écriture manuscrite requise au HSK 1-2'
+          ]
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Le HSK 1 ne demande pas encore d\'épreuve orale. Tu seras testé(e) seulement sur la compréhension écrite et orale.'
+        }
+      ]
+    },
+    {
+      title: 'Format de l\'examen',
+      blocks: [
+        {
+          type: 'p',
+          text: 'L\'examen dure environ 40 minutes et est divisé en 2 parties :'
+        },
+        {
+          type: 'h3',
+          text: 'Partie 1 — Compréhension orale (听力, 20 min)'
+        },
+        {
+          type: 'list',
+          items: [
+            'Section 1 : 5 questions image-audio (cocher si l\'image correspond)',
+            'Section 2 : 5 questions à choix entre 3 images',
+            'Section 3 : 5 dialogues courts à compléter',
+            'Section 4 : 5 phrases pour cocher la phrase correspondante'
+          ]
+        },
+        {
+          type: 'h3',
+          text: 'Partie 2 — Compréhension écrite (阅读, 17 min)'
+        },
+        {
+          type: 'list',
+          items: [
+            'Section 1 : 5 questions image-mot',
+            'Section 2 : 5 phrases à compléter avec le bon mot',
+            'Section 3 : 5 questions de mise en correspondance',
+            'Section 4 : 5 phrases courtes à comprendre'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Le plan d\'attaque sur 4 mois (~1h/jour)',
+      blocks: [
+        {
+          type: 'h3',
+          text: 'Mois 1 — Bases phonétiques + premiers caractères'
+        },
+        {
+          type: 'list',
+          items: [
+            'Semaine 1-2 : pinyin complet + 4 tons (drill quotidien)',
+            'Semaine 3-4 : ~80-100 caractères de base (你, 我, 他, 是, 有, 不, 没, 一-十, etc.)',
+            'Objectif fin de mois : tu peux lire le pinyin sans hésiter, écrire les 50 caractères les plus fréquents'
+          ]
+        },
+        {
+          type: 'h3',
+          text: 'Mois 2 — Vocabulaire + grammaire de base'
+        },
+        {
+          type: 'list',
+          items: [
+            'Ajout de 200 mots HSK 1 via SRS (Anki, XiaoLearn)',
+            'Grammaire : structure SVO, 不/没, 吗, 也, 都, 很',
+            'Première écoute compréhensible : podcasts pour débutants type Slow Chinese, ChinesePod niveau 1',
+            'Objectif fin de mois : tu peux te présenter, dire ton âge, parler de ta famille en phrases simples'
+          ]
+        },
+        {
+          type: 'h3',
+          text: 'Mois 3 — Complétion du vocabulaire + entraînement HSK'
+        },
+        {
+          type: 'list',
+          items: [
+            'Compléter les 500 mots HSK 1',
+            'Grammaire : 了, 的 (possessif), 在 + lieu, mesureur 个, vouloir/savoir/aimer',
+            'Premiers exercices type HSK : achat de manuel officiel (HSK Standard Course Niveau 1)',
+            'Objectif fin de mois : tu peux faire un test blanc sans paniquer (même si tu rates des questions)'
+          ]
+        },
+        {
+          type: 'h3',
+          text: 'Mois 4 — Examens blancs intensifs'
+        },
+        {
+          type: 'list',
+          items: [
+            'Au moins 4 examens blancs en conditions réelles',
+            'Identifier tes points faibles et y revenir',
+            'Écoute intensive : films courts adaptés débutants, dramas avec sous-titres',
+            'Objectif : score > 180/200 en blanc → tu passes l\'examen sereine'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Les meilleurs supports gratuits ou peu chers',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            'Manuel officiel HSK Standard Course Niveau 1 (~15 €, indispensable)',
+            'XiaoLearn — niveau A1 complet gratuit, couvre largement le HSK 1',
+            'Pleco (gratuit) — dictionnaire avec décomposition caractères et flashcards intégrées',
+            'Hello Chinese (freemium) — grammaire animée, super pour débuter',
+            'YouTube : chaînes Mandarin Corner, ChinesePod (vidéos débutant gratuites)',
+            'Tests blancs gratuits sur chinesetest.cn (site officiel)'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Conseils pratiques pour le jour J',
+      blocks: [
+        {
+          type: 'ordered',
+          items: [
+            'Arrive 30 min en avance — moins de stress, temps d\'acclimatation',
+            'Apporte ta convocation imprimée + passeport (les centres exigent les deux)',
+            'L\'écoute passe en premier — concentre-toi à 100 % ; tu ne peux pas y revenir',
+            'Sur la lecture, ne perds pas de temps sur une question : passe et reviens',
+            'Surveille la montre — 17 min pour 20 questions de lecture, c\'est ~50 sec/question'
+          ]
+        },
+        {
+          type: 'callout',
+          tone: 'success',
+          text: 'Le HSK 1 est éliminatoire à 120/200. La moyenne nationale réelle des Français est autour de 175/200. Avec un mois de préparation sérieuse en plus du parcours, c\'est largement faisable.'
+        }
+      ]
+    },
+    {
+      title: 'Centres d\'examen en France',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Le HSK se passe dans les Instituts Confucius et certaines universités. Les principaux centres :'
+        },
+        {
+          type: 'list',
+          items: [
+            'Paris : Institut Confucius Paris VII, Inalco, Universités diverses',
+            'Lyon : Institut Confucius de Lyon',
+            'Toulouse, Strasbourg, Aix-Marseille, Bordeaux, Lille, Rennes : Instituts Confucius locaux',
+            'Sessions : 4 à 6 fois par an selon le centre. Inscription environ 1-2 mois à l\'avance'
+          ]
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Tarif HSK 1 en France : généralement 30-40 €. Beaucoup moins cher que les certifications anglais (TOEFL ~250 €, IELTS ~250 €).'
+        }
+      ]
+    }
+  ]
+};
+
+const POST_VOYAGER_CHINE: BlogPost = {
+  slug: 'voyager-en-chine-sans-parler-chinois',
+  category: 'conseils',
+  title: 'Voyager en Chine sans (presque) parler chinois — Le guide de survie 2026',
+  lead:
+    'Tu pars en Chine en septembre et tu ne parles pas un mot ? Pas de panique. Voici les apps, les phrases et les hacks pour t\'en sortir partout, même en région.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 12,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1600&q=80',
+  heroCaption: 'Grande Muraille de Chine — l\'aventure commence souvent par un voyage',
+  intro:
+    'La Chine est un pays où Google ne fonctionne pas, où peu de gens parlent anglais hors hôtels internationaux, et où ta CB peut être refusée. Voici comment t\'y préparer pour profiter du voyage au lieu de stresser.',
+  sections: [
+    {
+      title: 'Avant de partir — Préparation administrative',
+      blocks: [
+        {
+          type: 'h3',
+          text: 'Le visa'
+        },
+        {
+          type: 'p',
+          text: 'Bonne nouvelle pour les Français : depuis fin 2023, exemption de visa pour les séjours touristiques de moins de 30 jours en Chine continentale (renouvelé jusqu\'à fin 2026). Au-delà, il faut un visa L (tourisme) à demander au consulat.'
+        },
+        {
+          type: 'callout',
+          tone: 'warning',
+          text: 'Cette exemption peut changer — vérifie toujours le site officiel du consulat de Chine avant ton voyage.'
+        },
+        {
+          type: 'h3',
+          text: 'Apps à installer AVANT le départ'
+        },
+        {
+          type: 'list',
+          items: [
+            'WeChat (微信) — indispensable, messagerie + paiement + tout',
+            'Alipay (支付宝) — paiement, alternative à WeChat Pay',
+            'Pleco — dictionnaire mandarin OCR (photographie un texte, traduit)',
+            'Baidu Maps / Amap (高德) — Google Maps ne marche pas en Chine',
+            'Didi (滴滴) — équivalent Uber, très utile',
+            'Trip.com ou Ctrip — réservations train et hôtels',
+            'VPN (avant d\'arriver !) — ExpressVPN, NordVPN ou similaire si tu veux Google, Instagram, WhatsApp'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Le paiement — Le piège n°1 des voyageurs',
+      blocks: [
+        {
+          type: 'p',
+          text: 'En 2026, la Chine est l\'un des pays les plus cashless au monde. Carte bancaire étrangère ? Souvent refusée. Cash ? Beaucoup de petits commerces n\'en veulent plus.'
+        },
+        {
+          type: 'h3',
+          text: 'La solution : Alipay/WeChat Pay pour étrangers'
+        },
+        {
+          type: 'p',
+          text: 'Depuis 2024, Alipay et WeChat Pay permettent aux étrangers de payer en liant une carte Visa/Mastercard internationale. C\'est devenu fluide. Configure-le AVANT d\'arriver — la vérification d\'identité peut prendre 24-48h.'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Garde quand même 500-1000 ¥ en cash pour les taxis en région rurale et les petits stands sans QR code.'
+        }
+      ]
+    },
+    {
+      title: 'Les 30 phrases vraiment indispensables',
+      blocks: [
+        {
+          type: 'h3',
+          text: 'Politesse de base'
+        },
+        { type: 'example', hanzi: '你好', pinyin: 'nǐ hǎo', translationFr: 'bonjour' },
+        { type: 'example', hanzi: '谢谢', pinyin: 'xièxie', translationFr: 'merci' },
+        { type: 'example', hanzi: '不客气', pinyin: 'bú kèqi', translationFr: 'de rien' },
+        { type: 'example', hanzi: '对不起', pinyin: 'duìbuqǐ', translationFr: 'pardon / désolé(e)' },
+        { type: 'example', hanzi: '再见', pinyin: 'zàijiàn', translationFr: 'au revoir' },
+        {
+          type: 'h3',
+          text: 'Survie alimentaire'
+        },
+        { type: 'example', hanzi: '我不吃辣', pinyin: 'wǒ bù chī là', translationFr: 'je ne mange pas épicé' },
+        { type: 'example', hanzi: '我吃素', pinyin: 'wǒ chī sù', translationFr: 'je suis végétarien(ne)' },
+        { type: 'example', hanzi: '不要香菜', pinyin: 'bú yào xiāngcài', translationFr: 'pas de coriandre' },
+        { type: 'example', hanzi: '一瓶水', pinyin: 'yī píng shuǐ', translationFr: 'une bouteille d\'eau' },
+        { type: 'example', hanzi: '买单', pinyin: 'mǎi dān', translationFr: 'l\'addition' },
+        {
+          type: 'h3',
+          text: 'Se déplacer'
+        },
+        { type: 'example', hanzi: '在哪里？', pinyin: 'zài nǎli', translationFr: 'où est-ce ?' },
+        { type: 'example', hanzi: '怎么去...？', pinyin: 'zěnme qù...', translationFr: 'comment aller à... ?' },
+        { type: 'example', hanzi: '这是哪里？', pinyin: 'zhè shì nǎli', translationFr: 'c\'est où ici ?' },
+        { type: 'example', hanzi: '我迷路了', pinyin: 'wǒ mílù le', translationFr: 'je suis perdu(e)' },
+        { type: 'example', hanzi: '请送我去这个地方', pinyin: 'qǐng sòng wǒ qù zhège dìfang', translationFr: '(au taxi) emmenez-moi à cet endroit' },
+        {
+          type: 'h3',
+          text: 'Urgence et confusion'
+        },
+        { type: 'example', hanzi: '我不懂', pinyin: 'wǒ bù dǒng', translationFr: 'je ne comprends pas' },
+        { type: 'example', hanzi: '请慢一点', pinyin: 'qǐng màn yī diǎn', translationFr: 's\'il vous plaît, plus lentement' },
+        { type: 'example', hanzi: '你会说英语吗？', pinyin: 'nǐ huì shuō yīngyǔ ma', translationFr: 'parlez-vous anglais ?' },
+        { type: 'example', hanzi: '帮我！', pinyin: 'bāng wǒ', translationFr: 'aidez-moi !' },
+        { type: 'example', hanzi: '多少钱？', pinyin: 'duōshao qián', translationFr: 'combien ça coûte ?' },
+        { type: 'example', hanzi: '太贵了', pinyin: 'tài guì le', translationFr: 'trop cher' },
+        { type: 'example', hanzi: '便宜一点', pinyin: 'piányi yī diǎn', translationFr: 'moins cher' }
+      ]
+    },
+    {
+      title: 'Les hacks technologiques',
+      blocks: [
+        {
+          type: 'h3',
+          text: 'Traduction par photo'
+        },
+        {
+          type: 'p',
+          text: 'Pleco et Google Translate permettent de prendre en photo un menu / panneau / contrat et d\'avoir une traduction instantanée. Vital pour les menus de restos sans anglais.'
+        },
+        {
+          type: 'h3',
+          text: 'Traduction conversationnelle'
+        },
+        {
+          type: 'p',
+          text: 'WeChat a une fonction de traduction intégrée : tu écris en français, le destinataire reçoit en chinois et vice-versa. Pas parfait mais largement suffisant pour comprendre un chauffeur de taxi ou un hôtelier.'
+        },
+        {
+          type: 'h3',
+          text: 'Capture d\'écran d\'adresse'
+        },
+        {
+          type: 'p',
+          text: 'Tu pars en taxi ? Sors une capture d\'écran de ton hôtel sur Baidu Maps. Tu montres au chauffeur, c\'est résolu. Beaucoup plus fiable que de prononcer une adresse au pifomètre.'
+        }
+      ]
+    },
+    {
+      title: 'Pièges fréquents pour les Français',
+      blocks: [
+        {
+          type: 'list',
+          items: [
+            'Bouilloire et eau du robinet : NE BOIS JAMAIS l\'eau du robinet, même bouillie. Achète des bouteilles ou utilise les bouilloires de l\'hôtel (l\'eau est filtrée).',
+            'Toilettes publiques : prévoir mouchoirs et savon en poche, rarement fournis. Les toilettes à la turque sont normales.',
+            'Marchandage : en marché OUI, en magasins/supermarchés NON. Si tu marchandes dans un mall, on te regardera bizarrement.',
+            'Boire de l\'alcool fort en banquet pro : les "baijiu cheers" sont culturels. Décline avec "我不能喝酒" (wǒ bù néng hē jiǔ, je ne peux pas boire d\'alcool) si tu ne veux pas.',
+            'Photos : demande avant de photographier des personnes. Et pas de photo dans les zones militaires (pas toujours signalées).',
+            'Hôtels : pas tous autorisés à accueillir des étrangers en région. Vérifie sur Booking/Ctrip que ton hôtel accepte les "foreigners".'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Bonus : ce que tu vas apprendre malgré toi',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Même en 2 semaines, tu rentreras avec quelques dizaines de mots ancrés à vie : 你好, 谢谢, 多少钱, 这个, 不要, 米饭, 茶, 啤酒... C\'est mieux que rien et c\'est une base sympa pour démarrer un apprentissage sérieux en rentrant.'
+        },
+        {
+          type: 'quote',
+          text: 'Le mandarin ne s\'apprend pas avant de partir en Chine — il commence à s\'apprendre quand tu en reviens.',
+          author: 'Marie, voyageuse française'
+        }
+      ]
+    }
+  ]
+};
+
+const POST_GUANXI: BlogPost = {
+  slug: 'le-guanxi-relations-en-chine',
+  category: 'culture',
+  title: 'Le Guanxi (关系) — Comprendre le système de relations en Chine pour ne pas s\'y casser les dents',
+  lead:
+    'Pourquoi un Chinois t\'offre des cadeaux à votre 2e rencontre ? Pourquoi tout passe par les "connaissances" ? Voici le concept-clé du Guanxi expliqué simplement.',
+  publishedAt: '2026-05-13',
+  readingMinutes: 8,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=1600&q=80',
+  heroCaption: 'Shanghai moderne — où les business deals se font autant à table que dans les bureaux',
+  intro:
+    'Si tu fais du business en Chine, si tu y vis ou simplement si tu t\'y fais un(e) ami(e) chinois(e), tu te heurteras au concept de 关系 (guānxi). C\'est l\'huile qui fait tourner toute la société chinoise — et c\'est très différent du "réseau" français.',
+  sections: [
+    {
+      title: 'Qu\'est-ce que le Guanxi ?',
+      blocks: [
+        {
+          type: 'p',
+          text: '关系 (guānxi) signifie littéralement "connexion" ou "relation". Mais au-delà du sens neutre, c\'est tout un système social : un réseau de relations basé sur la confiance mutuelle, les faveurs rendues, et l\'obligation morale de réciprocité.'
+        },
+        {
+          type: 'p',
+          text: 'Avoir du "bon guanxi" avec quelqu\'un, c\'est avoir une relation où on peut compter sur l\'autre pour un service, et où on est attendu(e) à rendre la pareille un jour. Ce n\'est pas une amitié au sens occidental : c\'est plus codifié, plus pragmatique, mais aussi plus durable.'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Le Guanxi ne se limite pas au business. Il structure aussi la famille, l\'école, le voisinage, la politique.'
+        }
+      ]
+    },
+    {
+      title: 'Les origines confucéennes',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Le concept découle directement de la pensée confucéenne (儒家 rújiā), qui structure la société selon 5 relations fondamentales (五伦, wǔlún) :'
+        },
+        {
+          type: 'list',
+          items: [
+            '君臣 (souverain-sujet) — devoir de loyauté',
+            '父子 (père-fils) — devoir filial',
+            '夫妻 (mari-femme) — devoir d\'harmonie',
+            '兄弟 (aîné-cadet) — devoir de respect mutuel',
+            '朋友 (amis) — devoir de confiance'
+          ]
+        },
+        {
+          type: 'p',
+          text: 'Chaque relation impose des obligations réciproques. Le Guanxi moderne est l\'extension contemporaine de ce système : on construit, entretient et utilise un réseau de relations dans toutes les sphères de la vie.'
+        }
+      ]
+    },
+    {
+      title: 'Comment le Guanxi se construit',
+      blocks: [
+        {
+          type: 'h3',
+          text: '1. Les repas partagés (吃饭)'
+        },
+        {
+          type: 'p',
+          text: 'Aucun business sérieux ne se conclut sans avoir partagé au moins un repas. La table chinoise est l\'espace de construction du Guanxi par excellence : on boit du baijiu, on goûte des plats, on échange sur la famille avant les affaires.'
+        },
+        {
+          type: 'h3',
+          text: '2. Les cadeaux (送礼 sòng lǐ)'
+        },
+        {
+          type: 'p',
+          text: 'Offrir un cadeau bien choisi est un acte fondateur de relation. Mais attention aux pièges : pas d\'horloge (送钟 = 送终, "envoyer aux funérailles"), pas de parapluie (伞 sǎn = 散 sàn, "séparation"), pas de couteaux (couper la relation).'
+        },
+        {
+          type: 'h3',
+          text: '3. Le face (面子 miànzi)'
+        },
+        {
+          type: 'p',
+          text: 'Donner du "face" à quelqu\'un — le mettre en valeur, lui montrer du respect — renforce le Guanxi. Lui faire perdre la face en public le détruit. C\'est LA règle d\'or à maîtriser.'
+        },
+        {
+          type: 'h3',
+          text: '4. Les faveurs (人情 rénqíng)'
+        },
+        {
+          type: 'p',
+          text: 'Tu rends un service, tu "dépose" du rénqíng dans la relation. L\'autre est moralement obligé de te le rendre un jour. Ne demande pas un service que tu ne pourras pas rendre — sinon tu déstabilises l\'équilibre.'
+        }
+      ]
+    },
+    {
+      title: 'Guanxi vs Réseau à la française : 4 différences',
+      blocks: [
+        {
+          type: 'ordered',
+          items: [
+            'TEMPS : un réseau pro français se construit en quelques rencontres. Un guanxi se construit sur des années, parfois des décennies.',
+            'PROFONDEUR : le guanxi mélange perso et pro. Tes collègues chinois rencontreront ta famille, viendront à ton mariage. Le mur "perso/pro" est culturel français.',
+            'OBLIGATIONS : le guanxi crée des dettes morales. Un service rendu doit être rendu — mais pas tout de suite (ce serait insultant). Souvent dans plusieurs mois ou années.',
+            'GROUPE : le guanxi se transmet. Si A introduit B à C, B doit honorer la confiance de A. C\'est un système triangulaire, pas binaire.'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Le vocabulaire du Guanxi',
+      blocks: [
+        { type: 'example', hanzi: '关系', pinyin: 'guānxi', translationFr: 'relation, connexion' },
+        { type: 'example', hanzi: '面子', pinyin: 'miànzi', translationFr: 'face, prestige social' },
+        { type: 'example', hanzi: '给面子', pinyin: 'gěi miànzi', translationFr: 'donner du face (faire honneur)' },
+        { type: 'example', hanzi: '丢面子', pinyin: 'diū miànzi', translationFr: 'perdre la face' },
+        { type: 'example', hanzi: '人情', pinyin: 'rénqíng', translationFr: 'faveur morale, dette de gratitude' },
+        { type: 'example', hanzi: '送礼', pinyin: 'sòng lǐ', translationFr: 'offrir un cadeau (codifié)' },
+        { type: 'example', hanzi: '走后门', pinyin: 'zǒu hòumén', translationFr: 'passer par la porte de derrière (= via connaissances)' },
+        { type: 'example', hanzi: '介绍', pinyin: 'jièshào', translationFr: 'présenter, introduire (deux personnes)' }
+      ]
+    },
+    {
+      title: 'Pour un Français : 5 erreurs à éviter',
+      blocks: [
+        {
+          type: 'ordered',
+          items: [
+            'Demander directement un service à un nouveau contact — sans dépôt préalable de Guanxi, c\'est mal vu.',
+            'Décliner systématiquement les invitations à dîner pro — c\'est refuser de construire la relation.',
+            'Critiquer ouvertement quelqu\'un en réunion — perte de face publique impardonnable.',
+            'Refuser un cadeau offert — c\'est refuser la relation.',
+            'Oublier de rendre une faveur — la relation s\'effrite silencieusement.'
+          ]
+        },
+        {
+          type: 'quote',
+          text: 'En Chine, ton CV ne vaut rien si personne ne peut te recommander. Le Guanxi, c\'est le vrai capital social — et il se construit avec patience.',
+          author: 'Sophie, consultante en commerce international'
+        }
+      ]
+    }
+  ]
+};
+
 // ============================================================================
 //  EXPORT
 // ============================================================================
@@ -2264,7 +3194,13 @@ export const BLOG_POSTS: BlogPost[] = [
   POST_MESUREURS,
   POST_DRAMAS,
   POST_RESTAURANT,
-  POST_PARTICULES_FINALES
+  POST_PARTICULES_FINALES,
+  POST_THE_CHINOIS,
+  POST_CUISINES,
+  POST_BA_BEI,
+  POST_HSK1_GUIDE,
+  POST_VOYAGER_CHINE,
+  POST_GUANXI
 ];
 
 export const getBlogPost = (slug: string): BlogPost | undefined =>
