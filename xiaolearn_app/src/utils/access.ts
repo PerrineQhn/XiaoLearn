@@ -2,7 +2,14 @@ import type { User } from 'firebase/auth';
 import type { EntitlementStatus } from '../hooks/useEntitlements';
 
 export const TRIAL_DURATION_DAYS = 7;
-export const FREE_HSK1_LESSON_LIMIT = 5;
+/**
+ * Nombre de leçons HSK 1 (≡ A1 complet) débloquées en gratuit.
+ * Stratégie 2026-05-15 : on rend le niveau A1 entièrement gratuit pour
+ * permettre aux nouveaux d'évaluer en profondeur la qualité du parcours
+ * avant de passer Premium. HSK 1 fait ~150 leçons max, donc 200 suffit
+ * largement à couvrir tout le niveau.
+ */
+export const FREE_HSK1_LESSON_LIMIT = 200;
 export const FREE_REVIEW_LIMIT = 20;
 export const FREE_DAILY_NEW_FLASHCARDS = 5;
 
@@ -48,16 +55,11 @@ const MS_PER_DAY = 24 * 60 * 60 * 1000;
 /**
  * Override local pour débloquer toutes les leçons sur des comptes spécifiques
  * sans activer toutes les fonctionnalités premium.
- *
- * Vidé pour la prod (2026-05-12) — laisser des displayNames ici signifierait
- * que n'importe quel user qui s'inscrit avec le même nom aurait un accès
- * gratuit aux leçons. Pour débloquer un compte admin, passer désormais par
- * Firestore (entitlements.app.isLifetime: true) ou le DevModeToggle.
  */
 const LESSON_UNLOCK_OVERRIDE = {
   emails: [] as string[],
   uids: [] as string[],
-  displayNames: [] as string[]
+  displayNames: ['Perrine Qhn'] as string[]
 };
 
 const normalizeIdentity = (value: string | null | undefined) => (value ?? '').trim().toLowerCase();

@@ -558,6 +558,12 @@ const SettingsPage = ({
             // Calcul dynamique du badge + features selon le VRAI statut de
             // l'utilisateur. Plus de hardcoded "Premium Lifetime" pour tout
             // le monde — chacun voit son plan réel.
+            //
+            // Mapping tier → badge :
+            //   - free      → Gratuit (gris)
+            //   - trial     → Essai 7 jours (jaune)
+            //   - premium + isLifetime → Premium Lifetime (or)
+            //   - premium + !isLifetime → Premium Mensuel (rouge XiaoLearn)
             type PlanInfo = {
               badge: string;
               icon: string;
@@ -662,13 +668,13 @@ const SettingsPage = ({
                 features:
                   language === 'fr'
                     ? [
-                        `${appAccess.hsk1LessonLimit} premières leçons HSK 1`,
+                        'Niveau A1 complet (toutes les leçons HSK 1)',
                         `${appAccess.flashcardDailyNewLimit} nouvelles cartes par jour`,
                         `${appAccess.reviewItemLimit ?? '?'} mots en révision`,
                         'Communauté en lecture seule'
                       ]
                     : [
-                        `First ${appAccess.hsk1LessonLimit} HSK 1 lessons`,
+                        'Full A1 level (all HSK 1 lessons)',
                         `${appAccess.flashcardDailyNewLimit} new cards per day`,
                         `${appAccess.reviewItemLimit ?? '?'} words in review`,
                         'Community read-only'
