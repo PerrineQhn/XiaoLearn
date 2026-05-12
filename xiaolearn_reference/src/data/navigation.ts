@@ -3,8 +3,11 @@ import { localizePath } from '../utils/locale';
 
 export interface NavItem {
   label: string;
+  /** Href du lien. Vide ('') si l'item ne sert qu'à ouvrir un sous-menu. */
   href: string;
   external?: boolean;
+  /** Sous-items affichés en dropdown au survol/clic. */
+  children?: NavItem[];
 }
 
 export interface FooterSection {
@@ -23,27 +26,39 @@ const APP_LOGIN_URL_FR = 'https://app.xiaolearn.com/login';
 const APP_BASE_URL_EN = 'https://app.xiaolearn.com?lang=en';
 const APP_LOGIN_URL_EN = 'https://app.xiaolearn.com/login?lang=en';
 
-// Nav principale — `Apprendre` est un hub regroupant Dictionnaire / Grammaire /
-// Nuances / Ressources. On garde aussi des accès directs aux 3 sections les
-// plus consultées (Dictionnaire, Grammaire, Nuances) pour réduire les clics
-// sur l'usage fréquent. `Blog` pointe vers la page hub avec catégories à
-// venir (placeholder "ouverture prochaine").
+// Nav principale — 5 entrées top-level. `Apprendre` est un dropdown qui
+// regroupe Leçons / Nuances / Grammaire pour rester clair sans saturer
+// la barre. `Application` pointe vers l'app React (autre domaine).
 const FR_MAIN_NAV: NavItem[] = [
-  { label: 'Apprendre', href: '/apprendre' },
+  { label: 'Application', href: APP_BASE_URL_FR, external: true },
   { label: 'Dictionnaire', href: '/dictionnaire' },
-  { label: 'Grammaire', href: '/grammaire' },
-  { label: 'Nuances', href: '/nuances' },
+  {
+    label: 'Apprendre',
+    href: '/apprendre',
+    children: [
+      { label: 'Leçons', href: '/apprendre' },
+      { label: 'Nuances', href: '/nuances' },
+      { label: 'Grammaire', href: '/grammaire' },
+    ],
+  },
+  { label: 'Tarif', href: '/#pricing' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Tarifs', href: '/#pricing' },
 ];
 
 const EN_MAIN_NAV: NavItem[] = [
-  { label: 'Learn', href: '/en/apprendre' },
+  { label: 'App', href: APP_BASE_URL_EN, external: true },
   { label: 'Dictionary', href: '/en/dictionnaire' },
-  { label: 'Grammar', href: '/en/grammaire' },
-  { label: 'Nuances', href: '/en/nuances' },
-  { label: 'Blog', href: '/en/blog' },
+  {
+    label: 'Learn',
+    href: '/en/apprendre',
+    children: [
+      { label: 'Lessons', href: '/en/apprendre' },
+      { label: 'Nuances', href: '/en/nuances' },
+      { label: 'Grammar', href: '/en/grammaire' },
+    ],
+  },
   { label: 'Pricing', href: '/en#pricing' },
+  { label: 'Blog', href: '/en/blog' },
 ];
 
 // CTA links shown next to the main nav (login + signup).
