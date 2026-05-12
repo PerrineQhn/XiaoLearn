@@ -364,7 +364,17 @@ const BriefingScreen = ({
         <h2>{t(language, 'personaHeading')}</h2>
         <p className="sim-v2-briefing-persona">
           <span className="sim-v2-briefing-persona-dot" aria-hidden>
-            P
+            <img
+              src="/profs/professeur_xiao_profil.png"
+              alt=""
+              className="sim-v2-briefing-persona-img"
+              onError={(e) => {
+                // Fallback "P" si l'image ne charge pas (404, prune, etc.)
+                const span = document.createElement('span');
+                span.textContent = 'P';
+                e.currentTarget.replaceWith(span);
+              }}
+            />
             <span className="sim-v2-briefing-persona-online" aria-hidden />
           </span>
           <span className="sim-v2-briefing-persona-text">
