@@ -3,9 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 export const prerender = true;
 
-// URL de l'application (le React/Vite build sera monté sous /app/)
-const APP_URL = '/app';
-const APP_LOGIN_URL = '/app/login';
+// L'app React vit sur son propre domaine Cloudflare Pages, pas sous /app/
+// du site marketing. Donc on link via URLs absolues. Le paramètre `?plan=lifetime`
+// est lu par App.tsx au mount pour basculer directement sur la SubscriptionPage
+// avec le bon plan présélectionné.
+const APP_URL = 'https://app.xiaolearn.com';
+const APP_LOGIN_URL = 'https://app.xiaolearn.com/login';
+const APP_LIFETIME_URL = 'https://app.xiaolearn.com?plan=lifetime';
 ---
 
 <BaseLayout title="Accueil">
@@ -314,7 +318,7 @@ const APP_LOGIN_URL = '/app/login';
             <span class="price-unit">une seule fois</span>
           </p>
           <p class="price-note price-note--inverse">Accès illimité pour toujours</p>
-          <a href={APP_URL} class="btn btn-pricing btn-pricing--filled btn-block">Débloquer l'accès à vie</a>
+          <a href={APP_LIFETIME_URL} class="btn btn-pricing btn-pricing--filled btn-block">Débloquer l'accès à vie</a>
           <p class="pricing-intro pricing-intro--inverse"><strong>Tout le plan Mensuel, plus :</strong></p>
           <ul class="pricing-features pricing-features--inverse">
             <li>Accès illimité à toutes les fonctionnalités</li>

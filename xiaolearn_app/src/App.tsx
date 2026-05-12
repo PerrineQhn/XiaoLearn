@@ -297,7 +297,16 @@ function App() {
   const { user, signOut } = useAuth();
   useUserProfileSync();
   const { entitlements, loading: entitlementsLoading } = useEntitlements();
-  const [view, setView] = useState<View>('home');
+  // Vue initiale : si l'URL contient ?plan=monthly ou ?plan=lifetime (lien
+  // depuis le site marketing), on ouvre directement la SubscriptionPage.
+  const [view, setView] = useState<View>(() => {
+    if (typeof window === 'undefined') return 'home';
+    try {
+      const plan = new URLSearchParams(window.location.search).get('plan');
+      if (plan === 'lifetime' || plan === 'monthly') return 'subscription';
+    } catch { /* ignore */ }
+    return 'home';
+  });
   const [language, setLanguage] = useState<Language>('fr');
   const [darkMode, setDarkMode] = useState(false);
   const colorTheme = 'asian-red';
