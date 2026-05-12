@@ -106,5 +106,124 @@ service cloud.firestore {
     match /emailPrefs/{uid} {
       allow read, write: if isSignedIn() && request.auth.uid == uid;
     }
+
+    // ========================================================================
+    //  COMMUNITY IDEAS (task #4) — propositions de la communauté.
+    //  Lecture publique pour utilisateurs connectés. Écriture restreinte :
+    //  l'auteur crée, l'auteur peut modifier title/description tant que le
+    //  status reste 'pending'. Le status est piloté par admin (console).
+    // ========================================================================
+
+    match /community_ideas/{ideaId} {
+      allow read: if isSignedIn();
+
+      // Création par n'importe quel user connecté, avec authorId == auth.uid
+      allow create: if isSignedIn()
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && request.resource.data.title.size() <= 80
+        && request.resource.data.description is string
+        && request.resource.data.description.size() > 0
+        && request.resource.data.description.size() <= 1500
+        && request.resource.data.status == 'pending'
+        && request.resource.data.voteCount == 0;
+
+      // Update :
+      //   - L'auteur peut éditer title/description/category si status == 'pending'
+      //   - N'importe quel user peut bumper voteCount (uniquement de ±1) — la
+      //     vraie validation se fait via la transaction côté sous-collection.
+      allow update: if isSignedIn() && (
+        // Cas 1 : l'auteur édite les champs textuels
+        (
+          resource.data.authorId == request.auth.uid
+          && resource.data.status == 'pending'
+          && request.resource.data.authorId == resource.data.authorId
+          && request.resource.data.status == resource.data.status
+          && request.resource.data.voteCount == resource.data.voteCount
+        )
+        ||
+        // Cas 2 : mise à jour du voteCount uniquement, par n'importe qui
+        (
+          request.resource.data.authorId == resource.data.authorId
+          && request.resource.data.title == resource.data.title
+          && request.resource.data.description == resource.data.description
+          && request.resource.data.category == resource.data.category
+          && request.resource.data.status == resource.data.status
+          && request.resource.data.voteCount is number
+          && (
+            request.resource.data.voteCount == resource.data.voteCount + 1
+            || request.resource.data.voteCount == resource.data.voteCount - 1
+          )
+        )
+      );
+
+      allow delete: if false;
+
+      // Sous-collection votes : un vote par user, idempotent
+      match /votes/{uid} {
+        allow read: if isSignedIn();
+        allow create: if isSignedIn()
+          && request.auth.uid == uid
+          && request.resource.data.uid == uid;
+        allow delete: if isSignedIn() && request.auth.uid == uid;
+        allow update: if false;
+      }
+    }
+
+    // ========================================================================
+    //  COMMUNITY ROADMAP (task #4) — jalons curatés en lecture seule.
+    // ========================================================================
+
+    match /community_roadmap/{milestoneId} {
+      allow read: if isSignedIn();
+      allow write: if false; // admin via console uniquement
+    }
+
+    // ========================================================================
+    //  CONVERSATIONS (task #4) — fils 1-1 entre deux apprenants.
+    //  convId = sort([uidA, uidB]).join('_').
+    // ========================================================================
+
+    match /conversations/{convId} {
+      allow read: if isSignedIn()
+        && request.auth.uid in resource.data.participantIds;
+
+      // Création : un participant doit être l'utilisateur courant
+      allow create: if isSignedIn()
+        && request.resource.data.participantIds is list
+        && request.resource.data.participantIds.size() == 2
+        && request.auth.uid in request.resource.data.participantIds;
+
+      // Update : les deux participants peuvent modifier (lastMessage, unreadCount).
+      allow update: if isSignedIn()
+        && request.auth.uid in resource.data.participantIds
+        && request.resource.data.participantIds == resource.data.participantIds;
+
+      allow delete: if false;
+
+      // Messages
+      match /messages/{msgId} {
+        allow read: if isSignedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/conversations/$(convId)).data.participantIds;
+
+        allow create: if isSignedIn()
+          && request.resource.data.senderId == request.auth.uid
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 2000
+          && request.auth.uid in get(/databases/$(database)/documents/conversations/$(convId)).data.participantIds;
+
+        // Update : autorisé seulement pour mettre à jour `readBy` (mark-as-read).
+        // On garde tous les autres champs intacts.
+        allow update: if isSignedIn()
+          && request.auth.uid in get(/databases/$(database)/documents/conversations/$(convId)).data.participantIds
+          && request.resource.data.text == resource.data.text
+          && request.resource.data.senderId == resource.data.senderId
+          && request.resource.data.sentAt == resource.data.sentAt;
+
+        allow delete: if false;
+      }
+    }
   }
 }

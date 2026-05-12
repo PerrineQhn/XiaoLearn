@@ -12,6 +12,8 @@ import GrammarDrillsPageV2 from './pages/GrammarDrillsPageV2';
 import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import AnnouncementsPage from './pages/AnnouncementsPage';
+import IdeasRoadmapPage from './pages/IdeasRoadmapPage';
+import ConversationsPage from './pages/ConversationsPage';
 import BattlesPage from './pages/BattlesPage';
 import BattleSessionPage from './pages/BattleSessionPage';
 import BattleSessionPageLocal from './pages/BattleSessionPageLocal';
@@ -150,6 +152,8 @@ export type View =
   // Phase 4 IA — coach de prononciation (Gemini multimodal audio, archi swappable)
   | 'pronunciation-coach'
   | 'community'
+  | 'ideas'
+  | 'messages'
   | 'battles'
   | 'battleSession'
   | 'battleSessionLocal'
@@ -1223,6 +1227,18 @@ function App() {
               ? { text: String(unreadAnnouncements), tone: 'unread' }
               : undefined
         },
+        {
+          id: 'ideas',
+          label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
+          iconSlug: 'culture',
+          fallback: '💡'
+        },
+        {
+          id: 'messages',
+          label: language === 'fr' ? 'Messages' : 'Messages',
+          iconSlug: 'culture',
+          fallback: '💬'
+        },
         { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
         {
           id: 'leaderboard',
@@ -1712,10 +1728,9 @@ function App() {
       );
       break;
     case 'community':
-      // L'item "Annonces" du sidebar pointe ici. On affiche la nouvelle page
-      // Annonces restylisée (cartes verticales full-width inspirées de
-      // Seonsaengnim). L'ancien CommunityPageV2 reste importé pour les futurs
-      // ajouts (Conversation / Idées / Roadmap → cf. tâche #4).
+      // L'item "Annonces" du sidebar pointe ici. On affiche la page Annonces
+      // restylisée (cartes verticales full-width inspirées de Seonsaengnim).
+      // CommunityPageV2 reste importé pour usage potentiel futur.
       content = (
         <AnnouncementsPage
           language={language}
@@ -1723,6 +1738,14 @@ function App() {
           onOpenAnnouncement={(id) => announcementsRead.markRead(id)}
         />
       );
+      break;
+    case 'ideas':
+      // Page Idées & Roadmap — propositions communautaires + roadmap curatée.
+      content = <IdeasRoadmapPage language={language} />;
+      break;
+    case 'messages':
+      // Messagerie 1-1 temps réel entre apprenants.
+      content = <ConversationsPage language={language} />;
       break;
     case 'battles':
       content = (
