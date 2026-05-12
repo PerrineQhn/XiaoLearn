@@ -110,8 +110,8 @@ const POST_BONNE_NUIT: BlogPost = {
   readingMinutes: 9,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1525094869226-aa19a3eb27ce?w=1600&q=80',
-  heroCaption: 'Une rue de Pékin la nuit — le moment idéal pour souhaiter 晚安',
+    'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1600&q=80',
+  heroCaption: 'Skyline de Shanghai la nuit — le moment idéal pour souhaiter 晚安',
   intro:
     'Bonne nuit en chinois, ce n\'est pas une seule formule mais tout un système : selon que tu parles à un ami, à ton compagnon ou à ton patron, le mot change. Cet article passe en revue chaque variante avec audio natif et précise quand l\'utiliser sans faire de faux pas.',
   featured: true,
@@ -428,8 +428,8 @@ const POST_BONJOUR_AVANCE: BlogPost = {
   readingMinutes: 9,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=80',
-  heroCaption: 'Hutong de Pékin — où tu entendras tout sauf 你好 entre voisins',
+    'https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=1600&q=80',
+  heroCaption: 'Tour Perle d\'Orient à Shanghai — où le mandarin moderne s\'invente chaque jour',
   intro:
     '你好 (nǐ hǎo) est ce qu\'on t\'apprend dans la première leçon de mandarin. Et c\'est correct. Mais c\'est aussi ce que ne dit jamais un Chinois quand il croise un proche ou un voisin. Petit tour des vraies salutations.',
   sections: [
@@ -593,7 +593,7 @@ const POST_FELICITATIONS: BlogPost = {
   readingMinutes: 9,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1600&q=80',
+    'https://images.unsplash.com/photo-1612201598945-f66a763965bd?w=1600&q=80',
   heroCaption: 'Toit traditionnel d\'un temple chinois — les célébrations ont une culture riche',
   intro:
     'Féliciter quelqu\'un en chinois, ce n\'est pas qu\'un mot — c\'est tout un système culturel avec ses formules, ses enveloppes rouges, ses codes. Voici le tour d\'horizon.',
@@ -807,8 +807,8 @@ const POST_HANZI: BlogPost = {
   readingMinutes: 11,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1571937484060-3a07e1f59c2b?w=1600&q=80',
-  heroCaption: 'Calligraphie chinoise traditionnelle — chaque trait a un sens et un ordre',
+    'https://images.unsplash.com/photo-1546638008-efbe0b62c730?w=1600&q=80',
+  heroCaption: 'Calligraphie chinoise en cours — chaque trait suit un ordre précis',
   intro:
     'Le mythe des caractères chinois « impossibles à apprendre » mérite d\'être déconstruit. Oui, il faut du temps. Non, ce n\'est pas insurmontable. La méthode des radicaux te fait gagner des années.',
   sections: [
@@ -969,8 +969,8 @@ const POST_4_TONS: BlogPost = {
   readingMinutes: 10,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1600&q=80',
-  heroCaption: 'Vue de Shanghai — où chaque ton mal placé peut transformer maman en cheval',
+    'https://images.unsplash.com/photo-1545038522-9bb451739ab9?w=1600&q=80',
+  heroCaption: 'Caractères chinois en gros plan — où chaque syllabe change de sens selon le ton',
   intro:
     'Le mandarin est une langue tonale. Cela signifie qu\'une même syllabe (par exemple "ma") peut avoir 5 significations totalement différentes selon la mélodie utilisée pour la prononcer. C\'est ce qui terrifie le plus les apprenants francophones — et à juste titre. Mais avec la bonne méthode, ça devient intuitif en 2-3 mois.',
   sections: [
@@ -1279,9 +1279,9 @@ const POST_HSK: BlogPost = {
 const POST_CPOP: BlogPost = {
   slug: 'apprendre-le-mandarin-avec-la-c-pop-mandopop',
   category: 'cpop',
-  title: 'C-Pop / Mandopop — 10 artistes pour apprendre le mandarin en chantant',
+  title: 'C-Pop / Mandopop — 15 artistes pour apprendre le mandarin en chantant',
   lead:
-    'La Mandopop offre des paroles claires, du vocabulaire émotionnel utile et une diction soignée. Voici 10 artistes pour t\'immerger sans douleur.',
+    'La Mandopop offre des paroles claires, du vocabulaire émotionnel utile et une diction soignée. Des classiques de Teresa Teng à la scène indé R&B (邹沛沛, DP龙猪) et au guofeng moderne (赵方婧), voici 15 artistes pour t\'immerger sans douleur.',
   publishedAt: '2026-05-07',
   readingMinutes: 7,
   author: DEFAULT_AUTHOR,
@@ -1392,6 +1392,60 @@ const POST_CPOP: BlogPost = {
       ]
     },
     {
+      title: 'La scène indé / R&B continentale (2020+)',
+      blocks: [
+        {
+          type: 'p',
+          text: 'Au-delà des stars mainstream, la scène indé chinoise produit des artistes au phrasé R&B/hip-hop/electro qui valent largement le détour. Diction généralement claire, vocabulaire émotionnel moderne et phrasé jeune.'
+        },
+        {
+          type: 'h3',
+          text: '11. 邹沛沛 (Pairy Zou)'
+        },
+        {
+          type: 'p',
+          text: 'Artiste continentale signée chez Warner Music. Son hit "沉溺 (Chénnì) — 你让我的心不再结冰", en duo avec Pank, cumule des dizaines de millions d\'écoutes. Voix claire, phrasé R&B contemporain. À écouter aussi : "红线 (Hóngxiàn) — RED LINE", "梦臆 (Mèngyì)".'
+        },
+        {
+          type: 'h3',
+          text: '12. Pank'
+        },
+        {
+          type: 'p',
+          text: 'Artiste indé R&B chinois, environ 528 000 auditeurs mensuels sur Spotify. Souvent en duo avec 邹沛沛 ("沉溺", "红线"). Sa discographie solo comprend "讨厌下雨天" (2025), "致盲" (2025), "空白" (2025) et l\'album "平行世界的游戏" (2021). Style intimiste, idéal pour les ballades à écoute répétée.'
+        },
+        {
+          type: 'h3',
+          text: '13. 赵露思 (Zhao Lusi / Rosy Zhao)'
+        },
+        {
+          type: 'p',
+          text: 'Actrice principalement (The Romance of Tiger and Rose, Hidden Love 偷偷藏不住), elle chante aussi les génériques de ses propres dramas. "只想把你偷偷藏好" (générique de Hidden Love) compte 30M+ d\'écoutes sur Spotify. C\'est une bonne porte d\'entrée si tu regardes ses cdramas en parallèle — le contexte aide à mémoriser les paroles.'
+        },
+        {
+          type: 'h3',
+          text: '14. DP龙猪 (Dragon Pig)'
+        },
+        {
+          type: 'p',
+          text: 'De son vrai nom 李龙飞 (Li Longfei), né en 1988, diplômé de l\'Université de Chengdu. Fondateur du label Loyalty Music (忠诚音乐). Reconnaissable à sa "voix noire" (黑嗓) qui marie R&B, hip-hop et electro. Hits notables : "全部都是你" (All About You, 2017, ~73M plays sur YouTube), "风吹一夏" (Feng Chui Yi Xia, 2021), "翠花". Plus exigeant pour l\'oreille (débit rapide, slang) — niveau intermédiaire+.'
+        },
+        {
+          type: 'h3',
+          text: '15. 赵方婧 (Zhao Fangjing / Wimi)'
+        },
+        {
+          type: 'p',
+          text: 'Née en 1997 à Nanning (Guangxi), Zhao Fangjing est la voix principale du collectif **音阙诗听** (Yin Que Shi Ting), spécialisé dans la pop "guofeng" (国风) — un style qui marie sonorités traditionnelles chinoises et production moderne. Son tube "芒种" (Mángzhòng, "Grain in Ear") cumule plus de 399 millions d\'écoutes sur YouTube. La série des "24 termes solaires" (二十四节气) avec 立冬, 谷雨, 霜降 est un excellent point d\'entrée pour découvrir le calendrier traditionnel chinois ET le vocabulaire poétique. Diction claire, idéal débutant-intermédiaire.'
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          text: 'Ces 5 artistes se trouvent sur Spotify, Apple Music, YouTube et NetEase Music. Les paroles sont disponibles sur QQ Music ou Musixmatch.'
+        }
+      ]
+    },
+    {
       title: 'Comment exploiter une chanson pour apprendre',
       blocks: [
         {
@@ -1424,7 +1478,7 @@ const POST_CHUNJIE: BlogPost = {
   readingMinutes: 11,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1535376472810-a3ce39bf8580?w=1600&q=80',
+    'https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?w=1600&q=80',
   heroCaption: 'Lanternes rouges de la Fête du Printemps — symbole universel du Nouvel An chinois',
   intro:
     'Si tu n\'as jamais vécu un 春节 (chūn jié) en Chine, tu n\'as pas vu la Chine. Cette fête est l\'équivalent émotionnel d\'un Noël et d\'un Nouvel An français combinés, étalés sur 15 jours, avec des règles, des superstitions et un vocabulaire spécifique. Tour d\'horizon.',
@@ -1548,8 +1602,8 @@ const POST_LE: BlogPost = {
   readingMinutes: 9,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1554034483-04fda0d3507b?w=1600&q=80',
-  heroCaption: 'Caractères chinois sur un mur — chaque particule a une logique cachée',
+    'https://images.unsplash.com/photo-1486303954368-398fea0e72cd?w=1600&q=80',
+  heroCaption: 'Pinceau de calligraphie sur papier — la grammaire chinoise est ancrée dans l\'écriture',
   intro:
     'Si tu apprends le mandarin depuis quelques mois, tu as probablement été confrontée à 了 et tu as probablement été perdue. Bonne nouvelle : ses règles ne sont pas si compliquées une fois qu\'on a compris la différence entre 了 verbal et 了 final de phrase.',
   sections: [
@@ -1669,8 +1723,8 @@ const POST_MESUREURS: BlogPost = {
   readingMinutes: 10,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1525351549836-c8e1bb0aaa6f?w=1600&q=80',
-  heroCaption: 'Marché traditionnel chinois — chaque objet a son propre mesureur',
+    'https://images.unsplash.com/photo-1707013533606-62919aa3aa29?w=1600&q=80',
+  heroCaption: 'Table chinoise garnie — chaque bol, plat, tasse a son mesureur dédié',
   intro:
     'Les classificateurs (量词 liàngcí), ou mesureurs, sont des particules qui s\'intercalent OBLIGATOIREMENT entre un nombre et un nom. C\'est l\'équivalent du "tasse de" dans "deux tasses de café" en français, sauf qu\'en chinois c\'est requis pour TOUS les noms.',
   sections: [
@@ -1965,7 +2019,7 @@ const POST_RESTAURANT: BlogPost = {
   readingMinutes: 9,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=1600&q=80',
+    'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1600&q=80',
   heroCaption: 'Restaurant chinois traditionnel — l\'écosystème complet à maîtriser',
   intro:
     'Manger au restaurant en Chine est une expérience essentielle mais peut intimider quand on débute. Voici la séquence complète, du moment où tu pousses la porte jusqu\'à l\'addition.',
@@ -2096,7 +2150,7 @@ const POST_PARTICULES_FINALES: BlogPost = {
   readingMinutes: 7,
   author: DEFAULT_AUTHOR,
   heroImage:
-    'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=1600&q=80',
+    'https://images.unsplash.com/photo-1542695807939-063af86fa22f?w=1600&q=80',
   heroCaption: 'Le chinois sur papier — chaque particule colore le ton de la phrase',
   intro:
     'En français, on monte la voix pour poser une question, on adoucit le ton pour suggérer, on appuie pour exclamer. En chinois, ces fonctions sont remplies par des PARTICULES écrites en fin de phrase. C\'est codé, c\'est clair, c\'est apprenable.',
