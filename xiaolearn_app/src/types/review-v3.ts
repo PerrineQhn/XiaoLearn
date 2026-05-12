@@ -88,6 +88,21 @@ export interface ReviewQuestion {
   correctIndex: number;
   explanationFr?: string;
   explanationEn?: string;
+  /**
+   * Hanzi à lire en audio (utilisé pour les questions de type "listening"
+   * sur le pinyin/tons). Résolu via `playHanziAudio(audioHanzi)`. Quand
+   * présent, on affiche un bouton 🔊 dans l'UI de la question.
+   */
+  audioHanzi?: string;
+  /**
+   * URL audio directe si pas un hanzi unique (phrases, dialogues).
+   */
+  audio?: string;
+  /**
+   * Si true, joue automatiquement l'audio au montage de la question
+   * (recommandé pour les exercices de discrimination de tons).
+   */
+  autoPlay?: boolean;
 }
 
 /**

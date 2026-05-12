@@ -22,7 +22,8 @@
  *   - S'appuie sur `completedLessonIds` (Set) pour ne proposer que les leçons
  *     déjà terminées.
  */
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import type { Language } from '../i18n';
 import type {
   LessonMasteryEntry,
@@ -242,7 +243,13 @@ const buildQuestionsForLessons = (
         choices: ex.choices,
         correctIndex: ex.correctIndex,
         explanationFr: ex.explanation,
-        explanationEn: ex.explanationEn
+        explanationEn: ex.explanationEn,
+        // Champs audio (questions "Écoute" du module Pinyin). Sans cette
+        // propagation, le bouton 🔊 ne s'affichait pas dans la SmartMix card
+        // et l'apprenant ne pouvait pas écouter le son à reconnaître.
+        audioHanzi: (ex as { audioHanzi?: string }).audioHanzi,
+        audio: (ex as { audio?: string }).audio,
+        autoPlay: (ex as { autoPlay?: boolean }).autoPlay
       });
       if (questions.length >= cap) break;
     }
@@ -370,6 +377,21 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
   };
 
   const currentQ = questions[cursor];
+
+  // Auto-play l'audio quand la question change ET qu'elle est marquée
+  // `autoPlay: true` (cas des discriminations de tons : on veut que
+  // l'apprenant entende le son immédiatement plutôt que de devoir cliquer).
+  // L'effet se déclenche aussi au "revealed=false" (nouvelle question),
+  // pas à chaque re-render.
+  useEffect(() => {
+    if (!currentQ?.autoPlay) return;
+    if (currentQ.audioHanzi) {
+      playHanziAudio(currentQ.audioHanzi).catch(() => {});
+    } else if (currentQ.audio) {
+      playAudioWithFallback(currentQ.audio).catch(() => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentQ?.id]);
 
   const submitAnswer = () => {
     if (!currentQ) return;
@@ -914,6 +936,28 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
                   ? currentQ.contextFr
                   : currentQ.contextEn ?? currentQ.contextFr}
               </p>
+            )}
+            {/* Bouton audio pour les questions "Écoute" (catégorie listening
+                du module Pinyin) — sans lui, l'apprenant ne peut pas
+                réellement écouter le son à identifier. Pour les questions
+                avec `audioHanzi`, on utilise playHanziAudio qui résout
+                automatiquement vers R2 via VITE_AUDIO_BASE_URL.
+                `autoPlay` joue le son une fois au montage de la question. */}
+            {(currentQ.audioHanzi || currentQ.audio) && (
+              <button
+                type="button"
+                className="rv3-q-audio-btn"
+                aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
+                onClick={() => {
+                  if (currentQ.audioHanzi) {
+                    playHanziAudio(currentQ.audioHanzi).catch(() => {});
+                  } else if (currentQ.audio) {
+                    playAudioWithFallback(currentQ.audio).catch(() => {});
+                  }
+                }}
+              >
+                🔊 {language === 'fr' ? 'Écouter' : 'Listen'}
+              </button>
             )}
 
             {currentQ.kind === 'order' ? (

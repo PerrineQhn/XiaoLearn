@@ -796,6 +796,31 @@
   border-radius: 12px;
 }
 
+/* Bouton 🔊 Écouter pour les questions Pinyin/listening qui ont un
+   audioHanzi ou audio à jouer. */
+.rv3-q-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rv3-border, rgba(216, 72, 62, 0.25));
+  background: var(--rv3-card-soft, #fff5f4);
+  color: var(--rv3-text, #2a2a2a);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  align-self: flex-start;
+}
+.rv3-q-audio-btn:hover {
+  background: color-mix(in srgb, var(--rv3-card-soft, #fff5f4) 60%, rgba(216, 72, 62, 0.15));
+  transform: translateY(-1px);
+}
+.rv3-q-audio-btn:active {
+  transform: translateY(0);
+}
+
 .rv3-choices {
   list-style: none;
   margin: 0;
