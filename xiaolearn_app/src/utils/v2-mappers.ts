@@ -434,61 +434,163 @@ export function buildDefaultEvaluation(level: 'hsk1' | 'hsk2' | 'hsk3' = 'hsk1')
 
 export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
   {
-    id: 'ann-reading-audio-player',
-    title: 'Player audio dans les Lectures — Normal / Lent',
-    titleEn: 'Audio player in Readings — Normal / Slow',
+    id: 'ann-audio-dict-2026-05',
+    title: 'Audio sur le dictionnaire',
+    titleEn: 'Audio on dictionary entries',
     body:
-      'Chaque texte de la page Lecture embarque maintenant un lecteur compact au-dessus de l\'article : ' +
-      'Play/Pause, barre de progression cliquable, retour au début, compteur de temps. Deux vitesses ' +
-      'au choix — Normal pour l\'immersion façon locuteur natif, Lent pour le shadowing syllabe par ' +
-      'syllabe. Tu peux basculer entre les deux en plein milieu d\'une écoute : le player se replace ' +
-      'automatiquement à la même position dans la nouvelle version. Voix Azure Neural haut de gamme, ' +
-      'à des kilomètres des TTS robotiques.',
+      'Chaque fiche de vocabulaire dans le dictionnaire dispose maintenant d\'un bouton 🔊 à côté du mot principal et de chaque phrase d\'exemple. Tu peux entendre la prononciation native (voix Cloudflare Workers AI) avant de tester ton oreille.',
     bodyEn:
-      'Every text in the Reading section now has a compact player above the article: Play/Pause, ' +
-      'clickable progress bar, restart, time counter. Two speeds — Normal for native-style immersion, ' +
-      'Slow for syllable-by-syllable shadowing. You can switch mid-listen and the player resumes ' +
-      'at the same spot in the new version. High-quality Azure Neural voice, light-years from robotic TTS.',
-    date: '2026-05-11',
-    tag: 'Lecture'
+      'Every vocabulary card in the dictionary now has a 🔊 button next to the main word and each example sentence. You can hear the native pronunciation (Cloudflare Workers AI voice) before testing your ear.',
+    date: '2026-05-12',
+    tag: 'Audio',
+    category: 'audio',
+    icon: '🔊',
+    pinned: true
   },
   {
-    id: 'ann-reading-tap-translate',
-    title: 'Lectures interactives — tape un mot, ajoute-le à tes flashcards',
-    titleEn: 'Interactive readings — tap any word, add it to your flashcards',
+    id: 'ann-smartmix-audio-2026-05',
+    title: 'SmartMix : audio sur les questions d\'écoute',
+    titleEn: 'SmartMix: audio on listening questions',
     body:
-      'Toute la page Lecture devient cliquable caractère par caractère. Tu tapes un hanzi (ou un mot ' +
-      'composé), tu obtiens son pinyin tonifié et sa traduction — d\'abord depuis nos leçons HSK (la ' +
-      'plus précise, contextualisée à la phrase), puis en fallback depuis CFDICT. Bouton ➕ pour ' +
-      'envoyer la carte dans tes flashcards perso en un clic, avec le titre de la lecture comme note. ' +
-      'En bonus : un mini-quiz QCM de 3 questions à la fin de chaque texte, qui rapporte +50 XP la ' +
-      'première fois et reste rejouable autant que tu veux. 33 textes du A1 au C2 — bonne lecture !',
+      'Les questions de type "Écoute le ton et identifie la bonne syllabe" jouent désormais l\'audio automatiquement, avec un bouton 🔊 pour relancer la lecture. Tes exercices de discrimination tonale deviennent réalistes.',
     bodyEn:
-      'The whole Reading page is now tappable character by character. Tap a hanzi (or compound word) ' +
-      'and you get its tone-marked pinyin plus a sentence-aware translation — first from our HSK lessons ' +
-      '(the precise one), then from CFDICT as a fallback. The ➕ button sends the card straight into ' +
-      'your personal flashcards with the reading title as a note. Bonus: a 3-question QCM mini-quiz at ' +
-      'the end of each text rewards +50 XP the first time and stays replayable. 33 texts from A1 to C2 — happy reading!',
+      'Listening questions ("hear the tone and pick the right syllable") now auto-play their audio with a 🔊 button to replay. Tone discrimination exercises become realistic.',
     date: '2026-05-11',
-    tag: 'Lecture'
+    tag: 'Révisions',
+    category: 'review',
+    icon: '🎧',
+    pinned: true
   },
   {
-    id: 'ann-1',
-    title: 'Nouvelle refonte Culture + Dictée',
+    id: 'ann-pinyin-quiz-2026-05',
+    title: 'Quiz Pinyin reformulés en langage clair',
+    titleEn: 'Pinyin quizzes rewritten in plain language',
+    body:
+      'Fini les "vélaire palatale" et "rétroflexe" dans les leçons Pinyin. Les énoncés ont été réécrits ("son du fond de la bouche", "langue plate puis recourbée"). 6 quiz de traduction non pertinents ont aussi été retirés.',
+    bodyEn:
+      'No more "velar palatal" or "retroflex" in Pinyin lessons. Quiz prompts have been rewritten with accessible language. 6 non-pertinent translation quizzes were also removed.',
+    date: '2026-05-10',
+    tag: 'Apprendre',
+    category: 'fix',
+    icon: '🔤'
+  },
+  {
+    id: 'ann-stripe-2026-05',
+    title: 'Abonnements XiaoLearn : Mensuel + Lifetime',
+    titleEn: 'XiaoLearn plans: Monthly + Lifetime',
+    body:
+      'Tu peux désormais souscrire à XiaoLearn Premium : 14€/mois ou 99€ à vie. Le paiement est sécurisé par Stripe, et débloque le Simulateur Prof. Xiao, les révisions illimitées et tous les mini-jeux.',
+    bodyEn:
+      'You can now subscribe to XiaoLearn Premium: €14/month or €99 lifetime. Payments are secured by Stripe and unlock Prof. Xiao Simulator, unlimited reviews, and all mini-games.',
+    date: '2026-05-08',
+    tag: 'Premium',
+    category: 'feature',
+    icon: '💎',
+    pinned: true
+  },
+  {
+    id: 'ann-cloudflare-2026-05',
+    title: 'XiaoLearn migre sur Cloudflare',
+    titleEn: 'XiaoLearn migrates to Cloudflare',
+    body:
+      'L\'app et le site tournent désormais sur Cloudflare Pages avec audios servis depuis Cloudflare R2 (CDN mondial). Résultat : chargement audio ~4× plus rapide et zéro coupure.',
+    bodyEn:
+      'The app and site now run on Cloudflare Pages with audio served from Cloudflare R2 (global CDN). Result: ~4× faster audio loading and zero outages.',
+    date: '2026-05-05',
+    tag: 'Infra',
+    category: 'fix',
+    icon: '⚡'
+  },
+  {
+    id: 'ann-prof-xiao-2026-04',
+    title: 'Page Prof. Xiao complète',
+    titleEn: 'Full Prof. Xiao page',
+    body:
+      'Le chat flottant a désormais une page complète avec presets par thème (grammaire, vocabulaire, culture) et prompts contextuels selon ta leçon en cours.',
+    bodyEn:
+      'The floating chat now has a full dedicated page with preset categories (grammar, vocabulary, culture) and contextual prompts based on your current lesson.',
+    date: '2026-04-18',
+    tag: 'Feature',
+    category: 'feature',
+    icon: '🤖'
+  },
+  {
+    id: 'ann-simulator-2026-04',
+    title: 'Simulateur de Situations',
+    titleEn: 'Situations Simulator',
+    body:
+      'Plonge dans des conversations interactives en chinois : commander au restaurant, prendre le métro, échanger avec un commerçant. Disponible avec Premium Lifetime.',
+    bodyEn:
+      'Dive into interactive Chinese conversations: order at a restaurant, take the metro, chat with a shopkeeper. Available with Premium Lifetime.',
+    date: '2026-04-12',
+    tag: 'Feature',
+    category: 'feature',
+    icon: '🎭'
+  },
+  {
+    id: 'ann-flashcards-v5-2026-04',
+    title: 'Flashcards : 3 grosses nouveautés',
+    titleEn: 'Flashcards: 3 big new features',
+    body:
+      'Mode mixte (reconnaissance + production), audio natif sur toutes les cartes, et système SRS basé sur la fluidité de réponse. Tes révisions sont enfin alignées avec la science.',
+    bodyEn:
+      'Mixed mode (recognition + production), native audio on all cards, and SRS based on response fluency. Your reviews are finally aligned with science.',
+    date: '2026-04-06',
+    tag: 'Flashcards',
+    category: 'flashcards',
+    icon: '🗂️'
+  },
+  {
+    id: 'ann-reviews-v3-2026-04',
+    title: 'Révisions multi-leçons',
+    titleEn: 'Multi-lesson reviews',
+    body:
+      'Le nouveau système de révision sélectionne intelligemment les leçons à revoir en fonction de ta maîtrise et de l\'oubli. Modes SmartMix, Daily, Weakness, Free.',
+    bodyEn:
+      'The new review system intelligently picks which lessons to revisit based on your mastery and forgetting curve. Modes: SmartMix, Daily, Weakness, Free.',
+    date: '2026-04-04',
+    tag: 'Révisions',
+    category: 'review',
+    icon: '📚'
+  },
+  {
+    id: 'ann-culture-dictee-2026-04',
+    title: 'Nouveaux parcours Culture + Dictée',
     titleEn: 'New Culture + Dictation paths',
-    body: '10 parcours au total — 2 nouveaux parcours Culture chinoise et Dictée ont été ajoutés.',
-    bodyEn: '10 paths in total — two new paths (Chinese Culture, Dictation) are live.',
-    date: '2026-04-18',
-    tag: 'Contenu'
+    body:
+      '10 parcours au total — 2 nouveaux parcours Culture chinoise (fêtes, philosophie, art) et Dictée (entraîne ton oreille à transcrire le mandarin) ont été ajoutés.',
+    bodyEn:
+      '10 paths in total — two new paths (Chinese Culture: festivals, philosophy, art) and Dictation (train your ear to transcribe Mandarin) are live.',
+    date: '2026-04-02',
+    tag: 'Contenu',
+    category: 'content',
+    icon: '🏮'
   },
   {
-    id: 'ann-2',
-    title: 'Nouvelle page Prof. Xiao',
-    titleEn: 'New Prof. Xiao page',
-    body: 'Le chat flottant a désormais une page complète avec presets par thème et prompts contextuels.',
-    bodyEn: 'The floating chat now has a full dedicated page with preset categories and contextual prompts.',
-    date: '2026-04-18',
-    tag: 'Feature'
+    id: 'ann-grammar-2026-03',
+    title: 'Refonte des fiches de grammaire',
+    titleEn: 'Grammar cards redesigned',
+    body:
+      'Chaque point grammatical possède maintenant une fiche dédiée avec exemples audio, exercices ciblés et lien vers les nuances associées. 200+ fiches sont disponibles.',
+    bodyEn:
+      'Each grammar point now has a dedicated card with audio examples, targeted exercises, and links to related nuances. 200+ cards available.',
+    date: '2026-03-22',
+    tag: 'Contenu',
+    category: 'content',
+    icon: '📖'
+  },
+  {
+    id: 'ann-streak-2026-03',
+    title: 'Streak jokers : protège ta série',
+    titleEn: 'Streak jokers: protect your streak',
+    body:
+      'Tu peux désormais utiliser un "joker" pour conserver ta série quand tu rates un jour. 1 joker gagné toutes les 7 sessions complétées.',
+    bodyEn:
+      'You can now spend a "joker" to keep your streak alive when you miss a day. 1 joker earned every 7 completed sessions.',
+    date: '2026-03-15',
+    tag: 'Gamification',
+    category: 'community',
+    icon: '🔥'
   }
 ];
 

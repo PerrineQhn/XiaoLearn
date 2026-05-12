@@ -9,9 +9,9 @@ import StructuredLessonPageV2 from './pages/StructuredLessonPageV2';
 // types/mappers exportés depuis ce module (via utils/v2-mappers).
 import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './pages/AiTutorPageV2';
 import GrammarDrillsPageV2 from './pages/GrammarDrillsPageV2';
-import GrammarPageV3 from './pages/GrammarPageV3';
 import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
+import AnnouncementsPage from './pages/AnnouncementsPage';
 import BattlesPage from './pages/BattlesPage';
 import BattleSessionPage from './pages/BattleSessionPage';
 import BattleSessionPageLocal from './pages/BattleSessionPageLocal';
@@ -140,7 +140,6 @@ export type View =
   // Nouveaux écrans V2
   | 'tutor'
   | 'drills'
-  | 'grammar-drills'
   | 'evaluation'
   // Phase 1B IA — correcteur d'écriture (Gemini structuré)
   | 'writing-corrector'
@@ -1200,10 +1199,6 @@ function App() {
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
-        // V12 — Lecture & Dialogue sortent d'Apprentissage Libre : ce sont
-        // désormais des entrées de premier niveau, accessibles directement.
-        { id: 'reading', label: language === 'fr' ? 'Lectures' : 'Readings', iconSlug: 'carnet-de-notes', fallback: '📖', icon: 'carnet-de-notes.png' },
-        { id: 'dialogue', label: language === 'fr' ? 'Dialogues' : 'Dialogues', iconSlug: 'discussion-sur-les-bulles', fallback: '💬', icon: 'discussion-sur-les-bulles.png' },
         { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
         { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
         // Onglets retirés (routes conservées pour deep links éventuels) :
@@ -1701,19 +1696,6 @@ function App() {
       break;
     }
     case 'drills':
-      // V13 — la page « Grammaire » bascule sur GrammarPageV3 : catalogue
-      // riche (catalog × niveau CECR), vue détail avec when/how/tips/
-      // pitfalls + exemples + mini-quiz QCM. L'ancien GrammarDrillsPageV2
-      // reste importé pour les deep-links (route 'grammar-drills').
-      content = (
-        <GrammarPageV3
-          language={language}
-          onBack={() => setView('home')}
-          onAwardXp={(amount) => dashboardState.awardXp(amount)}
-        />
-      );
-      break;
-    case 'grammar-drills':
       content = (
         <GrammarDrillsPageV2
           topics={DEFAULT_GRAMMAR_DRILLS}
@@ -1730,12 +1712,15 @@ function App() {
       );
       break;
     case 'community':
+      // L'item "Annonces" du sidebar pointe ici. On affiche la nouvelle page
+      // Annonces restylisée (cartes verticales full-width inspirées de
+      // Seonsaengnim). L'ancien CommunityPageV2 reste importé pour les futurs
+      // ajouts (Conversation / Idées / Roadmap → cf. tâche #4).
       content = (
-        <CommunityPageV2
+        <AnnouncementsPage
           language={language}
           announcements={DEFAULT_ANNOUNCEMENTS}
-          challenges={DEFAULT_CHALLENGES}
-          leaderboard={DEFAULT_LEADERBOARD}
+          onOpenAnnouncement={(id) => announcementsRead.markRead(id)}
         />
       );
       break;
@@ -1821,7 +1806,6 @@ function App() {
         <DialoguePageV2
           language={language}
           onBack={() => setView('home')}
-          onAwardXp={(amount) => dashboardState.awardXp(amount)}
         />
       );
       break;
@@ -1830,10 +1814,6 @@ function App() {
         <ReadingPageV2
           language={language}
           onBack={() => setView('home')}
-          personalFlashcards={
-            appAccess.canCreateCustomFlashcards ? personalFlashcards : undefined
-          }
-          onAwardXp={(amount) => dashboardState.awardXp(amount)}
         />
       );
       break;

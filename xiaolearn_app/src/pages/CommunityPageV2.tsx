@@ -22,6 +22,15 @@ import '../styles/community-v2.css';
 
 export type CommunityV2Language = 'fr' | 'en';
 
+export type CommunityV2AnnouncementCategory =
+  | 'feature'
+  | 'content'
+  | 'fix'
+  | 'community'
+  | 'audio'
+  | 'review'
+  | 'flashcards';
+
 export interface CommunityV2Announcement {
   id: string;
   title: string;
@@ -30,6 +39,12 @@ export interface CommunityV2Announcement {
   bodyEn?: string;
   date: string; // ISO
   tag?: string;
+  /** Emoji à afficher dans le carré coloré à gauche. Si absent, fallback selon la catégorie. */
+  icon?: string;
+  /** Catégorie sémantique (pilote la couleur du carré d'icône). */
+  category?: CommunityV2AnnouncementCategory;
+  /** Si true, affiche un 📌 et remonte la carte en haut de liste. */
+  pinned?: boolean;
 }
 
 export interface CommunityV2Challenge {
