@@ -1,4 +1,9 @@
 ---
+// Prerender forcé : génère toutes les pages de détail nuance au build-time.
+// Sans ça, getStaticPaths() est ignoré sous output:'server' et la page
+// crashe au runtime SSR.
+export const prerender = true;
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../components/HSKLevelBadge.astro';

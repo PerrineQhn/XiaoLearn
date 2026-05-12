@@ -1,0 +1,162 @@
+---
+/**
+ * AudioButton — bouton 🔊 client-side qui joue un audio depuis R2.
+ *
+ * Deux modes :
+ *  - `hanzi` + `level` (ex. "你好", "hsk1") → joue audio/hsk1/hsk1_你好.mp3
+ *  - `hanzi` seul (ex. exemple de phrase) → joue audio/examples/<fnv-hash>.mp3
+ *
+ * Tout le runtime est dans le <script> client : le bouton ne fait rien au
+ * SSR, le hash FNV-1a + l'URL sont calculés au clic. Permet un build 100%
+ * statique compatible prerender Cloudflare.
+ *
+ * Audios servis depuis audio.xiaolearn.com (Cloudflare R2). CORS déjà
+ * configuré pour autoriser xiaolearn.com.
+ */
+
+interface Props {
+  /** Hanzi à lire (mot principal, ou phrase d'exemple). */
+  hanzi: string;
+  /** Si défini ("hsk1" … "hsk7"), tente le pattern audio/hsk{N}/hsk{N}_<hanzi>.mp3.
+   *  Sinon, utilise le pattern audio/examples/<fnv-hash>.mp3 (phrases). */
+  level?: string;
+  /** Classe CSS optionnelle pour styler le bouton selon le contexte. */
+  class?: string;
+  /** Taille du bouton : "sm" (exemple) ou "lg" (hanzi principal). */
+  size?: 'sm' | 'lg';
+}
+
+const { hanzi, level, class: className = '', size = 'sm' } = Astro.props;
+const sizeClass = size === 'lg' ? 'audio-btn--lg' : 'audio-btn--sm';
+---
+
+<button
+  type="button"
+  class={`audio-btn ${sizeClass} ${className}`}
+  data-hanzi={hanzi}
+  data-level={level ?? ''}
+  aria-label={`Écouter ${hanzi}`}
+  title="Écouter la prononciation"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+  </svg>
+</button>
+
+<style>
+  .audio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--accent-red, #d8483e) 40%, transparent);
+    background: color-mix(in srgb, var(--accent-red, #d8483e) 8%, var(--bg-primary, #fff));
+    color: var(--accent-red, #d8483e);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  .audio-btn--sm {
+    width: 32px;
+    height: 32px;
+  }
+  .audio-btn--sm svg {
+    width: 16px;
+    height: 16px;
+  }
+  .audio-btn--lg {
+    width: 44px;
+    height: 44px;
+  }
+  .audio-btn:hover {
+    background: color-mix(in srgb, var(--accent-red, #d8483e) 20%, var(--bg-primary, #fff));
+    transform: scale(1.08);
+  }
+  .audio-btn:active {
+    transform: scale(0.95);
+  }
+  .audio-btn[data-playing="true"] {
+    background: var(--accent-red, #d8483e);
+    color: #fff;
+  }
+</style>
+
+<script>
+  /**
+   * Hash FNV-1a 32-bit → base36. DOIT rester identique à l'implémentation
+   * Node dans xiaolearn_app/scripts/generate-all-audio.mjs et React
+   * (xiaolearn_app/src/utils/audio.ts) pour que les hash matchent les
+   * fichiers MP3 effectivement uploadés sur R2.
+   */
+  function hashExampleName(text: string): string {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < text.length; i++) {
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 0x01000193);
+    }
+    return (h >>> 0).toString(36);
+  }
+
+  const AUDIO_BASE_URL = 'https://audio.xiaolearn.com';
+
+  function resolveAudioUrl(hanzi: string, level: string): string[] {
+    const clean = hanzi.replace(/\d+$/, '').trim();
+    if (level) {
+      // Mot principal : on tente .mp3 puis .wav en fallback
+      return [
+        `${AUDIO_BASE_URL}/audio/${level}/${level}_${encodeURIComponent(clean)}.mp3`,
+        `${AUDIO_BASE_URL}/audio/${level}/${level}_${encodeURIComponent(clean)}.wav`
+      ];
+    }
+    // Exemple (phrase) : hash FNV-1a
+    if (clean.length >= 2) {
+      return [`${AUDIO_BASE_URL}/audio/examples/${hashExampleName(clean)}.mp3`];
+    }
+    return [];
+  }
+
+  async function playFirstAvailable(urls: string[]): Promise<HTMLAudioElement | null> {
+    for (const url of urls) {
+      try {
+        // Petit HEAD pour vérifier que le fichier existe avant de lancer le
+        // <audio>. Évite que l'élément audio reste bloqué sur un 404.
+        const head = await fetch(url, { method: 'HEAD' });
+        if (!head.ok) continue;
+        const audio = new Audio(url);
+        await audio.play();
+        return audio;
+      } catch {
+        // Continue vers la prochaine URL
+      }
+    }
+    return null;
+  }
+
+  // Délégation globale : un seul listener pour tous les .audio-btn de la page,
+  // y compris ceux ajoutés dynamiquement. Plus économique que d'attacher un
+  // listener par bouton.
+  document.addEventListener('click', async (event) => {
+    const target = event.target as HTMLElement;
+    const btn = target.closest<HTMLButtonElement>('.audio-btn');
+    if (!btn) return;
+
+    const hanzi = btn.dataset.hanzi ?? '';
+    const level = btn.dataset.level ?? '';
+    if (!hanzi) return;
+
+    btn.dataset.playing = 'true';
+    const urls = resolveAudioUrl(hanzi, level);
+    const audio = await playFirstAvailable(urls);
+    if (audio) {
+      audio.addEventListener('ended', () => {
+        btn.removeAttribute('data-playing');
+      });
+      audio.addEventListener('error', () => {
+        btn.removeAttribute('data-playing');
+      });
+    } else {
+      btn.removeAttribute('data-playing');
+    }
+  });
+</script>

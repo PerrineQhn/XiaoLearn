@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import HSKLevelBadge from '../../components/HSKLevelBadge.astro';
+import AudioButton from '../../components/AudioButton.astro';
 import { getHSKLevelInfo } from '../../types/hsk';
 import { formatHskId, getHskEntryById } from '../../utils/hskCatalog';
 
@@ -59,6 +60,7 @@ const definedTermSchema = {
           <header class="word-header">
             <div class="word-title">
               <h1 class="hanzi">{entry.hanzi}</h1>
+              <AudioButton hanzi={entry.hanzi} level={entry.level} size="lg" class="word-title-audio" />
               <HSKLevelBadge level={entry.level} size="lg" />
             </div>
             <p class="pinyin">{entry.pinyin}</p>
@@ -88,7 +90,10 @@ const definedTermSchema = {
               <h3>Exemples</h3>
               {entry.examples.map(example => (
                 <div class="example">
-                  <p class="example-chinese">{example.chinese}</p>
+                  <div class="example-line">
+                    <p class="example-chinese">{example.chinese}</p>
+                    <AudioButton hanzi={example.chinese} size="sm" class="example-audio" />
+                  </div>
                   <p class="example-pinyin">{example.pinyin}</p>
                   <p class="example-translation">{example.translationFr || example.translationEn || example.translation}</p>
                 </div>
@@ -187,10 +192,30 @@ const definedTermSchema = {
 
   .word-title {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-md);
+  }
+
+  /* Bouton audio à côté du hanzi principal — centré sur la baseline visuelle
+     du caractère plutôt que sur le haut, pour rester équilibré. */
+  .word-title-audio {
+    margin-top: 0.4rem;
+  }
+
+  /* Bouton audio à côté de la phrase d'exemple — aligné en ligne avec le
+     hanzi de l'exemple. */
+  .example-line {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+  .example-line .example-chinese {
+    margin: 0;
+  }
+  .example-audio {
+    flex-shrink: 0;
   }
 
   .hanzi {

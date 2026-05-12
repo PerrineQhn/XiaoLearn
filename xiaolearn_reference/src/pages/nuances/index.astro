@@ -1,4 +1,8 @@
 ---
+// Prerender forcé : catalogue de nuances statique, géné au build-time.
+// Évite le crash SSR Cloudflare Workers (même problème que /grammaire).
+export const prerender = true;
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import NuanceCard from '../../components/NuanceCard.astro';
