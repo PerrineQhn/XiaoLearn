@@ -1,0 +1,124 @@
+/*
+ * app-topbar.css — barre de navigation supérieure de l'app
+ * --------------------------------------------------------
+ * Sticky en haut de main-content, contient :
+ *   - GlobalSearchBar (centrée)
+ *   - NotificationBell (à droite, override du fixed pour s'intégrer)
+ */
+
+.xl-app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: rgba(255, 250, 243, 0.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.xl-app-topbar-search {
+  display: flex;
+  justify-content: center;
+}
+
+.xl-app-topbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Override : cloche en flow normal au lieu de fixed quand dans la topbar */
+.xl-app-topbar .xl-notif-root {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+
+/* ----- Barre de recherche --------------------------------------------- */
+.xl-global-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 999px;
+  height: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.xl-global-search:focus-within {
+  border-color: #c6302c;
+  box-shadow: 0 0 0 3px rgba(198, 48, 44, 0.12);
+}
+.xl-global-search-icon {
+  color: #9aa0a6;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.xl-global-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #1f2937;
+  padding: 0;
+  min-width: 0;
+}
+.xl-global-search-input::placeholder {
+  color: #9aa0a6;
+}
+.xl-global-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ----- Responsive ------------------------------------------------------ */
+@media (max-width: 820px) {
+  .xl-app-topbar {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .xl-global-search { height: 36px; padding: 0 12px; }
+  .xl-global-search-input { font-size: 13px; }
+}
+
+@media (max-width: 540px) {
+  .xl-app-topbar {
+    padding: 8px 10px;
+  }
+  .xl-global-search-input::placeholder {
+    /* Sur petit écran, on tronque le placeholder pour qu'il rentre */
+    font-size: 12.5px;
+  }
+}
+
+/* ----- Dark mode ------------------------------------------------------- */
+.dark-mode .xl-app-topbar,
+[data-theme="dark"] .xl-app-topbar {
+  background: rgba(20, 18, 17, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+.dark-mode .xl-global-search,
+[data-theme="dark"] .xl-global-search {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark-mode .xl-global-search-input,
+[data-theme="dark"] .xl-global-search-input {
+  color: #f3f4f6;
+}
+.dark-mode .xl-global-search-input::placeholder,
+[data-theme="dark"] .xl-global-search-input::placeholder {
+  color: #9ca3af;
+}

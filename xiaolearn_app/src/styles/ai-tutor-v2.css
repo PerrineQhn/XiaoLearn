@@ -229,6 +229,176 @@
   border-color: var(--at2-primary);
 }
 
+/* ====================================================================== */
+/* Sidebar conversations (gauche) — style Seonsaengnim                     */
+/* ====================================================================== */
+.ai-tutor-v2 .at2-sidebar--convs {
+  padding: 12px;
+  gap: 10px;
+}
+
+.ai-tutor-v2 .at2-new-conv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+  border: none;
+  border-radius: var(--at2-radius-sm);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.ai-tutor-v2 .at2-new-conv-btn:hover {
+  background: #a82723;
+  transform: translateY(-1px);
+}
+.ai-tutor-v2 .at2-new-conv-plus {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ai-tutor-v2 .at2-convs-empty {
+  text-align: center;
+  padding: 18px 8px;
+  color: var(--at2-text-muted);
+}
+.ai-tutor-v2 .at2-convs-empty-line {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.ai-tutor-v2 .at2-convs-empty-line + .at2-convs-empty-line {
+  margin-top: 6px;
+}
+.ai-tutor-v2 .at2-convs-empty-cta {
+  font-weight: 600;
+  color: var(--at2-text);
+}
+
+.ai-tutor-v2 .at2-convs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+.ai-tutor-v2 .at2-conv-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  border-radius: var(--at2-radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: var(--at2-text);
+  text-align: left;
+  transition: background 0.12s ease;
+}
+.ai-tutor-v2 .at2-conv-item:hover {
+  background: var(--at2-border);
+}
+.ai-tutor-v2 .at2-conv-item.is-active {
+  background: var(--at2-gold-soft, #fbe9b8);
+  color: #7a5a0b;
+  font-weight: 600;
+}
+.ai-tutor-v2 .at2-conv-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-conv-delete {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--at2-text-muted);
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.12s ease, background 0.12s ease, color 0.12s ease;
+  cursor: pointer;
+}
+.ai-tutor-v2 .at2-conv-item:hover .at2-conv-delete,
+.ai-tutor-v2 .at2-conv-item:focus-within .at2-conv-delete {
+  opacity: 1;
+}
+.ai-tutor-v2 .at2-conv-delete:hover {
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+}
+
+/* ====================================================================== */
+/* Welcome bubble (empty state, message d'accueil)                         */
+/* ====================================================================== */
+.ai-tutor-v2 .at2-welcome-bubble {
+  background: var(--at2-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--at2-text);
+  white-space: pre-line;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Catégories en pills horizontales (déplacées depuis la sidebar) */
+.ai-tutor-v2 .at2-empty-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.ai-tutor-v2 .at2-category--pill {
+  border: 1px solid var(--at2-border);
+  background: var(--at2-card-bg);
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.ai-tutor-v2 .at2-category--pill:hover {
+  border-color: var(--at2-primary, #c6302c);
+}
+.ai-tutor-v2 .at2-category--pill.is-active {
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+  border-color: var(--at2-primary, #c6302c);
+}
+.ai-tutor-v2 .at2-empty-prompts {
+  display: grid;
+  gap: 6px;
+}
+/* Override at2-empty constraints — laisse plus de place */
+.ai-tutor-v2 .at2-empty {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 560px;
+  color: var(--at2-text-muted);
+  padding-top: 12px;
+}
+
 /* Conversation */
 .ai-tutor-v2 .at2-conversation {
   background: var(--at2-card-bg);

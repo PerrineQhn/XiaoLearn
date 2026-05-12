@@ -68,6 +68,13 @@ export interface AiTutorV2ContextChip {
   promptEn?: string;
 }
 
+/** Aperçu d'une conversation passée affichée dans la sidebar gauche. */
+export interface AiTutorV2ConversationPreview {
+  id: string;
+  title: string;
+  updatedAt: number;
+}
+
 export interface AiTutorPageV2Props {
   language?: AiTutorV2Language;
   messages: AiTutorV2Message[];
@@ -89,6 +96,18 @@ export interface AiTutorPageV2Props {
    * fallback sur l'emoji.
    */
   userPhotoURL?: string | null;
+
+  // ----- Historique des conversations (sidebar gauche) -----
+  /** Liste des conversations passées, triée par updatedAt desc. */
+  conversations?: AiTutorV2ConversationPreview[];
+  /** ID de la conversation actuellement ouverte. null = nouvelle conv. */
+  currentConvId?: string | null;
+  /** Démarre une nouvelle conversation vide. */
+  onNewConversation?: () => void;
+  /** Bascule sur une conversation existante. */
+  onSelectConversation?: (id: string) => void;
+  /** Supprime une conversation. */
+  onRemoveConversation?: (id: string) => void;
 }
 
 // ============================================================================
@@ -112,9 +131,17 @@ const COPY = {
     contextTitle: 'Rapide',
     typing: 'Prof. Xiao rédige…',
     emptyHeadline: 'Commence ta conversation',
-    emptySub: 'Pose une question ou choisis un prompt dans la barre latérale.',
+    emptySub: 'Pose une question ou choisis un prompt ci-dessous.',
     you: 'Toi',
-    prof: 'Prof. Xiao'
+    prof: 'Prof. Xiao',
+    conversationsTitle: 'Conversations',
+    newConversation: 'Nouvelle conversation',
+    noConversations: 'Aucune conversation pour le moment.',
+    askFirstQuestion: 'Pose ta première question !',
+    questionsPrompt: 'Pose tes questions 24/7.',
+    welcomeMessage:
+      'Bonjour ! Je suis le Prof. Xiao.\n\nPose-moi n\'importe quelle question sur le chinois — grammaire, vocabulaire, prononciation, culture… je suis là pour toi 24h/24 ! 😊',
+    deleteConv: 'Supprimer cette conversation'
   },
   en: {
     title: 'Prof. Xiao',
@@ -132,9 +159,17 @@ const COPY = {
     contextTitle: 'Quick',
     typing: 'Prof. Xiao is typing…',
     emptyHeadline: 'Start a conversation',
-    emptySub: 'Ask a question or pick a prompt from the sidebar.',
+    emptySub: 'Ask a question or pick a prompt below.',
     you: 'You',
-    prof: 'Prof. Xiao'
+    prof: 'Prof. Xiao',
+    conversationsTitle: 'Conversations',
+    newConversation: 'New conversation',
+    noConversations: 'No conversation yet.',
+    askFirstQuestion: 'Ask your first question!',
+    questionsPrompt: 'Ask me anything, 24/7.',
+    welcomeMessage:
+      'Hello! I\'m Prof. Xiao.\n\nAsk me anything about Chinese — grammar, vocabulary, pronunciation, culture… I\'m here for you 24/7! 😊',
+    deleteConv: 'Delete this conversation'
   }
 } as const;
 
@@ -348,7 +383,12 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
     promptCategories,
     contextChips = [],
     onBack,
-    userPhotoURL = null
+    userPhotoURL = null,
+    conversations = [],
+    currentConvId = null,
+    onNewConversation,
+    onSelectConversation,
+    onRemoveConversation
   } = props;
 
   const categories = useMemo(
@@ -447,37 +487,64 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
 
       {/* 3-column layout */}
       <div className="at2-layout">
-        {/* Left : prompt categories */}
-        <aside className="at2-sidebar">
-          <div className="at2-sidebar-title">{t(language, 'categoriesTitle')}</div>
-          <div className="at2-categories">
-            {categories.map((c) => (
-              <button
-                key={c.key}
-                className={`at2-category ${categoryKey === c.key ? 'is-active' : ''}`}
-                onClick={() => setCategoryKey(c.key)}
-              >
-                <span aria-hidden>{c.icon ?? '•'}</span>
-                <span>{language === 'en' && c.labelEn ? c.labelEn : c.label}</span>
-              </button>
-            ))}
-          </div>
+        {/* Left : historique des conversations (façon Seonsaengnim) */}
+        <aside className="at2-sidebar at2-sidebar--convs">
+          <button
+            type="button"
+            className="at2-new-conv-btn"
+            onClick={() => onNewConversation?.()}
+          >
+            <span className="at2-new-conv-plus" aria-hidden="true">+</span>
+            <span>{t(language, 'newConversation')}</span>
+          </button>
 
-          {activeCategory && (
-            <div className="at2-prompts">
-              {activeCategory.prompts.map((p) => (
-                <button
-                  key={p.id}
-                  className="at2-prompt"
-                  onClick={() =>
-                    handlePromptClick(language === 'en' && p.bodyEn ? p.bodyEn : p.body)
-                  }
-                  type="button"
-                >
-                  <strong>{language === 'en' && p.titleEn ? p.titleEn : p.title}</strong>
-                </button>
-              ))}
+          {conversations.length === 0 ? (
+            <div className="at2-convs-empty">
+              <p className="at2-convs-empty-line">
+                {t(language, 'noConversations')}
+              </p>
+              <p className="at2-convs-empty-line at2-convs-empty-cta">
+                {t(language, 'askFirstQuestion')}
+              </p>
             </div>
+          ) : (
+            <ul className="at2-convs-list" role="list">
+              {conversations.map((c) => {
+                const isActive = c.id === currentConvId;
+                return (
+                  <li key={c.id}>
+                    <button
+                      type="button"
+                      className={`at2-conv-item ${isActive ? 'is-active' : ''}`}
+                      onClick={() => onSelectConversation?.(c.id)}
+                    >
+                      <span className="at2-conv-title">{c.title}</span>
+                      {onRemoveConversation && (
+                        <span
+                          role="button"
+                          tabIndex={0}
+                          aria-label={t(language, 'deleteConv')}
+                          className="at2-conv-delete"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onRemoveConversation(c.id);
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              onRemoveConversation(c.id);
+                            }
+                          }}
+                        >
+                          ×
+                        </span>
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </aside>
 
@@ -485,8 +552,45 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
         <section className="at2-conversation">
           {messages.length === 0 ? (
             <div className="at2-empty">
-              <h3>{t(language, 'emptyHeadline')}</h3>
-              <p>{t(language, 'emptySub')}</p>
+              {/* Bulle d'accueil du Prof. Xiao — affichée même sans message envoyé */}
+              <div className="at2-welcome-bubble">
+                {t(language, 'welcomeMessage')}
+              </div>
+
+              {/* Catégories de prompts (anciennement dans la sidebar) déplacées
+                  en pills au-dessus, et liste des prompts de la catégorie active
+                  juste en dessous. */}
+              <div className="at2-empty-categories" role="tablist">
+                {categories.map((c) => (
+                  <button
+                    key={c.key}
+                    role="tab"
+                    aria-selected={categoryKey === c.key}
+                    className={`at2-category at2-category--pill ${categoryKey === c.key ? 'is-active' : ''}`}
+                    onClick={() => setCategoryKey(c.key)}
+                    type="button"
+                  >
+                    <span aria-hidden>{c.icon ?? '•'}</span>
+                    <span>{language === 'en' && c.labelEn ? c.labelEn : c.label}</span>
+                  </button>
+                ))}
+              </div>
+              {activeCategory && (
+                <div className="at2-empty-prompts">
+                  {activeCategory.prompts.map((p) => (
+                    <button
+                      key={p.id}
+                      className="at2-prompt"
+                      onClick={() =>
+                        handlePromptClick(language === 'en' && p.bodyEn ? p.bodyEn : p.body)
+                      }
+                      type="button"
+                    >
+                      <strong>{language === 'en' && p.titleEn ? p.titleEn : p.title}</strong>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           ) : (
             <div className="at2-messages">

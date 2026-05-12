@@ -69,8 +69,10 @@ import FloatingTimer from './components/FloatingTimer';
 import { StreakMilestoneToast } from './components/StreakBonus';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { NotificationsProvider, useNotifications } from './contexts/NotificationsContext';
-import NotificationBell from './components/NotificationBell';
 import NotificationToasts from './components/NotificationToasts';
+import AppTopBar from './components/AppTopBar';
+import './styles/app-topbar.css';
+import { useChatConversations } from './hooks/useChatConversations';
 import { useNotificationEvents } from './hooks/useNotificationEvents';
 import LoginModal from './components/Auth/LoginModal';
 import UserProfile from './components/Auth/UserProfile';
@@ -832,9 +834,28 @@ function App() {
   );
 
   // --- État AI Tutor (messages contrôlés côté parent) ----------------------
+  // L'historique des conversations Prof. Xiao est persisté en localStorage via
+  // useChatConversations. Quand l'utilisateur poste un message, on met à jour
+  // `tutorMessages` localement puis on sync vers le hook (upsert).
+  const tutorConvs = useChatConversations();
   const [tutorMessages, setTutorMessages] = useState<AiTutorV2Message[]>([]);
   const [tutorTyping, setTutorTyping] = useState(false);
   const [tutorMode, setTutorMode] = useState<AiTutorV2Mode>('balanced');
+
+  // Quand l'utilisateur sélectionne une conversation depuis la sidebar,
+  // recharger ses messages dans l'état local.
+  useEffect(() => {
+    setTutorMessages(tutorConvs.currentMessages);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tutorConvs.currentConvId]);
+
+  // Quand `tutorMessages` change, propager vers le hook (qui persiste).
+  // Ignore les états vides pour ne pas écraser une conv existante au mount.
+  useEffect(() => {
+    if (tutorMessages.length === 0) return;
+    tutorConvs.upsertCurrentMessages(tutorMessages);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tutorMessages]);
 
   // Hints injectés en préambule du message utilisateur pour orienter le ton
   // de la réponse Gemini selon le mode choisi (Strict / Équilibré / Joueur).
@@ -932,12 +953,23 @@ function App() {
     [language, tutorMessages]
   );
 
-  // "Nouvelle conversation" : on remet l'historique à vide. Le bouton est
-  // exposé par AiTutorPageV2 quand `onClear` est passé en prop.
+  // "Nouvelle conversation" : on déselectionne la conv courante (la prochaine
+  // saisie créera une nouvelle conv via upsert) et on vide l'état local.
   const handleTutorClear = useCallback(() => {
     setTutorMessages([]);
     setTutorTyping(false);
-  }, []);
+    tutorConvs.createNew();
+  }, [tutorConvs]);
+
+  // Bascule sur une conv existante : le useEffect ci-dessus rechargera les
+  // messages depuis le hook.
+  const handleTutorSelectConv = useCallback(
+    (id: string) => {
+      setTutorTyping(false);
+      tutorConvs.selectConversation(id);
+    },
+    [tutorConvs]
+  );
 
   // --- Liste plate de tous les mots déjà vus (pour le deck Flashcards V2) --
   const allFlashcardItems = useMemo<LessonItem[]>(() => {
@@ -1654,6 +1686,15 @@ function App() {
           onClear={handleTutorClear}
           onSend={handleTutorSend}
           userPhotoURL={user?.photoURL ?? null}
+          conversations={tutorConvs.conversations.map((c) => ({
+            id: c.id,
+            title: c.title,
+            updatedAt: c.updatedAt
+          }))}
+          currentConvId={tutorConvs.currentConvId}
+          onNewConversation={handleTutorClear}
+          onSelectConversation={handleTutorSelectConv}
+          onRemoveConversation={tutorConvs.removeConversation}
         />
       );
       break;
@@ -2240,17 +2281,24 @@ function App() {
         </div>
       </aside>
 
-      {/* Main Content Area */}
+      {/* Main Content Area — topbar sticky en haut puis contenu */}
       <main className="main-content">
+        <AppTopBar
+          language={language === 'en' ? 'en' : 'fr'}
+          onSearch={(q) => {
+            // Pour le MVP : on stocke la query en sessionStorage et on
+            // redirige vers le dictionnaire qui la lira au mount.
+            try {
+              window.sessionStorage.setItem('xl_search_query', q);
+            } catch {
+              /* ignore */
+            }
+            setView('dictionary');
+          }}
+          onNavigate={(v) => setView(v as typeof view)}
+        />
         {content}
       </main>
-
-      {/* Cloche de notifications — flottante en haut-droite, présente sur
-          toutes les pages. Navigation optionnelle sur clic d'une notif. */}
-      <NotificationBell
-        language={language === 'en' ? 'en' : 'fr'}
-        onNavigate={(v) => setView(v as typeof view)}
-      />
 
       {/* Toasts transients en bas-droite — flashent à chaque push() */}
       <NotificationToasts
