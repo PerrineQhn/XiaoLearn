@@ -297,13 +297,27 @@ function App() {
   const { user, signOut } = useAuth();
   useUserProfileSync();
   const { entitlements, loading: entitlementsLoading } = useEntitlements();
-  // Vue initiale : si l'URL contient ?plan=monthly ou ?plan=lifetime (lien
-  // depuis le site marketing), on ouvre directement la SubscriptionPage.
+  // Vue initiale : ouvre la SubscriptionPage si l'utilisateur arrive avec :
+  //   - ?plan=monthly|lifetime (lien depuis le site marketing)
+  //   - pathname /subscription (redirection retour Stripe Checkout — success ou cancel)
+  //   - ?status=success|cancelled (retour Stripe legacy)
   const [view, setView] = useState<View>(() => {
     if (typeof window === 'undefined') return 'home';
     try {
-      const plan = new URLSearchParams(window.location.search).get('plan');
-      if (plan === 'lifetime' || plan === 'monthly') return 'subscription';
+      const params = new URLSearchParams(window.location.search);
+      const plan = params.get('plan');
+      const status = params.get('status');
+      const path = window.location.pathname;
+      if (
+        plan === 'lifetime' ||
+        plan === 'monthly' ||
+        status === 'success' ||
+        status === 'cancelled' ||
+        path === '/subscription' ||
+        path.startsWith('/subscription/')
+      ) {
+        return 'subscription';
+      }
     } catch { /* ignore */ }
     return 'home';
   });
