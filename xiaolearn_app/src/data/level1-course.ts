@@ -1295,7 +1295,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « a »",
+        "prompt": "Quel est le son représenté par « a » ?",
         "choices": [
           "son « a » ouvert",
           "son proche de « o »",
@@ -1330,7 +1330,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « o »",
+        "prompt": "Quel est le son représenté par « o » ?",
         "choices": [
           "son proche de « o »",
           "son « a » ouvert",
@@ -1365,7 +1365,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « e »",
+        "prompt": "Quel est le son représenté par « e » ?",
         "choices": [
           "son central, différent du « é »",
           "son « a » ouvert",
@@ -1400,7 +1400,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « i »",
+        "prompt": "Quel est le son représenté par « i » ?",
         "choices": [
           "son « i »",
           "son « a » ouvert",
@@ -1435,7 +1435,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « u »",
+        "prompt": "Quel est le son représenté par « u » ?",
         "choices": [
           "son « ou »",
           "son « a » ouvert",
@@ -1470,7 +1470,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « ü »",
+        "prompt": "Quel est le son représenté par « ü » ?",
         "choices": [
           "son « u » (comme en français)",
           "son « a » ouvert",
@@ -1504,7 +1504,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « mā / má / mǎ / mà »",
+        "prompt": "Que représentent les syllabes « mā / má / mǎ / mà » ?",
         "choices": [
           "La même syllabe avec 4 tons (on verra les tons ensuite).",
           "son « a » ouvert",
@@ -1539,7 +1539,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « nǐ »",
+        "prompt": "Que signifie « nǐ » ?",
         "choices": [
           "toi",
           "son « a » ouvert",
@@ -1574,7 +1574,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « lǜ »",
+        "prompt": "Que signifie « lǜ » ?",
         "choices": [
           "vert",
           "son « a » ouvert",
@@ -1611,7 +1611,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « b / p »",
+        "prompt": "Comment se prononcent les consonnes « b / p » ?",
         "choices": [
           "paires non aspirée / aspirée",
           "série rétroflexe",
@@ -1646,7 +1646,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « d / t »",
+        "prompt": "Comment se prononcent les consonnes « d / t » ?",
         "choices": [
           "paires non aspirée / aspirée",
           "série rétroflexe",
@@ -1681,7 +1681,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « g / k »",
+        "prompt": "Comment se prononcent les consonnes « g / k » ?",
         "choices": [
           "paires non aspirée / aspirée",
           "série rétroflexe",
@@ -1716,7 +1716,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « zh / ch / sh »",
+        "prompt": "Comment se prononcent les consonnes « zh / ch / sh » ?",
         "choices": [
           "série rétroflexe",
           "paires non aspirée / aspirée",
@@ -1751,7 +1751,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « z / c / s »",
+        "prompt": "Comment se prononcent les consonnes « z / c / s » ?",
         "choices": [
           "série alvéolaire",
           "paires non aspirée / aspirée",
@@ -1786,7 +1786,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « j / q / x »",
+        "prompt": "Comment se prononcent les consonnes « j / q / x » ?",
         "choices": [
           "série palatale",
           "paires non aspirée / aspirée",
@@ -1820,7 +1820,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « bā / pā »",
+        "prompt": "Comment se prononcent les consonnes « bā / pā » ?",
         "choices": [
           "ba / pa (différence surtout sur le souffle).",
           "paires non aspirée / aspirée",
@@ -1854,7 +1854,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « zhōng / zōng »",
+        "prompt": "Comment se prononcent les consonnes « zhōng / zōng » ?",
         "choices": [
           "zh vs z : deux sons différents.",
           "paires non aspirée / aspirée",
@@ -1889,7 +1889,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « qù »",
+        "prompt": "Que signifie « qù » ?",
         "choices": [
           "aller",
           "paires non aspirée / aspirée",
@@ -1926,7 +1926,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « mā »",
+        "prompt": "Que signifie « mā » ?",
         "choices": [
           "mère",
           "chanvre",
@@ -1962,7 +1962,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « má »",
+        "prompt": "Que signifie « má » ?",
         "choices": [
           "chanvre",
           "mère",
@@ -1998,7 +1998,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « mǎ »",
+        "prompt": "Que signifie « mǎ » ?",
         "choices": [
           "cheval",
           "mère",
@@ -2034,7 +2034,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « mà »",
+        "prompt": "Que signifie « mà » ?",
         "choices": [
           "gronder",
           "mère",
@@ -2070,7 +2070,7 @@ export const level1LessonWordBank: Record<string, LessonItem[]> = {
         }
       ],
       "quiz": {
-        "prompt": "Selectionne la bonne traduction pour « ma »",
+        "prompt": "Que signifie « ma » ?",
         "choices": [
           "particule de question (souvent neutre)",
           "mère",
