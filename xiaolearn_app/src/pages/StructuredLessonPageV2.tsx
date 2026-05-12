@@ -755,10 +755,17 @@ const LearnSectionView = ({
           type="button"
           className="lv2-learn-ask-ai-btn"
           onClick={handleAskAi}
-          aria-label={language === 'en' ? 'Ask AI about this section' : 'Demander à l\'IA sur cette section'}
+          aria-label={
+            language === 'en'
+              ? 'Ask Prof. Xiao to explain this lesson'
+              : "Demander à Prof. Xiao d'expliquer la leçon"
+          }
         >
-          <span aria-hidden="true">🤖</span>
-          <span>{language === 'en' ? 'Ask AI to explain' : 'Demander à l\'IA d\'expliquer'}</span>
+          <span>
+            {language === 'en'
+              ? 'Ask Prof. Xiao to explain the lesson'
+              : "Demander à Prof. Xiao d'expliquer la leçon"}
+          </span>
         </button>
       </div>
     </article>
@@ -1124,7 +1131,7 @@ const ExerciseCard = ({
                 })
               }
             >
-              🤖 {language === 'en' ? 'Ask AI: why?' : 'Demander à l\'IA : pourquoi ?'}
+              {language === 'en' ? 'Ask Prof. Xiao: why?' : 'Demander à Prof. Xiao : pourquoi ?'}
             </button>
           )}
         </div>
@@ -1316,7 +1323,7 @@ const OrderExerciseCard = ({
                 })
               }
             >
-              🤖 {language === 'en' ? 'Ask AI: why?' : 'Demander à l\'IA : pourquoi ?'}
+              {language === 'en' ? 'Ask Prof. Xiao: why?' : 'Demander à Prof. Xiao : pourquoi ?'}
             </button>
           )}
         </div>
