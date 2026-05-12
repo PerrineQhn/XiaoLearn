@@ -130,6 +130,18 @@ const stats = {
     .level-overview {
       grid-template-columns: repeat(2, 1fr);
     }
+    .search-section { padding: var(--spacing-lg); }
+  }
+
+  @media (max-width: 540px) {
+    .level-overview {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-sm);
+    }
+    .search-section {
+      padding: var(--spacing-md);
+      border-radius: var(--radius-lg);
+    }
   }
 </style>
 

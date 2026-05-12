@@ -249,6 +249,7 @@ const relatedEntries = data.relatedGrammar
   @media (max-width: 900px) {
     .article-layout {
       grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
     }
 
     .article-sidebar {
@@ -261,5 +262,11 @@ const relatedEntries = data.relatedGrammar
       flex: 1;
       min-width: 200px;
     }
+  }
+
+  @media (max-width: 540px) {
+    /* Téléphone : fiche grammaire compacte */
+    .article-sidebar { flex-direction: column; }
+    .sidebar-card { min-width: 0; padding: var(--spacing-md); }
   }
 </style>

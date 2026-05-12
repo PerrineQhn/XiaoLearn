@@ -390,6 +390,7 @@ const definedTermSchema = {
   @media (max-width: 900px) {
     .word-layout {
       grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
     }
 
     .word-sidebar {
@@ -399,5 +400,51 @@ const definedTermSchema = {
     .hanzi {
       font-size: 3rem;
     }
+  }
+
+  @media (max-width: 820px) {
+    /* Tablette portrait : carte principale moins large, padding interne réduit */
+    .word-main { padding: var(--spacing-xl); }
+    .word-header {
+      margin-bottom: var(--spacing-xl);
+      padding-bottom: var(--spacing-lg);
+    }
+    .hanzi { font-size: 2.75rem; }
+    .pinyin { font-size: 1.25rem; }
+    .translation { font-size: 1.1rem; }
+    .example { padding: var(--spacing-md); }
+    .example-chinese { font-size: 1.1rem; }
+  }
+
+  @media (max-width: 540px) {
+    /* Téléphone : compact, hanzi lisible sans déborder */
+    .word-main {
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-lg);
+    }
+    .word-title {
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .hanzi { font-size: 2.25rem; }
+    .pinyin { font-size: 1.05rem; }
+    .translation { font-size: 1rem; }
+    .word-main h3 { font-size: 1rem; }
+    .info-card,
+    .tags-card,
+    .nav-card { padding: var(--spacing-md); }
+    .info-card h4,
+    .tags-card h4 { font-size: 0.8rem; margin-bottom: 0.6rem; }
+    .info-card dl { gap: 0.4rem 0.7rem; }
+    .alt-translations li {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.65rem;
+    }
+    .example { padding: 0.75rem; }
+    .example-chinese { font-size: 1rem; }
+    .example-pinyin { font-size: 0.85rem; }
+    .example-translation { font-size: 0.85rem; }
+    .entry-link { padding: 0.55rem 0.65rem; }
+    .entry-value { font-size: 0.88rem; }
   }
 </style>

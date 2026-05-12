@@ -1,5 +1,4 @@
 ---
-export const prerender = true;
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import ExerciseQuiz from '../../../components/ExerciseQuiz.astro';
@@ -430,6 +429,13 @@ if (exerciseQuestions.length > 0) pageSections.push({ id: 'exercice-application'
   @media (max-width: 900px) {
     .article-layout {
       grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
     }
+  }
+
+  @media (max-width: 540px) {
+    /* Téléphone : fiche point grammatical compactée */
+    .article-content,
+    .article-sidebar > * { padding: var(--spacing-md) !important; }
   }
 </style>

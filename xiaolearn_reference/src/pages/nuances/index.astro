@@ -356,4 +356,11 @@ const sortedNuances = allNuances.sort((a, b) => {
       grid-column: auto;
     }
   }
+
+  @media (max-width: 540px) {
+    /* Téléphone : tip + intro compactés */
+    .tip { padding: 0.85rem 1rem; }
+    .tip p { font-size: 0.85rem; }
+    .filter-grid { gap: 0.6rem; }
+  }
 </style>
