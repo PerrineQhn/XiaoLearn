@@ -48,11 +48,16 @@ const MS_PER_DAY = 24 * 60 * 60 * 1000;
 /**
  * Override local pour débloquer toutes les leçons sur des comptes spécifiques
  * sans activer toutes les fonctionnalités premium.
+ *
+ * Vidé pour la prod (2026-05-12) — laisser des displayNames ici signifierait
+ * que n'importe quel user qui s'inscrit avec le même nom aurait un accès
+ * gratuit aux leçons. Pour débloquer un compte admin, passer désormais par
+ * Firestore (entitlements.app.isLifetime: true) ou le DevModeToggle.
  */
 const LESSON_UNLOCK_OVERRIDE = {
   emails: [] as string[],
   uids: [] as string[],
-  displayNames: ['Perrine Qhn'] as string[]
+  displayNames: [] as string[]
 };
 
 const normalizeIdentity = (value: string | null | undefined) => (value ?? '').trim().toLowerCase();
