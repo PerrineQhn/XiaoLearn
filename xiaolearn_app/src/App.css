@@ -144,11 +144,20 @@ body {
 }
 
 /* Zone défilable qui contient les sections de nav.
-   Permet au .sidebar-footer d'être toujours visible en bas. */
+   Permet au .sidebar-footer d'être toujours visible en bas.
+   `-webkit-overflow-scrolling: touch` et `overscroll-behavior: contain`
+   sont indispensables sur iPad/tablette : sans ça, le scroll touch ne se
+   déclenche pas dans le conteneur (le browser scroll la page parent à la
+   place) ou il "fuit" et fait scroller la page sous-jacente. */
 .sidebar-scroll {
   flex: 1 1 auto;
   overflow-y: auto;
   min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  /* Réserve d'espace pour pouvoir scroller jusqu'au dernier item sans qu'il
+     soit collé contre le footer sticky. */
+  padding-bottom: var(--spacing-sm);
 }
 
 .sidebar::before {
@@ -3748,17 +3757,42 @@ select:focus {
     grid-template-columns: 1fr;
   }
 
+  /* Sur mobile, la sidebar est empilée au-dessus du contenu et scrolle avec
+     la page principale (donc pas besoin de viewport-height + container
+     scrollable interne). */
   .sidebar {
     position: relative;
     width: 100%;
     height: auto;
+    max-height: none;
+    overflow: visible;
     box-shadow: none;
+  }
+
+  .sidebar-scroll {
+    overflow: visible;
+    flex: none;
   }
 
   .main-content {
     max-width: 100%;
     margin: 0;
     padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+/* iPad / tablette en mode portrait (768–1024px) : la sidebar reste sticky
+   sur le côté mais peut dépasser la hauteur de la fenêtre si le user a
+   beaucoup d'items de nav (Lifetime : Exclusif Simulateur + Apprentissage
+   libre + Réglages + …). On laisse le layout desktop mais on s'assure que
+   la zone `.sidebar-scroll` scroll bien au touch (les overscroll-behavior
+   et -webkit-overflow-scrolling sont déjà sur la règle générale). */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    /* Garantit que la sidebar n'excède jamais la hauteur du viewport, donc
+       .sidebar-scroll prend bien le reste de l'espace. */
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height — exclut la barre URL mobile */
   }
 }
 
