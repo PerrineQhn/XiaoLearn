@@ -23,20 +23,26 @@ const APP_LOGIN_URL_FR = 'https://app.xiaolearn.com/login';
 const APP_BASE_URL_EN = 'https://app.xiaolearn.com?lang=en';
 const APP_LOGIN_URL_EN = 'https://app.xiaolearn.com/login?lang=en';
 
-// Nav principale — concise. Culture est intégrée comme catégorie du Blog.
-// Blog retiré tant que la route /blog n'existe pas côté Astro (créerait un
-// lien mort vers la home par fallback SSR).
+// Nav principale — `Apprendre` est un hub regroupant Dictionnaire / Grammaire /
+// Nuances / Ressources. On garde aussi des accès directs aux 3 sections les
+// plus consultées (Dictionnaire, Grammaire, Nuances) pour réduire les clics
+// sur l'usage fréquent. `Blog` pointe vers la page hub avec catégories à
+// venir (placeholder "ouverture prochaine").
 const FR_MAIN_NAV: NavItem[] = [
+  { label: 'Apprendre', href: '/apprendre' },
   { label: 'Dictionnaire', href: '/dictionnaire' },
   { label: 'Grammaire', href: '/grammaire' },
   { label: 'Nuances', href: '/nuances' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Tarifs', href: '/#pricing' },
 ];
 
 const EN_MAIN_NAV: NavItem[] = [
+  { label: 'Learn', href: '/en/apprendre' },
   { label: 'Dictionary', href: '/en/dictionnaire' },
   { label: 'Grammar', href: '/en/grammaire' },
   { label: 'Nuances', href: '/en/nuances' },
+  { label: 'Blog', href: '/en/blog' },
   { label: 'Pricing', href: '/en#pricing' },
 ];
 
