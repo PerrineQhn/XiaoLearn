@@ -21,21 +21,21 @@ const app = initializeApp(firebaseConfig);
 // Initialiser les services
 export const auth = getAuth(app);
 
-// Firestore : on initialise avec experimentalAutoDetectLongPolling activé
-// pour contourner les bugs WebChannel sur Safari, certains adblockers, et
-// proxies d'entreprise. Symptôme du bug sans cette option :
-//   - RPC 'Listen' stream transport errored
-//   - Failed to load resource: /channel status 400
-//   - onSnapshot() ne reçoit jamais les data, useEntitlements retourne null
-// La REST API marche pendant ce temps (vu via fetch direct), confirmant que
-// c'est uniquement le transport WebChannel qui plante. L'option fait que le
-// SDK détecte automatiquement et bascule en long-polling HTTP si WebChannel
-// échoue → compatible Safari et adblockers.
+// Firestore : `experimentalForceLongPolling` force le long-polling HTTP
+// dès le début (vs auto-detect qui tente WebChannel d'abord). Nécessaire
+// parce que Safari Intelligent Tracking Prevention (ITP) bloque
+// AGRESSIVEMENT toutes les requêtes cross-origin vers firestore.googleapis.com,
+// y compris la phase de détection auto. En forçant le long-polling, on
+// évite complètement le WebChannel et on n'a qu'un simple POST HTTP qui
+// passe sans souci.
+//
+// Trade-off : long-polling est légèrement plus latent (~200ms supplémentaires
+// sur le premier sync) mais c'est imperceptible en pratique.
 //
 // Documentation Firebase :
-// https://firebase.google.com/docs/reference/js/firestore_.firestoresettings#firestoresettingsexperimentalautodetectlongpolling
+// https://firebase.google.com/docs/reference/js/firestore_.firestoresettings#firestoresettingsexperimentalforcelongpolling
 export const db = initializeFirestore(app, {
-  experimentalAutoDetectLongPolling: true
+  experimentalForceLongPolling: true
 });
 
 export const storage = getStorage(app);
