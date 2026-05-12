@@ -96,7 +96,12 @@ export function loadDialogueManifest(speed: AudioSpeed = 'normal'): Promise<Dial
     return empty;
   }
 
-  const url = speed === 'slow' ? '/audio/dialogues-slow/manifest.json' : '/audio/dialogues/manifest.json';
+  // Le manifest est un fichier statique stocké aux côtés des MP3. Il faut
+  // donc le fetcher depuis la MÊME base URL que les audios (R2 en prod, local
+  // en dev), sinon le browser cherchera sur app.xiaolearn.com où le dossier
+  // /audio/ a été pruné → 404.
+  const path = speed === 'slow' ? '/audio/dialogues-slow/manifest.json' : '/audio/dialogues/manifest.json';
+  const url = resolveManifestUrl(path);
   const promise = fetch(url, { cache: 'no-cache' })
     .then((r) => (r.ok ? (r.json() as Promise<DialogueAudioManifest>) : {}))
     .catch(() => ({} as DialogueAudioManifest))
@@ -186,7 +191,10 @@ export function loadReadingManifest(speed: AudioSpeed = 'normal'): Promise<Readi
     return empty;
   }
 
-  const url = speed === 'slow' ? '/audio/readings-slow/manifest.json' : '/audio/readings/manifest.json';
+  // Manifest readings : même logique que dialogues — fetch via R2 base URL
+  // pour fonctionner même quand public/audio/ a été pruné du build.
+  const path = speed === 'slow' ? '/audio/readings-slow/manifest.json' : '/audio/readings/manifest.json';
+  const url = resolveManifestUrl(path);
   const promise = fetch(url, { cache: 'no-cache' })
     .then((r) => (r.ok ? (r.json() as Promise<ReadingAudioManifest>) : {}))
     .catch(() => ({} as ReadingAudioManifest))

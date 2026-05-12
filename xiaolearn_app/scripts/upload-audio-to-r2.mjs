@@ -95,7 +95,12 @@ async function* walkAudioFiles(dir) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) {
       yield* walkAudioFiles(full);
-    } else if (/\.(mp3|wav|ogg|m4a)$/i.test(entry.name)) {
+    } else if (/\.(mp3|wav|ogg|m4a|json)$/i.test(entry.name)) {
+      // .json inclus pour uploader les manifests (dialogues/manifest.json,
+      // readings/manifest.json, etc.) qui sont indispensables côté app pour
+      // découvrir les segments audio. Sans eux, dialogue-audio.ts reçoit un
+      // manifest vide et l'app affiche "Audio non encore généré" sur tous
+      // les textes et dialogues, alors que les MP3 sont bien sur R2.
       yield full;
     }
   }
@@ -108,6 +113,7 @@ const contentTypeFor = (path) => {
   if (path.endsWith('.wav')) return 'audio/wav';
   if (path.endsWith('.ogg')) return 'audio/ogg';
   if (path.endsWith('.m4a')) return 'audio/mp4';
+  if (path.endsWith('.json')) return 'application/json';
   return 'application/octet-stream';
 };
 
