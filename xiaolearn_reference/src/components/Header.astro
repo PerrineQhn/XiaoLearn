@@ -1,6 +1,6 @@
 ---
 import { externalLinks, getMainNav, getCtaLinks } from '../data/navigation';
-import { getLocaleSwitchPath, localizePath, type Locale } from '../utils/locale';
+import { localizePath, type Locale } from '../utils/locale';
 
 interface Props {
   locale?: Locale;
@@ -10,15 +10,15 @@ const { locale = 'fr' } = Astro.props;
 const mainNav = getMainNav(locale);
 const ctaLinks = getCtaLinks(locale);
 
+// Le sélecteur de langue a été déplacé vers le footer. Les variables qui
+// le concernaient (frHref, enHref, languageSwitchLabel) ont été retirées.
+
 const currentQuery = Astro.url.searchParams.get('q') || '';
 const homeHref = localizePath('/', locale);
 const searchAction = locale === 'en' ? '/en/dictionnaire' : '/recherche';
 const searchLabel = locale === 'en' ? 'Search the website' : 'Rechercher sur le site';
 const mobileSearchPlaceholder = locale === 'en' ? 'Search...' : 'Rechercher...';
 const mobileSearchButton = locale === 'en' ? 'Search' : 'Rechercher';
-const languageSwitchLabel = locale === 'en' ? 'Choose interface language' : "Choisir la langue de l'interface";
-const frHref = getLocaleSwitchPath(Astro.url.pathname, 'fr');
-const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
 ---
 
 <header class="header">
@@ -69,11 +69,6 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
     </nav>
 
     <div class="header-actions">
-      <div class="lang-switch" role="group" aria-label={languageSwitchLabel}>
-        <a href={frHref} class={`lang-link ${locale === 'fr' ? 'active' : ''}`}>FR</a>
-        <span class="lang-separator">/</span>
-        <a href={enHref} class={`lang-link ${locale === 'en' ? 'active' : ''}`}>EN</a>
-      </div>
       {ctaLinks.map(cta => (
         <a
           href={cta.href}
@@ -115,11 +110,6 @@ const enHref = getLocaleSwitchPath(Astro.url.pathname, 'en');
       />
       <button type="submit" class="mobile-search-btn">{mobileSearchButton}</button>
     </form>
-
-    <div class="mobile-locale">
-      <a href={frHref} class={`mobile-nav-link locale ${locale === 'fr' ? 'active' : ''}`}>Francais (FR)</a>
-      <a href={enHref} class={`mobile-nav-link locale ${locale === 'en' ? 'active' : ''}`}>English (EN)</a>
-    </div>
 
     <nav class="mobile-nav">
       {mainNav.map(item => (
