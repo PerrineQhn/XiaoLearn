@@ -1,0 +1,506 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  BLOG_POSTS,
+  getBlogPost,
+  BLOG_CATEGORY_LABEL,
+} from '../../data/blog-posts';
+
+export async function getStaticPaths() {
+  return BLOG_POSTS.map((post) => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = getBlogPost(slug ?? '');
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const formatDate = (iso: string) => {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch {
+    return iso;
+  }
+};
+
+const canonicalUrl = `https://xiaolearn.com/blog/${post.slug}`;
+
+const slugify = (text: string): string =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+---
+
+<BaseLayout title={post.title} description={post.lead} canonical={canonicalUrl}>
+  <article class="post">
+    <header class="post-header container">
+      <nav class="post-breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/blog">← Retour au blog</a>
+        <span class="post-breadcrumb-sep">·</span>
+        <span class="post-breadcrumb-current">{post.title}</span>
+      </nav>
+
+      <div class="post-meta-top">
+        <span class="post-cat">📖 {BLOG_CATEGORY_LABEL[post.category]}</span>
+        <span class="post-meta-item">⏱ {post.readingMinutes} min de lecture</span>
+        <span class="post-meta-item">👁 {post.views} vues</span>
+      </div>
+
+      <h1 class="post-title">{post.title}</h1>
+      <p class="post-lead">{post.lead}</p>
+
+      <div class="post-author-row">
+        <div class="post-author">
+          {post.author.avatar ? (
+            <img src={post.author.avatar} alt="" class="post-author-avatar" />
+          ) : (
+            <div class="post-author-avatar post-author-avatar--initial" aria-hidden="true">
+              {post.author.name.charAt(0)}
+            </div>
+          )}
+          <div class="post-author-info">
+            <span class="post-author-name">{post.author.name}</span>
+            <span class="post-author-date">Publié le {formatDate(post.publishedAt)}</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="post-share-btn"
+          onclick={`navigator.clipboard?.writeText(window.location.href); this.textContent='✓ Lien copié';`}
+        >
+          🔗 Partager
+        </button>
+      </div>
+
+      {post.heroImage && (
+        <figure class="post-hero">
+          <img src={post.heroImage} alt="" />
+          {post.heroCaption && <figcaption>{post.heroCaption}</figcaption>}
+        </figure>
+      )}
+    </header>
+
+    <div class="post-body container">
+      {/* Sommaire latéral sticky */}
+      <aside class="post-toc">
+        <header class="post-toc-label">SOMMAIRE</header>
+        <ol>
+          {post.sections.map((s) => (
+            <li>
+              <a href={`#${slugify(s.title)}`}>{s.title}</a>
+            </li>
+          ))}
+        </ol>
+      </aside>
+
+      {/* Contenu de l'article */}
+      <div class="post-content">
+        {post.intro && <p class="post-intro">{post.intro}</p>}
+
+        {post.sections.map((section) => (
+          <section class="post-section" id={slugify(section.title)}>
+            <h2>{section.title}</h2>
+            {section.blocks.map((block) => {
+              if (block.type === 'p') return <p>{block.text}</p>;
+              if (block.type === 'h3') return <h3>{block.text}</h3>;
+              if (block.type === 'list') {
+                return (
+                  <ul>
+                    {block.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                );
+              }
+              if (block.type === 'ordered') {
+                return (
+                  <ol>
+                    {block.items.map((item) => <li>{item}</li>)}
+                  </ol>
+                );
+              }
+              if (block.type === 'quote') {
+                return (
+                  <blockquote>
+                    {block.text}
+                    {block.author && <cite>— {block.author}</cite>}
+                  </blockquote>
+                );
+              }
+              if (block.type === 'callout') {
+                return <aside class={`post-callout post-callout--${block.tone ?? 'info'}`}>{block.text}</aside>;
+              }
+              if (block.type === 'example') {
+                return (
+                  <div class="post-example">
+                    <span class="post-example-hanzi">{block.hanzi}</span>
+                    <span class="post-example-pinyin">{block.pinyin}</span>
+                    <span class="post-example-translation">{block.translationFr}</span>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </section>
+        ))}
+
+        <section class="post-cta">
+          <h3>Continue d'apprendre le mandarin</h3>
+          <p>Le niveau A1 complet est gratuit sur XiaoLearn. Pas de carte bancaire requise pour commencer.</p>
+          <div class="post-cta-buttons">
+            <a href="https://app.xiaolearn.com" class="btn btn-primary">Créer mon compte gratuit</a>
+            <a href="/apprendre" class="btn btn-ghost">Explorer les guides →</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding-bottom: var(--spacing-3xl);
+  }
+
+  .post-header {
+    padding-top: var(--spacing-xl);
+    max-width: 920px;
+  }
+
+  .post-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+  }
+  .post-breadcrumb a {
+    color: var(--text-secondary);
+  }
+  .post-breadcrumb a:hover { color: var(--primary-red); }
+  .post-breadcrumb-sep { color: var(--text-tertiary); }
+  .post-breadcrumb-current {
+    color: var(--text-tertiary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 50ch;
+  }
+
+  .post-meta-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.85rem;
+  }
+  .post-cat {
+    padding: 0.25rem 0.7rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+  }
+  .post-meta-item { color: var(--text-tertiary); }
+
+  .post-title {
+    margin: 0 0 var(--spacing-md);
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    line-height: 1.2;
+  }
+  .post-lead {
+    margin: 0 0 var(--spacing-xl);
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 70ch;
+  }
+
+  .post-author-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+  .post-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .post-author-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg-secondary);
+  }
+  .post-author-avatar--initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-red), var(--gold-accent));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .post-author-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .post-author-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+  .post-author-date {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+  .post-share-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-full);
+    background: var(--bg-primary);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  .post-share-btn:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  /* Hero image */
+  .post-hero {
+    margin: 0 0 var(--spacing-xl);
+  }
+  .post-hero img {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+  }
+  .post-hero figcaption {
+    margin-top: var(--spacing-sm);
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* Layout 2 colonnes : sommaire | contenu */
+  .post-body {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: var(--spacing-2xl);
+    max-width: 920px;
+  }
+
+  /* Sommaire */
+  .post-toc {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    font-size: 0.85rem;
+  }
+  .post-toc-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .post-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  .post-toc li a {
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: block;
+    transition: color var(--transition-fast);
+  }
+  .post-toc li a:hover { color: var(--primary-red); }
+
+  /* Contenu */
+  .post-content {
+    max-width: 70ch;
+  }
+  .post-intro {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .post-section {
+    margin-bottom: var(--spacing-2xl);
+    scroll-margin-top: 100px;
+  }
+  .post-section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 var(--spacing-md);
+    line-height: 1.3;
+  }
+  .post-section h3 {
+    font-size: 1.15rem;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    color: var(--text-primary);
+  }
+  .post-section p {
+    margin: 0 0 var(--spacing-md);
+    line-height: 1.7;
+    color: var(--text-primary);
+  }
+  .post-section ul,
+  .post-section ol {
+    margin: 0 0 var(--spacing-md);
+    padding-left: 1.5rem;
+    line-height: 1.7;
+  }
+  .post-section li {
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+  }
+  .post-section blockquote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-left: 3px solid var(--primary-red);
+    background: var(--bg-secondary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  .post-section blockquote cite {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+  }
+
+  /* Callouts */
+  .post-callout {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .post-callout--info {
+    background: #dceefc;
+    color: #1f4d80;
+    border-left: 3px solid #1f6db3;
+  }
+  .post-callout--success {
+    background: var(--jade-green-light);
+    color: #1b5e3e;
+    border-left: 3px solid var(--jade-green);
+  }
+  .post-callout--warning {
+    background: #fdecd4;
+    color: #884a08;
+    border-left: 3px solid var(--gold-accent);
+  }
+
+  /* Exemples (hanzi + pinyin + traduction) */
+  .post-example {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 0.8rem 1.2rem;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    margin: 0.5rem 0;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+  }
+  .post-example-hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+  .post-example-pinyin {
+    font-style: italic;
+    color: var(--jade-green);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .post-example-translation {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  /* CTA final */
+  .post-cta {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, var(--primary-red-light), #fbe9b8);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+  .post-cta h3 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.3rem;
+  }
+  .post-cta p {
+    margin: 0 0 var(--spacing-lg);
+    color: var(--text-secondary);
+    max-width: 52ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .post-cta-buttons {
+    display: inline-flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ========================== RESPONSIVE ========================== */
+  @media (max-width: 900px) {
+    .post-body {
+      grid-template-columns: 1fr;
+    }
+    .post-toc {
+      position: relative;
+      top: auto;
+      max-height: none;
+      padding: var(--spacing-md);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+    }
+  }
+  @media (max-width: 540px) {
+    .post-example {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+    .post-example-hanzi { font-size: 1.05rem; }
+    .post-cta { padding: var(--spacing-xl); }
+    .post-cta-buttons { flex-direction: column; align-items: stretch; }
+  }
+</style>
