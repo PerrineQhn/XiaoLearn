@@ -3258,6 +3258,22 @@ select:focus {
 
 .support-form-actions .btn-primary {
   min-width: 220px;
+  /* Force le contraste : on avait un bug "blanc sur blanc" sur ce bouton.
+     Couleurs explicites pour qu'il reste toujours lisible peu importe le
+     contexte / le thème palette. */
+  background: var(--primary-red);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+.support-form-actions .btn-primary:hover:not(:disabled) {
+  background: var(--primary-red-hover, #b8362d);
+  color: #fff;
+}
+.support-form-actions .btn-primary:disabled {
+  background: color-mix(in srgb, var(--primary-red) 45%, #fff);
+  color: #fff;
+  opacity: 1;
 }
 
 .support-success-message {
@@ -7506,6 +7522,30 @@ select:focus {
 .settings-subscription-cta {
   margin-top: auto;
   width: 100%;
+  /* Force le contraste lisible quel que soit le contexte parent : on avait
+     un bug "blanc sur blanc" probablement dû à un override CSS hérité d'une
+     règle générale sur les cards. Ces couleurs explicites garantissent que
+     les CTA "Choisir cette offre" / "Démarrer (7 jours gratuits)" restent
+     toujours visibles. */
+  font-weight: 700;
+}
+.settings-subscription-cta.btn-primary {
+  background: var(--primary-red);
+  color: #fff;
+  border: none;
+}
+.settings-subscription-cta.btn-primary:hover:not(:disabled) {
+  background: var(--primary-red-hover, #b8362d);
+  color: #fff;
+}
+.settings-subscription-cta.btn-secondary {
+  background: #fff;
+  color: var(--text-primary);
+  border: 1px solid var(--primary-red);
+}
+.settings-subscription-cta.btn-secondary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--primary-red) 8%, #fff);
+  color: var(--text-primary);
 }
 
 .settings-subscription-disclaimer {
