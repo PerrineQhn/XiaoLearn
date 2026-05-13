@@ -136,6 +136,12 @@ export interface AiTutorPageV2Props {
   personalFlashcards?: UsePersonalFlashcardsReturn;
   /** Gating Lifetime — si false, le bouton "+" est verrouillé. */
   canAddFlashcards?: boolean;
+
+  // ----- Pré-remplissage du composer (depuis la recherche globale) -----
+  /** Texte à pré-remplir dans le composer (non-envoyé, l'user valide). */
+  initialDraft?: string | null;
+  /** Callback appelé une fois le draft consommé pour le clear côté parent. */
+  onConsumeInitialDraft?: () => void;
 }
 
 // ============================================================================
@@ -466,7 +472,9 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
     onSelectConversation,
     onRemoveConversation,
     personalFlashcards,
-    canAddFlashcards = true
+    canAddFlashcards = true,
+    initialDraft = null,
+    onConsumeInitialDraft
   } = props;
 
   const categories = useMemo(
@@ -518,6 +526,16 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages.length, isTyping]);
+
+  // Pré-remplit le composer si la page est ouverte depuis la recherche
+  // globale ("Poser à Prof. Xiao : <query>"). On clear côté parent pour
+  // éviter de re-remplir au prochain remount.
+  useEffect(() => {
+    if (initialDraft && initialDraft.trim()) {
+      setInput(initialDraft);
+      onConsumeInitialDraft?.();
+    }
+  }, [initialDraft, onConsumeInitialDraft]);
 
   const handleSend = () => {
     const content = input.trim();

@@ -26,6 +26,12 @@
   justify-content: center;
 }
 
+.xl-global-search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+}
+
 .xl-app-topbar-actions {
   display: inline-flex;
   align-items: center;
@@ -45,7 +51,6 @@
   align-items: center;
   gap: 8px;
   width: 100%;
-  max-width: 640px;
   padding: 0 16px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -101,6 +106,122 @@
     /* Sur petit écran, on tronque le placeholder pour qu'il rentre */
     font-size: 12.5px;
   }
+}
+
+/* ----- Panel d'autocomplete (live search) ----------------------------- */
+.xl-global-search-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 8px 0;
+  animation: xl-search-panel-pop 0.12s ease-out;
+}
+@keyframes xl-search-panel-pop {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.xl-search-section {
+  padding: 4px 0 6px;
+}
+.xl-search-section + .xl-search-section {
+  border-top: 1px solid #f1efe8;
+  margin-top: 2px;
+  padding-top: 6px;
+}
+.xl-search-section-label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #9aa0a6;
+  font-weight: 700;
+  padding: 4px 18px 4px;
+}
+
+.xl-search-hit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: #1f2937;
+  transition: background 0.1s ease;
+}
+.xl-search-hit:hover,
+.xl-search-hit:focus-visible {
+  background: #faf6ed;
+  outline: none;
+}
+.xl-search-hit-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  width: 28px;
+  text-align: center;
+}
+.xl-search-hit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.xl-search-hit-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.xl-search-hit-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.xl-search-empty {
+  padding: 12px 18px;
+  color: #9aa0a6;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.xl-search-ask-tutor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 18px;
+  background: #fdf2c4;
+  border: none;
+  border-top: 1px solid #f1d77a;
+  color: #7a5a0b;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease;
+}
+.xl-search-ask-tutor:hover {
+  background: #f9e89c;
+}
+.xl-search-ask-tutor strong {
+  color: #1f2937;
 }
 
 /* ----- Dark mode ------------------------------------------------------- */

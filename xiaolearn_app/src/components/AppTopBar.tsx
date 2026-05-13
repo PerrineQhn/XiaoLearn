@@ -12,19 +12,34 @@
  */
 
 import NotificationBell from './NotificationBell';
-import GlobalSearchBar from './GlobalSearchBar';
+import GlobalSearchBar, {
+  type SearchHit,
+  type SearchableConversation
+} from './GlobalSearchBar';
+import type { PersonalFlashcard } from '../types/flashcard-v3';
 
 interface Props {
   language?: 'fr' | 'en';
-  /** Callback de soumission de la recherche (term → page). */
-  onSearch?: (query: string) => void;
+  /** Sélection d'un résultat live (leçon, flashcard, conv, ou ask-tutor). */
+  onSearchSelect?: (hit: SearchHit) => void;
+  /** Flashcards perso pour autocomplete. */
+  personalFlashcards?: PersonalFlashcard[];
+  /** Conversations Prof. Xiao pour autocomplete. */
+  tutorConversations?: SearchableConversation[];
   /** Navigation depuis la cloche (notif → page concernée). */
   onNavigate?: (view: string) => void;
   /** Toggle du drawer sidebar mobile (caché en desktop). */
   onToggleSidebar?: () => void;
 }
 
-const AppTopBar = ({ language = 'fr', onSearch, onNavigate, onToggleSidebar }: Props) => {
+const AppTopBar = ({
+  language = 'fr',
+  onSearchSelect,
+  personalFlashcards,
+  tutorConversations,
+  onNavigate,
+  onToggleSidebar
+}: Props) => {
   const hamburgerLabel = language === 'fr' ? 'Ouvrir le menu' : 'Open menu';
   return (
     <header className="xl-app-topbar" role="banner">
@@ -43,7 +58,12 @@ const AppTopBar = ({ language = 'fr', onSearch, onNavigate, onToggleSidebar }: P
       </button>
 
       <div className="xl-app-topbar-search">
-        <GlobalSearchBar language={language} onSubmit={onSearch} />
+        <GlobalSearchBar
+          language={language}
+          personalFlashcards={personalFlashcards}
+          tutorConversations={tutorConversations}
+          onSelectHit={onSearchSelect}
+        />
       </div>
       <div className="xl-app-topbar-actions">
         <NotificationBell language={language} onNavigate={onNavigate} />

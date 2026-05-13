@@ -50,7 +50,8 @@ import LessonPathsPage from './pages/LessonPathsPage';
 import QuizPage from './pages/QuizPage';
 // V7 — ReviewPage (V1) a été remplacé par ReviewPageV3 (voir plus haut).
 import ThemePage from './pages/ThemePage';
-import DictionaryPage from './pages/DictionaryPage';
+// DictionaryPage retirée : la barre de recherche affiche désormais un
+// autocomplete inline (cf. GlobalSearchBar) plutôt qu'une page dédiée.
 import AssistancePage from './pages/AssistancePage';
 import DictationGamePage from './pages/DictationGamePage';
 import SettingsPage from './pages/SettingsPage';
@@ -140,7 +141,6 @@ export type View =
   | 'review'
   | 'themes'
   | 'culture'
-  | 'dictionary'
   | 'assistant'
   | 'subscription'
   | 'settings'
@@ -881,6 +881,10 @@ function App() {
   const errorJournal = useErrorJournal();
   const [tutorMessages, setTutorMessages] = useState<AiTutorV2Message[]>([]);
   const [tutorTyping, setTutorTyping] = useState(false);
+  /** Texte pré-rempli dans le composer du Prof. Xiao depuis la recherche
+   *  globale ("Poser à Prof. Xiao : <query>"). Consommé puis effacé par
+   *  AiTutorPageV2 au prochain render. */
+  const [tutorInitialDraft, setTutorInitialDraft] = useState<string | null>(null);
   const [tutorMode, setTutorMode] = useState<AiTutorV2Mode>('balanced');
 
   // Quand l'utilisateur sélectionne une conversation depuis la sidebar,
@@ -1639,17 +1643,6 @@ function App() {
         />
       );
       break;
-    case 'dictionary':
-      content = (
-        <DictionaryPage
-          copy={copy}
-          language={language}
-          customLists={customLists.lists}
-          onCreateList={customLists.createList}
-          onAddWordToList={customLists.addItemToList}
-        />
-      );
-      break;
     case 'assistant':
       content = <AssistancePage language={language} onBackHome={() => setView('home')} />;
       break;
@@ -1781,6 +1774,8 @@ function App() {
           onRemoveConversation={tutorConvs.removeConversation}
           personalFlashcards={personalFlashcards}
           canAddFlashcards={appAccess.canCreateCustomFlashcards}
+          initialDraft={tutorInitialDraft}
+          onConsumeInitialDraft={() => setTutorInitialDraft(null)}
         />
       );
       break;
@@ -2109,7 +2104,6 @@ function App() {
           }}
           onOpenAiTutor={() => setView('tutor')}
           onOpenPath={() => setView('cecr')}
-          onOpenDictionary={() => setView('dictionary')}
           onOpenDialogue={() => setView('dialogue')}
           onOpenReading={() => setView('reading')}
           onAddWordToFlashcards={(word) => {
@@ -2384,15 +2378,41 @@ function App() {
       <main className="main-content">
         <AppTopBar
           language={language === 'en' ? 'en' : 'fr'}
-          onSearch={(q) => {
-            // Pour le MVP : on stocke la query en sessionStorage et on
-            // redirige vers le dictionnaire qui la lira au mount.
-            try {
-              window.sessionStorage.setItem('xl_search_query', q);
-            } catch {
-              /* ignore */
+          personalFlashcards={personalFlashcards.cards}
+          tutorConversations={tutorConvs.conversations.map((c) => ({
+            id: c.id,
+            title: c.title,
+            updatedAt: c.updatedAt
+          }))}
+          onSearchSelect={(hit) => {
+            switch (hit.kind) {
+              case 'lesson': {
+                // Cherche le parcours contenant la leçon (CECR d'abord)
+                const foundCecr = cecrPathsState.find((p) =>
+                  p.lessons.some((l) => l.id === hit.id)
+                );
+                const foundHsk = lessonPathsState.find((p) =>
+                  p.lessons.some((l) => l.id === hit.id)
+                );
+                const found = foundCecr ?? foundHsk;
+                if (found) handleSelectLesson(found.id, hit.id);
+                else setView('cecr');
+                break;
+              }
+              case 'flashcard':
+                setView('flashcards');
+                break;
+              case 'tutor-conv':
+                handleTutorSelectConv(hit.id);
+                setView('tutor');
+                break;
+              case 'ask-tutor':
+                // Stocke la question, navigue vers Prof. Xiao, AiTutorPageV2
+                // la consomme via prop `initialDraft`.
+                setTutorInitialDraft(hit.id);
+                setView('tutor');
+                break;
             }
-            setView('dictionary');
           }}
           onNavigate={(v) => setView(v as typeof view)}
           onToggleSidebar={toggleSidebar}

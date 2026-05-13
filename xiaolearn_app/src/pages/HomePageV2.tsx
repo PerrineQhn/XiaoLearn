@@ -82,7 +82,6 @@ export interface HomePageV2Props {
   onOpenLesson: (lessonId: string) => void;
   onOpenAiTutor: (prompt?: string) => void;
   onOpenPath: () => void;
-  onOpenDictionary?: () => void;
   onOpenDialogue?: () => void;
   onOpenReading?: () => void;
   /**
