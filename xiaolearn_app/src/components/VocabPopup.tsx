@@ -129,6 +129,28 @@ const VocabPopup = ({
   const displayExampleTranslation =
     enrichment?.exampleTranslation || example?.translation || '';
 
+  // Pinyin du mot principal — priorité :
+  //   1. enrichment.pinyin (champ dédié contextuel du LLM)
+  //   2. Reconstitution depuis enrichment.breakdown (si alignée char-à-char)
+  //   3. word.pinyin (pinyin-pro, par défaut)
+  // Important pour les polyphones : 了 en particule = "le", pas "liǎo".
+  const displayPinyin = (() => {
+    if (enrichment?.pinyin && enrichment.pinyin.trim()) {
+      return enrichment.pinyin.trim();
+    }
+    const llm = enrichment?.breakdown;
+    if (llm && llm.length > 0) {
+      const wordChars = Array.from(word.hanzi);
+      if (
+        llm.length === wordChars.length &&
+        llm.every((b, i) => b.char === wordChars[i])
+      ) {
+        return llm.map((b) => b.pinyin).join(' ').trim();
+      }
+    }
+    return word.pinyin ?? '';
+  })();
+
   // ESC = ferme
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -257,8 +279,8 @@ const VocabPopup = ({
           </button>
           <div style={{ minWidth: 0 }}>
             <p className="at2-vocab-popup-hanzi">{word.hanzi}</p>
-            {word.pinyin && (
-              <p className="at2-vocab-popup-pinyin">{word.pinyin}</p>
+            {displayPinyin && (
+              <p className="at2-vocab-popup-pinyin">{displayPinyin}</p>
             )}
           </div>
         </div>

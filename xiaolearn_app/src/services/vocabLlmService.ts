@@ -25,7 +25,9 @@ const CF_ACCOUNT_ID = import.meta.env.VITE_CF_ACCOUNT_ID as string | undefined;
 const CF_AI_TOKEN = import.meta.env.VITE_CF_AI_TOKEN as string | undefined;
 const CF_AI_MODEL = '@cf/qwen/qwen1.5-14b-chat-awq';
 
-const CACHE_KEY = 'xl_vocab_llm_cache_v1';
+// v2 = ajout du champ `pinyin` contextuel dans VocabEnrichment. Invalider
+// les anciennes entrées v1 qui n'avaient pas ce champ.
+const CACHE_KEY = 'xl_vocab_llm_cache_v2';
 
 // ---------------------------------------------------------------------------
 //  Types publics
@@ -40,6 +42,14 @@ export interface VocabEnrichmentEntry {
 export interface VocabEnrichment {
   /** Traduction française du mot composé, dans le sens contextuel. */
   translation: string;
+  /**
+   * Pinyin contextuel du mot complet. Important pour les polyphones :
+   *   - 了 en particule modale = "le", pas "liǎo" (sens dictionnaire premier)
+   *   - 行 = "xíng" (aller, OK) vs "háng" (rang, ligne)
+   * Ce champ permet au popup d'afficher la prononciation correcte selon le
+   * contexte, plutôt que celle par défaut de pinyin-pro.
+   */
+  pinyin?: string;
   /** Décomposition caractère-par-caractère avec sens contextualisé. */
   breakdown: VocabEnrichmentEntry[];
   /**
@@ -147,15 +157,17 @@ const buildPrompt = (
   const schemaExample = exampleSentence
     ? [
         '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
+        '  "pinyin": "<pinyin contextuel du mot complet avec tons diacritiques — IMPORTANT pour les polyphones : 了 en particule = \\"le\\" et non \\"liǎo\\">",',
         '  "breakdown": [',
-        '    {"char": "<caractère>", "pinyin": "<pinyin avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
+        '    {"char": "<caractère>", "pinyin": "<pinyin contextuel avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
         '  ],',
         '  "exampleTranslation": "<traduction française naturelle et complète de la phrase d\'exemple ci-dessus>"'
       ]
     : [
         '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
+        '  "pinyin": "<pinyin contextuel du mot complet avec tons diacritiques — IMPORTANT pour les polyphones : 了 en particule = \\"le\\" et non \\"liǎo\\">",',
         '  "breakdown": [',
-        '    {"char": "<caractère>", "pinyin": "<pinyin avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
+        '    {"char": "<caractère>", "pinyin": "<pinyin contextuel avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
         '  ]'
       ];
   return [
@@ -173,6 +185,8 @@ const buildPrompt = (
     'Règles :',
     '- Le pinyin doit utiliser des marques de ton diacritiques (ā á ǎ à).',
     '- Pour chaque caractère, choisis le sens qui rend compte de son rôle DANS CE MOT précis (ex : 会 dans 会说 = "savoir/pouvoir", pas "se réunir").',
+    '- IMPORTANT — pour les particules grammaticales, le pinyin est au TON NEUTRE (atone, sans diacritique) : 了 = "le" (pas "liǎo"), 的 = "de" (pas "dí" ni "dì"), 着 = "zhe" (pas "zhāo"), 过 = "guo" (en aspect, atone), 吗 = "ma", 吧 = "ba", 呢 = "ne", 啦 = "la", 嘛 = "ma".',
+    '- Quand le contexte indique clairement une particule (ex : "la particule 了", "marqueur d\'aspect"), utilise toujours le ton neutre.',
     '- Traduction du mot = expression française naturelle dans le contexte donné.',
     exampleSentence
       ? '- exampleTranslation = traduction française complète, fluide et naturelle de la phrase d\'exemple (pas mot-à-mot).'
@@ -207,6 +221,9 @@ const extractJson = (raw: string): VocabEnrichment | null => {
     const translation = typeof parsed.translation === 'string'
       ? parsed.translation.trim()
       : '';
+    const pinyin = typeof parsed.pinyin === 'string'
+      ? parsed.pinyin.trim()
+      : undefined;
     const rawBreakdown = Array.isArray(parsed.breakdown) ? parsed.breakdown : [];
     const breakdown: VocabEnrichmentEntry[] = [];
     for (const item of rawBreakdown) {
@@ -230,7 +247,7 @@ const extractJson = (raw: string): VocabEnrichment | null => {
     if (!translation && breakdown.length === 0 && !exampleTranslation) {
       return null;
     }
-    return { translation, breakdown, exampleTranslation };
+    return { translation, pinyin, breakdown, exampleTranslation };
   } catch {
     return null;
   }
