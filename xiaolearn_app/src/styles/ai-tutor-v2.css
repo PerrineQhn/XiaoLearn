@@ -723,6 +723,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.at2-vocab-popup-enriching {
+  font-size: 10.5px;
+  font-style: italic;
+  color: #9aa0a6;
+  margin: -4px 0 8px;
+  text-align: right;
+}
 .at2-vocab-popup-example {
   background: #faf6ed;
   border: 1px solid #f0e6d4;

@@ -1,13 +1,34 @@
 /**
  * vocab-lookup.ts — utilitaires pour rendre les hanzi cliquables et faire
- * un lookup dictionnaire compact (CFDICT + pinyin-pro).
+ * un lookup dictionnaire compact (CFDICT + lessons HSK/CECR + pinyin-pro).
  *
  * Utilisé par Prof. Xiao pour afficher la popup vocabulaire au clic.
+ *
+ * Hiérarchie de lookup (priorité décroissante) :
+ *   1. LessonItems HSK/CECR — couvre les mots du cursus (~1500 entrées)
+ *      avec leur traduction française pédagogique calibrée.
+ *   2. CFDICT compact — dictionnaire général chinois→français (~10k entrées).
+ *   3. Décomposition caractère-par-caractère (fallback).
+ *   4. (Côté UI) appel LLM en arrière-plan pour mots non trouvés.
  */
 import { pinyin as pinyinPro } from 'pinyin-pro';
 import cfdictData from '../data/cfdict-compact.json';
+import { getAllLessons } from '../data/lessons';
+import type { LessonItem } from '../types';
 
 const CFDICT_MAP = cfdictData as Record<string, string>;
+
+/** Index hanzi → LessonItem (construit une seule fois au premier appel). */
+let _lessonByHanzi: Map<string, LessonItem> | null = null;
+const getLessonByHanzi = (): Map<string, LessonItem> => {
+  if (_lessonByHanzi) return _lessonByHanzi;
+  const map = new Map<string, LessonItem>();
+  for (const item of getAllLessons()) {
+    if (item.hanzi) map.set(item.hanzi, item);
+  }
+  _lessonByHanzi = map;
+  return map;
+};
 
 /**
  * Heuristique : détecte si une chaîne ressemble à du pinyin (que des
@@ -167,9 +188,16 @@ export interface VocabLookupResult {
 }
 
 /**
- * Cherche un mot dans CFDICT et calcule sa décomposition caractère-par-
- * caractère. Pinyin via pinyin-pro pour le mot global + par caractère pour
- * la breakdown.
+ * Cherche un mot dans le dataset HSK/CECR puis dans CFDICT, et calcule
+ * sa décomposition caractère-par-caractère. Pinyin via pinyin-pro.
+ *
+ * Stratégie pour translation :
+ *   1. Si une leçon HSK/CECR a une entrée pour le hanzi exact → traduction
+ *      pédagogique calibrée (la meilleure source).
+ *   2. Sinon, CFDICT → traduction générale (premier sens).
+ *   3. Sinon, vide (et l'UI déclenchera un fallback LLM en arrière-plan).
+ *
+ * Pour la breakdown, idem : on tente d'abord lesson(char) puis CFDICT(char).
  */
 export const lookupVocab = (token: string): VocabLookupResult => {
   const hanzi = token.trim();
@@ -177,22 +205,37 @@ export const lookupVocab = (token: string): VocabLookupResult => {
     return { hanzi, pinyin: '', translation: '', breakdown: [], found: false };
   }
   const pinyin = pinyinFor(hanzi);
+  const lessonMap = getLessonByHanzi();
 
-  // Traduction du mot composé (si CFDICT a une entrée pour le mot entier)
-  const direct = CFDICT_MAP[hanzi];
-  const translation = direct ? direct.split('/')[0].trim() : '';
+  // 1. Traduction du mot composé : leçon HSK/CECR > CFDICT > vide
+  let translation = '';
+  const lessonHit = lessonMap.get(hanzi);
+  if (lessonHit) {
+    translation = (lessonHit.translationFr || lessonHit.translation || '').trim();
+  } else {
+    const direct = CFDICT_MAP[hanzi];
+    if (direct) translation = direct.split('/')[0].trim();
+  }
 
-  // Décomposition par caractère, pour mots de 2+ hanzi.
+  // 2. Décomposition par caractère (mots ≥ 2 hanzi).
+  //    Pour chaque caractère, leçon > CFDICT > skip.
   const breakdown: VocabBreakdownEntry[] = [];
   const chars = Array.from(hanzi);
   if (chars.length > 1) {
     for (const ch of chars) {
-      const cf = CFDICT_MAP[ch];
-      if (!cf) continue;
+      const lessonChar = lessonMap.get(ch);
+      let sense = '';
+      if (lessonChar) {
+        sense = (lessonChar.translationFr || lessonChar.translation || '').trim();
+      } else {
+        const cf = CFDICT_MAP[ch];
+        if (cf) sense = cf.split('/')[0].trim();
+      }
+      if (!sense) continue;
       breakdown.push({
         char: ch,
-        pinyin: pinyinFor(ch),
-        sense: cf.split('/')[0].trim()
+        pinyin: lessonChar?.pinyin || pinyinFor(ch),
+        sense
       });
     }
   }

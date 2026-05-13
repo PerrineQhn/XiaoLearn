@@ -490,6 +490,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   const [vocabState, setVocabState] = useState<{
     word: VocabPopupWord;
     example: VocabPopupExample | null;
+    contextHint?: string;
     anchor: { x: number; y: number };
   } | null>(null);
 
@@ -500,6 +501,23 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
       // mot a été collé par l'utilisateur dans un contexte plus riche).
       const corpus = messages.map((m) => m.content);
       const example = findExampleSentence(info.hanzi, corpus);
+
+      // Contexte pour le LLM : on prend la 1ère phrase de la conversation
+      // qui contient le mot cliqué. Aide le LLM à choisir le sens
+      // contextuel des caractères (ex: 会 dans 会说 = "savoir", pas "se réunir").
+      let contextHint: string | undefined;
+      for (const text of corpus) {
+        if (!text) continue;
+        if (!text.includes(info.hanzi)) continue;
+        // Récupère la phrase qui contient le mot (split sur ponctuation chinoise + latine)
+        const sentences = text.split(/(?<=[。！？.!?\n])\s*/);
+        const hit = sentences.find((s) => s.includes(info.hanzi));
+        if (hit) {
+          contextHint = hit.trim().slice(0, 200);
+          break;
+        }
+      }
+
       // Position du clic + petit décalage pour ne pas masquer le mot
       const rect = (event.currentTarget as HTMLElement | null)?.getBoundingClientRect();
       const x = rect ? rect.left : event.clientX;
@@ -518,6 +536,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
               translation: example.translation
             }
           : null,
+        contextHint,
         anchor: { x, y }
       });
     },
@@ -780,6 +799,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
         <VocabPopup
           word={vocabState.word}
           example={vocabState.example}
+          contextHint={vocabState.contextHint}
           anchor={vocabState.anchor}
           personalFlashcards={personalFlashcards}
           canAddFlashcards={canAddFlashcards}

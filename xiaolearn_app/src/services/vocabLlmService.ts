@@ -1,0 +1,280 @@
+/**
+ * vocabLlmService.ts — enrichissement vocab par LLM (Gemini + fallback CF)
+ * --------------------------------------------------------------------------
+ * Quand le lookup local (lessons + CFDICT) ne donne pas de traduction
+ * satisfaisante pour un mot composé chinois, on appelle Gemini avec un
+ * prompt court demandant un JSON strict :
+ *   {
+ *     "translation": "...",
+ *     "breakdown": [{ "char": "...", "pinyin": "...", "sense": "..." }]
+ *   }
+ *
+ * La traduction et le sens des caractères tiennent compte de l'éventuelle
+ * `contextHint` passée (la phrase d'origine où l'utilisateur a cliqué).
+ *
+ * Résultats cachés en localStorage (clé `xl_vocab_llm_cache_v1`) sous la
+ * forme { [`${hanzi}::${contextDigest}`]: enrichedResult }. Cache permanent
+ * (les traductions ne changent pas vite).
+ */
+
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
+const GEMINI_MODEL = 'gemini-2.5-flash';
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+
+const CF_ACCOUNT_ID = import.meta.env.VITE_CF_ACCOUNT_ID as string | undefined;
+const CF_AI_TOKEN = import.meta.env.VITE_CF_AI_TOKEN as string | undefined;
+const CF_AI_MODEL = '@cf/qwen/qwen1.5-14b-chat-awq';
+
+const CACHE_KEY = 'xl_vocab_llm_cache_v1';
+
+// ---------------------------------------------------------------------------
+//  Types publics
+// ---------------------------------------------------------------------------
+
+export interface VocabEnrichmentEntry {
+  char: string;
+  pinyin: string;
+  sense: string;
+}
+
+export interface VocabEnrichment {
+  /** Traduction française du mot composé, dans le sens contextuel. */
+  translation: string;
+  /** Décomposition caractère-par-caractère avec sens contextualisé. */
+  breakdown: VocabEnrichmentEntry[];
+}
+
+// ---------------------------------------------------------------------------
+//  Cache localStorage
+// ---------------------------------------------------------------------------
+
+/** Empreinte compacte du contexte pour clé de cache (pas la phrase entière). */
+const digestContext = (s: string | undefined): string => {
+  if (!s) return 'nox';
+  // Hash très simple : somme rolling 32-bit, suffisant pour discriminer
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) + h) ^ s.charCodeAt(i);
+    h &= 0xffffffff;
+  }
+  return (h >>> 0).toString(36);
+};
+
+interface CacheShape {
+  [key: string]: VocabEnrichment;
+}
+
+const readCache = (): CacheShape => {
+  if (typeof window === 'undefined') return {};
+  try {
+    const raw = window.localStorage.getItem(CACHE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+};
+
+const writeCache = (cache: CacheShape) => {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+  } catch {
+    /* quota plein, on ignore */
+  }
+};
+
+/** Récupère un enrichissement caché (synchroniquement). Renvoie null sinon. */
+export const getCachedEnrichment = (
+  hanzi: string,
+  contextHint?: string
+): VocabEnrichment | null => {
+  const cache = readCache();
+  const key = `${hanzi}::${digestContext(contextHint)}`;
+  return cache[key] ?? null;
+};
+
+const cacheEnrichment = (
+  hanzi: string,
+  contextHint: string | undefined,
+  data: VocabEnrichment
+) => {
+  const cache = readCache();
+  const key = `${hanzi}::${digestContext(contextHint)}`;
+  cache[key] = data;
+  writeCache(cache);
+};
+
+// ---------------------------------------------------------------------------
+//  Prompt building
+// ---------------------------------------------------------------------------
+
+const buildPrompt = (hanzi: string, contextHint?: string): string => {
+  const contextLine = contextHint
+    ? `Contexte (phrase d'origine) : ${contextHint.trim()}`
+    : 'Aucun contexte fourni — donne le sens le plus courant en chinois moderne.';
+  const chars = Array.from(hanzi).join(', ');
+  return [
+    'Tu es un dictionnaire chinois→français pédagogique pour francophones débutants en chinois.',
+    `Mot à analyser : ${hanzi}`,
+    contextLine,
+    `Caractères individuels à expliquer : ${chars}`,
+    '',
+    'Renvoie STRICTEMENT un JSON valide (et rien d\'autre, pas de markdown, pas de commentaire), au format :',
+    '{',
+    '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
+    '  "breakdown": [',
+    '    {"char": "<caractère>", "pinyin": "<pinyin avec tons ASCII type ǎ>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
+    '  ]',
+    '}',
+    '',
+    'Règles :',
+    '- Le pinyin doit utiliser des marques de ton diacritiques (ā á ǎ à).',
+    '- Pour chaque caractère, choisis le sens qui rend compte de son rôle DANS CE MOT précis (ex : 会 dans 会说 = "savoir/pouvoir", pas "se réunir").',
+    '- Traduction du mot = expression française naturelle dans le contexte donné.',
+    '- Si le mot a plusieurs sens, prends celui qui colle au contexte.'
+  ].join('\n');
+};
+
+// ---------------------------------------------------------------------------
+//  JSON extraction
+// ---------------------------------------------------------------------------
+
+/**
+ * Extrait le premier objet JSON valide d'une chaîne brute, en tolérant
+ * un éventuel encadrement markdown ```json ... ```.
+ */
+const extractJson = (raw: string): VocabEnrichment | null => {
+  if (!raw) return null;
+  // Strip code fences
+  let cleaned = raw.trim();
+  cleaned = cleaned.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '');
+  // Find first { and last }
+  const start = cleaned.indexOf('{');
+  const end = cleaned.lastIndexOf('}');
+  if (start < 0 || end <= start) return null;
+  const slice = cleaned.slice(start, end + 1);
+  try {
+    const parsed = JSON.parse(slice);
+    if (!parsed || typeof parsed !== 'object') return null;
+    const translation = typeof parsed.translation === 'string'
+      ? parsed.translation.trim()
+      : '';
+    const rawBreakdown = Array.isArray(parsed.breakdown) ? parsed.breakdown : [];
+    const breakdown: VocabEnrichmentEntry[] = [];
+    for (const item of rawBreakdown) {
+      if (
+        item &&
+        typeof item.char === 'string' &&
+        typeof item.pinyin === 'string' &&
+        typeof item.sense === 'string'
+      ) {
+        breakdown.push({
+          char: item.char.trim(),
+          pinyin: item.pinyin.trim(),
+          sense: item.sense.trim()
+        });
+      }
+    }
+    if (!translation && breakdown.length === 0) return null;
+    return { translation, breakdown };
+  } catch {
+    return null;
+  }
+};
+
+// ---------------------------------------------------------------------------
+//  Appels API
+// ---------------------------------------------------------------------------
+
+async function callGemini(prompt: string): Promise<string | null> {
+  if (!GEMINI_API_KEY) return null;
+  try {
+    const res = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.2,
+          maxOutputTokens: 512,
+          responseMimeType: 'application/json'
+        }
+      })
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    return typeof text === 'string' ? text : null;
+  } catch {
+    return null;
+  }
+}
+
+async function callCloudflare(prompt: string): Promise<string | null> {
+  if (!CF_ACCOUNT_ID || !CF_AI_TOKEN) return null;
+  try {
+    const url = `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/${CF_AI_MODEL}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${CF_AI_TOKEN}`
+      },
+      body: JSON.stringify({
+        messages: [{ role: 'user', content: prompt }],
+        max_tokens: 512,
+        temperature: 0.2
+      })
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const text = data?.result?.response;
+    return typeof text === 'string' ? text : null;
+  } catch {
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------------------
+//  API publique
+// ---------------------------------------------------------------------------
+
+/**
+ * Enrichit un mot vocab via LLM. Renvoie d'abord le cache si présent ;
+ * sinon appelle Gemini, puis Cloudflare en fallback, met en cache et
+ * renvoie la donnée.
+ *
+ * Renvoie null si tous les moteurs échouent.
+ */
+export async function enrichVocabWithLLM(
+  hanzi: string,
+  contextHint?: string
+): Promise<VocabEnrichment | null> {
+  if (!hanzi) return null;
+
+  // Cache hit
+  const cached = getCachedEnrichment(hanzi, contextHint);
+  if (cached) return cached;
+
+  const prompt = buildPrompt(hanzi, contextHint);
+
+  // 1. Gemini
+  const geminiRaw = await callGemini(prompt);
+  const geminiData = geminiRaw ? extractJson(geminiRaw) : null;
+  if (geminiData) {
+    cacheEnrichment(hanzi, contextHint, geminiData);
+    return geminiData;
+  }
+
+  // 2. Cloudflare Workers AI
+  const cfRaw = await callCloudflare(prompt);
+  const cfData = cfRaw ? extractJson(cfRaw) : null;
+  if (cfData) {
+    cacheEnrichment(hanzi, contextHint, cfData);
+    return cfData;
+  }
+
+  return null;
+}

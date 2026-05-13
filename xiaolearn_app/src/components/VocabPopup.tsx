@@ -16,6 +16,11 @@
 import { useEffect, useState } from 'react';
 import type { UsePersonalFlashcardsReturn } from '../hooks/usePersonalFlashcards';
 import { playHanziAudio } from '../utils/audio';
+import {
+  enrichVocabWithLLM,
+  getCachedEnrichment,
+  type VocabEnrichment
+} from '../services/vocabLlmService';
 
 export interface VocabPopupWord {
   hanzi: string;
@@ -36,6 +41,12 @@ export interface VocabPopupProps {
   word: VocabPopupWord;
   /** Optionnel : phrase d'exemple contenant le mot (extraite de la conversation). */
   example?: VocabPopupExample | null;
+  /**
+   * Indice contextuel passé au LLM pour qu'il choisisse le sens des
+   * caractères selon le contexte (la phrase d'origine où l'utilisateur a
+   * cliqué). Inutile pour les mots déjà en CFDICT / leçons.
+   */
+  contextHint?: string;
   /** Position absolue (px) du popup — typiquement celle du clic. */
   anchor: { x: number; y: number };
   /** Hook flashcards perso. Optionnel : si absent, le bouton est désactivé. */
@@ -49,6 +60,7 @@ export interface VocabPopupProps {
 const VocabPopup = ({
   word,
   example,
+  contextHint,
   anchor,
   personalFlashcards,
   canAddFlashcards = true,
@@ -56,6 +68,45 @@ const VocabPopup = ({
   onClose
 }: VocabPopupProps) => {
   const [feedback, setFeedback] = useState<'idle' | 'added'>('idle');
+
+  // Enrichissement LLM async. Si le mot est inconnu (pas de translation,
+  // ou breakdown incomplet), on appelle Gemini en arrière-plan et on met
+  // à jour l'affichage quand la réponse arrive.
+  const initialCached = getCachedEnrichment(word.hanzi, contextHint);
+  const [enrichment, setEnrichment] = useState<VocabEnrichment | null>(
+    initialCached
+  );
+  const [enriching, setEnriching] = useState<boolean>(false);
+
+  const needsEnrichment =
+    !initialCached &&
+    Array.from(word.hanzi).length >= 2 &&
+    (!word.translation || (word.breakdown ?? []).length < Array.from(word.hanzi).length);
+
+  useEffect(() => {
+    if (!needsEnrichment) return;
+    let cancelled = false;
+    setEnriching(true);
+    enrichVocabWithLLM(word.hanzi, contextHint)
+      .then((data) => {
+        if (cancelled) return;
+        if (data) setEnrichment(data);
+      })
+      .finally(() => {
+        if (!cancelled) setEnriching(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [word.hanzi, contextHint, needsEnrichment]);
+
+  // Données affichées : on préfère l'enrichment LLM (contextualisé) sur les
+  // données CFDICT/lessons quand il existe.
+  const displayTranslation = enrichment?.translation || word.translation || '';
+  const displayBreakdown =
+    (enrichment?.breakdown && enrichment.breakdown.length > 0
+      ? enrichment.breakdown
+      : word.breakdown) ?? [];
 
   // ESC = ferme
   useEffect(() => {
@@ -70,9 +121,9 @@ const VocabPopup = ({
   // du contenu : on grossit la zone réservée si on a une breakdown ou un
   // exemple, pour que le popup ne soit pas tronqué en bord d'écran.
   const popupWidth = 300;
-  const hasBreakdown = (word.breakdown ?? []).length > 0;
+  const hasBreakdown = displayBreakdown.length > 0;
   const popupHeight =
-    170 + (hasBreakdown ? (word.breakdown?.length ?? 0) * 22 + 16 : 0) + (example ? 110 : 0);
+    170 + (hasBreakdown ? displayBreakdown.length * 22 + 16 : 0) + (example ? 110 : 0);
   const margin = 12;
   const maxX = (typeof window !== 'undefined' ? window.innerWidth : 1200) - popupWidth - margin;
   const maxY = (typeof window !== 'undefined' ? window.innerHeight : 800) - popupHeight - margin;
@@ -190,23 +241,25 @@ const VocabPopup = ({
             )}
           </div>
         </div>
-        {/* Traduction du mot composé (si CFDICT a une entrée). On ne montre
-            rien si la breakdown existe et qu'on a pas de traduction directe :
-            la breakdown suffit à comprendre le mot. */}
-        {word.translation ? (
-          <p className="at2-vocab-popup-translation">{word.translation}</p>
-        ) : (word.breakdown ?? []).length === 0 ? (
+        {/* Traduction du mot composé. Préfère l'enrichment LLM s'il existe
+            (sens contextuel). Sinon, traduction lessons/CFDICT. Sinon, rien
+            (la breakdown suffit). */}
+        {displayTranslation ? (
+          <p className="at2-vocab-popup-translation">{displayTranslation}</p>
+        ) : displayBreakdown.length === 0 ? (
           <p className="at2-vocab-popup-empty">
-            {language === 'fr'
+            {enriching
+              ? language === 'fr' ? 'Recherche du sens…' : 'Looking up meaning…'
+              : language === 'fr'
               ? 'Traduction non trouvée dans le dictionnaire.'
               : 'Translation not found in dictionary.'}
           </p>
         ) : null}
 
         {/* Décomposition caractère-par-caractère : char + pinyin + sens. */}
-        {(word.breakdown ?? []).length > 0 && (
+        {displayBreakdown.length > 0 && (
           <ul className="at2-vocab-popup-breakdown" role="list">
-            {(word.breakdown ?? []).map((b, idx) => (
+            {displayBreakdown.map((b, idx) => (
               <li key={`${b.char}-${idx}`} className="at2-vocab-popup-breakdown-row">
                 <span className="at2-vocab-popup-breakdown-char">{b.char}</span>
                 <span className="at2-vocab-popup-breakdown-pinyin">
@@ -216,6 +269,14 @@ const VocabPopup = ({
               </li>
             ))}
           </ul>
+        )}
+
+        {/* Spinner discret quand le LLM affine en arrière-plan une breakdown
+            partielle déjà visible. */}
+        {enriching && displayBreakdown.length > 0 && !enrichment && (
+          <div className="at2-vocab-popup-enriching">
+            {language === 'fr' ? 'Affinage du sens…' : 'Refining…'}
+          </div>
         )}
 
         {/* Phrase d'exemple extraite de la conversation, si trouvée. */}
