@@ -16,6 +16,7 @@
 import { useState, useRef } from 'react';
 import type { Language } from '../i18n';
 import { useAuth } from '../contexts/AuthContext';
+import SyncDiagnosticPanel from '../components/SyncDiagnosticPanel';
 import { storage } from '../firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { updateProfile, sendPasswordResetEmail } from 'firebase/auth';
@@ -550,6 +551,10 @@ const SettingsPage = ({
                 </button>
                 {resetPwMsg && <p className="settings-inline-msg">{resetPwMsg}</p>}
               </div>
+
+              {/* Diagnostic + force-sync entre appareils. À utiliser quand
+                  la progression n'est pas la même sur iPad/ordi/téléphone. */}
+              <SyncDiagnosticPanel language={language} />
             </section>
           )}
 
