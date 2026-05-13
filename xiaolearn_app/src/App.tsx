@@ -1309,8 +1309,6 @@ function App() {
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
-        { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
-        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' },
         {
           id: 'errors',
           label: language === 'fr' ? 'Mes erreurs' : 'My errors',
@@ -1320,7 +1318,9 @@ function App() {
             errorJournal.unlockedCount > 0
               ? { text: String(errorJournal.unlockedCount), tone: 'rank' }
               : undefined
-        }
+        },
+        { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
+        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
         // Onglets retirés (routes conservées pour deep links éventuels) :
         //   - 'writing-corrector'    → Correcteur IA
         //   - 'conversation-partner' → Partenaire IA
