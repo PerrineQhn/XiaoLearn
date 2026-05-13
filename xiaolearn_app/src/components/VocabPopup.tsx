@@ -23,8 +23,16 @@ export interface VocabPopupWord {
   translation?: string;
 }
 
+export interface VocabPopupExample {
+  hanzi: string;
+  pinyin?: string;
+  translation?: string;
+}
+
 export interface VocabPopupProps {
   word: VocabPopupWord;
+  /** Optionnel : phrase d'exemple contenant le mot (extraite de la conversation). */
+  example?: VocabPopupExample | null;
   /** Position absolue (px) du popup — typiquement celle du clic. */
   anchor: { x: number; y: number };
   /** Hook flashcards perso. Optionnel : si absent, le bouton est désactivé. */
@@ -37,6 +45,7 @@ export interface VocabPopupProps {
 
 const VocabPopup = ({
   word,
+  example,
   anchor,
   personalFlashcards,
   canAddFlashcards = true,
@@ -54,9 +63,10 @@ const VocabPopup = ({
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  // Le popup ne sort pas du viewport. On clamp X et Y.
-  const popupWidth = 260;
-  const popupHeight = 170;
+  // Le popup ne sort pas du viewport. On clamp X et Y. La hauteur est plus
+  // grande quand il y a un exemple, donc on adapte la zone réservée.
+  const popupWidth = 280;
+  const popupHeight = example ? 250 : 170;
   const margin = 12;
   const maxX = (typeof window !== 'undefined' ? window.innerWidth : 1200) - popupWidth - margin;
   const maxY = (typeof window !== 'undefined' ? window.innerHeight : 800) - popupHeight - margin;
@@ -182,6 +192,22 @@ const VocabPopup = ({
               ? 'Traduction non trouvée dans le dictionnaire.'
               : 'Translation not found in dictionary.'}
           </p>
+        )}
+        {example && (
+          <div className="at2-vocab-popup-example">
+            <div className="at2-vocab-popup-example-label">
+              {language === 'fr' ? 'Exemple' : 'Example'}
+            </div>
+            <p className="at2-vocab-popup-example-hanzi">{example.hanzi}</p>
+            {example.pinyin && (
+              <p className="at2-vocab-popup-example-pinyin">{example.pinyin}</p>
+            )}
+            {example.translation && (
+              <p className="at2-vocab-popup-example-translation">
+                {example.translation}
+              </p>
+            )}
+          </div>
         )}
         {renderActionButton()}
       </div>

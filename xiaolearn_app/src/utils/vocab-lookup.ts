@@ -9,6 +9,92 @@ import cfdictData from '../data/cfdict-compact.json';
 
 const CFDICT_MAP = cfdictData as Record<string, string>;
 
+/**
+ * Calcule le pinyin d'une chaîne chinoise. Retourne '' en cas d'échec.
+ */
+export const pinyinFor = (hanzi: string): string => {
+  if (!hanzi || !hasChinese(hanzi)) return '';
+  try {
+    return pinyinPro(hanzi, { toneType: 'symbol', type: 'string' }) as string;
+  } catch {
+    return '';
+  }
+};
+
+export interface ChineseExample {
+  hanzi: string;
+  pinyin: string;
+  /** Traduction française si on a réussi à l'extraire du contexte, sinon undefined. */
+  translation?: string;
+}
+
+/**
+ * Cherche un exemple de phrase contenant un mot, dans une liste de messages.
+ * Heuristique :
+ *   - Découpe chaque message en phrases (sur `。！？.!?\n`).
+ *   - Garde celles qui contiennent `word` ET qui font entre 2 et 30 hanzi.
+ *   - Tente d'extraire une traduction si la phrase est suivie d'un pattern
+ *     `(pinyin - traduction)` ou `— traduction` ou `: traduction`.
+ *   - Renvoie le 1er match.
+ *
+ * On évite la phrase qui est juste `word` tout seul (pas un vrai exemple).
+ */
+export const findExampleSentence = (
+  word: string,
+  texts: string[]
+): ChineseExample | null => {
+  if (!word) return null;
+  const target = word.trim();
+  if (!target) return null;
+
+  for (const text of texts) {
+    if (!text || !text.includes(target)) continue;
+
+    // Découpe sur la ponctuation chinoise + occidentale + retours ligne
+    const sentences = text
+      .split(/(?<=[。！？.!?\n])\s*/g)
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    for (let i = 0; i < sentences.length; i++) {
+      const s = sentences[i];
+      // Capture la partie chinoise principale de la phrase
+      const zhMatch = s.match(/[㐀-鿿，、；：""''《》「」（）()]+/);
+      if (!zhMatch) continue;
+      const zh = zhMatch[0]
+        .replace(/[，、；：""''《》「」（）()]/g, '')
+        .trim();
+      if (!zh || !zh.includes(target)) continue;
+      const zhLen = Array.from(zh).length;
+      if (zhLen < 2 || zhLen > 30) continue;
+      if (zh === target) continue; // pas le mot tout seul
+
+      // Cherche une traduction dans la suite de la phrase ou la phrase suivante
+      let translation: string | undefined;
+      const after = s.slice(s.indexOf(zhMatch[0]) + zhMatch[0].length);
+      // Pattern (pinyin - traduction) ou (traduction)
+      const parenMatch = after.match(/\(([^)]+)\)/);
+      if (parenMatch) {
+        const inside = parenMatch[1];
+        const dashIdx = inside.search(/[-—–]/);
+        translation = (dashIdx >= 0 ? inside.slice(dashIdx + 1) : inside).trim();
+      }
+      // Pattern : « zh — traduction » sur la même phrase
+      if (!translation) {
+        const dashMatch = after.match(/\s*[—–-]\s*([^。.!?\n]+)/);
+        if (dashMatch) translation = dashMatch[1].trim();
+      }
+
+      return {
+        hanzi: zh,
+        pinyin: pinyinFor(zh),
+        translation: translation || undefined
+      };
+    }
+  }
+  return null;
+};
+
 /** True si le texte contient au moins un caractère chinois. */
 export const hasChinese = (text: string): boolean =>
   /[㐀-鿿]/.test(text);

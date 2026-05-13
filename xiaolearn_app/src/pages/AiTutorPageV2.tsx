@@ -25,8 +25,8 @@ import { useCallback, useMemo, useRef, useState, useEffect, type KeyboardEvent, 
 import { parseMarkdown } from '../utils/markdownUtils';
 import '../styles/ai-tutor-v2.css';
 import ErrorCorrectionCard from '../components/ErrorCorrectionCard';
-import VocabPopup, { type VocabPopupWord } from '../components/VocabPopup';
-import { tokenizeMixedText, lookupVocab } from '../utils/vocab-lookup';
+import VocabPopup, { type VocabPopupWord, type VocabPopupExample } from '../components/VocabPopup';
+import { tokenizeMixedText, lookupVocab, findExampleSentence } from '../utils/vocab-lookup';
 import type { UsePersonalFlashcardsReturn } from '../hooks/usePersonalFlashcards';
 import type {
   ErrorCategory,
@@ -481,12 +481,17 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   // Popup vocabulaire (clic sur un hanzi dans une bulle assistant)
   const [vocabState, setVocabState] = useState<{
     word: VocabPopupWord;
+    example: VocabPopupExample | null;
     anchor: { x: number; y: number };
   } | null>(null);
 
   const handleWordClick = useCallback(
     (token: string, event: MouseEvent<HTMLElement>) => {
       const info = lookupVocab(token);
+      // Cherche un exemple dans les messages assistants (et user, au cas où le
+      // mot a été collé par l'utilisateur dans un contexte plus riche).
+      const corpus = messages.map((m) => m.content);
+      const example = findExampleSentence(info.hanzi, corpus);
       // Position du clic + petit décalage pour ne pas masquer le mot
       const rect = (event.currentTarget as HTMLElement | null)?.getBoundingClientRect();
       const x = rect ? rect.left : event.clientX;
@@ -497,10 +502,17 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
           pinyin: info.pinyin || undefined,
           translation: info.translation || undefined
         },
+        example: example
+          ? {
+              hanzi: example.hanzi,
+              pinyin: example.pinyin || undefined,
+              translation: example.translation
+            }
+          : null,
         anchor: { x, y }
       });
     },
-    []
+    [messages]
   );
 
   useEffect(() => {
@@ -530,8 +542,8 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   return (
     <div className="ai-tutor-v2">
       {/* Header — version simplifiée à la Seonsaengnim :
-          titre + sous-titre à gauche, badge "En ligne" à droite.
-          Plus d'avatar gradient, plus de sélecteur de mode. */}
+          avatar Prof. Xiao + titre + sous-titre à gauche, badge "En ligne" à droite.
+          Plus de sélecteur de mode visible. */}
       <header className="at2-header">
         <div className="at2-hero">
           {onBack && (
@@ -543,8 +555,24 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
               {t(language, 'back')}
             </button>
           )}
-          <h1>{t(language, 'title')}</h1>
-          <p>{t(language, 'questionsPrompt')}</p>
+          <div className="at2-hero-row">
+            <div className="at2-hero-avatar at2-hero-avatar--image" aria-hidden>
+              <img
+                src={PROF_XIAO_IMAGE}
+                alt=""
+                onError={(e) => {
+                  const span = document.createElement('span');
+                  span.textContent = '👩‍🏫';
+                  span.style.fontSize = '22px';
+                  e.currentTarget.replaceWith(span);
+                }}
+              />
+            </div>
+            <div className="at2-hero-text">
+              <h1>{t(language, 'title')}</h1>
+              <p>{t(language, 'questionsPrompt')}</p>
+            </div>
+          </div>
         </div>
         <span className="at2-status">
           <span className="at2-status-dot" /> {t(language, 'online')}
@@ -732,6 +760,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
       {vocabState && (
         <VocabPopup
           word={vocabState.word}
+          example={vocabState.example}
           anchor={vocabState.anchor}
           personalFlashcards={personalFlashcards}
           canAddFlashcards={canAddFlashcards}

@@ -85,6 +85,36 @@
   gap: 2px;
   min-width: 0;
 }
+.ai-tutor-v2 .at2-hero-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-hero-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fde9e8 0%, #fbf1cf 100%);
+  border: 1px solid #f4c8c3;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(200, 52, 46, 0.12);
+}
+.ai-tutor-v2 .at2-hero-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ai-tutor-v2 .at2-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
 .ai-tutor-v2 .at2-hero h1 {
   margin: 0;
   font-size: 18px;
@@ -567,15 +597,22 @@
 /* ====================================================================== */
 /* Vocabulary popup (clic sur un mot chinois)                              */
 /* ====================================================================== */
+/* Hanzi cliquables — soulignage pointillé pour signaler « + d'infos au clic ».
+   On utilise text-decoration plutôt que border-bottom pour que le
+   pointillé suive le retour à la ligne sans rompre l'inline-flow. */
 .ai-tutor-v2 .at2-vocab-token {
-  cursor: pointer;
+  cursor: help;
   border-radius: 4px;
   padding: 0 1px;
-  transition: background 0.12s ease;
+  text-decoration: underline dotted #c6302c;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: background 0.12s ease, text-decoration-color 0.12s ease;
 }
 .ai-tutor-v2 .at2-vocab-token:hover,
 .ai-tutor-v2 .at2-vocab-token:focus {
   background: var(--at2-gold-soft, #fbe9b8);
+  text-decoration-color: #9c2521;
   outline: none;
 }
 
@@ -650,6 +687,40 @@
   color: #1f2937;
   margin: 8px 0 12px;
   font-weight: 500;
+  font-style: italic;
+}
+.at2-vocab-popup-example {
+  background: #faf6ed;
+  border: 1px solid #f0e6d4;
+  border-radius: 10px;
+  padding: 8px 10px 9px;
+  margin: 0 0 12px;
+}
+.at2-vocab-popup-example-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b08800;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.at2-vocab-popup-example-hanzi {
+  margin: 0;
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.at2-vocab-popup-example-pinyin {
+  margin: 1px 0 0;
+  font-size: 11.5px;
+  font-style: italic;
+  color: #6b7280;
+}
+.at2-vocab-popup-example-translation {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #1f2937;
   font-style: italic;
 }
 .at2-vocab-popup-action {
