@@ -176,10 +176,20 @@ export interface ChineseSegment {
 }
 
 /**
+ * Seuil minimal de hanzi consécutifs pour considérer un bloc comme une
+ * "phrase d'exemple" cliquable. En dessous (1 ou 2 hanzi isolés dans un
+ * paragraphe d'explication français — typiquement "la particule 了"), le
+ * lookup CFDICT donnerait une traduction hors contexte (了 → "finir" alors
+ * qu'ici c'est une particule) et un pinyin polyphonique faux (liǎo au lieu
+ * de le). On préfère ne PAS rendre cliquables ces mentions inline.
+ */
+const MIN_CHINESE_RUN_FOR_CLICK = 3;
+
+/**
  * Découpe un texte mixte (chinois + latin/ponctuation) en segments.
- * Les segments chinois sont eux-mêmes tokenisés en mots (via Intl.Segmenter).
- * Le markdown brut (gras, italique, code) est PRÉSERVÉ — on tokenise
- * uniquement le plain text autour.
+ * Les segments chinois ≥ MIN_CHINESE_RUN_FOR_CLICK hanzi sont tokenisés en
+ * mots cliquables (via Intl.Segmenter). Les blocs plus courts (mentions
+ * inline d'un seul caractère) restent en texte non-cliquable.
  */
 export const tokenizeMixedText = (text: string): ChineseSegment[] => {
   const out: ChineseSegment[] = [];
@@ -188,12 +198,14 @@ export const tokenizeMixedText = (text: string): ChineseSegment[] => {
 
   const flush = () => {
     if (!buffer) return;
-    if (bufferIsZh) {
-      // Tokenise les blocs de hanzi en mots
+    const hanziCount = Array.from(buffer).filter((c) => /[㐀-鿿]/.test(c)).length;
+    if (bufferIsZh && hanziCount >= MIN_CHINESE_RUN_FOR_CLICK) {
+      // Tokenise les blocs de hanzi en mots cliquables
       for (const tok of segmentChinese(buffer)) {
         if (tok) out.push({ text: tok, isChinese: true });
       }
     } else {
+      // Bloc trop court (mention inline) — on garde tel quel, non-cliquable
       out.push({ text: buffer, isChinese: false });
     }
     buffer = '';
