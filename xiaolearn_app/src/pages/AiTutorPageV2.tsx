@@ -508,7 +508,8 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
         word: {
           hanzi: info.hanzi,
           pinyin: info.pinyin || undefined,
-          translation: info.translation || undefined
+          translation: info.translation || undefined,
+          breakdown: info.breakdown.length > 0 ? info.breakdown : undefined
         },
         example: example
           ? {

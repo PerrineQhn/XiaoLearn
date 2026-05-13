@@ -145,55 +145,65 @@ export const segmentChinese = (text: string): string[] => {
   return Array.from(text);
 };
 
+export interface VocabBreakdownEntry {
+  char: string;
+  pinyin: string;
+  sense: string;
+}
+
 export interface VocabLookupResult {
   hanzi: string;
   pinyin: string;
+  /** Traduction du mot composé (si trouvée dans CFDICT). Vide sinon. */
   translation: string;
+  /**
+   * Décomposition caractère-par-caractère du mot (renseignée uniquement pour
+   * les mots ≥ 2 hanzi). Chaque entrée porte hanzi + pinyin + sens du
+   * caractère isolé. Utile pour aider l'apprenant quand on n'a pas le mot
+   * composé en dict, ou en complément quand on l'a.
+   */
+  breakdown: VocabBreakdownEntry[];
   found: boolean;
 }
 
 /**
- * Cherche un mot dans CFDICT puis tente une décomposition caractère par
- * caractère si introuvable. Pinyin via pinyin-pro.
+ * Cherche un mot dans CFDICT et calcule sa décomposition caractère-par-
+ * caractère. Pinyin via pinyin-pro pour le mot global + par caractère pour
+ * la breakdown.
  */
 export const lookupVocab = (token: string): VocabLookupResult => {
   const hanzi = token.trim();
   if (!hanzi || !hasChinese(hanzi)) {
-    return { hanzi, pinyin: '', translation: '', found: false };
+    return { hanzi, pinyin: '', translation: '', breakdown: [], found: false };
   }
-  let pinyin = '';
-  try {
-    pinyin = pinyinPro(hanzi, { toneType: 'symbol', type: 'string' }) as string;
-  } catch {
-    pinyin = '';
-  }
+  const pinyin = pinyinFor(hanzi);
+
+  // Traduction du mot composé (si CFDICT a une entrée pour le mot entier)
   const direct = CFDICT_MAP[hanzi];
-  if (direct) {
-    return {
-      hanzi,
-      pinyin,
-      translation: direct.split('/')[0].trim(),
-      found: true
-    };
-  }
-  // Fallback : décomposition caractère par caractère
+  const translation = direct ? direct.split('/')[0].trim() : '';
+
+  // Décomposition par caractère, pour mots de 2+ hanzi.
+  const breakdown: VocabBreakdownEntry[] = [];
   const chars = Array.from(hanzi);
   if (chars.length > 1) {
-    const parts: string[] = [];
     for (const ch of chars) {
       const cf = CFDICT_MAP[ch];
-      if (cf) parts.push(`${ch} = ${cf.split('/')[0].trim()}`);
-    }
-    if (parts.length > 0) {
-      return {
-        hanzi,
-        pinyin,
-        translation: parts.join(' · '),
-        found: true
-      };
+      if (!cf) continue;
+      breakdown.push({
+        char: ch,
+        pinyin: pinyinFor(ch),
+        sense: cf.split('/')[0].trim()
+      });
     }
   }
-  return { hanzi, pinyin, translation: '', found: false };
+
+  return {
+    hanzi,
+    pinyin,
+    translation,
+    breakdown,
+    found: Boolean(translation || breakdown.length > 0)
+  };
 };
 
 export interface ChineseSegment {

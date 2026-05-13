@@ -689,6 +689,40 @@
   font-weight: 500;
   font-style: italic;
 }
+.at2-vocab-popup-breakdown {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0 0 10px;
+  border-top: 1px dashed #e5d7c0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.at2-vocab-popup-breakdown-row {
+  display: grid;
+  grid-template-columns: 22px auto 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+.at2-vocab-popup-breakdown-char {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.at2-vocab-popup-breakdown-pinyin {
+  font-size: 12px;
+  font-style: italic;
+  color: #6b7280;
+}
+.at2-vocab-popup-breakdown-sense {
+  font-size: 12.5px;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .at2-vocab-popup-example {
   background: #faf6ed;
   border: 1px solid #f0e6d4;

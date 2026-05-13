@@ -20,7 +20,10 @@ import { playHanziAudio } from '../utils/audio';
 export interface VocabPopupWord {
   hanzi: string;
   pinyin?: string;
+  /** Traduction du mot composé (si trouvée). Optionnel. */
   translation?: string;
+  /** Décomposition caractère-par-caractère, présente si mot composé. */
+  breakdown?: Array<{ char: string; pinyin: string; sense: string }>;
 }
 
 export interface VocabPopupExample {
@@ -63,10 +66,13 @@ const VocabPopup = ({
     return () => window.removeEventListener('keydown', onKey);
   }, [onClose]);
 
-  // Le popup ne sort pas du viewport. On clamp X et Y. La hauteur est plus
-  // grande quand il y a un exemple, donc on adapte la zone réservée.
-  const popupWidth = 280;
-  const popupHeight = example ? 250 : 170;
+  // Le popup ne sort pas du viewport. On clamp X et Y. La hauteur dépend
+  // du contenu : on grossit la zone réservée si on a une breakdown ou un
+  // exemple, pour que le popup ne soit pas tronqué en bord d'écran.
+  const popupWidth = 300;
+  const hasBreakdown = (word.breakdown ?? []).length > 0;
+  const popupHeight =
+    170 + (hasBreakdown ? (word.breakdown?.length ?? 0) * 22 + 16 : 0) + (example ? 110 : 0);
   const margin = 12;
   const maxX = (typeof window !== 'undefined' ? window.innerWidth : 1200) - popupWidth - margin;
   const maxY = (typeof window !== 'undefined' ? window.innerHeight : 800) - popupHeight - margin;
@@ -184,15 +190,35 @@ const VocabPopup = ({
             )}
           </div>
         </div>
+        {/* Traduction du mot composé (si CFDICT a une entrée). On ne montre
+            rien si la breakdown existe et qu'on a pas de traduction directe :
+            la breakdown suffit à comprendre le mot. */}
         {word.translation ? (
           <p className="at2-vocab-popup-translation">{word.translation}</p>
-        ) : (
+        ) : (word.breakdown ?? []).length === 0 ? (
           <p className="at2-vocab-popup-empty">
             {language === 'fr'
               ? 'Traduction non trouvée dans le dictionnaire.'
               : 'Translation not found in dictionary.'}
           </p>
+        ) : null}
+
+        {/* Décomposition caractère-par-caractère : char + pinyin + sens. */}
+        {(word.breakdown ?? []).length > 0 && (
+          <ul className="at2-vocab-popup-breakdown" role="list">
+            {(word.breakdown ?? []).map((b, idx) => (
+              <li key={`${b.char}-${idx}`} className="at2-vocab-popup-breakdown-row">
+                <span className="at2-vocab-popup-breakdown-char">{b.char}</span>
+                <span className="at2-vocab-popup-breakdown-pinyin">
+                  {b.pinyin}
+                </span>
+                <span className="at2-vocab-popup-breakdown-sense">{b.sense}</span>
+              </li>
+            ))}
+          </ul>
         )}
+
+        {/* Phrase d'exemple extraite de la conversation, si trouvée. */}
         {example && (
           <div className="at2-vocab-popup-example">
             <div className="at2-vocab-popup-example-label">
@@ -209,6 +235,7 @@ const VocabPopup = ({
             )}
           </div>
         )}
+
         {renderActionButton()}
       </div>
     </>
