@@ -21,9 +21,18 @@
  * Styles : ./../styles/ai-tutor-v2.css (scoped sous .ai-tutor-v2)
  */
 
-import { useMemo, useRef, useState, useEffect, type KeyboardEvent } from 'react';
+import { useCallback, useMemo, useRef, useState, useEffect, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
 import { parseMarkdown } from '../utils/markdownUtils';
 import '../styles/ai-tutor-v2.css';
+import ErrorCorrectionCard from '../components/ErrorCorrectionCard';
+import VocabPopup, { type VocabPopupWord } from '../components/VocabPopup';
+import { tokenizeMixedText, lookupVocab } from '../utils/vocab-lookup';
+import type { UsePersonalFlashcardsReturn } from '../hooks/usePersonalFlashcards';
+import type {
+  ErrorCategory,
+  ErrorSeverity,
+  ErrorEntry
+} from '../types/error-journal';
 
 // ============================================================================
 //  TYPES
@@ -33,12 +42,25 @@ export type AiTutorV2Language = 'fr' | 'en';
 
 export type AiTutorV2Role = 'user' | 'assistant' | 'system';
 
+/** Une correction visuelle attachée à un message assistant. */
+export interface AiTutorV2Correction {
+  category: string;
+  severity?: string;
+  wrong: string;
+  correct: string;
+  pinyin?: string;
+  translation?: string;
+  explanation: string;
+}
+
 export interface AiTutorV2Message {
   id: string;
   role: AiTutorV2Role;
   content: string;
   /** Timestamp ms. */
   createdAt: number;
+  /** Corrections détectées sur le dernier message user (assistant uniquement). */
+  corrections?: AiTutorV2Correction[];
 }
 
 export type AiTutorV2Mode = 'balanced' | 'strict' | 'playful';
@@ -108,6 +130,12 @@ export interface AiTutorPageV2Props {
   onSelectConversation?: (id: string) => void;
   /** Supprime une conversation. */
   onRemoveConversation?: (id: string) => void;
+
+  // ----- Popup vocabulaire (clic sur un hanzi) -----
+  /** Hook flashcards perso — si fourni, popup vocab affiche un bouton "+". */
+  personalFlashcards?: UsePersonalFlashcardsReturn;
+  /** Gating Lifetime — si false, le bouton "+" est verrouillé. */
+  canAddFlashcards?: boolean;
 }
 
 // ============================================================================
@@ -341,14 +369,58 @@ const Avatar = ({
   );
 };
 
+/**
+ * Wrappe les tokens chinois d'une string en spans cliquables qui ouvrent le
+ * popup vocabulaire. Utilisé comme `renderText` de parseMarkdown.
+ */
+const renderTextWithVocab = (
+  raw: string,
+  key: string,
+  onWordClick: (word: string, event: MouseEvent<HTMLElement>) => void
+): ReactNode => {
+  const segments = tokenizeMixedText(raw);
+  if (segments.length === 0) return raw;
+  // Si aucun segment chinois, on retourne tel quel pour ne pas perdre les
+  // espaces / ponctuation latine.
+  if (!segments.some((s) => s.isChinese)) return raw;
+  return (
+    <>
+      {segments.map((seg, idx) => {
+        if (!seg.isChinese) {
+          return <span key={`${key}-${idx}`}>{seg.text}</span>;
+        }
+        return (
+          <span
+            key={`${key}-${idx}`}
+            className="at2-vocab-token"
+            role="button"
+            tabIndex={0}
+            onClick={(e) => onWordClick(seg.text, e)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onWordClick(seg.text, e as unknown as MouseEvent<HTMLElement>);
+              }
+            }}
+          >
+            {seg.text}
+          </span>
+        );
+      })}
+    </>
+  );
+};
+
 const MessageBubble = ({
   message,
   language,
-  userPhotoURL
+  userPhotoURL,
+  onWordClick
 }: {
   message: AiTutorV2Message;
   language: AiTutorV2Language;
   userPhotoURL?: string | null;
+  onWordClick: (word: string, event: MouseEvent<HTMLElement>) => void;
 }) => (
   <div className={`at2-message at2-message--${message.role}`}>
     <Avatar role={message.role} userPhotoURL={userPhotoURL} />
@@ -357,11 +429,14 @@ const MessageBubble = ({
         {message.role === 'assistant' ? t(language, 'prof') : t(language, 'you')}
       </div>
       {/* Markdown rendu pour les réponses de l'IA (gras, listes, code blocks,
-          retours à la ligne). Les messages user restent en texte brut — il n'y
-          a aucune raison de leur appliquer un parseur (et ça évite que du
-          markdown collé par l'user soit interprété malgré lui). */}
+          retours à la ligne). Les hanzi sont rendus cliquables via le
+          renderText option du parser. Les messages user restent en texte brut. */}
       <div className="at2-message-text">
-        {message.role === 'assistant' ? parseMarkdown(message.content) : message.content}
+        {message.role === 'assistant'
+          ? parseMarkdown(message.content, {
+              renderText: (t, k) => renderTextWithVocab(t, k, onWordClick)
+            })
+          : message.content}
       </div>
     </div>
   </div>
@@ -372,6 +447,9 @@ const MessageBubble = ({
 // ============================================================================
 
 const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
+  // Note : `onChangeMode` et `contextChips` sont volontairement non
+  // déstructurés — l'UI simplifiée ne montre plus le sélecteur de mode
+  // ni les chips contextuels. Ils restent dans le type pour compat ascendante.
   const {
     language = 'fr',
     messages,
@@ -379,16 +457,16 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
     mode: modeProp = 'balanced',
     onSend,
     onClear,
-    onChangeMode,
     promptCategories,
-    contextChips = [],
     onBack,
     userPhotoURL = null,
     conversations = [],
     currentConvId = null,
     onNewConversation,
     onSelectConversation,
-    onRemoveConversation
+    onRemoveConversation,
+    personalFlashcards,
+    canAddFlashcards = true
   } = props;
 
   const categories = useMemo(
@@ -396,14 +474,34 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
     [promptCategories]
   );
 
-  const [mode, setMode] = useState<AiTutorV2Mode>(modeProp);
   const [categoryKey, setCategoryKey] = useState<string>(categories[0]?.key ?? 'grammar');
   const [input, setInput] = useState('');
   const endRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setMode(modeProp);
-  }, [modeProp]);
+  // Popup vocabulaire (clic sur un hanzi dans une bulle assistant)
+  const [vocabState, setVocabState] = useState<{
+    word: VocabPopupWord;
+    anchor: { x: number; y: number };
+  } | null>(null);
+
+  const handleWordClick = useCallback(
+    (token: string, event: MouseEvent<HTMLElement>) => {
+      const info = lookupVocab(token);
+      // Position du clic + petit décalage pour ne pas masquer le mot
+      const rect = (event.currentTarget as HTMLElement | null)?.getBoundingClientRect();
+      const x = rect ? rect.left : event.clientX;
+      const y = rect ? rect.bottom + 6 : event.clientY + 6;
+      setVocabState({
+        word: {
+          hanzi: info.hanzi,
+          pinyin: info.pinyin || undefined,
+          translation: info.translation || undefined
+        },
+        anchor: { x, y }
+      });
+    },
+    []
+  );
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -412,7 +510,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   const handleSend = () => {
     const content = input.trim();
     if (!content) return;
-    onSend({ content, mode });
+    onSend({ content, mode: modeProp });
     setInput('');
   };
 
@@ -425,64 +523,32 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
 
   const activeCategory = categories.find((c) => c.key === categoryKey) ?? categories[0];
 
-  const handleChangeMode = (m: AiTutorV2Mode) => {
-    setMode(m);
-    onChangeMode?.(m);
-  };
-
   const handlePromptClick = (body: string) => {
     setInput(body);
   };
 
   return (
     <div className="ai-tutor-v2">
-      {/* Header */}
+      {/* Header — version simplifiée à la Seonsaengnim :
+          titre + sous-titre à gauche, badge "En ligne" à droite.
+          Plus d'avatar gradient, plus de sélecteur de mode. */}
       <header className="at2-header">
-        {onBack && (
-          <button className="at2-btn at2-btn--link" onClick={onBack}>
-            {t(language, 'back')}
-          </button>
-        )}
         <div className="at2-hero">
-          <div className="at2-hero-avatar at2-hero-avatar--image" aria-hidden>
-            <img
-              src={PROF_XIAO_IMAGE}
-              alt=""
-              onError={(e) => {
-                const span = document.createElement('span');
-                span.textContent = '👩‍🏫';
-                span.style.fontSize = '28px';
-                e.currentTarget.replaceWith(span);
-              }}
-            />
-          </div>
-          <div>
-            <h1>{t(language, 'title')}</h1>
-            <p>{t(language, 'subtitle')}</p>
-            <span className="at2-status">
-              <span className="at2-status-dot" /> {t(language, 'online')}
-            </span>
-          </div>
+          {onBack && (
+            <button
+              className="at2-btn at2-btn--link"
+              onClick={onBack}
+              style={{ alignSelf: 'flex-start', padding: 0, marginBottom: 4 }}
+            >
+              {t(language, 'back')}
+            </button>
+          )}
+          <h1>{t(language, 'title')}</h1>
+          <p>{t(language, 'questionsPrompt')}</p>
         </div>
-        <div className="at2-mode">
-          <span className="at2-mode-label">{t(language, 'modeLabel')}</span>
-          <div className="at2-mode-options" role="radiogroup">
-            {(['strict', 'balanced', 'playful'] as AiTutorV2Mode[]).map((m) => (
-              <button
-                key={m}
-                role="radio"
-                aria-checked={mode === m}
-                className={`at2-mode-btn ${mode === m ? 'is-active' : ''}`}
-                onClick={() => handleChangeMode(m)}
-              >
-                {t(
-                  language,
-                  (m === 'strict' ? 'modeStrict' : m === 'balanced' ? 'modeBalanced' : 'modePlayful') as CopyKey
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
+        <span className="at2-status">
+          <span className="at2-status-dot" /> {t(language, 'online')}
+        </span>
       </header>
 
       {/* 3-column layout */}
@@ -595,12 +661,26 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
           ) : (
             <div className="at2-messages">
               {messages.map((m) => (
-                <MessageBubble
-                  key={m.id}
-                  message={m}
-                  language={language}
-                  userPhotoURL={userPhotoURL}
-                />
+                <div key={m.id}>
+                  <MessageBubble
+                    message={m}
+                    language={language}
+                    userPhotoURL={userPhotoURL}
+                    onWordClick={handleWordClick}
+                  />
+                  {/* Cartes de correction sous le message de l'assistant */}
+                  {m.role === 'assistant' && m.corrections && m.corrections.length > 0 && (
+                    <div className="at2-corrections" style={{ marginLeft: 56, marginTop: -4 }}>
+                      {m.corrections.map((c, idx) => (
+                        <ErrorCorrectionCard
+                          key={`${m.id}-corr-${idx}`}
+                          entry={correctionToEntry(c, m.id, idx)}
+                          compact
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               {isTyping && (
                 <div className="at2-typing">
@@ -646,32 +726,59 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
             </div>
           </div>
         </section>
-
-        {/* Right : quick contextual chips */}
-        <aside className="at2-sidebar at2-sidebar--right">
-          <div className="at2-sidebar-title">{t(language, 'contextTitle')}</div>
-          <div className="at2-chips">
-            {contextChips.length === 0 ? (
-              <div className="at2-chips-empty">—</div>
-            ) : (
-              contextChips.map((c) => (
-                <button
-                  key={c.key}
-                  className="at2-chip"
-                  onClick={() =>
-                    handlePromptClick(language === 'en' && c.promptEn ? c.promptEn : c.prompt)
-                  }
-                  type="button"
-                >
-                  {language === 'en' && c.labelEn ? c.labelEn : c.label}
-                </button>
-              ))
-            )}
-          </div>
-        </aside>
       </div>
+
+      {/* Popup vocabulaire : s'affiche au clic d'un hanzi dans une bulle. */}
+      {vocabState && (
+        <VocabPopup
+          word={vocabState.word}
+          anchor={vocabState.anchor}
+          personalFlashcards={personalFlashcards}
+          canAddFlashcards={canAddFlashcards}
+          language={language}
+          onClose={() => setVocabState(null)}
+        />
+      )}
     </div>
   );
 };
+
+/**
+ * Convertit une correction Gemini en ErrorEntry temporaire pour rendu via
+ * ErrorCorrectionCard. Les champs `createdAt`, `lastSeenAt`, `id` etc. sont
+ * synthétiques — l'entrée n'est PAS persistée par ce helper (la persistance
+ * se fait dans App.tsx via `addError()` quand le message arrive).
+ */
+function correctionToEntry(c: AiTutorV2Correction, msgId: string, idx: number): ErrorEntry {
+  const validCategories: ErrorCategory[] = [
+    'particule', 'ton', 'prononciation', 'politesse',
+    'vocabulaire', 'grammaire', 'mesureur', 'caractere',
+    'traduction', 'orthographe', 'autre'
+  ];
+  const validSeverities: ErrorSeverity[] = ['mineure', 'importante', 'critique'];
+  const category = (validCategories.includes(c.category as ErrorCategory)
+    ? c.category
+    : 'autre') as ErrorCategory;
+  const severity = (validSeverities.includes(c.severity as ErrorSeverity)
+    ? c.severity
+    : 'importante') as ErrorSeverity;
+  const nowIso = new Date().toISOString();
+  return {
+    id: `${msgId}-corr-${idx}`,
+    category,
+    severity,
+    source: 'prof-xiao',
+    wrongText: c.wrong,
+    correctText: c.correct,
+    correctPinyin: c.pinyin,
+    correctTranslationFr: c.translation,
+    explanation: c.explanation,
+    createdAt: nowIso,
+    lastSeenAt: nowIso,
+    occurrenceCount: 1,
+    practiceCount: 0,
+    lastPracticeSuccessAt: null
+  };
+}
 
 export default AiTutorPageV2;

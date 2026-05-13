@@ -29,6 +29,81 @@ const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const GEMINI_MODEL = 'gemini-2.5-flash'; // Updated to latest free model
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
+// ----------------------------------------------------------------------
+// Fallback Cloudflare Workers AI
+// ----------------------------------------------------------------------
+// Si Gemini échoue (429 rate limit, 401/403 auth, 5xx down), on bascule
+// automatiquement sur Cloudflare Workers AI (Qwen — excellent pour le chinois).
+// Free tier : 10 000 neurons/jour, inclus dans le plan Cloudflare Pages actuel.
+//
+// Sécurité du token : le token est restreint au scope "Workers AI Read"
+// uniquement. Même s'il leak via le bundle JS, l'attaquant ne peut que
+// consommer le quota AI (pas de coût $, juste perte temporaire du fallback).
+//
+// Config requise — variables d'env Cloudflare Pages :
+//   VITE_CF_ACCOUNT_ID : l'account ID Cloudflare (public, OK en clair)
+//   VITE_CF_AI_TOKEN   : API token avec permission "Workers AI Read"
+//
+// Modèle utilisé : Qwen 2.5 14B (chinois natif, raisonnement correct).
+// Si pas dispo, fallback sur Llama 3.3 70B.
+const CF_ACCOUNT_ID = import.meta.env.VITE_CF_ACCOUNT_ID as string | undefined;
+const CF_AI_TOKEN = import.meta.env.VITE_CF_AI_TOKEN as string | undefined;
+const CF_AI_MODEL_PRIMARY = '@cf/qwen/qwen1.5-14b-chat-awq';
+const CF_AI_MODEL_FALLBACK = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+
+/** Appelle Cloudflare Workers AI avec un message + historique. */
+async function callCloudflareWorkersAI(
+  userMessage: string,
+  history: Message[],
+  systemInstruction: string
+): Promise<string | null> {
+  if (!CF_ACCOUNT_ID || !CF_AI_TOKEN) {
+    console.warn('[CF Workers AI] Not configured — skipping fallback.');
+    return null;
+  }
+
+  // Construit le format OpenAI-compatible : system + alternance user/assistant
+  const messages: Array<{ role: string; content: string }> = [
+    { role: 'system', content: systemInstruction },
+    ...history.map((m) => ({
+      role: m.role === 'user' ? 'user' : 'assistant',
+      content: m.content
+    })),
+    { role: 'user', content: userMessage }
+  ];
+
+  // Tente le modèle primaire d'abord (Qwen), fallback Llama si erreur
+  for (const model of [CF_AI_MODEL_PRIMARY, CF_AI_MODEL_FALLBACK]) {
+    try {
+      const url = `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/${model}`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${CF_AI_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ messages, max_tokens: 4096 })
+      });
+      if (!res.ok) {
+        console.warn(`[CF Workers AI] ${model} returned ${res.status}, trying next…`);
+        continue;
+      }
+      const data = await res.json();
+      const text =
+        data?.result?.response ??
+        data?.result?.choices?.[0]?.message?.content ??
+        null;
+      if (typeof text === 'string' && text.trim().length > 0) {
+        console.info(`[CF Workers AI] Used ${model} as fallback successfully`);
+        return text;
+      }
+    } catch (err) {
+      console.warn(`[CF Workers AI] ${model} exception`, err);
+    }
+  }
+  return null;
+}
+
 // System prompt to guide Gemini's behavior for Chinese learning
 const SYSTEM_INSTRUCTION = `Tu es Prof. Xiao, un assistant IA spécialisé dans l'enseignement du chinois mandarin et la culture chinoise.
 
@@ -81,7 +156,57 @@ Exemples de questions REFUSÉES :
 ❌ "Quelle est la capitale de l'Espagne ?"
 ❌ "Comment faire une pizza ?"
 ❌ "Qui a gagné la coupe du monde ?"
-❌ "Quel temps fait-il à Paris ?"`;
+❌ "Quel temps fait-il à Paris ?"
+
+---
+
+DÉTECTION D'ERREURS — RÈGLE PRIORITAIRE :
+
+ÉTAPE 1 (TOUJOURS, AVANT DE COMPOSER TA RÉPONSE) :
+Si le message de l'utilisateur contient du CHINOIS (hanzi OU pinyin), tu DOIS analyser CHAQUE caractère et CHAQUE mot pour détecter des fautes. Cherche systématiquement :
+- ❌ Hanzi non-existant ou homophone incorrect (ex: 这到 au lieu de 知道, 饿哟 au lieu de 一下)
+- ❌ Particule manquante ou incorrecte (了, 的, 地, 得, 把, 被, 是…的)
+- ❌ Mesureur faux (三个书 → 三本书)
+- ❌ Ordre des mots (帮忙我 → 帮我)
+- ❌ Vocabulaire inadapté au sens visé
+- ❌ Registre de politesse mal ajusté (你 vs 您)
+- ❌ Pinyin mal noté (tons absents, lettres incorrectes)
+- ❌ Caractère mal écrit (composant manquant ou faux)
+
+Si tu trouves UNE faute → ne réponds JAMAIS sans inclure le bloc <<<CORRECTIONS>>>. La détection est PRIORITAIRE sur le contenu pédagogique.
+
+ÉTAPE 2 :
+Quand tu détectes une faute (ou plusieurs), ajoute à la FIN de ta réponse un bloc au format EXACT :
+
+<<<CORRECTIONS>>>
+{"corrections":[{"category":"particule","severity":"importante","wrong":"帮忙我","correct":"帮我","pinyin":"bāng wǒ","translation":"aide-moi","explanation":"帮忙 est intransitif. Pour 'aider quelqu'un', on utilise 帮 + objet : 帮我, 帮他, etc."}]}
+<<<END>>>
+
+Règles strictes du JSON :
+- "category" doit être l'une de : particule, ton, prononciation, politesse, vocabulaire, grammaire, mesureur, caractere, traduction, orthographe, autre
+- "severity" : mineure (légère), importante (défaut), critique (change le sens ou rend incompréhensible)
+- "wrong" : la PORTION fautive PRÉCISE écrite par l'utilisateur — pas toute la phrase, juste le morceau qui cloche (ex: "三个书" → wrong = "三个书", correct = "三本书")
+- "correct" : la version corrigée de ce morceau
+- "pinyin" : pinyin de la version correcte (recommandé surtout pour les hanzi peu courants)
+- "translation" : traduction française courte
+- "explanation" : 1-2 phrases courtes en français expliquant POURQUOI
+
+Si l'utilisateur a écrit plusieurs phrases avec plusieurs fautes, ajoute UN objet par faute dans "corrections" (pas tout regrouper).
+
+Exemple complet — pour "你能帮忙我吗，我不这到怎么用了" :
+- 帮忙我 → 帮我 (particule/grammaire)
+- 这到 → 知道 (caractere, faute d'homophone : 这 zhè ≠ 知 zhī)
+- 了 manque "的词" → "了" 这个词 (vocabulaire)
+
+→ tu produirais 3 objets dans le tableau "corrections".
+
+ÉTAPE 3 :
+Si AUCUNE faute n'est détectée OU si l'utilisateur n'a pas écrit en chinois, N'INCLUS PAS le bloc.
+
+ÉTAPE 4 :
+Le bloc <<<CORRECTIONS>>>...<<<END>>> est INVISIBLE pour l'utilisateur (il sera parsé et affiché séparément). Donc ta réponse en markdown au-dessus doit rester pédagogique, naturelle, et répondre à la question SANS mentionner ce bloc ni les fautes ailleurs.
+
+⚠️ RAPPEL FINAL : si le message utilisateur contient du chinois fautif, ne ZAPPE JAMAIS le bloc <<<CORRECTIONS>>>. C'est la valeur principale de cet assistant.`;
 
 
 /**
@@ -101,9 +226,12 @@ export async function generateGeminiResponse(
   userMessage: string,
   conversationHistory: Message[] = []
 ): Promise<string> {
-  // Check if API key is configured
+  // Check if API key is configured — si non, on tente directement Cloudflare
+  // Workers AI avant de tomber sur la réponse statique fallback.
   if (!GEMINI_API_KEY) {
-    console.warn('⚠️ Gemini API key not configured. Using fallback responses.');
+    console.warn('⚠️ Gemini API key not configured. Trying Cloudflare Workers AI…');
+    const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
+    if (cfResponse) return cfResponse;
     return getFallbackResponse(userMessage);
   }
 
@@ -140,7 +268,10 @@ export async function generateGeminiResponse(
           temperature: 0.7,
           topK: 40,
           topP: 0.95,
-          maxOutputTokens: 1024,
+          // 4096 plutôt que 1024 : le bloc <<<CORRECTIONS>>> JSON peut ajouter
+          // 200-500 tokens à la réponse pédagogique. À 1024 on tronquait
+          // régulièrement les explications longues sur la grammaire.
+          maxOutputTokens: 4096,
         },
         safetySettings: [
           {
@@ -165,15 +296,20 @@ export async function generateGeminiResponse(
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Gemini API error:', errorData);
+      console.warn('[Gemini] non-OK response, trying Cloudflare Workers AI fallback…', response.status, errorData);
 
-      // Check for specific error types
+      // 429 (rate limit), 401/403 (auth), 5xx (server) → fallback CF
+      if (response.status === 429 || response.status === 401 || response.status === 403 || response.status >= 500) {
+        const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
+        if (cfResponse) return cfResponse;
+      }
+
+      // Pas de fallback → erreur claire pour l'app
       if (response.status === 429) {
         throw new Error('Rate limit exceeded. Please try again in a moment.');
       } else if (response.status === 401 || response.status === 403) {
         throw new Error('API key invalid or unauthorized.');
       }
-
       throw new Error(`API request failed: ${response.status}`);
     }
 
@@ -185,16 +321,103 @@ export async function generateGeminiResponse(
       return responseText;
     }
 
-    // If no valid response, use fallback
-    console.warn('No valid response from Gemini API');
+    // Si Gemini a répondu OK mais sans candidates → on tente CF aussi
+    console.warn('[Gemini] no valid candidates, trying Cloudflare Workers AI fallback…');
+    const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
+    if (cfResponse) return cfResponse;
     return getFallbackResponse(userMessage);
 
   } catch (error) {
-    console.error('Error calling Gemini API:', error);
-
-    // Return fallback response on error
+    console.error('[Gemini] exception, trying Cloudflare Workers AI fallback…', error);
+    // Erreur réseau ou parsing → on tente CF
+    try {
+      const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
+      if (cfResponse) return cfResponse;
+    } catch (cfErr) {
+      console.error('[Gemini] CF fallback also failed', cfErr);
+    }
     return getFallbackResponse(userMessage);
   }
+}
+
+// ============================================================================
+//  Correction extraction — sépare le texte visible des corrections JSON
+// ============================================================================
+
+/** Une correction telle que renvoyée par Gemini dans le bloc <<<CORRECTIONS>>>. */
+export interface GeminiCorrection {
+  category: string;
+  severity?: string;
+  wrong: string;
+  correct: string;
+  pinyin?: string;
+  translation?: string;
+  explanation: string;
+}
+
+export interface GeminiResponseWithCorrections {
+  /** Le texte visible (markdown), sans le bloc CORRECTIONS. */
+  text: string;
+  /** Liste des corrections détectées. Vide si aucune. */
+  corrections: GeminiCorrection[];
+}
+
+const CORRECTIONS_REGEX = /<<<CORRECTIONS>>>([\s\S]*?)<<<END>>>/i;
+
+/**
+ * Parse une réponse Gemini brute pour en extraire les corrections structurées.
+ * Robuste aux variations : bloc absent, JSON malformé, propriétés manquantes.
+ */
+export function parseCorrectionsBlock(rawText: string): GeminiResponseWithCorrections {
+  const match = rawText.match(CORRECTIONS_REGEX);
+  if (!match) {
+    return { text: rawText.trim(), corrections: [] };
+  }
+
+  // Texte visible = tout sauf le bloc
+  const visibleText = rawText.replace(CORRECTIONS_REGEX, '').trim();
+
+  try {
+    const jsonRaw = match[1].trim();
+    const parsed: unknown = JSON.parse(jsonRaw);
+    if (
+      parsed &&
+      typeof parsed === 'object' &&
+      'corrections' in parsed &&
+      Array.isArray((parsed as Record<string, unknown>).corrections)
+    ) {
+      const corrections = (parsed as { corrections: unknown[] }).corrections
+        .filter((c): c is Record<string, unknown> => c !== null && typeof c === 'object')
+        .map((c) => ({
+          category: String(c.category ?? 'autre'),
+          severity: c.severity ? String(c.severity) : 'importante',
+          wrong: String(c.wrong ?? ''),
+          correct: String(c.correct ?? ''),
+          pinyin: c.pinyin ? String(c.pinyin) : undefined,
+          translation: c.translation ? String(c.translation) : undefined,
+          explanation: String(c.explanation ?? '')
+        }))
+        .filter((c) => c.wrong && c.correct && c.explanation);
+      return { text: visibleText, corrections };
+    }
+  } catch (err) {
+    console.warn('[geminiService] parseCorrectionsBlock JSON error', err);
+  }
+
+  return { text: visibleText, corrections: [] };
+}
+
+/**
+ * Version "augmentée" de generateGeminiResponse qui retourne le texte ET les
+ * corrections structurées extraites. Préférée à generateGeminiResponse() pour
+ * les pages d'apprentissage (Prof. Xiao, Simulateur).
+ */
+export async function generateGeminiResponseWithCorrections(
+  userMessage: string,
+  conversationHistory: Message[] = []
+): Promise<GeminiResponseWithCorrections> {
+  const rawText = await generateGeminiResponse(userMessage, conversationHistory);
+  return parseCorrectionsBlock(rawText);
 }
 
 /**

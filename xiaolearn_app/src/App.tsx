@@ -12,6 +12,8 @@ import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './page
 // avec niveaux CECR, audio, mini-quiz). L'ancien fichier reste dans le repo
 // pour référence mais n'est plus utilisé.
 import GrammarPageV3 from './pages/GrammarPageV3';
+import MyErrorsPage from './pages/MyErrorsPage';
+import { useErrorJournal } from './hooks/useErrorJournal';
 import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import AnnouncementsPage from './pages/AnnouncementsPage';
@@ -63,7 +65,8 @@ import './styles/page-shell.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import AIFloatingChat from './components/AIFloatingChat';
 import LifetimeFeatureGate from './components/LifetimeFeatureGate';
-import { generateGeminiResponse } from './services/geminiService';
+import { generateGeminiResponse, generateGeminiResponseWithCorrections } from './services/geminiService';
+import type { ErrorCategory, ErrorSeverity } from './types/error-journal';
 import WritingCorrectorPage from './pages/WritingCorrectorPage';
 import ConversationPartnerPage from './pages/ConversationPartnerPage';
 import AiQuizPage from './pages/AiQuizPage';
@@ -159,6 +162,7 @@ export type View =
   | 'community'
   | 'ideas'
   | 'messages'
+  | 'errors'
   | 'battles'
   | 'battleSession'
   | 'battleSessionLocal'
@@ -873,6 +877,8 @@ function App() {
   // useChatConversations. Quand l'utilisateur poste un message, on met à jour
   // `tutorMessages` localement puis on sync vers le hook (upsert).
   const tutorConvs = useChatConversations();
+  // Carnet d'erreurs : count des fautes non-verrouillées (pour le badge sidebar).
+  const errorJournal = useErrorJournal();
   const [tutorMessages, setTutorMessages] = useState<AiTutorV2Message[]>([]);
   const [tutorTyping, setTutorTyping] = useState(false);
   const [tutorMode, setTutorMode] = useState<AiTutorV2Mode>('balanced');
@@ -948,18 +954,51 @@ function App() {
             ? payload.content
             : `${hint}\n\n${payload.content}`;
 
-        const response = await generateGeminiResponse(
+        // Nouvelle fonction qui retourne aussi les corrections détectées.
+        // Le texte visible est nettoyé du bloc <<<CORRECTIONS>>> ; les corrections
+        // sont parsées et seront affichées comme cartes sous le message.
+        const { text: responseText, corrections } = await generateGeminiResponseWithCorrections(
           userMessageForGemini,
           historyForGemini
         );
+
+        // Sécurise les types pour le carnet d'erreurs
+        const validCategories: ErrorCategory[] = [
+          'particule', 'ton', 'prononciation', 'politesse',
+          'vocabulaire', 'grammaire', 'mesureur', 'caractere',
+          'traduction', 'orthographe', 'autre'
+        ];
+        const validSeverities: ErrorSeverity[] = ['mineure', 'importante', 'critique'];
+
+        // Alimente le carnet d'erreurs pour chaque correction détectée
+        for (const c of corrections) {
+          const cat = (validCategories.includes(c.category as ErrorCategory)
+            ? c.category
+            : 'autre') as ErrorCategory;
+          const sev = (validSeverities.includes(c.severity as ErrorSeverity)
+            ? c.severity
+            : 'importante') as ErrorSeverity;
+          errorJournal.addError({
+            category: cat,
+            severity: sev,
+            source: 'prof-xiao',
+            wrongText: c.wrong,
+            correctText: c.correct,
+            correctPinyin: c.pinyin,
+            correctTranslationFr: c.translation,
+            explanation: c.explanation,
+            fullUserText: payload.content
+          });
+        }
 
         setTutorMessages((prev) => [
           ...prev,
           {
             id: `assistant-${Date.now()}`,
             role: 'assistant',
-            content: response,
-            createdAt: Date.now()
+            content: responseText,
+            createdAt: Date.now(),
+            corrections: corrections.length > 0 ? corrections : undefined
           }
         ]);
       } catch (error) {
@@ -985,7 +1024,7 @@ function App() {
         setTutorTyping(false);
       }
     },
-    [language, tutorMessages]
+    [language, tutorMessages, errorJournal]
   );
 
   // "Nouvelle conversation" : on déselectionne la conv courante (la prochaine
@@ -1271,14 +1310,24 @@ function App() {
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
         { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
-        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
+        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' },
+        {
+          id: 'errors',
+          label: language === 'fr' ? 'Mes erreurs' : 'My errors',
+          iconSlug: 'reviser',
+          fallback: '📝',
+          badge:
+            errorJournal.unlockedCount > 0
+              ? { text: String(errorJournal.unlockedCount), tone: 'rank' }
+              : undefined
+        }
         // Onglets retirés (routes conservées pour deep links éventuels) :
         //   - 'writing-corrector'    → Correcteur IA
         //   - 'conversation-partner' → Partenaire IA
         //   - 'ai-quiz'              → Quiz IA
         //   - 'pronunciation-coach'  → Prononciation IA
       ] satisfies NavEntry[],
-    [language]
+    [language, errorJournal.unlockedCount]
   );
   const communityNavEntries = useMemo<NavEntry[]>(
     () =>
@@ -1730,6 +1779,8 @@ function App() {
           onNewConversation={handleTutorClear}
           onSelectConversation={handleTutorSelectConv}
           onRemoveConversation={tutorConvs.removeConversation}
+          personalFlashcards={personalFlashcards}
+          canAddFlashcards={appAccess.canCreateCustomFlashcards}
         />
       );
       break;
@@ -1825,6 +1876,10 @@ function App() {
     case 'messages':
       // Messagerie 1-1 temps réel entre apprenants.
       content = <ConversationsPage language={language} />;
+      break;
+    case 'errors':
+      // Carnet d'erreurs personnel : chronologie + récurrentes + exercices.
+      content = <MyErrorsPage language={language} />;
       break;
     case 'battles':
       content = (

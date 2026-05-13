@@ -156,6 +156,17 @@ export interface SimulatorScenario {
 
 export type SimulatorTurnRole = 'assistant' | 'user' | 'system';
 
+/** Une correction visuelle attachée à un turn assistant. */
+export interface SimulatorCorrection {
+  category: string;
+  severity?: string;
+  wrong: string;
+  correct: string;
+  pinyin?: string;
+  translation?: string;
+  explanation: string;
+}
+
 export interface SimulatorTurn {
   id: string;
   role: SimulatorTurnRole;
@@ -165,6 +176,8 @@ export interface SimulatorTurn {
   translationFr?: string;
   /** Pinyin (optionnel, surtout côté assistant). */
   pinyin?: string;
+  /** Corrections détectées sur le DERNIER message user (assistant uniquement). */
+  corrections?: SimulatorCorrection[];
   createdAt: number;
 }
 

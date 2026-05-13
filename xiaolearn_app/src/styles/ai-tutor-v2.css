@@ -14,13 +14,21 @@
   --at2-gold-soft: #fbe9b8;
   --at2-radius: 14px;
   --at2-radius-sm: 10px;
+  /* Hauteur de la topbar globale (xl-app-topbar) — ajuster si elle bouge. */
+  --at2-topbar-h: 64px;
+
   color: var(--at2-text);
   background: var(--at2-bg);
-  min-height: 100%;
-  padding: 20px 16px 80px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 16px 16px 16px;
+  /* Hauteur fixe = viewport - topbar : la page ne s'étend plus avec les
+     messages, seule la zone .at2-messages scroll en interne. */
+  height: calc(100dvh - var(--at2-topbar-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* Buttons */
@@ -59,42 +67,29 @@
   font-size: 14px;
 }
 
-/* Header */
+/* Header — simplifié à la Seonsaengnim : titre + sous-titre à gauche,
+   "En ligne" à droite. Pas d'avatar gradient, pas de sélecteur de mode. */
 .ai-tutor-v2 .at2-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 12px 16px;
-  margin-bottom: 18px;
+  flex-shrink: 0;
+  display: flex;
   align-items: center;
-}
-.ai-tutor-v2 .at2-header > button.at2-btn--link {
-  grid-row: 1;
-  grid-column: 1 / -1;
-  justify-self: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 4px 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--at2-border);
 }
 .ai-tutor-v2 .at2-hero {
-  grid-row: 2;
-  grid-column: 1 / 2;
   display: flex;
-  gap: 14px;
-  align-items: center;
-}
-.ai-tutor-v2 .at2-hero-avatar {
-  font-size: 28px;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #fde9e8 0%, #fbf1cf 100%);
-  border: 1px solid #f4c8c3;
-  box-shadow: 0 6px 16px rgba(200, 52, 46, 0.18);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 .ai-tutor-v2 .at2-hero h1 {
-  margin: 0 0 2px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--at2-text);
 }
 .ai-tutor-v2 .at2-hero p {
   margin: 0;
@@ -107,7 +102,11 @@
   gap: 6px;
   font-size: 12px;
   color: var(--at2-text-muted);
-  margin-top: 4px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 .ai-tutor-v2 .at2-status-dot {
   width: 8px;
@@ -115,52 +114,23 @@
   background: #16a34a;
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
 }
 
-/* Mode */
-.ai-tutor-v2 .at2-mode {
-  grid-row: 2;
-  grid-column: 3 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-.ai-tutor-v2 .at2-mode-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--at2-text-muted);
-}
-.ai-tutor-v2 .at2-mode-options {
-  display: inline-flex;
-  background: var(--at2-border);
-  border-radius: 999px;
-  padding: 3px;
-}
-.ai-tutor-v2 .at2-mode-btn {
-  background: transparent;
-  border: none;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  cursor: pointer;
-  color: var(--at2-text-muted);
-  font-weight: 600;
-}
-.ai-tutor-v2 .at2-mode-btn.is-active {
-  background: var(--at2-card-bg);
-  color: var(--at2-primary);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* 3-column layout */
+/* 2-column layout — sidebar conversations + chat. Plus de colonne droite. */
 .ai-tutor-v2 .at2-layout {
   display: grid;
-  grid-template-columns: 220px 1fr 200px;
+  grid-template-columns: 240px 1fr;
   gap: 16px;
-  min-height: 60vh;
+  flex: 1 1 auto;
+  min-height: 0; /* permet à at2-conversation de shrink correctement */
+}
+@media (max-width: 720px) {
+  .ai-tutor-v2 .at2-layout {
+    grid-template-columns: 1fr;
+  }
+  .ai-tutor-v2 .at2-sidebar--convs {
+    display: none;
+  }
 }
 
 .ai-tutor-v2 .at2-sidebar {
@@ -171,7 +141,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 75vh;
+  height: 100%;
+  min-height: 0;
   overflow-y: auto;
 }
 .ai-tutor-v2 .at2-sidebar-title {
@@ -399,7 +370,8 @@
   padding-top: 12px;
 }
 
-/* Conversation */
+/* Conversation — occupe toute la hauteur de la colonne grid du layout.
+   Le composer reste collé en bas, et .at2-messages scroll en interne. */
 .ai-tutor-v2 .at2-conversation {
   background: var(--at2-card-bg);
   border: 1px solid var(--at2-border);
@@ -408,7 +380,9 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 60vh;
+  height: 100%;
+  min-height: 0; /* permet à at2-messages de shrink correctement */
+  overflow: hidden;
 }
 .ai-tutor-v2 .at2-empty {
   margin: auto;
@@ -550,13 +524,14 @@
   font-style: italic;
 }
 
-/* Composer */
+/* Composer — taille fixe en bas de la conversation, ne scroll pas */
 .ai-tutor-v2 .at2-composer {
   border-top: 1px solid var(--at2-border);
   padding-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex-shrink: 0;
 }
 .ai-tutor-v2 .at2-textarea {
   width: 100%;
@@ -579,52 +554,146 @@
   gap: 6px;
 }
 
-/* Right chips */
-.ai-tutor-v2 .at2-chips {
-  display: grid;
-  gap: 8px;
-}
-.ai-tutor-v2 .at2-chip {
-  text-align: left;
-  background: var(--at2-bg);
-  border: 1px solid var(--at2-border);
-  border-radius: var(--at2-radius-sm);
-  padding: 8px 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
-.ai-tutor-v2 .at2-chip:hover {
-  border-color: var(--at2-primary);
-  background: #fdecec;
-}
-.ai-tutor-v2 .at2-chips-empty {
-  text-align: center;
-  color: var(--at2-text-muted);
-  padding: 16px 0;
-}
-
 /* Responsive */
-@media (max-width: 1000px) {
-  .ai-tutor-v2 .at2-layout {
-    grid-template-columns: 200px 1fr;
-  }
-  .ai-tutor-v2 .at2-sidebar--right {
-    display: none;
-  }
-}
 @media (max-width: 700px) {
   .ai-tutor-v2 .at2-layout {
     grid-template-columns: 1fr;
   }
-  .ai-tutor-v2 .at2-sidebar {
-    max-height: none;
+  .ai-tutor-v2 .at2-sidebar--convs {
+    display: none;
   }
-  .ai-tutor-v2 .at2-header {
-    grid-template-columns: 1fr;
+}
+
+/* ====================================================================== */
+/* Vocabulary popup (clic sur un mot chinois)                              */
+/* ====================================================================== */
+.ai-tutor-v2 .at2-vocab-token {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0 1px;
+  transition: background 0.12s ease;
+}
+.ai-tutor-v2 .at2-vocab-token:hover,
+.ai-tutor-v2 .at2-vocab-token:focus {
+  background: var(--at2-gold-soft, #fbe9b8);
+  outline: none;
+}
+
+.at2-vocab-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 1000;
+}
+.at2-vocab-popup {
+  position: fixed;
+  z-index: 1001;
+  min-width: 220px;
+  max-width: 280px;
+  background: #fff;
+  border: 1px solid #e5d7c0;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  padding: 14px 14px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1f2937;
+  animation: at2-vocab-pop 0.14s ease-out;
+}
+@keyframes at2-vocab-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
   }
-  .ai-tutor-v2 .at2-mode {
-    grid-row: auto;
-    grid-column: 1 / -1;
-    align-items: flex-start;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
+}
+.at2-vocab-popup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.at2-vocab-popup-audio {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #c6302c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+.at2-vocab-popup-audio:hover {
+  background: #9c2521;
+}
+.at2-vocab-popup-hanzi {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1f2937;
+  margin: 0;
+}
+.at2-vocab-popup-pinyin {
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 2px 0 0;
+}
+.at2-vocab-popup-translation {
+  font-size: 14px;
+  color: #1f2937;
+  margin: 8px 0 12px;
+  font-weight: 500;
+  font-style: italic;
+}
+.at2-vocab-popup-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.at2-vocab-popup-action--add {
+  background: #fbe9b8;
+  color: #7a5a0b;
+  border-color: #f1d77a;
+}
+.at2-vocab-popup-action--add:hover {
+  background: #f7dc8c;
+}
+.at2-vocab-popup-action--already {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+  cursor: default;
+}
+.at2-vocab-popup-action--full {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+.at2-vocab-popup-action--locked {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+  font-style: italic;
+}
+.at2-vocab-popup-empty {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
 }

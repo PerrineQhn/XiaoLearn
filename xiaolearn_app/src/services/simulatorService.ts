@@ -12,10 +12,11 @@
  * Quand le scénario est terminé, l'IA ajoute `[SCENARIO_COMPLETE]` sur une
  * ligne à part — on le détecte côté client pour basculer sur l'écran de succès.
  */
-import { generateGeminiResponse } from './geminiService';
+import { generateGeminiResponse, parseCorrectionsBlock, type GeminiCorrection } from './geminiService';
 import type {
   SimulatorScenario,
-  SimulatorTurn
+  SimulatorTurn,
+  SimulatorCorrection
 } from '../types/simulator';
 import { buildSimulatorSystemPrompt } from '../types/simulator';
 
@@ -27,6 +28,8 @@ export interface ParsedSimulatorResponse {
   raw: string;
   /** True si le marqueur [SCENARIO_COMPLETE] est présent. */
   isComplete: boolean;
+  /** Corrections détectées sur le message user (vide si aucune). */
+  corrections: SimulatorCorrection[];
 }
 
 /**
@@ -72,7 +75,21 @@ export function parseSimulatorResponse(raw: string): ParsedSimulatorResponse {
     pinyin,
     translationFr,
     raw: cleaned,
-    isComplete
+    isComplete,
+    corrections: [] // alimenté par sendSimulatorMessage qui extrait le bloc
+  };
+}
+
+/** Convertit une GeminiCorrection en SimulatorCorrection (sécurise les types). */
+function geminiToSimulatorCorrection(c: GeminiCorrection): SimulatorCorrection {
+  return {
+    category: c.category,
+    severity: c.severity,
+    wrong: c.wrong,
+    correct: c.correct,
+    pinyin: c.pinyin,
+    translation: c.translation,
+    explanation: c.explanation
   };
 }
 
@@ -115,7 +132,13 @@ export async function sendSimulatorMessage(
   ];
 
   const raw = await generateGeminiResponse(userMessage, conversation);
-  return parseSimulatorResponse(raw);
+  // 1. Sépare le bloc <<<CORRECTIONS>>> du reste avant parsing pédagogique
+  const { text: visibleText, corrections: geminiCorrections } = parseCorrectionsBlock(raw);
+  // 2. Parse la partie hanzi/pinyin/traduction
+  const parsed = parseSimulatorResponse(visibleText);
+  // 3. Ajoute les corrections détectées
+  parsed.corrections = geminiCorrections.map(geminiToSimulatorCorrection);
+  return parsed;
 }
 
 /**

@@ -33,6 +33,14 @@ import {
   PolitenessRegisterBadge,
   PolitenessRegisterCheatsheet
 } from '../components/PolitenessRegister';
+import ErrorCorrectionCard from '../components/ErrorCorrectionCard';
+import { useErrorJournal } from '../hooks/useErrorJournal';
+import type {
+  ErrorCategory,
+  ErrorSeverity,
+  ErrorEntry
+} from '../types/error-journal';
+import type { SimulatorCorrection } from '../types/simulator';
 
 // ============================================================================
 //  TYPES / PROPS
@@ -466,6 +474,9 @@ const ConversationScreen = ({
   onExit: () => void;
   onScenarioComplete?: (id: string) => void;
 }) => {
+  // Carnet d'erreurs : on alimente quand Gemini détecte des fautes
+  const errorJournal = useErrorJournal();
+
   const [turns, setTurns] = useState<SimulatorTurn[]>(() => {
     // Opening assistant turn si scénario en fournit un
     if (scenario.openingLineHanzi) {
@@ -511,6 +522,35 @@ const ConversationScreen = ({
 
     try {
       const parsed = await sendSimulatorMessage(scenario, turns, content);
+
+      // Alimente le carnet d'erreurs pour chaque correction détectée
+      const validCategories: ErrorCategory[] = [
+        'particule', 'ton', 'prononciation', 'politesse',
+        'vocabulaire', 'grammaire', 'mesureur', 'caractere',
+        'traduction', 'orthographe', 'autre'
+      ];
+      const validSeverities: ErrorSeverity[] = ['mineure', 'importante', 'critique'];
+      for (const c of parsed.corrections) {
+        const cat = (validCategories.includes(c.category as ErrorCategory)
+          ? c.category
+          : 'autre') as ErrorCategory;
+        const sev = (validSeverities.includes(c.severity as ErrorSeverity)
+          ? c.severity
+          : 'importante') as ErrorSeverity;
+        errorJournal.addError({
+          category: cat,
+          severity: sev,
+          source: 'simulator',
+          wrongText: c.wrong,
+          correctText: c.correct,
+          correctPinyin: c.pinyin,
+          correctTranslationFr: c.translation,
+          explanation: c.explanation,
+          fullUserText: content,
+          contextLabel: scenario.titleFr ?? scenario.id
+        });
+      }
+
       setTurns((prev) => [
         ...prev,
         {
@@ -519,6 +559,7 @@ const ConversationScreen = ({
           hanzi: parsed.hanzi,
           pinyin: parsed.pinyin,
           translationFr: parsed.translationFr,
+          corrections: parsed.corrections.length > 0 ? parsed.corrections : undefined,
           createdAt: Date.now()
         }
       ]);
@@ -532,7 +573,7 @@ const ConversationScreen = ({
     } finally {
       setIsTyping(false);
     }
-  }, [input, isTyping, completed, scenario, turns, language, onScenarioComplete]);
+  }, [input, isTyping, completed, scenario, turns, language, onScenarioComplete, errorJournal]);
 
   const handleKey = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -624,17 +665,28 @@ const ConversationScreen = ({
       {/* Messages */}
       <div className="sim-v2-messages">
         {turns.map((turn) => (
-          <div
-            key={turn.id}
-            className={`sim-v2-bubble sim-v2-bubble--${turn.role}`}
-          >
-            <div className="sim-v2-bubble-hanzi">{turn.hanzi}</div>
-            {turn.role === 'assistant' && turn.pinyin && (
-              <div className="sim-v2-bubble-pinyin">{turn.pinyin}</div>
-            )}
-            {turn.role === 'assistant' && turn.translationFr && (
-              <div className="sim-v2-bubble-translation">
-                <em>{turn.translationFr}</em>
+          <div key={turn.id}>
+            <div className={`sim-v2-bubble sim-v2-bubble--${turn.role}`}>
+              <div className="sim-v2-bubble-hanzi">{turn.hanzi}</div>
+              {turn.role === 'assistant' && turn.pinyin && (
+                <div className="sim-v2-bubble-pinyin">{turn.pinyin}</div>
+              )}
+              {turn.role === 'assistant' && turn.translationFr && (
+                <div className="sim-v2-bubble-translation">
+                  <em>{turn.translationFr}</em>
+                </div>
+              )}
+            </div>
+            {/* Cartes de correction (assistant uniquement) */}
+            {turn.role === 'assistant' && turn.corrections && turn.corrections.length > 0 && (
+              <div style={{ marginLeft: 0, marginTop: 4 }}>
+                {turn.corrections.map((c, idx) => (
+                  <ErrorCorrectionCard
+                    key={`${turn.id}-corr-${idx}`}
+                    entry={simulatorCorrectionToEntry(c, turn.id, idx)}
+                    onRetry={(corrected) => setInput(corrected)}
+                  />
+                ))}
               </div>
             )}
           </div>
@@ -769,5 +821,46 @@ const SimulatorPageV2 = (props: SimulatorPageV2Props) => {
     </div>
   );
 };
+
+/**
+ * Convertit une correction Gemini en ErrorEntry temporaire pour rendu via
+ * ErrorCorrectionCard dans le simulator. Pas de persistance ici (faite côté
+ * useErrorJournal dans handleSend).
+ */
+function simulatorCorrectionToEntry(
+  c: SimulatorCorrection,
+  turnId: string,
+  idx: number
+): ErrorEntry {
+  const validCategories: ErrorCategory[] = [
+    'particule', 'ton', 'prononciation', 'politesse',
+    'vocabulaire', 'grammaire', 'mesureur', 'caractere',
+    'traduction', 'orthographe', 'autre'
+  ];
+  const validSeverities: ErrorSeverity[] = ['mineure', 'importante', 'critique'];
+  const category = (validCategories.includes(c.category as ErrorCategory)
+    ? c.category
+    : 'autre') as ErrorCategory;
+  const severity = (validSeverities.includes(c.severity as ErrorSeverity)
+    ? c.severity
+    : 'importante') as ErrorSeverity;
+  const nowIso = new Date().toISOString();
+  return {
+    id: `${turnId}-corr-${idx}`,
+    category,
+    severity,
+    source: 'simulator',
+    wrongText: c.wrong,
+    correctText: c.correct,
+    correctPinyin: c.pinyin,
+    correctTranslationFr: c.translation,
+    explanation: c.explanation,
+    createdAt: nowIso,
+    lastSeenAt: nowIso,
+    occurrenceCount: 1,
+    practiceCount: 0,
+    lastPracticeSuccessAt: null
+  };
+}
 
 export default SimulatorPageV2;
