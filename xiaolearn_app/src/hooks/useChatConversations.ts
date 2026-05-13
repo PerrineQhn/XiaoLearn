@@ -1,9 +1,9 @@
 /**
  * useChatConversations — historique des conversations Prof. Xiao
  * ---------------------------------------------------------------
- * Stockage localStorage uniquement (pour l'instant — la sync Firestore
- * peut être ajoutée plus tard via useFirestoreSync, comme les autres
- * données utilisateur).
+ * Persistance : localStorage + sync Firestore via useFirestoreSync.
+ * Les conversations sont synchronisées entre tous les appareils du
+ * même compte utilisateur (last-write-wins par timestamp).
  *
  * Structure :
  *   xl_chat_conversations_v1 : Array<ChatConversation>
@@ -20,6 +20,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { useFirestoreSync } from './useFirestoreSync';
 
 const STORAGE_KEY = 'xl_chat_conversations_v1';
 const MAX_CONVERSATIONS = 50;
@@ -89,10 +90,20 @@ export const useChatConversations = (): UseChatConversationsReturn => {
   const [conversations, setConversations] = useState<ChatConversation[]>(loadFromStorage);
   const [currentConvId, setCurrentConvId] = useState<string | null>(null);
 
-  // Persist on change
+  // Sync Firestore : pousse local → cloud, et écoute les changements pour
+  // refléter les mises à jour faites depuis un autre appareil. Le callback
+  // `onUpdate` est appelé quand le cloud a une version plus récente que local.
+  const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
+    if (Array.isArray(data)) {
+      setConversations(data as ChatConversation[]);
+    }
+  });
+
+  // Persist on change : local + cloud
   useEffect(() => {
     saveToStorage(conversations);
-  }, [conversations]);
+    saveToFirestore(conversations);
+  }, [conversations, saveToFirestore]);
 
   const createNew = useCallback(() => {
     setCurrentConvId(null);
