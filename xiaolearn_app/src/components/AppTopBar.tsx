@@ -17,11 +17,14 @@ import GlobalSearchBar, {
   type SearchableConversation
 } from './GlobalSearchBar';
 import type { PersonalFlashcard } from '../types/flashcard-v3';
+import type { LessonPath } from '../types/lesson-structure';
 
 interface Props {
   language?: 'fr' | 'en';
   /** Sélection d'un résultat live (leçon, flashcard, conv, ou ask-tutor). */
   onSearchSelect?: (hit: SearchHit) => void;
+  /** Parcours (LessonPath) pour indexer module ↔ vocab. */
+  lessonPaths?: LessonPath[];
   /** Flashcards perso pour autocomplete. */
   personalFlashcards?: PersonalFlashcard[];
   /** Conversations Prof. Xiao pour autocomplete. */
@@ -35,6 +38,7 @@ interface Props {
 const AppTopBar = ({
   language = 'fr',
   onSearchSelect,
+  lessonPaths,
   personalFlashcards,
   tutorConversations,
   onNavigate,

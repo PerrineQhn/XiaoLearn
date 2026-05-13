@@ -2378,6 +2378,7 @@ function App() {
       <main className="main-content">
         <AppTopBar
           language={language === 'en' ? 'en' : 'fr'}
+          lessonPaths={[...cecrPathsState, ...lessonPathsState]}
           personalFlashcards={personalFlashcards.cards}
           tutorConversations={tutorConvs.conversations.map((c) => ({
             id: c.id,
@@ -2385,21 +2386,32 @@ function App() {
             updatedAt: c.updatedAt
           }))}
           onSearchSelect={(hit) => {
+            // Helper : ouvre une leçon par son moduleId, en cherchant le path
+            const openLesson = (moduleId: string) => {
+              const foundCecr = cecrPathsState.find((p) =>
+                p.lessons.some((l) => l.id === moduleId)
+              );
+              const foundHsk = lessonPathsState.find((p) =>
+                p.lessons.some((l) => l.id === moduleId)
+              );
+              const found = foundCecr ?? foundHsk;
+              if (found) handleSelectLesson(found.id, moduleId);
+              else setView('cecr');
+            };
+
             switch (hit.kind) {
-              case 'lesson': {
-                // Cherche le parcours contenant la leçon (CECR d'abord)
-                const foundCecr = cecrPathsState.find((p) =>
-                  p.lessons.some((l) => l.id === hit.id)
-                );
-                const foundHsk = lessonPathsState.find((p) =>
-                  p.lessons.some((l) => l.id === hit.id)
-                );
-                const found = foundCecr ?? foundHsk;
-                if (found) handleSelectLesson(found.id, hit.id);
+              case 'lesson-module':
+                // Leçon parente : on l'ouvre directement
+                openLesson(hit.id);
+                break;
+              case 'vocab':
+                // Mot individuel : on ouvre la leçon parente si on l'a indexée,
+                // sinon on bascule sur le hub des leçons.
+                if (hit.parentModuleId) openLesson(hit.parentModuleId);
                 else setView('cecr');
                 break;
-              }
               case 'flashcard':
+                // Flashcard perso (Lifetime) : page Flashcards
                 setView('flashcards');
                 break;
               case 'tutor-conv':
