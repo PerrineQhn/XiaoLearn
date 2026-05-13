@@ -1,111 +1,201 @@
-import { useEffect } from 'react';
+/**
+ * useFirestoreSync — synchronisation localStorage ↔ Firestore
+ * -----------------------------------------------------------
+ * Stratégie last-write-wins basée sur des timestamps PAR CLÉ stockés sous
+ * `users/{uid}.<key>__updatedAt`. Évite qu'un appareil offline depuis 3
+ * jours n'écrase la progression faite entre-temps sur un autre device.
+ *
+ * Au montage :
+ *   1. on récupère les valeurs (local, cloud) + leurs timestamps respectifs
+ *   2. on garde la plus récente, on push l'autre dans la direction opposée
+ *
+ * En écriture (`saveToFirestore`) :
+ *   - on met à jour localStorage immédiatement (UI réactive)
+ *   - on push vers Firestore avec un nouveau timestamp ISO
+ *
+ * En lecture temps réel (`onSnapshot`) :
+ *   - on ignore les updates dont le timestamp cloud ≤ timestamp local connu
+ *     (évite les boucles re-render quand on est l'auteur du write)
+ *
+ * Stockage localStorage :
+ *   - `<key>`         : valeur sérialisée (string)
+ *   - `<key>__ts`     : timestamp ISO de la dernière modif locale connue
+ */
+
+import { useCallback, useEffect, useRef } from 'react';
 import { doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
 
-/**
- * Hook pour synchroniser les données entre localStorage et Firestore
- *
- * @param key - Clé localStorage à synchroniser
- * @param onUpdate - Callback appelé quand les données sont mises à jour depuis Firestore
- */
+const LOCAL_TS_SUFFIX = '__ts';
+const CLOUD_TS_FIELD_SUFFIX = '__updatedAt';
+
+const readLocalTs = (key: string): number => {
+  if (typeof window === 'undefined') return 0;
+  const raw = window.localStorage.getItem(key + LOCAL_TS_SUFFIX);
+  if (!raw) return 0;
+  const t = Date.parse(raw);
+  return Number.isFinite(t) ? t : 0;
+};
+
+const writeLocalTs = (key: string, iso: string) => {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(key + LOCAL_TS_SUFFIX, iso);
+  } catch { /* quota */ }
+};
+
 export function useFirestoreSync(
   key: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onUpdate?: (data: any) => void,
   options?: { enabled?: boolean }
 ) {
   const { user } = useAuth();
   const enabled = options?.enabled ?? true;
+  // Garde la dernière valeur que nous avons écrite nous-mêmes, pour ignorer
+  // l'écho d'onSnapshot qui ré-applique ce qu'on vient de pousser.
+  const lastWrittenValueRef = useRef<string | null>(null);
 
-  // Synchroniser les données locales vers Firestore quand l'utilisateur se connecte
+  // ============================================================
+  // 1) Réconciliation initiale : last-write-wins par timestamp
+  // ============================================================
   useEffect(() => {
     if (!user || !enabled) return;
+    let cancelled = false;
 
-    const syncLocalToFirestore = async () => {
-      const localData = localStorage.getItem(key);
-      if (!localData) return;
-
+    (async () => {
       try {
         const userDocRef = doc(db, 'users', user.uid);
-        const docSnap = await getDoc(userDocRef);
+        const snap = await getDoc(userDocRef);
+        const cloudData = snap.exists() ? snap.data() : null;
+        const cloudValue: string | undefined = cloudData?.[key];
+        const cloudTsIso: string | undefined = cloudData?.[key + CLOUD_TS_FIELD_SUFFIX] ?? cloudData?.lastUpdated;
+        const cloudTs = cloudTsIso ? Date.parse(cloudTsIso) : 0;
 
-        // Si pas de données cloud, uploader les données locales
-        if (!docSnap.exists() || !docSnap.data()?.[key]) {
+        const localValue = window.localStorage.getItem(key);
+        const localTs = readLocalTs(key);
+
+        if (cancelled) return;
+
+        // Cas 1 : rien côté cloud → on push local (si local existe)
+        if (!cloudValue) {
+          if (localValue) {
+            const nowIso = new Date().toISOString();
+            await setDoc(
+              userDocRef,
+              { [key]: localValue, [key + CLOUD_TS_FIELD_SUFFIX]: nowIso, lastUpdated: nowIso },
+              { merge: true }
+            );
+            writeLocalTs(key, nowIso);
+            lastWrittenValueRef.current = localValue;
+          }
+          return;
+        }
+
+        // Cas 2 : cloud plus récent que local → on télécharge cloud
+        if (cloudTs > localTs || !localValue) {
+          window.localStorage.setItem(key, cloudValue);
+          if (cloudTsIso) writeLocalTs(key, cloudTsIso);
+          lastWrittenValueRef.current = cloudValue;
+          if (onUpdate) {
+            try { onUpdate(JSON.parse(cloudValue)); } catch { onUpdate(cloudValue); }
+          }
+          return;
+        }
+
+        // Cas 3 : local strictement plus récent que cloud → on push local
+        if (localTs > cloudTs) {
+          const nowIso = new Date(localTs).toISOString();
           await setDoc(
             userDocRef,
-            {
-              [key]: localData,
-              lastUpdated: new Date().toISOString()
-            },
+            { [key]: localValue, [key + CLOUD_TS_FIELD_SUFFIX]: nowIso, lastUpdated: nowIso },
             { merge: true }
           );
+          lastWrittenValueRef.current = localValue;
+          return;
         }
-      } catch (error) {
-        console.error('Error syncing local data to Firestore:', error);
+
+        // Cas 4 : timestamps égaux → rien à faire
+        lastWrittenValueRef.current = cloudValue;
+      } catch (err) {
+        console.error('[useFirestoreSync] reconcile error', key, err);
       }
-    };
+    })();
 
-    syncLocalToFirestore();
-  }, [user, key, enabled]);
+    return () => { cancelled = true; };
+  }, [user, key, enabled, onUpdate]);
 
-  // Écouter les changements Firestore et mettre à jour localStorage
+  // ============================================================
+  // 2) Écoute temps réel — ignore les échos de nos propres writes
+  // ============================================================
   useEffect(() => {
     if (!user || !enabled) return;
-
     const userDocRef = doc(db, 'users', user.uid);
 
-    const unsubscribe = onSnapshot(userDocRef, (docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        if (data?.[key]) {
-          // Mettre à jour localStorage
-          localStorage.setItem(key, data[key]);
+    const unsubscribe = onSnapshot(
+      userDocRef,
+      (snap) => {
+        if (!snap.exists()) return;
+        const data = snap.data();
+        const value: string | undefined = data?.[key];
+        if (!value) return;
+        // Ignore l'écho de notre dernier write
+        if (lastWrittenValueRef.current === value) return;
+        // Filtre par timestamp si dispo
+        const cloudTsIso: string | undefined = data?.[key + CLOUD_TS_FIELD_SUFFIX] ?? data?.lastUpdated;
+        const localTs = readLocalTs(key);
+        const cloudTs = cloudTsIso ? Date.parse(cloudTsIso) : 0;
+        if (cloudTs && cloudTs <= localTs) return;
 
-          // Appeler le callback si fourni
-          if (onUpdate) {
-            try {
-              const parsedData = JSON.parse(data[key]);
-              onUpdate(parsedData);
-            } catch (error) {
-              console.error('Error parsing Firestore data:', error);
-            }
-          }
+        // Applique le changement
+        window.localStorage.setItem(key, value);
+        if (cloudTsIso) writeLocalTs(key, cloudTsIso);
+        lastWrittenValueRef.current = value;
+        if (onUpdate) {
+          try { onUpdate(JSON.parse(value)); } catch { onUpdate(value); }
         }
-      }
-    });
+      },
+      (err) => console.warn('[useFirestoreSync] onSnapshot error', key, err)
+    );
 
     return () => unsubscribe();
   }, [user, key, onUpdate, enabled]);
 
-  // Fonction pour sauvegarder dans Firestore
-  const saveToFirestore = async (data: any) => {
-    if (!user || !enabled) {
-      // Pas connecté, sauvegarder seulement en local
+  // ============================================================
+  // 3) saveToFirestore — appelé par les hooks consumers
+  // ============================================================
+  const saveToFirestore = useCallback(
+    async (data: unknown) => {
       const stringData = typeof data === 'string' ? data : JSON.stringify(data);
-      localStorage.setItem(key, stringData);
-      return;
-    }
+      const nowIso = new Date().toISOString();
 
-    try {
-      const stringData = typeof data === 'string' ? data : JSON.stringify(data);
+      // Toujours sauver localement, même si pas connecté
+      try {
+        window.localStorage.setItem(key, stringData);
+        writeLocalTs(key, nowIso);
+      } catch { /* quota */ }
 
-      // Sauvegarder en local
-      localStorage.setItem(key, stringData);
+      if (!user || !enabled) return;
 
-      // Sauvegarder dans Firestore
-      const userDocRef = doc(db, 'users', user.uid);
-      await setDoc(
-        userDocRef,
-        {
-          [key]: stringData,
-          lastUpdated: new Date().toISOString()
-        },
-        { merge: true }
-      );
-    } catch (error) {
-      console.error('Error saving to Firestore:', error);
-    }
-  };
+      try {
+        const userDocRef = doc(db, 'users', user.uid);
+        await setDoc(
+          userDocRef,
+          {
+            [key]: stringData,
+            [key + CLOUD_TS_FIELD_SUFFIX]: nowIso,
+            lastUpdated: nowIso
+          },
+          { merge: true }
+        );
+        lastWrittenValueRef.current = stringData;
+      } catch (err) {
+        console.error('[useFirestoreSync] saveToFirestore error', key, err);
+      }
+    },
+    [user, key, enabled]
+  );
 
   return { saveToFirestore };
 }
