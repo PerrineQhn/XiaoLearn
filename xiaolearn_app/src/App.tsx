@@ -35,7 +35,8 @@ import FreeLearningPage from './pages/FreeLearningPage';
 import { lookupPinyinForHanzi } from './pages/FlashcardPageV3';
 import LevelBilanPage from './pages/LevelBilanPage';
 import LevelBilanBanner from './components/LevelBilanBanner';
-import BilanIndexPage from './pages/BilanIndexPage';
+// BilanIndexPage retiré de la sidebar — le banner cecr utilise directement
+// LevelBilanPage via `bilanLevel`.
 import { useLessonMastery } from './hooks/useLessonMastery';
 import { useLevelBilans } from './hooks/useLevelBilans';
 import { usePersonalFlashcards } from './hooks/usePersonalFlashcards';
@@ -177,8 +178,6 @@ export type View =
   | 'cecr'
   // V7 — Bilan de fin de niveau (10 questions, 80% requis, +60 XP one-time).
   | 'bilan'
-  // Index de sélection de niveau pour lancer un bilan depuis la sidebar.
-  | 'bilanIndex'
   // Profil utilisateur (clic sur le nom dans la sidebar).
   | 'profile';
 
@@ -1337,17 +1336,6 @@ function App() {
     () =>
       [
         {
-          id: 'community',
-          label: language === 'fr' ? 'Annonces' : 'Announcements',
-          iconSlug: 'culture',
-          fallback: '📣',
-          icon: 'annoucement.png',
-          badge:
-            unreadAnnouncements > 0
-              ? { text: String(unreadAnnouncements), tone: 'unread' }
-              : undefined
-        },
-        {
           id: 'ideas',
           label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
           iconSlug: 'culture',
@@ -1371,7 +1359,19 @@ function App() {
               ? { text: `#${myRankPosition}`, tone: 'rank' }
               : undefined
         },
-        { id: 'bilanIndex', label: language === 'fr' ? 'Bilan' : 'Level check', iconSlug: 'objectifs', fallback: '🎯' }
+        // Annonces placée en bas de la section Communauté (à l'ancien
+        // emplacement du Bilan, dont la page d'index a été retirée).
+        {
+          id: 'community',
+          label: language === 'fr' ? 'Annonces' : 'Announcements',
+          iconSlug: 'culture',
+          fallback: '📣',
+          icon: 'annoucement.png',
+          badge:
+            unreadAnnouncements > 0
+              ? { text: String(unreadAnnouncements), tone: 'unread' }
+              : undefined
+        }
       ] satisfies NavEntry[],
     [language, unreadAnnouncements, myRankPosition]
   );
@@ -2008,25 +2008,8 @@ function App() {
         />
       );
       break;
-    case 'bilanIndex': {
-      // Index des bilans de fin de niveau, accessible depuis la sidebar.
-      // L'utilisateur choisit un niveau et est renvoyé sur LevelBilanPage.
-      const entriesMap = levelBilans.bilans as Partial<
-        Record<CecrLevelSlug, typeof levelBilans.bilans[CecrLevelSlug]>
-      >;
-      content = (
-        <BilanIndexPage
-          language={language}
-          entries={entriesMap}
-          unlockedLevels={unlockedLevels}
-          onSelectLevel={(lvl) => {
-            setBilanLevel(lvl);
-            setView('bilan');
-          }}
-        />
-      );
-      break;
-    }
+    // 'bilanIndex' retiré de la sidebar (le bilan de fin de niveau reste
+    // accessible via le banner affiché en fin de niveau depuis cecr).
     case 'bilan': {
       // V7 — Bilan de fin de niveau. `bilanLevel` doit être sélectionné via la
       // bannière affichée dans LessonPathsPage (case 'cecr').

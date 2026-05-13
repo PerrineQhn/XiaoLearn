@@ -17,6 +17,7 @@
 
 import { useMemo, useState } from 'react';
 import '../styles/announcements.css';
+import { parseMarkdown } from '../utils/markdownUtils';
 import type {
   CommunityV2Announcement,
   CommunityV2AnnouncementCategory,
@@ -242,7 +243,20 @@ const AnnouncementsPage = ({
                   className="ann-card-body"
                   hidden={!isOpen}
                 >
-                  <p>{body}</p>
+                  {/* Illustration / maquette SVG, rendue dans un encart crème
+                     au-dessus du texte. Le SVG est trusted (provient de notre
+                     dataset, jamais d'input utilisateur). */}
+                  {a.illustration && (
+                    <div
+                      className="ann-illustration"
+                      role="img"
+                      aria-label={title}
+                      dangerouslySetInnerHTML={{ __html: a.illustration }}
+                    />
+                  )}
+                  {/* Markdown body : supporte **gras**, listes - * et 1. 2. 3.,
+                     sous-titres ### / ##, paragraphes séparés par lignes vides. */}
+                  <div className="ann-body-md">{parseMarkdown(body)}</div>
                 </div>
               </li>
             );

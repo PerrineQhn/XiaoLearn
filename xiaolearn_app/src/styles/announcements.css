@@ -228,6 +228,74 @@
 }
 
 /* ---------------------------------------------------------------------------
+ * Markdown body (rendu via parseMarkdown) — style proche Seonsaengnim
+ * ------------------------------------------------------------------------ */
+.announcements-page .ann-body-md {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.announcements-page .ann-body-md .markdown-p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ann-text);
+}
+.announcements-page .ann-body-md .markdown-h2,
+.announcements-page .ann-body-md .markdown-h3 {
+  margin: 6px 0 -2px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ann-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.announcements-page .ann-body-md .markdown-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.announcements-page .ann-body-md .markdown-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ann-text);
+}
+.announcements-page .ann-body-md strong {
+  font-weight: 700;
+  color: #1f2937;
+}
+.announcements-page .ann-body-md .markdown-inline-code {
+  background: #fbf3e0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: #7a5a0b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ---------------------------------------------------------------------------
+ * Illustration / maquette SVG en haut du body
+ * ------------------------------------------------------------------------ */
+.announcements-page .ann-illustration {
+  background: #fdf8ed;
+  border: 1px solid var(--ann-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.announcements-page .ann-illustration svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
  * Empty state
  * ------------------------------------------------------------------------ */
 

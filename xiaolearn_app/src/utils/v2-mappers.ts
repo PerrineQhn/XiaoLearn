@@ -439,51 +439,199 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     title: 'Recherche universelle en direct',
     titleEn: 'Live universal search',
     body:
-      "La barre de recherche en haut de l'app affiche maintenant un panneau de résultats live, organisé en trois sections : (1) Leçons — les leçons parentes qui contiennent ton terme dans leur vocabulaire, avec le nombre de mots correspondants ; (2) Vocabulaire — les mots HSK/CECR et tes flashcards perso qui matchent, classés par pertinence (exact > commence par > contient) ; (3) Conversations Prof. Xiao — tes anciennes discussions dont le titre matche, avec une date relative. Un raccourci en bas du panneau te permet de poser ta requête directement à Prof. Xiao s'il n'y a pas de résultat — le champ se pré-remplit, tu n'as plus qu'à valider. Cliquer un résultat te téléporte directement à la bonne page (leçon ouverte, conversation chargée, etc.).",
+      "La barre de recherche en haut de XiaoLearn affiche maintenant un panneau de résultats **en direct**, plus besoin de naviguer entre les pages pour retrouver un mot ou une leçon.\n\n" +
+      "### 🔍 Trois sections de résultats\n\n" +
+      "- **Leçons** — les leçons parentes (ex: « Les chiffres — HSK 1 ») qui contiennent ton terme dans leur vocabulaire, avec un sous-titre « N mots correspondants » pour t'indiquer la richesse du match\n" +
+      "- **Vocabulaire** — les mots HSK/CECR et tes flashcards perso qui matchent directement (hanzi, pinyin ou traduction), classés par pertinence (exact > commence par > contient)\n" +
+      "- **Conversations Prof. Xiao** — tes anciennes discussions dont le titre matche, avec une date relative (« il y a 3j »)\n\n" +
+      "### ✨ Raccourci Poser à Prof. Xiao\n\n" +
+      "En bas du panneau, un bouton **« ✨ Poser à Prof. Xiao : <ta requête> »** apparaît systématiquement. Clic → tu es téléporté vers la page Prof. Xiao, le champ de saisie est pré-rempli, tu n'as plus qu'à valider. Pratique quand ta recherche n'a rien matché et que tu veux quand même creuser.\n\n" +
+      "### 🎯 Navigation directe\n\n" +
+      "Cliquer un résultat t'amène à la bonne page : la leçon s'ouvre directement (pas besoin de chercher dans le parcours), la conversation se charge, etc. La barre se ferme au clic dehors ou à Échap.",
     bodyEn:
-      "The search bar at the top of the app now shows a live results panel split into three sections: (1) Lessons — parent lessons that contain your term in their vocabulary, with the matching word count; (2) Vocabulary — HSK/CECR words and your personal flashcards that match, ranked by relevance (exact > starts-with > contains); (3) Prof. Xiao conversations — past discussions whose title matches, with a relative date. A shortcut at the bottom lets you send the query straight to Prof. Xiao when no result fits — the composer pre-fills, you just hit send. Clicking a result jumps you directly to the right page (lesson, conversation, etc.).",
+      "The search bar at the top of XiaoLearn now shows a **live** results panel — no more navigating between pages to find a word or lesson.\n\n" +
+      "### 🔍 Three result sections\n\n" +
+      "- **Lessons** — parent lessons (e.g. « Numbers — HSK 1 ») that contain your term in their vocab, with an « N matching words » subtitle\n" +
+      "- **Vocabulary** — HSK/CECR words and your personal flashcards that match directly (hanzi, pinyin or translation), ranked by relevance (exact > starts-with > contains)\n" +
+      "- **Prof. Xiao conversations** — past discussions whose title matches, with a relative date (« 3d ago »)\n\n" +
+      "### ✨ Ask Prof. Xiao shortcut\n\n" +
+      "A **« ✨ Ask Prof. Xiao: <query> »** button always appears at the bottom. Click → you jump to the Prof. Xiao page with the composer pre-filled, just hit send. Useful when nothing matched and you want to dig deeper.\n\n" +
+      "### 🎯 Direct navigation\n\n" +
+      "Clicking a result jumps you to the right page: the lesson opens directly, the conversation loads, etc. The panel closes on outside-click or Escape.",
     date: '2026-05-13',
     tag: 'Recherche',
     category: 'feature',
     icon: '🔍',
-    pinned: true
+    pinned: true,
+    illustration:
+      '<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette recherche">' +
+      '<rect width="360" height="220" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
+      '<rect x="60" y="18" width="240" height="32" rx="16" fill="#fff" stroke="#c6302c" stroke-width="1.5"/>' +
+      '<circle cx="78" cy="34" r="5" fill="none" stroke="#9aa0a6" stroke-width="2"/>' +
+      '<line x1="82" y1="38" x2="86" y2="42" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round"/>' +
+      '<text x="96" y="38" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">一</text>' +
+      '<rect x="40" y="60" width="280" height="150" rx="12" fill="#fff" stroke="#e5d7c0" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.06))"/>' +
+      '<text x="52" y="76" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#9aa0a6" letter-spacing="0.7">LEÇONS</text>' +
+      '<text x="52" y="93" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">📚 Les chiffres — HSK 1</text>' +
+      '<text x="74" y="105" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">6 mots correspondants</text>' +
+      '<line x1="52" y1="116" x2="308" y2="116" stroke="#f1efe8" stroke-width="1"/>' +
+      '<text x="52" y="130" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#9aa0a6" letter-spacing="0.7">VOCABULAIRE</text>' +
+      '<text x="52" y="147" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🈸 一 yī</text>' +
+      '<text x="80" y="147" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">  · un</text>' +
+      '<text x="52" y="163" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🈸 一半 yíbàn</text>' +
+      '<text x="106" y="163" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">  · moitié</text>' +
+      '<rect x="40" y="180" width="280" height="30" fill="#fdf2c4"/>' +
+      '<text x="56" y="199" font-family="-apple-system, sans-serif" font-size="11" fill="#7a5a0b">✨ Poser à Prof. Xiao : <tspan font-weight="700" fill="#1f2937">一</tspan></text>' +
+      '</svg>'
   },
   {
     id: 'ann-mes-erreurs-2026-05',
     title: 'Mes erreurs : ton carnet de progression personnel',
     titleEn: 'My errors: your personal progress journal',
     body:
-      "Un nouvel onglet « Mes erreurs » regroupe automatiquement chaque erreur que tu fais en discutant avec Prof. Xiao ou dans le Simulateur. Chaque entrée porte une catégorie (particule, ton, prononciation, politesse, vocabulaire, grammaire, mesureur, caractère, traduction, orthographe), une sévérité (mineure / importante / critique) et l'explication contextuelle de Prof. Xiao. Les erreurs récurrentes (≥ 2 occurrences sur le même mot) sont mises en avant dans une section « À TRAVAILLER ». Tu peux filtrer par source (Prof. Xiao ou Simulateur), par catégorie, ou revoir l'historique chronologique. La détection se fait via un format JSON structuré renvoyé par Gemini — pas de heuristique fragile, tu n'as rien à faire de manuel.",
+      "Un nouvel onglet **« Mes erreurs »** dans la sidebar gauche regroupe automatiquement chaque erreur que tu fais en discutant avec Prof. Xiao ou dans le Simulateur. Plus besoin de noter à la main ce que tu rates : XiaoLearn s'en occupe.\n\n" +
+      "### 🏷️ Ce qui est capturé pour chaque erreur\n\n" +
+      "- **Catégorie** parmi 11 types : particule, ton, prononciation, politesse, vocabulaire, grammaire, mesureur, caractère, traduction, orthographe, autre\n" +
+      "- **Sévérité** : mineure (étourderie), importante (vraie confusion), critique (faux-sens)\n" +
+      "- **Forme correcte** avec pinyin et traduction française\n" +
+      "- **Explication contextuelle** rédigée par Prof. Xiao sur ton erreur précise\n" +
+      "- **Source** : Prof. Xiao ou Simulateur\n\n" +
+      "### 🔥 Section « À TRAVAILLER »\n\n" +
+      "Les erreurs récurrentes (≥ 2 occurrences sur le même mot) sont automatiquement remontées en haut de page dans une bande rouge. Tu sais exactement quoi réviser en priorité, sans deviner.\n\n" +
+      "### 🎚️ Filtres et tri\n\n" +
+      "- Bascule entre **Tous**, **Prof. Xiao** et **Simulateur**\n" +
+      "- Filtre par catégorie (clic sur les pastilles colorées en haut)\n" +
+      "- Historique chronologique groupé par mois\n\n" +
+      "### 🤖 Détection 100% auto\n\n" +
+      "La capture se fait via un format **JSON structuré** que Gemini renvoie en même temps que sa réponse — pas de regex fragile, pas d'action manuelle. Si tu vois une carte de correction sous une bulle Prof. Xiao, c'est déjà enregistré dans Mes erreurs.",
     bodyEn:
-      "A new « My errors » tab automatically collects every mistake you make while chatting with Prof. Xiao or in the Simulator. Each entry has a category (particle, tone, pronunciation, politeness, vocab, grammar, measure word, character, translation, spelling), a severity (minor / important / critical), and Prof. Xiao's contextual explanation. Recurring errors (≥ 2 occurrences on the same word) bubble up into a « TO PRACTICE » section. You can filter by source (Prof. Xiao or Simulator), by category, or scroll through the chronological log. Detection is driven by a structured JSON contract that Gemini returns — no brittle heuristics, nothing to do manually.",
+      "A new **« My errors »** tab in the left sidebar automatically collects every mistake you make while chatting with Prof. Xiao or in the Simulator. No need to take notes — XiaoLearn does it for you.\n\n" +
+      "### 🏷️ What's captured per error\n\n" +
+      "- **Category** from 11 types: particle, tone, pronunciation, politeness, vocab, grammar, measure word, character, translation, spelling, other\n" +
+      "- **Severity**: minor (slip), important (real confusion), critical (wrong meaning)\n" +
+      "- **Correct form** with pinyin and French translation\n" +
+      "- **Contextual explanation** written by Prof. Xiao on your specific mistake\n" +
+      "- **Source**: Prof. Xiao or Simulator\n\n" +
+      "### 🔥 « TO PRACTICE » section\n\n" +
+      "Recurring errors (≥ 2 occurrences on the same word) automatically bubble up at the top of the page in a red band. You know exactly what to drill, no guessing.\n\n" +
+      "### 🎚️ Filters and sorting\n\n" +
+      "- Switch between **All**, **Prof. Xiao** and **Simulator**\n" +
+      "- Filter by category (click the colored chips at the top)\n" +
+      "- Chronological log grouped by month\n\n" +
+      "### 🤖 100% auto detection\n\n" +
+      "Capture runs on a **structured JSON** that Gemini returns alongside its reply — no brittle regex, no manual action. If you see a correction card under a Prof. Xiao bubble, it's already logged in My errors.",
     date: '2026-05-13',
     tag: 'Apprentissage',
     category: 'feature',
     icon: '📝',
-    pinned: true
+    pinned: true,
+    illustration:
+      '<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette carte erreur">' +
+      '<rect width="360" height="200" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
+      '<rect x="18" y="18" width="324" height="164" rx="12" fill="#fff" stroke="#fde7e5" stroke-width="1.5"/>' +
+      '<rect x="32" y="30" width="84" height="20" rx="10" fill="#fde7e5"/>' +
+      '<text x="42" y="44" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#c6302c">✍️ Orthographe</text>' +
+      '<rect x="124" y="30" width="60" height="20" rx="10" fill="#fbe9b8"/>' +
+      '<text x="134" y="44" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#a06b15">● Mineure</text>' +
+      '<text x="32" y="78" font-family="-apple-system, sans-serif" font-size="13" fill="#dc2626" text-decoration="line-through">✗ 你能帮忙我吗</text>' +
+      '<text x="32" y="100" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#16a34a">✓ 你能帮我吗</text>' +
+      '<text x="32" y="116" font-family="-apple-system, sans-serif" font-size="11" fill="#6b7280" font-style="italic">nǐ néng bāng wǒ ma — peux-tu m\'aider ?</text>' +
+      '<text x="32" y="138" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">💬 «帮忙» est un verbe-objet : on dit «帮我», pas «帮忙我».</text>' +
+      '<rect x="32" y="150" width="80" height="24" rx="8" fill="#fff" stroke="#f0e6d4"/>' +
+      '<text x="46" y="166" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">↻ Réessayer</text>' +
+      '<rect x="120" y="150" width="74" height="24" rx="8" fill="#fff" stroke="#f0e6d4"/>' +
+      '<text x="134" y="166" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🔊 Écouter</text>' +
+      '</svg>'
   },
   {
     id: 'ann-profxiao-refonte-2026-05',
     title: 'Prof. Xiao : interface simplifiée + popup vocabulaire',
     titleEn: 'Prof. Xiao: simplified UI + vocabulary popup',
     body:
-      "La page Prof. Xiao a été repensée pour ressembler à un vrai chat moderne : layout deux colonnes (historique des conversations à gauche, fil de discussion à droite), hauteur fixe avec scroll interne (la page ne s'étend plus indéfiniment), header allégé avec l'avatar du prof + badge En ligne. Côté contenu, chaque mot chinois écrit par Prof. Xiao est désormais cliquable : un soulignage rouge pointillé t'indique l'affordance, et un clic ouvre un popup avec le hanzi, le pinyin, la traduction, une phrase d'exemple extraite de la conversation (avec pinyin auto et traduction si détectable) et un bouton ✚ pour ajouter le mot à tes flashcards personnelles (Lifetime). Le popup détecte si la carte est déjà dans ton deck (✓ Dans tes flashcards) et gère le cap des 500 cartes.",
+      "La page Prof. Xiao a été entièrement repensée pour ressembler à un vrai chat moderne, avec en bonus un **popup vocabulaire** au clic sur chaque mot chinois.\n\n" +
+      "### 🪟 Nouvelle interface\n\n" +
+      "- **Layout deux colonnes** : historique des conversations à gauche, fil de discussion à droite\n" +
+      "- **Hauteur fixe** avec scroll interne — la page ne s'étend plus indéfiniment\n" +
+      "- **Header allégé** : avatar du prof + titre + sous-titre + badge En ligne\n" +
+      "- Plus de sélecteur de mode visible (toujours sur Équilibré par défaut)\n\n" +
+      "### 🈸 Popup vocabulaire au clic\n\n" +
+      "Chaque bloc chinois ≥ 3 hanzi dans une bulle Prof. Xiao est tokenisé en mots cliquables, soulignés en pointillé rouge. Clic → popup avec :\n\n" +
+      "- Le **hanzi** en gros + bouton 🔊 audio\n" +
+      "- Le **pinyin** automatique\n" +
+      "- La **traduction** (CFDICT ou décomposition caractère-par-caractère)\n" +
+      "- Une **phrase d'exemple** extraite de la conversation, avec pinyin auto et traduction si détectable\n" +
+      "- Un bouton **+ Ajouter à mes flashcards** (Lifetime), qui bascule en **✓ Dans tes flashcards** si la carte existe déjà\n\n" +
+      "### 🎯 Pourquoi un seuil de 3 hanzi ?\n\n" +
+      "Les mentions inline d'un caractère unique (genre « la particule 了 ») déclenchaient des popups avec une traduction CFDICT hors contexte (了 = « finir » alors qu'ici c'est une particule) et un pinyin polyphonique faux (`liǎo` au lieu de `le`). On filtre maintenant ces blocs courts pour ne garder que les vraies phrases d'exemple.",
     bodyEn:
-      "The Prof. Xiao page was rebuilt to feel like a real modern chat: two-column layout (conversation history on the left, message thread on the right), fixed height with internal scroll (the page no longer expands forever), lighter header with the teacher's avatar + Online badge. On the content side, every Chinese word Prof. Xiao writes is now clickable: a red dotted underline hints at the affordance, and a click opens a popup with the hanzi, pinyin, translation, an example sentence pulled from the conversation (auto-pinyin + translation when detectable), and a ✚ button to add the word to your personal flashcards (Lifetime). The popup detects if the card already exists (✓ In your flashcards) and respects the 500-card cap.",
+      "The Prof. Xiao page was completely rebuilt to feel like a real modern chat, with a bonus **vocabulary popup** on every Chinese word click.\n\n" +
+      "### 🪟 New interface\n\n" +
+      "- **Two-column layout**: conversation history on the left, message thread on the right\n" +
+      "- **Fixed height** with internal scroll — the page no longer expands forever\n" +
+      "- **Lighter header**: teacher avatar + title + subtitle + Online badge\n" +
+      "- No more visible mode selector (always on Balanced by default)\n\n" +
+      "### 🈸 Click-to-define popup\n\n" +
+      "Every Chinese block ≥ 3 hanzi in a Prof. Xiao bubble is tokenized into clickable words, underlined with red dotted lines. Click → popup with:\n\n" +
+      "- Large **hanzi** + 🔊 audio button\n" +
+      "- Auto **pinyin**\n" +
+      "- **Translation** (CFDICT or per-character breakdown)\n" +
+      "- An **example sentence** pulled from the conversation, with auto-pinyin and translation when detectable\n" +
+      "- A **+ Add to flashcards** button (Lifetime), switching to **✓ In your flashcards** if already present\n\n" +
+      "### 🎯 Why a 3-hanzi threshold?\n\n" +
+      "Inline mentions of a single character (e.g. « the particle 了 ») used to trigger popups with out-of-context CFDICT translations (了 = « finish » when here it's a particle) and wrong polyphonic pinyin (`liǎo` instead of `le`). We now filter these short blocks to only keep real example sentences.",
     date: '2026-05-13',
     tag: 'Prof. Xiao',
     category: 'feature',
     icon: '👩‍🏫',
-    pinned: true
+    pinned: true,
+    illustration:
+      '<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette popup vocab">' +
+      '<rect width="360" height="200" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
+      '<text x="20" y="38" font-family="-apple-system, sans-serif" font-size="13" fill="#1f2937">Bien sûr ! L\'expression </text>' +
+      '<text x="20" y="56" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#1f2937" text-decoration="underline" text-decoration-style="dotted" text-decoration-color="#c6302c">你好吗</text>' +
+      '<text x="56" y="56" font-family="-apple-system, sans-serif" font-size="13" fill="#1f2937"> signifie « comment vas-tu ».</text>' +
+      '<rect x="148" y="74" width="200" height="116" rx="14" fill="#fff" stroke="#e5d7c0" filter="drop-shadow(0 8px 24px rgba(0,0,0,0.12))"/>' +
+      '<circle cx="170" cy="98" r="13" fill="#c6302c"/>' +
+      '<text x="166" y="102" font-family="-apple-system, sans-serif" font-size="12" fill="#fff">🔊</text>' +
+      '<text x="190" y="98" font-family="-apple-system, sans-serif" font-size="20" font-weight="700" fill="#1f2937">你好吗</text>' +
+      '<text x="190" y="113" font-family="-apple-system, sans-serif" font-size="11" font-style="italic" fill="#6b7280">nǐ hǎo ma</text>' +
+      '<text x="162" y="135" font-family="-apple-system, sans-serif" font-size="12" font-style="italic" fill="#1f2937">comment vas-tu ?</text>' +
+      '<rect x="162" y="148" width="170" height="28" rx="8" fill="#fbe9b8" stroke="#f1d77a"/>' +
+      '<text x="195" y="166" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#7a5a0b">+ Ajouter à mes flashcards</text>' +
+      '</svg>'
   },
   {
     id: 'ann-fallback-cf-ai-2026-05',
     title: 'Prof. Xiao résilient : fallback Cloudflare Workers AI',
     titleEn: 'Resilient Prof. Xiao: Cloudflare Workers AI fallback',
     body:
-      "Quand Gemini est saturé (quota free atteint, erreur 5xx, timeout), Prof. Xiao bascule automatiquement sur Cloudflare Workers AI (modèle Qwen / Llama 3.3, excellent pour le chinois) — 10 000 neurons/jour gratuits sans carte bancaire. Tu ne vois rien, la conversation continue, juste avec un autre moteur derrière. La bascule s'applique aussi au Simulateur et au correcteur d'écriture. Le système prompt est identique sur les deux moteurs (pédagogie chaleureuse, détection structurée d'erreurs), donc la qualité reste cohérente.",
+      "Quand Gemini est saturé ou indisponible, Prof. Xiao bascule **automatiquement** sur Cloudflare Workers AI. Tu ne vois rien, la conversation continue.\n\n" +
+      "### ⚡ Quand le fallback se déclenche\n\n" +
+      "- **Quota free atteint** (Gemini = 1500 requêtes/jour gratuites)\n" +
+      "- **Erreur 429** (rate-limit côté serveur)\n" +
+      "- **Erreur 5xx** (timeout, panne temporaire)\n" +
+      "- **Erreur d'authentification** (401/403)\n\n" +
+      "### 🤖 Quel moteur prend la suite\n\n" +
+      "**Cloudflare Workers AI** avec le modèle Qwen 1.5 14B (excellent pour le chinois) ou Llama 3.3 70B en backup. **10 000 neurons gratuits par jour**, pas de carte bancaire nécessaire.\n\n" +
+      "### 🎯 Ce que le fallback couvre\n\n" +
+      "- Page **Prof. Xiao** (chat principal)\n" +
+      "- **Simulateur** de situations\n" +
+      "- **Correcteur d'écriture**\n\n" +
+      "Le system prompt est strictement identique sur Gemini et Cloudflare (pédagogie chaleureuse, détection structurée d'erreurs au format JSON), donc la qualité reste cohérente — tu ne sens pas la bascule.",
     bodyEn:
-      "When Gemini is saturated (free quota hit, 5xx error, timeout), Prof. Xiao automatically falls back to Cloudflare Workers AI (Qwen / Llama 3.3 model, great at Chinese) — 10,000 neurons/day free, no credit card needed. You don't see anything: the conversation just continues with a different engine behind. The failover also applies to the Simulator and Writing Corrector. The system prompt is identical on both engines (warm pedagogy, structured error detection), so quality stays consistent.",
+      "When Gemini is saturated or unavailable, Prof. Xiao **automatically** falls back to Cloudflare Workers AI. You don't see anything, the conversation just continues.\n\n" +
+      "### ⚡ When the fallback kicks in\n\n" +
+      "- **Free quota hit** (Gemini = 1500 free requests/day)\n" +
+      "- **429 error** (server-side rate-limit)\n" +
+      "- **5xx error** (timeout, temporary outage)\n" +
+      "- **Auth error** (401/403)\n\n" +
+      "### 🤖 Which engine takes over\n\n" +
+      "**Cloudflare Workers AI** with the Qwen 1.5 14B model (great at Chinese), or Llama 3.3 70B as a backup. **10,000 free neurons per day**, no credit card required.\n\n" +
+      "### 🎯 What the fallback covers\n\n" +
+      "- **Prof. Xiao** page (main chat)\n" +
+      "- **Simulator**\n" +
+      "- **Writing Corrector**\n\n" +
+      "The system prompt is strictly identical on Gemini and Cloudflare (warm pedagogy, structured JSON error detection), so quality stays consistent — you don't feel the switch.",
     date: '2026-05-13',
     tag: 'Prof. Xiao',
     category: 'fix',
@@ -496,9 +644,29 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     title: 'SmartMix : audio sur les questions d\'écoute',
     titleEn: 'SmartMix: audio on listening questions',
     body:
-      "Les questions de révision de type « Écoute le ton et identifie la bonne syllabe » jouent désormais l'audio automatiquement à l'affichage, avec un bouton 🔊 à côté de l'énoncé pour relancer la lecture autant de fois que tu veux. Les exercices de discrimination tonale (mā/má/mǎ/mà) deviennent enfin réalistes : tu entends, tu choisis, tu vérifies — exactement comme dans un test HSK oral. La fonctionnalité est dispo dans tous les modes de révision (SmartMix, Daily, Weakness, Free) et fonctionne avec les audios pré-générés MP3, pas avec la synthèse vocale du navigateur (plus de prononciations bizarres sur Chrome Windows).",
+      "Les questions de révision « Écoute le ton et identifie la bonne syllabe » jouent enfin l'audio automatiquement à l'affichage, avec un bouton 🔊 pour relancer.\n\n" +
+      "### 🎧 Ce qui change concrètement\n\n" +
+      "- **Auto-play** au chargement de la question (tu entends mā / má / mǎ / mà sans rien cliquer)\n" +
+      "- Bouton **🔊 Rejouer** à côté de l'énoncé pour relancer autant de fois que nécessaire\n" +
+      "- Audios issus du dataset **MP3 pré-généré** (voix native), plus de Web Speech navigateur — fini les prononciations bizarres sur Chrome Windows\n\n" +
+      "### 📚 Disponible dans tous les modes de révision\n\n" +
+      "- **SmartMix** — mélange algorithmique principal\n" +
+      "- **Daily** — objectif quotidien\n" +
+      "- **Weakness** — focus sur tes erreurs\n" +
+      "- **Free** — leçons choisies manuellement\n\n" +
+      "Les exercices de discrimination tonale deviennent enfin réalistes — exactement le format d'un test HSK oral.",
     bodyEn:
-      "Review questions of type « Listen to the tone and pick the right syllable » now auto-play their audio when shown, with a 🔊 button next to the prompt to replay as many times as you want. Tone discrimination drills (mā/má/mǎ/mà) finally feel realistic: you hear, you pick, you verify — exactly like an oral HSK exam. Available in every review mode (SmartMix, Daily, Weakness, Free) and built on top of pre-generated MP3 audio rather than browser TTS (no more odd pronunciations on Chrome Windows).",
+      "Listening review questions (« hear the tone and pick the right syllable ») now auto-play their audio when shown, with a 🔊 button to replay.\n\n" +
+      "### 🎧 What changes concretely\n\n" +
+      "- **Auto-play** when the question loads (you hear mā / má / mǎ / mà without clicking)\n" +
+      "- **🔊 Replay** button next to the prompt for unlimited replays\n" +
+      "- Audio from the **pre-generated MP3 dataset** (native voice), no more browser Web Speech — bye odd pronunciations on Chrome Windows\n\n" +
+      "### 📚 Available in every review mode\n\n" +
+      "- **SmartMix** — main algorithmic mix\n" +
+      "- **Daily** — daily goal\n" +
+      "- **Weakness** — focus on your mistakes\n" +
+      "- **Free** — manually picked lessons\n\n" +
+      "Tone discrimination drills finally feel realistic — exactly like a HSK oral exam format.",
     date: '2026-05-11',
     tag: 'Révisions',
     category: 'review',
@@ -523,9 +691,35 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     title: 'Abonnements XiaoLearn : Mensuel + Lifetime',
     titleEn: 'XiaoLearn plans: Monthly + Lifetime',
     body:
-      "Tu peux désormais souscrire à XiaoLearn Premium directement depuis l'app, en deux formules : Mensuel à 14 €/mois (résiliable à tout moment) ou Lifetime à 99 € (paiement unique, accès à vie à tout ce qui sortira). Le paiement passe par Stripe Checkout (cartes Visa/Mastercard, Apple Pay, Google Pay), tu n'as pas à créer de compte additionnel. Le Premium débloque : Simulateur Prof. Xiao (10+ scénarios immersifs), révisions illimitées, tous les mini-jeux (Sentence Builder, Pinyin Typing, Tone Trainer, Dictation), 500 flashcards perso, et toutes les nouveautés futures. À la souscription, ton compte est automatiquement reconnu sur tous tes appareils (Firestore sync, fonctionne sur iPhone, iPad, Mac, PC).",
+      "XiaoLearn Premium est disponible avec deux formules au choix, accessibles depuis la page **Réglages → Abonnement**.\n\n" +
+      "### 💎 Deux formules\n\n" +
+      "- **Mensuel — 14 €/mois** : résiliable à tout moment, idéal pour tester\n" +
+      "- **Lifetime — 99 €** : paiement unique, accès à vie à tout ce qui sortira (y compris les futures fonctionnalités IA)\n\n" +
+      "### 🔓 Ce que Premium débloque\n\n" +
+      "- **Simulateur Prof. Xiao** : 10+ scénarios immersifs (restaurant, métro, marchandage, entretien pro, consultation médicale…)\n" +
+      "- **Révisions illimitées** : SmartMix sans cap quotidien\n" +
+      "- **Mini-jeux** : Sentence Builder, Pinyin Typing, Tone Trainer, Dictation\n" +
+      "- **500 flashcards perso** (deck custom avec pinyin auto)\n" +
+      "- **Toutes les nouveautés futures** sans surcoût (Lifetime uniquement)\n\n" +
+      "### 💳 Paiement sécurisé\n\n" +
+      "Stripe Checkout : Visa, Mastercard, **Apple Pay**, **Google Pay**. Pas de compte additionnel à créer.\n\n" +
+      "### 📱 Sync cross-device\n\n" +
+      "À la souscription, ton compte est automatiquement reconnu sur **iPhone, iPad, Mac, PC, Android** via Firestore.",
     bodyEn:
-      "You can now subscribe to XiaoLearn Premium straight from the app in two flavors: Monthly at €14/mo (cancel anytime) or Lifetime at €99 (one-time payment, lifetime access to everything that ships). Payment runs through Stripe Checkout (Visa/Mastercard, Apple Pay, Google Pay) — no extra account to create. Premium unlocks: Prof. Xiao Simulator (10+ immersive scenarios), unlimited reviews, all mini-games (Sentence Builder, Pinyin Typing, Tone Trainer, Dictation), 500 personal flashcards, and all future features. Once you subscribe, your account is automatically recognised on all your devices (Firestore sync — works on iPhone, iPad, Mac, PC).",
+      "XiaoLearn Premium is available with two plans, both accessible from **Settings → Subscription**.\n\n" +
+      "### 💎 Two plans\n\n" +
+      "- **Monthly — €14/mo**: cancel anytime, great to test\n" +
+      "- **Lifetime — €99**: one-time payment, lifetime access to everything that ships (including future AI features)\n\n" +
+      "### 🔓 What Premium unlocks\n\n" +
+      "- **Prof. Xiao Simulator**: 10+ immersive scenarios (restaurant, metro, haggling, job interview, doctor's office…)\n" +
+      "- **Unlimited reviews**: SmartMix with no daily cap\n" +
+      "- **Mini-games**: Sentence Builder, Pinyin Typing, Tone Trainer, Dictation\n" +
+      "- **500 personal flashcards** (custom deck with auto-pinyin)\n" +
+      "- **All future features** at no extra cost (Lifetime only)\n\n" +
+      "### 💳 Secure payment\n\n" +
+      "Stripe Checkout: Visa, Mastercard, **Apple Pay**, **Google Pay**. No extra account to create.\n\n" +
+      "### 📱 Cross-device sync\n\n" +
+      "Once you subscribe, your account is automatically recognised on **iPhone, iPad, Mac, PC, Android** via Firestore.",
     date: '2026-05-08',
     tag: 'Premium',
     category: 'feature',
@@ -552,9 +746,53 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     title: 'Simulateur de Situations',
     titleEn: 'Situations Simulator',
     body:
-      "Plonge dans des conversations interactives en chinois écrites par un native speaker et jouées par l'IA. 10+ scénarios actuels : commander au restaurant, prendre le métro à Shanghai, marchander au marché, demander son chemin, première rencontre professionnelle, échange culturel à un mariage, consultation médicale, location d'appart, négociation salariale, dialogue avec un parent chinois traditionnel. Chaque scénario a un objectif clair (« décrocher la table », « obtenir une réduction ») et l'IA évalue ta performance à chaque tour. Les erreurs sont automatiquement enregistrées dans Mes erreurs avec leur contexte. Disponible avec Premium Lifetime.",
+      "Plonge dans des conversations interactives en chinois, écrites par un native speaker et jouées par l'IA. Tu joues ton rôle, l'IA joue le sien, vous échangez librement en hanzi.\n\n" +
+      "### 🎭 10+ scénarios immersifs\n\n" +
+      "**Vie quotidienne**\n\n" +
+      "- Commander au restaurant\n" +
+      "- Prendre le métro à Shanghai\n" +
+      "- Marchander au marché\n" +
+      "- Demander son chemin\n\n" +
+      "**Travail**\n\n" +
+      "- Première rencontre professionnelle\n" +
+      "- Négociation salariale\n" +
+      "- Présentation produit\n\n" +
+      "**Vie sociale**\n\n" +
+      "- Échange culturel à un mariage\n" +
+      "- Consultation médicale\n" +
+      "- Location d'appartement\n" +
+      "- Dialogue avec un parent chinois traditionnel\n\n" +
+      "### 🎯 Comment ça marche\n\n" +
+      "1. Tu choisis un scénario et lis le briefing (ton rôle, l'objectif, le vocab utile)\n" +
+      "2. Tu démarres la conversation en chinois — Prof. Xiao joue l'autre personnage\n" +
+      "3. Si tu rates, l'IA te corrige discrètement (et l'erreur file dans **Mes erreurs**)\n" +
+      "4. À la fin tu reçois un score + un retour détaillé sur ce qui a marché ou non\n\n" +
+      "### 🔓 Accès\n\n" +
+      "Disponible avec **Premium Lifetime**. Le vocabulaire s'adapte à ton niveau (HSK 1 → 6).",
     bodyEn:
-      "Dive into interactive Chinese conversations written by a native speaker and played by the AI. 10+ scenarios so far: ordering at a restaurant, taking the metro in Shanghai, haggling at a market, asking for directions, first professional meeting, cultural exchange at a wedding, doctor's appointment, apartment rental, salary negotiation, dialogue with a traditional Chinese parent. Each scenario has a clear goal (« land the table », « get a discount ») and the AI scores your performance turn by turn. Mistakes are auto-logged in My errors with their context. Available with Premium Lifetime.",
+      "Dive into interactive Chinese conversations, written by a native speaker and played by the AI. You play your role, the AI plays its role, you exchange freely in hanzi.\n\n" +
+      "### 🎭 10+ immersive scenarios\n\n" +
+      "**Daily life**\n\n" +
+      "- Ordering at a restaurant\n" +
+      "- Taking the metro in Shanghai\n" +
+      "- Haggling at a market\n" +
+      "- Asking for directions\n\n" +
+      "**Work**\n\n" +
+      "- First professional meeting\n" +
+      "- Salary negotiation\n" +
+      "- Product pitch\n\n" +
+      "**Social life**\n\n" +
+      "- Cultural exchange at a wedding\n" +
+      "- Doctor's appointment\n" +
+      "- Apartment rental\n" +
+      "- Dialogue with a traditional Chinese parent\n\n" +
+      "### 🎯 How it works\n\n" +
+      "1. Pick a scenario and read the briefing (your role, the goal, useful vocab)\n" +
+      "2. Start the conversation in Chinese — Prof. Xiao plays the other character\n" +
+      "3. If you slip, the AI corrects you quietly (and the mistake lands in **My errors**)\n" +
+      "4. At the end you get a score + a detailed recap of what worked or didn't\n\n" +
+      "### 🔓 Access\n\n" +
+      "Available with **Premium Lifetime**. Vocabulary scales to your level (HSK 1 → 6).",
     date: '2026-04-12',
     tag: 'Simulateur',
     category: 'feature',

@@ -35,6 +35,7 @@ export interface CommunityV2Announcement {
   id: string;
   title: string;
   titleEn?: string;
+  /** Corps en markdown (gras, listes, sections). Rendu via parseMarkdown. */
   body: string;
   bodyEn?: string;
   date: string; // ISO
@@ -45,6 +46,12 @@ export interface CommunityV2Announcement {
   category?: CommunityV2AnnouncementCategory;
   /** Si true, affiche un 📌 et remonte la carte en haut de liste. */
   pinned?: boolean;
+  /**
+   * SVG inline (en string) affiché dans le body de l'annonce, généralement
+   * une maquette / illustration de la feature. Si présent, on le rend
+   * au-dessus du corps texte dans un encart avec fond crème.
+   */
+  illustration?: string;
 }
 
 export interface CommunityV2Challenge {
