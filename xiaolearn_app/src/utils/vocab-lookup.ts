@@ -10,6 +10,21 @@ import cfdictData from '../data/cfdict-compact.json';
 const CFDICT_MAP = cfdictData as Record<string, string>;
 
 /**
+ * Heuristique : détecte si une chaîne ressemble à du pinyin (que des
+ * caractères latins + diacritiques pinyin + espaces). Sert à éviter de
+ * confondre un pinyin alternatif `(nǐmen hǎo)` avec une vraie traduction.
+ */
+const looksLikePinyin = (s: string): boolean => {
+  if (!s) return false;
+  // Caractères autorisés dans du pinyin : a-z, A-Z, espaces, tirets,
+  // diacritiques tonales courantes (ā á ǎ à ē é ě è ī í ǐ ì ō ó ǒ ò ū ú ǔ ù
+  // ǚ ü Ü), apostrophe (pour 'an, 'ai…), et chiffres (tons numériques).
+  return /^[a-zA-Z\s\-'āáǎàĀÁǍÀēéěèĒÉĚÈīíǐìĪÍǏÌōóǒòŌÓǑÒūúǔùŪÚǓÙǚǖǘǜÜüńňǹ0-9]+$/.test(
+    s.trim()
+  );
+};
+
+/**
  * Calcule le pinyin d'une chaîne chinoise. Retourne '' en cas d'échec.
  */
 export const pinyinFor = (hanzi: string): string => {
@@ -72,17 +87,30 @@ export const findExampleSentence = (
       // Cherche une traduction dans la suite de la phrase ou la phrase suivante
       let translation: string | undefined;
       const after = s.slice(s.indexOf(zhMatch[0]) + zhMatch[0].length);
-      // Pattern (pinyin - traduction) ou (traduction)
+      // Pattern (pinyin - traduction) : on ne prend que ce qu'il y a APRÈS
+      // un tiret/em-dash. Si la parenthèse contient juste du pinyin seul
+      // (ex: `你们好 (nǐmen hǎo)`), on l'ignore — sinon on doublonne avec
+      // le pinyin calculé par pinyin-pro plus haut.
       const parenMatch = after.match(/\(([^)]+)\)/);
       if (parenMatch) {
         const inside = parenMatch[1];
         const dashIdx = inside.search(/[-—–]/);
-        translation = (dashIdx >= 0 ? inside.slice(dashIdx + 1) : inside).trim();
+        if (dashIdx >= 0) {
+          const candidate = inside.slice(dashIdx + 1).trim();
+          if (candidate && !looksLikePinyin(candidate)) {
+            translation = candidate;
+          }
+        }
       }
-      // Pattern : « zh — traduction » sur la même phrase
+      // Pattern : « zh — traduction » sur la même phrase (hors parenthèses)
       if (!translation) {
-        const dashMatch = after.match(/\s*[—–-]\s*([^。.!?\n]+)/);
-        if (dashMatch) translation = dashMatch[1].trim();
+        const dashMatch = after.match(/\s*[—–-]\s*([^。.!?\n(]+)/);
+        if (dashMatch) {
+          const candidate = dashMatch[1].trim();
+          if (candidate && !looksLikePinyin(candidate)) {
+            translation = candidate;
+          }
+        }
       }
 
       return {
