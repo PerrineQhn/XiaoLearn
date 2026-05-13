@@ -20,11 +20,28 @@ interface Props {
   onSearch?: (query: string) => void;
   /** Navigation depuis la cloche (notif → page concernée). */
   onNavigate?: (view: string) => void;
+  /** Toggle du drawer sidebar mobile (caché en desktop). */
+  onToggleSidebar?: () => void;
 }
 
-const AppTopBar = ({ language = 'fr', onSearch, onNavigate }: Props) => {
+const AppTopBar = ({ language = 'fr', onSearch, onNavigate, onToggleSidebar }: Props) => {
+  const hamburgerLabel = language === 'fr' ? 'Ouvrir le menu' : 'Open menu';
   return (
     <header className="xl-app-topbar" role="banner">
+      {/* Bouton hamburger — visible seulement ≤ 1024 px via CSS */}
+      <button
+        type="button"
+        className="xl-topbar-hamburger"
+        onClick={onToggleSidebar}
+        aria-label={hamburgerLabel}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
       <div className="xl-app-topbar-search">
         <GlobalSearchBar language={language} onSubmit={onSearch} />
       </div>

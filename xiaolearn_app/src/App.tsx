@@ -72,6 +72,7 @@ import { NotificationsProvider, useNotifications } from './contexts/Notification
 import NotificationToasts from './components/NotificationToasts';
 import AppTopBar from './components/AppTopBar';
 import './styles/app-topbar.css';
+import './styles/responsive-app.css';
 import { useChatConversations } from './hooks/useChatConversations';
 import { useNotificationEvents } from './hooks/useNotificationEvents';
 import LoginModal from './components/Auth/LoginModal';
@@ -327,6 +328,15 @@ function App() {
   const [selectedLesson, setSelectedLesson] = useState<{ pathId: string; lessonId: string } | null>(null);
   const [logoErrored, setLogoErrored] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  // Drawer sidebar — fermé par défaut, ouvert via bouton hamburger en mobile.
+  // En desktop (>1024px), le CSS masque l'effet drawer et la sidebar reste visible.
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+  const toggleSidebar = useCallback(() => setSidebarOpen((v) => !v), []);
+  // Ferme automatiquement le drawer quand on change de vue (utile mobile)
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [view]);
   const copy = getCopy(language);
   const [focusedTheme, setFocusedTheme] = useState<string | null>(defaultTheme);
   const [completedLessons, setCompletedLessons] = useState<string[]>(() => readCompletedLessons());
@@ -2106,7 +2116,13 @@ function App() {
   }
 
   return (
-    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'} ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      {/* Overlay sombre cliquable derrière le drawer mobile */}
+      <div
+        className="xl-sidebar-overlay"
+        onClick={closeSidebar}
+        aria-hidden={!sidebarOpen}
+      />
       {/* Sidebar Navigation */}
       <aside className="sidebar">
         <div className="sidebar-header">
@@ -2319,6 +2335,7 @@ function App() {
             setView('dictionary');
           }}
           onNavigate={(v) => setView(v as typeof view)}
+          onToggleSidebar={toggleSidebar}
         />
         {content}
       </main>
