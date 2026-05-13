@@ -8,7 +8,10 @@ import StructuredLessonPageV2 from './pages/StructuredLessonPageV2';
 // L'import par défaut n'est plus nécessaire ; on conserve uniquement les
 // types/mappers exportés depuis ce module (via utils/v2-mappers).
 import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './pages/AiTutorPageV2';
-import GrammarDrillsPageV2 from './pages/GrammarDrillsPageV2';
+// GrammarDrillsPageV2 remplacée par GrammarPageV3 (catalogue complet 38 points
+// avec niveaux CECR, audio, mini-quiz). L'ancien fichier reste dans le repo
+// pour référence mais n'est plus utilisé.
+import GrammarPageV3 from './pages/GrammarPageV3';
 import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import AnnouncementsPage from './pages/AnnouncementsPage';
@@ -120,7 +123,6 @@ import { playAudioWithFallback } from './utils/audio';
 import {
   lessonModuleToV2,
   lessonItemToFlashcardV2,
-  DEFAULT_GRAMMAR_DRILLS,
   DEFAULT_ANNOUNCEMENTS,
   DEFAULT_CHALLENGES,
   DEFAULT_LEADERBOARD
@@ -1786,10 +1788,13 @@ function App() {
       break;
     }
     case 'drills':
+      // V3 = catalogue complet façon Seonsaengnim (38 points + niveaux CECR +
+      // exemples + audio + mini-quiz). Remplace l'ancien GrammarDrillsPageV2
+      // qui était une grille de drills très limitée.
       content = (
-        <GrammarDrillsPageV2
-          topics={DEFAULT_GRAMMAR_DRILLS}
+        <GrammarPageV3
           language={language}
+          onBack={() => setView('home')}
         />
       );
       break;
