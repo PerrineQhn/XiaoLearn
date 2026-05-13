@@ -42,6 +42,12 @@ export interface VocabEnrichment {
   translation: string;
   /** Décomposition caractère-par-caractère avec sens contextualisé. */
   breakdown: VocabEnrichmentEntry[];
+  /**
+   * Traduction française de la phrase d'exemple, si on en a passé une au
+   * LLM via `exampleSentence`. Permet d'afficher la phrase complète +
+   * traduction dans la section EXEMPLE du popup.
+   */
+  exampleTranslation?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -85,24 +91,37 @@ const writeCache = (cache: CacheShape) => {
   }
 };
 
+/**
+ * Clé de cache : on combine le hanzi cliqué et un digest du contexte +
+ * phrase d'exemple, pour qu'un changement d'exemple n'invalide pas le
+ * cache du sens du mot lui-même (sauf si vraiment différent).
+ */
+const cacheKey = (
+  hanzi: string,
+  contextHint: string | undefined,
+  exampleSentence: string | undefined
+): string => {
+  return `${hanzi}::${digestContext(contextHint)}::${digestContext(exampleSentence)}`;
+};
+
 /** Récupère un enrichissement caché (synchroniquement). Renvoie null sinon. */
 export const getCachedEnrichment = (
   hanzi: string,
-  contextHint?: string
+  contextHint?: string,
+  exampleSentence?: string
 ): VocabEnrichment | null => {
   const cache = readCache();
-  const key = `${hanzi}::${digestContext(contextHint)}`;
-  return cache[key] ?? null;
+  return cache[cacheKey(hanzi, contextHint, exampleSentence)] ?? null;
 };
 
 const cacheEnrichment = (
   hanzi: string,
   contextHint: string | undefined,
+  exampleSentence: string | undefined,
   data: VocabEnrichment
 ) => {
   const cache = readCache();
-  const key = `${hanzi}::${digestContext(contextHint)}`;
-  cache[key] = data;
+  cache[cacheKey(hanzi, contextHint, exampleSentence)] = data;
   writeCache(cache);
 };
 
@@ -110,31 +129,58 @@ const cacheEnrichment = (
 //  Prompt building
 // ---------------------------------------------------------------------------
 
-const buildPrompt = (hanzi: string, contextHint?: string): string => {
+const buildPrompt = (
+  hanzi: string,
+  contextHint?: string,
+  exampleSentence?: string
+): string => {
   const contextLine = contextHint
     ? `Contexte (phrase d'origine) : ${contextHint.trim()}`
     : 'Aucun contexte fourni — donne le sens le plus courant en chinois moderne.';
   const chars = Array.from(hanzi).join(', ');
+  const exampleBlock = exampleSentence
+    ? [
+        '',
+        `Phrase d'exemple à traduire en français : ${exampleSentence.trim()}`
+      ].join('\n')
+    : '';
+  const schemaExample = exampleSentence
+    ? [
+        '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
+        '  "breakdown": [',
+        '    {"char": "<caractère>", "pinyin": "<pinyin avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
+        '  ],',
+        '  "exampleTranslation": "<traduction française naturelle et complète de la phrase d\'exemple ci-dessus>"'
+      ]
+    : [
+        '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
+        '  "breakdown": [',
+        '    {"char": "<caractère>", "pinyin": "<pinyin avec tons diacritiques>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
+        '  ]'
+      ];
   return [
     'Tu es un dictionnaire chinois→français pédagogique pour francophones débutants en chinois.',
     `Mot à analyser : ${hanzi}`,
     contextLine,
     `Caractères individuels à expliquer : ${chars}`,
+    exampleBlock,
     '',
     'Renvoie STRICTEMENT un JSON valide (et rien d\'autre, pas de markdown, pas de commentaire), au format :',
     '{',
-    '  "translation": "<traduction française courte du mot dans son sens contextuel, 1 à 5 mots>",',
-    '  "breakdown": [',
-    '    {"char": "<caractère>", "pinyin": "<pinyin avec tons ASCII type ǎ>", "sense": "<sens contextuel dans CE mot, 1 à 3 mots>"}',
-    '  ]',
+    ...schemaExample,
     '}',
     '',
     'Règles :',
     '- Le pinyin doit utiliser des marques de ton diacritiques (ā á ǎ à).',
     '- Pour chaque caractère, choisis le sens qui rend compte de son rôle DANS CE MOT précis (ex : 会 dans 会说 = "savoir/pouvoir", pas "se réunir").',
     '- Traduction du mot = expression française naturelle dans le contexte donné.',
+    exampleSentence
+      ? '- exampleTranslation = traduction française complète, fluide et naturelle de la phrase d\'exemple (pas mot-à-mot).'
+      : '',
     '- Si le mot a plusieurs sens, prends celui qui colle au contexte.'
-  ].join('\n');
+  ]
+    .filter(Boolean)
+    .join('\n');
 };
 
 // ---------------------------------------------------------------------------
@@ -177,8 +223,14 @@ const extractJson = (raw: string): VocabEnrichment | null => {
         });
       }
     }
-    if (!translation && breakdown.length === 0) return null;
-    return { translation, breakdown };
+    const exampleTranslation =
+      typeof parsed.exampleTranslation === 'string'
+        ? parsed.exampleTranslation.trim()
+        : undefined;
+    if (!translation && breakdown.length === 0 && !exampleTranslation) {
+      return null;
+    }
+    return { translation, breakdown, exampleTranslation };
   } catch {
     return null;
   }
@@ -241,6 +293,13 @@ async function callCloudflare(prompt: string): Promise<string | null> {
 //  API publique
 // ---------------------------------------------------------------------------
 
+export interface EnrichVocabOptions {
+  /** Phrase d'origine où l'utilisateur a cliqué (aide à choisir le sens). */
+  contextHint?: string;
+  /** Phrase d'exemple à traduire en français en plus du mot. */
+  exampleSentence?: string;
+}
+
 /**
  * Enrichit un mot vocab via LLM. Renvoie d'abord le cache si présent ;
  * sinon appelle Gemini, puis Cloudflare en fallback, met en cache et
@@ -250,21 +309,22 @@ async function callCloudflare(prompt: string): Promise<string | null> {
  */
 export async function enrichVocabWithLLM(
   hanzi: string,
-  contextHint?: string
+  options: EnrichVocabOptions = {}
 ): Promise<VocabEnrichment | null> {
   if (!hanzi) return null;
+  const { contextHint, exampleSentence } = options;
 
   // Cache hit
-  const cached = getCachedEnrichment(hanzi, contextHint);
+  const cached = getCachedEnrichment(hanzi, contextHint, exampleSentence);
   if (cached) return cached;
 
-  const prompt = buildPrompt(hanzi, contextHint);
+  const prompt = buildPrompt(hanzi, contextHint, exampleSentence);
 
   // 1. Gemini
   const geminiRaw = await callGemini(prompt);
   const geminiData = geminiRaw ? extractJson(geminiRaw) : null;
   if (geminiData) {
-    cacheEnrichment(hanzi, contextHint, geminiData);
+    cacheEnrichment(hanzi, contextHint, exampleSentence, geminiData);
     return geminiData;
   }
 
@@ -272,7 +332,7 @@ export async function enrichVocabWithLLM(
   const cfRaw = await callCloudflare(prompt);
   const cfData = cfRaw ? extractJson(cfRaw) : null;
   if (cfData) {
-    cacheEnrichment(hanzi, contextHint, cfData);
+    cacheEnrichment(hanzi, contextHint, exampleSentence, cfData);
     return cfData;
   }
 

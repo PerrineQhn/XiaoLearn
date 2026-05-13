@@ -257,14 +257,14 @@ export interface ChineseSegment {
 }
 
 /**
- * Seuil minimal de hanzi consécutifs pour considérer un bloc comme une
- * "phrase d'exemple" cliquable. En dessous (1 ou 2 hanzi isolés dans un
- * paragraphe d'explication français — typiquement "la particule 了"), le
- * lookup CFDICT donnerait une traduction hors contexte (了 → "finir" alors
- * qu'ici c'est une particule) et un pinyin polyphonique faux (liǎo au lieu
- * de le). On préfère ne PAS rendre cliquables ces mentions inline.
+ * Seuil minimal de hanzi consécutifs pour considérer un bloc comme
+ * cliquable. À 1, tous les hanzi sont cliquables — même les particules
+ * isolées (« la particule 了 »). C'est OK depuis que le popup déclenche un
+ * appel LLM contextuel (vocabLlmService) qui corrige les sens hors contexte
+ * de CFDICT : 了 dans "la particule 了" → "particule d'achèvement" plutôt
+ * que le sens premier dictionnaire "finir".
  */
-const MIN_CHINESE_RUN_FOR_CLICK = 3;
+const MIN_CHINESE_RUN_FOR_CLICK = 1;
 
 /**
  * Découpe un texte mixte (chinois + latin/ponctuation) en segments.

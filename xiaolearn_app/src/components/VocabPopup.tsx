@@ -69,25 +69,44 @@ const VocabPopup = ({
 }: VocabPopupProps) => {
   const [feedback, setFeedback] = useState<'idle' | 'added'>('idle');
 
-  // Enrichissement LLM async. Si le mot est inconnu (pas de translation,
-  // ou breakdown incomplet), on appelle Gemini en arrière-plan et on met
-  // à jour l'affichage quand la réponse arrive.
-  const initialCached = getCachedEnrichment(word.hanzi, contextHint);
+  // Enrichissement LLM async. On appelle Gemini si :
+  //   - mot composé (≥2 hanzi) ET (pas de traduction OU breakdown partielle)
+  //   - OU mot d'1 hanzi mais on a un contexte (le LLM affine le sens
+  //     contextuel des particules isolées : 了 selon le contexte = "particule
+  //     d'achèvement" plutôt que "finir")
+  //   - OU on a une phrase d'exemple sans traduction (le LLM traduit la phrase)
+  const initialCached = getCachedEnrichment(
+    word.hanzi,
+    contextHint,
+    example?.hanzi
+  );
   const [enrichment, setEnrichment] = useState<VocabEnrichment | null>(
     initialCached
   );
   const [enriching, setEnriching] = useState<boolean>(false);
 
+  const wordLen = Array.from(word.hanzi).length;
   const needsEnrichment =
     !initialCached &&
-    Array.from(word.hanzi).length >= 2 &&
-    (!word.translation || (word.breakdown ?? []).length < Array.from(word.hanzi).length);
+    (
+      // Mot ≥2 chars : si trad manquante ou breakdown incomplète
+      (wordLen >= 2 &&
+        (!word.translation ||
+          (word.breakdown ?? []).length < wordLen)) ||
+      // Mot d'1 char mais on a un contexte riche
+      (wordLen === 1 && Boolean(contextHint && contextHint.length > 1)) ||
+      // Exemple sans traduction : on demande au LLM de traduire la phrase
+      Boolean(example && !example.translation)
+    );
 
   useEffect(() => {
     if (!needsEnrichment) return;
     let cancelled = false;
     setEnriching(true);
-    enrichVocabWithLLM(word.hanzi, contextHint)
+    enrichVocabWithLLM(word.hanzi, {
+      contextHint,
+      exampleSentence: example?.hanzi
+    })
       .then((data) => {
         if (cancelled) return;
         if (data) setEnrichment(data);
@@ -98,7 +117,7 @@ const VocabPopup = ({
     return () => {
       cancelled = true;
     };
-  }, [word.hanzi, contextHint, needsEnrichment]);
+  }, [word.hanzi, contextHint, example?.hanzi, needsEnrichment]);
 
   // Données affichées : on préfère l'enrichment LLM (contextualisé) sur les
   // données CFDICT/lessons quand il existe.
@@ -107,6 +126,8 @@ const VocabPopup = ({
     (enrichment?.breakdown && enrichment.breakdown.length > 0
       ? enrichment.breakdown
       : word.breakdown) ?? [];
+  const displayExampleTranslation =
+    enrichment?.exampleTranslation || example?.translation || '';
 
   // ESC = ferme
   useEffect(() => {
@@ -279,7 +300,9 @@ const VocabPopup = ({
           </div>
         )}
 
-        {/* Phrase d'exemple extraite de la conversation, si trouvée. */}
+        {/* Phrase d'exemple extraite de la conversation, si trouvée.
+            La traduction française est soit extraite du contexte (regex),
+            soit générée par le LLM (`enrichment.exampleTranslation`). */}
         {example && (
           <div className="at2-vocab-popup-example">
             <div className="at2-vocab-popup-example-label">
@@ -289,9 +312,9 @@ const VocabPopup = ({
             {example.pinyin && (
               <p className="at2-vocab-popup-example-pinyin">{example.pinyin}</p>
             )}
-            {example.translation && (
+            {displayExampleTranslation && (
               <p className="at2-vocab-popup-example-translation">
-                {example.translation}
+                {displayExampleTranslation}
               </p>
             )}
           </div>
