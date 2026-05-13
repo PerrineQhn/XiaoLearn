@@ -246,9 +246,9 @@ const SyncDiagnosticPanel = ({ language = 'fr' }: Props) => {
         )}
         <div style={{ marginTop: 8, color: '#5e6075' }}>
           <strong>{language === 'fr' ? 'Statut vu par cet appareil :' : 'Status seen by this device:'}</strong>{' '}
-          {entitlementsLoading ? '…' : entitlements?.isLifetime ? (
+          {entitlementsLoading ? '…' : entitlements?.app?.isLifetime ? (
             <span style={{ color: '#c6302c', fontWeight: 700 }}>Lifetime ✓</span>
-          ) : entitlements?.active ? (
+          ) : entitlements?.app?.active ? (
             <span style={{ color: '#2f9d8a', fontWeight: 600 }}>Subscription</span>
           ) : (
             <span style={{ color: '#5e6075' }}>Gratuit</span>
