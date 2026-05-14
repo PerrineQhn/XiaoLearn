@@ -79,6 +79,14 @@ export interface HomePageV2Props {
   /** Ids de leçons déjà complétées (source : completedLessons de App.tsx). */
   completedLessonIds?: Set<string>;
   onStartReview: () => void;
+  /**
+   * Ouvre la page Flashcards (sessions SRS sur cartes individuelles).
+   * Distincte de `onStartReview` qui mène à la page Révisions multi-leçons.
+   * Utilisée par la ligne « X cartes à réviser » de l'Objectif du jour.
+   */
+  onOpenFlashcards?: () => void;
+  /** Nombre de cartes individuelles dues en SRS (≠ leçons à revoir). */
+  dueFlashcardsCount?: number;
   onOpenLesson: (lessonId: string) => void;
   onOpenAiTutor: (prompt?: string) => void;
   onOpenPath: () => void;
@@ -137,6 +145,8 @@ const DailyGoalCard = ({
   goal,
   streakAlive,
   onStartReview,
+  onOpenFlashcards,
+  dueFlashcardsCount,
   onOpenLesson,
   onEditTimer,
   lessonToResumeId
@@ -145,6 +155,10 @@ const DailyGoalCard = ({
   goal: ReturnType<typeof useDashboardState>['dailyGoal'];
   streakAlive: boolean;
   onStartReview: () => void;
+  /** Ouvre la page Flashcards (mode SRS individuel). */
+  onOpenFlashcards?: () => void;
+  /** Compte vrai de cartes individuelles dues (≠ leçons). */
+  dueFlashcardsCount?: number;
   onOpenLesson: (id: string) => void;
   onEditTimer?: (minutes: number) => void;
   lessonToResumeId?: string;
@@ -166,8 +180,14 @@ const DailyGoalCard = ({
   const displaySs = studyTimer.isRunning || studyTimer.isPaused
     ? Math.floor((studyTimer.remainingMs % 60_000) / 1000)
     : 0;
+  // Si on a un vrai compte de flashcards dues (cartes individuelles SRS), on
+  // l'utilise. Sinon fallback sur goal.cardsDue (compte de leçons à revoir).
+  // Le bouton "Réviser" ouvre la page Flashcards si onOpenFlashcards est
+  // fourni — sinon retombe sur la page Révisions multi-leçons.
+  const flashcardsDue = dueFlashcardsCount ?? goal.cardsDue.current;
+  const cardsTaskClick = onOpenFlashcards ?? onStartReview;
   const done =
-    (goal.cardsDue.current === 0 ? 1 : 0) +
+    (flashcardsDue === 0 ? 1 : 0) +
     (goal.xpGoal.current >= goal.xpGoal.target ? 1 : 0) +
     (streakAlive ? 1 : 0);
 
@@ -175,21 +195,21 @@ const DailyGoalCard = ({
     {
       icon: '🃏',
       label:
-        goal.cardsDue.current === 0
+        flashcardsDue === 0
           ? language === 'fr'
             ? 'Aucune carte à réviser'
             : 'No cards to review'
-          : `${goal.cardsDue.current} ${
+          : `${flashcardsDue} ${
               language === 'fr' ? 'cartes à réviser' : 'cards to review'
             }`,
       action:
-        goal.cardsDue.current > 0
+        flashcardsDue > 0
           ? {
               label: language === 'fr' ? 'Réviser' : 'Review',
-              onClick: onStartReview
+              onClick: cardsTaskClick
             }
           : null,
-      done: goal.cardsDue.current === 0
+      done: flashcardsDue === 0
     },
     {
       icon: '📚',
@@ -1392,6 +1412,8 @@ const HomePageV2 = (props: HomePageV2Props) => {
     cecrLevels,
     completedLessonIds,
     onStartReview,
+    onOpenFlashcards,
+    dueFlashcardsCount,
     onOpenLesson,
     onOpenAiTutor,
     onOpenPath,
@@ -1466,6 +1488,8 @@ const HomePageV2 = (props: HomePageV2Props) => {
             goal={dashboard.dailyGoal}
             streakAlive={dashboard.streak.isAliveToday}
             onStartReview={onStartReview}
+            onOpenFlashcards={onOpenFlashcards}
+            dueFlashcardsCount={dueFlashcardsCount}
             onOpenLesson={onOpenLesson}
             onEditTimer={dashboard.setTimerMinutes}
             lessonToResumeId={progress.currentLesson?.id}

@@ -2064,11 +2064,13 @@ function App() {
           }}
           reviewItems={lessonProgress.reviewItems}
           dueCardsCount={lessonProgress.reviewItems.length}
+          dueFlashcardsCount={wordSrs.dueIds.size}
           userDisplayName={user?.displayName ?? undefined}
           cecrPaths={cecrPathsState}
           cecrLevels={cecrLevels}
           completedLessonIds={completedLessonsSet}
           onStartReview={() => setView('review')}
+          onOpenFlashcards={() => setView('flashcards')}
           onOpenLesson={(lessonId) => {
             // Cherche le parcours contenant cet id (CECR en priorité, HSK en fallback
             // pour les ids hérités d'anciennes sessions).
