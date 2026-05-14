@@ -2758,19 +2758,6 @@ const A1_PINYIN_M1_DISCRIM: LessonV2Exercise[] = [
     explanationEn: '来 = lái (tone 2, rising). The voice rises as in an English «Really?».'
   },
   {
-    id: 'cecr-a1-pinyin-m1-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe par ton croissant (1→4) avec la syllabe « ma ».',
-    promptEn: 'Order by ascending tone (1→4) with the syllable «ma».',
-    sentence: 'Ton 1 → Ton 2 → Ton 3 → Ton 4',
-    sentenceEn: 'Tone 1 → Tone 2 → Tone 3 → Tone 4',
-    choices: ['mā (妈 mère)', 'má (麻 chanvre)', 'mǎ (马 cheval)', 'mà (骂 gronder)'],
-    correctIndex: 0,
-    explanation: 'Ordre canonique : mā/má/mǎ/mà = 妈/麻/马/骂. Illustre à quel point le ton change complètement le sens.',
-    explanationEn: 'Canonical order: mā/má/mǎ/mà = mother/hemp/horse/scold. Shows how tone fully changes meaning.'
-  },
-  {
     id: 'cecr-a1-pinyin-m1-grammar1',
     type: 'grammar-quiz',
     category: 'grammar',
@@ -2840,19 +2827,6 @@ const A1_PINYIN_M2_DISCRIM: LessonV2Exercise[] = [
     correctIndex: 0,
     explanation: '大 = dà : initiale d- (non aspirée). En mandarin, d/t contrastent par l\u2019ASPIRATION, pas par le voisement comme en français.',
     explanationEn: '大 = dà: unaspirated initial d-. In Mandarin, d/t contrast by ASPIRATION, not voicing like in French.'
-  },
-  {
-    id: 'cecr-a1-pinyin-m2-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe ces consonnes du son le plus « doux » au plus « soufflé » : nasale → b/d/g → p/t/k.',
-    promptEn: 'Order these consonants from softest to most «breathy»: nasal → b/d/g → p/t/k.',
-    sentence: 'Doux → soufflé',
-    sentenceEn: 'Soft → breathy',
-    choices: ['m- (nasale, aucun souffle oral)', 'b- (orale, non aspirée)', 'p- (orale, aspirée)', 'f- (fricative labiale)'],
-    correctIndex: 0,
-    explanation: 'Progression phonétique : m < b < p en flux d\u2019air, f ajoute une friction labio-dentale. Mets la main devant la bouche pour sentir la différence.',
-    explanationEn: 'Phonetic progression: m < b < p by airflow; f adds labiodental friction. Put your hand in front of your mouth to feel it.'
   },
   {
     id: 'cecr-a1-pinyin-m2-listen-m',
@@ -2957,19 +2931,6 @@ const A1_PINYIN_M3_DISCRIM: LessonV2Exercise[] = [
     autoPlay: true
   },
   {
-    id: 'cecr-a1-pinyin-m3-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe ces consonnes selon la position de la langue : du fond de la bouche (g/k) vers l\'avant (j/q).',
-    promptEn: 'Order these consonants by tongue position: back of mouth (g/k) toward the front (j/q).',
-    sentence: 'Arrière → avant',
-    sentenceEn: 'Back → front',
-    choices: ['g- (vélaire non aspirée)', 'k- (vélaire aspirée)', 'j- (palatale non aspirée)', 'q- (palatale aspirée)'],
-    correctIndex: 0,
-    explanation: 'g/k sont vélaires (dos de langue contre palais mou, arrière). j/q sont palatales (dos contre palais dur, avant). j/q/x ne prennent JAMAIS de vélaires — ki, gi n\u2019existent pas en pinyin.',
-    explanationEn: 'g/k are velars (tongue back against soft palate). j/q are palatals (tongue dorsum against hard palate, front). j/q/x never combine with velars — ki, gi don\u2019t exist in pinyin.'
-  },
-  {
     id: 'cecr-a1-pinyin-m3-grammar1',
     type: 'grammar-quiz',
     category: 'grammar',
@@ -2989,10 +2950,13 @@ const A1_PINYIN_M3_DISCRIM: LessonV2Exercise[] = [
     id: 'cecr-a1-pinyin-m3-err1',
     type: 'error-correction',
     category: 'vocabulary',
-    prompt: 'Quelle transcription est IMPOSSIBLE en pinyin standard ?',
-    promptEn: 'Which transcription is IMPOSSIBLE in standard pinyin?',
-    sentence: 'Candidates',
-    choices: ['ji\u0101 (\u5BB6)', 'q\u00F9 (\u53BB)', 'xi\u01CE (\u5C0F)', 'ja (syllable)'],
+    prompt: 'Quelle syllabe est IMPOSSIBLE en pinyin standard ?',
+    promptEn: 'Which syllable is IMPOSSIBLE in standard pinyin?',
+    sentence: 'Candidats',
+    sentenceEn: 'Candidates',
+    // 4 syllabes pures sans hanzi entre parenth\u00E8ses \u2014 sinon les vrais
+    // pinyin ont un hanzi et le faux n'en a pas, ce qui r\u00E9v\u00E8le la r\u00E9ponse.
+    choices: ['ji\u0101', 'q\u00F9', 'xi\u01CE', 'ja'],
     correctIndex: 3,
     explanation: '\u00AB ja \u00BB n\u2019existe pas en pinyin : j- ne peut jamais pr\u00E9c\u00E9der \u00AB a \u00BB sans i. Forme correcte : jia. De m\u00EAme, qa, xa sont impossibles. Seules i ou \u00FC peuvent suivre j/q/x.',
     explanationEn: '«ja» doesn\u2019t exist in pinyin: j- can never precede «a» without i. Correct form: jia. Similarly, qa, xa are impossible. Only i or \u00FC can follow j/q/x.'
@@ -3052,19 +3016,6 @@ const A1_PINYIN_M4_DISCRIM: LessonV2Exercise[] = [
     correctIndex: 3,
     explanation: '人 = rén : initiale r- (rétroflexe, entre le « j » français et le « r » anglais). RIEN à voir avec le « r » roulé du français.',
     explanationEn: '人 = rén: initial r- (retroflex, between French «j» and English «r»). NOT the French rolled «r».'
-  },
-  {
-    id: 'cecr-a1-pinyin-m4-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe ces consonnes selon la langue : plate au bas (z/s) puis recourbée vers le haut (zh/sh).',
-    promptEn: 'Order these consonants by tongue: flat low (z/s) then curled up (zh/sh).',
-    sentence: 'Langue plate → langue recourbée',
-    sentenceEn: 'Flat tongue → curled tongue',
-    choices: ['s- (fricative plate)', 'z- (affriquée plate)', 'sh- (fricative recourbée)', 'zh- (affriquée recourbée)'],
-    correctIndex: 0,
-    explanation: 'Sifflantes z/c/s : langue PLATE contre les dents du bas. Rétroflexes zh/ch/sh : langue RECOURBÉE vers le palais. Paires miroirs pour l\u2019apprentissage : s↔sh, z↔zh, c↔ch.',
-    explanationEn: 'Sibilants z/c/s: FLAT tongue against lower teeth. Retroflexes zh/ch/sh: CURLED tongue toward palate. Mirror pairs for drilling: s↔sh, z↔zh, c↔ch.'
   },
   {
     id: 'cecr-a1-pinyin-m4-grammar1',
@@ -3156,19 +3107,6 @@ const A1_PINYIN_M5_DISCRIM: LessonV2Exercise[] = [
     explanationEn: '能 = néng, final -eng: deep nasalization, mouth more open than -en. Crucial contrast with 嫩 (nèn, tender) or 你 (nǐ).'
   },
   {
-    id: 'cecr-a1-pinyin-m5-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe ces finales nasales de la bouche la plus fermée à la plus ouverte (in → an/ang).',
-    promptEn: 'Order these nasal finals from the most closed mouth to the most open (in → an/ang).',
-    sentence: 'Bouche fermée → bouche ouverte',
-    sentenceEn: 'Closed mouth → open mouth',
-    choices: ['-in (très fermé)', '-en (semi-fermé)', '-an (ouvert antérieur)', '-ang (ouvert postérieur)'],
-    correctIndex: 0,
-    explanation: 'Progression d\u2019aperture : -in (lèvres serrées) < -en < -an < -ang (bouche grande ouverte, son profond). Essentiel pour distinguer les paires minimales (xin/xing, ban/bang).',
-    explanationEn: 'Aperture progression: -in (tight lips) < -en < -an < -ang (wide open, deep sound). Essential for drilling minimal pairs (xin/xing, ban/bang).'
-  },
-  {
     id: 'cecr-a1-pinyin-m5-grammar1',
     type: 'grammar-quiz',
     category: 'grammar',
@@ -3248,19 +3186,6 @@ const A1_PINYIN_M6_DISCRIM: LessonV2Exercise[] = [
     correctIndex: 1,
     explanation: '要 = ton 4 → 不 passe du ton 4 au ton 2 : bú yào. Sandhi automatique du 不 devant un autre ton 4.',
     explanationEn: '要 = tone 4 → 不 shifts from tone 4 to tone 2: bú yào. Automatic 不 sandhi before another tone 4.'
-  },
-  {
-    id: 'cecr-a1-pinyin-m6-order1',
-    type: 'order',
-    category: 'vocabulary',
-    prompt: 'Classe par ton réel du 不 selon le ton du caractère qui suit.',
-    promptEn: 'Order by the actual tone of 不 depending on the following character\u2019s tone.',
-    sentence: 'Tons résultants de 不 + X',
-    sentenceEn: 'Resulting 不 + X tones',
-    choices: ['不 + ton 1 → bù', '不 + ton 2 → bù', '不 + ton 3 → bù', '不 + ton 4 → bú'],
-    correctIndex: 0,
-    explanation: '不 reste ton 4 (bù) dans 3 cas sur 4. Seul le cas « suivi d\u2019un ton 4 » déclenche le sandhi bù → bú. Règle symétrique à celle du 一.',
-    explanationEn: '不 stays tone 4 (bù) in 3 out of 4 cases. Only «followed by tone 4» triggers the bù → bú sandhi. Mirror rule to 一\u2019s.'
   },
   {
     id: 'cecr-a1-pinyin-m6-listen-yige',
