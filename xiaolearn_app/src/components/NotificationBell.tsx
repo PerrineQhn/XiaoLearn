@@ -26,6 +26,7 @@ const COPY = {
     bellAria: 'Notifications',
     title: 'Notifications',
     markAll: 'Tout lire',
+    clearAll: 'Effacer tout',
     empty: 'Aucune notification pour le moment.',
     emptyHint: "Termine une leçon ou une bataille pour en voir apparaître !",
     delete: 'Supprimer',
@@ -38,6 +39,7 @@ const COPY = {
     bellAria: 'Notifications',
     title: 'Notifications',
     markAll: 'Mark all read',
+    clearAll: 'Clear all',
     empty: 'No notifications yet.',
     emptyHint: 'Complete a lesson or battle to see them appear!',
     delete: 'Delete',
@@ -80,7 +82,7 @@ const formatRelative = (
 const NotificationBell = (props: Props) => {
   const { language = 'fr', onNavigate } = props;
   const copy = COPY[language];
-  const { items, unreadCount, markRead, markAllRead, remove } =
+  const { items, unreadCount, markRead, markAllRead, remove, clearAll } =
     useNotifications();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -178,6 +180,31 @@ const NotificationBell = (props: Props) => {
                     <path d="M8 12l5 5L22 7" />
                   </svg>
                   {copy.markAll}
+                </button>
+              )}
+              {items.length > 0 && (
+                <button
+                  type="button"
+                  className="xl-notif-clear-all"
+                  onClick={() => clearAll()}
+                  title={copy.clearAll}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M3 6h18" />
+                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                  </svg>
+                  {copy.clearAll}
                 </button>
               )}
               {unreadCount > 0 && (

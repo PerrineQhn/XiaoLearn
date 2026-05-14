@@ -115,6 +115,23 @@
 .xl-notif-mark-all:hover {
   background: rgba(31, 106, 75, 0.08);
 }
+.xl-notif-clear-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c6302c;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.12s ease;
+}
+.xl-notif-clear-all:hover {
+  background: rgba(198, 48, 44, 0.08);
+}
 .xl-notif-count-pill {
   min-width: 28px;
   height: 22px;

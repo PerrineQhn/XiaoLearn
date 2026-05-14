@@ -74,6 +74,40 @@ const isValidNotification = (v: any): v is NotificationItem =>
   typeof v.title === 'string' &&
   typeof v.createdAt === 'number';
 
+// ---------------------------------------------------------------------------
+// Tombstones : ids des notifications supprimees localement, persistes pour
+// empecher Firestore de les re-injecter quand le snapshot cloud arrive
+// (race condition entre debounce d'ecriture cloud et onSnapshot).
+// Cap : derniers TOMBSTONE_MAX ids, pour eviter une croissance infinie.
+// ---------------------------------------------------------------------------
+const TOMBSTONE_KEY = 'xl_notif_tombstones_v1';
+const TOMBSTONE_MAX = 500;
+
+const readTombstones = (): Set<string> => {
+  if (typeof window === 'undefined') return new Set();
+  try {
+    const raw = window.localStorage.getItem(TOMBSTONE_KEY);
+    if (!raw) return new Set();
+    const arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return new Set();
+    return new Set(arr.filter((x) => typeof x === 'string'));
+  } catch {
+    return new Set();
+  }
+};
+
+const writeTombstones = (set: Set<string>): void => {
+  if (typeof window === 'undefined') return;
+  try {
+    // On garde au plus TOMBSTONE_MAX entries (les plus recemment ajoutees,
+    // i.e. la fin du tableau apres avoir conserve l'ordre d'insertion).
+    const arr = Array.from(set).slice(-TOMBSTONE_MAX);
+    window.localStorage.setItem(TOMBSTONE_KEY, JSON.stringify(arr));
+  } catch {
+    /* quota plein → silent */
+  }
+};
+
 const generateId = (): string =>
   `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 
@@ -131,6 +165,10 @@ export const NotificationsProvider = ({ children }: ProviderProps) => {
   // Dédup : map dedupKey → timestamp de la dernière push.
   const dedupRef = useRef<Map<string, number>>(new Map());
 
+  // Tombstones : ids supprimés localement. Empêche la re-injection cloud
+  // lors du prochain onSnapshot. Source de vérité : localStorage.
+  const tombstonesRef = useRef<Set<string>>(readTombstones());
+
   // --- Persist localStorage à chaque changement --------------------------
   useEffect(() => {
     writeLocal(items);
@@ -152,11 +190,16 @@ export const NotificationsProvider = ({ children }: ProviderProps) => {
           ? data.notifications.filter(isValidNotification)
           : [];
         if (cloud.length === 0) return;
+        // Filtrage tombstones : on ignore les ids supprimés localement, sinon
+        // ils seraient re-injectés par chaque onSnapshot (race condition vs
+        // l'écriture cloud debounced).
+        const tombs = tombstonesRef.current;
+        const cloudFiltered = cloud.filter((it) => !tombs.has(it.id));
         // Merge : garder le plus récent par id (readAt priorise cloud si défini).
         setItems((local) => {
           const byId = new Map<string, NotificationItem>();
           for (const it of local) byId.set(it.id, it);
-          for (const it of cloud) {
+          for (const it of cloudFiltered) {
             const existing = byId.get(it.id);
             if (!existing) byId.set(it.id, it);
             else {
@@ -247,11 +290,19 @@ export const NotificationsProvider = ({ children }: ProviderProps) => {
   }, []);
 
   const remove = useCallback((id: string) => {
+    tombstonesRef.current.add(id);
+    writeTombstones(tombstonesRef.current);
     setItems((prev) => prev.filter((it) => it.id !== id));
   }, []);
 
   const clearAll = useCallback(() => {
-    setItems([]);
+    setItems((prev) => {
+      // Tombstone toutes les notifs courantes pour empêcher leur réinjection
+      // par le prochain onSnapshot Firestore.
+      for (const it of prev) tombstonesRef.current.add(it.id);
+      writeTombstones(tombstonesRef.current);
+      return [];
+    });
   }, []);
 
   const unreadCount = useMemo(
