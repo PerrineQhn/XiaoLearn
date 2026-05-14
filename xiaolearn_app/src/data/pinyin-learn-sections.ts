@@ -39,9 +39,9 @@ export const pinyinInitialsLearnSections: LessonV2LearnSection[] = [
     title: 'Labiales : b, p, m, f',
     titleEn: 'Labials: b, p, m, f',
     body:
-      'b et p se distinguent par l\'aspiration : « p » est accompagné d\'un souffle d\'air, « b » est neutre. Vérifie avec la paume de ta main devant la bouche.',
+      'b et p se distinguent par l\'aspiration : « p » est accompagné d\'un souffle d\'air, « b » est neutre. Vérifie avec la paume de ta main devant la bouche.\n\nPiège classique chez le francophone : confondre m et p quand on dicte un mot. **妈 (mā = maman) commence par m-, jamais par p-**. Les lèvres se ferment sans souffle pour « m » ; pour « p » il y a une vraie explosion d\'air. Compare 妈 (mā) et 怕 (pà = avoir peur) — même voyelle, début radicalement différent.',
     bodyEn:
-      'b and p differ by aspiration: "p" carries a puff of air, "b" is neutral. Check with your palm in front of your mouth.',
+      'b and p differ by aspiration: "p" carries a puff of air, "b" is neutral. Check with your palm in front of your mouth.\n\nClassic trap for French speakers: confusing m and p when dictating a word. **妈 (mā = mom) starts with m-, never with p-**. Lips close without a puff for "m"; "p" releases a true burst of air. Compare 妈 (mā) and 怕 (pà = to be afraid) — same vowel, radically different onset.',
     items: [
       { hanzi: 'b', pinyin: 'bo', meaning: 'neutre, proche du « p » français', meaningEn: 'neutral, close to French "p"', audio: 'audio/pinyin/b.mp3' },
       { hanzi: 'p', pinyin: 'po', meaning: 'aspiré, souffle marqué', meaningEn: 'aspirated, clear puff of air', audio: 'audio/pinyin/p.mp3' },
@@ -49,10 +49,10 @@ export const pinyinInitialsLearnSections: LessonV2LearnSection[] = [
       { hanzi: 'f', pinyin: 'fo', meaning: 'comme le « f » français', meaningEn: 'like the French/English "f"', audio: 'audio/pinyin/f.mp3' }
     ],
     minimalPairs: [
-      { pinyin: 'bā', hanzi: '八', meaning: 'huit', meaningEn: 'eight', audio: 'audio/hsk1/hsk1_八.wav' },
-      { pinyin: 'pá', hanzi: '爬', meaning: 'grimper', meaningEn: 'to climb', audio: 'audio/hsk4/hsk4_爬.wav' },
-      { pinyin: 'mā', hanzi: '妈', meaning: 'maman', meaningEn: 'mom', audio: 'audio/hsk1/hsk1_妈.wav' },
-      { pinyin: 'fā', hanzi: '发', meaning: 'envoyer', meaningEn: 'to send', audio: 'audio/hsk1/hsk1_发.wav' }
+      { pinyin: 'bā', hanzi: '八', meaning: 'huit (b-)', meaningEn: 'eight (b-)', audio: 'audio/hsk1/hsk1_八.wav' },
+      { pinyin: 'pà', hanzi: '怕', meaning: 'avoir peur (p-)', meaningEn: 'to be afraid (p-)', audio: 'audio/hsk3/hsk3_怕.wav' },
+      { pinyin: 'mā', hanzi: '妈', meaning: 'maman (m-)', meaningEn: 'mom (m-)', audio: 'audio/hsk1/hsk1_妈.wav' },
+      { pinyin: 'fā', hanzi: '发', meaning: 'envoyer (f-)', meaningEn: 'to send (f-)', audio: 'audio/hsk1/hsk1_发.wav' }
     ]
   },
   {
@@ -341,6 +341,23 @@ export const pinyinTonesLearnSections: LessonV2LearnSection[] = [
       'Écoute dans l\'ordre, puis mélange : reconnaître un ton sans contexte est le meilleur exercice.',
     tipEn:
       'Listen in order first, then shuffle: recognizing a tone without context is the best exercise.'
+  },
+  {
+    // Pont vers M6 : un exercice de pratique M1 demande la traduction de
+    // « bù shì » (avec sandhi bù → bú devant ton 4). On prévient ici que
+    // certains tons changent en contexte, sans alourdir M1 avec la règle
+    // complète qui sera vue en M6.
+    id: 'tones-sandhi-preview',
+    title: 'Aperçu : les tons changent parfois en contexte',
+    titleEn: 'Preview: tones sometimes shift in context',
+    body:
+      'À l\'oral, certains mots ne se prononcent pas avec le ton « écrit ». Deux cas vont revenir souvent :\n• Deux 3ᵉ tons collés → le premier devient 2ᵉ ton (nǐ hǎo se prononce ní hǎo).\n• Le mot 不 (bù, ne pas) change de ton devant un autre mot au 4ᵉ ton : 不是 s\'écrit bù shì mais se prononce bú shì.\n\nC\'est ce qu\'on appelle le sandhi tonal. Les règles complètes seront vues en module 6 — pour l\'instant, garde simplement à l\'esprit que certaines paires sonnent différemment de ce qu\'on lit.',
+    bodyEn:
+      'In speech, some words aren\'t pronounced with their "written" tone. Two cases will come up a lot:\n• Two tone 3 in a row → the first shifts to tone 2 (nǐ hǎo is pronounced ní hǎo).\n• The word 不 (bù, not) changes tone before another tone 4 word: 不是 is written bù shì but pronounced bú shì.\n\nThis is called tone sandhi. The full rules come in module 6 — for now, just be aware that some pairs sound different from how they\'re written.',
+    tip:
+      'Tu n\'as pas besoin de mémoriser les règles maintenant. On y revient avec exercices dédiés en module 6.',
+    tipEn:
+      'No need to memorize the rules now. We\'ll cover them with dedicated drills in module 6.'
   }
 ];
 
