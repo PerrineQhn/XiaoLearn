@@ -1001,18 +1001,26 @@ const ExerciseCard = ({
   const badge = getExerciseBadge(exercise, language);
 
   // Audio de l'exercice : si `audio` explicite → playAudioWithFallback ;
-  // sinon si `audioHanzi` → convention HSK via playHanziAudio. Bouton rendu
-  // au-dessus du prompt. Auto-play géré par useEffect en dessous.
-  const hasAudio = Boolean(exercise.audio || exercise.audioHanzi);
+  // sinon si `audioHanzi` → convention HSK via playHanziAudio.
+  // Sinon, on auto-détecte un hanzi dans le prompt (cas typique des exercices
+  // pinyin/ton du type « 来 (venir) se prononce l__ » où l'apprenant doit
+  // deviner le ton mais n'a aucun moyen de l'entendre sans audio).
+  const autoHanziFromPrompt = useMemo(() => {
+    if (exercise.audio || exercise.audioHanzi) return null;
+    const match = (exercise.prompt || '').match(/[㐀-鿿]+/);
+    return match ? match[0] : null;
+  }, [exercise.audio, exercise.audioHanzi, exercise.prompt]);
+  const resolvedAudioHanzi = exercise.audioHanzi || autoHanziFromPrompt;
+  const hasAudio = Boolean(exercise.audio || resolvedAudioHanzi);
   const playExerciseAudio = useCallback(() => {
-    if (exercise.audioHanzi) {
-      playHanziAudio(exercise.audioHanzi, exercise.audio).catch(() => {});
+    if (resolvedAudioHanzi) {
+      playHanziAudio(resolvedAudioHanzi, exercise.audio).catch(() => {});
       return;
     }
     if (exercise.audio) {
       playAudioWithFallback(exercise.audio).catch(() => {});
     }
-  }, [exercise.audio, exercise.audioHanzi]);
+  }, [exercise.audio, resolvedAudioHanzi]);
 
   useEffect(() => {
     // Auto-play à l'apparition de l'exercice uniquement si demandé, et seulement
