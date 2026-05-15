@@ -8,19 +8,26 @@
  * Last bump: 2026-05-11
  */
 
-/* ===== Modern Chinese Color Palette ===== */
+/* ===== Modern Chinese Color Palette =====
+ * Palette alignée sur le logo XiaoLearn (rouge coral + noir bleuté).
+ * Choix monochrome rouge : --gold-accent (nom historique) pointe désormais
+ * sur un rouge profond pour les hiérarchies sans introduire de teinte tierce.
+ */
 :root {
-  /* Palette inspirée des temples chinois */
-  --primary-red: #D8483E;
-  --primary-red-hover: #C53830;
-  --primary-red-light: #FFE3E0;
+  --primary-red: #E05040;        /* exact match du "Xiao" du logo */
+  --primary-red-hover: #C73826;
+  --primary-red-light: #FAE0DC;
 
-  --jade-green: #2F9D8A;
+  --jade-green: #2F9D8A;          /* legacy : conservé pour les indicateurs sémantiques de victoire */
   --jade-green-hover: #258372;
   --jade-green-light: #E3F5F2;
 
-  --gold-accent: #F0B762;
-  --gold-hover: #E0952C;
+  /* "gold-accent" est un nom historique. On le réoriente vers un rouge profond
+     (#A82E26) pour rester raccord logo. Si jamais on veut séparer "accent
+     décoratif" et "accent fonctionnel" plus tard, on pourra introduire
+     --deep-red en parallèle. */
+  --gold-accent: #A82E26;
+  --gold-hover: #8E2520;
 
   --text-primary: #1F2233;
   --text-secondary: #5E6075;
@@ -5233,12 +5240,13 @@ select:focus {
 /* Each theme overrides the primary colors */
 
 [data-theme="asian-red"] {
-  --primary-red: #D8483E;
-  --primary-red-hover: #C53830;
-  --primary-red-light: #FFE3E0;
+  /* Aligné sur le logo XiaoLearn (rouge coral #E05040 + rouge profond #A82E26). */
+  --primary-red: #E05040;
+  --primary-red-hover: #C73826;
+  --primary-red-light: #FAE0DC;
   --jade-green: #2F9D8A;
-  --gold-accent: #F0B762;
-  --welcome-gradient: linear-gradient(135deg, rgba(216, 72, 62, 0.92), rgba(240, 183, 98, 0.7));
+  --gold-accent: #A82E26;
+  --welcome-gradient: linear-gradient(135deg, rgba(224, 80, 64, 0.92), rgba(168, 46, 38, 0.85));
   --body-bg: linear-gradient(135deg, #fffdf8 0%, #fdeee1 100%);
   --sidebar-bg: linear-gradient(180deg, rgba(255, 244, 240, 0.95), rgba(254, 228, 210, 0.9));
 }
