@@ -19,8 +19,12 @@
   align-items: center;
   gap: 16px;
   padding: 12px 24px 12px 0;
-  /* Fond transparent : on hérite du body. Évite les "couches" visuelles. */
-  background: transparent;
+  /* Fond SOLIDE qui matche le crème du body (#fffdf8 = début du gradient
+     --body-bg). Sans fond, le contenu scrollait derrière la barre fixe et
+     devenait illisible. Avec un fond solide qui colle au body, on garde
+     l'impression "une seule couche" tant qu'on est en haut de page, et la
+     barre masque proprement le contenu quand on scrolle. */
+  background: #fffdf8;
   border-bottom: none;
 }
 
