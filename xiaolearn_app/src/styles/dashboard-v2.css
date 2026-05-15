@@ -9,9 +9,14 @@
   --dv-card: #ffffff;
   --dv-ink: #1f1a16;
   --dv-muted: #6a655f;
-  --dv-accent: #c8342e; /* rouge chinois */
-  --dv-accent-soft: #fde9e8;
-  --dv-gold: #c9a227;
+  --dv-accent: #E05040; /* rouge XiaoLearn (aligné logo) */
+  --dv-accent-soft: #FAE0DC;
+  /* Palette monochrome rouge : --dv-gold pointe vers le rouge profond pour
+     conserver le sens du nom dans les usages historiques (badges, gradients
+     XP). Sur fond sombre, les éléments qui étaient "or pour la lisibilité"
+     basculent en crème via override local (.word-of-day-dark .wod-pinyin). */
+  --dv-gold: #A82E26;
+  --dv-cream-on-dark: #F0D7B8; /* crème chaude utilisée sur fonds wine */
   --dv-green: #2f9e6a;
   --dv-blue: #3b82f6;
   --dv-border: #ece5dc;
@@ -508,7 +513,10 @@
   background: rgba(255, 250, 243, 0.22);
 }
 .word-of-day-dark .wod-pinyin {
-  color: var(--dv-gold);
+  /* Crème chaude (même teinte que le titre MOT DU JOUR) pour rester lisible
+     sur fond wine. --dv-gold ne fonctionne pas ici (rouge profond sur rouge
+     sombre = illisible). */
+  color: var(--dv-cream-on-dark);
   font-size: 17px;
   margin-top: 6px;
   font-weight: 500;
@@ -665,7 +673,7 @@
 }
 .xp-v2-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--dv-gold), #f5d06b);
+  background: linear-gradient(90deg, var(--dv-accent), var(--dv-gold));
   border-radius: 999px;
   transition: width 0.5s ease;
 }
@@ -686,7 +694,7 @@
 }
 .level-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--dv-gold), #f5d06b);
+  background: linear-gradient(90deg, var(--dv-accent), var(--dv-gold));
   border-radius: 999px;
   transition: width 0.5s ease;
 }
