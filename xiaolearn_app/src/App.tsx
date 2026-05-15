@@ -2183,6 +2183,33 @@ function App() {
         onClick={closeSidebar}
         aria-hidden={!sidebarOpen}
       />
+      {/* Bouton chevron pour rétracter/étendre la sidebar — positionné sur
+          le séparateur sidebar/main (pattern Seonsaengnim). Placé directement
+          sous .app-container pour ne pas être clipé par l'overflow:hidden
+          de .sidebar. Caché en mobile. */}
+      <button
+        type="button"
+        className="sidebar-collapse-toggle"
+        onClick={toggleSidebarCollapsed}
+        aria-label={
+          sidebarCollapsed
+            ? (language === 'fr' ? 'Déployer la barre latérale' : 'Expand sidebar')
+            : (language === 'fr' ? 'Replier la barre latérale' : 'Collapse sidebar')
+        }
+        title={
+          sidebarCollapsed
+            ? (language === 'fr' ? 'Déployer' : 'Expand')
+            : (language === 'fr' ? 'Replier' : 'Collapse')
+        }
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          {sidebarCollapsed ? (
+            <polyline points="9 18 15 12 9 6" />
+          ) : (
+            <polyline points="15 18 9 12 15 6" />
+          )}
+        </svg>
+      </button>
       {/* Top bar globale : recherche + cloche, s'étend par-dessus la sidebar
           via grid-template-areas. Pattern Seonsaengnim. */}
       <AppTopBar
@@ -2245,31 +2272,6 @@ function App() {
             ) : (
               <span className="logo-icon">🐼</span>
             )}
-          </button>
-          {/* Bouton chevron pour rétracter/étendre la sidebar. Caché en mobile
-              (le drawer mobile a son propre toggle via le hamburger topbar). */}
-          <button
-            type="button"
-            className="sidebar-collapse-toggle"
-            onClick={toggleSidebarCollapsed}
-            aria-label={
-              sidebarCollapsed
-                ? (language === 'fr' ? 'Déployer la barre latérale' : 'Expand sidebar')
-                : (language === 'fr' ? 'Replier la barre latérale' : 'Collapse sidebar')
-            }
-            title={
-              sidebarCollapsed
-                ? (language === 'fr' ? 'Déployer' : 'Expand')
-                : (language === 'fr' ? 'Replier' : 'Collapse')
-            }
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              {sidebarCollapsed ? (
-                <polyline points="9 18 15 12 9 6" />
-              ) : (
-                <polyline points="15 18 9 12 15 6" />
-              )}
-            </svg>
           </button>
         </div>
 

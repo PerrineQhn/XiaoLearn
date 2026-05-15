@@ -179,7 +179,10 @@ body {
   .sidebar-collapsed .user-name,
   .sidebar-collapsed .user-info,
   .sidebar-collapsed .sidebar-cpop-label,
-  .sidebar-collapsed .badge-count-label {
+  .sidebar-collapsed .badge-count-label,
+  /* Badges compteurs (#2 sur Classement, etc.) — masqués en collapsed pour
+     ne pas encombrer une sidebar déjà très étroite. */
+  .sidebar-collapsed .nav-badge {
     display: none !important;
   }
 
@@ -280,10 +283,19 @@ body {
  * qui faisait doublon avec le soulignement intégré du nouveau logo_long.png.
  */
 
-/* Bouton chevron : repli/déploie la sidebar (icons-only en mode collapsed). */
-.sidebar-collapse-toggle {
-  width: 26px;
-  height: 26px;
+/* Bouton chevron : repli/déploie la sidebar.
+ * Positionné sur le séparateur sidebar/main (pattern Seonsaengnim) :
+ * placé directement sous .app-container pour échapper à `overflow: hidden`
+ * de la sidebar. Centré horizontalement sur la border-right (translateX
+ * -50% sur la position left = sidebar-width). */
+.app-container > .sidebar-collapse-toggle {
+  position: absolute;
+  top: 28px;
+  left: var(--sidebar-width);
+  transform: translateX(-50%);
+  z-index: 50;
+  width: 22px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -293,13 +305,22 @@ body {
   background: var(--bg-primary);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.sidebar-collapse-toggle:hover {
+.app-container > .sidebar-collapse-toggle:hover {
   background: var(--primary-red-light);
   color: var(--primary-red);
   border-color: var(--primary-red);
+  transform: translateX(-50%) scale(1.08);
+}
+
+/* Masqué en mobile (le drawer a son propre hamburger) */
+@media (max-width: 1023px) {
+  .app-container > .sidebar-collapse-toggle {
+    display: none;
+  }
 }
 
 .app-logo {

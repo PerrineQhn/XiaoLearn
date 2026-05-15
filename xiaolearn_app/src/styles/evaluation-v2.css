@@ -634,6 +634,11 @@
   flex-direction: column;
   gap: 12px;
   position: relative;
+  /* Clipe la barre de couleur supérieure (::before) aux bords arrondis du
+     card. Sans ça, le ::before bulgeait soit aux coins (rayon interne <
+     rayon externe) soit dépassait carrément le card si on essayait de le
+     faire couvrir la border. */
+  overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
@@ -647,15 +652,14 @@
 .evaluation-v2 .ev-hub-card::before {
   content: '';
   position: absolute;
-  /* Décalage de 1.5px = épaisseur de la border du card, pour que la barre
-     couvre exactement le bord supérieur du card (pas d'écart, pas de bulge
-     aux coins arrondis). */
+  /* Couvre la border du card (positionnée à -1.5px pour aller jusqu'au bord
+     du card). Grâce à `overflow: hidden` sur le card, le ::before est clipé
+     proprement aux coins arrondis. Pas besoin de border-radius ici. */
   top: -1.5px;
   left: -1.5px;
   right: -1.5px;
-  height: 4px;
+  height: 5.5px;
   background: var(--ev-hub-accent);
-  border-radius: var(--ev2-radius) var(--ev2-radius) 0 0;
 }
 
 .evaluation-v2 .ev-hub-card-top {
