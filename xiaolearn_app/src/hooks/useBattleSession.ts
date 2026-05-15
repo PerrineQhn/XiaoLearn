@@ -112,8 +112,31 @@ export const useBattleSession = (matchId: string | null): UseBattleSessionResult
     return 'loss';
   }, [match, user]);
 
-  const myScore = match ? (iAmP1 ? match.p1Score : match.p2Score) : 0;
-  const oppScore = match ? (iAmP1 ? match.p2Score : match.p1Score) : 0;
+  // Score live : on dérive le score à partir des réponses correctes au lieu
+  // de lire `match.p1Score/p2Score`, qui ne sont écrits qu'à la finalisation
+  // (transaction de fin de match). Sans ça l'UI affiche 0-0 toute la bataille.
+  // On dédupe par roundIdx (un timeout forcé peut coexister avec une vraie
+  // réponse arrivée tardivement via arrayUnion) et on prend le premier.
+  const countCorrect = (arr: BattleAnswer[]): number => {
+    const seen = new Map<number, BattleAnswer>();
+    for (const a of arr) {
+      if (!seen.has(a.roundIdx)) seen.set(a.roundIdx, a);
+    }
+    let n = 0;
+    for (const a of seen.values()) if (a.correct) n += 1;
+    return n;
+  };
+  const myScore = useMemo(() => {
+    if (!match) return 0;
+    // Après finalisation, la valeur stockée fait foi (cohérente avec winner).
+    if (match.status === 'finished') return iAmP1 ? match.p1Score : match.p2Score;
+    return countCorrect(myAnswers);
+  }, [match, myAnswers, iAmP1]);
+  const oppScore = useMemo(() => {
+    if (!match) return 0;
+    if (match.status === 'finished') return iAmP1 ? match.p2Score : match.p1Score;
+    return countCorrect(oppAnswers);
+  }, [match, oppAnswers, iAmP1]);
 
   // ---------------------------------------------------------------
   //  Abonnement au match doc
