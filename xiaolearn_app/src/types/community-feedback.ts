@@ -66,8 +66,12 @@ export interface RoadmapMilestone {
   /** Description optionnelle, affichée en tooltip ou en card details. */
   description?: string;
   status: 'delivered' | 'in-dev' | 'planned' | 'upcoming';
-  /** Date ISO. Utilisée pour l'ordre sur la timeline. */
-  date: string;
+  /**
+   * Date ISO. Optionnelle : les items sans date sont regroupés en fin de
+   * timeline sous une section "Prochainement" pour ne pas s'engager
+   * publiquement sur un calendrier non encore arrêté.
+   */
+  date?: string;
 }
 
 // ============================================================================

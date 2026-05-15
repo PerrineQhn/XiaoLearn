@@ -52,7 +52,7 @@ const COPY = {
     today: "AUJOURD'HUI",
     statusDelivered: 'Livrée',
     statusInDev: 'En dev',
-    statusPlanned: 'Planifiée',
+    statusPlanned: 'Prochainement',
     statusUpcoming: 'À venir',
     formTitle: 'Propose une idée',
     formShortTitle: 'Titre court',
@@ -89,7 +89,7 @@ const COPY = {
     today: 'TODAY',
     statusDelivered: 'Delivered',
     statusInDev: 'In dev',
-    statusPlanned: 'Planned',
+    statusPlanned: 'Coming soon',
     statusUpcoming: 'Upcoming',
     formTitle: 'Suggest an idea',
     formShortTitle: 'Short title',
@@ -129,7 +129,10 @@ const CATEGORY_COLORS: Record<IdeaCategory, { bg: string; fg: string }> = {
   autres: { bg: '#f4ede2', fg: '#5c4a30' }
 };
 
-const formatRoadmapDate = (iso: string, lang: Language): string => {
+const formatRoadmapDate = (iso: string | undefined, lang: Language): string => {
+  // Items sans date (statut "planned" non engagé) -> badge "Prochainement"
+  // au lieu d'une date factice.
+  if (!iso) return lang === 'fr' ? 'PROCHAINEMENT' : 'COMING SOON';
   try {
     const d = new Date(iso);
     return d

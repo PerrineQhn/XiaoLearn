@@ -13,12 +13,15 @@
   --ip-text-soft: #9aa0a6;
   --ip-border: #ece4d5;
   --ip-border-strong: #e0d4ba;
-  --ip-primary: #c6302c;
-  --ip-primary-soft: #fde7e5;
+  /* Palette alignée logo XiaoLearn (rouge coral + rouge profond + crème).
+     --ip-warning pointait sur du orange brûlé (gold-historique) ; bascule en
+     rouge profond pour rester monochrome. */
+  --ip-primary: #E05040;
+  --ip-primary-soft: #FAE0DC;
   --ip-success: #2a7a4e;
   --ip-success-soft: #e0f0e6;
-  --ip-warning: #c97a1f;
-  --ip-warning-soft: #fdecd4;
+  --ip-warning: #A82E26;
+  --ip-warning-soft: #FAE0DC;
   --ip-info: #1f6db3;
   --ip-info-soft: #dceefc;
   --ip-gold: #d4a537;
@@ -156,17 +159,22 @@
 }
 .ideas-page .roadmap-track {
   position: absolute;
-  top: 50px;
+  /* Centré pile sur l'axe des ronds :
+       timeline padding-top (22) + dot margin-top (12) + 14 (demi-dot) = 48px
+     pour un track de 3px → top = 48 − 1.5 = 46.5px (arrondi 46). */
+  top: 46px;
   left: 0;
   right: 0;
   height: 3px;
+  /* Trois zones : delivered (50%) → in-dev (17%) → prochainement (33%).
+     Proportions ajustées au nombre actuel de jalons (3 + 1 + 2). */
   background: linear-gradient(
     to right,
     var(--ip-success) 0%,
-    var(--ip-success) 35%,
-    var(--ip-warning) 35%,
-    var(--ip-warning) 55%,
-    var(--ip-border-strong) 55%,
+    var(--ip-success) 50%,
+    var(--ip-warning) 50%,
+    var(--ip-warning) 67%,
+    var(--ip-border-strong) 67%,
     var(--ip-border-strong) 100%
   );
   border-radius: 2px;
@@ -214,7 +222,10 @@
 }
 .ideas-page .roadmap-step.status-planned .roadmap-step-dot {
   background: var(--ip-card-bg);
-  border-color: var(--ip-warning);
+  border-color: var(--ip-border-strong);
+  /* Pointillés = pas encore commencé, calendrier non engagé. */
+  border-style: dashed;
+  color: var(--ip-text-soft);
 }
 .ideas-page .roadmap-step.is-today .roadmap-step-dot {
   box-shadow: 0 0 0 4px rgba(201, 122, 31, 0.18);
@@ -245,10 +256,15 @@
   background: var(--ip-success-soft);
   color: var(--ip-success);
 }
-.ideas-page .roadmap-step-status.badge-in-dev,
-.ideas-page .roadmap-step-status.badge-planned {
+.ideas-page .roadmap-step-status.badge-in-dev {
   background: var(--ip-warning-soft);
   color: var(--ip-warning);
+}
+/* "Prochainement" : badge neutre/gris pour ne pas suggérer une priorité
+   ou un engagement, contrairement à "en cours". */
+.ideas-page .roadmap-step-status.badge-planned {
+  background: var(--ip-border);
+  color: var(--ip-text-soft);
 }
 .ideas-page .roadmap-step-status.badge-upcoming {
   background: var(--ip-border);

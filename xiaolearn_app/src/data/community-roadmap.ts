@@ -5,13 +5,18 @@
  * Firestore `community_roadmap` (read-only pour les users, write admin
  * via console).
  *
- * Ordre : par `date` ascendant. Le composant Timeline détecte le
- * jalon "aujourd'hui" (premier `upcoming/planned`) et place le curseur.
+ * Convention :
+ *   - Items avec `date` ISO : positionnés chronologiquement sur la timeline
+ *     (livré / en cours).
+ *   - Items SANS `date` : regroupés en fin sous "Prochainement". Permet
+ *     d'annoncer ce qui est sur la table sans s'engager sur un calendrier
+ *     non encore arrêté.
  */
 
 import type { RoadmapMilestone } from '../types/community-feedback';
 
 export const COMMUNITY_ROADMAP: RoadmapMilestone[] = [
+  // ---- Livrés (par date croissante) ----------------------------------------
   {
     id: 'm-cloudflare-2026-05-05',
     title: 'Migration Cloudflare R2',
@@ -33,6 +38,8 @@ export const COMMUNITY_ROADMAP: RoadmapMilestone[] = [
     status: 'delivered',
     date: '2026-05-12'
   },
+
+  // ---- En cours -------------------------------------------------------------
   {
     id: 'm-community-2026-05-15',
     title: 'Idées & Conversations',
@@ -40,32 +47,18 @@ export const COMMUNITY_ROADMAP: RoadmapMilestone[] = [
     status: 'in-dev',
     date: '2026-05-15'
   },
+
+  // ---- Prochainement (sans date — pas d'engagement calendaire) -------------
   {
-    id: 'm-mobile-2026-06-01',
-    title: 'App mobile (iOS + Android)',
-    description: 'Version native React Native, lecture audio offline.',
-    status: 'planned',
-    date: '2026-06-01'
-  },
-  {
-    id: 'm-handwriting-2026-06-15',
+    id: 'm-handwriting',
     title: 'Reconnaissance écriture caractères',
     description: 'Pad tactile pour s\'entraîner aux hanzi.',
-    status: 'planned',
-    date: '2026-06-15'
+    status: 'planned'
   },
   {
-    id: 'm-speech-2026-07-01',
+    id: 'm-speech',
     title: 'Reconnaissance vocale',
     description: 'Évaluation prononciation avec micro intégré.',
-    status: 'upcoming',
-    date: '2026-07-01'
-  },
-  {
-    id: 'm-hsk-prep-2026-08-01',
-    title: 'Préparation officielle HSK',
-    description: 'Sessions blanches HSK 1-6.',
-    status: 'upcoming',
-    date: '2026-08-01'
+    status: 'planned'
   }
 ];
