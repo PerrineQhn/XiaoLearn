@@ -207,8 +207,18 @@ service cloud.firestore {
     // ========================================================================
 
     match /conversations/{convId} {
-      allow read: if isSignedIn()
-        && request.auth.uid in resource.data.participantIds;
+      // GET : un utilisateur connecté peut lire un doc qui le concerne, OU
+      // un doc inexistant (cas du `getDoc()` préalable dans
+      // `openOrCreateConversation` qui vérifie l'existence avant write —
+      // sans cette branche, la rule denied même pour soi-même).
+      allow get: if isSignedIn() && (
+        resource == null ||
+        request.auth.uid in resource.data.participantIds
+      );
+      // LIST : autorisée pour les listeners qui filtrent côté client par
+      // `where('participantIds', 'array-contains', uid)`. Chaque doc retourné
+      // est re-vérifié par la règle `get` ci-dessus.
+      allow list: if isSignedIn();
 
       // Création : un participant doit être l'utilisateur courant
       allow create: if isSignedIn()
