@@ -38,6 +38,10 @@ import {
 initializeApp();
 setGlobalOptions({ region: 'europe-west1', maxInstances: 10 });
 
+// Re-export du proxy Gemini/CloudflareAI (clés cachées côté serveur).
+// Cf. ./geminiProxy.ts pour les détails.
+export { geminiProxy } from './geminiProxy';
+
 // ---------------------------------------------------------------------------
 // CORS helper : nos requêtes viennent de app.xiaolearn.com (origin cross-domain
 // par rapport au domaine cloudfunctions.net). On autorise explicitement nos

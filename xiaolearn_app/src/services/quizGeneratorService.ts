@@ -7,9 +7,8 @@
  * un nouveau autant de fois qu'il veut.
  */
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+import { callLlmProxy } from './llmProxyClient';
+// Clé Gemini retirée du bundle : on passe par la Cloud Function geminiProxy.
 
 export interface AiQuizQuestion {
   /** Question en français (consigne pédagogique). */
@@ -68,55 +67,24 @@ export async function generateAiQuiz(
   level: string,
   count: number = 10
 ): Promise<AiQuiz> {
-  if (!GEMINI_API_KEY) {
-    throw new Error('Gemini API key not configured');
-  }
   const trimmedTopic = topic.trim();
   if (!trimmedTopic) {
     throw new Error('Empty topic');
   }
 
-  const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: QUIZ_PROMPT(trimmedTopic, level, count) }]
-        }
-      ],
-      generationConfig: {
-        temperature: 0.7, // un peu de variabilité pour des questions diverses
-        topK: 40,
-        topP: 0.95,
-        // 10 questions × ~150 tokens = ~1500. On donne de la marge pour éviter
-        // les troncatures qui invalident le JSON.
-        maxOutputTokens: 4096,
-        responseMimeType: 'application/json'
-      },
-      safetySettings: [
-        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-      ]
-    })
+  const { text } = await callLlmProxy({
+    userMessage: QUIZ_PROMPT(trimmedTopic, level, count),
+    generationConfig: {
+      temperature: 0.7,
+      topK: 40,
+      topP: 0.95,
+      maxOutputTokens: 4096,
+      responseMimeType: 'application/json'
+    }
   });
 
-  if (!response.ok) {
-    const errorBody = await response.json().catch(() => ({}));
-    console.error('Gemini quiz error:', errorBody);
-    throw new Error(
-      errorBody?.error?.message || `Gemini API error: ${response.status}`
-    );
-  }
-
-  const data = await response.json();
-  const text =
-    data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? '';
   if (!text) {
-    throw new Error('Empty response from Gemini');
+    throw new Error('Empty response from LLM');
   }
 
   const cleaned = text

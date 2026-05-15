@@ -10,10 +10,8 @@
  */
 
 import type { ConversationScenario } from '../data/conversation-scenarios';
-
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+import { callLlmProxy, type LlmProxyMessage } from './llmProxyClient';
+// Clé Gemini retirée du bundle : on passe par la Cloud Function geminiProxy.
 
 /** Un message dans l'historique de conversation. */
 export interface ConversationMessage {
@@ -78,88 +76,52 @@ export async function generateAssistantTurn(
   history: ConversationMessage[],
   userMessage: string
 ): Promise<AssistantTurn> {
-  if (!GEMINI_API_KEY) {
-    throw new Error('Gemini API key not configured');
-  }
-
   const systemPrompt = buildSystemPrompt(scenario);
 
-  // Construit la séquence pour Gemini : system (en premier user, suivi d'un
-  // ack model), puis l'historique converti, puis le nouveau message user.
-  const contents: Array<{
-    role: 'user' | 'model';
-    parts: Array<{ text: string }>;
-  }> = [
-    { role: 'user', parts: [{ text: systemPrompt }] },
+  // Construit l'historique pour le proxy : on commence par un message
+  // assistant qui simule la ligne d'ouverture du scénario, puis on
+  // sérialise chaque tour précédent en JSON pour rappeler le format.
+  const proxyHistory: LlmProxyMessage[] = [
     {
-      role: 'model',
-      parts: [
-        {
-          text: JSON.stringify({
-            hanzi: scenario.openingHanzi,
-            pinyin: scenario.openingPinyin,
-            translation: scenario.openingTranslation
-          })
-        }
-      ]
+      role: 'assistant',
+      content: JSON.stringify({
+        hanzi: scenario.openingHanzi,
+        pinyin: scenario.openingPinyin,
+        translation: scenario.openingTranslation
+      })
     }
   ];
 
   for (const msg of history) {
     if (msg.role === 'user') {
-      contents.push({ role: 'user', parts: [{ text: msg.hanzi }] });
+      proxyHistory.push({ role: 'user', content: msg.hanzi });
     } else {
-      contents.push({
-        role: 'model',
-        parts: [
-          {
-            text: JSON.stringify({
-              hanzi: msg.hanzi,
-              pinyin: msg.pinyin ?? '',
-              translation: msg.translation ?? ''
-            })
-          }
-        ]
+      proxyHistory.push({
+        role: 'assistant',
+        content: JSON.stringify({
+          hanzi: msg.hanzi,
+          pinyin: msg.pinyin ?? '',
+          translation: msg.translation ?? ''
+        })
       });
     }
   }
 
-  contents.push({ role: 'user', parts: [{ text: userMessage }] });
-
-  const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents,
-      generationConfig: {
-        temperature: 0.85, // un peu de variabilité pour rester naturel
-        topK: 40,
-        topP: 0.95,
-        maxOutputTokens: 512,
-        responseMimeType: 'application/json'
-      },
-      safetySettings: [
-        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-      ]
-    })
+  const { text } = await callLlmProxy({
+    systemPrompt,
+    history: proxyHistory,
+    userMessage,
+    generationConfig: {
+      temperature: 0.85,
+      topK: 40,
+      topP: 0.95,
+      maxOutputTokens: 512,
+      responseMimeType: 'application/json'
+    }
   });
 
-  if (!response.ok) {
-    const errorBody = await response.json().catch(() => ({}));
-    console.error('Gemini conversation error:', errorBody);
-    throw new Error(
-      errorBody?.error?.message || `Gemini API error: ${response.status}`
-    );
-  }
-
-  const data = await response.json();
-  const text =
-    data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? '';
   if (!text) {
-    throw new Error('Empty response from Gemini');
+    throw new Error('Empty response from LLM');
   }
 
   // Sanitize et parse

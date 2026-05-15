@@ -17,13 +17,10 @@
  * (les traductions ne changent pas vite).
  */
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
-
-const CF_ACCOUNT_ID = import.meta.env.VITE_CF_ACCOUNT_ID as string | undefined;
-const CF_AI_TOKEN = import.meta.env.VITE_CF_AI_TOKEN as string | undefined;
-const CF_AI_MODEL = '@cf/qwen/qwen1.5-14b-chat-awq';
+import { callLlmProxy } from './llmProxyClient';
+// Clés Gemini + Cloudflare AI retirées du bundle. Les deux moteurs sont
+// désormais appelés depuis la Cloud Function geminiProxy (server-side),
+// qui gère elle-même le fallback Gemini → Cloudflare.
 
 // v2 = ajout du champ `pinyin` contextuel dans VocabEnrichment. Invalider
 // les anciennes entrées v1 qui n'avaient pas ce champ.
@@ -257,54 +254,24 @@ const extractJson = (raw: string): VocabEnrichment | null => {
 //  Appels API
 // ---------------------------------------------------------------------------
 
-async function callGemini(prompt: string): Promise<string | null> {
-  if (!GEMINI_API_KEY) return null;
+async function callProxy(prompt: string): Promise<string | null> {
   try {
-    const res = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.2,
-          maxOutputTokens: 512,
-          responseMimeType: 'application/json'
-        }
-      })
+    const { text } = await callLlmProxy({
+      userMessage: prompt,
+      generationConfig: {
+        temperature: 0.2,
+        maxOutputTokens: 512,
+        responseMimeType: 'application/json'
+      }
     });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    return typeof text === 'string' ? text : null;
+    return text || null;
   } catch {
     return null;
   }
 }
 
-async function callCloudflare(prompt: string): Promise<string | null> {
-  if (!CF_ACCOUNT_ID || !CF_AI_TOKEN) return null;
-  try {
-    const url = `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/${CF_AI_MODEL}`;
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${CF_AI_TOKEN}`
-      },
-      body: JSON.stringify({
-        messages: [{ role: 'user', content: prompt }],
-        max_tokens: 512,
-        temperature: 0.2
-      })
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const text = data?.result?.response;
-    return typeof text === 'string' ? text : null;
-  } catch {
-    return null;
-  }
-}
+// Note : le fallback Cloudflare AI est désormais géré côté serveur dans
+// functions/src/geminiProxy.ts. Plus rien à faire ici.
 
 // ---------------------------------------------------------------------------
 //  API publique
@@ -337,20 +304,13 @@ export async function enrichVocabWithLLM(
 
   const prompt = buildPrompt(hanzi, contextHint, exampleSentence);
 
-  // 1. Gemini
-  const geminiRaw = await callGemini(prompt);
-  const geminiData = geminiRaw ? extractJson(geminiRaw) : null;
-  if (geminiData) {
-    cacheEnrichment(hanzi, contextHint, exampleSentence, geminiData);
-    return geminiData;
-  }
-
-  // 2. Cloudflare Workers AI
-  const cfRaw = await callCloudflare(prompt);
-  const cfData = cfRaw ? extractJson(cfRaw) : null;
-  if (cfData) {
-    cacheEnrichment(hanzi, contextHint, exampleSentence, cfData);
-    return cfData;
+  // Un seul appel : le proxy server-side gère lui-même Gemini puis fallback
+  // Cloudflare AI. Plus de double appel client-side.
+  const raw = await callProxy(prompt);
+  const data = raw ? extractJson(raw) : null;
+  if (data) {
+    cacheEnrichment(hanzi, contextHint, exampleSentence, data);
+    return data;
   }
 
   return null;

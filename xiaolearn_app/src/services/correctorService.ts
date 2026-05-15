@@ -8,9 +8,9 @@
  * retombe sur un message texte affiché tel quel.
  */
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-2.5-flash';
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+import { callLlmProxy } from './llmProxyClient';
+// Clés Gemini retirées du bundle : on passe par la Cloud Function geminiProxy
+// (cf. functions/src/geminiProxy.ts).
 
 export interface CorrectionError {
   /** L'extrait original incorrect (souvent quelques caractères). */
@@ -77,49 +77,20 @@ export async function correctChinese(
   if (!trimmed) {
     throw new Error('Empty input');
   }
-  if (!GEMINI_API_KEY) {
-    throw new Error('Gemini API key not configured');
-  }
 
-  const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: CORRECTOR_PROMPT(trimmed, level) }]
-        }
-      ],
-      generationConfig: {
-        temperature: 0.2, // bas pour stabilité du format JSON
-        topK: 40,
-        topP: 0.95,
-        maxOutputTokens: 1024,
-        responseMimeType: 'application/json'
-      },
-      safetySettings: [
-        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-      ]
-    })
+  const { text } = await callLlmProxy({
+    userMessage: CORRECTOR_PROMPT(trimmed, level),
+    generationConfig: {
+      temperature: 0.2,
+      topK: 40,
+      topP: 0.95,
+      maxOutputTokens: 1024,
+      responseMimeType: 'application/json'
+    }
   });
 
-  if (!response.ok) {
-    const errorBody = await response.json().catch(() => ({}));
-    console.error('Gemini corrector error:', errorBody);
-    throw new Error(
-      errorBody?.error?.message || `Gemini API error: ${response.status}`
-    );
-  }
-
-  const data = await response.json();
-  const text =
-    data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? '';
   if (!text) {
-    throw new Error('Empty response from Gemini');
+    throw new Error('Empty response from LLM');
   }
 
   // Sanitize : enlève d'éventuels backticks markdown que Gemini glisse parfois.

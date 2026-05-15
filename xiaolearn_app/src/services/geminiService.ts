@@ -220,122 +220,36 @@ function convertToGeminiMessages(messages: Message[]): GeminiMessage[] {
 }
 
 /**
- * Call Gemini API to generate a response
+ * Call Gemini API to generate a response.
+ *
+ * Implémentation 2026-05 : passe désormais par la Cloud Function `geminiProxy`
+ * pour ne plus exposer la clé Gemini dans le bundle JS. Cf. llmProxyClient.ts
+ * + functions/src/geminiProxy.ts. Le fallback Cloudflare AI est aussi géré
+ * côté serveur ; le client n'a plus besoin de connaître les credentials.
  */
 export async function generateGeminiResponse(
   userMessage: string,
   conversationHistory: Message[] = []
 ): Promise<string> {
-  // Check if API key is configured — si non, on tente directement Cloudflare
-  // Workers AI avant de tomber sur la réponse statique fallback.
-  if (!GEMINI_API_KEY) {
-    console.warn('⚠️ Gemini API key not configured. Trying Cloudflare Workers AI…');
-    const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
-    if (cfResponse) return cfResponse;
-    return getFallbackResponse(userMessage);
-  }
-
   try {
-    // Prepare messages for Gemini
-    // Add system instruction as first user message, then history, then current message
-    const systemMessage: GeminiMessage = {
-      role: 'user',
-      parts: [{ text: SYSTEM_INSTRUCTION }]
-    };
-
-    const systemResponse: GeminiMessage = {
-      role: 'model',
-      parts: [{ text: 'Compris. Je suis prêt à aider avec l\'apprentissage du chinois.' }]
-    };
-
-    const historyMessages = convertToGeminiMessages(conversationHistory);
-    const currentMessage: GeminiMessage = {
-      role: 'user',
-      parts: [{ text: userMessage }]
-    };
-
-    const contents = [systemMessage, systemResponse, ...historyMessages, currentMessage];
-
-    // Call Gemini API
-    const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents,
-        generationConfig: {
-          temperature: 0.7,
-          topK: 40,
-          topP: 0.95,
-          // 4096 plutôt que 1024 : le bloc <<<CORRECTIONS>>> JSON peut ajouter
-          // 200-500 tokens à la réponse pédagogique. À 1024 on tronquait
-          // régulièrement les explications longues sur la grammaire.
-          maxOutputTokens: 4096,
-        },
-        safetySettings: [
-          {
-            category: 'HARM_CATEGORY_HARASSMENT',
-            threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-          },
-          {
-            category: 'HARM_CATEGORY_HATE_SPEECH',
-            threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-          },
-          {
-            category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
-            threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-          },
-          {
-            category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-            threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-          }
-        ]
-      })
+    const { callLlmProxy } = await import('./llmProxyClient');
+    const { text } = await callLlmProxy({
+      systemPrompt: SYSTEM_INSTRUCTION,
+      history: conversationHistory.map((m) => ({
+        role: m.role === 'assistant' ? 'assistant' : 'user',
+        content: m.content
+      })),
+      userMessage,
+      generationConfig: {
+        temperature: 0.7,
+        topK: 40,
+        topP: 0.95,
+        maxOutputTokens: 4096
+      }
     });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.warn('[Gemini] non-OK response, trying Cloudflare Workers AI fallback…', response.status, errorData);
-
-      // 429 (rate limit), 401/403 (auth), 5xx (server) → fallback CF
-      if (response.status === 429 || response.status === 401 || response.status === 403 || response.status >= 500) {
-        const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
-        if (cfResponse) return cfResponse;
-      }
-
-      // Pas de fallback → erreur claire pour l'app
-      if (response.status === 429) {
-        throw new Error('Rate limit exceeded. Please try again in a moment.');
-      } else if (response.status === 401 || response.status === 403) {
-        throw new Error('API key invalid or unauthorized.');
-      }
-      throw new Error(`API request failed: ${response.status}`);
-    }
-
-    const data: GeminiResponse = await response.json();
-
-    // Extract response text
-    if (data.candidates && data.candidates.length > 0) {
-      const responseText = data.candidates[0].content.parts[0].text;
-      return responseText;
-    }
-
-    // Si Gemini a répondu OK mais sans candidates → on tente CF aussi
-    console.warn('[Gemini] no valid candidates, trying Cloudflare Workers AI fallback…');
-    const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
-    if (cfResponse) return cfResponse;
-    return getFallbackResponse(userMessage);
-
+    return text;
   } catch (error) {
-    console.error('[Gemini] exception, trying Cloudflare Workers AI fallback…', error);
-    // Erreur réseau ou parsing → on tente CF
-    try {
-      const cfResponse = await callCloudflareWorkersAI(userMessage, conversationHistory, SYSTEM_INSTRUCTION);
-      if (cfResponse) return cfResponse;
-    } catch (cfErr) {
-      console.error('[Gemini] CF fallback also failed', cfErr);
-    }
+    console.error('[Gemini proxy] failed, returning fallback response', error);
     return getFallbackResponse(userMessage);
   }
 }
