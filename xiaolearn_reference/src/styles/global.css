@@ -8,17 +8,20 @@
 
 /* ===== CSS Variables ===== */
 :root {
-  /* Colors - Asian Red Theme (default) */
-  --primary-red: #D8483E;
-  --primary-red-hover: #C53830;
-  --primary-red-light: #FFE3E0;
+  /* Palette XiaoLearn — alignée sur le logo (rouge coral + noir bleuté).
+     Monochrome rouge : --gold-* est conservé pour ne pas casser les usages
+     historiques mais pointe désormais sur un rouge profond. */
+  --primary-red: #E05040;          /* exact match du "Xiao" du logo */
+  --primary-red-hover: #C73826;
+  --primary-red-light: #FAE0DC;
 
-  --jade-green: #2F9D8A;
+  --jade-green: #2F9D8A;            /* legacy : indicateurs sémantiques de victoire */
   --jade-green-hover: #258372;
   --jade-green-light: #E3F5F2;
 
-  --gold-accent: #F0B762;
-  --gold-hover: #E0952C;
+  /* --gold-* historiques pointent vers du rouge profond pour cohérence logo */
+  --gold-accent: #A82E26;
+  --gold-hover: #8E2520;
 
   /* Text Colors */
   --text-primary: #1F2233;

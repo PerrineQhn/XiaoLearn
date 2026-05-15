@@ -486,7 +486,9 @@ const slugify = (text: string): string =>
   .post-cta {
     margin-top: var(--spacing-2xl);
     padding: var(--spacing-2xl);
-    background: linear-gradient(135deg, var(--primary-red-light), #fbe9b8);
+    /* Mono-rouge : red-light -> red-light (uni) plutôt qu'un mélange miel.
+       Aligné palette logo (plus d'or). */
+    background: linear-gradient(135deg, var(--primary-red-light), #fef5f3);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
     text-align: center;
