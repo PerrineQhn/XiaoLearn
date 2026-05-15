@@ -7,32 +7,21 @@
  */
 
 .xl-app-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  /* Topbar en flow normal (PAS sticky/fixed) — scroll avec la page, pattern
+     Seonsaengnim. Sans sticky on n'a pas besoin de fond opaque puisque le
+     contenu ne passe jamais derrière. */
+  position: relative;
+  z-index: 1;
   display: grid;
-  /* Pattern Seonsaengnim : col gauche dimensionnée comme la sidebar pour
-     laisser de la place au logo sidebar dessous, search au centre, bell à
-     droite. Tout flotte sur le même fond crème (pas de couche additionnelle,
-     pas de backdrop-filter, pas de border-bottom). */
-  grid-template-columns: var(--sidebar-width) 1fr auto;
+  /* Placé via grid-area dans la SEULE colonne main (pas par-dessus la
+     sidebar). Search à gauche/centre, cloche tout à droite. */
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
-  padding: 12px 24px 12px 0;
-  /* Fond SOLIDE qui matche le crème du body (#fffdf8 = début du gradient
-     --body-bg). Sans fond, le contenu scrollait derrière la barre fixe et
-     devenait illisible. Avec un fond solide qui colle au body, on garde
-     l'impression "une seule couche" tant qu'on est en haut de page, et la
-     barre masque proprement le contenu quand on scrolle. */
-  background: #fffdf8;
+  padding: 12px 24px;
+  /* Pas de fond : on hérite du body, continuité parfaite. */
+  background: transparent;
   border-bottom: none;
-}
-
-/* Spacer sous le logo de la sidebar pour préserver l'alignement vertical
-   quand on n'a rien dans la 1ère colonne de la topbar. */
-.xl-app-topbar::before {
-  content: '';
-  display: block;
 }
 
 .xl-app-topbar-search {

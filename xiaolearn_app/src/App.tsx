@@ -338,6 +338,27 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
   const toggleSidebar = useCallback(() => setSidebarOpen((v) => !v), []);
+  // Sidebar rétractée (desktop) : version icons-only avec logo_court. Persisté
+  // en localStorage pour que l'utilisateur retrouve son préférence d'écran.
+  const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      return window.localStorage.getItem('xl_sidebar_collapsed') === '1';
+    } catch {
+      return false;
+    }
+  });
+  const toggleSidebarCollapsed = useCallback(() => {
+    setSidebarCollapsed((v) => {
+      const next = !v;
+      try {
+        window.localStorage.setItem('xl_sidebar_collapsed', next ? '1' : '0');
+      } catch {
+        /* quota plein, ignore */
+      }
+      return next;
+    });
+  }, []);
   // Ferme automatiquement le drawer quand on change de vue (utile mobile)
   useEffect(() => {
     setSidebarOpen(false);
@@ -2155,7 +2176,7 @@ function App() {
   }
 
   return (
-    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'} ${sidebarOpen ? 'sidebar-open' : ''}`}>
+    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'} ${sidebarOpen ? 'sidebar-open' : ''} ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
       {/* Overlay sombre cliquable derrière le drawer mobile */}
       <div
         className="xl-sidebar-overlay"
@@ -2215,7 +2236,7 @@ function App() {
           <button className="app-logo" type="button" onClick={() => setView('home')} aria-label="XiaoLearn Home">
             {!logoErrored ? (
               <img
-                src="/logos/logo_long.png"
+                src={sidebarCollapsed ? '/logos/logo_court.png' : '/logos/logo_long.png'}
                 alt="XiaoLearn"
                 className="app-logo-image"
                 onError={() => setLogoErrored(true)}
@@ -2224,6 +2245,31 @@ function App() {
             ) : (
               <span className="logo-icon">🐼</span>
             )}
+          </button>
+          {/* Bouton chevron pour rétracter/étendre la sidebar. Caché en mobile
+              (le drawer mobile a son propre toggle via le hamburger topbar). */}
+          <button
+            type="button"
+            className="sidebar-collapse-toggle"
+            onClick={toggleSidebarCollapsed}
+            aria-label={
+              sidebarCollapsed
+                ? (language === 'fr' ? 'Déployer la barre latérale' : 'Expand sidebar')
+                : (language === 'fr' ? 'Replier la barre latérale' : 'Collapse sidebar')
+            }
+            title={
+              sidebarCollapsed
+                ? (language === 'fr' ? 'Déployer' : 'Expand')
+                : (language === 'fr' ? 'Replier' : 'Collapse')
+            }
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              {sidebarCollapsed ? (
+                <polyline points="9 18 15 12 9 6" />
+              ) : (
+                <polyline points="15 18 9 12 15 6" />
+              )}
+            </svg>
           </button>
         </div>
 

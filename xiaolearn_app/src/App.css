@@ -129,11 +129,13 @@ body {
 .app-container {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-  /* Pattern Seonsaengnim : topbar pleine largeur (row 1), puis sidebar +
-     main-content (row 2). Le topbar utilise grid-column: 1 / -1. */
+  /* Pattern Seonsaengnim final : la sidebar prend toute la hauteur sur la
+     colonne gauche. Le topbar s'aligne au-dessus du main UNIQUEMENT (ne
+     déborde pas par-dessus la sidebar) → search bar dans la zone main,
+     cloche flush à droite. */
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "topbar topbar"
+    "sidebar topbar"
     "sidebar main";
   min-height: 100vh;
   background: var(--body-bg, var(--app-bg));
@@ -143,6 +145,64 @@ body {
 .app-container > .xl-app-topbar { grid-area: topbar; }
 .app-container > .sidebar { grid-area: sidebar; }
 .app-container > .main-content { grid-area: main; }
+
+/* ===== Sidebar rétractée (icons-only, logo_court) =====
+ * Activée via la classe .sidebar-collapsed sur .app-container.
+ * Sur mobile (< 1024px), on retombe en mode drawer normal (pas de collapsed).
+ */
+@media (min-width: 1024px) {
+  .app-container.sidebar-collapsed {
+    --sidebar-width: 72px;
+  }
+
+  .sidebar-collapsed .sidebar-header {
+    padding: var(--spacing-sm);
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* Logo : version "court" (carré) centré, taille adaptée à 72px de large. */
+  .sidebar-collapsed .app-logo {
+    height: 40px;
+    width: 40px;
+  }
+  .sidebar-collapsed .app-logo-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* Masque tous les labels textuels — on garde seulement les icônes.
+     `.nav-label`, `.sidebar-section-header > *`, `.user-name` … */
+  .sidebar-collapsed .nav-label,
+  .sidebar-collapsed .sidebar-section-header,
+  .sidebar-collapsed .user-name,
+  .sidebar-collapsed .user-info,
+  .sidebar-collapsed .sidebar-cpop-label,
+  .sidebar-collapsed .badge-count-label {
+    display: none !important;
+  }
+
+  /* Items de nav : centrés, padding réduit, juste l'icône visible. */
+  .sidebar-collapsed .nav-item,
+  .sidebar-collapsed .sidebar-cpop-btn {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sidebar-collapsed .nav-icon {
+    margin: 0;
+  }
+
+  /* Badge compteur (#2 pour Classement, etc.) reste visible mais en pastille
+     plus compacte. Si le badge est en absolute, on le laisse en place. */
+  .sidebar-collapsed .nav-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    transform: scale(0.85);
+  }
+}
 
 /* ===== Sidebar ===== */
 .sidebar {
@@ -203,6 +263,28 @@ body {
  * Note : on a retiré l'ancien `::after` (barre dégradée rouge→or de 3px)
  * qui faisait doublon avec le soulignement intégré du nouveau logo_long.png.
  */
+
+/* Bouton chevron : repli/déploie la sidebar (icons-only en mode collapsed). */
+.sidebar-collapse-toggle {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+}
+.sidebar-collapse-toggle:hover {
+  background: var(--primary-red-light);
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+}
 
 .app-logo {
   display: flex;
