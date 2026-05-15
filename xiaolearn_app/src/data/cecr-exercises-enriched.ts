@@ -2775,15 +2775,18 @@ const A1_PINYIN_M1_DISCRIM: LessonV2Exercise[] = [
   },
   {
     id: 'cecr-a1-pinyin-m1-err1',
-    type: 'error-correction',
+    type: 'mcq',
     category: 'vocabulary',
-    prompt: 'Trouve la transcription INCORRECTE pour \u00AB maman \u00BB (\u5988).',
-    promptEn: 'Find the INCORRECT transcription for «mother» (\u5988).',
+    // Reformule : 3 des 4 choix (m\u00E1/m\u01CE/m\u00E0) sont incorrects pour \u5988,
+    // donc demander la transcription INCORRECTE n'avait pas de sens. On
+    // demande maintenant la CORRECTE (correctIndex: 0, soit m\u0101 ton 1).
+    prompt: 'Quelle est la transcription CORRECTE de \u00AB maman \u00BB (\u5988) ?',
+    promptEn: 'Which is the CORRECT transcription of «mother» (\u5988)?',
     sentence: '\u5988',
     choices: ['m\u0101', 'm\u00E1', 'm\u01CE', 'm\u00E0'],
-    correctIndex: 3,
-    explanation: '\u5988 (maman) se dit au ton 1 : m\u0101 (voix haute et plate). m\u00E0 (ton 4) signifie \u00AB gronder \u00BB. m\u00E1 = chanvre, m\u01CE = cheval. Illustre parfaitement pourquoi le ton est cl\u00E9.',
-    explanationEn: '\u5988 (mother) is tone 1: m\u0101 (high flat voice). m\u00E0 (tone 4) means «scold». m\u00E1 = hemp, m\u01CE = horse. Perfect illustration of why tones matter.'
+    correctIndex: 0,
+    explanation: '\u5988 (maman) se dit au ton 1 : m\u0101 (voix haute et plate). Les autres tons donnent des mots compl\u00E8tement diff\u00E9rents : m\u00E1 = chanvre (\u9EBB), m\u01CE = cheval (\u9A6C), m\u00E0 = gronder (\u9A82). Illustre parfaitement pourquoi le ton est cl\u00E9.',
+    explanationEn: '\u5988 (mother) is tone 1: m\u0101 (high flat voice). Other tones give entirely different words: m\u00E1 = hemp (\u9EBB), m\u01CE = horse (\u9A6C), m\u00E0 = scold (\u9A82). Perfect illustration of why tones matter.'
   }
 ];
 
