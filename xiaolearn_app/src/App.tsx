@@ -2162,6 +2162,53 @@ function App() {
         onClick={closeSidebar}
         aria-hidden={!sidebarOpen}
       />
+      {/* Top bar globale : recherche + cloche, s'étend par-dessus la sidebar
+          via grid-template-areas. Pattern Seonsaengnim. */}
+      <AppTopBar
+        language={language === 'en' ? 'en' : 'fr'}
+        lessonPaths={[...cecrPathsState, ...lessonPathsState]}
+        personalFlashcards={personalFlashcards.cards}
+        tutorConversations={tutorConvs.conversations.map((c) => ({
+          id: c.id,
+          title: c.title,
+          updatedAt: c.updatedAt
+        }))}
+        onSearchSelect={(hit) => {
+          const openLesson = (moduleId: string) => {
+            const foundCecr = cecrPathsState.find((p) =>
+              p.lessons.some((l) => l.id === moduleId)
+            );
+            const foundHsk = lessonPathsState.find((p) =>
+              p.lessons.some((l) => l.id === moduleId)
+            );
+            const found = foundCecr ?? foundHsk;
+            if (found) handleSelectLesson(found.id, moduleId);
+            else setView('cecr');
+          };
+          switch (hit.kind) {
+            case 'lesson-module':
+              openLesson(hit.id);
+              break;
+            case 'vocab':
+              if (hit.parentModuleId) openLesson(hit.parentModuleId);
+              else setView('cecr');
+              break;
+            case 'flashcard':
+              setView('flashcards');
+              break;
+            case 'tutor-conv':
+              handleTutorSelectConv(hit.id);
+              setView('tutor');
+              break;
+            case 'ask-tutor':
+              setTutorInitialDraft(hit.id);
+              setView('tutor');
+              break;
+          }
+        }}
+        onNavigate={(v) => setView(v as typeof view)}
+        onToggleSidebar={toggleSidebar}
+      />
       {/* Sidebar Navigation */}
       <aside className="sidebar">
         <div className="sidebar-header">
@@ -2359,61 +2406,10 @@ function App() {
         </div>
       </aside>
 
-      {/* Main Content Area — topbar sticky en haut puis contenu */}
+      {/* Main Content Area — la topbar est extraite hors de <main> pour
+          s'étendre sur toute la largeur du viewport, par-dessus la sidebar
+          aussi (cf. JSX ci-dessus + .app-container grid-template-areas). */}
       <main className="main-content">
-        <AppTopBar
-          language={language === 'en' ? 'en' : 'fr'}
-          lessonPaths={[...cecrPathsState, ...lessonPathsState]}
-          personalFlashcards={personalFlashcards.cards}
-          tutorConversations={tutorConvs.conversations.map((c) => ({
-            id: c.id,
-            title: c.title,
-            updatedAt: c.updatedAt
-          }))}
-          onSearchSelect={(hit) => {
-            // Helper : ouvre une leçon par son moduleId, en cherchant le path
-            const openLesson = (moduleId: string) => {
-              const foundCecr = cecrPathsState.find((p) =>
-                p.lessons.some((l) => l.id === moduleId)
-              );
-              const foundHsk = lessonPathsState.find((p) =>
-                p.lessons.some((l) => l.id === moduleId)
-              );
-              const found = foundCecr ?? foundHsk;
-              if (found) handleSelectLesson(found.id, moduleId);
-              else setView('cecr');
-            };
-
-            switch (hit.kind) {
-              case 'lesson-module':
-                // Leçon parente : on l'ouvre directement
-                openLesson(hit.id);
-                break;
-              case 'vocab':
-                // Mot individuel : on ouvre la leçon parente si on l'a indexée,
-                // sinon on bascule sur le hub des leçons.
-                if (hit.parentModuleId) openLesson(hit.parentModuleId);
-                else setView('cecr');
-                break;
-              case 'flashcard':
-                // Flashcard perso (Lifetime) : page Flashcards
-                setView('flashcards');
-                break;
-              case 'tutor-conv':
-                handleTutorSelectConv(hit.id);
-                setView('tutor');
-                break;
-              case 'ask-tutor':
-                // Stocke la question, navigue vers Prof. Xiao, AiTutorPageV2
-                // la consomme via prop `initialDraft`.
-                setTutorInitialDraft(hit.id);
-                setView('tutor');
-                break;
-            }
-          }}
-          onNavigate={(v) => setView(v as typeof view)}
-          onToggleSidebar={toggleSidebar}
-        />
         {content}
       </main>
 

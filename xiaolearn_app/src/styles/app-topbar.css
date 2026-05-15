@@ -11,14 +11,24 @@
   top: 0;
   z-index: 100;
   display: grid;
-  grid-template-columns: 1fr auto;
+  /* Pattern Seonsaengnim : col gauche dimensionnée comme la sidebar pour
+     laisser de la place au logo sidebar dessous, search au centre, bell à
+     droite. Tout flotte sur le même fond crème (pas de couche additionnelle,
+     pas de backdrop-filter, pas de border-bottom). */
+  grid-template-columns: var(--sidebar-width) 1fr auto;
   align-items: center;
   gap: 16px;
-  padding: 12px 24px;
-  background: rgba(255, 250, 243, 0.85);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 24px 12px 0;
+  /* Fond transparent : on hérite du body. Évite les "couches" visuelles. */
+  background: transparent;
+  border-bottom: none;
+}
+
+/* Spacer sous le logo de la sidebar pour préserver l'alignement vertical
+   quand on n'a rien dans la 1ère colonne de la topbar. */
+.xl-app-topbar::before {
+  content: '';
+  display: block;
 }
 
 .xl-app-topbar-search {
