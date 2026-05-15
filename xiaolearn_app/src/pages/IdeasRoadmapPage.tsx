@@ -371,7 +371,10 @@ const IdeasRoadmapPage = ({ language = 'fr' }: IdeasRoadmapPageProps) => {
                 <article
                   key={idea.id}
                   className="idea-card"
-                  style={{ borderTopColor: colors.fg }}
+                  // --idea-accent : couleur de la barre supérieure (rendue
+                  // via ::before sur .idea-card, pas une border-top, pour
+                  // éviter la troncature des coins arrondis).
+                  style={{ ['--idea-accent' as string]: colors.fg }}
                 >
                   <span
                     className="idea-category"

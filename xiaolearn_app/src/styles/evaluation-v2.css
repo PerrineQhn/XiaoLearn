@@ -647,9 +647,12 @@
 .evaluation-v2 .ev-hub-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  /* Décalage de 1.5px = épaisseur de la border du card, pour que la barre
+     couvre exactement le bord supérieur du card (pas d'écart, pas de bulge
+     aux coins arrondis). */
+  top: -1.5px;
+  left: -1.5px;
+  right: -1.5px;
   height: 4px;
   background: var(--ev-hub-accent);
   border-radius: var(--ev2-radius) var(--ev2-radius) 0 0;

@@ -194,6 +194,22 @@ body {
     margin: 0;
   }
 
+  /* Avatar utilisateur dans le footer : centré dans le bouton, sans padding
+     latéral, marges horizontales remises à 0 pour que le cercle se cale au
+     centre des 72px de la sidebar. */
+  .sidebar-collapsed .user-profile {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar-collapsed .user-profile-button {
+    width: 44px;
+    justify-content: center;
+    padding: 4px;
+    gap: 0;
+  }
+
   /* Badge compteur (#2 pour Classement, etc.) reste visible mais en pastille
      plus compacte. Si le badge est en absolute, on le laisse en place. */
   .sidebar-collapsed .nav-badge {

@@ -443,15 +443,31 @@
 }
 
 .ideas-page .idea-card {
+  /* Barre de couleur en haut : implémentée en ::before (cf. plus bas) au
+     lieu de `border-top: 4px solid` qui se fait tronquer aux coins arrondis
+     par le border-radius (les angles affichaient un petit "manque" de
+     couleur). On garde une border-top à 0 pour libérer l'espace. */
+  position: relative;
   background: var(--ip-card-bg);
   border: 1px solid var(--ip-border);
-  border-top: 4px solid var(--ip-text-muted);
   border-radius: var(--ip-radius-sm);
-  padding: 14px;
+  padding: 18px 14px 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   box-shadow: var(--ip-shadow-sm);
+  /* Couleur de la barre passée via la variable inline `--idea-accent`
+     (cf. IdeasRoadmapPage.tsx, style={{ '--idea-accent': colors.fg }}). */
+  overflow: hidden;
+}
+.ideas-page .idea-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--idea-accent, var(--ip-text-muted));
 }
 .ideas-page .idea-category {
   display: inline-block;
