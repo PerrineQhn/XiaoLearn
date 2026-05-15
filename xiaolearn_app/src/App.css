@@ -174,7 +174,7 @@ body {
 }
 
 .sidebar-header {
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
   border-bottom: 1px solid var(--border-light);
   display: flex;
   align-items: center;
@@ -182,21 +182,16 @@ body {
   position: relative;
 }
 
-.sidebar-header::after {
-  content: '';
-  position: absolute;
-  inset: auto 20px -2px;
-  height: 3px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(90deg, var(--primary-red), var(--gold-accent));
-  opacity: 0.8;
-}
+/*
+ * Note : on a retiré l'ancien `::after` (barre dégradée rouge→or de 3px)
+ * qui faisait doublon avec le soulignement intégré du nouveau logo_long.png.
+ */
 
 .app-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 56px;
   padding: 0;
   border: none;
   background: transparent;
@@ -207,8 +202,9 @@ body {
 .app-logo-image {
   height: 100%;
   width: auto;
+  max-width: 100%;
   display: block;
-  clip-path: inset(0 0 0 0);
+  object-fit: contain;
 }
 
 .logo-icon {
@@ -6849,8 +6845,9 @@ select:focus {
 }
 
 .login-logo {
-  width: 180px;
-  height: 180px;
+  width: auto;
+  height: 90px;
+  max-width: 280px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(216, 72, 62, 0.15));
 }
@@ -6904,8 +6901,9 @@ select:focus {
   }
 
   .login-logo {
-    width: 140px;
-    height: 140px;
+    width: auto;
+    height: 70px;
+    max-width: 220px;
   }
 
   .login-title {
