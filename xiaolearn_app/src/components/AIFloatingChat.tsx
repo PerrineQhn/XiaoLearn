@@ -15,7 +15,12 @@ interface AIFloatingChatProps {
   language: Language;
 }
 
-const STORAGE_KEY = 'ai_floating_chat_messages';
+// v2 : clé bumpée pour invalider les anciens caches qui contiennent encore
+// le welcome "Je suis votre assistant IA" en première bulle (avant le
+// renommage en Prof. Xiao). Les anciens historiques sont perdus une fois,
+// puis tout repart proprement.
+const STORAGE_KEY = 'ai_floating_chat_messages_v2';
+const LEGACY_STORAGE_KEY = 'ai_floating_chat_messages';
 
 /** Avatar officiel du Prof. Xiao (servi statiquement par Cloudflare Pages). */
 const PROF_XIAO_AVATAR = '/profs/professeur_xiao_profil.png';
@@ -29,6 +34,11 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(() => {
     try {
+      // Nettoyage one-shot de l'ancienne clé v1 ("Assistant IA"…)
+      const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+      if (legacy !== null) {
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+      }
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
