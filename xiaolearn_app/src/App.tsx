@@ -2476,7 +2476,12 @@ function App() {
       />
 
       {/* Floating AI Chat - available on all pages except AI Assistant page */}
-      {appAccess.canUseFloatingChat && view !== 'assistant' && <AIFloatingChat language={language} />}
+      {appAccess.canUseFloatingChat && view !== 'assistant' && (
+        <AIFloatingChat
+          language={language}
+          onOpenFullPage={() => setView('tutor')}
+        />
+      )}
 
       {/* Floating study timer — visible sur toutes les pages quand un timer est actif. */}
       <FloatingTimer language={language} />

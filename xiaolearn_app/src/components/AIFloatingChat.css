@@ -133,6 +133,36 @@
   display: inline-block;
 }
 
+.floating-chat-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.floating-chat-action-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.floating-chat-action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+.floating-chat-action-btn:active {
+  transform: scale(0.95);
+}
+
+/* Legacy: ancienne classe gardée comme alias visuel au cas où d'autres
+   composants l'utilisent encore. */
 .floating-chat-close {
   background: rgba(255, 255, 255, 0.2);
   border: none;

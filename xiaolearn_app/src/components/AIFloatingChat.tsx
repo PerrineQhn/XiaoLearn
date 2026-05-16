@@ -13,6 +13,12 @@ interface Message {
 
 interface AIFloatingChatProps {
   language: Language;
+  /**
+   * Callback déclenché par le bouton "plein écran" dans le header de la
+   * bulle. Côté App.tsx ça appelle setView('tutor') pour basculer sur la
+   * page complète Prof. Xiao.
+   */
+  onOpenFullPage?: () => void;
 }
 
 // v2 : clé bumpée pour invalider les anciens caches qui contiennent encore
@@ -30,7 +36,7 @@ const WELCOME_MESSAGE = {
   en: "你好! I'm Prof. Xiao 🐼 — ask me anything about Chinese: vocabulary, grammar, pronunciation, culture…"
 };
 
-export default function AIFloatingChat({ language }: AIFloatingChatProps) {
+export default function AIFloatingChat({ language, onOpenFullPage }: AIFloatingChatProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(() => {
     try {
@@ -230,15 +236,43 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
                 </div>
               </div>
             </div>
-            <button
-              className="floating-chat-close"
-              onClick={handleToggle}
-              aria-label={language === 'fr' ? 'Fermer' : 'Close'}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
+            <div className="floating-chat-actions">
+              {onOpenFullPage && (
+                <button
+                  className="floating-chat-action-btn"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onOpenFullPage();
+                  }}
+                  aria-label={
+                    language === 'fr'
+                      ? 'Ouvrir la page complète Prof. Xiao'
+                      : 'Open full Prof. Xiao page'
+                  }
+                  title={
+                    language === 'fr' ? 'Plein écran' : 'Fullscreen'
+                  }
+                >
+                  {/* Icône "expand / fullscreen" — quatre coins divergents. */}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
+                  </svg>
+                </button>
+              )}
+              <button
+                className="floating-chat-action-btn"
+                onClick={handleToggle}
+                aria-label={language === 'fr' ? 'Fermer' : 'Close'}
+                title={language === 'fr' ? 'Fermer' : 'Close'}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div className="floating-chat-messages">
