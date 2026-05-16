@@ -1,4 +1,4 @@
-/* Floating Chat Button */
+/* Floating Chat Button — avatar Prof. Xiao en rond rouge XiaoLearn. */
 .floating-chat-button {
   position: fixed;
   bottom: 24px;
@@ -6,16 +6,24 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-red, #D8483E) 0%, var(--primary-red-hover, #C53830) 100%);
-  border: none;
-  color: white;
+  background: var(--primary-red, #E05040);
+  border: 3px solid #ffffff;
+  padding: 0;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
+}
+
+.floating-chat-button-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .floating-chat-button:hover {
@@ -61,13 +69,13 @@
   }
 }
 
-/* Header */
+/* Header — aligné palette logo XiaoLearn (rouge plat #E05040 + crème + accent rouge profond). */
 .floating-chat-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  background: linear-gradient(135deg, var(--primary-red, #D8483E) 0%, var(--primary-red-hover, #C53830) 100%);
+  padding: 14px 18px;
+  background: var(--primary-red, #E05040);
   color: white;
   border-radius: 16px 16px 0 0;
 }
@@ -76,28 +84,53 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+}
+
+.chat-avatar-image {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  flex-shrink: 0;
 }
 
 .chat-avatar {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1;
 }
 
 .chat-title-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .chat-title-main {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
 }
 
 .chat-status {
-  font-size: 12px;
-  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  opacity: 0.92;
   line-height: 1.3;
+  margin-top: 2px;
+}
+
+.chat-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+  display: inline-block;
 }
 
 .floating-chat-close {

@@ -17,9 +17,12 @@ interface AIFloatingChatProps {
 
 const STORAGE_KEY = 'ai_floating_chat_messages';
 
+/** Avatar officiel du Prof. Xiao (servi statiquement par Cloudflare Pages). */
+const PROF_XIAO_AVATAR = '/profs/professeur_xiao_profil.png';
+
 const WELCOME_MESSAGE = {
-  fr: "Bonjour ! Je suis votre assistant IA. Posez-moi vos questions sur le chinois !",
-  en: "Hello! I'm your AI assistant. Ask me questions about Chinese!"
+  fr: "你好 ! Je suis Prof. Xiao 🐼 — pose-moi tes questions sur le chinois : vocabulaire, grammaire, prononciation, culture…",
+  en: "你好! I'm Prof. Xiao 🐼 — ask me anything about Chinese: vocabulary, grammar, pronunciation, culture…"
 };
 
 export default function AIFloatingChat({ language }: AIFloatingChatProps) {
@@ -160,11 +163,21 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
       <button
         className={`floating-chat-button ${isOpen ? 'hidden' : ''}`}
         onClick={handleToggle}
-        aria-label={language === 'fr' ? 'Ouvrir le chat IA' : 'Open AI chat'}
+        aria-label={language === 'fr' ? 'Ouvrir le chat avec Prof. Xiao' : 'Open chat with Prof. Xiao'}
       >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-        </svg>
+        {/* Avatar de Prof. Xiao en lieu et place de l'ancienne bulle générique.
+            Fallback emoji 👩‍🏫 si l'image ne charge pas. */}
+        <img
+          src={PROF_XIAO_AVATAR}
+          alt=""
+          className="floating-chat-button-avatar"
+          onError={(e) => {
+            const span = document.createElement('span');
+            span.textContent = '👩‍🏫';
+            span.style.fontSize = '28px';
+            e.currentTarget.replaceWith(span);
+          }}
+        />
       </button>
 
       {/* Chat Window */}
@@ -172,12 +185,21 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
         <div className="floating-chat-window">
           <div className="floating-chat-header">
             <div className="floating-chat-title">
-              {/* <span className="chat-avatar">🤖</span> */}
+              <img
+                src={PROF_XIAO_AVATAR}
+                alt=""
+                className="chat-avatar-image"
+                onError={(e) => {
+                  const span = document.createElement('span');
+                  span.textContent = '👩‍🏫';
+                  span.className = 'chat-avatar';
+                  e.currentTarget.replaceWith(span);
+                }}
+              />
               <div className="chat-title-text">
-                <div className="chat-title-main">
-                  {language === 'fr' ? 'Assistant IA' : 'AI Assistant'}
-                </div>
+                <div className="chat-title-main">Prof. Xiao</div>
                 <div className="chat-status">
+                  <span className="chat-status-dot" aria-hidden="true" />
                   {language === 'fr' ? 'En ligne' : 'Online'}
                 </div>
               </div>
