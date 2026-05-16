@@ -96,7 +96,33 @@
 .xl-notif-panel-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+/* Les actions du header sont passées en icon-only (avec tooltip natif sur
+   le `title`) pour éviter que les libellés "Tout lire" / "Effacer tout"
+   wrappent dans un panneau de 380px et créent un layout cassé. Les labels
+   restent dans le DOM pour l'accessibilité mais sont visuellement masqués
+   (visually-hidden / sr-only pattern). */
+.xl-notif-action-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.xl-notif-mark-all,
+.xl-notif-clear-all {
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 0 !important;
 }
 .xl-notif-mark-all {
   display: inline-flex;
