@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import type { Language } from '../i18n';
 import { parseMarkdown } from '../utils/markdownUtils';
 import { generateGeminiResponseWithCorrections } from '../services/geminiService';
+import type { ChatMessage } from '../hooks/useChatConversations';
 import './AIFloatingChat.css';
 
 interface Message {
@@ -19,14 +20,25 @@ interface AIFloatingChatProps {
    * page complète Prof. Xiao.
    */
   onOpenFullPage?: () => void;
+  /**
+   * Messages de la conversation Quick chat (épinglée), source de vérité
+   * partagée avec la page /tutor. Synchronisée Firestore cross-device via
+   * useChatConversations. Vide si la conv n'a jamais été utilisée.
+   */
+  quickChatMessages?: ChatMessage[];
+  /**
+   * Écrit les messages dans la conversation Quick chat épinglée. Garde la
+   * page /tutor à jour automatiquement (et inversement).
+   */
+  onUpdateQuickChat?: (messages: ChatMessage[]) => void;
 }
 
-// v2 : clé bumpée pour invalider les anciens caches qui contiennent encore
-// le welcome "Je suis votre assistant IA" en première bulle (avant le
-// renommage en Prof. Xiao). Les anciens historiques sont perdus une fois,
-// puis tout repart proprement.
-const STORAGE_KEY = 'ai_floating_chat_messages_v2';
-const LEGACY_STORAGE_KEY = 'ai_floating_chat_messages';
+// Nettoyage one-shot des anciennes clés localStorage (avant la migration
+// vers useChatConversations / Quick chat épinglé).
+const LEGACY_STORAGE_KEYS = [
+  'ai_floating_chat_messages',
+  'ai_floating_chat_messages_v2'
+];
 
 /** Avatar officiel du Prof. Xiao (servi statiquement par Cloudflare Pages). */
 const PROF_XIAO_AVATAR = '/profs/professeur_xiao_profil.png';
@@ -36,43 +48,56 @@ const WELCOME_MESSAGE = {
   en: "你好! I'm Prof. Xiao 🐼 — ask me anything about Chinese: vocabulary, grammar, pronunciation, culture…"
 };
 
-export default function AIFloatingChat({ language, onOpenFullPage }: AIFloatingChatProps) {
+const CORRECTIONS_RE = /<<<CORRECTIONS>>>[\s\S]*?<<<END>>>/g;
+
+const sanitize = (s: string): string => s.replace(CORRECTIONS_RE, '').trim();
+
+export default function AIFloatingChat({
+  language,
+  onOpenFullPage,
+  quickChatMessages,
+  onUpdateQuickChat
+}: AIFloatingChatProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(() => {
-    try {
-      // Nettoyage one-shot de l'ancienne clé v1 ("Assistant IA"…)
-      const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-      if (legacy !== null) {
-        localStorage.removeItem(LEGACY_STORAGE_KEY);
+
+  // Nettoyage one-shot des anciennes clés localStorage (migration vers le
+  // Quick chat épinglé géré par useChatConversations).
+  useEffect(() => {
+    for (const key of LEGACY_STORAGE_KEYS) {
+      try {
+        if (localStorage.getItem(key) !== null) {
+          localStorage.removeItem(key);
+        }
+      } catch {
+        /* noop */
       }
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        // Strip défensif : les messages assistant stockés en v2 avant le fix
-        // contiennent encore le bloc <<<CORRECTIONS>>>...<<<END>>>. On le
-        // retire à la volée pour ne plus jamais le voir s'afficher.
-        const CORRECTIONS_RE = /<<<CORRECTIONS>>>[\s\S]*?<<<END>>>/g;
-        return parsed.map((msg: Message) => ({
-          ...msg,
-          content:
-            msg.role === 'assistant'
-              ? msg.content.replace(CORRECTIONS_RE, '').trim()
-              : msg.content,
-          timestamp: new Date(msg.timestamp)
-        }));
-      }
-    } catch (error) {
-      console.error('Failed to load messages:', error);
     }
-    return [
-      {
-        id: '0',
-        role: 'assistant',
-        content: WELCOME_MESSAGE[language],
-        timestamp: new Date()
-      }
-    ];
-  });
+  }, []);
+
+  // Convertit les ChatMessage (timestamp number) du hook vers le format
+  // Message (timestamp Date) utilisé localement par le rendu, + sanitize.
+  // Si la conv Quick chat est vide, on injecte le message d'accueil virtuel.
+  const messages: Message[] = useMemo(() => {
+    const fromHook: Message[] =
+      quickChatMessages?.map((m) => ({
+        id: m.id,
+        role: m.role === 'system' ? 'assistant' : m.role,
+        content: m.role === 'assistant' ? sanitize(m.content) : m.content,
+        timestamp: new Date(m.createdAt)
+      })) ?? [];
+    if (fromHook.length === 0) {
+      return [
+        {
+          id: '0',
+          role: 'assistant',
+          content: WELCOME_MESSAGE[language],
+          timestamp: new Date()
+        }
+      ];
+    }
+    return fromHook;
+  }, [quickChatMessages, language]);
+
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -88,13 +113,8 @@ export default function AIFloatingChat({ language, onOpenFullPage }: AIFloatingC
     }
   }, [messages, isOpen]);
 
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-    } catch (error) {
-      console.error('Failed to save messages:', error);
-    }
-  }, [messages]);
+  // Persistance : déléguée au hook useChatConversations dans App.tsx
+  // (qui sync localStorage + Firestore cross-device). Plus rien à faire ici.
 
   /**
    * Écoute l'événement global `xiaolearn:openAiChat` qui peut être déclenché
@@ -134,6 +154,25 @@ export default function AIFloatingChat({ language, onOpenFullPage }: AIFloatingC
     return text;
   };
 
+  /**
+   * Convertit le tableau Message local en ChatMessage (format hook) et
+   * pousse via le callback onUpdateQuickChat. NB : on filtre le welcome
+   * virtuel (id === '0') pour ne pas le persister — il est régénéré à la
+   * volée quand la conv est vide.
+   */
+  const persistToQuickChat = (msgs: Message[]) => {
+    if (!onUpdateQuickChat) return;
+    const persisted: ChatMessage[] = msgs
+      .filter((m) => m.id !== '0')
+      .map((m) => ({
+        id: m.id,
+        role: m.role,
+        content: m.content,
+        createdAt: m.timestamp.getTime()
+      }));
+    onUpdateQuickChat(persisted);
+  };
+
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -144,32 +183,34 @@ export default function AIFloatingChat({ language, onOpenFullPage }: AIFloatingC
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    // Optimistic update — on envoie immédiatement au hook, qui propage
+    // dans /tutor (cross-device si Firestore connecté).
+    const afterUser = [...messages.filter((m) => m.id !== '0'), userMessage];
+    persistToQuickChat(afterUser);
     setInput('');
     setIsLoading(true);
 
     try {
       const response = await generateAIResponse(userMessage.content, messages);
-
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: response,
         timestamp: new Date()
       };
-
-      setMessages(prev => [...prev, assistantMessage]);
+      persistToQuickChat([...afterUser, assistantMessage]);
     } catch (error) {
       console.error('Error generating response:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: language === 'fr'
-          ? "Désolé, j'ai rencontré une erreur. Pouvez-vous reformuler votre question ?"
-          : "Sorry, I encountered an error. Could you rephrase your question?",
+        content:
+          language === 'fr'
+            ? "Désolé, j'ai rencontré une erreur. Pouvez-vous reformuler votre question ?"
+            : 'Sorry, I encountered an error. Could you rephrase your question?',
         timestamp: new Date()
       };
-      setMessages(prev => [...prev, errorMessage]);
+      persistToQuickChat([...afterUser, errorMessage]);
     } finally {
       setIsLoading(false);
     }

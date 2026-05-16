@@ -39,7 +39,21 @@ export interface ChatConversation {
   messages: ChatMessage[];
   createdAt: number;
   updatedAt: number;
+  /**
+   * Marqueur pour les conversations "spéciales" non éditables côté titre.
+   * - 'quick-chat' : conversation utilisée par la bulle flottante Prof. Xiao.
+   *   Le titre est figé ("Conversation rapide" / "Quick chat"), pas auto-
+   *   dérivé du premier message user. Une seule par utilisateur.
+   */
+  pinned?: 'quick-chat';
 }
+
+/** ID stable pour la conversation Quick chat de la bulle flottante. */
+export const QUICK_CHAT_ID = 'quick-chat';
+const QUICK_CHAT_TITLE: Record<'fr' | 'en', string> = {
+  fr: 'Conversation rapide',
+  en: 'Quick chat'
+};
 
 const loadFromStorage = (): ChatConversation[] => {
   if (typeof window === 'undefined') return [];
@@ -84,6 +98,14 @@ export interface UseChatConversationsReturn {
   selectConversation: (id: string) => void;
   upsertCurrentMessages: (messages: ChatMessage[]) => void;
   removeConversation: (id: string) => void;
+  /**
+   * Lit (ou crée) la conversation Quick chat épinglée — utilisée par la
+   * bulle flottante. Ne touche PAS à currentConvId : la page /tutor reste
+   * sur sa conv en cours.
+   */
+  getOrCreateQuickChat: (lang: 'fr' | 'en') => ChatConversation;
+  /** Écrit dans la conversation Quick chat épinglée sans toucher au current. */
+  upsertQuickChatMessages: (messages: ChatMessage[], lang: 'fr' | 'en') => void;
 }
 
 export const useChatConversations = (): UseChatConversationsReturn => {
@@ -131,15 +153,82 @@ export const useChatConversations = (): UseChatConversationsReturn => {
           setCurrentConvId(newConv.id);
           return [newConv, ...prev].slice(0, MAX_CONVERSATIONS);
         }
-        // Sinon on met à jour la conv courante
+        // Sinon on met à jour la conv courante. Pour les convs épinglées
+        // (Quick chat), on PRÉSERVE le titre fixe — pas de re-derivation.
         return prev.map((c) =>
           c.id === currentConvId
-            ? { ...c, messages, title: deriveTitle(messages), updatedAt: now }
+            ? {
+                ...c,
+                messages,
+                title: c.pinned ? c.title : deriveTitle(messages),
+                updatedAt: now
+              }
             : c
         );
       });
     },
     [currentConvId]
+  );
+
+  /**
+   * Trouve ou crée la conversation Quick chat (épinglée). Garantit qu'une
+   * seule existe par utilisateur. Ne touche pas à currentConvId.
+   */
+  const getOrCreateQuickChat = useCallback(
+    (lang: 'fr' | 'en'): ChatConversation => {
+      const existing = conversations.find((c) => c.pinned === 'quick-chat');
+      if (existing) return existing;
+      // Crée à la volée + persiste
+      const now = Date.now();
+      const fresh: ChatConversation = {
+        id: QUICK_CHAT_ID,
+        title: QUICK_CHAT_TITLE[lang],
+        messages: [],
+        createdAt: now,
+        updatedAt: now,
+        pinned: 'quick-chat'
+      };
+      setConversations((prev) => {
+        // Re-check dans le setter pour eviter une double-creation si l'effet
+        // tourne deux fois (React 18 StrictMode).
+        if (prev.some((c) => c.pinned === 'quick-chat')) return prev;
+        return [fresh, ...prev].slice(0, MAX_CONVERSATIONS);
+      });
+      return fresh;
+    },
+    [conversations]
+  );
+
+  /**
+   * Écrit messages dans la conv Quick chat sans changer currentConvId
+   * (la page /tutor reste sur sa propre conv). Crée la Quick chat si
+   * elle n'existait pas encore.
+   */
+  const upsertQuickChatMessages = useCallback(
+    (messages: ChatMessage[], lang: 'fr' | 'en') => {
+      if (messages.length === 0) return;
+      const now = Date.now();
+      setConversations((prev) => {
+        const existing = prev.find((c) => c.pinned === 'quick-chat');
+        if (existing) {
+          return prev.map((c) =>
+            c.pinned === 'quick-chat'
+              ? { ...c, messages, updatedAt: now }
+              : c
+          );
+        }
+        const fresh: ChatConversation = {
+          id: QUICK_CHAT_ID,
+          title: QUICK_CHAT_TITLE[lang],
+          messages,
+          createdAt: now,
+          updatedAt: now,
+          pinned: 'quick-chat'
+        };
+        return [fresh, ...prev].slice(0, MAX_CONVERSATIONS);
+      });
+    },
+    []
   );
 
   const removeConversation = useCallback((id: string) => {
@@ -157,6 +246,8 @@ export const useChatConversations = (): UseChatConversationsReturn => {
     createNew,
     selectConversation,
     upsertCurrentMessages,
-    removeConversation
+    removeConversation,
+    getOrCreateQuickChat,
+    upsertQuickChatMessages
   };
 };

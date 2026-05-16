@@ -2475,11 +2475,32 @@ function App() {
         language={language}
       />
 
-      {/* Floating AI Chat - available on all pages except AI Assistant page */}
+      {/* Floating AI Chat - available on all pages except AI Assistant page.
+          Branche sur la conversation "Quick chat" épinglée de useChatConversations
+          → syncé Firestore cross-device, visible dans la liste de /tutor. */}
       {appAccess.canUseFloatingChat && view !== 'assistant' && (
         <AIFloatingChat
           language={language}
-          onOpenFullPage={() => setView('tutor')}
+          onOpenFullPage={() => {
+            // Assure que la page /tutor sélectionne la Quick chat à l'ouverture
+            // (sinon elle reste sur la conv en cours côté /tutor, ce qui est
+            // déroutant quand on vient de bavarder dans la bulle).
+            const quick = tutorConvs.getOrCreateQuickChat(
+              language === 'en' ? 'en' : 'fr'
+            );
+            tutorConvs.selectConversation(quick.id);
+            setView('tutor');
+          }}
+          quickChatMessages={
+            tutorConvs.conversations.find((c) => c.pinned === 'quick-chat')
+              ?.messages
+          }
+          onUpdateQuickChat={(msgs) =>
+            tutorConvs.upsertQuickChatMessages(
+              msgs,
+              language === 'en' ? 'en' : 'fr'
+            )
+          }
         />
       )}
 
