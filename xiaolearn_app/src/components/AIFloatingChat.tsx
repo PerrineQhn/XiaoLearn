@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Language } from '../i18n';
 import { parseMarkdown } from '../utils/markdownUtils';
-import { generateGeminiResponse } from '../services/geminiService';
+import { generateGeminiResponseWithCorrections } from '../services/geminiService';
 import './AIFloatingChat.css';
 
 interface Message {
@@ -42,8 +42,16 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
+        // Strip défensif : les messages assistant stockés en v2 avant le fix
+        // contiennent encore le bloc <<<CORRECTIONS>>>...<<<END>>>. On le
+        // retire à la volée pour ne plus jamais le voir s'afficher.
+        const CORRECTIONS_RE = /<<<CORRECTIONS>>>[\s\S]*?<<<END>>>/g;
         return parsed.map((msg: Message) => ({
           ...msg,
+          content:
+            msg.role === 'assistant'
+              ? msg.content.replace(CORRECTIONS_RE, '').trim()
+              : msg.content,
           timestamp: new Date(msg.timestamp)
         }));
       }
@@ -109,7 +117,15 @@ export default function AIFloatingChat({ language }: AIFloatingChatProps) {
 
   const generateAIResponse = async (userQuestion: string, history: Message[]): Promise<string> => {
     const conversationHistory = history.filter(msg => msg.id !== '0');
-    return await generateGeminiResponse(userQuestion, conversationHistory);
+    // Utilise la version "WithCorrections" qui parse et STRIPE le bloc
+    // <<<CORRECTIONS>>>...<<<END>>> avant retour. La bulle flottante n'a
+    // pas l'UI pour afficher les corrections structurées (c'est la page
+    // /tutor complète qui le fait), on ne garde donc que le texte propre.
+    const { text } = await generateGeminiResponseWithCorrections(
+      userQuestion,
+      conversationHistory
+    );
+    return text;
   };
 
   const handleSendMessage = async () => {
