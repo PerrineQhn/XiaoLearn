@@ -34,7 +34,10 @@
   --text-tertiary: #8A8C9F;
   --text-inverse: #FFFFFF;
 
-  --app-bg: linear-gradient(135deg, #fffdf8 0%, #fdeee1 100%);
+  /* Body : fond uniforme creme (plus de gradient diagonal). Pattern
+     Seonsaengnim : une seule couche de couleur sur toute la page, les
+     cards posent dessus avec leur propre blanc. */
+  --app-bg: #fffaf3;
   --sidebar-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(254, 243, 234, 0.85));
   --panel-bg: rgba(255, 255, 255, 0.9);
   --panel-border: rgba(222, 192, 173, 0.45);
@@ -284,12 +287,12 @@ body {
  */
 
 /* Bouton chevron : repli/déploie la sidebar.
- * Positionné sur le séparateur sidebar/main (pattern Seonsaengnim) :
- * placé directement sous .app-container pour échapper à `overflow: hidden`
- * de la sidebar. Centré horizontalement sur la border-right (translateX
- * -50% sur la position left = sidebar-width). */
+ * Positionné sur le séparateur sidebar/main (pattern Seonsaengnim).
+ * `fixed` (PAS absolute) pour rester ancré au viewport quand on scrolle
+ * le main — l'absolute scrollait avec .app-container ce qui faisait que
+ * le bouton "remontait" et disparaissait au scroll. */
 .app-container > .sidebar-collapse-toggle {
-  position: absolute;
+  position: fixed;
   top: 28px;
   left: var(--sidebar-width);
   transform: translateX(-50%);
@@ -5376,7 +5379,8 @@ select:focus {
   --jade-green: #2F9D8A;
   --gold-accent: #A82E26;
   --welcome-gradient: linear-gradient(135deg, rgba(224, 80, 64, 0.92), rgba(168, 46, 38, 0.85));
-  --body-bg: linear-gradient(135deg, #fffdf8 0%, #fdeee1 100%);
+  /* Body uniforme — voir commentaire sur --app-bg ci-dessus. */
+  --body-bg: #fffaf3;
   --sidebar-bg: linear-gradient(180deg, rgba(255, 244, 240, 0.95), rgba(254, 228, 210, 0.9));
 }
 
