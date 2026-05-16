@@ -1366,7 +1366,8 @@ function App() {
           id: 'messages',
           label: language === 'fr' ? 'Messages' : 'Messages',
           iconSlug: 'culture',
-          fallback: '💬'
+          fallback: '💬',
+          icon: 'messager.png'
         },
         { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
         {
