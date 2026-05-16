@@ -1360,7 +1360,8 @@ function App() {
           id: 'ideas',
           label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
           iconSlug: 'culture',
-          fallback: '💡'
+          fallback: '💡',
+          icon: 'idea.png'
         },
         {
           id: 'messages',
