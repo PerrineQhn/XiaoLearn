@@ -9,9 +9,12 @@
 .xl-app-topbar {
   /* Topbar en flow normal (PAS sticky/fixed) — scroll avec la page, pattern
      Seonsaengnim. Sans sticky on n'a pas besoin de fond opaque puisque le
-     contenu ne passe jamais derrière. */
+     contenu ne passe jamais derrière.
+     z-index 50 (haut) pour que le popover notifications (enfant qui crée
+     son propre stacking context à z=1200) puisse passer AU-DESSUS du
+     main-content (qui est en z-index 1 déclaré après dans le DOM). */
   position: relative;
-  z-index: 1;
+  z-index: 50;
   display: grid;
   /* Placé via grid-area dans la SEULE colonne main (pas par-dessus la
      sidebar). Search à gauche/centre, cloche tout à droite. */
