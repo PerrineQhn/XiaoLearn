@@ -347,15 +347,10 @@ const GrammarPageV3 = (props: GrammarPageV3Props) => {
 
   return (
     <div className="reading-v2 grammar-v3">
-      {onBack && (
-        <button
-          type="button"
-          className="rv2-btn rv2-btn--link rv2-catalog-back"
-          onClick={onBack}
-        >
-          {t(language, 'back')}
-        </button>
-      )}
+      {/* Bouton "← Retour" du catalogue retiré : la navigation se fait via la
+          sidebar globale, le bouton retour faisait doublon. Le bouton "Retour
+          à la grammaire" reste affiché à l'INTÉRIEUR d'une leçon
+          (GrammarLessonView) pour revenir au catalogue. */}
 
       <header className="rv2-catalog-header">
         <div className="rv2-catalog-icon" aria-hidden>📐</div>
