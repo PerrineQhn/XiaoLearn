@@ -635,7 +635,10 @@ body {
 
 /* ===== Main Content ===== */
 .main-content {
-  padding: var(--spacing-2xl) clamp(1.5rem, 3vw, 3.5rem);
+  /* Padding-top réduit à 0 — la topbar (search bar) est juste au-dessus, on
+     supprime l'espace mort entre elle et le contenu (pattern Seonsaengnim).
+     Les pages internes gèrent leur propre padding-top selon leurs besoins. */
+  padding: 0 clamp(1.5rem, 3vw, 3.5rem) var(--spacing-2xl);
   max-width: 1080px;
   margin: 0 auto;
   width: 100%;
