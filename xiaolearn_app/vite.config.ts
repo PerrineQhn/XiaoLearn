@@ -200,15 +200,19 @@ const chunkNameForModule = (id: string): string | undefined => {
     if (id.includes('/firebase/') || id.includes('/@firebase/')) {
       return 'vendor-firebase';
     }
-    if (id.includes('/recharts/') || id.includes('/d3-') || id.includes('/victory-vendor/')) {
-      return 'vendor-charts';
-    }
-    if (id.includes('/pinyin-pro/') || id.includes('/opencc-js/')) {
+    // (recharts/d3 retirés : la dep recharts a été supprimée — son seul
+    // consommateur LearningProgressChart.tsx était orphelin.)
+    if (id.includes('/pinyin-pro/')) {
       return 'vendor-language';
     }
-    if (id.includes('/@xenova/transformers/')) {
-      return 'vendor-transformers';
+    // opencc-js : isolé dans son propre chunk car uniquement consommé par
+    // CPlayerPage qui est désormais lazy-loadé.
+    if (id.includes('/opencc-js/')) {
+      return 'vendor-opencc';
     }
+    // (@xenova/transformers a été déplacé en devDependency : utilisé
+    // uniquement par les scripts Node de build, jamais shippé au browser.
+    // Le chunk vendor-transformers est donc devenu obsolète.)
     return 'vendor';
   }
 

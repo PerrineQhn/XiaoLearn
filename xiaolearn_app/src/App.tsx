@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
+import { useEffect, useMemo, useRef, useState, useCallback, lazy, Suspense } from 'react';
 import './App.css';
 import './styles/lesson-filters.css';
 // --- V2 swap : pages drop-in ----------------------------------------------
@@ -46,7 +46,9 @@ import type { LessonMasteryMap } from './types/review-v3';
 import type { BilanCompletionMap } from './types/bilan';
 import type { SentenceFlashcard } from './types/flashcard-v3';
 // --- Pages V1 conservées (pas de variante V2 à ce jour) --------------------
-import CPlayerPage from './pages/CPlayerPage';
+// CPlayerPage : lazy-loadé pour ne pas charger opencc-js (~80 Ko) dans
+// le bundle initial. Seuls les utilisateurs qui ouvrent CPlayer paient.
+const CPlayerPage = lazy(() => import('./pages/CPlayerPage'));
 import LessonPage from './pages/LessonPage';
 import LessonPathsPage from './pages/LessonPathsPage';
 import QuizPage from './pages/QuizPage';
@@ -1512,7 +1514,19 @@ function App() {
   let content: JSX.Element;
   switch (view) {
     case 'cplayer':
-      content = <CPlayerPage language={language} onBackHome={() => setView('home')} />;
+      // Lazy-loadé : wrap dans Suspense pour ne pas faire planter le render
+      // pendant le download du chunk (~80 Ko opencc-js + page).
+      content = (
+        <Suspense
+          fallback={
+            <div style={{ padding: 40, textAlign: 'center', color: '#888' }}>
+              {language === 'fr' ? 'Chargement…' : 'Loading…'}
+            </div>
+          }
+        >
+          <CPlayerPage language={language} onBackHome={() => setView('home')} />
+        </Suspense>
+      );
       break;
     case 'cecr':
       // Parcours CECR A1→C2.2 — unique taxonomie exposée dans la navigation.
