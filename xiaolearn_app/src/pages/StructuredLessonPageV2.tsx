@@ -31,6 +31,9 @@ import type {
 } from '../types/lesson-learn';
 import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import PronunciationCheck from '../components/PronunciationCheck';
+import PronunciationDrill, {
+  type PronunciationDrillItem
+} from '../components/PronunciationDrill';
 
 export type { LessonV2LearnItem, LessonV2MinimalPair, LessonV2LearnSection };
 
@@ -1826,6 +1829,27 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
             </ul>
           </div>
         )}
+
+        {/* Drill prononciation : exercice bonus en fin de leçon. Agrège les
+            hanzi des examples + learnSections en dédupliquant, et propose à
+            l'utilisateur de les prononcer un par un. */}
+        <PronunciationDrill
+          items={(() => {
+            const items: PronunciationDrillItem[] = [];
+            // examples
+            for (const ex of lesson.examples) {
+              items.push({ hanzi: ex.hanzi, pinyin: ex.pinyin, audio: ex.audio });
+            }
+            // learnSections > items
+            for (const section of lesson.learnSections ?? []) {
+              for (const it of section.items ?? []) {
+                items.push({ hanzi: it.hanzi, pinyin: it.pinyin, audio: it.audio });
+              }
+            }
+            return items;
+          })()}
+          language={language === 'en' ? 'en' : 'fr'}
+        />
 
         {nextLesson && (
           <div className="lv2-summary-next">

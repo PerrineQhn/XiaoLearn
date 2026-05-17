@@ -801,12 +801,13 @@ function ModeSelector({
   onChange: (m: StudyMode) => void;
   language: 'fr' | 'en';
 }) {
-  const MODES: StudyMode[] = ['flip', 'mcq', 'typing', 'listening', 'speed'];
+  const MODES: StudyMode[] = ['flip', 'mcq', 'typing', 'listening', 'pronunciation', 'speed'];
   const MODE_ICON: Record<StudyMode, string> = {
     flip: '🔄',
     mcq: '🅰️',
     typing: '⌨️',
     listening: '🎧',
+    pronunciation: '🎤',
     speed: '⚡'
   };
   return (

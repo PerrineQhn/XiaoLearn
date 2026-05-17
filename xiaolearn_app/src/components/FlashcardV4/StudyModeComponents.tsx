@@ -26,6 +26,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
 import { playHanziAudio, preloadHanziAudio } from '../../utils/audio';
 import PronunciationCheck from '../PronunciationCheck';
+import {
+  isPronunciationSupported as pronunciationSupported,
+  recognize as pronunciationRecognize
+} from '../../services/pronunciationService';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -651,6 +655,221 @@ export function ListeningCard({ card, language, onReveal, onSubmit }: StudyModeP
           </div>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+// ============================================================================
+//  PronunciationCard — l'user prononce le hanzi, on grade auto
+// ============================================================================
+
+/**
+ * Mode "Prononciation" :
+ *   - Affiche le hanzi + pinyin + traduction (révélés dès le départ)
+ *   - Gros bouton micro centré
+ *   - L'utilisateur clique → parle → on transcrit via la Web Speech API
+ *   - Verdict :
+ *       match    → wasCorrect: true  (note "facile" suggérée par le parent)
+ *       close    → wasCorrect: true  (note "bien")
+ *       mismatch → wasCorrect: false (note "difficile")
+ *   - Le user peut retenter avant de valider (bouton ↻).
+ *   - Si le navigateur n'a pas SpeechRecognition, on tombe sur un message
+ *     d'erreur + bouton "Valider sans micro" pour ne pas bloquer la session.
+ */
+export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+  const [state, setState] = useState<
+    | { kind: 'idle' }
+    | { kind: 'listening' }
+    | { kind: 'result'; verdict: 'match' | 'close' | 'mismatch'; transcript: string }
+    | { kind: 'error'; message: string }
+  >({ kind: 'idle' });
+
+  // Reset à chaque changement de carte (parent remount via key={card.id})
+  useEffect(() => {
+    setState({ kind: 'idle' });
+  }, [card.id]);
+
+  const supported = pronunciationSupported();
+
+  const handlePlay = () => {
+    speakChinese(card.hanzi, card.audio);
+  };
+
+  const handleRecord = () => {
+    if (!supported || state.kind === 'listening') return;
+    setState({ kind: 'listening' });
+    onReveal();
+    const h = pronunciationRecognize({
+      expectedHanzi: card.hanzi,
+      expectedPinyin: card.pinyin,
+      timeoutMs: 8000
+    });
+    h.promise
+      .then((result) => {
+        setState({
+          kind: 'result',
+          verdict: result.verdict,
+          transcript: result.transcript
+        });
+        onSubmit?.({ wasCorrect: result.verdict !== 'mismatch' });
+      })
+      .catch((err) => {
+        const msg =
+          err && typeof err === 'object' && 'message' in err
+            ? String((err as { message: unknown }).message)
+            : 'Erreur';
+        setState({ kind: 'error', message: msg });
+      });
+  };
+
+  const handleRetry = () => {
+    setState({ kind: 'idle' });
+  };
+
+  // Fallback "skip" : si pas supporté, l'user peut valider manuellement
+  const handleSkip = (wasCorrect: boolean) => {
+    onReveal();
+    onSubmit?.({ wasCorrect });
+  };
+
+  const category = inferCategory(card, language);
+  const meaning =
+    language === 'fr' ? card.translationFr : card.translationEn ?? card.translationFr;
+
+  return (
+    <div className="fc4-pronunciation-card">
+      <div className="fc4-study-stage">
+        <div className="fc4-card-topbar">
+          <span className="fc4-card-badge">{category}</span>
+          <button
+            type="button"
+            className="fc4-card-speaker"
+            onClick={handlePlay}
+            aria-label={language === 'fr' ? 'Écouter le modèle' : 'Listen to model'}
+            title={language === 'fr' ? 'Écouter le modèle' : 'Listen to model'}
+          >
+            🔊
+          </button>
+        </div>
+        <div className="fc4-card-body fc4-pronunciation-body">
+          <div className="fc4-front-hanzi">{card.hanzi}</div>
+          <div className="fc4-front-pinyin">{card.pinyin}</div>
+          <div className="fc4-pronunciation-meaning">{meaning}</div>
+
+          {!supported && (
+            <div className="fc4-pronunciation-warning">
+              {language === 'fr'
+                ? 'Reconnaissance vocale non supportée. Utilise les boutons ci-dessous pour t\'auto-évaluer.'
+                : 'Speech recognition not supported. Use the buttons below to self-rate.'}
+              <div className="fc4-pronunciation-skip-row">
+                <button
+                  type="button"
+                  className="fc4-pronunciation-skip-btn"
+                  onClick={() => handleSkip(false)}
+                >
+                  ✗ {language === 'fr' ? 'Difficile' : 'Hard'}
+                </button>
+                <button
+                  type="button"
+                  className="fc4-pronunciation-skip-btn fc4-pronunciation-skip-btn--ok"
+                  onClick={() => handleSkip(true)}
+                >
+                  ✓ {language === 'fr' ? 'Réussi' : 'Got it'}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {supported && state.kind === 'idle' && (
+            <button
+              type="button"
+              className="fc4-pronunciation-mic"
+              onClick={handleRecord}
+              aria-label={language === 'fr' ? 'Prononcer' : 'Pronounce'}
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="8" y1="23" x2="16" y2="23" />
+              </svg>
+            </button>
+          )}
+
+          {supported && state.kind === 'listening' && (
+            <button
+              type="button"
+              className="fc4-pronunciation-mic is-listening"
+              disabled
+              aria-label="Listening"
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          )}
+
+          {supported && state.kind === 'result' && (
+            <div className={`fc4-pronunciation-result fc4-pronunciation-result--${state.verdict}`}>
+              <div className="fc4-pronunciation-verdict">
+                {state.verdict === 'match'
+                  ? language === 'fr' ? '✓ Parfait !' : '✓ Perfect!'
+                  : state.verdict === 'close'
+                    ? language === 'fr' ? '~ Presque' : '~ Almost'
+                    : language === 'fr' ? '✗ À retravailler' : '✗ Try again'}
+              </div>
+              {state.transcript && (
+                <div className="fc4-pronunciation-transcript">
+                  {language === 'fr' ? 'Entendu :' : 'Heard:'} <strong>{state.transcript}</strong>
+                </div>
+              )}
+              <button
+                type="button"
+                className="fc4-pronunciation-retry"
+                onClick={handleRetry}
+              >
+                ↻ {language === 'fr' ? 'Réessayer' : 'Retry'}
+              </button>
+            </div>
+          )}
+
+          {state.kind === 'error' && (
+            <div className="fc4-pronunciation-result fc4-pronunciation-result--mismatch">
+              <div className="fc4-pronunciation-verdict">
+                {language === 'fr' ? 'Erreur :' : 'Error:'} {state.message}
+              </div>
+              <button
+                type="button"
+                className="fc4-pronunciation-retry"
+                onClick={handleRetry}
+              >
+                ↻ {language === 'fr' ? 'Réessayer' : 'Retry'}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

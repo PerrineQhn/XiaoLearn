@@ -3161,3 +3161,148 @@
   color: var(--fc5-text-muted);
   font-size: 14px;
 }
+
+/* ===========================================================================
+   PronunciationCard (mode 'pronunciation') — gros micro + verdict auto
+   =========================================================================== */
+
+.fc4-pronunciation-card .fc4-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+.fc4-pronunciation-meaning {
+  font-size: 18px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 12px;
+}
+
+.fc4-pronunciation-mic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-red, #e05040);
+  background: var(--primary-red, #e05040);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 4px 14px rgba(224, 80, 64, 0.3);
+}
+.fc4-pronunciation-mic:hover:not(:disabled) {
+  background: var(--primary-red-hover, #c73826);
+  transform: scale(1.05);
+}
+.fc4-pronunciation-mic:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.fc4-pronunciation-mic:disabled {
+  cursor: default;
+}
+.fc4-pronunciation-mic.is-listening {
+  background: var(--primary-red, #e05040);
+  animation: fc4-pronunciation-pulse 1.4s ease-in-out infinite;
+}
+@keyframes fc4-pronunciation-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(224, 80, 64, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 18px rgba(224, 80, 64, 0);
+  }
+}
+
+.fc4-pronunciation-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-top: 16px;
+  min-width: 220px;
+  text-align: center;
+}
+.fc4-pronunciation-result--match {
+  background: #d4f4dc;
+  color: #1f6a4b;
+}
+.fc4-pronunciation-result--close {
+  background: #fef0c7;
+  color: #92500e;
+}
+.fc4-pronunciation-result--mismatch {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+}
+.fc4-pronunciation-verdict {
+  font-size: 17px;
+  font-weight: 700;
+}
+.fc4-pronunciation-transcript {
+  font-size: 14px;
+  opacity: 0.92;
+}
+.fc4-pronunciation-retry {
+  margin-top: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+.fc4-pronunciation-retry:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.fc4-pronunciation-warning {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #92400e;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  max-width: 360px;
+  margin-top: 12px;
+}
+.fc4-pronunciation-skip-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  justify-content: center;
+}
+.fc4-pronunciation-skip-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #fed7aa;
+  background: #ffffff;
+  color: #92400e;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.fc4-pronunciation-skip-btn:hover {
+  background: #fef3e2;
+}
+.fc4-pronunciation-skip-btn--ok {
+  border-color: #86efac;
+  color: #166534;
+}
+.fc4-pronunciation-skip-btn--ok:hover {
+  background: #ecfdf5;
+}

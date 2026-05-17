@@ -24,13 +24,21 @@ import type { FlashcardDirection } from './flashcard-v3';
  * Les cinq modes d'étude proposés dans l'écran V4. Chaque mode est une façon
  * différente de tester la même carte SRS.
  *
- *   - flip        : retourner la carte (comportement V3, défaut)
- *   - mcq         : 4 choix multiples
- *   - typing      : taper le pinyin (ou la traduction en mode inversé)
- *   - listening   : TTS du hanzi, l'utilisateur écrit ce qu'il entend
- *   - speed       : mode chrono 60s, coché/pas-coché sans grade détaillé
+ *   - flip          : retourner la carte (comportement V3, défaut)
+ *   - mcq           : 4 choix multiples
+ *   - typing        : taper le pinyin (ou la traduction en mode inversé)
+ *   - listening     : TTS du hanzi, l'utilisateur écrit ce qu'il entend
+ *   - speed         : mode chrono 60s, coché/pas-coché sans grade détaillé
+ *   - pronunciation : prononcer le hanzi via micro (Web Speech), grade auto
+ *                     selon le verdict (match→facile, close→bien, mismatch→difficile)
  */
-export type StudyMode = 'flip' | 'mcq' | 'typing' | 'listening' | 'speed';
+export type StudyMode =
+  | 'flip'
+  | 'mcq'
+  | 'typing'
+  | 'listening'
+  | 'speed'
+  | 'pronunciation';
 
 /** Labels bilingues courts pour les boutons mode. */
 export const STUDY_MODE_LABEL: Record<StudyMode, { fr: string; en: string }> = {
@@ -38,7 +46,8 @@ export const STUDY_MODE_LABEL: Record<StudyMode, { fr: string; en: string }> = {
   mcq: { fr: 'QCM', en: 'Quiz' },
   typing: { fr: 'Saisie', en: 'Typing' },
   listening: { fr: 'Écoute', en: 'Listening' },
-  speed: { fr: 'Speed 60s', en: 'Speed 60s' }
+  speed: { fr: 'Speed 60s', en: 'Speed 60s' },
+  pronunciation: { fr: 'Prononcer', en: 'Pronounce' }
 };
 
 // ============================================================================
