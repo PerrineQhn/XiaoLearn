@@ -1,0 +1,101 @@
+/*
+ * ErrorBoundary.css — UI de fallback quand un sous-composant crash.
+ * Aligné palette XiaoLearn (rouge logo).
+ */
+
+.xl-error-boundary {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--primary-red-light, #fae0dc);
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: inherit;
+  color: var(--text-primary, #1f2233);
+}
+
+.xl-error-boundary-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.xl-error-boundary h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.xl-error-boundary p {
+  margin: 0;
+  max-width: 480px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-secondary, #6b7280);
+}
+
+.xl-error-boundary-actions {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.xl-error-boundary-btn {
+  background: var(--bg-primary, #ffffff);
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text-primary, #1f2233);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.xl-error-boundary-btn:hover {
+  background: #faf6ed;
+  border-color: var(--primary-red, #e05040);
+}
+.xl-error-boundary-btn:active {
+  transform: scale(0.97);
+}
+.xl-error-boundary-btn--primary {
+  background: var(--primary-red, #e05040);
+  border-color: var(--primary-red, #e05040);
+  color: #ffffff;
+}
+.xl-error-boundary-btn--primary:hover {
+  background: var(--primary-red-hover, #c73826);
+  border-color: var(--primary-red-hover, #c73826);
+}
+
+.xl-error-boundary-details {
+  width: 100%;
+  margin-top: 16px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+.xl-error-boundary-details summary {
+  cursor: pointer;
+  padding: 6px 0;
+  user-select: none;
+}
+.xl-error-boundary-details pre {
+  margin: 8px 0 0;
+  padding: 12px;
+  background: #faf6ed;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Monaco, Menlo, monospace;
+  font-size: 11.5px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow: auto;
+}

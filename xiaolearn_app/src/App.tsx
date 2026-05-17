@@ -13,6 +13,7 @@ import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './page
 // pour référence mais n'est plus utilisé.
 import GrammarPageV3 from './pages/GrammarPageV3';
 import AtelierPage from './pages/AtelierPage';
+import ErrorBoundary from './components/ErrorBoundary';
 import MyErrorsPage from './pages/MyErrorsPage';
 import { useErrorJournal } from './hooks/useErrorJournal';
 import EvaluationHubPage from './pages/EvaluationHubPage';
@@ -2491,7 +2492,18 @@ function App() {
           s'étendre sur toute la largeur du viewport, par-dessus la sidebar
           aussi (cf. JSX ci-dessus + .app-container grid-template-areas). */}
       <main className="main-content">
-        {content}
+        {/* ErrorBoundary contextualisée par view : un crash dans Prof. Xiao,
+            HanziWriter, etc., ne casse plus toute l'app — l'utilisateur peut
+            cliquer "Retour au tableau de bord" pour s'échapper. La resetKey
+            assure que la boundary se reset automatiquement à chaque
+            changement de view (sinon l'erreur resterait sticky). */}
+        <ErrorBoundary
+          resetKey={view}
+          language={language === 'en' ? 'en' : 'fr'}
+          onReset={() => setView('home')}
+        >
+          {content}
+        </ErrorBoundary>
       </main>
 
       {/* Toasts transients en bas-droite — flashent à chaque push() */}
