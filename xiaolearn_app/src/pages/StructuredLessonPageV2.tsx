@@ -30,6 +30,7 @@ import type {
   LessonV2MinimalPair
 } from '../types/lesson-learn';
 import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
+import PronunciationCheck from '../components/PronunciationCheck';
 
 export type { LessonV2LearnItem, LessonV2MinimalPair, LessonV2LearnSection };
 
@@ -570,6 +571,11 @@ const ExampleRow = ({
       >
         🔊
       </button>
+      <PronunciationCheck
+        hanzi={example.hanzi}
+        pinyin={example.pinyin}
+        size={32}
+      />
     </div>
   );
 };
@@ -605,6 +611,11 @@ const LearnItemRow = ({
       >
         🔊
       </button>
+      <PronunciationCheck
+        hanzi={item.hanzi}
+        pinyin={item.pinyin}
+        size={32}
+      />
     </div>
   );
 };

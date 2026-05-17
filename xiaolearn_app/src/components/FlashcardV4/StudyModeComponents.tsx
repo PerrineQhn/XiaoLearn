@@ -25,6 +25,7 @@ import type { MouseEvent as ReactMouseEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
 import { playHanziAudio, preloadHanziAudio } from '../../utils/audio';
+import PronunciationCheck from '../PronunciationCheck';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -198,6 +199,19 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
             >
               🔊
             </button>
+            {/* PronunciationCheck wrapped pour ne pas bubble vers handleReveal
+                (qui flippe la carte au click). */}
+            <span
+              onClick={(e) => e.stopPropagation()}
+              style={{ display: 'inline-flex' }}
+            >
+              <PronunciationCheck
+                hanzi={card.hanzi}
+                pinyin={card.pinyin}
+                size={32}
+                showFeedback={false}
+              />
+            </span>
           </div>
           <div className="fc4-card-body">
             {frontFr ? (
@@ -233,6 +247,17 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
             >
               🔊
             </button>
+            <span
+              onClick={(e) => e.stopPropagation()}
+              style={{ display: 'inline-flex' }}
+            >
+              <PronunciationCheck
+                hanzi={card.hanzi}
+                pinyin={card.pinyin}
+                size={32}
+                showFeedback={false}
+              />
+            </span>
           </div>
           <div className="fc4-card-body">
             <div className="fc4-back-meaning">{backMain}</div>
