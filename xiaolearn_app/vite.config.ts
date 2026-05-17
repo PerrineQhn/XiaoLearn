@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 const GEMINI_PROXY_PATH = '/api/gemini-proxy';
 const YT_CAPTIONS_PROXY_PATH = '/api/yt-captions';
@@ -243,7 +244,113 @@ export default defineConfig(({ mode }) => {
   return {
     // Utiliser '/' pour domaine personnalisé, '/XiaoLearn/' pour GitHub Pages sans domaine
     base: useCustomDomain === 'true' ? '/' : '/XiaoLearn/',
-    plugins: [react(), createGeminiProxyPlugin(geminiServerKey), createYtCaptionsProxyPlugin()],
+    plugins: [
+      react(),
+      createGeminiProxyPlugin(geminiServerKey),
+      createYtCaptionsProxyPlugin(),
+      VitePWA({
+        // Le service worker remplace automatiquement le précédent (skipWaiting)
+        // → l'utilisateur a toujours la dernière version sans devoir vider son
+        // cache à la main.
+        registerType: 'autoUpdate',
+        // Notre manifest est servi en /manifest.webmanifest (cf. index.html).
+        // Le plugin va le réécrire en y injectant les icônes générées + les
+        // overrides de configuration ci-dessous.
+        manifestFilename: 'manifest.webmanifest',
+        includeAssets: [
+          'logos/logo_court.png',
+          'logos/logo_long.png',
+          'profs/professeur_xiao_profil.png'
+        ],
+        manifest: {
+          name: 'XiaoLearn — Apprendre le chinois',
+          short_name: 'XiaoLearn',
+          description:
+            "Apprendre le mandarin du A1 jusqu'au courant : leçons structurées, flashcards, prononciation et écriture des hanzi.",
+          theme_color: '#E05040',
+          background_color: '#fffaf3',
+          display: 'standalone',
+          orientation: 'portrait',
+          scope: '/',
+          start_url: '/',
+          lang: 'fr',
+          icons: [
+            {
+              src: '/logos/logo_court.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'any'
+            },
+            {
+              src: '/logos/logo_court.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'any'
+            },
+            {
+              src: '/logos/logo_court.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'maskable'
+            }
+          ]
+        },
+        workbox: {
+          // Précache l'app shell + assets critiques au build.
+          globPatterns: ['**/*.{js,css,html,svg,woff2}'],
+          // Plafond par fichier à 10 Mo pour éviter de précacher d'énormes
+          // JSON HSK qui sont déjà chunkés à la demande.
+          maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+          runtimeCaching: [
+            // 1. Logos et icônes : cache-first (rarement mis à jour, gros gain).
+            {
+              urlPattern: /\/(logos|icons|profs)\/[^/]+\.(png|svg|jpg|webp)$/,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'xl-static-images',
+                expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 }
+              }
+            },
+            // 2. Audios MP3/WAV : cache-first sur l'origin (Cloudflare R2).
+            //    Important pour pouvoir réviser hors-ligne.
+            {
+              urlPattern: /\.(mp3|wav|ogg)$/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'xl-audio',
+                expiration: { maxEntries: 500, maxAgeSeconds: 60 * 24 * 60 * 60 }
+              }
+            },
+            // 3. JSON HSK : stale-while-revalidate (rapide ET à jour si possible)
+            {
+              urlPattern: /\/(data|hsk)\/.*\.json$/,
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'xl-data-json',
+                expiration: { maxEntries: 100, maxAgeSeconds: 14 * 24 * 60 * 60 }
+              }
+            },
+            // 4. Hanzi Writer character data (CDN externe). On laisse le CDN
+            //    gérer son cache HTTP, on stocke juste pour offline.
+            {
+              urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/npm\/hanzi-writer-data/,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'xl-hanzi-writer-data',
+                expiration: { maxEntries: 2000, maxAgeSeconds: 90 * 24 * 60 * 60 }
+              }
+            }
+          ],
+          // Skip le précache des très gros fichiers HSK7 pour ne pas exploser
+          // les budgets de cache lors du premier load (chargés à la demande).
+          globIgnores: ['**/data/hsk7*.{js,json}', '**/data-hsk7-*.{js,json}']
+        },
+        // Désactive le SW en dev pour éviter de cacher du code à hot-reload.
+        devOptions: {
+          enabled: false
+        }
+      })
+    ],
     server: {
       port: 5173
     },
