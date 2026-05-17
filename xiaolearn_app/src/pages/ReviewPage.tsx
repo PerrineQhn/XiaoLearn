@@ -6,7 +6,10 @@ import { getLessonTranslation } from '../utils/lesson';
 import ReviewSrsSession, { type ReviewRating } from '../components/review/ReviewSrsSession';
 import QuizPage from './QuizPage';
 import DictationGamePage from './DictationGamePage';
-import HandwritingPractice from '../components/HandwritingPractice';
+// HandwritingPractice (canvas libre sans validation) remplacé par
+// HandwritingDrill qui s'appuie sur Hanzi Writer (ordre des traits +
+// validation automatique).
+import HandwritingDrill from '../components/HandwritingDrill';
 import type { useQuizEngine } from '../hooks/useQuizEngine';
 import LevelBadge from '../components/LevelBadge';
 import type { CustomList } from '../hooks/useCustomLists';
@@ -209,14 +212,9 @@ const ReviewPage = ({ reviewItems, totals, copy, language, quiz, customLists, li
     }
 
     if (mode === 'handwriting') {
-      const handwritingCharacters = itemsToReview.map((item) => ({
-        id: item.id,
-        chinese: item.hanzi,
-        pinyin: item.pinyin,
-        french: getLessonTranslation(item, 'fr'),
-        english: getLessonTranslation(item, 'en')
-      }));
-
+      // Drill basé sur Hanzi Writer : ordre des traits validé automatiquement,
+      // un caractère à la fois avec score final. Plus pédagogique que l'ancien
+      // canvas libre sans correction.
       return (
         <div className="review-mode-wrapper">
           <div className="review-mode-toolbar">
@@ -224,9 +222,9 @@ const ReviewPage = ({ reviewItems, totals, copy, language, quiz, customLists, li
               ← {language === 'fr' ? 'Retour aux révisions' : 'Back to Review'}
             </button>
           </div>
-          <HandwritingPractice
-            language={language}
-            characters={handwritingCharacters}
+          <HandwritingDrill
+            hanzis={itemsToReview.map((item) => item.hanzi)}
+            language={language === 'en' ? 'en' : 'fr'}
             onComplete={() => setMode('overview')}
           />
         </div>

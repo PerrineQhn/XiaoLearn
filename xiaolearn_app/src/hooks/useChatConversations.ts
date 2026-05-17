@@ -55,6 +55,24 @@ const QUICK_CHAT_TITLE: Record<'fr' | 'en', string> = {
   en: 'Quick chat'
 };
 
+/**
+ * Strip défensif des blocs <<<CORRECTIONS>>>...<<<END>>> que Gemini
+ * insère dans ses réponses. Ils sont parsés et retirés à la volée par
+ * geminiService.parseCorrectionsBlock côté écriture, mais les anciens
+ * messages stockés avant l'introduction de ce parsing peuvent encore les
+ * contenir — on nettoie au load pour ne plus jamais les afficher.
+ */
+const CORRECTIONS_RE = /<<<CORRECTIONS>>>[\s\S]*?<<<END>>>/g;
+const sanitizeMessage = (m: ChatMessage): ChatMessage => {
+  if (m.role !== 'assistant') return m;
+  const cleaned = m.content.replace(CORRECTIONS_RE, '').trim();
+  return cleaned === m.content ? m : { ...m, content: cleaned };
+};
+const sanitizeConv = (c: ChatConversation): ChatConversation => ({
+  ...c,
+  messages: c.messages.map(sanitizeMessage)
+});
+
 const loadFromStorage = (): ChatConversation[] => {
   if (typeof window === 'undefined') return [];
   try {
@@ -62,7 +80,7 @@ const loadFromStorage = (): ChatConversation[] => {
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
-    return parsed as ChatConversation[];
+    return (parsed as ChatConversation[]).map(sanitizeConv);
   } catch {
     return [];
   }
@@ -117,7 +135,9 @@ export const useChatConversations = (): UseChatConversationsReturn => {
   // `onUpdate` est appelé quand le cloud a une version plus récente que local.
   const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
     if (Array.isArray(data)) {
-      setConversations(data as ChatConversation[]);
+      // Strip défensif au cas où le cloud contient encore d'anciens messages
+      // pré-fix-CORRECTIONS (même logique qu'au load localStorage).
+      setConversations((data as ChatConversation[]).map(sanitizeConv));
     }
   });
 
