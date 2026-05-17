@@ -5387,60 +5387,13 @@ select:focus {
   --sidebar-bg: linear-gradient(180deg, rgba(255, 244, 240, 0.95), rgba(254, 228, 210, 0.9));
 }
 
-[data-theme="jade-green"] {
-  --primary-red: #2F9D8A;
-  --primary-red-hover: #258372;
-  --primary-red-light: #E3F5F2;
-  --jade-green: #D8483E;
-  --gold-accent: #F4A261;
-  --welcome-gradient: linear-gradient(135deg, rgba(47, 157, 138, 0.95), rgba(244, 162, 97, 0.75));
-  --body-bg: linear-gradient(135deg, #f0fff5 0%, #daf5eb 100%);
-  --sidebar-bg: linear-gradient(180deg, rgba(227, 245, 242, 0.95), rgba(210, 235, 226, 0.9));
-}
-
-[data-theme="royal-purple"] {
-  --primary-red: #8B5CF6;
-  --primary-red-hover: #7C3AED;
-  --primary-red-light: #EDE9FE;
-  --jade-green: #EC4899;
-  --gold-accent: #F59E0B;
-  --welcome-gradient: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(236, 72, 153, 0.7));
-  --body-bg: linear-gradient(135deg, #f7f4ff 0%, #fce7f3 100%);
-  --sidebar-bg: linear-gradient(180deg, rgba(245, 240, 255, 0.95), rgba(250, 235, 248, 0.9));
-}
-
-[data-theme="ocean-blue"] {
-  --primary-red: #3B82F6;
-  --primary-red-hover: #2563EB;
-  --primary-red-light: #DBEAFE;
-  --jade-green: #06B6D4;
-  --gold-accent: #10B981;
-  --welcome-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(14, 165, 233, 0.7));
-  --body-bg: linear-gradient(135deg, #e0f2fe 0%, #d1fae5 100%);
-  --sidebar-bg: linear-gradient(180deg, rgba(222, 239, 254, 0.95), rgba(209, 250, 229, 0.9));
-}
-
-[data-theme="sunset-orange"] {
-  --primary-red: #F97316;
-  --primary-red-hover: #EA580C;
-  --primary-red-light: #FFEDD5;
-  --jade-green: #EF4444;
-  --gold-accent: #FBBF24;
-  --welcome-gradient: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(251, 191, 36, 0.7));
-  --body-bg: linear-gradient(135deg, #fff7ed 0%, #fff0da 100%);
-  --sidebar-bg: linear-gradient(180deg, rgba(255, 240, 221, 0.95), rgba(255, 228, 203, 0.9));
-}
-
-[data-theme="sakura-pink"] {
-  --primary-red: #EC4899;
-  --primary-red-hover: #DB2777;
-  --primary-red-light: #FCE7F3;
-  --jade-green: #F472B6;
-  --gold-accent: #FDE047;
-  --welcome-gradient: linear-gradient(135deg, rgba(236, 72, 153, 0.95), rgba(253, 224, 71, 0.55));
-  --body-bg: linear-gradient(135deg, #fff0f6 0%, #fdeff5 100%);
-  --sidebar-bg: linear-gradient(180deg, rgba(255, 235, 245, 0.95), rgba(252, 226, 242, 0.9));
-}
+/*
+ * Anciens thèmes (jade-green, royal-purple, ocean-blue, sunset-orange,
+ * sakura-pink) RETIRÉS. La palette XiaoLearn est désormais figée sur le
+ * rouge logo (voir [data-theme="asian-red"] ci-dessus). Le state colorTheme
+ * dans App.tsx reste pour des raisons de compat mais ne change plus
+ * visuellement la palette.
+ */
 
 /* ===== Handwriting Practice ===== */
 .handwriting-practice {
