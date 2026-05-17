@@ -61,14 +61,16 @@ const QUICK_CHAT_TITLE: Record<'fr' | 'en', string> = {
  * geminiService.parseCorrectionsBlock côté écriture, mais les anciens
  * messages stockés avant l'introduction de ce parsing peuvent encore les
  * contenir — on nettoie au load pour ne plus jamais les afficher.
+ *
+ * Exportés pour testabilité (cf. __tests__/useChatConversations.test.ts).
  */
 const CORRECTIONS_RE = /<<<CORRECTIONS>>>[\s\S]*?<<<END>>>/g;
-const sanitizeMessage = (m: ChatMessage): ChatMessage => {
+export const sanitizeMessage = (m: ChatMessage): ChatMessage => {
   if (m.role !== 'assistant') return m;
   const cleaned = m.content.replace(CORRECTIONS_RE, '').trim();
   return cleaned === m.content ? m : { ...m, content: cleaned };
 };
-const sanitizeConv = (c: ChatConversation): ChatConversation => ({
+export const sanitizeConv = (c: ChatConversation): ChatConversation => ({
   ...c,
   messages: c.messages.map(sanitizeMessage)
 });

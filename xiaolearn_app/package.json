@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "prebuild": "node scripts/prune-cloudflare-assets.mjs && npm run build:chunks",
     "build": "tsc && vite build",
     "build:chunks": "node scripts/split-hors-hsk.mjs",
@@ -50,6 +52,7 @@
     "papaparse": "^5.4.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
-    "vite-plugin-pwa": "^0.20.5"
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.8"
   }
 }

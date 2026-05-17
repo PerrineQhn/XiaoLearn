@@ -18,5 +18,10 @@
     "types": ["vite/client"]
   },
   "include": ["src", "scripts", "data", "public"],
+  "exclude": [
+    "src/**/__tests__/**",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ],
   "references": []
 }
