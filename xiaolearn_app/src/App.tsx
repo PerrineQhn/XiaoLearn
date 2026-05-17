@@ -2326,6 +2326,7 @@ function App() {
                 key={entry.id}
                 type="button"
                 className={`nav-item ${entry.id === view ? 'active' : ''}`}
+                title={sidebarCollapsed ? entry.label : undefined}
                 onClick={() => setView(entry.id)}
               >
                 <span className="nav-icon">
@@ -2362,6 +2363,7 @@ function App() {
                 key={entry.id}
                 type="button"
                 className={`nav-item ${entry.id === view ? 'active' : ''}`}
+                title={sidebarCollapsed ? entry.label : undefined}
                 onClick={() => {
                   // Marque les annonces comme lues dès que l'utilisateur entre
                   // sur la page Annonces (l'icône cloche reste séparée).
@@ -2405,6 +2407,7 @@ function App() {
                 key={entry.id}
                 type="button"
                 className={`nav-item ${entry.id === view ? 'active' : ''}`}
+                title={sidebarCollapsed ? entry.label : undefined}
                 onClick={() => setView(entry.id)}
               >
                 <span className="nav-icon">
@@ -2432,6 +2435,7 @@ function App() {
               key={entry.id}
               type="button"
               className={`nav-item ${entry.id === view ? 'active' : ''}`}
+                title={sidebarCollapsed ? entry.label : undefined}
               onClick={() => setView(entry.id)}
             >
               <span className="nav-icon">
