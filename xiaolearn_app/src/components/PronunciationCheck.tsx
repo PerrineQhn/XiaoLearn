@@ -144,26 +144,50 @@ const PronunciationCheck = ({
   const buttonLabel = ariaLabel ?? 'Tester ma prononciation';
   const disabled = !supported;
   const isListening = state.kind === 'listening';
+  const hasError = state.kind === 'error';
 
   const verdictClass =
     state.kind === 'result' ? `pron-check--${state.result.verdict}` : '';
+
+  // Tooltip dynamique selon l'état pour que le user comprenne ce que le bouton
+  // signale, même quand showFeedback=false (cas flashcards).
+  const dynamicTitle = (() => {
+    if (disabled) return 'Reconnaissance vocale non supportée par ce navigateur';
+    if (isListening) return 'Cliquer pour annuler';
+    if (state.kind === 'result') {
+      switch (state.result.verdict) {
+        case 'match':
+          return `✓ Parfait — clique pour réessayer`;
+        case 'close':
+          return `~ Presque (entendu : "${state.result.transcript || '?'}") — clique pour réessayer`;
+        case 'mismatch':
+          return `✗ Pas tout à fait (entendu : "${state.result.transcript || '?'}") — clique pour réessayer`;
+      }
+    }
+    if (state.kind === 'error') {
+      return `Erreur : ${state.message} — clique pour réessayer`;
+    }
+    return buttonLabel;
+  })();
+
+  // Si on a un résultat ou une erreur, le prochain click relance directement
+  // un nouvel essai (au lieu de juste reset). Plus rapide pour le user.
+  const handleButtonClick = () => {
+    if (isListening) {
+      handleCancel();
+    } else {
+      handleStart();
+    }
+  };
 
   return (
     <div className={`pron-check ${verdictClass} ${className ?? ''}`.trim()}>
       <button
         type="button"
-        className={`pron-check-btn ${isListening ? 'is-listening' : ''}`}
-        onClick={isListening ? handleCancel : handleStart}
-        aria-label={
-          isListening ? "Annuler l'écoute" : buttonLabel
-        }
-        title={
-          disabled
-            ? 'Reconnaissance vocale non supportée par ce navigateur'
-            : isListening
-              ? 'Cliquer pour annuler'
-              : buttonLabel
-        }
+        className={`pron-check-btn ${isListening ? 'is-listening' : ''} ${hasError ? 'has-error' : ''}`.trim()}
+        onClick={handleButtonClick}
+        aria-label={isListening ? "Annuler l'écoute" : dynamicTitle}
+        title={dynamicTitle}
         disabled={disabled}
         style={{ width: size, height: size }}
       >

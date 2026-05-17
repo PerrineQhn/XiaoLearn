@@ -107,6 +107,49 @@
   color: var(--primary-red, #e05040);
 }
 
+/* ----------------------------------------------------------------------------
+   Verdict aussi visible sur le BOUTON lui-même — critique quand le composant
+   est utilisé avec showFeedback={false} (ex: dans les flashcards). Sans ça,
+   l'utilisateur n'avait aucun indice visuel sur sa prononciation après l'arrêt
+   de l'animation pulse.
+   -------------------------------------------------------------------------- */
+.pron-check--match .pron-check-btn {
+  border-color: #1f6a4b;
+  color: #1f6a4b;
+  background: #d4f4dc;
+}
+.pron-check--match .pron-check-btn:hover:not(:disabled) {
+  background: #b8eac4;
+  border-color: #1f6a4b;
+}
+
+.pron-check--close .pron-check-btn {
+  border-color: #92500e;
+  color: #92500e;
+  background: #fef0c7;
+}
+.pron-check--close .pron-check-btn:hover:not(:disabled) {
+  background: #fde4a3;
+  border-color: #92500e;
+}
+
+.pron-check--mismatch .pron-check-btn {
+  border-color: var(--primary-red, #e05040);
+  color: var(--primary-red, #e05040);
+  background: var(--primary-red-light, #fae0dc);
+}
+.pron-check--mismatch .pron-check-btn:hover:not(:disabled) {
+  background: #f7c5be;
+  border-color: var(--primary-red, #e05040);
+}
+
+/* Erreur (permission refusée, timeout, etc.) : bouton rouge + bordure */
+.pron-check-btn.has-error {
+  border-color: var(--primary-red, #e05040);
+  color: var(--primary-red, #e05040);
+  background: var(--primary-red-light, #fae0dc);
+}
+
 .pron-check-error {
   color: var(--primary-red, #e05040) !important;
   font-size: 12.5px;
