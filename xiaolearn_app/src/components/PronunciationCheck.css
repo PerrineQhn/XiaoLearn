@@ -1,0 +1,115 @@
+/*
+ * PronunciationCheck.css — bouton micro + feedback de prononciation.
+ * Aligné palette XiaoLearn (rouge logo + crème).
+ */
+
+.pron-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.pron-check-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 50%;
+  background: var(--bg-primary, #ffffff);
+  color: var(--primary-red, #e05040);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease,
+    box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+.pron-check-btn:hover:not(:disabled) {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.pron-check-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+.pron-check-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Pendant l'écoute : pulse rouge + couleur inversée */
+.pron-check-btn.is-listening {
+  background: var(--primary-red, #e05040);
+  color: #fff;
+  border-color: var(--primary-red, #e05040);
+  animation: pron-check-pulse 1.4s ease-in-out infinite;
+}
+@keyframes pron-check-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(224, 80, 64, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(224, 80, 64, 0);
+  }
+}
+
+/* ----- Texte de statut à côté du bouton ----------------------------------- */
+.pron-check-status {
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.pron-check-status:focus-visible {
+  outline: 2px solid var(--primary-red, #e05040);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.pron-check-verdict {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Verdicts colorés sur le badge */
+.pron-check--match .pron-check-verdict {
+  background: #d4f4dc;
+  color: #1f6a4b;
+}
+.pron-check--match .pron-check-status {
+  color: #1f6a4b;
+  font-weight: 600;
+}
+
+.pron-check--close .pron-check-verdict {
+  background: #fef0c7;
+  color: #92500e;
+}
+.pron-check--close .pron-check-status {
+  color: #92500e;
+}
+
+.pron-check--mismatch .pron-check-verdict {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+}
+.pron-check--mismatch .pron-check-status {
+  color: var(--primary-red, #e05040);
+}
+
+.pron-check-error {
+  color: var(--primary-red, #e05040) !important;
+  font-size: 12.5px;
+  max-width: 260px;
+  line-height: 1.35;
+}
