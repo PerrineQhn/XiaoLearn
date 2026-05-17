@@ -12,6 +12,7 @@ import AiTutorPageV2, { type AiTutorV2Message, type AiTutorV2Mode } from './page
 // avec niveaux CECR, audio, mini-quiz). L'ancien fichier reste dans le repo
 // pour référence mais n'est plus utilisé.
 import GrammarPageV3 from './pages/GrammarPageV3';
+import AtelierPage from './pages/AtelierPage';
 import MyErrorsPage from './pages/MyErrorsPage';
 import { useErrorJournal } from './hooks/useErrorJournal';
 import EvaluationHubPage from './pages/EvaluationHubPage';
@@ -152,6 +153,9 @@ export type View =
   | 'tutor'
   | 'drills'
   | 'evaluation'
+  // Atelier libre : entraînement prononciation + écriture sur la source
+  // de son choix (flashcards perso ou liste libre)
+  | 'atelier'
   // Phase 1B IA — correcteur d'écriture (Gemini structuré)
   | 'writing-corrector'
   // Phase 2 IA — partenaire de conversation (Gemini joue un rôle, scénarios)
@@ -1333,6 +1337,7 @@ function App() {
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
+        { id: 'atelier', label: language === 'fr' ? 'Atelier' : 'Practice', iconSlug: 'today', fallback: '🎓', icon: 'audio-en-langue-etrangere.png' },
         {
           id: 'errors',
           label: language === 'fr' ? 'Mes erreurs' : 'My errors',
@@ -1872,6 +1877,14 @@ function App() {
         <EvaluationHubPage
           language={language}
           userDisplayName={user?.displayName ?? undefined}
+        />
+      );
+      break;
+    case 'atelier':
+      content = (
+        <AtelierPage
+          language={language}
+          personalFlashcards={personalFlashcards.cards}
         />
       );
       break;

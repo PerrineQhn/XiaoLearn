@@ -3339,3 +3339,64 @@
   font-style: italic;
   color: var(--text-secondary, #6b7280);
 }
+
+/* Stepper visuel des caractères du mot pour les cartes multi-hanzi */
+.fc4-writing-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 6px;
+}
+.fc4-writing-step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f1efe8;
+  color: #888;
+  border: 1.5px solid #d3d1c7;
+}
+.fc4-writing-step--current {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+  border-color: var(--primary-red, #e05040);
+}
+.fc4-writing-step--match {
+  background: #d4f4dc;
+  color: #1f6a4b;
+  border-color: #1f6a4b;
+}
+.fc4-writing-step--close {
+  background: #fef0c7;
+  color: #92500e;
+  border-color: #92500e;
+}
+.fc4-writing-step--mismatch {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+  border-color: var(--primary-red, #e05040);
+}
+
+.fc4-writing-next-btn {
+  margin-top: 8px;
+  background: var(--primary-red, #e05040);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+.fc4-writing-next-btn:hover {
+  background: var(--primary-red-hover, #c73826);
+}
+.fc4-writing-next-btn:active {
+  transform: scale(0.97);
+}

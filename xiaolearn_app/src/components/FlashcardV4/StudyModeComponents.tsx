@@ -886,29 +886,42 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
  *   - Affiche le pinyin + traduction (mais PAS le hanzi en gros — sinon
  *     l'exercice est trivial). Le hanzi est visible uniquement dans le pad
  *     en outline gris très clair (option Hanzi Writer).
- *   - L'utilisateur trace le hanzi sur le pad au doigt / stylet / souris.
- *   - Quand le quiz est terminé (Hanzi Writer onComplete) :
- *       totalMistakes ≤ 2  → wasCorrect: true   (≈ facile)
- *       totalMistakes ≤ 5  → wasCorrect: true   (≈ bien)
- *       totalMistakes > 5  → wasCorrect: false  (≈ difficile)
- *   - Si le caractère est composé (ex: "你好"), on prend juste le premier
- *     (Hanzi Writer ne gère qu'un caractère à la fois). Une amélioration
- *     future serait d'enchaîner sur tous les caractères du mot.
+ *   - L'utilisateur trace chaque caractère du mot l'un après l'autre.
+ *     Pour 你好 : on drille 你 puis 好, avec un mini stepper visible.
+ *   - Verdict global = agrégat des verdicts par caractère :
+ *       au moins un mismatch → wasCorrect: false
+ *       sinon → wasCorrect: true
+ *     La SRS est mise à jour une seule fois à la fin du dernier caractère.
  */
 export function WritingCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+  const chars = Array.from(card.hanzi.trim()).filter((c) => /[一-鿿]/.test(c));
+  const [charIndex, setCharIndex] = useState(0);
+  const [verdicts, setVerdicts] = useState<HanziWriterQuizStats['verdict'][]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const targetChar = Array.from(card.hanzi.trim())[0] ?? '';
-  const isCompound = Array.from(card.hanzi.trim()).length > 1;
 
   useEffect(() => {
+    setCharIndex(0);
+    setVerdicts([]);
     setSubmitted(false);
   }, [card.id]);
 
   const handleComplete = (stats: HanziWriterQuizStats) => {
     if (submitted) return;
-    setSubmitted(true);
-    onReveal();
-    onSubmit?.({ wasCorrect: stats.verdict !== 'mismatch' });
+    const nextVerdicts = [...verdicts, stats.verdict];
+    setVerdicts(nextVerdicts);
+
+    const isLast = charIndex + 1 >= chars.length;
+    if (isLast) {
+      // Agrégat final : si au moins un mismatch, on note "difficile".
+      const hasMismatch = nextVerdicts.some((v) => v === 'mismatch');
+      setSubmitted(true);
+      onReveal();
+      onSubmit?.({ wasCorrect: !hasMismatch });
+    }
+  };
+
+  const handleNext = () => {
+    if (charIndex + 1 < chars.length) setCharIndex(charIndex + 1);
   };
 
   const playAudio = () => {
@@ -918,6 +931,26 @@ export function WritingCard({ card, language, onReveal, onSubmit }: StudyModePro
   const category = inferCategory(card, language);
   const meaning =
     language === 'fr' ? card.translationFr : card.translationEn ?? card.translationFr;
+
+  // Cas dégénéré : pas de hanzi dans la carte
+  if (chars.length === 0) {
+    return (
+      <div className="fc4-writing-card">
+        <div className="fc4-study-stage">
+          <div className="fc4-card-body">
+            {language === 'fr'
+              ? 'Aucun hanzi à écrire pour cette carte.'
+              : 'No hanzi to write on this card.'}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const currentChar = chars[charIndex];
+  const currentVerdict = verdicts[charIndex];
+  const isMulti = chars.length > 1;
+  const showNextBtn = isMulti && currentVerdict !== undefined && charIndex + 1 < chars.length;
 
   return (
     <div className="fc4-writing-card">
@@ -935,24 +968,46 @@ export function WritingCard({ card, language, onReveal, onSubmit }: StudyModePro
           </button>
         </div>
         <div className="fc4-card-body fc4-writing-body">
-          {/* Indices : pinyin + traduction. Le hanzi est en outline dans le pad. */}
           <div className="fc4-writing-pinyin">{card.pinyin}</div>
           <div className="fc4-writing-meaning">{meaning}</div>
-          {isCompound && (
-            <p className="fc4-writing-note">
-              {language === 'fr'
-                ? `Concentre-toi sur le premier caractère : ${targetChar}`
-                : `Focus on the first character: ${targetChar}`}
-            </p>
+
+          {/* Stepper visuel des caractères du mot (verdicts colorés) */}
+          {isMulti && (
+            <div className="fc4-writing-stepper" aria-hidden>
+              {chars.map((c, i) => {
+                const v = verdicts[i];
+                const cls =
+                  i === charIndex
+                    ? 'fc4-writing-step fc4-writing-step--current'
+                    : v
+                      ? `fc4-writing-step fc4-writing-step--${v}`
+                      : 'fc4-writing-step';
+                return (
+                  <span key={i} className={cls} title={c}>
+                    {v ? (v === 'match' ? '✓' : v === 'close' ? '~' : '✗') : i + 1}
+                  </span>
+                );
+              })}
+            </div>
           )}
 
           <HanziWriterPad
-            key={card.id}
-            hanzi={targetChar}
+            key={`${card.id}-${charIndex}`}
+            hanzi={currentChar}
             size={240}
             language={language}
             onComplete={handleComplete}
           />
+
+          {showNextBtn && (
+            <button
+              type="button"
+              className="fc4-writing-next-btn"
+              onClick={handleNext}
+            >
+              {language === 'fr' ? 'Caractère suivant' : 'Next character'} →
+            </button>
+          )}
         </div>
       </div>
     </div>
