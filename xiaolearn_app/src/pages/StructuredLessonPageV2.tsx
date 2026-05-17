@@ -34,6 +34,7 @@ import PronunciationCheck from '../components/PronunciationCheck';
 import PronunciationDrill, {
   type PronunciationDrillItem
 } from '../components/PronunciationDrill';
+import HandwritingDrill from '../components/HandwritingDrill';
 
 export type { LessonV2LearnItem, LessonV2MinimalPair, LessonV2LearnSection };
 
@@ -1847,6 +1848,20 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
               }
             }
             return items;
+          })()}
+          language={language === 'en' ? 'en' : 'fr'}
+        />
+
+        {/* Drill écriture : pendant du drill prononciation. Explose les mots
+            en caractères individuels (Hanzi Writer = 1 caractère à la fois). */}
+        <HandwritingDrill
+          hanzis={(() => {
+            const arr: string[] = [];
+            for (const ex of lesson.examples) arr.push(ex.hanzi);
+            for (const section of lesson.learnSections ?? []) {
+              for (const it of section.items ?? []) arr.push(it.hanzi);
+            }
+            return arr;
           })()}
           language={language === 'en' ? 'en' : 'fr'}
         />

@@ -30,6 +30,9 @@ import {
   isPronunciationSupported as pronunciationSupported,
   recognize as pronunciationRecognize
 } from '../../services/pronunciationService';
+import HanziWriterPad, {
+  type HanziWriterQuizStats
+} from '../HanziWriterPad';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -868,6 +871,88 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
               </button>
             </div>
           )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+//  WritingCard — l'user écrit le hanzi, on grade auto
+// ============================================================================
+
+/**
+ * Mode "Écriture" :
+ *   - Affiche le pinyin + traduction (mais PAS le hanzi en gros — sinon
+ *     l'exercice est trivial). Le hanzi est visible uniquement dans le pad
+ *     en outline gris très clair (option Hanzi Writer).
+ *   - L'utilisateur trace le hanzi sur le pad au doigt / stylet / souris.
+ *   - Quand le quiz est terminé (Hanzi Writer onComplete) :
+ *       totalMistakes ≤ 2  → wasCorrect: true   (≈ facile)
+ *       totalMistakes ≤ 5  → wasCorrect: true   (≈ bien)
+ *       totalMistakes > 5  → wasCorrect: false  (≈ difficile)
+ *   - Si le caractère est composé (ex: "你好"), on prend juste le premier
+ *     (Hanzi Writer ne gère qu'un caractère à la fois). Une amélioration
+ *     future serait d'enchaîner sur tous les caractères du mot.
+ */
+export function WritingCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+  const [submitted, setSubmitted] = useState(false);
+  const targetChar = Array.from(card.hanzi.trim())[0] ?? '';
+  const isCompound = Array.from(card.hanzi.trim()).length > 1;
+
+  useEffect(() => {
+    setSubmitted(false);
+  }, [card.id]);
+
+  const handleComplete = (stats: HanziWriterQuizStats) => {
+    if (submitted) return;
+    setSubmitted(true);
+    onReveal();
+    onSubmit?.({ wasCorrect: stats.verdict !== 'mismatch' });
+  };
+
+  const playAudio = () => {
+    speakChinese(card.hanzi, card.audio);
+  };
+
+  const category = inferCategory(card, language);
+  const meaning =
+    language === 'fr' ? card.translationFr : card.translationEn ?? card.translationFr;
+
+  return (
+    <div className="fc4-writing-card">
+      <div className="fc4-study-stage">
+        <div className="fc4-card-topbar">
+          <span className="fc4-card-badge">{category}</span>
+          <button
+            type="button"
+            className="fc4-card-speaker"
+            onClick={playAudio}
+            aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
+            title={language === 'fr' ? 'Écouter' : 'Listen'}
+          >
+            🔊
+          </button>
+        </div>
+        <div className="fc4-card-body fc4-writing-body">
+          {/* Indices : pinyin + traduction. Le hanzi est en outline dans le pad. */}
+          <div className="fc4-writing-pinyin">{card.pinyin}</div>
+          <div className="fc4-writing-meaning">{meaning}</div>
+          {isCompound && (
+            <p className="fc4-writing-note">
+              {language === 'fr'
+                ? `Concentre-toi sur le premier caractère : ${targetChar}`
+                : `Focus on the first character: ${targetChar}`}
+            </p>
+          )}
+
+          <HanziWriterPad
+            key={card.id}
+            hanzi={targetChar}
+            size={240}
+            language={language}
+            onComplete={handleComplete}
+          />
         </div>
       </div>
     </div>

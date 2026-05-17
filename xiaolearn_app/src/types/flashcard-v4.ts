@@ -31,6 +31,8 @@ import type { FlashcardDirection } from './flashcard-v3';
  *   - speed         : mode chrono 60s, coché/pas-coché sans grade détaillé
  *   - pronunciation : prononcer le hanzi via micro (Web Speech), grade auto
  *                     selon le verdict (match→facile, close→bien, mismatch→difficile)
+ *   - writing       : écrire le hanzi au doigt/stylet/souris (Hanzi Writer),
+ *                     grade auto selon le nombre d'erreurs de traits
  */
 export type StudyMode =
   | 'flip'
@@ -38,7 +40,8 @@ export type StudyMode =
   | 'typing'
   | 'listening'
   | 'speed'
-  | 'pronunciation';
+  | 'pronunciation'
+  | 'writing';
 
 /** Labels bilingues courts pour les boutons mode. */
 export const STUDY_MODE_LABEL: Record<StudyMode, { fr: string; en: string }> = {
@@ -47,7 +50,8 @@ export const STUDY_MODE_LABEL: Record<StudyMode, { fr: string; en: string }> = {
   typing: { fr: 'Saisie', en: 'Typing' },
   listening: { fr: 'Écoute', en: 'Listening' },
   speed: { fr: 'Speed 60s', en: 'Speed 60s' },
-  pronunciation: { fr: 'Prononcer', en: 'Pronounce' }
+  pronunciation: { fr: 'Prononcer', en: 'Pronounce' },
+  writing: { fr: 'Écrire', en: 'Write' }
 };
 
 // ============================================================================

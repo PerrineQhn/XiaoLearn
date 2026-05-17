@@ -29,6 +29,7 @@ import {
   TypingCard,
   ListeningCard,
   PronunciationCard,
+  WritingCard,
   type StudyCard
 } from './StudyModeComponents';
 
@@ -232,6 +233,8 @@ export function SessionView({
         return <ListeningCard key={card.id} {...modeProps} />;
       case 'pronunciation':
         return <PronunciationCard key={card.id} {...modeProps} />;
+      case 'writing':
+        return <WritingCard key={card.id} {...modeProps} />;
       case 'speed':
       default:
         // Le mode speed est géré par un composant distinct — ce cas ne

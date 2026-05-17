@@ -3306,3 +3306,36 @@
 .fc4-pronunciation-skip-btn--ok:hover {
   background: #ecfdf5;
 }
+
+/* ===========================================================================
+   WritingCard (mode 'writing') — pad Hanzi Writer + indices pinyin/meaning
+   =========================================================================== */
+
+.fc4-writing-card .fc4-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+}
+
+.fc4-writing-pinyin {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary, #1f2233);
+  letter-spacing: 0.02em;
+}
+
+.fc4-writing-meaning {
+  font-size: 15px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 8px;
+}
+
+.fc4-writing-note {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-secondary, #6b7280);
+}
