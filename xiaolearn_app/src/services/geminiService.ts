@@ -3,6 +3,8 @@
  * Uses the REST API endpoint for Gemini 1.5 Flash (free tier)
  */
 
+import { callLlmProxy } from './llmProxyClient';
+
 interface Message {
   role: 'user' | 'assistant';
   content: string;
@@ -232,7 +234,6 @@ export async function generateGeminiResponse(
   conversationHistory: Message[] = []
 ): Promise<string> {
   try {
-    const { callLlmProxy } = await import('./llmProxyClient');
     const { text } = await callLlmProxy({
       systemPrompt: SYSTEM_INSTRUCTION,
       history: conversationHistory.map((m) => ({
