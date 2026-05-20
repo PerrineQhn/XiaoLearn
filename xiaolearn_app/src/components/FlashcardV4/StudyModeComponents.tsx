@@ -116,6 +116,28 @@ function speakChinese(text: string, audioUrl?: string | null): void {
   });
 }
 
+/** Icône speaker (line-art) — assortie au mic de PronunciationCheck pour que
+ *  les deux boutons de la topbar aient la même identité visuelle. */
+function SpeakerIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  );
+}
+
 /** Déduit une catégorie courte pour le pill badge si aucune n'a été fournie. */
 function inferCategory(card: StudyCard, language: 'fr' | 'en'): string {
   if (card.category) return card.category;
@@ -198,27 +220,29 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
         <div className="fc4-flip-face fc4-flip-front">
           <div className="fc4-card-topbar">
             <span className="fc4-card-badge">{category}</span>
-            <button
-              type="button"
-              className="fc4-card-speaker"
-              onClick={handleSpeak}
-              aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
-            >
-              🔊
-            </button>
-            {/* PronunciationCheck wrapped pour ne pas bubble vers handleReveal
-                (qui flippe la carte au click). */}
-            <span
-              onClick={(e) => e.stopPropagation()}
-              style={{ display: 'inline-flex' }}
-            >
-              <PronunciationCheck
-                hanzi={card.hanzi}
-                pinyin={card.pinyin}
-                size={32}
-                showFeedback={false}
-              />
-            </span>
+            <div className="fc4-card-actions">
+              <button
+                type="button"
+                className="fc4-card-speaker"
+                onClick={handleSpeak}
+                aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
+              >
+                <SpeakerIcon size={20} />
+              </button>
+              {/* PronunciationCheck wrapped pour ne pas bubble vers handleReveal
+                  (qui flippe la carte au click). */}
+              <span
+                onClick={(e) => e.stopPropagation()}
+                style={{ display: 'inline-flex' }}
+              >
+                <PronunciationCheck
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  size={40}
+                  showFeedback={false}
+                />
+              </span>
+            </div>
           </div>
           <div className="fc4-card-body">
             {frontFr ? (
@@ -246,25 +270,27 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
         <div className="fc4-flip-face fc4-flip-back">
           <div className="fc4-card-topbar">
             <span className="fc4-card-badge fc4-card-badge--inverse">{category}</span>
-            <button
-              type="button"
-              className="fc4-card-speaker fc4-card-speaker--inverse"
-              onClick={handleSpeak}
-              aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
-            >
-              🔊
-            </button>
-            <span
-              onClick={(e) => e.stopPropagation()}
-              style={{ display: 'inline-flex' }}
-            >
-              <PronunciationCheck
-                hanzi={card.hanzi}
-                pinyin={card.pinyin}
-                size={32}
-                showFeedback={false}
-              />
-            </span>
+            <div className="fc4-card-actions">
+              <button
+                type="button"
+                className="fc4-card-speaker fc4-card-speaker--inverse"
+                onClick={handleSpeak}
+                aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
+              >
+                <SpeakerIcon size={20} />
+              </button>
+              <span
+                onClick={(e) => e.stopPropagation()}
+                style={{ display: 'inline-flex' }}
+              >
+                <PronunciationCheck
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  size={40}
+                  showFeedback={false}
+                />
+              </span>
+            </div>
           </div>
           <div className="fc4-card-body">
             <div className="fc4-back-meaning">{backMain}</div>
@@ -378,7 +404,7 @@ export function McqCard({ card, direction, language, onReveal, onSubmit, distrac
             onClick={handleSpeak}
             aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
           >
-            🔊
+            <SpeakerIcon size={20} />
           </button>
         </div>
         <div className="fc4-card-body">
@@ -478,7 +504,7 @@ export function TypingCard({ card, direction, language, onReveal, onSubmit }: St
             onClick={handleSpeak}
             aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
           >
-            🔊
+            <SpeakerIcon size={20} />
           </button>
         </div>
         <div className="fc4-card-body">
@@ -751,7 +777,7 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
             aria-label={language === 'fr' ? 'Écouter le modèle' : 'Listen to model'}
             title={language === 'fr' ? 'Écouter le modèle' : 'Listen to model'}
           >
-            🔊
+            <SpeakerIcon size={20} />
           </button>
         </div>
         <div className="fc4-card-body fc4-pronunciation-body">
@@ -964,7 +990,7 @@ export function WritingCard({ card, language, onReveal, onSubmit }: StudyModePro
             aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
             title={language === 'fr' ? 'Écouter' : 'Listen'}
           >
-            🔊
+            <SpeakerIcon size={20} />
           </button>
         </div>
         <div className="fc4-card-body fc4-writing-body">

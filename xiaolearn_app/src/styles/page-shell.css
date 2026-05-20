@@ -38,18 +38,18 @@
 }
 
 /* -------------------------------------------------------------------------
-   1.a. FOND CRÈME UNIFORME — Accueil / Simulateur / Prof. Xiao / Leçons /
-        FlashCards partagent désormais le même "bloc de fond" Seonsaengnim-
-        style (crème chaud #fffaf3, plein écran, coins arrondis doux).
-        C'est le seul point où Leçons + FlashCards rejoignent les autres
-        pages V2 côté visuel.
+   1.a. FOND TRANSPARENT — Accueil / Simulateur / Prof. Xiao / Leçons /
+        FlashCards laissent désormais transparaître le InteractiveGridBackground
+        (canvas avec grille rouge XiaoLearn). Le fond crème #fffaf3 est
+        toujours fourni par body + .app-container, mais ces wrappers ne le
+        recouvrent plus afin que le canvas (z-index:-1) soit visible.
    ------------------------------------------------------------------------- */
 .dashboard-v2,
 .sim-v2,
 .ai-tutor-v2,
 .fc5-root,
 .lp-page {
-  background: #fffaf3 !important;
+  background: transparent !important;
   min-height: calc(100vh - 48px);
 }
 

@@ -1,0 +1,43 @@
+/*
+ * InteractiveGridBackground.css
+ * Halo radial flou qui suit le curseur — pas de grille, juste un blob de
+ * lumière rouge XiaoLearn diffus. Animé via transform (GPU).
+ *
+ * Positionné en z-index:-1 dans le stacking context de .app-container
+ * (qui a isolation:isolate). Reste derrière le contenu, visible dans les
+ * zones de fond crème entre les cartes.
+ */
+
+.xl-cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+  z-index: -1;
+  /* Caché au repos — apparaît au premier mousemove (cf. JS). */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  /* Radial gradient : centre rouge moyen, fondu rapide vers transparent.
+     Le filter:blur adoucit encore les bords pour un effet "ambient light". */
+  background: radial-gradient(
+    circle at center,
+    rgba(224, 80, 64, 0.32) 0%,
+    rgba(224, 80, 64, 0.16) 30%,
+    rgba(224, 80, 64, 0.04) 60%,
+    rgba(224, 80, 64, 0) 80%
+  );
+  filter: blur(30px);
+  /* Hint compositing : on anime transform → couche GPU dédiée. */
+  will-change: transform, opacity;
+  /* Évite que le halo ne déclenche du reflow sur les voisins. */
+  contain: strict;
+}
+
+/* Print : pas de fond fancy à l'impression. */
+@media print {
+  .xl-cursor-glow {
+    display: none;
+  }
+}

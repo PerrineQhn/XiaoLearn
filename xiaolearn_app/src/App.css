@@ -143,6 +143,9 @@ body {
   min-height: 100vh;
   background: var(--body-bg, var(--app-bg));
   position: relative;
+  /* Crée un stacking context pour contenir le canvas z-index:-1 du
+     InteractiveGridBackground — sans ça, le canvas s'évade derrière body. */
+  isolation: isolate;
 }
 
 .app-container > .xl-app-topbar { grid-area: topbar; }

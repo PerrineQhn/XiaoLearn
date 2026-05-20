@@ -70,6 +70,7 @@ import CulturePage from './pages/CulturePage';
 import './styles/page-shell.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import AIFloatingChat from './components/AIFloatingChat';
+import InteractiveGridBackground from './components/InteractiveGridBackground';
 import LifetimeFeatureGate from './components/LifetimeFeatureGate';
 import { generateGeminiResponse, generateGeminiResponseWithCorrections } from './services/geminiService';
 import type { ErrorCategory, ErrorSeverity } from './types/error-journal';
@@ -2173,6 +2174,7 @@ function App() {
   if (!user) {
     return (
       <div className="login-page-wrapper" data-theme={colorTheme}>
+        <InteractiveGridBackground />
         <div className="login-page-content">
           <div className="login-header">
             {!logoErrored ? (
@@ -2207,6 +2209,10 @@ function App() {
 
   return (
     <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'} ${sidebarOpen ? 'sidebar-open' : ''} ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
+      {/* Background interactif : grille canvas pâle qui s'illumine en rouge
+          autour du curseur. Premier enfant pour rester derrière le reste
+          (z-index 0, sidebar/main ont z-index ≥ 1). */}
+      <InteractiveGridBackground />
       {/* Overlay sombre cliquable derrière le drawer mobile */}
       <div
         className="xl-sidebar-overlay"

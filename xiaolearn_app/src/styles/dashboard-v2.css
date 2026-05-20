@@ -25,7 +25,10 @@
 
   min-height: 100vh;
   padding: 24px clamp(16px, 3vw, 40px) 80px;
-  background: var(--dv-bg);
+  /* Transparent : on laisse le background du body + InteractiveGridBackground
+     (canvas avec grille rouge) transparaître. --dv-bg reste défini en variable
+     CSS pour les sous-éléments (cards, sections internes) qui en ont besoin. */
+  background: transparent;
   color: var(--dv-ink);
   font-family: inherit;
 }
