@@ -68,8 +68,9 @@ export const usePersonalFlashcards = (options: UsePersonalFlashcardsOptions = {}
             if (!existing) {
               byId.set(c.id, c);
             } else {
-              const localTs = (existing as { updatedAt?: number }).updatedAt ?? 0;
-              const cloudTs = (c as { updatedAt?: number }).updatedAt ?? 0;
+              // updatedAt = ISO string sur PersonalFlashcard. Compare via Date.parse.
+              const localTs = Date.parse(existing.updatedAt ?? '') || 0;
+              const cloudTs = Date.parse(c.updatedAt ?? '') || 0;
               if (cloudTs > localTs) byId.set(c.id, c);
             }
           }

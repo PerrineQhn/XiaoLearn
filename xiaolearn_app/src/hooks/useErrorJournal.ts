@@ -106,8 +106,8 @@ export const useErrorJournal = (): UseErrorJournalReturn => {
           if (!existing) {
             byId.set(e.id, e);
           } else {
-            const localOcc = existing.occurrences ?? 1;
-            const cloudOcc = e.occurrences ?? 1;
+            const localOcc = existing.occurrenceCount ?? 1;
+            const cloudOcc = e.occurrenceCount ?? 1;
             if (cloudOcc > localOcc) {
               byId.set(e.id, e);
             } else if (cloudOcc === localOcc) {
