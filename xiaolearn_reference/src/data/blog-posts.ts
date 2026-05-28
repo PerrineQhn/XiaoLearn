@@ -3176,11 +3176,457 @@ const POST_GUANXI: BlogPost = {
   ]
 };
 
+const POST_MERCI: BlogPost = {
+  slug: 'comment-dire-merci-en-chinois',
+  category: 'vocabulaire',
+  title: 'Comment dire "merci" en chinois — 谢谢, 多谢 et toutes les nuances de la gratitude',
+  lead:
+    'En Chine, dire merci ne se résume pas à 谢谢. Selon que tu remercies un proche, un serveur ou ton patron, la formule change — et entre intimes, on ne remercie parfois même pas.',
+  publishedAt: '2026-05-28',
+  readingMinutes: 10,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80',
+  heroCaption: 'Marché de Chengdu — un simple 谢谢 suffit dans 95 % des situations',
+  intro:
+    'Tu connais 谢谢 (xièxie) et tu penses avoir fait le tour ? Pas tout à fait. Le chinois distingue très finement les types de gratitude : un merci de politesse, un merci pour un service rendu, un merci pour avoir pris la peine. Et il y a un piège culturel : entre proches, remercier trop peut créer de la distance. Voici le mode d\'emploi complet.',
+  sections: [
+    {
+      title: '谢谢 — le merci universel à mémoriser en priorité',
+      blocks: [
+        { type: 'p', text: '谢谢 (xièxie) est de très loin le merci le plus utilisé. Tu peux le dire dans 95 % des situations sans risque de faux pas : au serveur qui pose ton plat, au passant qui ramasse ton écharpe, au collègue qui te tend un stylo.' },
+        { type: 'p', text: 'Note la prononciation : le deuxième 谢 se prononce au ton neutre (xie sans ton), même si la syllabe porte normalement un 4e ton. Beaucoup de débutants l\'accentuent trop, ce qui sonne théâtral.' },
+        { type: 'callout', tone: 'info', text: 'Si tu ne retiens qu\'une seule formule de cet article, c\'est celle-là — et avec une prononciation détendue.' },
+        { type: 'example', hanzi: '谢谢', pinyin: 'xièxie', translationFr: 'merci (standard)' },
+        { type: 'example', hanzi: '谢谢你', pinyin: 'xièxie nǐ', translationFr: 'merci à toi (plus personnel)' },
+        { type: 'example', hanzi: '谢谢您', pinyin: 'xièxie nín', translationFr: 'merci à vous (poli, à un aîné ou supérieur)' }
+      ]
+    },
+    {
+      title: '多谢 — un merci un peu plus chaleureux',
+      blocks: [
+        { type: 'p', text: '多谢 (duōxiè), littéralement « beaucoup-merci », est plus marqué que 谢谢 sans être cérémonieux. On l\'utilise surtout quand quelqu\'un a fait quelque chose pour toi : un service un peu plus important qu\'un simple geste.' },
+        { type: 'p', text: 'C\'est aussi très fréquent à l\'écrit, dans les messages WeChat, comme équivalent de « merci beaucoup ! » en moins ampoulé que 非常感谢.' },
+        { type: 'example', hanzi: '多谢', pinyin: 'duōxiè', translationFr: 'merci beaucoup (chaleureux, courant)' },
+        { type: 'example', hanzi: '多谢提醒', pinyin: 'duōxiè tíxǐng', translationFr: 'merci de me l\'avoir rappelé' }
+      ]
+    },
+    {
+      title: '非常感谢 — le merci formel et appuyé',
+      blocks: [
+        { type: 'p', text: '非常感谢 (fēicháng gǎnxiè), « extrêmement reconnaissant », est la version officielle du merci. Tu l\'entendras dans :' },
+        { type: 'list', items: [
+          'les emails professionnels',
+          'les discours, les remerciements publics',
+          'les situations où tu veux marquer le coup (cadeau important, aide significative)',
+          'les remerciements écrits formels'
+        ]},
+        { type: 'p', text: 'À l\'oral entre amis, ça sonnerait pompeux. Garde-le pour l\'écrit ou les situations formelles.' },
+        { type: 'example', hanzi: '非常感谢', pinyin: 'fēicháng gǎnxiè', translationFr: 'merci infiniment (formel)' },
+        { type: 'example', hanzi: '非常感谢您的帮助', pinyin: 'fēicháng gǎnxiè nín de bāngzhù', translationFr: 'merci infiniment pour votre aide' }
+      ]
+    },
+    {
+      title: '麻烦你了 — la formule qui n\'existe pas en français',
+      blocks: [
+        { type: 'p', text: '麻烦你了 (máfan nǐ le) signifie littéralement « je t\'ai causé du trouble ». C\'est un merci qui reconnaît que la personne a pris la peine de faire quelque chose pour toi — quelque chose à laquelle elle n\'était pas obligée.' },
+        { type: 'p', text: 'On l\'utilise après qu\'on t\'a aidé à porter ta valise, accompagné quelque part, ou pris du temps pour t\'expliquer une démarche. C\'est l\'un des mercis les plus utiles à retenir, parce qu\'il n\'a aucun équivalent direct en français.' },
+        { type: 'callout', tone: 'success', text: 'Astuce : dit au futur — « 麻烦你 » sans 了 — il sert à demander un service poliment. « Je vais t\'embêter mais... »' },
+        { type: 'example', hanzi: '麻烦你了', pinyin: 'máfan nǐ le', translationFr: 'désolé de t\'avoir dérangé / merci de t\'être donné cette peine' },
+        { type: 'example', hanzi: '麻烦你帮我一下', pinyin: 'máfan nǐ bāng wǒ yīxià', translationFr: 'pourrais-tu m\'aider un instant (poli) ?' }
+      ]
+    },
+    {
+      title: '辛苦了 — reconnaître l\'effort de l\'autre',
+      blocks: [
+        { type: 'p', text: '辛苦了 (xīnkǔ le), « tu as travaillé dur / tu t\'es donné(e) du mal », n\'est pas exactement un merci, mais en remplit la fonction dans beaucoup de contextes. C\'est une reconnaissance de l\'effort fourni.' },
+        { type: 'p', text: 'On le dit au livreur qui arrive après avoir grimpé 6 étages, à un collègue qui rentre tard, à son employée de ménage en partant. Au bureau, le patron le dit régulièrement à son équipe en fin de journée.' },
+        { type: 'example', hanzi: '辛苦了', pinyin: 'xīnkǔ le', translationFr: 'merci pour ton/votre travail (litt. « tu t\'es donné du mal »)' },
+        { type: 'example', hanzi: '大家辛苦了', pinyin: 'dàjiā xīnkǔ le', translationFr: 'merci à tous pour votre travail (à une équipe)' }
+      ]
+    },
+    {
+      title: '感谢 vs 谢谢 — quelle différence ?',
+      blocks: [
+        { type: 'p', text: 'Les deux verbes signifient « remercier », mais ne se construisent pas pareil :' },
+        { type: 'list', items: [
+          '谢谢 → suivi directement de la personne ou rien : 谢谢你, 谢谢老师',
+          '感谢 → plus formel, souvent dans des structures plus complètes : 感谢您的支持',
+          '感谢 implique une gratitude plus profonde ; 谢谢 reste de la politesse quotidienne'
+        ]},
+        { type: 'example', hanzi: '感谢您的支持', pinyin: 'gǎnxiè nín de zhīchí', translationFr: 'merci pour votre soutien (formel)' },
+        { type: 'example', hanzi: '我很感谢你', pinyin: 'wǒ hěn gǎnxiè nǐ', translationFr: 'je te suis très reconnaissant(e)' }
+      ]
+    },
+    {
+      title: 'Comment répondre quand on te remercie',
+      blocks: [
+        { type: 'p', text: 'En français, on dit « de rien », « je t\'en prie », « pas de quoi ». Le chinois a aussi tout un éventail :' },
+        { type: 'h3', text: '不客气 — de rien, je t\'en prie' },
+        { type: 'p', text: 'C\'est la réponse standard. Littéralement « ne sois pas poli ». S\'utilise partout, du resto au bureau.' },
+        { type: 'example', hanzi: '不客气', pinyin: 'bú kèqi', translationFr: 'de rien, je t\'en prie' },
+        { type: 'h3', text: '不用谢 — pas besoin de remercier' },
+        { type: 'p', text: 'Une variante très courante, légèrement plus chaleureuse. À utiliser sans modération.' },
+        { type: 'example', hanzi: '不用谢', pinyin: 'bú yòng xiè', translationFr: 'pas de quoi (litt. « inutile de remercier »)' },
+        { type: 'h3', text: '没事 — c\'est rien' },
+        { type: 'p', text: 'Très oral, très détendu. Entre amis ou pour minimiser un service.' },
+        { type: 'example', hanzi: '没事', pinyin: 'méi shì', translationFr: 'c\'est rien (oral, détendu)' },
+        { type: 'h3', text: '应该的 — c\'était normal' },
+        { type: 'p', text: 'Quand on te remercie pour quelque chose que tu considérais comme ton devoir. Très utilisé par les services publics ou face à un client.' },
+        { type: 'example', hanzi: '应该的', pinyin: 'yīnggāi de', translationFr: 'c\'était normal (mon devoir)' }
+      ]
+    },
+    {
+      title: 'Le piège culturel : remercier trop peut éloigner',
+      blocks: [
+        { type: 'p', text: 'Voilà LE point que les manuels passent souvent sous silence : entre proches en Chine, on remercie peu. Dire 谢谢 à un parent, un frère ou son compagnon de longue date pour un service quotidien, c\'est créer une distance.' },
+        { type: 'p', text: 'L\'idée est simple : entre nous, ce sont des évidences. Te remercier reviendrait à te traiter en étranger. Beaucoup de Français racontent leurs premières erreurs sociales sur ce point, en remerciant systématiquement leur belle-famille chinoise pour le moindre geste.' },
+        { type: 'callout', tone: 'warning', text: 'Entre proches, un sourire, un acquiescement, un « 嗯 » suffit. Garde les 谢谢 pour les vrais services rendus.' },
+        { type: 'quote', text: 'Quand j\'ai arrêté de dire merci à ma belle-mère pour chaque assiette, j\'ai senti qu\'elle se détendait. Comme si j\'étais enfin de la famille.', author: 'Camille, Française installée à Hangzhou' }
+      ]
+    },
+    {
+      title: 'Mon conseil personnel',
+      blocks: [
+        { type: 'p', text: 'Commence par maîtriser 谢谢 et 不客气, qui couvrent 90 % de tes besoins. Ajoute 麻烦你了 dès que tu peux : c\'est la formule qui te fera passer pour un francophone qui « comprend vraiment ». Et observe les Chinois autour de toi pour saisir quand ils remercient — et surtout quand ils ne le font pas.' },
+        { type: 'p', text: 'La gratitude, en chinois comme partout, est avant tout une affaire de ton, de regard et de timing. Le mot n\'est qu\'un support.' }
+      ]
+    }
+  ]
+};
+
+const POST_BU_MEI: BlogPost = {
+  slug: 'bu-ou-mei-negation-en-chinois',
+  category: 'grammaire',
+  title: '不 ou 没 — Les deux négations du chinois et comment ne plus les confondre',
+  lead:
+    'En français, « ne... pas » couvre tout. En chinois, deux mots se partagent le travail : 不 pour le présent/futur, 没 pour le passé. Mais ce n\'est qu\'une partie de l\'histoire.',
+  publishedAt: '2026-05-28',
+  readingMinutes: 11,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=80',
+  heroCaption: 'Tableau noir — 不 et 没 sont la première vraie embûche grammaticale des francophones',
+  intro:
+    'Tu écris 我不去 et ton prof corrige en 我没去. Tu écris 我没喜欢 et il te dit que c\'est faux. Pourquoi ? Parce qu\'en chinois, la négation dépend du TEMPS et du TYPE de verbe — pas seulement du sens. Voici la règle complète, avec les pièges où tombent 90 % des francophones.',
+  sections: [
+    {
+      title: 'La règle de base en une phrase',
+      blocks: [
+        { type: 'callout', tone: 'info', text: '不 (bù) → présent, futur, habitudes, états, opinions. 没 (méi) → passé, action qui n\'a pas eu lieu, négation du verbe 有.' },
+        { type: 'p', text: 'C\'est la règle qui couvre 80 % des cas. Si tu retiens uniquement celle-là, tu feras déjà beaucoup moins d\'erreurs. Mais il y a des subtilités, et notamment des cas où l\'une est impossible.' }
+      ]
+    },
+    {
+      title: '不 (bù) — la négation du présent, du futur et des états',
+      blocks: [
+        { type: 'p', text: '不 nie tout ce qui est :' },
+        { type: 'list', items: [
+          'une action au présent ou au futur : 我不去 (je n\'y vais pas / je n\'irai pas)',
+          'une habitude : 他不吃肉 (il ne mange pas de viande, en général)',
+          'une opinion ou une volonté : 我不想 (je ne veux pas)',
+          'un état ou un adjectif : 我不累 (je ne suis pas fatigué)',
+          'une capacité ou une obligation : 我不会, 我不能, 我不要'
+        ]},
+        { type: 'example', hanzi: '我不喜欢咖啡', pinyin: 'wǒ bù xǐhuan kāfēi', translationFr: 'je n\'aime pas le café' },
+        { type: 'example', hanzi: '明天我不上班', pinyin: 'míngtiān wǒ bú shàngbān', translationFr: 'demain je ne travaille pas' },
+        { type: 'example', hanzi: '他不是法国人', pinyin: 'tā bú shì fǎguórén', translationFr: 'il n\'est pas Français' },
+        { type: 'h3', text: 'Petit détail de prononciation : 不 change de ton' },
+        { type: 'p', text: 'À l\'oral, 不 se prononce normalement bù (4e ton). MAIS quand le mot qui suit est aussi au 4e ton, 不 devient bú (2e ton). Exemple : 不是 = bú shì, pas bù shì. Cette règle de sandhi tonal est obligatoire et tu l\'entendras dans tous les enregistrements natifs.' }
+      ]
+    },
+    {
+      title: '没 (méi) — la négation du passé et de 有',
+      blocks: [
+        { type: 'p', text: '没 nie principalement :' },
+        { type: 'list', items: [
+          'une action passée qui n\'a PAS eu lieu : 我没去 (je n\'y suis pas allé)',
+          'le verbe 有 (avoir / il y a) — TOUJOURS avec 没, jamais avec 不',
+          'le résultat ou l\'achèvement d\'une action : 我没吃完 (je n\'ai pas fini de manger)'
+        ]},
+        { type: 'example', hanzi: '我昨天没去学校', pinyin: 'wǒ zuótiān méi qù xuéxiào', translationFr: 'je ne suis pas allé à l\'école hier' },
+        { type: 'example', hanzi: '我没有钱', pinyin: 'wǒ méi yǒu qián', translationFr: 'je n\'ai pas d\'argent' },
+        { type: 'example', hanzi: '他还没来', pinyin: 'tā hái méi lái', translationFr: 'il n\'est pas encore arrivé' },
+        { type: 'callout', tone: 'warning', text: 'Erreur typique des francophones : ❌ 我不有钱 → ✅ 我没有钱 (ou abrégé : 我没钱).' }
+      ]
+    },
+    {
+      title: 'La règle d\'or : 有 ne se nie qu\'avec 没',
+      blocks: [
+        { type: 'p', text: 'C\'est l\'exception la plus absolue du chinois moderne : le verbe 有 (avoir / il y a) ne se nie JAMAIS avec 不. Toujours 没有, jamais 不有.' },
+        { type: 'p', text: 'Pourquoi ? Historiquement, 没 a été créé spécifiquement pour nier 有. La forme abrégée 没 utilisée pour les autres verbes au passé est venue après.' },
+        { type: 'example', hanzi: '我有时间', pinyin: 'wǒ yǒu shíjiān', translationFr: 'j\'ai du temps' },
+        { type: 'example', hanzi: '我没有时间', pinyin: 'wǒ méi yǒu shíjiān', translationFr: 'je n\'ai pas de temps (correct)' },
+        { type: 'callout', tone: 'warning', text: 'À mémoriser comme un réflexe : 有 + négation = 没有. Toujours. Sans exception.' }
+      ]
+    },
+    {
+      title: 'Le piège du verbe 是',
+      blocks: [
+        { type: 'p', text: 'Symétriquement, le verbe 是 (être) se nie TOUJOURS avec 不, même au passé. C\'est l\'exception inverse de celle de 有.' },
+        { type: 'example', hanzi: '他不是我的朋友', pinyin: 'tā bú shì wǒ de péngyou', translationFr: 'il n\'est pas mon ami' },
+        { type: 'example', hanzi: '昨天他不是一个人去的', pinyin: 'zuótiān tā bú shì yí ge rén qù de', translationFr: 'hier il n\'y est pas allé seul' },
+        { type: 'p', text: 'Même quand l\'action est au passé, on garde 不是. La négation porte sur l\'identité, pas sur le déroulement d\'une action.' }
+      ]
+    },
+    {
+      title: 'Au passé : 不 et 没 changent le sens',
+      blocks: [
+        { type: 'p', text: 'Petite finesse essentielle : on PEUT mettre 不 devant une action passée, mais ça change le sens. Compare :' },
+        { type: 'list', items: [
+          '我昨天没去 — je n\'y suis pas allé hier (= action qui n\'a simplement pas eu lieu)',
+          '我昨天不去 — je refusais d\'y aller hier (= volonté de ne pas y aller, à un moment donné dans le passé)'
+        ]},
+        { type: 'p', text: '不 dans le passé exprime donc une décision, un refus, une intention. 没 exprime juste l\'absence de l\'action. Cette nuance peut transformer toute une histoire.' },
+        { type: 'example', hanzi: '他不来', pinyin: 'tā bù lái', translationFr: 'il ne vient pas / refuse de venir' },
+        { type: 'example', hanzi: '他没来', pinyin: 'tā méi lái', translationFr: 'il n\'est pas venu' }
+      ]
+    },
+    {
+      title: 'Habitude vs événement précis',
+      blocks: [
+        { type: 'p', text: 'Une même action peut prendre 不 ou 没 selon qu\'on parle d\'une habitude ou d\'un événement ponctuel :' },
+        { type: 'list', items: [
+          '他不吃肉 — il ne mange pas de viande (habituellement / en général)',
+          '他没吃肉 — il n\'a pas mangé de viande (à ce repas-là, action ponctuelle)'
+        ]},
+        { type: 'p', text: 'C\'est exactement la distinction que le français fait avec « il ne mange pas de viande » (habitude) vs « il n\'a pas mangé de viande » (un repas précis).' },
+        { type: 'example', hanzi: '我不抽烟', pinyin: 'wǒ bù chōuyān', translationFr: 'je ne fume pas (jamais, j\'ai arrêté ou jamais commencé)' },
+        { type: 'example', hanzi: '我今天没抽烟', pinyin: 'wǒ jīntiān méi chōuyān', translationFr: 'je n\'ai pas fumé aujourd\'hui (mais peut-être hier)' }
+      ]
+    },
+    {
+      title: 'Les erreurs typiques des francophones',
+      blocks: [
+        { type: 'ordered', items: [
+          '❌ 我没喜欢 → ✅ 我不喜欢. 喜欢 est un état / une opinion : c\'est toujours 不, même au passé.',
+          '❌ 我不有 → ✅ 我没有. Le verbe 有 ne se nie qu\'avec 没.',
+          '❌ 他没是法国人 → ✅ 他不是法国人. Le verbe 是 ne se nie qu\'avec 不.',
+          '❌ 我没饿 → ✅ 我不饿. Les adjectifs (états) prennent 不, jamais 没.',
+          '❌ 我昨天没去了 → ✅ 我昨天没去. Après 没, on ne met PAS 了 (puisque l\'action n\'a pas eu lieu, le marqueur d\'achèvement n\'a pas de sens).'
+        ]},
+        { type: 'callout', tone: 'warning', text: 'La dernière erreur est très tenace : 没 et 了 sont incompatibles. Si tu as 没, tu n\'as pas 了.' }
+      ]
+    },
+    {
+      title: 'Test express : 不 ou 没 ?',
+      blocks: [
+        { type: 'p', text: 'Petit auto-test. Quelle négation pour chacune de ces phrases ?' },
+        { type: 'ordered', items: [
+          'Je n\'ai pas faim. → 我 ___ 饿',
+          'Je n\'ai pas mangé. → 我 ___ 吃',
+          'Je ne mange pas de porc. → 我 ___ 吃猪肉',
+          'Il n\'est pas étudiant. → 他 ___ 是学生',
+          'Je n\'ai pas de frère. → 我 ___ 有哥哥'
+        ]},
+        { type: 'callout', tone: 'success', text: 'Réponses : 1. 不 (état) — 2. 没 (action passée) — 3. 不 (habitude) — 4. 不 (verbe 是) — 5. 没 (verbe 有).' }
+      ]
+    },
+    {
+      title: 'Récapitulatif mental',
+      blocks: [
+        { type: 'p', text: 'Pour décider entre 不 et 没, pose-toi deux questions dans cet ordre :' },
+        { type: 'ordered', items: [
+          'Le verbe est-il 有 ? → Si oui, c\'est 没. Stop.',
+          'Le verbe est-il 是 ? → Si oui, c\'est 不. Stop.',
+          'L\'action a-t-elle eu lieu (ou aurait dû avoir lieu) dans le passé ? → 没.',
+          'Sinon → 不 (présent, futur, habitude, état, opinion, refus).'
+        ]},
+        { type: 'quote', text: 'Une fois que tu sens 不 et 没 sans réfléchir, tu as franchi le premier vrai cap grammatical du chinois. Bienvenue.', author: 'Perrine' }
+      ]
+    }
+  ]
+};
+
+const POST_ZODIAQUE: BlogPost = {
+  slug: 'les-12-animaux-du-zodiaque-chinois',
+  category: 'culture',
+  title: 'Les 12 animaux du zodiaque chinois — Mythologie, traits de caractère et compatibilités',
+  lead:
+    'Rat, bœuf, tigre, lapin, dragon, serpent, cheval, chèvre, singe, coq, chien, cochon : 12 animaux dans l\'ordre fixé par une course mythique. Voici ce qu\'ils racontent vraiment de toi.',
+  publishedAt: '2026-05-28',
+  readingMinutes: 13,
+  author: DEFAULT_AUTHOR,
+  heroImage:
+    'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1600&q=80',
+  heroCaption: 'Lampions du Nouvel An — chaque année a son animal, dans un cycle de 12',
+  intro:
+    'Le zodiaque chinois (生肖 shēngxiào) n\'est pas un gadget de napperon de restaurant : c\'est un système qui structure encore aujourd\'hui les calendriers, les mariages, les naissances et même certains recrutements en Chine. Découvrir son animal, c\'est entrer dans une logique vieille de plus de 2 000 ans, riche en symboles et en récits. Voici le guide complet.',
+  sections: [
+    {
+      title: 'La légende de la grande course',
+      blocks: [
+        { type: 'p', text: 'Selon la légende la plus répandue, l\'empereur de Jade (玉皇大帝) aurait organisé une course pour désigner les 12 animaux qui figureraient au calendrier. Premier arrivé, premier servi. L\'ordre des 12 animaux du zodiaque vient de cette course.' },
+        { type: 'p', text: 'Le rat, malin, aurait sauté sur le dos du bœuf pour traverser la rivière, puis bondi au dernier moment pour franchir la ligne en premier. Le bœuf, honnête et patient, arrive deuxième. Le tigre, troisième, a lutté contre le courant. Le lapin, quatrième, a sauté de pierre en pierre. Le dragon, cinquième, s\'est arrêté en chemin pour faire pleuvoir sur un village.' },
+        { type: 'p', text: 'Le serpent s\'est faufilé sur le sabot du cheval pour le doubler. Le cheval arrive donc septième. La chèvre, le singe et le coq, qui s\'étaient associés sur un radeau, finissent ensemble en huitième, neuvième et dixième. Le chien, distrait par l\'eau fraîche, prend la onzième place. Et le cochon, qui s\'était endormi en route, ferme la marche.' },
+        { type: 'callout', tone: 'info', text: 'Le chat n\'est pas dans la liste : selon une variante, le rat ne l\'a pas réveillé exprès, créant l\'inimitié éternelle entre chats et rats.' }
+      ]
+    },
+    {
+      title: 'Le cycle de 12 ans (et le cycle de 60)',
+      blocks: [
+        { type: 'p', text: 'Chaque année est associée à un animal, dans un cycle qui se répète tous les 12 ans. 2024 fut l\'année du Dragon, 2025 celle du Serpent, 2026 celle du Cheval, et ainsi de suite.' },
+        { type: 'p', text: 'Mais le zodiaque chinois se combine aussi avec les 5 éléments (bois, feu, terre, métal, eau) pour former un cycle plus long de 60 ans (12 × 5). Tu n\'es donc pas juste « tigre » ou « cheval » : tu es plus précisément « tigre de feu », « cheval d\'eau », etc. Ce système est utilisé en astrologie et en médecine traditionnelle.' },
+        { type: 'callout', tone: 'warning', text: 'L\'année zodiacale ne commence PAS le 1er janvier, mais au Nouvel An lunaire (entre fin janvier et mi-février). Si tu es né(e) en janvier ou début février, vérifie ton animal sur un calendrier lunaire.' }
+      ]
+    },
+    {
+      title: '鼠 — Le Rat (子 zǐ)',
+      blocks: [
+        { type: 'p', text: 'Années : 1972, 1984, 1996, 2008, 2020, 2032. Premier de la course, le rat est le signe de l\'intelligence vive, de l\'adaptabilité et du sens de l\'opportunité. Considéré comme rusé plutôt que sournois en Chine, il a très bonne presse.' },
+        { type: 'list', items: ['Qualités : vif d\'esprit, économe, charmant', 'Défauts : opportuniste, anxieux, parfois mesquin'] },
+        { type: 'example', hanzi: '鼠', pinyin: 'shǔ', translationFr: 'rat' }
+      ]
+    },
+    {
+      title: '牛 — Le Bœuf (丑 chǒu)',
+      blocks: [
+        { type: 'p', text: 'Années : 1973, 1985, 1997, 2009, 2021, 2033. Le bœuf incarne la patience, la fiabilité et le travail acharné. C\'est l\'ami qu\'on veut dans les coups durs, mais il faut accepter qu\'il avance à son rythme.' },
+        { type: 'list', items: ['Qualités : honnête, méthodique, endurant', 'Défauts : têtu, lent à pardonner, peu expressif'] },
+        { type: 'example', hanzi: '牛', pinyin: 'niú', translationFr: 'bœuf, vache' }
+      ]
+    },
+    {
+      title: '虎 — Le Tigre (寅 yín)',
+      blocks: [
+        { type: 'p', text: 'Années : 1974, 1986, 1998, 2010, 2022, 2034. Le tigre est le signe du courage, du charisme et de l\'autorité naturelle. Souvent leader, parfois imprévisible. Les Chinois disent qu\'on naît rarement « moyen » sous un signe tigre.' },
+        { type: 'list', items: ['Qualités : courageux, magnétique, généreux', 'Défauts : impulsif, autoritaire, susceptible'] },
+        { type: 'example', hanzi: '虎', pinyin: 'hǔ', translationFr: 'tigre' }
+      ]
+    },
+    {
+      title: '兔 — Le Lapin (卯 mǎo)',
+      blocks: [
+        { type: 'p', text: 'Années : 1975, 1987, 1999, 2011, 2023, 2035. Le lapin est le signe de la douceur, de l\'élégance et de la diplomatie. Sensible et raffiné, il évite les conflits frontaux et cultive l\'harmonie.' },
+        { type: 'list', items: ['Qualités : raffiné, empathique, fin diplomate', 'Défauts : conflit-phobe, hypersensible, parfois fuyant'] },
+        { type: 'example', hanzi: '兔', pinyin: 'tù', translationFr: 'lapin' }
+      ]
+    },
+    {
+      title: '龙 — Le Dragon (辰 chén)',
+      blocks: [
+        { type: 'p', text: 'Années : 1976, 1988, 2000, 2012, 2024, 2036. Le dragon est LE signe le plus prestigieux du zodiaque chinois. Symbole impérial, il incarne le pouvoir, la chance et la grandeur. Les naissances explosent traditionnellement les années du Dragon.' },
+        { type: 'list', items: ['Qualités : charismatique, ambitieux, généreux', 'Défauts : arrogant, exigeant, intolérant à l\'échec'] },
+        { type: 'example', hanzi: '龙', pinyin: 'lóng', translationFr: 'dragon' }
+      ]
+    },
+    {
+      title: '蛇 — Le Serpent (巳 sì)',
+      blocks: [
+        { type: 'p', text: 'Années : 1977, 1989, 2001, 2013, 2025, 2037. Loin de l\'image négative occidentale, le serpent est en Chine un signe d\'intelligence, de sagesse et de mystère. On dit qu\'il devine les intentions des autres avant qu\'elles ne soient formulées.' },
+        { type: 'list', items: ['Qualités : intuitif, élégant, intellectuel', 'Défauts : secret, jaloux, parfois manipulateur'] },
+        { type: 'example', hanzi: '蛇', pinyin: 'shé', translationFr: 'serpent' }
+      ]
+    },
+    {
+      title: '马 — Le Cheval (午 wǔ)',
+      blocks: [
+        { type: 'p', text: 'Années : 1978, 1990, 2002, 2014, 2026, 2038. Énergique, libre, sociable : le cheval est le signe du mouvement et de l\'enthousiasme. Souvent en voyage, en projet, en début de quelque chose.' },
+        { type: 'list', items: ['Qualités : énergique, indépendant, sociable', 'Défauts : impatient, dispersé, allergique à la routine'] },
+        { type: 'example', hanzi: '马', pinyin: 'mǎ', translationFr: 'cheval' }
+      ]
+    },
+    {
+      title: '羊 — La Chèvre (未 wèi)',
+      blocks: [
+        { type: 'p', text: 'Années : 1979, 1991, 2003, 2015, 2027, 2039. 羊 désigne en réalité aussi bien la chèvre que le mouton ou le bélier. Signe de la douceur, de l\'art et de la sensibilité, la chèvre est souvent artiste ou créative.' },
+        { type: 'list', items: ['Qualités : artistique, gentil, persévérant à sa manière', 'Défauts : indécis, pessimiste, dépendant'] },
+        { type: 'example', hanzi: '羊', pinyin: 'yáng', translationFr: 'chèvre / mouton' }
+      ]
+    },
+    {
+      title: '猴 — Le Singe (申 shēn)',
+      blocks: [
+        { type: 'p', text: 'Années : 1980, 1992, 2004, 2016, 2028, 2040. Vif, malin, espiègle : le singe est le signe de l\'ingéniosité. Profondément lié au personnage du Roi des Singes (孙悟空), héros de La Pérégrination vers l\'Ouest.' },
+        { type: 'list', items: ['Qualités : ingénieux, drôle, polyvalent', 'Défauts : moqueur, instable, peu fiable sur le long terme'] },
+        { type: 'example', hanzi: '猴', pinyin: 'hóu', translationFr: 'singe' }
+      ]
+    },
+    {
+      title: '鸡 — Le Coq (酉 yǒu)',
+      blocks: [
+        { type: 'p', text: 'Années : 1981, 1993, 2005, 2017, 2029, 2041. Le coq est le signe de la ponctualité, de la précision et de la loyauté. Il aime que les choses soient bien faites et n\'hésite pas à le dire.' },
+        { type: 'list', items: ['Qualités : honnête, organisé, loyal', 'Défauts : critique, perfectionniste, parfois arrogant'] },
+        { type: 'example', hanzi: '鸡', pinyin: 'jī', translationFr: 'coq, poulet' }
+      ]
+    },
+    {
+      title: '狗 — Le Chien (戌 xū)',
+      blocks: [
+        { type: 'p', text: 'Années : 1982, 1994, 2006, 2018, 2030, 2042. Le chien incarne la fidélité, la justice et la franchise. Ami sûr et défenseur naturel des plus faibles, il a un fort sens moral.' },
+        { type: 'list', items: ['Qualités : loyal, juste, courageux', 'Défauts : anxieux, méfiant, pessimiste'] },
+        { type: 'example', hanzi: '狗', pinyin: 'gǒu', translationFr: 'chien' }
+      ]
+    },
+    {
+      title: '猪 — Le Cochon (亥 hài)',
+      blocks: [
+        { type: 'p', text: 'Années : 1983, 1995, 2007, 2019, 2031, 2043. Loin d\'être péjoratif, le cochon symbolise en Chine l\'abondance, la générosité et le bon vivre. Signe de chance pour beaucoup d\'éleveurs traditionnels.' },
+        { type: 'list', items: ['Qualités : généreux, sincère, optimiste', 'Défauts : naïf, paresseux par moments, trop confiant'] },
+        { type: 'example', hanzi: '猪', pinyin: 'zhū', translationFr: 'cochon' }
+      ]
+    },
+    {
+      title: 'Compatibilités : les triplettes et les oppositions',
+      blocks: [
+        { type: 'p', text: 'L\'astrologie chinoise regroupe les 12 animaux en 4 « triplettes harmonieuses » (三合 sān hé) : les signes d\'une même triplette s\'entendent particulièrement bien.' },
+        { type: 'list', items: [
+          'Rat – Dragon – Singe : les ambitieux',
+          'Bœuf – Serpent – Coq : les méthodiques',
+          'Tigre – Cheval – Chien : les indépendants',
+          'Lapin – Chèvre – Cochon : les sensibles'
+        ]},
+        { type: 'p', text: 'À l\'inverse, chaque signe a un OPPOSÉ (六冲 liù chōng) — l\'animal situé en face de lui sur la roue. Les relations entre opposés sont notoirement conflictuelles.' },
+        { type: 'list', items: [
+          'Rat ↔ Cheval',
+          'Bœuf ↔ Chèvre',
+          'Tigre ↔ Singe',
+          'Lapin ↔ Coq',
+          'Dragon ↔ Chien',
+          'Serpent ↔ Cochon'
+        ]},
+        { type: 'callout', tone: 'info', text: 'En Chine, beaucoup de familles vérifient encore ces compatibilités avant un mariage, surtout dans les campagnes.' }
+      ]
+    },
+    {
+      title: '本命年 — L\'année de son propre signe',
+      blocks: [
+        { type: 'p', text: '本命年 (běn mìng nián), littéralement « l\'année de sa destinée », désigne l\'année où ton animal revient. Tous les 12 ans, donc. Et… c\'est une année réputée DIFFICILE.' },
+        { type: 'p', text: 'Pour s\'en protéger, la tradition recommande de porter du rouge — sous-vêtements, ceinture, bracelet, peu importe — toute l\'année. C\'est pour ça que tu verras des Chinois en sous-vêtements rouges écarlates les années concernées.' },
+        { type: 'example', hanzi: '本命年', pinyin: 'běn mìng nián', translationFr: 'année de son propre signe (à 12, 24, 36 ans…)' },
+        { type: 'example', hanzi: '红色辟邪', pinyin: 'hóngsè bìxié', translationFr: 'le rouge éloigne le mauvais sort' }
+      ]
+    },
+    {
+      title: 'Le vocabulaire du zodiaque',
+      blocks: [
+        { type: 'example', hanzi: '生肖', pinyin: 'shēngxiào', translationFr: 'zodiaque chinois (litt. « ressemblance de naissance »)' },
+        { type: 'example', hanzi: '属', pinyin: 'shǔ', translationFr: 'appartenir à (un signe)' },
+        { type: 'example', hanzi: '我属龙', pinyin: 'wǒ shǔ lóng', translationFr: 'je suis du signe du Dragon' },
+        { type: 'example', hanzi: '你属什么？', pinyin: 'nǐ shǔ shénme ?', translationFr: 'quel est ton signe ?' },
+        { type: 'example', hanzi: '十二生肖', pinyin: 'shí\'èr shēngxiào', translationFr: 'les 12 signes du zodiaque' },
+        { type: 'example', hanzi: '本命年', pinyin: 'běn mìng nián', translationFr: 'année de son signe (tous les 12 ans)' }
+      ]
+    },
+    {
+      title: 'Et au-delà du folklore ?',
+      blocks: [
+        { type: 'p', text: 'Le zodiaque, en Chine, est bien plus qu\'une décoration de Nouvel An. Il influence des décisions concrètes : on évite de se marier les années défavorables, on programme parfois une naissance pour qu\'elle tombe sur un signe « porteur » (le boom des naissances l\'année du Dragon en témoigne), on consulte un maître pour savoir si deux signes peuvent vraiment cohabiter.' },
+        { type: 'p', text: 'Mais c\'est aussi un fabuleux outil de conversation. Demander 你属什么？ à quelqu\'un est l\'une des meilleures façons d\'engager une discussion culturelle avec un Chinois — et de découvrir, à ses anecdotes familiales, à quel point ces animaux structurent encore le quotidien.' },
+        { type: 'quote', text: 'Mon grand-père ne se serait jamais marié à ma grand-mère sans avoir d\'abord fait calculer leur compatibilité zodiacale par un maître du village. C\'était il y a 70 ans — mais ma mère a fait pareil.', author: 'Lin, étudiante à Pékin' }
+      ]
+    }
+  ]
+};
+
 // ============================================================================
 //  EXPORT
 // ============================================================================
 
 export const BLOG_POSTS: BlogPost[] = [
+  POST_MERCI,
+  POST_BU_MEI,
+  POST_ZODIAQUE,
   POST_BONNE_NUIT,
   POST_GUIDE_HONNETE,
   POST_BONJOUR_AVANCE,
