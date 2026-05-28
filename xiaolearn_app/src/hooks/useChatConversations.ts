@@ -137,9 +137,31 @@ export const useChatConversations = (): UseChatConversationsReturn => {
   // `onUpdate` est appelé quand le cloud a une version plus récente que local.
   const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
     if (Array.isArray(data)) {
-      // Strip défensif au cas où le cloud contient encore d'anciens messages
-      // pré-fix-CORRECTIONS (même logique qu'au load localStorage).
-      setConversations((data as ChatConversation[]).map(sanitizeConv));
+      // Merge par ID au lieu de replace : on ne veut JAMAIS perdre une
+      // conversation créée localement non encore propagée vers Firestore
+      // (cas post-deploy + reload SW). Si une conv existe local+cloud,
+      // on garde la version avec updatedAt le plus récent.
+      const cloudConvs = (data as ChatConversation[]).map(sanitizeConv);
+      setConversations((prev) => {
+        const byId = new Map<string, ChatConversation>();
+        for (const c of prev) byId.set(c.id, c);
+        for (const c of cloudConvs) {
+          const existing = byId.get(c.id);
+          if (!existing || (c.updatedAt ?? 0) > (existing.updatedAt ?? 0)) {
+            byId.set(c.id, c);
+          }
+        }
+        const merged = Array.from(byId.values()).sort(
+          (a, b) => (b.updatedAt ?? 0) - (a.updatedAt ?? 0)
+        );
+        if (
+          merged.length === prev.length &&
+          merged.every((c, i) => c.id === prev[i].id && c.updatedAt === prev[i].updatedAt)
+        ) {
+          return prev;
+        }
+        return merged;
+      });
     }
   });
 

@@ -93,7 +93,43 @@ export const useErrorJournal = (): UseErrorJournalReturn => {
   // Sync Firestore : charge depuis cloud au mount, et push à chaque change.
   const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
     if (Array.isArray(data)) {
-      setEntries(data as ErrorEntry[]);
+      // Merge par ID : ne JAMAIS perdre une erreur loggée localement non
+      // encore propagée vers Firestore (cas post-deploy + reload SW).
+      // Pour les ID communs, on garde l'entrée avec le compteur d'occurrences
+      // le plus élevé (ou la plus récente lastSeenAt en cas d'égalité).
+      const cloudEntries = data as ErrorEntry[];
+      setEntries((prev) => {
+        const byId = new Map<string, ErrorEntry>();
+        for (const e of prev) byId.set(e.id, e);
+        for (const e of cloudEntries) {
+          const existing = byId.get(e.id);
+          if (!existing) {
+            byId.set(e.id, e);
+          } else {
+            const localOcc = existing.occurrences ?? 1;
+            const cloudOcc = e.occurrences ?? 1;
+            if (cloudOcc > localOcc) {
+              byId.set(e.id, e);
+            } else if (cloudOcc === localOcc) {
+              const localTs = new Date(existing.lastSeenAt ?? 0).getTime();
+              const cloudTs = new Date(e.lastSeenAt ?? 0).getTime();
+              if (cloudTs > localTs) byId.set(e.id, e);
+            }
+          }
+        }
+        const merged = Array.from(byId.values()).sort(
+          (a, b) =>
+            new Date(b.lastSeenAt ?? 0).getTime() -
+            new Date(a.lastSeenAt ?? 0).getTime()
+        );
+        if (
+          merged.length === prev.length &&
+          merged.every((e, i) => e.id === prev[i].id)
+        ) {
+          return prev;
+        }
+        return merged;
+      });
     }
   });
 

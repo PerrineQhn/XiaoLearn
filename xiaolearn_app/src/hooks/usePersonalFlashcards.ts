@@ -52,7 +52,37 @@ export const usePersonalFlashcards = (options: UsePersonalFlashcardsOptions = {}
   const { saveToFirestore } = useFirestoreSync(
     STORAGE_KEY,
     (data) => {
-      if (Array.isArray(data)) setCards(data as PersonalFlashcard[]);
+      if (Array.isArray(data)) {
+        // Merge par ID au lieu de replace : ne JAMAIS perdre une flashcard
+        // créée localement non encore propagée vers Firestore (cas post-deploy
+        // + reload SW). Pour les IDs communs, on garde la version la plus
+        // récente (updatedAt si présent, sinon la version locale par défaut
+        // car probablement plus à jour qu'un snapshot cloud potentiellement
+        // périmé).
+        const cloudCards = data as PersonalFlashcard[];
+        setCards((prev) => {
+          const byId = new Map<string, PersonalFlashcard>();
+          for (const c of prev) byId.set(c.id, c);
+          for (const c of cloudCards) {
+            const existing = byId.get(c.id);
+            if (!existing) {
+              byId.set(c.id, c);
+            } else {
+              const localTs = (existing as { updatedAt?: number }).updatedAt ?? 0;
+              const cloudTs = (c as { updatedAt?: number }).updatedAt ?? 0;
+              if (cloudTs > localTs) byId.set(c.id, c);
+            }
+          }
+          const merged = Array.from(byId.values());
+          if (
+            merged.length === prev.length &&
+            merged.every((c, i) => c.id === prev[i].id)
+          ) {
+            return prev;
+          }
+          return merged;
+        });
+      }
     },
     { enabled: options.syncEnabled ?? true }
   );
