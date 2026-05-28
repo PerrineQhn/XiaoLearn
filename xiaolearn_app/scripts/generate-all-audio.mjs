@@ -489,6 +489,105 @@ function collectLessonExampleJobs() {
     }
   }
 
+  // ─── 3. Scan exercices CECR (cecr-exercises*.ts) ─────────────────────────
+  // Les exercices utilisent `prompt:`, `sentence:`, `audioHanzi:` au lieu de
+  // `examples: [{ hanzi }]`. Le bouton 🔊 côté app extrait la phrase via :
+  //   - `exercise.audioHanzi` si présent (explicite)
+  //   - sinon contenu entre guillemets «...» dans `prompt`, concaténé sans
+  //     ponctuation chinoise (cf. StructuredLessonPageV2.tsx)
+  //   - sinon premier run de hanzi dans `prompt`
+  // On mirror cette logique pour générer les audios qu'il faut.
+  //
+  // Le fichier source contient les hanzi soit littéraux (你好), soit en
+  // escape Unicode (你好). Comme on lit le fichier en raw text, on
+  // décode les \uXXXX avant d'extraire les hanzi.
+  function decodeUnicodeEscapes(s) {
+    return s.replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) =>
+      String.fromCharCode(parseInt(hex, 16))
+    );
+  }
+  function extractPhraseFromPrompt(prompt) {
+    if (!prompt || typeof prompt !== 'string') return null;
+    const decoded = decodeUnicodeEscapes(prompt);
+    const quoted = decoded.match(/«\s*([^»]+?)\s*»/);
+    const source = quoted ? quoted[1] : decoded;
+    const runs = source.match(/[㐀-鿿]+/g);
+    if (!runs || runs.length === 0) return null;
+    return runs.join('');
+  }
+
+  const cecrFiles = tsFiles.filter((f) => /cecr-exercises/i.test(path.basename(f)));
+  // Régex qui isole les blocs `{ id: '...', type: '...', ... }` d'exercices.
+  // On s'appuie sur la convention `id: 'cecr-…'` qui balise chaque entrée.
+  // Pour rester robuste face aux structures imbriquées, on découpe le fichier
+  // en blocs commençant par `{` ouvrant à indentation 2-espaces (top-level
+  // d'un array d'exercices) puis on parse les paires clé:valeur simples.
+  const fieldRe = {
+    audioHanzi: /audioHanzi\s*:\s*['"`]([^'"`]+)['"`]/,
+    audio:       /\baudio\s*:\s*['"`]([^'"`]+)['"`]/,
+    prompt:      /prompt\s*:\s*['"`]([^'"`]+)['"`]/,
+    sentence:    /\bsentence\s*:\s*['"`]([^'"`]+)['"`]/
+  };
+
+  for (const file of cecrFiles) {
+    const content = fs.readFileSync(file, 'utf8');
+    // Découpe en objets exercices : on cherche les `{ ... }` top-level d'un
+    // array, en suivant la profondeur des accolades.
+    let i = 0;
+    while (i < content.length) {
+      if (content[i] === '{') {
+        let depth = 1;
+        const start = i;
+        i++;
+        while (i < content.length && depth > 0) {
+          const c = content[i];
+          if (c === '{') depth++;
+          else if (c === '}') depth--;
+          else if (c === '"' || c === "'" || c === '`') {
+            // Skip jusqu'à la quote fermante (gère les escapes simples).
+            const q = c;
+            i++;
+            while (i < content.length && content[i] !== q) {
+              if (content[i] === '\\') i++;
+              i++;
+            }
+          }
+          i++;
+        }
+        const obj = content.slice(start, i);
+        // Ne traite que les vrais blocs d'exercices (filtrage léger)
+        if (!/\bid\s*:\s*['"`]cecr-/.test(obj)) continue;
+        // Skip si audio explicite (URL fournie par la data) — déjà géré ailleurs
+        if (fieldRe.audio.test(obj)) continue;
+
+        // 1) audioHanzi explicite
+        const aMatch = obj.match(fieldRe.audioHanzi);
+        if (aMatch) {
+          pushJob(decodeUnicodeEscapes(aMatch[1]), path.basename(file));
+          continue;
+        }
+        // 2) Phrase extraite du prompt (entre «»)
+        const pMatch = obj.match(fieldRe.prompt);
+        if (pMatch) {
+          const phrase = extractPhraseFromPrompt(pMatch[1]);
+          if (phrase && phrase.length >= 2) pushJob(phrase, path.basename(file));
+        }
+        // 3) Phrase de fill via `sentence` (si ≥ 2 hanzi sans placeholder `_`)
+        const sMatch = obj.match(fieldRe.sentence);
+        if (sMatch && !/_/.test(sMatch[1])) {
+          const decoded = decodeUnicodeEscapes(sMatch[1]);
+          const runs = decoded.match(/[㐀-鿿]+/g);
+          if (runs) {
+            const phrase = runs.join('');
+            if (phrase.length >= 2) pushJob(phrase, path.basename(file));
+          }
+        }
+      } else {
+        i++;
+      }
+    }
+  }
+
   return jobs;
 }
 

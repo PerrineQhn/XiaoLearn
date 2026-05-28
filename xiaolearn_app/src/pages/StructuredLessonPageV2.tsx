@@ -1001,17 +1001,36 @@ const ExerciseCard = ({
       ? exercise.sentence
       : (language === 'en' && exercise.sentenceEn ? exercise.sentenceEn : exercise.sentence);
   // Pour les `fill`, on affiche la traduction de la phrase chinoise comme indice
-  // de sens. Priorité à la langue de l'utilisateur : en FR, on privilégie
-  // `sentenceFr` (nouveau champ) et on retombe sur `sentenceEn` si absent —
-  // en EN on utilise directement `sentenceEn`.
-  const meaningHint =
+  // de sens. Strictement la langue de l'utilisateur : pas de fallback FR→EN
+  // (afficher de l'anglais à un user FR est plus déroutant qu'utile — mieux
+  // vaut ne rien afficher si le sentenceFr manque dans la data).
+  let meaningHint: string | undefined =
     exercise.type === 'fill'
-      ? (language === 'en'
-          ? exercise.sentenceEn
-          : (exercise.sentenceFr ?? exercise.sentenceEn))
+      ? (language === 'en' ? exercise.sentenceEn : exercise.sentenceFr)
       : undefined;
+  // Si le hint contient encore le placeholder `___` (data legacy mal nettoyée),
+  // on le cache plutôt que d'afficher un mélange masqué/traduction (ex. "___! How are you?").
+  if (meaningHint && /_/.test(meaningHint)) {
+    meaningHint = undefined;
+  }
+  // Si le prompt contient déjà le hint (cas "Remets dans l'ordre : « À demain, professeur ! »"
+  // + hint "À demain, professeur !"), on masque le hint redondant.
+  const promptContains = (text?: string): boolean => {
+    if (!text) return false;
+    const norm = (s: string) => s.replace(/\s+/g, '').toLowerCase();
+    return norm(promptText || '').includes(norm(text));
+  };
+  if (meaningHint && promptContains(meaningHint)) {
+    meaningHint = undefined;
+  }
   const explanationText =
     language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
+  // Pour les types non-`fill` : si la phrase chinoise est déjà incluse dans le
+  // prompt (cas "Quel mot est inapproprié dans « 您好，朋友！ »" + display
+  // séparé "您好，朋友！"), on évite la duplication visuelle.
+  const showSentenceText = Boolean(
+    sentenceText && (exercise.type === 'fill' || !promptContains(sentenceText))
+  );
 
   const badge = getExerciseBadge(exercise, language);
 
@@ -1022,8 +1041,18 @@ const ExerciseCard = ({
   // deviner le ton mais n'a aucun moyen de l'entendre sans audio).
   const autoHanziFromPrompt = useMemo(() => {
     if (exercise.audio || exercise.audioHanzi) return null;
-    const match = (exercise.prompt || '').match(/[㐀-鿿]+/);
-    return match ? match[0] : null;
+    const prompt = exercise.prompt || '';
+    // Priorité : extraire la phrase chinoise entre guillemets français « ... »
+    // (cas "Traduis en français : « 晚安，明天见！ »" — on veut lire la phrase
+    // ENTIÈRE, pas seulement le premier hanzi run qui s'arrête à la ponctuation
+    // chinoise comme 「，」).
+    const quoted = prompt.match(/«\s*([^»]+?)\s*»/);
+    const source = quoted ? quoted[1] : prompt;
+    // Concatène tous les runs de hanzi du source (sans la ponctuation chinoise,
+    // qui ne fait pas partie des noms de fichiers audio).
+    const allHanzi = source.match(/[㐀-鿿]+/g);
+    if (!allHanzi || allHanzi.length === 0) return null;
+    return allHanzi.join('');
   }, [exercise.audio, exercise.audioHanzi, exercise.prompt]);
   const resolvedAudioHanzi = exercise.audioHanzi || autoHanziFromPrompt;
   const hasAudio = Boolean(exercise.audio || resolvedAudioHanzi);
@@ -1062,7 +1091,7 @@ const ExerciseCard = ({
       )}
       <div className="lv2-exercise-prompt">{promptText}</div>
 
-      {sentenceText && (
+      {showSentenceText && sentenceText && (
         <div className="lv2-exercise-sentence">
           {exercise.type === 'fill'
             ? renderFillSentence(sentenceText, answered, selectedIndex, exercise.choices, exercise.correctIndex)
