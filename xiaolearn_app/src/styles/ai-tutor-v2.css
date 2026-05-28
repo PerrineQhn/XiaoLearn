@@ -43,35 +43,38 @@
   flex: 0 0 auto;
 }
 
-/* Poignée de redimensionnement : barre visible en bas de .at2-conversation,
-   le user agrippe et étire vers le bas. Curseur ns-resize sur tout le bord.
-   Style assez marqué (fond crème + bordure haut) pour être trouvable d'un
-   coup d'œil — la version trop discrète précédente (14px gris pâle) était
-   ratée par tout le monde. */
+/* Poignée de redimensionnement : barre visible en bas de .at2-conversation.
+   Pas de marges négatives (interaction problématique avec overflow:hidden
+   du parent qui clip la poignée par le bas). On reste inset dans le padding
+   et on assume une bordure visible sur tout le pourtour. */
 .ai-tutor-v2 .at2-resize-handle {
-  height: 22px;
-  margin: 8px -16px -16px;
+  height: 28px;
+  margin-top: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: ns-resize;
-  color: var(--at2-text-muted);
+  color: #7a5a0b;
   font-size: 18px;
   line-height: 1;
   user-select: none;
   background: var(--at2-gold-soft);
-  border-top: 1px solid var(--at2-border);
-  border-radius: 0 0 var(--at2-radius) var(--at2-radius);
-  transition: background 0.15s ease, color 0.15s ease;
+  border: 1px solid var(--at2-gold);
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .ai-tutor-v2 .at2-resize-handle:hover {
   background: var(--at2-gold);
   color: #fff;
+  border-color: var(--at2-gold);
 }
 .ai-tutor-v2 .at2-resize-handle:active {
   background: var(--at2-primary);
   color: #fff;
+  border-color: var(--at2-primary);
 }
 .ai-tutor-v2 .at2-resize-handle span {
   letter-spacing: 4px;
