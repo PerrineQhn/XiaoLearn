@@ -85,7 +85,17 @@ export const useLessonMastery = (options: UseLessonMasteryOptions = {}) => {
     STORAGE_KEY,
     (data) => {
       if (data && typeof data === 'object') {
-        setMasteryMap(data as LessonMasteryMap);
+        // Deep-equal check pour éviter de créer une nouvelle référence quand
+        // les données Firestore sont identiques à l'état local. Sans ça, chaque
+        // snapshot (même de notre propre write) invalidait toutes les useMemo
+        // qui dépendent de masteryMap — notamment previewIds dans ReviewPageV3
+        // qui re-runnait pickLessonsForMode avec Math.random, faisant clignoter
+        // les chips "VA CIBLER N LEÇONS".
+        setMasteryMap((prev) => {
+          const next = data as LessonMasteryMap;
+          if (JSON.stringify(prev) === JSON.stringify(next)) return prev;
+          return next;
+        });
       }
     },
     { enabled: options.syncEnabled ?? true }
