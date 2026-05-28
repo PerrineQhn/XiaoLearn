@@ -96,21 +96,46 @@ export function useFlashcardSRS(
   const { saveToFirestore } = useFirestoreSync(
     STORAGE_KEY,
     (data) => {
-      // When Firestore data changes, update local state
-      if (data && typeof data === 'object') {
-        try {
-          const entries = Object.entries(data).reduce<[string, FlashcardProgress][]>((acc, [key, value]) => {
-            if (value && typeof value === 'object') {
-              acc.push([key, value as FlashcardProgress]);
-            }
-            return acc;
-          }, []);
-          if (entries.length > 0) {
-            setProgressMap(new Map(entries));
+      if (!data || typeof data !== 'object') return;
+      try {
+        const cloudEntries = Object.entries(data).reduce<[string, FlashcardProgress][]>((acc, [key, value]) => {
+          if (value && typeof value === 'object') {
+            acc.push([key, value as FlashcardProgress]);
           }
-        } catch (error) {
-          console.error('Failed to parse synced flashcard progress:', error);
-        }
+          return acc;
+        }, []);
+        if (cloudEntries.length === 0) return;
+        // Merge par wordId : ne JAMAIS perdre une progression SRS locale
+        // non encore propagée. Pour wordId commun, on garde la version avec
+        // le plus de reviews (ou lastReviewed le plus récent en cas d'égalité).
+        setProgressMap((prev) => {
+          const merged = new Map(prev);
+          let changed = false;
+          for (const [wordId, cloudEntry] of cloudEntries) {
+            const local = merged.get(wordId);
+            if (!local) {
+              merged.set(wordId, cloudEntry);
+              changed = true;
+            } else {
+              const localRC = local.reviewCount ?? 0;
+              const cloudRC = cloudEntry.reviewCount ?? 0;
+              if (cloudRC > localRC) {
+                merged.set(wordId, cloudEntry);
+                changed = true;
+              } else if (cloudRC === localRC) {
+                const localTs = Date.parse(local.lastReviewed ?? '') || 0;
+                const cloudTs = Date.parse(cloudEntry.lastReviewed ?? '') || 0;
+                if (cloudTs > localTs) {
+                  merged.set(wordId, cloudEntry);
+                  changed = true;
+                }
+              }
+            }
+          }
+          return changed ? merged : prev;
+        });
+      } catch (error) {
+        console.error('Failed to parse synced flashcard progress:', error);
       }
     },
     { enabled: options?.syncEnabled ?? true }

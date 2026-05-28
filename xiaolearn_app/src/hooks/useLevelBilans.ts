@@ -66,7 +66,54 @@ export const useLevelBilans = (options: UseLevelBilansOptions = {}) => {
   const { saveToFirestore } = useFirestoreSync(
     STORAGE_KEY,
     (data) => {
-      if (data && typeof data === 'object') setBilans(data as BilanCompletionMap);
+      if (!data || typeof data !== 'object') return;
+      // Merge par level : ne JAMAIS perdre une tentative locale fraîche.
+      // Pour un level commun, on garde la version avec le bestScore le plus
+      // élevé, attempts max, et passed=true gagnant (one-way).
+      const cloudMap = data as BilanCompletionMap;
+      setBilans((prev) => {
+        const merged: BilanCompletionMap = { ...prev };
+        let changed = false;
+        for (const [level, cloudEntry] of Object.entries(cloudMap) as [
+          CecrLevelSlug,
+          BilanCompletionEntry
+        ][]) {
+          const local = merged[level];
+          if (!local) {
+            merged[level] = cloudEntry;
+            changed = true;
+          } else {
+            const next: BilanCompletionEntry = {
+              ...local,
+              bestScore: Math.max(local.bestScore, cloudEntry.bestScore),
+              attempts: Math.max(local.attempts, cloudEntry.attempts),
+              passed: local.passed || cloudEntry.passed,
+              firstPassedAt:
+                local.firstPassedAt ?? cloudEntry.firstPassedAt,
+              legacyRecognized:
+                local.legacyRecognized || cloudEntry.legacyRecognized,
+              lastAttemptAt:
+                (Date.parse(cloudEntry.lastAttemptAt ?? '') || 0) >
+                (Date.parse(local.lastAttemptAt ?? '') || 0)
+                  ? cloudEntry.lastAttemptAt
+                  : local.lastAttemptAt
+            };
+            // Detecte si le merge a effectivement modifié l'entrée
+            if (
+              next.bestScore !== local.bestScore ||
+              next.attempts !== local.attempts ||
+              next.passed !== local.passed ||
+              next.firstPassedAt !== local.firstPassedAt ||
+              next.legacyRecognized !== local.legacyRecognized ||
+              next.lastAttemptAt !== local.lastAttemptAt
+            ) {
+              merged[level] = next;
+              changed = true;
+            }
+          }
+        }
+        return changed ? merged : prev;
+      });
     },
     { enabled: options.syncEnabled ?? true }
   );

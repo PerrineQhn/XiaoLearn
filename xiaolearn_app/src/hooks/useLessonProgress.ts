@@ -42,9 +42,24 @@ export const useLessonProgress = (
   const { saveToFirestore } = useFirestoreSync(
     LEARNED_KEY,
     (data) => {
-      if (Array.isArray(data) && data.length > 0) {
-        setLearnedWordIds(data);
-      }
+      if (!Array.isArray(data) || data.length === 0) return;
+      // Union d'IDs : ne JAMAIS perdre un mot marqué appris localement non
+      // encore propagé vers Firestore. L'ordre relatif est préservé : les
+      // IDs locaux gardent leur position, les nouveaux IDs cloud sont
+      // append en fin.
+      setLearnedWordIds((prev) => {
+        const set = new Set(prev);
+        let appended = 0;
+        const merged = [...prev];
+        for (const id of data as string[]) {
+          if (!set.has(id)) {
+            set.add(id);
+            merged.push(id);
+            appended++;
+          }
+        }
+        return appended > 0 ? merged : prev;
+      });
     },
     { enabled: options?.syncEnabled ?? true }
   );

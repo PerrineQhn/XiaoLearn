@@ -114,17 +114,47 @@ export function useLearningStats(): UseLearningStatsReturn {
   // (ex : l'utilisateur vient de bosser depuis Safari, puis rouvre Chrome),
   // on remplace l'état local.
   const { saveToFirestore } = useFirestoreSync(STORAGE_KEY, (data) => {
-    if (data && typeof data === 'object') {
-      setState({
-        dailyMinutes:
-          data.dailyMinutes && typeof data.dailyMinutes === 'object'
-            ? data.dailyMinutes
-            : {},
-        totalMinutes: Number(data.totalMinutes) || 0,
-        streak: Number(data.streak) || 0,
-        lastDate: data.lastDate ?? null
-      });
-    }
+    if (!data || typeof data !== 'object') return;
+    // Merge max au lieu de replace : ne JAMAIS perdre des minutes locales
+    // non encore propagées. Compteurs additifs/monotones donc max(local, cloud)
+    // est toujours correct. dailyMinutes mergé par date (max).
+    const cloudDaily = (data.dailyMinutes && typeof data.dailyMinutes === 'object'
+      ? data.dailyMinutes
+      : {}) as Record<string, number>;
+    const cloudTotal = Number(data.totalMinutes) || 0;
+    const cloudStreak = Number(data.streak) || 0;
+    const cloudLastDate = data.lastDate ?? null;
+    setState((prev) => {
+      const mergedDaily: Record<string, number> = { ...prev.dailyMinutes };
+      let dailyChanged = false;
+      for (const [date, mins] of Object.entries(cloudDaily)) {
+        const existing = mergedDaily[date] ?? 0;
+        const m = Number(mins) || 0;
+        if (m > existing) {
+          mergedDaily[date] = m;
+          dailyChanged = true;
+        }
+      }
+      const next: LearningStatsState = {
+        dailyMinutes: dailyChanged ? mergedDaily : prev.dailyMinutes,
+        totalMinutes: Math.max(prev.totalMinutes, cloudTotal),
+        streak: Math.max(prev.streak, cloudStreak),
+        // lastDate : on garde la date la plus récente (ISO comparable comme string)
+        lastDate:
+          cloudLastDate && (!prev.lastDate || cloudLastDate > prev.lastDate)
+            ? cloudLastDate
+            : prev.lastDate
+      };
+      if (
+        !dailyChanged &&
+        next.totalMinutes === prev.totalMinutes &&
+        next.streak === prev.streak &&
+        next.lastDate === prev.lastDate
+      ) {
+        return prev;
+      }
+      return next;
+    });
   });
 
   // Persiste à chaque changement : localStorage (toujours) + Firestore (si user).

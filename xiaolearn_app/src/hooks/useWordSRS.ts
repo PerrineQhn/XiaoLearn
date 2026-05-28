@@ -58,7 +58,26 @@ export const useWordSRS = (options: UseWordSrsOptions = {}) => {
   const { saveToFirestore } = useFirestoreSync(
     STORAGE_KEY,
     (data) => {
-      if (data && typeof data === 'object') setMap(data as WordSrsMap);
+      if (!data || typeof data !== 'object') return;
+      // Merge par ID : ne JAMAIS perdre un rating local non encore propagé
+      // vers Firestore. Pour les IDs communs, on garde l'entrée avec
+      // lastReviewedAt le plus récent (= la review la plus à jour).
+      const cloudMap = data as WordSrsMap;
+      setMap((prev) => {
+        const merged: WordSrsMap = { ...prev };
+        let changed = false;
+        for (const [id, cloudEntry] of Object.entries(cloudMap)) {
+          const local = merged[id];
+          if (!local) {
+            merged[id] = cloudEntry;
+            changed = true;
+          } else if ((cloudEntry.lastReviewedAt ?? 0) > (local.lastReviewedAt ?? 0)) {
+            merged[id] = cloudEntry;
+            changed = true;
+          }
+        }
+        return changed ? merged : prev;
+      });
     },
     { enabled: options.syncEnabled ?? true }
   );
