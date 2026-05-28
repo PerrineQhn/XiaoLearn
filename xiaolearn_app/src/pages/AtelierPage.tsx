@@ -21,6 +21,8 @@ import PronunciationDrill, {
   type PronunciationDrillItem
 } from '../components/PronunciationDrill';
 import HandwritingDrill from '../components/HandwritingDrill';
+import DialoguePageV2 from './DialoguePageV2';
+import ReadingPageV2 from './ReadingPageV2';
 import './AtelierPage.css';
 
 interface AtelierPageProps {
@@ -28,7 +30,11 @@ interface AtelierPageProps {
   personalFlashcards: PersonalFlashcard[];
 }
 
-type Mode = 'pronunciation' | 'writing';
+// V12 — Atelier englobe maintenant 4 modes : prononciation orale, écriture
+// handwriting, dialogues structurés, et lectures (textes). Les deux premiers
+// passent par un picker de source (flashcards / liste libre) ; les deux
+// derniers rendent directement leur catalogue (DialoguePageV2 / ReadingPageV2).
+type Mode = 'pronunciation' | 'writing' | 'dialogue' | 'reading';
 type SourceKind = 'flashcards' | 'custom';
 
 const COPY = {
@@ -42,6 +48,10 @@ const COPY = {
     modePronunciationDesc: 'Parle dans le micro, reconnaissance vocale chinoise.',
     modeWriting: '✍️ Écriture',
     modeWritingDesc: 'Trace les caractères au doigt, au stylet ou à la souris.',
+    modeDialogue: '💬 Dialogues',
+    modeDialogueDesc: 'Écoute et explore des dialogues annotés (CECR A1→B2).',
+    modeReading: '📖 Textes',
+    modeReadingDesc: 'Lis des textes avec audio, mots cliquables et quiz.',
     sourceFlashcards: 'Mes flashcards',
     sourceFlashcardsDesc: (n: number) =>
       n > 0
@@ -67,6 +77,10 @@ const COPY = {
     modePronunciationDesc: 'Speak into the mic, Chinese speech recognition.',
     modeWriting: '✍️ Writing',
     modeWritingDesc: 'Trace characters with finger, stylus, or mouse.',
+    modeDialogue: '💬 Dialogues',
+    modeDialogueDesc: 'Listen and explore annotated dialogues (CEFR A1→B2).',
+    modeReading: '📖 Readings',
+    modeReadingDesc: 'Read texts with audio, clickable words, and quizzes.',
     sourceFlashcards: 'My flashcards',
     sourceFlashcardsDesc: (n: number) =>
       n > 0
@@ -148,7 +162,17 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
   };
 
   // ----- Render -----
-  // Étape 3 : drill actif
+  // Mode "dialogue" / "reading" : rendu direct du catalogue, pas de picker
+  // de source — ces modes ont leur propre catalogue interne (CECR levels).
+  // onBack revient au menu Atelier (reset complet).
+  if (mode === 'dialogue') {
+    return <DialoguePageV2 language={drillLang} onBack={reset} />;
+  }
+  if (mode === 'reading') {
+    return <ReadingPageV2 language={drillLang} onBack={reset} />;
+  }
+
+  // Étape 3 : drill actif (prononciation ou écriture)
   if (drillData && mode) {
     return (
       <div className="atelier-page">
@@ -170,8 +194,8 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
     );
   }
 
-  // Étape 2 : choix de source
-  if (mode) {
+  // Étape 2 : choix de source (uniquement pronunciation / writing)
+  if (mode === 'pronunciation' || mode === 'writing') {
     return (
       <div className="atelier-page">
         <header className="atelier-header">
@@ -287,6 +311,24 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
             <span className="atelier-card-icon">✍️</span>
             <span className="atelier-card-title">{copy.modeWriting}</span>
             <span className="atelier-card-desc">{copy.modeWritingDesc}</span>
+          </button>
+          <button
+            type="button"
+            className="atelier-card atelier-card--mode"
+            onClick={() => setMode('dialogue')}
+          >
+            <span className="atelier-card-icon">💬</span>
+            <span className="atelier-card-title">{copy.modeDialogue}</span>
+            <span className="atelier-card-desc">{copy.modeDialogueDesc}</span>
+          </button>
+          <button
+            type="button"
+            className="atelier-card atelier-card--mode"
+            onClick={() => setMode('reading')}
+          >
+            <span className="atelier-card-icon">📖</span>
+            <span className="atelier-card-title">{copy.modeReading}</span>
+            <span className="atelier-card-desc">{copy.modeReadingDesc}</span>
           </button>
         </div>
       </section>

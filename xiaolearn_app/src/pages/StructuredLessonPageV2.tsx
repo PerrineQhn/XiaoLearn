@@ -274,7 +274,7 @@ const COPY: Copy = {
     hideTranslation: 'Masquer traduction',
     showTranslation: 'Afficher traduction',
     meaningLabel: 'Sens',
-    listen: '🔊 Écouter',
+    listen: 'Écouter',
     playAudio: 'Lire l\'audio',
     reviewMistakes: 'Questions ratées',
     reviewMistakesEmpty: 'Aucune erreur — sans-faute !',
@@ -341,7 +341,7 @@ const COPY: Copy = {
     hideTranslation: 'Hide translation',
     showTranslation: 'Show translation',
     meaningLabel: 'Meaning',
-    listen: '🔊 Listen',
+    listen: 'Listen',
     playAudio: 'Play audio',
     reviewMistakes: 'Missed questions',
     reviewMistakesEmpty: 'No mistakes — flawless!',
@@ -1048,6 +1048,10 @@ const ExerciseCard = ({
     // chinoise comme 「，」).
     const quoted = prompt.match(/«\s*([^»]+?)\s*»/);
     const source = quoted ? quoted[1] : prompt;
+    // Si le source contient des séparateurs `/` ou `|` entre hanzi (typique
+    // des exercices "Trouver l'erreur" : « 我 / 是 / 叫 / 小明 »), ce n'est
+    // PAS une phrase prononçable — on n'affiche pas de bouton audio.
+    if (/[\/／|｜]/.test(source)) return null;
     // Concatène tous les runs de hanzi du source (sans la ponctuation chinoise,
     // qui ne fait pas partie des noms de fichiers audio).
     const allHanzi = source.match(/[㐀-鿿]+/g);
