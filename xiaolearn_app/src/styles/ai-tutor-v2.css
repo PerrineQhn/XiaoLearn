@@ -43,30 +43,40 @@
   flex: 0 0 auto;
 }
 
-/* Poignée de redimensionnement : barre fine en bas de .at2-conversation,
-   le user agrippe et étire vers le bas. Curseur ns-resize sur tout le bord. */
+/* Poignée de redimensionnement : barre visible en bas de .at2-conversation,
+   le user agrippe et étire vers le bas. Curseur ns-resize sur tout le bord.
+   Style assez marqué (fond crème + bordure haut) pour être trouvable d'un
+   coup d'œil — la version trop discrète précédente (14px gris pâle) était
+   ratée par tout le monde. */
 .ai-tutor-v2 .at2-resize-handle {
-  height: 14px;
-  margin: 4px -16px -16px;
+  height: 22px;
+  margin: 8px -16px -16px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: ns-resize;
   color: var(--at2-text-muted);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
   user-select: none;
+  background: var(--at2-gold-soft);
+  border-top: 1px solid var(--at2-border);
   border-radius: 0 0 var(--at2-radius) var(--at2-radius);
   transition: background 0.15s ease, color 0.15s ease;
   flex-shrink: 0;
 }
 .ai-tutor-v2 .at2-resize-handle:hover {
-  background: var(--at2-gold-soft);
-  color: var(--at2-primary);
+  background: var(--at2-gold);
+  color: #fff;
+}
+.ai-tutor-v2 .at2-resize-handle:active {
+  background: var(--at2-primary);
+  color: #fff;
 }
 .ai-tutor-v2 .at2-resize-handle span {
   letter-spacing: 4px;
   transform: translateY(-2px);
+  font-weight: 700;
 }
 
 /* Vrai mobile uniquement (≤ 600px) : pas de poignée (tactile peu précis,
