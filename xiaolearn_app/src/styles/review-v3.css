@@ -41,6 +41,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 18px;
 }
 
@@ -748,6 +749,12 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* width:100% nécessaire pour que les cards dans le flex-column .rv3-wrap
+     ne se rétrécissent pas à la largeur de leur contenu (sinon la card
+     "Leçons touchées" avec 1 row apparaissait beaucoup plus étroite que
+     la card "Stats" remplie de 3 colonnes). */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .rv3-card--quiz {
@@ -941,7 +948,21 @@
 .rv3-actions--footer {
   justify-content: center;
   max-width: 820px;
-  margin: 0 auto;
+  margin: 12px auto 0;
+  gap: 14px;
+}
+.rv3-actions--footer .rv3-btn {
+  padding: 14px 32px;
+  font-size: 14.5px;
+  border-radius: 14px;
+  min-width: 160px;
+}
+.rv3-actions--footer .rv3-btn--primary {
+  box-shadow: 0 6px 20px rgba(198, 48, 44, 0.32);
+}
+.rv3-actions--footer .rv3-btn--primary:hover:not(:disabled) {
+  box-shadow: 0 8px 24px rgba(198, 48, 44, 0.4);
+  transform: translateY(-2px);
 }
 
 .rv3-btn {
@@ -984,54 +1005,115 @@
    RESULT PHASE
 ===================================================================== */
 
-.rv3-card--result {
-  background: linear-gradient(135deg, #fffdfa, var(--rv3-gold-bg));
-  border-color: var(--rv3-gold-soft);
-}
-
-.rv3-result-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.rv3-summary-main {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.rv3-summary-main strong {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--rv3-primary);
-  line-height: 1;
-}
-
-.rv3-summary-main span {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--rv3-gold);
-}
-
-.rv3-summary-xp {
+/* Page summary — pattern de stats équilibré, 3 colonnes neutres + accents
+   couleur juste sur les valeurs (cohérent avec le ton sobre de l'app). */
+.rv3-page--summary .rv3-wrap {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  text-align: right;
+  gap: 18px;
 }
 
-.rv3-xp-value {
-  font-size: 20px;
+.rv3-head--summary {
+  padding: 8px 0 4px;
+}
+
+/* --- Result card : festive, glow rouge doux, gradient warmth ----------- */
+.rv3-card--result {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(214, 165, 55, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 100%, rgba(198, 48, 44, 0.10) 0%, transparent 50%),
+    linear-gradient(135deg, #fffdfa 0%, var(--rv3-gold-bg) 100%);
+  border-color: var(--rv3-gold-soft);
+  padding: 28px 28px 26px;
+  box-shadow:
+    0 1px 3px rgba(20, 12, 8, 0.04),
+    0 12px 32px rgba(198, 48, 44, 0.10);
+  overflow: hidden;
+}
+/* Trait doré en haut, façon ruban de récompense */
+.rv3-card--result::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rv3-primary), var(--rv3-gold), var(--rv3-jade));
+  opacity: 0.85;
+}
+
+.rv3-result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.rv3-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 16px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(20, 12, 8, 0.03);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.rv3-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(20, 12, 8, 0.08);
+}
+/* Top accent : barre 3px colorée selon le type de stat */
+.rv3-stat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 14px; right: 14px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: currentColor;
+  opacity: 0.85;
+}
+.rv3-stat--score { color: var(--rv3-primary); }
+.rv3-stat--pct   { color: var(--rv3-gold); }
+.rv3-stat--xp    { color: var(--rv3-jade); }
+
+.rv3-stat-value {
+  font-size: 34px;
   font-weight: 800;
-  color: var(--rv3-jade);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
 }
 
-.rv3-xp-detail {
-  font-size: 12px;
+.rv3-stat-value small {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 3px;
+  opacity: 0.7;
+}
+
+.rv3-stat-divider {
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0.35;
+  margin: 0 3px;
+}
+
+.rv3-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--rv3-muted);
+}
+
+.rv3-stat--score .rv3-stat-value { color: var(--rv3-primary); }
+.rv3-stat--pct   .rv3-stat-value { color: var(--rv3-gold); }
+.rv3-stat--xp    .rv3-stat-value { color: var(--rv3-jade); }
+
+@media (max-width: 540px) {
+  .rv3-result-stats { grid-template-columns: 1fr; }
 }
 
 .rv3-card h3 {
@@ -1052,11 +1134,17 @@
 .rv3-touched-row {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 14px;
+  gap: 12px;
+  padding: 16px 18px;
   border: 1px solid var(--rv3-border);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--rv3-card);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.rv3-touched-row:hover {
+  border-color: var(--rv3-gold-soft);
+  box-shadow: 0 6px 18px rgba(214, 165, 55, 0.10);
+  transform: translateY(-1px);
 }
 
 .rv3-touched-header {
@@ -1091,17 +1179,33 @@
 }
 
 .rv3-mastery-bar {
-  height: 8px;
+  height: 10px;
   background: var(--rv3-border);
   border-radius: 999px;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(20, 12, 8, 0.06);
 }
 
 .rv3-mastery-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--rv3-primary), var(--rv3-gold));
+  background: linear-gradient(90deg, var(--rv3-primary), var(--rv3-gold) 70%, var(--rv3-jade));
   border-radius: 999px;
-  transition: width 0.3s;
+  transition: width 0.6s cubic-bezier(0.25, 0.85, 0.35, 1.05);
+  box-shadow: 0 0 6px rgba(214, 165, 55, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+/* Brillance subtile qui glisse sur la barre (effet remplissage récent) */
+.rv3-mastery-bar-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+  transform: translateX(-100%);
+  animation: rv3-shine 2.4s ease-in-out 0.4s 1;
+}
+@keyframes rv3-shine {
+  to { transform: translateX(100%); }
 }
 
 .rv3-mastery-after {
@@ -1139,38 +1243,82 @@
 }
 
 .rv3-mistake {
-  padding: 12px 14px;
+  position: relative;
+  padding: 14px 16px 14px 44px;
   background: var(--rv3-card-soft);
-  border-left: 3px solid var(--rv3-primary);
-  border-radius: 8px;
+  border-left: 4px solid var(--rv3-primary);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.rv3-mistake::before {
+  content: '✕';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--rv3-primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(198, 48, 44, 0.35);
+}
+.rv3-mistake:hover {
+  background: #fdf3ea;
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(198, 48, 44, 0.08);
 }
 
 .rv3-mistake-prompt {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14.5px;
+  color: #2a1f1a;
+  line-height: 1.35;
 }
 
 .rv3-mistake-compare {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
   font-size: 13px;
+}
+
+.rv3-mistake-wrong,
+.rv3-mistake-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  width: fit-content;
+  font-weight: 600;
 }
 
 .rv3-mistake-wrong {
   color: var(--rv3-primary-dark);
+  background: rgba(198, 48, 44, 0.08);
 }
-
 .rv3-mistake-wrong em {
   font-style: normal;
   text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: rgba(198, 48, 44, 0.5);
+  font-weight: 700;
 }
 
 .rv3-mistake-right {
   color: var(--rv3-jade);
+  background: var(--rv3-jade-soft);
+}
+.rv3-mistake-right strong {
+  font-weight: 800;
 }
 
 .rv3-mistake-link {

@@ -38,17 +38,35 @@
 }
 
 /* -------------------------------------------------------------------------
-   1.a. FOND TRANSPARENT — Accueil / Simulateur / Prof. Xiao / Leçons /
-        FlashCards laissent désormais transparaître le InteractiveGridBackground
-        (canvas avec grille rouge XiaoLearn). Le fond crème #fffaf3 est
-        toujours fourni par body + .app-container, mais ces wrappers ne le
-        recouvrent plus afin que le canvas (z-index:-1) soit visible.
+   1.a. FOND TRANSPARENT — Tous les wrappers V2/V3 laissent transparaître
+        le halo curseur (InteractiveGridBackground, z-index:-1). Le fond
+        crème #fffaf3 est toujours fourni par body + .app-container, mais
+        ces wrappers ne le recouvrent plus afin que le halo soit visible.
+        Liste synchronisée avec la liste des wrappers ci-dessus.
    ------------------------------------------------------------------------- */
 .dashboard-v2,
 .sim-v2,
 .ai-tutor-v2,
+.report-v2,
+.grammar-drills-v2,
+.evaluation-v2,
+.community-v2,
+.dialogue-v2,
+.reading-v2,
+.lesson-v2,
 .fc5-root,
-.lp-page {
+.lp-page,
+.rv3-page,
+.ideas-page,
+.flashcards-v2,
+.atelier-page,
+.cv-root,
+.bt-root,
+.lb-root,
+.announcements-page,
+.conversations-page,
+.my-errors-page,
+.profile-page {
   background: transparent !important;
   min-height: calc(100vh - 48px);
 }

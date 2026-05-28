@@ -420,15 +420,31 @@ export async function playHanziAudio(
     }
   }
 
-  // 2) Résolution via probes parallèles + cache.
+  // 2) Résolution via probes parallèles + cache (chemin Azure pré-généré).
   const url = await resolveHanziAudioUrl(hanzi, explicitUrl);
-  if (!url) {
-    throw new Error(`Aucun fichier audio trouvé pour "${hanzi}"`);
+  if (url) {
+    const audio = await playResolvedUrl(url);
+    rememberPreloaded(hanzi, audio);
+    return audio;
   }
 
-  // 3) Lecture. On met l'élément en cache préchargé pour les clics suivants
-  //    sur le même mot (plus rapide qu'un new Audio() à chaque fois).
-  const audio = await playResolvedUrl(url);
-  rememberPreloaded(hanzi, audio);
-  return audio;
+  // 3) Fallback Gemini TTS : pas de fichier pré-généré sur disque, on génère
+  //    à la volée via la Cloud Function geminiTtsProxy. Le résultat est mis
+  //    en cache IndexedDB côté client + logué dans Firestore pour être
+  //    régénéré proprement en Azure lors d'un batch ultérieur.
+  //    Import dynamique : le module Gemini TTS n'est chargé que si réellement
+  //    nécessaire (la majorité des hanzi HSK ont leur audio Azure).
+  try {
+    const { getGeminiTtsBlob, playBlobAudio } = await import(
+      '../services/geminiTtsService'
+    );
+    const blob = await getGeminiTtsBlob(hanzi);
+    if (blob) {
+      return await playBlobAudio(blob);
+    }
+  } catch (err) {
+    console.warn('[playHanziAudio] Gemini TTS fallback failed', err);
+  }
+
+  throw new Error(`Aucun fichier audio trouvé pour "${hanzi}" (Azure ni Gemini)`);
 }

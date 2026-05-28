@@ -31,6 +31,97 @@
   overflow: hidden;
 }
 
+/* Mode redimensionné : quand l'utilisateur a manuellement défini la hauteur
+   de la conversation via la poignée, on libère les contraintes viewport pour
+   permettre à la conversation de dépasser 100dvh (la page devient scrollable). */
+.ai-tutor-v2.is-resized {
+  height: auto;
+  min-height: calc(100dvh - var(--at2-topbar-h));
+  overflow: visible;
+}
+.ai-tutor-v2.is-resized .at2-layout {
+  flex: 0 0 auto;
+}
+
+/* Poignée de redimensionnement : barre fine en bas de .at2-conversation,
+   le user agrippe et étire vers le bas. Curseur ns-resize sur tout le bord. */
+.ai-tutor-v2 .at2-resize-handle {
+  height: 14px;
+  margin: 4px -16px -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ns-resize;
+  color: var(--at2-text-muted);
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+  border-radius: 0 0 var(--at2-radius) var(--at2-radius);
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+.ai-tutor-v2 .at2-resize-handle:hover {
+  background: var(--at2-gold-soft);
+  color: var(--at2-primary);
+}
+.ai-tutor-v2 .at2-resize-handle span {
+  letter-spacing: 4px;
+  transform: translateY(-2px);
+}
+
+/* Sur mobile : pas de poignée (le tactile n'a pas la précision nécessaire,
+   et l'écran est déjà petit donc utiliser le scroll naturel suffit). */
+@media (max-width: 900px) {
+  .ai-tutor-v2 .at2-resize-handle {
+    display: none;
+  }
+}
+
+/* Header actions : groupe le toggle wide + le badge online à droite */
+.ai-tutor-v2 .at2-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-tutor-v2 .at2-wide-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--at2-card-bg);
+  color: var(--at2-text-muted);
+  border: 1px solid var(--at2-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.ai-tutor-v2 .at2-wide-toggle:hover {
+  background: var(--at2-gold-soft);
+  border-color: var(--at2-gold);
+  color: var(--at2-text);
+}
+.ai-tutor-v2 .at2-wide-toggle[aria-pressed="true"] {
+  background: var(--at2-primary);
+  color: #fff;
+  border-color: var(--at2-primary);
+}
+.ai-tutor-v2 .at2-wide-toggle[aria-pressed="true"]:hover {
+  background: var(--at2-primary-dark);
+  border-color: var(--at2-primary-dark);
+}
+
+/* Sur mobile, le bouton wide n'a aucun sens (sidebar déjà cachée + plein
+   écran par défaut) → on le masque. */
+@media (max-width: 900px) {
+  .ai-tutor-v2 .at2-wide-toggle {
+    display: none;
+  }
+}
+
 /* Buttons */
 .ai-tutor-v2 .at2-btn {
   border: none;

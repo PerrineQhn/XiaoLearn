@@ -132,11 +132,19 @@
   border-color: var(--primary-red-hover, #c73826);
 }
 
-.pron-drill-btn--danger {
-  background: var(--primary-red, #e05040);
-  border-color: var(--primary-red, #e05040);
+/* `--danger` = enregistrement en cours. Forcé en rouge plein avec texte
+   blanc pour éviter tout cas où un thème parent ou une cascade plus
+   spécifique remettrait le bg en blanc (bug observé : white-on-white). */
+.pron-drill-btn.pron-drill-btn--danger {
+  background: #e05040;
+  border-color: #e05040;
   color: #ffffff;
   animation: pron-drill-pulse 1.2s ease-in-out infinite;
+}
+.pron-drill-btn.pron-drill-btn--danger:hover:not(:disabled) {
+  background: #c73826;
+  border-color: #c73826;
+  color: #ffffff;
 }
 @keyframes pron-drill-pulse {
   0%, 100% {

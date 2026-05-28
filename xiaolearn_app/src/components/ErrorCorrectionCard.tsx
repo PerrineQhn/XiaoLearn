@@ -38,11 +38,21 @@ const ErrorCorrectionCard = ({ entry, onRetry, compact = false }: Props) => {
   const sev = SEVERITY_COLOR[entry.severity];
 
   const handleListen = () => {
-    try {
-      playHanziAudio(entry.correctText);
-    } catch (err) {
-      console.warn('[ErrorCorrectionCard] TTS error', err);
+    // 1) Extrait UNIQUEMENT les runs de hanzi de correctText (skip pinyin,
+    //    ponctuation et descriptions FR/EN qui peuvent y avoir leaké). Sans
+    //    ce nettoyage, le hash de lookup audio/examples/<hash>.mp3 ne matchait
+    //    rien (texte avec espaces/parenthèses).
+    const hanziRuns = (entry.correctText || '').match(/[㐀-鿿]+/g);
+    if (!hanziRuns || hanziRuns.length === 0) {
+      console.warn('[ErrorCorrectionCard] Aucun hanzi à lire dans', entry.correctText);
+      return;
     }
+    const phrase = hanziRuns.join('');
+    // 2) playHanziAudio renvoie une Promise → on doit chaîner .catch() pour
+    //    attraper les rejets (audio file 404). try/catch sync n'attrapait rien.
+    playHanziAudio(phrase).catch((err) => {
+      console.warn('[ErrorCorrectionCard] Audio non trouvé pour', phrase, err);
+    });
   };
 
   return (

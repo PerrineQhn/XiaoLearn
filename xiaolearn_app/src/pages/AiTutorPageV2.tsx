@@ -175,7 +175,9 @@ const COPY = {
     questionsPrompt: 'Pose tes questions 24/7.',
     welcomeMessage:
       'Bonjour ! Je suis le Prof. Xiao.\n\nPose-moi n\'importe quelle question sur le chinois — grammaire, vocabulaire, prononciation, culture… je suis là pour toi 24h/24 ! 😊',
-    deleteConv: 'Supprimer cette conversation'
+    deleteConv: 'Supprimer cette conversation',
+    wideMode: 'Vue étendue',
+    wideModeOff: 'Vue normale'
   },
   en: {
     title: 'Prof. Xiao',
@@ -203,7 +205,9 @@ const COPY = {
     questionsPrompt: 'Ask me anything, 24/7.',
     welcomeMessage:
       'Hello! I\'m Prof. Xiao.\n\nAsk me anything about Chinese — grammar, vocabulary, pronunciation, culture… I\'m here for you 24/7! 😊',
-    deleteConv: 'Delete this conversation'
+    deleteConv: 'Delete this conversation',
+    wideMode: 'Expanded view',
+    wideModeOff: 'Normal view'
   }
 } as const;
 
@@ -486,6 +490,45 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   const [input, setInput] = useState('');
   const endRef = useRef<HTMLDivElement>(null);
 
+  // Hauteur custom de la fenêtre de conversation (en px). Géré via une poignée
+  // de drag sur le bord inférieur. Si null → comportement par défaut (fill
+  // viewport). Persisté en localStorage.
+  const [convHeight, setConvHeight] = useState<number | null>(() => {
+    if (typeof window === 'undefined') return null;
+    const raw = window.localStorage.getItem('at2-conv-height');
+    const n = raw ? parseInt(raw, 10) : NaN;
+    return Number.isFinite(n) && n > 200 ? n : null;
+  });
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (convHeight == null) window.localStorage.removeItem('at2-conv-height');
+    else window.localStorage.setItem('at2-conv-height', String(convHeight));
+  }, [convHeight]);
+  // Référence vers le pane .at2-conversation pour mesurer/ajuster sa hauteur
+  const conversationRef = useRef<HTMLDivElement>(null);
+  const handleResizeStart = useCallback((e: MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const el = conversationRef.current;
+    if (!el) return;
+    const startY = e.clientY;
+    const startH = el.getBoundingClientRect().height;
+    const onMove = (ev: globalThis.MouseEvent) => {
+      const next = Math.max(280, startH + (ev.clientY - startY));
+      setConvHeight(next);
+    };
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      document.body.style.userSelect = '';
+      document.body.style.cursor = '';
+    };
+    document.body.style.userSelect = 'none';
+    document.body.style.cursor = 'ns-resize';
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  }, []);
+  const resetConvHeight = useCallback(() => setConvHeight(null), []);
+
   // Popup vocabulaire (clic sur un hanzi dans une bulle assistant)
   const [vocabState, setVocabState] = useState<{
     word: VocabPopupWord;
@@ -578,7 +621,7 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
   };
 
   return (
-    <div className="ai-tutor-v2">
+    <div className={`ai-tutor-v2 ${convHeight != null ? 'is-resized' : ''}`.trim()}>
       {/* Header — version simplifiée à la Seonsaengnim :
           avatar Prof. Xiao + titre + sous-titre à gauche, badge "En ligne" à droite.
           Plus de sélecteur de mode visible. */}
@@ -612,9 +655,22 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
             </div>
           </div>
         </div>
-        <span className="at2-status">
-          <span className="at2-status-dot" /> {t(language, 'online')}
-        </span>
+        <div className="at2-header-actions">
+          {convHeight != null && (
+            <button
+              type="button"
+              className="at2-wide-toggle"
+              onClick={resetConvHeight}
+              title={language === 'fr' ? 'Réinitialiser la hauteur' : 'Reset height'}
+            >
+              <span aria-hidden>↕</span>
+              <span>{language === 'fr' ? 'Réinitialiser' : 'Reset'}</span>
+            </button>
+          )}
+          <span className="at2-status">
+            <span className="at2-status-dot" /> {t(language, 'online')}
+          </span>
+        </div>
       </header>
 
       {/* 3-column layout */}
@@ -681,7 +737,11 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
         </aside>
 
         {/* Center : conversation */}
-        <section className="at2-conversation">
+        <section
+          className="at2-conversation"
+          ref={conversationRef}
+          style={convHeight != null ? { height: `${convHeight}px`, flex: 'none' } : undefined}
+        >
           {messages.length === 0 ? (
             <div className="at2-empty">
               {/* Bulle d'accueil du Prof. Xiao — affichée même sans message envoyé */}
@@ -790,6 +850,18 @@ const AiTutorPageV2 = (props: AiTutorPageV2Props) => {
                 {t(language, 'send')}
               </button>
             </div>
+          </div>
+          {/* Poignée de drag : barre fine en bas, le user agrippe et étire
+              vers le bas pour agrandir la fenêtre de conversation. */}
+          <div
+            className="at2-resize-handle"
+            onMouseDown={handleResizeStart}
+            role="separator"
+            aria-orientation="horizontal"
+            aria-label={language === 'fr' ? 'Redimensionner la conversation' : 'Resize conversation'}
+            title={language === 'fr' ? 'Glisser pour agrandir la conversation' : 'Drag to resize'}
+          >
+            <span aria-hidden>⋯</span>
           </div>
         </section>
       </div>

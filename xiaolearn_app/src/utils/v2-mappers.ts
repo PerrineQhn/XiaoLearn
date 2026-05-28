@@ -433,6 +433,89 @@ export function buildDefaultEvaluation(level: 'hsk1' | 'hsk2' | 'hsk3' = 'hsk1')
 // ---------------------------------------------------------------------------
 
 export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
+  // ─── Mai 2026 — Atelier oral + écriture (Web Speech + HanziWriter) ──────
+  {
+    id: 'ann-atelier-prononciation-2026-05',
+    title: 'Drill prononciation : parle, le micro évalue',
+    titleEn: 'Pronunciation drill: speak, the mic grades you',
+    body:
+      "L'Atelier accueille un **nouveau drill oral** : tu appuies sur le micro, tu prononces le hanzi affiché, et XiaoLearn te donne un verdict immédiat ✓ / ~ / ✗ avec ce qu'il a entendu.\n\n" +
+      "### 🎤 Comment ça marche\n\n" +
+      "- Reconnaissance vocale chinoise (`zh-CN`) via la **Web Speech API** native du navigateur — pas d'envoi audio à un serveur, tout reste sur ton appareil\n" +
+      "- Comparaison **tolérante au pinyin** : on accepte les tons numériques (`ni3` = `nǐ`) et on strip les accents avant de matcher\n" +
+      "- 3 verdicts : **✓ Match** parfait, **~ Close** (proche, faute mineure), **✗ Mismatch** (rien à voir)\n" +
+      "- Timeout 8 secondes — si tu ne parles pas, on annule poliment sans message d'erreur agressif\n\n" +
+      "### 🃏 Où le retrouver\n\n" +
+      "- **Atelier → Prononciation** : drill libre sur tes flashcards perso ou une liste de hanzi que tu colles\n" +
+      "- **Flashcards** : bouton 🎤 à côté du 🔊 sur chaque carte, pour t'auto-tester en plus de la SRS classique\n" +
+      "- **Leçons** : section drill prononciation en fin de leçon pour les mots fraîchement appris\n\n" +
+      "### 🌐 Compatibilité\n\n" +
+      "Fonctionne nativement sur **Chrome, Edge, Safari, Brave**. Sur Firefox, le bouton est désactivé avec un message explicite (pas d'API supportée). Sur mobile : autorisation micro requise à la première utilisation.",
+    bodyEn:
+      "The Atelier gets a **new oral drill**: tap the mic, speak the displayed hanzi, and XiaoLearn gives you an instant verdict ✓ / ~ / ✗ with what it heard.\n\n" +
+      "### 🎤 How it works\n\n" +
+      "- Chinese speech recognition (`zh-CN`) via the browser's native **Web Speech API** — no audio sent to a server, everything stays on your device\n" +
+      "- **Pinyin-tolerant** comparison: numbered tones accepted (`ni3` = `nǐ`) and accents stripped before matching\n" +
+      "- 3 verdicts: **✓ Match** perfect, **~ Close** (almost, minor slip), **✗ Mismatch** (way off)\n" +
+      "- 8-second timeout — if you don't speak, we cancel politely without an aggressive error\n\n" +
+      "### 🃏 Where to find it\n\n" +
+      "- **Atelier → Pronunciation**: free drill on your personal flashcards or a hanzi list you paste\n" +
+      "- **Flashcards**: 🎤 button next to 🔊 on every card, to self-test alongside the classic SRS\n" +
+      "- **Lessons**: pronunciation drill section at the end of each lesson for freshly learned words\n\n" +
+      "### 🌐 Compatibility\n\n" +
+      "Works natively on **Chrome, Edge, Safari, Brave**. On Firefox the button is disabled with a clear message (no supported API). On mobile: mic permission requested on first use.",
+    date: '2026-05-28',
+    tag: 'Atelier',
+    category: 'feature',
+    icon: '🎤',
+    pinned: true,
+    illustration:
+      '<img src="/img/announcements/drill-prononciation.png" alt="Drill prononciation — bouton micro et verdict" style="width:100%;border-radius:12px;display:block" />'
+  },
+  {
+    id: 'ann-atelier-ecriture-2026-05',
+    title: 'Drill écriture hanzi : trace au doigt, validation trait par trait',
+    titleEn: 'Hanzi writing drill: trace with your finger, stroke-by-stroke check',
+    body:
+      "Apprendre à **écrire** le chinois, pas juste à le reconnaître. L'Atelier propose un nouveau drill calligraphique qui te fait tracer chaque caractère trait par trait, dans le bon ordre.\n\n" +
+      "### ✍️ Le tracé en vrai\n\n" +
+      "- Propulsé par **HanziWriter** : 9 000+ caractères supportés avec animations natives\n" +
+      "- Trace au **doigt** (tactile), au **stylet** ou à la **souris** — la zone s'adapte à ton appareil\n" +
+      "- **Validation trait par trait** : si tu rates l'ordre ou la direction, le trait clignote en rouge et tu refais\n" +
+      "- **Hint** disponible quand tu bloques : un trait fantôme te montre par où passer\n" +
+      "- Réussite = caractère qui se met en vert avec un petit pop visuel\n\n" +
+      "### 🎯 Où l'utiliser\n\n" +
+      "- **Atelier → Écriture** : drill libre sur tes flashcards ou une liste personnalisée (mots multi-caractères supportés)\n" +
+      "- **Leçons** : drill écriture en fin de leçon pour ancrer le tracé des nouveaux mots\n" +
+      "- **Flashcards** : mode « Écriture » dédié dans la rotation SRS, comme la prononciation\n\n" +
+      "### 📊 Stats du tracé\n\n" +
+      "Chaque caractère termine avec un récap : **nombre de traits**, **erreurs faites**, **hints utilisés**. C'est cumulé dans tes flashcards pour que la SRS sache si tu galères vraiment sur l'écriture (et pas juste la reconnaissance).\n\n" +
+      "### 💡 Pourquoi c'est important\n\n" +
+      "L'écriture est l'angle mort de 90 % des apps d'apprentissage du chinois — elles te font reconnaître et taper des hanzi, mais jamais en tracer un. Or l'ordre des traits est central pour mémoriser, lire les écritures cursives, et utiliser un dictionnaire papier.",
+      bodyEn:
+      "Learn to **write** Chinese, not just recognize it. The Atelier ships a new calligraphy drill that has you trace every character stroke by stroke, in the right order.\n\n" +
+      "### ✍️ Real tracing\n\n" +
+      "- Powered by **HanziWriter**: 9,000+ characters supported with native animations\n" +
+      "- Trace with **finger** (touch), **stylus** or **mouse** — the canvas adapts to your device\n" +
+      "- **Stroke-by-stroke validation**: miss the order or direction → the stroke flashes red and you retry\n" +
+      "- **Hint** available when stuck: a ghost stroke shows the path\n" +
+      "- Success = character turns green with a small visual pop\n\n" +
+      "### 🎯 Where to use it\n\n" +
+      "- **Atelier → Writing**: free drill on your flashcards or a custom list (multi-character words supported)\n" +
+      "- **Lessons**: writing drill at the end of each lesson to lock in new word strokes\n" +
+      "- **Flashcards**: dedicated « Writing » mode in the SRS rotation, just like pronunciation\n\n" +
+      "### 📊 Tracing stats\n\n" +
+      "Each character ends with a recap: **stroke count**, **mistakes made**, **hints used**. Cumulated in your flashcards so the SRS knows whether you're really struggling on writing (vs just recognition).\n\n" +
+      "### 💡 Why it matters\n\n" +
+      "Writing is the blind spot of 90% of Chinese learning apps — they make you recognize and type hanzi, but never trace one. Yet stroke order is central to memorization, reading cursive script, and using paper dictionaries.",
+    date: '2026-05-28',
+    tag: 'Atelier',
+    category: 'feature',
+    icon: '✍️',
+    pinned: true,
+    illustration:
+      '<img src="/img/announcements/drill-ecriture-hanzi.png" alt="Drill écriture hanzi — tracé avec HanziWriter" style="width:100%;border-radius:12px;display:block" />'
+  },
   // ─── Mai 2026 — refonte Prof. Xiao + popup vocab + recherche live ───────
   {
     id: 'ann-search-live-2026-05',
@@ -464,25 +547,7 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     icon: '🔍',
     pinned: true,
     illustration:
-      '<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette recherche">' +
-      '<rect width="360" height="220" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
-      '<rect x="60" y="18" width="240" height="32" rx="16" fill="#fff" stroke="#c6302c" stroke-width="1.5"/>' +
-      '<circle cx="78" cy="34" r="5" fill="none" stroke="#9aa0a6" stroke-width="2"/>' +
-      '<line x1="82" y1="38" x2="86" y2="42" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round"/>' +
-      '<text x="96" y="38" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">一</text>' +
-      '<rect x="40" y="60" width="280" height="150" rx="12" fill="#fff" stroke="#e5d7c0" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.06))"/>' +
-      '<text x="52" y="76" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#9aa0a6" letter-spacing="0.7">LEÇONS</text>' +
-      '<text x="52" y="93" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">📚 Les chiffres — HSK 1</text>' +
-      '<text x="74" y="105" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">6 mots correspondants</text>' +
-      '<line x1="52" y1="116" x2="308" y2="116" stroke="#f1efe8" stroke-width="1"/>' +
-      '<text x="52" y="130" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#9aa0a6" letter-spacing="0.7">VOCABULAIRE</text>' +
-      '<text x="52" y="147" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🈸 一 yī</text>' +
-      '<text x="80" y="147" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">  · un</text>' +
-      '<text x="52" y="163" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🈸 一半 yíbàn</text>' +
-      '<text x="106" y="163" font-family="-apple-system, sans-serif" font-size="10" fill="#6b7280">  · moitié</text>' +
-      '<rect x="40" y="180" width="280" height="30" fill="#fdf2c4"/>' +
-      '<text x="56" y="199" font-family="-apple-system, sans-serif" font-size="11" fill="#7a5a0b">✨ Poser à Prof. Xiao : <tspan font-weight="700" fill="#1f2937">一</tspan></text>' +
-      '</svg>'
+      '<img src="/img/announcements/recherche-live.png" alt="Recherche universelle — panneau live avec résultats" style="width:100%;border-radius:12px;display:block" />'
   },
   {
     id: 'ann-mes-erreurs-2026-05',
@@ -526,22 +591,7 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     icon: '📝',
     pinned: true,
     illustration:
-      '<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette carte erreur">' +
-      '<rect width="360" height="200" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
-      '<rect x="18" y="18" width="324" height="164" rx="12" fill="#fff" stroke="#fde7e5" stroke-width="1.5"/>' +
-      '<rect x="32" y="30" width="84" height="20" rx="10" fill="#fde7e5"/>' +
-      '<text x="42" y="44" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#c6302c">✍️ Orthographe</text>' +
-      '<rect x="124" y="30" width="60" height="20" rx="10" fill="#fbe9b8"/>' +
-      '<text x="134" y="44" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#a06b15">● Mineure</text>' +
-      '<text x="32" y="78" font-family="-apple-system, sans-serif" font-size="13" fill="#dc2626" text-decoration="line-through">✗ 你能帮忙我吗</text>' +
-      '<text x="32" y="100" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#16a34a">✓ 你能帮我吗</text>' +
-      '<text x="32" y="116" font-family="-apple-system, sans-serif" font-size="11" fill="#6b7280" font-style="italic">nǐ néng bāng wǒ ma — peux-tu m\'aider ?</text>' +
-      '<text x="32" y="138" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">💬 «帮忙» est un verbe-objet : on dit «帮我», pas «帮忙我».</text>' +
-      '<rect x="32" y="150" width="80" height="24" rx="8" fill="#fff" stroke="#f0e6d4"/>' +
-      '<text x="46" y="166" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">↻ Réessayer</text>' +
-      '<rect x="120" y="150" width="74" height="24" rx="8" fill="#fff" stroke="#f0e6d4"/>' +
-      '<text x="134" y="166" font-family="-apple-system, sans-serif" font-size="11" fill="#1f2937">🔊 Écouter</text>' +
-      '</svg>'
+      '<img src="/img/announcements/mes-erreurs.png" alt="Mes erreurs — carte erreur avec catégorie et correction" style="width:100%;border-radius:12px;display:block" />'
   },
   {
     id: 'ann-profxiao-refonte-2026-05',
@@ -585,59 +635,8 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     icon: '👩‍🏫',
     pinned: true,
     illustration:
-      '<svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maquette popup vocab">' +
-      '<rect width="360" height="200" rx="14" fill="#ffffff" stroke="#f0e6d4"/>' +
-      '<text x="20" y="38" font-family="-apple-system, sans-serif" font-size="13" fill="#1f2937">Bien sûr ! L\'expression </text>' +
-      '<text x="20" y="56" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#1f2937" text-decoration="underline" text-decoration-style="dotted" text-decoration-color="#c6302c">你好吗</text>' +
-      '<text x="56" y="56" font-family="-apple-system, sans-serif" font-size="13" fill="#1f2937"> signifie « comment vas-tu ».</text>' +
-      '<rect x="148" y="74" width="200" height="116" rx="14" fill="#fff" stroke="#e5d7c0" filter="drop-shadow(0 8px 24px rgba(0,0,0,0.12))"/>' +
-      '<circle cx="170" cy="98" r="13" fill="#c6302c"/>' +
-      '<text x="166" y="102" font-family="-apple-system, sans-serif" font-size="12" fill="#fff">🔊</text>' +
-      '<text x="190" y="98" font-family="-apple-system, sans-serif" font-size="20" font-weight="700" fill="#1f2937">你好吗</text>' +
-      '<text x="190" y="113" font-family="-apple-system, sans-serif" font-size="11" font-style="italic" fill="#6b7280">nǐ hǎo ma</text>' +
-      '<text x="162" y="135" font-family="-apple-system, sans-serif" font-size="12" font-style="italic" fill="#1f2937">comment vas-tu ?</text>' +
-      '<rect x="162" y="148" width="170" height="28" rx="8" fill="#fbe9b8" stroke="#f1d77a"/>' +
-      '<text x="195" y="166" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#7a5a0b">+ Ajouter à mes flashcards</text>' +
-      '</svg>'
+      '<img src="/img/announcements/profxiao-popup-vocab.png" alt="Prof. Xiao — popup vocabulaire au clic sur un hanzi" style="width:100%;border-radius:12px;display:block" />'
   },
-  {
-    id: 'ann-fallback-cf-ai-2026-05',
-    title: 'Prof. Xiao résilient : fallback Cloudflare Workers AI',
-    titleEn: 'Resilient Prof. Xiao: Cloudflare Workers AI fallback',
-    body:
-      "Quand Gemini est saturé ou indisponible, Prof. Xiao bascule **automatiquement** sur Cloudflare Workers AI. Tu ne vois rien, la conversation continue.\n\n" +
-      "### ⚡ Quand le fallback se déclenche\n\n" +
-      "- **Quota free atteint** (Gemini = 1500 requêtes/jour gratuites)\n" +
-      "- **Erreur 429** (rate-limit côté serveur)\n" +
-      "- **Erreur 5xx** (timeout, panne temporaire)\n" +
-      "- **Erreur d'authentification** (401/403)\n\n" +
-      "### 🤖 Quel moteur prend la suite\n\n" +
-      "**Cloudflare Workers AI** avec le modèle Qwen 1.5 14B (excellent pour le chinois) ou Llama 3.3 70B en backup. **10 000 neurons gratuits par jour**, pas de carte bancaire nécessaire.\n\n" +
-      "### 🎯 Ce que le fallback couvre\n\n" +
-      "- Page **Prof. Xiao** (chat principal)\n" +
-      "- **Simulateur** de situations\n" +
-      "- **Correcteur d'écriture**\n\n" +
-      "Le system prompt est strictement identique sur Gemini et Cloudflare (pédagogie chaleureuse, détection structurée d'erreurs au format JSON), donc la qualité reste cohérente — tu ne sens pas la bascule.",
-    bodyEn:
-      "When Gemini is saturated or unavailable, Prof. Xiao **automatically** falls back to Cloudflare Workers AI. You don't see anything, the conversation just continues.\n\n" +
-      "### ⚡ When the fallback kicks in\n\n" +
-      "- **Free quota hit** (Gemini = 1500 free requests/day)\n" +
-      "- **429 error** (server-side rate-limit)\n" +
-      "- **5xx error** (timeout, temporary outage)\n" +
-      "- **Auth error** (401/403)\n\n" +
-      "### 🤖 Which engine takes over\n\n" +
-      "**Cloudflare Workers AI** with the Qwen 1.5 14B model (great at Chinese), or Llama 3.3 70B as a backup. **10,000 free neurons per day**, no credit card required.\n\n" +
-      "### 🎯 What the fallback covers\n\n" +
-      "- **Prof. Xiao** page (main chat)\n" +
-      "- **Simulator**\n" +
-      "- **Writing Corrector**\n\n" +
-      "The system prompt is strictly identical on Gemini and Cloudflare (warm pedagogy, structured JSON error detection), so quality stays consistent — you don't feel the switch.",
-    date: '2026-05-13',
-    tag: 'Prof. Xiao',
-    category: 'fix',
-    icon: '⚡'
-  },
-
   // ─── Mai 2026 — historique antérieur ────────────────────────────────────
   {
     id: 'ann-smartmix-audio-2026-05',
@@ -672,19 +671,6 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     category: 'review',
     icon: '🎧',
     pinned: true
-  },
-  {
-    id: 'ann-pinyin-quiz-2026-05',
-    title: 'Quiz Pinyin reformulés en langage clair',
-    titleEn: 'Pinyin quizzes rewritten in plain language',
-    body:
-      "Fini les termes de linguistique pure (« occlusive vélaire palatale », « consonne rétroflexe ») dans les quiz de prononciation Pinyin. Tous les énoncés ont été réécrits avec un vocabulaire accessible : « son qui part du fond de la bouche », « langue plate puis recourbée vers l'arrière », « comme un J anglais mais sans souffle ». 6 questions de traduction qui mélangeaient prononciation et sens (donc impossibles à évaluer correctement) ont été retirées, et 4 nouveaux quiz audio ciblés sur les paires zh/ch/sh ↔ j/q/x ont été ajoutés. Si tu refais une leçon Pinyin, tu retrouveras tout ce contenu mis à jour automatiquement.",
-    bodyEn:
-      "No more pure linguistics jargon (« velar palatal stop », « retroflex consonant ») in Pinyin pronunciation quizzes. Every prompt was rewritten with accessible language: « a sound from the back of the mouth », « flat tongue then curled back », « like an English J but without the breath ». 6 translation questions that mixed pronunciation and meaning (and were thus unscorable) were removed, and 4 new audio quizzes targeting the zh/ch/sh ↔ j/q/x pairs were added. Replay any Pinyin lesson to get the updated content automatically.",
-    date: '2026-05-10',
-    tag: 'Apprendre',
-    category: 'fix',
-    icon: '🔤'
   },
   {
     id: 'ann-stripe-2026-05',
@@ -728,19 +714,6 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
   },
 
   // ─── Avril 2026 ─────────────────────────────────────────────────────────
-  {
-    id: 'ann-prof-xiao-2026-04',
-    title: 'Page Prof. Xiao complète',
-    titleEn: 'Full Prof. Xiao page',
-    body:
-      "Le chat flottant qui squattait le coin bas-droite de toutes les pages a laissé sa place à une vraie page dédiée. Tu y trouves : un historique des conversations (chaque discussion est sauvegardée et synchronisée Firestore), des presets de prompts par thème (grammaire, prononciation, culture, conversation, correction d'écriture), et une zone de saisie avec touche Entrée pour envoyer / Shift+Entrée pour aller à la ligne. Prof. Xiao tourne sur Gemini 2.5 Flash (gratuit, 1500 requêtes/jour) — assez large pour tes journées d'étude les plus intenses.",
-    bodyEn:
-      "The floating chat that squatted the bottom-right corner of every page has been replaced by a proper dedicated page. You get: a conversation history (each chat is saved and synced via Firestore), prompt presets per topic (grammar, pronunciation, culture, conversation, writing correction), and an input area with Enter to send / Shift+Enter for newline. Prof. Xiao runs on Gemini 2.5 Flash (free, 1500 requests/day) — plenty for your most intense study days.",
-    date: '2026-04-18',
-    tag: 'Prof. Xiao',
-    category: 'feature',
-    icon: '🤖'
-  },
   {
     id: 'ann-simulator-2026-04',
     title: 'Simulateur de Situations',
@@ -823,19 +796,6 @@ export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
     tag: 'Révisions',
     category: 'review',
     icon: '📚'
-  },
-  {
-    id: 'ann-culture-dictee-2026-04',
-    title: 'Nouveaux parcours Culture + Dictée',
-    titleEn: 'New Culture + Dictation paths',
-    body:
-      "Deux nouveaux parcours s'ajoutent aux 8 existants. Parcours Culture chinoise : 12 leçons sur les fêtes traditionnelles (春节, 中秋节, 端午节), la philosophie (儒家, 道家, 法家), l'art classique (calligraphie, peinture à l'encre), la cuisine régionale (sichuan, cantonais, dongbei), et les codes sociaux modernes. Parcours Dictée : 8 leçons d'entraînement à transcrire le mandarin parlé — tu entends une phrase, tu tapes le pinyin (puis le hanzi), avec feedback immédiat sur les tons. Le parcours Dictée fonctionne sur audio pré-généré + Speech Recognition côté navigateur quand dispo.",
-    bodyEn:
-      "Two new paths join the existing 8. Chinese Culture path: 12 lessons on traditional festivals (春节, 中秋节, 端午节), philosophy (儒家, 道家, 法家), classical art (calligraphy, ink painting), regional cuisine (Sichuan, Cantonese, Dongbei), and modern social codes. Dictation path: 8 lessons training you to transcribe spoken Mandarin — you hear a sentence, type the pinyin (then the hanzi), with instant feedback on tones. The Dictation path runs on pre-generated audio + browser Speech Recognition where available.",
-    date: '2026-04-02',
-    tag: 'Contenu',
-    category: 'content',
-    icon: '🏮'
   },
 
   // ─── Mars 2026 ──────────────────────────────────────────────────────────

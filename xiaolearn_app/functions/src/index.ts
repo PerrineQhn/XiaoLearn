@@ -41,6 +41,8 @@ setGlobalOptions({ region: 'europe-west1', maxInstances: 10 });
 // Re-export du proxy Gemini/CloudflareAI (clés cachées côté serveur).
 // Cf. ./geminiProxy.ts pour les détails.
 export { geminiProxy } from './geminiProxy';
+// Proxy TTS Gemini : fallback quand audio Azure absent (cf. geminiTtsProxy.ts).
+export { geminiTtsProxy } from './geminiTtsProxy';
 
 // ---------------------------------------------------------------------------
 // CORS helper : nos requêtes viennent de app.xiaolearn.com (origin cross-domain
