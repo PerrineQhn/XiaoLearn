@@ -93,13 +93,27 @@ export function useFirestoreSync(
           return;
         }
 
-        // Cas 2 : cloud plus récent que local → on télécharge cloud
+        // Cas 2 : cloud plus récent que local → on délègue à onUpdate
         if (cloudTs > localTs || !localValue) {
-          window.localStorage.setItem(key, cloudValue);
-          if (cloudTsIso) writeLocalTs(key, cloudTsIso);
           lastWrittenValueRef.current = cloudValue;
           if (onUpdate) {
+            // L'app décide via onUpdate ce qu'elle fait du payload cloud
+            // (souvent : merge UNION pour ne PAS perdre d'IDs locaux qui
+            // ne seraient pas encore arrivés au cloud). Le state→useEffect
+            // côté consumer re-persistera la valeur finale dans localStorage
+            // ET appellera saveToFirestore pour resync cloud + timestamp.
+            //
+            // ⚠️ NE PAS pré-écrire window.localStorage[key] ici : si l'union
+            // produit prev (cloud était subset de local), setState renvoie
+            // prev, le useEffect ne refire pas, et localStorage resterait
+            // appauvri. C'était la cause du bug "progression remise à 0
+            // après push" (cf. issue mai 2026).
             try { onUpdate(JSON.parse(cloudValue)); } catch { onUpdate(cloudValue); }
+          } else {
+            // Pas d'onUpdate : localStorage EST le sink unique, on écrit
+            // directement.
+            window.localStorage.setItem(key, cloudValue);
+            if (cloudTsIso) writeLocalTs(key, cloudTsIso);
           }
           return;
         }
@@ -148,12 +162,13 @@ export function useFirestoreSync(
         const cloudTs = cloudTsIso ? Date.parse(cloudTsIso) : 0;
         if (cloudTs && cloudTs <= localTs) return;
 
-        // Applique le changement
-        window.localStorage.setItem(key, value);
-        if (cloudTsIso) writeLocalTs(key, cloudTsIso);
+        // Applique le changement (cf. note même cas dans la réconciliation)
         lastWrittenValueRef.current = value;
         if (onUpdate) {
           try { onUpdate(JSON.parse(value)); } catch { onUpdate(value); }
+        } else {
+          window.localStorage.setItem(key, value);
+          if (cloudTsIso) writeLocalTs(key, cloudTsIso);
         }
       },
       (err) => console.warn('[useFirestoreSync] onSnapshot error', key, err)

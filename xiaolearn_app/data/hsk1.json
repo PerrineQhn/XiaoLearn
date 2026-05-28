@@ -7,7 +7,7 @@
     "translationFr": "aimer; amour",
     "category": "verbe",
     "explanation": "affection; to be inclined (to do sth); to tend to (happen)",
-    "audio": "audio/hsk1/hsk1_爱.wav",
+    "audio": "audio/hsk1/hsk1_爱.mp3",
     "examples": [
       {
         "chinese": "我爱我的家人。",
@@ -54,7 +54,7 @@
     "pinyin": "ba",
     "translationFr": "particule suggestion",
     "category": "particule",
-    "audio": "audio/hsk1/hsk1_吧.wav",
+    "audio": "audio/hsk1/hsk1_吧.mp3",
     "examples": [
       {
         "chinese": "去吧。",
@@ -101,7 +101,7 @@
     "pinyin": "bā",
     "translationFr": "huit",
     "category": "numéral",
-    "audio": "audio/hsk1/hsk1_八.wav",
+    "audio": "audio/hsk1/hsk1_八.mp3",
     "examples": [
       {
         "chinese": "八本书",
@@ -147,7 +147,7 @@
     "translationFr": "papa",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_爸爸.wav",
+    "audio": "audio/hsk1/hsk1_爸爸.mp3",
     "examples": [
       {
         "chinese": "爸爸爱你",
@@ -190,7 +190,7 @@
     "translationFr": "cent",
     "category": "numéral",
     "explanation": "numerous; all kinds of",
-    "audio": "audio/hsk1/hsk1_百.wav",
+    "audio": "audio/hsk1/hsk1_百.mp3",
     "examples": [
       {
         "chinese": "百花齐放",
@@ -237,7 +237,7 @@
     "translationFr": "journée; jour",
     "category": "nom",
     "explanation": "during the day; day; CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_白天.wav",
+    "audio": "audio/hsk1/hsk1_白天.mp3",
     "examples": [
       {
         "chinese": "白天很热。",
@@ -285,7 +285,7 @@
     "translationFr": "demi; moitié",
     "category": "numéral",
     "explanation": "semi-; incomplete; (after a number) and a half",
-    "audio": "audio/hsk1/hsk1_半.wav",
+    "audio": "audio/hsk1/hsk1_半.mp3",
     "examples": [
       {
         "chinese": "半小时",
@@ -334,7 +334,7 @@
     "translationFr": "petits pains farcis",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_包子.wav",
+    "audio": "audio/hsk1/hsk1_包子.mp3",
     "examples": [
       {
         "chinese": "我喜欢吃包子。",
@@ -380,7 +380,7 @@
     "translationFr": "verre; tasse",
     "category": "nom",
     "explanation": "glass; CL:個|个[ge4],隻|只[zhi1]",
-    "audio": "audio/hsk1/hsk1_杯子.wav",
+    "audio": "audio/hsk1/hsk1_杯子.mp3",
     "examples": [
       {
         "chinese": "一杯水",
@@ -423,7 +423,7 @@
     "translationFr": "classificateur : volumes; livres; cahier",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_本.wav",
+    "audio": "audio/hsk1/hsk1_本.mp3",
     "examples": [
       {
         "chinese": "一本书",
@@ -473,7 +473,7 @@
     "translationFr": "côté; bord",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_边.wav",
+    "audio": "audio/hsk1/hsk1_边.mp3",
     "examples": [
       {
         "chinese": "在这边",
@@ -526,7 +526,7 @@
     "translationFr": "maladie; malade",
     "category": "nom",
     "explanation": "CL:場|场[chang2]; disease; to fall ill; defect",
-    "audio": "audio/hsk1/hsk1_病.wav",
+    "audio": "audio/hsk1/hsk1_病.mp3",
     "examples": [
       {
         "chinese": "我生病了。",
@@ -573,7 +573,7 @@
     "translationFr": "ne... pas",
     "category": "adverbe",
     "explanation": "(bound form) not; un-",
-    "audio": "audio/hsk1/hsk1_不.wav",
+    "audio": "audio/hsk1/hsk1_不.mp3",
     "examples": [
       {
         "chinese": "不会唱歌",
@@ -620,7 +620,7 @@
     "translationFr": "de rien",
     "category": "général",
     "explanation": "don't mention it; impolite; rude; blunt",
-    "audio": "audio/hsk1/hsk1_不客气.wav",
+    "audio": "audio/hsk1/hsk1_不客气.mp3",
     "examples": [
       {
         "chinese": "不客气",
@@ -667,7 +667,7 @@
     "translationFr": "ne pas (impératif)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_不要.wav",
+    "audio": "audio/hsk1/hsk1_不要.mp3",
     "examples": [
       {
         "chinese": "不要走",
@@ -717,7 +717,7 @@
     "translationFr": "légumes; plat",
     "category": "nom",
     "explanation": "dish (of food) (CL:樣|样[yang4],道[dao4],盤|盘[pan2]); (of one's skills etc) weak; poor; (coll.) (one's) type",
-    "audio": "audio/hsk1/hsk1_菜.wav",
+    "audio": "audio/hsk1/hsk1_菜.mp3",
     "examples": [
       {
         "chinese": "我喜欢吃蔬菜。",
@@ -764,7 +764,7 @@
     "translationFr": "thé",
     "category": "nom",
     "explanation": "tea plant; CL:杯[bei1],壺|壶[hu2]",
-    "audio": "audio/hsk1/hsk1_茶.wav",
+    "audio": "audio/hsk1/hsk1_茶.mp3",
     "examples": [
       {
         "chinese": "我喜欢喝茶。",
@@ -810,7 +810,7 @@
     "translationFr": "chanter",
     "category": "verbe",
     "explanation": "to call loudly; to chant",
-    "audio": "audio/hsk1/hsk1_唱.wav",
+    "audio": "audio/hsk1/hsk1_唱.mp3",
     "examples": [
       {
         "chinese": "唱歌",
@@ -855,7 +855,7 @@
     "translationFr": "supermarché",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_超市.wav",
+    "audio": "audio/hsk1/hsk1_超市.mp3",
     "examples": [
       {
         "chinese": "去超市",
@@ -916,7 +916,7 @@
     "translationFr": "véhicule",
     "category": "nom",
     "explanation": "rook (in Chinese chess); rook (in chess)",
-    "audio": "audio/hsk1/hsk1_车.wav",
+    "audio": "audio/hsk1/hsk1_车.mp3",
     "examples": [
       {
         "chinese": "我有一辆车。",
@@ -964,7 +964,7 @@
     "pinyin": "chī",
     "translationFr": "manger",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_吃.wav",
+    "audio": "audio/hsk1/hsk1_吃.mp3",
     "examples": [
       {
         "chinese": "吃饭",
@@ -1016,7 +1016,7 @@
     "translationFr": "porter (vêtement)",
     "category": "verbe",
     "explanation": "to put on; to dress; to bore through; to pierce; to perforate; to penetrate; to pass through; to thread",
-    "audio": "audio/hsk1/hsk1_穿.wav",
+    "audio": "audio/hsk1/hsk1_穿.mp3",
     "examples": [
       {
         "chinese": "穿衣服",
@@ -1067,7 +1067,7 @@
     "translationFr": "taxi",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_出租车.wav",
+    "audio": "audio/hsk1/hsk1_出租车.mp3",
     "examples": [
       {
         "chinese": "打车",
@@ -1140,7 +1140,7 @@
     "pinyin": "dà",
     "translationFr": "grand",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_大.wav",
+    "audio": "audio/hsk1/hsk1_大.mp3",
     "examples": [
       {
         "chinese": "这个房间很大。",
@@ -1187,7 +1187,7 @@
     "pinyin": "dǎ diànhuà",
     "translationFr": "téléphoner",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_打电话.wav",
+    "audio": "audio/hsk1/hsk1_打电话.mp3",
     "examples": [
       {
         "chinese": "打电话给妈妈",
@@ -1231,7 +1231,7 @@
     "translationFr": "tout le monde",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_大家.wav",
+    "audio": "audio/hsk1/hsk1_大家.mp3",
     "examples": [
       {
         "chinese": "大家好",
@@ -1279,7 +1279,7 @@
     "translationFr": "jusqu'à",
     "category": "verbe",
     "explanation": "to leave for; to go to; to (a place); until (a time); up to (a point); (verb complement indicating arriving at a place or reaching a point); considerate; thoughtful; thorough",
-    "audio": "audio/hsk1/hsk1_到.wav",
+    "audio": "audio/hsk1/hsk1_到.mp3",
     "examples": [
       {
         "chinese": "我们明天到北京。",
@@ -1328,7 +1328,7 @@
     "translationFr": "université",
     "category": "nom",
     "explanation": "college; CL:所[suo3]",
-    "audio": "audio/hsk1/hsk1_大学.wav",
+    "audio": "audio/hsk1/hsk1_大学.mp3",
     "examples": [
       {
         "chinese": "我想去北京大学读书。",
@@ -1370,7 +1370,7 @@
     "pinyin": "dàxuéshēng",
     "translationFr": "étudiant(e)",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_大学生.wav",
+    "audio": "audio/hsk1/hsk1_大学生.mp3",
     "examples": [
       {
         "chinese": "大学生喜欢参加各种活动。",
@@ -1414,7 +1414,7 @@
     "pinyin": "de",
     "translationFr": "particule de possession",
     "category": "particule",
-    "audio": "audio/hsk1/hsk1_的.wav",
+    "audio": "audio/hsk1/hsk1_的.mp3",
     "examples": [
       {
         "chinese": "这是我的书。",
@@ -1464,7 +1464,7 @@
     "translationFr": "préfixe ordinal",
     "category": "général",
     "explanation": "(literary) grades in which successful candidates in the imperial examinations were placed; (old) residence of a high official; (literary) but; however; (literary) only; just",
-    "audio": "audio/hsk1/hsk1_第.wav",
+    "audio": "audio/hsk1/hsk1_第.mp3",
     "examples": [
       {
         "chinese": "第一",
@@ -1509,7 +1509,7 @@
     "translationFr": "magasin; boutique",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_店.wav",
+    "audio": "audio/hsk1/hsk1_店.mp3",
     "examples": [
       {
         "chinese": "商店",
@@ -1562,7 +1562,7 @@
     "translationFr": "point; petite quantité; moment (heure)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_点.wav",
+    "audio": "audio/hsk1/hsk1_点.mp3",
     "examples": [
       {
         "chinese": "几点了？",
@@ -1615,7 +1615,7 @@
     "translationFr": "téléphone",
     "category": "nom",
     "explanation": "CL:部[bu4]; phone call; CL:通[tong1]; phone number",
-    "audio": "audio/hsk1/hsk1_电话.wav",
+    "audio": "audio/hsk1/hsk1_电话.mp3",
     "examples": [
       {
         "chinese": "打电话",
@@ -1658,7 +1658,7 @@
     "translationFr": "ordinateur",
     "category": "nom",
     "explanation": "CL:臺|台[tai2]",
-    "audio": "audio/hsk1/hsk1_电脑.wav",
+    "audio": "audio/hsk1/hsk1_电脑.mp3",
     "examples": [
       {
         "chinese": "我有一台电脑。",
@@ -1702,7 +1702,7 @@
     "translationFr": "télévision",
     "category": "nom",
     "explanation": "CL:臺|台[tai2],部[bu4]",
-    "audio": "audio/hsk1/hsk1_电视.wav",
+    "audio": "audio/hsk1/hsk1_电视.mp3",
     "examples": [
       {
         "chinese": "我每天看新闻联播。",
@@ -1749,7 +1749,7 @@
     "translationFr": "film",
     "category": "nom",
     "explanation": "CL:部[bu4],片[pian4],場|场[chang3]",
-    "audio": "audio/hsk1/hsk1_电影.wav",
+    "audio": "audio/hsk1/hsk1_电影.mp3",
     "examples": [
       {
         "chinese": "我喜欢看电影。",
@@ -1794,7 +1794,7 @@
     "translationFr": "cinéma",
     "category": "nom",
     "explanation": "CL:家[jia1],座[zuo4]",
-    "audio": "audio/hsk1/hsk1_电影院.wav",
+    "audio": "audio/hsk1/hsk1_电影院.mp3",
     "examples": [
       {
         "chinese": "我们去看电影。",
@@ -1837,7 +1837,7 @@
     "translationFr": "petit frère",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_弟弟.wav",
+    "audio": "audio/hsk1/hsk1_弟弟.mp3",
     "examples": [
       {
         "chinese": "弟弟很聪明。",
@@ -1880,7 +1880,7 @@
     "translationFr": "chose; objet",
     "category": "nom",
     "explanation": "stuff; person; CL:個|个[ge4],件[jian4]",
-    "audio": "audio/hsk1/hsk1_东西.wav",
+    "audio": "audio/hsk1/hsk1_东西.mp3",
     "examples": [
       {
         "chinese": "他买了一些东西。",
@@ -1929,7 +1929,7 @@
     "translationFr": "tous; tout",
     "category": "adverbe",
     "explanation": "metropolis",
-    "audio": "audio/hsk1/hsk1_都.wav",
+    "audio": "audio/hsk1/hsk1_都.mp3",
     "examples": [
       {
         "chinese": "都是首都",
@@ -1976,7 +1976,7 @@
     "translationFr": "lire",
     "category": "verbe",
     "explanation": "to read; to attend (school); to study (a subject in school); to pronounce",
-    "audio": "audio/hsk1/hsk1_读.wav",
+    "audio": "audio/hsk1/hsk1_读.mp3",
     "examples": [
       {
         "chinese": "他读课文",
@@ -2024,7 +2024,7 @@
     "translationFr": "correct; juste",
     "category": "adjectif",
     "explanation": "towards; at; for; concerning; regarding; to treat (sb a certain way); to face; (bound form) opposite; facing; matching; to match together; to adjust; to fit; to suit; to answer; to reply; to add; to pour in (a fluid); to check; to compare; classifier: couple; pair",
-    "audio": "audio/hsk1/hsk1_对.wav",
+    "audio": "audio/hsk1/hsk1_对.mp3",
     "examples": [
       {
         "chinese": "他对我说话很对。",
@@ -2085,7 +2085,7 @@
     "translationFr": "pardon; désolé",
     "category": "verbe",
     "explanation": "to let (sb) down; to disappoint",
-    "audio": "audio/hsk1/hsk1_对不起.wav",
+    "audio": "audio/hsk1/hsk1_对不起.mp3",
     "examples": [
       {
         "chinese": "对不起，我迟到了。",
@@ -2131,7 +2131,7 @@
     "translationFr": "beaucoup",
     "category": "adjectif",
     "explanation": "too many; in excess; (after a numeral) ... odd; how (to what extent) (Taiwan pr. [duo2]); (bound form) multi-; poly-",
-    "audio": "audio/hsk1/hsk1_多.wav",
+    "audio": "audio/hsk1/hsk1_多.mp3",
     "examples": [
       {
         "chinese": "多数人喜欢这个电影。",
@@ -2180,7 +2180,7 @@
     "translationFr": "combien",
     "category": "pronom",
     "explanation": "(phone number, student ID etc) what number?",
-    "audio": "audio/hsk1/hsk1_多少.wav",
+    "audio": "audio/hsk1/hsk1_多少.mp3",
     "examples": [
       {
         "chinese": "多少錢？",
@@ -2225,7 +2225,7 @@
     "translationFr": "étudier; lire",
     "category": "général",
     "explanation": "to study; to attend school",
-    "audio": "audio/hsk1/hsk1_读书.wav",
+    "audio": "audio/hsk1/hsk1_读书.mp3",
     "examples": [
       {
         "chinese": "我每天读书一小时。",
@@ -2270,7 +2270,7 @@
     "translationFr": "deux",
     "category": "numéral",
     "explanation": "2; (Beijing dialect) stupid",
-    "audio": "audio/hsk1/hsk1_二.wav",
+    "audio": "audio/hsk1/hsk1_二.mp3",
     "examples": [
       {
         "chinese": "我有两个朋友。",
@@ -2315,7 +2315,7 @@
     "pinyin": "érzi",
     "translationFr": "fils",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_儿子.wav",
+    "audio": "audio/hsk1/hsk1_儿子.mp3",
     "examples": [
       {
         "chinese": "我有一个儿子。",
@@ -2359,7 +2359,7 @@
     "translationFr": "repas; riz cuit",
     "category": "nom",
     "explanation": "CL:碗[wan3]; meal; CL:頓|顿[dun4]; (loanword) fan; devotee",
-    "audio": "audio/hsk1/hsk1_饭.wav",
+    "audio": "audio/hsk1/hsk1_饭.mp3",
     "examples": [
       {
         "chinese": "我吃了饭。",
@@ -2404,7 +2404,7 @@
     "translationFr": "restaurant; hôtel",
     "category": "nom",
     "explanation": "hotel; CL:家[jia1],個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_饭店.wav",
+    "audio": "audio/hsk1/hsk1_饭店.mp3",
     "examples": [
       {
         "chinese": "我们住在飯店里。",
@@ -2449,7 +2449,7 @@
     "translationFr": "chambre; pièce",
     "category": "nom",
     "explanation": "CL:間|间[jian1],個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_房间.wav",
+    "audio": "audio/hsk1/hsk1_房间.mp3",
     "examples": [
       {
         "chinese": "这是一个房间。",
@@ -2496,7 +2496,7 @@
     "translationFr": "très",
     "category": "adverbe",
     "explanation": "unusual; extraordinary",
-    "audio": "audio/hsk1/hsk1_非常.wav",
+    "audio": "audio/hsk1/hsk1_非常.mp3",
     "examples": [
       {
         "chinese": "他跑得非常快。",
@@ -2542,7 +2542,7 @@
     "translationFr": "avion",
     "category": "nom",
     "explanation": "CL:架[jia4]",
-    "audio": "audio/hsk1/hsk1_飞机.wav",
+    "audio": "audio/hsk1/hsk1_飞机.mp3",
     "examples": [
       {
         "chinese": "我们坐飞机去北京。",
@@ -2588,7 +2588,7 @@
     "translationFr": "minute; point",
     "category": "nom",
     "explanation": "share; ingredient; component",
-    "audio": "audio/hsk1/hsk1_分.wav",
+    "audio": "audio/hsk1/hsk1_分.mp3",
     "examples": [
       {
         "chinese": "我们可以将苹果分成四份。",
@@ -2642,7 +2642,7 @@
     "translationFr": "minute",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_分钟.wav",
+    "audio": "audio/hsk1/hsk1_分钟.mp3",
     "examples": [
       {
         "chinese": "十分钟",
@@ -2703,7 +2703,7 @@
     "translationFr": "content; heureux",
     "category": "adjectif",
     "explanation": "glad; willing (to do sth); in a cheerful mood",
-    "audio": "audio/hsk1/hsk1_高兴.wav",
+    "audio": "audio/hsk1/hsk1_高兴.mp3",
     "examples": [
       {
         "chinese": "我很高兴能来中国。",
@@ -2750,7 +2750,7 @@
     "pinyin": "gè",
     "translationFr": "(classificateur général)",
     "category": "classificateur",
-    "audio": "audio/hsk1/hsk1_个.wav",
+    "audio": "audio/hsk1/hsk1_个.mp3",
     "examples": [
       {
         "chinese": "一个人",
@@ -2796,7 +2796,7 @@
     "pinyin": "gē",
     "translationFr": "chanson",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_歌.wav",
+    "audio": "audio/hsk1/hsk1_歌.mp3",
     "examples": [
       {
         "chinese": "歌手唱歌",
@@ -2843,7 +2843,7 @@
     "translationFr": "grand frère",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_哥哥.wav",
+    "audio": "audio/hsk1/hsk1_哥哥.mp3",
     "examples": [
       {
         "chinese": "哥哥在家。",
@@ -2886,7 +2886,7 @@
     "translationFr": "donner",
     "category": "verbe",
     "explanation": "to provide",
-    "audio": "audio/hsk1/hsk1_给.wav",
+    "audio": "audio/hsk1/hsk1_给.mp3",
     "examples": [
       {
         "chinese": "我给他一本书。",
@@ -2939,7 +2939,7 @@
     "translationFr": "entreprise",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_公司.wav",
+    "audio": "audio/hsk1/hsk1_公司.mp3",
     "examples": [
       {
         "chinese": "去公司",
@@ -3000,7 +3000,7 @@
     "translationFr": "travailler; travail",
     "category": "verbe",
     "explanation": "(of a machine) to operate; job; work; task; CL:個|个[ge4],份[fen4],項|项[xiang4]",
-    "audio": "audio/hsk1/hsk1_工作.wav",
+    "audio": "audio/hsk1/hsk1_工作.mp3",
     "examples": [
       {
         "chinese": "我每天工作。",
@@ -3046,7 +3046,7 @@
     "translationFr": "chien",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_狗.wav",
+    "audio": "audio/hsk1/hsk1_狗.mp3",
     "examples": [
       {
         "chinese": "小狗",
@@ -3101,7 +3101,7 @@
     "translationFr": "cher",
     "category": "adjectif",
     "explanation": "(bound form) highly valued; precious; (bound form) noble; of high rank; (prefix) (honorific) your",
-    "audio": "audio/hsk1/hsk1_贵.wav",
+    "audio": "audio/hsk1/hsk1_贵.mp3",
     "examples": [
       {
         "chinese": "这件衣服很贵。",
@@ -3148,7 +3148,7 @@
     "translationFr": "pays",
     "category": "nom",
     "explanation": "(bound form) national",
-    "audio": "audio/hsk1/hsk1_国.wav",
+    "audio": "audio/hsk1/hsk1_国.mp3",
     "examples": [
       {
         "chinese": "中国是一个大国。",
@@ -3193,7 +3193,7 @@
     "pinyin": "hái",
     "translationFr": "encore; toujours; en plus",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_还.wav",
+    "audio": "audio/hsk1/hsk1_还.mp3",
     "examples": [
       {
         "chinese": "还是你说",
@@ -3242,7 +3242,7 @@
     "pinyin": "háizi",
     "translationFr": "enfant",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_孩子.wav",
+    "audio": "audio/hsk1/hsk1_孩子.mp3",
     "examples": [
       {
         "chinese": "孩子在公园里玩耍。",
@@ -3286,7 +3286,7 @@
     "pinyin": "Hànyǔ",
     "translationFr": "chinois (langue)",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_汉语.wav",
+    "audio": "audio/hsk1/hsk1_汉语.mp3",
     "examples": [
       {
         "chinese": "你会说汉语吗？",
@@ -3331,7 +3331,7 @@
     "pinyin": "Hànzì",
     "translationFr": "caractère chinois",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_汉字.wav",
+    "audio": "audio/hsk1/hsk1_汉字.mp3",
     "examples": [
       {
         "chinese": "汉字是构成中文的基础。",
@@ -3378,7 +3378,7 @@
     "translationFr": "numéro; date",
     "category": "nom",
     "explanation": "day of a month; mark; sign; business establishment; size; ship suffix; horn (wind instrument); bugle call; assumed name; to take a pulse; classifier used to indicate number of people",
-    "audio": "audio/hsk1/hsk1_号.wav",
+    "audio": "audio/hsk1/hsk1_号.mp3",
     "examples": [
       {
         "chinese": "今天是5号。",
@@ -3424,7 +3424,7 @@
     "pinyin": "hǎo",
     "translationFr": "bon; bien; d'accord",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_好.wav",
+    "audio": "audio/hsk1/hsk1_好.mp3",
     "examples": [
       {
         "chinese": "我喜欢读书。",
@@ -3476,7 +3476,7 @@
     "pinyin": "hǎochī",
     "translationFr": "délicieux",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_好吃.wav",
+    "audio": "audio/hsk1/hsk1_好吃.mp3",
     "examples": [
       {
         "chinese": "我喜欢吃水果。",
@@ -3524,7 +3524,7 @@
     "translationFr": "beau; joli",
     "category": "adjectif",
     "explanation": "(of a movie, book, TV show etc) good; in an embarrassing situation",
-    "audio": "audio/hsk1/hsk1_好看.wav",
+    "audio": "audio/hsk1/hsk1_好看.mp3",
     "examples": [
       {
         "chinese": "这本书好看。",
@@ -3569,7 +3569,7 @@
     "pinyin": "hǎotīng",
     "translationFr": "agréable à entendre",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_好听.wav",
+    "audio": "audio/hsk1/hsk1_好听.mp3",
     "examples": [
       {
         "chinese": "这首歌好听。",
@@ -3612,7 +3612,7 @@
     "pinyin": "hǎowánr",
     "translationFr": "amusant",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_好玩儿.wav",
+    "audio": "audio/hsk1/hsk1_好玩儿.mp3",
     "examples": [
       {
         "chinese": "这个游戏好玩儿。",
@@ -3658,7 +3658,7 @@
     "translationFr": "et; avec",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_和.wav",
+    "audio": "audio/hsk1/hsk1_和.mp3",
     "examples": [
       {
         "chinese": "我和你",
@@ -3709,7 +3709,7 @@
     "pinyin": "hē",
     "translationFr": "boire",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_喝.wav",
+    "audio": "audio/hsk1/hsk1_喝.mp3",
     "examples": [
       {
         "chinese": "喝水",
@@ -3756,7 +3756,7 @@
     "translationFr": "très",
     "category": "adverbe",
     "explanation": "(also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic element)",
-    "audio": "audio/hsk1/hsk1_很.wav",
+    "audio": "audio/hsk1/hsk1_很.mp3",
     "examples": [
       {
         "chinese": "他很聪明。",
@@ -3798,7 +3798,7 @@
     "translationFr": "derrière",
     "category": "nom",
     "explanation": "behind; rear; afterwards; after; later; post-",
-    "audio": "audio/hsk1/hsk1_后.wav",
+    "audio": "audio/hsk1/hsk1_后.mp3",
     "examples": [
       {
         "chinese": "门在房子的后面。",
@@ -3847,7 +3847,7 @@
     "pinyin": "huí",
     "translationFr": "retourner",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_回.wav",
+    "audio": "audio/hsk1/hsk1_回.mp3",
     "examples": [
       {
         "chinese": "我回家了。",
@@ -3896,7 +3896,7 @@
     "translationFr": "savoir; pouvoir; future; réunion",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_会.wav",
+    "audio": "audio/hsk1/hsk1_会.mp3",
     "examples": [
       {
         "chinese": "我会说中文",
@@ -3949,7 +3949,7 @@
     "translationFr": "train",
     "category": "nom",
     "explanation": "CL:列[lie4],節|节[jie2],班[ban1],趟[tang4]",
-    "audio": "audio/hsk1/hsk1_火车.wav",
+    "audio": "audio/hsk1/hsk1_火车.mp3",
     "examples": [
       {
         "chinese": "我们坐火车去北京。",
@@ -3992,7 +3992,7 @@
     "translationFr": "combien (petit nombre)",
     "category": "numéral",
     "explanation": "how many; several; a few",
-    "audio": "audio/hsk1/hsk1_几.wav",
+    "audio": "audio/hsk1/hsk1_几.mp3",
     "examples": [
       {
         "chinese": "你想要几杯水？",
@@ -4040,7 +4040,7 @@
     "translationFr": "maison; famille",
     "category": "nom",
     "explanation": "family; (polite) my (sister, uncle etc); classifier for families or businesses; refers to the philosophical schools of pre-Han China; noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian; CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_家.wav",
+    "audio": "audio/hsk1/hsk1_家.mp3",
     "examples": [
       {
         "chinese": "我家有三口人。",
@@ -4088,7 +4088,7 @@
     "translationFr": "voir; rencontrer",
     "category": "verbe",
     "explanation": "also written 現|现[xian4]",
-    "audio": "audio/hsk1/hsk1_见.wav",
+    "audio": "audio/hsk1/hsk1_见.mp3",
     "examples": [
       {
         "chinese": "他渐渐地见到了希望。",
@@ -4139,7 +4139,7 @@
     "translationFr": "spécificatif vêtements; affaires",
     "category": "mesure",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_件.wav",
+    "audio": "audio/hsk1/hsk1_件.mp3",
     "examples": [
       {
         "chinese": "一件衣服",
@@ -4209,7 +4209,7 @@
     "pinyin": "jiào",
     "translationFr": "s'appeler",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_叫.wav",
+    "audio": "audio/hsk1/hsk1_叫.mp3",
     "examples": [
       {
         "chinese": "他叫我。",
@@ -4258,7 +4258,7 @@
     "translationFr": "raviolis chinois",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_饺子.wav",
+    "audio": "audio/hsk1/hsk1_饺子.mp3",
     "examples": [
       {
         "chinese": "吃饺子",
@@ -4335,7 +4335,7 @@
     "translationFr": "famille",
     "category": "nom",
     "explanation": "(old) servant",
-    "audio": "audio/hsk1/hsk1_家人.wav",
+    "audio": "audio/hsk1/hsk1_家人.mp3",
     "examples": [
       {
         "chinese": "我的家人",
@@ -4378,7 +4378,7 @@
     "translationFr": "œuf",
     "category": "nom",
     "explanation": "hen's egg; CL:個|个[ge4],打[da2]",
-    "audio": "audio/hsk1/hsk1_鸡蛋.wav",
+    "audio": "audio/hsk1/hsk1_鸡蛋.mp3",
     "examples": [
       {
         "chinese": "今天吃鸡蛋。",
@@ -4422,7 +4422,7 @@
     "translationFr": "grande sœur",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_姐姐.wav",
+    "audio": "audio/hsk1/hsk1_姐姐.mp3",
     "examples": [
       {
         "chinese": "我的大姐姐来了。",
@@ -4464,7 +4464,7 @@
     "pinyin": "jīnnián",
     "translationFr": "cette année",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_今年.wav",
+    "audio": "audio/hsk1/hsk1_今年.mp3",
     "examples": [
       {
         "chinese": "今年我们去了北京。",
@@ -4508,7 +4508,7 @@
     "translationFr": "aujourd'hui",
     "category": "nom",
     "explanation": "the present time; now",
-    "audio": "audio/hsk1/hsk1_今天.wav",
+    "audio": "audio/hsk1/hsk1_今天.mp3",
     "examples": [
       {
         "chinese": "今天天气真好。",
@@ -4551,7 +4551,7 @@
     "translationFr": "neuf",
     "category": "numéral",
     "explanation": "9",
-    "audio": "audio/hsk1/hsk1_九.wav",
+    "audio": "audio/hsk1/hsk1_九.mp3",
     "examples": [
       {
         "chinese": "他九岁了。",
@@ -4596,7 +4596,7 @@
     "translationFr": "penser; trouver",
     "category": "verbe",
     "explanation": "to feel (uncomfortable etc)",
-    "audio": "audio/hsk1/hsk1_觉得.wav",
+    "audio": "audio/hsk1/hsk1_觉得.mp3",
     "examples": [
       {
         "chinese": "觉得不舒服",
@@ -4643,7 +4643,7 @@
     "translationFr": "ouvrir; conduire",
     "category": "verbe",
     "explanation": "(of ships, vehicles, troops etc) to start; to turn on; to put in operation; to operate; to run; to boil; to write out (a prescription, check, invoice etc); (directional complement) away; off; carat (gold); abbr. for Kelvin, 開爾文|开尔文[Kai1 er3 wen2]; abbr. for 開本|开本[kai1 ben3], book format",
-    "audio": "audio/hsk1/hsk1_开.wav",
+    "audio": "audio/hsk1/hsk1_开.mp3",
     "examples": [
       {
         "chinese": "开门",
@@ -4701,7 +4701,7 @@
     "translationFr": "conduire",
     "category": "général",
     "explanation": "(slang) to post sexual content online; to make a sexual joke",
-    "audio": "audio/hsk1/hsk1_开车.wav",
+    "audio": "audio/hsk1/hsk1_开车.mp3",
     "examples": [
       {
         "chinese": "我开车去上班。",
@@ -4746,7 +4746,7 @@
     "pinyin": "kàn",
     "translationFr": "regarder; voir; lire; consulter (médecin)",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_看.wav",
+    "audio": "audio/hsk1/hsk1_看.mp3",
     "examples": [
       {
         "chinese": "看见",
@@ -4790,7 +4790,7 @@
     "translationFr": "consulter un médecin",
     "category": "général",
     "explanation": "to see a patient",
-    "audio": "audio/hsk1/hsk1_看病.wav",
+    "audio": "audio/hsk1/hsk1_看病.mp3",
     "examples": [
       {
         "chinese": "看病",
@@ -4835,7 +4835,7 @@
     "pinyin": "kànjiàn",
     "translationFr": "voir",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_看见.wav",
+    "audio": "audio/hsk1/hsk1_看见.mp3",
     "examples": [
       {
         "chinese": "我看见他了。",
@@ -4881,7 +4881,7 @@
     "translationFr": "leçon; cours",
     "category": "nom",
     "explanation": "course; CL:門|门[men2]; class; lesson; CL:堂[tang2],節|节[jie2]; to levy; tax; form of divination",
-    "audio": "audio/hsk1/hsk1_课.wav",
+    "audio": "audio/hsk1/hsk1_课.mp3",
     "examples": [
       {
         "chinese": "我们今天上数学课。",
@@ -4927,7 +4927,7 @@
     "translationFr": "pouvoir; être permis",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_可以.wav",
+    "audio": "audio/hsk1/hsk1_可以.mp3",
     "examples": [
       {
         "chinese": "可以",
@@ -5004,7 +5004,7 @@
     "translationFr": "bouche; classificateur",
     "category": "classificateur",
     "explanation": "classifier for things with mouths (people, domestic animals, cannons, wells etc); classifier for bites or mouthfuls",
-    "audio": "audio/hsk1/hsk1_口.wav",
+    "audio": "audio/hsk1/hsk1_口.mp3",
     "examples": [
       {
         "chinese": "我的嘴巴很干。",
@@ -5052,7 +5052,7 @@
     "translationFr": "yuan (monnaie)",
     "category": "nom",
     "explanation": "classifier for pieces of cloth, cake, soap etc; (coll.) classifier for money and currency units",
-    "audio": "audio/hsk1/hsk1_块.wav",
+    "audio": "audio/hsk1/hsk1_块.mp3",
     "examples": [
       {
         "chinese": "这蛋糕分成两块。",
@@ -5100,7 +5100,7 @@
     "translationFr": "venir",
     "category": "verbe",
     "explanation": "(used as a substitute for a more specific verb); hither (directional complement for motion toward the speaker, as in 回來|回来[hui2 lai5]); ever since (as in 自古以來|自古以来[zi4 gu3 yi3 lai2]); for the past (amount of time); (prefix) the coming ...; the next ... (as in 來世|来世[lai2 shi4]); (between two verbs) in order to; (after a round number) approximately; (used after 得[de2] to indicate possibility, as in 談得來|谈得来[tan2 de5 lai2], or after 不[bu4] to indicate impossibility, as in 吃不來|吃不来[chi1 bu5 lai2])",
-    "audio": "audio/hsk1/hsk1_来.wav",
+    "audio": "audio/hsk1/hsk1_来.mp3",
     "examples": [
       {
         "chinese": "他來了。",
@@ -5150,7 +5150,7 @@
     "translationFr": "professeur",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_老师.wav",
+    "audio": "audio/hsk1/hsk1_老师.mp3",
     "examples": [
       {
         "chinese": "我的老师很好。",
@@ -5194,7 +5194,7 @@
     "pinyin": "le",
     "translationFr": "particule aspect accompli",
     "category": "particule",
-    "audio": "audio/hsk1/hsk1_了.wav",
+    "audio": "audio/hsk1/hsk1_了.mp3",
     "examples": [
       {
         "chinese": "吃了饭再去图书馆。",
@@ -5240,7 +5240,7 @@
     "pinyin": "lěng",
     "translationFr": "froid",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_冷.wav",
+    "audio": "audio/hsk1/hsk1_冷.mp3",
     "examples": [
       {
         "chinese": "冷水",
@@ -5289,7 +5289,7 @@
     "translationFr": "dedans",
     "category": "nom",
     "explanation": "neighborhood; ancient administrative unit of 25 families; (Tw) borough, administrative unit between the township 鎮|镇[zhen4] and neighborhood 鄰|邻[lin2] levels",
-    "audio": "audio/hsk1/hsk1_里.wav",
+    "audio": "audio/hsk1/hsk1_里.mp3",
     "examples": [
       {
         "chinese": "我住在里巷。",
@@ -5335,7 +5335,7 @@
     "translationFr": "deux (pour compter des quantités; souvent avant un classificateur)",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_两.wav",
+    "audio": "audio/hsk1/hsk1_两.mp3",
     "examples": [
       {
         "chinese": "两个人",
@@ -5384,7 +5384,7 @@
     "translationFr": "zéro",
     "category": "numéral",
     "explanation": "nought; zero sign; fractional; fragmentary; odd (of numbers); (placed between two numbers to indicate a smaller quantity followed by a larger one); fraction; (in mathematics) remainder (after division); extra; to wither and fall; to wither",
-    "audio": "audio/hsk1/hsk1_零.wav",
+    "audio": "audio/hsk1/hsk1_零.mp3",
     "examples": [
       {
         "chinese": "零下五度",
@@ -5435,7 +5435,7 @@
     "pinyin": "liù",
     "translationFr": "six",
     "category": "numéral",
-    "audio": "audio/hsk1/hsk1_六.wav",
+    "audio": "audio/hsk1/hsk1_六.mp3",
     "examples": [
       {
         "chinese": "六个人",
@@ -5480,7 +5480,7 @@
     "pinyin": "ma",
     "translationFr": "particule interrogative",
     "category": "particule",
-    "audio": "audio/hsk1/hsk1_吗.wav",
+    "audio": "audio/hsk1/hsk1_吗.mp3",
     "examples": [
       {
         "chinese": "你吃饭了吗？",
@@ -5528,7 +5528,7 @@
     "translationFr": "vendre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_卖.wav",
+    "audio": "audio/hsk1/hsk1_卖.mp3",
     "examples": [
       {
         "chinese": "卖东西",
@@ -5578,7 +5578,7 @@
     "translationFr": "acheter",
     "category": "verbe",
     "explanation": "to purchase",
-    "audio": "audio/hsk1/hsk1_买.wav",
+    "audio": "audio/hsk1/hsk1_买.mp3",
     "examples": [
       {
         "chinese": "买书",
@@ -5622,7 +5622,7 @@
     "translationFr": "maman",
     "category": "nom",
     "explanation": "mommy; mother; CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_妈妈.wav",
+    "audio": "audio/hsk1/hsk1_妈妈.mp3",
     "examples": [
       {
         "chinese": "我的妈妈是个好老师。",
@@ -5667,7 +5667,7 @@
     "translationFr": "occupé",
     "category": "adjectif",
     "explanation": "hurriedly; to hurry; to rush",
-    "audio": "audio/hsk1/hsk1_忙.wav",
+    "audio": "audio/hsk1/hsk1_忙.mp3",
     "examples": [
       {
         "chinese": "我很忙。",
@@ -5713,7 +5713,7 @@
     "translationFr": "chat",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_猫.wav",
+    "audio": "audio/hsk1/hsk1_猫.mp3",
     "examples": [
       {
         "chinese": "一只猫",
@@ -5767,7 +5767,7 @@
     "pinyin": "méi guānxi",
     "translationFr": "pas grave",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_没关系.wav",
+    "audio": "audio/hsk1/hsk1_没关系.mp3",
     "examples": [
       {
         "chinese": "这个问题不重要，没关系。",
@@ -5808,7 +5808,7 @@
     "translationFr": "petite sœur",
     "category": "nom",
     "explanation": "young woman; CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_妹妹.wav",
+    "audio": "audio/hsk1/hsk1_妹妹.mp3",
     "examples": [
       {
         "chinese": "妹妹来了。",
@@ -5854,7 +5854,7 @@
     "translationFr": "ce n'est rien; pas de problème",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_没事.wav",
+    "audio": "audio/hsk1/hsk1_没事.mp3",
     "examples": [
       {
         "chinese": "没事！",
@@ -5907,7 +5907,7 @@
     "translationFr": "ne pas avoir; ne pas",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_没有.wav",
+    "audio": "audio/hsk1/hsk1_没有.mp3",
     "examples": [
       {
         "chinese": "我没有钱",
@@ -5959,7 +5959,7 @@
     "pinyin": "men",
     "translationFr": "pluriel (suffixe)",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_们.wav",
+    "audio": "audio/hsk1/hsk1_们.mp3",
     "examples": [
       {
         "chinese": "我们",
@@ -6002,7 +6002,7 @@
     "translationFr": "pain",
     "category": "nom",
     "explanation": "CL:片[pian4],塊|块[kuai4]",
-    "audio": "audio/hsk1/hsk1_面包.wav",
+    "audio": "audio/hsk1/hsk1_面包.mp3",
     "examples": [
       {
         "chinese": "早上我吃面包。",
@@ -6045,7 +6045,7 @@
     "pinyin": "miàntiáor",
     "translationFr": "nouilles",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_面条儿.wav",
+    "audio": "audio/hsk1/hsk1_面条儿.mp3",
     "examples": [
       {
         "chinese": "我喜欢吃面条儿。",
@@ -6088,7 +6088,7 @@
     "pinyin": "mǐfàn",
     "translationFr": "riz (cuit)",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_米饭.wav",
+    "audio": "audio/hsk1/hsk1_米饭.mp3",
     "examples": [
       {
         "chinese": "我吃米饭。",
@@ -6132,7 +6132,7 @@
     "pinyin": "míngnián",
     "translationFr": "l'année prochaine",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_明年.wav",
+    "audio": "audio/hsk1/hsk1_明年.mp3",
     "examples": [
       {
         "chinese": "明年我们会去旅行。",
@@ -6175,7 +6175,7 @@
     "pinyin": "míngtiān",
     "translationFr": "demain",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_明天.wav",
+    "audio": "audio/hsk1/hsk1_明天.mp3",
     "examples": [
       {
         "chinese": "明天放假",
@@ -6221,7 +6221,7 @@
     "translationFr": "nom",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_名字.wav",
+    "audio": "audio/hsk1/hsk1_名字.mp3",
     "examples": [
       {
         "chinese": "我的名字是张伟。",
@@ -6263,7 +6263,7 @@
     "translationFr": "cela; ça",
     "category": "pronom",
     "explanation": "beautiful; how; old variant of 挪[nuo2]",
-    "audio": "audio/hsk1/hsk1_那.wav",
+    "audio": "audio/hsk1/hsk1_那.mp3",
     "examples": [
       {
         "chinese": "那个男孩在看书。",
@@ -6308,7 +6308,7 @@
     "pinyin": "nǎ",
     "translationFr": "quel; lequel",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_哪.wav",
+    "audio": "audio/hsk1/hsk1_哪.mp3",
     "examples": [
       {
         "chinese": "哪本书？",
@@ -6357,7 +6357,7 @@
     "translationFr": "là-bas",
     "category": "pronom",
     "explanation": "yonder",
-    "audio": "audio/hsk1/hsk1_那边.wav",
+    "audio": "audio/hsk1/hsk1_那边.mp3",
     "examples": [
       {
         "chinese": "树那边有一座桥",
@@ -6402,7 +6402,7 @@
     "translationFr": "celui-là",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_那个.wav",
+    "audio": "audio/hsk1/hsk1_那个.mp3",
     "examples": [
       {
         "chinese": "那个不好",
@@ -6444,7 +6444,7 @@
     "translationFr": "lequel; laquelle",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_哪个.wav",
+    "audio": "audio/hsk1/hsk1_哪个.mp3",
     "examples": [
       {
         "chinese": "哪个是你的？",
@@ -6496,7 +6496,7 @@
     "pinyin": "nàlǐ",
     "translationFr": "là-bas",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_那里.wav",
+    "audio": "audio/hsk1/hsk1_那里.mp3",
     "examples": [
       {
         "chinese": "书店在那里。",
@@ -6540,7 +6540,7 @@
     "translationFr": "où",
     "category": "pronom",
     "explanation": "somewhere; anywhere; wherever; nowhere (negative answer to question); humble expression denying compliment",
-    "audio": "audio/hsk1/hsk1_哪里.wav",
+    "audio": "audio/hsk1/hsk1_哪里.mp3",
     "examples": [
       {
         "chinese": "你在哪里？",
@@ -6586,7 +6586,7 @@
     "translationFr": "masculin",
     "category": "adjectif",
     "explanation": "baron, the lowest of the five ranks of nobility 五等爵位[wu3 deng3 jue2 wei4]",
-    "audio": "audio/hsk1/hsk1_男.wav",
+    "audio": "audio/hsk1/hsk1_男.mp3",
     "examples": [
       {
         "chinese": "他是男生。",
@@ -6630,7 +6630,7 @@
     "pinyin": "nánpéngyou",
     "translationFr": "petit ami",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_男朋友.wav",
+    "audio": "audio/hsk1/hsk1_男朋友.mp3",
     "examples": [
       {
         "chinese": "他是我的男朋友。",
@@ -6677,7 +6677,7 @@
     "pinyin": "nàr",
     "translationFr": "là-bas",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_那儿.wav",
+    "audio": "audio/hsk1/hsk1_那儿.mp3",
     "examples": [
       {
         "chinese": "那儿有书吗？",
@@ -6723,7 +6723,7 @@
     "translationFr": "où",
     "category": "pronom",
     "explanation": "wherever; anywhere; somewhere; (used in rhetorical questions) how can ...?; how could ...?",
-    "audio": "audio/hsk1/hsk1_哪儿.wav",
+    "audio": "audio/hsk1/hsk1_哪儿.mp3",
     "examples": [
       {
         "chinese": "哪儿有水？",
@@ -6766,7 +6766,7 @@
     "pinyin": "nàxiē",
     "translationFr": "ceux-là; ces",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_那些.wav",
+    "audio": "audio/hsk1/hsk1_那些.mp3",
     "examples": [
       {
         "chinese": "那些学生",
@@ -6813,7 +6813,7 @@
     "translationFr": "lesquels",
     "category": "pronom",
     "explanation": "who?; what?",
-    "audio": "audio/hsk1/hsk1_哪些.wav",
+    "audio": "audio/hsk1/hsk1_哪些.mp3",
     "examples": [
       {
         "chinese": "你买哪些水果？",
@@ -6858,7 +6858,7 @@
     "pinyin": "ne",
     "translationFr": "particule question",
     "category": "particule",
-    "audio": "audio/hsk1/hsk1_呢.wav",
+    "audio": "audio/hsk1/hsk1_呢.mp3",
     "examples": [
       {
         "chinese": "你 看 这个 包 呢？",
@@ -6906,7 +6906,7 @@
     "translationFr": "pouvoir",
     "category": "verbe",
     "explanation": "to be able to; might possibly; ability; (physics) energy",
-    "audio": "audio/hsk1/hsk1_能.wav",
+    "audio": "audio/hsk1/hsk1_能.mp3",
     "examples": [
       {
         "chinese": "我能跑。",
@@ -6952,7 +6952,7 @@
     "pinyin": "nǐ",
     "translationFr": "tu; toi",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_你.wav",
+    "audio": "audio/hsk1/hsk1_你.mp3",
     "examples": [
       {
         "chinese": "你是老师。",
@@ -6999,7 +6999,7 @@
     "translationFr": "bonjour",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_你好.wav",
+    "audio": "audio/hsk1/hsk1_你好.mp3",
     "examples": [
       {
         "chinese": "你好",
@@ -7060,7 +7060,7 @@
     "translationFr": "année",
     "category": "classificateur",
     "explanation": "harvest (old); variant of 年[nian2]",
-    "audio": "audio/hsk1/hsk1_年.wav",
+    "audio": "audio/hsk1/hsk1_年.mp3",
     "examples": [
       {
         "chinese": "今年",
@@ -7104,7 +7104,7 @@
     "pinyin": "nǐmen",
     "translationFr": "vous",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_你们.wav",
+    "audio": "audio/hsk1/hsk1_你们.mp3",
     "examples": [
       {
         "chinese": "你们好。",
@@ -7148,7 +7148,7 @@
     "pinyin": "nín",
     "translationFr": "vous (poli)",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_您.wav",
+    "audio": "audio/hsk1/hsk1_您.mp3",
     "examples": [
       {
         "chinese": "您好",
@@ -7192,7 +7192,7 @@
     "translationFr": "lait",
     "category": "nom",
     "explanation": "CL:瓶[ping2],杯[bei1]",
-    "audio": "audio/hsk1/hsk1_牛奶.wav",
+    "audio": "audio/hsk1/hsk1_牛奶.mp3",
     "examples": [
       {
         "chinese": "牛奶",
@@ -7235,7 +7235,7 @@
     "pinyin": "nǚ",
     "translationFr": "féminin",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_女.wav",
+    "audio": "audio/hsk1/hsk1_女.mp3",
     "examples": [
       {
         "chinese": "女孩正在画画。",
@@ -7282,7 +7282,7 @@
     "pinyin": "nǚ'ér",
     "translationFr": "fille",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_女儿.wav",
+    "audio": "audio/hsk1/hsk1_女儿.mp3",
     "examples": [
       {
         "chinese": "我的女儿正在上小学。",
@@ -7325,7 +7325,7 @@
     "pinyin": "nǚpéngyou",
     "translationFr": "petite amie",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_女朋友.wav",
+    "audio": "audio/hsk1/hsk1_女朋友.mp3",
     "examples": [
       {
         "chinese": "我有一个好朋友。",
@@ -7371,7 +7371,7 @@
     "translationFr": "madame; dame",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_女士.wav",
+    "audio": "audio/hsk1/hsk1_女士.mp3",
     "examples": [
       {
         "chinese": "女士们好",
@@ -7424,7 +7424,7 @@
     "translationFr": "ami",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_朋友.wav",
+    "audio": "audio/hsk1/hsk1_朋友.mp3",
     "examples": [
       {
         "chinese": "他是我的朋友。",
@@ -7469,7 +7469,7 @@
     "translationFr": "pas cher; bon marché",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_便宜.wav",
+    "audio": "audio/hsk1/hsk1_便宜.mp3",
     "examples": [
       {
         "chinese": "很便宜",
@@ -7563,7 +7563,7 @@
     "translationFr": "beau; joli",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_漂亮.wav",
+    "audio": "audio/hsk1/hsk1_漂亮.mp3",
     "examples": [
       {
         "chinese": "很漂亮",
@@ -7633,7 +7633,7 @@
     "translationFr": "pomme",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_苹果.wav",
+    "audio": "audio/hsk1/hsk1_苹果.mp3",
     "examples": [
       {
         "chinese": "一个苹果",
@@ -7695,7 +7695,7 @@
     "translationFr": "sept",
     "category": "numéral",
     "explanation": "7",
-    "audio": "audio/hsk1/hsk1_七.wav",
+    "audio": "audio/hsk1/hsk1_七.mp3",
     "examples": [
       {
         "chinese": "我有七本书。",
@@ -7740,7 +7740,7 @@
     "translationFr": "devant",
     "category": "nom",
     "explanation": "forward; ahead; first; top (followed by a number); future; ago; before; BC (e.g. 前293年); former; formerly",
-    "audio": "audio/hsk1/hsk1_前.wav",
+    "audio": "audio/hsk1/hsk1_前.mp3",
     "examples": [
       {
         "chinese": "前门",
@@ -7789,7 +7789,7 @@
     "translationFr": "argent",
     "category": "nom",
     "explanation": "money; CL:筆|笔[bi3]; unit of weight, one tenth of a tael 兩|两[liang3]",
-    "audio": "audio/hsk1/hsk1_钱.wav",
+    "audio": "audio/hsk1/hsk1_钱.mp3",
     "examples": [
       {
         "chinese": "我有五块钱。",
@@ -7836,7 +7836,7 @@
     "translationFr": "mille",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_千.wav",
+    "audio": "audio/hsk1/hsk1_千.mp3",
     "examples": [
       {
         "chinese": "一千",
@@ -7908,7 +7908,7 @@
     "pinyin": "qǐchuáng",
     "translationFr": "se lever",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_起床.wav",
+    "audio": "audio/hsk1/hsk1_起床.mp3",
     "examples": [
       {
         "chinese": "起床了",
@@ -7953,7 +7953,7 @@
     "translationFr": "s'il vous plaît",
     "category": "verbe",
     "explanation": "to invite; please (do sth); to treat (to a meal etc); to request",
-    "audio": "audio/hsk1/hsk1_请.wav",
+    "audio": "audio/hsk1/hsk1_请.mp3",
     "examples": [
       {
         "chinese": "请你帮忙。",
@@ -8000,7 +8000,7 @@
     "pinyin": "qǐngwèn",
     "translationFr": "s'il vous plaît (demander)",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_请问.wav",
+    "audio": "audio/hsk1/hsk1_请问.mp3",
     "examples": [
       {
         "chinese": "请问您现在方便吗？",
@@ -8044,7 +8044,7 @@
     "translationFr": "aller",
     "category": "verbe",
     "explanation": "to go to (a place); (of a time etc) last; just passed; to send; to remove; to get rid of; to reduce; to be apart from in space or time; to die (euphemism); to play (a part); (when used either before or after a verb) to go in order to do sth; (after a verb of motion indicates movement away from the speaker); (used after certain verbs to indicate detachment or separation)",
-    "audio": "audio/hsk1/hsk1_去.wav",
+    "audio": "audio/hsk1/hsk1_去.mp3",
     "examples": [
       {
         "chinese": "我要去图书馆。",
@@ -8094,7 +8094,7 @@
     "pinyin": "qùnián",
     "translationFr": "l'année dernière",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_去年.wav",
+    "audio": "audio/hsk1/hsk1_去年.mp3",
     "examples": [
       {
         "chinese": "去年我去了北京。",
@@ -8138,7 +8138,7 @@
     "translationFr": "chaud",
     "category": "adjectif",
     "explanation": "to heat up; hot (of weather); heat; fervent",
-    "audio": "audio/hsk1/hsk1_热.wav",
+    "audio": "audio/hsk1/hsk1_热.mp3",
     "examples": [
       {
         "chinese": "热水",
@@ -8185,7 +8185,7 @@
     "translationFr": "personne; gens",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4]",
-    "audio": "audio/hsk1/hsk1_人.wav",
+    "audio": "audio/hsk1/hsk1_人.mp3",
     "examples": [
       {
         "chinese": "他是个好人。",
@@ -8232,7 +8232,7 @@
     "translationFr": "connaître",
     "category": "verbe",
     "explanation": "to recognize; to be familiar with; to get acquainted with sb; knowledge; understanding; awareness; cognition",
-    "audio": "audio/hsk1/hsk1_认识.wav",
+    "audio": "audio/hsk1/hsk1_认识.mp3",
     "examples": [
       {
         "chinese": "我认识他。",
@@ -8278,7 +8278,7 @@
     "translationFr": "jour; soleil",
     "category": "nom",
     "explanation": "day; date, day of the month",
-    "audio": "audio/hsk1/hsk1_日.wav",
+    "audio": "audio/hsk1/hsk1_日.mp3",
     "examples": [
       {
         "chinese": "明天是星期几？",
@@ -8323,7 +8323,7 @@
     "translationFr": "trois",
     "category": "numéral",
     "explanation": "3",
-    "audio": "audio/hsk1/hsk1_三.wav",
+    "audio": "audio/hsk1/hsk1_三.mp3",
     "examples": [
       {
         "chinese": "他有三本书。",
@@ -8368,7 +8368,7 @@
     "translationFr": "dessus",
     "category": "nom",
     "explanation": "first (of multiple parts); to climb; to get onto; to go up; to attend (class or university); (directional complement) up; (noun suffix) on; above",
-    "audio": "audio/hsk1/hsk1_上.wav",
+    "audio": "audio/hsk1/hsk1_上.mp3",
     "examples": [
       {
         "chinese": "我们上楼。",
@@ -8421,7 +8421,7 @@
     "translationFr": "aller au travail",
     "category": "général",
     "explanation": "to be on duty; to start work; to go to the office",
-    "audio": "audio/hsk1/hsk1_上班.wav",
+    "audio": "audio/hsk1/hsk1_上班.mp3",
     "examples": [
       {
         "chinese": "上班时间",
@@ -8465,7 +8465,7 @@
     "translationFr": "magasin",
     "category": "nom",
     "explanation": "CL:家[jia1],個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_商店.wav",
+    "audio": "audio/hsk1/hsk1_商店.mp3",
     "examples": [
       {
         "chinese": "我去商店买牛奶。",
@@ -8508,7 +8508,7 @@
     "translationFr": "avoir cours",
     "category": "général",
     "explanation": "to attend class; to go to teach a class",
-    "audio": "audio/hsk1/hsk1_上课.wav",
+    "audio": "audio/hsk1/hsk1_上课.mp3",
     "examples": [
       {
         "chinese": "上课",
@@ -8555,7 +8555,7 @@
     "translationFr": "matin",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_上午.wav",
+    "audio": "audio/hsk1/hsk1_上午.mp3",
     "examples": [
       {
         "chinese": "上午好",
@@ -8598,7 +8598,7 @@
     "translationFr": "aller à l'école",
     "category": "général",
     "explanation": "to attend school",
-    "audio": "audio/hsk1/hsk1_上学.wav",
+    "audio": "audio/hsk1/hsk1_上学.mp3",
     "examples": [
       {
         "chinese": "上学",
@@ -8641,7 +8641,7 @@
     "pinyin": "shǎo",
     "translationFr": "peu",
     "category": "adjectif",
-    "audio": "audio/hsk1/hsk1_少.wav",
+    "audio": "audio/hsk1/hsk1_少.mp3",
     "examples": [
       {
         "chinese": "我家里少一本书。",
@@ -8689,7 +8689,7 @@
     "translationFr": "qui",
     "category": "général",
     "explanation": "also pr. [shui2]",
-    "audio": "audio/hsk1/hsk1_谁.wav",
+    "audio": "audio/hsk1/hsk1_谁.mp3",
     "examples": [
       {
         "chinese": "你是谁？",
@@ -8733,7 +8733,7 @@
     "pinyin": "shēngbìng",
     "translationFr": "tomber malade",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_生病.wav",
+    "audio": "audio/hsk1/hsk1_生病.mp3",
     "examples": [
       {
         "chinese": "生病了",
@@ -8776,7 +8776,7 @@
     "translationFr": "quoi; que",
     "category": "pronom",
     "explanation": "something; anything",
-    "audio": "audio/hsk1/hsk1_什么.wav",
+    "audio": "audio/hsk1/hsk1_什么.mp3",
     "examples": [
       {
         "chinese": "这是什么？",
@@ -8825,7 +8825,7 @@
     "translationFr": "dix",
     "category": "numéral",
     "explanation": "10",
-    "audio": "audio/hsk1/hsk1_十.wav",
+    "audio": "audio/hsk1/hsk1_十.mp3",
     "examples": [
       {
         "chinese": "他有十本书。",
@@ -8870,7 +8870,7 @@
     "translationFr": "affaire; chose",
     "category": "nom",
     "explanation": "thing; item; work; affair; CL:件[jian4],樁|桩[zhuang1],回[hui2]",
-    "audio": "audio/hsk1/hsk1_事.wav",
+    "audio": "audio/hsk1/hsk1_事.mp3",
     "examples": [
       {
         "chinese": "他正在处理一件事。",
@@ -8922,7 +8922,7 @@
     "pinyin": "shì",
     "translationFr": "être",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_是.wav",
+    "audio": "audio/hsk1/hsk1_是.mp3",
     "examples": [
       {
         "chinese": "他是学生。",
@@ -8969,7 +8969,7 @@
     "translationFr": "moment",
     "category": "nom",
     "explanation": "length of time; moment; period",
-    "audio": "audio/hsk1/hsk1_时候.wav",
+    "audio": "audio/hsk1/hsk1_时候.mp3",
     "examples": [
       {
         "chinese": "这时候",
@@ -9014,7 +9014,7 @@
     "translationFr": "temps",
     "category": "nom",
     "explanation": "(duration of) time; (point in) time",
-    "audio": "audio/hsk1/hsk1_时间.wav",
+    "audio": "audio/hsk1/hsk1_时间.mp3",
     "examples": [
       {
         "chinese": "一天的时间",
@@ -9059,7 +9059,7 @@
     "translationFr": "téléphone portable",
     "category": "nom",
     "explanation": "CL:部[bu4]",
-    "audio": "audio/hsk1/hsk1_手机.wav",
+    "audio": "audio/hsk1/hsk1_手机.mp3",
     "examples": [
       {
         "chinese": "我的手机没电了。",
@@ -9103,7 +9103,7 @@
     "translationFr": "livre",
     "category": "nom",
     "explanation": "letter; document; CL:本[ben3],冊|册[ce4],部[bu4]; to write",
-    "audio": "audio/hsk1/hsk1_书.wav",
+    "audio": "audio/hsk1/hsk1_书.mp3",
     "examples": [
       {
         "chinese": "我喜欢读书。",
@@ -9153,7 +9153,7 @@
     "translationFr": "librairie",
     "category": "nom",
     "explanation": "CL:家[jia1]",
-    "audio": "audio/hsk1/hsk1_书店.wav",
+    "audio": "audio/hsk1/hsk1_书店.mp3",
     "examples": [
       {
         "chinese": "他去书店买书。",
@@ -9196,7 +9196,7 @@
     "translationFr": "dormir",
     "category": "verbe",
     "explanation": "to lie down",
-    "audio": "audio/hsk1/hsk1_睡.wav",
+    "audio": "audio/hsk1/hsk1_睡.mp3",
     "examples": [
       {
         "chinese": "睡觉",
@@ -9241,7 +9241,7 @@
     "translationFr": "eau",
     "category": "nom",
     "explanation": "(after a name) ... River; to swim (used mostly in 會水|会水[hui4 shui3] and 水性[shui3 xing4]); (coll.) lacking in substance; shoddy; (bound form) additional cost; extra income; classifier for washings of a garment",
-    "audio": "audio/hsk1/hsk1_水.wav",
+    "audio": "audio/hsk1/hsk1_水.mp3",
     "examples": [
       {
         "chinese": "河水",
@@ -9288,7 +9288,7 @@
     "translationFr": "fruits",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_水果.wav",
+    "audio": "audio/hsk1/hsk1_水果.mp3",
     "examples": [
       {
         "chinese": "买一个苹果。",
@@ -9332,7 +9332,7 @@
     "translationFr": "dormir",
     "category": "général",
     "explanation": "to sleep",
-    "audio": "audio/hsk1/hsk1_睡觉.wav",
+    "audio": "audio/hsk1/hsk1_睡觉.mp3",
     "examples": [
       {
         "chinese": "睡觉了",
@@ -9377,7 +9377,7 @@
     "pinyin": "shuō",
     "translationFr": "dire; parler",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_说.wav",
+    "audio": "audio/hsk1/hsk1_说.mp3",
     "examples": [
       {
         "chinese": "他说天气很好。",
@@ -9428,7 +9428,7 @@
     "translationFr": "parler",
     "category": "général",
     "explanation": "to say; to talk; to gossip; to tell stories; talk; word",
-    "audio": "audio/hsk1/hsk1_说话.wav",
+    "audio": "audio/hsk1/hsk1_说话.mp3",
     "examples": [
       {
         "chinese": "他说。",
@@ -9474,7 +9474,7 @@
     "translationFr": "quatre",
     "category": "numéral",
     "explanation": "4",
-    "audio": "audio/hsk1/hsk1_四.wav",
+    "audio": "audio/hsk1/hsk1_四.mp3",
     "examples": [
       {
         "chinese": "四本书",
@@ -9519,7 +9519,7 @@
     "translationFr": "ans (âge)",
     "category": "classificateur",
     "explanation": "year; year (of crop harvests)",
-    "audio": "audio/hsk1/hsk1_岁.wav",
+    "audio": "audio/hsk1/hsk1_岁.mp3",
     "examples": [
       {
         "chinese": "他今年二十岁。",
@@ -9566,7 +9566,7 @@
     "translationFr": "il; lui",
     "category": "pronom",
     "explanation": "(bound form) other; another; some other (as in 他日[ta1 ri4] and 他人[ta1 ren2])",
-    "audio": "audio/hsk1/hsk1_他.wav",
+    "audio": "audio/hsk1/hsk1_他.mp3",
     "examples": [
       {
         "chinese": "他很好。",
@@ -9611,7 +9611,7 @@
     "translationFr": "il; elle (chose)",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_它.wav",
+    "audio": "audio/hsk1/hsk1_它.mp3",
     "examples": [
       {
         "chinese": "它在哪儿？",
@@ -9675,7 +9675,7 @@
     "pinyin": "tā",
     "translationFr": "elle",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_她.wav",
+    "audio": "audio/hsk1/hsk1_她.mp3",
     "examples": [
       {
         "chinese": "她是老师。",
@@ -9719,7 +9719,7 @@
     "translationFr": "trop",
     "category": "adverbe",
     "explanation": "greatest; too (much); very; extremely",
-    "audio": "audio/hsk1/hsk1_太.wav",
+    "audio": "audio/hsk1/hsk1_太.mp3",
     "examples": [
       {
         "chinese": "太多书",
@@ -9764,7 +9764,7 @@
     "pinyin": "tāmen",
     "translationFr": "ils; eux",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_他们.wav",
+    "audio": "audio/hsk1/hsk1_他们.mp3",
     "examples": [
       {
         "chinese": "他们是老师。",
@@ -9810,7 +9810,7 @@
     "translationFr": "ils; elles (choses; animaux)",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_它们.wav",
+    "audio": "audio/hsk1/hsk1_它们.mp3",
     "examples": [
       {
         "chinese": "它们很可爱",
@@ -9863,7 +9863,7 @@
     "pinyin": "tāmen",
     "translationFr": "elles",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_她们.wav",
+    "audio": "audio/hsk1/hsk1_她们.mp3",
     "examples": [
       {
         "chinese": "她们是老师。",
@@ -9906,7 +9906,7 @@
     "translationFr": "jour; ciel",
     "category": "nom",
     "explanation": "sky; heaven",
-    "audio": "audio/hsk1/hsk1_天.wav",
+    "audio": "audio/hsk1/hsk1_天.mp3",
     "examples": [
       {
         "chinese": "天气很好",
@@ -9955,7 +9955,7 @@
     "pinyin": "tiānqì",
     "translationFr": "temps (météo)",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_天气.wav",
+    "audio": "audio/hsk1/hsk1_天气.mp3",
     "examples": [
       {
         "chinese": "今天天气怎么样？",
@@ -10001,7 +10001,7 @@
     "translationFr": "écouter",
     "category": "verbe",
     "explanation": "to heed; to obey; a can (loanword from English \"tin\"); classifier for canned beverages; to let be; to allow (Taiwan pr. [ting4]); (literary) to administer; to deal with (Taiwan pr. [ting4])",
-    "audio": "audio/hsk1/hsk1_听.wav",
+    "audio": "audio/hsk1/hsk1_听.mp3",
     "examples": [
       {
         "chinese": "听音乐",
@@ -10051,7 +10051,7 @@
     "pinyin": "tīngjiàn",
     "translationFr": "entendre",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_听见.wav",
+    "audio": "audio/hsk1/hsk1_听见.mp3",
     "examples": [
       {
         "chinese": "我听见鸟叫。",
@@ -10097,7 +10097,7 @@
     "translationFr": "camarade de classe",
     "category": "nom",
     "explanation": "fellow student; classmate; CL:位[wei4],個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_同学.wav",
+    "audio": "audio/hsk1/hsk1_同学.mp3",
     "examples": [
       {
         "chinese": "他是我的同学。",
@@ -10142,7 +10142,7 @@
     "translationFr": "dehors",
     "category": "nom",
     "explanation": "in addition; foreign; external",
-    "audio": "audio/hsk1/hsk1_外.wav",
+    "audio": "audio/hsk1/hsk1_外.mp3",
     "examples": [
       {
         "chinese": "我在外工作。",
@@ -10187,7 +10187,7 @@
     "translationFr": "dehors",
     "category": "nom",
     "explanation": "outer surface; abroad; place other than one's home",
-    "audio": "audio/hsk1/hsk1_外边.wav",
+    "audio": "audio/hsk1/hsk1_外边.mp3",
     "examples": [
       {
         "chinese": "我家的外面",
@@ -10234,7 +10234,7 @@
     "translationFr": "jouer; s'amuser",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_玩.wav",
+    "audio": "audio/hsk1/hsk1_玩.mp3",
     "examples": [
       {
         "chinese": "玩儿",
@@ -10299,7 +10299,7 @@
     "translationFr": "tard",
     "category": "adjectif",
     "explanation": "night; late",
-    "audio": "audio/hsk1/hsk1_晚.wav",
+    "audio": "audio/hsk1/hsk1_晚.mp3",
     "examples": [
       {
         "chinese": "晚上好",
@@ -10345,7 +10345,7 @@
     "translationFr": "dîner",
     "category": "nom",
     "explanation": "dinner; supper; CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]",
-    "audio": "audio/hsk1/hsk1_晚饭.wav",
+    "audio": "audio/hsk1/hsk1_晚饭.mp3",
     "examples": [
       {
         "chinese": "晚饭吃什么？",
@@ -10388,7 +10388,7 @@
     "translationFr": "soir",
     "category": "nom",
     "explanation": "night; CL:個|个[ge4]; in the evening",
-    "audio": "audio/hsk1/hsk1_晚上.wav",
+    "audio": "audio/hsk1/hsk1_晚上.mp3",
     "examples": [
       {
         "chinese": "晚上好",
@@ -10433,7 +10433,7 @@
     "translationFr": "allô; hé ! (interjection)",
     "category": "interjection",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_喂.wav",
+    "audio": "audio/hsk1/hsk1_喂.mp3",
     "examples": [
       {
         "chinese": "喂，你好！",
@@ -10482,7 +10482,7 @@
     "pinyin": "wèn",
     "translationFr": "demander",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_问.wav",
+    "audio": "audio/hsk1/hsk1_问.mp3",
     "examples": [
       {
         "chinese": "你问老师问题。",
@@ -10531,7 +10531,7 @@
     "translationFr": "problème",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_问题.wav",
+    "audio": "audio/hsk1/hsk1_问题.mp3",
     "examples": [
       {
         "chinese": "有问题",
@@ -10578,7 +10578,7 @@
     "pinyin": "wǒ",
     "translationFr": "je; moi",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_我.wav",
+    "audio": "audio/hsk1/hsk1_我.mp3",
     "examples": [
       {
         "chinese": "我是学生。",
@@ -10623,7 +10623,7 @@
     "pinyin": "wǒmen",
     "translationFr": "nous",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_我们.wav",
+    "audio": "audio/hsk1/hsk1_我们.mp3",
     "examples": [
       {
         "chinese": "我们是朋友。",
@@ -10667,7 +10667,7 @@
     "translationFr": "cinq",
     "category": "numéral",
     "explanation": "5",
-    "audio": "audio/hsk1/hsk1_五.wav",
+    "audio": "audio/hsk1/hsk1_五.mp3",
     "examples": [
       {
         "chinese": "他有五本书。",
@@ -10712,7 +10712,7 @@
     "translationFr": "déjeuner",
     "category": "nom",
     "explanation": "CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]",
-    "audio": "audio/hsk1/hsk1_午饭.wav",
+    "audio": "audio/hsk1/hsk1_午饭.mp3",
     "examples": [
       {
         "chinese": "午饭吃什么？",
@@ -10757,7 +10757,7 @@
     "translationFr": "dessous",
     "category": "nom",
     "explanation": "downwards; below; lower; later; next (week etc); second (of two parts); to decline; to go down; to arrive at (a decision, conclusion etc); measure word to show the frequency of an action",
-    "audio": "audio/hsk1/hsk1_下.wav",
+    "audio": "audio/hsk1/hsk1_下.mp3",
     "examples": [
       {
         "chinese": "桌子下面有一只猫。",
@@ -10807,7 +10807,7 @@
     "pinyin": "xià yǔ",
     "translationFr": "pleuvoir",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_下雨.wav",
+    "audio": "audio/hsk1/hsk1_下雨.mp3",
     "examples": [
       {
         "chinese": "下雨",
@@ -10851,7 +10851,7 @@
     "translationFr": "finir le travail",
     "category": "général",
     "explanation": "next service (train, bus etc)",
-    "audio": "audio/hsk1/hsk1_下班.wav",
+    "audio": "audio/hsk1/hsk1_下班.mp3",
     "examples": [
       {
         "chinese": "下班后我直接回家了。",
@@ -10895,7 +10895,7 @@
     "translationFr": "finir le cours",
     "category": "général",
     "explanation": "to get out of class; (fig.) (esp. of a sports coach) to be dismissed; to be fired",
-    "audio": "audio/hsk1/hsk1_下课.wav",
+    "audio": "audio/hsk1/hsk1_下课.mp3",
     "examples": [
       {
         "chinese": "下课了，我们去食堂吃饭。",
@@ -10939,7 +10939,7 @@
     "translationFr": "vouloir; penser",
     "category": "verbe",
     "explanation": "to think of; to devise; to think (that); to believe (that); to desire; to want (to); to miss (feel wistful about the absence of)",
-    "audio": "audio/hsk1/hsk1_想.wav",
+    "audio": "audio/hsk1/hsk1_想.mp3",
     "examples": [
       {
         "chinese": "我想你。",
@@ -10989,7 +10989,7 @@
     "translationFr": "monsieur",
     "category": "nom",
     "explanation": "gentleman; sir; mister (Mr.); husband; (dialect) doctor; CL:位[wei4]",
-    "audio": "audio/hsk1/hsk1_先生.wav",
+    "audio": "audio/hsk1/hsk1_先生.mp3",
     "examples": [
       {
         "chinese": "先生教我们语文。",
@@ -11034,7 +11034,7 @@
     "pinyin": "xiànzài",
     "translationFr": "maintenant",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_现在.wav",
+    "audio": "audio/hsk1/hsk1_现在.mp3",
     "examples": [
       {
         "chinese": "我现在在图书馆。",
@@ -11080,7 +11080,7 @@
     "translationFr": "petit",
     "category": "adjectif",
     "explanation": "tiny; few; young",
-    "audio": "audio/hsk1/hsk1_小.wav",
+    "audio": "audio/hsk1/hsk1_小.mp3",
     "examples": [
       {
         "chinese": "小猫",
@@ -11125,7 +11125,7 @@
     "translationFr": "petit ami; enfant",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_小朋友.wav",
+    "audio": "audio/hsk1/hsk1_小朋友.mp3",
     "examples": [
       {
         "chinese": "他是个小朋友。",
@@ -11171,7 +11171,7 @@
     "translationFr": "heure (durée)",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_小时.wav",
+    "audio": "audio/hsk1/hsk1_小时.mp3",
     "examples": [
       {
         "chinese": "一小时的会议",
@@ -11213,7 +11213,7 @@
     "pinyin": "xiǎoxué",
     "translationFr": "école primaire",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_小学.wav",
+    "audio": "audio/hsk1/hsk1_小学.mp3",
     "examples": [
       {
         "chinese": "小学一年级",
@@ -11257,7 +11257,7 @@
     "translationFr": "élève du primaire",
     "category": "nom",
     "explanation": "schoolchild; CL:個|个[ge4],名[ming2]; (fig.) beginner",
-    "audio": "audio/hsk1/hsk1_小学生.wav",
+    "audio": "audio/hsk1/hsk1_小学生.mp3",
     "examples": [
       {
         "chinese": "我是小学生。",
@@ -11301,7 +11301,7 @@
     "translationFr": "après-midi",
     "category": "nom",
     "explanation": "CL:個|个[ge4]; p.m.",
-    "audio": "audio/hsk1/hsk1_下午.wav",
+    "audio": "audio/hsk1/hsk1_下午.mp3",
     "examples": [
       {
         "chinese": "我们下午去公园散步。",
@@ -11343,7 +11343,7 @@
     "pinyin": "xiě",
     "translationFr": "écrire",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_写.wav",
+    "audio": "audio/hsk1/hsk1_写.mp3",
     "examples": [
       {
         "chinese": "写信",
@@ -11390,7 +11390,7 @@
     "translationFr": "quelques (classificateur)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_些.wav",
+    "audio": "audio/hsk1/hsk1_些.mp3",
     "examples": [
       {
         "chinese": "一些",
@@ -11439,7 +11439,7 @@
     "translationFr": "merci",
     "category": "verbe",
     "explanation": "thanks; thank you",
-    "audio": "audio/hsk1/hsk1_谢谢.wav",
+    "audio": "audio/hsk1/hsk1_谢谢.mp3",
     "examples": [
       {
         "chinese": "谢谢你的帮助。",
@@ -11483,7 +11483,7 @@
     "pinyin": "xǐhuan",
     "translationFr": "aimer",
     "category": "verbe",
-    "audio": "audio/hsk1/hsk1_喜欢.wav",
+    "audio": "audio/hsk1/hsk1_喜欢.mp3",
     "examples": [
       {
         "chinese": "我喜欢苹果。",
@@ -11529,7 +11529,7 @@
     "translationFr": "nouveau",
     "category": "adjectif",
     "explanation": "newly; meso- (chemistry)",
-    "audio": "audio/hsk1/hsk1_新.wav",
+    "audio": "audio/hsk1/hsk1_新.mp3",
     "examples": [
       {
         "chinese": "新书",
@@ -11578,7 +11578,7 @@
     "translationFr": "semaine",
     "category": "nom",
     "explanation": "CL:個|个[ge4]; day of the week; Sunday",
-    "audio": "audio/hsk1/hsk1_星期.wav",
+    "audio": "audio/hsk1/hsk1_星期.mp3",
     "examples": [
       {
         "chinese": "这个星期天我要去公园。",
@@ -11620,7 +11620,7 @@
     "pinyin": "xīngqīrì",
     "translationFr": "dimanche",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_星期日.wav",
+    "audio": "audio/hsk1/hsk1_星期日.mp3",
     "examples": [
       {
         "chinese": "星期日我休息。",
@@ -11664,7 +11664,7 @@
     "pinyin": "xīngqītiān",
     "translationFr": "dimanche",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_星期天.wav",
+    "audio": "audio/hsk1/hsk1_星期天.mp3",
     "examples": [
       {
         "chinese": "星期天我们不上课。",
@@ -11709,7 +11709,7 @@
     "translationFr": "se reposer",
     "category": "verbe",
     "explanation": "to rest",
-    "audio": "audio/hsk1/hsk1_休息.wav",
+    "audio": "audio/hsk1/hsk1_休息.mp3",
     "examples": [
       {
         "chinese": "他需要休息一下。",
@@ -11753,7 +11753,7 @@
     "translationFr": "étudier",
     "category": "verbe",
     "explanation": "to study; to imitate; science; -ology",
-    "audio": "audio/hsk1/hsk1_学.wav",
+    "audio": "audio/hsk1/hsk1_学.mp3",
     "examples": [
       {
         "chinese": "我学英语。",
@@ -11800,7 +11800,7 @@
     "translationFr": "neige",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_雪.wav",
+    "audio": "audio/hsk1/hsk1_雪.mp3",
     "examples": [
       {
         "chinese": "下雪了",
@@ -11850,7 +11850,7 @@
     "translationFr": "étudiant",
     "category": "nom",
     "explanation": "schoolchild",
-    "audio": "audio/hsk1/hsk1_学生.wav",
+    "audio": "audio/hsk1/hsk1_学生.mp3",
     "examples": [
       {
         "chinese": "我是学生。",
@@ -11893,7 +11893,7 @@
     "translationFr": "étudier; apprendre",
     "category": "verbe",
     "explanation": "to study",
-    "audio": "audio/hsk1/hsk1_学习.wav",
+    "audio": "audio/hsk1/hsk1_学习.mp3",
     "examples": [
       {
         "chinese": "我每天学习一个小时。",
@@ -11939,7 +11939,7 @@
     "translationFr": "école",
     "category": "nom",
     "explanation": "CL:所[suo3]",
-    "audio": "audio/hsk1/hsk1_学校.wav",
+    "audio": "audio/hsk1/hsk1_学校.mp3",
     "examples": [
       {
         "chinese": "我的学校很大。",
@@ -11982,7 +11982,7 @@
     "translationFr": "vouloir; devoir",
     "category": "verbe",
     "explanation": "will; shall; about to; need to; should; if (same as 要是[yao4 shi5]); (bound form) important",
-    "audio": "audio/hsk1/hsk1_要.wav",
+    "audio": "audio/hsk1/hsk1_要.mp3",
     "examples": [
       {
         "chinese": "我要喝水。",
@@ -12040,7 +12040,7 @@
     "translationFr": "aussi",
     "category": "adverbe",
     "explanation": "(used after a verbal or nominal expression X to indicate that X is an extreme or unexpected case) even (X); (literary) particle having functions similar to 啊[a5]",
-    "audio": "audio/hsk1/hsk1_也.wav",
+    "audio": "audio/hsk1/hsk1_也.mp3",
     "examples": [
       {
         "chinese": "他也会来。",
@@ -12088,7 +12088,7 @@
     "translationFr": "un",
     "category": "numéral",
     "explanation": "single; a (article); as soon as; entire; whole; all; throughout; \"one\" radical in Chinese characters (Kangxi radical 1); also pr. [yao1] for greater clarity when spelling out numbers digit by digit",
-    "audio": "audio/hsk1/hsk1_一.wav",
+    "audio": "audio/hsk1/hsk1_一.mp3",
     "examples": [
       {
         "chinese": "我有一本书。",
@@ -12132,7 +12132,7 @@
     "pinyin": "yíbàn",
     "translationFr": "moitié",
     "category": "numéral",
-    "audio": "audio/hsk1/hsk1_一半.wav",
+    "audio": "audio/hsk1/hsk1_一半.mp3",
     "examples": [
       {
         "chinese": "一瓶水的一半",
@@ -12175,7 +12175,7 @@
     "pinyin": "yìdiǎnr",
     "translationFr": "un peu",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_一点儿.wav",
+    "audio": "audio/hsk1/hsk1_一点儿.mp3",
     "examples": [
       {
         "chinese": "我一点儿也不喜欢这个。",
@@ -12219,7 +12219,7 @@
     "translationFr": "vêtements",
     "category": "nom",
     "explanation": "CL:件[jian4],套[tao4]",
-    "audio": "audio/hsk1/hsk1_衣服.wav",
+    "audio": "audio/hsk1/hsk1_衣服.mp3",
     "examples": [
       {
         "chinese": "我的衣服破了，需要换新的。",
@@ -12262,7 +12262,7 @@
     "translationFr": "médecin",
     "category": "nom",
     "explanation": "CL:個|个[ge4],位[wei4],名[ming2]",
-    "audio": "audio/hsk1/hsk1_医生.wav",
+    "audio": "audio/hsk1/hsk1_医生.mp3",
     "examples": [
       {
         "chinese": "他是一名医生。",
@@ -12305,7 +12305,7 @@
     "translationFr": "un peu (action brève)",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_一下.wav",
+    "audio": "audio/hsk1/hsk1_一下.mp3",
     "examples": [
       {
         "chinese": "看一下",
@@ -12365,7 +12365,7 @@
     "pinyin": "yìxiē",
     "translationFr": "quelques; certains",
     "category": "général",
-    "audio": "audio/hsk1/hsk1_一些.wav",
+    "audio": "audio/hsk1/hsk1_一些.mp3",
     "examples": [
       {
         "chinese": "有一些书在桌子上。",
@@ -12409,7 +12409,7 @@
     "translationFr": "hôpital",
     "category": "nom",
     "explanation": "CL:所[suo3],家[jia1],座[zuo4]",
-    "audio": "audio/hsk1/hsk1_医院.wav",
+    "audio": "audio/hsk1/hsk1_医院.mp3",
     "examples": [
       {
         "chinese": "医院里有很多医生。",
@@ -12452,7 +12452,7 @@
     "translationFr": "chaise",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_椅子.wav",
+    "audio": "audio/hsk1/hsk1_椅子.mp3",
     "examples": [
       {
         "chinese": "坐椅子",
@@ -12519,7 +12519,7 @@
     "translationFr": "avoir; il y a",
     "category": "verbe",
     "explanation": "(bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)",
-    "audio": "audio/hsk1/hsk1_有.wav",
+    "audio": "audio/hsk1/hsk1_有.mp3",
     "examples": [
       {
         "chinese": "他有书。",
@@ -12566,7 +12566,7 @@
     "translationFr": "certains",
     "category": "pronom",
     "explanation": "some (exist)",
-    "audio": "audio/hsk1/hsk1_有的.wav",
+    "audio": "audio/hsk1/hsk1_有的.mp3",
     "examples": [
       {
         "chinese": "有的学生喜欢运动。",
@@ -12612,7 +12612,7 @@
     "translationFr": "certains; quelques",
     "category": "général",
     "explanation": "somewhat",
-    "audio": "audio/hsk1/hsk1_有些.wav",
+    "audio": "audio/hsk1/hsk1_有些.mp3",
     "examples": [
       {
         "chinese": "有些书是红色的。",
@@ -12659,7 +12659,7 @@
     "translationFr": "un peu (sens négatif)",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_有一点儿.wav",
+    "audio": "audio/hsk1/hsk1_有一点儿.mp3",
     "examples": [
       {
         "chinese": "有点儿累",
@@ -12709,7 +12709,7 @@
     "translationFr": "pluie",
     "category": "nom",
     "explanation": "(of rain, snow etc) to fall; to precipitate; to wet",
-    "audio": "audio/hsk1/hsk1_雨.wav",
+    "audio": "audio/hsk1/hsk1_雨.mp3",
     "examples": [
       {
         "chinese": "天下雨。",
@@ -12757,7 +12757,7 @@
     "translationFr": "yuan",
     "category": "classificateur",
     "explanation": "(bound form) first; original; primary; (bound form) basic; fundamental; (bound form) constituent; part; (prefix) meta-; (math.) argument; variable; era (of a reign); (Tw) (geology) eon",
-    "audio": "audio/hsk1/hsk1_元.wav",
+    "audio": "audio/hsk1/hsk1_元.mp3",
     "examples": [
       {
         "chinese": "一元",
@@ -12805,7 +12805,7 @@
     "translationFr": "mois",
     "category": "nom",
     "explanation": "month; monthly; CL:個|个[ge4],輪|轮[lun2]",
-    "audio": "audio/hsk1/hsk1_月.wav",
+    "audio": "audio/hsk1/hsk1_月.mp3",
     "examples": [
       {
         "chinese": "月亮在天空中发光。",
@@ -12851,7 +12851,7 @@
     "translationFr": "encore; à nouveau",
     "category": "adverbe",
     "explanation": "further; beyond this point of time; (before an adjective) more; then (after sth, and not until then); no matter how ... (followed by an adjective or verb, and then (usually) 也[ye3] or 都[dou1] for emphasis); (used to introduce additional information, as in 再則|再则[zai4 ze2], 再就是[zai4 jiu4 shi4] etc); (literary) to reappear; to reoccur",
-    "audio": "audio/hsk1/hsk1_再.wav",
+    "audio": "audio/hsk1/hsk1_再.mp3",
     "examples": [
       {
         "chinese": "再来一次。",
@@ -12902,7 +12902,7 @@
     "translationFr": "être à; en train de",
     "category": "verbe",
     "explanation": "(of sb or sth) to be (located) at; (used before a verb to indicate an action in progress)",
-    "audio": "audio/hsk1/hsk1_在.wav",
+    "audio": "audio/hsk1/hsk1_在.mp3",
     "examples": [
       {
         "chinese": "我在这里。",
@@ -12951,7 +12951,7 @@
     "translationFr": "au revoir",
     "category": "verbe",
     "explanation": "see you again later",
-    "audio": "audio/hsk1/hsk1_再见.wav",
+    "audio": "audio/hsk1/hsk1_再见.mp3",
     "examples": [
       {
         "chinese": "再见，我们很快会再见面。",
@@ -12996,7 +12996,7 @@
     "translationFr": "tôt",
     "category": "adjectif",
     "explanation": "morning; Good morning!; long ago; prematurely",
-    "audio": "audio/hsk1/hsk1_早.wav",
+    "audio": "audio/hsk1/hsk1_早.mp3",
     "examples": [
       {
         "chinese": "早上好。",
@@ -13043,7 +13043,7 @@
     "translationFr": "petit-déjeuner",
     "category": "nom",
     "explanation": "CL:份[fen4],頓|顿[dun4],次[ci4],餐[can1]",
-    "audio": "audio/hsk1/hsk1_早饭.wav",
+    "audio": "audio/hsk1/hsk1_早饭.mp3",
     "examples": [
       {
         "chinese": "我每天早上都要吃早饭。",
@@ -13086,7 +13086,7 @@
     "translationFr": "matin",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_早上.wav",
+    "audio": "audio/hsk1/hsk1_早上.mp3",
     "examples": [
       {
         "chinese": "早上好",
@@ -13130,7 +13130,7 @@
     "pinyin": "zěnme",
     "translationFr": "comment",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_怎么.wav",
+    "audio": "audio/hsk1/hsk1_怎么.mp3",
     "examples": [
       {
         "chinese": "你怎么去公园？",
@@ -13176,7 +13176,7 @@
     "translationFr": "comment (avis)",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_怎么样.wav",
+    "audio": "audio/hsk1/hsk1_怎么样.mp3",
     "examples": [
       {
         "chinese": "怎么样？",
@@ -13253,7 +13253,7 @@
     "translationFr": "chercher",
     "category": "verbe",
     "explanation": "to look for; to call on sb; to find; to seek; to return; to give change",
-    "audio": "audio/hsk1/hsk1_找.wav",
+    "audio": "audio/hsk1/hsk1_找.mp3",
     "examples": [
       {
         "chinese": "找东西",
@@ -13299,7 +13299,7 @@
     "pinyin": "zhè",
     "translationFr": "ceci; ce",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_这.wav",
+    "audio": "audio/hsk1/hsk1_这.mp3",
     "examples": [
       {
         "chinese": "这本书",
@@ -13345,7 +13345,7 @@
     "translationFr": "par ici",
     "category": "pronom",
     "explanation": "here",
-    "audio": "audio/hsk1/hsk1_这边.wav",
+    "audio": "audio/hsk1/hsk1_这边.mp3",
     "examples": [
       {
         "chinese": "请往这边走。",
@@ -13391,7 +13391,7 @@
     "translationFr": "celui-ci",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_这个.wav",
+    "audio": "audio/hsk1/hsk1_这个.mp3",
     "examples": [
       {
         "chinese": "这个好",
@@ -13432,7 +13432,7 @@
     "pinyin": "zhèlǐ",
     "translationFr": "ici",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_这里.wav",
+    "audio": "audio/hsk1/hsk1_这里.mp3",
     "examples": [
       {
         "chinese": "书在这里。",
@@ -13476,7 +13476,7 @@
     "translationFr": "vrai; vraiment",
     "category": "adverbe",
     "explanation": "truly; indeed; real; true; genuine",
-    "audio": "audio/hsk1/hsk1_真.wav",
+    "audio": "audio/hsk1/hsk1_真.mp3",
     "examples": [
       {
         "chinese": "他说真话。",
@@ -13522,7 +13522,7 @@
     "pinyin": "zhèngzài",
     "translationFr": "être en train de",
     "category": "adverbe",
-    "audio": "audio/hsk1/hsk1_正在.wav",
+    "audio": "audio/hsk1/hsk1_正在.mp3",
     "examples": [
       {
         "chinese": "正在吃饭",
@@ -13573,7 +13573,7 @@
     "pinyin": "zhèr",
     "translationFr": "ici",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_这儿.wav",
+    "audio": "audio/hsk1/hsk1_这儿.mp3",
     "examples": [
       {
         "chinese": "书在这儿。",
@@ -13619,7 +13619,7 @@
     "pinyin": "zhèxiē",
     "translationFr": "ceux-ci; ces",
     "category": "pronom",
-    "audio": "audio/hsk1/hsk1_这些.wav",
+    "audio": "audio/hsk1/hsk1_这些.mp3",
     "examples": [
       {
         "chinese": "这些书",
@@ -13666,7 +13666,7 @@
     "translationFr": "classificateur (animaux; un d'une paire…)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_只.wav",
+    "audio": "audio/hsk1/hsk1_只.mp3",
     "examples": [
       {
         "chinese": "一只猫",
@@ -13714,7 +13714,7 @@
     "translationFr": "savoir",
     "category": "verbe",
     "explanation": "also pr. [zhi1dao5]",
-    "audio": "audio/hsk1/hsk1_知道.wav",
+    "audio": "audio/hsk1/hsk1_知道.mp3",
     "examples": [
       {
         "chinese": "他知道答案。",
@@ -13758,7 +13758,7 @@
     "pinyin": "Zhōngguó",
     "translationFr": "Chine",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_中国.wav",
+    "audio": "audio/hsk1/hsk1_中国.mp3",
     "examples": [
       {
         "chinese": "中国很大。",
@@ -13804,7 +13804,7 @@
     "pinyin": "Zhōngwén",
     "translationFr": "chinois (langue)",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_中文.wav",
+    "audio": "audio/hsk1/hsk1_中文.mp3",
     "examples": [
       {
         "chinese": "他说中文。",
@@ -13851,7 +13851,7 @@
     "translationFr": "midi",
     "category": "nom",
     "explanation": "midday; CL:個|个[ge4]",
-    "audio": "audio/hsk1/hsk1_中午.wav",
+    "audio": "audio/hsk1/hsk1_中午.mp3",
     "examples": [
       {
         "chinese": "中午吃饭",
@@ -13895,7 +13895,7 @@
     "pinyin": "zhōngxué",
     "translationFr": "collège; lycée",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_中学.wav",
+    "audio": "audio/hsk1/hsk1_中学.mp3",
     "examples": [
       {
         "chinese": "我在中学学习了三年。",
@@ -13941,7 +13941,7 @@
     "translationFr": "collégien; lycéen",
     "category": "nom",
     "explanation": "high school student",
-    "audio": "audio/hsk1/hsk1_中学生.wav",
+    "audio": "audio/hsk1/hsk1_中学生.mp3",
     "examples": [
       {
         "chinese": "我是中学生。",
@@ -13987,7 +13987,7 @@
     "translationFr": "habiter",
     "category": "verbe",
     "explanation": "to dwell; to stay; to reside; to stop; (suffix indicating firmness, steadiness, or coming to a halt)",
-    "audio": "audio/hsk1/hsk1_住.wav",
+    "audio": "audio/hsk1/hsk1_住.mp3",
     "examples": [
       {
         "chinese": "他住在北京。",
@@ -14035,7 +14035,7 @@
     "translationFr": "table",
     "category": "nom",
     "explanation": "desk; CL:張|张[zhang1],套[tao4]",
-    "audio": "audio/hsk1/hsk1_桌子.wav",
+    "audio": "audio/hsk1/hsk1_桌子.mp3",
     "examples": [
       {
         "chinese": "桌子上放着一本书。",
@@ -14080,7 +14080,7 @@
     "translationFr": "caractère",
     "category": "nom",
     "explanation": "symbol; character; word; CL:個|个[ge4]; courtesy or style name traditionally given to males aged 20 in dynastic China",
-    "audio": "audio/hsk1/hsk1_字.wav",
+    "audio": "audio/hsk1/hsk1_字.mp3",
     "examples": [
       {
         "chinese": "字母",
@@ -14125,7 +14125,7 @@
     "translationFr": "s'asseoir; prendre (transport)",
     "category": "verbe",
     "explanation": "to take a seat; to take (a bus, airplane etc); to bear fruit; variant of 座[zuo4]",
-    "audio": "audio/hsk1/hsk1_坐.wav",
+    "audio": "audio/hsk1/hsk1_坐.mp3",
     "examples": [
       {
         "chinese": "坐在这里",
@@ -14176,7 +14176,7 @@
     "translationFr": "faire",
     "category": "verbe",
     "explanation": "to write; to compose; to do; to engage in; to hold (a party etc); (of a person) to be (an intermediary, a good student etc); to become (husband and wife, friends etc); (of a thing) to serve as; to be used for; to assume (an air or manner)",
-    "audio": "audio/hsk1/hsk1_做.wav",
+    "audio": "audio/hsk1/hsk1_做.mp3",
     "examples": [
       {
         "chinese": "做作业",
@@ -14229,7 +14229,7 @@
     "translationFr": "cuisiner; faire la cuisine",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk1/hsk1_做饭.wav",
+    "audio": "audio/hsk1/hsk1_做饭.mp3",
     "examples": [
       {
         "chinese": "我在做饭",
@@ -14281,7 +14281,7 @@
     "pinyin": "zuótiān",
     "translationFr": "hier",
     "category": "nom",
-    "audio": "audio/hsk1/hsk1_昨天.wav",
+    "audio": "audio/hsk1/hsk1_昨天.mp3",
     "examples": [
       {
         "chinese": "昨天我去了图书馆。",

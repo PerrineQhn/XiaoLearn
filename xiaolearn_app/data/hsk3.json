@@ -7,7 +7,7 @@
     "translationFr": "petit (taille)",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_矮.wav",
+    "audio": "audio/hsk3/hsk1_矮.mp3",
     "examples": [
       {
         "chinese": "很矮",
@@ -80,7 +80,7 @@
     "translationFr": "conjoint; époux; épouse",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_爱人.wav",
+    "audio": "audio/hsk3/hsk3_爱人.mp3",
     "examples": [
       {
         "chinese": "你爱人在哪儿工作？",
@@ -134,7 +134,7 @@
     "translationFr": "calme",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_安静.wav",
+    "audio": "audio/hsk3/hsk1_安静.mp3",
     "examples": [
       {
         "chinese": "很安静",
@@ -182,7 +182,7 @@
     "translationFr": "sécurité; sûr",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_安全.wav",
+    "audio": "audio/hsk3/hsk1_安全.mp3",
     "examples": [
       {
         "chinese": "注意安全",
@@ -233,7 +233,7 @@
     "translationFr": "tante; madame",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_阿姨.wav",
+    "audio": "audio/hsk3/hsk1_阿姨.mp3",
     "examples": [
       {
         "chinese": "阿姨好",
@@ -284,7 +284,7 @@
     "pinyin": "bǎ",
     "translationFr": "(particule marquant l'objet)",
     "category": "préposition",
-    "audio": "audio/hsk3/hsk1_把.wav",
+    "audio": "audio/hsk3/hsk1_把.mp3",
     "examples": [
       {
         "chinese": "我用把刀切苹果。",
@@ -336,7 +336,7 @@
     "translationFr": "faire; gérer; s'occuper de",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_办.wav",
+    "audio": "audio/hsk3/hsk3_办.mp3",
     "examples": [
       {
         "chinese": "办事",
@@ -390,7 +390,7 @@
     "translationFr": "déménager",
     "category": "verbe",
     "explanation": "to move (sth relatively heavy or bulky); to shift; to copy indiscriminately",
-    "audio": "audio/hsk3/hsk1_搬.wav",
+    "audio": "audio/hsk3/hsk1_搬.mp3",
     "examples": [
       {
         "chinese": "我们需要搬一些家具到新家。",
@@ -438,7 +438,7 @@
     "translationFr": "méthode; solution",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_办法.wav",
+    "audio": "audio/hsk3/hsk3_办法.mp3",
     "examples": [
       {
         "chinese": "有没有办法？",
@@ -491,7 +491,7 @@
     "translationFr": "bureau (lieu)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_办公室.wav",
+    "audio": "audio/hsk3/hsk3_办公室.mp3",
     "examples": [
       {
         "chinese": "办公室在三楼",
@@ -541,7 +541,7 @@
     "translationFr": "aider; aide",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_帮助.wav",
+    "audio": "audio/hsk3/hsk3_帮助.mp3",
     "examples": [
       {
         "chinese": "谢谢你的帮助",
@@ -594,7 +594,7 @@
     "translationFr": "classe (scolaire)",
     "category": "nom",
     "explanation": "grade (in school)",
-    "audio": "audio/hsk3/hsk3_班级.wav",
+    "audio": "audio/hsk3/hsk3_班级.mp3",
     "examples": [
       {
         "chinese": "我们在同一个班级。",
@@ -638,7 +638,7 @@
     "translationFr": "déménager",
     "category": "général",
     "explanation": "to remove (sth)",
-    "audio": "audio/hsk3/hsk3_搬家.wav",
+    "audio": "audio/hsk3/hsk3_搬家.mp3",
     "examples": [
       {
         "chinese": "要搬家",
@@ -682,7 +682,7 @@
     "translationFr": "demi-journée; longtemps",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_半天.wav",
+    "audio": "audio/hsk3/hsk1_半天.mp3",
     "examples": [
       {
         "chinese": "等了半天",
@@ -734,7 +734,7 @@
     "translationFr": "rassasié; plein",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_饱.wav",
+    "audio": "audio/hsk3/hsk3_饱.mp3",
     "examples": [
       {
         "chinese": "我吃饱了",
@@ -787,7 +787,7 @@
     "translationFr": "journal",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_报纸.wav",
+    "audio": "audio/hsk3/hsk1_报纸.mp3",
     "examples": [
       {
         "chinese": "看报纸",
@@ -836,7 +836,7 @@
     "translationFr": "par (passif)",
     "category": "préposition",
     "explanation": "to cover (with); (literary) to suffer (a misfortune); used to indicate passive voice (placed before the doer of the action like \"by\" in English passive-voice sentences, or, if the doer is not mentioned, before the verb); (since c. 2009) (sarcastic or jocular) used to indicate that the following word should be regarded as being in air quotes (as in 被旅遊|被旅游[bei4 lu : 3 you2] to \"go on a trip\")",
-    "audio": "audio/hsk3/hsk1_被.wav",
+    "audio": "audio/hsk3/hsk1_被.mp3",
     "examples": [
       {
         "chinese": "被风吹走",
@@ -882,7 +882,7 @@
     "translationFr": "nord",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_北.wav",
+    "audio": "audio/hsk3/hsk1_北.mp3",
     "examples": [
       {
         "chinese": "北边",
@@ -943,7 +943,7 @@
     "translationFr": "le Nord (de la Chine)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_北方.wav",
+    "audio": "audio/hsk3/hsk3_北方.mp3",
     "examples": [
       {
         "chinese": "北方很冷",
@@ -993,7 +993,7 @@
     "translationFr": "changer; devenir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_变.wav",
+    "audio": "audio/hsk3/hsk3_变.mp3",
     "examples": [
       {
         "chinese": "天气变了",
@@ -1046,7 +1046,7 @@
     "translationFr": "fois (complet)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_遍.wav",
+    "audio": "audio/hsk3/hsk1_遍.mp3",
     "examples": [
       {
         "chinese": "再说一遍",
@@ -1094,7 +1094,7 @@
     "translationFr": "devenir; se transformer en",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_变成.wav",
+    "audio": "audio/hsk3/hsk3_变成.mp3",
     "examples": [
       {
         "chinese": "他变成了老师",
@@ -1147,7 +1147,7 @@
     "translationFr": "changement; évolution",
     "category": "verbe",
     "explanation": "change; variation (CL:個|个[ge4])",
-    "audio": "audio/hsk3/hsk3_变化.wav",
+    "audio": "audio/hsk3/hsk3_变化.mp3",
     "examples": [
       {
         "chinese": "天气变化了。",
@@ -1191,7 +1191,7 @@
     "translationFr": "performance",
     "category": "verbe",
     "explanation": "show; performance; exhibition; to perform; to act; to demonstrate; CL:場|场[chang3]",
-    "audio": "audio/hsk3/hsk1_表演.wav",
+    "audio": "audio/hsk3/hsk1_表演.mp3",
     "examples": [
       {
         "chinese": "他表演得很好。",
@@ -1237,7 +1237,7 @@
     "translationFr": "autre",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_别的.wav",
+    "audio": "audio/hsk3/hsk1_别的.mp3",
     "examples": [
       {
         "chinese": "别的东西",
@@ -1286,7 +1286,7 @@
     "translationFr": "les autres; autrui",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_别人.wav",
+    "audio": "audio/hsk3/hsk1_别人.mp3",
     "examples": [
       {
         "chinese": "别人说",
@@ -1351,7 +1351,7 @@
     "translationFr": "notes",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_笔记.wav",
+    "audio": "audio/hsk3/hsk1_笔记.mp3",
     "examples": [
       {
         "chinese": "做笔记",
@@ -1399,7 +1399,7 @@
     "translationFr": "relativement",
     "category": "adverbe",
     "explanation": "to contrast; comparatively; relatively; quite; comparison",
-    "audio": "audio/hsk3/hsk1_比较.wav",
+    "audio": "audio/hsk3/hsk1_比较.mp3",
     "examples": [
       {
         "chinese": "比较这两个物品。",
@@ -1445,7 +1445,7 @@
     "translationFr": "cahier; ordinateur portable",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_笔记本.wav",
+    "audio": "audio/hsk3/hsk3_笔记本.mp3",
     "examples": [
       {
         "chinese": "笔记本电脑",
@@ -1498,7 +1498,7 @@
     "translationFr": "glace",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_冰.wav",
+    "audio": "audio/hsk3/hsk3_冰.mp3",
     "examples": [
       {
         "chinese": "冰水",
@@ -1548,7 +1548,7 @@
     "translationFr": "glace; crème glacée",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_冰激凌.wav",
+    "audio": "audio/hsk3/hsk3_冰激凌.mp3",
     "examples": [
       {
         "chinese": "我想吃冰激凌",
@@ -1601,7 +1601,7 @@
     "translationFr": "patient; malade",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_病人.wav",
+    "audio": "audio/hsk3/hsk1_病人.mp3",
     "examples": [
       {
         "chinese": "病人很多",
@@ -1652,7 +1652,7 @@
     "translationFr": "hôtel",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_宾馆.wav",
+    "audio": "audio/hsk3/hsk1_宾馆.mp3",
     "examples": [
       {
         "chinese": "住宾馆",
@@ -1713,7 +1713,7 @@
     "translationFr": "réfrigérateur",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_冰箱.wav",
+    "audio": "audio/hsk3/hsk1_冰箱.mp3",
     "examples": [
       {
         "chinese": "冰箱里有水果",
@@ -1762,7 +1762,7 @@
     "translationFr": "par exemple",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_比如.wav",
+    "audio": "audio/hsk3/hsk3_比如.mp3",
     "examples": [
       {
         "chinese": "比如说",
@@ -1812,7 +1812,7 @@
     "translationFr": "compétition; match",
     "category": "verbe",
     "explanation": "match; CL:場|场[chang3],次[ci4]; to compete",
-    "audio": "audio/hsk3/hsk1_比赛.wav",
+    "audio": "audio/hsk3/hsk1_比赛.mp3",
     "examples": [
       {
         "chinese": "我们参加比赛。",
@@ -1862,7 +1862,7 @@
     "translationFr": "devoir (obligation)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_必须.wav",
+    "audio": "audio/hsk3/hsk1_必须.mp3",
     "examples": [
       {
         "chinese": "必须去",
@@ -1919,7 +1919,7 @@
     "translationFr": "différent",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_不同.wav",
+    "audio": "audio/hsk3/hsk1_不同.mp3",
     "examples": [
       {
         "chinese": "不同的",
@@ -1967,7 +1967,7 @@
     "translationFr": "non seulement",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_不但.wav",
+    "audio": "audio/hsk3/hsk3_不但.mp3",
     "examples": [
       {
         "chinese": "不但...而且...",
@@ -2017,7 +2017,7 @@
     "translationFr": "disparaître; ne plus voir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_不见.wav",
+    "audio": "audio/hsk3/hsk3_不见.mp3",
     "examples": [
       {
         "chinese": "不见了",
@@ -2070,7 +2070,7 @@
     "translationFr": "bientôt; peu après",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_不久.wav",
+    "audio": "audio/hsk3/hsk3_不久.mp3",
     "examples": [
       {
         "chinese": "不久以后",
@@ -2123,7 +2123,7 @@
     "translationFr": "ça ne va pas; impossible",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_不行.wav",
+    "audio": "audio/hsk3/hsk3_不行.mp3",
     "examples": [
       {
         "chinese": "这样不行",
@@ -2176,7 +2176,7 @@
     "translationFr": "pas besoin",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_不用.wav",
+    "audio": "audio/hsk3/hsk1_不用.mp3",
     "examples": [
       {
         "chinese": "不用谢",
@@ -2225,7 +2225,7 @@
     "translationFr": "seulement alors; à peine",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_才.wav",
+    "audio": "audio/hsk3/hsk3_才.mp3",
     "examples": [
       {
         "chinese": "他才来",
@@ -2278,7 +2278,7 @@
     "translationFr": "menu",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_菜单.wav",
+    "audio": "audio/hsk3/hsk1_菜单.mp3",
     "examples": [
       {
         "chinese": "看菜单",
@@ -2326,7 +2326,7 @@
     "translationFr": "participer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_参加.wav",
+    "audio": "audio/hsk3/hsk1_参加.mp3",
     "examples": [
       {
         "chinese": "参加活动",
@@ -2374,7 +2374,7 @@
     "translationFr": "herbe",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_草.wav",
+    "audio": "audio/hsk3/hsk1_草.mp3",
     "examples": [
       {
         "chinese": "草地",
@@ -2422,7 +2422,7 @@
     "translationFr": "pelouse; prairie",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_草地.wav",
+    "audio": "audio/hsk3/hsk3_草地.mp3",
     "examples": [
       {
         "chinese": "在草地上",
@@ -2475,7 +2475,7 @@
     "translationFr": "étage; couche",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_层.wav",
+    "audio": "audio/hsk3/hsk1_层.mp3",
     "examples": [
       {
         "chinese": "第三层",
@@ -2526,7 +2526,7 @@
     "translationFr": "vérifier; chercher; consulter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_查.wav",
+    "audio": "audio/hsk3/hsk3_查.mp3",
     "examples": [
       {
         "chinese": "查字典",
@@ -2580,7 +2580,7 @@
     "translationFr": "manquer; différence",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_差.wav",
+    "audio": "audio/hsk3/hsk1_差.mp3",
     "examples": [
       {
         "chinese": "差一点儿",
@@ -2632,7 +2632,7 @@
     "translationFr": "à peu près",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_差不多.wav",
+    "audio": "audio/hsk3/hsk1_差不多.mp3",
     "examples": [
       {
         "chinese": "差不多了",
@@ -2674,7 +2674,7 @@
     "translationFr": "goûter; essayer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_尝.wav",
+    "audio": "audio/hsk3/hsk3_尝.mp3",
     "examples": [
       {
         "chinese": "尝一下",
@@ -2727,7 +2727,7 @@
     "translationFr": "souvent",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_常.wav",
+    "audio": "audio/hsk3/hsk1_常.mp3",
     "examples": [
       {
         "chinese": "经常",
@@ -2775,7 +2775,7 @@
     "translationFr": "courant; fréquent",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_常见.wav",
+    "audio": "audio/hsk3/hsk3_常见.mp3",
     "examples": [
       {
         "chinese": "常见的问题",
@@ -2828,7 +2828,7 @@
     "translationFr": "couramment utilisé",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_常用.wav",
+    "audio": "audio/hsk3/hsk3_常用.mp3",
     "examples": [
       {
         "chinese": "常用词",
@@ -2878,7 +2878,7 @@
     "translationFr": "souvent",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_常常.wav",
+    "audio": "audio/hsk3/hsk1_常常.mp3",
     "examples": [
       {
         "chinese": "常常去",
@@ -2938,7 +2938,7 @@
     "translationFr": "résultat; note",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_成绩.wav",
+    "audio": "audio/hsk3/hsk1_成绩.mp3",
     "examples": [
       {
         "chinese": "考试成绩",
@@ -3001,7 +3001,7 @@
     "translationFr": "ville",
     "category": "nom",
     "explanation": "CL:座[zuo4]",
-    "audio": "audio/hsk3/hsk1_城市.wav",
+    "audio": "audio/hsk3/hsk1_城市.mp3",
     "examples": [
       {
         "chinese": "我们的城市很美。",
@@ -3043,7 +3043,7 @@
     "translationFr": "chemise",
     "category": "nom",
     "explanation": "blouse; CL:件[jian4]",
-    "audio": "audio/hsk3/hsk3_衬衫.wav",
+    "audio": "audio/hsk3/hsk3_衬衫.mp3",
     "examples": [
       {
         "chinese": "我穿了一件衬衣。",
@@ -3087,7 +3087,7 @@
     "translationFr": "être en retard",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_迟到.wav",
+    "audio": "audio/hsk3/hsk3_迟到.mp3",
     "examples": [
       {
         "chinese": "对不起，我迟到了",
@@ -3137,7 +3137,7 @@
     "translationFr": "bateau",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_船.wav",
+    "audio": "audio/hsk3/hsk1_船.mp3",
     "examples": [
       {
         "chinese": "坐船",
@@ -3204,7 +3204,7 @@
     "translationFr": "partir; se mettre en route",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_出发.wav",
+    "audio": "audio/hsk3/hsk3_出发.mp3",
     "examples": [
       {
         "chinese": "我们出发吧",
@@ -3257,7 +3257,7 @@
     "translationFr": "sauf; en plus de",
     "category": "préposition",
     "explanation": "(used to introduce one of two habitual alternatives in the pattern 除了[chu2 le5] + A + 就是[jiu4 shi4] + B, \"either A or B\")",
-    "audio": "audio/hsk3/hsk1_除了.wav",
+    "audio": "audio/hsk3/hsk1_除了.mp3",
     "examples": [
       {
         "chinese": "除了他，誰也沒來。",
@@ -3302,7 +3302,7 @@
     "translationFr": "printemps",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_春天.wav",
+    "audio": "audio/hsk3/hsk1_春天.mp3",
     "examples": [
       {
         "chinese": "春天来了",
@@ -3350,7 +3350,7 @@
     "translationFr": "naître",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_出生.wav",
+    "audio": "audio/hsk3/hsk3_出生.mp3",
     "examples": [
       {
         "chinese": "我出生在北京",
@@ -3400,7 +3400,7 @@
     "translationFr": "sortir de l'hôpital",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_出院.wav",
+    "audio": "audio/hsk3/hsk3_出院.mp3",
     "examples": [
       {
         "chinese": "他明天出院",
@@ -3449,7 +3449,7 @@
     "pinyin": "chūzhōng",
     "translationFr": "collège",
     "category": "nom",
-    "audio": "audio/hsk3/hsk3_初中.wav",
+    "audio": "audio/hsk3/hsk3_初中.mp3",
     "examples": [
       {
         "chinese": "初中生",
@@ -3496,7 +3496,7 @@
     "translationFr": "dictionnaire",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_词典.wav",
+    "audio": "audio/hsk3/hsk1_词典.mp3",
     "examples": [
       {
         "chinese": "查词典",
@@ -3544,7 +3544,7 @@
     "translationFr": "intelligent",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_聪明.wav",
+    "audio": "audio/hsk3/hsk1_聪明.mp3",
     "examples": [
       {
         "chinese": "很聪明",
@@ -3592,7 +3592,7 @@
     "translationFr": "probablement",
     "category": "adjectif",
     "explanation": "probably; rough; approximate; about; general idea",
-    "audio": "audio/hsk3/hsk1_大概.wav",
+    "audio": "audio/hsk3/hsk1_大概.mp3",
     "examples": [
       {
         "chinese": "大概是下午三点。",
@@ -3640,7 +3640,7 @@
     "translationFr": "porter; apporter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_带.wav",
+    "audio": "audio/hsk3/hsk1_带.mp3",
     "examples": [
       {
         "chinese": "带来",
@@ -3691,7 +3691,7 @@
     "translationFr": "gâteau",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_蛋糕.wav",
+    "audio": "audio/hsk3/hsk3_蛋糕.mp3",
     "examples": [
       {
         "chinese": "生日蛋糕",
@@ -3741,7 +3741,7 @@
     "translationFr": "bien sûr",
     "category": "adjectif",
     "explanation": "as it should be; certainly; of course; without doubt",
-    "audio": "audio/hsk3/hsk1_当然.wav",
+    "audio": "audio/hsk3/hsk1_当然.mp3",
     "examples": [
       {
         "chinese": "当然，他来了。",
@@ -3787,7 +3787,7 @@
     "translationFr": "s'inquiéter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_担心.wav",
+    "audio": "audio/hsk3/hsk1_担心.mp3",
     "examples": [
       {
         "chinese": "别担心",
@@ -3847,7 +3847,7 @@
     "translationFr": "partout",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_到处.wav",
+    "audio": "audio/hsk3/hsk3_到处.mp3",
     "examples": [
       {
         "chinese": "到处都是人",
@@ -3897,7 +3897,7 @@
     "translationFr": "adulte",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_大人.wav",
+    "audio": "audio/hsk3/hsk3_大人.mp3",
     "examples": [
       {
         "chinese": "大人和小孩",
@@ -3947,7 +3947,7 @@
     "translationFr": "nettoyer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_打扫.wav",
+    "audio": "audio/hsk3/hsk1_打扫.mp3",
     "examples": [
       {
         "chinese": "打扫房间",
@@ -3996,7 +3996,7 @@
     "translationFr": "avoir l'intention de; projet",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_打算.wav",
+    "audio": "audio/hsk3/hsk3_打算.mp3",
     "examples": [
       {
         "chinese": "你打算做什么？",
@@ -4049,7 +4049,7 @@
     "translationFr": "taille; grandeur",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_大小.wav",
+    "audio": "audio/hsk3/hsk3_大小.mp3",
     "examples": [
       {
         "chinese": "这个大小可以吗？",
@@ -4102,7 +4102,7 @@
     "translationFr": "panda géant",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_大熊猫.wav",
+    "audio": "audio/hsk3/hsk3_大熊猫.mp3",
     "examples": [
       {
         "chinese": "大熊猫是中国的国宝",
@@ -4152,7 +4152,7 @@
     "translationFr": "manteau",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_大衣.wav",
+    "audio": "audio/hsk3/hsk3_大衣.mp3",
     "examples": [
       {
         "chinese": "穿大衣",
@@ -4202,7 +4202,7 @@
     "translationFr": "obtenir; gagner",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_得2.wav",
+    "audio": "audio/hsk3/hsk1_得2.mp3",
     "examples": [
       {
         "chinese": "我得走了",
@@ -4266,7 +4266,7 @@
     "translationFr": "obtenir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_得到.wav",
+    "audio": "audio/hsk3/hsk1_得到.mp3",
     "examples": [
       {
         "chinese": "得到了",
@@ -4314,7 +4314,7 @@
     "translationFr": "marquer des points; score",
     "category": "verbe",
     "explanation": "score; rating; grade",
-    "audio": "audio/hsk3/hsk3_得分.wav",
+    "audio": "audio/hsk3/hsk3_得分.mp3",
     "examples": [
       {
         "chinese": "考试中得到一分",
@@ -4358,7 +4358,7 @@
     "translationFr": "si (conditionnel)",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_的话.wav",
+    "audio": "audio/hsk3/hsk3_的话.mp3",
     "examples": [
       {
         "chinese": "有时间的话",
@@ -4407,7 +4407,7 @@
     "pinyin": "děi",
     "translationFr": "devoir; falloir (obligation)",
     "category": "général",
-    "audio": "audio/hsk3/hsk1_得4.wav",
+    "audio": "audio/hsk3/hsk1_得4.mp3",
     "examples": [
       {
         "chinese": "得走",
@@ -4449,7 +4449,7 @@
     "translationFr": "lampe; lumière",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_灯.wav",
+    "audio": "audio/hsk3/hsk3_灯.mp3",
     "examples": [
       {
         "chinese": "开灯",
@@ -4501,7 +4501,7 @@
     "pinyin": "dì",
     "translationFr": "un endroit; un lieu (plutôt \"place\" au sens général)",
     "category": "général",
-    "audio": "audio/hsk3/hsk1_地2.wav",
+    "audio": "audio/hsk3/hsk1_地2.mp3",
     "examples": [
       {
         "chinese": "地方",
@@ -4544,7 +4544,7 @@
     "translationFr": "électricité",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_电.wav",
+    "audio": "audio/hsk3/hsk3_电.mp3",
     "examples": [
       {
         "chinese": "没电了",
@@ -4594,7 +4594,7 @@
     "translationFr": "ascenseur",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_电梯.wav",
+    "audio": "audio/hsk3/hsk3_电梯.mp3",
     "examples": [
       {
         "chinese": "坐电梯",
@@ -4644,7 +4644,7 @@
     "translationFr": "livre électronique; e-book",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_电子书.wav",
+    "audio": "audio/hsk3/hsk3_电子书.mp3",
     "examples": [
       {
         "chinese": "我喜欢看电子书",
@@ -4697,7 +4697,7 @@
     "translationFr": "lieu; endroit",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_地点.wav",
+    "audio": "audio/hsk3/hsk1_地点.mp3",
     "examples": [
       {
         "chinese": "见面地点",
@@ -4749,7 +4749,7 @@
     "translationFr": "endroit; lieu",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_地方.wav",
+    "audio": "audio/hsk3/hsk3_地方.mp3",
     "examples": [
       {
         "chinese": "这个地方",
@@ -4800,7 +4800,7 @@
     "translationFr": "carte (géo)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_地图.wav",
+    "audio": "audio/hsk3/hsk1_地图.mp3",
     "examples": [
       {
         "chinese": "看地图",
@@ -4858,7 +4858,7 @@
     "translationFr": "perdre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_丢.wav",
+    "audio": "audio/hsk3/hsk1_丢.mp3",
     "examples": [
       {
         "chinese": "丢了",
@@ -4906,7 +4906,7 @@
     "translationFr": "est",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_东.wav",
+    "audio": "audio/hsk3/hsk1_东.mp3",
     "examples": [
       {
         "chinese": "东边",
@@ -4967,7 +4967,7 @@
     "translationFr": "nord-est",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_东北.wav",
+    "audio": "audio/hsk3/hsk3_东北.mp3",
     "examples": [
       {
         "chinese": "中国的东北",
@@ -5017,7 +5017,7 @@
     "translationFr": "comprendre; savoir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_懂得.wav",
+    "audio": "audio/hsk3/hsk3_懂得.mp3",
     "examples": [
       {
         "chinese": "他懂得很多",
@@ -5070,7 +5070,7 @@
     "translationFr": "l'Orient; l'Est",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_东方.wav",
+    "audio": "audio/hsk3/hsk3_东方.mp3",
     "examples": [
       {
         "chinese": "东方文化",
@@ -5123,7 +5123,7 @@
     "translationFr": "sud-est",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_东南.wav",
+    "audio": "audio/hsk3/hsk3_东南.mp3",
     "examples": [
       {
         "chinese": "东南亚",
@@ -5173,7 +5173,7 @@
     "translationFr": "hiver",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_冬天.wav",
+    "audio": "audio/hsk3/hsk1_冬天.mp3",
     "examples": [
       {
         "chinese": "冬天很冷",
@@ -5221,7 +5221,7 @@
     "translationFr": "animal",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_动物.wav",
+    "audio": "audio/hsk3/hsk1_动物.mp3",
     "examples": [
       {
         "chinese": "动物园",
@@ -5269,7 +5269,7 @@
     "translationFr": "zoo",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_动物园.wav",
+    "audio": "audio/hsk3/hsk3_动物园.mp3",
     "examples": [
       {
         "chinese": "去动物园",
@@ -5319,7 +5319,7 @@
     "translationFr": "section; passage (classificateur)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_段.wav",
+    "audio": "audio/hsk3/hsk3_段.mp3",
     "examples": [
       {
         "chinese": "一段话",
@@ -5372,7 +5372,7 @@
     "translationFr": "court",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_短.wav",
+    "audio": "audio/hsk3/hsk1_短.mp3",
     "examples": [
       {
         "chinese": "很短",
@@ -5445,7 +5445,7 @@
     "translationFr": "short",
     "category": "nom",
     "explanation": "shorts",
-    "audio": "audio/hsk3/hsk3_短裤.wav",
+    "audio": "audio/hsk3/hsk3_短裤.mp3",
     "examples": [
       {
         "chinese": "我穿了短裤去公园。",
@@ -5489,7 +5489,7 @@
     "translationFr": "faire de l'exercice",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_锻炼.wav",
+    "audio": "audio/hsk3/hsk1_锻炼.mp3",
     "examples": [
       {
         "chinese": "锻炼身体",
@@ -5553,7 +5553,7 @@
     "translationFr": "dialogue; conversation",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_对话.wav",
+    "audio": "audio/hsk3/hsk3_对话.mp3",
     "examples": [
       {
         "chinese": "练习对话",
@@ -5606,7 +5606,7 @@
     "translationFr": "avoir faim",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_饿.wav",
+    "audio": "audio/hsk3/hsk1_饿.mp3",
     "examples": [
       {
         "chinese": "很饿",
@@ -5680,7 +5680,7 @@
     "translationFr": "oreilles",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_耳朵.wav",
+    "audio": "audio/hsk3/hsk1_耳朵.mp3",
     "examples": [
       {
         "chinese": "大耳朵",
@@ -5753,7 +5753,7 @@
     "translationFr": "écouteurs",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_耳机.wav",
+    "audio": "audio/hsk3/hsk1_耳机.mp3",
     "examples": [
       {
         "chinese": "戴耳机",
@@ -5801,7 +5801,7 @@
     "translationFr": "et en plus; de plus",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_而且.wav",
+    "audio": "audio/hsk3/hsk3_而且.mp3",
     "examples": [
       {
         "chinese": "不但...而且...",
@@ -5854,7 +5854,7 @@
     "translationFr": "envoyer; émettre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_发.wav",
+    "audio": "audio/hsk3/hsk3_发.mp3",
     "examples": [
       {
         "chinese": "发短信",
@@ -5907,7 +5907,7 @@
     "translationFr": "poser; mettre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_放.wav",
+    "audio": "audio/hsk3/hsk1_放.mp3",
     "examples": [
       {
         "chinese": "放这儿",
@@ -5971,7 +5971,7 @@
     "translationFr": "pratique; commode",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_方便.wav",
+    "audio": "audio/hsk3/hsk3_方便.mp3",
     "examples": [
       {
         "chinese": "很方便",
@@ -6024,7 +6024,7 @@
     "translationFr": "nouilles instantanées",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_方便面.wav",
+    "audio": "audio/hsk3/hsk3_方便面.mp3",
     "examples": [
       {
         "chinese": "吃方便面",
@@ -6074,7 +6074,7 @@
     "translationFr": "méthode",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_方法.wav",
+    "audio": "audio/hsk3/hsk1_方法.mp3",
     "examples": [
       {
         "chinese": "学习方法",
@@ -6122,7 +6122,7 @@
     "translationFr": "avoir des vacances",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_放假.wav",
+    "audio": "audio/hsk3/hsk1_放假.mp3",
     "examples": [
       {
         "chinese": "放假了",
@@ -6172,7 +6172,7 @@
     "translationFr": "direction",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_方向.wav",
+    "audio": "audio/hsk3/hsk3_方向.mp3",
     "examples": [
       {
         "chinese": "什么方向？",
@@ -6222,7 +6222,7 @@
     "translationFr": "être rassuré",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_放心.wav",
+    "audio": "audio/hsk3/hsk1_放心.mp3",
     "examples": [
       {
         "chinese": "放心吧",
@@ -6271,7 +6271,7 @@
     "translationFr": "sortir de l'école",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_放学.wav",
+    "audio": "audio/hsk3/hsk1_放学.mp3",
     "examples": [
       {
         "chinese": "放学了",
@@ -6320,7 +6320,7 @@
     "translationFr": "maison",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_房子.wav",
+    "audio": "audio/hsk3/hsk1_房子.mp3",
     "examples": [
       {
         "chinese": "买房子",
@@ -6381,7 +6381,7 @@
     "translationFr": "avoir de la fièvre",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_发烧.wav",
+    "audio": "audio/hsk3/hsk1_发烧.mp3",
     "examples": [
       {
         "chinese": "我发烧了",
@@ -6473,7 +6473,7 @@
     "pinyin": "fāshēng",
     "translationFr": "se produire; arriver",
     "category": "verbe",
-    "audio": "audio/hsk3/hsk3_发生.wav",
+    "audio": "audio/hsk3/hsk3_发生.mp3",
     "examples": [
       {
         "chinese": "天气发生了变化。",
@@ -6520,7 +6520,7 @@
     "translationFr": "découvrir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_发现.wav",
+    "audio": "audio/hsk3/hsk1_发现.mp3",
     "examples": [
       {
         "chinese": "发现了",
@@ -6580,7 +6580,7 @@
     "translationFr": "développer",
     "category": "verbe",
     "explanation": "growth; to develop; to grow; to expand",
-    "audio": "audio/hsk3/hsk1_发展.wav",
+    "audio": "audio/hsk3/hsk1_发展.mp3",
     "examples": [
       {
         "chinese": "发展经济",
@@ -6625,7 +6625,7 @@
     "translationFr": "vent",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_风.wav",
+    "audio": "audio/hsk3/hsk1_风.mp3",
     "examples": [
       {
         "chinese": "刮风",
@@ -6686,7 +6686,7 @@
     "translationFr": "classificateur pour lettres",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_封.wav",
+    "audio": "audio/hsk3/hsk3_封.mp3",
     "examples": [
       {
         "chinese": "一封信",
@@ -6736,7 +6736,7 @@
     "translationFr": "séparer; se séparer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_分开.wav",
+    "audio": "audio/hsk3/hsk3_分开.mp3",
     "examples": [
       {
         "chinese": "我们分开走",
@@ -6789,7 +6789,7 @@
     "translationFr": "près de",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_附近.wav",
+    "audio": "audio/hsk3/hsk1_附近.mp3",
     "examples": [
       {
         "chinese": "在附近",
@@ -6853,7 +6853,7 @@
     "translationFr": "mari et femme; couple marié",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_夫妻.wav",
+    "audio": "audio/hsk3/hsk3_夫妻.mp3",
     "examples": [
       {
         "chinese": "他们是夫妻",
@@ -6906,7 +6906,7 @@
     "translationFr": "service",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_服务.wav",
+    "audio": "audio/hsk3/hsk1_服务.mp3",
     "examples": [
       {
         "chinese": "服务员",
@@ -6954,7 +6954,7 @@
     "translationFr": "réviser",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_复习.wav",
+    "audio": "audio/hsk3/hsk1_复习.mp3",
     "examples": [
       {
         "chinese": "复习功课",
@@ -7014,7 +7014,7 @@
     "translationFr": "devoir; il faut; être censé",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_该.wav",
+    "audio": "audio/hsk3/hsk1_该.mp3",
     "examples": [
       {
         "chinese": "该走了",
@@ -7067,7 +7067,7 @@
     "translationFr": "faire",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_干.wav",
+    "audio": "audio/hsk3/hsk3_干.mp3",
     "examples": [
       {
         "chinese": "干什么？",
@@ -7119,7 +7119,7 @@
     "translationFr": "être intéressé par",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_感兴趣.wav",
+    "audio": "audio/hsk3/hsk3_感兴趣.mp3",
     "examples": [
       {
         "chinese": "我对中国文化感兴趣",
@@ -7169,7 +7169,7 @@
     "translationFr": "ressentir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_感到.wav",
+    "audio": "audio/hsk3/hsk1_感到.mp3",
     "examples": [
       {
         "chinese": "感到高兴",
@@ -7223,7 +7223,7 @@
     "translationFr": "juste; à peine",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_刚.wav",
+    "audio": "audio/hsk3/hsk1_刚.mp3",
     "examples": [
       {
         "chinese": "刚才",
@@ -7281,7 +7281,7 @@
     "translationFr": "tout à l'heure",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_刚才.wav",
+    "audio": "audio/hsk3/hsk1_刚才.mp3",
     "examples": [
       {
         "chinese": "刚才说的",
@@ -7329,7 +7329,7 @@
     "translationFr": "à l'instant; tout juste",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_刚刚.wav",
+    "audio": "audio/hsk3/hsk3_刚刚.mp3",
     "examples": [
       {
         "chinese": "他刚刚来",
@@ -7382,7 +7382,7 @@
     "translationFr": "propre",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_干净.wav",
+    "audio": "audio/hsk3/hsk1_干净.mp3",
     "examples": [
       {
         "chinese": "很干净",
@@ -7449,7 +7449,7 @@
     "translationFr": "rhume",
     "category": "nom",
     "explanation": "(common) cold; CL:場|场[chang2],次[ci4]; (coll.) to be interested in (often used in the negative); (Tw) to detest; can't stand",
-    "audio": "audio/hsk3/hsk1_感冒.wav",
+    "audio": "audio/hsk3/hsk1_感冒.mp3",
     "examples": [
       {
         "chinese": "我感冒了。",
@@ -7495,7 +7495,7 @@
     "translationFr": "train à grande vitesse",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_高铁.wav",
+    "audio": "audio/hsk3/hsk3_高铁.mp3",
     "examples": [
       {
         "chinese": "坐高铁去上海",
@@ -7545,7 +7545,7 @@
     "translationFr": "encore plus",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_更.wav",
+    "audio": "audio/hsk3/hsk1_更.mp3",
     "examples": [
       {
         "chinese": "更好",
@@ -7603,7 +7603,7 @@
     "translationFr": "selon",
     "category": "préposition",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_根据.wav",
+    "audio": "audio/hsk3/hsk1_根据.mp3",
     "examples": [
       {
         "chinese": "根据情况",
@@ -7657,7 +7657,7 @@
     "translationFr": "kilogramme",
     "category": "mesure",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_公斤.wav",
+    "audio": "audio/hsk3/hsk1_公斤.mp3",
     "examples": [
       {
         "chinese": "一公斤",
@@ -7705,7 +7705,7 @@
     "translationFr": "parc",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_公园.wav",
+    "audio": "audio/hsk3/hsk1_公园.mp3",
     "examples": [
       {
         "chinese": "去公园",
@@ -7766,7 +7766,7 @@
     "translationFr": "jour ouvrable",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_工作日.wav",
+    "audio": "audio/hsk3/hsk3_工作日.mp3",
     "examples": [
       {
         "chinese": "工作日我很忙",
@@ -7816,7 +7816,7 @@
     "translationFr": "souffler (vent); raser",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_刮.wav",
+    "audio": "audio/hsk3/hsk3_刮.mp3",
     "examples": [
       {
         "chinese": "刮风了",
@@ -7869,7 +7869,7 @@
     "translationFr": "fermer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_关.wav",
+    "audio": "audio/hsk3/hsk1_关.mp3",
     "examples": [
       {
         "chinese": "关门",
@@ -7930,7 +7930,7 @@
     "translationFr": "éteindre (appareil)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_关机.wav",
+    "audio": "audio/hsk3/hsk3_关机.mp3",
     "examples": [
       {
         "chinese": "请关机",
@@ -7979,7 +7979,7 @@
     "pinyin": "guānxì",
     "translationFr": "relation",
     "category": "nom",
-    "audio": "audio/hsk3/hsk1_关系.wav",
+    "audio": "audio/hsk3/hsk1_关系.mp3",
     "examples": [
       {
         "chinese": "他是我的朋友关系。",
@@ -8027,7 +8027,7 @@
     "translationFr": "se soucier de",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_关心.wav",
+    "audio": "audio/hsk3/hsk1_关心.mp3",
     "examples": [
       {
         "chinese": "关心你",
@@ -8081,7 +8081,7 @@
     "translationFr": "concernant",
     "category": "préposition",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_关于.wav",
+    "audio": "audio/hsk3/hsk1_关于.mp3",
     "examples": [
       {
         "chinese": "关于这个",
@@ -8144,7 +8144,7 @@
     "translationFr": "suivre",
     "category": "verbe",
     "explanation": "concern; interest; attention",
-    "audio": "audio/hsk3/hsk1_关注.wav",
+    "audio": "audio/hsk3/hsk1_关注.mp3",
     "examples": [
       {
         "chinese": "关注这个项目",
@@ -8189,7 +8189,7 @@
     "translationFr": "pays",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_国家.wav",
+    "audio": "audio/hsk3/hsk1_国家.mp3",
     "examples": [
       {
         "chinese": "你的国家",
@@ -8250,7 +8250,7 @@
     "translationFr": "célébrer une fête",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_过节.wav",
+    "audio": "audio/hsk3/hsk3_过节.mp3",
     "examples": [
       {
         "chinese": "过节快乐",
@@ -8300,7 +8300,7 @@
     "translationFr": "passer; aller de l'autre côté; finir par passer",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_过去.wav",
+    "audio": "audio/hsk3/hsk3_过去.mp3",
     "examples": [
       {
         "chinese": "过去的事",
@@ -8350,7 +8350,7 @@
     "translationFr": "histoire; récit",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_故事.wav",
+    "audio": "audio/hsk3/hsk3_故事.mp3",
     "examples": [
       {
         "chinese": "讲故事",
@@ -8403,7 +8403,7 @@
     "translationFr": "mer",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_海.wav",
+    "audio": "audio/hsk3/hsk1_海.mp3",
     "examples": [
       {
         "chinese": "大海",
@@ -8450,7 +8450,7 @@
     "pinyin": "hàipà",
     "translationFr": "avoir peur",
     "category": "général",
-    "audio": "audio/hsk3/hsk1_害怕.wav",
+    "audio": "audio/hsk3/hsk1_害怕.mp3",
     "examples": [
       {
         "chinese": "我害怕黑暗。",
@@ -8495,7 +8495,7 @@
     "translationFr": "beaucoup de; très nombreux",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_好多.wav",
+    "audio": "audio/hsk3/hsk3_好多.mp3",
     "examples": [
       {
         "chinese": "好多人",
@@ -8548,7 +8548,7 @@
     "translationFr": "longtemps",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_好久.wav",
+    "audio": "audio/hsk3/hsk3_好久.mp3",
     "examples": [
       {
         "chinese": "好久不见",
@@ -8598,7 +8598,7 @@
     "translationFr": "numéro",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_号码.wav",
+    "audio": "audio/hsk3/hsk1_号码.mp3",
     "examples": [
       {
         "chinese": "电话号码",
@@ -8646,7 +8646,7 @@
     "translationFr": "avoir l'air de; sembler",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_好像.wav",
+    "audio": "audio/hsk3/hsk3_好像.mp3",
     "examples": [
       {
         "chinese": "好像要下雨",
@@ -8699,7 +8699,7 @@
     "translationFr": "rivière",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_河.wav",
+    "audio": "audio/hsk3/hsk1_河.mp3",
     "examples": [
       {
         "chinese": "河流",
@@ -8747,7 +8747,7 @@
     "translationFr": "tableau noir",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_黑板.wav",
+    "audio": "audio/hsk3/hsk1_黑板.mp3",
     "examples": [
       {
         "chinese": "看黑板",
@@ -8795,7 +8795,7 @@
     "translationFr": "approprié",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_合适.wav",
+    "audio": "audio/hsk3/hsk1_合适.mp3",
     "examples": [
       {
         "chinese": "很合适",
@@ -8852,7 +8852,7 @@
     "translationFr": "feu tricolore",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_红绿灯.wav",
+    "audio": "audio/hsk3/hsk1_红绿灯.mp3",
     "examples": [
       {
         "chinese": "红绿灯",
@@ -8901,7 +8901,7 @@
     "translationFr": "plus tard; ensuite",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_后来.wav",
+    "audio": "audio/hsk3/hsk3_后来.mp3",
     "examples": [
       {
         "chinese": "后来怎么了？",
@@ -8953,7 +8953,7 @@
     "pinyin": "hòunián",
     "translationFr": "dans deux ans",
     "category": "nom",
-    "audio": "audio/hsk3/hsk3_后年.wav",
+    "audio": "audio/hsk3/hsk3_后年.mp3",
     "examples": [
       {
         "chinese": "后年我们去北京。",
@@ -9000,7 +9000,7 @@
     "translationFr": "après-demain",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_后天.wav",
+    "audio": "audio/hsk3/hsk1_后天.mp3",
     "examples": [
       {
         "chinese": "后天见",
@@ -9049,7 +9049,7 @@
     "translationFr": "peintre; artiste",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_画家.wav",
+    "audio": "audio/hsk3/hsk3_画家.mp3",
     "examples": [
       {
         "chinese": "有名的画家",
@@ -9101,7 +9101,7 @@
     "pinyin": "huán",
     "translationFr": "rendre; retourner; rembourser",
     "category": "général",
-    "audio": "audio/hsk3/hsk3_还.wav",
+    "audio": "audio/hsk3/hsk3_还.mp3",
     "examples": [
       {
         "chinese": "归还图书",
@@ -9151,7 +9151,7 @@
     "translationFr": "changer; échanger",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_换.wav",
+    "audio": "audio/hsk3/hsk1_换.mp3",
     "examples": [
       {
         "chinese": "换一个",
@@ -9203,7 +9203,7 @@
     "translationFr": "jaune (couleur)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_黄色.wav",
+    "audio": "audio/hsk3/hsk3_黄色.mp3",
     "examples": [
       {
         "chinese": "黄色的花",
@@ -9252,7 +9252,7 @@
     "translationFr": "environnement",
     "category": "nom",
     "explanation": "circumstances; surroundings; CL:個|个[ge4]; ambient",
-    "audio": "audio/hsk3/hsk1_环境.wav",
+    "audio": "audio/hsk3/hsk1_环境.mp3",
     "examples": [
       {
         "chinese": "环境保护",
@@ -9294,7 +9294,7 @@
     "translationFr": "bienvenue",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_欢迎.wav",
+    "audio": "audio/hsk3/hsk1_欢迎.mp3",
     "examples": [
       {
         "chinese": "欢迎光临",
@@ -9342,7 +9342,7 @@
     "translationFr": "jardin",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_花园.wav",
+    "audio": "audio/hsk3/hsk3_花园.mp3",
     "examples": [
       {
         "chinese": "这个花园很大",
@@ -9392,7 +9392,7 @@
     "translationFr": "XXX",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_会2.wav",
+    "audio": "audio/hsk3/hsk3_会2.mp3",
     "examples": [
       {
         "chinese": "开会",
@@ -9443,7 +9443,7 @@
     "translationFr": "répondre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_回答.wav",
+    "audio": "audio/hsk3/hsk1_回答.mp3",
     "examples": [
       {
         "chinese": "回答问题",
@@ -9505,7 +9505,7 @@
     "translationFr": "réunion",
     "category": "nom",
     "explanation": "conference; CL:場|场[chang3],屆|届[jie4]",
-    "audio": "audio/hsk3/hsk1_会议.wav",
+    "audio": "audio/hsk3/hsk1_会议.mp3",
     "examples": [
       {
         "chinese": "我们明天有一个会议。",
@@ -9549,7 +9549,7 @@
     "translationFr": "ou (formel)",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_或.wav",
+    "audio": "audio/hsk3/hsk3_或.mp3",
     "examples": [
       {
         "chinese": "或者",
@@ -9599,7 +9599,7 @@
     "translationFr": "ou",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_或者.wav",
+    "audio": "audio/hsk3/hsk1_或者.mp3",
     "examples": [
       {
         "chinese": "茶或者咖啡",
@@ -9669,7 +9669,7 @@
     "translationFr": "passeport",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_护照.wav",
+    "audio": "audio/hsk3/hsk1_护照.mp3",
     "examples": [
       {
         "chinese": "我的护照",
@@ -9717,7 +9717,7 @@
     "translationFr": "extrêmement",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_极.wav",
+    "audio": "audio/hsk3/hsk3_极.mp3",
     "examples": [
       {
         "chinese": "好极了",
@@ -9767,7 +9767,7 @@
     "translationFr": "pressé; urgent",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_急.wav",
+    "audio": "audio/hsk3/hsk3_急.mp3",
     "examples": [
       {
         "chinese": "别急",
@@ -9820,7 +9820,7 @@
     "translationFr": "se souvenir; noter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_记.wav",
+    "audio": "audio/hsk3/hsk1_记.mp3",
     "examples": [
       {
         "chinese": "记住",
@@ -9872,7 +9872,7 @@
     "translationFr": "saison",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_季.wav",
+    "audio": "audio/hsk3/hsk3_季.mp3",
     "examples": [
       {
         "chinese": "四季",
@@ -9922,7 +9922,7 @@
     "translationFr": "poulet",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_鸡.wav",
+    "audio": "audio/hsk3/hsk1_鸡.mp3",
     "examples": [
       {
         "chinese": "鸡肉",
@@ -9983,7 +9983,7 @@
     "translationFr": "ajouter; plus",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_加.wav",
+    "audio": "audio/hsk3/hsk3_加.mp3",
     "examples": [
       {
         "chinese": "加油",
@@ -10036,7 +10036,7 @@
     "translationFr": "examiner; vérifier",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_检查.wav",
+    "audio": "audio/hsk3/hsk1_检查.mp3",
     "examples": [
       {
         "chinese": "检查身体",
@@ -10106,7 +10106,7 @@
     "translationFr": "persister",
     "category": "verbe",
     "explanation": "to persist in; to insist on",
-    "audio": "audio/hsk3/hsk1_坚持.wav",
+    "audio": "audio/hsk3/hsk1_坚持.mp3",
     "examples": [
       {
         "chinese": "坚持学习",
@@ -10149,7 +10149,7 @@
     "pinyin": "jiǎndān",
     "translationFr": "simple",
     "category": "adjectif",
-    "audio": "audio/hsk3/hsk1_简单.wav",
+    "audio": "audio/hsk3/hsk1_简单.mp3",
     "examples": [
       {
         "chinese": "这个问题很简单。",
@@ -10196,7 +10196,7 @@
     "translationFr": "parler; raconter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_讲.wav",
+    "audio": "audio/hsk3/hsk3_讲.mp3",
     "examples": [
       {
         "chinese": "讲故事",
@@ -10249,7 +10249,7 @@
     "translationFr": "santé; en bonne santé",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_健康.wav",
+    "audio": "audio/hsk3/hsk1_健康.mp3",
     "examples": [
       {
         "chinese": "身体健康",
@@ -10307,7 +10307,7 @@
     "translationFr": "se rencontrer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_见面.wav",
+    "audio": "audio/hsk3/hsk1_见面.mp3",
     "examples": [
       {
         "chinese": "见面吧",
@@ -10368,7 +10368,7 @@
     "translationFr": "contrôler les billets",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_检票.wav",
+    "audio": "audio/hsk3/hsk3_检票.mp3",
     "examples": [
       {
         "chinese": "检票口",
@@ -10418,7 +10418,7 @@
     "translationFr": "jiao (monnaie); coin; angle",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_角.wav",
+    "audio": "audio/hsk3/hsk3_角.mp3",
     "examples": [
       {
         "chinese": "一角钱",
@@ -10472,7 +10472,7 @@
     "translationFr": "pied",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_脚.wav",
+    "audio": "audio/hsk3/hsk1_脚.mp3",
     "examples": [
       {
         "chinese": "脚疼",
@@ -10539,7 +10539,7 @@
     "translationFr": "vacances; congé",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_假期.wav",
+    "audio": "audio/hsk3/hsk3_假期.mp3",
     "examples": [
       {
         "chinese": "假期快乐",
@@ -10592,7 +10592,7 @@
     "translationFr": "fête; section (classificateur)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_节.wav",
+    "audio": "audio/hsk3/hsk3_节.mp3",
     "examples": [
       {
         "chinese": "春节",
@@ -10645,7 +10645,7 @@
     "translationFr": "emprunter; prêter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_借.wav",
+    "audio": "audio/hsk3/hsk1_借.mp3",
     "examples": [
       {
         "chinese": "借书",
@@ -10696,7 +10696,7 @@
     "translationFr": "recevoir; accueillir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_接.wav",
+    "audio": "audio/hsk3/hsk3_接.mp3",
     "examples": [
       {
         "chinese": "接电话",
@@ -10749,7 +10749,7 @@
     "translationFr": "rue",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_街.wav",
+    "audio": "audio/hsk3/hsk3_街.mp3",
     "examples": [
       {
         "chinese": "在街上",
@@ -10799,7 +10799,7 @@
     "translationFr": "se marier",
     "category": "général",
     "explanation": "to get married; CL:次[ci4]",
-    "audio": "audio/hsk3/hsk1_结婚.wav",
+    "audio": "audio/hsk3/hsk1_结婚.mp3",
     "examples": [
       {
         "chinese": "他们结婚了。",
@@ -10841,7 +10841,7 @@
     "translationFr": "résoudre",
     "category": "verbe",
     "explanation": "to eliminate; to wipe out (an enemy, bandits etc)",
-    "audio": "audio/hsk3/hsk1_解决.wav",
+    "audio": "audio/hsk3/hsk1_解决.mp3",
     "examples": [
       {
         "chinese": "问题需要解决。",
@@ -10885,7 +10885,7 @@
     "translationFr": "sœurs",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_姐妹.wav",
+    "audio": "audio/hsk3/hsk3_姐妹.mp3",
     "examples": [
       {
         "chinese": "她们是姐妹",
@@ -10935,7 +10935,7 @@
     "translationFr": "programme (TV)",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_节目.wav",
+    "audio": "audio/hsk3/hsk1_节目.mp3",
     "examples": [
       {
         "chinese": "电视节目",
@@ -10983,7 +10983,7 @@
     "translationFr": "fête; festival",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_节日.wav",
+    "audio": "audio/hsk3/hsk1_节日.mp3",
     "examples": [
       {
         "chinese": "过节日",
@@ -11034,7 +11034,7 @@
     "translationFr": "terminer; finir",
     "category": "verbe",
     "explanation": "to finish; to end; to conclude; to close",
-    "audio": "audio/hsk3/hsk1_结束.wav",
+    "audio": "audio/hsk3/hsk1_结束.mp3",
     "examples": [
       {
         "chinese": "会议结束了。",
@@ -11078,7 +11078,7 @@
     "translationFr": "presque; quasi",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_几乎.wav",
+    "audio": "audio/hsk3/hsk3_几乎.mp3",
     "examples": [
       {
         "chinese": "几乎每天",
@@ -11131,7 +11131,7 @@
     "translationFr": "opportunité",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_机会.wav",
+    "audio": "audio/hsk3/hsk1_机会.mp3",
     "examples": [
       {
         "chinese": "有机会",
@@ -11179,7 +11179,7 @@
     "translationFr": "saison",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_季节.wav",
+    "audio": "audio/hsk3/hsk3_季节.mp3",
     "examples": [
       {
         "chinese": "这个季节",
@@ -11229,7 +11229,7 @@
     "translationFr": "livre (500g)",
     "category": "mesure",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_斤.wav",
+    "audio": "audio/hsk3/hsk1_斤.mp3",
     "examples": [
       {
         "chinese": "一斤",
@@ -11277,7 +11277,7 @@
     "translationFr": "passer par; après",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_经过.wav",
+    "audio": "audio/hsk3/hsk3_经过.mp3",
     "examples": [
       {
         "chinese": "经过这里",
@@ -11330,7 +11330,7 @@
     "translationFr": "directeur; manager",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_经理.wav",
+    "audio": "audio/hsk3/hsk1_经理.mp3",
     "examples": [
       {
         "chinese": "公司经理",
@@ -11382,7 +11382,7 @@
     "translationFr": "vieux",
     "category": "adjectif",
     "explanation": "opposite: new 新; former; worn (with age)",
-    "audio": "audio/hsk3/hsk1_旧.wav",
+    "audio": "audio/hsk3/hsk1_旧.mp3",
     "examples": [
       {
         "chinese": "这本书很旧。",
@@ -11427,7 +11427,7 @@
     "pinyin": "jiǔ",
     "translationFr": "longtemps",
     "category": "adjectif",
-    "audio": "audio/hsk3/hsk3_久.wav",
+    "audio": "audio/hsk3/hsk3_久.mp3",
     "examples": [
       {
         "chinese": "他在这里住了很久。",
@@ -11474,7 +11474,7 @@
     "translationFr": "alcool; vin",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_酒.wav",
+    "audio": "audio/hsk3/hsk3_酒.mp3",
     "examples": [
       {
         "chinese": "喝酒",
@@ -11527,7 +11527,7 @@
     "translationFr": "phrase (classificateur)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_句.wav",
+    "audio": "audio/hsk3/hsk3_句.mp3",
     "examples": [
       {
         "chinese": "一句话",
@@ -11577,7 +11577,7 @@
     "translationFr": "décider",
     "category": "verbe",
     "explanation": "to resolve; decision; CL:個|个[ge4],項|项[xiang4]; certainly",
-    "audio": "audio/hsk3/hsk1_决定.wav",
+    "audio": "audio/hsk3/hsk1_决定.mp3",
     "examples": [
       {
         "chinese": "我决定去公园散步。",
@@ -11623,7 +11623,7 @@
     "translationFr": "phrase",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_句子.wav",
+    "audio": "audio/hsk3/hsk1_句子.mp3",
     "examples": [
       {
         "chinese": "一个句子",
@@ -11671,7 +11671,7 @@
     "translationFr": "carte (carte bancaire; carte de transport; etc.)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_卡.wav",
+    "audio": "audio/hsk3/hsk3_卡.mp3",
     "examples": [
       {
         "chinese": "信用卡",
@@ -11721,7 +11721,7 @@
     "translationFr": "fleurir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_开花.wav",
+    "audio": "audio/hsk3/hsk3_开花.mp3",
     "examples": [
       {
         "chinese": "花开了",
@@ -11771,7 +11771,7 @@
     "translationFr": "avoir une réunion",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_开会.wav",
+    "audio": "audio/hsk3/hsk1_开会.mp3",
     "examples": [
       {
         "chinese": "开会了",
@@ -11820,7 +11820,7 @@
     "translationFr": "allumer (appareil)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_开机.wav",
+    "audio": "audio/hsk3/hsk3_开机.mp3",
     "examples": [
       {
         "chinese": "手机开机了",
@@ -11870,7 +11870,7 @@
     "translationFr": "joyeux",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_开心.wav",
+    "audio": "audio/hsk3/hsk1_开心.mp3",
     "examples": [
       {
         "chinese": "很开心",
@@ -11918,7 +11918,7 @@
     "translationFr": "apparemment; il semble que",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_看来.wav",
+    "audio": "audio/hsk3/hsk3_看来.mp3",
     "examples": [
       {
         "chinese": "看来要下雨",
@@ -11971,7 +11971,7 @@
     "translationFr": "quart d'heure",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_刻.wav",
+    "audio": "audio/hsk3/hsk1_刻.mp3",
     "examples": [
       {
         "chinese": "一刻钟",
@@ -12019,7 +12019,7 @@
     "translationFr": "vraiment; certainement",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_可.wav",
+    "audio": "audio/hsk3/hsk3_可.mp3",
     "examples": [
       {
         "chinese": "可好了",
@@ -12072,7 +12072,7 @@
     "translationFr": "avoir soif",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_渴.wav",
+    "audio": "audio/hsk3/hsk1_渴.mp3",
     "examples": [
       {
         "chinese": "很渴",
@@ -12146,7 +12146,7 @@
     "translationFr": "mignon",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_可爱.wav",
+    "audio": "audio/hsk3/hsk1_可爱.mp3",
     "examples": [
       {
         "chinese": "很可爱",
@@ -12194,7 +12194,7 @@
     "translationFr": "manuel scolaire",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_课本.wav",
+    "audio": "audio/hsk3/hsk1_课本.mp3",
     "examples": [
       {
         "chinese": "中文课本",
@@ -12243,7 +12243,7 @@
     "translationFr": "invité; client",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_客人.wav",
+    "audio": "audio/hsk3/hsk3_客人.mp3",
     "examples": [
       {
         "chinese": "有客人来",
@@ -12296,7 +12296,7 @@
     "translationFr": "mais; cependant",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_可是.wav",
+    "audio": "audio/hsk3/hsk3_可是.mp3",
     "examples": [
       {
         "chinese": "可是...",
@@ -12349,7 +12349,7 @@
     "translationFr": "texte de leçon",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_课文.wav",
+    "audio": "audio/hsk3/hsk1_课文.mp3",
     "examples": [
       {
         "chinese": "读课文",
@@ -12398,7 +12398,7 @@
     "translationFr": "climatisation",
     "category": "nom",
     "explanation": "air conditioner (including units that have a heating mode); CL:臺|台[tai2]",
-    "audio": "audio/hsk3/hsk1_空调.wav",
+    "audio": "audio/hsk3/hsk1_空调.mp3",
     "examples": [
       {
         "chinese": "他打开了空调。",
@@ -12441,7 +12441,7 @@
     "translationFr": "pleurer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_哭.wav",
+    "audio": "audio/hsk3/hsk1_哭.mp3",
     "examples": [
       {
         "chinese": "别哭",
@@ -12502,7 +12502,7 @@
     "translationFr": "baguettes",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_筷子.wav",
+    "audio": "audio/hsk3/hsk3_筷子.mp3",
     "examples": [
       {
         "chinese": "用筷子吃饭",
@@ -12552,7 +12552,7 @@
     "translationFr": "eau minérale",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_矿泉水.wav",
+    "audio": "audio/hsk3/hsk3_矿泉水.mp3",
     "examples": [
       {
         "chinese": "一瓶矿泉水",
@@ -12602,7 +12602,7 @@
     "translationFr": "venir de; être originaire de",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_来自.wav",
+    "audio": "audio/hsk3/hsk3_来自.mp3",
     "examples": [
       {
         "chinese": "他来自中国",
@@ -12655,7 +12655,7 @@
     "translationFr": "bleu",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_蓝.wav",
+    "audio": "audio/hsk3/hsk1_蓝.mp3",
     "examples": [
       {
         "chinese": "蓝色",
@@ -12728,7 +12728,7 @@
     "translationFr": "vieux; âgé",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_老.wav",
+    "audio": "audio/hsk3/hsk1_老.mp3",
     "examples": [
       {
         "chinese": "很老",
@@ -12792,7 +12792,7 @@
     "translationFr": "personne âgée",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_老人.wav",
+    "audio": "audio/hsk3/hsk3_老人.mp3",
     "examples": [
       {
         "chinese": "老人和小孩",
@@ -12842,7 +12842,7 @@
     "translationFr": "pratiquer; s'entraîner",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_练.wav",
+    "audio": "audio/hsk3/hsk3_练.mp3",
     "examples": [
       {
         "chinese": "练习",
@@ -12895,7 +12895,7 @@
     "translationFr": "visage",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_脸.wav",
+    "audio": "audio/hsk3/hsk1_脸.mp3",
     "examples": [
       {
         "chinese": "洗脸",
@@ -12969,7 +12969,7 @@
     "translationFr": "(classificateur véhicule)",
     "category": "classificateur",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_辆.wav",
+    "audio": "audio/hsk3/hsk1_辆.mp3",
     "examples": [
       {
         "chinese": "一辆车",
@@ -13017,7 +13017,7 @@
     "translationFr": "frais",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_凉快.wav",
+    "audio": "audio/hsk3/hsk1_凉快.mp3",
     "examples": [
       {
         "chinese": "很凉快",
@@ -13066,7 +13066,7 @@
     "translationFr": "pratiquer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_练习.wav",
+    "audio": "audio/hsk3/hsk1_练习.mp3",
     "examples": [
       {
         "chinese": "练习写字",
@@ -13135,7 +13135,7 @@
     "translationFr": "bavarder; discuter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_聊.wav",
+    "audio": "audio/hsk3/hsk3_聊.mp3",
     "examples": [
       {
         "chinese": "聊天",
@@ -13188,7 +13188,7 @@
     "translationFr": "comprendre",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_了解.wav",
+    "audio": "audio/hsk3/hsk1_了解.mp3",
     "examples": [
       {
         "chinese": "我了解",
@@ -13236,7 +13236,7 @@
     "translationFr": "bavarder; discuter",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_聊天儿.wav",
+    "audio": "audio/hsk3/hsk3_聊天儿.mp3",
     "examples": [
       {
         "chinese": "和朋友聊天儿",
@@ -13289,7 +13289,7 @@
     "translationFr": "quitter; partir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_离开.wav",
+    "audio": "audio/hsk3/hsk3_离开.mp3",
     "examples": [
       {
         "chinese": "我要离开了",
@@ -13342,7 +13342,7 @@
     "translationFr": "voisin",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_邻居.wav",
+    "audio": "audio/hsk3/hsk1_邻居.mp3",
     "examples": [
       {
         "chinese": "我的邻居",
@@ -13391,7 +13391,7 @@
     "translationFr": "histoire",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_历史.wav",
+    "audio": "audio/hsk3/hsk1_历史.mp3",
     "examples": [
       {
         "chinese": "中国历史",
@@ -13456,7 +13456,7 @@
     "pinyin": "liúxué",
     "translationFr": "étudier à l'étranger",
     "category": "général",
-    "audio": "audio/hsk3/hsk1_留学.wav",
+    "audio": "audio/hsk3/hsk1_留学.mp3",
     "examples": [
       {
         "chinese": "我打算留学法国。",
@@ -13499,7 +13499,7 @@
     "translationFr": "étudiant étranger",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_留学生.wav",
+    "audio": "audio/hsk3/hsk3_留学生.mp3",
     "examples": [
       {
         "chinese": "中国留学生",
@@ -13549,7 +13549,7 @@
     "translationFr": "cadeau",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_礼物.wav",
+    "audio": "audio/hsk3/hsk1_礼物.mp3",
     "examples": [
       {
         "chinese": "送礼物",
@@ -13616,7 +13616,7 @@
     "translationFr": "escalier",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_楼梯.wav",
+    "audio": "audio/hsk3/hsk3_楼梯.mp3",
     "examples": [
       {
         "chinese": "走楼梯",
@@ -13666,7 +13666,7 @@
     "translationFr": "bord de la route",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_路边.wav",
+    "audio": "audio/hsk3/hsk3_路边.mp3",
     "examples": [
       {
         "chinese": "路边停车",
@@ -13716,7 +13716,7 @@
     "translationFr": "carrefour; intersection",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_路口.wav",
+    "audio": "audio/hsk3/hsk3_路口.mp3",
     "examples": [
       {
         "chinese": "在路口左转",
@@ -13769,7 +13769,7 @@
     "translationFr": "cheval",
     "category": "nom",
     "explanation": "CL:匹[pi3]; horse or cavalry piece in Chinese chess; knight in Western chess",
-    "audio": "audio/hsk3/hsk1_马.wav",
+    "audio": "audio/hsk3/hsk1_马.mp3",
     "examples": [
       {
         "chinese": "我骑马去公园。",
@@ -13814,7 +13814,7 @@
     "translationFr": "route",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_马路.wav",
+    "audio": "audio/hsk3/hsk1_马路.mp3",
     "examples": [
       {
         "chinese": "过马路",
@@ -13863,7 +13863,7 @@
     "translationFr": "satisfait",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_满意.wav",
+    "audio": "audio/hsk3/hsk1_满意.mp3",
     "examples": [
       {
         "chinese": "很满意",
@@ -13917,7 +13917,7 @@
     "translationFr": "mao (monnaie); poil",
     "category": "nom",
     "explanation": "feather; down; wool; mildew; mold; coarse or semifinished; young; raw; careless; unthinking; nervous; scared; (of currency) to devalue or depreciate; classifier for Chinese fractional monetary unit ( = 角[jiao3] , = one-tenth of a yuan or 10 fen 分[fen1])",
-    "audio": "audio/hsk3/hsk3_毛.wav",
+    "audio": "audio/hsk3/hsk3_毛.mp3",
     "examples": [
       {
         "chinese": "他留了長毛。",
@@ -13969,7 +13969,7 @@
     "translationFr": "tout de suite",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_马上.wav",
+    "audio": "audio/hsk3/hsk1_马上.mp3",
     "examples": [
       {
         "chinese": "马上来",
@@ -14024,7 +14024,7 @@
     "translationFr": "mètre",
     "category": "nom",
     "explanation": "meter (unit of length); (slang) Chinese yuan",
-    "audio": "audio/hsk3/hsk1_米.wav",
+    "audio": "audio/hsk3/hsk1_米.mp3",
     "examples": [
       {
         "chinese": "米饭",
@@ -14069,7 +14069,7 @@
     "translationFr": "devant; en face de",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_面前.wav",
+    "audio": "audio/hsk3/hsk3_面前.mp3",
     "examples": [
       {
         "chinese": "站在我面前",
@@ -14122,7 +14122,7 @@
     "translationFr": "comprendre clairement",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_明白.wav",
+    "audio": "audio/hsk3/hsk1_明白.mp3",
     "examples": [
       {
         "chinese": "我明白了",
@@ -14170,7 +14170,7 @@
     "translationFr": "liste de noms",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_名单.wav",
+    "audio": "audio/hsk3/hsk3_名单.mp3",
     "examples": [
       {
         "chinese": "名单上有你的名字",
@@ -14220,7 +14220,7 @@
     "translationFr": "célébrité; personnage célèbre",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_名人.wav",
+    "audio": "audio/hsk3/hsk3_名人.mp3",
     "examples": [
       {
         "chinese": "他是名人",
@@ -14273,7 +14273,7 @@
     "translationFr": "sud",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_南.wav",
+    "audio": "audio/hsk3/hsk1_南.mp3",
     "examples": [
       {
         "chinese": "南边",
@@ -14334,7 +14334,7 @@
     "translationFr": "difficile",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_难.wav",
+    "audio": "audio/hsk3/hsk1_难.mp3",
     "examples": [
       {
         "chinese": "很难",
@@ -14401,7 +14401,7 @@
     "translationFr": "le Sud (de la Chine)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_南方.wav",
+    "audio": "audio/hsk3/hsk3_南方.mp3",
     "examples": [
       {
         "chinese": "南方很热",
@@ -14451,7 +14451,7 @@
     "translationFr": "triste",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_难过.wav",
+    "audio": "audio/hsk3/hsk1_难过.mp3",
     "examples": [
       {
         "chinese": "很难过",
@@ -14518,7 +14518,7 @@
     "translationFr": "laid",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_难看.wav",
+    "audio": "audio/hsk3/hsk1_难看.mp3",
     "examples": [
       {
         "chinese": "很难看",
@@ -14579,7 +14579,7 @@
     "translationFr": "homme",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_男人.wav",
+    "audio": "audio/hsk3/hsk1_男人.mp3",
     "examples": [
       {
         "chinese": "那个男人",
@@ -14628,7 +14628,7 @@
     "translationFr": "garçon",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_男生.wav",
+    "audio": "audio/hsk3/hsk1_男生.mp3",
     "examples": [
       {
         "chinese": "男生女生",
@@ -14677,7 +14677,7 @@
     "translationFr": "problème difficile",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_难题.wav",
+    "audio": "audio/hsk3/hsk3_难题.mp3",
     "examples": [
       {
         "chinese": "这是一个难题",
@@ -14727,7 +14727,7 @@
     "translationFr": "désagréable à entendre; moche (son)",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_难听.wav",
+    "audio": "audio/hsk3/hsk3_难听.mp3",
     "examples": [
       {
         "chinese": "这首歌很难听",
@@ -14780,7 +14780,7 @@
     "translationFr": "année scolaire; classe",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_年级.wav",
+    "audio": "audio/hsk3/hsk3_年级.mp3",
     "examples": [
       {
         "chinese": "你在几年级？",
@@ -14833,7 +14833,7 @@
     "translationFr": "jeune",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_年轻.wav",
+    "audio": "audio/hsk3/hsk1_年轻.mp3",
     "examples": [
       {
         "chinese": "很年轻",
@@ -14894,7 +14894,7 @@
     "translationFr": "bœuf; vache",
     "category": "nom",
     "explanation": "cow; bull; CL:條|条[tiao2],頭|头[tou2]; newton (abbr. for 牛頓|牛顿[niu2 dun4]); (slang) awesome",
-    "audio": "audio/hsk3/hsk1_牛.wav",
+    "audio": "audio/hsk3/hsk1_牛.mp3",
     "examples": [
       {
         "chinese": "我们家有两头牛。",
@@ -14939,7 +14939,7 @@
     "translationFr": "travailler dur",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_努力.wav",
+    "audio": "audio/hsk3/hsk1_努力.mp3",
     "examples": [
       {
         "chinese": "很努力",
@@ -14988,7 +14988,7 @@
     "translationFr": "femme",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_女人.wav",
+    "audio": "audio/hsk3/hsk1_女人.mp3",
     "examples": [
       {
         "chinese": "那个女人",
@@ -15037,7 +15037,7 @@
     "translationFr": "fille; étudiante",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_女生.wav",
+    "audio": "audio/hsk3/hsk1_女生.mp3",
     "examples": [
       {
         "chinese": "男生女生",
@@ -15089,7 +15089,7 @@
     "translationFr": "grimper; ramper",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_爬.wav",
+    "audio": "audio/hsk3/hsk3_爬.mp3",
     "examples": [
       {
         "chinese": "爬山",
@@ -15142,7 +15142,7 @@
     "translationFr": "avoir peur de; craindre",
     "category": "adverbe",
     "explanation": "to fear; to dread; to be unable to endure; perhaps",
-    "audio": "audio/hsk3/hsk3_怕.wav",
+    "audio": "audio/hsk3/hsk3_怕.mp3",
     "examples": [
       {
         "chinese": "我怕黑。",
@@ -15189,7 +15189,7 @@
     "translationFr": "prendre une photo",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_拍照.wav",
+    "audio": "audio/hsk3/hsk1_拍照.mp3",
     "examples": [
       {
         "chinese": "拍照片",
@@ -15237,7 +15237,7 @@
     "translationFr": "gros",
     "category": "adjectif",
     "explanation": "plump",
-    "audio": "audio/hsk3/hsk1_胖.wav",
+    "audio": "audio/hsk3/hsk1_胖.mp3",
     "examples": [
       {
         "chinese": "他很胖。",
@@ -15282,7 +15282,7 @@
     "translationFr": "assiette",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_盘子.wav",
+    "audio": "audio/hsk3/hsk3_盘子.mp3",
     "examples": [
       {
         "chinese": "一个盘子",
@@ -15332,7 +15332,7 @@
     "translationFr": "bière",
     "category": "nom",
     "explanation": "CL:杯[bei1],瓶[ping2],罐[guan4],桶[tong3],缸[gang1]",
-    "audio": "audio/hsk3/hsk3_啤酒.wav",
+    "audio": "audio/hsk3/hsk3_啤酒.mp3",
     "examples": [
       {
         "chinese": "我喝了一杯啤酒。",
@@ -15376,7 +15376,7 @@
     "translationFr": "d'habitude; normalement",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_平时.wav",
+    "audio": "audio/hsk3/hsk3_平时.mp3",
     "examples": [
       {
         "chinese": "平时我八点起床",
@@ -15429,7 +15429,7 @@
     "translationFr": "bouteille",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_瓶子.wav",
+    "audio": "audio/hsk3/hsk3_瓶子.mp3",
     "examples": [
       {
         "chinese": "一个瓶子",
@@ -15479,7 +15479,7 @@
     "translationFr": "monter (vélo; cheval)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_骑.wav",
+    "audio": "audio/hsk3/hsk3_骑.mp3",
     "examples": [
       {
         "chinese": "骑自行车",
@@ -15532,7 +15532,7 @@
     "translationFr": "se lever",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_起.wav",
+    "audio": "audio/hsk3/hsk1_起.mp3",
     "examples": [
       {
         "chinese": "起床",
@@ -15581,7 +15581,7 @@
     "translationFr": "crayon",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_铅笔.wav",
+    "audio": "audio/hsk3/hsk1_铅笔.mp3",
     "examples": [
       {
         "chinese": "一支铅笔",
@@ -15629,7 +15629,7 @@
     "translationFr": "il y a deux ans",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_前年.wav",
+    "audio": "audio/hsk3/hsk3_前年.mp3",
     "examples": [
       {
         "chinese": "前年我去了中国",
@@ -15679,7 +15679,7 @@
     "translationFr": "avant-hier",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_前天.wav",
+    "audio": "audio/hsk3/hsk1_前天.mp3",
     "examples": [
       {
         "chinese": "前天晚上",
@@ -15728,7 +15728,7 @@
     "translationFr": "voiture",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_汽车.wav",
+    "audio": "audio/hsk3/hsk1_汽车.mp3",
     "examples": [
       {
         "chinese": "开车",
@@ -15795,7 +15795,7 @@
     "translationFr": "décoller",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_起飞.wav",
+    "audio": "audio/hsk3/hsk3_起飞.mp3",
     "examples": [
       {
         "chinese": "飞机起飞了",
@@ -15845,7 +15845,7 @@
     "translationFr": "étrange",
     "category": "adjectif",
     "explanation": "odd; to marvel; to be baffled",
-    "audio": "audio/hsk3/hsk1_奇怪.wav",
+    "audio": "audio/hsk3/hsk1_奇怪.mp3",
     "examples": [
       {
         "chinese": "看到这个奇怪的现象。",
@@ -15889,7 +15889,7 @@
     "translationFr": "clair; distinct",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_清楚.wav",
+    "audio": "audio/hsk3/hsk3_清楚.mp3",
     "examples": [
       {
         "chinese": "说清楚",
@@ -15942,7 +15942,7 @@
     "translationFr": "demander un congé",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_请假.wav",
+    "audio": "audio/hsk3/hsk1_请假.mp3",
     "examples": [
       {
         "chinese": "请假一天",
@@ -15990,7 +15990,7 @@
     "translationFr": "inviter (à dîner)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_请客.wav",
+    "audio": "audio/hsk3/hsk3_请客.mp3",
     "examples": [
       {
         "chinese": "今天我请客",
@@ -16039,7 +16039,7 @@
     "pinyin": "qíshí",
     "translationFr": "en fait",
     "category": "adverbe",
-    "audio": "audio/hsk3/hsk1_其实.wav",
+    "audio": "audio/hsk3/hsk1_其实.mp3",
     "examples": [
       {
         "chinese": "其实你并不喜欢他。",
@@ -16084,7 +16084,7 @@
     "translationFr": "autre; les autres",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_其他.wav",
+    "audio": "audio/hsk3/hsk3_其他.mp3",
     "examples": [
       {
         "chinese": "其他人",
@@ -16137,7 +16137,7 @@
     "translationFr": "terrain de sport",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_球场.wav",
+    "audio": "audio/hsk3/hsk3_球场.mp3",
     "examples": [
       {
         "chinese": "足球场",
@@ -16187,7 +16187,7 @@
     "translationFr": "automne",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_秋天.wav",
+    "audio": "audio/hsk3/hsk1_秋天.mp3",
     "examples": [
       {
         "chinese": "秋天很凉快",
@@ -16235,7 +16235,7 @@
     "translationFr": "jupe",
     "category": "nom",
     "explanation": "CL:條|条[tiao2]",
-    "audio": "audio/hsk3/hsk1_裙子.wav",
+    "audio": "audio/hsk3/hsk1_裙子.mp3",
     "examples": [
       {
         "chinese": "我穿了一条蓝裙子。",
@@ -16278,7 +16278,7 @@
     "translationFr": "ensuite; puis",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_然后.wav",
+    "audio": "audio/hsk3/hsk3_然后.mp3",
     "examples": [
       {
         "chinese": "然后呢？",
@@ -16331,7 +16331,7 @@
     "translationFr": "reconnaître; connaître",
     "category": "verbe",
     "explanation": "to remember sth (or sb) on seeing it; to know",
-    "audio": "audio/hsk3/hsk3_认得.wav",
+    "audio": "audio/hsk3/hsk3_认得.mp3",
     "examples": [
       {
         "chinese": "他认得她。",
@@ -16378,7 +16378,7 @@
     "translationFr": "penser que",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_认为.wav",
+    "audio": "audio/hsk3/hsk1_认为.mp3",
     "examples": [
       {
         "chinese": "我认为",
@@ -16426,7 +16426,7 @@
     "translationFr": "sérieux",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_认真.wav",
+    "audio": "audio/hsk3/hsk1_认真.mp3",
     "examples": [
       {
         "chinese": "很认真",
@@ -16474,7 +16474,7 @@
     "translationFr": "enthousiaste",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_热情.wav",
+    "audio": "audio/hsk3/hsk1_热情.mp3",
     "examples": [
       {
         "chinese": "很热情",
@@ -16522,7 +16522,7 @@
     "translationFr": "facile",
     "category": "adjectif",
     "explanation": "likely; liable to; apt to",
-    "audio": "audio/hsk3/hsk1_容易.wav",
+    "audio": "audio/hsk3/hsk1_容易.mp3",
     "examples": [
       {
         "chinese": "这个问题很容易。",
@@ -16568,7 +16568,7 @@
     "translationFr": "si",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_如果.wav",
+    "audio": "audio/hsk3/hsk1_如果.mp3",
     "examples": [
       {
         "chinese": "如果下雨",
@@ -16641,7 +16641,7 @@
     "translationFr": "parapluie",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_伞.wav",
+    "audio": "audio/hsk3/hsk3_伞.mp3",
     "examples": [
       {
         "chinese": "带伞",
@@ -16691,7 +16691,7 @@
     "translationFr": "balayer; scanner",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_扫.wav",
+    "audio": "audio/hsk3/hsk3_扫.mp3",
     "examples": [
       {
         "chinese": "扫地",
@@ -16744,7 +16744,7 @@
     "translationFr": "canapé; sofa",
     "category": "nom",
     "explanation": "CL:條|条[tiao2],張|张[zhang1]; (Internet slang) the first reply or replier to a forum post",
-    "audio": "audio/hsk3/hsk3_沙发.wav",
+    "audio": "audio/hsk3/hsk3_沙发.mp3",
     "examples": [
       {
         "chinese": "沙发上有人。",
@@ -16791,7 +16791,7 @@
     "translationFr": "montagne",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_山.wav",
+    "audio": "audio/hsk3/hsk1_山.mp3",
     "examples": [
       {
         "chinese": "爬山",
@@ -16852,7 +16852,7 @@
     "translationFr": "haut; veste",
     "category": "nom",
     "explanation": "upper outer garment; CL:件[jian4]",
-    "audio": "audio/hsk3/hsk3_上衣.wav",
+    "audio": "audio/hsk3/hsk3_上衣.mp3",
     "examples": [
       {
         "chinese": "穿上你的上衣。",
@@ -16899,7 +16899,7 @@
     "translationFr": "cuillère",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_勺子.wav",
+    "audio": "audio/hsk3/hsk3_勺子.mp3",
     "examples": [
       {
         "chinese": "用勺子吃",
@@ -16949,7 +16949,7 @@
     "translationFr": "à côté de; auprès de",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_身边.wav",
+    "audio": "audio/hsk3/hsk3_身边.mp3",
     "examples": [
       {
         "chinese": "在我身边",
@@ -17002,7 +17002,7 @@
     "translationFr": "son; bruit (classificateur)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_声.wav",
+    "audio": "audio/hsk3/hsk3_声.mp3",
     "examples": [
       {
         "chinese": "大声说",
@@ -17055,7 +17055,7 @@
     "translationFr": "taille (hauteur)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_身高.wav",
+    "audio": "audio/hsk3/hsk3_身高.mp3",
     "examples": [
       {
         "chinese": "你身高多少？",
@@ -17105,7 +17105,7 @@
     "translationFr": "vie; vivre",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_生活.wav",
+    "audio": "audio/hsk3/hsk3_生活.mp3",
     "examples": [
       {
         "chinese": "日常生活",
@@ -17158,7 +17158,7 @@
     "translationFr": "être en colère",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_生气.wav",
+    "audio": "audio/hsk3/hsk1_生气.mp3",
     "examples": [
       {
         "chinese": "别生气",
@@ -17210,7 +17210,7 @@
     "translationFr": "voix; son",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_声音.wav",
+    "audio": "audio/hsk3/hsk3_声音.mp3",
     "examples": [
       {
         "chinese": "大声音",
@@ -17263,7 +17263,7 @@
     "translationFr": "ville; municipalité",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_市.wav",
+    "audio": "audio/hsk3/hsk3_市.mp3",
     "examples": [
       {
         "chinese": "北京市",
@@ -17316,7 +17316,7 @@
     "translationFr": "essayer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_试.wav",
+    "audio": "audio/hsk3/hsk1_试.mp3",
     "examples": [
       {
         "chinese": "试一试",
@@ -17376,7 +17376,7 @@
     "translationFr": "pièce; salle",
     "category": "nom",
     "explanation": "work unit; grave; scabbard; family or clan; one of the 28 constellations of Chinese astronomy",
-    "audio": "audio/hsk3/hsk3_室.wav",
+    "audio": "audio/hsk3/hsk3_室.mp3",
     "examples": [
       {
         "chinese": "他在家里。",
@@ -17422,7 +17422,7 @@
     "translationFr": "monde",
     "category": "nom",
     "explanation": "CL:個|个[ge4]",
-    "audio": "audio/hsk3/hsk1_世界.wav",
+    "audio": "audio/hsk3/hsk1_世界.mp3",
     "examples": [
       {
         "chinese": "我们生活在一个美好的世界上。",
@@ -17464,7 +17464,7 @@
     "translationFr": "recevoir; subir",
     "category": "verbe",
     "explanation": "to accept; to suffer; subjected to; to bear; to stand; pleasant; (passive marker); (LGBT) bottom",
-    "audio": "audio/hsk3/hsk3_受.wav",
+    "audio": "audio/hsk3/hsk3_受.mp3",
     "examples": [
       {
         "chinese": "我收到了一封信。",
@@ -17513,7 +17513,7 @@
     "translationFr": "maigre",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_瘦.wav",
+    "audio": "audio/hsk3/hsk1_瘦.mp3",
     "examples": [
       {
         "chinese": "很瘦",
@@ -17561,7 +17561,7 @@
     "translationFr": "recevoir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_收.wav",
+    "audio": "audio/hsk3/hsk1_收.mp3",
     "examples": [
       {
         "chinese": "收到了",
@@ -17609,7 +17609,7 @@
     "translationFr": "recevoir; être soumis à",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_受到.wav",
+    "audio": "audio/hsk3/hsk3_受到.mp3",
     "examples": [
       {
         "chinese": "受到欢迎",
@@ -17662,7 +17662,7 @@
     "translationFr": "recevoir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_收到.wav",
+    "audio": "audio/hsk3/hsk3_收到.mp3",
     "examples": [
       {
         "chinese": "收到邮件",
@@ -17712,7 +17712,7 @@
     "translationFr": "arbre",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_树.wav",
+    "audio": "audio/hsk3/hsk1_树.mp3",
     "examples": [
       {
         "chinese": "大树",
@@ -17767,7 +17767,7 @@
     "translationFr": "brosser; swiper",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_刷.wav",
+    "audio": "audio/hsk3/hsk3_刷.mp3",
     "examples": [
       {
         "chinese": "刷牙",
@@ -17820,7 +17820,7 @@
     "translationFr": "paire",
     "category": "classificateur",
     "explanation": "double; pair; both; even (number)",
-    "audio": "audio/hsk3/hsk1_双.wav",
+    "audio": "audio/hsk3/hsk1_双.mp3",
     "examples": [
       {
         "chinese": "双胞胎",
@@ -17866,7 +17866,7 @@
     "translationFr": "niveau",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_水平.wav",
+    "audio": "audio/hsk3/hsk1_水平.mp3",
     "examples": [
       {
         "chinese": "汉语水平",
@@ -17926,7 +17926,7 @@
     "translationFr": "oncle paternel",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_叔叔.wav",
+    "audio": "audio/hsk3/hsk1_叔叔.mp3",
     "examples": [
       {
         "chinese": "我叔叔",
@@ -17974,7 +17974,7 @@
     "translationFr": "mathématiques",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_数学.wav",
+    "audio": "audio/hsk3/hsk1_数学.mp3",
     "examples": [
       {
         "chinese": "学数学",
@@ -18022,7 +18022,7 @@
     "translationFr": "les quatre saisons",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_四季.wav",
+    "audio": "audio/hsk3/hsk3_四季.mp3",
     "examples": [
       {
         "chinese": "一年四季",
@@ -18072,7 +18072,7 @@
     "translationFr": "chauffeur",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_司机.wav",
+    "audio": "audio/hsk3/hsk1_司机.mp3",
     "examples": [
       {
         "chinese": "出租车司机",
@@ -18121,7 +18121,7 @@
     "translationFr": "soleil",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_太阳.wav",
+    "audio": "audio/hsk3/hsk1_太阳.mp3",
     "examples": [
       {
         "chinese": "太阳出来了",
@@ -18168,7 +18168,7 @@
     "pinyin": "táng",
     "translationFr": "sucre",
     "category": "nom",
-    "audio": "audio/hsk3/hsk1_糖.wav",
+    "audio": "audio/hsk3/hsk1_糖.mp3",
     "examples": [
       {
         "chinese": "我喜欢吃糖。",
@@ -18214,7 +18214,7 @@
     "translationFr": "particulièrement",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_特别.wav",
+    "audio": "audio/hsk3/hsk1_特别.mp3",
     "examples": [
       {
         "chinese": "特别好",
@@ -18261,7 +18261,7 @@
     "pinyin": "tián",
     "translationFr": "sucré; doux",
     "category": "adjectif",
-    "audio": "audio/hsk3/hsk3_甜.wav",
+    "audio": "audio/hsk3/hsk3_甜.mp3",
     "examples": [
       {
         "chinese": "这个蛋糕很甜。",
@@ -18308,7 +18308,7 @@
     "translationFr": "sauter",
     "category": "verbe",
     "explanation": "to hop; to skip over; to bounce; to palpitate",
-    "audio": "audio/hsk3/hsk3_跳.wav",
+    "audio": "audio/hsk3/hsk3_跳.mp3",
     "examples": [
       {
         "chinese": "跳起来",
@@ -18356,7 +18356,7 @@
     "translationFr": "améliorer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_提高.wav",
+    "audio": "audio/hsk3/hsk1_提高.mp3",
     "examples": [
       {
         "chinese": "提高水平",
@@ -18404,7 +18404,7 @@
     "translationFr": "assez; plutôt",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_挺.wav",
+    "audio": "audio/hsk3/hsk3_挺.mp3",
     "examples": [
       {
         "chinese": "挺好的",
@@ -18457,7 +18457,7 @@
     "translationFr": "entendre dire; paraît-il",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_听说.wav",
+    "audio": "audio/hsk3/hsk3_听说.mp3",
     "examples": [
       {
         "chinese": "听说你要去中国",
@@ -18510,7 +18510,7 @@
     "translationFr": "éducation physique",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_体育.wav",
+    "audio": "audio/hsk3/hsk1_体育.mp3",
     "examples": [
       {
         "chinese": "体育课",
@@ -18558,7 +18558,7 @@
     "translationFr": "gymnase",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_体育馆.wav",
+    "audio": "audio/hsk3/hsk1_体育馆.mp3",
     "examples": [
       {
         "chinese": "去体育馆",
@@ -18600,7 +18600,7 @@
     "translationFr": "collègue",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_同事.wav",
+    "audio": "audio/hsk3/hsk1_同事.mp3",
     "examples": [
       {
         "chinese": "我的同事",
@@ -18649,7 +18649,7 @@
     "translationFr": "être d'accord",
     "category": "verbe",
     "explanation": "to consent; to approve",
-    "audio": "audio/hsk3/hsk1_同意.wav",
+    "audio": "audio/hsk3/hsk1_同意.mp3",
     "examples": [
       {
         "chinese": "我同意你的观点。",
@@ -18693,7 +18693,7 @@
     "translationFr": "cheveux",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_头发.wav",
+    "audio": "audio/hsk3/hsk1_头发.mp3",
     "examples": [
       {
         "chinese": "长头发",
@@ -18741,7 +18741,7 @@
     "translationFr": "jambe",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_腿.wav",
+    "audio": "audio/hsk3/hsk1_腿.mp3",
     "examples": [
       {
         "chinese": "腿疼",
@@ -18788,7 +18788,7 @@
     "pinyin": "tūrán",
     "translationFr": "soudain; tout à coup",
     "category": "adjectif",
-    "audio": "audio/hsk3/hsk3_突然.wav",
+    "audio": "audio/hsk3/hsk3_突然.mp3",
     "examples": [
       {
         "chinese": "突然下雨了。",
@@ -18835,7 +18835,7 @@
     "translationFr": "bibliothèque",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_图书馆.wav",
+    "audio": "audio/hsk3/hsk1_图书馆.mp3",
     "examples": [
       {
         "chinese": "去图书馆",
@@ -18908,7 +18908,7 @@
     "translationFr": "autre région; extérieur",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_外地.wav",
+    "audio": "audio/hsk3/hsk3_外地.mp3",
     "examples": [
       {
         "chinese": "外地人",
@@ -18961,7 +18961,7 @@
     "translationFr": "livraison (nourriture)",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_外卖.wav",
+    "audio": "audio/hsk3/hsk3_外卖.mp3",
     "examples": [
       {
         "chinese": "点外卖",
@@ -19011,7 +19011,7 @@
     "translationFr": "langue étrangère",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_外语.wav",
+    "audio": "audio/hsk3/hsk1_外语.mp3",
     "examples": [
       {
         "chinese": "学外语",
@@ -19072,7 +19072,7 @@
     "translationFr": "spécificatif bols",
     "category": "mesure",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_碗.wav",
+    "audio": "audio/hsk3/hsk1_碗.mp3",
     "examples": [
       {
         "chinese": "一碗饭",
@@ -19148,7 +19148,7 @@
     "translationFr": "terminer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_完成.wav",
+    "audio": "audio/hsk3/hsk1_完成.mp3",
     "examples": [
       {
         "chinese": "完成工作",
@@ -19197,7 +19197,7 @@
     "translationFr": "être en retard (transport)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_晚点.wav",
+    "audio": "audio/hsk3/hsk3_晚点.mp3",
     "examples": [
       {
         "chinese": "火车晚点了",
@@ -19247,7 +19247,7 @@
     "translationFr": "oublier",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_忘记.wav",
+    "audio": "audio/hsk3/hsk1_忘记.mp3",
     "examples": [
       {
         "chinese": "忘记了",
@@ -19314,7 +19314,7 @@
     "translationFr": "tennis",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_网球.wav",
+    "audio": "audio/hsk3/hsk3_网球.mp3",
     "examples": [
       {
         "chinese": "打网球",
@@ -19364,7 +19364,7 @@
     "translationFr": "site web",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_网站.wav",
+    "audio": "audio/hsk3/hsk1_网站.mp3",
     "examples": [
       {
         "chinese": "打开网站",
@@ -19412,7 +19412,7 @@
     "translationFr": "soirée; gala",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_晚会.wav",
+    "audio": "audio/hsk3/hsk3_晚会.mp3",
     "examples": [
       {
         "chinese": "参加晚会",
@@ -19464,7 +19464,7 @@
     "pinyin": "wèi",
     "translationFr": "pour",
     "category": "verbe",
-    "audio": "audio/hsk3/hsk1_为.wav",
+    "audio": "audio/hsk3/hsk1_为.mp3",
     "examples": [
       {
         "chinese": "为朋友做事",
@@ -19515,7 +19515,7 @@
     "pinyin": "wèile",
     "translationFr": "pour; afin de",
     "category": "préposition",
-    "audio": "audio/hsk3/hsk1_为了.wav",
+    "audio": "audio/hsk3/hsk1_为了.mp3",
     "examples": [
       {
         "chinese": "我为了学习法语。",
@@ -19561,7 +19561,7 @@
     "translationFr": "toilettes",
     "category": "nom",
     "explanation": "toilet; WC; CL:間|间[jian1]",
-    "audio": "audio/hsk3/hsk1_卫生间.wav",
+    "audio": "audio/hsk3/hsk1_卫生间.mp3",
     "examples": [
       {
         "chinese": "卫生间在哪儿？",
@@ -19607,7 +19607,7 @@
     "translationFr": "culture",
     "category": "nom",
     "explanation": "civilization; cultural; CL:個|个[ge4],種|种[zhong3]",
-    "audio": "audio/hsk3/hsk1_文化.wav",
+    "audio": "audio/hsk3/hsk1_文化.mp3",
     "examples": [
       {
         "chinese": "中国的文化",
@@ -19651,7 +19651,7 @@
     "translationFr": "pièce; chambre",
     "category": "nom",
     "explanation": "room; CL:間|间[jian1]",
-    "audio": "audio/hsk3/hsk3_屋子.wav",
+    "audio": "audio/hsk3/hsk3_屋子.mp3",
     "examples": [
       {
         "chinese": "这是我的房子。",
@@ -19697,7 +19697,7 @@
     "translationFr": "ouest",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_西.wav",
+    "audio": "audio/hsk3/hsk1_西.mp3",
     "examples": [
       {
         "chinese": "西边",
@@ -19758,7 +19758,7 @@
     "translationFr": "aimer; adorer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_喜爱.wav",
+    "audio": "audio/hsk3/hsk3_喜爱.mp3",
     "examples": [
       {
         "chinese": "深受喜爱",
@@ -19811,7 +19811,7 @@
     "translationFr": "d'abord",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_先.wav",
+    "audio": "audio/hsk3/hsk1_先.mp3",
     "examples": [
       {
         "chinese": "先走",
@@ -19860,7 +19860,7 @@
     "translationFr": "vers; en direction de",
     "category": "préposition",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_向.wav",
+    "audio": "audio/hsk3/hsk1_向.mp3",
     "examples": [
       {
         "chinese": "向前",
@@ -19911,7 +19911,7 @@
     "translationFr": "ressembler à; comme",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_像.wav",
+    "audio": "audio/hsk3/hsk3_像.mp3",
     "examples": [
       {
         "chinese": "像你一样",
@@ -19964,7 +19964,7 @@
     "translationFr": "appareil photo",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_相机.wav",
+    "audio": "audio/hsk3/hsk1_相机.mp3",
     "examples": [
       {
         "chinese": "我的相机",
@@ -20013,7 +20013,7 @@
     "translationFr": "banane",
     "category": "nom",
     "explanation": "CL:根[gen1],個|个[ge4],把[ba3]",
-    "audio": "audio/hsk3/hsk1_香蕉.wav",
+    "audio": "audio/hsk3/hsk1_香蕉.mp3",
     "examples": [
       {
         "chinese": "一根香蕉",
@@ -20057,7 +20057,7 @@
     "translationFr": "croire",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_相信.wav",
+    "audio": "audio/hsk3/hsk1_相信.mp3",
     "examples": [
       {
         "chinese": "我相信",
@@ -20117,7 +20117,7 @@
     "translationFr": "valise; boîte",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_箱子.wav",
+    "audio": "audio/hsk3/hsk3_箱子.mp3",
     "examples": [
       {
         "chinese": "行李箱",
@@ -20170,7 +20170,7 @@
     "translationFr": "quartier résidentiel",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_小区.wav",
+    "audio": "audio/hsk3/hsk3_小区.mp3",
     "examples": [
       {
         "chinese": "住在这个小区",
@@ -20220,7 +20220,7 @@
     "translationFr": "faire attention",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_小心.wav",
+    "audio": "audio/hsk3/hsk1_小心.mp3",
     "examples": [
       {
         "chinese": "小心！",
@@ -20268,7 +20268,7 @@
     "translationFr": "campus",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_校园.wav",
+    "audio": "audio/hsk3/hsk1_校园.mp3",
     "examples": [
       {
         "chinese": "校园生活",
@@ -20316,7 +20316,7 @@
     "translationFr": "directeur d'école",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_校长.wav",
+    "audio": "audio/hsk3/hsk3_校长.mp3",
     "examples": [
       {
         "chinese": "我们的校长",
@@ -20366,7 +20366,7 @@
     "translationFr": "été",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_夏天.wav",
+    "audio": "audio/hsk3/hsk1_夏天.mp3",
     "examples": [
       {
         "chinese": "夏天很热",
@@ -20414,7 +20414,7 @@
     "translationFr": "nord-ouest",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_西北.wav",
+    "audio": "audio/hsk3/hsk3_西北.mp3",
     "examples": [
       {
         "chinese": "中国的西北",
@@ -20464,7 +20464,7 @@
     "translationFr": "chaussures",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_鞋.wav",
+    "audio": "audio/hsk3/hsk1_鞋.mp3",
     "examples": [
       {
         "chinese": "穿鞋",
@@ -20537,7 +20537,7 @@
     "translationFr": "l'Occident; l'Ouest",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_西方.wav",
+    "audio": "audio/hsk3/hsk3_西方.mp3",
     "examples": [
       {
         "chinese": "西方文化",
@@ -20590,7 +20590,7 @@
     "translationFr": "pastèque",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_西瓜.wav",
+    "audio": "audio/hsk3/hsk1_西瓜.mp3",
     "examples": [
       {
         "chinese": "吃西瓜",
@@ -20652,7 +20652,7 @@
     "translationFr": "habitude; s'habituer",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_习惯.wav",
+    "audio": "audio/hsk3/hsk3_习惯.mp3",
     "examples": [
       {
         "chinese": "生活习惯",
@@ -20705,7 +20705,7 @@
     "translationFr": "lettre; croire",
     "category": "verbe",
     "explanation": "mail; CL:封[feng1]; to trust; to believe; to profess faith in; truthful; confidence; trust; at will; at random",
-    "audio": "audio/hsk3/hsk3_信.wav",
+    "audio": "audio/hsk3/hsk3_信.mp3",
     "examples": [
       {
         "chinese": "他很讲信用。",
@@ -20752,7 +20752,7 @@
     "translationFr": "sud-ouest",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_西南.wav",
+    "audio": "audio/hsk3/hsk3_西南.mp3",
     "examples": [
       {
         "chinese": "中国的西南",
@@ -20801,7 +20801,7 @@
     "pinyin": "xíng",
     "translationFr": "aller; marcher; possible; d'accord",
     "category": "général",
-    "audio": "audio/hsk3/hsk3_行.wav",
+    "audio": "audio/hsk3/hsk3_行.mp3",
     "examples": [
       {
         "chinese": "这样行吗",
@@ -20851,7 +20851,7 @@
     "translationFr": "bagage",
     "category": "nom",
     "explanation": "CL:件[jian4]",
-    "audio": "audio/hsk3/hsk1_行李.wav",
+    "audio": "audio/hsk3/hsk1_行李.mp3",
     "examples": [
       {
         "chinese": "请帮我拿一下我的行李。",
@@ -20887,7 +20887,7 @@
     "translationFr": "intérêt; hobby",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_兴趣.wav",
+    "audio": "audio/hsk3/hsk3_兴趣.mp3",
     "examples": [
       {
         "chinese": "对中文有兴趣",
@@ -20940,7 +20940,7 @@
     "translationFr": "dans le cœur; intérieurement",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_心里.wav",
+    "audio": "audio/hsk3/hsk3_心里.mp3",
     "examples": [
       {
         "chinese": "心里高兴",
@@ -20993,7 +20993,7 @@
     "translationFr": "Nouvel An",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_新年.wav",
+    "audio": "audio/hsk3/hsk1_新年.mp3",
     "examples": [
       {
         "chinese": "新年好",
@@ -21043,7 +21043,7 @@
     "translationFr": "nouvelles",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_新闻.wav",
+    "audio": "audio/hsk3/hsk1_新闻.mp3",
     "examples": [
       {
         "chinese": "看新闻",
@@ -21091,7 +21091,7 @@
     "translationFr": "frais; nouveau",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_新鲜.wav",
+    "audio": "audio/hsk3/hsk3_新鲜.mp3",
     "examples": [
       {
         "chinese": "新鲜的水果",
@@ -21144,7 +21144,7 @@
     "translationFr": "carte de crédit",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_信用卡.wav",
+    "audio": "audio/hsk3/hsk1_信用卡.mp3",
     "examples": [
       {
         "chinese": "刷信用卡",
@@ -21192,7 +21192,7 @@
     "translationFr": "prendre des vacances; congé",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_休假.wav",
+    "audio": "audio/hsk3/hsk3_休假.mp3",
     "examples": [
       {
         "chinese": "我在休假",
@@ -21245,7 +21245,7 @@
     "translationFr": "machine à laver",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_洗衣机.wav",
+    "audio": "audio/hsk3/hsk1_洗衣机.mp3",
     "examples": [
       {
         "chinese": "用洗衣机洗衣服",
@@ -21294,7 +21294,7 @@
     "translationFr": "prendre une douche; un bain",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_洗澡.wav",
+    "audio": "audio/hsk3/hsk3_洗澡.mp3",
     "examples": [
       {
         "chinese": "我要洗澡",
@@ -21347,7 +21347,7 @@
     "translationFr": "choisir; sélectionner",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_选.wav",
+    "audio": "audio/hsk3/hsk3_选.mp3",
     "examples": [
       {
         "chinese": "选一个",
@@ -21400,7 +21400,7 @@
     "translationFr": "choisir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_选择.wav",
+    "audio": "audio/hsk3/hsk1_选择.mp3",
     "examples": [
       {
         "chinese": "选择一个",
@@ -21454,7 +21454,7 @@
     "translationFr": "semestre",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_学期.wav",
+    "audio": "audio/hsk3/hsk1_学期.mp3",
     "examples": [
       {
         "chinese": "这学期",
@@ -21502,7 +21502,7 @@
     "translationFr": "avoir besoin",
     "category": "verbe",
     "explanation": "needs",
-    "audio": "audio/hsk3/hsk1_需要.wav",
+    "audio": "audio/hsk3/hsk1_需要.mp3",
     "examples": [
       {
         "chinese": "我需要一本书。",
@@ -21548,7 +21548,7 @@
     "translationFr": "dent",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_牙.wav",
+    "audio": "audio/hsk3/hsk3_牙.mp3",
     "examples": [
       {
         "chinese": "牙疼",
@@ -21598,7 +21598,7 @@
     "translationFr": "mouton",
     "category": "nom",
     "explanation": "CL:頭|头[tou2],隻|只[zhi1]",
-    "audio": "audio/hsk3/hsk1_羊.wav",
+    "audio": "audio/hsk3/hsk1_羊.mp3",
     "examples": [
       {
         "chinese": "我养了一只羊。",
@@ -21642,7 +21642,7 @@
     "translationFr": "élever; nourrir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_养.wav",
+    "audio": "audio/hsk3/hsk3_养.mp3",
     "examples": [
       {
         "chinese": "养狗",
@@ -21695,7 +21695,7 @@
     "translationFr": "exiger; demander; exigence",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_要求.wav",
+    "audio": "audio/hsk3/hsk3_要求.mp3",
     "examples": [
       {
         "chinese": "有什么要求？",
@@ -21749,7 +21749,7 @@
     "translationFr": "brosse à dents",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_牙刷.wav",
+    "audio": "audio/hsk3/hsk3_牙刷.mp3",
     "examples": [
       {
         "chinese": "一把牙刷",
@@ -21799,7 +21799,7 @@
     "translationFr": "page",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_页.wav",
+    "audio": "audio/hsk3/hsk3_页.mp3",
     "examples": [
       {
         "chinese": "第一页",
@@ -21849,7 +21849,7 @@
     "translationFr": "généralement; ordinaire",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_一般.wav",
+    "audio": "audio/hsk3/hsk3_一般.mp3",
     "examples": [
       {
         "chinese": "一般来说",
@@ -21902,7 +21902,7 @@
     "translationFr": "un côté; en même temps",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_一边.wav",
+    "audio": "audio/hsk3/hsk1_一边.mp3",
     "examples": [
       {
         "chinese": "一边...一边...",
@@ -21954,7 +21954,7 @@
     "translationFr": "certainement",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_一定.wav",
+    "audio": "audio/hsk3/hsk1_一定.mp3",
     "examples": [
       {
         "chinese": "一定要",
@@ -22002,7 +22002,7 @@
     "translationFr": "en tout; au total",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_一共.wav",
+    "audio": "audio/hsk3/hsk3_一共.mp3",
     "examples": [
       {
         "chinese": "一共多少钱？",
@@ -22055,7 +22055,7 @@
     "translationFr": "après; plus tard",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以后.wav",
+    "audio": "audio/hsk3/hsk3_以后.mp3",
     "examples": [
       {
         "chinese": "以后再说",
@@ -22108,7 +22108,7 @@
     "translationFr": "ensemble",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_一块儿.wav",
+    "audio": "audio/hsk3/hsk1_一块儿.mp3",
     "examples": [
       {
         "chinese": "一块儿去",
@@ -22156,7 +22156,7 @@
     "translationFr": "devoir",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_应该.wav",
+    "audio": "audio/hsk3/hsk1_应该.mp3",
     "examples": [
       {
         "chinese": "应该去",
@@ -22219,7 +22219,7 @@
     "translationFr": "influencer",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_影响.wav",
+    "audio": "audio/hsk3/hsk1_影响.mp3",
     "examples": [
       {
         "chinese": "影响很大",
@@ -22277,7 +22277,7 @@
     "translationFr": "banque",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_银行.wav",
+    "audio": "audio/hsk3/hsk1_银行.mp3",
     "examples": [
       {
         "chinese": "去银行",
@@ -22338,7 +22338,7 @@
     "translationFr": "carte bancaire",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_银行卡.wav",
+    "audio": "audio/hsk3/hsk1_银行卡.mp3",
     "examples": [
       {
         "chinese": "刷银行卡",
@@ -22386,7 +22386,7 @@
     "translationFr": "boisson",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_饮料.wav",
+    "audio": "audio/hsk3/hsk3_饮料.mp3",
     "examples": [
       {
         "chinese": "你要什么饮料？",
@@ -22436,7 +22436,7 @@
     "translationFr": "musique",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_音乐.wav",
+    "audio": "audio/hsk3/hsk1_音乐.mp3",
     "examples": [
       {
         "chinese": "听音乐",
@@ -22509,7 +22509,7 @@
     "translationFr": "avant; auparavant",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以前.wav",
+    "audio": "audio/hsk3/hsk3_以前.mp3",
     "examples": [
       {
         "chinese": "以前我住在北京",
@@ -22562,7 +22562,7 @@
     "translationFr": "au-dessus de; plus de",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以上.wav",
+    "audio": "audio/hsk3/hsk3_以上.mp3",
     "examples": [
       {
         "chinese": "十八岁以上",
@@ -22615,7 +22615,7 @@
     "translationFr": "en dehors de; sauf",
     "category": "préposition",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以外.wav",
+    "audio": "audio/hsk3/hsk3_以外.mp3",
     "examples": [
       {
         "chinese": "除了这个以外",
@@ -22668,7 +22668,7 @@
     "translationFr": "croire (à tort); penser",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以为.wav",
+    "audio": "audio/hsk3/hsk3_以为.mp3",
     "examples": [
       {
         "chinese": "我以为你走了",
@@ -22721,7 +22721,7 @@
     "translationFr": "en dessous de; moins de",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_以下.wav",
+    "audio": "audio/hsk3/hsk3_以下.mp3",
     "examples": [
       {
         "chinese": "十八岁以下",
@@ -22774,7 +22774,7 @@
     "translationFr": "pareil; identique",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_一样.wav",
+    "audio": "audio/hsk3/hsk1_一样.mp3",
     "examples": [
       {
         "chinese": "一样的",
@@ -22826,7 +22826,7 @@
     "translationFr": "toujours",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_一直.wav",
+    "audio": "audio/hsk3/hsk1_一直.mp3",
     "examples": [
       {
         "chinese": "一直在等",
@@ -22877,7 +22877,7 @@
     "translationFr": "utiliser",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_用.wav",
+    "audio": "audio/hsk3/hsk1_用.mp3",
     "examples": [
       {
         "chinese": "用什么？",
@@ -22925,7 +22925,7 @@
     "translationFr": "encore; de nouveau",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_又.wav",
+    "audio": "audio/hsk3/hsk1_又.mp3",
     "examples": [
       {
         "chinese": "又来了",
@@ -22982,7 +22982,7 @@
     "translationFr": "concernant; relatif à",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_有关.wav",
+    "audio": "audio/hsk3/hsk3_有关.mp3",
     "examples": [
       {
         "chinese": "有关这个问题",
@@ -23035,7 +23035,7 @@
     "translationFr": "email",
     "category": "nom",
     "explanation": "post; email",
-    "audio": "audio/hsk3/hsk1_邮件.wav",
+    "audio": "audio/hsk3/hsk1_邮件.mp3",
     "examples": [
       {
         "chinese": "发邮件",
@@ -23078,7 +23078,7 @@
     "translationFr": "touriste",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_游客.wav",
+    "audio": "audio/hsk3/hsk3_游客.mp3",
     "examples": [
       {
         "chinese": "很多游客",
@@ -23128,7 +23128,7 @@
     "translationFr": "célèbre",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_有名.wav",
+    "audio": "audio/hsk3/hsk1_有名.mp3",
     "examples": [
       {
         "chinese": "很有名",
@@ -23176,7 +23176,7 @@
     "translationFr": "jeu",
     "category": "nom",
     "explanation": "CL:場|场[chang3]; to play",
-    "audio": "audio/hsk3/hsk3_游戏.wav",
+    "audio": "audio/hsk3/hsk3_游戏.mp3",
     "examples": [
       {
         "chinese": "我喜欢玩游戏。",
@@ -23220,7 +23220,7 @@
     "translationFr": "boîte mail; e-mail",
     "category": "nom",
     "explanation": "post office box; email; email inbox",
-    "audio": "audio/hsk3/hsk3_邮箱.wav",
+    "audio": "audio/hsk3/hsk3_邮箱.mp3",
     "examples": [
       {
         "chinese": "我的邮箱是wang@gmail.com",
@@ -23266,7 +23266,7 @@
     "translationFr": "utile",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_有用.wav",
+    "audio": "audio/hsk3/hsk1_有用.mp3",
     "examples": [
       {
         "chinese": "很有用",
@@ -23314,7 +23314,7 @@
     "translationFr": "jardin; parc",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_园.wav",
+    "audio": "audio/hsk3/hsk3_园.mp3",
     "examples": [
       {
         "chinese": "公园",
@@ -23367,7 +23367,7 @@
     "translationFr": "membre; personnel",
     "category": "général",
     "explanation": "(bound form) member; classifier for military generals",
-    "audio": "audio/hsk3/hsk3_员.wav",
+    "audio": "audio/hsk3/hsk3_员.mp3",
     "examples": [
       {
         "chinese": "他是公司的员工。",
@@ -23413,7 +23413,7 @@
     "translationFr": "vouloir bien",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_愿意.wav",
+    "audio": "audio/hsk3/hsk1_愿意.mp3",
     "examples": [
       {
         "chinese": "愿意去",
@@ -23455,7 +23455,7 @@
     "translationFr": "rencontrer; tomber sur",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_遇到.wav",
+    "audio": "audio/hsk3/hsk3_遇到.mp3",
     "examples": [
       {
         "chinese": "遇到问题",
@@ -23508,7 +23508,7 @@
     "translationFr": "plus...plus...",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_越.wav",
+    "audio": "audio/hsk3/hsk3_越.mp3",
     "examples": [
       {
         "chinese": "越来越好",
@@ -23558,7 +23558,7 @@
     "translationFr": "lune",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_月亮.wav",
+    "audio": "audio/hsk3/hsk1_月亮.mp3",
     "examples": [
       {
         "chinese": "月亮很圆",
@@ -23606,7 +23606,7 @@
     "translationFr": "rencontrer (par hasard)",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_遇见.wav",
+    "audio": "audio/hsk3/hsk3_遇见.mp3",
     "examples": [
       {
         "chinese": "我遇见了老朋友",
@@ -23656,7 +23656,7 @@
     "translationFr": "badminton",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_羽毛球.wav",
+    "audio": "audio/hsk3/hsk3_羽毛球.mp3",
     "examples": [
       {
         "chinese": "打羽毛球",
@@ -23706,7 +23706,7 @@
     "translationFr": "compétition sportive; jeux",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_运动会.wav",
+    "audio": "audio/hsk3/hsk3_运动会.mp3",
     "examples": [
       {
         "chinese": "学校运动会",
@@ -23759,7 +23759,7 @@
     "translationFr": "athlète; sportif",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_运动员.wav",
+    "audio": "audio/hsk3/hsk3_运动员.mp3",
     "examples": [
       {
         "chinese": "他是运动员",
@@ -23812,7 +23812,7 @@
     "translationFr": "langue; langage",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_语言.wav",
+    "audio": "audio/hsk3/hsk3_语言.mp3",
     "examples": [
       {
         "chinese": "学语言",
@@ -23865,7 +23865,7 @@
     "translationFr": "imperméable",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_雨衣.wav",
+    "audio": "audio/hsk3/hsk3_雨衣.mp3",
     "examples": [
       {
         "chinese": "穿雨衣",
@@ -23915,7 +23915,7 @@
     "translationFr": "sale",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_脏.wav",
+    "audio": "audio/hsk3/hsk1_脏.mp3",
     "examples": [
       {
         "chinese": "很脏",
@@ -23988,7 +23988,7 @@
     "translationFr": "nous (inclusif)",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_咱们.wav",
+    "audio": "audio/hsk3/hsk1_咱们.mp3",
     "examples": [
       {
         "chinese": "咱们走吧",
@@ -24030,7 +24030,7 @@
     "translationFr": "que faire; comment faire",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_怎么办.wav",
+    "audio": "audio/hsk3/hsk3_怎么办.mp3",
     "examples": [
       {
         "chinese": "怎么办？",
@@ -24083,7 +24083,7 @@
     "translationFr": "comment; de quelle façon",
     "category": "pronom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_怎样.wav",
+    "audio": "audio/hsk3/hsk3_怎样.mp3",
     "examples": [
       {
         "chinese": "怎样做？",
@@ -24136,7 +24136,7 @@
     "translationFr": "se tenir debout; se mettre debout",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_站.wav",
+    "audio": "audio/hsk3/hsk3_站.mp3",
     "examples": [
       {
         "chinese": "火车站",
@@ -24188,7 +24188,7 @@
     "pinyin": "zhǎng",
     "translationFr": "grandir; chef; directeur",
     "category": "général",
-    "audio": "audio/hsk3/hsk3_长.wav",
+    "audio": "audio/hsk3/hsk3_长.mp3",
     "examples": [
       {
         "chinese": "校长来了",
@@ -24238,7 +24238,7 @@
     "translationFr": "classificateur plat",
     "category": "classificateur",
     "explanation": "to spread; sheet of paper; classifier for flat objects, sheet; classifier for votes",
-    "audio": "audio/hsk3/hsk1_张.wav",
+    "audio": "audio/hsk3/hsk1_张.mp3",
     "examples": [
       {
         "chinese": "他把纸张张开。",
@@ -24283,7 +24283,7 @@
     "translationFr": "selon; d'après; photo",
     "category": "verbe",
     "explanation": "in accordance with; to shine; to illuminate; to reflect; to look at (one's reflection); to take (a photo); photo; as requested; as before",
-    "audio": "audio/hsk3/hsk3_照.wav",
+    "audio": "audio/hsk3/hsk3_照.mp3",
     "examples": [
       {
         "chinese": "照着做",
@@ -24334,7 +24334,7 @@
     "translationFr": "s'occuper de",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_照顾.wav",
+    "audio": "audio/hsk3/hsk1_照顾.mp3",
     "examples": [
       {
         "chinese": "照顾孩子",
@@ -24385,7 +24385,7 @@
     "translationFr": "anxieux; pressé",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_着急.wav",
+    "audio": "audio/hsk3/hsk1_着急.mp3",
     "examples": [
       {
         "chinese": "别着急",
@@ -24436,7 +24436,7 @@
     "translationFr": "photo",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_照片.wav",
+    "audio": "audio/hsk3/hsk1_照片.mp3",
     "examples": [
       {
         "chinese": "拍照片",
@@ -24485,7 +24485,7 @@
     "translationFr": "prendre une photo",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_照相.wav",
+    "audio": "audio/hsk3/hsk3_照相.mp3",
     "examples": [
       {
         "chinese": "照相机",
@@ -24534,7 +24534,7 @@
     "pinyin": "zhǐ",
     "translationFr": "seulement; ne… que",
     "category": "classificateur",
-    "audio": "audio/hsk3/hsk1_只.wav",
+    "audio": "audio/hsk3/hsk1_只.mp3",
     "examples": [
       {
         "chinese": "一只鸟",
@@ -24584,7 +24584,7 @@
     "translationFr": "papier",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_纸.wav",
+    "audio": "audio/hsk3/hsk1_纸.mp3",
     "examples": [
       {
         "chinese": "一张纸",
@@ -24633,7 +24633,7 @@
     "translationFr": "ne pouvoir que; seulement pouvoir",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_只能.wav",
+    "audio": "audio/hsk3/hsk3_只能.mp3",
     "examples": [
       {
         "chinese": "我只能这样做",
@@ -24685,7 +24685,7 @@
     "pinyin": "zhídào",
     "translationFr": "jusqu'à",
     "category": "verbe",
-    "audio": "audio/hsk3/hsk3_直到.wav",
+    "audio": "audio/hsk3/hsk3_直到.mp3",
     "examples": [
       {
         "chinese": "直到天亮",
@@ -24730,7 +24730,7 @@
     "translationFr": "seulement; juste",
     "category": "adverbe",
     "explanation": "simply; but; however",
-    "audio": "audio/hsk3/hsk3_只是.wav",
+    "audio": "audio/hsk3/hsk3_只是.mp3",
     "examples": [
       {
         "chinese": "我只是路过。",
@@ -24779,7 +24779,7 @@
     "translationFr": "pourvu que",
     "category": "conjonction",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_只要.wav",
+    "audio": "audio/hsk3/hsk1_只要.mp3",
     "examples": [
       {
         "chinese": "只要努力",
@@ -24827,7 +24827,7 @@
     "translationFr": "seulement si",
     "category": "conjonction",
     "explanation": "(used in combination with 才[cai2]) it is only if ... (that one can ...) (as in 只有通過治療才能痊愈|只有通过治疗才能痊愈[zhi3 you3 tong1 guo4 zhi4 liao2 cai2 neng2 quan2 yu4] \"the only way to cure it is with therapy\"); it is only (someone) who ... (as in 只有男性才有此需要[zhi3 you3 nan2 xing4 cai2 you3 ci3 xu1 yao4] \"only men would have such a requirement\"); (used to express lack of alternatives) can only; have no choice but to (as in 只有屈服[zhi3 you3 qu1 fu2] \"the only thing you can do is give in\")",
-    "audio": "audio/hsk3/hsk1_只有.wav",
+    "audio": "audio/hsk3/hsk1_只有.mp3",
     "examples": [
       {
         "chinese": "只有努力工作才能成功。",
@@ -24870,7 +24870,7 @@
     "pinyin": "zhǒng",
     "translationFr": "type; sorte; espèce; graine",
     "category": "général",
-    "audio": "audio/hsk3/hsk3_种.wav",
+    "audio": "audio/hsk3/hsk3_种.mp3",
     "examples": [
       {
         "chinese": "种类",
@@ -24920,7 +24920,7 @@
     "translationFr": "milieu; centre; parmi; en…",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_中.wav",
+    "audio": "audio/hsk3/hsk1_中.mp3",
     "examples": [
       {
         "chinese": "中国",
@@ -24984,7 +24984,7 @@
     "translationFr": "milieu; entre",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_中间.wav",
+    "audio": "audio/hsk3/hsk1_中间.mp3",
     "examples": [
       {
         "chinese": "在中间",
@@ -25048,7 +25048,7 @@
     "translationFr": "important",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_重要.wav",
+    "audio": "audio/hsk3/hsk1_重要.mp3",
     "examples": [
       {
         "chinese": "很重要",
@@ -25108,7 +25108,7 @@
     "translationFr": "enfin",
     "category": "adverbe",
     "explanation": "in the end; finally; eventually",
-    "audio": "audio/hsk3/hsk1_终于.wav",
+    "audio": "audio/hsk3/hsk1_终于.mp3",
     "examples": [
       {
         "chinese": "终于下雨了。",
@@ -25154,7 +25154,7 @@
     "translationFr": "week-end",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_周末.wav",
+    "audio": "audio/hsk3/hsk1_周末.mp3",
     "examples": [
       {
         "chinese": "周末好",
@@ -25216,7 +25216,7 @@
     "translationFr": "principal",
     "category": "adjectif",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_主要.wav",
+    "audio": "audio/hsk3/hsk1_主要.mp3",
     "examples": [
       {
         "chinese": "主要原因",
@@ -25263,7 +25263,7 @@
     "pinyin": "zhùyì",
     "translationFr": "faire attention",
     "category": "général",
-    "audio": "audio/hsk3/hsk1_注意.wav",
+    "audio": "audio/hsk3/hsk1_注意.mp3",
     "examples": [
       {
         "chinese": "注意安全",
@@ -25306,7 +25306,7 @@
     "translationFr": "être hospitalisé",
     "category": "verbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_住院.wav",
+    "audio": "audio/hsk3/hsk3_住院.mp3",
     "examples": [
       {
         "chinese": "他住院了",
@@ -25356,7 +25356,7 @@
     "translationFr": "suffixe; enfant",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_子.wav",
+    "audio": "audio/hsk3/hsk1_子.mp3",
     "examples": [
       {
         "chinese": "孩子",
@@ -25408,7 +25408,7 @@
     "translationFr": "dictionnaire",
     "category": "nom",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_字典.wav",
+    "audio": "audio/hsk3/hsk3_字典.mp3",
     "examples": [
       {
         "chinese": "查字典",
@@ -25458,7 +25458,7 @@
     "translationFr": "vélo",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_自行车.wav",
+    "audio": "audio/hsk3/hsk1_自行车.mp3",
     "examples": [
       {
         "chinese": "骑自行车",
@@ -25532,7 +25532,7 @@
     "translationFr": "toujours; en tout",
     "category": "adverbe",
     "explanation": "to sum up; in every case; always; invariably; anyway; after all; eventually; sooner or later; surely; (after a person's name) abbr. for 總經理|总经理[zong3 jing1 li3] or 總編|总编[zong3 bian1] etc",
-    "audio": "audio/hsk3/hsk3_总.wav",
+    "audio": "audio/hsk3/hsk3_总.mp3",
     "examples": [
       {
         "chinese": "总而言之",
@@ -25582,7 +25582,7 @@
     "pinyin": "zǒngshì",
     "translationFr": "toujours",
     "category": "adverbe",
-    "audio": "audio/hsk3/hsk1_总是.wav",
+    "audio": "audio/hsk3/hsk1_总是.mp3",
     "examples": [
       {
         "chinese": "他总是早起。",
@@ -25628,7 +25628,7 @@
     "translationFr": "bouche",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_嘴.wav",
+    "audio": "audio/hsk3/hsk1_嘴.mp3",
     "examples": [
       {
         "chinese": "大嘴",
@@ -25695,7 +25695,7 @@
     "translationFr": "le mieux; le meilleur",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_最好.wav",
+    "audio": "audio/hsk3/hsk3_最好.mp3",
     "examples": [
       {
         "chinese": "最好的朋友",
@@ -25748,7 +25748,7 @@
     "translationFr": "enfin",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_最后.wav",
+    "audio": "audio/hsk3/hsk1_最后.mp3",
     "examples": [
       {
         "chinese": "最后一个",
@@ -25796,7 +25796,7 @@
     "translationFr": "récemment; ces derniers temps",
     "category": "adverbe",
     "explanation": "",
-    "audio": "audio/hsk3/hsk3_最近.wav",
+    "audio": "audio/hsk3/hsk3_最近.mp3",
     "examples": [
       {
         "chinese": "最近怎么样？",
@@ -25848,7 +25848,7 @@
     "pinyin": "zuòkè",
     "translationFr": "être invité; rendre visite",
     "category": "général",
-    "audio": "audio/hsk3/hsk3_做客.wav",
+    "audio": "audio/hsk3/hsk3_做客.mp3",
     "examples": [
       {
         "chinese": "周末去朋友家做客。",
@@ -25893,7 +25893,7 @@
     "translationFr": "devoirs",
     "category": "général",
     "explanation": "",
-    "audio": "audio/hsk3/hsk1_作业.wav",
+    "audio": "audio/hsk3/hsk1_作业.mp3",
     "examples": [
       {
         "chinese": "做作业",

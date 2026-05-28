@@ -39,18 +39,18 @@ type SourceKind = 'flashcards' | 'custom';
 
 const COPY = {
   fr: {
-    title: '🎓 Atelier libre',
+    title: 'Atelier libre',
     subtitle:
       "Entraîne-toi sur la liste de mots de ton choix, sans pression et hors leçon. La progression n'affecte pas tes flashcards principales.",
     pickMode: '1 · Choisis un mode',
     pickSource: '2 · Choisis ta source',
-    modePronunciation: '🎤 Prononciation',
+    modePronunciation: 'Prononciation',
     modePronunciationDesc: 'Parle dans le micro, reconnaissance vocale chinoise.',
-    modeWriting: '✍️ Écriture',
+    modeWriting: 'Écriture',
     modeWritingDesc: 'Trace les caractères au doigt, au stylet ou à la souris.',
-    modeDialogue: '💬 Dialogues',
+    modeDialogue: 'Dialogues',
     modeDialogueDesc: 'Écoute et explore des dialogues annotés (CECR A1→B2).',
-    modeReading: '📖 Textes',
+    modeReading: 'Textes',
     modeReadingDesc: 'Lis des textes avec audio, mots cliquables et quiz.',
     sourceFlashcards: 'Mes flashcards',
     sourceFlashcardsDesc: (n: number) =>
@@ -68,18 +68,18 @@ const COPY = {
     invalidCustom: 'Aucun hanzi détecté dans ta saisie. Vérifie qu\'il y a bien des caractères chinois.'
   },
   en: {
-    title: '🎓 Free practice',
+    title: 'Free practice',
     subtitle:
       "Practice on any list of characters, no pressure, outside any lesson. Progress here doesn't affect your main flashcards.",
     pickMode: '1 · Pick a mode',
     pickSource: '2 · Pick a source',
-    modePronunciation: '🎤 Pronunciation',
+    modePronunciation: 'Pronunciation',
     modePronunciationDesc: 'Speak into the mic, Chinese speech recognition.',
-    modeWriting: '✍️ Writing',
+    modeWriting: 'Writing',
     modeWritingDesc: 'Trace characters with finger, stylus, or mouse.',
-    modeDialogue: '💬 Dialogues',
+    modeDialogue: 'Dialogues',
     modeDialogueDesc: 'Listen and explore annotated dialogues (CEFR A1→B2).',
-    modeReading: '📖 Readings',
+    modeReading: 'Readings',
     modeReadingDesc: 'Read texts with audio, clickable words, and quizzes.',
     sourceFlashcards: 'My flashcards',
     sourceFlashcardsDesc: (n: number) =>
@@ -196,18 +196,27 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
 
   // Étape 2 : choix de source (uniquement pronunciation / writing)
   if (mode === 'pronunciation' || mode === 'writing') {
+    // Header dynamique : reprend le titre du mode choisi (Prononciation / Écriture)
+    // avec son emoji dans la box, pattern Lectures.
+    const modeEmoji = mode === 'pronunciation' ? '🎤' : '✍️';
+    const modeTitle = mode === 'pronunciation' ? copy.modePronunciation : copy.modeWriting;
+    const modeSubtitle =
+      mode === 'pronunciation' ? copy.modePronunciationDesc : copy.modeWritingDesc;
     return (
       <div className="atelier-page">
-        <header className="atelier-header">
-          <button
-            type="button"
-            className="atelier-back-btn"
-            onClick={reset}
-          >
-            {copy.back}
-          </button>
-          <h1>{copy.title}</h1>
-          <p>{copy.subtitle}</p>
+        <button
+          type="button"
+          className="atelier-back-btn"
+          onClick={reset}
+        >
+          {copy.back}
+        </button>
+        <header className="atelier-header atelier-header--catalog">
+          <div className="atelier-catalog-icon" aria-hidden>{modeEmoji}</div>
+          <div className="atelier-catalog-head-text">
+            <h1>{modeTitle}</h1>
+            <p>{modeSubtitle}</p>
+          </div>
         </header>
 
         <section className="atelier-section">
@@ -286,9 +295,12 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
   // Étape 1 : choix du mode (entrée)
   return (
     <div className="atelier-page">
-      <header className="atelier-header">
-        <h1>{copy.title}</h1>
-        <p>{copy.subtitle}</p>
+      <header className="atelier-header atelier-header--catalog">
+        <div className="atelier-catalog-icon" aria-hidden>🎓</div>
+        <div className="atelier-catalog-head-text">
+          <h1>{copy.title}</h1>
+          <p>{copy.subtitle}</p>
+        </div>
       </header>
 
       <section className="atelier-section">

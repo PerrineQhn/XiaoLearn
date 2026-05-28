@@ -228,7 +228,12 @@ const DailyGoalCard = ({
               onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
             }
           : null,
-      done: false
+      // Coché dès que l'utilisateur a une activité aujourd'hui (streakAlive).
+      // Le `goal.lessonToResume` se met à jour vers la leçon SUIVANTE après
+      // complétion, donc on ne peut pas se baser dessus pour savoir "lesson
+      // d'aujourd'hui faite" — on utilise streakAlive comme proxy, cohérent
+      // avec le 3ᵉ slot du compteur `done` ci-dessus.
+      done: streakAlive
     },
     {
       icon: '⭐',

@@ -1108,18 +1108,15 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
       .filter(({ a }) => !a.correct);
 
     return (
-      <div className="rv3-page">
+      <div className="rv3-page rv3-page--summary">
         <div className="rv3-wrap">
-          <header className="rv3-head">
+          <header className="rv3-head rv3-head--summary">
             {onBack && (
               <button className="rv3-back" onClick={onBack} aria-label="Back">
                 ←
               </button>
             )}
             <div className="rv3-head-main">
-              <span className="rv3-head-kicker">
-                {language === 'fr' ? 'Session terminée' : 'Session complete'}
-              </span>
               <h1 className="rv3-head-title">
                 {pct >= 70
                   ? language === 'fr'
@@ -1133,18 +1130,24 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
           </header>
 
           <section className="rv3-card rv3-card--result">
-            <div className="rv3-result-summary">
-              <div className="rv3-summary-main">
-                <strong>
-                  {correctCount}/{total}
-                </strong>
-                <span>{pct}%</span>
+            <div className="rv3-result-stats">
+              <div className="rv3-stat rv3-stat--score">
+                <span className="rv3-stat-value">{correctCount}<span className="rv3-stat-divider">/</span>{total}</span>
+                <span className="rv3-stat-label">
+                  {language === 'fr' ? 'bonnes réponses' : 'correct answers'}
+                </span>
               </div>
-              <div className="rv3-summary-xp">
-                <span className="rv3-xp-value">+{xpEarned} XP</span>
-                <span className="rv3-xp-detail">
+              <div className="rv3-stat rv3-stat--pct">
+                <span className="rv3-stat-value">{pct}<small>%</small></span>
+                <span className="rv3-stat-label">
+                  {language === 'fr' ? 'précision' : 'accuracy'}
+                </span>
+              </div>
+              <div className="rv3-stat rv3-stat--xp">
+                <span className="rv3-stat-value">+{xpEarned}<small> XP</small></span>
+                <span className="rv3-stat-label">
                   {correctCount} × {REVIEW_XP_PER_CORRECT}
-                  {pct >= 70 ? ` + ${REVIEW_XP_SESSION_BONUS}` : ''} XP
+                  {pct >= 70 ? ` + ${REVIEW_XP_SESSION_BONUS}` : ''}
                 </span>
               </div>
             </div>
