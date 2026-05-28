@@ -69,9 +69,10 @@
   transform: translateY(-2px);
 }
 
-/* Sur mobile : pas de poignée (le tactile n'a pas la précision nécessaire,
-   et l'écran est déjà petit donc utiliser le scroll naturel suffit). */
-@media (max-width: 900px) {
+/* Vrai mobile uniquement (≤ 600px) : pas de poignée (tactile peu précis,
+   écran déjà petit). Sur tablette / desktop avec DevTools ouvert, la
+   poignée reste visible — l'utilisateur peut toujours dézoomer si gêne. */
+@media (max-width: 600px) {
   .ai-tutor-v2 .at2-resize-handle {
     display: none;
   }
