@@ -301,10 +301,23 @@ export default defineConfig(({ mode }) => {
           // Plafond par fichier à 10 Mo pour éviter de précacher d'énormes
           // JSON HSK qui sont déjà chunkés à la demande.
           maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+          // Empêche le SPA navigateFallback (index.html) de manger les URLs
+          // d'assets statiques. Si on tape https://.../img/announcements/foo.png
+          // dans la barre d'adresse, on doit voir l'image — pas la home.
+          navigateFallbackDenylist: [
+            /^\/img\//,
+            /^\/audio\//,
+            /^\/logos\//,
+            /^\/icons\//,
+            /^\/profs\//,
+            /^\/data\//,
+            /\.(png|jpg|jpeg|webp|gif|svg|mp3|wav|ogg|json|webmanifest)$/i
+          ],
           runtimeCaching: [
-            // 1. Logos et icônes : cache-first (rarement mis à jour, gros gain).
+            // 1. Logos / icônes / images d'annonces : cache-first (rarement
+            //    mis à jour, gros gain au reload).
             {
-              urlPattern: /\/(logos|icons|profs)\/[^/]+\.(png|svg|jpg|webp)$/,
+              urlPattern: /\/(logos|icons|profs|img)\/.*\.(png|svg|jpg|jpeg|webp)$/,
               handler: 'CacheFirst',
               options: {
                 cacheName: 'xl-static-images',
