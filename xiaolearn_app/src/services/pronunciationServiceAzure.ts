@@ -228,23 +228,19 @@ function blobToBase64(blob: Blob): Promise<string> {
  */
 async function blobToWav16kMono(blob: Blob): Promise<Blob> {
   const arrayBuffer = await blob.arrayBuffer();
-  // AudioContext peut être créé à n'importe quel sample rate pour le décodage,
-  // mais ses sorties seront à ce taux. On crée à 16 kHz pour bénéficier du
-  // resampling natif du navigateur.
   const Ctx =
     (window.AudioContext as typeof AudioContext) ||
     ((window as any).webkitAudioContext as typeof AudioContext);
-  // Certains navigateurs (Safari) n'acceptent pas un sampleRate custom au
-  // constructeur. On fallback sur le sampleRate par défaut puis resample
-  // manuellement.
-  let audioCtx: AudioContext;
-  try {
-    audioCtx = new Ctx({ sampleRate: 16000 });
-  } catch {
-    audioCtx = new Ctx();
-  }
 
-  // decodeAudioData copie le buffer en interne, on peut le passer tel quel
+  // ⚠ NE PAS créer l'AudioContext avec sampleRate: 16000.
+  // Symptôme observé : sur certains navigateurs/configs, créer un
+  // AudioContext({sampleRate: 16000}) réussit silencieusement mais le
+  // décodage produit des samples à zéro → SNR=0 côté Azure → score 0
+  // alors que le user a bien parlé. On utilise le sampleRate par défaut
+  // (généralement 44.1 ou 48 kHz) et on resample nous-mêmes vers 16k.
+  const audioCtx = new Ctx();
+
+  // decodeAudioData détache le buffer source — on lui passe une copie
   const decoded = await audioCtx.decodeAudioData(arrayBuffer.slice(0));
 
   // Downmix mono
@@ -261,7 +257,24 @@ async function blobToWav16kMono(blob: Blob): Promise<Blob> {
     }
   }
 
-  // Resample à 16 kHz si besoin (interpolation linéaire — suffisant pour STT)
+  // Mesure rapide de l'énergie pour détecter le silence — log seulement
+  let sumSq = 0;
+  const sampleN = Math.min(length, 4000);
+  const step = Math.max(1, Math.floor(length / sampleN));
+  for (let i = 0; i < length; i += step) {
+    sumSq += inputMono[i] * inputMono[i];
+  }
+  const rms = Math.sqrt(sumSq / Math.ceil(length / step));
+  console.log('[azureSpeech] decoded audio', {
+    sampleRate: decoded.sampleRate,
+    durationS: decoded.duration.toFixed(2),
+    samples: length,
+    channels,
+    rms: rms.toFixed(4),
+    energyDb: (20 * Math.log10(Math.max(rms, 1e-9))).toFixed(1)
+  });
+
+  // Resample vers 16 kHz (interpolation linéaire — suffisant pour STT)
   const targetRate = 16000;
   let resampled: Float32Array;
   if (decoded.sampleRate === targetRate) {
