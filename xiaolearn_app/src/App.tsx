@@ -2307,6 +2307,9 @@ function App() {
         }}
         onNavigate={(v) => setView(v as typeof view)}
         onToggleSidebar={toggleSidebar}
+        userLevel={dashboardState.xp.level}
+        userXpInLevel={dashboardState.xp.xpInLevel}
+        userXpForNext={dashboardState.xp.xpNeededForNext}
       />
       {/* Sidebar Navigation */}
       <aside className="sidebar">

@@ -136,6 +136,19 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
   const prevMilestoneDaysRef = useRef<number | null>(null);
   const prevDailyBonusAtRef = useRef<string | null>(null);
 
+  // ⚠ Grace period au mount : useFirestoreSync hydrate l'XP/streak/dailyBonus
+  // ~1-2 secondes après le mount via onSnapshot (Math.max merge cross-device).
+  // Sans grace period, la transition local → cloud était interprétée comme un
+  // vrai gain et déclenchait des notifs fantômes ("Niveau X passé !" sans
+  // qu'aucune action utilisateur n'ait été faite). On absorbe les transitions
+  // pendant les MOUNT_GRACE_MS premières millisecondes : les refs sont mises
+  // à jour mais aucune notif n'est poussée. Au-delà, on considère que toute
+  // transition vient d'une action utilisateur (awardXp, pingAlive, etc.).
+  const MOUNT_GRACE_MS = 5000;
+  const mountedAtRef = useRef<number>(Date.now());
+  const isWithinGracePeriod = () =>
+    Date.now() - mountedAtRef.current < MOUNT_GRACE_MS;
+
   // --- Level up --------------------------------------------------------------
   useEffect(() => {
     if (!isAuthed) return;
@@ -143,7 +156,10 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
       prevLevelRef.current = level;
       return;
     }
-    if (level > prevLevelRef.current) {
+    // Pendant la grace period, on absorbe la transition sans pousser de notif
+    // (cf. commentaire mountedAtRef plus haut — évite les level-up fantômes
+    // dus au sync Firestore initial qui rattrape l'XP cloud).
+    if (level > prevLevelRef.current && !isWithinGracePeriod()) {
       const newLvl = level;
       const c = copy.levelUp(newLvl);
       push({
@@ -166,11 +182,13 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
       return;
     }
     if (rank.name !== prevRankNameRef.current) {
-      // On ne notifie que les progressions (index croissant), pas les resets.
+      // On ne notifie que les progressions (index croissant), pas les resets,
+      // ET on absorbe les transitions silencieusement pendant la grace period
+      // initiale (sync Firestore qui rattrape le rank cloud).
       const order: RankName[] = ['Apprenti', 'Étudiant', 'Guerrier', 'Maître', 'Légende'];
       const prevIdx = order.indexOf(prevRankNameRef.current);
       const nextIdx = order.indexOf(rank.name);
-      if (nextIdx > prevIdx) {
+      if (nextIdx > prevIdx && !isWithinGracePeriod()) {
         const c = copy.rankUp(rank.name, rank.emoji);
         push({
           kind: 'rank',
@@ -198,6 +216,12 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
       prevMilestoneDaysRef.current = lastMilestoneAward.days;
       return;
     }
+    // Grace period : sync Firestore peut faire apparaître un milestone cloud
+    // alors que l'utilisateur n'a rien fait. On absorbe sans push.
+    if (isWithinGracePeriod()) {
+      prevMilestoneDaysRef.current = lastMilestoneAward.days;
+      return;
+    }
     const c = copy.streakMilestone(lastMilestoneAward.days, lastMilestoneAward.xp);
     push({
       kind: 'streak',
@@ -219,7 +243,8 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
     }
     if (
       lastDailyBonusAt !== prevDailyBonusAtRef.current &&
-      streakCurrent >= 2 /* pas d'alerte pour j1 seul */
+      streakCurrent >= 2 /* pas d'alerte pour j1 seul */ &&
+      !isWithinGracePeriod() /* absorbe la transition au sync initial */
     ) {
       const c = copy.dailyBonus(streakCurrent);
       push({

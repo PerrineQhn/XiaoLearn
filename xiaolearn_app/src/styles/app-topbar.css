@@ -51,6 +51,66 @@
   right: auto;
 }
 
+/* ============================================================
+   Pill "Niveau N" — cliquable, mène à la page Profil.
+   Une mini-barre de progression XP est posée en bas du pill.
+   ============================================================ */
+.xl-topbar-level {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 8px;
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 999px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.xl-topbar-level:hover {
+  background: #fffaf3;
+  border-color: var(--primary-red, #e05040);
+  color: var(--primary-red, #e05040);
+  transform: translateY(-1px);
+}
+.xl-topbar-level:active {
+  transform: translateY(0);
+}
+
+.xl-topbar-level-icon {
+  font-size: 13px;
+  filter: drop-shadow(0 1px 0 rgba(245, 158, 11, 0.3));
+}
+
+.xl-topbar-level-num {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Mini-progress bar — pleine jusqu'à --xl-topbar-level-pct (inline style). */
+.xl-topbar-level-bar {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--primary-red, #e05040) 0%,
+    var(--primary-red, #e05040) var(--xl-topbar-level-pct, 0%),
+    var(--border-light, #ece4d5) var(--xl-topbar-level-pct, 0%),
+    var(--border-light, #ece4d5) 100%
+  );
+}
+
 /* ----- Barre de recherche --------------------------------------------- */
 .xl-global-search {
   display: flex;

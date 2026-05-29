@@ -47,13 +47,15 @@ const TIMER_MAX = 120;
  *  Progression douce : chaque niveau demande +20% par rapport au précédent. */
 export const XP_PER_LEVEL = (level: number) => Math.round(200 * Math.pow(1.2, level - 1));
 
-/** XP gagnés par action. Ajuste selon ton économie (garde-les petits !). */
+/** XP gagnés par action. Ajuste selon ton économie (garde-les petits !).
+ *  Note: lessonCompleted=50 = la valeur effectivement utilisée dans App.tsx
+ *  (payload.xpGained ?? 50). On garde la constante alignée pour cohérence. */
 export const XP_REWARDS = {
   reviewAgain: 2,
   reviewHard: 5,
   reviewGood: 8,
   reviewEasy: 10,
-  lessonCompleted: 25,
+  lessonCompleted: 50,
   newWordLearned: 15,
   wordOfDayAdded: 5
 } as const;
