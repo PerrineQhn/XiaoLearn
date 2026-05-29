@@ -257,7 +257,7 @@ async function blobToWav16kMono(blob: Blob): Promise<Blob> {
     }
   }
 
-  // Mesure rapide de l'énergie pour détecter le silence — log seulement
+  // Mesure rapide de l'énergie pour détecter le silence
   let sumSq = 0;
   const sampleN = Math.min(length, 4000);
   const step = Math.max(1, Math.floor(length / sampleN));
@@ -265,14 +265,28 @@ async function blobToWav16kMono(blob: Blob): Promise<Blob> {
     sumSq += inputMono[i] * inputMono[i];
   }
   const rms = Math.sqrt(sumSq / Math.ceil(length / step));
+  const energyDb = 20 * Math.log10(Math.max(rms, 1e-9));
   console.log('[azureSpeech] decoded audio', {
     sampleRate: decoded.sampleRate,
     durationS: decoded.duration.toFixed(2),
     samples: length,
     channels,
     rms: rms.toFixed(4),
-    energyDb: (20 * Math.log10(Math.max(rms, 1e-9))).toFixed(1)
+    energyDb: energyDb.toFixed(1)
   });
+
+  // Seuil de silence : RMS < 0.005 = pratiquement aucun signal audible
+  // (rms typique pour de la voix : 0.05 - 0.2 ; bruit ambiant : 0.001 - 0.01)
+  // Sans cette détection, on enverrait du silence à Azure qui répondrait
+  // SNR=0 et un score de 0 → user pense que sa prononciation est mauvaise
+  // alors qu'en fait son micro n'a rien capté (permissions, mauvais device,
+  // cache navigateur servant une vieille WAV conv cassée…).
+  if (rms < 0.005) {
+    try { audioCtx.close(); } catch { /* noop */ }
+    throw new AzureSpeechAbortedError(
+      "Aucun son détecté — vérifie ton micro (Réglages > Son > Entrée) ou recharge la page (⇧⌘R)."
+    );
+  }
 
   // Resample vers 16 kHz (interpolation linéaire — suffisant pour STT)
   const targetRate = 16000;
@@ -404,14 +418,20 @@ export async function recognizeWithAzure(
     throw new AzureSpeechAbortedError(data.message || data.reason || 'no match');
   }
 
-  const score = Number(data.pronunciationScore) || 0;
+  // On utilise AccuracyScore comme score global affiché, et pas PronScore.
+  // Pourquoi : PronScore = combinaison pondérée (AccuracyScore + Fluency +
+  // Completeness) — il "récompense" un bon rythme indépendamment de la
+  // qualité phonétique. Du coup global > moyenne des par-caractère, ce qui
+  // est contre-intuitif côté UX. En affichant AccuracyScore, le global =
+  // pure accuracy phonétique, cohérent avec ce qu'on montre par caractère.
+  const accuracyScore = Number(data.accuracyScore) || 0;
   return {
-    pronunciationScore: score,
-    accuracyScore: Number(data.accuracyScore) || 0,
+    pronunciationScore: accuracyScore,
+    accuracyScore,
     fluencyScore: Number(data.fluencyScore) || 0,
     completenessScore: Number(data.completenessScore) || 0,
     recognized: String(data.recognized || ''),
     words: Array.isArray(data.words) ? data.words : [],
-    verdict: scoreToVerdict(score)
+    verdict: scoreToVerdict(accuracyScore)
   };
 }
