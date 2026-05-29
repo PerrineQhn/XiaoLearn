@@ -39,11 +39,17 @@ export interface AzurePronunciationResult {
   completenessScore: number;
   /** Texte reconnu (peut différer du référence si erreurs). */
   recognized: string;
-  /** Détail par mot avec phonèmes. */
+  /** Détail par mot avec syllables (par hanzi) et phonèmes (par initiale/finale/ton). */
   words: Array<{
     word: string;
     accuracyScore: number;
+    /** "None" | "Mispronunciation" | "Omission" | "Insertion" */
     errorType: string;
+    syllables: Array<{
+      grapheme: string;
+      syllable: string;
+      accuracyScore: number;
+    }>;
     phonemes: Array<{ phoneme: string; accuracyScore: number }>;
   }>;
   /** Mapping vers verdict 3-classes pour UI legacy. */

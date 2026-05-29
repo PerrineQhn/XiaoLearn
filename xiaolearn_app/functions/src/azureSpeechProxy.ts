@@ -129,12 +129,18 @@ export const azureSpeechProxy = onRequest(
 
     // Configure Pronunciation Assessment headers
     // Doc : https://learn.microsoft.com/azure/ai-services/speech-service/how-to-pronunciation-assessment
+    //
+    // EnableMiscue: false — sinon Azure est ultra strict sur les hanzi
+    // isolés à ton 3 ("请", durée 0.4s) et score systématiquement 0
+    // avec ErrorType: "Mispronunciation". Sans Miscue, le scoring reste
+    // basé sur AccuracyScore phonémique mais sans pénalité d'alignement
+    // strict. Marche mieux pour les apprenants débutants.
     const pronAssessmentConfig = {
       ReferenceText: referenceText,
       GradingSystem: 'HundredMark',
       Granularity: 'Phoneme',
       Dimension: 'Comprehensive',
-      EnableMiscue: true
+      EnableMiscue: false
     };
     const pronAssessmentHeader = Buffer.from(
       JSON.stringify(pronAssessmentConfig)
@@ -235,13 +241,22 @@ export const azureSpeechProxy = onRequest(
       }
 
       const pa = nbest.PronunciationAssessment;
+      // Azure renvoie pour chaque "Word" : un score global, un ErrorType,
+      // les Syllables (par hanzi pour les mots multi-caractères) et les
+      // Phonemes (par initiale/finale/ton type "qing 3"). On expose les 3
+      // pour l'UI feedback détaillé.
       const words = (nbest.Words ?? []).map((w: any) => ({
         word: w.Word,
-        accuracyScore: w.PronunciationAssessment?.AccuracyScore ?? 0,
-        errorType: w.PronunciationAssessment?.ErrorType ?? 'None',
+        accuracyScore: w.AccuracyScore ?? w.PronunciationAssessment?.AccuracyScore ?? 0,
+        errorType: w.ErrorType ?? w.PronunciationAssessment?.ErrorType ?? 'None',
+        syllables: (w.Syllables ?? []).map((s: any) => ({
+          grapheme: s.Grapheme ?? '',
+          syllable: s.Syllable ?? '',
+          accuracyScore: s.AccuracyScore ?? s.PronunciationAssessment?.AccuracyScore ?? 0
+        })),
         phonemes: (w.Phonemes ?? []).map((p: any) => ({
-          phoneme: p.Phoneme,
-          accuracyScore: p.PronunciationAssessment?.AccuracyScore ?? 0
+          phoneme: p.Phoneme ?? '',
+          accuracyScore: p.AccuracyScore ?? p.PronunciationAssessment?.AccuracyScore ?? 0
         }))
       }));
 

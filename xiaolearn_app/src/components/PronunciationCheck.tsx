@@ -32,9 +32,9 @@ import {
   recognizeWithAzure,
   AzureSpeechNotSupportedError,
   AzureSpeechAbortedError,
-  type AzurePronunciationResult,
-  type AzureVerdict
+  type AzurePronunciationResult
 } from '../services/pronunciationServiceAzure';
+import PronunciationFeedback from './PronunciationFeedback';
 import './PronunciationCheck.css';
 
 export interface PronunciationCheckProps {
@@ -59,32 +59,7 @@ type UiState =
   | { kind: 'result'; result: AzurePronunciationResult }
   | { kind: 'error'; message: string };
 
-const verdictEmoji = (v: AzureVerdict): string => {
-  switch (v) {
-    case 'match':
-      return '✓';
-    case 'close':
-      return '~';
-    case 'mismatch':
-      return '✗';
-  }
-};
-
-/**
- * Classe CSS pour la couleur du badge de score selon le score 0-100.
- * - or  ≥ 90 : excellent
- * - vert ≥ 70 : bien
- * - ambre ≥ 50 : bof
- * - rouge < 50 : à retravailler
- */
-function scoreBadgeClass(score: number): string {
-  if (score >= 90) return 'pron-check-score--gold';
-  if (score >= 70) return 'pron-check-score--green';
-  if (score >= 50) return 'pron-check-score--amber';
-  return 'pron-check-score--red';
-}
-
-/** Label court pour le score. */
+/** Label court pour le score (utilisé pour le tooltip du bouton). */
 function scoreLabel(score: number): string {
   if (score >= 90) return 'Excellent';
   if (score >= 70) return 'Bien';
@@ -209,14 +184,7 @@ const PronunciationCheck = ({
     if (isListening) return 'Cliquer pour annuler';
     if (state.kind === 'result') {
       const score = Math.round(state.result.pronunciationScore);
-      switch (state.result.verdict) {
-        case 'match':
-          return `✓ ${scoreLabel(score)} (${score}/100) — clique pour réessayer`;
-        case 'close':
-          return `~ ${scoreLabel(score)} (${score}/100, entendu : "${state.result.recognized || '?'}") — clique pour réessayer`;
-        case 'mismatch':
-          return `✗ ${scoreLabel(score)} (${score}/100, entendu : "${state.result.recognized || '?'}") — clique pour réessayer`;
-      }
+      return `${scoreLabel(score)} (${score}/100) — clique pour réessayer`;
     }
     if (state.kind === 'error') {
       return `Erreur : ${state.message} — clique pour réessayer`;
@@ -285,38 +253,19 @@ const PronunciationCheck = ({
       {showFeedback && state.kind === 'listening' && (
         <span className="pron-check-status">J'écoute…</span>
       )}
-      {showFeedback && state.kind === 'result' && (() => {
-        const score = Math.round(state.result.pronunciationScore);
-        const badgeClass = scoreBadgeClass(score);
-        return (
-          <span
-            className="pron-check-status"
-            aria-live="polite"
-            onClick={handleReset}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') handleReset();
-            }}
-          >
-            <span
-              className={`pron-check-score ${badgeClass}`}
-              aria-hidden="true"
-            >
-              {score}
-            </span>
-            <span className="pron-check-score-label">{scoreLabel(score)}</span>
-            {state.result.recognized && state.result.verdict !== 'match' && (
-              <span className="pron-check-heard">
-                · entendu : <em>{state.result.recognized}</em>
-              </span>
-            )}
-            <span className="pron-check-verdict-icon" aria-hidden="true">
-              {verdictEmoji(state.result.verdict)}
-            </span>
-          </span>
-        );
-      })()}
+      {showFeedback && state.kind === 'result' && (
+        <div
+          className="pron-check-feedback-wrap"
+          aria-live="polite"
+        >
+          <PronunciationFeedback
+            result={state.result}
+            referenceText={hanzi}
+            compact
+            language="fr"
+          />
+        </div>
+      )}
       {showFeedback && state.kind === 'error' && (
         <span
           className="pron-check-status pron-check-error"

@@ -5,9 +5,17 @@
 
 .pron-check {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-family: inherit;
+}
+
+/* Wrapper du feedback détaillé — empêche le composant Feedback de stretcher */
+.pron-check-feedback-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
 }
 
 .pron-check-btn {

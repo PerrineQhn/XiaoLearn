@@ -29,8 +29,10 @@ import PronunciationCheck from '../PronunciationCheck';
 import {
   isAzureSpeechSupported as pronunciationSupported,
   recognizeWithAzure as pronunciationRecognize,
-  AzureSpeechAbortedError
+  AzureSpeechAbortedError,
+  type AzurePronunciationResult
 } from '../../services/pronunciationServiceAzure';
+import PronunciationFeedback from '../PronunciationFeedback';
 import HanziWriterPad, {
   type HanziWriterQuizStats
 } from '../HanziWriterPad';
@@ -710,7 +712,7 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
   const [state, setState] = useState<
     | { kind: 'idle' }
     | { kind: 'listening' }
-    | { kind: 'result'; verdict: 'match' | 'close' | 'mismatch'; transcript: string; score: number }
+    | { kind: 'result'; result: AzurePronunciationResult }
     | { kind: 'error'; message: string }
   >({ kind: 'idle' });
 
@@ -734,12 +736,7 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
       language: 'zh-CN'
     })
       .then((result) => {
-        setState({
-          kind: 'result',
-          verdict: result.verdict,
-          transcript: result.recognized,
-          score: Math.round(result.pronunciationScore)
-        });
+        setState({ kind: 'result', result });
         onSubmit?.({ wasCorrect: result.verdict !== 'mismatch' });
       })
       .catch((err) => {
@@ -873,20 +870,19 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
           )}
 
           {supported && state.kind === 'result' && (
-            <div className={`fc4-pronunciation-result fc4-pronunciation-result--${state.verdict}`}>
+            <div className={`fc4-pronunciation-result fc4-pronunciation-result--${state.result.verdict}`}>
               <div className="fc4-pronunciation-verdict">
-                {state.verdict === 'match'
+                {state.result.verdict === 'match'
                   ? language === 'fr' ? '✓ Parfait !' : '✓ Perfect!'
-                  : state.verdict === 'close'
+                  : state.result.verdict === 'close'
                     ? language === 'fr' ? '~ Presque' : '~ Almost'
                     : language === 'fr' ? '✗ À retravailler' : '✗ Try again'}
-                <span className="fc4-pronunciation-score">{state.score}/100</span>
               </div>
-              {state.transcript && state.verdict !== 'match' && (
-                <div className="fc4-pronunciation-transcript">
-                  {language === 'fr' ? 'Entendu :' : 'Heard:'} <strong>{state.transcript}</strong>
-                </div>
-              )}
+              <PronunciationFeedback
+                result={state.result}
+                referenceText={card.hanzi}
+                language={language}
+              />
               <button
                 type="button"
                 className="fc4-pronunciation-retry"

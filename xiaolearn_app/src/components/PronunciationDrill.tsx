@@ -24,6 +24,7 @@ import {
   type AzurePronunciationResult,
   type AzureVerdict
 } from '../services/pronunciationServiceAzure';
+import PronunciationFeedback from './PronunciationFeedback';
 import { playHanziAudio } from '../utils/audio';
 import './PronunciationDrill.css';
 
@@ -352,24 +353,18 @@ const PronunciationDrill = ({
             </>
           )}
         </div>
-        {isResult && (() => {
-          const score = Math.round(state.result.pronunciationScore);
-          return (
-            <div className={`pron-drill-feedback pron-drill-feedback--${verdict}`}>
-              <div className="pron-drill-feedback-row">
-                <strong>{verdictLabel(verdict!, language)}</strong>
-                <span className={`pron-drill-score-badge pron-drill-score-badge--${verdict}`}>
-                  {score}<span className="pron-drill-score-badge-max">/100</span>
-                </span>
-              </div>
-              {state.result.recognized && verdict !== 'match' && (
-                <span className="pron-drill-transcript">
-                  {copy.heard} {state.result.recognized}
-                </span>
-              )}
+        {isResult && (
+          <div className={`pron-drill-feedback pron-drill-feedback--${verdict}`}>
+            <div className="pron-drill-feedback-verdict">
+              <strong>{verdictLabel(verdict!, language)}</strong>
             </div>
-          );
-        })()}
+            <PronunciationFeedback
+              result={state.result}
+              referenceText={current.hanzi}
+              language={language}
+            />
+          </div>
+        )}
         {state.kind === 'error' && (
           <div className="pron-drill-feedback pron-drill-feedback--mismatch">
             {state.message}
