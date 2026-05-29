@@ -5,6 +5,10 @@
  * l'utilisateur prononce chaque mot vocabulaire, on lui dit s'il est bon
  * ou pas, et on affiche un score à la fin.
  *
+ * Migration de Web Speech vers Azure Speech Pronunciation Assessment :
+ * feedback riche (score 0-100 + accuracy/fluency/completeness) et marche
+ * sur Safari + sur les hanzi uniques (Web Speech zh-CN les ratait).
+ *
  * Usage :
  *   <PronunciationDrill
  *     items={[{ hanzi: '你好', pinyin: 'nǐ hǎo' }, …]}
@@ -14,12 +18,12 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import {
-  isPronunciationSupported,
-  recognize,
-  PronunciationAbortedError,
-  type PronunciationResult,
-  type PronunciationVerdict
-} from '../services/pronunciationService';
+  isAzureSpeechSupported,
+  recognizeWithAzure,
+  AzureSpeechAbortedError,
+  type AzurePronunciationResult,
+  type AzureVerdict
+} from '../services/pronunciationServiceAzure';
 import { playHanziAudio } from '../utils/audio';
 import './PronunciationDrill.css';
 
@@ -44,7 +48,7 @@ const COPY = {
     title: '🎙️ Teste ta prononciation',
     subtitle: "Écoute le modèle, puis prononce le mot. Bonus : pas obligatoire pour valider la leçon.",
     notSupported:
-      "Ton navigateur ne supporte pas la reconnaissance vocale. Essaie Chrome, Edge ou Safari récent.",
+      "Ton navigateur ne supporte pas l'enregistrement audio. Essaie Chrome, Edge ou Safari récent.",
     start: 'Commencer',
     listenModel: 'Écouter',
     record: 'Prononcer',
@@ -58,12 +62,14 @@ const COPY = {
     summary: (ok: number, total: number) =>
       `Tu as bien prononcé ${ok} mot${ok > 1 ? 's' : ''} sur ${total}.`,
     restart: 'Refaire',
-    verdictMatch: 'Parfait !',
-    verdictClose: 'Presque…',
-    verdictMismatch: 'On retente ?',
-    errNoSpeech: "On n'a rien entendu — réessaie en parlant plus fort, plus près du micro",
-    errTimeout: "Trop long sans son — clique sur le micro et parle dans la foulée",
+    verdictMatch: 'Excellent !',
+    verdictClose: 'Bien, on affine ?',
+    verdictMismatch: 'À retravailler',
+    heard: 'Entendu :',
+    score: 'Score',
+    errNoSpeech: "On n'a rien entendu — réessaie en parlant plus fort",
     errPermission: 'Permission micro refusée. Active-la dans les réglages du navigateur.',
+    errAuth: 'Connecte-toi pour tester ta prononciation.',
     errGeneric: 'Erreur de reconnaissance. Réessaie ?'
   },
   en: {
@@ -71,7 +77,7 @@ const COPY = {
     subtitle:
       'Listen to the model, then say the word. Bonus: not required to complete the lesson.',
     notSupported:
-      "Your browser doesn't support speech recognition. Try a recent Chrome, Edge or Safari.",
+      "Your browser doesn't support audio recording. Try a recent Chrome, Edge or Safari.",
     start: 'Start',
     listenModel: 'Listen',
     record: 'Speak',
@@ -85,17 +91,19 @@ const COPY = {
     summary: (ok: number, total: number) =>
       `You correctly pronounced ${ok} of ${total} words.`,
     restart: 'Restart',
-    verdictMatch: 'Perfect!',
-    verdictClose: 'Almost…',
-    verdictMismatch: 'Try again?',
-    errNoSpeech: "Didn't hear anything — try again louder, closer to the mic",
-    errTimeout: 'Took too long to speak — tap the mic and start speaking right away',
+    verdictMatch: 'Excellent!',
+    verdictClose: 'Good, let’s refine?',
+    verdictMismatch: 'Needs work',
+    heard: 'Heard:',
+    score: 'Score',
+    errNoSpeech: "Didn't hear anything — try again louder",
     errPermission: 'Mic permission denied. Enable it in your browser settings.',
+    errAuth: 'Sign in to test your pronunciation.',
     errGeneric: 'Recognition error. Try again?'
   }
 };
 
-const verdictLabel = (v: PronunciationVerdict, lang: 'fr' | 'en'): string => {
+const verdictLabel = (v: AzureVerdict, lang: 'fr' | 'en'): string => {
   const c = COPY[lang];
   switch (v) {
     case 'match':
@@ -110,7 +118,7 @@ const verdictLabel = (v: PronunciationVerdict, lang: 'fr' | 'en'): string => {
 type DrillState =
   | { kind: 'idle' }
   | { kind: 'listening' }
-  | { kind: 'result'; result: PronunciationResult }
+  | { kind: 'result'; result: AzurePronunciationResult }
   | { kind: 'error'; message: string };
 
 const PronunciationDrill = ({
@@ -120,7 +128,7 @@ const PronunciationDrill = ({
   onComplete
 }: PronunciationDrillProps) => {
   const copy = COPY[language];
-  const supported = isPronunciationSupported();
+  const supported = isAzureSpeechSupported();
 
   // Dédupe les items par hanzi pour éviter le drill d'un même mot 3 fois.
   const dedupedItems = useMemo(() => {
@@ -137,7 +145,7 @@ const PronunciationDrill = ({
   const [state, setState] = useState<DrillState>({ kind: 'idle' });
   const [correctCount, setCorrectCount] = useState(0);
   // Track if user attempted current item (for show progress)
-  const [attempts, setAttempts] = useState<Record<number, PronunciationVerdict>>({});
+  const [attempts, setAttempts] = useState<Record<number, AzureVerdict>>({});
 
   const total = dedupedItems.length;
   const finished = started && index >= total;
@@ -146,8 +154,9 @@ const PronunciationDrill = ({
   // Cleanup au unmount
   useEffect(() => {
     return () => {
-      // Pas de handle stocké hors closure ; cancel via .cancel() de recognize
-      // serait nécessaire si on voulait être plus rigoureux.
+      // recognizeWithAzure ne fournit pas d'API d'annulation côté caller —
+      // les enregistrements en cours s'arrêtent d'eux-mêmes au silence ou
+      // au maxDurationMs (4s par défaut).
     };
   }, []);
 
@@ -168,16 +177,16 @@ const PronunciationDrill = ({
   const handleStartRecord = () => {
     if (!current || state.kind === 'listening') return;
     setState({ kind: 'listening' });
-    const h = recognize({
-      expectedHanzi: current.hanzi,
-      expectedPinyin: current.pinyin,
-      timeoutMs: 8000
-    });
-    h.promise
+
+    recognizeWithAzure({
+      referenceText: current.hanzi,
+      language: 'zh-CN'
+    })
       .then((result) => {
         console.log('[PronunciationDrill] result', {
           expected: current.hanzi,
-          transcript: result.transcript,
+          recognized: result.recognized,
+          score: result.pronunciationScore,
           verdict: result.verdict
         });
         setState({ kind: 'result', result });
@@ -191,15 +200,12 @@ const PronunciationDrill = ({
       })
       .catch((err) => {
         console.warn('[PronunciationDrill] recognize rejected', err);
-        if (err instanceof PronunciationAbortedError) {
-          // Distinguer "rien entendu" (onend immédiat) vs "timeout 8s"
-          const isTimeout = /timed out/i.test(err.message);
-          setState({
-            kind: 'error',
-            message: isTimeout ? copy.errTimeout : copy.errNoSpeech
-          });
-        } else if (err instanceof Error && /not-allowed|denied/i.test(err.message)) {
+        if (err instanceof AzureSpeechAbortedError) {
+          setState({ kind: 'error', message: copy.errNoSpeech });
+        } else if (err instanceof Error && /not-allowed|denied|permission/i.test(err.message)) {
           setState({ kind: 'error', message: copy.errPermission });
+        } else if (err instanceof Error && /non connect/i.test(err.message)) {
+          setState({ kind: 'error', message: copy.errAuth });
         } else {
           setState({ kind: 'error', message: copy.errGeneric });
         }
@@ -319,7 +325,7 @@ const PronunciationDrill = ({
             <button
               type="button"
               className="pron-drill-btn pron-drill-btn--danger"
-              onClick={() => setState({ kind: 'idle' })}
+              disabled
             >
               ⏹ {copy.listening}
             </button>
@@ -346,16 +352,24 @@ const PronunciationDrill = ({
             </>
           )}
         </div>
-        {isResult && (
-          <div className={`pron-drill-feedback pron-drill-feedback--${verdict}`}>
-            <strong>{verdictLabel(verdict!, language)}</strong>
-            {state.result.transcript && (
-              <span className="pron-drill-transcript">
-                {language === 'fr' ? 'Entendu :' : 'Heard:'} {state.result.transcript}
-              </span>
-            )}
-          </div>
-        )}
+        {isResult && (() => {
+          const score = Math.round(state.result.pronunciationScore);
+          return (
+            <div className={`pron-drill-feedback pron-drill-feedback--${verdict}`}>
+              <div className="pron-drill-feedback-row">
+                <strong>{verdictLabel(verdict!, language)}</strong>
+                <span className={`pron-drill-score-badge pron-drill-score-badge--${verdict}`}>
+                  {score}<span className="pron-drill-score-badge-max">/100</span>
+                </span>
+              </div>
+              {state.result.recognized && verdict !== 'match' && (
+                <span className="pron-drill-transcript">
+                  {copy.heard} {state.result.recognized}
+                </span>
+              )}
+            </div>
+          );
+        })()}
         {state.kind === 'error' && (
           <div className="pron-drill-feedback pron-drill-feedback--mismatch">
             {state.message}

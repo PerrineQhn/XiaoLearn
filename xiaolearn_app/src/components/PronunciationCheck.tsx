@@ -2,58 +2,64 @@
  * PronunciationCheck.tsx — bouton micro + feedback de prononciation.
  * ------------------------------------------------------------------
  * Compagnon du bouton 🔊 (lecture audio modèle). L'utilisateur clique sur le
- * mic, parle le hanzi, on transcrit avec la Web Speech API et on affiche un
- * verdict ✓/~/✗ + ce qu'on a entendu.
+ * mic, parle le hanzi, et on lui renvoie un score 0-100 + verdict via Azure
+ * Speech Pronunciation Assessment.
+ *
+ * Migration de Web Speech API vers Azure : Web Speech zh-CN abandonnait sur
+ * Safari et sur les hanzi uniques (utterance < 500ms). Azure gère les deux
+ * cas nativement et fournit un feedback pédagogique riche (score global,
+ * accuracy/fluency/completeness, détail par phonème).
  *
  * Usage :
  *   <PronunciationCheck hanzi="你好" pinyin="nǐ hǎo" />
  *
  * État UI :
- *   idle    → bouton micro discret
- *   listening → animation pulse, "J'écoute…"
- *   result  → ✓/~/✗ + transcription + bouton retry
- *   error   → message + bouton retry
+ *   idle       → bouton micro discret
+ *   listening  → animation pulse, "J'écoute…"
+ *   result     → badge score + verdict + détail (optionnel)
+ *   error      → message + bouton retry
  *
  * Cas d'erreur gérés :
- *   - Navigateur non supporté : bouton désactivé, tooltip explicite
- *   - Permission micro refusée : message clair + lien vers les réglages
- *   - Timeout / silence : "On n'a rien entendu, réessaye"
+ *   - Navigateur non supporté (MediaRecorder absent) : bouton désactivé
+ *   - Permission micro refusée : message clair
+ *   - Audio vide / pas de parole détectée : "On n'a rien entendu"
+ *   - Erreur réseau / Azure : message générique
  */
 
 import { useEffect, useRef, useState } from 'react';
 import {
-  isPronunciationSupported,
-  recognize,
-  PronunciationNotSupportedError,
-  PronunciationAbortedError,
-  type PronunciationResult,
-  type RecognizeHandle
-} from '../services/pronunciationService';
+  isAzureSpeechSupported,
+  recognizeWithAzure,
+  AzureSpeechNotSupportedError,
+  AzureSpeechAbortedError,
+  type AzurePronunciationResult,
+  type AzureVerdict
+} from '../services/pronunciationServiceAzure';
 import './PronunciationCheck.css';
 
 export interface PronunciationCheckProps {
   /** Hanzi attendu (ex: "你好"). */
   hanzi: string;
-  /** Pinyin attendu (ex: "nǐ hǎo"), utile en fallback de comparaison. */
+  /** Pinyin attendu (ex: "nǐ hǎo"), affiché en cas d'erreur — non utilisé pour Azure. */
   pinyin?: string;
   /** Taille du bouton (px). Défaut 32. */
   size?: number;
-  /** Affiche la transcription complète dans une bulle sous le bouton. */
+  /** Affiche la transcription + score complet dans une bulle sous le bouton. */
   showFeedback?: boolean;
   /** Texte d'aria-label personnalisé (sinon "Tester ma prononciation"). */
   ariaLabel?: string;
   /** Callback optionnel quand un verdict est obtenu (pour stats). */
-  onResult?: (result: PronunciationResult) => void;
+  onResult?: (result: AzurePronunciationResult) => void;
   className?: string;
 }
 
 type UiState =
   | { kind: 'idle' }
   | { kind: 'listening' }
-  | { kind: 'result'; result: PronunciationResult }
+  | { kind: 'result'; result: AzurePronunciationResult }
   | { kind: 'error'; message: string };
 
-const verdictEmoji = (v: PronunciationResult['verdict']): string => {
+const verdictEmoji = (v: AzureVerdict): string => {
   switch (v) {
     case 'match':
       return '✓';
@@ -64,9 +70,31 @@ const verdictEmoji = (v: PronunciationResult['verdict']): string => {
   }
 };
 
+/**
+ * Classe CSS pour la couleur du badge de score selon le score 0-100.
+ * - or  ≥ 90 : excellent
+ * - vert ≥ 70 : bien
+ * - ambre ≥ 50 : bof
+ * - rouge < 50 : à retravailler
+ */
+function scoreBadgeClass(score: number): string {
+  if (score >= 90) return 'pron-check-score--gold';
+  if (score >= 70) return 'pron-check-score--green';
+  if (score >= 50) return 'pron-check-score--amber';
+  return 'pron-check-score--red';
+}
+
+/** Label court pour le score. */
+function scoreLabel(score: number): string {
+  if (score >= 90) return 'Excellent';
+  if (score >= 70) return 'Bien';
+  if (score >= 50) return 'Bof';
+  return 'À retravailler';
+}
+
 const PronunciationCheck = ({
   hanzi,
-  pinyin,
+  pinyin: _pinyin,
   size = 32,
   showFeedback = true,
   ariaLabel,
@@ -74,30 +102,35 @@ const PronunciationCheck = ({
   className
 }: PronunciationCheckProps) => {
   const [state, setState] = useState<UiState>({ kind: 'idle' });
-  const handleRef = useRef<RecognizeHandle | null>(null);
-  const supported = isPronunciationSupported();
+  // AbortController pour annuler proprement l'enregistrement en cours
+  const abortRef = useRef<AbortController | null>(null);
+  const supported = isAzureSpeechSupported();
 
   // Cleanup à l'unmount : si on est en train d'écouter, on annule
   useEffect(() => {
     return () => {
-      handleRef.current?.cancel();
+      abortRef.current?.abort();
     };
   }, []);
+
+  // Reset quand le hanzi change
+  useEffect(() => {
+    setState({ kind: 'idle' });
+  }, [hanzi]);
 
   const handleStart = () => {
     if (!supported || state.kind === 'listening') return;
     setState({ kind: 'listening' });
-    const h = recognize({
-      expectedHanzi: hanzi,
-      expectedPinyin: pinyin,
-      timeoutMs: 8000
-    });
-    handleRef.current = h;
-    h.promise
+
+    recognizeWithAzure({
+      referenceText: hanzi,
+      language: 'zh-CN'
+    })
       .then((result) => {
         console.log('[PronunciationCheck] result', {
           expected: hanzi,
-          transcript: result.transcript,
+          recognized: result.recognized,
+          score: result.pronunciationScore,
           verdict: result.verdict
         });
         setState({ kind: 'result', result });
@@ -105,41 +138,55 @@ const PronunciationCheck = ({
       })
       .catch((err) => {
         console.warn('[PronunciationCheck] recognize rejected', err);
-        if (err instanceof PronunciationNotSupportedError) {
+        if (err instanceof AzureSpeechNotSupportedError) {
           setState({
             kind: 'error',
-            message: 'Reconnaissance vocale non supportée par ce navigateur.'
+            message: 'Reconnaissance non supportée par ce navigateur.'
           });
-        } else if (err instanceof PronunciationAbortedError) {
+        } else if (err instanceof AzureSpeechAbortedError) {
+          // Distinguer les raisons connues côté Azure
+          const msg = err.message || '';
+          if (/InitialSilence/i.test(msg) || /Pas de son/i.test(msg)) {
+            setState({
+              kind: 'error',
+              message: "On n'a rien entendu — réessaie en parlant plus fort."
+            });
+          } else if (/NoMatch/i.test(msg) || /Aucune parole/i.test(msg)) {
+            setState({
+              kind: 'error',
+              message: 'Parole non reconnue — réessaie en articulant.'
+            });
+          } else {
+            setState({
+              kind: 'error',
+              message: msg || "On n'a rien entendu, réessaie."
+            });
+          }
+        } else if (err instanceof Error && /not-allowed|denied|permission/i.test(err.message)) {
           setState({
             kind: 'error',
-            message:
-              err.message === 'Recognition timed out'
-                ? 'Trop long sans son — réessaie en parlant plus vite.'
-                : "On n'a rien entendu, réessaie."
+            message: 'Permission micro refusée. Active-la dans les réglages.'
           });
-        } else if (err instanceof Error && /not-allowed|denied/i.test(err.message)) {
+        } else if (err instanceof Error && /non connect/i.test(err.message)) {
           setState({
             kind: 'error',
-            message: 'Permission micro refusée. Active-la dans les réglages du navigateur.'
+            message: 'Connecte-toi pour tester ta prononciation.'
           });
         } else {
           setState({
             kind: 'error',
             message:
               err instanceof Error
-                ? `Erreur : ${err.message}`
-                : 'Erreur inconnue lors de la reconnaissance.'
+                ? `Erreur : ${err.message.slice(0, 80)}`
+                : 'Erreur de reconnaissance.'
           });
         }
-      })
-      .finally(() => {
-        handleRef.current = null;
       });
   };
 
   const handleCancel = () => {
-    handleRef.current?.cancel();
+    abortRef.current?.abort();
+    abortRef.current = null;
     setState({ kind: 'idle' });
   };
 
@@ -161,13 +208,14 @@ const PronunciationCheck = ({
     if (disabled) return 'Reconnaissance vocale non supportée par ce navigateur';
     if (isListening) return 'Cliquer pour annuler';
     if (state.kind === 'result') {
+      const score = Math.round(state.result.pronunciationScore);
       switch (state.result.verdict) {
         case 'match':
-          return `✓ Parfait — clique pour réessayer`;
+          return `✓ ${scoreLabel(score)} (${score}/100) — clique pour réessayer`;
         case 'close':
-          return `~ Presque (entendu : "${state.result.transcript || '?'}") — clique pour réessayer`;
+          return `~ ${scoreLabel(score)} (${score}/100, entendu : "${state.result.recognized || '?'}") — clique pour réessayer`;
         case 'mismatch':
-          return `✗ Pas tout à fait (entendu : "${state.result.transcript || '?'}") — clique pour réessayer`;
+          return `✗ ${scoreLabel(score)} (${score}/100, entendu : "${state.result.recognized || '?'}") — clique pour réessayer`;
       }
     }
     if (state.kind === 'error') {
@@ -237,27 +285,38 @@ const PronunciationCheck = ({
       {showFeedback && state.kind === 'listening' && (
         <span className="pron-check-status">J'écoute…</span>
       )}
-      {showFeedback && state.kind === 'result' && (
-        <span
-          className="pron-check-status"
-          aria-live="polite"
-          onClick={handleReset}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') handleReset();
-          }}
-        >
-          <span className="pron-check-verdict" aria-hidden="true">
-            {verdictEmoji(state.result.verdict)}
+      {showFeedback && state.kind === 'result' && (() => {
+        const score = Math.round(state.result.pronunciationScore);
+        const badgeClass = scoreBadgeClass(score);
+        return (
+          <span
+            className="pron-check-status"
+            aria-live="polite"
+            onClick={handleReset}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') handleReset();
+            }}
+          >
+            <span
+              className={`pron-check-score ${badgeClass}`}
+              aria-hidden="true"
+            >
+              {score}
+            </span>
+            <span className="pron-check-score-label">{scoreLabel(score)}</span>
+            {state.result.recognized && state.result.verdict !== 'match' && (
+              <span className="pron-check-heard">
+                · entendu : <em>{state.result.recognized}</em>
+              </span>
+            )}
+            <span className="pron-check-verdict-icon" aria-hidden="true">
+              {verdictEmoji(state.result.verdict)}
+            </span>
           </span>
-          {state.result.verdict === 'match'
-            ? 'Parfait !'
-            : state.result.transcript
-              ? `Entendu : ${state.result.transcript}`
-              : 'Mismatch'}
-        </span>
-      )}
+        );
+      })()}
       {showFeedback && state.kind === 'error' && (
         <span
           className="pron-check-status pron-check-error"

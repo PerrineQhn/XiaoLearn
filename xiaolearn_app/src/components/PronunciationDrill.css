@@ -190,6 +190,41 @@
   color: var(--primary-red, #e05040);
 }
 
+/* ----- Feedback row : verdict + score badge sur la même ligne ----- */
+.pron-drill-feedback-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pron-drill-score-badge {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: rgba(255, 255, 255, 0.75);
+}
+.pron-drill-score-badge-max {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+.pron-drill-score-badge--match {
+  color: #1f6a4b;
+}
+.pron-drill-score-badge--close {
+  color: #92500e;
+}
+.pron-drill-score-badge--mismatch {
+  color: var(--primary-red, #e05040);
+}
+
 /* ----- Écran de fin (résumé) ----- */
 .pron-drill--summary {
   text-align: center;

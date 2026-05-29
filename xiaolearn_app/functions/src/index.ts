@@ -43,6 +43,9 @@ setGlobalOptions({ region: 'europe-west1', maxInstances: 10 });
 export { geminiProxy } from './geminiProxy';
 // Proxy TTS Gemini : fallback quand audio Azure absent (cf. geminiTtsProxy.ts).
 export { geminiTtsProxy } from './geminiTtsProxy';
+// Proxy Azure Speech Pronunciation Assessment : reconnaissance vocale +
+// scoring pédagogique pour le drill de prononciation (cf. azureSpeechProxy.ts).
+export { azureSpeechProxy } from './azureSpeechProxy';
 
 // ---------------------------------------------------------------------------
 // CORS helper : nos requêtes viennent de app.xiaolearn.com (origin cross-domain
