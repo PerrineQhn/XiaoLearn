@@ -27,9 +27,10 @@ import type { FlashcardDirection } from '../../types/flashcard-v3';
 import { playHanziAudio, preloadHanziAudio } from '../../utils/audio';
 import PronunciationCheck from '../PronunciationCheck';
 import {
-  isPronunciationSupported as pronunciationSupported,
-  recognize as pronunciationRecognize
-} from '../../services/pronunciationService';
+  isAzureSpeechSupported as pronunciationSupported,
+  recognizeWithAzure as pronunciationRecognize,
+  AzureSpeechAbortedError
+} from '../../services/pronunciationServiceAzure';
 import HanziWriterPad, {
   type HanziWriterQuizStats
 } from '../HanziWriterPad';
@@ -709,7 +710,7 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
   const [state, setState] = useState<
     | { kind: 'idle' }
     | { kind: 'listening' }
-    | { kind: 'result'; verdict: 'match' | 'close' | 'mismatch'; transcript: string }
+    | { kind: 'result'; verdict: 'match' | 'close' | 'mismatch'; transcript: string; score: number }
     | { kind: 'error'; message: string }
   >({ kind: 'idle' });
 
@@ -728,25 +729,37 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
     if (!supported || state.kind === 'listening') return;
     setState({ kind: 'listening' });
     onReveal();
-    const h = pronunciationRecognize({
-      expectedHanzi: card.hanzi,
-      expectedPinyin: card.pinyin,
-      timeoutMs: 8000
-    });
-    h.promise
+    pronunciationRecognize({
+      referenceText: card.hanzi,
+      language: 'zh-CN'
+    })
       .then((result) => {
         setState({
           kind: 'result',
           verdict: result.verdict,
-          transcript: result.transcript
+          transcript: result.recognized,
+          score: Math.round(result.pronunciationScore)
         });
         onSubmit?.({ wasCorrect: result.verdict !== 'mismatch' });
       })
       .catch((err) => {
-        const msg =
-          err && typeof err === 'object' && 'message' in err
-            ? String((err as { message: unknown }).message)
-            : 'Erreur';
+        let msg: string;
+        if (err instanceof AzureSpeechAbortedError) {
+          msg =
+            language === 'fr'
+              ? "On n'a rien entendu, réessaie."
+              : "Didn't hear anything, try again.";
+        } else if (err instanceof Error && /not-allowed|denied|permission/i.test(err.message)) {
+          msg =
+            language === 'fr'
+              ? 'Permission micro refusée.'
+              : 'Mic permission denied.';
+        } else {
+          msg =
+            err && typeof err === 'object' && 'message' in err
+              ? String((err as { message: unknown }).message)
+              : 'Erreur';
+        }
         setState({ kind: 'error', message: msg });
       });
   };
@@ -867,8 +880,9 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
                   : state.verdict === 'close'
                     ? language === 'fr' ? '~ Presque' : '~ Almost'
                     : language === 'fr' ? '✗ À retravailler' : '✗ Try again'}
+                <span className="fc4-pronunciation-score">{state.score}/100</span>
               </div>
-              {state.transcript && (
+              {state.transcript && state.verdict !== 'match' && (
                 <div className="fc4-pronunciation-transcript">
                   {language === 'fr' ? 'Entendu :' : 'Heard:'} <strong>{state.transcript}</strong>
                 </div>
