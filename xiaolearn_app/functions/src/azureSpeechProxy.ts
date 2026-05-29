@@ -91,7 +91,12 @@ export const azureSpeechProxy = onRequest(
       return;
     }
 
-    const { audioBase64, referenceText, language = 'zh-CN' } = req.body ?? {};
+    const {
+      audioBase64,
+      audioMimeType,
+      referenceText,
+      language = 'zh-CN'
+    } = req.body ?? {};
     if (typeof audioBase64 !== 'string' || !audioBase64) {
       res.status(400).json({ error: 'audioBase64 required' });
       return;
@@ -138,15 +143,31 @@ export const azureSpeechProxy = onRequest(
     const region = AZURE_SPEECH_REGION.value();
     const url = `https://${region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(language)}&format=detailed`;
 
+    // Azure Speech REST accepte : audio/wav, audio/ogg;codecs=opus,
+    // audio/webm;codecs=opus. Safari peut produire audio/mp4 (AAC) — non
+    // supporté. On envoie le format reçu si dans la liste, sinon webm/opus
+    // par défaut (le cas Chrome/Edge/Firefox).
+    const rawMime = typeof audioMimeType === 'string' ? audioMimeType.toLowerCase() : '';
+    let azureContentType = 'audio/webm; codecs=opus';
+    if (rawMime.includes('webm')) {
+      azureContentType = 'audio/webm; codecs=opus';
+    } else if (rawMime.includes('ogg')) {
+      azureContentType = 'audio/ogg; codecs=opus';
+    } else if (rawMime.includes('wav')) {
+      azureContentType = 'audio/wav';
+    } else if (rawMime) {
+      // Format inattendu (audio/mp4 sur Safari). Log et tente quand même
+      // en webm — Azure renverra une erreur claire si refusé.
+      logger.warn('azureSpeechProxy: unexpected audio mime', { rawMime });
+    }
+
     try {
       const azureResp = await fetch(url, {
         method: 'POST',
         headers: {
           'Ocp-Apim-Subscription-Key': AZURE_SPEECH_KEY.value(),
           'Pronunciation-Assessment': pronAssessmentHeader,
-          // Le client envoie du WebM/Opus que MediaRecorder produit par
-          // défaut. Azure accepte ce format en input.
-          'Content-Type': 'audio/webm; codecs=opus',
+          'Content-Type': azureContentType,
           'Accept': 'application/json'
         },
         // Le runtime undici accepte parfaitement un Buffer/Uint8Array,
@@ -173,6 +194,16 @@ export const azureSpeechProxy = onRequest(
         res.status(502).json({ error: 'azure response not JSON' });
         return;
       }
+
+      // Log Azure raw response pour debug pendant la phase rodage
+      logger.info('azureSpeechProxy: Azure response', {
+        status: json.RecognitionStatus,
+        displayText: json.DisplayText,
+        nbestFirstDisplay: json.NBest?.[0]?.Display,
+        nbestFirstLexical: json.NBest?.[0]?.Lexical,
+        nbestFirstPronScore: json.NBest?.[0]?.PronunciationAssessment?.PronScore,
+        audioBytes: audioBytes.length
+      });
 
       // Azure renvoie soit RecognitionStatus=Success avec NBest contenant
       // PronunciationAssessment, soit NoMatch/InitialSilenceTimeout/etc.
@@ -208,13 +239,29 @@ export const azureSpeechProxy = onRequest(
         }))
       }));
 
+      // Pour le chinois : préférer `Lexical` (forme brute sans ponctuation)
+      // sur `Display` qui contient 。， etc. Sur un audio court ou peu clair
+      // Azure peut renvoyer juste "。" dans Display → on aurait affiché
+      // "Entendu : ." côté UI sans aucune valeur pédagogique.
+      // Filtre aussi les sorties vides ou ponctuation-only.
+      const rawRecognized =
+        (nbest.Lexical as string | undefined) ??
+        (nbest.Display as string | undefined) ??
+        '';
+      // Strip ponctuation chinoise + ASCII et espaces — si le résultat est
+      // vide, c'est qu'il n'y avait pas de vraie reconnaissance.
+      const cleanedRecognized = rawRecognized
+        .replace(/[。，、；：？！.,;:?!\s]/g, '')
+        .trim();
+      const recognized = cleanedRecognized.length > 0 ? cleanedRecognized : '';
+
       res.json({
         ok: true,
         accuracyScore: pa?.AccuracyScore ?? 0,
         pronunciationScore: pa?.PronScore ?? pa?.PronunciationScore ?? 0,
         fluencyScore: pa?.FluencyScore ?? 0,
         completenessScore: pa?.CompletenessScore ?? 0,
-        recognized: nbest.Display ?? nbest.Lexical ?? '',
+        recognized,
         words
       });
     } catch (err) {

@@ -230,6 +230,10 @@ export async function recognizeWithAzure(
 
   const blob = await recordAudio({ maxDurationMs: opts.maxDurationMs });
   const audioBase64 = await blobToBase64(blob);
+  // blob.type est ex. "audio/webm;codecs=opus" sur Chrome,
+  // "audio/mp4" sur Safari → on l'envoie au serveur pour qu'il bascule le
+  // bon Content-Type vers Azure (qui supporte les deux formats).
+  const audioMimeType = blob.type || 'audio/webm';
 
   const resp = await fetch(PROXY_URL, {
     method: 'POST',
@@ -239,6 +243,7 @@ export async function recognizeWithAzure(
     },
     body: JSON.stringify({
       audioBase64,
+      audioMimeType,
       referenceText: opts.referenceText,
       language: opts.language ?? 'zh-CN'
     })
