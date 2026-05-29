@@ -207,14 +207,15 @@ export const azureSpeechProxy = onRequest(
         displayText: json.DisplayText,
         nbestFirstDisplay: json.NBest?.[0]?.Display,
         nbestFirstLexical: json.NBest?.[0]?.Lexical,
-        nbestFirstPronScore: json.NBest?.[0]?.PronunciationAssessment?.PronScore,
-        nbestFirstAccuracy: json.NBest?.[0]?.PronunciationAssessment?.AccuracyScore,
+        nbestFirstPronScore: json.NBest?.[0]?.PronScore,
+        nbestFirstAccuracy: json.NBest?.[0]?.AccuracyScore,
+        nbestFirstFluency: json.NBest?.[0]?.FluencyScore,
+        nbestFirstCompleteness: json.NBest?.[0]?.CompletenessScore,
         hasNBest: Array.isArray(json.NBest),
         nbestLen: json.NBest?.length,
         audioBytes: audioBytes.length,
         contentType: azureContentType,
-        receivedMime: rawMime,
-        rawAzureResponse: text.slice(0, 600)
+        receivedMime: rawMime
       });
 
       // Azure renvoie soit RecognitionStatus=Success avec NBest contenant
@@ -240,7 +241,14 @@ export const azureSpeechProxy = onRequest(
         return;
       }
 
-      const pa = nbest.PronunciationAssessment;
+      // ⚠ Bug initial : Azure place les scores DIRECTEMENT sur nbest
+      // (nbest.PronScore, nbest.AccuracyScore, etc.) — pas dans un sous-
+      // objet `PronunciationAssessment`. Avant ce fix on lisait
+      // `nbest.PronunciationAssessment?.PronScore` qui était `undefined`,
+      // donc le score global tombait toujours sur 0 alors que les
+      // per-character syllabes étaient correctement extraites. Résultat :
+      // affichage incohérent type "À retravailler (0) — 谢[95] 谢[97]".
+      const pa = nbest.PronunciationAssessment ?? nbest;
       // Azure renvoie pour chaque "Word" : un score global, un ErrorType,
       // les Syllables (par hanzi pour les mots multi-caractères) et les
       // Phonemes (par initiale/finale/ton type "qing 3"). On expose les 3
