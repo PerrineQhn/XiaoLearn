@@ -130,17 +130,17 @@ export const azureSpeechProxy = onRequest(
     // Configure Pronunciation Assessment headers
     // Doc : https://learn.microsoft.com/azure/ai-services/speech-service/how-to-pronunciation-assessment
     //
-    // EnableMiscue: false — sinon Azure est ultra strict sur les hanzi
-    // isolés à ton 3 ("请", durée 0.4s) et score systématiquement 0
-    // avec ErrorType: "Mispronunciation". Sans Miscue, le scoring reste
-    // basé sur AccuracyScore phonémique mais sans pénalité d'alignement
-    // strict. Marche mieux pour les apprenants débutants.
+    // EnableMiscue: true — vérifié sur les vrais tests : 谢谢 → 97.6,
+    // 不客气 → 98.8. Le tentative de passer à `false` pour relâcher la
+    // sévérité sur les mono-hanzi a régressé tout le scoring à 0.
+    // Microsoft n'est pas clair sur ce que fait `false` mais empiriquement
+    // ça casse l'alignement référence/audio.
     const pronAssessmentConfig = {
       ReferenceText: referenceText,
       GradingSystem: 'HundredMark',
       Granularity: 'Phoneme',
       Dimension: 'Comprehensive',
-      EnableMiscue: false
+      EnableMiscue: true
     };
     const pronAssessmentHeader = Buffer.from(
       JSON.stringify(pronAssessmentConfig)
@@ -201,7 +201,8 @@ export const azureSpeechProxy = onRequest(
         return;
       }
 
-      // Log Azure raw response pour debug pendant la phase rodage
+      // Log Azure raw response pour debug — on garde rawAzureResponse pour
+      // voir exactement ce qu'Azure renvoie en cas de régression.
       logger.info('azureSpeechProxy: Azure response', {
         status: json.RecognitionStatus,
         displayText: json.DisplayText,
@@ -215,7 +216,8 @@ export const azureSpeechProxy = onRequest(
         nbestLen: json.NBest?.length,
         audioBytes: audioBytes.length,
         contentType: azureContentType,
-        receivedMime: rawMime
+        receivedMime: rawMime,
+        rawAzureResponse: text.slice(0, 800)
       });
 
       // Azure renvoie soit RecognitionStatus=Success avec NBest contenant
@@ -241,14 +243,11 @@ export const azureSpeechProxy = onRequest(
         return;
       }
 
-      // ⚠ Bug initial : Azure place les scores DIRECTEMENT sur nbest
-      // (nbest.PronScore, nbest.AccuracyScore, etc.) — pas dans un sous-
-      // objet `PronunciationAssessment`. Avant ce fix on lisait
-      // `nbest.PronunciationAssessment?.PronScore` qui était `undefined`,
-      // donc le score global tombait toujours sur 0 alors que les
-      // per-character syllabes étaient correctement extraites. Résultat :
-      // affichage incohérent type "À retravailler (0) — 谢[95] 谢[97]".
-      const pa = nbest.PronunciationAssessment ?? nbest;
+      // Azure place les scores DIRECTEMENT sur nbest (nbest.PronScore,
+      // nbest.AccuracyScore, etc.) — pas dans un sous-objet
+      // `PronunciationAssessment`. Empiriquement vérifié sur les vraies
+      // réponses : "PronScore":97.6,"AccuracyScore":96.0,"FluencyScore":100.0,
+      // "CompletenessScore":100.0 directement au niveau nbest[0].
       // Azure renvoie pour chaque "Word" : un score global, un ErrorType,
       // les Syllables (par hanzi pour les mots multi-caractères) et les
       // Phonemes (par initiale/finale/ton type "qing 3"). On expose les 3
@@ -286,10 +285,10 @@ export const azureSpeechProxy = onRequest(
 
       res.json({
         ok: true,
-        accuracyScore: pa?.AccuracyScore ?? 0,
-        pronunciationScore: pa?.PronScore ?? pa?.PronunciationScore ?? 0,
-        fluencyScore: pa?.FluencyScore ?? 0,
-        completenessScore: pa?.CompletenessScore ?? 0,
+        accuracyScore: nbest.AccuracyScore ?? 0,
+        pronunciationScore: nbest.PronScore ?? nbest.PronunciationScore ?? 0,
+        fluencyScore: nbest.FluencyScore ?? 0,
+        completenessScore: nbest.CompletenessScore ?? 0,
         recognized,
         words
       });
