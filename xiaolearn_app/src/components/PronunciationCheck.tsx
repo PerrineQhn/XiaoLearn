@@ -95,10 +95,16 @@ const PronunciationCheck = ({
     handleRef.current = h;
     h.promise
       .then((result) => {
+        console.log('[PronunciationCheck] result', {
+          expected: hanzi,
+          transcript: result.transcript,
+          verdict: result.verdict
+        });
         setState({ kind: 'result', result });
         onResult?.(result);
       })
       .catch((err) => {
+        console.warn('[PronunciationCheck] recognize rejected', err);
         if (err instanceof PronunciationNotSupportedError) {
           setState({
             kind: 'error',
