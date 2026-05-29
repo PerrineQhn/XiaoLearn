@@ -915,7 +915,25 @@ const InlineReading = ({
       <div className="lv2-inline-segments">
         {reading.segments.map((seg, i) => (
           <div key={i} className="lv2-inline-segment">
-            <div className="lv2-inline-hanzi">{seg.hanzi}</div>
+            <div className="lv2-inline-hanzi-row">
+              <div className="lv2-inline-hanzi">{seg.hanzi}</div>
+              {/* Bouton audio par segment — même pattern qu'InlineDialogue.
+                  playHanziAudio résout d'abord le MP3 inline (seg.audioUrl si
+                  fourni) puis tombe sur la résolution par hash hanzi. */}
+              <button
+                type="button"
+                className="lv2-inline-audio"
+                aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
+                title={language === 'en' ? 'Play audio' : 'Écouter'}
+                onClick={() => {
+                  playHanziAudio(seg.hanzi, (seg as { audioUrl?: string }).audioUrl).catch(() => {
+                    /* silent : pas d'audio dispo pour ce segment */
+                  });
+                }}
+              >
+                🔊
+              </button>
+            </div>
             {showPinyin && <div className="lv2-inline-pinyin">{seg.pinyin}</div>}
             {showTranslation && (
               <div className="lv2-inline-translation">
