@@ -207,6 +207,117 @@ function blobToBase64(blob: Blob): Promise<string> {
   });
 }
 
+/**
+ * Convertit un blob WebM/Opus (ou autre format MediaRecorder) en WAV PCM
+ * 16 kHz mono. Azure Speech REST a un meilleur support du WAV que du
+ * WebM/Opus, et certains conteneurs MediaRecorder font échouer son décodage
+ * (transcription "." sans scoring de prononciation).
+ *
+ * Étapes :
+ *   1. decodeAudioData() — décode le conteneur en AudioBuffer float32
+ *   2. resample à 16 kHz si nécessaire (Azure attend 16 kHz)
+ *   3. downmix stéréo → mono en moyennant les canaux
+ *   4. quantize float32 → int16 PCM
+ *   5. emballe dans un header WAV (44 bytes) + payload
+ */
+async function blobToWav16kMono(blob: Blob): Promise<Blob> {
+  const arrayBuffer = await blob.arrayBuffer();
+  // AudioContext peut être créé à n'importe quel sample rate pour le décodage,
+  // mais ses sorties seront à ce taux. On crée à 16 kHz pour bénéficier du
+  // resampling natif du navigateur.
+  const Ctx =
+    (window.AudioContext as typeof AudioContext) ||
+    ((window as any).webkitAudioContext as typeof AudioContext);
+  // Certains navigateurs (Safari) n'acceptent pas un sampleRate custom au
+  // constructeur. On fallback sur le sampleRate par défaut puis resample
+  // manuellement.
+  let audioCtx: AudioContext;
+  try {
+    audioCtx = new Ctx({ sampleRate: 16000 });
+  } catch {
+    audioCtx = new Ctx();
+  }
+
+  // decodeAudioData copie le buffer en interne, on peut le passer tel quel
+  const decoded = await audioCtx.decodeAudioData(arrayBuffer.slice(0));
+
+  // Downmix mono
+  const channels = decoded.numberOfChannels;
+  const length = decoded.length;
+  const inputMono = new Float32Array(length);
+  if (channels === 1) {
+    inputMono.set(decoded.getChannelData(0));
+  } else {
+    const ch0 = decoded.getChannelData(0);
+    const ch1 = decoded.getChannelData(1);
+    for (let i = 0; i < length; i++) {
+      inputMono[i] = (ch0[i] + ch1[i]) / 2;
+    }
+  }
+
+  // Resample à 16 kHz si besoin (interpolation linéaire — suffisant pour STT)
+  const targetRate = 16000;
+  let resampled: Float32Array;
+  if (decoded.sampleRate === targetRate) {
+    resampled = inputMono;
+  } else {
+    const ratio = decoded.sampleRate / targetRate;
+    const newLen = Math.floor(length / ratio);
+    resampled = new Float32Array(newLen);
+    for (let i = 0; i < newLen; i++) {
+      const srcIdx = i * ratio;
+      const idx0 = Math.floor(srcIdx);
+      const idx1 = Math.min(idx0 + 1, length - 1);
+      const frac = srcIdx - idx0;
+      resampled[i] = inputMono[idx0] * (1 - frac) + inputMono[idx1] * frac;
+    }
+  }
+
+  try {
+    audioCtx.close();
+  } catch {
+    /* noop */
+  }
+
+  // Quantize Float32 [-1,1] → Int16 PCM
+  const pcm = new Int16Array(resampled.length);
+  for (let i = 0; i < resampled.length; i++) {
+    const s = Math.max(-1, Math.min(1, resampled[i]));
+    pcm[i] = s < 0 ? s * 0x8000 : s * 0x7fff;
+  }
+
+  // Construit le header WAV (44 bytes) + payload PCM
+  const dataSize = pcm.length * 2;
+  const buffer = new ArrayBuffer(44 + dataSize);
+  const view = new DataView(buffer);
+  // "RIFF"
+  view.setUint8(0, 0x52); view.setUint8(1, 0x49); view.setUint8(2, 0x46); view.setUint8(3, 0x46);
+  view.setUint32(4, 36 + dataSize, true);
+  // "WAVE"
+  view.setUint8(8, 0x57); view.setUint8(9, 0x41); view.setUint8(10, 0x56); view.setUint8(11, 0x45);
+  // "fmt "
+  view.setUint8(12, 0x66); view.setUint8(13, 0x6d); view.setUint8(14, 0x74); view.setUint8(15, 0x20);
+  view.setUint32(16, 16, true); // PCM chunk size
+  view.setUint16(20, 1, true); // PCM format
+  view.setUint16(22, 1, true); // mono
+  view.setUint32(24, targetRate, true);
+  view.setUint32(28, targetRate * 2, true); // byte rate
+  view.setUint16(32, 2, true); // block align
+  view.setUint16(34, 16, true); // bits per sample
+  // "data"
+  view.setUint8(36, 0x64); view.setUint8(37, 0x61); view.setUint8(38, 0x74); view.setUint8(39, 0x61);
+  view.setUint32(40, dataSize, true);
+  // Payload
+  const pcmBytes = new Uint8Array(buffer, 44);
+  const pcmView = new DataView(pcm.buffer);
+  for (let i = 0; i < pcm.length; i++) {
+    pcmBytes[i * 2] = pcmView.getUint8(i * 2);
+    pcmBytes[i * 2 + 1] = pcmView.getUint8(i * 2 + 1);
+  }
+
+  return new Blob([buffer], { type: 'audio/wav' });
+}
+
 export interface AzureRecognizeOptions {
   referenceText: string;
   language?: string;
@@ -228,12 +339,20 @@ export async function recognizeWithAzure(
   }
   const token = await user.getIdToken();
 
-  const blob = await recordAudio({ maxDurationMs: opts.maxDurationMs });
-  const audioBase64 = await blobToBase64(blob);
-  // blob.type est ex. "audio/webm;codecs=opus" sur Chrome,
-  // "audio/mp4" sur Safari → on l'envoie au serveur pour qu'il bascule le
-  // bon Content-Type vers Azure (qui supporte les deux formats).
-  const audioMimeType = blob.type || 'audio/webm';
+  const rawBlob = await recordAudio({ maxDurationMs: opts.maxDurationMs });
+  // Conversion en WAV PCM 16 kHz mono. Sans ça, Azure renvoie "Success"
+  // mais avec une transcription "." et sans scoring de prononciation
+  // (incompatibilité du WebM produit par MediaRecorder avec le décodeur
+  // Azure REST).
+  let wavBlob: Blob;
+  try {
+    wavBlob = await blobToWav16kMono(rawBlob);
+  } catch (err) {
+    console.warn('[azureSpeech] WAV conversion failed, sending raw blob', err);
+    wavBlob = rawBlob;
+  }
+  const audioBase64 = await blobToBase64(wavBlob);
+  const audioMimeType = wavBlob.type || 'audio/wav';
 
   const resp = await fetch(PROXY_URL, {
     method: 'POST',

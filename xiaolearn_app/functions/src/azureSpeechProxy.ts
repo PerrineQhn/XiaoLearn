@@ -202,7 +202,13 @@ export const azureSpeechProxy = onRequest(
         nbestFirstDisplay: json.NBest?.[0]?.Display,
         nbestFirstLexical: json.NBest?.[0]?.Lexical,
         nbestFirstPronScore: json.NBest?.[0]?.PronunciationAssessment?.PronScore,
-        audioBytes: audioBytes.length
+        nbestFirstAccuracy: json.NBest?.[0]?.PronunciationAssessment?.AccuracyScore,
+        hasNBest: Array.isArray(json.NBest),
+        nbestLen: json.NBest?.length,
+        audioBytes: audioBytes.length,
+        contentType: azureContentType,
+        receivedMime: rawMime,
+        rawAzureResponse: text.slice(0, 600)
       });
 
       // Azure renvoie soit RecognitionStatus=Success avec NBest contenant
