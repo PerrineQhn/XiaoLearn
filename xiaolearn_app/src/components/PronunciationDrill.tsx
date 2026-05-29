@@ -60,7 +60,11 @@ const COPY = {
     restart: 'Refaire',
     verdictMatch: 'Parfait !',
     verdictClose: 'Presque…',
-    verdictMismatch: 'On retente ?'
+    verdictMismatch: 'On retente ?',
+    errNoSpeech: "On n'a rien entendu — réessaie en parlant plus fort, plus près du micro",
+    errTimeout: "Trop long sans son — clique sur le micro et parle dans la foulée",
+    errPermission: 'Permission micro refusée. Active-la dans les réglages du navigateur.',
+    errGeneric: 'Erreur de reconnaissance. Réessaie ?'
   },
   en: {
     title: '🎙️ Test your pronunciation',
@@ -83,7 +87,11 @@ const COPY = {
     restart: 'Restart',
     verdictMatch: 'Perfect!',
     verdictClose: 'Almost…',
-    verdictMismatch: 'Try again?'
+    verdictMismatch: 'Try again?',
+    errNoSpeech: "Didn't hear anything — try again louder, closer to the mic",
+    errTimeout: 'Took too long to speak — tap the mic and start speaking right away',
+    errPermission: 'Mic permission denied. Enable it in your browser settings.',
+    errGeneric: 'Recognition error. Try again?'
   }
 };
 
@@ -167,6 +175,11 @@ const PronunciationDrill = ({
     });
     h.promise
       .then((result) => {
+        console.log('[PronunciationDrill] result', {
+          expected: current.hanzi,
+          transcript: result.transcript,
+          verdict: result.verdict
+        });
         setState({ kind: 'result', result });
         setAttempts((prev) => {
           // On ne compte le "correct" que si c'est la première tentative match.
@@ -177,18 +190,18 @@ const PronunciationDrill = ({
         });
       })
       .catch((err) => {
+        console.warn('[PronunciationDrill] recognize rejected', err);
         if (err instanceof PronunciationAbortedError) {
-          setState({ kind: 'error', message: copy.cancel });
-        } else if (err instanceof Error && /not-allowed|denied/i.test(err.message)) {
+          // Distinguer "rien entendu" (onend immédiat) vs "timeout 8s"
+          const isTimeout = /timed out/i.test(err.message);
           setState({
             kind: 'error',
-            message:
-              language === 'fr'
-                ? 'Permission micro refusée.'
-                : 'Microphone permission denied.'
+            message: isTimeout ? copy.errTimeout : copy.errNoSpeech
           });
+        } else if (err instanceof Error && /not-allowed|denied/i.test(err.message)) {
+          setState({ kind: 'error', message: copy.errPermission });
         } else {
-          setState({ kind: 'error', message: 'Erreur reconnaissance' });
+          setState({ kind: 'error', message: copy.errGeneric });
         }
       });
   };
