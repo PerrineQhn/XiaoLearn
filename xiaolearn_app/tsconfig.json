@@ -17,11 +17,12 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client"]
   },
-  "include": ["src", "scripts", "data", "public"],
+  "include": ["src", "data", "public"],
   "exclude": [
     "src/**/__tests__/**",
     "src/**/*.test.ts",
-    "src/**/*.test.tsx"
+    "src/**/*.test.tsx",
+    "scripts/**"
   ],
   "references": []
 }
