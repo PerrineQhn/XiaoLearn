@@ -1901,6 +1901,10 @@ function App() {
         <AtelierPage
           language={language}
           personalFlashcards={personalFlashcards.cards}
+          lessonWordPool={completedLessonWordPool.map((w) => ({
+            hanzi: w.hanzi,
+            pinyin: w.pinyin
+          }))}
         />
       );
       break;

@@ -25,9 +25,18 @@ import DialoguePageV2 from './DialoguePageV2';
 import ReadingPageV2 from './ReadingPageV2';
 import './AtelierPage.css';
 
+/** Item minimal pour l'atelier — hanzi + pinyin. Sourcé soit des
+ *  PersonalFlashcard, soit des mots SRS des leçons complétées. */
+export interface AtelierPoolItem {
+  hanzi: string;
+  pinyin: string;
+}
+
 interface AtelierPageProps {
   language: Language;
   personalFlashcards: PersonalFlashcard[];
+  /** Mots SRS issus de toutes les leçons complétées (= pool d'entraînement). */
+  lessonWordPool?: AtelierPoolItem[];
 }
 
 // V12 — Atelier englobe maintenant 4 modes : prononciation orale, écriture
@@ -50,7 +59,7 @@ const COPY = {
     modeWritingDesc: 'Trace les caractères au doigt, au stylet ou à la souris.',
     modeDialogue: 'Dialogues',
     modeDialogueDesc: 'Écoute et explore des dialogues annotés (CECR A1→B2).',
-    modeReading: 'Textes',
+    modeReading: 'Lecture',
     modeReadingDesc: 'Lis des textes avec audio, mots cliquables et quiz.',
     sourceFlashcards: 'Mes flashcards',
     sourceFlashcardsDesc: (n: number) =>
@@ -109,7 +118,7 @@ const parseCustomHanzi = (input: string): string[] => {
   return groups;
 };
 
-const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
+const AtelierPage = ({ language, personalFlashcards, lessonWordPool = [] }: AtelierPageProps) => {
   const copy = COPY[language === 'en' ? 'en' : 'fr'];
   const drillLang: 'fr' | 'en' = language === 'en' ? 'en' : 'fr';
 
@@ -121,17 +130,34 @@ const AtelierPage = ({ language, personalFlashcards }: AtelierPageProps) => {
     items: PronunciationDrillItem[];
   } | null>(null);
 
-  const flashcardCount = personalFlashcards.length;
+  // Pool unifié : flashcards perso + tous les mots SRS issus des leçons
+  // complétées. Dédoublonnage par hanzi (l'ordre des perso prime, plus
+  // pertinent : ce sont les cartes que l'utilisateur a explicitement
+  // ajoutées). Avant ce changement, "Mes flashcards" n'affichait que les
+  // perso (souvent ~2) ce qui était trompeur — l'utilisateur s'attend à
+  // s'entraîner sur TOUT son vocabulaire connu.
+  const unifiedPool = useMemo<PronunciationDrillItem[]>(() => {
+    const seen = new Set<string>();
+    const out: PronunciationDrillItem[] = [];
+    for (const c of personalFlashcards) {
+      const key = c.hanzi.trim();
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        out.push({ hanzi: c.hanzi, pinyin: c.pinyin });
+      }
+    }
+    for (const w of lessonWordPool) {
+      const key = w.hanzi.trim();
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        out.push({ hanzi: w.hanzi, pinyin: w.pinyin });
+      }
+    }
+    return out;
+  }, [personalFlashcards, lessonWordPool]);
 
-  // Items dérivés des flashcards (pour le mode prononciation : on a aussi pinyin)
-  const flashcardItems = useMemo<PronunciationDrillItem[]>(
-    () =>
-      personalFlashcards.map((c) => ({
-        hanzi: c.hanzi,
-        pinyin: c.pinyin
-      })),
-    [personalFlashcards]
-  );
+  const flashcardCount = unifiedPool.length;
+  const flashcardItems = unifiedPool;
 
   const reset = () => {
     setMode(null);
