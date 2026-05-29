@@ -620,7 +620,7 @@
     "examples": [
       {
         "chinese": "对不起，我迟到了。",
-        "pinyin": "du bù qǐ, wǒ chí dào le.",
+        "pinyin": "duìbuqǐ, wǒ chídào le.",
         "translationFr": "Pardon, je suis en retard.",
         "translationEn": "Pardon, I'm late."
       },
@@ -4417,7 +4417,7 @@
     "examples": [
       {
         "chinese": "门快要开了。",
-        "pinyin": "",
+        "pinyin": "mén kuài yào kāi le 。",
         "translationFr": "La porte va s'ouvrir.",
         "translationEn": "The door is about to open"
       },
@@ -7777,7 +7777,7 @@
     "examples": [
       {
         "chinese": "他的财富有万。",
-        "pinyin": "",
+        "pinyin": "tā de cái fù yǒu wàn 。",
         "translationFr": "Sa fortune compte dix mille unités.",
         "translationEn": "His wealth is ten thousand."
       },
@@ -8673,7 +8673,7 @@
     "examples": [
       {
         "chinese": "这本书的颜色是什么？",
-        "pinyin": "",
+        "pinyin": "zhè běn shū de yán sè shì shén me ？",
         "translationFr": "Quelle est la couleur de ce livre ?",
         "translationEn": "What color is this book?"
       },

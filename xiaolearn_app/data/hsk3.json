@@ -598,7 +598,7 @@
     "examples": [
       {
         "chinese": "我们在同一个班级。",
-        "pinyin": "",
+        "pinyin": "wǒ men zài tóng yí gè bān jí 。",
         "translationFr": "Nous sommes dans la même classe.",
         "translationEn": "We are in the same class"
       },
@@ -1403,13 +1403,13 @@
     "examples": [
       {
         "chinese": "比较这两个物品。",
-        "pinyin": "",
+        "pinyin": "bǐ jiào zhè liǎng gè wù pǐn 。",
         "translationFr": "Comparer ces deux objets.",
         "translationEn": "I brought a notebook."
       },
       {
         "chinese": "我们可以比较一下这两种颜色。",
-        "pinyin": "",
+        "pinyin": "wǒ men kě yǐ bǐ jiào yí xià zhè liǎng zhǒng yán sè 。",
         "translationFr": "Nous pouvons comparer ces deux couleurs.",
         "translationEn": "Write in the notebook."
       }
@@ -15146,7 +15146,7 @@
     "examples": [
       {
         "chinese": "我怕黑。",
-        "pinyin": "",
+        "pinyin": "wǒ pà hēi 。",
         "translationFr": "Je crains l'obscurité.",
         "translationEn": "I'm afraid of the dark."
       },
@@ -16043,13 +16043,13 @@
     "examples": [
       {
         "chinese": "其实你并不喜欢他。",
-        "pinyin": "",
+        "pinyin": "qí shí nǐ bìng bù xǐ huan tā 。",
         "translationFr": "En fait, tu ne l'aimes pas vraiment.",
         "translationEn": "Actually, you don't really like him"
       },
       {
         "chinese": "其实天气并没有那么冷。",
-        "pinyin": "",
+        "pinyin": "qí shí tiān qì bìng méi yǒu nà me lěng 。",
         "translationFr": "En réalité, il n'est pas si froid.",
         "translationEn": "Actually, it wasn't that cold"
       }
@@ -18312,13 +18312,13 @@
     "examples": [
       {
         "chinese": "跳起来",
-        "pinyin": "",
+        "pinyin": "tiào qǐ lái",
         "translationFr": "Sauter en l'air",
         "translationEn": "Jump up!"
       },
       {
         "chinese": "跳过这条河",
-        "pinyin": "",
+        "pinyin": "tiào guò zhè tiáo hé",
         "translationFr": "Sauter ce fleuve",
         "translationEn": "Jump over this river!"
       }
@@ -20709,7 +20709,7 @@
     "examples": [
       {
         "chinese": "他很讲信用。",
-        "pinyin": "",
+        "pinyin": "tā hěn jiǎng xìn yòng 。",
         "translationFr": "Il est très honnête.",
         "translationEn": "He is very trustworthy."
       },

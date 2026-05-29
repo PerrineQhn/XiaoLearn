@@ -54,3 +54,4 @@ package-lock.json
 # Firebase Functions : build output TypeScript (regénéré au déploiement)
 functions/lib/
 functions/.runtimeconfig.json
+data/*.bak.*

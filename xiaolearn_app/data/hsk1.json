@@ -241,7 +241,7 @@
     "examples": [
       {
         "chinese": "白天很热。",
-        "pinyin": "",
+        "pinyin": "bái tiān hěn rè 。",
         "translationFr": "Le jour est très chaud.",
         "translationEn": "It's very hot during the day."
       },
@@ -1020,7 +1020,7 @@
     "examples": [
       {
         "chinese": "穿衣服",
-        "pinyin": "",
+        "pinyin": "chuān yī fu",
         "translationFr": "Porter des vêtements",
         "translationEn": "Wear clothes."
       },
@@ -1374,13 +1374,13 @@
     "examples": [
       {
         "chinese": "大学生喜欢参加各种活动。",
-        "pinyin": "",
+        "pinyin": "dà xué shēng xǐ huan cān jiā gè zhǒng huó dòng 。",
         "translationFr": "Les étudiants aiment participer à diverses activités.",
         "translationEn": "University students like to participate in various activities."
       },
       {
         "chinese": "她是一名大学生，正在学习计算机科学。",
-        "pinyin": "",
+        "pinyin": "tā shì yì míng dà xué shēng ， zhèng zài xué xí jì suàn jī kē xué 。",
         "translationFr": "Elle est une étudiante en informatique.",
         "translationEn": "She is a university student studying computer science."
       }
@@ -1753,13 +1753,13 @@
     "examples": [
       {
         "chinese": "我喜欢看电影。",
-        "pinyin": "",
+        "pinyin": "wǒ xǐ huan kàn diàn yǐng 。",
         "translationFr": "J'aime regarder des films.",
         "translationEn": "I like to watch movies."
       },
       {
         "chinese": "他们去看电影了。",
-        "pinyin": "",
+        "pinyin": "tā men qù kàn diàn yǐng le 。",
         "translationFr": "Ils sont allés au cinéma.",
         "translationEn": "They went to the cinema."
       }
@@ -2184,13 +2184,13 @@
     "examples": [
       {
         "chinese": "多少錢？",
-        "pinyin": "",
+        "pinyin": "duō shǎo qián ？",
         "translationFr": "Combien coûte ce produit ?",
         "translationEn": "How much does it cost?"
       },
       {
         "chinese": "你的學號是多少？",
-        "pinyin": "",
+        "pinyin": "nǐ de xué hào shì duō shǎo ？",
         "translationFr": "Quel est ton numéro d'étudiant ?",
         "translationEn": "What's your student ID number?"
       }
@@ -2847,7 +2847,7 @@
     "examples": [
       {
         "chinese": "哥哥在家。",
-        "pinyin": "",
+        "pinyin": "gē ge zài jiā 。",
         "translationFr": "L'ainé est à la maison.",
         "translationEn": "My older brother is at home."
       },
@@ -3428,7 +3428,7 @@
     "examples": [
       {
         "chinese": "我喜欢读书。",
-        "pinyin": "",
+        "pinyin": "wǒ xǐ huan dú shū 。",
         "translationFr": "J'aime lire.",
         "translationEn": "I like reading books."
       },
@@ -3573,13 +3573,13 @@
     "examples": [
       {
         "chinese": "这首歌好听。",
-        "pinyin": "",
+        "pinyin": "zhè shǒu gē hǎo tīng 。",
         "translationFr": "Cette chanson est agréable à écouter.",
         "translationEn": "This song sounds nice."
       },
       {
         "chinese": "他的声音很好听。",
-        "pinyin": "",
+        "pinyin": "tā de shēng yīn hěn hǎo tīng 。",
         "translationFr": "Sa voix est agréable à écouter.",
         "translationEn": "His voice sounds pleasant."
       }
@@ -3996,13 +3996,13 @@
     "examples": [
       {
         "chinese": "你想要几杯水？",
-        "pinyin": "",
+        "pinyin": "nǐ xiǎng yào jǐ bēi shuǐ ？",
         "translationFr": "Combien de verres d'eau voulez-vous ?",
         "translationEn": "How many glasses of water would you like?"
       },
       {
         "chinese": "我有几本书？",
-        "pinyin": "",
+        "pinyin": "wǒ yǒu jǐ běn shū ？",
         "translationFr": "Avez-vous plusieurs livres ?",
         "translationEn": "Do you have several books?"
       }
@@ -4794,7 +4794,7 @@
     "examples": [
       {
         "chinese": "看病",
-        "pinyin": "",
+        "pinyin": "kàn bìng",
         "translationFr": "consulter un médecin",
         "translationEn": "See a doctor"
       },
@@ -5771,7 +5771,7 @@
     "examples": [
       {
         "chinese": "这个问题不重要，没关系。",
-        "pinyin": "",
+        "pinyin": "zhège wèntí bù zhòngyào, méi guānxi.",
         "translationFr": "Ce problème n'est pas important, ce n'est pas grave.",
         "translationEn": "This issue isn't important, it's okay"
       }
@@ -6312,7 +6312,7 @@
     "examples": [
       {
         "chinese": "哪本书？",
-        "pinyin": "",
+        "pinyin": "nǎ běn shū ？",
         "translationFr": "Quel livre ?",
         "translationEn": "Which book?"
       },
@@ -6770,13 +6770,13 @@
     "examples": [
       {
         "chinese": "那些学生",
-        "pinyin": "",
+        "pinyin": "nà xiē xué shēng",
         "translationFr": "Ces étudiants",
         "translationEn": "Those students"
       },
       {
         "chinese": "那些书",
-        "pinyin": "",
+        "pinyin": "nà xiē shū",
         "translationFr": "Ces livres",
         "translationEn": "Those books"
       }
@@ -6862,13 +6862,13 @@
     "examples": [
       {
         "chinese": "你 看 这个 包 呢？",
-        "pinyin": "",
+        "pinyin": "nǐ   kàn   zhè ge   bāo   ne ？",
         "translationFr": "Tu regardes ce sac, non ?",
         "translationEn": "Are you looking at this bag, right?"
       },
       {
         "chinese": "他 来 不来 呢？",
-        "pinyin": "",
+        "pinyin": "tā   lái   bù lái   ne ？",
         "translationFr": "Il vient ou pas, non ?",
         "translationEn": "Is he coming or not, huh?"
       }
@@ -8372,7 +8372,7 @@
     "examples": [
       {
         "chinese": "我们上楼。",
-        "pinyin": "",
+        "pinyin": "wǒ men shàng lóu 。",
         "translationFr": "Nous montons l'escalier.",
         "translationEn": "We go upstairs."
       },
@@ -8645,13 +8645,13 @@
     "examples": [
       {
         "chinese": "我家里少一本书。",
-        "pinyin": "",
+        "pinyin": "wǒ jiā lǐ shǎo yì běn shū 。",
         "translationFr": "Il manque un livre chez moi.",
         "translationEn": "I am missing a book at home."
       },
       {
         "chinese": "少数人同意这个观点。",
-        "pinyin": "",
+        "pinyin": "shǎo shù rén tóng yì zhè ge guān diǎn 。",
         "translationFr": "Une minorité d'entre eux est d'accord avec cette opinion.",
         "translationEn": "A minority agrees with this view."
       }
@@ -8780,13 +8780,13 @@
     "examples": [
       {
         "chinese": "这是什么？",
-        "pinyin": "",
+        "pinyin": "zhè shì shén me ？",
         "translationFr": "C'est quoi ?",
         "translationEn": "What is this?"
       },
       {
         "chinese": "他有什么东西吗？",
-        "pinyin": "",
+        "pinyin": "tā yǒu shén me dōng xī ma ？",
         "translationFr": "Il a quelque chose ?",
         "translationEn": "Does he have something?"
       }
@@ -8874,7 +8874,7 @@
     "examples": [
       {
         "chinese": "他正在处理一件事。",
-        "pinyin": "",
+        "pinyin": "tā zhèng zài chǔ lǐ yí jiàn shì 。",
         "translationFr": "Il est occupé à traiter une affaire.",
         "translationEn": "He is dealing with an issue."
       },
@@ -10943,13 +10943,13 @@
     "examples": [
       {
         "chinese": "我想你。",
-        "pinyin": "",
+        "pinyin": "wǒ xiǎng nǐ 。",
         "translationFr": "Je pense à toi.",
         "translationEn": "I miss you."
       },
       {
         "chinese": "他想出一个好主意。",
-        "pinyin": "",
+        "pinyin": "tā xiǎng chū yí gè hǎo zhǔ yì 。",
         "translationFr": "Il a eu une bonne idée.",
         "translationEn": "He came up with a good idea."
       }
@@ -13303,13 +13303,13 @@
     "examples": [
       {
         "chinese": "这本书",
-        "pinyin": "",
+        "pinyin": "zhè běn shū",
         "translationFr": "Ce livre",
         "translationEn": "This book"
       },
       {
         "chinese": "这个人",
-        "pinyin": "",
+        "pinyin": "zhè ge rén",
         "translationFr": "Cette personne",
         "translationEn": "This person"
       }
@@ -13577,13 +13577,13 @@
     "examples": [
       {
         "chinese": "书在这儿。",
-        "pinyin": "",
+        "pinyin": "shū zài zhè ér 。",
         "translationFr": "Le livre est ici.",
         "translationEn": "The book is here."
       },
       {
         "chinese": "我们在餐厅这儿见面吧。",
-        "pinyin": "",
+        "pinyin": "wǒ men zài cān tīng zhè ér jiàn miàn ba 。",
         "translationFr": "On se rencontrera dans ce restaurant.",
         "translationEn": "We'll meet at this restaurant."
       }
@@ -14180,13 +14180,13 @@
     "examples": [
       {
         "chinese": "做作业",
-        "pinyin": "",
+        "pinyin": "zuò zuò yè",
         "translationFr": "faire les devoirs",
         "translationEn": "Do homework"
       },
       {
         "chinese": "做蛋糕",
-        "pinyin": "",
+        "pinyin": "zuò dàn gāo",
         "translationFr": "faire un gâteau",
         "translationEn": "Bake a cake"
       }
