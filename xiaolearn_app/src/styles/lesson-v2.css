@@ -287,13 +287,27 @@
 
 .lesson-v2 .lv2-example {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 14px;
   background: var(--lv2-bg);
   border: 1px solid var(--lv2-border);
   border-radius: var(--lv2-radius-sm);
   padding: 14px 16px;
+}
+
+/* Groupe contrôles à gauche (audio modèle + micro prononciation) */
+.lesson-v2 .lv2-example-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 2px; /* légèrement aligné avec la baseline du hanzi */
+}
+
+.lesson-v2 .lv2-example-main {
+  flex: 1;
+  min-width: 0;
 }
 
 .lesson-v2 .lv2-example-hanzi {
@@ -314,21 +328,31 @@
   color: var(--lv2-text-muted);
 }
 
+/* Bouton audio — aligné sur le style du micro PronunciationCheck :
+   cercle 32×32, bordure 1.5px, blanc/rouge, SVG line-art à l'intérieur. */
 .lesson-v2 .lv2-example-audio {
-  background: var(--lv2-gold-soft);
-  color: #7a5a0b;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1.5px solid var(--border-light, #ece4d5);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--primary-red, #e05040);
   cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
   flex-shrink: 0;
 }
 
 .lesson-v2 .lv2-example-audio:hover {
-  background: var(--lv2-gold);
-  color: #fff;
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.lesson-v2 .lv2-example-audio:active {
+  transform: scale(0.95);
 }
 
 /* =========================
@@ -994,13 +1018,19 @@
 
 .lesson-v2 .lv2-learn-item {
   display: grid;
-  grid-template-columns: minmax(56px, auto) 1fr auto 36px;
+  grid-template-columns: auto minmax(56px, auto) 1fr auto;
   align-items: center;
   gap: 14px;
   padding: 10px 12px;
   border: 1px solid var(--lv2-border);
   border-radius: var(--lv2-radius-sm);
   background: #fdf8ed;
+}
+.lesson-v2 .lv2-learn-item-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 .lesson-v2 .lv2-learn-item-hanzi {
   font-size: 22px;
@@ -1015,17 +1045,29 @@
   font-size: 14px;
   color: var(--lv2-text);
 }
+/* Bouton audio LearnItem — aligné sur le style du micro PronunciationCheck */
 .lesson-v2 .lv2-learn-item-audio {
-  border: 1px solid var(--lv2-border);
-  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1.5px solid var(--border-light, #ece4d5);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--primary-red, #e05040);
   cursor: pointer;
-  font-size: 14px;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  flex-shrink: 0;
 }
 .lesson-v2 .lv2-learn-item-audio:hover {
-  border-color: var(--lv2-primary);
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.lesson-v2 .lv2-learn-item-audio:active {
+  transform: scale(0.95);
 }
 
 /* Paires minimales --- */

@@ -522,6 +522,28 @@ const ToneContourSVG = ({
 };
 
 /**
+ * Icône haut-parleur — line-art en SVG pour matcher exactement le style
+ * du micro de PronunciationCheck. Utilisée dans ExampleRow + LearnItemRow.
+ */
+const SpeakerLineIcon = ({ size = 16 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+  </svg>
+);
+
+/**
  * Ligne d'exemple (hanzi + pinyin + traduction + play).
  *
  * Le bouton 🔊 est TOUJOURS rendu : si `example.audio` est renseigné on le
@@ -560,6 +582,22 @@ const ExampleRow = ({
 
   return (
     <div className="lv2-example">
+      <div className="lv2-example-controls">
+        <button
+          type="button"
+          className="lv2-example-audio"
+          aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
+          title={language === 'en' ? 'Play audio' : 'Écouter'}
+          onClick={handlePlay}
+        >
+          <SpeakerLineIcon size={16} />
+        </button>
+        <PronunciationCheck
+          hanzi={example.hanzi}
+          pinyin={example.pinyin}
+          size={32}
+        />
+      </div>
       <div className="lv2-example-main">
         <div className="lv2-example-hanzi">{example.hanzi}</div>
         <div className="lv2-example-pinyin">{example.pinyin}</div>
@@ -567,19 +605,6 @@ const ExampleRow = ({
           {language === 'en' && example.translationEn ? example.translationEn : example.translation}
         </div>
       </div>
-      <button
-        className="lv2-example-audio"
-        aria-label="Play audio"
-        onClick={handlePlay}
-        type="button"
-      >
-        🔊
-      </button>
-      <PronunciationCheck
-        hanzi={example.hanzi}
-        pinyin={example.pinyin}
-        size={32}
-      />
     </div>
   );
 };
@@ -602,24 +627,27 @@ const LearnItemRow = ({
   }, [item.hanzi, item.audio]);
   return (
     <div className="lv2-learn-item">
+      <div className="lv2-learn-item-controls">
+        <button
+          type="button"
+          className="lv2-learn-item-audio"
+          aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
+          title={language === 'en' ? 'Play audio' : 'Écouter'}
+          onClick={handlePlay}
+        >
+          <SpeakerLineIcon size={16} />
+        </button>
+        <PronunciationCheck
+          hanzi={item.hanzi}
+          pinyin={item.pinyin}
+          size={32}
+        />
+      </div>
       <div className="lv2-learn-item-hanzi">{item.hanzi}</div>
       <div className="lv2-learn-item-pinyin">{item.pinyin}</div>
       <div className="lv2-learn-item-meaning">
         {language === 'en' && item.meaningEn ? item.meaningEn : item.meaning}
       </div>
-      <button
-        type="button"
-        className="lv2-learn-item-audio"
-        aria-label="Play audio"
-        onClick={handlePlay}
-      >
-        🔊
-      </button>
-      <PronunciationCheck
-        hanzi={item.hanzi}
-        pinyin={item.pinyin}
-        size={32}
-      />
     </div>
   );
 };
@@ -1660,14 +1688,28 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
     );
   };
 
-  const renderExamples = () => (
+  const renderExamples = () => {
+    // Filet de sécurité : dédoublonnage par hanzi. Certaines leçons ont des
+    // entrées exactement répétées dans `examples` (typo de saisie), ce qui
+    // produit deux cards identiques dans la vue "Exemples clés". On garde la
+    // première occurrence (ordre original préservé). Voir scripts/audit-
+    // lesson-examples-duplicates.mts pour la liste des doublons connus.
+    const uniqueExamples: LessonV2Example[] = [];
+    const seen = new Set<string>();
+    for (const ex of lesson.examples) {
+      const key = ex.hanzi.trim();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      uniqueExamples.push(ex);
+    }
+    return (
     <section className="lv2-section lv2-section--examples">
       <header className="lv2-section-header">
         <h2>{getCopy(language, 'examplesTitle')}</h2>
         <p>{getCopy(language, 'examplesHint')}</p>
       </header>
       <div className="lv2-examples-list">
-        {lesson.examples.map((ex, idx) => (
+        {uniqueExamples.map((ex, idx) => (
           <ExampleRow key={idx} example={ex} language={language} onPlay={onPlayAudio} />
         ))}
       </div>
@@ -1697,7 +1739,8 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
         </button>
       </div>
     </section>
-  );
+    );
+  };
 
   const renderPractice = () => {
     if (!currentExercise) {
