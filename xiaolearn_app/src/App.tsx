@@ -2116,7 +2116,18 @@ function App() {
           }}
           reviewItems={lessonProgress.reviewItems}
           dueCardsCount={lessonProgress.reviewItems.length}
-          dueFlashcardsCount={wordSrs.dueIds.size}
+          // Filtre les dueIds sur les cartes qui existent VRAIMENT dans le
+          // catalogue actuel : sans ce filtre, des entrées SRS orphelines
+          // (suppléments retirés, anciens IDs de leçons V4, etc.) gonflent
+          // artificiellement le compteur "X cartes à réviser" sans jamais
+          // pouvoir être révisées par l'utilisateur (elles ne s'affichent
+          // pas dans la page Flashcards) → compteur "stuck" à vie.
+          dueFlashcardsCount={(() => {
+            const valid = new Set(allFlashcardItems.map((i) => i.id));
+            let n = 0;
+            for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
+            return n;
+          })()}
           userDisplayName={user?.displayName ?? undefined}
           cecrPaths={cecrPathsState}
           cecrLevels={cecrLevels}
