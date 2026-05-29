@@ -794,12 +794,10 @@ const LearnSectionView = ({
  */
 const InlineDialogue = ({
   dialogue,
-  language,
-  onPlay
+  language
 }: {
   dialogue: Dialogue;
   language: LessonV2Language;
-  onPlay?: (url: string) => void;
 }) => {
   const [showPinyin, setShowPinyin] = useState(true);
   const [showTranslation, setShowTranslation] = useState(true);
@@ -836,16 +834,24 @@ const InlineDialogue = ({
             <div className="lv2-inline-body">
               <div className="lv2-inline-hanzi-row">
                 <div className="lv2-inline-hanzi">{line.hanzi}</div>
-                {line.audioUrl && onPlay && (
-                  <button
-                    type="button"
-                    className="lv2-inline-audio"
-                    aria-label="Play audio"
-                    onClick={() => onPlay(line.audioUrl as string)}
-                  >
-                    🔊
-                  </button>
-                )}
+                {/* Bouton audio : toujours visible. Utilise le MP3 inline si
+                    fourni (line.audioUrl), sinon résolution par hash hanzi via
+                    playHanziAudio. Avant ce fix, le bouton ne s'affichait
+                    jamais (double condition cassée : onPlay non passé +
+                    audioUrl rarement rempli dans les data). */}
+                <button
+                  type="button"
+                  className="lv2-inline-audio"
+                  aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
+                  title={language === 'en' ? 'Play audio' : 'Écouter'}
+                  onClick={() => {
+                    playHanziAudio(line.hanzi, line.audioUrl).catch(() => {
+                      /* silent : pas d'audio dispo pour cette réplique */
+                    });
+                  }}
+                >
+                  🔊
+                </button>
               </div>
               {showPinyin && <div className="lv2-inline-pinyin">{line.pinyin}</div>}
               {showTranslation && (

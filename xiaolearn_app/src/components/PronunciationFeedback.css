@@ -119,86 +119,78 @@
   font-style: normal;
 }
 
-/* ----- Bouton expand ----- */
-.pron-fb-toggle {
-  align-self: flex-start;
-  background: transparent;
-  border: 1px solid var(--border-light, #ece4d5);
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--text-secondary, #6b7280);
-  cursor: pointer;
-  font-family: inherit;
-  letter-spacing: 0.02em;
-  transition: background 0.12s ease, border-color 0.12s ease;
-}
-.pron-fb-toggle:hover {
-  background: #fafaf7;
-  border-color: var(--primary-red, #e05040);
-  color: var(--primary-red, #e05040);
-}
-
-/* ----- Détail expandable ----- */
-.pron-fb-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px 12px;
-  background: #fffaf3;
-  border: 1px solid var(--border-light, #ece4d5);
-  border-radius: 8px;
-  font-size: 12.5px;
-}
-
-.pron-fb-detail-hint {
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-secondary, #9ca3af);
-  font-weight: 600;
-}
-
-.pron-fb-detail-word {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.pron-fb-detail-error {
-  font-size: 11.5px;
-  color: var(--primary-red, #e05040);
-  font-style: italic;
-}
-
-.pron-fb-detail-phonemes {
+/* ----- Pinyin coloré par syllabe ----- */
+.pron-fb-pinyin {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-}
-
-.pron-fb-detail-phoneme {
-  display: inline-flex;
   align-items: baseline;
-  gap: 1px;
-  padding: 3px 7px;
-  border-radius: 5px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
+  padding: 2px 0;
+}
+
+.pron-fb-pinyin-syl {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 1.1;
+  letter-spacing: 0.01em;
   cursor: help;
+  /* Les classes pron-fb-score--* appliquent la couleur de fond + texte */
 }
 
-.pron-fb-detail-phoneme-sound {
-  font-weight: 600;
+/* ----- Tips contextuels (hints pédagogiques) ----- */
+.pron-fb-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #fffaf3;
+  border-left: 3px solid var(--primary-red, #e05040);
+  border-radius: 4px 8px 8px 4px;
+  margin-top: 2px;
 }
 
-.pron-fb-detail-phoneme-tone {
-  font-size: 9.5px;
+.pron-fb-tips-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary, #6b7280);
   font-weight: 700;
-  vertical-align: super;
-  margin-left: 1px;
-  opacity: 0.85;
+}
+
+.pron-fb-tips-list {
+  margin: 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-primary, #1f2937);
+  line-height: 1.45;
+}
+
+.pron-fb-tips-list li {
+  padding: 0;
+}
+.pron-fb-tips-list li::before {
+  content: '→ ';
+  color: var(--primary-red, #e05040);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* Mode compact : pinyin plus petit, tips plus discret */
+.pron-fb--compact .pron-fb-pinyin-syl {
+  font-size: 12.5px;
+  padding: 1px 6px;
+}
+.pron-fb--compact .pron-fb-tips {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+.pron-fb--compact .pron-fb-tips-list {
+  font-size: 12px;
 }

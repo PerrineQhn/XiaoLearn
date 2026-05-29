@@ -373,6 +373,13 @@ export async function recognizeWithAzure(
   const audioBase64 = await blobToBase64(wavBlob);
   const audioMimeType = wavBlob.type || 'audio/wav';
 
+  // Strip la ponctuation chinoise et latine — sinon Azure interprète une
+  // virgule comme une fin d'utterance et marque tout ce qui suit comme
+  // "Omission" même quand l'utilisateur a bien prononcé la phrase entière.
+  const cleanReference = opts.referenceText
+    .replace(/[。，、；：？！“”‘’（）《》〈〉【】「」.,;:!?()<>\[\]{}'"　\s]+/g, '')
+    .trim();
+
   const resp = await fetch(PROXY_URL, {
     method: 'POST',
     headers: {
@@ -382,7 +389,7 @@ export async function recognizeWithAzure(
     body: JSON.stringify({
       audioBase64,
       audioMimeType,
-      referenceText: opts.referenceText,
+      referenceText: cleanReference,
       language: opts.language ?? 'zh-CN'
     })
   });
