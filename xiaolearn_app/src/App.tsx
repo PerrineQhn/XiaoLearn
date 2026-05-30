@@ -55,8 +55,13 @@ import LessonPathsPage from './pages/LessonPathsPage';
 import QuizPage from './pages/QuizPage';
 // V7 — ReviewPage (V1) a été remplacé par ReviewPageV3 (voir plus haut).
 import ThemePage from './pages/ThemePage';
-// DictionaryPage retirée : la barre de recherche affiche désormais un
-// autocomplete inline (cf. GlobalSearchBar) plutôt qu'une page dédiée.
+// Dictionnaire CFDICT — hub + niveau + fiche détail. Réintégré V10 pour
+// permettre à "Vocabulaire" de la recherche globale de pointer vers la fiche
+// dictionnaire (au lieu d'ouvrir la leçon parente).
+import DictionaryPage from './pages/DictionaryPage';
+import DictionaryLevelPage from './pages/DictionaryLevelPage';
+import DictionaryEntryPage from './pages/DictionaryEntryPage';
+import type { DictionaryLevel } from './types/dictionary';
 import AssistancePage from './pages/AssistancePage';
 import DictationGamePage from './pages/DictationGamePage';
 import SettingsPage from './pages/SettingsPage';
@@ -187,7 +192,11 @@ export type View =
   // V7 — Bilan de fin de niveau (10 questions, 80% requis, +60 XP one-time).
   | 'bilan'
   // Profil utilisateur (clic sur le nom dans la sidebar).
-  | 'profile';
+  | 'profile'
+  // V10 — Dictionnaire CFDICT (hub + niveau + fiche détail).
+  | 'dictionary'
+  | 'dictionary-level'
+  | 'dictionary-entry';
 
 const themeSummaries = getThemeSummaries();
 const defaultTheme = themeSummaries[0]?.theme ?? null;
@@ -674,6 +683,15 @@ function App() {
   });
   // Sélection en cours pour la page Bilan (niveau CECR à passer).
   const [bilanLevel, setBilanLevel] = useState<CecrLevelSlug | null>(null);
+
+  // V10 — État courant des routes dictionnaire.
+  //  - `dictionaryLevel`  : niveau ouvert dans la liste (hsk1..hsk7, hors-hsk)
+  //  - `dictionaryEntryId`: id d'entrée pour la fiche détail (ex: 'hsk1-0001')
+  //  - `dictionaryEntryHanzi` : fallback brut quand on arrive par la recherche
+  //    globale (vocab hit), résolu côté DictionaryEntryPage via findEntryByHanzi.
+  const [dictionaryLevel, setDictionaryLevel] = useState<DictionaryLevel | null>(null);
+  const [dictionaryEntryId, setDictionaryEntryId] = useState<string | null>(null);
+  const [dictionaryEntryHanzi, setDictionaryEntryHanzi] = useState<string | null>(null);
 
   // --- Batailles (task #44) ------------------------------------------------
   // État du match actif (matchId Firestore). Quand matchId est posé, on
@@ -1366,6 +1384,7 @@ function App() {
       [
         { id: 'home', label: language === 'fr' ? 'Accueil' : 'Home', iconSlug: 'home', fallback: '🏠' },
         { id: 'cecr', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
+        { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' },
         { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
         { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
         { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
@@ -1805,6 +1824,71 @@ function App() {
           wordsMasteredCount={wordSrs.masteredIds.size}
           lessonsCompletedCount={completedLessons.length}
           onOpenSettings={() => setView('settings')}
+        />
+      );
+      break;
+    case 'dictionary':
+      content = (
+        <DictionaryPage
+          language={language === 'en' ? 'en' : 'fr'}
+          onSelectLevel={(lvl) => {
+            setDictionaryLevel(lvl);
+            setView('dictionary-level');
+          }}
+          onSelectEntry={(id) => {
+            setDictionaryEntryId(id);
+            setDictionaryEntryHanzi(null);
+            setView('dictionary-entry');
+          }}
+        />
+      );
+      break;
+    case 'dictionary-level':
+      if (!dictionaryLevel) {
+        setView('dictionary');
+        content = <></>;
+        break;
+      }
+      content = (
+        <DictionaryLevelPage
+          level={dictionaryLevel}
+          language={language === 'en' ? 'en' : 'fr'}
+          onBack={() => setView('dictionary')}
+          onSelectEntry={(id) => {
+            setDictionaryEntryId(id);
+            setDictionaryEntryHanzi(null);
+            setView('dictionary-entry');
+          }}
+        />
+      );
+      break;
+    case 'dictionary-entry':
+      if (!dictionaryEntryId && !dictionaryEntryHanzi) {
+        setView('dictionary');
+        content = <></>;
+        break;
+      }
+      content = (
+        <DictionaryEntryPage
+          entryId={dictionaryEntryId}
+          hanzi={dictionaryEntryHanzi}
+          language={language === 'en' ? 'en' : 'fr'}
+          onBack={() => {
+            // Si on connaît le niveau de l'entrée, on retourne sur ce niveau ;
+            // sinon retour au hub. Le niveau a déjà été stocké par onOpenLevel
+            // ou la résolution interne.
+            if (dictionaryLevel) setView('dictionary-level');
+            else setView('dictionary');
+          }}
+          onSelectEntry={(id) => {
+            setDictionaryEntryId(id);
+            setDictionaryEntryHanzi(null);
+            // Reste sur dictionary-entry, juste re-mount avec le nouvel id
+          }}
+          onOpenLevel={(lvl) => {
+            setDictionaryLevel(lvl);
+            setView('dictionary-level');
+          }}
         />
       );
       break;
@@ -2376,8 +2460,20 @@ function App() {
               openLesson(hit.id);
               break;
             case 'vocab':
-              if (hit.parentModuleId) openLesson(hit.parentModuleId);
-              else setView('cecr');
+              // V10 — les hits "Vocabulaire" pointent désormais vers la fiche
+              // dictionnaire (au lieu d'ouvrir la leçon parente). On résout
+              // par hanzi côté DictionaryEntryPage (findEntryByHanzi). Le
+              // dictionaryLevel reste vide → le bouton Retour repart sur le hub.
+              if (hit.hanzi) {
+                setDictionaryEntryId(null);
+                setDictionaryEntryHanzi(hit.hanzi);
+                setDictionaryLevel(null);
+                setView('dictionary-entry');
+              } else if (hit.parentModuleId) {
+                openLesson(hit.parentModuleId);
+              } else {
+                setView('dictionary');
+              }
               break;
             case 'grammar':
               // Navigation vers la page Grammaire (catalogue GrammarPageV3).

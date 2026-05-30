@@ -48,6 +48,9 @@ export interface SearchHit {
   /** Optionnel : si on clique sur un vocab, on a aussi le module parent pour
    *  pouvoir naviguer directement vers la leçon. */
   parentModuleId?: string;
+  /** Optionnel : hanzi brut (vocab hits) — permet à l'appelant de router
+   *  vers la fiche dictionnaire correspondante via findEntryByHanzi. */
+  hanzi?: string;
 }
 
 interface Props {
@@ -353,7 +356,8 @@ const GlobalSearchBar = ({
             language === 'en'
               ? l.translation || l.translationFr
               : l.translationFr || l.translation,
-          parentModuleId: moduleByVocabId.get(l.id)
+          parentModuleId: moduleByVocabId.get(l.id),
+          hanzi: l.hanzi
         },
         score
       });

@@ -234,7 +234,20 @@ export const playAudioWithFallback = async (src: string): Promise<HTMLAudioEleme
 // (ou `.wav` pour les anciens non regénérés), et `hsk-7-9_{hanzi}.mp3` pour
 // le niveau avancé C1/C2.
 
+/** Slug aligné avec scripts/gen-grammar-audio.mjs (helper grammarAudioSlug).
+ *  Remplace les "..." des structures composées par "_" pour produire un
+ *  nom de fichier safe (ex: 不仅...而且 → 不仅_而且). Le script de
+ *  génération applique exactement la même transformation. */
+const grammarSlug = (hanzi: string) =>
+  hanzi.replace(/\.{2,}/g, '_').replace(/[\\/]/g, '-').replace(/\s+/g, '');
+
 const HANZI_AUDIO_CONVENTIONS = [
+  // Audio dédié grammaire (généré par scripts/gen-grammar-audio.mjs via
+  // Azure Neural TTS). Couvre notamment les structures composées
+  // type 不仅...而且 / 由于...因此 / 是...的 qui n'existent pas en HSK.
+  // Probé en TÊTE pour que les points de grammaire utilisent leur audio
+  // dédié plutôt qu'un MP3 HSK générique d'un hanzi composant.
+  (hanzi: string) => `audio/grammar/${grammarSlug(hanzi)}.mp3`,
   (hanzi: string) => `audio/hsk1/hsk1_${hanzi}.wav`,
   (hanzi: string) => `audio/hsk2/hsk2_${hanzi}.wav`,
   (hanzi: string) => `audio/hsk3/hsk3_${hanzi}.wav`,
@@ -242,6 +255,11 @@ const HANZI_AUDIO_CONVENTIONS = [
   (hanzi: string) => `audio/hsk5/hsk5_${hanzi}.wav`,
   (hanzi: string) => `audio/hsk6/hsk6_${hanzi}.wav`,
   (hanzi: string) => `audio/hsk7/hsk7_${hanzi}.wav`,
+  // V10 — Hors-HSK généré par scripts/gen-dict-audio.mjs en Azure F0.
+  // Placé APRÈS les HSK pour que les hanzi communs (qui existent souvent
+  // aussi en HSK avec un fichier de meilleure qualité) tombent d'abord
+  // sur le HSK. Tente .mp3 d'abord puis .wav (alternate via withAlternateExtension).
+  (hanzi: string) => `audio/hors-hsk/hors-hsk_${hanzi}.mp3`,
   // HSK 7-9 (avancé C1/C2) : 3 préfixes coexistent dans public/audio/hsk7/
   // selon l'époque de génération (hsk7-9_, hsk-7-9_). Essaie aussi les
   // dossiers hsk1/2/3 pour anciens datasets où certaines cartes avancées
