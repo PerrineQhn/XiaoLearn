@@ -60,6 +60,66 @@
 }
 
 /* ============================================================
+   Pill "Premium" — visible si tier = free|trial. Click → Subscription.
+   Style : gradient or/rouge pour attirer l'œil sans crier.
+   ============================================================ */
+.xl-topbar-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--primary-red, #e05040);
+  border-radius: 999px;
+  background: linear-gradient(
+    120deg,
+    var(--primary-red, #e05040),
+    var(--gold-accent, #A82E26)
+  );
+  color: #fff;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(224, 80, 64, 0.25);
+}
+.xl-topbar-premium:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 4px 10px rgba(224, 80, 64, 0.35);
+}
+.xl-topbar-premium:active {
+  transform: translateY(0);
+}
+.xl-topbar-premium-icon {
+  font-size: 13px;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.2));
+}
+.xl-topbar-premium-label {
+  font-size: 12.5px;
+}
+.xl-topbar-premium-days {
+  font-size: 11px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-weight: 600;
+}
+/* Sur mobile très étroit (<= 480px), on garde juste l'icône ✨ pour libérer
+   de la place à côté du pill niveau et de la cloche. */
+@media (max-width: 480px) {
+  .xl-topbar-premium-label {
+    display: none;
+  }
+  .xl-topbar-premium {
+    padding: 6px 8px;
+  }
+}
+
+/* ============================================================
    Pill "Niveau N" — cliquable, mène à la page Profil.
    Une mini-barre de progression XP est posée en bas du pill.
    ============================================================ */

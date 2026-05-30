@@ -38,6 +38,12 @@ interface Props {
   /** XP courant dans le niveau / requis (ex: 80/200) pour afficher progrès. */
   userXpInLevel?: number;
   userXpForNext?: number;
+  /** Tier d'accès actuel ('free' | 'trial' | 'paid' | 'lifetime' …). Si
+   *  'free' ou 'trial', un badge "Premium" cliquable apparaît à côté du level
+   *  pour proposer l'upgrade. Caché en lifetime / paid. */
+  accessTier?: string;
+  /** Jours restants de trial (s'il y en a) — affichés dans le titre du badge. */
+  trialDaysLeft?: number;
 }
 
 const AppTopBar = ({
@@ -50,8 +56,22 @@ const AppTopBar = ({
   onToggleSidebar,
   userLevel,
   userXpInLevel,
-  userXpForNext
+  userXpForNext,
+  accessTier,
+  trialDaysLeft
 }: Props) => {
+  // Badge "Premium" visible UNIQUEMENT en tier free/trial. Caché pour paid /
+  // lifetime / devMode-override (où le badge serait redondant).
+  const showPremiumBadge = accessTier === 'free' || accessTier === 'trial';
+  const premiumLabel = language === 'fr' ? 'Premium' : 'Premium';
+  const premiumTitle =
+    accessTier === 'trial' && trialDaysLeft !== undefined && trialDaysLeft > 0
+      ? language === 'fr'
+        ? `Essai gratuit · ${trialDaysLeft} j restants — passer à Premium`
+        : `Free trial · ${trialDaysLeft} d left — upgrade to Premium`
+      : language === 'fr'
+        ? 'Découvrir Premium'
+        : 'Discover Premium';
   const hamburgerLabel = language === 'fr' ? 'Ouvrir le menu' : 'Open menu';
   const levelLabel = language === 'fr' ? `Niveau ${userLevel}` : `Level ${userLevel}`;
   const levelTitle =
@@ -84,6 +104,21 @@ const AppTopBar = ({
         />
       </div>
       <div className="xl-app-topbar-actions">
+        {showPremiumBadge && (
+          <button
+            type="button"
+            className="xl-topbar-premium"
+            onClick={() => onNavigate?.('subscription')}
+            title={premiumTitle}
+            aria-label={premiumTitle}
+          >
+            <span className="xl-topbar-premium-icon" aria-hidden="true">✨</span>
+            <span className="xl-topbar-premium-label">{premiumLabel}</span>
+            {accessTier === 'trial' && trialDaysLeft !== undefined && trialDaysLeft > 0 && (
+              <span className="xl-topbar-premium-days">{trialDaysLeft}j</span>
+            )}
+          </button>
+        )}
         {userLevel !== undefined && (
           <button
             type="button"

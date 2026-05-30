@@ -417,27 +417,12 @@ function App() {
     return devMode.isActive ? applyDevMode(base) : base;
   }, [user, entitlements, devMode.isActive]);
 
-  // ⚠ Trial gate : si l'utilisateur a un compte créé il y a >7 jours sans
-  // abonnement actif (tier='free'), on lui pousse la SubscriptionPage UNE
-  // FOIS par session. Il peut naviguer ailleurs ensuite (soft-gate). Avant
-  // ce hook, le tier 'free' bridait des features silencieusement mais
-  // n'affichait JAMAIS de paywall — l'utilisateur ne voyait pas la fin de
-  // son trial. Le devMode reste exempté (admin), et l'override LESSON_
-  // UNLOCK_OVERRIDE aussi (comptes legacy).
-  useEffect(() => {
-    if (entitlementsLoading) return;
-    if (devMode.isActive) return;
-    if (appAccess.tier !== 'free') return;
-    if (typeof window === 'undefined') return;
-    const seenKey = `xl_trial_paywall_seen_${user?.uid ?? 'anon'}`;
-    if (window.sessionStorage.getItem(seenKey)) return;
-    setView('subscription');
-    try {
-      window.sessionStorage.setItem(seenKey, '1');
-    } catch {
-      /* private mode — ignore */
-    }
-  }, [appAccess.tier, entitlementsLoading, devMode.isActive, user?.uid]);
+  // V10 — Trial gate supprimé : on n'envoie plus l'utilisateur directement
+  // sur la SubscriptionPage en début de session pour tier='free'. À la place,
+  // un badge "Premium" est affiché dans AppTopBar à côté du level pill et
+  // de la cloche — il navigue vers la SubscriptionPage au clic. C'est moins
+  // intrusif (l'utilisateur reste sur l'accueil) tout en gardant le rappel
+  // visible en permanence.
   const mergedLessonPaths = useMemo(() => mergeStructuredPaths(lessonPaths), []);
 
   // Hooks de maîtrise / bilans montés ICI (et pas plus bas comme avant) car
@@ -2587,6 +2572,8 @@ function App() {
         userLevel={dashboardState.xp.level}
         userXpInLevel={dashboardState.xp.xpInLevel}
         userXpForNext={dashboardState.xp.xpNeededForNext}
+        accessTier={appAccess.tier}
+        trialDaysLeft={appAccess.trialDaysLeft ?? undefined}
       />
       {/* Sidebar Navigation */}
       <aside className="sidebar">
