@@ -16,20 +16,28 @@
   position: relative;
   z-index: 50;
   display: grid;
-  /* Placé via grid-area dans la SEULE colonne main (pas par-dessus la
-     sidebar). Search à gauche/centre, cloche tout à droite. */
-  grid-template-columns: 1fr auto;
+  /* 3 colonnes : hamburger (caché en desktop = auto à 0) | search (1fr) |
+     actions (auto). Avant on n'avait que 2 colonnes → en tablette portrait
+     où le hamburger est visible, le 3e enfant (actions) tombait sur une
+     2e rangée à gauche, décalant les notifications. */
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 16px;
   padding: 12px 24px;
   /* Pas de fond : on hérite du body, continuité parfaite. */
   background: transparent;
   border-bottom: none;
+  /* Empêche le wrap : tout reste sur UNE ligne, et la search shrinker
+     avant les actions si vraiment manque de place. */
+  min-width: 0;
 }
 
 .xl-app-topbar-search {
   display: flex;
   justify-content: center;
+  /* Permet à la search de shrink quand l'espace manque sur tablette portrait,
+     plutôt que de pousser le pill niveau / la cloche hors viewport. */
+  min-width: 0;
 }
 
 .xl-global-search-wrap {
