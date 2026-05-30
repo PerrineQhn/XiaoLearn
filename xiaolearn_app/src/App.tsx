@@ -2381,9 +2381,10 @@ function App() {
               break;
             case 'grammar':
               // Navigation vers la page Grammaire (catalogue GrammarPageV3).
-              // L'utilisateur arrive sur le catalogue avec le point sélectionné
-              // si la page supporte le deep-link via id (futur).
-              setView('grammar');
+              // ⚠ La view interne s'appelle 'drills' (legacy), l'item de
+              // sidebar est libellé "Grammaire". L'utilisateur arrive sur
+              // le catalogue où il peut cliquer le point cherché.
+              setView('drills');
               break;
             case 'flashcard':
               setView('flashcards');

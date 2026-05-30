@@ -508,7 +508,14 @@ const GrammarDetail = ({
               type="button"
               className="gr3-listen"
               onClick={() => {
-                playGrammarAudio(lesson.hanzi, lesson.audio);
+                // ⚠ Ne PAS passer lesson.audio en explicit URL.
+                // Avant: lesson.audio = 'audio/grammar/bu.wav' (souvent
+                // manquant en prod ou pointant sur une phrase d'exemple
+                // par erreur) → buildHanziCandidates retournait la
+                // mauvaise URL en priorité. Maintenant on laisse le
+                // resolver attaquer directement les conventions HSK
+                // (audio/hsk1/hsk1_不.wav etc.) qui sont propres.
+                playGrammarAudio(lesson.hanzi);
               }}
             >
               🔊 {t(language, 'listenWord')}
