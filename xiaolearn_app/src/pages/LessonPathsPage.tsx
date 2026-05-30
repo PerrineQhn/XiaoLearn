@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { Language } from '../i18n';
 import type { HskLevel, LessonCategory, LessonPath } from '../types/lesson-structure';
 import type { CecrLevelMeta } from '../data/cecr-course';
+import { getLessonById } from '../data/lessons';
+import { getGrammarLessonById } from '../data/grammar-lessons';
 
 interface LessonPathsPageProps {
   language: Language;
@@ -266,14 +268,51 @@ export default function LessonPathsPage({
   void dailyGoalMinutes;
 
   // Filter paths lessons by search
+  // ⚠ Recherche étendue : avant on ne matchait QUE sur title/titleEn,
+  // donc rechercher '你好' ne retournait rien sauf si une leçon avait
+  // '你好' dans son titre. Maintenant on regarde aussi dans les
+  // flashcards de chaque leçon (hanzi, pinyin, translations FR/EN)
+  // via getLessonById / getGrammarLessonById pour résoudre l'identifiant.
   const filteredLevelPaths = useMemo(() => {
     if (!searchQuery.trim()) return selectedLevelPaths;
     const q = searchQuery.trim().toLowerCase();
+
+    /** Renvoie true si la chaîne contient `q` (case-insensitive). */
+    const matches = (s: string | undefined | null) =>
+      typeof s === 'string' && s.toLowerCase().includes(q);
+
+    /** Cherche dans les flashcards (= mots) de la leçon. Résout chaque
+     *  identifier via les indices statiques. Tolère les misses (mots
+     *  custom ou inconnus). */
+    const lessonContainsWord = (lesson: { flashcards?: string[] }): boolean => {
+      const ids = lesson.flashcards;
+      if (!Array.isArray(ids) || ids.length === 0) return false;
+      for (const id of ids) {
+        // Match brut sur l'identifier (souvent le hanzi lui-même)
+        if (matches(id)) return true;
+        // Match via lookup canonique
+        const item = getLessonById(id) ?? getGrammarLessonById(id);
+        if (!item) continue;
+        if (
+          matches(item.hanzi) ||
+          matches(item.pinyin) ||
+          matches(item.translationFr) ||
+          matches(item.translation)
+        ) {
+          return true;
+        }
+      }
+      return false;
+    };
+
     return selectedLevelPaths
       .map((path) => ({
         ...path,
-        lessons: path.lessons.filter((l) =>
-          l.title.toLowerCase().includes(q) || l.titleEn.toLowerCase().includes(q)
+        lessons: path.lessons.filter(
+          (l) =>
+            matches(l.title) ||
+            matches(l.titleEn) ||
+            lessonContainsWord(l)
         )
       }))
       .filter((path) => path.lessons.length > 0);
