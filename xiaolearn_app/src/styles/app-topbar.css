@@ -16,11 +16,11 @@
   position: relative;
   z-index: 50;
   display: grid;
-  /* 3 colonnes : hamburger (caché en desktop = auto à 0) | search (1fr) |
-     actions (auto). Avant on n'avait que 2 colonnes → en tablette portrait
-     où le hamburger est visible, le 3e enfant (actions) tombait sur une
-     2e rangée à gauche, décalant les notifications. */
-  grid-template-columns: auto 1fr auto;
+  /* Desktop : 2 colonnes (search 1fr | actions auto) — le hamburger est
+     display:none et donc retiré du flow grid, on n'a pas besoin de track
+     dédiée. La passage à 3 cols se fait UNIQUEMENT en tablette/mobile
+     dans responsive-app.css quand le hamburger réapparaît. */
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
   padding: 12px 24px;

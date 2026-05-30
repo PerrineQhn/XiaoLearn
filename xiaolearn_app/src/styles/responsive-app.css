@@ -78,6 +78,12 @@
     display: inline-flex;
   }
 
+  /* En tablette/mobile, on passe à 3 colonnes : hamburger | search | actions.
+     Garde tout sur UNE ligne sans wrap. */
+  .xl-app-topbar {
+    grid-template-columns: auto 1fr auto;
+  }
+
   /* Le grid layout passe en une seule colonne — la sidebar
      sort du flow grâce à position: fixed.
      ⚠ CRITIQUE : reset aussi grid-template-areas et la sidebar elle-même,

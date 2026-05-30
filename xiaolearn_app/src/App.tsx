@@ -407,6 +407,28 @@ function App() {
     const base = buildAppAccess(user, entitlements?.app ?? null);
     return devMode.isActive ? applyDevMode(base) : base;
   }, [user, entitlements, devMode.isActive]);
+
+  // ⚠ Trial gate : si l'utilisateur a un compte créé il y a >7 jours sans
+  // abonnement actif (tier='free'), on lui pousse la SubscriptionPage UNE
+  // FOIS par session. Il peut naviguer ailleurs ensuite (soft-gate). Avant
+  // ce hook, le tier 'free' bridait des features silencieusement mais
+  // n'affichait JAMAIS de paywall — l'utilisateur ne voyait pas la fin de
+  // son trial. Le devMode reste exempté (admin), et l'override LESSON_
+  // UNLOCK_OVERRIDE aussi (comptes legacy).
+  useEffect(() => {
+    if (entitlementsLoading) return;
+    if (devMode.isActive) return;
+    if (appAccess.tier !== 'free') return;
+    if (typeof window === 'undefined') return;
+    const seenKey = `xl_trial_paywall_seen_${user?.uid ?? 'anon'}`;
+    if (window.sessionStorage.getItem(seenKey)) return;
+    setView('subscription');
+    try {
+      window.sessionStorage.setItem(seenKey, '1');
+    } catch {
+      /* private mode — ignore */
+    }
+  }, [appAccess.tier, entitlementsLoading, devMode.isActive, user?.uid]);
   const mergedLessonPaths = useMemo(() => mergeStructuredPaths(lessonPaths), []);
 
   // Hooks de maîtrise / bilans montés ICI (et pas plus bas comme avant) car
