@@ -206,7 +206,13 @@ const GlobalSearchBar = ({
       const titleNorm = normalize(language === 'en' ? titleEn || titleFr : titleFr || titleEn);
       const titleScore = matchScore(titleNorm, q);
 
-      // Match dans le vocab de la leçon
+      // Match dans le vocab de la leçon — 2 niveaux :
+      // 1. Match par mot individuel (ex: 谢谢 ∈ flashcards → hay 谢谢 contient '谢')
+      // 2. Match par concaténation des hanzi de la leçon (ex: query '你好',
+      //    la leçon a 你 ET 好 individuellement → concat='你好' contient '你好').
+      //    Sans ce 2e niveau, chercher un MOT (你好) ne ramenait pas une leçon
+      //    dont les flashcards sont les caractères séparés (你, 好) — bug
+      //    observé sur "Dire bonjour & au revoir".
       const vocab = moduleVocab.get(m.id) ?? [];
       const matchingWords = vocab.filter((it) => {
         const hay = normalize(
@@ -214,7 +220,13 @@ const GlobalSearchBar = ({
         );
         return hay.includes(q);
       });
-      const vocabScore = matchingWords.length > 0 ? 20 : 0;
+      let vocabScore = matchingWords.length > 0 ? 20 : 0;
+      if (vocabScore === 0 && vocab.length > 0) {
+        const allHanzi = vocab.map((it) => it.hanzi).join('');
+        if (allHanzi.includes(trimmed)) {
+          vocabScore = 18; // légèrement < match direct mais > miss
+        }
+      }
 
       const score = Math.max(titleScore, vocabScore);
       if (score === 0) continue;
