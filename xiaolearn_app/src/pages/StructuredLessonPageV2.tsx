@@ -859,39 +859,38 @@ const InlineDialogue = ({
         {dialogue.lines.map((line, i) => (
           <div key={i} className="lv2-inline-line">
             <div className="lv2-inline-speaker">{line.speaker}</div>
+            {/* Body en flex row : texte à gauche (flex:1), bouton audio à
+                droite, identique au layout `.lv2-example` des Exemples. */}
             <div className="lv2-inline-body">
-              <div className="lv2-inline-hanzi-row">
+              <div className="lv2-inline-text">
                 <div className="lv2-inline-hanzi">{line.hanzi}</div>
-                {/* Bouton audio : toujours visible. Utilise le MP3 inline si
-                    fourni (line.audioUrl), sinon résolution par hash hanzi via
-                    playHanziAudio. Avant ce fix, le bouton ne s'affichait
-                    jamais (double condition cassée : onPlay non passé +
-                    audioUrl rarement rempli dans les data). */}
-                <button
-                  type="button"
-                  className="lv2-inline-audio"
-                  aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
-                  title={language === 'en' ? 'Play audio' : 'Écouter'}
-                  onClick={() => {
-                    playHanziAudio(line.hanzi, line.audioUrl).catch(() => {
-                      /* silent : pas d'audio dispo pour cette réplique */
-                    });
-                  }}
-                >
-                  🔊
-                </button>
+                {showPinyin && <div className="lv2-inline-pinyin">{line.pinyin}</div>}
+                {showTranslation && (
+                  <div className="lv2-inline-translation">
+                    {language === 'en' ? line.translationEn : line.translationFr}
+                  </div>
+                )}
+                {(language === 'en' ? line.noteEn : line.note) && (
+                  <div className="lv2-inline-note">
+                    💡 {language === 'en' ? line.noteEn ?? line.note : line.note}
+                  </div>
+                )}
               </div>
-              {showPinyin && <div className="lv2-inline-pinyin">{line.pinyin}</div>}
-              {showTranslation && (
-                <div className="lv2-inline-translation">
-                  {language === 'en' ? line.translationEn : line.translationFr}
-                </div>
-              )}
-              {(language === 'en' ? line.noteEn : line.note) && (
-                <div className="lv2-inline-note">
-                  💡 {language === 'en' ? line.noteEn ?? line.note : line.note}
-                </div>
-              )}
+              {/* Bouton audio aligné sur le style des Exemples : cercle 32×32,
+                  blanc/rouge, icône SpeakerLineIcon. Réutilise `lv2-example-audio`. */}
+              <button
+                type="button"
+                className="lv2-example-audio lv2-inline-audio"
+                aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
+                title={language === 'en' ? 'Play audio' : 'Écouter'}
+                onClick={() => {
+                  playHanziAudio(line.hanzi, line.audioUrl).catch(() => {
+                    /* silent : pas d'audio dispo pour cette réplique */
+                  });
+                }}
+              >
+                <SpeakerLineIcon size={16} />
+              </button>
             </div>
           </div>
         ))}
@@ -943,14 +942,21 @@ const InlineReading = ({
       <div className="lv2-inline-segments">
         {reading.segments.map((seg, i) => (
           <div key={i} className="lv2-inline-segment">
-            <div className="lv2-inline-hanzi-row">
-              <div className="lv2-inline-hanzi">{seg.hanzi}</div>
-              {/* Bouton audio par segment — même pattern qu'InlineDialogue.
-                  playHanziAudio résout d'abord le MP3 inline (seg.audioUrl si
-                  fourni) puis tombe sur la résolution par hash hanzi. */}
+            {/* Body en flex row : texte à gauche, audio à droite — pattern
+                aligné sur `.lv2-example` (cf. InlineDialogue ci-dessus). */}
+            <div className="lv2-inline-body">
+              <div className="lv2-inline-text">
+                <div className="lv2-inline-hanzi">{seg.hanzi}</div>
+                {showPinyin && <div className="lv2-inline-pinyin">{seg.pinyin}</div>}
+                {showTranslation && (
+                  <div className="lv2-inline-translation">
+                    {language === 'en' ? seg.translationEn : seg.translationFr}
+                  </div>
+                )}
+              </div>
               <button
                 type="button"
-                className="lv2-inline-audio"
+                className="lv2-example-audio lv2-inline-audio"
                 aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
                 title={language === 'en' ? 'Play audio' : 'Écouter'}
                 onClick={() => {
@@ -959,15 +965,9 @@ const InlineReading = ({
                   });
                 }}
               >
-                🔊
+                <SpeakerLineIcon size={16} />
               </button>
             </div>
-            {showPinyin && <div className="lv2-inline-pinyin">{seg.pinyin}</div>}
-            {showTranslation && (
-              <div className="lv2-inline-translation">
-                {language === 'en' ? seg.translationEn : seg.translationFr}
-              </div>
-            )}
           </div>
         ))}
       </div>

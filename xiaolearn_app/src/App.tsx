@@ -1257,54 +1257,141 @@ function App() {
   }, []);
 
   /**
-   * Phrases extraites des dialogues des leçons complétées, présentées comme
-   * SentenceFlashcard dans l'onglet "Phrases" de FlashcardPageV3.
-   * - Fusionne SRS persisté sur `cl_sentence_flashcards_v7` si présent.
-   * - Enrichit chaque carte avec l'URL MP3 du manifest si disponible
-   *   (sinon `audio: undefined` → playHanziAudio retombera en silence).
+   * Phrases présentées comme SentenceFlashcard dans l'onglet "Phrases"
+   * de FlashcardPageV5. Deux sources cumulées :
+   *   1. Lignes des `dialogue.lines` des leçons CECR complétées
+   *      → id `sent-{lessonId}-{lineIndex}`
+   *   2. `examples[]` portés par chaque vocab (LessonItem) résolu depuis
+   *      les `flashcards` array des leçons complétées
+   *      → id `ex-{lessonId}-{vocabId}-{exampleIndex}`
+   *
+   * Avant ce useMemo couvrait UNIQUEMENT les dialogues — du coup les
+   * exemples (10 000+ phrases courtes, présentes sur chaque entrée HSK)
+   * n'apparaissaient jamais dans l'onglet Phrases.
+   *
+   * - Fusionne SRS persisté via wordSrs.map[id] si présent.
+   * - Enrichit les dialogues avec l'URL MP3 du manifest dialogues.
+   * - Pour les examples : utilise `example.audio` si fourni, sinon laisse
+   *   playHanziAudio résoudre par convention (audio/examples/{hash}.mp3).
    */
   const sentenceCards = useMemo<SentenceFlashcard[]>(() => {
+    // Deux sources cumulées :
+    //   1. Lignes des `dialogue.lines` des leçons CECR complétées
+    //   2. `examples[]` portés par chaque vocab (LessonItem) résolu depuis
+    //      les `flashcards` array des leçons complétées
+    // Les leçons de phonétique (Finales, Initiales, Tons) n'ayant ni dialogue
+    // ni vocab CJK résolvable, elles produisent 0 phrase — c'est normal,
+    // les phrases apparaissent dès qu'une leçon de contenu réel est complétée.
     if (completedLessons.length === 0) return [];
+    // Dédoublonnage cross-leçon : si un même hanzi d'exemple apparaît dans
+    // plusieurs leçons, on ne garde qu'une seule carte (la première vue).
+    const seenHanzi = new Set<string>();
+    const out: SentenceFlashcard[] = [];
+
+    // Map lessonId → LessonModule (CECR + HSK fallback pour ids hérités)
     const lessonsById = new Map<string, LessonModule>();
     for (const path of cecrPathsState) {
       for (const lesson of path.lessons) lessonsById.set(lesson.id, lesson);
     }
-    const out: SentenceFlashcard[] = [];
+    for (const path of lessonPathsState) {
+      for (const lesson of path.lessons) {
+        if (!lessonsById.has(lesson.id)) lessonsById.set(lesson.id, lesson);
+      }
+    }
+
     for (const lessonId of completedLessons) {
       const lesson = lessonsById.get(lessonId);
-      if (!lesson?.dialogue?.lines) continue;
-      const dialogueId = lesson.dialogue.id;
-      const manifestEntry = dialogueId
-        ? dialogueManifest?.[dialogueId]
-        : undefined;
-      lesson.dialogue.lines.forEach((line, idx) => {
-        const manifestUrl = manifestEntry?.lines?.[idx];
-        const sentId = `sent-${lessonId}-${idx}`;
-        const srsEntry = wordSrs.map[sentId];
-        out.push({
-          id: sentId,
-          lessonId,
-          lessonTitleFr: lesson.title,
-          lessonTitleEn: lesson.titleEn,
-          hanzi: line.hanzi,
-          pinyin: line.pinyin,
-          translationFr: line.translationFr,
-          translationEn: line.translationEn,
-          // Priorité : URL explicite sur la ligne (override manuel) > manifest.
-          audio: line.audioUrl ?? manifestUrl ?? undefined,
-          // Timestamp réel de la dernière révision (depuis la SRS) — alimente
-          // la mention « Étudié il y a Nj » sur les tuiles regroupées.
-          lastReviewedAt:
-            srsEntry?.lastReviewedAt && srsEntry.lastReviewedAt > 0
-              ? srsEntry.lastReviewedAt
-              : undefined,
-          speaker: line.speaker,
-          contextFr: lesson.dialogue?.context
+      if (!lesson) continue;
+
+      // --- 1. Dialogues (logique historique) ----------------------------
+      if (lesson.dialogue?.lines) {
+        const dialogueId = lesson.dialogue.id;
+        const manifestEntry = dialogueId
+          ? dialogueManifest?.[dialogueId]
+          : undefined;
+        lesson.dialogue.lines.forEach((line, idx) => {
+          const manifestUrl = manifestEntry?.lines?.[idx];
+          const sentId = `sent-${lessonId}-${idx}`;
+          const srsEntry = wordSrs.map[sentId];
+          if (seenHanzi.has(line.hanzi)) return;
+          seenHanzi.add(line.hanzi);
+          out.push({
+            id: sentId,
+            lessonId,
+            lessonTitleFr: lesson.title,
+            lessonTitleEn: lesson.titleEn,
+            hanzi: line.hanzi,
+            pinyin: line.pinyin,
+            translationFr: line.translationFr,
+            translationEn: line.translationEn,
+            audio: line.audioUrl ?? manifestUrl ?? undefined,
+            lastReviewedAt:
+              srsEntry?.lastReviewedAt && srsEntry.lastReviewedAt > 0
+                ? srsEntry.lastReviewedAt
+                : undefined,
+            speaker: line.speaker,
+            contextFr: lesson.dialogue?.context
+          });
+        });
+      }
+
+      // --- 2. Examples des vocab items (nouvelle source) ----------------
+      // Résolution inline car `resolveFlashcards` est défini plus bas dans
+      // le fichier (ordre useCallback).
+      const vocabItems: LessonItem[] = [];
+      for (const identifier of lesson.flashcards ?? []) {
+        const grammarWord = getGrammarLessonById(identifier);
+        if (grammarWord) {
+          vocabItems.push(grammarWord);
+          continue;
+        }
+        const byId = getLessonById(identifier);
+        if (byId) {
+          vocabItems.push(byId);
+          continue;
+        }
+        const byHanzi = getLessonsByHanziList([identifier])[0];
+        if (byHanzi) vocabItems.push(byHanzi);
+      }
+      vocabItems.forEach((vocab) => {
+        if (!vocab.examples || vocab.examples.length === 0) return;
+        vocab.examples.forEach((ex, exIdx) => {
+          if (!ex.hanzi || !ex.pinyin) return;
+          if (seenHanzi.has(ex.hanzi)) return;
+          seenHanzi.add(ex.hanzi);
+          const sentId = `ex-${lessonId}-${vocab.id}-${exIdx}`;
+          const srsEntry = wordSrs.map[sentId];
+          out.push({
+            id: sentId,
+            lessonId,
+            lessonTitleFr: lesson.title,
+            lessonTitleEn: lesson.titleEn,
+            hanzi: ex.hanzi,
+            pinyin: ex.pinyin,
+            translationFr: ex.translationFr ?? ex.translation,
+            translationEn: ex.translation,
+            // Priorité : URL explicite sur l'example > résolution auto par
+            // audio.ts (hash FNV-1a sur le hanzi → audio/examples/{hash}.mp3)
+            audio: ex.audio ?? undefined,
+            lastReviewedAt:
+              srsEntry?.lastReviewedAt && srsEntry.lastReviewedAt > 0
+                ? srsEntry.lastReviewedAt
+                : undefined,
+            // contextFr : on indique le mot-source pour donner du contexte
+            contextFr: `${vocab.hanzi} · ${vocab.pinyin}`
+          });
         });
       });
     }
+
     return out;
-  }, [completedLessons, cecrPathsState, dialogueManifest, wordSrs.map]);
+  }, [
+    completedLessons,
+    cecrPathsState,
+    lessonPathsState,
+    dialogueManifest,
+    wordSrs.map
+  ]);
 
   // --- Résolveur de flashcards (string[] → LessonItem[]) ---
   const resolveFlashcards = useCallback(
