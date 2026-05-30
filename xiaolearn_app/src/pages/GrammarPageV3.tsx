@@ -504,22 +504,28 @@ const GrammarDetail = ({
           <p className="gr3-detail-pinyin">{lesson.pinyin}</p>
           <p className="rv2-detail-title-translation">{tr}</p>
           <div className="gr3-detail-actions">
-            <button
-              type="button"
-              className="gr3-listen"
-              onClick={() => {
-                // ⚠ Ne PAS passer lesson.audio en explicit URL.
-                // Avant: lesson.audio = 'audio/grammar/bu.wav' (souvent
-                // manquant en prod ou pointant sur une phrase d'exemple
-                // par erreur) → buildHanziCandidates retournait la
-                // mauvaise URL en priorité. Maintenant on laisse le
-                // resolver attaquer directement les conventions HSK
-                // (audio/hsk1/hsk1_不.wav etc.) qui sont propres.
-                playGrammarAudio(lesson.hanzi);
-              }}
-            >
-              🔊 {t(language, 'listenWord')}
-            </button>
+            {/* Bouton 'Écouter' affiché UNIQUEMENT si le champ hanzi
+                contient au moins un caractère CJK. Certaines leçons de
+                grammaire ont un libellé descriptif (ex: 'Sujet+Verbe',
+                'Structure générale') → pas de son à jouer. */}
+            {/[一-鿿]/.test(lesson.hanzi) && (
+              <button
+                type="button"
+                className="gr3-listen"
+                onClick={() => {
+                  // ⚠ Ne PAS passer lesson.audio en explicit URL.
+                  // Avant: lesson.audio = 'audio/grammar/bu.wav' (souvent
+                  // manquant en prod ou pointant sur une phrase d'exemple
+                  // par erreur) → buildHanziCandidates retournait la
+                  // mauvaise URL en priorité. Maintenant on laisse le
+                  // resolver attaquer directement les conventions HSK
+                  // (audio/hsk1/hsk1_不.wav etc.) qui sont propres.
+                  playGrammarAudio(lesson.hanzi);
+                }}
+              >
+                🔊 {t(language, 'listenWord')}
+              </button>
+            )}
           </div>
         </div>
 
