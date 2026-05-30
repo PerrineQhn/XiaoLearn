@@ -17,10 +17,11 @@ import { useState, useRef } from 'react';
 import type { Language } from '../i18n';
 import { useAuth } from '../contexts/AuthContext';
 import SyncDiagnosticPanel from '../components/SyncDiagnosticPanel';
-import { storage } from '../firebase/config';
+import { storage, db } from '../firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebase/config';
+import { doc, deleteDoc, collection, getDocs } from 'firebase/firestore';
 import { useSrsPreferences } from '../hooks/useSrsPreferences';
 import { useEmailPrefs } from '../hooks/useEmailPrefs';
 import { useEntitlements } from '../hooks/useEntitlements';
@@ -293,23 +294,71 @@ const SettingsPage = ({
     URL.revokeObjectURL(url);
   };
 
-  const handleResetProgress = () => {
-    const keysToRemove = [
-      'flashcard_progress',
-      'lesson-progress-index',
-      'learned-lessons',
-      'daily-minutes',
-      'total-minutes',
-      'learningStreak',
-      'lastLearningDate',
-      'completedLessons',
-      'review-srs-state',
-      'customLists',
-      'lastVisitDate'
-    ];
-    keysToRemove.forEach((key) => window.localStorage.removeItem(key));
+  /** Préfixes des clés localStorage qui stockent de la progression user.
+   *  Toute clé matchant ces préfixes sera purgée. Cohérent avec l'util
+   *  utilisé dans AuthContext pour la séparation des comptes. */
+  const PROGRESSION_KEY_PREFIXES = ['cl_', 'xl_'];
+
+  /** Sous-collections/docs Firestore à supprimer sous users/{uid}/.
+   *  ⚠ La sous-collection 'entitlements' / 'subscription' est PRÉSERVÉE
+   *  pour ne pas perdre l'abonnement Premium. */
+  const RESET_FIRESTORE_DOCS = [
+    'cl_completed_lessons',
+    'cl_personal_flashcards_v7',
+    'cl_lesson_mastery_v7',
+    'cl_learning_stats_v1',
+    'cl_word_srs_v3',
+    'cl_flashcard_srs_v2',
+    'xl_xp_v2',
+    'xl_streak_v2',
+    'xl_activity_v2',
+    'xl_level_bilans_v1',
+    'xl_lesson_progress_v1',
+    'xl_chat_conversations',
+    'xl_my_errors_v1'
+  ];
+
+  const handleResetProgress = async () => {
     setShowResetConfirm(false);
-    window.location.reload();
+    try {
+      // 1) Purge localStorage : toutes les clés cl_*/xl_* qui contiennent
+      //    de la progression. Préserve les prefs UI globales (thème, etc.)
+      const localKeys: string[] = [];
+      for (let i = 0; i < window.localStorage.length; i++) {
+        const key = window.localStorage.key(i);
+        if (!key) continue;
+        if (PROGRESSION_KEY_PREFIXES.some((p) => key.startsWith(p))) {
+          localKeys.push(key);
+        }
+      }
+      localKeys.forEach((key) => {
+        try { window.localStorage.removeItem(key); } catch { /* ignore */ }
+      });
+
+      // 2) Delete des docs Firestore de progression — sous users/{uid}/.
+      //    On NE TOUCHE PAS à entitlements/subscription pour préserver l'abonnement.
+      const uid = auth.currentUser?.uid;
+      if (uid) {
+        await Promise.allSettled(
+          RESET_FIRESTORE_DOCS.map((docId) =>
+            deleteDoc(doc(db, 'users', uid, 'data', docId))
+          )
+        );
+        // Best-effort : vide aussi la sous-collection 'notifications'
+        // s'il y en a (toasts non-acknowledged, etc.). Erreurs ignorées
+        // car la collection peut ne pas exister.
+        try {
+          const notifSnap = await getDocs(collection(db, 'users', uid, 'notifications'));
+          await Promise.allSettled(
+            notifSnap.docs.map((d) => deleteDoc(d.ref))
+          );
+        } catch { /* ignore */ }
+      }
+    } finally {
+      // Reload pour repartir avec un état propre (les hooks refont leurs
+      // queries initiales sur des collections vides).
+      window.location.reload();
+    }
   };
 
   const handleDeleteAccount = async () => {

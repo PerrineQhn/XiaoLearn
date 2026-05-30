@@ -197,8 +197,8 @@ const COPY = {
     modeCollectionSub: (label: string) => label,
     modeCollectionBadge: '',
     modeRevise: 'Mots à revoir',
-    modeReviseSub: (n: number, p: number) =>
-      `${n} à revoir maintenant, ${p} en cours`,
+    modeReviseSub: (n: number, _p: number) =>
+      `${n} à revoir aujourd'hui`,
     modeReviseBadge: 'Recommandé',
     modeNew: 'Nouveaux mots',
     modeNewSub: (n: number) => `${n} à découvrir`,
@@ -325,8 +325,8 @@ const COPY = {
     modeCollectionSub: (label: string) => label,
     modeCollectionBadge: '',
     modeRevise: 'Due words',
-    modeReviseSub: (n: number, p: number) =>
-      `${n} due now, ${p} in progress`,
+    modeReviseSub: (n: number, _p: number) =>
+      `${n} due today`,
     modeReviseBadge: 'Recommended',
     modeNew: 'New words',
     modeNewSub: (n: number) => `${n} to discover`,
@@ -1247,11 +1247,16 @@ export default function FlashcardPageV5({
     copy.flatSourceSentence
   ]);
 
-  // Compte dispo pour le modal selon le mode sélectionné
+  // Compte dispo pour le modal selon le mode sélectionné.
+  // ⚠ Mode 'revise' = SEULEMENT les dues (pas les inProgress). Avant on
+  // additionnait due+inProgress, ce qui faisait que cliquer "Mots à revoir"
+  // (label "8 à revoir") lançait une session de 30 cartes incluant des
+  // mots PAS encore dus → incohérent avec la card "4 mots à revoir
+  // aujourd'hui". Maintenant: 8 due = session de 8 max.
   const modalAvailable = useMemo(() => {
     switch (modalMode) {
       case 'revise':
-        return modalCounts.due + modalCounts.inProgress;
+        return modalCounts.due;
       case 'new':
         return modalCounts.newN;
       case 'difficult':
@@ -1279,13 +1284,15 @@ export default function FlashcardPageV5({
 
   const closeModal = useCallback(() => setModalOpen(false), []);
 
-  // Lance directement une session de révision sur les cartes dues. Pas de modal :
-  // c'est le CTA principal de la carte « Répétition espacée ».
+  // Lance directement une session de révision sur les cartes dues.
+  // Pré-règle le count sur le nombre EXACT de cartes dues — pas de quota
+  // arbitraire 20 qui ferait sentir au user qu'on lui pousse plus de
+  // cartes qu'il n'y en a vraiment à revoir.
   const handleStartReviewNow = useCallback(() => {
     setModalMode('revise');
-    setModalCount(20);
+    setModalCount(Math.max(modalCounts.due, 1));
     setModalOpen(true);
-  }, []);
+  }, [modalCounts.due]);
 
   const pickModalPool = useCallback((): StudyCard[] => {
     // Cas spécial : la collection active pioche directement dans le deck sélectionné.
@@ -1301,10 +1308,11 @@ export default function FlashcardPageV5({
       const src = wordItems as FlashcardV2Item[];
       switch (modalMode) {
         case 'revise':
+          // SEULEMENT les dues (cf. note dans modalAvailable).
+          // Les "en cours non dus" seront accessibles via le bouton/onglet
+          // dédié si besoin, pas mélangés avec les dues.
           pool = src
-            .filter(
-              (w) => dueSet.has(w.id) || (!masteredSet.has(w.id) && w.lastReviewedAt)
-            )
+            .filter((w) => dueSet.has(w.id))
             .map(itemToStudyCard);
           break;
         case 'new':
@@ -2308,7 +2316,15 @@ function SessionSetupModal({
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const SIZES = [10, 20, 30, 50];
+  // Tailles de session standards. Si `available` est inférieur à la
+  // plus petite option (10), on ajoute en tête une option "exactement N"
+  // pour que l'utilisateur ait au moins UN choix valide qui corresponde
+  // au nombre réel de cartes (ex: 4 dues → option "4" en plus de 10/20/...).
+  const BASE_SIZES = [10, 20, 30, 50];
+  const SIZES =
+    available > 0 && available < BASE_SIZES[0]
+      ? [available, ...BASE_SIZES]
+      : BASE_SIZES;
 
   return (
     <div
