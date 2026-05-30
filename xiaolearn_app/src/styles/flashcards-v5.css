@@ -1414,16 +1414,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fffaf3;
-  border: 1px solid #e5e0d5;
+  /* Aligné sur le style du bouton micro PronunciationCheck pour cohérence
+     visuelle (avant : fond crème + icône noire qui détonnait à côté du
+     micro rouge à bordure rouge). */
+  background: var(--bg-primary, #ffffff);
+  border: 1.5px solid var(--border-light, #ece4d5);
   border-radius: 50%;
   cursor: pointer;
   font-size: 16px;
-  color: #1F1A16;
+  color: var(--primary-red, #e05040);
   padding: 0;
-  transition: background 0.15s ease, transform 0.08s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
 }
-.fc5-session-shell .fc4-card-speaker:hover { background: #fff; transform: scale(1.06); }
+.fc5-session-shell .fc4-card-speaker:hover {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.fc5-session-shell .fc4-card-speaker:active {
+  transform: scale(0.95);
+}
 .fc5-session-shell .fc4-card-speaker--inverse {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.2);
