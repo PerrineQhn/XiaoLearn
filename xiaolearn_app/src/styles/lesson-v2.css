@@ -296,7 +296,8 @@
   padding: 14px 16px;
 }
 
-/* Groupe contrôles à gauche (audio modèle + micro prononciation) */
+/* Groupe contrôles à DROITE (audio modèle + micro prononciation).
+   Le main avant a flex:1 et pousse le groupe en bout de ligne. */
 .lesson-v2 .lv2-example-controls {
   display: inline-flex;
   align-items: center;
@@ -1018,7 +1019,9 @@
 
 .lesson-v2 .lv2-learn-item {
   display: grid;
-  grid-template-columns: auto minmax(56px, auto) 1fr auto;
+  /* Ordre : hanzi (auto) | pinyin (auto) | meaning (1fr) | controls (auto)
+     Les contrôles audio+micro sont à DROITE, après la traduction. */
+  grid-template-columns: minmax(56px, auto) auto 1fr auto;
   align-items: center;
   gap: 14px;
   padding: 10px 12px;

@@ -582,6 +582,13 @@ const ExampleRow = ({
 
   return (
     <div className="lv2-example">
+      <div className="lv2-example-main">
+        <div className="lv2-example-hanzi">{example.hanzi}</div>
+        <div className="lv2-example-pinyin">{example.pinyin}</div>
+        <div className="lv2-example-translation">
+          {language === 'en' && example.translationEn ? example.translationEn : example.translation}
+        </div>
+      </div>
       <div className="lv2-example-controls">
         <button
           type="button"
@@ -597,13 +604,6 @@ const ExampleRow = ({
           pinyin={example.pinyin}
           size={32}
         />
-      </div>
-      <div className="lv2-example-main">
-        <div className="lv2-example-hanzi">{example.hanzi}</div>
-        <div className="lv2-example-pinyin">{example.pinyin}</div>
-        <div className="lv2-example-translation">
-          {language === 'en' && example.translationEn ? example.translationEn : example.translation}
-        </div>
       </div>
     </div>
   );
@@ -627,6 +627,11 @@ const LearnItemRow = ({
   }, [item.hanzi, item.audio]);
   return (
     <div className="lv2-learn-item">
+      <div className="lv2-learn-item-hanzi">{item.hanzi}</div>
+      <div className="lv2-learn-item-pinyin">{item.pinyin}</div>
+      <div className="lv2-learn-item-meaning">
+        {language === 'en' && item.meaningEn ? item.meaningEn : item.meaning}
+      </div>
       <div className="lv2-learn-item-controls">
         <button
           type="button"
@@ -642,11 +647,6 @@ const LearnItemRow = ({
           pinyin={item.pinyin}
           size={32}
         />
-      </div>
-      <div className="lv2-learn-item-hanzi">{item.hanzi}</div>
-      <div className="lv2-learn-item-pinyin">{item.pinyin}</div>
-      <div className="lv2-learn-item-meaning">
-        {language === 'en' && item.meaningEn ? item.meaningEn : item.meaning}
       </div>
     </div>
   );
