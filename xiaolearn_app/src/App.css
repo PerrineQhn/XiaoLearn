@@ -648,6 +648,12 @@ body {
   position: relative;
   z-index: 1;
   isolation: isolate;
+  /* Garde-fou ultime : aucun descendant ne peut faire scroller la page
+     horizontalement. Toute page qui a besoin d'un scroll horizontal
+     (carrousels, tables larges) doit le gérer dans son propre conteneur
+     avec overflow-x: auto + min-width: 0. */
+  min-width: 0;
+  overflow-x: clip;
 }
 
 .review-page,
@@ -1445,6 +1451,14 @@ select:focus {
   flex-direction: column;
   gap: 18px;
   padding-bottom: 40px;
+  /* Filet de sécurité : si un descendant a un contenu débordant (carrousel
+     tabs, table large, badge tronqué…), on contient le scroll horizontal
+     ici plutôt que de le laisser remonter au main-content et faire scroller
+     toute la page sur tablette. */
+  min-width: 0;
+  max-width: min(var(--content-max-width), 100%);
+  overflow-x: clip; /* clip = comme hidden mais autorise les enfants à
+                       déborder visuellement en Y (ex: tooltips popover) */
 }
 
 .lp-header {
@@ -1696,6 +1710,14 @@ select:focus {
   display: flex;
   align-items: center;
   gap: 6px;
+  /* min-width: 0 propage la possibilité de shrink jusqu'aux flex enfants
+     (.lp-level-tabs qui a aussi min-width:0). Sans ça, sur tablette le
+     conteneur grossit à la somme des min-content de ses tabs et pousse
+     toute la page Leçons en scroll horizontal. */
+  min-width: 0;
+  /* Sécurité supplémentaire : si une tab dépassait quand même, on le cap
+     ici plutôt que de laisser fuir vers le main-content. */
+  overflow: hidden;
 }
 
 .lp-tabs-arrow {
