@@ -206,25 +206,56 @@ const GlobalSearchBar = ({
       const titleNorm = normalize(language === 'en' ? titleEn || titleFr : titleFr || titleEn);
       const titleScore = matchScore(titleNorm, q);
 
-      // Match dans le vocab de la leçon — 2 niveaux :
-      // 1. Match par mot individuel (ex: 谢谢 ∈ flashcards → hay 谢谢 contient '谢')
-      // 2. Match par concaténation des hanzi de la leçon (ex: query '你好',
-      //    la leçon a 你 ET 好 individuellement → concat='你好' contient '你好').
-      //    Sans ce 2e niveau, chercher un MOT (你好) ne ramenait pas une leçon
-      //    dont les flashcards sont les caractères séparés (你, 好) — bug
-      //    observé sur "Dire bonjour & au revoir".
+      // Match dans le vocab de la leçon — 3 niveaux :
+      // 0. ⚡ Match RAW dans m.flashcards (= les hanzi/identifiants bruts
+      //    stockés dans la data CECR). Indispensable : pour "Dire bonjour"
+      //    flashcards=["你好", "再见", ...]. Si 你好 n'a pas de LessonItem
+      //    dans getAllLessons() (cas fréquent des mots composés CECR),
+      //    moduleVocab ignorait silencieusement → 0 match. Maintenant on
+      //    teste contre les strings brutes en premier.
+      // 1. Match par mot individuel résolu (LessonItem)
+      // 2. Match par concaténation/set des hanzi (couvre les mots composés
+      //    dont les composants sont individuellement dans la leçon)
+      let vocabScore = 0;
+      for (const raw of m.flashcards) {
+        if (normalize(raw).includes(q) || raw.includes(trimmed)) {
+          vocabScore = 22; // priorité haute : match direct sur la flashcard
+          break;
+        }
+      }
       const vocab = moduleVocab.get(m.id) ?? [];
-      const matchingWords = vocab.filter((it) => {
-        const hay = normalize(
-          `${it.hanzi} ${it.pinyin} ${it.translation} ${it.translationFr}`
-        );
-        return hay.includes(q);
-      });
-      let vocabScore = matchingWords.length > 0 ? 20 : 0;
+      if (vocabScore === 0) {
+        const matchingWords = vocab.filter((it) => {
+          const hay = normalize(
+            `${it.hanzi} ${it.pinyin} ${it.translation} ${it.translationFr}`
+          );
+          return hay.includes(q);
+        });
+        if (matchingWords.length > 0) vocabScore = 20;
+      }
       if (vocabScore === 0 && vocab.length > 0) {
-        const allHanzi = vocab.map((it) => it.hanzi).join('');
-        if (allHanzi.includes(trimmed)) {
-          vocabScore = 18; // légèrement < match direct mais > miss
+        // 2 stratégies pour matcher un mot composé absent en tant que mot
+        // entier dans les flashcards :
+        //
+        // a) Concat ordonnée des hanzi : '你好' ⊂ '你好再见' = true.
+        //    Marche si les flashcards sont dans le bon ordre adjacent.
+        // b) Set des caractères individuels : si TOUS les hanzi du query
+        //    apparaissent dans les flashcards (peu importe l'ordre), on
+        //    considère que la leçon "contient" le mot. Couvre le cas
+        //    flashcards=[好, 你, 再见] où la concat='好你再见' ne contient
+        //    pas '你好' mais l'utilisateur sait bien que 你+好=你好 ⊂ leçon.
+        const allHanziConcat = vocab.map((it) => it.hanzi).join('');
+        if (allHanziConcat.includes(trimmed)) {
+          vocabScore = 18;
+        } else {
+          const allCharsSet = new Set(Array.from(allHanziConcat));
+          const queryHanzi = Array.from(trimmed).filter((c) => /[一-鿿]/.test(c));
+          if (
+            queryHanzi.length > 0 &&
+            queryHanzi.every((c) => allCharsSet.has(c))
+          ) {
+            vocabScore = 15; // < match concat mais > miss
+          }
         }
       }
 
