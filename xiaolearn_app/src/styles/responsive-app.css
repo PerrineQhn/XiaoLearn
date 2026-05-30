@@ -72,9 +72,19 @@
   }
 
   /* Le grid layout passe en une seule colonne — la sidebar
-     sort du flow grâce à position: fixed */
+     sort du flow grâce à position: fixed.
+     ⚠ CRITIQUE : reset aussi grid-template-areas et la sidebar elle-même,
+     sinon les areas "sidebar" et "topbar/main" restent définies → le grid
+     crée 2 tracks de colonnes implicites alors qu'on n'en fournit qu'une
+     (1fr), et la colonne "main" est rejetée à droite, créant une énorme
+     zone vide à gauche (~50% sur 834px). Bug observé sur iPad. */
   .app-container {
     grid-template-columns: 1fr;
+    grid-template-areas: "topbar" "main";
+    grid-template-rows: auto 1fr;
+  }
+  .app-container > .sidebar {
+    grid-area: unset; /* déjà hors flow via position: fixed */
   }
 
   /* Sidebar : drawer slide-in depuis la gauche */

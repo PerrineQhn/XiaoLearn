@@ -105,19 +105,45 @@ const HanziWriterPad = ({
   const startQuizInternal = useCallback(
     (writer: Writer) => {
       setState({ kind: 'quiz' });
-      writer.quiz({
-        onComplete: (summary: { totalMistakes: number }) => {
-          const stats: HanziWriterQuizStats = {
-            totalMistakes: summary.totalMistakes,
-            verdict: verdictForMistakes(summary.totalMistakes)
-          };
-          setState({ kind: 'done', stats });
-          onComplete?.(stats);
-        }
-      });
+      // ⚠ writer.quiz() peut throw silencieusement (HanziWriter v3 charge le
+      // character data en lazy : si le fetch CDN échoue ou si le navigateur
+      // bloque, on tombait en state 'quiz' MAIS sans SVG interactif → user
+      // voyait l'outline figé sans pouvoir tracer. On wrappe pour basculer
+      // en 'error' visible plutôt que silence.
+      try {
+        writer.quiz({
+          onComplete: (summary: { totalMistakes: number }) => {
+            const stats: HanziWriterQuizStats = {
+              totalMistakes: summary.totalMistakes,
+              verdict: verdictForMistakes(summary.totalMistakes)
+            };
+            setState({ kind: 'done', stats });
+            onComplete?.(stats);
+          }
+        });
+      } catch (err) {
+        console.warn('[HanziWriterPad] quiz() failed', err);
+        setState({
+          kind: 'error',
+          message:
+            err instanceof Error
+              ? err.message
+              : 'Impossible de lancer le mode écriture pour ce caractère.'
+        });
+      }
     },
     [onComplete]
   );
+
+  /** cancelQuiz peut throw "no quiz in progress" sur certaines versions
+   *  de hanzi-writer v3 → on l'enveloppe pour ne pas bloquer le flow. */
+  const safeCancelQuiz = (w: Writer) => {
+    try {
+      w.cancelQuiz();
+    } catch {
+      /* noop */
+    }
+  };
 
   // (Re)crée le writer quand le hanzi change.
   useEffect(() => {
@@ -160,7 +186,7 @@ const HanziWriterPad = ({
   const handleShowStrokes = useCallback(() => {
     const writer = writerRef.current;
     if (!writer) return;
-    writer.cancelQuiz();
+    safeCancelQuiz(writer);
     writer.hideCharacter();
     setState({ kind: 'demo' });
     writer.animateCharacter({
@@ -174,7 +200,7 @@ const HanziWriterPad = ({
   const handleStartQuiz = useCallback(() => {
     const writer = writerRef.current;
     if (!writer) return;
-    writer.cancelQuiz();
+    safeCancelQuiz(writer);
     writer.hideCharacter();
     startQuizInternal(writer);
   }, [startQuizInternal]);
@@ -182,7 +208,7 @@ const HanziWriterPad = ({
   const handleReset = useCallback(() => {
     const writer = writerRef.current;
     if (!writer) return;
-    writer.cancelQuiz();
+    safeCancelQuiz(writer);
     writer.hideCharacter();
     setState({ kind: 'idle' });
   }, []);

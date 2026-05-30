@@ -33,6 +33,16 @@
                           parasitement le tracé tactile sur mobile/tablette */
 }
 
+/* Le SVG injecté par hanzi-writer doit recevoir les pointer events au-dessus
+   de tout overlay (en particulier les filigranes ou background-images du
+   .hw-pad-canvas). Sans ce force, certaines versions Safari iPad consomment
+   les touches au niveau du parent et le tracé ne marche pas. */
+.hw-pad-canvas svg,
+.hw-pad-canvas svg * {
+  pointer-events: auto;
+  touch-action: none;
+}
+
 .hw-pad-warning {
   font-size: 12px;
   color: var(--text-secondary, #6b7280);

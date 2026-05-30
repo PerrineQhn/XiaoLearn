@@ -3910,8 +3910,16 @@ select:focus {
 }
 
 @media (max-width: 768px) {
+  /* Reset complet du grid en mode mobile, sinon les areas "sidebar/topbar/
+     main" persistent et créent une colonne fantôme (cf. note dans
+     responsive-app.css). */
   .app-container {
     grid-template-columns: 1fr;
+    grid-template-areas: "topbar" "main";
+    grid-template-rows: auto 1fr;
+  }
+  .app-container > .sidebar {
+    grid-area: unset;
   }
 
   /* Sur mobile, la sidebar est empilée au-dessus du contenu et scrolle avec
