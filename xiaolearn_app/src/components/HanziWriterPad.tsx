@@ -98,42 +98,52 @@ const HanziWriterPad = ({
   const writerRef = useRef<Writer | null>(null);
   const [state, setState] = useState<UiState>({ kind: 'idle' });
 
+  // ⚠ Stock onComplete dans une ref pour que le useEffect d'init ne dépende
+  // PAS de la fonction elle-même. Sinon, un parent qui passe une lambda
+  // inline (`onComplete={(s) => ...}`) la recrée à chaque render → notre
+  // useEffect re-runs → node.innerHTML='' → HanziWriter.create() recrée
+  // tout → clignotement permanent de l'outline. Avec la ref, l'init n'a
+  // lieu QUE quand le hanzi change vraiment.
+  const onCompleteRef = useRef(onComplete);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
   // On ne prend que le premier hanzi si la prop en contient plusieurs.
   const targetChar = Array.from(hanzi.trim())[0] ?? '';
   const isMulti = Array.from(hanzi.trim()).length > 1;
 
-  const startQuizInternal = useCallback(
-    (writer: Writer) => {
-      setState({ kind: 'quiz' });
-      // ⚠ writer.quiz() peut throw silencieusement (HanziWriter v3 charge le
-      // character data en lazy : si le fetch CDN échoue ou si le navigateur
-      // bloque, on tombait en state 'quiz' MAIS sans SVG interactif → user
-      // voyait l'outline figé sans pouvoir tracer. On wrappe pour basculer
-      // en 'error' visible plutôt que silence.
-      try {
-        writer.quiz({
-          onComplete: (summary: { totalMistakes: number }) => {
-            const stats: HanziWriterQuizStats = {
-              totalMistakes: summary.totalMistakes,
-              verdict: verdictForMistakes(summary.totalMistakes)
-            };
-            setState({ kind: 'done', stats });
-            onComplete?.(stats);
-          }
-        });
-      } catch (err) {
-        console.warn('[HanziWriterPad] quiz() failed', err);
-        setState({
-          kind: 'error',
-          message:
-            err instanceof Error
-              ? err.message
-              : 'Impossible de lancer le mode écriture pour ce caractère.'
-        });
-      }
-    },
-    [onComplete]
-  );
+  const startQuizInternal = useCallback((writer: Writer) => {
+    setState({ kind: 'quiz' });
+    // ⚠ writer.quiz() peut throw silencieusement (HanziWriter v3 charge le
+    // character data en lazy : si le fetch CDN échoue ou si le navigateur
+    // bloque, on tombait en state 'quiz' MAIS sans SVG interactif → user
+    // voyait l'outline figé sans pouvoir tracer. On wrappe pour basculer
+    // en 'error' visible plutôt que silence.
+    try {
+      writer.quiz({
+        onComplete: (summary: { totalMistakes: number }) => {
+          const stats: HanziWriterQuizStats = {
+            totalMistakes: summary.totalMistakes,
+            verdict: verdictForMistakes(summary.totalMistakes)
+          };
+          setState({ kind: 'done', stats });
+          // Appel via ref pour ne pas recréer ce callback à chaque
+          // changement d'onComplete (cf. note onCompleteRef plus haut).
+          onCompleteRef.current?.(stats);
+        }
+      });
+    } catch (err) {
+      console.warn('[HanziWriterPad] quiz() failed', err);
+      setState({
+        kind: 'error',
+        message:
+          err instanceof Error
+            ? err.message
+            : 'Impossible de lancer le mode écriture pour ce caractère.'
+      });
+    }
+  }, []);
 
   /** cancelQuiz peut throw "no quiz in progress" sur certaines versions
    *  de hanzi-writer v3 → on l'enveloppe pour ne pas bloquer le flow. */
