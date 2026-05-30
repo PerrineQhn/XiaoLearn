@@ -184,8 +184,19 @@ const AtelierPage = ({
   //    par App.tsx via completedLessonWordPool)
   // On garde séparé perso/leçons pour pouvoir afficher la décomposition
   // dans l'UI ("X perso · Y via leçons") et appliquer le filtre source.
+
+  /** True si le champ `hanzi` contient au moins UN caractère CJK. Sinon
+   *  c'est probablement une syllabe pinyin pure (ex: "mā", "bù") issue
+   *  d'une leçon de prononciation tonale — pas pertinent pour s'entraîner
+   *  en prononciation/écriture car il n'y a rien à tracer ni à reconnaître
+   *  visuellement. */
+  const hasRealHanzi = (s: string): boolean => /[一-鿿]/.test(s);
+
   const persoItems = useMemo<PronunciationDrillItem[]>(
-    () => personalFlashcards.map((c) => ({ hanzi: c.hanzi, pinyin: c.pinyin })),
+    () =>
+      personalFlashcards
+        .filter((c) => hasRealHanzi(c.hanzi))
+        .map((c) => ({ hanzi: c.hanzi, pinyin: c.pinyin })),
     [personalFlashcards]
   );
 
@@ -196,6 +207,8 @@ const AtelierPage = ({
     const out: PronunciationDrillItem[] = [];
     for (const w of lessonWordPool) {
       const key = w.hanzi.trim();
+      // Filtre les entrées sans vrai hanzi (cf. note hasRealHanzi)
+      if (!hasRealHanzi(key)) continue;
       if (key && !persoKeys.has(key) && !seen.has(key)) {
         seen.add(key);
         out.push({ hanzi: w.hanzi, pinyin: w.pinyin });
@@ -214,6 +227,8 @@ const AtelierPage = ({
       return bucket.items.filter((it) => {
         const key = it.hanzi.trim();
         if (!key || seen.has(key)) return false;
+        // Filtre les "mots" sans vrai hanzi (syllabes pinyin pures)
+        if (!hasRealHanzi(key)) return false;
         seen.add(key);
         return true;
       });

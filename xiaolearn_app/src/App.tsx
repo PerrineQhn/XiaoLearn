@@ -1103,8 +1103,14 @@ function App() {
   const allFlashcardItems = useMemo<LessonItem[]>(() => {
     const seen = new Set<string>();
     const items: LessonItem[] = [];
+    // Filtre les entrées sans VRAI hanzi CJK (syllabes pinyin pures issues
+    // des leçons de prononciation tonale type "mā"/"bù") — ces "mots"
+    // n'ont pas leur place dans les flashcards ni en révision puisqu'il
+    // n'y a aucun caractère à reconnaître/écrire/réviser visuellement.
+    const HANZI_RE = /[一-鿿]/;
     const pushUnique = (word: LessonItem | undefined) => {
       if (!word || seen.has(word.id)) return;
+      if (!HANZI_RE.test(word.hanzi)) return;
       seen.add(word.id);
       items.push(word);
     };
