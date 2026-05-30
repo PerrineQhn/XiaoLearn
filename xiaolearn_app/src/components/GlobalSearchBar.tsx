@@ -217,6 +217,7 @@ const GlobalSearchBar = ({
       // 2. Match par concaténation/set des hanzi (couvre les mots composés
       //    dont les composants sont individuellement dans la leçon)
       let vocabScore = 0;
+      let matchingWords: LessonItem[] = [];
       for (const raw of m.flashcards) {
         if (normalize(raw).includes(q) || raw.includes(trimmed)) {
           vocabScore = 22; // priorité haute : match direct sur la flashcard
@@ -224,14 +225,17 @@ const GlobalSearchBar = ({
         }
       }
       const vocab = moduleVocab.get(m.id) ?? [];
-      if (vocabScore === 0) {
-        const matchingWords = vocab.filter((it) => {
+      if (vocabScore <= 20) {
+        // On calcule quand même `matchingWords` (utilisé pour le subtitle
+        // "N mots correspondants") même si on a déjà un match via raw — c'est
+        // une stat indicative complémentaire.
+        matchingWords = vocab.filter((it) => {
           const hay = normalize(
             `${it.hanzi} ${it.pinyin} ${it.translation} ${it.translationFr}`
           );
           return hay.includes(q);
         });
-        if (matchingWords.length > 0) vocabScore = 20;
+        if (matchingWords.length > 0 && vocabScore === 0) vocabScore = 20;
       }
       if (vocabScore === 0 && vocab.length > 0) {
         // 2 stratégies pour matcher un mot composé absent en tant que mot
