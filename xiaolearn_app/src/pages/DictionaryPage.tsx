@@ -17,6 +17,7 @@ import {
   fetchDictionaryStats,
   fetchLevelEntries
 } from '../data/dictionary';
+import { matchesSearch } from '../utils/search-normalize';
 
 interface Props {
   language: 'fr' | 'en';
@@ -35,6 +36,16 @@ function normalize(s: string): string {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .trim();
+}
+
+/**
+ * Normalisation "compacte" pour le pinyin : on enlève EN PLUS les espaces et
+ * les chiffres de ton, pour que "nihao", "ni hao", "ni3hao3" matchent tous
+ * "nǐ hǎo" / "ni3 hao3". Appliquée à la fois au haystack pinyin ET à la query
+ * quand on teste le champ pinyin.
+ */
+function normalizePinyinCompact(s: string): string {
+  return normalize(s).replace(/[\s\d]+/g, '');
 }
 
 export default function DictionaryPage({ language, onSelectLevel, onSelectEntry }: Props) {
@@ -101,19 +112,14 @@ export default function DictionaryPage({ language, onSelectLevel, onSelectEntry 
   // Filtre par requête + niveau
   const results = useMemo<DictionaryEntry[]>(() => {
     if (!debounced || !searchEntries) return [];
-    const q = normalize(debounced);
     const matched: DictionaryEntry[] = [];
     for (const e of searchEntries) {
       if (filterLevel !== 'all' && e.level !== filterLevel) continue;
-      const hanzi = e.hanzi.toLowerCase();
-      const pinyin = normalize(e.pinyin);
-      const trFr = normalize(e.translationFr ?? '');
-      const trEn = normalize(e.translationEn ?? '');
       if (
-        hanzi.includes(q) ||
-        pinyin.includes(q) ||
-        trFr.includes(q) ||
-        trEn.includes(q)
+        matchesSearch(debounced, e.hanzi) ||
+        matchesSearch(debounced, e.pinyin, { pinyin: true }) ||
+        matchesSearch(debounced, e.translationFr) ||
+        matchesSearch(debounced, e.translationEn)
       ) {
         matched.push(e);
         if (matched.length >= MAX_RESULTS) break;

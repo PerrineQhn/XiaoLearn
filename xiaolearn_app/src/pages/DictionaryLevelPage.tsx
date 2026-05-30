@@ -16,6 +16,7 @@ import {
   LEVEL_LABEL,
   fetchLevelEntries
 } from '../data/dictionary';
+import { matchesSearch } from '../utils/search-normalize';
 
 interface Props {
   level: DictionaryLevel;
@@ -32,6 +33,11 @@ function normalize(s: string): string {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .trim();
+}
+
+/** Pinyin compact : sans espaces ni chiffres de ton (cf. DictionaryPage). */
+function normalizePinyinCompact(s: string): string {
+  return normalize(s).replace(/[\s\d]+/g, '');
 }
 
 export default function DictionaryLevelPage({
@@ -66,20 +72,15 @@ export default function DictionaryLevelPage({
 
   const filtered = useMemo<DictionaryEntry[]>(() => {
     if (!entries) return [];
-    const q = normalize(query);
+    const q = query.trim();
     if (!q) return entries;
-    return entries.filter((e) => {
-      const hanzi = e.hanzi.toLowerCase();
-      const pinyin = normalize(e.pinyin);
-      const trFr = normalize(e.translationFr ?? '');
-      const trEn = normalize(e.translationEn ?? '');
-      return (
-        hanzi.includes(q) ||
-        pinyin.includes(q) ||
-        trFr.includes(q) ||
-        trEn.includes(q)
-      );
-    });
+    return entries.filter(
+      (e) =>
+        matchesSearch(q, e.hanzi) ||
+        matchesSearch(q, e.pinyin, { pinyin: true }) ||
+        matchesSearch(q, e.translationFr) ||
+        matchesSearch(q, e.translationEn)
+    );
   }, [entries, query]);
 
   const visible = filtered.slice(0, visibleCount);

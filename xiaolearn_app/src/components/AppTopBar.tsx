@@ -77,6 +77,7 @@ const AppTopBar = ({
       <div className="xl-app-topbar-search">
         <GlobalSearchBar
           language={language}
+          lessonPaths={lessonPaths}
           personalFlashcards={personalFlashcards}
           tutorConversations={tutorConversations}
           onSelectHit={onSearchSelect}

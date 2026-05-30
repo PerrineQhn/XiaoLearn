@@ -275,22 +275,38 @@ export default function LessonPathsPage({
   // via getLessonById / getGrammarLessonById pour résoudre l'identifiant.
   const filteredLevelPaths = useMemo(() => {
     if (!searchQuery.trim()) return selectedLevelPaths;
-    const q = searchQuery.trim().toLowerCase();
+    const trimmed = searchQuery.trim();
+    const q = trimmed.toLowerCase();
 
-    /** Renvoie true si la chaîne contient `q` (case-insensitive). */
-    const matches = (s: string | undefined | null) =>
-      typeof s === 'string' && s.toLowerCase().includes(q);
+    /** Normalisation classique : enlève les diacritiques + casse. */
+    const normalize = (s: string) =>
+      s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    /** Pinyin compact : pas d'espace, pas de chiffre de ton, pas de diacritique.
+     *  Permet à 'nihao' / 'ni3hao3' de matcher 'nǐ hǎo'. */
+    const compact = (s: string) => normalize(s).replace(/[\s\d]+/g, '');
+    const qNorm = normalize(trimmed);
+    const qCompact = compact(trimmed);
 
-    /** Cherche dans les flashcards (= mots) de la leçon. Résout chaque
-     *  identifier via les indices statiques. Tolère les misses (mots
-     *  custom ou inconnus). */
+    /** Renvoie true si la chaîne brute, normalisée ou compactée matche. */
+    const matches = (s: string | undefined | null): boolean => {
+      if (typeof s !== 'string' || !s) return false;
+      const lower = s.toLowerCase();
+      if (lower.includes(q)) return true;
+      const normed = normalize(s);
+      if (normed.includes(qNorm)) return true;
+      if (qCompact) {
+        const compacted = compact(s);
+        if (compacted.includes(qCompact)) return true;
+      }
+      return false;
+    };
+
+    /** Cherche dans les flashcards (= mots) de la leçon. */
     const lessonContainsWord = (lesson: { flashcards?: string[] }): boolean => {
       const ids = lesson.flashcards;
       if (!Array.isArray(ids) || ids.length === 0) return false;
       for (const id of ids) {
-        // Match brut sur l'identifier (souvent le hanzi lui-même)
         if (matches(id)) return true;
-        // Match via lookup canonique
         const item = getLessonById(id) ?? getGrammarLessonById(id);
         if (!item) continue;
         if (

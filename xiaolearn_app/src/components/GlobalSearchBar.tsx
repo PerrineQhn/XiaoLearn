@@ -106,6 +106,13 @@ const normalize = (s: string): string =>
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '');
 
+/** Variante "compacte" pour le pinyin : strippe les espaces et chiffres de ton.
+ *  Permet à 'nihao', 'ni hao', 'ni3hao3' de matcher tous 'nǐ hǎo'. À appliquer
+ *  côté haystack (sur le pinyin de l'entrée) ET côté query quand on teste le
+ *  champ pinyin. */
+const normalizePinyinCompact = (s: string): string =>
+  normalize(s).replace(/[\s\d]+/g, '');
+
 /** Score : 100 exact, 50 startsWith, 10 contains, 0 sinon. */
 const matchScore = (haystack: string, needle: string): number => {
   if (!haystack || !needle) return 0;
@@ -219,10 +226,19 @@ const GlobalSearchBar = ({
       // 1. Match par mot individuel résolu (LessonItem)
       // 2. Match par concaténation/set des hanzi (couvre les mots composés
       //    dont les composants sont individuellement dans la leçon)
+      // Query compacte (sans tons ni espaces) pour matcher 'nihao'/'ni3hao3'
+      // contre les pinyin tonalisés des flashcards.
+      const qPinyinLesson = normalizePinyinCompact(trimmed);
       let vocabScore = 0;
       let matchingWords: LessonItem[] = [];
       for (const raw of m.flashcards) {
-        if (normalize(raw).includes(q) || raw.includes(trimmed)) {
+        const rawNorm = normalize(raw);
+        const rawPinyinCompact = normalizePinyinCompact(raw);
+        if (
+          rawNorm.includes(q) ||
+          raw.includes(trimmed) ||
+          (qPinyinLesson && rawPinyinCompact.includes(qPinyinLesson))
+        ) {
           vocabScore = 22; // priorité haute : match direct sur la flashcard
           break;
         }
@@ -231,12 +247,19 @@ const GlobalSearchBar = ({
       if (vocabScore <= 20) {
         // On calcule quand même `matchingWords` (utilisé pour le subtitle
         // "N mots correspondants") même si on a déjà un match via raw — c'est
-        // une stat indicative complémentaire.
+        // une stat indicative complémentaire. La forme pinyin compacte
+        // matche aussi 'nihao' / 'ni3hao3' sur les vocab dont le pinyin
+        // tonalisé est 'nǐ hǎo'.
         matchingWords = vocab.filter((it) => {
           const hay = normalize(
             `${it.hanzi} ${it.pinyin} ${it.translation} ${it.translationFr}`
           );
-          return hay.includes(q);
+          if (hay.includes(q)) return true;
+          if (qPinyinLesson) {
+            const hayPinyinCompact = normalizePinyinCompact(it.pinyin);
+            if (hayPinyinCompact.includes(qPinyinLesson)) return true;
+          }
+          return false;
         });
         if (matchingWords.length > 0 && vocabScore === 0) vocabScore = 20;
       }
@@ -296,9 +319,11 @@ const GlobalSearchBar = ({
     if (!q) return [];
     type Scored = { hit: SearchHit; score: number };
     const scored: Scored[] = [];
+    const qPinyinG = normalizePinyinCompact(trimmed);
     for (const g of grammarLessons) {
       const hayHanzi = normalize(g.hanzi);
       const hayPinyin = normalize(g.pinyin);
+      const hayPinyinCompactG = normalizePinyinCompact(g.pinyin);
       const hayTr = normalize(
         language === 'en'
           ? g.translation || g.translationFr
@@ -307,6 +332,7 @@ const GlobalSearchBar = ({
       const score = Math.max(
         matchScore(hayHanzi, q),
         matchScore(hayPinyin, q),
+        qPinyinG ? matchScore(hayPinyinCompactG, qPinyinG) : 0,
         matchScore(hayTr, q)
       );
       if (score === 0) continue;
@@ -332,10 +358,14 @@ const GlobalSearchBar = ({
     if (!q) return [];
     type Scored = { hit: SearchHit; score: number };
     const scored: Scored[] = [];
+    // Query compacte (sans espaces ni chiffres de ton) pour matcher
+    // 'nihao' / 'ni3hao3' sur des pinyin 'nǐ hǎo'.
+    const qPinyin = normalizePinyinCompact(trimmed);
     // LessonItems (vocab HSK / CECR)
     for (const l of allLessons) {
       const hayHanzi = normalize(l.hanzi);
       const hayPinyin = normalize(l.pinyin);
+      const hayPinyinCompact = normalizePinyinCompact(l.pinyin);
       const hayTr = normalize(
         language === 'en'
           ? l.translation || l.translationFr
@@ -344,6 +374,7 @@ const GlobalSearchBar = ({
       const score = Math.max(
         matchScore(hayHanzi, q),
         matchScore(hayPinyin, q),
+        qPinyin ? matchScore(hayPinyinCompact, qPinyin) : 0,
         matchScore(hayTr, q)
       );
       if (score === 0) continue;
@@ -366,6 +397,7 @@ const GlobalSearchBar = ({
     for (const c of personalFlashcards) {
       const hayHanzi = normalize(c.hanzi);
       const hayPinyin = normalize(c.pinyin ?? '');
+      const hayPinyinCompact = normalizePinyinCompact(c.pinyin ?? '');
       const hayTr = normalize(
         language === 'en'
           ? c.translationEn ?? c.translationFr ?? ''
@@ -374,6 +406,7 @@ const GlobalSearchBar = ({
       const score = Math.max(
         matchScore(hayHanzi, q),
         matchScore(hayPinyin, q),
+        qPinyin ? matchScore(hayPinyinCompact, qPinyin) : 0,
         matchScore(hayTr, q)
       );
       if (score === 0) continue;

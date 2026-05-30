@@ -50,6 +50,7 @@ import {
 import { SessionView } from '../components/FlashcardV4/SessionView';
 import type { StudyCard } from '../components/FlashcardV4/StudyModeComponents';
 import { playHanziAudio } from '../utils/audio';
+import { matchesSearch } from '../utils/search-normalize';
 import '../styles/flashcards-v2.css';
 import '../styles/flashcards-v3.css';
 import '../styles/flashcards-v4.css'; // ⚠ requis : session/flip/mcq/typing utilisent les classes fc4-*
@@ -747,14 +748,15 @@ export default function FlashcardPageV5({
       default:
         base = wordItems;
     }
-    const q = searchQuery.trim().toLowerCase();
+    const q = searchQuery.trim();
     if (!q) return base;
+    // Pinyin compact ('nihao' / 'ni3hao3' → 'nǐ hǎo') sur le champ pinyin.
     return base.filter(
       (c) =>
-        c.hanzi.includes(searchQuery.trim()) ||
-        c.pinyin.toLowerCase().includes(q) ||
-        c.translation.toLowerCase().includes(q) ||
-        (c.translationEn?.toLowerCase().includes(q) ?? false)
+        matchesSearch(q, c.hanzi) ||
+        matchesSearch(q, c.pinyin, { pinyin: true }) ||
+        matchesSearch(q, c.translation) ||
+        matchesSearch(q, c.translationEn)
     );
   }, [
     activeTab,
@@ -1191,12 +1193,13 @@ export default function FlashcardPageV5({
           break;
       }
       if (q) {
+        const qTrim = searchQuery.trim();
         base = base.filter(
           (s) =>
-            s.hanzi.includes(searchQuery.trim()) ||
-            s.pinyin.toLowerCase().includes(q) ||
-            s.translationFr.toLowerCase().includes(q) ||
-            (s.translationEn?.toLowerCase().includes(q) ?? false)
+            matchesSearch(qTrim, s.hanzi) ||
+            matchesSearch(qTrim, s.pinyin, { pinyin: true }) ||
+            matchesSearch(qTrim, s.translationFr) ||
+            matchesSearch(qTrim, s.translationEn)
         );
       }
       return base.map((s) => {
