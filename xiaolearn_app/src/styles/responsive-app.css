@@ -65,7 +65,14 @@
 /* ============================================================
  * 3) ≤ 1024 px — Tablette / Mobile : sidebar devient drawer
  * ============================================================ */
-@media (max-width: 1024px) {
+/* ⚠ Breakpoint 1023 et non 1024 :
+   - iPad 9,7" / 10,2" en paysage font exactement 1024 px de large
+   - iPad Pro 12,9" en portrait fait 1024 px aussi
+   Inclure 1024 dans le drawer mode rendait inutilement étroite la zone
+   "tablette paysage" qui a largement la place d'afficher la sidebar
+   normale (1024 - 240 sidebar = 784 px de contenu).
+   Avec 1023 : portrait iPad 11"/12,9" Air = drawer ; paysage = sidebar. */
+@media (max-width: 1023px) {
   /* Le bouton hamburger apparait dans la topbar */
   .xl-topbar-hamburger {
     display: inline-flex;

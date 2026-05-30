@@ -3968,13 +3968,10 @@ select:focus {
   }
 }
 
-/* iPad / tablette en mode portrait (768–1024px) : la sidebar reste sticky
-   sur le côté mais peut dépasser la hauteur de la fenêtre si le user a
-   beaucoup d'items de nav (Lifetime : Exclusif Simulateur + Apprentissage
-   libre + Réglages + …). On laisse le layout desktop mais on s'assure que
-   la zone `.sidebar-scroll` scroll bien au touch (les overscroll-behavior
-   et -webkit-overflow-scrolling sont déjà sur la règle générale). */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* iPad paysage (1024px exact) et tablette portrait avec espace : la sidebar
+   reste sticky mais peut dépasser la hauteur. Couvre la zone NON drawer
+   (>= 1024px). Sous 1023 c'est le drawer qui prend le relais. */
+@media (min-width: 1024px) and (max-width: 1180px) {
   .sidebar {
     /* Garantit que la sidebar n'excède jamais la hauteur du viewport, donc
        .sidebar-scroll prend bien le reste de l'espace. */
