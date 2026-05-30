@@ -2379,6 +2379,12 @@ function App() {
               if (hit.parentModuleId) openLesson(hit.parentModuleId);
               else setView('cecr');
               break;
+            case 'grammar':
+              // Navigation vers la page Grammaire (catalogue GrammarPageV3).
+              // L'utilisateur arrive sur le catalogue avec le point sélectionné
+              // si la page supporte le deep-link via id (futur).
+              setView('grammar');
+              break;
             case 'flashcard':
               setView('flashcards');
               break;

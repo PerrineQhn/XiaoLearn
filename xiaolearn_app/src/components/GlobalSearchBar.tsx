@@ -14,6 +14,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getAllLessons } from '../data/lessons';
+import { grammarLessons } from '../data/grammar-lessons';
 import type { LessonItem } from '../types';
 import type { LessonPath, LessonModule } from '../types/lesson-structure';
 import type { PersonalFlashcard } from '../types/flashcard-v3';
@@ -31,6 +32,7 @@ export interface SearchableConversation {
 export type SearchKind =
   | 'lesson-module' // leçon parente (LessonModule)
   | 'vocab' // mot individuel (LessonItem)
+  | 'grammar' // point de grammaire (catalogue GrammarPageV3)
   | 'flashcard' // flashcard personnelle (PersonalFlashcard)
   | 'tutor-conv' // conversation Prof. Xiao
   | 'ask-tutor'; // CTA "Poser à Prof. Xiao"
@@ -69,6 +71,7 @@ const COPY = {
     placeholder: 'Rechercher un mot, une leçon, une conversation…',
     sectionLessons: 'Leçons',
     sectionVocab: 'Vocabulaire',
+    sectionGrammar: 'Grammaire',
     sectionConvs: 'Conversations Prof. Xiao',
     askTutor: 'Poser à Prof. Xiao',
     noResult: 'Aucun résultat',
@@ -79,6 +82,7 @@ const COPY = {
     placeholder: 'Search a word, a lesson, a conversation…',
     sectionLessons: 'Lessons',
     sectionVocab: 'Vocabulary',
+    sectionGrammar: 'Grammar',
     sectionConvs: 'Prof. Xiao conversations',
     askTutor: 'Ask Prof. Xiao',
     noResult: 'No result',
@@ -234,6 +238,45 @@ const GlobalSearchBar = ({
     return scored.slice(0, MAX_PER_SECTION).map((s) => s.hit);
   }, [q, allModules, moduleVocab, language, copy]);
 
+  /** Points de grammaire qui matchent (catalogue GrammarPageV3).
+   *  Avant ce calcul, chercher '的' ou '把' dans la TopBar ne renvoyait
+   *  que les vocabs/leçons HSK — la page Grammaire dédiée n'apparaissait
+   *  jamais alors qu'elle contient un point dédié à ces particules. */
+  const grammarHits = useMemo<SearchHit[]>(() => {
+    if (!q) return [];
+    type Scored = { hit: SearchHit; score: number };
+    const scored: Scored[] = [];
+    for (const g of grammarLessons) {
+      const hayHanzi = normalize(g.hanzi);
+      const hayPinyin = normalize(g.pinyin);
+      const hayTr = normalize(
+        language === 'en'
+          ? g.translation || g.translationFr
+          : g.translationFr || g.translation
+      );
+      const score = Math.max(
+        matchScore(hayHanzi, q),
+        matchScore(hayPinyin, q),
+        matchScore(hayTr, q)
+      );
+      if (score === 0) continue;
+      scored.push({
+        hit: {
+          kind: 'grammar',
+          id: g.id,
+          title: `${g.hanzi} ${g.pinyin}`.trim(),
+          subtitle:
+            language === 'en'
+              ? g.translation || g.translationFr
+              : g.translationFr || g.translation
+        },
+        score
+      });
+    }
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, MAX_PER_SECTION).map((s) => s.hit);
+  }, [q, language]);
+
   /** Mots individuels (LessonItem + PersonalFlashcard) qui matchent. */
   const vocabHits = useMemo<SearchHit[]>(() => {
     if (!q) return [];
@@ -323,7 +366,7 @@ const GlobalSearchBar = ({
   }, [q, tutorConversations, language]);
 
   const hasResults =
-    lessonHits.length + vocabHits.length + convHits.length > 0;
+    lessonHits.length + grammarHits.length + vocabHits.length + convHits.length > 0;
 
   // ---- Fermeture overlay ----
 
@@ -404,6 +447,28 @@ const GlobalSearchBar = ({
                   type="button"
                 >
                   <span className="xl-search-hit-icon" aria-hidden>📚</span>
+                  <span className="xl-search-hit-text">
+                    <span className="xl-search-hit-title">{h.title}</span>
+                    {h.subtitle && (
+                      <span className="xl-search-hit-subtitle">{h.subtitle}</span>
+                    )}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {grammarHits.length > 0 && (
+            <div className="xl-search-section">
+              <div className="xl-search-section-label">{copy.sectionGrammar}</div>
+              {grammarHits.map((h) => (
+                <button
+                  key={`g-${h.id}`}
+                  className="xl-search-hit"
+                  onClick={() => handleSelect(h)}
+                  type="button"
+                >
+                  <span className="xl-search-hit-icon" aria-hidden>📐</span>
                   <span className="xl-search-hit-text">
                     <span className="xl-search-hit-title">{h.title}</span>
                     {h.subtitle && (
