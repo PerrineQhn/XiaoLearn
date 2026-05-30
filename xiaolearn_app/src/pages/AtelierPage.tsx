@@ -32,11 +32,21 @@ export interface AtelierPoolItem {
   pinyin: string;
 }
 
+/** Bucket = un sous-pool nommé (ex: une leçon, une catégorie HSK).
+ *  Permet le sélecteur "une leçon précise". */
+export interface AtelierBucket {
+  id: string;
+  title: string;
+  items: AtelierPoolItem[];
+}
+
 interface AtelierPageProps {
   language: Language;
   personalFlashcards: PersonalFlashcard[];
-  /** Mots SRS issus de toutes les leçons complétées (= pool d'entraînement). */
+  /** Mots SRS issus de toutes les leçons complétées (pool plat, dédupliqué). */
   lessonWordPool?: AtelierPoolItem[];
+  /** Mots groupés par leçon — pour le sélecteur "Une leçon précise". */
+  lessonBuckets?: AtelierBucket[];
 }
 
 // V12 — Atelier englobe maintenant 4 modes : prononciation orale, écriture
@@ -62,10 +72,21 @@ const COPY = {
     modeReading: 'Lecture',
     modeReadingDesc: 'Lis des textes avec audio, mots cliquables et quiz.',
     sourceFlashcards: 'Mes flashcards',
-    sourceFlashcardsDesc: (n: number) =>
-      n > 0
-        ? `${n} mot${n > 1 ? 's' : ''} disponible${n > 1 ? 's' : ''} dans ta collection.`
-        : 'Aucune flashcard personnelle pour le moment.',
+    sourceFlashcardsDesc: (perso: number, lecons: number) => {
+      const total = perso + lecons;
+      if (total === 0) return 'Aucune flashcard personnelle pour le moment.';
+      return `${total} mot${total > 1 ? 's' : ''} disponible${total > 1 ? 's' : ''} (${perso} perso · ${lecons} via leçons).`;
+    },
+    refineTitle: 'Affine ta sélection',
+    refineSourcePicker: 'Source des mots',
+    refineSourceAll: 'Tout (perso + leçons)',
+    refineSourcePerso: 'Cartes perso seulement',
+    refineSourceLesson: 'Une leçon précise',
+    refinePickLesson: 'Choisis la leçon',
+    refineCount: 'Combien de mots ?',
+    refineCountAll: 'Tous',
+    refineShuffle: 'Mélanger l\'ordre',
+    refineTotalShown: (n: number) => `${n} mot${n > 1 ? 's' : ''} sélectionné${n > 1 ? 's' : ''} pour l\'entraînement.`,
     sourceCustom: 'Liste libre',
     sourceCustomDesc: 'Colle ou tape une liste de hanzi.',
     customPlaceholder:
@@ -91,10 +112,21 @@ const COPY = {
     modeReading: 'Readings',
     modeReadingDesc: 'Read texts with audio, clickable words, and quizzes.',
     sourceFlashcards: 'My flashcards',
-    sourceFlashcardsDesc: (n: number) =>
-      n > 0
-        ? `${n} word${n > 1 ? 's' : ''} available in your collection.`
-        : 'No personal flashcards yet.',
+    sourceFlashcardsDesc: (perso: number, lecons: number) => {
+      const total = perso + lecons;
+      if (total === 0) return 'No personal flashcards yet.';
+      return `${total} word${total > 1 ? 's' : ''} available (${perso} personal · ${lecons} from lessons).`;
+    },
+    refineTitle: 'Refine your selection',
+    refineSourcePicker: 'Word source',
+    refineSourceAll: 'All (personal + lessons)',
+    refineSourcePerso: 'Personal cards only',
+    refineSourceLesson: 'A specific lesson',
+    refinePickLesson: 'Pick the lesson',
+    refineCount: 'How many words?',
+    refineCountAll: 'All',
+    refineShuffle: 'Shuffle order',
+    refineTotalShown: (n: number) => `${n} word${n > 1 ? 's' : ''} selected for practice.`,
     sourceCustom: 'Custom list',
     sourceCustomDesc: 'Paste or type a list of hanzi.',
     customPlaceholder:
@@ -118,7 +150,15 @@ const parseCustomHanzi = (input: string): string[] => {
   return groups;
 };
 
-const AtelierPage = ({ language, personalFlashcards, lessonWordPool = [] }: AtelierPageProps) => {
+type RefineSource = 'all' | 'perso' | 'lesson';
+const COUNT_OPTIONS = [5, 10, 20, 50, Number.POSITIVE_INFINITY] as const;
+
+const AtelierPage = ({
+  language,
+  personalFlashcards,
+  lessonWordPool = [],
+  lessonBuckets = []
+}: AtelierPageProps) => {
   const copy = COPY[language === 'en' ? 'en' : 'fr'];
   const drillLang: 'fr' | 'en' = language === 'en' ? 'en' : 'fr';
 
@@ -130,34 +170,78 @@ const AtelierPage = ({ language, personalFlashcards, lessonWordPool = [] }: Atel
     items: PronunciationDrillItem[];
   } | null>(null);
 
-  // Pool unifié : flashcards perso + tous les mots SRS issus des leçons
-  // complétées. Dédoublonnage par hanzi (l'ordre des perso prime, plus
-  // pertinent : ce sont les cartes que l'utilisateur a explicitement
-  // ajoutées). Avant ce changement, "Mes flashcards" n'affichait que les
-  // perso (souvent ~2) ce qui était trompeur — l'utilisateur s'attend à
-  // s'entraîner sur TOUT son vocabulaire connu.
-  const unifiedPool = useMemo<PronunciationDrillItem[]>(() => {
+  // === Sélecteur granulaire ===
+  // Source de mots : 'all' (perso + leçons), 'perso' (uniquement cartes
+  // manuellement créées), 'lesson' (une leçon précise via lessonBuckets).
+  const [refineSource, setRefineSource] = useState<RefineSource>('all');
+  const [refineLessonId, setRefineLessonId] = useState<string | null>(null);
+  const [refineCount, setRefineCount] = useState<number>(Number.POSITIVE_INFINITY);
+  const [refineShuffle, setRefineShuffle] = useState<boolean>(true);
+
+  // === Pool unifié ===
+  // 1. Perso = cartes manuellement créées (hanzi+pinyin)
+  // 2. Pool leçons = mots SRS issus des leçons complétées (passé en prop
+  //    par App.tsx via completedLessonWordPool)
+  // On garde séparé perso/leçons pour pouvoir afficher la décomposition
+  // dans l'UI ("X perso · Y via leçons") et appliquer le filtre source.
+  const persoItems = useMemo<PronunciationDrillItem[]>(
+    () => personalFlashcards.map((c) => ({ hanzi: c.hanzi, pinyin: c.pinyin })),
+    [personalFlashcards]
+  );
+
+  // Items des leçons mais SANS doublons avec perso (perso = priorité)
+  const lessonOnlyItems = useMemo<PronunciationDrillItem[]>(() => {
+    const persoKeys = new Set(persoItems.map((c) => c.hanzi.trim()));
     const seen = new Set<string>();
     const out: PronunciationDrillItem[] = [];
-    for (const c of personalFlashcards) {
-      const key = c.hanzi.trim();
-      if (key && !seen.has(key)) {
-        seen.add(key);
-        out.push({ hanzi: c.hanzi, pinyin: c.pinyin });
-      }
-    }
     for (const w of lessonWordPool) {
       const key = w.hanzi.trim();
-      if (key && !seen.has(key)) {
+      if (key && !persoKeys.has(key) && !seen.has(key)) {
         seen.add(key);
         out.push({ hanzi: w.hanzi, pinyin: w.pinyin });
       }
     }
     return out;
-  }, [personalFlashcards, lessonWordPool]);
+  }, [persoItems, lessonWordPool]);
 
-  const flashcardCount = unifiedPool.length;
-  const flashcardItems = unifiedPool;
+  // Pool source (avant count/shuffle) selon refineSource
+  const sourcePool = useMemo<PronunciationDrillItem[]>(() => {
+    if (refineSource === 'perso') return persoItems;
+    if (refineSource === 'lesson' && refineLessonId) {
+      const bucket = lessonBuckets.find((b) => b.id === refineLessonId);
+      if (!bucket) return [];
+      const seen = new Set<string>();
+      return bucket.items.filter((it) => {
+        const key = it.hanzi.trim();
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+    // 'all' = perso + leçons dédoublonnés
+    return [...persoItems, ...lessonOnlyItems];
+  }, [refineSource, refineLessonId, persoItems, lessonOnlyItems, lessonBuckets]);
+
+  // Applique le count + shuffle pour obtenir la liste finale d'entraînement
+  const flashcardItems = useMemo<PronunciationDrillItem[]>(() => {
+    let arr = sourcePool;
+    if (refineShuffle) {
+      // Fisher–Yates léger, copie pour ne pas muter la source
+      arr = arr.slice();
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+    if (Number.isFinite(refineCount) && refineCount < arr.length) {
+      arr = arr.slice(0, refineCount);
+    }
+    return arr;
+  }, [sourcePool, refineCount, refineShuffle]);
+
+  const flashcardCount = sourcePool.length;
+  const persoCount = persoItems.length;
+  const lessonOnlyCount = lessonOnlyItems.length;
 
   const reset = () => {
     setMode(null);
@@ -252,12 +336,12 @@ const AtelierPage = ({ language, personalFlashcards, lessonWordPool = [] }: Atel
               type="button"
               className={`atelier-card ${sourceKind === 'flashcards' ? 'is-selected' : ''}`}
               onClick={() => setSourceKind('flashcards')}
-              disabled={flashcardCount === 0}
+              disabled={persoCount + lessonOnlyCount === 0}
             >
               <span className="atelier-card-icon">📇</span>
               <span className="atelier-card-title">{copy.sourceFlashcards}</span>
               <span className="atelier-card-desc">
-                {copy.sourceFlashcardsDesc(flashcardCount)}
+                {copy.sourceFlashcardsDesc(persoCount, lessonOnlyCount)}
               </span>
             </button>
             <button
@@ -274,18 +358,127 @@ const AtelierPage = ({ language, personalFlashcards, lessonWordPool = [] }: Atel
 
         {sourceKind === 'flashcards' && (
           <section className="atelier-section">
-            {flashcardCount === 0 ? (
+            {persoCount + lessonOnlyCount === 0 ? (
               <p className="atelier-empty">{copy.noFlashcards}</p>
             ) : (
-              <button
-                type="button"
-                className="atelier-start-btn"
-                onClick={startFromFlashcards}
-              >
-                {copy.customStart} → ({flashcardCount}
-                {' '}
-                {language === 'fr' ? 'mots' : 'words'})
-              </button>
+              <>
+                {/* === Panneau "Affine ta sélection" === */}
+                <div className="atelier-refine">
+                  <h3 className="atelier-refine-title">{copy.refineTitle}</h3>
+
+                  {/* Source des mots */}
+                  <div className="atelier-refine-row">
+                    <label className="atelier-refine-label">
+                      {copy.refineSourcePicker}
+                    </label>
+                    <div className="atelier-refine-chips">
+                      <button
+                        type="button"
+                        className={`atelier-refine-chip ${refineSource === 'all' ? 'is-on' : ''}`}
+                        onClick={() => setRefineSource('all')}
+                      >
+                        {copy.refineSourceAll} ({persoCount + lessonOnlyCount})
+                      </button>
+                      <button
+                        type="button"
+                        className={`atelier-refine-chip ${refineSource === 'perso' ? 'is-on' : ''}`}
+                        onClick={() => setRefineSource('perso')}
+                        disabled={persoCount === 0}
+                      >
+                        {copy.refineSourcePerso} ({persoCount})
+                      </button>
+                      {lessonBuckets.length > 0 && (
+                        <button
+                          type="button"
+                          className={`atelier-refine-chip ${refineSource === 'lesson' ? 'is-on' : ''}`}
+                          onClick={() => {
+                            setRefineSource('lesson');
+                            if (!refineLessonId) {
+                              setRefineLessonId(lessonBuckets[0]?.id ?? null);
+                            }
+                          }}
+                        >
+                          {copy.refineSourceLesson} ({lessonBuckets.length})
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Sélecteur de leçon (visible si source = 'lesson') */}
+                  {refineSource === 'lesson' && lessonBuckets.length > 0 && (
+                    <div className="atelier-refine-row">
+                      <label className="atelier-refine-label">
+                        {copy.refinePickLesson}
+                      </label>
+                      <select
+                        className="atelier-refine-select"
+                        value={refineLessonId ?? lessonBuckets[0]?.id ?? ''}
+                        onChange={(e) => setRefineLessonId(e.target.value)}
+                      >
+                        {lessonBuckets.map((b) => (
+                          <option key={b.id} value={b.id}>
+                            {b.title} ({b.items.length})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+
+                  {/* Combien de mots */}
+                  <div className="atelier-refine-row">
+                    <label className="atelier-refine-label">
+                      {copy.refineCount}
+                    </label>
+                    <div className="atelier-refine-chips">
+                      {COUNT_OPTIONS.map((n) => {
+                        const isAll = !Number.isFinite(n);
+                        const label = isAll ? copy.refineCountAll : String(n);
+                        const isOn =
+                          refineCount === n ||
+                          (isAll && !Number.isFinite(refineCount));
+                        return (
+                          <button
+                            key={String(n)}
+                            type="button"
+                            className={`atelier-refine-chip ${isOn ? 'is-on' : ''}`}
+                            onClick={() => setRefineCount(n)}
+                            disabled={!isAll && n > sourcePool.length}
+                          >
+                            {label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Shuffle */}
+                  <div className="atelier-refine-row">
+                    <label className="atelier-refine-toggle">
+                      <input
+                        type="checkbox"
+                        checked={refineShuffle}
+                        onChange={(e) => setRefineShuffle(e.target.checked)}
+                      />
+                      <span>{copy.refineShuffle}</span>
+                    </label>
+                  </div>
+
+                  <p className="atelier-refine-total">
+                    {copy.refineTotalShown(flashcardItems.length)}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  className="atelier-start-btn"
+                  onClick={startFromFlashcards}
+                  disabled={flashcardItems.length === 0}
+                >
+                  {copy.customStart} → ({flashcardItems.length}
+                  {' '}
+                  {language === 'fr' ? 'mots' : 'words'})
+                </button>
+              </>
             )}
           </section>
         )}

@@ -1896,7 +1896,64 @@ function App() {
         />
       );
       break;
-    case 'atelier':
+    case 'atelier': {
+      // Construit la liste des leçons complétées avec leurs mots groupés
+      // (pour le sélecteur "Une leçon précise" dans Atelier). Chaque bucket
+      // = un module pédagogique complété qui a au moins 1 mot extractible.
+      const allLessons = [
+        ...lessonPathsState.flatMap((path) => path.lessons),
+        ...cecrPathsState.flatMap((path) => path.lessons)
+      ];
+      const lessonsById = new Map(allLessons.map((l) => [l.id, l]));
+      const buckets: { id: string; title: string; items: { hanzi: string; pinyin: string }[] }[] = [];
+      for (const lessonId of completedLessons) {
+        const lesson = lessonsById.get(lessonId);
+        if (!lesson) continue;
+        const items: { hanzi: string; pinyin: string }[] = [];
+        const seen = new Set<string>();
+        const push = (hanzi: string, pinyin: string) => {
+          const k = hanzi.trim();
+          if (!k || seen.has(k)) return;
+          seen.add(k);
+          items.push({ hanzi, pinyin });
+        };
+        // 1. level1 word bank (HSK1 fondations)
+        const level1Words = level1LessonWordBank[lessonId];
+        if (level1Words && level1Words.length > 0) {
+          level1Words.forEach((w) => push(w.hanzi, w.pinyin));
+        } else {
+          // 2. simpleLesson words (modules simples)
+          const simpleLesson = getSimpleLessonById(lessonId);
+          if (simpleLesson?.customWords?.length) {
+            simpleLesson.customWords.forEach((w) => push(w.hanzi, w.pinyin));
+          } else if (simpleLesson?.words?.length) {
+            getLessonsByHanziList(simpleLesson.words).forEach((w) =>
+              push(w.hanzi, w.pinyin)
+            );
+          } else if (lesson.flashcards?.length) {
+            // 3. flashcards identifiers (cas standard CECR/HSK)
+            for (const identifier of lesson.flashcards) {
+              const g = getGrammarLessonById(identifier);
+              if (g) {
+                push(g.hanzi, g.pinyin);
+                continue;
+              }
+              const byId = getLessonById(identifier);
+              if (byId) {
+                push(byId.hanzi, byId.pinyin);
+                continue;
+              }
+              const byHanzi = getLessonsByHanziList([identifier])[0];
+              if (byHanzi) push(byHanzi.hanzi, byHanzi.pinyin);
+            }
+          }
+        }
+        if (items.length > 0) {
+          const title = language === 'fr' ? lesson.title : lesson.titleEn || lesson.title;
+          buckets.push({ id: lesson.id, title, items });
+        }
+      }
+
       content = (
         <AtelierPage
           language={language}
@@ -1905,9 +1962,11 @@ function App() {
             hanzi: w.hanzi,
             pinyin: w.pinyin
           }))}
+          lessonBuckets={buckets}
         />
       );
       break;
+    }
     case 'community':
       // L'item "Annonces" du sidebar pointe ici. On affiche la page Annonces
       // restylisée (cartes verticales full-width inspirées de Seonsaengnim).
