@@ -38,10 +38,13 @@ interface Props {
   /** XP courant dans le niveau / requis (ex: 80/200) pour afficher progrès. */
   userXpInLevel?: number;
   userXpForNext?: number;
-  /** Tier d'accès actuel ('free' | 'trial' | 'paid' | 'lifetime' …). Si
-   *  'free' ou 'trial', un badge "Premium" cliquable apparaît à côté du level
-   *  pour proposer l'upgrade. Caché en lifetime / paid. */
+  /** Tier d'accès actuel ('free' | 'trial' | 'premium'). Toujours affiché
+   *  comme badge à côté du pill niveau pour montrer l'abonnement en cours. */
   accessTier?: string;
+  /** Si tier='premium', distingue Lifetime (true) d'un abonnement mensuel
+   *  (false). Source : `appAccess.isLifetime`. Permet d'afficher
+   *  "Lifetime" ou "Monthly" sur le badge. */
+  isLifetime?: boolean;
   /** Jours restants de trial (s'il y en a) — affichés dans le titre du badge. */
   trialDaysLeft?: number;
 }
@@ -58,20 +61,56 @@ const AppTopBar = ({
   userXpInLevel,
   userXpForNext,
   accessTier,
+  isLifetime,
   trialDaysLeft
 }: Props) => {
-  // Badge "Premium" visible UNIQUEMENT en tier free/trial. Caché pour paid /
-  // lifetime / devMode-override (où le badge serait redondant).
-  const showPremiumBadge = accessTier === 'free' || accessTier === 'trial';
-  const premiumLabel = language === 'fr' ? 'Premium' : 'Premium';
-  const premiumTitle =
-    accessTier === 'trial' && trialDaysLeft !== undefined && trialDaysLeft > 0
-      ? language === 'fr'
-        ? `Essai gratuit · ${trialDaysLeft} j restants — passer à Premium`
-        : `Free trial · ${trialDaysLeft} d left — upgrade to Premium`
-      : language === 'fr'
-        ? 'Découvrir Premium'
-        : 'Discover Premium';
+  // Badge abonnement : affiche le tier ACTUEL en permanence (Free / Trial /
+  // Monthly / Lifetime). Click → SubscriptionPage (gérer / upgrader). Caché
+  // uniquement si accessTier est indéfini (chargement).
+  type SubKind = 'free' | 'trial' | 'monthly' | 'lifetime';
+  let subKind: SubKind | null = null;
+  if (accessTier === 'free') subKind = 'free';
+  else if (accessTier === 'trial') subKind = 'trial';
+  else if (accessTier === 'premium')
+    subKind = isLifetime ? 'lifetime' : 'monthly';
+
+  const subLabels: Record<SubKind, { fr: string; en: string }> = {
+    free: { fr: 'Free', en: 'Free' },
+    trial: { fr: 'Essai', en: 'Trial' },
+    monthly: { fr: 'Mensuel', en: 'Monthly' },
+    lifetime: { fr: 'Lifetime', en: 'Lifetime' }
+  };
+  const subIcons: Record<SubKind, string> = {
+    free: '🔓',
+    trial: '⏳',
+    monthly: '✨',
+    lifetime: '👑'
+  };
+  const subTitles: Record<SubKind, { fr: string; en: string }> = {
+    free: {
+      fr: 'Compte gratuit — découvrir Premium',
+      en: 'Free account — discover Premium'
+    },
+    trial: {
+      fr:
+        trialDaysLeft !== undefined && trialDaysLeft > 0
+          ? `Essai gratuit · ${trialDaysLeft} j restants — passer à Premium`
+          : 'Essai gratuit — passer à Premium',
+      en:
+        trialDaysLeft !== undefined && trialDaysLeft > 0
+          ? `Free trial · ${trialDaysLeft} d left — upgrade to Premium`
+          : 'Free trial — upgrade to Premium'
+    },
+    monthly: {
+      fr: 'Abonnement mensuel actif — gérer',
+      en: 'Monthly subscription active — manage'
+    },
+    lifetime: {
+      fr: 'Accès à vie · merci 🙏',
+      en: 'Lifetime access · thank you 🙏'
+    }
+  };
+  const showSubBadge = subKind !== null;
   const hamburgerLabel = language === 'fr' ? 'Ouvrir le menu' : 'Open menu';
   const levelLabel = language === 'fr' ? `Niveau ${userLevel}` : `Level ${userLevel}`;
   const levelTitle =
@@ -104,19 +143,25 @@ const AppTopBar = ({
         />
       </div>
       <div className="xl-app-topbar-actions">
-        {showPremiumBadge && (
+        {showSubBadge && subKind && (
           <button
             type="button"
-            className="xl-topbar-premium"
+            className={`xl-topbar-sub xl-topbar-sub--${subKind}`}
             onClick={() => onNavigate?.('subscription')}
-            title={premiumTitle}
-            aria-label={premiumTitle}
+            title={subTitles[subKind][language === 'en' ? 'en' : 'fr']}
+            aria-label={subTitles[subKind][language === 'en' ? 'en' : 'fr']}
           >
-            <span className="xl-topbar-premium-icon" aria-hidden="true">✨</span>
-            <span className="xl-topbar-premium-label">{premiumLabel}</span>
-            {accessTier === 'trial' && trialDaysLeft !== undefined && trialDaysLeft > 0 && (
-              <span className="xl-topbar-premium-days">{trialDaysLeft}j</span>
-            )}
+            <span className="xl-topbar-sub-icon" aria-hidden="true">
+              {subIcons[subKind]}
+            </span>
+            <span className="xl-topbar-sub-label">
+              {subLabels[subKind][language === 'en' ? 'en' : 'fr']}
+            </span>
+            {subKind === 'trial' &&
+              trialDaysLeft !== undefined &&
+              trialDaysLeft > 0 && (
+                <span className="xl-topbar-sub-days">{trialDaysLeft}j</span>
+              )}
           </button>
         )}
         {userLevel !== undefined && (

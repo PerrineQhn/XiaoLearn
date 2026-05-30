@@ -2573,6 +2573,7 @@ function App() {
         userXpInLevel={dashboardState.xp.xpInLevel}
         userXpForNext={dashboardState.xp.xpNeededForNext}
         accessTier={appAccess.tier}
+        isLifetime={appAccess.isLifetime}
         trialDaysLeft={appAccess.trialDaysLeft ?? undefined}
       />
       {/* Sidebar Navigation */}

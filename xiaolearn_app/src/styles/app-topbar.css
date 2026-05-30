@@ -60,23 +60,20 @@
 }
 
 /* ============================================================
-   Pill "Premium" — visible si tier = free|trial. Click → Subscription.
-   Style : gradient or/rouge pour attirer l'œil sans crier.
+   Pill abonnement — affiche le tier ACTUEL (Free / Essai / Mensuel / Lifetime).
+   Style différencié par tier pour rendre l'état lisible d'un coup d'œil.
+   Click → SubscriptionPage (gérer / upgrader).
    ============================================================ */
-.xl-topbar-premium {
+.xl-topbar-sub {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  border: 1.5px solid var(--primary-red, #e05040);
+  border: 1.5px solid var(--border-light, #ece4d5);
   border-radius: 999px;
-  background: linear-gradient(
-    120deg,
-    var(--primary-red, #e05040),
-    var(--gold-accent, #A82E26)
-  );
-  color: #fff;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
   font-family: inherit;
   font-size: 12.5px;
   font-weight: 700;
@@ -84,37 +81,96 @@
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(224, 80, 64, 0.25);
 }
-.xl-topbar-premium:hover {
+.xl-topbar-sub:hover {
   transform: translateY(-1px);
-  filter: brightness(1.08);
-  box-shadow: 0 4px 10px rgba(224, 80, 64, 0.35);
+  filter: brightness(1.05);
 }
-.xl-topbar-premium:active {
+.xl-topbar-sub:active {
   transform: translateY(0);
 }
-.xl-topbar-premium-icon {
+.xl-topbar-sub-icon {
   font-size: 13px;
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
 }
-.xl-topbar-premium-label {
+.xl-topbar-sub-label {
   font-size: 12.5px;
 }
-.xl-topbar-premium-days {
+.xl-topbar-sub-days {
   font-size: 11px;
   padding: 1px 6px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.12);
   border-radius: 999px;
   font-weight: 600;
 }
-/* Sur mobile très étroit (<= 480px), on garde juste l'icône ✨ pour libérer
-   de la place à côté du pill niveau et de la cloche. */
+
+/* — Variantes par tier —
+   Free : neutre, fond clair, juste un rappel discret.
+   Trial : orange/jaune doux pour signaler que ça expire.
+   Monthly : rouge XiaoLearn, paying customer.
+   Lifetime : gradient or → rouge, statut "VIP" reconnaissable. */
+.xl-topbar-sub--free {
+  background: #f4f1ea;
+  border-color: #d8d3c7;
+  color: #5e6075;
+}
+.xl-topbar-sub--free:hover {
+  background: #ece8df;
+  border-color: var(--primary-red, #e05040);
+  color: var(--primary-red, #e05040);
+}
+
+.xl-topbar-sub--trial {
+  background: linear-gradient(120deg, #fff7e0, #ffe7b8);
+  border-color: #f5c66b;
+  color: #7a5111;
+  box-shadow: 0 2px 6px rgba(245, 198, 107, 0.25);
+}
+.xl-topbar-sub--trial:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 4px 10px rgba(245, 198, 107, 0.35);
+}
+.xl-topbar-sub--trial .xl-topbar-sub-days {
+  background: rgba(122, 81, 17, 0.18);
+  color: #5d3d08;
+}
+
+.xl-topbar-sub--monthly {
+  background: linear-gradient(
+    120deg,
+    var(--primary-red, #e05040),
+    var(--gold-accent, #A82E26)
+  );
+  border-color: var(--primary-red, #e05040);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(224, 80, 64, 0.25);
+}
+.xl-topbar-sub--monthly:hover {
+  box-shadow: 0 4px 10px rgba(224, 80, 64, 0.35);
+}
+
+.xl-topbar-sub--lifetime {
+  background: linear-gradient(
+    120deg,
+    #f5c542 0%,
+    #e89b2f 45%,
+    var(--primary-red, #e05040) 100%
+  );
+  border-color: #d99b18;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(217, 155, 24, 0.35);
+}
+.xl-topbar-sub--lifetime:hover {
+  box-shadow: 0 4px 12px rgba(217, 155, 24, 0.5);
+  filter: brightness(1.08);
+}
+
+/* Mobile ≤480px : on masque le label, on garde juste l'icône. */
 @media (max-width: 480px) {
-  .xl-topbar-premium-label {
+  .xl-topbar-sub-label {
     display: none;
   }
-  .xl-topbar-premium {
+  .xl-topbar-sub {
     padding: 6px 8px;
   }
 }
