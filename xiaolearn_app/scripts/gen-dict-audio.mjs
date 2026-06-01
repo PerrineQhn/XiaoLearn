@@ -32,7 +32,12 @@
  *                     plusieurs jours sans saturer le rate limit ou le quota)
  *   --dry-run       : log ce qui serait fait, n'appelle pas Azure
  *   --force         : ignore les fichiers existants, régénère
- *   --tier=f0|s0    : F0 = pause 3.1s entre req (défaut), S0 = pause 80ms
+ *   --tier=f0|s0    : ⚠️ change UNIQUEMENT la cadence du script, PAS le SKU
+ *                     Azure. F0 = pause 3.1s entre req (compatible quota
+ *                     gratuit), S0 = pause 80ms (compatible burst payant).
+ *                     Pour passer réellement en facturation S0, changer
+ *                     manuellement le tier dans Azure Portal → xiaolearn-tts
+ *                     → Niveau tarifaire → S0 (propagation 2-5 min).
  *   --voice=NAME    : voix Azure (défaut zh-CN-XiaoxiaoNeural)
  *
  * Conseil F0 : 0,5 M chars/mois suffit pour les hanzi seuls (~295k chars),
@@ -260,12 +265,90 @@ function reportSection(name, jobs) {
 }
 
 // ---------------------------------------------------------------------------
+// Quota pre-flight check
+// ---------------------------------------------------------------------------
+/**
+ * Envoie une mini-requête (2 caractères, ~9 octets de SSML facturables) pour
+ * tester si le quota Azure est dispo. Évite de lancer une session de 12h pour
+ * découvrir au bout de 30 secondes qu'on est encore throttled.
+ *
+ * Retourne :
+ *   - { ok: true }                 si HTTP 200
+ *   - { ok: false, status: 429 }   si throttled (quota / rate limit)
+ *   - { ok: false, status: 4xx }   si problème clé/permissions
+ *   - { ok: false, status: null }  si erreur réseau
+ *
+ * En --dry-run / --plan on saute ce check (pas d'appel Azure du tout).
+ */
+async function quotaPreflight() {
+  if (dryRun) return { ok: true };
+  const url = `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`;
+  try {
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Ocp-Apim-Subscription-Key': AZURE_KEY,
+        'Content-Type': 'application/ssml+xml',
+        'X-Microsoft-OutputFormat': 'audio-48khz-96kbitrate-mono-mp3',
+        'User-Agent': 'XiaoLearn-gen-dict-audio-preflight'
+      },
+      body: `<speak version="1.0" xml:lang="zh-CN"><voice name="${VOICE}">测试</voice></speak>`
+    });
+    return { ok: resp.ok, status: resp.status };
+  } catch (err) {
+    return { ok: false, status: null, error: err.message };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 async function main() {
   console.log(`🔊 Audit dictionary audio${planOnly ? ' (plan)' : dryRun ? ' (dry-run)' : ''}`);
-  console.log(`   Region: ${AZURE_REGION} | Voice: ${VOICE} | Tier: ${tier.toUpperCase()} | Pause: ${PAUSE_MS}ms`);
+  console.log(`   Region: ${AZURE_REGION} | Voice: ${VOICE} | Cadence: ${tier.toUpperCase()} | Pause: ${PAUSE_MS}ms`);
+  if (tier === 's0') {
+    console.log(`   ⚠ --tier=s0 = cadence rapide. Le SKU Azure doit AUSSI être passé`);
+    console.log(`     en S0 manuellement (Portal → xiaolearn-tts → Niveau tarifaire),`);
+    console.log(`     sinon Azure renverra 429 sur les bursts au-delà de 20 req/60s.`);
+  }
   console.log('');
+
+  // Pre-flight : on teste UNE seule requête de 2 chars (测试) avant de lancer
+  // le batch. Skipé en --plan et --dry-run (pas d'appel Azure).
+  if (!planOnly && !dryRun) {
+    process.stdout.write('🚦 Test de quota Azure… ');
+    const pre = await quotaPreflight();
+    if (pre.ok) {
+      console.log('✅ OK, on peut continuer.');
+    } else if (pre.status === 429) {
+      console.log('🛑 429 Quota Exceeded.');
+      console.error(
+        '\n  Le quota F0 est encore throttled. Réessaie dans quelques heures.\n' +
+          '  Reset typique :\n' +
+          '    - Cap horaire/journalier : entre 3 h et 24 h\n' +
+          '    - Cap mensuel des 500k chars : 1er du mois prochain à 00:00 UTC\n' +
+          '\n  Tu peux refaire le test seul avec :\n' +
+          '    node scripts/gen-dict-audio.mjs --plan       # gratuit, montre l\'état\n' +
+          '    node scripts/gen-dict-audio.mjs --limit=1    # essai 1 fichier\n'
+      );
+      process.exit(2);
+    } else if (pre.status === 401 || pre.status === 403) {
+      console.log(`🛑 HTTP ${pre.status}.`);
+      console.error(
+        `\n  Problème d'authentification : la clé AZURE_SPEECH_KEY est invalide,\n` +
+          `  régénérée, ou la ressource a changé de SKU sans propager la clé.\n` +
+          `  Vérifie sur Azure Portal → xiaolearn-tts → Clés et endpoint.\n`
+      );
+      process.exit(3);
+    } else if (pre.status === null) {
+      console.log('🛑 erreur réseau.');
+      console.error(`\n  ${pre.error || 'Réseau indisponible'}. Vérifie ta connexion.\n`);
+      process.exit(4);
+    } else {
+      console.log(`⚠️  HTTP ${pre.status} (non-200, mais pas 429). On continue prudemment.`);
+    }
+    console.log('');
+  }
 
   const sections = {};
   if (target === 'hsk' || target === 'all') {
