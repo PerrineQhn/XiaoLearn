@@ -856,7 +856,16 @@ const InlineDialogue = ({
         </button>
       </div>
       <div className="lv2-inline-lines">
-        {dialogue.lines.map((line, i) => (
+        {dialogue.lines.map((line, i) => {
+          // Convention : chaque ligne de dialogue a un MP3 généré à
+          // `audio/dialogues/{dialogueId}/{lineIndex}.mp3`. C'est ce que le
+          // manifest.json référence et c'est ce qui existe sur disque + R2.
+          // On le passe explicitement en audioUrl pour éviter que playHanziAudio
+          // ne tombe sur ses conventions HSK (qui chercheraient `hsk1_<phrase
+          // entière>.mp3`, fichier qui n'existe évidemment pas).
+          const explicitUrl =
+            line.audioUrl ?? `audio/dialogues/${dialogue.id}/${i}.mp3`;
+          return (
           <div key={i} className="lv2-inline-line">
             <div className="lv2-inline-speaker">{line.speaker}</div>
             {/* Body en flex row : texte à gauche (flex:1), bouton audio à
@@ -884,7 +893,7 @@ const InlineDialogue = ({
                 aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
                 title={language === 'en' ? 'Play audio' : 'Écouter'}
                 onClick={() => {
-                  playHanziAudio(line.hanzi, line.audioUrl).catch(() => {
+                  playHanziAudio(line.hanzi, explicitUrl).catch(() => {
                     /* silent : pas d'audio dispo pour cette réplique */
                   });
                 }}
@@ -893,7 +902,8 @@ const InlineDialogue = ({
               </button>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -940,7 +950,15 @@ const InlineReading = ({
         </button>
       </div>
       <div className="lv2-inline-segments">
-        {reading.segments.map((seg, i) => (
+        {reading.segments.map((seg, i) => {
+          // Convention : audio/readings/{readingId}/{segmentIndex}.mp3
+          // (idem dialogues mais sous /audio/readings/). On le passe en
+          // explicit audioUrl pour éviter les conventions HSK sur phrase
+          // entière qui 404 systématiquement.
+          const explicitUrl =
+            (seg as { audioUrl?: string }).audioUrl ??
+            `audio/readings/${reading.id}/${i}.mp3`;
+          return (
           <div key={i} className="lv2-inline-segment">
             {/* Body en flex row : texte à gauche, audio à droite — pattern
                 aligné sur `.lv2-example` (cf. InlineDialogue ci-dessus). */}
@@ -960,7 +978,7 @@ const InlineReading = ({
                 aria-label={language === 'en' ? 'Play audio' : 'Écouter'}
                 title={language === 'en' ? 'Play audio' : 'Écouter'}
                 onClick={() => {
-                  playHanziAudio(seg.hanzi, (seg as { audioUrl?: string }).audioUrl).catch(() => {
+                  playHanziAudio(seg.hanzi, explicitUrl).catch(() => {
                     /* silent : pas d'audio dispo pour ce segment */
                   });
                 }}
@@ -969,7 +987,8 @@ const InlineReading = ({
               </button>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -1306,7 +1325,17 @@ const OrderExerciseCard = ({
   }, [exercise.id]);
 
   const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
-  const hintText = language === 'en' && exercise.sentenceEn ? exercise.sentenceEn : exercise.sentence;
+  let hintText: string | undefined =
+    language === 'en' && exercise.sentenceEn ? exercise.sentenceEn : exercise.sentence;
+  // Si le prompt contient déjà le sens (cas "Ordonne : « Désolé de te déranger. »"
+  // + hint "Désolé de te déranger."), on masque le label "Sens :" redondant.
+  // Même logique que pour les exercices `fill`.
+  if (hintText) {
+    const norm = (s: string) => s.replace(/[\s«».,!?:;'""']/g, '').toLowerCase();
+    if (norm(promptText || '').includes(norm(hintText))) {
+      hintText = undefined;
+    }
+  }
   const explanationText =
     language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
   const isComplete = picked.length === exercise.choices.length;
