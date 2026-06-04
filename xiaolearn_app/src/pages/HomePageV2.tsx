@@ -186,10 +186,19 @@ const DailyGoalCard = ({
   // fourni — sinon retombe sur la page Révisions multi-leçons.
   const flashcardsDue = dueFlashcardsCount ?? goal.cardsDue.current;
   const cardsTaskClick = onOpenFlashcards ?? onStartReview;
+  // V11 — Une tâche n'est marquée DONE que si l'utilisateur a effectivement
+  // une activité du jour (XP earned > 0). Avant ce fix, l'ouverture seule de
+  // l'app déclenchait pingAlive() → streakAlive=true → tâches 1+2 cochées
+  // automatiquement sans rien faire. Pareil pour "Aucune carte à réviser"
+  // qui était marqué done même si le user n'avait jamais ouvert ses
+  // flashcards, juste parce que la SRS n'avait rien à proposer.
+  // Critère "vraie activité" = au moins 1 XP gagné aujourd'hui (révision,
+  // leçon, exercice... toutes les sources awardXp comptent).
+  const hasRealActivityToday = goal.xpGoal.current > 0;
   const done =
-    (flashcardsDue === 0 ? 1 : 0) +
+    (flashcardsDue === 0 && hasRealActivityToday ? 1 : 0) +
     (goal.xpGoal.current >= goal.xpGoal.target ? 1 : 0) +
-    (streakAlive ? 1 : 0);
+    (hasRealActivityToday ? 1 : 0);
 
   const tasks = [
     {
@@ -209,7 +218,10 @@ const DailyGoalCard = ({
               onClick: cardsTaskClick
             }
           : null,
-      done: flashcardsDue === 0
+      // V11 — coche seulement si "rien à réviser ET activité réelle aujourd'hui".
+      // Sinon "rien à réviser" sans aucune action est trompeur (le user n'a
+      // rien fait, l'objectif ne doit pas paraître accompli).
+      done: flashcardsDue === 0 && hasRealActivityToday
     },
     {
       icon: '📚',
@@ -228,12 +240,10 @@ const DailyGoalCard = ({
               onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
             }
           : null,
-      // Coché dès que l'utilisateur a une activité aujourd'hui (streakAlive).
-      // Le `goal.lessonToResume` se met à jour vers la leçon SUIVANTE après
-      // complétion, donc on ne peut pas se baser dessus pour savoir "lesson
-      // d'aujourd'hui faite" — on utilise streakAlive comme proxy, cohérent
-      // avec le 3ᵉ slot du compteur `done` ci-dessus.
-      done: streakAlive
+      // V11 — coche basé sur l'activité réelle (XP earned > 0), pas
+      // streakAlive (qui devient true juste à l'ouverture via pingAlive).
+      // Sinon le simple fait d'ouvrir l'accueil cochait cette tâche.
+      done: hasRealActivityToday
     },
     {
       icon: '⭐',
