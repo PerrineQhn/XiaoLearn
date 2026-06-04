@@ -100,17 +100,36 @@
     grid-area: unset; /* déjà hors flow via position: fixed */
   }
 
-  /* Sidebar : drawer slide-in depuis la gauche */
+  /* Sidebar : drawer slide-in depuis la gauche.
+     V11 — fix scroll iOS : on utilise `height` explicite (100dvh = dynamic
+     viewport height, qui gère la barre d'adresse mobile) au lieu de
+     top+bottom seuls. Sinon le flex column n'avait pas une hauteur définie,
+     et `.sidebar-scroll { flex:1 }` ne calculait pas sa hauteur → pas de scroll. */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
+    height: 100vh;            /* fallback */
+    height: 100dvh;           /* navigateurs modernes : exclut la barre URL */
+    max-height: 100vh;
+    max-height: 100dvh;
     width: min(85vw, 280px);
     transform: translateX(-100%);
     transition: transform 0.24s ease;
     z-index: 100;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    /* Important : on retire le overflow hidden hérité du desktop pour
+       laisser le flex column gérer son propre scroll via .sidebar-scroll. */
+    overflow: visible;
+  }
+  /* Force .sidebar-scroll à avoir une basis 0 plutôt que auto pour
+     que le flex 1 fonctionne dans le container fixed sur iOS. */
+  .sidebar .sidebar-scroll {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   /* État ouvert (toggled depuis App.tsx) */
