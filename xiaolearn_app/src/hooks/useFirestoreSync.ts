@@ -76,6 +76,18 @@ export function useFirestoreSync(
         const localValue = window.localStorage.getItem(key);
         const localTs = readLocalTs(key);
 
+        // Diag visible dans la console JS — filtre sur "[xl-sync]"
+        console.info(
+          `[xl-sync] reconcile key="${key}" uid="${user.uid}"`,
+          {
+            cloudExists: snap.exists(),
+            cloudHasKey: !!cloudValue,
+            cloudTs: cloudTsIso ?? null,
+            localHasKey: !!localValue,
+            localTs: localTs ? new Date(localTs).toISOString() : null
+          }
+        );
+
         if (cancelled) return;
 
         // Cas 1 : rien côté cloud → on push local (si local existe)
