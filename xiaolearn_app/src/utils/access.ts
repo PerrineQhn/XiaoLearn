@@ -148,7 +148,13 @@ export const buildAppAccess = (user: User | null, entitlement: EntitlementStatus
     flashcardDailyNewLimit: premiumLike ? 10 : FREE_DAILY_NEW_FLASHCARDS,
     maxMiniGames: premiumLike ? 5 : 1,
     showAdvancedStats: premiumLike,
-    syncEnabled: premiumLike,
+    // V11 — La sync Firestore cross-device est désormais activée pour TOUS
+    // les tiers (free inclus). C'est cohérent avec l'UX : un utilisateur
+    // perdrait sinon toute sa progression en switchant de PC → téléphone,
+    // alors que c'est un comportement attendu d'une app moderne. Le coût
+    // Firebase est négligeable sur les volumes XiaoLearn (largement sous
+    // les quotas gratuits Firestore : 50k reads + 20k writes / jour).
+    syncEnabled: true,
     hasPrioritySupport: tier === 'premium',
     // Features lifetime-exclusives : pas accessibles en subscription, ni en
     // trial. Cohérent avec la prop de valeur de l'offre Lifetime.
