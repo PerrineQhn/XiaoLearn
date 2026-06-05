@@ -19,6 +19,7 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
 import { useEntitlements } from '../hooks/useEntitlements';
+import { useDevMode } from '../hooks/useDevMode';
 
 interface Props {
   language?: 'fr' | 'en';
@@ -49,6 +50,13 @@ const formatBytes = (n: number): string => {
 const SyncDiagnosticPanel = ({ language = 'fr' }: Props) => {
   const { user } = useAuth();
   const { entitlements, loading: entitlementsLoading } = useEntitlements();
+  // Outil de récupération réservé à l'admin : visible uniquement pour les
+  // emails listés dans useDevMode.DEV_MODE_ALLOWED_EMAILS (p.quenn27 et
+  // starxiwang). Les utilisateurs standards ne doivent pas voir ce panneau
+  // — la sync est automatique en utilisation normale, ce contrôle manuel
+  // est réservé aux interventions de dépannage. Le early-return est placé
+  // PLUS BAS, après TOUS les hooks (Rules of Hooks).
+  const devMode = useDevMode();
   const [localKeys, setLocalKeys] = useState<string[]>([]);
   const [status, setStatus] = useState<string>('');
   const [busy, setBusy] = useState<'push' | 'pull' | 'test' | null>(null);
@@ -198,6 +206,12 @@ const SyncDiagnosticPanel = ({ language = 'fr' }: Props) => {
     }
   }, [user, language]);
 
+  // Gate admin-only : caché pour les utilisateurs standards. Placé après
+  // tous les hooks pour respecter les Rules of Hooks.
+  if (!devMode.isAvailable) {
+    return null;
+  }
+
   return (
     <div
       style={{
@@ -209,7 +223,7 @@ const SyncDiagnosticPanel = ({ language = 'fr' }: Props) => {
       }}
     >
       <h3 style={{ margin: '0 0 6px', fontSize: 15, fontWeight: 700 }}>
-        {language === 'fr' ? '🔄 Synchronisation entre appareils' : '🔄 Cross-device sync'}
+        {language === 'fr' ? '🔄 Synchronisation entre appareils (admin)' : '🔄 Cross-device sync (admin)'}
       </h3>
       <p style={{ margin: '0 0 14px', fontSize: 13, color: '#5e6075', lineHeight: 1.5 }}>
         {language === 'fr'
