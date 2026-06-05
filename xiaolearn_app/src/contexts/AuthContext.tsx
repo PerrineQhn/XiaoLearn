@@ -43,18 +43,32 @@ const USER_DATA_KEY_PREFIXES = ['cl_', 'xl_'];
  *  de compte au signIn même quand le user a fermé l'onglet sans signOut. */
 const LAST_UID_KEY = '__xl_last_uid';
 
+/** Exceptions à la purge : clés `xl_*`/`cl_*` qui ne contiennent PAS de
+ *  données utilisateur sensibles mais sont du tooling UX qu'on veut
+ *  préserver à travers les changements de compte.
+ *  - `xl_notif_*` : dédup des notifications (timestamps, pas de progression)
+ *  - `xl_sidebar_collapsed` : préférence UI globale
+ *  - `xl_dark_mode` / `cl_color_theme` : préférences UI cosmétiques */
+const PURGE_EXCEPTIONS = [
+  /^xl_notif_/,
+  /^xl_sidebar_collapsed$/,
+  /^xl_dark_mode$/,
+  /^cl_color_theme$/
+];
+
 /** Purge sélective du localStorage : retire toutes les clés cl_* / xl_*
  *  qui contiennent de la progression spécifique à un compte. Préserve les
- *  préférences UI globales (thème, langue, etc.) qui ont d'autres noms. */
+ *  préférences UI globales (thème, langue, etc.) qui ont d'autres noms,
+ *  ET les exceptions ci-dessus (dédup notif, préférences). */
 function purgeUserDataFromLocalStorage() {
   if (typeof window === 'undefined') return;
   const keysToRemove: string[] = [];
   for (let i = 0; i < window.localStorage.length; i++) {
     const key = window.localStorage.key(i);
     if (!key) continue;
-    if (USER_DATA_KEY_PREFIXES.some((prefix) => key.startsWith(prefix))) {
-      keysToRemove.push(key);
-    }
+    if (!USER_DATA_KEY_PREFIXES.some((prefix) => key.startsWith(prefix))) continue;
+    if (PURGE_EXCEPTIONS.some((re) => re.test(key))) continue;
+    keysToRemove.push(key);
   }
   for (const key of keysToRemove) {
     try {

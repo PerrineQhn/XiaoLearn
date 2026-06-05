@@ -2362,7 +2362,16 @@ function App() {
             allLearnedItems: lessonProgress.allLearnedItems
           }}
           reviewItems={lessonProgress.reviewItems}
-          dueCardsCount={lessonProgress.reviewItems.length}
+          // V11 — On utilise le compteur individuel SRS (`wordSrs.dueIds`)
+          // partout pour cohérence avec l'Objectif du jour. Avant, on passait
+          // `reviewItems.length` qui compte des LEÇONS, pas des cartes — d'où
+          // le mismatch utilisateur (Objectif=19 cartes vs widget=3 leçons).
+          dueCardsCount={(() => {
+            const valid = new Set(allFlashcardItems.map((i) => i.id));
+            let n = 0;
+            for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
+            return n;
+          })()}
           // Filtre les dueIds sur les cartes qui existent VRAIMENT dans le
           // catalogue actuel : sans ce filtre, des entrées SRS orphelines
           // (suppléments retirés, anciens IDs de leçons V4, etc.) gonflent
