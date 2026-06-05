@@ -56,6 +56,16 @@ export function useFirestoreSync(
   // Garde la dernière valeur que nous avons écrite nous-mêmes, pour ignorer
   // l'écho d'onSnapshot qui ré-applique ce qu'on vient de pousser.
   const lastWrittenValueRef = useRef<string | null>(null);
+  // V11 — onUpdate est typiquement passé en inline arrow function par les
+  // consumers, donc il change de référence à chaque render. Sans cette ref,
+  // les useEffect ci-dessous re-firaient à chaque render → cleanup → cancel
+  // du getDoc en cours avant qu'il puisse appeler onUpdate. Conséquence :
+  // sync silencieusement cassée sur réseaux lents. Voir bug "perte de
+  // progression cross-device V11".
+  const onUpdateRef = useRef(onUpdate);
+  useEffect(() => {
+    onUpdateRef.current = onUpdate;
+  }, [onUpdate]);
 
   // ============================================================
   // 1) Réconciliation initiale : last-write-wins par timestamp
@@ -108,7 +118,7 @@ export function useFirestoreSync(
         // Cas 2 : cloud plus récent que local → on délègue à onUpdate
         if (cloudTs > localTs || !localValue) {
           lastWrittenValueRef.current = cloudValue;
-          if (onUpdate) {
+          if (onUpdateRef.current) {
             // L'app décide via onUpdate ce qu'elle fait du payload cloud
             // (souvent : merge UNION pour ne PAS perdre d'IDs locaux qui
             // ne seraient pas encore arrivés au cloud). Le state→useEffect
@@ -120,7 +130,7 @@ export function useFirestoreSync(
             // prev, le useEffect ne refire pas, et localStorage resterait
             // appauvri. C'était la cause du bug "progression remise à 0
             // après push" (cf. issue mai 2026).
-            try { onUpdate(JSON.parse(cloudValue)); } catch { onUpdate(cloudValue); }
+            try { onUpdateRef.current(JSON.parse(cloudValue)); } catch { onUpdateRef.current(cloudValue); }
           } else {
             // Pas d'onUpdate : localStorage EST le sink unique, on écrit
             // directement.
@@ -150,7 +160,7 @@ export function useFirestoreSync(
     })();
 
     return () => { cancelled = true; };
-  }, [user, key, enabled, onUpdate]);
+  }, [user, key, enabled]);
 
   // ============================================================
   // 2) Écoute temps réel — ignore les échos de nos propres writes
@@ -176,8 +186,8 @@ export function useFirestoreSync(
 
         // Applique le changement (cf. note même cas dans la réconciliation)
         lastWrittenValueRef.current = value;
-        if (onUpdate) {
-          try { onUpdate(JSON.parse(value)); } catch { onUpdate(value); }
+        if (onUpdateRef.current) {
+          try { onUpdateRef.current(JSON.parse(value)); } catch { onUpdateRef.current(value); }
         } else {
           window.localStorage.setItem(key, value);
           if (cloudTsIso) writeLocalTs(key, cloudTsIso);
