@@ -1108,78 +1108,208 @@ const SettingsPage = ({
               </p>
 
               <div className="settings-goals-custom-grid">
-                <label className="settings-goal-slider">
-                  <span className="settings-goal-slider-head">
-                    <span className="settings-goal-slider-title">
-                      <span className="settings-goal-slider-emoji" aria-hidden>⭐</span>
+                {/* --- XP / jour ----------------------------------------- */}
+                <div className="settings-goal-card">
+                  <div className="settings-goal-card-head">
+                    <span className="settings-goal-card-emoji" aria-hidden>⭐</span>
+                    <span className="settings-goal-card-label">
                       {language === 'fr' ? 'XP / jour' : 'XP / day'}
                     </span>
-                    <strong className="settings-goal-slider-value">
-                      {dailyGoalsHook.goals.xpTarget}
-                    </strong>
+                  </div>
+                  <div className="settings-goal-stepper">
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          xpTarget: Math.max(10, dailyGoalsHook.goals.xpTarget - 10)
+                        })
+                      }
+                      aria-label={language === 'fr' ? 'Diminuer' : 'Decrease'}
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      className="settings-goal-stepper-input"
+                      min={10}
+                      max={500}
+                      step={10}
+                      value={dailyGoalsHook.goals.xpTarget}
+                      onChange={(e) => {
+                        const v = Number(e.target.value);
+                        if (!Number.isNaN(v)) {
+                          dailyGoalsHook.setGoals({ xpTarget: v });
+                        }
+                      }}
+                    />
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          xpTarget: Math.min(500, dailyGoalsHook.goals.xpTarget + 10)
+                        })
+                      }
+                      aria-label={language === 'fr' ? 'Augmenter' : 'Increase'}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <span className="settings-goal-card-hint">
+                    {language === 'fr' ? 'Entre 10 et 500' : 'Between 10 and 500'}
                   </span>
-                  <input
-                    type="range"
-                    className="settings-goal-slider-input"
-                    min={10}
-                    max={500}
-                    step={10}
-                    value={dailyGoalsHook.goals.xpTarget}
-                    onChange={(e) =>
-                      dailyGoalsHook.setGoals({ xpTarget: Number(e.target.value) })
-                    }
-                  />
-                </label>
+                </div>
 
-                <label className="settings-goal-slider">
-                  <span className="settings-goal-slider-head">
-                    <span className="settings-goal-slider-title">
-                      <span className="settings-goal-slider-emoji" aria-hidden>🃏</span>
+                {/* --- Cartes / jour ------------------------------------- */}
+                <div className="settings-goal-card">
+                  <div className="settings-goal-card-head">
+                    <span className="settings-goal-card-emoji" aria-hidden>🃏</span>
+                    <span className="settings-goal-card-label">
                       {language === 'fr' ? 'Cartes / jour' : 'Cards / day'}
                     </span>
-                    <strong className="settings-goal-slider-value">
-                      {dailyGoalsHook.goals.cardsTarget === 0
-                        ? language === 'fr' ? 'illimité' : 'unlimited'
-                        : dailyGoalsHook.goals.cardsTarget}
-                    </strong>
-                  </span>
-                  <input
-                    type="range"
-                    className="settings-goal-slider-input"
-                    min={0}
-                    max={200}
-                    step={5}
-                    value={dailyGoalsHook.goals.cardsTarget}
-                    onChange={(e) =>
-                      dailyGoalsHook.setGoals({ cardsTarget: Number(e.target.value) })
+                  </div>
+                  <div className="settings-goal-stepper">
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          cardsTarget:
+                            dailyGoalsHook.goals.cardsTarget === 0
+                              ? 0
+                              : Math.max(0, dailyGoalsHook.goals.cardsTarget - 5)
+                        })
+                      }
+                      disabled={dailyGoalsHook.goals.cardsTarget === 0}
+                      aria-label={language === 'fr' ? 'Diminuer' : 'Decrease'}
+                    >
+                      −
+                    </button>
+                    {dailyGoalsHook.goals.cardsTarget === 0 ? (
+                      <span className="settings-goal-stepper-unlimited">∞</span>
+                    ) : (
+                      <input
+                        type="number"
+                        className="settings-goal-stepper-input"
+                        min={5}
+                        max={200}
+                        step={5}
+                        value={dailyGoalsHook.goals.cardsTarget}
+                        onChange={(e) => {
+                          const v = Number(e.target.value);
+                          if (!Number.isNaN(v)) {
+                            dailyGoalsHook.setGoals({ cardsTarget: v });
+                          }
+                        }}
+                      />
+                    )}
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          cardsTarget:
+                            dailyGoalsHook.goals.cardsTarget === 0
+                              ? 5
+                              : Math.min(200, dailyGoalsHook.goals.cardsTarget + 5)
+                        })
+                      }
+                      disabled={dailyGoalsHook.goals.cardsTarget === 0}
+                      aria-label={language === 'fr' ? 'Augmenter' : 'Increase'}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    className="settings-goal-card-toggle"
+                    onClick={() =>
+                      dailyGoalsHook.setGoals({
+                        cardsTarget: dailyGoalsHook.goals.cardsTarget === 0 ? 20 : 0
+                      })
                     }
-                  />
-                </label>
+                  >
+                    {dailyGoalsHook.goals.cardsTarget === 0
+                      ? language === 'fr' ? 'Définir un objectif' : 'Set a target'
+                      : language === 'fr' ? '↺ Illimité' : '↺ Unlimited'}
+                  </button>
+                </div>
 
-                <label className="settings-goal-slider">
-                  <span className="settings-goal-slider-head">
-                    <span className="settings-goal-slider-title">
-                      <span className="settings-goal-slider-emoji" aria-hidden>📚</span>
+                {/* --- Leçons / jour ------------------------------------- */}
+                <div className="settings-goal-card">
+                  <div className="settings-goal-card-head">
+                    <span className="settings-goal-card-emoji" aria-hidden>📚</span>
+                    <span className="settings-goal-card-label">
                       {language === 'fr' ? 'Leçons / jour' : 'Lessons / day'}
                     </span>
-                    <strong className="settings-goal-slider-value">
-                      {dailyGoalsHook.goals.lessonsTarget === 0
-                        ? language === 'fr' ? 'illimité' : 'unlimited'
-                        : dailyGoalsHook.goals.lessonsTarget}
-                    </strong>
-                  </span>
-                  <input
-                    type="range"
-                    className="settings-goal-slider-input"
-                    min={0}
-                    max={10}
-                    step={1}
-                    value={dailyGoalsHook.goals.lessonsTarget}
-                    onChange={(e) =>
-                      dailyGoalsHook.setGoals({ lessonsTarget: Number(e.target.value) })
+                  </div>
+                  <div className="settings-goal-stepper">
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          lessonsTarget:
+                            dailyGoalsHook.goals.lessonsTarget === 0
+                              ? 0
+                              : Math.max(0, dailyGoalsHook.goals.lessonsTarget - 1)
+                        })
+                      }
+                      disabled={dailyGoalsHook.goals.lessonsTarget === 0}
+                      aria-label={language === 'fr' ? 'Diminuer' : 'Decrease'}
+                    >
+                      −
+                    </button>
+                    {dailyGoalsHook.goals.lessonsTarget === 0 ? (
+                      <span className="settings-goal-stepper-unlimited">∞</span>
+                    ) : (
+                      <input
+                        type="number"
+                        className="settings-goal-stepper-input"
+                        min={1}
+                        max={10}
+                        step={1}
+                        value={dailyGoalsHook.goals.lessonsTarget}
+                        onChange={(e) => {
+                          const v = Number(e.target.value);
+                          if (!Number.isNaN(v)) {
+                            dailyGoalsHook.setGoals({ lessonsTarget: v });
+                          }
+                        }}
+                      />
+                    )}
+                    <button
+                      type="button"
+                      className="settings-goal-stepper-btn"
+                      onClick={() =>
+                        dailyGoalsHook.setGoals({
+                          lessonsTarget:
+                            dailyGoalsHook.goals.lessonsTarget === 0
+                              ? 1
+                              : Math.min(10, dailyGoalsHook.goals.lessonsTarget + 1)
+                        })
+                      }
+                      disabled={dailyGoalsHook.goals.lessonsTarget === 0}
+                      aria-label={language === 'fr' ? 'Augmenter' : 'Increase'}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    className="settings-goal-card-toggle"
+                    onClick={() =>
+                      dailyGoalsHook.setGoals({
+                        lessonsTarget: dailyGoalsHook.goals.lessonsTarget === 0 ? 2 : 0
+                      })
                     }
-                  />
-                </label>
+                  >
+                    {dailyGoalsHook.goals.lessonsTarget === 0
+                      ? language === 'fr' ? 'Définir un objectif' : 'Set a target'
+                      : language === 'fr' ? '↺ Illimité' : '↺ Unlimited'}
+                  </button>
+                </div>
               </div>
 
               <div className="settings-goals-custom-actions">
