@@ -23,6 +23,7 @@ import { updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { doc, deleteDoc, collection, getDocs } from 'firebase/firestore';
 import { useSrsPreferences } from '../hooks/useSrsPreferences';
+import { useDailyGoals } from '../hooks/useDailyGoals';
 import { useEmailPrefs } from '../hooks/useEmailPrefs';
 import { useEntitlements } from '../hooks/useEntitlements';
 import { useDevMode } from '../hooks/useDevMode';
@@ -89,6 +90,7 @@ const SettingsPage = ({
 
   // --- SRS (persisté via hook) --------------------------------------
   const { preferences: srsPrefs, setCustomDailyNewCards } = useSrsPreferences();
+  const dailyGoalsHook = useDailyGoals();
 
   // --- Email preferences (Firestore sync) ---------------------------
   const { prefs: emailPrefs, update: updateEmailPrefs, syncState: emailSyncState } =
@@ -1068,13 +1070,21 @@ const SettingsPage = ({
                 {language === 'fr' ? "Objectif d'étude quotidien" : 'Daily study goal'}
               </div>
               <div className="settings-goal-grid">
-                {DAILY_GOALS.map((g) => (
+                {DAILY_GOALS.map((g) => {
+                  // Le preset actif est celui dont la cible "min" correspond
+                  // à la cible minutesTarget effective (source de vérité = dashboard).
+                  const isActive = dailyGoalsHook.goals.minutesTarget === g.min;
+                  return (
                   <button
                     key={g.key}
                     type="button"
-                    className={`settings-goal-tile ${dailyGoal === g.key ? 'settings-goal-tile--active' : ''}`}
-                    onClick={() => setDailyGoal(g.key)}
-                    aria-pressed={dailyGoal === g.key}
+                    className={`settings-goal-tile ${isActive ? 'settings-goal-tile--active' : ''}`}
+                    onClick={() => {
+                      setDailyGoal(g.key);
+                      // Le preset pilote aussi la cible minutes/jour
+                      dailyGoalsHook.setGoals({ minutesTarget: g.min });
+                    }}
+                    aria-pressed={isActive}
                   >
                     <span className="settings-goal-icon" aria-hidden>{g.icon}</span>
                     <span className="settings-goal-name">
@@ -1084,7 +1094,102 @@ const SettingsPage = ({
                       {g.min} min/{language === 'fr' ? 'jour' : 'day'}
                     </span>
                   </button>
-                ))}
+                  );
+                })}
+              </div>
+
+              <h3 className="settings-sub-section-title">
+                {language === 'fr' ? 'Objectifs quotidiens personnalisés' : 'Custom daily goals'}
+              </h3>
+              <p className="settings-help-text">
+                {language === 'fr'
+                  ? 'Personnalise les cibles XP, cartes et leçons affichées sur le tableau de bord. La cible minutes est pilotée par le preset ci-dessus. Mets 0 pour « illimité » (pas tracké comme objectif).'
+                  : 'Customize the XP, cards and lessons targets shown on the dashboard. The minutes target is driven by the preset above. Set 0 for «unlimited» (not tracked as a goal).'}
+              </p>
+
+              <div className="settings-goals-custom-grid">
+                <label className="settings-goal-slider">
+                  <span className="settings-goal-slider-head">
+                    <span className="settings-goal-slider-title">
+                      <span className="settings-goal-slider-emoji" aria-hidden>⭐</span>
+                      {language === 'fr' ? 'XP / jour' : 'XP / day'}
+                    </span>
+                    <strong className="settings-goal-slider-value">
+                      {dailyGoalsHook.goals.xpTarget}
+                    </strong>
+                  </span>
+                  <input
+                    type="range"
+                    className="settings-goal-slider-input"
+                    min={10}
+                    max={500}
+                    step={10}
+                    value={dailyGoalsHook.goals.xpTarget}
+                    onChange={(e) =>
+                      dailyGoalsHook.setGoals({ xpTarget: Number(e.target.value) })
+                    }
+                  />
+                </label>
+
+                <label className="settings-goal-slider">
+                  <span className="settings-goal-slider-head">
+                    <span className="settings-goal-slider-title">
+                      <span className="settings-goal-slider-emoji" aria-hidden>🃏</span>
+                      {language === 'fr' ? 'Cartes / jour' : 'Cards / day'}
+                    </span>
+                    <strong className="settings-goal-slider-value">
+                      {dailyGoalsHook.goals.cardsTarget === 0
+                        ? language === 'fr' ? 'illimité' : 'unlimited'
+                        : dailyGoalsHook.goals.cardsTarget}
+                    </strong>
+                  </span>
+                  <input
+                    type="range"
+                    className="settings-goal-slider-input"
+                    min={0}
+                    max={200}
+                    step={5}
+                    value={dailyGoalsHook.goals.cardsTarget}
+                    onChange={(e) =>
+                      dailyGoalsHook.setGoals({ cardsTarget: Number(e.target.value) })
+                    }
+                  />
+                </label>
+
+                <label className="settings-goal-slider">
+                  <span className="settings-goal-slider-head">
+                    <span className="settings-goal-slider-title">
+                      <span className="settings-goal-slider-emoji" aria-hidden>📚</span>
+                      {language === 'fr' ? 'Leçons / jour' : 'Lessons / day'}
+                    </span>
+                    <strong className="settings-goal-slider-value">
+                      {dailyGoalsHook.goals.lessonsTarget === 0
+                        ? language === 'fr' ? 'illimité' : 'unlimited'
+                        : dailyGoalsHook.goals.lessonsTarget}
+                    </strong>
+                  </span>
+                  <input
+                    type="range"
+                    className="settings-goal-slider-input"
+                    min={0}
+                    max={10}
+                    step={1}
+                    value={dailyGoalsHook.goals.lessonsTarget}
+                    onChange={(e) =>
+                      dailyGoalsHook.setGoals({ lessonsTarget: Number(e.target.value) })
+                    }
+                  />
+                </label>
+              </div>
+
+              <div className="settings-goals-custom-actions">
+                <button
+                  type="button"
+                  className="btn-text-muted"
+                  onClick={() => dailyGoalsHook.resetToDefaults()}
+                >
+                  {language === 'fr' ? '↺ Réinitialiser aux valeurs par défaut' : '↺ Reset to defaults'}
+                </button>
               </div>
 
               <h3 className="settings-sub-section-title">
