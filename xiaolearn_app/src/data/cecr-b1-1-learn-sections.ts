@@ -50,6 +50,60 @@ export const b11LeStateChangeLearnSections: LessonV2LearnSection[] = [
       { hanzi: '老了', pinyin: 'lǎo le', meaning: 'avoir vieilli', meaningEn: 'gotten old', audio: 'audio/hsk1/hsk1_老.wav' },
       { hanzi: '好了', pinyin: 'hǎo le', meaning: 'c\'est bon / ça va', meaningEn: 'it\'s fine now', audio: 'audio/hsk1/hsk1_好.wav' }
     ]
+  },
+  {
+    id: 'b11-le-state-tokens',
+    title: 'Structure visuelle : 了 final vs 了 perfectif',
+    titleEn: 'Visual structure: final 了 vs perfective 了',
+    body:
+      '了 colle au verbe (orange) = perfectif (action terminée). 了 à la fin de phrase (Particule) = changement d\'état. Position différente, sens différent.',
+    bodyEn:
+      '了 next to the verb (orange) = perfective (completed action). 了 at the end of the sentence (Particle) = change of state. Different position, different meaning.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '三个苹果', pinyin: 'sān ge píng guǒ', role: 'objet' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'mangé', role: 'verbe' },
+          { text: 'trois pommes', role: 'objet' }
+        ],
+        note: 'PERFECTIF : 了 collé au verbe = action terminée et quantifiée.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '饿', pinyin: 'è', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'faim', role: 'verbe' },
+          { text: '(maintenant)', role: 'particule' }
+        ],
+        note: 'CHANGEMENT D\'ÉTAT : 了 en fin de phrase = ça vient de basculer. Avant non, maintenant oui.'
+      },
+      {
+        zh: [
+          { text: '下雨', pinyin: 'xià yǔ', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 's\'est mis à', role: 'particule' },
+          { text: 'pleuvoir', role: 'verbe' }
+        ],
+        note: 'Idem : 了 final = bascule. La pluie a démarré (avant ce n\'était pas le cas).'
+      }
+    ],
+    tip:
+      'Test mental : si tu peux ajouter « maintenant, ça a changé » à ta phrase française, utilise 了 final. Si tu énumères des actions accomplies, utilise 了 perfectif.',
+    tipEn:
+      'Mental test: if you can add «now, it has changed» to your English sentence, use final 了. If you\'re listing completed actions, use perfective 了.'
   }
 ];
 
@@ -74,6 +128,53 @@ export const b11LeDurationLearnSections: LessonV2LearnSection[] = [
       'Combine avec 已经 pour intensifier : 我已经等了半小时了 = ça fait déjà une demi-heure que j\'attends (sous-entendu : ça commence à faire long).',
     tipEn:
       'Pair with 已经 for emphasis: 我已经等了半小时了 = I\'ve been waiting half an hour already (implying: long enough).'
+  },
+  {
+    id: 'b11-le-duration-tokens',
+    title: 'Structure visuelle : action close vs action qui continue',
+    titleEn: 'Visual structure: closed action vs ongoing action',
+    body:
+      'Un seul 了 (après le verbe) = action finie. Deux 了 (un après V, un final) = action en cours qui dure encore. La différence se voit dans la dernière position.',
+    bodyEn:
+      'One 了 (after the verb) = finished action. Two 了 (after V + at end) = ongoing action still running. The difference is in the last slot.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '学', pinyin: 'xué', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '两年', pinyin: 'liǎng nián', role: 'complement' },
+          { text: '中文', pinyin: 'zhōng wén', role: 'objet' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'étudié', role: 'verbe' },
+          { text: 'le chinois', role: 'objet' },
+          { text: 'pendant 2 ans', role: 'complement' }
+        ],
+        note: 'UN seul 了 → action TERMINÉE (j\'ai étudié 2 ans, maintenant c\'est fini).'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '学', pinyin: 'xué', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '两年', pinyin: 'liǎng nián', role: 'complement' },
+          { text: '中文', pinyin: 'zhōng wén', role: 'objet' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'J\'étudie', role: 'verbe' },
+          { text: 'le chinois', role: 'objet' },
+          { text: 'depuis 2 ans', role: 'complement' }
+        ],
+        note: 'DOUBLE 了 → action toujours EN COURS (j\'étudie depuis 2 ans, je continue encore).'
+      }
+    ],
+    tip:
+      'Le second 了 (final) garde le compteur ouvert. Sans lui, le compteur est arrêté. C\'est la nuance la plus difficile pour un francophone — l\'oeil doit chercher s\'il y a un 了 à la toute fin.',
+    tipEn:
+      'The second 了 (final) keeps the clock running. Without it, the clock has stopped. Hardest nuance for English speakers — the eye must check if there\'s a 了 at the very end.'
   }
 ];
 
@@ -122,6 +223,67 @@ export const b11BaUsageLearnSections: LessonV2LearnSection[] = [
       'Question à se poser avant de choisir 把 : est-ce que je veux insister sur le RÉSULTAT/DEVENIR de l\'objet ? Si oui → 把. Si c\'est juste une description neutre → ordre SVO classique.',
     tipEn:
       'Ask yourself before picking 把: am I stressing the RESULT/fate of the object? If yes → 把. If it\'s a neutral description → classic SVO order.'
+  },
+  {
+    id: 'b11-ba-tokens',
+    title: 'Structure visuelle : 把 déplace l\'objet AVANT le verbe',
+    titleEn: 'Visual structure: 把 moves the object BEFORE the verb',
+    body:
+      'Compare la phrase neutre SVO avec sa version 把 : l\'objet (vert) saute AVANT le verbe (orange), encadré par la particule 把.',
+    bodyEn:
+      'Compare the neutral SVO sentence with its 把 version: the object (green) jumps BEFORE the verb (orange), bracketed by the 把 particle.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '放', pinyin: 'fàng', role: 'verbe' },
+          { text: '书', pinyin: 'shū', role: 'objet' },
+          { text: '在桌上', pinyin: 'zài zhuō shàng', role: 'lieu' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'mets', role: 'verbe' },
+          { text: 'le livre', role: 'objet' },
+          { text: 'sur la table', role: 'lieu' }
+        ],
+        note: 'Version SVO neutre. Le verbe 放 est nu — peu naturel à l\'oral pour exprimer un placement précis.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '把', pinyin: 'bǎ', role: 'particule' },
+          { text: '书', pinyin: 'shū', role: 'objet' },
+          { text: '放', pinyin: 'fàng', role: 'verbe' },
+          { text: '在桌上', pinyin: 'zài zhuō shàng', role: 'complement' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'posé', role: 'verbe' },
+          { text: 'le livre', role: 'objet' },
+          { text: 'sur la table', role: 'complement' }
+        ],
+        note: 'Version 把 : objet 书 transféré AVANT le verbe, encadré par 把. Le verbe 放 est ENRICHI d\'un complément 在桌上 — c\'est obligatoire avec 把.'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '把', pinyin: 'bǎ', role: 'particule' },
+          { text: '那个苹果', pinyin: 'nà ge píngguǒ', role: 'objet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'complement' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'a mangé', role: 'verbe' },
+          { text: 'cette pomme-là', role: 'objet' }
+        ],
+        note: 'Insistance sur le devenir : la pomme N\'EST PLUS LÀ (吃了 = entièrement mangée). 那个 (cette… là) signale qu\'elle est spécifique — 把 exige un objet connu.'
+      }
+    ],
+    tip:
+      'Repère graphique : dans la phrase 把, le rouge (sujet) → violet (把) → vert (objet) → orange (verbe) → turquoise (complément). Toujours dans cet ordre.',
+    tipEn:
+      'Visual cue: in 把 sentences, red (subject) → purple (把) → green (object) → orange (verb) → teal (complement). Always in this order.'
   }
 ];
 
@@ -146,6 +308,54 @@ export const b11BaComplementsLearnSections: LessonV2LearnSection[] = [
       'Mnémo : résultatif = « verbe + adjectif/verbe-résultat ». 吃 (manger) + 完 (fini) = 吃完 (finir de manger). Cette composition permet à 把 de respirer.',
     tipEn:
       'Mnemonic: resultative = "verb + adjective/result verb". 吃 (eat) + 完 (done) = 吃完 (finish eating). This composition lets 把 breathe.'
+  },
+  {
+    id: 'b11-ba-complements-tokens',
+    title: 'Structure visuelle : verbe + complément obligatoire',
+    titleEn: 'Visual structure: verb + mandatory complement',
+    body:
+      'Le verbe (orange) doit TOUJOURS être suivi d\'un complément (turquoise) dans une phrase 把. Sans complément, la phrase est ungrammatical.',
+    bodyEn:
+      'The verb (orange) must ALWAYS be followed by a complement (teal) in a 把 sentence. Without it, the sentence is ungrammatical.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '把', pinyin: 'bǎ', role: 'particule' },
+          { text: '饭', pinyin: 'fàn', role: 'objet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '完', pinyin: 'wán', role: 'complement' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'fini', role: 'complement' },
+          { text: 'mon repas', role: 'objet' }
+        ],
+        note: 'Complément résultatif 完 (= « jusqu\'au bout »). Sans 完, on ne pourrait pas dire 我把饭吃了 — ce serait bancal.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '把', pinyin: 'bǎ', role: 'particule' },
+          { text: '衣服', pinyin: 'yīfu', role: 'objet' },
+          { text: '洗', pinyin: 'xǐ', role: 'verbe' },
+          { text: '干净', pinyin: 'gān jìng', role: 'complement' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Elle', role: 'sujet' },
+          { text: 'a lavé', role: 'verbe' },
+          { text: 'les vêtements', role: 'objet' },
+          { text: 'à fond', role: 'complement' }
+        ],
+        note: 'Résultatif 干净 (= « propre »). Ça décrit l\'ÉTAT FINAL de l\'objet après le verbe.'
+      }
+    ],
+    tip:
+      'Vérifier ta phrase 把 : après le verbe, est-ce qu\'il y a UN des 5 ? (lieu / bénéficiaire / résultatif / direction / quantité). Si non, 把 est invalide.',
+    tipEn:
+      'Check your 把 sentence: after the verb, is there ONE of the 5? (location / beneficiary / resultative / direction / quantity). If not, 把 is invalid.'
   }
 ];
 
@@ -170,6 +380,63 @@ export const b11BeiPassiveLearnSections: LessonV2LearnSection[] = [
       'Nuance culturelle : 被 garde en chinois moderne une charge NÉGATIVE (malheur subi). 他被老师表扬了 sonne étrange — on préfèrera 老师表扬了他. Pour les bonnes nouvelles, revient à l\'actif.',
     tipEn:
       'Cultural nuance: 被 keeps a NEGATIVE tint in modern Chinese (misfortune suffered). 他被老师表扬了 sounds off — prefer 老师表扬了他. For good news, go active.'
+  },
+  {
+    id: 'b11-bei-tokens',
+    title: 'Structure visuelle : 被 inverse l\'agent et le patient',
+    titleEn: 'Visual structure: 被 swaps agent and patient',
+    body:
+      'Compare la phrase active avec sa version passive 被. Le PATIENT (celui qui subit, vert) passe en TÊTE de phrase. L\'agent (rouge), s\'il est mentionné, vient après 被.',
+    bodyEn:
+      'Compare the active sentence with its 被 passive. The PATIENT (the one undergoing, green) moves to the FRONT. The agent (red), if mentioned, comes after 被.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '老师', pinyin: 'lǎoshī', role: 'sujet' },
+          { text: '批评', pinyin: 'pī píng', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '我', pinyin: 'wǒ', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Le prof', role: 'sujet' },
+          { text: 'm\'', role: 'objet' },
+          { text: 'a grondé', role: 'verbe' }
+        ],
+        note: 'Version ACTIVE neutre. Sujet 老师 = celui qui agit.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'objet' },
+          { text: '被', pinyin: 'bèi', role: 'particule' },
+          { text: '老师', pinyin: 'lǎoshī', role: 'sujet' },
+          { text: '批评', pinyin: 'pī píng', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'J\'ai été', role: 'objet' },
+          { text: 'grondé', role: 'verbe' },
+          { text: 'par le prof', role: 'sujet' }
+        ],
+        note: 'Version PASSIVE. Le patient 我 (que je suis) passe en tête. L\'agent 老师 reste mentionné après 被.'
+      },
+      {
+        zh: [
+          { text: '杯子', pinyin: 'bēizi', role: 'objet' },
+          { text: '被', pinyin: 'bèi', role: 'particule' },
+          { text: '打破', pinyin: 'dǎ pò', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Le verre', role: 'objet' },
+          { text: 'a été cassé', role: 'verbe' }
+        ],
+        note: 'Agent OMIS : on ne sait pas (ou on s\'en fiche) QUI a cassé. C\'est l\'usage le plus fréquent de 被. Note 打破 = complément résultatif obligatoire (jamais 打 nu).'
+      }
+    ],
+    tip:
+      'Mémoire visuelle : dans 被, le vert (objet/patient) saute À GAUCHE, le rouge (sujet/agent) descend À DROITE après la particule violette 被. Symétrie miroir avec 把.',
+    tipEn:
+      'Visual memory: in 被, green (object/patient) jumps LEFT, red (subject/agent) goes RIGHT after the purple 被. Mirror image of 把.'
   }
 ];
 
@@ -264,6 +531,61 @@ export const b11DeSortingLearnSections: LessonV2LearnSection[] = [
       'À l\'oral, les trois sonnent identiques (« de »). Ton cerveau doit décider sur la syntaxe, pas sur le son. Entraîne-toi avec des phrases écrites avant de passer à l\'écoute.',
     tipEn:
       'Orally, all three sound the same ("de"). Your brain must decide on syntax, not sound. Train on written sentences before listening drills.'
+  },
+  {
+    id: 'b11-de-sorting-tokens',
+    title: 'Structure visuelle : où pointent les 3 « de » ?',
+    titleEn: 'Visual structure: where do the 3 «de» point?',
+    body:
+      '的 (rose-modificateur) pointe vers un nom (vert-objet). 地 (rose-modificateur) pointe vers un verbe (orange). 得 (violet-particule) vient APRÈS un verbe et introduit un complément (turquoise). Une fois la syntaxe vue, plus jamais de confusion à l\'écrit.',
+    bodyEn:
+      '的 (pink-modifier) points to a noun (green-object). 地 (pink-modifier) points to a verb (orange). 得 (purple-particle) comes AFTER a verb and introduces a complement (teal). Once you see the syntax, no more confusion in writing.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'modificateur' },
+          { text: '的', pinyin: 'de', role: 'particule' },
+          { text: '书', pinyin: 'shū', role: 'objet' }
+        ],
+        fr: [
+          { text: 'mon', role: 'modificateur' },
+          { text: 'livre', role: 'objet' }
+        ],
+        note: '的 : Modificateur + 的 → Nom. Pointe à droite.'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '慢慢', pinyin: 'màn màn', role: 'modificateur' },
+          { text: '地', pinyin: 'de', role: 'particule' },
+          { text: '走', pinyin: 'zǒu', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'marche', role: 'verbe' },
+          { text: 'lentement', role: 'modificateur' }
+        ],
+        note: '地 : Adverbe + 地 → Verbe. Pointe à droite vers le verbe.'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '跑', pinyin: 'pǎo', role: 'verbe' },
+          { text: '得', pinyin: 'de', role: 'particule' },
+          { text: '很快', pinyin: 'hěn kuài', role: 'complement' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'court', role: 'verbe' },
+          { text: 'vite', role: 'complement' }
+        ],
+        note: '得 : Verbe + 得 → Complément d\'évaluation. Pointe à gauche (vers le verbe) et à droite (vers l\'évaluation).'
+      }
+    ],
+    tip:
+      'Récap des flèches : 的→ Nom | 地→ Verbe | Verbe →得→ Évaluation. Question à se poser : ce qui suit/précède est un mot de quel type ?',
+    tipEn:
+      'Arrow recap: 的→ Noun | 地→ Verb | Verb →得→ Evaluation. Ask yourself: what follows/precedes — what type of word?'
   }
 ];
 
@@ -288,6 +610,69 @@ export const b11ShideLearnSections: LessonV2LearnSection[] = [
       'Objet : 2 positions possibles. V + O + 的 (我是在上海学中文的) ou V + 的 + O (我是在上海学的中文). Les deux sont corrects, la seconde est plus courante à Pékin.',
     tipEn:
       'Object: 2 possible slots. V + O + 的 (我是在上海学中文的) or V + 的 + O (我是在上海学的中文). Both OK, the second is more common in Beijing.'
+  },
+  {
+    id: 'b11-shide-tokens',
+    title: 'Structure visuelle : 是…的 encadre le focus',
+    titleEn: 'Visual structure: 是…的 frames the focus',
+    body:
+      '是…的 forme une PINCE autour de l\'élément circonstanciel mis en relief. Tout ce qui est ENTRE 是 et 的 est l\'info nouvelle, ce sur quoi on insiste.',
+    bodyEn:
+      '是…的 forms a FRAME around the circumstantial element being highlighted. Whatever sits BETWEEN 是 and 的 is the new info, the focus point.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'particule' },
+          { text: '昨天', pinyin: 'zuó tiān', role: 'temps' },
+          { text: '来', pinyin: 'lái', role: 'verbe' },
+          { text: '的', pinyin: 'de', role: 'particule' }
+        ],
+        fr: [
+          { text: 'C\'est', role: 'particule' },
+          { text: 'hier', role: 'temps' },
+          { text: 'que je', role: 'sujet' },
+          { text: 'suis venu', role: 'verbe' }
+        ],
+        note: 'FOCUS sur le TEMPS : 昨天 entre 是 et 的. On précise QUAND, pas QUE.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'particule' },
+          { text: '坐飞机', pinyin: 'zuò fēi jī', role: 'modificateur' },
+          { text: '来', pinyin: 'lái', role: 'verbe' },
+          { text: '的', pinyin: 'de', role: 'particule' }
+        ],
+        fr: [
+          { text: 'C\'est', role: 'particule' },
+          { text: 'en avion', role: 'modificateur' },
+          { text: 'qu\'elle', role: 'sujet' },
+          { text: 'est venue', role: 'verbe' }
+        ],
+        note: 'FOCUS sur le MOYEN : 坐飞机 entre 是 et 的. On précise COMMENT.'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'particule' },
+          { text: '跟朋友', pinyin: 'gēn péng you', role: 'modificateur' },
+          { text: '一起去', pinyin: 'yī qǐ qù', role: 'verbe' },
+          { text: '的', pinyin: 'de', role: 'particule' }
+        ],
+        fr: [
+          { text: 'C\'est', role: 'particule' },
+          { text: 'avec des amis', role: 'modificateur' },
+          { text: 'qu\'il', role: 'sujet' },
+          { text: 'y est allé', role: 'verbe' }
+        ],
+        note: 'FOCUS sur l\'ACCOMPAGNATEUR : 跟朋友 entre 是 et 的.'
+      }
+    ],
+    tip:
+      'Test mental : remplace le contenu entre 是…的 par autre chose. Si le sens change radicalement (« hier » → « demain »), c\'est bien sur ce circonstant qu\'on insiste.',
+    tipEn:
+      'Mental test: replace what\'s between 是…的 with something else. If the meaning changes drastically («yesterday» → «tomorrow»), that\'s indeed what you\'re focusing on.'
   }
 ];
 

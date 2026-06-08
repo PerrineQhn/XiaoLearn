@@ -256,6 +256,68 @@ export const b12BiLearnSections: LessonV2LearnSection[] = [
       '« Pareil » ne se dit pas 比...一样 ✗ mais A 跟 B 一样 + adj. 这本书跟那本一样厚 (ce livre est aussi épais que l\'autre). Le 比 n\'apparaît pas.',
     tipEn:
       '«Same as» is not 比...一样 ✗ but A 跟 B 一样 + adj. 这本书跟那本一样厚 (this book is as thick as that one). No 比 here.'
+  },
+  {
+    id: 'b12-bi-tokens',
+    title: 'Structure visuelle : 比 ternaire vs français binaire',
+    titleEn: 'Visual structure: ternary 比 vs binary English',
+    body:
+      'En français : « A est plus grand QUE B ». Trois mots-outils. En chinois : A + 比 + B + adj. Trois éléments, mais l\'adjectif vient en DERNIER, jamais dans l\'adjectif central comme en français.',
+    bodyEn:
+      'In English: «A is taller THAN B». In Chinese: A + 比 + B + adj. Three slots, but the adjective comes LAST, not in the middle as in English.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '比', pinyin: 'bǐ', role: 'connecteur' },
+          { text: '他', pinyin: 'tā', role: 'objet' },
+          { text: '高', pinyin: 'gāo', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'suis plus', role: 'verbe' },
+          { text: 'grand', role: 'verbe' },
+          { text: 'que lui', role: 'objet' }
+        ],
+        note: 'Comparatif simple. ⚠ JAMAIS 我比他很高 — pas de 很 quand 比 est présent.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '比', pinyin: 'bǐ', role: 'connecteur' },
+          { text: '他', pinyin: 'tā', role: 'objet' },
+          { text: '高', pinyin: 'gāo', role: 'verbe' },
+          { text: '五厘米', pinyin: 'wǔ lí mǐ', role: 'complement' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'fais', role: 'verbe' },
+          { text: '5 cm de plus', role: 'complement' },
+          { text: 'que lui', role: 'objet' }
+        ],
+        note: 'Avec un ÉCART : la quantité vient APRÈS l\'adjectif, en Complément.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '比', pinyin: 'bǐ', role: 'connecteur' },
+          { text: '他', pinyin: 'tā', role: 'objet' },
+          { text: '更', pinyin: 'gèng', role: 'modificateur' },
+          { text: '聪明', pinyin: 'cōng míng', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Elle est', role: 'sujet' },
+          { text: 'encore plus', role: 'modificateur' },
+          { text: 'intelligente', role: 'verbe' },
+          { text: 'que lui', role: 'objet' }
+        ],
+        note: 'Intensifier : 更 (Modificateur) avant l\'adjectif. Idem 还 pour la même nuance.'
+      }
+    ],
+    tip:
+      'L\'œil cherche le pattern fixe : Sujet + 比 + Référence + Adjectif. Si tu vois 很 entre 比 et l\'adjectif, c\'est faux. Si tu vois une quantité, elle est après l\'adjectif.',
+    tipEn:
+      'Eye looks for the fixed pattern: Subject + 比 + Reference + Adjective. If you see 很 between 比 and the adjective, it\'s wrong. If you see a quantity, it goes after the adjective.'
   }
 ];
 
@@ -283,6 +345,64 @@ export const b22GrammarComplementM1LearnSections: LessonV2LearnSection[] = [
       'Distingue 看 (regarder) / 看到 (apercevoir) / 看懂 (comprendre ce qu\'on voit). Même racine, 3 résultats très différents. Pareil pour 听.',
     tipEn:
       'Distinguish 看 (watch) / 看到 (spot) / 看懂 (understand what you see). Same verb, 3 very different results. Same for 听.'
+  },
+  {
+    id: 'b22-result-tokens',
+    title: 'Structure visuelle : V (action) + résultat (état final)',
+    titleEn: 'Visual structure: V (action) + result (end state)',
+    body:
+      'Le verbe (orange) dit l\'action commencée. Le complément résultatif (turquoise) dit ce qu\'on obtient au bout. Sans le résultatif, le verbe seul est ambigu — on ne sait pas si l\'objectif est atteint.',
+    bodyEn:
+      'The verb (orange) tells the started action. The result complement (teal) tells the end state. Without it, the bare verb is ambiguous — you don\'t know if the goal was reached.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '听', pinyin: 'tīng', role: 'verbe' },
+          { text: '懂', pinyin: 'dǒng', role: 'complement' },
+          { text: '了', pinyin: 'le', role: 'particule' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'entendu', role: 'verbe' },
+          { text: 'et compris', role: 'complement' }
+        ],
+        note: '听 = entendre (action). 懂 = comprendre (résultat). 听懂 = entendre AVEC succès. Sans 懂, j\'ai juste entendu sans capter le sens.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '找', pinyin: 'zhǎo', role: 'verbe' },
+          { text: '到', pinyin: 'dào', role: 'complement' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '工作', pinyin: 'gōng zuò', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Elle a', role: 'sujet' },
+          { text: 'trouvé', role: 'verbe' },
+          { text: 'un travail', role: 'objet' }
+        ],
+        note: '找 = chercher. 到 = atteindre. 找到 = chercher AVEC succès = trouver. Sans 到, c\'est juste « chercher ».'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '没', pinyin: 'méi', role: 'modificateur' },
+          { text: '听', pinyin: 'tīng', role: 'verbe' },
+          { text: '懂', pinyin: 'dǒng', role: 'complement' }
+        ],
+        fr: [
+          { text: 'Je n\'ai', role: 'sujet' },
+          { text: 'pas', role: 'modificateur' },
+          { text: 'compris', role: 'complement' }
+        ],
+        note: 'NÉGATION : 没 + V + complément. Le résultat n\'a PAS été atteint. Pas de 了 dans la négation.'
+      }
+    ],
+    tip:
+      'Vérifier ta phrase chinoise : après un verbe d\'action, ajoutes-tu un résultatif pour confirmer le succès ? Sinon, l\'action peut être interprétée comme inachevée.',
+    tipEn:
+      'Check your Chinese sentence: after an action verb, do you add a resultative to confirm success? Without it, the action can be read as unfinished.'
   }
 ];
 
@@ -310,6 +430,63 @@ export const b22GrammarComplementM2LearnSections: LessonV2LearnSection[] = [
       'Les directionnels simples peuvent aussi servir de verbes à part entière : 上楼 (monter l\'escalier), 下车 (descendre d\'un véhicule), 出门 (sortir de chez soi).',
     tipEn:
       'Simple directionals can also stand alone as verbs: 上楼 (go upstairs), 下车 (get off a vehicle), 出门 (leave the house).'
+  },
+  {
+    id: 'b22-dir-tokens',
+    title: 'Structure visuelle : le lieu s\'INSÈRE au milieu',
+    titleEn: 'Visual structure: the location INSERTS in the middle',
+    body:
+      'V + 进 (entrer). Si on précise OÙ on entre, le lieu vient ENTRE le verbe et le directionnel, ou parfois après. Repère la position pour ne pas faire de fautes type 走房间进 ✗.',
+    bodyEn:
+      'V + 进 (enter). If you specify WHERE you enter, the location slots BETWEEN verb and directional, or sometimes after. Spot the position to avoid mistakes like 走房间进 ✗.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '走', pinyin: 'zǒu', role: 'verbe' },
+          { text: '进', pinyin: 'jìn', role: 'complement' },
+          { text: '房间', pinyin: 'fáng jiān', role: 'lieu' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'entre', role: 'verbe' },
+          { text: 'dans la pièce', role: 'lieu' },
+          { text: 'à pied', role: 'complement' }
+        ],
+        note: '走 (verbe d\'action) + 进 (directionnel) + lieu. Le directionnel précise l\'ENTRÉE.'
+      },
+      {
+        zh: [
+          { text: '请', pinyin: 'qǐng', role: 'verbe' },
+          { text: '坐', pinyin: 'zuò', role: 'verbe' },
+          { text: '下', pinyin: 'xià', role: 'complement' }
+        ],
+        fr: [
+          { text: 'Veuillez', role: 'verbe' },
+          { text: 'vous asseoir', role: 'verbe' }
+        ],
+        note: 'Sans lieu-objet : 坐下 = action complète. 下 indique le SENS du mouvement (vers le bas).'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '跑', pinyin: 'pǎo', role: 'verbe' },
+          { text: '出', pinyin: 'chū', role: 'complement' },
+          { text: '教室', pinyin: 'jiào shì', role: 'lieu' }
+        ],
+        fr: [
+          { text: 'Elle', role: 'sujet' },
+          { text: 'sort', role: 'verbe' },
+          { text: 'de la salle de classe', role: 'lieu' },
+          { text: 'en courant', role: 'complement' }
+        ],
+        note: '跑 = courir (verbe). 出 = sortir (directionnel). Même position : lieu APRÈS le directionnel.'
+      }
+    ],
+    tip:
+      'Anti-mémo : NE PAS dire 走房间进, 跑教室出 ✗. Le directionnel reste collé au verbe ; le lieu suit. Verbe + directionnel + lieu.',
+    tipEn:
+      'Anti-memo: DON\'T say 走房间进, 跑教室出 ✗. The directional stays glued to the verb; the location follows. Verb + directional + location.'
   }
 ];
 

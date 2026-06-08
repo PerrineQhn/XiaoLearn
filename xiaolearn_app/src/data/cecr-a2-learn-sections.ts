@@ -787,6 +787,62 @@ export const a2GrammarLePerfLearnSections: LessonV2LearnSection[] = [
       'Règle à mémoriser : 不 nie le présent/futur (不吃 = je ne mange pas / ne mangerai pas), 没 nie le passé (没吃 = n\'ai pas mangé). Jamais 不 + 了.',
     tipEn:
       'Rule to memorize: 不 negates present/future (不吃 = don\'t / won\'t eat), 没 negates past (没吃 = didn\'t eat). Never 不 + 了.'
+  },
+  {
+    id: 'a2-le1-tokens',
+    title: 'Structure visuelle : 了 colle au verbe',
+    titleEn: 'Visual structure: 了 sticks to the verb',
+    body:
+      'Le 了 perfectif est une Particule qui colle au verbe (orange), et qui demande un complément ou un objet pour sonner naturel.',
+    bodyEn:
+      'The perfective 了 is a Particle stuck to the verb (orange), and it requires a complement or object to sound natural.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '饭', pinyin: 'fàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'mangé', role: 'verbe' }
+        ],
+        note: '了 colle à 吃. Compléter avec un objet (饭) pour que la phrase sonne complète.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '买', pinyin: 'mǎi', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '两本书', pinyin: 'liǎng běn shū', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Elle a', role: 'sujet' },
+          { text: 'acheté', role: 'verbe' },
+          { text: 'deux livres', role: 'objet' }
+        ],
+        note: 'Quantité (两本) sert de complément suffisant — le 了 perfectif a besoin d\'un nombre ou objet pour respirer.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '没', pinyin: 'méi', role: 'modificateur' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '饭', pinyin: 'fàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je n\'ai', role: 'sujet' },
+          { text: 'pas', role: 'modificateur' },
+          { text: 'mangé', role: 'verbe' }
+        ],
+        note: 'NÉGATION : 没 (Modificateur) + V — JAMAIS de 了 dans la négation. ✗ 我没吃了 = faux.'
+      }
+    ],
+    tip:
+      'Repère visuel : si tu vois 没 dans une phrase, supprime tout 了. La paire 没…了 est interdite.',
+    tipEn:
+      'Visual cue: if 没 is in your sentence, remove any 了. The pair 没…了 is forbidden.'
   }
 ];
 
@@ -811,6 +867,65 @@ export const a2GrammarGuoLearnSections: LessonV2LearnSection[] = [
       'Négation : 没 + verbe + 过. 我没去过中国 = je ne suis jamais allé en Chine. Renforcé : 我从来没去过中国.',
     tipEn:
       'Negation: 没 + verb + 过. 我没去过中国 = I\'ve never been to China. Emphatic: 我从来没去过中国.'
+  },
+  {
+    id: 'a2-guo-tokens',
+    title: 'Structure visuelle : 过 vs 了',
+    titleEn: 'Visual structure: 过 vs 了',
+    body:
+      '过 et 了 collent tous les deux au verbe — mais leur sens diverge. 过 = expérience un jour vécue (« dans ma vie »). 了 = action terminée (« cette fois-ci »). Le tokenisation aide à voir qu\'ils occupent la MÊME position syntaxique.',
+    bodyEn:
+      '过 and 了 both stick to the verb — but their meanings diverge. 过 = experience ever lived («in my life»). 了 = completed action («this time»). Tokenizing helps see they occupy the SAME syntactic slot.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '过', pinyin: 'guo', role: 'particule' },
+          { text: '饺子', pinyin: 'jiǎo zi', role: 'objet' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'déjà goûté', role: 'verbe' },
+          { text: 'aux raviolis', role: 'objet' }
+        ],
+        note: '过 = expérience dans la vie. Pas forcément récente, juste « ça m\'est arrivé un jour ».'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '了', pinyin: 'le', role: 'particule' },
+          { text: '饺子', pinyin: 'jiǎo zi', role: 'objet' }
+        ],
+        fr: [
+          { text: 'J\'ai', role: 'sujet' },
+          { text: 'mangé', role: 'verbe' },
+          { text: 'les raviolis', role: 'objet' }
+        ],
+        note: '了 = action terminée spécifique (les raviolis dont on parle, là, viennent d\'être mangés).'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '没', pinyin: 'méi', role: 'modificateur' },
+          { text: '去', pinyin: 'qù', role: 'verbe' },
+          { text: '过', pinyin: 'guo', role: 'particule' },
+          { text: '中国', pinyin: 'zhōng guó', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je ne suis', role: 'sujet' },
+          { text: 'jamais', role: 'modificateur' },
+          { text: 'allé', role: 'verbe' },
+          { text: 'en Chine', role: 'objet' }
+        ],
+        note: 'Négation de 过 : 没 + V + 过 (le 过 RESTE, contrairement au 了 qui DISPARAÎT dans la négation).'
+      }
+    ],
+    tip:
+      'Test mental : si tu peux ajouter « au moins une fois dans ma vie » en français, utilise 过. Si tu parles d\'un événement spécifique terminé, utilise 了.',
+    tipEn:
+      'Mental test: if you can add «at least once in my life» in English, use 过. For a specific completed event, use 了.'
   }
 ];
 
@@ -1463,6 +1578,70 @@ export const a2NuancesM4LearnSections: LessonV2LearnSection[] = [
       'Astuce : 着 décrit ce qu\'on VOIT en photo (état figé). 在/正在 décrit ce qu\'on VOIT en vidéo (action). « Sur la photo, il est 坐着 » ; « Dans la vidéo, il 在坐下 ».',
     tipEn:
       'Tip: 着 describes what you see in a PHOTO (frozen state). 在/正在 describes what you see in a VIDEO (action). «In the photo, he\'s 坐着»; «In the video, he\'s 在坐下».'
+  },
+  {
+    id: 'a2-zai-zhe-tokens',
+    title: 'Structure visuelle : 在 (avant V) vs 着 (après V)',
+    titleEn: 'Visual structure: 在 (before V) vs 着 (after V)',
+    body:
+      '在/正在 (Modificateur) précèdent le verbe et marquent une action en cours. 着 (Particule) colle au verbe et marque un état statique qui DURE. Position différente, sens différent.',
+    bodyEn:
+      '在/正在 (Modifier) precede the verb and mark an action in progress. 着 (Particle) sticks to the verb and marks a static state that LASTS. Different position, different meaning.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '在', pinyin: 'zài', role: 'modificateur' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '饭', pinyin: 'fàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je suis en train de', role: 'modificateur' },
+          { text: 'manger', role: 'verbe' }
+        ],
+        note: 'PROGRESSIF : 在 AVANT le verbe = action en cours (comme -ing en anglais).'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '正在', pinyin: 'zhèng zài', role: 'modificateur' },
+          { text: '睡觉', pinyin: 'shuì jiào', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Il est justement en train de', role: 'modificateur' },
+          { text: 'dormir', role: 'verbe' }
+        ],
+        note: 'PROGRESSIF FORT : 正在 insiste sur l\'instant précis (« n\'interromps pas »).'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '坐', pinyin: 'zuò', role: 'verbe' },
+          { text: '着', pinyin: 'zhe', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Il est', role: 'sujet' },
+          { text: 'assis', role: 'verbe' }
+        ],
+        note: 'STATIQUE : 着 APRÈS le verbe = état figé. La photo, pas la vidéo.'
+      },
+      {
+        zh: [
+          { text: '门', pinyin: 'mén', role: 'sujet' },
+          { text: '开', pinyin: 'kāi', role: 'verbe' },
+          { text: '着', pinyin: 'zhe', role: 'particule' }
+        ],
+        fr: [
+          { text: 'La porte', role: 'sujet' },
+          { text: 'est ouverte', role: 'verbe' }
+        ],
+        note: 'État résultat : la porte EST DANS l\'état « ouverte » (pas en train de s\'ouvrir).'
+      }
+    ],
+    tip:
+      'Repère graphique : 在 / 正在 sont AVANT le verbe (à gauche, rose). 着 est APRÈS le verbe (à droite, violet). Si tu vois 着 dans une phrase, n\'ajoute pas 在 — sauf cas particulier.',
+    tipEn:
+      'Visual cue: 在 / 正在 are BEFORE the verb (left, pink). 着 is AFTER the verb (right, purple). If you see 着 in a sentence, don\'t add 在 — except in special cases.'
   }
 ];
 
