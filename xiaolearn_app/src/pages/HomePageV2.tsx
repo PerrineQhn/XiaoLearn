@@ -1395,6 +1395,7 @@ const ActivityHeatmap = ({
 
 const CommunityCard = ({
   language,
+  layout = 'aside',
   onOpenAnnouncements,
   onOpenBattles,
   onOpenMessages,
@@ -1402,6 +1403,8 @@ const CommunityCard = ({
   unreadAnnouncementsCount = 0
 }: {
   language: Language;
+  /** 'aside' = colonne droite (lignes empilées). 'strip' = full-width (4 col). */
+  layout?: 'aside' | 'strip';
   onOpenAnnouncements?: () => void;
   onOpenBattles?: () => void;
   onOpenMessages?: () => void;
@@ -1462,7 +1465,7 @@ const CommunityCard = ({
   ];
 
   return (
-    <section className="card community-card">
+    <section className={`card community-card community-card--${layout}`}>
       <header className="card-head">
         <h2>
           <span className="emoji">👥</span>
@@ -1660,16 +1663,22 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakDays={dashboard.streak.current}
           />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
-          <CommunityCard
-            language={language}
-            onOpenAnnouncements={onOpenAnnouncements}
-            onOpenBattles={onOpenBattles}
-            onOpenMessages={onOpenMessages}
-            onOpenIdeas={onOpenIdeas}
-            unreadAnnouncementsCount={unreadAnnouncementsCount}
-          />
         </div>
       </div>
+
+      {/* Strip Communauté full-width : sortie de la colonne droite (qui était
+          trop longue par rapport à la colonne principale, créant un grand
+          espace vide). Affichée ici en 4 colonnes horizontales, beaucoup
+          plus visible et équilibrée. */}
+      <CommunityCard
+        language={language}
+        layout="strip"
+        onOpenAnnouncements={onOpenAnnouncements}
+        onOpenBattles={onOpenBattles}
+        onOpenMessages={onOpenMessages}
+        onOpenIdeas={onOpenIdeas}
+        unreadAnnouncementsCount={unreadAnnouncementsCount}
+      />
 
       {/* Strip Pratique libre : point d'entrée vers Dialogues/Lectures
           (absent de Seonsaengnim mais indispensable pour XiaoLearn — on le

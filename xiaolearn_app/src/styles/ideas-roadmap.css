@@ -160,24 +160,25 @@
 .ideas-page .roadmap-track {
   position: absolute;
   /* Centré pile sur l'axe des ronds :
-       timeline padding-top (22) + dot margin-top (12) + 14 (demi-dot) = 48px
-     pour un track de 3px → top = 48 − 1.5 = 46.5px (arrondi 46). */
-  top: 46px;
-  left: 0;
-  right: 0;
+       roadmap-steps padding-top (0) + dot margin-top (12) + 14 (demi-dot) = 26px
+     pour un track de 3px → top = 26 − 1.5 = 24.5px (arrondi 24). */
+  top: 24px;
+  left: 8px;   /* aligne avec le padding horizontal de .roadmap-steps */
+  right: 8px;
   height: 3px;
-  /* Trois zones : delivered (50%) → in-dev (17%) → prochainement (33%).
-     Proportions ajustées au nombre actuel de jalons (3 + 1 + 2). */
+  /* Les % de bascule (deliveredPct, inDevPct) sont calculés en JS et passés
+     via des CSS vars sur .roadmap-steps. Defaults safe si jamais absents. */
   background: linear-gradient(
     to right,
     var(--ip-success) 0%,
-    var(--ip-success) 50%,
-    var(--ip-warning) 50%,
-    var(--ip-warning) 67%,
-    var(--ip-border-strong) 67%,
+    var(--ip-success) var(--roadmap-delivered-pct, 50%),
+    var(--ip-warning) var(--roadmap-delivered-pct, 50%),
+    var(--ip-warning) var(--roadmap-in-dev-pct, 67%),
+    var(--ip-border-strong) var(--roadmap-in-dev-pct, 67%),
     var(--ip-border-strong) 100%
   );
   border-radius: 2px;
+  z-index: 1;
 }
 .ideas-page .roadmap-steps {
   position: relative;

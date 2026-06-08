@@ -429,10 +429,42 @@ const RoadmapTimeline = ({ language, today, statusLabel }: TimelineProps) => {
     (m) => m.status !== 'delivered'
   );
 
+  // Calcule dynamiquement les % de bascule du gradient de la ligne, sinon les
+  // proportions hardcodées (50/67) deviennent fausses dès qu'on ajoute des
+  // jalons. La ligne traverse les centres des dots → on positionne les bornes
+  // sur (lastDelivered/N-1) et (lastInDev/N-1).
+  const N = COMMUNITY_ROADMAP.length;
+  const lastDeliveredIdx = COMMUNITY_ROADMAP
+    .map((m, i) => (m.status === 'delivered' ? i : -1))
+    .filter((i) => i >= 0)
+    .pop();
+  const lastInDevIdx = COMMUNITY_ROADMAP
+    .map((m, i) => (m.status === 'in-dev' ? i : -1))
+    .filter((i) => i >= 0)
+    .pop();
+  // Pct du dernier dot vert ; si aucun, 0.
+  const deliveredPct =
+    lastDeliveredIdx !== undefined && N > 1
+      ? Math.round(((lastDeliveredIdx + 0.5) / N) * 100)
+      : 0;
+  // Pct du dernier dot orange ; sinon = deliveredPct (pas de zone orange).
+  const inDevPct =
+    lastInDevIdx !== undefined && lastInDevIdx > (lastDeliveredIdx ?? -1) && N > 1
+      ? Math.round(((lastInDevIdx + 0.5) / N) * 100)
+      : deliveredPct;
+
+  const trackStyle = {
+    // Variables CSS consommées par .roadmap-track dans ideas-roadmap.css
+    ['--roadmap-delivered-pct' as string]: `${deliveredPct}%`,
+    ['--roadmap-in-dev-pct' as string]: `${inDevPct}%`
+  } as React.CSSProperties;
+
   return (
     <div className="roadmap-timeline">
-      <div className="roadmap-track" aria-hidden="true" />
-      <div className="roadmap-steps">
+      <div className="roadmap-steps" style={trackStyle}>
+        {/* Ligne placée DANS .roadmap-steps pour qu'elle suive la largeur du
+            contenu et reste connectée à chaque dot même quand on scroll. */}
+        <div className="roadmap-track" aria-hidden="true" />
         {COMMUNITY_ROADMAP.map((m, i) => {
           const isToday = i === todayIndex;
           return (

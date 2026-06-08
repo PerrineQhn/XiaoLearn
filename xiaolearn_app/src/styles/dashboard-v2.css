@@ -783,6 +783,27 @@
 /* ------------------------ Community -------------------------------------- */
 
 .community-body { display: grid; gap: 10px; }
+
+/* Strip full-width : 4 colonnes horizontales (utilisé sous le dashboard-grid
+   pour combler l'écart entre col-main et col-aside). */
+.community-card--strip {
+  margin-top: 20px;
+}
+.community-card--strip .community-body {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 960px) {
+  .community-card--strip .community-body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .community-card--strip .community-body {
+    grid-template-columns: 1fr;
+  }
+}
+
 .community-row {
   display: grid;
   grid-template-columns: auto 1fr auto;
