@@ -121,6 +121,7 @@ import { getGrammarLessonById } from './data/grammar-lessons';
 import { getCopy, type Language } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 import { useDashboardState } from './hooks/useDashboardState';
+import { useDailyGoals } from './hooks/useDailyGoals';
 import { useBattleStats } from './hooks/useBattleStats';
 import { useBattleMatchmaking } from './hooks/useBattleMatchmaking';
 import { usePublicProfileSync } from './hooks/usePublicProfileSync';
@@ -201,7 +202,7 @@ export type View =
 const themeSummaries = getThemeSummaries();
 const defaultTheme = themeSummaries[0]?.theme ?? null;
 const COMPLETED_LESSONS_KEY = 'cl_completed_lessons';
-const DAILY_GOAL_MINUTES = 10;
+const DAILY_GOAL_MINUTES_DEFAULT = 10;
 
 const readCompletedLessons = (): string[] => {
   if (typeof window === 'undefined') return [];
@@ -629,10 +630,15 @@ function App() {
     }
     return null;
   }, [cecrPathsState, lessonPathsState, language]);
+  // V11 — Objectifs quotidiens personnalisables (Réglages → Apprentissage).
+  // Si l'utilisateur n'a rien custom, on retombe sur les défauts historiques
+  // (50 XP, 10 min). Les targets cards/lessons à 0 = pas d'objectif quantifié.
+  const dailyGoalsHook = useDailyGoals();
   const dashboardState = useDashboardState({
     dueCardsCount: lessonProgress.reviewItems.length,
     nextLessonTitle: nextLessonToResume?.title,
-    nextLessonId: nextLessonToResume?.id
+    nextLessonId: nextLessonToResume?.id,
+    xpDailyTarget: dailyGoalsHook.goals.xpTarget
   });
 
   // --- Centre de notifications — push() d'événements dérivés de l'état ------
@@ -1663,7 +1669,7 @@ function App() {
           cecrLevels={cecrLevels}
           streak={learningStats.streak}
           minutesToday={learningStats.minutesToday}
-          dailyGoalMinutes={DAILY_GOAL_MINUTES}
+          dailyGoalMinutes={dailyGoalsHook.goals.minutesTarget}
           renderLevelBanner={(selected) => {
             // V7 — bannière Bilan de fin de niveau. Uniquement en mode CECR.
             if (typeof selected !== 'string') return null;
@@ -2410,6 +2416,11 @@ function App() {
           onOpenPath={() => setView('cecr')}
           onOpenDialogue={() => setView('dialogue')}
           onOpenReading={() => setView('reading')}
+          onOpenAnnouncements={() => setView('community')}
+          onOpenBattles={() => setView('battles')}
+          onOpenMessages={() => setView('messages')}
+          onOpenIdeas={() => setView('ideas')}
+          unreadAnnouncementsCount={unreadAnnouncements}
           onAddWordToFlashcards={(word) => {
             // Déduplication : si le hanzi existe déjà dans les flashcards
             // personnelles, on ne recrée pas de doublon. Retour typé pour

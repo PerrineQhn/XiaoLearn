@@ -98,6 +98,16 @@ export interface HomePageV2Props {
    * `'capacity'` si le pool de 500 cartes est plein, `'error'` sinon.
    */
   onAddWordToFlashcards?: (word: LessonItem) => 'added' | 'duplicate' | 'capacity' | 'error';
+  /** Ouvre la page Annonces (item "Communauté" du sidebar). */
+  onOpenAnnouncements?: () => void;
+  /** Ouvre la page Batailles de mots (1-v-1 multijoueur). */
+  onOpenBattles?: () => void;
+  /** Ouvre la messagerie 1-1 entre apprenants. */
+  onOpenMessages?: () => void;
+  /** Ouvre la page Idées & Roadmap (votes communautaires + planning). */
+  onOpenIdeas?: () => void;
+  /** Nombre d'annonces non lues (affiché en badge sur la carte Communauté). */
+  unreadAnnouncementsCount?: number;
 }
 
 // --------------------------------------------------------------------------
@@ -203,11 +213,21 @@ const DailyGoalCard = ({
   const tasks = [
     {
       icon: '🃏',
+      // V11 — 3 états visuels :
+      //  - flashcardsDue > 0 : "X cartes à réviser" + bouton Réviser
+      //  - flashcardsDue === 0 && hasRealActivityToday : "Révision terminée"
+      //    (label gratifiant car l'utilisateur a fait le travail aujourd'hui)
+      //  - flashcardsDue === 0 && !hasRealActivityToday : "Aucune carte à
+      //    réviser" (état neutre, SRS n'a rien à proposer)
       label:
         flashcardsDue === 0
-          ? language === 'fr'
-            ? 'Aucune carte à réviser'
-            : 'No cards to review'
+          ? hasRealActivityToday
+            ? language === 'fr'
+              ? 'Révision terminée'
+              : 'Review completed'
+            : language === 'fr'
+              ? 'Aucune carte à réviser'
+              : 'No cards to review'
           : `${flashcardsDue} ${
               language === 'fr' ? 'cartes à réviser' : 'cards to review'
             }`,
@@ -218,7 +238,7 @@ const DailyGoalCard = ({
               onClick: cardsTaskClick
             }
           : null,
-      // V11 — coche seulement si "rien à réviser ET activité réelle aujourd'hui".
+      // Coche seulement si "rien à réviser ET activité réelle aujourd'hui".
       // Sinon "rien à réviser" sans aucune action est trompeur (le user n'a
       // rien fait, l'objectif ne doit pas paraître accompli).
       done: flashcardsDue === 0 && hasRealActivityToday
@@ -1373,45 +1393,121 @@ const ActivityHeatmap = ({
 // 👥 Communauté (teaser — prépare le terrain pour les duels plus tard)
 // --------------------------------------------------------------------------
 
-const CommunityCard = ({ language }: { language: Language }) => (
-  <section className="card community-card">
-    <header className="card-head">
-      <h2>
-        <span className="emoji">👥</span>
-        {language === 'fr' ? 'Communauté' : 'Community'}
-      </h2>
-      <span className="pill soon">
-        {language === 'fr' ? 'Bientôt' : 'Soon'}
-      </span>
-    </header>
-    <div className="community-body">
-      <div className="community-row">
-        <span className="community-emoji">⚔️</span>
-        <div>
-          <strong>{language === 'fr' ? 'Batailles de mots' : 'Word battles'}</strong>
-          <small>
-            {language === 'fr'
-              ? 'Affronte un autre apprenant en traduction rapide.'
-              : 'Face another learner in a translation race.'}
-          </small>
-        </div>
+const CommunityCard = ({
+  language,
+  onOpenAnnouncements,
+  onOpenBattles,
+  onOpenMessages,
+  onOpenIdeas,
+  unreadAnnouncementsCount = 0
+}: {
+  language: Language;
+  onOpenAnnouncements?: () => void;
+  onOpenBattles?: () => void;
+  onOpenMessages?: () => void;
+  onOpenIdeas?: () => void;
+  unreadAnnouncementsCount?: number;
+}) => {
+  // Construit chaque ligne en factorisant le pattern bouton/div + handler optionnel.
+  type Row = {
+    key: string;
+    emoji: string;
+    title: string;
+    subtitle: string;
+    onClick?: () => void;
+    badge?: number;
+  };
+  const rows: Row[] = [
+    {
+      key: 'announcements',
+      emoji: '📢',
+      title: language === 'fr' ? 'Annonces' : 'Announcements',
+      subtitle:
+        language === 'fr'
+          ? 'Nouvelles fonctionnalités et mises à jour XiaoLearn.'
+          : 'New features and XiaoLearn updates.',
+      onClick: onOpenAnnouncements,
+      badge: unreadAnnouncementsCount
+    },
+    {
+      key: 'battles',
+      emoji: '⚔️',
+      title: language === 'fr' ? 'Batailles de mots' : 'Word battles',
+      subtitle:
+        language === 'fr'
+          ? 'Affronte un autre apprenant en traduction rapide.'
+          : 'Face another learner in a translation race.',
+      onClick: onOpenBattles
+    },
+    {
+      key: 'messages',
+      emoji: '💬',
+      title: language === 'fr' ? 'Messagerie' : 'Messages',
+      subtitle:
+        language === 'fr'
+          ? 'Discute en 1-1 avec d\'autres apprenants.'
+          : 'Chat 1-on-1 with other learners.',
+      onClick: onOpenMessages
+    },
+    {
+      key: 'ideas',
+      emoji: '💡',
+      title: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
+      subtitle:
+        language === 'fr'
+          ? 'Vote pour les prochaines features et suis la roadmap.'
+          : 'Vote on upcoming features and follow the roadmap.',
+      onClick: onOpenIdeas
+    }
+  ];
+
+  return (
+    <section className="card community-card">
+      <header className="card-head">
+        <h2>
+          <span className="emoji">👥</span>
+          {language === 'fr' ? 'Communauté' : 'Community'}
+        </h2>
+        <span className="pill live">
+          {language === 'fr' ? '● En ligne' : '● Live'}
+        </span>
+      </header>
+      <div className="community-body">
+        {rows.map((row) => {
+          const inner = (
+            <>
+              <span className="community-emoji">{row.emoji}</span>
+              <div className="community-row-text">
+                <strong>
+                  {row.title}
+                  {row.badge && row.badge > 0 ? (
+                    <span className="community-row-badge">{row.badge}</span>
+                  ) : null}
+                </strong>
+                <small>{row.subtitle}</small>
+              </div>
+              {row.onClick && <span className="community-row-arrow" aria-hidden>›</span>}
+            </>
+          );
+          return row.onClick ? (
+            <button
+              key={row.key}
+              type="button"
+              className="community-row community-row--clickable"
+              onClick={row.onClick}
+            >
+              {inner}
+            </button>
+          ) : (
+            <div key={row.key} className="community-row">
+              {inner}
+            </div>
+          );
+        })}
       </div>
-      <div className="community-row">
-        <span className="community-emoji">📌</span>
-        <div>
-          <strong>
-            {language === 'fr' ? 'Dernier post' : 'Latest post'}
-          </strong>
-          <small>
-            {language === 'fr'
-              ? 'Partage tes bilans de fin de niveau HSK'
-              : 'Share your end-of-HSK milestones'}
-          </small>
-        </div>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // --------------------------------------------------------------------------
 // Page principale
@@ -1434,7 +1530,12 @@ const HomePageV2 = (props: HomePageV2Props) => {
     onOpenPath,
     onOpenDialogue,
     onOpenReading,
-    onAddWordToFlashcards
+    onAddWordToFlashcards,
+    onOpenAnnouncements,
+    onOpenBattles,
+    onOpenMessages,
+    onOpenIdeas,
+    unreadAnnouncementsCount
   } = props;
 
   // Trouve la prochaine vraie leçon CECR/HSK à reprendre (première non-complétée
@@ -1559,7 +1660,14 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakDays={dashboard.streak.current}
           />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
-          <CommunityCard language={language} />
+          <CommunityCard
+            language={language}
+            onOpenAnnouncements={onOpenAnnouncements}
+            onOpenBattles={onOpenBattles}
+            onOpenMessages={onOpenMessages}
+            onOpenIdeas={onOpenIdeas}
+            unreadAnnouncementsCount={unreadAnnouncementsCount}
+          />
         </div>
       </div>
 

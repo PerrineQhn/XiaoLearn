@@ -429,10 +429,80 @@ export function buildDefaultEvaluation(level: 'hsk1' | 'hsk2' | 'hsk3' = 'hsk1')
 }
 
 // ---------------------------------------------------------------------------
-// Community defaults — teaser "bientôt"
+// Community defaults — annonces de l'équipe XiaoLearn
 // ---------------------------------------------------------------------------
 
 export const DEFAULT_ANNOUNCEMENTS: CommunityV2Announcement[] = [
+  // ─── Juin 2026 — Objectifs quotidiens personnalisés ─────────────────────
+  {
+    id: 'ann-custom-goals-2026-06',
+    title: 'Objectifs quotidiens personnalisés',
+    titleEn: 'Customizable daily goals',
+    body:
+      "Tu peux maintenant **régler finement** tes objectifs du jour depuis **Réglages → Apprentissage**, plutôt que d'être bloqué sur les valeurs par défaut.\n\n" +
+      "### 🎯 Trois cibles ajustables\n\n" +
+      "- **⭐ XP / jour** : entre 10 et 500 XP, par incrément de 10 (défaut : 50)\n" +
+      "- **🃏 Cartes / jour** : 5 à 200 cartes, ou **∞ illimité** pour ne pas être tracké\n" +
+      "- **📚 Leçons / jour** : 1 à 10 leçons, ou **∞ illimité** également\n\n" +
+      "### ⏱️ Cible minutes pilotée par le preset\n\n" +
+      "La cible minutes vient maintenant directement des tuiles **Décontracté / Régulier / Intensif / Extrême** (5 / 15 / 30 / 60 min). Plus de double réglage qui pouvait diverger.\n\n" +
+      "### 🔁 Sync cross-device\n\n" +
+      "Tes objectifs personnalisés sont synchronisés via **Firestore** entre tous tes appareils. Tu ajustes sur ton iPad, ça remonte sur ton MacBook au prochain refresh. Bouton **↺ Réinitialiser** pour revenir aux défauts (50 XP / 10 min / illimité).",
+    bodyEn:
+      "You can now **finely tune** your daily goals from **Settings → Learning**, instead of being stuck on the defaults.\n\n" +
+      "### 🎯 Three adjustable targets\n\n" +
+      "- **⭐ XP / day**: between 10 and 500 XP, by steps of 10 (default: 50)\n" +
+      "- **🃏 Cards / day**: 5 to 200 cards, or **∞ unlimited** to not be tracked\n" +
+      "- **📚 Lessons / day**: 1 to 10 lessons, or **∞ unlimited** too\n\n" +
+      "### ⏱️ Minutes target driven by the preset\n\n" +
+      "The minutes target now comes directly from the **Relaxed / Regular / Intense / Extreme** tiles (5 / 15 / 30 / 60 min). No more dual setting that could drift apart.\n\n" +
+      "### 🔁 Cross-device sync\n\n" +
+      "Your custom goals are synced via **Firestore** across all your devices. Adjust on iPad, see the change on your MacBook on next refresh. **↺ Reset** button to revert to defaults (50 XP / 10 min / unlimited).",
+    date: '2026-06-07',
+    tag: 'Réglages',
+    category: 'feature',
+    icon: '🎯',
+    pinned: true
+  },
+  // ─── Juin 2026 — Tokens grammaticaux colorés ────────────────────────────
+  {
+    id: 'ann-grammar-tokens-2026-06',
+    title: 'Grammaire en couleurs : tokens Sujet · Verbe · Objet',
+    titleEn: 'Grammar in colors: Subject · Verb · Object tokens',
+    body:
+      "**Comprendre une phrase chinoise d'un seul coup d'œil**, sans relire trois fois pour décortiquer la structure. C'est la promesse des nouveaux tokens grammaticaux colorés, ajoutés sur **18 leçons** du A1 au B2.1.\n\n" +
+      "### 🎨 10 rôles, 10 couleurs\n\n" +
+      "Chaque mot d'une phrase d'exemple est encadré par une pastille colorée selon son rôle :\n\n" +
+      "- 🔵 **Sujet**, 🟢 **Verbe**, 🟠 **Objet**, 🟡 **Particule**\n" +
+      "- 🟣 **Temps**, 🟤 **Lieu**, ⚪ **Modificateur**, 🔴 **Copule** (是)\n" +
+      "- 🟥 **Complément** (résultatifs / directionnels), 🟪 **Connecteur**\n\n" +
+      "### 📚 Là où c'est déployé\n\n" +
+      "- **A1** : Structure SVO de base, 是, 不, 吗, 的 (5 leçons)\n" +
+      "- **A2** : 了 (perfectif), 过, 在 vs 正在 vs 着 (3 leçons)\n" +
+      "- **B1.1** : 把, 被, 的 (tri), 是…的, 了 (changement d'état + durée) (7 leçons)\n" +
+      "- **B1.2 / B2.1** : 比, compléments résultatifs et directionnels (3 leçons)\n\n" +
+      "### 💡 Pourquoi c'est utile\n\n" +
+      "Le chinois n'a pas d'accords ni de conjugaisons — la structure repose presque entièrement sur **l'ordre des mots** et les **particules**. Voir cette structure colorée aide à internaliser le schéma plutôt qu'à juste mémoriser des phrases. Inspiré directement du système de visualisation de Seonsaengnim (apprentissage du coréen).",
+    bodyEn:
+      "**Understand a Chinese sentence at a glance**, without rereading three times to dissect the structure. That's the promise of the new colored grammar tokens, added to **18 lessons** from A1 to B2.1.\n\n" +
+      "### 🎨 10 roles, 10 colors\n\n" +
+      "Each word in an example sentence is wrapped in a colored chip by role:\n\n" +
+      "- 🔵 **Subject**, 🟢 **Verb**, 🟠 **Object**, 🟡 **Particle**\n" +
+      "- 🟣 **Time**, 🟤 **Place**, ⚪ **Modifier**, 🔴 **Copula** (是)\n" +
+      "- 🟥 **Complement** (resultative / directional), 🟪 **Connector**\n\n" +
+      "### 📚 Where it ships\n\n" +
+      "- **A1**: Basic SVO structure, 是, 不, 吗, 的 (5 lessons)\n" +
+      "- **A2**: 了 (perfective), 过, 在 vs 正在 vs 着 (3 lessons)\n" +
+      "- **B1.1**: 把, 被, 的 (sorting), 是…的, 了 (state change + duration) (7 lessons)\n" +
+      "- **B1.2 / B2.1**: 比, resultative and directional complements (3 lessons)\n\n" +
+      "### 💡 Why it helps\n\n" +
+      "Chinese has no agreements or conjugations — structure rests almost entirely on **word order** and **particles**. Seeing that structure colored helps internalize the pattern rather than just memorize sentences. Directly inspired by the visualization system from Seonsaengnim (Korean learning).",
+    date: '2026-06-05',
+    tag: 'Grammaire',
+    category: 'content',
+    icon: '🎨',
+    pinned: false
+  },
   // ─── Mai 2026 — Atelier oral + écriture (Web Speech + HanziWriter) ──────
   {
     id: 'ann-atelier-prononciation-2026-05',

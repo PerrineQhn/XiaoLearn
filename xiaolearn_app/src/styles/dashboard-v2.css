@@ -637,19 +637,25 @@
 }
 .xp-v2-left {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 6px;
 }
 .xp-v2-star {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1;
-  transform: translateY(2px);
+  display: inline-flex;
+  align-items: center;
+  /* Compensation visuelle : l'emoji ⭐ a un baseline plus bas que le centre
+     géométrique sur la plupart des plateformes. */
+  transform: translateY(-1px);
 }
 .xp-v2-num {
   font-size: 24px;
   font-weight: 800;
   color: var(--dv-ink);
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 .xp-v2-label {
   font-size: 13px;
@@ -657,6 +663,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  align-self: center;
 }
 .xp-v2-level-pill {
   font-size: 12px;
@@ -778,17 +785,74 @@
 .community-body { display: grid; gap: 10px; }
 .community-row {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 12px;
   align-items: center;
-  padding: 10px;
+  padding: 10px 12px;
   background: #faf5ee;
   border: 1px solid #efe6d8;
   border-radius: 10px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  width: 100%;
 }
-.community-emoji { font-size: 22px; }
-.community-row strong { display: block; }
-.community-row small { color: var(--dv-muted); }
+.community-row--clickable {
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.community-row--clickable:hover {
+  background: #fff;
+  border-color: #d4c5a9;
+}
+.community-row--clickable:active {
+  transform: scale(0.99);
+}
+.community-emoji { font-size: 22px; line-height: 1; }
+.community-row-text { min-width: 0; }
+.community-row strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dv-ink);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.community-row small {
+  display: block;
+  color: var(--dv-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.community-row-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  background: var(--dv-accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  line-height: 1;
+}
+.community-row-arrow {
+  font-size: 22px;
+  color: var(--dv-muted);
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* Pill "● Live" (vert) — utilisé sur la carte Communauté maintenant que
+   toutes les features sont actives. Remplace l'ancien "Bientôt". */
+.pill.live {
+  background: #d1fae5;
+  color: #047857;
+  letter-spacing: 0.02em;
+}
 
 /* ------------------------ Buttons ---------------------------------------- */
 
@@ -1552,14 +1616,20 @@
   color: var(--dv-ink);
 }
 .streak-bonus-head-icon {
-  font-size: 20px;
-  display: inline-grid;
-  place-items: center;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 28px;
   height: 28px;
   border-radius: 8px;
   background: linear-gradient(135deg, #fff4c1 0%, #ffd98a 100%);
   border: 1px solid #e7b948;
+  text-align: center;
+  /* L'emoji ⚡ a un baseline asymétrique sur macOS/iOS — compensation. */
+  padding-top: 1px;
+  box-sizing: border-box;
 }
 .streak-bonus-tagline {
   margin: 0;
