@@ -494,6 +494,73 @@ export const shiVerbLearnSections: LessonV2LearnSection[] = [
       'Test simple : si le prédicat est un nom (étudiant, français, professeur), utilise 是. Si c\'est un adjectif (grand, fatigué, content), utilise 很 + adjectif.',
     tipEn:
       'Simple test: if the predicate is a noun (student, French, teacher), use 是. If it\'s an adjective (tall, tired, happy), use 很 + adjective.'
+  },
+  {
+    id: 'shi-structure',
+    title: 'Structure visuelle : 是 vs 很',
+    titleEn: 'Visual structure: 是 vs 很',
+    body:
+      'Compare ces 4 phrases. Les 2 premières utilisent 是 + nom (identification). Les 2 dernières utilisent 很 + adjectif (description). Repère bien : le rôle change selon le type de prédicat.',
+    bodyEn:
+      'Compare these 4 sentences. First 2 use 是 + noun (identification). Last 2 use 很 + adjective (description). Notice: the role changes based on the predicate type.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'copule' },
+          { text: '学生', pinyin: 'xuéshēng', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'suis', role: 'copule' },
+          { text: 'étudiant', role: 'objet' }
+        ],
+        note: '是 + NOM → identification (qui je suis).'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'copule' },
+          { text: '法国人', pinyin: 'fǎguórén', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Elle', role: 'sujet' },
+          { text: 'est', role: 'copule' },
+          { text: 'française', role: 'objet' }
+        ],
+        note: 'Idem : 是 + nationalité (un nom).'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '很', pinyin: 'hěn', role: 'modificateur' },
+          { text: '累', pinyin: 'lèi', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'suis', role: 'copule' },
+          { text: 'fatigué', role: 'verbe' }
+        ],
+        note: '✗ 我是累 — INTERDIT. ✓ 我很累. 累 est un ADJECTIF, donc 很 + adjectif. 是 n\'apparaît pas.'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '很', pinyin: 'hěn', role: 'modificateur' },
+          { text: '高', pinyin: 'gāo', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'est', role: 'copule' },
+          { text: 'grand', role: 'verbe' }
+        ],
+        note: 'Même règle : 高 est un adjectif → 很 + adjectif, pas de 是.'
+      }
+    ],
+    tip:
+      '很 ici n\'a pas le sens de « très » — c\'est une liaison obligatoire devant l\'adjectif. Sans 很, la phrase 我累 sonne tronquée. Avec 很, elle est naturelle.',
+    tipEn:
+      'Here 很 doesn\'t mean «very» — it\'s a mandatory linker before the adjective. Without 很, 我累 sounds truncated. With 很, it\'s natural.'
   }
 ];
 
@@ -518,6 +585,63 @@ export const buNegationLearnSections: LessonV2LearnSection[] = [
       'Tone sandhi : 不 change de ton devant un 4e ton. 不 + 是 → bú shì (2e ton). Devant les autres tons, 不 reste 4e ton. Ton automatique, à assimiler par la pratique.',
     tipEn:
       'Tone sandhi: 不 changes tone before a 4th tone. 不 + 是 → bú shì (2nd tone). Before other tones, 不 stays 4th tone. Automatic, absorbed through practice.'
+  },
+  {
+    id: 'bu-structure',
+    title: 'Structure visuelle : où va 不 ?',
+    titleEn: 'Visual structure: where does 不 go?',
+    body:
+      '不 s\'insère COMME UN MODIFICATEUR juste avant le verbe ou l\'adjectif. Compare les phrases positives et négatives côte à côte pour voir le pattern.',
+    bodyEn:
+      '不 fits in AS A MODIFIER right before the verb or adjective. Compare positive and negative sentences side-by-side to spot the pattern.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '不', pinyin: 'bù', role: 'modificateur' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '肉', pinyin: 'ròu', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'ne', role: 'modificateur' },
+          { text: 'mange', role: 'verbe' },
+          { text: 'pas de viande', role: 'objet' }
+        ],
+        note: '不 colle au verbe 吃. Jamais entre 我 et 不, ni après 吃.'
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '不', pinyin: 'bù', role: 'modificateur' },
+          { text: '高兴', pinyin: 'gāoxìng', role: 'verbe' }
+        ],
+        fr: [
+          { text: 'Elle', role: 'sujet' },
+          { text: 'n\'est pas', role: 'modificateur' },
+          { text: 'contente', role: 'verbe' }
+        ],
+        note: '不 fonctionne aussi devant un adjectif : 高兴 ici joue le rôle de prédicat (« est contente »).'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '没', pinyin: 'méi', role: 'modificateur' },
+          { text: '有', pinyin: 'yǒu', role: 'verbe' },
+          { text: '时间', pinyin: 'shíjiān', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'n\'ai pas', role: 'modificateur' },
+          { text: 'de temps', role: 'objet' }
+        ],
+        note: 'EXCEPTION : pour nier 有 (avoir), on utilise 没 — JAMAIS 不有. Sandhi automatique : 不 + 是 → bú shì.'
+      }
+    ],
+    tip:
+      'Position simple à retenir : 不/没 sont des MODIFICATEURS placés directement avant le verbe ou l\'adjectif. Tout autre placement est faux.',
+    tipEn:
+      'Simple position rule: 不/没 are MODIFIERS placed directly before the verb or adjective. Any other placement is wrong.'
   }
 ];
 
@@ -554,6 +678,69 @@ export const maQuestionsLearnSections: LessonV2LearnSection[] = [
       'Tu ne peux pas combiner V-不-V avec 吗 dans la même phrase — ce sont deux structures concurrentes. Choisis l\'une ou l\'autre.',
     tipEn:
       'You cannot combine V-不-V with 吗 in the same sentence — they\'re competing structures. Pick one or the other.'
+  },
+  {
+    id: 'ma-structure',
+    title: 'Structure visuelle : 吗 toujours à la FIN',
+    titleEn: 'Visual structure: 吗 always at the END',
+    body:
+      '吗 est une particule interrogative qui se place à la TOUTE FIN de la phrase, après tout le reste — sujet, verbe, objet, complément. Compare avec V-不-V qui mange le verbe au milieu.',
+    bodyEn:
+      '吗 is a question particle placed at the VERY END of the sentence, after everything else — subject, verb, object, complement. Compare with V-not-V which splits the verb in the middle.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '你', pinyin: 'nǐ', role: 'sujet' },
+          { text: '好', pinyin: 'hǎo', role: 'verbe' },
+          { text: '吗', pinyin: 'ma', role: 'particule' },
+          { text: '?', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Est-ce que', role: 'particule' },
+          { text: 'tu', role: 'sujet' },
+          { text: 'vas bien', role: 'verbe' },
+          { text: '?', role: 'particule' }
+        ],
+        note: '吗 transforme une affirmation en question oui/non, juste en s\'ajoutant à la fin.'
+      },
+      {
+        zh: [
+          { text: '你', pinyin: 'nǐ', role: 'sujet' },
+          { text: '是', pinyin: 'shì', role: 'copule' },
+          { text: '法国人', pinyin: 'fǎguórén', role: 'objet' },
+          { text: '吗', pinyin: 'ma', role: 'particule' },
+          { text: '?', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Tu', role: 'sujet' },
+          { text: 'es', role: 'copule' },
+          { text: 'français', role: 'objet' },
+          { text: '?', role: 'particule' }
+        ],
+        note: '吗 vient APRÈS l\'objet 法国人, à l\'extrême fin.'
+      },
+      {
+        zh: [
+          { text: '你', pinyin: 'nǐ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '不', pinyin: 'bù', role: 'modificateur' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '米饭', pinyin: 'mǐfàn', role: 'objet' },
+          { text: '?', role: 'particule' }
+        ],
+        fr: [
+          { text: 'Tu', role: 'sujet' },
+          { text: 'manges', role: 'verbe' },
+          { text: 'du riz', role: 'objet' },
+          { text: '?', role: 'particule' }
+        ],
+        note: 'V-不-V : on répète 吃 avec 不 au milieu, PAS de 吗 à la fin. Style plus direct.'
+      }
+    ],
+    tip:
+      'Astuce : si tu vois 吗 quelque part qui n\'est PAS à la fin, c\'est une faute. Position absolument fixe.',
+    tipEn:
+      'Hint: if you see 吗 anywhere that\'s NOT the end, it\'s a mistake. Position is absolutely fixed.'
   }
 ];
 
@@ -590,6 +777,72 @@ export const dePossessiveLearnSections: LessonV2LearnSection[] = [
       'Règle pragmatique : si le possesseur est une personne et le possédé un objet transférable, on garde 的. Si c\'est une relation permanente (famille, nationalité), on l\'omet.',
     tipEn:
       'Rule of thumb: if the possessor is a person and the possessed is a transferable object, keep 的. For permanent relations (family, nationality), drop it.'
+  },
+  {
+    id: 'de-structure',
+    title: 'Structure visuelle : [Modificateur] + 的 + [Nom]',
+    titleEn: 'Visual structure: [Modifier] + 的 + [Noun]',
+    body:
+      '的 colle le modificateur (qui possède ou décrit) au nom (ce qui est possédé/décrit). Le rôle Modificateur (rose) en chinois est INVERSÉ par rapport au français — en chinois, le modificateur précède toujours le nom.',
+    bodyEn:
+      '的 sticks the modifier (possessor / descriptor) to the noun (the possessed / described). The Modifier role (pink) in Chinese is REVERSED compared to English — in Chinese the modifier always comes before the noun.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'modificateur' },
+          { text: '的', pinyin: 'de', role: 'particule' },
+          { text: '书', pinyin: 'shū', role: 'objet' }
+        ],
+        fr: [
+          { text: 'mon', role: 'modificateur' },
+          { text: 'livre', role: 'objet' }
+        ],
+        note: 'Possessif simple : 我 (le possesseur) + 的 + 书 (le possédé). Le 的 fait office de « de » / « \'s ».'
+      },
+      {
+        zh: [
+          { text: '好', pinyin: 'hǎo', role: 'modificateur' },
+          { text: '的', pinyin: 'de', role: 'particule' },
+          { text: '人', pinyin: 'rén', role: 'objet' }
+        ],
+        fr: [
+          { text: 'une bonne', role: 'modificateur' },
+          { text: 'personne', role: 'objet' }
+        ],
+        note: 'Adjectif + 的 + nom : 的 lie l\'adjectif descriptif au nom. ⚠ Ordre inversé vs français : adjectif AVANT le nom en chinois.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'modificateur' },
+          { text: '妈妈', pinyin: 'māma', role: 'objet' }
+        ],
+        fr: [
+          { text: 'ma', role: 'modificateur' },
+          { text: 'maman', role: 'objet' }
+        ],
+        note: '✓ 的 OMIS : pour la famille, on dit 我妈妈 (pas 我的妈妈). Plus naturel, plus proche.'
+      },
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '买', pinyin: 'mǎi', role: 'verbe' },
+          { text: '的', pinyin: 'de', role: 'particule' },
+          { text: '书', pinyin: 'shū', role: 'objet' }
+        ],
+        fr: [
+          { text: 'le', role: 'objet' },
+          { text: 'livre', role: 'objet' },
+          { text: 'que', role: 'particule' },
+          { text: 'j\'ai', role: 'sujet' },
+          { text: 'acheté', role: 'verbe' }
+        ],
+        note: 'RELATIF : « le livre QUE j\'ai acheté ». En chinois, toute la proposition « 我买 » devient modificateur du nom 书, lié par 的.'
+      }
+    ],
+    tip:
+      'Mémo visuel : 的 est la « colle de gauche à droite ». À gauche, ce qui qualifie ; à droite, ce qui est qualifié. Toujours dans cet ordre.',
+    tipEn:
+      'Visual memo: 的 is the «left-to-right glue». On the left, what qualifies; on the right, what is qualified. Always in this order.'
   }
 ];
 
@@ -1240,5 +1493,230 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Récap : 会 = appris (skill) | 能 = capable maintenant (capacité) | 可以 = autorisé (permission). « 我会，但不能，因为不可以 » = je sais, mais je ne peux pas, parce que je n\'ai pas le droit. Phrase qui résume tout.',
     tipEn:
       'Recap: 会 = learned (skill) | 能 = able now (capacity) | 可以 = allowed (permission). «我会，但不能，因为不可以» = I know how, but I can\'t, because I\'m not allowed. The summary phrase.'
+  }
+];
+
+// ---------------------------------------------------------------------------
+// cecr-a1-grammar-m0 — Structure de phrase chinoise : SVO (style Seonsaengnim)
+// Tout premier module de la section Grammaire A1. Présente l'ordre canonique
+// Sujet → Verbe → Objet, le placement du temps, et la non-conjugaison.
+// Utilise le rendu `tokenizedSentences` pour visualiser la structure avec
+// des pastilles colorées par rôle grammatical.
+// ---------------------------------------------------------------------------
+
+export const a1GrammarSvoLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'svo-intro',
+    title: 'L\'ordre des mots : Sujet → Verbe → Objet',
+    titleEn: 'Word order: Subject → Verb → Object',
+    body:
+      'En chinois, c\'est Sujet → Verbe → Objet — le même ordre qu\'en français. C\'est une excellente nouvelle : « Je mange du riz » se construit dans le même ordre qu\'en chinois.\n→ 我吃米饭 = wǒ chī mǐfàn (je / mange / du riz)\nLittéralement : « Je mange du riz. »\n\nRéflexe à prendre : tu peux PRESQUE traduire mot à mot dans l\'ordre français pour les phrases simples du quotidien. Le mandarin est l\'ami du francophone sur ce point.',
+    bodyEn:
+      'Chinese uses Subject → Verb → Object — the same order as English. Great news: «I eat rice» builds in the same order in Chinese.\n→ 我吃米饭 = wǒ chī mǐfàn (I / eat / rice)\nLiterally: «I eat rice».\n\nReflex: for simple everyday sentences, you can ALMOST translate word-for-word in English order. Mandarin is friendly to English speakers on this point.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '米饭', pinyin: 'mǐfàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'mange', role: 'verbe' },
+          { text: 'du riz', role: 'objet' }
+        ],
+        en: [
+          { text: 'I', role: 'sujet' },
+          { text: 'eat', role: 'verbe' },
+          { text: 'rice', role: 'objet' }
+        ]
+      },
+      {
+        zh: [
+          { text: '她', pinyin: 'tā', role: 'sujet' },
+          { text: '喝', pinyin: 'hē', role: 'verbe' },
+          { text: '水', pinyin: 'shuǐ', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Elle', role: 'sujet' },
+          { text: 'boit', role: 'verbe' },
+          { text: 'de l\'eau', role: 'objet' }
+        ],
+        en: [
+          { text: 'She', role: 'sujet' },
+          { text: 'drinks', role: 'verbe' },
+          { text: 'water', role: 'objet' }
+        ]
+      },
+      {
+        zh: [
+          { text: '我们', pinyin: 'wǒmen', role: 'sujet' },
+          { text: '学', pinyin: 'xué', role: 'verbe' },
+          { text: '中文', pinyin: 'zhōngwén', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Nous', role: 'sujet' },
+          { text: 'apprenons', role: 'verbe' },
+          { text: 'le chinois', role: 'objet' }
+        ],
+        en: [
+          { text: 'We', role: 'sujet' },
+          { text: 'learn', role: 'verbe' },
+          { text: 'Chinese', role: 'objet' }
+        ]
+      }
+    ],
+    tip:
+      'Les pronoms personnels sujets sont obligatoires en chinois — on ne dit pas « 吃米饭 » tout seul comme on dirait « Mange! » en français. Toujours préciser qui agit.',
+    tipEn:
+      'Subject pronouns are mandatory in Chinese — you don\'t say «吃米饭» on its own. Always specify who acts.'
+  },
+  {
+    id: 'svo-time-before-verb',
+    title: 'Le temps va AVANT le verbe (≠ français)',
+    titleEn: 'Time goes BEFORE the verb (≠ English)',
+    body:
+      'En français on dit « Je mange du riz DEMAIN » — le temps peut aller à la fin. En chinois, JAMAIS. Le temps se place toujours AVANT le verbe, soit juste après le sujet, soit même tout au début.\n\n✓ 我明天吃米饭 (je / demain / mange / du riz)\n✓ 明天我吃米饭 (demain / je / mange / du riz)\n✗ 我吃米饭明天 — interdit, totalement bancal à l\'oreille chinoise.\n\nMêmes règles pour : 今天 (aujourd\'hui), 昨天 (hier), 早上 (le matin), 晚上 (le soir), 现在 (maintenant).',
+    bodyEn:
+      'In English you can say «I eat rice TOMORROW» — time can go at the end. In Chinese, NEVER. Time always goes BEFORE the verb, either right after the subject, or at the very beginning.\n\n✓ 我明天吃米饭 (I / tomorrow / eat / rice)\n✓ 明天我吃米饭 (tomorrow / I / eat / rice)\n✗ 我吃米饭明天 — forbidden, sounds totally off to a Chinese ear.\n\nSame rule for: 今天 (today), 昨天 (yesterday), 早上 (morning), 晚上 (evening), 现在 (now).',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '明天', pinyin: 'míngtiān', role: 'temps' },
+          { text: '吃', pinyin: 'chī', role: 'verbe' },
+          { text: '米饭', pinyin: 'mǐfàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Demain', role: 'temps' },
+          { text: ', je', role: 'sujet' },
+          { text: 'mange', role: 'verbe' },
+          { text: 'du riz', role: 'objet' }
+        ],
+        note: 'Le temps 明天 vient AVANT 吃 (le verbe). Ne pas le mettre à la fin.',
+        noteEn: 'Time 明天 comes BEFORE 吃 (the verb). Don\'t put it at the end.'
+      },
+      {
+        zh: [
+          { text: '今天', pinyin: 'jīntiān', role: 'temps' },
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '学', pinyin: 'xué', role: 'verbe' },
+          { text: '中文', pinyin: 'zhōngwén', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Aujourd\'hui', role: 'temps' },
+          { text: ', j\'', role: 'sujet' },
+          { text: 'apprends', role: 'verbe' },
+          { text: 'le chinois', role: 'objet' }
+        ],
+        note: 'Variante avec le temps en tête de phrase — aussi correct, accent légèrement appuyé sur « aujourd\'hui ».',
+        noteEn: 'Variant with time at the very start — also correct, slight emphasis on «today».'
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '晚上', pinyin: 'wǎnshàng', role: 'temps' },
+          { text: '喝', pinyin: 'hē', role: 'verbe' },
+          { text: '茶', pinyin: 'chá', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'boit', role: 'verbe' },
+          { text: 'du thé', role: 'objet' },
+          { text: 'le soir', role: 'temps' }
+        ],
+        note: 'En français le temps peut aller à la fin. En chinois : pas le choix, c\'est AVANT le verbe.',
+        noteEn: 'In English time can go at the end. In Chinese: no choice, it goes BEFORE the verb.'
+      }
+    ],
+    tip:
+      'Astuce mnémo : pense que le chinois plante d\'abord le décor (sujet + temps) avant de jouer l\'action (verbe + objet). C\'est comme une scène de théâtre.',
+    tipEn:
+      'Mnemonic: Chinese sets the scene first (subject + time) before playing the action (verb + object). Like a theatre stage.'
+  },
+  {
+    id: 'svo-no-conjugation',
+    title: 'Aucune conjugaison : c\'est toujours le même verbe',
+    titleEn: 'No conjugation: same verb every time',
+    body:
+      'Le chinois est INVARIABLE : pas de conjugaison, pas d\'accord, pas de pluriel sur les verbes. 吃 (manger) reste 吃 quel que soit le sujet.\n\n我吃 / 你吃 / 他吃 / 她吃 / 我们吃 / 你们吃 / 他们吃 — toujours 吃.\n\nC\'est le même principe pour TOUS les verbes. Une fois que tu connais 吃, tu sais comment dire « je mange », « nous mangions », « ils ont mangé » — tu ajoutes juste un mot temporel ou une particule (cf. modules suivants pour 了, 过, 着).',
+    bodyEn:
+      'Chinese is INVARIABLE: no conjugation, no agreement, no plural on verbs. 吃 (to eat) stays 吃 whatever the subject.\n\n我吃 / 你吃 / 他吃 / 她吃 / 我们吃 / 你们吃 / 他们吃 — always 吃.\n\nSame for ALL verbs. Once you know 吃, you know how to say «I eat», «we ate», «they have eaten» — you just add a time word or particle (see next modules for 了, 过, 着).',
+    items: [
+      { hanzi: '我吃', pinyin: 'wǒ chī', meaning: 'je mange', meaningEn: 'I eat', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '你吃', pinyin: 'nǐ chī', meaning: 'tu manges', meaningEn: 'you eat', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '他吃', pinyin: 'tā chī', meaning: 'il mange', meaningEn: 'he eats', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '我们吃', pinyin: 'wǒmen chī', meaning: 'nous mangeons', meaningEn: 'we eat', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '他们吃', pinyin: 'tāmen chī', meaning: 'ils mangent', meaningEn: 'they eat', audio: 'audio/hsk1/hsk1_吃.wav' }
+    ],
+    tip:
+      'C\'est l\'un des points les plus libérateurs du chinois pour un francophone : zéro tableau de conjugaison à apprendre par cœur. Tu apprends le verbe une fois, et c\'est réglé pour toujours.',
+    tipEn:
+      'One of Chinese\'s most liberating features for English speakers: zero conjugation tables to memorize. Learn the verb once, done forever.'
+  },
+  {
+    id: 'svo-comparison',
+    title: 'Compare : 4 phrases côte à côte',
+    titleEn: 'Compare: 4 sentences side-by-side',
+    body:
+      'Mets en pratique en observant la structure de ces 4 phrases. Note comment le sujet, le verbe et l\'objet gardent toujours leur place — seuls les mots changent.',
+    bodyEn:
+      'Practice by observing the structure of these 4 sentences. Notice how subject, verb and object always keep their place — only the words change.',
+    tokenizedSentences: [
+      {
+        zh: [
+          { text: '我', pinyin: 'wǒ', role: 'sujet' },
+          { text: '看', pinyin: 'kàn', role: 'verbe' },
+          { text: '书', pinyin: 'shū', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Je', role: 'sujet' },
+          { text: 'lis', role: 'verbe' },
+          { text: 'un livre', role: 'objet' }
+        ]
+      },
+      {
+        zh: [
+          { text: '他', pinyin: 'tā', role: 'sujet' },
+          { text: '买', pinyin: 'mǎi', role: 'verbe' },
+          { text: '咖啡', pinyin: 'kāfēi', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Il', role: 'sujet' },
+          { text: 'achète', role: 'verbe' },
+          { text: 'du café', role: 'objet' }
+        ]
+      },
+      {
+        zh: [
+          { text: '我妈妈', pinyin: 'wǒ māma', role: 'sujet' },
+          { text: '做', pinyin: 'zuò', role: 'verbe' },
+          { text: '饭', pinyin: 'fàn', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Ma maman', role: 'sujet' },
+          { text: 'fait', role: 'verbe' },
+          { text: 'à manger', role: 'objet' }
+        ]
+      },
+      {
+        zh: [
+          { text: '我们', pinyin: 'wǒmen', role: 'sujet' },
+          { text: '今天', pinyin: 'jīntiān', role: 'temps' },
+          { text: '学', pinyin: 'xué', role: 'verbe' },
+          { text: '汉字', pinyin: 'hànzì', role: 'objet' }
+        ],
+        fr: [
+          { text: 'Aujourd\'hui', role: 'temps' },
+          { text: ', nous', role: 'sujet' },
+          { text: 'apprenons', role: 'verbe' },
+          { text: 'des caractères', role: 'objet' }
+        ]
+      }
+    ],
+    tip:
+      'Quand tu construis ta première phrase, suis ce template : SUJET + (TEMPS) + VERBE + OBJET. Tant que tu respectes cet ordre, ta phrase sera grammaticalement correcte — même si le vocabulaire est limité.',
+    tipEn:
+      'When building your first sentence, follow this template: SUBJECT + (TIME) + VERB + OBJECT. As long as you respect this order, your sentence will be grammatically correct — even with limited vocabulary.'
   }
 ];

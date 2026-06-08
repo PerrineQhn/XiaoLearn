@@ -701,6 +701,172 @@ const MinimalPairsRow = ({
 };
 
 /**
+ * Bloc de phrases tokenisées (style Seonsaengnim) — affiche la légende
+ * des rôles grammaticaux présents + chaque phrase avec ses tokens colorés
+ * en chinois et en langue source (fr/en) pour la comparaison directe.
+ *
+ * Le pinyin sous chaque token chinois est optionnel mais utile en A1.
+ */
+const ROLE_LABEL_FR: Record<string, string> = {
+  sujet: 'Sujet',
+  verbe: 'Verbe',
+  objet: 'Objet',
+  temps: 'Temps',
+  lieu: 'Lieu',
+  particule: 'Particule',
+  complement: 'Complément',
+  modificateur: 'Modificateur',
+  copule: 'Copule',
+  connecteur: 'Connecteur'
+};
+const ROLE_LABEL_EN: Record<string, string> = {
+  sujet: 'Subject',
+  verbe: 'Verb',
+  objet: 'Object',
+  temps: 'Time',
+  lieu: 'Place',
+  particule: 'Particle',
+  complement: 'Complement',
+  modificateur: 'Modifier',
+  copule: 'Copula',
+  connecteur: 'Connector'
+};
+
+type AnyToken = { text: string; pinyin?: string; role: string };
+
+/**
+ * Sépare la ponctuation collée à un token de son contenu textuel. Permet
+ * de rendre la ponctuation comme du texte plat entre les blocs colorés,
+ * pour éviter qu'un token comme ", je" se retrouve dans le bloc bleu Sujet
+ * avec la virgule à l'intérieur. Stratégie : on coupe les caractères de
+ * ponctuation en début/fin tout en gardant le cœur du token coloré.
+ */
+const PUNCT_RE = /[\s,，.。;；:：!！?？'""''(()）\[\]【】《》「」-]/;
+function splitPunctuation(text: string): { lead: string; core: string; trail: string } {
+  let lead = '';
+  let core = text;
+  let trail = '';
+  while (core.length > 0 && PUNCT_RE.test(core[0])) {
+    lead += core[0];
+    core = core.slice(1);
+  }
+  while (core.length > 0 && PUNCT_RE.test(core[core.length - 1])) {
+    trail = core[core.length - 1] + trail;
+    core = core.slice(0, -1);
+  }
+  return { lead, core, trail };
+}
+
+const TokenizedSentencesBlock = ({
+  sentences,
+  language
+}: {
+  sentences: Array<{
+    zh: AnyToken[];
+    fr?: AnyToken[];
+    en?: AnyToken[];
+    note?: string;
+    noteEn?: string;
+  }>;
+  language: LessonV2Language;
+}) => {
+  // Collecte les rôles présents dans toutes les phrases pour la légende
+  const rolesPresent = new Set<string>();
+  for (const s of sentences) {
+    for (const t of s.zh) rolesPresent.add(t.role);
+    if (s.fr) for (const t of s.fr) rolesPresent.add(t.role);
+    if (s.en) for (const t of s.en) rolesPresent.add(t.role);
+  }
+  const labels = language === 'en' ? ROLE_LABEL_EN : ROLE_LABEL_FR;
+  // Ordre canonique pour l'affichage de la légende (logique grammaticale)
+  const ROLE_ORDER = [
+    'sujet', 'temps', 'lieu', 'modificateur', 'verbe', 'copule',
+    'objet', 'complement', 'particule', 'connecteur'
+  ];
+  const sortedRoles = ROLE_ORDER.filter((r) => rolesPresent.has(r));
+  return (
+    <div className="lv2-tokens-block">
+      <div className="lv2-tokens-legend">
+        {sortedRoles.map((role) => (
+          <span key={role} className={`lv2-tok-chip lv2-tok-chip--${role}`}>
+            ● {labels[role] ?? role}
+          </span>
+        ))}
+      </div>
+      {sentences.map((sentence, idx) => {
+        const sourceTokens =
+          language === 'en' ? sentence.en : sentence.fr;
+        const note =
+          language === 'en' && sentence.noteEn
+            ? sentence.noteEn
+            : sentence.note;
+        return (
+          <div key={idx} className="lv2-tokens-sentence">
+            <div className="lv2-tokens-lang-label">
+              {language === 'en' ? 'Chinese' : 'Chinois'}
+            </div>
+            <div className="lv2-tokens-row">
+              {sentence.zh.map((tok, i) => {
+                const { lead, core, trail } = splitPunctuation(tok.text);
+                if (!core) {
+                  // 100% ponctuation → texte plat, pas de bloc coloré
+                  return (
+                    <span key={`zh-${i}`} className="lv2-tok-punct">
+                      {tok.text}
+                    </span>
+                  );
+                }
+                return (
+                  <span key={`zh-${i}`} className="lv2-tok-wrap">
+                    {lead && <span className="lv2-tok-punct">{lead}</span>}
+                    <span className={`lv2-tok lv2-tok--${tok.role}`}>
+                      <span>{core}</span>
+                      {tok.pinyin && (
+                        <span className="lv2-tok-pinyin">{tok.pinyin}</span>
+                      )}
+                    </span>
+                    {trail && <span className="lv2-tok-punct">{trail}</span>}
+                  </span>
+                );
+              })}
+            </div>
+            {sourceTokens && sourceTokens.length > 0 && (
+              <>
+                <div className="lv2-tokens-lang-label">
+                  {language === 'en' ? 'English' : 'Français'}
+                </div>
+                <div className="lv2-tokens-row">
+                  {sourceTokens.map((tok, i) => {
+                    const { lead, core, trail } = splitPunctuation(tok.text);
+                    if (!core) {
+                      return (
+                        <span key={`src-${i}`} className="lv2-tok-punct">
+                          {tok.text}
+                        </span>
+                      );
+                    }
+                    return (
+                      <span key={`src-${i}`} className="lv2-tok-wrap">
+                        {lead && <span className="lv2-tok-punct">{lead}</span>}
+                        <span className={`lv2-tok lv2-tok--${tok.role}`}>
+                          <span>{core}</span>
+                        </span>
+                        {trail && <span className="lv2-tok-punct">{trail}</span>}
+                      </span>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+            {note && <div className="lv2-tokens-note">💡 {note}</div>}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+/**
  * Vue d'une section de la phase "Apprentissage". Affiche : titre, body,
  * diagramme de ton (si section.tone), items ou minimalPairs, astuce (tip).
  */
@@ -784,6 +950,13 @@ const LearnSectionView = ({
           </div>
           <MinimalPairsRow pairs={section.minimalPairs} language={language} />
         </div>
+      )}
+
+      {section.tokenizedSentences && section.tokenizedSentences.length > 0 && (
+        <TokenizedSentencesBlock
+          sentences={section.tokenizedSentences}
+          language={language}
+        />
       )}
 
       {tip && (

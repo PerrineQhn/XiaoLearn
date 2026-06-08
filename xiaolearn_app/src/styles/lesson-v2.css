@@ -1392,3 +1392,170 @@
     font-size: 13px;
   }
 }
+
+/* ============================================================
+   Phrases tokenisées (style Seonsaengnim)
+   ============================================================
+   Une phrase est décomposée en tokens colorés selon leur rôle
+   grammatical (Sujet / Verbe / Objet / Temps / Particule /
+   Complément / Modificateur / Copule / Connecteur / Lieu).
+   On affiche d'abord la légende (chips de tous les rôles présents),
+   puis chaque phrase avec sa traduction tokenisée pour comparer.
+*/
+.lesson-v2 .lv2-tokens-block {
+  background: var(--lv2-card-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lesson-v2 .lv2-tokens-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.lesson-v2 .lv2-tokens-sentence {
+  border-top: 1px dashed var(--lv2-border);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lesson-v2 .lv2-tokens-sentence:first-child,
+.lesson-v2 .lv2-tokens-legend + .lv2-tokens-sentence {
+  border-top: none;
+  padding-top: 0;
+}
+.lesson-v2 .lv2-tokens-lang-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lv2-text-muted);
+  font-weight: 600;
+}
+.lesson-v2 .lv2-tokens-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+}
+.lesson-v2 .lv2-tok {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1.5px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.lesson-v2 .lv2-tok-pinyin {
+  font-size: 10.5px;
+  font-style: italic;
+  opacity: 0.75;
+  font-weight: 400;
+}
+.lesson-v2 .lv2-tokens-note {
+  margin-top: 6px;
+  background: #fbe9b8;
+  border-left: 3px solid #d4a537;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #5a3f06;
+  border-radius: 6px;
+}
+
+/* Chip de légende — mini-pill juste avec le label, même couleur. */
+.lesson-v2 .lv2-tok-chip {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  font-family: inherit;
+}
+
+/* Couleurs par rôle. Bleu pâle, vert pâle, jaune doux, etc.
+   Volontairement claires : on garde le hanzi lisible (noir/dark) au centre. */
+.lesson-v2 .lv2-tok--sujet,
+.lesson-v2 .lv2-tok-chip--sujet {
+  background: #d6ebff;
+  border-color: #5e9ee0;
+  color: #1f4a7a;
+}
+.lesson-v2 .lv2-tok--verbe,
+.lesson-v2 .lv2-tok-chip--verbe {
+  background: #fde6cf;
+  border-color: #e8a45c;
+  color: #6b3812;
+}
+.lesson-v2 .lv2-tok--objet,
+.lesson-v2 .lv2-tok-chip--objet {
+  background: #d1f1d3;
+  border-color: #5fb05f;
+  color: #20571f;
+}
+.lesson-v2 .lv2-tok--temps,
+.lesson-v2 .lv2-tok-chip--temps {
+  background: #ffe0e0;
+  border-color: #e76f6f;
+  color: #6c2424;
+}
+.lesson-v2 .lv2-tok--lieu,
+.lesson-v2 .lv2-tok-chip--lieu {
+  background: #d6e7ff;
+  border-color: #6a8cd4;
+  color: #244070;
+}
+.lesson-v2 .lv2-tok--particule,
+.lesson-v2 .lv2-tok-chip--particule {
+  background: #e8e0f5;
+  border-color: #8b6dc8;
+  color: #3d2870;
+}
+.lesson-v2 .lv2-tok--complement,
+.lesson-v2 .lv2-tok-chip--complement {
+  background: #d4f0ed;
+  border-color: #4eaba1;
+  color: #1e4e48;
+}
+.lesson-v2 .lv2-tok--modificateur,
+.lesson-v2 .lv2-tok-chip--modificateur {
+  background: #f9d6e2;
+  border-color: #d169a0;
+  color: #6c2148;
+}
+.lesson-v2 .lv2-tok--copule,
+.lesson-v2 .lv2-tok-chip--copule {
+  background: #d5f1eb;
+  border-color: #4dbfa8;
+  color: #1c4f43;
+}
+.lesson-v2 .lv2-tok--connecteur,
+.lesson-v2 .lv2-tok-chip--connecteur {
+  background: #ece8d4;
+  border-color: #b8a558;
+  color: #5b4d18;
+}
+
+/* Ponctuation collée aux tokens (virgules, points, etc.) rendue en texte
+   plat plutôt que dans un bloc coloré. */
+.lesson-v2 .lv2-tok-wrap {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+}
+.lesson-v2 .lv2-tok-punct {
+  display: inline-flex;
+  align-items: flex-end;
+  padding: 6px 2px;
+  font-size: 16px;
+  color: var(--lv2-text);
+  white-space: pre;
+}
