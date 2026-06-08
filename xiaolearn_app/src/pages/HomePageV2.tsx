@@ -1390,6 +1390,127 @@ const ActivityHeatmap = ({
 };
 
 // --------------------------------------------------------------------------
+// 💡 Conseil du jour (sous la heatmap, comble le creux de col-aside)
+// --------------------------------------------------------------------------
+
+/**
+ * Petite carte de tip de fin de col-aside. Sert deux choses :
+ *   - équilibrer la hauteur de col-aside avec col-main (main-duo
+ *     Flashcards+ProfXiao est plus tall qu'on ne le pense)
+ *   - donner un mini-coup-de-pouce d'apprentissage rotatif (sélection
+ *     déterministe par jour pour stabilité).
+ */
+const TipOfTheDayCard = ({
+  language,
+  streakDays
+}: {
+  language: Language;
+  streakDays: number;
+}) => {
+  const tipsFr = [
+    {
+      emoji: '🎵',
+      title: 'Les 4 tons changent le sens',
+      body: 'mā (妈, maman), má (麻, chanvre), mǎ (马, cheval), mà (骂, insulter). Même syllabe, 4 mots — entraîne-toi avec le drill prononciation de l’Atelier.'
+    },
+    {
+      emoji: '🧩',
+      title: 'Particule 了 = changement',
+      body: 'Le 了 placé en fin de phrase indique un changement d’état ("ça y est"). Très différent du 了 après un verbe (action accomplie).'
+    },
+    {
+      emoji: '🔢',
+      title: 'Mesureurs : chaque nom le sien',
+      body: 'En chinois, on ne dit pas "trois chats" mais "trois unités-de-chat" : 三只猫 (sān zhī māo). Chaque catégorie d’objets a son mesureur (只, 个, 张, 条…).'
+    },
+    {
+      emoji: '📚',
+      title: 'Apprends par radicaux',
+      body: 'Les hanzi sont composés de blocs récurrents (radicaux). Connaître ~100 radicaux te permet de deviner le sens et la prononciation de milliers de caractères.'
+    },
+    {
+      emoji: '🗣️',
+      title: 'Écoute avant de parler',
+      body: 'Écoute 5–10 fois un dialogue, répète à voix haute, puis lis. Cette séquence imite l’acquisition naturelle d’une langue (auditif → oral → écrit).'
+    },
+    {
+      emoji: '🔁',
+      title: 'La règle des 5 minutes',
+      body: 'Mieux vaut 5 minutes tous les jours qu’1 heure une fois par semaine. La SRS de XiaoLearn récompense la régularité, pas l’intensité.'
+    },
+    {
+      emoji: '✍️',
+      title: 'Trace les caractères',
+      body: 'Écrire à la main active la mémoire kinesthésique. Le drill écriture de l’Atelier te valide trait par trait — utilise-le sur les 5 caractères les plus durs de la semaine.'
+    }
+  ];
+  const tipsEn = [
+    {
+      emoji: '🎵',
+      title: 'The 4 tones change meaning',
+      body: 'mā (妈, mom), má (麻, hemp), mǎ (马, horse), mà (骂, scold). Same syllable, 4 different words — train them with the Atelier pronunciation drill.'
+    },
+    {
+      emoji: '🧩',
+      title: 'Particle 了 = change',
+      body: 'Sentence-final 了 marks a change of state ("now it’s the case"). Very different from 了 after a verb (completed action).'
+    },
+    {
+      emoji: '🔢',
+      title: 'Measure words: one per noun',
+      body: 'In Chinese you don’t say "three cats" but "three units-of-cat": 三只猫 (sān zhī māo). Every object class has its own measure word (只, 个, 张, 条…).'
+    },
+    {
+      emoji: '📚',
+      title: 'Learn through radicals',
+      body: 'Hanzi are made of recurring building blocks (radicals). Knowing ~100 radicals lets you guess the meaning and pronunciation of thousands of characters.'
+    },
+    {
+      emoji: '🗣️',
+      title: 'Listen before speaking',
+      body: 'Listen to a dialogue 5–10 times, repeat aloud, then read. This sequence mirrors natural language acquisition (auditory → oral → written).'
+    },
+    {
+      emoji: '🔁',
+      title: 'The 5-minute rule',
+      body: 'Better 5 minutes every day than 1 hour once a week. XiaoLearn’s SRS rewards consistency, not intensity.'
+    },
+    {
+      emoji: '✍️',
+      title: 'Trace the characters',
+      body: 'Writing by hand activates kinesthetic memory. The Atelier writing drill checks every stroke — use it on the 5 hardest characters of the week.'
+    }
+  ];
+
+  // Sélection déterministe : index = jour de l'année + streak (pour qu'au moins
+  // le tip change après une journée OU une augmentation de streak).
+  const today = new Date();
+  const dayOfYear = Math.floor(
+    (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86_400_000
+  );
+  const tips = language === 'fr' ? tipsFr : tipsEn;
+  const tip = tips[(dayOfYear + streakDays) % tips.length];
+
+  return (
+    <section className="card tip-card">
+      <header className="card-head">
+        <h2>
+          <span className="emoji">💡</span>
+          {language === 'fr' ? 'Conseil du jour' : 'Tip of the day'}
+        </h2>
+      </header>
+      <div className="tip-body">
+        <span className="tip-icon" aria-hidden>{tip.emoji}</span>
+        <div className="tip-text">
+          <strong>{tip.title}</strong>
+          <p>{tip.body}</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --------------------------------------------------------------------------
 // 👥 Communauté (teaser — prépare le terrain pour les duels plus tard)
 // --------------------------------------------------------------------------
 
@@ -1630,16 +1751,22 @@ const HomePageV2 = (props: HomePageV2Props) => {
               onOpenLesson={onOpenLesson}
             />
           )}
-          {/* Prof. Xiao prend toute la largeur du col principal maintenant que
-              Flashcards a migré dans la colonne aside (cf commentaire ci-dessous). */}
-          <AiTutorCard language={language} onOpenAiTutor={onOpenAiTutor} />
+          <div className="main-duo">
+            <FlashcardsCard
+              language={language}
+              totalLearned={totalLearned}
+              totalCorpus={totalCorpus}
+              dueCardsCount={dueCardsCount}
+              onStartReview={onStartReview}
+            />
+            <AiTutorCard language={language} onOpenAiTutor={onOpenAiTutor} />
+          </div>
         </div>
 
         {/* Colonne secondaire (mirror Seonsaengnim) :
-            Mot du jour → Streak → XP → Bonus → Heatmap → Flashcards.
-            Flashcards a été déplacée ici (depuis main-duo) pour combler le vide
-            qui se créait sous la heatmap : la col droite était plus courte que
-            la col principale, surtout depuis que Communauté est passée en strip. */}
+            Mot du jour → Streak → XP → Bonus → Heatmap → Conseil du jour.
+            Le ConseilDuJourCard final comble le petit espace résiduel sous la
+            heatmap pour que la col aside termine au même niveau que main-duo. */}
         <div className="col col-aside">
           <WordOfTheDayCard
             language={language}
@@ -1659,13 +1786,7 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakDays={dashboard.streak.current}
           />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
-          <FlashcardsCard
-            language={language}
-            totalLearned={totalLearned}
-            totalCorpus={totalCorpus}
-            dueCardsCount={dueCardsCount}
-            onStartReview={onStartReview}
-          />
+          <TipOfTheDayCard language={language} streakDays={dashboard.streak.current} />
         </div>
       </div>
 

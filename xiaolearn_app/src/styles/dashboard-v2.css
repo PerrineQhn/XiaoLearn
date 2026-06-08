@@ -780,6 +780,48 @@
 .legend-swatch.intensity-3 { background: #e57b76; }
 .legend-swatch.intensity-4 { background: var(--dv-accent); }
 
+/* ------------------------ Conseil du jour --------------------------------- */
+
+.tip-card {
+  background: linear-gradient(135deg, #fffbef 0%, #fff7e0 100%);
+  border: 1px solid #f0e3b6;
+}
+.tip-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.tip-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #f0e3b6;
+  font-size: 22px;
+  line-height: 1;
+}
+.tip-text {
+  flex: 1;
+  min-width: 0;
+}
+.tip-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dv-ink);
+  margin-bottom: 4px;
+}
+.tip-text p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--dv-muted);
+}
+
 /* ------------------------ Community -------------------------------------- */
 
 .community-body { display: grid; gap: 10px; }
