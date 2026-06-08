@@ -1764,9 +1764,10 @@ const HomePageV2 = (props: HomePageV2Props) => {
         </div>
 
         {/* Colonne secondaire (mirror Seonsaengnim) :
-            Mot du jour → Streak → XP → Bonus → Heatmap → Conseil du jour.
-            Le ConseilDuJourCard final comble le petit espace résiduel sous la
-            heatmap pour que la col aside termine au même niveau que main-duo. */}
+            Mot du jour → Conseil du jour → Streak → XP → Bonus → Heatmap.
+            Les deux cartes "du jour" sont regroupées en tête (contenu éducatif
+            quotidien), suivies par les stats puis la heatmap. La hauteur totale
+            de la col aside reste identique → toujours pas de creux en bas. */}
         <div className="col col-aside">
           <WordOfTheDayCard
             language={language}
@@ -1774,6 +1775,7 @@ const HomePageV2 = (props: HomePageV2Props) => {
             onAddToFlashcards={onAddWordToFlashcards}
             onOpenAiTutor={onOpenAiTutor}
           />
+          <TipOfTheDayCard language={language} streakDays={dashboard.streak.current} />
           <StreakCard
             language={language}
             streak={dashboard.streak}
@@ -1786,7 +1788,6 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakDays={dashboard.streak.current}
           />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
-          <TipOfTheDayCard language={language} streakDays={dashboard.streak.current} />
         </div>
       </div>
 
