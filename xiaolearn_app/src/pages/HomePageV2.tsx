@@ -1630,20 +1630,16 @@ const HomePageV2 = (props: HomePageV2Props) => {
               onOpenLesson={onOpenLesson}
             />
           )}
-          <div className="main-duo">
-            <FlashcardsCard
-              language={language}
-              totalLearned={totalLearned}
-              totalCorpus={totalCorpus}
-              dueCardsCount={dueCardsCount}
-              onStartReview={onStartReview}
-            />
-            <AiTutorCard language={language} onOpenAiTutor={onOpenAiTutor} />
-          </div>
+          {/* Prof. Xiao prend toute la largeur du col principal maintenant que
+              Flashcards a migré dans la colonne aside (cf commentaire ci-dessous). */}
+          <AiTutorCard language={language} onOpenAiTutor={onOpenAiTutor} />
         </div>
 
         {/* Colonne secondaire (mirror Seonsaengnim) :
-            Mot du jour (dark) → Streak → XP → Heatmap → Communauté */}
+            Mot du jour → Streak → XP → Bonus → Heatmap → Flashcards.
+            Flashcards a été déplacée ici (depuis main-duo) pour combler le vide
+            qui se créait sous la heatmap : la col droite était plus courte que
+            la col principale, surtout depuis que Communauté est passée en strip. */}
         <div className="col col-aside">
           <WordOfTheDayCard
             language={language}
@@ -1663,6 +1659,13 @@ const HomePageV2 = (props: HomePageV2Props) => {
             streakDays={dashboard.streak.current}
           />
           <ActivityHeatmap language={language} activity={dashboard.activity} />
+          <FlashcardsCard
+            language={language}
+            totalLearned={totalLearned}
+            totalCorpus={totalCorpus}
+            dueCardsCount={dueCardsCount}
+            onStartReview={onStartReview}
+          />
         </div>
       </div>
 
