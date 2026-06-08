@@ -54,6 +54,7 @@ import {
 } from '../utils/dialogue-audio';
 import { playHanziAudio } from '../utils/audio';
 import ComprehensionQuiz from '../components/reading/ComprehensionQuiz';
+import PronunciationCheck from '../components/PronunciationCheck';
 import type { UsePersonalFlashcardsReturn } from '../hooks/usePersonalFlashcards';
 
 export type ReadingV2Language = 'fr' | 'en';
@@ -1234,7 +1235,19 @@ const ReadingPlayer = ({
                   isActiveSeg ? 'is-active' : ''
                 }`}
               >
-                <div className="rv2-segment-num">{seg.segIdx + 1}</div>
+                <div className="rv2-segment-controls">
+                  <div className="rv2-segment-num">{seg.segIdx + 1}</div>
+                  <PronunciationCheck
+                    hanzi={seg.hanzi}
+                    pinyin={seg.pinyin}
+                    size={32}
+                    ariaLabel={
+                      language === 'en'
+                        ? 'Pronounce this segment'
+                        : 'Tester ma prononciation'
+                    }
+                  />
+                </div>
                 <div className="rv2-segment-body">
                   <div className="rv2-hanzi rv2-hanzi--clickable">
                     {seg.tokens.map((tok, tokIdx) => {

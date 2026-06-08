@@ -74,6 +74,7 @@ import {
   a1NuancesM5LearnSections,
   a1NuancesM6LearnSections,
   a1NuancesM7LearnSections,
+  a1GrammarSvoLearnSections,
 } from './cecr-a1-extra-learn-sections';
 import {
   a2CityDirectionsLearnSections,
@@ -1124,12 +1125,41 @@ export const cecrLessonPaths: LessonPath[] = [
     id: "cecr-a1-grammar",
     name: "Grammaire & vie quotidienne",
     nameEn: "Grammar & Daily Life",
-    description: "Les briques de base : 是, 有, classificateurs, 也/都, 很, interrogatives — appliquées aux actions du quotidien.",
-    descriptionEn: "Core building blocks: 是, 有, classifiers, 也/都, 很, question words — applied to daily actions.",
+    description: "Les briques de base : structure SVO, 是, 有, classificateurs, 也/都, 很, interrogatives — appliquées aux actions du quotidien.",
+    descriptionEn: "Core building blocks: SVO structure, 是, 有, classifiers, 也/都, 很, question words — applied to daily actions.",
     icon: "🧩",
     color: "emerald",
     lessons: [
-{
+      {
+        id: "cecr-a1-grammar-m0",
+        title: "Structure de phrase : Sujet → Verbe → Objet",
+        titleEn: "Sentence structure: Subject → Verb → Object",
+        duration: 10, locked: false, completed: false,
+        hskLevel: 1, hskLevels: [1], category: "grammar", difficulty: "beginner",
+        tags: ["svo", "grammar", "structure", "cecr:a1"],
+        introduction: {
+          title: "Le chinois est SVO — comme le français",
+          titleEn: "Chinese is SVO — same as English",
+          content: "En chinois, c'est Sujet → Verbe → Objet : 我吃米饭 (wǒ chī mǐfàn) = je / mange / du riz. Bonne nouvelle : c'est le même ordre que le français pour les phrases simples. Trois différences-clés à retenir : (1) Le TEMPS va TOUJOURS avant le verbe — jamais après. ✓ 我明天吃米饭 (je / demain / mange / du riz), ✗ 我吃米饭明天. (2) AUCUNE conjugaison : 吃 reste 吃 quel que soit le sujet. (3) Les pronoms sujets sont obligatoires, contrairement au français où on les omet à l'impératif.",
+          contentEn: "Chinese is Subject → Verb → Object: 我吃米饭 (wǒ chī mǐfàn) = I / eat / rice. Great news: same order as English for simple sentences. Three key differences: (1) TIME ALWAYS goes before the verb — never after. ✓ 我明天吃米饭 (I / tomorrow / eat / rice), ✗ 我吃米饭明天. (2) NO conjugation: 吃 stays 吃 whoever the subject is. (3) Subject pronouns are mandatory.",
+          objectives: [
+            "Construire une phrase de base : Sujet + Verbe + Objet",
+            "Placer le temps AVANT le verbe (jamais à la fin)",
+            "Ne pas conjuguer — 吃 reste 吃 partout",
+            "Identifier les rôles Sujet / Verbe / Objet / Temps"
+          ],
+          objectivesEn: [
+            "Build a basic sentence: Subject + Verb + Object",
+            "Place time BEFORE the verb (never at the end)",
+            "Don't conjugate — 吃 stays 吃 everywhere",
+            "Identify Subject / Verb / Object / Time roles"
+          ]
+        },
+        flashcards: ["我", "你", "他", "她", "吃", "喝", "看", "学", "米饭", "水", "书"],
+        quizQuestions: 8,
+        learnSections: a1GrammarSvoLearnSections
+      },
+      {
         id: "cecr-a1-grammar-m1",
         title: "Le verbe 是 (être)",
         titleEn: "The verb 是 (to be)",

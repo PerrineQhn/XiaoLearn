@@ -229,6 +229,8 @@ export interface DashboardInput {
   dailyTargetCount?: number;
   /** Timer d'étude en minutes, par défaut 10. */
   timerMinutes?: number;
+  /** Objectif XP/jour personnalisé. Si omis, défaut 50. */
+  xpDailyTarget?: number;
 }
 
 export interface DashboardApi {
@@ -591,7 +593,7 @@ export const useDashboardState = (input: DashboardInput): DashboardApi => {
   }, [streak.current, bonus.milestonesClaimed, bonus.lastDailyBonusAt, lastMilestoneAward, clearMilestoneAward]);
 
   const todayXp = activity[todayKey()] ?? 0;
-  const xpDailyTarget = 50; // aligné sur Seonsaengnim
+  const xpDailyTarget = input.xpDailyTarget ?? 50; // personnalisable, défaut 50
 
   const dailyGoal: DailyGoalTargets = useMemo(() => {
     // Combien d'éléments "faits" aujourd'hui pour le compteur 1/3 ?

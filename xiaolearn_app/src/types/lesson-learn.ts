@@ -38,6 +38,46 @@ export interface LessonV2MinimalPair {
 }
 
 /**
+ * Rôle grammatical d'un token dans une phrase. Inspiré de Seonsaengnim :
+ * permet de coloriser chaque morceau d'une phrase pour visualiser sa
+ * structure et comparer langue cible vs langue source.
+ *
+ * Mappés à des classes CSS dans `lesson-v2.css` (.tok--sujet, .tok--verbe…).
+ */
+export type SentenceTokenRole =
+  | 'sujet'         // 我, 你, 他, 我们, 张伟
+  | 'verbe'         // 吃, 喝, 是, 去, 学习
+  | 'objet'         // 米饭, 水, 学生, 中文
+  | 'temps'         // 今天, 明天, 早上七点
+  | 'lieu'          // 在家, 在学校
+  | 'particule'     // 吗, 呢, 了, 的
+  | 'complement'    // de manière / résultat / direction
+  | 'modificateur'  // 很, 不, 也, 都
+  | 'copule'        // 是 (quand utilisé comme copule X=Y)
+  | 'connecteur';   // 和, 但是, 因为
+
+/** Un token dans une phrase tokenizée (1 mot ou groupe court). */
+export interface LessonV2SentenceToken {
+  text: string;
+  pinyin?: string;
+  role: SentenceTokenRole;
+}
+
+/** Une phrase tokenizée : la langue cible (chinois) + la traduction
+ *  tokenizée AUSSI pour montrer la correspondance des rôles. */
+export interface LessonV2TokenizedSentence {
+  /** Tokens dans l'ordre de la langue cible (chinois). */
+  zh: LessonV2SentenceToken[];
+  /** Tokens dans l'ordre du français (mêmes rôles). */
+  fr?: LessonV2SentenceToken[];
+  /** Tokens dans l'ordre de l'anglais. */
+  en?: LessonV2SentenceToken[];
+  /** Note pédagogique optionnelle. */
+  note?: string;
+  noteEn?: string;
+}
+
+/**
  * Section de la phase "Apprentissage". Une leçon peut avoir plusieurs
  * sections qui défilent les unes après les autres avant la phase Exemples.
  *
@@ -45,6 +85,9 @@ export interface LessonV2MinimalPair {
  *   - `tone`: affiche un diagramme de contour tonal + items comme "mots
  *     illustrant ce ton" avec audio.
  *   - `minimalPairs`: grille de paires minimales pour la discrimination.
+ *   - `tokenizedSentences`: phrases avec tokens colorés par rôle grammatical
+ *     (Sujet/Verbe/Objet/…), pour visualiser la structure et comparer les
+ *     langues. Inspiré du format Seonsaengnim.
  *   - `items` par défaut : liste verticale hanzi/pinyin/sens/audio.
  *
  * Le champ `body` est toujours affiché au-dessus.
@@ -58,6 +101,7 @@ export interface LessonV2LearnSection {
   tone?: 1 | 2 | 3 | 4;
   items?: LessonV2LearnItem[];
   minimalPairs?: LessonV2MinimalPair[];
+  tokenizedSentences?: LessonV2TokenizedSentence[];
   tip?: string;
   tipEn?: string;
 }

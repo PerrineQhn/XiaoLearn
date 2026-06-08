@@ -825,18 +825,28 @@
 }
 .reading-v2 .rv2-segment {
   display: grid;
-  grid-template-columns: 28px 1fr;
+  grid-template-columns: auto 1fr;
   gap: 12px;
   padding: 14px 0;
   border-bottom: 1px dashed var(--rv-border);
 }
 .reading-v2 .rv2-segment:last-child { border-bottom: none; }
 
+/* Colonne de gauche : numéro de segment + bouton micro PronunciationCheck
+   empilés verticalement. Compact pour ne pas pousser le contenu trop loin. */
+.reading-v2 .rv2-segment-controls {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 2px;
+  min-width: 32px;
+}
+
 .reading-v2 .rv2-segment-num {
   font-size: 12px;
   font-weight: 700;
   color: var(--rv-muted);
-  padding-top: 4px;
   text-align: center;
   letter-spacing: 0.02em;
 }

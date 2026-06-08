@@ -1499,8 +1499,129 @@ const A1_FAMILY_M4: LessonV2Exercise[] = [
 ];
 
 // ============================================================================
-//  A1 — GRAMMAR / GRAMMAIRE DE BASE (5 modules)
+//  A1 — GRAMMAR / GRAMMAIRE DE BASE (6 modules — M0 = structure SVO ajouté)
 // ============================================================================
+
+// --- A1 Grammar M0 : Structure SVO ----------------------------------------
+// Flashcards : 我, 你, 他, 她, 吃, 喝, 看, 学, 米饭, 水, 书
+// Objectif : faire intérioriser l'ordre Sujet → (Temps) → Verbe → Objet et
+// les 3 différences-clés avec le français (temps avant verbe, pas de
+// conjugaison, sujet obligatoire).
+const A1_GRAMMAR_M0: LessonV2Exercise[] = [
+  {
+    id: 'cecr-a1-grammar-m0-order1',
+    type: 'order',
+    category: 'grammar',
+    prompt: 'Ordonne : « Je mange du riz. »',
+    promptEn: 'Reorder: «I eat rice.»',
+    sentence: 'Je mange du riz.',
+    sentenceEn: 'I eat rice.',
+    choices: ['我', '吃', '米饭'],
+    correctIndex: 0,
+    explanation: 'Ordre canonique : Sujet (我) + Verbe (吃) + Objet (米饭). C’est le même ordre qu’en français pour cette phrase simple.',
+    explanationEn: 'Canonical order: Subject (我) + Verb (吃) + Object (米饭). Same order as English here.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-order2',
+    type: 'order',
+    category: 'grammar',
+    prompt: 'Ordonne : « Demain, je mange du riz. »',
+    promptEn: 'Reorder: «Tomorrow I eat rice.»',
+    sentence: 'Demain, je mange du riz.',
+    sentenceEn: 'Tomorrow, I eat rice.',
+    choices: ['我', '明天', '吃', '米饭'],
+    correctIndex: 0,
+    explanation: 'Le temps (明天) se place APRÈS le sujet et AVANT le verbe : 我明天吃米饭. Variante correcte aussi : 明天我吃米饭 (temps tout au début). Jamais à la fin.',
+    explanationEn: 'Time (明天) goes AFTER the subject and BEFORE the verb: 我明天吃米饭. Alternative also OK: 明天我吃米饭. Never at the end.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-gq1',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Quelle phrase est correctement construite en chinois ?',
+    promptEn: 'Which sentence is correctly built in Chinese?',
+    choices: [
+      '我吃米饭明天。 (je mange du riz demain)',
+      '我明天吃米饭。 (je demain mange du riz)',
+      '吃我米饭。 (mange je du riz)',
+      '米饭我吃。 (du riz je mange)'
+    ],
+    correctIndex: 1,
+    explanation: 'Seule l’option 2 (我明天吃米饭) respecte l’ordre Sujet + Temps + Verbe + Objet. L’option 1 met le temps après le verbe (interdit). Les autres mélangent l’ordre des composants.',
+    explanationEn: 'Only option 2 (我明天吃米饭) respects Subject + Time + Verb + Object. Option 1 puts time after the verb (forbidden). Others mix the components.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-fill1',
+    type: 'fill',
+    category: 'grammar',
+    prompt: 'Construis « Il boit de l’eau. »',
+    promptEn: 'Build «He drinks water.»',
+    sentence: '他___水。',
+    sentenceEn: 'He ___ water.',
+    choices: ['是', '喝', '吃', '很'],
+    correctIndex: 1,
+    explanation: 'Sujet + Verbe + Objet. Le verbe « boire » = 喝 (hē). 吃 (chī) = manger. Donc : 他喝水.',
+    explanationEn: 'Subject + Verb + Object. The verb «to drink» = 喝 (hē). 吃 (chī) = to eat. So: 他喝水.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-gq2',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'En chinois, comment dit-on « nous mangeons » ?',
+    promptEn: 'In Chinese, how do you say «we eat»?',
+    choices: [
+      '我们吃们',
+      '我们吃',
+      '吃我们',
+      '我吃们'
+    ],
+    correctIndex: 1,
+    explanation: 'Aucune conjugaison en chinois : 吃 reste 吃 quel que soit le sujet. On dit donc 我们吃 (nous + manger), pas 我们吃们 ni autre forme conjuguée.',
+    explanationEn: 'No conjugation in Chinese: 吃 stays 吃 whoever the subject is. Say 我们吃 (we + eat), not 我们吃们 nor any conjugated form.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-fill2',
+    type: 'fill',
+    category: 'grammar',
+    prompt: 'Place correctement « aujourd’hui ».',
+    promptEn: 'Place «today» correctly.',
+    sentence: '___我学中文。',
+    sentenceEn: '___ I learn Chinese.',
+    choices: ['今天', '吃', '是', '也'],
+    correctIndex: 0,
+    explanation: 'Le temps 今天 (aujourd’hui) peut se placer en tête de phrase, avant le sujet : 今天我学中文 = « Aujourd’hui j’apprends le chinois ». Variante équivalente : 我今天学中文.',
+    explanationEn: 'Time 今天 (today) can go at the head of the sentence, before the subject: 今天我学中文 = «Today I learn Chinese». Equivalent: 我今天学中文.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-order3',
+    type: 'order',
+    category: 'grammar',
+    prompt: 'Ordonne : « Elle apprend le chinois. »',
+    promptEn: 'Reorder: «She learns Chinese.»',
+    sentence: 'Elle apprend le chinois.',
+    sentenceEn: 'She learns Chinese.',
+    choices: ['她', '学', '中文'],
+    correctIndex: 0,
+    explanation: 'Pronom (她) + Verbe (学) + Objet (中文). Toujours le sujet en premier — contrairement au français où on dit aussi « Apprends ! » sans sujet à l’impératif, en chinois le sujet est obligatoire dans les énoncés normaux.',
+    explanationEn: 'Pronoun (她) + Verb (学) + Object (中文). Subject always comes first — unlike English where you can say «Eat!» without a subject, in Chinese the subject is mandatory in normal statements.'
+  },
+  {
+    id: 'cecr-a1-grammar-m0-gq3',
+    type: 'grammar-quiz',
+    category: 'grammar',
+    prompt: 'Quelle erreur typique d’un francophone reconnais-tu ?',
+    promptEn: 'Which typical English speaker mistake do you recognize?',
+    choices: [
+      'Mettre le temps après le verbe (✗ 我吃米饭明天)',
+      'Oublier de conjuguer (✓ 我们吃)',
+      'Mettre l’objet avant le verbe (✗ 我米饭吃)',
+      'Toutes les réponses ci-dessus'
+    ],
+    correctIndex: 0,
+    explanation: 'L’erreur la plus fréquente du francophone est de mettre le temps à la fin comme en français (« Je mange du riz demain »). En chinois, le temps DOIT être avant le verbe. Les autres erreurs sont possibles mais moins typiques de l’influence du français.',
+    explanationEn: 'The most frequent English speaker mistake is to put time at the end like in English («I eat rice tomorrow»). In Chinese, time MUST come before the verb.'
+  }
+];
 
 // --- A1 Grammar M1 : Le verbe 是 ------------------------------------------
 // Flashcards : 是, 我是, 你是, 他是, 学生, 老师, 朋友, 中国人
@@ -2617,7 +2738,8 @@ export const cecrExercisesEnrichedA1: Record<string, LessonV2Exercise[]> = {
   'cecr-a1-family-m2': A1_FAMILY_M2,
   'cecr-a1-family-m3': A1_FAMILY_M3,
   'cecr-a1-family-m4': A1_FAMILY_M4,
-  // --- A1 Grammar (5) ---
+  // --- A1 Grammar (6) ---
+  'cecr-a1-grammar-m0': A1_GRAMMAR_M0,
   'cecr-a1-grammar-m1': A1_GRAMMAR_M1,
   'cecr-a1-grammar-m2': A1_GRAMMAR_M2,
   'cecr-a1-grammar-m3': A1_GRAMMAR_M3,

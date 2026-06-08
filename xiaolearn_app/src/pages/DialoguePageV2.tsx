@@ -43,6 +43,7 @@ import {
 } from '../utils/dialogue-audio';
 import AudioSpeedToggle from '../components/AudioSpeedToggle';
 import ComprehensionQuiz from '../components/reading/ComprehensionQuiz';
+import PronunciationCheck from '../components/PronunciationCheck';
 
 export type DialogueV2Language = 'fr' | 'en';
 
@@ -484,6 +485,12 @@ const DialoguePageV2 = (props: DialoguePageV2Props) => {
                       >
                         {isActive ? '⏸' : '▶'}
                       </button>
+                      <PronunciationCheck
+                        hanzi={line.hanzi}
+                        pinyin={line.pinyin}
+                        size={32}
+                        ariaLabel={language === 'en' ? 'Pronounce this line' : 'Tester ma prononciation'}
+                      />
                       <div className="rv2-dlg-hanzi">{line.hanzi}</div>
                     </div>
                     {showPinyin && <div className="rv2-pinyin">{line.pinyin}</div>}
