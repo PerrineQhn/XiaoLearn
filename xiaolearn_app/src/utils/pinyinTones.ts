@@ -61,6 +61,31 @@ export function pinyinWithTone(syllable: string, tone: number | null): string {
   return lower.slice(0, targetIdx) + marks[idx] + lower.slice(targetIdx + 1);
 }
 
+/**
+ * Convertit du pinyin numérique en pinyin accentué.
+ *   "ta2 lai2"                 → "tā lái"
+ *   "zi4 gu3 yi3 lai2, ren2"   → "zì gǔ yǐ lái, rén"
+ *   "ni3hao3"                  → "nǐhǎo"
+ *   "nǐ hǎo" (déjà accentué)   → "nǐ hǎo" (inchangé, pas de chiffres)
+ *
+ * Utilise un regex global qui matche chaque "syllabe + chiffre" et appelle
+ * `pinyinWithTone`. La ponctuation, les espaces et les caractères non-pinyin
+ * sont préservés. Le ton 5 (neutre) est aussi accepté et laissé sans diacritique.
+ */
+export function numericPinyinToToned(input: string): string {
+  if (!input) return input;
+  // Pas de chiffre 1-5 : déjà accentué (ou pas de pinyin), on laisse tel quel.
+  if (!/[1-5]/.test(input)) return input;
+  return input.replace(
+    /([a-zA-ZüÜ:]+)([1-5])/g,
+    (_match, syllable: string, toneDigit: string) => {
+      const tone = parseInt(toneDigit, 10);
+      if (Number.isNaN(tone) || tone < 1 || tone > 5) return syllable;
+      return pinyinWithTone(syllable, tone);
+    }
+  );
+}
+
 /** Parse "qing 3" → { syllable: "qing", tone: 3 }. */
 export function parseAzurePhoneme(raw: string): { syllable: string; tone: number | null } {
   const trimmed = raw.trim();

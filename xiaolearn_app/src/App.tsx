@@ -136,6 +136,7 @@ import { useDevMode } from './hooks/useDevMode';
 import DevModeToggle from './components/DevModeToggle';
 import { buildDevBotPublicProfile, isDevBotMatch, DEV_BOT_PLAYER } from './utils/devBot';
 import { playAudioWithFallback } from './utils/audio';
+import { numericPinyinToToned } from './utils/pinyinTones';
 import {
   lessonModuleToV2,
   lessonItemToFlashcardV2,
@@ -1279,6 +1280,14 @@ function App() {
     const seenHanzi = new Set<string>();
     const out: SentenceFlashcard[] = [];
 
+    // Filtre "vraie phrase" : ≥ 2 caractères CJK. Les exemples mono-hanzi
+    // (genre mā/má/mǎ/mà de la leçon Les 4 tons, ou 哥/看 isolés) ne sont pas
+    // des phrases et polluent l'onglet Phrases — ils restent dispo dans
+    // l'onglet Mots. La range U+3400-U+9FFF couvre tous les hanzi usuels.
+    const CJK_RE = /[㐀-鿿]/g;
+    const isRealPhrase = (hanzi: string): boolean =>
+      (hanzi.match(CJK_RE) || []).length >= 2;
+
     // Map lessonId → LessonModule (CECR + HSK fallback pour ids hérités)
     const lessonsById = new Map<string, LessonModule>();
     for (const path of cecrPathsState) {
@@ -1305,6 +1314,7 @@ function App() {
           const sentId = `sent-${lessonId}-${idx}`;
           const srsEntry = wordSrs.map[sentId];
           if (seenHanzi.has(line.hanzi)) return;
+          if (!isRealPhrase(line.hanzi)) return;
           seenHanzi.add(line.hanzi);
           out.push({
             id: sentId,
@@ -1312,7 +1322,7 @@ function App() {
             lessonTitleFr: lesson.title,
             lessonTitleEn: lesson.titleEn,
             hanzi: line.hanzi,
-            pinyin: line.pinyin,
+            pinyin: numericPinyinToToned(line.pinyin),
             translationFr: line.translationFr,
             translationEn: line.translationEn,
             audio: line.audioUrl ?? manifestUrl ?? undefined,
@@ -1349,6 +1359,7 @@ function App() {
         vocab.examples.forEach((ex, exIdx) => {
           if (!ex.hanzi || !ex.pinyin) return;
           if (seenHanzi.has(ex.hanzi)) return;
+          if (!isRealPhrase(ex.hanzi)) return;
           seenHanzi.add(ex.hanzi);
           const sentId = `ex-${lessonId}-${vocab.id}-${exIdx}`;
           const srsEntry = wordSrs.map[sentId];
@@ -1358,7 +1369,7 @@ function App() {
             lessonTitleFr: lesson.title,
             lessonTitleEn: lesson.titleEn,
             hanzi: ex.hanzi,
-            pinyin: ex.pinyin,
+            pinyin: numericPinyinToToned(ex.pinyin),
             translationFr: ex.translationFr ?? ex.translation,
             translationEn: ex.translation,
             // Priorité : URL explicite sur l'example > résolution auto par
