@@ -1513,7 +1513,15 @@ const OrderExerciseCard = ({
   const explanationText =
     language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
   const isComplete = picked.length === exercise.choices.length;
-  const isCorrect = isComplete && picked.every((v, i) => v === i);
+  // Validation par CHAÎNE rendue (pas par indices) — sinon les exercices avec
+  // segments dupliqués (ex: 九十九 où choices = ['九','十','九'], indices 0 et 2
+  // visuellement identiques) marquent faux dès que l'utilisateur clique sur le
+  // « mauvais » 九 du pool mélangé, alors que sa réponse est visuellement
+  // correcte. En comparant les chaînes rendues, n'importe quelle permutation
+  // d'indices produisant le même résultat affiché est acceptée.
+  const correctAnswerStr = exercise.choices.join('');
+  const userAnswerStr = picked.map((i) => exercise.choices[i]).join('');
+  const isCorrect = isComplete && userAnswerStr === correctAnswerStr;
 
   const togglePick = useCallback(
     (origIdx: number) => {

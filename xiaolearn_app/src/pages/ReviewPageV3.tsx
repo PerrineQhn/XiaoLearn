@@ -399,8 +399,13 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
     let recordedIdx = -1;
     if (currentQ.kind === 'order') {
       if (!orderSeq || orderSeq.length !== currentQ.choices.length) return;
-      // Séquence correcte : chaque slot contient son index d'origine.
-      correct = orderSeq.every((origIdx, slotIdx) => origIdx === slotIdx);
+      // Validation par CHAÎNE rendue (pas par indices) — sinon les exercices
+      // avec segments dupliqués (ex: 九十九, 一一二) marquent faux quand le
+      // user clique sur l'autre duplicate du pool mélangé, alors que sa
+      // réponse est visuellement correcte.
+      const correctStr = currentQ.choices.join('');
+      const userStr = orderSeq.map((i) => currentQ.choices[i]).join('');
+      correct = userStr === correctStr;
       // On encode la séquence dans selectedIndex juste pour les analytics —
       // jamais relu côté UI. -1 si fausse, 0 si juste : minimal et lisible.
       recordedIdx = correct ? 0 : -1;
@@ -995,20 +1000,22 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
               </ul>
             )}
 
-            {revealed && (
-              <div
-                className={`rv3-expl rv3-expl--${
-                  (currentQ.kind === 'order'
-                    ? orderSeq?.every((o, i) => o === i)
-                    : selectedIdx === currentQ.correctIndex)
-                    ? 'ok'
-                    : 'ko'
-                }`}
-              >
+            {revealed && (() => {
+              // Validation par chaîne rendue (idem submitAnswer) pour gérer
+              // les segments dupliqués (ex: 九十九).
+              const orderCorrect =
+                currentQ.kind === 'order' && orderSeq
+                  ? orderSeq.map((i) => currentQ.choices[i]).join('') ===
+                    currentQ.choices.join('')
+                  : false;
+              const isOk =
+                currentQ.kind === 'order'
+                  ? orderCorrect
+                  : selectedIdx === currentQ.correctIndex;
+              return (
+              <div className={`rv3-expl rv3-expl--${isOk ? 'ok' : 'ko'}`}>
                 <strong>
-                  {(currentQ.kind === 'order'
-                    ? orderSeq?.every((o, i) => o === i)
-                    : selectedIdx === currentQ.correctIndex)
+                  {isOk
                     ? language === 'fr'
                       ? '✓ Bonne réponse'
                       : '✓ Correct'
@@ -1024,7 +1031,8 @@ export default function ReviewPageV3(props: ReviewPageV3Props) {
                   </p>
                 )}
               </div>
-            )}
+              );
+            })()}
 
             <div className="rv3-actions">
               {!revealed ? (

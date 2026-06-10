@@ -88,7 +88,13 @@ const SentenceBuilderGame = ({ language, items = [], onComplete }: SentenceBuild
 
   const validateSentence = () => {
     if (!currentChallenge || selectedOrder.length !== currentChallenge.tokens.length) return;
-    const isCorrect = selectedOrder.every((tokenId, index) => tokenId === index);
+    // Validation par CHAÎNE rendue (pas par indices) — sinon les phrases avec
+    // tokens dupliqués (genre 九十九 ou 一一二) marquent faux dès que le user
+    // clique sur le « mauvais » duplicate alors que sa réponse est visuellement
+    // correcte. Comparer les strings rend toute permutation équivalente acceptable.
+    const correctStr = currentChallenge.tokens.join('');
+    const userStr = selectedOrder.map((i) => currentChallenge.tokens[i]).join('');
+    const isCorrect = userStr === correctStr;
     setFeedback(isCorrect ? 'correct' : 'wrong');
     if (isCorrect) {
       setScore(score + POINTS_PER_SENTENCE);
