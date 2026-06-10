@@ -85,6 +85,7 @@ import AiQuizPage from './pages/AiQuizPage';
 import PronunciationCoachPage from './pages/PronunciationCoachPage';
 import FloatingTimer from './components/FloatingTimer';
 import { StreakMilestoneToast } from './components/StreakBonus';
+import XpBonusToast from './components/XpBonusToast';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { NotificationsProvider, useNotifications } from './contexts/NotificationsContext';
 import NotificationToasts from './components/NotificationToasts';
@@ -2876,6 +2877,7 @@ function App() {
           (les awardXp depuis review / leçons / flashcards peuvent débloquer
           un palier alors que l'utilisateur n'est pas sur le dashboard). */}
       <StreakMilestoneToast bonus={dashboardState.bonus} language={language} />
+      <XpBonusToast language={language} />
     </div>
   );
 }

@@ -509,6 +509,27 @@ export const useDashboardState = (input: DashboardInput): DashboardApi => {
         at: today
       });
     }
+
+    // Notifie l'UI quand au moins un bonus est appliqué (multiplicateur > 1,
+    // daily > 0, ou milestone). Permet à un toast d'afficher la décomposition
+    // « +10 base ×1.1 +3 daily = +14 XP » et confirmer visuellement à
+    // l'utilisateur que le Bonus XP de série fonctionne bien.
+    if (typeof window !== 'undefined' && (multiplier > 1 || daily > 0 || milestoneXp > 0)) {
+      window.dispatchEvent(
+        new CustomEvent('xiaolearn:xpAwarded', {
+          detail: {
+            base: amount,
+            scaled: scaledBase,
+            multiplier,
+            multiplierBonusPct: Math.round((multiplier - 1) * 100),
+            daily,
+            milestoneXp,
+            total: totalXp,
+            streakDays: effectiveStreakDays
+          }
+        })
+      );
+    }
   }, []);
 
   const pingAlive = useCallback(() => {

@@ -1903,3 +1903,95 @@
     max-width: none;
   }
 }
+
+/* Toast Bonus XP de série (décomposition base + mult + daily + palier) -- */
+.xp-bonus-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff4c1 100%);
+  border: 1px solid #e7b948;
+  box-shadow: 0 10px 30px rgba(200, 52, 46, 0.14),
+              0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: xp-bonus-toast-in 0.3s ease-out;
+}
+@keyframes xp-bonus-toast-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.xp-bonus-toast-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.xp-bonus-toast-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+.xp-bonus-toast-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dv-ink);
+  flex: 1;
+}
+.xp-bonus-toast-streak {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dv-gold);
+  background: rgba(201, 162, 39, 0.14);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.xp-bonus-toast-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+.xp-bonus-toast-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--dv-muted);
+}
+.xp-bonus-toast-list li strong {
+  color: var(--dv-ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.xp-bonus-toast-mult strong {
+  color: var(--dv-accent);
+}
+.xp-bonus-toast-milestone strong {
+  color: var(--dv-gold);
+}
+.xp-bonus-toast-total {
+  border-top: 1px solid rgba(201, 162, 39, 0.4);
+  padding-top: 6px;
+  margin-top: 2px;
+}
+.xp-bonus-toast-total span,
+.xp-bonus-toast-total strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--dv-ink) !important;
+}
+@media (max-width: 600px) {
+  .xp-bonus-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
+}
