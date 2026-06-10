@@ -237,7 +237,13 @@ export function useFirestoreSync(
     );
 
     return () => unsubscribe();
-  }, [user, key, onUpdate, enabled]);
+    // ⚠ NE PAS ajouter `onUpdate` aux deps : on utilise déjà onUpdateRef
+    // (mise à jour via un useEffect dédié plus haut). Sinon, comme les
+    // consumers passent une inline arrow function, ça change de référence
+    // à chaque render → tear-down + re-subscribe à chaque render → risque
+    // de manquer un snapshot pendant la fenêtre cleanup→re-subscribe.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, key, enabled]);
 
   // ============================================================
   // 3) saveToFirestore — appelé par les hooks consumers
