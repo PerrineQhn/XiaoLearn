@@ -154,24 +154,65 @@ const PINYIN_INITIALS = ['b','p','m','f','d','t','n','l','g','k','h','j','q','x'
 const PINYIN_VOWELS = 'aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ';
 
 /**
- * Test rapide : est-ce qu'une chaîne ressemble à du pinyin ?
+ * Regex stricte de syllabes pinyin valides (après strip des tones).
+ * Une syllabe = (initiale)? + finale + (n|ng|r)?
+ *
+ * Initiales valides : b p m f d t n l g k h j q x r z c s y w + zh ch sh
+ * Finales valides   : a e i o u ü + diphtongues (ai ei ao ou ia ie io iu uo ua ue
+ *                     iao uai üe + an en ang eng ong ian uan üan in un ün ing iong)
+ *
+ * On accepte plusieurs syllabes collées (genre `túshūguǎn`).
+ */
+const PINYIN_WORD_RE = /^(([bpmfdtnlgkhjqxrzcsywv]|zh|ch|sh)?(a|ai|ao|an|ang|e|ei|en|eng|er|i|ia|ie|iao|iu|ian|in|iang|ing|iong|o|ong|ou|u|ua|uo|uai|ui|uan|un|uang|ueng|v|ve|van|vn)(n|ng|r)?)+$/i;
+
+/**
+ * Strip les tone marks d'une chaîne (pour valider la structure syllabique).
+ * "túshūguǎn" → "tushuguan"
+ */
+function stripPinyinTones(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+/**
+ * Test strict : est-ce qu'une chaîne ressemble à du pinyin ?
  *   - Ne contient que [A-Za-z + tone marks + espaces + ponctuation ASCII basique]
  *   - Ne contient PAS de chars exclusivement français/anglais (ç ê œ « » …)
- *   - Contient au moins 1 voyelle avec tone mark (sinon c'est de l'anglais)
- *   - Pas de mots français évidents (pas, je, tu, de, le, la, et, où, qui, que…)
+ *   - Contient au moins 1 voyelle avec tone mark
+ *   - CHAQUE token (séparé par espace ou ponctuation) doit matcher la regex
+ *     de syllabe pinyin une fois les tones strippés. C'est ce qui élimine
+ *     "grand frère" : "frere" ne matche pas (commence par 'fr', cluster
+ *     consonantique impossible en pinyin).
  */
 function looksLikePinyin(s) {
   if (!s || s.length < 3) return false;
   if (NON_PINYIN_CHARS.test(s)) return false;
-  // Doit contenir AU MOINS un caractère avec tone mark (sinon c'est du
-  // français sans diacritique ou un texte ASCII qui n'a rien à voir)
   if (!/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(s)) return false;
-  // Reject les mots français courants — bien plus efficace que de valider
-  // chaque syllabe pinyin
-  const FRENCH_WORDS_RE = /\b(je|tu|il|elle|nous|vous|ils|elles|le|la|les|un|une|des|du|de|à|au|aux|et|où|qui|que|quoi|pour|avec|sans|dans|sur|sous|pas|non|oui|son|sa|ses|mon|ma|mes|ton|ta|tes|c'est|n'est|d'un|d'une|n'a|qu'il|qu'elle|chez|même|aussi|plus|moins|tout|tous|toute|toutes|donc|alors|mais|car|ainsi|cela|cette|ces|leur|leurs|votre|notre)\b/i;
-  if (FRENCH_WORDS_RE.test(s)) return false;
-  const ENGLISH_WORDS_RE = /\b(the|is|are|was|were|of|in|on|at|to|for|with|without|by|from|this|that|these|those|here|there|where|when|how|why|what|which|who|whom|i|you|he|she|we|they|it|my|your|his|her|its|our|their|me|him|us|them|will|would|can|could|should|must|may|might|do|does|did|have|has|had|been|being|am|not|no|yes|and|or|but|so|because|if|then|than|while)\b/i;
-  if (ENGLISH_WORDS_RE.test(s)) return false;
+
+  // Heuristique clé : ratio voyelles tonifiées / voyelles totales.
+  // En pinyin chinois, CHAQUE syllabe a (presque) toujours un ton marqué,
+  // donc ratio ≈ 1. En français/anglais, seules certaines voyelles ont des
+  // accents (et l'aigu é ≈ tone 2 du pinyin), donc ratio bas.
+  //
+  // Seuil 0.5 : tolère pinyin avec syllabes neutres (`le`, `de` particules)
+  // mais rejette français/anglais où typiquement < 25% des voyelles sont
+  // tonifiées.
+  const vowels = (s.match(/[aeiouyāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/gi) || []).length;
+  const tonedVowels = (s.match(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/g) || []).length;
+  if (vowels === 0) return false;
+  const ratio = tonedVowels / vowels;
+  if (ratio < 0.7) return false;
+
+  // Tokenize par espace + ponctuation. Garde uniquement les "mots" alphabétiques.
+  const tokens = s
+    .split(/[\s.,!?;:'"()\-–—]+/)
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0 && /[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(t));
+  if (tokens.length === 0) return false;
+  // Tous les tokens doivent passer la validation syllabique
+  for (const token of tokens) {
+    const stripped = stripPinyinTones(token);
+    if (!PINYIN_WORD_RE.test(stripped)) return false;
+  }
   return true;
 }
 
@@ -191,9 +232,13 @@ function findInlinePinyinPairs(content, filePath) {
   let m;
   while ((m = re.exec(content)) !== null) {
     const hanziRaw = m[1];
-    const pinyinRaw = m[2].trim();
+    const parensContent = m[2].trim();
     const cjkCount = (hanziRaw.match(/[一-鿿㐀-䶿]/g) || []).length;
     if (cjkCount < 2) continue;
+    // Format gloss courant : "(pinyin, traduction)" — on ne garde que ce qui
+    // est avant la 1re virgule (le pinyin proprement dit), sinon on inclut
+    // la traduction et looksLikePinyin échoue à tort.
+    const pinyinRaw = parensContent.split(/,(?![^()]*\))/)[0].trim();
     if (!looksLikePinyin(pinyinRaw)) continue;
     findings.push({
       file: filePath,
