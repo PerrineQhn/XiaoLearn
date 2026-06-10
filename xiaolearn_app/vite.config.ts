@@ -326,12 +326,20 @@ export default defineConfig(({ mode }) => {
             },
             // 2. Audios MP3/WAV : cache-first sur l'origin (Cloudflare R2).
             //    Important pour pouvoir réviser hors-ligne.
+            //
+            //    cacheableResponse.statuses = [0, 200] : on ne cache QUE les
+            //    réponses 200 OK complètes (et 0 pour les opaque cross-origin).
+            //    SURTOUT pas les 206 Partial Content qui viennent des probes
+            //    `Range: bytes=0-3` de probeUrl() dans utils/audio.ts — sinon
+            //    on caché un fragment 4-bytes et la lecture du même URL renvoie
+            //    juste ces 4 bytes au lieu du fichier complet → audio silencieux.
             {
               urlPattern: /\.(mp3|wav|ogg)$/i,
               handler: 'CacheFirst',
               options: {
                 cacheName: 'xl-audio',
-                expiration: { maxEntries: 500, maxAgeSeconds: 60 * 24 * 60 * 60 }
+                expiration: { maxEntries: 500, maxAgeSeconds: 60 * 24 * 60 * 60 },
+                cacheableResponse: { statuses: [0, 200] }
               }
             },
             // 3. JSON HSK : stale-while-revalidate (rapide ET à jour si possible)

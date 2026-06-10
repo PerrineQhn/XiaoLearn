@@ -31,6 +31,7 @@ import type {
 } from '../types/lesson-learn';
 import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import PronunciationCheck from '../components/PronunciationCheck';
+import OfflineLessonButton from '../components/OfflineLessonButton';
 import PronunciationDrill, {
   type PronunciationDrillItem
 } from '../components/PronunciationDrill';
@@ -1791,6 +1792,33 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
 
   const categoryMeta = lesson.category ? CATEGORY_LABELS[lesson.category] : null;
 
+  // Payload pour le bouton "Télécharger hors-ligne" : collecte tous les hanzi
+  // de la leçon (examples, dialogue, tokens grammaticaux) + les URLs explicites
+  // de dialogue/example/audio:. Le hook précachera chaque audio résolu.
+  const offlinePayload = useMemo(() => {
+    const hanziList: string[] = [];
+    const explicitAudioUrls: string[] = [];
+    for (const ex of lesson.examples ?? []) {
+      if (ex.hanzi) hanziList.push(ex.hanzi);
+      if (ex.audio) explicitAudioUrls.push(ex.audio);
+    }
+    if (lesson.dialogue?.lines) {
+      for (const line of lesson.dialogue.lines) {
+        if (line.hanzi) hanziList.push(line.hanzi);
+        if (line.audioUrl) explicitAudioUrls.push(line.audioUrl);
+      }
+    }
+    for (const section of lesson.learnSections ?? []) {
+      for (const ts of section.tokenizedSentences ?? []) {
+        const joined = (ts.zh ?? [])
+          .map((t) => t.text || '')
+          .join('');
+        if (joined) hanziList.push(joined);
+      }
+    }
+    return { id: lesson.id, hanziList, explicitAudioUrls };
+  }, [lesson]);
+
   // --------------------------------------------------------------------------
   //  RENDUS PAR ÉTAPE
   // --------------------------------------------------------------------------
@@ -2214,6 +2242,7 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
           </button>
         )}
         <LessonStepper currentStep={step} language={language} stepOrder={stepOrder} />
+        <OfflineLessonButton payload={offlinePayload} language={language} />
       </div>
 
       <div className="lv2-content">

@@ -1559,3 +1559,54 @@
   color: var(--lv2-text);
   white-space: pre;
 }
+
+/* ---------- OfflineLessonButton (header de leçon) ----------------------- */
+.lesson-v2 .offline-lesson-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #ede4d3;
+  border-radius: 999px;
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.lesson-v2 .offline-lesson-btn:hover:not(:disabled) {
+  background: #f9f5ec;
+  color: #1f2937;
+  border-color: #d4c5a9;
+}
+.lesson-v2 .offline-lesson-btn.is-downloaded {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+  color: #047857;
+}
+.lesson-v2 .offline-lesson-btn.is-downloaded:hover {
+  background: #a7f3d0;
+}
+.lesson-v2 .offline-lesson-btn.is-downloading {
+  cursor: progress;
+  color: #fff;
+  background: var(--lv2-text);
+  border-color: var(--lv2-text);
+}
+.lesson-v2 .offline-lesson-btn-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.2s ease;
+  pointer-events: none;
+}
+.lesson-v2 .offline-lesson-btn-label {
+  position: relative; /* au-dessus du progress fill */
+  z-index: 1;
+}

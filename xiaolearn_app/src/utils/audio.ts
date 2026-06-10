@@ -410,6 +410,55 @@ export async function preloadHanziAudio(
 }
 
 /**
+ * Pré-cache l'audio d'un hanzi dans le Service Worker (workbox cacheName
+ * `xl-audio`) pour qu'il soit dispo hors-ligne ensuite.
+ *
+ * Différent de `preloadHanziAudio` : preload met un `<audio>` en mémoire pour
+ * jouer vite, mais la requête sous-jacente peut être Range partielle et donc
+ * NE PAS être conservée par le SW (qui filtre les 206). Ici on fait un GET
+ * complet sans header Range, le SW reçoit une 200 OK pleine et la cache.
+ *
+ * Idempotent : si déjà en cache, le second fetch hit le cache (CacheFirst)
+ * et retourne immédiatement.
+ *
+ * @returns `true` si le fichier a pu être téléchargé/déjà-en-cache, `false`
+ *          sinon (404, réseau, etc.). Le caller utilise ça pour tracker la
+ *          progression d'un précache de leçon.
+ */
+export async function precacheHanziAudio(
+  hanzi: string,
+  explicitUrl?: string | null
+): Promise<boolean> {
+  try {
+    const url = await resolveHanziAudioUrl(hanzi, explicitUrl);
+    if (!url) return false;
+    // GET complet sans Range → SW workbox cache la 200 OK avec body complet.
+    const response = await fetch(url, { method: 'GET', cache: 'default' });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Pré-cache une URL audio arbitraire (dialogue line, exemple avec audio
+ * explicite, etc.). Comme precacheHanziAudio mais sans résolution.
+ */
+export async function precacheAudioUrl(url: string): Promise<boolean> {
+  if (!url) return false;
+  try {
+    // Résout d'abord local→remote selon la même règle que le playback.
+    const candidates = getAudioSrcCandidates(url);
+    const resolved = await findFirstExistingUrl(candidates);
+    if (!resolved) return false;
+    const response = await fetch(resolved, { method: 'GET', cache: 'default' });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Joue l'audio d'un hanzi depuis un fichier MP3/WAV pré-enregistré.
  * Ne tombe JAMAIS sur Web Speech (voulu : UX cohérente Chrome / Safari).
  *
