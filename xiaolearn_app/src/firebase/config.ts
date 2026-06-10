@@ -1,6 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { initializeFirestore } from 'firebase/firestore';
+import {
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager
+} from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 // Configuration Firebase
@@ -32,10 +36,28 @@ export const auth = getAuth(app);
 // Trade-off : long-polling est légèrement plus latent (~200ms supplémentaires
 // sur le premier sync) mais c'est imperceptible en pratique.
 //
+// `localCache: persistentLocalCache(...)` — CRITIQUE pour la sync cross-device :
+// active la persistance IndexedDB des writes pending. Sans ça, quand l'utilisateur
+// fait une modif (terminer leçon, gagner XP, ajouter flashcard…) et ferme
+// l'onglet/app avant que le setDoc() async soit confirmé, l'écriture est
+// PERDUE (elle vivait en mémoire seulement). L'autre device ne voit donc
+// jamais la modif tant qu'on ne reconnecte pas sur le premier device (le
+// reconcile au login compare localStorage vs cloud et re-pousse local).
+//
+// Avec persistentLocalCache : les writes sont d'abord queue-ées dans IndexedDB,
+// puis répliquées au serveur. Elles survivent au tab close et se rejouent au
+// prochain démarrage du SDK → sync auto sans intervention utilisateur.
+// `persistentMultipleTabManager` permet à plusieurs onglets de partager le
+// même cache sans corruption.
+//
 // Documentation Firebase :
 // https://firebase.google.com/docs/reference/js/firestore_.firestoresettings#firestoresettingsexperimentalforcelongpolling
+// https://firebase.google.com/docs/firestore/manage-data/enable-offline
 export const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true
+  experimentalForceLongPolling: true,
+  localCache: persistentLocalCache({
+    tabManager: persistentMultipleTabManager()
+  })
 });
 
 export const storage = getStorage(app);
