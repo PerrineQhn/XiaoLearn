@@ -67,11 +67,43 @@ export function useFirestoreSync(
     onUpdateRef.current = onUpdate;
   }, [onUpdate]);
 
+  // V12 — Gate de réconciliation : tant que le reconcile initial n'a pas
+  // résolu, on BLOQUE les writes Firestore des consumers pour éviter
+  // d'écraser le cloud avec des valeurs locales par défaut (typique du
+  // pattern "useState(readLocalStorage()) → useEffect saveToFirestore"
+  // qui fire au mount avant que le reconcile ait fini de fetch).
+  //
+  // Au login d'un nouvel appareil (purge localStorage, state initial =
+  // defaults), ce gating empêche le push DEFAULT → cloud qui écrasait
+  // la vraie progression du compte. Le reconcile arrive en premier,
+  // applique cloud data via onUpdate → setState consumer → save légitime.
+  const reconciledRef = useRef(false);
+  // Promise mémorisée du reconcile en cours. saveToFirestore await dessus.
+  const reconcilePromiseRef = useRef<Promise<void> | null>(null);
+  // Resolver pour signaler que le reconcile a fini (par succès, échec ou
+  // condition « pas d'utilisateur » → aucun reconcile attendu).
+  const reconcileResolveRef = useRef<(() => void) | null>(null);
+
+  // Crée la promesse de réconciliation à la 1re initialisation du hook.
+  if (reconcilePromiseRef.current === null) {
+    reconcilePromiseRef.current = new Promise<void>((resolve) => {
+      reconcileResolveRef.current = resolve;
+    });
+  }
+
   // ============================================================
   // 1) Réconciliation initiale : last-write-wins par timestamp
   // ============================================================
   useEffect(() => {
-    if (!user || !enabled) return;
+    // Si pas d'utilisateur ou sync désactivé, on considère le reconcile
+    // "résolu" (rien à attendre) pour ne pas bloquer indéfiniment les saves.
+    if (!user || !enabled) {
+      if (!reconciledRef.current) {
+        reconciledRef.current = true;
+        reconcileResolveRef.current?.();
+      }
+      return;
+    }
     let cancelled = false;
 
     (async () => {
@@ -156,6 +188,14 @@ export function useFirestoreSync(
         lastWrittenValueRef.current = cloudValue;
       } catch (err) {
         console.error('[useFirestoreSync] reconcile error', key, err);
+      } finally {
+        // Quoi qu'il arrive (succès, échec, cancel), on libère le gating
+        // pour que les saves en attente puissent se faire. Sinon le hook
+        // bloquerait indéfiniment sur une erreur Firestore réseau.
+        if (!reconciledRef.current) {
+          reconciledRef.current = true;
+          reconcileResolveRef.current?.();
+        }
       }
     })();
 
@@ -207,13 +247,44 @@ export function useFirestoreSync(
       const stringData = typeof data === 'string' ? data : JSON.stringify(data);
       const nowIso = new Date().toISOString();
 
-      // Toujours sauver localement, même si pas connecté
+      // V12 — Avant reconcile, on écrit localStorage MAIS PAS le timestamp.
+      // Pourquoi : si on bumpe le timestamp local sur un save-on-mount
+      // (qui pousse juste les défauts), le reconcile va voir localTs > cloudTs
+      // et conclure que local est "plus frais" → push local → écrase cloud.
+      //
+      // En gardant l'ancien timestamp pré-reconcile, on laisse le reconcile
+      // décider correctement (cloud probablement plus frais sur un mount
+      // post-purge ou première utilisation device).
       try {
         window.localStorage.setItem(key, stringData);
-        writeLocalTs(key, nowIso);
+        if (reconciledRef.current) {
+          writeLocalTs(key, nowIso);
+        }
       } catch { /* quota */ }
 
       if (!user || !enabled) return;
+
+      // V12 — Gating reconcile : on attend que le reconcile initial ait
+      // résolu avant de pousser vers Firestore. Sinon, lors d'un mount sur
+      // appareil avec localStorage purgé/vide, les consumers appellent
+      // saveToFirestore(DEFAULT_VALUES) AVANT que le reconcile ait pu lire
+      // le cloud → on écrasait la vraie progression du compte.
+      if (!reconciledRef.current && reconcilePromiseRef.current) {
+        try {
+          await reconcilePromiseRef.current;
+        } catch { /* ignore — on tente le save de toute façon */ }
+      }
+
+      // V12 — Après l'await, ce save peut être STALE : pendant qu'on
+      // attendait le reconcile, un onUpdate a peut-être appliqué le cloud
+      // data au state du consumer, qui a re-call saveToFirestore avec la
+      // vraie valeur. Si localStorage diffère de notre stringData, c'est
+      // qu'un save plus récent l'a remplacé → on skip pour ne pas régresser.
+      const currentLocal = window.localStorage.getItem(key);
+      if (currentLocal !== stringData) return;
+
+      // Maintenant on peut bumper le timestamp (différé depuis le début).
+      writeLocalTs(key, nowIso);
 
       try {
         const userDocRef = doc(db, 'users', user.uid);

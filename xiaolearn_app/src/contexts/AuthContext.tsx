@@ -94,14 +94,25 @@ export function AuthProvider({ children }: AuthProviderProps) {
       try {
         const prevUid = window.localStorage.getItem(LAST_UID_KEY);
         const nextUid = nextUser?.uid ?? null;
-        if (prevUid !== nextUid) {
+        // Purge UNIQUEMENT quand on bascule vers un autre compte ACTIF.
+        // - nextUid=null (signOut transitoire ou pas encore connecté) → on
+        //   garde le localStorage intact pour que le user qui se reconnecte
+        //   ensuite avec le MÊME compte ne perde pas ses objectifs du jour /
+        //   leçons en attente de sync.
+        // - nextUid=A & prevUid=A → même compte, pas de purge.
+        // - nextUid=B & prevUid=A → switch effectif vers compte B → purge
+        //   (sinon contamination cross-account).
+        // - nextUid=A & prevUid=null → premier login sur ce navigateur. On
+        //   NE PURGE PAS non plus : la data locale est la sienne ou il n'y
+        //   en a pas. Le reconcile Firestore va merge avec le cloud.
+        if (nextUid && prevUid && prevUid !== nextUid) {
           purgeUserDataFromLocalStorage();
-          if (nextUid) {
-            window.localStorage.setItem(LAST_UID_KEY, nextUid);
-          } else {
-            window.localStorage.removeItem(LAST_UID_KEY);
-          }
         }
+        if (nextUid) {
+          window.localStorage.setItem(LAST_UID_KEY, nextUid);
+        }
+        // On NE retire PAS LAST_UID_KEY au signOut : on en a besoin pour
+        // détecter le switch de compte au prochain login.
       } catch {
         /* localStorage indisponible (private mode, quota) — fallback non bloquant */
       }
@@ -136,15 +147,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const signOut = async () => {
     await firebaseSignOut(auth);
-    // Purge la progression locale après déconnexion pour éviter qu'un
-    // futur signIn avec un autre compte hérite des données de ce compte.
-    // (Le check par uid au onAuthStateChanged est un 2e filet de sécurité.)
-    try {
-      purgeUserDataFromLocalStorage();
-      window.localStorage.removeItem(LAST_UID_KEY);
-    } catch {
-      /* ignore */
-    }
+    // PAS DE PURGE ICI. La purge se fait UNIQUEMENT dans onAuthStateChanged
+    // quand on détecte un changement EFFECTIF de uid (compte A → compte B).
+    //
+    // Pourquoi : si on purge à chaque signOut, un user qui se reconnecte
+    // ensuite avec le MÊME compte perd ses objectifs du jour, son cache de
+    // leçons complétées, etc. — toutes les data qui sont en localStorage en
+    // attente d'un sync Firestore confirmé. Le reconcile au prochain login
+    // ramène les données cloud, MAIS il y a une fenêtre de race où les
+    // useEffect des consumers (qui dépendent du state initial = défauts)
+    // poussent des valeurs vides vers Firestore et écrasent le cloud.
+    //
+    // En gardant le localStorage intact entre signOut et signIn du même
+    // compte, on évite cette race et les states ne sont jamais remis à 0.
+    // Le LAST_UID_KEY reste aussi pour que onAuthStateChanged sache
+    // comparer prevUid = A à nextUid = A et NE PAS purger.
   };
 
   const value = {
