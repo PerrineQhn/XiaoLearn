@@ -1236,7 +1236,36 @@ const ExerciseCard = ({
   }
 
   const isCorrect = answered && selectedIndex === exercise.correctIndex;
-  const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
+  let promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
+  // Pour les exercices "error-correction" : si le prompt contient les segments
+  // entre guillemets (cas "Quel segment est mal placé : « X / Y / Z / W » ?"),
+  // on retire la partie redondante et on ne garde QUE la question. Les segments
+  // seront affichés dans un bloc dédié "Phrase mal ordonnée" plus visible.
+  const errorCorrectionSegments = useMemo(() => {
+    if (exercise.type !== 'error-correction') return null;
+    const src = promptText || '';
+    const quoted = src.match(/«\s*([^»]+?)\s*»/);
+    if (!quoted) return null;
+    const segments = quoted[1].split(/[/／|｜]/).map((s) => s.trim()).filter(Boolean);
+    if (segments.length < 2) return null;
+    return segments;
+  }, [exercise.type, promptText]);
+  if (errorCorrectionSegments) {
+    // Retire la partie « X / Y / Z » du prompt, garde seulement la question
+    promptText = promptText
+      .replace(/«[^»]+»\s*[?!]?/g, '')
+      .replace(/\s*:\s*$/, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    // Si le prompt devient vide ou trivial, le remplace par une question claire
+    if (!promptText || promptText.length < 6) {
+      promptText = language === 'en'
+        ? 'Which segment is misplaced in this jumbled sentence?'
+        : 'Quel segment est mal placé dans cette phrase mal ordonnée ?';
+    } else if (!/[?？]$/.test(promptText)) {
+      promptText = promptText.replace(/[.。!！]$/, '') + ' ?';
+    }
+  }
   // Pour `fill` : on garde toujours la phrase chinoise comme support (avec `___`
   // pour permettre le remplissage). La traduction est affichée séparément, en
   // dessous, comme indice de sens.
@@ -1338,9 +1367,24 @@ const ExerciseCard = ({
           <span className="lv2-exercise-audio-label">{getCopy(language, 'listen')}</span>
         </button>
       )}
+      {errorCorrectionSegments && (
+        <div className="lv2-exercise-jumbled">
+          <div className="lv2-exercise-jumbled-label">
+            {language === 'en' ? '❌ Jumbled sentence' : '❌ Phrase mal ordonnée'}
+          </div>
+          <div className="lv2-exercise-jumbled-chips">
+            {errorCorrectionSegments.map((seg, i) => (
+              <span key={i} className="lv2-exercise-jumbled-chip">
+                <span className="lv2-exercise-jumbled-pos">{i + 1}</span>
+                <span className="lv2-exercise-jumbled-text">{seg}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="lv2-exercise-prompt">{promptText}</div>
 
-      {showSentenceText && sentenceText && (
+      {showSentenceText && sentenceText && !errorCorrectionSegments && (
         <div className="lv2-exercise-sentence">
           {exercise.type === 'fill'
             ? renderFillSentence(sentenceText, answered, selectedIndex, exercise.choices, exercise.correctIndex)

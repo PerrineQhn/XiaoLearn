@@ -380,6 +380,57 @@
   text-align: center;
 }
 
+/* --- Phrase mal ordonnée (error-correction) -------------------------- */
+.lesson-v2 .lv2-exercise-jumbled {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fef2f2;
+  border: 1px dashed #fca5a5;
+  border-radius: var(--lv2-radius-sm);
+}
+.lesson-v2 .lv2-exercise-jumbled-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #b91c1c;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.lesson-v2 .lv2-exercise-jumbled-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.lesson-v2 .lv2-exercise-jumbled-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.lesson-v2 .lv2-exercise-jumbled-pos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fca5a5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-v2 .lv2-exercise-jumbled-text {
+  line-height: 1.2;
+}
+
 /* Indice de sens (traduction) pour les exercices `fill` : permet au
    learner de savoir ce que la phrase veut dire avant de choisir. */
 .lesson-v2 .lv2-exercise-meaning {

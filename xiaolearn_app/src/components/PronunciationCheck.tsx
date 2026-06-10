@@ -97,9 +97,18 @@ const PronunciationCheck = ({
     if (!supported || state.kind === 'listening') return;
     setState({ kind: 'listening' });
 
+    // Durée d'enregistrement adaptée au nombre de hanzi : phrase = ~1.5s/hanzi
+    // + 2s de buffer. Min 5s, max 20s. Mot seul (1-2 hanzi) → 5s ; phrase de
+    // 8 hanzi → ~14s. Sinon on coupe le user au milieu de sa phrase.
+    const cjkCount = (hanzi.match(/[一-鿿㐀-䶿]/g) || []).length;
+    const dynamicMs = Math.max(
+      5000,
+      Math.min(20000, cjkCount * 1500 + 2000)
+    );
     recognizeWithAzure({
       referenceText: hanzi,
-      language: 'zh-CN'
+      language: 'zh-CN',
+      maxDurationMs: dynamicMs
     })
       .then((result) => {
         console.log('[PronunciationCheck] result', {
