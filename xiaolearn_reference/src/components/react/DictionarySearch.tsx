@@ -6,6 +6,12 @@ import type { Locale } from '../../utils/locale';
 interface Props {
   entries?: HSKEntry[];
   entriesUrl?: string;
+  /**
+   * URL d'un index allégé des entrées Hors-HSK (id, level, hanzi, pinyin,
+   * translationFr, translationEn, tags). Chargé en parallèle des HSK pour
+   * permettre une recherche unifiée. Si omis, seules les HSK sont cherchées.
+   */
+  horsHskIndexUrl?: string;
   initialLevel?: string;
   initialQuery?: string;
   maxResults?: number;
@@ -73,6 +79,7 @@ async function loadEntriesWithFallback(entriesUrl: string): Promise<HSKEntry[]> 
 export default function DictionarySearch({
   entries = EMPTY_ENTRIES,
   entriesUrl,
+  horsHskIndexUrl,
   initialLevel,
   initialQuery,
   maxResults = 50,
@@ -86,7 +93,9 @@ export default function DictionarySearch({
   const [selectedLevel, setSelectedLevel] = useState<string | null>(initialLevel || null);
   const [searchMode, setSearchMode] = useState<DictionarySearchMode>('auto');
   const [sourceEntries, setSourceEntries] = useState<HSKEntry[]>(entries);
+  const [horsHskEntries, setHorsHskEntries] = useState<HSKEntry[]>(EMPTY_ENTRIES);
   const [isLoadingEntries, setIsLoadingEntries] = useState<boolean>(Boolean(entriesUrl && entries.length === 0));
+  const [isLoadingHorsHsk, setIsLoadingHorsHsk] = useState<boolean>(Boolean(horsHskIndexUrl));
   const copy = locale === 'en' ? EN_COPY : FR_COPY;
 
   useEffect(() => {
@@ -122,6 +131,30 @@ export default function DictionarySearch({
     };
   }, [entries.length, entriesUrl]);
 
+  // Chargement de l'index hors-HSK en parallèle (~24 MB, gzip ~5 MB).
+  useEffect(() => {
+    if (!horsHskIndexUrl) {
+      setIsLoadingHorsHsk(false);
+      return;
+    }
+    let isActive = true;
+    setIsLoadingHorsHsk(true);
+
+    fetchJson<HSKEntry[]>(horsHskIndexUrl)
+      .then((data) => {
+        if (!isActive || !Array.isArray(data)) return;
+        setHorsHskEntries(data);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (isActive) setIsLoadingHorsHsk(false);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [horsHskIndexUrl]);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
@@ -136,30 +169,46 @@ export default function DictionarySearch({
     }
   }, [initialLevel, initialQuery]);
 
+  // Sources combinées pour le filtre "Tous" et "hors-hsk".
+  // On garde HSK et hors-HSK séparés pour pouvoir afficher les HSK en premier
+  // (ils sont la cible principale, hors-HSK = bonus exhaustif).
   const filteredEntries = useMemo(() => {
     if (hideResultsUntilQuery && !query.trim()) {
       return [];
     }
 
-    let result = sourceEntries;
-
-    if (selectedLevel) {
-      result = filterByLevel(result, selectedLevel);
+    // Cas 1 : filtre sur un niveau HSK précis → on ne cherche QUE dans les HSK
+    // Cas 2 : filtre "hors-hsk" → uniquement l'index hors-HSK
+    // Cas 3 : "Tous" (selectedLevel = null) → HSK + hors-HSK concaténés
+    let pool: HSKEntry[];
+    if (selectedLevel === 'hors-hsk') {
+      pool = horsHskEntries;
+    } else if (selectedLevel) {
+      pool = filterByLevel(sourceEntries, selectedLevel);
+    } else {
+      pool = sourceEntries.concat(horsHskEntries);
     }
 
     if (query) {
-      result = searchEntries(result, query, searchMode);
+      pool = searchEntries(pool, query, searchMode);
     }
 
-    return result.slice(0, maxResults);
-  }, [sourceEntries, query, selectedLevel, maxResults, hideResultsUntilQuery, searchMode]);
+    return pool.slice(0, maxResults);
+  }, [sourceEntries, horsHskEntries, query, selectedLevel, maxResults, hideResultsUntilQuery, searchMode]);
   const hasQuery = query.trim().length > 0;
   const showInitialEmptyState = !hasQuery;
 
-  const levels = useMemo(
-    () => Array.from(new Set(sourceEntries.map((entry) => entry.level))).sort(),
-    [sourceEntries],
-  );
+  // Liste des niveaux affichés dans les filtres. On force "hors-hsk" si l'URL
+  // d'index est fournie, même si l'index n'est pas encore chargé — sinon le
+  // bouton "Hors-HSK" n'apparaîtrait qu'après ~1s de chargement.
+  const levels = useMemo(() => {
+    const fromHsk = new Set(sourceEntries.map((entry) => entry.level));
+    const all = Array.from(fromHsk).sort();
+    if (horsHskIndexUrl && !all.includes('hors-hsk')) {
+      all.push('hors-hsk');
+    }
+    return all;
+  }, [sourceEntries, horsHskIndexUrl]);
 
   return (
     <div className="dictionary-search">
@@ -223,7 +272,9 @@ export default function DictionarySearch({
                 className={`level-btn level-btn-${level} ${selectedLevel === level ? 'active' : ''}`}
                 onClick={() => setSelectedLevel(selectedLevel === level ? null : level)}
               >
-                {level.toUpperCase().replace('HSK', 'HSK ')}
+                {level === 'hors-hsk'
+                  ? copy.horsHskLabel
+                  : level.toUpperCase().replace('HSK', 'HSK ')}
               </button>
             ))}
           </div>
@@ -234,6 +285,11 @@ export default function DictionarySearch({
         <span>{copy.resultsCount(filteredEntries.length)}</span>
         {filteredEntries.length === maxResults && (
           <span className="results-limited"> {copy.limit(maxResults)}</span>
+        )}
+        {isLoadingHorsHsk && (
+          <span className="results-limited" style={{ marginLeft: '0.5rem' }}>
+            · {copy.loadingHorsHsk}
+          </span>
         )}
       </div>
 
@@ -257,22 +313,32 @@ export default function DictionarySearch({
           </div>
         ) : (
           <div className="results-grid">
-            {filteredEntries.map(entry => (
-              <a key={entry.id} href={`${resultBasePath}/${entry.id}`} className="result-card">
-                <div className="result-header">
-                  <span className="result-hanzi">{entry.hanzi}</span>
-                  <span className={`result-level badge-${entry.level}`}>
-                    {entry.level.toUpperCase().replace('HSK', '')}
-                  </span>
-                </div>
-                <span className="result-pinyin">{entry.pinyin}</span>
-                <p className="result-translation">
-                  {locale === 'en'
-                    ? (entry.translationEn || entry.translation || entry.translationFr)
-                    : (entry.translationFr || entry.translationEn || entry.translation || '')}
-                </p>
-              </a>
-            ))}
+            {filteredEntries.map(entry => {
+              // Routage : les hors-HSK ont leur propre route dédiée
+              // /dictionnaire/hors-hsk/[id], les HSK utilisent resultBasePath.
+              const href = entry.level === 'hors-hsk'
+                ? `/dictionnaire/hors-hsk/${entry.id}`
+                : `${resultBasePath}/${entry.id}`;
+              const levelLabel = entry.level === 'hors-hsk'
+                ? 'H-HSK'
+                : entry.level.toUpperCase().replace('HSK', '');
+              return (
+                <a key={entry.id} href={href} className="result-card">
+                  <div className="result-header">
+                    <span className="result-hanzi">{entry.hanzi}</span>
+                    <span className={`result-level badge-${entry.level}`}>
+                      {levelLabel}
+                    </span>
+                  </div>
+                  <span className="result-pinyin">{entry.pinyin}</span>
+                  <p className="result-translation">
+                    {locale === 'en'
+                      ? (entry.translationEn || entry.translation || entry.translationFr)
+                      : (entry.translationFr || entry.translationEn || entry.translation || '')}
+                  </p>
+                </a>
+              );
+            })}
           </div>
         )}
       </div>
@@ -288,6 +354,8 @@ const FR_COPY = {
   searchModePinyin: 'Pinyin',
   searchModeTranslation: 'FR/EN',
   allLevels: 'Tous',
+  horsHskLabel: 'Hors-HSK',
+  loadingHorsHsk: 'Chargement de la base Hors-HSK (109 710 mots)…',
   resultsCount: (count: number) => `${count} resultat${count > 1 ? 's' : ''}`,
   limit: (maxResults: number) => `(limite a ${maxResults})`,
   startTyping: 'Commencez a taper un caractere, un mot ou du pinyin.',
@@ -305,6 +373,8 @@ const EN_COPY = {
   searchModePinyin: 'Pinyin',
   searchModeTranslation: 'FR/EN',
   allLevels: 'All',
+  horsHskLabel: 'Beyond HSK',
+  loadingHorsHsk: 'Loading beyond-HSK base (109,710 words)…',
   resultsCount: (count: number) => `${count} result${count > 1 ? 's' : ''}`,
   limit: (maxResults: number) => `(limited to ${maxResults})`,
   startTyping: 'Start typing a character, a word or pinyin.',

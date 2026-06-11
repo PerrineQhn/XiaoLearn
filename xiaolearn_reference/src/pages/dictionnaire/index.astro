@@ -26,7 +26,7 @@ const stats = {
 
 <BaseLayout
   title="Dictionnaire"
-  description="Dictionnaire chinois-français des niveaux HSK 1 à HSK 7-9. La section Hors-HSK est disponible via une page dédiée."
+  description="Dictionnaire chinois-français des niveaux HSK 1 à HSK 7-9 et 109 710 mots Hors-HSK."
 >
   <section class="page-header">
     <div class="container">
@@ -37,7 +37,8 @@ const stats = {
         traductions et exemples d'utilisation.
       </p>
       <p>
-        Les termes Hors-HSK restent accessibles depuis la section dédiée.
+        La recherche couvre aussi les {stats['hors-hsk'].toLocaleString()} termes Hors-HSK
+        (un peu plus long à charger la première fois).
       </p>
     </div>
   </section>
@@ -62,7 +63,11 @@ const stats = {
 
       <!-- Search Component -->
       <div class="search-section">
-        <DictionarySearch client:load entriesUrl="/data/hsk/all.json" />
+        <DictionarySearch
+          client:load
+          entriesUrl="/data/hsk/all.json"
+          horsHskIndexUrl="/data/hors-hsk-index.json"
+        />
       </div>
 
     </div>
