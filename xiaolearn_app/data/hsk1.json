@@ -1149,10 +1149,10 @@
         "translationEn": "This room is big."
       },
       {
-        "chinese": "他是我的大哥哥。",
-        "pinyin": "tā shì wǒ de dà gēge.",
-        "translationFr": "C'est mon grand frère aîné.",
-        "translationEn": "He is my elder big brother."
+        "chinese": "我有一个大问题。",
+        "pinyin": "wǒ yǒu yī gè dà wèntí.",
+        "translationFr": "J'ai un gros problème.",
+        "translationEn": "I have a big problem."
       }
     ],
     "quiz": {
@@ -4425,7 +4425,7 @@
     "audio": "audio/hsk1/hsk1_姐姐.mp3",
     "examples": [
       {
-        "chinese": "我的大姐姐来了。",
+        "chinese": "我的姐姐来了。",
         "pinyin": "wǒ de dà jiějie lái le.",
         "translationFr": "Ma grande sœur est arrivée.",
         "translationEn": "My big sister came."
@@ -4453,7 +4453,7 @@
       "level:hsk1"
     ],
     "theme": "famille",
-    "explanationFr": "Le terme \"大\" signifie \"grand\", tandis que \"姐\" est utilisé spécifiquement pour désigner une sœur aînée. En français, on utilise le mot \"grande sœur\" qui correspond parfaitement à cette définition.",
+    "explanationFr": "\"姐姐\" (jiějie) désigne la sœur AÎNÉE en chinois mandarin. Le 2e 姐 est un redoublement affectif typique des termes familiaux (cf. 妈妈, 爷爷, 哥哥). Pour préciser \"la sœur aînée parmi plusieurs\", on dit 大姐 (dàjiě, sans répétition).",
     "translationFrAlt": [],
     "translationEn": "big sister"
   },
