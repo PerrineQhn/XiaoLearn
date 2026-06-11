@@ -654,7 +654,15 @@ function App() {
     streakCurrent: dashboardState.streak.current,
     lastMilestoneAward: dashboardState.bonus.lastMilestoneAward,
     lastDailyBonusAt: dashboardState.bonus.lastDailyBonusAt,
-    dueSrsCount: lessonProgress.reviewItems.length,
+    // V12 — Compte les cartes SRS individuelles dues (`wordSrs.dueIds`) au
+    // lieu de `reviewItems.length` qui compte les LEÇONS à réviser. Avant la
+    // notif disait "5 cartes" mais utilisait un comptage de leçons → décalage
+    // avec le widget de l'objectif (qui compte aussi les cartes SRS).
+    // Note : on n'applique pas ici le filtre "valid catalogue" (allFlashcardItems
+    // est déclaré plus bas dans le fichier). Petite imprécision possible si
+    // des IDs orphelins traînent, sans impact UX majeur — le compteur reste
+    // de la BONNE FAMILLE (cartes vs leçons).
+    dueSrsCount: wordSrs.dueIds.size,
     isAuthed: !!user
   });
   // `learningStats` vient maintenant du hook useLearningStats déclaré plus haut

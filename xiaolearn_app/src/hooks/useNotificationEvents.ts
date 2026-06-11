@@ -83,7 +83,7 @@ const COPY = {
     }),
     srsDue: (n: number) => ({
       title: n === 1 ? `1 carte à réviser` : `${n} cartes à réviser`,
-      body: `Passe par Révisions pour ne pas casser ta série.`
+      body: `Passe par Flashcards pour ne pas casser ta série.`
     })
   },
   en: {
@@ -105,7 +105,7 @@ const COPY = {
     }),
     srsDue: (n: number) => ({
       title: n === 1 ? `1 card to review` : `${n} cards to review`,
-      body: `Hop over to Reviews to keep your streak alive.`
+      body: `Hop over to Flashcards to keep your streak alive.`
     })
   }
 } as const;
@@ -279,7 +279,10 @@ export const useNotificationEvents = (input: UseNotificationEventsInput) => {
       title: c.title,
       body: c.body,
       dedupKey: `srs-due-${today}`,
-      link: { kind: 'view', view: 'review' }
+      // V12 — Pointe vers la page Flashcards (SRS individuel) au lieu de
+      // Révisions (quiz multi-leçons). La notif parle de "cartes" et le user
+      // s'attend à voir les flashcards SRS, pas le quiz de leçons.
+      link: { kind: 'view', view: 'flashcards' }
     });
     try {
       window.localStorage.setItem(SRS_REMINDER_STORAGE_KEY, today);
