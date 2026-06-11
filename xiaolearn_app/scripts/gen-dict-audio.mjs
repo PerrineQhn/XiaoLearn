@@ -175,7 +175,9 @@ function collectHorsHskJobs() {
     .sort();
   for (const chunk of chunks) {
     const data = JSON.parse(fs.readFileSync(path.join(HORS_HSK_DIR, chunk), 'utf8'));
-    for (const entry of data) {
+    // Object.values() gère les deux formats : array (ancien) ou map { id: entry }
+    // (nouveau format produit par split-hors-hsk.mjs depuis xiaolearn_reference).
+    for (const entry of Object.values(data)) {
       const hanzi = entry.hanzi;
       if (!hanzi || !hasRealHanzi(hanzi)) continue;
       // Nouveau dossier dédié : public/audio/hors-hsk/hors-hsk_{hanzi}.mp3
@@ -229,7 +231,8 @@ function collectExampleJobs() {
       .sort();
     for (const chunk of chunks) {
       const data = JSON.parse(fs.readFileSync(path.join(HORS_HSK_DIR, chunk), 'utf8'));
-      for (const entry of data) {
+      // Object.values() gère array ou map { id: entry } (cf. collectHorsHskJobs).
+      for (const entry of Object.values(data)) {
         for (const ex of entry.examples ?? []) {
           pushExample(ex.chinese);
         }

@@ -35,6 +35,19 @@ export function normalizePinyin(text: string): string {
 }
 
 /**
+ * Match si la query apparaît au début d'un mot (sans exiger qu'elle constitue
+ * le mot entier). Autorise "ami" → "amitié", "alcool" → "alcoolique", mais
+ * rejette les sous-chaînes au milieu d'un mot ("france" → "souffrance").
+ */
+export function hasWordPrefixMatch(text: string, query: string): boolean {
+  if (!text || !query) return false;
+  const normalizedText = ` ${text.toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
+  const normalizedQuery = query.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  if (!normalizedQuery) return false;
+  return normalizedText.includes(` ${normalizedQuery}`);
+}
+
+/**
  * Calculate Levenshtein distance between two strings
  * Used for fuzzy matching to tolerate typos
  */
@@ -69,9 +82,12 @@ export function levenshteinDistance(str1: string, str2: string): number {
 /**
  * Check if a string matches with fuzzy matching (tolerates typos)
  * Returns true if the Levenshtein distance is within threshold
+ *
+ * Note : on utilise hasWordPrefixMatch plutôt que target.includes(query)
+ * pour éviter que "france" matche "souffrance" (sous-chaîne au milieu).
  */
 export function fuzzyMatch(query: string, target: string, threshold: number = 2): boolean {
-  if (target.includes(query)) return true;
+  if (hasWordPrefixMatch(target, query)) return true;
 
   const distance = levenshteinDistance(query.toLowerCase(), target.toLowerCase());
   const maxLength = Math.max(query.length, target.length);
@@ -112,7 +128,10 @@ export function calculateRelevanceScore(
     hanziExact: hanzi === query,
     pinyin: normalizedPinyin.includes(normalizedQuery),
     pinyinExact: normalizedPinyin === normalizedQuery || normalizedPinyin.replace(/\s/g, '') === normalizedQuery,
-    translation: translation.toLowerCase().includes(queryLower),
+    // Match si la query est au début d'un mot de la traduction. Évite que
+    // "france" matche "souffrance" via une sous-chaîne au milieu d'un mot,
+    // tout en gardant "ami" → "amitié" qui matche bien un préfixe de mot.
+    translation: hasWordPrefixMatch(translation, queryLower) || hasWordPrefixMatch(translationFr, queryLower),
     translationExact: translation.toLowerCase() === queryLower || translationFr.toLowerCase() === queryLower,
     fuzzyMatch: false
   };
