@@ -240,7 +240,10 @@ function scoreTextField(value: string, query: string): number {
   if (text === query) return 136;
   if (text.startsWith(query)) return 120;
   if (hasWordBoundaryMatch(text, query)) return 108;
-  if (text.includes(query)) return 94;
+  // Match uniquement si la query commence un mot (ex: "ami" matche "amitié",
+  // mais "france" ne matche PAS "souffrance"). Évite les faux positifs où la
+  // query apparaît au milieu d'un mot.
+  if (hasWordPrefixMatch(text, query)) return 94;
   return 0;
 }
 
@@ -263,6 +266,19 @@ function hasWordBoundaryMatch(text: string, query: string): boolean {
   const normalizedQuery = query.replace(/[^a-z0-9]+/g, ' ').trim();
   if (!normalizedQuery) return false;
   return normalizedText.includes(` ${normalizedQuery} `);
+}
+
+/**
+ * Match si la query apparaît au début d'un mot (sans exiger qu'elle constitue
+ * le mot entier). Autorise "ami" → "amitié", "alcool" → "alcoolique", mais
+ * rejette les sous-chaînes au milieu d'un mot ("france" → "souffrance").
+ */
+function hasWordPrefixMatch(text: string, query: string): boolean {
+  if (!text || !query) return false;
+  const normalizedText = ` ${text.replace(/[^a-z0-9]+/g, ' ')} `;
+  const normalizedQuery = query.replace(/[^a-z0-9]+/g, ' ').trim();
+  if (!normalizedQuery) return false;
+  return normalizedText.includes(` ${normalizedQuery}`);
 }
 
 function normalizeTextField(value: string): string {
@@ -334,6 +350,7 @@ function generateToneVariants(base: string, tone: ToneDigit): string[] {
 
 function normalizeLatin(value: string): string {
   return value
+    .toLowerCase()
     .normalize('NFD')
     .replace(COMBINING_MARKS_REGEX, '')
     .replace(/ü/g, 'v')
