@@ -53,6 +53,25 @@ export function useFirestoreSync(
 ) {
   const { user } = useAuth();
   const enabled = options?.enabled ?? true;
+
+  // V14 — saveToFirestore est returné avec une référence STABLE (useCallback
+  // sans deps). Sinon, chaque fois que user/enabled change, sa ref change,
+  // ce qui refire les useEffect des consumers (deps [state, saveToFirestore])
+  // → push d'état (potentiellement défauts initiaux) à Firestore à chaque
+  // changement d'auth → écrasement du cloud.
+  //
+  // Avec saveToFirestore stable, les useEffect des consumers ne refirent
+  // QUE quand le state change (= vraie action utilisateur), ce qui rend
+  // les saves naturellement event-driven et alignés avec les modifications.
+  const userRef = useRef(user);
+  const enabledRef = useRef(enabled);
+  const keyRef = useRef(key);
+  useEffect(() => {
+    userRef.current = user;
+    enabledRef.current = enabled;
+    keyRef.current = key;
+  });
+
   // Garde la dernière valeur que nous avons écrite nous-mêmes, pour ignorer
   // l'écho d'onSnapshot qui ré-applique ce qu'on vient de pousser.
   const lastWrittenValueRef = useRef<string | null>(null);
@@ -258,67 +277,59 @@ export function useFirestoreSync(
   // ============================================================
   // 3) saveToFirestore — appelé par les hooks consumers
   // ============================================================
+  // V14 — saveToFirestore: référence STABLE (deps vides). Lit user/enabled/key
+  // depuis les refs synchronisées chaque render. Conséquence : les useEffect
+  // des consumers (qui ont saveToFirestore dans leurs deps) NE refirent PAS
+  // quand auth state change → plus de saves involontaires de défauts au
+  // moment d'un login.
   const saveToFirestore = useCallback(
     async (data: unknown) => {
+      const currentKey = keyRef.current;
+      const currentUser = userRef.current;
+      const currentEnabled = enabledRef.current;
       const stringData = typeof data === 'string' ? data : JSON.stringify(data);
       const nowIso = new Date().toISOString();
 
       // V12 — Avant reconcile, on écrit localStorage MAIS PAS le timestamp.
-      // Pourquoi : si on bumpe le timestamp local sur un save-on-mount
-      // (qui pousse juste les défauts), le reconcile va voir localTs > cloudTs
-      // et conclure que local est "plus frais" → push local → écrase cloud.
-      //
-      // En gardant l'ancien timestamp pré-reconcile, on laisse le reconcile
-      // décider correctement (cloud probablement plus frais sur un mount
-      // post-purge ou première utilisation device).
       try {
-        window.localStorage.setItem(key, stringData);
+        window.localStorage.setItem(currentKey, stringData);
         if (reconciledRef.current) {
-          writeLocalTs(key, nowIso);
+          writeLocalTs(currentKey, nowIso);
         }
       } catch { /* quota */ }
 
-      if (!user || !enabled) return;
+      if (!currentUser || !currentEnabled) return;
 
-      // V12 — Gating reconcile : on attend que le reconcile initial ait
-      // résolu avant de pousser vers Firestore. Sinon, lors d'un mount sur
-      // appareil avec localStorage purgé/vide, les consumers appellent
-      // saveToFirestore(DEFAULT_VALUES) AVANT que le reconcile ait pu lire
-      // le cloud → on écrasait la vraie progression du compte.
+      // V12 — Gating reconcile : attend la résolution avant de push.
       if (!reconciledRef.current && reconcilePromiseRef.current) {
         try {
           await reconcilePromiseRef.current;
-        } catch { /* ignore — on tente le save de toute façon */ }
+        } catch { /* ignore */ }
       }
 
-      // V12 — Après l'await, ce save peut être STALE : pendant qu'on
-      // attendait le reconcile, un onUpdate a peut-être appliqué le cloud
-      // data au state du consumer, qui a re-call saveToFirestore avec la
-      // vraie valeur. Si localStorage diffère de notre stringData, c'est
-      // qu'un save plus récent l'a remplacé → on skip pour ne pas régresser.
-      const currentLocal = window.localStorage.getItem(key);
+      // V12 — Skip si une valeur plus fraîche a écrasé la nôtre pendant l'await.
+      const currentLocal = window.localStorage.getItem(currentKey);
       if (currentLocal !== stringData) return;
 
-      // Maintenant on peut bumper le timestamp (différé depuis le début).
-      writeLocalTs(key, nowIso);
+      writeLocalTs(currentKey, nowIso);
 
       try {
-        const userDocRef = doc(db, 'users', user.uid);
+        const userDocRef = doc(db, 'users', currentUser.uid);
         await setDoc(
           userDocRef,
           {
-            [key]: stringData,
-            [key + CLOUD_TS_FIELD_SUFFIX]: nowIso,
+            [currentKey]: stringData,
+            [currentKey + CLOUD_TS_FIELD_SUFFIX]: nowIso,
             lastUpdated: nowIso
           },
           { merge: true }
         );
         lastWrittenValueRef.current = stringData;
       } catch (err) {
-        console.error('[useFirestoreSync] saveToFirestore error', key, err);
+        console.error('[useFirestoreSync] saveToFirestore error', currentKey, err);
       }
     },
-    [user, key, enabled]
+    [] // V14 — STABLE: pas de deps. Tout lu via refs.
   );
 
   return { saveToFirestore };
