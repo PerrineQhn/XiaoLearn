@@ -104,6 +104,16 @@ export function useFirestoreSync(
       }
       return;
     }
+    // V13 — On a un user maintenant. RESET le gating reconcile pour ne PAS
+    // shortcuter ce nouveau cycle. Cas typique : au mount, user=null →
+    // reconciledRef passe à true (early return). Puis user devient A →
+    // un NOUVEAU reconcile doit pouvoir gater les saves consumers, sinon
+    // ils pushent les DEFAULTS de mount vers Firestore avant que le
+    // reconcile ait lu le cloud → écrasement de la progression.
+    reconciledRef.current = false;
+    reconcilePromiseRef.current = new Promise<void>((resolve) => {
+      reconcileResolveRef.current = resolve;
+    });
     let cancelled = false;
 
     (async () => {
