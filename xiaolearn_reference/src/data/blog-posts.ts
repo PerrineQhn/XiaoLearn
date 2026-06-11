@@ -3619,11 +3619,584 @@ const POST_ZODIAQUE: BlogPost = {
   ]
 };
 
+const POST_JE_T_AIME: BlogPost = {
+  slug: 'comment-dire-je-t-aime-en-chinois',
+  category: 'vocabulaire',
+  title: 'Comment dire "je t\'aime" en chinois — 我爱你 et la culture chinoise de l\'amour',
+  lead:
+    'Dire "je t\'aime" en chinois, ce n\'est pas si simple. Les Chinois disent rarement 我爱你 directement — ils préfèrent 我喜欢你 ou 我想你. Voici comment exprimer ses sentiments sans faire de faux pas.',
+  publishedAt: '2026-06-11',
+  readingMinutes: 10,
+  author: DEFAULT_AUTHOR,
+  heroImage: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1600&q=80',
+  heroCaption: 'Lanternes rouges — l\'amour en Chine est souvent silencieux, jamais bruyant',
+  intro:
+    'En France, dire "je t\'aime" est presque une habitude — entre amoureux, à ses enfants, à ses amis. En Chine, c\'est beaucoup plus rare et marqué. Quand un Chinois dit 我爱你 (wǒ ài nǐ), il pèse chaque mot. Cet article t\'explique les différentes formules, leurs niveaux d\'intensité, et comment dire son amour en chinois sans paraître niais ou faux.',
+  sections: [
+    {
+      title: '我爱你 — la formule directe (mais rare)',
+      blocks: [
+        { type: 'p', text: '我爱你 (wǒ ài nǐ) signifie littéralement "je t\'aime". C\'est la traduction directe de la formule française, et tous les apprenants l\'apprennent en premier. Mais dans la vraie vie, les Chinois l\'utilisent BEAUCOUP moins qu\'en France.' },
+        { type: 'p', text: 'Pourquoi ? Parce que la culture chinoise traditionnelle voit la verbalisation des sentiments comme superficielle. L\'amour se prouve par des actes — soigner sa famille, soutenir son partenaire, partager les épreuves — pas par des mots qu\'on jette au quotidien.' },
+        { type: 'callout', tone: 'info', text: 'Si tu dis 我爱你 à un Chinois pour la première fois, il sentira que c\'est sérieux. Ne le galvaude pas.' },
+        { type: 'example', hanzi: '我爱你', pinyin: 'wǒ ài nǐ', translationFr: 'je t\'aime (formel et marqué)' },
+        { type: 'example', hanzi: '我永远爱你', pinyin: 'wǒ yǒngyuǎn ài nǐ', translationFr: 'je t\'aimerai pour toujours' }
+      ]
+    },
+    {
+      title: '我喜欢你 — je t\'aime bien (BEAUCOUP plus courant)',
+      blocks: [
+        { type: 'p', text: '我喜欢你 (wǒ xǐhuan nǐ), littéralement "je t\'apprécie", est en réalité la formule de référence pour avouer ses sentiments naissants en Chine. Entre lycéens, étudiants, jeunes couples, c\'est ÇA qu\'on dit, pas 我爱你.' },
+        { type: 'p', text: 'En français on dirait "je t\'aime bien" mais c\'est beaucoup plus fort qu\'on ne le pense en Chine. C\'est le mot d\'une déclaration romantique.' },
+        { type: 'example', hanzi: '我喜欢你', pinyin: 'wǒ xǐhuan nǐ', translationFr: 'je t\'apprécie / je t\'aime (déclaration romantique)' },
+        { type: 'example', hanzi: '我超喜欢你', pinyin: 'wǒ chāo xǐhuan nǐ', translationFr: 'je t\'apprécie beaucoup beaucoup (jeune, oral)' },
+        { type: 'callout', tone: 'success', text: 'Premier rendez-vous en Chine ? Dis 我喜欢你, pas 我爱你. C\'est l\'attente culturelle.' }
+      ]
+    },
+    {
+      title: '我想你 — tu me manques (le préféré des couples)',
+      blocks: [
+        { type: 'p', text: '我想你 (wǒ xiǎng nǐ), "tu me manques", est probablement la formule romantique la plus utilisée en Chine au quotidien. C\'est une manière indirecte mais émotionnellement chargée d\'exprimer son amour : si tu manques à quelqu\'un, c\'est qu\'il tient à toi.' },
+        { type: 'p', text: 'Beaucoup de couples se le disent au téléphone, en SMS, à la fin d\'une journée — bien plus souvent qu\'ils ne diraient 我爱你.' },
+        { type: 'example', hanzi: '我想你', pinyin: 'wǒ xiǎng nǐ', translationFr: 'tu me manques' },
+        { type: 'example', hanzi: '我想死你了', pinyin: 'wǒ xiǎng sǐ nǐ le', translationFr: 'tu me manques à en mourir (hyperbolique, affectueux)' },
+        { type: 'example', hanzi: '我每天都想你', pinyin: 'wǒ měitiān dōu xiǎng nǐ', translationFr: 'tu me manques chaque jour' }
+      ]
+    },
+    {
+      title: '520 — le code amoureux des Chinois',
+      blocks: [
+        { type: 'p', text: 'Si tu reçois un message d\'un Chinois qui dit juste "520", ce n\'est pas un montant. C\'est une déclaration d\'amour codée. En chinois, 520 (wǔ èr líng) sonne très proche de 我爱你 (wǒ ài nǐ).' },
+        { type: 'p', text: 'Tellement que le 20 mai (le 5/20) est devenu en Chine une fête de la Saint-Valentin officieuse. Couples qui s\'offrent des cadeaux, restaurants pleins, hôtels complets. Et beaucoup de mariages célébrés ce jour-là.' },
+        { type: 'list', items: [
+          '520 → 我爱你 (je t\'aime)',
+          '521 → "je veux que tu m\'aimes"',
+          '5201314 → 我爱你一生一世 (je t\'aimerai toute ma vie)',
+          '1314 → utilisé seul = "toute la vie" (yīshēng yīshì)'
+        ]},
+        { type: 'callout', tone: 'info', text: 'Si tu offres un cadeau à ton/ta partenaire chinois·e, préfère 520 ¥ à 100 ¥ — c\'est plus que symbolique.' }
+      ]
+    },
+    {
+      title: 'Le vocabulaire de l\'amour',
+      blocks: [
+        { type: 'example', hanzi: '爱', pinyin: 'ài', translationFr: 'amour (le verbe et le nom)' },
+        { type: 'example', hanzi: '喜欢', pinyin: 'xǐhuan', translationFr: 'apprécier, aimer (sentiments naissants)' },
+        { type: 'example', hanzi: '男朋友', pinyin: 'nán péngyou', translationFr: 'petit ami' },
+        { type: 'example', hanzi: '女朋友', pinyin: 'nǚ péngyou', translationFr: 'petite amie' },
+        { type: 'example', hanzi: '老公', pinyin: 'lǎogōng', translationFr: 'mari (oral, affectueux)' },
+        { type: 'example', hanzi: '老婆', pinyin: 'lǎopo', translationFr: 'femme, épouse (oral, affectueux)' },
+        { type: 'example', hanzi: '亲爱的', pinyin: 'qīn\'ài de', translationFr: 'mon/ma chéri·e' },
+        { type: 'example', hanzi: '宝贝', pinyin: 'bǎobèi', translationFr: 'bébé, trésor (mots doux courants)' },
+        { type: 'example', hanzi: '在一起', pinyin: 'zài yīqǐ', translationFr: 'être ensemble (en couple)' },
+        { type: 'example', hanzi: '分手', pinyin: 'fēnshǒu', translationFr: 'rompre' },
+        { type: 'example', hanzi: '结婚', pinyin: 'jiéhūn', translationFr: 'se marier' }
+      ]
+    },
+    {
+      title: 'Les pièges culturels pour les Français',
+      blocks: [
+        { type: 'ordered', items: [
+          'Ne dis pas 我爱你 trop tôt dans une relation — c\'est l\'équivalent d\'un "veux-tu m\'épouser ?"',
+          'À sa belle-famille chinoise, n\'utilise jamais 爱 — beaucoup trop direct. Reste sur des gestes et de la prévenance.',
+          '"Je t\'aime" entre amis (très français) n\'a pas d\'équivalent direct en chinois. Utilise plutôt 你是我最好的朋友 ("tu es mon meilleur ami").',
+          'Aux parents, on dit traditionnellement plutôt 谢谢妈妈 ("merci maman") que 我爱你妈妈. Les sentiments familiaux se montrent.',
+          'Si un Chinois te dit 我爱你 dans un moment fort, ne le prends pas à la légère. Réponds avec sérieux.'
+        ]},
+        { type: 'callout', tone: 'warning', text: 'Le mot 爱 (ài) est PUISSANT en chinois. Réserve-le aux moments qui le méritent.' }
+      ]
+    },
+    {
+      title: 'Mon conseil personnel',
+      blocks: [
+        { type: 'p', text: 'Beaucoup de Français installés en Chine font l\'erreur de dire 我爱你 à leur partenaire chinois·e comme ils le diraient en France — et reçoivent en retour un sourire gêné ou un "moi aussi" murmuré. C\'est qu\'ils n\'ont pas perçu le poids du mot.' },
+        { type: 'p', text: 'Apprends d\'abord 我喜欢你, 我想你, et toute la palette des gestes affectueux non verbaux que les Chinois utilisent : cuisiner pour l\'autre, prendre soin quand il/elle est malade, offrir des cadeaux symboliques. C\'est ÇA, dire son amour à la chinoise.' },
+        { type: 'p', text: 'Et garde 我爱你 pour le moment où ton cœur ne supporte plus de ne pas le dire. À ce moment-là, le mot aura tout son sens.' },
+        { type: 'quote', text: 'Mon mari ne me dit 我爱你 que deux fois par an, mais il fait du congee tous les matins. C\'est ça, son je t\'aime.', author: 'Claire, Française mariée à Shanghai' }
+      ]
+    }
+  ]
+};
+
+const POST_SHI_DE: BlogPost = {
+  slug: 'la-structure-shi-de-en-chinois',
+  category: 'grammaire',
+  title: '是…的 — La structure pour insister sur quand, où, comment',
+  lead:
+    'Tu veux dire "c\'est HIER que j\'ai mangé ça", "c\'est À PÉKIN qu\'il vit", "c\'est EN VOITURE qu\'on y va" ? La structure 是…的 est exactement faite pour ça. Voici comment la maîtriser sans douleur.',
+  publishedAt: '2026-06-11',
+  readingMinutes: 11,
+  author: DEFAULT_AUTHOR,
+  heroImage: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600&q=80',
+  heroCaption: 'Calligraphie chinoise — la structure 是…的 est une élégance grammaticale typique du mandarin',
+  intro:
+    'Si tu apprends le chinois depuis 6 mois, tu connais 我吃了 ("j\'ai mangé"). Mais comment dire "c\'est HIER que j\'ai mangé là-bas, EN VOITURE, avec mes parents" ? La grammaire la plus simple ne suffit plus. Il te faut 是…的, l\'une des structures les plus élégantes du chinois, et celle qui te fera passer pour un apprenant un peu avancé dès que tu la maîtrises.',
+  sections: [
+    {
+      title: 'À quoi sert 是…的',
+      blocks: [
+        { type: 'p', text: '是…的 (shì…de) est une structure utilisée pour INSISTER sur une circonstance d\'une action déjà passée : le QUAND, le OÙ, le COMMENT, l\'AVEC QUI. L\'action elle-même est connue de tout le monde, ce qu\'on met en valeur, c\'est l\'information autour.' },
+        { type: 'callout', tone: 'info', text: 'Structure : Sujet + 是 + circonstance + Verbe + 的. L\'élément qu\'on veut souligner se place ENTRE 是 et 的.' },
+        { type: 'p', text: 'Comparons :' },
+        { type: 'list', items: [
+          '我去年来中国 = "je suis venu en Chine l\'an dernier" (info neutre)',
+          '我是去年来中国的 = "c\'est l\'an dernier que je suis venu en Chine" (insiste sur QUAND)'
+        ]},
+        { type: 'example', hanzi: '我是昨天到的', pinyin: 'wǒ shì zuótiān dào de', translationFr: 'c\'est hier que je suis arrivé' },
+        { type: 'example', hanzi: '他是在巴黎学的中文', pinyin: 'tā shì zài bālí xué de zhōngwén', translationFr: 'c\'est à Paris qu\'il a appris le chinois' }
+      ]
+    },
+    {
+      title: '是…的 vs 了 — la différence cruciale',
+      blocks: [
+        { type: 'p', text: 'Beaucoup de manuels survolent ce point. La différence est pourtant essentielle :' },
+        { type: 'list', items: [
+          '了 indique qu\'une action a eu lieu (changement d\'état, achèvement)',
+          '是…的 indique qu\'on parle d\'une action passée qu\'on suppose CONNUE, et qu\'on insiste sur une circonstance'
+        ]},
+        { type: 'p', text: 'Exemple concret :' },
+        { type: 'list', items: [
+          '我吃了 = "j\'ai mangé" → tu informes que tu as mangé',
+          '我是和朋友吃的 = "c\'est avec des amis que j\'ai mangé" → on sait déjà que tu as mangé, tu précises avec qui'
+        ]},
+        { type: 'p', text: 'Si l\'action elle-même n\'est pas évidente du contexte, 了 ; si elle l\'est et qu\'on précise une circonstance, 是…的.' }
+      ]
+    },
+    {
+      title: 'Insister sur le QUAND',
+      blocks: [
+        { type: 'p', text: 'C\'est l\'usage le plus fréquent.' },
+        { type: 'example', hanzi: '我是2019年来法国的', pinyin: 'wǒ shì èr líng yī jiǔ nián lái fǎguó de', translationFr: 'c\'est en 2019 que je suis venu en France' },
+        { type: 'example', hanzi: '她是上个月结婚的', pinyin: 'tā shì shàng ge yuè jiéhūn de', translationFr: 'c\'est le mois dernier qu\'elle s\'est mariée' },
+        { type: 'example', hanzi: '我是早上吃的早饭', pinyin: 'wǒ shì zǎoshang chī de zǎofàn', translationFr: 'c\'est ce matin que j\'ai pris le petit-déj' }
+      ]
+    },
+    {
+      title: 'Insister sur le OÙ',
+      blocks: [
+        { type: 'example', hanzi: '他是在北京出生的', pinyin: 'tā shì zài běijīng chūshēng de', translationFr: 'c\'est à Pékin qu\'il est né' },
+        { type: 'example', hanzi: '我是在网上买的', pinyin: 'wǒ shì zài wǎngshang mǎi de', translationFr: 'c\'est en ligne que je l\'ai acheté' },
+        { type: 'example', hanzi: '她是从法国来的', pinyin: 'tā shì cóng fǎguó lái de', translationFr: 'c\'est de France qu\'elle vient' }
+      ]
+    },
+    {
+      title: 'Insister sur le COMMENT',
+      blocks: [
+        { type: 'example', hanzi: '我是坐高铁来的', pinyin: 'wǒ shì zuò gāotiě lái de', translationFr: 'c\'est en TGV que je suis venu' },
+        { type: 'example', hanzi: '他是用筷子吃的', pinyin: 'tā shì yòng kuàizi chī de', translationFr: 'c\'est avec des baguettes qu\'il a mangé' },
+        { type: 'example', hanzi: '我是跟朋友一起去的', pinyin: 'wǒ shì gēn péngyou yīqǐ qù de', translationFr: 'c\'est avec des amis que j\'y suis allé' }
+      ]
+    },
+    {
+      title: 'Pour poser des questions précises',
+      blocks: [
+        { type: 'p', text: '是…的 est aussi LA structure pour demander une circonstance précise d\'un événement passé. Compare :' },
+        { type: 'list', items: [
+          '你什么时候来的？ = "quand es-tu venu ?" (sous-entendu : on sait que tu es venu, tu précises quand)',
+          '你为什么来中国？ = "pourquoi viens-tu en Chine ?" (présent général)'
+        ]},
+        { type: 'example', hanzi: '你是什么时候来的？', pinyin: 'nǐ shì shénme shíhou lái de ?', translationFr: 'quand es-tu venu (exactement) ?' },
+        { type: 'example', hanzi: '你是怎么来的？', pinyin: 'nǐ shì zěnme lái de ?', translationFr: 'comment es-tu venu ?' },
+        { type: 'example', hanzi: '你是和谁去的？', pinyin: 'nǐ shì hé shéi qù de ?', translationFr: 'avec qui y es-tu allé ?' },
+        { type: 'callout', tone: 'success', text: 'Dans la vraie vie, ces questions sont parmi les plus fréquentes en chinois. Apprends-les par cœur.' }
+      ]
+    },
+    {
+      title: 'Les erreurs typiques des francophones',
+      blocks: [
+        { type: 'ordered', items: [
+          '❌ 我去年来中国了 → ✅ 我是去年来中国的 (si tu insistes sur "l\'an dernier")',
+          '❌ 我是吃了 → ✅ 我吃了 (是…的 ne sert pas à dire juste "j\'ai mangé")',
+          '❌ 你什么时候到中国了？ → ✅ 你是什么时候到中国的？ (question sur le quand passé)',
+          '❌ 我是来的中国 → ✅ 我是来中国的 (le 的 vient à la FIN)'
+        ]},
+        { type: 'callout', tone: 'warning', text: 'Le 的 final est facile à oublier. Sans lui, la structure ne fonctionne pas. Vérifie deux fois.' }
+      ]
+    },
+    {
+      title: 'Récapitulatif mental',
+      blocks: [
+        { type: 'p', text: 'Pour savoir si tu dois utiliser 是…的, pose-toi deux questions :' },
+        { type: 'ordered', items: [
+          'L\'action est-elle passée ? (sinon, oublie 是…的)',
+          'Mon interlocuteur sait-il déjà que cette action a eu lieu ? Est-ce que j\'insiste sur QUAND, OÙ, COMMENT, AVEC QUI plus que sur l\'action elle-même ?'
+        ]},
+        { type: 'p', text: 'Si oui aux deux : c\'est 是…的. Sinon : c\'est probablement 了 ou une structure plus simple.' },
+        { type: 'quote', text: 'Maîtriser 是…的, c\'est passer du niveau "je parle chinois" au niveau "je parle bien chinois". C\'est l\'élégance, pas la complexité.', author: 'Perrine' }
+      ]
+    }
+  ]
+};
+
+const POST_COULEURS: BlogPost = {
+  slug: 'les-couleurs-en-chine-symbolique',
+  category: 'culture',
+  title: 'Les couleurs en Chine — Rouge porte-bonheur, vert maudit, blanc de deuil',
+  lead:
+    'Pourquoi les mariées chinoises s\'habillent en rouge ? Pourquoi offrir un chapeau vert à un homme est une catastrophe ? Petit guide des couleurs et de leur symbolique en Chine.',
+  publishedAt: '2026-06-11',
+  readingMinutes: 12,
+  author: DEFAULT_AUTHOR,
+  heroImage: 'https://images.unsplash.com/photo-1545569310-3a2bbfa829fc?w=1600&q=80',
+  heroCaption: 'Mariage chinois traditionnel — le rouge éclatant est la couleur du bonheur',
+  intro:
+    'En France, on s\'habille en noir pour un mariage chic et en blanc le jour de ses noces. En Chine, c\'est exactement l\'inverse. Le code des couleurs est très différent — et les confusions peuvent vexer. Voici comment chaque couleur est perçue, avec les pièges à éviter pour ne pas faire de faux pas auprès d\'amis, de belle-famille ou de collègues chinois.',
+  sections: [
+    {
+      title: '红色 — Rouge : LA couleur de la chance',
+      blocks: [
+        { type: 'p', text: 'Le rouge (红色 hóngsè) est de loin la couleur la plus importante en Chine. C\'est la couleur du bonheur, de la prospérité, de la chance, du mariage, du Nouvel An.' },
+        { type: 'list', items: [
+          'Robes de mariée traditionnelles : rouges',
+          'Enveloppes de cadeaux d\'argent (红包 hóngbāo) : rouges',
+          'Lanternes du Nouvel An : rouges',
+          'Décorations pour la chance (couplets, papiers découpés) : rouges',
+          'Drapeau national : rouge'
+        ]},
+        { type: 'p', text: 'Tu ne peux pas vraiment te tromper avec le rouge en Chine. C\'est positif partout.' },
+        { type: 'example', hanzi: '红色', pinyin: 'hóngsè', translationFr: 'rouge' },
+        { type: 'example', hanzi: '红包', pinyin: 'hóngbāo', translationFr: 'enveloppe rouge avec de l\'argent' },
+        { type: 'example', hanzi: '开门红', pinyin: 'kāimén hóng', translationFr: 'commencer en beauté (litt. "ouvrir la porte au rouge")' }
+      ]
+    },
+    {
+      title: '金色 — Or : empereur et prospérité',
+      blocks: [
+        { type: 'p', text: 'L\'or (金色 jīnsè) symbolise la richesse, la noblesse et l\'éternité. Historiquement, c\'était la couleur réservée à l\'empereur — les toits de la Cité Interdite sont jaunes-or pour cette raison.' },
+        { type: 'p', text: 'En décoration moderne, l\'or se marie souvent avec le rouge pour les fêtes — mariages, banquets, Nouvel An. Penser "Disney villa de mariage chinoise" : tout est rouge ET doré.' },
+        { type: 'example', hanzi: '金色', pinyin: 'jīnsè', translationFr: 'or, doré' },
+        { type: 'example', hanzi: '黄金', pinyin: 'huángjīn', translationFr: 'or (le métal)' }
+      ]
+    },
+    {
+      title: '黄色 — Jaune : impérial mais piégé',
+      blocks: [
+        { type: 'p', text: 'Le jaune (黄色 huángsè) partageait historiquement avec l\'or le statut impérial — il était la couleur de la dynastie. Aujourd\'hui, dans la décoration, il reste positif.' },
+        { type: 'p', text: 'MAIS attention : dans le langage moderne, "黄色" désigne aussi le pornographique. 黄色电影 (huángsè diànyǐng) = "film jaune" = film X. Un Français qui dirait "j\'aime le cinéma jaune" déclencherait l\'hilarité d\'un Chinois.' },
+        { type: 'callout', tone: 'warning', text: 'Le mot "jaune" en chinois moderne a une connotation pornographique. Préfère "doré" (金色) si tu décris quelque chose de positif.' },
+        { type: 'example', hanzi: '黄色', pinyin: 'huángsè', translationFr: 'jaune ; pornographique (selon contexte)' },
+        { type: 'example', hanzi: '黄色笑话', pinyin: 'huángsè xiàohuà', translationFr: 'blague salace' }
+      ]
+    },
+    {
+      title: '白色 — Blanc : LA couleur du deuil',
+      blocks: [
+        { type: 'p', text: 'C\'est le piège n°1 pour les Français : en Chine traditionnelle, le blanc (白色 báisè) est la couleur du DEUIL et des funérailles. On porte du blanc aux enterrements, pas aux mariages.' },
+        { type: 'p', text: 'Évite donc les emballages de cadeaux entièrement blancs, les fleurs blanches (lys, chrysanthèmes blancs surtout — réservées aux funérailles), et les vêtements blancs lors d\'occasions joyeuses comme un anniversaire ou une fête de fin d\'année.' },
+        { type: 'callout', tone: 'warning', text: 'N\'offre JAMAIS de fleurs blanches à un mariage ou un anniversaire chinois. Privilégie rouge, rose ou orange.' },
+        { type: 'p', text: 'Cela dit, l\'influence occidentale a changé certaines pratiques : beaucoup de mariées chinoises modernes portent une robe blanche OCCIDENTALE pour la cérémonie photo, puis se changent en robe rouge traditionnelle (旗袍 qípáo) pour le banquet. Mix des deux cultures.' },
+        { type: 'example', hanzi: '白色', pinyin: 'báisè', translationFr: 'blanc' },
+        { type: 'example', hanzi: '白事', pinyin: 'bái shì', translationFr: 'funérailles (litt. "affaires blanches")' }
+      ]
+    },
+    {
+      title: '黑色 — Noir : sérieux, pas funéraire',
+      blocks: [
+        { type: 'p', text: 'Le noir (黑色 hēisè) est associé à la sériosité, à la formalité, à l\'autorité. Mais contrairement au monde occidental, ce n\'est PAS la couleur du deuil en Chine traditionnelle.' },
+        { type: 'p', text: 'Un costume noir pour un mariage chinois est OK (occidental moderne), un costume noir pour un enterrement est correct aussi. Le noir reste sobre et acceptable dans presque tous les contextes formels.' },
+        { type: 'example', hanzi: '黑色', pinyin: 'hēisè', translationFr: 'noir' },
+        { type: 'example', hanzi: '黑社会', pinyin: 'hēi shèhuì', translationFr: 'mafia (litt. "société noire")' }
+      ]
+    },
+    {
+      title: '绿色 — Vert : nature ET cocufiage',
+      blocks: [
+        { type: 'p', text: 'Le vert (绿色 lǜsè) symbolise la nature, la jeunesse, la santé. Globalement positif.' },
+        { type: 'p', text: 'SAUF un détail capital : 戴绿帽子 (dài lǜmàozi), "porter un chapeau vert", signifie "être cocu". L\'origine remonte à la dynastie Yuan, où les hommes des familles dont les femmes étaient prostituées devaient porter un chapeau vert. Le symbole est resté.' },
+        { type: 'callout', tone: 'warning', text: 'N\'offre JAMAIS un chapeau vert à un homme chinois. Même en cadeau humoristique. Surtout pas à un mari.' },
+        { type: 'example', hanzi: '绿色', pinyin: 'lǜsè', translationFr: 'vert' },
+        { type: 'example', hanzi: '戴绿帽子', pinyin: 'dài lǜmàozi', translationFr: 'être cocu (litt. "porter un chapeau vert")' }
+      ]
+    },
+    {
+      title: '蓝色 et 紫色 — Bleu et violet : positifs',
+      blocks: [
+        { type: 'p', text: 'Le bleu (蓝色 lánsè) symbolise le calme, la stabilité, le ciel. Il est très utilisé en porcelaine traditionnelle (la fameuse porcelaine bleu et blanc 青花瓷 qīnghuācí).' },
+        { type: 'p', text: 'Le violet (紫色 zǐsè) évoque la noblesse, le mystère, le spirituel. Il était également porté par les hauts fonctionnaires impériaux dans certaines dynasties.' },
+        { type: 'p', text: 'Aucun piège majeur sur ces deux couleurs. Tu peux les offrir, les porter, les utiliser sans crainte.' },
+        { type: 'example', hanzi: '蓝色', pinyin: 'lánsè', translationFr: 'bleu' },
+        { type: 'example', hanzi: '紫色', pinyin: 'zǐsè', translationFr: 'violet' },
+        { type: 'example', hanzi: '青花瓷', pinyin: 'qīnghuācí', translationFr: 'porcelaine bleu et blanc (très emblématique)' }
+      ]
+    },
+    {
+      title: 'Le vocabulaire des couleurs',
+      blocks: [
+        { type: 'p', text: 'Une particularité du chinois : tu peux dire la couleur seule (红, rouge) ou la couleur avec le mot 色 (sè, "couleur") qui la rend plus formelle. Les deux sont corrects.' },
+        { type: 'list', items: [
+          '红 / 红色 — rouge',
+          '黄 / 黄色 — jaune',
+          '蓝 / 蓝色 — bleu',
+          '绿 / 绿色 — vert',
+          '白 / 白色 — blanc',
+          '黑 / 黑色 — noir',
+          '紫 / 紫色 — violet',
+          '粉色 — rose (toujours avec 色)',
+          '橙色 / 橘色 — orange',
+          '灰色 — gris',
+          '棕色 / 咖啡色 — marron'
+        ]}
+      ]
+    },
+    {
+      title: 'Récap des pièges pour un Français',
+      blocks: [
+        { type: 'ordered', items: [
+          'Ne porte pas de blanc à un mariage chinois (sauf si tu es prévenu que c\'est OK).',
+          'N\'offre pas de chapeau vert à un homme.',
+          'Évite le mot 黄色 (jaune) si tu veux décrire quelque chose de positif — préfère 金色 (doré).',
+          'Ne mets pas de fleurs blanches dans un bouquet pour un anniversaire ou un mariage.',
+          'Pour un cadeau ou une décoration positive : rouge + doré, c\'est imbattable.'
+        ]},
+        { type: 'quote', text: 'Si tu offres un cadeau emballé en rouge à un Chinois, tu pars avec 50 % d\'avantage. C\'est la couleur de la chance, et il le ressent.', author: 'Yan, ami d\'enfance d\'un Français à Shanghai' }
+      ]
+    }
+  ]
+};
+
+const POST_HSK2_GUIDE: BlogPost = {
+  slug: 'preparer-le-hsk-2-le-guide-complet',
+  category: 'hsk',
+  title: 'Préparer le HSK 2 — Le guide complet après ton HSK 1',
+  lead:
+    'Le HSK 2 (HSK 3.0) demande 1 200 mots cumulés et 600 caractères. Si tu as ton HSK 1, c\'est le palier naturel qui te donne enfin de vrais moyens conversationnels. Voici le plan.',
+  publishedAt: '2026-06-11',
+  readingMinutes: 9,
+  author: DEFAULT_AUTHOR,
+  heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80',
+  heroCaption: 'Salle d\'examen — le HSK 2 est ton premier vrai test de conversation',
+  intro:
+    'Après le HSK 1, le HSK 2 multiplie ton vocabulaire par 2,4 et te donne enfin de quoi tenir une conversation simple en chinois. C\'est aussi le palier où les grammaires deviennent intéressantes : 了, mesureurs, particules finales. Voici comment t\'y préparer en 3 à 5 mois.',
+  sections: [
+    {
+      title: 'Ce que le HSK 2 demande (chiffres officiels)',
+      blocks: [
+        { type: 'p', text: 'Selon le standard HSK 3.0 publié par le Hanban en 2021 :' },
+        { type: 'list', items: [
+          'Vocabulaire CUMULÉ : 1 200 mots (vs 500 au HSK 1)',
+          'Caractères CUMULÉS : 600 (vs 300 au HSK 1)',
+          'Grammaires : 81 points',
+          'Niveau CECRL équivalent : A2'
+        ]},
+        { type: 'callout', tone: 'info', text: 'À ce niveau, tu peux tenir une conversation simple sur des sujets familiers (famille, achats, transport, météo) avec un débit modéré.' }
+      ]
+    },
+    {
+      title: 'Différences clés avec le HSK 1',
+      blocks: [
+        { type: 'p', text: 'Le HSK 2 introduit plusieurs nouveautés qui changent vraiment ton expérience du chinois :' },
+        { type: 'list', items: [
+          'Vrai temps passé : tu manies enfin 了 sans trembler',
+          'Mesureurs au-delà de 个 (只, 张, 本…)',
+          'Le futur avec 要',
+          'Les comparaisons avec 比',
+          'Particules finales (吗, 吧, 呢)',
+          'Phrases avec deux verbes (我去买东西)'
+        ]},
+        { type: 'p', text: 'À l\'oral, tu passes de "questions simples / réponses simples" à "courte conversation". C\'est la grosse marche.' }
+      ]
+    },
+    {
+      title: 'Format de l\'examen',
+      blocks: [
+        { type: 'p', text: 'Le HSK 2 (papier ou ordinateur) dure environ 55 minutes :' },
+        { type: 'list', items: [
+          'Compréhension orale (听力) : 35 questions, 25 min',
+          'Compréhension écrite (阅读) : 25 questions, 22 min',
+          'Pas d\'expression écrite ou orale au HSK 2 (ça vient au HSK 3)',
+          'Score : 60/100 pour réussir'
+        ]},
+        { type: 'callout', tone: 'success', text: 'À ce niveau, tout est en pinyin sous les hanzi. Tu n\'as pas encore besoin de lire 100 % en caractères.' }
+      ]
+    },
+    {
+      title: 'Le plan d\'attaque en 4 mois',
+      blocks: [
+        { type: 'h3', text: 'Mois 1 — Le vocabulaire HSK 2 (500 nouveaux mots)' },
+        { type: 'list', items: [
+          'Anki avec un deck HSK 2 (15 nouveaux mots/jour pendant 30 jours)',
+          'Drills d\'écoute sur ChinesePod, FluentU, ou XiaoLearn',
+          'Lecture des phrases d\'exemples à voix haute'
+        ]},
+        { type: 'h3', text: 'Mois 2 — La grammaire (les 81 points)' },
+        { type: 'list', items: [
+          'Particule 了 : sous tous ses angles (action passée, changement d\'état)',
+          'Les mesureurs courants',
+          'La comparaison avec 比',
+          'Les particules finales et leur nuance'
+        ]},
+        { type: 'h3', text: 'Mois 3 — Les annales blanches' },
+        { type: 'list', items: [
+          'Au moins 5 examens blancs complets en conditions réelles',
+          'Analyse des erreurs (en particulier les pièges d\'écoute)',
+          'Renforcement des points faibles'
+        ]},
+        { type: 'h3', text: 'Mois 4 — La consolidation' },
+        { type: 'list', items: [
+          'Lecture de textes simples (mini-histoires HSK 2)',
+          'Pratique conversationnelle (HelloTalk, Tandem, profs de Preply)',
+          'Encore 3 examens blancs pour valider ton timing'
+        ]}
+      ]
+    },
+    {
+      title: 'Les pièges du HSK 2',
+      blocks: [
+        { type: 'ordered', items: [
+          'Vocabulaire des chiffres et dates : les questions d\'écoute s\'amusent à en mettre plein. Sois rapide.',
+          'Les mesureurs : si tu hésites entre 个 et 只, tu perds 1 point. Apprends-les par cœur.',
+          'Les particules finales : 吗, 吧, 呢 ne sont pas interchangeables. Distingue-les bien.',
+          'Le pinyin avec tons : à ce niveau, ne pas savoir un ton coûte des points en écoute.',
+          'Le temps de lecture : tu n\'as que ~50 secondes par question. Pas le temps de tout traduire.'
+        ]}
+      ]
+    },
+    {
+      title: 'Ressources utiles',
+      blocks: [
+        { type: 'list', items: [
+          'XiaoLearn dictionnaire pour les 1 200 mots HSK 2 (pinyin + audios)',
+          'Du Chinese ou Pleco pour Anki et lecture',
+          'ChinesePod niveau Elementary',
+          'iTalki pour 30 min de conversation/semaine',
+          'Le manuel officiel HSK 2 du Hanban (chinois + français pour la grammaire)'
+        ]},
+        { type: 'callout', tone: 'info', text: 'Si tu prépares aussi le HSK 3 derrière, garde un planning de 8-10 mois total. Le HSK 3 est un palier majeur.' }
+      ]
+    },
+    {
+      title: 'Mon conseil personnel',
+      blocks: [
+        { type: 'p', text: 'Le HSK 2 est le palier le plus gratifiant de toute ta progression. Tu passes de "je dis bonjour" à "je tiens une vraie conversation simple". Profite-en pour pratiquer beaucoup à l\'oral : c\'est à ce niveau que la barrière psychologique se brise.' },
+        { type: 'p', text: 'Et si tu doutes, rappelle-toi : le HSK 2 n\'est pas un examen difficile pour quelqu\'un qui a fait son HSK 1 sérieusement. C\'est juste une question de volume. Tiens 3-4 mois et c\'est dans la poche.' },
+        { type: 'quote', text: 'Le HSK 2, c\'est la première fois où tu parles vraiment chinois. Pas un examen de plus — un cap émotionnel.', author: 'Perrine' }
+      ]
+    }
+  ]
+};
+
+const POST_CHENGYU: BlogPost = {
+  slug: 'les-chengyu-expressions-de-4-caracteres-chinois',
+  category: 'hanzi',
+  title: 'Les chengyu (成语) — Ces expressions de 4 caractères qui font tout en chinois',
+  lead:
+    'Les chengyu sont des expressions figées de 4 caractères qui condensent toute la sagesse chinoise en quelques syllabes. Apprends-en 10, et tu auras déjà l\'air bien plus avancé qu\'un HSK 5.',
+  publishedAt: '2026-06-11',
+  readingMinutes: 11,
+  author: DEFAULT_AUTHOR,
+  heroImage: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=1600&q=80',
+  heroCaption: 'Un manuel de chengyu — il en existe plus de 5 000, dont environ 1 000 vraiment courants',
+  intro:
+    'Si tu lis un journal chinois, regardes un drama ou écoutes une chanson de C-pop, tu entendras forcément des chengyu : ces blocs figés de 4 caractères qui condensent une idée, une morale ou une situation entière. Ce sont l\'âme littéraire du chinois moderne, et même un apprenant intermédiaire peut s\'en servir. Voici comment commencer.',
+  sections: [
+    {
+      title: 'Qu\'est-ce qu\'un chengyu',
+      blocks: [
+        { type: 'p', text: '成语 (chéngyǔ), littéralement "expression toute faite", désigne une catégorie d\'idiomes figés du chinois. Caractéristiques :' },
+        { type: 'list', items: [
+          'Composé presque toujours de 4 caractères (rarement 3 ou 5)',
+          'Tirent leur sens d\'une histoire ancienne, d\'un classique littéraire, d\'une morale confucéenne',
+          'Souvent intraduisibles littéralement — il faut connaître l\'origine pour comprendre',
+          'Très utilisés dans la presse, les discours, la littérature, et aussi l\'oral éduqué'
+        ]},
+        { type: 'p', text: 'Il existe environ 5 000 chengyu recensés, dont 1 000 vraiment courants et 100-200 indispensables. La connaissance des chengyu est un MARQUEUR de l\'éducation en Chine. Maîtriser quelques chengyu, c\'est gagner du respect.' },
+        { type: 'callout', tone: 'info', text: 'Un Chinois éduqué glisse en moyenne 2-3 chengyu par minute en conversation soutenue.' }
+      ]
+    },
+    {
+      title: '10 chengyu à connaître absolument',
+      blocks: [
+        { type: 'h3', text: '1. 马马虎虎 (mǎmǎhūhū) — "bof, comme ci comme ça"' },
+        { type: 'p', text: 'Le plus utile au quotidien. Littéralement "cheval-cheval-tigre-tigre", il signifie "moyen, sans plus". À utiliser quand on te demande comment était un film, un repas, un cours.' },
+        { type: 'example', hanzi: '今天怎么样？— 马马虎虎', pinyin: 'jīntiān zěnme yàng ? — mǎmǎhūhū', translationFr: 'comment ça s\'est passé aujourd\'hui ? — bof, comme ci comme ça' },
+        { type: 'h3', text: '2. 入乡随俗 (rùxiāng suísú) — "à Rome, fais comme les Romains"' },
+        { type: 'p', text: 'Littéralement "entrer dans le village, suivre les coutumes". À sortir quand tu acceptes une coutume locale qui te surprend.' },
+        { type: 'example', hanzi: '入乡随俗', pinyin: 'rù xiāng suí sú', translationFr: 'à Rome, fais comme les Romains' },
+        { type: 'h3', text: '3. 一举两得 (yī jǔ liǎng dé) — "faire d\'une pierre deux coups"' },
+        { type: 'p', text: 'Littéralement "un mouvement, deux gains". Quand une action résout deux problèmes à la fois.' },
+        { type: 'example', hanzi: '一举两得', pinyin: 'yī jǔ liǎng dé', translationFr: 'faire d\'une pierre deux coups' },
+        { type: 'h3', text: '4. 一帆风顺 (yī fān fēng shùn) — "que tout aille comme sur des roulettes"' },
+        { type: 'p', text: 'Littéralement "voile droite, vent favorable". Souhait classique de bonne route, de bon départ, qu\'on offre à quelqu\'un qui démarre un projet, un voyage, une nouvelle vie.' },
+        { type: 'example', hanzi: '祝你一帆风顺', pinyin: 'zhù nǐ yī fān fēng shùn', translationFr: 'que tout aille pour toi comme sur des roulettes' },
+        { type: 'h3', text: '5. 画蛇添足 (huà shé tiān zú) — "en rajouter inutilement"' },
+        { type: 'p', text: 'Littéralement "dessiner un serpent et lui ajouter des pattes". Pour décrire une action qui gâche un résultat déjà bon en en faisant trop.' },
+        { type: 'example', hanzi: '画蛇添足', pinyin: 'huà shé tiān zú', translationFr: 'gâter un travail en en faisant trop' },
+        { type: 'h3', text: '6. 一石二鸟 (yī shí èr niǎo) — "une pierre, deux oiseaux"' },
+        { type: 'p', text: 'Variante encore plus imagée de 一举两得.' },
+        { type: 'example', hanzi: '一石二鸟', pinyin: 'yī shí èr niǎo', translationFr: 'd\'une pierre deux coups' },
+        { type: 'h3', text: '7. 自相矛盾 (zì xiāng máo dùn) — "se contredire"' },
+        { type: 'p', text: 'Littéralement "lance contre bouclier" (référence à un marchand qui vantait à la fois une lance qui transperce tout et un bouclier que rien ne perce). Synonyme parfait de "se contredire".' },
+        { type: 'example', hanzi: '你的话自相矛盾', pinyin: 'nǐ de huà zì xiāng máo dùn', translationFr: 'tes propos se contredisent' },
+        { type: 'h3', text: '8. 名副其实 (míng fù qí shí) — "à la hauteur de sa réputation"' },
+        { type: 'p', text: 'Littéralement "le nom correspond à la réalité". Pour valider que quelque chose ou quelqu\'un mérite vraiment son titre.' },
+        { type: 'example', hanzi: '这家餐厅名副其实', pinyin: 'zhè jiā cāntīng míng fù qí shí', translationFr: 'ce restaurant est vraiment à la hauteur de sa réputation' },
+        { type: 'h3', text: '9. 半途而废 (bàn tú ér fèi) — "abandonner à mi-chemin"' },
+        { type: 'p', text: 'Littéralement "à mi-route, abandonner". À éviter dans la vie, à utiliser dans la conversation pour critiquer ou encourager.' },
+        { type: 'example', hanzi: '不要半途而废', pinyin: 'bù yào bàn tú ér fèi', translationFr: 'n\'abandonne pas à mi-chemin' },
+        { type: 'h3', text: '10. 守株待兔 (shǒu zhū dài tù) — "attendre que le poisson vienne"' },
+        { type: 'p', text: 'Littéralement "garder une souche en attendant un lapin" (un paysan, ayant vu un lapin se tuer contre une souche, s\'assit à côté pour attendre les prochains). Pour critiquer une attitude passive ou opportuniste.' },
+        { type: 'example', hanzi: '守株待兔', pinyin: 'shǒu zhū dài tù', translationFr: 'attendre passivement quelque chose qui n\'arrivera pas' }
+      ]
+    },
+    {
+      title: 'Comment apprendre les chengyu efficacement',
+      blocks: [
+        { type: 'ordered', items: [
+          'Apprends-les par THÈME (chance, travail, relations, sagesse) plutôt que dans le désordre.',
+          'Note systématiquement l\'origine (l\'histoire courte derrière). C\'est ce qui ancre le sens.',
+          'Repère-les en consommant des médias chinois : à chaque chengyu entendu dans un drama, note-le.',
+          'Utilise-les EN CONTEXTE, pas comme exercice isolé. Place-en un par jour dans tes conversations.',
+          'Démarre par 10-15 chengyu vraiment courants avant d\'élargir. Mieux 10 maîtrisés que 50 vagues.'
+        ]}
+      ]
+    },
+    {
+      title: 'Les pièges d\'usage',
+      blocks: [
+        { type: 'p', text: 'Un chengyu mal placé peut faire bizarre. Quelques règles :' },
+        { type: 'list', items: [
+          'Registre soutenu : un chengyu rend immédiatement un propos plus formel/littéraire. À éviter dans un chat WeChat ultra-casual entre potes.',
+          'Cohérence d\'âge : si tu as 22 ans et que tu sors un chengyu très classique en boîte, ça peut sonner forcé.',
+          'Connais le SENS exact avant de t\'en servir. Beaucoup de chengyu ont une nuance négative ou positive qu\'il faut respecter.',
+          'Ne mets pas DEUX chengyu dans la même phrase, sauf si tu fais de la littérature. C\'est l\'overdose.'
+        ]}
+      ]
+    },
+    {
+      title: 'Les chengyu dans la culture populaire',
+      blocks: [
+        { type: 'p', text: 'Les chengyu sont partout dans la culture chinoise moderne :' },
+        { type: 'list', items: [
+          'Titres de chansons C-pop (un classique : 一见钟情, "coup de foudre")',
+          'Titres de dramas et films (《一帆风顺》, 《半生缘》)',
+          'Slogans publicitaires (一目了然, "tout devient clair en un coup d\'œil")',
+          'Discours politiques (très très fréquents — chaque ministre y va du sien)',
+          'Articles de presse, éditoriaux'
+        ]},
+        { type: 'p', text: 'Repère-les, note-les. C\'est en les rencontrant en contexte que tu les retiens vraiment.' }
+      ]
+    },
+    {
+      title: 'Mon conseil personnel',
+      blocks: [
+        { type: 'p', text: 'Commence par les 10 chengyu de cet article et utilise-les dès cette semaine — même de manière maladroite. Mieux vaut un chengyu placé approximativement qu\'un mot juste à 100 %. Ton interlocuteur chinois remarquera l\'effort et te respectera pour ça.' },
+        { type: 'p', text: 'Sur le long terme, un objectif raisonnable est 5 chengyu par mois. En 2 ans, tu en auras 120 vraiment maîtrisés — c\'est-à-dire plus qu\'un Chinois moyen utilise au quotidien.' },
+        { type: 'quote', text: 'Le jour où tu places ton premier 马马虎虎 dans une vraie conversation et que ton interlocuteur sourit, tu as franchi une marche que personne ne peut t\'enlever.', author: 'Perrine' }
+      ]
+    }
+  ]
+};
+
 // ============================================================================
 //  EXPORT
 // ============================================================================
 
 export const BLOG_POSTS: BlogPost[] = [
+  POST_JE_T_AIME,
+  POST_SHI_DE,
+  POST_COULEURS,
+  POST_HSK2_GUIDE,
+  POST_CHENGYU,
   POST_MERCI,
   POST_BU_MEI,
   POST_ZODIAQUE,
