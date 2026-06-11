@@ -1218,8 +1218,8 @@ const A1_FAMILY_M2: LessonV2Exercise[] = [
     id: 'cecr-a1-family-m2-trans-fr2zh',
     type: 'translation',
     category: 'translation',
-    prompt: 'Traduis : « Et toi, quel âge as-tu ? »',
-    promptEn: 'Translate: «And you, how old are you?»',
+    prompt: 'Traduis : « Quel âge as-tu ? »',
+    promptEn: 'Translate: «How old are you?»',
     choices: [
       '\u4F60\u5462\uFF1F\u591A\u5927\uFF1F',
       '\u90A3\u4F60\u51E0\u5C81\uFF1F',
@@ -1227,8 +1227,8 @@ const A1_FAMILY_M2: LessonV2Exercise[] = [
       '\u4F60\u4ECA\u5E74\u591A\u5927\uFF1F'
     ],
     correctIndex: 3,
-    explanation: '你今年多大 ? formule neutre pour adulte. La proposition 2 s\u2019adresse à un enfant. La 1 et la 3 sont possibles mais moins complètes.',
-    explanationEn: '你今年多大? neutral wording for an adult. Option 2 is for a child. Options 1 and 3 are OK but less complete.'
+    explanation: '你今年多大 ? — formule neutre pour adulte (HSK1 standard). 你呢 ? 多大 ? suppose un contexte précédent (« Et toi ? »). 那你几岁 ? utilise 几岁 réservé aux enfants. 你多大了 ? est possible mais le 了 ajoute une nuance « depuis quand » non demandée ici.',
+    explanationEn: "你今年多大 ? — neutral wording for an adult (HSK1 standard). 你呢 ? 多大 ? presupposes a prior context ('And you?'). 那你几岁 ? uses 几岁, reserved for children. 你多大了 ? is possible but the 了 adds a 'since when' nuance not asked for here."
   },
   {
     id: 'cecr-a1-family-m2-err1',
