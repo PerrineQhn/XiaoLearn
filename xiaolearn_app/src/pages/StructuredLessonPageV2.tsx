@@ -1370,7 +1370,7 @@ const ExerciseCard = ({
       {errorCorrectionSegments && (
         <div className="lv2-exercise-jumbled">
           <div className="lv2-exercise-jumbled-label">
-            {language === 'en' ? '❌ Jumbled sentence' : '❌ Phrase mal ordonnée'}
+            {language === 'en' ? '❌ Sentence to fix' : '❌ Phrase à corriger'}
           </div>
           <div className="lv2-exercise-jumbled-chips">
             {errorCorrectionSegments.map((seg, i) => (
