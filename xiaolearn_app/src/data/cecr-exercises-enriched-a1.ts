@@ -1349,13 +1349,18 @@ const A1_FAMILY_M3: LessonV2Exercise[] = [
     id: 'cecr-a1-family-m3-err1',
     type: 'error-correction',
     category: 'grammar',
-    prompt: 'Quel pronom est inapproprié pour « le chat » dans « 它 / 他 / 她 » ?',
-    promptEn: 'Which pronoun is inappropriate for «the cat» among «它 / 他 / 她»?',
-    sentence: 'pour désigner un chat',
-    choices: ['\u5B83 (neutre)', '\u4ED6 (masc.)', '\u5979 (fém.)', 'les trois sont OK'],
-    correctIndex: 2,
-    explanation: '它 (tā, clé 宀) désigne les animaux et objets. 他 (masculin humain). 她 (féminin humain) est inapproprié pour un animal en chinois moderne standard.',
-    explanationEn: '它 (tā, roof radical) is for animals and objects. 他 (male human). 她 (female human) is inappropriate for an animal in modern standard Chinese.'
+    prompt: 'Quelle correction rend cette phrase correcte en chinois standard ?',
+    promptEn: 'Which fix makes this sentence correct in standard Chinese?',
+    sentence: '她是一只可爱的猫。 (« Elle est un chat mignon. »)',
+    choices: [
+      '她 → 它',
+      '是 → 在',
+      '一只 → 一个',
+      'aucune correction nécessaire'
+    ],
+    correctIndex: 0,
+    explanation: 'En chinois moderne standard, le pronom 它 (tā, clé 宀) désigne les animaux et objets. 他 (masc.) et 她 (fém.) sont réservés aux humains. Phrase correcte : 它是一只可爱的猫。 Note : à l\u2019oral familier, beaucoup de Chinois utilisent 他/她 par affection pour leur animal de compagnie — mais ce n\u2019est pas le standard.',
+    explanationEn: 'In modern standard Chinese, the pronoun 它 (tā, roof radical) is used for animals and objects. 他 (male) and 她 (female) are reserved for humans. Correct: 它是一只可爱的猫。 Note: colloquially, many Chinese speakers use 他/她 affectionately for their pet — but it\u2019s not the standard.'
   },
   {
     id: 'cecr-a1-family-m3-listen1',
