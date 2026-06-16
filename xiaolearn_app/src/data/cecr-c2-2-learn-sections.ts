@@ -107,7 +107,7 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '繁體字', pinyin: 'fán tǐ zì', meaning: 'caract. traditionnels', meaningEn: 'traditional chars', audio: 'audio/hsk6/hsk6_繁体.wav' },
       { hanzi: '简体字', pinyin: 'jiǎn tǐ zì', meaning: 'caract. simplifiés', meaningEn: 'simplified chars', audio: 'audio/hsk6/hsk6_简体.wav' },
       { hanzi: '唔該', pinyin: 'm4 goi1', meaning: 'merci (cantonais)', meaningEn: 'thanks (Cantonese)', audio: 'audio/hsk6/hsk6_唔.wav' },
-      { hanzi: '嘅', pinyin: 'ge3', meaning: 'particule possessive (cant.)', meaningEn: 'possessive (cant.)', audio: 'audio/hsk6/hsk6_嘅.wav' }
+      { hanzi: '嘅', pinyin: 'gě', meaning: 'particule possessive (cant.)', meaningEn: 'possessive (cant.)', audio: 'audio/hsk6/hsk6_嘅.wav' }
     ],
     tip:
       'À HK, dire « 唔該 » (m4 goi1) au moindre échange (commande, demande de chemin, paiement) = signal IMMÉDIAT que tu connais les codes locaux. Les Hongkongais apprécient ce minimum d\'effort linguistique, plus encore que de parler cantonais courant.',

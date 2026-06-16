@@ -22,7 +22,14 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const dryRun = process.argv.includes('--dry-run');
+const argv = process.argv.slice(2);
+const dryRun = argv.includes('--dry-run');
+const getVal = (n) =>
+  argv.find((a) => a.startsWith(`--${n}=`))?.slice(`--${n}=`.length);
+// --root et --hsk-prefix : permettent de cibler un autre projet
+const rootArg = getVal('root');
+const hskPrefix = getVal('hsk-prefix') || 'dictionary/hsk';
+const ROOT = rootArg ? path.resolve(rootArg) : PROJECT_ROOT;
 
 /**
  * Liste des règles polyphones. Chaque entrée :
@@ -146,9 +153,10 @@ function applyRules(text, py, samples) {
   return { newPy, changed };
 }
 
-function processFile(fp, isMap) {
+function processFile(fp) {
   const raw = JSON.parse(fs.readFileSync(fp, 'utf8'));
-  const entries = isMap ? Object.values(raw) : raw;
+  // Détecte le format auto : array (xiaolearn_app/hors-hsk) ou dict (HSK + reference)
+  const entries = Array.isArray(raw) ? raw : Object.values(raw);
   let n = 0;
   const samples = [];
   for (const e of entries) {
@@ -185,14 +193,18 @@ function main() {
   let total = 0;
   const allSamples = [];
 
+  console.log(`   Root : ${ROOT}`);
+  console.log(`   HSK prefix : ${hskPrefix}`);
+  console.log('');
+
   // Hors-HSK
-  const horshskDir = path.join(PROJECT_ROOT, 'public', 'data', 'hors-hsk');
+  const horshskDir = path.join(ROOT, 'public', 'data', 'hors-hsk');
   for (const c of fs
     .readdirSync(horshskDir)
     .filter((f) => f.startsWith('chunk-') && f.endsWith('.json'))
     .sort()) {
     const fp = path.join(horshskDir, c);
-    const { n, samples } = processFile(fp, false);
+    const { n, samples } = processFile(fp);
     total += n;
     if (n > 0) console.log(`   hors-hsk/${c}: ${n}`);
     if (allSamples.length < 8) {
@@ -201,7 +213,7 @@ function main() {
   }
 
   // HSK
-  const hskRoot = path.join(PROJECT_ROOT, 'public', 'data', 'dictionary', 'hsk');
+  const hskRoot = path.join(ROOT, 'public', 'data', ...hskPrefix.split('/'));
   for (const lvl of ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'hsk7']) {
     const dir = path.join(hskRoot, lvl);
     if (!fs.existsSync(dir)) continue;
@@ -210,7 +222,7 @@ function main() {
       .filter((f) => f.startsWith('chunk-') && f.endsWith('.json'))
       .sort()) {
       const fp = path.join(dir, c);
-      const { n, samples } = processFile(fp, true);
+      const { n, samples } = processFile(fp);
       total += n;
       if (n > 0) console.log(`   ${lvl}/${c}: ${n}`);
       if (allSamples.length < 8) {

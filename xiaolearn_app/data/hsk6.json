@@ -3612,13 +3612,13 @@
     "audio": "audio/hsk6/hsk6_部队.mp3",
     "examples": [
       {
-        "chinese": "我们是部隊。",
+        "chinese": "我们是部队。",
         "pinyin": "Wǒmen shì bùduì.",
         "translationFr": "Nous sommes une unité militaire.",
         "translationEn": "Cotton fabric"
       },
       {
-        "chinese": "他们属于不同的部隊。",
+        "chinese": "他们属于不同的部队。",
         "pinyin": "Tāmen shǔyú bùtóng de bùduì.",
         "translationFr": "Ils appartiennent à différentes unités militaires.",
         "translationEn": "They belong to different units"
@@ -3795,14 +3795,14 @@
     "audio": "audio/hsk6/hsk6_不料.mp3",
     "examples": [
       {
-        "chinese": "不料他會來。",
-        "pinyin": "bú liào tā huì lái 。",
+        "chinese": "不料他会来。",
+        "pinyin": "búliào tā huì lái.",
         "translationFr": "Il est venu, ce qui m'a surpris.",
         "translationEn": "To my surprise, he came."
       },
       {
-        "chinese": "不料這場雨下了一整天。",
-        "pinyin": "bú liào zhè chǎng yǔ xià le yì zhěng tiān 。",
+        "chinese": "不料这场雨下了一整天。",
+        "pinyin": "búliào zhèchǎng yǔ xià le yìzhěngtiān.",
         "translationFr": "Il a plu pendant toute la journée, ce qui est surprenant.",
         "translationEn": "It rained all day, which is surprising."
       }
@@ -7724,8 +7724,8 @@
         "translationEn": "To achieve results"
       },
       {
-        "chinese": "显著成效",
-        "pinyin": "xiǎnzhù chéngxiào",
+        "chinese": "显着成效",
+        "pinyin": "xiǎn zhe chéngxiào",
         "translationFr": "Résultats remarquables",
         "translationEn": "Remarkable results"
       },
@@ -16188,7 +16188,7 @@
       },
       {
         "chinese": "多才多艺的员工",
-        "pinyin": "duōcái",
+        "pinyin": "duōcáiduōyì de yuángōng",
         "translationFr": "duōyì de yuángōng- Employé polyvalent",
         "translationEn": "A versatile employee"
       }
@@ -21997,8 +21997,8 @@
     "audio": "audio/hsk6/hsk6_功效.mp3",
     "examples": [
       {
-        "chinese": "功效显著",
-        "pinyin": "gōngxiào xiǎnzhù",
+        "chinese": "功效显着",
+        "pinyin": "gōngxiào xiǎn zhe",
         "translationFr": "Efficacité remarquable",
         "translationEn": "Remarkably effective"
       },
@@ -47170,14 +47170,14 @@
     "audio": "audio/hsk6/hsk6_恰恰.mp3",
     "examples": [
       {
-        "chinese": "恰好他來了。",
-        "pinyin": "qiàqià tā lái le.",
+        "chinese": "恰好他来了。",
+        "pinyin": "qiàhǎo tā lái le.",
         "translationFr": "Exactement, il est arrivé.",
         "translationEn": "Exactly, he has arrived."
       },
       {
-        "chinese": "我們剛好在同一時間到達。",
-        "pinyin": "wǒmen gānghǎo zài tóngyīnshí dào达.",
+        "chinese": "我们刚好在同一时间到达。",
+        "pinyin": "wǒmen gānghǎo zài tóngyìshíjiān dàodá.",
         "translationFr": "Nous sommes justement arrivés en même temps.",
         "translationEn": "We just happened to arrive at the same time."
       }
@@ -66191,27 +66191,27 @@
   {
     "id": "hsk6-1431",
     "level": "hsk6",
-    "hanzi": "显著",
+    "hanzi": "显着",
     "pinyin": "xiǎnzhù",
     "translationFr": "évident; notable",
     "category": "général",
     "audio": "audio/hsk6/hsk6_显著.mp3",
     "examples": [
       {
-        "chinese": "显著的特征",
-        "pinyin": "xiǎnzhù de tèzhēng",
+        "chinese": "显着的特征",
+        "pinyin": "xiǎn zhe de tèzhēng",
         "translationFr": "Caractéristiques évidentes",
         "translationEn": "Distinctive features"
       },
       {
-        "chinese": "显著的改善",
-        "pinyin": "xiǎnzhù de gǎishàn",
+        "chinese": "显着的改善",
+        "pinyin": "xiǎn zhe de gǎishàn",
         "translationFr": "Améliorations notables",
         "translationEn": "Notable improvements"
       },
       {
-        "chinese": "显著提高",
-        "pinyin": "xiǎnzhù tígāo",
+        "chinese": "显着提高",
+        "pinyin": "xiǎn zhe tígāo",
         "translationFr": "Amélioration notable",
         "translationEn": "Significant improvement"
       }
@@ -66685,8 +66685,8 @@
         "translationEn": "Effect assessment"
       },
       {
-        "chinese": "效应显著",
-        "pinyin": "xiàoyìng xiǎnzhù",
+        "chinese": "效应显着",
+        "pinyin": "xiàoyìng xiǎn zhe",
         "translationFr": "Effet notable",
         "translationEn": "Significant effect"
       }
@@ -69628,7 +69628,7 @@
     "audio": "audio/hsk6/hsk6_仰.mp3",
     "examples": [
       {
-        "chinese": "他仰頭看天空。",
+        "chinese": "他仰头看天空。",
         "pinyin": "tā yǎng tóu kàn tiān kōng",
         "translationFr": "Il regarde le ciel en levant la tête; il se redresse et regarde le ciel.",
         "translationEn": "He raised his head to look at the sky.他仰頭看天空"
@@ -77166,7 +77166,7 @@
     "audio": "audio/hsk6/hsk6_占据.mp3",
     "examples": [
       {
-        "chinese": "我们占據了这个房间。",
+        "chinese": "我们占据了这个房间。",
         "pinyin": "Wǒmen zhànjù le zhège fángjiān.",
         "translationFr": "Nous avons occupé cette chambre.",
         "translationEn": "We occupied this room."
@@ -82002,7 +82002,7 @@
         "translationEn": "I wish you happiness"
       },
       {
-        "chinese": "我祝願你成功",
+        "chinese": "我祝愿你成功",
         "pinyin": "wǒ zhùyuàn nǐ chénggōng",
         "translationFr": "Je te souhaite du succès.",
         "translationEn": "I wish you success"

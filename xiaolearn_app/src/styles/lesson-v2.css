@@ -430,6 +430,23 @@
 .lesson-v2 .lv2-exercise-jumbled-text {
   line-height: 1.2;
 }
+.lesson-v2 .lv2-exercise-jumbled-target {
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+.lesson-v2 .lv2-jumbled-target-label {
+  font-weight: 700;
+  color: #b91c1c;
+}
+.lesson-v2 .lv2-jumbled-target-text {
+  font-style: italic;
+}
 
 /* Indice de sens (traduction) pour les exercices `fill` : permet au
    learner de savoir ce que la phrase veut dire avant de choisir. */

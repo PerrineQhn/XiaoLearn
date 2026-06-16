@@ -3260,14 +3260,14 @@
     "audio": "audio/hsk3/hsk1_除了.mp3",
     "examples": [
       {
-        "chinese": "除了他，誰也沒來。",
-        "pinyin": "chu2 le5 ta1 , shei2 ye3 mei2 lai2",
+        "chinese": "除了他，谁也没来。",
+        "pinyin": "chúle tā, shuí yě méi lái.",
         "translationFr": "Sauf lui, personne n'est venu.",
         "translationEn": "Everyone but him didn't come."
       },
       {
-        "chinese": "除了英語，他也會法語。",
-        "pinyin": "chu2 le5 Ying1 yu3 , ta1 ye3 hui4 Fa3 yu3",
+        "chinese": "除了英语，他也会法语。",
+        "pinyin": "chú le yīng yǔ , tā yě huì fǎ yǔ",
         "translationFr": "En outre qu'anglais, il maîtrise aussi le français.",
         "translationEn": "Besides English, he also knows French."
       }
@@ -6391,7 +6391,7 @@
       },
       {
         "chinese": "发烧38度",
-        "pinyin": "fā shāo sānshíbā dù",
+        "pinyin": "fāshāo38 dù",
         "translationFr": "la température de la fièvre est de 38 degrés",
         "translationEn": "My fever is 38 degrees"
       },
@@ -10803,13 +10803,13 @@
     "examples": [
       {
         "chinese": "他们结婚了。",
-        "pinyin": "tāmen jiéhūn le4",
+        "pinyin": "tāmen jiéhūn lè",
         "translationFr": "Ils se sont mariés.",
         "translationEn": "They got married."
       },
       {
         "chinese": "她已经结过婚两次了。",
-        "pinyin": "tā yǐjīng jiéguò huān liǎ2 cì le4",
+        "pinyin": "tā yǐjīng jiéguò huān liǎ2 cì lè",
         "translationFr": "Elle s'est déjà mariée deux fois.",
         "translationEn": "She has already been married twice."
       }
@@ -13920,13 +13920,13 @@
     "audio": "audio/hsk3/hsk3_毛.mp3",
     "examples": [
       {
-        "chinese": "他留了長毛。",
-        "pinyin": "tā liú le zhǎng máo.",
+        "chinese": "他留了长毛。",
+        "pinyin": "tā liú le chángmáo.",
         "translationFr": "Il a laissé pousser des cheveux longs.",
         "translationEn": "He let his hair grow long."
       },
       {
-        "chinese": "這張紙上有毛。",
+        "chinese": "这张纸上有毛。",
         "pinyin": "zhè zhāng zhǐ shàng yǒu máo.",
         "translationFr": "Il y a des poils sur cette feuille de papier.",
         "translationEn": "There are hairs on this piece of paper."
@@ -23224,7 +23224,7 @@
     "examples": [
       {
         "chinese": "我的邮箱是wang@gmail.com",
-        "pinyin": "wǒ de yóuxiāng shì wǎng @ gēmílú.",
+        "pinyin": "wǒ de yóuxiāng shìwang@gmail.com",
         "translationFr": "Mon adresse e-mail est wang@gmail.com",
         "translationEn": "My email address is wang@gmail.com."
       },

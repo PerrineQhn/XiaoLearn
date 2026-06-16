@@ -2183,14 +2183,14 @@
     "audio": "audio/hsk1/hsk1_多少.mp3",
     "examples": [
       {
-        "chinese": "多少錢？",
-        "pinyin": "duō shǎo qián ？",
+        "chinese": "多少钱？",
+        "pinyin": "duōshǎo qián?",
         "translationFr": "Combien coûte ce produit ?",
         "translationEn": "How much does it cost?"
       },
       {
-        "chinese": "你的學號是多少？",
-        "pinyin": "nǐ de xué hào shì duō shǎo ？",
+        "chinese": "你的学号是多少？",
+        "pinyin": "nǐ de xué hào shì duōshǎo?",
         "translationFr": "Quel est ton numéro d'étudiant ?",
         "translationEn": "What's your student ID number?"
       }
@@ -2363,13 +2363,13 @@
     "examples": [
       {
         "chinese": "我吃了饭。",
-        "pinyin": "wo3 ne5 chi2 le5 fan1",
+        "pinyin": "wǒ ne chí le fān",
         "translationFr": "J'ai mangé du riz cuit.",
         "translationEn": "I had some rice for dinner."
       },
       {
         "chinese": "今天午饭吃什么？",
-        "pinyin": "jin1tian4 wuzhong1 shi4 me5 chi1",
+        "pinyin": "jīntiàn wuzhōng shì me chī",
         "translationFr": "Qu'est-ce qu'on mange pour le déjeuner aujourd'hui ?",
         "translationEn": "What are we having for lunch today?"
       }
@@ -2407,13 +2407,13 @@
     "audio": "audio/hsk1/hsk1_饭店.mp3",
     "examples": [
       {
-        "chinese": "我们住在飯店里。",
+        "chinese": "我们住在饭店里。",
         "pinyin": "wǒmen zhù zài fàndiàn lǐ.",
         "translationFr": "Nous avons logé dans un hôtel.",
         "translationEn": "We stayed in a restaurant."
       },
       {
-        "chinese": "他去了飯店休息一下。",
+        "chinese": "他去了饭店休息一下。",
         "pinyin": "tā qù le fàndiàn xiūxì yī xià.",
         "translationFr": "Il est allé se reposer dans un hôtel.",
         "translationEn": "He went to a hotel to rest for a while."
@@ -5103,14 +5103,14 @@
     "audio": "audio/hsk1/hsk1_来.mp3",
     "examples": [
       {
-        "chinese": "他來了。",
-        "pinyin": "ta2 lai2",
+        "chinese": "他来了。",
+        "pinyin": "tā lái le.",
         "translationFr": "Il est venu.",
         "translationEn": "He came."
       },
       {
-        "chinese": "自古以來，人們就一直在探索宇宙。",
-        "pinyin": "zi4 gu3 yi3 lai2, ren2 men5 jiu4 zai4 yin1 ci3 tong4 suo3 tou4 u4 zhong4",
+        "chinese": "自古以来，人们就一直在探索宇宙。",
+        "pinyin": "zìgǔyǐlái, rénmen jiù yìzhí zài tànsuǒ yǔzhòu.",
         "translationFr": "Depuis toujours, les gens ont continué à explorer l'univers.",
         "translationEn": "Since ancient times, people have always been exploring the universe."
       }
@@ -6500,7 +6500,7 @@
     "examples": [
       {
         "chinese": "书店在那里。",
-        "pinyin": "dànuǎn nàlǐ yǒu diànshūguǎn.",
+        "pinyin": "shūdiàn zài nàlǐ.",
         "translationFr": "Le magasin de livres est là.",
         "translationEn": "The bookstore is there."
       },
@@ -8518,7 +8518,7 @@
       },
       {
         "chinese": "我们明天上课。",
-        "pinyin": "wǒmen3 míngtiān4 shàngkè1",
+        "pinyin": "wǒměn míngtiān shàngkè1",
         "translationFr": "Nous allons suivre des classes demain.",
         "translationEn": "We will attend classes tomorrow."
       }
@@ -9915,8 +9915,8 @@
         "translationEn": "The weather is very good"
       },
       {
-        "chinese": "我们抬头望向天空。",
-        "pinyin": "wǒ men tóutái wàng xiàng tiānkōng。",
+        "chinese": "我们擡头望向天空。",
+        "pinyin": "wǒmen tái tóu wàng xiàng tiānkōng.",
         "translationFr": "Nous regardons le ciel en levant la tête.",
         "translationEn": "We look up at the sky"
       }

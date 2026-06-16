@@ -2183,14 +2183,14 @@
     "audio": "audio/hsk1/hsk1_多少.wav",
     "examples": [
       {
-        "chinese": "多少錢？",
-        "pinyin": "duōshǎo qián？",
+        "chinese": "多少钱？",
+        "pinyin": "duōshǎo qián?",
         "translationFr": "Combien coûte ce produit ?",
         "translationEn": "How much does it cost?"
       },
       {
-        "chinese": "你的學號是多少？",
-        "pinyin": "nǐ de xué hào shì duōshǎo？",
+        "chinese": "你的学号是多少？",
+        "pinyin": "nǐ de xué hào shì duōshǎo?",
         "translationFr": "Quel est ton numéro d'étudiant ?",
         "translationEn": "What's your student ID number?"
       }
@@ -2407,14 +2407,14 @@
     "audio": "audio/hsk1/hsk1_饭店.wav",
     "examples": [
       {
-        "chinese": "我们住在飯店里。",
-        "pinyin": "wǒmen zhù zài fàn diànlǐ。",
+        "chinese": "我们住在饭店里。",
+        "pinyin": "wǒmen zhù zài fàndiàn lǐ.",
         "translationFr": "Nous avons logé dans un hôtel.",
         "translationEn": "We stayed in a restaurant."
       },
       {
-        "chinese": "他去了飯店休息一下。",
-        "pinyin": "tā qù le fàn diàn xiūxi yíxià。",
+        "chinese": "他去了饭店休息一下。",
+        "pinyin": "tā qù le fàndiàn xiūxi yíxià.",
         "translationFr": "Il est allé se reposer dans un hôtel.",
         "translationEn": "He went to a hotel to rest for a while."
       }
@@ -5103,14 +5103,14 @@
     "audio": "audio/hsk1/hsk1_来.wav",
     "examples": [
       {
-        "chinese": "他來了。",
-        "pinyin": "tā lái le。",
+        "chinese": "他来了。",
+        "pinyin": "tā lái le.",
         "translationFr": "Il est venu.",
         "translationEn": "He came."
       },
       {
-        "chinese": "自古以來，人們就一直在探索宇宙。",
-        "pinyin": "zìgǔ yǐ lái， rén mén jiù yìzhí zài tànsuǒ yǔzhòu。",
+        "chinese": "自古以来，人们就一直在探索宇宙。",
+        "pinyin": "zìgǔyǐlái, rénmen jiù yìzhí zài tànsuǒ yǔzhòu.",
         "translationFr": "Depuis toujours, les gens ont continué à explorer l'univers.",
         "translationEn": "Since ancient times, people have always been exploring the universe."
       }
@@ -9915,8 +9915,8 @@
         "translationEn": "The weather is very good"
       },
       {
-        "chinese": "我们抬头望向天空。",
-        "pinyin": "wǒmen táitóu wàng xiàng tiānkōng。",
+        "chinese": "我们擡头望向天空。",
+        "pinyin": "wǒmen tái tóu wàng xiàng tiānkōng.",
         "translationFr": "Nous regardons le ciel en levant la tête.",
         "translationEn": "We look up at the sky"
       }

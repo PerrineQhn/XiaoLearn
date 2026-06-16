@@ -1306,7 +1306,7 @@
     "examples": [
       {
         "chinese": "报警了，快打110！",
-        "pinyin": "bàojǐng le, kuài dǎ yībān líng!",
+        "pinyin": "bàojǐng le, kuài dǎ110!",
         "translationFr": "Alertez la police, appelez 110 !",
         "translationEn": "Alert the police, call 110!"
       },
@@ -12972,7 +12972,7 @@
     "examples": [
       {
         "chinese": "电池没电了。",
-        "pinyin": "diànchí méi dian3 le4",
+        "pinyin": "diànchí méi diǎn lè",
         "translationFr": "La batterie est sans électricité.",
         "translationEn": "The battery is dead"
       },
@@ -32275,13 +32275,13 @@
     "audio": "audio/hsk5/hsk5_颗.mp3",
     "examples": [
       {
-        "chinese": "一顆珍珠",
+        "chinese": "一颗珍珠",
         "pinyin": "yī kē zhēnzhū",
         "translationFr": "Un perle",
         "translationEn": "A pearl"
       },
       {
-        "chinese": "三顆糖果",
+        "chinese": "三颗糖果",
         "pinyin": "sān kē tángguǒ",
         "translationFr": "Trois bonbons",
         "translationEn": "Three candies"
@@ -40244,7 +40244,7 @@
     "audio": "audio/hsk5/hsk5_匹.mp3",
     "examples": [
       {
-        "chinese": "一匹馬",
+        "chinese": "一匹马",
         "pinyin": "yī pǐ mǎ",
         "translationFr": "Un cheval (utilisé avec le classificateur \"匹\")",
         "translationEn": "A horse"
@@ -77187,7 +77187,7 @@
     "examples": [
       {
         "chinese": "总数是50。",
-        "pinyin": "zǒngshù shì wǔ shí。",
+        "pinyin": "zǒngshù shì50.",
         "translationFr": "Le total est cinquante.",
         "translationEn": "The total is fifty."
       },

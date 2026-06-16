@@ -1380,6 +1380,25 @@ const ExerciseCard = ({
               </span>
             ))}
           </div>
+          {/* Affiche la traduction française cible pour lever l'ambiguïté
+              (sans la traduction, des phrases comme 我去到学校 peuvent vouloir
+              dire « je vais à l'école » → 到 en trop, OU « je suis arrivé à
+              l'école » → 去 en trop. Avec la trad le user sait quel mot est
+              en trop). */}
+          {(language === 'en'
+            ? exercise.sentenceEn
+            : exercise.sentenceFr ?? exercise.sentenceEn) && (
+            <div className="lv2-exercise-jumbled-target">
+              <span className="lv2-jumbled-target-label">
+                {language === 'en' ? '🎯 Target meaning:' : '🎯 Sens visé :'}
+              </span>{' '}
+              <span className="lv2-jumbled-target-text">
+                {language === 'en'
+                  ? exercise.sentenceEn
+                  : exercise.sentenceFr ?? exercise.sentenceEn}
+              </span>
+            </div>
+          )}
         </div>
       )}
       <div className="lv2-exercise-prompt">{promptText}</div>

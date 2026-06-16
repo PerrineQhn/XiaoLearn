@@ -2549,13 +2549,13 @@
     "audio": "audio/hsk2/hsk2_过来.mp3",
     "examples": [
       {
-        "chinese": "他過來了。",
+        "chinese": "他过来了。",
         "pinyin": "tā guòlái le.",
         "translationFr": "Il est venu.",
         "translationEn": "He came over."
       },
       {
-        "chinese": "她從門外進來，然後過來坐在我旁邊。",
+        "chinese": "她从门外进来，然后过来坐在我旁边。",
         "pinyin": "tā cóng mén wài jìn lái, ránhòu guòlái zuò zài wǒ pángbiān.",
         "translationFr": "Elle est entrée par la porte et est venue s'asseoir à côté de moi.",
         "translationEn": "She entered through the door and sat beside me."
@@ -3934,13 +3934,13 @@
     "examples": [
       {
         "chinese": "酒店",
-        "pinyin": "jiǔdiàn2",
+        "pinyin": "jiǔdiàn",
         "translationFr": "établissement hôtelier",
         "translationEn": "hotel"
       },
       {
         "chinese": "这是一家酒店。",
-        "pinyin": "zhè shì yī jiā jiǔdiàn4.",
+        "pinyin": "zhè shì yī jiā jiǔdiàn.",
         "translationFr": "C'est un établissement hôtelier.",
         "translationEn": "This is a hotel."
       }
@@ -8627,7 +8627,7 @@
     "audio": "audio/hsk2/hsk1_眼睛.mp3",
     "examples": [
       {
-        "chinese": "他有一隻眼睛。",
+        "chinese": "他有一只眼睛。",
         "pinyin": "tā yǒu yī zhī yǎnjing",
         "translationFr": "Il a un œil.",
         "translationEn": "He has one eye."

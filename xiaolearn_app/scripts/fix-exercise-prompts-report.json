@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-05-30T08:12:49.102Z",
+  "mode": "write",
+  "totalPatches": 5,
+  "patches": [
+    {
+      "file": "src/data/cecr-exercises.ts",
+      "exerciseId": "cecr-a2-grammar-m3-contrast-4",
+      "field": "promptEn",
+      "before": "«What are you doing?» — version with 呢.",
+      "after": "«What are you doing?» — version.",
+      "ruleMatched": 0
+    },
+    {
+      "file": "src/data/cecr-exercises.ts",
+      "exerciseId": "cecr-a2-grammar-m4-contrast-4",
+      "field": "prompt",
+      "before": "« Personne ne vient. » — négation avec 都.",
+      "after": "« Personne ne vient. » — négation.",
+      "ruleMatched": 0
+    },
+    {
+      "file": "src/data/cecr-exercises.ts",
+      "exerciseId": "cecr-a2-grammar-m4-contrast-4",
+      "field": "promptEn",
+      "before": "«No one is coming.» — negation with 都.",
+      "after": "«No one is coming.» — negation.",
+      "ruleMatched": 0
+    },
+    {
+      "file": "src/data/cecr-exercises-enriched-a1.ts",
+      "exerciseId": "cecr-a1-hello-m4-fill1",
+      "field": "prompt",
+      "before": "Annoncer ton origine avec 来自.",
+      "after": "Annoncer ton origine.",
+      "ruleMatched": 0
+    },
+    {
+      "file": "src/data/cecr-exercises-enriched-a1.ts",
+      "exerciseId": "cecr-a1-hello-m4-fill1",
+      "field": "promptEn",
+      "before": "State your origin with 来自.",
+      "after": "State your origin.",
+      "ruleMatched": 0
+    }
+  ]
+}

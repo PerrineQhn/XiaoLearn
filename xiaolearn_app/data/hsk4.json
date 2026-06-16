@@ -12117,7 +12117,7 @@
         "translationEn": "My arm hurts"
       },
       {
-        "chinese": "抬起胳膊",
+        "chinese": "擡起胳膊",
         "pinyin": "tái qǐ gēbo",
         "translationFr": "Lever le bras",
         "translationEn": "Lift your arm"
@@ -35754,7 +35754,7 @@
   {
     "id": "hsk4-0715",
     "level": "hsk4",
-    "hanzi": "抬",
+    "hanzi": "擡",
     "pinyin": "tái",
     "translationFr": "lever; soulever",
     "category": "verbe",
@@ -35762,19 +35762,19 @@
     "audio": "audio/hsk4/hsk4_抬.mp3",
     "examples": [
       {
-        "chinese": "抬起来",
+        "chinese": "擡起来",
         "pinyin": "tái qǐlai",
         "translationFr": "Soulever",
         "translationEn": "lift up"
       },
       {
-        "chinese": "抬不动",
+        "chinese": "擡不动",
         "pinyin": "tái bú dòng",
         "translationFr": "Ne pas pouvoir soulever",
         "translationEn": "can't lift"
       },
       {
-        "chinese": "抬头",
+        "chinese": "擡头",
         "pinyin": "táitóu",
         "translationFr": "Lever la tête",
         "translationEn": "raise one's head"
@@ -35855,7 +35855,7 @@
   {
     "id": "hsk4-0717",
     "level": "hsk4",
-    "hanzi": "抬头",
+    "hanzi": "擡头",
     "pinyin": "táitóu",
     "translationFr": "lever la tête",
     "category": "verbe",
@@ -35863,19 +35863,19 @@
     "audio": "audio/hsk4/hsk4_抬头.mp3",
     "examples": [
       {
-        "chinese": "抬头看",
+        "chinese": "擡头看",
         "pinyin": "táitóu kàn",
         "translationFr": "Lever la tête et regarder",
         "translationEn": "look up"
       },
       {
-        "chinese": "抬头看天",
+        "chinese": "擡头看天",
         "pinyin": "táitóu kàn tiān",
         "translationFr": "Lever les yeux vers le ciel",
         "translationEn": "look up at the sky"
       },
       {
-        "chinese": "别抬头",
+        "chinese": "别擡头",
         "pinyin": "bié táitóu",
         "translationFr": "Ne lève pas la tête",
         "translationEn": "don't look up"
@@ -38378,7 +38378,7 @@
     "examples": [
       {
         "chinese": "网址是www.example.com",
-        "pinyin": "wǎngzhǐ shì wénxínɡànɡǔménɡ",
+        "pinyin": "wǎngzhǐ shìwww.example.com",
         "translationFr": "L'adresse web est www.exemple.com",
         "translationEn": "The website address is www.example.com"
       },
