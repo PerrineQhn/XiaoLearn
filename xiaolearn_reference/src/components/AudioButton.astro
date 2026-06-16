@@ -6,7 +6,7 @@
  *  - `hanzi` + `level` (ex. "你好", "hsk1") → joue audio/hsk1/hsk1_你好.mp3
  *  - `hanzi` seul (ex. exemple de phrase) → joue audio/examples/<fnv-hash>.mp3
  *
- * Tout le runtime est dans le <script> client : le bouton ne fait rien au
+ * Tout le runtime est dans le script client : le bouton ne fait rien au
  * SSR, le hash FNV-1a + l'URL sont calculés au clic. Permet un build 100%
  * statique compatible prerender Cloudflare.
  *
