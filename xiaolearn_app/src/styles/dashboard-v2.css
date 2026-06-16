@@ -1448,6 +1448,25 @@
   width: 100%;
 }
 
+/* Mobile : autorise le wrap des titres longs (genre « Les 4 mots de politesse :
+   请, 谢谢, 不客气, 对不起 ») qui se faisaient tronquer en ellipsis sur petit
+   écran. Sur mobile on a la place verticale pour étaler. */
+@media (max-width: 600px) {
+  .path-tl-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .path-tl-item.is-done .path-tl-title {
+    /* Le strikethrough doit traverser les lignes wrap aussi */
+    text-decoration: line-through;
+    text-decoration-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
 .path-tl-rest {
   padding: 6px 0 2px 44px;
   font-size: 12px;
