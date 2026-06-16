@@ -533,28 +533,28 @@ export const shiVerbLearnSections: LessonV2LearnSection[] = [
       {
         zh: [
           { text: '我', pinyin: 'wǒ', role: 'sujet' },
-          { text: '很', pinyin: 'hěn', role: 'modificateur' },
-          { text: '累', pinyin: 'lèi', role: 'verbe' }
+          { text: '很', pinyin: 'hěn', role: 'copule' },
+          { text: '累', pinyin: 'lèi', role: 'modificateur' }
         ],
         fr: [
           { text: 'Je', role: 'sujet' },
           { text: 'suis', role: 'copule' },
-          { text: 'fatigué', role: 'verbe' }
+          { text: 'fatigué', role: 'modificateur' }
         ],
-        note: '✗ 我是累 — INTERDIT. ✓ 我很累. 累 est un ADJECTIF, donc 很 + adjectif. 是 n\'apparaît pas.'
+        note: '✗ 我是累 — INTERDIT. ✓ 我很累. 很 joue ici le rôle de liaison (= « suis ») devant l\'adjectif 累.'
       },
       {
         zh: [
           { text: '他', pinyin: 'tā', role: 'sujet' },
-          { text: '很', pinyin: 'hěn', role: 'modificateur' },
-          { text: '高', pinyin: 'gāo', role: 'verbe' }
+          { text: '很', pinyin: 'hěn', role: 'copule' },
+          { text: '高', pinyin: 'gāo', role: 'modificateur' }
         ],
         fr: [
           { text: 'Il', role: 'sujet' },
           { text: 'est', role: 'copule' },
-          { text: 'grand', role: 'verbe' }
+          { text: 'grand', role: 'modificateur' }
         ],
-        note: 'Même règle : 高 est un adjectif → 很 + adjectif, pas de 是.'
+        note: 'Même règle : 很 fait la liaison (= « est ») devant l\'adjectif 高. Pas de 是.'
       }
     ],
     tip:
@@ -632,7 +632,9 @@ export const buNegationLearnSections: LessonV2LearnSection[] = [
         ],
         fr: [
           { text: 'Je', role: 'sujet' },
-          { text: 'n\'ai pas', role: 'modificateur' },
+          { text: 'n\'', role: 'modificateur' },
+          { text: 'ai', role: 'verbe' },
+          { text: 'pas', role: 'modificateur' },
           { text: 'de temps', role: 'objet' }
         ],
         note: 'EXCEPTION : pour nier 有 (avoir), on utilise 没 — JAMAIS 不有. Sandhi automatique : 不 + 是 → bú shì.'
@@ -684,9 +686,9 @@ export const maQuestionsLearnSections: LessonV2LearnSection[] = [
     title: 'Structure visuelle : 吗 toujours à la FIN',
     titleEn: 'Visual structure: 吗 always at the END',
     body:
-      '吗 est une particule interrogative qui se place à la TOUTE FIN de la phrase, après tout le reste — sujet, verbe, objet, complément. Compare avec V-不-V qui mange le verbe au milieu.',
+      '吗 est une particule interrogative qui se place à la TOUTE FIN de la phrase, après tout le reste — sujet, verbe, objet, complément. À comparer avec V-不-V qui scinde le verbe en deux au milieu de la phrase.',
     bodyEn:
-      '吗 is a question particle placed at the VERY END of the sentence, after everything else — subject, verb, object, complement. Compare with V-not-V which splits the verb in the middle.',
+      '吗 is a question particle placed at the VERY END of the sentence, after everything else — subject, verb, object, complement. Compare with V-not-V which splits the verb in two in the middle of the sentence.',
     tokenizedSentences: [
       {
         zh: [

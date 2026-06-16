@@ -1487,6 +1487,17 @@
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(200, 52, 46, 0.22);
   transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  text-align: left;
+  /* Ne pas casser de mots au milieu mais autoriser le texte à wrap si le
+     titre de leçon est long sur petit écran (ex: « Structure de phrase :
+     Sujet → Verbe → Objet »). Sinon la flèche sort du bouton. */
+}
+.path-v2-cta > span:first-child {
+  flex: 1;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
 }
 .path-v2-cta:hover {
   background: #b52d28;
@@ -1498,8 +1509,16 @@
   font-size: 18px;
   font-weight: 700;
   transition: transform 0.12s ease;
+  flex-shrink: 0;
 }
 .path-v2-cta:hover .path-v2-cta-arrow { transform: translateX(3px); }
+
+@media (max-width: 480px) {
+  .path-v2-cta {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+}
 
 /* ---------- AI tutor : input chat inline --------------------------------- */
 
