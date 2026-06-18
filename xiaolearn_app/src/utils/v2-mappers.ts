@@ -36,6 +36,30 @@ import type {
   CommunityV2LeaderboardEntry
 } from '../pages/CommunityPageV2';
 import { cecrExercisesV2All as cecrExercisesV2 } from '../data/cecr-exercises-all';
+// Supplément vocab : pour chaque leçon avec un "gap" (hanzi qui apparaissent
+// dans les exercices mais qui n'ont jamais été introduits dans les examples
+// ou learnSections), entrées additionnelles {hanzi, pinyin, translation,
+// example?} construites depuis le dico HSK. Cf scripts/lesson-vocab-gap-report
+// et scripts/build-vocab-supplement.py.
+import lessonVocabSupplementRaw from '../data/lesson-vocab-supplement.json';
+
+type SupplementEntry = {
+  hanzi: string;
+  pinyin: string;
+  translation: string;
+  translationEn?: string;
+  /** Pour les caractères qui n'ont pas d'entrée mono dans le dico, on a
+   *  remonté un compound (ex: 朋友) — `missingChar` indique le hanzi
+   *  d'origine pour traçabilité. */
+  missingChar?: string | null;
+  example?: {
+    hanzi: string;
+    pinyin: string;
+    translation: string;
+    translationEn?: string;
+  };
+};
+const lessonVocabSupplement = lessonVocabSupplementRaw as Record<string, SupplementEntry[]>;
 
 // ---------------------------------------------------------------------------
 // LessonModule → LessonV2Data
@@ -83,6 +107,13 @@ export function lessonModuleToV2(
   // joue « 他 » seul alors que la phrase affichée est « 他爱好音乐 ». Mieux vaut
   // masquer le bouton (audio undefined) que de jouer un son trompeur. Si l'exemple
   // porte son propre `audio` explicite, on le garde.
+  // Hanzi déjà couverts par les flashcards de la leçon (pour ne pas
+  // dupliquer dans le supplément).
+  const coveredHanzi = new Set<string>();
+  for (const it of items) {
+    for (const ch of it.hanzi) coveredHanzi.add(ch);
+  }
+
   const examples: LessonV2Example[] = items.slice(0, 5).map((item) => {
     const itemAudio = item.audio ?? item.audioLetter;
     const firstExample = item.examples?.[0];
@@ -108,6 +139,39 @@ export function lessonModuleToV2(
       audio: itemAudio
     };
   });
+
+  // V12 — Enrichissement supplément : pour les leçons dont les exercices
+  // utilisent des hanzi jamais introduits avant, on injecte des examples
+  // additionnels (curés depuis le dico HSK). Préfère afficher la phrase
+  // d'exemple du dico si disponible (sinon le hanzi seul). Skip les entries
+  // déjà couvertes par les flashcards.
+  const supplement = lessonVocabSupplement[module.id];
+  if (supplement && supplement.length > 0) {
+    for (const sup of supplement) {
+      // Si tous les chars du sup.hanzi sont déjà couverts, skip
+      const allCovered = Array.from(sup.hanzi).every((ch) => coveredHanzi.has(ch));
+      if (allCovered) continue;
+      // Préfère l'exemple-phrase quand disponible (plus pédagogique qu'un
+      // hanzi nu). Sinon le hanzi lui-même.
+      if (sup.example && sup.example.hanzi) {
+        examples.push({
+          hanzi: sup.example.hanzi,
+          pinyin: sup.example.pinyin || '',
+          translation: sup.example.translation || '',
+          translationEn: sup.example.translationEn
+        });
+      } else {
+        examples.push({
+          hanzi: sup.hanzi,
+          pinyin: sup.pinyin || '',
+          translation: sup.translation || '',
+          translationEn: sup.translationEn
+        });
+      }
+      // Marque comme couvert pour les itérations suivantes
+      for (const ch of sup.hanzi) coveredHanzi.add(ch);
+    }
+  }
 
   // Exercices : priorité aux exercices CECR pré-générés (mcq + fill), sinon
   // fallback sur un QCM auto-généré à partir des flashcards.
