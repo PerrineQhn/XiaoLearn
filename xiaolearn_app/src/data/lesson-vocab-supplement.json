@@ -846,6 +846,19 @@
         "translation": "Une chambre",
         "translationEn": "A room"
       }
+    },
+    {
+      "hanzi": "盐",
+      "pinyin": "yán",
+      "translation": "sel",
+      "translationEn": "salt",
+      "missingChar": null,
+      "example": {
+        "hanzi": "请给我盐。",
+        "pinyin": "qǐng gěi wǒ yán.",
+        "translation": "Passe-moi le sel s'il te plaît.",
+        "translationEn": "Please pass me the salt."
+      }
     }
   ],
   "cecr-b11-le-m3": [
@@ -3358,6 +3371,45 @@
         "translation": "Je vis dans un quartier.",
         "translationEn": "I live in an alley."
       }
+    },
+    {
+      "hanzi": "匙",
+      "pinyin": "shi",
+      "translation": "clé (élément de 钥匙)",
+      "translationEn": "key (component of 钥匙)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "钥匙在桌子上。",
+        "pinyin": "yàoshi zài zhuōzi shàng.",
+        "translation": "La clé est sur la table.",
+        "translationEn": "The key is on the table."
+      }
+    },
+    {
+      "hanzi": "扔",
+      "pinyin": "rēng",
+      "translation": "jeter, lancer",
+      "translationEn": "to throw, to discard",
+      "missingChar": null,
+      "example": {
+        "hanzi": "请把垃圾扔掉。",
+        "pinyin": "qǐng bǎ lājī rēng diào.",
+        "translation": "S'il te plaît, jette la poubelle.",
+        "translationEn": "Please throw away the trash."
+      }
+    },
+    {
+      "hanzi": "钥",
+      "pinyin": "yào",
+      "translation": "clé (élément de 钥匙)",
+      "translationEn": "key (component of 钥匙)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "我忘了带钥匙。",
+        "pinyin": "wǒ wàngle dài yàoshi.",
+        "translation": "J'ai oublié de prendre les clés.",
+        "translationEn": "I forgot to bring my keys."
+      }
     }
   ],
   "cecr-b12-narr-m3": [
@@ -5152,6 +5204,45 @@
         "pinyin": "chuānxié",
         "translation": "Porte des chaussures.",
         "translationEn": "Put on your shoes."
+      }
+    },
+    {
+      "hanzi": "匙",
+      "pinyin": "shi",
+      "translation": "clé (élément de 钥匙)",
+      "translationEn": "key (component of 钥匙)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "钥匙在桌子上。",
+        "pinyin": "yàoshi zài zhuōzi shàng.",
+        "translation": "La clé est sur la table.",
+        "translationEn": "The key is on the table."
+      }
+    },
+    {
+      "hanzi": "帅",
+      "pinyin": "shuài",
+      "translation": "beau, charmant (homme)",
+      "translationEn": "handsome",
+      "missingChar": null,
+      "example": {
+        "hanzi": "他真帅。",
+        "pinyin": "tā zhēn shuài.",
+        "translation": "Il est vraiment beau.",
+        "translationEn": "He is really handsome."
+      }
+    },
+    {
+      "hanzi": "钥",
+      "pinyin": "yào",
+      "translation": "clé (élément de 钥匙)",
+      "translationEn": "key (component of 钥匙)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "我忘了带钥匙。",
+        "pinyin": "wǒ wàngle dài yàoshi.",
+        "translation": "J'ai oublié de prendre les clés.",
+        "translationEn": "I forgot to bring my keys."
       }
     }
   ],
@@ -6963,6 +7054,19 @@
         "translation": "Les piments sont très piquants.",
         "translationEn": "The peppers are very spicy."
       }
+    },
+    {
+      "hanzi": "抬",
+      "pinyin": "tái",
+      "translation": "soulever, lever",
+      "translationEn": "to lift, to raise",
+      "missingChar": null,
+      "example": {
+        "hanzi": "抬头看天空。",
+        "pinyin": "tái tóu kàn tiānkōng.",
+        "translation": "Lève la tête vers le ciel.",
+        "translationEn": "Lift your head to look at the sky."
+      }
     }
   ],
   "cecr-a1-grammar-m3": [
@@ -7159,6 +7263,19 @@
         "pinyin": "chūntiān de límíng， wànwù fùsū。",
         "translation": "Au lever du jour en printemps, toutes les choses reviennent à la vie.",
         "translationEn": "In spring at dawn, all things come back to life"
+      }
+    },
+    {
+      "hanzi": "兄",
+      "pinyin": "xiōng",
+      "translation": "frère aîné",
+      "translationEn": "older brother",
+      "missingChar": null,
+      "example": {
+        "hanzi": "我哥哥是我的兄长。",
+        "pinyin": "wǒ gēge shì wǒ de xiōngzhǎng.",
+        "translation": "Mon grand frère est mon aîné.",
+        "translationEn": "My big brother is my elder."
       }
     }
   ],
@@ -8092,6 +8209,19 @@
         "pinyin": "wǒ yǒu yíliàngchē。",
         "translation": "J'ai une voiture.",
         "translationEn": "I have a car."
+      }
+    },
+    {
+      "hanzi": "玛",
+      "pinyin": "mǎ",
+      "translation": "agate ; aussi élément de noms propres (玛丽 Marie)",
+      "translationEn": "agate; also in proper names",
+      "missingChar": null,
+      "example": {
+        "hanzi": "玛丽是法国人。",
+        "pinyin": "Mǎlì shì fǎguó rén.",
+        "translation": "Marie est française.",
+        "translationEn": "Marie is French."
       }
     }
   ],
@@ -9267,6 +9397,32 @@
         "pinyin": "zhè běnshū",
         "translation": "Ce livre",
         "translationEn": "This book"
+      }
+    },
+    {
+      "hanzi": "柠",
+      "pinyin": "níng",
+      "translation": "citron (élément de 柠檬)",
+      "translationEn": "lemon (component of 柠檬)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "我喝柠檬水。",
+        "pinyin": "wǒ hē níngméng shuǐ.",
+        "translation": "Je bois du citron pressé.",
+        "translationEn": "I drink lemonade."
+      }
+    },
+    {
+      "hanzi": "檬",
+      "pinyin": "méng",
+      "translation": "citron (élément de 柠檬)",
+      "translationEn": "lemon (component of 柠檬)",
+      "missingChar": null,
+      "example": {
+        "hanzi": "柠檬很酸。",
+        "pinyin": "níngméng hěn suān.",
+        "translation": "Le citron est très acide.",
+        "translationEn": "Lemons are very sour."
       }
     }
   ],
