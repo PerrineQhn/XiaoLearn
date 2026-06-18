@@ -448,6 +448,16 @@
   font-style: italic;
 }
 
+/* Auto-pinyin injecté après chaque run de hanzi dans body/tip/explanation.
+   Discret pour ne pas perturber la lecture, mais lisible. */
+.lesson-v2 .auto-pinyin {
+  font-size: 0.85em;
+  color: var(--lv2-text-soft, #6b7280);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 /* Indice de sens (traduction) pour les exercices `fill` : permet au
    learner de savoir ce que la phrase veut dire avant de choisir. */
 .lesson-v2 .lv2-exercise-meaning {

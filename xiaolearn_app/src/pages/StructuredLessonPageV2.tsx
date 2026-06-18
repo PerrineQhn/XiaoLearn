@@ -32,6 +32,7 @@ import type {
 import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import PronunciationCheck from '../components/PronunciationCheck';
 import OfflineLessonButton from '../components/OfflineLessonButton';
+import AutoPinyin from '../components/AutoPinyin';
 import PronunciationDrill, {
   type PronunciationDrillItem
 } from '../components/PronunciationDrill';
@@ -921,7 +922,9 @@ const LearnSectionView = ({
       {body && (
         <div className="lv2-learn-section-body">
           {body.split('\n').map((para, i) => (
-            <p key={i}>{para}</p>
+            <p key={i}>
+              <AutoPinyin text={para} />
+            </p>
           ))}
         </div>
       )}
@@ -963,7 +966,9 @@ const LearnSectionView = ({
       {tip && (
         <div className="lv2-learn-tip">
           <span className="lv2-learn-tip-label">💡 {getCopy(language, 'tipLabel')}</span>
-          <span className="lv2-learn-tip-text">{tip}</span>
+          <span className="lv2-learn-tip-text">
+            <AutoPinyin text={tip} />
+          </span>
         </div>
       )}
 
@@ -1202,7 +1207,7 @@ function dispatchAskAiWhy(args: {
 }
 
 const ExerciseCard = ({
-  exercise,
+  exercise: rawExercise,
   language,
   answered,
   selectedIndex,
@@ -1220,6 +1225,7 @@ const ExerciseCard = ({
   onNext: () => void;
   lessonTitle?: string;
 }) => {
+  let exercise = rawExercise;
   // Rendu dédié pour le type 'order' — nécessite un état local (pile de segments).
   if (exercise.type === 'order') {
     return (
@@ -1234,6 +1240,48 @@ const ExerciseCard = ({
       />
     );
   }
+
+  // Shuffle déterministe des choices par exercise.id — audit a montré un
+  // biais énorme (idx0=39%, idx3=13% sur 1667 exos 4-choix). Sans ce shuffle,
+  // l'utilisateur apprend la POSITION de la bonne réponse plutôt que son
+  // contenu. Skip pour 'fill' (les choices sont des blanks à insérer).
+  const shuffledExercise = useMemo(() => {
+    if (exercise.type === 'fill') return exercise;
+    if (!exercise.choices || exercise.choices.length < 2) return exercise;
+    // FNV-1a hash sur l'id pour seed PRNG stable (même exo = même shuffle)
+    let seed = 0x811c9dc5;
+    for (let i = 0; i < exercise.id.length; i++) {
+      seed ^= exercise.id.charCodeAt(i);
+      seed = Math.imul(seed, 0x01000193);
+      seed >>>= 0;
+    }
+    const rng = () => {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      return seed / 0xffffffff;
+    };
+    // Fisher-Yates avec PRNG seedé
+    const indices = exercise.choices.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    // Si par malchance le correctIndex est resté à sa position d'origine,
+    // force un swap avec un autre slot pour casser le biais.
+    let newCorrectIdx = indices.indexOf(exercise.correctIndex);
+    if (newCorrectIdx === exercise.correctIndex && indices.length >= 2) {
+      const target = (newCorrectIdx + 1) % indices.length;
+      [indices[newCorrectIdx], indices[target]] = [indices[target], indices[newCorrectIdx]];
+      newCorrectIdx = indices.indexOf(exercise.correctIndex);
+    }
+    return {
+      ...exercise,
+      choices: indices.map((i) => exercise.choices[i]),
+      correctIndex: newCorrectIdx
+    };
+  }, [exercise]);
+
+  // Remplace la référence locale par l'exercice shufflé pour TOUT le rendu.
+  exercise = shuffledExercise;
 
   const isCorrect = answered && selectedIndex === exercise.correctIndex;
   let promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
@@ -1477,7 +1525,11 @@ const ExerciseCard = ({
               {exercise.choices[exercise.correctIndex]}
             </div>
           )}
-          {explanationText && <div className="lv2-feedback-explanation">{explanationText}</div>}
+          {explanationText && (
+            <div className="lv2-feedback-explanation">
+              <AutoPinyin text={explanationText} />
+            </div>
+          )}
           {!isCorrect && lessonTitle && (
             <button
               type="button"
@@ -1690,7 +1742,11 @@ const OrderExerciseCard = ({
               </div>
             </>
           )}
-          {explanationText && <div className="lv2-feedback-explanation">{explanationText}</div>}
+          {explanationText && (
+            <div className="lv2-feedback-explanation">
+              <AutoPinyin text={explanationText} />
+            </div>
+          )}
           {!isCorrect && lessonTitle && (
             <button
               type="button"
