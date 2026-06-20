@@ -22,6 +22,7 @@ import { cecrExercisesEnriched } from './cecr-exercises-enriched';
 import { cecrExercisesEnrichedA1 } from './cecr-exercises-enriched-a1';
 import { cecrExercisesEnrichedA2 } from './cecr-exercises-enriched-a2';
 import { cecrConversationExercises } from './cecr-conversation-exercises';
+import { cecrConversationExercisesExtra } from './cecr-conversation-exercises-extra';
 
 /**
  * Map consolidée des exercices par module CECR.
@@ -36,15 +37,21 @@ const baseAll: Record<string, LessonV2Exercise[]> = {
   ...cecrExercisesEnrichedA2
 };
 
-// V12 — Les exercices Conversation (dialogue-response, context-react) sont
-// AJOUTÉS à la liste existante de chaque leçon plutôt que d'override. Comme
-// ça les leçons Conversation gardent leurs exercices classiques (mcq,
-// translation…) PLUS les nouveaux types de format dialogue.
+// V12/V13 — Les exercices Conversation sont APPENDED à la liste existante
+// de chaque leçon plutôt que d'override :
+//   - cecrConversationExercises : types modernes (dialogue-response, context-react)
+//   - cecrConversationExercisesExtra : types classiques diversifiés
+//     (mcq, translation, + dialogue-response pour C1/C2 — élimine la mono-culture).
+// Comme ça les leçons Conversation gardent leurs éventuels exercices générés
+// PLUS les exos modernes PLUS les exos classiques.
 export const cecrExercisesV2All: Record<string, LessonV2Exercise[]> = (() => {
   const merged: Record<string, LessonV2Exercise[]> = { ...baseAll };
-  for (const [lessonId, convExos] of Object.entries(cecrConversationExercises)) {
-    const existing = merged[lessonId] ?? [];
-    merged[lessonId] = [...existing, ...convExos];
+  const appendSources = [cecrConversationExercises, cecrConversationExercisesExtra];
+  for (const source of appendSources) {
+    for (const [lessonId, convExos] of Object.entries(source)) {
+      const existing = merged[lessonId] ?? [];
+      merged[lessonId] = [...existing, ...convExos];
+    }
   }
   return merged;
 })();
