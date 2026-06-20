@@ -1441,6 +1441,106 @@
 }
 .fc5-session-shell .fc4-card-speaker--inverse:hover { background: rgba(255, 255, 255, 0.22); }
 
+/* --- Bouton ✏️ écriture ------------------------------------------------- */
+/* Clone du fc4-card-speaker (même taille / forme / hover) pour que les 3
+   boutons 🔊 ✏️ 🎤 forment un trio cohérent. La couleur d'accent est
+   identique au speaker (rouge XiaoLearn) — on garde le sémantique
+   "écriture" via l'icône stylo plutôt qu'une teinte différente. */
+.fc5-session-shell .fc4-card-writer {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary, #ffffff);
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--primary-red, #e05040);
+  padding: 0;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.fc5-session-shell .fc4-card-writer:hover {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.fc5-session-shell .fc4-card-writer:active {
+  transform: scale(0.95);
+}
+.fc5-session-shell .fc4-card-writer--inverse {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.fc5-session-shell .fc4-card-writer--inverse:hover { background: rgba(255, 255, 255, 0.22); }
+
+/* --- Modale d'écriture (HandwritingDrill par-dessus la carte) ----------- */
+.fc4-write-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 12, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fc4-write-fadein 0.18s ease;
+}
+@keyframes fc4-write-fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fc4-write-modal-dialog {
+  position: relative;
+  background: var(--bg-primary, #fffaf4);
+  border-radius: 18px;
+  box-shadow: 0 18px 48px -8px rgba(0, 0, 0, 0.35);
+  padding: 28px 24px 24px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fc4-write-popin 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes fc4-write-popin {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.fc4-write-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-secondary, #6e655c);
+  transition: background 0.12s ease, color 0.12s ease;
+  z-index: 2;
+}
+.fc4-write-modal-close:hover {
+  background: var(--border-light, #ece4d5);
+  color: var(--text-primary, #2c1810);
+}
+/* Reset du double-cadre : la modale est déjà une "carte", donc on retire
+   le bord/padding/margin externe du HandwritingDrill qu'on imbrique. */
+.fc4-write-modal-dialog .hw-drill {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* --- Body (hanzi/meaning/example) --------------------------------------- */
 
 .fc5-session-shell .fc4-card-body {

@@ -26,6 +26,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
 import { playHanziAudio, preloadHanziAudio } from '../../utils/audio';
 import PronunciationCheck from '../PronunciationCheck';
+import WriteButton from './WriteButton';
 import {
   isAzureSpeechSupported as pronunciationSupported,
   recognizeWithAzure as pronunciationRecognize,
@@ -232,6 +233,13 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
               >
                 <SpeakerIcon size={20} />
               </button>
+              {/* Bouton ✏️ écriture — wrap stopPropagation pour ne pas flipper. */}
+              <span
+                onClick={(e) => e.stopPropagation()}
+                style={{ display: 'inline-flex' }}
+              >
+                <WriteButton hanzi={card.hanzi} language={language} />
+              </span>
               {/* PronunciationCheck wrapped pour ne pas bubble vers handleReveal
                   (qui flippe la carte au click). */}
               <span
@@ -282,6 +290,13 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
               >
                 <SpeakerIcon size={20} />
               </button>
+              {/* Bouton ✏️ écriture (variante inverse pour la face arrière). */}
+              <span
+                onClick={(e) => e.stopPropagation()}
+                style={{ display: 'inline-flex' }}
+              >
+                <WriteButton hanzi={card.hanzi} language={language} inverse />
+              </span>
               <span
                 onClick={(e) => e.stopPropagation()}
                 style={{ display: 'inline-flex' }}
