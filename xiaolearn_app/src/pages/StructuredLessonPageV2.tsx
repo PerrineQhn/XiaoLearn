@@ -1373,6 +1373,18 @@ const ExerciseCard = ({
   exercise = shuffledExercise;
 
   const isCorrect = answered && selectedIndex === exercise.correctIndex;
+
+  // BUG FIX (V14) : le parent compare selectedIndex à currentExercise.correctIndex
+  // ORIGINAL (non shufflé). Mais selectedIndex est l'index dans l'ordre SHUFFLÉ
+  // que voit l'utilisateur. Conséquence : même quand on clique sur la bonne
+  // réponse, le parent croit qu'on s'est trompé → score final faux.
+  // Fix (pattern OrderExerciseCard) : avant onValidate, on remap selectedIndex
+  // vers l'index de la bonne réponse dans l'ordre ORIGINAL si correct, sinon -1.
+  // Le parent matche alors correctement avec rawExercise.correctIndex.
+  const handleValidate = () => {
+    onSelect(isCorrect ? rawExercise.correctIndex : -1);
+    onValidate();
+  };
   let promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
   // Pour les exercices "error-correction" : si le prompt contient les segments
   // entre guillemets (cas "Quel segment est mal placé : « X / Y / Z / W » ?"),
@@ -1587,7 +1599,7 @@ const ExerciseCard = ({
             type="button"
             className="lv2-btn lv2-btn--primary"
             disabled={selectedIndex === null}
-            onClick={onValidate}
+            onClick={handleValidate}
           >
             {getCopy(language, 'check')}
           </button>
