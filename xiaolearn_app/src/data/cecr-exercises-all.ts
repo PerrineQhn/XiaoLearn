@@ -24,6 +24,7 @@ import { cecrExercisesEnrichedA2 } from './cecr-exercises-enriched-a2';
 import { cecrConversationExercises } from './cecr-conversation-exercises';
 import { cecrConversationExercisesExtra } from './cecr-conversation-exercises-extra';
 import { cecrConversationExercisesExtra2 } from './cecr-conversation-exercises-extra-2';
+import { cecrConversationExercisesExtra3 } from './cecr-conversation-exercises-extra-3';
 
 /**
  * Map consolidée des exercices par module CECR.
@@ -47,7 +48,7 @@ const baseAll: Record<string, LessonV2Exercise[]> = {
 // PLUS les exos modernes PLUS les exos classiques.
 export const cecrExercisesV2All: Record<string, LessonV2Exercise[]> = (() => {
   const merged: Record<string, LessonV2Exercise[]> = { ...baseAll };
-  const appendSources = [cecrConversationExercises, cecrConversationExercisesExtra, cecrConversationExercisesExtra2];
+  const appendSources = [cecrConversationExercises, cecrConversationExercisesExtra, cecrConversationExercisesExtra2, cecrConversationExercisesExtra3];
   for (const source of appendSources) {
     for (const [lessonId, convExos] of Object.entries(source)) {
       const existing = merged[lessonId] ?? [];
