@@ -458,6 +458,131 @@
   letter-spacing: 0.01em;
 }
 
+/* --- DialogueResponseCard (mini-dialogue + choix de la dernière réplique) -- */
+.lesson-v2 .lv2-exercise-badge--dialogue {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.lesson-v2 .lv2-dialogue-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  background: var(--lv2-bg, #fffaf3);
+  border: 1px solid var(--lv2-border, #ede4d3);
+  border-radius: var(--lv2-radius-sm, 12px);
+}
+.lesson-v2 .lv2-dialogue-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid;
+}
+.lesson-v2 .lv2-dialogue-bubble--other {
+  align-self: flex-start;
+  background: #fff;
+  border-color: #ede4d3;
+  border-bottom-left-radius: 4px;
+}
+.lesson-v2 .lv2-dialogue-bubble--user {
+  align-self: flex-end;
+  background: #fef2f2;
+  border-color: #fecaca;
+  border-bottom-right-radius: 4px;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder {
+  border-style: dashed;
+  opacity: 0.75;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder.is-correct {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+  border-style: solid;
+  opacity: 1;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder.is-wrong {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  border-style: solid;
+  opacity: 1;
+}
+.lesson-v2 .lv2-dialogue-speaker {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.lesson-v2 .lv2-dialogue-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-v2 .lv2-dialogue-hanzi {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--lv2-text, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lesson-v2 .lv2-dialogue-hanzi--ghost {
+  font-style: italic;
+  color: #9ca3af;
+}
+.lesson-v2 .lv2-dialogue-pinyin {
+  font-size: 13px;
+  font-style: italic;
+  color: #6b7280;
+}
+.lesson-v2 .lv2-dialogue-trad {
+  font-size: 13px;
+  color: #4b5563;
+}
+.lesson-v2 .lv2-dialogue-audio {
+  background: transparent;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: background 0.12s;
+}
+.lesson-v2 .lv2-dialogue-audio:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* --- ContextReactCard (situation + choix de la phrase appropriée) -------- */
+.lesson-v2 .lv2-exercise-badge--context {
+  background: #fef3c7;
+  color: #92400e;
+}
+.lesson-v2 .lv2-context-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff8e1;
+  border: 1px solid #fbd38d;
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--lv2-radius-sm, 12px);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #78350f;
+}
+.lesson-v2 .lv2-context-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.lesson-v2 .lv2-context-text {
+  flex: 1;
+  font-weight: 500;
+}
+
 /* Indice de sens (traduction) pour les exercices `fill` : permet au
    learner de savoir ce que la phrase veut dire avant de choisir. */
 .lesson-v2 .lv2-exercise-meaning {

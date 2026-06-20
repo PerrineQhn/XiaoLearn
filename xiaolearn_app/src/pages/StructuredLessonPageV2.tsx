@@ -91,7 +91,51 @@ export type LessonV2ExerciseType =
   | 'order'
   | 'grammar-quiz'
   | 'translation'
-  | 'error-correction';
+  | 'error-correction'
+  /**
+   * dialogue-response — l'apprenant lit un mini-dialogue (2-4 répliques),
+   * la DERNIÈRE réplique est masquée et il doit choisir LA bonne réponse
+   * parmi `choices`. Spécialement pédagogique pour les leçons Conversation.
+   *
+   * Structure attendue dans le LessonV2Exercise :
+   *   - dialogue: array de répliques { speaker, hanzi, pinyin, translationFr,
+   *     translationEn? } (la dernière est l'à-trouver, généralement par
+   *     l'apprenant côté "moi")
+   *   - choices: les options de réponse pour la dernière réplique
+   *   - correctIndex: pointe vers la bonne option
+   *   - explanation: explique pourquoi cette réponse est juste pour le contexte
+   */
+  | 'dialogue-response'
+  /**
+   * context-react — une situation est décrite en FR ("Tu entres dans un
+   * taxi et veux indiquer l'aéroport"), l'apprenant choisit LA phrase
+   * appropriée parmi `choices`. Idéal pour fixer les expressions idiomatiques.
+   */
+  | 'context-react'
+  /**
+   * formal-casual — une phrase en chinois est donnée et l'apprenant doit
+   * identifier son registre (formel/familier) ou choisir la version
+   * adaptée à un contexte spécifié.
+   */
+  | 'formal-casual';
+
+/**
+ * Une réplique de mini-dialogue pour les exercices `dialogue-response`.
+ * Le `speaker` est libre (peut être un prénom, "Serveur", "A"/"B", ou "Toi"
+ * pour la réplique de l'utilisateur).
+ */
+export interface DialogueLine {
+  speaker: string;
+  speakerEn?: string;
+  hanzi: string;
+  pinyin?: string;
+  translationFr?: string;
+  translationEn?: string;
+  /** URL audio pour cette réplique. Si absente, audio désactivé pour la ligne. */
+  audio?: string;
+  /** Si true, c'est la réplique de l'apprenant (rendue à droite, en accent). */
+  isUser?: boolean;
+}
 
 /**
  * Catégorie pédagogique — permet de différencier le format d'exercice et
@@ -147,6 +191,19 @@ export interface LessonV2Exercise {
   audio?: string;
   audioHanzi?: string;
   autoPlay?: boolean;
+  /**
+   * Pour les exercices `dialogue-response` : les répliques du mini-dialogue.
+   * La dernière réplique est l'à-trouver (généralement `isUser: true`), et
+   * `choices` contient les réponses candidates pour cette dernière réplique.
+   */
+  dialogue?: DialogueLine[];
+  /**
+   * Pour `context-react` : description du contexte/situation en français
+   * ("Tu es dans un taxi et tu veux indiquer l'aéroport"). En anglais via
+   * `contextEn`.
+   */
+  context?: string;
+  contextEn?: string;
 }
 
 export interface LessonV2Data {
@@ -1226,6 +1283,38 @@ const ExerciseCard = ({
   lessonTitle?: string;
 }) => {
   let exercise = rawExercise;
+  // Rendu dédié pour le type 'dialogue-response' — affiche le mini-dialogue
+  // en bulles A/B + choix de la dernière réplique.
+  if (exercise.type === 'dialogue-response') {
+    return (
+      <DialogueResponseCard
+        exercise={exercise}
+        language={language}
+        answered={answered}
+        selectedIndex={selectedIndex}
+        onSelect={onSelect}
+        onValidate={onValidate}
+        onNext={onNext}
+        lessonTitle={lessonTitle}
+      />
+    );
+  }
+  // Rendu dédié pour le type 'context-react' — affiche la situation FR puis
+  // les options de réponse en chinois.
+  if (exercise.type === 'context-react') {
+    return (
+      <ContextReactCard
+        exercise={exercise}
+        language={language}
+        answered={answered}
+        selectedIndex={selectedIndex}
+        onSelect={onSelect}
+        onValidate={onValidate}
+        onNext={onNext}
+        lessonTitle={lessonTitle}
+      />
+    );
+  }
   // Rendu dédié pour le type 'order' — nécessite un état local (pile de segments).
   if (exercise.type === 'order') {
     return (
@@ -1543,6 +1632,317 @@ const ExerciseCard = ({
                     selectedIndex !== null && selectedIndex >= 0
                       ? exercise.choices[selectedIndex]
                       : '(aucune réponse)',
+                  correctAnswer: exercise.choices[exercise.correctIndex]
+                })
+              }
+            >
+              {language === 'en' ? 'Ask Prof. Xiao: why?' : 'Demander à Prof. Xiao : pourquoi ?'}
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+//  DialogueResponseCard — rendu dédié au type 'dialogue-response'
+// ---------------------------------------------------------------------------
+// `exercise.dialogue` contient les répliques du mini-dialogue. La dernière
+// est masquée (rendue en pointillé) et l'apprenant doit choisir parmi
+// `choices` celle qui correspond au contexte. Style chat avec bulles A/B
+// alternées, audio par bulle si dispo.
+// ---------------------------------------------------------------------------
+const DialogueResponseCard = ({
+  exercise,
+  language,
+  answered,
+  selectedIndex,
+  onSelect,
+  onValidate,
+  onNext,
+  lessonTitle
+}: {
+  exercise: LessonV2Exercise;
+  language: LessonV2Language;
+  answered: boolean;
+  selectedIndex: number | null;
+  onSelect: (index: number) => void;
+  onValidate: () => void;
+  onNext: () => void;
+  lessonTitle?: string;
+}) => {
+  const lines = exercise.dialogue ?? [];
+  // Toutes les répliques sauf la dernière sont affichées en clair.
+  // La dernière est rendue comme placeholder (bulle pointillée) avant
+  // réponse, puis remplie au choix.
+  const beforeLast = lines.slice(0, -1);
+  const lastLine = lines[lines.length - 1];
+
+  const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
+  const explanationText =
+    language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
+  const isCorrect = answered && selectedIndex === exercise.correctIndex;
+
+  const playLine = useCallback((line: DialogueLine) => {
+    if (line.audio) {
+      playAudioWithFallback(line.audio).catch(() => {});
+      return;
+    }
+    if (line.hanzi) {
+      playHanziAudio(line.hanzi).catch(() => {});
+    }
+  }, []);
+
+  return (
+    <div className="lv2-exercise lv2-exercise--dialogue">
+      <div className="lv2-exercise-badge lv2-exercise-badge--dialogue">
+        {language === 'en' ? 'Dialogue' : 'Dialogue'}
+      </div>
+      <div className="lv2-exercise-prompt">{promptText}</div>
+
+      <div className="lv2-dialogue-chat">
+        {beforeLast.map((line, i) => (
+          <div
+            key={`line-${i}`}
+            className={`lv2-dialogue-bubble ${line.isUser ? 'lv2-dialogue-bubble--user' : 'lv2-dialogue-bubble--other'}`}
+          >
+            <div className="lv2-dialogue-speaker">
+              {language === 'en' && line.speakerEn ? line.speakerEn : line.speaker}
+            </div>
+            <div className="lv2-dialogue-content">
+              <div className="lv2-dialogue-hanzi">
+                {line.hanzi}
+                {line.audio || line.hanzi ? (
+                  <button
+                    type="button"
+                    className="lv2-dialogue-audio"
+                    onClick={() => playLine(line)}
+                    aria-label="Play"
+                  >
+                    🔊
+                  </button>
+                ) : null}
+              </div>
+              {line.pinyin && (
+                <div className="lv2-dialogue-pinyin">{line.pinyin}</div>
+              )}
+              {(language === 'en'
+                ? line.translationEn ?? line.translationFr
+                : line.translationFr ?? line.translationEn) && (
+                <div className="lv2-dialogue-trad">
+                  {language === 'en'
+                    ? line.translationEn ?? line.translationFr
+                    : line.translationFr ?? line.translationEn}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+        {/* Bulle de la dernière réplique (à-trouver) */}
+        {lastLine && (
+          <div
+            className={`lv2-dialogue-bubble lv2-dialogue-bubble--placeholder ${lastLine.isUser ? 'lv2-dialogue-bubble--user' : 'lv2-dialogue-bubble--other'} ${answered ? (isCorrect ? 'is-correct' : 'is-wrong') : ''}`}
+          >
+            <div className="lv2-dialogue-speaker">
+              {language === 'en' && lastLine.speakerEn ? lastLine.speakerEn : lastLine.speaker}
+            </div>
+            <div className="lv2-dialogue-content">
+              {answered ? (
+                <div className="lv2-dialogue-hanzi">
+                  {exercise.choices[exercise.correctIndex]}
+                </div>
+              ) : (
+                <div className="lv2-dialogue-hanzi lv2-dialogue-hanzi--ghost">
+                  {language === 'en' ? '(your turn)' : '(à toi)'}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="lv2-exercise-choices" role="radiogroup">
+        {exercise.choices.map((choice, idx) => {
+          let stateClass = '';
+          if (answered) {
+            if (idx === exercise.correctIndex) stateClass = 'lv2-choice--correct';
+            else if (idx === selectedIndex) stateClass = 'lv2-choice--wrong';
+            else stateClass = 'lv2-choice--dimmed';
+          } else if (idx === selectedIndex) {
+            stateClass = 'lv2-choice--selected';
+          }
+          return (
+            <button
+              key={idx}
+              type="button"
+              className={`lv2-choice ${stateClass}`}
+              disabled={answered}
+              onClick={() => onSelect(idx)}
+            >
+              {choice}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="lv2-exercise-actions">
+        {!answered ? (
+          <button
+            type="button"
+            className="lv2-btn lv2-btn--primary"
+            disabled={selectedIndex === null}
+            onClick={onValidate}
+          >
+            {getCopy(language, 'check')}
+          </button>
+        ) : (
+          <button type="button" className="lv2-btn lv2-btn--primary" onClick={onNext}>
+            {getCopy(language, 'next')} →
+          </button>
+        )}
+      </div>
+
+      {answered && (
+        <div className={`lv2-exercise-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}`}>
+          <div className="lv2-feedback-headline">
+            {isCorrect ? getCopy(language, 'correct') : getCopy(language, 'incorrect')}
+          </div>
+          {explanationText && (
+            <div className="lv2-feedback-explanation">
+              <AutoPinyin text={explanationText} />
+            </div>
+          )}
+          {!isCorrect && lessonTitle && (
+            <button
+              type="button"
+              className="lv2-ask-ai-btn"
+              onClick={() =>
+                dispatchAskAiWhy({
+                  language,
+                  lessonTitle,
+                  prompt: promptText || '',
+                  userAnswer: selectedIndex !== null ? exercise.choices[selectedIndex] : '',
+                  correctAnswer: exercise.choices[exercise.correctIndex]
+                })
+              }
+            >
+              {language === 'en' ? 'Ask Prof. Xiao: why?' : 'Demander à Prof. Xiao : pourquoi ?'}
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+//  ContextReactCard — rendu dédié au type 'context-react'
+// ---------------------------------------------------------------------------
+// Le contexte est décrit en FR ("Tu entres dans un taxi…"), l'apprenant
+// choisit la phrase appropriée parmi `choices`. Plus simple qu'un dialogue,
+// utile pour des exercices courts qui testent une expression précise.
+// ---------------------------------------------------------------------------
+const ContextReactCard = ({
+  exercise,
+  language,
+  answered,
+  selectedIndex,
+  onSelect,
+  onValidate,
+  onNext,
+  lessonTitle
+}: {
+  exercise: LessonV2Exercise;
+  language: LessonV2Language;
+  answered: boolean;
+  selectedIndex: number | null;
+  onSelect: (index: number) => void;
+  onValidate: () => void;
+  onNext: () => void;
+  lessonTitle?: string;
+}) => {
+  const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
+  const contextText =
+    language === 'en' ? exercise.contextEn ?? exercise.context : exercise.context ?? exercise.contextEn;
+  const explanationText =
+    language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
+  const isCorrect = answered && selectedIndex === exercise.correctIndex;
+
+  return (
+    <div className="lv2-exercise lv2-exercise--context">
+      <div className="lv2-exercise-badge lv2-exercise-badge--context">
+        {language === 'en' ? 'Situation' : 'Situation'}
+      </div>
+      {contextText && (
+        <div className="lv2-context-card">
+          <span className="lv2-context-icon" aria-hidden>🎬</span>
+          <span className="lv2-context-text">{contextText}</span>
+        </div>
+      )}
+      <div className="lv2-exercise-prompt">{promptText}</div>
+
+      <div className="lv2-exercise-choices" role="radiogroup">
+        {exercise.choices.map((choice, idx) => {
+          let stateClass = '';
+          if (answered) {
+            if (idx === exercise.correctIndex) stateClass = 'lv2-choice--correct';
+            else if (idx === selectedIndex) stateClass = 'lv2-choice--wrong';
+            else stateClass = 'lv2-choice--dimmed';
+          } else if (idx === selectedIndex) {
+            stateClass = 'lv2-choice--selected';
+          }
+          return (
+            <button
+              key={idx}
+              type="button"
+              className={`lv2-choice ${stateClass}`}
+              disabled={answered}
+              onClick={() => onSelect(idx)}
+            >
+              {choice}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="lv2-exercise-actions">
+        {!answered ? (
+          <button
+            type="button"
+            className="lv2-btn lv2-btn--primary"
+            disabled={selectedIndex === null}
+            onClick={onValidate}
+          >
+            {getCopy(language, 'check')}
+          </button>
+        ) : (
+          <button type="button" className="lv2-btn lv2-btn--primary" onClick={onNext}>
+            {getCopy(language, 'next')} →
+          </button>
+        )}
+      </div>
+
+      {answered && (
+        <div className={`lv2-exercise-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}`}>
+          <div className="lv2-feedback-headline">
+            {isCorrect ? getCopy(language, 'correct') : getCopy(language, 'incorrect')}
+          </div>
+          {explanationText && (
+            <div className="lv2-feedback-explanation">
+              <AutoPinyin text={explanationText} />
+            </div>
+          )}
+          {!isCorrect && lessonTitle && (
+            <button
+              type="button"
+              className="lv2-ask-ai-btn"
+              onClick={() =>
+                dispatchAskAiWhy({
+                  language,
+                  lessonTitle,
+                  prompt: promptText || '',
+                  userAnswer: selectedIndex !== null ? exercise.choices[selectedIndex] : '',
                   correctAnswer: exercise.choices[exercise.correctIndex]
                 })
               }
