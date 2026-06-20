@@ -30,16 +30,60 @@
 import { Fragment } from 'react';
 import { pinyin } from 'pinyin-pro';
 import segmentDictRaw from '../data/pinyin-segment-dict.json';
+import cfdictRaw from '../data/cfdict-compact.json';
 
 /** Détecte les runs de hanzi consécutifs (avec ponctuation chinoise interne tolérée). */
 const HANZI_RUN_RE = /[一-鿿㐀-䶿]+/g;
 
-/** Dico des mots multi-caractères connus pour la segmentation (Set pour lookup O(1)). */
-const SEGMENT_DICT: Set<string> = new Set(segmentDictRaw as string[]);
 /** Longueur max d'un mot dans le dico (pour borner la fenêtre du longest-match).
- *  Cap à 4 (chéngyǔ + mots usuels) : au-delà, on risque de groffer des phrases
+ *  Cap à 4 (chéngyǔ + mots usuels) : au-delà, on risque de greffer des phrases
  *  entières (ex: "一直走") au lieu de les segmenter naturellement ("一直" + "走"). */
 const MAX_WORD_LEN = 4;
+
+/**
+ * Dico de mots multi-caractères pour la segmentation (Set pour lookup O(1)).
+ * Combine :
+ *   - HSK 1-7 (segment-dict.json) : ~9400 entrées
+ *   - CFDICT compact (cfdict-compact.json) : ~50000 entrées multi-char
+ * On dédoublonne via le Set. Total ~50k mots, déjà bundlés.
+ * Construction au load du module, accepté car le coût est amorti sur toute la session.
+ */
+const SEGMENT_DICT: Set<string> = (() => {
+  const set = new Set<string>(segmentDictRaw as string[]);
+  for (const k of Object.keys(cfdictRaw)) {
+    if (k.length >= 2 && k.length <= MAX_WORD_LEN && /^[一-鿿]+$/.test(k)) {
+      set.add(k);
+    }
+  }
+  return set;
+})();
+
+/**
+ * Mots se terminant par 儿 qui n'utilisent PAS la fusion érhua (-r), où 儿 garde
+ * son sens propre de "fils/enfant". Pour ces mots, le pinyin reste "ér" plein.
+ * Liste blanche restreinte aux cas les plus courants — les autres mots en
+ * "X儿" sont supposés érhua par défaut (哪儿 → nǎr, 一会儿 → yíhuìr, etc.).
+ */
+const ERHUA_NO_FUSION = new Set([
+  '女儿', '育儿', '婴儿', '孤儿', '男儿', '幼儿', '健儿',
+  '儿戏', '儿童', '儿子', '儿女', '儿歌', '儿科', '儿时'
+]);
+
+/**
+ * Applique la fusion érhua : si le mot se termine par 儿 (suffixe érhua),
+ * le pinyin du dernier caractère "ér"/"er" est remplacé par "r" agglutiné.
+ *   哪儿 → nǎér → nǎr
+ *   一会儿 → yíhuìer → yíhuìr
+ *   玩儿 → wánér → wánr
+ * Reste "ér" pour les exceptions (女儿, 婴儿, 儿童…) où 儿 a un sens lexical.
+ */
+function applyErhua(word: string, py: string): string {
+  if (word.length < 2 || !word.endsWith('儿')) return py;
+  if (ERHUA_NO_FUSION.has(word)) return py;
+  if (py.endsWith('ér')) return py.slice(0, -2) + 'r';
+  if (py.endsWith('er')) return py.slice(0, -2) + 'r';
+  return py;
+}
 
 /**
  * Découpe une suite de hanzi en mots via greedy longest-match sur le dico.
@@ -83,16 +127,18 @@ const getPinyin = (hanzi: string): string => {
   try {
     const segments = segmentHanziRun(hanzi);
     // Pour chaque segment : pinyin-pro avec separator vide → pinyin du mot
-    // complet concaténé. On joint ensuite les segments avec un espace.
+    // complet concaténé. Puis applyErhua pour fusionner -r quand pertinent.
+    // Enfin on joint les segments avec un espace.
     const py = segments
-      .map((seg) =>
-        pinyin(seg, {
+      .map((seg) => {
+        const raw = pinyin(seg, {
           toneType: 'symbol',
           type: 'string',
           separator: '',
           nonZh: 'consecutive'
-        }).trim()
-      )
+        }).trim();
+        return applyErhua(seg, raw);
+      })
       .filter(Boolean)
       .join(' ');
     pinyinCache.set(hanzi, py);
