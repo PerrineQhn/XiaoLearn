@@ -1556,6 +1556,36 @@
   font-size: 12px;
   padding: 6px 12px;
 }
+/* Cache le sous-titre "Trace chaque caractère..." dans la modale (redondant
+   avec le titre + l'icône ✍️ déjà parlant). Économise ~40px en hauteur. */
+.fc4-write-modal-dialog .hw-drill-header p {
+  display: none;
+}
+/* Compactage du feedback verdict ("Bravo, parfait! 0 erreur") qui s'ajoute
+   APRÈS l'écriture et faisait dépasser la modale en hauteur. */
+.fc4-write-modal-dialog .hw-pad-feedback {
+  padding: 6px 10px;
+  font-size: 12px;
+  min-width: auto;
+  gap: 2px;
+}
+.fc4-write-modal-dialog .hw-pad-feedback strong {
+  font-size: 13px;
+}
+.fc4-write-modal-dialog .hw-pad-feedback-detail {
+  font-size: 11px;
+}
+/* Compactage des boutons "Voir les traits / Écrire" du HanziWriterPad */
+.fc4-write-modal-dialog .hw-pad {
+  gap: 6px;
+}
+.fc4-write-modal-dialog .hw-pad-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.fc4-write-modal-dialog .hw-pad-actions {
+  gap: 4px;
+}
 @keyframes fc4-write-popin {
   from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }

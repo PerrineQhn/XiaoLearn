@@ -18,11 +18,11 @@ import HandwritingDrill from '../HandwritingDrill';
  * desktop) — pad ≈ width modal - paddings - 30px de respiration.
  */
 function getPadSize(): number {
-  if (typeof window === 'undefined') return 150;
+  if (typeof window === 'undefined') return 140;
   const w = window.innerWidth;
-  if (w >= 1024) return 210; // desktop
-  if (w >= 600) return 180; // tablette
-  return 150; // mobile
+  if (w >= 1024) return 180; // desktop
+  if (w >= 600) return 160; // tablette
+  return 140; // mobile
 }
 
 interface WriteButtonProps {
