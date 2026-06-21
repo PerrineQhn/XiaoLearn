@@ -212,6 +212,7 @@ const COPY = {
     dirTitle: 'Sens des cartes',
     dirHanziToFr: { emoji: '🇨🇳 → 🇫🇷', sub: 'Chinois → Traduction' },
     dirFrToHanzi: { emoji: '🇫🇷 → 🇨🇳', sub: 'Traduction → Chinois' },
+    dirMixed: { emoji: '🔀', sub: 'Mélangé (les deux sens)' },
     modeTitle: 'Mode d\'étude',
     cta: "C'est parti !",
     // Sections bottom
@@ -340,6 +341,7 @@ const COPY = {
     dirTitle: 'Card direction',
     dirHanziToFr: { emoji: '🇨🇳 → 🇬🇧', sub: 'Chinese → Translation' },
     dirFrToHanzi: { emoji: '🇬🇧 → 🇨🇳', sub: 'Translation → Chinese' },
+    dirMixed: { emoji: '🔀', sub: 'Mixed (both directions)' },
     modeTitle: 'Study mode',
     cta: "Let's go!",
     wotdTitle: 'Word of the day',
@@ -2443,6 +2445,14 @@ function SessionSetupModal({
             >
               <div className="fc5-dir-btn-emoji">{copy.dirFrToHanzi.emoji}</div>
               <div className="fc5-dir-btn-label">{copy.dirFrToHanzi.sub}</div>
+            </button>
+            <button
+              type="button"
+              className={`fc5-dir-btn ${direction === 'mixed' ? 'is-active' : ''}`}
+              onClick={() => setDirection('mixed')}
+            >
+              <div className="fc5-dir-btn-emoji">{copy.dirMixed.emoji}</div>
+              <div className="fc5-dir-btn-label">{copy.dirMixed.sub}</div>
             </button>
           </div>
         </div>

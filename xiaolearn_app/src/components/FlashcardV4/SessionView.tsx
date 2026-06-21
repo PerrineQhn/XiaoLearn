@@ -16,6 +16,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
+import { resolveEffectiveDirection } from '../../types/flashcard-v3';
 import {
   type FlashcardSessionSummary,
   type ReviewRating,
@@ -207,9 +208,13 @@ export function SessionView({
 
   // -- Rendu mode -----------------------------------------------------------
 
+  // V18 — Si direction = 'mixed', on résout PAR CARTE (hash stable de card.id).
+  // ~50% des cartes seront hanzi→fr, ~50% fr→hanzi, fixé pour la session.
+  const effectiveDirection = resolveEffectiveDirection(direction, card.id);
+
   const modeProps = {
     card,
-    direction,
+    direction: effectiveDirection,
     language,
     onReveal: handleReveal,
     onSubmit: handleAutoResult,
@@ -280,7 +285,11 @@ export function SessionView({
   }, [mode, revealed, forbidGood, card.id]);
 
   // Flag direction (drapeaux) façon Seonsaengnim.
-  const directionFlag = direction === 'hanzi-to-fr' ? '🇨🇳→🇫🇷' : '🇫🇷→🇨🇳';
+  // Mode 'mixed' : on affiche le drapeau correspondant à la direction
+  // effective de la carte courante (donc il change d'une carte à l'autre).
+  const directionFlag = direction === 'mixed'
+    ? (effectiveDirection === 'hanzi-to-fr' ? '🇨🇳→🇫🇷 🔀' : '🇫🇷→🇨🇳 🔀')
+    : (direction === 'hanzi-to-fr' ? '🇨🇳→🇫🇷' : '🇫🇷→🇨🇳');
   const progressPct = Math.min(100, Math.round(((index + (revealed ? 0.5 : 0)) / Math.max(total, 1)) * 100));
 
   return (
