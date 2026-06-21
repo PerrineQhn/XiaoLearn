@@ -31,6 +31,8 @@ export interface HandwritingDrillProps {
   onComplete?: (correct: number, total: number) => void;
   /** Taille du HanziWriterPad en px. Défaut 240, à réduire en modal (ex 200). */
   padSize?: number;
+  /** Si true, skip l'écran d'intro et démarre directement le drill. Défaut false. */
+  autoStart?: boolean;
 }
 
 const COPY = {
@@ -67,7 +69,8 @@ const HandwritingDrill = ({
   language = 'fr',
   title,
   onComplete,
-  padSize = 240
+  padSize = 240,
+  autoStart = false
 }: HandwritingDrillProps) => {
   const copy = COPY[language];
 
@@ -87,7 +90,7 @@ const HandwritingDrill = ({
     return out;
   }, [hanzis]);
 
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(autoStart);
   const [index, setIndex] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [lastResult, setLastResult] = useState<HanziWriterQuizStats | null>(null);

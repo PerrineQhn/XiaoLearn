@@ -79,11 +79,11 @@ function findCardAncestor(node: HTMLElement | null): HTMLElement | null {
 }
 
 /** padSize en fonction du width de la carte (au lieu du viewport).
- *  ~50-55% du width de la carte = pad confortable sans déborder. */
+ *  Ratio plus serré pour laisser de l'air autour du caractère. */
 function getPadSize(cardWidth: number): number {
-  if (cardWidth >= 600) return Math.round(cardWidth * 0.42); // desktop
-  if (cardWidth >= 400) return Math.round(cardWidth * 0.5); // tablette
-  return Math.round(cardWidth * 0.6); // mobile
+  if (cardWidth >= 600) return Math.round(cardWidth * 0.32); // desktop
+  if (cardWidth >= 400) return Math.round(cardWidth * 0.4); // tablette
+  return Math.round(cardWidth * 0.55); // mobile
 }
 
 export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteButtonProps) {
@@ -189,7 +189,12 @@ export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteBu
               >
                 ✕
               </button>
-              <HandwritingDrill hanzis={[hanzi]} language={language} padSize={padSize} />
+              <HandwritingDrill
+                hanzis={[hanzi]}
+                language={language}
+                padSize={padSize}
+                autoStart
+              />
             </div>
           </div>,
           document.body
