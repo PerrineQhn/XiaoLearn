@@ -9,8 +9,21 @@
  * traçable (uniquement pinyin/punctuation) — le composant retourne null.
  */
 
-import { useCallback, useEffect, useState, type MouseEvent } from 'react';
+import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'react';
 import HandwritingDrill from '../HandwritingDrill';
+
+/**
+ * Calcule la taille du HanziWriterPad selon le viewport. Aligné sur les
+ * breakpoints de la modale `.fc4-write-modal-dialog` (mobile / tablette /
+ * desktop) — pad ≈ width modal - paddings - 30px de respiration.
+ */
+function getPadSize(): number {
+  if (typeof window === 'undefined') return 170;
+  const w = window.innerWidth;
+  if (w >= 1024) return 280; // desktop
+  if (w >= 600) return 230; // tablette portrait
+  return 170; // mobile
+}
 
 interface WriteButtonProps {
   hanzi: string;
@@ -54,7 +67,19 @@ const COPY = {
 
 export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteButtonProps) {
   const [open, setOpen] = useState(false);
+  const [viewportTick, setViewportTick] = useState(0);
   const copy = COPY[language];
+
+  // Recalcule padSize si l'utilisateur tourne sa tablette (portrait/paysage)
+  // ou redimensionne la fenêtre desktop pendant que la modale est ouverte.
+  useEffect(() => {
+    if (!open) return;
+    const onResize = () => setViewportTick((t) => t + 1);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [open]);
+
+  const padSize = useMemo(() => getPadSize(), [viewportTick, open]);
 
   // Détecte la présence d'au moins un caractère CJK : sinon on cache le bouton
   // (cas des cartes pinyin-only qui ont déjà été filtrées en amont mais
@@ -116,7 +141,7 @@ export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteBu
             >
               ✕
             </button>
-            <HandwritingDrill hanzis={[hanzi]} language={language} padSize={170} />
+            <HandwritingDrill hanzis={[hanzi]} language={language} padSize={padSize} />
           </div>
         </div>
       )}

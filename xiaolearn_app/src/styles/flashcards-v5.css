@@ -1500,13 +1500,26 @@
   border-radius: 16px;
   box-shadow: 0 18px 48px -8px rgba(0, 0, 0, 0.35);
   padding: 16px 12px 12px;
-  /* Taille fixe et serrée — la modale doit tenir DANS la carte de flashcard
-     même sur tablette portrait (flashcard ≈ 320-380px de large). */
+  /* Mobile (défaut) : modal serré pour tenir dans la flashcard étroite. */
   width: 220px;
   max-width: 92vw;
   max-height: 78vh;
   overflow-y: auto;
   animation: fc4-write-popin 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* Tablette portrait (carte ~500px) → modal plus large + plus de padding */
+@media (min-width: 600px) {
+  .fc4-write-modal-dialog {
+    width: 300px;
+    padding: 20px 16px 16px;
+  }
+}
+/* Tablette paysage / desktop (carte ~600-700px) → modal encore plus large */
+@media (min-width: 1024px) {
+  .fc4-write-modal-dialog {
+    width: 360px;
+    padding: 24px 20px 20px;
+  }
 }
 /* Compactage du HandwritingDrill imbriqué */
 .fc4-write-modal-dialog .hw-drill {
