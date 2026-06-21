@@ -1476,18 +1476,18 @@
 }
 .fc5-session-shell .fc4-card-writer--inverse:hover { background: rgba(255, 255, 255, 0.22); }
 
-/* --- Modale d'écriture (HandwritingDrill par-dessus la carte) ----------- */
+/* --- Modale d'écriture (V19) — positionnée pile sur la carte ----------- */
+/* L'overlay couvre tout le viewport, mais le dialog est positionné par
+   WriteButton.tsx via INLINE STYLE pour occuper exactement le rect de la
+   carte de flashcard (calculé via getBoundingClientRect). Plus de width /
+   height / position dans le CSS — c'est le style inline qui pilote. */
 .fc4-write-modal {
   position: fixed;
   inset: 0;
-  background: rgba(20, 14, 12, 0.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(20, 14, 12, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   z-index: 1000;
-  padding: 16px;
   animation: fc4-write-fadein 0.18s ease;
 }
 @keyframes fc4-write-fadein {
@@ -1495,33 +1495,16 @@
   to { opacity: 1; }
 }
 .fc4-write-modal-dialog {
-  position: relative;
+  /* position / top / left / width / height fournis par inline-style React */
   background: var(--bg-primary, #fffaf4);
-  border-radius: 14px;
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.3);
-  padding: 12px 10px 10px;
-  /* Mobile (défaut) — TRÈS serré, doit tenir dans la flashcard étroite. */
-  width: 200px;
-  max-width: 88vw;
-  max-height: 60vh;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px -8px rgba(0, 0, 0, 0.4);
+  padding: 14px 14px 12px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   animation: fc4-write-popin 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-/* Tablette portrait / paysage (≥ 600px) */
-@media (min-width: 600px) {
-  .fc4-write-modal-dialog {
-    width: 240px;
-    padding: 14px 12px 12px;
-    max-height: 55vh;
-  }
-}
-/* Desktop (≥ 1024px) */
-@media (min-width: 1024px) {
-  .fc4-write-modal-dialog {
-    width: 280px;
-    padding: 16px 14px 14px;
-    max-height: 50vh;
-  }
 }
 /* Compactage du HandwritingDrill imbriqué : on retire toute la respiration
    superflue pour que ça tienne dans la modale serrée. */

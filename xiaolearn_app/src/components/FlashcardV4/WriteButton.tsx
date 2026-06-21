@@ -2,28 +2,24 @@
  * WriteButton.tsx — bouton ✏️ + modale d'écriture pour les flashcards.
  * --------------------------------------------------------------------
  * Insère un 3e bouton dans le topbar des FlashcardV4 (à côté de 🔊 et 🎤).
- * Au clic, ouvre une modale par-dessus la carte qui lance le HandwritingDrill
- * sur tous les caractères du hanzi (mode démo + pratique, géré par HanziWriterPad).
+ * Au clic, ouvre une modale POSITIONNÉE EXACTEMENT SUR LA CARTE de flashcard
+ * (pas centrée sur le viewport — sinon décalage à cause de la sidebar).
  *
- * Conçu pour rester silencieux si le hanzi ne contient aucun caractère
- * traçable (uniquement pinyin/punctuation) — le composant retourne null.
+ * Stratégie (V19) :
+ *   - Au montage, on remonte le DOM depuis le bouton pour trouver l'ancêtre
+ *     .fc4-flip-card (la carte qui flip), on lit son getBoundingClientRect.
+ *   - On rend la modale via createPortal dans document.body pour s'extraire
+ *     de la rotation 3D de la flip-card et des potentiels overflow:hidden.
+ *   - La modale est positionnée en `position: fixed` aux coords exactes du
+ *     rect → elle COUVRE pile la carte.
+ *   - Si la fenêtre est resize / scroll, on recalcule.
+ *
+ * Reste silencieux si le hanzi ne contient aucun caractère CJK traçable.
  */
 
-import { useCallback, useEffect, useMemo, useState, type MouseEvent } from 'react';
+import { createPortal } from 'react-dom';
+import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 import HandwritingDrill from '../HandwritingDrill';
-
-/**
- * Calcule la taille du HanziWriterPad selon le viewport. Aligné sur les
- * breakpoints de la modale `.fc4-write-modal-dialog` (mobile / tablette /
- * desktop) — pad ≈ width modal - paddings - 30px de respiration.
- */
-function getPadSize(): number {
-  if (typeof window === 'undefined') return 140;
-  const w = window.innerWidth;
-  if (w >= 1024) return 180; // desktop
-  if (w >= 600) return 160; // tablette
-  return 140; // mobile
-}
 
 interface WriteButtonProps {
   hanzi: string;
@@ -47,7 +43,6 @@ function PenIcon({ size = 20 }: { size?: number }) {
       strokeLinejoin="round"
       aria-hidden
     >
-      {/* Stylo type marqueur : pointe + corps + manche */}
       <path d="M14.5 4.5l5 5L9 20H4v-5L14.5 4.5z" />
       <path d="M13 6l5 5" />
     </svg>
@@ -55,45 +50,78 @@ function PenIcon({ size = 20 }: { size?: number }) {
 }
 
 const COPY = {
-  fr: {
-    aria: 'Pratiquer l\'écriture',
-    close: 'Fermer'
-  },
-  en: {
-    aria: 'Practice writing',
-    close: 'Close'
-  }
+  fr: { aria: 'Pratiquer l\'écriture', close: 'Fermer' },
+  en: { aria: 'Practice writing', close: 'Close' }
 };
+
+interface AnchorRect {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+}
+
+/** Cherche l'ancêtre .fc4-flip-card (ou .fc4-mcq-card, etc.) à partir d'un node. */
+function findCardAncestor(node: HTMLElement | null): HTMLElement | null {
+  let cur: HTMLElement | null = node;
+  while (cur) {
+    if (
+      cur.classList.contains('fc4-flip-card') ||
+      cur.classList.contains('fc4-mcq-card') ||
+      cur.classList.contains('fc4-typing-card') ||
+      cur.classList.contains('fc4-listening-card')
+    ) {
+      return cur;
+    }
+    cur = cur.parentElement;
+  }
+  return null;
+}
+
+/** padSize en fonction du width de la carte (au lieu du viewport).
+ *  ~50-55% du width de la carte = pad confortable sans déborder. */
+function getPadSize(cardWidth: number): number {
+  if (cardWidth >= 600) return Math.round(cardWidth * 0.42); // desktop
+  if (cardWidth >= 400) return Math.round(cardWidth * 0.5); // tablette
+  return Math.round(cardWidth * 0.6); // mobile
+}
 
 export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteButtonProps) {
   const [open, setOpen] = useState(false);
-  const [viewportTick, setViewportTick] = useState(0);
+  const [anchorRect, setAnchorRect] = useState<AnchorRect | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const copy = COPY[language];
 
-  // Recalcule padSize si l'utilisateur tourne sa tablette (portrait/paysage)
-  // ou redimensionne la fenêtre desktop pendant que la modale est ouverte.
+  const hasCjk = /[一-鿿]/.test(hanzi ?? '');
+
+  // Recalcule le rect de la carte (au mount + au resize/scroll).
+  const recomputeRect = useCallback(() => {
+    const card = findCardAncestor(buttonRef.current);
+    if (!card) {
+      setAnchorRect(null);
+      return;
+    }
+    const r = card.getBoundingClientRect();
+    setAnchorRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+  }, []);
+
   useEffect(() => {
     if (!open) return;
-    const onResize = () => setViewportTick((t) => t + 1);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, [open]);
-
-  const padSize = useMemo(() => getPadSize(), [viewportTick, open]);
-
-  // Détecte la présence d'au moins un caractère CJK : sinon on cache le bouton
-  // (cas des cartes pinyin-only qui ont déjà été filtrées en amont mais
-  // certaines flashcards d'exemples peuvent ne contenir que de la ponctuation).
-  const hasCjk = /[一-鿿]/.test(hanzi ?? '');
+    recomputeRect();
+    const onChange = () => recomputeRect();
+    window.addEventListener('resize', onChange);
+    window.addEventListener('scroll', onChange, true);
+    return () => {
+      window.removeEventListener('resize', onChange);
+      window.removeEventListener('scroll', onChange, true);
+    };
+  }, [open, recomputeRect]);
 
   const handleOpen = useCallback((e: MouseEvent) => {
     e.stopPropagation();
     setOpen(true);
   }, []);
-
-  const handleClose = useCallback(() => {
-    setOpen(false);
-  }, []);
+  const handleClose = useCallback(() => setOpen(false), []);
 
   // ESC pour fermer
   useEffect(() => {
@@ -108,11 +136,29 @@ export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteBu
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
 
+  const padSize = useMemo(() => {
+    if (!anchorRect) return 180;
+    return getPadSize(anchorRect.width);
+  }, [anchorRect]);
+
   if (!hasCjk) return null;
+
+  // Style inline appliqué au dialog pour qu'il occupe exactement le rect de
+  // la carte (fallback : viewport centered si l'ancêtre n'a pas pu être trouvé).
+  const dialogStyle: React.CSSProperties = anchorRect
+    ? {
+        position: 'fixed',
+        top: anchorRect.top,
+        left: anchorRect.left,
+        width: anchorRect.width,
+        height: anchorRect.height
+      }
+    : {};
 
   return (
     <>
       <button
+        ref={buttonRef}
         type="button"
         className={`fc4-card-writer${inverse ? ' fc4-card-writer--inverse' : ''}`}
         onClick={handleOpen}
@@ -121,30 +167,33 @@ export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteBu
         <PenIcon size={20} />
       </button>
 
-      {open && (
-        <div
-          className="fc4-write-modal"
-          onClick={handleClose}
-          role="dialog"
-          aria-modal="true"
-          aria-label={copy.aria}
-        >
+      {open &&
+        createPortal(
           <div
-            className="fc4-write-modal-dialog"
-            onClick={(e) => e.stopPropagation()}
+            className="fc4-write-modal"
+            onClick={handleClose}
+            role="dialog"
+            aria-modal="true"
+            aria-label={copy.aria}
           >
-            <button
-              type="button"
-              className="fc4-write-modal-close"
-              onClick={handleClose}
-              aria-label={copy.close}
+            <div
+              className="fc4-write-modal-dialog"
+              style={dialogStyle}
+              onClick={(e) => e.stopPropagation()}
             >
-              ✕
-            </button>
-            <HandwritingDrill hanzis={[hanzi]} language={language} padSize={padSize} />
-          </div>
-        </div>
-      )}
+              <button
+                type="button"
+                className="fc4-write-modal-close"
+                onClick={handleClose}
+                aria-label={copy.close}
+              >
+                ✕
+              </button>
+              <HandwritingDrill hanzis={[hanzi]} language={language} padSize={padSize} />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
