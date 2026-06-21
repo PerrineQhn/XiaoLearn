@@ -1278,7 +1278,7 @@ const ExerciseCard = ({
   answered: boolean;
   selectedIndex: number | null;
   onSelect: (index: number) => void;
-  onValidate: () => void;
+  onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
 }) => {
@@ -1374,16 +1374,14 @@ const ExerciseCard = ({
 
   const isCorrect = answered && selectedIndex === exercise.correctIndex;
 
-  // BUG FIX (V14) : le parent compare selectedIndex à currentExercise.correctIndex
-  // ORIGINAL (non shufflé). Mais selectedIndex est l'index dans l'ordre SHUFFLÉ
-  // que voit l'utilisateur. Conséquence : même quand on clique sur la bonne
-  // réponse, le parent croit qu'on s'est trompé → score final faux.
-  // Fix (pattern OrderExerciseCard) : avant onValidate, on remap selectedIndex
-  // vers l'index de la bonne réponse dans l'ordre ORIGINAL si correct, sinon -1.
-  // Le parent matche alors correctement avec rawExercise.correctIndex.
+  // BUG FIX (V17) : le composant connaît le shuffle, donc seul lui sait si la
+  // réponse est correcte. On passe directement le booléen au parent via
+  // onValidate(correct). Évite le pattern setState async (onSelect → setState
+  // → onValidate) qui ne propage pas selectedIndex à temps : React batch les
+  // updates dans le même handler, donc le parent lit l'ancien selectedIndex
+  // shufflé au lieu du remap original. Régression introduite en V14.
   const handleValidate = () => {
-    onSelect(isCorrect ? rawExercise.correctIndex : -1);
-    onValidate();
+    onValidate(isCorrect);
   };
   let promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
   // Pour les exercices "error-correction" : si le prompt contient les segments
@@ -1680,7 +1678,7 @@ const DialogueResponseCard = ({
   answered: boolean;
   selectedIndex: number | null;
   onSelect: (index: number) => void;
-  onValidate: () => void;
+  onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
 }) => {
@@ -1804,7 +1802,7 @@ const DialogueResponseCard = ({
             type="button"
             className="lv2-btn lv2-btn--primary"
             disabled={selectedIndex === null}
-            onClick={onValidate}
+            onClick={() => onValidate(isCorrect)}
           >
             {getCopy(language, 'check')}
           </button>
@@ -1870,7 +1868,7 @@ const ContextReactCard = ({
   answered: boolean;
   selectedIndex: number | null;
   onSelect: (index: number) => void;
-  onValidate: () => void;
+  onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
 }) => {
@@ -1924,7 +1922,7 @@ const ContextReactCard = ({
             type="button"
             className="lv2-btn lv2-btn--primary"
             disabled={selectedIndex === null}
-            onClick={onValidate}
+            onClick={() => onValidate(isCorrect)}
           >
             {getCopy(language, 'check')}
           </button>
@@ -1990,7 +1988,7 @@ const OrderExerciseCard = ({
   language: LessonV2Language;
   answered: boolean;
   onSelect: (index: number) => void;
-  onValidate: () => void;
+  onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
 }) => {
@@ -2064,9 +2062,8 @@ const OrderExerciseCard = ({
   );
 
   const handleValidate = () => {
-    // Communique au parent via onSelect : 0 = correct (== correctIndex), -1 = wrong.
-    onSelect(isCorrect ? exercise.correctIndex : -1);
-    onValidate();
+    // V17 : passe directement le bool au parent (cf. ExerciseCard handleValidate).
+    onValidate(isCorrect);
   };
 
   return (
@@ -2302,9 +2299,11 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
 
   const goStep = useCallback((target: StepKey) => setStep(target), []);
 
-  const handleValidate = useCallback(() => {
+  const handleValidate = useCallback((correct: boolean) => {
     if (!currentExercise || selectedIndex === null) return;
-    const correct = selectedIndex === currentExercise.correctIndex;
+    // V17 : on reçoit directement le bool depuis l'enfant (qui connaît son
+    // propre shuffle), au lieu de comparer selectedIndex à un correctIndex
+    // qu'on ne sait pas être l'original ou le shufflé.
     setAnswers((prev) => ({
       ...prev,
       [currentExercise.id]: { chosen: selectedIndex, correct }

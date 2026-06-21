@@ -29,6 +29,8 @@ export interface HandwritingDrillProps {
   title?: string;
   /** Callback à la fin du drill. */
   onComplete?: (correct: number, total: number) => void;
+  /** Taille du HanziWriterPad en px. Défaut 240, à réduire en modal (ex 200). */
+  padSize?: number;
 }
 
 const COPY = {
@@ -64,7 +66,8 @@ const HandwritingDrill = ({
   hanzis,
   language = 'fr',
   title,
-  onComplete
+  onComplete,
+  padSize = 240
 }: HandwritingDrillProps) => {
   const copy = COPY[language];
 
@@ -179,7 +182,7 @@ const HandwritingDrill = ({
         <HanziWriterPad
           key={current /* force remount entre 2 caractères */}
           hanzi={current}
-          size={240}
+          size={padSize}
           language={language}
           onComplete={handleComplete}
         />

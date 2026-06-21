@@ -116,7 +116,7 @@ export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteBu
             >
               ✕
             </button>
-            <HandwritingDrill hanzis={[hanzi]} language={language} />
+            <HandwritingDrill hanzis={[hanzi]} language={language} padSize={200} />
           </div>
         </div>
       )}
