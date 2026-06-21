@@ -312,14 +312,11 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
           </div>
           <div className="fc4-card-body">
             <div className="fc4-back-meaning">{backMain}</div>
-            {frontFr ? (
-              <div className="fc4-back-pinyin">{backPinyin}</div>
-            ) : (
-              <>
-                <div className="fc4-back-hanzi">{card.hanzi}</div>
-                <div className="fc4-back-pinyin">{backPinyin}</div>
-              </>
-            )}
+            {/* En mode FR→ZH : backMain est DÉJÀ le hanzi, on ajoute juste
+                le pinyin sous lui. En mode ZH→FR : backMain est la trad,
+                on ajoute le pinyin pour rappel. Dans les deux cas, pas de
+                ré-affichage du hanzi (corrige le doublon V14). */}
+            <div className="fc4-back-pinyin">{backPinyin}</div>
             {card.exampleHanzi ? (
               <div className="fc4-back-example">
                 <div className="fc4-example-hanzi">&ldquo;{card.exampleHanzi}&rdquo;</div>
