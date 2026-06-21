@@ -1586,6 +1586,19 @@
 .fc4-write-modal-dialog .hw-pad-actions {
   gap: 4px;
 }
+/* Quand le feedback "Bravo parfait!" s'affiche, on cache les boutons
+   "Voir les traits / Écrire" pour ne pas empiler trop d'éléments verticaux.
+   L'utilisateur a déjà tracé, l'étape suivante est "Suivant", pas re-tracer. */
+.fc4-write-modal-dialog .hw-pad:has(.hw-pad-feedback) .hw-pad-actions {
+  display: none;
+}
+/* Aligne la modale en HAUT au lieu d'être centrée verticalement, pour
+   qu'elle reste au-dessus de la carte de flashcard même quand son contenu
+   s'allonge (après tracé). */
+.fc4-write-modal {
+  align-items: flex-start;
+  padding-top: 14vh;
+}
 @keyframes fc4-write-popin {
   from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
