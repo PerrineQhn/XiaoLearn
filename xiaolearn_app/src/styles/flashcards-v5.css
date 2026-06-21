@@ -1562,10 +1562,12 @@
 }
 .fc4-write-modal-close {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  width: 32px;
-  height: 32px;
+  /* À GAUCHE pour ne pas chevaucher le badge progress "CARACTÈRE N/X"
+     du HandwritingDrill qui est en haut à droite du header. */
+  top: 6px;
+  left: 6px;
+  width: 26px;
+  height: 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1573,7 +1575,7 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-secondary, #6e655c);
   transition: background 0.12s ease, color 0.12s ease;
   z-index: 2;
@@ -1581,6 +1583,10 @@
 .fc4-write-modal-close:hover {
   background: var(--border-light, #ece4d5);
   color: var(--text-primary, #2c1810);
+}
+/* Libère de l'espace à gauche dans le header pour la croix */
+.fc4-write-modal-dialog .hw-drill-header {
+  padding-left: 28px;
 }
 /* Reset du double-cadre : la modale est déjà une "carte", donc on retire
    le bord/padding/margin externe du HandwritingDrill qu'on imbrique. */
