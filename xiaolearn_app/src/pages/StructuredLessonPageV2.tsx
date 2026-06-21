@@ -1372,7 +1372,11 @@ const ExerciseCard = ({
   // Remplace la référence locale par l'exercice shufflé pour TOUT le rendu.
   exercise = shuffledExercise;
 
-  const isCorrect = answered && selectedIndex === exercise.correctIndex;
+  // BUG FIX V20 : ne PAS gater isCorrect par `answered` — sinon au clic Valider,
+  // answered est encore false (le parent ne l'a pas encore mis à true), donc
+  // isCorrect renvoie false même quand la réponse est correcte → score faussé.
+  // L'affichage du feedback reste gated par `answered` ailleurs dans le rendu.
+  const isCorrect = selectedIndex !== null && selectedIndex === exercise.correctIndex;
 
   // BUG FIX (V17) : le composant connaît le shuffle, donc seul lui sait si la
   // réponse est correcte. On passe directement le booléen au parent via
@@ -1692,7 +1696,11 @@ const DialogueResponseCard = ({
   const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
   const explanationText =
     language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
-  const isCorrect = answered && selectedIndex === exercise.correctIndex;
+  // BUG FIX V20 : ne PAS gater isCorrect par `answered` — sinon au clic Valider,
+  // answered est encore false (le parent ne l'a pas encore mis à true), donc
+  // isCorrect renvoie false même quand la réponse est correcte → score faussé.
+  // L'affichage du feedback reste gated par `answered` ailleurs dans le rendu.
+  const isCorrect = selectedIndex !== null && selectedIndex === exercise.correctIndex;
 
   const playLine = useCallback((line: DialogueLine) => {
     if (line.audio) {
@@ -1877,7 +1885,11 @@ const ContextReactCard = ({
     language === 'en' ? exercise.contextEn ?? exercise.context : exercise.context ?? exercise.contextEn;
   const explanationText =
     language === 'en' && exercise.explanationEn ? exercise.explanationEn : exercise.explanation;
-  const isCorrect = answered && selectedIndex === exercise.correctIndex;
+  // BUG FIX V20 : ne PAS gater isCorrect par `answered` — sinon au clic Valider,
+  // answered est encore false (le parent ne l'a pas encore mis à true), donc
+  // isCorrect renvoie false même quand la réponse est correcte → score faussé.
+  // L'affichage du feedback reste gated par `answered` ailleurs dans le rendu.
+  const isCorrect = selectedIndex !== null && selectedIndex === exercise.correctIndex;
 
   return (
     <div className="lv2-exercise lv2-exercise--context">
