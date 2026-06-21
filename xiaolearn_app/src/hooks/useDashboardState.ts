@@ -184,6 +184,44 @@ const daysBetween = (a: string, b: string) => {
   return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
 };
 
+/**
+ * Recalcule la série courante en se basant sur la matrice d'activité (vérité
+ * source : un jour avec XP > 0 = jour actif). On part d'aujourd'hui ou d'hier
+ * (selon si activité aujourd'hui) et on remonte tant que les jours sont
+ * consécutifs et ont une activité non-nulle.
+ *
+ * Utile pour réconcilier `streak.current` quand il a divergé de la réalité
+ * (désync Firestore, perte de localStorage, bug ancien…).
+ */
+const recomputeStreakFromActivity = (
+  activity: Record<string, number>,
+  today: string
+): number => {
+  // On commence à compter à partir d'aujourd'hui si actif sinon hier (pour
+  // ne pas pénaliser un user qui n'a pas encore agi aujourd'hui mais était
+  // actif hier).
+  const hasToday = (activity[today] ?? 0) > 0;
+  let cursor = today;
+  if (!hasToday) {
+    const d = new Date(today + 'T00:00:00');
+    d.setDate(d.getDate() - 1);
+    cursor = d.toISOString().slice(0, 10);
+  }
+  let count = 0;
+  // Sécurité : on cap à 400 jours pour ne pas boucler à l'infini.
+  for (let i = 0; i < 400; i++) {
+    if ((activity[cursor] ?? 0) > 0) {
+      count++;
+      const d = new Date(cursor + 'T00:00:00');
+      d.setDate(d.getDate() - 1);
+      cursor = d.toISOString().slice(0, 10);
+    } else {
+      break;
+    }
+  }
+  return count;
+};
+
 const readJSON = <T,>(key: string, fallback: T): T => {
   if (typeof window === 'undefined') return fallback;
   try {
@@ -445,6 +483,34 @@ export const useDashboardState = (input: DashboardInput): DashboardApi => {
     }
     writeJSON(LAST_SEEN_KEY, today);
   }, []);
+
+  // V18 — Réconciliation streak vs activité réelle.
+  // Bug observé : un user actif 6 jours consécutifs voyait son streak figé à 2,
+  // probablement à cause d'un mauvais sync Firestore ou d'un award précoce où
+  // computeNextStreak n'avait pas le bon lastDay. On corrige a posteriori en
+  // recalculant le streak DEPUIS la matrice d'activité (vérité source).
+  // Si le recalc est strictement plus grand que current, on met à jour.
+  useEffect(() => {
+    const today = todayKey();
+    const realStreak = recomputeStreakFromActivity(activity, today);
+    if (realStreak > streakRef.current.current) {
+      setStreak((prev) => ({
+        ...prev,
+        current: realStreak,
+        best: Math.max(prev.best, realStreak),
+        // lastDay := dernier jour actif effectif (pour que computeNextStreak
+        // s'aligne ensuite correctement).
+        lastDay:
+          (activity[today] ?? 0) > 0
+            ? today
+            : (() => {
+                const d = new Date(today + 'T00:00:00');
+                d.setDate(d.getDate() - 1);
+                return d.toISOString().slice(0, 10);
+              })()
+      }));
+    }
+  }, [activity]);
 
   // ------------------------------------------------------------------
   //  Award XP — point d'application unique du multiplicateur + daily + palier
