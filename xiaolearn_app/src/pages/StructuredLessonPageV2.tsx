@@ -2081,10 +2081,17 @@ const OrderExerciseCard = ({
       )}
 
       {/* Slot : phrase construite par l'utilisateur. */}
+      <div className="lv2-order-slot-label">
+        {language === 'en'
+          ? `↓ Your sentence (${picked.length}/${exercise.choices.length})`
+          : `↓ Ta phrase (${picked.length}/${exercise.choices.length})`}
+      </div>
       <div className="lv2-order-slot">
         {picked.length === 0 ? (
           <span className="lv2-order-slot-placeholder">
-            {language === 'en' ? 'Tap the segments in order…' : 'Tapez les segments dans l\u2019ordre\u2026'}
+            {language === 'en'
+              ? '👇 Click chips below to add here in order'
+              : '👇 Clique sur les étiquettes ci-dessous pour les ranger ici'}
           </span>
         ) : (
           picked.map((origIdx, pos) => (
