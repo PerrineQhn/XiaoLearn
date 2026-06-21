@@ -79,11 +79,12 @@ function findCardAncestor(node: HTMLElement | null): HTMLElement | null {
 }
 
 /** padSize en fonction du width de la carte (au lieu du viewport).
- *  Ratio plus serré pour laisser de l'air autour du caractère. */
+ *  Ratio serré pour que TOUT le contenu (titre + pad + feedback + bouton
+ *  Terminer/Suivant) tienne dans la hauteur de la carte sans scroll. */
 function getPadSize(cardWidth: number): number {
-  if (cardWidth >= 600) return Math.round(cardWidth * 0.32); // desktop
-  if (cardWidth >= 400) return Math.round(cardWidth * 0.4); // tablette
-  return Math.round(cardWidth * 0.55); // mobile
+  if (cardWidth >= 600) return Math.round(cardWidth * 0.26); // desktop
+  if (cardWidth >= 400) return Math.round(cardWidth * 0.34); // tablette
+  return Math.round(cardWidth * 0.5); // mobile
 }
 
 export default function WriteButton({ hanzi, language = 'fr', inverse }: WriteButtonProps) {
