@@ -2307,13 +2307,16 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
   const goStep = useCallback((target: StepKey) => setStep(target), []);
 
   const handleValidate = useCallback((correct: boolean) => {
-    if (!currentExercise || selectedIndex === null) return;
+    if (!currentExercise) return;
     // V17 : on reçoit directement le bool depuis l'enfant (qui connaît son
     // propre shuffle), au lieu de comparer selectedIndex à un correctIndex
     // qu'on ne sait pas être l'original ou le shufflé.
+    // V18 : on ne fait plus early-return sur selectedIndex===null, parce que
+    // certains types d'exos (order) ne passent jamais par onSelect — leur
+    // état est purement local au composant. Pour ces cas, chosen=-1.
     setAnswers((prev) => ({
       ...prev,
-      [currentExercise.id]: { chosen: selectedIndex, correct }
+      [currentExercise.id]: { chosen: selectedIndex ?? -1, correct }
     }));
     setAnswered(true);
   }, [currentExercise, selectedIndex]);
