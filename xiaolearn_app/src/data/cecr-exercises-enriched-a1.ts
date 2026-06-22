@@ -457,8 +457,8 @@ const A1_HELLO_M4: LessonV2Exercise[] = [
     promptEn: 'Listen — which country is mentioned?',
     choices: ['法国 (France)', '美国 (USA)', '英国 (Royaume-Uni)', '中国 (Chine)'],
     correctIndex: 0,
-    explanation: '法国 = fǎ guó. Le 法 (fǎ) est ton 3 : descend puis remonte. Distinction clé avec 美国 (měi guó) et 英国 (yīng guó).',
-    explanationEn: '法国 = fǎ guó. 法 (fǎ) is tone 3: dips then rises. Key distinction from 美国 (měi guó) and 英国 (yīng guó).',
+    explanation: '法国 = fǎ guó. Le 法 (fǎ) est ton 3 : descend puis remonte. Distinction clé avec 美国 (měi guó) et 英国 (yīngguó).',
+    explanationEn: '法国 = fǎ guó. 法 (fǎ) is tone 3: dips then rises. Key distinction from 美国 (měi guó) and 英国 (yīngguó).',
     audioHanzi: '\u6CD5\u56FD',
     autoPlay: true
   },
@@ -799,8 +799,8 @@ const A1_NUMBERS_M3: LessonV2Exercise[] = [
     promptEn: 'Which is the short, oral synonym of 星期 (week)?',
     choices: ['\u793C\u62DC', '\u5468', '\u65E5\u5B50', '\u5C0F\u65F6'],
     correctIndex: 1,
-    explanation: '周 (zhōu) = synonyme plus court. 周一 = 星期一. 礼拜 (lǐ bài) existe aussi, plus familier. Les trois cohabitent.',
-    explanationEn: '周 (zhōu) = shorter synonym. 周一 = 星期一. 礼拜 (lǐ bài) also exists, more colloquial. All three coexist.'
+    explanation: '周 (zhōu) = synonyme plus court. 周一 = 星期一. 礼拜 (lǐbài) existe aussi, plus familier. Les trois cohabitent.',
+    explanationEn: '周 (zhōu) = shorter synonym. 周一 = 星期一. 礼拜 (lǐbài) also exists, more colloquial. All three coexist.'
   }
 ];
 
@@ -1049,8 +1049,8 @@ const A1_FAMILY_M1: LessonV2Exercise[] = [
     promptEn: 'How to say «older sister»?',
     choices: ['\u59B9\u59B9', '\u59D0\u59D0', '\u59B9\u5C0F\u59D0', '\u5927\u59D0\u59B9'],
     correctIndex: 1,
-    explanation: '姐姐 (jiě jie) = grande sœur, 妹妹 (mèi mei) = petite sœur. Le chinois distingue toujours aîné / cadet — pas de « sœur » neutre.',
-    explanationEn: '姐姐 (jiě jie) = older sister, 妹妹 (mèi mei) = younger sister. Chinese always distinguishes elder/younger — no neutral «sister».'
+    explanation: '姐姐 (jiějie) = grande sœur, 妹妹 (mèimei) = petite sœur. Le chinois distingue toujours aîné / cadet — pas de « sœur » neutre.',
+    explanationEn: '姐姐 (jiějie) = older sister, 妹妹 (mèimei) = younger sister. Chinese always distinguishes elder/younger — no neutral «sister».'
   },
   {
     id: 'cecr-a1-family-m1-fill1',
@@ -1855,8 +1855,8 @@ const A1_GRAMMAR_M2: LessonV2Exercise[] = [
       '\u4E0D\u559C\u6B22 (ne pas aimer)'
     ],
     correctIndex: 1,
-    explanation: '不是 = bú shì (le 不 passe au ton 2 devant le ton 4 de 是 : sandhi automatique). Même règle pour 不去 (bú qù), 不要 (bú yào).',
-    explanationEn: '不是 = bú shì (不 shifts to tone 2 before tone-4 是: automatic sandhi). Same rule for 不去 (bú qù), 不要 (bú yào).',
+    explanation: '不是 = bú shì (le 不 passe au ton 2 devant le ton 4 de 是 : sandhi automatique). Même règle pour 不去 (bú qù), 不要 (búyào).',
+    explanationEn: '不是 = bú shì (不 shifts to tone 2 before tone-4 是: automatic sandhi). Same rule for 不去 (bú qù), 不要 (búyào).',
     audioHanzi: '\u4E0D\u662F',
     autoPlay: true
   },

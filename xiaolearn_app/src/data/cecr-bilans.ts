@@ -57,7 +57,7 @@ const a1: LevelBilan = {
       'a1-q1',
       'mcq',
       'Comment dit-on « Bonjour » en chinois ?',
-      ['再见 (zàijiàn)', '你好 (nǐ hǎo)', '谢谢 (xièxie)', '对不起 (duìbuqǐ)'],
+      ['再见 (zàijiàn)', '你好 (nǐhǎo)', '谢谢 (xièxie)', '对不起 (duìbuqǐ)'],
       1,
       "你好 signifie littéralement « tu bien » et s'utilise à toute heure. 再见 = « au revoir », 谢谢 = « merci », 对不起 = « désolé ».",
       { topic: 'vocab' }
@@ -832,7 +832,7 @@ const c11: LevelBilan = {
         'Serpent agile comme un pied'
       ],
       0,
-      '画蛇添足 (huà shé tiān zú) : « dessiner un serpent et lui ajouter des pattes » = rendre quelque chose moins bien en voulant l\'améliorer. Origine : fable du royaume de Chu.',
+      '画蛇添足 (huàshétiānzú) : « dessiner un serpent et lui ajouter des pattes » = rendre quelque chose moins bien en voulant l\'améliorer. Origine : fable du royaume de Chu.',
       { topic: 'culture' }
     ),
     q(

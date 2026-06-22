@@ -44,9 +44,9 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
       choices: ['你好！', '再见！', '谢谢！', '对不起！'],
       correctIndex: 0,
       explanation:
-        '你好 (nǐ hǎo) est la réponse standard à 你好. 再见 = au revoir, 谢谢 = merci, 对不起 = pardon.',
+        '你好 (nǐhǎo) est la réponse standard à 你好. 再见 = au revoir, 谢谢 = merci, 对不起 = pardon.',
       explanationEn:
-        '你好 (nǐ hǎo) is the standard reply. 再见 = goodbye, 谢谢 = thanks, 对不起 = sorry.'
+        '你好 (nǐhǎo) is the standard reply. 再见 = goodbye, 谢谢 = thanks, 对不起 = sorry.'
     },
     {
       id: 'cecr-a1-hello-m1-ctx1',
@@ -251,7 +251,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
       choices: ['我是法国人。', '我叫法国人。', '你好法国人。', '再见法国人。'],
       correctIndex: 0,
       explanation:
-        '我是 + nationalité = je suis [nationalité]. 法国人 (fǎguó rén) = français(e). Structure : 我是X人.',
+        '我是 + nationalité = je suis [nationalité]. 法国人 (fǎguórén) = français(e). Structure : 我是X人.',
       explanationEn:
         '我是 + nationality = I am [nationality]. Structure: 我是 X 人.'
     },
@@ -428,7 +428,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
       ],
       correctIndex: 0,
       explanation:
-        '请再说一遍 (qǐng zài shuō yí biàn) = répète une fois, s\'il te plaît. 一遍 = une fois (pour une action répétée). 请买单 = l\'addition, 请坐 = assieds-toi, 请进 = entre.',
+        '请再说一遍 (qǐng zàishuō yíbiàn) = répète une fois, s\'il te plaît. 一遍 = une fois (pour une action répétée). 请买单 = l\'addition, 请坐 = assieds-toi, 请进 = entre.',
       explanationEn:
         '请再说一遍 = please say it again. 一遍 = one time (for repeated action).'
     }
@@ -580,7 +580,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
       contextEn: 'You\'re lost and want to ask where the nearest metro station is.',
       choices: ['请问，地铁站在哪儿？', '你好！地铁站！', '再见，地铁站！', '不客气，地铁站？'],
       correctIndex: 0,
-      explanation: '请问 (qǐng wèn) = excusez-moi, puis-je demander. Formule polie pour interpeller un inconnu. 地铁站 = station de métro.',
+      explanation: '请问 (qǐngwèn) = excusez-moi, puis-je demander. Formule polie pour interpeller un inconnu. 地铁站 = station de métro.',
       explanationEn: '请问 = excuse me, may I ask. Polite opener for a stranger. 地铁站 = metro station.'
     }
   ],
@@ -736,7 +736,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
         '对不起，我不你好。'
       ],
       correctIndex: 0,
-      explanation: '我不知道 (wǒ bù zhīdào) = je ne sais pas. 不知道 = négation de 知道 (savoir). Précédé de 对不起 pour s\'excuser de ne pas pouvoir aider.',
+      explanation: '我不知道 (wǒ bùzhī dào) = je ne sais pas. 不知道 = négation de 知道 (savoir). Précédé de 对不起 pour s\'excuser de ne pas pouvoir aider.',
       explanationEn: '我不知道 = I don\'t know. Preceded by 对不起 to apologize for not helping.'
     }
   ],
@@ -755,7 +755,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
       ],
       choices: ['不用不用，我请客！', '好的，再见！', '不客气，谢谢！', '对不起，我付。'],
       correctIndex: 0,
-      explanation: '不用不用 = pas la peine (refus poli, redouble pour insister). 我请客 (wǒ qǐng kè) = c\'est moi qui invite. Rituel social essentiel en Chine.',
+      explanation: '不用不用 = pas la peine (refus poli, redouble pour insister). 我请客 (wǒ qǐngkè) = c\'est moi qui invite. Rituel social essentiel en Chine.',
       explanationEn: '不用不用 = no need (polite refusal, doubled for insistence). 我请客 = my treat. Essential Chinese social ritual.'
     }
   ],
@@ -932,7 +932,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     ],
     choices: ['因为贵公司的项目很有前景。', '因为我没有工作。', '因为再见。', '因为不客气。'],
     correctIndex: 0,
-    explanation: '因为 (yīnwèi) = parce que. 贵公司 (guì gōngsī) = votre estimée entreprise (formule polie). 前景 (qiánjǐng) = perspectives d\'avenir. Réponse pro qui valorise.',
+    explanation: '因为 (yīnwèi) = parce que. 贵公司 (guìgōngsī) = votre estimée entreprise (formule polie). 前景 (qiánjǐng) = perspectives d\'avenir. Réponse pro qui valorise.',
     explanationEn: '因为 = because. 贵公司 = your esteemed company. 前景 = future prospects.'
   }],
   'cecr-b11-travel-m1': [{ id: 'cecr-b11-travel-m1-dlg1', type: 'dialogue-response', category: 'vocabulary',
@@ -966,7 +966,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: "Your friend asks your opinion on a movie they liked but you found average. Honest but not hurtful?",
     choices: ['还可以，但是我觉得节奏有点慢。', '不好。', '再见。', '不客气。'],
     correctIndex: 0,
-    explanation: '还可以 (hái kěyǐ) = pas mal, ça va. Formule qui dit "moyen" sans heurter. 但是 + critique précise (节奏慢 = rythme lent) plus diplomate que "j\'ai pas aimé".',
+    explanation: '还可以 (háikěyǐ) = pas mal, ça va. Formule qui dit "moyen" sans heurter. 但是 + critique précise (节奏慢 = rythme lent) plus diplomate que "j\'ai pas aimé".',
     explanationEn: '还可以 = it\'s OK. Diplomatic "average" without offending.'
   }],
   'cecr-b11-health-m2': [{ id: 'cecr-b11-health-m2-dlg1', type: 'dialogue-response', category: 'vocabulary',
@@ -1000,7 +1000,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     ],
     choices: ['印象特别深，尤其是京都的寺庙。', '再见。', '不客气。', '对不起。'],
     correctIndex: 0,
-    explanation: '印象深 (yìnxiàng shēn) = a laissé une forte impression. 尤其是 (yóuqí shì) = surtout / en particulier. Marqueur d\'emphase pour préciser.',
+    explanation: '印象深 (yìnxiàng shēn) = a laissé une forte impression. 尤其是 (yóuqíshì) = surtout / en particulier. Marqueur d\'emphase pour préciser.',
     explanationEn: '印象深 = made a strong impression. 尤其是 = especially.'
   }],
   'cecr-b11-conversation-m3': [{ id: 'cecr-b11-conv-m3-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1010,7 +1010,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'You missed your flight due to traffic. You call your host to warn them.',
     choices: ['真不好意思，我误了航班，能不能晚点到？', '再见，我误了航班。', '不客气，我误了航班。', '对不起，我误了再见。'],
     correctIndex: 0,
-    explanation: '真不好意思 (zhēn bù hǎoyìsi) = je suis vraiment désolé (excuse forte). 误了 (wù le) = j\'ai raté. 能不能 = pourrais-je. Politesse + demande de flex.',
+    explanation: '真不好意思 (zhēn bùhǎoyìsi) = je suis vraiment désolé (excuse forte). 误了 (wù le) = j\'ai raté. 能不能 = pourrais-je. Politesse + demande de flex.',
     explanationEn: '真不好意思 = really sorry. 误了 = missed. 能不能 = could I.'
   }],
   'cecr-b11-conversation-m4': [{ id: 'cecr-b11-conv-m4-dlg1', type: 'dialogue-response', category: 'vocabulary',
@@ -1135,7 +1135,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     ],
     choices: ['有一次项目延期了，我从中学到了风险管理的重要性。', '有一次再见。', '有一次不客气。', '有一次对不起。'],
     correctIndex: 0,
-    explanation: '从中学到 (cóng zhōng xué dào) = en tirer la leçon. 风险管理 (fēngxiǎn guǎnlǐ) = gestion des risques. Format pro : échec + leçon.',
+    explanation: '从中学到 (cóngzhōng xué dào) = en tirer la leçon. 风险管理 (fēngxiǎnguǎnlǐ) = gestion des risques. Format pro : échec + leçon.',
     explanationEn: '从中学到 = learn from it. 风险管理 = risk management. Pro format: failure + lesson.'
   }],
   'cecr-b12-conversation-m7': [{ id: 'cecr-b12-conv-m7-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1160,7 +1160,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     ],
     choices: ['大家好，感谢各位百忙之中来参加今天的会议。', '大家再见。', '大家对不起。', '大家不客气。'],
     correctIndex: 0,
-    explanation: '百忙之中 (bǎimáng zhī zhōng) = malgré votre emploi du temps chargé. Formule d\'ouverture formelle qui flatte les participants.',
+    explanation: '百忙之中 (bǎimáng zhīzhōng) = malgré votre emploi du temps chargé. Formule d\'ouverture formelle qui flatte les participants.',
     explanationEn: '百忙之中 = despite your busy schedule. Formal flattering opener.'
   }],
   'cecr-b21-conversation-m2': [{ id: 'cecr-b21-conv-m2-dlg1', type: 'dialogue-response', category: 'vocabulary',
@@ -1225,7 +1225,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'You close an official email to a business partner.',
     choices: ['顺颂商祺。', '再见。', '不客气。', '对不起。'],
     correctIndex: 0,
-    explanation: '顺颂商祺 (shùn sòng shāng qí) = formule de clôture biz formelle ("Avec mes salutations commerciales"). Standard pour emails B2B.',
+    explanation: '顺颂商祺 (shùn sòng shāngqí) = formule de clôture biz formelle ("Avec mes salutations commerciales"). Standard pour emails B2B.',
     explanationEn: '顺颂商祺 = formal business sign-off. B2B email standard.'
   }],
 
@@ -1247,7 +1247,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: "Asked if remote work is always best.",
     choices: ['并不是所有情况都适合，需要看具体行业。', '并不是再见。', '并不是不客气。', '并不是对不起。'],
     correctIndex: 0,
-    explanation: '并不是 (bìng bù shì) = ce n\'est pas que… (renforce la nuance). 具体 (jùtǐ) = concret / spécifique. Position nuancée typique débat.',
+    explanation: '并不是 (bìngbù shì) = ce n\'est pas que… (renforce la nuance). 具体 (jùtǐ) = concret / spécifique. Position nuancée typique débat.',
     explanationEn: '并不是 = it\'s not that... (strong nuance). 具体 = specific.'
   }],
   'cecr-b22-debate-m3': [{ id: 'cecr-b22-deb-m3-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1256,7 +1256,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Other side claims all youth prefer remote. You refute.',
     choices: ['这种说法过于绝对，事实上很多年轻人也喜欢办公室的社交氛围。', '这种再见。', '这种不客气。', '这种对不起。'],
     correctIndex: 0,
-    explanation: '过于绝对 (guòyú juéduì) = trop catégorique. 事实上 (shìshí shàng) = en réalité. 社交氛围 (shèjiāo fēnwéi) = ambiance sociale. Réfutation polie.',
+    explanation: '过于绝对 (guòyú juéduì) = trop catégorique. 事实上 (shìshíshàng) = en réalité. 社交氛围 (shèjiāo fēnwéi) = ambiance sociale. Réfutation polie.',
     explanationEn: '过于绝对 = too absolute. 事实上 = in fact. 社交氛围 = social atmosphere.'
   }],
   'cecr-b22-debate-m4': [{ id: 'cecr-b22-deb-m4-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1265,7 +1265,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Compare work culture in China and France.',
     choices: ['相比之下，中国职场节奏更快，而法国更注重生活平衡。', '相比再见。', '相比不客气。', '相比对不起。'],
     correctIndex: 0,
-    explanation: '相比之下 (xiāngbǐ zhī xià) = en comparaison. 而 (ér) = tandis que. 生活平衡 = équilibre vie. Comparatif formel.',
+    explanation: '相比之下 (xiāngbǐ zhīxià) = en comparaison. 而 (ér) = tandis que. 生活平衡 = équilibre vie. Comparatif formel.',
     explanationEn: '相比之下 = in comparison. 而 = whereas. 生活平衡 = work-life balance.'
   }],
   'cecr-b22-debate-m5': [{ id: 'cecr-b22-deb-m5-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1274,7 +1274,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Back up your argument with a concrete example.',
     choices: ['据统计，去年有超过四成的员工选择了远程办公。', '据统计再见。', '据统计对不起。', '据统计不客气。'],
     correctIndex: 0,
-    explanation: '据统计 (jù tǒngjì) = selon les statistiques. 超过四成 = plus de 40% (成 = 10%). Format données chiffrées.',
+    explanation: '据统计 (jùtǒngjì) = selon les statistiques. 超过四成 = plus de 40% (成 = 10%). Format données chiffrées.',
     explanationEn: '据统计 = per statistics. 超过四成 = over 40% (成 = 10%).'
   }],
   'cecr-b22-debate-m6': [{ id: 'cecr-b22-deb-m6-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1292,7 +1292,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Wrap up your argument with a projection.',
     choices: ['综上所述，展望未来，远程办公将成为常态。', '综上再见。', '综上不客气。', '综上对不起。'],
     correctIndex: 0,
-    explanation: '综上所述 (zōng shàng suǒ shù) = en résumé. 展望未来 (zhǎnwàng wèilái) = en regardant vers l\'avenir. Conclusion formelle.',
+    explanation: '综上所述 (zōngshàngsuǒshù) = en résumé. 展望未来 (zhǎnwàng wèilái) = en regardant vers l\'avenir. Conclusion formelle.',
     explanationEn: '综上所述 = in summary. 展望未来 = looking ahead.'
   }],
   'cecr-b22-conversation-m1': [{ id: 'cecr-b22-conv-m1-dlg1', type: 'dialogue-response', category: 'vocabulary',
@@ -1381,7 +1381,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Asked about AI regulation, where you hold a nuanced view.',
     choices: ['就我个人而言，我倾向于支持监管，但前提是不能扼杀创新。', '就我个人再见。', '就我个人不客气。', '就我个人对不起。'],
     correctIndex: 0,
-    explanation: '就…而言 (jiù… ér yán) = en ce qui me concerne (formel). 倾向于 (qīngxiàng yú) = pencher vers. 前提是 (qiántí shì) = à condition que. 扼杀 (èshā) = étouffer.',
+    explanation: '就…而言 (jiù… ér yán) = en ce qui me concerne (formel). 倾向于 (qīngxiàngyú) = pencher vers. 前提是 (qiántí shì) = à condition que. 扼杀 (èshā) = étouffer.',
     explanationEn: '就…而言 = as for. 倾向于 = lean towards. 前提是 = provided that. 扼杀 = stifle.'
   }],
   'cecr-c11-conversation-m2': [{ id: 'cecr-c11-conv-m2-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1411,7 +1411,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Blamed for mishandling a crisis. Defend with context.',
     choices: ['当时的情况下，我已经尽力做到最好，并非有意疏忽。', '当时再见。', '当时不客气。', '当时对不起。'],
     correctIndex: 0,
-    explanation: '当时的情况下 (dāngshí de qíngkuàng xià) = dans le contexte d\'alors. 尽力 (jìnlì) = faire de son mieux. 并非 (bìngfēi) = ce n\'est nullement (formel pour 不是). 疏忽 (shūhū) = négligence.',
+    explanation: '当时的情况下 (dāngshí de qíngkuàngxià) = dans le contexte d\'alors. 尽力 (jìnlì) = faire de son mieux. 并非 (bìngfēi) = ce n\'est nullement (formel pour 不是). 疏忽 (shūhū) = négligence.',
     explanationEn: '当时…下 = in that context. 尽力 = did one\'s best. 并非 = it\'s not at all (formal). 疏忽 = negligence.'
   }],
   'cecr-c11-conversation-m5': [{ id: 'cecr-c11-conv-m5-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1431,7 +1431,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Respond to a friend hesitating to launch a big project.',
     choices: ['俗话说，不入虎穴，焉得虎子。机会难得，应该把握。', '俗话再见。', '俗话不客气。', '俗话对不起。'],
     correctIndex: 0,
-    explanation: '俗话说 (súhuà shuō) = comme dit le proverbe. 不入虎穴，焉得虎子 = qui n\'entre pas dans la tanière du tigre n\'aura pas le petit (qui ne risque rien n\'a rien). Cite un chéngyǔ pour appuyer.',
+    explanation: '俗话说 (súhuàshuō) = comme dit le proverbe. 不入虎穴，焉得虎子 = qui n\'entre pas dans la tanière du tigre n\'aura pas le petit (qui ne risque rien n\'a rien). Cite un chéngyǔ pour appuyer.',
     explanationEn: '俗话说 = as the saying goes. 不入虎穴，焉得虎子 = nothing ventured, nothing gained. Quote a chéngyǔ to back up.'
   }],
   'cecr-c11-conversation-m7': [{ id: 'cecr-c11-conv-m7-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1491,7 +1491,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Open a complex topic by setting its boundaries.',
     choices: ['今天我们讨论的范围仅限于市场策略，不涉及人事问题。', '今天再见。', '今天不客气。', '今天对不起。'],
     correctIndex: 0,
-    explanation: '讨论的范围 (tǎolùn de fànwéi) = la portée. 仅限于 (jǐn xiàn yú) = se limite à. 不涉及 (bù shèjí) = ne concerne pas. Cadrage pro précis.',
+    explanation: '讨论的范围 (tǎolùn de fànwéi) = la portée. 仅限于 (jǐn xiànyú) = se limite à. 不涉及 (bù shèjí) = ne concerne pas. Cadrage pro précis.',
     explanationEn: '讨论的范围 = scope. 仅限于 = limited to. 不涉及 = does not cover.'
   }],
   'cecr-c12-conversation-m5': [{ id: 'cecr-c12-conv-m5-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1531,7 +1531,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Describe an autumn scene in a literary essay.',
     choices: ['秋风萧瑟，落叶纷飞，令人不禁感慨时光易逝。', '秋风再见。', '秋风不客气。', '秋风对不起。'],
     correctIndex: 0,
-    explanation: '萧瑟 (xiāosè) = mélancolique (vent). 纷飞 (fēn fēi) = voltiger. 不禁 (bùjīn) = ne pouvoir s\'empêcher. 时光易逝 = le temps file. Style essai chinois classique.',
+    explanation: '萧瑟 (xiāo sè) = mélancolique (vent). 纷飞 (fēnfēi) = voltiger. 不禁 (bùjīn) = ne pouvoir s\'empêcher. 时光易逝 = le temps file. Style essai chinois classique.',
     explanationEn: '萧瑟 = bleak (wind). 纷飞 = swirl down. 不禁 = can\'t help but. 时光易逝 = time flies. Classical essay style.'
   }],
   'cecr-c21-conversation-m2': [{ id: 'cecr-c21-conv-m2-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1558,7 +1558,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Present a paper at an academic conference.',
     choices: ['本研究旨在探讨城市化对传统文化的影响及其内在机制。', '本研究再见。', '本研究不客气。', '本研究对不起。'],
     correctIndex: 0,
-    explanation: '旨在 (zhǐ zài) = vise à. 探讨 (tàntǎo) = examiner. 内在机制 (nèizài jīzhì) = mécanisme sous-jacent. Lexique académique standard.',
+    explanation: '旨在 (zhǐzài) = vise à. 探讨 (tàntǎo) = examiner. 内在机制 (nèizài jīzhì) = mécanisme sous-jacent. Lexique académique standard.',
     explanationEn: '旨在 = aims to. 探讨 = examine. 内在机制 = underlying mechanism. Academic standard.'
   }],
   'cecr-c21-conversation-m5': [{ id: 'cecr-c21-conv-m5-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1567,7 +1567,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Tribute to a retiring colleague.',
     choices: ['他兢兢业业，三十年如一日，堪称我们行业的楷模。', '他兢兢业业再见。', '他兢兢业业不客气。', '他兢兢业业对不起。'],
     correctIndex: 0,
-    explanation: '兢兢业业 (jīngjīng yèyè) = consciencieux. 三十年如一日 = trente ans avec la même constance. 堪称 (kānchēng) = digne d\'être appelé. 楷模 (kǎimó) = modèle exemplaire.',
+    explanation: '兢兢业业 (jīngjīngyèyè) = consciencieux. 三十年如一日 = trente ans avec la même constance. 堪称 (kānchēng) = digne d\'être appelé. 楷模 (kǎimó) = modèle exemplaire.',
     explanationEn: '兢兢业业 = diligent. 三十年如一日 = 30 years of consistency. 堪称 = worthy of being called. 楷模 = role model.'
   }],
   'cecr-c21-conversation-m6': [{ id: 'cecr-c21-conv-m6-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1607,7 +1607,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'Hint a friend their choice might not be best, without saying it.',
     choices: ['这件事呢，你自己心里应该有数。', '这件事呢，再见。', '这件事呢，不客气。', '这件事呢，对不起。'],
     correctIndex: 0,
-    explanation: '心里有数 (xīnlǐ yǒu shù) = en avoir conscience intérieurement. Particule 呢 = adoucissement. Pousse à la réflexion sans accuser. Très chinois.',
+    explanation: '心里有数 (xīnlǐyǒushù) = en avoir conscience intérieurement. Particule 呢 = adoucissement. Pousse à la réflexion sans accuser. Très chinois.',
     explanationEn: '心里有数 = know in your heart. 呢 softener. Pushes reflection without accusing. Very Chinese.'
   }],
   'cecr-c22-conversation-m3': [{ id: 'cecr-c22-conv-m3-ctx1', type: 'context-react', category: 'vocabulary',
@@ -1645,7 +1645,7 @@ export const cecrConversationExercises: Record<string, LessonV2Exercise[]> = {
     contextEn: 'WeChat Moments post reflecting on your past decade.',
     choices: ['十年弹指一挥间，回首往事，恍如昨日。', '十年再见。', '十年不客气。', '十年对不起。'],
     correctIndex: 0,
-    explanation: '弹指一挥间 (tánzhǐ yīhuī jiān) = en un claquement de doigts (chéngyǔ). 回首往事 = se retourner sur le passé. 恍如昨日 = comme hier. Trois locutions chéngyǔ en cascade.',
+    explanation: '弹指一挥间 (tánzhǐ yī huī jiān) = en un claquement de doigts (chéngyǔ). 回首往事 = se retourner sur le passé. 恍如昨日 = comme hier. Trois locutions chéngyǔ en cascade.',
     explanationEn: '弹指一挥间 = in a snap (chéngyǔ). 回首往事 = look back on the past. 恍如昨日 = as if yesterday. Three chéngyǔ in a row.'
   }],
   'cecr-c22-conversation-m7': [{ id: 'cecr-c22-conv-m7-ctx1', type: 'context-react', category: 'vocabulary',

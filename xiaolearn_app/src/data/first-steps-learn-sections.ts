@@ -25,16 +25,16 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
     title: 'Le passe-partout : 你好',
     titleEn: 'The universal greeting: 你好',
     body:
-      'En mandarin, il n\'existe pas de « bonjour » unique comme en français. Le réflexe de base, c\'est 你好 (nǐ hǎo), littéralement « tu + bien ».\n' +
+      'En mandarin, il n\'existe pas de « bonjour » unique comme en français. Le réflexe de base, c\'est 你好 (nǐhǎo), littéralement « tu + bien ».\n' +
       '\n' +
       'Règle : on l\'utilise **toute la journée**, avec presque tout le monde.\n' +
       '\n' +
-      'Remarque : sa version respectueuse est 您好 (nín hǎo), avec 您 — un « vous » de politesse réservé à certaines personnes :\n' +
+      'Remarque : sa version respectueuse est 您好 (nínhǎo), avec 您 — un « vous » de politesse réservé à certaines personnes :\n' +
       '- les personnes plus **âgées**\n' +
       '- les **clients**\n' +
       '- les **professeurs**',
     bodyEn:
-      'Mandarin has no single word for "hello" like English. The default reflex is 你好 (nǐ hǎo), literally "you + good". You can use it all day, with almost anyone.\nThe respectful version is 您好 (nín hǎo), with 您 — a polite "you" reserved for elders, customers, teachers.',
+      'Mandarin has no single word for "hello" like English. The default reflex is 你好 (nǐhǎo), literally "you + good". You can use it all day, with almost anyone.\nThe respectful version is 您好 (nínhǎo), with 您 — a polite "you" reserved for elders, customers, teachers.',
     items: [
       { hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'bonjour (standard)', meaningEn: 'hello (standard)', audio: 'audio/hsk1/hsk1_你好.wav' },
       { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli, singulier)', meaningEn: 'you (polite, singular)', audio: 'audio/hsk1/hsk1_您.wav' },
@@ -61,26 +61,26 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
       { hanzi: '晚上', pinyin: 'wǎn shàng', meaning: 'le soir', meaningEn: 'evening', audio: 'audio/hsk1/hsk1_晚上.wav' }
     ],
     tip:
-      '早上好 (zǎo shàng hǎo) = « bonjour (matin) », 晚上好 (wǎn shàng hǎo) = « bonsoir ». Un simple 早 ! suffit entre collègues en arrivant au bureau.',
+      '早上好 (zǎoshànghǎo) = « bonjour (matin) », 晚上好 (wǎnshànghǎo) = « bonsoir ». Un simple 早 ! suffit entre collègues en arrivant au bureau.',
     tipEn:
-      '早上好 (zǎo shàng hǎo) = "good morning", 晚上好 (wǎn shàng hǎo) = "good evening". A plain 早! is enough between colleagues arriving at the office.'
+      '早上好 (zǎoshànghǎo) = "good morning", 晚上好 (wǎnshànghǎo) = "good evening". A plain 早! is enough between colleagues arriving at the office.'
   },
   {
     id: 'greet-bye',
     title: 'Prendre congé',
     titleEn: 'Saying goodbye',
     body:
-      '再见 (zài jiàn) signifie littéralement « encore + voir » — « à la prochaine ». Entre amis, on utilise aussi 拜拜 (bái bái), calqué sur l\'anglais « bye bye ». Pour remercier en partant, 谢谢 (xiè xiè) est indispensable.',
+      '再见 (zàijiàn) signifie littéralement « encore + voir » — « à la prochaine ». Entre amis, on utilise aussi 拜拜 (bái bái), calqué sur l\'anglais « bye bye ». Pour remercier en partant, 谢谢 (xièxiè) est indispensable.',
     bodyEn:
-      '再见 (zài jiàn) literally means "again + see" — "see you again". Between friends, 拜拜 (bái bái) is common, borrowed from English "bye bye". To thank as you leave, 谢谢 (xiè xiè) is a must.',
+      '再见 (zàijiàn) literally means "again + see" — "see you again". Between friends, 拜拜 (bái bái) is common, borrowed from English "bye bye". To thank as you leave, 谢谢 (xièxiè) is a must.',
     items: [
       { hanzi: '再见', pinyin: 'zài jiàn', meaning: 'au revoir', meaningEn: 'goodbye', audio: 'audio/hsk1/hsk1_再见.wav' },
       { hanzi: '谢谢', pinyin: 'xiè xiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' }
     ],
     tip:
-      'Dans un contexte professionnel, on dit 明天见 (míng tiān jiàn) « à demain » ou 下次见 (xià cì jiàn) « à la prochaine fois ». Le 见 final fonctionne comme un modèle réutilisable.',
+      'Dans un contexte professionnel, on dit 明天见 (míngtiān jiàn) « à demain » ou 下次见 (xiàcìjiàn) « à la prochaine fois ». Le 见 final fonctionne comme un modèle réutilisable.',
     tipEn:
-      'In a professional context, 明天见 (míng tiān jiàn) "see you tomorrow" or 下次见 (xià cì jiàn) "see you next time" are common. The final 见 works as a reusable template.'
+      'In a professional context, 明天见 (míngtiān jiàn) "see you tomorrow" or 下次见 (xiàcìjiàn) "see you next time" are common. The final 见 works as a reusable template.'
   }
 ];
 
@@ -144,11 +144,11 @@ export const introductionsLearnSections: LessonV2LearnSection[] = [
       'Un schéma classique de **3 phrases** pour se présenter :\n' +
       '- 你好 ! — Bonjour !\n' +
       '- 我叫 + [nom] — Je m\'appelle…\n' +
-      '- 很高兴认识你 (hěn gāo xìng rèn shi nǐ) — Ravi de te rencontrer\n' +
+      '- 很高兴认识你 (hěn gāoxìng rènshi nǐ) — Ravi de te rencontrer\n' +
       '\n' +
-      'Pour enchaîner, on peut ajouter 我是法国人 (wǒ shì Fǎ guó rén) — « je suis français ».',
+      'Pour enchaîner, on peut ajouter 我是法国人 (wǒ shì fǎguórén) — « je suis français ».',
     bodyEn:
-      'A classic 3-sentence pattern:\n  • 你好! — Hello!\n  • 我叫 + [name]. — My name is …\n  • 很高兴认识你。 (hěn gāo xìng rèn shi nǐ) — Nice to meet you.\nTo keep going, add 我是法国人 (wǒ shì Fǎ guó rén) "I am French".',
+      'A classic 3-sentence pattern:\n  • 你好! — Hello!\n  • 我叫 + [name]. — My name is …\n  • 很高兴认识你。 (hěn gāo xìng rèn shi nǐ) — Nice to meet you.\nTo keep going, add 我是法国人 (wǒ shì fǎguórén) "I am French".',
     tip:
       'La phrase 很高兴认识你 est un bloc, apprends-la d\'un coup plutôt que mot à mot. Elle marche dans tous les contextes — business, école, amis.',
     tipEn:
@@ -166,15 +166,15 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     title: 'Remercier et répondre',
     titleEn: 'Thanking and replying',
     body:
-      '谢谢 (xiè xiè) est le « merci » **universel** en chinois.\n' +
+      '谢谢 (xièxiè) est le « merci » **universel** en chinois.\n' +
       '\n' +
       'Plusieurs variantes selon le ton :\n' +
       '- 谢谢你 — merci à **toi** (plus personnel)\n' +
-      '- 非常感谢 (fēi cháng gǎn xiè) — merci **beaucoup** (formel)\n' +
+      '- 非常感谢 (fēicháng gǎnxiè) — merci **beaucoup** (formel)\n' +
       '\n' +
-      'Pour répondre, on dit 不客气 (bú kè qì), littéralement « ne + faire + cérémonie » — « pas de quoi ».',
+      'Pour répondre, on dit 不客气 (búkèqì), littéralement « ne + faire + cérémonie » — « pas de quoi ».',
     bodyEn:
-      '谢谢 (xiè xiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēi cháng gǎn xiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (bú kè qì), literally "don\'t + make + ceremony" — "you\'re welcome".',
+      '谢谢 (xièxiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēicháng gǎnxiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (búkèqì), literally "don\'t + make + ceremony" — "you\'re welcome".',
     items: [
       { hanzi: '谢谢', pinyin: 'xiè xiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
       { hanzi: '不客气', pinyin: 'bú kè qì', meaning: 'pas de quoi, je t\'en prie', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
@@ -192,11 +192,11 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     body:
       'Pour s\'excuser, on a deux niveaux d\'intensité :\n' +
       '- 对不起 (duì bu qǐ) — l\'excuse la **plus forte**, littéralement « pas + pouvoir + te + regarder en face »\n' +
-      '- 打扰 (dǎ rǎo) — « je te dérange », quand on interrompt quelqu\'un\n' +
+      '- 打扰 (dǎrǎo) — « je te dérange », quand on interrompt quelqu\'un\n' +
       '\n' +
       'Remarque : la réponse bienveillante est 没关系 (méi guān xi), littéralement « pas de rapport » — « pas grave ».',
     bodyEn:
-      'Two levels of apology. 对不起 (duì bu qǐ) is the strongest one, literally "cannot + face + you". 打扰 (dǎ rǎo) "I\'m bothering you" is used when interrupting someone.\nThe warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
+      'Two levels of apology. 对不起 (duì bu qǐ) is the strongest one, literally "cannot + face + you". 打扰 (dǎrǎo) "I\'m bothering you" is used when interrupting someone.\nThe warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
     items: [
       { hanzi: '对不起', pinyin: 'duì bu qǐ', meaning: 'pardon, je suis désolé', meaningEn: 'sorry, I apologize', audio: 'audio/hsk1/hsk1_对不起.wav' },
       { hanzi: '没关系', pinyin: 'méi guān xi', meaning: 'ce n\'est rien, pas grave', meaningEn: 'no problem, it\'s OK', audio: 'audio/hsk1/hsk1_没关系.wav' },
@@ -204,9 +204,9 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
       { hanzi: '打扰', pinyin: 'dǎ rǎo', meaning: 'déranger', meaningEn: 'to bother, disturb', audio: 'audio/hsk1/hsk1_打扰.wav' }
     ],
     tip:
-      '对不起 est réservé aux vraies excuses. Pour un simple « pardon, excusez-moi » en passant, on dit plutôt 不好意思 (bù hǎo yì si) — plus léger, plus social.',
+      '对不起 est réservé aux vraies excuses. Pour un simple « pardon, excusez-moi » en passant, on dit plutôt 不好意思 (bùhǎoyìsi) — plus léger, plus social.',
     tipEn:
-      '对不起 is for real apologies. For a casual "excuse me" in passing, prefer 不好意思 (bù hǎo yì si) — softer and more social.'
+      '对不起 is for real apologies. For a casual "excuse me" in passing, prefer 不好意思 (bùhǎoyìsi) — softer and more social.'
   }
 ];
 
@@ -221,14 +221,14 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     titleEn: 'What? Who?',
     body:
       'Deux mots interrogatifs très courants :\n' +
-      '- 什么 (shén me) — « quoi »\n' +
+      '- 什么 (shénme) — « quoi »\n' +
       '- 谁 (shéi, parfois shuí) — « qui »\n' +
       '\n' +
       'Règle : on les place **exactement** où on veut avoir la réponse, sans inversion.\n' +
       '\n' +
       'Exemples : 你叫什么 ? (« tu t\'appelles quoi ? »), 这是什么 ? (« c\'est quoi ça ? »), 他是谁 ? (« lui + est + qui ? »).',
     bodyEn:
-      '什么 (shén me) = "what". Place it exactly where the answer goes, no word-swap: 你叫什么? ("you called what?"), 这是什么? ("this is what?").\n谁 (shéi, sometimes shuí) = "who". Same logic: 他是谁? ("he is who?").',
+      '什么 (shénme) = "what". Place it exactly where the answer goes, no word-swap: 你叫什么? ("you called what?"), 这是什么? ("this is what?").\n谁 (shéi, sometimes shuí) = "who". Same logic: 他是谁? ("he is who?").',
     items: [
       { hanzi: '什么', pinyin: 'shén me', meaning: 'quoi, quel', meaningEn: 'what', audio: 'audio/hsk1/hsk1_什么.wav' },
       { hanzi: '谁', pinyin: 'shéi', meaning: 'qui', meaningEn: 'who', audio: 'audio/hsk1/hsk1_谁.wav' }
@@ -243,13 +243,13 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     title: 'Où ? Comment ?',
     titleEn: 'Where? How?',
     body:
-      '哪 (nǎ) signifie « lequel ». Pour dire « où », il se combine en 哪儿 (nǎr) — plutôt **pékinois** — ou 哪里 (nǎ lǐ) — plutôt standard.\n' +
+      '哪 (nǎ) signifie « lequel ». Pour dire « où », il se combine en 哪儿 (nǎr) — plutôt **pékinois** — ou 哪里 (nǎlǐ) — plutôt standard.\n' +
       '\n' +
-      '怎么 (zěn me) = « comment ». Il sert à demander une **manière** de faire.\n' +
+      '怎么 (zěnme) = « comment ». Il sert à demander une **manière** de faire.\n' +
       '\n' +
       'Exemples : 怎么说 ? (« comment dit-on ? »), 怎么去 ? (« comment y aller ? »).',
     bodyEn:
-      '哪 (nǎ) = "which, where"; it combines into 哪儿 (nǎr) or 哪里 (nǎ lǐ) for "where" (北京 is used in the north, 哪里 in the south).\n怎么 (zěn me) = "how". Used to ask a manner: 怎么说? ("how do you say it?"), 怎么去? ("how to get there?").',
+      '哪 (nǎ) = "which, where"; it combines into 哪儿 (nǎr) or 哪里 (nǎlǐ) for "where" (北京 is used in the north, 哪里 in the south).\n怎么 (zěnme) = "how". Used to ask a manner: 怎么说? ("how do you say it?"), 怎么去? ("how to get there?").',
     items: [
       { hanzi: '哪', pinyin: 'nǎ', meaning: 'lequel', meaningEn: 'which', audio: 'audio/hsk1/hsk1_哪.wav' },
       { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où (nord de la Chine)', meaningEn: 'where (northern usage)', audio: 'audio/hsk1/hsk1_哪儿.wav' },
@@ -257,9 +257,9 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
       { hanzi: '怎么', pinyin: 'zěn me', meaning: 'comment, pourquoi', meaningEn: 'how, why', audio: 'audio/hsk1/hsk1_怎么.wav' }
     ],
     tip:
-      '哪儿 (nǎr) sonne plus pékinois avec son « r » final. 哪里 (nǎ lǐ) est plus neutre et s\'écrit plus souvent dans les manuels. Les deux signifient exactement la même chose.',
+      '哪儿 (nǎr) sonne plus pékinois avec son « r » final. 哪里 (nǎlǐ) est plus neutre et s\'écrit plus souvent dans les manuels. Les deux signifient exactement la même chose.',
     tipEn:
-      '哪儿 (nǎr) sounds more Beijing-flavored with its final "r". 哪里 (nǎ lǐ) is more neutral and appears more often in textbooks. Both mean exactly the same thing.'
+      '哪儿 (nǎr) sounds more Beijing-flavored with its final "r". 哪里 (nǎlǐ) is more neutral and appears more often in textbooks. Both mean exactly the same thing.'
   },
   {
     id: 'q-how-many',
@@ -268,9 +268,9 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     body:
       'Deux mots pour dire « combien », selon l\'ordre de grandeur attendu :\n' +
       '- 几 (jǐ) — pour les **petits** nombres (moins de 10) : 几岁 (quel âge), 几点 (quelle heure)\n' +
-      '- 多少 (duō shǎo) — pour tout le reste, sans limite : 多少钱 (combien ça coûte ?)',
+      '- 多少 (duōshǎo) — pour tout le reste, sans limite : 多少钱 (combien ça coûte ?)',
     bodyEn:
-      'Two words for "how many". 几 (jǐ) for small counts, typically under 10 (几岁 = how old, 几点 = what time). 多少 (duō shǎo) for everything else, no upper limit (多少钱 = how much does it cost?).',
+      'Two words for "how many". 几 (jǐ) for small counts, typically under 10 (几岁 = how old, 几点 = what time). 多少 (duōshǎo) for everything else, no upper limit (多少钱 = how much does it cost?).',
     items: [
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (peu)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
       { hanzi: '多少', pinyin: 'duō shǎo', meaning: 'combien (indéfini)', meaningEn: 'how much/many', audio: 'audio/hsk1/hsk1_多少.wav' },
@@ -319,10 +319,10 @@ export const yesNoLearnSections: LessonV2LearnSection[] = [
     body:
       'Pour dire « oui, d\'accord », plusieurs choix selon le registre :\n' +
       '- 好 (hǎo) — le **plus courant**, « bien, OK »\n' +
-      '- 可以 (kě yǐ) — « c\'est possible, ça marche »\n' +
+      '- 可以 (kěyǐ) — « c\'est possible, ça marche »\n' +
       '- 行 (xíng) — « ça va, ça roule » (plus informel)',
     bodyEn:
-      'To say "yes, OK", several choices depending on register:\n  • 好 (hǎo) — most common, "fine, OK"\n  • 可以 (kě yǐ) — "possible, that works"\n  • 行 (xíng) — "that\'s fine, cool" (more casual)',
+      'To say "yes, OK", several choices depending on register:\n  • 好 (hǎo) — most common, "fine, OK"\n  • 可以 (kěyǐ) — "possible, that works"\n  • 行 (xíng) — "that\'s fine, cool" (more casual)',
     items: [
       { hanzi: '好', pinyin: 'hǎo', meaning: 'bien, d\'accord', meaningEn: 'good, OK', audio: 'audio/hsk1/hsk1_好.wav' },
       { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir, c\'est possible', meaningEn: 'can, it\'s possible', audio: 'audio/hsk1/hsk1_可以.wav' },
@@ -417,14 +417,14 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     titleEn: 'Time reference points',
     body:
       'Quatre mots pour se repérer dans le temps :\n' +
-      '- 现在 (xiàn zài) — maintenant\n' +
-      '- 今天 (jīn tiān) — aujourd\'hui\n' +
-      '- 明天 (míng tiān) — demain\n' +
-      '- 昨天 (zuó tiān) — hier\n' +
+      '- 现在 (xiànzài) — maintenant\n' +
+      '- 今天 (jīntiān) — aujourd\'hui\n' +
+      '- 明天 (míngtiān) — demain\n' +
+      '- 昨天 (zuótiān) — hier\n' +
       '\n' +
       'Règle d\'or : ces mots se placent **au début** de la phrase, pas à la fin comme en français. Exemple : 我今天去北京 = « je vais à Pékin aujourd\'hui ».',
     bodyEn:
-      'Four core reference words: 现在 (xiàn zài) = now, 今天 (jīn tiān) = today, 明天 (míng tiān) = tomorrow, 昨天 (zuó tiān) = yesterday.\nKey point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
+      'Four core reference words: 现在 (xiànzài) = now, 今天 (jīntiān) = today, 明天 (míngtiān) = tomorrow, 昨天 (zuótiān) = yesterday.\nKey point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
     items: [
       { hanzi: '现在', pinyin: 'xiàn zài', meaning: 'maintenant', meaningEn: 'now', audio: 'audio/hsk1/hsk1_现在.wav' },
       { hanzi: '今天', pinyin: 'jīn tiān', meaning: 'aujourd\'hui', meaningEn: 'today', audio: 'audio/hsk1/hsk1_今天.wav' },
@@ -463,11 +463,11 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     body:
       'L\'heure se construit en deux blocs : chiffre + 点 (diǎn = heure) + chiffre + 分 (fēn = minute).\n' +
       '\n' +
-      'Exemple : 三点十五分 (sān diǎn shí wǔ fēn) = 3h15.\n' +
+      'Exemple : 三点十五分 (sān diǎn shíwǔ fēn) = 3h15.\n' +
       '\n' +
       'Astuce : pour demander l\'heure, dis 现在几点 ? (xiàn zài jǐ diǎn) — « il est quelle heure ? ».',
     bodyEn:
-      'Time is built digit + 点 (diǎn = o\'clock) + digit + 分 (fēn = minute). Example: 三点十五分 (sān diǎn shí wǔ fēn) = 3:15.\nTo ask: 现在几点? (xiàn zài jǐ diǎn) — "what time is it?".',
+      'Time is built digit + 点 (diǎn = o\'clock) + digit + 分 (fēn = minute). Example: 三点十五分 (sān diǎn shíwǔ fēn) = 3:15.\nTo ask: 现在几点? (xiàn zài jǐ diǎn) — "what time is it?".',
     items: [
       { hanzi: '点', pinyin: 'diǎn', meaning: 'heure (pour les heures pleines)', meaningEn: 'o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
       { hanzi: '分', pinyin: 'fēn', meaning: 'minute', meaningEn: 'minute', audio: 'audio/hsk1/hsk1_分.wav' },
@@ -491,9 +491,9 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     title: 'Les parents',
     titleEn: 'Parents',
     body:
-      '爸爸 (bà ba) = papa, 妈妈 (mā ma) = maman — les deux mots les plus doux du chinois, avec leur répétition affective. Pour une forme plus formelle, on dit 父亲 (fù qīn) et 母亲 (mǔ qīn).',
+      '爸爸 (bàba) = papa, 妈妈 (māma) = maman — les deux mots les plus doux du chinois, avec leur répétition affective. Pour une forme plus formelle, on dit 父亲 (fùqīn) et 母亲 (mǔqīn).',
     bodyEn:
-      '爸爸 (bà ba) = dad, 妈妈 (mā ma) = mom — the sweetest words in Chinese, with their affectionate reduplication. For a formal register, say 父亲 (fù qīn) and 母亲 (mǔ qīn).',
+      '爸爸 (bàba) = dad, 妈妈 (māma) = mom — the sweetest words in Chinese, with their affectionate reduplication. For a formal register, say 父亲 (fùqīn) and 母亲 (mǔqīn).',
     items: [
       { hanzi: '爸爸', pinyin: 'bà ba', meaning: 'papa', meaningEn: 'dad', audio: 'audio/hsk1/hsk1_爸爸.wav' },
       { hanzi: '妈妈', pinyin: 'mā ma', meaning: 'maman', meaningEn: 'mom', audio: 'audio/hsk1/hsk1_妈妈.wav' },
@@ -510,10 +510,10 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     titleEn: 'Siblings',
     body:
       'Le chinois distingue **toujours** aîné et cadet pour les frères et sœurs :\n' +
-      '- 哥哥 (gē ge) — grand frère\n' +
-      '- 弟弟 (dì di) — petit frère\n' +
-      '- 姐姐 (jiě jie) — grande sœur\n' +
-      '- 妹妹 (mèi mei) — petite sœur\n' +
+      '- 哥哥 (gēge) — grand frère\n' +
+      '- 弟弟 (dìdi) — petit frère\n' +
+      '- 姐姐 (jiějie) — grande sœur\n' +
+      '- 妹妹 (mèimei) — petite sœur\n' +
       '\n' +
       'Règle d\'or : impossible de dire juste « frère » sans préciser l\'ordre — l\'âge relatif est crucial dans la famille chinoise.',
     bodyEn:
@@ -525,9 +525,9 @@ export const familyLearnSections: LessonV2LearnSection[] = [
       { hanzi: '妹妹', pinyin: 'mèi mei', meaning: 'petite sœur', meaningEn: 'younger sister', audio: 'audio/hsk1/hsk1_妹妹.wav' }
     ],
     tip:
-      'Par extension, on appelle 姐姐 (jiě jie) une femme un peu plus âgée qu\'on apprécie, même sans lien familial. Pareil pour 哥哥 avec un homme.',
+      'Par extension, on appelle 姐姐 (jiějie) une femme un peu plus âgée qu\'on apprécie, même sans lien familial. Pareil pour 哥哥 avec un homme.',
     tipEn:
-      'By extension, 姐姐 (jiě jie) is used for a slightly older woman you like, even without family ties. Same with 哥哥 for a man.'
+      'By extension, 姐姐 (jiějie) is used for a slightly older woman you like, even without family ties. Same with 哥哥 for a man.'
   },
   {
     id: 'fam-kids',
@@ -535,13 +535,13 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     titleEn: 'Children and spouse',
     body:
       'Pour parler de ses enfants :\n' +
-      '- 儿子 (ér zi) — fils\n' +
-      '- 女儿 (nǚ ér) — fille\n' +
-      '- 孩子 (hái zi) — enfant (terme général)\n' +
+      '- 儿子 (érzi) — fils\n' +
+      '- 女儿 (nǚér) — fille\n' +
+      '- 孩子 (háizi) — enfant (terme général)\n' +
       '\n' +
-      'Remarque : pour le conjoint, on dit 丈夫 (zhàng fu) = mari et 妻子 (qī zi) = épouse en registre **formel**. À l\'oral, 老公 et 老婆 sont très utilisés.',
+      'Remarque : pour le conjoint, on dit 丈夫 (zhàngfu) = mari et 妻子 (qī zi) = épouse en registre **formel**. À l\'oral, 老公 et 老婆 sont très utilisés.',
     bodyEn:
-      'For your children: 儿子 (ér zi) = son, 女儿 (nǚ ér) = daughter, 孩子 (hái zi) = child (generic).\nFor a spouse, formal: 丈夫 (zhàng fu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
+      'For your children: 儿子 (érzi) = son, 女儿 (nǚér) = daughter, 孩子 (háizi) = child (generic).\nFor a spouse, formal: 丈夫 (zhàngfu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
     items: [
       { hanzi: '儿子', pinyin: 'ér zi', meaning: 'fils', meaningEn: 'son', audio: 'audio/hsk1/hsk1_儿子.wav' },
       { hanzi: '女儿', pinyin: 'nǚ ér', meaning: 'fille (enfant)', meaningEn: 'daughter', audio: 'audio/hsk1/hsk1_女儿.wav' },
@@ -591,12 +591,12 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
       'Les boissons de base à connaître :\n' +
       '- 水 (shuǐ) — eau\n' +
       '- 茶 (chá) — thé\n' +
-      '- 咖啡 (kā fēi) — café\n' +
-      '- 牛奶 (niú nǎi) — lait\n' +
+      '- 咖啡 (kāfēi) — café\n' +
+      '- 牛奶 (niúnǎi) — lait\n' +
       '\n' +
       'Remarque : 茶 est une valeur sûre en Chine — l\'eau chaude servie gratuitement dans les restaurants est presque **toujours** du thé de base.',
     bodyEn:
-      '水 (shuǐ) = water, 茶 (chá) = tea, 咖啡 (kā fēi) = coffee, 牛奶 (niú nǎi) = milk.\n茶 is a safe bet in China: the hot water freely served in restaurants is almost always basic tea.',
+      '水 (shuǐ) = water, 茶 (chá) = tea, 咖啡 (kāfēi) = coffee, 牛奶 (niúnǎi) = milk.\n茶 is a safe bet in China: the hot water freely served in restaurants is almost always basic tea.',
     items: [
       { hanzi: '水', pinyin: 'shuǐ', meaning: 'eau', meaningEn: 'water', audio: 'audio/hsk1/hsk1_水.wav' },
       { hanzi: '茶', pinyin: 'chá', meaning: 'thé', meaningEn: 'tea', audio: 'audio/hsk1/hsk1_茶.wav' },
@@ -604,9 +604,9 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
       { hanzi: '牛奶', pinyin: 'niú nǎi', meaning: 'lait', meaningEn: 'milk', audio: 'audio/hsk1/hsk1_牛奶.wav' }
     ],
     tip:
-      'En Chine, l\'eau à boire est généralement chaude ou tiède, pas glacée. Si tu veux de l\'eau froide, précise 冰水 (bīng shuǐ). Dire simplement 我要水 te donnera probablement de l\'eau chaude.',
+      'En Chine, l\'eau à boire est généralement chaude ou tiède, pas glacée. Si tu veux de l\'eau froide, précise 冰水 (bīngshuǐ). Dire simplement 我要水 te donnera probablement de l\'eau chaude.',
     tipEn:
-      'In China, drinking water is usually hot or lukewarm, not iced. For cold water say 冰水 (bīng shuǐ). A plain 我要水 will likely get you hot water.'
+      'In China, drinking water is usually hot or lukewarm, not iced. For cold water say 冰水 (bīngshuǐ). A plain 我要水 will likely get you hot water.'
   },
   {
     id: 'food-basics',
@@ -615,12 +615,12 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
     body:
       'Quelques mots-clés au restaurant :\n' +
       '- 菜 (cài) — plat, légume\n' +
-      '- 米饭 (mǐ fàn) — riz cuit (accompagnement)\n' +
-      '- 苹果 (píng guǒ) — pomme\n' +
+      '- 米饭 (mǐfàn) — riz cuit (accompagnement)\n' +
+      '- 苹果 (píngguǒ) — pomme\n' +
       '\n' +
       'Astuce : pour commander, une **seule** structure suffit. 我要 + [plat] (« je veux… »), ou 我要吃 + [plat] (« je veux manger… »).',
     bodyEn:
-      '菜 (cài) = dish, vegetable. 米饭 (mǐ fàn) = cooked rice as a side. 苹果 (píng guǒ) = apple.\nTo order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
+      '菜 (cài) = dish, vegetable. 米饭 (mǐfàn) = cooked rice as a side. 苹果 (píngguǒ) = apple.\nTo order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
     items: [
       { hanzi: '菜', pinyin: 'cài', meaning: 'plat, légume', meaningEn: 'dish, vegetable', audio: 'audio/hsk1/hsk1_菜.wav' },
       { hanzi: '米饭', pinyin: 'mǐ fàn', meaning: 'riz cuit', meaningEn: 'cooked rice', audio: 'audio/hsk1/hsk1_米饭.wav' },
@@ -628,9 +628,9 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
       { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'aimer (apprécier)', meaningEn: 'to like', audio: 'audio/hsk1/hsk1_喜欢.wav' }
     ],
     tip:
-      '菜 est à la fois « légume » et « plat » au restaurant. Une 菜单 (cài dān) est un menu, un 点菜 (diǎn cài) c\'est le fait de choisir ses plats. Le contexte tranche toujours.',
+      '菜 est à la fois « légume » et « plat » au restaurant. Une 菜单 (càidān) est un menu, un 点菜 (diǎncài) c\'est le fait de choisir ses plats. Le contexte tranche toujours.',
     tipEn:
-      '菜 means both "vegetable" and "dish" in restaurants. A 菜单 (cài dān) is a menu; 点菜 (diǎn cài) is choosing your dishes. Context always disambiguates.'
+      '菜 means both "vegetable" and "dish" in restaurants. A 菜单 (càidān) is a menu; 点菜 (diǎncài) is choosing your dishes. Context always disambiguates.'
   }
 ];
 
@@ -688,13 +688,13 @@ export const wantsNeedsLearnSections: LessonV2LearnSection[] = [
     body:
       '有 (yǒu) signifie « avoir, il y a ».\n' +
       '\n' +
-      'RÈGLE D\'OR : c\'est le **seul** verbe chinois dont la négation ne se fait PAS avec 不, mais avec 没. Donc 没有 (méi yǒu) = « ne pas avoir, il n\'y a pas ».\n' +
+      'RÈGLE D\'OR : c\'est le **seul** verbe chinois dont la négation ne se fait PAS avec 不, mais avec 没. Donc 没有 (méiyǒu) = « ne pas avoir, il n\'y a pas ».\n' +
       '\n' +
       'Exemples :\n' +
       '- 我有一只猫 — j\'ai un chat\n' +
       '- 我没有钱 — je n\'ai pas d\'argent',
     bodyEn:
-      '有 (yǒu) = "to have, there is". It is the only Chinese verb whose negation is NOT with 不 but with 没: 没有 (méi yǒu) = "not to have, there isn\'t".\nExamples: 我有一只猫 (I have a cat), 我没有钱 (I don\'t have money).',
+      '有 (yǒu) = "to have, there is". It is the only Chinese verb whose negation is NOT with 不 but with 没: 没有 (méiyǒu) = "not to have, there isn\'t".\nExamples: 我有一只猫 (I have a cat), 我没有钱 (I don\'t have money).',
     items: [
       { hanzi: '有', pinyin: 'yǒu', meaning: 'avoir, il y a', meaningEn: 'to have, there is', audio: 'audio/hsk1/hsk1_有.wav' },
       { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne pas avoir', meaningEn: 'not to have', audio: 'audio/hsk1/hsk1_没有.wav' },
@@ -796,12 +796,12 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     titleEn: 'The morning',
     body:
       'La journée commence par deux verbes composés :\n' +
-      '- 起床 (qǐ chuáng) — se lever, littéralement « se soulever du lit »\n' +
-      '- 睡觉 (shuì jiào) — dormir, « faire le sommeil »\n' +
+      '- 起床 (qǐchuáng) — se lever, littéralement « se soulever du lit »\n' +
+      '- 睡觉 (shuìjiào) — dormir, « faire le sommeil »\n' +
       '\n' +
       'Règle : on les utilise **tels quels**, comme un seul bloc. Exemples : 我七点起床 (je me lève à 7h), 我十一点睡觉 (je dors à 23h).',
     bodyEn:
-      'The day starts with two verbs: 起床 (qǐ chuáng) = to get up, literally "rise from the bed", and 睡觉 (shuì jiào) = to sleep, "do the sleeping". Both are compound verbs used as single units.\nExamples: 我七点起床 (I get up at 7), 我十一点睡觉 (I sleep at 11 PM).',
+      'The day starts with two verbs: 起床 (qǐchuáng) = to get up, literally "rise from the bed", and 睡觉 (shuìjiào) = to sleep, "do the sleeping". Both are compound verbs used as single units.\nExamples: 我七点起床 (I get up at 7), 我十一点睡觉 (I sleep at 11 PM).',
     items: [
       { hanzi: '起床', pinyin: 'qǐ chuáng', meaning: 'se lever', meaningEn: 'to get up', audio: 'audio/hsk1/hsk1_起床.wav' },
       { hanzi: '睡觉', pinyin: 'shuì jiào', meaning: 'dormir', meaningEn: 'to sleep', audio: 'audio/hsk1/hsk1_睡觉.wav' }
@@ -817,12 +817,12 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     titleEn: 'Work, study',
     body:
       'Deux blocs réutilisables pour parler du quotidien :\n' +
-      '- 工作 (gōng zuò) — travailler / travail (verbe ET nom)\n' +
-      '- 学习 (xué xí) — étudier, apprendre\n' +
+      '- 工作 (gōngzuò) — travailler / travail (verbe ET nom)\n' +
+      '- 学习 (xuéxí) — étudier, apprendre\n' +
       '\n' +
       'Astuce : ils s\'insèrent directement dans une phrase. 我去工作 = « je vais travailler », 我学习中文 = « j\'étudie le chinois ».',
     bodyEn:
-      '工作 (gōng zuò) = to work / work (same word for verb and noun). 学习 (xué xí) = to study, learn.\nBoth are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
+      '工作 (gōngzuò) = to work / work (same word for verb and noun). 学习 (xuéxí) = to study, learn.\nBoth are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
     items: [
       { hanzi: '工作', pinyin: 'gōng zuò', meaning: 'travailler, travail', meaningEn: 'to work, job', audio: 'audio/hsk1/hsk1_工作.wav' },
       { hanzi: '学习', pinyin: 'xué xí', meaning: 'étudier, apprendre', meaningEn: 'to study, learn', audio: 'audio/hsk1/hsk1_学习.wav' },

@@ -31,8 +31,8 @@ export const grammarLessonsExtra: LessonItem[] = [
     grammarExplanation: {
       whenToUse: '也 indique que ce qui suit s\'applique aussi au sujet :\n• Pour ajouter une personne à une action déjà mentionnée\n• Pour ajouter une qualité/état\n• Pour exprimer une similarité',
       whenToUseEn: '也 expresses that what follows also applies to the subject:\n• To add a person to an already-mentioned action\n• To add a quality/state\n• To express similarity',
-      howToUse: 'Structure : Sujet + 也 + Verbe / Adjectif\n\nExemples :\n• 我也喜欢咖啡 (wǒ yě xǐhuan kāfēi) = J\'aime aussi le café\n• 他也是学生 (tā yě shì xuésheng) = Il est aussi étudiant\n• 今天也很热 (jīntiān yě hěn rè) = Aujourd\'hui aussi il fait chaud',
-      howToUseEn: 'Structure: Subject + 也 + Verb / Adjective\n\nExamples:\n• 我也喜欢咖啡 (wǒ yě xǐhuan kāfēi) = I also like coffee\n• 他也是学生 (tā yě shì xuésheng) = He is also a student\n• 今天也很热 (jīntiān yě hěn rè) = Today is also hot',
+      howToUse: 'Structure : Sujet + 也 + Verbe / Adjectif\n\nExemples :\n• 我也喜欢咖啡 (wǒyě xǐhuan kāfēi) = J\'aime aussi le café\n• 他也是学生 (tā yě shì xuésheng) = Il est aussi étudiant\n• 今天也很热 (jīntiān yě hěn rè) = Aujourd\'hui aussi il fait chaud',
+      howToUseEn: 'Structure: Subject + 也 + Verb / Adjective\n\nExamples:\n• 我也喜欢咖啡 (wǒyě xǐhuan kāfēi) = I also like coffee\n• 他也是学生 (tā yě shì xuésheng) = He is also a student\n• 今天也很热 (jīntiān yě hěn rè) = Today is also hot',
       commonMistakes: '❌ Ne placez PAS 也 en fin de phrase comme en français !\n• Incorrect : 我喜欢咖啡也\n• Correct : 我也喜欢咖啡\n\n❌ Ne placez PAS 也 avant le sujet\n• Incorrect : 也我去\n• Correct : 我也去',
       commonMistakesEn: '❌ DON\'T place 也 at the end like in English!\n• Incorrect: 我喜欢咖啡也\n• Correct: 我也喜欢咖啡\n\n❌ DON\'T place 也 before the subject\n• Incorrect: 也我去\n• Correct: 我也去',
       tips: '💡 Mnémonique : « 也 = aussi, juste avant le verbe »\n💡 Avec 不 ou 没 : l\'ordre est 也 + 不/没 + verbe\n  → 我也不去 (yě bù qù) = Moi non plus je n\'y vais pas',
@@ -73,7 +73,7 @@ export const grammarLessonsExtra: LessonItem[] = [
     grammarExplanation: {
       whenToUse: '都 s\'utilise pour :\n• Indiquer que tous les sujets pluriels font l\'action\n• Renforcer 每 (chaque) ou les pronoms pluriels\n• Souligner « tous, sans exception »',
       whenToUseEn: '都 is used to:\n• Indicate that all plural subjects do the action\n• Reinforce 每 (every) or plural pronouns\n• Emphasize "all, without exception"',
-      howToUse: 'Structure : Sujet pluriel + 都 + Verbe / Adjectif\n\nExemples :\n• 我们都是学生 (wǒmen dōu shì xuésheng) = Nous sommes tous étudiants\n• 他们都喜欢中国菜 = Ils aiment tous la cuisine chinoise\n• 每天都很忙 (měi tiān dōu hěn máng) = Chaque jour est très chargé',
+      howToUse: 'Structure : Sujet pluriel + 都 + Verbe / Adjectif\n\nExemples :\n• 我们都是学生 (wǒmen dōu shì xuésheng) = Nous sommes tous étudiants\n• 他们都喜欢中国菜 = Ils aiment tous la cuisine chinoise\n• 每天都很忙 (měitiāndōu hěn máng) = Chaque jour est très chargé',
       howToUseEn: 'Structure: Plural subject + 都 + Verb / Adjective\n\nExamples:\n• 我们都是学生 = We are all students\n• 他们都喜欢中国菜 = They all like Chinese food\n• 每天都很忙 = Every day is very busy',
       commonMistakes: '❌ Ne placez PAS 都 après le verbe\n• Incorrect : 我们是都学生\n• Correct : 我们都是学生\n\n❌ Ne placez PAS 都 avant un sujet singulier seul\n• Incorrect : 我都喜欢 (sauf si on parle de plusieurs choses)\n• Correct : 我都喜欢茶和咖啡 (= J\'aime [les deux] thé et café)',
       commonMistakesEn: '❌ DON\'T place 都 after the verb\n• Incorrect: 我们是都学生\n• Correct: 我们都是学生\n\n❌ DON\'T use 都 alone with a singular subject\n• Incorrect: 我都喜欢 (alone)\n• Correct: 我都喜欢茶和咖啡 (= I like both tea and coffee)',

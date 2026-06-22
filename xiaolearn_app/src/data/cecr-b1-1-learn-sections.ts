@@ -840,9 +840,9 @@ export const b11TravelHotelLearnSections: LessonV2LearnSection[] = [
     title: '入住 / 退房 + 押金 obligatoire',
     titleEn: '入住 / 退房 + mandatory 押金',
     body:
-      '入住 (rù zhù) = check-in. 退房 (tuì fáng) = check-out, généralement avant midi. Astuce : à l\'arrivée, dire 我预订了…的房间 (j\'ai réservé une chambre…). Attention : presque tous les hôtels chinois exigent un 押金 (dépôt de caution) de 200-500 ¥, rendu au check-out. Remarque : types de chambres 单人间 (simple), 双人间 (2 lits), 大床房 (lit double).',
+      '入住 (rùzhù) = check-in. 退房 (tuìfáng) = check-out, généralement avant midi. Astuce : à l\'arrivée, dire 我预订了…的房间 (j\'ai réservé une chambre…). Attention : presque tous les hôtels chinois exigent un 押金 (dépôt de caution) de 200-500 ¥, rendu au check-out. Remarque : types de chambres 单人间 (simple), 双人间 (2 lits), 大床房 (lit double).',
     bodyEn:
-      '入住 (rù zhù) = check-in. 退房 (tuì fáng) = check-out, usually before noon. On arrival: 我预订了…的房间 (I booked a … room). Almost all Chinese hotels require a 押金 (deposit) of 200-500 ¥, refunded at check-out. Room types: 单人间 (single), 双人间 (twin), 大床房 (double bed).',
+      '入住 (rùzhù) = check-in. 退房 (tuìfáng) = check-out, usually before noon. On arrival: 我预订了…的房间 (I booked a … room). Almost all Chinese hotels require a 押金 (deposit) of 200-500 ¥, refunded at check-out. Room types: 单人间 (single), 双人间 (twin), 大床房 (double bed).',
     items: [
       { hanzi: '酒店', pinyin: 'jiǔ diàn', meaning: 'hôtel', meaningEn: 'hotel', audio: 'audio/hsk2/hsk2_酒店.wav' },
       { hanzi: '前台', pinyin: 'qián tái', meaning: 'réception', meaningEn: 'reception', audio: 'audio/hsk4/hsk4_前台.wav' },
@@ -1020,9 +1020,9 @@ export const b11HealthPharmacyLearnSections: LessonV2LearnSection[] = [
     title: 'Formes & posologie',
     titleEn: 'Forms & dosage',
     body:
-      '药店 (yào diàn) = pharmacie. Formes : 药片 (cachet), 胶囊 (gélule), 药水 (sirop), 药膏 (pommade). Médicaments : 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Astuce : posologie type 一天三次，每次两片 (3 fois/jour, 2 cachets à chaque prise). Remarque : indications sur boîte 饭前 (avant repas), 饭后 (après), 睡前 (coucher).',
+      '药店 (yàodiàn) = pharmacie. Formes : 药片 (cachet), 胶囊 (gélule), 药水 (sirop), 药膏 (pommade). Médicaments : 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Astuce : posologie type 一天三次，每次两片 (3 fois/jour, 2 cachets à chaque prise). Remarque : indications sur boîte 饭前 (avant repas), 饭后 (après), 睡前 (coucher).',
     bodyEn:
-      '药店 (yào diàn) = pharmacy. Forms: 药片 (tablet), 胶囊 (capsule), 药水 (syrup), 药膏 (ointment). Meds: 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Standard dosage: 一天三次，每次两片 (3 times/day, 2 tablets each). Box labels: 饭前 (before meals), 饭后 (after), 睡前 (bedtime).',
+      '药店 (yàodiàn) = pharmacy. Forms: 药片 (tablet), 胶囊 (capsule), 药水 (syrup), 药膏 (ointment). Meds: 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Standard dosage: 一天三次，每次两片 (3 times/day, 2 tablets each). Box labels: 饭前 (before meals), 饭后 (after), 睡前 (bedtime).',
     items: [
       { hanzi: '药店', pinyin: 'yào diàn', meaning: 'pharmacie', meaningEn: 'pharmacy', audio: 'audio/hsk3/hsk3_药.wav' },
       { hanzi: '药片', pinyin: 'yào piàn', meaning: 'cachet', meaningEn: 'tablet', audio: 'audio/hsk3/hsk3_药.wav' },

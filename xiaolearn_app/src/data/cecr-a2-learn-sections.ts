@@ -22,7 +22,7 @@ export const a2CityDirectionsLearnSections: LessonV2LearnSection[] = [
     body:
       'La phrase pour demander un chemin est ultra-stable en mandarin. Le squelette en trois temps :\n' +
       '\n' +
-      '- 请问 (qǐng wèn) — « permettez-moi de demander »\n' +
+      '- 请问 (qǐngwèn) — « permettez-moi de demander »\n' +
       '- le lieu\n' +
       '- 怎么走 ? — littéralement « comment marcher ? »\n' +
       '\n' +
@@ -173,9 +173,9 @@ export const a2CityPlacesLearnSections: LessonV2LearnSection[] = [
       { hanzi: '超市', pinyin: 'chāo shì', meaning: 'supermarché', meaningEn: 'supermarket', audio: 'audio/hsk3/hsk3_超市.wav' }
     ],
     tip:
-      '银行 (yín háng) est une exception : littéralement « maison d\'argent ». Pour « bank » au sens financier, 行 se prononce háng, pas xíng.',
+      '银行 (yínháng) est une exception : littéralement « maison d\'argent ». Pour « bank » au sens financier, 行 se prononce háng, pas xíng.',
     tipEn:
-      '银行 (yín háng) is an exception: literally "money house". For "bank" (financial), 行 is pronounced háng, not xíng.'
+      '银行 (yínháng) is an exception: literally "money house". For "bank" (financial), 行 is pronounced háng, not xíng.'
   },
   {
     id: 'a2-places-zai-nar',
@@ -414,9 +414,9 @@ export const a2FoodDishesLearnSections: LessonV2LearnSection[] = [
       { hanzi: '米饭', pinyin: 'mǐ fàn', meaning: 'riz cuit', meaningEn: 'cooked rice', audio: 'audio/hsk2/hsk2_米饭.wav' }
     ],
     tip:
-      '麻婆豆腐 (mápó dòufu) veut littéralement dire « tofu de la grand-mère grêlée » — c\'est le nom de son inventrice au Sichuan au XIXe siècle.',
+      '麻婆豆腐 (má pó dòufu) veut littéralement dire « tofu de la grand-mère grêlée » — c\'est le nom de son inventrice au Sichuan au XIXe siècle.',
     tipEn:
-      '麻婆豆腐 (mápó dòufu) literally means "pockmarked-granny tofu" — named after its 19th-century Sichuan inventor.'
+      '麻婆豆腐 (má pó dòufu) literally means "pockmarked-granny tofu" — named after its 19th-century Sichuan inventor.'
   }
 ];
 
@@ -766,10 +766,10 @@ export const a2DayRoutineLearnSections: LessonV2LearnSection[] = [
     body:
       'Les adverbes de fréquence se placent **avant le verbe**.\n' +
       '\n' +
-      '- 每天 (měi tiān) — chaque jour\n' +
-      '- 常常 (cháng cháng) — souvent\n' +
-      '- 有时候 (yǒu shí hòu) — parfois\n' +
-      '- 从不 (cóng bù) — jamais (+ verbe positif)\n' +
+      '- 每天 (měitiān) — chaque jour\n' +
+      '- 常常 (chángcháng) — souvent\n' +
+      '- 有时候 (yǒushíhòu) — parfois\n' +
+      '- 从不 (cóngbù) — jamais (+ verbe positif)\n' +
       '\n' +
       'Exemple : 我常常看电影 (je regarde souvent des films).\n' +
       '\n' +
@@ -820,13 +820,13 @@ export const a2DayWeatherLearnSections: LessonV2LearnSection[] = [
     body:
       'Là où le français a des expressions fixes (« il pleut »), le chinois utilise des **verbes** :\n' +
       '\n' +
-      '- 下雨 (xià yǔ) — « tomber pluie » = il pleut\n' +
-      '- 下雪 (xià xuě) — il neige\n' +
-      '- 刮风 (guā fēng) — il vente (littéralement « racler vent »)\n' +
+      '- 下雨 (xiàyǔ) — « tomber pluie » = il pleut\n' +
+      '- 下雪 (xiàxuě) — il neige\n' +
+      '- 刮风 (guāfēng) — il vente (littéralement « racler vent »)\n' +
       '\n' +
       'Astuce : on peut les conjuguer comme des verbes normaux — 昨天下雨了 (il a plu hier), 明天会下雪 (il neigera demain).',
     bodyEn:
-      'Where English has fixed expressions ("it\'s raining"), Chinese uses VERBS. 下雨 (xià yǔ) = "fall rain" = it rains. 下雪 (xià xuě) = it snows. 刮风 (guā fēng) = it\'s windy (lit. "scrape wind"). Treat them as normal verbs: 昨天下雨了 (it rained yesterday), 明天会下雪 (it\'ll snow tomorrow).',
+      'Where English has fixed expressions ("it\'s raining"), Chinese uses VERBS. 下雨 (xiàyǔ) = "fall rain" = it rains. 下雪 (xiàxuě) = it snows. 刮风 (guāfēng) = it\'s windy (lit. "scrape wind"). Treat them as normal verbs: 昨天下雨了 (it rained yesterday), 明天会下雪 (it\'ll snow tomorrow).',
     items: [
       { hanzi: '下雨', pinyin: 'xià yǔ', meaning: 'pleuvoir', meaningEn: 'rain', audio: 'audio/hsk2/hsk2_下雨.wav' },
       { hanzi: '下雪', pinyin: 'xià xuě', meaning: 'neiger', meaningEn: 'snow', audio: 'audio/hsk2/hsk2_下雪.wav' },
@@ -885,9 +885,9 @@ export const a2DayDatesLearnSections: LessonV2LearnSection[] = [
       { hanzi: '昨天', pinyin: 'zuó tiān', meaning: 'hier', meaningEn: 'yesterday', audio: 'audio/hsk1/hsk1_昨天.wav' }
     ],
     tip:
-      '周末 (zhōu mò) = week-end. 周一到周五 = du lundi au vendredi. Les messages d\'entreprise utilisent presque toujours la forme 周X, plus pro.',
+      '周末 (zhōumò) = week-end. 周一到周五 = du lundi au vendredi. Les messages d\'entreprise utilisent presque toujours la forme 周X, plus pro.',
     tipEn:
-      '周末 (zhōu mò) = weekend. 周一到周五 = Mon to Fri. Business messages almost always use the 周X form, more professional.'
+      '周末 (zhōumò) = weekend. 周一到周五 = Mon to Fri. Business messages almost always use the 周X form, more professional.'
   }
 ];
 

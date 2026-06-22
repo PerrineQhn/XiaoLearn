@@ -43,8 +43,8 @@ export const HSK1_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 医院 mean?',
           choices: ['École', 'Hôpital', 'Banque', 'Restaurant'],
           correctIndex: 1,
-          explanation: '医院 (yī yuàn) = hôpital. 医生 y travaille.',
-          explanationEn: '医院 (yī yuàn) = hospital. 医生 (doctor) works there.'
+          explanation: '医院 (yīyuàn) = hôpital. 医生 y travaille.',
+          explanationEn: '医院 (yīyuàn) = hospital. 医生 (doctor) works there.'
         },
         {
           id: 'hsk1b-v2',
@@ -61,8 +61,8 @@ export const HSK1_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which one is a color?',
           choices: ['红色', '电话', '面包', '朋友'],
           correctIndex: 0,
-          explanation: '红色 (hóng sè) = rouge. 色 = couleur.',
-          explanationEn: '红色 (hóng sè) = red. 色 = color.'
+          explanation: '红色 (hóngsè) = rouge. 色 = couleur.',
+          explanationEn: '红色 (hóngsè) = red. 色 = color.'
         },
         {
           id: 'hsk1b-v4',
@@ -70,8 +70,8 @@ export const HSK1_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 工作 mean?',
           choices: ['Étudier', 'Travailler / travail', 'Jouer', 'Courir'],
           correctIndex: 1,
-          explanation: '工作 (gōng zuò) = travail / travailler. HSK 1 noyau dur.',
-          explanationEn: '工作 (gōng zuò) = work / to work. HSK 1 core.'
+          explanation: '工作 (gōngzuò) = travail / travailler. HSK 1 noyau dur.',
+          explanationEn: '工作 (gōngzuò) = work / to work. HSK 1 core.'
         },
         {
           id: 'hsk1b-v5',
@@ -79,8 +79,8 @@ export const HSK1_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which word means "today"?',
           choices: ['昨天', '今天', '明天', '前天'],
           correctIndex: 1,
-          explanation: '今天 (jīn tiān) = aujourd\'hui. 昨天 = hier, 明天 = demain.',
-          explanationEn: '今天 (jīn tiān) = today. 昨天 = yesterday, 明天 = tomorrow.'
+          explanation: '今天 (jīntiān) = aujourd\'hui. 昨天 = hier, 明天 = demain.',
+          explanationEn: '今天 (jīntiān) = today. 昨天 = yesterday, 明天 = tomorrow.'
         },
         {
           id: 'hsk1b-v6',
@@ -529,8 +529,8 @@ export const HSK2_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 机场 mean?',
           choices: ['Gare', 'Aéroport', 'Port', 'Parking'],
           correctIndex: 1,
-          explanation: '机场 (jī chǎng) = aéroport. 飞机 = avion.',
-          explanationEn: '机场 (jī chǎng) = airport. 飞机 = plane.'
+          explanation: '机场 (jīchǎng) = aéroport. 飞机 = avion.',
+          explanationEn: '机场 (jīchǎng) = airport. 飞机 = plane.'
         },
         {
           id: 'hsk2b-v2',
@@ -538,8 +538,8 @@ export const HSK2_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which verb means "to help"?',
           choices: ['帮助', '准备', '介绍', '认识'],
           correctIndex: 0,
-          explanation: '帮助 (bāng zhù) = aider. 帮 tout court est plus informel.',
-          explanationEn: '帮助 (bāng zhù) = help. 帮 alone is more informal.'
+          explanation: '帮助 (bāngzhù) = aider. 帮 tout court est plus informel.',
+          explanationEn: '帮助 (bāngzhù) = help. 帮 alone is more informal.'
         },
         {
           id: 'hsk2b-v3',
@@ -547,8 +547,8 @@ export const HSK2_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 旁边 mean?',
           choices: ['Devant', 'Derrière', 'À côté de', 'Entre'],
           correctIndex: 2,
-          explanation: '旁边 (páng biān) = à côté.',
-          explanationEn: '旁边 (páng biān) = next to.'
+          explanation: '旁边 (pángbiān) = à côté.',
+          explanationEn: '旁边 (pángbiān) = next to.'
         },
         {
           id: 'hsk2b-v4',
@@ -565,8 +565,8 @@ export const HSK2_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 希望 mean?',
           choices: ['Craindre', 'Espérer, souhaiter', 'Détester', 'Oublier'],
           correctIndex: 1,
-          explanation: '希望 (xī wàng) = espérer. 我希望 + phrase.',
-          explanationEn: '希望 (xī wàng) = hope. 我希望 + clause.'
+          explanation: '希望 (xīwàng) = espérer. 我希望 + phrase.',
+          explanationEn: '希望 (xīwàng) = hope. 我希望 + clause.'
         },
         {
           id: 'hsk2b-v6',
@@ -574,8 +574,8 @@ export const HSK2_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which one expresses a positive feeling?',
           choices: ['生气', '难过', '高兴', '害怕'],
           correctIndex: 2,
-          explanation: '高兴 (gāo xìng) = content. 生气 = en colère, 难过 = triste.',
-          explanationEn: '高兴 (gāo xìng) = happy. 生气 = angry, 难过 = sad.'
+          explanation: '高兴 (gāoxìng) = content. 生气 = en colère, 难过 = triste.',
+          explanationEn: '高兴 (gāoxìng) = happy. 生气 = angry, 难过 = sad.'
         },
         {
           id: 'hsk2b-v7',
@@ -1025,8 +1025,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 锻炼 mean?',
           choices: ['Se reposer', 'S\'entraîner / faire de l\'exercice', 'Cuisiner', 'Voyager'],
           correctIndex: 1,
-          explanation: '锻炼 (duàn liàn) = faire de l\'exercice, s\'entraîner.',
-          explanationEn: '锻炼 (duàn liàn) = exercise, train.'
+          explanation: '锻炼 (duànliàn) = faire de l\'exercice, s\'entraîner.',
+          explanationEn: '锻炼 (duànliàn) = exercise, train.'
         },
         {
           id: 'hsk3b-v2',
@@ -1034,8 +1034,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which word means "habit"?',
           choices: ['习惯', '关心', '愿意', '办法'],
           correctIndex: 0,
-          explanation: '习惯 (xí guàn) = habitude ; 我习惯了 = j\'y suis habitué.',
-          explanationEn: '习惯 (xí guàn) = habit; 我习惯了 = I\'m used to it.'
+          explanation: '习惯 (xíguàn) = habitude ; 我习惯了 = j\'y suis habitué.',
+          explanationEn: '习惯 (xíguàn) = habit; 我习惯了 = I\'m used to it.'
         },
         {
           id: 'hsk3b-v3',
@@ -1043,8 +1043,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 认为 mean?',
           choices: ['Oublier', 'Penser / considérer que', 'Regretter', 'Imaginer'],
           correctIndex: 1,
-          explanation: '认为 (rèn wéi) = considérer, estimer. 我认为 + phrase.',
-          explanationEn: '认为 (rèn wéi) = consider, hold the view. 我认为 + clause.'
+          explanation: '认为 (rènwéi) = considérer, estimer. 我认为 + phrase.',
+          explanationEn: '认为 (rènwéi) = consider, hold the view. 我认为 + clause.'
         },
         {
           id: 'hsk3b-v4',
@@ -1052,8 +1052,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which expresses a negative feeling?',
           choices: ['满意', '舒服', '着急', '高兴'],
           correctIndex: 2,
-          explanation: '着急 (zháo jí) = anxieux, pressé.',
-          explanationEn: '着急 (zháo jí) = anxious, in a hurry.'
+          explanation: '着急 (zháojí) = anxieux, pressé.',
+          explanationEn: '着急 (zháojí) = anxious, in a hurry.'
         },
         {
           id: 'hsk3b-v5',
@@ -1061,8 +1061,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 结束 mean?',
           choices: ['Commencer', 'Se terminer / finir', 'Recommencer', 'Prolonger'],
           correctIndex: 1,
-          explanation: '结束 (jié shù) = finir, clore.',
-          explanationEn: '结束 (jié shù) = end, conclude.'
+          explanation: '结束 (jiéshù) = finir, clore.',
+          explanationEn: '结束 (jiéshù) = end, conclude.'
         },
         {
           id: 'hsk3b-v6',
@@ -1070,8 +1070,8 @@ export const HSK3_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which one is an animal?',
           choices: ['熊猫', '铅笔', '校长', '椅子'],
           correctIndex: 0,
-          explanation: '熊猫 (xióng māo) = panda.',
-          explanationEn: '熊猫 (xióng māo) = panda.'
+          explanation: '熊猫 (xióngmāo) = panda.',
+          explanationEn: '熊猫 (xióngmāo) = panda.'
         },
         {
           id: 'hsk3b-v7',
@@ -1548,8 +1548,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 否则 mean?',
           choices: ['Également', 'Sinon, autrement', 'Surtout', 'En revanche'],
           correctIndex: 1,
-          explanation: '否则 (fǒu zé) = sinon. Synonyme courant : 不然.',
-          explanationEn: '否则 (fǒu zé) = otherwise. Common synonym: 不然.'
+          explanation: '否则 (fǒuzé) = sinon. Synonyme courant : 不然.',
+          explanationEn: '否则 (fǒuzé) = otherwise. Common synonym: 不然.'
         },
         {
           id: 'hsk4b-v2',
@@ -1557,8 +1557,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which one means "to waste"?',
           choices: ['节约', '浪费', '保护', '安排'],
           correctIndex: 1,
-          explanation: '浪费 (làng fèi) = gaspiller. Opposé de 节约 = économiser.',
-          explanationEn: '浪费 (làng fèi) = waste. Opposite of 节约.'
+          explanation: '浪费 (làngfèi) = gaspiller. Opposé de 节约 = économiser.',
+          explanationEn: '浪费 (làngfèi) = waste. Opposite of 节约.'
         },
         {
           id: 'hsk4b-v3',
@@ -1566,8 +1566,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 坚持 mean?',
           choices: ['Céder', 'Persévérer, s\'en tenir à', 'Abandonner', 'Oublier'],
           correctIndex: 1,
-          explanation: '坚持 (jiān chí) = tenir bon, persévérer.',
-          explanationEn: '坚持 (jiān chí) = persist, stick to.'
+          explanation: '坚持 (jiānchí) = tenir bon, persévérer.',
+          explanationEn: '坚持 (jiānchí) = persist, stick to.'
         },
         {
           id: 'hsk4b-v4',
@@ -1575,8 +1575,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 机会 mean?',
           choices: ['Machine', 'Occasion, opportunité', 'Piège', 'Difficulté'],
           correctIndex: 1,
-          explanation: '机会 (jī huì) = occasion.',
-          explanationEn: '机会 (jī huì) = chance, opportunity.'
+          explanation: '机会 (jīhuì) = occasion.',
+          explanationEn: '机会 (jīhuì) = chance, opportunity.'
         },
         {
           id: 'hsk4b-v5',
@@ -1584,8 +1584,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which adjective means "serious / earnest"?',
           choices: ['认真', '正常', '普通', '轻松'],
           correctIndex: 0,
-          explanation: '认真 (rèn zhēn) = sérieux, attentif.',
-          explanationEn: '认真 (rèn zhēn) = serious, earnest.'
+          explanation: '认真 (rènzhēn) = sérieux, attentif.',
+          explanationEn: '认真 (rènzhēn) = serious, earnest.'
         },
         {
           id: 'hsk4b-v6',
@@ -1593,8 +1593,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 污染 mean?',
           choices: ['Technologie', 'Pollution', 'Tradition', 'Croissance'],
           correctIndex: 1,
-          explanation: '污染 (wū rǎn) = pollution (souvent 环境污染).',
-          explanationEn: '污染 (wū rǎn) = pollution.'
+          explanation: '污染 (wūrǎn) = pollution (souvent 环境污染).',
+          explanationEn: '污染 (wūrǎn) = pollution.'
         },
         {
           id: 'hsk4b-v7',
@@ -1602,8 +1602,8 @@ export const HSK4_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which word describes a personality trait?',
           choices: ['耐心', '教室', '眼镜', '厨房'],
           correctIndex: 0,
-          explanation: '耐心 (nài xīn) = patience.',
-          explanationEn: '耐心 (nài xīn) = patience.'
+          explanation: '耐心 (nàixīn) = patience.',
+          explanationEn: '耐心 (nàixīn) = patience.'
         },
         {
           id: 'hsk4b-v8',
@@ -2071,7 +2071,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 传统 mean?',
           choices: ['Moderne', 'Tradition', 'Accident', 'Expérience'],
           correctIndex: 1,
-          explanation: '传统 (chuán tǒng) = tradition, traditionnel.',
+          explanation: '传统 (chuántǒng) = tradition, traditionnel.',
           explanationEn: '传统 = tradition(al).'
         },
         {
@@ -2080,7 +2080,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 承担 mean?',
           choices: ['Refuser', 'Assumer, prendre en charge', 'Ignorer', 'Déléguer'],
           correctIndex: 1,
-          explanation: '承担 (chéng dān) = assumer (une responsabilité).',
+          explanation: '承担 (chéngdān) = assumer (une responsabilité).',
           explanationEn: '承担 = take on, bear.'
         },
         {
@@ -2089,7 +2089,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which one means "obvious"?',
           choices: ['明显', '秘密', '深刻', '孤独'],
           correctIndex: 0,
-          explanation: '明显 (míng xiǎn) = évident.',
+          explanation: '明显 (míngxiǎn) = évident.',
           explanationEn: '明显 = obvious.'
         },
         {
@@ -2098,7 +2098,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 合作 mean?',
           choices: ['Compétition', 'Coopération', 'Contradiction', 'Contrat'],
           correctIndex: 1,
-          explanation: '合作 (hé zuò) = coopération.',
+          explanation: '合作 (hézuò) = coopération.',
           explanationEn: '合作 = cooperation.'
         },
         {
@@ -2107,7 +2107,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 必然 mean?',
           choices: ['Possible', 'Inévitable, nécessairement', 'Hasard', 'Temporaire'],
           correctIndex: 1,
-          explanation: '必然 (bì rán) = forcément, inévitable.',
+          explanation: '必然 (bìrán) = forcément, inévitable.',
           explanationEn: '必然 = inevitable(ly).'
         },
         {
@@ -2116,7 +2116,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 缺乏 mean?',
           choices: ['Abondance', 'Manquer de, absence de', 'Croissance', 'Développement'],
           correctIndex: 1,
-          explanation: '缺乏 (quē fá) = manquer de (souvent abstrait).',
+          explanation: '缺乏 (quēfá) = manquer de (souvent abstrait).',
           explanationEn: '缺乏 = lack.'
         },
         {
@@ -2125,7 +2125,7 @@ export const HSK5_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which expresses a mental state?',
           choices: ['焦虑', '门口', '工具', '表面'],
           correctIndex: 0,
-          explanation: '焦虑 (jiāo lǜ) = anxiété.',
+          explanation: '焦虑 (jiāolǜ) = anxiété.',
           explanationEn: '焦虑 = anxiety.'
         },
         {
@@ -2594,7 +2594,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 潜力 mean?',
           choices: ['Faiblesse', 'Potentiel', 'Colère', 'Vitesse'],
           correctIndex: 1,
-          explanation: '潜力 (qián lì) = potentiel.',
+          explanation: '潜力 (qiánlì) = potentiel.',
           explanationEn: '潜力 = potential.'
         },
         {
@@ -2603,7 +2603,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 忽略 mean?',
           choices: ['Souligner', 'Négliger, ignorer', 'Renforcer', 'Comparer'],
           correctIndex: 1,
-          explanation: '忽略 (hū lüè) = négliger.',
+          explanation: '忽略 (hūlüè) = négliger.',
           explanationEn: '忽略 = overlook, neglect.'
         },
         {
@@ -2612,7 +2612,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'Which means "precious / rare"?',
           choices: ['珍贵', '平凡', '频繁', '泛滥'],
           correctIndex: 0,
-          explanation: '珍贵 (zhēn guì) = précieux.',
+          explanation: '珍贵 (zhēnguì) = précieux.',
           explanationEn: '珍贵 = precious.'
         },
         {
@@ -2621,7 +2621,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 弥补 mean?',
           choices: ['Compenser, combler', 'Accuser', 'Abandonner', 'Contredire'],
           correctIndex: 0,
-          explanation: '弥补 (mí bǔ) = compenser.',
+          explanation: '弥补 (míbǔ) = compenser.',
           explanationEn: '弥补 = make up for.'
         },
         {
@@ -2644,7 +2644,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 显著 mean?',
           choices: ['Léger', 'Marqué, notable', 'Caché', 'Temporaire'],
           correctIndex: 1,
-          explanation: '显著 (xiǎn zhù) = notable, remarquable.',
+          explanation: '显著 (xiǎnzhù) = notable, remarquable.',
           explanationEn: '显著 = remarkable.'
         },
         {
@@ -2653,7 +2653,7 @@ export const HSK6_MOCK_B: EvaluationV2Config = {
           promptEn: 'What does 矛盾 mean?',
           choices: ['Contradiction, conflit', 'Harmonie', 'Gloire', 'Consensus'],
           correctIndex: 0,
-          explanation: '矛盾 (máo dùn) = contradiction.',
+          explanation: '矛盾 (máodùn) = contradiction.',
           explanationEn: '矛盾 = contradiction.'
         },
         {

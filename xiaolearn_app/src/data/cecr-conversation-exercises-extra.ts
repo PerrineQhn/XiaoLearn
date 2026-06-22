@@ -31,7 +31,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Que signifie « 不好意思 » ?', promptEn: 'What does "不好意思" mean?',
       choices: ['Désolé / excusez-moi', 'Pas grave', 'Pas mal', 'Bonjour'],
       correctIndex: 0,
-      explanation: '不好意思 (bù hǎoyìsi) = formule polie d\'excuse plus douce que 对不起.',
+      explanation: '不好意思 (bùhǎoyìsi) = formule polie d\'excuse plus douce que 对不起.',
       explanationEn: '不好意思 = polite excuse, softer than 对不起.' },
     { id: 'cecr-a1-conv-m1-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Merci beaucoup »', promptEn: 'Translate: "Thanks a lot"',
@@ -93,7 +93,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Traduis : « C\'est ici »', promptEn: 'Translate: "It\'s here"',
       choices: ['在这儿', '在那儿', '在哪儿', '在家'],
       correctIndex: 0,
-      explanation: '在这儿 (zài zhèr) = ici. 在那儿 = là-bas.',
+      explanation: '在这儿 (zàizhèr) = ici. 在那儿 = là-bas.',
       explanationEn: '在这儿 = here. 在那儿 = there.' }
   ],
   'cecr-a1-conversation-m6': [
@@ -115,7 +115,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Comment introduire poliment une question ?', promptEn: 'How to politely introduce a question?',
       choices: ['请问…', '你好…', '不…', '是…'],
       correctIndex: 0,
-      explanation: '请问 (qǐng wèn) = puis-je demander (politesse standard).',
+      explanation: '请问 (qǐngwèn) = puis-je demander (politesse standard).',
       explanationEn: '请问 = may I ask (standard politeness).' },
     { id: 'cecr-a1-conv-m7-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Où sont les toilettes ? »', promptEn: 'Translate: "Where is the toilet?"',
@@ -133,7 +133,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Comment dire « marchander » ?', promptEn: 'How to say "to bargain"?',
       choices: ['讨价还价', '买东西', '看一看', '问一下'],
       correctIndex: 0,
-      explanation: '讨价还价 (tǎojià huánjià) = marchander (chéngyǔ).',
+      explanation: '讨价还价 (tǎojiàhuánjià) = marchander (chéngyǔ).',
       explanationEn: '讨价还价 = to haggle.' },
     { id: 'cecr-a2-conv-m1-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Moins cher s\'il vous plaît »', promptEn: 'Translate: "Cheaper please"',
@@ -147,13 +147,13 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Que signifie « 阴天 » ?', promptEn: 'What does "阴天" mean?',
       choices: ['Temps couvert', 'Soleil', 'Pluie', 'Neige'],
       correctIndex: 0,
-      explanation: '阴天 (yīn tiān) = temps nuageux. 晴天 = ensoleillé.',
+      explanation: '阴天 (yīntiān) = temps nuageux. 晴天 = ensoleillé.',
       explanationEn: '阴天 = cloudy. 晴天 = sunny.' },
     { id: 'cecr-a2-conv-m2-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Il pleut »', promptEn: 'Translate: "It is raining"',
       choices: ['下雨了', '下雪了', '刮风了', '出太阳了'],
       correctIndex: 0,
-      explanation: '下雨 (xià yǔ) = pleuvoir. 了 marque le changement.',
+      explanation: '下雨 (xiàyǔ) = pleuvoir. 了 marque le changement.',
       explanationEn: '下雨 = to rain. 了 marks change.' }
   ],
   'cecr-a2-conversation-m3': [
@@ -195,7 +195,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Traduis : « J\'aime lire »', promptEn: 'Translate: "I like to read"',
       choices: ['我喜欢看书', '我喜欢吃', '我喜欢去', '我喜欢工作'],
       correctIndex: 0,
-      explanation: '看书 (kàn shū) = lire. 喜欢 + verbe = aimer faire.',
+      explanation: '看书 (kànshū) = lire. 喜欢 + verbe = aimer faire.',
       explanationEn: '看书 = read. 喜欢 + verb = like to do.' }
   ],
   'cecr-a2-conversation-m6': [
@@ -209,7 +209,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Traduis : « Pas terrible »', promptEn: 'Translate: "Not great"',
       choices: ['不怎么样', '很好', '太好了', '不可能'],
       correctIndex: 0,
-      explanation: '不怎么样 (bù zěnmeyàng) = bof, pas terrible.',
+      explanation: '不怎么样 (bùzěnmeyàng) = bof, pas terrible.',
       explanationEn: '不怎么样 = so-so / not great.' }
   ],
   'cecr-a2-conversation-m7': [
@@ -255,7 +255,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Traduis : « Surtout les temples »', promptEn: 'Translate: "Especially the temples"',
       choices: ['尤其是寺庙', '只有寺庙', '没有寺庙', '不是寺庙'],
       correctIndex: 0,
-      explanation: '尤其是 (yóuqí shì) = surtout / en particulier.',
+      explanation: '尤其是 (yóuqíshì) = surtout / en particulier.',
       explanationEn: '尤其是 = especially.' }
   ],
   'cecr-b11-conversation-m3': [
@@ -427,7 +427,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Traduis : « Votre proposition est pertinente »', promptEn: 'Translate: "Your proposal makes sense"',
       choices: ['您的方案很有道理', '您的方案很贵', '您的方案不行', '您的方案太长'],
       correctIndex: 0,
-      explanation: '有道理 (yǒu dàolǐ) = avoir du sens / pertinent.',
+      explanation: '有道理 (yǒudàolǐ) = avoir du sens / pertinent.',
       explanationEn: '有道理 = make sense.' }
   ],
 
@@ -1011,7 +1011,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Que signifie « 萧瑟 » ?', promptEn: 'What does "萧瑟" mean?',
       choices: ['Mélancolique (vent/scène)', 'Chaud', 'Brillant', 'Joyeux'],
       correctIndex: 0,
-      explanation: '萧瑟 (xiāosè) = bruit triste du vent, scène mélancolique.',
+      explanation: '萧瑟 (xiāo sè) = bruit triste du vent, scène mélancolique.',
       explanationEn: '萧瑟 = bleak/melancholy.' },
     { id: 'cecr-c21-conv-m1-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Le temps file vite »', promptEn: 'Translate: "Time flies"',
@@ -1111,7 +1111,7 @@ export const cecrConversationExercisesExtra: Record<string, LessonV2Exercise[]> 
       prompt: 'Que signifie « 兢兢业业 » ?', promptEn: 'What does "兢兢业业" mean?',
       choices: ['Consciencieux et minutieux', 'Paresseux', 'Distrait', 'Bavard'],
       correctIndex: 0,
-      explanation: '兢兢业业 (jīngjīng yèyè) = chéngyǔ pour qualité au travail.',
+      explanation: '兢兢业业 (jīngjīngyèyè) = chéngyǔ pour qualité au travail.',
       explanationEn: '兢兢业业 = chéngyǔ for diligent work.' },
     { id: 'cecr-c21-conv-m5-trans1', type: 'translation', category: 'vocabulary',
       prompt: 'Traduis : « Modèle exemplaire »', promptEn: 'Translate: "Role model"',

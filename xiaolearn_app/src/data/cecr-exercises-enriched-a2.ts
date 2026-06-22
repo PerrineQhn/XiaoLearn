@@ -93,8 +93,8 @@ const A2_CITY_M1: LessonV2Exercise[] = [
       '\u65C1\u8FB9\u662F\u8D85\u5E02\u5417\uFF1F'
     ],
     correctIndex: 1,
-    explanation: '附近 (fù jìn) = « à proximité / aux alentours », zone floue autour de toi. 这里 = « ici » (point précis). La question standard est 附近有...吗 ?',
-    explanationEn: '附近 (fù jìn) = «nearby/around», fuzzy zone around you. 这里 = «here» (precise spot). Standard question: 附近有...吗?'
+    explanation: '附近 (fùjìn) = « à proximité / aux alentours », zone floue autour de toi. 这里 = « ici » (point précis). La question standard est 附近有...吗 ?',
+    explanationEn: '附近 (fùjìn) = «nearby/around», fuzzy zone around you. 这里 = «here» (precise spot). Standard question: 附近有...吗?'
   },
   {
     id: 'cecr-a2-city-m1-err1',
@@ -121,8 +121,8 @@ const A2_CITY_M1: LessonV2Exercise[] = [
       'Demander son chemin'
     ],
     correctIndex: 0,
-    explanation: '过马路 (guò mǎ lù) = traverser la rue. Littéralement « passer la route ». Instruction fréquente dans la description d\u2019un itinéraire.',
-    explanationEn: '过马路 (guò mǎ lù) = cross the street. Literally «pass the road». Common step in directions.',
+    explanation: '过马路 (guòmǎlù) = traverser la rue. Littéralement « passer la route ». Instruction fréquente dans la description d\u2019un itinéraire.',
+    explanationEn: '过马路 (guòmǎlù) = cross the street. Literally «pass the road». Common step in directions.',
     audioHanzi: '\u8FC7\u9A6C\u8DEF',
     autoPlay: true
   },
@@ -134,8 +134,8 @@ const A2_CITY_M1: LessonV2Exercise[] = [
     promptEn: 'How do you say «next to» in Chinese?',
     choices: ['\u5BF9\u9762', '\u9644\u8FD1', '\u65C1\u8FB9', '\u524D\u9762'],
     correctIndex: 2,
-    explanation: '旁边 (páng biān) = « à côté, juste contre ». 附近 = « aux alentours » (plus flou). 对面 = « en face ». 前面 = « devant ».',
-    explanationEn: '旁边 (páng biān) = «right beside». 附近 = «around/nearby» (fuzzier). 对面 = «across». 前面 = «in front».'
+    explanation: '旁边 (pángbiān) = « à côté, juste contre ». 附近 = « aux alentours » (plus flou). 对面 = « en face ». 前面 = « devant ».',
+    explanationEn: '旁边 (pángbiān) = «right beside». 附近 = «around/nearby» (fuzzier). 对面 = «across». 前面 = «in front».'
   }
 ];
 
@@ -236,8 +236,8 @@ const A2_CITY_M2: LessonV2Exercise[] = [
       'L\u2019avion (飞机)'
     ],
     correctIndex: 0,
-    explanation: '地铁 (dì tiě, ton 4 + ton 3) = métro. Littéralement « fer souterrain ». Différent de 火车 (huǒ chē) = train.',
-    explanationEn: '地铁 (dì tiě, tone 4 + tone 3) = subway. Literally «underground iron». Different from 火车 (huǒ chē) = train.',
+    explanation: '地铁 (dì tiě, ton 4 + ton 3) = métro. Littéralement « fer souterrain ». Différent de 火车 (huǒchē) = train.',
+    explanationEn: '地铁 (dì tiě, tone 4 + tone 3) = subway. Literally «underground iron». Different from 火车 (huǒchē) = train.',
     audioHanzi: '\u5730\u94C1',
     autoPlay: true
   },
@@ -249,8 +249,8 @@ const A2_CITY_M2: LessonV2Exercise[] = [
     promptEn: 'How do you say «(public) bus» in Chinese?',
     choices: ['\u51FA\u79DF\u8F66', '\u516C\u5171\u6C7D\u8F66', '\u706B\u8F66', '\u5730\u94C1'],
     correctIndex: 1,
-    explanation: '公共汽车 (gōng gòng qì chē) = bus public, mot à mot « public voiture à vapeur ». 出租车 = taxi, 火车 = train, 地铁 = métro.',
-    explanationEn: '公共汽车 (gōng gòng qì chē) = public bus, literally «public steam-vehicle». 出租车 = taxi, 火车 = train, 地铁 = subway.'
+    explanation: '公共汽车 (gōnggòngqìchē) = bus public, mot à mot « public voiture à vapeur ». 出租车 = taxi, 火车 = train, 地铁 = métro.',
+    explanationEn: '公共汽车 (gōnggòngqìchē) = public bus, literally «public steam-vehicle». 出租车 = taxi, 火车 = train, 地铁 = subway.'
   }
 ];
 
@@ -323,8 +323,8 @@ const A2_CITY_M3: LessonV2Exercise[] = [
       '\u9644\u8FD1\u6709\u94F6\u884C\u5417\uFF1F'
     ],
     correctIndex: 0,
-    explanation: '书店 (shū diàn) = librairie (店 suffixe commerce). 商店 = boutique générale, 医院 = hôpital, 银行 = banque.',
-    explanationEn: '书店 (shū diàn) = bookshop (店 commerce suffix). 商店 = general shop, 医院 = hospital, 银行 = bank.'
+    explanation: '书店 (shūdiàn) = librairie (店 suffixe commerce). 商店 = boutique générale, 医院 = hôpital, 银行 = banque.',
+    explanationEn: '书店 (shūdiàn) = bookshop (店 commerce suffix). 商店 = general shop, 医院 = hospital, 银行 = bank.'
   },
   {
     id: 'cecr-a2-city-m3-err1',
@@ -351,8 +351,8 @@ const A2_CITY_M3: LessonV2Exercise[] = [
       'Cinéma (电影院)'
     ],
     correctIndex: 1,
-    explanation: '博物馆 (bó wù guǎn) = musée (3 syllabes). Le suffixe 馆 signale un lieu culturel. Différent de 医院 (yī yuàn) et 电影院 (diàn yǐng yuàn).',
-    explanationEn: '博物馆 (bó wù guǎn) = museum (3 syllables). Suffix 馆 marks a cultural venue. Different from 医院 (yī yuàn) and 电影院 (diàn yǐng yuàn).',
+    explanation: '博物馆 (bówùguǎn) = musée (3 syllabes). Le suffixe 馆 signale un lieu culturel. Différent de 医院 (yīyuàn) et 电影院 (diànyǐngyuàn).',
+    explanationEn: '博物馆 (bówùguǎn) = museum (3 syllables). Suffix 馆 marks a cultural venue. Different from 医院 (yīyuàn) and 电影院 (diànyǐngyuàn).',
     audioHanzi: '\u535A\u7269\u9986',
     autoPlay: true
   },
@@ -380,8 +380,8 @@ const A2_CITY_M4: LessonV2Exercise[] = [
     promptEn: 'How do you address a taxi driver in China?',
     choices: ['\u5148\u751F', '\u5E08\u5085', '\u8001\u677F', '\u540C\u5B66'],
     correctIndex: 1,
-    explanation: '师傅 (shī fu) est le terme de respect pour un artisan ou un chauffeur. 先生 = monsieur (trop formel/neutre). L\u2019utiliser change immédiatement le ton du trajet.',
-    explanationEn: '师傅 (shī fu) is the respectful term for a craftsman or driver. 先生 = sir (too formal/neutral). Using it instantly changes the trip\u2019s tone.'
+    explanation: '师傅 (shīfu) est le terme de respect pour un artisan ou un chauffeur. 先生 = monsieur (trop formel/neutre). L\u2019utiliser change immédiatement le ton du trajet.',
+    explanationEn: '师傅 (shīfu) is the respectful term for a craftsman or driver. 先生 = sir (too formal/neutral). Using it instantly changes the trip\u2019s tone.'
   },
   {
     id: 'cecr-a2-city-m4-fill1',
@@ -393,8 +393,8 @@ const A2_CITY_M4: LessonV2Exercise[] = [
     sentenceEn: 'Driver, ___, thanks!',
     choices: ['\u591A\u5C11\u94B1', '\u5230\u4E86', '\u626B\u7801', '\u5FAE\u4FE1'],
     correctIndex: 1,
-    explanation: '到了 (dào le) = « c\u2019est arrivé / on y est ». Le 了 marque le changement d\u2019état (arrivée). Signale au chauffeur qu\u2019il peut s\u2019arrêter.',
-    explanationEn: '到了 (dào le) = «we\u2019re here». 了 marks state change (arrival). Tells the driver they can stop.'
+    explanation: '到了 (dàole) = « c\u2019est arrivé / on y est ». Le 了 marque le changement d\u2019état (arrivée). Signale au chauffeur qu\u2019il peut s\u2019arrêter.',
+    explanationEn: '到了 (dàole) = «we\u2019re here». 了 marks state change (arrival). Tells the driver they can stop.'
   },
   {
     id: 'cecr-a2-city-m4-order1',
@@ -450,8 +450,8 @@ const A2_CITY_M4: LessonV2Exercise[] = [
     sentence: '\u5148\u751F\uFF0C\u6211\u53BB\u673A\u573A\u3002',
     choices: ['\u5148\u751F', '\u6211', '\u53BB', '\u673A\u573A'],
     correctIndex: 0,
-    explanation: '先生 (« monsieur ») est trop formel et ne s\u2019utilise pas avec un chauffeur. Le terme normal est 师傅 (shī fu).',
-    explanationEn: '先生 («sir») is too formal for a driver. Normal term: 师傅 (shī fu).'
+    explanation: '先生 (« monsieur ») est trop formel et ne s\u2019utilise pas avec un chauffeur. Le terme normal est 师傅 (shīfu).',
+    explanationEn: '先生 («sir») is too formal for a driver. Normal term: 师傅 (shīfu).'
   },
   {
     id: 'cecr-a2-city-m4-listen1',
@@ -466,8 +466,8 @@ const A2_CITY_M4: LessonV2Exercise[] = [
       'Attendre un moment'
     ],
     correctIndex: 0,
-    explanation: '扫码 (sǎo mǎ) = scanner le QR code. Verbe clé du paiement mobile chinois. Littéralement « balayer-code ».',
-    explanationEn: '扫码 (sǎo mǎ) = scan the QR code. Key verb of Chinese mobile payment. Literally «sweep-code».',
+    explanation: '扫码 (sǎomǎ) = scanner le QR code. Verbe clé du paiement mobile chinois. Littéralement « balayer-code ».',
+    explanationEn: '扫码 (sǎomǎ) = scan the QR code. Key verb of Chinese mobile payment. Literally «sweep-code».',
     audioHanzi: '\u626B\u7801',
     autoPlay: true
   },
@@ -512,8 +512,8 @@ const A2_FOOD_M1: LessonV2Exercise[] = [
     sentenceEn: '___! Check please.',
     choices: ['\u5E08\u5085', '\u670D\u52A1\u5458', '\u8001\u677F', '\u5148\u751F'],
     correctIndex: 1,
-    explanation: '服务员 (fú wù yuán) = serveur/serveuse au restaurant. 师傅 pour un chauffeur/artisan, 老板 pour un patron, 先生 pour un inconnu dans la rue.',
-    explanationEn: '服务员 (fú wù yuán) = restaurant server. 师傅 for a driver/craftsman, 老板 for a boss, 先生 for a stranger in the street.'
+    explanation: '服务员 (fúwùyuán) = serveur/serveuse au restaurant. 师傅 pour un chauffeur/artisan, 老板 pour un patron, 先生 pour un inconnu dans la rue.',
+    explanationEn: '服务员 (fúwùyuán) = restaurant server. 师傅 for a driver/craftsman, 老板 for a boss, 先生 for a stranger in the street.'
   },
   {
     id: 'cecr-a2-food-m1-order1',
@@ -541,8 +541,8 @@ const A2_FOOD_M1: LessonV2Exercise[] = [
       'Quel est le plat du jour ?'
     ],
     correctIndex: 1,
-    explanation: '菜单 (cài dān) = menu, littéralement « liste-de-plats ». 在哪儿 = « où est-ce ? ». 哪儿 (nǎr) est la forme Nord ; 哪里 (nǎ lǐ) au Sud.',
-    explanationEn: '菜单 (cài dān) = menu, literally «dish-list». 在哪儿 = «where is it?». 哪儿 (nǎr) is Northern form; 哪里 (nǎ lǐ) in the South.'
+    explanation: '菜单 (càidān) = menu, littéralement « liste-de-plats ». 在哪儿 = « où est-ce ? ». 哪儿 (nǎr) est la forme Nord ; 哪里 (nǎlǐ) au Sud.',
+    explanationEn: '菜单 (càidān) = menu, literally «dish-list». 在哪儿 = «where is it?». 哪儿 (nǎr) is Northern form; 哪里 (nǎlǐ) in the South.'
   },
   {
     id: 'cecr-a2-food-m1-trans-fr2zh',
@@ -598,8 +598,8 @@ const A2_FOOD_M1: LessonV2Exercise[] = [
     promptEn: 'How do you say «it\u2019s delicious» at the table?',
     choices: ['\u597D\u5403', '\u597D\u770B', '\u597D\u542C', '\u597D\u95FB'],
     correctIndex: 0,
-    explanation: '好吃 (hǎo chī) = bon à manger, délicieux. Pattern 好 + verbe : 好看 (joli), 好听 (mélodieux), 好闻 (qui sent bon). Le verbe indique le sens.',
-    explanationEn: '好吃 (hǎo chī) = good-to-eat, delicious. Pattern 好 + verb: 好看 (pretty), 好听 (melodious), 好闻 (smells good). The verb points to the sense.'
+    explanation: '好吃 (hǎochī) = bon à manger, délicieux. Pattern 好 + verbe : 好看 (joli), 好听 (mélodieux), 好闻 (qui sent bon). Le verbe indique le sens.',
+    explanationEn: '好吃 (hǎochī) = good-to-eat, delicious. Pattern 好 + verb: 好看 (pretty), 好听 (melodious), 好闻 (smells good). The verb points to the sense.'
   }
 ];
 
@@ -627,8 +627,8 @@ const A2_FOOD_M2: LessonV2Exercise[] = [
     sentenceEn: 'This soup is ___ salty.',
     choices: ['\u592A', '\u6709\u70B9', '\u5F88', '\u975E\u5E38'],
     correctIndex: 1,
-    explanation: '有点 (yǒu diǎn) = « un peu (plutôt négatif) ». Avant un adjectif, il suggère une critique douce. 太 = trop (négatif fort), 很 = très (neutre).',
-    explanationEn: '有点 (yǒu diǎn) = «a bit (slightly negative)». Before an adjective, it hints at mild criticism. 太 = too (strong negative), 很 = very (neutral).'
+    explanation: '有点 (yǒudiǎn) = « un peu (plutôt négatif) ». Avant un adjectif, il suggère une critique douce. 太 = trop (négatif fort), 很 = très (neutre).',
+    explanationEn: '有点 (yǒudiǎn) = «a bit (slightly negative)». Before an adjective, it hints at mild criticism. 太 = too (strong negative), 很 = very (neutral).'
   },
   {
     id: 'cecr-a2-food-m2-order1',
@@ -787,8 +787,8 @@ const A2_FOOD_M3: LessonV2Exercise[] = [
       '\u6211\u8981\u4E00\u676F\u9762\u6761\u3002'
     ],
     correctIndex: 1,
-    explanation: '面条 (miàn tiáo) = nouilles. Classificateur 碗 (bol) — pas 杯 (verre) ni 个 (générique). 饺子 = raviolis, 米饭 = riz cuit.',
-    explanationEn: '面条 (miàn tiáo) = noodles. Classifier 碗 (bowl) — not 杯 (glass) nor 个 (generic). 饺子 = dumplings, 米饭 = cooked rice.'
+    explanation: '面条 (miàntiáo) = nouilles. Classificateur 碗 (bol) — pas 杯 (verre) ni 个 (générique). 饺子 = raviolis, 米饭 = riz cuit.',
+    explanationEn: '面条 (miàntiáo) = noodles. Classifier 碗 (bowl) — not 杯 (glass) nor 个 (generic). 饺子 = dumplings, 米饭 = cooked rice.'
   },
   {
     id: 'cecr-a2-food-m3-err1',
@@ -844,8 +844,8 @@ const A2_FOOD_M4: LessonV2Exercise[] = [
     promptEn: 'You ask for water in a Chinese restaurant. By default, you get:',
     choices: ['De l\u2019eau gla\u00E7\u00E9e', 'De l\u2019eau fra\u00EEche', 'De l\u2019eau bouillie chaude', 'Du th\u00E9'],
     correctIndex: 2,
-    explanation: '开水 (kāi shuǐ) = eau bouillie chaude. En Chine l\u2019eau servie est toujours bouillie (sécurité sanitaire historique). Pour de l\u2019eau froide, il faut explicitement demander 凉水 ou 冰水.',
-    explanationEn: '开水 (kāi shuǐ) = boiled hot water. Served water in China is always boiled (historical safety). For cold water, explicitly ask 凉水 or 冰水.'
+    explanation: '开水 (kāishuǐ) = eau bouillie chaude. En Chine l\u2019eau servie est toujours bouillie (sécurité sanitaire historique). Pour de l\u2019eau froide, il faut explicitement demander 凉水 ou 冰水.',
+    explanationEn: '开水 (kāishuǐ) = boiled hot water. Served water in China is always boiled (historical safety). For cold water, explicitly ask 凉水 or 冰水.'
   },
   {
     id: 'cecr-a2-food-m4-fill1',
@@ -857,8 +857,8 @@ const A2_FOOD_M4: LessonV2Exercise[] = [
     sentenceEn: 'I want a cup of ___.',
     choices: ['\u7EFF\u8336', '\u7EA2\u8336', '\u4E4C\u9F99\u8336', '\u666E\u6D31\u8336'],
     correctIndex: 2,
-    explanation: '乌龙茶 (wū lóng chá) = thé oolong (semi-fermenté, origine Fujian). 绿茶 = thé vert (non fermenté), 红茶 = thé rouge (= « black tea » en anglais), 普洱茶 = pu\u2019er (fermenté, Yunnan).',
-    explanationEn: '乌龙茶 (wū lóng chá) = oolong tea (semi-fermented, Fujian origin). 绿茶 = green tea (unfermented), 红茶 = red tea (= «black tea» in English), 普洱茶 = pu\u2019er (fermented, Yunnan).'
+    explanation: '乌龙茶 (wūlóngchá) = thé oolong (semi-fermenté, origine Fujian). 绿茶 = thé vert (non fermenté), 红茶 = thé rouge (= « black tea » en anglais), 普洱茶 = pu\u2019er (fermenté, Yunnan).',
+    explanationEn: '乌龙茶 (wūlóngchá) = oolong tea (semi-fermented, Fujian origin). 绿茶 = green tea (unfermented), 红茶 = red tea (= «black tea» in English), 普洱茶 = pu\u2019er (fermented, Yunnan).'
   },
   {
     id: 'cecr-a2-food-m4-order1',
@@ -902,8 +902,8 @@ const A2_FOOD_M4: LessonV2Exercise[] = [
       '\u6211\u559C\u6B22\u679C\u6C41\u548C\u53EF\u4E50\u3002'
     ],
     correctIndex: 1,
-    explanation: '可乐 (kě lè) = Coca/cola. 果汁 (guǒ zhī) = jus de fruits. 啤酒 = bière. Négation 不 + verbe pour une préférence permanente.',
-    explanationEn: '可乐 (kě lè) = Coke/cola. 果汁 (guǒ zhī) = juice. 啤酒 = beer. Negation 不 + verb for a permanent preference.'
+    explanation: '可乐 (kělè) = Coca/cola. 果汁 (guǒzhī) = jus de fruits. 啤酒 = bière. Négation 不 + verbe pour une préférence permanente.',
+    explanationEn: '可乐 (kělè) = Coke/cola. 果汁 (guǒzhī) = juice. 啤酒 = beer. Negation 不 + verb for a permanent preference.'
   },
   {
     id: 'cecr-a2-food-m4-err1',
@@ -943,8 +943,8 @@ const A2_FOOD_M4: LessonV2Exercise[] = [
     promptEn: 'How do you say «pu\u2019er tea» (fermented tea from Yunnan)?',
     choices: ['\u7EFF\u8336', '\u7EA2\u8336', '\u4E4C\u9F99\u8336', '\u666E\u6D31\u8336'],
     correctIndex: 3,
-    explanation: '普洱茶 (pǔ ěr chá) vient de la région de Pu\u2019er au Yunnan. Thé post-fermenté, vieilli (parfois des décennies). Prisé dans les cercles de collectionneurs chinois.',
-    explanationEn: '普洱茶 (pǔ ěr chá) from Pu\u2019er region in Yunnan. Post-fermented tea, aged (sometimes decades). Highly valued by Chinese collectors.'
+    explanation: '普洱茶 (pǔěrchá) vient de la région de Pu\u2019er au Yunnan. Thé post-fermenté, vieilli (parfois des décennies). Prisé dans les cercles de collectionneurs chinois.',
+    explanationEn: '普洱茶 (pǔěrchá) from Pu\u2019er region in Yunnan. Post-fermented tea, aged (sometimes decades). Highly valued by Chinese collectors.'
   }
 ];
 
@@ -972,8 +972,8 @@ const A2_SHOPPING_M1: LessonV2Exercise[] = [
     sentenceEn: 'Too expensive, a bit ___!',
     choices: ['\u8D35', '\u4FBF\u5B9C', '\u6253\u6298', '\u591A\u5C11'],
     correctIndex: 1,
-    explanation: '便宜点儿 (pián yi diǎnr) = « un peu moins cher, s\u2019il vous plaît ». 便宜 = bon marché, 一点儿 atténue. Formule standard de négociation sur les marchés.',
-    explanationEn: '便宜点儿 (pián yi diǎnr) = «a little cheaper, please». 便宜 = cheap, 一点儿 softens. Standard haggling formula at markets.'
+    explanation: '便宜点儿 (piányi diǎnr) = « un peu moins cher, s\u2019il vous plaît ». 便宜 = bon marché, 一点儿 atténue. Formule standard de négociation sur les marchés.',
+    explanationEn: '便宜点儿 (piányi diǎnr) = «a little cheaper, please». 便宜 = cheap, 一点儿 softens. Standard haggling formula at markets.'
   },
   {
     id: 'cecr-a2-shopping-m1-order1',
@@ -1017,8 +1017,8 @@ const A2_SHOPPING_M1: LessonV2Exercise[] = [
       '\u592A\u597D\u4E86\uFF01'
     ],
     correctIndex: 1,
-    explanation: '贵 (guì) = cher. Pattern 太 + adj + 了 = « trop... ». 便宜 (pián yi) = bon marché (l\u2019inverse). Couple indispensable au marché.',
-    explanationEn: '贵 (guì) = expensive. Pattern 太 + adj + 了 = «too...». 便宜 (pián yi) = cheap (opposite). Indispensable pair at markets.'
+    explanation: '贵 (guì) = cher. Pattern 太 + adj + 了 = « trop... ». 便宜 (piányi) = bon marché (l\u2019inverse). Couple indispensable au marché.',
+    explanationEn: '贵 (guì) = expensive. Pattern 太 + adj + 了 = «too...». 便宜 (piányi) = cheap (opposite). Indispensable pair at markets.'
   },
   {
     id: 'cecr-a2-shopping-m1-err1',
@@ -1087,8 +1087,8 @@ const A2_SHOPPING_M2: LessonV2Exercise[] = [
     sentenceEn: 'Do you have ___? This one is a bit small.',
     choices: ['\u5927\u53F7', '\u4E2D\u53F7', '\u5C0F\u53F7', '\u989C\u8272'],
     correctIndex: 0,
-    explanation: '大号 (dà hào) = grande taille (L). 中号 = M, 小号 = S. 号 = « numéro ». Les Chinois utilisent aussi S/M/L écrits, surtout dans les enseignes internationales.',
-    explanationEn: '大号 (dà hào) = large (L). 中号 = M, 小号 = S. 号 = «number». Chinese also use S/M/L directly, especially in international brands.'
+    explanation: '大号 (dàhào) = grande taille (L). 中号 = M, 小号 = S. 号 = « numéro ». Les Chinois utilisent aussi S/M/L écrits, surtout dans les enseignes internationales.',
+    explanationEn: '大号 (dàhào) = large (L). 中号 = M, 小号 = S. 号 = «number». Chinese also use S/M/L directly, especially in international brands.'
   },
   {
     id: 'cecr-a2-shopping-m2-order1',
@@ -1116,8 +1116,8 @@ const A2_SHOPPING_M2: LessonV2Exercise[] = [
       'Quelle couleur pr\u00E9f\u00E9rez-vous ?'
     ],
     correctIndex: 1,
-    explanation: '别的 (bié de) = « autre / d\u2019un autre type ». 颜色 = couleur. Structure 有...吗 ? pour interroger sur la disponibilité.',
-    explanationEn: '别的 (bié de) = «other / different type». 颜色 = color. Structure 有...吗? for asking about availability.'
+    explanation: '别的 (biéde) = « autre / d\u2019un autre type ». 颜色 = couleur. Structure 有...吗 ? pour interroger sur la disponibilité.',
+    explanationEn: '别的 (biéde) = «other / different type». 颜色 = color. Structure 有...吗? for asking about availability.'
   },
   {
     id: 'cecr-a2-shopping-m2-trans-fr2zh',
@@ -1160,8 +1160,8 @@ const A2_SHOPPING_M2: LessonV2Exercise[] = [
       'Lunettes (眼镜)'
     ],
     correctIndex: 1,
-    explanation: '衣服 (yī fu) = vêtements (collectif). Ton 1 + ton neutre. Différent de 衣 seul (plutôt écrit) et de 服装 (fú zhuāng, plus formel « tenue »).',
-    explanationEn: '衣服 (yī fu) = clothes (collective). Tone 1 + neutral. Different from 衣 alone (more written) and 服装 (fú zhuāng, more formal «attire»).',
+    explanation: '衣服 (yīfu) = vêtements (collectif). Ton 1 + ton neutre. Différent de 衣 seul (plutôt écrit) et de 服装 (fú zhuāng, plus formel « tenue »).',
+    explanationEn: '衣服 (yīfu) = clothes (collective). Tone 1 + neutral. Different from 衣 alone (more written) and 服装 (fú zhuāng, more formal «attire»).',
     audioHanzi: '\u8863\u670D',
     autoPlay: true
   },
@@ -1173,8 +1173,8 @@ const A2_SHOPPING_M2: LessonV2Exercise[] = [
     promptEn: 'How do you say «try on» (a piece of clothing)?',
     choices: ['\u4E70', '\u8BD5', '\u6234', '\u7A7F'],
     correctIndex: 1,
-    explanation: '试 (shì) = essayer, tester. 试衣间 (shì yī jiān) = cabine d\u2019essayage. La réduplication 试试 est très courante pour adoucir.',
-    explanationEn: '试 (shì) = to try, to test. 试衣间 (shì yī jiān) = fitting room. Reduplication 试试 is very common to soften.'
+    explanation: '试 (shì) = essayer, tester. 试衣间 (shìyī jiān) = cabine d\u2019essayage. La réduplication 试试 est très courante pour adoucir.',
+    explanationEn: '试 (shì) = to try, to test. 试衣间 (shìyī jiān) = fitting room. Reduplication 试试 is very common to soften.'
   }
 ];
 
@@ -1202,8 +1202,8 @@ const A2_SHOPPING_M3: LessonV2Exercise[] = [
     sentenceEn: 'I\u2019ll pay with ___.',
     choices: ['\u626B\u7801', '\u73B0\u91D1', '\u5FAE\u4FE1', '\u652F\u4ED8\u5B9D'],
     correctIndex: 1,
-    explanation: '现金 (xiàn jīn) = argent liquide, espèces. Rare en Chine moderne, mais toujours accepté légalement. Avoir quelques billets reste utile pour les petits marchés traditionnels.',
-    explanationEn: '现金 (xiàn jīn) = cash. Rare in modern China but still legal tender. Keeping a few bills is still useful for small traditional markets.'
+    explanation: '现金 (xiànjīn) = argent liquide, espèces. Rare en Chine moderne, mais toujours accepté légalement. Avoir quelques billets reste utile pour les petits marchés traditionnels.',
+    explanationEn: '现金 (xiànjīn) = cash. Rare in modern China but still legal tender. Keeping a few bills is still useful for small traditional markets.'
   },
   {
     id: 'cecr-a2-shopping-m3-order1',
@@ -1247,8 +1247,8 @@ const A2_SHOPPING_M3: LessonV2Exercise[] = [
       '\u8BF7\u8BFB\u8FD9\u4E2A\u4E8C\u7EF4\u7801\u3002'
     ],
     correctIndex: 1,
-    explanation: '二维码 (èr wéi mǎ) = QR code, littéralement « code à deux dimensions ». Verbe dédié 扫. 看码 ✗ — on ne « regarde » pas un QR code.',
-    explanationEn: '二维码 (èr wéi mǎ) = QR code, literally «two-dimension code». Dedicated verb 扫. 看码 ✗ — you don\u2019t «look at» a QR code.'
+    explanation: '二维码 (èrwéimǎ) = QR code, littéralement « code à deux dimensions ». Verbe dédié 扫. 看码 ✗ — on ne « regarde » pas un QR code.',
+    explanationEn: '二维码 (èrwéimǎ) = QR code, literally «two-dimension code». Dedicated verb 扫. 看码 ✗ — you don\u2019t «look at» a QR code.'
   },
   {
     id: 'cecr-a2-shopping-m3-err1',
@@ -1275,8 +1275,8 @@ const A2_SHOPPING_M3: LessonV2Exercise[] = [
       'Esp\u00E8ces (现金)'
     ],
     correctIndex: 1,
-    explanation: '支付宝 (zhī fù bǎo) = Alipay, app de Ant Group/Alibaba. Plus ancien que WeChat Pay, toujours dominant en e-commerce et dans le Sud.',
-    explanationEn: '支付宝 (zhī fù bǎo) = Alipay, Ant Group/Alibaba app. Older than WeChat Pay, still dominant in e-commerce and in the South.',
+    explanation: '支付宝 (zhīfùbǎo) = Alipay, app de Ant Group/Alibaba. Plus ancien que WeChat Pay, toujours dominant en e-commerce et dans le Sud.',
+    explanationEn: '支付宝 (zhīfùbǎo) = Alipay, Ant Group/Alibaba app. Older than WeChat Pay, still dominant in e-commerce and in the South.',
     audioHanzi: '\u652F\u4ED8\u5B9D',
     autoPlay: true
   },
@@ -1288,8 +1288,8 @@ const A2_SHOPPING_M3: LessonV2Exercise[] = [
     promptEn: 'How do you say «pay by card»?',
     choices: ['\u5237\u5361', '\u8F6C\u8D26', '\u6536\u6B3E', '\u626B\u7801'],
     correctIndex: 0,
-    explanation: '刷卡 (shuā kǎ) = passer la carte, littéralement « brosser la carte ». 转账 = virement bancaire, 收款 = encaisser, 扫码 = scanner.',
-    explanationEn: '刷卡 (shuā kǎ) = to swipe the card, literally «brush the card». 转账 = bank transfer, 收款 = collect payment, 扫码 = scan QR.'
+    explanation: '刷卡 (shuākǎ) = passer la carte, littéralement « brosser la carte ». 转账 = virement bancaire, 收款 = encaisser, 扫码 = scanner.',
+    explanationEn: '刷卡 (shuākǎ) = to swipe the card, literally «brush the card». 转账 = bank transfer, 收款 = collect payment, 扫码 = scan QR.'
   }
 ];
 
@@ -1436,8 +1436,8 @@ const A2_DAY_M1: LessonV2Exercise[] = [
     sentenceEn: 'Excuse me, what time ___ now?',
     choices: ['\u51E0\u70B9', '\u591A\u5C11', '\u600E\u4E48', '\u5728\u54EA'],
     correctIndex: 0,
-    explanation: '几点 (jǐ diǎn) = « quelle heure ? » (nombre attendu ≤ 12). 现在几点 ? = formule fixe. 多少 conviendrait seulement pour un nombre très grand (prix, etc.).',
-    explanationEn: '几点 (jǐ diǎn) = «what hour?» (expected number ≤ 12). 现在几点? is a fixed phrase. 多少 would fit only for large numbers (prices, etc.).'
+    explanation: '几点 (jǐdiǎn) = « quelle heure ? » (nombre attendu ≤ 12). 现在几点 ? = formule fixe. 多少 conviendrait seulement pour un nombre très grand (prix, etc.).',
+    explanationEn: '几点 (jǐdiǎn) = «what hour?» (expected number ≤ 12). 现在几点? is a fixed phrase. 多少 would fit only for large numbers (prices, etc.).'
   },
   {
     id: 'cecr-a2-day-m1-order1',
@@ -1481,8 +1481,8 @@ const A2_DAY_M1: LessonV2Exercise[] = [
       '\u73B0\u5728\u665A\u4E0A\u3002'
     ],
     correctIndex: 1,
-    explanation: '中午 (zhōng wǔ) = midi (vers 12h). Décomposition : 上午 (matin) / 中午 (midi) / 下午 (après-midi) / 晚上 (soir). Note : pas de « il est » — 现在 suffit.',
-    explanationEn: '中午 (zhōng wǔ) = noon (around 12). Breakdown: 上午 (morning) / 中午 (noon) / 下午 (afternoon) / 晚上 (evening). Note: no «it is» — 现在 is enough.'
+    explanation: '中午 (zhōngwǔ) = midi (vers 12h). Décomposition : 上午 (matin) / 中午 (midi) / 下午 (après-midi) / 晚上 (soir). Note : pas de « il est » — 现在 suffit.',
+    explanationEn: '中午 (zhōngwǔ) = noon (around 12). Breakdown: 上午 (morning) / 中午 (noon) / 下午 (afternoon) / 晚上 (evening). Note: no «it is» — 现在 is enough.'
   },
   {
     id: 'cecr-a2-day-m1-err1',
@@ -1551,8 +1551,8 @@ const A2_DAY_M2: LessonV2Exercise[] = [
     sentenceEn: 'I ___ every day at 7.',
     choices: ['\u7761\u89C9', '\u8D77\u5E8A', '\u4E0B\u73ED', '\u523B'],
     correctIndex: 1,
-    explanation: '起床 (qǐ chuáng) = se lever (du lit). Littéralement « sortir du lit ». 睡觉 = dormir (inverse). 下班 = finir le travail.',
-    explanationEn: '起床 (qǐ chuáng) = get up (out of bed). Literally «rise from bed». 睡觉 = to sleep (opposite). 下班 = to leave work.'
+    explanation: '起床 (qǐchuáng) = se lever (du lit). Littéralement « sortir du lit ». 睡觉 = dormir (inverse). 下班 = finir le travail.',
+    explanationEn: '起床 (qǐchuáng) = get up (out of bed). Literally «rise from bed». 睡觉 = to sleep (opposite). 下班 = to leave work.'
   },
   {
     id: 'cecr-a2-day-m2-order1',
@@ -1564,8 +1564,8 @@ const A2_DAY_M2: LessonV2Exercise[] = [
     sentenceEn: 'I rarely take the subway.',
     choices: ['\u6211', '\u5F88\u5C11', '\u5750', '\u5730\u94C1'],
     correctIndex: 0,
-    explanation: '很少 (hěn shǎo) = rarement. Se place AVANT le verbe (comme 常常, 有时候, 从不). Correct : 我很少坐地铁.',
-    explanationEn: '很少 (hěn shǎo) = rarely. Placed BEFORE the verb (like 常常, 有时候, 从不). Correct: 我很少坐地铁.'
+    explanation: '很少 (hěnshǎo) = rarement. Se place AVANT le verbe (comme 常常, 有时候, 从不). Correct : 我很少坐地铁.',
+    explanationEn: '很少 (hěnshǎo) = rarely. Placed BEFORE the verb (like 常常, 有时候, 从不). Correct: 我很少坐地铁.'
   },
   {
     id: 'cecr-a2-day-m2-trans-zh2fr',
@@ -1596,8 +1596,8 @@ const A2_DAY_M2: LessonV2Exercise[] = [
       '\u6211\u5E38\u5E38\u559D\u5496\u5561\u3002'
     ],
     correctIndex: 1,
-    explanation: '从不 (cóng bù) = « jamais » (habituel, jamais de la vie). 从来不 est synonyme. 很少 = rarement, 有时候 = parfois, 常常 = souvent.',
-    explanationEn: '从不 (cóng bù) = «never» (habitual, never in life). 从来不 synonym. 很少 = rarely, 有时候 = sometimes, 常常 = often.'
+    explanation: '从不 (cóngbù) = « jamais » (habituel, jamais de la vie). 从来不 est synonyme. 很少 = rarement, 有时候 = parfois, 常常 = souvent.',
+    explanationEn: '从不 (cóngbù) = «never» (habitual, never in life). 从来不 synonym. 很少 = rarely, 有时候 = sometimes, 常常 = often.'
   },
   {
     id: 'cecr-a2-day-m2-err1',
@@ -1624,8 +1624,8 @@ const A2_DAY_M2: LessonV2Exercise[] = [
       'Dormir (睡觉)'
     ],
     correctIndex: 1,
-    explanation: '刷牙 (shuā yá) = se brosser les dents. Littéralement « brosser-dents ». Verbe + objet en un seul bloc. Ne se décompose pas en usage.',
-    explanationEn: '刷牙 (shuā yá) = to brush teeth. Literally «brush-teeth». Verb + object as a single chunk. Not decomposable in use.',
+    explanation: '刷牙 (shuāyá) = se brosser les dents. Littéralement « brosser-dents ». Verbe + objet en un seul bloc. Ne se décompose pas en usage.',
+    explanationEn: '刷牙 (shuāyá) = to brush teeth. Literally «brush-teeth». Verb + object as a single chunk. Not decomposable in use.',
     audioHanzi: '\u5237\u7259',
     autoPlay: true
   },
@@ -1637,8 +1637,8 @@ const A2_DAY_M2: LessonV2Exercise[] = [
     promptEn: 'How do you say «often»?',
     choices: ['\u4ECE\u4E0D', '\u5E38\u5E38', '\u6709\u65F6\u5019', '\u5F88\u5C11'],
     correctIndex: 1,
-    explanation: '常常 (cháng cháng) = souvent. Réduplication de 常. 经常 (jīng cháng) est synonyme à fréquence équivalente, plus écrit. Tous se placent avant le verbe.',
-    explanationEn: '常常 (cháng cháng) = often. Reduplication of 常. 经常 (jīng cháng) is synonym, more written. All placed before the verb.'
+    explanation: '常常 (chángcháng) = souvent. Réduplication de 常. 经常 (jīngcháng) est synonyme à fréquence équivalente, plus écrit. Tous se placent avant le verbe.',
+    explanationEn: '常常 (chángcháng) = often. Reduplication of 常. 经常 (jīngcháng) is synonym, more written. All placed before the verb.'
   }
 ];
 
@@ -1666,8 +1666,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
     sentenceEn: 'Beijing winter is very ___.',
     choices: ['\u70ED', '\u51B7', '\u6696\u548C', '\u51C9\u5FEB'],
     correctIndex: 1,
-    explanation: '冷 (lěng) = froid. 热 (rè) = chaud. 暖和 (nuǎn huo) = doux/tiède (positif). 凉快 (liáng kuai) = frais agréable.',
-    explanationEn: '冷 (lěng) = cold. 热 (rè) = hot. 暖和 (nuǎn huo) = mild/warm (positive). 凉快 (liáng kuai) = pleasantly cool.'
+    explanation: '冷 (lěng) = froid. 热 (rè) = chaud. 暖和 (nuǎnhuo) = doux/tiède (positif). 凉快 (liángkuai) = frais agréable.',
+    explanationEn: '冷 (lěng) = cold. 热 (rè) = hot. 暖和 (nuǎnhuo) = mild/warm (positive). 凉快 (liángkuai) = pleasantly cool.'
   },
   {
     id: 'cecr-a2-day-m3-order1',
@@ -1679,8 +1679,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
     sentenceEn: 'It\u2019s raining today.',
     choices: ['\u4ECA\u5929', '\u4E0B\u96E8', '\u4E86'],
     correctIndex: 0,
-    explanation: '下雨 (xià yǔ) = pleuvoir (verbe + objet, lit. « tomber pluie »). Le sujet n\u2019est pas exprimé : 今天下雨了 = « aujourd\u2019hui, il a commencé à pleuvoir ». 了 marque le changement.',
-    explanationEn: '下雨 (xià yǔ) = to rain (verb + object, lit. «fall rain»). Subject omitted: 今天下雨了 = «today it\u2019s started raining». 了 marks change.'
+    explanation: '下雨 (xiàyǔ) = pleuvoir (verbe + objet, lit. « tomber pluie »). Le sujet n\u2019est pas exprimé : 今天下雨了 = « aujourd\u2019hui, il a commencé à pleuvoir ». 了 marque le changement.',
+    explanationEn: '下雨 (xiàyǔ) = to rain (verb + object, lit. «fall rain»). Subject omitted: 今天下雨了 = «today it\u2019s started raining». 了 marks change.'
   },
   {
     id: 'cecr-a2-day-m3-trans-zh2fr',
@@ -1695,8 +1695,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
       'Le temps de l\u2019automne est frais.'
     ],
     correctIndex: 1,
-    explanation: '春天 (chūn tiān) = printemps. 暖和 = doux/tiède (agréablement chaud). 的 lie un qualificatif. 很 est la liaison neutre obligatoire.',
-    explanationEn: '春天 (chūn tiān) = spring. 暖和 = mild/warm (pleasantly warm). 的 links a qualifier. 很 is the mandatory neutral link.'
+    explanation: '春天 (chūntiān) = printemps. 暖和 = doux/tiède (agréablement chaud). 的 lie un qualificatif. 很 est la liaison neutre obligatoire.',
+    explanationEn: '春天 (chūntiān) = spring. 暖和 = mild/warm (pleasantly warm). 的 links a qualifier. 很 is the mandatory neutral link.'
   },
   {
     id: 'cecr-a2-day-m3-trans-fr2zh',
@@ -1711,8 +1711,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
       '\u51AC\u5929\u5F88\u70ED\u3002'
     ],
     correctIndex: 1,
-    explanation: '下雪 (xià xuě) = neiger. 下 + phénomène : 下雨 (pleuvoir), 下雪 (neiger), mais 刮风 (venter, avec 刮 « souffler »).',
-    explanationEn: '下雪 (xià xuě) = to snow. 下 + phenomenon: 下雨 (rain), 下雪 (snow), but 刮风 (wind, with 刮 «blow»).'
+    explanation: '下雪 (xiàxuě) = neiger. 下 + phénomène : 下雨 (pleuvoir), 下雪 (neiger), mais 刮风 (venter, avec 刮 « souffler »).',
+    explanationEn: '下雪 (xiàxuě) = to snow. 下 + phenomenon: 下雨 (rain), 下雪 (snow), but 刮风 (wind, with 刮 «blow»).'
   },
   {
     id: 'cecr-a2-day-m3-err1',
@@ -1739,8 +1739,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
       'Hiver (冬天)'
     ],
     correctIndex: 1,
-    explanation: '夏天 (xià tiān) = été. Ton 4 + ton 1. Très chaud dans la plupart des régions chinoises, souvent avec tempêtes (tifū, 台风 typhons).',
-    explanationEn: '夏天 (xià tiān) = summer. Tone 4 + tone 1. Very hot in most of China, often with tifū (台风 typhoons).',
+    explanation: '夏天 (xiàtiān) = été. Ton 4 + ton 1. Très chaud dans la plupart des régions chinoises, souvent avec tempêtes (tifū, 台风 typhons).',
+    explanationEn: '夏天 (xiàtiān) = summer. Tone 4 + tone 1. Very hot in most of China, often with tifū (台风 typhoons).',
     audioHanzi: '\u590F\u5929',
     autoPlay: true
   },
@@ -1752,8 +1752,8 @@ const A2_DAY_M3: LessonV2Exercise[] = [
     promptEn: 'How do you say «autumn»?',
     choices: ['\u6625\u5929', '\u590F\u5929', '\u79CB\u5929', '\u51AC\u5929'],
     correctIndex: 2,
-    explanation: '秋天 (qiū tiān) = automne. Les 4 saisons suivent 春夏秋冬 (le printemps, l\u2019été, l\u2019automne, l\u2019hiver). Facile à retenir : même suffixe 天 pour les 4.',
-    explanationEn: '秋天 (qiū tiān) = autumn. 4 seasons: 春夏秋冬 (spring, summer, autumn, winter). Easy mnemonic: same suffix 天 for all 4.'
+    explanation: '秋天 (qiūtiān) = automne. Les 4 saisons suivent 春夏秋冬 (le printemps, l\u2019été, l\u2019automne, l\u2019hiver). Facile à retenir : même suffixe 天 pour les 4.',
+    explanationEn: '秋天 (qiūtiān) = autumn. 4 seasons: 春夏秋冬 (spring, summer, autumn, winter). Easy mnemonic: same suffix 天 for all 4.'
   }
 ];
 
@@ -1810,8 +1810,8 @@ const A2_DAY_M4: LessonV2Exercise[] = [
       'Aujourd\u2019hui c\u2019est un jour f\u00E9ri\u00E9.'
     ],
     correctIndex: 2,
-    explanation: '星期天 (xīng qī tiān) OU 星期日 = dimanche. Le seul jour qui ne suit pas un chiffre (星期一 lundi, 二 mardi...). Pas de 是 requis avec 星期+jour.',
-    explanationEn: '星期天 (xīng qī tiān) OR 星期日 = Sunday. The only day not following a digit (星期一 Mon, 二 Tue...). No 是 needed with 星期+day.'
+    explanation: '星期天 (xīngqītiān) OU 星期日 = dimanche. Le seul jour qui ne suit pas un chiffre (星期一 lundi, 二 mardi...). Pas de 是 requis avec 星期+jour.',
+    explanationEn: '星期天 (xīngqītiān) OR 星期日 = Sunday. The only day not following a digit (星期一 Mon, 二 Tue...). No 是 needed with 星期+day.'
   },
   {
     id: 'cecr-a2-day-m4-trans-fr2zh',
@@ -1826,8 +1826,8 @@ const A2_DAY_M4: LessonV2Exercise[] = [
       '\u660E\u5929\u661F\u671F\u5929\u3002'
     ],
     correctIndex: 0,
-    explanation: '明天 (míng tiān) = demain. 星期一 = lundi. 昨天 (zuó tiān) = hier. 今天 = aujourd\u2019hui. Les jours 星期一 à 星期六 suivent la numérotation 1→6.',
-    explanationEn: '明天 (míng tiān) = tomorrow. 星期一 = Monday. 昨天 (zuó tiān) = yesterday. 今天 = today. Days 星期一 to 星期六 follow 1→6 numbering.'
+    explanation: '明天 (míngtiān) = demain. 星期一 = lundi. 昨天 (zuótiān) = hier. 今天 = aujourd\u2019hui. Les jours 星期一 à 星期六 suivent la numérotation 1→6.',
+    explanationEn: '明天 (míngtiān) = tomorrow. 星期一 = Monday. 昨天 (zuótiān) = yesterday. 今天 = today. Days 星期一 to 星期六 follow 1→6 numbering.'
   },
   {
     id: 'cecr-a2-day-m4-err1',
@@ -1867,8 +1867,8 @@ const A2_DAY_M4: LessonV2Exercise[] = [
     promptEn: 'How do you say «Wednesday»?',
     choices: ['\u661F\u671F\u4E8C', '\u661F\u671F\u4E09', '\u661F\u671F\u56DB', '\u661F\u671F\u4E94'],
     correctIndex: 1,
-    explanation: '星期三 (xīng qī sān) = mercredi (3e jour après lundi). Les chiffres 1-6 correspondent aux jours lundi-samedi. Dimanche fait exception : 星期天/日.',
-    explanationEn: '星期三 (xīng qī sān) = Wednesday (3rd day after Monday). Digits 1-6 map to Mon-Sat. Sunday is the exception: 星期天/日.'
+    explanation: '星期三 (xīngqīsān) = mercredi (3e jour après lundi). Les chiffres 1-6 correspondent aux jours lundi-samedi. Dimanche fait exception : 星期天/日.',
+    explanationEn: '星期三 (xīngqīsān) = Wednesday (3rd day after Monday). Digits 1-6 map to Mon-Sat. Sunday is the exception: 星期天/日.'
   }
 ];
 
@@ -1898,8 +1898,8 @@ const A2_PHONE_M1: LessonV2Exercise[] = [
     sentenceEn: 'I want to ___ you.',
     choices: ['\u6253\u7535\u8BDD\u7ED9', '\u63A5\u7535\u8BDD', '\u6302\u7535\u8BDD', '\u542C\u7535\u8BDD'],
     correctIndex: 0,
-    explanation: '打电话给 (dǎ diànhuà gěi) = appeler (qqn). Littéralement « frapper téléphone pour ». 接电话 = décrocher/répondre. 挂电话 = raccrocher.',
-    explanationEn: '打电话给 (dǎ diànhuà gěi) = call (someone). Lit. «hit phone for». 接电话 = pick up/answer. 挂电话 = hang up.'
+    explanation: '打电话给 (dǎdiànhuà gěi) = appeler (qqn). Littéralement « frapper téléphone pour ». 接电话 = décrocher/répondre. 挂电话 = raccrocher.',
+    explanationEn: '打电话给 (dǎdiànhuà gěi) = call (someone). Lit. «hit phone for». 接电话 = pick up/answer. 挂电话 = hang up.'
   },
   {
     id: 'cecr-a2-phone-m1-order1',
@@ -1911,8 +1911,8 @@ const A2_PHONE_M1: LessonV2Exercise[] = [
     sentenceEn: 'I\u2019ll call you back in a moment.',
     choices: ['\u6211', '\u4E00\u4F1A\u513F', '\u6253\u7ED9', '\u4F60'],
     correctIndex: 0,
-    explanation: '我一会儿打给你 = « moi + dans un instant + appeler à + toi ». 一会儿 (yí huì r) = un moment, se place après le sujet et avant le verbe (indicateur de temps).',
-    explanationEn: '我一会儿打给你 = «me + in a moment + call to + you». 一会儿 (yí huì r) = a little while, placed after subject and before verb (time indicator).'
+    explanation: '我一会儿打给你 = « moi + dans un instant + appeler à + toi ». 一会儿 (yíhuìr) = un moment, se place après le sujet et avant le verbe (indicateur de temps).',
+    explanationEn: '我一会儿打给你 = «me + in a moment + call to + you». 一会儿 (yíhuìr) = a little while, placed after subject and before verb (time indicator).'
   },
   {
     id: 'cecr-a2-phone-m1-trans-zh2fr',
@@ -1993,8 +1993,8 @@ const A2_PHONE_M2: LessonV2Exercise[] = [
     id: 'cecr-a2-phone-m2-grammar1',
     type: 'grammar-quiz',
     category: 'vocabulary',
-    prompt: 'Que signifie littéralement 微信 (Wēi Xìn) ?',
-    promptEn: 'What does 微信 (Wēi Xìn) literally mean?',
+    prompt: 'Que signifie littéralement 微信 (wēixìn) ?',
+    promptEn: 'What does 微信 (wēixìn) literally mean?',
     choices: ['Grand message', 'Micro-message', 'Message rapide', 'Message secret'],
     correctIndex: 1,
     explanation: '微 (wēi) = micro/petit ; 信 (xìn) = message/lettre. Le nom reflète la nature « courts messages instantanés » de l\u2019app. Par comparaison WhatsApp = « what\u2019s up + app ».',
@@ -2078,8 +2078,8 @@ const A2_PHONE_M2: LessonV2Exercise[] = [
     promptEn: 'Listen \u2014 which app?',
     choices: ['WeChat (\u5FAE\u4FE1)', 'Weibo (\u5FAE\u535A)', 'Douyin (\u6296\u97F3)', 'QQ'],
     correctIndex: 0,
-    explanation: '微信 (Wēi Xìn) = WeChat. Ton 1 + ton 4. L\u2019app chinoise la plus utilisée, largement plus qu\u2019un messenger : portefeuille, mini-apps, réseau social...',
-    explanationEn: '微信 (Wēi Xìn) = WeChat. Tone 1 + tone 4. China\u2019s most-used app, far more than a messenger: wallet, mini-apps, social network...',
+    explanation: '微信 (wēixìn) = WeChat. Ton 1 + ton 4. L\u2019app chinoise la plus utilisée, largement plus qu\u2019un messenger : portefeuille, mini-apps, réseau social...',
+    explanationEn: '微信 (wēixìn) = WeChat. Tone 1 + tone 4. China\u2019s most-used app, far more than a messenger: wallet, mini-apps, social network...',
     audioHanzi: '\u5FAE\u4FE1',
     autoPlay: true
   },
@@ -2091,8 +2091,8 @@ const A2_PHONE_M2: LessonV2Exercise[] = [
     promptEn: 'How do you say «like (a post)»?',
     choices: ['\u8BC4\u8BBA', '\u70B9\u8D5E', '\u5206\u4EAB', '\u6536\u85CF'],
     correctIndex: 1,
-    explanation: '点赞 (diǎn zàn) = liker (lit. « cliquer + approbation »). 评论 = commenter. 分享 = partager. 收藏 = enregistrer/mettre en favoris. Mnémotechnique : 赞 = « louer, approuver ».',
-    explanationEn: '点赞 (diǎn zàn) = to like (lit. «tap + praise»). 评论 = to comment. 分享 = to share. 收藏 = to save/favorite. Mnemonic: 赞 = «praise, approve».'
+    explanation: '点赞 (diǎnzàn) = liker (lit. « cliquer + approbation »). 评论 = commenter. 分享 = partager. 收藏 = enregistrer/mettre en favoris. Mnémotechnique : 赞 = « louer, approuver ».',
+    explanationEn: '点赞 (diǎnzàn) = to like (lit. «tap + praise»). 评论 = to comment. 分享 = to share. 收藏 = to save/favorite. Mnemonic: 赞 = «praise, approve».'
   }
 ];
 
@@ -2151,8 +2151,8 @@ const A2_PHONE_M3: LessonV2Exercise[] = [
       'Attention ! Je suis malade !'
     ],
     correctIndex: 1,
-    explanation: '救命 ! (jiù mìng !) = sauvez-moi ! (lit. « sauver + vie »), cri d\u2019urgence universel. 迷路 (mí lù) = perdre son chemin (lit. « confus + route »). 了 marque le changement d\u2019état.',
-    explanationEn: '救命! (jiù mìng!) = save me! (lit. «save + life»), universal emergency cry. 迷路 (mí lù) = get lost (lit. «confused + road»). 了 marks state change.'
+    explanation: '救命 ! (jiù mìng !) = sauvez-moi ! (lit. « sauver + vie »), cri d\u2019urgence universel. 迷路 (mílù) = perdre son chemin (lit. « confus + route »). 了 marque le changement d\u2019état.',
+    explanationEn: '救命! (jiù mìng!) = save me! (lit. «save + life»), universal emergency cry. 迷路 (mílù) = get lost (lit. «confused + road»). 了 marks state change.'
   },
   {
     id: 'cecr-a2-phone-m3-trans-fr2zh',
@@ -2167,8 +2167,8 @@ const A2_PHONE_M3: LessonV2Exercise[] = [
       '\u8BF7\u53EB\u670B\u53CB\uFF01'
     ],
     correctIndex: 1,
-    explanation: '叫 (jiào) ici = appeler/héler (une voiture/personne). 救护车 (jiù hù chē) = ambulance (lit. « voiture de secours et soins »). 警察 = police, 消防 = pompiers.',
-    explanationEn: '叫 (jiào) here = call/hail (a car/person). 救护车 (jiù hù chē) = ambulance (lit. «rescue-care car»). 警察 = police, 消防 = fire dept.'
+    explanation: '叫 (jiào) ici = appeler/héler (une voiture/personne). 救护车 (jiùhùchē) = ambulance (lit. « voiture de secours et soins »). 警察 = police, 消防 = pompiers.',
+    explanationEn: '叫 (jiào) here = call/hail (a car/person). 救护车 (jiùhùchē) = ambulance (lit. «rescue-care car»). 警察 = police, 消防 = fire dept.'
   },
   {
     id: 'cecr-a2-phone-m3-err1',
@@ -2203,8 +2203,8 @@ const A2_PHONE_M3: LessonV2Exercise[] = [
     promptEn: 'How do you say «passport»?',
     choices: ['\u8EAB\u4EFD\u8BC1', '\u62A4\u7167', '\u7B7E\u8BC1', '\u673A\u7968'],
     correctIndex: 1,
-    explanation: '护照 (hù zhào) = passeport (lit. « protéger + illuminer »). 身份证 = carte d\u2019identité. 签证 = visa. 机票 = billet d\u2019avion. Document vital à l\u2019étranger.',
-    explanationEn: '护照 (hù zhào) = passport (lit. «protect + illuminate»). 身份证 = ID card. 签证 = visa. 机票 = plane ticket. Vital document abroad.'
+    explanation: '护照 (hùzhào) = passeport (lit. « protéger + illuminer »). 身份证 = carte d\u2019identité. 签证 = visa. 机票 = billet d\u2019avion. Document vital à l\u2019étranger.',
+    explanationEn: '护照 (hùzhào) = passport (lit. «protect + illuminate»). 身份证 = ID card. 签证 = visa. 机票 = plane ticket. Vital document abroad.'
   }
 ];
 
@@ -2268,8 +2268,8 @@ const A2_GRAMMAR_M1: LessonV2Exercise[] = [
       'Il ne va pas \u00E0 P\u00E9kin.'
     ],
     correctIndex: 1,
-    explanation: '已经 (yǐ jīng) = déjà, renforce l\u2019idée d\u2019accomplissement. 了 après 去 = action terminée. Combinaison très fréquente : 已经 + V + 了.',
-    explanationEn: '已经 (yǐ jīng) = already, reinforces completion. 了 after 去 = finished action. Very common combo: 已经 + V + 了.'
+    explanation: '已经 (yǐjīng) = déjà, renforce l\u2019idée d\u2019accomplissement. 了 après 去 = action terminée. Combinaison très fréquente : 已经 + V + 了.',
+    explanationEn: '已经 (yǐjīng) = already, reinforces completion. 了 after 去 = finished action. Very common combo: 已经 + V + 了.'
   },
   {
     id: 'cecr-a2-grammar-m1-trans-fr2zh',
@@ -2493,8 +2493,8 @@ const A2_GRAMMAR_M3: LessonV2Exercise[] = [
     sentenceEn: 'He ___ sleeping.',
     choices: ['\u4E86', '\u8FC7', '\u6B63\u5728', '\u6CA1'],
     correctIndex: 2,
-    explanation: '正在 (zhèng zài) renforce 在 : « pile en train de ». 他正在睡觉 = il est juste en train de dormir (l\u00E0, maintenant). 在 seul aurait aussi march\u00E9 mais 正在 est plus expressif.',
-    explanationEn: '正在 (zhèng zài) strengthens 在: «precisely in progress». 他正在睡觉 = he\u2019s just now sleeping. Plain 在 also works but 正在 is more vivid.'
+    explanation: '正在 (zhèngzài) renforce 在 : « pile en train de ». 他正在睡觉 = il est juste en train de dormir (l\u00E0, maintenant). 在 seul aurait aussi march\u00E9 mais 正在 est plus expressif.',
+    explanationEn: '正在 (zhèngzài) strengthens 在: «precisely in progress». 他正在睡觉 = he\u2019s just now sleeping. Plain 在 also works but 正在 is more vivid.'
   },
   {
     id: 'cecr-a2-grammar-m3-order1',
@@ -2693,8 +2693,8 @@ const A2_GRAMMAR_M4: LessonV2Exercise[] = [
       'Je suis chinois.'
     ],
     correctIndex: 0,
-    explanation: '我也是中国人 (wǒ yě shì Zhōngguó rén) = moi aussi je suis chinois(e). 也 en écho à un sujet précédent dans la conversation.',
-    explanationEn: '我也是中国人 (wǒ yě shì Zhōngguó rén) = me too, I\u2019m Chinese. 也 echoes a previous subject in the conversation.',
+    explanation: '我也是中国人 (wǒyě shì zhōngguórén) = moi aussi je suis chinois(e). 也 en écho à un sujet précédent dans la conversation.',
+    explanationEn: '我也是中国人 (wǒyě shì zhōngguórén) = me too, I\u2019m Chinese. 也 echoes a previous subject in the conversation.',
     audioHanzi: '\u6211\u4E5F\u662F\u4E2D\u56FD\u4EBA',
     autoPlay: true
   },
@@ -2833,8 +2833,8 @@ const A2_GRAMMAR_M5: LessonV2Exercise[] = [
       '\u6211\u4E0D\u662F\u51FA\u95E8'
     ],
     correctIndex: 1,
-    explanation: '不想 (bù xiǎng) = ne pas avoir envie. Plus nuanc\u00E9 que 不要 (refus ferme). 不要出门 = « ne sors pas ! » (impératif) ou refus brusque.',
-    explanationEn: '不想 (bù xiǎng) = don\u2019t feel like. Softer than 不要 (flat refusal). 不要出门 = «don\u2019t go out!» (imperative) or blunt refusal.'
+    explanation: '不想 (bùxiǎng) = ne pas avoir envie. Plus nuanc\u00E9 que 不要 (refus ferme). 不要出门 = « ne sors pas ! » (impératif) ou refus brusque.',
+    explanationEn: '不想 (bùxiǎng) = don\u2019t feel like. Softer than 不要 (flat refusal). 不要出门 = «don\u2019t go out!» (imperative) or blunt refusal.'
   }
 ];
 
@@ -2869,8 +2869,8 @@ const A2_CULTURE_M1: LessonV2Exercise[] = [
     sentenceEn: 'The kids receive ___.',
     choices: ['\u7EA2\u5305', '\u6708\u997C', '\u7B77\u5B50', '\u7206\u7AF9'],
     correctIndex: 0,
-    explanation: '红包 (hóng bāo) = enveloppe rouge avec de l\u2019argent, offerte aux enfants (et c\u00E9libataires) pendant le 春节. Le rouge symbolise la chance. Aujourd\u2019hui, tr\u00E8s souvent d\u00E9mat\u00E9rialis\u00E9 via WeChat.',
-    explanationEn: '红包 (hóng bāo) = red envelope with money, given to children (and singles) during 春节. Red = luck. Today, very often digital via WeChat.'
+    explanation: '红包 (hóngbāo) = enveloppe rouge avec de l\u2019argent, offerte aux enfants (et c\u00E9libataires) pendant le 春节. Le rouge symbolise la chance. Aujourd\u2019hui, tr\u00E8s souvent d\u00E9mat\u00E9rialis\u00E9 via WeChat.',
+    explanationEn: '红包 (hóngbāo) = red envelope with money, given to children (and singles) during 春节. Red = luck. Today, very often digital via WeChat.'
   },
   {
     id: 'cecr-a2-culture-m1-order1',
@@ -2898,8 +2898,8 @@ const A2_CULTURE_M1: LessonV2Exercise[] = [
       'Joyeux anniversaire !'
     ],
     correctIndex: 1,
-    explanation: '恭喜发财 (gōng xǐ fā cái) = « f\u00E9licitations et prosp\u00E9rit\u00E9 ». Voeu tr\u00E8s populaire au 春节, souvent suivi de 红包拿来 (« passe l\u2019enveloppe rouge ! ») par les enfants, comme blague.',
-    explanationEn: '恭喜发财 (gōng xǐ fā cái) = «congrats and prosperity». Very popular 春节 greeting, often followed by 红包拿来 («hand over the red envelope!») from kids as a joke.'
+    explanation: '恭喜发财 (gōngxǐ fācái) = « f\u00E9licitations et prosp\u00E9rit\u00E9 ». Voeu tr\u00E8s populaire au 春节, souvent suivi de 红包拿来 (« passe l\u2019enveloppe rouge ! ») par les enfants, comme blague.',
+    explanationEn: '恭喜发财 (gōngxǐ fācái) = «congrats and prosperity». Very popular 春节 greeting, often followed by 红包拿来 («hand over the red envelope!») from kids as a joke.'
   },
   {
     id: 'cecr-a2-culture-m1-trans-fr2zh',
@@ -2914,8 +2914,8 @@ const A2_CULTURE_M1: LessonV2Exercise[] = [
       '\u9664\u5915\u6211\u4EEC\u770B\u7535\u89C6\u3002'
     ],
     correctIndex: 1,
-    explanation: '除夕 (chú xī) = réveillon du Nouvel An lunaire. 饺子 sont incontournables au Nord (forme de lingot ancien, symbole de richesse). Au Sud, on privil\u00E9gie le 年糕 (gâteau de riz).',
-    explanationEn: '除夕 (chú xī) = Lunar New Year\u2019s Eve. 饺子 are a must in the North (shape of ancient ingots, wealth symbol). In the South, 年糕 (rice cake) is preferred.'
+    explanation: '除夕 (chúxī) = réveillon du Nouvel An lunaire. 饺子 sont incontournables au Nord (forme de lingot ancien, symbole de richesse). Au Sud, on privil\u00E9gie le 年糕 (gâteau de riz).',
+    explanationEn: '除夕 (chúxī) = Lunar New Year\u2019s Eve. 饺子 are a must in the North (shape of ancient ingots, wealth symbol). In the South, 年糕 (rice cake) is preferred.'
   },
   {
     id: 'cecr-a2-culture-m1-err1',
@@ -2947,8 +2947,8 @@ const A2_CULTURE_M1: LessonV2Exercise[] = [
       'Bonne santé'
     ],
     correctIndex: 1,
-    explanation: '新年快乐 (xīn nián kuài lè) = bonne ann\u00E9e ! Voeu le plus courant au 春节. Prononciation nette avec les 4 tons : 1-2-4-4.',
-    explanationEn: '新年快乐 (xīn nián kuài lè) = Happy New Year! Most common 春节 greeting. Clear pronunciation with all 4 tones: 1-2-4-4.',
+    explanation: '新年快乐 (xīnnián kuàilè) = bonne ann\u00E9e ! Voeu le plus courant au 春节. Prononciation nette avec les 4 tons : 1-2-4-4.',
+    explanationEn: '新年快乐 (xīnnián kuàilè) = Happy New Year! Most common 春节 greeting. Clear pronunciation with all 4 tones: 1-2-4-4.',
     audioHanzi: '\u65B0\u5E74\u5FEB\u4E50',
     autoPlay: true
   },
@@ -3009,8 +3009,8 @@ const A2_CULTURE_M2: LessonV2Exercise[] = [
     sentenceEn: 'The whole family admires the moon together.',
     choices: ['\u5168\u5BB6', '\u4E00\u8D77', '\u8D4F\u6708'],
     correctIndex: 0,
-    explanation: '全家一起赏月 : 全家 = toute la famille ; 一起 = ensemble ; 赏月 (shǎng yuè) = admirer la lune (活動 traditionnelle). Ordre fixe sujet + adverbe + verbe.',
-    explanationEn: '全家一起赏月: 全家 = the whole family; 一起 = together; 赏月 (shǎng yuè) = admire the moon (traditional activity). Fixed order subject + adverb + verb.'
+    explanation: '全家一起赏月 : 全家 = toute la famille ; 一起 = ensemble ; 赏月 (shǎngyuè) = admirer la lune (活動 traditionnelle). Ordre fixe sujet + adverbe + verbe.',
+    explanationEn: '全家一起赏月: 全家 = the whole family; 一起 = together; 赏月 (shǎngyuè) = admire the moon (traditional activity). Fixed order subject + adverb + verb.'
   },
   {
     id: 'cecr-a2-culture-m2-trans-zh2fr',
@@ -3041,8 +3041,8 @@ const A2_CULTURE_M2: LessonV2Exercise[] = [
       '\u5723\u8BDE\u5FEB\u4E50\uFF01'
     ],
     correctIndex: 1,
-    explanation: '中秋快乐 (zhōng qiū kuài lè) = bonne fête de la Mi-Automne. Abr\u00E9viation de 中秋节快乐. 节 (« fête ») peut sauter dans les formules de v\u0153ux.',
-    explanationEn: '中秋快乐 (zhōng qiū kuài lè) = Happy Mid-Autumn. Short for 中秋节快乐. 节 («festival») can be dropped in greetings.'
+    explanation: '中秋快乐 (zhōngqiū kuàilè) = bonne fête de la Mi-Automne. Abr\u00E9viation de 中秋节快乐. 节 (« fête ») peut sauter dans les formules de v\u0153ux.',
+    explanationEn: '中秋快乐 (zhōngqiū kuàilè) = Happy Mid-Autumn. Short for 中秋节快乐. 节 («festival») can be dropped in greetings.'
   },
   {
     id: 'cecr-a2-culture-m2-err1',
@@ -3074,8 +3074,8 @@ const A2_CULTURE_M2: LessonV2Exercise[] = [
       'F\u00EAte des bateaux-dragons (\u7AEF\u5348\u8282)'
     ],
     correctIndex: 1,
-    explanation: '中秋节 (zhōng qiū jié) = F\u00EAte de la mi-automne. Tons 1-1-2. 2e f\u00EAte la plus importante apr\u00E8s 春节.',
-    explanationEn: '中秋节 (zhōng qiū jié) = Mid-Autumn Festival. Tones 1-1-2. 2nd most important after 春节.',
+    explanation: '中秋节 (zhōngqiūjié) = F\u00EAte de la mi-automne. Tons 1-1-2. 2e f\u00EAte la plus importante apr\u00E8s 春节.',
+    explanationEn: '中秋节 (zhōngqiūjié) = Mid-Autumn Festival. Tones 1-1-2. 2nd most important after 春节.',
     audioHanzi: '\u4E2D\u79CB\u8282',
     autoPlay: true
   },
@@ -3123,8 +3123,8 @@ const A2_CULTURE_M3: LessonV2Exercise[] = [
     sentenceEn: 'Let\u2019s ___!',
     choices: ['\u5403\u996D', '\u5E72\u676F', '\u559D\u8336', '\u611F\u8C22'],
     correctIndex: 1,
-    explanation: '干杯 (gān bēi) = trinquer (lit. « vider le verre »). En Chine, au sens strict il s\u2019agit de tout boire d\u2019un trait — surtout avec des sup\u00E9rieurs hi\u00E9rarchiques. Pour just\u00E9 trinquer sans vider, dire 随意 (à volont\u00E9).',
-    explanationEn: '干杯 (gān bēi) = toast (lit. «dry the glass»). Strictly means drinking it all in one gulp — especially with superiors. To just toast without emptying, say 随意 (as you wish).'
+    explanation: '干杯 (gānbēi) = trinquer (lit. « vider le verre »). En Chine, au sens strict il s\u2019agit de tout boire d\u2019un trait — surtout avec des sup\u00E9rieurs hi\u00E9rarchiques. Pour just\u00E9 trinquer sans vider, dire 随意 (à volont\u00E9).',
+    explanationEn: '干杯 (gānbēi) = toast (lit. «dry the glass»). Strictly means drinking it all in one gulp — especially with superiors. To just toast without emptying, say 随意 (as you wish).'
   },
   {
     id: 'cecr-a2-culture-m3-order1',
@@ -3136,8 +3136,8 @@ const A2_CULTURE_M3: LessonV2Exercise[] = [
     sentenceEn: 'This dish is very tasty, thank you!',
     choices: ['\u5F88\u597D\u5403', '\u8C22\u8C22', '\uFF01'],
     correctIndex: 0,
-    explanation: '很好吃，谢谢 ! = tr\u00E8s bon, merci ! Compliment standard apr\u00E8s le repas. L\u2019h\u00F4te répondra souvent 哪里哪里 (pas du tout) par modestie. 好吃 (hǎo chī) = bon \u00E0 manger.',
-    explanationEn: '很好吃，谢谢! = very tasty, thank you! Standard post-meal compliment. Host often replies 哪里哪里 (not at all) out of modesty. 好吃 (hǎo chī) = good to eat.'
+    explanation: '很好吃，谢谢 ! = tr\u00E8s bon, merci ! Compliment standard apr\u00E8s le repas. L\u2019h\u00F4te répondra souvent 哪里哪里 (pas du tout) par modestie. 好吃 (hǎochī) = bon \u00E0 manger.',
+    explanationEn: '很好吃，谢谢! = very tasty, thank you! Standard post-meal compliment. Host often replies 哪里哪里 (not at all) out of modesty. 好吃 (hǎochī) = good to eat.'
   },
   {
     id: 'cecr-a2-culture-m3-trans-zh2fr',
@@ -3321,8 +3321,8 @@ const A2_CULTURE_M4: LessonV2Exercise[] = [
     promptEn: 'How do you say «Chinese zodiac»?',
     choices: ['\u661F\u5EA7', '\u5341\u4E8C\u751F\u8096', '\u516D\u5341\u7532\u5B50', '\u516B\u5B57'],
     correctIndex: 1,
-    explanation: '十二生肖 (shí èr shēng xiào, « 12 signes de naissance ») = zodiaque chinois. 星座 (xīng zuò) = zodiaque occidental (b\u00E9lier, taureau...). Les deux coexistent en Chine moderne.',
-    explanationEn: '十二生肖 (shí èr shēng xiào, «12 birth signs») = Chinese zodiac. 星座 (xīng zuò) = Western zodiac (Aries, Taurus...). Both coexist in modern China.'
+    explanation: '十二生肖 (shí èr shēng xiào, « 12 signes de naissance ») = zodiaque chinois. 星座 (xīngzuò) = zodiaque occidental (b\u00E9lier, taureau...). Les deux coexistent en Chine moderne.',
+    explanationEn: '十二生肖 (shí èr shēng xiào, «12 birth signs») = Chinese zodiac. 星座 (xīngzuò) = Western zodiac (Aries, Taurus...). Both coexist in modern China.'
   }
 ];
 

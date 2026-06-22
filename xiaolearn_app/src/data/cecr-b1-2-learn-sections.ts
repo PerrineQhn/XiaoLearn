@@ -203,9 +203,9 @@ export const b12HaiLearnSections: LessonV2LearnSection[] = [
       { hanzi: '还不错', pinyin: 'hái bú cuò', meaning: 'pas mal', meaningEn: 'not bad', audio: 'audio/hsk2/hsk2_不错.wav' }
     ],
     tip:
-      'Ne pas confondre 还 (hái) et 还是 (hái shì) — ce dernier sert à choisir : 你喝咖啡还是茶 ? (café ou thé ?). Sens totalement différent.',
+      'Ne pas confondre 还 (hái) et 还是 (háishì) — ce dernier sert à choisir : 你喝咖啡还是茶 ? (café ou thé ?). Sens totalement différent.',
     tipEn:
-      'Don\'t mix up 还 (hái) and 还是 (hái shì) — the latter introduces choice: 你喝咖啡还是茶? (coffee or tea?). Completely different sense.'
+      'Don\'t mix up 还 (hái) and 还是 (háishì) — the latter introduces choice: 你喝咖啡还是茶? (coffee or tea?). Completely different sense.'
   }
 ];
 
@@ -707,9 +707,9 @@ export const b12EduSchoolLearnSections: LessonV2LearnSection[] = [
     title: '9 ans d\'obligation + le 高考',
     titleEn: '9 compulsory years + the 高考',
     body:
-      'Système scolaire chinois, de bas en haut : 幼儿园 (maternelle, 3-6 ans), 小学 (primaire, 6 ans), 初中 (collège, 3 ans) — ces 9 années forment la scolarité obligatoire. Puis 高中 (lycée, 3 ans), couronné par le 高考 (gāo kǎo), l\'examen d\'entrée à l\'université. Un examen titanesque : tous les élèves du pays le passent le même jour, et son score décide de l\'université ET de toute la carrière. Universités : 大学, avec les cycles 本科 (licence, 4 ans), 研究生 (master), 博士 (doctorat).',
+      'Système scolaire chinois, de bas en haut : 幼儿园 (maternelle, 3-6 ans), 小学 (primaire, 6 ans), 初中 (collège, 3 ans) — ces 9 années forment la scolarité obligatoire. Puis 高中 (lycée, 3 ans), couronné par le 高考 (gāokǎo), l\'examen d\'entrée à l\'université. Un examen titanesque : tous les élèves du pays le passent le même jour, et son score décide de l\'université ET de toute la carrière. Universités : 大学, avec les cycles 本科 (licence, 4 ans), 研究生 (master), 博士 (doctorat).',
     bodyEn:
-      'Chinese school system, bottom up: 幼儿园 (kindergarten, 3-6 y), 小学 (primary, 6 y), 初中 (middle school, 3 y) — these 9 years form the compulsory years. Then 高中 (high school, 3 y), crowned by the 高考 (gāo kǎo), the university entrance exam. A titanic exam: every student takes it on the same day, and the score decides both the university AND the whole career. Universities: 大学, with cycles 本科 (bachelor, 4 y), 研究生 (master), 博士 (PhD).',
+      'Chinese school system, bottom up: 幼儿园 (kindergarten, 3-6 y), 小学 (primary, 6 y), 初中 (middle school, 3 y) — these 9 years form the compulsory years. Then 高中 (high school, 3 y), crowned by the 高考 (gāokǎo), the university entrance exam. A titanic exam: every student takes it on the same day, and the score decides both the university AND the whole career. Universities: 大学, with cycles 本科 (bachelor, 4 y), 研究生 (master), 博士 (PhD).',
     items: [
       { hanzi: '幼儿园', pinyin: 'yòu ér yuán', meaning: 'maternelle', meaningEn: 'kindergarten', audio: 'audio/hsk4/hsk4_幼儿园.wav' },
       { hanzi: '小学', pinyin: 'xiǎo xué', meaning: 'école primaire', meaningEn: 'primary school', audio: 'audio/hsk3/hsk3_小学.wav' },
@@ -721,9 +721,9 @@ export const b12EduSchoolLearnSections: LessonV2LearnSection[] = [
       { hanzi: '研究生', pinyin: 'yán jiū shēng', meaning: 'étudiant en master', meaningEn: 'grad student', audio: 'audio/hsk4/hsk4_研究生.wav' }
     ],
     tip:
-      '清华 (Qīng huá) et 北大 (Běi dà, abrev. de 北京大学) sont LES deux universités au sommet. Dire « 清北 » regroupe les deux — équivalent d\'« Oxbridge » en GB.',
+      '清华 (qīnghuá) et 北大 (Běi dà, abrev. de 北京大学) sont LES deux universités au sommet. Dire « 清北 » regroupe les deux — équivalent d\'« Oxbridge » en GB.',
     tipEn:
-      '清华 (Qīng huá) and 北大 (Běi dà, short for 北京大学) are THE top two universities. Saying «清北» refers to both — the Chinese «Oxbridge».'
+      '清华 (qīnghuá) and 北大 (Běi dà, short for 北京大学) are THE top two universities. Saying «清北» refers to both — the Chinese «Oxbridge».'
   }
 ];
 
@@ -815,9 +815,9 @@ export const b12SocMarriageLearnSections: LessonV2LearnSection[] = [
     title: 'Les 5 étapes : 谈恋爱 → 领证 → 婚礼',
     titleEn: 'The 5 steps: 谈恋爱 → 领证 → 婚礼',
     body:
-      'Règle : mariage = 结婚 (jié hūn), verbe sécable — 结了婚 (s\'est marié), 结三次婚 (s\'être marié 3 fois). Astuce : le parcours type — 谈恋爱 (sortir ensemble) → 订婚 (se fiancer) → 领证 (aller chercher le certificat — c\'est le VRAI mariage légal en Chine) → 婚礼 (cérémonie, parfois des mois après) → 度蜜月 (lune de miel). Remarque : divorce — 离婚 (lí hūn). Politique de l\'enfant — 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (depuis 2021).',
+      'Règle : mariage = 结婚 (jiéhūn), verbe sécable — 结了婚 (s\'est marié), 结三次婚 (s\'être marié 3 fois). Astuce : le parcours type — 谈恋爱 (sortir ensemble) → 订婚 (se fiancer) → 领证 (aller chercher le certificat — c\'est le VRAI mariage légal en Chine) → 婚礼 (cérémonie, parfois des mois après) → 度蜜月 (lune de miel). Remarque : divorce — 离婚 (líhūn). Politique de l\'enfant — 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (depuis 2021).',
     bodyEn:
-      'Marriage = 结婚 (jié hūn), separable verb: 结了婚 (got married), 结三次婚 (got married 3 times). Typical path: 谈恋爱 (dating) → 订婚 (engagement) → 领证 (get the certificate — that\'s the REAL legal marriage in China) → 婚礼 (ceremony, sometimes months later) → 度蜜月 (honeymoon). Divorce: 离婚 (lí hūn). Child policy: 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (since 2021).',
+      'Marriage = 结婚 (jiéhūn), separable verb: 结了婚 (got married), 结三次婚 (got married 3 times). Typical path: 谈恋爱 (dating) → 订婚 (engagement) → 领证 (get the certificate — that\'s the REAL legal marriage in China) → 婚礼 (ceremony, sometimes months later) → 度蜜月 (honeymoon). Divorce: 离婚 (líhūn). Child policy: 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (since 2021).',
     items: [
       { hanzi: '结婚', pinyin: 'jié hūn', meaning: 'se marier', meaningEn: 'get married', audio: 'audio/hsk3/hsk3_结婚.wav' },
       { hanzi: '离婚', pinyin: 'lí hūn', meaning: 'divorcer', meaningEn: 'divorce', audio: 'audio/hsk5/hsk5_离婚.wav' },
@@ -867,9 +867,9 @@ export const b12SocJobMarketLearnSections: LessonV2LearnSection[] = [
     title: '求职 : les 8 mots indispensables',
     titleEn: '求职: the 8 essential words',
     body:
-      'Chercher un emploi = 求职 (qiú zhí). Le parcours : rédiger un 简历 (CV), passer un 面试 (entretien), espérer être 录取 (pris), négocier le 工资 (salaire). Côté employeur : les 五险一金 (5 assurances + 1 fonds logement) sont des cotisations sociales obligatoires — un indicateur de sérieux. Choisir son secteur : 国企 (public, stable, moins payé), 外企 (étranger, bien payé, exigeant), 私企 (privé, variable), 创业 (créer sa boîte).',
+      'Chercher un emploi = 求职 (qiúzhí). Le parcours : rédiger un 简历 (CV), passer un 面试 (entretien), espérer être 录取 (pris), négocier le 工资 (salaire). Côté employeur : les 五险一金 (5 assurances + 1 fonds logement) sont des cotisations sociales obligatoires — un indicateur de sérieux. Choisir son secteur : 国企 (public, stable, moins payé), 外企 (étranger, bien payé, exigeant), 私企 (privé, variable), 创业 (créer sa boîte).',
     bodyEn:
-      'Job hunt = 求职 (qiú zhí). The path: draft a 简历 (CV), take a 面试 (interview), hope to be 录取 (hired), negotiate the 工资 (salary). From the employer\'s side: 五险一金 (5 insurances + 1 housing fund) are mandatory social contributions — a seriousness indicator. Pick your sector: 国企 (state-owned, stable, lower pay), 外企 (foreign, well-paid, demanding), 私企 (private, variable), 创业 (start your own).',
+      'Job hunt = 求职 (qiúzhí). The path: draft a 简历 (CV), take a 面试 (interview), hope to be 录取 (hired), negotiate the 工资 (salary). From the employer\'s side: 五险一金 (5 insurances + 1 housing fund) are mandatory social contributions — a seriousness indicator. Pick your sector: 国企 (state-owned, stable, lower pay), 外企 (foreign, well-paid, demanding), 私企 (private, variable), 创业 (start your own).',
     items: [
       { hanzi: '求职', pinyin: 'qiú zhí', meaning: 'chercher un emploi', meaningEn: 'job hunt', audio: 'audio/hsk5/hsk5_求职.wav' },
       { hanzi: '简历', pinyin: 'jiǎn lì', meaning: 'CV', meaningEn: 'résumé', audio: 'audio/hsk5/hsk5_简历.wav' },
@@ -912,9 +912,9 @@ export const b12MedPressLearnSections: LessonV2LearnSection[] = [
       { hanzi: '公众号', pinyin: 'gōng zhòng hào', meaning: 'compte WeChat officiel', meaningEn: 'WeChat official account', audio: 'audio/hsk6/hsk6_公众号.wav' }
     ],
     tip:
-      'En Chine, le 公众号 WeChat est plus important que Twitter ou Facebook pour suivre les médias sérieux. Les journalistes y publient leurs scoops. S\'abonner = 关注 (guān zhù).',
+      'En Chine, le 公众号 WeChat est plus important que Twitter ou Facebook pour suivre les médias sérieux. Les journalistes y publient leurs scoops. S\'abonner = 关注 (guānzhù).',
     tipEn:
-      'In China, WeChat 公众号 is bigger than Twitter or Facebook for following serious media. Journalists post scoops there. Subscribe = 关注 (guān zhù).'
+      'In China, WeChat 公众号 is bigger than Twitter or Facebook for following serious media. Journalists post scoops there. Subscribe = 关注 (guānzhù).'
   }
 ];
 
@@ -1428,9 +1428,9 @@ export const b12NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '难道 vs 不会吧 — rhétoriques de doute',
     titleEn: '难道 vs 不会吧 — rhetorical doubts',
     body:
-      'Règle : 难道 (nándào) = est-ce que vraiment / ne me dis pas que (rhétorique d\'incrédulité, formel/oral fort). 难道你不知道 ? = ne me dis pas que tu ne sais pas ?! Attention : toujours suivi d\'une question affirmative pour exprimer un doute fort. 不会吧 (búhuìba) = pas possible (incrédulité ORALE familière). 不会吧，他真的来了？ = pas possible, il est vraiment venu ? Remarque : plus léger que 难道. Astuce : variantes oral — 真的吗 ? (vraiment ?), 不可能 ! (impossible !), 怎么可能 (comment c\'est possible). Hierarchy 真的吗 (info confirmation) < 不会吧 (incrédulité oral) < 难道 (rhétorique fort).',
+      'Règle : 难道 (nándào) = est-ce que vraiment / ne me dis pas que (rhétorique d\'incrédulité, formel/oral fort). 难道你不知道 ? = ne me dis pas que tu ne sais pas ?! Attention : toujours suivi d\'une question affirmative pour exprimer un doute fort. 不会吧 (búhuì ba) = pas possible (incrédulité ORALE familière). 不会吧，他真的来了？ = pas possible, il est vraiment venu ? Remarque : plus léger que 难道. Astuce : variantes oral — 真的吗 ? (vraiment ?), 不可能 ! (impossible !), 怎么可能 (comment c\'est possible). Hierarchy 真的吗 (info confirmation) < 不会吧 (incrédulité oral) < 难道 (rhétorique fort).',
     bodyEn:
-      '难道 (nándào) = is it really / don\'t tell me (rhetorical incredulity, formal/strong oral). 难道你不知道？= don\'t tell me you don\'t know?! Always followed by an affirmative question to express strong doubt. 不会吧 (búhuìba) = no way (CASUAL oral incredulity). 不会吧，他真的来了？= no way, did he really come? Lighter than 难道. Oral variants: 真的吗？(really?), 不可能！(impossible!), 怎么可能 (how possible). Hierarchy: 真的吗 (info confirmation) < 不会吧 (oral incredulity) < 难道 (strong rhetorical).',
+      '难道 (nándào) = is it really / don\'t tell me (rhetorical incredulity, formal/strong oral). 难道你不知道？= don\'t tell me you don\'t know?! Always followed by an affirmative question to express strong doubt. 不会吧 (búhuì ba) = no way (CASUAL oral incredulity). 不会吧，他真的来了？= no way, did he really come? Lighter than 难道. Oral variants: 真的吗？(really?), 不可能！(impossible!), 怎么可能 (how possible). Hierarchy: 真的吗 (info confirmation) < 不会吧 (oral incredulity) < 难道 (strong rhetorical).',
     items: [
       { hanzi: '难道', pinyin: 'nán dào', meaning: 'est-ce vraiment', meaningEn: 'is it really', audio: 'audio/hsk5/hsk5_难道.wav' },
       { hanzi: '不会吧', pinyin: 'bú huì ba', meaning: 'pas possible', meaningEn: 'no way', audio: 'audio/hsk2/hsk2_会.wav' },

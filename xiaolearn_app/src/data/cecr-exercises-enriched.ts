@@ -961,7 +961,7 @@ const B21_TECH_M2: LessonV2Exercise[] = [
     id: 'cecr-b21-tech-m2-mcq1',
     type: 'mcq',
     category: 'vocabulary',
-    prompt: '人工智能 (rén gōng zhì néng) signifie :',
+    prompt: '人工智能 (réngōngzhìnéng) signifie :',
     promptEn: '人工智能 means:',
     choices: ['Robotique', 'Intelligence artificielle', 'Algorithmique', 'Big data'],
     correctIndex: 1,
@@ -1302,7 +1302,7 @@ const B21_ENV_M1: LessonV2Exercise[] = [
     id: 'cecr-b21-env-m1-mcq1',
     type: 'mcq',
     category: 'vocabulary',
-    prompt: '雾霾 (wùmái) :',
+    prompt: '雾霾 (wù mái) :',
     promptEn: '雾霾:',
     choices: ['Pluie acide', 'Brouillard pollu\u00e9 / smog', 'Temp\u00eate de sable', 'Canicule'],
     correctIndex: 1,
@@ -1997,8 +1997,8 @@ const B22_ARTS_M1: LessonV2Exercise[] = [
     promptEn: 'What does 水墨画 mean?',
     choices: ['calligraphie', 'peinture à l\'encre', 'sculpture', 'porcelaine'],
     correctIndex: 1,
-    explanation: '水墨画 (shuǐ mò huà) désigne la peinture traditionnelle chinoise à l\'encre et à l\'eau.',
-    explanationEn: '水墨画 (shuǐ mò huà) refers to traditional Chinese ink-and-water painting.'
+    explanation: '水墨画 (shuǐmòhuà) désigne la peinture traditionnelle chinoise à l\'encre et à l\'eau.',
+    explanationEn: '水墨画 (shuǐmòhuà) refers to traditional Chinese ink-and-water painting.'
   },
   {
     id: 'cecr-b22-arts-m1-mcq2',
@@ -2110,7 +2110,7 @@ const B22_ARTS_M2: LessonV2Exercise[] = [
       'musée national'
     ],
     correctIndex: 0,
-    explanation: '非物质文化遗产 (fēi wùzhì wénhuà yíchǎn) — patrimoine culturel immatériel (ICH UNESCO).',
+    explanation: '非物质文化遗产 (fēiwùzhì wénhuàyíchǎn) — patrimoine culturel immatériel (ICH UNESCO).',
     explanationEn: '非物质文化遗产 — intangible cultural heritage (UNESCO ICH).'
   },
   {
@@ -2223,8 +2223,8 @@ const B22_HEALTH_M1: LessonV2Exercise[] = [
     promptEn: 'What does 心理健康 mean?',
     choices: ['santé mentale', 'cardiologie', 'psychologie sociale', 'hygiène'],
     correctIndex: 0,
-    explanation: '心理健康 (xīnlǐ jiànkāng) — santé mentale / psychologique.',
-    explanationEn: '心理健康 (xīnlǐ jiànkāng) — mental / psychological health.'
+    explanation: '心理健康 (xīnlǐjiànkāng) — santé mentale / psychologique.',
+    explanationEn: '心理健康 (xīnlǐjiànkāng) — mental / psychological health.'
   },
   {
     id: 'cecr-b22-health-m1-mcq2',

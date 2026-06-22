@@ -597,7 +597,7 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
       { hanzi: '丑', pinyin: 'chǒu', meaning: 'rôle comique', meaningEn: 'clown role', audio: 'audio/hsk4/hsk4_丑.wav' }
     ],
     tip:
-      'Anecdote utile : les rôles de 旦 (femme) étaient historiquement joués par des hommes — 梅兰芳 (Méi Lánfāng) reste le 旦 le plus célèbre du 20e siècle.',
+      'Anecdote utile : les rôles de 旦 (femme) étaient historiquement joués par des hommes — 梅兰芳 (méi lán fāng) reste le 旦 le plus célèbre du 20e siècle.',
     tipEn:
       'Useful anecdote: 旦 (female) roles were historically played by men — 梅兰芳 (Mei Lanfang) is the most famous 20th-century 旦.'
   },
@@ -650,7 +650,7 @@ export const b22ArtsM6LearnSections: LessonV2LearnSection[] = [
     title: 'Architecture moderne : du gratte-ciel à la fusion',
     titleEn: 'Modern architecture: from skyscraper to fusion',
     body:
-      'Boom architectural depuis les années 90. Shanghai 上海 : 浦东 (Pǔdōng) avec 东方明珠 (Dōngfāng Míngzhū, Perle d\'Orient), 上海中心大厦 (Shanghai Tower, 632m, 2e plus haute du monde). Pékin : 鸟巢 (Niǎocháo, « nid d\'oiseau », stade JO 2008), 水立方 (Shuǐ lìfāng, « cube d\'eau »). Tendance « fusion » : 苏州博物馆 de I.M. Pei (贝聿铭), qui mêle modernité et lignes du jardin classique. Vocabulaire : 建筑师 (jiànzhùshī, architecte), 摩天大楼 (mótiān dàlóu, gratte-ciel).',
+      'Boom architectural depuis les années 90. Shanghai 上海 : 浦东 (pǔdōng) avec 东方明珠 (Dōngfāng Míngzhū, Perle d\'Orient), 上海中心大厦 (Shanghai Tower, 632m, 2e plus haute du monde). Pékin : 鸟巢 (Niǎocháo, « nid d\'oiseau », stade JO 2008), 水立方 (Shuǐ lìfāng, « cube d\'eau »). Tendance « fusion » : 苏州博物馆 de I.M. Pei (贝聿铭), qui mêle modernité et lignes du jardin classique. Vocabulaire : 建筑师 (jiànzhùshī, architecte), 摩天大楼 (mótiān dàlóu, gratte-ciel).',
     bodyEn:
       'Architectural boom since the 90s. Shanghai: 浦东 (Pudong) with 东方明珠 (Oriental Pearl), 上海中心大厦 (Shanghai Tower, 632m, world\'s 2nd-tallest). Beijing: 鸟巢 (Bird\'s Nest, 2008 Olympic stadium), 水立方 (Water Cube). «Fusion» trend: Suzhou Museum by I.M. Pei (贝聿铭), blending modernity with classical garden lines. Vocabulary: 建筑师 (architect), 摩天大楼 (skyscraper).',
     items: [
@@ -674,9 +674,9 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
     title: '瓷器 — la céramique chinoise',
     titleEn: '瓷器 — Chinese porcelain',
     body:
-      '瓷器 (cíqì, porcelaine) : invention chinoise donnant son nom au pays en anglais (« china »). Capitale : 景德镇 (Jǐngdézhèn) au Jiangxi, qui produit depuis 1 000 ans. Styles iconiques : 青花 (qīnghuā, bleu et blanc, dynastie Yuan), 粉彩 (fěncǎi, polychrome, Qing), 釉里红 (yòulǐhóng, rouge sous couverte). Procédé : argile 高岭土 (gāolǐngtǔ, kaolin) cuite à 1 300°C. Très collectionnée — pièces Ming/Qing peuvent atteindre des millions aux enchères.',
+      '瓷器 (cíqì, porcelaine) : invention chinoise donnant son nom au pays en anglais (« china »). Capitale : 景德镇 (jǐng dé zhèn) au Jiangxi, qui produit depuis 1 000 ans. Styles iconiques : 青花 (qīnghuā, bleu et blanc, dynastie Yuan), 粉彩 (fěncǎi, polychrome, Qing), 釉里红 (yòulǐhóng, rouge sous couverte). Procédé : argile 高岭土 (gāolǐngtǔ, kaolin) cuite à 1 300°C. Très collectionnée — pièces Ming/Qing peuvent atteindre des millions aux enchères.',
     bodyEn:
-      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (Jǐngdézhèn) in Jiangxi, producing for 1,000 years. Iconic styles: 青花 (blue and white, Yuan dynasty), 粉彩 (polychrome, Qing), 釉里红 (red under glaze). Process: 高岭土 (kaolin) clay fired at 1,300°C. Highly collected — Ming/Qing pieces can reach millions at auction.',
+      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐng dé zhèn) in Jiangxi, producing for 1,000 years. Iconic styles: 青花 (blue and white, Yuan dynasty), 粉彩 (polychrome, Qing), 釉里红 (red under glaze). Process: 高岭土 (kaolin) clay fired at 1,300°C. Highly collected — Ming/Qing pieces can reach millions at auction.',
     items: [
       { hanzi: '瓷器', pinyin: 'cí qì', meaning: 'porcelaine', meaningEn: 'porcelain', audio: 'audio/hsk5/hsk5_瓷器.wav' },
       { hanzi: '青花', pinyin: 'qīng huā', meaning: 'bleu et blanc', meaningEn: 'blue and white', audio: 'audio/hsk6/hsk6_青花.wav' },
@@ -782,7 +782,7 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
     title: 'Régime, jeûne, mode de vie',
     titleEn: 'Diet, fasting, lifestyle',
     body:
-      '减肥 (jiǎnféi, perdre du poids) : sujet immense en Chine, surtout chez les jeunes femmes. 节食 (jiéshí, se priver), 间歇性禁食 (jiànxiē xìng jìnshí, jeûne intermittent — concept importé), 健身餐 (jiànshēn cān, repas fitness). Tendances : low-carb 低碳水, vegan 纯素 (chúnsù), végétarien 素食 (sùshí). Mais aussi le rebound : « 报复性饮食 » (bàofù xìng yǐnshí, manger compulsivement après un régime). Phrase utile : 我在减肥，少吃点 = je suis au régime, je mange peu.',
+      '减肥 (jiǎnféi, perdre du poids) : sujet immense en Chine, surtout chez les jeunes femmes. 节食 (jiéshí, se priver), 间歇性禁食 (jiànxiē xìng jìnshí, jeûne intermittent — concept importé), 健身餐 (jiànshēn cān, repas fitness). Tendances : low-carb 低碳水, vegan 纯素 (chún sù), végétarien 素食 (sùshí). Mais aussi le rebound : « 报复性饮食 » (bàofù xìng yǐnshí, manger compulsivement après un régime). Phrase utile : 我在减肥，少吃点 = je suis au régime, je mange peu.',
     bodyEn:
       '减肥 (jiǎnféi, lose weight): a huge topic in China, especially among young women. 节食 (deprive yourself), 间歇性禁食 (intermittent fasting — imported concept), 健身餐 (fitness meal). Trends: low-carb 低碳水, vegan 纯素, vegetarian 素食. But also the rebound: «报复性饮食» (compulsive eating after a diet). Useful phrase: 我在减肥，少吃点 = I\'m on a diet, I eat little.',
     items: [

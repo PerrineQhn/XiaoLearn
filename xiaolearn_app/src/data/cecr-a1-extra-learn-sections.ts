@@ -214,9 +214,9 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle : réponse en 我是 + [nationalité].\n' +
       '\n' +
-      'Exemple : 我是法国人 (wǒ shì Fǎ guó rén) — « je suis français ».',
+      'Exemple : 我是法国人 (wǒ shì fǎguórén) — « je suis français ».',
     bodyEn:
-      'The standard pattern: 你是哪国人? (nǐ shì nǎ guó rén) — literally "you + are + which + country + person?". Compact but very regular.\nAnswer: 我是 + [nationality]. E.g. 我是法国人 (wǒ shì Fǎ guó rén) — "I am French".',
+      'The standard pattern: 你是哪国人? (nǐ shì nǎ guó rén) — literally "you + are + which + country + person?". Compact but very regular.\nAnswer: 我是 + [nationality]. E.g. 我是法国人 (wǒ shì fǎguórén) — "I am French".',
     items: [
       { hanzi: '哪', pinyin: 'nǎ', meaning: 'quel, lequel', meaningEn: 'which', audio: 'audio/hsk1/hsk1_哪.wav' },
       { hanzi: '国', pinyin: 'guó', meaning: 'pays', meaningEn: 'country', audio: 'audio/hsk1/hsk1_国.wav' },
@@ -247,9 +247,9 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
       { hanzi: '日本', pinyin: 'Rì běn', meaning: 'Japon (« origine du soleil »)', meaningEn: 'Japan ("origin of the sun")', audio: 'audio/hsk1/hsk1_日本.wav' }
     ],
     tip:
-      'Attention : Japon est une exception, son nom chinois est 日本 et non 日国. Pour former « Japonais », on dit 日本人 (Rì běn rén).',
+      'Attention : Japon est une exception, son nom chinois est 日本 et non 日国. Pour former « Japonais », on dit 日本人 (rìběnrén).',
     tipEn:
-      'Note: Japan is an exception, its Chinese name is 日本 not 日国. For "Japanese" say 日本人 (Rì běn rén).'
+      'Note: Japan is an exception, its Chinese name is 日本 not 日国. For "Japanese" say 日本人 (rìběnrén).'
   }
 ];
 
@@ -353,11 +353,11 @@ export const weekDaysLearnSections: LessonV2LearnSection[] = [
       'Pour situer la semaine, on préfixe avec 这 (cette), 下 (prochaine, littéralement « suivante »), 上 (dernière, « précédente »).\n' +
       '\n' +
       'Les trois formules :\n' +
-      '- 这个星期 (zhè ge xīng qī) = cette semaine\n' +
+      '- 这个星期 (zhège xīngqī) = cette semaine\n' +
       '- 下个星期 (xià ge xīng qī) = la semaine prochaine\n' +
       '- 上个星期 (shàng ge xīng qī) = la semaine dernière',
     bodyEn:
-      'For relative weeks, prefix with 这 (this), 下 (next, "following"), 上 (last, "previous").\n  • 这个星期 (zhè ge xīng qī) = this week\n  • 下个星期 (xià ge xīng qī) = next week\n  • 上个星期 (shàng ge xīng qī) = last week',
+      'For relative weeks, prefix with 这 (this), 下 (next, "following"), 上 (last, "previous").\n  • 这个星期 (zhège xīngqī) = this week\n  • 下个星期 (xià ge xīng qī) = next week\n  • 上个星期 (shàng ge xīng qī) = last week',
     items: [
       { hanzi: '上', pinyin: 'shàng', meaning: 'dernier, précédent', meaningEn: 'last, previous', audio: 'audio/hsk1/hsk1_上.wav' },
       { hanzi: '下', pinyin: 'xià', meaning: 'prochain, suivant', meaningEn: 'next, following', audio: 'audio/hsk1/hsk1_下.wav' }
@@ -467,9 +467,9 @@ export const ageLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 我 + [digit] + 岁. E.g. 我三十岁 (wǒ sān shí suì) = "I am 30".\nThe verb "to have" (有) is NOT used with age — just put the number directly.\n我有三十岁 is a classic French-speaker mistake. Just say 我三十岁.',
     tip:
-      'Pour un âge avec des demi : 我二十五岁半 (wǒ èr shí wǔ suì bàn) = « j\'ai 25 ans et demi ». 半 = moitié.',
+      'Pour un âge avec des demi : 我二十五岁半 (wǒ èrshíwǔ suì bàn) = « j\'ai 25 ans et demi ». 半 = moitié.',
     tipEn:
-      'For "and a half" ages: 我二十五岁半 (wǒ èr shí wǔ suì bàn) = "I\'m 25 and a half". 半 = half.'
+      'For "and a half" ages: 我二十五岁半 (wǒ èrshíwǔ suì bàn) = "I\'m 25 and a half". 半 = half.'
   }
 ];
 
@@ -590,13 +590,13 @@ export const shiVerbLearnSections: LessonV2LearnSection[] = [
     body:
       '是 (shì) sert à dire « X est Y » — à **identifier**, à **définir**.\n' +
       '\n' +
-      'Structure : [sujet] + 是 + [identité]. Exemple : 我是学生 (wǒ shì xué shēng) = je suis étudiant.\n' +
+      'Structure : [sujet] + 是 + [identité]. Exemple : 我是学生 (wǒ shì xuéshēng) = je suis étudiant.\n' +
       '\n' +
       'Attention : 是 **ne sert pas** à décrire ! Pour « elle est grande » on ne dit **jamais** 她是高 — on dit 她很高.\n' +
       '\n' +
       'Règle d\'or : 是 = identité, 很 + adjectif = description.',
     bodyEn:
-      '是 (shì) is used to say "X is Y" — to identify, to define. Structure: [subject] + 是 + [identity].\nE.g.: 我是学生 (wǒ shì xué shēng) = I am a student.\nWatch out: 是 is NOT for describing! For "she is tall" you do NOT say 她是高 — say 她很高. 是 = identity; 很 + adjective = description.',
+      '是 (shì) is used to say "X is Y" — to identify, to define. Structure: [subject] + 是 + [identity].\nE.g.: 我是学生 (wǒ shì xuéshēng) = I am a student.\nWatch out: 是 is NOT for describing! For "she is tall" you do NOT say 她是高 — say 她很高. 是 = identity; 很 + adjective = description.',
     items: [
       { hanzi: '是', pinyin: 'shì', meaning: 'être, oui', meaningEn: 'to be, yes', audio: 'audio/hsk1/hsk1_是.wav' }
     ],
@@ -687,12 +687,12 @@ export const buNegationLearnSections: LessonV2LearnSection[] = [
       'Règle d\'or : 不 (bù) se place **avant** le verbe ou l\'adjectif à nier.\n' +
       '\n' +
       'Exemples :\n' +
-      '- 我不吃肉 (wǒ bù chī ròu) = je ne mange pas de viande\n' +
-      '- 她不高兴 (tā bù gāo xìng) = elle n\'est pas contente\n' +
+      '- 我不吃肉 (wǒ bù chīròu) = je ne mange pas de viande\n' +
+      '- 她不高兴 (tā bùgāoxìng) = elle n\'est pas contente\n' +
       '\n' +
       'Exception : 不 est la négation par défaut pour **tout**... sauf pour 有 (avoir). Pour nier 有, on utilise 没 → 没有.',
     bodyEn:
-      '不 (bù) is placed BEFORE the verb or adjective being negated.\nE.g.: 我不吃肉 (wǒ bù chī ròu) = I don\'t eat meat. 她不高兴 (tā bù gāo xìng) = she is not happy.\nKey rule: 不 is the default negation for everything... except for 有 (to have). To negate 有, use 没: 没有.',
+      '不 (bù) is placed BEFORE the verb or adjective being negated.\nE.g.: 我不吃肉 (wǒ bù chīròu) = I don\'t eat meat. 她不高兴 (tā bùgāoxìng) = she is not happy.\nKey rule: 不 is the default negation for everything... except for 有 (to have). To negate 有, use 没: 没有.',
     items: [
       { hanzi: '不', pinyin: 'bù', meaning: 'ne… pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' },
       { hanzi: '没', pinyin: 'méi', meaning: 'ne… pas (pour 有 et passé)', meaningEn: 'not (for 有 and past)', audio: 'audio/hsk1/hsk1_没.wav' }
@@ -1437,9 +1437,9 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
       { hanzi: '旁边', pinyin: 'páng biān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' }
     ],
     tip:
-      'Astuce : ouvre 高德地图 (Gāodé dìtú) ou 百度地图 (Bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
+      'Astuce : ouvre 高德地图 (gāo dé dìtú) ou 百度地图 (bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
     tipEn:
-      'Tip: open 高德地图 (Gāodé dìtú) or 百度地图 (Bǎidù dìtú) on your phone. More reliable than asking passers-by, since Chinese rarely give precise distances («not far», «not so close»).'
+      'Tip: open 高德地图 (gāo dé dìtú) or 百度地图 (bǎidù dìtú) on your phone. More reliable than asking passers-by, since Chinese rarely give precise distances («not far», «not so close»).'
   }
 ];
 

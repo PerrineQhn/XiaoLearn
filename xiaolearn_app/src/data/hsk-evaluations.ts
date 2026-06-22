@@ -49,8 +49,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           promptEn: 'What does 老师 mean?',
           choices: ['Étudiant', 'Professeur', 'Ami', 'Médecin'],
           correctIndex: 1,
-          explanation: '老师 (lǎo shī) = professeur. Mot le plus fréquent pour désigner l\'enseignant.',
-          explanationEn: '老师 (lǎo shī) = teacher. The most common word for an instructor.'
+          explanation: '老师 (lǎoshī) = professeur. Mot le plus fréquent pour désigner l\'enseignant.',
+          explanationEn: '老师 (lǎoshī) = teacher. The most common word for an instructor.'
         },
         {
           id: 'hsk1-v2',
@@ -76,8 +76,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           promptEn: 'What does 喜欢 mean?',
           choices: ['Aller', 'Manger', 'Aimer (bien)', 'Dormir'],
           correctIndex: 2,
-          explanation: '喜欢 (xǐ huan) = aimer, apprécier. Base HSK 1 pour exprimer ses goûts.',
-          explanationEn: '喜欢 (xǐ huan) = to like. HSK 1 staple for expressing preferences.'
+          explanation: '喜欢 (xǐhuan) = aimer, apprécier. Base HSK 1 pour exprimer ses goûts.',
+          explanationEn: '喜欢 (xǐhuan) = to like. HSK 1 staple for expressing preferences.'
         },
         {
           id: 'hsk1-v5',
@@ -379,8 +379,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk1/hsk1_你好.mp3',
           choices: ['Bonjour', 'Au revoir', 'Merci', 'Pardon'],
           correctIndex: 0,
-          explanation: '你好 (nǐ hǎo) = bonjour.',
-          explanationEn: '你好 (nǐ hǎo) = hello.'
+          explanation: '你好 (nǐhǎo) = bonjour.',
+          explanationEn: '你好 (nǐhǎo) = hello.'
         },
         {
           id: 'hsk1-l2',
@@ -389,8 +389,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk1/hsk1_吃饭.mp3',
           choices: ['Dormir', 'Manger (un repas)', 'Marcher', 'Parler'],
           correctIndex: 1,
-          explanation: '吃饭 (chī fàn) = manger / prendre un repas.',
-          explanationEn: '吃饭 (chī fàn) = eat a meal.'
+          explanation: '吃饭 (chīfàn) = manger / prendre un repas.',
+          explanationEn: '吃饭 (chīfàn) = eat a meal.'
         },
         {
           id: 'hsk1-l3',
@@ -399,8 +399,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk1/hsk1_明天.mp3',
           choices: ['Hier', 'Aujourd\'hui', 'Demain', 'Maintenant'],
           correctIndex: 2,
-          explanation: '明天 (míng tiān) = demain.',
-          explanationEn: '明天 (míng tiān) = tomorrow.'
+          explanation: '明天 (míngtiān) = demain.',
+          explanationEn: '明天 (míngtiān) = tomorrow.'
         },
         {
           id: 'hsk1-l4',
@@ -409,8 +409,8 @@ export const HSK1_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk1/hsk1_学校.mp3',
           choices: ['Maison', 'École', 'Hôpital', 'Magasin'],
           correctIndex: 1,
-          explanation: '学校 (xué xiào) = école.',
-          explanationEn: '学校 (xué xiào) = school.'
+          explanation: '学校 (xuéxiào) = école.',
+          explanationEn: '学校 (xuéxiào) = school.'
         },
         {
           id: 'hsk1-l5',
@@ -503,8 +503,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: 'What does 便宜 mean?',
           choices: ['Cher', 'Bon marché', 'Rapide', 'Lent'],
           correctIndex: 1,
-          explanation: '便宜 (pián yi) = bon marché. Opposé de 贵 (guì, cher).',
-          explanationEn: '便宜 (pián yi) = cheap. Opposite of 贵 (guì, expensive).'
+          explanation: '便宜 (piányi) = bon marché. Opposé de 贵 (guì, cher).',
+          explanationEn: '便宜 (piányi) = cheap. Opposite of 贵 (guì, expensive).'
         },
         {
           id: 'hsk2-v2',
@@ -512,8 +512,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: 'Which one is a means of transport?',
           choices: ['眼睛', '地铁', '颜色', '鸡蛋'],
           correctIndex: 1,
-          explanation: '地铁 (dì tiě) = métro. 眼睛 = yeux, 颜色 = couleur, 鸡蛋 = œuf.',
-          explanationEn: '地铁 (dì tiě) = subway. 眼睛 = eyes, 颜色 = color, 鸡蛋 = egg.'
+          explanation: '地铁 (dìtiě) = métro. 眼睛 = yeux, 颜色 = couleur, 鸡蛋 = œuf.',
+          explanationEn: '地铁 (dìtiě) = subway. 眼睛 = eyes, 颜色 = color, 鸡蛋 = egg.'
         },
         {
           id: 'hsk2-v3',
@@ -521,8 +521,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: 'What does 已经 mean?',
           choices: ['Encore', 'Déjà', 'Toujours', 'Peut-être'],
           correctIndex: 1,
-          explanation: '已经 (yǐ jīng) = déjà. Souvent accompagné de 了 en fin de phrase.',
-          explanationEn: '已经 (yǐ jīng) = already. Often paired with 了 at clause end.'
+          explanation: '已经 (yǐjīng) = déjà. Souvent accompagné de 了 en fin de phrase.',
+          explanationEn: '已经 (yǐjīng) = already. Often paired with 了 at clause end.'
         },
         {
           id: 'hsk2-v4',
@@ -539,7 +539,7 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: "What does 开始 mean?",
           choices: ["Finir","Commencer","Arrêter","Continuer"],
           correctIndex: 1,
-          explanation: "开始 (kāi shǐ) = commencer.",
+          explanation: "开始 (kāishǐ) = commencer.",
           explanationEn: "开始 = begin."
         },
         {
@@ -548,7 +548,7 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: "Which one is a color?",
           choices: ["白色","星期","时间","机场"],
           correctIndex: 0,
-          explanation: "白色 (bái sè) = blanc.",
+          explanation: "白色 (báisè) = blanc.",
           explanationEn: "白色 = white."
         },
         {
@@ -575,7 +575,7 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: "What does 介绍 mean?",
           choices: ["Refuser","Présenter","Ignorer","Oublier"],
           correctIndex: 1,
-          explanation: "介绍 (jiè shào) = présenter.",
+          explanation: "介绍 (jièshào) = présenter.",
           explanationEn: "介绍 = introduce."
         },
         {
@@ -584,7 +584,7 @@ export const HSK2_MOCK: EvaluationV2Config = {
           promptEn: "What does 出租车 mean?",
           choices: ["Bus","Taxi","Métro","Train"],
           correctIndex: 1,
-          explanation: "出租车 (chū zū chē) = taxi.",
+          explanation: "出租车 (chūzūchē) = taxi.",
           explanationEn: "出租车 = taxi."
         }
       ]
@@ -828,8 +828,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk2/hsk2_房间.wav',
           choices: ['Chambre', 'Cuisine', 'Jardin', 'Toit'],
           correctIndex: 0,
-          explanation: '房间 (fáng jiān) = pièce, chambre.',
-          explanationEn: '房间 (fáng jiān) = room.'
+          explanation: '房间 (fángjiān) = pièce, chambre.',
+          explanationEn: '房间 (fángjiān) = room.'
         },
         {
           id: 'hsk2-l2',
@@ -838,8 +838,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk2/hsk2_生病.wav',
           choices: ['Voyager', 'Tomber malade', 'Se reposer', 'Travailler'],
           correctIndex: 1,
-          explanation: '生病 (shēng bìng) = tomber malade.',
-          explanationEn: '生病 (shēng bìng) = get sick.'
+          explanation: '生病 (shēngbìng) = tomber malade.',
+          explanationEn: '生病 (shēngbìng) = get sick.'
         },
         {
           id: 'hsk2-l3',
@@ -848,8 +848,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk2/hsk2_旅游.wav',
           choices: ['Voyager', 'Étudier', 'Dormir', 'Cuisiner'],
           correctIndex: 0,
-          explanation: '旅游 (lǚ yóu) = voyager, faire du tourisme.',
-          explanationEn: '旅游 (lǚ yóu) = travel, tourism.'
+          explanation: '旅游 (lǚyóu) = voyager, faire du tourisme.',
+          explanationEn: '旅游 (lǚyóu) = travel, tourism.'
         },
         {
           id: 'hsk2-l4',
@@ -858,8 +858,8 @@ export const HSK2_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk2/hsk2_帮助.wav',
           choices: ['Oublier', 'Aider', 'Acheter', 'Vendre'],
           correctIndex: 1,
-          explanation: '帮助 (bāng zhù) = aider.',
-          explanationEn: '帮助 (bāng zhù) = help.'
+          explanation: '帮助 (bāngzhù) = aider.',
+          explanationEn: '帮助 (bāngzhù) = help.'
         },
         {
           id: 'hsk2-l5',
@@ -952,8 +952,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: 'What does 提高 mean?',
           choices: ['Réduire', 'Élever, améliorer', 'Arrêter', 'Oublier'],
           correctIndex: 1,
-          explanation: '提高 (tí gāo) = élever, améliorer. 提高水平 = élever le niveau.',
-          explanationEn: '提高 (tí gāo) = raise, improve. 提高水平 = raise the level.'
+          explanation: '提高 (tígāo) = élever, améliorer. 提高水平 = élever le niveau.',
+          explanationEn: '提高 (tígāo) = raise, improve. 提高水平 = raise the level.'
         },
         {
           id: 'hsk3-v2',
@@ -961,8 +961,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: 'The opposite of 简单 is:',
           choices: ['短', '复杂', '方便', '容易'],
           correctIndex: 1,
-          explanation: '简单 = simple, 复杂 (fù zá) = compliqué.',
-          explanationEn: '简单 = simple, 复杂 (fù zá) = complex.'
+          explanation: '简单 = simple, 复杂 (fùzá) = compliqué.',
+          explanationEn: '简单 = simple, 复杂 (fùzá) = complex.'
         },
         {
           id: 'hsk3-v3',
@@ -970,8 +970,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: 'What does 一般 mean?',
           choices: ['Exceptionnel', 'Ordinaire, en général', 'Urgent', 'Bruyant'],
           correctIndex: 1,
-          explanation: '一般 (yì bān) = ordinaire / en général. 一般来说 = en règle générale.',
-          explanationEn: '一般 (yì bān) = ordinary / in general. 一般来说 = generally speaking.'
+          explanation: '一般 (yìbān) = ordinaire / en général. 一般来说 = en règle générale.',
+          explanationEn: '一般 (yìbān) = ordinary / in general. 一般来说 = generally speaking.'
         },
         {
           id: 'hsk3-v4',
@@ -979,8 +979,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: 'Which word means "experience"?',
           choices: ['机会', '经验', '办法', '态度'],
           correctIndex: 1,
-          explanation: '经验 (jīng yàn) = expérience (acquise). 机会 = occasion, 办法 = moyen, 态度 = attitude.',
-          explanationEn: '经验 (jīng yàn) = experience (gained). 机会 = chance, 办法 = method, 态度 = attitude.'
+          explanation: '经验 (jīngyàn) = expérience (acquise). 机会 = occasion, 办法 = moyen, 态度 = attitude.',
+          explanationEn: '经验 (jīngyàn) = experience (gained). 机会 = chance, 办法 = method, 态度 = attitude.'
         },
         {
           id: 'hsk3-v5',
@@ -988,7 +988,7 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: "What does 影响 mean?",
           choices: ["Influence","Célébrité","Vacances","Rêve"],
           correctIndex: 0,
-          explanation: "影响 (yǐng xiǎng) = influence.",
+          explanation: "影响 (yǐngxiǎng) = influence.",
           explanationEn: "影响 = influence."
         },
         {
@@ -997,7 +997,7 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: "Which means \"complicated\"?",
           choices: ["简单","复杂","漂亮","舒服"],
           correctIndex: 1,
-          explanation: "复杂 (fù zá) = complexe.",
+          explanation: "复杂 (fùzá) = complexe.",
           explanationEn: "复杂 = complex."
         },
         {
@@ -1006,7 +1006,7 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: "What does 解决 mean?",
           choices: ["Créer","Résoudre","Ignorer","Cacher"],
           correctIndex: 1,
-          explanation: "解决 (jiě jué) = résoudre.",
+          explanation: "解决 (jiějué) = résoudre.",
           explanationEn: "解决 = solve."
         },
         {
@@ -1024,7 +1024,7 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: "What does 注意 mean?",
           choices: ["Ignorer","Faire attention","Dormir","Rire"],
           correctIndex: 1,
-          explanation: "注意 (zhù yì) = faire attention.",
+          explanation: "注意 (zhùyì) = faire attention.",
           explanationEn: "注意 = pay attention."
         },
         {
@@ -1033,7 +1033,7 @@ export const HSK3_MOCK: EvaluationV2Config = {
           promptEn: "What does 机会 mean?",
           choices: ["Défaut","Occasion","Voiture","Cadeau"],
           correctIndex: 1,
-          explanation: "机会 (jī huì) = occasion.",
+          explanation: "机会 (jīhuì) = occasion.",
           explanationEn: "机会 = chance."
         }
       ]
@@ -1287,8 +1287,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk3/hsk3_打算.wav',
           choices: ['Projeter, avoir l\'intention', 'Oublier', 'Payer', 'Comparer'],
           correctIndex: 0,
-          explanation: '打算 (dǎ suàn) = avoir l\'intention de.',
-          explanationEn: '打算 (dǎ suàn) = plan to / intend to.'
+          explanation: '打算 (dǎsuàn) = avoir l\'intention de.',
+          explanationEn: '打算 (dǎsuàn) = plan to / intend to.'
         },
         {
           id: 'hsk3-l2',
@@ -1297,8 +1297,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk3/hsk3_关心.wav',
           choices: ['Se disputer', 'Se soucier de', 'Ignorer', 'Éteindre'],
           correctIndex: 1,
-          explanation: '关心 (guān xīn) = se soucier de, prendre soin.',
-          explanationEn: '关心 (guān xīn) = care about, concern oneself with.'
+          explanation: '关心 (guānxīn) = se soucier de, prendre soin.',
+          explanationEn: '关心 (guānxīn) = care about, concern oneself with.'
         },
         {
           id: 'hsk3-l3',
@@ -1307,8 +1307,8 @@ export const HSK3_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk3/hsk3_经常.wav',
           choices: ['Souvent, fréquemment', 'Rarement', 'Jamais', 'Immédiatement'],
           correctIndex: 0,
-          explanation: '经常 (jīng cháng) = souvent.',
-          explanationEn: '经常 (jīng cháng) = often.'
+          explanation: '经常 (jīngcháng) = souvent.',
+          explanationEn: '经常 (jīngcháng) = often.'
         },
         {
           id: 'hsk3-l4',
@@ -1411,8 +1411,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: 'What does 坚持 mean?',
           choices: ['Abandonner', 'Persévérer', 'Hésiter', 'Reculer'],
           correctIndex: 1,
-          explanation: '坚持 (jiān chí) = persévérer. 坚持学习 = persévérer dans ses études.',
-          explanationEn: '坚持 (jiān chí) = persist. 坚持学习 = stick with studying.'
+          explanation: '坚持 (jiānchí) = persévérer. 坚持学习 = persévérer dans ses études.',
+          explanationEn: '坚持 (jiānchí) = persist. 坚持学习 = stick with studying.'
         },
         {
           id: 'hsk4-v2',
@@ -1420,8 +1420,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 批评 is:',
           choices: ['Féliciter', 'Critiquer', 'Réparer', 'Remercier'],
           correctIndex: 1,
-          explanation: '批评 (pī píng) = critiquer. Contexte : parent, prof, manager.',
-          explanationEn: '批评 (pī píng) = criticize. Context: parent, teacher, manager.'
+          explanation: '批评 (pīpíng) = critiquer. Contexte : parent, prof, manager.',
+          explanationEn: '批评 (pīpíng) = criticize. Context: parent, teacher, manager.'
         },
         {
           id: 'hsk4-v3',
@@ -1429,8 +1429,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: 'What does 效率 mean?',
           choices: ['Efficacité', 'Routine', 'Hasard', 'Obstacle'],
           correctIndex: 0,
-          explanation: '效率 (xiào lǜ) = efficacité / rendement.',
-          explanationEn: '效率 (xiào lǜ) = efficiency.'
+          explanation: '效率 (xiàolǜ) = efficacité / rendement.',
+          explanationEn: '效率 (xiàolǜ) = efficiency.'
         },
         {
           id: 'hsk4-v4',
@@ -1438,8 +1438,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 骄傲:',
           choices: ['Modeste', 'Fier / orgueilleux', 'Timide', 'Fatigué'],
           correctIndex: 1,
-          explanation: '骄傲 (jiāo ào) = fier (positif) ou orgueilleux (négatif), selon le contexte.',
-          explanationEn: '骄傲 (jiāo ào) = proud (positive) or arrogant (negative), depending on context.'
+          explanation: '骄傲 (jiāoào) = fier (positif) ou orgueilleux (négatif), selon le contexte.',
+          explanationEn: '骄傲 (jiāoào) = proud (positive) or arrogant (negative), depending on context.'
         },
         {
           id: 'hsk4-v5',
@@ -1447,7 +1447,7 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: "What does 减少 mean?",
           choices: ["Augmenter","Diminuer, réduire","Stabiliser","Multiplier"],
           correctIndex: 1,
-          explanation: "减少 (jiǎn shǎo) = diminuer.",
+          explanation: "减少 (jiǎnshǎo) = diminuer.",
           explanationEn: "减少 = reduce."
         },
         {
@@ -1456,7 +1456,7 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: "What does 打扰 mean?",
           choices: ["Aider","Déranger","Remercier","Saluer"],
           correctIndex: 1,
-          explanation: "打扰 (dǎ rǎo) = déranger.",
+          explanation: "打扰 (dǎrǎo) = déranger.",
           explanationEn: "打扰 = disturb."
         },
         {
@@ -1465,7 +1465,7 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: "What does 调查 mean?",
           choices: ["Organiser","Enquêter, sonder","Publier","Conseiller"],
           correctIndex: 1,
-          explanation: "调查 (diào chá) = enquêter.",
+          explanation: "调查 (diàochá) = enquêter.",
           explanationEn: "调查 = investigate."
         },
         {
@@ -1474,7 +1474,7 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: "What does 成功 mean?",
           choices: ["Échec","Succès","Effort","Vitesse"],
           correctIndex: 1,
-          explanation: "成功 (chéng gōng) = succès.",
+          explanation: "成功 (chénggōng) = succès.",
           explanationEn: "成功 = success."
         },
         {
@@ -1492,7 +1492,7 @@ export const HSK4_MOCK: EvaluationV2Config = {
           promptEn: "What does 适合 mean?",
           choices: ["Convenir, être adapté à","Rejeter","Choisir","Acheter"],
           correctIndex: 0,
-          explanation: "适合 (shì hé) = convenir, être adapté.",
+          explanation: "适合 (shìhé) = convenir, être adapté.",
           explanationEn: "适合 = suit."
         }
       ]
@@ -1746,8 +1746,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk4/hsk4_估计.wav',
           choices: ['Estimer, supposer', 'Refuser', 'Commander', 'Dessiner'],
           correctIndex: 0,
-          explanation: '估计 (gū jì) = estimer / supposer.',
-          explanationEn: '估计 (gū jì) = estimate / reckon.'
+          explanation: '估计 (gūjì) = estimer / supposer.',
+          explanationEn: '估计 (gūjì) = estimate / reckon.'
         },
         {
           id: 'hsk4-l2',
@@ -1756,8 +1756,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk4/hsk4_习惯.wav',
           choices: ['Habitude', 'Invitation', 'Décision', 'Règle'],
           correctIndex: 0,
-          explanation: '习惯 (xí guàn) = habitude.',
-          explanationEn: '习惯 (xí guàn) = habit.'
+          explanation: '习惯 (xíguàn) = habitude.',
+          explanationEn: '习惯 (xíguàn) = habit.'
         },
         {
           id: 'hsk4-l3',
@@ -1766,8 +1766,8 @@ export const HSK4_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk4/hsk4_建议.wav',
           choices: ['Suggérer', 'Réparer', 'Construire', 'Ordonner'],
           correctIndex: 0,
-          explanation: '建议 (jiàn yì) = suggérer, conseiller.',
-          explanationEn: '建议 (jiàn yì) = suggest, advise.'
+          explanation: '建议 (jiànyì) = suggérer, conseiller.',
+          explanationEn: '建议 (jiànyì) = suggest, advise.'
         },
         {
           id: 'hsk4-l4',
@@ -1870,8 +1870,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: 'What does 总之 mean?',
           choices: ['En bref', 'Parce que', 'Cependant', 'D\'abord'],
           correctIndex: 0,
-          explanation: '总之 (zǒng zhī) = en somme / pour conclure.',
-          explanationEn: '总之 (zǒng zhī) = in short / to sum up.'
+          explanation: '总之 (zǒngzhī) = en somme / pour conclure.',
+          explanationEn: '总之 (zǒngzhī) = in short / to sum up.'
         },
         {
           id: 'hsk5-v2',
@@ -1879,8 +1879,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 强调 is:',
           choices: ['Ignorer', 'Mettre l\'accent, insister', 'Oublier', 'Refuser'],
           correctIndex: 1,
-          explanation: '强调 (qiáng diào) = souligner, insister sur.',
-          explanationEn: '强调 (qiáng diào) = emphasize.'
+          explanation: '强调 (qiángdiào) = souligner, insister sur.',
+          explanationEn: '强调 (qiángdiào) = emphasize.'
         },
         {
           id: 'hsk5-v3',
@@ -1888,8 +1888,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: 'What does 矛盾 mean?',
           choices: ['Accord', 'Contradiction, conflit', 'Chance', 'Récompense'],
           correctIndex: 1,
-          explanation: '矛盾 (máo dùn) = contradiction, conflit.',
-          explanationEn: '矛盾 (máo dùn) = contradiction, conflict.'
+          explanation: '矛盾 (máodùn) = contradiction, conflit.',
+          explanationEn: '矛盾 (máodùn) = contradiction, conflict.'
         },
         {
           id: 'hsk5-v4',
@@ -1897,8 +1897,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 承担:',
           choices: ['Assumer, prendre en charge', 'Rejeter', 'Transférer', 'Promettre'],
           correctIndex: 0,
-          explanation: '承担 (chéng dān) = assumer / porter la responsabilité.',
-          explanationEn: '承担 (chéng dān) = bear / take on (responsibility).'
+          explanation: '承担 (chéngdān) = assumer / porter la responsabilité.',
+          explanationEn: '承担 (chéngdān) = bear / take on (responsibility).'
         },
         {
           id: 'hsk5-v5',
@@ -1906,7 +1906,7 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: "What does 规定 mean?",
           choices: ["Suggestion","Règlement, règle","Accident","Liberté"],
           correctIndex: 1,
-          explanation: "规定 (guī dìng) = règle.",
+          explanation: "规定 (guīdìng) = règle.",
           explanationEn: "规定 = regulation."
         },
         {
@@ -1915,7 +1915,7 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: "What does 发挥 mean?",
           choices: ["Cacher","Mettre en œuvre, déployer","Ignorer","Oublier"],
           correctIndex: 1,
-          explanation: "发挥 (fā huī) = déployer.",
+          explanation: "发挥 (fāhuī) = déployer.",
           explanationEn: "发挥 = bring into play."
         },
         {
@@ -1924,7 +1924,7 @@ export const HSK5_MOCK: EvaluationV2Config = {
           promptEn: "What does 实际 mean?",
           choices: ["Virtuel","Réel, concret","Imaginaire","Abstrait"],
           correctIndex: 1,
-          explanation: "实际 (shí jì) = réel.",
+          explanation: "实际 (shíjì) = réel.",
           explanationEn: "实际 = actual."
         },
         {
@@ -2205,8 +2205,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk5/hsk5_趋势.wav',
           choices: ['Tendance', 'Erreur', 'Cause', 'Détail'],
           correctIndex: 0,
-          explanation: '趋势 (qū shì) = tendance, direction.',
-          explanationEn: '趋势 (qū shì) = trend.'
+          explanation: '趋势 (qūshì) = tendance, direction.',
+          explanationEn: '趋势 (qūshì) = trend.'
         },
         {
           id: 'hsk5-l2',
@@ -2215,8 +2215,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk5/hsk5_反映.wav',
           choices: ['Refléter, faire remonter', 'Ignorer', 'Arrêter', 'Cacher'],
           correctIndex: 0,
-          explanation: '反映 (fǎn yìng) = refléter / faire remonter une situation.',
-          explanationEn: '反映 (fǎn yìng) = reflect / report a situation.'
+          explanation: '反映 (fǎnyìng) = refléter / faire remonter une situation.',
+          explanationEn: '反映 (fǎnyìng) = reflect / report a situation.'
         },
         {
           id: 'hsk5-l3',
@@ -2225,8 +2225,8 @@ export const HSK5_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk5/hsk5_承担.wav',
           choices: ['Assumer (responsabilité)', 'Déléguer', 'Fuir', 'Cacher'],
           correctIndex: 0,
-          explanation: '承担 (chéng dān) = assumer, porter.',
-          explanationEn: '承担 (chéng dān) = take on, bear.'
+          explanation: '承担 (chéngdān) = assumer, porter.',
+          explanationEn: '承担 (chéngdān) = take on, bear.'
         },
         {
           id: 'hsk5-l4',
@@ -2329,8 +2329,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: 'What does 一举两得 mean?',
           choices: ['Faire d\'une pierre deux coups', 'Faire un pas en arrière', 'Hésiter longtemps', 'Perdre tout'],
           correctIndex: 0,
-          explanation: '一举两得 (yì jǔ liǎng dé) = d\'un geste, deux bénéfices. Chengyu classique.',
-          explanationEn: '一举两得 (yì jǔ liǎng dé) = kill two birds with one stone. Classic chengyu.'
+          explanation: '一举两得 (yìjǔliǎngdé) = d\'un geste, deux bénéfices. Chengyu classique.',
+          explanationEn: '一举两得 (yìjǔliǎngdé) = kill two birds with one stone. Classic chengyu.'
         },
         {
           id: 'hsk6-v2',
@@ -2338,8 +2338,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 克服 is:',
           choices: ['Surmonter', 'Admirer', 'Détruire', 'Reproduire'],
           correctIndex: 0,
-          explanation: '克服 (kè fú) = surmonter (une difficulté, un obstacle).',
-          explanationEn: '克服 (kè fú) = overcome (a difficulty).'
+          explanation: '克服 (kèfú) = surmonter (une difficulté, un obstacle).',
+          explanationEn: '克服 (kèfú) = overcome (a difficulty).'
         },
         {
           id: 'hsk6-v3',
@@ -2347,8 +2347,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: 'What does 显而易见 mean?',
           choices: ['Caché', 'Évident', 'Rare', 'Complexe'],
           correctIndex: 1,
-          explanation: '显而易见 (xiǎn ér yì jiàn) = évident, manifeste. Chengyu.',
-          explanationEn: '显而易见 (xiǎn ér yì jiàn) = obvious, self-evident. Chengyu.'
+          explanation: '显而易见 (xiǎnéryìjiàn) = évident, manifeste. Chengyu.',
+          explanationEn: '显而易见 (xiǎnéryìjiàn) = obvious, self-evident. Chengyu.'
         },
         {
           id: 'hsk6-v4',
@@ -2356,8 +2356,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: 'The meaning of 局限:',
           choices: ['Liberté', 'Limitation, restriction', 'Progrès', 'Hasard'],
           correctIndex: 1,
-          explanation: '局限 (jú xiàn) = limite, contrainte. 局限性 = caractère limité.',
-          explanationEn: '局限 (jú xiàn) = limitation. 局限性 = limiting nature.'
+          explanation: '局限 (júxiàn) = limite, contrainte. 局限性 = caractère limité.',
+          explanationEn: '局限 (júxiàn) = limitation. 局限性 = limiting nature.'
         },
         {
           id: 'hsk6-v5',
@@ -2365,7 +2365,7 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: "What does 繁荣 mean?",
           choices: ["Déclin","Prospérité","Guerre","Famine"],
           correctIndex: 1,
-          explanation: "繁荣 (fán róng) = prospérité.",
+          explanation: "繁荣 (fánróng) = prospérité.",
           explanationEn: "繁荣 = prosperity."
         },
         {
@@ -2401,7 +2401,7 @@ export const HSK6_MOCK: EvaluationV2Config = {
           promptEn: "What does 陶醉 mean?",
           choices: ["Être enivré, fasciné par","Abandonner","Déplorer","Cacher"],
           correctIndex: 0,
-          explanation: "陶醉 (táo zuì) = être enivré/fasciné.",
+          explanation: "陶醉 (táozuì) = être enivré/fasciné.",
           explanationEn: "陶醉 = revel in."
         },
         {
@@ -2664,8 +2664,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk6/hsk6_推动.wav',
           choices: ['Pousser, impulser', 'Retarder', 'Abandonner', 'Éviter'],
           correctIndex: 0,
-          explanation: '推动 (tuī dòng) = promouvoir, faire avancer.',
-          explanationEn: '推动 (tuī dòng) = promote, drive forward.'
+          explanation: '推动 (tuīdòng) = promouvoir, faire avancer.',
+          explanationEn: '推动 (tuīdòng) = promote, drive forward.'
         },
         {
           id: 'hsk6-l2',
@@ -2674,8 +2674,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk6/hsk6_范围.wav',
           choices: ['Portée, étendue', 'Erreur', 'Doute', 'Solution'],
           correctIndex: 0,
-          explanation: '范围 (fàn wéi) = étendue, périmètre.',
-          explanationEn: '范围 (fàn wéi) = scope, range.'
+          explanation: '范围 (fànwéi) = étendue, périmètre.',
+          explanationEn: '范围 (fànwéi) = scope, range.'
         },
         {
           id: 'hsk6-l3',
@@ -2684,8 +2684,8 @@ export const HSK6_MOCK: EvaluationV2Config = {
           audio: 'audio/hsk6/hsk6_体现.wav',
           choices: ['Incarner, refléter', 'Dissimuler', 'Ignorer', 'Contredire'],
           correctIndex: 0,
-          explanation: '体现 (tǐ xiàn) = incarner, manifester.',
-          explanationEn: '体现 (tǐ xiàn) = embody, manifest.'
+          explanation: '体现 (tǐxiàn) = incarner, manifester.',
+          explanationEn: '体现 (tǐxiàn) = embody, manifest.'
         },
         {
           id: 'hsk6-l4',

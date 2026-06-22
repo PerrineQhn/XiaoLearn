@@ -253,13 +253,13 @@ export const lessonPaths: LessonPath[] = [
           content: 'Apprenez les salutations de base pour commencer vos conversations en chinois.',
           contentEn: 'Learn basic greetings to start your conversations in Chinese.',
           objectives: [
-            'Dire 你好 (nǐ hǎo)',
+            'Dire 你好 (nǐhǎo)',
             'Saluer selon le moment',
             'Dire au revoir',
             'Utiliser les formules de politesse'
           ],
           objectivesEn: [
-            'Say 你好 (nǐ hǎo)',
+            'Say 你好 (nǐhǎo)',
             'Greet according to time',
             'Say goodbye',
             'Use polite formulas'
