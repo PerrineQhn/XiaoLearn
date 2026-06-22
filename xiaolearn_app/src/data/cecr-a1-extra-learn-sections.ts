@@ -21,7 +21,7 @@ export const pinyinInitials1LearnSections: LessonV2LearnSection[] = [
     title: 'La règle de l\'aspiration',
     titleEn: 'The aspiration rule',
     body:
-      'En français, b/p se distinguent par la vibration des cordes vocales. En mandarin, la distinction est ailleurs : c\'est le SOUFFLE qui change. b (non aspiré) = sans souffle, p (aspiré) = avec un petit coup d\'air.\nTest simple : pose ta main devant la bouche. Dis « bā » (八 = 8) : la main reste stable. Dis « pá » (爬 = grimper) : tu sens le souffle.',
+      'En français, b/p se distinguent par la vibration des cordes vocales. RÈGLE D\'OR : en mandarin, la distinction est ailleurs — c\'est le SOUFFLE qui change. b (non aspiré) = sans souffle, p (aspiré) = avec un petit coup d\'air. Astuce : pose ta main devant la bouche. Dis « bā » (八 = 8), la main reste stable. Dis « pá » (爬 = grimper), tu sens le souffle.',
     bodyEn:
       'In English, b/p differ by voicing (vocal cord vibration). In Mandarin, the split is elsewhere: it\'s aspiration. b (unaspirated) = no puff, p (aspirated) = a little burst of air.\nSimple test: hand in front of mouth. Say "bā" (八 = 8): hand stays still. Say "pá" (爬 = to climb): you feel the puff.',
     items: [
@@ -40,7 +40,7 @@ export const pinyinInitials1LearnSections: LessonV2LearnSection[] = [
     title: 'Labiales : b / p / m / f',
     titleEn: 'Labials: b / p / m / f',
     body:
-      'Les 4 initiales qui se forment avec les lèvres. b et p fonctionnent par paire (non aspiré / aspiré). m et f sont directes — identiques au français.',
+      'Les 4 initiales qui se forment avec les lèvres. Règle : b et p fonctionnent par paire (non aspiré / aspiré). m et f sont directes — identiques au français.',
     bodyEn:
       'The 4 initials formed with the lips. b and p work as a pair (unaspirated / aspirated). m and f are straightforward — identical to English.',
     items: [
@@ -55,7 +55,7 @@ export const pinyinInitials1LearnSections: LessonV2LearnSection[] = [
     title: 'Alvéolaires : d / t / n / l',
     titleEn: 'Alveolars: d / t / n / l',
     body:
-      'Les 4 initiales produites avec la pointe de la langue contre la crête alvéolaire (juste derrière les dents du haut). Mêmes règles : d/t par aspiration, n/l directes.',
+      'Les 4 initiales produites avec la pointe de la langue contre la crête alvéolaire (juste derrière les dents du haut). Règle : d/t s\'opposent par aspiration, n/l sont directes.',
     bodyEn:
       'The 4 initials made with the tongue tip against the alveolar ridge (just behind the upper teeth). Same rules: d/t by aspiration, n/l direct.',
     items: [
@@ -81,7 +81,7 @@ export const pinyinInitials2LearnSections: LessonV2LearnSection[] = [
     title: 'Vélaires : g / k / h',
     titleEn: 'Velars: g / k / h',
     body:
-      'Trio produit à l\'arrière de la bouche, contre le voile du palais. g (non aspiré) vs k (aspiré), même logique que b/p et d/t. h est plus rauque qu\'en français — c\'est un souffle venu de la gorge, proche du « j » espagnol (« Juan »).',
+      'Trio produit à l\'arrière de la bouche, contre le voile du palais. Règle : g (non aspiré) vs k (aspiré), même logique que b/p et d/t. Remarque : h est plus rauque qu\'en français — c\'est un souffle venu de la gorge, proche du « j » espagnol (« Juan »).',
     bodyEn:
       'Trio produced at the back of the mouth against the soft palate. g (unaspirated) vs k (aspirated), same logic as b/p and d/t. h is raspier than English "h" — a throat breath, close to Spanish "j" ("Juan").',
     items: [
@@ -99,7 +99,7 @@ export const pinyinInitials2LearnSections: LessonV2LearnSection[] = [
     title: 'Palatales : j / q / x',
     titleEn: 'Palatals: j / q / x',
     body:
-      'Trio totalement absent du français. La langue s\'aplatit contre le palais (comme pour faire « yee »), et les lèvres s\'étirent en sourire.\n  • j ≈ « dj » très doux\n  • q ≈ « tch » aspiré\n  • x ≈ « ch » léger (plus soufflé que chuchoté)\nCes trois sons ne se combinent JAMAIS avec a, o, e, u — seulement i et ü.',
+      'Trio totalement absent du français. La langue s\'aplatit contre le palais (comme pour faire « yee »), et les lèvres s\'étirent en sourire. j ≈ « dj » très doux ; q ≈ « tch » aspiré ; x ≈ « ch » léger (plus soufflé que chuchoté). RÈGLE D\'OR : ces trois sons ne se combinent JAMAIS avec a, o, e, u — seulement i et ü.',
     bodyEn:
       'Three sounds absent from English. The tongue flattens against the hard palate (as if saying "yee"), lips stretched in a smile.\n  • j ≈ soft "dj"\n  • q ≈ aspirated "tch"\n  • x ≈ light "sh"\nThese three initials NEVER combine with a, o, e, u — only i and ü.',
     items: [
@@ -124,7 +124,7 @@ export const pinyinInitials3LearnSections: LessonV2LearnSection[] = [
     title: 'Rétroflexes : zh / ch / sh / r',
     titleEn: 'Retroflexes: zh / ch / sh / r',
     body:
-      'La « famille rétroflexe » : la pointe de la langue se recourbe vers l\'arrière, touchant presque le palais dur. C\'est LE son typiquement pékinois.\n  • zh ≈ « dj » langue en arrière\n  • ch ≈ « tch » aspiré langue en arrière\n  • sh ≈ « ch » langue en arrière\n  • r ≈ entre « r » anglais et « j » français, langue recourbée',
+      'La « famille rétroflexe » : la pointe de la langue se recourbe vers l\'arrière, touchant presque le palais dur. Remarque : c\'est LE son typiquement pékinois. zh ≈ « dj » langue en arrière ; ch ≈ « tch » aspiré langue en arrière ; sh ≈ « ch » langue en arrière ; r ≈ entre « r » anglais et « j » français, langue recourbée.',
     bodyEn:
       'The "retroflex family": the tongue tip curls backwards, nearly touching the hard palate. THE signature Beijing sound.\n  • zh ≈ "dj" with curled tongue\n  • ch ≈ aspirated "tch" with curled tongue\n  • sh ≈ "sh" with curled tongue\n  • r ≈ between English "r" and French "j", curled tongue',
     items: [
@@ -143,7 +143,7 @@ export const pinyinInitials3LearnSections: LessonV2LearnSection[] = [
     title: 'Sifflantes : z / c / s',
     titleEn: 'Sibilants: z / c / s',
     body:
-      'La « famille plate » : langue plaquée derrière les dents du bas, plate. L\'opposition avec zh/ch/sh est cruciale.\n  • z ≈ « dz » net (comme « pizza » italien)\n  • c ≈ « ts » aspiré\n  • s ≈ « s » français normal',
+      'La « famille plate » : langue plaquée derrière les dents du bas, plate. Attention : l\'opposition avec zh/ch/sh est cruciale. z ≈ « dz » net (comme « pizza » italien) ; c ≈ « ts » aspiré ; s ≈ « s » français normal.',
     bodyEn:
       'The "flat family": tongue pressed behind the lower teeth, flat. The contrast with zh/ch/sh is crucial.\n  • z ≈ crisp "dz" (like Italian "pizza")\n  • c ≈ aspirated "ts"\n  • s ≈ regular English "s"',
     items: [
@@ -174,7 +174,7 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
     title: 'La question : « d\'où viens-tu ? »',
     titleEn: 'The "where are you from?" question',
     body:
-      'La structure standard : 你是哪国人 ? (nǐ shì nǎ guó rén) — littéralement « tu + es + quel + pays + personne ? ». C\'est compact mais très régulier.\nRéponse : 我是 + [nationalité]. Ex : 我是法国人 (wǒ shì Fǎ guó rén) — « je suis français ».',
+      'La structure standard : 你是哪国人 ? (nǐ shì nǎ guó rén) — littéralement « tu + es + quel + pays + personne ? ». Règle : c\'est compact mais très régulier. Réponse : 我是 + [nationalité]. Ex : 我是法国人 (wǒ shì Fǎ guó rén) — « je suis français ».',
     bodyEn:
       'The standard pattern: 你是哪国人? (nǐ shì nǎ guó rén) — literally "you + are + which + country + person?". Compact but very regular.\nAnswer: 我是 + [nationality]. E.g. 我是法国人 (wǒ shì Fǎ guó rén) — "I am French".',
     items: [
@@ -192,7 +192,7 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
     title: 'Les pays les plus courants',
     titleEn: 'The most common countries',
     body:
-      'Les noms de pays en chinois sont souvent des caractères choisis pour évoquer le son original. 法国 = « Fǎ guó » ≈ France, 美国 = « Měi guó » (« beau pays ») = États-Unis.',
+      'Les noms de pays en chinois sont souvent des caractères choisis pour évoquer le son original. Remarque : 法国 = « Fǎ guó » ≈ France, 美国 = « Měi guó » (« beau pays ») = États-Unis.',
     bodyEn:
       'Chinese country names are often chosen to evoke the original sound. 法国 = "Fǎ guó" ≈ France, 美国 = "Měi guó" ("beautiful country") = USA.',
     items: [
@@ -219,7 +219,7 @@ export const numbersExtendedLearnSections: LessonV2LearnSection[] = [
     title: 'De 11 à 19 : la règle additive',
     titleEn: '11 to 19: the additive rule',
     body:
-      'Le chinois est le paradis des maths : pour dire 11, c\'est 10 + 1 = 十一. Pour 15, c\'est 十五. Aucune exception, aucun mot nouveau à apprendre.\nRègle : 十 + [chiffre 1-9]',
+      'Le chinois est le paradis des maths : pour dire 11, c\'est 10 + 1 = 十一. Pour 15, c\'est 十五. RÈGLE D\'OR : 十 + [chiffre 1-9], aucune exception, aucun mot nouveau à apprendre.',
     bodyEn:
       'Chinese is a math paradise: to say 11 you say 10 + 1 = 十一. For 15 it\'s 十五. No exceptions, no new words to learn.\nRule: 十 + [digit 1-9]',
     items: [
@@ -235,7 +235,7 @@ export const numbersExtendedLearnSections: LessonV2LearnSection[] = [
     title: 'De 20 à 99 : la règle multiplicative + additive',
     titleEn: '20 to 99: multiplicative + additive rule',
     body:
-      'Toutes les dizaines se forment par multiplication : 20 = 2 × 10 = 二十, 50 = 五十. Puis pour les chiffres intermédiaires, on ajoute : 25 = 2 × 10 + 5 = 二十五.\nRègle générale : [dizaine] + 十 + [unité]. Transparente, sans piège.',
+      'Toutes les dizaines se forment par multiplication : 20 = 2 × 10 = 二十, 50 = 五十. Puis pour les chiffres intermédiaires, on ajoute : 25 = 2 × 10 + 5 = 二十五. RÈGLE D\'OR : [dizaine] + 十 + [unité], transparente, sans piège.',
     bodyEn:
       'Tens are formed multiplicatively: 20 = 2 × 10 = 二十, 50 = 五十. For in-between digits, add: 25 = 2 × 10 + 5 = 二十五.\nGeneral rule: [tens digit] + 十 + [units digit]. Transparent, no traps.',
     items: [
@@ -252,7 +252,7 @@ export const numbersExtendedLearnSections: LessonV2LearnSection[] = [
     title: 'Les centaines et au-delà',
     titleEn: 'Hundreds and beyond',
     body:
-      '100 = 一百 (yī bǎi), 1 000 = 一千 (yī qiān). La règle reste la même : [chiffre] + 百, [chiffre] + 千.\nParticularité chinoise : 10 000 = 一万 (yī wàn). Le chinois regroupe par 10 000 et non par 1 000 comme l\'Occident. 1 million = 一百万 (« 100 × 10 000 »).',
+      '100 = 一百 (yī bǎi), 1 000 = 一千 (yī qiān). Règle : la logique reste la même, [chiffre] + 百, [chiffre] + 千. Exception fréquente : 10 000 = 一万 (yī wàn). Le chinois regroupe par 10 000 et non par 1 000 comme l\'Occident. 1 million = 一百万 (« 100 × 10 000 »).',
     bodyEn:
       '100 = 一百 (yī bǎi), 1 000 = 一千 (yī qiān). Same rule: [digit] + 百, [digit] + 千.\nChinese quirk: 10 000 = 一万 (yī wàn). Chinese groups by 10 000 rather than 1 000 as the West does. 1 million = 一百万 ("100 × 10 000").',
     items: [
@@ -277,7 +277,7 @@ export const weekDaysLearnSections: LessonV2LearnSection[] = [
     title: '星期 + chiffre',
     titleEn: '星期 + digit',
     body:
-      'Les jours de la semaine en chinois sont des chiffres. Lundi = « jour 1 », mardi = « jour 2 », etc. Il suffit de savoir compter de 1 à 6 pour nommer la semaine.\nRègle : 星期 + [chiffre 1-6] pour lundi → samedi. Exception : dimanche = 星期日 ou 星期天 (le « ciel »).',
+      'Les jours de la semaine en chinois sont des chiffres. Lundi = « jour 1 », mardi = « jour 2 », etc. Il suffit de savoir compter de 1 à 6 pour nommer la semaine. RÈGLE D\'OR : 星期 + [chiffre 1-6] pour lundi → samedi. Exception : dimanche = 星期日 ou 星期天 (le « ciel »).',
     bodyEn:
       'Chinese weekdays are numbers. Monday = "day 1", Tuesday = "day 2", etc. Just count 1–6 and you know the week.\nRule: 星期 + [digit 1-6] for Monday → Saturday. Exception: Sunday = 星期日 or 星期天 ("the sky").',
     items: [
@@ -294,7 +294,7 @@ export const weekDaysLearnSections: LessonV2LearnSection[] = [
     title: 'Cette semaine, la prochaine, la dernière',
     titleEn: 'This / next / last week',
     body:
-      'Pour situer la semaine, on préfixe avec 这 (cette), 下 (prochaine, littéralement « suivante »), 上 (dernière, « précédente »).\n  • 这个星期 (zhè ge xīng qī) = cette semaine\n  • 下个星期 (xià ge xīng qī) = la semaine prochaine\n  • 上个星期 (shàng ge xīng qī) = la semaine dernière',
+      'Pour situer la semaine, on préfixe avec 这 (cette), 下 (prochaine, littéralement « suivante »), 上 (dernière, « précédente »). Règle : 这个星期 (zhè ge xīng qī) = cette semaine ; 下个星期 (xià ge xīng qī) = la semaine prochaine ; 上个星期 (shàng ge xīng qī) = la semaine dernière.',
     bodyEn:
       'For relative weeks, prefix with 这 (this), 下 (next, "following"), 上 (last, "previous").\n  • 这个星期 (zhè ge xīng qī) = this week\n  • 下个星期 (xià ge xīng qī) = next week\n  • 上个星期 (shàng ge xīng qī) = last week',
     items: [
@@ -318,7 +318,7 @@ export const monthsDatesLearnSections: LessonV2LearnSection[] = [
     title: 'Les mois',
     titleEn: 'The months',
     body:
-      'Comme pour les jours de la semaine, les mois sont numérotés. Janvier = « mois 1 », février = « mois 2 », etc. Formule : [chiffre 1-12] + 月.\nJanvier = 一月, juin = 六月, décembre = 十二月. Aucun nom propre à retenir.',
+      'Comme pour les jours de la semaine, les mois sont numérotés. Janvier = « mois 1 », février = « mois 2 », etc. RÈGLE D\'OR : formule [chiffre 1-12] + 月. Janvier = 一月, juin = 六月, décembre = 十二月. Aucun nom propre à retenir.',
     bodyEn:
       'Like weekdays, months are numbered. January = "month 1", February = "month 2", etc. Formula: [digit 1-12] + 月.\nJanuary = 一月, June = 六月, December = 十二月. No proper names to memorize.',
     items: [
@@ -336,7 +336,7 @@ export const monthsDatesLearnSections: LessonV2LearnSection[] = [
     title: 'Donner une date complète',
     titleEn: 'Giving a full date',
     body:
-      'Ordre chinois : année → mois → jour (du plus grand au plus petit). Inverse du français.\nEx : 2026年4月18日 = « année 2026, mois 4, jour 18 » = 18 avril 2026.\nPour la prononciation : 二零二六年四月十八日.',
+      'RÈGLE D\'OR : ordre chinois année → mois → jour (du plus grand au plus petit), inverse du français. Ex : 2026年4月18日 = « année 2026, mois 4, jour 18 » = 18 avril 2026. Astuce : pour la prononciation, 二零二六年四月十八日.',
     bodyEn:
       'Chinese order: year → month → day (big to small). Opposite of English DD-MM.\nE.g.: 2026年4月18日 = "year 2026, month 4, day 18" = April 18, 2026.\nPronunciation: 二零二六年四月十八日.',
     items: [
@@ -359,7 +359,7 @@ export const ageLearnSections: LessonV2LearnSection[] = [
     title: 'Demander l\'âge',
     titleEn: 'Asking someone\'s age',
     body:
-      'Le mot-clé : 岁 (suì) = « année d\'âge, ans ». Attention, il est différent de 年 (année calendaire).\nPour demander l\'âge de quelqu\'un, trois formules selon l\'âge probable du destinataire :\n  • Enfant (<10 ans) : 你几岁 ? (nǐ jǐ suì) — « tu as combien d\'années ? »\n  • Adulte : 你多大 ? (nǐ duō dà) — « tu as quelle taille ? » (plus poli)\n  • Personne âgée : 您多大年纪 ? (plus respectueux)',
+      'Le mot-clé : 岁 (suì) = « année d\'âge, ans ». Attention : il est différent de 年 (année calendaire). Règle : pour demander l\'âge de quelqu\'un, trois formules selon l\'âge probable du destinataire. Enfant (<10 ans), 你几岁 ? (nǐ jǐ suì) — « tu as combien d\'années ? » ; adulte, 你多大 ? (nǐ duō dà) — « tu as quelle taille ? » (plus poli) ; personne âgée, 您多大年纪 ? (plus respectueux).',
     bodyEn:
       'Key word: 岁 (suì) = "year of age, years old". Different from 年 (calendar year).\nTo ask age, three options depending on the listener\'s likely age:\n  • Child (<10): 你几岁? (nǐ jǐ suì) — "how many years?"\n  • Adult: 你多大? (nǐ duō dà) — "how big are you?" (more polite)\n  • Elderly: 您多大年纪? (more respectful)',
     items: [
@@ -378,7 +378,7 @@ export const ageLearnSections: LessonV2LearnSection[] = [
     title: 'Répondre à l\'âge',
     titleEn: 'Answering about age',
     body:
-      'Structure : 我 + [chiffre] + 岁. Ex : 我三十岁 (wǒ sān shí suì) = « j\'ai 30 ans ».\nLe verbe « avoir » (有) n\'est PAS utilisé avec l\'âge — on met juste le chiffre directement.\n我有三十岁 est une erreur typique de francophone. Dire juste 我三十岁.',
+      'Structure : 我 + [chiffre] + 岁. Ex : 我三十岁 (wǒ sān shí suì) = « j\'ai 30 ans ». RÈGLE D\'OR : le verbe « avoir » (有) n\'est PAS utilisé avec l\'âge — on met juste le chiffre directement. Attention : 我有三十岁 est une erreur typique de francophone, dire juste 我三十岁.',
     bodyEn:
       'Structure: 我 + [digit] + 岁. E.g. 我三十岁 (wǒ sān shí suì) = "I am 30".\nThe verb "to have" (有) is NOT used with age — just put the number directly.\n我有三十岁 is a classic French-speaker mistake. Just say 我三十岁.',
     tip:
@@ -398,7 +398,7 @@ export const pronounsLearnSections: LessonV2LearnSection[] = [
     title: 'Les pronoms au singulier',
     titleEn: 'Singular pronouns',
     body:
-      'Trois pronoms de base : 我 (wǒ) = je, 你 (nǐ) = tu, 他/她 (tā) = il/elle. Un seul mot par personne — pas de variation selon le cas (je/moi/mon = tous 我).\nAttention : à l\'écrit, 他 est masculin et 她 féminin. À l\'oral, les deux se prononcent « tā », donc indistinguables.',
+      'Trois pronoms de base : 我 (wǒ) = je, 你 (nǐ) = tu, 他/她 (tā) = il/elle. RÈGLE D\'OR : un seul mot par personne — pas de variation selon le cas (je/moi/mon = tous 我). Attention : à l\'écrit, 他 est masculin et 她 féminin. À l\'oral, les deux se prononcent « tā », donc indistinguables.',
     bodyEn:
       'Three basic pronouns: 我 (wǒ) = I, 你 (nǐ) = you, 他/她 (tā) = he/she. One word per person — no case variation (I/me/my = all 我).\nIn writing, 他 is male and 她 female. In speech both sound "tā", so indistinguishable.',
     items: [
@@ -417,7 +417,7 @@ export const pronounsLearnSections: LessonV2LearnSection[] = [
     title: 'Pluriel et possessif',
     titleEn: 'Plural and possessive',
     body:
-      'Pour le pluriel, on ajoute 们 (men) : 我们 = nous, 你们 = vous, 他们 = ils/elles.\nPour le possessif, on ajoute 的 (de) : 我的 = mon/ma, 你的 = ton/ta, 他的 = son/sa.\nRègle universelle : 的 transforme n\'importe quel nom ou pronom en possesseur. 妈妈的 = « de maman ».',
+      'Pour le pluriel, on ajoute 们 (men) : 我们 = nous, 你们 = vous, 他们 = ils/elles. Pour le possessif, on ajoute 的 (de) : 我的 = mon/ma, 你的 = ton/ta, 他的 = son/sa. RÈGLE D\'OR : 的 transforme n\'importe quel nom ou pronom en possesseur. 妈妈的 = « de maman ».',
     bodyEn:
       'For plural, add 们 (men): 我们 = we, 你们 = you (plural), 他们 = they.\nFor possessive, add 的 (de): 我的 = my, 你的 = your, 他的 = his.\nUniversal rule: 的 turns any noun or pronoun into a possessor. 妈妈的 = "mom\'s".',
     items: [
@@ -440,7 +440,7 @@ export const colorsLearnSections: LessonV2LearnSection[] = [
     title: 'Les couleurs de base',
     titleEn: 'Basic colors',
     body:
-      'Les couleurs se construisent presque toujours avec 色 (sè) = « couleur » à la fin : 红色 = rouge, 蓝色 = bleu. Mais à l\'oral, on omet souvent 色.\nPour dire « une voiture rouge » : 红色的车 ou plus court 红的车.',
+      'Les couleurs se construisent presque toujours avec 色 (sè) = « couleur » à la fin : 红色 = rouge, 蓝色 = bleu. Remarque : à l\'oral, on omet souvent 色. Pour dire « une voiture rouge » : 红色的车 ou plus court 红的车.',
     bodyEn:
       'Colors almost always use 色 (sè) = "color" at the end: 红色 = red, 蓝色 = blue. In speech, 色 is often dropped.\nTo say "a red car": 红色的车 or shorter 红的车.',
     items: [
@@ -484,7 +484,7 @@ export const shiVerbLearnSections: LessonV2LearnSection[] = [
     title: '是 : le verbe d\'identification',
     titleEn: '是: the identification verb',
     body:
-      '是 (shì) sert à dire « X est Y » — à identifier, à définir. Structure : [sujet] + 是 + [identité].\nEx : 我是学生 (wǒ shì xué shēng) = je suis étudiant.\nAttention : 是 NE SERT PAS à décrire ! Pour « elle est grande » on ne dit PAS 她是高 — on dit 她很高. 是 = identité ; 很 + adjectif = description.',
+      '是 (shì) sert à dire « X est Y » — à identifier, à définir. Structure : [sujet] + 是 + [identité]. Ex : 我是学生 (wǒ shì xué shēng) = je suis étudiant. Attention : 是 NE SERT PAS à décrire ! Pour « elle est grande » on ne dit PAS 她是高 — on dit 她很高. RÈGLE D\'OR : 是 = identité, 很 + adjectif = description.',
     bodyEn:
       '是 (shì) is used to say "X is Y" — to identify, to define. Structure: [subject] + 是 + [identity].\nE.g.: 我是学生 (wǒ shì xué shēng) = I am a student.\nWatch out: 是 is NOT for describing! For "she is tall" you do NOT say 她是高 — say 她很高. 是 = identity; 很 + adjective = description.',
     items: [
@@ -574,7 +574,7 @@ export const buNegationLearnSections: LessonV2LearnSection[] = [
     title: '不 : négation universelle (sauf 有)',
     titleEn: '不: universal negation (except for 有)',
     body:
-      '不 (bù) se place AVANT le verbe ou l\'adjectif à nier.\nEx : 我不吃肉 (wǒ bù chī ròu) = je ne mange pas de viande. 她不高兴 (tā bù gāo xìng) = elle n\'est pas contente.\nRègle importante : 不 est la négation par défaut pour tout... sauf pour 有 (avoir). Pour nier 有, on utilise 没 : 没有.',
+      'RÈGLE D\'OR : 不 (bù) se place AVANT le verbe ou l\'adjectif à nier. Ex : 我不吃肉 (wǒ bù chī ròu) = je ne mange pas de viande. 她不高兴 (tā bù gāo xìng) = elle n\'est pas contente. Exception : 不 est la négation par défaut pour tout... sauf pour 有 (avoir). Pour nier 有, on utilise 没. 没有.',
     bodyEn:
       '不 (bù) is placed BEFORE the verb or adjective being negated.\nE.g.: 我不吃肉 (wǒ bù chī ròu) = I don\'t eat meat. 她不高兴 (tā bù gāo xìng) = she is not happy.\nKey rule: 不 is the default negation for everything... except for 有 (to have). To negate 有, use 没: 没有.',
     items: [
@@ -657,7 +657,7 @@ export const maQuestionsLearnSections: LessonV2LearnSection[] = [
     title: '吗 : la particule question',
     titleEn: '吗: the question particle',
     body:
-      '吗 (ma) transforme n\'importe quelle phrase affirmative en question oui/non. Il se place TOUJOURS à la toute fin de la phrase.\nEx : 你好 (tu vas bien) → 你好吗 ? (tu vas bien ?). 你是法国人 (tu es français) → 你是法国人吗 ? (tu es français ?).\nAucune inversion, aucune modification — juste ajouter 吗 à la fin.',
+      'RÈGLE D\'OR : 吗 (ma) transforme n\'importe quelle phrase affirmative en question oui/non, et se place TOUJOURS à la toute fin de la phrase. Ex : 你好 (tu vas bien) → 你好吗 ? (tu vas bien ?). 你是法国人 (tu es français) → 你是法国人吗 ? (tu es français ?). Astuce : aucune inversion, aucune modification — juste ajouter 吗 à la fin.',
     bodyEn:
       '吗 (ma) turns any affirmative sentence into a yes/no question. It ALWAYS goes at the very end.\nE.g.: 你好 (you\'re well) → 你好吗? (are you well?). 你是法国人 (you are French) → 你是法国人吗? (are you French?).\nNo inversion, no changes — just add 吗 at the end.',
     items: [
@@ -673,7 +673,7 @@ export const maQuestionsLearnSections: LessonV2LearnSection[] = [
     title: 'L\'alternative : V-不-V',
     titleEn: 'The alternative: V-not-V',
     body:
-      'Une autre façon de poser une question oui/non : répéter le verbe avec 不 au milieu.\n  • 你是不是法国人 ? = « tu es (ou) n\'es pas français ? » = « tu es français ? »\n  • 你吃不吃 ? = « tu manges (ou) ne manges pas ? » = « tu manges ? »\nPlus direct et plus vif que 吗. Très utilisé à l\'oral.',
+      'Une autre façon de poser une question oui/non : répéter le verbe avec 不 au milieu. 你是不是法国人 ? = « tu es (ou) n\'es pas français ? » = « tu es français ? ». 你吃不吃 ? = « tu manges (ou) ne manges pas ? » = « tu manges ? ». Remarque : plus direct et plus vif que 吗, très utilisé à l\'oral.',
     bodyEn:
       'Another way to ask yes/no: repeat the verb with 不 in the middle.\n  • 你是不是法国人? = "you are (or) not French?" = "are you French?"\n  • 你吃不吃? = "you eat (or) don\'t eat?" = "are you eating?"\nMore direct and snappier than 吗. Very common in speech.',
     tip:
@@ -756,7 +756,7 @@ export const dePossessiveLearnSections: LessonV2LearnSection[] = [
     title: '的 : la particule qui lie',
     titleEn: '的: the linking particle',
     body:
-      '的 (de) est l\'une des particules les plus fréquentes du chinois. Elle lie un modificateur à un nom — possessif, descriptif, relatif.\n  • Possessif : 我的书 = mon livre\n  • Adjectival : 好的人 = une personne bonne\n  • Relatif : 我买的书 = le livre que j\'ai acheté\nLa logique : [modificateur] + 的 + [nom].',
+      '的 (de) est l\'une des particules les plus fréquentes du chinois. Règle : elle lie un modificateur à un nom — possessif, descriptif, relatif. Possessif : 我的书 = mon livre. Adjectival : 好的人 = une personne bonne. Relatif : 我买的书 = le livre que j\'ai acheté. RÈGLE D\'OR : [modificateur] + 的 + [nom].',
     bodyEn:
       '的 (de) is one of the most frequent particles in Chinese. It links a modifier to a noun — possessive, descriptive, relative.\n  • Possessive: 我的书 = my book\n  • Adjectival: 好的人 = a good person\n  • Relative: 我买的书 = the book I bought\nPattern: [modifier] + 的 + [noun].',
     items: [
@@ -772,7 +772,7 @@ export const dePossessiveLearnSections: LessonV2LearnSection[] = [
     title: 'Quand omettre 的',
     titleEn: 'When to omit 的',
     body:
-      'Pour les liens étroits (famille, école, pays), 的 est souvent supprimé :\n  • 我妈妈 au lieu de 我的妈妈\n  • 我家 au lieu de 我的家\n  • 中国人 au lieu de 中国的人\nPour les liens faibles (objets, possessions génériques), on garde 的 : 我的书, 我的车.',
+      'Règle : pour les liens étroits (famille, école, pays), 的 est souvent supprimé. 我妈妈 au lieu de 我的妈妈 ; 我家 au lieu de 我的家 ; 中国人 au lieu de 中国的人. Remarque : pour les liens faibles (objets, possessions génériques), on garde 的. 我的书, 我的车.',
     bodyEn:
       'For close ties (family, school, country), 的 is often dropped:\n  • 我妈妈 instead of 我的妈妈\n  • 我家 instead of 我的家\n  • 中国人 instead of 中国的人\nFor weaker ties (objects, generic possessions), keep 的: 我的书, 我的车.',
     tip:
@@ -858,7 +858,7 @@ export const classifiersLearnSections: LessonV2LearnSection[] = [
     title: 'Qu\'est-ce qu\'un classificateur ?',
     titleEn: 'What is a measure word?',
     body:
-      'En chinois, on ne peut PAS dire « trois livres » directement. Il faut un mot intermédiaire, appelé « classificateur » (ou « mot de mesure »).\nStructure obligatoire : [chiffre] + [classificateur] + [nom].\nEx : 三本书 (sān běn shū) = trois livres (littéralement « trois [reliure] livres »).',
+      'En chinois, on ne peut PAS dire « trois livres » directement. Il faut un mot intermédiaire, appelé « classificateur » (ou « mot de mesure »). RÈGLE D\'OR : structure obligatoire [chiffre] + [classificateur] + [nom]. Ex : 三本书 (sān běn shū) = trois livres (littéralement « trois [reliure] livres »).',
     bodyEn:
       'In Chinese, you CAN\'T say "three books" directly. You need an intermediate word, called a "classifier" (or "measure word").\nMandatory structure: [number] + [classifier] + [noun].\nE.g. 三本书 (sān běn shū) = three books (literally "three [binding] books").',
     tip:
@@ -871,7 +871,7 @@ export const classifiersLearnSections: LessonV2LearnSection[] = [
     title: '个 : le classificateur universel',
     titleEn: '个: the universal classifier',
     body:
-      '个 (ge) est le joker. Si tu ne connais pas le classificateur spécifique d\'un nom, utilise 个 — ça passe presque toujours.\nEx : 一个人 (une personne), 两个苹果 (deux pommes), 三个朋友 (trois amis).\nC\'est le classificateur des humains et des objets génériques.',
+      '个 (ge) est le joker. Astuce : si tu ne connais pas le classificateur spécifique d\'un nom, utilise 个 — ça passe presque toujours. Ex : 一个人 (une personne), 两个苹果 (deux pommes), 三个朋友 (trois amis). Remarque : c\'est le classificateur des humains et des objets génériques.',
     bodyEn:
       '个 (ge) is the joker. If you don\'t know a noun\'s specific classifier, use 个 — it almost always works.\nE.g. 一个人 (one person), 两个苹果 (two apples), 三个朋友 (three friends).\nIt\'s the classifier for humans and generic objects.',
     items: [
@@ -900,7 +900,7 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Les 4 mots qui rendent une journée fluide',
     titleEn: 'The 4 words that make a day flow',
     body:
-      '请 (qǐng, s\'il vous plaît / je vous en prie), 谢谢 (xièxie, merci), 不客气 (bú kèqi, de rien — réponse à 谢谢), 对不起 (duìbuqǐ, pardon). Ces 4 mots forment l\'ossature sociale chinoise. 请 ouvre une demande, jamais à la fin (≠ français « svp »). 不客气 est universel pour répondre à 谢谢. À ces 4 ajoute 没关系 (méi guānxi, ce n\'est rien — réponse à 对不起) et tu fonctionnes en société.',
+      '请 (qǐng, s\'il vous plaît / je vous en prie), 谢谢 (xièxie, merci), 不客气 (bú kèqi, de rien — réponse à 谢谢), 对不起 (duìbuqǐ, pardon). Ces 4 mots forment l\'ossature sociale chinoise. RÈGLE D\'OR : 请 ouvre une demande, jamais à la fin (≠ français « svp »). Astuce : 不客气 est universel pour répondre à 谢谢. À ces 4 ajoute 没关系 (méi guānxi, ce n\'est rien — réponse à 对不起) et tu fonctionnes en société.',
     bodyEn:
       '请 (qǐng, please / go ahead), 谢谢 (xièxie, thank you), 不客气 (bú kèqi, you\'re welcome — reply to 谢谢), 对不起 (duìbuqǐ, sorry). These 4 are the social backbone in China. 请 opens a request, never at the end (≠ English «please» at end). 不客气 is universal as reply to 谢谢. Add 没关系 (méi guānxi, no problem — reply to 对不起) and you function socially.',
     items: [
@@ -920,7 +920,7 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Petites formules quotidiennes : 麻烦 / 辛苦了',
     titleEn: 'Daily mini-phrases: 麻烦 / 辛苦了',
     body:
-      '麻烦你 (máfan nǐ, je vous demande pardon de vous déranger) : pour demander un service, plus chaleureux que 请. 麻烦你帮我 = ça t\'embêterait de m\'aider. 辛苦了 (xīnkǔ le, merci pour le travail) : à un livreur, à un collègue qui a fini une tâche, au taxi qui dépose. Universel et chaleureux — l\'oublier sonne froid. 加油 (jiāyóu, courage / vas-y !) : pour encourager.',
+      '麻烦你 (máfan nǐ, je vous demande pardon de vous déranger) : pour demander un service, plus chaleureux que 请. 麻烦你帮我 = ça t\'embêterait de m\'aider. 辛苦了 (xīnkǔ le, merci pour le travail) : à un livreur, à un collègue qui a fini une tâche, au taxi qui dépose. Astuce : universel et chaleureux — l\'oublier sonne froid. Remarque : 加油 (jiāyóu, courage / vas-y !) sert à encourager.',
     bodyEn:
       '麻烦你 (máfan nǐ, sorry to trouble you) : to ask a favor, warmer than 请. 麻烦你帮我 = would you mind helping me. 辛苦了 (xīnkǔ le, thanks for the work) : to a delivery person, a colleague after a task, the taxi driver dropping you off. Universal and warm — skipping it sounds cold. 加油 (jiāyóu, chin up / you got this) : to encourage.',
     items: [
@@ -943,7 +943,7 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Quand on n\'a pas compris : « 请再说一遍 »',
     titleEn: 'When you didn\'t catch it: «请再说一遍»',
     body:
-      'Phrases-bouées : 请再说一遍 (redites svp), 慢一点 (plus lentement), 我听不懂 (je ne comprends pas — auditivement), 你说什么？(qu\'est-ce que tu dis ?). Pour épeler un caractère : 这个字怎么写？(comment ça s\'écrit ?). Pour le sens : 这是什么意思？(qu\'est-ce que ça veut dire ?). Ces 5 phrases te sortent de presque toutes les impasses A1.',
+      'Phrases-bouées : 请再说一遍 (redites svp), 慢一点 (plus lentement), 我听不懂 (je ne comprends pas — auditivement), 你说什么？(qu\'est-ce que tu dis ?). Astuce : pour épeler un caractère, 这个字怎么写？(comment ça s\'écrit ?). Pour le sens : 这是什么意思？(qu\'est-ce que ça veut dire ?). Remarque : ces 5 phrases te sortent de presque toutes les impasses A1.',
     bodyEn:
       'Lifebuoy phrases: 请再说一遍 (please say it again), 慢一点 (slower), 我听不懂 (I don\'t catch what you\'re saying), 你说什么？(what did you say?). To spell a character: 这个字怎么写？(how do you write it?). For meaning: 这是什么意思？(what does it mean?). These 5 phrases get you out of almost any A1 jam.',
     items: [
@@ -963,7 +963,7 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Demander la prononciation ou le ton',
     titleEn: 'Ask for pronunciation or tone',
     body:
-      '怎么读 (zěnme dú, comment ça se prononce). 这个字怎么读？= ce caractère, comment se prononce-t-il ? Pour le ton : 第几声？(quel ton ?) — réponse : 第一声 (1er), 第二声 (2e), 第三声 (3e), 第四声 (4e). Pour confirmer : 是不是 X？(c\'est X, n\'est-ce pas ?). Phrase-magique pour l\'apprenant : 我学中文，所以我说得不太好 (j\'apprends, donc je parle pas très bien) — désarme l\'interlocuteur, ajuste son débit.',
+      '怎么读 (zěnme dú, comment ça se prononce). 这个字怎么读？= ce caractère, comment se prononce-t-il ? Pour le ton : 第几声？(quel ton ?) — réponse : 第一声 (1er), 第二声 (2e), 第三声 (3e), 第四声 (4e). Astuce : pour confirmer, 是不是 X？(c\'est X, n\'est-ce pas ?). Remarque : phrase-magique pour l\'apprenant 我学中文，所以我说得不太好 (j\'apprends, donc je parle pas très bien) — désarme l\'interlocuteur, ajuste son débit.',
     bodyEn:
       '怎么读 (zěnme dú, how is it pronounced). 这个字怎么读？= how is this character pronounced? For the tone: 第几声？(which tone?) — reply: 第一声 (1st), 第二声 (2nd), 第三声 (3rd), 第四声 (4th). To confirm: 是不是 X？(is it X?). Learner\'s magic phrase: 我学中文，所以我说得不太好 (I\'m learning, so I don\'t speak well yet) — disarms the listener, adjusts their pace.',
     items: [
@@ -986,7 +986,7 @@ export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Réponses courtes : 是, 对, 好, 行',
     titleEn: 'Short answers: 是, 对, 好, 行',
     body:
-      'Le chinois n\'a pas d\'équivalent strict de « oui ». 4 manières selon contexte : 是 (c\'est ça — pour confirmer une identité/fait), 对 (exact — pour confirmer une info), 好 (OK / bien — pour accepter), 行 (ça marche — accord pratique). 嗯 (mmm — d\'accord léger, oral). Pour dire « non » : reprendre le verbe avec 不 : « 你吃吗？ — 不吃 ». Pas de 不 isolé comme « non » en français.',
+      'Le chinois n\'a pas d\'équivalent strict de « oui ». RÈGLE D\'OR : 4 manières selon contexte. 是 (c\'est ça — pour confirmer une identité/fait), 对 (exact — pour confirmer une info), 好 (OK / bien — pour accepter), 行 (ça marche — accord pratique). 嗯 (mmm — d\'accord léger, oral). Astuce : pour dire « non », reprendre le verbe avec 不 (« 你吃吗？ — 不吃 »). Attention : pas de 不 isolé comme « non » en français.',
     bodyEn:
       'Chinese has no strict «yes». 4 ways depending on context: 是 (that\'s it — confirm identity/fact), 对 (right — confirm info), 好 (OK / fine — accept), 行 (works — practical agreement). 嗯 (mmm — light yes, oral). For «no»: repeat the verb with 不: «你吃吗？— 不吃». No standalone 不 as «no» like in English.',
     items: [
@@ -1006,7 +1006,7 @@ export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'J\'ai compris : 明白了 / 知道了',
     titleEn: 'I get it: 明白了 / 知道了',
     body:
-      '明白了 (j\'ai compris — saisi le sens). 知道了 (j\'ai noté / OK je sais maintenant). Différence : 明白 = compréhension intellectuelle ; 知道 = connaissance/info reçue. Pour relancer : 然后呢？(et ensuite ?), 真的吗？(vraiment ?). Pour ponctuer : 哦 (ah !), 嗯 (OK), 是吗 (ah bon ?). Ces petits mots maintiennent une conversation vivante — sans eux, l\'autre pense que tu ne suis pas.',
+      '明白了 (j\'ai compris — saisi le sens). 知道了 (j\'ai noté / OK je sais maintenant). RÈGLE D\'OR : 明白 = compréhension intellectuelle, 知道 = connaissance/info reçue. Astuce : pour relancer, 然后呢？(et ensuite ?), 真的吗？(vraiment ?). Pour ponctuer : 哦 (ah !), 嗯 (OK), 是吗 (ah bon ?). Remarque : ces petits mots maintiennent une conversation vivante — sans eux, l\'autre pense que tu ne suis pas.',
     bodyEn:
       '明白了 (I got it — caught the meaning). 知道了 (noted / OK I know now). Difference: 明白 = intellectual understanding; 知道 = info received. To prompt more: 然后呢？(and then?), 真的吗？(really?). To punctuate: 哦 (ah!), 嗯 (OK), 是吗 (oh really?). These little words keep a conversation alive — without them, the other thinks you\'re lost.',
     items: [
@@ -1029,7 +1029,7 @@ export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Hésiter sans se taire : 那个, 这个, 嗯',
     titleEn: 'Hesitate without going silent: 那个, 这个, 嗯',
     body:
-      'Les remplisseurs (fillers) chinois te donnent du temps de réfléchir SANS sembler perdu. 那个 (nèige, « euh… ») — l\'équivalent du « euh ». 这个 (zhèige, idem). 嗯… (ǹg) — son neutre quand tu cherches. 怎么说呢 (zěnme shuō ne, comment dire). Très important : sans ces remplisseurs, un silence trop long en chinois est interprété comme « il n\'a pas compris ». Avec eux, tu signales « je réfléchis, ça vient ».',
+      'Les remplisseurs (fillers) chinois te donnent du temps de réfléchir SANS sembler perdu. 那个 (nèige, « euh… ») — l\'équivalent du « euh ». 这个 (zhèige, idem). 嗯… (ǹg) — son neutre quand tu cherches. 怎么说呢 (zěnme shuō ne, comment dire). Attention : sans ces remplisseurs, un silence trop long en chinois est interprété comme « il n\'a pas compris ». Astuce : avec eux, tu signales « je réfléchis, ça vient ».',
     bodyEn:
       'Chinese fillers buy you thinking time WITHOUT looking lost. 那个 (nèige, «uh…») — the equivalent of «um». 这个 (zhèige, same). 嗯… (ǹg) — neutral sound while searching. 怎么说呢 (zěnme shuō ne, how to put it). Crucial: without fillers, a long silence in Chinese is interpreted as «didn\'t understand». With them, you signal «I\'m thinking, it\'s coming».',
     items: [
@@ -1049,7 +1049,7 @@ export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Étendre une phrase : 然后, 还有, 比如',
     titleEn: 'Extend a sentence: 然后, 还有, 比如',
     body:
-      '然后 (ensuite). 还有 (et aussi / il y a encore). 比如 (par exemple). Ces 3 connecteurs te permettent d\'enchaîner plusieurs informations sans casser le rythme. « 我喜欢看书，然后听音乐，还有跑步，比如周末 ». Sans ces enchaînements, tu fais des phrases isolées sans fluidité. Bonus : 因为 (parce que) pour justifier — « 我学中文，因为我喜欢中国文化 ».',
+      '然后 (ensuite). 还有 (et aussi / il y a encore). 比如 (par exemple). Astuce : ces 3 connecteurs te permettent d\'enchaîner plusieurs informations sans casser le rythme. « 我喜欢看书，然后听音乐，还有跑步，比如周末 ». Attention : sans ces enchaînements, tu fais des phrases isolées sans fluidité. Remarque : bonus 因为 (parce que) pour justifier — « 我学中文，因为我喜欢中国文化 ».',
     bodyEn:
       '然后 (then). 还有 (and also). 比如 (for example). These 3 connectors let you string multiple bits of info without breaking rhythm. «我喜欢看书，然后听音乐，还有跑步，比如周末». Without these connectors, you make isolated sentences with no flow. Bonus: 因为 (because) to justify — «我学中文，因为我喜欢中国文化».',
     items: [
@@ -1072,7 +1072,7 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Commander au café : « 我要一杯咖啡 »',
     titleEn: 'Ordering at a café: «我要一杯咖啡»',
     body:
-      'Phrase-clé : 我要一杯 X (je veux un X — boisson). 杯 = classificateur tasse/verre. 我要一杯咖啡 (un café), 一杯茶 (un thé), 一杯水 (un verre d\'eau). Pour préciser : 大杯 (grand) / 小杯 (petit), 热的 (chaud) / 冰的 (glacé). Payer : 多少钱？(combien ?), 刷卡 (payer par carte), 微信支付 (WeChat Pay). Phrase de fin : 这是我的卡 (voici ma carte) ou simplement scan QR.',
+      'Phrase-clé : 我要一杯 X (je veux un X — boisson). 杯 = classificateur tasse/verre. 我要一杯咖啡 (un café), 一杯茶 (un thé), 一杯水 (un verre d\'eau). Astuce : pour préciser, 大杯 (grand) / 小杯 (petit), 热的 (chaud) / 冰的 (glacé). Remarque : pour payer, 多少钱？(combien ?), 刷卡 (payer par carte), 微信支付 (WeChat Pay). Phrase de fin : 这是我的卡 (voici ma carte) ou simplement scan QR.',
     bodyEn:
       'Key phrase: 我要一杯 X (I want a X — drink). 杯 = cup/glass classifier. 我要一杯咖啡 (a coffee), 一杯茶 (a tea), 一杯水 (a glass of water). To specify: 大杯 (large) / 小杯 (small), 热的 (hot) / 冰的 (iced). Pay: 多少钱? (how much?), 刷卡 (card payment), 微信支付 (WeChat Pay). Closing: 这是我的卡 (here\'s my card) or just scan QR.',
     items: [
@@ -1092,7 +1092,7 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Prendre un taxi / Didi',
     titleEn: 'Taking a taxi / Didi',
     body:
-      '请去 X (allez à X svp). 请去机场 (à l\'aéroport), 请去人民广场 (place du peuple). Donner une adresse : 这是地址 (voici l\'adresse) + montrer le portable. Pendant le trajet : 慢一点 (plus lentement), 这里 (ici), 停一下 (arrêtez-vous). Arrivée : 多少钱？(combien ?), 收据 (reçu — pour les taxis officiels). Aujourd\'hui Didi 滴滴 a remplacé 80 % des taxis hélés à la rue : tu commandes via app, le prix s\'affiche.',
+      '请去 X (allez à X svp). 请去机场 (à l\'aéroport), 请去人民广场 (place du peuple). Astuce : pour donner une adresse, 这是地址 (voici l\'adresse) + montrer le portable. Pendant le trajet : 慢一点 (plus lentement), 这里 (ici), 停一下 (arrêtez-vous). Arrivée : 多少钱？(combien ?), 收据 (reçu — pour les taxis officiels). Remarque : aujourd\'hui Didi 滴滴 a remplacé 80 % des taxis hélés à la rue, tu commandes via app, le prix s\'affiche.',
     bodyEn:
       '请去 X (please take me to X). 请去机场 (to the airport), 请去人民广场 (People\'s Square). Give an address: 这是地址 (here\'s the address) + show your phone. During the ride: 慢一点 (slower), 这里 (here), 停一下 (stop). Arrival: 多少钱? (how much?), 收据 (receipt — for official taxis). Today Didi 滴滴 has replaced 80% of street-hailed taxis: order via app, price shown.',
     items: [
@@ -1115,7 +1115,7 @@ export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
     title: '« 我先走了 » — partir poliment',
     titleEn: '«我先走了» — leave politely',
     body:
-      'Annoncer la sortie : 我先走了 (je m\'en vais d\'abord), 我得走了 (je dois y aller). Plus chaleureux que 拜拜 (qui sonne abrupt). Justifier brièvement : 我有事 (j\'ai à faire), 时间不早了 (il se fait tard). Préparer la suite : 改天见 (à un autre jour), 回头见 (à plus tard), 下次见 (à la prochaine).',
+      'Annoncer la sortie : 我先走了 (je m\'en vais d\'abord), 我得走了 (je dois y aller). Remarque : plus chaleureux que 拜拜 (qui sonne abrupt). Astuce : justifier brièvement, 我有事 (j\'ai à faire), 时间不早了 (il se fait tard). Préparer la suite : 改天见 (à un autre jour), 回头见 (à plus tard), 下次见 (à la prochaine).',
     bodyEn:
       'Announce exit: 我先走了 (I\'ll head out first), 我得走了 (I gotta go). Warmer than 拜拜 (which sounds abrupt). Briefly justify: 我有事 (I have something to do), 时间不早了 (it\'s getting late). Set up the next: 改天见 (see you another day), 回头见 (see you later), 下次见 (until next time).',
     items: [
@@ -1135,7 +1135,7 @@ export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
     title: '« 路上小心 » — la formule chaleureuse universelle',
     titleEn: '«路上小心» — the universal warm closer',
     body:
-      '路上小心 (fais attention sur la route) : formule TOUJOURS appréciée. Dite par celui qui RESTE à celui qui PART. Marche pour un trajet de 5 min ou de 3 h. Variantes : 慢走 (va doucement — par les commerçants), 一路平安 (bon voyage en sécurité — pour un long trajet). Pour clore les réseaux : 保持联系 (on garde contact), 有空联系 (contacte-moi quand tu as le temps).',
+      '路上小心 (fais attention sur la route) : formule TOUJOURS appréciée. Règle : dite par celui qui RESTE à celui qui PART. Marche pour un trajet de 5 min ou de 3 h. Astuce : variantes 慢走 (va doucement — par les commerçants), 一路平安 (bon voyage en sécurité — pour un long trajet). Remarque : pour clore les réseaux, 保持联系 (on garde contact), 有空联系 (contacte-moi quand tu as le temps).',
     bodyEn:
       '路上小心 (take care on the way): a formula ALWAYS appreciated. Said by the one STAYING to the one LEAVING. Works for 5-min or 3-hour trips. Variants: 慢走 (take it easy — by shopkeepers), 一路平安 (safe travels — for a long trip). To close networks: 保持联系 (keep in touch), 有空联系 (hit me up when free).',
     items: [
@@ -1158,7 +1158,7 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
     title: '« 能不能 X ? » — demander un service simple',
     titleEn: '«能不能 X?» — ask for a simple favor',
     body:
-      '能不能 + verbe (pouvez-vous… ?) : la formule la plus polie pour demander quelque chose à un inconnu. 能不能帮我？(puis-je vous demander de m\'aider ?). Variantes : 可不可以 + verbe, 麻烦你 + verbe. Pour décliner poliment une demande : 不好意思，我有事. Toujours commencer par 不好意思 = adoucit massivement.',
+      '能不能 + verbe (pouvez-vous… ?) : la formule la plus polie pour demander quelque chose à un inconnu. 能不能帮我？(puis-je vous demander de m\'aider ?). Astuce : variantes 可不可以 + verbe, 麻烦你 + verbe. Remarque : pour décliner poliment une demande, 不好意思，我有事. Règle : toujours commencer par 不好意思 — ça adoucit massivement.',
     bodyEn:
       '能不能 + verb (can you…?) : the politest way to ask something of a stranger. 能不能帮我？(could you help me?). Variants: 可不可以 + verb, 麻烦你 + verb. To politely decline: 不好意思，我有事. Always start with 不好意思 = massively softens.',
     items: [
@@ -1178,7 +1178,7 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Demander son chemin : « 在哪儿 ? »',
     titleEn: 'Ask the way: «在哪儿?»',
     body:
-      'Demander un lieu : X 在哪儿？(où est X ?). 厕所在哪儿？(les toilettes ?), 地铁站在哪儿？(la station de métro ?). Réponses possibles : 一直走 (tout droit), 左转 (à gauche), 右转 (à droite), 在 X 旁边 (à côté de X). Si tu ne comprends pas : 慢一点 + 怎么去？ ou 你能写一下吗？(tu peux l\'écrire ?).',
+      'Demander un lieu : X 在哪儿？(où est X ?). 厕所在哪儿？(les toilettes ?), 地铁站在哪儿？(la station de métro ?). Astuce : réponses possibles, 一直走 (tout droit), 左转 (à gauche), 右转 (à droite), 在 X 旁边 (à côté de X). Remarque : si tu ne comprends pas, 慢一点 + 怎么去？ ou 你能写一下吗？(tu peux l\'écrire ?).',
     bodyEn:
       'Ask for a place: X 在哪儿？(where is X?). 厕所在哪儿？(toilets?), 地铁站在哪儿？(metro station?). Possible replies: 一直走 (straight ahead), 左转 (turn left), 右转 (turn right), 在 X 旁边 (next to X). If you don\'t catch it: 慢一点 + 怎么去？ or 你能写一下吗？(can you write it?).',
     items: [
@@ -1223,7 +1223,7 @@ export const a1NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: 'Cas spéciaux : 200, 2000, et 22',
     titleEn: 'Special cases: 200, 2000, and 22',
     body:
-      'Les grands nombres : 200 = 二百 OU 两百 (les deux acceptés). 2000 = 两千 (préféré) ou 二千. 20 000 = 两万. Pour 22 : 二十二 (toujours 二, pas 两). Règle : devant 百/千/万 (centaines/milliers/dizaines de milliers), 两 prend le dessus, surtout en début de nombre. Mais 二十 (20), 二十二 (22) restent stables avec 二. Plus tu montes en grandeur, plus 两 est naturel. À l\'oral, suis ce que tu entends, ne te bats pas avec la règle.',
+      'Les grands nombres : 200 = 二百 OU 两百 (les deux acceptés). 2000 = 两千 (préféré) ou 二千. 20 000 = 两万. Pour 22 : 二十二 (toujours 二, pas 两). RÈGLE D\'OR : devant 百/千/万 (centaines/milliers/dizaines de milliers), 两 prend le dessus, surtout en début de nombre. Exception : 二十 (20), 二十二 (22) restent stables avec 二. Astuce : plus tu montes en grandeur, plus 两 est naturel. À l\'oral, suis ce que tu entends, ne te bats pas avec la règle.',
     bodyEn:
       'Big numbers: 200 = 二百 OR 两百 (both accepted). 2000 = 两千 (preferred) or 二千. 20,000 = 两万. For 22: 二十二 (always 二, not 两). Rule: before 百/千/万 (hundreds/thousands/tens of thousands), 两 takes over, especially at the start of a number. But 二十 (20), 二十二 (22) stay stable with 二. The bigger the number, the more 两 feels natural. In speech, follow what you hear.',
     items: [
@@ -1246,7 +1246,7 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '你 vs 您 — tu et vous (poli)',
     titleEn: '你 vs 您 — informal vs formal you',
     body:
-      '你 (nǐ) = tu (informel, neutre par défaut entre adultes du même âge). 您 (nín) = vous (poli, marque de respect). Quand utiliser 您 : avec quelqu\'un de plus âgé, un supérieur hiérarchique, un client (si tu es vendeur), un inconnu visiblement plus âgé. 您 garde le « 您好 » (bonjour formel), JAMAIS « 您们 » au pluriel — on dit « 你们 ». Différence avec le français : entre amis et collègues du même rang, 你 est NORMAL, pas familier. Le « vous de politesse » français est plus large que 您.',
+      '你 (nǐ) = tu (informel, neutre par défaut entre adultes du même âge). 您 (nín) = vous (poli, marque de respect). Règle : utiliser 您 avec quelqu\'un de plus âgé, un supérieur hiérarchique, un client (si tu es vendeur), un inconnu visiblement plus âgé. 您 garde le « 您好 » (bonjour formel). Exception : JAMAIS « 您们 » au pluriel — on dit « 你们 ». Remarque : différence avec le français — entre amis et collègues du même rang, 你 est NORMAL, pas familier. Le « vous de politesse » français est plus large que 您.',
     bodyEn:
       '你 (nǐ) = you (informal, default neutral between adults of same age). 您 (nín) = formal you (respect marker). When to use 您: with someone older, a superior, a customer (if you\'re a seller), a visibly older stranger. 您 keeps «您好» (formal hello), NEVER «您们» plural — say «你们». Difference from English «you»: between friends and same-rank colleagues, 你 is NORMAL, not familiar.',
     items: [
@@ -1266,7 +1266,7 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: 'Marques de respect : 老师, 师傅, 先生',
     titleEn: 'Marks of respect: 老师, 师傅, 先生',
     body:
-      'Au-delà de 您, on respecte par des TITRES. 老师 (lǎoshī, professeur) — utilisé pour TOUT enseignant ou expert dans son domaine, même hors école. 师傅 (shīfu, maître) — pour les artisans, taxis, chauffeurs : 师傅，请去 X. 先生 (xiānsheng, monsieur) — Mr/sir, formel. 女士 (nǚshì, madame) — Mrs/ma\'am formel. 小姐 (xiǎojiě, mademoiselle) — DEVENU PIEGE : connote « péripatéticienne » dans certaines régions. Préfère 美女 (oral) ou 女士 (formel).',
+      'Au-delà de 您, on respecte par des TITRES. 老师 (lǎoshī, professeur) — utilisé pour TOUT enseignant ou expert dans son domaine, même hors école. 师傅 (shīfu, maître) — pour les artisans, taxis, chauffeurs : 师傅，请去 X. 先生 (xiānsheng, monsieur) — Mr/sir, formel. 女士 (nǚshì, madame) — Mrs/ma\'am formel. Attention : 小姐 (xiǎojiě, mademoiselle) est devenu PIEGE — connote « péripatéticienne » dans certaines régions. Astuce : préfère 美女 (oral) ou 女士 (formel).',
     bodyEn:
       'Beyond 您, respect is shown via TITLES. 老师 (lǎoshī, teacher) — used for ANY educator or expert. 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X. 先生 (xiānsheng, mister) — Mr/sir, formal. 女士 (nǚshì, madam) — Mrs/ma\'am formal. 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions. Prefer 美女 (spoken) or 女士 (formal).',
     items: [
@@ -1289,7 +1289,7 @@ export const a1NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '是 vs 在 vs 有 — trois « être » différents',
     titleEn: '是 vs 在 vs 有 — three different «be»',
     body:
-      'Le français « être » se sépare en 3 verbes en chinois. 是 (être = identité). 我是法国人 = je suis français. 在 (être = position). 我在家 = je suis à la maison. 有 (il y a / avoir). 这里有一本书 = il y a un livre ici. PIÈGE FRÉQUENT : pour « il fait beau » → 天气很好 (PAS 天气是好) ; pour « j\'ai 20 ans » → 我二十岁 (PAS 我有二十岁). Le chinois préfère souvent l\'adjectif sans verbe quand on décrit une qualité.',
+      'RÈGLE D\'OR : le français « être » se sépare en 3 verbes en chinois. 是 (être = identité), 我是法国人 = je suis français. 在 (être = position), 我在家 = je suis à la maison. 有 (il y a / avoir), 这里有一本书 = il y a un livre ici. Attention : piège fréquent — pour « il fait beau » → 天气很好 (PAS 天气是好) ; pour « j\'ai 20 ans » → 我二十岁 (PAS 我有二十岁). Remarque : le chinois préfère souvent l\'adjectif sans verbe quand on décrit une qualité.',
     bodyEn:
       'English «be» splits into 3 verbs in Chinese. 是 (be = identity). 我是法国人 = I am French. 在 (be = location). 我在家 = I am at home. 有 (there is / have). 这里有一本书 = there\'s a book here. COMMON TRAP: for «the weather is nice» → 天气很好 (NOT 天气是好); for «I am 20» → 我二十岁 (NOT 我有二十岁). Chinese often prefers an adjective without a verb when describing a quality.',
     items: [
@@ -1309,7 +1309,7 @@ export const a1NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: 'Le 很 invisible : « 我很好 » sans « être »',
     titleEn: 'The invisible 很: «我很好» with no «be»',
     body:
-      '« 我很好 » (wǒ hěn hǎo) ne signifie PAS « je vais TRÈS bien » mais juste « je vais bien ». Le 很 (très) est un PIVOT GRAMMATICAL devant un adjectif quand il n\'y a pas de verbe « être ». Sans 很, la phrase devient une comparaison implicite (« je vais bien... contrairement à toi ? »). À RETENIR : adjectif seul = comparaison ; 很 + adjectif = état neutre. 你好吗 ? — 我很好 (je vais bien). 我好 (sous-entendu : et toi pas).',
+      '« 我很好 » (wǒ hěn hǎo) ne signifie PAS « je vais TRÈS bien » mais juste « je vais bien ». RÈGLE D\'OR : 很 (très) est un PIVOT GRAMMATICAL devant un adjectif quand il n\'y a pas de verbe « être ». Attention : sans 很, la phrase devient une comparaison implicite (« je vais bien... contrairement à toi ? »). Astuce : adjectif seul = comparaison, 很 + adjectif = état neutre. 你好吗 ? — 我很好 (je vais bien). 我好 (sous-entendu : et toi pas).',
     bodyEn:
       '«我很好» (wǒ hěn hǎo) does NOT mean «I\'m VERY well» but just «I\'m well». 很 (very) is a GRAMMATICAL PIVOT before an adjective when no «be» verb is present. Without 很, the sentence becomes an implicit comparison («I\'m fine... unlike you?»). REMEMBER: bare adjective = comparison; 很 + adjective = neutral state.',
     items: [
@@ -1332,7 +1332,7 @@ export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '也 vs 都 — aussi vs tous',
     titleEn: '也 vs 都 — also vs all',
     body:
-      '也 (yě, aussi). Lie un sujet à un précédent. 我喜欢茶，他也喜欢茶 = j\'aime le thé, il aime aussi le thé. 都 (dōu, tous). Récapitule plusieurs sujets en un seul verbe. 我们都喜欢茶 = nous aimons tous le thé. PIÈGE : ils peuvent COEXISTER. 我也都喜欢 = moi aussi je les aime tous. POSITION : 也 et 都 vont AVANT le verbe. Erreur classique francophone : « j\'aime aussi ça » → 我喜欢也 ✗ ; correct → 我也喜欢.',
+      '也 (yě, aussi). Règle : lie un sujet à un précédent, 我喜欢茶，他也喜欢茶 = j\'aime le thé, il aime aussi le thé. 都 (dōu, tous) récapitule plusieurs sujets en un seul verbe. 我们都喜欢茶 = nous aimons tous le thé. Attention : piège, ils peuvent COEXISTER. 我也都喜欢 = moi aussi je les aime tous. RÈGLE D\'OR : 也 et 都 vont AVANT le verbe. Exception : erreur classique francophone « j\'aime aussi ça » → 我喜欢也 ✗ ; correct → 我也喜欢.',
     bodyEn:
       '也 (yě, also). Links a subject to a previous one. 我喜欢茶，他也喜欢茶 = I like tea, he also likes tea. 都 (dōu, all). Sums up several subjects into one verb. 我们都喜欢茶 = we all like tea. TRAP: they can COEXIST. 我也都喜欢 = me too I like them all. POSITION: 也 and 都 go BEFORE the verb. Common mistake: «I also like that» → 我喜欢也 ✗; correct → 我也喜欢.',
     items: [
@@ -1352,7 +1352,7 @@ export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: 'Négation : 也不 vs 都不 vs 都没',
     titleEn: 'Negation: 也不 vs 都不 vs 都没',
     body:
-      '我不喜欢，他也不喜欢 = je n\'aime pas, lui non plus. 我们都不喜欢 = aucun de nous n\'aime. ATTENTION : 都不 ≠ 不都. 我都不去 = je n\'y vais à AUCUN. 我不都去 = je n\'y vais pas TOUS (mais à certains oui). Pour le passé : 都没. 他们都没来 = aucun d\'eux n\'est venu. Règle : 都 + 不 (présent) ou 都 + 没 (passé).',
+      '我不喜欢，他也不喜欢 = je n\'aime pas, lui non plus. 我们都不喜欢 = aucun de nous n\'aime. Attention : 都不 ≠ 不都. 我都不去 = je n\'y vais à AUCUN. 我不都去 = je n\'y vais pas TOUS (mais à certains oui). Remarque : pour le passé, 都没. 他们都没来 = aucun d\'eux n\'est venu. RÈGLE D\'OR : 都 + 不 (présent) ou 都 + 没 (passé).',
     bodyEn:
       '我不喜欢，他也不喜欢 = I don\'t like, neither does he. 我们都不喜欢 = none of us like. CAREFUL: 都不 ≠ 不都. 我都不去 = I go to NONE. 我不都去 = I don\'t go to ALL (but I go to some). For the past: 都没. 他们都没来 = none of them came. Rule: 都 + 不 (present) or 都 + 没 (past).',
     items: [
@@ -1375,7 +1375,7 @@ export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '多少 vs 几 — combien (grand) vs combien (petit)',
     titleEn: '多少 vs 几 — how much (big) vs how many (small)',
     body:
-      '几 (jǐ, combien — pour 1 à 10 environ) : utilisé quand tu attends un PETIT nombre. 你有几个朋友？ = combien d\'amis as-tu ? (3-4 attendus). Toujours suivi d\'un classificateur : 几 + classif + nom. 多少 (duōshao, combien — pour 10+, ou inconnu) : grand nombre, somme inconnue. 多少钱？ = combien d\'argent ? Pas obligatoirement suivi d\'un classificateur. Erreur classique : utiliser 几 pour un prix → 几钱 ✗ ; correct → 多少钱.',
+      '几 (jǐ, combien — pour 1 à 10 environ) : utilisé quand tu attends un PETIT nombre. 你有几个朋友？ = combien d\'amis as-tu ? (3-4 attendus). RÈGLE D\'OR : 几 toujours suivi d\'un classificateur, 几 + classif + nom. 多少 (duōshao, combien — pour 10+, ou inconnu) : grand nombre, somme inconnue. 多少钱？ = combien d\'argent ? Remarque : pas obligatoirement suivi d\'un classificateur. Attention : erreur classique — utiliser 几 pour un prix → 几钱 ✗ ; correct → 多少钱.',
     bodyEn:
       '几 (jǐ, how many — for 1 to 10 roughly): used when expecting a SMALL number. 你有几个朋友？ = how many friends? (3-4 expected). Always followed by a classifier. 多少 (duōshao, how much — for 10+, or unknown): big number, unknown sum. 多少钱？ = how much money? Not necessarily followed by a classifier. Common mistake: using 几 for a price → 几钱 ✗; correct → 多少钱.',
     items: [
@@ -1395,7 +1395,7 @@ export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '多 et 少 — beaucoup et peu (sans nombre exact)',
     titleEn: '多 and 少 — many and few (no exact number)',
     body:
-      'Sans demander un chiffre précis : 很多 (beaucoup) et 很少 (peu). 中国有很多人 = il y a beaucoup de monde en Chine. 我有很少时间 = j\'ai peu de temps. ATTENTION position : 多/少 + nom (sans 的). Pour comparer : X 比 Y 多 (X plus que Y), X 比 Y 少 (X moins que Y). À l\'oral, on dit aussi 不少 (pas peu = pas mal) qui signifie « beaucoup » de façon adoucie.',
+      'Sans demander un chiffre précis : 很多 (beaucoup) et 很少 (peu). 中国有很多人 = il y a beaucoup de monde en Chine. 我有很少时间 = j\'ai peu de temps. Attention : position 多/少 + nom (sans 的). Astuce : pour comparer, X 比 Y 多 (X plus que Y), X 比 Y 少 (X moins que Y). Remarque : à l\'oral, on dit aussi 不少 (pas peu = pas mal) qui signifie « beaucoup » de façon adoucie.',
     bodyEn:
       'Without asking a precise number: 很多 (many/a lot) and 很少 (few/little). 中国有很多人 = China has many people. 我有很少时间 = I have little time. CAREFUL position: 多/少 + noun (no 的). To compare: X 比 Y 多 (X more than Y), X 比 Y 少 (X less than Y). In speech, also 不少 (not few = quite a lot) which means «many» in a softened way.',
     items: [
@@ -1418,7 +1418,7 @@ export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '去 vs 来 — du point de vue du locuteur',
     titleEn: '去 vs 来 — from the speaker\'s POV',
     body:
-      '去 (qù, aller) = mouvement LOIN du locuteur. 我去北京 = je vais à Pékin. 来 (lái, venir) = mouvement VERS le locuteur. 你来我家 = tu viens chez moi. PIÈGE FRANCAIS : « je viens à ton bureau » se dit 我去你的办公室 (du point de vue du LOCUTEUR, pas de l\'auditeur). En chinois, le pivot est TOUJOURS où le locuteur EST PHYSIQUEMENT, pas où il sera. Si tu téléphones de ta maison à un ami au resto et que tu vas le rejoindre : 我去找你.',
+      '去 (qù, aller) = mouvement LOIN du locuteur. 我去北京 = je vais à Pékin. 来 (lái, venir) = mouvement VERS le locuteur. 你来我家 = tu viens chez moi. Attention : piège francophone — « je viens à ton bureau » se dit 我去你的办公室 (du point de vue du LOCUTEUR, pas de l\'auditeur). RÈGLE D\'OR : en chinois, le pivot est TOUJOURS où le locuteur EST PHYSIQUEMENT, pas où il sera. Remarque : si tu téléphones de ta maison à un ami au resto et que tu vas le rejoindre, 我去找你.',
     bodyEn:
       '去 (qù, go) = movement AWAY from the speaker. 我去北京 = I\'m going to Beijing. 来 (lái, come) = movement TOWARDS the speaker. 你来我家 = you come to my place. ENGLISH TRAP: «I\'m coming to your office» is 我去你的办公室 (from the SPEAKER\'s POV, not the listener\'s). In Chinese, the pivot is ALWAYS where the speaker IS PHYSICALLY. If you phone from home to a friend at the restaurant: 我去找你.',
     items: [
@@ -1438,7 +1438,7 @@ export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: 'Composer le mouvement : 上来, 下去, 进来, 出去',
     titleEn: 'Compose movement: 上来, 下去, 进来, 出去',
     body:
-      '来/去 se combinent avec des verbes de direction : 上 (monter), 下 (descendre), 进 (entrer), 出 (sortir), 回 (rentrer). Quatre exemples canoniques : 上来 = monter VERS toi, 下去 = descendre AWAY (loin de toi), 进来 = entrer (vers le locuteur — « entrez ! »), 出去 = sortir (loin du locuteur — « sors ! »). Quand quelqu\'un frappe à la porte et tu cries « entrez » → 请进来. Toujours du POV du locuteur.',
+      '来/去 se combinent avec des verbes de direction : 上 (monter), 下 (descendre), 进 (entrer), 出 (sortir), 回 (rentrer). Règle : quatre exemples canoniques. 上来 = monter VERS toi, 下去 = descendre AWAY (loin de toi), 进来 = entrer (vers le locuteur — « entrez ! »), 出去 = sortir (loin du locuteur — « sors ! »). Astuce : quand quelqu\'un frappe à la porte et tu cries « entrez » → 请进来. RÈGLE D\'OR : toujours du POV du locuteur.',
     bodyEn:
       '来/去 combine with directional verbs: 上 (go up), 下 (go down), 进 (enter), 出 (exit), 回 (return). Four canonical examples: 上来 = come up TOWARD you, 下去 = go down AWAY, 进来 = enter (toward speaker — «come in!»), 出去 = exit (away from speaker — «get out!»). When someone knocks and you yell «come in» → 请进来. Always from speaker\'s POV.',
     items: [
@@ -1461,7 +1461,7 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '会 vs 能 — capacité acquise vs possible maintenant',
     titleEn: '会 vs 能 — learned ability vs currently possible',
     body:
-      '会 (huì, savoir faire — capacité ACQUISE par apprentissage). 我会说中文 = je sais parler chinois (j\'ai appris). 我会开车 = je sais conduire. 能 (néng, pouvoir — capacité POSSIBLE en ce moment). 我今天能来 = je peux venir aujourd\'hui (rien ne m\'en empêche). 我今天不能开车，我喝了酒 = je ne peux pas conduire, j\'ai bu. Différence radicale : 会 = APPRIS ; 能 = POSSIBLE maintenant. « Je peux conduire mais pas aujourd\'hui » → 我会开车，但今天不能.',
+      'RÈGLE D\'OR : 会 (huì, savoir faire — capacité ACQUISE par apprentissage). 我会说中文 = je sais parler chinois (j\'ai appris). 我会开车 = je sais conduire. 能 (néng, pouvoir — capacité POSSIBLE en ce moment). 我今天能来 = je peux venir aujourd\'hui (rien ne m\'en empêche). 我今天不能开车，我喝了酒 = je ne peux pas conduire, j\'ai bu. Astuce : différence radicale — 会 = APPRIS, 能 = POSSIBLE maintenant. Remarque : « Je peux conduire mais pas aujourd\'hui » → 我会开车，但今天不能.',
     bodyEn:
       '会 (huì, know how to — LEARNED ability). 我会说中文 = I can speak Chinese (I learned). 我会开车 = I can drive. 能 (néng, can — currently POSSIBLE). 我今天能来 = I can come today. 我今天不能开车，我喝了酒 = I can\'t drive today, I drank. Radical difference: 会 = LEARNED; 能 = POSSIBLE right now. «I can drive but not today» → 我会开车，但今天不能.',
     items: [
@@ -1481,7 +1481,7 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '可以 — la permission et l\'accord',
     titleEn: '可以 — permission and agreement',
     body:
-      '可以 (kěyǐ, être autorisé / pouvoir avec permission). 我可以坐这里吗？ = puis-je m\'asseoir ici ? Différence avec 能 : 可以 implique souvent une PERMISSION (sociale, légale), 能 une CAPACITÉ matérielle. 你可以走了 = tu peux partir (je te le permets). 你能走吗？ = es-tu capable de partir ? À l\'oral pour accepter : 可以 (OK), 不可以 (non, pas OK).',
+      '可以 (kěyǐ, être autorisé / pouvoir avec permission). 我可以坐这里吗？ = puis-je m\'asseoir ici ? RÈGLE D\'OR : différence avec 能 — 可以 implique souvent une PERMISSION (sociale, légale), 能 une CAPACITÉ matérielle. Astuce : 你可以走了 = tu peux partir (je te le permets), 你能走吗？ = es-tu capable de partir ? Remarque : à l\'oral pour accepter, 可以 (OK), 不可以 (non, pas OK).',
     bodyEn:
       '可以 (kěyǐ, be allowed / can with permission). 我可以坐这里吗？= may I sit here? Difference from 能: 可以 often implies PERMISSION (social, legal), 能 a material CAPACITY. 你可以走了 = you may leave (I permit it). 你能走吗？= are you able to leave? In speech to accept: 可以 (OK), 不可以 (no, not OK).',
     items: [
@@ -1512,7 +1512,7 @@ export const a1GrammarSvoLearnSections: LessonV2LearnSection[] = [
     title: 'L\'ordre des mots : Sujet → Verbe → Objet',
     titleEn: 'Word order: Subject → Verb → Object',
     body:
-      'En chinois, c\'est Sujet → Verbe → Objet — le même ordre qu\'en français. C\'est une excellente nouvelle : « Je mange du riz » se construit dans le même ordre qu\'en chinois.\n→ 我吃米饭 = wǒ chī mǐfàn (je / mange / du riz)\nLittéralement : « Je mange du riz. »\n\nRéflexe à prendre : tu peux PRESQUE traduire mot à mot dans l\'ordre français pour les phrases simples du quotidien. Le mandarin est l\'ami du francophone sur ce point.',
+      'RÈGLE D\'OR : en chinois, c\'est Sujet → Verbe → Objet — le même ordre qu\'en français. Remarque : c\'est une excellente nouvelle, « Je mange du riz » se construit dans le même ordre qu\'en chinois. → 我吃米饭 = wǒ chī mǐfàn (je / mange / du riz). Littéralement « Je mange du riz. ». Astuce : tu peux PRESQUE traduire mot à mot dans l\'ordre français pour les phrases simples du quotidien. Le mandarin est l\'ami du francophone sur ce point.',
     bodyEn:
       'Chinese uses Subject → Verb → Object — the same order as English. Great news: «I eat rice» builds in the same order in Chinese.\n→ 我吃米饭 = wǒ chī mǐfàn (I / eat / rice)\nLiterally: «I eat rice».\n\nReflex: for simple everyday sentences, you can ALMOST translate word-for-word in English order. Mandarin is friendly to English speakers on this point.',
     tokenizedSentences: [
@@ -1578,7 +1578,7 @@ export const a1GrammarSvoLearnSections: LessonV2LearnSection[] = [
     title: 'Le temps va AVANT le verbe (≠ français)',
     titleEn: 'Time goes BEFORE the verb (≠ English)',
     body:
-      'En français on dit « Je mange du riz DEMAIN » — le temps peut aller à la fin. En chinois, JAMAIS. Le temps se place toujours AVANT le verbe, soit juste après le sujet, soit même tout au début.\n\n✓ 我明天吃米饭 (je / demain / mange / du riz)\n✓ 明天我吃米饭 (demain / je / mange / du riz)\n✗ 我吃米饭明天 — interdit, totalement bancal à l\'oreille chinoise.\n\nMêmes règles pour : 今天 (aujourd\'hui), 昨天 (hier), 早上 (le matin), 晚上 (le soir), 现在 (maintenant).',
+      'En français on dit « Je mange du riz DEMAIN » — le temps peut aller à la fin. Attention : en chinois, JAMAIS. RÈGLE D\'OR : le temps se place toujours AVANT le verbe, soit juste après le sujet, soit même tout au début. ✓ 我明天吃米饭 (je / demain / mange / du riz). ✓ 明天我吃米饭 (demain / je / mange / du riz). ✗ 我吃米饭明天 — interdit, totalement bancal à l\'oreille chinoise. Remarque : mêmes règles pour 今天 (aujourd\'hui), 昨天 (hier), 早上 (le matin), 晚上 (le soir), 现在 (maintenant).',
     bodyEn:
       'In English you can say «I eat rice TOMORROW» — time can go at the end. In Chinese, NEVER. Time always goes BEFORE the verb, either right after the subject, or at the very beginning.\n\n✓ 我明天吃米饭 (I / tomorrow / eat / rice)\n✓ 明天我吃米饭 (tomorrow / I / eat / rice)\n✗ 我吃米饭明天 — forbidden, sounds totally off to a Chinese ear.\n\nSame rule for: 今天 (today), 昨天 (yesterday), 早上 (morning), 晚上 (evening), 现在 (now).',
     tokenizedSentences: [
@@ -1641,7 +1641,7 @@ export const a1GrammarSvoLearnSections: LessonV2LearnSection[] = [
     title: 'Aucune conjugaison : c\'est toujours le même verbe',
     titleEn: 'No conjugation: same verb every time',
     body:
-      'Le chinois est INVARIABLE : pas de conjugaison, pas d\'accord, pas de pluriel sur les verbes. 吃 (manger) reste 吃 quel que soit le sujet.\n\n我吃 / 你吃 / 他吃 / 她吃 / 我们吃 / 你们吃 / 他们吃 — toujours 吃.\n\nC\'est le même principe pour TOUS les verbes. Une fois que tu connais 吃, tu sais comment dire « je mange », « nous mangions », « ils ont mangé » — tu ajoutes juste un mot temporel ou une particule (cf. modules suivants pour 了, 过, 着).',
+      'RÈGLE D\'OR : le chinois est INVARIABLE — pas de conjugaison, pas d\'accord, pas de pluriel sur les verbes. 吃 (manger) reste 吃 quel que soit le sujet. 我吃 / 你吃 / 他吃 / 她吃 / 我们吃 / 你们吃 / 他们吃 — toujours 吃. Remarque : c\'est le même principe pour TOUS les verbes. Astuce : une fois que tu connais 吃, tu sais comment dire « je mange », « nous mangions », « ils ont mangé » — tu ajoutes juste un mot temporel ou une particule (cf. modules suivants pour 了, 过, 着).',
     bodyEn:
       'Chinese is INVARIABLE: no conjugation, no agreement, no plural on verbs. 吃 (to eat) stays 吃 whatever the subject.\n\n我吃 / 你吃 / 他吃 / 她吃 / 我们吃 / 你们吃 / 他们吃 — always 吃.\n\nSame for ALL verbs. Once you know 吃, you know how to say «I eat», «we ate», «they have eaten» — you just add a time word or particle (see next modules for 了, 过, 着).',
     items: [

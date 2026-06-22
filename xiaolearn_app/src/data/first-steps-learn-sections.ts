@@ -25,7 +25,7 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
     title: 'Le passe-partout : 你好',
     titleEn: 'The universal greeting: 你好',
     body:
-      'En mandarin, il n\'existe pas de « bonjour » unique comme en français. Le réflexe de base, c\'est 你好 (nǐ hǎo), littéralement « tu + bien ». On l\'utilise toute la journée, avec presque tout le monde.\nSa version respectueuse est 您好 (nín hǎo), avec 您 — un « vous » de politesse réservé aux personnes plus âgées, aux clients, aux professeurs.',
+      'En mandarin, il n\'existe pas de « bonjour » unique comme en français. Le réflexe de base, c\'est 你好 (nǐ hǎo), littéralement « tu + bien ». Règle : on l\'utilise toute la journée, avec presque tout le monde. Remarque : sa version respectueuse est 您好 (nín hǎo), avec 您 — un « vous » de politesse réservé aux personnes plus âgées, aux clients, aux professeurs.',
     bodyEn:
       'Mandarin has no single word for "hello" like English. The default reflex is 你好 (nǐ hǎo), literally "you + good". You can use it all day, with almost anyone.\nThe respectful version is 您好 (nín hǎo), with 您 — a polite "you" reserved for elders, customers, teachers.',
     items: [
@@ -87,7 +87,7 @@ export const introductionsLearnSections: LessonV2LearnSection[] = [
     title: 'Les pronoms de base',
     titleEn: 'Basic pronouns',
     body:
-      'Trois mots seulement pour désigner les gens au singulier : 我 (wǒ) = je, 你 (nǐ) = tu, 他/她 (tā) = il/elle. Au pluriel, on ajoute 们 (men) : 我们 = nous, 你们 = vous, 他们 = ils.\nLes pronoms ne changent jamais — pas de conjugaison, pas de déclinaison. 我 veut dire aussi bien « je », « moi », « mon ».',
+      'Trois mots seulement pour désigner les gens au singulier : 我 (wǒ) = je, 你 (nǐ) = tu, 他/她 (tā) = il/elle. Au pluriel, on ajoute 们 (men) : 我们 = nous, 你们 = vous, 他们 = ils. Règle d\'or : les pronoms ne changent jamais — pas de conjugaison, pas de déclinaison. 我 veut dire aussi bien « je », « moi », « mon ».',
     bodyEn:
       'Only three basic singular pronouns: 我 (wǒ) = I, 你 (nǐ) = you, 他/她 (tā) = he/she. For the plural, add 们 (men): 我们 = we, 你们 = you, 他们 = they.\nPronouns never change — no conjugation, no declension. 我 means "I", "me", or "my" depending on context.',
     items: [
@@ -105,7 +105,7 @@ export const introductionsLearnSections: LessonV2LearnSection[] = [
     title: 'Dire son nom',
     titleEn: 'Saying your name',
     body:
-      'Deux structures possibles. La plus naturelle : 我叫 + [nom] (wǒ jiào = « je m\'appelle »). La plus formelle : 我的名字是 + [nom] (wǒ de míng zì shì = « mon nom est »).\nPour demander à quelqu\'un son nom, on dit 你叫什么名字 ? (« tu + t\'appeles + quoi + nom ? »).',
+      'Deux structures possibles. La plus naturelle : 我叫 + [nom] (wǒ jiào = « je m\'appelle »). La plus formelle : 我的名字是 + [nom] (wǒ de míng zì shì = « mon nom est »). Astuce : pour demander à quelqu\'un son nom, on dit 你叫什么名字 ? (« tu + t\'appeles + quoi + nom ? »).',
     bodyEn:
       'Two structures. The most natural: 我叫 + [name] (wǒ jiào = "I am called"). The more formal: 我的名字是 + [name] (wǒ de míng zì shì = "my name is").\nTo ask someone\'s name: 你叫什么名字? ("you + called + what + name?").',
     items: [
@@ -143,7 +143,7 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     title: 'Remercier et répondre',
     titleEn: 'Thanking and replying',
     body:
-      '谢谢 (xiè xiè) est le « merci » universel. On peut renforcer avec 谢谢你 (merci à toi) ou 非常感谢 (fēi cháng gǎn xiè) « merci beaucoup » dans un cadre plus formel.\nPour répondre, on dit 不客气 (bú kè qì), littéralement « ne + faire + cérémonie » — « pas de quoi ».',
+      '谢谢 (xiè xiè) est le « merci » universel. Astuce : on peut renforcer avec 谢谢你 (merci à toi) ou 非常感谢 (fēi cháng gǎn xiè) « merci beaucoup » dans un cadre plus formel. Pour répondre, on dit 不客气 (bú kè qì), littéralement « ne + faire + cérémonie » — « pas de quoi ».',
     bodyEn:
       '谢谢 (xiè xiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēi cháng gǎn xiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (bú kè qì), literally "don\'t + make + ceremony" — "you\'re welcome".',
     items: [
@@ -161,7 +161,7 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     title: 'S\'excuser et pardonner',
     titleEn: 'Apologizing and forgiving',
     body:
-      'Pour s\'excuser, deux niveaux. 对不起 (duì bu qǐ) est l\'excuse la plus forte, littéralement « pas + pouvoir + te + regarder en face ». 打扰 (dǎ rǎo) « je te dérange » s\'utilise quand on interrompt quelqu\'un.\nLa réponse bienveillante est 没关系 (méi guān xi) « pas grave, pas de rapport ».',
+      'Pour s\'excuser, deux niveaux. 对不起 (duì bu qǐ) est l\'excuse la plus forte, littéralement « pas + pouvoir + te + regarder en face ». 打扰 (dǎ rǎo) « je te dérange » s\'utilise quand on interrompt quelqu\'un. Remarque : la réponse bienveillante est 没关系 (méi guān xi) « pas grave, pas de rapport ».',
     bodyEn:
       'Two levels of apology. 对不起 (duì bu qǐ) is the strongest one, literally "cannot + face + you". 打扰 (dǎ rǎo) "I\'m bothering you" is used when interrupting someone.\nThe warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
     items: [
@@ -187,7 +187,7 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     title: 'Quoi ? Qui ?',
     titleEn: 'What? Who?',
     body:
-      '什么 (shén me) = « quoi ». On le place où on veut avoir la réponse, sans inversion : 你叫什么 ? (« tu t\'appelles quoi ? »), 这是什么 ? (« c\'est quoi ça ? »).\n谁 (shéi, parfois shuí) = « qui ». Même logique : 他是谁 ? (« lui + est + qui ? »).',
+      '什么 (shén me) = « quoi ». Règle : on le place où on veut avoir la réponse, sans inversion. 你叫什么 ? (« tu t\'appelles quoi ? »), 这是什么 ? (« c\'est quoi ça ? »). 谁 (shéi, parfois shuí) = « qui ». Même logique : 他是谁 ? (« lui + est + qui ? »).',
     bodyEn:
       '什么 (shén me) = "what". Place it exactly where the answer goes, no word-swap: 你叫什么? ("you called what?"), 这是什么? ("this is what?").\n谁 (shéi, sometimes shuí) = "who". Same logic: 他是谁? ("he is who?").',
     items: [
@@ -204,7 +204,7 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     title: 'Où ? Comment ?',
     titleEn: 'Where? How?',
     body:
-      '哪 (nǎ) = « lequel, où » ; il se combine en 哪儿 (nǎr) ou 哪里 (nǎ lǐ) pour « où » (北京 vs sud).\n怎么 (zěn me) = « comment ». Il sert à demander une manière : 怎么说 ? (« comment dit-on ? »), 怎么去 ? (« comment y aller ? »).',
+      '哪 (nǎ) = « lequel, où » ; il se combine en 哪儿 (nǎr) ou 哪里 (nǎ lǐ) pour « où » (北京 vs sud). 怎么 (zěn me) = « comment ». Règle : il sert à demander une manière. 怎么说 ? (« comment dit-on ? »), 怎么去 ? (« comment y aller ? »).',
     bodyEn:
       '哪 (nǎ) = "which, where"; it combines into 哪儿 (nǎr) or 哪里 (nǎ lǐ) for "where" (北京 is used in the north, 哪里 in the south).\n怎么 (zěn me) = "how". Used to ask a manner: 怎么说? ("how do you say it?"), 怎么去? ("how to get there?").',
     items: [
@@ -223,7 +223,7 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     title: 'Combien ?',
     titleEn: 'How many?',
     body:
-      'Deux mots pour « combien ». 几 (jǐ) pour les petits nombres qu\'on imagine moins de 10 (几岁 = quel âge, 几点 = quelle heure). 多少 (duō shǎo) pour tout le reste, sans limite (多少钱 = combien ça coûte ?).',
+      'Deux mots pour « combien ». Règle : 几 (jǐ) pour les petits nombres qu\'on imagine moins de 10 (几岁 = quel âge, 几点 = quelle heure). 多少 (duō shǎo) pour tout le reste, sans limite (多少钱 = combien ça coûte ?).',
     bodyEn:
       'Two words for "how many". 几 (jǐ) for small counts, typically under 10 (几岁 = how old, 几点 = what time). 多少 (duō shǎo) for everything else, no upper limit (多少钱 = how much does it cost?).',
     items: [
@@ -248,7 +248,7 @@ export const yesNoLearnSections: LessonV2LearnSection[] = [
     title: 'Pas de « oui / non » direct',
     titleEn: 'No direct "yes / no"',
     body:
-      'Le chinois n\'a pas de mot qui signifie « oui » ou « non » de manière universelle. On répète le verbe de la question, affirmatif ou négatif.\nExemple : 你去吗 ? (tu y vas ?) → 去 (oui) / 不去 (non). 你是学生吗 ? (tu es étudiant ?) → 是 / 不是.',
+      'Le chinois n\'a pas de mot qui signifie « oui » ou « non » de manière universelle. Règle d\'or : on répète le verbe de la question, affirmatif ou négatif. Exemple : 你去吗 ? (tu y vas ?) → 去 (oui) / 不去 (non). 你是学生吗 ? (tu es étudiant ?) → 是 / 不是.',
     bodyEn:
       'Chinese has no universal word for "yes" or "no". You repeat the verb of the question, affirmatively or negatively.\nExample: 你去吗? (are you going?) → 去 (yes) / 不去 (no). 你是学生吗? (are you a student?) → 是 / 不是.',
     items: [
@@ -291,7 +291,7 @@ export const numbersLearnSections: LessonV2LearnSection[] = [
     title: 'De 1 à 5',
     titleEn: 'From 1 to 5',
     body:
-      'Les chiffres chinois sont des caractères simples, à connaître par cœur. Chaque chiffre a un ton précis : attention particulière à 一 (yī, 1er ton) et 五 (wǔ, 3e ton).',
+      'Les chiffres chinois sont des caractères simples, à connaître par cœur. Attention : chaque chiffre a un ton précis, soigne particulièrement 一 (yī, 1er ton) et 五 (wǔ, 3e ton).',
     bodyEn:
       'Chinese numbers are simple characters to memorize. Each digit has a specific tone: pay attention to 一 (yī, 1st tone) and 五 (wǔ, 3rd tone).',
     items: [
@@ -331,7 +331,7 @@ export const numbersLearnSections: LessonV2LearnSection[] = [
     title: 'Zéro et grandes dizaines',
     titleEn: 'Zero and larger tens',
     body:
-      'Le zéro se dit 零 (líng) et s\'écrit sous une forme simplifiée 〇 quand on écrit à la main.\n百 (bǎi) = cent, 千 (qiān) = mille. La progression est puissance de 10 comme en français, mais avec une rupture à partir de 10 000 (万 wàn).',
+      'Le zéro se dit 零 (líng) et s\'écrit sous une forme simplifiée 〇 quand on écrit à la main. 百 (bǎi) = cent, 千 (qiān) = mille. Règle : la progression est puissance de 10 comme en français. Exception : à partir de 10 000, le chinois introduit une nouvelle unité 万 (wàn).',
     bodyEn:
       'Zero is 零 (líng), often handwritten as 〇.\n百 (bǎi) = hundred, 千 (qiān) = thousand. The system follows powers of 10 like English, but breaks at 10,000 (万 wàn).',
     items: [
@@ -356,7 +356,7 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     title: 'Situer dans le temps',
     titleEn: 'Time reference points',
     body:
-      'Trois mots pour se repérer : 现在 (xiàn zài) = maintenant, 今天 (jīn tiān) = aujourd\'hui, 明天 (míng tiān) = demain, 昨天 (zuó tiān) = hier.\nPoint clé : ces mots se placent au début de la phrase, pas à la fin comme en français. 我今天去北京 = « je vais à Pékin aujourd\'hui ».',
+      'Trois mots pour se repérer : 现在 (xiàn zài) = maintenant, 今天 (jīn tiān) = aujourd\'hui, 明天 (míng tiān) = demain, 昨天 (zuó tiān) = hier. Règle d\'or : ces mots se placent au début de la phrase, pas à la fin comme en français. 我今天去北京 = « je vais à Pékin aujourd\'hui ».',
     bodyEn:
       'Four core reference words: 现在 (xiàn zài) = now, 今天 (jīn tiān) = today, 明天 (míng tiān) = tomorrow, 昨天 (zuó tiān) = yesterday.\nKey point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
     items: [
@@ -395,7 +395,7 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     title: 'Donner l\'heure',
     titleEn: 'Telling the time',
     body:
-      'L\'heure se construit chiffre + 点 (diǎn = heure) + chiffre + 分 (fēn = minute). Exemple : 三点十五分 (sān diǎn shí wǔ fēn) = 3h15.\nPour demander : 现在几点 ? (xiàn zài jǐ diǎn) — « il est quelle heure ? ».',
+      'L\'heure se construit chiffre + 点 (diǎn = heure) + chiffre + 分 (fēn = minute). Exemple : 三点十五分 (sān diǎn shí wǔ fēn) = 3h15. Astuce : pour demander, dis 现在几点 ? (xiàn zài jǐ diǎn) — « il est quelle heure ? ».',
     bodyEn:
       'Time is built digit + 点 (diǎn = o\'clock) + digit + 分 (fēn = minute). Example: 三点十五分 (sān diǎn shí wǔ fēn) = 3:15.\nTo ask: 现在几点? (xiàn zài jǐ diǎn) — "what time is it?".',
     items: [
@@ -439,7 +439,7 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     title: 'Frères et sœurs',
     titleEn: 'Siblings',
     body:
-      'Le chinois distingue toujours aîné et cadet pour les frères et sœurs. 哥哥 = grand frère, 弟弟 = petit frère, 姐姐 = grande sœur, 妹妹 = petite sœur.\nImpossible de dire juste « frère » sans préciser l\'ordre — l\'âge relatif est crucial dans la famille chinoise.',
+      'Le chinois distingue toujours aîné et cadet pour les frères et sœurs. 哥哥 = grand frère, 弟弟 = petit frère, 姐姐 = grande sœur, 妹妹 = petite sœur. Règle d\'or : impossible de dire juste « frère » sans préciser l\'ordre — l\'âge relatif est crucial dans la famille chinoise.',
     bodyEn:
       'Chinese always distinguishes older vs. younger siblings. 哥哥 = older brother, 弟弟 = younger brother, 姐姐 = older sister, 妹妹 = younger sister.\nThere\'s no way to say just "brother" without ranking — relative age is central in a Chinese family.',
     items: [
@@ -458,7 +458,7 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     title: 'Enfants et conjoint',
     titleEn: 'Children and spouse',
     body:
-      'Pour parler de ses enfants : 儿子 (ér zi) = fils, 女儿 (nǚ ér) = fille, 孩子 (hái zi) = enfant (terme général).\nPour le conjoint, formel : 丈夫 (zhàng fu) = mari, 妻子 (qī zi) = épouse. Familier : 老公, 老婆 (très utilisés à l\'oral).',
+      'Pour parler de ses enfants : 儿子 (ér zi) = fils, 女儿 (nǚ ér) = fille, 孩子 (hái zi) = enfant (terme général). Remarque : pour le conjoint, formel, on dit 丈夫 (zhàng fu) = mari, 妻子 (qī zi) = épouse. Familier : 老公, 老婆 (très utilisés à l\'oral).',
     bodyEn:
       'For your children: 儿子 (ér zi) = son, 女儿 (nǚ ér) = daughter, 孩子 (hái zi) = child (generic).\nFor a spouse, formal: 丈夫 (zhàng fu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
     items: [
@@ -485,7 +485,7 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
     title: 'Manger et boire',
     titleEn: 'Eating and drinking',
     body:
-      'Deux verbes de base bien distincts : 吃 (chī) = manger, 喝 (hē) = boire. Aucun mot générique pour « consommer » — on choisit l\'un ou l\'autre selon la consistance.\nExemples : 吃饭 (« manger un repas »), 喝水 (« boire de l\'eau »).',
+      'Deux verbes de base bien distincts : 吃 (chī) = manger, 喝 (hē) = boire. Règle : aucun mot générique pour « consommer » — on choisit l\'un ou l\'autre selon la consistance. Exemples : 吃饭 (« manger un repas »), 喝水 (« boire de l\'eau »).',
     bodyEn:
       'Two clearly distinct verbs: 吃 (chī) = to eat, 喝 (hē) = to drink. No umbrella verb for "consume" — you pick based on the consistency.\nExamples: 吃饭 ("eat a meal"), 喝水 ("drink water").',
     items: [
@@ -503,7 +503,7 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
     title: 'Les boissons de base',
     titleEn: 'Basic drinks',
     body:
-      '水 (shuǐ) = eau, 茶 (chá) = thé, 咖啡 (kā fēi) = café, 牛奶 (niú nǎi) = lait.\n茶 est une valeur sûre en Chine : l\'eau chaude servie gratuitement dans les restaurants est presque toujours du thé de base.',
+      '水 (shuǐ) = eau, 茶 (chá) = thé, 咖啡 (kā fēi) = café, 牛奶 (niú nǎi) = lait. Remarque : 茶 est une valeur sûre en Chine — l\'eau chaude servie gratuitement dans les restaurants est presque toujours du thé de base.',
     bodyEn:
       '水 (shuǐ) = water, 茶 (chá) = tea, 咖啡 (kā fēi) = coffee, 牛奶 (niú nǎi) = milk.\n茶 is a safe bet in China: the hot water freely served in restaurants is almost always basic tea.',
     items: [
@@ -522,7 +522,7 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
     title: 'Au restaurant',
     titleEn: 'At the restaurant',
     body:
-      '菜 (cài) = plat, légume. 米饭 (mǐ fàn) = riz cuit servi en accompagnement. 苹果 (píng guǒ) = pomme.\nPour commander, une seule structure : 我要 + [plat] (« je veux… »), ou 我要吃 + [plat] (« je veux manger… »).',
+      '菜 (cài) = plat, légume. 米饭 (mǐ fàn) = riz cuit servi en accompagnement. 苹果 (píng guǒ) = pomme. Astuce : pour commander, une seule structure suffit. 我要 + [plat] (« je veux… »), ou 我要吃 + [plat] (« je veux manger… »).',
     bodyEn:
       '菜 (cài) = dish, vegetable. 米饭 (mǐ fàn) = cooked rice as a side. 苹果 (píng guǒ) = apple.\nTo order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
     items: [
@@ -548,7 +548,7 @@ export const wantsNeedsLearnSections: LessonV2LearnSection[] = [
     title: 'Vouloir concret : 要',
     titleEn: 'Concrete wanting: 要',
     body:
-      '要 (yào) exprime un désir concret, proche de « je veux, je vais prendre ». On l\'utilise au restaurant, au magasin, pour des besoins directs.\nConstruction : 我要 + [objet] / [verbe]. Exemples : 我要水 (« je veux de l\'eau »), 我要去北京 (« je vais à Pékin »).',
+      '要 (yào) exprime un désir concret, proche de « je veux, je vais prendre ». Règle : on l\'utilise au restaurant, au magasin, pour des besoins directs. Construction : 我要 + [objet] / [verbe]. Exemples : 我要水 (« je veux de l\'eau »), 我要去北京 (« je vais à Pékin »).',
     bodyEn:
       '要 (yào) expresses a concrete wish, close to "I want, I\'ll take". Used at restaurants, shops, for direct needs.\nPattern: 我要 + [object] / [verb]. Examples: 我要水 ("I want water"), 我要去北京 ("I am going to Beijing").',
     items: [
@@ -564,7 +564,7 @@ export const wantsNeedsLearnSections: LessonV2LearnSection[] = [
     title: 'Vouloir moins ferme : 想',
     titleEn: 'Softer wanting: 想',
     body:
-      '想 (xiǎng) est plus nuancé : « avoir envie, souhaiter, penser ». On s\'en sert quand le désir n\'est pas ferme, ou quand on parle de projets lointains.\nLa différence avec 要 est subtile mais importante : 我要吃面 = « je vais prendre des nouilles (décision). » 我想吃面 = « j\'aurais envie de nouilles (idée). »',
+      '想 (xiǎng) est plus nuancé : « avoir envie, souhaiter, penser ». Règle : on s\'en sert quand le désir n\'est pas ferme, ou quand on parle de projets lointains. Attention : la différence avec 要 est subtile mais importante. 我要吃面 = « je vais prendre des nouilles (décision). » 我想吃面 = « j\'aurais envie de nouilles (idée). »',
     bodyEn:
       '想 (xiǎng) is more nuanced: "to feel like, to wish, to think". Used when the want is softer, or for distant plans.\nThe difference with 要 is subtle but important: 我要吃面 = "I\'ll have noodles (decision)." 我想吃面 = "I feel like noodles (idea)."',
     items: [
@@ -580,7 +580,7 @@ export const wantsNeedsLearnSections: LessonV2LearnSection[] = [
     title: 'Avoir et ne pas avoir',
     titleEn: 'Having and not having',
     body:
-      '有 (yǒu) = « avoir, il y a ». C\'est le seul verbe chinois dont la négation ne se fait PAS avec 不, mais avec 没 : 没有 (méi yǒu) = « ne pas avoir, il n\'y a pas ».\nExemples : 我有一只猫 (j\'ai un chat), 我没有钱 (je n\'ai pas d\'argent).',
+      '有 (yǒu) = « avoir, il y a ». RÈGLE D\'OR : c\'est le seul verbe chinois dont la négation ne se fait PAS avec 不, mais avec 没. 没有 (méi yǒu) = « ne pas avoir, il n\'y a pas ». Exemples : 我有一只猫 (j\'ai un chat), 我没有钱 (je n\'ai pas d\'argent).',
     bodyEn:
       '有 (yǒu) = "to have, there is". It is the only Chinese verb whose negation is NOT with 不 but with 没: 没有 (méi yǒu) = "not to have, there isn\'t".\nExamples: 我有一只猫 (I have a cat), 我没有钱 (I don\'t have money).',
     items: [
@@ -605,7 +605,7 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
     title: 'Aller et venir',
     titleEn: 'Going and coming',
     body:
-      'Deux verbes de mouvement incontournables : 去 (qù) = aller, partir (direction qui s\'éloigne), 来 (lái) = venir, arriver (direction qui se rapproche).\nLe point de référence est toujours celui qui parle. 来我家 = « viens chez moi » (je suis chez moi). 去他家 = « va chez lui » (je ne suis pas chez lui).',
+      'Deux verbes de mouvement incontournables : 去 (qù) = aller, partir (direction qui s\'éloigne), 来 (lái) = venir, arriver (direction qui se rapproche). Règle d\'or : le point de référence est toujours celui qui parle. 来我家 = « viens chez moi » (je suis chez moi). 去他家 = « va chez lui » (je ne suis pas chez lui).',
     bodyEn:
       'Two essential motion verbs: 去 (qù) = to go, leave (moving away), 来 (lái) = to come, arrive (moving toward).\nThe reference point is always the speaker. 来我家 = "come to my place" (I\'m there). 去他家 = "go to his place" (I\'m not there).',
     items: [
@@ -623,7 +623,7 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
     title: 'Voir, parler, écouter',
     titleEn: 'Seeing, speaking, listening',
     body:
-      'Trois verbes de base pour les sens et la communication.\n看 (kàn) = regarder, voir, lire (un livre).\n说 (shuō) = dire, parler.\n听 (tīng) = écouter, entendre.\nOn dit 说中文 (parler chinois), 听音乐 (écouter de la musique), 看书 (lire un livre).',
+      'Trois verbes de base pour les sens et la communication. 看 (kàn) = regarder, voir, lire (un livre). 说 (shuō) = dire, parler. 听 (tīng) = écouter, entendre. Astuce : on dit 说中文 (parler chinois), 听音乐 (écouter de la musique), 看书 (lire un livre).',
     bodyEn:
       'Three core verbs for senses and communication.\n看 (kàn) = to look, see, read (a book).\n说 (shuō) = to say, speak.\n听 (tīng) = to listen, hear.\nYou say 说中文 (speak Chinese), 听音乐 (listen to music), 看书 (read a book).',
     items: [
@@ -642,7 +642,7 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
     title: 'Faire, écrire, ouvrir',
     titleEn: 'Doing, writing, opening',
     body:
-      'Un petit lot d\'actions très quotidiennes : 做 (zuò) = faire, 写 (xiě) = écrire, 开 (kāi) = ouvrir, démarrer, 关 (guān) = fermer.\n做 est extrêmement productif : 做饭 (cuisiner, « faire un repas »), 做作业 (faire les devoirs), 做工作 (faire un travail).',
+      'Un petit lot d\'actions très quotidiennes : 做 (zuò) = faire, 写 (xiě) = écrire, 开 (kāi) = ouvrir, démarrer, 关 (guān) = fermer. Remarque : 做 est extrêmement productif. 做饭 (cuisiner, « faire un repas »), 做作业 (faire les devoirs), 做工作 (faire un travail).',
     bodyEn:
       'A handful of daily actions: 做 (zuò) = to do, 写 (xiě) = to write, 开 (kāi) = to open, start, 关 (guān) = to close.\n做 is extremely productive: 做饭 (to cook, "make a meal"), 做作业 (do homework), 做工作 (do work).',
     items: [
@@ -668,7 +668,7 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     title: 'Le matin',
     titleEn: 'The morning',
     body:
-      'La journée commence par deux verbes : 起床 (qǐ chuáng) = se lever, littéralement « se soulever du lit », et 睡觉 (shuì jiào) = dormir, « faire le sommeil ». Les deux sont des verbes composés qu\'on utilise tels quels.\nExemples : 我七点起床 (je me lève à 7h), 我十一点睡觉 (je dors à 23h).',
+      'La journée commence par deux verbes : 起床 (qǐ chuáng) = se lever, littéralement « se soulever du lit », et 睡觉 (shuì jiào) = dormir, « faire le sommeil ». Règle : les deux sont des verbes composés qu\'on utilise tels quels. Exemples : 我七点起床 (je me lève à 7h), 我十一点睡觉 (je dors à 23h).',
     bodyEn:
       'The day starts with two verbs: 起床 (qǐ chuáng) = to get up, literally "rise from the bed", and 睡觉 (shuì jiào) = to sleep, "do the sleeping". Both are compound verbs used as single units.\nExamples: 我七点起床 (I get up at 7), 我十一点睡觉 (I sleep at 11 PM).',
     items: [
@@ -685,7 +685,7 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     title: 'Travailler, étudier',
     titleEn: 'Work, study',
     body:
-      '工作 (gōng zuò) = travailler / travail (même mot pour le verbe et le nom). 学习 (xué xí) = étudier, apprendre.\nCes deux mots sont des blocs réutilisables : 我去工作 = « je vais travailler », 我学习中文 = « j\'étudie le chinois ».',
+      '工作 (gōng zuò) = travailler / travail (même mot pour le verbe et le nom). 学习 (xué xí) = étudier, apprendre. Astuce : ces deux mots sont des blocs réutilisables. 我去工作 = « je vais travailler », 我学习中文 = « j\'étudie le chinois ».',
     bodyEn:
       '工作 (gōng zuò) = to work / work (same word for verb and noun). 学习 (xué xí) = to study, learn.\nBoth are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
     items: [
@@ -703,7 +703,7 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     title: 'Aller au bureau, rentrer',
     titleEn: 'Going to work, coming back',
     body:
-      '上 (shàng) et 下 (xià) sont les deux axes du quotidien chinois. 上 = monter, aller à ; 下 = descendre, finir.\nAppliqués à une activité : 上班 = aller au boulot (commencer le travail), 下班 = finir le boulot, 上学 = aller à l\'école, 上课 = commencer un cours.',
+      '上 (shàng) et 下 (xià) sont les deux axes du quotidien chinois. Règle : 上 = monter, aller à ; 下 = descendre, finir. Appliqués à une activité : 上班 = aller au boulot (commencer le travail), 下班 = finir le boulot, 上学 = aller à l\'école, 上课 = commencer un cours.',
     bodyEn:
       '上 (shàng) and 下 (xià) are the two axes of Chinese daily life. 上 = to go up, to attend; 下 = to go down, to finish.\nApplied to an activity: 上班 = go to work, 下班 = leave work, 上学 = go to school, 上课 = start class.',
     items: [
