@@ -15,7 +15,16 @@ export const c11ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Intervenir dans un colloque académique',
     titleEn: 'Speak at an academic conference',
     body:
-      'Ouvrir : 各位老师，各位同学，下午好. Règle : présenter sa contribution avec 我今天想从 X 的角度分析 Y (j\'aimerais analyser Y sous l\'angle X). Citer un travail antérieur : 正如 X 教授在 Y 中提到的 (comme le pr X l\'a souligné dans Y). Énoncer une thèse : 我的核心观点是 X (mon argument central est X). Conclure : 综上所述 (en somme — formule très académique), 我的论点是 X (ma thèse est X). RÈGLE D\'OR : la phrase de modestie 不足之处，请各位指正 (merci de signaler les imperfections) est attendue en fin d\'intervention.',
+      'L\'intervention en colloque suit un **rituel** strict : salutation hiérarchique, cadrage de la thèse, modestie finale.\n' +
+      '\n' +
+      'Charpente d\'une prise de parole :\n' +
+      '- Ouverture : 各位老师，各位同学，下午好\n' +
+      '- Cadrer la contribution : 我今天想从 X 的角度分析 Y (j\'aimerais analyser Y sous l\'angle X)\n' +
+      '- Citer un travail antérieur : 正如 X 教授在 Y 中提到的 (comme le pr X l\'a souligné dans Y)\n' +
+      '- Énoncer la thèse : 我的核心观点是 X (mon argument central est X)\n' +
+      '- Conclure : 综上所述 (formule **académique**), 我的论点是 X\n' +
+      '\n' +
+      'RÈGLE D\'OR : la formule de modestie 不足之处，请各位指正 (merci de signaler les imperfections) est **attendue** en fin d\'intervention — son absence sonne arrogant.',
     bodyEn:
       'Open: 各位老师，各位同学，下午好. Frame contribution: 我今天想从 X 的角度分析 Y (today I\'d like to analyze Y from angle X). Cite prior work: 正如 X 教授在 Y 中提到的 (as Pr X noted in Y). State a thesis: 我的核心观点是 X (my central argument is X). Close: 综上所述 (in sum — very academic), 我的论点是 X (my thesis is X). Expected modesty in closing: 不足之处，请各位指正 (please point out shortcomings).',
     items: [
@@ -35,7 +44,16 @@ export const c11ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Q&A : répondre à une question critique',
     titleEn: 'Q&A: respond to a critical question',
     body:
-      'Reconnaître la question : 您提的问题非常重要 / 这是一个很好的问题. Astuce : gagner du temps avec 让我想一下 (laissez-moi réfléchir). Restituer : 您的意思是 X，对吗 ? (vous voulez dire X ?). Règle : structurer la réponse en 3 temps avec 首先… 其次… 最后…. Remarque : si tu ne sais pas, dis 这一点我还没有深入研究，但我的初步看法是 X (sur ce point je n\'ai pas approfondi, mais mon avis préliminaire est X) — montre l\'humilité intellectuelle, valorisée. Conclure poliment : 谢谢您的提问，希望我的回答能解答您的疑问.',
+      'Répondre à une question critique en Q&A demande une **séquence rituelle** : reconnaître, restituer, structurer, conclure.\n' +
+      '\n' +
+      'Phases à enchaîner :\n' +
+      '- Reconnaître : 您提的问题非常重要 / 这是一个很好的问题\n' +
+      '- Gagner du temps : 让我想一下 (laissez-moi réfléchir)\n' +
+      '- Restituer : 您的意思是 X，对吗 ? (vous voulez dire X ?)\n' +
+      '- Structurer en 3 temps : 首先… 其次… 最后…\n' +
+      '- Conclure : 谢谢您的提问，希望我的回答能解答您的疑问\n' +
+      '\n' +
+      'RÈGLE D\'OR : si tu ne sais pas, dis 这一点我还没有深入研究，但我的初步看法是 X. L\'**humilité intellectuelle** est valorisée — bluffer est risqué en milieu académique chinois.',
     bodyEn:
       'Acknowledge: 您提的问题非常重要 / 这是一个很好的问题. Buy time: 让我想一下 (let me think). Restate: 您的意思是 X，对吗？(you mean X?). Answer in 3 parts: 首先… 其次… 最后…. If you don\'t know: 这一点我还没有深入研究，但我的初步看法是 X (I haven\'t deeply researched this, but my preliminary view is X) — shows intellectual humility, valued. Close politely: 谢谢您的提问，希望我的回答能解答您的疑问.',
     items: [
@@ -58,7 +76,15 @@ export const c11ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Entretien d\'embauche cadre supérieur',
     titleEn: 'Senior executive job interview',
     body:
-      'Présentation : 我毕业于 X 大学，主修 X，目前担任 X (j\'ai étudié X à l\'université X, je suis actuellement X). Règle : présenter les forces avec 我擅长 X (je suis bon en X). Astuce : pour la question piège des faiblesses, dire 我有时过于追求完美，但我正在学习平衡 (parfois trop perfectionniste, j\'apprends à équilibrer) — formule sécurisée chinoise (faiblesse → travail dessus). Pourquoi cette boîte : 贵公司在 X 领域的领先地位让我非常向往 (votre leadership en X m\'attire). RÈGLE D\'OR : sur la question salaire, dis 关于薪资，我希望听听贵公司的标准 (sur le salaire, j\'aimerais entendre votre référentiel). Attention : RENVOIE la question, ne propose JAMAIS de chiffre en premier.',
+      'L\'entretien cadre supérieur en chinois suit un canevas en 4 temps avec des **pièges classiques** à neutraliser par des formules-types.\n' +
+      '\n' +
+      'Séquence d\'un entretien réussi :\n' +
+      '- Présentation : 我毕业于 X 大学，主修 X，目前担任 X (j\'ai étudié X, je suis actuellement X)\n' +
+      '- Forces : 我擅长 X (je suis bon en X)\n' +
+      '- Faiblesses (question piège) : 我有时过于追求完美，但我正在学习平衡 — formule sécurisée (défaut → travail dessus)\n' +
+      '- Pourquoi cette boîte : 贵公司在 X 领域的领先地位让我非常向往\n' +
+      '\n' +
+      'RÈGLE D\'OR : sur la question **salaire**, dis 关于薪资，我希望听听贵公司的标准. **RENVOIE** la question, ne propose JAMAIS de chiffre en premier — celui qui parle d\'abord perd la négociation.',
     bodyEn:
       'Self-intro: 我毕业于 X 大学，主修 X，目前担任 X. Strengths: 我擅长 X. Weaknesses (trap question): 我有时过于追求完美，但我正在学习平衡 — Chinese safe formula (flaw → working on it). Why this company: 贵公司在 X 领域的领先地位让我非常向往. Salary question: 关于薪资，我希望听听贵公司的标准 — DEFLECT, don\'t name a figure first.',
     items: [
@@ -78,7 +104,18 @@ export const c11ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Présenter son équipe à la nouvelle direction',
     titleEn: 'Present your team to new management',
     body:
-      'Cadre : nouveau directeur arrive, tu présentes ton équipe. Règle : structurer en 名字 → 职位 → 主要负责 → 一句亮点 (nom, poste, responsabilité, une force). Ex : 这位是张明，我们的高级工程师，主要负责 X 项目，他在 Y 方面经验非常丰富. Attention : mettre en valeur SANS trop louer — préfère 经验丰富 (expérimenté), 工作认真 (sérieux), 有独到的见解 (a une perspective unique). Conclure : 我们团队希望与您共同努力，把工作做得更好 (notre équipe espère travailler avec vous). Remarque : le 共同努力 (effort commun) est la formule de loyauté/cohésion attendue.',
+      'Présenter son équipe à un nouveau directeur se fait avec **mesure** : valoriser sans surjouer, et finir sur la **cohésion**.\n' +
+      '\n' +
+      'Structure-type par membre :\n' +
+      '- 名字 → 职位 → 主要负责 → 一句亮点 (nom, poste, responsabilité, une force)\n' +
+      '- Ex : 这位是张明，我们的高级工程师，主要负责 X 项目，他在 Y 方面经验非常丰富\n' +
+      '\n' +
+      'Adjectifs **mesurés** à privilégier :\n' +
+      '- 经验丰富 (expérimenté)\n' +
+      '- 工作认真 (sérieux)\n' +
+      '- 有独到的见解 (a une perspective unique)\n' +
+      '\n' +
+      'RÈGLE D\'OR : conclure avec 我们团队希望与您共同努力，把工作做得更好. La formule 共同努力 (**effort commun**) est le marqueur attendu de loyauté et de cohésion.',
     bodyEn:
       'Frame: new director arrives, you intro your team. Structure: 名字 → 职位 → 主要负责 → 一句亮点 (name, role, responsibility, one strength). Ex: 这位是张明，我们的高级工程师，主要负责 X 项目，他在 Y 方面经验非常丰富. Highlight WITHOUT over-praising: 经验丰富, 工作认真, 有独到的见解. Close: 我们团队希望与您共同努力，把工作做得更好. The 共同努力 (joint effort) is the expected loyalty/cohesion formula.',
     items: [
@@ -101,7 +138,16 @@ export const c11ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Débat formel : structurer une intervention',
     titleEn: 'Formal debate: structure an intervention',
     body:
-      'Formule d\'ouverture : 我对 X 的看法是 Y, 我有三个主要论据 (j\'ai 3 arguments principaux). Règle : marquer la structure avec 第一，X / 第二，Y / 第三，Z. Citer une autorité : 根据 X 的研究 (selon les recherches de X). Astuce : anticiper l\'objection avec 有人可能会反驳说 X，但 Y (on pourrait objecter X, mais Y). RÈGLE D\'OR : la concession + reprise 诚然 X，然而 Y (certes X, cependant Y) est la formule très soutenue de la rhétorique C1. Conclure : 综上所述, 我坚信 X (en conclusion, je suis convaincu de X). Remarque : 坚信 (jiānxìn, croire fermement) marque l\'engagement intellectuel.',
+      'Le débat formel suit une **rhétorique** en trois temps : ouverture, arguments, conclusion. Maîtriser la concession est le **marqueur C1** par excellence.\n' +
+      '\n' +
+      'Structure-type d\'une intervention :\n' +
+      '- Ouverture : 我对 X 的看法是 Y, 我有三个主要论据 (j\'ai 3 arguments principaux)\n' +
+      '- Charpente : 第一，X / 第二，Y / 第三，Z\n' +
+      '- Citer une autorité : 根据 X 的研究 (selon les recherches de X)\n' +
+      '- Anticiper l\'objection : 有人可能会反驳说 X，但 Y\n' +
+      '- Conclure : 综上所述, 我坚信 X (en conclusion, je suis convaincu de X)\n' +
+      '\n' +
+      'RÈGLE D\'OR : le combo de **concession + reprise** 诚然 X，然而 Y (certes X, cependant Y) est la **formule rhétorique** la plus prisée du **soutenu** C1. 坚信 (jiānxìn) marque l\'engagement intellectuel.',
     bodyEn:
       'Opening: 我对 X 的看法是 Y, 我有三个主要论据 (I have 3 main arguments). Mark structure: 第一，X / 第二，Y / 第三，Z. Cite authority: 根据 X 的研究 (per X\'s research). Anticipate objection: 有人可能会反驳说 X，但 Y. Concession + recovery: 诚然 X，然而 Y (admittedly X, however Y) — very formal phrase. Close: 综上所述, 我坚信 X (in conclusion, I firmly believe X). 坚信 (jiānxìn, firmly believe) marks intellectual commitment.',
     items: [
@@ -121,7 +167,16 @@ export const c11ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Réfuter une thèse adverse avec élégance',
     titleEn: 'Refute an opposing thesis elegantly',
     body:
-      'Reconnaître la position : 我理解 X 的论点 (je comprends l\'argument de X), 但是… Règle : préférer 但是 doux à 不对 (faux). Astuce : distinguer avec 我认为 X 的观点忽略了一个重要因素 (votre vision néglige un facteur important — sans dire « tu as tort »). Remarque : démolir une donnée avec 这个数据值得商榷 (cette donnée mérite discussion — euphémisme pour « contestable »). Démolir la logique : 这个推理存在跳跃 (ce raisonnement contient un saut logique). Conclure : 因此，我倾向于另一种解读 (je penche vers une autre interprétation). Attention : 倾向 (qīngxiàng, pencher) adoucit la conclusion — ne pas l\'omettre sous peine de paraître péremptoire.',
+      'Réfuter avec **élégance** = jamais dire « 不对 ». La technique C1 passe par des **euphémismes ciblés** qui démontent l\'argument adverse sans attaquer la personne.\n' +
+      '\n' +
+      'Outils de réfutation polie :\n' +
+      '- Reconnaître : 我理解 X 的论点，但是…\n' +
+      '- Distinguer : 我认为 X 的观点忽略了一个重要因素 (néglige un facteur important)\n' +
+      '- Démolir une donnée : 这个数据值得商榷 (mérite discussion — euphémisme pour **contestable**)\n' +
+      '- Démolir la logique : 这个推理存在跳跃 (saut logique)\n' +
+      '- Conclure : 因此，我倾向于另一种解读 (je penche vers une autre interprétation)\n' +
+      '\n' +
+      'RÈGLE D\'OR : 倾向 (pencher) **adoucit** la conclusion. Sans cet adverbe, ta réfutation paraît péremptoire et fait perdre la face à l\'opposant.',
     bodyEn:
       'Acknowledge: 我理解 X 的论点 (I understand X\'s argument), 但是… Prefer soft 但是 to 不对 (wrong). Distinguish: 我认为 X 的观点忽略了一个重要因素 (your view overlooks a key factor — without saying «wrong»). Take down a datum: 这个数据值得商榷 (this datum is debatable — euphemism for «questionable»). Take down logic: 这个推理存在跳跃 (this reasoning has a logical leap). Close: 因此，我倾向于另一种解读 (I lean toward another reading). 倾向 (lean) softens the conclusion.',
     items: [
@@ -144,7 +199,16 @@ export const c11ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Donner une interview à la presse',
     titleEn: 'Give a press interview',
     body:
-      'Phrases-clés : 谢谢您的关注 (merci de votre attention) en intro. Règle : pour une réponse complète, dire 这是一个复杂的问题，我可以从几个角度回答 (question complexe, je vais répondre sous plusieurs angles). RÈGLE D\'OR : éviter de s\'engager avec 现在下结论还为时过早 (il est trop tôt pour conclure). Recadrer : 我想强调的是 X (je tiens à souligner X). Attention : si la question est sensible, dis 这个问题很敏感，我需要谨慎回答 (cette question est sensible, je dois répondre avec prudence). Astuce : pour une question piège, lance 我不太理解您的问题，能否再具体一点 ? (gagner du temps en demandant des précisions).',
+      'L\'interview presse exige un **registre journalistique** : reconnaître, recadrer, esquiver ou préciser, sans jamais s\'engager prématurément.\n' +
+      '\n' +
+      'Boîte à outils du porte-parole :\n' +
+      '- Intro : 谢谢您的关注 (merci de votre attention)\n' +
+      '- Réponse complète : 这是一个复杂的问题，我可以从几个角度回答\n' +
+      '- Recadrer : 我想强调的是 X (je tiens à souligner X)\n' +
+      '- Sujet sensible : 这个问题很敏感，我需要谨慎回答\n' +
+      '- Question piège : 我不太理解您的问题，能否再具体一点 ? (gagner du temps)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la **formule magique** pour ne pas s\'engager — 现在下结论还为时过早 (il est trop tôt pour conclure). Utilisée constamment par les officials chinois, elle évite l\'évasif tout en gardant la porte ouverte.',
     bodyEn:
       'Key phrases: 谢谢您的关注 (thanks for your attention) at start. Full answer: 这是一个复杂的问题，我可以从几个角度回答 (complex question, I\'ll answer from several angles). Avoid commitment: 现在下结论还为时过早 (too early to conclude). Reframe: 我想强调的是 X (I want to stress X). If sensitive: 这个问题很敏感，我需要谨慎回答 (this question is sensitive, I need to answer carefully). Trap question: 我不太理解您的问题，能否再具体一点？(buy time by asking for specifics).',
     items: [
@@ -164,7 +228,17 @@ export const c11ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Faire une déclaration officielle',
     titleEn: 'Make an official statement',
     body:
-      'Format : ouverture solennelle 各位记者朋友，下午好 → corps de la déclaration → conclusion. Vocab : 立场 (position officielle), 表态 (prendre position), 强调 (souligner), 重申 (réitérer). Règle : phrases-types 我们的立场是明确的 (notre position est claire), 我们坚决反对 X (nous nous opposons fermement à X), 我们呼吁各方 X (nous appelons toutes les parties à X), 我们将继续关注 X 的发展 (nous suivrons l\'évolution de X). Conclure : 谢谢大家. Attention : JAMAIS de questions improvisées en déclaration officielle — laisse aux questions structurées après.',
+      'La déclaration officielle suit un **format solennel** rigide : ouverture, corps, conclusion. Le vocabulaire-clé tourne autour de 立场 (position), 表态 (prendre position), 强调 (souligner), 重申 (réitérer).\n' +
+      '\n' +
+      'Phrases-types de la déclaration :\n' +
+      '- Ouverture : 各位记者朋友，下午好\n' +
+      '- Position : 我们的立场是明确的 (notre position est claire)\n' +
+      '- Opposition : 我们坚决反对 X (nous nous opposons fermement à X)\n' +
+      '- Appel : 我们呼吁各方 X (nous appelons toutes les parties à X)\n' +
+      '- Veille : 我们将继续关注 X 的发展 (nous suivrons l\'évolution de X)\n' +
+      '- Clôture : 谢谢大家\n' +
+      '\n' +
+      'RÈGLE D\'OR : 我们将继续关注 X 的发展 est la **formule diplomatique** pour clore poliment sans s\'engager. JAMAIS de questions improvisées dans la déclaration — réserve-les au Q&A structuré.',
     bodyEn:
       'Format: solemn opening 各位记者朋友，下午好 → body → conclusion. Vocab: 立场 (official position), 表态 (take a stand), 强调 (stress), 重申 (reiterate). Set phrases: 我们的立场是明确的 (our position is clear). 我们坚决反对 X (we firmly oppose X). 我们呼吁各方 X (we call on all parties to X). 我们将继续关注 X 的发展 (we will keep monitoring X). Close: 谢谢大家. NEVER take unscripted questions during the statement — save for structured Q&A.',
     items: [
@@ -187,7 +261,21 @@ export const c11ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Banquet d\'affaires : codes culturels',
     titleEn: 'Business banquet: cultural codes',
     body:
-      'Placement : invité d\'honneur en face de la porte ; hôte le plus important dos à la porte. Attention : ne JAMAIS finir entièrement son assiette (signe : tu n\'as pas eu assez). RÈGLE D\'OR : pour les toasts avec un supérieur, ton verre PLUS BAS que le sien (marque de respect). Règle : servir le voisin avant soi-même. Astuce : refuser un plat avec 谢谢，我吃饱了，您慢慢吃 (merci, j\'ai assez mangé, prenez votre temps). Vocab : 主宾 (invité d\'honneur), 敬酒 (porter un toast), 干杯 (cul sec), 随意 (à votre convenance, petite gorgée). Phrases : 大家随意 (servez-vous), 来，我敬您一杯 (je vous porte un toast).',
+      'Le banquet d\'affaires est un **rituel codifié** : placement, gestes, toasts, refus poli — chaque détail signale ta connaissance de la culture.\n' +
+      '\n' +
+      'Codes essentiels :\n' +
+      '- Placement : invité d\'honneur face à la porte ; hôte principal dos à la porte\n' +
+      '- Assiette : ne JAMAIS finir entièrement (signe que tu n\'as pas eu assez)\n' +
+      '- Service : servir le voisin avant soi-même\n' +
+      '- Refuser un plat : 谢谢，我吃饱了，您慢慢吃\n' +
+      '- Toast : 来，我敬您一杯 / 大家随意 (servez-vous)\n' +
+      '\n' +
+      'Vocabulaire :\n' +
+      '- 主宾 (invité d\'honneur)\n' +
+      '- 敬酒 (porter un toast)\n' +
+      '- 干杯 (cul sec) / 随意 (petite gorgée)\n' +
+      '\n' +
+      'RÈGLE D\'OR : avec un supérieur, ton verre **plus bas** que le sien lors du toast. C\'est la **marque de respect** la plus visible — son absence est immédiatement remarquée.',
     bodyEn:
       'Seating: guest of honor faces the door; main host backs to door. Dishes: NEVER fully finish your plate (signal: you didn\'t get enough). Toasts: with a superior, your glass LOWER than theirs (respect). Serve your neighbor before yourself. Refuse a dish: 谢谢，我吃饱了，您慢慢吃. Vocab: 主宾 (guest of honor), 敬酒 (toast), 干杯 (bottoms up), 随意 (small sip). Phrases: 大家随意 (help yourselves), 来，我敬您一杯 (let me toast you).',
     items: [
@@ -207,7 +295,20 @@ export const c11ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Offrir et recevoir un cadeau d\'affaires',
     titleEn: 'Give and receive a business gift',
     body:
-      'Offrir : présenter le cadeau À DEUX MAINS, légèrement incliné. Phrase : 这是一份小礼物，请收下 (un petit cadeau, acceptez). Règle : 不成敬意 (qui n\'est pas digne de votre respect) = formule de modestie obligatoire. Remarque : le receveur DOIT refuser 1-2 fois avant d\'accepter (rituel). Refus poli initial : 您太客气了，不必这样 (vous êtes trop poli, pas la peine). Attention : cadeaux à ÉVITER — horloges (送钟 sounds like 送终 = funérailles), parapluies (散 sounds like 散 = séparation), chaussures, couteaux. Astuce : cadeaux SAFE — thé de qualité, alcool importé, pâtisseries de marque, fruits.',
+      'Le cadeau d\'affaires obéit à un **rituel précis** : geste, formule de modestie, refus rituel, choix de l\'objet. Les homophonies dictent les tabous.\n' +
+      '\n' +
+      'Séquence offrant / recevant :\n' +
+      '- Geste : présenter le cadeau à DEUX MAINS, légèrement incliné\n' +
+      '- Phrase : 这是一份小礼物，请收下\n' +
+      '- Modestie obligatoire : 不成敬意 (cadeau indigne de vous)\n' +
+      '- Refus initial du receveur : 您太客气了，不必这样 (1-2 fois avant d\'accepter)\n' +
+      '\n' +
+      'Cadeaux à ÉVITER (homophonies funestes) :\n' +
+      '- Horloges : 送钟 sonne comme 送终 (**funérailles**)\n' +
+      '- Parapluies : 伞 sonne comme 散 (**séparation**)\n' +
+      '- Chaussures, couteaux\n' +
+      '\n' +
+      'RÈGLE D\'OR : choisis dans la liste **safe** — thé de qualité, alcool importé, pâtisseries de marque, fruits. Et toujours à **deux mains** : à une main = désinvolte, quelle que soit la valeur.',
     bodyEn:
       'Give: present the gift WITH BOTH HANDS, slightly bowed. Phrase: 这是一份小礼物，请收下. 不成敬意 (unworthy of your respect) = mandatory modesty formula. The receiver MUST refuse 1-2 times before accepting (ritual). Polite initial refusal: 您太客气了，不必这样. Gifts to AVOID: clocks (送钟 sounds like 送终 = funeral), umbrellas (sounds like 散 = separation), shoes, knives. SAFE gifts: quality tea, imported alcohol, branded pastries, fruits.',
     items: [
@@ -230,7 +331,17 @@ export const c11ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Médiation diplomatique légère',
     titleEn: 'Light diplomatic mediation',
     body:
-      'Cadre : litige entre 2 partenaires d\'affaires, 2 amis, 2 départements. Position d\'ouverture : 我作为中间人，希望帮助双方找到共识 (en tant qu\'intermédiaire, j\'aimerais aider à trouver un consensus). Règle : reformuler chaque partie avec 我理解 X 方的关切是… / Y 方的诉求是… (les préoccupations de X / les demandes de Y). Astuce : identifier le terrain commun avec 双方都希望 X (les deux veulent X). Proposer : 是否可以考虑一种折中方案 ? (pourrait-on considérer un compromis ?). Clore : 让我们以诚意推动事情向前 (avançons avec sincérité). RÈGLE D\'OR : 诚意 (chéngyì, sincérité) est le mot-clé de la médiation chinoise.',
+      'La médiation chinoise est **structurée** autour d\'un mot-clé culturel : 诚意 (sincérité). L\'intermédiaire reformule, identifie le terrain commun, propose un compromis.\n' +
+      '\n' +
+      'Séquence du médiateur :\n' +
+      '- Ouverture : 我作为中间人，希望帮助双方找到共识\n' +
+      '- Reformuler X : 我理解 X 方的关切是… (les préoccupations de X)\n' +
+      '- Reformuler Y : Y 方的诉求是… (les demandes de Y)\n' +
+      '- Terrain commun : 双方都希望 X (les deux veulent X)\n' +
+      '- Proposer : 是否可以考虑一种折中方案 ?\n' +
+      '- Clore : 让我们以诚意推动事情向前\n' +
+      '\n' +
+      'RÈGLE D\'OR : 诚意 (chéngyì, **sincérité**) est culturellement une **vertu maximale** en Chine. La placer dans ta clôture te positionne immédiatement comme un médiateur respecté.',
     bodyEn:
       'Frame: dispute between 2 business partners, 2 friends, 2 departments. Opening: 我作为中间人，希望帮助双方找到共识 (as intermediary, I\'d like to help find consensus). Reformulate each side: 我理解 X 方的关切是… / Y 方的诉求是… (X\'s concerns / Y\'s requests). Find common ground: 双方都希望 X. Propose: 是否可以考虑一种折中方案？(could we consider a compromise?). Close: 让我们以诚意推动事情向前. 诚意 (sincerity) is the key word of Chinese mediation.',
     items: [
@@ -250,7 +361,16 @@ export const c11ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Recommander quelqu\'un avec poids',
     titleEn: 'Recommend someone with weight',
     body:
-      'Format : ouverture, présentation, recommandation, ouverture finale. Règle : 我郑重向您推荐 X (je vous recommande solennellement X) — 郑重 (zhèngzhòng, solennellement) = mot-clé du sérieux. Qualifier : 他是我合作多年的同事 (collègue de longue date), 他在 X 方面有非常出色的表现 (excellent en X). Force : 我相信 X 一定能为贵公司带来价值 (apportera de la valeur). Attention : 我可以为他作担保 (je me porte garant) engage TA réputation, à utiliser seulement si confiance totale. Conclure : 如有需要，请随时联系我.',
+      'Recommander quelqu\'un avec **poids** mobilise un vocabulaire **solennel** — 郑重 (solennellement) en est le mot-clé. La garantie personnelle (担保) engage ta propre réputation.\n' +
+      '\n' +
+      'Format de la recommandation :\n' +
+      '- Ouverture : 我郑重向您推荐 X (je vous recommande solennellement X)\n' +
+      '- Qualifier : 他是我合作多年的同事 (collègue de longue date)\n' +
+      '- Excellence : 他在 X 方面有非常出色的表现 (excellent en X)\n' +
+      '- Force : 我相信 X 一定能为贵公司带来价值 (apportera de la valeur)\n' +
+      '- Clôture : 如有需要，请随时联系我\n' +
+      '\n' +
+      'RÈGLE D\'OR : 我可以为他作担保 (je me porte **garant**) est l\'engagement **maximum**. À n\'utiliser qu\'avec une confiance totale : si la personne déçoit, ta réputation chute aussi — c\'est le système du 信用 (xìnyòng).',
     bodyEn:
       'Format: opening, intro, recommendation, final opening. Phrases: 我郑重向您推荐 X (I solemnly recommend X) — 郑重 (solemnly) = seriousness key word. Qualify: 他是我合作多年的同事 (long-time colleague), 他在 X 方面有非常出色的表现 (excellent in X). Strength: 我相信 X 一定能为贵公司带来价值 (will bring value). 我可以为他作担保 (I vouch for him) — stakes YOUR reputation, use only with full trust. Close: 如有需要，请随时联系我.',
     items: [
@@ -273,7 +393,16 @@ export const c11ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Email cadre supérieur : ton soutenu',
     titleEn: 'Senior executive email: formal tone',
     body:
-      'Sujet : 关于 X 项目的若干思考 (quelques réflexions sur le projet X). Remarque : 若干 (plusieurs) sonne soutenu. Ouverture : 尊敬的 X 总 (cher président X). Règle : 总 (zǒng) est l\'abbréviation très utilisée pour 总裁/总经理. Corps : 经过深思熟虑 (après mûre réflexion), 我有以下几点建议 (j\'ai les suggestions suivantes). RÈGLE D\'OR : pour demander, dire 恳请您拨冗审阅 (j\'ose vous demander de bien vouloir examiner) — 恳请 + 拨冗 sont très soutenus. Conclure : 此致 / 顺颂商祺 (cordialement / mes meilleurs vœux d\'affaires). Signer : nom + titre + département.',
+      'L\'email cadre supérieur se distingue par son **registre soutenu** — vocabulaire choisi, formules de respect, clôture rituelle. Le titre 总 (zǒng) abrège 总裁/总经理.\n' +
+      '\n' +
+      'Structure d\'un email C1 :\n' +
+      '- Sujet : 关于 X 项目的若干思考 (quelques réflexions — 若干 sonne soutenu)\n' +
+      '- Ouverture : 尊敬的 X 总 (cher président X)\n' +
+      '- Corps : 经过深思熟虑 (après mûre réflexion)，我有以下几点建议\n' +
+      '- Clôture : 此致 / 顺颂商祺 (cordialement / meilleurs vœux d\'affaires)\n' +
+      '- Signer : nom + titre + département\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour demander une lecture, dire 恳请您拨冗审阅 — 恳请 + 拨冗 est la formule la plus **respectueuse** du chinois pro. Effet immédiat sur le sérieux perçu, à réserver aux supérieurs très haut placés.',
     bodyEn:
       'Subject: 关于 X 项目的若干思考 (some thoughts on project X) — 若干 (several) sounds formal. Opening: 尊敬的 X 总 (esteemed President X) — 总 (zǒng) is the widely-used abbreviation for 总裁/总经理. Body: 经过深思熟虑 (after careful reflection), 我有以下几点建议 (I have the following suggestions). Ask: 恳请您拨冗审阅 (I respectfully ask you to kindly review — 恳请 + 拨冗 are very formal). Close: 此致 / 顺颂商祺 (sincerely / business prosperity wishes). Sign: name + title + department.',
     items: [
@@ -293,7 +422,16 @@ export const c11ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Présenter un rapport stratégique',
     titleEn: 'Present a strategic report',
     body:
-      'Structure : 背景 → 现状分析 → 主要发现 → 战略建议 → 风险评估 → 结论. Verbes-clés : 分析 (analyser), 发现 (découvrir), 建议 (recommander), 评估 (évaluer). RÈGLE D\'OR : phrase d\'entrée 本报告旨在 X (ce rapport vise à X) — 旨在 (zhǐzài) sonne très soutenu. Règle : pour les recommandations, 我们建议从以下三个方面入手 (nous recommandons d\'agir sur 3 fronts). Attention : pour les risques, signaler avec 需要注意的是 X (à noter). Conclure : 综上所述, 我们认为 X 是当前最优选择 (en somme, X est l\'option optimale). Remarque : 最优 (zuìyōu, optimal) marque la conclusion stratégique.',
+      'Le rapport stratégique chinois suit un **canevas en 6 sections** avec des verbes et formules d\'ouverture/clôture quasi figés.\n' +
+      '\n' +
+      'Structure-type :\n' +
+      '- 背景 → 现状分析 → 主要发现 → 战略建议 → 风险评估 → 结论\n' +
+      '- Verbes-clés : 分析 (analyser), 发现 (découvrir), 建议 (recommander), 评估 (évaluer)\n' +
+      '- Recommandations : 我们建议从以下三个方面入手 (3 fronts)\n' +
+      '- Risques : 需要注意的是 X (à noter)\n' +
+      '- Conclusion : 综上所述, 我们认为 X 是当前最优选择 (X est l\'option **optimale**)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la phrase d\'entrée 本报告旨在 X (ce rapport vise à X) — 旨在 (zhǐzài) sonne très **soutenu** sans être pédant. À mémoriser pour tout document C1+.',
     bodyEn:
       'Structure: 背景 → 现状分析 → 主要发现 → 战略建议 → 风险评估 → 结论. Key verbs: 分析 (analyze), 发现 (find), 建议 (recommend), 评估 (assess). Opening phrases: 本报告旨在 X (this report aims to X) — 旨在 (zhǐzài) sounds very formal. For recommendations: 我们建议从以下三个方面入手 (we recommend acting on 3 fronts). For risks: 需要注意的是 X. Close: 综上所述, 我们认为 X 是当前最优选择 (in sum, X is the current optimal choice). 最优 (optimal) marks the strategic conclusion.',
     items: [
@@ -318,7 +456,19 @@ export const c11NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '坚决 vs 坚定 vs 坚强 — fermeté en 3 saveurs',
     titleEn: '坚决 vs 坚定 vs 坚强 — firmness in 3 flavors',
     body:
-      '坚决 (jiānjué) = résolu dans l\'ACTION (souvent répression / opposition). 坚决反对 / 坚决执行 = s\'opposer fermement / exécuter fermement. Remarque : connoté pouvoir/autorité. Règle : 坚定 (jiāndìng) = ferme dans la CROYANCE / la position. 坚定的信念 / 立场坚定 = conviction ferme / position ferme. Connoté valeurs morales. Règle : 坚强 (jiānqiáng) = solide dans la PERSONNE / le caractère. 坚强的人 / 坚强的意志 = personne forte / volonté forte. Connoté résilience individuelle. Attention : erreur classique de confondre 坚决 (action) et 坚定 (croyance). 坚决支持 = soutenir fermement (action) ; 坚定支持 = soutenir avec conviction (foi).',
+      'Trois mots traduits par « ferme » mais distincts par leur **collocataire** : 坚决 (action), 坚定 (croyance), 坚强 (caractère).\n' +
+      '\n' +
+      'Distinction par catégorie :\n' +
+      '- 坚决 (jiānjué) = résolu dans l\'**action** — 坚决反对 / 坚决执行 (s\'opposer / exécuter fermement). Connote pouvoir/autorité\n' +
+      '- 坚定 (jiāndìng) = ferme dans la **croyance** — 坚定的信念 / 立场坚定 (conviction / position ferme). Connote valeurs morales\n' +
+      '- 坚强 (jiānqiáng) = solide dans la **personne** — 坚强的人 / 坚强的意志 (personne forte / volonté forte). Connote résilience individuelle\n' +
+      '\n' +
+      'Test rapide du collocataire :\n' +
+      '- 坚决 + verbe d\'action (反对/执行/打击)\n' +
+      '- 坚定 + nom abstrait (信念/立场/信心)\n' +
+      '- 坚强 + nom de personne ou trait (人/意志/精神)\n' +
+      '\n' +
+      'RÈGLE D\'OR : 坚决支持 (soutenir par l\'action) ≠ 坚定支持 (soutenir par conviction). Confondre les deux est l\'erreur **classique** des B2.',
     bodyEn:
       '坚决 (jiānjué) = resolute in ACTION (often repression / opposition). 坚决反对 / 坚决执行 = firmly oppose / execute. Connotes power/authority. 坚定 (jiāndìng) = firm in BELIEF / position. 坚定的信念 / 立场坚定 = firm conviction / firm stance. Connotes moral values. 坚强 (jiānqiáng) = strong in the PERSON / character. 坚强的人 / 坚强的意志 = strong person / strong will. Connotes individual resilience. Common mistake: confusing 坚决 (action) and 坚定 (belief). 坚决支持 = support firmly (action); 坚定支持 = support with conviction (faith).',
     items: [
@@ -338,7 +488,14 @@ export const c11NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '者 vs 之 vs 乎 — particules classiques',
     titleEn: '者 vs 之 vs 乎 — classical particles',
     body:
-      'RÈGLE D\'OR : 者 (zhě) = celui qui / la chose qui. Substitue un nom abstrait. 学者 (érudit), 作者 (auteur), 强者 (le fort). Aussi : 来者不拒 (n\'éconduire personne — celui qui vient, ne refuser). Remarque : très productif en composition. RÈGLE D\'OR : 之 (zhī) = particule de liaison classique (=的 moderne). 国家之大 (grandeur d\'un pays — sonne soutenu). 仁义礼智信 = les 5 vertus. Règle : 之 reste vivant dans les expressions soutenues : 之间, 之后, 之前. RÈGLE D\'OR : 乎 (hū) = particule d\'interrogation/exclamation classique (= 吗/呢). 君子乎 ? = est-ce un homme noble ? Remarque : surtout dans les chengyu — 不亦乐乎 (n\'est-ce pas un plaisir ?), 似乎 (semble que). Astuce : tu rencontreras ces 3 particules en lisant la presse, les éditoriaux, et les œuvres classiques.',
+      'Les particules 者, 之, 乎 viennent du chinois **classique** 文言 mais restent vivantes dans le **soutenu** moderne — presse, éditoriaux, chéngyǔ.\n' +
+      '\n' +
+      'Les 3 particules en bref :\n' +
+      '- 者 (zhě) = celui qui / la chose qui — 学者 (érudit), 作者 (auteur), 强者 (le fort), 来者不拒 (n\'éconduire personne)\n' +
+      '- 之 (zhī) = particule de liaison (= 的 moderne) — 国家之大 (grandeur d\'un pays), 之间, 之后, 之前\n' +
+      '- 乎 (hū) = particule interrogative/exclamative (= 吗/呢) — 不亦乐乎 (n\'est-ce pas un plaisir ?), 似乎 (semble que)\n' +
+      '\n' +
+      'RÈGLE D\'OR : pas besoin d\'écrire en **classique**, mais **reconnaître** ces 3 particules débloque la lecture des éditoriaux du Renmin Ribao, des essais soutenus, et de toute citation littéraire moderne.',
     bodyEn:
       '者 (zhě) = the one who / the thing that. Substitutes an abstract noun. 学者 (scholar), 作者 (author), 强者 (the strong one). Also: 来者不拒 (refuse no one). Very productive in compounds. 之 (zhī) = classical link particle (=modern 的). 国家之大 (the greatness of a country — sounds formal). 之 stays alive in formal expressions: 之间, 之后, 之前. 乎 (hū) = classical interrogative/exclamatory particle (=吗/呢). 君子乎？= is this a noble man? Mostly in chengyu: 不亦乐乎 (isn\'t it a joy?), 似乎 (it seems). You\'ll meet these 3 in press, op-eds, and classical works.',
     items: [
@@ -361,7 +518,14 @@ export const c11NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '深入 vs 深刻 vs 深远 — profond en 3 dimensions',
     titleEn: '深入 vs 深刻 vs 深远 — deep in 3 dimensions',
     body:
-      'Règle : 深入 (shēnrù) = en profondeur dans le PROCESSUS. 深入研究 (recherche approfondie), 深入了解 (comprendre en profondeur), 深入人心 (s\'enracine dans le cœur du peuple). Verbe ou adv. Règle : 深刻 (shēnkè) = profond comme IMPACT ressenti. 深刻的印象 (impression forte), 深刻的教训 (leçon profonde). Adjectif. Remarque : connote l\'effet sur la personne. Règle : 深远 (shēnyuǎn) = profond et LOIN dans la durée/portée. 深远的影响 (influence durable et étendue). Toujours en collocation avec 影响/意义. Hierarchy : 深入 (processus) ≠ 深刻 (impression) ≠ 深远 (portée). Attention : erreur fréquente — 深刻研究 ✗ → 深入研究 ✓.',
+      'Trois adjectifs « profonds » qui ne se substituent pas : 深入 (processus), 深刻 (impression), 深远 (portée). Le **collocataire** dicte le choix.\n' +
+      '\n' +
+      'Distinction par dimension :\n' +
+      '- 深入 (shēnrù) = en profondeur dans le **processus** — 深入研究, 深入了解, 深入人心 (s\'enracine dans le cœur du peuple). Verbe ou adverbe\n' +
+      '- 深刻 (shēnkè) = profond comme **impact** ressenti — 深刻的印象 (impression forte), 深刻的教训 (leçon profonde). Adjectif\n' +
+      '- 深远 (shēnyuǎn) = profond et **loin** dans la durée/portée — 深远的影响 (influence durable). Toujours avec 影响/意义\n' +
+      '\n' +
+      'RÈGLE D\'OR : trois collocations à mémoriser comme signature C1 — **深入研究**, **深刻印象**, **深远影响**. L\'erreur fréquente 深刻研究 ✗ → 深入研究 ✓ trahit immédiatement le B2.',
     bodyEn:
       '深入 (shēnrù) = deep in the PROCESS. 深入研究 (in-depth research), 深入了解 (deeply understand), 深入人心 (rooted in people\'s hearts). Verb or adv. 深刻 (shēnkè) = deep as felt IMPACT. 深刻的印象 (strong impression), 深刻的教训 (deep lesson). Adjective. Connotes effect on person. 深远 (shēnyuǎn) = deep and FAR-reaching in duration/scope. 深远的影响 (lasting and wide-reaching influence). Always collocates with 影响/意义. Hierarchy: 深入 (process) ≠ 深刻 (impression) ≠ 深远 (scope). Frequent mistake: 深刻研究 ✗ → 深入研究 ✓.',
     items: [
@@ -381,7 +545,17 @@ export const c11NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '不仅…而且 vs 既…又 vs 一方面…一方面',
     titleEn: '不仅…而且 vs 既…又 vs 一方面…一方面',
     body:
-      'Règle : 不仅 X 而且 Y = non seulement X mais aussi Y. Marque PROGRESSION (Y > X en intensité). 不仅好看，而且好用 = non seulement beau mais en plus pratique. Y enchérit. Règle : 既 X 又 Y = à la fois X et Y. Marque COEXISTENCE équilibrée (X = Y, sans hiérarchie). 既好看又好用 = à la fois beau et pratique. Remarque : plus oral. Règle : 一方面 X 一方面 Y = d\'un côté X, de l\'autre Y. Marque DEUX FACETTES contrastantes ou parallèles. 一方面想去，一方面又害怕 = d\'un côté envie d\'y aller, de l\'autre peur. Remarque : souvent contradictoire. Hierarchy : 既…又 (oral, coexistence) < 不仅…而且 (écrit, progression) < 一方面…一方面 (écrit, contraste).',
+      'Trois structures binaires pour relier X et Y, à choisir selon le **rapport** entre les deux termes : progression, coexistence ou contraste.\n' +
+      '\n' +
+      'Les 3 binômes :\n' +
+      '- 不仅 X 而且 Y = non seulement X mais aussi Y. Marque **progression** (Y > X en intensité). Ex : 不仅好看，而且好用\n' +
+      '- 既 X 又 Y = à la fois X et Y. Marque **coexistence** équilibrée (X = Y). Ex : 既好看又好用. Plus oral\n' +
+      '- 一方面 X 一方面 Y = d\'un côté X, de l\'autre Y. Marque **contraste** ou parallèle. Ex : 一方面想去，一方面又害怕\n' +
+      '\n' +
+      'Hiérarchie de registre :\n' +
+      '- 既…又 (oral, coexistence) < 不仅…而且 (écrit, progression) < 一方面…一方面 (écrit, contraste)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la grammaire est dans le **rapport** entre X et Y. Pose-toi la question : Y enchérit-il, équivaut-il ou s\'oppose-t-il à X ?',
     bodyEn:
       '不仅 X 而且 Y = not only X but also Y. Marks PROGRESSION (Y > X in intensity). 不仅好看，而且好用 = not only pretty but also practical. Y outdoes. 既 X 又 Y = both X and Y. Marks balanced COEXISTENCE (X = Y, no hierarchy). 既好看又好用 = both pretty and practical. More oral. 一方面 X 一方面 Y = on one hand X, on the other Y. Marks TWO FACETS contrasting or parallel. 一方面想去，一方面又害怕 = on one hand want to go, on the other afraid. Often contradictory. Hierarchy: 既…又 (oral, coexistence) < 不仅…而且 (written, progression) < 一方面…一方面 (written, contrast).',
     items: [
@@ -404,7 +578,14 @@ export const c11NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '基于 vs 根据 vs 鉴于 — selon, sur la base de',
     titleEn: '基于 vs 根据 vs 鉴于 — according to, based on',
     body:
-      'Règle : 根据 (gēnjù) = selon (le plus universel, oral et écrit). 根据数据 / 根据法律 = selon les données / selon la loi. Pivote sur une SOURCE. Règle : 基于 (jīyú) = sur la base de (formel, écrit). 基于以上原因 (sur la base des raisons ci-dessus), 基于事实 (sur la base des faits). Pivote sur un FONDEMENT logique. Remarque : plus académique/juridique. RÈGLE D\'OR : 鉴于 (jiànyú) = vu que / étant donné que (très formel, juridique). 鉴于目前的形势, 我们决定 X = vu la situation actuelle, nous décidons X. Marque une CONSIDÉRATION préalable à une décision. Hierarchy : 根据 (universel) < 基于 (formel raisonnement) < 鉴于 (très formel décision). Attention : 鉴于 à l\'oral spontané = pédant.',
+      'Trois prépositions de **fondement** qui s\'échelonnent du courant 根据 au très formel 鉴于. Le choix dicte le registre du texte.\n' +
+      '\n' +
+      'Hiérarchie de formalité :\n' +
+      '- 根据 (gēnjù) = selon — universel, oral et écrit. Pivote sur une **source**. Ex : 根据数据 / 根据法律\n' +
+      '- 基于 (jīyú) = sur la base de — formel, écrit. Pivote sur un **fondement** logique. Ex : 基于以上原因, 基于事实. Académique/juridique\n' +
+      '- 鉴于 (jiànyú) = vu que / étant donné que — très formel, juridique. Marque une **considération** préalable à une décision. Ex : 鉴于目前的形势, 我们决定 X\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 鉴于 X，我们决定 Y » est la **formule juridique** par excellence. Pour toute décision RH, contractuelle, ou stratégique en chinois écrit, elle est **obligatoire**. À l\'oral spontané = pédant.',
     bodyEn:
       '根据 (gēnjù) = according to (most universal, oral and written). 根据数据 / 根据法律 = per the data / per the law. Pivots on a SOURCE. 基于 (jīyú) = based on (formal, written). 基于以上原因 (based on the above), 基于事实 (based on facts). Pivots on a logical FOUNDATION. More academic/legal. 鉴于 (jiànyú) = given that (very formal, legal). 鉴于目前的形势, 我们决定 X = given current circumstances, we decide X. Marks a CONSIDERATION preceding a decision. Hierarchy: 根据 (universal) < 基于 (formal reasoning) < 鉴于 (very formal decision). 鉴于 in spontaneous speech = pedantic.',
     items: [
@@ -424,7 +605,19 @@ export const c11NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '提前 vs 首先 vs 起初 — d\'abord, en premier, au départ',
     titleEn: '提前 vs 首先 vs 起初 — first, originally, at the start',
     body:
-      'Règle : 提前 (tíqián) = en avance (par rapport à un horaire prévu). 提前到 = arriver en avance / 提前完成 = finir en avance. Concept de TIMING. Règle : 首先 (shǒuxiān) = en premier (dans une énumération ou une séquence). 首先 X，其次 Y = d\'abord X, ensuite Y. Concept de RANG. Règle : 起初 (qǐchū) = au début / au départ (par opposition à plus tard). 起初我以为 X，后来才发现 Y = au départ je pensais X, plus tard j\'ai compris Y. Concept de PHASE TEMPORELLE. Attention : trois mots qu\'un débutant traduit tous par « d\'abord » mais qui sont distincts. Astuce : test rapide — « avant l\'horaire » → 提前 ; « 1° dans la liste » → 首先 ; « phase initiale » → 起初.',
+      'Trois mots qu\'un débutant traduit tous par « d\'abord » mais qui couvrent des **dimensions distinctes** : timing, rang, phase.\n' +
+      '\n' +
+      'Trois concepts à distinguer :\n' +
+      '- 提前 (tíqián) = en **avance** (vs horaire prévu). Ex : 提前到 / 提前完成. Concept de timing\n' +
+      '- 首先 (shǒuxiān) = en **premier** (dans une énumération). Ex : 首先 X，其次 Y. Concept de rang\n' +
+      '- 起初 (qǐchū) = au **départ** (vs plus tard). Ex : 起初我以为 X，后来才发现 Y. Concept de phase temporelle\n' +
+      '\n' +
+      'Test rapide :\n' +
+      '- « avant l\'horaire » → 提前\n' +
+      '- « 1° dans la liste » → 首先\n' +
+      '- « phase initiale » → 起初\n' +
+      '\n' +
+      'RÈGLE D\'OR : le combo « 起初我以为 X，后来才发现 Y » sonne **soutenu** et révèle ta capacité de réflexion. À placer dans une intro d\'essai ou en interview.',
     bodyEn:
       '提前 (tíqián) = ahead of time (vs scheduled). 提前到 = arrive early / 提前完成 = finish early. TIMING concept. 首先 (shǒuxiān) = first (in an enumeration or sequence). 首先 X，其次 Y = first X, then Y. RANK concept. 起初 (qǐchū) = at the start / originally (vs later). 起初我以为 X，后来才发现 Y = originally I thought X, later I found Y. TEMPORAL PHASE concept. Three words a beginner all translates as «first» but distinct. Test: «before schedule» → 提前; «1st on the list» → 首先; «initial phase» → 起初.',
     items: [
@@ -447,7 +640,17 @@ export const c11NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '于是 vs 因而 vs 从而 — par conséquent (registres)',
     titleEn: '于是 vs 因而 vs 从而 — therefore (register)',
     body:
-      'Règle : 于是 (yúshì, alors / sur quoi) marque une CONSÉQUENCE narrative dans un récit. 他没听懂，于是又问了一次 = il n\'a pas compris, alors il a redemandé. Remarque : très utile en récit. RÈGLE D\'OR : 因而 (yīn\'ér, de ce fait — formel écrit) marque une CONSÉQUENCE LOGIQUE. 政策有效，因而经济增长 = la politique est efficace, de ce fait l\'économie croît. Remarque : plus rigoureux. RÈGLE D\'OR : 从而 (cóng\'ér, et par là, et ainsi — formel écrit) marque une CONSÉQUENCE QUI MÈNE À UN RÉSULTAT VOULU. 减税从而刺激消费 = baisser les impôts pour ainsi stimuler la consommation. Connotation FONCTIONNELLE. Hierarchy : 于是 (récit) < 因而 (logique) < 从而 (téléologique). Astuce : en écrit académique, 从而 montre la maîtrise.',
+      'Trois connecteurs « par conséquent » de **registres distincts** : 于是 narratif, 因而 logique, 从而 téléologique.\n' +
+      '\n' +
+      'Distinctions :\n' +
+      '- 于是 (yúshì, alors / sur quoi) = **conséquence narrative**. Ex : 他没听懂，于是又问了一次. Très utile en récit\n' +
+      '- 因而 (yīn\'ér, de ce fait) = **conséquence logique**, formel écrit. Ex : 政策有效，因而经济增长 (la politique est efficace, de ce fait l\'économie croît)\n' +
+      '- 从而 (cóng\'ér, et ainsi) = **conséquence qui mène à un résultat voulu**, formel écrit. Ex : 减税从而刺激消费 (baisser les impôts pour stimuler la consommation). Connotation **fonctionnelle**\n' +
+      '\n' +
+      'Hiérarchie de registre :\n' +
+      '- 于是 (récit) < 因而 (logique) < 从而 (téléologique)\n' +
+      '\n' +
+      'RÈGLE D\'OR : « X 从而 Y » montre que tu comprends la **téléologie** chinoise (action visant un résultat). Très utilisé en éditorial économique — signal C1 indéniable.',
     bodyEn:
       '于是 (yúshì, then / whereupon) marks a NARRATIVE consequence. 他没听懂，于是又问了一次 = he didn\'t get it, so asked again. Very useful in storytelling. 因而 (yīn\'ér, hence — formal written) marks a LOGICAL consequence. 政策有效，因而经济增长 = the policy works, hence the economy grows. More rigorous. 从而 (cóng\'ér, thereby — formal written) marks a consequence LEADING TO AN INTENDED RESULT. 减税从而刺激消费 = cut taxes to thereby stimulate consumption. FUNCTIONAL connotation. Hierarchy: 于是 (narrative) < 因而 (logical) < 从而 (teleological). In academic writing, 从而 shows mastery.',
     items: [
@@ -467,7 +670,19 @@ export const c11NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '尽管 vs 即使 vs 哪怕 — bien que / même si',
     titleEn: '尽管 vs 即使 vs 哪怕 — although / even if',
     body:
-      'Règle : 尽管 (jǐnguǎn) = bien que (FAIT réel, concession à un fait). 尽管下雨，他还是来了 = bien qu\'il pleuve, il est venu. La pluie est RÉELLE. Règle : 即使 (jíshǐ) = même si (HYPOTHÉTIQUE, condition imaginée). 即使下雨，他也会来 = même s\'il pleuvait, il viendrait. La pluie est HYPOTHÉTIQUE. Règle : 哪怕 (nǎpà) = même si (HYPOTHÉTIQUE EXTRÊME, oral familier). 哪怕只有一点希望，我也要试 = même s\'il n\'y a qu\'un peu d\'espoir, je vais essayer. Remarque : plus émotionnel. Hierarchy : 尽管 (réel) ≠ 即使 (hypothétique neutre) < 哪怕 (hypothétique extrême oral). Attention : erreur très fréquente — 尽管下雨他也会来 ✗ → 即使下雨他也会来 ✓.',
+      'Trois concessifs qui se traduisent tous par « bien que / même si » mais qui se distinguent par le statut **réel ou hypothétique** de la condition.\n' +
+      '\n' +
+      'Trois cas distincts :\n' +
+      '- 尽管 (jǐnguǎn) = bien que — fait **réel**. Ex : 尽管下雨，他还是来了 (la pluie EST réelle)\n' +
+      '- 即使 (jíshǐ) = même si — **hypothétique** neutre. Ex : 即使下雨，他也会来 (la pluie est HYPOTHÉTIQUE)\n' +
+      '- 哪怕 (nǎpà) = même si — **hypothétique extrême**, oral familier, émotionnel. Ex : 哪怕只有一点希望，我也要试\n' +
+      '\n' +
+      'Test rapide :\n' +
+      '- condition VRAIE → 尽管\n' +
+      '- condition imaginée → 即使\n' +
+      '- condition imaginée et extrême → 哪怕\n' +
+      '\n' +
+      'RÈGLE D\'OR : la distinction **réel / hypothétique** est centrale. Erreur fréquente — 尽管下雨他也会来 ✗ → 即使下雨他也会来 ✓.',
     bodyEn:
       '尽管 (jǐnguǎn) = although (REAL fact, concession to a fact). 尽管下雨，他还是来了 = although it\'s raining, he came. The rain is REAL. 即使 (jíshǐ) = even if (HYPOTHETICAL, imagined condition). 即使下雨，他也会来 = even if it rained, he\'d come. The rain is HYPOTHETICAL. 哪怕 (nǎpà) = even if (EXTREME HYPOTHETICAL, casual oral). 哪怕只有一点希望，我也要试 = even if there\'s only a sliver of hope, I\'ll try. More emotional. Hierarchy: 尽管 (real) ≠ 即使 (neutral hypothetical) < 哪怕 (extreme oral hypothetical). Very common mistake: 尽管下雨他也会来 ✗ → 即使下雨他也会来 ✓.',
     items: [
@@ -490,7 +705,14 @@ export const c11NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '繁荣 vs 兴盛 vs 鼎盛 — prospérité (intensité)',
     titleEn: '繁荣 vs 兴盛 vs 鼎盛 — prosperity (intensity)',
     body:
-      'Règle : 繁荣 (fánróng, prospère) = ÉTAT général de prospérité (économique, urbain, commercial). 经济繁荣 / 城市繁荣. Remarque : le plus universel. Adjectif/nom. Règle : 兴盛 (xīngshèng, florissant, en plein essor) = MOUVEMENT de croissance, dynamisme. 文化兴盛 / 事业兴盛. Remarque : plus dynamique. RÈGLE D\'OR : 鼎盛 (dǐngshèng, à son apogée) = SOMMET, point culminant historique. 唐朝的鼎盛时期 = l\'apogée de la dynastie Tang. Attention : très soutenu, historique. Hierarchy : 繁荣 (état stable) < 兴盛 (élan ascendant) < 鼎盛 (zénith). Astuce : à l\'oral 繁荣 partout ; 兴盛/鼎盛 dans un contexte historique ou très soutenu.',
+      'Trois mots pour la prospérité, gradués par **intensité** et **registre** : 繁荣 (état stable) < 兴盛 (élan) < 鼎盛 (zénith).\n' +
+      '\n' +
+      'Trois niveaux d\'intensité :\n' +
+      '- 繁荣 (fánróng, prospère) = **état** général. Ex : 经济繁荣 / 城市繁荣. Le plus universel. Adjectif/nom\n' +
+      '- 兴盛 (xīngshèng, florissant) = **mouvement** de croissance. Ex : 文化兴盛 / 事业兴盛. Plus dynamique\n' +
+      '- 鼎盛 (dǐngshèng, à l\'apogée) = **sommet** historique. Ex : 唐朝的鼎盛时期 (l\'apogée de la dynastie Tang). Très soutenu\n' +
+      '\n' +
+      'RÈGLE D\'OR : à l\'oral, 繁荣 partout. 兴盛/鼎盛 réservés au contexte **historique** ou très **soutenu**. Mauvais signal : 鼎盛 pour décrire son entreprise (sonne pompeux).',
     bodyEn:
       '繁荣 (fánróng, prosperous) = general STATE of prosperity (economic, urban, commercial). 经济繁荣 / 城市繁荣. Most universal. Adjective/noun. 兴盛 (xīngshèng, flourishing, booming) = MOVEMENT of growth, dynamism. 文化兴盛 / 事业兴盛. More dynamic. 鼎盛 (dǐngshèng, at its peak) = SUMMIT, historical climax. 唐朝的鼎盛时期 = the peak of the Tang dynasty. Very formal, historical. Hierarchy: 繁荣 (stable state) < 兴盛 (rising momentum) < 鼎盛 (zenith). In speech, 繁荣 everywhere; 兴盛/鼎盛 in historical or very formal contexts.',
     items: [
@@ -510,7 +732,14 @@ export const c11NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '衰落 vs 衰退 vs 消亡 — déclin et extinction',
     titleEn: '衰落 vs 衰退 vs 消亡 — decline and extinction',
     body:
-      'Règle : 衰落 (shuāiluò, déclin) = chute progressive d\'une CIVILISATION / institution. 帝国的衰落 (le déclin d\'un empire). Remarque : connotation historique. Règle : 衰退 (shuāituì, récession / déclin économique) = ralentissement mesurable, surtout ÉCONOMIQUE. 经济衰退 (récession économique). Remarque : réversible, technique. RÈGLE D\'OR : 消亡 (xiāowáng, disparition, extinction) = FIN totale. 物种消亡 (extinction d\'une espèce), 文化消亡 (extinction d\'une culture). Attention : irréversible. Hierarchy : 衰退 (réversible technique) < 衰落 (historique progressif) < 消亡 (terminal). Astuce : dans une thèse d\'histoire ou éditorial, choisir le bon mot signale ta connaissance des registres.',
+      'Trois mots pour le déclin, à choisir selon la **réversibilité** et la **portée** : 衰退 (technique), 衰落 (historique), 消亡 (terminal).\n' +
+      '\n' +
+      'Trois degrés de déclin :\n' +
+      '- 衰退 (shuāituì, récession) = ralentissement mesurable, surtout **économique**. Ex : 经济衰退. Réversible, technique\n' +
+      '- 衰落 (shuāiluò, déclin) = chute progressive d\'une **civilisation** ou institution. Ex : 帝国的衰落 (déclin d\'un empire). Connotation historique\n' +
+      '- 消亡 (xiāowáng, disparition) = **fin totale**, irréversible. Ex : 物种消亡 (extinction d\'une espèce), 文化消亡\n' +
+      '\n' +
+      'RÈGLE D\'OR : réserve 消亡 à ce qui est **vraiment** terminé. L\'erreur de débutant — utiliser 消亡 pour un secteur en déclin temporaire — signale l\'absence de maîtrise du registre.',
     bodyEn:
       '衰落 (shuāiluò, decline) = gradual fall of a CIVILIZATION / institution. 帝国的衰落 (the decline of an empire). Historical connotation. 衰退 (shuāituì, recession / economic decline) = measurable slowdown, especially ECONOMIC. 经济衰退 (economic recession). Reversible, technical. 消亡 (xiāowáng, disappearance, extinction) = total END. 物种消亡 (species extinction), 文化消亡 (cultural extinction). Irreversible. Hierarchy: 衰退 (reversible technical) < 衰落 (historical gradual) < 消亡 (terminal). In a history thesis or op-ed, the right word signals your awareness of register.',
     items: [
@@ -533,7 +762,14 @@ export const c11NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '价值 vs 意义 vs 意味 — valeur, sens, signification',
     titleEn: '价值 vs 意义 vs 意味 — value, meaning, significance',
     body:
-      'Règle : 价值 (jiàzhí) = VALEUR (économique, morale, sociale). 这本书很有价值 (ce livre a de la valeur). 价值观 (système de valeurs). Remarque : souvent QUANTIFIABLE ou clairement appréciable. Règle : 意义 (yìyì) = SENS / signification (importance ressentie). 这件事对我很有意义 (cette chose a beaucoup de sens pour moi). Remarque : plus subjectif/symbolique. Règle : 意味 (yìwèi, comme verbe : signifier) = IMPLICATION cachée/conséquence. 这意味着 X = ceci signifie X (suggère X comme implication logique). Astuce : 意味 est aussi un nom — 这话有别的意味 (ces mots ont une autre nuance). Hierarchy : 价值 (apprécier la valeur) ≠ 意义 (ressentir le sens) ≠ 意味 (déduire l\'implication).',
+      'Trois mots pour « sens / valeur » qui correspondent à trois actes intellectuels distincts : **apprécier**, **ressentir**, **déduire**.\n' +
+      '\n' +
+      'Distinction des trois :\n' +
+      '- 价值 (jiàzhí) = **valeur** (économique, morale, sociale). Ex : 这本书很有价值, 价值观 (système de valeurs). Souvent quantifiable\n' +
+      '- 意义 (yìyì) = **sens / signification** (importance ressentie). Ex : 这件事对我很有意义. Plus subjectif/symbolique\n' +
+      '- 意味 (yìwèi) = **implication** cachée / conséquence. Ex : 这意味着 X (ceci signifie X). Aussi nom : 这话有别的意味 (ces mots ont une autre nuance)\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 这意味着 X » est la **formule magique** d\'éditorial pour énoncer une conséquence. À utiliser après un fait pour montrer ta capacité d\'analyse — marqueur C1+ d\'analyse politique/économique.',
     bodyEn:
       '价值 (jiàzhí) = VALUE (economic, moral, social). 这本书很有价值 (this book is valuable). 价值观 (value system). Often QUANTIFIABLE or clearly appraisable. 意义 (yìyì) = MEANING / significance (felt importance). 这件事对我很有意义 (this matters a lot to me). More subjective/symbolic. 意味 (yìwèi, as verb: to signify) = hidden IMPLICATION/consequence. 这意味着 X = this implies X (X is the logical implication). 意味 is also a noun: 这话有别的意味 (these words carry another nuance). Hierarchy: 价值 (appraise value) ≠ 意义 (feel meaning) ≠ 意味 (deduce implication).',
     items: [
@@ -553,7 +789,19 @@ export const c11NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '影响 vs 作用 vs 效果 — effet, impact, fonction',
     titleEn: '影响 vs 作用 vs 效果 — effect, impact, function',
     body:
-      'Règle : 影响 (yǐngxiǎng) = INFLUENCE (peut être positive ou négative, étendue). 政策的影响 / 父母的影响 = influence d\'une politique / des parents. Remarque : très large. Règle : 作用 (zuòyòng) = FONCTION / action (rôle joué dans un système). 这种药有镇痛作用 (ce médicament a une fonction analgésique). Remarque : connotation FONCTIONNELLE. Règle : 效果 (xiàoguǒ) = EFFET MESURABLE, résultat observé. 这个方法效果不好 (cette méthode n\'a pas un bon effet). Remarque : connotation RÉSULTAT. Hierarchy : 影响 (large) ≠ 作用 (fonction) ≠ 效果 (résultat). Attention : erreur classique — 这个药有很好的影响 ✗ → 这个药效果很好 ✓ (effet mesurable médical).',
+      'Trois mots pour « effet » à choisir selon la **largeur** : 影响 (influence large), 作用 (fonction systémique), 效果 (résultat mesurable).\n' +
+      '\n' +
+      'Trois usages :\n' +
+      '- 影响 (yǐngxiǎng) = **influence** (positive ou négative, étendue). Ex : 政策的影响 / 父母的影响. Très large\n' +
+      '- 作用 (zuòyòng) = **fonction** (rôle dans un système). Ex : 这种药有镇痛作用 (fonction analgésique). Connotation fonctionnelle\n' +
+      '- 效果 (xiàoguǒ) = **effet mesurable**, résultat observé. Ex : 这个方法效果不好. Connotation résultat\n' +
+      '\n' +
+      'Collocations C1 à mémoriser :\n' +
+      '- 深远影响 (influence durable)\n' +
+      '- 起作用 (jouer un rôle)\n' +
+      '- 见效果 (voir l\'effet)\n' +
+      '\n' +
+      'RÈGLE D\'OR : erreur **classique** — 这个药有很好的影响 ✗ → 这个药效果很好 ✓. Le mot juste avec le bon collocataire est le signal de maîtrise.',
     bodyEn:
       '影响 (yǐngxiǎng) = INFLUENCE (positive or negative, broad). 政策的影响 / 父母的影响 = policy influence / parental influence. Very broad. 作用 (zuòyòng) = FUNCTION / action (role in a system). 这种药有镇痛作用 (this drug has an analgesic function). FUNCTIONAL connotation. 效果 (xiàoguǒ) = MEASURABLE EFFECT, observed result. 这个方法效果不好 (this method\'s effect isn\'t good). RESULT connotation. Hierarchy: 影响 (broad) ≠ 作用 (function) ≠ 效果 (result). Classic mistake: 这个药有很好的影响 ✗ → 这个药效果很好 ✓ (medical measurable effect).',
     items: [
@@ -576,7 +824,19 @@ export const c11NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '庄严 vs 肃然 vs 隆重 — solennel (3 nuances)',
     titleEn: '庄严 vs 肃然 vs 隆重 — solemn (3 nuances)',
     body:
-      'Règle : 庄严 (zhuāngyán, solennel et imposant) = qualité d\'un OBJET / lieu sacré. 庄严的国旗 (le drapeau solennel), 庄严的承诺 (un engagement solennel). Remarque : connotation MAJESTÉ. Règle : 肃然 (sùrán, dans une attitude grave et silencieuse) = ÉTAT SUBJECTIF de respect. 肃然起敬 (chengyu : être saisi de respect). Remarque : décrit la personne qui ressent. Règle : 隆重 (lóngzhòng, grandiose, imposant — pour cérémonies) = ÉCHELLE et faste de l\'événement. 隆重的婚礼 (mariage grandiose), 隆重举行 (organiser en grande pompe). Hierarchy : 庄严 (objet majestueux) ≠ 肃然 (sentiment de respect) ≠ 隆重 (cérémonie fastueuse). Astuce : un mariage est 隆重 ; un drapeau est 庄严 ; on est 肃然 devant un héros tombé.',
+      'Trois mots pour « solennel » à choisir selon la **cible** : objet sacré, sentiment intérieur, ou cérémonie grandiose.\n' +
+      '\n' +
+      'Trois nuances :\n' +
+      '- 庄严 (zhuāngyán) = qualité d\'un **objet** sacré. Ex : 庄严的国旗 (drapeau solennel), 庄严的承诺 (engagement solennel). Connotation majesté\n' +
+      '- 肃然 (sùrán) = **état subjectif** de respect. Ex : 肃然起敬 (chéngyǔ : être saisi de respect). Décrit la personne qui ressent\n' +
+      '- 隆重 (lóngzhòng) = **échelle et faste** de l\'événement. Ex : 隆重的婚礼 (mariage grandiose), 隆重举行 (en grande pompe)\n' +
+      '\n' +
+      'Test rapide :\n' +
+      '- mariage → 隆重\n' +
+      '- drapeau → 庄严\n' +
+      '- devant un héros tombé → 肃然 (起敬)\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 大会将隆重举行 » est la **formule consacrée** des annonces officielles chinoises. 隆重 + 举行 est un binôme indissociable.',
     bodyEn:
       '庄严 (zhuāngyán, solemn and imposing) = quality of a sacred OBJECT / place. 庄严的国旗 (the solemn flag), 庄严的承诺 (a solemn pledge). MAJESTY connotation. 肃然 (sùrán, in a grave silent attitude) = SUBJECTIVE STATE of respect. 肃然起敬 (chengyu: be moved to respect). Describes the person feeling it. 隆重 (lóngzhòng, grand, imposing — for ceremonies) = SCALE and pomp of an event. 隆重的婚礼 (grand wedding), 隆重举行 (hold with great ceremony). Hierarchy: 庄严 (majestic object) ≠ 肃然 (felt respect) ≠ 隆重 (ceremonial pomp). A wedding is 隆重; a flag is 庄严; one feels 肃然 facing a fallen hero.',
     items: [
@@ -596,7 +856,18 @@ export const c11NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '决定 vs 决心 vs 决议 — décider (action / volonté / acte)',
     titleEn: '决定 vs 决心 vs 决议 — decide (action / will / resolution)',
     body:
-      'Règle : 决定 (juédìng) = DÉCIDER (verbe) ou DÉCISION (nom) — mot universel, oral et écrit. 我决定去 / 这是公司的决定. Remarque : le plus large. Règle : 决心 (juéxīn) = RÉSOLUTION INTÉRIEURE, détermination personnelle. 下决心 (prendre la résolution), 决心戒烟 = se résoudre à arrêter de fumer. Remarque : connotation INTIME et engagée. Règle : 决议 (juéyì) = RÉSOLUTION OFFICIELLE (assemblée, parti, ONU). 通过一项决议 (adopter une résolution). Remarque : connotation INSTITUTIONNELLE. Hierarchy : 决定 (universel) < 决心 (intime engagé) < 决议 (institutionnel). Attention : 公司决心 ✗ (l\'entreprise n\'a pas un cœur — utilise 决定). 联合国决心 ✗ → 联合国决议.',
+      'Trois mots pour « décider » à choisir selon la **portée** : action neutre, engagement intime, ou résolution institutionnelle.\n' +
+      '\n' +
+      'Trois niveaux :\n' +
+      '- 决定 (juédìng) = décider / décision — **universel**, oral et écrit. Ex : 我决定去 / 这是公司的决定\n' +
+      '- 决心 (juéxīn) = **résolution intérieure**, détermination personnelle. Ex : 下决心, 决心戒烟 (se résoudre à arrêter de fumer). Connotation intime\n' +
+      '- 决议 (juéyì) = **résolution officielle** (assemblée, parti, ONU). Ex : 通过一项决议. Connotation institutionnelle\n' +
+      '\n' +
+      'Erreurs à éviter :\n' +
+      '- 公司决心 ✗ (l\'entreprise n\'a pas de cœur) → 公司决定 ✓\n' +
+      '- 联合国决心 ✗ → 联合国决议 ✓\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 下决心 + verbe » sonne très authentique pour une résolution personnelle (下决心戒烟, 下决心学习). Plus **émotionnel** que 决定 + verbe — à utiliser pour parler d\'un changement de vie.',
     bodyEn:
       '决定 (juédìng) = DECIDE (verb) or DECISION (noun) — universal, oral and written. 我决定去 / 这是公司的决定. Broadest. 决心 (juéxīn) = INNER RESOLVE, personal determination. 下决心 (resolve to), 决心戒烟 = resolve to quit smoking. INTIMATE and engaged connotation. 决议 (juéyì) = OFFICIAL RESOLUTION (assembly, party, UN). 通过一项决议 (pass a resolution). INSTITUTIONAL connotation. Hierarchy: 决定 (universal) < 决心 (intimate engaged) < 决议 (institutional). Mistake: 公司决心 ✗ (a company has no heart — use 决定). 联合国决心 ✗ → 联合国决议.',
     items: [
@@ -623,7 +894,14 @@ export const c11ChengyuBasicM1LearnSections: LessonV2LearnSection[] = [
     title: '一举两得 / 马到成功 / 锦上添花 — usages',
     titleEn: '一举两得 / 马到成功 / 锦上添花 — uses',
     body:
-      'RÈGLE D\'OR : 一举两得 = « une action, deux gains », équivalent fort de « faire d\'une pierre deux coups ». Règle : s\'utilise comme attribut 这真是一举两得 (c\'est vraiment 2 en 1) ou comme adjectif modifiant un nom 一举两得的好办法 (une bonne méthode 2-en-1). RÈGLE D\'OR : 马到成功 = « dès que le cheval arrive, victoire » → succès IMMÉDIAT. Astuce : à envoyer en vœux à un proche qui démarre un projet — 祝您马到成功 ! Attention : ne s\'utilise PAS pour décrire un succès passé, seulement pour SOUHAITER. RÈGLE D\'OR : 锦上添花 = « ajouter une fleur sur du brocart » → améliorer ce qui est déjà beau. Remarque : connotation superflue mais bienvenue. Attention : à ne JAMAIS dire à quelqu\'un dans la difficulté (mauvais timing).',
+      'Trois **chéngyǔ positifs** très productifs : un pour les bons coups, un pour les vœux de succès, un pour les améliorations bienvenues.\n' +
+      '\n' +
+      'Les trois et leur usage :\n' +
+      '- 一举两得 = « une action, deux gains » — équivalent fort de « faire d\'une pierre deux coups ». Ex : 这真是一举两得 / 一举两得的好办法\n' +
+      '- 马到成功 = « dès que le cheval arrive, victoire » — succès **immédiat**. À envoyer en vœux : 祝您马到成功 ! Pas pour décrire un succès passé\n' +
+      '- 锦上添花 = « ajouter une fleur sur du brocart » — améliorer ce qui est déjà beau. Connotation superflue mais bienvenue\n' +
+      '\n' +
+      'RÈGLE D\'OR : ne JAMAIS dire 锦上添花 à quelqu\'un en difficulté (mauvais timing). Pour un ami dans la galère, choisis 雪中送炭 (apporter du charbon dans la neige) — beaucoup plus puissant émotionnellement.',
     bodyEn:
       '一举两得 = «one action, two gains», strong equivalent of «kill two birds». Used as predicate: 这真是一举两得 (truly 2-in-1) or as adjective: 一举两得的好办法 (a 2-in-1 method). 马到成功 = «as soon as horse arrives, victory» → IMMEDIATE success. Send as a wish for someone starting a project: 祝您马到成功! NOT for describing past success, only for WISHING. 锦上添花 = «add a flower to brocade» → enhance what is already beautiful. Connotation: superfluous but welcome. NEVER say to someone in difficulty (bad timing).',
     items: [
@@ -643,7 +921,15 @@ export const c11ChengyuBasicM1LearnSections: LessonV2LearnSection[] = [
     title: 'Pièges classiques d\'usage',
     titleEn: 'Classic usage traps',
     body:
-      'Attention : Erreur n°1 — déformer un chengyu — UN seul caractère manquant ou changé = ridicule. 一举两得 ✓ ; 一举二得 ✗. Règle : la forme est figée. Attention : Erreur n°2 — empiler les chengyu dans une phrase courte = pédantisme. Règle : maximum 1 chengyu par paragraphe en oral, 2-3 en écrit soutenu. Attention : Erreur n°3 — utiliser un chengyu négatif (画蛇添足, 自相矛盾) en s\'adressant directement à quelqu\'un = atteinte à la face. Astuce : préfère un commentaire impersonnel 这种做法有点画蛇添足 (« cette façon de faire est un peu trop »), pas 你画蛇添足. Attention : Erreur n°4 — choisir un chengyu trop poétique pour un contexte familier — 锦上添花 dans un message WeChat à un ami sonne pédant.',
+      'Les **chéngyǔ** sont des armes à double tranchant : mal placés, ils sonnent ridicules ou agressifs. Quatre pièges classiques à connaître.\n' +
+      '\n' +
+      'Erreurs à éviter :\n' +
+      '- **N°1** — Déformer la forme figée : UN seul caractère manquant ou changé = ridicule. 一举两得 ✓ ; 一举二得 ✗\n' +
+      '- **N°2** — Empiler les chéngyǔ : max 1 par paragraphe à l\'oral, 2-3 en écrit soutenu\n' +
+      '- **N°3** — Adresser un chéngyǔ négatif (画蛇添足, 自相矛盾) directement à quelqu\'un = atteinte à la face. Préfère 这种做法有点画蛇添足 plutôt que 你画蛇添足\n' +
+      '- **N°4** — Chéngyǔ trop poétique pour un contexte familier (锦上添花 sur WeChat à un ami = pédant)\n' +
+      '\n' +
+      'RÈGLE D\'OR : avant de placer un chéngyǔ, vérifie (1) la forme **exacte**, (2) le contexte assez **soutenu**, (3) que tu n\'attaques personne. Si OUI aux 3, vas-y. Sinon, formulation simple.',
     bodyEn:
       'Mistake #1: deforming a chengyu — ONE missing or changed character = ridiculous. 一举两得 ✓; 一举二得 ✗. The form is fixed. Mistake #2: stacking chengyu in a short sentence = pedantic. Max 1 chengyu per paragraph in speech, 2-3 in formal writing. Mistake #3: using a negative chengyu (画蛇添足, 自相矛盾) addressing someone directly = face attack. Prefer impersonal comment: 这种做法有点画蛇添足 («this way of doing is a bit overdone»), not 你画蛇添足. Mistake #4: choosing a too-poetic chengyu for a casual context — 锦上添花 in a WeChat to a friend sounds pedantic.',
     items: [
@@ -666,7 +952,14 @@ export const c11ChengyuBasicM2LearnSections: LessonV2LearnSection[] = [
     title: '人山人海 + 五花八门 + 千变万化 — peindre une scène',
     titleEn: '人山人海 + 五花八门 + 千变万化 — paint a scene',
     body:
-      'RÈGLE D\'OR : 人山人海 (« montagne de gens, mer de gens ») évoque une foule MASSIVE. Remarque : contexte typique — 春运 (chunyun, migration du Nouvel An), 节假日 (fêtes), grands centres commerciaux. 故宫节假日真是人山人海 = la Cité interdite est noire de monde les jours fériés. RÈGLE D\'OR : 五花八门 (« 5 fleurs, 8 portes ») = TOUTES SORTES, varié. Règle : souvent suivi d\'un nom — 五花八门的产品 (toutes sortes de produits). Remarque : connotation neutre à légèrement positive (richesse de l\'offre). RÈGLE D\'OR : 千变万化 (« 1000 changements, 10 000 transformations ») décrit ce qui CHANGE constamment. Remarque : usage typique — marché, mode, technologie, climat. 市场千变万化 (le marché change tout le temps).',
+      'Trois **chéngyǔ descriptifs** qui utilisent des nombres pour **amplifier** : foule, variété, changement.\n' +
+      '\n' +
+      'Trois chéngyǔ d\'amplification :\n' +
+      '- 人山人海 (« montagne et mer de gens ») = foule **massive**. Contextes : 春运 (migration du Nouvel An), 节假日 (fêtes). Ex : 故宫节假日真是人山人海\n' +
+      '- 五花八门 (« 5 fleurs, 8 portes ») = **toutes sortes**, varié. Souvent + nom : 五花八门的产品. Neutre à légèrement positif\n' +
+      '- 千变万化 (« 1000 changements, 10 000 transformations ») = ce qui **change** constamment. Marché, mode, tech, climat. Ex : 市场千变万化\n' +
+      '\n' +
+      'RÈGLE D\'OR : ces 3 chéngyǔ exploitent la structure **2+2** chinoise pour créer une musicalité — 人山|人海, 五花|八门, 千变|万化. Lis-les à voix haute avec ce rythme pour les ancrer.',
     bodyEn:
       '人山人海 («mountain of people, sea of people») evokes a MASSIVE crowd. Typical contexts: 春运 (chunyun, Lunar New Year migration), 节假日 (holidays), big shopping centers. 故宫节假日真是人山人海 = the Forbidden City is packed on holidays. 五花八门 («5 flowers, 8 doors») = ALL KINDS, varied. Often followed by a noun: 五花八门的产品 (all kinds of products). Neutral to slightly positive connotation (richness of offer). 千变万化 («1000 changes, 10000 transformations») describes what CHANGES constantly. Typical use: market, fashion, tech, climate. 市场千变万化 (the market changes constantly).',
     items: [
@@ -686,7 +979,14 @@ export const c11ChengyuBasicM2LearnSections: LessonV2LearnSection[] = [
     title: 'Comparer avec 天壤之别 et 不相上下',
     titleEn: 'Compare with 天壤之别 and 不相上下',
     body:
-      'RÈGLE D\'OR : pour AMPLIFIER une différence — 天壤之别 (tiān rǎng zhī bié, « différence ciel-terre ») = différence colossale. 这两者有天壤之别 = il y a un fossé entre les deux. Attention : très puissant, à utiliser avec parcimonie. RÈGLE D\'OR : pour signaler EQUIVALENCE — 不相上下 (bù xiāng shàng xià, « ne pas se monter ni se descendre l\'un par rapport à l\'autre ») = à égalité, comparable. 两个候选人不相上下 = les 2 candidats sont à égalité. Remarque : plus chic que 差不多. RÈGLE D\'OR : pour PROGRESSION — 日新月异 (rì xīn yuè yì, « jour nouveau, mois différent ») = évolution rapide et constante. 中国的城市日新月异. Remarque : les 3 sont des chengyu DESCRIPTIFS très utilisés en éditorial et en analyse.',
+      'Trois **chéngyǔ comparatifs** très utilisés en éditorial et analyse pour amplifier une différence, signaler l\'équivalence ou décrire la progression.\n' +
+      '\n' +
+      'Trois axes de comparaison :\n' +
+      '- 天壤之别 (« différence ciel-terre ») = différence **colossale**. Ex : 这两者有天壤之别 (il y a un fossé). Très puissant, à doser\n' +
+      '- 不相上下 (« ni au-dessus ni en-dessous ») = à **égalité**. Ex : 两个候选人不相上下. Plus chic que 差不多\n' +
+      '- 日新月异 (« jour nouveau, mois différent ») = évolution **rapide et constante**. Ex : 中国的城市日新月异\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 中国的发展日新月异 » est une phrase **passe-partout** d\'éditorial sur le développement national. La placer naturellement en discussion signale ta familiarité avec le **discours médiatique** chinois.',
     bodyEn:
       'To AMPLIFY a difference: 天壤之别 («heaven-earth difference») = colossal gap. 这两者有天壤之别 = there\'s an abyss between them. Very powerful, use sparingly. To signal EQUIVALENCE: 不相上下 («neither above nor below the other») = even, comparable. 两个候选人不相上下 = the 2 candidates are even. More elegant than 差不多. For PROGRESSION: 日新月异 («new each day, different each month») = rapid constant change. 中国的城市日新月异. The 3 are DESCRIPTIVE chengyu widely used in editorials and analysis.',
     items: [
@@ -709,7 +1009,17 @@ export const c11ChengyuBasicM3LearnSections: LessonV2LearnSection[] = [
     title: '自相矛盾 + 画蛇添足 — critiquer en lettré',
     titleEn: '自相矛盾 + 画蛇添足 — critique like a literate',
     body:
-      'RÈGLE D\'OR : 自相矛盾 vient d\'un récit du Han Feizi — un vendeur prétendait que sa LANCE (矛 máo) perçait tout, ET que son BOUCLIER (盾 dùn) était impercable. Un client demande : « ta lance contre ton bouclier ? » — silence. Règle : pour signaler une CONTRADICTION dans un argument, dire 您的论点似乎自相矛盾 (votre argument semble se contredire). Astuce : 似乎 (semble) adoucit. RÈGLE D\'OR : 画蛇添足 vient d\'un autre récit — un homme qui finit son dessin de serpent en premier ajoute des pattes, résultat il perd le concours car « les serpents n\'ont pas de pattes ». Règle : pour critiquer un EXCÈS DE ZÈLE, dire 这个修改有点画蛇添足 (cette modification est un peu trop). Remarque : perte de face minimisée car la critique passe par la métaphore.',
+      'Critiquer **en lettré** = passer par un chéngyǔ-récit qui désamorce l\'attaque. Deux histoires classiques du Han Feizi sont devenues des outils rhétoriques.\n' +
+      '\n' +
+      'Les deux récits et leur usage :\n' +
+      '- 自相矛盾 — un vendeur prétendait que sa **lance** (矛) perçait tout ET que son **bouclier** (盾) était impercable. « Ta lance contre ton bouclier ? » Silence. Sens : se **contredire**\n' +
+      '- 画蛇添足 — celui qui finit son dessin de serpent en premier ajoute des pattes, perd le concours car « les serpents n\'ont pas de pattes ». Sens : excès de zèle, en faire trop\n' +
+      '\n' +
+      'Formules de critique voilée :\n' +
+      '- 您的论点似乎自相矛盾 (votre argument semble se contredire — 似乎 adoucit)\n' +
+      '- 这个修改有点画蛇添足 (cette modification est un peu trop)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la critique passe par le **chéngyǔ**, donc elle est **intellectuelle** et non personnelle. L\'opposant peut reculer sans perdre la face.',
     bodyEn:
       '自相矛盾 comes from a Han Feizi story: a seller claimed his SPEAR (矛) pierced everything AND his SHIELD (盾) was impenetrable. A customer asks: «your spear against your shield?» — silence. To flag CONTRADICTION in an argument: 您的论点似乎自相矛盾 (your argument seems to contradict itself). 似乎 (seems) softens. 画蛇添足 from another story: the first to finish drawing a snake adds legs — he loses the contest as «snakes don\'t have legs». To criticize OVERZEALOUSNESS: 这个修改有点画蛇添足 (this edit is a bit too much). Face loss minimized as criticism goes through metaphor.',
     items: [
@@ -729,7 +1039,17 @@ export const c11ChengyuBasicM3LearnSections: LessonV2LearnSection[] = [
     title: '杯弓蛇影 + 草木皆兵 — peur déraisonnable',
     titleEn: '杯弓蛇影 + 草木皆兵 — unreasonable fear',
     body:
-      'RÈGLE D\'OR : 杯弓蛇影 — un homme tombe malade après avoir cru voir un serpent dans sa coupe de vin (c\'était le reflet d\'un arc accroché au mur). Il guérit dès qu\'il découvre la vérité. Règle : sens — se faire peur tout seul, soupçons IMAGINAIRES. 不要杯弓蛇影 (n\'aies pas peur d\'ombres). RÈGLE D\'OR : 草木皆兵 (cǎo mù jiē bīng, « herbes et arbres = soldats ») vient de la bataille de la rivière Fei (383) — un général en déroute voit des soldats partout. Règle : sens — panique paranoïaque générale, peur extrême. Remarque : différence — 杯弓蛇影 = peur INDIVIDUELLE imaginaire ; 草木皆兵 = panique COLLECTIVE et exagérée. Astuce : à mobiliser pour analyser une réaction excessive (politique, marché, opinion publique).',
+      'Deux **chéngyǔ-récits** pour décrire la peur déraisonnable : 杯弓蛇影 (peur imaginaire individuelle) et 草木皆兵 (panique collective).\n' +
+      '\n' +
+      'Les deux histoires :\n' +
+      '- 杯弓蛇影 — un homme tombe malade en croyant voir un serpent dans sa coupe (c\'était le reflet d\'un arc au mur). Il guérit en découvrant la vérité. Sens : se faire peur tout seul, soupçons **imaginaires**\n' +
+      '- 草木皆兵 (« herbes et arbres = soldats ») — bataille de la rivière Fei (383) : un général en déroute voit des soldats partout. Sens : panique **paranoïaque** générale\n' +
+      '\n' +
+      'Distinction clé :\n' +
+      '- 杯弓蛇影 = peur **individuelle** imaginaire\n' +
+      '- 草木皆兵 = panique **collective** exagérée\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour calmer un proche paranoïaque, dis avec sourire « 别杯弓蛇影了 » — phrase intime qui montre l\'affection et invite à la rationalité sans condescendance.',
     bodyEn:
       '杯弓蛇影: a man falls ill after thinking he saw a snake in his wine cup — it was the reflection of a bow on the wall. He recovers when he finds the truth. Meaning: scaring oneself, IMAGINED suspicions. 不要杯弓蛇影 (don\'t fear shadows). 草木皆兵 (cǎo mù jiē bīng, «grass and trees = soldiers») from the battle of Fei River (383): a defeated general sees soldiers everywhere. Meaning: paranoid general panic, extreme fear. Difference: 杯弓蛇影 = INDIVIDUAL imagined fear; 草木皆兵 = COLLECTIVE exaggerated panic. To analyze excessive reaction (politics, market, public opinion).',
     items: [
@@ -752,7 +1072,13 @@ export const c11ChengyuBasicM4LearnSections: LessonV2LearnSection[] = [
     title: '坚持不懈 + 勇往直前 — encourager',
     titleEn: '坚持不懈 + 勇往直前 — encourage',
     body:
-      'RÈGLE D\'OR : 坚持不懈 (« persévérer sans relâche ») = encourager à NE PAS LÂCHER. Remarque : apparait dans presque tous les discours motivants chinois (école, sport, business). 我们要坚持不懈地努力 (il faut persévérer sans relâche). RÈGLE D\'OR : 勇往直前 (« avancer courageusement droit devant ») = encourager à aller de l\'avant SANS PEUR. Remarque : plus offensif. Règle : souvent en injonction — 勇往直前，永不言败 ! (avance courageusement, ne dis jamais que tu es vaincu !). Astuce : combo classique — 坚持不懈 (endurance) + 勇往直前 (courage) = formule complète pour motiver. Remarque : pour un coach / mentor, combine les 2 dans le même paragraphe pour un effet maximal.',
+      'Deux **chéngyǔ d\'encouragement** universels dans les discours motivants chinois : 坚持不懈 (endurance) et 勇往直前 (courage offensif).\n' +
+      '\n' +
+      'Les deux chéngyǔ :\n' +
+      '- 坚持不懈 (« persévérer sans relâche ») = encourager à **ne pas lâcher**. Ex : 我们要坚持不懈地努力\n' +
+      '- 勇往直前 (« avancer courageusement droit devant ») = encourager à aller de l\'avant **sans peur**. Plus offensif. Ex : 勇往直前，永不言败 !\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour clore un discours motivant, le combo classique « 让我们坚持不懈，勇往直前 ! » fonctionne toujours. Plus subtil : ajoute 一定能成功 pour une fermeture optimiste sans pédanterie excessive.',
     bodyEn:
       '坚持不懈 («persevere without slacking») = encourage NOT TO LET GO. Appears in nearly all Chinese motivational speeches (school, sport, business). 我们要坚持不懈地努力 (we must persevere without slacking). 勇往直前 («advance courageously straight ahead») = encourage to go forward WITHOUT FEAR. More offensive. Often as injunction: 勇往直前，永不言败! (advance courageously, never say defeat!). Classic combo: 坚持不懈 (endurance) + 勇往直前 (courage) = complete motivational formula. For a coach / mentor: combine the 2 in the same paragraph for max effect.',
     items: [
@@ -772,7 +1098,17 @@ export const c11ChengyuBasicM4LearnSections: LessonV2LearnSection[] = [
     title: '一心一意 + 全神贯注 + 废寝忘食',
     titleEn: '一心一意 + 全神贯注 + 废寝忘食',
     body:
-      'RÈGLE D\'OR : 一心一意 (« un cœur, une intention ») = se DÉVOUER TOTALEMENT à une chose, sans distraction. Remarque : souvent utilisé pour louer un parent, un professeur — 她一心一意地照顾孩子 (elle se dévoue entièrement à ses enfants). RÈGLE D\'OR : 全神贯注 (« toute l\'âme et la concentration ») = totale CONCENTRATION sur une tâche en cours. 学生全神贯注地听讲 (les élèves écoutent attentivement le cours). Remarque : plus situationnel. RÈGLE D\'OR : 废寝忘食 (« oublier le sommeil et la nourriture ») = travail INTENSE jusqu\'à se nourrir mal. Remarque : connote l\'engagement EXTRÊME. Hierarchy : 一心一意 (loyauté constante) < 全神贯注 (concentration ponctuelle) < 废寝忘食 (engagement extrême). Astuce : le dernier flatte beaucoup en CV/lettre.',
+      'Trois **chéngyǔ d\'engagement total** gradués par intensité : loyauté, concentration ponctuelle, engagement extrême.\n' +
+      '\n' +
+      'Trois niveaux d\'investissement :\n' +
+      '- 一心一意 (« un cœur, une intention ») = se **dévouer totalement**, sans distraction. Ex : 她一心一意地照顾孩子 (elle se dévoue à ses enfants)\n' +
+      '- 全神贯注 (« toute l\'âme et la concentration ») = **concentration** ponctuelle sur une tâche. Ex : 学生全神贯注地听讲\n' +
+      '- 废寝忘食 (« oublier le sommeil et la nourriture ») = travail **intense** jusqu\'à se négliger. Engagement extrême\n' +
+      '\n' +
+      'Hiérarchie d\'intensité :\n' +
+      '- 一心一意 (loyauté constante) < 全神贯注 (concentration ponctuelle) < 废寝忘食 (engagement extrême)\n' +
+      '\n' +
+      'RÈGLE D\'OR : en **CV chinois**, dans la rubrique 自我评价, « 我对工作一心一意，常常废寝忘食 » signale **engagement** et **sacrifice**. Mais modérer le ton : si trop appuyé, sonne faux.',
     bodyEn:
       '一心一意 («one heart, one intention») = DEVOTE ONESELF FULLY without distraction. Used to praise a parent, teacher: 她一心一意地照顾孩子 (she devotes herself entirely to her children). 全神贯注 («full spirit and focus») = total CONCENTRATION on a task at hand. 学生全神贯注地听讲 (students listen attentively to the lecture). More situational. 废寝忘食 («forget sleep and food») = INTENSE work to the point of poor self-care. Connotes EXTREME engagement. Hierarchy: 一心一意 (constant loyalty) < 全神贯注 (focused attention) < 废寝忘食 (extreme commitment). The last flatters a lot in CV/letter.',
     items: [
@@ -797,7 +1133,15 @@ export const c11MediaDiscourseM1LearnSections: LessonV2LearnSection[] = [
     title: 'Anatomie d\'une dépêche : 标题 → 导语 → 主体 → 结尾',
     titleEn: 'Anatomy of a dispatch: 标题 → 导语 → 主体 → 结尾',
     body:
-      'Règle : 标题 (titre) chinois — court, factuel, souvent de 8-15 caractères, parfois en 2 lignes (titre principal + sous-titre 副标题). Règle : 导语 (chapeau) — 1-2 phrases qui répondent aux 5W+H (qui, quoi, où, quand, pourquoi, comment). RÈGLE D\'OR : à lire EN PRIORITÉ — donne 80% de l\'info. Règle : 主体 (corps) — développement chronologique ou thématique, citations entre guillemets 「」 ou 《》. Règle : 结尾 (clôture) — peut être une projection (« 预计未来… ») ou une citation. Astuce : pour LIRE VITE la presse chinoise — titre → chapeau → 1ers mots de chaque paragraphe. Attention : si tu lis en intégral chaque article, tu vas crouler. Remarque : discipline pro.',
+      'La dépêche chinoise suit une **anatomie** rigoureuse en 4 parties. Connaître la structure permet une lecture rapide et stratégique.\n' +
+      '\n' +
+      'Les 4 sections d\'une dépêche :\n' +
+      '- 标题 (titre) — court, factuel, 8-15 caractères, parfois en 2 lignes (titre + 副标题)\n' +
+      '- 导语 (chapeau) — 1-2 phrases répondant aux 5W+H. **80%** de l\'info\n' +
+      '- 主体 (corps) — développement chronologique ou thématique, citations 「」 ou 《》\n' +
+      '- 结尾 (clôture) — projection (« 预计未来… ») ou citation\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour **lire vite** la presse chinoise — ouvre 5 articles en parallèle, lis SEULEMENT les 导语. En 5 min, vue d\'ensemble de l\'actualité. Discipline de journaliste pro pour gérer le volume sans s\'épuiser.',
     bodyEn:
       'Chinese 标题 (headline): short, factual, often 8-15 characters, sometimes in 2 lines (main + subhead 副标题). 导语 (lede): 1-2 sentences answering 5W+H (who, what, where, when, why, how). Read FIRST — gives 80% of the info. 主体 (body): chronological or thematic development, quotes in 「」 or 《》. 结尾 (close): can be a projection («预计未来…») or a quote. To read Chinese press FAST: headline → lede → first words of each paragraph. Reading every article in full will overwhelm you. Pro discipline.',
     items: [
@@ -817,7 +1161,16 @@ export const c11MediaDiscourseM1LearnSections: LessonV2LearnSection[] = [
     title: 'Hiérarchie des sources : Renmin → Caixin',
     titleEn: 'Source hierarchy: Renmin → Caixin',
     body:
-      'Règle : 人民日报 (Quotidien du Peuple) — voix officielle du Parti, 1er journal en termes d\'autorité. Astuce : lire la 1re page = lire la ligne politique du jour. Règle : 新华社 (Xinhua) — agence de presse d\'État, source de la quasi-totalité des dépêches reprises ailleurs. Règle : 央视 (CCTV) + 新闻联播 (le JT de 19h, 30 min, regardé/critiqué par 100M+ chaque soir) — ordre fixe leaders → diplomatie → économie → société. Règle : 南方周末 (Southern Weekly, base à Canton) — presse plus libre dans les limites, investigations sociales. Règle : 财新 (Caixin) — référence économique, plus indépendant. Astuce : pour TRIANGULER une info chinoise — Xinhua + Caixin + presse étrangère (Reuters/Bloomberg en chinois si tu as accès).',
+      'La presse chinoise est **hiérarchisée** par autorité officielle : connaître la place de chaque média = lire entre les lignes.\n' +
+      '\n' +
+      'Cartographie des sources :\n' +
+      '- 人民日报 (Quotidien du Peuple) — voix **officielle** du Parti. Lire la 1re page = lire la ligne politique du jour\n' +
+      '- 新华社 (Xinhua) — agence de presse d\'État, **source** de la quasi-totalité des dépêches\n' +
+      '- 央视 + 新闻联播 — JT de 19h, 30 min, ordre **fixe** : leaders → diplomatie → économie → société\n' +
+      '- 南方周末 (Canton) — presse plus libre dans les limites, investigations sociales\n' +
+      '- 财新 (Caixin) — référence **économique**, plus indépendant\n' +
+      '\n' +
+      'RÈGLE D\'OR : le 新闻联播 a un ordre **rituel**. Le **temps** accordé à chaque dirigeant lors d\'une visite à l\'étranger est un **indicateur politique** surveillé par les analystes. Pour trianguler : Xinhua + Caixin + presse étrangère.',
     bodyEn:
       '人民日报 (People\'s Daily): official Party voice, top in authority. Reading p.1 = reading the day\'s political line. 新华社 (Xinhua): state news agency, source of nearly all dispatches republished elsewhere. 央视 (CCTV) + 新闻联播 (the 7pm news, 30 min, watched/criticized by 100M+ nightly): fixed order — leaders → diplomacy → economy → society. 南方周末 (Southern Weekly, Canton-based): freer press within limits, social investigations. 财新 (Caixin): economic reference, more independent. To TRIANGULATE Chinese info: Xinhua + Caixin + foreign press (Reuters/Bloomberg in Chinese if you have access).',
     items: [
@@ -840,7 +1193,21 @@ export const c11MediaDiscourseM2LearnSections: LessonV2LearnSection[] = [
     title: '改革开放 — comprendre le triptyque fondateur',
     titleEn: '改革开放 — understanding the founding triptych',
     body:
-      'Règle : 改革 (réforme) — modernisation des structures économiques. Règle : 开放 (ouverture) — au monde extérieur, aux investissements étrangers. Règle : 发展 (développement) — but ultime. RÈGLE D\'OR : les 3 mots forment un système — tu réformes POUR ouvrir, tu ouvres POUR développer. RÈGLE D\'OR : 改革开放 (combiné) = nom historique de la politique de Deng Xiaoping (déc. 1978). Remarque : avant — économie planifiée fermée ; après — zones économiques spéciales (Shenzhen, Zhuhai, Xiamen, Shantou en 1980), entrée OMC en 2001. Astuce : tout discours officiel chinois de 1978 à aujourd\'hui se positionne PAR RAPPORT à 改革开放. Remarque : comprendre ce mot = clé d\'entrée du discours politique.',
+      'Le triptyque 改革开放 est le **mythe fondateur** de la Chine moderne. Trois mots qui forment un système logique.\n' +
+      '\n' +
+      'Les trois piliers :\n' +
+      '- 改革 (réforme) — modernisation des structures économiques\n' +
+      '- 开放 (ouverture) — au monde extérieur, aux investissements étrangers\n' +
+      '- 发展 (développement) — but ultime\n' +
+      '\n' +
+      'Logique du système : tu **réformes** pour ouvrir, tu **ouvres** pour développer.\n' +
+      '\n' +
+      'Repères historiques :\n' +
+      '- 改革开放 (déc. 1978) — politique de Deng Xiaoping\n' +
+      '- 1980 — zones économiques spéciales (Shenzhen, Zhuhai, Xiamen, Shantou)\n' +
+      '- 2001 — entrée OMC\n' +
+      '\n' +
+      'RÈGLE D\'OR : tout discours officiel chinois depuis 1978 se positionne **par rapport à** 改革开放. Critiquer frontalement ce triptyque avec un Chinois est **inconfortable** : c\'est l\'une des sources du progrès dont chacun a profité. Discute, mais nuance.',
     bodyEn:
       '改革 (reform) — modernizing economic structures. 开放 (opening) — to the outside world, foreign investment. 发展 (development) — ultimate goal. The 3 words form a system: you reform TO open, you open TO develop. 改革开放 (combined) = historical name of Deng Xiaoping\'s policy (Dec. 1978). Before: closed planned economy. After: Special Economic Zones (Shenzhen, Zhuhai, Xiamen, Shantou in 1980), WTO entry in 2001. All Chinese official discourse from 1978 to today positions itself RELATIVE TO 改革开放. Understanding this word = entry key to political discourse.',
     items: [
@@ -860,7 +1227,14 @@ export const c11MediaDiscourseM2LearnSections: LessonV2LearnSection[] = [
     title: '中国梦 + 一带一路 + 共同富裕 — slogans actuels',
     titleEn: '中国梦 + 一带一路 + 共同富裕 — current slogans',
     body:
-      'Règle : 中国梦 (Rêve chinois) — slogan de Xi Jinping (2012) : 中华民族伟大复兴 (« le grand renouveau de la nation chinoise »). Remarque : notion mobilisatrice mêlant prospérité personnelle et puissance nationale. Règle : 一带一路 (Belt and Road, 2013) — projet géoéconomique d\'infrastructures (routes, ports, voies ferrées) reliant la Chine à l\'Europe via Asie centrale + Afrique. Règle : 共同富裕 (Prospérité commune) — slogan repris en 2021 après une période de creusement des inégalités, signal d\'une régulation des géants tech (Alibaba, Tencent, etc.). RÈGLE D\'OR : comprendre ces 3 slogans = comprendre les 3 priorités stratégiques actuelles — identité, projection internationale, équité interne.',
+      'Trois **slogans politiques actuels** dessinent les trois priorités stratégiques : identité, projection internationale, équité interne.\n' +
+      '\n' +
+      'Les trois slogans-clés :\n' +
+      '- 中国梦 (Rêve chinois, 2012, Xi Jinping) — 中华民族伟大复兴 (« grand renouveau de la nation »). Mêle prospérité personnelle et puissance nationale\n' +
+      '- 一带一路 (Belt and Road, 2013) — projet géoéconomique d\'infrastructures reliant Chine-Europe via Asie centrale + Afrique\n' +
+      '- 共同富裕 (Prospérité commune, repris en 2021) — signal d\'une régulation des géants tech après une période d\'inégalités\n' +
+      '\n' +
+      'RÈGLE D\'OR : suivre l\'évolution des slogans = suivre l\'évolution des priorités. Quand 共同富裕 a réémergé en 2021, c\'était LE signal annonçant la régulation des plateformes tech, **longtemps avant** les sanctions concrètes. Les slogans sont des annonces d\'orientation.',
     bodyEn:
       '中国梦 (Chinese Dream) — Xi Jinping slogan (2012): 中华民族伟大复兴 («the great revival of the Chinese nation»). Mobilizing notion blending personal prosperity and national power. 一带一路 (Belt and Road, 2013): geoeconomic project of infrastructure (roads, ports, railways) connecting China to Europe via Central Asia + Africa. 共同富裕 (Common Prosperity): slogan revived in 2021 after a period of widening inequality, signaling regulation of tech giants (Alibaba, Tencent). Understanding these 3 slogans = understanding the 3 current strategic priorities: identity, international projection, internal equity.',
     items: [
@@ -883,7 +1257,18 @@ export const c11MediaDiscourseM3LearnSections: LessonV2LearnSection[] = [
     title: 'Formules diplomatiques officielles',
     titleEn: 'Official diplomatic formulas',
     body:
-      'RÈGLE D\'OR : 中方 (« partie chinoise ») et 美方 / 欧方 / 俄方 (parties US/UE/russe) sont les formules de communiqués diplomatiques. Attention : JAMAIS « les Chinois » / « les Américains » qui sont jugés trop personnels. Règle : 双边关系 (bilatéral), 多边主义 (multilatéralisme — soutenu par la Chine officiellement), 战略伙伴关系 (partenariat stratégique). RÈGLE D\'OR : hiérarchie de chaleur diplomatique — 全面战略伙伴关系 (« partenariat stratégique global ») > 战略伙伴关系 > 友好伙伴关系 > 合作伙伴关系 > simple 友好关系. Remarque : chaque mot indique un niveau précis. Astuce : quand tu lis « la Chine et X élèvent leur relation à un partenariat stratégique global », c\'est un événement géopolitique majeur.',
+      'Le **vocabulaire diplomatique** chinois utilise les formes 中方 / 美方 / 欧方 (parties) — jamais « les Chinois » / « les Américains » qui sonnent trop personnels.\n' +
+      '\n' +
+      'Vocabulaire de base :\n' +
+      '- 中方 / 美方 / 欧方 / 俄方 (partie chinoise / US / UE / russe)\n' +
+      '- 双边关系 (bilatéral)\n' +
+      '- 多边主义 (multilatéralisme — soutenu officiellement par la Chine)\n' +
+      '- 战略伙伴关系 (partenariat stratégique)\n' +
+      '\n' +
+      'Hiérarchie de chaleur diplomatique :\n' +
+      '- 全面战略伙伴关系 (global) > 战略伙伴关系 > 友好伙伴关系 > 合作伙伴关系 > 友好关系\n' +
+      '\n' +
+      'RÈGLE D\'OR : prête attention aux **adjectifs**. 全面 (global) > 深入 (approfondi) > absence d\'adjectif. Une visite d\'État qui passe de 战略 à 全面战略 = saut **diplomatique majeur** à surveiller dans la presse.',
     bodyEn:
       '中方 («Chinese side») and 美方 / 欧方 / 俄方 (US/EU/Russian sides): formulas of diplomatic communiqués, NEVER «the Chinese» / «the Americans» which are deemed too personal. 双边关系 (bilateral), 多边主义 (multilateralism — supported by China officially), 战略伙伴关系 (strategic partnership). Diplomatic warmth hierarchy: 全面战略伙伴关系 («comprehensive strategic partnership») > 战略伙伴关系 > 友好伙伴关系 > 合作伙伴关系 > plain 友好关系. Each word indicates a precise level. When you read «China and X elevate their relationship to a comprehensive strategic partnership», that\'s a major geopolitical event.',
     items: [
@@ -903,7 +1288,14 @@ export const c11MediaDiscourseM3LearnSections: LessonV2LearnSection[] = [
     title: 'Sujets sensibles : 台湾, 香港, 南海',
     titleEn: 'Sensitive topics: 台湾, 香港, 南海',
     body:
-      'RÈGLE D\'OR : 台湾问题 (« la question de Taïwan ») est la formulation OFFICIELLE. Attention : n\'utilise jamais 国 (pays) pour Taïwan dans un contexte chinois officiel. Règle : position de Pékin — 一个中国原则 (principe d\'une seule Chine), 台湾自古以来是中国领土不可分割的一部分. Attention : avec un Chinois, ÉVITE les positions tranchées sur ce sujet — c\'est ÉMOTIONNEL. Règle : 香港 — « 一国两制 » (un pays, deux systèmes), 50 ans de droits spéciaux promis en 1997, mais resserrement après 2020 (loi sur la sécurité nationale). Règle : 南海 (Mer de Chine méridionale) — revendications chinoises (« 九段线 », ligne en 9 traits) contestées par Vietnam, Philippines, etc. Remarque : discuter ces sujets demande prudence et CONNAISSANCE des positions officielles.',
+      'Trois **sujets sensibles** demandent des formulations officielles précises et une grande prudence dans les échanges avec des Chinois.\n' +
+      '\n' +
+      'Les trois dossiers et leurs formules :\n' +
+      '- 台湾问题 (« question de Taïwan ») — JAMAIS 国 (pays) en contexte officiel. Position de Pékin : 一个中国原则, 台湾自古以来是中国领土不可分割的一部分\n' +
+      '- 香港 — 一国两制 (un pays, deux systèmes), 50 ans de droits spéciaux promis en 1997, resserrement après 2020 (loi sécurité nationale)\n' +
+      '- 南海 — revendications chinoises 九段线 (ligne en 9 traits) contestées par Vietnam, Philippines\n' +
+      '\n' +
+      'RÈGLE D\'OR : avec un Chinois, **écoute** plus que tu ne parles. Pose des questions ouvertes (您怎么看 ?). Si tu n\'es pas d\'accord, formule en **question** : « 但有一种观点是…，您怎么看 ? ». Préserve la discussion sans capituler — ces sujets sont **émotionnels**.',
     bodyEn:
       '台湾问题 («the Taiwan question»): OFFICIAL formulation — never use 国 (country) for Taiwan in an official Chinese context. Beijing\'s position: 一个中国原则 (One China principle), 台湾自古以来是中国领土不可分割的一部分. With a Chinese, AVOID sharp positions on this — it\'s EMOTIONAL. 香港: «一国两制» (one country, two systems), 50 years of special rights promised in 1997, but tightening after 2020 (national security law). 南海 (South China Sea): Chinese claims («九段线», nine-dash line) contested by Vietnam, Philippines, etc. Discussing these requires caution and KNOWLEDGE of official positions.',
     items: [
@@ -926,7 +1318,16 @@ export const c11MediaDiscourseM4LearnSections: LessonV2LearnSection[] = [
     title: '之 / 于 / 为 / 而 / 则 — particules d\'éditorial',
     titleEn: '之 / 于 / 为 / 而 / 则 — editorial particles',
     body:
-      'RÈGLE D\'OR : 之 (= 的, plus court) — 中国之未来 (l\'avenir de la Chine). Astuce : économie de syllabes très utile en titre. RÈGLE D\'OR : 于 (= 在 ou 对) — 致力于 X (se consacrer à X), 优于 Y (supérieur à Y). RÈGLE D\'OR : 为 (= 是, ou « pour ») — 此 X 之要 (« ceci est l\'essentiel de X »), 为人民服务 (servir le peuple). RÈGLE D\'OR : 而 — connecteur logique (et / mais / alors). 知而行之 (savoir et le mettre en pratique). RÈGLE D\'OR : 则 (= 就) — conditionnel ou conséquence. 有志者，事竟成；无志者，事则不成 (qui veut, peut ; qui ne veut pas, échoue). Remarque : reconnaître ces 5 particules = pouvoir LIRE 95% des éditoriaux du Renmin Ribao sans s\'épuiser.',
+      'Cinq **particules d\'éditorial** héritées du chinois **classique** qui structurent les textes soutenus. Les reconnaître = lire vite la presse.\n' +
+      '\n' +
+      'Les 5 particules-charnières :\n' +
+      '- 之 (= 的, plus court) — 中国之未来. Économie de syllabes utile en titre\n' +
+      '- 于 (= 在 ou 对) — 致力于 X (se consacrer à X), 优于 Y (supérieur à Y)\n' +
+      '- 为 (= 是, ou « pour ») — 为人民服务 (servir le peuple)\n' +
+      '- 而 — connecteur logique (et / mais / alors). 知而行之 (savoir et le mettre en pratique)\n' +
+      '- 则 (= 就) — conditionnel ou conséquence. 有志者，事竟成；无志者，事则不成\n' +
+      '\n' +
+      'RÈGLE D\'OR : ces particules sont des **charnières logiques**. Saute les contenus, repère les charnières — tu reconstitues le squelette argumentatif sans lire chaque mot. Compétence n°1 du lecteur de presse soutenue chinoise.',
     bodyEn:
       '之 (= 的, shorter): 中国之未来 (China\'s future). Syllable economy very useful in titles. 于 (= 在 or 对): 致力于 X (devote to X), 优于 Y (superior to Y). 为 (= 是, or «for»): 此 X 之要 («this is X\'s essence»), 为人民服务 (serve the people). 而: logical connector (and/but/then). 知而行之 (know and put into practice). 则 (= 就): conditional or consequence. 有志者，事竟成；无志者，事则不成 (he who wills, succeeds; who doesn\'t, fails). Recognizing these 5 particles = ability to READ 95% of Renmin Ribao editorials without exhaustion.',
     items: [
@@ -946,7 +1347,15 @@ export const c11MediaDiscourseM4LearnSections: LessonV2LearnSection[] = [
     title: '因此 / 然而 / 纵使 / 倘若 — conjonctions soutenues',
     titleEn: '因此 / 然而 / 纵使 / 倘若 — formal conjunctions',
     body:
-      'RÈGLE D\'OR : 因此 = donc, par conséquent (C1 standard). Remarque : plus structurant que 所以. RÈGLE D\'OR : 然而 = toutefois, cependant. Remarque : marque une OPPOSITION soutenue, plus que 但是. RÈGLE D\'OR : 纵使 = même si (concession FORTE), équivalent soutenu de 即使. 纵使千难万险，我也要去 (même au prix de mille difficultés, j\'irai). RÈGLE D\'OR : 倘若 = si jamais (hypothétique formel), équivalent de 如果. 倘若发生 X，我们将 Y (si jamais X arrive, nous Y). Astuce : ces 4 conjonctions transforment ton chinois écrit de B2 à C1 instantanément. Attention : à ALTERNER avec leurs versions courantes pour ne pas tomber dans le pédantisme excessif. Règle : 1-2 conjonctions soutenues par paragraphe maximum.',
+      'Quatre **conjonctions soutenues** qui transforment ton chinois écrit de B2 à C1. Chacune a un équivalent courant plus oral.\n' +
+      '\n' +
+      'Les 4 conjonctions et leurs équivalents :\n' +
+      '- 因此 = donc, par conséquent. Plus structurant que **所以**\n' +
+      '- 然而 = toutefois, cependant. Opposition soutenue, plus que **但是**\n' +
+      '- 纵使 = même si (concession forte), équivalent soutenu de **即使**. Ex : 纵使千难万险，我也要去\n' +
+      '- 倘若 = si jamais (hypothétique formel), équivalent de **如果**. Ex : 倘若发生 X，我们将 Y\n' +
+      '\n' +
+      'RÈGLE D\'OR : règle d\'**alternance** pour un essai C1 — 1er paragraphe en formules courantes (但是, 所以) pour poser le ton, puis monter en registre (然而, 因此) à mesure que tu structures la démonstration. Max 1-2 conjonctions soutenues par paragraphe. Le **contraste** de registre marque l\'élégance.',
     bodyEn:
       '因此 = therefore (C1 standard). More structuring than 所以. 然而 = however, yet. Marks formal OPPOSITION, stronger than 但是. 纵使 = even if (STRONG concession), formal equivalent of 即使. 纵使千难万险，我也要去 (even at the cost of a thousand hardships, I\'ll go). 倘若 = should (formal hypothetical), equivalent of 如果. 倘若发生 X，我们将 Y (should X happen, we\'ll Y). These 4 conjunctions transform your written Chinese from B2 to C1 instantly. ALTERNATE with their plain versions to avoid excessive pedantry. Rule: 1-2 formal conjunctions per paragraph max.',
     items: [
@@ -971,7 +1380,18 @@ export const c11HistoryM1LearnSections: LessonV2LearnSection[] = [
     title: 'Mnémotechnique des dynasties + figures',
     titleEn: 'Dynasty mnemonics + figures',
     body:
-      'Règle : les écoliers chinois récitent 秦汉唐宋元明清 (qínhàn tángsòng yuán míngqīng) — 7 syllabes pour 2000 ans. Astuce : mnémo « Qin a Han Tang son Yuan Ming Qing » (forme orale qui aide). Règle : 秦 (-221) — courte (15 ans) mais matrice de l\'empire (unification monnaie, écriture, mesures). Règle : 汉 (4 siècles) — ouvre la Route de la Soie, donne son nom à 汉族 (95% des Chinois). Règle : 唐 (300 ans) — âge d\'or — poésie, bouddhisme, Chang\'an = plus grande ville du monde. Règle : 宋 (300 ans) — technologie (poudre, boussole, imprimerie) mais militairement faible. Règle : 元 — domination mongole. Règle : 明 — restauration han, Cité interdite. Règle : 清 — mandchoue, finit dans la révolution.',
+      'Les écoliers chinois récitent **秦汉唐宋元明清** (qínhàn tángsòng yuán míngqīng) — 7 syllabes pour 2000 ans d\'histoire. Mnémo français : « Qin a Han Tang son Yuan Ming Qing ».\n' +
+      '\n' +
+      'Les 7 dynasties en bref :\n' +
+      '- 秦 (-221) — courte (15 ans) mais **matrice** de l\'empire : unification monnaie, écriture, mesures\n' +
+      '- 汉 (4 siècles) — ouvre la **Route de la Soie**, donne son nom à 汉族 (95% des Chinois)\n' +
+      '- 唐 (300 ans) — **âge d\'or** : poésie, bouddhisme, Chang\'an = plus grande ville du monde\n' +
+      '- 宋 (300 ans) — technologie (poudre, boussole, imprimerie) mais militairement faible\n' +
+      '- 元 — domination mongole\n' +
+      '- 明 — restauration han, Cité interdite\n' +
+      '- 清 — mandchoue, finit dans la révolution\n' +
+      '\n' +
+      'RÈGLE D\'OR : la question 这是哪个朝代 ? (de quelle dynastie ?) sonne **érudite** — les Chinois l\'utilisent constamment pour se repérer dans leur histoire. À adopter.',
     bodyEn:
       'Chinese schoolchildren recite: 秦汉唐宋元明清 (qínhàn tángsòng yuán míngqīng) — 7 syllables for 2000 years. Mnemonic: «Qin a Han Tang son Yuan Ming Qing» (oral form that helps). 秦 (-221): short (15 years) but matrix of the empire — unification of currency, writing, measures. 汉 (4 centuries): opens the Silk Road, gives its name to 汉族 (95% of Chinese). 唐 (300 years): golden age — poetry, Buddhism, Chang\'an = largest city in the world. 宋 (300 years): tech (powder, compass, printing) but militarily weak. 元: Mongol rule. 明: Han restoration, Forbidden City. 清: Manchu, ends in revolution.',
     items: [
@@ -991,7 +1411,18 @@ export const c11HistoryM1LearnSections: LessonV2LearnSection[] = [
     title: 'Figures emblématiques par dynastie',
     titleEn: 'Emblematic figures by dynasty',
     body:
-      'Règle : Qin — 秦始皇 (Premier Empereur) — unifie, brûle les livres confucéens, ordonne la Grande Muraille initiale, son armée de terre cuite à Xi\'an. Règle : Han — 张骞 (explorateur, ouvre la Route de la Soie). Règle : Tang — 李白 et 杜甫 (les 2 plus grands poètes), 武则天 (seule impératrice à régner en son nom). Règle : Song — 苏轼 (poète polymathe). Règle : Yuan — 忽必烈 (Kublai Khan). Règle : Ming — 郑和 (amiral, 7 voyages jusqu\'à l\'Afrique avant les Européens). Règle : Qing — 康熙 et 乾隆 (deux grands empereurs ayant régné chacun 60+ ans). Astuce : connaître au moins 1 figure par dynastie permet de PARTICIPER à n\'importe quelle discussion historique. Remarque : investissement minimal, rendement énorme.',
+      'Une **figure emblématique par dynastie** suffit à participer à n\'importe quelle discussion historique chinoise. Investissement minimal, rendement énorme.\n' +
+      '\n' +
+      'Les figures par dynastie :\n' +
+      '- Qin — 秦始皇 (Premier Empereur) : unifie, brûle les livres confucéens, Grande Muraille initiale, armée de terre cuite à Xi\'an\n' +
+      '- Han — 张骞 : explorateur, ouvre la Route de la Soie\n' +
+      '- Tang — 李白 et 杜甫 (les 2 plus grands poètes), 武则天 (seule impératrice à régner en son nom)\n' +
+      '- Song — 苏轼 (poète polymathe)\n' +
+      '- Yuan — 忽必烈 (Kublai Khan)\n' +
+      '- Ming — 郑和 (amiral, 7 voyages jusqu\'à l\'Afrique avant les Européens)\n' +
+      '- Qing — 康熙 et 乾隆 (deux grands empereurs régnant chacun 60+ ans)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la phrase « 我最佩服的中国历史人物是 X » peut **lancer** des discussions passionnées. Choisis 1 figure et prépare 3 phrases sur elle — à dégainer dans tout dîner culturel chinois.',
     bodyEn:
       'Qin: 秦始皇 (First Emperor) — unifies, burns Confucian books, orders the initial Great Wall, his Terracotta Army at Xi\'an. Han: 张骞 (explorer, opens Silk Road). Tang: 李白 and 杜甫 (the 2 greatest poets), 武则天 (only empress to reign in her own name). Song: 苏轼 (polymath poet). Yuan: 忽必烈 (Kublai Khan). Ming: 郑和 (admiral, 7 voyages to Africa before the Europeans). Qing: 康熙 and 乾隆 (two great emperors who each reigned 60+ years). Knowing at least 1 figure per dynasty allows PARTICIPATING in any history discussion. Minimal investment, huge return.',
     items: [
@@ -1014,7 +1445,14 @@ export const c11HistoryM2LearnSections: LessonV2LearnSection[] = [
     title: '1911 / 1949 / 1978 — trois dates pivot',
     titleEn: '1911 / 1949 / 1978 — three pivotal dates',
     body:
-      'Règle : 1911 (辛亥革命, Xinhai) — fin du système impérial vieux de 2000 ans, abdication de l\'empereur enfant Puyi. Sun Yat-sen (孙中山) fonde la République (1912). Règle : 1949 — après guerre civile contre les nationalistes du Kuomintang (1945-49), Mao Zedong proclame la République populaire le 1er octobre depuis Tian\'anmen. Remarque : Chiang Kai-shek se replie à Taïwan, où subsiste la République de Chine. Règle : 1978 — Deng Xiaoping lance les réformes 改革开放 lors du 3e plenum du 11e Comité central. RÈGLE D\'OR : c\'est la date qui sépare la Chine pauvre, fermée, idéologique de la Chine pragmatique, ouverte, productiviste. Astuce : mémoriser ces 3 dates = posséder la clé de lecture de la Chine moderne.',
+      'Trois **dates pivot** structurent la Chine moderne. Les mémoriser = posséder la clé de lecture du pays.\n' +
+      '\n' +
+      'Les trois pivots :\n' +
+      '- **1911** (辛亥革命, Xinhai) — fin du système impérial vieux de 2000 ans, abdication de Puyi. Sun Yat-sen (孙中山) fonde la République en 1912\n' +
+      '- **1949** — après guerre civile contre le Kuomintang (1945-49), Mao Zedong proclame la RPC le 1er octobre depuis Tian\'anmen. Chiang Kai-shek se replie à Taïwan\n' +
+      '- **1978** — Deng Xiaoping lance les réformes 改革开放 au 3e plénum du 11e Comité central. Sépare la Chine pauvre, fermée, idéologique de la Chine pragmatique, ouverte, productiviste\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour lancer une discussion historique en Chine, demande « 您觉得 1978 改变了什么 ? ». **Tous** les Chinois ont une opinion — c\'est l\'année qui a redéfini leur vie. Garantie d\'ouvrir une vraie conversation.',
     bodyEn:
       '1911 (辛亥革命, Xinhai) — end of the 2000-year-old imperial system, abdication of child emperor Puyi. Sun Yat-sen (孙中山) founds the Republic (1912). 1949 — after civil war against the Kuomintang Nationalists (1945-49), Mao Zedong proclaims the People\'s Republic on October 1 from Tian\'anmen. Chiang Kai-shek retreats to Taiwan, where the Republic of China survives. 1978 — Deng Xiaoping launches the 改革开放 reforms at the 3rd plenum of the 11th Central Committee. This is the date that separates poor, closed, ideological China from pragmatic, open, productivist China. Memorizing these 3 dates = owning the key to reading modern China.',
     items: [
@@ -1034,7 +1472,13 @@ export const c11HistoryM2LearnSections: LessonV2LearnSection[] = [
     title: 'Évoquer les traumas : 大跃进, 文革',
     titleEn: 'Discussing traumas: 大跃进, 文革',
     body:
-      'Règle : 大跃进 (Grand Bond en avant, 1958-1961) — campagne de Mao pour rattraper l\'Occident en 15 ans : sidérurgie domestique, communes populaires. Remarque : résultat — famine massive (15-45M de morts selon les estimations). Attention : sujet douloureux. Règle : 文化大革命 / 文革 (Révolution culturelle, 1966-1976) — Mao mobilise les jeunes 红卫兵 (Gardes rouges) contre les « 4 vieilleries » (vieilles idées, vieilles cultures, vieilles habitudes, vieilles coutumes). Remarque : persécutions, suicides, intellectuels envoyés à la campagne — UN traumatisme générationnel. RÈGLE D\'OR : avec un Chinois, utilise les EUPHÉMISMES « 那段特殊的时期 » (cette période particulière) plutôt que les noms directs. Attention : beaucoup de familles ont des cicatrices.',
+      'Deux **traumas du XXe siècle** chinois exigent une approche prudente : 大跃进 et 文革 ont marqué tous les foyers.\n' +
+      '\n' +
+      'Les deux périodes traumatiques :\n' +
+      '- 大跃进 (Grand Bond en avant, 1958-1961) — campagne de Mao pour rattraper l\'Occident en 15 ans : sidérurgie domestique, communes populaires. Résultat : famine massive (15-45M de morts)\n' +
+      '- 文化大革命 / 文革 (1966-1976) — Mao mobilise les 红卫兵 (Gardes rouges) contre les « **4 vieilleries** » (idées, cultures, habitudes, coutumes). Persécutions, suicides, intellectuels envoyés à la campagne. Trauma générationnel\n' +
+      '\n' +
+      'RÈGLE D\'OR : avec un Chinois, utilise l\'**euphémisme** 那段特殊的时期 (cette période particulière) plutôt que les noms directs. Si quelqu\'un aborde 文革 spontanément, écoute SANS interrompre. Pose des questions douces : 您家里有人经历了吗 ? Le partage est rare et précieux.',
     bodyEn:
       '大跃进 (Great Leap Forward, 1958-1961) — Mao\'s campaign to catch up with the West in 15 years: backyard steel, people\'s communes. Result: massive famine (15-45M deaths per estimates). Painful topic. 文化大革命 / 文革 (Cultural Revolution, 1966-1976) — Mao mobilizes the youth 红卫兵 (Red Guards) against the «4 olds» (old ideas, old cultures, old habits, old customs). Persecutions, suicides, intellectuals sent to the countryside. A generational trauma. With a Chinese, use EUPHEMISMS «那段特殊的时期» (that particular period) rather than direct names. Many families have scars.',
     items: [
@@ -1057,7 +1501,15 @@ export const c11HistoryM3LearnSections: LessonV2LearnSection[] = [
     title: 'Les 4 grands romans : titres et personnages-clés',
     titleEn: 'The 4 great novels: titles and key characters',
     body:
-      'Règle : 《三国演义》(Sānguó Yǎnyì) — 14e siècle, Luo Guanzhong. Période 220-280, royaumes Wei/Shu/Wu. Figures : 关羽 (Guān Yǔ, dieu de la guerre, divinisé), 诸葛亮 (Zhūgě Liàng, le stratège génial, modèle du conseiller fidèle), 刘备 (Liu Bei, l\'empereur juste). Règle : 《水浒传》(Shuǐhǔ Zhuàn) — 108 héros bandits aux marais Liangshan, anti-corruption. Remarque : modèle de la résistance populaire. Règle : 《西游记》(Xīyóujì) — 16e siècle. Le moine 唐僧 (Tang Seng) accompagné de 孙悟空 (le roi singe), 猪八戒 (cochon), 沙僧 va chercher les sutras en Inde. Remarque : le plus joyeux et fantastique des 4. Règle : 《红楼梦》(Hónglóumèng) — 18e siècle, Cao Xueqin. RÈGLE D\'OR : sommet absolu — amours impossibles dans une grande famille Qing en déclin. Étudié dans une discipline à part entière (红学, « rougeologie »).',
+      'Les 4 **grands romans** 四大名著 sont le canon littéraire chinois. Connaître titres et personnages-clés = comprendre 80% des allusions culturelles.\n' +
+      '\n' +
+      'Les 4 chefs-d\'œuvre :\n' +
+      '- 《三国演义》(Sānguóyǎnyì) — XIVe s., Luo Guanzhong. Période 220-280, royaumes Wei/Shu/Wu. Figures : 关羽 (dieu de la guerre, divinisé), 诸葛亮 (stratège génial), 刘备 (empereur juste)\n' +
+      '- 《水浒传》(Shuǐhǔzhuàn) — 108 héros bandits aux marais Liangshan, anti-corruption. Modèle de la **résistance** populaire\n' +
+      '- 《西游记》(Xīyóujì) — XVIe s. Le moine 唐僧 accompagné de 孙悟空 (roi singe), 猪八戒, 沙僧 va chercher les sutras en Inde. Le plus joyeux des 4\n' +
+      '- 《红楼梦》(Hónglóumèng) — XVIIIe s., Cao Xueqin. Amours impossibles dans une famille Qing en déclin. **Sommet absolu**\n' +
+      '\n' +
+      'RÈGLE D\'OR : 《红楼梦》 a sa propre **discipline universitaire** : 红学 (« études du Rouge »). Pour faire forte impression : « 我最近开始读红楼梦 » ouvre la porte d\'une discussion intellectuelle sérieuse.',
     bodyEn:
       '《三国演义》(Romance of the Three Kingdoms) — 14th c., Luo Guanzhong. Period 220-280, Wei/Shu/Wu kingdoms. Figures: 关羽 (war god, deified), 诸葛亮 (genius strategist, model of the faithful counselor), 刘备 (the just emperor). 《水浒传》(Water Margin) — 108 bandit heroes at Liangshan marshes, anti-corruption. Model of popular resistance. 《西游记》(Journey to the West) — 16th c. The monk 唐僧 (Tang Seng) with 孙悟空 (Monkey King), 猪八戒 (Pig), 沙僧 seeks sutras in India. The most joyful and fantastic of the 4. 《红楼梦》(Dream of the Red Chamber) — 18th c., Cao Xueqin. Absolute peak: impossible loves in a declining great Qing family. Studied as its own discipline (红学, «redology»).',
     items: [
@@ -1077,7 +1529,14 @@ export const c11HistoryM3LearnSections: LessonV2LearnSection[] = [
     title: 'Citations cultes des 4 名著',
     titleEn: 'Iconic quotes from the 4 名著',
     body:
-      'RÈGLE D\'OR : « 桃园三结义 » (Trois Royaumes) — la fraternité de sang entre 刘备, 关羽, 张飞 dans un verger de pêchers. Remarque : symbole de l\'AMITIÉ FIDÈLE en Chine. Astuce : quand 2 amis chinois sont très proches, on les compare à eux. RÈGLE D\'OR : « 大闹天宫 » (Voyage à l\'Ouest) — le Roi Singe sème le chaos au palais céleste. Remarque : symbole du REBELLE INDOMPTABLE. Astuce : cité pour décrire un perturbateur génial. RÈGLE D\'OR : « 林黛玉葬花 » (Rêve dans le pavillon rouge) — l\'héroïne enterre des fleurs tombées. Remarque : symbole de la BEAUTÉ FRAGILE et MÉLANCOLIQUE. Astuce : connaître ces 3 scènes = pouvoir comprendre 80% des allusions culturelles dans les conversations chinoises éduquées, films, séries, chansons.',
+      'Trois **scènes iconiques** des 4 名著 forment le vocabulaire allusif des conversations chinoises éduquées, films, séries et chansons.\n' +
+      '\n' +
+      'Les trois scènes-symboles :\n' +
+      '- 桃园三结义 (Trois Royaumes) — fraternité de sang entre 刘备, 关羽, 张飞 dans un verger de pêchers. Symbole de l\'**amitié fidèle**\n' +
+      '- 大闹天宫 (Voyage à l\'Ouest) — le Roi Singe sème le chaos au palais céleste. Symbole du **rebelle indomptable**, cité pour un perturbateur génial\n' +
+      '- 林黛玉葬花 (Rêve dans le pavillon rouge) — l\'héroïne enterre des fleurs tombées. Symbole de la **beauté fragile** et mélancolique\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 我们桃园三结义 ! » entre amis très proches (en blague) = on est jurés ! Effet humoristique **garanti** si tu sais le placer. À réserver aux amitiés profondes — étrange avec des collègues à peine connus.',
     bodyEn:
       '«桃园三结义» (Three Kingdoms) — the blood brotherhood among 刘备, 关羽, 张飞 in a peach orchard. Symbol of FAITHFUL FRIENDSHIP in China. When 2 Chinese friends are very close, they\'re compared to them. «大闹天宫» (Journey to the West) — the Monkey King wreaks havoc in the celestial palace. Symbol of the UNTAMABLE REBEL. Cited to describe a brilliant troublemaker. «林黛玉葬花» (Dream of Red Chamber) — the heroine buries fallen flowers. Symbol of FRAGILE and MELANCHOLY beauty. Knowing these 3 scenes = ability to understand 80% of cultural allusions in educated Chinese conversations, films, series, songs.',
     items: [
@@ -1100,7 +1559,19 @@ export const c11HistoryM4LearnSections: LessonV2LearnSection[] = [
     title: 'Anciennes routes : terrestre et maritime',
     titleEn: 'Ancient routes: land and maritime',
     body:
-      'Règle : route terrestre — ouverte par 张骞 sous les Han (-138). De 长安 (Chang\'an, terminus est, aujourd\'hui Xi\'an) vers Asie centrale via 敦煌 (oasis aux 莫高窟, grottes bouddhistes ornées de fresques pendant 1000 ans), 喀什 (Kashgar), puis Bactriane et Méditerranée. Règle : marchandises — soie, thé, porcelaine vers l\'ouest ; chevaux, verre, fruits secs vers l\'est. Remarque : religions — bouddhisme entre en Chine via cette route. Règle : route maritime — moins connue mais aussi importante. Astuce : au 15e siècle, l\'amiral 郑和 (Zheng He) effectue 7 expéditions navales (1405-1433) jusqu\'aux côtes africaines (Mogadiscio, Mombasa) avec une flotte gigantesque de 300 navires — un siècle avant les Européens. Remarque : programme abandonné par les Ming, qui se replient.',
+      'Deux **routes anciennes** ont connecté la Chine au monde : la **terrestre** (Han) et la **maritime** (Ming).\n' +
+      '\n' +
+      'Route terrestre (Han, -138, 张骞) :\n' +
+      '- Itinéraire : 长安 (Chang\'an, aujourd\'hui Xi\'an) → 敦煌 (oasis aux 莫高窟) → 喀什 (Kashgar) → Bactriane → Méditerranée\n' +
+      '- Marchandises : soie, thé, porcelaine vers l\'ouest ; chevaux, verre, fruits secs vers l\'est\n' +
+      '- Religions : le bouddhisme entre en Chine via cette route\n' +
+      '\n' +
+      'Route maritime (Ming, XVe s., 郑和) :\n' +
+      '- 7 expéditions navales (1405-1433) jusqu\'aux côtes africaines (Mogadiscio, Mombasa)\n' +
+      '- Flotte de 300 navires, un siècle **avant** les Européens\n' +
+      '- Programme abandonné par les Ming qui se replient\n' +
+      '\n' +
+      'RÈGLE D\'OR : Dunhuang et ses 莫高窟 sont un **sommet absolu** de l\'art mondial — 1000 ans de peintures bouddhistes en superposition. Peu connu en Occident ; mentionner cette visite à un Chinois cultivé crée un **lien instantané**.',
     bodyEn:
       'Land route: opened by 张骞 under the Han (138 BCE). From 长安 (Chang\'an, eastern terminus, today Xi\'an) to Central Asia via 敦煌 (oasis with 莫高窟, Buddhist grottoes decorated with frescoes for 1000 years), 喀什 (Kashgar), then Bactria and Mediterranean. Goods: silk, tea, porcelain westward; horses, glass, dried fruits eastward. Religions: Buddhism enters China via this route. Maritime route: less known but equally important. In the 15th c., admiral 郑和 (Zheng He) conducts 7 naval expeditions (1405-1433) to African shores (Mogadishu, Mombasa) with a giant fleet of 300 ships — a century before the Europeans. Program abandoned by the Ming, who pull back.',
     items: [
@@ -1120,7 +1591,21 @@ export const c11HistoryM4LearnSections: LessonV2LearnSection[] = [
     title: '一带一路 — la lecture moderne',
     titleEn: '一带一路 — modern reading',
     body:
-      'Règle : 一带一路 lancé en 2013 à Astana (Xi Jinping). RÈGLE D\'OR : « 一带 » (one belt) = corridor terrestre via Asie centrale + Russie. RÈGLE D\'OR : « 一路 » (one road) = route maritime via océan Indien + Méditerranée. Remarque : 70+ pays partenaires, financements via Banque Asiatique d\'Investissement (AIIB) et Silk Road Fund. Astuce : projets emblématiques — port de 瓜达尔 (Gwadar, Pakistan), corridor Chine-Pakistan (CPEC), train marchandises Yiwu-Madrid. Règle : lecture occidentale — projet de puissance influenceuse + endettement. Règle : lecture chinoise — développement gagnant-gagnant + désenclavement. Astuce : comprendre les DEUX lectures et les NUANCER en discussion = signal de maturité géopolitique.',
+      '一带一路 (Belt and Road), lancé en 2013 à Astana par Xi Jinping, **ressuscite** les routes anciennes en projet géoéconomique mondial.\n' +
+      '\n' +
+      'Les deux axes :\n' +
+      '- 一带 (one belt) = corridor terrestre via Asie centrale + Russie\n' +
+      '- 一路 (one road) = route maritime via océan Indien + Méditerranée\n' +
+      '\n' +
+      'Cadre et projets :\n' +
+      '- 70+ pays partenaires, financements via AIIB et Silk Road Fund\n' +
+      '- Projets emblématiques : port de 瓜达尔 (Gwadar, Pakistan), corridor CPEC, train marchandises Yiwu-Madrid\n' +
+      '\n' +
+      'Deux lectures opposées :\n' +
+      '- **Occidentale** : projet de puissance + endettement des partenaires\n' +
+      '- **Chinoise** : développement **gagnant-gagnant** (共赢) + désenclavement\n' +
+      '\n' +
+      'RÈGLE D\'OR : 共赢 (win-win) est UN mot-clé du discours BRI. Pour nuancer sans attaquer, demande « 您觉得 BRI 真的是 win-win 吗 ? » — invite la maturité géopolitique sans front direct.',
     bodyEn:
       '一带一路 launched in 2013 in Astana (Xi Jinping). «一带» (one belt) = land corridor via Central Asia + Russia. «一路» (one road) = maritime route via Indian Ocean + Mediterranean. 70+ partner countries, financed via Asian Infrastructure Investment Bank (AIIB) and Silk Road Fund. Flagship projects: 瓜达尔 (Gwadar, Pakistan) port, China-Pakistan Corridor (CPEC), Yiwu-Madrid freight train. Western reading: influence-power project + indebtedness. Chinese reading: win-win development + opening up landlocked regions. Understanding BOTH readings and NUANCING in discussion = signal of geopolitical maturity.',
     items: [
@@ -1145,7 +1630,15 @@ export const c11StyleFormalM1LearnSections: LessonV2LearnSection[] = [
     title: 'Ouverture d\'email pro : codes obligatoires',
     titleEn: 'Pro email opening: mandatory codes',
     body:
-      'Règle : Hierarchy — 你好 (familier) < 您好 (poli) < 尊敬的 X 先生/女士 (formel pro). RÈGLE D\'OR : pour un supérieur ou un client important, COMMENCE par 尊敬的. Astuce : si tu ne connais pas le sexe — 尊敬的 X 总 (avec le titre 总 = directeur). Remarque : 您好! avec le ! pour la chaleur, sur la 2e ligne. Règle : phrase d\'accroche — 我是 X 公司的 Y (présentation rapide) ou 借此机会向您 X (« je profite de cette occasion pour X » — TRÈS soutenu). Astuce : pour reprendre contact — 好久未联系，希望您一切安好 (ne pas se voir longtemps, j\'espère que tout va bien). Attention : évite ABSOLUMENT 你好 dans un 1er email pro vers un inconnu — sonne irrespectueux.',
+      'L\'**ouverture** d\'email pro chinois est strictement **hiérarchisée** : 你好 (familier) < 您好 (poli) < 尊敬的 X 先生/女士 (formel pro).\n' +
+      '\n' +
+      'Formules d\'ouverture par contexte :\n' +
+      '- Supérieur ou client important : 尊敬的 X 先生/女士 / 尊敬的 X 总 (si sexe inconnu, 总 = directeur)\n' +
+      '- 2e ligne avec chaleur : 您好 !\n' +
+      '- Présentation : 我是 X 公司的 Y\n' +
+      '- Reprise de contact : 好久未联系，希望您一切安好\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 借此机会 X » est une **formule magique** d\'ouverture — utilisable même quand l\'occasion n\'est pas vraiment « spéciale », c\'est un marqueur de **respect**. Effet : ton mail sonne immédiatement professionnel. Évite absolument 你好 dans un 1er email à un inconnu.',
     bodyEn:
       'Hierarchy: 你好 (casual) < 您好 (polite) < 尊敬的 X 先生/女士 (formal pro). For a superior or important client, START with 尊敬的. If you don\'t know the gender: 尊敬的 X 总 (with title 总 = director). 您好! with ! for warmth, on the 2nd line. Hook phrase: 我是 X 公司的 Y (quick intro) or 借此机会向您 X («I take this opportunity to X» — VERY formal). To re-engage: 好久未联系，希望您一切安好 (haven\'t been in touch long, hope all is well). ABSOLUTELY avoid 你好 in a 1st pro email to a stranger — sounds disrespectful.',
     items: [
@@ -1165,7 +1658,19 @@ export const c11StyleFormalM1LearnSections: LessonV2LearnSection[] = [
     title: 'Clôture rituelle : 此致 / 敬礼 / 敬上',
     titleEn: 'Ritual closing: 此致 / 敬礼 / 敬上',
     body:
-      'RÈGLE D\'OR : format CLASSIQUE chinois — sur l\'avant-dernière ligne 此致 (cǐzhì = « par la présente »), seule. Sur la dernière ligne 敬礼 (jìnglǐ = « salutation respectueuse »), seule. Remarque : cette mise en page (chaque mot sur sa ligne) date des lettres manuscrites — gardée par tradition même en email. Règle : variantes — 顺颂商祺 (« je joins mes vœux d\'affaires prospères », SUPER formel B2B), 即颂时绥 (vœux de paix selon la saison). Règle : signature — 您的 + nom + 敬上 (« respectueusement présenté »). Astuce : pour les emails internes moins formels — 谢谢 + nom suffit. RÈGLE D\'OR : mais pour clients/supérieurs, 此致 + 敬礼 reste de mise. Attention : sans cette clôture, ton mail paraît incomplet/abrupt.',
+      'La **clôture rituelle** d\'email chinois utilise une mise en page héritée des lettres manuscrites — chaque formule sur sa propre ligne.\n' +
+      '\n' +
+      'Format CLASSIQUE :\n' +
+      '- Avant-dernière ligne : 此致 (cǐzhì = « par la présente »), seule\n' +
+      '- Dernière ligne : 敬礼 (jìnglǐ = « salutation respectueuse »), seule\n' +
+      '\n' +
+      'Variantes par contexte :\n' +
+      '- B2B très formel : 顺颂商祺 (vœux d\'affaires prospères)\n' +
+      '- Vœux saisonniers : 即颂时绥\n' +
+      '- Signature : 您的 + nom + 敬上 (respectueusement présenté)\n' +
+      '- Emails internes : 谢谢 + nom suffit\n' +
+      '\n' +
+      'RÈGLE D\'OR : « 顺颂商祺 » est la formule de clôture **chic** en B2B chinois — utilise-la avec un partenaire important, il reconnaîtra ton niveau de pro. Pour un mail interne, trop. **Adapte au contexte**.',
     bodyEn:
       'CLASSIC Chinese format: on the second-to-last line 此致 (cǐzhì = «hereby»), alone. On the last line 敬礼 (jìnglǐ = «respectful salutation»), alone. This layout (each word on its line) dates from handwritten letters — kept by tradition even in email. Variants: 顺颂商祺 («I join my wishes for prosperous business», SUPER formal B2B), 即颂时绥 (peace wishes per the season). Signature: 您的 + name + 敬上 («respectfully submitted»). For less formal internal emails: 谢谢 + name suffices. But for clients/superiors: 此致 + 敬礼 remains required. Without this closing, your email feels incomplete/abrupt.',
     items: [
@@ -1188,7 +1693,17 @@ export const c11StyleFormalM2LearnSections: LessonV2LearnSection[] = [
     title: 'CV chinois : 6 sections incontournables',
     titleEn: 'Chinese CV: 6 essential sections',
     body:
-      'Règle : format A4, 1-2 pages max. Règle : (1) 个人信息 — nom, sexe, âge, lieu de naissance, photo (oui, photo OBLIGATOIRE en CV chinois — sérieuse, fond blanc), email, WeChat. Règle : (2) 教育背景 — universités en ordre INVERSE (récent en haut), mention 985/211 si applicable (les TOP universités chinoises). Règle : (3) 工作经验 — entreprises avec dates, poste, 3-5 puces de réalisations CHIFFRÉES. Règle : (4) 技能 — techniques (langues programmation, outils) ET soft skills. Règle : (5) 语言能力 — niveau précis (HSK X, IELTS X, etc.). Règle : (6) 自我评价 — 3-5 lignes, ton ENGAGÉ et collectif (« 我善于团队合作 »). Remarque : distinct du CV occidental où l\'auto-éval est rare.',
+      'Le CV chinois suit un canevas en **6 sections incontournables**. Format A4, 1-2 pages max. Distinct du CV occidental par la rubrique d\'auto-évaluation.\n' +
+      '\n' +
+      'Les 6 sections obligatoires :\n' +
+      '- (1) 个人信息 — nom, sexe, âge, lieu de naissance, **photo obligatoire** (sérieuse, fond blanc), email, WeChat\n' +
+      '- (2) 教育背景 — universités en ordre INVERSE (récent en haut), mention 985/211 si applicable\n' +
+      '- (3) 工作经验 — entreprises avec dates, poste, 3-5 puces de réalisations **chiffrées**\n' +
+      '- (4) 技能 — techniques (programmation, outils) ET soft skills\n' +
+      '- (5) 语言能力 — niveau précis (HSK X, IELTS X, etc.)\n' +
+      '- (6) 自我评价 — 3-5 lignes, ton engagé et collectif (我善于团队合作)\n' +
+      '\n' +
+      'RÈGLE D\'OR : le 自我评价 est un piège — sois **concret** (我在 X 项目中 Y) plutôt que **cliché** (我有责任心，团结合作). Les recruteurs en lisent des milliers : la **spécificité** fait la différence.',
     bodyEn:
       'A4 format, 1-2 pages max. (1) 个人信息: name, gender, age, birthplace, photo (yes, photo MANDATORY on Chinese CV — serious, white background), email, WeChat. (2) 教育背景: universities in REVERSE order (recent on top), mention 985/211 if applicable (TOP Chinese universities). (3) 工作经验: companies with dates, position, 3-5 bullets of QUANTIFIED achievements. (4) 技能: technical (programming languages, tools) AND soft skills. (5) 语言能力: precise level (HSK X, IELTS X, etc.). (6) 自我评价: 3-5 lines, ENGAGED and collective tone («我善于团队合作»). Distinct from Western CV where self-eval is rare.',
     items: [
@@ -1208,7 +1723,16 @@ export const c11StyleFormalM2LearnSections: LessonV2LearnSection[] = [
     title: 'Lettre de motivation : 求职信 efficace',
     titleEn: 'Cover letter: effective 求职信',
     body:
-      'Règle : structure type — (1) Source de l\'annonce (« 我从 X 网站看到贵公司招聘 Y »). Règle : (2) Pourquoi tu postules (1 phrase précise sur l\'entreprise — montre que tu as fait tes devoirs). Règle : (3) Tes 3 atouts CONCRETS pour le poste, avec exemples chiffrés. Règle : (4) Ta disponibilité (« 我可以从 X 月开始入职 »). Règle : (5) Clôture — 期待您的回复 + 此致敬礼. RÈGLE D\'OR : la 求职信 chinoise valorise le RESPECT et la HUMILITÉ. Attention : évite « je suis le meilleur candidat » direct. Astuce : préfère « 我相信我能为贵公司带来 X 的价值 » (je crois pouvoir apporter X à votre entreprise). Remarque : plus chic, plus chinois.',
+      'La 求职信 chinoise valorise **respect** et **humilité** — éviter le « je suis le meilleur » occidental, préférer une formulation centrée sur la valeur apportée.\n' +
+      '\n' +
+      'Structure standard en 5 temps :\n' +
+      '- (1) Source de l\'annonce : 我从 X 网站看到贵公司招聘 Y\n' +
+      '- (2) Pourquoi tu postules : 1 phrase précise sur l\'entreprise (montre que tu as fait tes devoirs)\n' +
+      '- (3) Tes 3 atouts **concrets** avec exemples chiffrés\n' +
+      '- (4) Disponibilité : 我可以从 X 月开始入职\n' +
+      '- (5) Clôture : 期待您的回复 + 此致敬礼\n' +
+      '\n' +
+      'RÈGLE D\'OR : préfère « 我相信我能为贵公司带来 X 的价值 » au « je suis le meilleur candidat » direct. Plus **chic**, plus chinois. Avant d\'envoyer, fais lire à un natif — les nuances de modestie/engagement sont subtiles, un Français qui traduit littéralement sonne arrogant sans le savoir.',
     bodyEn:
       'Standard structure: (1) Source of the ad («我从 X 网站看到贵公司招聘 Y»). (2) Why you apply (1 specific sentence about the company — shows you did your homework). (3) Your 3 CONCRETE strengths for the role, with quantified examples. (4) Your availability («我可以从 X 月开始入职»). (5) Closing: 期待您的回复 + 此致敬礼. The Chinese 求职信 values RESPECT and HUMILITY — avoid direct «I\'m the best candidate». Prefer «我相信我能为贵公司带来 X 的价值» (I believe I can bring X value to your company). Chicer, more Chinese.',
     items: [
@@ -1231,7 +1755,17 @@ export const c11StyleFormalM3LearnSections: LessonV2LearnSection[] = [
     title: 'Construire un discours de banquet',
     titleEn: 'Build a banquet speech',
     body:
-      'Règle : format type (5-8 min, debout, verre en main) — (1) Saluer hiérarchiquement : 各位领导，各位同仁，各位朋友. Règle : (2) Remercier l\'hôte — 感谢 X 先生/女士的盛情款待. RÈGLE D\'OR : 盛情款待 (chaleureuse hospitalité) = expression-clé. Règle : (3) Évoquer le moment — 今天我们相聚一堂 (aujourd\'hui nous sommes réunis). Règle : (4) Thème central (1-2 min) — succès commun, partenariat, anniversaire, etc. Règle : (5) Lever le verre — 让我提议，为 X 干杯 ! (proposons un toast à X). Règle : (6) Conclure avec une formule — 祝大家身体健康，事业蒸蒸日上 ! (santé et carrière prospère). Remarque : 蒸蒸日上 (chengyu, « monter de plus en plus »).',
+      'Le discours de **banquet** suit un format type rigoureux : 5-8 min, debout, verre en main. Six étapes à enchaîner sans accroc.\n' +
+      '\n' +
+      'Les 6 temps du discours :\n' +
+      '- (1) Saluer hiérarchiquement : 各位领导，各位同仁，各位朋友\n' +
+      '- (2) Remercier l\'hôte : 感谢 X 先生/女士的盛情款待 (盛情款待 = expression-clé)\n' +
+      '- (3) Évoquer le moment : 今天我们相聚一堂\n' +
+      '- (4) Thème central (1-2 min) — succès commun, partenariat, anniversaire\n' +
+      '- (5) Lever le verre : 让我提议，为 X 干杯 !\n' +
+      '- (6) Conclure : 祝大家身体健康，事业蒸蒸日上 ! (蒸蒸日上, **chéngyǔ**, « monter sans cesse »)\n' +
+      '\n' +
+      'RÈGLE D\'OR : si tu es l\'**invité d\'honneur**, tu DOIS dire un mot. Pas plus de 8 min, pas moins de 3 min. Préparer 2-3 phrases personnelles (jamais sur smartphone — apprends-les) montre que tu prends le banquet au sérieux.',
     bodyEn:
       'Standard format (5-8 min, standing, glass in hand): (1) Greet hierarchically: 各位领导，各位同仁，各位朋友. (2) Thank the host: 感谢 X 先生/女士的盛情款待. 盛情款待 (warm hospitality) = key expression. (3) Evoke the moment: 今天我们相聚一堂 (today we are gathered). (4) Central theme (1-2 min): shared success, partnership, anniversary, etc. (5) Raise the glass: 让我提议，为 X 干杯! (let me propose a toast to X). (6) Close with a formula: 祝大家身体健康，事业蒸蒸日上! (health and a thriving career). 蒸蒸日上 (chengyu, «rising more and more»).',
     items: [
@@ -1251,7 +1785,19 @@ export const c11StyleFormalM3LearnSections: LessonV2LearnSection[] = [
     title: 'Les codes du toast : 干杯 vs 随意',
     titleEn: 'Toast codes: 干杯 vs 随意',
     body:
-      'RÈGLE D\'OR : 干杯 (gānbēi, « assécher la coupe ») = CUL SEC. Engagement total. Attention : si quelqu\'un te dit 干杯 et lève son verre, tu DOIS finir le tien. Astuce : sinon = manque de respect (tu peux refuser POLIMENT en disant 我以茶代酒 « je remplace l\'alcool par du thé »). Règle : 随意 (suíyì, « à votre guise ») = boire UNE GORGÉE seulement. Remarque : plus moderne et plus poli pour les non-buveurs. RÈGLE D\'OR : quand tu trinques avec un SUPÉRIEUR ou un AÎNÉ, tiens ton verre PLUS BAS que le sien (signe de respect). Astuce : approche-toi physiquement pour vraiment toucher les verres — c\'est important, le tintement scelle l\'engagement. Attention : évite de boire ton verre AVANT que la personne saluée n\'ait fini d\'accepter le toast.',
+      'Le **toast** chinois se code en deux registres : 干杯 (cul sec, engagement total) ou 随意 (gorgée polie). Les gestes accompagnent les mots.\n' +
+      '\n' +
+      'Les deux niveaux et leur usage :\n' +
+      '- 干杯 (gānbēi, « assécher la coupe ») = **cul sec**. Engagement total : si quelqu\'un te le dit, tu DOIS finir le verre\n' +
+      '- 随意 (suíyì, « à votre guise ») = **une gorgée** seulement. Plus moderne et poli pour les non-buveurs\n' +
+      '- Refus poli : 我以茶代酒 (je remplace l\'alcool par du thé)\n' +
+      '\n' +
+      'Codes gestuels :\n' +
+      '- Avec un supérieur/aîné : ton verre **plus bas** que le sien\n' +
+      '- Approche-toi physiquement pour toucher les verres (le tintement scelle l\'engagement)\n' +
+      '- Ne bois pas avant que la personne saluée ait fini d\'accepter le toast\n' +
+      '\n' +
+      'RÈGLE D\'OR : si tu ne bois pas d\'alcool, prépare ta phrase à l\'avance — « 不好意思，我对酒精过敏 / 我开车 / 医生建议我不要喝. 我以茶代酒，您随意 ». Phrase complète qui **sauve la face** de tout le monde.',
     bodyEn:
       '干杯 (gānbēi, «empty the cup») = BOTTOMS UP. Total commitment. If someone says 干杯 and raises their glass, you MUST finish yours. Otherwise = lack of respect (you can refuse POLITELY saying 我以茶代酒 «I substitute tea for alcohol»). 随意 (suíyì, «at your discretion») = ONE SIP only. More modern and polite for non-drinkers. Cultural note: when toasting a SUPERIOR or ELDER, hold your glass LOWER than theirs (sign of respect). Get physically close to actually touch the glasses — important, the chime seals the commitment. Avoid drinking your glass BEFORE the toasted person has finished accepting.',
     items: [

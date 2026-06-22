@@ -13,7 +13,17 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Conférence académique de philosophie',
     titleEn: 'Academic philosophy conference',
     body:
-      'Ouvrir : 各位学者，今天我想就 X 这一议题展开论述 (chers chercheurs, aujourd\'hui je vais développer le thème X). Règle : vocab philosophique 论述 (lùnshù, exposer), 阐释 (chǎnshì, élucider), 释义 (shìyì, exégèse), 注疏 (zhùshū, commentaire classique). Citation : 朱熹《四书章句集注》中说 X (selon Zhu Xi dans ses Commentaires des Quatre Livres). Remarque : pour cadrer une thèse, 我的论点可概括为以下几点 (mon argument peut se résumer en plusieurs points). RÈGLE D\'OR : conclure par 此乃笔者之拙见，敬请各位斧正 (ceci est l\'humble vue de l\'auteur, merci de vos corrections).',
+      'En **conférence académique**, l\'ouverture rituelle pose le ton : 各位学者，今天我想就 X 这一议题展开论述 (chers chercheurs, aujourd\'hui je vais développer le thème X). Le registre est **soutenu**, dense, impersonnel.\n' +
+      '\n' +
+      'Vocab philosophique :\n' +
+      '- 论述 (lùnshù) — exposer (académique)\n' +
+      '- 阐释 (chǎnshì) — élucider\n' +
+      '- 释义 (shìyì) — exégèse\n' +
+      '- 注疏 (zhù shū) — commentaire **classique**\n' +
+      '\n' +
+      'Pour citer : 朱熹《四书章句集注》中说 X (selon Zhu Xi dans ses Commentaires des Quatre Livres). Pour cadrer la thèse : 我的论点可概括为以下几点 (mon argument peut se résumer en plusieurs points).\n' +
+      '\n' +
+      'RÈGLE D\'OR : conclure par 此乃笔者之拙见，敬请各位斧正 — humilité **lettrée** maximale, formule de clôture la plus prisée du registre académique chinois.',
     bodyEn:
       'Open: 各位学者，今天我想就 X 这一议题展开论述 (esteemed scholars, today I will develop the topic X). Philosophical vocab: 论述 (lùnshù, expound), 阐释 (chǎnshì, elucidate), 释义 (shìyì, exegesis), 注疏 (zhùshū, classical commentary). Citation: 朱熹《四书章句集注》中说 X (per Zhu Xi in his Commentaries on the Four Books). Frame a thesis: 我的论点可概括为以下几点. Close: 此乃笔者之拙见，敬请各位斧正 (this is the author\'s humble view, please give your corrections).',
     items: [
@@ -33,7 +43,17 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Citer un classique pour étayer un argument',
     titleEn: 'Cite a classic to support an argument',
     body:
-      'Citation directe : 《论语》有云：« X » (les Entretiens disent : X). 《道德经》第 X 章曰 : Y (le chap. X du Daode jing dit Y). Règle : verbes de citation 云 (yún, dit — classique), 曰 (yuē, dit — très classique), 据载 (jùzǎi, selon les annales), 古书云 (les anciens textes disent). Remarque : pour interpréter, 此言之意 (le sens de cette parole), 这句话提示我们 X (cette phrase nous suggère X). RÈGLE D\'OR : pour appliquer, 这句古训放在今天依然有现实意义 (cet enseignement antique reste pertinent aujourd\'hui). Astuce : combo soutenu 古训 + 现实意义 = passerelle entre classique et contemporain, valorisée en académique chinois.',
+      'Citer un classique étaye toute thèse **soutenue**. Formes-types : 《论语》有云：« X » (les Entretiens disent : X) ou 《道德经》第 X 章曰 : Y (le chap. X du Daode jing dit Y).\n' +
+      '\n' +
+      'Verbes de citation par registre :\n' +
+      '- 云 (yún) — dit (**classique**)\n' +
+      '- 曰 (yuē) — dit (très **classique**, 文言)\n' +
+      '- 据载 (jù zǎi) — selon les annales\n' +
+      '- 古书云 — les anciens textes disent\n' +
+      '\n' +
+      'Pour interpréter : 此言之意 (le sens de cette parole), 这句话提示我们 X (cette phrase nous suggère X).\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour ancrer dans le présent, dis 这句古训放在今天依然有现实意义 (cet enseignement antique reste pertinent aujourd\'hui). Le combo 古训 + 现实意义 = passerelle **lettrée** entre classique et contemporain, indispensable en académique.',
     bodyEn:
       'Direct citation: 《论语》有云：«X» (the Analects say: X). 《道德经》第 X 章曰 : Y (chap. X of the Daode jing says Y). Citation verbs: 云 (yún, says — classical), 曰 (yuē, says — very classical), 据载 (per the annals), 古书云 (ancient texts say). To interpret: 此言之意 (the meaning of this saying), 这句话提示我们 X (this phrase suggests us X). To apply: 这句古训放在今天依然有现实意义 (this ancient teaching remains relevant today). Formal combo: 古训 + 现实意义 = bridge between classical and contemporary, valued in Chinese academia.',
     items: [
@@ -56,7 +76,17 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Débat littéraire avec un critique',
     titleEn: 'Literary debate with a critic',
     body:
-      'Cadre : on discute la valeur d\'une œuvre (roman, poésie, film) avec un critique chinois. Vocab : 文学价值 (valeur littéraire), 艺术成就 (accomplissement artistique), 主题深度 (profondeur thématique), 笔触 (bǐchù, touche/style narratif). Règle : pour poser sa position, 我个人认为这部作品的核心价值在于 X (le cœur de cette œuvre est X). Astuce : désaccord élégant 我对您的看法有些不同，我认为 X 反而是 Y (j\'ai un point de vue un peu différent — X est plutôt Y). RÈGLE D\'OR : combo de réfutation soutenue 诚然 X，然而 Y (concession + reprise — formule C1+ qui marque la rhétorique soutenue). Remarque : pour conclure, 文学评论本就见仁见智 (la critique littéraire est par nature subjective — formule consensuelle pour clore poliment).',
+      'On discute la valeur d\'une œuvre (roman, poésie, film) avec un critique chinois. Le ton reste **lettré**, jamais frontal.\n' +
+      '\n' +
+      'Vocab critique :\n' +
+      '- 文学价值 — valeur littéraire\n' +
+      '- 艺术成就 — accomplissement artistique\n' +
+      '- 主题深度 — profondeur thématique\n' +
+      '- 笔触 (bǐchù) — touche, style narratif\n' +
+      '\n' +
+      'Pour poser sa position : 我个人认为这部作品的核心价值在于 X. Pour le désaccord élégant : 我对您的看法有些不同，我认为 X 反而是 Y. Combo de réfutation **soutenue** 诚然 X，然而 Y (concession + reprise) — **rhétorique** C1+ qui signale le **registre** académique.\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour clore sans humilier, dis 文学评论本就见仁见智 — chéngyǔ consensuel qui signale « ni toi ni moi n\'avons tort, c\'est une question d\'angle ».',
     bodyEn:
       'Frame: discussing the value of a work (novel, poetry, film) with a Chinese critic. Vocab: 文学价值 (literary value), 艺术成就 (artistic achievement), 主题深度 (thematic depth), 笔触 (bǐchù, narrative touch/style). Stance: 我个人认为这部作品的核心价值在于 X (the core of this work is X). Elegant disagreement: 我对您的看法有些不同，我认为 X 反而是 Y. Formal refutation combo: 诚然 X，然而 Y (concession + recovery — C1+ formal rhetoric). Close: 文学评论本就见仁见智 (literary criticism is inherently subjective — consensus formula to close politely).',
     items: [
@@ -76,7 +106,22 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Recommander une œuvre et la situer',
     titleEn: 'Recommend a work and situate it',
     body:
-      'Recommandation : 我向您推荐 X，作者是 Y (je vous recommande X, de l\'auteur Y). Règle : situer dans une école avec 这部作品属于 X 流派 (cette œuvre relève de l\'école X). Remarque : écoles littéraires chinoises clés 朦胧诗派 (méng lóng shī pài, poésie obscure), 寻根派 (xún gēn pài, école de la quête des racines), 先锋派 (xiān fēng pài, avant-garde). Auteurs majeurs C2 : 莫言 (Mo Yan, Nobel 2012), 余华 (Yu Hua, 活着), 阎连科 (Yan Lianke), 王小波 (Wang Xiaobo). Astuce : pour justifier, 这部作品的价值在于 X (la valeur de cette œuvre tient à X) — effet 读后令人深思 (lecture qui pousse à réfléchir). Attention : ajoute toujours une précaution 当然，每个读者的感受可能不同 (bien sûr, chaque lecteur peut ressentir différemment).',
+      'Recommander : 我向您推荐 X，作者是 Y. Pour situer dans une école littéraire, dis 这部作品属于 X 流派 — geste **lettré** qui signale la culture de l\'école/courant.\n' +
+      '\n' +
+      'Écoles littéraires chinoises clés :\n' +
+      '- 朦胧诗派 (ménglóngshī pài) — poésie obscure\n' +
+      '- 寻根派 (xún gēn pài) — école de la quête des racines\n' +
+      '- 先锋派 (xiānfēng pài) — avant-garde\n' +
+      '\n' +
+      'Auteurs majeurs C2 :\n' +
+      '- 莫言 — Mo Yan, Nobel 2012\n' +
+      '- 余华 — Yu Hua, auteur de 《活着》\n' +
+      '- 阎连科 — Yan Lianke\n' +
+      '- 王小波 — Wang Xiaobo\n' +
+      '\n' +
+      'Pour justifier : 这部作品的价值在于 X. Effet à mentionner : 读后令人深思 (lecture qui pousse à réfléchir).\n' +
+      '\n' +
+      'Attention : ajoute toujours la précaution 当然，每个读者的感受可能不同 — humilité **lettrée** indispensable pour ne pas paraître dogmatique.',
     bodyEn:
       'Recommendation: 我向您推荐 X，作者是 Y (I recommend X by author Y). Situate in a school: 这部作品属于 X 流派 (this work belongs to school X). Chinese literary schools: 朦胧诗派 (obscure poetry), 寻根派 (root-seeking school), 先锋派 (avant-garde). Major C2 authors: 莫言 (Mo Yan, Nobel 2012), 余华 (Yu Hua, 活着), 阎连科 (Yan Lianke), 王小波 (Wang Xiaobo). Justify: 这部作品的价值在于 X (the value of this work lies in X). Effect: 读后令人深思 (reading prompts reflection). Hedge: 当然，每个读者的感受可能不同 (of course, each reader may feel differently).',
     items: [
@@ -99,7 +144,19 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Discuter un défi de traduction zh↔fr',
     titleEn: 'Discuss a translation challenge zh↔fr',
     body:
-      'Cadre : on travaille avec un éditeur sur la traduction d\'une œuvre. Vocab : 翻译 (traduction), 译者 (traducteur), 原文 (texte source), 译文 (texte cible), 直译 (zhíyì, traduction littérale) vs 意译 (yìyì, traduction libre). Règle : pour défendre un choix, 我倾向于意译，因为直译会损失 X 的意境 (je penche pour la traduction libre car le littéral perdrait X). Attention : 意境 (yìjìng, atmosphère/ambiance poétique) est UN MOT CLÉ chinois — INTRADUISIBLE strictement. Astuce : pour discuter, 这个词在中文里有 X 层含义，您建议如何处理 ? (ce mot a X couches en chinois, comment le rendre ?). RÈGLE D\'OR : pour conclure, 翻译本就是一种再创作 (la traduction est par nature une RECRÉATION) — formule classique attribuée à Yan Fu (严复).',
+      'On travaille avec un éditeur sur la traduction d\'une œuvre. Le débat oppose **littéral** vs **libre**, fidélité vs **recréation**.\n' +
+      '\n' +
+      'Vocab traductologique :\n' +
+      '- 翻译 (fānyì) — traduction\n' +
+      '- 译者 (yìzhě) — traducteur\n' +
+      '- 原文 (yuánwén) — texte source\n' +
+      '- 译文 (yìwén) — texte cible\n' +
+      '- 直译 (zhíyì) — traduction **littérale**\n' +
+      '- 意译 (yìyì) — traduction **libre**\n' +
+      '\n' +
+      'Pour défendre un choix : 我倾向于意译，因为直译会损失 X 的意境. Le mot 意境 (yìjìng, atmosphère poétique) est un mot-clé **intraduisible** strictement — fusion d\'image et d\'ambiance propre à l\'esthétique chinoise. Pour discuter : 这个词在中文里有 X 层含义，您建议如何处理 ?\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour conclure, dis 翻译本就是一种再创作 — formule **classique** attribuée à Yan Fu (严复), idéale en clôture de débat traductologique.',
     bodyEn:
       'Frame: working with an editor on translating a work. Vocab: 翻译 (translation), 译者 (translator), 原文 (source text), 译文 (target text), 直译 (literal) vs 意译 (free). To defend a choice: 我倾向于意译，因为直译会损失 X 的意境 (I lean toward free translation as the literal would lose X). 意境 (atmosphere/poetic mood) is a KEY Chinese word — strictly UNTRANSLATABLE. To discuss: 这个词在中文里有 X 层含义，您建议如何处理？(this word has X layers in Chinese, how to render?). Close: 翻译本就是一种再创作 (translation is inherently a RE-CREATION) — classic phrase attributed to Yan Fu (严复).',
     items: [
@@ -119,7 +176,18 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Traduire un poème classique : méthode',
     titleEn: 'Translate a classical poem: method',
     body:
-      'Étapes : (1) lire à voix haute, (2) compter les caractères/vers (5 ou 7), (3) repérer les rimes, (4) identifier les images-clés, (5) restituer. Vocab : 五言 (vers à 5 caractères), 七言 (vers à 7), 平仄 (píng zè, tons plats vs obliques — règle métrique), 对仗 (duìzhàng, parallélisme). Astuce : pour ouvrir la discussion, 这首诗的核心意象是什么 ? (quelle est l\'image centrale ?). Remarque : pour le rendre, 我们可以保留原文的对仗结构，但调整字数 (gardons le parallélisme, ajustons le nombre de mots). RÈGLE D\'OR : 译诗须传神，不必拘泥于字面 (traduire un poème = transmettre l\'esprit, pas s\'attacher à la lettre). Attention : 传神 (chuánshén, transmettre l\'esprit) est un mot-clé.',
+      'Traduire un poème **classique** suit une méthode rigoureuse : (1) lire à voix haute, (2) compter les caractères par vers (5 ou 7), (3) repérer les rimes, (4) identifier les images-clés, (5) restituer.\n' +
+      '\n' +
+      'Vocab métrique :\n' +
+      '- 五言 (wǔ yán) — vers à 5 caractères\n' +
+      '- 七言 (qī yán) — vers à 7 caractères\n' +
+      '- 平仄 (píng zè) — tons plats vs obliques, règle **métrique**\n' +
+      '- 对仗 (duìzhàng) — parallélisme\n' +
+      '- 意象 (yì xiàng) — image poétique\n' +
+      '\n' +
+      'Pour ouvrir la discussion : 这首诗的核心意象是什么 ? Pour le rendre : 我们可以保留原文的对仗结构，但调整字数.\n' +
+      '\n' +
+      'RÈGLE D\'OR : 译诗须传神，不必拘泥于字面 — traduire un poème = transmettre l\'**esprit** (传神), pas s\'attacher à la lettre. Adage **classique** des traducteurs chinois.',
     bodyEn:
       'Steps: (1) read aloud, (2) count chars/verses (5 or 7), (3) spot rhymes, (4) identify key images, (5) render. Vocab: 五言 (5-char verse), 七言 (7-char), 平从 (level vs oblique tones — metric rule), 对仗 (parallelism). Discussion: 这首诗的核心意象是什么？(what is the central image?). To render: 我们可以保留原文的对仗结构，但调整字数. Method phrase: 译诗须传神，不必拘泥于字面 (translating a poem = transmitting the spirit, no need to stick to the letter). 传神 (transmit the spirit) is a key word.',
     items: [
@@ -142,7 +210,18 @@ export const c21ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Appliquer une pensée chinoise à un dilemme',
     titleEn: 'Apply Chinese thought to a dilemma',
     body:
-      'Cadre : un Chinois te demande conseil sur un choix éthique. Tu mobilises une pensée classique. Vocab : 道 (dào, voie/principe), 德 (dé, vertu), 仁 (rén, humanité confucéenne), 义 (yì, justice/devoir), 中庸 (zhōngyōng, juste milieu). Règle : phrase de cadrage 在我看来，您面临的是一个 X 的问题 (à mon avis, vous faites face à un problème X). Astuce : citer 孔子曰 X / 老子说 X. Remarque : appliquer avec 这个智慧告诉我们 X (cette sagesse nous dit X), recommander 我建议您从 X 的角度看 (envisagez cela sous l\'angle X). RÈGLE D\'OR : 但最终的选择还是在您自己 (la décision finale vous revient). Attention : le respect de l\'AUTONOMIE est confucéen — le sage CONSEILLE, ne DÉCIDE pas pour autrui.',
+      'Un Chinois te demande conseil sur un choix éthique. Tu mobilises une pensée **classique** chinoise pour cadrer le dilemme.\n' +
+      '\n' +
+      'Vocab philosophique de base :\n' +
+      '- 道 (dào) — voie, principe\n' +
+      '- 德 (dé) — vertu\n' +
+      '- 仁 (rén) — humanité **confucéenne**\n' +
+      '- 义 (yì) — justice, devoir\n' +
+      '- 中庸 (zhōngyōng) — juste milieu\n' +
+      '\n' +
+      'Cadrer : 在我看来，您面临的是一个 X 的问题. Citer : 孔子曰 X / 老子说 X. Appliquer : 这个智慧告诉我们 X. Recommander : 我建议您从 X 的角度看.\n' +
+      '\n' +
+      'RÈGLE D\'OR : conclure par 但最终的选择还是在您自己 — le respect de l\'autonomie est **confucéen**, le sage conseille mais ne décide pas pour autrui.',
     bodyEn:
       'Frame: a Chinese asks for advice on an ethical choice. You mobilize classical thought. Vocab: 道 (way/principle), 德 (virtue), 仁 (Confucian humanity), 义 (justice/duty), 中庸 (golden mean). Phrase: 在我看来，您面临的是一个 X 的问题 (in my view, you face an X problem). Cite: 孔子曰 X / 老子说 X. Apply: 这个智慧告诉我们 X (this wisdom tells us X). Recommendation: 我建议您从 X 的角度看 (consider it from angle X). Important: 但最终的选择还是在您自己 (the final choice is yours). Respect for AUTONOMY is Confucian — the sage ADVISES, does not DECIDE for another.',
     items: [
@@ -162,7 +241,13 @@ export const c21ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Débattre du confucianisme moderne',
     titleEn: 'Debate modern Confucianism',
     body:
-      'Cadre : on discute la pertinence du confucianisme aujourd\'hui (dans l\'éducation, le management, la politique chinoise). Règle : position pro 孔子的思想至今仍有现实意义 (la pensée de Confucius garde une pertinence actuelle), notamment 仁 (humanité), 礼 (rites/courtoisie), 学而时习之 (apprendre et pratiquer régulièrement). Exception : position critique 但有些观念已不适合现代社会 (certaines notions ne s\'adaptent plus à la société moderne), comme 三纲五常 (les 3 liens et 5 vertus, hiérarchies anciennes). RÈGLE D\'OR : synthèse 我认为可以批判地继承传统 (je crois qu\'on peut hériter de la tradition de manière critique). Remarque : 批判地继承 (hériter de manière critique) est une formule maoïste devenue passe-partout pour discuter le patrimoine.',
+      'On discute la pertinence du confucianisme aujourd\'hui (éducation, management, politique chinoise). Le débat oppose **tradition** et **modernité**.\n' +
+      '\n' +
+      'Position pro : 孔子的思想至今仍有现实意义 — la pensée **confucéenne** garde une pertinence actuelle, notamment 仁 (humanité), 礼 (rites/courtoisie), 学而时习之 (apprendre et pratiquer régulièrement).\n' +
+      '\n' +
+      'Position critique : 但有些观念已不适合现代社会 — certaines notions ne s\'adaptent plus, comme 三纲五常 (les 3 liens et 5 vertus, hiérarchies anciennes).\n' +
+      '\n' +
+      'RÈGLE D\'OR : la synthèse **lettrée** est 我认为可以批判地继承传统 (hériter de manière critique). La formule 批判地继承 est devenue **passe-partout** dans tout débat sur le patrimoine — diplomate et culturellement attendue.',
     bodyEn:
       'Frame: discussing Confucianism\'s relevance today (in education, management, Chinese politics). Pro stance: 孔子的思想至今仍有现实意义 (Confucius\'s thought retains current relevance), notably 仁 (humanity), 礼 (rites/courtesy), 学而时习之 (learn and regularly practice). Critical stance: 但有些观念已不适合现代社会 (some notions no longer fit modern society), like 三纲五常 (3 bonds and 5 virtues, old hierarchies). Synthesis: 我认为可以批判地继承传统 (I think we can critically inherit tradition). 批判地继承 (critically inherit) is a Maoist formula that became standard for discussing heritage.',
     items: [
@@ -185,7 +270,18 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Interview pour un journal littéraire',
     titleEn: 'Interview for a literary journal',
     body:
-      'Cadre : tu es interviewé en tant qu\'auteur / chercheur. Règle : phrases-clés 这次的写作灵感来自 X (cette écriture est inspirée de X). Remarque : 灵感 (línggǎn, inspiration). Astuce : décrire le processus 我前后修改了 X 次 (j\'ai retravaillé X fois), 我用了 X 年完成这部作品. Pour le sens profond : 我想表达的核心思想是 X (l\'idée centrale que je veux transmettre est X). Quand on te demande des projets : 目前正在构思下一部作品 (je suis en train de concevoir la suivante). Attention : 构思 (gòusī, concevoir, réfléchir au plan) est très soutenu pour parler d\'une œuvre en gestation. RÈGLE D\'OR : conclure modestement par 希望读者能从中获得一些启示 (j\'espère que le lecteur en tirera quelques enseignements).',
+      'Tu es interviewé en tant qu\'auteur ou chercheur. Le registre est **soutenu**, modeste, structuré autour de l\'inspiration, du processus et du sens.\n' +
+      '\n' +
+      'Phrases-clés :\n' +
+      '- 这次的写作灵感来自 X — cette écriture est inspirée de X\n' +
+      '- 我前后修改了 X 次 — j\'ai retravaillé X fois\n' +
+      '- 我用了 X 年完成这部作品 — j\'ai mis X années à finir\n' +
+      '- 我想表达的核心思想是 X — l\'idée centrale que je veux transmettre\n' +
+      '- 目前正在构思下一部作品 — je conçois (gòusī) la suivante\n' +
+      '\n' +
+      '构思 (gòusī, concevoir, réfléchir au plan) est très **soutenu** pour parler d\'une œuvre en gestation, et 灵感 (línggǎn, inspiration) reste incontournable.\n' +
+      '\n' +
+      'RÈGLE D\'OR : conclure modestement par 希望读者能从中获得一些启示. L\'auto-promotion explicite est culturellement mal vue ; la modestie effacée renforce paradoxalement le prestige **lettré**.',
     bodyEn:
       'Frame: interviewed as an author/researcher. Key phrases: 这次的写作灵感来自 X (this writing is inspired by X). 灵感 (línggǎn, inspiration). Describe process: 我前后修改了 X 次 (I revised X times). 我用了 X 年完成这部作品. Deep meaning: 我想表达的核心思想是 X (the central idea I want to convey is X). When asked about projects: 目前正在构思下一部作品 (I\'m currently conceiving the next work). 构思 (conceive, plan) is very formal for a work in gestation. Close modestly: 希望读者能从中获得一些启示 (I hope readers will draw some lessons).',
     items: [
@@ -205,7 +301,16 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Animer un cercle de lecture',
     titleEn: 'Lead a book club',
     body:
-      'Ouvrir : 各位书友，大家好 (chers amis lecteurs). Remarque : 书友 (shūyǒu, ami du livre) est très chaleureux. Astuce : lancer la discussion avec 这本书最让您印象深刻的是什么 ? (qu\'est-ce qui vous a le plus marqué ?), inviter chacun 请每位都分享一下 (que chacun partage). Règle : synthétiser 大家提到了几个共同的主题 X (vous avez tous mentionné les thèmes X). Pour relancer : 但也有一个细节我们没有讨论，那就是 X (un détail qu\'on n\'a pas discuté est X). Pour conclure : 谢谢大家的精彩分享，下次我们读 X (merci pour ces partages, la prochaine fois X). Attention : ton convivial mais structuré. RÈGLE D\'OR : le 书友 chinois apprécie qu\'un animateur DESSINE des connexions entre les interventions.',
+      'Animer un cercle de lecture chinois exige un ton convivial mais structuré. L\'ouverture chaleureuse : 各位书友，大家好 — le terme 书友 (shūyǒu, ami du livre) est très chaleureux.\n' +
+      '\n' +
+      'Phases-clés de l\'animation :\n' +
+      '- Lancer — 这本书最让您印象深刻的是什么 ?\n' +
+      '- Inviter chacun — 请每位都分享一下\n' +
+      '- Synthétiser — 大家提到了几个共同的主题 X\n' +
+      '- Relancer — 但也有一个细节我们没有讨论，那就是 X\n' +
+      '- Conclure — 谢谢大家的精彩分享，下次我们读 X\n' +
+      '\n' +
+      'RÈGLE D\'OR : le 书友 chinois apprécie qu\'un animateur DESSINE des connexions entre les interventions, et qu\'il DÉSIGNE nommément les participants (« 张老师，您怎么看 ? »). Sans cela, par modestie, plusieurs n\'oseront pas parler — même règle qu\'en réunion pro chinoise.',
     bodyEn:
       'Open: 各位书友，大家好 (dear book friends). 书友 (book friend) is very warm. Launch discussion: 这本书最让您印象深刻的是什么？(what struck you most?). Invite all: 请每位都分享一下. Synthesize: 大家提到了几个共同的主题 X. To restart: 但也有一个细节我们没有讨论，那就是 X (a detail we haven\'t discussed is X). Close: 谢谢大家的精彩分享，下次我们读 X. Tone: convivial yet structured. Chinese 书友 appreciate a host who DRAWS connections between interventions.',
     items: [
@@ -228,7 +333,18 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Rhétorique : utiliser les figures classiques',
     titleEn: 'Rhetoric: use classical figures',
     body:
-      'Figures de style chinoises : 比喻 (bǐyù, métaphore — 像 X 一样), 夸张 (kuāzhāng, hyperbole — 三千丈白发), 对偶 (duì\'ǒu, parallélisme — 风调雨顺), 排比 (páibǐ, anaphore — 我们要 X，要 Y，要 Z), 反问 (fǎnwèn, question rhétorique — 难道不是吗 ?). RÈGLE D\'OR : en oral C2, mobiliser une figure de style soutient l\'argument et marque le LETTRÉ. Astuce : exemple percutant « 教育之于一个民族，犹如水之于鱼 » (l\'éducation pour une nation est comme l\'eau pour le poisson) — 比喻 + 之于…犹如. Remarque : phrase de conclusion oratoire 时不我待 (le temps ne nous attend pas — chengyu). 时不我待，让我们行动起来 = mobilisation puissante.',
+      'En oral C2, mobiliser une figure de style soutient l\'argument et marque le **lettré**. Cinq figures **classiques** structurent toute **rhétorique** chinoise soutenue.\n' +
+      '\n' +
+      'Figures de style chinoises :\n' +
+      '- 比喻 (bǐyù) — métaphore (像 X 一样)\n' +
+      '- 夸张 (kuāzhāng) — hyperbole (三千丈白发)\n' +
+      '- 对偶 (duì\'ǒu) — parallélisme (风调雨顺)\n' +
+      '- 排比 (páibǐ) — anaphore (我们要 X，要 Y，要 Z)\n' +
+      '- 反问 (fǎnwèn) — question **rhétorique** (难道不是吗 ?)\n' +
+      '\n' +
+      'Exemple percutant : 教育之于一个民族，犹如水之于鱼 (l\'éducation pour une nation est comme l\'eau pour le poisson) — combo 比喻 + structure **classique** 之于…犹如.\n' +
+      '\n' +
+      'RÈGLE D\'OR : combo C2 percutant 排比 (anaphore) + 反问 (question **rhétorique**). Ex : 我们要勇敢，要坚定，要前行。难道不是吗 ? L\'anaphore monte l\'émotion, la question rhétorique fait participer. Pour mobiliser, conclure par le chéngyǔ 时不我待 (le temps ne nous attend pas).',
     bodyEn:
       'Chinese figures of speech: 比喻 (metaphor — 像 X 一样), 夸张 (hyperbole — 三千丈白发), 对偶 (parallelism — 风调雨顺), 排比 (anaphora — 我们要 X，要 Y，要 Z), 反问 (rhetorical question — 难道不是吗？). In C2 speech, mobilizing a figure supports the argument and marks the LITERATE. Ex: «教育之于一个民族，犹如水之于鱼» (education for a nation is like water for a fish) — 比喻 + 之于…犹如. Oratorical closing: 时不我待 (time waits for no one — chengyu). 时不我待，让我们行动起来 = powerful mobilization.',
     items: [
@@ -248,7 +364,22 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Discours d\'éloge / éloge funèbre',
     titleEn: 'Eulogy / funeral oration',
     body:
-      'Cadre : on rend hommage à un mentor, un parent, un collègue. Vocab : 悼念 (dàoniàn, commémorer/pleurer), 追忆 (zhuīyì, se remémorer), 缅怀 (miǎnhuái, honorer la mémoire — TRÈS soutenu). Règle : ouverture 今天，我们怀着沉痛的心情悼念 X (aujourd\'hui, le cœur lourd, nous commémorons X). Attention : 沉痛 (chéntòng, douleur profonde) est OBLIGATOIRE en éloge funèbre. Astuce : évoquer la vie X 一生致力于 Y (X a consacré sa vie à Y), citer une vertu X 的 Z 精神将激励我们继续前行 (l\'esprit Z de X nous inspirera à continuer). RÈGLE D\'OR : pour conclure, 安息吧，我们永远怀念您 (reposez en paix, nous nous souviendrons toujours de vous). Remarque : 安息 (ānxī, reposer en paix) est l\'expression consacrée.',
+      'On rend hommage à un mentor, un parent, un collègue. Le registre **funéraire** chinois exige sobriété, gravité et hauteur — chaque formule est codifiée.\n' +
+      '\n' +
+      'Vocab du deuil :\n' +
+      '- 悼念 (dàoniàn) — commémorer, pleurer\n' +
+      '- 追忆 (zhuīyì) — se remémorer\n' +
+      '- 缅怀 (miǎnhuái) — honorer la mémoire (très **soutenu**)\n' +
+      '- 沉痛 (chéntòng) — douleur profonde\n' +
+      '- 安息 (ānxī) — reposer en paix (expression consacrée)\n' +
+      '\n' +
+      'Structure type :\n' +
+      '- Ouverture — 今天，我们怀着沉痛的心情悼念 X (沉痛 est **obligatoire**)\n' +
+      '- Vie — X 一生致力于 Y (X a consacré sa vie à Y)\n' +
+      '- Vertu — X 的 Z 精神将激励我们继续前行\n' +
+      '- Clôture — 安息吧，我们永远怀念您\n' +
+      '\n' +
+      'RÈGLE D\'OR : dans un éloge funèbre chinois, la VIE > la MORT. On évoque longuement les contributions du défunt (50%), brièvement le deuil (30%), puis l\'héritage qui inspire (20%). Inverser cette hiérarchie = perçu comme déprimant.',
     bodyEn:
       'Frame: paying tribute to a mentor, parent, colleague. Vocab: 悼念 (commemorate/mourn), 追忆 (recall), 缅怀 (honor the memory — VERY formal). Opening: 今天，我们怀着沉痛的心情悼念 X (today, with heavy hearts, we commemorate X). 沉痛 (deep pain) is MANDATORY in eulogy. Evoke the life: X 一生致力于 Y (X dedicated their life to Y). Cite a virtue: X 的 Z 精神将激励我们继续前行 (the Z spirit of X will inspire us to continue). Close: 安息吧，我们永远怀念您 (rest in peace, we will always remember you). 安息 (rest in peace) is the sanctioned expression.',
     items: [
@@ -271,7 +402,19 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Rédiger un essai académique soutenu',
     titleEn: 'Write a formal academic essay',
     body:
-      'Structure : 引言 → 文献综述 → 论点 → 论证 → 反驳潜在异议 → 结论 → 参考文献. Règle : phrases d\'ouverture 自古以来，X 一直是一个重要的话题 (depuis toujours, X est un sujet important), 据笔者所知 (à la connaissance de l\'auteur). Pour la thèse : 本文的核心论点是 X (la thèse centrale est X). Astuce : argumenter 第一，X 表明 Y / 进一步而言，Z. Remarque : anticiper avec 有人或许会反驳说 X，但 Y. Pour conclure : 综上所述，本文得出 X 的结论 / 这一发现对 Y 具有重要意义. RÈGLE D\'OR : ton DENSE, IMPERSONNEL, ARGUMENTATIF. Attention : pas de « 我 » → 笔者 ou « 本研究 ». Exception : évite les chengyu trop fleuris (réservés à la création littéraire) — l\'essai académique privilégie la PRÉCISION.',
+      'L\'essai académique chinois suit un ton **dense**, **impersonnel** et **argumentatif**. Le « 我 » est banni : on dit 笔者 (l\'auteur) ou 本研究 (cette étude).\n' +
+      '\n' +
+      'Structure canonique : 引言 → 文献综述 → 论点 → 论证 → 反驳潜在异议 → 结论 → 参考文献.\n' +
+      '\n' +
+      'Phrases-types par étape :\n' +
+      '- Ouverture — 自古以来，X 一直是一个重要的话题\n' +
+      '- Humilité — 据笔者所知\n' +
+      '- Thèse — 本文的核心论点是 X\n' +
+      '- Argumenter — 第一，X 表明 Y / 进一步而言，Z\n' +
+      '- Anticiper — 有人或许会反驳说 X，但 Y\n' +
+      '- Conclure — 综上所述，本文得出 X 的结论\n' +
+      '\n' +
+      'RÈGLE D\'OR : évite les chéngyǔ trop fleuris — réservés à la création littéraire. L\'essai académique privilégie la **précision** sur l\'ornement. La formule 据笔者所知 reste indispensable : son absence te fait passer pour arrogant.',
     bodyEn:
       'Structure: 引言 → 文献综述 → 论点 → 论证 → 反驳潜在异议 → 结论 → 参考文献. Opening: 自古以来，X 一直是一个重要的话题 (since ancient times, X has been an important topic). 据笔者所知 (to the author\'s knowledge). For the thesis: 本文的核心论点是 X. Argue: 第一，X 表明 Y / 进一步而言，Z. Anticipate: 有人或许会反驳说 X，但 Y. Close: 综上所述，本文得出 X 的结论 / 这一发现对 Y 具有重要意义. Tone: DENSE, IMPERSONAL, ARGUMENTATIVE. No «我» → 笔者 or «本研究». Avoid overly flowery chengyu (reserved for literary creation) — academic essay privileges PRECISION.',
     items: [
@@ -291,7 +434,22 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Évaluer un article (peer review en chinois)',
     titleEn: 'Peer review an article in Chinese',
     body:
-      'Cadre : tu rédiges un avis pour une revue académique chinoise. Vocab : 同行评议 (tóngháng píngyì, peer review), 录用 (lùyòng, accepter), 修改后录用 (accepter sous réserve de révision), 拒稿 (jùgǎo, rejeter). Règle : phrases-types positives 本文选题新颖 (sujet original), 论证严密 (argumentation rigoureuse), 文献丰富 (bibliographie riche). Astuce : critiques constructives 第二部分的论证略显薄弱 (la 2e partie est un peu faible), 建议作者补充 X (l\'auteur devrait compléter X). RÈGLE D\'OR : pour conclure, 总体而言，本文具有较高的学术价值，建议修改后录用 (globalement, valeur académique notable, accepter sous condition). Remarque : ton RIGUEUR + RESPECT pour le travail. Attention : évite SAR-CASME ou jugement personnel.',
+      'Rédiger un avis pour une revue académique chinoise exige rigueur ET respect pour le travail évalué. Pas de sarcasme ni de jugement personnel — uniquement l\'analyse.\n' +
+      '\n' +
+      'Vocab du peer review :\n' +
+      '- 同行评议 (tóngháng píngyì) — peer review\n' +
+      '- 录用 (lùyòng) — accepter\n' +
+      '- 修改后录用 — accepter sous réserve de révision\n' +
+      '- 拒稿 (jù gǎo) — rejeter\n' +
+      '\n' +
+      'Formules positives :\n' +
+      '- 本文选题新颖 — sujet original\n' +
+      '- 论证严密 — argumentation rigoureuse\n' +
+      '- 文献丰富 — bibliographie riche\n' +
+      '\n' +
+      'Critique constructive : 第二部分的论证略显薄弱, 建议作者补充 X. Conclusion type : 总体而言，本文具有较高的学术价值，建议修改后录用.\n' +
+      '\n' +
+      'RÈGLE D\'OR : utilise toujours 略显 X (un peu X) plutôt que 完全 X (totalement X). La modération du verbe permet à l\'auteur de SAUVER LA FACE et de réviser sans hostilité — éthique **lettrée** du dialogue.',
     bodyEn:
       'Frame: writing a review for a Chinese academic journal. Vocab: 同行评议 (peer review), 录用 (accept), 修改后录用 (accept with revisions), 拒稿 (reject). Positive set phrases: 本文选题新颖 (original topic), 论证严密 (rigorous argumentation), 文献丰富 (rich bibliography). Constructive criticism: 第二部分的论证略显薄弱 (part 2 is a bit weak), 建议作者补充 X (author should add X). Close: 总体而言，本文具有较高的学术价值，建议修改后录用. Tone: RIGOR + RESPECT for the work. Avoid sarcasm or personal judgment.',
     items: [
@@ -316,7 +474,16 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '道 vs 德 vs 礼 — concepts confucéens fondamentaux',
     titleEn: '道 vs 德 vs 礼 — fundamental Confucian concepts',
     body:
-      'RÈGLE D\'OR : 道 (dào) = la VOIE / le principe métaphysique. Chez les confucéens : la voie morale juste. Chez Lao Zi : le principe ultime de l\'univers, INNOMMABLE (« 道可道，非常道 » — le dao qu\'on peut nommer n\'est pas le vrai dao). Règle : 德 (dé) = la VERTU intériorisée, la qualité morale active dans la personne. 道德 (morale) = combinaison des deux : le principe + la vertu vécue. Remarque : 礼 (lǐ) = les RITES, l\'étiquette sociale qui matérialise la vertu. 礼仪 (lǐyí, rites et étiquette). Astuce : hierarchy fonctionnelle 道 (principe abstrait) → 德 (vertu intériorisée) → 礼 (rite extérieur). Attention : Confucius dit que sans 德, le 礼 est vide ; sans 礼, le 德 est invisible. Triade indissociable de la pensée chinoise.',
+      'Les trois caractères 道, 德, 礼 forment une triade indissociable de la pensée chinoise — chacun se définit par sa place dans la chaîne **confucéenne**.\n' +
+      '\n' +
+      'Les trois niveaux :\n' +
+      '- 道 (dào) — la VOIE, principe métaphysique abstrait. Chez les **confucéens** : la voie morale juste. Chez Lao Zi : principe ultime, **innommable** (道可道，非常道)\n' +
+      '- 德 (dé) — la VERTU intériorisée, qualité morale active dans la personne\n' +
+      '- 礼 (lǐ) — les RITES, l\'étiquette sociale qui matérialise la vertu\n' +
+      '\n' +
+      'Hiérarchie fonctionnelle : 道 (principe abstrait) → 德 (vertu intériorisée) → 礼 (rite extérieur). 道德 (morale) = combinaison du principe et de la vertu vécue. 礼仪 (lǐyí) = rites et étiquette.\n' +
+      '\n' +
+      'RÈGLE D\'OR : Confucius dit que sans 德, le 礼 est vide ; sans 礼, le 德 est invisible. En discussion sociale, 没有德 (sans vertu) = creux moralement ; 没有礼 (sans rites) = mal élevé.',
     bodyEn:
       '道 (dào) = the WAY / metaphysical principle. For Confucians: the just moral way. For Lao Zi: the ultimate principle of the universe, UNNAMABLE («道可道，非常道» — the dao that can be named is not the true dao). 德 (dé) = the INTERIORIZED VIRTUE, active moral quality in the person. 道德 (morality) = combination of both: principle + lived virtue. 礼 (lǐ) = RITES, social etiquette that materializes virtue. 礼仪 (rites and etiquette). Functional hierarchy: 道 (abstract principle) → 德 (interiorized virtue) → 礼 (external rite). Confucius: without 德, 礼 is empty; without 礼, 德 is invisible. Inseparable triad of Chinese thought.',
     items: [
@@ -336,7 +503,18 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '仁 vs 义 vs 信 — vertus confucéennes',
     titleEn: '仁 vs 义 vs 信 — Confucian virtues',
     body:
-      'RÈGLE D\'OR : 仁 (rén, humanité, bienveillance) = vertu CARDINALE de Confucius. « 仁者爱人 » (l\'humain bienveillant aime les autres). Le 仁 est la base de tout. Règle : 义 (yì, justice/devoir) = ce qu\'on DOIT faire selon le bien moral. 见义勇为 (voir le juste et oser agir). Remarque : souvent au-delà du gain personnel. Astuce : 信 (xìn, foi/fiabilité) = tenir parole. 信用 (crédit moral). Forme avec 仁义礼智信 les 五常 (5 vertus cardinales) qui structurent l\'éthique confucéenne. Attention : hierarchy 仁 (sentiment d\'humanité), 义 (devoir moral), 礼 (rites sociaux), 智 (sagesse pratique), 信 (fidélité à la parole). Tout débat éthique chinois mobilise ces 5 mots — les maîtriser ouvre la pensée.',
+      'Les 五常 (5 vertus cardinales) structurent l\'éthique **confucéenne** depuis 2500 ans. Tout débat éthique chinois mobilise ces 5 mots — les maîtriser ouvre la pensée.\n' +
+      '\n' +
+      'Les cinq vertus cardinales :\n' +
+      '- 仁 (rén) — humanité, bienveillance (vertu CARDINALE de Confucius : 仁者爱人)\n' +
+      '- 义 (yì) — justice, devoir moral (见义勇为 : voir le juste et oser agir)\n' +
+      '- 礼 (lǐ) — rites sociaux\n' +
+      '- 智 (zhì) — sagesse pratique\n' +
+      '- 信 (xìn) — foi, fiabilité (tenir parole, 信用 = crédit moral)\n' +
+      '\n' +
+      'Le 仁 est la base de tout : sentiment d\'humanité fondamental qui irrigue les quatre autres. 义 va souvent au-delà du gain personnel.\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour louer une action courageuse altruiste, mobilise le chéngyǔ 见义勇为 : 这是见义勇为的精神. Phrase **socialement** honorée, signal de respect maximal.',
     bodyEn:
       '仁 (rén, humanity, benevolence) = CARDINAL Confucian virtue. «仁者爱人» (the benevolent love others). 仁 is the basis of all. 义 (yì, justice/duty) = what one MUST do morally. 见义勇为 (see the just and dare to act). Often beyond personal gain. 信 (xìn, faith/reliability) = keep one\'s word. 信用 (moral credit). Forms with 仁义礼智信 the 五常 (5 cardinal virtues) structuring Confucian ethics. Hierarchy: 仁 (humanity sentiment), 义 (moral duty), 礼 (social rites), 智 (practical wisdom), 信 (fidelity). Any Chinese ethical debate mobilizes these 5 words — mastering them opens up thought.',
     items: [
@@ -359,7 +537,24 @@ export const c21NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '阴 vs 阳 vs 五行 — cosmologie chinoise',
     titleEn: '阴 vs 阳 vs 五行 — Chinese cosmology',
     body:
-      'Règle : 阴 (yīn) = principe FÉMININ, sombre, froid, intérieur, terre, lune, eau. 阳 (yáng) = principe MASCULIN, lumineux, chaud, extérieur, ciel, soleil, feu. Attention : pas un dualisme statique — un FLUX (太极图 : symbole du Tao avec 1 point de chaque couleur dans l\'autre). RÈGLE D\'OR : 五行 (wǔxíng, 5 phases) : 木 (bois) → 火 (feu) → 土 (terre) → 金 (métal) → 水 (eau). Remarque : cycles 相生 (engendrement : bois→feu→terre→métal→eau→bois) et 相克 (domination : bois→terre→eau→feu→métal→bois). Astuce : cette cosmologie structure médecine traditionnelle, fengshui, calendrier, et nomenclature classique. Connaître ces termes débloque la lecture de TOUT texte traditionnel chinois.',
+      'La cosmologie chinoise repose sur deux paires de concepts : le couple **dynamique** 阴/阳 et le cycle des 五行 (5 phases). Pas un dualisme statique mais un FLUX (太极图 : symbole du Tao avec 1 point de chaque couleur dans l\'autre).\n' +
+      '\n' +
+      'Le couple yin-yang :\n' +
+      '- 阴 (yīn) — principe FÉMININ, sombre, froid, intérieur, terre, lune, eau\n' +
+      '- 阳 (yáng) — principe MASCULIN, lumineux, chaud, extérieur, ciel, soleil, feu\n' +
+      '\n' +
+      'Les 5 phases (五行) :\n' +
+      '- 木 (mù) — bois\n' +
+      '- 火 (huǒ) — feu\n' +
+      '- 土 (tǔ) — terre\n' +
+      '- 金 (jīn) — métal\n' +
+      '- 水 (shuǐ) — eau\n' +
+      '\n' +
+      'Deux cycles relient les phases :\n' +
+      '- 相生 (engendrement) — bois → feu → terre → métal → eau → bois\n' +
+      '- 相克 (domination) — bois → terre → eau → feu → métal → bois\n' +
+      '\n' +
+      'RÈGLE D\'OR : cette cosmologie structure médecine traditionnelle, fengshui, calendrier et nomenclature **classique**. La formule 阴阳平衡 (équilibre yin-yang) reste centrale en discussion d\'équilibre dans tout domaine.',
     bodyEn:
       '阴 (yīn) = FEMININE principle, dark, cold, inner, earth, moon, water. 阳 (yáng) = MASCULINE principle, bright, hot, outer, sky, sun, fire. Not static dualism — a FLOW (太极图: Tao symbol with 1 dot of each color in the other). 五行 (5 phases): 木 (wood) → 火 (fire) → 土 (earth) → 金 (metal) → 水 (water). Cycles: 相生 (generation: wood→fire→earth→metal→water→wood) and 相克 (domination: wood→earth→water→fire→metal→wood). This cosmology structures traditional medicine, fengshui, calendar, and classical nomenclature. Knowing these terms unlocks ANY traditional Chinese text.',
     items: [
@@ -379,7 +574,16 @@ export const c21NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '诗 vs 词 vs 曲 — formes poétiques chinoises',
     titleEn: '诗 vs 词 vs 曲 — Chinese poetic forms',
     body:
-      'RÈGLE D\'OR : 诗 (shī) = POÉSIE classique régulière (Tang surtout). Vers de 5 ou 7 caractères, rimes strictes, parallélisme rigoureux. Ex : 李白, 杜甫. Règle : 词 (cí) = POÉSIE chantée Song, sur des MÉLODIES préexistantes (词牌 — modèles métriques). Vers de longueurs variables. Plus libre que 诗 mais structuré par la musique. Ex : 苏轼, 李清照. Remarque : 曲 (qǔ) = POÉSIE-théâtre Yuan, mélanges chant + récit. Encore plus libre. Ex : 关汉卿. Astuce : hierarchy 诗 (Tang, vers fixes) → 词 (Song, sur mélodie) → 曲 (Yuan, théâtral). Attention : confondre les 3 = erreur grave en discussion littéraire chinoise. Une phrase comme « 李清照写的词 » est juste ; « 李清照的诗 » est techniquement faux.',
+      'Trois formes poétiques **classiques** chinoises, trois dynasties, trois degrés de liberté formelle. Confondre les 3 = erreur grave en discussion littéraire — 李清照写的词 est juste, 李清照的诗 est techniquement faux.\n' +
+      '\n' +
+      'Les trois formes :\n' +
+      '- 诗 (shī) — POÉSIE **classique** régulière (Tang surtout). Vers de 5 ou 7 caractères, rimes strictes, parallélisme rigoureux. Ex : 李白, 杜甫\n' +
+      '- 词 (cí) — POÉSIE chantée Song, sur MÉLODIES préexistantes (词牌, modèles **métriques**). Vers de longueurs variables. Ex : 苏轼, 李清照\n' +
+      '- 曲 (qǔ) — POÉSIE-théâtre Yuan, mélanges chant + récit. Encore plus libre. Ex : 关汉卿\n' +
+      '\n' +
+      'Hiérarchie chronologique : 诗 (Tang, vers fixes) → 词 (Song, sur mélodie) → 曲 (Yuan, théâtral).\n' +
+      '\n' +
+      'RÈGLE D\'OR : retiens l\'ordre des dynasties pour ne plus jamais confondre les formes — Tang → 李白杜甫, Song → 苏轼李清照, Yuan → 关汉卿.',
     bodyEn:
       '诗 (shī) = classical regular POETRY (especially Tang). 5- or 7-char verses, strict rhymes, rigorous parallelism. Ex: 李白, 杜甫. 词 (cí) = Song sung POETRY, on preexisting MELODIES (词牌 — metric templates). Variable-length verses. Freer than 诗 but structured by music. Ex: 苏轼, 李清照. 曲 (qǔ) = Yuan POETRY-drama, song + narration mix. Even freer. Ex: 关汉卿. Hierarchy: 诗 (Tang, fixed verses) → 词 (Song, on melody) → 曲 (Yuan, theatrical). Confusing the 3 = serious mistake in Chinese literary discussion. «李清照写的词» is right; «李清照的诗» is technically wrong.',
     items: [
@@ -402,7 +606,16 @@ export const c21NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '中庸 vs 中立 vs 中间 — milieu (concepts)',
     titleEn: '中庸 vs 中立 vs 中间 — middle (concepts)',
     body:
-      'RÈGLE D\'OR : 中庸 (zhōngyōng) = LE JUSTE MILIEU CONFUCÉEN. Attention : pas la moyenne fade, mais la vertu d\'éviter les extrêmes par sagesse. Œuvre : 《中庸》, l\'un des Quatre Livres. Règle : 中立 (zhōnglì) = NEUTRALITÉ politique/diplomatique. 保持中立 (rester neutre). Remarque : connote refus de prendre parti. Astuce : 中间 (zhōngjiān) = MILIEU SPATIAL ou TEMPOREL (au centre, entre 2 choses). 中间人 (intermédiaire). Plus concret. Hierarchy conceptuelle : 中庸 (vertu morale) ≠ 中立 (position politique) ≠ 中间 (position physique/temporelle). Attention : confondre 中庸 et 中立 = erreur philosophique. Le 中庸 IMPLIQUE un jugement actif sur le bien ; le 中立 est une ABSTENTION.',
+      'Trois concepts chinois du milieu, trois axes radicalement distincts : vertu morale, position politique, position physique. Confondre 中庸 et 中立 = erreur philosophique majeure.\n' +
+      '\n' +
+      'Les trois milieux :\n' +
+      '- 中庸 (zhōngyōng) — LE JUSTE MILIEU **confucéen**, vertu d\'éviter les extrêmes par sagesse. Œuvre : 《中庸》, l\'un des Quatre Livres\n' +
+      '- 中立 (zhōnglì) — NEUTRALITÉ politique/diplomatique. 保持中立 = rester neutre, refus de prendre parti\n' +
+      '- 中间 (zhōngjiān) — MILIEU SPATIAL ou TEMPOREL, au centre, entre 2 choses. 中间人 = intermédiaire\n' +
+      '\n' +
+      'Le 中庸 implique un jugement actif sur le bien ; le 中立 est une **abstention**. Pas la moyenne fade : 中庸 = sagesse choisie.\n' +
+      '\n' +
+      'RÈGLE D\'OR : 中庸之道 (la voie du juste milieu) est un compliment intellectuel chinois. Dire 这是中庸之道 = signaler une décision sage, mesurée, **confucéenne** — plus puissant que 平衡 (équilibre).',
     bodyEn:
       '中庸 (zhōngyōng) = THE CONFUCIAN GOLDEN MEAN. Not bland average, but the virtue of avoiding extremes through wisdom. Work: 《中庸》, one of the Four Books. 中立 (zhōnglì) = political/diplomatic NEUTRALITY. 保持中立 (stay neutral). Connotes refusal to take sides. 中间 (zhōngjiān) = SPATIAL or TEMPORAL MIDDLE (at center, between 2). 中间人 (intermediary). More concrete. Conceptual hierarchy: 中庸 (moral virtue) ≠ 中立 (political position) ≠ 中间 (physical/temporal position). Confusing 中庸 and 中立 = philosophical error. 中庸 IMPLIES active judgment on the good; 中立 is ABSTENTION.',
     items: [
@@ -422,7 +635,16 @@ export const c21NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '天下 vs 国家 vs 民族 — entité politique chinoise',
     titleEn: '天下 vs 国家 vs 民族 — Chinese political entity',
     body:
-      'RÈGLE D\'OR : 天下 (tiānxià) = « TOUT-SOUS-LE-CIEL » — concept impérial chinois englobant l\'ensemble du monde civilisé sous l\'autorité morale du Fils du Ciel. Attention : ne se réduit pas à l\'État moderne. Remarque : 天下兴亡，匹夫有责 (chacun a la responsabilité du sort du monde — 顾炎武, célèbre maxime). Règle : 国家 (guójiā) = ÉTAT-NATION moderne, entité politique-juridique. Concept westphalien adopté à la fin du XIXe. Astuce : 民族 (mínzú) = NATION ETHNIQUE/peuple. La Chine moderne se définit comme un 多民族国家 (État multi-ethnique avec 56 ethnies reconnues). La distinction 天下 / 国家 / 民族 structure tout débat sur l\'identité chinoise. 天下 = vision impériale ; 国家 = vision moderne ; 民族 = identité culturelle.',
+      'Trois entités politiques chinoises, trois visions du collectif : impériale, moderne, ethnique. La distinction structure tout débat sur l\'identité chinoise.\n' +
+      '\n' +
+      'Les trois entités :\n' +
+      '- 天下 (tiānxià) — « TOUT-SOUS-LE-CIEL », concept **impérial** englobant le monde civilisé sous l\'autorité morale du Fils du Ciel. Ne se réduit pas à l\'État moderne\n' +
+      '- 国家 (guójiā) — ÉTAT-NATION moderne, entité politico-juridique. Concept **westphalien** adopté à la fin du XIXe\n' +
+      '- 民族 (mínzú) — NATION ETHNIQUE, peuple. La Chine se définit comme un 多民族国家 (État multi-ethnique, 56 ethnies reconnues)\n' +
+      '\n' +
+      'Vision résumée : 天下 = **impériale**, 国家 = **moderne**, 民族 = **culturelle**.\n' +
+      '\n' +
+      'RÈGLE D\'OR : la maxime 天下兴亡，匹夫有责 (chacun a la responsabilité du sort du monde — Gu Yanwu, dynastie Qing) est une des phrases les plus citées en discours patriotique chinois. La connaître + la citer = signal immédiat de respect culturel **lettré**.',
     bodyEn:
       '天下 (tiānxià) = «ALL-UNDER-HEAVEN» — Chinese imperial concept covering the civilized world under the moral authority of the Son of Heaven. Not reducible to the modern State. 天下兴亡，匹夫有责 (each has responsibility for the world\'s fate — 顾炎武, famous maxim). 国家 (guójiā) = modern NATION-STATE, political-legal entity. Westphalian concept adopted late 19th c. 民族 (mínzú) = ETHNIC NATION/people. Modern China defines itself as a 多民族国家 (multi-ethnic state with 56 recognized ethnicities). The distinction structures all debate on Chinese identity. 天下 = imperial vision; 国家 = modern vision; 民族 = cultural identity.',
     items: [
@@ -445,7 +667,14 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '言 vs 而 vs 于 — particules grammaticales classiques',
     titleEn: '言 vs 而 vs 于 — classical grammatical particles',
     body:
-      'Règle : 言 (yán) = parler / la parole. Verbe et nom en chinois classique. Remarque : reste vivant 言论 (discours), 言行 (paroles et actes), 名言 (citation célèbre). « 言之有理 » (avoir raison dans ses paroles). RÈGLE D\'OR : 而 (ér) = ET / ALORS / MAIS — connecteur classique TRÈS productif. Astuce : « 学而时习之 » (apprendre et le pratiquer régulièrement — première phrase des Entretiens). « 不亦乐乎 » (n\'est-ce pas joyeux ?). Reste dans 而且, 然而, 进而. Attention : 于 (yú) = à / dans / par rapport à — préposition classique. « 出于 X » (provenir de X), « 关于 X » (concernant X), « 至于 X » (quant à X), « 由于 X » (à cause de X). Maîtriser ces 3 particules débloque la lecture des Entretiens, du Mencius, et de tout texte classique.',
+      'Trois particules **classiques** verrouillent la lecture du 文言. Les maîtriser débloque l\'accès aux Entretiens, au Mencius, et à tout texte ancien.\n' +
+      '\n' +
+      'Les trois particules :\n' +
+      '- 言 (yán) — parler, parole. Verbe ET nom en chinois **classique**. Vivant dans 言论 (discours), 言行 (paroles et actes), 名言 (citation célèbre), 言之有理 (avoir raison)\n' +
+      '- 而 (ér) — ET, ALORS, MAIS — connecteur **classique** très productif. Vit dans 而且, 然而, 进而\n' +
+      '- 于 (yú) — à, dans, par rapport à — préposition **classique**. Vit dans 出于 X (provenir de), 关于 X (concernant), 至于 X (quant à), 由于 X (à cause de)\n' +
+      '\n' +
+      'RÈGLE D\'OR : la première phrase des 《论语》 — 学而时习之，不亦说乎 (apprendre et pratiquer régulièrement, n\'est-ce pas un plaisir ?) — déploie les trois en action. La citer en discussion signale immédiatement le niveau **lettré**.',
     bodyEn:
       '言 (yán) = speak / speech. Verb and noun in classical Chinese. Stays alive: 言论 (discourse), 言行 (words and deeds), 名言 (famous quote). «言之有理» (to have reason in one\'s words). 而 (ér) = AND / THEN / BUT — VERY productive classical connector. «学而时习之» (learn and practice regularly — first sentence of the Analects). «不亦乐乎» (isn\'t it joyful?). Lives in 而且, 然而, 进而. 于 (yú) = at / in / regarding — classical preposition. «出于 X» (originating from X), «关于 X» (concerning X), «至于 X» (as for X), «由于 X» (due to X). Mastering these 3 particles unlocks reading the Analects, Mencius, and any classical text.',
     items: [
@@ -465,7 +694,16 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '是非 vs 善恶 vs 对错 — bien et mal (3 axes)',
     titleEn: '是非 vs 善恶 vs 对错 — right and wrong (3 axes)',
     body:
-      'Règle : 是非 (shìfēi) = LE VRAI ET LE FAUX (axe ÉPISTÉMIQUE — ce qui est VRAI factuellement). 明辨是非 (distinguer clairement le vrai du faux). Remarque : connote la rigueur intellectuelle. RÈGLE D\'OR : 善恶 (shàn\'è) = LE BIEN ET LE MAL (axe MORAL — qualités intérieures). 善有善报，恶有恶报 (le bien attire le bien, le mal attire le mal — karma). Astuce : connote l\'éthique profonde. 对错 (duì cuò) = JUSTE ET ERRONÉ (axe PRAGMATIQUE — ce qui est correct dans une action). 对错很重要 (ce qui est juste compte). Plus quotidien et concret. Hierarchy : 对错 (concret action) < 是非 (épistémique fait) < 善恶 (moral profond). Attention : erreur classique de confondre 是非 (vérité) et 善恶 (moralité) — un fait peut être 是 mais 恶.',
+      'Trois axes chinois du bien et du mal, trois registres distincts : pragmatique, épistémique, moral. Confondre 是非 (vérité) et 善恶 (moralité) = erreur classique — un fait peut être 是 mais 恶.\n' +
+      '\n' +
+      'Les trois axes :\n' +
+      '- 对错 (duì cuò) — JUSTE et ERRONÉ (axe **pragmatique**), ce qui est correct dans une action. 对错很重要. Quotidien et concret\n' +
+      '- 是非 (shìfēi) — LE VRAI et LE FAUX (axe **épistémique**), ce qui est factuellement vrai. 明辨是非 = distinguer clairement, connote la rigueur intellectuelle\n' +
+      '- 善恶 (shàn\'è) — LE BIEN et LE MAL (axe **moral**), qualités intérieures. Éthique profonde\n' +
+      '\n' +
+      'Hiérarchie de profondeur : 对错 (action) < 是非 (fait) < 善恶 (moral).\n' +
+      '\n' +
+      'RÈGLE D\'OR : le proverbe 善有善报，恶有恶报，不是不报，时候未到 (le bien attire le bien, le mal le mal — pas de non-rétribution, juste pas le bon moment) est une croyance karmique chinoise très ancrée. À mobiliser pour consoler — « la justice viendra ».',
     bodyEn:
       '是非 (shìfēi) = TRUE AND FALSE (EPISTEMIC axis — what is factually TRUE). 明辨是非 (clearly distinguish true from false). Connotes intellectual rigor. 善恶 (shàn\'è) = GOOD AND EVIL (MORAL axis — inner qualities). 善有善报，恶有恶报 (good attracts good, evil attracts evil — karma). Connotes deep ethics. 对错 (duì cuò) = RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action). 对错很重要 (right vs wrong matters). More everyday and concrete. Hierarchy: 对错 (concrete action) < 是非 (epistemic fact) < 善恶 (deep moral). Classic mistake: confusing 是非 (truth) and 善恶 (morality) — a fact may be 是 but 恶.',
     items: [
@@ -488,7 +726,17 @@ export const c21NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '身 vs 心 vs 灵 vs 神 — corps, cœur, âme, esprit',
     titleEn: '身 vs 心 vs 灵 vs 神 — body, heart, soul, spirit',
     body:
-      'Règle : 身 (shēn) = CORPS PHYSIQUE. 身体 (corps), 身材 (silhouette). Le matériel. RÈGLE D\'OR : 心 (xīn) = CŒUR/ESPRIT-CŒUR. En chinois, le 心 EST le siège de la pensée ET du sentiment (pas séparés comme en Occident). Remarque : 心情 (humeur), 心思 (pensée), 关心 (se soucier de). Astuce : 灵 (líng) = ÂME, esprit subtil. 灵魂 (âme), 心灵 (esprit-cœur, au sens spirituel). Plus rare et soutenu. 神 (shén) = ESPRIT divin / éclat / aspect divin de l\'humain. 精神 (esprit, vivacité), 神采 (éclat), 神圣 (sacré). Hierarchy : 身 (corps physique) < 心 (cœur-esprit pensant) < 灵 (âme spirituelle) < 神 (divin). Attention : en chinois, l\'absence de séparation cœur/raison est centrale — tout débat avec une personne instruite passe par la compréhension de 心.',
+      'Quatre caractères chinois pour ce que l\'Occident nomme corps-cœur-âme-esprit, mais sans la séparation cartésienne. En chinois, le 心 EST le siège de la pensée ET du sentiment — fondamental pour tout débat **lettré**.\n' +
+      '\n' +
+      'Les quatre niveaux :\n' +
+      '- 身 (shēn) — CORPS PHYSIQUE, le matériel. 身体 (corps), 身材 (silhouette)\n' +
+      '- 心 (xīn) — CŒUR/ESPRIT-CŒUR, siège de pensée ET sentiment. 心情 (humeur), 心思 (pensée), 关心 (se soucier)\n' +
+      '- 灵 (líng) — ÂME, esprit subtil. 灵魂 (âme), 心灵 (esprit-cœur spirituel). Plus rare et **soutenu**\n' +
+      '- 神 (shén) — ESPRIT divin, éclat, aspect divin de l\'humain. 精神 (esprit, vivacité), 神采 (éclat), 神圣 (sacré)\n' +
+      '\n' +
+      'Hiérarchie ascendante : 身 (physique) < 心 (pensant) < 灵 (spirituel) < 神 (divin).\n' +
+      '\n' +
+      'RÈGLE D\'OR : la trilogie 身心灵 (corps-cœur-âme) est devenue à la mode dans le bien-être chinois moderne (yoga, méditation). Cite 我们要追求身心灵的平衡 (chercher l\'équilibre corps-cœur-âme) pour un effet **tendance** et culturellement résonant.',
     bodyEn:
       '身 (shēn) = PHYSICAL BODY. 身体 (body), 身材 (figure). The material. 心 (xīn) = HEART/HEART-MIND. In Chinese, 心 IS the seat of thought AND feeling (not separated as in the West). 心情 (mood), 心思 (thought), 关心 (care about). 灵 (líng) = SOUL, subtle spirit. 灵魂 (soul), 心灵 (heart-spirit, in the spiritual sense). Rarer and more formal. 神 (shén) = DIVINE SPIRIT / radiance / divine aspect of human. 精神 (spirit, vivacity), 神采 (radiance), 神圣 (sacred). Hierarchy: 身 (physical body) < 心 (thinking heart-mind) < 灵 (spiritual soul) < 神 (divine). In Chinese, the absence of heart/reason separation is central — any debate with an educated person runs through understanding 心.',
     items: [
@@ -508,7 +756,14 @@ export const c21NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '天 vs 地 vs 人 — la trinité cosmique chinoise',
     titleEn: '天 vs 地 vs 人 — the Chinese cosmic trinity',
     body:
-      'RÈGLE D\'OR : 天 (tiān) = CIEL — le principe céleste, source du mandat moral (天命). « 天命所归 » (le mandat céleste est attribué à X). Remarque : connote la PROVIDENCE ou le destin. Règle : 地 (dì) = TERRE — le principe matériel, qui nourrit. « 大地 » (la grande terre, la nature). Connote la STABILITÉ, le SUPPORT. Astuce : 人 (rén) = HUMAIN — le principe médian entre Ciel et Terre. La pensée chinoise place l\'humain comme MÉDIATEUR cosmologique. « 三才 » (les 3 puissances : 天地人) est un concept fondamental. Attention : l\'humain idéal HARMONISE le Ciel et la Terre. « 天时地利人和 » (chengyu : le moment du ciel, l\'avantage de la terre, l\'harmonie humaine — 3 conditions du succès). À mobiliser pour analyser une réussite.',
+      'La pensée chinoise place l\'humain comme MÉDIATEUR cosmologique entre Ciel et Terre. Les 三才 (3 puissances) — 天地人 — sont un concept fondamental.\n' +
+      '\n' +
+      'La trinité cosmique :\n' +
+      '- 天 (tiān) — CIEL, principe céleste, source du mandat moral (天命). 天命所归 = le mandat céleste va à X. Connote la PROVIDENCE\n' +
+      '- 地 (dì) — TERRE, principe matériel qui nourrit. 大地 = la grande terre, la nature. Connote la STABILITÉ\n' +
+      '- 人 (rén) — HUMAIN, principe MÉDIAN entre Ciel et Terre. L\'humain idéal HARMONISE les deux\n' +
+      '\n' +
+      'RÈGLE D\'OR : le chéngyǔ 天时地利人和 (le moment du ciel, l\'avantage de la terre, l\'harmonie humaine) résume les 3 conditions du succès. Pour louer une réussite : 这是天时地利人和的结果. L\'un des chéngyǔ les plus utilisés en analyse stratégique chinoise (business, politique, sport).',
     bodyEn:
       '天 (tiān) = HEAVEN — the celestial principle, source of moral mandate (天命). «天命所归» (the heavenly mandate goes to X). Connotes PROVIDENCE or destiny. 地 (dì) = EARTH — material principle, that nourishes. «大地» (the great earth, nature). Connotes STABILITY, SUPPORT. 人 (rén) = HUMAN — middle principle between Heaven and Earth. Chinese thought places the human as cosmological MEDIATOR. «三才» (the 3 powers: 天地人) is a fundamental concept. The ideal human HARMONIZES Heaven and Earth. «天时地利人和» (chengyu: the moment of heaven, the advantage of earth, human harmony — 3 conditions of success). Mobilize to analyze a success.',
     items: [
@@ -531,7 +786,16 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '意境 vs 氛围 vs 风格 — atmosphère / style',
     titleEn: '意境 vs 氛围 vs 风格 — atmosphere / style',
     body:
-      'RÈGLE D\'OR : 意境 (yìjìng) = ATMOSPHÈRE POÉTIQUE / ambiance d\'une œuvre artistique chinoise. Attention : INTRADUISIBLE strictement — fusion de l\'image (意) et du décor (境) qui crée une émotion profonde. Concept central de l\'esthétique chinoise. Règle : 氛围 (fēnwéi) = AMBIANCE générale (lieu, événement, conversation). 节日的氛围 (l\'ambiance d\'une fête). Remarque : plus universel et social. Astuce : 风格 (fēnggé) = STYLE (artistique, personnel, vestimentaire). 这位画家的风格 (le style de ce peintre). Plus formel sur l\'identité créative. Hierarchy : 氛围 (ambiance générale) < 风格 (identité artistique) < 意境 (concept esthétique chinois ineffable). Pour louer une œuvre chinoise : 这首诗很有意境 (ce poème a beaucoup d\'意境) = compliment maximal.',
+      'Trois mots chinois pour parler d\'ambiance, trois niveaux de spécificité culturelle. Le 意境 reste **intraduisible** strictement — fusion de l\'image (意) et du décor (境) qui crée une émotion profonde. Concept central de l\'esthétique chinoise.\n' +
+      '\n' +
+      'Les trois niveaux :\n' +
+      '- 氛围 (fēnwéi) — AMBIANCE générale (lieu, événement, conversation). 节日的氛围 = ambiance d\'une fête. Universel et social\n' +
+      '- 风格 (fēnggé) — STYLE (artistique, personnel, vestimentaire). 这位画家的风格 = le style de ce peintre. Identité créative\n' +
+      '- 意境 (yìjìng) — ATMOSPHÈRE POÉTIQUE d\'une œuvre artistique chinoise. **Intraduisible**, ineffable\n' +
+      '\n' +
+      'Hiérarchie de profondeur : 氛围 < 风格 < 意境.\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour louer une œuvre chinoise (poème, calligraphie, paysage, jardin), dis 这很有意境 — compliment **ultime**, plus puissant que 很美 ou 很好. Signale que tu APPRÉCIES la profondeur esthétique chinoise — flatterie maximale d\'un artiste local.',
     bodyEn:
       '意境 (yìjìng) = POETIC ATMOSPHERE / mood of a Chinese artistic work. Strictly UNTRANSLATABLE — fusion of image (意) and setting (境) that creates deep emotion. Central concept of Chinese aesthetics. 氛围 (fēnwéi) = general AMBIENCE (place, event, conversation). 节日的氛围 (a festival\'s atmosphere). More universal and social. 风格 (fēnggé) = STYLE (artistic, personal, sartorial). 这位画家的风格 (this painter\'s style). More formal on creative identity. Hierarchy: 氛围 (general ambience) < 风格 (artistic identity) < 意境 (ineffable Chinese aesthetic concept). To praise a Chinese work: 这首诗很有意境 = maximum compliment.',
     items: [
@@ -551,7 +815,16 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '人格 vs 品格 vs 性格 — caractère humain (3 dimensions)',
     titleEn: '人格 vs 品格 vs 性格 — human character (3 dimensions)',
     body:
-      'Règle : 人格 (réngé) = PERSONNALITÉ AU SENS PSYCHO-JURIDIQUE (la personne en tant que sujet moral). 人格尊严 (dignité de la personne), 人格分裂 (dédoublement de personnalité). Remarque : plus formel/scientifique. RÈGLE D\'OR : 品格 (pǐngé) = CARACTÈRE MORAL (qualités vertueuses). 品格高尚 (caractère noble), 培养品格 (former le caractère). Connote la VERTU. Astuce : 性格 (xìnggé) = TEMPÉRAMENT, traits psychologiques (introverti, extraverti, calme). 性格内向 (tempérament introverti). Plus quotidien. Hierarchy : 性格 (tempérament psycho) < 人格 (personnalité juridique/morale) < 品格 (caractère vertueux). Attention : erreur classique 性格高尚 ✗ → 品格高尚 ✓ (le tempérament est neutre, la VERTU est noble).',
+      'Trois dimensions chinoises du caractère, trois registres : tempérament neutre, personnalité juridique, vertu morale. Erreur **classique** 性格高尚 ✗ → 品格高尚 ✓ (le tempérament est neutre, seule la VERTU est noble).\n' +
+      '\n' +
+      'Les trois dimensions :\n' +
+      '- 性格 (xìnggé) — TEMPÉRAMENT, traits psychologiques (introverti, extraverti, calme). 性格内向 = tempérament introverti. Quotidien et neutre\n' +
+      '- 人格 (réngé) — PERSONNALITÉ AU SENS PSYCHO-JURIDIQUE, personne comme sujet moral. 人格尊严 (dignité), 人格分裂 (dédoublement). Formel/scientifique\n' +
+      '- 品格 (pǐngé) — CARACTÈRE MORAL, qualités vertueuses. 品格高尚 (noble), 培养品格 (former le caractère). Connote la VERTU\n' +
+      '\n' +
+      'Hiérarchie ascendante : 性格 (psycho) < 人格 (juridique) < 品格 (vertueux).\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour louer une personne âgée chinoise, dis 您的品格让我深受感动. 品格 reconnaît la VERTU MORALE accumulée — compliment **ultime** pour un mentor ou un aîné.',
     bodyEn:
       '人格 (réngé) = PERSONALITY IN PSYCHO-LEGAL SENSE (person as moral subject). 人格尊严 (personal dignity), 人格分裂 (split personality). More formal/scientific. 品格 (pǐngé) = MORAL CHARACTER (virtuous qualities). 品格高尚 (noble character), 培养品格 (form character). Connotes VIRTUE. 性格 (xìnggé) = TEMPERAMENT, psychological traits (introverted, extroverted, calm). 性格内向 (introverted temperament). More everyday. Hierarchy: 性格 (psycho temperament) < 人格 (legal/moral personality) < 品格 (virtuous character). Classic mistake: 性格高尚 ✗ → 品格高尚 ✓ (temperament is neutral, VIRTUE is noble).',
     items: [
@@ -574,7 +847,16 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '智 vs 知 vs 识 — sagesse, connaissance, conscience',
     titleEn: '智 vs 知 vs 识 — wisdom, knowledge, awareness',
     body:
-      'RÈGLE D\'OR : 智 (zhì) = SAGESSE PRATIQUE (savoir agir avec discernement). 智慧 (sagesse), 智者 (le sage). L\'une des 五常 confucéennes. Remarque : connote l\'INTELLIGENCE appliquée. Règle : 知 (zhī) = CONNAÎTRE / SAVOIR (acquérir par l\'apprentissage). 知识 (savoir), 知道 (savoir). Plus large, plus passif. Astuce : 识 (shí) = RECONNAÎTRE / IDENTIFIER (distinguer parmi plusieurs). 认识 (connaître par expérience), 见识 (vue / expérience), 识别 (identifier). Connote la CAPACITÉ DE DISCERNEMENT. Hierarchy : 知 (savoir acquis) < 识 (capacité de discernement) < 智 (sagesse pratique appliquée). Attention : compliment « 您是有智慧的人 » > « 您知识丰富 » (sage > savant).',
+      'Trois caractères chinois pour parler du savoir, trois degrés : connaissance acquise, discernement, sagesse appliquée. Le compliment 您是有智慧的人 (sage) > 您知识丰富 (savant).\n' +
+      '\n' +
+      'Les trois degrés :\n' +
+      '- 知 (zhī) — CONNAÎTRE, SAVOIR par apprentissage. 知识 (savoir), 知道 (savoir). Large et passif\n' +
+      '- 识 (shí) — RECONNAÎTRE, IDENTIFIER, distinguer parmi plusieurs. 认识 (connaître par expérience), 见识 (vue/expérience), 识别 (identifier). Capacité de DISCERNEMENT\n' +
+      '- 智 (zhì) — SAGESSE PRATIQUE, savoir agir avec discernement. 智慧 (sagesse), 智者 (le sage). L\'une des 五常 **confucéennes**\n' +
+      '\n' +
+      'Hiérarchie ascendante : 知 (savoir) < 识 (discernement) < 智 (sagesse appliquée).\n' +
+      '\n' +
+      'RÈGLE D\'OR : 增长见识 (élargir son expérience) est un objectif culturellement valorisé. Pour parler voyage, lecture, rencontres : 我希望多出去走走，增长见识 — phrase très bien reçue, signal de **maturité** intellectuelle.',
     bodyEn:
       '智 (zhì) = PRACTICAL WISDOM (knowing how to act with discernment). 智慧 (wisdom), 智者 (the wise). One of the Confucian 五常. Connotes APPLIED intelligence. 知 (zhī) = TO KNOW / KNOW (acquire by learning). 知识 (knowledge), 知道 (know). Broader, more passive. 识 (shí) = RECOGNIZE / IDENTIFY (distinguish among many). 认识 (know by experience), 见识 (sight / experience), 识别 (identify). Connotes DISCERNMENT capacity. Hierarchy: 知 (acquired knowledge) < 识 (discernment capacity) < 智 (applied practical wisdom). Compliment: «您是有智慧的人» > «您知识丰富» (wise > learned).',
     items: [
@@ -594,7 +876,16 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '境界 vs 层次 vs 水平 — niveau, hauteur (3 dimensions)',
     titleEn: '境界 vs 层次 vs 水平 — level, height (3 dimensions)',
     body:
-      'RÈGLE D\'OR : 境界 (jìngjiè) = NIVEAU SPIRITUEL/PHILOSOPHIQUE atteint (état de l\'être). Remarque : 王国维 (Wang Guowei) a posé les « 三种境界 » de la création : (1) 独上高楼，望尽天涯路 ; (2) 衣带渐宽终不悔 ; (3) 蓦然回首，那人却在灯火阑珊处. Profondément culturel. Règle : 层次 (céngcì) = NIVEAU STRUCTUREL (couches d\'analyse, hiérarchie). 高层次的人 (personne de haut niveau intellectuel/social). Plus structurel. Astuce : 水平 (shuǐpíng) = NIVEAU MESURABLE (compétence, performance). 学习水平 (niveau scolaire). Plus quantitatif. Hierarchy : 水平 (mesurable concret) < 层次 (structurel intellectuel) < 境界 (spirituel philosophique). Attention : pour louer un sage, « 您的境界让我景仰 » (votre niveau spirituel m\'inspire le respect).',
+      'Trois caractères chinois pour parler de niveau, trois axes : mesurable, structurel, spirituel. Le 境界 reste le plus **lettré** — Wang Guowei a posé les 三种境界 de la création artistique.\n' +
+      '\n' +
+      'Les trois dimensions :\n' +
+      '- 水平 (shuǐpíng) — NIVEAU MESURABLE (compétence, performance). 学习水平 = niveau scolaire. Quantitatif\n' +
+      '- 层次 (céngcì) — NIVEAU STRUCTUREL (couches d\'analyse, hiérarchie). 高层次的人 = personne de haut niveau intellectuel/social\n' +
+      '- 境界 (jìngjiè) — NIVEAU SPIRITUEL/PHILOSOPHIQUE atteint (état de l\'être). Profondément culturel\n' +
+      '\n' +
+      'Hiérarchie ascendante : 水平 (concret) < 层次 (structurel) < 境界 (spirituel).\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour louer un sage, dis 您的境界让我景仰 (votre niveau spirituel m\'inspire le respect). Connaître les 三种境界 de Wang Guowei (独上高楼...衣带渐宽...蓦然回首...) et savoir les mentionner — 像王国维说的三种境界 — signale un niveau **lettré** C2 immédiat.',
     bodyEn:
       '境界 (jìngjiè) = SPIRITUAL/PHILOSOPHICAL LEVEL attained (state of being). 王国维 (Wang Guowei) posed the «三种境界» of creation: (1) 独上高楼，望尽天涯路; (2) 衣带渐宽终不悔; (3) 蓦然回首，那人却在灯火阑珊处. Deeply cultural. 层次 (céngcì) = STRUCTURAL LEVEL (layers of analysis, hierarchy). 高层次的人 (person of high intellectual/social level). More structural. 水平 (shuǐpíng) = MEASURABLE LEVEL (competence, performance). 学习水平 (academic level). More quantitative. Hierarchy: 水平 (concrete measurable) < 层次 (structural intellectual) < 境界 (spiritual philosophical). To praise a sage: «您的境界让我景仰» (your spiritual level inspires my respect).',
     items: [
@@ -621,7 +912,18 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
     title: 'Pourquoi apprendre le 文言文 ?',
     titleEn: 'Why learn 文言文?',
     body:
-      'RÈGLE D\'OR : le 文言文 (chinois classique) n\'est pas une langue MORTE — c\'est le RÉSERVOIR culturel dans lequel tout chinois moderne soutenu puise. Remarque : quand un éditorialiste écrit 不容置疑 (« hors de doute »), 不可逾越 (« infranchissable »), c\'est du 文言 condensé. Quand un homme politique cite 子曰 X (« Confucius dit X »), c\'est du 文言 brut. Attention : sans bases en 文言, tu PLAFONNES à un C1.5 — tu ne décodes pas 30% des éditoriaux soutenus. Avec ces bases, tu débloques : éditoriaux, philosophie, poésie, romans classiques, calligraphie. ROI immense pour quelques dizaines d\'heures d\'étude. Astuce : approche pas la grammaire formelle, mais 50 phrases-clés à mémoriser + reconnaître les particules.',
+      'Le 文言文 (chinois **classique**) n\'est pas une langue MORTE — c\'est le RÉSERVOIR culturel dans lequel tout chinois moderne **soutenu** puise. Sans bases en 文言, tu plafonnes à C1.5 — tu ne décodes pas 30% des éditoriaux soutenus.\n' +
+      '\n' +
+      'Ce que le 文言 débloque :\n' +
+      '- éditoriaux **journalistiques** (formules condensées)\n' +
+      '- philosophie classique (Confucius, Lao Zi)\n' +
+      '- poésie Tang et Song\n' +
+      '- romans classiques\n' +
+      '- calligraphie et inscriptions\n' +
+      '\n' +
+      'Exemples vivants en presse moderne : 不容置疑 (hors de doute), 不可逾越 (infranchissable) — du 文言 condensé. Quand un homme politique cite 子曰 X, c\'est du 文言 brut.\n' +
+      '\n' +
+      'RÈGLE D\'OR : ROI immense pour quelques dizaines d\'heures d\'étude. Approche : pas la grammaire formelle, mais 50 phrases-clés à mémoriser + reconnaître les particules. Méthode : 1 phrase de Confucius en VO par jour pendant 30 jours — assez pour décoder les citations modernes.',
     bodyEn:
       '文言文 (classical Chinese) isn\'t a DEAD language — it\'s the cultural RESERVOIR all formal modern Chinese draws from. When an editorialist writes 不容置疑 («beyond doubt»), 不可逾越 («uncrossable»), that\'s condensed 文言. When a politician cites 子曰 X («Confucius says X»), that\'s raw 文言. Without 文言 basics, you PLATEAU at C1.5 — you don\'t decode 30% of formal editorials. With these basics, you unlock: editorials, philosophy, poetry, classical novels, calligraphy. Huge ROI for a few dozen hours of study. Approach: not formal grammar, but 50 key phrases to memorize + spot the particles.',
     items: [
@@ -641,7 +943,16 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
     title: '1 caractère = 1 mot — la règle d\'or',
     titleEn: '1 character = 1 word — the golden rule',
     body:
-      'En chinois MODERNE, on a des bi-syllabes : 朋友 (péngyou, ami), 学习 (xuéxí, étudier), 国家 (guójiā, pays). RÈGLE D\'OR : en 文言, chaque caractère est UN MOT INDÉPENDANT : 朋 = ami, 友 = compagnon, 学 = étudier, 习 = pratiquer répétitivement, 国 = État, 家 = famille/clan. Remarque : un texte 文言 a 2x moins de caractères pour la même densité d\'information. Astuce : exemple 学而时习之 (5 char) = « étudier (学) et (而) en temps voulu (时) pratiquer (习) cela (之) », équivalent moderne en ~15 syllabes. Attention : conséquence pratique LIS LENTEMENT. Chaque caractère mérite son temps. Remarque : les Chinois cultivés mettent 10 minutes pour lire un poème de 28 caractères — et c\'est NORMAL.',
+      'En chinois MODERNE, on a des bi-syllabes : 朋友 (péngyou, ami), 学习 (xuéxí, étudier), 国家 (guójiā, pays). En 文言, chaque caractère est UN MOT INDÉPENDANT.\n' +
+      '\n' +
+      'Exemples bi-syllabes vs **classique** :\n' +
+      '- 朋友 → 朋 (ami) + 友 (compagnon)\n' +
+      '- 学习 → 学 (étudier) + 习 (pratiquer répétitivement)\n' +
+      '- 国家 → 国 (État) + 家 (famille/clan)\n' +
+      '\n' +
+      'Un texte 文言 a 2x moins de caractères pour la même densité d\'information. Exemple : 学而时习之 (5 caractères) = « étudier (学) et (而) en temps voulu (时) pratiquer (习) cela (之) », équivalent moderne en ~15 syllabes.\n' +
+      '\n' +
+      'RÈGLE D\'OR : lis LENTEMENT. Chaque caractère mérite son temps — isole-le mentalement, donne-lui son sens, puis assemble. Les Chinois cultivés mettent 10 minutes pour lire un poème de 28 caractères, et c\'est **normal**. Le 文言 récompense la lenteur, comme la calligraphie ou le thé.',
     bodyEn:
       'In MODERN Chinese, we have bi-syllables: 朋友 (friend), 学习 (study), 国家 (country). In 文言, each character is ONE INDEPENDENT WORD: 朋 = friend, 友 = companion, 学 = study, 习 = repeatedly practice, 国 = state, 家 = family/clan. So a 文言 text has 2x fewer characters for the same information density. Example: 学而时习之 (5 chars) = «study (学) and (而) in due time (时) practice (习) it (之)», modern equivalent in ~15 syllables. Practical consequence: READ SLOWLY. Each character deserves its time. Cultured Chinese take 10 minutes to read a 28-character poem — and that\'s NORMAL.',
     items: [
@@ -664,7 +975,14 @@ export const c21WenyanIntroM2LearnSections: LessonV2LearnSection[] = [
     title: '之 — les 3 vies d\'une particule',
     titleEn: '之 — 3 lives of a particle',
     body:
-      'RÈGLE D\'OR : Vie 1 DÉTERMINATIF (= 的 moderne). 孔子之书 = les livres DE Confucius. 国家之大 = grandeur DU pays. Remarque : c\'est l\'usage le plus FRÉQUENT — apparait dans 60% des occurrences. Règle : Vie 2 PRONOM OBJET (3e personne, lui/elle/cela). 爱之 = aimer [lui/elle/cela]. 学而时习之 = étudier et pratiquer CELA en temps voulu. Exception : Vie 3 VERBE « aller à » (rare mais à connaître). 之于 X = se rendre à X. 子之武城 = le Maître se rendit à Wucheng. Astuce : test contextuel — si après 之 il y a un nom → vie 1 (de). Si après 之 il y a une fin de phrase → vie 2 (cela). Si après 之 il y a un lieu → vie 3 (aller).',
+      'La particule 之 (zhī) traverse tout le **classique** 文言 sous trois usages distincts. La maîtriser débloque 60% des textes — c\'est la particule N°1 à reconnaître.\n' +
+      '\n' +
+      'Les trois vies de 之 :\n' +
+      '- Vie 1 — DÉTERMINATIF (= 的 moderne). 孔子之书 = les livres DE Confucius. 国家之大 = grandeur DU pays. Usage le plus FRÉQUENT (60% des occurrences)\n' +
+      '- Vie 2 — PRONOM OBJET (3e personne, lui/elle/cela). 爱之 = aimer [lui/elle/cela]. 学而时习之 = étudier et pratiquer CELA\n' +
+      '- Vie 3 — VERBE « aller à » (rare mais à connaître). 子之武城 = le Maître se rendit à Wucheng\n' +
+      '\n' +
+      'RÈGLE D\'OR : test mémo « après 之 quoi ? » — Nom → de (vie 1). Verbe accompli ou fin de phrase → cela (vie 2). Nom de lieu → aller (vie 3). Cette question simple résout 95% des cas. Mémorise-la et applique-la mécaniquement les 50 premières fois.',
     bodyEn:
       'Life 1: DETERMINER (= modern 的). 孔子之书 = Confucius\'S books. 国家之大 = the country\'S greatness. Most FREQUENT use — appears in 60% of occurrences. Life 2: OBJECT PRONOUN (3rd person, him/her/it). 爱之 = love [him/her/it]. 学而时习之 = study and practice IT in due time. Life 3: VERB «go to» (rare but worth knowing). 之于 X = go to X. 子之武城 = the Master went to Wucheng. Contextual test: if after 之 there\'s a noun → life 1 (of). If after 之 there\'s a sentence end → life 2 (it). If after 之 there\'s a place → life 3 (go).',
     items: [
@@ -684,7 +1002,22 @@ export const c21WenyanIntroM2LearnSections: LessonV2LearnSection[] = [
     title: '者 (nominalisation) + 所 (passif)',
     titleEn: '者 (nominalization) + 所 (passive)',
     body:
-      'RÈGLE D\'OR : 者 (zhě) transforme un VERBE ou un ADJECTIF en NOM. 善 (bon) + 者 = 善者 (celui qui est bon, le bien). 学 (étudier) + 者 = 学者 (celui qui étudie, le lettré). Astuce : 古之学者 = les lettrés d\'autrefois. 仁者爱人 = celui qui est bienveillant aime les autres. Remarque : vivant en chinois moderne 学者 (érudit), 作者 (auteur), 读者 (lecteur), 记者 (journaliste). Règle : 所 (suǒ) construit le PASSIF — « ce qui est X » ou « la chose X-ée ». 所爱 = ce qui est aimé / l\'être aimé. 所闻 = ce qu\'on entend. 所见 = ce qu\'on voit. Attention : combo classique 所以 (suǒyǐ, vivant en moderne comme « donc ») = à l\'origine en 文言 « ce par quoi », d\'où le sens causal qui en a découlé.',
+      'Deux particules **classiques** verrouillent la construction des noms et du passif en 文言. Toutes deux vivantes dans le chinois moderne **soutenu**.\n' +
+      '\n' +
+      '者 (zhě) transforme verbe ou adjectif en NOM, vient APRÈS :\n' +
+      '- 善 + 者 = 善者 (celui qui est bon)\n' +
+      '- 学 + 者 = 学者 (le lettré, l\'érudit)\n' +
+      '- 古之学者 — les lettrés d\'autrefois\n' +
+      '- 仁者爱人 — celui qui est bienveillant aime les autres\n' +
+      '- Vivant en moderne : 学者, 作者, 读者, 记者\n' +
+      '\n' +
+      '所 (suǒ) construit le PASSIF (« ce qui est X »), vient AVANT :\n' +
+      '- 所爱 — ce qui est aimé, l\'être aimé\n' +
+      '- 所闻 — ce qu\'on entend\n' +
+      '- 所见 — ce qu\'on voit\n' +
+      '- Combo : 所以 (en moderne « donc ») = en 文言 « ce par quoi »\n' +
+      '\n' +
+      'RÈGLE D\'OR : 者 après un verbe/adjectif, 所 avant un verbe. Cette règle simple débloque la lecture des Entretiens et de Mencius.',
     bodyEn:
       '者 (zhě) turns a VERB or ADJECTIVE into a NOUN. 善 (good) + 者 = 善者 (the one who is good, goodness). 学 (study) + 者 = 学者 (one who studies, scholar). 古之学者 = scholars of old. 仁者爱人 = the benevolent love others. Alive in modern Chinese: 学者 (scholar), 作者 (author), 读者 (reader), 记者 (journalist). 所 (suǒ) builds the PASSIVE: «that which is X» or «the X-ed thing». 所爱 = what is loved / the loved one. 所闻 = what is heard. 所见 = what is seen. Classical combo: 所以 (alive in modern as «therefore») = originally in 文言 «that by which», whence the derived causal sense.',
     items: [
@@ -707,7 +1040,18 @@ export const c21WenyanIntroM3LearnSections: LessonV2LearnSection[] = [
     title: '也 / 矣 — affirmation et accomplissement',
     titleEn: '也 / 矣 — affirmation and accomplishment',
     body:
-      'RÈGLE D\'OR : 也 (yě) en 文言 = particule de DÉFINITION ou d\'AFFIRMATION SOLENNELLE en fin de phrase. Règle : souvent sujet + 也 = « X est… ». Astuce : exemple célèbre 仁者，爱人也 = « être humain bienveillant, c\'est aimer les autres ». 仁，礼之本也 = « la bienveillance, c\'est le fondement des rites ». Attention : sans 也, l\'affirmation ne sonne pas DÉFINITIONNELLE. Remarque : sens MODERNE de 也 (= « aussi, également ») est SECONDAIRE et historiquement tardif. Exception : 矣 (yǐ) = particule d\'ASPECT ACCOMPLI (= moderne 了) + nuance de jugement. 此之谓大丈夫矣 = « c\'est cela qu\'on appelle un vrai homme ». Souvent en clôture d\'un discours : « voilà, c\'est dit, c\'est jugé, c\'est fini ». Aspect accompli + définitif.',
+      'Deux particules finales **classiques** posent la définition (也) et l\'accompli définitif (矣) en 文言. Leur sens moderne (« aussi », « 了 ») est secondaire et tardif.\n' +
+      '\n' +
+      '也 (yě) — DÉFINITION ou AFFIRMATION SOLENNELLE en fin de phrase. Structure : sujet + 也 = « X est… ». Exemples célèbres :\n' +
+      '- 仁者，爱人也 — être humain bienveillant, c\'est aimer les autres\n' +
+      '- 仁，礼之本也 — la bienveillance, c\'est le fondement des rites\n' +
+      '\n' +
+      '矣 (yǐ) — ASPECT ACCOMPLI (= moderne 了) + nuance de JUGEMENT. Exemple :\n' +
+      '- 此之谓大丈夫矣 — c\'est cela qu\'on appelle un vrai homme\n' +
+      '\n' +
+      '矣 ferme un discours : « voilà, c\'est dit, c\'est jugé, c\'est fini ».\n' +
+      '\n' +
+      'RÈGLE D\'OR : raccourcis de lecture — X 也 = « X est [défini comme] Y », X 矣 = « X, c\'est fait/jugé ». Ces 2 raccourcis débloquent la lecture des Analectes et de Mencius.',
     bodyEn:
       '也 (yě) in 文言 = particle of DEFINITION or SOLEMN AFFIRMATION at sentence end. Often: subject + 也 = «X is…». Famous example: 仁者，爱人也 = «to be a benevolent human is to love others». 仁，礼之本也 = «benevolence is the foundation of rites». Without 也, the affirmation doesn\'t sound DEFINITIONAL. MODERN sense of 也 (= «also») is SECONDARY and historically late. 矣 (yǐ) = particle of ACCOMPLISHED ASPECT (= modern 了) + judgment nuance. 此之谓大丈夫矣 = «this is what is called a true man». Often closing a speech: «there, it\'s said, judged, finished». Accomplished + definitive aspect.',
     items: [
@@ -727,7 +1071,18 @@ export const c21WenyanIntroM3LearnSections: LessonV2LearnSection[] = [
     title: '乎 (interrogation) + 哉 (exclamation)',
     titleEn: '乎 (interrogation) + 哉 (exclamation)',
     body:
-      'RÈGLE D\'OR : 乎 (hū) = particule INTERROGATIVE en fin de phrase (= moderne 吗 ou 呢). Astuce : exemple emblématique 学而时习之，不亦说乎 ? = « Apprendre et pratiquer en temps voulu, n\'est-ce pas une joie ? ». Remarque : 不亦 X 乎 = « n\'est-ce pas X ? » est UNE structure rhétorique CLÉ pour poser une question dont la réponse positive est évidente — outil de persuasion lettré. Règle : 哉 (zāi) = particule EXCLAMATIVE admirative en fin de phrase. 善哉 ! = « comme c\'est bien ! ». 大哉 ! = « comme c\'est grand ! ». Attention : réservé aux MOMENTS de grande émotion intellectuelle. Très théâtral. Exception : reconnaître 哉 dans un texte = comprendre que l\'auteur s\'enthousiasme. Sans 哉, la phrase resterait factuelle.',
+      'Deux particules **classiques** colorent la fin de phrase 文言 : l\'interrogation (乎) et l\'exclamation admirative (哉). Toutes deux outils de **rhétorique** lettrée.\n' +
+      '\n' +
+      '乎 (hū) — INTERROGATIVE en fin de phrase (= moderne 吗 ou 呢). Exemple emblématique :\n' +
+      '- 学而时习之，不亦说乎 ? — apprendre et pratiquer en temps voulu, n\'est-ce pas une joie ?\n' +
+      '\n' +
+      'La structure 不亦 X 乎 = « n\'est-ce pas X ? » est une question **rhétorique** CLÉ pour poser une question dont la réponse positive est évidente — outil de persuasion lettré.\n' +
+      '\n' +
+      '哉 (zāi) — EXCLAMATIVE admirative en fin de phrase. Très théâtral :\n' +
+      '- 善哉 ! — comme c\'est bien !\n' +
+      '- 大哉 ! — comme c\'est grand !\n' +
+      '\n' +
+      'RÈGLE D\'OR : la formule 不亦 X 乎 apparaît 3 fois dans la 1re phrase des Analectes. À mobiliser en discussion intellectuelle : 这不亦是一种智慧乎 ? (n\'est-ce pas une forme de sagesse ?).',
     bodyEn:
       '乎 (hū) = INTERROGATIVE particle at sentence end (= modern 吗 or 呢). Iconic example: 学而时习之，不亦说乎? = «Learn and practice in due time, is this not joy?». 不亦 X 乎 = «is it not X?» is a KEY rhetorical structure for asking a question whose positive answer is obvious — literate persuasion tool. 哉 (zāi) = ADMIRATIVE EXCLAMATIVE particle at sentence end. 善哉! = «how good!». 大哉! = «how great!». Reserved for MOMENTS of great intellectual emotion. Very theatrical. Recognizing 哉 in a text = understanding the author\'s enthusiasm. Without 哉, the sentence would stay factual.',
     items: [
@@ -750,7 +1105,19 @@ export const c21WenyanIntroM4LearnSections: LessonV2LearnSection[] = [
     title: 'Décortiquer la 1re phrase des 论语',
     titleEn: 'Dissect the Analects\' first sentence',
     body:
-      '子曰：「学而时习之，不亦说乎? 有朋自远方来，不亦乐乎? 人不知而不愠，不亦君子乎?」 Astuce : décortiquons — 子 (le Maître = Confucius) 曰 (dit) — formule rituelle de citation. Remarque : 学 (étudier) 而 (et) 时 (en temps voulu) 习 (pratiquer) 之 (cela), 不亦 (n\'est-ce pas) 说 (= 悦 joie) 乎 (?) — apprendre + revoir = joie. Règle : 有 (avoir) 朋 (ami) 自 (depuis) 远方 (lointaine région) 来 (venir), 不亦乐乎 = un ami vient de loin, n\'est-ce pas un bonheur. 人 (les hommes) 不知 (ne pas connaître/reconnaître) 而 (mais) 不愠 (ne pas être affecté), 不亦君子乎 = ne pas être reconnu sans s\'en émouvoir, n\'est-ce pas le propre du noble. RÈGLE D\'OR : CHAQUE écolier chinois la sait. Si tu la cites, tu signales TON niveau cultivé.',
+      'La 1re phrase des 《论语》 est l\'incipit le plus célèbre de la littérature chinoise — chaque écolier la connaît par cœur. La citer signale ton niveau **lettré** instantanément.\n' +
+      '\n' +
+      '子曰：「学而时习之，不亦说乎? 有朋自远方来，不亦乐乎? 人不知而不愠，不亦君子乎?」\n' +
+      '\n' +
+      'Décortiquons les trois propositions :\n' +
+      '- 子曰 — le Maître (Confucius) dit (formule rituelle)\n' +
+      '- 学而时习之，不亦说乎 — apprendre et pratiquer cela en temps voulu, n\'est-ce pas une joie ?\n' +
+      '- 有朋自远方来，不亦乐乎 — un ami vient de loin, n\'est-ce pas un bonheur ?\n' +
+      '- 人不知而不愠，不亦君子乎 — ne pas être reconnu sans s\'en émouvoir, n\'est-ce pas le propre du noble ?\n' +
+      '\n' +
+      'Trois fois la formule 不亦 X 乎 — outil **rhétorique classique** pour poser une question dont la réponse est évidente.\n' +
+      '\n' +
+      'RÈGLE D\'OR : mémorise les 12 premiers caractères — 子曰：学而时习之，不亦说乎 ? Investissement de 5 min, bénéfice durable et impressionnant. Si tu peux les RÉCITER en chinois en discussion, tu signales un niveau lettré C2 immédiatement.',
     bodyEn:
       '子曰：「学而时习之，不亦说乎? 有朋自远方来，不亦乐乎? 人不知而不愠，不亦君子乎?」 Let\'s parse: 子 (the Master = Confucius) 曰 (says) — ritual citation formula. 学 (study) 而 (and) 时 (in due time) 习 (practice) 之 (it), 不亦 (is it not) 说 (= 悦 joy) 乎 (?) — learn + review = joy. 有 (have) 朋 (friend) 自 (from) 远方 (faraway region) 来 (come), 不亦乐乎 = a friend comes from afar, is this not happiness. 人 (others) 不知 (not know/recognize) 而 (yet) 不愠 (not be affected), 不亦君子乎 = not to be recognized without resenting it, is this not the noble man\'s mark. EVERY Chinese schoolchild knows it. Citing it signals YOUR cultured level.',
     items: [
@@ -770,7 +1137,16 @@ export const c21WenyanIntroM4LearnSections: LessonV2LearnSection[] = [
     title: '5 citations passe-partout des 论语',
     titleEn: '5 catch-all Analects quotes',
     body:
-      'Astuce : (1) 学而不思则罔，思而不学则殆 = « étudier sans réfléchir mène à la confusion, réfléchir sans étudier est dangereux ». À utiliser en débat sur l\'éducation. Remarque : (2) 三人行，必有我师焉 = « parmi 3 personnes qui marchent ensemble, il y a forcément un maître pour moi » — humilité. À utiliser pour louer un junior. RÈGLE D\'OR : (3) 己所不欲，勿施于人 = « ne fais pas à autrui ce que tu ne voudrais pas qu\'on te fasse » — règle d\'or version Confucius. Règle : (4) 知之为知之，不知为不知，是知也 = « savoir ce qu\'on sait et savoir ce qu\'on ignore, c\'est cela savoir » — humilité épistémique. Attention : (5) 君子和而不同，小人同而不和 = « le noble s\'accorde sans uniformité, l\'homme commun s\'uniformise sans s\'accorder » — éthique du dialogue. Ces 5 citations couvrent 80% des références classiques en discussion contemporaine.',
+      'Cinq citations des 《论语》 couvrent 80% des références **classiques** en discussion chinoise contemporaine. Choisir UNE par thème, l\'apprendre PAR CŒUR, la dégainer au bon moment — effet immédiat sur la perception **lettrée**.\n' +
+      '\n' +
+      'Les cinq citations passe-partout :\n' +
+      '- 学而不思则罔，思而不学则殆 — étudier sans réfléchir mène à la confusion, réfléchir sans étudier est dangereux (débat éducation)\n' +
+      '- 三人行，必有我师焉 — parmi 3 marcheurs, il y a forcément un maître pour moi (humilité, louer un junior)\n' +
+      '- 己所不欲，勿施于人 — ne fais pas à autrui ce que tu ne voudrais pas qu\'on te fasse (règle d\'or **confucéenne**)\n' +
+      '- 知之为知之，不知为不知，是知也 — savoir ce qu\'on sait et qu\'on ignore, c\'est cela savoir (humilité épistémique)\n' +
+      '- 君子和而不同，小人同而不和 — le noble s\'accorde sans uniformité, l\'homme commun s\'uniformise sans s\'accorder (éthique du dialogue)\n' +
+      '\n' +
+      'RÈGLE D\'OR : 5 citations bien placées = mois d\'efforts apparents. Stratégie — 1 citation par thème (éducation, éthique, dialogue), mémorisée avec sa traduction. Quand le sujet apparaît, dégaine.',
     bodyEn:
       '(1) 学而不思则罔，思而不学则殆 = «studying without thinking is confusing, thinking without studying is dangerous». Use in education debate. (2) 三人行，必有我师焉 = «among 3 people walking, there\'s sure to be a master for me» — humility. Use to praise a junior. (3) 己所不欲，勿施于人 = «don\'t do to others what you don\'t want done to you» — Confucian Golden Rule. (4) 知之为知之，不知为不知，是知也 = «to know what you know and know what you don\'t know, that is knowledge» — epistemic humility. (5) 君子和而不同，小人同而不和 = «the noble harmonizes without uniformity, the petty uniformizes without harmonizing» — dialogue ethic. These 5 quotes cover 80% of classical references in contemporary discussion.',
     items: [
@@ -795,7 +1171,16 @@ export const c21PhiloClassiqueM1LearnSections: LessonV2LearnSection[] = [
     title: 'Confucius : la vie d\'un maître itinérant',
     titleEn: 'Confucius: life of an itinerant master',
     body:
-      '孔子 (Kong Zi, -551 → -479) naît dans le royaume de Lu (actuel Shandong). Remarque : orphelin de père tôt, élevé pauvre par sa mère. Devient fonctionnaire mineur, puis enseigne. RÈGLE D\'OR : accepte des élèves indépendamment de leur origine sociale (révolutionnaire à l\'époque) — d\'où sa qualification de « 1er enseignant universel » de l\'histoire chinoise. Astuce : voyage 13 ans à travers les royaumes pour proposer ses idées politiques aux souverains — TOUS les rejettent. Rentre chez lui, enseigne jusqu\'à sa mort. Attention : il meurt en pensant avoir échoué. Exception : 200 ans après, sa pensée devient pilier d\'État sous la dynastie Han. Remarque : aujourd\'hui sa tombe à Qufu (Shandong) est un site UNESCO, le 孔府 (palais Kong) où ses descendants ont vécu pendant 2000 ans est encore visitable.',
+      '孔子 (Kong Zi, -551 → -479) naît dans le royaume de Lu (actuel Shandong). Orphelin de père tôt, élevé pauvre par sa mère. Devient fonctionnaire mineur, puis enseigne.\n' +
+      '\n' +
+      'Étapes de sa vie :\n' +
+      '- Accepte des élèves indépendamment de leur origine sociale — révolutionnaire à l\'époque, d\'où son titre de « 1er enseignant universel » de l\'histoire chinoise\n' +
+      '- Voyage 13 ans à travers les royaumes pour proposer ses idées politiques — TOUS les souverains les rejettent\n' +
+      '- Rentre chez lui, enseigne jusqu\'à sa mort en -479\n' +
+      '- Meurt en pensant avoir échoué\n' +
+      '- 200 ans après, sa pensée devient pilier d\'État sous les Han\n' +
+      '\n' +
+      'RÈGLE D\'OR : aujourd\'hui sa tombe à Qufu (Shandong) est un site UNESCO. Le 孔府 (palais Kong), où ses descendants ont vécu pendant 2000 ans, reste visitable. Pour qui aime Confucius, c\'est UN pèlerinage qui change le rapport au texte **classique**.',
     bodyEn:
       '孔子 (Confucius, 551-479 BCE) born in the kingdom of Lu (modern Shandong). Orphaned of father early, raised poor by his mother. Becomes minor official, then teaches. Accepts students regardless of social origin (revolutionary at the time) — hence his title as «first universal teacher» in Chinese history. Travels 13 years across kingdoms to offer his political ideas to rulers — ALL reject them. Returns home, teaches until death. He dies thinking he failed. 200 years later, his thought becomes state pillar under the Han dynasty. Today: his tomb at Qufu (Shandong) is a UNESCO site, the 孔府 (Kong Palace) where his descendants lived for 2000 years is still visitable.',
     items: [
@@ -815,7 +1200,25 @@ export const c21PhiloClassiqueM1LearnSections: LessonV2LearnSection[] = [
     title: '五常 + 五伦 — vertus et relations',
     titleEn: '五常 + 五伦 — virtues and relations',
     body:
-      'RÈGLE D\'OR : 五常 (5 vertus constantes) — 仁 (humanité bienveillante — concept central), 义 (justice/devoir moral), 礼 (rites/bienséance sociale), 智 (sagesse pratique), 信 (fidélité à la parole). Astuce : ces 5 sont à mémoriser comme une CHAÎNE — chaque vertu en alimente une autre. Règle : 五伦 (5 relations sociales fondamentales) — 君臣 (souverain-sujet), 父子 (père-fils, devenu modèle de la 孝 piété filiale), 夫妇 (mari-femme), 兄弟 (frères, modèle de l\'amitié), 朋友 (amis). Remarque : chaque relation a des DEVOIRS RÉCIPROQUES. Attention : la 孝 (xiào, piété filiale) reste dans la Chine moderne — prendre soin des parents âgés est un DEVOIR LÉGAL en Chine (loi 2013 obligeant à visiter ses parents âgés régulièrement). Confucius reste opérationnel.',
+      'Deux matrices **confucéennes** organisent la morale chinoise : les 5 vertus (五常) et les 5 relations sociales (五伦). Ensemble, elles forment le squelette éthique de la Chine depuis 2000 ans.\n' +
+      '\n' +
+      '五常 — les 5 vertus constantes :\n' +
+      '- 仁 — humanité bienveillante (concept central)\n' +
+      '- 义 — justice, devoir moral\n' +
+      '- 礼 — rites, bienséance sociale\n' +
+      '- 智 — sagesse pratique\n' +
+      '- 信 — fidélité à la parole\n' +
+      '\n' +
+      '五伦 — les 5 relations sociales fondamentales :\n' +
+      '- 君臣 — souverain et sujet\n' +
+      '- 父子 — père et fils (modèle de la piété filiale 孝)\n' +
+      '- 夫妇 — mari et femme\n' +
+      '- 兄弟 — frères (modèle de l\'amitié)\n' +
+      '- 朋友 — amis\n' +
+      '\n' +
+      'Chaque relation impose des DEVOIRS RÉCIPROQUES. La 孝 (piété filiale) reste vivante : en Chine, une loi de 2013 oblige à visiter ses parents âgés régulièrement.\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour louer un ami chinois, dis 您真有仁义礼智信的精神 (vous avez l\'esprit des 5 vertus). Compliment **suprême** — montre que tu connais la matrice morale chinoise.',
     bodyEn:
       '五常 (5 constant virtues): 仁 (benevolent humanity — central concept), 义 (righteousness/moral duty), 礼 (rites/social propriety), 智 (practical wisdom), 信 (trustworthiness). Memorize these 5 as a CHAIN — each virtue feeds another. 五伦 (5 fundamental social relations): 君臣 (ruler-subject), 父子 (father-son, became the model of 孝 filial piety), 夫妇 (husband-wife), 兄弟 (brothers, friendship model), 朋友 (friends). Each relation has RECIPROCAL DUTIES. 孝 (filial piety) survives in modern China: caring for elderly parents is a LEGAL DUTY in China (2013 law requiring regular visits to elderly parents). Confucius remains operational.',
     items: [
@@ -838,7 +1241,15 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
     title: '道可道，非常道 — l\'incipit du 道德经',
     titleEn: '道可道，非常道 — the Daodejing\'s opening',
     body:
-      '《道德经》(Dào Dé Jīng) attribué à 老子 (Lao Zi, VIe siècle av. JC) — figure semi-légendaire, archiviste de Zhou. RÈGLE D\'OR : le texte ouvre par 道可道，非常道。名可名，非常名 = « la Voie qu\'on peut dire/définir n\'est pas la Voie éternelle. Le nom qu\'on peut nommer n\'est pas le nom éternel ». Remarque : premier paradoxe — DIRE LE TAO le diminue. Attention : le tao est INDICIBLE, ce que les mots peuvent atteindre n\'est qu\'une approximation. Cette ouverture est l\'une des phrases les plus citées de toute la littérature chinoise. Astuce : pour la mémoriser, 道可道 (3 fois 道, le 1er = nom, le 2e = verbe « dire ») 非常道 (n\'est pas le tao éternel). Très joli rythme. Remarque : si tu cites cette phrase à un Chinois cultivé, il/elle comprendra ton niveau immédiatement.',
+      '《道德经》(Dào Dé Jīng) attribué à 老子 (Lao Zi, VIe siècle av. JC) — figure semi-légendaire, archiviste de Zhou. Le texte ouvre par un paradoxe **taoïste** célèbre :\n' +
+      '\n' +
+      '道可道，非常道。名可名，非常名 = « la Voie qu\'on peut dire/définir n\'est pas la Voie éternelle. Le nom qu\'on peut nommer n\'est pas le nom éternel ».\n' +
+      '\n' +
+      'Premier paradoxe **taoïste** : DIRE LE TAO le diminue. Le tao est **indicible**, ce que les mots peuvent atteindre n\'est qu\'une approximation. Cette ouverture est l\'une des phrases les plus citées de toute la littérature chinoise.\n' +
+      '\n' +
+      'Astuce de mémorisation : 道可道 (3 fois 道 — le 1er = nom, le 2e = verbe « dire ») 非常道 (n\'est pas le tao éternel). Rythme magnifique.\n' +
+      '\n' +
+      'RÈGLE D\'OR : la phrase 道可道，非常道 est l\'équivalent oriental de « le Tao qu\'on peut dire n\'est pas le Tao » — citée par Heidegger et les penseurs occidentaux. La connaître permet de PONTER les cultures en discussion philosophique.',
     bodyEn:
       '《道德经》(Dào Dé Jīng) attributed to 老子 (Lao Zi, 6th c. BCE) — semi-legendary figure, Zhou archivist. The text opens with: 道可道，非常道。名可名，非常名 = «the Way that can be said/defined is not the eternal Way. The name that can be named is not the eternal name». First paradox: SAYING THE DAO diminishes it. The Dao is UNSAYABLE, what words can reach is only an approximation. This opening is one of the most-cited phrases in all Chinese literature. To memorize: 道可道 (3x 道, the 1st = noun, 2nd = verb «say») 非常道 (is not the eternal Dao). Very pretty rhythm. If you cite this to a cultured Chinese, they\'ll grasp your level immediately.',
     items: [
@@ -858,7 +1269,18 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
     title: '庄子 + 庄周梦蝶 — la parabole du papillon',
     titleEn: '庄子 + 庄周梦蝶 — the butterfly parable',
     body:
-      '庄子 (Zhuang Zi, ~369-286 av. JC) développe le taoïsme par PARABOLES poétiques (vs Lao Zi en aphorismes). RÈGLE D\'OR : la plus célèbre 庄周梦蝶 (Zhuāng Zhōu mèng dié, « Zhuang Zhou rêve [qu\'il est] un papillon »). Astuce : « Un jour, Zhuang Zhou rêva qu\'il était un papillon, voletant librement. Il ignorait être Zhuang Zhou. Soudain il s\'éveilla, et était de nouveau Zhuang Zhou. Mais il ne savait plus : Zhuang Zhou avait-il rêvé d\'être papillon, ou un papillon rêvait-il maintenant d\'être Zhuang Zhou ? ». Remarque : qu\'est-ce qui distingue le rêve de la veille, l\'humain de la nature, le sujet de l\'objet ? Le 物化 (wùhuà, transformation des choses) abolit les frontières. Attention : cette parabole inspire écrivains (Borges en « Les ruines circulaires »), films, et reste une des phrases les plus connues en Chine.',
+      '庄子 (Zhuang Zi, ~369-286 av. JC) développe le **taoïsme** par PARABOLES poétiques (vs Lao Zi en aphorismes). La plus célèbre : 庄周梦蝶 (Zhuāng Zhōu mèng dié, « Zhuang Zhou rêve qu\'il est un papillon »).\n' +
+      '\n' +
+      'Le récit : « Un jour, Zhuang Zhou rêva qu\'il était un papillon, voletant librement. Il ignorait être Zhuang Zhou. Soudain il s\'éveilla, et était de nouveau Zhuang Zhou. Mais il ne savait plus : Zhuang Zhou avait-il rêvé d\'être papillon, ou un papillon rêvait-il maintenant d\'être Zhuang Zhou ? ».\n' +
+      '\n' +
+      'Questions ouvertes :\n' +
+      '- Qu\'est-ce qui distingue le rêve de la veille ?\n' +
+      '- L\'humain de la nature ?\n' +
+      '- Le sujet de l\'objet ?\n' +
+      '\n' +
+      'Le 物化 (wùhuà, transformation des choses) abolit les frontières. Cette parabole inspire Borges (Les ruines circulaires), films, et reste une des phrases les plus connues en Chine.\n' +
+      '\n' +
+      'RÈGLE D\'OR : 庄周梦蝶 est une référence philosophique **passe-partout**. Pour évoquer la fluidité de l\'identité ou signaler ton niveau **lettré** : 这让我想起庄周梦蝶 (cela me fait penser à Zhuang Zhou et au papillon).',
     bodyEn:
       '庄子 (Zhuang Zi, ~369-286 BCE) develops Daoism through poetic PARABLES (vs Lao Zi\'s aphorisms). The most famous: 庄周梦蝶 («Zhuang Zhou dreams [he is] a butterfly»). «One day, Zhuang Zhou dreamed he was a butterfly, fluttering freely. He didn\'t know he was Zhuang Zhou. Suddenly he woke, and was Zhuang Zhou again. But he no longer knew: had Zhuang Zhou dreamed of being a butterfly, or was a butterfly now dreaming of being Zhuang Zhou?». Question: what distinguishes dream from waking, human from nature, subject from object? 物化 (transformation of things) abolishes borders. This parable inspires writers (Borges in «The Circular Ruins»), films, and remains one of the most-known phrases in China.',
     items: [
@@ -881,7 +1303,20 @@ export const c21PhiloClassiqueM3LearnSections: LessonV2LearnSection[] = [
     title: '法家 — pessimisme anthropologique et droit',
     titleEn: '法家 — anthropological pessimism and law',
     body:
-      'RÈGLE D\'OR : 法家 (l\'École des légistes) repose sur UN postulat — l\'homme est NATURELLEMENT MAUVAIS, intéressé, calculateur. Donc gouverner par la VERTU (option confucéenne) est utopique. Règle : il faut LA LOI 法 (fǎ), claire et appliquée à TOUS sans exception, soutenue par la RÉCOMPENSE et la PUNITION. Remarque : théoriciens 商鞅 (Shang Yang, IVe s. av. JC) appliqua le légisme au royaume de Qin, qui devint surpuissant et unifia la Chine en -221. 韩非 (Han Fei, IIIe s. av. JC) synthétisa la doctrine dans 《韩非子》. Astuce : triade légiste — 法 (la loi), 术 (les techniques de pouvoir/contrôle bureaucratique), 势 (la position de pouvoir, l\'autorité du trône). Pour Han Fei, un souverain doit MANIPULER les 3 leviers en parallèle. Attention : la gouvernance chinoise reste largement légiste sous une façade confucéenne.',
+      '法家 (l\'École des **légistes**) repose sur UN postulat anthropologique : l\'homme est NATURELLEMENT MAUVAIS, intéressé, calculateur. Donc gouverner par la VERTU (option **confucéenne**) est utopique. Il faut LA LOI claire, appliquée à TOUS sans exception, soutenue par la récompense et la punition.\n' +
+      '\n' +
+      'Les théoriciens majeurs :\n' +
+      '- 商鞅 (Shang Yang, IVe s. av. JC) — applique le légisme au royaume de Qin, qui devient surpuissant et unifie la Chine en -221\n' +
+      '- 韩非 (Han Fei, IIIe s. av. JC) — synthétise la doctrine dans 《韩非子》\n' +
+      '\n' +
+      'La triade **légiste** (leviers de gouvernance) :\n' +
+      '- 法 (fǎ) — la loi écrite\n' +
+      '- 术 (shù) — les techniques de pouvoir, contrôle bureaucratique\n' +
+      '- 势 (shì) — la position de pouvoir, l\'autorité du trône\n' +
+      '\n' +
+      'Pour Han Fei, un souverain doit MANIPULER les 3 leviers en parallèle.\n' +
+      '\n' +
+      'RÈGLE D\'OR : la gouvernance chinoise contemporaine reste largement **légiste** sous une façade **confucéenne**. Cette grille de lecture éclaire la politique chinoise mieux que les grilles occidentales habituelles.',
     bodyEn:
       '法家 (Legalist School) rests on ONE postulate: humans are NATURALLY BAD, self-interested, calculating. So governing by VIRTUE (Confucian option) is utopian. We need LAW 法, clear and applied to ALL without exception, backed by REWARD and PUNISHMENT. Theorists: 商鞅 (Shang Yang, 4th c. BCE) applied Legalism to the Qin kingdom, which became all-powerful and unified China in 221 BCE. 韩非 (Han Fei, 3rd c. BCE) synthesized the doctrine in 《韩非子》. Legalist triad: 法 (law), 术 (techniques of power/bureaucratic control), 势 (position of power, throne\'s authority). For Han Fei, a ruler must MANIPULATE the 3 levers in parallel. Modernity: Chinese governance remains largely Legalist under a Confucian facade.',
     items: [
@@ -901,7 +1336,21 @@ export const c21PhiloClassiqueM3LearnSections: LessonV2LearnSection[] = [
     title: '儒表法里 — la formule clé',
     titleEn: '儒表法里 — the key formula',
     body:
-      'RÈGLE D\'OR : 儒表法里 (rú biǎo fǎ lǐ, « confucéen en façade, légiste à l\'intérieur ») = formule INVENTÉE PAR LES HISTORIENS pour caractériser la gouvernance chinoise depuis 2000 ans. Règle : les empereurs Han réhabilitent Confucius officiellement (l\'État se présente comme bienveillant), mais en pratique appliquent les méthodes légistes (lois strictes, bureaucratie centralisée, contrôle, punitions). Remarque : cette dualité explique pourquoi des observateurs occidentaux croient parfois la Chine « confucéenne et harmonieuse » alors que les leviers de pouvoir restent légistes. Astuce : la Chine de Xi Jinping s\'inscrit dans cette tradition — discours moral confucéen (中国梦, 共同富裕) + appareil de contrôle légiste (Big Data, score social, fermeté juridique). Attention : maîtriser 儒表法里 = clé de compréhension géopolitique.',
+      '儒表法里 (rú biǎo fǎ lǐ, « **confucéen** en façade, **légiste** à l\'intérieur ») est la formule inventée par les historiens pour caractériser la gouvernance chinoise depuis 2000 ans. Clé de compréhension géopolitique.\n' +
+      '\n' +
+      'Les empereurs Han réhabilitent Confucius officiellement (l\'État se présente comme bienveillant), mais en pratique appliquent les méthodes **légistes** :\n' +
+      '- lois strictes\n' +
+      '- bureaucratie centralisée\n' +
+      '- contrôle\n' +
+      '- punitions\n' +
+      '\n' +
+      'Cette dualité explique pourquoi des observateurs occidentaux croient parfois la Chine « confucéenne et harmonieuse » alors que les leviers de pouvoir restent **légistes**.\n' +
+      '\n' +
+      'Continuité contemporaine — la Chine de Xi Jinping s\'inscrit dans cette tradition :\n' +
+      '- discours moral **confucéen** : 中国梦, 共同富裕\n' +
+      '- appareil de contrôle **légiste** : Big Data, score social, fermeté juridique\n' +
+      '\n' +
+      'RÈGLE D\'OR : en analyse politique avec un Chinois cultivé, dis 中国治理一直是儒表法里 (la gouvernance chinoise est toujours 儒表法里). Phrase qui signale ta connaissance de la longue durée historique — bien plus profonde que de simples observations sur l\'actualité.',
     bodyEn:
       '儒表法里 («Confucian on the surface, Legalist inside») = formula CREATED BY HISTORIANS to characterize Chinese governance for 2000 years. Han emperors officially rehabilitate Confucius (the State presents as benevolent), but in practice apply Legalist methods (strict laws, centralized bureaucracy, control, punishments). This duality explains why some Western observers think China «Confucian and harmonious» while power levers remain Legalist. Modernity: Xi Jinping\'s China continues this tradition — Confucian moral discourse (中国梦, 共同富裕) + Legalist control apparatus (Big Data, social score, legal firmness). Mastering 儒表法里 = geopolitical understanding key.',
     items: [
@@ -924,7 +1373,19 @@ export const c21PhiloClassiqueM4LearnSections: LessonV2LearnSection[] = [
     title: 'L\'arrivée du bouddhisme et sa sinisation',
     titleEn: 'Buddhism\'s arrival and sinicization',
     body:
-      'Le 佛教 (bouddhisme) entre en Chine au Ier siècle de notre ère via la Route de la Soie (caravanes indo-chinoises). Remarque : premier temple 白马寺 (Baima Si, Temple du Cheval Blanc) à Luoyang, fondé en 68 sous l\'empereur Ming des Han. RÈGLE D\'OR : sous les Tang (618-907), explosion — traduction massive des sutras, création du 禅宗 (Chan, école méditative qui donnera le Zen au Japon), construction de monastères majeurs (莫高窟 Mogao, 龙门 Longmen). Règle : sinisation — le bouddhisme indien, abstrait, fusionne avec le 道 (Tao) chinois pour devenir plus PRATIQUE et IMAGÉ. Exception : le 观音 (Guanyin, bodhisattva de la compassion) se féminise en Chine (alors qu\'Avalokiteśvara est masculin en Inde). Astuce : aujourd\'hui ~250M de bouddhistes en Chine — plus grande population bouddhiste au monde.',
+      'Le 佛教 (bouddhisme) entre en Chine au Ier siècle via la Route de la Soie. Premier temple : 白马寺 (Baima Si, Temple du Cheval Blanc) à Luoyang, fondé en 68 sous l\'empereur Ming des Han.\n' +
+      '\n' +
+      'Étapes clés :\n' +
+      '- Sous les Tang (618-907), explosion : traduction massive des sutras\n' +
+      '- Création du 禅宗 (Chan, école méditative qui donnera le Zen au Japon)\n' +
+      '- Construction de monastères majeurs : 莫高窟 (Mogao), 龙门 (Longmen)\n' +
+      '\n' +
+      'La **sinisation** transforme le bouddhisme indien :\n' +
+      '- abstrait → pratique et imagé\n' +
+      '- fusion avec le 道 (Tao) chinois\n' +
+      '- 观音 (Guanyin), bodhisattva de la compassion, se féminise en Chine (alors qu\'Avalokiteśvara est masculin en Inde)\n' +
+      '\n' +
+      'RÈGLE D\'OR : aujourd\'hui ~250M de bouddhistes en Chine — plus grande population **bouddhiste** au monde. Le 白马寺 reste le PREMIER temple bouddhiste de Chine, racine d\'une tradition de 2000 ans.',
     bodyEn:
       '佛教 (Buddhism) enters China in the 1st century CE via the Silk Road (Indo-Chinese caravans). First temple: 白马寺 (White Horse Temple) in Luoyang, founded 68 CE under Emperor Ming of Han. Under the Tang (618-907), explosion: massive sutra translation, creation of 禅宗 (Chan, meditative school that becomes Zen in Japan), construction of major monasteries (莫高窟 Mogao, 龙门 Longmen). Sinicization: Indian Buddhism, abstract, fuses with Chinese 道 (Tao) to become more PRACTICAL and IMAGISTIC. 观音 (Guanyin, bodhisattva of compassion) feminizes in China (while Avalokiteśvara is masculine in India). Today: ~250M Buddhists in China — largest Buddhist population in the world.',
     items: [
@@ -944,7 +1405,17 @@ export const c21PhiloClassiqueM4LearnSections: LessonV2LearnSection[] = [
     title: '禅 — méditer en silence',
     titleEn: '禅 — meditate in silence',
     body:
-      'Règle : 禅 (chán) du sanskrit dhyāna (« méditation »), via le 禅宗 (école Chan) qui devient le 禅 japonais (Zen) après son passage par la Corée. RÈGLE D\'OR : originalité du Chan — refus des SUTRAS lourds, focus sur l\'ÉVEIL DIRECT par méditation 坐禅 (zuò chán, « assis à méditer », jap. zazen) et 公案 (gōng\'àn, koan, énigmes paradoxales). Remarque : maître Bodhidharma 达摩 aurait médité 9 ans face à un mur à Shaolin — modèle de la dévotion. Astuce : phrase Chan célèbre 不立文字，直指人心 = « ne s\'appuyer sur aucun mot, viser directement le cœur de l\'homme ». Attention : l\'éveil est INSTANTANÉ et HORS du langage. Remarque : pratique du 禅 reprend en Chine urbaine (retraites, applications de méditation), souvent sous forme laïque proche du mindfulness occidental.',
+      '禅 (chán) vient du sanskrit dhyāna (« méditation »), via le 禅宗 (école Chan) qui devient le 禅 japonais (Zen) après son passage par la Corée.\n' +
+      '\n' +
+      'Originalité du Chan :\n' +
+      '- refus des SUTRAS lourds\n' +
+      '- focus sur l\'ÉVEIL DIRECT\n' +
+      '- méditation 坐禅 (zuòchán, « assis à méditer », jap. zazen)\n' +
+      '- 公案 (gōng\'àn, koan, énigmes paradoxales)\n' +
+      '\n' +
+      'Le maître Bodhidharma 达摩 aurait médité 9 ans face à un mur à Shaolin — modèle de la dévotion. Phrase Chan célèbre : 不立文字，直指人心 (« ne s\'appuyer sur aucun mot, viser directement le cœur de l\'homme »). L\'éveil est **instantané** et HORS du langage.\n' +
+      '\n' +
+      'RÈGLE D\'OR : la pratique du 禅 reprend en Chine urbaine (retraites, apps de méditation), souvent sous forme laïque proche du mindfulness occidental. Pour créer un pont culturel avec un Chinois pratiquant : 我的冥想习惯其实源于中国禅宗 (ma pratique vient en fait du Chan chinois).',
     bodyEn:
       '禅 (chán) from Sanskrit dhyāna («meditation»), via 禅宗 (Chan school) which becomes Japanese 禅 (Zen) after passing through Korea. Chan\'s originality: rejecting heavy SUTRAS, focus on DIRECT AWAKENING through meditation 坐禅 (sitting meditation, Jap. zazen) and 公案 (gong\'àn, koan, paradoxical riddles). Master Bodhidharma 达摩 reportedly meditated 9 years facing a wall at Shaolin — model of devotion. Famous Chan phrase: 不立文字，直指人心 = «not relying on any word, aiming directly at the human heart». Awakening is INSTANT and OUTSIDE language. Today: 禅 practice revives in urban China (retreats, meditation apps), often in lay form close to Western mindfulness.',
     items: [
@@ -969,7 +1440,16 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
     title: '绝句 — quatrains de 4 vers',
     titleEn: '绝句 — 4-line quatrains',
     body:
-      'RÈGLE D\'OR : 绝句 (juéjù, « quatrain coupé ») = 4 vers, chacun de 5 caractères (五绝 wǔjué) ou 7 caractères (七绝 qījué). Remarque : forme la plus courte et la plus populaire de la poésie classique. Règle : contraintes — (1) RIME entre vers 2 et 4 (parfois aussi vers 1), (2) ALTERNANCE de tons plats (平 píng, ton 1 ou 2 en mandarin moderne) et obliques (仄 zè, tons 3 et 4), (3) PARALLÉLISME possible entre vers (ex : « ciel haut » ↔ « eau profonde »). Astuce : exemple emblématique 《静夜思》de Li Bai (5 char × 4 vers = 20 caractères seulement). Attention : le 绝句 condense en 20-28 caractères ce qu\'un poème français mettrait 4 strophes à exprimer. Économie radicale = leçon de style.',
+      '绝句 (juéjù, « quatrain coupé ») = 4 vers, chacun de 5 caractères (五绝) ou 7 caractères (七绝). Forme la plus courte et la plus populaire de la poésie **classique** chinoise.\n' +
+      '\n' +
+      'Trois contraintes formelles :\n' +
+      '- RIME entre vers 2 et 4 (parfois aussi vers 1)\n' +
+      '- ALTERNANCE de tons plats (平 píng, tons 1-2) et obliques (仄 zè, tons 3-4)\n' +
+      '- PARALLÉLISME possible entre vers (« ciel haut » ↔ « eau profonde »)\n' +
+      '\n' +
+      'Exemple emblématique : 《静夜思》de Li Bai (5 caractères × 4 vers = 20 caractères seulement).\n' +
+      '\n' +
+      'RÈGLE D\'OR : le 绝句 condense en 20-28 caractères ce qu\'un poème français mettrait 4 strophes à exprimer. Économie radicale = leçon de style. Pour l\'APPRÉCIER, lis-le À VOIX HAUTE en chinois — la musicalité tonale est la moitié du sens. Une traduction plate perd 50% du poème.',
     bodyEn:
       '绝句 (juéjù, «cut quatrain») = 4 lines, each 5 characters (五绝) or 7 characters (七绝). Shortest and most popular form of classical poetry. Constraints: (1) RHYME between lines 2 and 4 (sometimes also line 1), (2) ALTERNATION of level tones (平 píng, tone 1 or 2 in modern Mandarin) and oblique (仄 zè, tones 3 and 4), (3) Possible PARALLELISM between lines (ex: «high sky» ↔ «deep water»). Iconic example: Li Bai\'s 《静夜思》 (5 char × 4 lines = only 20 chars). The 绝句 condenses in 20-28 characters what a French poem would take 4 stanzas to express. Radical economy = style lesson.',
     items: [
@@ -989,7 +1469,18 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
     title: '律诗 — poème régulé en 8 vers',
     titleEn: '律诗 — regulated poem in 8 lines',
     body:
-      'RÈGLE D\'OR : 律诗 (lǜshī, « poème régulé ») = 8 vers, en 五律 ou 七律. Attention : beaucoup plus contraignant que le 绝句. Règle : règles formelles — (1) RIME aux vers 2, 4, 6, 8, (2) ALTERNANCE STRICTE de tons selon un schéma codifié, (3) ANTITHÈSE OBLIGATOIRE entre les vers 3-4 (paire centrale 1) et 5-6 (paire centrale 2). Astuce : l\'antithèse impose des correspondances syntaxiques + sémantiques entre les vers — nom ↔ nom, verbe ↔ verbe, adjectif ↔ adjectif, et catégories sémantiques cohérentes (couleur ↔ couleur, paysage ↔ paysage). Remarque : forme préférée de Du Fu (杜甫), surnommé « 诗圣 » (Sage de la poésie). Le 律诗 = sommet de la poésie chinoise classique en termes d\'EXIGENCE technique. Exception : forme TRÈS difficile à composer ; encore plus à traduire.',
+      '律诗 (lǜshī, « poème régulé ») = 8 vers, en 五律 ou 七律. Beaucoup plus contraignant que le 绝句, forme préférée de Du Fu (杜甫), surnommé 诗圣 (« Sage de la poésie »). Sommet **technique** de la poésie chinoise.\n' +
+      '\n' +
+      'Les trois règles formelles :\n' +
+      '- RIME aux vers 2, 4, 6, 8\n' +
+      '- ALTERNANCE stricte de tons (平 vs 仄) selon un schéma codifié\n' +
+      '- ANTITHÈSE obligatoire entre vers 3-4 (paire centrale 1) et 5-6 (paire centrale 2)\n' +
+      '\n' +
+      'L\'antithèse impose des correspondances syntaxiques + sémantiques :\n' +
+      '- nom ↔ nom, verbe ↔ verbe, adjectif ↔ adjectif\n' +
+      '- catégories sémantiques cohérentes (couleur ↔ couleur, paysage ↔ paysage)\n' +
+      '\n' +
+      'RÈGLE D\'OR : forme TRÈS difficile à composer, encore plus à traduire. Pour APPRÉCIER Du Fu, prends un 律诗 et passe 30 min à analyser : compte les 8 vers, repère les rimes en pinyin, identifie l\'antithèse 3-4 et 5-6. Investissement de 30 min, bénéfice durable.',
     bodyEn:
       '律诗 (lǜshī, «regulated poem») = 8 lines, in 五律 or 七律. Much more demanding than the 绝句. Rules: (1) RHYME on lines 2, 4, 6, 8, (2) STRICT TONE ALTERNATION per a codified schema, (3) MANDATORY ANTITHESIS between lines 3-4 (central pair 1) and 5-6 (central pair 2). Antithesis imposes syntactic + semantic correspondences between lines: noun ↔ noun, verb ↔ verb, adjective ↔ adjective, and coherent semantic categories (color ↔ color, landscape ↔ landscape). Preferred form of Du Fu (杜甫), nicknamed «诗圣» (Sage of Poetry). 律诗 = summit of classical Chinese poetry in terms of TECHNICAL demand. VERY hard form to compose; even harder to translate.',
     items: [
@@ -1012,7 +1503,22 @@ export const c21PoetryM2LearnSections: LessonV2LearnSection[] = [
     title: '李白 — vie et style',
     titleEn: '李白 — life and style',
     body:
-      '李白 (Li Bai, 701-762) né dans le Sichuan ou en Asie centrale (origine débattue). Remarque : talent précoce, poèmes recommandés à l\'empereur Tang Xuanzong, qui l\'invite à la cour. Exception : Li Bai préfère le vin et la liberté — se fâche avec les ministres, est éloigné. Vie de voyageur. Attention : mort tragique selon la légende — se serait noyé en essayant d\'embrasser le reflet de la lune dans un fleuve, ivre. RÈGLE D\'OR : style LIBRE, IMAGÉ, COSMIQUE. Astuce : thèmes obsessionnels — la lune 月, le vin 酒, la nature majestueuse, le voyage, la nostalgie 思乡. Règle : surnommé 诗仙 (« Immortel de la poésie ») par opposition à Du Fu, le « Sage ». Remarque : œuvres ~1000 poèmes conservés. Le quatrain le plus célèbre 《静夜思》(20 caractères seulement, étudié dans la prochaine leçon).',
+      '李白 (Li Bai, 701-762) né dans le Sichuan ou en Asie centrale (origine débattue). Surnommé 诗仙 (« Immortel de la poésie ») par opposition à Du Fu, le « Sage ». Style **libre**, **imagé**, **cosmique**.\n' +
+      '\n' +
+      'Vie en étapes :\n' +
+      '- Talent précoce, poèmes recommandés à l\'empereur Tang Xuanzong qui l\'invite à la cour\n' +
+      '- Préfère le vin et la liberté, se fâche avec les ministres, est éloigné\n' +
+      '- Vie de voyageur à travers les royaumes\n' +
+      '- Mort tragique selon la légende : noyé en essayant d\'embrasser le reflet de la lune dans un fleuve, ivre\n' +
+      '\n' +
+      'Thèmes obsessionnels :\n' +
+      '- 月 — la lune\n' +
+      '- 酒 — le vin\n' +
+      '- la nature majestueuse\n' +
+      '- le voyage\n' +
+      '- 思乡 (sīxiāng) — la nostalgie du pays\n' +
+      '\n' +
+      'RÈGLE D\'OR : ~1000 poèmes conservés, le plus célèbre étant 《静夜思》(20 caractères seulement). Li Bai est UN poète à choisir comme « ton préféré » en discussion littéraire chinoise — universellement aimé, accessible, **romantique**.',
     bodyEn:
       '李白 (Li Bai, 701-762) born in Sichuan or Central Asia (debated origin). Early talent: poems recommended to Tang emperor Xuanzong, who invites him to court. But Li Bai prefers wine and freedom: quarrels with ministers, is sent away. Life of a traveler. Tragic death per legend: drowned trying to embrace the moon\'s reflection in a river, drunk. Style: FREE, IMAGISTIC, COSMIC. Obsessive themes: the moon 月, wine 酒, majestic nature, travel, nostalgia 思乡. Nicknamed 诗仙 («Immortal of Poetry») in contrast to Du Fu, the «Sage». Works: ~1000 surviving poems. Most famous quatrain: 《静夜思》(only 20 characters, studied next lesson).',
     items: [
@@ -1032,7 +1538,19 @@ export const c21PoetryM2LearnSections: LessonV2LearnSection[] = [
     title: '《静夜思》— le poème le plus connu',
     titleEn: '《静夜思》— the most famous poem',
     body:
-      '《静夜思》(Jìngyè sī, « Pensée d\'une nuit paisible ») de Li Bai. RÈGLE D\'OR : 20 caractères 床前明月光，疑是地上霜。举头望明月，低头思故乡。 Astuce : décortiquons — 床前 (devant le lit) 明月光 (la clarté de la lune brillante), 疑 (je doute) 是 (que ce soit) 地上霜 (givre sur le sol). 举头 (je lève la tête) 望 (et regarde) 明月 (la lune brillante), 低头 (je baisse la tête) 思 (et pense à) 故乡 (mon pays natal). Remarque : mécanisme poétique — la confusion lune/givre crée le frisson, le mouvement haut/bas crée le balancement émotionnel, la lune devient le PONT entre l\'exilé et la maison. Attention : CHAQUE Chinois (école primaire) connaît ce poème PAR CŒUR. Règle : si tu peux le réciter, tu peux nouer une discussion poétique avec n\'importe quel Chinois.',
+      '《静夜思》(Jìngyèsī, « Pensée d\'une nuit paisible ») de Li Bai est le poème **classique** le plus connu en Chine. 20 caractères seulement, mémorisés par chaque écolier.\n' +
+      '\n' +
+      'Le texte : 床前明月光，疑是地上霜。举头望明月，低头思故乡。\n' +
+      '\n' +
+      'Décortiquons vers par vers :\n' +
+      '- 床前 (devant le lit) 明月光 (la clarté de la lune brillante)\n' +
+      '- 疑 (je doute) 是 (que ce soit) 地上霜 (givre sur le sol)\n' +
+      '- 举头 (je lève la tête) 望 (et regarde) 明月 (la lune brillante)\n' +
+      '- 低头 (je baisse la tête) 思 (et pense à) 故乡 (mon pays natal)\n' +
+      '\n' +
+      'Mécanisme poétique : la confusion lune/givre crée le frisson, le mouvement haut/bas crée le balancement émotionnel, la lune devient le PONT entre l\'exilé et la maison.\n' +
+      '\n' +
+      'RÈGLE D\'OR : apprends ces 20 caractères PAR CŒUR. C\'est l\'investissement n°1 de niveau C2.1. Si tu peux les RÉCITER en discussion, tu signales un niveau **lettré** qui suspendra la conversation — effet émotionnel garanti.',
     bodyEn:
       '《静夜思》(«Thoughts on a Quiet Night») by Li Bai. 20 characters: 床前明月光，疑是地上霜。举头望明月，低头思故乡。 Let\'s parse: 床前 (before the bed) 明月光 (the bright moonlight), 疑 (I doubt) 是 (it is) 地上霜 (frost on the ground). 举头 (I lift my head) 望 (and look at) 明月 (the bright moon), 低头 (I lower my head) 思 (and think of) 故乡 (my home village). Poetic mechanism: the moon/frost confusion creates a chill, up/down movement creates emotional swing, the moon becomes the BRIDGE between the exile and home. EVERY Chinese (primary school) knows this poem BY HEART. If you can recite it, you can strike up a poetic discussion with any Chinese.',
     items: [
@@ -1055,7 +1573,22 @@ export const c21PoetryM3LearnSections: LessonV2LearnSection[] = [
     title: '杜甫 — la conscience de son époque',
     titleEn: '杜甫 — the conscience of his era',
     body:
-      '杜甫 (Du Fu, 712-770) né à Henan. Remarque : ami et contemporain de Li Bai (ils se rencontrent en 744), mais vie radicalement différente — fonctionnaire malheureux, témoin de la révolte d\'An Lushan (755-763) qui ravage l\'empire Tang. RÈGLE D\'OR : sa poésie devient le MIROIR DE LA SOUFFRANCE collective — guerre, exil, faim, famille séparée, désastres naturels. Règle : surnommé 诗圣 (« Sage de la poésie ») et 诗史 (« Histoire en poèmes ») car ses œuvres documentent l\'époque. Astuce : style RIGOUREUX (maître du 律诗), GRAVE, MORAL. Œuvres marquantes 《春望》(le printemps regardé pendant la guerre), 《茅屋为秋风所破歌》(sa hutte de chaume détruite par le vent d\'automne — il pense aux pauvres avant à lui-même). Attention : mort en 770, malade, sur un bateau. Remarque : la maison de Du Fu à Chengdu (杜甫草堂) est un musée majeur.',
+      '杜甫 (Du Fu, 712-770) né à Henan, ami et contemporain de Li Bai (rencontre en 744), mais vie radicalement différente. Fonctionnaire malheureux, témoin de la révolte d\'An Lushan (755-763) qui ravage l\'empire Tang. Surnommé 诗圣 (« Sage de la poésie ») et 诗史 (« Histoire en poèmes »).\n' +
+      '\n' +
+      'Sa poésie devient le MIROIR DE LA SOUFFRANCE collective :\n' +
+      '- guerre\n' +
+      '- exil\n' +
+      '- faim\n' +
+      '- famille séparée\n' +
+      '- désastres naturels\n' +
+      '\n' +
+      'Style **rigoureux** (maître du 律诗), **grave**, **moral**. Œuvres marquantes :\n' +
+      '- 《春望》 — le printemps regardé pendant la guerre\n' +
+      '- 《茅屋为秋风所破歌》 — sa hutte de chaume détruite par le vent d\'automne, il pense aux pauvres avant à lui-même\n' +
+      '\n' +
+      'Mort en 770, malade, sur un bateau.\n' +
+      '\n' +
+      'RÈGLE D\'OR : la maison de Du Fu à Chengdu (杜甫草堂) est un musée majeur. Reconstitution du jardin où il vécut, paisible, instructif, gratuit. Pour qui aime la poésie, lieu de RECUEILLEMENT plus discret que les sites de Li Bai et plus émouvant pour beaucoup de Chinois.',
     bodyEn:
       '杜甫 (Du Fu, 712-770) born in Henan. Friend and contemporary of Li Bai (they meet in 744), but radically different life: unhappy official, witness of the An Lushan rebellion (755-763) that ravages the Tang empire. His poetry becomes the MIRROR OF COLLECTIVE SUFFERING: war, exile, hunger, family separation, natural disasters. Nicknamed 诗圣 («Sage of Poetry») and 诗史 («History in Poems») as his works document the era. Style: RIGOROUS (master of 律诗), GRAVE, MORAL. Major works: 《春望》(spring viewed during war), 《茅屋为秋风所破歌》(his thatched hut destroyed by autumn wind — he thinks of the poor before himself). Dies in 770, sick, on a boat. Today: Du Fu\'s home in Chengdu (杜甫草堂) is a major museum.',
     items: [
@@ -1075,7 +1608,15 @@ export const c21PoetryM3LearnSections: LessonV2LearnSection[] = [
     title: '李白 vs 杜甫 — deux pôles de l\'âme chinoise',
     titleEn: '李白 vs 杜甫 — two poles of the Chinese soul',
     body:
-      'RÈGLE D\'OR : Li Bai et Du Fu sont l\'OPPOSITION fondamentale de la poésie chinoise. Règle : Li Bai = JOIE, IVRESSE, COSMOS, LIBERTÉ INDIVIDUELLE. Du Fu = SOUFFRANCE, RIGUEUR, MORALE, ENGAGEMENT COLLECTIF. Remarque : surnommés 诗仙 (Immortel) vs 诗圣 (Sage). Astuce : cette opposition est l\'équivalent chinois de Dionysos vs Apollon, de Rimbaud vs Hugo, de l\'individuel vs le collectif, du romantisme vs le classicisme. Attention : poser la question à un Chinois cultivé « 您更喜欢李白还是杜甫 ? » (vous préférez Li Bai ou Du Fu ?) ouvre une discussion révélatrice. Beaucoup avouent « jeune, j\'aimais Li Bai ; en vieillissant, je préfère Du Fu ». Exception : l\'évolution Li Bai → Du Fu suit la maturité psychologique. Question MAGIQUE pour démarrer un débat littéraire profond.',
+      'Li Bai et Du Fu sont l\'OPPOSITION fondamentale de la poésie chinoise — équivalent chinois de Dionysos vs Apollon, de Rimbaud vs Hugo, de l\'individuel vs le collectif, du **romantisme** vs le **classicisme**.\n' +
+      '\n' +
+      'Les deux pôles :\n' +
+      '- Li Bai (诗仙, Immortel) — JOIE, IVRESSE, COSMOS, LIBERTÉ INDIVIDUELLE\n' +
+      '- Du Fu (诗圣, Sage) — SOUFFRANCE, RIGUEUR, MORALE, ENGAGEMENT COLLECTIF\n' +
+      '\n' +
+      'Question magique à poser à un Chinois cultivé : 您更喜欢李白还是杜甫 ? — ouvre une discussion révélatrice. Beaucoup avouent « jeune, j\'aimais Li Bai ; en vieillissant, je préfère Du Fu ». L\'évolution Li Bai → Du Fu suit la **maturité** psychologique.\n' +
+      '\n' +
+      'RÈGLE D\'OR : pour conclure une discussion poétique, dis 我年轻时喜欢李白，现在更欣赏杜甫的深度 (jeune j\'aimais Li Bai, maintenant j\'apprécie la profondeur de Du Fu). Phrase qui signale ta **maturité** intellectuelle ET ta connaissance des 2 poètes.',
     bodyEn:
       'Li Bai and Du Fu are the fundamental OPPOSITION in Chinese poetry. Li Bai = JOY, INTOXICATION, COSMOS, INDIVIDUAL FREEDOM. Du Fu = SUFFERING, RIGOR, MORALITY, COLLECTIVE ENGAGEMENT. Nicknamed 诗仙 (Immortal) vs 诗圣 (Sage). This opposition is the Chinese equivalent of Dionysus vs Apollo, Rimbaud vs Hugo, individual vs collective, Romanticism vs Classicism. Asking a cultured Chinese: «您更喜欢李白还是杜甫?» (do you prefer Li Bai or Du Fu?) opens a revealing discussion. Many confess: «young, I loved Li Bai; aging, I prefer Du Fu». The Li Bai → Du Fu evolution follows psychological maturity. MAGIC question to launch a deep literary debate.',
     items: [
@@ -1098,7 +1639,19 @@ export const c21PoetryM4LearnSections: LessonV2LearnSection[] = [
     title: '李清照 — la voix féminine majeure',
     titleEn: '李清照 — the major feminine voice',
     body:
-      '李清照 (Li Qingzhao, 1084-1155) née sous les Song du Nord dans une famille lettrée : père haut fonctionnaire, mère cultivée. Remarque : mariée à 18 ans à 赵明诚 (Zhao Mingcheng), érudit collectionneur d\'antiques. Couple intellectuel HARMONIEUX qui collabore sur 《金石录》(catalogue d\'inscriptions). Règle : poésie de 1re moitié de vie — JOIE conjugale, vie raffinée. Attention : CATASTROPHE en 1127 — invasion Jürchen, exil au sud, perte de leurs collections, mort de son mari en 1129. Exception : poésie de 2e moitié — DEUIL et SOLITUDE. Astuce : spécialiste du 词 (poésie chantée Song). Œuvre la plus citée 《声声慢》qui s\'ouvre par 7 redoublements consécutifs — 寻寻觅觅，冷冷清清，凄凄惨惨戚戚 — climat de désolation incomparable. RÈGLE D\'OR : surnommée 千古第一才女 (« 1re femme de génie à travers les siècles »). Remarque : prouve que la littérature classique chinoise a fait place à des voix féminines d\'exception.',
+      '李清照 (Li Qingzhao, 1084-1155) née sous les Song du Nord dans une famille **lettrée** : père haut fonctionnaire, mère cultivée. Surnommée 千古第一才女 (« 1re femme de génie à travers les siècles »). Spécialiste du 词 (poésie chantée Song).\n' +
+      '\n' +
+      'Vie en deux temps :\n' +
+      '- Mariée à 18 ans à 赵明诚 (Zhao Mingcheng), érudit collectionneur d\'antiques\n' +
+      '- Couple intellectuel HARMONIEUX, collaboration sur 《金石录》(catalogue d\'inscriptions)\n' +
+      '- 1re moitié : poésie de JOIE conjugale, vie raffinée\n' +
+      '- 1127 : invasion Jürchen, exil au sud, perte des collections\n' +
+      '- 1129 : mort de son mari\n' +
+      '- 2e moitié : poésie de DEUIL et de SOLITUDE\n' +
+      '\n' +
+      'Œuvre la plus citée : 《声声慢》, qui s\'ouvre par 7 redoublements consécutifs — 寻寻觅觅，冷冷清清，凄凄惨惨戚戚 — climat de désolation incomparable.\n' +
+      '\n' +
+      'RÈGLE D\'OR : prouve que la littérature **classique** chinoise a fait place à des voix féminines d\'exception. Mentionner 李清照 en discussion poétique = signal de connaissance fine, au-delà du canon Li Bai/Du Fu scolaire.',
     bodyEn:
       '李清照 (Li Qingzhao, 1084-1155) born under Northern Song in a literate family: father high official, cultured mother. Married at 18 to 赵明诚 (Zhao Mingcheng), erudite antique collector. HARMONIOUS intellectual couple who collaborate on 《金石录》(catalog of inscriptions). 1st-half-of-life poetry: marital JOY, refined life. DISASTER in 1127: Jurchen invasion, exile south, loss of collections, husband\'s death in 1129. 2nd-half poetry: GRIEF and SOLITUDE. Specialist of 词 (Song sung poetry). Most-cited work: 《声声慢》opening with 7 consecutive reduplications: 寻寻觅觅，冷冷清清，凄凄惨惨戚戚 — incomparable climate of desolation. Nicknamed 千古第一才女 («1st genius woman through the ages»). Proves classical Chinese literature made room for exceptional female voices.',
     items: [
@@ -1118,7 +1671,20 @@ export const c21PoetryM4LearnSections: LessonV2LearnSection[] = [
     title: '《声声慢》— l\'art des redoublements',
     titleEn: '《声声慢》— the art of reduplications',
     body:
-      'RÈGLE D\'OR : 《声声慢》(Shēng shēng màn, « Lentement, son après son ») s\'ouvre par 14 caractères en 7 paires de redoublements — 寻寻 (xún xún, chercher chercher) 觅觅 (mì mì, chercher chercher) 冷冷 (lěng lěng, froid froid) 清清 (qīng qīng, désolé désolé) 凄凄 (qī qī, mélancolique mélancolique) 惨惨 (cǎn cǎn, désespéré désespéré) 戚戚 (qī qī, navrant navrant). Exception : aucune autre ouverture en littérature mondiale n\'utilise 7 redoublements consécutifs. Remarque : l\'effet est un climat physiquement RESSENTI de DÉSOLATION. Astuce : la traduction française la plus connue rend « Je cherche, je cherche, froid désolé, triste triste navrant ». Règle : ce poème est étudié dans TOUS les manuels chinois et reste l\'un des sommets absolus du 词 Song. Attention : le mémoriser est un défi à la portée d\'un C2.1 motivé.',
+      '《声声慢》(Shēngshēngmàn, « Lentement, son après son ») de Li Qingzhao s\'ouvre par 14 caractères en 7 paires de redoublements — aucune autre ouverture en littérature mondiale n\'utilise 7 redoublements consécutifs.\n' +
+      '\n' +
+      'Les 7 paires :\n' +
+      '- 寻寻 (xún xún) — chercher chercher\n' +
+      '- 觅觅 (mì mì) — chercher chercher\n' +
+      '- 冷冷 (lěng lěng) — froid froid\n' +
+      '- 清清 (qīng qīng) — désolé désolé\n' +
+      '- 凄凄 (qī qī) — mélancolique mélancolique\n' +
+      '- 惨惨 (cǎn cǎn) — désespéré désespéré\n' +
+      '- 戚戚 (qī qī) — navrant navrant\n' +
+      '\n' +
+      'L\'effet est un climat physiquement RESSENTI de DÉSOLATION. Traduction française la plus connue : « Je cherche, je cherche, froid désolé, triste triste navrant ». Étudié dans TOUS les manuels chinois, reste l\'un des sommets absolus du 词 Song.\n' +
+      '\n' +
+      'RÈGLE D\'OR : mémoriser ces 14 caractères et savoir les RÉCITER en chinois = prouesse C2.2 qui suspendra n\'importe quelle conversation littéraire. Investis 1 heure de mémorisation. Phrase de clôture : 这种感觉，李清照写得最深刻 (ce sentiment, c\'est Li Qingzhao qui l\'a écrit le plus profondément).',
     bodyEn:
       '《声声慢》(«Slowly, sound after sound») opens with 14 characters in 7 reduplication pairs: 寻寻 (seek seek) 觅觅 (search search) 冷冷 (cold cold) 清清 (desolate desolate) 凄凄 (melancholy melancholy) 惨惨 (despairing despairing) 戚戚 (heartbreaking heartbreaking). No other opening in world literature uses 7 consecutive reduplications. The effect: a physically FELT climate of DESOLATION. The most known English translation renders: «I seek, I seek, cold and desolate, sad sad and heart-rending». This poem is studied in ALL Chinese textbooks and remains one of the absolute summits of Song 词. Memorizing it is a challenge within reach of a motivated C2.1.',
     items: [
