@@ -450,12 +450,19 @@
 
 /* Auto-pinyin injecté après chaque run de hanzi dans body/tip/explanation.
    Discret pour ne pas perturber la lecture, mais lisible. */
-.lesson-v2 .auto-pinyin {
+.lesson-v2 .auto-pinyin,
+.lesson-v2 .manual-pinyin {
   font-size: 0.85em;
   color: var(--lv2-text-soft, #6b7280);
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.01em;
+}
+/* Le pinyin auto-injecté ajoute une espace avant la parenthèse, le pinyin
+   manuel utilise des spans aria-hidden pour la parenthèse → légère unification
+   de l'espacement. */
+.lesson-v2 .manual-pinyin {
+  white-space: nowrap;
 }
 
 /* --- DialogueResponseCard (mini-dialogue + choix de la dernière réplique) -- */
@@ -1231,34 +1238,31 @@
 
 /* --- V21 — Listes d'exemples + gras/italique --- */
 
-/* Listes d'exemples détectées automatiquement (suite hanzi + traductions) */
+/* Listes d'exemples — style sobre et neutre, pas de fond agressif */
 .lesson-v2 .lv2-block-examples {
   list-style: none;
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
 }
 .lesson-v2 .lv2-block-examples li {
-  padding: 6px 10px 6px 28px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 6px;
+  padding: 2px 0 2px 18px;
   position: relative;
-  font-size: 14.5px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lv2-text, #1f2233);
 }
 .lesson-v2 .lv2-block-examples li::before {
-  content: '▸';
+  content: '·';
   position: absolute;
-  left: 12px;
-  top: 6px;
-  color: var(--primary-red, #d8483e);
+  left: 6px;
+  top: 0;
+  color: var(--lv2-text-soft, #9ca3af);
   font-weight: 700;
-}
-/* Variante: liste dans un bloc règle/exception/note → fond plus léger */
-.lesson-v2 .lv2-block--paragraph .lv2-block-examples li {
-  background: rgba(232, 224, 209, 0.4);
+  font-size: 1.2em;
+  line-height: 1.55;
 }
 
 /* Intro avant la liste ("Phrases-bouées :" par exemple) */

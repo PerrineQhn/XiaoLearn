@@ -196,9 +196,73 @@ const LABEL_EN: Record<Block['kind'], string> = {
 };
 
 /**
+ * Détecte si le contenu d'une parenthèse ressemble à du pinyin :
+ *   - Que des lettres ASCII + diacritiques pinyin + espaces + chiffres de ton
+ *   - Pas de ponctuation française (apostrophe, point d'interrogation, etc.)
+ *   - Pas de mots français entiers (pas d'accent autres que ceux du pinyin)
+ *
+ * Critère : ne contient QUE [a-zA-Z], tons accentués, espaces, apostrophes
+ * pinyin (’ pour qing'an), chiffres 1-4 (pour les tons numériques) ET au moins
+ * une voyelle accentuée ou tone-numbered (sinon c'est probablement de l'anglais).
+ */
+function looksLikePinyin(inner: string): boolean {
+  const s = inner.trim();
+  if (!s || s.length > 60) return false;
+  // Caractères autorisés (pinyin + variants)
+  if (!/^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹńŋ'’\s\d]+$/.test(s)) return false;
+  // Doit contenir au moins une voyelle accentuée OU un ton numéroté (1-5)
+  // ET pas de mot français commun (the, et, mais...)
+  const hasAccent = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/.test(s);
+  const hasToneNum = /[a-z]+[1-5]/.test(s);
+  if (!hasAccent && !hasToneNum) return false;
+  // Ne doit pas contenir des mots/séquences clairement non-pinyin
+  if (/\b(?:the|and|or|but|not|to|of|in|with|de|le|la|et|ou|mais|pas|une?|du|des)\b/i.test(s)) {
+    return false;
+  }
+  return true;
+}
+
+/**
+ * Transforme les parenthèses de pinyin en spans italiques gris pour harmoniser
+ * avec le style .auto-pinyin (sinon : pinyin manuel = texte noir normal,
+ * pinyin auto-injecté = italique gris → incohérence visuelle).
+ *
+ * Pattern : (texte ressemblant à du pinyin) → <span class="manual-pinyin">(...)</span>
+ */
+function wrapPinyinParens(text: string): { kind: 'text' | 'pinyin'; content: string }[] {
+  const tokens: { kind: 'text' | 'pinyin'; content: string }[] = [];
+  let i = 0;
+  while (i < text.length) {
+    if (text[i] === '(') {
+      const end = text.indexOf(')', i + 1);
+      if (end > i) {
+        const inner = text.slice(i + 1, end);
+        if (looksLikePinyin(inner)) {
+          tokens.push({ kind: 'pinyin', content: inner });
+          i = end + 1;
+          continue;
+        }
+      }
+    }
+    let j = i;
+    while (j < text.length && text[j] !== '(') j++;
+    if (j > i) tokens.push({ kind: 'text', content: text.slice(i, j) });
+    if (j < text.length && text[j] === '(' && !text.slice(j + 1).includes(')')) {
+      // Pas de fermeture → tout le reste est du texte
+      tokens.push({ kind: 'text', content: text.slice(j) });
+      i = text.length;
+    } else {
+      i = j;
+    }
+  }
+  return tokens;
+}
+
+/**
  * Rend une string avec mini-markdown :
  *   - **gras** → <strong>
  *   - *italique* → <em> (mais seulement si pas dans une parenthèse pinyin)
+ *   - (pinyin) → <span class="manual-pinyin"> (italique gris harmonisé)
  *
  * Conservateur pour ne pas casser l'AutoPinyin qui suit.
  */
@@ -236,26 +300,31 @@ function renderInlineMarkdown(text: string): ReactNode {
     i = j;
   }
 
+  /** Rend un texte en stylisant les parenthèses pinyin. */
+  const renderWithPinyin = (raw: string): ReactNode => {
+    const sub = wrapPinyinParens(raw);
+    return sub.map((s, k) => {
+      if (s.kind === 'pinyin') {
+        return (
+          <span key={k} className="manual-pinyin">
+            <span aria-hidden> (</span>
+            {s.content}
+            <span aria-hidden>)</span>
+          </span>
+        );
+      }
+      return <AutoPinyin key={k} text={s.content} />;
+    });
+  };
+
   return tokens.map((t, idx) => {
     if (t.kind === 'bold') {
-      return (
-        <strong key={idx}>
-          <AutoPinyin text={t.content} />
-        </strong>
-      );
+      return <strong key={idx}>{renderWithPinyin(t.content)}</strong>;
     }
     if (t.kind === 'italic') {
-      return (
-        <em key={idx}>
-          <AutoPinyin text={t.content} />
-        </em>
-      );
+      return <em key={idx}>{renderWithPinyin(t.content)}</em>;
     }
-    return (
-      <Fragment key={idx}>
-        <AutoPinyin text={t.content} />
-      </Fragment>
-    );
+    return <Fragment key={idx}>{renderWithPinyin(t.content)}</Fragment>;
   });
 }
 
