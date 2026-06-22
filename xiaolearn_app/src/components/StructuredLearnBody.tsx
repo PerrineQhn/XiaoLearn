@@ -1,31 +1,34 @@
 /**
  * StructuredLearnBody.tsx — rend le `body` des sections d'apprentissage
  * --------------------------------------------------------------------
- * V21 — Améliorations UX (retours utilisateur) :
- *   1. Capitalise la 1re lettre après les marqueurs (ex : "Astuce : pour épeler"
- *      → "Astuce : Pour épeler").
- *   2. Détecte les suites de phrases-exemples (hanzi (traduction), hanzi
- *      (traduction), …) et les rend en LISTE À PUCES au lieu d'un pavé.
- *   3. Supporte un mini-markdown : `**gras**` et `*italique*` pour mettre en
- *      valeur les mots-clés dans les bodies.
+ * V22 — Réécriture pour fiabilité :
+ *   - Détection des marqueurs sémantiques (Règle / Exception / Astuce) au DÉBUT
+ *     D'UNE PHRASE, comme avant. Capitalise la première lettre du contenu.
+ *   - LISTES EXPLICITES : si un body contient des lignes commençant par '- '
+ *     (tiret puis espace) ou '• ' (puce), elles sont rendues en liste à puces.
+ *     L'auto-détection par virgule a été RETIRÉE (trop fragile : coupait les
+ *     pinyins parenthésés).
+ *   - Mini-markdown inline : **gras** et *italique* (parser conservateur).
  *
- * Blocs détectés (V20) :
- *   - 📏 Règle (RÈGLE D'OR :, Règle :)
- *   - ⚠️ Exception
- *   - 💡 Astuce / Remarque / Attention
- *   - paragraphe simple sinon
+ * Pour expliciter une liste dans un body, l'auteur écrit :
  *
- * Le découpage se fait en runtime sans toucher aux données existantes.
+ *   "Phrases-bouées :
+ *   - 请再说一遍 (redites svp)
+ *   - 慢一点 (plus lentement)
+ *   - 我听不懂 (je ne comprends pas)
+ *   Astuce : ces 5 phrases te sortent de presque toutes les impasses."
+ *
+ * Et il obtient un titre + une liste à puces + un bloc Astuce.
  */
 
 import { Fragment, useMemo, type ReactNode } from 'react';
 import AutoPinyin from './AutoPinyin';
 
 type Block =
-  | { kind: 'paragraph'; text: string }
-  | { kind: 'rule'; text: string }
-  | { kind: 'exception'; text: string }
-  | { kind: 'note'; text: string };
+  | { kind: 'paragraph'; text: string; listItems?: string[]; listIntro?: string }
+  | { kind: 'rule'; text: string; listItems?: string[]; listIntro?: string }
+  | { kind: 'exception'; text: string; listItems?: string[]; listIntro?: string }
+  | { kind: 'note'; text: string; listItems?: string[]; listIntro?: string };
 
 /** Capitalise la 1re lettre (en gérant les caractères accentués / unicode). */
 function capitalize(s: string): string {
@@ -34,43 +37,139 @@ function capitalize(s: string): string {
   return trimmed.charAt(0).toLocaleUpperCase('fr') + trimmed.slice(1);
 }
 
-/** Découpe une chaîne en blocs structurés selon les marqueurs détectés. */
+/**
+ * Découpe une chaîne en blocs structurés selon les marqueurs détectés.
+ * Le découpage suit cet ordre :
+ *   1. Split par lignes (\n)
+ *   2. Pour chaque ligne, split par marqueurs sémantiques en début de phrase
+ *      (Règle/Exception/Astuce après un point).
+ *   3. Pour chaque segment, détecter si c'est un bloc spécial et capitaliser.
+ *   4. Détecter d'éventuelles listes explicites via '- ' / '• ' multi-lignes.
+ */
 function parseBody(body: string): Block[] {
   if (!body) return [];
 
-  const lines = body.split(/\n+/).map((l) => l.trim()).filter(Boolean);
+  // Étape 1 : split par lignes mais préserve les listes (lignes commençant par '- ').
+  // On va regrouper les lignes qui ne commencent pas par '- ' avec la précédente
+  // POUR les paragraphes en plusieurs lignes (rare), mais SÉPARER les items '- '
+  // qui doivent rester individuels.
 
+  // Approche : split par \n, puis fusionner intelligemment.
+  const rawLines = body
+    .split(/\n/)
+    .map((l) => l.trimEnd())
+    .filter((l) => l.length > 0);
+
+  // Étape 2 : convertir en blocks bruts, en gérant les listes explicites.
   const SPLIT_RE =
     /(?<=[.!?])\s+(?=(?:RÈGLE\s*(?:D[''’]OR)?\s*:|Règle\s*:|Exception\b|Astuce\s*:|Remarque\s*:|Attention\s*:))/g;
 
   const blocks: Block[] = [];
-  for (const line of lines) {
-    const segments = line.split(SPLIT_RE).map((s) => s.trim()).filter(Boolean);
+
+  // Buffer pour les items d'une liste en cours
+  let listBuffer: string[] = [];
+  let listIntro: string | undefined;
+  let listAttachedToBlock: Block | null = null;
+
+  const flushList = () => {
+    if (listBuffer.length === 0) return;
+    if (listAttachedToBlock) {
+      // Attache la liste au dernier bloc créé (l'intro était dans son texte)
+      listAttachedToBlock.listItems = [...listBuffer];
+      listAttachedToBlock.listIntro = listIntro;
+    } else {
+      // Liste orpheline → en faire un paragraphe avec juste les items
+      blocks.push({
+        kind: 'paragraph',
+        text: '',
+        listItems: [...listBuffer],
+        listIntro
+      });
+    }
+    listBuffer = [];
+    listIntro = undefined;
+    listAttachedToBlock = null;
+  };
+
+  const processSegment = (seg: string) => {
+    // Item de liste : commence par '- ' ou '• '
+    if (/^[-•]\s/.test(seg)) {
+      listBuffer.push(seg.replace(/^[-•]\s+/, '').trim());
+      return;
+    }
+
+    // Si on avait des items en cours sans nouveau marqueur, on flush avant
+    flushList();
+
+    // Détection des blocs spéciaux
+    const ruleMatch = seg.match(
+      /^(?:RÈGLE\s*(?:D[''’]OR)?\s*:|Règle\s*:)\s*(.+)$/i
+    );
+    if (ruleMatch) {
+      const block: Block = { kind: 'rule', text: capitalize(ruleMatch[1]) };
+      blocks.push(block);
+      // Si le texte se termine par ":" alors les prochaines lignes "- ..." vont
+      // s'attacher comme liste de ce bloc.
+      if (/:\s*$/.test(ruleMatch[1])) {
+        listIntro = undefined;
+        listAttachedToBlock = block;
+      }
+      return;
+    }
+    const exceptionMatch = seg.match(
+      /^Exception\s*(?:fréquente\s*)?(?:pour\s+[^:]+)?\s*[:.,]?\s*(.+)$/i
+    );
+    if (exceptionMatch) {
+      const block: Block = { kind: 'exception', text: capitalize(exceptionMatch[1]) };
+      blocks.push(block);
+      if (/:\s*$/.test(exceptionMatch[1])) {
+        listAttachedToBlock = block;
+      }
+      return;
+    }
+    const noteMatch = seg.match(
+      /^(?:Astuce|Remarque|Attention|Note)\s*[:.,]?\s*(.+)$/i
+    );
+    if (noteMatch) {
+      const block: Block = { kind: 'note', text: capitalize(noteMatch[1]) };
+      blocks.push(block);
+      if (/:\s*$/.test(noteMatch[1])) {
+        listAttachedToBlock = block;
+      }
+      return;
+    }
+    // Sinon : paragraphe simple. Si le texte se termine par ":" et qu'une liste
+    // suit, le ":" sert d'intro de liste.
+    if (/:\s*$/.test(seg)) {
+      const block: Block = {
+        kind: 'paragraph',
+        text: seg.replace(/:\s*$/, '').trim()
+      };
+      blocks.push(block);
+      listIntro = block.text;
+      listAttachedToBlock = block;
+      // Le texte du paragraphe est l'intro de la liste : on le vide pour ne
+      // pas l'afficher deux fois.
+      block.text = '';
+      return;
+    }
+    blocks.push({ kind: 'paragraph', text: seg });
+  };
+
+  for (const rawLine of rawLines) {
+    // Si la ligne est un item de liste, on garde le \n implicite et on processe.
+    if (/^[-•]\s/.test(rawLine)) {
+      processSegment(rawLine);
+      continue;
+    }
+
+    // Sinon, on split la ligne par les marqueurs sémantiques in-line.
+    const segments = rawLine.split(SPLIT_RE).map((s) => s.trim()).filter(Boolean);
     for (const seg of segments) {
-      const ruleMatch = seg.match(
-        /^(?:RÈGLE\s*(?:D[''’]OR)?\s*:|Règle\s*:)\s*(.+)$/i
-      );
-      if (ruleMatch) {
-        blocks.push({ kind: 'rule', text: capitalize(ruleMatch[1]) });
-        continue;
-      }
-      const exceptionMatch = seg.match(
-        /^Exception\s*(?:fréquente\s*)?(?:pour\s+[^:]+)?\s*[:.,]?\s*(.+)$/i
-      );
-      if (exceptionMatch) {
-        blocks.push({ kind: 'exception', text: capitalize(exceptionMatch[1]) });
-        continue;
-      }
-      const noteMatch = seg.match(
-        /^(?:Astuce|Remarque|Attention|Note)\s*[:.,]?\s*(.+)$/i
-      );
-      if (noteMatch) {
-        blocks.push({ kind: 'note', text: capitalize(noteMatch[1]) });
-        continue;
-      }
-      blocks.push({ kind: 'paragraph', text: seg });
+      processSegment(seg);
     }
   }
+  flushList();
 
   return blocks;
 }
@@ -97,59 +196,14 @@ const LABEL_EN: Record<Block['kind'], string> = {
 };
 
 /**
- * Détecte si un texte ressemble à une suite de phrases-exemples séparées par
- * des virgules : "hanzi (trad), hanzi (trad), hanzi (trad)".
- * Si oui, retourne la liste de chaque exemple ; sinon null.
- *
- * Critères :
- *   - Le texte contient ≥ 3 segments séparés par ", " (ou "， ")
- *   - Chaque segment contient au moins 2 caractères chinois consécutifs
- *   - Optionnellement, le texte commence par un intro court ("Exemples : " etc.)
- */
-function detectExampleList(text: string): { intro?: string; items: string[] } | null {
-  // Skip si le texte est court (< 80 char = probablement pas une liste)
-  if (text.length < 80) return null;
-
-  // Possible intro suivi de ":"
-  const introMatch = text.match(/^([^:]{3,40}):\s*(.+)$/s);
-  let intro: string | undefined;
-  let rest = text;
-  if (introMatch) {
-    const introCandidate = introMatch[1].trim();
-    // L'intro ne doit pas contenir de hanzi (sinon c'est juste une phrase normale)
-    if (!/[一-鿿]/.test(introCandidate) && introCandidate.length <= 40) {
-      intro = introCandidate;
-      rest = introMatch[2].trim();
-    }
-  }
-
-  // Split par virgules ASCII ou chinoises, en gardant l'ordre
-  const parts = rest.split(/(?:,|，)\s+/).map((p) => p.trim()).filter(Boolean);
-  if (parts.length < 3) return null;
-
-  // Chaque part doit contenir au moins 1 hanzi (sinon c'est de la prose pure)
-  const validParts = parts.filter((p) => /[一-鿿]/.test(p));
-  if (validParts.length < 3) return null;
-  // Si plus de 60% des parts contiennent du hanzi → c'est une liste d'exemples
-  if (validParts.length / parts.length < 0.6) return null;
-
-  // Retire un éventuel point final du dernier item
-  const cleaned = parts.map((p, i) =>
-    i === parts.length - 1 ? p.replace(/[.。]\s*$/, '') : p
-  );
-
-  return { intro, items: cleaned };
-}
-
-/**
  * Rend une string avec mini-markdown :
  *   - **gras** → <strong>
- *   - *italique* → <em> (mais SEULEMENT si pas dans une parenthèse pinyin)
+ *   - *italique* → <em> (mais seulement si pas dans une parenthèse pinyin)
  *
- * Le mini-parser est conservateur pour ne pas casser l'AutoPinyin qui suit.
+ * Conservateur pour ne pas casser l'AutoPinyin qui suit.
  */
 function renderInlineMarkdown(text: string): ReactNode {
-  // Tokenize **bold** et *italic* en gardant le reste comme texte brut.
+  if (!text) return null;
   const tokens: { kind: 'text' | 'bold' | 'italic'; content: string }[] = [];
   let i = 0;
   while (i < text.length) {
@@ -165,15 +219,17 @@ function renderInlineMarkdown(text: string): ReactNode {
       const end = text.indexOf('*', i + 1);
       if (end > 0) {
         const inner = text.slice(i + 1, end);
-        // évite que * intercalé dans un pinyin ou un mot soit interprété
-        if (!/[\s(]/.test(inner.charAt(0)) && !/[)\s]/.test(inner.charAt(inner.length - 1))) {
+        if (
+          inner.length > 0 &&
+          !/[\s(]/.test(inner.charAt(0)) &&
+          !/[)\s]/.test(inner.charAt(inner.length - 1))
+        ) {
           tokens.push({ kind: 'italic', content: inner });
           i = end + 1;
           continue;
         }
       }
     }
-    // Caractère brut : accumule jusqu'au prochain * ou **
     let j = i;
     while (j < text.length && text[j] !== '*') j++;
     tokens.push({ kind: 'text', content: text.slice(i, j) });
@@ -220,28 +276,39 @@ export default function StructuredLearnBody({
   return (
     <div className="lv2-structured-body">
       {blocks.map((block, i) => {
-        const exampleList = detectExampleList(block.text);
-        const content = exampleList ? (
+        const hasList = block.listItems && block.listItems.length > 0;
+
+        const intro =
+          block.listIntro ?? (block.kind === 'paragraph' ? undefined : undefined);
+
+        const renderedContent = (
           <>
-            {exampleList.intro && (
-              <span className="lv2-block-intro-text">
-                {renderInlineMarkdown(exampleList.intro)} :
+            {block.text && (
+              <span className="lv2-block-text-part">
+                {renderInlineMarkdown(block.text)}
               </span>
             )}
-            <ul className="lv2-block-examples">
-              {exampleList.items.map((it, j) => (
-                <li key={j}>{renderInlineMarkdown(it)}</li>
-              ))}
-            </ul>
+            {hasList && (
+              <>
+                {intro && (
+                  <span className="lv2-block-intro-text">
+                    {renderInlineMarkdown(intro)} :
+                  </span>
+                )}
+                <ul className="lv2-block-examples">
+                  {block.listItems!.map((it, j) => (
+                    <li key={j}>{renderInlineMarkdown(it)}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </>
-        ) : (
-          renderInlineMarkdown(block.text)
         );
 
         if (block.kind === 'paragraph') {
           return (
             <div key={i} className="lv2-block lv2-block--paragraph">
-              {content}
+              {renderedContent}
             </div>
           );
         }
@@ -253,7 +320,7 @@ export default function StructuredLearnBody({
               </span>
               <span className="lv2-block-label">{labels[block.kind]}</span>
             </div>
-            <div className="lv2-block-content">{content}</div>
+            <div className="lv2-block-content">{renderedContent}</div>
           </div>
         );
       })}
