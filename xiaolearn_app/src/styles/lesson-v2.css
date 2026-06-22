@@ -1229,6 +1229,58 @@
   color: #854d0e;
 }
 
+/* --- V21 — Listes d'exemples + gras/italique --- */
+
+/* Listes d'exemples détectées automatiquement (suite hanzi + traductions) */
+.lesson-v2 .lv2-block-examples {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lesson-v2 .lv2-block-examples li {
+  padding: 6px 10px 6px 28px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.lesson-v2 .lv2-block-examples li::before {
+  content: '▸';
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  color: var(--primary-red, #d8483e);
+  font-weight: 700;
+}
+/* Variante: liste dans un bloc règle/exception/note → fond plus léger */
+.lesson-v2 .lv2-block--paragraph .lv2-block-examples li {
+  background: rgba(232, 224, 209, 0.4);
+}
+
+/* Intro avant la liste ("Phrases-bouées :" par exemple) */
+.lesson-v2 .lv2-block-intro-text {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Mini-markdown : **gras** et *italique* */
+.lesson-v2 .lv2-structured-body strong {
+  color: var(--primary-red, #8A2820);
+  font-weight: 700;
+  background: rgba(216, 72, 62, 0.08);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.lesson-v2 .lv2-structured-body em {
+  font-style: italic;
+  color: var(--lv2-text-secondary, #6b5d4a);
+}
+
 /* Contour tonal --- */
 
 .lesson-v2 .lv2-tone-contour {
