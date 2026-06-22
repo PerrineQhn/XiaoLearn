@@ -33,6 +33,7 @@ import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import PronunciationCheck from '../components/PronunciationCheck';
 import OfflineLessonButton from '../components/OfflineLessonButton';
 import AutoPinyin from '../components/AutoPinyin';
+import StructuredLearnBody from '../components/StructuredLearnBody';
 import PronunciationDrill, {
   type PronunciationDrillItem
 } from '../components/PronunciationDrill';
@@ -978,11 +979,7 @@ const LearnSectionView = ({
 
       {body && (
         <div className="lv2-learn-section-body">
-          {body.split('\n').map((para, i) => (
-            <p key={i}>
-              <AutoPinyin text={para} />
-            </p>
-          ))}
+          <StructuredLearnBody body={body} language={language} />
         </div>
       )}
 
