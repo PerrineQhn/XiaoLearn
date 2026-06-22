@@ -22,7 +22,6 @@
  */
 
 import { Fragment, useMemo, type ReactNode } from 'react';
-import AutoPinyin from './AutoPinyin';
 
 type Block =
   | { kind: 'paragraph'; text: string; listItems?: string[]; listIntro?: string }
@@ -300,7 +299,14 @@ function renderInlineMarkdown(text: string): ReactNode {
     i = j;
   }
 
-  /** Rend un texte en stylisant les parenthèses pinyin. */
+  /** Rend un texte en stylisant les parenthèses pinyin existantes.
+   *
+   *  IMPORTANT : on N'utilise PAS AutoPinyin ici car les bodies de leçon
+   *  contiennent DÉJÀ les pinyins écrits par l'auteur (à dessein, pour
+   *  contrôler le découpage par mots, érhua, etc.). Injecter en plus le
+   *  pinyin auto provoquerait un doublon visible : "爸爸 (bàba) (bà ba)".
+   *  On se contente donc d'harmoniser le STYLE des parenthèses existantes.
+   */
   const renderWithPinyin = (raw: string): ReactNode => {
     const sub = wrapPinyinParens(raw);
     return sub.map((s, k) => {
@@ -313,7 +319,7 @@ function renderInlineMarkdown(text: string): ReactNode {
           </span>
         );
       }
-      return <AutoPinyin key={k} text={s.content} />;
+      return <Fragment key={k}>{s.content}</Fragment>;
     });
   };
 
