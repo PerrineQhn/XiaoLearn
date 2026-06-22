@@ -24,7 +24,7 @@ export const b22StructureM1LearnSections: LessonV2LearnSection[] = [
     title: '与其 A 不如 B — choisir le moindre mal',
     titleEn: '与其 A 不如 B — pick the lesser evil',
     body:
-      'On propose un arbitrage : l\'option rejetée vient après 与其, l\'option retenue après 不如. 与其抱怨，不如行动 = plutôt que se plaindre, mieux vaut agir. Contrairement à 比 qui compare objectivement, 与其…不如 porte un jugement de valeur, souvent un conseil. À l\'oral, on omet fréquemment 与其 si le contexte est clair : 不如你先走 = tu ferais mieux de partir d\'abord.',
+      'On propose un arbitrage : l\'option rejetée vient après 与其, l\'option retenue après 不如. 与其抱怨，不如行动 = plutôt que se plaindre, mieux vaut agir. Règle : contrairement à 比 qui compare objectivement, 与其…不如 porte un jugement de valeur, souvent un conseil. Remarque : à l\'oral, on omet fréquemment 与其 si le contexte est clair. 不如你先走 = tu ferais mieux de partir d\'abord.',
     bodyEn:
       'We propose a trade-off: the rejected option comes after 与其, the chosen one after 不如. 与其抱怨，不如行动 = rather than complain, better to act. Unlike 比 which compares objectively, 与其…不如 carries a value judgment, often advice. In speech, 与其 is often dropped if context is clear: 不如你先走 = better you leave first.',
     items: [
@@ -44,7 +44,7 @@ export const b22StructureM1LearnSections: LessonV2LearnSection[] = [
     title: 'La variante familière : 还不如',
     titleEn: 'The casual variant: 还不如',
     body:
-      '还不如 = « autant vaudrait carrément ». C\'est la version énervée / résignée de 与其…不如. On l\'utilise quand on trouve l\'option actuelle tellement peu efficace qu\'on plaisante ou critique : 这个工资，还不如去送外卖 = avec ce salaire, autant livrer des repas. 你这么不努力，还不如别学了 = vu que tu ne bosses pas, autant arrêter carrément. Ton oral, souvent ironique ou désabusé. À éviter dans un écrit formel.',
+      '还不如 = « autant vaudrait carrément ». C\'est la version énervée / résignée de 与其…不如. On l\'utilise quand on trouve l\'option actuelle tellement peu efficace qu\'on plaisante ou critique : 这个工资，还不如去送外卖 = avec ce salaire, autant livrer des repas. 你这么不努力，还不如别学了 = vu que tu ne bosses pas, autant arrêter carrément. Remarque : ton oral, souvent ironique ou désabusé. Attention : à éviter dans un écrit formel.',
     bodyEn:
       '还不如 = "one might as well just". It\'s the exasperated / resigned version of 与其…不如. Used when you find the current option so inefficient you\'re half-joking or criticizing: 这个工资，还不如去送外卖 = with this salary, you might as well deliver meals. 你这么不努力，还不如别学了 = since you don\'t work, might as well quit. Oral tone, often ironic or disillusioned. Avoid in formal writing.',
     items: [
@@ -68,7 +68,7 @@ export const b22StructureM2LearnSections: LessonV2LearnSection[] = [
     title: '宁可 A 也 B — la préférence résolue',
     titleEn: '宁可 A 也 B — the resolute preference',
     body:
-      'Le ton monte d\'un cran par rapport à 与其. 宁可 marque une préférence assumée, souvent au prix d\'un sacrifice. 我宁可加班，也不拖延 = je préfère faire des heures sup plutôt que de traîner. Variante 宁愿 = même sens, plus écrit. Avec une négation dans la seconde partie (也不) : 宁死也不投降 = plutôt mourir que se rendre. 与其 compare deux options neutres ; 宁可 affirme une fermeté personnelle.',
+      'Le ton monte d\'un cran par rapport à 与其. Règle : 宁可 marque une préférence assumée, souvent au prix d\'un sacrifice. 我宁可加班，也不拖延 = je préfère faire des heures sup plutôt que de traîner. Variante 宁愿 = même sens, plus écrit. Avec une négation dans la seconde partie (也不) : 宁死也不投降 = plutôt mourir que se rendre. Attention : 与其 compare deux options neutres, 宁可 affirme une fermeté personnelle.',
     bodyEn:
       'The tone rises a notch above 与其. 宁可 marks an assumed preference, often at a cost. 我宁可加班，也不拖延 = I\'d rather do overtime than procrastinate. Variant 宁愿 = same meaning, more written. With negation in the second clause (也不): 宁死也不投降 = rather die than surrender. 与其 compares two neutral options; 宁可 asserts personal firmness.',
     items: [
@@ -88,7 +88,7 @@ export const b22StructureM2LearnSections: LessonV2LearnSection[] = [
     title: 'Le schéma 宁可 A，也不 B',
     titleEn: 'The 宁可 A, 也不 B pattern',
     body:
-      'La forme la plus fréquente est avec une négation : 宁可 A 也不 B = « plutôt A que jamais B ». 宁可饿着也不吃剩饭 = plutôt avoir faim que manger des restes. 宁可走路，也不坐地铁 = plutôt marcher que prendre le métro. Trois règles d\'or : (1) le verbe de B doit être nié (也不, 也不会, 也没有), (2) A est l\'option coûteuse qu\'on préfère, (3) B est l\'option rejetée, même si elle paraît plus confortable. C\'est l\'inverse de l\'intuition française — attention.',
+      'La forme la plus fréquente est avec une négation : 宁可 A 也不 B = « plutôt A que jamais B ». 宁可饿着也不吃剩饭 = plutôt avoir faim que manger des restes. 宁可走路，也不坐地铁 = plutôt marcher que prendre le métro. RÈGLE D\'OR : trois conditions à respecter — (1) le verbe de B doit être nié (也不, 也不会, 也没有), (2) A est l\'option coûteuse qu\'on préfère, (3) B est l\'option rejetée, même si elle paraît plus confortable. Attention : c\'est l\'inverse de l\'intuition française.',
     bodyEn:
       'The most common form uses negation: 宁可 A 也不 B = "rather A than ever B". 宁可饿着也不吃剩饭 = rather stay hungry than eat leftovers. 宁可走路，也不坐地铁 = rather walk than take the metro. Three golden rules: (1) B\'s verb must be negated (也不, 也不会, 也没有), (2) A is the costly option you prefer, (3) B is the rejected one, even if seemingly more comfortable. Opposite of French intuition — careful.',
     items: [
@@ -112,7 +112,7 @@ export const b22StructureM3LearnSections: LessonV2LearnSection[] = [
     title: '只要 + 就 vs 只有 + 才',
     titleEn: '只要 + 就 vs 只有 + 才',
     body:
-      'Deux conditionnels à ne JAMAIS mélanger. 只要 A 就 B = il suffit que A pour que B (ouvert, permissif). 只要你来，我就开心. 只有 A 才 B = seulement si A, alors B (fermé, restrictif). 只有努力，才能成功 = on ne réussit QUE par l\'effort. Astuce mnémonique : 就 autorise (« dès que ça suffit »), 才 restreint (« pas avant que »). Inverser les deux inverse totalement l\'argument.',
+      'RÈGLE D\'OR : deux conditionnels à ne JAMAIS mélanger. 只要 A 就 B = il suffit que A pour que B (ouvert, permissif). 只要你来，我就开心. 只有 A 才 B = seulement si A, alors B (fermé, restrictif). 只有努力，才能成功 = on ne réussit QUE par l\'effort. Astuce : 就 autorise (« dès que ça suffit »), 才 restreint (« pas avant que »). Attention : inverser les deux inverse totalement l\'argument.',
     bodyEn:
       'Two conditionals NEVER to mix. 只要 A 就 B = it\'s enough for A, then B (open, permissive). 只要你来，我就开心. 只有 A 才 B = only if A, then B (closed, restrictive). 只有努力，才能成功 = only effort brings success. Mnemonic: 就 permits ("as soon as it suffices"), 才 restricts ("not before"). Swapping the two flips the argument entirely.',
     items: [
@@ -133,7 +133,7 @@ export const b22StructureM3LearnSections: LessonV2LearnSection[] = [
     title: '只有…才 — l\'unique chemin',
     titleEn: '只有…才 — the one and only path',
     body:
-      '只有…才 verrouille une condition EXCLUSIVE : aucun autre chemin n\'est possible. 只有通过练习，才能说得流利 = c\'est uniquement par la pratique qu\'on parle couramment. Le 才 peut être renforcé par 能/才能 (capacité) ou 会 (possibilité future) : 只有冷静，才能做出正确的判断. Pour insister encore, on préface par 除非 : 除非你同意，否则我不会做 = à moins que tu acceptes, je ne le ferai pas. Langage de presse, débat, essai — très fréquent aux examens écrits.',
+      'Règle : 只有…才 verrouille une condition EXCLUSIVE — aucun autre chemin n\'est possible. 只有通过练习，才能说得流利 = c\'est uniquement par la pratique qu\'on parle couramment. Astuce : le 才 peut être renforcé par 能/才能 (capacité) ou 会 (possibilité future). 只有冷静，才能做出正确的判断. Pour insister encore, on préface par 除非. 除非你同意，否则我不会做 = à moins que tu acceptes, je ne le ferai pas. Remarque : langage de presse, débat, essai — très fréquent aux examens écrits.',
     bodyEn:
       '只有…才 locks in an EXCLUSIVE condition: no other path works. 只有通过练习，才能说得流利 = only through practice can one speak fluently. 才 is often reinforced by 能/才能 (capacity) or 会 (future possibility): 只有冷静，才能做出正确的判断. To further emphasize, prefix with 除非: 除非你同意，否则我不会做 = unless you agree, I won\'t do it. Press, debate, essay register — very common in written exams.',
     items: [
@@ -224,7 +224,7 @@ export const b22ArtsM4LearnSections: LessonV2LearnSection[] = [
     title: '书法 et les quatre trésors du lettré',
     titleEn: '书法 and the Four Treasures of the Study',
     body:
-      'La calligraphie chinoise est considérée comme l\'art suprême, au-dessus de la peinture. Elle exige les 文房四宝 : 笔 (pinceau), 墨 (encre en bâton), 纸 (papier de riz), 砚 (pierre à encre). Cinq styles dans l\'ordre historique : 篆书 (sigillaire, antique) → 隶书 (scribal) → 楷书 (régulier, celui que tu apprends à l\'école) → 行书 (courant, semi-cursif) → 草书 (cursif, « herbe folle »). 王羲之 (Wang Xizhi, IVe s.) est 书圣, le « saint de la calligraphie ».',
+      'Remarque : la calligraphie chinoise est considérée comme l\'art suprême, au-dessus de la peinture. Règle : elle exige les 文房四宝 — 笔 (pinceau), 墨 (encre en bâton), 纸 (papier de riz), 砚 (pierre à encre). Astuce : cinq styles dans l\'ordre historique 篆书 (sigillaire, antique) → 隶书 (scribal) → 楷书 (régulier, celui que tu apprends à l\'école) → 行书 (courant, semi-cursif) → 草书 (cursif, « herbe folle »). 王羲之 (Wang Xizhi, IVe s.) est 书圣, le « saint de la calligraphie ».',
     bodyEn:
       'Chinese calligraphy is considered the supreme art, above painting. It requires the 文房四宝: 笔 (brush), 墨 (ink stick), 纸 (rice paper), 砚 (inkstone). Five styles in historical order: 篆书 (seal, ancient) → 隶书 (clerical) → 楷书 (regular, what you learn at school) → 行书 (running, semi-cursive) → 草书 (cursive, "wild grass"). 王羲之 (Wang Xizhi, 4th c.) is 书圣, the "Sage of Calligraphy".',
     items: [
@@ -254,7 +254,7 @@ export const b22HealthM1LearnSections: LessonV2LearnSection[] = [
     title: '中医 : un système fondé sur l\'équilibre',
     titleEn: '中医: a system built on balance',
     body:
-      'La médecine chinoise traditionnelle (中医) ne traite pas un organe isolé mais l\'équilibre global entre 阴/阳 et les cinq éléments (五行). Le diagnostic suit la méthode 望闻问切 — observer, écouter/sentir, interroger, palper le pouls. Thérapies principales : 针灸 (aiguilles et moxibustion), 推拿 (massage appuyé), 中药 (décoctions d\'herbes), 拔罐 (ventouses). Les concepts clés sont 气 (énergie vitale), 血 (sang) et 经络 (méridiens qui relient les organes).',
+      'Règle : la médecine chinoise traditionnelle (中医) ne traite pas un organe isolé mais l\'équilibre global entre 阴/阳 et les cinq éléments (五行). Remarque : le diagnostic suit la méthode 望闻问切 — observer, écouter/sentir, interroger, palper le pouls. Astuce : thérapies principales — 针灸 (aiguilles et moxibustion), 推拿 (massage appuyé), 中药 (décoctions d\'herbes), 拔罐 (ventouses). Les concepts clés sont 气 (énergie vitale), 血 (sang) et 经络 (méridiens qui relient les organes).',
     bodyEn:
       'Traditional Chinese Medicine (中医) doesn\'t treat an isolated organ but the overall balance between 阴/阳 and the five elements (五行). Diagnosis follows the 望闻问切 method — look, listen/smell, ask, palpate the pulse. Main therapies: 针灸 (needles and moxibustion), 推拿 (deep massage), 中药 (herbal decoctions), 拔罐 (cupping). Key concepts: 气 (vital energy), 血 (blood), 经络 (meridians linking organs).',
     items: [
@@ -332,7 +332,7 @@ export const b22DebateM1LearnSections: LessonV2LearnSection[] = [
     title: 'Ouvrir, justifier, illustrer',
     titleEn: 'Open, justify, illustrate',
     body:
-      'Une argumentation B2 se construit en trois mouvements. (1) Ouvrir : 我认为 ou 在我看来 pour poser une thèse ; 从…来看 pour adopter un angle. (2) Justifier : 因为 (neutre), 由于 (formel), 之所以…是因为 pour un raisonnement inversé. (3) Illustrer : 例如 / 比如 / 举例来说. Puis enrichir avec 另外, 此外, 再说 pour ajouter sans relancer la même idée.',
+      'Règle : une argumentation B2 se construit en trois mouvements. (1) Ouvrir : 我认为 ou 在我看来 pour poser une thèse ; 从…来看 pour adopter un angle. (2) Justifier : 因为 (neutre), 由于 (formel), 之所以…是因为 pour un raisonnement inversé. (3) Illustrer : 例如 / 比如 / 举例来说. Astuce : puis enrichir avec 另外, 此外, 再说 pour ajouter sans relancer la même idée.',
     bodyEn:
       'A B2 argument is built in three moves. (1) Open: 我认为 or 在我看来 to state a thesis; 从…来看 to adopt an angle. (2) Justify: 因为 (neutral), 由于 (formal), 之所以…是因为 for a reverse reasoning. (3) Illustrate: 例如 / 比如 / 举例来说. Then enrich with 另外, 此外, 再说 to add without re-launching the same idea.',
     items: [
@@ -354,7 +354,7 @@ export const b22DebateM2LearnSections: LessonV2LearnSection[] = [
     title: 'Reconnaître l\'adversaire, puis nuancer',
     titleEn: 'Acknowledge the opponent, then qualify',
     body:
-      'La technique du « yes, but » chinoise commence par reconnaître (的确, 不可否认, 虽然…但是), puis introduit une vraie nuance (不过 plus doux que 但是, 然而 soutenu, 其实 qui révèle la réalité). Enchaîne avec des généralisations prudentes (一般来说, 通常, 大多数) et des restrictions (只是, 不一定). Le tout crée une argumentation qui semble équilibrée — très apprécié en contexte chinois formel.',
+      'Règle : la technique du « yes, but » chinoise commence par reconnaître (的确, 不可否认, 虽然…但是), puis introduit une vraie nuance (不过 plus doux que 但是, 然而 soutenu, 其实 qui révèle la réalité). Astuce : enchaîne avec des généralisations prudentes (一般来说, 通常, 大多数) et des restrictions (只是, 不一定). Remarque : le tout crée une argumentation qui semble équilibrée — très apprécié en contexte chinois formel.',
     bodyEn:
       'The Chinese "yes, but" technique begins by acknowledging (的确, 不可否认, 虽然…但是), then introduces a real nuance (不过 softer than 但是, 然而 formal, 其实 which reveals reality). Follow with cautious generalizations (一般来说, 通常, 大多数) and restrictions (只是, 不一定). The whole creates an argument that feels balanced — highly valued in formal Chinese contexts.',
     items: [
@@ -376,7 +376,7 @@ export const b22DebateM3LearnSections: LessonV2LearnSection[] = [
     title: 'Réfuter sans froisser, conclure avec force',
     titleEn: 'Refute without offense, conclude with force',
     body:
-      'En Chine, dire frontalement 这是错的 en réunion peut coûter cher en 面子. Préfère : 我不太同意, 恐怕不是这样, 这种看法值得商榷 (ultra-soutenu, à garder pour l\'écrit ou les réunions haut niveau). Réserver 我反对 à des débats explicitement contradictoires. Pour conclure, monte d\'un cran de formalité : 总之 (oral) → 总的来说 → 综上所述 (écrit) → 因此 (par conséquent).',
+      'Attention : en Chine, dire frontalement 这是错的 en réunion peut coûter cher en 面子. Astuce : préfère 我不太同意, 恐怕不是这样, 这种看法值得商榷 (ultra-soutenu, à garder pour l\'écrit ou les réunions haut niveau). Règle : réserver 我反对 à des débats explicitement contradictoires. Pour conclure, monte d\'un cran de formalité : 总之 (oral) → 总的来说 → 综上所述 (écrit) → 因此 (par conséquent).',
     bodyEn:
       'In China, bluntly saying 这是错的 in a meeting can cost 面子. Prefer: 我不太同意, 恐怕不是这样, 这种看法值得商榷 (ultra-formal, for writing or high-level meetings). Reserve 我反对 for explicitly contradictory debates. To conclude, step up formality: 总之 (spoken) → 总的来说 → 综上所述 (written) → 因此 (therefore).',
     items: [
@@ -410,7 +410,7 @@ export const b22StructureM4LearnSections: LessonV2LearnSection[] = [
     title: '既然 A，就/那 B — « puisque A, alors B »',
     titleEn: '既然 A, 就/那 B — «since A, then B»',
     body:
-      '既然 (jìrán) introduit une cause DÉJÀ admise par les deux interlocuteurs : on ne la justifie plus, on en tire la conséquence. 既然你已经决定了，就别后悔 = puisque tu as déjà décidé, ne regrette plus. Différence majeure avec 因为 : 因为 INFORME la cause (l\'autre ne la connaît pas), 既然 la PRÉSUPPOSE (l\'autre la connaît). Souvent suivi de 就 (logique) ou 那(就) (familier).',
+      'RÈGLE D\'OR : 既然 (jìrán) introduit une cause DÉJÀ admise par les deux interlocuteurs — on ne la justifie plus, on en tire la conséquence. 既然你已经决定了，就别后悔 = puisque tu as déjà décidé, ne regrette plus. Attention : différence majeure avec 因为 — 因为 INFORME la cause (l\'autre ne la connaît pas), 既然 la PRÉSUPPOSE (l\'autre la connaît). Remarque : souvent suivi de 就 (logique) ou 那(就) (familier).',
     bodyEn:
       '既然 (jìrán) introduces a cause ALREADY accepted by both speakers: we no longer justify it, we draw its consequence. 既然你已经决定了，就别后悔 = since you\'ve already decided, don\'t regret it. Major difference with 因为: 因为 INFORMS of the cause (the other doesn\'t know it), 既然 PRESUPPOSES it (the other knows). Often followed by 就 (logical) or 那(就) (casual).',
     items: [
@@ -430,7 +430,7 @@ export const b22StructureM4LearnSections: LessonV2LearnSection[] = [
     title: 'Variante écrite : 既 A 又 B vs 既然',
     titleEn: 'Written variant: 既 A 又 B vs 既然',
     body:
-      'Attention à ne pas confondre 既然 (puisque) avec 既…又… (à la fois… et…). 既好吃又便宜 = à la fois bon et pas cher (parallélisme). Très utilisé à l\'écrit B2/C1 pour énumérer deux qualités positives. Variante : 既…也… (registre soutenu). Différence avec 又…又… : 既…又 est un peu plus écrit, plus formel.',
+      'Attention : ne pas confondre 既然 (puisque) avec 既…又… (à la fois… et…). 既好吃又便宜 = à la fois bon et pas cher (parallélisme). Remarque : très utilisé à l\'écrit B2/C1 pour énumérer deux qualités positives. Variante : 既…也… (registre soutenu). Règle : différence avec 又…又… — 既…又 est un peu plus écrit, plus formel.',
     bodyEn:
       'Don\'t confuse 既然 (since) with 既…又… (both… and…). 既好吃又便宜 = both tasty and cheap (parallelism). Heavily used in B2/C1 writing to list two positive qualities. Variant: 既…也… (formal register). Difference from 又…又…: 既…又 is slightly more written, more formal.',
     items: [
@@ -454,7 +454,7 @@ export const b22StructureM5LearnSections: LessonV2LearnSection[] = [
     title: '以 X 为 Y — « prendre X comme/pour Y »',
     titleEn: '以 X 为 Y — «take X as/for Y»',
     body:
-      'Structure formelle issue du chinois classique, omniprésente à l\'écrit B2+. 以学生为中心 = avoir l\'élève au centre (litt. prendre l\'élève comme centre). 以质量为先 = donner la priorité à la qualité. Très utilisée dans les slogans, missions d\'entreprise, manifestes pédagogiques. Construction : sujet implicite + 以 + objet + 为 + attribut.',
+      'Structure formelle issue du chinois classique, omniprésente à l\'écrit B2+. 以学生为中心 = avoir l\'élève au centre (litt. prendre l\'élève comme centre). 以质量为先 = donner la priorité à la qualité. Remarque : très utilisée dans les slogans, missions d\'entreprise, manifestes pédagogiques. Règle : construction sujet implicite + 以 + objet + 为 + attribut.',
     bodyEn:
       'Formal structure from classical Chinese, ubiquitous in B2+ writing. 以学生为中心 = put the student at the center. 以质量为先 = put quality first. Heavily used in slogans, company missions, educational manifestos. Structure: implicit subject + 以 + object + 为 + attribute.',
     items: [
@@ -474,7 +474,7 @@ export const b22StructureM5LearnSections: LessonV2LearnSection[] = [
     title: 'Idiomes courants : 以…为荣 / 以…为耻',
     titleEn: 'Common idioms: 以…为荣 / 以…为耻',
     body:
-      '以…为荣 (yǐ…wéi róng) = être fier de. 以…为耻 (yǐ…wéi chǐ) = avoir honte de. Couple émotionnel hérité de la culture confucéenne. 我以你为荣 = je suis fier de toi (formule très valorisante, plus forte que 我为你骄傲). 中国以悠久的历史为荣 = la Chine s\'enorgueillit de sa longue histoire. Beaucoup utilisé dans les discours patriotiques, éducatifs ou familiaux.',
+      '以…为荣 (yǐ…wéi róng) = être fier de. 以…为耻 (yǐ…wéi chǐ) = avoir honte de. Remarque : couple émotionnel hérité de la culture confucéenne. 我以你为荣 = je suis fier de toi (formule très valorisante, plus forte que 我为你骄傲). 中国以悠久的历史为荣 = la Chine s\'enorgueillit de sa longue histoire. Astuce : beaucoup utilisé dans les discours patriotiques, éducatifs ou familiaux.',
     bodyEn:
       '以…为荣 (yǐ…wéi róng) = be proud of. 以…为耻 (yǐ…wéi chǐ) = be ashamed of. Emotional pair inherited from Confucian culture. 我以你为荣 = I\'m proud of you (very valorizing, stronger than 我为你骄傲). 中国以悠久的历史为荣 = China prides itself on its long history. Heavily used in patriotic, educational or family speech.',
     items: [
@@ -498,7 +498,7 @@ export const b22StructureM6LearnSections: LessonV2LearnSection[] = [
     title: '不仅 A 而且 B — « non seulement A, mais aussi B »',
     titleEn: '不仅 A 而且 B — «not only A but also B»',
     body:
-      'Version soutenue de 不但…而且 (que tu connais en B1). Plus écrit, plus solennel. 这本书不仅内容深刻，而且文笔优美 = ce livre est non seulement profond mais aussi bien écrit. Variantes registre : 不只 (parlé) < 不但 (standard) < 不仅 (écrit) < 不仅仅 (insistant). Le 2e élément peut prendre 还、也、更 à la place de 而且 pour graduer.',
+      'Version soutenue de 不但…而且 (que tu connais en B1). Plus écrit, plus solennel. 这本书不仅内容深刻，而且文笔优美 = ce livre est non seulement profond mais aussi bien écrit. Règle : variantes registre — 不只 (parlé) < 不但 (standard) < 不仅 (écrit) < 不仅仅 (insistant). Astuce : le 2e élément peut prendre 还、也、更 à la place de 而且 pour graduer.',
     bodyEn:
       'Formal version of 不但…而且 (B1). More written, more solemn. 这本书不仅内容深刻，而且文笔优美 = this book is not only deep but also beautifully written. Register variants: 不只 (spoken) < 不但 (standard) < 不仅 (written) < 不仅仅 (emphatic). The 2nd element can use 还、也、更 instead of 而且 to grade up.',
     items: [
@@ -542,7 +542,7 @@ export const b22StructureM7LearnSections: LessonV2LearnSection[] = [
     title: '即使 A 也 B — « même si A, B » (concession irréelle)',
     titleEn: '即使 A 也 B — «even if A, B» (hypothetical concession)',
     body:
-      '即使 (jíshǐ) introduit une hypothèse extrême, souvent contraire aux faits, suivie obligatoirement de 也 dans la 2e proposition. 即使下雨，我也要去 = même s\'il pleut, j\'y vais. Différence avec 虽然 : 虽然 = fait réel admis (« bien qu\'il pleuve [il pleut vraiment] »), 即使 = hypothèse (« même s\'il pleuvait »). Variantes registre : 哪怕 (oral, expressif), 即便 (écrit), 就算 (parlé/familier).',
+      'RÈGLE D\'OR : 即使 (jíshǐ) introduit une hypothèse extrême, souvent contraire aux faits, suivie obligatoirement de 也 dans la 2e proposition. 即使下雨，我也要去 = même s\'il pleut, j\'y vais. Attention : différence avec 虽然 — 虽然 = fait réel admis (« bien qu\'il pleuve [il pleut vraiment] »), 即使 = hypothèse (« même s\'il pleuvait »). Remarque : variantes registre — 哪怕 (oral, expressif), 即便 (écrit), 就算 (parlé/familier).',
     bodyEn:
       '即使 (jíshǐ) introduces an extreme hypothesis, often counter-factual, followed mandatorily by 也 in the 2nd clause. 即使下雨，我也要去 = even if it rains, I\'m going. Difference from 虽然: 虽然 = real accepted fact («although it\'s raining [it really is]»), 即使 = hypothetical («even if it were to rain»). Register variants: 哪怕 (oral, expressive), 即便 (written), 就算 (spoken/casual).',
     items: [
@@ -562,7 +562,7 @@ export const b22StructureM7LearnSections: LessonV2LearnSection[] = [
     title: '哪怕 — la concession émotionnelle',
     titleEn: '哪怕 — the emotional concession',
     body:
-      '哪怕 (nǎpà) = « même si », mais avec une charge émotionnelle plus forte que 即使. Souvent utilisé pour exprimer détermination, sacrifice, amour. 哪怕只有一线希望，我也不放弃 = même s\'il n\'y a qu\'une lueur d\'espoir, je ne renonce pas. 哪怕你不爱我了 = même si tu ne m\'aimes plus. Très présent dans les chansons d\'amour, films dramatiques, discours motivationnels. Aussi suivi obligatoirement de 也.',
+      '哪怕 (nǎpà) = « même si », mais avec une charge émotionnelle plus forte que 即使. Remarque : souvent utilisé pour exprimer détermination, sacrifice, amour. 哪怕只有一线希望，我也不放弃 = même s\'il n\'y a qu\'une lueur d\'espoir, je ne renonce pas. 哪怕你不爱我了 = même si tu ne m\'aimes plus. Astuce : très présent dans les chansons d\'amour, films dramatiques, discours motivationnels. Règle : aussi suivi obligatoirement de 也.',
     bodyEn:
       '哪怕 (nǎpà) = «even if», with a stronger emotional charge than 即使. Often used to express determination, sacrifice, love. 哪怕只有一线希望，我也不放弃 = even if there\'s only a glimmer of hope, I won\'t give up. 哪怕你不爱我了 = even if you no longer love me. Very present in love songs, dramatic films, motivational speech. Also mandatorily followed by 也.',
     items: [
@@ -894,7 +894,7 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
     title: 'Comparer : 相比 / 比起来 / 与…相比',
     titleEn: 'Compare: 相比 / 比起来 / 与…相比',
     body:
-      'Pour comparer en argumentation B2 : 相比之下 (xiāngbǐ zhīxià, par comparaison), 比起来 (bǐ qǐ lái, en comparaison), 与 X 相比 (yǔ X xiāngbǐ, comparé à X — soutenu). Exemple : 与传统教育相比，在线课程更灵活 = comparé à l\'enseignement classique, les cours en ligne sont plus flexibles. Distinction avec le simple 比 (X 比 Y 高) : 相比/与…相比 introduit toute une PROPOSITION comparée, pas juste deux items.',
+      'Pour comparer en argumentation B2 : 相比之下 (xiāngbǐ zhīxià, par comparaison), 比起来 (bǐ qǐ lái, en comparaison), 与 X 相比 (yǔ X xiāngbǐ, comparé à X — soutenu). Exemple : 与传统教育相比，在线课程更灵活 = comparé à l\'enseignement classique, les cours en ligne sont plus flexibles. Règle : distinction avec le simple 比 (X 比 Y 高) — 相比/与…相比 introduit toute une PROPOSITION comparée, pas juste deux items.',
     bodyEn:
       'To compare in B2 argumentation: 相比之下 (in comparison), 比起来 (compared with), 与 X 相比 (compared to X — formal). Example: 与传统教育相比，在线课程更灵活 = compared to traditional education, online classes are more flexible. Distinction from simple 比 (X 比 Y high): 相比/与…相比 introduces a whole COMPARED CLAUSE, not just two items.',
     items: [
@@ -914,7 +914,7 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
     title: 'Opposer : 相反 / 反之 / 然而',
     titleEn: 'Oppose: 相反 / 反之 / 然而',
     body:
-      '相反 (xiāngfǎn, au contraire) introduit l\'opposition forte. 我以为他会拒绝，相反，他立刻同意了 = je pensais qu\'il refuserait, au contraire il a accepté tout de suite. 反之 (fǎn zhī, à l\'inverse — soutenu) très utilisé à l\'écrit. 然而 (rán\'ér, cependant) opposition + concession. 这个方案很好，然而成本太高 = ce plan est bon, cependant le coût est trop élevé. Force croissante : 不过 < 但是 < 然而 < 相反.',
+      '相反 (xiāngfǎn, au contraire) introduit l\'opposition forte. 我以为他会拒绝，相反，他立刻同意了 = je pensais qu\'il refuserait, au contraire il a accepté tout de suite. Remarque : 反之 (fǎn zhī, à l\'inverse — soutenu) très utilisé à l\'écrit. 然而 (rán\'ér, cependant) opposition + concession. 这个方案很好，然而成本太高 = ce plan est bon, cependant le coût est trop élevé. Règle : force croissante 不过 < 但是 < 然而 < 相反.',
     bodyEn:
       '相反 (xiāngfǎn, on the contrary) introduces strong opposition. 我以为他会拒绝，相反，他立刻同意了 = I thought he\'d refuse, on the contrary he agreed immediately. 反之 (fǎn zhī, conversely — formal) heavily used in writing. 然而 (rán\'ér, however) opposition + concession. 这个方案很好，然而成本太高 = this plan is good, however the cost is too high. Increasing force: 不过 < 但是 < 然而 < 相反.',
     items: [
@@ -938,7 +938,7 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
     title: 'Illustrer : 例如 / 比如 / 譬如 / 拿…来说',
     titleEn: 'Illustrate: 例如 / 比如 / 譬如 / 拿…来说',
     body:
-      'Pour illustrer un argument : 例如 (lìrú, par exemple — neutre), 比如说 (bǐrú shuō, comme par exemple — oral), 譬如 (pìrú, par exemple — soutenu, livresque), 拿 X 来说 (ná X lái shuō, prenons X). Exemple : 拿北京来说，房价已经太高了 = prenons Pékin, les prix de l\'immobilier sont déjà trop élevés. La structure 拿…来说 cible un cas particulier qui illustre une tendance générale.',
+      'Pour illustrer un argument : 例如 (lìrú, par exemple — neutre), 比如说 (bǐrú shuō, comme par exemple — oral), 譬如 (pìrú, par exemple — soutenu, livresque), 拿 X 来说 (ná X lái shuō, prenons X). Exemple : 拿北京来说，房价已经太高了 = prenons Pékin, les prix de l\'immobilier sont déjà trop élevés. Astuce : la structure 拿…来说 cible un cas particulier qui illustre une tendance générale.',
     bodyEn:
       'To illustrate an argument: 例如 (for example — neutral), 比如说 (like for example — spoken), 譬如 (for instance — formal, literary), 拿 X 来说 (take X). Example: 拿北京来说，房价已经太高了 = take Beijing, real estate prices are already too high. The 拿…来说 structure targets a specific case illustrating a general trend.',
     items: [
@@ -958,7 +958,7 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
     title: 'Citer des données et chiffres',
     titleEn: 'Citing data and numbers',
     body:
-      'Pour ancrer un argument dans le concret : 据 (jù, selon), 据统计 (jù tǒngjì, selon les statistiques), 数据显示 (shùjù xiǎnshì, les données montrent), 调查表明 (diàochá biǎomíng, l\'enquête révèle). 据 + source + 报道/介绍 = selon X. 据新华社报道 = selon l\'agence Xinhua. Vocabulaire chiffres : 百分比 (bǎifēnbǐ, pourcentage), 比例 (bǐlì, proportion), 增长 (zēngzhǎng, croissance), 下降 (xiàjiàng, baisse). Phrase : 据统计，去年 GDP 增长了 5.2% = selon les statistiques, le PIB a augmenté de 5,2% l\'an dernier.',
+      'Pour ancrer un argument dans le concret : 据 (jù, selon), 据统计 (jù tǒngjì, selon les statistiques), 数据显示 (shùjù xiǎnshì, les données montrent), 调查表明 (diàochá biǎomíng, l\'enquête révèle). Règle : 据 + source + 报道/介绍 = selon X. 据新华社报道 = selon l\'agence Xinhua. Astuce : vocabulaire chiffres — 百分比 (bǎifēnbǐ, pourcentage), 比例 (bǐlì, proportion), 增长 (zēngzhǎng, croissance), 下降 (xiàjiàng, baisse). Phrase : 据统计，去年 GDP 增长了 5.2% = selon les statistiques, le PIB a augmenté de 5,2% l\'an dernier.',
     bodyEn:
       'To anchor an argument in fact: 据 (according to), 据统计 (according to statistics), 数据显示 (data show), 调查表明 (survey reveals). 据 + source + 报道/介绍 = according to X. 据新华社报道 = according to Xinhua agency. Number vocab: 百分比 (percentage), 比例 (proportion), 增长 (growth), 下降 (decline). Phrase: 据统计，去年 GDP 增长了 5.2% = per statistics, GDP grew 5.2% last year.',
     items: [
@@ -982,7 +982,7 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
     title: 'Causes : 由于 / 因为 / 之所以…是因为',
     titleEn: 'Causes: 由于 / 因为 / 之所以…是因为',
     body:
-      'Pour exprimer une cause B2 : 由于 (yóuyú, du fait que — soutenu), 因为 (yīnwèi, parce que — neutre), 之所以…是因为 (zhīsuǒyǐ…shì yīnwèi, si…c\'est parce que — emphatique). 由于天气恶劣，航班取消了 = en raison du mauvais temps, le vol est annulé. 之所以失败，是因为准备不足 = si nous avons échoué, c\'est par manque de préparation. La structure inversée 之所以 met l\'accent sur le résultat avant d\'expliquer la cause : très oratoire.',
+      'Pour exprimer une cause B2 : 由于 (yóuyú, du fait que — soutenu), 因为 (yīnwèi, parce que — neutre), 之所以…是因为 (zhīsuǒyǐ…shì yīnwèi, si…c\'est parce que — emphatique). 由于天气恶劣，航班取消了 = en raison du mauvais temps, le vol est annulé. 之所以失败，是因为准备不足 = si nous avons échoué, c\'est par manque de préparation. Astuce : la structure inversée 之所以 met l\'accent sur le résultat avant d\'expliquer la cause — très oratoire.',
     bodyEn:
       'To express a cause at B2: 由于 (due to — formal), 因为 (because — neutral), 之所以…是因为 (the reason… is that — emphatic). 由于天气恶劣，航班取消了 = due to bad weather, the flight is canceled. 之所以失败，是因为准备不足 = the reason we failed is insufficient preparation. The inverted 之所以 structure highlights the result before explaining the cause: very oratorical.',
     items: [
@@ -1002,7 +1002,7 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
     title: 'Conséquences : 因此 / 所以 / 因而 / 从而',
     titleEn: 'Consequences: 因此 / 所以 / 因而 / 从而',
     body:
-      '因此 (yīncǐ, par conséquent — soutenu), 所以 (suǒyǐ, donc — neutre), 因而 (yīn\'ér, de ce fait — formel), 从而 (cóng\'ér, et par là — soutenu, marque enchaînement logique). 从而 introduit souvent une conséquence positive ou un objectif atteint : 减少了开支，从而提高了利润 = on a réduit les coûts, et ainsi augmenté les bénéfices. 因而 est plus neutre. Hierarchy : 所以 (oral) < 因此 (mixte) < 因而/从而 (écrit).',
+      '因此 (yīncǐ, par conséquent — soutenu), 所以 (suǒyǐ, donc — neutre), 因而 (yīn\'ér, de ce fait — formel), 从而 (cóng\'ér, et par là — soutenu, marque enchaînement logique). Remarque : 从而 introduit souvent une conséquence positive ou un objectif atteint. 减少了开支，从而提高了利润 = on a réduit les coûts, et ainsi augmenté les bénéfices. 因而 est plus neutre. Règle : hiérarchie 所以 (oral) < 因此 (mixte) < 因而/从而 (écrit).',
     bodyEn:
       '因此 (yīncǐ, therefore — formal), 所以 (suǒyǐ, so — neutral), 因而 (yīn\'ér, hence — formal), 从而 (cóng\'ér, thereby — formal, marks logical sequence). 从而 often introduces a positive consequence or achieved goal: 减少了开支，从而提高了利润 = we cut spending, thereby boosting profits. 因而 is more neutral. Hierarchy: 所以 (oral) < 因此 (mixed) < 因而/从而 (written).',
     items: [
@@ -1026,7 +1026,7 @@ export const b22DebateM7LearnSections: LessonV2LearnSection[] = [
     title: 'Conclure : 总之 / 总的来说 / 综上所述',
     titleEn: 'Conclude: 总之 / 总的来说 / 综上所述',
     body:
-      '总之 (zǒngzhī, en bref) — concluant rapide, oral et écrit. 总的来说 (zǒng de lái shuō, dans l\'ensemble) — bilan plus posé. 综上所述 (zōng shàng suǒ shù, au vu de ce qui précède) — formule très soutenue, typique des conclusions d\'essais ou de rapports. 一言以蔽之 (yī yán yǐ bì zhī, en un mot) — chengyu, registre lettré. Le marqueur final introduit la conclusion sans rien rajouter : c\'est la synthèse qui suit qui doit porter le poids.',
+      '总之 (zǒngzhī, en bref) — concluant rapide, oral et écrit. 总的来说 (zǒng de lái shuō, dans l\'ensemble) — bilan plus posé. 综上所述 (zōng shàng suǒ shù, au vu de ce qui précède) — formule très soutenue, typique des conclusions d\'essais ou de rapports. 一言以蔽之 (yī yán yǐ bì zhī, en un mot) — chengyu, registre lettré. Remarque : le marqueur final introduit la conclusion sans rien rajouter — c\'est la synthèse qui suit qui doit porter le poids.',
     bodyEn:
       '总之 (in short) — quick concluder, oral and written. 总的来说 (overall) — more measured wrap-up. 综上所述 (in light of the above) — very formal, typical of essay or report conclusions. 一言以蔽之 (in a word) — chengyu, scholarly register. The closing marker introduces the conclusion without adding anything: the synthesis that follows must carry the weight.',
     items: [
@@ -1080,7 +1080,7 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Réagir spontanément à une nouvelle',
     titleEn: 'React spontaneously to news',
     body:
-      'Au-delà des « 真的吗？» (vraiment ?) basiques, le B2 distingue les nuances : 太好了 (super !), 真不错 (vraiment bien), 难以置信 (incroyable). Pour exprimer surprise : 没想到 (je n\'aurais pas pensé), 居然 (figure-toi que…), 竟然 (idem, ton plus oral). Pour la mauvaise nouvelle : 太糟糕了 (c\'est nul), 真可惜 (quel dommage), 我替你难过 (je suis triste pour toi). Réagir naturellement, c\'est ne pas rester scotché à 哦 (oh) ou 是吗 (ah bon).',
+      'Au-delà des « 真的吗？» (vraiment ?) basiques, le B2 distingue les nuances : 太好了 (super !), 真不错 (vraiment bien), 难以置信 (incroyable). Astuce : pour exprimer surprise — 没想到 (je n\'aurais pas pensé), 居然 (figure-toi que…), 竟然 (idem, ton plus oral). Remarque : pour la mauvaise nouvelle — 太糟糕了 (c\'est nul), 真可惜 (quel dommage), 我替你难过 (je suis triste pour toi). Règle : réagir naturellement, c\'est ne pas rester scotché à 哦 (oh) ou 是吗 (ah bon).',
     bodyEn:
       'Beyond basic «真的吗？» (really?), B2 distinguishes nuances: 太好了 (great!), 真不错 (really nice), 难以置信 (unbelievable). For surprise: 没想到 (I wouldn\'t have thought), 居然 (would you believe…), 竟然 (same, more spoken). For bad news: 太糟糕了 (that sucks), 真可惜 (what a pity), 我替你难过 (I\'m sad for you). Reacting naturally means not getting stuck on 哦 (oh) or 是吗 (oh really).',
     items: [
@@ -1100,7 +1100,7 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Marquer l\'empathie sans tomber dans le pathos',
     titleEn: 'Show empathy without falling into pathos',
     body:
-      'Pour compatir : 我理解你 (je te comprends), 我能想象 (j\'imagine), 这真不容易 (c\'est vraiment dur). Pour encourager : 加油 (bon courage, omniprésent), 别灰心 (ne te décourage pas), 一切都会好的 (tout va s\'arranger). Pour clore poliment : 你保重 (prends soin de toi). Évite les phrases creuses comme 没事的 (« c\'est rien ») devant une vraie peine — perçu comme dismissif.',
+      'Pour compatir : 我理解你 (je te comprends), 我能想象 (j\'imagine), 这真不容易 (c\'est vraiment dur). Astuce : pour encourager — 加油 (bon courage, omniprésent), 别灰心 (ne te décourage pas), 一切都会好的 (tout va s\'arranger). Remarque : pour clore poliment — 你保重 (prends soin de toi). Attention : évite les phrases creuses comme 没事的 (« c\'est rien ») devant une vraie peine — perçu comme dismissif.',
     bodyEn:
       'To sympathize: 我理解你 (I get you), 我能想象 (I can imagine), 这真不容易 (that\'s really hard). To encourage: 加油 (chin up — ubiquitous), 别灰心 (don\'t lose heart), 一切都会好的 (it\'ll all work out). To close politely: 你保重 (take care). Avoid empty phrases like 没事的 («it\'s nothing») in front of real grief — feels dismissive.',
     items: [
@@ -1124,7 +1124,7 @@ export const b22ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Faire un compliment qui sonne vrai',
     titleEn: 'Make a compliment that sounds real',
     body:
-      'Compliments classiques : 你今天很漂亮 (tu es belle aujourd\'hui), 你的中文真好 (ton chinois est très bon), 这件衣服很适合你 (ce vêtement te va bien). Pour un travail : 你做得真棒 (très bien fait), 太厉害了 (impressionnant). Plus subtils : 你眼光真好 (tu as bon goût), 你考虑得很周到 (tu as bien pensé à tout). Évite la flatterie creuse — les Chinois la repèrent vite. Précise toujours CE QUI est bien.',
+      'Compliments classiques : 你今天很漂亮 (tu es belle aujourd\'hui), 你的中文真好 (ton chinois est très bon), 这件衣服很适合你 (ce vêtement te va bien). Astuce : pour un travail — 你做得真棒 (très bien fait), 太厉害了 (impressionnant). Plus subtils : 你眼光真好 (tu as bon goût), 你考虑得很周到 (tu as bien pensé à tout). Attention : évite la flatterie creuse — les Chinois la repèrent vite. Règle : précise toujours CE QUI est bien.',
     bodyEn:
       'Classic compliments: 你今天很漂亮 (you look beautiful today), 你的中文真好 (your Chinese is great), 这件衣服很适合你 (that outfit suits you). For work: 你做得真棒 (well done), 太厉害了 (impressive). Subtler: 你眼光真好 (you have good taste), 你考虑得很周到 (you thought of everything). Avoid hollow flattery — Chinese people spot it fast. Always specify WHAT is good.',
     items: [
@@ -1144,7 +1144,7 @@ export const b22ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Réponse polie à un compliment : 哪里哪里',
     titleEn: 'Polite response to a compliment: 哪里哪里',
     body:
-      'En Chine, accepter un compliment direct (« Merci ! ») peut sonner arrogant. Réponses traditionnelles : 哪里哪里 (litt. « où ça où ça » = mais non), 过奖了 (vous flattez trop), 您客气了 (vous êtes trop poli). Plus moderne : 谢谢，不过还差得远 (merci, mais je suis encore loin). Pour le chinois : 我还在学 (j\'apprends encore), 还差得远 (j\'ai encore beaucoup à faire). Cette modestie 谦虚 (qiānxū) est culturellement valorisée.',
+      'Attention : en Chine, accepter un compliment direct (« Merci ! ») peut sonner arrogant. Astuce : réponses traditionnelles — 哪里哪里 (litt. « où ça où ça » = mais non), 过奖了 (vous flattez trop), 您客气了 (vous êtes trop poli). Plus moderne : 谢谢，不过还差得远 (merci, mais je suis encore loin). Pour le chinois : 我还在学 (j\'apprends encore), 还差得远 (j\'ai encore beaucoup à faire). Remarque : cette modestie 谦虚 (qiānxū) est culturellement valorisée.',
     bodyEn:
       'In China, accepting a direct compliment («Thanks!») can sound arrogant. Traditional responses: 哪里哪里 (lit. «where where» = no no), 过奖了 (you flatter), 您客气了 (you\'re too polite). More modern: 谢谢，不过还差得远 (thanks, but I\'m still far). For Chinese: 我还在学 (I\'m still learning), 还差得远 (I have a long way to go). This modesty 谦虚 (qiānxū) is culturally valued.',
     items: [
@@ -1168,7 +1168,7 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Désaccord poli au quotidien (≠ débat)',
     titleEn: 'Polite everyday disagreement (≠ debate)',
     body:
-      'Différent du débat formel : ici on est entre amis ou collègues. Formules douces : 我觉得不一定 (je trouve que pas forcément), 嗯…我有点不同意 (hmm… je ne suis pas tout à fait d\'accord), 我倒觉得… (moi au contraire je pense que…). Pour proposer une alternative : 这样会不会更好？(comme ça ce serait peut-être mieux ?). Adoucir avec 不过 (mais — léger) plutôt que 但是 (mais — plus tranché).',
+      'Différent du débat formel : ici on est entre amis ou collègues. Astuce : formules douces — 我觉得不一定 (je trouve que pas forcément), 嗯…我有点不同意 (hmm… je ne suis pas tout à fait d\'accord), 我倒觉得… (moi au contraire je pense que…). Pour proposer une alternative : 这样会不会更好？(comme ça ce serait peut-être mieux ?). Règle : adoucir avec 不过 (mais — léger) plutôt que 但是 (mais — plus tranché).',
     bodyEn:
       'Different from formal debate: here you\'re among friends or colleagues. Gentle formulas: 我觉得不一定 (I don\'t think so necessarily), 嗯…我有点不同意 (hmm… I don\'t fully agree), 我倒觉得… (I rather think that…). To suggest an alternative: 这样会不会更好？(would this maybe be better?). Soften with 不过 (but — light) rather than 但是 (but — sharper).',
     items: [
@@ -1188,7 +1188,7 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'En milieu pro : nuancer sans froisser',
     titleEn: 'In a pro setting: qualify without offending',
     body:
-      'Au travail : 我有一个不同的看法 (j\'ai une vision différente), 我们可以再讨论一下 (on peut en rediscuter), 这个想法很有意思，但… (idée intéressante, mais…). Le fameux sandwich : compliment + réserve + ouverture. 您的方案非常好，我有一点小建议，您觉得呢？ Demander l\'avis de l\'autre à la fin (您觉得呢/你觉得呢) ouvre le dialogue plutôt que de fermer.',
+      'Au travail : 我有一个不同的看法 (j\'ai une vision différente), 我们可以再讨论一下 (on peut en rediscuter), 这个想法很有意思，但… (idée intéressante, mais…). Règle : le fameux sandwich — compliment + réserve + ouverture. 您的方案非常好，我有一点小建议，您觉得呢？ Astuce : demander l\'avis de l\'autre à la fin (您觉得呢/你觉得呢) ouvre le dialogue plutôt que de fermer.',
     bodyEn:
       'At work: 我有一个不同的看法 (I have a different view), 我们可以再讨论一下 (we can discuss further), 这个想法很有意思，但… (interesting idea, but…). The classic sandwich: compliment + reservation + opening. 您的方案非常好，我有一点小建议，您觉得呢？ Asking the other\'s opinion at the end (您觉得呢/你觉得呢) opens dialogue rather than closing.',
     items: [
@@ -1212,7 +1212,7 @@ export const b22ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Conversation téléphonique professionnelle',
     titleEn: 'Professional phone conversation',
     body:
-      'Décrocher : 喂，您好 (allô bonjour). Se présenter : 我是X公司的小王 (je suis Wang de l\'entreprise X). Demander : 请问 X 在吗 ? (excusez-moi, X est là ?). Si X absent : X 不在，您要留言吗？(X n\'est pas là, voulez-vous laisser un message ?). 请稍等 = un instant svp. 您打错了 = vous avez fait un faux numéro. Conclure : 不打扰您了 (je ne vous dérange plus), 再见 (au revoir). Au tél, on dit toujours 您 (vous), pas 你, en pro.',
+      'Décrocher : 喂，您好 (allô bonjour). Se présenter : 我是X公司的小王 (je suis Wang de l\'entreprise X). Demander : 请问 X 在吗 ? (excusez-moi, X est là ?). Remarque : si X absent — X 不在，您要留言吗？(X n\'est pas là, voulez-vous laisser un message ?). 请稍等 = un instant svp. 您打错了 = vous avez fait un faux numéro. Conclure : 不打扰您了 (je ne vous dérange plus), 再见 (au revoir). Règle : au tél en pro, on dit toujours 您 (vous), pas 你.',
     bodyEn:
       'Pick up: 喂，您好 (hello). Introduce: 我是X公司的小王 (I\'m Wang from company X). Ask: 请问 X 在吗 ? (excuse me, is X there?). If X absent: X 不在，您要留言吗？(X isn\'t here, want to leave a message?). 请稍等 = one moment. 您打错了 = wrong number. Close: 不打扰您了 (I\'ll let you go), 再见 (goodbye). On the phone, in a pro context, always 您 (formal you), not 你.',
     items: [
@@ -1232,7 +1232,7 @@ export const b22ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'WeChat pro : ton et formules',
     titleEn: 'Pro WeChat: tone and phrases',
     body:
-      'WeChat 微信 a remplacé l\'email pro en Chine. Démarrer poliment : 您好，方便聊一下吗？(bonjour, vous avez un instant ?), 抱歉打扰您 (désolé de vous déranger). Demander quelque chose : 麻烦您 + verbe (puis-je vous demander de…), 能否 + verbe (pourriez-vous…). Confirmer : 收到，谢谢 (bien reçu, merci). Clore : 辛苦了 (vous avez bien travaillé — quasi-obligatoire). Format vocal court (≤ 30s) accepté entre collègues, pas avec un client.',
+      'WeChat 微信 a remplacé l\'email pro en Chine. Astuce : démarrer poliment — 您好，方便聊一下吗？(bonjour, vous avez un instant ?), 抱歉打扰您 (désolé de vous déranger). Règle : pour demander quelque chose — 麻烦您 + verbe (puis-je vous demander de…), 能否 + verbe (pourriez-vous…). Confirmer : 收到，谢谢 (bien reçu, merci). Remarque : clore par 辛苦了 (vous avez bien travaillé — quasi-obligatoire). Attention : format vocal court (≤ 30s) accepté entre collègues, pas avec un client.',
     bodyEn:
       'WeChat 微信 has replaced pro email in China. Start politely: 您好，方便聊一下吗？(hi, do you have a moment?), 抱歉打扰您 (sorry to bother). Ask: 麻烦您 + verb (could I trouble you to…), 能否 + verb (could you…). Confirm: 收到，谢谢 (received, thanks). Close: 辛苦了 (you\'ve worked hard — almost mandatory). Short voice notes (≤ 30s) OK between colleagues, not with a client.',
     items: [
@@ -1256,7 +1256,7 @@ export const b22ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Annoncer une mauvaise nouvelle',
     titleEn: 'Deliver bad news',
     body:
-      'Préparer le terrain : 我有件事要告诉你… (j\'ai quelque chose à te dire…), 我不知道怎么说… (je ne sais pas comment dire…), 你要做好心理准备 (prépare-toi mentalement). La nouvelle : 出事了 (il y a eu un problème), 计划取消了 (le plan est annulé), 项目失败了 (le projet a échoué). Adoucir avec 不太顺利 (pas très bien) plutôt que 失败 (échec) si possible. Toujours suivre par une issue ou une suite : 但是我们可以…',
+      'Astuce : préparer le terrain — 我有件事要告诉你… (j\'ai quelque chose à te dire…), 我不知道怎么说… (je ne sais pas comment dire…), 你要做好心理准备 (prépare-toi mentalement). La nouvelle : 出事了 (il y a eu un problème), 计划取消了 (le plan est annulé), 项目失败了 (le projet a échoué). Remarque : adoucir avec 不太顺利 (pas très bien) plutôt que 失败 (échec) si possible. Règle : toujours suivre par une issue ou une suite. 但是我们可以…',
     bodyEn:
       'Prepare the ground: 我有件事要告诉你… (I have something to tell you…), 我不知道怎么说… (I don\'t know how to say it…), 你要做好心理准备 (mentally prepare). The news: 出事了 (something happened), 计划取消了 (plan canceled), 项目失败了 (project failed). Soften with 不太顺利 (not going great) rather than 失败 (failure) when possible. Always follow with a path forward: 但是我们可以…',
     items: [
@@ -1276,7 +1276,7 @@ export const b22ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Présenter ses excuses : graduations',
     titleEn: 'Apologize: gradations',
     body:
-      'Léger : 不好意思 (excuse-moi, oral le plus commun), 抱歉 (désolé, plus écrit). Moyen : 对不起 (je suis désolé, sincère). Fort : 真的对不起 (vraiment désolé), 非常抱歉 (extrêmement désolé). Très fort : 我向您道歉 (je vous présente mes excuses, formel), 我错了 (j\'ai eu tort). Suivre par une raison brève + remède : 因为堵车，我会赶紧过来 = cause + action corrective. Excuse sans suite = perçue comme légère.',
+      'Léger : 不好意思 (excuse-moi, oral le plus commun), 抱歉 (désolé, plus écrit). Moyen : 对不起 (je suis désolé, sincère). Fort : 真的对不起 (vraiment désolé), 非常抱歉 (extrêmement désolé). Très fort : 我向您道歉 (je vous présente mes excuses, formel), 我错了 (j\'ai eu tort). Règle : suivre par une raison brève + remède. 因为堵车，我会赶紧过来 = cause + action corrective. Attention : excuse sans suite = perçue comme légère.',
     bodyEn:
       'Light: 不好意思 (excuse me, most common in speech), 抱歉 (sorry, more written). Medium: 对不起 (I\'m sorry, sincere). Strong: 真的对不起 (truly sorry), 非常抱歉 (extremely sorry). Very strong: 我向您道歉 (I apologize to you, formal), 我错了 (I was wrong). Follow with a brief reason + fix: 因为堵车，我会赶紧过来 = cause + corrective action. Apology without follow-up = feels light.',
     items: [
@@ -1300,7 +1300,7 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Rapporter une discussion : 说 / 告诉 / 问',
     titleEn: 'Report a discussion: 说 / 告诉 / 问',
     body:
-      'Discours indirect en chinois : pas de concordance des temps comme en français/anglais. 他说他明天来 = il a dit qu\'il viendrait demain (litt. « il dit il demain venir »). Verbes de parole : 说 (dire — neutre), 告诉 X (dire à X), 问 (demander), 回答 (répondre). 他告诉我他不能来 = il m\'a dit qu\'il ne pouvait pas venir. Pour rapporter une question, garder l\'ordre interrogatif : 他问我什么时候去 (il m\'a demandé quand j\'y allais).',
+      'RÈGLE D\'OR : discours indirect en chinois — pas de concordance des temps comme en français/anglais. 他说他明天来 = il a dit qu\'il viendrait demain (litt. « il dit il demain venir »). Verbes de parole : 说 (dire — neutre), 告诉 X (dire à X), 问 (demander), 回答 (répondre). 他告诉我他不能来 = il m\'a dit qu\'il ne pouvait pas venir. Remarque : pour rapporter une question, garder l\'ordre interrogatif. 他问我什么时候去 (il m\'a demandé quand j\'y allais).',
     bodyEn:
       'Indirect speech in Chinese: no tense agreement like French/English. 他说他明天来 = he said he\'d come tomorrow (lit. «he says he tomorrow come»). Speaking verbs: 说 (say — neutral), 告诉 X (tell X), 问 (ask), 回答 (reply). 他告诉我他不能来 = he told me he couldn\'t come. To report a question, keep the interrogative order: 他问我什么时候去 (he asked me when I\'d go).',
     items: [
@@ -1320,7 +1320,7 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Rapporter une rumeur ou une information indirecte',
     titleEn: 'Report a rumor or indirect information',
     body:
-      'Distance énonciative : 据说 (jùshuō, on dit que…), 听说 (tīngshuō, j\'ai entendu dire), 大家都说 (tout le monde dit), 有人说 (quelqu\'un a dit). 据说他要换工作 = on raconte qu\'il va changer de boulot. Pour relativiser : 不知道是不是真的 (je ne sais pas si c\'est vrai), 据说而已 (c\'est juste une rumeur). 听说 est plus personnel (je l\'ai entendu), 据说 plus distant (la rumeur dit). Très utilisés à l\'oral chinois pour ne pas s\'engager personnellement.',
+      'Distance énonciative : 据说 (jùshuō, on dit que…), 听说 (tīngshuō, j\'ai entendu dire), 大家都说 (tout le monde dit), 有人说 (quelqu\'un a dit). 据说他要换工作 = on raconte qu\'il va changer de boulot. Astuce : pour relativiser — 不知道是不是真的 (je ne sais pas si c\'est vrai), 据说而已 (c\'est juste une rumeur). Règle : 听说 est plus personnel (je l\'ai entendu), 据说 plus distant (la rumeur dit). Remarque : très utilisés à l\'oral chinois pour ne pas s\'engager personnellement.',
     bodyEn:
       'Speaker distance: 据说 (jùshuō, it\'s said), 听说 (tīngshuō, I heard), 大家都说 (everyone says), 有人说 (someone said). 据说他要换工作 = the word is he\'s changing jobs. To qualify: 不知道是不是真的 (don\'t know if it\'s true), 据说而已 (just a rumor). 听说 is more personal (I heard), 据说 more distant (the rumor says). Heavily used in spoken Chinese to avoid personal commitment.',
     items: [
@@ -1344,7 +1344,7 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Clore une conversation sans la couper',
     titleEn: 'Close a conversation without cutting it',
     body:
-      'Préparer la sortie : 那好 (bon alors), 那这样吧 (eh bien comme ça), 嗯…那我先… (bon… alors je vais…). Annoncer la sortie : 我得走了 (je dois y aller), 时间不早了 (il se fait tard), 还有事要办 (j\'ai des choses à faire). Prendre congé chaleureusement : 改天再聊 (on en reparle un autre jour), 保持联系 (on garde contact), 路上小心 (fais attention sur la route). Une sortie brutale (« 拜拜！») est perçue comme froide.',
+      'Astuce : préparer la sortie — 那好 (bon alors), 那这样吧 (eh bien comme ça), 嗯…那我先… (bon… alors je vais…). Annoncer la sortie : 我得走了 (je dois y aller), 时间不早了 (il se fait tard), 还有事要办 (j\'ai des choses à faire). Remarque : prendre congé chaleureusement — 改天再聊 (on en reparle un autre jour), 保持联系 (on garde contact), 路上小心 (fais attention sur la route). Attention : une sortie brutale (« 拜拜！») est perçue comme froide.',
     bodyEn:
       'Prepare the exit: 那好 (well then), 那这样吧 (let\'s do that), 嗯…那我先… (well… so I\'ll first…). Announce the exit: 我得走了 (I need to go), 时间不早了 (it\'s getting late), 还有事要办 (I have things to do). Warmly take leave: 改天再聊 (let\'s chat another day), 保持联系 (stay in touch), 路上小心 (be safe on the way). A blunt exit («拜拜！») feels cold.',
     items: [
@@ -1364,7 +1364,7 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Remercier en profondeur',
     titleEn: 'Thank deeply',
     body:
-      'Au-delà de 谢谢 : 太感谢你了 (merci infiniment), 谢谢你的帮助 (merci pour ton aide — précise CE pour quoi), 真不知道怎么感谢你 (je ne sais comment te remercier). Très soutenu : 万分感谢 (mille fois merci), 不胜感激 (extrêmement reconnaissant — écrit). Si l\'autre minimise (« 不客气 » = pas de quoi), tu peux insister : 真的，不是客气话 (vraiment, je ne dis pas ça par politesse). En Chine, exprimer la gratitude SPÉCIFIQUE (« merci d\'avoir fait X ») est plus fort qu\'un simple 谢谢.',
+      'Au-delà de 谢谢 : 太感谢你了 (merci infiniment), 谢谢你的帮助 (merci pour ton aide — précise CE pour quoi), 真不知道怎么感谢你 (je ne sais comment te remercier). Astuce : très soutenu — 万分感谢 (mille fois merci), 不胜感激 (extrêmement reconnaissant — écrit). Remarque : si l\'autre minimise (« 不客气 » = pas de quoi), tu peux insister. 真的，不是客气话 (vraiment, je ne dis pas ça par politesse). Règle : en Chine, exprimer la gratitude SPÉCIFIQUE (« merci d\'avoir fait X ») est plus fort qu\'un simple 谢谢.',
     bodyEn:
       'Beyond 谢谢: 太感谢你了 (thanks so much), 谢谢你的帮助 (thanks for your help — specify FOR WHAT), 真不知道怎么感谢你 (I don\'t know how to thank you). Very formal: 万分感谢 (a thousand thanks), 不胜感激 (extremely grateful — written). If the other minimizes («不客气» = no problem), you can insist: 真的，不是客气话 (truly, not just being polite). In China, SPECIFIC gratitude («thanks for doing X») is stronger than a simple 谢谢.',
     items: [
@@ -1390,7 +1390,7 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '觉得 vs 认为 — l\'opinion subjective vs raisonnée',
     titleEn: '觉得 vs 认为 — subjective vs reasoned opinion',
     body:
-      '觉得 (juéde, ressentir/trouver) : opinion subjective, intuition, sensation. 我觉得这个菜很好吃 = je trouve ce plat bon (sensation perso). 认为 (rènwéi, considérer/penser que) : opinion raisonnée, conviction réfléchie. 我认为这个政策不公平 = j\'estime que cette politique n\'est pas juste (jugement). Règle simple : 觉得 = goût/sensation/intuition ; 认为 = jugement/analyse/conclusion. Dans un essai ou débat formel, préfère 认为. Au quotidien, 觉得 est plus naturel.',
+      '觉得 (juéde, ressentir/trouver) : opinion subjective, intuition, sensation. 我觉得这个菜很好吃 = je trouve ce plat bon (sensation perso). 认为 (rènwéi, considérer/penser que) : opinion raisonnée, conviction réfléchie. 我认为这个政策不公平 = j\'estime que cette politique n\'est pas juste (jugement). RÈGLE D\'OR : 觉得 = goût/sensation/intuition, 认为 = jugement/analyse/conclusion. Astuce : dans un essai ou débat formel, préfère 认为. Au quotidien, 觉得 est plus naturel.',
     bodyEn:
       '觉得 (juéde, feel/find) : subjective opinion, intuition, sensation. 我觉得这个菜很好吃 = I find this dish tasty (personal sense). 认为 (rènwéi, consider/think) : reasoned opinion, considered conviction. 我认为这个政策不公平 = I judge this policy unfair (judgment). Simple rule : 觉得 = taste/sensation/intuition ; 认为 = judgment/analysis/conclusion. In an essay or formal debate, prefer 认为. In daily life, 觉得 is more natural.',
     items: [
@@ -1410,7 +1410,7 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '以为 — l\'erreur d\'appréciation rétrospective',
     titleEn: '以为 — the retrospective mistaken belief',
     body:
-      '以为 (yǐwéi, croire à tort) implique TOUJOURS que la croyance s\'est révélée fausse. C\'est un piège sémantique total pour les francophones. 我以为他会来 = je croyais qu\'il viendrait (et il n\'est pas venu — la croyance était fausse). On ne peut pas dire « 我以为这是真的 » si c\'est effectivement vrai. Si la croyance est vérifiée → 我觉得 ou 我认为. 以为 = « je croyais (à tort) ». Souvent suivi d\'une révélation : 我以为今天没课，结果有 = je croyais qu\'il n\'y avait pas cours, en fait il y en a.',
+      'RÈGLE D\'OR : 以为 (yǐwéi, croire à tort) implique TOUJOURS que la croyance s\'est révélée fausse. Attention : c\'est un piège sémantique total pour les francophones. 我以为他会来 = je croyais qu\'il viendrait (et il n\'est pas venu — la croyance était fausse). On ne peut pas dire « 我以为这是真的 » si c\'est effectivement vrai. Règle : si la croyance est vérifiée → 我觉得 ou 我认为. 以为 = « je croyais (à tort) ». Remarque : souvent suivi d\'une révélation. 我以为今天没课，结果有 = je croyais qu\'il n\'y avait pas cours, en fait il y en a.',
     bodyEn:
       '以为 (yǐwéi, mistakenly believe) ALWAYS implies the belief turned out false. A total semantic trap for English speakers. 我以为他会来 = I thought he\'d come (and he didn\'t — belief was wrong). You CANNOT say «我以为这是真的» if it\'s actually true. If belief is verified → 我觉得 or 我认为. 以为 = «I (mistakenly) thought». Often followed by a reveal : 我以为今天没课，结果有 = I thought there was no class today, turns out there is.',
     items: [
@@ -1434,7 +1434,7 @@ export const b22NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '必须 vs 一定 — obligation externe vs certitude',
     titleEn: '必须 vs 一定 — external obligation vs certainty',
     body:
-      '必须 (bìxū) = obligation EXTERNE, règle, devoir. 你必须按时到 = tu dois arriver à l\'heure (règle imposée). 一定 (yídìng) = certitude/insistance personnelle. 你一定要来 = tu dois absolument venir (insistance affective). Différence radicale : 必须 = la règle l\'exige ; 一定 = je tiens à ce que ça arrive. Pour le verbe « devoir » au sens « il est très probable que », on utilise aussi 一定 : 他一定到了 = il est sûrement arrivé.',
+      'Règle : 必须 (bìxū) = obligation EXTERNE, règle, devoir. 你必须按时到 = tu dois arriver à l\'heure (règle imposée). Règle : 一定 (yídìng) = certitude/insistance personnelle. 你一定要来 = tu dois absolument venir (insistance affective). RÈGLE D\'OR : 必须 = la règle l\'exige, 一定 = je tiens à ce que ça arrive. Remarque : pour le verbe « devoir » au sens « il est très probable que », on utilise aussi 一定. 他一定到了 = il est sûrement arrivé.',
     bodyEn:
       '必须 (bìxū) = EXTERNAL obligation, rule, duty. 你必须按时到 = you must arrive on time (imposed rule). 一定 (yídìng) = certainty/personal insistence. 你一定要来 = you absolutely must come (affective insistence). Radical difference : 必须 = the rule demands it ; 一定 = I insist on it happening. For «must» as «very likely», also 一定 : 他一定到了 = he must have arrived.',
     items: [
@@ -1454,7 +1454,7 @@ export const b22NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '应该 vs 得 — devoir moral vs nécessité oral',
     titleEn: '应该 vs 得 — moral should vs spoken need',
     body:
-      '应该 (yīnggāi) = devrait, recommandation morale. 你应该多休息 = tu devrais te reposer plus (conseil). 得 (děi, prononcé děi en sens d\'obligation) = devoir oral, nécessité concrète. 我得走了 = je dois y aller (urgent, pratique). 得 est strictement oral, jamais à l\'écrit formel. Hierarchy obligation : 应该 (devrait) < 得 (oral, nécessité) < 一定要 (insistant) < 必须 (règle) < 不得不 (forcé contre son gré).',
+      '应该 (yīnggāi) = devrait, recommandation morale. 你应该多休息 = tu devrais te reposer plus (conseil). 得 (děi, prononcé děi en sens d\'obligation) = devoir oral, nécessité concrète. 我得走了 = je dois y aller (urgent, pratique). Attention : 得 est strictement oral, jamais à l\'écrit formel. RÈGLE D\'OR : hiérarchie obligation 应该 (devrait) < 得 (oral, nécessité) < 一定要 (insistant) < 必须 (règle) < 不得不 (forcé contre son gré).',
     bodyEn:
       '应该 (yīnggāi) = should, moral recommendation. 你应该多休息 = you should rest more (advice). 得 (děi, pronounced děi when meaning obligation) = spoken duty, concrete necessity. 我得走了 = I gotta go (urgent, practical). 得 is strictly spoken, never formal writing. Hierarchy of obligation : 应该 (should) < 得 (oral, need) < 一定要 (insistent) < 必须 (rule) < 不得不 (forced against will).',
     items: [
@@ -1478,7 +1478,7 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '已经 vs 都 — accomplissement objectif vs étonnement',
     titleEn: '已经 vs 都 — objective completion vs surprise',
     body:
-      '已经 (yǐjīng, déjà) = constat factuel d\'accomplissement. 我已经吃了 = j\'ai déjà mangé (fait). 都 (dōu, déjà — emphatique) = surprise, exclamation, souvent avec un chiffre. 都十二点了，快睡吧 = il est DÉJÀ minuit, va te coucher ! Subtilité : 都 souligne « tant que ça ! » avec étonnement, 已经 reste neutre. 他都八十了 = il a déjà 80 ans (waouh !). 他已经八十了 = il a 80 ans (info).',
+      'Règle : 已经 (yǐjīng, déjà) = constat factuel d\'accomplissement. 我已经吃了 = j\'ai déjà mangé (fait). Règle : 都 (dōu, déjà — emphatique) = surprise, exclamation, souvent avec un chiffre. 都十二点了，快睡吧 = il est DÉJÀ minuit, va te coucher ! Astuce : 都 souligne « tant que ça ! » avec étonnement, 已经 reste neutre. 他都八十了 = il a déjà 80 ans (waouh !). 他已经八十了 = il a 80 ans (info).',
     bodyEn:
       '已经 (yǐjīng, already) = factual statement of completion. 我已经吃了 = I\'ve already eaten (fact). 都 (dōu, already — emphatic) = surprise, exclamation, often with a number. 都十二点了，快睡吧 = it\'s ALREADY midnight, go to bed! Subtlety : 都 emphasizes «that much already!» with surprise, 已经 stays neutral. 他都八十了 = he\'s already 80 (wow!). 他已经八十了 = he\'s 80 (info).',
     items: [
@@ -1498,7 +1498,7 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '早已 / 老早 — depuis longtemps déjà',
     titleEn: '早已 / 老早 — already long ago',
     body:
-      '早已 (zǎoyǐ) = depuis longtemps déjà, formel et écrit. 这件事我早已忘了 = cette affaire, je l\'ai oubliée depuis longtemps. 老早 (lǎozǎo) = même sens, mais oral et expressif. 我老早就跟你说过 = je te l\'avais dit il y a longtemps déjà. Différence avec 已经 : 早已/老早 ajoute la profondeur temporelle (« cela fait LONGTEMPS que »). Souvent suivis de 就 : 早已就… / 老早就…',
+      '早已 (zǎoyǐ) = depuis longtemps déjà, formel et écrit. 这件事我早已忘了 = cette affaire, je l\'ai oubliée depuis longtemps. 老早 (lǎozǎo) = même sens, mais oral et expressif. 我老早就跟你说过 = je te l\'avais dit il y a longtemps déjà. Règle : différence avec 已经 — 早已/老早 ajoute la profondeur temporelle (« cela fait LONGTEMPS que »). Remarque : souvent suivis de 就. 早已就… / 老早就…',
     bodyEn:
       '早已 (zǎoyǐ) = already long ago, formal and written. 这件事我早已忘了 = I forgot about this long ago. 老早 (lǎozǎo) = same sense but spoken and expressive. 我老早就跟你说过 = I told you long ago. Difference from 已经 : 早已/老早 add temporal depth («for a LONG TIME now»). Often followed by 就 : 早已就… / 老早就…',
     items: [
@@ -1522,7 +1522,7 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '突然 vs 忽然 — soudaineté objective vs vécue',
     titleEn: '突然 vs 忽然 — objective vs experienced suddenness',
     body:
-      '突然 (tūrán, soudain) : peut être adjectif ET adverbe. Décrit un événement objectivement abrupt. 一个突然的决定 = une décision soudaine. 他突然来了 = il est venu soudainement. 忽然 (hūrán, tout à coup) : uniquement adverbe. Souligne le vécu subjectif de la surprise. 我忽然想起 = ça m\'est revenu d\'un coup. Si tu peux dire « brusquement » → 突然. Si « soudain je… » → 忽然 marche mieux.',
+      'Règle : 突然 (tūrán, soudain) — peut être adjectif ET adverbe. Décrit un événement objectivement abrupt. 一个突然的决定 = une décision soudaine. 他突然来了 = il est venu soudainement. Règle : 忽然 (hūrán, tout à coup) — uniquement adverbe. Souligne le vécu subjectif de la surprise. 我忽然想起 = ça m\'est revenu d\'un coup. Astuce : si tu peux dire « brusquement » → 突然. Si « soudain je… » → 忽然 marche mieux.',
     bodyEn:
       '突然 (tūrán, sudden) : can be adjective AND adverb. Describes an objectively abrupt event. 一个突然的决定 = a sudden decision. 他突然来了 = he came suddenly. 忽然 (hūrán, all of a sudden) : adverb only. Stresses the subjective experience of surprise. 我忽然想起 = it suddenly came back to me. If you can say «abruptly» → 突然. If «suddenly I…» → 忽然 fits better.',
     items: [
@@ -1542,7 +1542,7 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '一下子 — la soudaineté instantanée et complète',
     titleEn: '一下子 — instant complete suddenness',
     body:
-      '一下子 (yíxiàzi, d\'un coup, en un instant) : marque la rapidité absolue + le résultat complet. 一下子就明白了 = j\'ai tout compris d\'un coup. 一下子下了大雨 = il s\'est mis à pleuvoir des cordes d\'un coup. Différence avec 突然/忽然 : 一下子 ajoute la complétude (« en une fraction de seconde, tout est fait »). Synonyme oral fréquent : 一下 (sans 子). À ne pas confondre avec 一下 (« un peu », classifier verbal) : 看一下 = regarde un peu.',
+      'Règle : 一下子 (yíxiàzi, d\'un coup, en un instant) marque la rapidité absolue + le résultat complet. 一下子就明白了 = j\'ai tout compris d\'un coup. 一下子下了大雨 = il s\'est mis à pleuvoir des cordes d\'un coup. Remarque : différence avec 突然/忽然 — 一下子 ajoute la complétude (« en une fraction de seconde, tout est fait »). Astuce : synonyme oral fréquent 一下 (sans 子). Attention : à ne pas confondre avec 一下 (« un peu », classifier verbal). 看一下 = regarde un peu.',
     bodyEn:
       '一下子 (yíxiàzi, in one go, in a flash) : marks absolute speed + complete result. 一下子就明白了 = I got it all in a flash. 一下子下了大雨 = it suddenly poured. Difference from 突然/忽然 : 一下子 adds completeness («in a split second, all done»). Common spoken synonym : 一下 (without 子). Don\'t confuse with 一下 («a bit», verbal classifier) : 看一下 = take a quick look.',
     items: [
@@ -1566,7 +1566,7 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '大约 vs 大概 — approximation chiffrée vs hypothèse',
     titleEn: '大约 vs 大概 — numeric approximation vs hypothesis',
     body:
-      '大约 (dàyuē, environ) = approximation NUMÉRIQUE/temporelle. 大约二十个人 = environ 20 personnes. 大约三点 = vers 15h. Toujours suivi d\'une quantité ou d\'une heure. 大概 (dàgài, probablement) = hypothèse, supposition. 他大概不会来 = il ne viendra probablement pas. Aussi : 大概的内容 = le contenu en gros. Différence : 大约 = combien ? (chiffre), 大概 = est-ce que ? (probabilité). Confusion fréquente chez les francophones.',
+      'Règle : 大约 (dàyuē, environ) = approximation NUMÉRIQUE/temporelle. 大约二十个人 = environ 20 personnes. 大约三点 = vers 15h. Règle : toujours suivi d\'une quantité ou d\'une heure. Règle : 大概 (dàgài, probablement) = hypothèse, supposition. 他大概不会来 = il ne viendra probablement pas. Aussi : 大概的内容 = le contenu en gros. RÈGLE D\'OR : 大约 = combien ? (chiffre), 大概 = est-ce que ? (probabilité). Attention : confusion fréquente chez les francophones.',
     bodyEn:
       '大约 (dàyuē, about) = NUMERIC/temporal approximation. 大约二十个人 = about 20 people. 大约三点 = around 3pm. Always followed by quantity or time. 大概 (dàgài, probably) = hypothesis, supposition. 他大概不会来 = he probably won\'t come. Also : 大概的内容 = the gist. Difference : 大约 = how many? (number), 大概 = is it? (probability). Frequent French speaker confusion.',
     items: [
@@ -1586,7 +1586,7 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '差不多 — l\'approximation idiomatique chinoise',
     titleEn: '差不多 — the idiomatic Chinese approximation',
     body:
-      '差不多 (chàbuduō, presque, à peu près) : signature culturelle chinoise. Sens premier : « il manque pas grand-chose » = presque pareil. Couvre 3 emplois : (1) similarité : 这两个差不多 = c\'est presque pareil. (2) approximation : 差不多十块 = environ 10 yuans. (3) suffisance : 差不多了，可以了 = c\'est bon comme ça. Lin Yutang en a fait un trait national : le Chinois préfère le 差不多 au précis absolu. Très utile à l\'oral, à éviter en pro où on attend du précis.',
+      '差不多 (chàbuduō, presque, à peu près) : signature culturelle chinoise. Sens premier : « il manque pas grand-chose » = presque pareil. Règle : couvre 3 emplois — (1) similarité — 这两个差不多 = c\'est presque pareil ; (2) approximation — 差不多十块 = environ 10 yuans ; (3) suffisance — 差不多了，可以了 = c\'est bon comme ça. Remarque : Lin Yutang en a fait un trait national, le Chinois préfère le 差不多 au précis absolu. Attention : très utile à l\'oral, à éviter en pro où on attend du précis.',
     bodyEn:
       '差不多 (chàbuduō, almost, about) : a Chinese cultural signature. Primary sense : «not much missing» = almost the same. Covers 3 uses : (1) similarity : 这两个差不多 = these two are about the same. (2) approximation : 差不多十块 = about 10 yuan. (3) sufficiency : 差不多了，可以了 = good enough, OK. Lin Yutang made it a national trait : Chinese prefer 差不多 to absolute precision. Very useful in speech, avoid in pro where precision is expected.',
     items: [
@@ -1610,7 +1610,7 @@ export const b22NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '看 vs 见 — l\'action vs le résultat de voir',
     titleEn: '看 vs 见 — action vs result of seeing',
     body:
-      '看 (kàn) = ACTION de regarder, processus volontaire. 我在看电视 = je regarde la télé. 看 implique la durée, l\'intention. 见 (jiàn) = RÉSULTAT de voir, perception accomplie. 见 ne s\'utilise quasiment jamais seul à l\'oral moderne — sauf en compositions : 看见 (avoir vu — résultat), 见到 (voir, croiser quelqu\'un), 见面 (se rencontrer). Distinction française : 看 = « regarder », 见 = « voir » (résultat). 我看了，但没看见 = j\'ai regardé mais je n\'ai rien vu.',
+      'RÈGLE D\'OR : 看 (kàn) = ACTION de regarder, processus volontaire. 我在看电视 = je regarde la télé. Règle : 看 implique la durée, l\'intention. RÈGLE D\'OR : 见 (jiàn) = RÉSULTAT de voir, perception accomplie. Attention : 见 ne s\'utilise quasiment jamais seul à l\'oral moderne — sauf en compositions 看见 (avoir vu — résultat), 见到 (voir, croiser quelqu\'un), 见面 (se rencontrer). Astuce : distinction française 看 = « regarder », 见 = « voir » (résultat). 我看了，但没看见 = j\'ai regardé mais je n\'ai rien vu.',
     bodyEn:
       '看 (kàn) = ACTION of looking, voluntary process. 我在看电视 = I\'m watching TV. 看 implies duration, intention. 见 (jiàn) = RESULT of seeing, completed perception. 见 is almost never used alone in modern speech — only in compositions : 看见 (saw — result), 见到 (see, run into someone), 见面 (meet). English distinction : 看 = «look at», 见 = «see» (result). 我看了，但没看见 = I looked but didn\'t see anything.',
     items: [
@@ -1630,7 +1630,7 @@ export const b22NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '见到 vs 遇见 — voir un connu vs rencontre fortuite',
     titleEn: '见到 vs 遇见 — seeing the known vs chance encounter',
     body:
-      '见到 (jiàndào) = voir/croiser, neutre. Peut être planifié ou non. 我今天见到了老师 = j\'ai vu le prof aujourd\'hui. 遇见 (yùjiàn) ou 碰见 (pèngjiàn) = rencontre FORTUITE, hasard. 我在街上遇见了他 = je l\'ai croisé par hasard dans la rue. 遇 / 碰 contiennent l\'idée du hasard. Pour une rencontre planifiée (rdv), utilise 见 ou 见面. Différence majeure : 见到 = factuel, 遇见 = soulignement du hasard.',
+      'Règle : 见到 (jiàndào) = voir/croiser, neutre. Peut être planifié ou non. 我今天见到了老师 = j\'ai vu le prof aujourd\'hui. Règle : 遇见 (yùjiàn) ou 碰见 (pèngjiàn) = rencontre FORTUITE, hasard. 我在街上遇见了他 = je l\'ai croisé par hasard dans la rue. Astuce : 遇 / 碰 contiennent l\'idée du hasard. Remarque : pour une rencontre planifiée (rdv), utilise 见 ou 见面. RÈGLE D\'OR : 见到 = factuel, 遇见 = soulignement du hasard.',
     bodyEn:
       '见到 (jiàndào) = see/run into, neutral. Can be planned or not. 我今天见到了老师 = I saw the teacher today. 遇见 (yùjiàn) or 碰见 (pèngjiàn) = CHANCE encounter, randomness. 我在街上遇见了他 = I bumped into him in the street. 遇 / 碰 carry the chance idea. For a planned meeting (appointment), use 见 or 见面. Key difference : 见到 = factual, 遇见 = highlights the randomness.',
     items: [
@@ -1654,7 +1654,7 @@ export const b22NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '帮助 vs 帮忙 — aide objet vs aide service',
     titleEn: '帮助 vs 帮忙 — object help vs service help',
     body:
-      '帮助 (bāngzhù) = aide, peut être nom OU verbe. Suivie d\'un objet direct : 我帮助他 = je l\'aide. Plus écrit, plus formel. 帮忙 (bāngmáng) = donner un coup de main. Verbe SÉPARABLE : on dit 帮我一个忙 (rends-moi un service), 帮你的忙 (te donner un coup de main). Plus oral, plus situationnel. La différence est ENTRE l\'aide-concept (帮助) et l\'aide-service ponctuel (帮忙). 我需要你的帮助 = j\'ai besoin de ton aide (général). 我需要你帮忙 = j\'ai besoin que tu m\'aides (maintenant, sur ce truc).',
+      'Règle : 帮助 (bāngzhù) = aide, peut être nom OU verbe. Suivie d\'un objet direct. 我帮助他 = je l\'aide. Plus écrit, plus formel. RÈGLE D\'OR : 帮忙 (bāngmáng) = donner un coup de main. Verbe SÉPARABLE — on dit 帮我一个忙 (rends-moi un service), 帮你的忙 (te donner un coup de main). Remarque : plus oral, plus situationnel. Astuce : la différence est ENTRE l\'aide-concept (帮助) et l\'aide-service ponctuel (帮忙). 我需要你的帮助 = j\'ai besoin de ton aide (général). 我需要你帮忙 = j\'ai besoin que tu m\'aides (maintenant, sur ce truc).',
     bodyEn:
       '帮助 (bāngzhù) = help, can be NOUN or VERB. Followed by direct object : 我帮助他 = I help him. More written, more formal. 帮忙 (bāngmáng) = give a hand. SEPARABLE verb : say 帮我一个忙 (do me a favor), 帮你的忙 (give you a hand). More spoken, more situational. The difference is BETWEEN help-as-concept (帮助) and help-as-specific-service (帮忙). 我需要你的帮助 = I need your help (general). 我需要你帮忙 = I need you to help me (now, on this).',
     items: [
@@ -1674,7 +1674,7 @@ export const b22NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '协助 — l\'aide professionnelle ou collaborative',
     titleEn: '协助 — professional or collaborative help',
     body:
-      '协助 (xiézhù) = assister, collaborer. Très formel, contexte professionnel. Implique un rapport hiérarchique ou collaboratif structuré : 协助经理 = assister le manager. 警方协助调查 = la police assiste à l\'enquête. JAMAIS entre amis (« 协助你买菜 » sonnerait absurde, dis 帮你). À retenir : 协 contient l\'idée de COLLABORATION coordonnée. Synonymes voisins : 配合 (coopérer en suivant le plan d\'autrui), 合作 (collaborer en partenariat).',
+      'Règle : 协助 (xiézhù) = assister, collaborer. Très formel, contexte professionnel. Remarque : implique un rapport hiérarchique ou collaboratif structuré. 协助经理 = assister le manager. 警方协助调查 = la police assiste à l\'enquête. Attention : JAMAIS entre amis (« 协助你买菜 » sonnerait absurde, dis 帮你). Astuce : 协 contient l\'idée de COLLABORATION coordonnée. Remarque : synonymes voisins — 配合 (coopérer en suivant le plan d\'autrui), 合作 (collaborer en partenariat).',
     bodyEn:
       '协助 (xiézhù) = assist, collaborate. Very formal, pro context. Implies a hierarchical or structured collaborative relationship : 协助经理 = assist the manager. 警方协助调查 = police assist the investigation. NEVER between friends («协助你买菜» would sound absurd, say 帮你). Remember : 协 carries the idea of coordinated COLLABORATION. Close synonyms : 配合 (cooperate by following another\'s plan), 合作 (collaborate as partners).',
     items: [

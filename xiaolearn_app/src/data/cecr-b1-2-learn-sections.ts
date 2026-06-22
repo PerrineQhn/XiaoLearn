@@ -20,7 +20,7 @@ export const b12BuLearnSections: LessonV2LearnSection[] = [
     title: '不 = refus subjectif / habitude / futur',
     titleEn: '不 = subjective refusal / habit / future',
     body:
-      '不 (bù) nie ce qui relève de la VOLONTÉ ou du général : un goût (我不吃肉), un choix (我不去), une qualité (她不漂亮), un futur (明天我不来). Il se place directement devant le verbe ou l\'adjectif. Pour les modaux — 能, 会, 可以, 想 — 不 est obligatoire : 没能/没会 n\'existent pas. Retiens : 不 = non subjectif ; 没 viendra pour le fait accompli non réalisé.',
+      'RÈGLE D\'OR : 不 (bù) nie ce qui relève de la VOLONTÉ ou du général : un goût (我不吃肉), un choix (我不去), une qualité (她不漂亮), un futur (明天我不来). Règle : il se place directement devant le verbe ou l\'adjectif. Attention : pour les modaux — 能, 会, 可以, 想 — 不 est obligatoire, 没能/没会 n\'existent pas. Astuce : 不 = non subjectif ; 没 viendra pour le fait accompli non réalisé.',
     bodyEn:
       '不 (bù) negates matters of WILL or general fact: a taste (我不吃肉), a choice (我不去), a quality (她不漂亮), a future (明天我不来). It sits directly before the verb/adjective. For modals — 能, 会, 可以, 想 — 不 is mandatory: 没能/没会 don\'t exist. Remember: 不 = subjective no; 没 handles unaccomplished facts.',
     items: [
@@ -45,7 +45,7 @@ export const b12MeiLearnSections: LessonV2LearnSection[] = [
     title: '没 = fait non accompli ou possession zéro',
     titleEn: '没 = unaccomplished fact or zero possession',
     body:
-      '没 (méi) — forme longue 没有 — nie un FAIT : (1) action qui ne s\'est pas produite (我没吃饭 = je n\'ai pas mangé), (2) possession nulle (我没有钱 = je n\'ai pas d\'argent), (3) expérience jamais vécue (我没去过中国). Interdit : combiner 没 avec 了. 我没吃了 ✗ car 没 suffit à dire « pas réalisé ». Avec les verbes d\'ÉTAT (是, 认识, 知道, 喜欢), on nie toujours avec 不, pas 没.',
+      'RÈGLE D\'OR : 没 (méi) — forme longue 没有 — nie un FAIT. Règle : (1) action qui ne s\'est pas produite (我没吃饭 = je n\'ai pas mangé), (2) possession nulle (我没有钱 = je n\'ai pas d\'argent), (3) expérience jamais vécue (我没去过中国). Attention : interdit de combiner 没 avec 了. 我没吃了 ✗ car 没 suffit à dire « pas réalisé ». Exception : avec les verbes d\'ÉTAT (是, 认识, 知道, 喜欢), on nie toujours avec 不, pas 没.',
     bodyEn:
       '没 (méi) — long form 没有 — negates a FACT: (1) action that didn\'t happen (我没吃饭 = I haven\'t eaten), (2) zero possession (我没有钱 = I have no money), (3) experience never had (我没去过中国). Forbidden: combining 没 with 了. 我没吃了 ✗ because 没 alone carries the «not realized» meaning. With STATE verbs (是, 认识, 知道, 喜欢), always negate with 不, not 没.',
     items: [
@@ -70,7 +70,7 @@ export const b12BuMeiLearnSections: LessonV2LearnSection[] = [
     title: 'Arbre de décision en 3 questions',
     titleEn: 'Decision tree in 3 questions',
     body:
-      'Avant de nier, pose-toi 3 questions. (1) Est-ce une habitude, un goût, une volonté ou un futur ? → 不. (2) Est-ce une action qui aurait dû se produire mais n\'a pas eu lieu ? → 没. (3) Est-ce de la possession ou l\'existence ? → 没有. Cas-piège : 我不吃肉 (je suis végétarien, choix) vs 我没吃肉 (cette fois, je n\'ai pas mangé de viande — sous-entendu : d\'habitude si). Les verbes d\'ÉTAT (是, 认识, 知道) ne se nient jamais avec 没.',
+      'Avant de nier, pose-toi 3 questions. Règle : (1) Est-ce une habitude, un goût, une volonté ou un futur ? → 不. (2) Est-ce une action qui aurait dû se produire mais n\'a pas eu lieu ? → 没. (3) Est-ce de la possession ou l\'existence ? → 没有. Attention : 我不吃肉 (je suis végétarien, choix) vs 我没吃肉 (cette fois, je n\'ai pas mangé de viande — sous-entendu : d\'habitude si). Exception : les verbes d\'ÉTAT (是, 认识, 知道) ne se nient jamais avec 没.',
     bodyEn:
       'Before negating, ask 3 questions. (1) Is it a habit, taste, will, or future? → 不. (2) Is it an action that should have happened but didn\'t? → 没. (3) Is it possession or existence? → 没有. Trap case: 我不吃肉 (I\'m vegetarian, choice) vs 我没吃肉 (this time I didn\'t eat meat — hint: usually I do). STATE verbs (是, 认识, 知道) are never negated with 没.',
     items: [
@@ -95,7 +95,7 @@ export const b12HuiLearnSections: LessonV2LearnSection[] = [
     title: '会 = compétence apprise OU événement probable',
     titleEn: '会 = learned skill OR probable event',
     body:
-      '会 (huì) a deux sens bien distincts. (1) Savoir-faire qui s\'APPREND : conduire, nager, parler une langue, dessiner. 我会开车 (je sais conduire), 他会说中文 (il parle chinois). (2) Probabilité, futur plausible : 明天会下雨 (il va pleuvoir demain). Le 会 de probabilité est souvent renforcé par un 的 final : 他会来的 (il viendra, c\'est sûr). Négation : 不会 couvre les deux sens.',
+      'RÈGLE D\'OR : 会 (huì) a deux sens bien distincts. Règle : (1) Savoir-faire qui s\'APPREND — conduire, nager, parler une langue, dessiner. 我会开车 (je sais conduire), 他会说中文 (il parle chinois). (2) Probabilité, futur plausible : 明天会下雨 (il va pleuvoir demain). Astuce : le 会 de probabilité est souvent renforcé par un 的 final. 他会来的 (il viendra, c\'est sûr). Remarque : la négation 不会 couvre les deux sens.',
     bodyEn:
       '会 (huì) has two distinct senses. (1) LEARNED skill: drive, swim, speak a language, draw. 我会开车 (I can drive), 他会说中文 (he speaks Chinese). (2) Probability, plausible future: 明天会下雨 (it will rain tomorrow). The probability 会 is often reinforced by final 的: 他会来的 (he\'ll come, for sure). Negation: 不会 covers both senses.',
     items: [
@@ -120,7 +120,7 @@ export const b12NengLearnSections: LessonV2LearnSection[] = [
     title: '能 = « capable cette fois »',
     titleEn: '能 = "able this time"',
     body:
-      '能 (néng) parle de la capacité ACTUELLE : on a appris ET les conditions permettent. 我会游泳, 但今天感冒了, 不能游 (je sais nager, mais aujourd\'hui enrhumé, je ne peux pas). La compétence (会) reste, la capacité (能) est bloquée. Autres usages : quantité (他能吃三碗 = il peut manger 3 bols), possibilité d\'action (这个办法能解决问题), permission informelle (我能进来吗 ?). Négation : 不能.',
+      'RÈGLE D\'OR : 能 (néng) parle de la capacité ACTUELLE — on a appris ET les conditions permettent. 我会游泳, 但今天感冒了, 不能游 (je sais nager, mais aujourd\'hui enrhumé, je ne peux pas). Astuce : la compétence (会) reste, la capacité (能) est bloquée. Règle : autres usages — quantité (他能吃三碗 = il peut manger 3 bols), possibilité d\'action (这个办法能解决问题), permission informelle (我能进来吗 ?). Remarque : la négation est 不能.',
     bodyEn:
       '能 (néng) is about CURRENT ability: you\'ve learned AND conditions allow. 我会游泳, 但今天感冒了, 不能游 (I can swim, but today I have a cold, I can\'t). Competence (会) remains, ability (能) is blocked. Other uses: quantity (他能吃三碗 = he can eat 3 bowls), action possibility (这个办法能解决问题), informal permission (我能进来吗?). Negation: 不能.',
     items: [
@@ -145,7 +145,7 @@ export const b12KeyiLearnSections: LessonV2LearnSection[] = [
     title: '可以 = droit formel ou acceptabilité',
     titleEn: '可以 = formal right or acceptability',
     body:
-      '可以 (kěyǐ) = « c\'est OK / c\'est autorisé ». (1) Permission : 你可以走了 (tu peux partir). 这里可以抽烟吗 ? (peut-on fumer ici ?). (2) Suggestion : 我们可以试试 (on peut essayer). (3) Accord : 我觉得这个方案可以 (je trouve ce plan OK). Opposé à 能 : 不能 = capacité bloquée ; 不可以 = interdit (plus fort, souvent officiel). Pour « pas le droit », préfère 不可以 ; pour « pas possible physiquement », 不能.',
+      'RÈGLE D\'OR : 可以 (kěyǐ) = « c\'est OK / c\'est autorisé ». Règle : (1) Permission — 你可以走了 (tu peux partir). 这里可以抽烟吗 ? (peut-on fumer ici ?). (2) Suggestion — 我们可以试试 (on peut essayer). (3) Accord — 我觉得这个方案可以 (je trouve ce plan OK). Attention : opposé à 能 — 不能 = capacité bloquée ; 不可以 = interdit (plus fort, souvent officiel). Astuce : pour « pas le droit », préfère 不可以 ; pour « pas possible physiquement », 不能.',
     bodyEn:
       '可以 (kěyǐ) = «it\'s OK / it\'s allowed». (1) Permission: 你可以走了 (you may leave). 这里可以抽烟吗? (may one smoke here?). (2) Suggestion: 我们可以试试 (we can try). (3) Agreement: 我觉得这个方案可以 (I find this plan OK). Opposed to 能: 不能 = physical block; 不可以 = forbidden (stronger, often official). For «not allowed», prefer 不可以; for «not physically possible», 不能.',
     items: [
@@ -166,7 +166,7 @@ export const b12ModalLearnSections: LessonV2LearnSection[] = [
     title: '3 scénarios, 3 choix',
     titleEn: '3 scenarios, 3 choices',
     body:
-      'Un test express pour choisir. Scénario A — compétence acquise (il a APPRIS) : 他会说法语. Scénario B — capacité bloquée par les conditions : 我今天不能来 (je suis malade). Scénario C — permission / règle : 这儿可以坐吗 ? Les trois se combinent souvent : 你会游泳吗 ? (compétence) → 你今天能游泳吗 ? (conditions) → 这儿可以游泳吗 ? (règle). À l\'oral chinois, par fréquence : 能 > 可以 > 会.',
+      'Un test express pour choisir. Règle : scénario A — compétence acquise (il a APPRIS) : 他会说法语. Scénario B — capacité bloquée par les conditions : 我今天不能来 (je suis malade). Scénario C — permission / règle : 这儿可以坐吗 ? Astuce : les trois se combinent souvent. 你会游泳吗 ? (compétence) → 你今天能游泳吗 ? (conditions) → 这儿可以游泳吗 ? (règle). Remarque : à l\'oral chinois, par fréquence — 能 > 可以 > 会.',
     bodyEn:
       'Quick test to choose. Scenario A — learned skill (they\'ve LEARNED it): 他会说法语. Scenario B — ability blocked by conditions: 我今天不能来 (I\'m sick). Scenario C — permission / rule: 这儿可以坐吗? The three often combine: 你会游泳吗? (skill) → 你今天能游泳吗? (conditions) → 这儿可以游泳吗? (rule). Spoken frequency: 能 > 可以 > 会.',
     items: [
@@ -191,7 +191,7 @@ export const b12HaiLearnSections: LessonV2LearnSection[] = [
     title: '还 = encore / en plus / pas mal',
     titleEn: '还 = still / also / not bad',
     body:
-      '还 (hái) a 3 valeurs qu\'il faut trier par contexte. (1) Continuation : 他还在睡觉 (il dort encore). Placé avant le verbe. (2) Addition : 我喜欢咖啡，还喜欢茶 (j\'aime le café, et aussi le thé). (3) Modération très fréquente à l\'oral : 还不错 (pas mal), 还可以 (correct). Pour « pas encore », la combinaison 还没…呢 est quasi automatique : 我还没吃呢.',
+      '还 (hái) a 3 valeurs qu\'il faut trier par contexte. Règle : (1) Continuation — 他还在睡觉 (il dort encore). Placé avant le verbe. (2) Addition — 我喜欢咖啡，还喜欢茶 (j\'aime le café, et aussi le thé). (3) Modération très fréquente à l\'oral — 还不错 (pas mal), 还可以 (correct). Astuce : pour « pas encore », la combinaison 还没…呢 est quasi automatique. 我还没吃呢.',
     bodyEn:
       '还 (hái) has 3 values to sort by context. (1) Continuation: 他还在睡觉 (he\'s still sleeping). Placed before the verb. (2) Addition: 我喜欢咖啡，还喜欢茶 (I like coffee, and also tea). (3) Moderation, very common orally: 还不错 (not bad), 还可以 (OK). For «not yet», 还没…呢 is almost automatic: 我还没吃呢.',
     items: [
@@ -216,7 +216,7 @@ export const b12YouLearnSections: LessonV2LearnSection[] = [
     title: '又 + V + 了 = « encore une fois »',
     titleEn: '又 + V + 了 = "once again"',
     body:
-      '又 (yòu) = « de nouveau » pour une action DÉJÀ produite (passé). Structure-clé : 又 + V + 了. 他又迟到了 (il est ENCORE en retard — soupir). 昨天下雨了，今天又下雨了. Le 了 final est quasi-obligatoire. Pour un futur, on passe à 再 (zài) : 明天我再来 (je reviendrai demain). Autre usage : 又...又... = « à la fois...et... ». 她又聪明又漂亮 (elle est à la fois intelligente et jolie).',
+      'RÈGLE D\'OR : 又 (yòu) = « de nouveau » pour une action DÉJÀ produite (passé). Règle : structure-clé 又 + V + 了. 他又迟到了 (il est ENCORE en retard — soupir). 昨天下雨了，今天又下雨了. Attention : le 了 final est quasi-obligatoire. Pour un futur, on passe à 再 (zài). 明天我再来 (je reviendrai demain). Remarque : autre usage 又...又... = « à la fois...et... ». 她又聪明又漂亮 (elle est à la fois intelligente et jolie).',
     bodyEn:
       '又 (yòu) = «again» for an action ALREADY happened (past). Key structure: 又 + V + 了. 他又迟到了 (he\'s late AGAIN — sigh). 昨天下雨了，今天又下雨了. Final 了 is almost mandatory. For future, switch to 再 (zài): 明天我再来 (I\'ll come again tomorrow). Another use: 又...又... = «both...and...». 她又聪明又漂亮 (she\'s both smart and pretty).',
     items: [
@@ -241,7 +241,7 @@ export const b12BiLearnSections: LessonV2LearnSection[] = [
     title: 'A 比 B + adjectif (sans 很 !)',
     titleEn: 'A 比 B + adjective (no 很!)',
     body:
-      'Structure fixe : A + 比 + B + adjectif. 我比他高 (je suis plus grand que lui). ATTENTION : jamais de 很 devant l\'adjectif quand 比 est là. 我比他很高 ✗. Pour l\'écart : A + 比 + B + adj + quantité. 我比他高五厘米 (5 cm de plus). Pour intensifier : A + 比 + B + 更 + adj. 她比他更聪明 (elle est encore plus intelligente). Négation : A + 没有 + B + adj. 我没有他高 (je suis moins grand que lui).',
+      'RÈGLE D\'OR : structure fixe A + 比 + B + adjectif. 我比他高 (je suis plus grand que lui). Attention : jamais de 很 devant l\'adjectif quand 比 est là. 我比他很高 ✗. Règle : pour l\'écart — A + 比 + B + adj + quantité. 我比他高五厘米 (5 cm de plus). Astuce : pour intensifier — A + 比 + B + 更 + adj. 她比他更聪明 (elle est encore plus intelligente). Remarque : négation — A + 没有 + B + adj. 我没有他高 (je suis moins grand que lui).',
     bodyEn:
       'Fixed structure: A + 比 + B + adjective. 我比他高 (I\'m taller than him). CAUTION: never put 很 before the adjective when 比 is there. 我比他很高 ✗. For the gap: A + 比 + B + adj + quantity. 我比他高五厘米 (5 cm taller). To intensify: A + 比 + B + 更 + adj. 她比他更聪明 (she\'s even smarter). Negation: A + 没有 + B + adj. 我没有他高 (I\'m not as tall as him).',
     items: [
@@ -328,7 +328,7 @@ export const b22GrammarComplementM1LearnSections: LessonV2LearnSection[] = [
     title: 'V + 完/好/懂/到 : préciser l\'état final',
     titleEn: 'V + 完/好/懂/到: specifying the end state',
     body:
-      'Un verbe chinois seul est ambigu : 吃 veut-il dire « manger » ou « avoir fini de manger » ? Le complément de résultat tranche. Les 4 stars : 完 (finir), 好 (bien/prêt), 懂 (comprendre), 到 (atteindre). 吃完 (finir de manger), 做好 (faire correctement/être prêt), 听懂 (entendre-et-comprendre), 找到 (trouver = chercher + atteindre). Négation : 没 + V + complément. 我没听懂 = je n\'ai pas compris.',
+      'Un verbe chinois seul est ambigu : 吃 veut-il dire « manger » ou « avoir fini de manger » ? Règle : le complément de résultat tranche. Les 4 stars : 完 (finir), 好 (bien/prêt), 懂 (comprendre), 到 (atteindre). 吃完 (finir de manger), 做好 (faire correctement/être prêt), 听懂 (entendre-et-comprendre), 找到 (trouver = chercher + atteindre). Attention : négation 没 + V + complément. 我没听懂 = je n\'ai pas compris.',
     bodyEn:
       'A bare Chinese verb is ambiguous: does 吃 mean «eat» or «have finished eating»? The result complement settles it. The 4 stars: 完 (finish), 好 (well/ready), 懂 (understand), 到 (reach). 吃完 (finish eating), 做好 (do well/be ready), 听懂 (hear-and-understand), 找到 (find = search + reach). Negation: 没 + V + complement. 我没听懂 = I didn\'t understand.',
     items: [
@@ -413,7 +413,7 @@ export const b22GrammarComplementM2LearnSections: LessonV2LearnSection[] = [
     title: 'V + 上/下/进/出/回/过',
     titleEn: 'V + 上/下/进/出/回/过',
     body:
-      'Les directionnels simples indiquent l\'orientation du mouvement : 上 (vers le haut), 下 (vers le bas), 进 (entrer), 出 (sortir), 回 (revenir), 过 (traverser/passer). Accolés au verbe : 走进 (entrer en marchant), 跑出 (sortir en courant), 坐下 (s\'asseoir). Quand un lieu-objet s\'insère, il va AU MILIEU : 走进房间 (entrer dans la pièce), pas 走房间进 ✗.',
+      'Les directionnels simples indiquent l\'orientation du mouvement : 上 (vers le haut), 下 (vers le bas), 进 (entrer), 出 (sortir), 回 (revenir), 过 (traverser/passer). Règle : accolés au verbe — 走进 (entrer en marchant), 跑出 (sortir en courant), 坐下 (s\'asseoir). Attention : quand un lieu-objet s\'insère, il va AU MILIEU. 走进房间 (entrer dans la pièce), pas 走房间进 ✗.',
     bodyEn:
       'Simple directionals indicate movement orientation: 上 (up/onto), 下 (down), 进 (enter), 出 (exit), 回 (return), 过 (across/past). Stuck to the verb: 走进 (walk in), 跑出 (run out), 坐下 (sit down). When a location-object inserts, it goes IN THE MIDDLE: 走进房间 (walk into the room), not 走房间进 ✗.',
     items: [
@@ -497,7 +497,7 @@ export const b22GrammarComplementM3LearnSections: LessonV2LearnSection[] = [
     title: 'La grille 6×2 : direction + 来/去',
     titleEn: 'The 6×2 grid: direction + 来/去',
     body:
-      'Chaque directionnel simple (上/下/进/出/回/过) se combine avec 来 (vers le locuteur) ou 去 (loin du locuteur). Ça donne 12 cases : 上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去. 他走过来 (il vient par ici) vs 他走过去 (il va par là-bas). Usage abstrait très répandu : 看起来 (à première vue), 想起来 (se rappeler), 听下去 (continuer à écouter).',
+      'Règle : chaque directionnel simple (上/下/进/出/回/过) se combine avec 来 (vers le locuteur) ou 去 (loin du locuteur). Ça donne 12 cases — 上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去. 他走过来 (il vient par ici) vs 他走过去 (il va par là-bas). Astuce : usage abstrait très répandu — 看起来 (à première vue), 想起来 (se rappeler), 听下去 (continuer à écouter).',
     bodyEn:
       'Each simple directional (上/下/进/出/回/过) pairs with 来 (toward speaker) or 去 (away from speaker). That\'s 12 cells: 上来/上去, 下来/下去, 进来/进去, 出来/出去, 回来/回去, 过来/过去. 他走过来 (he comes over here) vs 他走过去 (he goes over there). Very common abstract uses: 看起来 (at first glance), 想起来 (remember), 听下去 (keep listening).',
     items: [
@@ -528,7 +528,7 @@ export const b12NarrTimeMarkersLearnSections: LessonV2LearnSection[] = [
     title: 'La chaîne 首先 → 然后 → 后来 → 最后',
     titleEn: 'The chain 首先 → 然后 → 后来 → 最后',
     body:
-      'Pour structurer un récit, le chinois s\'appuie sur 4 marqueurs de séquence. 首先 (shǒu xiān, d\'abord) pour ouvrir ; 然后 (rán hòu, ensuite) pour enchaîner ; 后来 (hòu lái, plus tard — souvent après une pause narrative) ; 最后 (zuì hòu, finalement) pour clore. Cette chaîne suffit à tenir une anecdote de 5 minutes. Place chaque connecteur EN TÊTE de phrase, suivi d\'une virgule.',
+      'Pour structurer un récit, le chinois s\'appuie sur 4 marqueurs de séquence. Règle : 首先 (shǒu xiān, d\'abord) pour ouvrir ; 然后 (rán hòu, ensuite) pour enchaîner ; 后来 (hòu lái, plus tard — souvent après une pause narrative) ; 最后 (zuì hòu, finalement) pour clore. Astuce : cette chaîne suffit à tenir une anecdote de 5 minutes. Attention : place chaque connecteur EN TÊTE de phrase, suivi d\'une virgule.',
     bodyEn:
       'To structure a narrative, Chinese relies on 4 sequence markers. 首先 (first) to open; 然后 (then) to chain; 后来 (later — often after a narrative pause); 最后 (finally) to close. This chain alone holds a 5-minute anecdote. Put each connector AT THE START of the sentence, followed by a comma.',
     items: [
@@ -545,7 +545,7 @@ export const b12NarrTimeMarkersLearnSections: LessonV2LearnSection[] = [
     title: 'Causalité & concession : 因为…所以, 虽然…但是',
     titleEn: 'Cause & concession: 因为…所以, 虽然…但是',
     body:
-      'En chinois, les connecteurs logiques viennent EN PAIRE. 因为 (parce que) s\'emploie souvent avec 所以 (donc) — les deux sont obligatoires à l\'écrit. De même, 虽然 (bien que) vient avec 但是 (mais) ou 可是. 因为下雨, 所以我没去 (parce qu\'il pleuvait, je n\'y suis pas allé). 虽然很累, 但是我还要工作 (bien que fatigué, je dois encore travailler). Ne pas oublier l\'un des deux.',
+      'RÈGLE D\'OR : en chinois, les connecteurs logiques viennent EN PAIRE. Règle : 因为 (parce que) s\'emploie souvent avec 所以 (donc) — les deux sont obligatoires à l\'écrit. De même, 虽然 (bien que) vient avec 但是 (mais) ou 可是. 因为下雨, 所以我没去 (parce qu\'il pleuvait, je n\'y suis pas allé). 虽然很累, 但是我还要工作 (bien que fatigué, je dois encore travailler). Attention : ne pas oublier l\'un des deux.',
     bodyEn:
       'In Chinese, logical connectors come IN PAIRS. 因为 (because) pairs with 所以 (so) — both are mandatory in writing. Similarly, 虽然 (although) pairs with 但是 (but) or 可是. 因为下雨, 所以我没去 (because it was raining, I didn\'t go). 虽然很累, 但是我还要工作 (although I\'m tired, I still have to work). Don\'t drop either side.',
     items: [
@@ -569,7 +569,7 @@ export const b12NarrPastLearnSections: LessonV2LearnSection[] = [
     title: 'Pose la date, puis oublie la conjugaison',
     titleEn: 'Set the date, then forget conjugation',
     body:
-      'Le chinois ne conjugue pas. Pour raconter au passé, on plante un repère temporel en ouverture (去年夏天, 十年前, 那一天) puis on laisse les verbes au présent. 去年我去了中国, 每天都吃面条 : 了 uniquement sur 去 (action unique), pas sur 吃 (habitude durant le séjour). Pour l\'« imparfait » (actions simultanées), on utilise 正在 ou 在 : 那时候我正在工作 (à ce moment-là, j\'étais en train de travailler).',
+      'Règle : le chinois ne conjugue pas. Pour raconter au passé, on plante un repère temporel en ouverture (去年夏天, 十年前, 那一天) puis on laisse les verbes au présent. 去年我去了中国, 每天都吃面条 — 了 uniquement sur 去 (action unique), pas sur 吃 (habitude durant le séjour). Astuce : pour l\'« imparfait » (actions simultanées), on utilise 正在 ou 在. 那时候我正在工作 (à ce moment-là, j\'étais en train de travailler).',
     bodyEn:
       'Chinese doesn\'t conjugate. To tell a past story, plant a time anchor at the start (去年夏天, 十年前, 那一天) then leave verbs in the present. 去年我去了中国, 每天都吃面条: 了 only on 去 (one-off action), not on 吃 (habit during the trip). For «imperfect» (simultaneous actions), use 正在 or 在: 那时候我正在工作 (at that moment, I was working).',
     items: [
@@ -594,7 +594,7 @@ export const b12NarrReportedLearnSections: LessonV2LearnSection[] = [
     title: '说 sans concordance de temps',
     titleEn: '说 with no sequence of tenses',
     body:
-      'Le chinois rapporte directement avec 说 (dire). PAS de concordance : on garde le temps original. 他说他明天来 = « il dit qu\'il viendra demain ». On peut supprimer le « que » — il n\'y a pas de mot pour ça. Distinguer : 说 (dire — pas de destinataire requis), 告诉 (dire à — prend un complément d\'attribution : 他告诉我...), 问 (demander), 回答 (répondre), 解释 (expliquer). Pour une question indirecte, on passe par A-不-A : 他问我去不去.',
+      'Règle : le chinois rapporte directement avec 说 (dire). PAS de concordance — on garde le temps original. 他说他明天来 = « il dit qu\'il viendra demain ». Remarque : on peut supprimer le « que » — il n\'y a pas de mot pour ça. Attention : distinguer 说 (dire — pas de destinataire requis), 告诉 (dire à — prend un complément d\'attribution : 他告诉我...), 问 (demander), 回答 (répondre), 解释 (expliquer). Astuce : pour une question indirecte, on passe par A-不-A. 他问我去不去.',
     bodyEn:
       'Chinese reports directly with 说 (say). NO sequencing: keep the original tense. 他说他明天来 = «he says he\'s coming tomorrow». You can drop «that» — Chinese has no such word. Distinguish: 说 (say — no recipient needed), 告诉 (tell someone — takes an indirect object: 他告诉我...), 问 (ask), 回答 (answer), 解释 (explain). For an indirect question, use A-不-A: 他问我去不去.',
     items: [
@@ -619,7 +619,7 @@ export const b12NarrPortraitLearnSections: LessonV2LearnSection[] = [
     title: 'Portrait en 4 couches',
     titleEn: 'Portrait in 4 layers',
     body:
-      'Construis un portrait chinois en couches successives. (1) Physique général — le redoublement d\'adjectif adoucit : 高高的 (grand), 瘦瘦的 (mince), 胖胖的 (enveloppé). (2) Visage : 圆脸, 大眼睛, 短头发. (3) Vêtements avec 穿着 : 她穿着红色的裙子 (elle porte une robe rouge). (4) Caractère : 他性格很温柔 (son caractère est doux). Pour ajouter une impression : 看起来 + adj (他看起来很聪明).',
+      'Construis un portrait chinois en couches successives. Règle : (1) Physique général — le redoublement d\'adjectif adoucit. 高高的 (grand), 瘦瘦的 (mince), 胖胖的 (enveloppé). (2) Visage — 圆脸, 大眼睛, 短头发. (3) Vêtements avec 穿着 — 她穿着红色的裙子 (elle porte une robe rouge). (4) Caractère — 他性格很温柔 (son caractère est doux). Astuce : pour ajouter une impression — 看起来 + adj (他看起来很聪明).',
     bodyEn:
       'Build a Chinese portrait in successive layers. (1) Overall build — reduplicating the adjective softens: 高高的 (tall), 瘦瘦的 (thin), 胖胖的 (plump). (2) Face: 圆脸, 大眼睛, 短头发. (3) Clothing with 穿着: 她穿着红色的裙子 (she\'s wearing a red dress). (4) Character: 他性格很温柔 (his character is gentle). To add an impression: 看起来 + adj (他看起来很聪明).',
     items: [
@@ -636,7 +636,7 @@ export const b12NarrPortraitLearnSections: LessonV2LearnSection[] = [
     title: 'Adjectifs de caractère',
     titleEn: 'Character adjectives',
     body:
-      'Le caractère se dit en 2 caractères chinois dans la plupart des cas, toujours avec 很 ou un intensificateur. Les plus utilisés : 开朗 (ouvert/joyeux), 内向 (introverti), 幽默 (humoristique), 认真 (sérieux), 耐心 (patient), 大方 (généreux), 害羞 (timide). Structure : 他性格很 + adj. Pour nuancer : 比较 + adj (plutôt...), 特别 + adj (particulièrement...), 有点儿 + adj (un peu... — souvent négatif).',
+      'Règle : le caractère se dit en 2 caractères chinois dans la plupart des cas, toujours avec 很 ou un intensificateur. Les plus utilisés — 开朗 (ouvert/joyeux), 内向 (introverti), 幽默 (humoristique), 认真 (sérieux), 耐心 (patient), 大方 (généreux), 害羞 (timide). Structure — 他性格很 + adj. Astuce : pour nuancer — 比较 + adj (plutôt...), 特别 + adj (particulièrement...), 有点儿 + adj (un peu... — souvent négatif).',
     bodyEn:
       'Character traits are usually expressed with a 2-character word, always with 很 or an intensifier. The most used: 开朗 (outgoing), 内向 (introverted), 幽默 (humorous), 认真 (serious), 耐心 (patient), 大方 (generous), 害羞 (shy). Structure: 他性格很 + adj. To nuance: 比较 + adj (rather...), 特别 + adj (especially...), 有点儿 + adj (a bit... — often negative).',
     items: [
@@ -661,7 +661,7 @@ export const b12NarrSceneLearnSections: LessonV2LearnSection[] = [
     title: 'Cadrer : 在 + lieu + 有 + X',
     titleEn: 'Frame: 在 + place + 有 + X',
     body:
-      'Pour planter un décor, le chinois adore la structure 在 + lieu + 有 + X. 在公园里, 有很多老人 (dans le parc, il y a beaucoup de personnes âgées). 在桌子上, 有一杯茶 (sur la table, une tasse de thé). Les positions relatives se placent APRÈS le nom avec 的 optionnel : 桌子(的)旁边 (à côté de la table), 银行(的)对面 (en face de la banque). 6 positions de base à mémoriser : 前面, 后面, 左边, 右边, 旁边, 中间.',
+      'Règle : pour planter un décor, le chinois adore la structure 在 + lieu + 有 + X. 在公园里, 有很多老人 (dans le parc, il y a beaucoup de personnes âgées). 在桌子上, 有一杯茶 (sur la table, une tasse de thé). Astuce : les positions relatives se placent APRÈS le nom avec 的 optionnel. 桌子(的)旁边 (à côté de la table), 银行(的)对面 (en face de la banque). Remarque : 6 positions de base à mémoriser — 前面, 后面, 左边, 右边, 旁边, 中间.',
     bodyEn:
       'To set a scene, Chinese loves 在 + place + 有 + X. 在公园里, 有很多老人 (in the park, many elderly people). 在桌子上, 有一杯茶 (on the table, a cup of tea). Relative positions come AFTER the noun with optional 的: 桌子(的)旁边 (next to the table), 银行(的)对面 (across from the bank). 6 basic positions to memorize: 前面, 后面, 左边, 右边, 旁边, 中间.',
     items: [
@@ -678,7 +678,7 @@ export const b12NarrSceneLearnSections: LessonV2LearnSection[] = [
     title: 'Qualifier l\'ambiance & enrichir les sens',
     titleEn: 'Qualify the mood & engage the senses',
     body:
-      'Pour qualifier l\'atmosphère : 安静 (calme), 热闹 (animé — positif en Chine, contrairement au français), 拥挤 (bondé), 舒服 (confortable), 气氛很好 (bonne ambiance). Pour les sens, le chinois utilise 听到 et 闻到 — le 到 est crucial car il marque la PERCEPTION réussie. 我听到鸟叫 (j\'entends les oiseaux chanter) ≠ 我听 (j\'écoute). 闻到花香 (je sens l\'odeur des fleurs).',
+      'Pour qualifier l\'atmosphère : 安静 (calme), 热闹 (animé — positif en Chine, contrairement au français), 拥挤 (bondé), 舒服 (confortable), 气氛很好 (bonne ambiance). Attention : pour les sens, le chinois utilise 听到 et 闻到 — le 到 est crucial car il marque la PERCEPTION réussie. 我听到鸟叫 (j\'entends les oiseaux chanter) ≠ 我听 (j\'écoute). Astuce : 闻到花香 (je sens l\'odeur des fleurs).',
     bodyEn:
       'To qualify mood: 安静 (quiet), 热闹 (lively — positive in China, unlike English connotation), 拥挤 (crowded), 舒服 (comfortable), 气氛很好 (good atmosphere). For the senses, Chinese uses 听到 and 闻到 — the 到 is crucial as it marks SUCCESSFUL perception. 我听到鸟叫 (I hear the birds sing) ≠ 我听 (I listen). 闻到花香 (I smell the flowers).',
     items: [
@@ -734,7 +734,7 @@ export const b12EduStudyLearnSections: LessonV2LearnSection[] = [
     title: '学 (oral) vs 学习 (formel)',
     titleEn: '学 (oral) vs 学习 (formal)',
     body:
-      'Deux verbes pour « apprendre/étudier ». 学 (xué, monosyllabe) : plus oral, accepte un COD précis. 学中文, 学开车, 学数学. 学习 (xué xí, dissyllabe) : plus écrit, plus formel, plus abstrait. 努力学习 (étudier dur), 学习经验 (tirer des enseignements). Autour d\'eux, le vocabulaire scolaire : 复习 (réviser), 预习 (préparer avant le cours), 练习 (s\'exercer), 做作业 (faire les devoirs), 背 (apprendre par cœur).',
+      'Deux verbes pour « apprendre/étudier ». Règle : 学 (xué, monosyllabe) — plus oral, accepte un COD précis. 学中文, 学开车, 学数学. 学习 (xué xí, dissyllabe) — plus écrit, plus formel, plus abstrait. 努力学习 (étudier dur), 学习经验 (tirer des enseignements). Astuce : autour d\'eux, le vocabulaire scolaire — 复习 (réviser), 预习 (préparer avant le cours), 练习 (s\'exercer), 做作业 (faire les devoirs), 背 (apprendre par cœur).',
     bodyEn:
       'Two verbs for «learn/study». 学 (xué, monosyllabic): more oral, takes a precise object. 学中文, 学开车, 学数学. 学习 (xué xí, bisyllabic): more written, more formal, more abstract. 努力学习 (study hard), 学习经验 (draw lessons). Around them, school vocabulary: 复习 (review), 预习 (prep before class), 练习 (practice), 做作业 (do homework), 背 (memorize).',
     items: [
@@ -788,7 +788,7 @@ export const b12SocFamilyLearnSections: LessonV2LearnSection[] = [
     title: '外 = côté mère, rien = côté père',
     titleEn: '外 = mother\'s side, nothing = father\'s side',
     body:
-      'Le chinois trie les parents par côté. Le préfixe 外 (wài, « extérieur ») marque systématiquement le côté mère — écho d\'un ancien patriarcat où la fille « partait » dans sa belle-famille. Grand-parents : 爷爷/奶奶 (père du père, mère du père) vs 外公/外婆 (père de la mère, mère de la mère). Oncles/tantes : 叔叔 (frère cadet du père), 伯伯 (frère aîné du père), 姑姑 (sœur du père) ; 舅舅 (frère de la mère), 姨妈 (sœur de la mère). Cousins : 堂 (côté père), 表 (côté mère).',
+      'Règle : le chinois trie les parents par côté. Le préfixe 外 (wài, « extérieur ») marque systématiquement le côté mère — écho d\'un ancien patriarcat où la fille « partait » dans sa belle-famille. Remarque : grand-parents — 爷爷/奶奶 (père du père, mère du père) vs 外公/外婆 (père de la mère, mère de la mère). Oncles/tantes — 叔叔 (frère cadet du père), 伯伯 (frère aîné du père), 姑姑 (sœur du père) ; 舅舅 (frère de la mère), 姨妈 (sœur de la mère). Astuce : cousins — 堂 (côté père), 表 (côté mère).',
     bodyEn:
       'Chinese sorts relatives by side. The prefix 外 (wài, «outer») always marks mother\'s side — echo of an old patriarchy where the daughter «left» for her in-laws. Grandparents: 爷爷/奶奶 (father\'s father, mother) vs 外公/外婆 (mother\'s father, mother). Uncles/aunts: 叔叔 (dad\'s younger brother), 伯伯 (dad\'s older brother), 姑姑 (dad\'s sister); 舅舅 (mom\'s brother), 姨妈 (mom\'s sister). Cousins: 堂 (dad\'s side), 表 (mom\'s side).',
     items: [
@@ -815,7 +815,7 @@ export const b12SocMarriageLearnSections: LessonV2LearnSection[] = [
     title: 'Les 5 étapes : 谈恋爱 → 领证 → 婚礼',
     titleEn: 'The 5 steps: 谈恋爱 → 领证 → 婚礼',
     body:
-      'Mariage = 结婚 (jié hūn), verbe sécable : 结了婚 (s\'est marié), 结三次婚 (s\'être marié 3 fois). Le parcours type : 谈恋爱 (sortir ensemble) → 订婚 (se fiancer) → 领证 (aller chercher le certificat — c\'est le VRAI mariage légal en Chine) → 婚礼 (cérémonie, parfois des mois après) → 度蜜月 (lune de miel). Divorce : 离婚 (lí hūn). Politique de l\'enfant : 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (depuis 2021).',
+      'Règle : mariage = 结婚 (jié hūn), verbe sécable — 结了婚 (s\'est marié), 结三次婚 (s\'être marié 3 fois). Astuce : le parcours type — 谈恋爱 (sortir ensemble) → 订婚 (se fiancer) → 领证 (aller chercher le certificat — c\'est le VRAI mariage légal en Chine) → 婚礼 (cérémonie, parfois des mois après) → 度蜜月 (lune de miel). Remarque : divorce — 离婚 (lí hūn). Politique de l\'enfant — 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (depuis 2021).',
     bodyEn:
       'Marriage = 结婚 (jié hūn), separable verb: 结了婚 (got married), 结三次婚 (got married 3 times). Typical path: 谈恋爱 (dating) → 订婚 (engagement) → 领证 (get the certificate — that\'s the REAL legal marriage in China) → 婚礼 (ceremony, sometimes months later) → 度蜜月 (honeymoon). Divorce: 离婚 (lí hūn). Child policy: 一孩政策 (1980-2015), 二孩政策 (2016-21), 三孩政策 (since 2021).',
     items: [
@@ -841,7 +841,7 @@ export const b12SocGenerationsLearnSections: LessonV2LearnSection[] = [
     title: 'Lire la société par la décennie',
     titleEn: 'Reading society through birth decades',
     body:
-      'En Chine, on étiquette abondamment par décennie de naissance. 80后 (bā líng hòu, nés dans les 80s), 90后, 00后 (líng líng hòu). Chaque génération porte ses clichés : 80后 = première génération enfant-unique, bosseurs, premiers à acheter leur appart. 90后 = digital natives, souvent critiqués comme « gâtés » mais en fait plus ouverts. 00后 = Z chinoise, TikTok (抖音), socialement plus libérale. Expressions incontournables : 躺平 (s\'allonger à plat, refus du surmenage), 内卷 (compétition absurde), 打工人 (le travailleur, auto-dérision).',
+      'Règle : en Chine, on étiquette abondamment par décennie de naissance. 80后 (bā líng hòu, nés dans les 80s), 90后, 00后 (líng líng hòu). Remarque : chaque génération porte ses clichés — 80后 = première génération enfant-unique, bosseurs, premiers à acheter leur appart. 90后 = digital natives, souvent critiqués comme « gâtés » mais en fait plus ouverts. 00后 = Z chinoise, TikTok (抖音), socialement plus libérale. Astuce : expressions incontournables — 躺平 (s\'allonger à plat, refus du surmenage), 内卷 (compétition absurde), 打工人 (le travailleur, auto-dérision).',
     bodyEn:
       'In China, people heavily label by birth decade. 80后 (bā líng hòu, born in the 80s), 90后, 00后 (líng líng hòu). Each generation carries its clichés: 80后 = first one-child gen, hardworkers, first to buy apartments. 90后 = digital natives, often labeled «spoiled» but actually more open. 00后 = Chinese Z, TikTok (抖音), socially more liberal. Must-know expressions: 躺平 (lie flat, rejection of overwork), 内卷 (absurd competition), 打工人 (the worker, self-mockery).',
     items: [
@@ -925,7 +925,7 @@ export const b12MedHeadlineLearnSections: LessonV2LearnSection[] = [
     title: 'Titres compressés : omettre les particules',
     titleEn: 'Compressed headlines: drop the particles',
     body:
-      'Un titre chinois vire les particules (的, 了, 呢), coupe les sujets évidents, au présent. Décodage : 北京重霾 今停课 = « À Pékin, forte pollution, cours suspendus aujourd\'hui ». 美国加息 人民币跌 = « USA, hausse des taux, le yuan baisse ». Abréviations courantes : 央视 = 中央电视台 (CCTV), 北大 = 北京大学, 清华 = 清华大学, 美联储 = la Fed. Chiffres : 万 (10 000), 亿 (100 millions). 十亿 = 1 milliard.',
+      'Règle : un titre chinois vire les particules (的, 了, 呢), coupe les sujets évidents, au présent. Astuce : décodage — 北京重霾 今停课 = « À Pékin, forte pollution, cours suspendus aujourd\'hui ». 美国加息 人民币跌 = « USA, hausse des taux, le yuan baisse ». Remarque : abréviations courantes — 央视 = 中央电视台 (CCTV), 北大 = 北京大学, 清华 = 清华大学, 美联储 = la Fed. Attention : chiffres — 万 (10 000), 亿 (100 millions). 十亿 = 1 milliard.',
     bodyEn:
       'A Chinese headline strips particles (的, 了, 呢), omits obvious subjects, stays in the present. Decoded: 北京重霾 今停课 = «Beijing, heavy smog, school cancelled today». 美国加息 人民币跌 = «USA, rate hike, yuan falls». Common abbreviations: 央视 = 中央电视台 (CCTV), 北大 = 北京大学, 清华 = 清华大学, 美联储 = the Fed. Numbers: 万 (10 000), 亿 (100 million). 十亿 = 1 billion.',
     items: [
@@ -952,7 +952,7 @@ export const b12MedSocialLearnSections: LessonV2LearnSection[] = [
     title: 'L\'écosystème 微博/抖音/小红书',
     titleEn: 'The 微博/抖音/小红书 ecosystem',
     body:
-      'La Chine a ses propres plateformes — Google, Facebook, YouTube, Instagram y sont bloqués. Équivalents clés : 微博 (Weibo ≈ Twitter), 抖音 (Douyin ≈ TikTok Chine), 小红书 (Xiǎo hóng shū, Red Note ≈ Instagram + Pinterest), 知乎 (Zhī hū ≈ Quora), 哔哩哔哩 (Bilibili ≈ YouTube jeune), 百度 (Bǎi dù ≈ Google). Actions : 关注 (suivre), 点赞 (liker), 评论 (commenter), 转发 (partager/RT).',
+      'Remarque : la Chine a ses propres plateformes — Google, Facebook, YouTube, Instagram y sont bloqués. Astuce : équivalents clés — 微博 (Weibo ≈ Twitter), 抖音 (Douyin ≈ TikTok Chine), 小红书 (Xiǎo hóng shū, Red Note ≈ Instagram + Pinterest), 知乎 (Zhī hū ≈ Quora), 哔哩哔哩 (Bilibili ≈ YouTube jeune), 百度 (Bǎi dù ≈ Google). Règle : actions — 关注 (suivre), 点赞 (liker), 评论 (commenter), 转发 (partager/RT).',
     bodyEn:
       'China has its own platforms — Google, Facebook, YouTube, Instagram are blocked there. Key equivalents: 微博 (Weibo ≈ Twitter), 抖音 (Douyin ≈ Chinese TikTok), 小红书 (Xiǎo hóng shū, Red Note ≈ Instagram + Pinterest), 知乎 (Zhī hū ≈ Quora), 哔哩哔哩 (Bilibili ≈ YouTube for young people), 百度 (Bǎi dù ≈ Google). Actions: 关注 (follow), 点赞 (like), 评论 (comment), 转发 (share/RT).',
     items: [
@@ -979,7 +979,7 @@ export const b12MedFakeNewsLearnSections: LessonV2LearnSection[] = [
     title: 'Vérifier : 来源, 证据, 怀疑',
     titleEn: 'Verify: 来源, 证据, 怀疑',
     body:
-      '假新闻 (jiǎ xīn wén, fake news) est un sujet central sur les réseaux chinois. Vocabulaire pour vérifier : 谣言 (yáo yán, rumeur), 辟谣 (pì yáo, démentir une rumeur), 真相 (zhēn xiàng, la vérité), 来源 (lái yuán, source), 证据 (zhèng jù, preuve). Questions à poser : 这条新闻的来源是哪里 ? / 有没有证据 ? / 是谁发布的 ? Verbes critiques : 相信 (croire), 怀疑 (huái yí, douter), 确认 (què rèn, confirmer), 证实 (zhèng shí, prouver).',
+      '假新闻 (jiǎ xīn wén, fake news) est un sujet central sur les réseaux chinois. Astuce : vocabulaire pour vérifier — 谣言 (yáo yán, rumeur), 辟谣 (pì yáo, démentir une rumeur), 真相 (zhēn xiàng, la vérité), 来源 (lái yuán, source), 证据 (zhèng jù, preuve). Règle : questions à poser — 这条新闻的来源是哪里 ? / 有没有证据 ? / 是谁发布的 ? Remarque : verbes critiques — 相信 (croire), 怀疑 (huái yí, douter), 确认 (què rèn, confirmer), 证实 (zhèng shí, prouver).',
     bodyEn:
       '假新闻 (jiǎ xīn wén, fake news) is a core topic on Chinese networks. Verification vocab: 谣言 (yáo yán, rumor), 辟谣 (pì yáo, refute a rumor), 真相 (zhēn xiàng, truth), 来源 (lái yuán, source), 证据 (zhèng jù, evidence). Questions to ask: 这条新闻的来源是哪里? / 有没有证据? / 是谁发布的? Critical verbs: 相信 (believe), 怀疑 (huái yí, doubt), 确认 (què rèn, confirm), 证实 (zhèng shí, prove).',
     items: [
@@ -1006,7 +1006,7 @@ export const b12MedAdvertisingLearnSections: LessonV2LearnSection[] = [
     title: 'Slogans, promotions, mots-clés',
     titleEn: 'Slogans, promotions, keywords',
     body:
-      'La publicité chinoise (广告, guǎng gào) utilise des formules courtes, souvent rythmées en 4 caractères. Vocabulaire essentiel : 品牌 (marque), 口号 (slogan), 优惠 (promotion), 打折 (remise), 限时 (durée limitée), 免费 (gratuit). Grands événements commerciaux : 双十一 (11/11, Singles\' Day, plus gros jour shopping au monde), 618 (anniversaire JD le 18 juin), 双十二 (12/12). Arguments incontournables : 性价比高 (bon rapport qualité/prix — phrase-reine du commerce chinois), 限量 (édition limitée), 爆款 (produit star).',
+      'La publicité chinoise (广告, guǎng gào) utilise des formules courtes, souvent rythmées en 4 caractères. Astuce : vocabulaire essentiel — 品牌 (marque), 口号 (slogan), 优惠 (promotion), 打折 (remise), 限时 (durée limitée), 免费 (gratuit). Remarque : grands événements commerciaux — 双十一 (11/11, Singles\' Day, plus gros jour shopping au monde), 618 (anniversaire JD le 18 juin), 双十二 (12/12). Règle : arguments incontournables — 性价比高 (bon rapport qualité/prix — phrase-reine du commerce chinois), 限量 (édition limitée), 爆款 (produit star).',
     bodyEn:
       'Chinese ads (广告, guǎng gào) use short formulas, often in rhythmic 4-character sets. Essential vocab: 品牌 (brand), 口号 (slogan), 优惠 (promotion), 打折 (discount), 限时 (time-limited), 免费 (free). Big shopping events: 双十一 (11/11, Singles\' Day, world\'s biggest shopping day), 618 (JD\'s anniversary on June 18), 双十二 (12/12). Must-know arguments: 性价比高 (good value for money — the king phrase of Chinese commerce), 限量 (limited edition), 爆款 (hit product).',
     items: [
@@ -1039,7 +1039,7 @@ export const b12ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Critiquer une œuvre (livre, film, restaurant)',
     titleEn: 'Critique a work (book, film, restaurant)',
     body:
-      'Positif structuré : 我觉得这本书写得很好，特别是 X (j\'ai trouvé ce livre bien écrit, surtout X). Donner des points : 优点是… (le point fort est…), 缺点是… (le point faible est…). Nuancer : 总体来说不错，但是… (dans l\'ensemble pas mal, mais…). Vocabulaire-clé : 情节 (intrigue), 人物 (personnages), 节奏 (rythme), 表演 (jeu d\'acteur), 剧本 (scénario), 风格 (style). Phrase d\'ouverture chinoise typique : 这部电影看完让我想了很久 = ce film m\'a fait réfléchir longtemps après — éloge fort en chinois.',
+      'Règle : positif structuré — 我觉得这本书写得很好，特别是 X (j\'ai trouvé ce livre bien écrit, surtout X). Donner des points — 优点是… (le point fort est…), 缺点是… (le point faible est…). Astuce : nuancer — 总体来说不错，但是… (dans l\'ensemble pas mal, mais…). Vocabulaire-clé — 情节 (intrigue), 人物 (personnages), 节奏 (rythme), 表演 (jeu d\'acteur), 剧本 (scénario), 风格 (style). Remarque : phrase d\'ouverture chinoise typique — 这部电影看完让我想了很久 = ce film m\'a fait réfléchir longtemps après, éloge fort en chinois.',
     bodyEn:
       'Structured positive: 我觉得这本书写得很好，特别是 X (I found this book well-written, especially X). Give points: 优点是… (the strength is…), 缺点是… (the weakness is…). Qualify: 总体来说不错，但是… (overall not bad, but…). Key vocab: 情节 (plot), 人物 (characters), 节奏 (pace), 表演 (acting), 剧本 (script), 风格 (style). Typical Chinese opening: 这部电影看完让我想了很久 = this film made me think long after — strong Chinese praise.',
     items: [
@@ -1059,7 +1059,7 @@ export const b12ConvM1LearnSections: LessonV2LearnSection[] = [
     title: 'Notation et recommandation',
     titleEn: 'Rating and recommendation',
     body:
-      'Notes : 五星 (5 étoiles), 四星 (4 étoiles, bien)… Vocabulaire : 推荐 (recommander), 不推荐 (déconseiller), 值得 (valoir), 不值得 (pas valoir le coup). 这部电影值得一看 = ce film vaut le coup d\'être vu. 我推荐你去 (je te le recommande). Échelle qualité : 不错 (pas mal) < 很好 (très bien) < 太棒了 (super) < 神作 (œuvre divine — argot fan). À éviter : 烂 (nul, vulgaire), 垃圾 (poubelle, très péjoratif). Préfère 不太理想 (pas idéal) ou 期待落空 (attentes déçues) — plus poli.',
+      'Notes : 五星 (5 étoiles), 四星 (4 étoiles, bien)… Vocabulaire — 推荐 (recommander), 不推荐 (déconseiller), 值得 (valoir), 不值得 (pas valoir le coup). 这部电影值得一看 = ce film vaut le coup d\'être vu. 我推荐你去 (je te le recommande). Astuce : échelle qualité — 不错 (pas mal) < 很好 (très bien) < 太棒了 (super) < 神作 (œuvre divine, argot fan). Attention : à éviter — 烂 (nul, vulgaire), 垃圾 (poubelle, très péjoratif). Préfère 不太理想 (pas idéal) ou 期待落空 (attentes déçues), plus poli.',
     bodyEn:
       'Ratings: 五星 (5 stars), 四星 (4 stars, good)… Vocab: 推荐 (recommend), 不推荐 (don\'t recommend), 值得 (worth), 不值得 (not worth it). 这部电影值得一看 = this film is worth watching. 我推荐你去 (I recommend it to you). Quality scale: 不错 (not bad) < 很好 (very good) < 太棒了 (great) < 神作 (divine work — fan slang). Avoid: 烂 (lousy, vulgar), 垃圾 (garbage, very pejorative). Prefer 不太理想 (not ideal) or 期待落空 (expectations disappointed) — more polite.',
     items: [
@@ -1082,7 +1082,7 @@ export const b12ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Exprimer la nostalgie et les souvenirs',
     titleEn: 'Express nostalgia and memories',
     body:
-      'Démarrer : 我还记得 (je me souviens encore), 那时候我们… (à cette époque on…), 想起来真怀念 (en y pensant ça me manque vraiment). 怀念 (huáiniàn, regretter, manquer — émotionnel) est LE mot-clé chinois de la nostalgie. 我很怀念那段时光 = je regrette beaucoup cette époque. Pour les souvenirs d\'enfance : 小时候我经常… (enfant je souvent…). Phrase culturellement chargée : 时间过得真快 (le temps passe vite) — quasi-rituel quand on parle du passé. Réponse attendue : 是啊，转眼就… (oui, en un clin d\'œil…).',
+      'Démarrer : 我还记得 (je me souviens encore), 那时候我们… (à cette époque on…), 想起来真怀念 (en y pensant ça me manque vraiment). Règle : 怀念 (huáiniàn, regretter, manquer — émotionnel) est LE mot-clé chinois de la nostalgie. 我很怀念那段时光 = je regrette beaucoup cette époque. Astuce : pour les souvenirs d\'enfance — 小时候我经常… (enfant je souvent…). Remarque : phrase culturellement chargée — 时间过得真快 (le temps passe vite), quasi-rituel quand on parle du passé. Réponse attendue : 是啊，转眼就… (oui, en un clin d\'œil…).',
     bodyEn:
       'Open: 我还记得 (I still remember), 那时候我们… (back then we…), 想起来真怀念 (thinking about it I really miss it). 怀念 (huáiniàn, miss, long for — emotional) is THE Chinese key word for nostalgia. 我很怀念那段时光 = I really miss that time. For childhood memories: 小时候我经常… (as a child I often…). Culturally charged phrase: 时间过得真快 (time flies) — almost ritual when speaking of the past. Expected reply: 是啊，转眼就… (yeah, in a blink…).',
     items: [
@@ -1102,7 +1102,7 @@ export const b12ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Évoquer un objet ou une photo qui rappelle le passé',
     titleEn: 'Evoke an object or photo that recalls the past',
     body:
-      '这张照片让我想起 X = cette photo me rappelle X. 这个东西陪了我很多年 = cet objet m\'a accompagné pendant des années. 充满回忆 (rempli de souvenirs). Pour les amis perdus de vue : 不知道他现在怎么样 (je me demande comment il va maintenant). Pour conclure une discussion nostalgique : 那都是过去的事了 (c\'est du passé), 现在好好过 (vivons bien maintenant). Phrase poétique : 时光荏苒 (shíguāng rěnrǎn, le temps passe en silence — chengyu lettré, à utiliser avec parcimonie).',
+      '这张照片让我想起 X = cette photo me rappelle X. 这个东西陪了我很多年 = cet objet m\'a accompagné pendant des années. 充满回忆 (rempli de souvenirs). Astuce : pour les amis perdus de vue — 不知道他现在怎么样 (je me demande comment il va maintenant). Remarque : pour conclure une discussion nostalgique — 那都是过去的事了 (c\'est du passé), 现在好好过 (vivons bien maintenant). Attention : phrase poétique 时光荏苒 (shíguāng rěnrǎn, le temps passe en silence) est un chengyu lettré, à utiliser avec parcimonie.',
     bodyEn:
       '这张照片让我想起 X = this photo reminds me of X. 这个东西陪了我很多年 = this object kept me company for years. 充满回忆 (full of memories). For lost-touch friends: 不知道他现在怎么样 (I wonder how he\'s doing now). To close a nostalgic discussion: 那都是过去的事了 (it\'s all past now), 现在好好过 (let\'s live well now). Poetic phrase: 时光荏苒 (shíguāng rěnrǎn, time flows quietly — literary chengyu, use sparingly).',
     items: [
@@ -1125,7 +1125,7 @@ export const b12ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Argumenter sur un sujet de société',
     titleEn: 'Argue on a societal topic',
     body:
-      'Sujets B1.2 : 教育 (éducation), 环境 (environnement), 工作压力 (stress au travail), 房价 (prix de l\'immobilier), 老龄化 (vieillissement). Structure : 我觉得 + position + 因为 + raison + 比如 + exemple + 不过 + nuance. Vocabulaire-clé : 现象 (phénomène), 趋势 (tendance), 影响 (impact), 解决 (résoudre), 改善 (améliorer). Phrase d\'ouverture polie : 这是个复杂的问题 (c\'est un sujet complexe) — évite l\'air dogmatique. Pour reconnaître la nuance : 这个问题没有简单的答案 (cette question n\'a pas de réponse simple).',
+      'Sujets B1.2 : 教育 (éducation), 环境 (environnement), 工作压力 (stress au travail), 房价 (prix de l\'immobilier), 老龄化 (vieillissement). Règle : structure — 我觉得 + position + 因为 + raison + 比如 + exemple + 不过 + nuance. Astuce : vocabulaire-clé — 现象 (phénomène), 趋势 (tendance), 影响 (impact), 解决 (résoudre), 改善 (améliorer). Remarque : phrase d\'ouverture polie 这是个复杂的问题 (c\'est un sujet complexe) évite l\'air dogmatique. Pour reconnaître la nuance — 这个问题没有简单的答案 (cette question n\'a pas de réponse simple).',
     bodyEn:
       'B1.2 topics: 教育 (education), 环境 (environment), 工作压力 (work stress), 房价 (housing prices), 老龄化 (aging). Structure: 我觉得 + position + 因为 + reason + 比如 + example + 不过 + nuance. Key vocab: 现象 (phenomenon), 趋势 (trend), 影响 (impact), 解决 (solve), 改善 (improve). Polite opening: 这是个复杂的问题 (it\'s a complex topic) — avoids dogmatic air. To acknowledge nuance: 这个问题没有简单的答案 (this question has no simple answer).',
     items: [
@@ -1145,7 +1145,7 @@ export const b12ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Sujets délicats : santé mentale, famille, mariage',
     titleEn: 'Delicate topics: mental health, family, marriage',
     body:
-      'Sujets jadis tabous, maintenant discutés (surtout en milieu urbain jeune). 抑郁症 (dépression), 焦虑 (anxiété), 单亲家庭 (famille monoparentale), 离婚 (divorce), 丁克 (Dink, couple sans enfants — concept importé), 不婚主义 (célibat choisi). Pour aborder délicatement : 我可以问你一个比较私人的问题吗？(je peux te poser une question un peu perso ?). Pour partager : 这是我自己的经历 (c\'est ma propre expérience). Pour respecter : 你不想聊就不聊 (si tu n\'as pas envie d\'en parler, on n\'en parle pas). Le 不想聊 est une porte de sortie sociale très importante.',
+      'Sujets jadis tabous, maintenant discutés (surtout en milieu urbain jeune). 抑郁症 (dépression), 焦虑 (anxiété), 单亲家庭 (famille monoparentale), 离婚 (divorce), 丁克 (Dink, couple sans enfants — concept importé), 不婚主义 (célibat choisi). Astuce : pour aborder délicatement — 我可以问你一个比较私人的问题吗？(je peux te poser une question un peu perso ?). Règle : pour partager — 这是我自己的经历 (c\'est ma propre expérience). Pour respecter — 你不想聊就不聊 (si tu n\'as pas envie d\'en parler, on n\'en parle pas). Remarque : le 不想聊 est une porte de sortie sociale très importante.',
     bodyEn:
       'Once-taboo topics now discussed (especially in young urban circles). 抑郁症 (depression), 焦虑 (anxiety), 单亲家庭 (single-parent family), 离婚 (divorce), 丁克 (Dink, child-free couple — imported), 不婚主义 (chosen singlehood). To broach delicately: 我可以问你一个比较私人的问题吗？(may I ask a personal question?). To share: 这是我自己的经历 (this is my own experience). To respect: 你不想聊就不聊 (if you don\'t want to discuss, we don\'t). The 不想聊 is a very important social exit.',
     items: [
@@ -1168,7 +1168,7 @@ export const b12ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Donner ses impressions sur un voyage',
     titleEn: 'Share trip impressions',
     body:
-      'Démarrer : 我刚从 X 回来 (je rentre tout juste de X), 我去 X 玩了一周 (j\'ai passé une semaine à X). Adjectifs voyage : 美 (beau), 壮观 (grandiose), 古老 (ancien), 现代 (moderne), 热闹 (animé), 安静 (calme). Conseils : 你一定要去 (tu dois absolument y aller), 我推荐 X (je recommande X), 别错过 X (ne rate pas X). Phrase typique : 那里的人很热情 = les gens là-bas sont chaleureux (compliment universel). Pour la nourriture : 当地的菜很地道 (la cuisine locale est authentique). 地道 (authentique) est un vrai compliment.',
+      'Démarrer : 我刚从 X 回来 (je rentre tout juste de X), 我去 X 玩了一周 (j\'ai passé une semaine à X). Astuce : adjectifs voyage — 美 (beau), 壮观 (grandiose), 古老 (ancien), 现代 (moderne), 热闹 (animé), 安静 (calme). Règle : conseils — 你一定要去 (tu dois absolument y aller), 我推荐 X (je recommande X), 别错过 X (ne rate pas X). Remarque : phrase typique 那里的人很热情 = les gens là-bas sont chaleureux (compliment universel). Pour la nourriture — 当地的菜很地道 (la cuisine locale est authentique). 地道 (authentique) est un vrai compliment.',
     bodyEn:
       'Start: 我刚从 X 回来 (I just got back from X), 我去 X 玩了一周 (I spent a week in X). Travel adjectives: 美 (beautiful), 壮观 (grand), 古老 (ancient), 现代 (modern), 热闹 (lively), 安静 (quiet). Tips: 你一定要去 (you must go), 我推荐 X (I recommend X), 别错过 X (don\'t miss X). Typical phrase: 那里的人很热情 = the people there are warm (universal compliment). For food: 当地的菜很地道 (local cuisine is authentic). 地道 (authentic) is a real compliment.',
     items: [
@@ -1188,7 +1188,7 @@ export const b12ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Mésaventure de voyage',
     titleEn: 'Travel mishap',
     body:
-      'Vocabulaire : 行李 (bagage), 丢 (perdre), 找不到 (impossible à trouver), 错过 (rater), 晚点 (en retard — pour transports), 取消 (annulé). 我的行李丢了 = j\'ai perdu mes bagages. 我错过了航班 = j\'ai raté l\'avion. Pour solliciter de l\'aide : 你能帮我吗 ? + 不好意思 + cause. Pour rapporter une anecdote drôle après-coup : 想起来真好笑 (en y repensant c\'était drôle), 后来还好 (heureusement après ça a été). Toujours conclure positivement : 不过总体来说挺有意思 (mais dans l\'ensemble c\'était intéressant) — culture chinoise valorise la résilience.',
+      'Vocabulaire : 行李 (bagage), 丢 (perdre), 找不到 (impossible à trouver), 错过 (rater), 晚点 (en retard — pour transports), 取消 (annulé). 我的行李丢了 = j\'ai perdu mes bagages. 我错过了航班 = j\'ai raté l\'avion. Astuce : pour solliciter de l\'aide — 你能帮我吗 ? + 不好意思 + cause. Pour rapporter une anecdote drôle après-coup — 想起来真好笑 (en y repensant c\'était drôle), 后来还好 (heureusement après ça a été). Remarque : toujours conclure positivement avec 不过总体来说挺有意思 (mais dans l\'ensemble c\'était intéressant), la culture chinoise valorise la résilience.',
     bodyEn:
       'Vocab: 行李 (luggage), 丢 (lose), 找不到 (can\'t find), 错过 (miss), 晚点 (late — for transport), 取消 (canceled). 我的行李丢了 = I lost my luggage. 我错过了航班 = I missed the flight. To ask for help: 你能帮我吗? + 不好意思 + cause. To report a funny anecdote afterwards: 想起来真好笑 (looking back it was funny), 后来还好 (luckily it turned out OK). Always conclude positively: 不过总体来说挺有意思 (but overall it was interesting) — Chinese culture values resilience.',
     items: [
@@ -1211,7 +1211,7 @@ export const b12ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Parcours universitaire et études',
     titleEn: 'Academic path and studies',
     body:
-      'Niveaux : 小学 (primaire), 初中 (collège), 高中 (lycée), 大学 (université), 硕士 (master), 博士 (doctorat). Diplômes : 本科生 (en licence), 研究生 (étudiant en master/doctorat), 毕业生 (diplômé). Verbes : 上课 (avoir cours), 上学 (aller à l\'école), 考试 (passer un examen), 复习 (réviser), 通过 (réussir), 不及格 (échouer). Phrase : 我大学学的是 X = à l\'université j\'ai étudié X. Sujet brûlant : 高考 (gāokǎo, le concours d\'entrée à l\'université — équivalent du bac mais d\'enjeu COLOSSAL en Chine). Mention 高考 = sujet immédiatement compris et chargé.',
+      'Niveaux : 小学 (primaire), 初中 (collège), 高中 (lycée), 大学 (université), 硕士 (master), 博士 (doctorat). Diplômes — 本科生 (en licence), 研究生 (étudiant en master/doctorat), 毕业生 (diplômé). Astuce : verbes — 上课 (avoir cours), 上学 (aller à l\'école), 考试 (passer un examen), 复习 (réviser), 通过 (réussir), 不及格 (échouer). Règle : phrase — 我大学学的是 X = à l\'université j\'ai étudié X. Remarque : sujet brûlant — 高考 (gāokǎo, le concours d\'entrée à l\'université — équivalent du bac mais d\'enjeu COLOSSAL en Chine). Mention 高考 = sujet immédiatement compris et chargé.',
     bodyEn:
       'Levels: 小学 (primary), 初中 (middle school), 高中 (high school), 大学 (university), 硕士 (master), 博士 (PhD). Degrees: 本科生 (undergrad), 研究生 (master/PhD student), 毕业生 (graduate). Verbs: 上课 (have class), 上学 (go to school), 考试 (take an exam), 复习 (review), 通过 (pass), 不及格 (fail). Phrase: 我大学学的是 X = at uni I studied X. Hot topic: 高考 (gāokǎo, the university entrance exam — equivalent to the SATs but with COLOSSAL stakes in China). Mentioning 高考 = immediately understood and charged.',
     items: [
@@ -1231,7 +1231,7 @@ export const b12ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Surmonter une difficulté académique',
     titleEn: 'Overcome an academic difficulty',
     body:
-      'Décrire la difficulté : 我有点跟不上 (je ne suis pas tout à fait), 我没听懂 (je n\'ai pas compris). Demander de l\'aide : 你能给我讲一下吗 ? (peux-tu m\'expliquer ?), 我有几个问题想问你 (j\'ai des questions pour toi). Étudier ensemble : 一起复习 (réviser ensemble), 互相帮助 (s\'entraider). Échec et reprise : 我没及格，再考一次 (j\'ai raté, je repasse). Phrase encourageante : 失败是成功之母 (l\'échec est la mère du succès — chengyu populaire), 慢慢来 (vas-y doucement), 别给自己太大压力 (ne te mets pas trop de pression).',
+      'Décrire la difficulté : 我有点跟不上 (je ne suis pas tout à fait), 我没听懂 (je n\'ai pas compris). Astuce : demander de l\'aide — 你能给我讲一下吗 ? (peux-tu m\'expliquer ?), 我有几个问题想问你 (j\'ai des questions pour toi). Étudier ensemble — 一起复习 (réviser ensemble), 互相帮助 (s\'entraider). Remarque : échec et reprise — 我没及格，再考一次 (j\'ai raté, je repasse). Règle : phrase encourageante — 失败是成功之母 (l\'échec est la mère du succès, chengyu populaire), 慢慢来 (vas-y doucement), 别给自己太大压力 (ne te mets pas trop de pression).',
     bodyEn:
       'Describe difficulty: 我有点跟不上 (I can\'t quite keep up), 我没听懂 (I didn\'t understand). Ask for help: 你能给我讲一下吗? (can you explain?), 我有几个问题想问你 (I have questions for you). Study together: 一起复习 (review together), 互相帮助 (help each other). Failure and retry: 我没及格，再考一次 (I failed, I\'ll retake it). Encouragement: 失败是成功之母 (failure is the mother of success — popular chengyu), 慢慢来 (take it easy), 别给自己太大压力 (don\'t pressure yourself too much).',
     items: [
@@ -1254,7 +1254,7 @@ export const b12ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Raconter un échec et ce qu\'on a appris',
     titleEn: 'Tell a failure and what you learned',
     body:
-      'Démarrer humblement : 我之前犯过一个错误 (j\'ai déjà fait une erreur), 那次经历让我学到很多 (cette expérience m\'a beaucoup appris). Les Chinois VALORISENT le récit d\'échec lucide — c\'est un signe de maturité 成熟 (chéngshú). Vocabulaire : 失败 (échec), 教训 (leçon — au sens « ce que ça m\'a appris »), 反思 (réfléchir, faire son auto-critique), 改进 (améliorer). Phrase typique : 这个教训我永远记得 (cette leçon je m\'en souviendrai toujours). Conclure positif : 现在回头看，那次失败是宝贵的 (avec le recul, cet échec a été précieux).',
+      'Démarrer humblement : 我之前犯过一个错误 (j\'ai déjà fait une erreur), 那次经历让我学到很多 (cette expérience m\'a beaucoup appris). Remarque : les Chinois VALORISENT le récit d\'échec lucide — c\'est un signe de maturité 成熟 (chéngshú). Astuce : vocabulaire — 失败 (échec), 教训 (leçon — au sens « ce que ça m\'a appris »), 反思 (réfléchir, faire son auto-critique), 改进 (améliorer). Règle : phrase typique 这个教训我永远记得 (cette leçon je m\'en souviendrai toujours). Conclure positif — 现在回头看，那次失败是宝贵的 (avec le recul, cet échec a été précieux).',
     bodyEn:
       'Start humbly: 我之前犯过一个错误 (I made a mistake before), 那次经历让我学到很多 (that experience taught me a lot). Chinese people VALUE clear-eyed failure narratives — a sign of maturity 成熟 (chéngshú). Vocab: 失败 (failure), 教训 (lesson — meaning «what it taught me»), 反思 (reflect, self-critique), 改进 (improve). Typical phrase: 这个教训我永远记得 (I\'ll always remember this lesson). Conclude positively: 现在回头看，那次失败是宝贵的 (in hindsight, that failure was precious).',
     items: [
@@ -1274,7 +1274,7 @@ export const b12ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Présenter une stratégie / un plan d\'action',
     titleEn: 'Present a strategy / action plan',
     body:
-      'Structure : 目标 (objectif) → 计划 (plan) → 步骤 (étapes) → 风险 (risques) → 备选方案 (plan B). Vocabulaire : 实施 (mettre en œuvre), 执行 (exécuter), 评估 (évaluer), 调整 (ajuster). 我们的目标是在 X 年内 X = notre objectif est X dans X années. 主要分三个阶段 = en 3 phases principales. Pour montrer la flexibilité : 我们会根据情况调整 (on s\'adaptera selon la situation). Pour anticiper les questions : 关于风险，我们考虑过 X (concernant les risques, on a considéré X). En présentation chinoise, anticiper les contre-arguments est très valorisé.',
+      'Règle : structure 目标 (objectif) → 计划 (plan) → 步骤 (étapes) → 风险 (risques) → 备选方案 (plan B). Astuce : vocabulaire — 实施 (mettre en œuvre), 执行 (exécuter), 评估 (évaluer), 调整 (ajuster). 我们的目标是在 X 年内 X = notre objectif est X dans X années. 主要分三个阶段 = en 3 phases principales. Remarque : pour montrer la flexibilité — 我们会根据情况调整 (on s\'adaptera selon la situation). Pour anticiper les questions — 关于风险，我们考虑过 X (concernant les risques, on a considéré X). Attention : en présentation chinoise, anticiper les contre-arguments est très valorisé.',
     bodyEn:
       'Structure: 目标 (objective) → 计划 (plan) → 步骤 (steps) → 风险 (risks) → 备选方案 (plan B). Vocab: 实施 (implement), 执行 (execute), 评估 (evaluate), 调整 (adjust). 我们的目标是在 X 年内 X = our goal is X within X years. 主要分三个阶段 = in 3 main phases. To show flexibility: 我们会根据情况调整 (we\'ll adapt to circumstances). To anticipate questions: 关于风险，我们考虑过 X (regarding risks, we\'ve considered X). In Chinese presentations, anticipating counter-arguments is highly valued.',
     items: [
@@ -1297,7 +1297,7 @@ export const b12ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Donner et recevoir un feedback pro',
     titleEn: 'Give and receive professional feedback',
     body:
-      'Donner positif : 我觉得你做得很好，特别是 X (très bien fait, surtout X). Constructif (sandwich obligatoire) : 你有几个优点，比如 X，不过 Y 可以再改进 (tu as des points forts, mais Y peut être amélioré). Recevoir : 谢谢你的反馈 (merci pour ton retour), 我会认真考虑 (je vais y réfléchir sérieusement), 你能再具体一点吗？(peux-tu être plus précis ?). 反馈 (fǎnkuì, feedback) est le mot moderne. Au-delà : 总结 (bilan), 评价 (évaluation), 评估 (évaluer). Toujours rester ouvert verbalement même si tu n\'es pas d\'accord — la réaction se voit, le merci s\'entend.',
+      'Règle : donner positif — 我觉得你做得很好，特别是 X (très bien fait, surtout X). Constructif (sandwich obligatoire) — 你有几个优点，比如 X，不过 Y 可以再改进 (tu as des points forts, mais Y peut être amélioré). Astuce : recevoir — 谢谢你的反馈 (merci pour ton retour), 我会认真考虑 (je vais y réfléchir sérieusement), 你能再具体一点吗？(peux-tu être plus précis ?). Remarque : 反馈 (fǎnkuì, feedback) est le mot moderne. Au-delà — 总结 (bilan), 评价 (évaluation), 评估 (évaluer). Attention : toujours rester ouvert verbalement même si tu n\'es pas d\'accord — la réaction se voit, le merci s\'entend.',
     bodyEn:
       'Give positive: 我觉得你做得很好，特别是 X (very well done, especially X). Constructive (sandwich mandatory): 你有几个优点，比如 X，不过 Y 可以再改进 (you have strengths, but Y can be improved). Receive: 谢谢你的反馈 (thanks for the feedback), 我会认真考虑 (I\'ll think seriously), 你能再具体一点吗？(can you be more specific?). 反馈 (fǎnkuì, feedback) is the modern word. Beyond: 总结 (summary), 评价 (evaluation), 评估 (assess). Always stay verbally open even if you disagree — reaction shows, thanks is heard.',
     items: [
@@ -1317,7 +1317,7 @@ export const b12ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Désaccord pro avec un supérieur',
     titleEn: 'Pro disagreement with a superior',
     body:
-      'Délicat. Préface obligatoire : 我有一个不同的想法，您看一下 (j\'ai une idée différente, voyez ce que vous en pensez). Toujours en QUESTION, pas en affirmation : 我们是不是可以考虑 X ?. Si refus : 好的，我明白了 + accepter sans rancune. Pour insister légitimement : 这个方案有一个潜在的风险 (cette proposition a un risque potentiel) — focalise sur le RISQUE, pas sur le supérieur. Phrase magique : 我只是从我的角度提一个建议 (c\'est juste une suggestion de mon point de vue). Sortie de secours universelle.',
+      'Délicat. Règle : préface obligatoire — 我有一个不同的想法，您看一下 (j\'ai une idée différente, voyez ce que vous en pensez). Attention : toujours en QUESTION, pas en affirmation. 我们是不是可以考虑 X ?. Si refus — 好的，我明白了 + accepter sans rancune. Astuce : pour insister légitimement — 这个方案有一个潜在的风险 (cette proposition a un risque potentiel), focalise sur le RISQUE, pas sur le supérieur. Remarque : phrase magique 我只是从我的角度提一个建议 (c\'est juste une suggestion de mon point de vue) est une sortie de secours universelle.',
     bodyEn:
       'Delicate. Mandatory preface: 我有一个不同的想法，您看一下 (I have a different thought, what do you think?). Always as QUESTION, not assertion: 我们是不是可以考虑 X ?. If refused: 好的，我明白了 + accept without grudge. To legitimately insist: 这个方案有一个潜在的风险 (this proposal has a potential risk) — focus on the RISK, not the superior. Magic phrase: 我只是从我的角度提一个建议 (it\'s just a suggestion from my perspective). Universal escape hatch.',
     items: [
@@ -1342,7 +1342,7 @@ export const b12NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '刚 vs 刚才 — juste vs il y a un instant',
     titleEn: '刚 vs 刚才 — just vs a moment ago',
     body:
-      '刚 (gāng) = juste (adverbe — l\'action vient à l\'instant de se finir, dure moins de 5 min). 我刚到 = je viens d\'arriver (à l\'instant). Va AVANT le verbe. 刚才 (gāngcái) = il y a un instant (NOM/référent temporel — il y a quelques minutes/heures, on en parle après). 刚才你说什么？= qu\'est-ce que tu disais à l\'instant ? Va comme un mot temporel autonome. Test : « il y a un peu » → 刚才 ; « tout juste » → 刚. 我刚回家 = je viens de rentrer ; 刚才他来过 = il était venu il y a un instant. Erreur classique : confondre les deux positions syntaxiques.',
+      'Règle : 刚 (gāng) = juste (adverbe — l\'action vient à l\'instant de se finir, dure moins de 5 min). 我刚到 = je viens d\'arriver (à l\'instant). Va AVANT le verbe. 刚才 (gāngcái) = il y a un instant (NOM/référent temporel — il y a quelques minutes/heures, on en parle après). 刚才你说什么？= qu\'est-ce que tu disais à l\'instant ? Va comme un mot temporel autonome. Astuce : test — « il y a un peu » → 刚才 ; « tout juste » → 刚. 我刚回家 = je viens de rentrer ; 刚才他来过 = il était venu il y a un instant. Attention : erreur classique — confondre les deux positions syntaxiques.',
     bodyEn:
       '刚 (gāng) = just (adverb — action just finished, less than ~5 min). 我刚到 = I just arrived (instantly). Goes BEFORE the verb. 刚才 (gāngcái) = a moment ago (NOUN/time referent — a few minutes/hours ago, talked about afterward). 刚才你说什么？= what did you just say? Functions as standalone time word. Test: «a moment ago» → 刚才; «just» → 刚. 我刚回家 = I just got home; 刚才他来过 = he came by a moment ago. Common mistake: confusing the two syntactic positions.',
     items: [
@@ -1362,7 +1362,7 @@ export const b12NuancesM1LearnSections: LessonV2LearnSection[] = [
     title: '马上 vs 立刻 vs 立即 — immédiatement (registre)',
     titleEn: '马上 vs 立刻 vs 立即 — immediately (register)',
     body:
-      '马上 (mǎshàng, tout de suite — ORAL standard). 我马上来 = j\'arrive tout de suite. La promesse la plus courante en Chine ; à comprendre comme « bientôt » plutôt que « tout de suite » LITÉRAL (tolérance ~10 min). 立刻 (lìkè, immédiatement — un peu plus écrit/sérieux). 我立刻处理 = je traite immédiatement. 立即 (lìjí, sur-le-champ — formel, écrit, ordres). 立即停止 = arrêter sur-le-champ. Hierarchy : 马上 (oral, élastique) < 立刻 (sérieux) < 立即 (formel/ordre). À l\'oral, 马上 partout. À l\'écrit pro, alterne 立刻 et 立即.',
+      'Règle : 马上 (mǎshàng, tout de suite — ORAL standard). 我马上来 = j\'arrive tout de suite. Attention : la promesse la plus courante en Chine, à comprendre comme « bientôt » plutôt que « tout de suite » LITÉRAL (tolérance ~10 min). 立刻 (lìkè, immédiatement — un peu plus écrit/sérieux). 我立刻处理 = je traite immédiatement. 立即 (lìjí, sur-le-champ — formel, écrit, ordres). 立即停止 = arrêter sur-le-champ. Astuce : hierarchy 马上 (oral, élastique) < 立刻 (sérieux) < 立即 (formel/ordre). Remarque : à l\'oral 马上 partout ; à l\'écrit pro, alterne 立刻 et 立即.',
     bodyEn:
       '马上 (mǎshàng, right away — STANDARD oral). 我马上来 = I\'m coming right away. The most common promise in China; understand as «soon» rather than LITERAL «right away» (tolerance ~10 min). 立刻 (lìkè, immediately — slightly more written/serious). 我立刻处理 = I\'ll handle it immediately. 立即 (lìjí, this instant — formal, written, orders). 立即停止 = stop this instant. Hierarchy: 马上 (oral, elastic) < 立刻 (serious) < 立即 (formal/order). In speech, 马上 everywhere. In pro writing, alternate 立刻 and 立即.',
     items: [
@@ -1385,7 +1385,7 @@ export const b12NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '完成 vs 结束 vs 完毕 — finir (registre)',
     titleEn: '完成 vs 结束 vs 完毕 — finish (register)',
     body:
-      '完成 (wánchéng) = achever (un OBJECTIF, un projet). 我完成了任务 = j\'ai accompli la tâche. L\'accent est sur le RÉSULTAT atteint. 结束 (jiéshù) = se terminer (un ÉVÉNEMENT, une période — neutre). 会议结束了 = la réunion est finie. L\'accent est sur la fin elle-même, sans jugement. 完毕 (wánbì) = achevé / terminé (FORMEL, écrit, militaire/admin). 报告完毕 = compte-rendu terminé. Hierarchy : 结束 (neutre, oral) < 完成 (résultat) < 完毕 (formel). Erreur classique : utiliser 完成 pour une réunion → 会议完成了 ✗ (utilise 结束).',
+      'Règle : 完成 (wánchéng) = achever (un OBJECTIF, un projet). 我完成了任务 = j\'ai accompli la tâche. L\'accent est sur le RÉSULTAT atteint. 结束 (jiéshù) = se terminer (un ÉVÉNEMENT, une période — neutre). 会议结束了 = la réunion est finie. L\'accent est sur la fin elle-même, sans jugement. 完毕 (wánbì) = achevé / terminé (FORMEL, écrit, militaire/admin). 报告完毕 = compte-rendu terminé. Astuce : hierarchy 结束 (neutre, oral) < 完成 (résultat) < 完毕 (formel). Attention : erreur classique — utiliser 完成 pour une réunion → 会议完成了 ✗ (utilise 结束).',
     bodyEn:
       '完成 (wánchéng) = accomplish (a GOAL, a project). 我完成了任务 = I accomplished the task. Stress on RESULT achieved. 结束 (jiéshù) = end (an EVENT, a period — neutral). 会议结束了 = the meeting ended. Stress on the end itself, no judgment. 完毕 (wánbì) = completed (FORMAL, written, military/admin). 报告完毕 = report ended. Hierarchy: 结束 (neutral, oral) < 完成 (result) < 完毕 (formal). Common mistake: using 完成 for a meeting → 会议完成了 ✗ (use 结束).',
     items: [
@@ -1405,7 +1405,7 @@ export const b12NuancesM2LearnSections: LessonV2LearnSection[] = [
     title: '终于 vs 最后 vs 到底 — finalement',
     titleEn: '终于 vs 最后 vs 到底 — finally',
     body:
-      '终于 (zhōngyú) = ENFIN (après attente, soulagement émotionnel). 我终于到了 = je suis ENFIN arrivé (j\'attendais ce moment). Très positif. 最后 (zuìhòu) = à la fin, en dernier (NEUTRE, séquence). 最后我们去了餐厅 = à la fin on est allés au resto. Pas d\'émotion. 到底 (dàodǐ) = en fin de compte / mais enfin (insistance, parfois agacée). 你到底来不来？= tu viens, oui ou non ? Pour la conclusion réfléchie : 到底有什么意义？= au fond, quel sens ça a ? Hierarchy : 终于 (émotion+) ≠ 最后 (neutre) ≠ 到底 (insistance/agacement).',
+      'Règle : 终于 (zhōngyú) = ENFIN (après attente, soulagement émotionnel). 我终于到了 = je suis ENFIN arrivé (j\'attendais ce moment). Très positif. 最后 (zuìhòu) = à la fin, en dernier (NEUTRE, séquence). 最后我们去了餐厅 = à la fin on est allés au resto. Remarque : pas d\'émotion. 到底 (dàodǐ) = en fin de compte / mais enfin (insistance, parfois agacée). 你到底来不来？= tu viens, oui ou non ? Astuce : pour la conclusion réfléchie — 到底有什么意义？= au fond, quel sens ça a ? Attention : hierarchy 终于 (émotion+) ≠ 最后 (neutre) ≠ 到底 (insistance/agacement).',
     bodyEn:
       '终于 (zhōngyú) = AT LAST (after waiting, emotional relief). 我终于到了 = I FINALLY arrived (I was waiting for this moment). Very positive. 最后 (zuìhòu) = at the end, lastly (NEUTRAL, sequence). 最后我们去了餐厅 = at the end we went to the restaurant. No emotion. 到底 (dàodǐ) = in the end / for crying out loud (insistence, sometimes annoyed). 你到底来不来？= are you coming or not?! For thoughtful conclusion: 到底有什么意义？= deep down, what\'s the meaning? Hierarchy: 终于 (emotion+) ≠ 最后 (neutral) ≠ 到底 (insistence/annoyance).',
     items: [
@@ -1428,7 +1428,7 @@ export const b12NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '难道 vs 不会吧 — rhétoriques de doute',
     titleEn: '难道 vs 不会吧 — rhetorical doubts',
     body:
-      '难道 (nándào) = est-ce que vraiment / ne me dis pas que (rhétorique d\'incrédulité, formel/oral fort). 难道你不知道 ? = ne me dis pas que tu ne sais pas ?! Toujours suivi d\'une question affirmative pour exprimer un doute fort. 不会吧 (búhuìba) = pas possible (incrédulité ORALE familière). 不会吧，他真的来了？ = pas possible, il est vraiment venu ? Plus léger que 难道. Variantes oral : 真的吗 ? (vraiment ?), 不可能 ! (impossible !), 怎么可能 (comment c\'est possible). Hierarchy : 真的吗 (info confirmation) < 不会吧 (incrédulité oral) < 难道 (rhétorique fort).',
+      'Règle : 难道 (nándào) = est-ce que vraiment / ne me dis pas que (rhétorique d\'incrédulité, formel/oral fort). 难道你不知道 ? = ne me dis pas que tu ne sais pas ?! Attention : toujours suivi d\'une question affirmative pour exprimer un doute fort. 不会吧 (búhuìba) = pas possible (incrédulité ORALE familière). 不会吧，他真的来了？ = pas possible, il est vraiment venu ? Remarque : plus léger que 难道. Astuce : variantes oral — 真的吗 ? (vraiment ?), 不可能 ! (impossible !), 怎么可能 (comment c\'est possible). Hierarchy 真的吗 (info confirmation) < 不会吧 (incrédulité oral) < 难道 (rhétorique fort).',
     bodyEn:
       '难道 (nándào) = is it really / don\'t tell me (rhetorical incredulity, formal/strong oral). 难道你不知道？= don\'t tell me you don\'t know?! Always followed by an affirmative question to express strong doubt. 不会吧 (búhuìba) = no way (CASUAL oral incredulity). 不会吧，他真的来了？= no way, did he really come? Lighter than 难道. Oral variants: 真的吗？(really?), 不可能！(impossible!), 怎么可能 (how possible). Hierarchy: 真的吗 (info confirmation) < 不会吧 (oral incredulity) < 难道 (strong rhetorical).',
     items: [
@@ -1448,7 +1448,7 @@ export const b12NuancesM3LearnSections: LessonV2LearnSection[] = [
     title: '不见得 vs 未必 vs 不一定 — pas forcément',
     titleEn: '不见得 vs 未必 vs 不一定 — not necessarily',
     body:
-      '不一定 (bùyídìng) = pas forcément (NEUTRE, oral et écrit). 这个不一定对 = ce n\'est pas forcément vrai. Le plus universel. 不见得 (bújiàndé) = pas nécessairement (un peu plus oral, scepticisme léger). 你说的不见得对 = ce que tu dis n\'est pas forcément vrai (= je doute un peu). 未必 (wèibì) = pas certain (FORMEL, écrit). 这个结论未必正确 = cette conclusion n\'est pas nécessairement correcte. Hierarchy : 不一定 (neutre) < 不见得 (sceptique oral) < 未必 (formel écrit). Test : sens identique, registre différent. À l\'écrit B1+, alterne pour le rythme.',
+      'Règle : 不一定 (bùyídìng) = pas forcément (NEUTRE, oral et écrit). 这个不一定对 = ce n\'est pas forcément vrai. Le plus universel. 不见得 (bújiàndé) = pas nécessairement (un peu plus oral, scepticisme léger). 你说的不见得对 = ce que tu dis n\'est pas forcément vrai (= je doute un peu). 未必 (wèibì) = pas certain (FORMEL, écrit). 这个结论未必正确 = cette conclusion n\'est pas nécessairement correcte. Astuce : hierarchy 不一定 (neutre) < 不见得 (sceptique oral) < 未必 (formel écrit). Remarque : sens identique, registre différent. À l\'écrit B1+, alterne pour le rythme.',
     bodyEn:
       '不一定 (bùyídìng) = not necessarily (NEUTRAL, oral and written). 这个不一定对 = this isn\'t necessarily true. Most universal. 不见得 (bújiàndé) = not necessarily (slightly more oral, mild skepticism). 你说的不见得对 = what you say isn\'t necessarily true (= I have doubts). 未必 (wèibì) = not certain (FORMAL, written). 这个结论未必正确 = this conclusion isn\'t necessarily correct. Hierarchy: 不一定 (neutral) < 不见得 (oral skeptical) < 未必 (formal written). Test: same sense, different register. In B1+ writing, alternate for rhythm.',
     items: [
@@ -1471,7 +1471,7 @@ export const b12NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '趁 vs 利用 vs 借 — profiter de',
     titleEn: '趁 vs 利用 vs 借 — take advantage of',
     body:
-      '趁 (chèn) = profiter d\'une opportunité/d\'un moment FAVORABLE (positif, oral courant). 趁热吃 = mange tant que c\'est chaud. 趁年轻 = tant qu\'on est jeune. Très naturel et chaleureux. 利用 (lìyòng) = utiliser (un avantage, parfois autrui — neutre à NÉGATIF si appliqué à une personne). 利用资源 = exploiter des ressources (neutre). 利用别人 = se servir des gens (très négatif). 借 (jiè) = emprunter (objet) ou se servir (occasion, formel). 借这个机会 = à l\'occasion (formel, début de discours). Différence : 趁 = saisir une opportunité (positif) ; 利用 = exploiter (souvent froid) ; 借 = emprunter / occasion (formel).',
+      'Règle : 趁 (chèn) = profiter d\'une opportunité/d\'un moment FAVORABLE (positif, oral courant). 趁热吃 = mange tant que c\'est chaud. 趁年轻 = tant qu\'on est jeune. Astuce : très naturel et chaleureux. 利用 (lìyòng) = utiliser (un avantage, parfois autrui — neutre à NÉGATIF si appliqué à une personne). 利用资源 = exploiter des ressources (neutre). Attention : 利用别人 = se servir des gens (très négatif). 借 (jiè) = emprunter (objet) ou se servir (occasion, formel). 借这个机会 = à l\'occasion (formel, début de discours). Remarque : 趁 = saisir une opportunité (positif) ; 利用 = exploiter (souvent froid) ; 借 = emprunter / occasion (formel).',
     bodyEn:
       '趁 (chèn) = take advantage of a FAVORABLE opportunity/moment (positive, common oral). 趁热吃 = eat while it\'s hot. 趁年轻 = while you\'re young. Very natural and warm. 利用 (lìyòng) = use (an advantage, sometimes others — neutral to NEGATIVE when applied to a person). 利用资源 = exploit resources (neutral). 利用别人 = use people (very negative). 借 (jiè) = borrow (object) or seize (an occasion, formal). 借这个机会 = on this occasion (formal, speech opener). Difference: 趁 = seize an opportunity (positive); 利用 = exploit (often cold); 借 = borrow / occasion (formal).',
     items: [
@@ -1491,7 +1491,7 @@ export const b12NuancesM4LearnSections: LessonV2LearnSection[] = [
     title: '便 vs 是 vs 即 — c\'est-à-dire / alors (formel)',
     titleEn: '便 vs 是 vs 即 — that is / then (formal)',
     body:
-      'À l\'écrit B1.2, tu rencontreras ces 3 mots formels : 便 (biàn) = alors, ainsi (synonyme de 就 mais ÉCRIT). 完成任务便可休息 = la tâche faite, on peut se reposer. 即 (jí) = c\'est-à-dire / soit (juxtaposition formelle). HSK 即 H 三 = HSK soit niveau 3. 是 standard reste de loin le plus fréquent. À l\'oral, JAMAIS 便 ou 即 (sonne extrêmement pédant). À l\'écrit académique/journalistique, 便 et 即 apportent du rythme. Reconnaître pour LIRE est plus important que produire à ce niveau. Phrase classique : 即所谓 X = c\'est ce qu\'on appelle X.',
+      'Règle : à l\'écrit B1.2, tu rencontreras ces 3 mots formels. 便 (biàn) = alors, ainsi (synonyme de 就 mais ÉCRIT). 完成任务便可休息 = la tâche faite, on peut se reposer. 即 (jí) = c\'est-à-dire / soit (juxtaposition formelle). HSK 即 H 三 = HSK soit niveau 3. 是 standard reste de loin le plus fréquent. Attention : à l\'oral, JAMAIS 便 ou 即 (sonne extrêmement pédant). Astuce : à l\'écrit académique/journalistique, 便 et 即 apportent du rythme. Remarque : reconnaître pour LIRE est plus important que produire à ce niveau. Phrase classique 即所谓 X = c\'est ce qu\'on appelle X.',
     bodyEn:
       'In B1.2 writing, you\'ll meet these 3 formal words: 便 (biàn) = then, thus (synonym of 就 but WRITTEN). 完成任务便可休息 = task done, one can rest. 即 (jí) = that is / namely (formal juxtaposition). HSK 即 H 三 = HSK namely level 3. Standard 是 remains by far the most common. In speech, NEVER 便 or 即 (sounds extremely pedantic). In academic/journalistic writing, 便 and 即 add rhythm. Recognizing for READING matters more than producing at this level. Classic phrase: 即所谓 X = which is what we call X.',
     items: [
@@ -1514,7 +1514,7 @@ export const b12NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '把 vs 将 — disposal (oral vs formel)',
     titleEn: '把 vs 将 — disposal (oral vs formal)',
     body:
-      '把 (bǎ) = particule du « disposal » — placer un objet précis devant le verbe pour insister sur ce qu\'on EN FAIT. 把书放在桌上 = pose le livre sur la table. STANDARD oral et écrit. 将 (jiāng) = même fonction MAIS FORMEL (écrit administratif, juridique, journalistique). 将文件交给经理 = remettre le document au manager. À l\'oral, JAMAIS 将 (sonne très soutenu). À l\'écrit B1.2, RECONNAÎTRE 将 est important pour les contrats, les annonces, la presse. À l\'oral spontané : 把 systématique. Hierarchy : 把 (universel oral+écrit standard) < 将 (formel écrit).',
+      'RÈGLE D\'OR : 把 (bǎ) = particule du « disposal » — placer un objet précis devant le verbe pour insister sur ce qu\'on EN FAIT. 把书放在桌上 = pose le livre sur la table. Règle : STANDARD oral et écrit. 将 (jiāng) = même fonction MAIS FORMEL (écrit administratif, juridique, journalistique). 将文件交给经理 = remettre le document au manager. Attention : à l\'oral, JAMAIS 将 (sonne très soutenu). Astuce : à l\'écrit B1.2, RECONNAÎTRE 将 est important pour les contrats, les annonces, la presse. Remarque : à l\'oral spontané — 把 systématique. Hierarchy 把 (universel oral+écrit standard) < 将 (formel écrit).',
     bodyEn:
       '把 (bǎ) = «disposal» particle — places a specific object before the verb to highlight WHAT YOU DO with it. 把书放在桌上 = put the book on the table. STANDARD oral and written. 将 (jiāng) = same function BUT FORMAL (administrative, legal, journalistic writing). 将文件交给经理 = hand the document to the manager. In speech, NEVER 将 (sounds very formal). In B1.2 writing, RECOGNIZING 将 matters for contracts, announcements, press. In spontaneous speech: always 把. Hierarchy: 把 (universal oral+standard written) < 将 (formal written).',
     items: [
@@ -1534,7 +1534,7 @@ export const b12NuancesM5LearnSections: LessonV2LearnSection[] = [
     title: '的 vs 地 vs 得 — trois particules « de » distinctes',
     titleEn: '的 vs 地 vs 得 — three distinct «de» particles',
     body:
-      'TROIS particules homophones (toutes prononcées « de ») mais grammaticalement DIFFÉRENTES. 的 (de) = entre adjectif/déterminant et NOM. 漂亮的衣服 = jolis vêtements. 我的书 = mon livre. 地 (de, jamais dì ici) = entre ADVERBE et VERBE. 慢慢地走 = marcher doucement. 高兴地说 = dire joyeusement. 得 (de) = après VERBE pour introduire COMPLÉMENT (degré, manière, possibilité). 跑得很快 = courir vite. 说得不错 = parler bien. RÈGLE D\'OR : 的 + nom, 地 + verbe (avant), 得 + complément (après verbe). Erreur classique : tout écrire 的. À l\'oral on n\'entend pas la différence, à l\'écrit B1.2 ELLE COMPTE.',
+      'TROIS particules homophones (toutes prononcées « de ») mais grammaticalement DIFFÉRENTES. 的 (de) = entre adjectif/déterminant et NOM. 漂亮的衣服 = jolis vêtements. 我的书 = mon livre. 地 (de, jamais dì ici) = entre ADVERBE et VERBE. 慢慢地走 = marcher doucement. 高兴地说 = dire joyeusement. 得 (de) = après VERBE pour introduire COMPLÉMENT (degré, manière, possibilité). 跑得很快 = courir vite. 说得不错 = parler bien. RÈGLE D\'OR : 的 + nom, 地 + verbe (avant), 得 + complément (après verbe). Attention : erreur classique — tout écrire 的. Remarque : à l\'oral on n\'entend pas la différence, à l\'écrit B1.2 ELLE COMPTE.',
     bodyEn:
       'THREE homophone particles (all pronounced «de») but grammatically DIFFERENT. 的 (de) = between adjective/determiner and NOUN. 漂亮的衣服 = pretty clothes. 我的书 = my book. 地 (de, never dì here) = between ADVERB and VERB. 慢慢地走 = walk slowly. 高兴地说 = say joyfully. 得 (de) = after VERB to introduce COMPLEMENT (degree, manner, possibility). 跑得很快 = run fast. 说得不错 = speak well. GOLDEN RULE: 的 + noun, 地 + verb (before), 得 + complement (after verb). Common mistake: writing 的 everywhere. Orally you can\'t hear the difference, in B1.2 writing IT MATTERS.',
     items: [
@@ -1557,7 +1557,7 @@ export const b12NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '当 vs 在…的时候 vs 时 — quand',
     titleEn: '当 vs 在…的时候 vs 时 — when',
     body:
-      '在 X 的时候 (zài X de shíhou) = quand X (oral standard, le plus naturel). 在我学中文的时候 = quand j\'apprends le chinois. 当 X 时 (dāng X shí) = quand X (un peu plus formel, écrit). 当我看到他时 = quand je l\'ai vu. 当 X 的时候 = combo des deux (universel). À l\'oral B1.2, 在…的时候 ou 当…的时候 ; à l\'écrit, alterne avec 当…时. Évite « 时 » seul à l\'oral — pédant. Erreur classique : oublier 的 ou 时. La structure complète est INDISPENSABLE en chinois (pas comme « when X » anglais qui est plus court).',
+      'Règle : 在 X 的时候 (zài X de shíhou) = quand X (oral standard, le plus naturel). 在我学中文的时候 = quand j\'apprends le chinois. 当 X 时 (dāng X shí) = quand X (un peu plus formel, écrit). 当我看到他时 = quand je l\'ai vu. 当 X 的时候 = combo des deux (universel). Astuce : à l\'oral B1.2 — 在…的时候 ou 当…的时候 ; à l\'écrit, alterne avec 当…时. Attention : évite « 时 » seul à l\'oral, pédant. Erreur classique — oublier 的 ou 时. Remarque : la structure complète est INDISPENSABLE en chinois (pas comme « when X » anglais qui est plus court).',
     bodyEn:
       '在 X 的时候 (zài X de shíhou) = when X (standard oral, most natural). 在我学中文的时候 = when I\'m learning Chinese. 当 X 时 (dāng X shí) = when X (slightly more formal, written). 当我看到他时 = when I saw him. 当 X 的时候 = combo of both (universal). In B1.2 speech, 在…的时候 or 当…的时候; in writing, alternate with 当…时. Avoid bare «时» in speech — pedantic. Common mistake: forgetting 的 or 时. The full structure is INDISPENSABLE in Chinese (unlike English «when X» which is short).',
     items: [
@@ -1577,7 +1577,7 @@ export const b12NuancesM6LearnSections: LessonV2LearnSection[] = [
     title: '一旦 vs 如果 — dès que / si',
     titleEn: '一旦 vs 如果 — once / if',
     body:
-      '如果 (rúguǒ) = si (hypothèse — neutre, oral et écrit). 如果你来 = si tu viens. 一旦 (yídàn) = une fois que / dès que (hypothèse FORTE + plus formel). 一旦决定就不能改 = une fois décidé, on ne peut plus changer. Différence : 如果 = simple hypothèse ; 一旦 = hypothèse + URGENCE/IRRÉVERSIBILITÉ. À l\'écrit B1.2, alterne pour le rythme. Variantes : 假如 (jiǎrú, si — formel écrit), 要是 (yàoshì, si — oral familier). Hierarchy : 要是 (oral familier) < 如果 (neutre) < 假如 (écrit) < 一旦 (urgence/irréversibilité).',
+      'RÈGLE D\'OR : 如果 (rúguǒ) = si (hypothèse — neutre, oral et écrit). 如果你来 = si tu viens. 一旦 (yídàn) = une fois que / dès que (hypothèse FORTE + plus formel). 一旦决定就不能改 = une fois décidé, on ne peut plus changer. Astuce : 如果 = simple hypothèse ; 一旦 = hypothèse + URGENCE/IRRÉVERSIBILITÉ. Remarque : à l\'écrit B1.2, alterne pour le rythme. Variantes — 假如 (jiǎrú, si — formel écrit), 要是 (yàoshì, si — oral familier). Règle : hierarchy 要是 (oral familier) < 如果 (neutre) < 假如 (écrit) < 一旦 (urgence/irréversibilité).',
     bodyEn:
       '如果 (rúguǒ) = if (hypothesis — neutral, oral and written). 如果你来 = if you come. 一旦 (yídàn) = once / as soon as (STRONG hypothesis + more formal). 一旦决定就不能改 = once decided, can\'t be changed. Difference: 如果 = simple hypothesis; 一旦 = hypothesis + URGENCY/IRREVERSIBILITY. In B1.2 writing, alternate for rhythm. Variants: 假如 (jiǎrú, if — formal written), 要是 (yàoshì, if — casual oral). Hierarchy: 要是 (casual oral) < 如果 (neutral) < 假如 (written) < 一旦 (urgency/irreversibility).',
     items: [
@@ -1600,7 +1600,7 @@ export const b12NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '每 + 都 — chaque… (parallélisme obligatoire)',
     titleEn: '每 + 都 — every… (mandatory parallelism)',
     body:
-      '每 (měi) = chaque. Suivi quasi OBLIGATOIREMENT de 都 (tous) dans la 2e partie. 每个人都喜欢 = chaque personne aime (tout le monde aime). 每天我都去跑步 = tous les jours je cours. Sans 都, la phrase sonne incomplète. Cas spéciaux : 每个 + nom (chaque X), 每天 (chaque jour), 每次 (chaque fois). Erreur classique : 每个人喜欢 ✗ → 每个人都喜欢 ✓. Synonyme : 任何 (rènhé, n\'importe quel) — 任何人都… (n\'importe qui…). Hierarchy : 每 (chaque, énumération exhaustive) < 任何 (n\'importe quel, exception zéro) < 凡是 (凡是…的人都…, formel : tout X qui…).',
+      'RÈGLE D\'OR : 每 (měi) = chaque. Suivi quasi OBLIGATOIREMENT de 都 (tous) dans la 2e partie. 每个人都喜欢 = chaque personne aime (tout le monde aime). 每天我都去跑步 = tous les jours je cours. Attention : sans 都, la phrase sonne incomplète. Astuce : cas spéciaux — 每个 + nom (chaque X), 每天 (chaque jour), 每次 (chaque fois). Erreur classique — 每个人喜欢 ✗ → 每个人都喜欢 ✓. Remarque : synonyme 任何 (rènhé, n\'importe quel) — 任何人都… (n\'importe qui…). Règle : hierarchy 每 (chaque, énumération exhaustive) < 任何 (n\'importe quel, exception zéro) < 凡是 (凡是…的人都…, formel : tout X qui…).',
     bodyEn:
       '每 (měi) = every. Followed almost MANDATORILY by 都 (all) in the second clause. 每个人都喜欢 = every person likes (everyone likes). 每天我都去跑步 = every day I run. Without 都, the sentence sounds incomplete. Special cases: 每个 + noun (every X), 每天 (every day), 每次 (every time). Common mistake: 每个人喜欢 ✗ → 每个人都喜欢 ✓. Synonym: 任何 (rènhé, any) — 任何人都… (anyone…). Hierarchy: 每 (every, exhaustive enumeration) < 任何 (any, zero exception) < 凡是 (凡是…的人都…, formal: every X who…).',
     items: [
@@ -1620,7 +1620,7 @@ export const b12NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '所有 vs 一切 vs 全部 — tout (registre)',
     titleEn: '所有 vs 一切 vs 全部 — all (register)',
     body:
-      '所有 (suǒyǒu) = tous (NEUTRE, le plus universel). 所有人都来了 = tout le monde est venu. 一切 (yíqiè) = tout (un peu plus ABSTRAIT/littéraire, souvent émotionnel). 我愿意为你做一切 = je suis prêt à TOUT faire pour toi (charge émotionnelle). 全部 (quánbù) = la totalité (NEUTRE, peut être nom ou adverbe). 全部完成了 = tout est terminé. Différence : 所有 (énumération de personnes/choses) ≠ 一切 (totalité abstraite/émotionnelle) ≠ 全部 (la totalité d\'un ensemble fini). Erreur classique : 一切人都… ✗ (utilise 所有人 ou 大家).',
+      'Règle : 所有 (suǒyǒu) = tous (NEUTRE, le plus universel). 所有人都来了 = tout le monde est venu. 一切 (yíqiè) = tout (un peu plus ABSTRAIT/littéraire, souvent émotionnel). 我愿意为你做一切 = je suis prêt à TOUT faire pour toi (charge émotionnelle). 全部 (quánbù) = la totalité (NEUTRE, peut être nom ou adverbe). 全部完成了 = tout est terminé. Astuce : 所有 (énumération de personnes/choses) ≠ 一切 (totalité abstraite/émotionnelle) ≠ 全部 (la totalité d\'un ensemble fini). Attention : erreur classique — 一切人都… ✗ (utilise 所有人 ou 大家).',
     bodyEn:
       '所有 (suǒyǒu) = all (NEUTRAL, most universal). 所有人都来了 = everyone came. 一切 (yíqiè) = everything (more ABSTRACT/literary, often emotional). 我愿意为你做一切 = I\'m willing to do EVERYTHING for you (emotional charge). 全部 (quánbù) = the totality (NEUTRAL, noun or adverb). 全部完成了 = all is done. Difference: 所有 (enumeration of people/things) ≠ 一切 (abstract/emotional totality) ≠ 全部 (totality of a finite set). Common mistake: 一切人都… ✗ (use 所有人 or 大家).',
     items: [
