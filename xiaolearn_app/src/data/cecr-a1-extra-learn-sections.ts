@@ -814,7 +814,15 @@ export const maQuestionsLearnSections: LessonV2LearnSection[] = [
     title: 'Structure visuelle : 吗 toujours à la FIN',
     titleEn: 'Visual structure: 吗 always at the END',
     body:
-      '吗 est une particule interrogative qui se place à la TOUTE FIN de la phrase, après tout le reste — sujet, verbe, objet, complément. À comparer avec V-不-V qui scinde le verbe en deux au milieu de la phrase.',
+      '吗 est une particule **interrogative** qui se pose à la **toute fin** de la phrase, après tout le reste.\n' +
+      '\n' +
+      'Tout ce qui précède reste inchangé :\n' +
+      '- sujet\n' +
+      '- verbe\n' +
+      '- objet\n' +
+      '- complément\n' +
+      '\n' +
+      'RÈGLE D\'OR : à comparer avec **V-不-V** qui scinde le verbe en deux au milieu de la phrase, alors que 吗 reste toujours en queue.',
     bodyEn:
       '吗 is a question particle placed at the VERY END of the sentence, after everything else — subject, verb, object, complement. Compare with V-not-V which splits the verb in two in the middle of the sentence.',
     tokenizedSentences: [
@@ -925,7 +933,13 @@ export const dePossessiveLearnSections: LessonV2LearnSection[] = [
     title: 'Structure visuelle : [Modificateur] + 的 + [Nom]',
     titleEn: 'Visual structure: [Modifier] + 的 + [Noun]',
     body:
-      '的 colle le modificateur (qui possède ou décrit) au nom (ce qui est possédé/décrit). Le rôle Modificateur (rose) en chinois est INVERSÉ par rapport au français — en chinois, le modificateur précède toujours le nom.',
+      '的 **colle** le modificateur (qui possède ou décrit) au nom (ce qui est possédé/décrit).\n' +
+      '\n' +
+      'Deux rôles à distinguer :\n' +
+      '- **modificateur** — celui qui possède ou décrit (rose)\n' +
+      '- **nom** — ce qui est possédé ou décrit (noir)\n' +
+      '\n' +
+      'ATTENTION : en chinois, le **modificateur précède toujours le nom**, ordre **inversé** par rapport au français.',
     bodyEn:
       '的 sticks the modifier (possessor / descriptor) to the noun (the possessed / described). The Modifier role (pink) in Chinese is REVERSED compared to English — in Chinese the modifier always comes before the noun.',
     tokenizedSentences: [

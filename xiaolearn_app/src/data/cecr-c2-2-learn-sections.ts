@@ -106,14 +106,25 @@ export const c22ConvM2LearnSections: LessonV2LearnSection[] = [
     title: 'Sous-titrage : adapter une œuvre',
     titleEn: 'Subtitling: adapt a work',
     body:
-      'Le sous-titrage est un exercice de **contrainte** : max 2 lignes, 12-15 caractères chinois ou 35-40 lettres latines, 6 secondes à l’écran. Vocabulaire : 字幕 (zìmù, sous-titres), 字幕组 (équipe de fansub bénévole), 配音 (pèiyīn, doublage), 本地化 (běndìhuà, localisation).\n' +
+      'Le sous-titrage est un exercice de **contrainte** technique.\n' +
+      '\n' +
+      'Les limites typiques :\n' +
+      '- max 2 lignes par sous-titre\n' +
+      '- 12-15 caractères chinois (ou 35-40 lettres latines)\n' +
+      '- 6 secondes maximum à l\'écran\n' +
+      '\n' +
+      'Vocabulaire :\n' +
+      '- 字幕 (zìmù) — sous-titres\n' +
+      '- 字幕组 (zìmù zǔ) — équipe de fansub bénévole\n' +
+      '- 配音 (pèiyīn) — doublage\n' +
+      '- 本地化 (běndìhuà) — localisation\n' +
       '\n' +
       'Trois techniques pro à maîtriser :\n' +
       '- **COMPRESSER** — couper hésitations et redites\n' +
       '- **TRANSCRÉER** — adapter une blague culturelle plutôt que traduire littéralement\n' +
       '- **CONSERVER** le ton (formel, familier, dialectal)\n' +
       '\n' +
-      'Astuce : pour une blague, le calque échoue — 直译会让观众一头雾水 (la traduction littérale laisse le spectateur perplexe). Les sous-titres officiels (Netflix, Bilibili) suivent des règles strictes ; les **字幕组** (Renren, Yanmo dans les années 2010) prennent plus de libertés et ont façonné une génération de spectateurs cosmopolites.',
+      'ASTUCE : pour une blague, le calque échoue — 直译会让观众一头雾水 (la traduction littérale laisse le spectateur perplexe). Les sous-titres officiels (Netflix, Bilibili) suivent des règles strictes ; les **字幕组** (Renren, Yanmo dans les années 2010) prennent plus de libertés et ont façonné une génération de spectateurs cosmopolites.',
     bodyEn:
       'Physical constraints: max 2 lines, 12-15 Chinese chars or 35-40 Latin letters, 6 sec on screen max. Vocab: 字幕 (subtitles), 字幕组 (volunteer fansub team), 配音 (dubbing). Techniques: COMPRESS (cut hesitations, repetitions), TRANSCREATE (adapt a cultural joke), PRESERVE the tone (formal/casual/dialectal). For jokes: 直译会让观众一头雾水 (literal translation would leave viewer baffled). Prefer 本地化 (localization). Official subtitles (Netflix, Bilibili) follow strict rules; 字幕组 take more liberties. Chinese 字幕组 culture (Renren, Yanmo in the 2010s) shaped a generation of cosmopolitan viewers.',
     items: [
@@ -136,7 +147,12 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Cantonais : phrases de survie pour HK/Canton',
     titleEn: 'Cantonese: survival phrases for HK/Guangzhou',
     body:
-      'Le cantonais 粤语 (yuèyǔ) est parlé par **80 millions** de Chinois (Guangdong, Hong Kong et diaspora). Particularité phonétique majeure : **9 tons** contre 4 en mandarin. Caractères **traditionnels** (繁體字) à HK et Macao, **simplifiés** (简体字) en Chine continentale.\n' +
+      'Le cantonais 粤语 (yuèyǔ) est parlé par **80 millions** de Chinois (Guangdong, Hong Kong et diaspora).\n' +
+      '\n' +
+      'Trois différences majeures avec le mandarin :\n' +
+      '- **9 tons** contre 4 en mandarin\n' +
+      '- caractères **traditionnels** (繁體字) à HK et Macao\n' +
+      '- caractères **simplifiés** (简体字) en Chine continentale\n' +
       '\n' +
       'Phrases de survie incontournables :\n' +
       '- 你好 (nei5 hou2) — bonjour (à HK on dit souvent 哈囉 hā lōu)\n' +
@@ -145,7 +161,7 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
       '- 多謝 (do1 ze6) — merci pour un cadeau\n' +
       '- 唔好意思 (m4 hou2 ji3 si3) — désolé\n' +
       '\n' +
-      'Astuce : le cantonais utilise des caractères **absents** du mandarin standard — 嘅 (ge, particule possessive = 的), 嗰 (go2, ce/cet = 那个), 唔 (m4, pas = 不). Connaître ces trois caractères permet de lire 80% des écrits cantonais informels (Facebook HK, LIHKG).',
+      'ASTUCE : le cantonais utilise des caractères **absents** du mandarin standard — 嘅 (ge, particule possessive = 的), 嗰 (go2, ce/cet = 那个), 唔 (m4, pas = 不). Connaître ces trois caractères permet de lire 80% des écrits cantonais informels (Facebook HK, LIHKG).',
     bodyEn:
       'Cantonese 粤语 (yuèyǔ) spoken by 80M Chinese (Guangdong + HK + diaspora). Greetings: 你好 = nei5 hou2 (but in HK often 哈囉 hā lōu), 早晨 (zou2 san4, morning hello), 唔該 (m4 goi1, thanks/excuse me). At restaurant: 一個 (yat1 go3, one), 多謝 (do1 ze6, thanks for a gift), 唔好意思 (m4 hou2 ji3 si3, sorry). Specifics: 9 tones (vs 4 in Mandarin). Traditional characters (繁體字) in HK and Macao, simplified (简体字) in Mainland. Cantonese uses characters ABSENT from standard Mandarin: 嘅 (ge, possessive particle = 的), 嗰 (go2, that = 那个), 唔 (m4, not = 不). Knowing these 3 = reading 80% of informal Cantonese writing (HK Facebook, LIHKG).',
     items: [
@@ -165,7 +181,13 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Shanghainais : reconnaître la 4e ville-langue',
     titleEn: 'Shanghainese: recognize the 4th city-language',
     body:
-      'Le shanghainais 上海话 (shànghǎihuà) appartient au sous-groupe 吴语 (wú yǔ) parlé dans le delta du Yangtze (~80M locuteurs). Phonologie très différente du mandarin : consonnes voisées, voyelles nasales. **Marginalisé** politiquement depuis les années 90 par la promotion du putonghua, mais vivant à l’oral familial et dans la culture pop locale.\n' +
+      'Le shanghainais 上海话 (shànghǎihuà) appartient au sous-groupe 吴语 (wú yǔ) parlé dans le delta du Yangtze (~80M locuteurs).\n' +
+      '\n' +
+      'Trois traits qui le distinguent du mandarin :\n' +
+      '- **phonologie** très différente — consonnes voisées, voyelles nasales\n' +
+      '- **marginalisé** politiquement depuis les années 90 par la promotion du putonghua\n' +
+      '- vivant à l\'oral familial et dans la culture pop locale\n' +
+      '\n' +
       '\n' +
       'Salutations et pronoms à connaître :\n' +
       '- 侬好 (nóng hǎo) — bonjour (lit. « toi bon »)\n' +
@@ -234,7 +256,14 @@ export const c22ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Littérature en ligne : phénomène 2000s+',
     titleEn: 'Online literature: 2000s+ phenomenon',
     body:
-      'La 网络文学 (wǎngluò wénxué) chinoise est un **phénomène mondial unique**. Plateforme dominante : 起点中文网 (Qidian, fondé en 2002). Modèle économique : un chapitre/jour de 3000 caractères, lecteurs en micro-transactions. Exportée en anglais via Webnovel et Wuxiaworld, elle influence l’écriture pop mondiale.\n' +
+      'La 网络文学 (wǎngluò wénxué) chinoise est un **phénomène mondial unique**.\n' +
+      '\n' +
+      'Quatre repères clés :\n' +
+      '- plateforme dominante — 起点中文网 (Qidian, fondé en 2002)\n' +
+      '- modèle économique — un chapitre/jour de 3000 caractères\n' +
+      '- monétisation — lecteurs en **micro-transactions**\n' +
+      '- export — Webnovel et Wuxiaworld en anglais, influence sur l\'écriture pop mondiale\n' +
+      '\n' +
       '\n' +
       'Cinq genres majeurs à connaître :\n' +
       '- 玄幻 (xuán huàn) — fantasy + arts martiaux\n' +
@@ -266,7 +295,14 @@ export const c22ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Devenir mentor / coach pour un junior',
     titleEn: 'Become a mentor / coach for a junior',
     body:
-      'Quand un junior chinois te demande conseil, ta posture pose tout : 我把你当作朋友，分享我的经验 (je te traite en ami et je partage mon expérience). Vocabulaire : 导师 (dǎoshī, mentor), 指导 (zhǐdǎo, orienter), 反馈 (fǎnkuì, feedback), 思路 (sīlù, piste de pensée).\n' +
+      'Quand un junior chinois te demande conseil, ta **posture** pose tout : 我把你当作朋友，分享我的经验 (je te traite en ami et je partage mon expérience).\n' +
+      '\n' +
+      'Vocabulaire du mentor :\n' +
+      '- 导师 (dǎoshī) — mentor\n' +
+      '- 指导 (zhǐdǎo) — orienter\n' +
+      '- 反馈 (fǎnkuì) — feedback\n' +
+      '- 思路 (sīlù) — piste de pensée\n' +
+      '\n' +
       '\n' +
       'Phrases-clés du mentor moderne :\n' +
       '- À éviter : « 你应该 X » — trop **directif**\n' +
@@ -325,7 +361,15 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Dialogue interculturel approfondi',
     titleEn: 'Deep intercultural dialogue',
     body:
-      'Dans une conversation longue avec un Chinois cultivé sur les différences Chine/Occident, le **registre** doit rester **neutre** et **soutenu**. Vocabulaire : 文化差异 (différence culturelle), 文化冲突 (choc), 文化融合 (fusion), 跨文化 (interculturel), 被视为 (être vu comme).\n' +
+      'Dans une conversation longue avec un Chinois cultivé sur les différences Chine/Occident, le **registre** doit rester **neutre** et **soutenu**.\n' +
+      '\n' +
+      'Vocabulaire de base :\n' +
+      '- 文化差异 (wénhuàchāyì) — différence culturelle\n' +
+      '- 文化冲突 (wénhuà chōngtū) — choc\n' +
+      '- 文化融合 (wénhuà rónghé) — fusion\n' +
+      '- 跨文化 (kuàwénhuà) — interculturel\n' +
+      '- 被视为 (bèi shì wéi) — être vu comme\n' +
+      '\n' +
       '\n' +
       'Phrases d’analyse soutenues :\n' +
       '- Pour énoncer une différence — 在中国，X 通常被视为 Y，而在西方可能不同\n' +
@@ -352,7 +396,14 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
     title: 'Discours sur le soft power chinois',
     titleEn: 'Discourse on Chinese soft power',
     body:
-      'Le discours sur la place de la Chine dans le monde s’articule autour de quelques concepts-clés : 软实力 (ruǎnshílì, soft power), 文化输出 (exportation culturelle), 国际形象 (image internationale), 话语权 (huàyǔquán, **leverage discursif** — qui contrôle le récit).\n' +
+      'Le discours sur la place de la Chine dans le monde s\'articule autour de quelques concepts-clés.\n' +
+      '\n' +
+      'Le vocabulaire de la puissance douce :\n' +
+      '- 软实力 (ruǎnshílì) — **soft power**\n' +
+      '- 文化输出 (wénhuà shūchū) — exportation culturelle\n' +
+      '- 国际形象 (guójì xíngxiàng) — image internationale\n' +
+      '- 话语权 (huàyǔ quán) — **leverage discursif** (qui contrôle le récit)\n' +
+      '\n' +
       '\n' +
       'Phrases-types pour structurer l’analyse :\n' +
       '- Construction du récit — 中国正在努力构建自己的话语体系\n' +
@@ -384,7 +435,19 @@ export const c22ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Débat éthique : IA et société chinoise',
     titleEn: 'Ethical debate: AI and Chinese society',
     body:
-      'Le débat éthique sur l’IA en Chine se joue entre deux camps : la position **pro-IA** (accélération du développement, optimisation des services publics) et la position **critique** (算法歧视 algorithm bias, 监控社会 surveillance society, 隐私泄露 data leak). Vocabulaire : 人工智能 (IA), 算法 (algorithme), 监控 (surveillance), 隐私 (vie privée), 伦理 (éthique).\n' +
+      'Le débat éthique sur l\'IA en Chine se joue entre deux camps opposés.\n' +
+      '\n' +
+      'Les deux positions en présence :\n' +
+      '- position **pro-IA** — accélération du développement, optimisation des services publics\n' +
+      '- position **critique** — 算法歧视 (biais algorithmique), 监控社会 (société de surveillance), 隐私泄露 (fuite de données)\n' +
+      '\n' +
+      'Vocabulaire de base :\n' +
+      '- 人工智能 (réngōngzhìnéng) — IA\n' +
+      '- 算法 (suànfǎ) — algorithme\n' +
+      '- 监控 (jiānkòng) — surveillance\n' +
+      '- 隐私 (yǐnsī) — vie privée\n' +
+      '- 伦理 (lúnlǐ) — éthique\n' +
+      '\n' +
       '\n' +
       'Phrases-types pour structurer le débat :\n' +
       '- Position centriste — 在效率和隐私之间，我们需要找到平衡\n' +
@@ -413,7 +476,14 @@ export const c22ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Adieu : clore une relation pro avec dignité',
     titleEn: 'Farewell: close a pro relationship with dignity',
     body:
-      'Pour clore une relation pro après plusieurs années en Chine, le **registre** doit être **soutenu** et **émotionnel**. Vocabulaire : 深思熟虑 (mûre réflexion), 承蒙 (chéngméng, recevoir avec gratitude — TRÈS soutenu), 关照 (guānzhào, prendre soin), 厚爱 (hòu’ài, profonde affection).\n' +
+      'Pour clore une relation pro après plusieurs années en Chine, le **registre** doit être **soutenu** et **émotionnel**.\n' +
+      '\n' +
+      'Vocabulaire de l\'adieu noble :\n' +
+      '- 深思熟虑 (shēnsīshúlǜ) — mûre réflexion\n' +
+      '- 承蒙 (chéngméng) — recevoir avec gratitude (TRÈS soutenu)\n' +
+      '- 关照 (guānzhào) — prendre soin\n' +
+      '- 厚爱 (hòu\'ài) — profonde affection\n' +
+      '\n' +
       '\n' +
       'Structure d’un adieu digne :\n' +
       '- Ouvrir — 我有一件事要告诉大家\n' +

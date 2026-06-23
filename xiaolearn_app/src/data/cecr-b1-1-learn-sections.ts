@@ -606,7 +606,14 @@ export const b11DeSortingLearnSections: LessonV2LearnSection[] = [
     title: 'Structure visuelle : où pointent les 3 « de » ?',
     titleEn: 'Visual structure: where do the 3 «de» point?',
     body:
-      '的 (rose-modificateur) pointe vers un nom (vert-objet). 地 (rose-modificateur) pointe vers un verbe (orange). 得 (violet-particule) vient **après** un verbe et introduit un complément (turquoise). Une fois la syntaxe vue, plus jamais de confusion à l\'écrit.',
+      'Une fois la syntaxe **visualisée**, plus jamais de confusion à l\'écrit entre les trois 的/地/得.\n' +
+      '\n' +
+      'Chaque « de » a sa cible :\n' +
+      '- 的 (rose, **modificateur**) — pointe vers un nom (vert, objet)\n' +
+      '- 地 (rose, **modificateur**) — pointe vers un verbe (orange)\n' +
+      '- 得 (violet, **particule**) — vient APRÈS un verbe et introduit un complément (turquoise)\n' +
+      '\n' +
+      'RÈGLE D\'OR : repérer d\'abord le **mot qui suit** le « de » — nom, verbe ou complément — et la bonne graphie tombe d\'elle-même.',
     bodyEn:
       '的 (pink-modifier) points to a noun (green-object). 地 (pink-modifier) points to a verb (orange). 得 (purple-particle) comes AFTER a verb and introduces a complement (teal). Once you see the syntax, no more confusion in writing.',
     tokenizedSentences: [

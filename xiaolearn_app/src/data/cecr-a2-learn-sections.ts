@@ -1375,11 +1375,25 @@ export const a2CultureZodiacLearnSections: LessonV2LearnSection[] = [
     title: '十二生肖 : 12 animaux, cycle de 12 ans',
     titleEn: '十二生肖: 12 animals, 12-year cycle',
     body:
-      'Le zodiaque chinois (生肖, shēngxiào) compte **12 animaux** dans un ordre fixe : 鼠 (rat), 牛 (bœuf), 虎 (tigre), 兔 (lapin), 龙 (dragon), 蛇 (serpent), 马 (cheval), 羊 (chèvre), 猴 (singe), 鸡 (coq), 狗 (chien), 猪 (cochon).\n' +
+      'Le zodiaque chinois (生肖, shēngxiào) compte **12 animaux** dans un ordre fixe.\n' +
+      '\n' +
+      'L\'ordre canonique :\n' +
+      '- 鼠 (shǔ) — rat\n' +
+      '- 牛 (niú) — bœuf\n' +
+      '- 虎 (hǔ) — tigre\n' +
+      '- 兔 (tù) — lapin\n' +
+      '- 龙 (lóng) — dragon\n' +
+      '- 蛇 (shé) — serpent\n' +
+      '- 马 (mǎ) — cheval\n' +
+      '- 羊 (yáng) — chèvre\n' +
+      '- 猴 (hóu) — singe\n' +
+      '- 鸡 (jī) — coq\n' +
+      '- 狗 (gǒu) — chien\n' +
+      '- 猪 (zhū) — cochon\n' +
       '\n' +
       'Chaque année lunaire porte un animal. **2026 est l\'année du 马** (cheval).\n' +
       '\n' +
-      'Question typique : 你属什么 ? (quel est ton signe ?) → réponse 我属龙.',
+      'ASTUCE : question typique 你属什么 ? (quel est ton signe ?) → réponse 我属龙.',
     bodyEn:
       'Chinese zodiac (生肖, shēngxiào) has 12 animals in fixed order: 鼠 (rat), 牛 (ox), 虎 (tiger), 兔 (rabbit), 龙 (dragon), 蛇 (snake), 马 (horse), 羊 (goat), 猴 (monkey), 鸡 (rooster), 狗 (dog), 猪 (pig). Each lunar year carries one animal. 2026 is year of the 马 (horse). Typical question: 你属什么? (what\'s your sign?) → reply 我属龙.',
     items: [
