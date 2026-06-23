@@ -231,29 +231,39 @@ function looksLikePinyin(inner: string): boolean {
 function wrapPinyinParens(text: string): { kind: 'text' | 'pinyin'; content: string }[] {
   const tokens: { kind: 'text' | 'pinyin'; content: string }[] = [];
   let i = 0;
+  // Buffer pour le texte courant (qu'on flush avant un token pinyin).
+  let textBuf = '';
+  const flushText = () => {
+    if (textBuf) {
+      tokens.push({ kind: 'text', content: textBuf });
+      textBuf = '';
+    }
+  };
   while (i < text.length) {
-    if (text[i] === '(') {
+    const ch = text[i];
+    if (ch === '(') {
+      // Cherche la fermeture
       const end = text.indexOf(')', i + 1);
       if (end > i) {
         const inner = text.slice(i + 1, end);
         if (looksLikePinyin(inner)) {
+          // Match pinyin → flush texte, push pinyin, avance i
+          flushText();
           tokens.push({ kind: 'pinyin', content: inner });
           i = end + 1;
           continue;
         }
       }
+      // Parenthèse présente mais non-pinyin (ou pas fermée) : on prend
+      // simplement le '(' comme texte et on continue → i progresse TOUJOURS.
+      textBuf += ch;
+      i++;
+      continue;
     }
-    let j = i;
-    while (j < text.length && text[j] !== '(') j++;
-    if (j > i) tokens.push({ kind: 'text', content: text.slice(i, j) });
-    if (j < text.length && text[j] === '(' && !text.slice(j + 1).includes(')')) {
-      // Pas de fermeture → tout le reste est du texte
-      tokens.push({ kind: 'text', content: text.slice(j) });
-      i = text.length;
-    } else {
-      i = j;
-    }
+    textBuf += ch;
+    i++;
   }
+  flushText();
   return tokens;
 }
 
