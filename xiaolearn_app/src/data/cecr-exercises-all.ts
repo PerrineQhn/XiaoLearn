@@ -26,6 +26,8 @@ import { cecrConversationExercisesExtra } from './cecr-conversation-exercises-ex
 import { cecrConversationExercisesExtra2 } from './cecr-conversation-exercises-extra-2';
 import { cecrConversationExercisesExtra3 } from './cecr-conversation-exercises-extra-3';
 import { cecrConversationExercisesExtra4 } from './cecr-conversation-exercises-extra-4';
+import { cecrNuancesExercisesAB } from './cecr-nuances-exercises-ab';
+import { cecrNuancesExercisesC } from './cecr-nuances-exercises-c';
 
 /**
  * Map consolidée des exercices par module CECR.
@@ -49,7 +51,7 @@ const baseAll: Record<string, LessonV2Exercise[]> = {
 // PLUS les exos modernes PLUS les exos classiques.
 export const cecrExercisesV2All: Record<string, LessonV2Exercise[]> = (() => {
   const merged: Record<string, LessonV2Exercise[]> = { ...baseAll };
-  const appendSources = [cecrConversationExercises, cecrConversationExercisesExtra, cecrConversationExercisesExtra2, cecrConversationExercisesExtra3, cecrConversationExercisesExtra4];
+  const appendSources = [cecrConversationExercises, cecrConversationExercisesExtra, cecrConversationExercisesExtra2, cecrConversationExercisesExtra3, cecrConversationExercisesExtra4, cecrNuancesExercisesAB, cecrNuancesExercisesC];
   for (const source of appendSources) {
     for (const [lessonId, convExos] of Object.entries(source)) {
       const existing = merged[lessonId] ?? [];
