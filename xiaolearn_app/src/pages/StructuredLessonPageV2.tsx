@@ -2115,11 +2115,16 @@ const OrderExerciseCard = ({
   }, [exercise.id]);
 
   const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
+  // BUG FIX V21 : pour les exos 'order', NE PAS utiliser exercise.sentence
+  // comme hint car c'est la phrase CHINOISE que l'utilisateur doit
+  // reconstruire = spoiler total. On utilise UNIQUEMENT la version traduite
+  // (sentenceFr / sentenceEn). Si pas de traduction dispo, pas de hint du tout.
   let hintText: string | undefined =
-    language === 'en' && exercise.sentenceEn ? exercise.sentenceEn : exercise.sentence;
+    language === 'en'
+      ? (exercise.sentenceEn ?? exercise.sentenceFr)
+      : (exercise.sentenceFr ?? exercise.sentenceEn);
   // Si le prompt contient déjà le sens (cas "Ordonne : « Désolé de te déranger. »"
   // + hint "Désolé de te déranger."), on masque le label "Sens :" redondant.
-  // Même logique que pour les exercices `fill`.
   if (hintText) {
     const norm = (s: string) => s.replace(/[\s«».,!?:;'""']/g, '').toLowerCase();
     if (norm(promptText || '').includes(norm(hintText))) {

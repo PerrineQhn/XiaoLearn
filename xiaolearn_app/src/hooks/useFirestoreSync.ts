@@ -410,6 +410,56 @@ export function useFirestoreSync(
       const currentLocal = window.localStorage.getItem(currentKey);
       if (currentLocal !== stringData) return;
 
+      // V16 — Garde anti-écrasement : ne JAMAIS push une valeur "default"
+      // (vide, [], {}, 0) si le cloud a déjà une valeur non-default. C'est
+      // ce qui a fait perdre toute la progression du user : Safari mobile
+      // s'est connecté, son state local était à [] (defaults au mount), il
+      // a pushé [] vers Firestore, écrasant la version pleine que les
+      // autres devices avaient déjà sync.
+      const looksLikeDefault = (s: string): boolean => {
+        const trimmed = s.trim();
+        if (trimmed === '' || trimmed === '0' || trimmed === '""') return true;
+        if (trimmed === '[]' || trimmed === '{}') return true;
+        if (trimmed === 'null' || trimmed === 'false') return true;
+        try {
+          const parsed = JSON.parse(trimmed);
+          if (parsed === null || parsed === false || parsed === 0) return true;
+          if (Array.isArray(parsed) && parsed.length === 0) return true;
+          if (
+            typeof parsed === 'object' &&
+            parsed !== null &&
+            Object.keys(parsed).length === 0
+          ) {
+            return true;
+          }
+        } catch { /* not JSON, ok */ }
+        return false;
+      };
+
+      if (looksLikeDefault(stringData)) {
+        try {
+          const userDocRef = doc(db, 'users', currentUser.uid);
+          const snap = await getDoc(userDocRef);
+          if (snap.exists()) {
+            const cloudValue = snap.data()?.[currentKey];
+            if (typeof cloudValue === 'string' && !looksLikeDefault(cloudValue)) {
+              console.warn(
+                '[xl-sync] SKIP push default value over non-default cloud',
+                currentKey,
+                'local:', stringData.slice(0, 60),
+                'cloud:', cloudValue.slice(0, 60)
+              );
+              return;
+            }
+          }
+        } catch (err) {
+          // En cas d'erreur de lecture, on prend la précaution de NE PAS
+          // push (mieux vaut ne rien faire que d'écraser).
+          console.warn('[xl-sync] anti-écrasement check failed, skip', currentKey, err);
+          return;
+        }
+      }
+
       writeLocalTs(currentKey, nowIso);
 
       try {
