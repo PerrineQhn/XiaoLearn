@@ -45,6 +45,105 @@ const writeLocalTs = (key: string, iso: string) => {
   } catch { /* quota */ }
 };
 
+/**
+ * V15 — Pending queue pour les writes qui foirent (réseau instable, app
+ * fermée avant que le setDoc ait fini). Persisté en localStorage, partagé
+ * entre tous les hooks useFirestoreSync.
+ *
+ * Pattern : chaque write qui throw est enregistré dans la queue. La queue
+ * est flushée au mount du hook (quand l'auth est prête) et à chaque
+ * visibilitychange (quand l'utilisateur revient sur l'app après une mise en
+ * background). Comme ça, si l'iPhone perd la connexion ou s'éteint juste
+ * après la complétion d'une leçon, la save sera retentée au prochain réveil.
+ */
+const PENDING_KEY = 'xl_sync_pending_v1';
+const MAX_RETRY_ATTEMPTS = 5;
+
+interface PendingWrite {
+  key: string;
+  data: string;
+  ts: string;
+  attempts: number;
+}
+
+const readPending = (): PendingWrite[] => {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = window.localStorage.getItem(PENDING_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
+const writePending = (items: PendingWrite[]) => {
+  if (typeof window === 'undefined') return;
+  try {
+    if (items.length === 0) {
+      window.localStorage.removeItem(PENDING_KEY);
+    } else {
+      window.localStorage.setItem(PENDING_KEY, JSON.stringify(items));
+    }
+  } catch { /* quota */ }
+};
+
+/** Ajoute ou remplace une write dans la queue (dédup par key). */
+const enqueuePending = (item: PendingWrite) => {
+  const list = readPending().filter((p) => p.key !== item.key);
+  list.push(item);
+  writePending(list);
+};
+
+/** Retire un write de la queue (clé exacte + data identique pour éviter de
+ *  retirer un write plus récent enqueued entre-temps). */
+const removeFromPending = (key: string, data: string) => {
+  const list = readPending().filter((p) => !(p.key === key && p.data === data));
+  writePending(list);
+};
+
+/**
+ * Tente de flusher TOUTE la queue pending pour l'utilisateur courant.
+ * Backoff exponentiel : 2^attempts × 800 ms entre les tentatives.
+ * Au-delà de MAX_RETRY_ATTEMPTS, l'item est laissé en queue (sans nouvelle
+ * tentative dans ce flush) pour éviter une boucle d'erreurs.
+ */
+let isFlushingPending = false;
+const flushPending = async (uid: string): Promise<void> => {
+  if (isFlushingPending) return;
+  isFlushingPending = true;
+  try {
+    const list = readPending();
+    if (list.length === 0) return;
+    console.info('[xl-sync] flush pending writes', list.length);
+    for (const item of list) {
+      if (item.attempts >= MAX_RETRY_ATTEMPTS) continue;
+      try {
+        await setDoc(
+          doc(db, 'users', uid),
+          {
+            [item.key]: item.data,
+            [item.key + CLOUD_TS_FIELD_SUFFIX]: item.ts,
+            lastUpdated: item.ts
+          },
+          { merge: true }
+        );
+        removeFromPending(item.key, item.data);
+        console.info('[xl-sync] flushed pending', item.key);
+      } catch (err) {
+        item.attempts++;
+        enqueuePending(item);
+        console.warn('[xl-sync] flush retry', item.key, 'attempt', item.attempts, err);
+        // Backoff avant la suivante
+        await new Promise((r) => setTimeout(r, Math.min(8000, 800 * Math.pow(2, item.attempts))));
+      }
+    }
+  } finally {
+    isFlushingPending = false;
+  }
+};
+
 export function useFirestoreSync(
   key: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -325,12 +424,57 @@ export function useFirestoreSync(
           { merge: true }
         );
         lastWrittenValueRef.current = stringData;
+        // V15 — En cas de retry pending pour cette clé, on retire les
+        // anciennes versions superseded par cet écrit réussi.
+        removeFromPending(currentKey, stringData);
       } catch (err) {
         console.error('[useFirestoreSync] saveToFirestore error', currentKey, err);
+        // V15 — En cas d'échec (réseau down, Firestore offline, app gelée),
+        // on enqueue le write dans la pending queue. Il sera re-tenté au
+        // prochain mount du hook ou au prochain visibilitychange.
+        enqueuePending({
+          key: currentKey,
+          data: stringData,
+          ts: nowIso,
+          attempts: 1
+        });
       }
     },
     [] // V14 — STABLE: pas de deps. Tout lu via refs.
   );
+
+  // ============================================================
+  // V15 — Flush la pending queue au mount + au visibilitychange
+  // ============================================================
+  useEffect(() => {
+    if (!user || !enabled) return;
+    // Flush au mount (avec petit délai pour ne pas concourrer avec le reconcile)
+    const timer = setTimeout(() => {
+      flushPending(user.uid).catch((err) => {
+        console.warn('[useFirestoreSync] initial flush failed', err);
+      });
+    }, 1500);
+    // Flush quand l'app revient en foreground (mobile : utilisateur passe d'une
+    // autre app à XiaoLearn, ou réveil après veille)
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible' && user) {
+        flushPending(user.uid).catch(() => { /* silent */ });
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    // Flush quand on revient online (connexion réseau rétablie)
+    const onOnline = () => {
+      if (user) {
+        flushPending(user.uid).catch(() => { /* silent */ });
+      }
+    };
+    window.addEventListener('online', onOnline);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('online', onOnline);
+    };
+  }, [user, enabled]);
 
   return { saveToFirestore };
 }
