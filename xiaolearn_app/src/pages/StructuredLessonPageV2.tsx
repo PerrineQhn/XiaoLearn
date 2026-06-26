@@ -1762,8 +1762,15 @@ const DialogueResponseCard = ({
   // Toutes les répliques sauf la dernière sont affichées en clair.
   // La dernière est rendue comme placeholder (bulle pointillée) avant
   // réponse, puis remplie au choix.
-  const beforeLast = lines.slice(0, -1);
-  const lastLine = lines[lines.length - 1];
+  // BUG FIX V21 : identifier la bulle USER (isUser:true) comme « à-trouver »,
+  // PEU IMPORTE sa position dans dialogue[]. Avant on prenait toujours la
+  // dernière ligne, ce qui inversait totalement les rôles si l'auteur avait
+  // mis la bulle Toi en première position (bug récurrent généré par les
+  // agents). Désormais on cherche explicitement isUser:true.
+  const userLineIdx = lines.findIndex((l) => l.isUser);
+  const targetIdx = userLineIdx >= 0 ? userLineIdx : lines.length - 1;
+  const beforeLast = lines.filter((_, i) => i !== targetIdx);
+  const lastLine = lines[targetIdx];
 
   const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
   const explanationText =
