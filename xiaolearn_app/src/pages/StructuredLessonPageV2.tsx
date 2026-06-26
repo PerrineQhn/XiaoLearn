@@ -1260,6 +1260,81 @@ function dispatchAskAiWhy(args: {
   );
 }
 
+/**
+ * Mini-markdown inline pour les explanations d'exos : **gras** et *italique*.
+ * Conservateur — n'interprète pas les ** au sein d'une parenthèse pinyin.
+ * Combine avec AutoPinyin pour les hanzi.
+ */
+function renderMarkdownInline(text: string): React.ReactNode {
+  if (!text) return null;
+  const tokens: { kind: 'text' | 'bold' | 'italic'; content: string }[] = [];
+  let i = 0;
+  while (i < text.length) {
+    if (text[i] === '*' && text[i + 1] === '*') {
+      const end = text.indexOf('**', i + 2);
+      if (end > 0) {
+        tokens.push({ kind: 'bold', content: text.slice(i + 2, end) });
+        i = end + 2;
+        continue;
+      }
+    }
+    if (text[i] === '*') {
+      const end = text.indexOf('*', i + 1);
+      if (end > 0) {
+        const inner = text.slice(i + 1, end);
+        if (
+          inner.length > 0 &&
+          !/[\s(]/.test(inner.charAt(0)) &&
+          !/[)\s]/.test(inner.charAt(inner.length - 1))
+        ) {
+          tokens.push({ kind: 'italic', content: inner });
+          i = end + 1;
+          continue;
+        }
+      }
+    }
+    let j = i;
+    while (j < text.length && text[j] !== '*') j++;
+    tokens.push({ kind: 'text', content: text.slice(i, j) });
+    i = j;
+  }
+  return tokens.map((t, idx) => {
+    if (t.kind === 'bold') {
+      return (
+        <strong key={idx} className="lv2-md-bold">
+          <AutoPinyin text={t.content} />
+        </strong>
+      );
+    }
+    if (t.kind === 'italic') {
+      return (
+        <em key={idx}>
+          <AutoPinyin text={t.content} />
+        </em>
+      );
+    }
+    return <AutoPinyin key={idx} text={t.content} />;
+  });
+}
+
+/**
+ * Rendu d'un choice d'exercice : remplace les strings vides par un placeholder
+ * explicite « ∅ rien » pour que l'utilisateur comprenne que la bonne réponse
+ * est « ne rien ajouter » (cas des fill où le blank doit rester vide, ex:
+ * « 我 ___ 二十岁 » dont la solution est l'absence de verbe).
+ */
+function renderChoice(s: string, language: LessonV2Language): React.ReactNode {
+  if (s === '' || /^\s*$/.test(s)) {
+    return (
+      <span className="lv2-choice-empty">
+        <span className="lv2-choice-empty-sym" aria-hidden>∅</span>
+        {language === 'fr' ? ' rien' : ' nothing'}
+      </span>
+    );
+  }
+  return s;
+}
+
 const ExerciseCard = ({
   exercise: rawExercise,
   language,
@@ -1586,7 +1661,7 @@ const ExerciseCard = ({
               disabled={answered}
               onClick={() => onSelect(idx)}
             >
-              {choice}
+              {renderChoice(choice, language)}
             </button>
           );
         })}
@@ -1627,7 +1702,7 @@ const ExerciseCard = ({
           )}
           {explanationText && (
             <div className="lv2-feedback-explanation">
-              <AutoPinyin text={explanationText} />
+              {renderMarkdownInline(explanationText)}
             </div>
           )}
           {!isCorrect && lessonTitle && (
@@ -1795,7 +1870,7 @@ const DialogueResponseCard = ({
               disabled={answered}
               onClick={() => onSelect(idx)}
             >
-              {choice}
+              {renderChoice(choice, language)}
             </button>
           );
         })}
@@ -1825,7 +1900,7 @@ const DialogueResponseCard = ({
           </div>
           {explanationText && (
             <div className="lv2-feedback-explanation">
-              <AutoPinyin text={explanationText} />
+              {renderMarkdownInline(explanationText)}
             </div>
           )}
           {!isCorrect && lessonTitle && (
@@ -1919,7 +1994,7 @@ const ContextReactCard = ({
               disabled={answered}
               onClick={() => onSelect(idx)}
             >
-              {choice}
+              {renderChoice(choice, language)}
             </button>
           );
         })}
@@ -1949,7 +2024,7 @@ const ContextReactCard = ({
           </div>
           {explanationText && (
             <div className="lv2-feedback-explanation">
-              <AutoPinyin text={explanationText} />
+              {renderMarkdownInline(explanationText)}
             </div>
           )}
           {!isCorrect && lessonTitle && (
@@ -2169,7 +2244,7 @@ const OrderExerciseCard = ({
           )}
           {explanationText && (
             <div className="lv2-feedback-explanation">
-              <AutoPinyin text={explanationText} />
+              {renderMarkdownInline(explanationText)}
             </div>
           )}
           {!isCorrect && lessonTitle && (
