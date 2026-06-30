@@ -118,7 +118,8 @@ export default function DictionaryEntryPage({
     return (
       <div className="dict-entry-page">
         <button type="button" className="dict-breadcrumb-back" onClick={onBack}>
-          ← {language === 'fr' ? 'Dictionnaire' : 'Dictionary'}
+          <span aria-hidden>←</span>
+          {language === 'fr' ? 'Retour' : 'Back'}
         </button>
         <div className="dict-entry-loading">
           {language === 'fr'
@@ -147,12 +148,17 @@ export default function DictionaryEntryPage({
         }}
       >
         <button type="button" className="dict-breadcrumb-back" onClick={onBack}>
-          ← {language === 'fr' ? 'Dictionnaire' : 'Dictionary'}
+          <span aria-hidden>←</span>
+          {language === 'fr' ? 'Retour' : 'Back'}
         </button>
         <button
           type="button"
           className="dict-breadcrumb-level"
           onClick={() => onOpenLevel(entry.level)}
+          style={{
+            background: LEVEL_COLOR[entry.level],
+            color: '#fff'
+          }}
         >
           {LEVEL_LABEL[entry.level]}
         </button>
@@ -354,20 +360,52 @@ const commonStyles = `
     text-align: center;
     color: var(--text-tertiary);
   }
-  .dict-breadcrumb-back, .dict-breadcrumb-level {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
+  /* V18 — Bouton Retour proper (pas juste du texte). Le label « Dictionnaire »
+     est remplacé par « Retour » pour matcher le pattern des autres pages. */
+  .dict-breadcrumb-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
     cursor: pointer;
-    padding: 0;
+    padding: 8px 14px;
+    border-radius: var(--radius-full);
     font-size: 0.9rem;
     font-family: inherit;
+    font-weight: 500;
+    transition: all var(--transition-base);
   }
-  .dict-breadcrumb-back:hover, .dict-breadcrumb-level:hover {
+  .dict-breadcrumb-back:hover {
+    background: var(--bg-secondary);
+    border-color: var(--text-tertiary);
     color: var(--primary-red);
+    transform: translateX(-2px);
   }
+  .dict-breadcrumb-back span {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  /* V18 — Le badge HSK dans le breadcrumb : pastille colorée pas un lien
+     simple. Couleur de fond = couleur de niveau, écarté du bouton Retour
+     par le gap du parent (passé à --spacing-lg). */
   .dict-breadcrumb-level {
-    margin-left: var(--spacing-sm);
+    background: var(--jade-green);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: inherit;
+    transition: all var(--transition-base);
+    margin-left: auto;
+  }
+  .dict-breadcrumb-level:hover {
+    transform: scale(1.05);
+    filter: brightness(1.08);
   }
   .dict-entry-header {
     padding: var(--spacing-lg) var(--spacing-xl);
@@ -376,7 +414,7 @@ const commonStyles = `
     margin: var(--spacing-lg) 0;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-lg);
   }
   .dict-entry-layout {
     display: grid;
@@ -409,10 +447,14 @@ const commonStyles = `
     margin: 0;
     color: var(--text-primary);
   }
+  /* V18 — Bouton audio principal harmonisé avec ceux des exemples : fond
+     clair + bordure + icône colorée (était rouge vif → trop tape-à-l'œil
+     vs reste de la fiche). Plus grand que dans les exemples (44px vs 32px)
+     pour rester visible à côté du hanzi 4rem. */
   .dict-entry-audio {
-    background: var(--primary-red);
-    color: white;
-    border: none;
+    background: var(--bg-primary);
+    color: var(--primary-red);
+    border: 1px solid var(--border-light);
     border-radius: var(--radius-full);
     width: 44px;
     height: 44px;
@@ -420,9 +462,14 @@ const commonStyles = `
     cursor: pointer;
     transition: all var(--transition-base);
     margin-top: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
   .dict-entry-audio:hover {
-    background: var(--primary-red-hover);
+    background: var(--primary-red);
+    color: white;
+    border-color: var(--primary-red);
     transform: scale(1.05);
   }
   .dict-entry-level-badge {
