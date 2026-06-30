@@ -37,7 +37,10 @@ const CONV_FILES = [
   'src/data/cecr-conversation-exercises-extra.ts',
   'src/data/cecr-conversation-exercises-extra-2.ts',
   'src/data/cecr-conversation-exercises-extra-3.ts',
-  'src/data/cecr-conversation-exercises-extra-4.ts'
+  'src/data/cecr-conversation-exercises-extra-4.ts',
+  // V16 — exos Nuances ajoutés
+  'src/data/cecr-nuances-exercises-ab.ts',
+  'src/data/cecr-nuances-exercises-c.ts'
 ].map((f) => path.join(PROJECT_ROOT, f));
 const EXAMPLES_DIR = path.join(PROJECT_ROOT, 'public', 'audio', 'examples');
 
@@ -98,8 +101,12 @@ function extractPhrases(content) {
   // choices: ['...', '...'] — souvent des phrases chinoises (translation, dialogue, context)
   for (const m of content.matchAll(/choices:\s*\[([^\]]+)\]/g)) {
     const inner = m[1];
-    for (const c of inner.matchAll(/['"]([一-鿿　-〿＀-￯\s\d%！？，。、…]+?)['"]/g)) {
+    for (const c of inner.matchAll(/['"]([一-鿿　-〿＀-￯\s\d%！？，。、…/]+?)['"]/g)) {
       const s = c[1].trim();
+      // V16 — Filtre les pseudo-phrases avec ' / ' (segments error-correction
+      // affichés en colonne, ex: '我 / 想 / 买 / 二本书'). Ce ne sont pas
+      // de vraies phrases à lire.
+      if (s.includes(' / ')) continue;
       if (/[一-鿿]/.test(s) && s.length >= 2) phrases.add(s);
     }
   }
