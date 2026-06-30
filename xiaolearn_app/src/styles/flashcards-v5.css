@@ -1777,34 +1777,49 @@
 
 .fc5-session-shell .fc4-rating {
   flex: 1;
-  max-width: 240px;
+  min-width: 0;
+  max-width: 200px;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 16px 24px;
-  border-radius: 16px;
-  font-size: 15px;
+  gap: 4px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease, color 0.15s ease;
   box-shadow: none;
   background: transparent;
+  position: relative;
 }
 .fc5-session-shell .fc4-rating:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
 .fc5-session-shell .fc4-rating-icon {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
 }
 .fc5-session-shell .fc4-rating-label {
-  font-size: 15px;
-  line-height: 1;
+  font-size: 13px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.fc5-session-shell .fc4-rating-kbd {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.5;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 
-/* "Je ne sais pas" — rouge XiaoLearn en soft tint */
+/* V16 — 4 niveaux SRS palette gradient rouge → orange → vert → bleu */
+
+/* Again — rouge XiaoLearn */
 .fc5-session-shell .fc4-rating--again {
   background: rgba(216, 72, 62, 0.065);
   border: 2px solid rgba(216, 72, 62, 0.22);
@@ -1816,7 +1831,19 @@
   transform: translateY(-1px);
 }
 
-/* "Je sais" — jade */
+/* Hard — orange */
+.fc5-session-shell .fc4-rating--hard {
+  background: rgba(245, 158, 11, 0.07);
+  border: 2px solid rgba(245, 158, 11, 0.24);
+  color: #b06d09;
+}
+.fc5-session-shell .fc4-rating--hard:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Good — jade */
 .fc5-session-shell .fc4-rating--good {
   background: rgba(47, 157, 138, 0.08);
   border: 2px solid rgba(47, 157, 138, 0.24);
@@ -1828,10 +1855,39 @@
   transform: translateY(-1px);
 }
 
+/* Easy — bleu */
+.fc5-session-shell .fc4-rating--easy {
+  background: rgba(59, 130, 246, 0.07);
+  border: 2px solid rgba(59, 130, 246, 0.24);
+  color: #1d4ed8;
+}
+.fc5-session-shell .fc4-rating--easy:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 0.14);
+  border-color: rgba(59, 130, 246, 0.45);
+  transform: translateY(-1px);
+}
+
 .fc5-session-shell .fc4-rating--forbidden {
   background: #f1e6d5 !important;
   color: var(--fc5-text-faint) !important;
   border-color: transparent !important;
+}
+
+/* Mode 4 niveaux : sur mobile, on passe en 2x2 grid pour éviter l'écrasement */
+.fc5-session-shell .fc4-session-ratings--4 {
+  max-width: 640px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 520px) {
+  .fc5-session-shell .fc4-session-ratings--4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .fc5-session-shell .fc4-session-ratings--4 .fc4-rating {
+    max-width: 100%;
+  }
 }
 
 /* -------------------------------------------------------------------------
