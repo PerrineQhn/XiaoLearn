@@ -43,6 +43,13 @@ export interface DictionaryEntry {
   tags?: string[];
   theme?: string;
   translationFrAlt?: string[];
+  /**
+   * V18 — IDs des mots liés affichés dans la section « Voir aussi » de la
+   * fiche. Curés manuellement par niveau (4-6 IDs typiquement). Contient
+   * des mots qui partagent un caractère avec celui-ci OU sont du même
+   * thème pédagogique. Format : ["hsk1-0042", "hsk2-0017"].
+   */
+  relatedIds?: string[];
 }
 
 /** Métadonnée HSK : nombre d'entrées par niveau + taille de chunk. */

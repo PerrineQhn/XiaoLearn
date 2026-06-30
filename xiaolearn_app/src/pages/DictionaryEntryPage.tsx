@@ -50,6 +50,12 @@ export default function DictionaryEntryPage({
     prev: DictionaryEntry | null;
     next: DictionaryEntry | null;
   }>({ prev: null, next: null });
+  // V18 — Mots liés affichés dans la section « Voir aussi ». On combine deux
+  // sources : (a) les `relatedIds` curés manuellement sur l'entrée, (b) un
+  // fallback algo qui pioche dans les mots du même niveau partageant un
+  // caractère ou le même thème. Le fallback marche dès maintenant, avant
+  // même que la curation manuelle ne soit faite sur les 9000 entrées.
+  const [related, setRelated] = useState<DictionaryEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -60,6 +66,7 @@ export default function DictionaryEntryPage({
     setNotFound(false);
     setEntry(null);
     setNeighbors({ prev: null, next: null });
+    setRelated([]);
 
     const resolve = async () => {
       let resolved: DictionaryEntry | null = null;
@@ -81,7 +88,7 @@ export default function DictionaryEntryPage({
       // Précharge l'audio du hanzi principal en arrière-plan
       preloadHanziAudio(resolved.hanzi).catch(() => {});
 
-      // Charge les voisins (prev/next) dans le même niveau
+      // Charge les voisins (prev/next) dans le même niveau + mots liés (V18)
       try {
         const all = await fetchLevelEntries(resolved.level);
         if (cancelled) return;
@@ -92,8 +99,53 @@ export default function DictionaryEntryPage({
             next: idx < all.length - 1 ? all[idx + 1] : null
           });
         }
+        // V18 — Calcul des mots liés
+        const byId = new Map(all.map((e) => [e.id, e]));
+        const curated: DictionaryEntry[] = [];
+        if (resolved.relatedIds && resolved.relatedIds.length > 0) {
+          for (const rid of resolved.relatedIds) {
+            // Même niveau d'abord (lookup O(1))
+            const local = byId.get(rid);
+            if (local) {
+              curated.push(local);
+              continue;
+            }
+            // Cross-niveau : fetch dédié
+            try {
+              const cross = await fetchEntryById(rid);
+              if (cross) curated.push(cross);
+            } catch { /* skip */ }
+          }
+        }
+        // Fallback algo : si pas assez de relatedIds curés, on complète
+        // avec les mots du même niveau partageant un caractère ou le thème.
+        const TARGET = 6;
+        if (curated.length < TARGET) {
+          const seen = new Set(curated.map((e) => e.id));
+          seen.add(resolved.id);
+          const chars = new Set(Array.from(resolved.hanzi));
+          const theme = resolved.theme;
+          const scored = all
+            .filter((e) => !seen.has(e.id))
+            .map((e) => {
+              let score = 0;
+              // +3 par caractère partagé (mots composés bonus)
+              for (const c of e.hanzi) if (chars.has(c)) score += 3;
+              // +2 si même thème
+              if (theme && e.theme === theme) score += 2;
+              // +1 si même catégorie grammaticale
+              if (resolved!.category && e.category === resolved!.category) score += 1;
+              return { e, score };
+            })
+            .filter((x) => x.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, TARGET - curated.length)
+            .map((x) => x.e);
+          curated.push(...scored);
+        }
+        if (!cancelled) setRelated(curated);
       } catch {
-        /* ignore voisinage */
+        /* ignore voisinage / related */
       }
     };
 
@@ -245,6 +297,31 @@ export default function DictionaryEntryPage({
                         : ex.translationFr || ex.translationEn}
                     </p>
                   </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* V18 — Voir aussi : mots curés (relatedIds) OU calculés par fallback (caractère partagé / thème). */}
+          {related.length > 0 && (
+            <section className="dict-entry-section dict-entry-related">
+              <h3>{language === 'fr' ? 'Voir aussi' : 'See also'}</h3>
+              <div className="dict-entry-related-grid">
+                {related.map((r) => (
+                  <button
+                    type="button"
+                    key={r.id}
+                    className="dict-entry-related-card"
+                    onClick={() => onSelectEntry(r.id)}
+                  >
+                    <span className="dict-entry-related-hanzi">{r.hanzi}</span>
+                    <span className="dict-entry-related-pinyin">{r.pinyin}</span>
+                    <span className="dict-entry-related-tr">
+                      {language === 'en'
+                        ? r.translationEn || r.translationFr
+                        : r.translationFr || r.translationEn}
+                    </span>
+                  </button>
                 ))}
               </div>
             </section>
@@ -515,6 +592,48 @@ const commonStyles = `
     line-height: 1.7;
     margin: 0;
     color: var(--text-secondary);
+  }
+  /* V18 — Section « Voir aussi » : grille de cartes cliquables vers les mots liés. */
+  .dict-entry-related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+  .dict-entry-related-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: all var(--transition-base);
+  }
+  .dict-entry-related-card:hover {
+    border-color: var(--jade-green);
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  .dict-entry-related-hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+  .dict-entry-related-pinyin {
+    font-style: italic;
+    color: var(--jade-green);
+    font-size: 0.85rem;
+  }
+  .dict-entry-related-tr {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
   .dict-entry-examples {
     display: flex;

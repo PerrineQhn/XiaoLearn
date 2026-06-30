@@ -44,8 +44,16 @@
       "être fan de",
       "adorer"
     ],
-    "explanationFr": "Le mot \"aimer\" en chinois exprime une variété de sentiments positifs, allant du simple plaisir à l'affection profonde. Il peut signifier \"to love\" (aimer quelqu'un ou quelque chose) et aussi \"to like\" (apprécier ou aimer quelque chose).",
-    "translationEn": "to love; to like; affection"
+    "explanationFr": "Le caractère 爱 exprime une variété de sentiments positifs, allant du simple plaisir à l'affection profonde. Il peut signifier « aimer quelqu'un » (sens fort, amour) ou « apprécier, aimer faire quelque chose » (préférence, goût).",
+    "translationEn": "to love; to like; affection",
+    "relatedIds": [
+      "hsk1-0057",
+      "hsk1-0241",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0002": {
     "id": "hsk1-0002",
@@ -92,7 +100,13 @@
     ],
     "explanationFr": "Cette particule est utilisée pour formuler des suggestions ou des demandes de manière polie. Elle peut être comparée à l'utilisation du mot \"s'il vous plaît\" en français, qui ajoute une touche d'égard et de politesse dans la conversation.",
     "explanation": "",
-    "translationEn": "suggestion particle"
+    "translationEn": "suggestion particle",
+    "relatedIds": [
+      "hsk1-0030",
+      "hsk1-0108",
+      "hsk1-0114",
+      "hsk1-0144"
+    ]
   },
   "hsk1-0003": {
     "id": "hsk1-0003",
@@ -137,7 +151,15 @@
     ],
     "explanationFr": "Le nombre \"huit\" en français est utilisé pour compter et quantifier des objets ou des idées. Il s'agit du huitième chiffre dans le système décimal. En chinois, il est écrit 八 (bā) et se prononce [bā].",
     "explanation": "",
-    "translationEn": "eight"
+    "translationEn": "eight",
+    "relatedIds": [
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112",
+      "hsk1-0113"
+    ]
   },
   "hsk1-0004": {
     "id": "hsk1-0004",
@@ -180,7 +202,15 @@
     "theme": "famille",
     "explanationFr": "Le mot \"爸爸\" est utilisé pour désigner le père dans une famille chinoise, et il est couramment utilisé par les enfants ou les proches. En français, on utilise généralement \"papa\" pour exprimer cette relation familiale.",
     "translationFrAlt": [],
-    "translationEn": "father"
+    "translationEn": "father",
+    "relatedIds": [
+      "hsk1-0039",
+      "hsk1-0049",
+      "hsk1-0060",
+      "hsk1-0068",
+      "hsk1-0085",
+      "hsk1-0090"
+    ]
   },
   "hsk1-0005": {
     "id": "hsk1-0005",
@@ -227,7 +257,15 @@
       "centaine"
     ],
     "explanationFr": "Le mot \"bǎi\" en chinois peut signifier à la fois \"cent\", un nombre précis, et \"nombreux\", indiquant une quantité importante ou variée. C'est pourquoi nous avons choisi de traduire ce terme par deux expressions différentes dans le français.",
-    "translationEn": "classifier for volumes; classifier for books; classifier for chapters"
+    "translationEn": "classifier for volumes; classifier for books; classifier for chapters",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112",
+      "hsk1-0113"
+    ]
   },
   "hsk1-0006": {
     "id": "hsk1-0006",
@@ -275,7 +313,15 @@
       "toute la sainte journée"
     ],
     "explanationFr": "Le mot \"白昼\" (báitiān) se traduit par \"la journée\". Il est utilisé pour désigner le temps qui s'écoule pendant la période diurne, contrairement à la nuit. Dans une conversation courante, on peut l'utiliser pour parler de la durée entre le lever et le coucher du soleil.",
-    "translationEn": "daytime"
+    "translationEn": "daytime",
+    "relatedIds": [
+      "hsk1-0207",
+      "hsk1-0129",
+      "hsk1-0300",
+      "hsk1-0094",
+      "hsk1-0208",
+      "hsk1-0245"
+    ]
   },
   "hsk1-0007": {
     "id": "hsk1-0007",
@@ -324,7 +370,15 @@
       "presque"
     ],
     "explanationFr": "Le mot \"半\" signifie \"demi\" en français, qui est utilisé pour indiquer la moitié ou quelque chose qui n'est pas complètement entier. Il peut aussi être utilisé après un nombre pour signifier \"et demi\", comme dans \"un et demi\". Ce terme est très utile pour exprimer des quantités partielles.",
-    "translationEn": "half"
+    "translationEn": "half",
+    "relatedIds": [
+      "hsk1-0255",
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0008": {
     "id": "hsk1-0008",
@@ -370,7 +424,15 @@
       "baozi"
     ],
     "explanationFr": "Le baozi est un type de pain emballé, généralement raviolli et cuit à la vapeur. Il s'agit d'un aliment populaire en Chine, souvent mangé pour le petit-déjeuner ou comme snack. La forme du baozi ressemble à une boule avec un centre rempli de viande, de légumes ou de fromage.",
-    "translationEn": "steamed bun"
+    "translationEn": "steamed bun",
+    "relatedIds": [
+      "hsk1-0009",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0125",
+      "hsk1-0295",
+      "hsk1-0089"
+    ]
   },
   "hsk1-0009": {
     "id": "hsk1-0009",
@@ -413,7 +475,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"tasse\" est utilisé pour désigner un récipient en verre ou en plastique utilisé pour boire du liquide, généralement de la taille d'une main. Il peut être rempli d'eau, de thé, de café, etc. La mesure \"个\" s'applique à chaque tasse individuelle.",
     "translationFrAlt": [],
-    "translationEn": "cup; glass"
+    "translationEn": "cup; glass",
+    "relatedIds": [
+      "hsk1-0008",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0295",
+      "hsk1-0089",
+      "hsk1-0262"
+    ]
   },
   "hsk1-0010": {
     "id": "hsk1-0010",
@@ -463,7 +533,15 @@
     "theme": "livre",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "classifier for books; classifier for volumes; classifier for issues"
+    "translationEn": "classifier for books; classifier for volumes; classifier for issues",
+    "relatedIds": [
+      "hsk1-0058",
+      "hsk1-0104",
+      "hsk1-0148",
+      "hsk1-0199",
+      "hsk1-0239",
+      "hsk1-0268"
+    ]
   },
   "hsk1-0011": {
     "id": "hsk1-0011",
@@ -516,7 +594,15 @@
       "bord"
     ],
     "explanationFr": "",
-    "translationEn": "side; edge"
+    "translationEn": "side; edge",
+    "relatedIds": [
+      "hsk1-0213",
+      "hsk1-0133",
+      "hsk1-0280",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0012": {
     "id": "hsk1-0012",
@@ -563,7 +649,15 @@
       "faute"
     ],
     "explanationFr": "Le mot \"病\" signifie \"maladie\" en français. Il s'agit d'un état où le corps ou la santé ne sont pas au meilleur de leur forme. On peut aussi dire que c'est une situation où on se sent mal, comme lorsqu'on tombe malade.",
-    "translationEn": "disease; sick"
+    "translationEn": "disease; sick",
+    "relatedIds": [
+      "hsk1-0100",
+      "hsk1-0182",
+      "hsk1-0258",
+      "hsk1-0261",
+      "hsk1-0004",
+      "hsk1-0006"
+    ]
   },
   "hsk1-0013": {
     "id": "hsk1-0013",
@@ -610,7 +704,15 @@
       "pour indiquer une alternative avec jiu)"
     ],
     "explanationFr": "Le caractère \"不\" est utilisé pour former des négations en chinois. Il s'agit généralement d'un préfixe qui se place devant un verbe ou un adjectif pour former une négation. En français, cela correspond à l'expression \"ne... pas\".",
-    "translationEn": "not...; no; not at all"
+    "translationEn": "not...; no; not at all",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0015",
+      "hsk1-0044",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0079"
+    ]
   },
   "hsk1-0014": {
     "id": "hsk1-0014",
@@ -657,7 +759,15 @@
       "de rien"
     ],
     "explanationFr": "Cette expression est utilisée pour répondre à un merci ou une politesse excessive. Elle signifie littéralement \"c'est normal\" et indique que l'action n'était pas de votre devoir. Il s'agit d'une réponse polie et naturelle, évitant toute attitude trop humble ou trop impolie.",
-    "translationEn": "never mind; you're welcome"
+    "translationEn": "never mind; you're welcome",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0015",
+      "hsk1-0044",
+      "hsk1-0208",
+      "hsk1-0019",
+      "hsk1-0023"
+    ]
   },
   "hsk1-0015": {
     "id": "hsk1-0015",
@@ -707,7 +817,15 @@
     "theme": "négation",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "do not"
+    "translationEn": "do not",
+    "relatedIds": [
+      "hsk1-0252",
+      "hsk1-0013",
+      "hsk1-0044",
+      "hsk1-0014",
+      "hsk1-0123",
+      "hsk1-0001"
+    ]
   },
   "hsk1-0016": {
     "id": "hsk1-0016",
@@ -754,7 +872,15 @@
       "cuisine"
     ],
     "explanationFr": "Le mot \"菜\" peut se traduire par \"légume\" ou \"plat\". Il est utilisé pour désigner divers types de végétaux comestibles et aussi pour parler d'un repas en général. En chinois, le mot \"菜\" est souvent suivi du classificateur \"道\" (dào) quand il se réfère à une portion de repas.",
-    "translationEn": "vegetables; dish"
+    "translationEn": "vegetables; dish",
+    "relatedIds": [
+      "hsk1-0017",
+      "hsk1-0050",
+      "hsk1-0127",
+      "hsk1-0193",
+      "hsk1-0194",
+      "hsk1-0216"
+    ]
   },
   "hsk1-0017": {
     "id": "hsk1-0017",
@@ -800,7 +926,15 @@
       "infusion de thé ou d'autre chose"
     ],
     "explanationFr": "Le mot \"thé\" désigne le produit issu des feuilles du plant de Camellia sinensis, qui est cultivé dans de nombreuses régions du monde. Il existe différents types de thé selon la manière dont les feuilles sont traitées (fouettées, cuitées, fermentées). En français, on utilise généralement le mot \"thé\" sans classificateur.",
-    "translationEn": "tea"
+    "translationEn": "tea",
+    "relatedIds": [
+      "hsk1-0016",
+      "hsk1-0050",
+      "hsk1-0127",
+      "hsk1-0193",
+      "hsk1-0194",
+      "hsk1-0216"
+    ]
   },
   "hsk1-0018": {
     "id": "hsk1-0018",
@@ -844,8 +978,16 @@
     "translationFrAlt": [
       "crier"
     ],
-    "explanationFr": "Le mot \"chanter\" en français signifie non seulement \"to sing\", mais aussi \"to call loudly\" ou \"to chant\". Il s'agit d'un verbe qui peut être utilisé dans différents contextes, comme chanter une chanson, chanter un hymne ou même crier de manière rythmée.",
-    "translationEn": "to sing; to chant; to recite"
+    "explanationFr": "Le verbe 唱 signifie « chanter ». Il s'utilise pour chanter une chanson, entonner un hymne ou, par extension, déclamer ou scander à voix haute. C'est le verbe de l'action de chanter au sens large.",
+    "translationEn": "to sing; to chant; to recite",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027",
+      "hsk1-0042"
+    ]
   },
   "hsk1-0019": {
     "id": "hsk1-0019",
@@ -906,7 +1048,15 @@
     "theme": "lieu",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "supermarket"
+    "translationEn": "supermarket",
+    "relatedIds": [
+      "hsk1-0062",
+      "hsk1-0014",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0020": {
     "id": "hsk1-0020",
@@ -955,7 +1105,15 @@
       "chariot (pièce dans le jeu d'échecs chinois Xiangqi)"
     ],
     "explanationFr": "Le mot \"车\" en chinois peut signifier \"voiture\" ou \"véhicule\". Il est utilisé pour désigner des véhicules motorisés comme les voitures et les camions, mais aussi des véhicules non-motorisés comme les roulottes. N'oubliez pas que dans le contexte de l'échecs chinois (xiangqi), \"车\" se traduit par \"fou\".",
-    "translationEn": "vehicle"
+    "translationEn": "vehicle",
+    "relatedIds": [
+      "hsk1-0083",
+      "hsk1-0023",
+      "hsk1-0098",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0021": {
     "id": "hsk1-0021",
@@ -1006,7 +1164,15 @@
     ],
     "explanationFr": "Le mot \"吃\" signifie \"manger\". Il s'agit d'un verbe qui exprime l'action de consommer des aliments. Notez qu'il peut aussi être utilisé pour décrire la façon dont on mange, par exemple \"吃得慢\" (chī dé màn) signifie \"manger lentement\".",
     "explanation": "",
-    "translationEn": "to eat"
+    "translationEn": "to eat",
+    "relatedIds": [
+      "hsk1-0073",
+      "hsk1-0078",
+      "hsk1-0016",
+      "hsk1-0017",
+      "hsk1-0050",
+      "hsk1-0089"
+    ]
   },
   "hsk1-0022": {
     "id": "hsk1-0022",
@@ -1057,7 +1223,15 @@
       "porter"
     ],
     "explanationFr": "Le mot \"chuān\" signifie \"porter\" ou \"mettre\". Il est souvent utilisé pour parler de la façon dont on enfile des vêtements, mais il peut aussi avoir un sens plus large, comme \"percer\" ou \"pénétrer\", selon le contexte.",
-    "translationEn": "to wear (clothing)"
+    "translationEn": "to wear (clothing)",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0027",
+      "hsk1-0042"
+    ]
   },
   "hsk1-0023": {
     "id": "hsk1-0023",
@@ -1131,7 +1305,15 @@
     "theme": "transport",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "taxi"
+    "translationEn": "taxi",
+    "relatedIds": [
+      "hsk1-0098",
+      "hsk1-0020",
+      "hsk1-0083",
+      "hsk1-0054",
+      "hsk1-0271",
+      "hsk1-0284"
+    ]
   },
   "hsk1-0024": {
     "id": "hsk1-0024",
@@ -1178,7 +1360,15 @@
     ],
     "explanationFr": "Le caractère \"大\" signifie \"grand\". Il s'agit d'un mot très utilisé en chinois qui a plusieurs utilisations, comme indiquer la taille physique ou l'importance d'une chose. N'oublie pas que ce mot peut aussi être utilisé pour exprimer quelque chose de significatif.",
     "explanation": "",
-    "translationEn": "big; great"
+    "translationEn": "big; great",
+    "relatedIds": [
+      "hsk1-0026",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049"
+    ]
   },
   "hsk1-0025": {
     "id": "hsk1-0025",
@@ -1221,7 +1411,15 @@
     "explanationFr": "Le verbe \"téléphoner\" désigne l'action de faire un appel téléphonique. Il s'utilise dans des situations où on souhaite communiquer par téléphone avec quelqu'un. N'oubliez pas que ce terme est utilisé pour les appels téléphoniques en général, qu'ils soient effectués à partir d'un téléphone fixe ou mobile.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to make a phone call"
+    "translationEn": "to make a phone call",
+    "relatedIds": [
+      "hsk1-0034",
+      "hsk1-0197",
+      "hsk1-0035",
+      "hsk1-0036",
+      "hsk1-0037",
+      "hsk1-0038"
+    ]
   },
   "hsk1-0026": {
     "id": "hsk1-0026",
@@ -1269,7 +1467,15 @@
     "theme": "général",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "everyone; everybody"
+    "translationEn": "everyone; everybody",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0085",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0090",
+      "hsk1-0046"
+    ]
   },
   "hsk1-0027": {
     "id": "hsk1-0027",
@@ -1318,7 +1524,15 @@
       "aller à"
     ],
     "explanationFr": "Le caractère 到 se traduit par \"à\" ou \"atteindre\". Il est utilisé pour indiquer un lieu vers lequel on se dirige, une action qui aboutit à un certain endroit, ou une période jusqu'à laquelle quelque chose s'étend.",
-    "translationEn": "to arrive at; to reach"
+    "translationEn": "to arrive at; to reach",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0042"
+    ]
   },
   "hsk1-0028": {
     "id": "hsk1-0028",
@@ -1361,7 +1575,15 @@
     "theme": "école",
     "explanationFr": "L'université est un établissement d'enseignement supérieur où l'on poursuit des études après le lycée. On y suit des cours plus spécialisés et approfondis dans divers domaines académiques.",
     "translationFrAlt": [],
-    "translationEn": "university"
+    "translationEn": "university",
+    "relatedIds": [
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0235",
+      "hsk1-0236",
+      "hsk1-0249",
+      "hsk1-0251"
+    ]
   },
   "hsk1-0029": {
     "id": "hsk1-0029",
@@ -1405,7 +1627,15 @@
     "explanationFr": "L'étudiant est une personne qui étudie à l'université ou au collège. Il s'agit d'une personne qui suit des cours pour obtenir un diplôme. Dans le contexte chinois, cela peut aussi désigner quelqu'un qui étudie dans une école supérieure.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "college student"
+    "translationEn": "college student",
+    "relatedIds": [
+      "hsk1-0028",
+      "hsk1-0249",
+      "hsk1-0236",
+      "hsk1-0293",
+      "hsk1-0211",
+      "hsk1-0235"
+    ]
   },
   "hsk1-0030": {
     "id": "hsk1-0030",
@@ -1454,7 +1684,15 @@
     ],
     "explanationFr": "Le caractère \"的\" est utilisé pour indiquer la possession ou la relation entre deux noms, similaire à l'article possessif en français (\"le\", \"la\", \"les\"). Il s'agit d'un préfixe qui ne change pas de forme selon le nom qui suit.",
     "explanation": "",
-    "translationEn": "possessive particle"
+    "translationEn": "possessive particle",
+    "relatedIds": [
+      "hsk1-0264",
+      "hsk1-0104",
+      "hsk1-0002",
+      "hsk1-0108",
+      "hsk1-0114",
+      "hsk1-0144"
+    ]
   },
   "hsk1-0031": {
     "id": "hsk1-0031",
@@ -1499,7 +1737,15 @@
       "numéro..."
     ],
     "explanationFr": "Ce préfixe est utilisé pour former les nombres ordinaux en chinois, comme \"第一\" pour \"premier\". Il peut également avoir d'autres significations littéraires ou historiques.",
-    "translationEn": "ordinal prefix"
+    "translationEn": "ordinal prefix",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0047",
+      "hsk1-0056"
+    ]
   },
   "hsk1-0032": {
     "id": "hsk1-0032",
@@ -1552,7 +1798,15 @@
       "boutique"
     ],
     "explanationFr": "",
-    "translationEn": "store; shop"
+    "translationEn": "store; shop",
+    "relatedIds": [
+      "hsk1-0176",
+      "hsk1-0051",
+      "hsk1-0191",
+      "hsk1-0115",
+      "hsk1-0162",
+      "hsk1-0019"
+    ]
   },
   "hsk1-0033": {
     "id": "hsk1-0033",
@@ -1605,7 +1859,15 @@
       "point"
     ],
     "explanationFr": "",
-    "translationEn": "point; small amount; moment (time)"
+    "translationEn": "point; small amount; moment (time)",
+    "relatedIds": [
+      "hsk1-0256",
+      "hsk1-0266",
+      "hsk1-0006",
+      "hsk1-0093",
+      "hsk1-0128",
+      "hsk1-0129"
+    ]
   },
   "hsk1-0034": {
     "id": "hsk1-0034",
@@ -1648,7 +1910,15 @@
     "theme": "technologie",
     "explanationFr": "Le terme \"电话\" se traduit par \"téléphone\" en français, qui désigne l'appareil utilisé pour communiquer à distance par voie sonore. Il peut également faire référence au coup de fil ou à la communication téléphonique.",
     "translationFrAlt": [],
-    "translationEn": "telephone"
+    "translationEn": "telephone",
+    "relatedIds": [
+      "hsk1-0025",
+      "hsk1-0035",
+      "hsk1-0036",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0197"
+    ]
   },
   "hsk1-0035": {
     "id": "hsk1-0035",
@@ -1692,7 +1962,15 @@
     "theme": "technologie",
     "explanationFr": "Le terme \"ordinateur\" est utilisé pour désigner un appareil électronique qui peut exécuter des programmes informatiques et effectuer diverses tâches, comme le traitement de l'information, la communication ou l'accès à Internet. Il s'agit d'un mot technique qui fait partie du jargon informatique.",
     "translationFrAlt": [],
-    "translationEn": "computer"
+    "translationEn": "computer",
+    "relatedIds": [
+      "hsk1-0034",
+      "hsk1-0036",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0025",
+      "hsk1-0189"
+    ]
   },
   "hsk1-0036": {
     "id": "hsk1-0036",
@@ -1739,7 +2017,15 @@
       "TV"
     ],
     "explanationFr": "Le mot \"télévision\" désigne l'appareil électronique qui permet de recevoir et de regarder des images en direct ou enregistrées, ainsi que le service qu'il propose. Il est souvent abrégé par l'acronyme \"TV\".",
-    "translationEn": "television"
+    "translationEn": "television",
+    "relatedIds": [
+      "hsk1-0034",
+      "hsk1-0035",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0025",
+      "hsk1-0189"
+    ]
   },
   "hsk1-0037": {
     "id": "hsk1-0037",
@@ -1784,7 +2070,15 @@
       "film"
     ],
     "explanationFr": "Le mot \"电影\" en chinois se traduit par \"film\" ou \"cinéma\" en français, selon le contexte. Il s'agit d'un médium audiovisuel qui raconte une histoire à travers des images en mouvement. En général, on utilise \"film\" pour parler du contenu en lui-même et \"cinéma\" pour désigner l'établissement où on visionne les films.",
-    "translationEn": "film"
+    "translationEn": "film",
+    "relatedIds": [
+      "hsk1-0038",
+      "hsk1-0034",
+      "hsk1-0035",
+      "hsk1-0036",
+      "hsk1-0025",
+      "hsk1-0190"
+    ]
   },
   "hsk1-0038": {
     "id": "hsk1-0038",
@@ -1827,7 +2121,15 @@
     "theme": "loisirs",
     "explanationFr": "Le mot \"电影院\" désigne un lieu où l'on peut voir des films projetés sur un grand écran. Il s'agit du terme utilisé pour décrire un cinéma dans le contexte francophone, qui est similaire à la traduction anglaise \"cinema; movie theater\". En chinois, il est classé comme une unité de mesure sans son propre nom spécifique (CL:家[jia1],座[zuo4]).",
     "translationFrAlt": [],
-    "translationEn": "cinema"
+    "translationEn": "cinema",
+    "relatedIds": [
+      "hsk1-0037",
+      "hsk1-0034",
+      "hsk1-0035",
+      "hsk1-0036",
+      "hsk1-0261",
+      "hsk1-0025"
+    ]
   },
   "hsk1-0039": {
     "id": "hsk1-0039",
@@ -1870,7 +2172,15 @@
     "theme": "famille",
     "explanationFr": "Le terme \"frère cadet\" est utilisé pour désigner le jeune frère dans une famille. Il s'agit du plus jeune des frères, celui qui a un ou plusieurs frères aînés. Ce mot est couramment utilisé en chinois et en français pour exprimer cette relation familiale.",
     "translationFrAlt": [],
-    "translationEn": "younger brother"
+    "translationEn": "younger brother",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0049",
+      "hsk1-0060",
+      "hsk1-0068",
+      "hsk1-0085",
+      "hsk1-0090"
+    ]
   },
   "hsk1-0040": {
     "id": "hsk1-0040",
@@ -1919,7 +2229,15 @@
       "créature"
     ],
     "explanationFr": "Le mot \"东西\" est très courant et peut se traduire par \"chose\" ou \"objet\". C'est un terme générique qui peut désigner n'importe quel article, concept ou personne. Il est souvent utilisé de manière informelle dans la conversation quotidienne.",
-    "translationEn": "thing; object"
+    "translationEn": "thing; object",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0041": {
     "id": "hsk1-0041",
@@ -1966,7 +2284,15 @@
       "capitale"
     ],
     "explanationFr": "Le mot \"capitale\" en français désigne la ville où se trouve le gouvernement et les institutions importantes d'un pays ou d'une région. Elle est souvent considérée comme le centre politique, économique et culturel de l'endroit.",
-    "translationEn": "adverb of totality"
+    "translationEn": "adverb of totality",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0053",
+      "hsk1-0079",
+      "hsk1-0203",
+      "hsk1-0253",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0042": {
     "id": "hsk1-0042",
@@ -2014,7 +2340,15 @@
       "faire ses études"
     ],
     "explanationFr": "Le verbe \"lire\" peut avoir plusieurs significations en chinois, notamment \"lire à voix haute\" ou \"se plonger dans une étude\". Il est utilisé pour décrire l'action de prononcer des mots écrits à haute voix, ainsi que pour indiquer la pratique d'apprendre un sujet scolaire.",
-    "translationEn": "to read"
+    "translationEn": "to read",
+    "relatedIds": [
+      "hsk1-0047",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0043": {
     "id": "hsk1-0043",
@@ -2074,8 +2408,16 @@
       "ajuster",
       "régler"
     ],
-    "explanationFr": "Le mot \"对\" peut avoir plusieurs significations en fonction du contexte, notamment \"droit\", \"correct\" ou des prépositions comme \"vers\", \"à\". Il est utilisé pour indiquer une direction, une position ou l'exactitude d'une situation. Par exemple, il peut signifier \"facing\" (facing) dans un contexte spatial, ou \"to answer\" (répondre à) dans le sens de donner une réponse appropriée.",
-    "translationEn": "correct; right"
+    "explanationFr": "Le caractère 对 a plusieurs valeurs selon le contexte : adjectif, il signifie « correct, juste, exact » ; préposition, il introduit la direction ou la cible (« envers », « à »). Il sert aussi à indiquer qu'on fait face à quelqu'un ou à répondre à une situation.",
+    "translationEn": "correct; right",
+    "relatedIds": [
+      "hsk1-0044",
+      "hsk1-0024",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0044": {
     "id": "hsk1-0044",
@@ -2121,7 +2463,15 @@
       "désolé"
     ],
     "explanationFr": "Ce mot exprime des excuses pour une faute ou un malentendu. Il peut être utilisé dans divers contextes pour exprimer de la pitié, du regret ou de l'indulgence.",
-    "translationEn": "apologize; forgive"
+    "translationEn": "apologize; forgive",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0043",
+      "hsk1-0014",
+      "hsk1-0015",
+      "hsk1-0164",
+      "hsk1-0240"
+    ]
   },
   "hsk1-0045": {
     "id": "hsk1-0045",
@@ -2170,7 +2520,15 @@
       "plus de"
     ],
     "explanationFr": "Le mot \"多\" signifie \"beaucoup\", \"plus\" ou \"une grande quantité\". Il est utilisé pour exprimer un grand nombre ou une grande quantité de quelque chose, mais aussi pour indiquer que quelque chose est en excès. Après un chiffre, il peut également signifier \"impair\" (un nombre impair). En tant qu'élément préfixe, il crée des mots comme \"multi-\" et \"poly-\".",
-    "translationEn": "adjective of much; many"
+    "translationEn": "adjective of much; many",
+    "relatedIds": [
+      "hsk1-0046",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0046": {
     "id": "hsk1-0046",
@@ -2215,7 +2573,15 @@
       "autant que"
     ],
     "explanationFr": "Ce mot est utilisé pour demander une quantité ou un nombre, surtout lorsqu'il s'agit de chiffres spécifiques comme des numéros de téléphone ou d'étudiant. Il peut aussi être utilisé pour demander le prix d'un article.",
-    "translationEn": "how much; how many"
+    "translationEn": "how much; how many",
+    "relatedIds": [
+      "hsk1-0045",
+      "hsk1-0180",
+      "hsk1-0026",
+      "hsk1-0131",
+      "hsk1-0132",
+      "hsk1-0133"
+    ]
   },
   "hsk1-0047": {
     "id": "hsk1-0047",
@@ -2260,7 +2626,15 @@
       "étudier"
     ],
     "explanationFr": "Le mot \"读书\" peut signifier à la fois \"lire\" et \"étudier\". Il englobe l'idée d'apprendre par le biais du livre ou des textes écrits. C'est un terme qui s'applique aussi bien aux adultes qui lisent pour se divertir qu'aux étudiants qui apprennent dans une école.",
-    "translationEn": "to study; to read"
+    "translationEn": "to study; to read",
+    "relatedIds": [
+      "hsk1-0190",
+      "hsk1-0042",
+      "hsk1-0191",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0214"
+    ]
   },
   "hsk1-0048": {
     "id": "hsk1-0048",
@@ -2306,7 +2680,15 @@
       "stupide (dialecte pékinois)"
     ],
     "explanationFr": "Le caractère 二 (èr) signifie \"deux\" en chinois standard. Il est important de noter qu'en dialecte de Beijing, le mot peut avoir un sens péjoratif qui ne se traduit pas directement par \"stupide\", mais plutôt par une connotation d'insouciance ou de légèreté. Pour les apprenants francophones, il est préférable de limiter l'utilisation du caractère 二 à son sens premier, c'est-à-dire \"deux\".",
-    "translationEn": "two"
+    "translationEn": "two",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0095",
+      "hsk1-0112",
+      "hsk1-0113"
+    ]
   },
   "hsk1-0049": {
     "id": "hsk1-0049",
@@ -2349,7 +2731,15 @@
     "explanationFr": "Le mot \"érrzi\" en chinois signifie \"fils\", mais il est souvent utilisé dans un contexte familial, contrairement à l'anglais \"son\". Il s'agit d'un terme plus proche de \"fils\" que de \"héritier\" ou \"descendant\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "son"
+    "translationEn": "son",
+    "relatedIds": [
+      "hsk1-0068",
+      "hsk1-0153",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0126",
+      "hsk1-0295"
+    ]
   },
   "hsk1-0050": {
     "id": "hsk1-0050",
@@ -2394,7 +2784,15 @@
       "repas"
     ],
     "explanationFr": "Le mot \"饭\" signifie \"riz cuit\". En chinois, on utilise souvent le terme \"饭\" pour désigner un repas complet ou une portion de riz cuit. Il peut être utilisé dans différents contextes, comme indiquer l'heure du repas (\"吃饭 - fan1can4\" qui signifie \"manger\") ou décrire ce que l'on a mangé (\"我吃了饭 - wo3 ne5 chi2 le5 fan1\" qui signifie \"J'ai mangé du riz cuit\"). Notez qu'en français, on utilise souvent le terme \"riz cuit\", mais il est important de comprendre que \"饭\" peut avoir des connotations plus larges liées à un repas complet.",
-    "translationEn": "meal; cooked rice"
+    "translationEn": "meal; cooked rice",
+    "relatedIds": [
+      "hsk1-0127",
+      "hsk1-0216",
+      "hsk1-0051",
+      "hsk1-0224",
+      "hsk1-0274",
+      "hsk1-0299"
+    ]
   },
   "hsk1-0051": {
     "id": "hsk1-0051",
@@ -2439,7 +2837,15 @@
       "hôtel"
     ],
     "explanationFr": "Le terme \"飯店\" en chinois est souvent traduit par \"hôtel\" en français, bien qu'il puisse aussi signifier \"restaurant\". Cependant, dans la plupart des contextes, il se réfère à un établissement qui propose des chambres d'hébergement. Le classificateur \"家\" (jia1) suggère que l'accent est mis sur le lieu d'accueil plutôt que sur une activité alimentaire.",
-    "translationEn": "restaurant; hotel"
+    "translationEn": "restaurant; hotel",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0127",
+      "hsk1-0216",
+      "hsk1-0032",
+      "hsk1-0224",
+      "hsk1-0274"
+    ]
   },
   "hsk1-0052": {
     "id": "hsk1-0052",
@@ -2486,7 +2892,15 @@
       "chambre"
     ],
     "explanationFr": "Le mot \"pièce\" est utilisé pour désigner une zone définie dans un espace plus vaste, généralement séparée par des cloisons ou des portes. Il peut s'agir d'une chambre, d'un salon, d'une cuisine, etc., selon le contexte.",
-    "translationEn": "room"
+    "translationEn": "room",
+    "relatedIds": [
+      "hsk1-0188",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0053": {
     "id": "hsk1-0053",
@@ -2532,7 +2946,15 @@
       "extrêmement"
     ],
     "explanationFr": "Le mot \"非常\" est utilisé pour exprimer une intensité ou une importance particulière, similaire à \"très\" ou \"vraiment\". Il peut aussi signifier quelque chose d'extraordinaire ou d'un usage inhabituel. Cependant, dans la plupart des cas, on préférera utiliser \"très\" pour transmettre l'idée de grande intensité.",
-    "translationEn": "very"
+    "translationEn": "very",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0079",
+      "hsk1-0203",
+      "hsk1-0253",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0054": {
     "id": "hsk1-0054",
@@ -2578,7 +3000,15 @@
       "masturbation (masculine)"
     ],
     "explanationFr": "Le mot \"avion\" désigne un aéronef à moteur utilisé pour le transport de personnes ou de marchandises dans les airs. Il est classé en CL:架[jià]. Dans la langue chinoise, ce terme est utilisé de manière similaire au français.",
-    "translationEn": "airplane"
+    "translationEn": "airplane",
+    "relatedIds": [
+      "hsk1-0189",
+      "hsk1-0083",
+      "hsk1-0023",
+      "hsk1-0098",
+      "hsk1-0271",
+      "hsk1-0284"
+    ]
   },
   "hsk1-0055": {
     "id": "hsk1-0055",
@@ -2632,7 +3062,15 @@
       "office"
     ],
     "explanationFr": "Le mot \"分\" peut signifier \"partage\", qui implique la distribution ou l'échange équitable entre plusieurs personnes. Il peut aussi désigner un \"élément\" ou un \"composant\", qui est une partie intégrante d'un tout plus grand.",
-    "translationEn": "minute; point"
+    "translationEn": "minute; point",
+    "relatedIds": [
+      "hsk1-0056",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0056": {
     "id": "hsk1-0056",
@@ -2693,7 +3131,15 @@
     "theme": "temps",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "minute"
+    "translationEn": "minute",
+    "relatedIds": [
+      "hsk1-0055",
+      "hsk1-0006",
+      "hsk1-0033",
+      "hsk1-0093",
+      "hsk1-0128",
+      "hsk1-0129"
+    ]
   },
   "hsk1-0057": {
     "id": "hsk1-0057",
@@ -2741,7 +3187,15 @@
       "heureux"
     ],
     "explanationFr": "Le mot \"高兴\" (gāoxìng) peut être traduit par \"content\". Il exprime une forme de joie ou de satisfaction, souvent plus modérée que \"heureux\". On l'utilise pour décrire un état d'esprit positif. Par exemple, on peut dire qu'on est content d'avoir réussi un examen.",
-    "translationEn": "happy; pleased"
+    "translationEn": "happy; pleased",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0241",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0065"
+    ]
   },
   "hsk1-0058": {
     "id": "hsk1-0058",
@@ -2787,7 +3241,15 @@
     ],
     "explanationFr": "Ce terme est utilisé pour désigner un type de mot qui sert à compter des personnes ou des choses sans préciser le nombre exact. Il n'est pas nécessaire d'utiliser ce mot dans la phrase, il se place simplement avant le nom qu'il accompagne.",
     "explanation": "",
-    "translationEn": "general classifier; measure word for person or small object"
+    "translationEn": "general classifier; measure word for person or small object",
+    "relatedIds": [
+      "hsk1-0134",
+      "hsk1-0135",
+      "hsk1-0281",
+      "hsk1-0010",
+      "hsk1-0104",
+      "hsk1-0148"
+    ]
   },
   "hsk1-0059": {
     "id": "hsk1-0059",
@@ -2833,7 +3295,15 @@
     ],
     "explanationFr": "Le mot \"chanson\" en français désigne une composition musicale qui est généralement chantée. Il s'agit d'un terme plus large qui englobe toutes les formes de musique vocale, qu'elles soient populaires ou classiques.",
     "explanation": "",
-    "translationEn": "song"
+    "translationEn": "song",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0060": {
     "id": "hsk1-0060",
@@ -2876,7 +3346,15 @@
     "theme": "famille",
     "explanationFr": "Le terme \"frère aîné\" est utilisé pour désigner un garçon qui est plus âgé qu'un autre garçon dans une famille. Il s'agit d'une relation familiale importante en chine, où les valeurs familiales et le respect des anciens sont très répandus.",
     "translationFrAlt": [],
-    "translationEn": "eldest brother"
+    "translationEn": "eldest brother",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0085",
+      "hsk1-0090"
+    ]
   },
   "hsk1-0061": {
     "id": "hsk1-0061",
@@ -2929,7 +3407,15 @@
       "bien pourvu de"
     ],
     "explanationFr": "Le mot \"给\" signifie \"donner\". Il peut aussi être utilisé comme préposition pour indiquer la destination ou l'objet de l'action de donner. Parfois, il est utilisé pour marquer une action qui se fait pour quelqu'un ou quelque chose.",
-    "translationEn": "to give; to provide"
+    "translationEn": "to give; to provide",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0062": {
     "id": "hsk1-0062",
@@ -2990,7 +3476,15 @@
     "theme": "lieu",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "company; business"
+    "translationEn": "company; business",
+    "relatedIds": [
+      "hsk1-0019",
+      "hsk1-0014",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0063": {
     "id": "hsk1-0063",
@@ -3035,8 +3529,16 @@
     "translationFrAlt": [
       "besogne"
     ],
-    "explanationFr": "Le mot \"travailler\" en chinois signifie \"to work\". Il peut se référer à l'action de faire un travail, opérer une machine ou accomplir une tâche. En français, on utilise souvent ce verbe pour parler du fait d'effectuer des fonctions professionnelles ou des activités manuelles.",
-    "translationEn": "to work; job"
+    "explanationFr": "Le mot 工作 signifie « travailler » ou « le travail ». Il désigne l'action d'accomplir une tâche professionnelle, de faire fonctionner une machine ou plus généralement d'exercer une activité productive. C'est le terme de base pour parler de son emploi ou de son métier.",
+    "translationEn": "to work; job",
+    "relatedIds": [
+      "hsk1-0175",
+      "hsk1-0220",
+      "hsk1-0227",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018"
+    ]
   },
   "hsk1-0064": {
     "id": "hsk1-0064",
@@ -3091,7 +3593,15 @@
     "theme": "animal",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "dog"
+    "translationEn": "dog",
+    "relatedIds": [
+      "hsk1-0119",
+      "hsk1-0091",
+      "hsk1-0151",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0065": {
     "id": "hsk1-0065",
@@ -3138,7 +3648,15 @@
       "précieux"
     ],
     "explanationFr": "Le mot \"贵\" signifie \"précieux\". Il peut être utilisé pour exprimer la valeur élevée ou l'importance d'un objet, d'une personne ou d'une situation. N'oubliez pas qu'il est souvent utilisé de manière honorifique.",
-    "translationEn": "expensive"
+    "translationEn": "expensive",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0072",
+      "hsk1-0073"
+    ]
   },
   "hsk1-0066": {
     "id": "hsk1-0066",
@@ -3184,7 +3702,15 @@
       "État"
     ],
     "explanationFr": "Le terme \"pays\" est utilisé pour désigner une entité politique ou géographique qui a son propre gouvernement et souvent sa propre culture. Il peut aussi faire référence à un groupe d'êtres humains partageant des traditions communes.",
-    "translationEn": "country; nation"
+    "translationEn": "country; nation",
+    "relatedIds": [
+      "hsk1-0289",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0067": {
     "id": "hsk1-0067",
@@ -3233,7 +3759,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "still; yet; also"
+    "translationEn": "still; yet; also",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0068": {
     "id": "hsk1-0068",
@@ -3277,7 +3811,15 @@
     "explanationFr": "Le mot \"enfant\" en français désigne une personne jeune, qui est encore sous la garde et l'éducation de ses parents ou tuteurs. Il s'agit d'un terme général utilisé pour parler des jeunes enfants dans les familles ou dans divers contextes sociaux.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "child; kid"
+    "translationEn": "child; kid",
+    "relatedIds": [
+      "hsk1-0049",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0295",
+      "hsk1-0089",
+      "hsk1-0262"
+    ]
   },
   "hsk1-0069": {
     "id": "hsk1-0069",
@@ -3322,7 +3864,15 @@
     ],
     "explanationFr": "La \"langue chinoise\" fait référence au système de communication utilisé par les Chinois, qui comprend plusieurs dialectes et variétés régionales, mais le terme général est \"Hànyǔ\", ou \"la langue hàn\". C'est l'une des langues les plus parlées dans le monde. Il est important de noter que bien qu'il existe différents dialectes, la plupart des Chinois peuvent comprendre et s'exprimer en standard mandarin.",
     "explanation": "",
-    "translationEn": "Chinese language"
+    "translationEn": "Chinese language",
+    "relatedIds": [
+      "hsk1-0070",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0070": {
     "id": "hsk1-0070",
@@ -3368,7 +3918,15 @@
     ],
     "explanationFr": "Un caractère chinois est un symbole graphique utilisé dans l'écriture du mandarin chinois et de certaines autres langues ou dialectes qui utilisent le système d'écriture han. Il sert à représenter un mot ou une partie de mot.",
     "explanation": "",
-    "translationEn": "Chinese character; Han character"
+    "translationEn": "Chinese character; Han character",
+    "relatedIds": [
+      "hsk1-0296",
+      "hsk1-0069",
+      "hsk1-0130",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0071": {
     "id": "hsk1-0071",
@@ -3415,7 +3973,15 @@
       "jour du mois"
     ],
     "explanationFr": "Le mot \"号\" peut signifier différents concepts selon le contexte, mais dans la plupart des cas pour les apprenants francophones, il est plus approprié de l'interpréter comme un \"numéro ordinal\". Cela englobe divers usages tels que le jour d'un mois, une marque ou un signe, un nom d'affaires, une taille, un suffixe de navire, un cor (instrument à vent), un appel de trompette, un nom d'emprunt, prendre la pulse, ou comme classificateur pour indiquer le nombre de personnes.",
-    "translationEn": "number; date"
+    "translationEn": "number; date",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0072": {
     "id": "hsk1-0072",
@@ -3467,7 +4033,15 @@
     ],
     "explanationFr": "Ce mot peut être utilisé pour exprimer une préférence ou un penchant vers quelque chose. Il est souvent utilisé dans des phrases comme \"aimer faire quelque chose\" ou \"avoir une certaine propension à agir de manière spécifique\".",
     "explanation": "",
-    "translationEn": "good; well; agree"
+    "translationEn": "good; well; agree",
+    "relatedIds": [
+      "hsk1-0073",
+      "hsk1-0074",
+      "hsk1-0075",
+      "hsk1-0076",
+      "hsk1-0147",
+      "hsk1-0024"
+    ]
   },
   "hsk1-0073": {
     "id": "hsk1-0073",
@@ -3514,7 +4088,15 @@
     ],
     "explanationFr": "Ce terme exprime une inclination naturelle pour la nourriture, soulignant l'appréciation du goût et de la qualité des aliments. Il ne s'agit pas d'un gloutonnerie excessive, mais plutôt d'une appréciation positive de la cuisine.",
     "explanation": "",
-    "translationEn": "delicious"
+    "translationEn": "delicious",
+    "relatedIds": [
+      "hsk1-0021",
+      "hsk1-0072",
+      "hsk1-0074",
+      "hsk1-0075",
+      "hsk1-0076",
+      "hsk1-0147"
+    ]
   },
   "hsk1-0074": {
     "id": "hsk1-0074",
@@ -3560,7 +4142,15 @@
       "intéressant"
     ],
     "explanationFr": "Ce mot est utilisé pour décrire quelque chose qui est agréable à regarder, généralement en parlant de l'apparence physique ou visuelle d'une personne ou d'un objet. Il peut aussi être utilisé pour exprimer que quelque chose est de qualité ou bien fait.",
-    "translationEn": "beautiful; attractive"
+    "translationEn": "beautiful; attractive",
+    "relatedIds": [
+      "hsk1-0072",
+      "hsk1-0099",
+      "hsk1-0073",
+      "hsk1-0075",
+      "hsk1-0076",
+      "hsk1-0100"
+    ]
   },
   "hsk1-0075": {
     "id": "hsk1-0075",
@@ -3603,7 +4193,15 @@
     "explanationFr": "Le mot \"好听\" signifie quelque chose qui est agréable à écouter, c'est-à-dire qui donne du plaisir lorsqu'on l'écoute. Il s'agit d'un terme utilisé pour décrire la beauté ou le charme sonore de la musique, une voix, un bruit, etc.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "handsome; pretty"
+    "translationEn": "handsome; pretty",
+    "relatedIds": [
+      "hsk1-0072",
+      "hsk1-0209",
+      "hsk1-0073",
+      "hsk1-0074",
+      "hsk1-0076",
+      "hsk1-0147"
+    ]
   },
   "hsk1-0076": {
     "id": "hsk1-0076",
@@ -3648,7 +4246,15 @@
     ],
     "explanationFr": "Le mot \"好玩儿\" se traduit par \"amusant\" et \"intéressant\". Il exprime une idée positive concernant quelque chose qui attire l'attention ou fait rire. C'est un terme assez général utilisé pour décrire des activités, des personnes ou des objets qui suscitent du plaisir ou de la curiosité.",
     "explanation": "",
-    "translationEn": "fun; enjoyable"
+    "translationEn": "fun; enjoyable",
+    "relatedIds": [
+      "hsk1-0072",
+      "hsk1-0214",
+      "hsk1-0073",
+      "hsk1-0074",
+      "hsk1-0075",
+      "hsk1-0049"
+    ]
   },
   "hsk1-0077": {
     "id": "hsk1-0077",
@@ -3700,7 +4306,14 @@
       "avec"
     ],
     "explanationFr": "",
-    "translationEn": "and; with"
+    "translationEn": "and; with",
+    "relatedIds": [
+      "hsk1-0103",
+      "hsk1-0259",
+      "hsk1-0076",
+      "hsk1-0078",
+      "hsk1-0075"
+    ]
   },
   "hsk1-0078": {
     "id": "hsk1-0078",
@@ -3744,9 +4357,17 @@
     "translationFrAlt": [
       "crier fort"
     ],
-    "explanationFr": "Le mot \"boire\" signifie consommer une liquide, généralement de l'eau ou des boissons. Il est important de noter qu'il ne s'agit pas du verbe anglais \"to shout\", qui signifie crier en français.",
+    "explanationFr": "Le verbe 喝 signifie « boire », c'est-à-dire consommer un liquide (eau, thé, alcool, etc.). À ne pas confondre avec 喊 (hǎn), qui signifie « crier ». 喝 s'utilise systématiquement pour toute prise de boisson.",
     "explanation": "",
-    "translationEn": "to drink"
+    "translationEn": "to drink",
+    "relatedIds": [
+      "hsk1-0021",
+      "hsk1-0016",
+      "hsk1-0017",
+      "hsk1-0050",
+      "hsk1-0073",
+      "hsk1-0089"
+    ]
   },
   "hsk1-0079": {
     "id": "hsk1-0079",
@@ -3788,7 +4409,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"很\" est souvent traduit par \"très\". Il sert généralement à intensifier une expression, mais il peut aussi être utilisé sans véritablement augmenter l'intensité du sens, comme un élément syntaxique. C'est pourquoi on le traduit souvent par \"très\", qui a une utilisation similaire en français.",
     "translationFrAlt": [],
-    "translationEn": "very; extremely"
+    "translationEn": "very; extremely",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0203",
+      "hsk1-0253",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0080": {
     "id": "hsk1-0080",
@@ -3838,7 +4467,15 @@
       "ensuite"
     ],
     "explanationFr": "Le mot 后 (hòu) signifie \"arrière\" ou \"après\". Il est utilisé pour indiquer une position derrière quelque chose ou un moment qui suit un autre. Dans certaines situations, il peut aussi être traduit par \"ensuite\" ou \"ultérieurement\".",
-    "translationEn": "behind"
+    "translationEn": "behind",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0081": {
     "id": "hsk1-0081",
@@ -3886,7 +4523,15 @@
     ],
     "explanationFr": "Le mot \"回\" signifie \"retourner\", \"revenir\" ou peut servir comme classificateur pour indiquer le nombre d'occurrences. Il est utilisé dans des contextes variés allant de la géographie (retourner à un endroit) aux expressions idiomatiques (faire quelque chose plusieurs fois).",
     "explanation": "",
-    "translationEn": "to return"
+    "translationEn": "to return",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0082": {
     "id": "hsk1-0082",
@@ -3939,7 +4584,15 @@
       "pouvoir"
     ],
     "explanationFr": "",
-    "translationEn": "can; know how to; will; meeting"
+    "translationEn": "can; know how to; will; meeting",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0083": {
     "id": "hsk1-0083",
@@ -3982,7 +4635,15 @@
     "theme": "transport",
     "explanationFr": "Le mot \"火车\" signifie \"train\". En français, on utilise souvent le terme \"train\" pour désigner un véhicule roulant sur des rails. Il existe différents types de trains : les trains de voyageurs (列车, lièche), les trains fret (货运列车, gùohuò lièchē) et les trains à grande vitesse (高速列车, gaosù lièchē). Le classificateur utilisé pour \"火车\" est \"列\", qui signifie généralement une série ou un train complet.",
     "translationFrAlt": [],
-    "translationEn": "train"
+    "translationEn": "train",
+    "relatedIds": [
+      "hsk1-0020",
+      "hsk1-0023",
+      "hsk1-0098",
+      "hsk1-0054",
+      "hsk1-0271",
+      "hsk1-0284"
+    ]
   },
   "hsk1-0084": {
     "id": "hsk1-0084",
@@ -4030,7 +4691,15 @@
       "petite table"
     ],
     "explanationFr": "Le mot \"jǐ\" en chinois est utilisé pour demander une quantité, soit des objets non comptables (combien d'eau) soit des objets comptables (combien de livres). Il peut aussi signifier \"plusieurs\" ou \"quelques-uns\".",
-    "translationEn": "how many (few numbers)"
+    "translationEn": "how many (few numbers)",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0085": {
     "id": "hsk1-0085",
@@ -4078,7 +4747,15 @@
       "(mot de mesure pour les experts, spécialistes, ...)"
     ],
     "explanationFr": "Le caractère \"家\" signifie \"famille\". Il peut aussi être utilisé comme un terme respectueux pour désigner des personnes dans la famille, comme tante ou oncle. Ce caractère est parfois utilisé en tant que suffixe pour les noms d'activités spécialisées, comme musicien ou révolutionnaire.",
-    "translationEn": "house; family"
+    "translationEn": "house; family",
+    "relatedIds": [
+      "hsk1-0090",
+      "hsk1-0026",
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049",
+      "hsk1-0060"
+    ]
   },
   "hsk1-0086": {
     "id": "hsk1-0086",
@@ -4129,7 +4806,15 @@
       "se montrer"
     ],
     "explanationFr": "Le mot \"voir\" peut signifier non seulement \"percevoir avec les yeux\", mais aussi \"apparaître\". Il est important de noter qu'il existe une autre écriture pour ce caractère, 現|现[xian4], qui a un sens similaire. Lorsque vous utilisez \"voir apparaître\", vous faites référence à quelque chose qui devient visible ou manifeste.",
-    "translationEn": "to see; to meet"
+    "translationEn": "to see; to meet",
+    "relatedIds": [
+      "hsk1-0272",
+      "hsk1-0101",
+      "hsk1-0210",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018"
+    ]
   },
   "hsk1-0087": {
     "id": "hsk1-0087",
@@ -4200,7 +4885,14 @@
       "(classificateur vêtement)"
     ],
     "explanationFr": "",
-    "translationEn": "classifier for clothing items; classifier for documents"
+    "translationEn": "classifier for clothing items; classifier for documents",
+    "relatedIds": [
+      "hsk1-0086",
+      "hsk1-0088",
+      "hsk1-0085",
+      "hsk1-0089",
+      "hsk1-0084"
+    ]
   },
   "hsk1-0088": {
     "id": "hsk1-0088",
@@ -4248,7 +4940,15 @@
     ],
     "explanationFr": "Le mot \"叫\" en chinois peut signifier \"appeler\", \"crier\" ou \"s'appeler\". Il est utilisé dans différentes situations : pour appeler quelqu'un (par exemple, à l'intention d'une personne spécifique), pour crier (pour exprimer de l'agitation ou de la colère) et pour indiquer que quelqu'un s'appelle ainsi. Il faut noter que \"叫\" peut aussi être utilisé de manière figurée pour désigner un cri ou une voix.",
     "explanation": "",
-    "translationEn": "to be called"
+    "translationEn": "to be called",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0089": {
     "id": "hsk1-0089",
@@ -4325,7 +5025,15 @@
       "raviolis"
     ],
     "explanationFr": "",
-    "translationEn": "Chinese dumplings"
+    "translationEn": "Chinese dumplings",
+    "relatedIds": [
+      "hsk1-0262",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0295"
+    ]
   },
   "hsk1-0090": {
     "id": "hsk1-0090",
@@ -4368,7 +5076,15 @@
     "theme": "famille",
     "explanationFr": "Le mot \"家人\" (jiārén) désigne quelqu'un qui fait partie intégrante d'une famille, qu'il s'agisse d'un parent, d'un frère ou d'une sœur. Il est important de noter que ce terme peut également inclure les personnes qui vivent sous le même toit et sont considérées comme faisant partie de la famille étendue.",
     "translationFrAlt": [],
-    "translationEn": "family member"
+    "translationEn": "family member",
+    "relatedIds": [
+      "hsk1-0085",
+      "hsk1-0170",
+      "hsk1-0026",
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049"
+    ]
   },
   "hsk1-0091": {
     "id": "hsk1-0091",
@@ -4412,7 +5128,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"œuf\" en français est utilisé pour désigner l'ovule fécondé sorti du ventre d'une poule ou d'un autre oiseau femelle. Il peut aussi faire référence à un aliment préparé par cuisson. En chinois, 鸡蛋 (jīdàn) signifie \"œuf de poule\". Le classificateur utilisé est \"个\" (gé), qui se prononce [ge4] en pinyin.",
     "translationFrAlt": [],
-    "translationEn": "egg"
+    "translationEn": "egg",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0092": {
     "id": "hsk1-0092",
@@ -4455,7 +5179,15 @@
     "theme": "famille",
     "explanationFr": "\"姐姐\" (jiějie) désigne la sœur AÎNÉE en chinois mandarin. Le 2e 姐 est un redoublement affectif typique des termes familiaux (cf. 妈妈, 爷爷, 哥哥). Pour préciser \"la sœur aînée parmi plusieurs\", on dit 大姐 (dàjiě, sans répétition).",
     "translationFrAlt": [],
-    "translationEn": "big sister"
+    "translationEn": "big sister",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049",
+      "hsk1-0060",
+      "hsk1-0068",
+      "hsk1-0085"
+    ]
   },
   "hsk1-0093": {
     "id": "hsk1-0093",
@@ -4498,7 +5230,15 @@
     "explanationFr": "Le terme \"cette année\" est utilisé pour désigner l'année en cours, celle qui se passe actuellement. Il s'agit d'un terme assez général et couramment utilisé dans les conversations quotidiennes ou dans des contextes formels.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "older sister"
+    "translationEn": "older sister",
+    "relatedIds": [
+      "hsk1-0128",
+      "hsk1-0168",
+      "hsk1-0148",
+      "hsk1-0094",
+      "hsk1-0006",
+      "hsk1-0033"
+    ]
   },
   "hsk1-0094": {
     "id": "hsk1-0094",
@@ -4541,7 +5281,15 @@
     "theme": "général",
     "explanationFr": "\"Aujourd'hui\" désigne le jour actuel ou présent. Il est souvent utilisé pour parler des événements qui se passent en ce moment ou qui ont lieu dans la journée courante.",
     "translationFrAlt": [],
-    "translationEn": "this year"
+    "translationEn": "this year",
+    "relatedIds": [
+      "hsk1-0207",
+      "hsk1-0006",
+      "hsk1-0093",
+      "hsk1-0129",
+      "hsk1-0208",
+      "hsk1-0245"
+    ]
   },
   "hsk1-0095": {
     "id": "hsk1-0095",
@@ -4586,7 +5334,15 @@
       "9"
     ],
     "explanationFr": "Le mot \"neuf\" en français est utilisé pour désigner le chiffre 9, qui se prononce comme \"neuf\". Il est important de noter que ce terme peut aussi signifier \"nouveau\", mais dans le contexte numérique, il ne faut pas confondre avec cette autre signification.",
-    "translationEn": "today"
+    "translationEn": "today",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0112",
+      "hsk1-0113"
+    ]
   },
   "hsk1-0096": {
     "id": "hsk1-0096",
@@ -4633,7 +5389,15 @@
       "éprouver"
     ],
     "explanationFr": "Ce verbe exprime un sentiment subjectif, souvent lié à une impression ou à une réaction émotionnelle. Il peut être utilisé pour décrire des sentiments négatifs comme l'insatisfaction ou le malaise.",
-    "translationEn": "to think; to find"
+    "translationEn": "to think; to find",
+    "relatedIds": [
+      "hsk1-0195",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0097": {
     "id": "hsk1-0097",
@@ -4691,7 +5455,15 @@
       "bouillir"
     ],
     "explanationFr": "Le mot \"kāi\" signifie \"ouvrir\". Il s'agit d'un verbe qui peut être utilisé dans différents contextes, comme pour indiquer le début d'une action (par exemple, un voyage), l'allumage d'un objet électronique, la mise en marche d'une machine, ou encore la rédaction de documents. En chinois, ce mot est souvent suivi par des classificateurs qui dépendent du contexte.",
-    "translationEn": "to open; to drive (a car)"
+    "translationEn": "to open; to drive (a car)",
+    "relatedIds": [
+      "hsk1-0098",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0098": {
     "id": "hsk1-0098",
@@ -4737,7 +5509,15 @@
       "démarrer"
     ],
     "explanationFr": "Le mot \"开车\" signifie littéralement \"conduire un véhicule\". Cependant, dans le contexte du langage populaire, il peut également avoir un sens métaphorique qui se rapproche de \"poster des contenus sexuels en ligne\" ou \"faire une blague sexuelle\", bien que ce dernier sens soit moins courant. Pour les apprenants débutants, il est préférable de se concentrer sur le premier sens.",
-    "translationEn": "drive"
+    "translationEn": "drive",
+    "relatedIds": [
+      "hsk1-0023",
+      "hsk1-0020",
+      "hsk1-0083",
+      "hsk1-0097",
+      "hsk1-0054",
+      "hsk1-0271"
+    ]
   },
   "hsk1-0099": {
     "id": "hsk1-0099",
@@ -4780,7 +5560,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to look at; to see; to read; to consult (a doctor)"
+    "translationEn": "to look at; to see; to read; to consult (a doctor)",
+    "relatedIds": [
+      "hsk1-0100",
+      "hsk1-0101",
+      "hsk1-0074",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023"
+    ]
   },
   "hsk1-0100": {
     "id": "hsk1-0100",
@@ -4826,7 +5614,15 @@
       "voir un patient"
     ],
     "explanationFr": "Le verbe \"consulter\" est utilisé pour désigner l'action de se rendre chez un médecin pour une consultation médicale. Il s'agit d'une expression courante et idiomatique en français.",
-    "translationEn": "see a doctor"
+    "translationEn": "see a doctor",
+    "relatedIds": [
+      "hsk1-0012",
+      "hsk1-0182",
+      "hsk1-0099",
+      "hsk1-0101",
+      "hsk1-0074",
+      "hsk1-0258"
+    ]
   },
   "hsk1-0101": {
     "id": "hsk1-0101",
@@ -4871,7 +5667,15 @@
     ],
     "explanationFr": "Le verbe \"voir\" est utilisé dans de nombreuses situations courantes, tandis qu'\"apercevoir\" s'utilise plus spécifiquement pour signifier une observation brève ou fugitive. Par exemple, si quelqu'un vous dit que quelqu'un d'autre a été là sans que vous ne l'ayez vu, cela pourrait être traduit par \"je n'ai pas aperçu cette personne\".",
     "explanation": "",
-    "translationEn": "to see"
+    "translationEn": "to see",
+    "relatedIds": [
+      "hsk1-0099",
+      "hsk1-0086",
+      "hsk1-0100",
+      "hsk1-0210",
+      "hsk1-0074",
+      "hsk1-0272"
+    ]
   },
   "hsk1-0102": {
     "id": "hsk1-0102",
@@ -4917,7 +5721,15 @@
       "classe"
     ],
     "explanationFr": "Le mot \"课\" peut signifier \"sujet\", \"cours\", \"classe\" ou \"leçon\". Il est utilisé pour désigner un ensemble d'enseignements sur un certain thème, une séance d'apprentissage ou une unité de cours. Dans le contexte scolaire, il se réfère généralement à une classe spécifique ou une session d'enseignement.",
-    "translationEn": "lesson; class"
+    "translationEn": "lesson; class",
+    "relatedIds": [
+      "hsk1-0177",
+      "hsk1-0228",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009"
+    ]
   },
   "hsk1-0103": {
     "id": "hsk1-0103",
@@ -4994,7 +5806,15 @@
       "pouvoir (permission)"
     ],
     "explanationFr": "",
-    "translationEn": "class (for lessons); can; permitted"
+    "translationEn": "class (for lessons); can; permitted",
+    "relatedIds": [
+      "hsk1-0259",
+      "hsk1-0077",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025"
+    ]
   },
   "hsk1-0104": {
     "id": "hsk1-0104",
@@ -5042,7 +5862,15 @@
       "trou"
     ],
     "explanationFr": "Le caractère \"口\" se traduit par \"bouche\". Il sert à classer des objets ou des concepts qui ont une bouche, comme les êtres humains, les animaux domestiques, les canons d'artillerie ou même des puits. Il peut aussi être utilisé pour désigner un morceau que l'on mord ou qu'on mange.",
-    "translationEn": "classifier for mouth"
+    "translationEn": "classifier for mouth",
+    "relatedIds": [
+      "hsk1-0030",
+      "hsk1-0010",
+      "hsk1-0058",
+      "hsk1-0148",
+      "hsk1-0199",
+      "hsk1-0239"
+    ]
   },
   "hsk1-0105": {
     "id": "hsk1-0105",
@@ -5090,7 +5918,15 @@
       "(classificateur des briques, piastres etc.)"
     ],
     "explanationFr": "Le mot \"块\" est utilisé pour désigner des portions ou des pièces, surtout dans le contexte de la nourriture ou du tissu. Il peut également être utilisé comme un classificateur pour l'argent et les unités de monnaie.",
-    "translationEn": "yuan (currency)"
+    "translationEn": "yuan (currency)",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0106": {
     "id": "hsk1-0106",
@@ -5140,7 +5976,15 @@
       "environ"
     ],
     "explanationFr": "Le caractère \"來\" signifie \"venir\". Il peut être utilisé comme un verbe général pour indiquer le mouvement vers l'endroit où se trouve la personne qui parle, mais il a aussi des nuances plus spécifiques. Par exemple, \"來\" peut suggérer une action répétée ou continue dans le temps (comme \"depuis toujours\"), ou être utilisé comme préfixe pour indiquer ce qui est à venir.",
-    "translationEn": "to come; to arrive"
+    "translationEn": "to come; to arrive",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0107": {
     "id": "hsk1-0107",
@@ -5185,7 +6029,15 @@
       "professeur"
     ],
     "explanationFr": "Le mot \"professeur\" est utilisé pour désigner une personne qui enseigne dans un établissement scolaire ou universitaire. Il s'agit d'un terme plus large que \"enseignant\", qui peut également inclure des personnes qui donnent des cours privés ou des ateliers. En chinois, 老师 (lǎoshī) est souvent utilisé pour désigner un enseignant de l'école primaire à la fac.",
-    "translationEn": "teacher"
+    "translationEn": "teacher",
+    "relatedIds": [
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0235",
+      "hsk1-0236",
+      "hsk1-0249"
+    ]
   },
   "hsk1-0108": {
     "id": "hsk1-0108",
@@ -5231,7 +6083,13 @@
     ],
     "explanationFr": "Cette particule sert à marquer l'action qui a été complétée ou terminée. Elle peut aussi signifier \"comprendre\" dans certains contextes.",
     "explanation": "",
-    "translationEn": "particle indicating completion or change of state"
+    "translationEn": "particle indicating completion or change of state",
+    "relatedIds": [
+      "hsk1-0002",
+      "hsk1-0030",
+      "hsk1-0114",
+      "hsk1-0144"
+    ]
   },
   "hsk1-0109": {
     "id": "hsk1-0109",
@@ -5279,7 +6137,15 @@
     ],
     "explanationFr": "Le mot \"froid\" en français est utilisé pour décrire une température basse ou un sentiment de froideur. Il peut également s'appliquer à des objets ou des substances qui sont physiquement glacés.",
     "explanation": "",
-    "translationEn": "cold"
+    "translationEn": "cold",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0110": {
     "id": "hsk1-0110",
@@ -5325,7 +6191,15 @@
       "à l'intérieur"
     ],
     "explanationFr": "Le caractère 里 (lǐ) peut avoir plusieurs significations selon le contexte, mais en termes simples pour les apprenants francophones, il est souvent utilisé pour désigner un quartier ou une zone résidentielle. C'est une unité administrative ancienne qui regroupait environ 25 familles.",
-    "translationEn": "inside; within"
+    "translationEn": "inside; within",
+    "relatedIds": [
+      "hsk1-0136",
+      "hsk1-0137",
+      "hsk1-0282",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0111": {
     "id": "hsk1-0111",
@@ -5374,7 +6248,15 @@
     "theme": "nombre",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "two (for counting quantities; often before a classifier)"
+    "translationEn": "two (for counting quantities; often before a classifier)",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0112": {
     "id": "hsk1-0112",
@@ -5426,7 +6308,15 @@
       "rien"
     ],
     "explanationFr": "Le mot \"zéro\" en français désigne le chiffre qui représente la valeur nulle dans un système numéroté. Il peut être utilisé dans divers contextes, comme indiquer une absence complète ou une quantité inexistante, exprimer des fractions ou des restes mathématiques, et même décrire certains états physiques tels que le refroidissement total.",
-    "translationEn": "zero"
+    "translationEn": "zero",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0113"
+    ]
   },
   "hsk1-0113": {
     "id": "hsk1-0113",
@@ -5471,7 +6361,15 @@
     ],
     "explanationFr": "Le nombre \"six\" en français est utilisé pour compter ou désigner un groupe composé de six éléments. C'est un chiffre cardinal qui sert à indiquer une quantité précise.",
     "explanation": "",
-    "translationEn": "six"
+    "translationEn": "six",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0114": {
     "id": "hsk1-0114",
@@ -5518,7 +6416,13 @@
     ],
     "explanationFr": "La particule \"吗\" est utilisée pour former des questions à choix limité (oui/non). Elle s'ajoute généralement à la fin d'une phrase et change le ton de la phrase en une question.",
     "explanation": "",
-    "translationEn": "particle used in questions"
+    "translationEn": "particle used in questions",
+    "relatedIds": [
+      "hsk1-0002",
+      "hsk1-0030",
+      "hsk1-0108",
+      "hsk1-0144"
+    ]
   },
   "hsk1-0115": {
     "id": "hsk1-0115",
@@ -5568,7 +6472,15 @@
     "theme": "commerce",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "to sell"
+    "translationEn": "to sell",
+    "relatedIds": [
+      "hsk1-0032",
+      "hsk1-0116",
+      "hsk1-0019",
+      "hsk1-0157",
+      "hsk1-0162",
+      "hsk1-0176"
+    ]
   },
   "hsk1-0116": {
     "id": "hsk1-0116",
@@ -5612,7 +6524,15 @@
     "theme": "shopping",
     "explanationFr": "Le verbe \"acheter\" est utilisé pour exprimer l'action de acquérir quelque chose en échange d'un prix. Il s'utilise généralement dans le contexte commercial ou personnel, lorsque quelqu'un souhaite obtenir un bien ou un service.",
     "translationFrAlt": [],
-    "translationEn": "to buy"
+    "translationEn": "to buy",
+    "relatedIds": [
+      "hsk1-0157",
+      "hsk1-0162",
+      "hsk1-0176",
+      "hsk1-0115",
+      "hsk1-0019",
+      "hsk1-0032"
+    ]
   },
   "hsk1-0117": {
     "id": "hsk1-0117",
@@ -5657,7 +6577,15 @@
       "mère"
     ],
     "explanationFr": "Le terme \"maman\" est utilisé pour désigner la mère dans une famille, un rôle essentiel et affectueux. Il peut être employé par les enfants ou les adultes envers leur mère. Dans certaines régions de France, on utilise aussi le mot \"mamie\", qui signifie grand-mère, mais cela n'est pas synonyme de \"maman\". Le mot \"maman\" est souvent suivi du classificateur \"个|个[ge4]\" en chinois.",
-    "translationEn": "mother"
+    "translationEn": "mother",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0118": {
     "id": "hsk1-0118",
@@ -5703,7 +6631,15 @@
       "occupé"
     ],
     "explanationFr": "Le mot \"忙\" signifie être occupé, c'est-à-dire avoir beaucoup à faire ou être en train de s'occuper de quelque chose. Il peut également indiquer un état d'esprit où on se dépêche pour accomplir des tâches.",
-    "translationEn": "busy"
+    "translationEn": "busy",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0119": {
     "id": "hsk1-0119",
@@ -5758,7 +6694,15 @@
     "theme": "animal",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "cat"
+    "translationEn": "cat",
+    "relatedIds": [
+      "hsk1-0064",
+      "hsk1-0091",
+      "hsk1-0151",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0120": {
     "id": "hsk1-0120",
@@ -5798,7 +6742,15 @@
     ],
     "explanationFr": "Cette expression est utilisée pour indiquer qu'il ne s'agit pas d'un problème ou qu'on ne doit pas s'inquiéter. Elle peut être employée dans des situations où l'on veut apaiser une situation ou montrer que quelque chose de peu important.",
     "explanation": "",
-    "translationEn": "it doesn't matter"
+    "translationEn": "it doesn't matter",
+    "relatedIds": [
+      "hsk1-0122",
+      "hsk1-0123",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025"
+    ]
   },
   "hsk1-0121": {
     "id": "hsk1-0121",
@@ -5844,7 +6796,15 @@
       "jeune fille"
     ],
     "explanationFr": "Le terme \"soeur cadette\" est utilisé pour désigner une jeune femme qui a un ou plusieurs frères plus âgés. Il s'agit d'une expression naturelle en français, qui capture bien la notion de \"younger sister\".",
-    "translationEn": "little sister"
+    "translationEn": "little sister",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0039",
+      "hsk1-0049",
+      "hsk1-0060",
+      "hsk1-0068",
+      "hsk1-0085"
+    ]
   },
   "hsk1-0122": {
     "id": "hsk1-0122",
@@ -5897,7 +6857,15 @@
       "pas de problème"
     ],
     "explanationFr": "",
-    "translationEn": "it's okay; no problem"
+    "translationEn": "it's okay; no problem",
+    "relatedIds": [
+      "hsk1-0185",
+      "hsk1-0120",
+      "hsk1-0123",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023"
+    ]
   },
   "hsk1-0123": {
     "id": "hsk1-0123",
@@ -5950,7 +6918,15 @@
       "ne pas"
     ],
     "explanationFr": "",
-    "translationEn": "not to have; not"
+    "translationEn": "not to have; not",
+    "relatedIds": [
+      "hsk1-0266",
+      "hsk1-0263",
+      "hsk1-0120",
+      "hsk1-0122",
+      "hsk1-0264",
+      "hsk1-0265"
+    ]
   },
   "hsk1-0124": {
     "id": "hsk1-0124",
@@ -5992,7 +6968,15 @@
     "explanationFr": "Ce caractère indique que la phrase ou le nom mentionné concerne plusieurs personnes ou entités, mais il ne précise pas exactement combien. Il est souvent utilisé avec des pronoms comme \"我们\" (wǒmen) signifiant \"nous\", ou des noms propres comme \"人们\" (rénmen) signifiant \"les gens\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "plural suffix"
+    "translationEn": "plural suffix",
+    "relatedIds": [
+      "hsk1-0149",
+      "hsk1-0204",
+      "hsk1-0205",
+      "hsk1-0206",
+      "hsk1-0222",
+      "hsk1-0014"
+    ]
   },
   "hsk1-0125": {
     "id": "hsk1-0125",
@@ -6036,7 +7020,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"pain\" en français désigne les produits alimentaires obtenus par la fermentation du levain et le cuit du blé. Il s'agit d'un aliment essentiel dans la cuisine française, souvent consommé au petit-déjeuner ou utilisé pour faire des sandwichs. En chinois, 面包 (miànbāo) se traduit par \"pain\", où 面 (miàn) signifie \"pâte\" et 包 (bāo) indique qu'il est formé en forme de paquet.",
     "translationFrAlt": [],
-    "translationEn": "bread"
+    "translationEn": "bread",
+    "relatedIds": [
+      "hsk1-0008",
+      "hsk1-0126",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0126": {
     "id": "hsk1-0126",
@@ -6079,7 +7071,15 @@
     "explanationFr": "Le mot \"pâtes\" est utilisé pour désigner une large variété de nouilles faites généralement avec des farines, souvent du blé. Il s'agit d'un terme plus général qui englobe différents types de nouilles selon leur forme et leur préparation.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "noodles"
+    "translationEn": "noodles",
+    "relatedIds": [
+      "hsk1-0049",
+      "hsk1-0125",
+      "hsk1-0153",
+      "hsk1-0076",
+      "hsk1-0140",
+      "hsk1-0141"
+    ]
   },
   "hsk1-0127": {
     "id": "hsk1-0127",
@@ -6123,7 +7123,15 @@
     "explanationFr": "Le mot \"米饭\" se réfère au riz cuit, qui est un aliment essentiel dans la cuisine chinoise. Il peut être servi seul ou accompagné d'autres plats. N'oublie pas que le terme \"riz cuit\" en français est utilisé pour désigner ce plat.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "cooked rice"
+    "translationEn": "cooked rice",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0216",
+      "hsk1-0051",
+      "hsk1-0224",
+      "hsk1-0274",
+      "hsk1-0299"
+    ]
   },
   "hsk1-0128": {
     "id": "hsk1-0128",
@@ -6166,7 +7174,15 @@
     "explanationFr": "Le terme \"l'année prochaine\" est utilisé pour désigner le temps qui suit immédiatement l'année actuelle, c'est-à-dire la période qui se situe après les fêtes de fin d'année. Il s'agit d'un concept temporel couramment utilisé dans la conversation quotidienne et dans divers contextes. Par exemple, si on parle des projets à réaliser, on pourrait dire \"je vais commencer ce projet l'année prochaine\", ce qui signifie qu'on prévoit de le faire dès que l'année suivante commencera.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "next year"
+    "translationEn": "next year",
+    "relatedIds": [
+      "hsk1-0093",
+      "hsk1-0129",
+      "hsk1-0168",
+      "hsk1-0148",
+      "hsk1-0006",
+      "hsk1-0033"
+    ]
   },
   "hsk1-0129": {
     "id": "hsk1-0129",
@@ -6211,7 +7227,15 @@
     ],
     "explanationFr": "Le mot \"demain\" en français signifie le jour qui suit celui d'aujourd'hui. Il est utilisé pour parler des événements ou des actions qui se produiront après la fin du jour actuel. N'oublie pas que \"demain\" peut aussi être utilisé de manière figurée, par exemple quand on parle d'une situation future générale.",
     "explanation": "",
-    "translationEn": "tomorrow"
+    "translationEn": "tomorrow",
+    "relatedIds": [
+      "hsk1-0207",
+      "hsk1-0006",
+      "hsk1-0128",
+      "hsk1-0300",
+      "hsk1-0094",
+      "hsk1-0208"
+    ]
   },
   "hsk1-0130": {
     "id": "hsk1-0130",
@@ -6253,7 +7277,15 @@
     "theme": "général",
     "explanationFr": "Le \"nom\" est un terme utilisé pour désigner l'appellation donnée à une personne ou à un objet. Il sert généralement à identifier individuellement une personne ou un objet dans la société.",
     "translationFrAlt": [],
-    "translationEn": "name"
+    "translationEn": "name",
+    "relatedIds": [
+      "hsk1-0296",
+      "hsk1-0070",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009"
+    ]
   },
   "hsk1-0131": {
     "id": "hsk1-0131",
@@ -6299,7 +7331,15 @@
       "(nom de famille)"
     ],
     "explanationFr": "Le caractère \"那\" est souvent utilisé pour désigner quelque chose ou quelqu'un, similaire à l'utilisation du mot français \"cela\". Il peut aussi être utilisé pour exprimer une question ou un incertain, comme \"ceci\" en français.",
-    "translationEn": "that; it"
+    "translationEn": "that; it",
+    "relatedIds": [
+      "hsk1-0133",
+      "hsk1-0134",
+      "hsk1-0136",
+      "hsk1-0140",
+      "hsk1-0142",
+      "hsk1-0132"
+    ]
   },
   "hsk1-0132": {
     "id": "hsk1-0132",
@@ -6347,7 +7387,15 @@
     ],
     "explanationFr": "Le caractère \"哪\" en chinois est utilisé pour poser des questions qui demandent une information précise, comme \"quel\". Il s'utilise souvent avec un classificateur ou un numéral-classificateur pour préciser le type d'information recherchée. Par exemple, \"quelle maison?\" serait traduit par \"quelle maison?\" en français.",
     "explanation": "",
-    "translationEn": "which"
+    "translationEn": "which",
+    "relatedIds": [
+      "hsk1-0135",
+      "hsk1-0137",
+      "hsk1-0141",
+      "hsk1-0143",
+      "hsk1-0131",
+      "hsk1-0133"
+    ]
   },
   "hsk1-0133": {
     "id": "hsk1-0133",
@@ -6392,7 +7440,15 @@
       "là-bas"
     ],
     "explanationFr": "Ce mot désigne un endroit situé à distance, généralement hors de vue ou au-delà d'un certain point. Il est utilisé pour indiquer une position lointaine ou un lieu qui n'est pas immédiatement visible.",
-    "translationEn": "over there"
+    "translationEn": "over there",
+    "relatedIds": [
+      "hsk1-0131",
+      "hsk1-0011",
+      "hsk1-0134",
+      "hsk1-0136",
+      "hsk1-0140",
+      "hsk1-0142"
+    ]
   },
   "hsk1-0134": {
     "id": "hsk1-0134",
@@ -6434,7 +7490,15 @@
     "theme": "général",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "which one"
+    "translationEn": "which one",
+    "relatedIds": [
+      "hsk1-0131",
+      "hsk1-0058",
+      "hsk1-0133",
+      "hsk1-0135",
+      "hsk1-0136",
+      "hsk1-0140"
+    ]
   },
   "hsk1-0135": {
     "id": "hsk1-0135",
@@ -6487,7 +7551,15 @@
       "laquelle"
     ],
     "explanationFr": "",
-    "translationEn": "which one"
+    "translationEn": "which one",
+    "relatedIds": [
+      "hsk1-0132",
+      "hsk1-0058",
+      "hsk1-0134",
+      "hsk1-0137",
+      "hsk1-0141",
+      "hsk1-0143"
+    ]
   },
   "hsk1-0136": {
     "id": "hsk1-0136",
@@ -6530,7 +7602,15 @@
     "explanationFr": "Le mot \"那里\" signifie \"là\" ou \"cet endroit\". Il est utilisé pour désigner un lieu, souvent à une distance modérée du locuteur. Il peut être utilisé de manière générale comme \"là\", mais aussi plus précisément pour indiquer \"ce lieu\" ou \"cet endroit spécifique\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "there; over there"
+    "translationEn": "there; over there",
+    "relatedIds": [
+      "hsk1-0131",
+      "hsk1-0110",
+      "hsk1-0133",
+      "hsk1-0134",
+      "hsk1-0137",
+      "hsk1-0140"
+    ]
   },
   "hsk1-0137": {
     "id": "hsk1-0137",
@@ -6576,7 +7656,15 @@
       "pas du tout ! (réponse modeste à un compliment)"
     ],
     "explanationFr": "Le mot \"哪里\" est utilisé pour demander un endroit ou une localisation. Il peut signifier \"où\", \"quelque part\", \"n'importe où\" selon le contexte. Dans certains cas, il sert également à humilier discrètement quelqu'un en refusant un compliment.",
-    "translationEn": "where"
+    "translationEn": "where",
+    "relatedIds": [
+      "hsk1-0132",
+      "hsk1-0110",
+      "hsk1-0135",
+      "hsk1-0136",
+      "hsk1-0141",
+      "hsk1-0143"
+    ]
   },
   "hsk1-0138": {
     "id": "hsk1-0138",
@@ -6621,7 +7709,15 @@
       "homme (en opposition à femme)"
     ],
     "explanationFr": "Le mot \"masculin\" en français désigne le genre qui correspond au sexe biologique masculin, contrairement à la traduction anglaise qui fait référence à un titre nobiliaire. Ce terme est utilisé dans divers contextes, comme la grammaire ou l'identité de genre.",
-    "translationEn": "masculine"
+    "translationEn": "masculine",
+    "relatedIds": [
+      "hsk1-0139",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065"
+    ]
   },
   "hsk1-0139": {
     "id": "hsk1-0139",
@@ -6668,7 +7764,15 @@
     ],
     "explanationFr": "Le terme \"男朋友\" désigne un homme avec qui une femme a ou avait une relation amoureuse non mariée. Il est important de noter que bien qu'il puisse être traduit par \"ami masculin\", ce terme implique généralement une relation romantique plus profonde que celle d'un simple ami. Dans certaines cultures, il peut également avoir des connotations similaires à celles du mot anglais \"boyfriend\".",
     "explanation": "",
-    "translationEn": "boyfriend"
+    "translationEn": "boyfriend",
+    "relatedIds": [
+      "hsk1-0156",
+      "hsk1-0154",
+      "hsk1-0233",
+      "hsk1-0138",
+      "hsk1-0004",
+      "hsk1-0006"
+    ]
   },
   "hsk1-0140": {
     "id": "hsk1-0140",
@@ -6713,7 +7817,15 @@
     ],
     "explanationFr": "Le mot \"那儿\" signifie \"là\", mais il est souvent utilisé pour indiquer un endroit précis ou une direction. Il est plus formel et poli que simplement dire \"là\". Par exemple, si quelqu'un vous demande où quelque chose se trouve, vous pouvez répondre en utilisant \"那儿\".",
     "explanation": "",
-    "translationEn": "there; over there"
+    "translationEn": "there; over there",
+    "relatedIds": [
+      "hsk1-0131",
+      "hsk1-0133",
+      "hsk1-0134",
+      "hsk1-0136",
+      "hsk1-0141",
+      "hsk1-0142"
+    ]
   },
   "hsk1-0141": {
     "id": "hsk1-0141",
@@ -6757,7 +7869,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"哪儿\" signifie \"où\" en français, mais il peut avoir plusieurs nuances selon le contexte. Il est souvent utilisé pour demander un emplacement ou une localisation précise. Parfois, on l'utilise de manière rhétorique pour exprimer qu'il n'y a pas d'autre solution possible.",
     "translationFrAlt": [],
-    "translationEn": "where"
+    "translationEn": "where",
+    "relatedIds": [
+      "hsk1-0132",
+      "hsk1-0135",
+      "hsk1-0137",
+      "hsk1-0140",
+      "hsk1-0143",
+      "hsk1-0285"
+    ]
   },
   "hsk1-0142": {
     "id": "hsk1-0142",
@@ -6803,7 +7923,15 @@
     ],
     "explanationFr": "Le terme \"那些\" (nàxiē) est utilisé pour désigner un groupe ou une quantité indéfinie d'objets, personnes ou choses. Il sert à introduire des éléments qui sont généralement précédés par une phrase définissant le contexte. On peut le traduire par \"ces\" en français, mais il faut noter que son usage est similaire au mot \"ceux\" dans certaines situations.",
     "explanation": "",
-    "translationEn": "those"
+    "translationEn": "those",
+    "relatedIds": [
+      "hsk1-0131",
+      "hsk1-0239",
+      "hsk1-0133",
+      "hsk1-0134",
+      "hsk1-0136",
+      "hsk1-0140"
+    ]
   },
   "hsk1-0143": {
     "id": "hsk1-0143",
@@ -6848,8 +7976,16 @@
       "qui ou quel",
       "quoi"
     ],
-    "explanationFr": "Ce mot est utilisé pour demander des détails sur un groupe d'objets ou de personnes. Il peut être traduit par \"which ones?\" en anglais, mais il ne se réfère pas spécifiquement à des personnes (qui? en anglais). Utilisez-le lorsque vous voulez savoir quelles sont certaines choses parmi plusieurs.",
-    "translationEn": "which ones"
+    "explanationFr": "Le mot 哪些 sert à interroger sur un sous-ensemble : « lesquels, lesquelles ». On l'emploie quand on veut savoir quels éléments parmi plusieurs sont concernés. À ne pas confondre avec 谁 (« qui ? ») qui ne porte que sur des personnes.",
+    "translationEn": "which ones",
+    "relatedIds": [
+      "hsk1-0132",
+      "hsk1-0239",
+      "hsk1-0135",
+      "hsk1-0137",
+      "hsk1-0141",
+      "hsk1-0142"
+    ]
   },
   "hsk1-0144": {
     "id": "hsk1-0144",
@@ -6896,7 +8032,13 @@
     ],
     "explanationFr": "Le caractère \"呢\" est utilisé en chinois comme une petite phrase à la fin d'une question pour montrer qu'on attend une réponse ou confirmation. C'est un peu comme dire \"non ?\" ou \"pas vrai ?\" en français, mais de manière plus subtile et formelle.",
     "explanation": "",
-    "translationEn": "question particle"
+    "translationEn": "question particle",
+    "relatedIds": [
+      "hsk1-0002",
+      "hsk1-0030",
+      "hsk1-0108",
+      "hsk1-0114"
+    ]
   },
   "hsk1-0145": {
     "id": "hsk1-0145",
@@ -6943,7 +8085,15 @@
       "être capable de"
     ],
     "explanationFr": "Le mot \"能\" signifie \"pouvoir\" en français, qui est utilisé pour exprimer la capacité ou l'aptitude à faire quelque chose. Il peut aussi indiquer une possibilité ou un potentiel. N'oubliez pas que ce terme est souvent utilisé dans des contextes formels ou académiques.",
-    "translationEn": "to be able to; can"
+    "translationEn": "to be able to; can",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0146": {
     "id": "hsk1-0146",
@@ -6989,7 +8139,15 @@
     ],
     "explanationFr": "Le caractère 你 est utilisé pour dire \"toi\" en français, et il sert à s'adresser directement à une personne, qu'elle soit un homme ou une femme. En chinois, on utilise souvent ce mot pour parler à quelqu'un de manière informelle.",
     "explanation": "",
-    "translationEn": "you (informal); you"
+    "translationEn": "you (informal); you",
+    "relatedIds": [
+      "hsk1-0149",
+      "hsk1-0147",
+      "hsk1-0150",
+      "hsk1-0200",
+      "hsk1-0201",
+      "hsk1-0202"
+    ]
   },
   "hsk1-0147": {
     "id": "hsk1-0147",
@@ -7050,7 +8208,15 @@
     "theme": "salutation",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "hello; good day"
+    "translationEn": "hello; good day",
+    "relatedIds": [
+      "hsk1-0072",
+      "hsk1-0146",
+      "hsk1-0073",
+      "hsk1-0074",
+      "hsk1-0075",
+      "hsk1-0076"
+    ]
   },
   "hsk1-0148": {
     "id": "hsk1-0148",
@@ -7095,7 +8261,15 @@
       "récolte"
     ],
     "explanationFr": "Le caractère 年 (nián) signifie \"année\" en chinois et est utilisé pour représenter un cycle temporel. Il peut également faire référence à l'âge d'une personne ou d'un animal, ainsi qu'à une génération. En français, ce mot est utilisé de manière similaire pour désigner le temps écoulé.",
-    "translationEn": "classifier for year"
+    "translationEn": "classifier for year",
+    "relatedIds": [
+      "hsk1-0093",
+      "hsk1-0128",
+      "hsk1-0168",
+      "hsk1-0010",
+      "hsk1-0058",
+      "hsk1-0104"
+    ]
   },
   "hsk1-0149": {
     "id": "hsk1-0149",
@@ -7139,7 +8313,15 @@
     "explanationFr": "Le mot \"你们\" est utilisé pour désigner plusieurs personnes en chinois, et correspond à la forme plurielle du \"vous\" en français. Il s'agit d'un terme formel ou informel, selon le contexte. En général, on peut l'utiliser de manière interchangeable avec \"vous\", sauf dans des situations très familières où on pourrait utiliser \"tu\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "you (plural/formal)"
+    "translationEn": "you (plural/formal)",
+    "relatedIds": [
+      "hsk1-0146",
+      "hsk1-0124",
+      "hsk1-0204",
+      "hsk1-0205",
+      "hsk1-0206",
+      "hsk1-0222"
+    ]
   },
   "hsk1-0150": {
     "id": "hsk1-0150",
@@ -7182,7 +8364,15 @@
     "explanationFr": "Le mot \"您\" est utilisé pour s'adresser à quelqu'un de manière polie et respectueuse, similaire au \"vous\" en français. Il s'agit d'une forme plus formelle que l'utilisation directe du pronom \"你\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "you (polite)"
+    "translationEn": "you (polite)",
+    "relatedIds": [
+      "hsk1-0146",
+      "hsk1-0149",
+      "hsk1-0200",
+      "hsk1-0201",
+      "hsk1-0202",
+      "hsk1-0204"
+    ]
   },
   "hsk1-0151": {
     "id": "hsk1-0151",
@@ -7226,7 +8416,15 @@
     "theme": "animaux",
     "explanationFr": "Le mot \"lait\" en français désigne le produit laiteux obtenu par les vaches, chèvres, brebis et autres animaux similaires. Il est couramment utilisé pour \"laits de vache\", \"laits de chevre\" ou \"laits de brebis\". Dans certaines régions, on peut aussi dire \"lait maternel\" pour le lait produit par les femmes.",
     "translationFrAlt": [],
-    "translationEn": "milk"
+    "translationEn": "milk",
+    "relatedIds": [
+      "hsk1-0064",
+      "hsk1-0091",
+      "hsk1-0119",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0152": {
     "id": "hsk1-0152",
@@ -7273,7 +8471,15 @@
     ],
     "explanationFr": "Le caractère \"女\" signifie \"femme\" ou \"féminin\". Il s'agit d'un mot très simple et couramment utilisé en chinois. Dans la langue française, nous utilisons le terme \"femme\" pour désigner une personne de sexe féminin. Notez que \"féminin\" est un adjectif qui peut être utilisé pour décrire des personnes ou des choses liées au genre féminin.",
     "explanation": "",
-    "translationEn": "female"
+    "translationEn": "female",
+    "relatedIds": [
+      "hsk1-0153",
+      "hsk1-0154",
+      "hsk1-0155",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045"
+    ]
   },
   "hsk1-0153": {
     "id": "hsk1-0153",
@@ -7316,7 +8522,15 @@
     "explanationFr": "Le mot \"女儿\" signifie \"fille\" en français, mais dans un contexte familial. Il est important de noter qu'en chinois, le terme \"女儿\" peut également avoir des connotations plus formelles ou respectueuses par rapport au simple mot \"fille\" en français. Par exemple, il est souvent utilisé dans les relations familiales pour exprimer une relation parent-enfant.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "female; feminine"
+    "translationEn": "female; feminine",
+    "relatedIds": [
+      "hsk1-0049",
+      "hsk1-0152",
+      "hsk1-0126",
+      "hsk1-0154",
+      "hsk1-0155",
+      "hsk1-0076"
+    ]
   },
   "hsk1-0154": {
     "id": "hsk1-0154",
@@ -7361,7 +8575,15 @@
     ],
     "explanationFr": "Le terme \"copine\" est utilisé pour désigner une fille avec qui on a une relation amicale ou affectueuse, mais pas nécessairement une relation intime. C'est un terme plus informel que \"fiancée\" ou \"compagne\". Il peut être utilisé entre amis, collègues ou dans des situations familières.",
     "explanation": "",
-    "translationEn": "daughter"
+    "translationEn": "daughter",
+    "relatedIds": [
+      "hsk1-0156",
+      "hsk1-0139",
+      "hsk1-0233",
+      "hsk1-0152",
+      "hsk1-0153",
+      "hsk1-0155"
+    ]
   },
   "hsk1-0155": {
     "id": "hsk1-0155",
@@ -7414,7 +8636,15 @@
       "dame"
     ],
     "explanationFr": "",
-    "translationEn": "girlfriend"
+    "translationEn": "girlfriend",
+    "relatedIds": [
+      "hsk1-0152",
+      "hsk1-0153",
+      "hsk1-0154",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0156": {
     "id": "hsk1-0156",
@@ -7459,7 +8689,15 @@
       "copain"
     ],
     "explanationFr": "Le mot \"朋友\" se traduit par \"ami\" en français, qui désigne une personne avec laquelle on partage des intérêts ou des activités et dont on peut avoir confiance. Il s'agit d'un terme plus informel que \"confrère\" ou \"confrérie\", utilisés dans un contexte professionnel ou social plus formel.",
-    "translationEn": "friend"
+    "translationEn": "friend",
+    "relatedIds": [
+      "hsk1-0139",
+      "hsk1-0154",
+      "hsk1-0233",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0157": {
     "id": "hsk1-0157",
@@ -7553,7 +8791,15 @@
       "bon marché"
     ],
     "explanationFr": "",
-    "translationEn": "cheap; inexpensive"
+    "translationEn": "cheap; inexpensive",
+    "relatedIds": [
+      "hsk1-0116",
+      "hsk1-0162",
+      "hsk1-0176",
+      "hsk1-0019",
+      "hsk1-0032",
+      "hsk1-0115"
+    ]
   },
   "hsk1-0158": {
     "id": "hsk1-0158",
@@ -7623,7 +8869,15 @@
       "joli"
     ],
     "explanationFr": "",
-    "translationEn": "pretty; beautiful"
+    "translationEn": "pretty; beautiful",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0159": {
     "id": "hsk1-0159",
@@ -7685,7 +8939,15 @@
     "theme": "nourriture",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "apple (fruit)"
+    "translationEn": "apple (fruit)",
+    "relatedIds": [
+      "hsk1-0194",
+      "hsk1-0089",
+      "hsk1-0016",
+      "hsk1-0017",
+      "hsk1-0021",
+      "hsk1-0050"
+    ]
   },
   "hsk1-0160": {
     "id": "hsk1-0160",
@@ -7730,7 +8992,15 @@
       "7"
     ],
     "explanationFr": "Le nombre sept est utilisé pour compter jusqu'à 10, après six et avant huit. En chinois, il se prononce \"qī\". Il s'agit d'un chiffre cardinal qui peut être utilisé dans divers contextes comme le compte ou la description de quantités.",
-    "translationEn": "seven"
+    "translationEn": "seven",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0161": {
     "id": "hsk1-0161",
@@ -7779,7 +9049,15 @@
       "pré-"
     ],
     "explanationFr": "Le caractère \"前\" signifie \"avant\" en français, qui peut être utilisé dans différents contextes comme \"devant\", \"précédent\" ou \"future\". Il est important de noter que son usage dépend du contexte. Par exemple, il peut se référer au temps passé (\"il y a\"), à une position physique (\"devant\") ou à un ordre chronologique (\"premier\").",
-    "translationEn": "front; before"
+    "translationEn": "front; before",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0162": {
     "id": "hsk1-0162",
@@ -7826,7 +9104,15 @@
       "richesse"
     ],
     "explanationFr": "Le caractère 钱 (qián) signifie \"argent\" en chinois et est utilisé pour désigner l'argent ou l'or. Il peut également être utilisé comme unité de poids, équivalent à un dixième d'un taël. Dans la langue courante, il est principalement utilisé pour parler d'argent.",
-    "translationEn": "money"
+    "translationEn": "money",
+    "relatedIds": [
+      "hsk1-0176",
+      "hsk1-0116",
+      "hsk1-0157",
+      "hsk1-0032",
+      "hsk1-0019",
+      "hsk1-0115"
+    ]
   },
   "hsk1-0163": {
     "id": "hsk1-0163",
@@ -7899,7 +9185,15 @@
     "theme": "chiffre",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "thousand"
+    "translationEn": "thousand",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0164": {
     "id": "hsk1-0164",
@@ -7943,7 +9237,15 @@
     "explanationFr": "Le verbe \"se lever\" signifie sortir du lit et commencer la journée. Il est utilisé pour décrire l'action de se réveiller complètement et de se mettre debout. Ce terme englobe aussi le fait d'arrêter de dormir et de se préparer à débuter une nouvelle journée.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to get up; to wake up"
+    "translationEn": "to get up; to wake up",
+    "relatedIds": [
+      "hsk1-0044",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031"
+    ]
   },
   "hsk1-0165": {
     "id": "hsk1-0165",
@@ -7991,7 +9293,15 @@
       "je vous en prie"
     ],
     "explanationFr": "Le mot \"请\" peut signifier \"demander\", mais il a aussi des connotations plus formelles comme \"inviter\" ou \"prier\". Il est souvent utilisé pour faire une demande polie.",
-    "translationEn": "please"
+    "translationEn": "please",
+    "relatedIds": [
+      "hsk1-0166",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0166": {
     "id": "hsk1-0166",
@@ -8034,7 +9344,15 @@
     "explanationFr": "Cette expression est utilisée pour poser une question de manière respectueuse et polie. Elle sert à introduire une demande ou un interrogatoire dans la conversation.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "please ask"
+    "translationEn": "please ask",
+    "relatedIds": [
+      "hsk1-0165",
+      "hsk1-0219",
+      "hsk1-0220",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018"
+    ]
   },
   "hsk1-0167": {
     "id": "hsk1-0167",
@@ -8085,7 +9403,15 @@
       "pour"
     ],
     "explanationFr": "Le caractère \"去\" signifie \"aller\". Il est utilisé dans différents contextes, comme se déplacer vers un endroit spécifique ou quitter quelque chose ou quelqu'un. Il peut également être utilisé pour indiquer que quelque chose a eu lieu il y a du temps.",
-    "translationEn": "to ask; please"
+    "translationEn": "to ask; please",
+    "relatedIds": [
+      "hsk1-0168",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0168": {
     "id": "hsk1-0168",
@@ -8128,7 +9454,15 @@
     "explanationFr": "Le terme \"l'année dernière\" est utilisé pour se référer au 12 mois écoulés depuis une date donnée, généralement le contexte actuel ou un événement récent mentionné. Il sert à situer des actions ou des événements dans le passé.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "go; leave"
+    "translationEn": "go; leave",
+    "relatedIds": [
+      "hsk1-0093",
+      "hsk1-0128",
+      "hsk1-0148",
+      "hsk1-0167",
+      "hsk1-0006",
+      "hsk1-0033"
+    ]
   },
   "hsk1-0169": {
     "id": "hsk1-0169",
@@ -8174,8 +9508,16 @@
       "ardent",
       "affectionné"
     ],
-    "explanationFr": "Le mot \"chauffer\" en français signifie \"to warm up\" ou \"to heat up\". Il peut aussi se référer à un climat chaud, à une température élevée ou à un sentiment de passion intense. Ce verbe est utilisé pour décrire l'action d'augmenter la température.",
-    "translationEn": "last year"
+    "explanationFr": "L'adjectif 热 signifie « chaud ». Il décrit une température élevée (météo, objet, boisson) et peut aussi qualifier un sentiment intense (« passionné, ardent »). En verbe, il signifie « réchauffer, faire chauffer ».",
+    "translationEn": "last year",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0170": {
     "id": "hsk1-0170",
@@ -8222,7 +9564,15 @@
       "homo sapiens"
     ],
     "explanationFr": "Le mot \"personne\" en chinois est utilisé pour désigner un individu ou un être humain. Il peut se référer à une seule personne ou à plusieurs personnes, selon le contexte. En français, on utilise généralement ce terme de manière impersonnelle et neutre.",
-    "translationEn": "hot"
+    "translationEn": "hot",
+    "relatedIds": [
+      "hsk1-0090",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0171": {
     "id": "hsk1-0171",
@@ -8268,7 +9618,15 @@
       "connaissance"
     ],
     "explanationFr": "Le mot \"connaître\" en chinois est rendu par \"connaître\" en français, qui signifie reconnaître, être familier avec quelque chose ou quelqu'un, acquérir des informations ou comprendre une situation. Il englobe également l'idée d'avoir une connaissance ou un savoir.",
-    "translationEn": "person; people"
+    "translationEn": "person; people",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0172": {
     "id": "hsk1-0172",
@@ -8313,7 +9671,15 @@
       "72e radical"
     ],
     "explanationFr": "Le caractère \"日\" signifie \"jour\" ou \"date\". Il peut se référer au jour en général, comme dans une phrase comme \"Hier était un beau jour\", où \"jour\" est utilisé pour parler d'un intervalle de temps. Il peut aussi désigner le jour du mois, par exemple \"Le 1er jour de chaque mois\".",
-    "translationEn": "to know each other"
+    "translationEn": "to know each other",
+    "relatedIds": [
+      "hsk1-0244",
+      "hsk1-0208",
+      "hsk1-0267",
+      "hsk1-0226",
+      "hsk1-0248",
+      "hsk1-0109"
+    ]
   },
   "hsk1-0173": {
     "id": "hsk1-0173",
@@ -8358,7 +9724,15 @@
       "3"
     ],
     "explanationFr": "Le nombre \"trois\" est utilisé pour compter ou identifier un objet, une personne ou un concept qui se trouve au troisième rang dans une série. Il peut être utilisé en début de phrase, au milieu d'une phrase ou à la fin.",
-    "translationEn": "day"
+    "translationEn": "day",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0174": {
     "id": "hsk1-0174",
@@ -8411,7 +9785,15 @@
       "précédent"
     ],
     "explanationFr": "Le mot \"shàng\" signifie \"monter\". Il est utilisé pour indiquer une action ascendante ou un état supérieur. Il peut également désigner des concepts tels que \"précédent\" ou \"supérieur\".",
-    "translationEn": "three"
+    "translationEn": "three",
+    "relatedIds": [
+      "hsk1-0178",
+      "hsk1-0217",
+      "hsk1-0275",
+      "hsk1-0175",
+      "hsk1-0177",
+      "hsk1-0179"
+    ]
   },
   "hsk1-0175": {
     "id": "hsk1-0175",
@@ -8455,7 +9837,15 @@
     "theme": "travail",
     "explanationFr": "Le terme \"aller au travail\" est utilisé pour décrire l'action de se rendre dans un lieu de travail, où on effectue des tâches professionnelles. Il peut également signifier être présent et prêt à travailler, que ce soit en entreprise ou dans n'importe quel autre environnement professionnel.",
     "translationFrAlt": [],
-    "translationEn": "top; above"
+    "translationEn": "top; above",
+    "relatedIds": [
+      "hsk1-0227",
+      "hsk1-0174",
+      "hsk1-0177",
+      "hsk1-0179",
+      "hsk1-0178",
+      "hsk1-0217"
+    ]
   },
   "hsk1-0176": {
     "id": "hsk1-0176",
@@ -8498,7 +9888,15 @@
     "theme": "shopping",
     "explanationFr": "Le mot \"magasin\" désigne un lieu où l'on vend des produits ou des marchandises. Il peut être utilisé pour décrire une boutique, une épicerie ou n'importe quel type de commerce. En chinois, il est écrit 商店 (shāngdiàn) et se compte en 家 (jiā).",
     "translationFrAlt": [],
-    "translationEn": "to go to work"
+    "translationEn": "to go to work",
+    "relatedIds": [
+      "hsk1-0032",
+      "hsk1-0051",
+      "hsk1-0191",
+      "hsk1-0162",
+      "hsk1-0116",
+      "hsk1-0157"
+    ]
   },
   "hsk1-0177": {
     "id": "hsk1-0177",
@@ -8545,7 +9943,15 @@
       "donner un cours"
     ],
     "explanationFr": "Le mot \"上课\" signifie \"suivre une classe\", qui implique l'action d'être présent et attentif lorsqu'on participe à un cours ou une session d'enseignement. Cela peut aussi s'appliquer à la situation où on est le professeur lui-même, mais dans ce contexte, nous nous concentrerons sur l'étudiant participant activement.",
-    "translationEn": "store; shop"
+    "translationEn": "store; shop",
+    "relatedIds": [
+      "hsk1-0179",
+      "hsk1-0228",
+      "hsk1-0102",
+      "hsk1-0174",
+      "hsk1-0175",
+      "hsk1-0178"
+    ]
   },
   "hsk1-0178": {
     "id": "hsk1-0178",
@@ -8588,7 +9994,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"matin\" désigne la période du jour qui suit le lever du soleil et se termine généralement par l'heure où les gens commencent à travailler ou à aller à l'école. Il est important de noter que \"matin\" peut être utilisé pour décrire une partie d'un jour, mais il ne couvre pas nécessairement toute la durée entre le lever du soleil et le début de l'après-midi.",
     "translationFrAlt": [],
-    "translationEn": "to have class"
+    "translationEn": "to have class",
+    "relatedIds": [
+      "hsk1-0174",
+      "hsk1-0217",
+      "hsk1-0224",
+      "hsk1-0237",
+      "hsk1-0275",
+      "hsk1-0291"
+    ]
   },
   "hsk1-0179": {
     "id": "hsk1-0179",
@@ -8632,7 +10046,15 @@
     "theme": "école",
     "explanationFr": "Ce verbe désigne l'action de se rendre à l'établissement scolaire pour y suivre des cours. Il est souvent utilisé dans le contexte quotidien, par exemple pour décrire la routine d'un enfant qui commence à fréquenter une école primaire.",
     "translationFrAlt": [],
-    "translationEn": "morning"
+    "translationEn": "morning",
+    "relatedIds": [
+      "hsk1-0177",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0235",
+      "hsk1-0236"
+    ]
   },
   "hsk1-0180": {
     "id": "hsk1-0180",
@@ -8679,7 +10101,15 @@
     ],
     "explanationFr": "Le mot \"少\" signifie littéralement \"peu\". C'est un terme utilisé pour exprimer une quantité insuffisante ou une minorité. Il est important de noter que ce mot peut être utilisé dans différents contextes, comme la quantité d'un objet ou le nombre de personnes.",
     "explanation": "",
-    "translationEn": "to go to school"
+    "translationEn": "to go to school",
+    "relatedIds": [
+      "hsk1-0046",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065"
+    ]
   },
   "hsk1-0181": {
     "id": "hsk1-0181",
@@ -8723,8 +10153,16 @@
     "translationFrAlt": [
       "quiconque"
     ],
-    "explanationFr": "Le mot \"谁\" est utilisé pour demander une personne, similaire à \"who\" en anglais. Il peut également être prononcé comme \"shui\". En français, nous utilisons généralement le mot \"qui\" dans ce contexte.",
-    "translationEn": "who"
+    "explanationFr": "Le pronom 谁 sert à demander l'identité d'une personne et se traduit par « qui ». On peut aussi le prononcer « shuí » dans un registre plus soutenu. Il n'a pas de marque de genre ni de nombre.",
+    "translationEn": "who",
+    "relatedIds": [
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025",
+      "hsk1-0031",
+      "hsk1-0047"
+    ]
   },
   "hsk1-0182": {
     "id": "hsk1-0182",
@@ -8766,7 +10204,15 @@
     "explanationFr": "Le verbe \"tomber malade\" est utilisé pour exprimer qu'une personne devient malade soudainement, sans avoir nécessairement contracté une maladie spécifique. Il souligne l'imprévu de la situation.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to fall ill; sick"
+    "translationEn": "to fall ill; sick",
+    "relatedIds": [
+      "hsk1-0012",
+      "hsk1-0100",
+      "hsk1-0258",
+      "hsk1-0029",
+      "hsk1-0230",
+      "hsk1-0236"
+    ]
   },
   "hsk1-0183": {
     "id": "hsk1-0183",
@@ -8814,8 +10260,16 @@
       "n'importe quel",
       "quelconque"
     ],
-    "explanationFr": "Le mot \"que\" est utilisé pour exprimer l'idée générale ou l'existence de quelque chose, similaire à \"what\" en anglais. Il peut signifier \"quelque chose\" ou \"n'importe quoi\", selon le contexte.",
-    "translationEn": "what"
+    "explanationFr": "Le pronom 什么 signifie « quoi, que, quel ». Il sert à interroger sur la nature d'une chose ou à exprimer un sens vague (« quelque chose, n'importe quoi ») selon le contexte.",
+    "translationEn": "what",
+    "relatedIds": [
+      "hsk1-0276",
+      "hsk1-0277",
+      "hsk1-0026",
+      "hsk1-0046",
+      "hsk1-0131",
+      "hsk1-0132"
+    ]
   },
   "hsk1-0184": {
     "id": "hsk1-0184",
@@ -8860,7 +10314,15 @@
       "10"
     ],
     "explanationFr": "Le mot \"dix\" est utilisé pour représenter le chiffre 10 en français. Il s'agit d'un nombre cardinal fondamental, souvent introduit aux enfants dès leur apprentissage initial des nombres. Utilisez-le dans des phrases comme \"j'ai dix ans\" ou \"il y a dix livres sur la table\". Notez que \"dix\" est utilisé avec le classificateur \"个\" (gè) lorsqu'il s'agit de compter des objets discrets.",
-    "translationEn": "ten"
+    "translationEn": "ten",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0185": {
     "id": "hsk1-0185",
@@ -8913,7 +10375,15 @@
       "empêtrement"
     ],
     "explanationFr": "Le mot \"事\" se traduit par \"affaire\" ou \"question\". Il peut faire référence à un travail, une tâche ou même à un événement. Dans certaines contextes, il peut également être utilisé pour parler de la situation générale d'une chose.",
-    "translationEn": "thing"
+    "translationEn": "thing",
+    "relatedIds": [
+      "hsk1-0122",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0186": {
     "id": "hsk1-0186",
@@ -8959,7 +10429,15 @@
     ],
     "explanationFr": "Le caractère \"是\" signifie \"être\" et peut aussi signifier \"oui\". Il est utilisé pour confirmer une affirmation ou indiquer l'existence d'une chose. Dans la phrase, \"是\" sert souvent de verbe principal ou comme un adverbe d'affirmation.",
     "explanation": "",
-    "translationEn": "to be"
+    "translationEn": "to be",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0187": {
     "id": "hsk1-0187",
@@ -9004,7 +10482,15 @@
       "moment"
     ],
     "explanationFr": "Le mot \"时候\" en chinois peut signifier à la fois \"moment\" et \"période\". Il s'agit du temps ou l'instant précis où quelque chose se produit, ainsi que d'une durée plus longue. Ce terme est souvent utilisé pour exprimer une occasion spécifique ou un intervalle de temps.",
-    "translationEn": "moment"
+    "translationEn": "moment",
+    "relatedIds": [
+      "hsk1-0188",
+      "hsk1-0234",
+      "hsk1-0006",
+      "hsk1-0033",
+      "hsk1-0093",
+      "hsk1-0128"
+    ]
   },
   "hsk1-0188": {
     "id": "hsk1-0188",
@@ -9049,7 +10535,15 @@
       "temps"
     ],
     "explanationFr": "Le terme \"temps\" en chinois peut se référer à la durée ou à un moment précis. Il est utilisé pour exprimer l'idée générale du passage du temps, ainsi que pour indiquer une période spécifique.",
-    "translationEn": "time"
+    "translationEn": "time",
+    "relatedIds": [
+      "hsk1-0187",
+      "hsk1-0234",
+      "hsk1-0052",
+      "hsk1-0006",
+      "hsk1-0033",
+      "hsk1-0093"
+    ]
   },
   "hsk1-0189": {
     "id": "hsk1-0189",
@@ -9093,7 +10587,15 @@
     "theme": "technologie",
     "explanationFr": "Le terme \"téléphone portable\" est utilisé pour désigner un appareil électronique qui permet la communication vocale et parfois textuelle, qu'il soit utilisé en mouvement ou fixe. Il s'agit d'un type de téléphone cellulaire, plus couramment appelé \"cell phone\" en anglais. Le mot \"portable\" indique que cet appareil peut être transporté facilement.",
     "translationFrAlt": [],
-    "translationEn": "mobile phone"
+    "translationEn": "mobile phone",
+    "relatedIds": [
+      "hsk1-0054",
+      "hsk1-0034",
+      "hsk1-0035",
+      "hsk1-0036",
+      "hsk1-0004",
+      "hsk1-0006"
+    ]
   },
   "hsk1-0190": {
     "id": "hsk1-0190",
@@ -9143,7 +10645,15 @@
       "calligraphier"
     ],
     "explanationFr": "Le mot \"livre\" en français désigne un objet imprimé ou électronique contenant des informations écrites, généralement sous forme de pages reliées. Il peut également faire référence à une œuvre littéraire ou documentaire. En chinois, le caractère 书 (shū) est utilisé pour dénoter divers types d'écrits, y compris les livres traditionnels et certains documents formels.",
-    "translationEn": "book"
+    "translationEn": "book",
+    "relatedIds": [
+      "hsk1-0047",
+      "hsk1-0191",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0214",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0191": {
     "id": "hsk1-0191",
@@ -9186,7 +10696,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"librairie\" est utilisé pour désigner un lieu où sont vendus des livres. Il s'agit d'un terme général qui peut inclure aussi bien les librairies indépendantes que les grandes chaînes de vente de livres. Notez qu'en chinois, le caractère \"书店\" (shūdiàn) est utilisé pour désigner ce lieu sans distinction entre une petite librairie ou une grande enseigne.",
     "translationFrAlt": [],
-    "translationEn": "bookstore"
+    "translationEn": "bookstore",
+    "relatedIds": [
+      "hsk1-0032",
+      "hsk1-0190",
+      "hsk1-0051",
+      "hsk1-0176",
+      "hsk1-0047",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0192": {
     "id": "hsk1-0192",
@@ -9231,7 +10749,15 @@
       "se coucher"
     ],
     "explanationFr": "Le mot \"dormir\" en français signifie se reposer par le biais du sommeil. Il est utilisé pour décrire l'action de passer une période sans être conscient des événements environnants, généralement la nuit. N'oubliez pas que dormir implique de se coucher et de rester immobile pendant une certaine durée.",
-    "translationEn": "to sleep"
+    "translationEn": "to sleep",
+    "relatedIds": [
+      "hsk1-0195",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0193": {
     "id": "hsk1-0193",
@@ -9278,7 +10804,15 @@
       "85e radical"
     ],
     "explanationFr": "Le caractère chinois 水 signifie \"eau\" en français. Il est utilisé dans divers contextes, notamment pour désigner un cours d'eau (rivières) ou pour décrire des situations où l'on maîtrise la natation. En outre, il peut être utilisé de manière figurée pour indiquer quelque chose qui manque de substance ou qui n'est pas de qualité.",
-    "translationEn": "water"
+    "translationEn": "water",
+    "relatedIds": [
+      "hsk1-0194",
+      "hsk1-0016",
+      "hsk1-0017",
+      "hsk1-0050",
+      "hsk1-0127",
+      "hsk1-0216"
+    ]
   },
   "hsk1-0194": {
     "id": "hsk1-0194",
@@ -9322,7 +10856,15 @@
     "theme": "nourriture",
     "explanationFr": "Le terme \"fruit\" en chinois est 水果, prononcé shuǐguǒ. Il s'agit d'un mot-clé dans la cuisine et la nutrition. En français, nous utilisons ce mot pour désigner les produits de l'arbre ou du plant qui sont comestibles, comme des pommes, des oranges ou des bananes. Notez que le classificateur \"个\" est utilisé avec ce mot.",
     "translationFrAlt": [],
-    "translationEn": "fruit"
+    "translationEn": "fruit",
+    "relatedIds": [
+      "hsk1-0193",
+      "hsk1-0159",
+      "hsk1-0016",
+      "hsk1-0017",
+      "hsk1-0050",
+      "hsk1-0127"
+    ]
   },
   "hsk1-0195": {
     "id": "hsk1-0195",
@@ -9368,7 +10910,15 @@
       "se coucher"
     ],
     "explanationFr": "Le mot \"dormir\" en français signifie passer une période de repos en état de sommeil. Il est souvent utilisé pour décrire l'action de se coucher et de s'endormir, mais aussi d'être dans un état de repos sans nécessairement être endormi.",
-    "translationEn": "to sleep"
+    "translationEn": "to sleep",
+    "relatedIds": [
+      "hsk1-0192",
+      "hsk1-0096",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023",
+      "hsk1-0025"
+    ]
   },
   "hsk1-0196": {
     "id": "hsk1-0196",
@@ -9418,7 +10968,15 @@
     ],
     "explanationFr": "Le mot \"说\" est utilisé pour exprimer la notion de communication verbale. Il peut signifier \"dire\", \"parler\" ou \"expliquer\". Dans une conversation, on utilise souvent ce mot pour introduire des phrases ou des informations. Par exemple, \"他说他要去北京\" (Tā shuō tā yào qù Běijīng) signifie \"Il dit qu'il va à Beijing\".",
     "explanation": "",
-    "translationEn": "to say; to speak"
+    "translationEn": "to say; to speak",
+    "relatedIds": [
+      "hsk1-0197",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0197": {
     "id": "hsk1-0197",
@@ -9464,7 +11022,15 @@
       "bavarder"
     ],
     "explanationFr": "Le verbe \"parler\" est utilisé pour désigner l'action de produire des sons articulés pour communiquer, exprimer ses pensées ou raconter une histoire. Il peut également signifier dire quelque chose, faire des commentaires ou échanger des informations avec quelqu'un.",
-    "translationEn": "to talk; speech"
+    "translationEn": "to talk; speech",
+    "relatedIds": [
+      "hsk1-0196",
+      "hsk1-0025",
+      "hsk1-0034",
+      "hsk1-0014",
+      "hsk1-0019",
+      "hsk1-0023"
+    ]
   },
   "hsk1-0198": {
     "id": "hsk1-0198",
@@ -9509,7 +11075,15 @@
       "4"
     ],
     "explanationFr": "Le nombre \"quatre\" est utilisé pour compter et dénombrer des objets ou des idées en français, comme dans l'anglais \"four\". Il s'agit d'un chiffre cardinal indispensable dans la langue française. Notez que le mot \"quatre\" peut également être utilisé comme adjectif pour indiquer qu'il y a exactement quatre de quelque chose.",
-    "translationEn": "four"
+    "translationEn": "four",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0199": {
     "id": "hsk1-0199",
@@ -9556,7 +11130,15 @@
       "âge"
     ],
     "explanationFr": "Le caractère \"岁\" signifie \"année\". Il est utilisé pour compter le temps en années, comme l'âge d'une personne ou la durée d'un événement. Parfois, il peut aussi être utilisé dans un contexte agricole pour désigner les cycles de récolte.",
-    "translationEn": "years (age) classifier for years"
+    "translationEn": "years (age) classifier for years",
+    "relatedIds": [
+      "hsk1-0010",
+      "hsk1-0058",
+      "hsk1-0104",
+      "hsk1-0148",
+      "hsk1-0239",
+      "hsk1-0268"
+    ]
   },
   "hsk1-0200": {
     "id": "hsk1-0200",
@@ -9601,7 +11183,15 @@
       "lui"
     ],
     "explanationFr": "Le caractère 他 est utilisé pour désigner un homme, souvent dans une situation où l'identité spécifique n'est pas importante ou non mentionnée. Il peut également être utilisé comme adjectif pour indiquer \"autre\" ou \"un autre\".",
-    "translationEn": "he; him"
+    "translationEn": "he; him",
+    "relatedIds": [
+      "hsk1-0204",
+      "hsk1-0146",
+      "hsk1-0149",
+      "hsk1-0150",
+      "hsk1-0201",
+      "hsk1-0202"
+    ]
   },
   "hsk1-0201": {
     "id": "hsk1-0201",
@@ -9666,7 +11256,15 @@
       "chose)"
     ],
     "explanationFr": "",
-    "translationEn": "it; him; it (thing)"
+    "translationEn": "it; him; it (thing)",
+    "relatedIds": [
+      "hsk1-0205",
+      "hsk1-0146",
+      "hsk1-0149",
+      "hsk1-0150",
+      "hsk1-0200",
+      "hsk1-0202"
+    ]
   },
   "hsk1-0202": {
     "id": "hsk1-0202",
@@ -9709,7 +11307,15 @@
     "explanationFr": "Le mot \"elle\" en français est utilisé pour désigner un sujet féminin. C'est une pronom personnel qui remplace généralement un nom féminin dans la phrase, afin d'éviter de répéter le nom ou l'expression. Par exemple, si vous parlez d'une femme appelée \"Zhang\", vous pouvez dire \"Elle est médecin\" au lieu de \"Zhang est médecin\".",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "she; her"
+    "translationEn": "she; her",
+    "relatedIds": [
+      "hsk1-0206",
+      "hsk1-0146",
+      "hsk1-0149",
+      "hsk1-0150",
+      "hsk1-0200",
+      "hsk1-0201"
+    ]
   },
   "hsk1-0203": {
     "id": "hsk1-0203",
@@ -9755,7 +11361,15 @@
       "extrêmement"
     ],
     "explanationFr": "Le caractère 太 (tài) peut signifier \"trop\", \"très\" ou \"extrêmement\". Il est utilisé pour exprimer une surabondance, une intensité élevée ou un excès. C'est un adverbe qui s'adapte à différents contextes et peut être utilisé avec des adjectifs ou des verbes.",
-    "translationEn": "too; very"
+    "translationEn": "too; very",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0079",
+      "hsk1-0253",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0204": {
     "id": "hsk1-0204",
@@ -9800,7 +11414,15 @@
     ],
     "explanationFr": "Le mot \"他们\" est utilisé pour désigner un groupe de personnes, qu'il s'agisse des hommes ou des femmes. Il peut également être utilisé comme pronom possessif. En français, on utilise généralement \"ils\" pour traduire ce terme.",
     "explanation": "",
-    "translationEn": "they (masculine); them"
+    "translationEn": "they (masculine); them",
+    "relatedIds": [
+      "hsk1-0200",
+      "hsk1-0124",
+      "hsk1-0149",
+      "hsk1-0205",
+      "hsk1-0206",
+      "hsk1-0222"
+    ]
   },
   "hsk1-0205": {
     "id": "hsk1-0205",
@@ -9854,7 +11476,15 @@
       "animaux)"
     ],
     "explanationFr": "",
-    "translationEn": "they (masculine or neuter); them (things, animals)"
+    "translationEn": "they (masculine or neuter); them (things, animals)",
+    "relatedIds": [
+      "hsk1-0201",
+      "hsk1-0124",
+      "hsk1-0149",
+      "hsk1-0204",
+      "hsk1-0206",
+      "hsk1-0222"
+    ]
   },
   "hsk1-0206": {
     "id": "hsk1-0206",
@@ -9896,7 +11526,15 @@
     "explanationFr": "Le mot \"她们\" est utilisé pour désigner un groupe de femmes ou des personnes féminines. Il faut utiliser \"elles\" en français dans la plupart des contextes, sauf si le contexte nécessite une distinction entre hommes et femmes.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "they (feminine)"
+    "translationEn": "they (feminine)",
+    "relatedIds": [
+      "hsk1-0202",
+      "hsk1-0124",
+      "hsk1-0149",
+      "hsk1-0204",
+      "hsk1-0205",
+      "hsk1-0222"
+    ]
   },
   "hsk1-0207": {
     "id": "hsk1-0207",
@@ -9946,7 +11584,15 @@
       "univers"
     ],
     "explanationFr": "Le mot \"ciel\" en français désigne le domaine qui se trouve au-dessus de la Terre, où se trouvent les nuages et l'air. Il peut aussi faire référence à un concept plus large, comme une atmosphère ou une ambiance. Dans certaines cultures, il est associé à des idées de divinités supérieures.",
-    "translationEn": "day; sky"
+    "translationEn": "day; sky",
+    "relatedIds": [
+      "hsk1-0006",
+      "hsk1-0129",
+      "hsk1-0300",
+      "hsk1-0094",
+      "hsk1-0208",
+      "hsk1-0245"
+    ]
   },
   "hsk1-0208": {
     "id": "hsk1-0208",
@@ -9991,7 +11637,15 @@
     ],
     "explanationFr": "Le mot \"temps\" en français, dans le contexte de la météorologie, fait référence aux conditions atmosphériques à court terme. Il englobe des aspects tels que la température, l'humidité, les vents et les précipitations. En chinois, 天气 (tiānqì) est souvent utilisé pour décrire ces conditions météorologiques quotidiennes ou à court terme.",
     "explanation": "",
-    "translationEn": "weather; climate"
+    "translationEn": "weather; climate",
+    "relatedIds": [
+      "hsk1-0207",
+      "hsk1-0006",
+      "hsk1-0094",
+      "hsk1-0129",
+      "hsk1-0245",
+      "hsk1-0300"
+    ]
   },
   "hsk1-0209": {
     "id": "hsk1-0209",
@@ -10042,7 +11696,15 @@
       "sourire (arch.)"
     ],
     "explanationFr": "Le mot \"écouter\" est utilisé pour indiquer l'action de donner de l'attention à un son ou une voix. Il peut aussi signifier respecter les conseils ou ordres d'une autre personne.",
-    "translationEn": "to listen"
+    "translationEn": "to listen",
+    "relatedIds": [
+      "hsk1-0075",
+      "hsk1-0210",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021"
+    ]
   },
   "hsk1-0210": {
     "id": "hsk1-0210",
@@ -10087,7 +11749,15 @@
     ],
     "explanationFr": "Le mot \"entendre\" en français correspond au verbe chinois 听见 (tīngjiàn). Il s'agit du processus sensoriel par lequel notre oreille perçoit des sons. N'oublie pas que ce n'est pas seulement l'action de percevoir un son, mais aussi la capacité d'en comprendre les nuances et les significations.",
     "explanation": "",
-    "translationEn": "to hear"
+    "translationEn": "to hear",
+    "relatedIds": [
+      "hsk1-0086",
+      "hsk1-0209",
+      "hsk1-0101",
+      "hsk1-0075",
+      "hsk1-0272",
+      "hsk1-0014"
+    ]
   },
   "hsk1-0211": {
     "id": "hsk1-0211",
@@ -10132,7 +11802,15 @@
       "condisciple"
     ],
     "explanationFr": "Ce terme désigne une personne qui étudie dans la même classe que vous, soit un collègue d'étude au sein du même groupe scolaire ou universitaire. Il s'agit d'un mot couramment utilisé pour se référer à des personnes de votre génération d'élèves.",
-    "translationEn": "classmate"
+    "translationEn": "classmate",
+    "relatedIds": [
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0235",
+      "hsk1-0236",
+      "hsk1-0249",
+      "hsk1-0251"
+    ]
   },
   "hsk1-0212": {
     "id": "hsk1-0212",
@@ -10177,7 +11855,15 @@
       "étranger"
     ],
     "explanationFr": "Le mot \"外\" signifie généralement \"extérieur\" ou \"externe\". Il est utilisé pour décrire quelque chose qui se trouve à l'extérieur d'un objet ou d'une situation. N'oublie pas qu'il peut aussi avoir le sens de \"foreign\" (étranger) dans certains contextes.",
-    "translationEn": "classmate; fellow student"
+    "translationEn": "classmate; fellow student",
+    "relatedIds": [
+      "hsk1-0213",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011"
+    ]
   },
   "hsk1-0213": {
     "id": "hsk1-0213",
@@ -10224,7 +11910,15 @@
       "lieu autre que son domicile"
     ],
     "explanationFr": "Le mot \"extérieur\" en français désigne le côté ou la surface qui se trouve à l'extérieur d'un objet, d'une chose ou d'un lieu. Il peut également être utilisé pour parler des endroits situés hors du pays de l'apprenant. Pour bien comprendre cette notion, pensez aux différences entre \"intérieur\" et \"extérieur\", qui sont souvent utilisées ensemble dans les phrases.",
-    "translationEn": "outside; outdoors"
+    "translationEn": "outside; outdoors",
+    "relatedIds": [
+      "hsk1-0011",
+      "hsk1-0212",
+      "hsk1-0133",
+      "hsk1-0280",
+      "hsk1-0004",
+      "hsk1-0006"
+    ]
   },
   "hsk1-0214": {
     "id": "hsk1-0214",
@@ -10289,7 +11983,15 @@
       "s'amuser"
     ],
     "explanationFr": "",
-    "translationEn": "outside; outdoors"
+    "translationEn": "outside; outdoors",
+    "relatedIds": [
+      "hsk1-0076",
+      "hsk1-0037",
+      "hsk1-0038",
+      "hsk1-0047",
+      "hsk1-0190",
+      "hsk1-0001"
+    ]
   },
   "hsk1-0215": {
     "id": "hsk1-0215",
@@ -10335,7 +12037,15 @@
       "nuit"
     ],
     "explanationFr": "Le caractère \"晚\" signifie \"soir\". Il est utilisé pour désigner la période du jour qui suit l'après-midi et qui se termine généralement au coucher du soleil. Il peut également être utilisé de manière figurée pour indiquer quelque chose qui arrive tard ou qui est retardé.",
-    "translationEn": "to play"
+    "translationEn": "to play",
+    "relatedIds": [
+      "hsk1-0216",
+      "hsk1-0217",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057"
+    ]
   },
   "hsk1-0216": {
     "id": "hsk1-0216",
@@ -10378,7 +12088,15 @@
     "theme": "nourriture",
     "explanationFr": "Le \"wǎnfàn\" désigne le repas qui est pris en fin de journée, généralement entre 18h et 20h. Il peut être appelé \"dîner\", mais en Chine, ce terme est plus souvent utilisé pour désigner un repas formel ou un dîner d'affaires. Le mot \"wǎnfàn\" est plus général et s'applique à n'importe quel repas pris le soir.",
     "translationFrAlt": [],
-    "translationEn": "fruit; toy"
+    "translationEn": "fruit; toy",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0127",
+      "hsk1-0051",
+      "hsk1-0215",
+      "hsk1-0224",
+      "hsk1-0274"
+    ]
   },
   "hsk1-0217": {
     "id": "hsk1-0217",
@@ -10423,7 +12141,15 @@
       "soir"
     ],
     "explanationFr": "Le mot \"soir\" est utilisé pour désigner la période du temps entre le coucher du soleil et minuit, soit l'heure à laquelle les gens commencent généralement à se reposer. Il s'agit d'une subdivision de la nuit en deux parties : le soir (wǎnshang) et la nuit tardive ou la nuit profonde.",
-    "translationEn": "late"
+    "translationEn": "late",
+    "relatedIds": [
+      "hsk1-0174",
+      "hsk1-0215",
+      "hsk1-0178",
+      "hsk1-0216",
+      "hsk1-0275",
+      "hsk1-0175"
+    ]
   },
   "hsk1-0218": {
     "id": "hsk1-0218",
@@ -10473,7 +12199,14 @@
     "theme": "téléphone",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "apple; fruit"
+    "translationEn": "apple; fruit",
+    "relatedIds": [
+      "hsk1-0217",
+      "hsk1-0219",
+      "hsk1-0216",
+      "hsk1-0220",
+      "hsk1-0215"
+    ]
   },
   "hsk1-0219": {
     "id": "hsk1-0219",
@@ -10521,7 +12254,15 @@
     ],
     "explanationFr": "Le mot \"问\" signifie \"demander\". Il est utilisé pour poser des questions à quelqu'un ou chercher des informations. N'oublie pas qu'il peut aussi signifier \"interroger\", mais dans un contexte plus formel.",
     "explanation": "",
-    "translationEn": "hello! ;喂 (interjection)"
+    "translationEn": "hello! ;喂 (interjection)",
+    "relatedIds": [
+      "hsk1-0166",
+      "hsk1-0220",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021"
+    ]
   },
   "hsk1-0220": {
     "id": "hsk1-0220",
@@ -10569,7 +12310,15 @@
     "theme": "travail",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "to ask"
+    "translationEn": "to ask",
+    "relatedIds": [
+      "hsk1-0219",
+      "hsk1-0166",
+      "hsk1-0175",
+      "hsk1-0227",
+      "hsk1-0063",
+      "hsk1-0014"
+    ]
   },
   "hsk1-0221": {
     "id": "hsk1-0221",
@@ -10614,7 +12363,15 @@
     ],
     "explanationFr": "Le caractère \"我\" se traduit par \"moi\" en français, qui est utilisé comme pronom personnel sujet ou objet. Il sert à se référer à soi-même dans une phrase. En chinois, il peut être utilisé de manière informelle et formelle.",
     "explanation": "",
-    "translationEn": "problem; question"
+    "translationEn": "problem; question",
+    "relatedIds": [
+      "hsk1-0222",
+      "hsk1-0146",
+      "hsk1-0149",
+      "hsk1-0150",
+      "hsk1-0200",
+      "hsk1-0201"
+    ]
   },
   "hsk1-0222": {
     "id": "hsk1-0222",
@@ -10654,10 +12411,18 @@
       "level:hsk1"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"我们\" est utilisé pour désigner plusieurs personnes, y compris les locuteurs et les interlocuteurs. Il peut signifier \"nous\", \"us\" ou \"ourselves\". Ce mot est souvent utilisé dans des phrases où il s'agit de parler d'une communauté ou d'un groupe.",
+    "explanationFr": "Le pronom 我们 désigne « nous » : il inclut le locuteur et au moins une autre personne. Il sert à parler d'un groupe, d'une famille ou d'une communauté dont on fait partie.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "I; me"
+    "translationEn": "I; me",
+    "relatedIds": [
+      "hsk1-0221",
+      "hsk1-0124",
+      "hsk1-0149",
+      "hsk1-0204",
+      "hsk1-0205",
+      "hsk1-0206"
+    ]
   },
   "hsk1-0223": {
     "id": "hsk1-0223",
@@ -10702,7 +12467,15 @@
       "5"
     ],
     "explanationFr": "Le mot \"cinq\" est utilisé pour compter et désigner un nombre. Il s'agit du chiffre arabe 5 exprimé en français.",
-    "translationEn": "we"
+    "translationEn": "we",
+    "relatedIds": [
+      "hsk1-0003",
+      "hsk1-0005",
+      "hsk1-0007",
+      "hsk1-0048",
+      "hsk1-0095",
+      "hsk1-0112"
+    ]
   },
   "hsk1-0224": {
     "id": "hsk1-0224",
@@ -10747,7 +12520,15 @@
       "repas du midi"
     ],
     "explanationFr": "Le mot \"午饭\" se traduit par \"repas du midi\", qui est le terme utilisé pour désigner l'heure du déjeuner en chinois. Il s'agit d'un repas important dans la journée, généralement pris entre 12 heures et 14 heures. Ce terme est souvent utilisé dans un contexte formel ou informel.",
-    "translationEn": "five"
+    "translationEn": "five",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0051",
+      "hsk1-0127",
+      "hsk1-0178",
+      "hsk1-0216",
+      "hsk1-0237"
+    ]
   },
   "hsk1-0225": {
     "id": "hsk1-0225",
@@ -10798,7 +12579,15 @@
       "arriver à (une décision, une conclusion)"
     ],
     "explanationFr": "Le mot \"下\" peut signifier \"en dessous\", \"sous\". Il est utilisé pour indiquer une position inférieure ou un ordre chronologique postérieur. Il peut aussi être utilisé comme mesure de fréquence d'une action.",
-    "translationEn": "lunch"
+    "translationEn": "lunch",
+    "relatedIds": [
+      "hsk1-0237",
+      "hsk1-0226",
+      "hsk1-0227",
+      "hsk1-0228",
+      "hsk1-0259",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0226": {
     "id": "hsk1-0226",
@@ -10841,7 +12630,15 @@
     "explanationFr": "Le verbe \"pleuvoir\" est utilisé pour décrire l'action du ciel qui verse de la pluie. Il est important de noter qu'il s'agit d'un verbe impersonnel, c'est-à-dire que nous ne parlons pas d'une personne ou d'un objet en particulier qui pleut, mais plutôt de l'action même de la pluie.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to rain; raining"
+    "translationEn": "to rain; raining",
+    "relatedIds": [
+      "hsk1-0267",
+      "hsk1-0225",
+      "hsk1-0227",
+      "hsk1-0228",
+      "hsk1-0259",
+      "hsk1-0237"
+    ]
   },
   "hsk1-0227": {
     "id": "hsk1-0227",
@@ -10885,7 +12682,15 @@
     "theme": "travail",
     "explanationFr": "Ce terme désigne l'action de terminer son horaire de travail et de partir du lieu de travail, généralement pour rentrer à la maison. Il peut également faire référence au moment où un employé quitte une station de métro ou d'autobus après avoir fini ses services.",
     "translationFrAlt": [],
-    "translationEn": "to finish work; after work"
+    "translationEn": "to finish work; after work",
+    "relatedIds": [
+      "hsk1-0175",
+      "hsk1-0225",
+      "hsk1-0226",
+      "hsk1-0228",
+      "hsk1-0259",
+      "hsk1-0237"
+    ]
   },
   "hsk1-0228": {
     "id": "hsk1-0228",
@@ -10929,7 +12734,15 @@
     "theme": "école",
     "explanationFr": "Ce terme désigne l'action de quitter une classe après la fin des cours. Il peut également être utilisé métaphoriquement pour indiquer le remplacement d'un entraîneur sportif par un autre.",
     "translationFrAlt": [],
-    "translationEn": "class for lesson to end"
+    "translationEn": "class for lesson to end",
+    "relatedIds": [
+      "hsk1-0177",
+      "hsk1-0102",
+      "hsk1-0225",
+      "hsk1-0226",
+      "hsk1-0227",
+      "hsk1-0259"
+    ]
   },
   "hsk1-0229": {
     "id": "hsk1-0229",
@@ -10979,7 +12792,15 @@
       "penser à"
     ],
     "explanationFr": "Le mot \"penser\" en chinois est utilisé pour exprimer diverses formes de réflexion, comme penser à quelque chose, concevoir une idée, croire que quelque chose est vrai, désirer ou vouloir faire quelque chose. Il couvre plusieurs nuances liées au processus mental.",
-    "translationEn": "to want; to think; wish"
+    "translationEn": "to want; to think; wish",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0230": {
     "id": "hsk1-0230",
@@ -11025,7 +12846,15 @@
       "Mr."
     ],
     "explanationFr": "Le mot \"先生\" est utilisé pour désigner un enseignant ou un maître dans l'éducation, mais il peut aussi être utilisé comme titre respectueux pour des hommes plus âgés ou en position de pouvoir. Il est similaire au terme \"monsieur\", mais a une connotation plus professionnelle.",
-    "translationEn": "mister; sir"
+    "translationEn": "mister; sir",
+    "relatedIds": [
+      "hsk1-0029",
+      "hsk1-0236",
+      "hsk1-0249",
+      "hsk1-0293",
+      "hsk1-0258",
+      "hsk1-0182"
+    ]
   },
   "hsk1-0231": {
     "id": "hsk1-0231",
@@ -11070,7 +12899,15 @@
     ],
     "explanationFr": "Le mot \"现在\" en chinois signifie \"maintenant\" ou \"actuellement\". Il est utilisé pour indiquer un moment dans le temps qui se situe ici et maintenant, soit à l'instant où on parle. N'oubliez pas de distinguer ce terme du verbe \"être\", qui peut également être traduit par \"现在\" en fonction du contexte.",
     "explanation": "",
-    "translationEn": "nowadays; at present"
+    "translationEn": "nowadays; at present",
+    "relatedIds": [
+      "hsk1-0271",
+      "hsk1-0284",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009"
+    ]
   },
   "hsk1-0232": {
     "id": "hsk1-0232",
@@ -11114,8 +12951,16 @@
     "translationFrAlt": [
       "jeune"
     ],
-    "explanationFr": "Le mot \"petit\" en français peut signifier non seulement \"small\" (petit), mais aussi \"tiny\" (très petit) et parfois \"young\" (jeune). Il est important de noter que \"petit\" est un adjectif qui s'adapte au pluriel (\"petits\") et aux formes féminines (\"petite\"). Dans certaines situations, vous pouvez aussi utiliser des expressions comme \"petit-à-petit\" pour indiquer une progression lente ou \"pas grand-chose\" pour dire que quelque chose est insignifiant.",
-    "translationEn": "small; little"
+    "explanationFr": "L'adjectif 小 signifie « petit » : taille réduite (« petit objet »), faible quantité ou jeune âge (« petit garçon »). Il s'oppose à 大 (grand) et entre dans de nombreux composés (小学 école primaire, 小时 heure).",
+    "translationEn": "small; little",
+    "relatedIds": [
+      "hsk1-0233",
+      "hsk1-0234",
+      "hsk1-0235",
+      "hsk1-0236",
+      "hsk1-0024",
+      "hsk1-0043"
+    ]
   },
   "hsk1-0233": {
     "id": "hsk1-0233",
@@ -11161,7 +13006,15 @@
       "marmaille"
     ],
     "explanationFr": "Le mot \"小朋友们\" est utilisé pour désigner un enfant, souvent dans le contexte familial ou éducatif. Il peut aussi être utilisé par les adultes pour s'adresser à des enfants. Notez que \"小\" signifie littéralement \"petit\", ce qui donne une nuance d'affection ou de gentillesse.",
-    "translationEn": "child; kid"
+    "translationEn": "child; kid",
+    "relatedIds": [
+      "hsk1-0156",
+      "hsk1-0139",
+      "hsk1-0154",
+      "hsk1-0232",
+      "hsk1-0234",
+      "hsk1-0235"
+    ]
   },
   "hsk1-0234": {
     "id": "hsk1-0234",
@@ -11204,7 +13057,15 @@
     "theme": "temps",
     "explanationFr": "Le mot \"小时\" en chinois signifie \"heure\", mais il est souvent utilisé pour désigner une période de temps plus courte qu'une heure standard. Il s'agit d'un classificateur qui précède le nombre indiquant la durée, comme dans l'expression \"一小时\" (yī xiǎoshí) qui signifie \"une heure\". Lorsqu'on parle de temps, on utilise souvent ce terme pour des périodes allant de quelques minutes à une heure.",
     "translationFrAlt": [],
-    "translationEn": "hour (time); while"
+    "translationEn": "hour (time); while",
+    "relatedIds": [
+      "hsk1-0187",
+      "hsk1-0188",
+      "hsk1-0232",
+      "hsk1-0233",
+      "hsk1-0235",
+      "hsk1-0236"
+    ]
   },
   "hsk1-0235": {
     "id": "hsk1-0235",
@@ -11247,7 +13108,15 @@
     "explanationFr": "L'école élémentaire est l'institution scolaire où les enfants entrent pour la première fois, généralement entre 6 et 12 ans selon les systèmes éducatifs locaux. Elle constitue la phase initiale de l'enseignement primaire. Les élèves apprennent ici les bases des disciplines telles que la lecture, l'écriture et les mathématiques.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "primary school"
+    "translationEn": "primary school",
+    "relatedIds": [
+      "hsk1-0236",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0249",
+      "hsk1-0251"
+    ]
   },
   "hsk1-0236": {
     "id": "hsk1-0236",
@@ -11291,7 +13160,15 @@
     "theme": "école",
     "explanationFr": "L'élève est un terme qui désigne une personne qui fréquente l'école primaire. Il s'agit du mot le plus courant pour décrire un enfant en cours d'apprentissage dans les écoles primaires. Le terme \"élève\" peut également être utilisé de manière figurée pour indiquer quelqu'un qui apprend ou qui est débutant dans une compétence spécifique.",
     "translationFrAlt": [],
-    "translationEn": "student of primary school"
+    "translationEn": "student of primary school",
+    "relatedIds": [
+      "hsk1-0235",
+      "hsk1-0249",
+      "hsk1-0029",
+      "hsk1-0293",
+      "hsk1-0028",
+      "hsk1-0211"
+    ]
   },
   "hsk1-0237": {
     "id": "hsk1-0237",
@@ -11334,7 +13211,15 @@
     "theme": "général",
     "explanationFr": "Le terme \"après-midi\" est utilisé pour désigner l'heure qui suit le déjeuner et qui précède la fin officielle de la journée, généralement entre 13 heures et 18 heures. Il se traduit par \"xiàwǔ\" en chinois.",
     "translationFrAlt": [],
-    "translationEn": "afternoon"
+    "translationEn": "afternoon",
+    "relatedIds": [
+      "hsk1-0225",
+      "hsk1-0178",
+      "hsk1-0224",
+      "hsk1-0291",
+      "hsk1-0226",
+      "hsk1-0227"
+    ]
   },
   "hsk1-0238": {
     "id": "hsk1-0238",
@@ -11380,7 +13265,15 @@
     ],
     "explanationFr": "Le verbe \"écrire\" signifie transmettre des idées ou des informations par le biais de l'écriture. Il peut s'appliquer à la production d'un texte, d'une lettre ou même à la création artistique comme la calligraphie.",
     "explanation": "",
-    "translationEn": "to write"
+    "translationEn": "to write",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0239": {
     "id": "hsk1-0239",
@@ -11429,7 +13322,15 @@
     "theme": "quantité",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "some; a few (classifier)"
+    "translationEn": "some; a few (classifier)",
+    "relatedIds": [
+      "hsk1-0142",
+      "hsk1-0143",
+      "hsk1-0260",
+      "hsk1-0265",
+      "hsk1-0286",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0240": {
     "id": "hsk1-0240",
@@ -11474,7 +13375,15 @@
       "remercier"
     ],
     "explanationFr": "Le mot \"merci\" est utilisé pour exprimer la gratitude en français, qu'il s'agisse d'une petite ou d'une grande reconnaissance. Il peut être employé dans divers contextes tels que remercier quelqu'un qui vous a aidé, offert quelque chose ou simplement pour montrer de l'estime.",
-    "translationEn": "thank you"
+    "translationEn": "thank you",
+    "relatedIds": [
+      "hsk1-0044",
+      "hsk1-0272",
+      "hsk1-0165",
+      "hsk1-0166",
+      "hsk1-0014",
+      "hsk1-0120"
+    ]
   },
   "hsk1-0241": {
     "id": "hsk1-0241",
@@ -11519,7 +13428,15 @@
     ],
     "explanationFr": "Le verbe \"aimer\" en français exprime une préférence ou un penchant pour quelque chose. Il peut être utilisé de manière générale, comme pour des objets, des personnes ou des idées. N'oubliez pas que \"aimer\" est un verbe transitif, ce qui signifie qu'il nécessite un complément d'objet direct.",
     "explanation": "",
-    "translationEn": "to like; to enjoy"
+    "translationEn": "to like; to enjoy",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0242": {
     "id": "hsk1-0242",
@@ -11568,7 +13485,15 @@
       "récemment"
     ],
     "explanationFr": "Le mot \"nouveau\" en français désigne quelque chose qui est récent, qui n'a pas encore été utilisé ou qui vient d'être créé. Dans la chimie, il peut aussi signifier un élément qui a une structure similaire à celle d'un autre élément mais avec des propriétés légèrement différentes.",
-    "translationEn": "new"
+    "translationEn": "new",
+    "relatedIds": [
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057",
+      "hsk1-0065",
+      "hsk1-0072"
+    ]
   },
   "hsk1-0243": {
     "id": "hsk1-0243",
@@ -11611,7 +13536,15 @@
     "theme": "temps",
     "explanationFr": "Le terme \"semaine\" en français désigne une période de sept jours, commençant généralement le lundi et se terminant le dimanche. Il s'agit d'un concept important dans la gestion du temps et des activités quotidiennes.",
     "translationFrAlt": [],
-    "translationEn": "week"
+    "translationEn": "week",
+    "relatedIds": [
+      "hsk1-0244",
+      "hsk1-0245",
+      "hsk1-0006",
+      "hsk1-0033",
+      "hsk1-0093",
+      "hsk1-0128"
+    ]
   },
   "hsk1-0244": {
     "id": "hsk1-0244",
@@ -11655,7 +13588,15 @@
     "explanationFr": "Le mot \"dimanche\" désigne la septième journée de la semaine selon le calendrier occidental, qui suit samedi. Il est utilisé pour marquer des rendez-vous ou des événements qui se déroulent une fois par semaine.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "Sunday"
+    "translationEn": "Sunday",
+    "relatedIds": [
+      "hsk1-0243",
+      "hsk1-0245",
+      "hsk1-0172",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008"
+    ]
   },
   "hsk1-0245": {
     "id": "hsk1-0245",
@@ -11699,7 +13640,15 @@
     "explanationFr": "Le mot \"dimanche\" est utilisé pour désigner le septième jour de la semaine, qui suit samedi dans la plupart des pays. Il est important de noter que bien que ce terme soit directement traduit du chinois, il est largement utilisé et compris en France sans ambiguïté.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "Sunday"
+    "translationEn": "Sunday",
+    "relatedIds": [
+      "hsk1-0243",
+      "hsk1-0244",
+      "hsk1-0207",
+      "hsk1-0006",
+      "hsk1-0094",
+      "hsk1-0129"
+    ]
   },
   "hsk1-0246": {
     "id": "hsk1-0246",
@@ -11743,7 +13692,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"休息\" signifie \"se reposer\". Il s'agit d'une action qui implique la cessation momentanée de toutes les activités physiques et mentales pour permettre au corps et à l'esprit de récupérer. C'est différent du sommeil, bien que le repos puisse mener au sommeil.",
     "translationFrAlt": [],
-    "translationEn": "to rest; to take a break"
+    "translationEn": "to rest; to take a break",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0247": {
     "id": "hsk1-0247",
@@ -11790,7 +13747,15 @@
       "-ologie"
     ],
     "explanationFr": "Le mot \"学\" signifie \"apprendre\". Il englobe non seulement l'étude systématique mais aussi la capacité à imiter et à acquérir de nouvelles connaissances ou compétences. C'est un verbe qui peut être utilisé dans différents contextes, comme l'apprentissage académique ou le développement personnel.",
-    "translationEn": "to study"
+    "translationEn": "to study",
+    "relatedIds": [
+      "hsk1-0250",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0179",
+      "hsk1-0211",
+      "hsk1-0235"
+    ]
   },
   "hsk1-0248": {
     "id": "hsk1-0248",
@@ -11840,7 +13805,15 @@
     "theme": "météo",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "snow"
+    "translationEn": "snow",
+    "relatedIds": [
+      "hsk1-0208",
+      "hsk1-0267",
+      "hsk1-0109",
+      "hsk1-0169",
+      "hsk1-0226",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0249": {
     "id": "hsk1-0249",
@@ -11883,7 +13856,15 @@
     "theme": "école",
     "explanationFr": "L'élève est une personne qui étudie dans une école ou un institut. C'est le terme utilisé pour désigner les jeunes apprenants, généralement mineurs.",
     "translationFrAlt": [],
-    "translationEn": "student"
+    "translationEn": "student",
+    "relatedIds": [
+      "hsk1-0029",
+      "hsk1-0236",
+      "hsk1-0293",
+      "hsk1-0028",
+      "hsk1-0211",
+      "hsk1-0235"
+    ]
   },
   "hsk1-0250": {
     "id": "hsk1-0250",
@@ -11929,7 +13910,15 @@
       "apprendre"
     ],
     "explanationFr": "Le mot \"学习\" signifie littéralement \"apprendre\". Il englobe l'idée d'apprendre des connaissances ou des compétences par le biais du processus de la répétition et de l'entraînement. C'est un terme plus large que \"étudier\", qui se concentre davantage sur l'étude académique.",
-    "translationEn": "to study; to learn"
+    "translationEn": "to study; to learn",
+    "relatedIds": [
+      "hsk1-0247",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0179",
+      "hsk1-0211",
+      "hsk1-0235"
+    ]
   },
   "hsk1-0251": {
     "id": "hsk1-0251",
@@ -11972,7 +13961,15 @@
     "theme": "école",
     "explanationFr": "Le mot \"école\" en français désigne un lieu où l'on apprend, généralement sous la forme d'un enseignement structuré pour les enfants et les adultes. Il est souvent utilisé dans le contexte de l'éducation primaire ou secondaire.",
     "translationFrAlt": [],
-    "translationEn": "school"
+    "translationEn": "school",
+    "relatedIds": [
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0235",
+      "hsk1-0236",
+      "hsk1-0249"
+    ]
   },
   "hsk1-0252": {
     "id": "hsk1-0252",
@@ -12030,7 +14027,15 @@
       "soit... soit..."
     ],
     "explanationFr": "Le caractère 要 (yào) est utilisé pour exprimer le désir, la nécessité ou l'impératif. Il peut être traduit par \"vouloir\", \"avoir besoin\" ou \"demander\". Il sert aussi à introduire des conditions hypothétiques.",
-    "translationEn": "want; should"
+    "translationEn": "want; should",
+    "relatedIds": [
+      "hsk1-0015",
+      "hsk1-0001",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0253": {
     "id": "hsk1-0253",
@@ -12078,7 +14083,15 @@
       "voire"
     ],
     "explanationFr": "Le caractère 也 est utilisé pour indiquer qu'une situation ou une action est similaire à celle mentionnée précédemment, souvent introduisant un élément inattendu ou extrême. Il peut être traduit par \"aussi\" ou \"également\". Dans certaines situations littéraires, il sert de particle et a des fonctions similaires au mot \"啊\" (a5).",
-    "translationEn": "also"
+    "translationEn": "also",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0079",
+      "hsk1-0203",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0254": {
     "id": "hsk1-0254",
@@ -12123,7 +14136,15 @@
       "un"
     ],
     "explanationFr": "Le caractère 一 en chinois signifie \"un\" et est utilisé comme chiffre arabe pour représenter le nombre 1. Il peut également avoir des significations variées telles que \"entier\", \"toute la journée\", etc., selon le contexte.",
-    "translationEn": "one"
+    "translationEn": "one",
+    "relatedIds": [
+      "hsk1-0255",
+      "hsk1-0256",
+      "hsk1-0259",
+      "hsk1-0260",
+      "hsk1-0266",
+      "hsk1-0003"
+    ]
   },
   "hsk1-0255": {
     "id": "hsk1-0255",
@@ -12166,7 +14187,15 @@
     "explanationFr": "Ce mot est utilisé pour désigner une moitié ou une partie de quelque chose, généralement dans le contexte de fractions de quantités comme des liquides ou des aliments. Il peut également être utilisé pour exprimer une idée d'incomplétude.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "half"
+    "translationEn": "half",
+    "relatedIds": [
+      "hsk1-0007",
+      "hsk1-0254",
+      "hsk1-0256",
+      "hsk1-0259",
+      "hsk1-0260",
+      "hsk1-0266"
+    ]
   },
   "hsk1-0256": {
     "id": "hsk1-0256",
@@ -12206,10 +14235,18 @@
       "level:hsk1"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"一点儿\" est utilisé pour exprimer une petite quantité ou une légère action, similaire à l'anglais \"a little\" ou \"a bit\". Il s'agit d'un terme vague qui ne précise pas exactement combien de quelque chose il y a. On peut le traduire par \"un peu\" en français.",
+    "explanationFr": "L'expression 一点儿 sert à exprimer une petite quantité ou une légère intensité : « un peu, un petit peu ». Elle reste vague sur la quantité exacte et s'emploie après un verbe ou un adjectif (喝一点儿茶 : boire un peu de thé).",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "a little bit"
+    "translationEn": "a little bit",
+    "relatedIds": [
+      "hsk1-0266",
+      "hsk1-0033",
+      "hsk1-0254",
+      "hsk1-0259",
+      "hsk1-0260",
+      "hsk1-0049"
+    ]
   },
   "hsk1-0257": {
     "id": "hsk1-0257",
@@ -12252,7 +14289,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"vêtements\" est utilisé pour désigner un ensemble de vêtements ou des articles de vêtement. En chinois, 衣服 (yīfu) peut se référer à des vêtements en général, comme une tenue complète ou plusieurs pièces de vêtements. Il s'agit d'un terme plus large que \"vêtement\" qui peut être utilisé pour décrire un ensemble complet de vêtements.",
     "translationFrAlt": [],
-    "translationEn": "a bit"
+    "translationEn": "a bit",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0258": {
     "id": "hsk1-0258",
@@ -12295,7 +14340,15 @@
     "theme": "santé",
     "explanationFr": "Le terme \"médecin\" est utilisé pour désigner une personne qui exerce la médecine et qui soigne les patients. Il peut être suivi des classificateurs \"个\", \"位\" ou \"名\", selon le contexte, mais ces derniers ne sont pas nécessaires dans la plupart des cas.",
     "translationFrAlt": [],
-    "translationEn": "clothing"
+    "translationEn": "clothing",
+    "relatedIds": [
+      "hsk1-0261",
+      "hsk1-0182",
+      "hsk1-0029",
+      "hsk1-0230",
+      "hsk1-0236",
+      "hsk1-0249"
+    ]
   },
   "hsk1-0259": {
     "id": "hsk1-0259",
@@ -12356,7 +14409,15 @@
     "theme": "grammaire",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "for a moment"
+    "translationEn": "for a moment",
+    "relatedIds": [
+      "hsk1-0225",
+      "hsk1-0254",
+      "hsk1-0226",
+      "hsk1-0227",
+      "hsk1-0228",
+      "hsk1-0256"
+    ]
   },
   "hsk1-0260": {
     "id": "hsk1-0260",
@@ -12399,7 +14460,15 @@
     "explanationFr": "Ce terme est utilisé pour indiquer une quantité non précise, généralement plus grande qu'une seule unité mais pas nécessairement beaucoup. Il peut être utilisé avec des adjectifs et des verbes pour exprimer une idée relative.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "some; several"
+    "translationEn": "some; several",
+    "relatedIds": [
+      "hsk1-0239",
+      "hsk1-0254",
+      "hsk1-0256",
+      "hsk1-0259",
+      "hsk1-0265",
+      "hsk1-0142"
+    ]
   },
   "hsk1-0261": {
     "id": "hsk1-0261",
@@ -12442,7 +14511,15 @@
     "theme": "santé",
     "explanationFr": "Le mot \"hôpital\" en français désigne un établissement où l'on soigne les malades et on les fait hospitaliser. Il est utilisé pour parler d'un lieu qui fournit des soins médicaux professionnels, généralement avec plusieurs services spécialisés.",
     "translationFrAlt": [],
-    "translationEn": "hospital"
+    "translationEn": "hospital",
+    "relatedIds": [
+      "hsk1-0258",
+      "hsk1-0038",
+      "hsk1-0012",
+      "hsk1-0100",
+      "hsk1-0182",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0262": {
     "id": "hsk1-0262",
@@ -12509,7 +14586,15 @@
     "theme": "meuble",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "chair"
+    "translationEn": "chair",
+    "relatedIds": [
+      "hsk1-0089",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0295"
+    ]
   },
   "hsk1-0263": {
     "id": "hsk1-0263",
@@ -12556,7 +14641,15 @@
       "exister"
     ],
     "explanationFr": "Le caractère \"有\" signifie \"avoir\" ou \"il y a\". Il est utilisé pour exprimer l'existence ou la possession. Dans certaines constructions, il peut également être traduit par \"avec\" ou \"plein de\".",
-    "translationEn": "to have; there is"
+    "translationEn": "to have; there is",
+    "relatedIds": [
+      "hsk1-0123",
+      "hsk1-0264",
+      "hsk1-0265",
+      "hsk1-0266",
+      "hsk1-0001",
+      "hsk1-0015"
+    ]
   },
   "hsk1-0264": {
     "id": "hsk1-0264",
@@ -12602,7 +14695,15 @@
       "il y en a qui"
     ],
     "explanationFr": "Le mot \"有的\" est utilisé pour indiquer l'existence de personnes ou de choses, mais sans les nommer explicitement. Il sert à introduire un groupe d'individus ou des entités qui font partie d'une situation donnée. Utilisez-le lorsque vous voulez dire qu'il y a certains individus ou entités sans les nommer spécifiquement.",
-    "translationEn": "some; certain"
+    "translationEn": "some; certain",
+    "relatedIds": [
+      "hsk1-0030",
+      "hsk1-0263",
+      "hsk1-0123",
+      "hsk1-0265",
+      "hsk1-0266",
+      "hsk1-0026"
+    ]
   },
   "hsk1-0265": {
     "id": "hsk1-0265",
@@ -12649,7 +14750,15 @@
       "des"
     ],
     "explanationFr": "Le mot \"有些\" est souvent utilisé pour exprimer une quantité non précise ou une existence partielle, ce qui peut être traduit par \"un certain\". C'est un terme vague et flexible qui ne donne pas de chiffre précis. Il s'agit d'un moyen de dire qu'il y a quelque chose sans donner de détails exacts.",
-    "translationEn": "certain; some"
+    "translationEn": "certain; some",
+    "relatedIds": [
+      "hsk1-0239",
+      "hsk1-0263",
+      "hsk1-0260",
+      "hsk1-0123",
+      "hsk1-0142",
+      "hsk1-0143"
+    ]
   },
   "hsk1-0266": {
     "id": "hsk1-0266",
@@ -12699,7 +14808,15 @@
     "theme": "quantité",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "a little (negative sense)"
+    "translationEn": "a little (negative sense)",
+    "relatedIds": [
+      "hsk1-0123",
+      "hsk1-0256",
+      "hsk1-0033",
+      "hsk1-0254",
+      "hsk1-0263",
+      "hsk1-0049"
+    ]
   },
   "hsk1-0267": {
     "id": "hsk1-0267",
@@ -12747,7 +14864,15 @@
       "mouiller"
     ],
     "explanationFr": "Le mot \"pluie\" désigne un phénomène météorologique caractérisé par l'accumulation d'eau tombant du ciel en gouttes. Il s'agit de la forme courante et naturelle pour parler de la pluie en français.",
-    "translationEn": "rain"
+    "translationEn": "rain",
+    "relatedIds": [
+      "hsk1-0226",
+      "hsk1-0208",
+      "hsk1-0172",
+      "hsk1-0248",
+      "hsk1-0109",
+      "hsk1-0169"
+    ]
   },
   "hsk1-0268": {
     "id": "hsk1-0268",
@@ -12795,7 +14920,15 @@
       "(nom de famille)"
     ],
     "explanationFr": "Le mot \"元\" signifie \"unité monétaire\", en particulier pour le yuán chinois. C'est la base de l'unité de mesure utilisée dans les transactions financières.",
-    "translationEn": "yuan (classifier for money)"
+    "translationEn": "yuan (classifier for money)",
+    "relatedIds": [
+      "hsk1-0010",
+      "hsk1-0058",
+      "hsk1-0104",
+      "hsk1-0148",
+      "hsk1-0199",
+      "hsk1-0239"
+    ]
   },
   "hsk1-0269": {
     "id": "hsk1-0269",
@@ -12841,7 +14974,15 @@
       "74e radical"
     ],
     "explanationFr": "Le mot \"月\" en chinois peut signifier la lune, mais aussi un mois ou des choses qui se produisent mensuellement. Il est important de comprendre que selon le contexte, sa traduction peut varier.",
-    "translationEn": "month"
+    "translationEn": "month",
+    "relatedIds": [
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0011",
+      "hsk1-0012"
+    ]
   },
   "hsk1-0270": {
     "id": "hsk1-0270",
@@ -12892,7 +15033,15 @@
       "re-"
     ],
     "explanationFr": "Le mot \"再\" est utilisé pour indiquer une action qui se répète ou qui se produit une fois de plus. Il peut signifier \"encore\", \"à nouveau\" ou \"une nouvelle fois\". Il s'agit d'un moyen de montrer que quelque chose a déjà eu lieu et qu'il va se produire à nouveau.",
-    "translationEn": "again; once more"
+    "translationEn": "again; once more",
+    "relatedIds": [
+      "hsk1-0272",
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0079",
+      "hsk1-0203"
+    ]
   },
   "hsk1-0271": {
     "id": "hsk1-0271",
@@ -12940,8 +15089,16 @@
       "exister",
       "vivre"
     ],
-    "explanationFr": "Ce verbe signifie \"to exist\" ou \"to be alive\". En français, il s'agit du verbe \"être\", qui est utilisé pour indiquer l'état d'être quelque chose ou la localisation de quelqu'un. Il peut également être utilisé avant un autre verbe pour indiquer une action en cours.",
-    "translationEn": "to be at; to be in"
+    "explanationFr": "Le verbe 在 signifie « être (à un endroit), se trouver ». Il sert à localiser quelqu'un ou quelque chose. Placé devant un autre verbe, il marque une action en cours (« être en train de »).",
+    "translationEn": "to be at; to be in",
+    "relatedIds": [
+      "hsk1-0284",
+      "hsk1-0231",
+      "hsk1-0023",
+      "hsk1-0054",
+      "hsk1-0083",
+      "hsk1-0098"
+    ]
   },
   "hsk1-0272": {
     "id": "hsk1-0272",
@@ -12985,8 +15142,16 @@
     "translationFrAlt": [
       "Adieu !"
     ],
-    "explanationFr": "Le mot \"再见\" signifie \"goodbye\", mais avec une nuance différente qui suggère un revoir plus proche dans le futur. Il est utilisé pour dire au revoir à quelqu'un que l'on espère revoir rapidement.",
-    "translationEn": "to be leaving; goodbye"
+    "explanationFr": "Le mot 再见 signifie « au revoir ». Littéralement « se revoir », il suggère qu'on espère revoir l'interlocuteur prochainement. C'est la formule standard pour prendre congé.",
+    "translationEn": "to be leaving; goodbye",
+    "relatedIds": [
+      "hsk1-0086",
+      "hsk1-0270",
+      "hsk1-0101",
+      "hsk1-0210",
+      "hsk1-0044",
+      "hsk1-0240"
+    ]
   },
   "hsk1-0273": {
     "id": "hsk1-0273",
@@ -13033,7 +15198,15 @@
       "depuis longtemps"
     ],
     "explanationFr": "Le mot \"早\" peut signifier \"matin\", \"tôt\". Il est utilisé pour indiquer le début de la journée ou une action qui se produit au début d'une activité. N'oubliez pas que \"matin\" et \"tôt\" peuvent souvent être interchangeables en français.",
-    "translationEn": "early"
+    "translationEn": "early",
+    "relatedIds": [
+      "hsk1-0274",
+      "hsk1-0275",
+      "hsk1-0024",
+      "hsk1-0043",
+      "hsk1-0045",
+      "hsk1-0057"
+    ]
   },
   "hsk1-0274": {
     "id": "hsk1-0274",
@@ -13076,7 +15249,15 @@
     "theme": "général",
     "explanationFr": "Le mot \"早饭\" se traduit par \"petit déjeuner\" en français. Il s'agit du repas pris le matin, généralement composé de boissons et de petits plats légers. En chinois, on utilise souvent des termes comme \"份\", \"頓\" ou \"次\" pour indiquer qu'il s'agit d'un repas complet, mais en français, ces nuances ne sont pas nécessaires car le mot \"petit déjeuner\" englobe déjà cette idée.",
     "translationFrAlt": [],
-    "translationEn": "breakfast"
+    "translationEn": "breakfast",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0273",
+      "hsk1-0051",
+      "hsk1-0127",
+      "hsk1-0216",
+      "hsk1-0224"
+    ]
   },
   "hsk1-0275": {
     "id": "hsk1-0275",
@@ -13121,7 +15302,15 @@
       "matinée"
     ],
     "explanationFr": "Ce mot désigne la période du jour qui suit le lever du soleil et avant le début des activités quotidiennes. Il est utilisé pour décrire l'heure de l'aube ou le temps qui précède l'activité matinale.",
-    "translationEn": "morning"
+    "translationEn": "morning",
+    "relatedIds": [
+      "hsk1-0174",
+      "hsk1-0273",
+      "hsk1-0178",
+      "hsk1-0217",
+      "hsk1-0274",
+      "hsk1-0175"
+    ]
   },
   "hsk1-0276": {
     "id": "hsk1-0276",
@@ -13166,7 +15355,15 @@
     ],
     "explanationFr": "Le mot \"怎么\" est utilisé pour poser des questions dans le quotidien chinois. Il peut signifier \"comment\", \"quel(s)\" ou \"pourquoi\". Pour les débutants, il est important de comprendre que \"怎么\" est souvent utilisé comme un substitut à \"怎样\" (tāngme) et qu'il sert principalement à poser des questions indirectes. Par exemple, pour demander comment faire quelque chose, on pourrait dire \"怎么用这个？\" (zěnme yòng zhège?).",
     "explanation": "",
-    "translationEn": "how"
+    "translationEn": "how",
+    "relatedIds": [
+      "hsk1-0277",
+      "hsk1-0183",
+      "hsk1-0026",
+      "hsk1-0046",
+      "hsk1-0131",
+      "hsk1-0132"
+    ]
   },
   "hsk1-0277": {
     "id": "hsk1-0277",
@@ -13243,7 +15440,15 @@
       "que pensez-vous"
     ],
     "explanationFr": "",
-    "translationEn": "how about; how is it going"
+    "translationEn": "how about; how is it going",
+    "relatedIds": [
+      "hsk1-0276",
+      "hsk1-0183",
+      "hsk1-0026",
+      "hsk1-0046",
+      "hsk1-0131",
+      "hsk1-0132"
+    ]
   },
   "hsk1-0278": {
     "id": "hsk1-0278",
@@ -13289,8 +15494,16 @@
       "rechercher",
       "rendre la monnaie"
     ],
-    "explanationFr": "Le mot \"chercher\" signifie essentiellement \"to look for\". Il s'agit d'une action qui implique une recherche active, qu'elle soit physique ou conceptuelle. On l'utilise aussi pour exprimer le fait de demander quelqu'un ou quelque chose, ou encore de retourner quelque part. Par exemple, on peut chercher un objet, chercher des informations, chercher quelqu'un, etc.",
-    "translationEn": "to look for; to search for"
+    "explanationFr": "Le verbe 找 signifie « chercher ». Il s'emploie aussi bien pour chercher un objet, une information ou une personne, que pour « rendre la monnaie » dans un contexte commercial.",
+    "translationEn": "to look for; to search for",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0279": {
     "id": "hsk1-0279",
@@ -13335,7 +15548,15 @@
     ],
     "explanationFr": "Le caractère \"这\" est utilisé pour désigner quelque chose qui se trouve ici, près du locuteur ou du destinataire. Il sert à introduire un objet ou une idée proche dans le discours.",
     "explanation": "",
-    "translationEn": "this; these"
+    "translationEn": "this; these",
+    "relatedIds": [
+      "hsk1-0280",
+      "hsk1-0281",
+      "hsk1-0282",
+      "hsk1-0285",
+      "hsk1-0286",
+      "hsk1-0131"
+    ]
   },
   "hsk1-0280": {
     "id": "hsk1-0280",
@@ -13381,7 +15602,15 @@
       "de ce côté"
     ],
     "explanationFr": "Ce terme est utilisé pour indiquer à quelqu'un qu'il se trouve dans la bonne direction ou qu'il doit suivre un chemin spécifique. Il s'agit d'une invitation polie et courtoise.",
-    "translationEn": "around here"
+    "translationEn": "around here",
+    "relatedIds": [
+      "hsk1-0279",
+      "hsk1-0011",
+      "hsk1-0133",
+      "hsk1-0281",
+      "hsk1-0282",
+      "hsk1-0285"
+    ]
   },
   "hsk1-0281": {
     "id": "hsk1-0281",
@@ -13423,7 +15652,15 @@
     "theme": "général",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "this one"
+    "translationEn": "this one",
+    "relatedIds": [
+      "hsk1-0279",
+      "hsk1-0058",
+      "hsk1-0134",
+      "hsk1-0135",
+      "hsk1-0280",
+      "hsk1-0282"
+    ]
   },
   "hsk1-0282": {
     "id": "hsk1-0282",
@@ -13466,7 +15703,15 @@
     "explanationFr": "Le mot \"ici\" est utilisé pour indiquer un lieu proche du locuteur ou du lecteur. Il sert à désigner quelque chose qui se trouve dans la même pièce, le même endroit que celui où l'on parle ou écrit.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "here"
+    "translationEn": "here",
+    "relatedIds": [
+      "hsk1-0279",
+      "hsk1-0110",
+      "hsk1-0136",
+      "hsk1-0137",
+      "hsk1-0280",
+      "hsk1-0281"
+    ]
   },
   "hsk1-0283": {
     "id": "hsk1-0283",
@@ -13513,7 +15758,15 @@
       "véritable"
     ],
     "explanationFr": "Le mot \"真\" signifie \"vraiment\" en français, qui est utilisé pour exprimer la sincérité ou l'authenticité d'une affirmation. Il peut aussi être utilisé pour renforcer une déclaration en montrant qu'elle est exacte ou conforme à la réalité.",
-    "translationEn": "really; truly"
+    "translationEn": "really; truly",
+    "relatedIds": [
+      "hsk1-0013",
+      "hsk1-0041",
+      "hsk1-0053",
+      "hsk1-0079",
+      "hsk1-0203",
+      "hsk1-0253"
+    ]
   },
   "hsk1-0284": {
     "id": "hsk1-0284",
@@ -13564,7 +15817,15 @@
     ],
     "explanationFr": "Le terme \"en train de\" est utilisé pour indiquer qu'une action se déroule actuellement ou qu'un état persiste. Il s'agit d'une construction idiomatique qui permet de signaler que quelque chose se passe dans le moment présent.",
     "explanation": "",
-    "translationEn": "right now; at present"
+    "translationEn": "right now; at present",
+    "relatedIds": [
+      "hsk1-0271",
+      "hsk1-0231",
+      "hsk1-0023",
+      "hsk1-0054",
+      "hsk1-0083",
+      "hsk1-0098"
+    ]
   },
   "hsk1-0285": {
     "id": "hsk1-0285",
@@ -13610,7 +15871,15 @@
     ],
     "explanationFr": "Le mot \"ici\" est utilisé pour indiquer un endroit proche du locuteur ou du lecteur. Il sert à désigner quelque chose qui se trouve dans la même pièce, le même lieu que vous. On l'utilise souvent quand on parle de proximité spatiale.",
     "explanation": "",
-    "translationEn": "here"
+    "translationEn": "here",
+    "relatedIds": [
+      "hsk1-0279",
+      "hsk1-0140",
+      "hsk1-0141",
+      "hsk1-0280",
+      "hsk1-0281",
+      "hsk1-0282"
+    ]
   },
   "hsk1-0286": {
     "id": "hsk1-0286",
@@ -13656,7 +15925,15 @@
     ],
     "explanationFr": "Le mot \"ces\" est utilisé pour désigner des objets ou des personnes précises, déjà mentionnés dans la conversation ou le texte. Il s'agit d'un pronom démonstratif qui remplace souvent un nom au pluriel.",
     "explanation": "",
-    "translationEn": "these"
+    "translationEn": "these",
+    "relatedIds": [
+      "hsk1-0279",
+      "hsk1-0239",
+      "hsk1-0142",
+      "hsk1-0143",
+      "hsk1-0280",
+      "hsk1-0281"
+    ]
   },
   "hsk1-0287": {
     "id": "hsk1-0287",
@@ -13704,7 +15981,15 @@
     "theme": "général",
     "translationFrAlt": [],
     "explanationFr": "",
-    "translationEn": "those; these"
+    "translationEn": "those; these",
+    "relatedIds": [
+      "hsk1-0010",
+      "hsk1-0058",
+      "hsk1-0104",
+      "hsk1-0148",
+      "hsk1-0199",
+      "hsk1-0239"
+    ]
   },
   "hsk1-0288": {
     "id": "hsk1-0288",
@@ -13749,7 +16034,15 @@
       "connaître"
     ],
     "explanationFr": "Le mot 知道 (zhīdào) signifie \"connaître\" ou \"être informé\". Il peut se référer à une connaissance acquise par l'expérience, la lecture ou l'apprentissage. Ce terme est couramment utilisé pour exprimer que quelqu'un a des informations ou comprend quelque chose.",
-    "translationEn": "only"
+    "translationEn": "only",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0289": {
     "id": "hsk1-0289",
@@ -13795,7 +16088,15 @@
     ],
     "explanationFr": "Le mot \"Chine\" est utilisé pour désigner le pays qui occupe une grande partie du continent asiatique. Il s'agit du nom officiel de la République populaire de Chine, un grand pays avec une longue histoire et une culture riche. Lorsque vous utilisez ce terme, pensez à l'étendue géographique et historique du pays.",
     "explanation": "",
-    "translationEn": "China"
+    "translationEn": "China",
+    "relatedIds": [
+      "hsk1-0066",
+      "hsk1-0290",
+      "hsk1-0291",
+      "hsk1-0292",
+      "hsk1-0293",
+      "hsk1-0004"
+    ]
   },
   "hsk1-0290": {
     "id": "hsk1-0290",
@@ -13841,7 +16142,15 @@
     ],
     "explanationFr": "Le terme \"chinois\" désigne la langue parlée et écrite par les habitants du pays de la Chine. Il est important de noter qu'il existe plusieurs dialectes et variétés linguistiques, mais le mandarin, qui se prononce \"zhōngwén\", est la forme standard utilisée dans l'administration et la communication quotidienne.",
     "explanation": "",
-    "translationEn": "to know"
+    "translationEn": "to know",
+    "relatedIds": [
+      "hsk1-0289",
+      "hsk1-0291",
+      "hsk1-0292",
+      "hsk1-0293",
+      "hsk1-0004",
+      "hsk1-0006"
+    ]
   },
   "hsk1-0291": {
     "id": "hsk1-0291",
@@ -13886,7 +16195,15 @@
       "zénith"
     ],
     "explanationFr": "Le terme \"midi\" désigne la période du jour qui se situe entre le déjeuner et le début de l'après-midi, généralement autour de 12 heures. Il est utilisé pour marquer une pause ou un moment spécifique dans la journée.",
-    "translationEn": "China"
+    "translationEn": "China",
+    "relatedIds": [
+      "hsk1-0178",
+      "hsk1-0224",
+      "hsk1-0237",
+      "hsk1-0289",
+      "hsk1-0290",
+      "hsk1-0292"
+    ]
   },
   "hsk1-0292": {
     "id": "hsk1-0292",
@@ -13931,7 +16248,15 @@
     ],
     "explanationFr": "L'école secondaire est l'étape éducative qui suit immédiatement l'école primaire et précède généralement le lycée ou la formation professionnelle. Elle comprend les années de 6e, 5e et 4e (en France, cela correspond approximativement aux classes de 13 à 15 ans). Dans cette phase, les élèves commencent à se spécialiser dans certaines matières pour préparer leur avenir académique ou professionnel.",
     "explanation": "",
-    "translationEn": "Chinese (language)"
+    "translationEn": "Chinese (language)",
+    "relatedIds": [
+      "hsk1-0293",
+      "hsk1-0028",
+      "hsk1-0029",
+      "hsk1-0211",
+      "hsk1-0235",
+      "hsk1-0236"
+    ]
   },
   "hsk1-0293": {
     "id": "hsk1-0293",
@@ -13976,8 +16301,16 @@
     "translationFrAlt": [
       "élève d'une école secondaire"
     ],
-    "explanationFr": "Le terme \"élève du lycée\" est utilisé pour désigner un étudiant qui fréquente la seconde ou la première année d'un lycée, ce qui correspond à l'anglais \"middle-school student\". Cependant, en français, on utilise plus couramment le terme \"lycéen\" pour cette tranche d'âge. L'élève du lycée est donc quelqu'un qui se trouve entre la fin de l'école primaire et le début de l'université.",
-    "translationEn": "midday"
+    "explanationFr": "Le terme 中学生 désigne un élève du secondaire en Chine (collège ou lycée). En français on dira « collégien » ou « lycéen » selon le niveau ; il s'agit d'un élève situé entre l'école primaire et l'université.",
+    "translationEn": "midday",
+    "relatedIds": [
+      "hsk1-0249",
+      "hsk1-0292",
+      "hsk1-0029",
+      "hsk1-0236",
+      "hsk1-0028",
+      "hsk1-0211"
+    ]
   },
   "hsk1-0294": {
     "id": "hsk1-0294",
@@ -14025,7 +16358,15 @@
       "arrêter"
     ],
     "explanationFr": "Le mot \"habiter\" signifie vivre dans un endroit, résider ou demeurer régulièrement. Il peut aussi s'appliquer à une situation où quelque chose reste en place ou se stabilise.",
-    "translationEn": "middle school"
+    "translationEn": "middle school",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0295": {
     "id": "hsk1-0295",
@@ -14070,7 +16411,15 @@
       "bureau"
     ],
     "explanationFr": "Le mot \"桌子\" en chinois se traduit par \"table\" en français. Il s'agit généralement d'une surface horizontale utilisée pour manger, travailler ou poser des objets. En chinois, il existe différents classificateurs selon le contexte : 張 (zhāng) si la table est grande et solide, 套 (tào) si elle fait partie d'un ensemble de meubles.",
-    "translationEn": "student of middle school"
+    "translationEn": "student of middle school",
+    "relatedIds": [
+      "hsk1-0008",
+      "hsk1-0009",
+      "hsk1-0049",
+      "hsk1-0068",
+      "hsk1-0089",
+      "hsk1-0262"
+    ]
   },
   "hsk1-0296": {
     "id": "hsk1-0296",
@@ -14115,7 +16464,15 @@
       "mot"
     ],
     "explanationFr": "Le caractère est un symbole graphique utilisé dans l'écriture chinoise. Il peut représenter un mot, une partie de mot ou un radical qui sert à la décomposition des mots plus longs. En Chine ancienne, les hommes de 20 ans recevaient souvent un nom de caractère comme marque d'un passage à l'âge adulte.",
-    "translationEn": "to live; to reside"
+    "translationEn": "to live; to reside",
+    "relatedIds": [
+      "hsk1-0070",
+      "hsk1-0130",
+      "hsk1-0004",
+      "hsk1-0006",
+      "hsk1-0008",
+      "hsk1-0009"
+    ]
   },
   "hsk1-0297": {
     "id": "hsk1-0297",
@@ -14166,7 +16523,15 @@
       "place assise"
     ],
     "explanationFr": "Le verbe \"s'asseoir\" signifie prendre place sur une chaise ou un siège. Il peut aussi être utilisé pour indiquer l'action d'emprunter un moyen de transport, comme un bus ou un avion. Parfois, il est utilisé métaphoriquement pour dire que quelque chose a des résultats positifs.",
-    "translationEn": "table"
+    "translationEn": "table",
+    "relatedIds": [
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022",
+      "hsk1-0027"
+    ]
   },
   "hsk1-0298": {
     "id": "hsk1-0298",
@@ -14218,8 +16583,16 @@
       "devenir",
       "servir de"
     ],
-    "explanationFr": "Le verbe \"faire\" est très polyvalent en français et peut signifier \"to make\", \"to produce\", \"to write\", \"to compose\", \"to do\", \"to engage in\", \"to hold (a party etc)\", \"to be (an intermediary, a good student etc)\", \"to become (husband and wife, friends etc)\", \"to serve as\" ou \"to be used for\". Il est utilisé de manière très flexible et doit être compris dans le contexte.",
-    "translationEn": "character"
+    "explanationFr": "Le verbe 做 est très polyvalent : il signifie « faire, fabriquer, produire, accomplir » et entre dans de très nombreuses expressions (做饭 cuisiner, 做事 faire quelque chose). Il indique aussi le fait d'occuper un rôle (« être professeur, être ami »).",
+    "translationEn": "character",
+    "relatedIds": [
+      "hsk1-0299",
+      "hsk1-0001",
+      "hsk1-0015",
+      "hsk1-0018",
+      "hsk1-0021",
+      "hsk1-0022"
+    ]
   },
   "hsk1-0299": {
     "id": "hsk1-0299",
@@ -14272,7 +16645,15 @@
       "faire la cuisine"
     ],
     "explanationFr": "",
-    "translationEn": "to sit; to take (seat)"
+    "translationEn": "to sit; to take (seat)",
+    "relatedIds": [
+      "hsk1-0050",
+      "hsk1-0298",
+      "hsk1-0127",
+      "hsk1-0216",
+      "hsk1-0224",
+      "hsk1-0274"
+    ]
   },
   "hsk1-0300": {
     "id": "hsk1-0300",
@@ -14315,6 +16696,14 @@
     "explanationFr": "Le mot \"hier\" est utilisé pour désigner le jour qui a précédé celui dont on parle. Il s'agit du temps passé immédiatement antérieur à l'instant présent ou au moment de la conversation.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to do; to make"
+    "translationEn": "to do; to make",
+    "relatedIds": [
+      "hsk1-0207",
+      "hsk1-0006",
+      "hsk1-0129",
+      "hsk1-0094",
+      "hsk1-0208",
+      "hsk1-0245"
+    ]
   }
 }

@@ -44,9 +44,16 @@
       "(interjection) Ah",
       "(une particule modale montrant l'affirmation, l'approbation, ou le consentement)"
     ],
-    "explanationFr": "La particule \"啊\" est utilisée pour exprimer l'approbation, l'affirmation ou le consentement. Elle peut aussi être traduite par \"ah !\" ou \"oh !\" selon le contexte. Elle sert souvent à marquer la surprise, l'étonnement ou l'admiration.",
+    "explanationFr": "Particule modale placée en fin de phrase pour adoucir le ton, marquer l'évidence ou exprimer la surprise. Elle peut se traduire par « ah ! » ou « oh ! » selon le contexte, et sert souvent à confirmer une affirmation ou à manifester l'étonnement.",
     "explanation": "",
-    "translationEn": "particle that marks confirmation; 'right'; 'I see' (often at the end)"
+    "translationEn": "particle that marks confirmation; 'right'; 'I see' (often at the end)",
+    "relatedIds": [
+      "hsk2-0033",
+      "hsk2-0048",
+      "hsk2-0188",
+      "hsk2-0075",
+      "hsk2-0190"
+    ]
   },
   "hsk2-0002": {
     "id": "hsk2-0002",
@@ -97,8 +104,15 @@
       "hobby",
       "passion"
     ],
-    "explanationFr": "",
-    "translationEn": "hobby; passion"
+    "explanationFr": "Désigne une activité pratiquée régulièrement pour le plaisir, sans contrainte professionnelle. Le mot est composé de « aimer » et « bon », littéralement « ce que l'on aime ». On l'emploie pour parler de loisirs, de passions ou de centres d'intérêt personnels.",
+    "translationEn": "hobby; passion",
+    "relatedIds": [
+      "hsk2-0144",
+      "hsk2-0185",
+      "hsk2-0179",
+      "hsk2-0165",
+      "hsk2-0087"
+    ]
   },
   "hsk2-0003": {
     "id": "hsk2-0003",
@@ -142,8 +156,15 @@
     "translationFrAlt": [
       "couleur blanche"
     ],
-    "explanationFr": "Le mot \"blanc\" en français désigne une couleur pure et lumineuse, opposée au noir. Il est utilisé dans divers contextes, littéraires ou quotidiens. Notez que \"blanc\" peut aussi avoir des connotations politiques, comme \"réactionnaire\" ou \"anti-communiste\", mais c'est un usage figuré qui nécessite une connaissance approfondie du contexte.",
-    "translationEn": "white (color)"
+    "explanationFr": "Désigne la couleur blanche, formée de 白 (blanc) et 色 (couleur). On l'emploie pour décrire des objets, des vêtements ou la lumière. Comme les autres noms de couleur de cette série, il se construit toujours avec 色.",
+    "translationEn": "white (color)",
+    "relatedIds": [
+      "hsk2-0053",
+      "hsk2-0055",
+      "hsk2-0094",
+      "hsk2-0167",
+      "hsk2-0054"
+    ]
   },
   "hsk2-0004": {
     "id": "hsk2-0004",
@@ -196,8 +217,15 @@
       "équipe",
       "service"
     ],
-    "explanationFr": "",
-    "translationEn": "class; team; service"
+    "explanationFr": "Désigne une classe d'élèves, une équipe ou un service de travail. C'est aussi un classificateur pour les vols, trains ou groupes organisés. Sert très souvent dans le vocabulaire scolaire pour parler de la classe à laquelle on appartient.",
+    "translationEn": "class; team; service",
+    "relatedIds": [
+      "hsk2-0065",
+      "hsk2-0079",
+      "hsk2-0043",
+      "hsk2-0080",
+      "hsk2-0081"
+    ]
   },
   "hsk2-0005": {
     "id": "hsk2-0005",
@@ -258,8 +286,15 @@
     ],
     "theme": "politesse",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to help"
+    "explanationFr": "Verbe signifiant « aider » ou « soutenir » quelqu'un dans une tâche. C'est la forme courte, souvent utilisée avec un complément d'objet (帮我 « m'aider »). Pour exprimer l'action seule, on lui préfère 帮忙.",
+    "translationEn": "to help",
+    "relatedIds": [
+      "hsk2-0006",
+      "hsk2-0137",
+      "hsk2-0042",
+      "hsk2-0068",
+      "hsk2-0122"
+    ]
   },
   "hsk2-0006": {
     "id": "hsk2-0006",
@@ -307,8 +342,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to help"
+    "explanationFr": "Verbe-objet signifiant « donner un coup de main », formé de 帮 (aider) et 忙 (occupé). Il s'emploie de manière intransitive ou avec une personne comme bénéficiaire (帮我的忙). C'est l'équivalent courant de « rendre service ».",
+    "translationEn": "to help",
+    "relatedIds": [
+      "hsk2-0005",
+      "hsk2-0137",
+      "hsk2-0042",
+      "hsk2-0068",
+      "hsk2-0122"
+    ]
   },
   "hsk2-0007": {
     "id": "hsk2-0007",
@@ -377,8 +419,15 @@
       "sac",
       "paquet"
     ],
-    "explanationFr": "",
-    "translationEn": "bag; package"
+    "explanationFr": "Désigne un sac, un paquet ou tout contenant souple. Comme verbe, il signifie « envelopper » ou « inclure ». On retrouve ce caractère dans 书包 (cartable) et de nombreux noms d'objets contenants.",
+    "translationEn": "bag; package",
+    "relatedIds": [
+      "hsk2-0135",
+      "hsk2-0086",
+      "hsk2-0008",
+      "hsk2-0105",
+      "hsk2-0134"
+    ]
   },
   "hsk2-0008": {
     "id": "hsk2-0008",
@@ -430,8 +479,15 @@
       "cahier",
       "carnet"
     ],
-    "explanationFr": "",
-    "translationEn": "notebook; book"
+    "explanationFr": "Désigne un cahier ou un carnet, typiquement utilisé à l'école pour écrire. Le suffixe 子 est ici purement nominal, sans signification propre. On l'emploie comme tout objet scolaire courant.",
+    "translationEn": "notebook; book",
+    "relatedIds": [
+      "hsk2-0010",
+      "hsk2-0135",
+      "hsk2-0065",
+      "hsk2-0004",
+      "hsk2-0081"
+    ]
   },
   "hsk2-0009": {
     "id": "hsk2-0009",
@@ -506,8 +562,15 @@
       "comparer",
       "que (comparaison)"
     ],
-    "explanationFr": "",
-    "translationEn": "to compare"
+    "explanationFr": "Préposition de comparaison placée entre les deux termes comparés : A 比 B + adjectif (« A est plus … que B »). C'est l'outil grammatical de base pour exprimer une supériorité ou une infériorité en chinois.",
+    "translationEn": "to compare",
+    "relatedIds": [
+      "hsk2-0197",
+      "hsk2-0024",
+      "hsk2-0044",
+      "hsk2-0089",
+      "hsk2-0151"
+    ]
   },
   "hsk2-0010": {
     "id": "hsk2-0010",
@@ -555,8 +618,15 @@
       "traits composant les caractères chinois",
       "spécificatif des sommes d'argent et des affaires financières"
     ],
-    "explanationFr": "Le caractère 笔 (bǐ) peut désigner différents objets ou concepts liés à l'écriture, comme un stylo, un crayon, un pinceau pour la calligraphie ou le peinture, ou encore une ligne ou un trait. Il est également utilisé comme classificateur pour les sommes d'argent.",
-    "translationEn": "pen"
+    "explanationFr": "Désigne un instrument d'écriture : stylo, crayon, pinceau ou plume. Sert aussi de classificateur pour les sommes d'argent ou les transactions. Le caractère évoque originellement le bambou et le poil utilisés en calligraphie.",
+    "translationEn": "pen",
+    "relatedIds": [
+      "hsk2-0008",
+      "hsk2-0135",
+      "hsk2-0065",
+      "hsk2-0057",
+      "hsk2-0064"
+    ]
   },
   "hsk2-0011": {
     "id": "hsk2-0011",
@@ -605,8 +675,15 @@
     ],
     "theme": "négation",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "ne… not!; other; to leave"
+    "explanationFr": "Adverbe de négation impérative : « ne … pas ! », utilisé pour interdire ou déconseiller une action (别走 : « ne pars pas »). Il peut aussi être un adjectif signifiant « autre » dans certains composés.",
+    "translationEn": "ne… not!; other; to leave",
+    "relatedIds": [
+      "hsk2-0150",
+      "hsk2-0034",
+      "hsk2-0085",
+      "hsk2-0190",
+      "hsk2-0098"
+    ]
   },
   "hsk2-0012": {
     "id": "hsk2-0012",
@@ -657,8 +734,15 @@
       "timide",
       "confus"
     ],
-    "explanationFr": "Ce mot exprime la sensation d'être inconfortable dans certaines situations sociales, souvent en raison d'une situation qui a dérangé l'interlocuteur ou soi-même. Il peut également signifier une excuse légère pour des malentendus ou des inconvénients mineurs.",
-    "translationEn": "sorry; excuse me; embarrassed"
+    "explanationFr": "Expression polie signifiant « excusez-moi » ou « je suis gêné(e) ». Formée de 不 (négation), 好 (bon) et 意思 (sens), elle exprime un léger embarras. On l'emploie pour s'excuser, refuser poliment ou attirer l'attention.",
+    "translationEn": "sorry; excuse me; embarrassed",
+    "relatedIds": [
+      "hsk2-0013",
+      "hsk2-0179",
+      "hsk2-0099",
+      "hsk2-0176",
+      "hsk2-0136"
+    ]
   },
   "hsk2-0013": {
     "id": "hsk2-0013",
@@ -704,8 +788,15 @@
       "pas mal",
       "assez bien"
     ],
-    "explanationFr": "Ce mot est souvent utilisé pour exprimer un jugement positif sans être trop enthousiaste. Il peut signifier \"correct\", \"pas mal\" ou \"assez bon\". C'est un terme neutre qui ne s'emploie pas dans des situations formelles ou très positives.",
-    "translationEn": "not bad; good"
+    "explanationFr": "Adjectif courant pour exprimer un jugement positif modéré : « pas mal », « bien ». Littéralement « pas faux », il sous-entend une appréciation favorable mais sobre. Très utilisé dans les conversations quotidiennes pour féliciter ou évaluer.",
+    "translationEn": "not bad; good",
+    "relatedIds": [
+      "hsk2-0026",
+      "hsk2-0012",
+      "hsk2-0179",
+      "hsk2-0099",
+      "hsk2-0136"
+    ]
   },
   "hsk2-0014": {
     "id": "hsk2-0014",
@@ -754,7 +845,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "long; to last"
+    "translationEn": "long; to last",
+    "explanationFr": "Adjectif signifiant « long » dans le temps ou dans l'espace. Il s'emploie pour décrire la durée d'un événement ou la longueur d'un objet. Attention : ce même caractère se lit zhǎng et signifie « grandir » dans d'autres mots.",
+    "relatedIds": [
+      "hsk2-0184",
+      "hsk2-0143",
+      "hsk2-0070",
+      "hsk2-0041",
+      "hsk2-0083"
+    ]
   },
   "hsk2-0015": {
     "id": "hsk2-0015",
@@ -805,8 +904,15 @@
       "gare",
       "arrêt"
     ],
-    "explanationFr": "",
-    "translationEn": "station; stop"
+    "explanationFr": "Désigne un arrêt ou une station, par exemple de bus, de tramway ou de train. Composé de 车 (véhicule) et 站 (station), c'est le lieu où l'on attend ou où l'on monte dans un transport.",
+    "translationEn": "station; stop",
+    "relatedIds": [
+      "hsk2-0186",
+      "hsk2-0036",
+      "hsk2-0046",
+      "hsk2-0066",
+      "hsk2-0028"
+    ]
   },
   "hsk2-0016": {
     "id": "hsk2-0016",
@@ -854,8 +960,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to go out"
+    "explanationFr": "Verbe simple signifiant « sortir », « émettre » ou « produire ». Très productif, il entre dans de nombreux composés directionnels comme 出来, 出去, 出门, 出国. Il marque le passage de l'intérieur vers l'extérieur.",
+    "translationEn": "to go out",
+    "relatedIds": [
+      "hsk2-0018",
+      "hsk2-0019",
+      "hsk2-0020",
+      "hsk2-0021",
+      "hsk2-0069"
+    ]
   },
   "hsk2-0017": {
     "id": "hsk2-0017",
@@ -921,8 +1034,15 @@
     ],
     "theme": "meuble",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to come out; to leave"
+    "explanationFr": "Désigne un lit, qu'il s'agisse d'un meuble pour dormir ou d'une couche en général. C'est aussi un classificateur pour certains types de literie (一床被子 : « une couverture »).",
+    "translationEn": "to come out; to leave",
+    "relatedIds": [
+      "hsk2-0063",
+      "hsk2-0091",
+      "hsk2-0100",
+      "hsk2-0136",
+      "hsk2-0193"
+    ]
   },
   "hsk2-0018": {
     "id": "hsk2-0018",
@@ -966,9 +1086,16 @@
     "translationFrAlt": [
       "partir à l'étranger"
     ],
-    "explanationFr": "Ce terme désigne l'action de se rendre dans un autre pays, généralement pour une période plus longue que celle d'un voyage touristique. Il peut être utilisé dans différents contextes comme études, travail ou résidence.",
+    "explanationFr": "Verbe-objet signifiant « aller à l'étranger », formé de 出 (sortir) et 国 (pays). On l'utilise pour parler d'études, de travail ou de voyages hors de Chine. Son sens est plus engageant qu'un simple voyage touristique.",
     "explanation": "",
-    "translationEn": "bed (furniture); classifier for beds"
+    "translationEn": "bed (furniture); classifier for beds",
+    "relatedIds": [
+      "hsk2-0146",
+      "hsk2-0096",
+      "hsk2-0020",
+      "hsk2-0016",
+      "hsk2-0066"
+    ]
   },
   "hsk2-0019": {
     "id": "hsk2-0019",
@@ -1016,8 +1143,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to go abroad"
+    "explanationFr": "Verbe directionnel composé de 出 (sortir) et 来 (venir vers le locuteur). Il indique un mouvement vers l'extérieur en direction de celui qui parle, par exemple quand quelqu'un sort d'une pièce et s'approche de nous.",
+    "translationEn": "to go abroad",
+    "relatedIds": [
+      "hsk2-0021",
+      "hsk2-0016",
+      "hsk2-0049",
+      "hsk2-0061",
+      "hsk2-0072"
+    ]
   },
   "hsk2-0020": {
     "id": "hsk2-0020",
@@ -1066,8 +1200,15 @@
       "bouger",
       "dérangement"
     ],
-    "explanationFr": "Le mot \"sortir\" est utilisé pour indiquer le mouvement de l'intérieur vers l'extérieur, généralement en quittant une maison ou un lieu fermé. Il peut également signifier partir d'un endroit pour aller ailleurs. \"Quitter la maison\" se réfère spécifiquement à partir de chez soi.",
-    "translationEn": "to come out (from oneself)"
+    "explanationFr": "Verbe-objet signifiant « sortir de chez soi », formé de 出 (sortir) et 门 (porte). On l'utilise pour parler du fait de quitter la maison, sans préciser la destination. C'est un acte du quotidien.",
+    "translationEn": "to come out (from oneself)",
+    "relatedIds": [
+      "hsk2-0016",
+      "hsk2-0021",
+      "hsk2-0018",
+      "hsk2-0100",
+      "hsk2-0101"
+    ]
   },
   "hsk2-0021": {
     "id": "hsk2-0021",
@@ -1115,8 +1256,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to go out (of one's home)"
+    "explanationFr": "Verbe directionnel composé de 出 (sortir) et 去 (aller, s'éloigner). Il indique un mouvement vers l'extérieur qui s'éloigne du locuteur, contrairement à 出来 qui marque un rapprochement.",
+    "translationEn": "to go out (of one's home)",
+    "relatedIds": [
+      "hsk2-0019",
+      "hsk2-0016",
+      "hsk2-0062",
+      "hsk2-0073",
+      "hsk2-0127"
+    ]
   },
   "hsk2-0022": {
     "id": "hsk2-0022",
@@ -1162,8 +1310,15 @@
       "phrase courte",
       "paroles"
     ],
-    "explanationFr": "Le mot \"词\" en chinois signifie \"mot\" ou \"terme\". Il peut aussi désigner \"paroles\", qui sont les mots prononcés dans une conversation ou une chanson. Dans un contexte littéraire, il fait référence aux \"paroles\" d'une chanson ou à des vers de poésie, notamment ceux qui étaient populaires pendant la dynastie Song.",
-    "translationEn": "to go out; to leave"
+    "explanationFr": "Désigne un mot, un terme ou les paroles d'une chanson. Il s'oppose à 字 (caractère isolé) en désignant l'unité lexicale. Dans un contexte littéraire, il évoque aussi un genre poétique célèbre sous la dynastie Song.",
+    "translationEn": "to go out; to leave",
+    "relatedIds": [
+      "hsk2-0176",
+      "hsk2-0141",
+      "hsk2-0042",
+      "hsk2-0068",
+      "hsk2-0038"
+    ]
   },
   "hsk2-0023": {
     "id": "hsk2-0023",
@@ -1217,8 +1372,15 @@
     ],
     "theme": "temps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "word; vocabulary"
+    "explanationFr": "Classificateur signifiant « fois », utilisé pour compter le nombre d'occurrences d'une action (去过两次 : « y être allé deux fois »). Il se place toujours après un nombre et avant ou après le verbe selon la construction.",
+    "translationEn": "word; vocabulary",
+    "relatedIds": [
+      "hsk2-0098",
+      "hsk2-0143",
+      "hsk2-0153",
+      "hsk2-0192",
+      "hsk2-0181"
+    ]
   },
   "hsk2-0024": {
     "id": "hsk2-0024",
@@ -1287,8 +1449,15 @@
       "depuis",
       "de"
     ],
-    "explanationFr": "",
-    "translationEn": "times; occasions, classifier for ordered sequences"
+    "explanationFr": "Préposition indiquant un point de départ dans l'espace ou le temps : « depuis », « à partir de ». Elle se construit typiquement avec un complément, comme 从北京来 (« venir de Pékin »).",
+    "translationEn": "times; occasions, classifier for ordered sequences",
+    "relatedIds": [
+      "hsk2-0025",
+      "hsk2-0089",
+      "hsk2-0151",
+      "hsk2-0044",
+      "hsk2-0174"
+    ]
   },
   "hsk2-0025": {
     "id": "hsk2-0025",
@@ -1329,10 +1498,17 @@
       "level:hsk2"
     ],
     "theme": "famille",
-    "explanationFr": "Ce terme indique une période longue et continue qui commence dès la naissance ou l'enfance. Il est utilisé pour souligner le début d'une habitude, d'un comportement ou d'une expérience qui a commencé très tôt dans la vie de quelqu'un.",
+    "explanationFr": "Adverbe signifiant « depuis l'enfance », formé de 从 (depuis) et 小 (petit). Il s'emploie pour évoquer une habitude, un goût ou une expérience ancrés dès le plus jeune âge.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "since; from"
+    "translationEn": "since; from",
+    "relatedIds": [
+      "hsk2-0024",
+      "hsk2-0160",
+      "hsk2-0159",
+      "hsk2-0107",
+      "hsk2-0170"
+    ]
   },
   "hsk2-0026": {
     "id": "hsk2-0026",
@@ -1408,8 +1584,15 @@
       "erreur",
       "incorrect"
     ],
-    "explanationFr": "",
-    "translationEn": "since childhood"
+    "explanationFr": "Adjectif signifiant « faux » ou « erroné », et nom pour désigner une erreur. On l'oppose à 对 (correct). Il sert aussi dans 不错 (« pas mal », littéralement « pas faux »).",
+    "translationEn": "since childhood",
+    "relatedIds": [
+      "hsk2-0013",
+      "hsk2-0038",
+      "hsk2-0141",
+      "hsk2-0150",
+      "hsk2-0067"
+    ]
   },
   "hsk2-0027": {
     "id": "hsk2-0027",
@@ -1462,8 +1645,15 @@
       "jouer",
       "faire"
     ],
-    "explanationFr": "",
-    "translationEn": "wrong; erroneous"
+    "explanationFr": "Verbe très polyvalent signifiant à la base « frapper », mais qui couvre une foule d'actions concrètes : passer un appel, jouer à un sport, faire (du taxi, du sport), envoyer. Le sens précis dépend du complément qui suit.",
+    "translationEn": "wrong; erroneous",
+    "relatedIds": [
+      "hsk2-0028",
+      "hsk2-0029",
+      "hsk2-0105",
+      "hsk2-0142",
+      "hsk2-0114"
+    ]
   },
   "hsk2-0028": {
     "id": "hsk2-0028",
@@ -1511,8 +1701,15 @@
     ],
     "theme": "transport",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to hit; to play; to do"
+    "explanationFr": "Verbe-objet signifiant « prendre un taxi », formé de 打 (faire) et 车 (véhicule). C'est l'équivalent courant de « héler un taxi » dans les conversations sur les transports urbains.",
+    "translationEn": "to hit; to play; to do",
+    "relatedIds": [
+      "hsk2-0027",
+      "hsk2-0015",
+      "hsk2-0036",
+      "hsk2-0046",
+      "hsk2-0186"
+    ]
   },
   "hsk2-0029": {
     "id": "hsk2-0029",
@@ -1560,8 +1757,15 @@
     ],
     "theme": "action",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to take a taxi"
+    "explanationFr": "Verbe résultatif signifiant « ouvrir », formé de 打 (faire) et 开 (s'ouvrir). On l'emploie aussi bien pour ouvrir une porte, un livre que pour allumer un appareil électronique. C'est le contraire de 关 (fermer).",
+    "translationEn": "to take a taxi",
+    "relatedIds": [
+      "hsk2-0027",
+      "hsk2-0078",
+      "hsk2-0079",
+      "hsk2-0105",
+      "hsk2-0148"
+    ]
   },
   "hsk2-0030": {
     "id": "hsk2-0030",
@@ -1607,8 +1811,15 @@
       "cependant",
       "seulement"
     ],
-    "explanationFr": "Le caractère 但 est utilisé pour exprimer une limitation ou une restriction, soulignant qu'une action ou une idée ne va pas au-delà d'un certain point. Il peut être traduit par \"seulement\", \"uniquement\" ou \"juste\". Ces termes mettent l'accent sur la restriction de ce qui est dit avant.",
-    "translationEn": "to open"
+    "explanationFr": "Conjonction littéraire signifiant « mais », « cependant », équivalent court de 但是. Elle introduit une opposition ou une restriction et s'emploie surtout à l'écrit ou dans un registre soutenu.",
+    "translationEn": "to open",
+    "relatedIds": [
+      "hsk2-0031",
+      "hsk2-0138",
+      "hsk2-0139",
+      "hsk2-0174",
+      "hsk2-0052"
+    ]
   },
   "hsk2-0031": {
     "id": "hsk2-0031",
@@ -1652,9 +1863,16 @@
       "cependant",
       "alors que"
     ],
-    "explanationFr": "Le mot \"但是\" est utilisé pour introduire une idée qui contraste avec ce qui a été dit précédemment, exprimant un certain doute ou une nuance. Il peut être traduit par \"mais\", \"cependant\" ou \"toutefois\". Ces trois termes sont interchangeables dans la plupart des contextes et mettent en évidence une opposition ou une contradiction.",
+    "explanationFr": "Conjonction signifiant « mais », utilisée pour introduire une idée qui s'oppose à ce qui précède. C'est la forme la plus courante à l'oral. Elle se construit souvent en paire avec 虽然 (« bien que »).",
     "explanation": "",
-    "translationEn": "but"
+    "translationEn": "but",
+    "relatedIds": [
+      "hsk2-0030",
+      "hsk2-0138",
+      "hsk2-0139",
+      "hsk2-0052",
+      "hsk2-0174"
+    ]
   },
   "hsk2-0032": {
     "id": "hsk2-0032",
@@ -1705,8 +1923,15 @@
       "falloir",
       "être sûr de"
     ],
-    "explanationFr": "Le mot \"devoir\" en français peut être utilisé pour exprimer des obligations, qu'elles soient liées à la loi, aux règles ou à l'éthique. Il sert également à indiquer une nécessité impérative. C'est un verbe qui se conjugue selon le sujet.",
-    "translationEn": "but; however"
+    "explanationFr": "Particule structurelle placée après un verbe pour introduire un complément de degré, de manière ou de résultat (跑得很快 : « courir très vite »). Elle relie le verbe à une appréciation de la manière dont l'action est accomplie.",
+    "translationEn": "but; however",
+    "relatedIds": [
+      "hsk2-0033",
+      "hsk2-0048",
+      "hsk2-0188",
+      "hsk2-0001",
+      "hsk2-0067"
+    ]
   },
   "hsk2-0033": {
     "id": "hsk2-0033",
@@ -1770,8 +1995,15 @@
       "particule",
       "(adverbe)"
     ],
-    "explanationFr": "",
-    "translationEn": "particle (marks adverbial); like -ly"
+    "explanationFr": "Particule structurelle qui transforme un adjectif en adverbe : adjectif + 地 + verbe (高兴地说 : « dire joyeusement »). Elle marque la manière dont l'action est faite et se distingue de 的 (possession) et 得 (complément).",
+    "translationEn": "particle (marks adverbial); like -ly",
+    "relatedIds": [
+      "hsk2-0032",
+      "hsk2-0048",
+      "hsk2-0188",
+      "hsk2-0001",
+      "hsk2-0190"
+    ]
   },
   "hsk2-0034": {
     "id": "hsk2-0034",
@@ -1820,8 +2052,15 @@
     ],
     "theme": "temps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to wait; to await"
+    "explanationFr": "Verbe signifiant « attendre » ou « patienter ». Souvent suivi d'un complément (等一下 : « attendre un instant »), il sert aussi à demander à quelqu'un de patienter brièvement.",
+    "translationEn": "to wait; to await",
+    "relatedIds": [
+      "hsk2-0171",
+      "hsk2-0085",
+      "hsk2-0193",
+      "hsk2-0150",
+      "hsk2-0067"
+    ]
   },
   "hsk2-0035": {
     "id": "hsk2-0035",
@@ -1870,8 +2109,15 @@
     ],
     "theme": "restaurant",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to do; to indicate; to choose (e.g., call; click; turn on...)"
+    "explanationFr": "Verbe signifiant « désigner », « indiquer du doigt » et, par extension, « commander » au restaurant ou « cocher » sur une liste. Très utile dans le vocabulaire de la commande et du choix.",
+    "translationEn": "to do; to indicate; to choose (e.g., call; click; turn on...)",
+    "relatedIds": [
+      "hsk2-0039",
+      "hsk2-0123",
+      "hsk2-0027",
+      "hsk2-0105",
+      "hsk2-0193"
+    ]
   },
   "hsk2-0036": {
     "id": "hsk2-0036",
@@ -1912,9 +2158,16 @@
       "level:hsk2"
     ],
     "theme": "transport",
-    "explanationFr": "Le métro est un système de transport public souterrain, similaire à l'underground railway en anglais. Il se réfère spécifiquement aux trains qui roulent dans des tunnels sous la ville. Lorsqu'on dit \"prendre le métro\", cela signifie utiliser ce moyen de transport pour se déplacer.",
+    "explanationFr": "Désigne le métro, transport public souterrain. Composé de 地 (terre) et 铁 (fer), il évoque littéralement le « fer souterrain ». Le verbe associé est 坐 (« prendre »).",
     "translationFrAlt": [],
-    "translationEn": "metro (subway)"
+    "translationEn": "metro (subway)",
+    "relatedIds": [
+      "hsk2-0046",
+      "hsk2-0028",
+      "hsk2-0015",
+      "hsk2-0186",
+      "hsk2-0066"
+    ]
   },
   "hsk2-0037": {
     "id": "hsk2-0037",
@@ -1962,8 +2215,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to move"
+    "explanationFr": "Verbe signifiant « bouger » ou « remuer ». Il évoque tout mouvement physique, du plus léger au plus dynamique, et entre dans de nombreux composés comme 运动 (faire du sport) ou 动作 (action).",
+    "translationEn": "to move",
+    "relatedIds": [
+      "hsk2-0185",
+      "hsk2-0114",
+      "hsk2-0040",
+      "hsk2-0177",
+      "hsk2-0195"
+    ]
   },
   "hsk2-0038": {
     "id": "hsk2-0038",
@@ -2006,8 +2266,15 @@
     "translationFrAlt": [
       "savoir"
     ],
-    "explanationFr": "Le mot \"dǒng\" signifie \"comprendre\". Il s'agit d'un verbe qui exprime la capacité de saisir l'idée ou le sens de quelque chose, qu'il s'agisse de paroles, d'événements ou de concepts. Utilisez ce mot lorsque vous voulez dire que quelqu'un a réussi à comprendre une information ou un message.",
-    "translationEn": "to understand"
+    "explanationFr": "Verbe signifiant « comprendre », « saisir le sens » d'une parole ou d'une situation. Souvent employé en complément résultatif (听懂 : « comprendre en écoutant »), il insiste sur la réussite de la compréhension.",
+    "translationEn": "to understand",
+    "relatedIds": [
+      "hsk2-0067",
+      "hsk2-0150",
+      "hsk2-0176",
+      "hsk2-0022",
+      "hsk2-0141"
+    ]
   },
   "hsk2-0039": {
     "id": "hsk2-0039",
@@ -2049,9 +2316,16 @@
       "level:hsk2"
     ],
     "theme": "nourriture",
-    "explanationFr": "Le terme \"饭馆\" (fànguǎn) désigne un établissement où l'on sert des repas. Il est similaire à notre mot français \"restaurant\". C'est un lieu où les clients peuvent commander et manger différents types de plats, généralement payant.",
+    "explanationFr": "Désigne un restaurant, un établissement où l'on sert des repas. Formé de 饭 (repas) et 馆 (établissement), il s'emploie pour les restaurants traditionnels chinois, parfois en concurrence avec 餐厅.",
     "translationFrAlt": [],
-    "translationEn": "restaurant"
+    "translationEn": "restaurant",
+    "relatedIds": [
+      "hsk2-0076",
+      "hsk2-0123",
+      "hsk2-0124",
+      "hsk2-0077",
+      "hsk2-0035"
+    ]
   },
   "hsk2-0040": {
     "id": "hsk2-0040",
@@ -2100,8 +2374,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to fly"
+    "explanationFr": "Verbe signifiant « voler » dans les airs, qu'il s'agisse d'un oiseau, d'un avion ou d'un insecte. Il sert aussi dans le composé 飞机 (avion). Toujours associé à l'idée de mouvement aérien.",
+    "translationEn": "to fly",
+    "relatedIds": [
+      "hsk2-0074",
+      "hsk2-0111",
+      "hsk2-0066",
+      "hsk2-0037",
+      "hsk2-0096"
+    ]
   },
   "hsk2-0041": {
     "id": "hsk2-0041",
@@ -2171,8 +2452,15 @@
       "grand (taille)",
       "grand"
     ],
-    "explanationFr": "",
-    "translationEn": "high; tall"
+    "explanationFr": "Adjectif signifiant « haut » pour les objets ou « grand » pour la taille des personnes. On l'oppose à 矮 (court, petit). C'est aussi un nom de famille courant en Chine.",
+    "translationEn": "high; tall",
+    "relatedIds": [
+      "hsk2-0043",
+      "hsk2-0045",
+      "hsk2-0083",
+      "hsk2-0070",
+      "hsk2-0184"
+    ]
   },
   "hsk2-0042": {
     "id": "hsk2-0042",
@@ -2235,8 +2523,15 @@
       "dire",
       "informer"
     ],
-    "explanationFr": "",
-    "translationEn": "to tell; to inform"
+    "explanationFr": "Verbe signifiant « dire à », « informer », généralement suivi d'un destinataire puis du contenu (告诉我你的名字 : « dis-moi ton nom »). C'est l'un des verbes de communication les plus utiles.",
+    "translationEn": "to tell; to inform",
+    "relatedIds": [
+      "hsk2-0068",
+      "hsk2-0038",
+      "hsk2-0154",
+      "hsk2-0022",
+      "hsk2-0067"
+    ]
   },
   "hsk2-0043": {
     "id": "hsk2-0043",
@@ -2275,10 +2570,17 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le terme \"高中\" (gāozhōng) désigne une école secondaire supérieure en Chine, qui correspond à la terminale du système scolaire français. C'est le niveau d'éducation après les classes de 1 à 9 ou primaire et avant l'université. Les élèves y préparent généralement des examens importants pour leur avenir académique.",
+    "explanationFr": "Désigne le lycée, l'équivalent chinois des trois dernières années avant l'université. Composé de 高 (haut) et 中 (milieu, secondaire), il s'oppose à 初中 (collège).",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "high school"
+    "translationEn": "high school",
+    "relatedIds": [
+      "hsk2-0079",
+      "hsk2-0080",
+      "hsk2-0081",
+      "hsk2-0004",
+      "hsk2-0065"
+    ]
   },
   "hsk2-0044": {
     "id": "hsk2-0044",
@@ -2347,8 +2649,15 @@
       "avec",
       "suivre"
     ],
-    "explanationFr": "",
-    "translationEn": "with; follow"
+    "explanationFr": "Préposition signifiant « avec », ou verbe signifiant « suivre ». Elle s'emploie pour indiquer un compagnon (跟朋友去 : « y aller avec un ami ») ou un point de comparaison.",
+    "translationEn": "with; follow",
+    "relatedIds": [
+      "hsk2-0024",
+      "hsk2-0009",
+      "hsk2-0175",
+      "hsk2-0151",
+      "hsk2-0089"
+    ]
   },
   "hsk2-0045": {
     "id": "hsk2-0045",
@@ -2393,8 +2702,15 @@
     "translationFrAlt": [
       "stature"
     ],
-    "explanationFr": "Le mot \"个子\" en chinois désigne la taille ou l'hauteur, soit celle d'une personne, soit celle d'un objet. Il est souvent utilisé pour décrire combien une personne est grande ou petite. Dans certains contextes agricoles, il peut également faire référence à un tas de céréales liées ensemble.",
-    "translationEn": "height"
+    "explanationFr": "Désigne la taille ou la stature d'une personne, surtout en hauteur. Le caractère 个 sert ici de classificateur lexicalisé, sans valeur de comptage. On dit 个子高/矮 pour « grand/petit de taille ».",
+    "translationEn": "height",
+    "relatedIds": [
+      "hsk2-0041",
+      "hsk2-0130",
+      "hsk2-0133",
+      "hsk2-0145",
+      "hsk2-0166"
+    ]
   },
   "hsk2-0046": {
     "id": "hsk2-0046",
@@ -2438,8 +2754,15 @@
     "translationFrAlt": [
       "bus"
     ],
-    "explanationFr": "Le \"bus\" est un véhicule de transport public qui circule dans les villes et les zones urbaines. Il sert à transporter des passagers sur une longueur considérable de trajet. On le dit souvent en français comme \"prendre le bus\" pour se déplacer.",
-    "translationEn": "bus"
+    "explanationFr": "Désigne le bus de ville, transport public terrestre. Composé de 公交 (transports publics) et 车 (véhicule), il s'oppose au taxi (打车) ou au métro (地铁).",
+    "translationEn": "bus",
+    "relatedIds": [
+      "hsk2-0036",
+      "hsk2-0028",
+      "hsk2-0015",
+      "hsk2-0186",
+      "hsk2-0116"
+    ]
   },
   "hsk2-0047": {
     "id": "hsk2-0047",
@@ -2488,7 +2811,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "past"
+    "translationEn": "past",
+    "explanationFr": "Verbe polyvalent signifiant « passer », « traverser », « franchir » dans l'espace ou le temps. Il entre dans de nombreux composés directionnels (过来, 过去) et marque parfois l'idée d'excès (« trop »).",
+    "relatedIds": [
+      "hsk2-0048",
+      "hsk2-0049",
+      "hsk2-0050",
+      "hsk2-0051",
+      "hsk2-0016"
+    ]
   },
   "hsk2-0048": {
     "id": "hsk2-0048",
@@ -2537,7 +2868,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "particle indicating experience: 'have already...'"
+    "translationEn": "particle indicating experience: 'have already...'",
+    "explanationFr": "Particule verbale d'expérience, placée juste après le verbe pour indiquer qu'une action a déjà été vécue au moins une fois (去过中国 : « être déjà allé en Chine »). Elle est neutre quant au moment précis.",
+    "relatedIds": [
+      "hsk2-0047",
+      "hsk2-0188",
+      "hsk2-0032",
+      "hsk2-0033",
+      "hsk2-0172"
+    ]
   },
   "hsk2-0049": {
     "id": "hsk2-0049",
@@ -2582,9 +2921,16 @@
       "manipuler",
       "être capable de s'occuper de"
     ],
-    "explanationFr": "Le mot \"過來\" signifie littéralement \"venir\" ou \"arriver\". Il est utilisé pour indiquer une action de se rapprocher d'une personne ou d'un lieu. La différence avec le verbe \"aller\" réside dans l'idée de proximité et de transition vers un endroit donné.",
+    "explanationFr": "Verbe directionnel composé de 过 (passer) et 来 (venir vers le locuteur). Il indique un mouvement de rapprochement vers celui qui parle, souvent traduit par « venir par ici ».",
     "explanation": "",
-    "translationEn": "come over"
+    "translationEn": "come over",
+    "relatedIds": [
+      "hsk2-0051",
+      "hsk2-0047",
+      "hsk2-0019",
+      "hsk2-0061",
+      "hsk2-0125"
+    ]
   },
   "hsk2-0050": {
     "id": "hsk2-0050",
@@ -2625,10 +2971,17 @@
       "level:hsk2"
     ],
     "theme": "temps",
-    "explanationFr": "Le terme \"célébrer l'année chinoise\" est une traduction idiomatique qui capture la signification du mot 过年 (guònián). Il s'agit d'une expression couramment utilisée pour désigner le festival du Nouvel An chinois, qui marque le début de l'année selon le calendrier lunaire chinois. Cette expression met en évidence que c'est un moment festif et culturel important, impliquant des traditions spécifiques comme les réunions familiales, la décoration avec des symboles de bonheur, etc.",
+    "explanationFr": "Verbe-objet signifiant « fêter le Nouvel An chinois », formé de 过 (passer) et 年 (année). Il évoque toutes les traditions associées à la nouvelle année lunaire, célébrée en famille.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "celebrate Chinese New Year"
+    "translationEn": "celebrate Chinese New Year",
+    "relatedIds": [
+      "hsk2-0047",
+      "hsk2-0129",
+      "hsk2-0107",
+      "hsk2-0170",
+      "hsk2-0192"
+    ]
   },
   "hsk2-0051": {
     "id": "hsk2-0051",
@@ -2677,8 +3030,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "the past; formerly"
+    "explanationFr": "Verbe directionnel composé de 过 (passer) et 去 (aller, s'éloigner). Comme nom, il signifie « le passé », par opposition à 现在 (le présent) et 将来 (le futur).",
+    "translationEn": "the past; formerly",
+    "relatedIds": [
+      "hsk2-0049",
+      "hsk2-0047",
+      "hsk2-0021",
+      "hsk2-0062",
+      "hsk2-0127"
+    ]
   },
   "hsk2-0052": {
     "id": "hsk2-0052",
@@ -2738,8 +3098,15 @@
     ],
     "theme": "grammaire",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "or (question)"
+    "explanationFr": "Conjonction signifiant « ou » dans une question fermée à choix multiple (A 还是 B : « A ou B ? »). Elle se distingue de 或者, utilisé dans les phrases affirmatives.",
+    "translationEn": "or (question)",
+    "relatedIds": [
+      "hsk2-0031",
+      "hsk2-0030",
+      "hsk2-0154",
+      "hsk2-0174",
+      "hsk2-0009"
+    ]
   },
   "hsk2-0053": {
     "id": "hsk2-0053",
@@ -2779,10 +3146,17 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"noir\" désigne la couleur opposée à la blancheur. Il est utilisé pour décrire quelque chose qui n'émet pas ou ne reflète pas la lumière, rendant l'objet difficilement visible dans une pièce sombre. Ce terme peut s'appliquer à des objets tangibles comme un vêtement ou un meuble, mais aussi à des concepts abstraits tels que le \"noir de la nuit\" ou l'idée d'inconnu.",
+    "explanationFr": "Désigne la couleur noire, formée de 黑 (noir) et 色 (couleur). On l'emploie pour décrire des objets, des vêtements ou la couleur du jour qui tombe. C'est l'opposé de 白色.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "black (color)"
+    "translationEn": "black (color)",
+    "relatedIds": [
+      "hsk2-0003",
+      "hsk2-0055",
+      "hsk2-0094",
+      "hsk2-0167",
+      "hsk2-0054"
+    ]
   },
   "hsk2-0054": {
     "id": "hsk2-0054",
@@ -2831,8 +3205,15 @@
     ],
     "theme": "boisson",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "black tea (red in Chinese)"
+    "explanationFr": "Désigne le thé noir, littéralement « thé rouge » en chinois car la couleur d'infusion est plus rouge que noire. C'est l'un des grands types de thé chinois, à côté du thé vert (绿茶).",
+    "translationEn": "black tea (red in Chinese)",
+    "relatedIds": [
+      "hsk2-0093",
+      "hsk2-0106",
+      "hsk2-0055",
+      "hsk2-0077",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0055": {
     "id": "hsk2-0055",
@@ -2876,8 +3257,15 @@
     "translationFrAlt": [
       "couleur rouge"
     ],
-    "explanationFr": "Le mot \"rouge\" en français désigne une couleur, similaire à la traduction anglaise \"red\". C'est une couleur vive et intense, souvent associée au feu ou à l'amour dans certaines cultures. Il est important de noter que \"rouge\" peut également être utilisé comme adjectif pour décrire quelque chose qui a cette couleur.",
-    "translationEn": "red (color)"
+    "explanationFr": "Désigne la couleur rouge, formée de 红 (rouge) et 色 (couleur). C'est une couleur très valorisée en Chine, associée au bonheur, à la chance et aux fêtes traditionnelles.",
+    "translationEn": "red (color)",
+    "relatedIds": [
+      "hsk2-0003",
+      "hsk2-0053",
+      "hsk2-0094",
+      "hsk2-0167",
+      "hsk2-0054"
+    ]
   },
   "hsk2-0056": {
     "id": "hsk2-0056",
@@ -2925,8 +3313,15 @@
     ],
     "theme": "position",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "behind"
+    "explanationFr": "Désigne ce qui est « derrière », à l'arrière d'un objet ou d'un lieu. Formé de 后 (arrière) et 面 (face), c'est l'opposé de 前面 (devant). Très utile pour situer dans l'espace.",
+    "translationEn": "behind",
+    "relatedIds": [
+      "hsk2-0117",
+      "hsk2-0090",
+      "hsk2-0126",
+      "hsk2-0147",
+      "hsk2-0157"
+    ]
   },
   "hsk2-0057": {
     "id": "hsk2-0057",
@@ -2974,8 +3369,15 @@
       "dessiner",
       "peindre"
     ],
-    "explanationFr": "Le mot \"画\" signifie \"to draw; to paint\". Il sert à décrire l'action de créer une image ou un tableau, qu'il s'agisse d'un simple croquis ou d'une œuvre d'art complète.",
-    "translationEn": "to draw; to paint; painting"
+    "explanationFr": "Verbe signifiant « dessiner » ou « peindre », et nom désignant un dessin ou un tableau. Le caractère évoque l'acte de tracer avec un pinceau. Très utile pour parler d'arts visuels et de loisirs créatifs.",
+    "translationEn": "to draw; to paint; painting",
+    "relatedIds": [
+      "hsk2-0010",
+      "hsk2-0144",
+      "hsk2-0185",
+      "hsk2-0064",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0058": {
     "id": "hsk2-0058",
@@ -3024,8 +3426,15 @@
     ],
     "theme": "nature",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "flower; floral"
+    "explanationFr": "Désigne une fleur, qu'elle soit naturelle ou décorative. Le caractère apparaît dans de nombreux composés liés à la nature et à la beauté. Attention, il existe une homographie avec le verbe « dépenser ».",
+    "translationEn": "flower; floral",
+    "relatedIds": [
+      "hsk2-0059",
+      "hsk2-0111",
+      "hsk2-0183",
+      "hsk2-0094",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0059": {
     "id": "hsk2-0059",
@@ -3077,8 +3486,15 @@
       "dépenser (argent",
       "temps)"
     ],
-    "explanationFr": "",
-    "translationEn": "to spend (money; time; effort)"
+    "explanationFr": "Verbe signifiant « dépenser » de l'argent, du temps ou des efforts. Même caractère que « fleur », mais le sens et l'usage sont totalement différents. On dit 花钱 (dépenser de l'argent), 花时间 (passer du temps).",
+    "translationEn": "to spend (money; time; effort)",
+    "relatedIds": [
+      "hsk2-0058",
+      "hsk2-0149",
+      "hsk2-0193",
+      "hsk2-0132",
+      "hsk2-0116"
+    ]
   },
   "hsk2-0060": {
     "id": "hsk2-0060",
@@ -3134,8 +3550,15 @@
       "mauvais",
       "cassé"
     ],
-    "explanationFr": "",
-    "translationEn": "bad; broken"
+    "explanationFr": "Adjectif signifiant « mauvais », « abîmé » ou « cassé », et verbe résultatif (« casser »). On l'oppose à 好 (bon). Il sert pour décrire un objet hors d'usage ou une personne malveillante.",
+    "translationEn": "bad; broken",
+    "relatedIds": [
+      "hsk2-0013",
+      "hsk2-0026",
+      "hsk2-0136",
+      "hsk2-0088",
+      "hsk2-0140"
+    ]
   },
   "hsk2-0061": {
     "id": "hsk2-0061",
@@ -3183,8 +3606,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to come back"
+    "explanationFr": "Verbe directionnel composé de 回 (retourner) et 来 (venir vers le locuteur). Il indique le retour vers le lieu où se trouve celui qui parle, souvent à la maison ou au point de départ.",
+    "translationEn": "to come back",
+    "relatedIds": [
+      "hsk2-0062",
+      "hsk2-0049",
+      "hsk2-0019",
+      "hsk2-0072",
+      "hsk2-0125"
+    ]
   },
   "hsk2-0062": {
     "id": "hsk2-0062",
@@ -3232,8 +3662,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to return"
+    "explanationFr": "Verbe directionnel composé de 回 (retourner) et 去 (aller, s'éloigner). Il indique le retour vers un lieu éloigné du locuteur, par opposition à 回来.",
+    "translationEn": "to return",
+    "relatedIds": [
+      "hsk2-0061",
+      "hsk2-0021",
+      "hsk2-0051",
+      "hsk2-0073",
+      "hsk2-0127"
+    ]
   },
   "hsk2-0063": {
     "id": "hsk2-0063",
@@ -3282,8 +3719,15 @@
     ],
     "theme": "maison",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "classifier for rooms"
+    "explanationFr": "Classificateur utilisé pour compter les pièces, salles ou chambres (一间房 : « une pièce »). Il peut aussi être un nom signifiant « espace », « intervalle » dans certains composés.",
+    "translationEn": "classifier for rooms",
+    "relatedIds": [
+      "hsk2-0143",
+      "hsk2-0153",
+      "hsk2-0091",
+      "hsk2-0017",
+      "hsk2-0164"
+    ]
   },
   "hsk2-0064": {
     "id": "hsk2-0064",
@@ -3340,8 +3784,15 @@
       "enseigner",
       "enseignement"
     ],
-    "explanationFr": "",
-    "translationEn": "to teach"
+    "explanationFr": "Verbe signifiant « enseigner », souvent suivi de la personne enseignée et de la matière (教我中文 : « m'enseigner le chinois »). Il sert de base à 教室 (salle de classe) et 老师 (professeur).",
+    "translationEn": "to teach",
+    "relatedIds": [
+      "hsk2-0065",
+      "hsk2-0080",
+      "hsk2-0081",
+      "hsk2-0004",
+      "hsk2-0042"
+    ]
   },
   "hsk2-0065": {
     "id": "hsk2-0065",
@@ -3381,9 +3832,16 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"教室\" désigne l'espace où se déroulent les cours dans une école ou un institut. Il s'agit généralement d'une pièce aménagée pour accueillir des étudiants et un enseignant, avec des pupitres, des tables et des chaises. Ce terme est utilisé indifféremment pour parler de la classe où se passe l'apprentissage.",
+    "explanationFr": "Désigne une salle de classe, le lieu où se déroulent les cours. Formé de 教 (enseigner) et 室 (pièce), c'est l'espace dédié à l'apprentissage à l'école.",
     "translationFrAlt": [],
-    "translationEn": "classroom (noun)"
+    "translationEn": "classroom (noun)",
+    "relatedIds": [
+      "hsk2-0064",
+      "hsk2-0004",
+      "hsk2-0079",
+      "hsk2-0043",
+      "hsk2-0081"
+    ]
   },
   "hsk2-0066": {
     "id": "hsk2-0066",
@@ -3444,8 +3902,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "airport (general)"
+    "explanationFr": "Désigne un aéroport, terrain d'envol et d'atterrissage des avions. Formé de 机 (machine, avion) et 场 (terrain), il accompagne souvent 飞机 (avion) et 机票 (billet d'avion).",
+    "translationEn": "airport (general)",
+    "relatedIds": [
+      "hsk2-0074",
+      "hsk2-0040",
+      "hsk2-0124",
+      "hsk2-0096",
+      "hsk2-0102"
+    ]
   },
   "hsk2-0067": {
     "id": "hsk2-0067",
@@ -3505,8 +3970,15 @@
     ],
     "theme": "pensée",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to remember"
+    "explanationFr": "Verbe signifiant « se souvenir », « garder en mémoire ». Formé de 记 (noter, mémoriser) et 得 (particule de résultat), il s'oppose à 忘 (oublier). Très utile pour évoquer les souvenirs.",
+    "translationEn": "to remember",
+    "relatedIds": [
+      "hsk2-0150",
+      "hsk2-0038",
+      "hsk2-0165",
+      "hsk2-0176",
+      "hsk2-0042"
+    ]
   },
   "hsk2-0068": {
     "id": "hsk2-0068",
@@ -3560,8 +4032,15 @@
     ],
     "theme": "communication",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to introduce"
+    "explanationFr": "Verbe signifiant « présenter » quelqu'un ou quelque chose, ou faire la présentation d'un sujet. On l'emploie aussi bien dans un contexte social que pour présenter un produit ou une idée.",
+    "translationEn": "to introduce",
+    "relatedIds": [
+      "hsk2-0042",
+      "hsk2-0005",
+      "hsk2-0006",
+      "hsk2-0163",
+      "hsk2-0162"
+    ]
   },
   "hsk2-0069": {
     "id": "hsk2-0069",
@@ -3609,8 +4088,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to enter"
+    "explanationFr": "Verbe simple signifiant « entrer ». Il entre dans de nombreux composés directionnels (进来, 进去). C'est l'opposé de 出 (sortir) et il marque le passage de l'extérieur vers l'intérieur.",
+    "translationEn": "to enter",
+    "relatedIds": [
+      "hsk2-0072",
+      "hsk2-0073",
+      "hsk2-0016",
+      "hsk2-0125",
+      "hsk2-0156"
+    ]
   },
   "hsk2-0070": {
     "id": "hsk2-0070",
@@ -3655,8 +4141,15 @@
       "approximativement",
       "intime"
     ],
-    "explanationFr": "Le mot \"近\" signifie qu'une chose est située près d'un autre objet ou personne, mais pas nécessairement tout contre elle. Il peut également être utilisé pour indiquer une approximation temporelle ou spatiale.",
-    "translationEn": "near; close"
+    "explanationFr": "Adjectif signifiant « proche », « près ». On l'oppose à 远 (loin). Il sert aussi bien pour l'espace que pour le temps (récemment) et pour les relations humaines (proche, intime).",
+    "translationEn": "near; close",
+    "relatedIds": [
+      "hsk2-0184",
+      "hsk2-0089",
+      "hsk2-0113",
+      "hsk2-0090",
+      "hsk2-0117"
+    ]
   },
   "hsk2-0071": {
     "id": "hsk2-0071",
@@ -3701,8 +4194,15 @@
       "courant",
       "quotidien"
     ],
-    "explanationFr": "Le mot \"经常\" signifie qu'une action ou un état se produit régulièrement, chaque jour. Il est utilisé pour décrire des activités qui font partie de la vie quotidienne.",
-    "translationEn": "often"
+    "explanationFr": "Adverbe signifiant « souvent », « fréquemment ». Il décrit une action qui se répète régulièrement dans le temps, sans atteindre la quotidienneté absolue. Plus fréquent que 常 dans la langue courante.",
+    "translationEn": "often",
+    "relatedIds": [
+      "hsk2-0172",
+      "hsk2-0181",
+      "hsk2-0098",
+      "hsk2-0175",
+      "hsk2-0083"
+    ]
   },
   "hsk2-0072": {
     "id": "hsk2-0072",
@@ -3750,8 +4250,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to come in (for oneself)"
+    "explanationFr": "Verbe directionnel composé de 进 (entrer) et 来 (venir vers le locuteur). Il indique un mouvement vers l'intérieur en direction de celui qui parle, par exemple quand on invite quelqu'un à entrer chez soi.",
+    "translationEn": "to come in (for oneself)",
+    "relatedIds": [
+      "hsk2-0073",
+      "hsk2-0069",
+      "hsk2-0019",
+      "hsk2-0061",
+      "hsk2-0125"
+    ]
   },
   "hsk2-0073": {
     "id": "hsk2-0073",
@@ -3799,8 +4306,15 @@
     ],
     "theme": "déplacement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to go into"
+    "explanationFr": "Verbe directionnel composé de 进 (entrer) et 去 (aller, s'éloigner). Il indique un mouvement vers l'intérieur qui s'éloigne du locuteur, par exemple entrer dans une pièce où l'on n'est pas.",
+    "translationEn": "to go into",
+    "relatedIds": [
+      "hsk2-0072",
+      "hsk2-0069",
+      "hsk2-0021",
+      "hsk2-0062",
+      "hsk2-0127"
+    ]
   },
   "hsk2-0074": {
     "id": "hsk2-0074",
@@ -3848,8 +4362,15 @@
     ],
     "theme": "voyage",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "airplane ticket (general)"
+    "explanationFr": "Désigne un billet d'avion. Formé de 机 (avion) et 票 (billet), il s'inscrit dans le vocabulaire du voyage avec 飞机, 机场 et 旅游.",
+    "translationEn": "airplane ticket (general)",
+    "relatedIds": [
+      "hsk2-0116",
+      "hsk2-0102",
+      "hsk2-0066",
+      "hsk2-0040",
+      "hsk2-0096"
+    ]
   },
   "hsk2-0075": {
     "id": "hsk2-0075",
@@ -3919,8 +4440,15 @@
       "justement",
       "aussitôt"
     ],
-    "explanationFr": "",
-    "translationEn": "then; just"
+    "explanationFr": "Adverbe très polyvalent signifiant « alors », « justement », « tout de suite ». Il marque souvent une conséquence rapide ou une affirmation appuyée, et peut aussi servir à minimiser (« seulement »).",
+    "translationEn": "then; just",
+    "relatedIds": [
+      "hsk2-0139",
+      "hsk2-0190",
+      "hsk2-0172",
+      "hsk2-0098",
+      "hsk2-0071"
+    ]
   },
   "hsk2-0076": {
     "id": "hsk2-0076",
@@ -3964,8 +4492,15 @@
     "translationFrAlt": [
       "boutique de vin"
     ],
-    "explanationFr": "Le mot \"酒店\" en chinois peut désigner différents types d'établissements où l'on loge ou mange, mais aussi boit. En français, on utilise généralement le terme \"établissement hôtelier\" pour englober ces diverses fonctions. Cependant, dans la pratique, on utilise souvent des termes plus spécifiques comme \"hôtel\", \"restaurant\" ou \"pub\", en fonction du contexte.",
-    "translationEn": "hotel"
+    "explanationFr": "Désigne un hôtel ou un grand restaurant. Formé de 酒 (alcool) et 店 (boutique), il évoque historiquement les auberges. Aujourd'hui, c'est le terme courant pour parler d'un hôtel.",
+    "translationEn": "hotel",
+    "relatedIds": [
+      "hsk2-0169",
+      "hsk2-0039",
+      "hsk2-0124",
+      "hsk2-0102",
+      "hsk2-0096"
+    ]
   },
   "hsk2-0077": {
     "id": "hsk2-0077",
@@ -4025,8 +4560,15 @@
     ],
     "theme": "boisson",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "coffee"
+    "explanationFr": "Désigne le café, à la fois la boisson et plus rarement les grains. C'est un mot phonétique emprunté à l'étranger. Très utilisé dans le vocabulaire des boissons modernes.",
+    "translationEn": "coffee",
+    "relatedIds": [
+      "hsk2-0054",
+      "hsk2-0093",
+      "hsk2-0106",
+      "hsk2-0039",
+      "hsk2-0123"
+    ]
   },
   "hsk2-0078": {
     "id": "hsk2-0078",
@@ -4073,8 +4615,15 @@
     ],
     "theme": "général",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "coffee (beverage)"
+    "explanationFr": "Verbe signifiant « commencer », « démarrer ». Formé de 开 (ouvrir) et 始 (début), il s'emploie pour le début d'un cours, d'un événement ou d'une activité. Il peut aussi servir de nom (le début).",
+    "translationEn": "coffee (beverage)",
+    "relatedIds": [
+      "hsk2-0079",
+      "hsk2-0148",
+      "hsk2-0029",
+      "hsk2-0193",
+      "hsk2-0085"
+    ]
   },
   "hsk2-0079": {
     "id": "hsk2-0079",
@@ -4116,9 +4665,16 @@
       "level:hsk2"
     ],
     "theme": "école",
-    "explanationFr": "Ce terme peut signifier le début d'un nouveau semestre scolaire, la reprise des cours après les vacances ou même la première journée à une nouvelle école. Il englobe également la création de l'établissement scolaire dans un contexte historique.",
+    "explanationFr": "Verbe-objet signifiant « faire la rentrée », formé de 开 (commencer) et 学 (étude). Il désigne le début d'un semestre ou d'une année scolaire, après les vacances.",
     "translationFrAlt": [],
-    "translationEn": "to start; to begin"
+    "translationEn": "to start; to begin",
+    "relatedIds": [
+      "hsk2-0078",
+      "hsk2-0080",
+      "hsk2-0081",
+      "hsk2-0065",
+      "hsk2-0004"
+    ]
   },
   "hsk2-0080": {
     "id": "hsk2-0080",
@@ -4167,8 +4723,15 @@
     ],
     "theme": "école",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "school year beginning"
+    "explanationFr": "Verbe signifiant « passer un examen » ou « tester ». Il sert de base à 考试 (examen). On l'emploie souvent dans le contexte scolaire et académique.",
+    "translationEn": "school year beginning",
+    "relatedIds": [
+      "hsk2-0081",
+      "hsk2-0064",
+      "hsk2-0065",
+      "hsk2-0079",
+      "hsk2-0193"
+    ]
   },
   "hsk2-0081": {
     "id": "hsk2-0081",
@@ -4246,8 +4809,15 @@
     ],
     "theme": "étude",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "exam, test"
+    "explanationFr": "Désigne un examen, une épreuve à passer. Formé de 考 (tester) et 试 (essayer), il couvre aussi bien les contrôles scolaires que les concours d'entrée. Mot incontournable de la vie étudiante.",
+    "translationEn": "exam, test",
+    "relatedIds": [
+      "hsk2-0080",
+      "hsk2-0064",
+      "hsk2-0065",
+      "hsk2-0043",
+      "hsk2-0141"
+    ]
   },
   "hsk2-0082": {
     "id": "hsk2-0082",
@@ -4292,8 +4862,15 @@
       "peut-être",
       "probablement"
     ],
-    "explanationFr": "Le mot \"可能\" signifie qu'une chose est possible ou probable, mais cela ne garantit pas nécessairement son occurrence. Il peut être utilisé pour exprimer une incertitude ou une hypothèse. Par exemple, on pourrait dire que quelque chose \"peut arriver\", ce qui signifie qu'il y a une chance, mais pas une certitude.",
-    "translationEn": "may; might"
+    "explanationFr": "Adverbe ou verbe signifiant « peut-être », « possible ». Il exprime une probabilité, une hypothèse non confirmée. Très utilisé pour nuancer une affirmation : 他可能不来 (« il ne viendra peut-être pas »).",
+    "translationEn": "may; might",
+    "relatedIds": [
+      "hsk2-0085",
+      "hsk2-0165",
+      "hsk2-0190",
+      "hsk2-0075",
+      "hsk2-0171"
+    ]
   },
   "hsk2-0083": {
     "id": "hsk2-0083",
@@ -4359,8 +4936,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "fast; quick"
+    "explanationFr": "Adjectif signifiant « rapide » en parlant d'une vitesse, et adverbe pour « vite ». On l'oppose à 慢 (lent). Il sert aussi à dire « bientôt » dans 快要 ou pour les vœux comme 快乐.",
+    "translationEn": "fast; quick",
+    "relatedIds": [
+      "hsk2-0097",
+      "hsk2-0085",
+      "hsk2-0084",
+      "hsk2-0114",
+      "hsk2-0040"
+    ]
   },
   "hsk2-0084": {
     "id": "hsk2-0084",
@@ -4402,9 +4986,16 @@
     "translationFrAlt": [
       "joyeux"
     ],
-    "explanationFr": "Le mot \"快乐\" (kuàilè) exprime un état positif et une bonne humeur. Il peut signifier être heureux dans diverses situations, que ce soit de petites joies quotidiennes ou des moments plus importants. Lorsqu'on utilise le verbe \"se sentir joyeux\", cela suggère une sensation d'aise et de contentement qui peut être temporaire ou durable.",
+    "explanationFr": "Adjectif signifiant « heureux », « joyeux ». Très utilisé dans les vœux comme 生日快乐 (joyeux anniversaire) ou 新年快乐 (bonne année). Il exprime un bien-être plus festif que 高兴.",
     "explanation": "",
-    "translationEn": "happy; joyful"
+    "translationEn": "happy; joyful",
+    "relatedIds": [
+      "hsk2-0129",
+      "hsk2-0158",
+      "hsk2-0179",
+      "hsk2-0136",
+      "hsk2-0083"
+    ]
   },
   "hsk2-0085": {
     "id": "hsk2-0085",
@@ -4449,9 +5040,16 @@
       "près",
       "presque tout"
     ],
-    "explanationFr": "Ce terme indique que quelque chose est presque arrivé ou va se produire immédiatement. Il s'utilise souvent pour exprimer une situation où un événement est imminent, mais il n'est pas encore certain.",
+    "explanationFr": "Adverbe signifiant « bientôt », « sur le point de ». Il se place devant un verbe avec souvent 了 en fin de phrase (快要下雨了 : « il va bientôt pleuvoir »). Il exprime l'imminence d'une action.",
     "explanation": "",
-    "translationEn": "about to; soon"
+    "translationEn": "about to; soon",
+    "relatedIds": [
+      "hsk2-0083",
+      "hsk2-0082",
+      "hsk2-0190",
+      "hsk2-0172",
+      "hsk2-0171"
+    ]
   },
   "hsk2-0086": {
     "id": "hsk2-0086",
@@ -4499,8 +5097,15 @@
     ],
     "theme": "vêtements",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "pants"
+    "explanationFr": "Désigne un pantalon. Le suffixe 子 est ici purement nominal, sans signification propre. Il fait partie du vocabulaire vestimentaire de base.",
+    "translationEn": "pants",
+    "relatedIds": [
+      "hsk2-0007",
+      "hsk2-0135",
+      "hsk2-0134",
+      "hsk2-0008",
+      "hsk2-0017"
+    ]
   },
   "hsk2-0087": {
     "id": "hsk2-0087",
@@ -4540,9 +5145,16 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le terme \"jouer au basketball\" est une expression idiomatique en français qui correspond à la pratique du sport de basketball. Il faut noter qu'en chinois, 篮球 (lánqiú) désigne à la fois le sport lui-même et l'activité de jouer à ce sport. En français, on utilise généralement \"jouer au basket-ball\" pour parler de l'activité sportive.",
+    "explanationFr": "Désigne le basket-ball, sport très populaire en Chine. Formé de 篮 (panier) et 球 (ballon), il s'inscrit dans la même famille que 足球 (football). On dit 打篮球 pour « jouer au basket ».",
     "translationFrAlt": [],
-    "translationEn": "basketball"
+    "translationEn": "basketball",
+    "relatedIds": [
+      "hsk2-0200",
+      "hsk2-0120",
+      "hsk2-0142",
+      "hsk2-0185",
+      "hsk2-0114"
+    ]
   },
   "hsk2-0088": {
     "id": "hsk2-0088",
@@ -4615,8 +5227,15 @@
     ],
     "theme": "santé",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "tired"
+    "explanationFr": "Adjectif signifiant « fatigué ». Il exprime une fatigue physique ou mentale, souvent à la fin de la journée ou après un effort. On dit 我很累 pour « je suis fatigué(e) ».",
+    "translationEn": "tired",
+    "relatedIds": [
+      "hsk2-0140",
+      "hsk2-0136",
+      "hsk2-0130",
+      "hsk2-0168",
+      "hsk2-0083"
+    ]
   },
   "hsk2-0089": {
     "id": "hsk2-0089",
@@ -4660,8 +5279,15 @@
       "quitter",
       "se séparer"
     ],
-    "explanationFr": "Le mot \"离\" signifie \"quitter\" ou \"s'éloigner de\". Il peut être utilisé pour exprimer le fait de partir d'un endroit, de se déplacer loin d'une personne ou d'être séparé par quelque chose. Il est également l'un des huit trigrammes en philosophie chinoise, représentant le feu.",
-    "translationEn": "to be far from"
+    "explanationFr": "Préposition signifiant « loin de », utilisée pour exprimer la distance entre deux points (我家离学校很近 : « ma maison est près de l'école »). Elle se construit toujours avec deux lieux comparés.",
+    "translationEn": "to be far from",
+    "relatedIds": [
+      "hsk2-0184",
+      "hsk2-0070",
+      "hsk2-0024",
+      "hsk2-0151",
+      "hsk2-0044"
+    ]
   },
   "hsk2-0090": {
     "id": "hsk2-0090",
@@ -4713,8 +5339,15 @@
       "à l'intérieur",
       "dedans"
     ],
-    "explanationFr": "",
-    "translationEn": "inside"
+    "explanationFr": "Désigne ce qui est « à l'intérieur », « dedans ». Formé de 里 (intérieur) et 面 (face), c'est l'opposé de 外面 (à l'extérieur). Sert à situer un objet dans un espace clos.",
+    "translationEn": "inside",
+    "relatedIds": [
+      "hsk2-0147",
+      "hsk2-0126",
+      "hsk2-0157",
+      "hsk2-0117",
+      "hsk2-0056"
+    ]
   },
   "hsk2-0091": {
     "id": "hsk2-0091",
@@ -4765,8 +5398,15 @@
       "étage",
       "immeuble"
     ],
-    "explanationFr": "",
-    "translationEn": "floor; building"
+    "explanationFr": "Désigne un étage, un bâtiment à plusieurs étages ou un immeuble. Sert aussi de classificateur pour compter les étages (二楼 : « deuxième étage »). Vocabulaire urbain incontournable.",
+    "translationEn": "floor; building",
+    "relatedIds": [
+      "hsk2-0124",
+      "hsk2-0100",
+      "hsk2-0063",
+      "hsk2-0017",
+      "hsk2-0076"
+    ]
   },
   "hsk2-0092": {
     "id": "hsk2-0092",
@@ -4823,8 +5463,15 @@
       "route",
       "chemin"
     ],
-    "explanationFr": "",
-    "translationEn": "floor; building"
+    "explanationFr": "Désigne une route, un chemin, qu'il soit physique ou métaphorique. On le retrouve dans 路上 (en chemin) et 走路 (marcher). Le mot évoque aussi le parcours dans la vie.",
+    "translationEn": "floor; building",
+    "relatedIds": [
+      "hsk2-0095",
+      "hsk2-0196",
+      "hsk2-0195",
+      "hsk2-0151",
+      "hsk2-0028"
+    ]
   },
   "hsk2-0093": {
     "id": "hsk2-0093",
@@ -4873,8 +5520,15 @@
     ],
     "theme": "boisson",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "green tea"
+    "explanationFr": "Désigne le thé vert, type de thé le plus consommé en Chine. Formé de 绿 (vert) et 茶 (thé), il s'oppose à 红茶 (thé noir) par la méthode de transformation des feuilles.",
+    "translationEn": "green tea",
+    "relatedIds": [
+      "hsk2-0054",
+      "hsk2-0106",
+      "hsk2-0094",
+      "hsk2-0077",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0094": {
     "id": "hsk2-0094",
@@ -4913,10 +5567,17 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"vert\" en français désigne la couleur qui est l'opposé du rouge sur l'échelle des couleurs. Il peut être utilisé pour décrire une variété d'objets, comme les feuilles des plantes, le ciel ou certains types de vêtements. Notez que dans certaines situations, on pourrait aussi utiliser \"vert\" pour désigner la couleur \"green\" en anglais, par exemple lorsqu'on parle de l'environnement.",
+    "explanationFr": "Désigne la couleur verte, formée de 绿 (vert) et 色 (couleur). Par extension, l'adjectif 绿色 évoque aussi l'écologie et le respect de l'environnement, comme « vert » en français.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "green; eco-friendly"
+    "translationEn": "green; eco-friendly",
+    "relatedIds": [
+      "hsk2-0003",
+      "hsk2-0053",
+      "hsk2-0055",
+      "hsk2-0167",
+      "hsk2-0093"
+    ]
   },
   "hsk2-0095": {
     "id": "hsk2-0095",
@@ -4964,8 +5625,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "on the way; along the road"
+    "explanationFr": "Locution signifiant « en chemin », « sur la route ». Formée de 路 (route) et 上 (sur), elle s'emploie pour évoquer ce qui se passe pendant un trajet (路上小心 : « bonne route »).",
+    "translationEn": "on the way; along the road",
+    "relatedIds": [
+      "hsk2-0092",
+      "hsk2-0196",
+      "hsk2-0195",
+      "hsk2-0152",
+      "hsk2-0128"
+    ]
   },
   "hsk2-0096": {
     "id": "hsk2-0096",
@@ -5009,8 +5677,15 @@
       "voyage",
       "tourisme"
     ],
-    "explanationFr": "Le mot \"旅游\" (lǚyóu) englobe plusieurs concepts liés au déplacement et à la visite, notamment le voyage pour des loisirs ou l'activité touristique. Il peut se référer à un périple plus long ou à une simple excursion. Dans une utilisation plus large, il peut également désigner les activités de tourisme.",
-    "translationEn": "to travel; to tour"
+    "explanationFr": "Verbe signifiant « voyager » à des fins touristiques, et nom désignant le tourisme. Formé de 旅 (voyager) et 游 (parcourir), il évoque le plaisir de la découverte plutôt que le déplacement professionnel.",
+    "translationEn": "to travel; to tour",
+    "relatedIds": [
+      "hsk2-0018",
+      "hsk2-0074",
+      "hsk2-0102",
+      "hsk2-0177",
+      "hsk2-0182"
+    ]
   },
   "hsk2-0097": {
     "id": "hsk2-0097",
@@ -5082,8 +5757,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "slow"
+    "explanationFr": "Adjectif signifiant « lent », et adverbe « lentement ». On l'oppose à 快 (rapide). Il sert dans des expressions comme 慢点 (« plus lentement ») pour demander à quelqu'un de ralentir.",
+    "translationEn": "slow",
+    "relatedIds": [
+      "hsk2-0083",
+      "hsk2-0034",
+      "hsk2-0195",
+      "hsk2-0114",
+      "hsk2-0196"
+    ]
   },
   "hsk2-0098": {
     "id": "hsk2-0098",
@@ -5143,8 +5825,15 @@
     ],
     "theme": "temps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "each; every"
+    "explanationFr": "Adverbe signifiant « chaque », « tous les ». Il introduit une fréquence régulière (每天 : « chaque jour », 每年 : « chaque année »). Souvent associé à 都 dans la phrase.",
+    "translationEn": "each; every",
+    "relatedIds": [
+      "hsk2-0023",
+      "hsk2-0071",
+      "hsk2-0172",
+      "hsk2-0192",
+      "hsk2-0181"
+    ]
   },
   "hsk2-0099": {
     "id": "hsk2-0099",
@@ -5196,8 +5885,15 @@
       "ennuyeux",
       "sans intérêt"
     ],
-    "explanationFr": "",
-    "translationEn": "boring; uninteresting"
+    "explanationFr": "Adjectif signifiant « ennuyeux », « sans intérêt ». Formé de 没 (ne pas avoir) et 意思 (intérêt), il exprime l'absence de plaisir. C'est l'opposé direct de 有意思.",
+    "translationEn": "boring; uninteresting",
+    "relatedIds": [
+      "hsk2-0179",
+      "hsk2-0176",
+      "hsk2-0012",
+      "hsk2-0136",
+      "hsk2-0140"
+    ]
   },
   "hsk2-0100": {
     "id": "hsk2-0100",
@@ -5269,8 +5965,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "door"
+    "explanationFr": "Désigne une porte, qu'elle soit d'entrée ou intérieure. Sert aussi de classificateur pour les cours, les langues ou les disciplines (一门课 : « un cours »). Symbolise aussi l'accès, l'ouverture.",
+    "translationEn": "door",
+    "relatedIds": [
+      "hsk2-0101",
+      "hsk2-0102",
+      "hsk2-0020",
+      "hsk2-0029",
+      "hsk2-0091"
+    ]
   },
   "hsk2-0101": {
     "id": "hsk2-0101",
@@ -5320,8 +6023,15 @@
       "entrée",
       "porte"
     ],
-    "explanationFr": "",
-    "translationEn": "entrance; door"
+    "explanationFr": "Désigne l'entrée d'un lieu, la zone immédiatement devant la porte. Formé de 门 (porte) et 口 (bouche, ouverture), il sert à donner un point de rendez-vous (学校门口 : « devant l'école »).",
+    "translationEn": "entrance; door",
+    "relatedIds": [
+      "hsk2-0100",
+      "hsk2-0102",
+      "hsk2-0020",
+      "hsk2-0117",
+      "hsk2-0091"
+    ]
   },
   "hsk2-0102": {
     "id": "hsk2-0102",
@@ -5370,8 +6080,15 @@
     ],
     "theme": "voyage",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "ticket for entry"
+    "explanationFr": "Désigne un billet d'entrée pour un musée, un parc ou un spectacle. Formé de 门 (porte) et 票 (billet), il est différent du billet de transport.",
+    "translationEn": "ticket for entry",
+    "relatedIds": [
+      "hsk2-0116",
+      "hsk2-0074",
+      "hsk2-0100",
+      "hsk2-0096",
+      "hsk2-0124"
+    ]
   },
   "hsk2-0103": {
     "id": "hsk2-0103",
@@ -5424,8 +6141,15 @@
       "face",
       "côté"
     ],
-    "explanationFr": "",
-    "translationEn": "face; surface; noodle"
+    "explanationFr": "Désigne le visage, la face, la surface d'un objet. Très productif, il forme de nombreux mots de position (前面, 后面, 上面...). Attention à ne pas le confondre avec son homographe « nouille ».",
+    "translationEn": "face; surface; noodle",
+    "relatedIds": [
+      "hsk2-0117",
+      "hsk2-0056",
+      "hsk2-0090",
+      "hsk2-0147",
+      "hsk2-0126"
+    ]
   },
   "hsk2-0104": {
     "id": "hsk2-0104",
@@ -5473,8 +6197,15 @@
       "réputé",
       "célèbre"
     ],
-    "explanationFr": "Le mot \"名\" en chinois se traduit par \"nom\" en français, qui est un mot utilisé pour désigner une personne ou un lieu. Il sert aussi de classificateur pour compter des personnes. Par exemple, \"三个名\" signifie \"trois personnes\".",
-    "translationEn": "name; classifier for people"
+    "explanationFr": "Désigne un nom ou un prénom, et sert de classificateur poli pour compter les personnes (三名学生 : « trois étudiants »). Il entre dans 姓名 et 名字 (nom complet).",
+    "translationEn": "name; classifier for people",
+    "relatedIds": [
+      "hsk2-0163",
+      "hsk2-0162",
+      "hsk2-0153",
+      "hsk2-0143",
+      "hsk2-0068"
+    ]
   },
   "hsk2-0105": {
     "id": "hsk2-0105",
@@ -5531,8 +6262,15 @@
       "prendre",
       "tenir"
     ],
-    "explanationFr": "",
-    "translationEn": "to take; to hold"
+    "explanationFr": "Verbe signifiant « prendre », « tenir en main » un objet. Il insiste sur le contact physique avec l'objet, par opposition à 带 (apporter).",
+    "translationEn": "to take; to hold",
+    "relatedIds": [
+      "hsk2-0027",
+      "hsk2-0029",
+      "hsk2-0007",
+      "hsk2-0035",
+      "hsk2-0137"
+    ]
   },
   "hsk2-0106": {
     "id": "hsk2-0106",
@@ -5584,8 +6322,15 @@
       "thé au lait",
       "bubble tea"
     ],
-    "explanationFr": "",
-    "translationEn": "milk tea; bubble tea"
+    "explanationFr": "Désigne le thé au lait, très populaire en Chine sous forme de bubble tea. Formé de 奶 (lait) et 茶 (thé), il fait partie des boissons modernes.",
+    "translationEn": "milk tea; bubble tea",
+    "relatedIds": [
+      "hsk2-0054",
+      "hsk2-0093",
+      "hsk2-0107",
+      "hsk2-0077",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0107": {
     "id": "hsk2-0107",
@@ -5645,8 +6390,15 @@
     ],
     "theme": "famille",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "paternal grandmother"
+    "explanationFr": "Désigne la grand-mère paternelle. Mot redoublé typique du vocabulaire familial, il se distingue de 外婆 (grand-mère maternelle). La famille paternelle a un vocabulaire propre en chinois.",
+    "translationEn": "paternal grandmother",
+    "relatedIds": [
+      "hsk2-0170",
+      "hsk2-0121",
+      "hsk2-0187",
+      "hsk2-0162",
+      "hsk2-0025"
+    ]
   },
   "hsk2-0108": {
     "id": "hsk2-0108",
@@ -5691,9 +6443,16 @@
       "tant",
       "alors"
     ],
-    "explanationFr": "Le mot 那么 (nàme) est utilisé pour indiquer une action ou un état qui suit naturellement la situation précédente. Il peut signifier \"faire comme\" ou \"agir ainsi\", selon le contexte.",
+    "explanationFr": "Pronom-adverbe signifiant « alors », « si », « tellement ». Il sert à introduire une conséquence (那么我们走吧 : « alors allons-y ») ou à exprimer une intensité (那么大 : « si grand »).",
     "explanation": "",
-    "translationEn": "then; so; to that extent"
+    "translationEn": "then; so; to that extent",
+    "relatedIds": [
+      "hsk2-0110",
+      "hsk2-0189",
+      "hsk2-0191",
+      "hsk2-0154",
+      "hsk2-0139"
+    ]
   },
   "hsk2-0109": {
     "id": "hsk2-0109",
@@ -5741,8 +6500,15 @@
     ],
     "theme": "personne",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "boy"
+    "explanationFr": "Désigne un garçon. Le suffixe 儿 ajoute une nuance familière et adoucissante, typique du chinois du Nord. C'est le pendant masculin de 女孩儿.",
+    "translationEn": "boy",
+    "relatedIds": [
+      "hsk2-0112",
+      "hsk2-0159",
+      "hsk2-0160",
+      "hsk2-0171",
+      "hsk2-0107"
+    ]
   },
   "hsk2-0110": {
     "id": "hsk2-0110",
@@ -5787,8 +6553,15 @@
     "translationFrAlt": [
       "tel"
     ],
-    "explanationFr": "Le mot \"那样\" est utilisé pour décrire une situation ou un comportement similaire à celui mentionné précédemment. Il peut signifier \"de cette manière\" ou \"pareil\". Ce terme est utile pour indiquer que quelque chose ressemble à ce qui a été dit ou fait auparavant.",
-    "translationEn": "like that; in that way"
+    "explanationFr": "Pronom démonstratif signifiant « comme ça », « de cette façon » (à distance). Il décrit un mode d'action ou un état semblable à ce qui a été montré. C'est le pendant éloigné de 这样.",
+    "translationEn": "like that; in that way",
+    "relatedIds": [
+      "hsk2-0191",
+      "hsk2-0108",
+      "hsk2-0189",
+      "hsk2-0154",
+      "hsk2-0194"
+    ]
   },
   "hsk2-0111": {
     "id": "hsk2-0111",
@@ -5831,8 +6604,15 @@
     "translationFrAlt": [
       "196e radical"
     ],
-    "explanationFr": "Le mot \"oiseau\" en français désigne un animal volant, généralement avec des plumes. Il est formé du radical \"鸟\" (niǎo) qui représente un oiseau dans la grammaire chinoise. Bien que ce radical puisse avoir d'autres significations comme \"attention\" ou \"damn\", ces sens ne sont pas couramment utilisés dans le contexte de l'oiseau.",
-    "translationEn": "bird"
+    "explanationFr": "Désigne un oiseau de manière générale. C'est l'un des radicaux classiques utilisé dans de nombreux caractères liés aux oiseaux. Le pictogramme représente la silhouette d'un volatile.",
+    "translationEn": "bird",
+    "relatedIds": [
+      "hsk2-0183",
+      "hsk2-0040",
+      "hsk2-0058",
+      "hsk2-0167",
+      "hsk2-0185"
+    ]
   },
   "hsk2-0112": {
     "id": "hsk2-0112",
@@ -5880,8 +6660,15 @@
     ],
     "theme": "personne",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "girl"
+    "explanationFr": "Désigne une fille. Le suffixe 儿 apporte une nuance familière et adoucissante. C'est le pendant féminin de 男孩儿. Utilisé surtout dans la langue parlée.",
+    "translationEn": "girl",
+    "relatedIds": [
+      "hsk2-0109",
+      "hsk2-0159",
+      "hsk2-0107",
+      "hsk2-0170",
+      "hsk2-0121"
+    ]
   },
   "hsk2-0113": {
     "id": "hsk2-0113",
@@ -5947,8 +6734,15 @@
     ],
     "theme": "direction",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "beside; next to"
+    "explanationFr": "Désigne ce qui est « à côté », « sur le côté ». Formé de 旁 (côté) et 边 (bord), il sert à situer un objet ou une personne à proximité d'un autre.",
+    "translationEn": "beside; next to",
+    "relatedIds": [
+      "hsk2-0180",
+      "hsk2-0199",
+      "hsk2-0090",
+      "hsk2-0147",
+      "hsk2-0117"
+    ]
   },
   "hsk2-0114": {
     "id": "hsk2-0114",
@@ -6009,8 +6803,15 @@
     ],
     "theme": "sport",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to run"
+    "explanationFr": "Verbe signifiant « courir », « se déplacer rapidement ». Il s'emploie pour la course mais aussi pour des trajets rapides en général. Il est à la base de 跑步 (faire du jogging).",
+    "translationEn": "to run",
+    "relatedIds": [
+      "hsk2-0115",
+      "hsk2-0195",
+      "hsk2-0142",
+      "hsk2-0182",
+      "hsk2-0185"
+    ]
   },
   "hsk2-0115": {
     "id": "hsk2-0115",
@@ -6062,8 +6863,15 @@
       "courir",
       "faire du jogging"
     ],
-    "explanationFr": "",
-    "translationEn": "to run; to jog"
+    "explanationFr": "Verbe-objet signifiant « faire du jogging », « courir » comme exercice. Formé de 跑 (courir) et 步 (pas), il évoque clairement l'activité sportive et non la fuite ou la précipitation.",
+    "translationEn": "to run; to jog",
+    "relatedIds": [
+      "hsk2-0114",
+      "hsk2-0185",
+      "hsk2-0182",
+      "hsk2-0142",
+      "hsk2-0144"
+    ]
   },
   "hsk2-0116": {
     "id": "hsk2-0116",
@@ -6111,8 +6919,15 @@
     ],
     "theme": "voyage",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "ticket"
+    "explanationFr": "Désigne un billet, qu'il soit de transport, de spectacle ou de loterie. Mot générique précisé par un déterminant (机票, 门票, 车票). Vocabulaire essentiel pour voyager.",
+    "translationEn": "ticket",
+    "relatedIds": [
+      "hsk2-0074",
+      "hsk2-0102",
+      "hsk2-0096",
+      "hsk2-0066",
+      "hsk2-0036"
+    ]
   },
   "hsk2-0117": {
     "id": "hsk2-0117",
@@ -6160,8 +6975,15 @@
     ],
     "theme": "position",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "in front"
+    "explanationFr": "Désigne ce qui est « devant », à l'avant. Formé de 前 (avant) et 面 (face), c'est l'opposé de 后面. Sert à situer dans l'espace ou à parler de l'avenir proche.",
+    "translationEn": "in front",
+    "relatedIds": [
+      "hsk2-0056",
+      "hsk2-0090",
+      "hsk2-0126",
+      "hsk2-0147",
+      "hsk2-0157"
+    ]
   },
   "hsk2-0118": {
     "id": "hsk2-0118",
@@ -6212,8 +7034,15 @@
       "se lever",
       "commencer à"
     ],
-    "explanationFr": "",
-    "translationEn": "to get up; to start"
+    "explanationFr": "Verbe directionnel signifiant « se lever », « se redresser ». Sert aussi de complément verbal indiquant le début d'une action (笑起来 : « se mettre à rire »). Formé de 起 (se lever) et 来 (venir).",
+    "translationEn": "to get up; to start",
+    "relatedIds": [
+      "hsk2-0175",
+      "hsk2-0125",
+      "hsk2-0156",
+      "hsk2-0049",
+      "hsk2-0061"
+    ]
   },
   "hsk2-0119": {
     "id": "hsk2-0119",
@@ -6257,8 +7086,15 @@
     "translationFrAlt": [
       "serein"
     ],
-    "explanationFr": "Le mot \"晴\" signifie \"être ensoleillé\" ou \"clair\". Il est souvent utilisé pour décrire un temps sans nuages, mais peut aussi s'appliquer à d'autres contextes où la clarté est nécessaire. Par exemple, dans une phrase comme \"天晴了\", cela signifie que le temps devient ensoleillé.",
-    "translationEn": "sunny"
+    "explanationFr": "Adjectif signifiant « ensoleillé », « beau temps ». Décrit un ciel dégagé, sans nuages. Vocabulaire de base de la météo, à mettre en regard de 阴 (nuageux).",
+    "translationEn": "sunny",
+    "relatedIds": [
+      "hsk2-0173",
+      "hsk2-0167",
+      "hsk2-0030",
+      "hsk2-0094",
+      "hsk2-0084"
+    ]
   },
   "hsk2-0120": {
     "id": "hsk2-0120",
@@ -6310,8 +7146,15 @@
       "balle",
       "ballon"
     ],
-    "explanationFr": "",
-    "translationEn": "ball; sphere"
+    "explanationFr": "Désigne une balle ou un ballon, et par métonymie certains sports. On le retrouve dans 篮球 (basket-ball) et 足球 (football). Vocabulaire incontournable des activités sportives.",
+    "translationEn": "ball; sphere",
+    "relatedIds": [
+      "hsk2-0087",
+      "hsk2-0200",
+      "hsk2-0142",
+      "hsk2-0185",
+      "hsk2-0114"
+    ]
   },
   "hsk2-0121": {
     "id": "hsk2-0121",
@@ -6359,8 +7202,15 @@
     ],
     "theme": "famille",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "wife"
+    "explanationFr": "Désigne l'épouse, le terme courant pour « femme » dans le sens de conjointe. Plus formel que 老婆, il s'oppose à 丈夫 (mari).",
+    "translationEn": "wife",
+    "relatedIds": [
+      "hsk2-0187",
+      "hsk2-0107",
+      "hsk2-0170",
+      "hsk2-0162",
+      "hsk2-0163"
+    ]
   },
   "hsk2-0122": {
     "id": "hsk2-0122",
@@ -6408,8 +7258,15 @@
       "laisser faire",
       "par"
     ],
-    "explanationFr": "Le mot \"让\" est utilisé pour exprimer l'action de donner quelque chose à quelqu'un ou de permettre à quelqu'un de faire quelque chose. Il peut aussi signifier que quelqu'un fait quelque chose par votre ordre.",
-    "translationEn": "to let; to allow (causative)"
+    "explanationFr": "Verbe causatif signifiant « laisser », « permettre » ou « faire faire » à quelqu'un. Il introduit une action déléguée (让我看看 : « laisse-moi voir »). Structure essentielle du chinois.",
+    "translationEn": "to let; to allow (causative)",
+    "relatedIds": [
+      "hsk2-0005",
+      "hsk2-0137",
+      "hsk2-0034",
+      "hsk2-0042",
+      "hsk2-0068"
+    ]
   },
   "hsk2-0123": {
     "id": "hsk2-0123",
@@ -6469,8 +7326,15 @@
     ],
     "theme": "nourriture",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "meat"
+    "explanationFr": "Désigne la viande, qu'il s'agisse de porc, de bœuf ou de toute chair animale. Sans précision, il évoque souvent le porc en Chine. Vocabulaire culinaire essentiel.",
+    "translationEn": "meat",
+    "relatedIds": [
+      "hsk2-0183",
+      "hsk2-0039",
+      "hsk2-0035",
+      "hsk2-0140",
+      "hsk2-0103"
+    ]
   },
   "hsk2-0124": {
     "id": "hsk2-0124",
@@ -6518,8 +7382,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "shopping mall"
+    "explanationFr": "Désigne un centre commercial, un grand magasin. Formé de 商 (commerce) et 场 (lieu, place), c'est l'endroit où l'on fait ses courses dans les villes modernes.",
+    "translationEn": "shopping mall",
+    "relatedIds": [
+      "hsk2-0076",
+      "hsk2-0169",
+      "hsk2-0039",
+      "hsk2-0091",
+      "hsk2-0086"
+    ]
   },
   "hsk2-0125": {
     "id": "hsk2-0125",
@@ -6568,8 +7439,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to come up (towards the speaker)"
+    "explanationFr": "Verbe directionnel composé de 上 (monter) et 来 (venir vers le locuteur). Il indique un mouvement ascendant vers la position du locuteur, par exemple monter à l'étage où l'on se trouve.",
+    "translationEn": "to come up (towards the speaker)",
+    "relatedIds": [
+      "hsk2-0127",
+      "hsk2-0156",
+      "hsk2-0061",
+      "hsk2-0072",
+      "hsk2-0049"
+    ]
   },
   "hsk2-0126": {
     "id": "hsk2-0126",
@@ -6622,8 +7500,15 @@
       "sur",
       "dessus"
     ],
-    "explanationFr": "",
-    "translationEn": "top; above"
+    "explanationFr": "Désigne ce qui est « au-dessus », « sur ». Formé de 上 (haut) et 面 (face), c'est l'opposé de 下面. Sert à situer un objet posé sur ou au-dessus d'un autre.",
+    "translationEn": "top; above",
+    "relatedIds": [
+      "hsk2-0157",
+      "hsk2-0090",
+      "hsk2-0147",
+      "hsk2-0117",
+      "hsk2-0056"
+    ]
   },
   "hsk2-0127": {
     "id": "hsk2-0127",
@@ -6672,8 +7557,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to go up (away from the speaker)"
+    "explanationFr": "Verbe directionnel composé de 上 (monter) et 去 (aller, s'éloigner). Il indique un mouvement ascendant qui s'éloigne du locuteur, par opposition à 上来.",
+    "translationEn": "to go up (away from the speaker)",
+    "relatedIds": [
+      "hsk2-0125",
+      "hsk2-0161",
+      "hsk2-0021",
+      "hsk2-0062",
+      "hsk2-0073"
+    ]
   },
   "hsk2-0128": {
     "id": "hsk2-0128",
@@ -6722,8 +7614,15 @@
     ],
     "theme": "technologie",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to surf the internet"
+    "explanationFr": "Verbe-objet signifiant « se connecter à internet ». Formé de 上 (monter sur) et 网 (réseau), il évoque l'action de « se brancher » au réseau pour naviguer.",
+    "translationEn": "to surf the internet",
+    "relatedIds": [
+      "hsk2-0152",
+      "hsk2-0078",
+      "hsk2-0095",
+      "hsk2-0126",
+      "hsk2-0125"
+    ]
   },
   "hsk2-0129": {
     "id": "hsk2-0129",
@@ -6789,8 +7688,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "birthday"
+    "explanationFr": "Désigne l'anniversaire. Formé de 生 (naître) et 日 (jour), c'est littéralement le « jour de naissance ». Très utilisé dans la formule 生日快乐 (joyeux anniversaire).",
+    "translationEn": "birthday",
+    "relatedIds": [
+      "hsk2-0084",
+      "hsk2-0050",
+      "hsk2-0192",
+      "hsk2-0098",
+      "hsk2-0179"
+    ]
   },
   "hsk2-0130": {
     "id": "hsk2-0130",
@@ -6856,8 +7762,15 @@
     ],
     "theme": "corps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "body"
+    "explanationFr": "Désigne le corps humain, ou la santé physique d'une personne. Formé de 身 (corps) et 体 (substance), il sert dans 身体好 (« être en bonne santé »).",
+    "translationEn": "body",
+    "relatedIds": [
+      "hsk2-0133",
+      "hsk2-0145",
+      "hsk2-0166",
+      "hsk2-0088",
+      "hsk2-0140"
+    ]
   },
   "hsk2-0131": {
     "id": "hsk2-0131",
@@ -6910,8 +7823,15 @@
       "moment",
       "temps"
     ],
-    "explanationFr": "",
-    "translationEn": "matter; thing"
+    "explanationFr": "Désigne le temps, l'heure, le moment. Forme courte de 时候, plus souvent utilisée comme suffixe dans des composés (有时, 小时). C'est un élément central du vocabulaire temporel.",
+    "translationEn": "matter; thing",
+    "relatedIds": [
+      "hsk2-0181",
+      "hsk2-0160",
+      "hsk2-0192",
+      "hsk2-0171",
+      "hsk2-0098"
+    ]
   },
   "hsk2-0132": {
     "id": "hsk2-0132",
@@ -6957,8 +7877,15 @@
       "chose",
       "besogne"
     ],
-    "explanationFr": "Le mot \"事情\" est utilisé pour désigner une situation, un problème ou un sujet qui nécessite une attention ou une action. Il peut aussi se référer à des événements passés, présents ou futurs.",
-    "translationEn": "hour; moment; time"
+    "explanationFr": "Désigne une affaire, une chose à faire, un sujet de préoccupation. Formé de 事 (affaire) et 情 (situation), il s'emploie aussi bien pour des tâches que pour des événements de la vie.",
+    "translationEn": "hour; moment; time",
+    "relatedIds": [
+      "hsk2-0141",
+      "hsk2-0193",
+      "hsk2-0027",
+      "hsk2-0176",
+      "hsk2-0044"
+    ]
   },
   "hsk2-0133": {
     "id": "hsk2-0133",
@@ -7024,8 +7951,15 @@
     ],
     "theme": "corps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "affair; thing; event"
+    "explanationFr": "Désigne la main, partie du corps essentielle à de nombreuses actions. Il entre dans de nombreux composés (手表, 洗手间, 手机) et sert souvent de radical pour les caractères évoquant des actions manuelles.",
+    "translationEn": "affair; thing; event",
+    "relatedIds": [
+      "hsk2-0134",
+      "hsk2-0164",
+      "hsk2-0130",
+      "hsk2-0166",
+      "hsk2-0145"
+    ]
   },
   "hsk2-0134": {
     "id": "hsk2-0134",
@@ -7066,9 +8000,16 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"montre\" est utilisé pour désigner l'instrument qui indique l'heure et qu'on porte au poignet. Il existe des spécificateurs tels que \"une petite montre\", \"un bracelet de montre\", etc., où \"块\" peut être remplacé par des termes comme \"une\" ou \"un\".",
+    "explanationFr": "Désigne une montre-bracelet, instrument de mesure du temps porté au poignet. Formé de 手 (main, poignet) et 表 (instrument), il se distingue de 时间 (le temps).",
     "translationFrAlt": [],
-    "translationEn": "hand"
+    "translationEn": "hand",
+    "relatedIds": [
+      "hsk2-0133",
+      "hsk2-0131",
+      "hsk2-0086",
+      "hsk2-0007",
+      "hsk2-0064"
+    ]
   },
   "hsk2-0135": {
     "id": "hsk2-0135",
@@ -7120,8 +8061,15 @@
       "cartable",
       "sac"
     ],
-    "explanationFr": "",
-    "translationEn": "watch"
+    "explanationFr": "Désigne un cartable, un sac d'école pour transporter livres et fournitures. Formé de 书 (livre) et 包 (sac), il fait partie du vocabulaire scolaire de base.",
+    "translationEn": "watch",
+    "relatedIds": [
+      "hsk2-0007",
+      "hsk2-0008",
+      "hsk2-0010",
+      "hsk2-0086",
+      "hsk2-0065"
+    ]
   },
   "hsk2-0136": {
     "id": "hsk2-0136",
@@ -7164,8 +8112,15 @@
     "translationFrAlt": [
       "à l'aise"
     ],
-    "explanationFr": "Le mot \"舒服\" exprime un sentiment de bien-être et de relaxation, similaire au mot anglais \"comfortable\". Il peut être utilisé dans des contextes physiques (par exemple, un lit confortable) ou émotionnels (se sentir à l'aise dans une situation). La phrase \"我感觉很舒服\" signifie littéralement \"Je me sens très à l'aise\", ce qui est une traduction idiomatique du chinois.",
-    "translationEn": "comfortable; at ease"
+    "explanationFr": "Adjectif signifiant « confortable », « à l'aise ». Décrit aussi bien le confort physique (un lit, une pièce) que le bien-être général (se sentir bien). C'est l'opposé de 难受.",
+    "translationEn": "comfortable; at ease",
+    "relatedIds": [
+      "hsk2-0088",
+      "hsk2-0140",
+      "hsk2-0017",
+      "hsk2-0084",
+      "hsk2-0130"
+    ]
   },
   "hsk2-0137": {
     "id": "hsk2-0137",
@@ -7222,8 +8177,15 @@
       "offrir",
       "accompagner"
     ],
-    "explanationFr": "",
-    "translationEn": "to offer; to send off"
+    "explanationFr": "Verbe signifiant « offrir » un cadeau, ou « accompagner » quelqu'un sur un trajet. Le sens dépend du complément : 送礼物 (offrir un cadeau), 送你回家 (te raccompagner chez toi).",
+    "translationEn": "to offer; to send off",
+    "relatedIds": [
+      "hsk2-0005",
+      "hsk2-0122",
+      "hsk2-0035",
+      "hsk2-0042",
+      "hsk2-0050"
+    ]
   },
   "hsk2-0138": {
     "id": "hsk2-0138",
@@ -7267,9 +8229,16 @@
       "quoique",
       "même si"
     ],
-    "explanationFr": "Bien que et quoique sont deux prépositions conjonctives utilisées pour introduire une clause subordonnée exprimant une condition ou un fait qui limite la portée d'une affirmation principale. Bien que est généralement utilisé avec des verbes au présent, tandis que quoique peut être utilisé avec des verbes à l'imparfait, au passé simple et même au plus-que-parfait.",
+    "explanationFr": "Conjonction signifiant « bien que », « quoique ». Elle introduit une concession et se construit souvent en paire avec 但是 (mais) dans la même phrase : 虽然… 但是… .",
     "explanation": "",
-    "translationEn": "although; even though"
+    "translationEn": "although; even though",
+    "relatedIds": [
+      "hsk2-0139",
+      "hsk2-0031",
+      "hsk2-0030",
+      "hsk2-0174",
+      "hsk2-0052"
+    ]
   },
   "hsk2-0139": {
     "id": "hsk2-0139",
@@ -7314,8 +8283,15 @@
       "ainsi",
       "(c'est) la raison pour laquelle"
     ],
-    "explanationFr": "Le mot \"所以\" est utilisé pour indiquer une conclusion logique ou un résultat naturel basé sur des faits précédents. Il peut être traduit par \"donc\" ou \"par conséquent\". Ces expressions montrent que ce qui suit est le résultat d'une situation antérieure.",
-    "translationEn": "therefore; thus"
+    "explanationFr": "Conjonction signifiant « donc », « par conséquent ». Elle introduit une conclusion logique et se construit souvent avec 因为 (parce que) dans la structure 因为… 所以… .",
+    "translationEn": "therefore; thus",
+    "relatedIds": [
+      "hsk2-0174",
+      "hsk2-0138",
+      "hsk2-0031",
+      "hsk2-0030",
+      "hsk2-0075"
+    ]
   },
   "hsk2-0140": {
     "id": "hsk2-0140",
@@ -7362,8 +8338,15 @@
       "douloureux",
       "endolori"
     ],
-    "explanationFr": "Ce mot exprime un sentiment de douleur ou d'inconfort physique, mais il peut aussi s'appliquer à des sentiments émotionnels intenses. Il est souvent utilisé pour décrire une affection physique ou une émotion profonde.",
-    "translationEn": "to hurt; to ache"
+    "explanationFr": "Verbe-adjectif signifiant « avoir mal », « être douloureux ». Sert pour les douleurs physiques (头疼 : « avoir mal à la tête ») mais aussi pour évoquer une affection profonde (心疼).",
+    "translationEn": "to hurt; to ache",
+    "relatedIds": [
+      "hsk2-0168",
+      "hsk2-0088",
+      "hsk2-0136",
+      "hsk2-0145",
+      "hsk2-0130"
+    ]
   },
   "hsk2-0141": {
     "id": "hsk2-0141",
@@ -7408,8 +8391,15 @@
       "question",
       "inscrire"
     ],
-    "explanationFr": "Le mot \"题\" peut avoir plusieurs significations selon le contexte, notamment \"sujet\" ou \"thème\". Il s'agit souvent du thème principal d'un débat, d'une évaluation ou d'un examen. Parfois, il peut signifier l'action de mentionner ou d'écrire quelque chose.",
-    "translationEn": "question; topic"
+    "explanationFr": "Désigne une question d'examen, un sujet de devoir ou un thème de discussion. Très utilisé dans le contexte scolaire (做题 : « faire des exercices ») mais aussi pour parler de problèmes en général.",
+    "translationEn": "question; topic",
+    "relatedIds": [
+      "hsk2-0081",
+      "hsk2-0080",
+      "hsk2-0022",
+      "hsk2-0176",
+      "hsk2-0132"
+    ]
   },
   "hsk2-0142": {
     "id": "hsk2-0142",
@@ -7470,8 +8460,15 @@
     ],
     "theme": "sport",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to kick"
+    "explanationFr": "Verbe signifiant « donner un coup de pied ». Très utilisé dans 踢足球 (jouer au football). Il s'oppose à 打 qui désigne plutôt des actions avec les mains.",
+    "translationEn": "to kick",
+    "relatedIds": [
+      "hsk2-0200",
+      "hsk2-0120",
+      "hsk2-0087",
+      "hsk2-0114",
+      "hsk2-0185"
+    ]
   },
   "hsk2-0143": {
     "id": "hsk2-0143",
@@ -7515,8 +8512,15 @@
       "bande",
       "article"
     ],
-    "explanationFr": "Ce mot est utilisé pour classifier des objets longs et fins, comme des rubans, des rivières, des routes ou des pantalons. Il sert également à compter des articles ou des clauses dans un texte juridique.",
-    "translationEn": "classifier for long things"
+    "explanationFr": "Classificateur utilisé pour les objets longs et minces : pantalons, rivières, routes, poissons. Il sert aussi à compter les nouvelles, articles ou règles (一条短信 : « un message »).",
+    "translationEn": "classifier for long things",
+    "relatedIds": [
+      "hsk2-0023",
+      "hsk2-0153",
+      "hsk2-0063",
+      "hsk2-0086",
+      "hsk2-0183"
+    ]
   },
   "hsk2-0144": {
     "id": "hsk2-0144",
@@ -7563,8 +8567,15 @@
     ],
     "theme": "loisir",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to dance"
+    "explanationFr": "Verbe-objet signifiant « danser ». Formé de 跳 (sauter) et 舞 (danse), il évoque la pratique de la danse comme loisir ou activité festive.",
+    "translationEn": "to dance",
+    "relatedIds": [
+      "hsk2-0185",
+      "hsk2-0002",
+      "hsk2-0182",
+      "hsk2-0115",
+      "hsk2-0158"
+    ]
   },
   "hsk2-0145": {
     "id": "hsk2-0145",
@@ -7612,9 +8623,16 @@
       "(classificateur pour le bétail)",
       "(suffixe pour former certains noms)"
     ],
-    "explanationFr": "Le caractère \"头\" signifie \"tête\". Dans le contexte linguistique, il sert souvent de suffixe pour former des noms propres ou des titres. Il est également utilisé comme un classificateur en chinois, indiquant qu'un nom se réfère à une personne.",
+    "explanationFr": "Désigne la tête, partie supérieure du corps. Sert aussi de suffixe pour former des noms (石头 : « pierre ») et de classificateur pour le bétail (一头牛 : « une vache »).",
     "explanation": "",
-    "translationEn": "head; beginning; in front"
+    "translationEn": "head; beginning; in front",
+    "relatedIds": [
+      "hsk2-0130",
+      "hsk2-0133",
+      "hsk2-0166",
+      "hsk2-0140",
+      "hsk2-0153"
+    ]
   },
   "hsk2-0146": {
     "id": "hsk2-0146",
@@ -7662,8 +8680,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "foreign country"
+    "explanationFr": "Désigne un pays étranger. Formé de 外 (extérieur) et 国 (pays), il s'oppose à 中国. Le mot s'inscrit dans le vocabulaire des voyages et des relations internationales.",
+    "translationEn": "foreign country",
+    "relatedIds": [
+      "hsk2-0018",
+      "hsk2-0147",
+      "hsk2-0096",
+      "hsk2-0102",
+      "hsk2-0074"
+    ]
   },
   "hsk2-0147": {
     "id": "hsk2-0147",
@@ -7715,8 +8740,15 @@
       "dehors",
       "à l'extérieur"
     ],
-    "explanationFr": "",
-    "translationEn": "outside; outdoors"
+    "explanationFr": "Désigne ce qui est « à l'extérieur », « dehors ». Formé de 外 (extérieur) et 面 (face), c'est l'opposé de 里面. Sert à situer un objet en dehors d'un espace.",
+    "translationEn": "outside; outdoors",
+    "relatedIds": [
+      "hsk2-0090",
+      "hsk2-0126",
+      "hsk2-0157",
+      "hsk2-0117",
+      "hsk2-0056"
+    ]
   },
   "hsk2-0148": {
     "id": "hsk2-0148",
@@ -7762,8 +8794,15 @@
       "finir",
       "s'épuiser"
     ],
-    "explanationFr": "Le mot \"完\" signifie littéralement \"fini\" ou \"terminé\". Il peut être utilisé pour indiquer la fin d'une action, d'un processus ou d'un état. Dans de nombreux contextes, on peut l'utiliser comme synonyme de \"finir\" ou \"terminer\".",
-    "translationEn": "to finish; to end"
+    "explanationFr": "Verbe signifiant « finir », « terminer ». Souvent placé en complément résultatif (做完 : « avoir terminé »), il indique l'achèvement d'une action. C'est l'opposé de 开始 (commencer).",
+    "translationEn": "to finish; to end",
+    "relatedIds": [
+      "hsk2-0078",
+      "hsk2-0193",
+      "hsk2-0034",
+      "hsk2-0081",
+      "hsk2-0029"
+    ]
   },
   "hsk2-0149": {
     "id": "hsk2-0149",
@@ -7809,8 +8848,15 @@
       "un grand nombre de",
       "(nom de famille)"
     ],
-    "explanationFr": "Le mot \"万\" signifie littéralement \"dix mille\". C'est un terme utilisé pour décrire une grande quantité, bien que la réalité ne puisse pas atteindre ce nombre exact. Il est souvent utilisé dans des contextes formels ou poétiques.",
-    "translationEn": "ten thousand"
+    "explanationFr": "Numéral signifiant « dix mille ». Il forme la base du système chinois des grands nombres (一万 : 10 000 ; 十万 : 100 000). Il sert aussi à exprimer une très grande quantité de façon figurée.",
+    "translationEn": "ten thousand",
+    "relatedIds": [
+      "hsk2-0023",
+      "hsk2-0098",
+      "hsk2-0197",
+      "hsk2-0192",
+      "hsk2-0181"
+    ]
   },
   "hsk2-0150": {
     "id": "hsk2-0150",
@@ -7858,8 +8904,15 @@
     ],
     "theme": "pensée",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to forget"
+    "explanationFr": "Verbe signifiant « oublier ». Souvent suivi de 了 pour indiquer l'oubli accompli. C'est l'opposé direct de 记得 (se souvenir). Très utile pour exclamer 我忘了 (j'ai oublié).",
+    "translationEn": "to forget",
+    "relatedIds": [
+      "hsk2-0067",
+      "hsk2-0011",
+      "hsk2-0034",
+      "hsk2-0165",
+      "hsk2-0038"
+    ]
   },
   "hsk2-0151": {
     "id": "hsk2-0151",
@@ -7905,9 +8958,16 @@
       "dans la direction de",
       "vers"
     ],
-    "explanationFr": "Le mot \"往\" signifie généralement \"aller vers\" ou \"se diriger vers\". Il est utilisé pour indiquer une direction ou un mouvement dans une certaine direction. N'oubliez pas qu'il peut aussi être utilisé de manière figurée, comme \"vers l'avenir\" ou \"vers le passé\".",
+    "explanationFr": "Préposition de direction signifiant « vers », « en direction de ». Elle indique une orientation (往东走 : « aller vers l'est ») et se construit avec une direction ou un lieu.",
     "explanation": "",
-    "translationEn": "to go towards; to head for"
+    "translationEn": "to go towards; to head for",
+    "relatedIds": [
+      "hsk2-0024",
+      "hsk2-0044",
+      "hsk2-0089",
+      "hsk2-0009",
+      "hsk2-0195"
+    ]
   },
   "hsk2-0152": {
     "id": "hsk2-0152",
@@ -7959,8 +9019,15 @@
       "en ligne",
       "sur internet"
     ],
-    "explanationFr": "",
-    "translationEn": "online; on the internet (noun)"
+    "explanationFr": "Désigne « en ligne », « sur internet ». Formé de 网 (réseau) et 上 (sur), il s'emploie pour situer une action ou un contenu sur le web (网上买东西 : « acheter en ligne »).",
+    "translationEn": "online; on the internet (noun)",
+    "relatedIds": [
+      "hsk2-0128",
+      "hsk2-0095",
+      "hsk2-0126",
+      "hsk2-0125",
+      "hsk2-0127"
+    ]
   },
   "hsk2-0153": {
     "id": "hsk2-0153",
@@ -8006,8 +9073,15 @@
       "place",
       "siège"
     ],
-    "explanationFr": "Le mot \"位\" peut signifier \"position\", \"place\" ou \"siège\". Il est souvent utilisé pour indiquer un rang ou une place respectueuse, comme dans le contexte social ou hiérarchique. En informatique, il sert à désigner des bits binaires.",
-    "translationEn": "polite classifier for person"
+    "explanationFr": "Classificateur poli pour compter les personnes (三位老师 : « trois professeurs »). Plus respectueux que 个, il s'emploie pour les invités, clients, professionnels. Aussi : « place, position ».",
+    "translationEn": "polite classifier for person",
+    "relatedIds": [
+      "hsk2-0023",
+      "hsk2-0143",
+      "hsk2-0063",
+      "hsk2-0104",
+      "hsk2-0192"
+    ]
   },
   "hsk2-0154": {
     "id": "hsk2-0154",
@@ -8048,9 +9122,16 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"pourquoi\" est utilisé pour demander la raison ou l'explication derrière quelque chose. Il sert à exprimer un doute ou une curiosité sur le but, l'intention ou la cause d'une action ou d'un événement.",
+    "explanationFr": "Locution interrogative signifiant « pourquoi ». Formée de 为 (pour) et 什么 (quoi), elle demande la raison d'un fait. Souvent en début de phrase, on y répond avec 因为.",
     "translationFrAlt": [],
-    "translationEn": "why"
+    "translationEn": "why",
+    "relatedIds": [
+      "hsk2-0174",
+      "hsk2-0052",
+      "hsk2-0108",
+      "hsk2-0189",
+      "hsk2-0179"
+    ]
   },
   "hsk2-0155": {
     "id": "hsk2-0155",
@@ -8111,8 +9192,15 @@
     ],
     "theme": "hygiène",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to wash"
+    "explanationFr": "Verbe signifiant « laver ». Très productif, il entre dans 洗手 (se laver les mains), 洗澡 (prendre une douche) ou 洗衣服 (faire la lessive). Vocabulaire d'hygiène quotidien.",
+    "translationEn": "to wash",
+    "relatedIds": [
+      "hsk2-0164",
+      "hsk2-0133",
+      "hsk2-0193",
+      "hsk2-0035",
+      "hsk2-0136"
+    ]
   },
   "hsk2-0156": {
     "id": "hsk2-0156",
@@ -8161,8 +9249,15 @@
     ],
     "theme": "mouvement",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to come down (towards the speaker); to descend"
+    "explanationFr": "Verbe directionnel composé de 下 (descendre) et 来 (venir vers le locuteur). Il indique un mouvement descendant vers la position du locuteur, par exemple descendre l'escalier où l'on se trouve.",
+    "translationEn": "to come down (towards the speaker); to descend",
+    "relatedIds": [
+      "hsk2-0161",
+      "hsk2-0125",
+      "hsk2-0061",
+      "hsk2-0072",
+      "hsk2-0019"
+    ]
   },
   "hsk2-0157": {
     "id": "hsk2-0157",
@@ -8215,8 +9310,15 @@
       "sous",
       "ci-dessous"
     ],
-    "explanationFr": "",
-    "translationEn": "beneath; below; underneath"
+    "explanationFr": "Désigne ce qui est « en dessous », « sous ». Formé de 下 (bas) et 面 (face), c'est l'opposé de 上面. Sert aussi à introduire la suite d'un texte (下面的内容 : « le contenu suivant »).",
+    "translationEn": "beneath; below; underneath",
+    "relatedIds": [
+      "hsk2-0126",
+      "hsk2-0090",
+      "hsk2-0147",
+      "hsk2-0117",
+      "hsk2-0056"
+    ]
   },
   "hsk2-0158": {
     "id": "hsk2-0158",
@@ -8276,8 +9378,15 @@
     ],
     "theme": "émotion",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to laugh"
+    "explanationFr": "Verbe signifiant « rire », « sourire ». Il s'emploie pour exprimer la joie ou l'amusement, et entre dans des expressions comme 笑话 (blague). C'est un mot positif et chaleureux.",
+    "translationEn": "to laugh",
+    "relatedIds": [
+      "hsk2-0084",
+      "hsk2-0144",
+      "hsk2-0179",
+      "hsk2-0136",
+      "hsk2-0165"
+    ]
   },
   "hsk2-0159": {
     "id": "hsk2-0159",
@@ -8325,8 +9434,15 @@
     ],
     "theme": "personne",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "child; kid"
+    "explanationFr": "Désigne un enfant en bas âge. Le suffixe 儿 ajoute une nuance familière, typique du nord de la Chine. C'est un terme générique englobant garçons et filles.",
+    "translationEn": "child; kid",
+    "relatedIds": [
+      "hsk2-0109",
+      "hsk2-0112",
+      "hsk2-0160",
+      "hsk2-0025",
+      "hsk2-0107"
+    ]
   },
   "hsk2-0160": {
     "id": "hsk2-0160",
@@ -8370,9 +9486,16 @@
     "translationFrAlt": [
       "jeunesse"
     ],
-    "explanationFr": "Ce terme se réfère à la période de vie où une personne est encore un enfant, avant qu'elle ne devienne un adulte. Il souligne le statut d'une personne qui n'a pas encore atteint l'âge adulte.",
+    "explanationFr": "Locution signifiant « quand j'étais petit », « durant l'enfance ». Formée de 小 (petit) et 时候 (moment), elle introduit des souvenirs d'enfance dans le récit.",
     "explanation": "",
-    "translationEn": "when I was young; childhood"
+    "translationEn": "when I was young; childhood",
+    "relatedIds": [
+      "hsk2-0025",
+      "hsk2-0159",
+      "hsk2-0181",
+      "hsk2-0131",
+      "hsk2-0107"
+    ]
   },
   "hsk2-0161": {
     "id": "hsk2-0161",
@@ -8424,8 +9547,15 @@
       "descendre (s'éloignant)",
       "continuer"
     ],
-    "explanationFr": "",
-    "translationEn": "to go down (away from the speaker); to continue"
+    "explanationFr": "Verbe directionnel composé de 下 (descendre) et 去 (aller, s'éloigner). Il indique un mouvement descendant qui s'éloigne du locuteur. Peut aussi signifier « continuer » comme complément.",
+    "translationEn": "to go down (away from the speaker); to continue",
+    "relatedIds": [
+      "hsk2-0156",
+      "hsk2-0127",
+      "hsk2-0021",
+      "hsk2-0062",
+      "hsk2-0073"
+    ]
   },
   "hsk2-0162": {
     "id": "hsk2-0162",
@@ -8467,9 +9597,16 @@
       "level:hsk2"
     ],
     "theme": "famille",
-    "explanationFr": "Le \"nom de famille\" est l'héritage linguistique et culturel qui identifie une personne dans un contexte social. Il précède généralement le prénom lorsqu'on désigne une personne. Par exemple, si on dit \"Xing Li\", Xing serait le nom de famille.",
+    "explanationFr": "Désigne le nom de famille, qui précède toujours le prénom en chinois. Verbe : « s'appeler » (avec le nom de famille). Question typique : 您贵姓 ? (« Quel est votre nom ? »).",
     "translationFrAlt": [],
-    "translationEn": "surname; family name; to be called"
+    "translationEn": "surname; family name; to be called",
+    "relatedIds": [
+      "hsk2-0163",
+      "hsk2-0104",
+      "hsk2-0107",
+      "hsk2-0170",
+      "hsk2-0068"
+    ]
   },
   "hsk2-0163": {
     "id": "hsk2-0163",
@@ -8514,9 +9651,16 @@
       "noms",
       "nom complet"
     ],
-    "explanationFr": "Le terme \"姓名\" en chinois se réfère à l'ensemble du nom d'une personne, qui comprend généralement le nom de famille (ou le nom paternel) et le prénom (ou le nom propre). Il est important de noter que dans la culture chinoise, le nom de famille vient toujours avant le prénom. Ce terme est utilisé pour désigner l'identité complète d'une personne.",
+    "explanationFr": "Désigne le nom complet d'une personne, comprenant nom de famille et prénom. Formé de 姓 (nom de famille) et 名 (prénom), il est utilisé dans les contextes administratifs.",
     "explanation": "",
-    "translationEn": "full name"
+    "translationEn": "full name",
+    "relatedIds": [
+      "hsk2-0162",
+      "hsk2-0104",
+      "hsk2-0068",
+      "hsk2-0143",
+      "hsk2-0153"
+    ]
   },
   "hsk2-0164": {
     "id": "hsk2-0164",
@@ -8564,8 +9708,15 @@
     ],
     "theme": "lieu",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "toilet, bathroom"
+    "explanationFr": "Désigne les toilettes, la salle de bain. Formé de 洗 (laver), 手 (main) et 间 (pièce), c'est littéralement « la pièce pour se laver les mains », terme poli et universel.",
+    "translationEn": "toilet, bathroom",
+    "relatedIds": [
+      "hsk2-0155",
+      "hsk2-0133",
+      "hsk2-0063",
+      "hsk2-0017",
+      "hsk2-0100"
+    ]
   },
   "hsk2-0165": {
     "id": "hsk2-0165",
@@ -8613,8 +9764,15 @@
     ],
     "theme": "émotion",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to hope"
+    "explanationFr": "Verbe signifiant « espérer », « souhaiter », et nom désignant l'espoir. Il introduit un souhait pour soi ou pour autrui (希望你成功 : « j'espère que tu réussiras »).",
+    "translationEn": "to hope",
+    "relatedIds": [
+      "hsk2-0082",
+      "hsk2-0067",
+      "hsk2-0150",
+      "hsk2-0042",
+      "hsk2-0193"
+    ]
   },
   "hsk2-0166": {
     "id": "hsk2-0166",
@@ -8658,8 +9816,15 @@
     "translationFrAlt": [
       "yeux"
     ],
-    "explanationFr": "Le mot \"œil\" est utilisé pour désigner un organe individuel, tandis que \"yeux\" est utilisé pour plusieurs organes ou dans des expressions plus générales. Il est important de noter que le chinois utilise souvent des classificateurs avec ce mot, par exemple \"隻|只[zhi1]\" pour un œil et \"雙|双[shuang1]\" pour deux yeux.",
-    "translationEn": "eyes"
+    "explanationFr": "Désigne les yeux. Formé de 眼 (œil) et 睛 (pupille), il s'emploie au pluriel comme au singulier. Le chinois utilise souvent le classificateur 只 (zhī) avec ce mot.",
+    "translationEn": "eyes",
+    "relatedIds": [
+      "hsk2-0130",
+      "hsk2-0133",
+      "hsk2-0145",
+      "hsk2-0058",
+      "hsk2-0167"
+    ]
   },
   "hsk2-0167": {
     "id": "hsk2-0167",
@@ -8700,9 +9865,16 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le terme \"couleur\" en chinois désigne l'apparence visuelle d'un objet, généralement perçue par les yeux grâce à la réflexion des rayons lumineux. Il peut également faire référence aux pigments ou aux teintures utilisés pour donner une couleur à un objet.",
+    "explanationFr": "Désigne la couleur, l'apparence visuelle d'un objet. Il sert dans 颜色 mais aussi dans tous les composés de couleur (红色, 黑色, etc.) où 色 marque la nuance.",
     "translationFrAlt": [],
-    "translationEn": "color; pigment"
+    "translationEn": "color; pigment",
+    "relatedIds": [
+      "hsk2-0003",
+      "hsk2-0053",
+      "hsk2-0055",
+      "hsk2-0094",
+      "hsk2-0166"
+    ]
   },
   "hsk2-0168": {
     "id": "hsk2-0168",
@@ -8747,8 +9919,15 @@
       "remède",
       "empoisonner"
     ],
-    "explanationFr": "Le mot \"yào\" signifie \"médicament\". Il s'agit d'un terme général pour des substances utilisées pour traiter ou prévenir les maladies. Cependant, il peut également désigner des drogues ou des substances ayant un effet spécifique (comme une substance toxique). En français, on utilise souvent le mot \"drogue\" pour désigner des substances plus dangereuses. Le classificateur couramment utilisé est \"种\" (zhong3) quand on parle de médicaments différents.",
-    "translationEn": "medicine"
+    "explanationFr": "Désigne un médicament. Terme général qui couvre les remèdes traditionnels comme la médecine moderne. Verbes associés : 吃药 (prendre un médicament), 买药 (acheter un médicament).",
+    "translationEn": "medicine",
+    "relatedIds": [
+      "hsk2-0169",
+      "hsk2-0140",
+      "hsk2-0088",
+      "hsk2-0136",
+      "hsk2-0130"
+    ]
   },
   "hsk2-0169": {
     "id": "hsk2-0169",
@@ -8789,10 +9968,17 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"pharmacie\" désigne un établissement où l'on peut acheter des médicaments et des produits de santé sous la surveillance d'un pharmacien. Il s'agit d'un lieu où on trouve diverses préparations pharmaceutiques, ainsi que des conseils sur les médicaments.",
+    "explanationFr": "Désigne une pharmacie. Formé de 药 (médicament) et 店 (boutique), c'est l'endroit où l'on achète des médicaments. Vocabulaire essentiel pour les questions de santé.",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "pharmacy"
+    "translationEn": "pharmacy",
+    "relatedIds": [
+      "hsk2-0168",
+      "hsk2-0076",
+      "hsk2-0124",
+      "hsk2-0140",
+      "hsk2-0088"
+    ]
   },
   "hsk2-0170": {
     "id": "hsk2-0170",
@@ -8852,8 +10038,15 @@
     ],
     "theme": "famille",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "grandfather"
+    "explanationFr": "Désigne le grand-père paternel. Mot redoublé typique du vocabulaire familial, il se distingue de 外公 (grand-père maternel). La famille paternelle a une terminologie particulière en chinois.",
+    "translationEn": "grandfather",
+    "relatedIds": [
+      "hsk2-0107",
+      "hsk2-0121",
+      "hsk2-0187",
+      "hsk2-0162",
+      "hsk2-0050"
+    ]
   },
   "hsk2-0171": {
     "id": "hsk2-0171",
@@ -8900,8 +10093,15 @@
       "bientôt",
       "tantôt ... tantôt"
     ],
-    "explanationFr": "Ce mot signifie \"un moment\" ou \"un petit intervalle de temps\". Il est utilisé pour indiquer une courte pause, souvent dans le contexte d'attendre quelqu'un ou quelque chose. On peut aussi l'utiliser pour dire que quelque chose se produira bientôt.",
-    "translationEn": "for a moment"
+    "explanationFr": "Locution signifiant « un instant », « un moment ». Formée de 一 (un) et 会儿 (moment), elle indique une courte durée. Très utilisée pour faire patienter : 等一会儿 (« attendez un instant »).",
+    "translationEn": "for a moment",
+    "relatedIds": [
+      "hsk2-0175",
+      "hsk2-0085",
+      "hsk2-0034",
+      "hsk2-0098",
+      "hsk2-0131"
+    ]
   },
   "hsk2-0172": {
     "id": "hsk2-0172",
@@ -8940,10 +10140,17 @@
       "level:hsk2"
     ],
     "theme": "général",
-    "explanationFr": "Le mot \"already\" en anglais se traduit par \"déjà\" en français, qui sert à indiquer qu'une action a été accomplie avant le moment considéré dans la conversation ou l'histoire racontée. Il est souvent utilisé pour exprimer une surprise ou un soulagement face à quelque chose qui a déjà eu lieu.",
+    "explanationFr": "Adverbe signifiant « déjà ». Il indique qu'une action est accomplie avant le moment présent ou un autre moment de référence. Souvent associé à 了 en fin de phrase (已经走了 : « il est déjà parti »).",
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "already"
+    "translationEn": "already",
+    "relatedIds": [
+      "hsk2-0071",
+      "hsk2-0048",
+      "hsk2-0098",
+      "hsk2-0075",
+      "hsk2-0085"
+    ]
   },
   "hsk2-0173": {
     "id": "hsk2-0173",
@@ -8994,9 +10201,16 @@
       "négatif (électricité)",
       "(nom de famille)"
     ],
-    "explanationFr": "Le caractère 阴 (yīn) est utilisé pour décrire un ciel couvert de nuages, mais il peut aussi faire référence à l'idée de \"femine\" ou de \"négatif\", selon le contexte. Dans la philosophie chinoise, il représente le principe yin, qui est complémentaire du yang (masculin).",
+    "explanationFr": "Adjectif signifiant « nuageux », « couvert ». Vocabulaire météo, opposé à 晴 (ensoleillé). Le caractère évoque aussi le principe du yin, l'ombre, le féminin dans la philosophie chinoise.",
     "explanation": "",
-    "translationEn": "cloudy"
+    "translationEn": "cloudy",
+    "relatedIds": [
+      "hsk2-0119",
+      "hsk2-0094",
+      "hsk2-0030",
+      "hsk2-0167",
+      "hsk2-0190"
+    ]
   },
   "hsk2-0174": {
     "id": "hsk2-0174",
@@ -9040,8 +10254,15 @@
     "translationFrAlt": [
       "parce que"
     ],
-    "explanationFr": "Le mot \"因为\" est utilisé pour indiquer la raison ou l'explanation d'un événement ou d'une situation. Il sert à expliquer pourquoi quelque chose se produit. Il peut être traduit par \"parce que\" en français, qui est un préposition-conjonction utilisée de manière similaire.",
-    "translationEn": "because"
+    "explanationFr": "Conjonction signifiant « parce que ». Elle introduit une cause et se construit souvent en paire avec 所以 (donc) dans la structure 因为… 所以…. C'est l'outil de base pour exprimer la causalité.",
+    "translationEn": "because",
+    "relatedIds": [
+      "hsk2-0139",
+      "hsk2-0138",
+      "hsk2-0031",
+      "hsk2-0030",
+      "hsk2-0154"
+    ]
   },
   "hsk2-0175": {
     "id": "hsk2-0175",
@@ -9106,8 +10327,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "together"
+    "explanationFr": "Adverbe signifiant « ensemble ». Formé de 一 (un) et 起 (se lever), il évoque l'idée de réunion ou d'action commune (一起去 : « y aller ensemble »).",
+    "translationEn": "together",
+    "relatedIds": [
+      "hsk2-0118",
+      "hsk2-0044",
+      "hsk2-0171",
+      "hsk2-0098",
+      "hsk2-0071"
+    ]
   },
   "hsk2-0176": {
     "id": "hsk2-0176",
@@ -9154,8 +10382,15 @@
       "souhait",
       "sentiment"
     ],
-    "explanationFr": "Le mot \"意思\" peut signifier \"idée\", mais aussi \"sens\". Il est utilisé pour exprimer une opinion, un sentiment ou une intention. Parfois, il peut être utilisé de manière figurative pour indiquer l'intention derrière quelque chose.",
-    "translationEn": "meaning; significance"
+    "explanationFr": "Désigne le sens, la signification d'un mot ou d'une situation. Aussi : « idée », « intention ». On le retrouve dans 有意思 (intéressant), 没意思 (ennuyeux), 不好意思 (excusez-moi).",
+    "translationEn": "meaning; significance",
+    "relatedIds": [
+      "hsk2-0179",
+      "hsk2-0099",
+      "hsk2-0012",
+      "hsk2-0022",
+      "hsk2-0038"
+    ]
   },
   "hsk2-0177": {
     "id": "hsk2-0177",
@@ -9207,8 +10442,15 @@
       "nager",
       "voyager"
     ],
-    "explanationFr": "",
-    "translationEn": "to swim; to travel"
+    "explanationFr": "Verbe signifiant « nager » ou « voyager » selon le contexte. Il est à la base de 游泳 (nager) et 旅游 (voyager). Le sens précis dépend du composé dans lequel il apparaît.",
+    "translationEn": "to swim; to travel",
+    "relatedIds": [
+      "hsk2-0182",
+      "hsk2-0096",
+      "hsk2-0183",
+      "hsk2-0185",
+      "hsk2-0114"
+    ]
   },
   "hsk2-0178": {
     "id": "hsk2-0178",
@@ -9274,8 +10516,15 @@
     ],
     "theme": "direction",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "right"
+    "explanationFr": "Désigne la droite, le côté droit. Sert dans les indications de direction et entre dans 右边 (à droite). C'est l'opposé de 左.",
+    "translationEn": "right",
+    "relatedIds": [
+      "hsk2-0180",
+      "hsk2-0198",
+      "hsk2-0199",
+      "hsk2-0113",
+      "hsk2-0151"
+    ]
   },
   "hsk2-0179": {
     "id": "hsk2-0179",
@@ -9320,8 +10569,15 @@
     "translationFrAlt": [
       "amusant"
     ],
-    "explanationFr": "Ce mot exprime l'idée que quelque chose est agréable, amusant ou a du sens. Il peut s'appliquer à des situations, des objets ou des personnes qui retiennent l'intérêt de quelqu'un.",
-    "translationEn": "interesting"
+    "explanationFr": "Adjectif signifiant « intéressant », « amusant ». Formé de 有 (avoir) et 意思 (sens, intérêt), il décrit ce qui capte l'attention. C'est l'opposé direct de 没意思.",
+    "translationEn": "interesting",
+    "relatedIds": [
+      "hsk2-0099",
+      "hsk2-0176",
+      "hsk2-0012",
+      "hsk2-0084",
+      "hsk2-0136"
+    ]
   },
   "hsk2-0180": {
     "id": "hsk2-0180",
@@ -9369,8 +10625,15 @@
     ],
     "theme": "direction",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to the right"
+    "explanationFr": "Désigne le côté droit. Formé de 右 (droite) et 边 (bord), il s'emploie pour donner une direction : 在右边 (« à droite »). C'est l'opposé de 左边.",
+    "translationEn": "to the right",
+    "relatedIds": [
+      "hsk2-0199",
+      "hsk2-0178",
+      "hsk2-0198",
+      "hsk2-0113",
+      "hsk2-0117"
+    ]
   },
   "hsk2-0181": {
     "id": "hsk2-0181",
@@ -9419,8 +10682,15 @@
     ],
     "theme": "temps",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "sometimes"
+    "explanationFr": "Adverbe signifiant « parfois », « de temps en temps ». Formé de 有 (avoir) et 时候 (moment), il évoque une fréquence irrégulière. Souvent doublé : 有时…有时… (« parfois… parfois… »).",
+    "translationEn": "sometimes",
+    "relatedIds": [
+      "hsk2-0071",
+      "hsk2-0098",
+      "hsk2-0131",
+      "hsk2-0160",
+      "hsk2-0192"
+    ]
   },
   "hsk2-0182": {
     "id": "hsk2-0182",
@@ -9481,8 +10751,15 @@
     ],
     "theme": "sport",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "occasionally"
+    "explanationFr": "Verbe signifiant « nager ». Formé de 游 (parcourir, nager) et 泳 (nage), il évoque clairement l'activité de natation. À distinguer de 旅游 (voyager).",
+    "translationEn": "occasionally",
+    "relatedIds": [
+      "hsk2-0177",
+      "hsk2-0114",
+      "hsk2-0115",
+      "hsk2-0185",
+      "hsk2-0144"
+    ]
   },
   "hsk2-0183": {
     "id": "hsk2-0183",
@@ -9526,8 +10803,15 @@
     "translationFrAlt": [
       "195e radical"
     ],
-    "explanationFr": "Le mot \"poisson\" en français est utilisé pour désigner diverses espèces aquatiques, y compris celles qui ne sont pas réellement des poissons du point de vue biologique (comme l'abalone, les crocodiles ou les octopus). Il faut noter que ces termes peuvent parfois être plus spécifiques dans certaines régions ou contextes.",
-    "translationEn": "station (place)"
+    "explanationFr": "Désigne un poisson. Mot très productif, il sert dans le vocabulaire culinaire (吃鱼 : « manger du poisson ») et apparaît comme radical dans de nombreux noms de poissons.",
+    "translationEn": "station (place)",
+    "relatedIds": [
+      "hsk2-0111",
+      "hsk2-0123",
+      "hsk2-0177",
+      "hsk2-0182",
+      "hsk2-0143"
+    ]
   },
   "hsk2-0184": {
     "id": "hsk2-0184",
@@ -9599,8 +10883,15 @@
     ],
     "theme": "distance",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "station; stop"
+    "explanationFr": "Adjectif signifiant « loin », « éloigné ». On l'oppose à 近 (proche). Il sert pour la distance physique (家很远 : « la maison est loin ») et figurée.",
+    "translationEn": "station; stop",
+    "relatedIds": [
+      "hsk2-0070",
+      "hsk2-0089",
+      "hsk2-0014",
+      "hsk2-0041",
+      "hsk2-0151"
+    ]
   },
   "hsk2-0185": {
     "id": "hsk2-0185",
@@ -9644,8 +10935,15 @@
       "mouvements",
       "faire des exercices physiques"
     ],
-    "explanationFr": "Le mot \"运动\" (yùndòng) en chinois signifie \"faire du sport\" ou \"s'exercer\". Il englobe l'idée d'activités physiques pour se maintenir en forme. Ce terme peut aussi faire référence à des campagnes ou des mouvements, mais dans un contexte courant et pédagogique, il est principalement utilisé pour parler de sports et d'exercices.",
-    "translationEn": "husband"
+    "explanationFr": "Désigne le sport, l'exercice physique, et comme verbe « faire du sport ». Formé de 运 (transporter) et 动 (bouger), il évoque le mouvement actif. Aussi : « mouvement » au sens politique.",
+    "translationEn": "husband",
+    "relatedIds": [
+      "hsk2-0144",
+      "hsk2-0114",
+      "hsk2-0115",
+      "hsk2-0182",
+      "hsk2-0200"
+    ]
   },
   "hsk2-0186": {
     "id": "hsk2-0186",
@@ -9697,8 +10995,15 @@
       "se tenir debout",
       "station"
     ],
-    "explanationFr": "",
-    "translationEn": "particle : action in progress; state (-ing; am/traveling)"
+    "explanationFr": "Désigne une station, un arrêt (de bus, de métro). Comme verbe, il signifie « se tenir debout ». On le retrouve dans 车站 (gare, arrêt) et 地铁站 (station de métro).",
+    "translationEn": "particle : action in progress; state (-ing; am/traveling)",
+    "relatedIds": [
+      "hsk2-0015",
+      "hsk2-0036",
+      "hsk2-0046",
+      "hsk2-0028",
+      "hsk2-0066"
+    ]
   },
   "hsk2-0187": {
     "id": "hsk2-0187",
@@ -9746,8 +11051,15 @@
     ],
     "theme": "famille",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "so; such (near)"
+    "explanationFr": "Désigne le mari, le conjoint. Plus formel que 老公, il s'oppose à 妻子 (épouse). Vocabulaire de base pour parler de la vie de couple.",
+    "translationEn": "so; such (near)",
+    "relatedIds": [
+      "hsk2-0121",
+      "hsk2-0107",
+      "hsk2-0170",
+      "hsk2-0162",
+      "hsk2-0163"
+    ]
   },
   "hsk2-0188": {
     "id": "hsk2-0188",
@@ -9796,7 +11108,15 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "justly"
+    "translationEn": "justly",
+    "explanationFr": "Particule verbale qui marque une action en cours ou un état durable, comme « -ant » en français. Elle se place après le verbe : 坐着 (« être assis »), 听着 (« en train d'écouter »).",
+    "relatedIds": [
+      "hsk2-0048",
+      "hsk2-0033",
+      "hsk2-0032",
+      "hsk2-0001",
+      "hsk2-0190"
+    ]
   },
   "hsk2-0189": {
     "id": "hsk2-0189",
@@ -9841,9 +11161,16 @@
       "comme ça",
       "de cette façon"
     ],
-    "explanationFr": "Le mot \"这么\" est utilisé pour exprimer une quantité importante ou pour décrire quelque chose dans la forme ou le style donné. Il peut être traduit par \"autant\" quand on parle de quantité, et \"comme ceci\" quand on veut indiquer un mode d'action ou une manière.",
+    "explanationFr": "Pronom-adverbe signifiant « si », « tellement » (avec proximité). Il marque un degré ou une manière proche du locuteur (这么大 : « si grand »). C'est le pendant rapproché de 那么.",
     "explanation": "",
-    "translationEn": "like this; thus"
+    "translationEn": "like this; thus",
+    "relatedIds": [
+      "hsk2-0191",
+      "hsk2-0108",
+      "hsk2-0110",
+      "hsk2-0154",
+      "hsk2-0194"
+    ]
   },
   "hsk2-0190": {
     "id": "hsk2-0190",
@@ -9884,8 +11211,15 @@
     ],
     "theme": "général",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "classifier for days of the week"
+    "explanationFr": "Adverbe signifiant « justement », « précisément ». Indique souvent qu'une action est en train d'avoir lieu, comme « être en train de ». Aussi adjectif : « droit », « correct ».",
+    "translationEn": "classifier for days of the week",
+    "relatedIds": [
+      "hsk2-0075",
+      "hsk2-0188",
+      "hsk2-0172",
+      "hsk2-0085",
+      "hsk2-0098"
+    ]
   },
   "hsk2-0191": {
     "id": "hsk2-0191",
@@ -9930,8 +11264,15 @@
     "translationFrAlt": [
       "de cette façon"
     ],
-    "explanationFr": "Le mot \"ainsi\" et \"comme cela\" sont utilisés pour indiquer une action ou un état qui est similaire à celui mentionné précédemment, ou qui se fait de la même manière. Ils peuvent également être utilisés pour exprimer l'approbation d'une situation ou d'un mode d'action.",
-    "translationEn": "to prepare"
+    "explanationFr": "Pronom démonstratif signifiant « comme ça », « ainsi ». Il décrit une manière ou un état similaire à ce qui est proche. C'est le pendant rapproché de 那样.",
+    "translationEn": "to prepare",
+    "relatedIds": [
+      "hsk2-0110",
+      "hsk2-0189",
+      "hsk2-0108",
+      "hsk2-0154",
+      "hsk2-0194"
+    ]
   },
   "hsk2-0192": {
     "id": "hsk2-0192",
@@ -9981,8 +11322,15 @@
       "attentif",
       "(nom de famille)"
     ],
-    "explanationFr": "Le mot \"semaine\" en français désigne une période de sept jours, généralement utilisée pour organiser le temps dans un contexte professionnel ou personnel. Il peut également être utilisé pour exprimer des actions qui se répètent régulièrement.",
-    "translationEn": "oneself"
+    "explanationFr": "Désigne une semaine, période de sept jours. Sert aussi de classificateur (一周 : « une semaine »). Synonyme de 星期 ou 礼拜, plus formel et concis à l'écrit.",
+    "translationEn": "oneself",
+    "relatedIds": [
+      "hsk2-0131",
+      "hsk2-0098",
+      "hsk2-0171",
+      "hsk2-0181",
+      "hsk2-0023"
+    ]
   },
   "hsk2-0193": {
     "id": "hsk2-0193",
@@ -10036,8 +11384,15 @@
     ],
     "theme": "quotidien",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "to walk; to go"
+    "explanationFr": "Verbe signifiant « préparer », « se préparer à », et nom désignant la préparation. On l'emploie pour anticiper un événement ou organiser quelque chose à l'avance (准备考试 : « préparer un examen »).",
+    "translationEn": "to walk; to go",
+    "relatedIds": [
+      "hsk2-0078",
+      "hsk2-0148",
+      "hsk2-0081",
+      "hsk2-0132",
+      "hsk2-0085"
+    ]
   },
   "hsk2-0194": {
     "id": "hsk2-0194",
@@ -10081,8 +11436,15 @@
       "personnel",
       "propre"
     ],
-    "explanationFr": "Ce terme signifie \"lui-même\" ou \"elle-même\", mais il se réfère à la personne qui parle ou à une personne précise. Il est utilisé pour exprimer l'idée d'une action réalisée par la personne elle-même, sans aide extérieure.",
-    "translationEn": "oneself; one's own"
+    "explanationFr": "Pronom réfléchi signifiant « soi-même », « moi-même ». Il renforce le sujet et indique que l'action est faite par la personne elle-même (自己做 : « faire soi-même »).",
+    "translationEn": "oneself; one's own",
+    "relatedIds": [
+      "hsk2-0189",
+      "hsk2-0191",
+      "hsk2-0110",
+      "hsk2-0108",
+      "hsk2-0153"
+    ]
   },
   "hsk2-0195": {
     "id": "hsk2-0195",
@@ -10146,8 +11508,15 @@
       "marcher",
       "partir"
     ],
-    "explanationFr": "",
-    "translationEn": "to walk; to go; to run"
+    "explanationFr": "Verbe signifiant « marcher », « partir » selon le contexte. Très polysémique, il évoque toujours un mouvement de déplacement, à pied ou en partant d'un lieu.",
+    "translationEn": "to walk; to go; to run",
+    "relatedIds": [
+      "hsk2-0196",
+      "hsk2-0114",
+      "hsk2-0115",
+      "hsk2-0092",
+      "hsk2-0037"
+    ]
   },
   "hsk2-0196": {
     "id": "hsk2-0196",
@@ -10199,8 +11568,15 @@
       "marcher",
       "aller à pied"
     ],
-    "explanationFr": "",
-    "translationEn": "to walk; to go on foot"
+    "explanationFr": "Verbe-objet signifiant « marcher », « aller à pied ». Formé de 走 (marcher) et 路 (route), il évoque clairement la marche comme mode de déplacement, par opposition aux transports.",
+    "translationEn": "to walk; to go on foot",
+    "relatedIds": [
+      "hsk2-0195",
+      "hsk2-0092",
+      "hsk2-0095",
+      "hsk2-0114",
+      "hsk2-0115"
+    ]
   },
   "hsk2-0197": {
     "id": "hsk2-0197",
@@ -10254,8 +11630,15 @@
     ],
     "theme": "comparaison",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "most; the most"
+    "explanationFr": "Adverbe signifiant « le plus » qui sert à former le superlatif : 最好 (« le meilleur »), 最大 (« le plus grand »). Outil grammatical de base pour comparer.",
+    "translationEn": "most; the most",
+    "relatedIds": [
+      "hsk2-0009",
+      "hsk2-0149",
+      "hsk2-0071",
+      "hsk2-0083",
+      "hsk2-0041"
+    ]
   },
   "hsk2-0198": {
     "id": "hsk2-0198",
@@ -10321,8 +11704,15 @@
     ],
     "theme": "direction",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "left (side)"
+    "explanationFr": "Désigne la gauche, le côté gauche. Sert dans les indications de direction et entre dans 左边 (à gauche). C'est l'opposé de 右.",
+    "translationEn": "left (side)",
+    "relatedIds": [
+      "hsk2-0199",
+      "hsk2-0178",
+      "hsk2-0180",
+      "hsk2-0113",
+      "hsk2-0151"
+    ]
   },
   "hsk2-0199": {
     "id": "hsk2-0199",
@@ -10370,8 +11760,15 @@
     ],
     "theme": "direction",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "on the left side"
+    "explanationFr": "Désigne le côté gauche. Formé de 左 (gauche) et 边 (bord), il s'emploie pour donner une direction : 在左边 (« à gauche »). C'est l'opposé de 右边.",
+    "translationEn": "on the left side",
+    "relatedIds": [
+      "hsk2-0180",
+      "hsk2-0198",
+      "hsk2-0178",
+      "hsk2-0113",
+      "hsk2-0117"
+    ]
   },
   "hsk2-0200": {
     "id": "hsk2-0200",
@@ -10418,7 +11815,14 @@
     ],
     "theme": "sport",
     "translationFrAlt": [],
-    "explanationFr": "",
-    "translationEn": "football"
+    "explanationFr": "Désigne le football, sport très populaire. Formé de 足 (pied) et 球 (ballon), il évoque clairement le sport qui se joue avec les pieds. Verbes associés : 踢足球 (jouer au football).",
+    "translationEn": "football",
+    "relatedIds": [
+      "hsk2-0087",
+      "hsk2-0142",
+      "hsk2-0120",
+      "hsk2-0185",
+      "hsk2-0114"
+    ]
   }
 }
