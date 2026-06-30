@@ -1539,6 +1539,47 @@
   }
 }
 
+/* V18 — Carte de prompt « Bilan à passer » dans CompactPathCard.
+   Affichée quand toutes les leçons d'un niveau sont done mais que le
+   bilan n'est pas validé : on bloque l'avancée au niveau suivant et on
+   pousse l'utilisateur vers le bilan. */
+.path-v2-bilan-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 12px 0 10px;
+  padding: 12px 14px;
+  background: #fff7ea;
+  border: 1px solid #f1d9a8;
+  border-left: 4px solid #d4a242;
+  border-radius: 10px;
+}
+.path-v2-bilan-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.path-v2-bilan-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13.5px;
+  color: var(--dv-ink);
+}
+.path-v2-bilan-text strong {
+  font-weight: 600;
+  font-size: 14px;
+  color: #8a5a13;
+}
+.path-v2-cta--bilan {
+  background: linear-gradient(135deg, #d4a242 0%, #b8861f 100%);
+  box-shadow: 0 6px 16px rgba(184, 134, 31, 0.25);
+}
+.path-v2-cta--bilan:hover {
+  background: linear-gradient(135deg, #c69230 0%, #a0750f 100%);
+  box-shadow: 0 8px 20px rgba(184, 134, 31, 0.32);
+}
+
 /* ---------- AI tutor : input chat inline --------------------------------- */
 
 .ai-input-row {

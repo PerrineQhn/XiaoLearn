@@ -108,6 +108,16 @@ export interface HomePageV2Props {
   onOpenIdeas?: () => void;
   /** Nombre d'annonces non lues (affiché en badge sur la carte Communauté). */
   unreadAnnouncementsCount?: number;
+  /**
+   * V18 — Bilan gating sur la home. Si toutes les leçons d'un niveau sont
+   * complétées mais que son bilan n'est PAS validé, on bloque l'avancée du
+   * « Ton parcours » sur ce niveau et on propose à la place une carte
+   * « Bilan {level} à passer ». Sans ces props, le comportement antérieur
+   * (sauter au niveau suivant dès que toutes les leçons sont complètes) reste
+   * actif.
+   */
+  isLevelBilanPassed?: (level: string) => boolean;
+  onOpenBilan?: (level: string) => void;
 }
 
 // --------------------------------------------------------------------------
@@ -691,7 +701,9 @@ const CompactPathCard = ({
   paths,
   completed,
   onOpenPath,
-  onOpenLesson
+  onOpenLesson,
+  isLevelBilanPassed,
+  onOpenBilan
 }: {
   language: Language;
   levels: CecrLevelMeta[];
@@ -699,12 +711,21 @@ const CompactPathCard = ({
   completed: Set<string>;
   onOpenPath: () => void;
   onOpenLesson: (lessonId: string) => void;
+  isLevelBilanPassed?: (level: string) => boolean;
+  onOpenBilan?: (level: string) => void;
 }) => {
   // Aplatis les leçons du niveau CECR en cours (premier niveau non terminé).
+  //
+  // V18 — Un niveau n'est considéré « terminé » qu'avec leçons faites ET
+  // bilan validé. Si l'utilisateur a fini toutes les leçons d'un niveau
+  // mais n'a pas passé le bilan, on RESTE sur ce niveau et on affiche un
+  // CTA Bilan (au lieu d'avancer au niveau suivant et de laisser croire
+  // qu'il a fini).
   const data = useMemo(() => {
     const pathById = new Map(paths.map((p) => [p.id, p]));
     let activeMeta: CecrLevelMeta | null = null;
     let lessons: { id: string; title: string; titleEn: string; completed: boolean }[] = [];
+    let needsBilan = false;
 
     for (const meta of levels) {
       const metaLessons: typeof lessons = [];
@@ -722,9 +743,19 @@ const CompactPathCard = ({
       }
       if (metaLessons.length === 0) continue;
       const allDone = metaLessons.every((l) => l.completed);
+      const bilanOk = isLevelBilanPassed ? isLevelBilanPassed(meta.level) : true;
       if (!allDone) {
         activeMeta = meta;
         lessons = metaLessons;
+        needsBilan = false;
+        break;
+      }
+      // Toutes les leçons sont done. On ne passe au niveau suivant que si
+      // le bilan est validé — sinon on s'arrête ICI et on demande le bilan.
+      if (!bilanOk) {
+        activeMeta = meta;
+        lessons = metaLessons;
+        needsBilan = true;
         break;
       }
     }
@@ -755,8 +786,8 @@ const CompactPathCard = ({
       }
     }
 
-    return { activeMeta, lessons };
-  }, [levels, paths, completed]);
+    return { activeMeta, lessons, needsBilan };
+  }, [levels, paths, completed, isLevelBilanPassed]);
 
   if (!data.activeMeta || data.lessons.length === 0) return null;
 
@@ -842,7 +873,38 @@ const CompactPathCard = ({
         </button>
       </div>
 
-      {next && (
+      {data.needsBilan && data.activeMeta && (
+        <div className="path-v2-bilan-prompt">
+          <span className="path-v2-bilan-icon" aria-hidden>🏆</span>
+          <div className="path-v2-bilan-text">
+            <strong>
+              {language === 'fr'
+                ? `Bilan ${data.activeMeta.name.split(' —')[0]} à passer`
+                : `${data.activeMeta.nameEn.split(' —')[0]} check pending`}
+            </strong>
+            <span>
+              {language === 'fr'
+                ? 'Valide tes leçons en 10 questions pour débloquer le niveau suivant.'
+                : 'Validate your lessons in 10 questions to unlock the next level.'}
+            </span>
+          </div>
+        </div>
+      )}
+
+      {data.needsBilan && data.activeMeta && onOpenBilan ? (
+        <button
+          type="button"
+          className="path-v2-cta path-v2-cta--bilan"
+          onClick={() => onOpenBilan(data.activeMeta!.level)}
+        >
+          <span>
+            {language === 'fr'
+              ? `Passer le Bilan ${data.activeMeta.name.split(' —')[0]}`
+              : `Take the ${data.activeMeta.nameEn.split(' —')[0]} check`}
+          </span>
+          <span className="path-v2-cta-arrow">→</span>
+        </button>
+      ) : next ? (
         <button
           type="button"
           className="path-v2-cta"
@@ -854,7 +916,7 @@ const CompactPathCard = ({
           </span>
           <span className="path-v2-cta-arrow">→</span>
         </button>
-      )}
+      ) : null}
     </section>
   );
 };
@@ -1659,7 +1721,9 @@ const HomePageV2 = (props: HomePageV2Props) => {
     onOpenBattles,
     onOpenMessages,
     onOpenIdeas,
-    unreadAnnouncementsCount
+    unreadAnnouncementsCount,
+    isLevelBilanPassed,
+    onOpenBilan
   } = props;
 
   // Trouve la prochaine vraie leçon CECR/HSK à reprendre (première non-complétée
@@ -1742,6 +1806,8 @@ const HomePageV2 = (props: HomePageV2Props) => {
               completed={completedLessonIds ?? new Set<string>()}
               onOpenPath={onOpenPath}
               onOpenLesson={onOpenLesson}
+              isLevelBilanPassed={isLevelBilanPassed}
+              onOpenBilan={onOpenBilan}
             />
           ) : (
             <PathProgressCard

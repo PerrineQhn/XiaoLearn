@@ -2441,6 +2441,13 @@ function App() {
           onOpenMessages={() => setView('messages')}
           onOpenIdeas={() => setView('ideas')}
           unreadAnnouncementsCount={unreadAnnouncements}
+          isLevelBilanPassed={(level) =>
+            levelBilans.isPassed(level as CecrLevelSlug)
+          }
+          onOpenBilan={(level) => {
+            setBilanLevel(level as CecrLevelSlug);
+            setView('bilan');
+          }}
           onAddWordToFlashcards={(word) => {
             // Déduplication : si le hanzi existe déjà dans les flashcards
             // personnelles, on ne recrée pas de doublon. Retour typé pour
