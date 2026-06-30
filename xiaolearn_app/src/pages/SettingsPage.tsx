@@ -564,6 +564,7 @@ const SettingsPage = ({
                     type="text"
                     className="settings-input-v9 settings-input-v9--iconned"
                     value={location}
+                    style={{ paddingLeft: '30px !important' }}
                     onChange={(e) => setLocation(e.target.value)}
                     placeholder={language === 'fr' ? 'Ex: Paris, France' : 'Ex: Paris, France'}
                   />
