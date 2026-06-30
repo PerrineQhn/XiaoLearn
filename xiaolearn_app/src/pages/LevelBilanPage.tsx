@@ -24,8 +24,7 @@ import type {
   LevelBilan
 } from '../types/bilan';
 import {
-  BILAN_DEFAULT_PASSING,
-  BILAN_QUESTION_COUNT
+  BILAN_DEFAULT_PASSING
 } from '../types/bilan';
 import { getBilanForLevel } from '../data/cecr-bilans';
 import type { RecordBilanAttemptResult } from '../hooks/useLevelBilans';
@@ -150,7 +149,7 @@ export default function LevelBilanPage({
                 <span className="lvb-stake-icon" aria-hidden="true">📝</span>
                 <div>
                   <strong>
-                    {BILAN_QUESTION_COUNT}{' '}
+                    {bilan.questions.length}{' '}
                     {language === 'fr' ? 'questions' : 'questions'}
                   </strong>
                   <span>
@@ -206,8 +205,8 @@ export default function LevelBilanPage({
                   </strong>
                   <span>
                     {language === 'fr'
-                      ? `Meilleur score : ${best}/${BILAN_QUESTION_COUNT}. Tu peux réessayer pour améliorer ton score.`
-                      : `Best: ${best}/${BILAN_QUESTION_COUNT}. You can retry to improve.`}
+                      ? `Meilleur score : ${best}/${bilan.questions.length}. Tu peux réessayer pour améliorer ton score.`
+                      : `Best: ${best}/${bilan.questions.length}. You can retry to improve.`}
                   </span>
                 </div>
               </div>
@@ -229,8 +228,8 @@ export default function LevelBilanPage({
                   </strong>
                   <span>
                     {language === 'fr'
-                      ? `Meilleur score actuel : ${best}/${BILAN_QUESTION_COUNT}`
-                      : `Current best: ${best}/${BILAN_QUESTION_COUNT}`}
+                      ? `Meilleur score actuel : ${best}/${bilan.questions.length}`
+                      : `Current best: ${best}/${bilan.questions.length}`}
                   </span>
                 </div>
               </div>
@@ -351,13 +350,26 @@ export default function LevelBilanPage({
                 ? currentQ.promptFr
                 : currentQ.promptEn ?? currentQ.promptFr}
             </h2>
-            {(currentQ.contextFr || currentQ.contextEn) && (
-              <p className="lvb-q-context">
-                {language === 'fr'
-                  ? currentQ.contextFr
-                  : currentQ.contextEn ?? currentQ.contextFr}
-              </p>
-            )}
+            {(() => {
+              // V18 — Code défensif : si le contexte (phrase à trous, dialogue…)
+              // est déjà inclus tel quel dans le promptFr, on évite de le
+              // ré-afficher pour ne pas créer de doublon visuel comme avant
+              // (le user voyait « Complète : 我 ___ 法国人 » + une boîte
+              // séparée avec la même phrase 我 ___ 法国人).
+              const prompt = language === 'fr'
+                ? currentQ.promptFr
+                : currentQ.promptEn ?? currentQ.promptFr;
+              const ctx = language === 'fr'
+                ? currentQ.contextFr
+                : currentQ.contextEn ?? currentQ.contextFr;
+              if (!ctx) return null;
+              // Normalisation simple : compare en supprimant les espaces
+              // et la ponctuation chinoise terminale (。？！).
+              const normalize = (s: string) =>
+                s.replace(/[\s。？！…：:]+/g, '');
+              if (normalize(prompt).includes(normalize(ctx))) return null;
+              return <p className="lvb-q-context">{ctx}</p>;
+            })()}
 
             <ul className="lvb-choices">
               {currentQ.choices.map((choice, idx) => {

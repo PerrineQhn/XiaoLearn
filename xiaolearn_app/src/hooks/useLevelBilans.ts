@@ -138,10 +138,12 @@ export const useLevelBilans = (options: UseLevelBilansOptions = {}) => {
     (
       level: CecrLevelSlug,
       score: number,
-      passing: number = BILAN_DEFAULT_PASSING
+      passing: number = BILAN_DEFAULT_PASSING,
+      /** V18 — nombre total de questions du bilan (variable par niveau). */
+      totalQuestions: number = BILAN_QUESTION_COUNT
     ): RecordBilanAttemptResult => {
       const existing = bilans[level];
-      const thresholdScore = Math.ceil(passing * BILAN_QUESTION_COUNT);
+      const thresholdScore = Math.ceil(passing * totalQuestions);
       const passesNow = score >= thresholdScore;
       const hadPassed = Boolean(existing?.passed);
       const firstPass = passesNow && !hadPassed;

@@ -74,7 +74,7 @@ const a1: LevelBilan = {
     q(
       'a1-q3',
       'fill',
-      'Complète : 我 ___ 法国人 (je suis français).',
+      'Complète la phrase ci-dessous (« je suis français »).',
       ['是', '有', '在', '不'],
       0,
       '是 (shì) signifie « être ». La structure A 是 B = A est B. « 我是法国人 » = « je suis français ».',
@@ -110,7 +110,7 @@ const a1: LevelBilan = {
     q(
       'a1-q7',
       'fill',
-      'Je n\'ai pas de livre : 我 ___ 书。',
+      'Complète la phrase ci-dessous pour dire « je n\'ai pas de livre ».',
       ['不有', '没有', '不是', '没是'],
       1,
       'La négation de 有 est TOUJOURS 没有, jamais 不有. 不 ne nie pas 有. Exception unique du système : partout ailleurs, 不 est la négation standard.',
@@ -137,7 +137,7 @@ const a1: LevelBilan = {
     q(
       'a1-q10',
       'mcq',
-      'Que signifie le dialogue : « A: 你好吗？ B: 我很好，谢谢。 » ?',
+      'Que signifie le dialogue ci-dessous ?',
       [
         'A: Tu as quel âge ? B: J\'ai vingt ans, merci.',
         'A: Comment vas-tu ? B: Je vais très bien, merci.',
@@ -147,6 +147,93 @@ const a1: LevelBilan = {
       1,
       '你好吗 = « comment vas-tu ? » (litt. « tu bien ? »). 很 = très, placé devant un adjectif prédicat. 我很好 = « je vais très bien ».',
       { topic: 'dialogue', contextFr: 'A: 你好吗？\nB: 我很好，谢谢。' }
+    ),
+    q(
+      'a1-q11',
+      'mcq',
+      'Quel pinyin correspond au caractère 谢 (« remercier ») ?',
+      ['xié', 'xiè', 'jié', 'shè'],
+      1,
+      '谢 se prononce xiè au 4e ton (descendant). Le doublement 谢谢 (xièxie) atténue souvent le second ton (neutre).',
+      { topic: 'tones' }
+    ),
+    q(
+      'a1-q12',
+      'mcq',
+      'Comment se dit « grand-père paternel » en chinois ?',
+      ['爸爸 (bàba)', '哥哥 (gēge)', '爷爷 (yéye)', '叔叔 (shūshu)'],
+      2,
+      '爷爷 = grand-père paternel. 奶奶 = grand-mère paternelle. La famille chinoise distingue côté paternel et maternel : 外公/外婆 côté maternel.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a1-q13',
+      'mcq',
+      'Quel chiffre s\'écrit 八 ?',
+      ['6', '7', '8', '9'],
+      2,
+      '八 (bā) = 8. Le 8 est considéré comme chiffre porte-bonheur en Chine car 八 se prononce comme 发 (fā, « prospérer »).',
+      { topic: 'characters' }
+    ),
+    q(
+      'a1-q14',
+      'fill',
+      'Complète : « Bonjour, professeur ! »',
+      ['老师好', '好老师', '老师你', '你老师好'],
+      0,
+      'La formule de salutation respectueuse est NOM + 好 : 老师好 (bonjour professeur), 大家好 (bonjour tout le monde). Construction figée à connaître.',
+      { contextFr: 'A: ___ ！\nB: 你们好！', topic: 'dialogue' }
+    ),
+    q(
+      'a1-q15',
+      'mcq',
+      'Quelle est la différence de ton entre 妈 (mā) et 马 (mǎ) ?',
+      [
+        '1er ton plat vs 3e ton creux (bas-remontant)',
+        '2e ton montant vs 4e ton descendant',
+        '3e ton vs 4e ton',
+        'Aucune différence'
+      ],
+      0,
+      '妈 = 1er ton haut et plat (mā). 马 = 3e ton, bas avec une légère remontée (mǎ). Confondre les tons change le sens : maman vs cheval.',
+      { topic: 'tones' }
+    ),
+    q(
+      'a1-q16',
+      'mcq',
+      'Comment dit-on « j\'ai 25 ans » ?',
+      ['我二十五岁', '我有二十五年', '我是二十五', '我二十五年'],
+      0,
+      'L\'âge se dit SUJET + NOMBRE + 岁. 我二十五岁 = « j\'ai 25 ans ». Pas besoin de 是 ni de 有 : le verbe est implicite.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a1-q17',
+      'mcq',
+      'Quel est le sens de 大 et de 小 ?',
+      [
+        '大 = grand / 小 = petit',
+        '大 = petit / 小 = grand',
+        '大 = vieux / 小 = jeune',
+        '大 = beau / 小 = laid'
+      ],
+      0,
+      '大 (dà) = grand, 小 (xiǎo) = petit. Ce sont aussi des préfixes affectifs : 小李 = « petit Li » (familier), 大家 = « tout le monde » (litt. grande famille).',
+      { topic: 'characters' }
+    ),
+    q(
+      'a1-q18',
+      'mcq',
+      'Dans le dialogue ci-dessous, comment A est-il salué ?',
+      [
+        'On lui demande son nom.',
+        'On lui dit au revoir.',
+        'On lui souhaite la bienvenue.',
+        'On lui présente quelqu\'un.'
+      ],
+      1,
+      '再见 (zàijiàn) = « au revoir » (litt. « à se revoir »). 明天 = demain. C\'est une formule de séparation polie standard.',
+      { topic: 'dialogue', contextFr: 'A: 我走了。\nB: 再见，明天见！' }
     )
   ]
 };
@@ -169,7 +256,7 @@ const a2: LevelBilan = {
     q(
       'a2-q1',
       'fill',
-      'Il est allé à Pékin : 他 ___ 北京 ___ 。',
+      'Complète la phrase ci-dessous (« il est allé à Pékin »).',
       ['去 / 了', '去 / 吗', '要 / 了', '在 / 吗'],
       0,
       'Le marqueur 了 en fin de phrase (ou après le verbe) indique un changement d\'état ou un événement accompli. 他去北京了 = « il est allé / parti à Pékin ».',
@@ -196,7 +283,7 @@ const a2: LevelBilan = {
     q(
       'a2-q4',
       'fill',
-      "Le livre de mon ami : 我朋友 ___ 书。",
+      'Complète la phrase ci-dessous (« le livre de mon ami »).',
       ['的', '得', '地', '了'],
       0,
       '的 marque la possession ou la qualification : 我朋友的书 = le livre de mon ami. 得 et 地 sont des particules différentes (complément / adverbe).',
@@ -237,7 +324,7 @@ const a2: LevelBilan = {
     q(
       'a2-q8',
       'fill',
-      'Je sais parler chinois : 我 ___ 说汉语。',
+      'Complète la phrase ci-dessous (« je sais parler chinois »).',
       ['想', '要', '会', '可以'],
       2,
       '会 = savoir (faire), compétence acquise par apprentissage. 想 = vouloir/envie, 要 = vouloir (plus ferme), 可以 = pouvoir (permission).',
@@ -255,7 +342,7 @@ const a2: LevelBilan = {
     q(
       'a2-q10',
       'mcq',
-      'Dialogue : « A: 你有几个兄弟姐妹？ B: 我有两个姐姐。 » — Que veut dire B ?',
+      'Dans le dialogue ci-dessous, que veut dire B ?',
       [
         "J'ai deux petites sœurs.",
         "J'ai deux grandes sœurs.",
@@ -265,6 +352,110 @@ const a2: LevelBilan = {
       1,
       '姐姐 = grande sœur (aînée). 妹妹 = petite sœur, 哥哥 = grand frère, 弟弟 = petit frère. Le chinois distingue systématiquement aîné/cadet dans la fratrie.',
       { topic: 'dialogue', contextFr: 'A: 你有几个兄弟姐妹？\nB: 我有两个姐姐。' }
+    ),
+    q(
+      'a2-q11',
+      'mcq',
+      'Comment dire « il est 3h de l\'après-midi » ?',
+      ['下午三点', '上午三点', '晚上三点', '早上三点'],
+      0,
+      '下午 = après-midi, 上午 = matin (avant midi), 早上 = tôt le matin, 晚上 = soir. 点 = heure. 下午三点 = 15h.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a2-q12',
+      'fill',
+      'Complète la phrase ci-dessous (« je rentre chez moi en bus »).',
+      ['坐 / 回家', '开 / 回家', '走 / 回家', '骑 / 回家'],
+      0,
+      '坐 + véhicule = prendre (un transport assis). 我坐公共汽车回家 = je rentre en bus. 开车 = conduire, 骑 = enfourcher (vélo, moto).',
+      { contextFr: '我 ___ 公共汽车 ___ 。', topic: 'grammar' }
+    ),
+    q(
+      'a2-q13',
+      'mcq',
+      'Quelle phrase est correcte pour exprimer la date du 5 mars ?',
+      ['三月五号', '五月三号', '三五号月', '号五三月'],
+      0,
+      'Ordre chinois pour la date : ANNÉE + MOIS + JOUR. 三月五号 = 5 mars (litt. « mois 3 jour 5 »). 号 est la version orale de 日.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a2-q14',
+      'mcq',
+      'Que signifie 一点儿 dans « 我会说一点儿汉语 » ?',
+      ['Beaucoup', 'Un peu', 'Pas du tout', 'Couramment'],
+      1,
+      '一点儿 = « un peu » (quantité réduite). 我会说一点儿汉语 = « je parle un peu chinois ». À ne pas confondre avec 有点儿 (légèrement, avec nuance négative).',
+      { topic: 'grammar' }
+    ),
+    q(
+      'a2-q15',
+      'fill',
+      'Complète : « ce vêtement est très joli » (avec mise en relief avec 的).',
+      ['是 / 的', '在 / 的', '了 / 的', '不 / 的'],
+      0,
+      '是...的 met en relief un élément de la phrase (ici la qualité). 这件衣服是很漂亮的 = « ce vêtement est vraiment joli ».',
+      { contextFr: '这件衣服 ___ 很漂亮 ___ 。', topic: 'grammar' }
+    ),
+    q(
+      'a2-q16',
+      'mcq',
+      'Comment dire « j\'aime beaucoup le café » ?',
+      ['我很喜欢咖啡', '我喜欢很咖啡', '我咖啡很喜欢', '咖啡我喜欢很'],
+      0,
+      'Ordre standard : SUJET + 很 + VERBE/ADJ + COD. 很 se place TOUJOURS devant le prédicat (verbe d\'état ou adjectif), jamais après l\'objet.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'a2-q17',
+      'mcq',
+      'Que veut dire 一起 ?',
+      ['Ensemble', 'Seul', 'Une fois', 'Encore'],
+      0,
+      '一起 (yīqǐ) = ensemble. 我们一起去 = « on y va ensemble ». À distinguer de 一次 (une fois) et 一下 (un petit instant).',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a2-q18',
+      'fill',
+      'Complète la phrase ci-dessous (« j\'ai déjà mangé »).',
+      ['过', '了', '着', '在'],
+      1,
+      '了 marque ici l\'accompli (action achevée). 我已经吃了 = « j\'ai déjà mangé ». 过 marque l\'expérience (avoir déjà fait au moins une fois), 着 l\'état persistant.',
+      { contextFr: '我已经吃 ___ 。', topic: 'grammar' }
+    ),
+    q(
+      'a2-q19',
+      'mcq',
+      'Que signifie 觉得 ?',
+      ['Dormir', 'Penser / trouver que', 'Être réveillé', 'Sentir une odeur'],
+      1,
+      '觉得 (juéde) = trouver que, penser que (avis personnel). 我觉得很有意思 = « je trouve ça intéressant ». 睡觉 (shuìjiào) = dormir.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'a2-q20',
+      'mcq',
+      'Dans le dialogue ci-dessous, que propose A ?',
+      [
+        'Aller voir un film ensemble.',
+        'Rester à la maison.',
+        'Refuser une invitation.',
+        'Acheter un cadeau.'
+      ],
+      0,
+      '一起 = ensemble, 看电影 = regarder un film, 怎么样 = qu\'en penses-tu ? Formule typique d\'invitation. 好啊 = oui d\'accord (registre amical).',
+      { topic: 'dialogue', contextFr: 'A: 我们一起去看电影，怎么样？\nB: 好啊！' }
+    ),
+    q(
+      'a2-q21',
+      'mcq',
+      'Quelle phrase exprime correctement « il aime jouer au foot » ?',
+      ['他喜欢踢足球', '他喜欢打足球', '他喜欢玩足球', '他喜欢做足球'],
+      0,
+      'En chinois, on utilise 踢 (kicker) pour le foot : 踢足球. 打 pour les sports de raquette ou de main : 打篮球 (basket), 打网球 (tennis). 玩 = jouer (général).',
+      { topic: 'vocab' }
     )
   ]
 };
@@ -287,7 +478,7 @@ const b11: LevelBilan = {
     q(
       'b11-q1',
       'fill',
-      "J'ai fini de lire ce livre : 我 ___ 这本书 ___ 完了。",
+      'Complète la phrase ci-dessous (« j\'ai fini de lire ce livre »).',
       ['把 / 看', '在 / 看', '给 / 读', '对 / 看'],
       0,
       'La structure 把 déplace l\'objet avant le verbe pour insister sur le résultat de l\'action. 把 + OBJ + VERBE + RÉSULTATIF. 我把这本书看完了 = « j\'ai fini de lire ce livre ».',
@@ -305,7 +496,7 @@ const b11: LevelBilan = {
     q(
       'b11-q3',
       'fill',
-      'Il est en train de lire : 他 ___ 看书。',
+      'Complète la phrase ci-dessous (« il est en train de lire »).',
       ['在', '正在', '了', 'A et B sont corrects'],
       3,
       '正在 et 在 expriment tous deux l\'aspect progressif. 正在 insiste sur le moment précis, 在 est plus neutre. 他（正）在看书 = « il est (en train) de lire ».',
@@ -328,7 +519,7 @@ const b11: LevelBilan = {
     q(
       'b11-q5',
       'fill',
-      "J'ai donné un cadeau à ma mère : 我 ___ 妈妈 ___ 一个礼物。",
+      'Complète la phrase ci-dessous (« j\'ai offert un cadeau à ma mère »).',
       ['送 / 给', '给 / 送', '给 / 了', '对 / 送'],
       0,
       '送给 est le verbe + préposition ditransitif pour « offrir à ». 我送给妈妈一个礼物 = « j\'ai offert un cadeau à maman ». On peut aussi inverser avec 我把礼物送给了妈妈.',
@@ -383,7 +574,7 @@ const b11: LevelBilan = {
     q(
       'b11-q10',
       'mcq',
-      'Dialogue : « A: 你觉得这个电影怎么样？ B: 挺好看的，就是有点儿长。 » — B trouve le film :',
+      'Dans le dialogue ci-dessous, B trouve le film :',
       [
         'Court mais ennuyeux',
         'Plutôt bien, juste un peu long',
@@ -393,6 +584,120 @@ const b11: LevelBilan = {
       1,
       '挺...的 = « assez / plutôt... » (ton familier nuancé positif). 就是 = « c\'est juste que... » (concession). 有点儿 = « un peu » (avec connotation légèrement négative).',
       { topic: 'dialogue', contextFr: 'A: 你觉得这个电影怎么样？\nB: 挺好看的，就是有点儿长。' }
+    ),
+    q(
+      'b11-q11',
+      'fill',
+      'Complète la phrase ci-dessous avec le résultatif adéquat (« j\'ai correctement compris »).',
+      ['对', '完', '好', '到'],
+      0,
+      '对 comme résultatif signifie « correctement, juste ». 听懂 = comprendre, 听对 = avoir compris correctement (sans erreur). 听完 = avoir fini d\'écouter, 听好 = bien écouter.',
+      { contextFr: '我听 ___ 了。', topic: 'grammar' }
+    ),
+    q(
+      'b11-q12',
+      'mcq',
+      'Comment dire « la pomme rouge sur la table » ?',
+      ['桌子上的红苹果', '红苹果的桌子上', '苹果红桌子上的', '上桌子的红苹果'],
+      0,
+      'Le chinois place les compléments AVANT le nom modifié, avec 的. 桌子上的红苹果 = « la pomme rouge (qui est) sur la table ». L\'ordre suit : déterminant + 的 + noyau.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b11-q13',
+      'mcq',
+      'Que signifie le chengyu 入乡随俗 ?',
+      [
+        'À Rome, fais comme les Romains.',
+        'Voyager loin de chez soi.',
+        'Suivre ses coutumes ancestrales.',
+        'Ne jamais quitter son village.'
+      ],
+      0,
+      '入乡随俗 (rù xiāng suí sú) = « entrer dans un village, en suivre les coutumes ». S\'adapter aux usages locaux. Très courant pour parler d\'interculturalité.',
+      { topic: 'culture' }
+    ),
+    q(
+      'b11-q14',
+      'fill',
+      'Complète la phrase ci-dessous (« je vais demain au cinéma »).',
+      ['去 / 看', '看 / 去', '到 / 看', '在 / 看'],
+      0,
+      'Structure de plusieurs verbes en série : 我明天去电影院看电影 = « je vais demain au cinéma voir un film ». 去 introduit la destination, le 2e verbe le but.',
+      { contextFr: '我明天 ___ 电影院 ___ 电影。', topic: 'grammar' }
+    ),
+    q(
+      'b11-q15',
+      'mcq',
+      'Que signifie 差不多 ?',
+      ['Très différent', 'À peu près / presque pareil', 'Tout à fait différent', 'Complètement faux'],
+      1,
+      '差不多 (chàbuduō) = « à peu près / presque ». Très utilisé pour relativiser, approximer. 差不多 = ils sont à peu près pareils.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b11-q16',
+      'mcq',
+      'Comment exprimer « il pleut depuis ce matin » ?',
+      [
+        '从今天早上开始下雨',
+        '今天早上开始下雨从',
+        '下雨开始从今天早上',
+        '今天早上从下雨开始'
+      ],
+      0,
+      'Structure : 从 + DÉBUT + 开始 + ACTION. 从今天早上开始下雨 = « il pleut depuis ce matin ». 从 = depuis, 开始 = commencer.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b11-q17',
+      'fill',
+      'Complète la phrase ci-dessous (« j\'ai déjà été en Chine »).',
+      ['了', '过', '着', '到'],
+      1,
+      '过 marque l\'expérience vécue au moins une fois. 我去过中国 = « j\'ai déjà été en Chine (au moins une fois) ». À distinguer de 了 (action achevée précise).',
+      { contextFr: '我去 ___ 中国。', topic: 'grammar' }
+    ),
+    q(
+      'b11-q18',
+      'mcq',
+      'Que veut dire 千万 dans « 你千万要小心 » ?',
+      ['Dix millions', 'Absolument / surtout', 'Mille fois', 'Peut-être'],
+      1,
+      '千万 (qiānwàn) en début de phrase = « surtout / absolument » (recommandation insistante). 你千万要小心 = « surtout, fais attention ! ». À l\'origine litt. « 10 millions ».',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b11-q19',
+      'mcq',
+      'Quelle phrase utilise correctement 着 (état persistant) ?',
+      ['他坐着看书', '他着坐看书', '他坐看着书', '着他坐看书'],
+      0,
+      '着 se place IMMÉDIATEMENT après le verbe principal pour marquer un état/posture maintenu. 他坐着看书 = « il lit assis (en restant assis) ». Structure : V1 + 着 + V2.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b11-q20',
+      'fill',
+      'Complète : Il est plus jeune que moi de 3 ans.',
+      ['比 / 小', '比 / 少', '从 / 小', '和 / 少'],
+      0,
+      'Structure du comparatif chiffré : A + 比 + B + ADJ + ÉCART. 他比我小三岁 = « il a 3 ans de moins que moi ». 小 s\'emploie pour l\'âge, pas 少.',
+      { contextFr: '他 ___ 我 ___ 三岁。', topic: 'grammar' }
+    ),
+    q(
+      'b11-q21',
+      'mcq',
+      'Dans le dialogue ci-dessous, que veut dire B ?',
+      [
+        'Il est libre demain.',
+        'Il est occupé demain mais libre après-demain.',
+        'Il refuse de venir.',
+        'Il ne sait pas encore.'
+      ],
+      1,
+      '没空 = ne pas avoir le temps. 后天 = après-demain. 怎么样 = ça te va ? B propose un report : pas dispo demain mais OK après-demain.',
+      { topic: 'dialogue', contextFr: 'A: 明天有空吗？\nB: 明天没空，后天怎么样？' }
     )
   ]
 };
@@ -415,7 +720,7 @@ const b12: LevelBilan = {
     q(
       'b12-q1',
       'fill',
-      "___ 天气很冷，___ 我们还是去跑步了。",
+      'Complète la phrase ci-dessous avec la paire de connecteurs adéquate.',
       ['因为 / 所以', '虽然 / 但是', '如果 / 就', '不但 / 而且'],
       1,
       'La paire 虽然...但是 = « bien que... cependant » marque une concession. Les autres paires expriment cause/conséquence, condition, ou addition.',
@@ -452,7 +757,7 @@ const b12: LevelBilan = {
     q(
       'b12-q4',
       'fill',
-      'Il est entré dans la salle : 他走 ___ 教室 ___ 。',
+      'Complète la phrase ci-dessous (« il est entré dans la salle, vers le locuteur »).',
       ['进 / 来', '上 / 去', '出 / 来', '下 / 去'],
       0,
       'Complément directionnel composé : VERBE + 进 (entrer dans) + 来/去 (vers locuteur / loin de). 走进教室来 = « entrer dans la salle (vers moi) ».',
@@ -470,7 +775,7 @@ const b12: LevelBilan = {
     q(
       'b12-q6',
       'fill',
-      "Si tu as le temps, appelle-moi : ___ 你有时间，___ 给我打电话。",
+      'Complète la phrase ci-dessous (« si tu as le temps, appelle-moi »).',
       ['因为 / 所以', '如果 / 就', '虽然 / 但是', '一边 / 一边'],
       1,
       '如果...就... = conditionnelle « si... alors... ». 如果你有时间，就给我打电话 = « si tu as le temps, appelle-moi ». 就 est optionnel mais très courant.',
@@ -516,7 +821,7 @@ const b12: LevelBilan = {
     q(
       'b12-q10',
       'mcq',
-      'Dialogue : « A: 你做完作业了吗？ B: 还没呢，我正在做。 » — Que fait B en ce moment ?',
+      'Dans le dialogue ci-dessous, que fait B en ce moment ?',
       [
         'Il a fini ses devoirs.',
         'Il est en train de faire ses devoirs.',
@@ -526,6 +831,98 @@ const b12: LevelBilan = {
       1,
       '还没...呢 = « pas encore... ». 正在 + V = « en train de V ». Donc B n\'a pas fini mais est en train de faire ses devoirs.',
       { topic: 'dialogue', contextFr: 'A: 你做完作业了吗？\nB: 还没呢，我正在做。' }
+    ),
+    q(
+      'b12-q11',
+      'mcq',
+      'Que signifie « 把...当作... » ?',
+      [
+        'Mettre... contre...',
+        'Considérer... comme...',
+        'Échanger... avec...',
+        'Choisir entre... et...'
+      ],
+      1,
+      '把 X 当作 Y = « considérer X comme Y / prendre X pour Y ». 他把我当作朋友 = « il me considère comme un ami ». Très utile pour exprimer une relation perçue.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b12-q12',
+      'fill',
+      'Complète la phrase ci-dessous (« plus tu apprends, plus tu progresses »).',
+      ['越 / 越', '更 / 更', '比 / 比', '又 / 又'],
+      0,
+      '越 + V1，越 + V2 = « plus on V1, plus on V2 ». 你越学，越进步 = « plus tu apprends, plus tu progresses ». Structure de gradation parallèle.',
+      { contextFr: '你 ___ 学，___ 进步。', topic: 'grammar' }
+    ),
+    q(
+      'b12-q13',
+      'mcq',
+      'Que veut dire le chengyu 半途而废 ?',
+      [
+        'Abandonner à mi-chemin.',
+        'Réussir à mi-temps.',
+        'Voyager dans deux directions.',
+        'Diviser en deux parts égales.'
+      ],
+      0,
+      '半途而废 (bàn tú ér fèi) : « à mi-route, on abandonne ». Critique de ceux qui laissent tomber avant la fin. Origine : Liji.',
+      { topic: 'culture' }
+    ),
+    q(
+      'b12-q14',
+      'mcq',
+      'Quel mot signifie « bien que / même si » au registre familier ?',
+      ['尽管', '哪怕', '虽说', '即便'],
+      2,
+      '虽说 = registre oral familier de 虽然. 尽管 = bien que (un peu plus soutenu), 即便/哪怕 = même si (concessif fort). À l\'oral, 虽说 sonne plus naturel.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b12-q15',
+      'fill',
+      'Complète la phrase ci-dessous (« le travail est trop fatigant, je ne veux plus le faire »).',
+      ['得 / 不', '了 / 没', '过 / 不', '着 / 没'],
+      0,
+      'V + 得 + 太 + ADJ + 了 = complément de degré. Puis 不想 + V = ne veut plus faire. 工作累得不想做了 marque la conséquence d\'un état excessif.',
+      { contextFr: '工作累 ___ 我 ___ 想做了。', topic: 'grammar' }
+    ),
+    q(
+      'b12-q16',
+      'mcq',
+      'Comment exprimer « plus on est nombreux, plus c\'est joyeux » ?',
+      [
+        '人越多越热闹',
+        '人多越热闹越',
+        '越人多越热闹',
+        '人越热闹越多'
+      ],
+      0,
+      'Structure 越... 越... avec sujet : SUJET + 越 + ADJ1，越 + ADJ2. 人越多越热闹 = « plus il y a de monde, plus c\'est animé ». Proverbe quotidien.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b12-q17',
+      'mcq',
+      'Que signifie 不见得 ?',
+      ['Invisible', 'Pas forcément / pas si sûr', 'Jamais vu', 'Très évident'],
+      1,
+      '不见得 = « pas forcément, ce n\'est pas dit que ». Adoucisseur très utilisé pour exprimer le doute. 他不见得会来 = « il ne viendra pas forcément ».',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b12-q18',
+      'mcq',
+      'Dans le dialogue ci-dessous, que dit B ?',
+      [
+        'Elle n\'a pas trouvé son téléphone.',
+        'Quelqu\'un lui a volé son téléphone.',
+        'Elle a cassé son téléphone.',
+        'Elle a oublié son téléphone à la maison.'
+      ],
+      1,
+      'Passif avec 被 : 手机被偷了 = « le téléphone a été volé ». Structure typique pour exprimer un événement subi. 怎么了 = qu\'est-ce qui se passe ?',
+      { topic: 'dialogue', contextFr: 'A: 你怎么了？\nB: 我的手机被偷了！' }
     )
   ]
 };
@@ -548,7 +945,7 @@ const b21: LevelBilan = {
     q(
       'b21-q1',
       'fill',
-      "Il court vite : 他跑 ___ 很快。",
+      'Complète la phrase ci-dessous (« il court vite »).',
       ['的', '得', '地', '了'],
       1,
       '得 introduit un complément de degré / manière APRÈS le verbe : 跑得快 = « court vite ». 的 = possessif, 地 = transforme adjectif en adverbe avant le verbe.',
@@ -571,7 +968,7 @@ const b21: LevelBilan = {
     q(
       'b21-q3',
       'fill',
-      '___ 他会说中文，___ 会说日文。',
+      'Complète la phrase ci-dessous (« non seulement il parle chinois, mais il parle aussi japonais »).',
       ['不但 / 而且', '虽然 / 但是', '因为 / 所以', '如果 / 就'],
       0,
       '不但...而且... = « non seulement... mais aussi... ». 不但他会说中文，而且（他）还会说日文 = il parle non seulement chinois mais aussi japonais.',
@@ -617,7 +1014,7 @@ const b21: LevelBilan = {
     q(
       'b21-q7',
       'fill',
-      'Elle parle très poliment : 她说话 ___ 礼貌。',
+      'Complète la phrase ci-dessous (« elle parle très poliment »).',
       ['得很', '的很', '地很', '了很'],
       0,
       '得 + ADJ + 很 (ou 得很 en fin) = complément de degré. 她说话说得很礼貌 = « elle parle très poliment ». 很 suit l\'adjectif porté par 得.',
@@ -649,7 +1046,7 @@ const b21: LevelBilan = {
     q(
       'b21-q10',
       'mcq',
-      'Dialogue : « A: 你怎么看这件事？ B: 我觉得似乎有点儿问题。 » — B exprime :',
+      'Dans le dialogue ci-dessous, B exprime :',
       [
         'Une certitude absolue',
         'Une hésitation prudente',
@@ -659,6 +1056,80 @@ const b21: LevelBilan = {
       1,
       '似乎 = « il semble que / on dirait que » — nuance de prudence, d\'hésitation. Combiné avec 有点儿 (un peu) et 觉得 (trouver / penser), B donne un avis prudent et nuancé.',
       { topic: 'dialogue', contextFr: 'A: 你怎么看这件事？\nB: 我觉得似乎有点儿问题。' }
+    ),
+    q(
+      'b21-q11',
+      'mcq',
+      'Que signifie 既然 dans « 既然你来了，就坐一会儿吧 » ?',
+      [
+        'Puisque (cause connue)',
+        'Si jamais',
+        'Bien que',
+        'Au cas où'
+      ],
+      0,
+      '既然...就... = « puisque... alors... ». Introduit une cause considérée comme acquise. Distinct de 因为 (cause objective) : 既然 présuppose la situation comme un fait partagé.',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b21-q12',
+      'mcq',
+      'Que signifie 一旦 dans « 一旦决定，就不要后悔 » ?',
+      [
+        'Un matin',
+        'Une fois que / dès que',
+        'Tout à coup',
+        'Lentement'
+      ],
+      1,
+      '一旦 = « une fois que / dès lors que ». Hypothèse à conséquence forte. 一旦决定就不要后悔 = « une fois la décision prise, pas de regrets ».',
+      { topic: 'grammar' }
+    ),
+    q(
+      'b21-q13',
+      'mcq',
+      'Quel terme signifie « environnement (naturel) » ?',
+      ['环境', '场所', '位置', '范围'],
+      0,
+      '环境 = environnement, milieu. 场所 = lieu (public), 位置 = position, 范围 = portée. 保护环境 = protéger l\'environnement.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b21-q14',
+      'fill',
+      'Complète la phrase ci-dessous (« j\'attends depuis 2 heures, il n\'est toujours pas venu »).',
+      ['了 / 还', '过 / 也', '着 / 也', '了 / 都'],
+      0,
+      'Structure de durée + 还/还没 : 我等了两个小时，他还没来 = « j\'attends depuis 2h, il n\'est toujours pas venu ». 还 marque la persistance / continuation.',
+      { contextFr: '我等 ___ 两个小时，他 ___ 没来。', topic: 'grammar' }
+    ),
+    q(
+      'b21-q15',
+      'mcq',
+      'Que veut dire le chengyu 名副其实 ?',
+      [
+        'Le nom correspond à la réalité (mérité).',
+        'Avoir mauvaise réputation.',
+        'Changer de nom.',
+        'Sans nom officiel.'
+      ],
+      0,
+      '名副其实 (míng fù qí shí) = « le nom répond à la réalité ». Désigne quelqu\'un ou quelque chose qui mérite réellement sa réputation. Contraire : 名不副实.',
+      { topic: 'culture' }
+    ),
+    q(
+      'b21-q16',
+      'mcq',
+      'Quelle est la nuance de 反而 par rapport à 但是 ?',
+      [
+        'Identique, interchangeable.',
+        '反而 = contraire à l\'attente, 但是 = simple opposition.',
+        '反而 = renforcement, 但是 = contradiction.',
+        '反而 = cause, 但是 = conséquence.'
+      ],
+      1,
+      '但是 marque une simple opposition. 反而 marque un résultat CONTRAIRE à ce qui était attendu. 我以为他生气，他反而笑了 = « je pensais qu\'il se fâcherait, au contraire il a ri ».',
+      { topic: 'grammar' }
     )
   ]
 };
@@ -709,7 +1180,7 @@ const b22: LevelBilan = {
     q(
       'b22-q3',
       'fill',
-      '这本书 ___ 妈妈送给我的，特别珍贵。',
+      'Complète la phrase ci-dessous avec la particule de mise en relief.',
       ['是', '被', '把', '给'],
       0,
       'Ici 是...的 met en relief le complément (qui a offert). 是妈妈送给我的 = « c\'est maman qui me l\'a offert ». 被 serait incorrect sémantiquement dans ce cadre relationnel.',
@@ -741,7 +1212,7 @@ const b22: LevelBilan = {
     q(
       'b22-q6',
       'fill',
-      '他把钥匙 ___ 在门上。',
+      'Complète la phrase ci-dessous avec le marqueur d\'état persistant.',
       ['了', '的', '着', '过'],
       2,
       '着 marque un état persistant résultant d\'une action. 挂着 / 放着 / 留着. 他把钥匙留着在门上 est moins courant ; mieux : 钥匙还挂着 « la clé est toujours accrochée ». 着 est le marqueur d\'état résiduel.',
@@ -792,7 +1263,7 @@ const b22: LevelBilan = {
     q(
       'b22-q10',
       'mcq',
-      'Dialogue : « A: 这个方案你觉得怎么样？ B: 从长远来看，利大于弊。 » — B pense :',
+      'Dans le dialogue ci-dessous, B pense :',
       [
         'Le projet a plus d\'inconvénients que d\'avantages.',
         'À long terme, les avantages l\'emportent sur les inconvénients.',
@@ -802,6 +1273,52 @@ const b22: LevelBilan = {
       1,
       '从长远来看 = « vu à long terme / à long terme ». 利大于弊 = « bénéfices supérieurs aux pertes ». Formulation typique du registre argumentatif / médiatique.',
       { topic: 'dialogue', contextFr: 'A: 这个方案你觉得怎么样？\nB: 从长远来看，利大于弊。' }
+    ),
+    q(
+      'b22-q11',
+      'mcq',
+      'Quel terme signifie « publier (un article, une nouvelle) » au sens éditorial ?',
+      ['发表', '出现', '发生', '表现'],
+      0,
+      '发表 = publier (un article, un discours, une opinion). 出现 = apparaître, 发生 = se produire, 表现 = manifester / performance. Vocabulaire média.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b22-q12',
+      'mcq',
+      'Que signifie « 难免 » dans « 工作中难免出错 » ?',
+      [
+        'Impossible',
+        'Inévitablement / on ne peut éviter que',
+        'Sans difficulté',
+        'Très évident'
+      ],
+      1,
+      '难免 = « difficile à éviter / inévitablement ». Souligne qu\'un événement (souvent négatif) est statistiquement attendu. 工作中难免出错 = « au travail, on ne peut pas éviter de faire des erreurs ».',
+      { topic: 'vocab' }
+    ),
+    q(
+      'b22-q13',
+      'mcq',
+      'Que veut dire le chengyu 入木三分 ?',
+      [
+        'Pénétrer profondément, perçant et incisif (analyse).',
+        'Trois personnes entrent dans le bois.',
+        'Sculpter pendant trois minutes.',
+        'Diviser un arbre en trois.'
+      ],
+      0,
+      '入木三分 (rù mù sān fēn) : « pénétrer trois fen dans le bois ». Origine : la calligraphie de Wang Xizhi laissait sa trace profondément. Désigne une analyse particulièrement perspicace.',
+      { topic: 'culture' }
+    ),
+    q(
+      'b22-q14',
+      'fill',
+      'Complète la phrase ci-dessous (« non seulement c\'est rapide, mais c\'est aussi pas cher »).',
+      ['不仅 / 而且 / 还', '虽然 / 但是 / 又', '因为 / 所以 / 而', '既然 / 就 / 也'],
+      0,
+      'Structure tripartite renforcée : 不仅 X，而且 Y，还 Z. 不仅快，而且便宜，还方便 = « non seulement rapide, mais aussi pas cher, en plus pratique ». 不仅 = équivalent soutenu de 不但.',
+      { contextFr: '___ 快，___ 便宜，___ 方便。', topic: 'grammar' }
     )
   ]
 };
@@ -838,7 +1355,7 @@ const c11: LevelBilan = {
     q(
       'c11-q2',
       'fill',
-      '___ 下雨，我们 ___ 去爬山。',
+      'Complète la phrase ci-dessous (« bien qu\'il pleuve, nous y allons quand même »).',
       ['尽管 / 还是', '虽然 / 但是', '如果 / 就', '万一 / 都'],
       0,
       '尽管...还是... = « bien que... malgré tout... ». Proche de 虽然...但是 mais registre légèrement plus élevé et plus insistant sur la persévérance.',
@@ -945,6 +1462,29 @@ const c11: LevelBilan = {
       1,
       '然而 = « cependant / toutefois » (registre écrit, formel). Équivalent soutenu de 但是 / 可是. Souvent utilisé en début de paragraphe pour pivoter.',
       { topic: 'grammar' }
+    ),
+    q(
+      'c11-q11',
+      'mcq',
+      'Que veut dire le chengyu 一举两得 dans un cadre stratégique ?',
+      [
+        'Échouer deux fois.',
+        'Atteindre deux objectifs en une action.',
+        'Choisir entre deux options.',
+        'Hésiter longtemps.'
+      ],
+      1,
+      '一举两得 = « en une action, double gain » = faire d\'une pierre deux coups. Très utilisé en argumentation pour vanter l\'efficacité d\'une stratégie.',
+      { topic: 'culture' }
+    ),
+    q(
+      'c11-q12',
+      'mcq',
+      'Quel terme signifie « efficacité » au sens d\'optimisation des ressources ?',
+      ['效率', '效果', '结果', '作用'],
+      0,
+      '效率 = efficacité (rendement, productivité). 效果 = effet (résultat observé), 结果 = résultat / conclusion, 作用 = fonction / rôle. 提高效率 = améliorer l\'efficacité.',
+      { topic: 'vocab' }
     )
   ]
 };
@@ -1078,7 +1618,7 @@ const c12: LevelBilan = {
     q(
       'c12-q10',
       'mcq',
-      'Dialogue : « A: 你觉得远程办公会成为主流吗？ B: 从目前的趋势来看，恐怕是不可避免的。 » — B pense :',
+      'Dans le dialogue ci-dessous, B pense :',
       [
         'Le télétravail est à éviter.',
         'Vu la tendance actuelle, c\'est probablement inévitable.',
@@ -1221,7 +1761,7 @@ const c21: LevelBilan = {
     q(
       'c21-q10',
       'mcq',
-      'Dialogue formel : « A: 对这项政策，您持何种看法？ B: 我认为它具有一定的前瞻性，但仍有改进空间。 » — B dit :',
+      'Dans le dialogue formel ci-dessous, B dit :',
       [
         'La politique est rétrograde.',
         'Elle a un certain caractère visionnaire, mais reste perfectible.',
@@ -1231,6 +1771,57 @@ const c21: LevelBilan = {
       1,
       '前瞻性 = « caractère visionnaire / tourné vers l\'avenir ». 改进空间 = marge d\'amélioration. 具有 = posséder / comporter. Registre institutionnel soigné.',
       { topic: 'dialogue', contextFr: 'A: 对这项政策，您持何种看法？\nB: 我认为它具有一定的前瞻性，但仍有改进空间。' }
+    ),
+    q(
+      'c21-q11',
+      'mcq',
+      'Que signifie 鉴于 dans un texte officiel ?',
+      [
+        'Considérant que / vu que',
+        'À l\'opposé de',
+        'Malgré',
+        'Au-delà de'
+      ],
+      0,
+      '鉴于 = « considérant que / vu que » (registre juridique et institutionnel). Ouvre une justification officielle. 鉴于上述情况 = « vu ce qui précède ».',
+      { topic: 'grammar' }
+    ),
+    q(
+      'c21-q12',
+      'mcq',
+      'Le chengyu 厚积薄发 évoque :',
+      [
+        'Une accumulation patiente avant un déploiement maîtrisé.',
+        'Acheter beaucoup et vendre peu.',
+        'Économiser sans dépenser.',
+        'Travailler peu mais bien.'
+      ],
+      0,
+      '厚积薄发 (hòu jī bó fā) : « accumuler épaissement, déployer parcimonieusement ». Cite Su Shi. Valeur cardinale du travail à long terme avant l\'éclat public.',
+      { topic: 'culture' }
+    ),
+    q(
+      'c21-q13',
+      'mcq',
+      'Quel terme désigne le « patrimoine culturel » au sens institutionnel ?',
+      ['文化遗产', '文化背景', '文化交流', '文化差异'],
+      0,
+      '文化遗产 = patrimoine culturel. 文化背景 = contexte culturel, 文化交流 = échanges culturels, 文化差异 = différences culturelles. Vocabulaire UNESCO / institutionnel.',
+      { topic: 'vocab' }
+    ),
+    q(
+      'c21-q14',
+      'mcq',
+      'Que signifie 旨在 dans « 本政策旨在改善民生 » ?',
+      [
+        'A pour but de',
+        'Hésite à',
+        'Refuse de',
+        'Réussit à'
+      ],
+      0,
+      '旨在 = « avoir pour but de / viser à ». Registre administratif et écrit. 本政策旨在改善民生 = « cette politique vise à améliorer le bien-être de la population ».',
+      { topic: 'grammar' }
     )
   ]
 };
@@ -1415,14 +2006,29 @@ export const cecrBilansList: LevelBilan[] = [
 export const getBilanForLevel = (level: CecrLevelSlug): LevelBilan | undefined =>
   cecrBilans[level];
 
-// Sanity check at import (dev only) — 10 questions par bilan.
+// Sanity check at import (dev only) — nb de questions cible par niveau.
+// Le nombre de questions varie selon la richesse du parcours du niveau.
 // On utilise import.meta.env (Vite) au lieu de process.env pour éviter la
 // dépendance aux types Node.
+const EXPECTED_QUESTIONS_PER_LEVEL: Record<CecrLevelSlug, number> = {
+  a1: 18,
+  a2: 21,
+  'b1.1': 21,
+  'b1.2': 18,
+  'b2.1': 16,
+  'b2.2': 14,
+  'c1.1': 12,
+  'c1.2': 10,
+  'c2.1': 14,
+  'c2.2': 10
+};
+
 if (import.meta.env?.DEV) {
   cecrBilansList.forEach((b) => {
-    if (b.questions.length !== 10) {
+    const expected = EXPECTED_QUESTIONS_PER_LEVEL[b.level];
+    if (b.questions.length !== expected) {
       console.warn(
-        `[cecr-bilans] ${b.level} has ${b.questions.length} questions (expected 10)`
+        `[cecr-bilans] ${b.level} has ${b.questions.length} questions (expected ${expected})`
       );
     }
   });

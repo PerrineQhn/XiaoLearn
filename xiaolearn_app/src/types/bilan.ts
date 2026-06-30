@@ -56,7 +56,12 @@ export interface LevelBilan {
   descriptionEn: string;
   /** Emoji emblème (cohérent avec CecrLevelMeta.icon si possible). */
   emoji: string;
-  /** Exactement 10 questions — on check à l'import. */
+  /**
+   * Questions du bilan. V18 — le nombre est dorénavant variable par
+   * niveau, proportionnel au nombre de leçons du parcours CECR (cf.
+   * cecr-bilans.ts pour la table cible). Le seuil de validation reste
+   * exprimé en pourcent (passingScore) donc le calcul est résilient.
+   */
   questions: BilanQuestion[];
   /** Seuil de validation en pourcent (par défaut 80). */
   passingScore: number;
@@ -88,4 +93,10 @@ export type BilanCompletionMap = Record<CecrLevelSlug, BilanCompletionEntry>;
 
 export const BILAN_DEFAULT_PASSING = 0.8; // 80%
 export const BILAN_XP_REWARD = 60;
+/**
+ * V18 — Le nombre de questions est désormais SPÉCIFIQUE PAR NIVEAU
+ * (proportionnel au nombre de leçons du parcours CECR). Cette constante
+ * reste exposée comme "valeur cible historique" pour la compat ascendante
+ * mais le calcul réel utilise `LevelBilan.questions.length` par bilan.
+ */
 export const BILAN_QUESTION_COUNT = 10;
