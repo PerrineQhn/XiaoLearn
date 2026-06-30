@@ -198,25 +198,48 @@ const LABEL_EN: Record<Block['kind'], string> = {
  * Détecte si le contenu d'une parenthèse ressemble à du pinyin :
  *   - Que des lettres ASCII + diacritiques pinyin + espaces + chiffres de ton
  *   - Pas de ponctuation française (apostrophe, point d'interrogation, etc.)
- *   - Pas de mots français entiers (pas d'accent autres que ceux du pinyin)
+ *   - Pas de mots français/anglais entiers AUTONOMES
  *
  * Critère : ne contient QUE [a-zA-Z], tons accentués, espaces, apostrophes
  * pinyin (’ pour qing'an), chiffres 1-4 (pour les tons numériques) ET au moins
  * une voyelle accentuée ou tone-numbered (sinon c'est probablement de l'anglais).
+ *
+ * V18 — Bugfix : l'ancien check `\b...du\b` faisait des faux négatifs sur des
+ * pinyins comme "duōshao", "lái", "déng" parce qu'en regex JS le `\b` se
+ * trouve entre un \w (lettre ASCII) et un non-\w (les voyelles accentuées
+ * ō/á/è… sont non-\w). Donc "duōshao" exposait la sous-séquence "du" entre
+ * deux frontières et matchait "du" dans la wordlist — alors qu'on ciblait
+ * que les mots français autonomes.
+ *
+ * Nouvelle approche : on segmente la string par espaces, et on rejette
+ * seulement si l'un des segments EST EXACTEMENT un mot français/anglais
+ * commun. Comme ça "duōshao" passe (1 seul segment, pas dans la liste),
+ * mais "(de la)" est rejeté (2 segments, tous deux dans la liste).
  */
+const NON_PINYIN_WORDS = new Set([
+  'the', 'and', 'or', 'but', 'not', 'to', 'of', 'in', 'with', 'on', 'at', 'is',
+  'de', 'le', 'la', 'et', 'ou', 'mais', 'pas', 'une', 'un', 'du', 'des', 'les',
+  'ce', 'ces', 'que', 'qui', 'pour', 'avec', 'sans', 'sur', 'sous', 'dans'
+]);
 function looksLikePinyin(inner: string): boolean {
   const s = inner.trim();
   if (!s || s.length > 60) return false;
   // Caractères autorisés (pinyin + variants)
   if (!/^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹńŋ'’\s\d]+$/.test(s)) return false;
   // Doit contenir au moins une voyelle accentuée OU un ton numéroté (1-5)
-  // ET pas de mot français commun (the, et, mais...)
   const hasAccent = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/.test(s);
   const hasToneNum = /[a-z]+[1-5]/.test(s);
   if (!hasAccent && !hasToneNum) return false;
-  // Ne doit pas contenir des mots/séquences clairement non-pinyin
-  if (/\b(?:the|and|or|but|not|to|of|in|with|de|le|la|et|ou|mais|pas|une?|du|des)\b/i.test(s)) {
-    return false;
+  // Si TOUS les segments (séparés par espaces) sont des mots français/anglais
+  // communs SANS accent pinyin, c'est de la prose — rejeter.
+  const segments = s.split(/\s+/).filter(Boolean);
+  if (segments.length > 0) {
+    const allFrenchWords = segments.every((seg) => {
+      const low = seg.toLowerCase();
+      const hasSegAccent = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/.test(seg);
+      return !hasSegAccent && NON_PINYIN_WORDS.has(low);
+    });
+    if (allFrenchWords) return false;
   }
   return true;
 }

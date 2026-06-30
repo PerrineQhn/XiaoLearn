@@ -1318,10 +1318,12 @@ function renderMarkdownInline(text: string): React.ReactNode {
 }
 
 /**
- * Rendu d'un choice d'exercice : remplace les strings vides par un placeholder
- * explicite « ∅ rien » pour que l'utilisateur comprenne que la bonne réponse
- * est « ne rien ajouter » (cas des fill où le blank doit rester vide, ex:
- * « 我 ___ 二十岁 » dont la solution est l'absence de verbe).
+ * Rendu d'un choice d'exercice :
+ *   - remplace les strings vides par un placeholder explicite « ∅ rien »
+ *     (cas des fill où le blank doit rester vide, ex: 我 ___ 二十岁)
+ *   - interprète le mini-markdown **gras** dans les choices pour que
+ *     les exos Nuances avec mise en valeur des mots-clés s'affichent
+ *     correctement (sinon **二** apparaît en brut)
  */
 function renderChoice(s: string, language: LessonV2Language): React.ReactNode {
   if (s === '' || /^\s*$/.test(s)) {
@@ -1332,7 +1334,8 @@ function renderChoice(s: string, language: LessonV2Language): React.ReactNode {
       </span>
     );
   }
-  return s;
+  // Délègue à renderMarkdownInline pour gérer **gras** + *italique* + AutoPinyin
+  return renderMarkdownInline(s);
 }
 
 const ExerciseCard = ({
@@ -1624,7 +1627,7 @@ const ExerciseCard = ({
           )}
         </div>
       )}
-      <div className="lv2-exercise-prompt">{promptText}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
       {showSentenceText && sentenceText && !errorCorrectionSegments && (
         <div className="lv2-exercise-sentence">
@@ -1796,7 +1799,7 @@ const DialogueResponseCard = ({
       <div className="lv2-exercise-badge lv2-exercise-badge--dialogue">
         {language === 'en' ? 'Dialogue' : 'Dialogue'}
       </div>
-      <div className="lv2-exercise-prompt">{promptText}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
       <div className="lv2-dialogue-chat">
         {beforeLast.map((line, i) => (
@@ -1978,10 +1981,10 @@ const ContextReactCard = ({
       {contextText && (
         <div className="lv2-context-card">
           <span className="lv2-context-icon" aria-hidden>🎬</span>
-          <span className="lv2-context-text">{contextText}</span>
+          <span className="lv2-context-text">{renderMarkdownInline(contextText)}</span>
         </div>
       )}
-      <div className="lv2-exercise-prompt">{promptText}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
       <div className="lv2-exercise-choices" role="radiogroup">
         {exercise.choices.map((choice, idx) => {
@@ -2167,7 +2170,7 @@ const OrderExerciseCard = ({
       <div className="lv2-exercise-badge lv2-exercise-badge--order">
         {language === 'en' ? 'Reorder' : 'Remise dans l\u2019ordre'}
       </div>
-      <div className="lv2-exercise-prompt">{promptText}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
       {hintText && (
         <div className="lv2-exercise-meaning">

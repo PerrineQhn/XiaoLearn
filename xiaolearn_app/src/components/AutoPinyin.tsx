@@ -153,12 +153,40 @@ const getPinyin = (hanzi: string): string => {
  * Détecte si du texte suivant déjà un run de hanzi contient une parenthèse
  * d'annotation pinyin. Si oui, on n'en ajoute pas.
  *
- * Patterns détectés :
- *   - 看电视 (kàn diànshì)
- *   - 看电视（kàn diànshì）
- *   - 看电视 [kan4 dian4 shi4]
+ * V18 — On ne se contente plus de détecter une parenthèse qui suit ; on
+ * extrait son contenu et on vérifie qu'il a au moins UN ton (voyelle
+ * accentuée pinyin OU chiffre 1-5 collé à des lettres). Sinon — typique
+ * d'une glose française type "瓶 (bouteille)" — on considère que c'est une
+ * traduction et on injecte quand même le pinyin pour ne pas laisser le
+ * lecteur sans aide à la lecture.
+ *
+ * Patterns détectés comme PINYIN (skip injection) :
+ *   - 看电视 (kàn diànshì)   ← ton diacritique
+ *   - 看电视 (kan4 dian4 shi4) ← ton numérique
+ *   - 看电视（kàn diànshì）   ← parenthèses larges chinoises
+ *   - 看电视 [kàn diànshì]   ← crochets
+ *
+ * Patterns NON détectés comme pinyin (on injecte quand même) :
+ *   - 瓶 (bouteille)
+ *   - 朋友 (friend)
+ *   - 茶 (tea)
  */
-const ALREADY_ANNOTATED_RE = /^\s*[(\[（［]\s*[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/;
+const PAREN_OPEN_RE = /^\s*([(\[（［])/;
+const TONE_DIACRITICS_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/;
+const TONE_NUMBER_RE = /[a-z]+[1-5]\b/i;
+function isPinyinAnnotation(after: string): boolean {
+  const openMatch = PAREN_OPEN_RE.exec(after);
+  if (!openMatch) return false;
+  const open = openMatch[1];
+  const closeChar = open === '(' ? ')' : open === '[' ? ']' : open === '（' ? '）' : '］';
+  const openIdx = after.indexOf(open);
+  const closeIdx = after.indexOf(closeChar, openIdx + 1);
+  if (closeIdx < 0) return false;
+  const inner = after.slice(openIdx + 1, closeIdx).trim();
+  if (!inner || inner.length > 60) return false;
+  // Pinyin = au moins un ton (diacritique ou numérique)
+  return TONE_DIACRITICS_RE.test(inner) || TONE_NUMBER_RE.test(inner);
+}
 
 export interface AutoPinyinProps {
   /** La chaîne à enrichir. Renvoie des React.Fragment avec les annotations injectées. */
@@ -182,9 +210,9 @@ const AutoPinyin = ({ text, enabled = true }: AutoPinyinProps) => {
     if (start > lastEnd) parts.push(text.slice(lastEnd, start));
     // Ajoute le hanzi
     parts.push(hanzi);
-    // Vérifie si le texte qui suit a déjà une annotation pinyin
+    // Vérifie si le texte qui suit a déjà une annotation pinyin (avec un ton)
     const after = text.slice(end);
-    if (!ALREADY_ANNOTATED_RE.test(after)) {
+    if (!isPinyinAnnotation(after)) {
       const py = getPinyin(hanzi);
       if (py) {
         parts.push(
