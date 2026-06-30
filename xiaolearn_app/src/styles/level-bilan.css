@@ -6,7 +6,7 @@
  */
 
 .lvb-page {
-  --lvb-bg: #fffaf3;
+  --lvb-bg: transparent;
   --lvb-card-bg: #ffffff;
   --lvb-text: #1f2937;
   --lvb-text-muted: #6b7280;
@@ -22,8 +22,11 @@
   --lvb-radius: 18px;
   --lvb-radius-sm: 12px;
 
+  /* V18 — Fond transparent pour hériter du main-content de l'app
+     (gradient crème déjà appliqué globalement). Le fond opaque
+     #fffaf3 créait une bande visible qui jurait avec le reste. */
   min-height: 100%;
-  background: var(--lvb-bg);
+  background: transparent;
   color: var(--lvb-text);
   padding: 24px 16px 80px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
