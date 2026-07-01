@@ -3701,3 +3701,170 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
       'Tip: these 3 expressions belong to fluent spoken Chinese. Hearing them = recognizing them. Using them = sounding natural.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.2 Grammaire — Réduplication avancée (CGG #80 + #81)
+// V了V, V来V去, 好好, MW doublés + Nb+MW doublé
+// (cecr-b12-grammar-redup-adv-m1)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12GrammarReduplicationAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-redup-verb-past-le',
+    title: 'V + 了 + V : action brève au passé (« un coup d\'œil »)',
+    titleEn: 'V + 了 + V: brief past action («a quick glance»)',
+    body:
+      'Pour décrire une action passée BRÈVE et complétée, glisse 了 entre 2 répétitions du verbe.\n' +
+      '\n' +
+      'Structure : verbe + 了 + verbe. Sens = « juste un petit... et voilà ».\n' +
+      '- Ex : 看了看 (py kàn le kàn) « il a jeté un coup d\'œil ».\n' +
+      '- Ex : 想了想 (py xiǎng le xiǎng) « il a réfléchi un peu ».\n' +
+      '- Ex complet : 他看了看我，没说话 (py tā kàn le kàn wǒ, méi shuō huà) « il m\'a jeté un coup d\'œil, sans rien dire ».\n' +
+      '- Ex : 妈妈想了想，答应了 « maman a réfléchi un peu et a accepté ».\n' +
+      '\n' +
+      'Nuance vs 看 seul : 他看了我 = « il m\'a regardé » (neutre). 他看了看我 = « il m\'a jeté un coup d\'œil » (bref, terminé).\n' +
+      '\n' +
+      'Règles importantes :\n' +
+      '- N\'AJOUTE PAS de 了 en fin de phrase avec ce pattern. 看了看了 ✗.\n' +
+      '- Pas de négation. Pour dire « n\'a pas jeté un œil », on utilise juste 没看 (pas 没看了看).\n' +
+      '\n' +
+      'Ce pattern est TYPIQUE du récit et de la narration orale. Très fréquent en chinois oral vivant.',
+    bodyEn:
+      'To describe a BRIEF, completed past action, slide 了 between 2 repetitions of the verb. Structure: verb + 了 + verb. Meaning = «just a quick... and done». Ex: 看了看 (kàn le kàn) «he took a quick look». Ex: 想了想 (xiǎng le xiǎng) «he thought a bit». Full ex: 他看了看我，没说话 «he glanced at me, said nothing». Ex: 妈妈想了想，答应了 «mom thought a bit and agreed». Nuance vs 看 alone: 他看了我 = «he looked at me» (neutral). 他看了看我 = «he glanced at me» (brief, done). Important rules: DO NOT add 了 at sentence end with this pattern. 看了看了 ✗. No negation. To say «didn\'t glance», use just 没看 (not 没看了看). This pattern is TYPICAL of oral narration. Very frequent in lively spoken Chinese.',
+    items: [
+      { hanzi: '看了看', pinyin: 'kàn le kàn', meaning: 'a jeté un coup d\'œil', meaningEn: 'took a quick look', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '想了想', pinyin: 'xiǎng le xiǎng', meaning: 'a réfléchi un peu', meaningEn: 'thought a bit', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '听了听', pinyin: 'tīng le tīng', meaning: 'a écouté un instant', meaningEn: 'listened briefly', audio: 'audio/hsk1/hsk1_听.wav' },
+      { hanzi: '闻了闻', pinyin: 'wén le wén', meaning: 'a reniflé un coup', meaningEn: 'sniffed briefly', audio: 'audio/hsk4/hsk4_闻.wav' },
+      { hanzi: '尝了尝', pinyin: 'cháng le cháng', meaning: 'a goûté un peu', meaningEn: 'had a taste', audio: 'audio/hsk4/hsk4_尝.wav' },
+      { hanzi: '摇了摇', pinyin: 'yáo le yáo', meaning: 'a secoué (la tête)', meaningEn: 'gave a shake', audio: 'audio/hsk3/hsk3_摇.wav' },
+      { hanzi: '点了点头', pinyin: 'diǎn le diǎn tóu', meaning: 'a hoché la tête', meaningEn: 'gave a nod', audio: 'audio/hsk2/hsk2_点.wav' },
+      { hanzi: '笑了笑', pinyin: 'xiào le xiào', meaning: 'a esquissé un sourire', meaningEn: 'gave a smile', audio: 'audio/hsk1/hsk1_笑.wav' }
+    ],
+    tip:
+      'Astuce : chaque fois que tu racontes une histoire et que tu veux dire « il a bref-verbé et... », pense au pattern V + 了 + V.',
+    tipEn:
+      'Tip: whenever you tell a story and want to say «he briefly-verbed and...», think of V + 了 + V.'
+  },
+  {
+    id: 'b12-redup-verb-come-go',
+    title: 'V 来 V 去 : action répétée en va-et-vient',
+    titleEn: 'V 来 V 去: repeated back-and-forth action',
+    body:
+      'Ce pattern décrit une action qui se RÉPÈTE dans DIFFÉRENTES DIRECTIONS, « aller et venir », « d\'un côté et de l\'autre ».\n' +
+      '\n' +
+      'Structure : verbe + 来 + même verbe + 去.\n' +
+      '\n' +
+      'Mouvement physique :\n' +
+      '- 走来走去 (py zǒu lái zǒu qù) « faire les cent pas ». Ex : 他在房间里走来走去 (py tā zài fáng jiān lǐ zǒu lái zǒu qù) « il fait les cent pas dans la pièce ».\n' +
+      '- 跑来跑去 (py pǎo lái pǎo qù) « courir dans tous les sens ». Ex : 孩子们在花园里跑来跑去 « les enfants courent partout dans le jardin ».\n' +
+      '- 飞来飞去 « voler ici et là » (papillons, oiseaux).\n' +
+      '\n' +
+      'Mouvement mental ou verbal :\n' +
+      '- 想来想去 (py xiǎng lái xiǎng qù) « ruminer, retourner dans sa tête ». Ex : 我想来想去，还是不明白 « j\'ai tourné et retourné la question, je ne comprends toujours pas ».\n' +
+      '- 说来说去 (py shuō lái shuō qù) « répéter la même chose sans arrêt » ou « au final ». Ex : 说来说去还是那句话 « il en revient toujours à la même phrase ».\n' +
+      '\n' +
+      'Contexte typique : souvent avec un LIEU (在...里/在...上) pour situer le va-et-vient.\n' +
+      '\n' +
+      'Restriction : ne fonctionne PAS avec tous les verbes. Naturel avec les verbes de mouvement (走/跑/飞/搬) et quelques verbes mentaux (想/说). Bizarre avec un verbe comme « manger » (吃来吃去 ne se dit pas).\n' +
+      '\n' +
+      'Ce pattern est DESCRIPTIF (peint une scène), pas adoucissant.',
+    bodyEn:
+      'This pattern describes an action that REPEATS in DIFFERENT DIRECTIONS, «back and forth», «this way and that». Structure: verb + 来 + same verb + 去. Physical movement: 走来走去 (zǒu lái zǒu qù) «pace back and forth». Ex: 他在房间里走来走去 «he paces in the room». 跑来跑去 «run all over». Ex: 孩子们在花园里跑来跑去 «kids run all around the garden». 飞来飞去 «fly around» (butterflies, birds). Mental or verbal movement: 想来想去 (xiǎng lái xiǎng qù) «mull over». Ex: 我想来想去，还是不明白 «I turned it over and over, still don\'t get it». 说来说去 (shuō lái shuō qù) «repeat the same thing» or «in the end». Ex: 说来说去还是那句话 «he keeps coming back to the same line». Typical context: often with a LOCATION (在...里/在...上) to situate the back-and-forth. Restriction: doesn\'t work with ALL verbs. Natural with motion verbs (走/跑/飞/搬) and a few mental ones (想/说). Weird with «eat» (吃来吃去 doesn\'t work). This pattern is DESCRIPTIVE (paints a scene), not softening.',
+    items: [
+      { hanzi: '走来走去', pinyin: 'zǒu lái zǒu qù', meaning: 'faire les cent pas', meaningEn: 'pace back and forth', audio: 'audio/hsk2/hsk2_走.wav' },
+      { hanzi: '跑来跑去', pinyin: 'pǎo lái pǎo qù', meaning: 'courir dans tous les sens', meaningEn: 'run all over', audio: 'audio/hsk2/hsk2_跑.wav' },
+      { hanzi: '飞来飞去', pinyin: 'fēi lái fēi qù', meaning: 'voler ici et là', meaningEn: 'fly around', audio: 'audio/hsk3/hsk3_飞.wav' },
+      { hanzi: '想来想去', pinyin: 'xiǎng lái xiǎng qù', meaning: 'ruminer, retourner', meaningEn: 'mull over', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '说来说去', pinyin: 'shuō lái shuō qù', meaning: 'répéter sans arrêt', meaningEn: 'keep repeating', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '搬来搬去', pinyin: 'bān lái bān qù', meaning: 'déplacer d\'un endroit à l\'autre', meaningEn: 'move around', audio: 'audio/hsk3/hsk3_搬.wav' },
+      { hanzi: '看来看去', pinyin: 'kàn lái kàn qù', meaning: 'regarder de tous les côtés', meaningEn: 'look all around', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '在房间里', pinyin: 'zài fáng jiān lǐ', meaning: 'dans la pièce', meaningEn: 'in the room', audio: 'audio/hsk1/hsk1_房间.wav' }
+    ],
+    tip:
+      'Astuce : image mentale d\'un pendule qui balance. Quand tu vois ce mouvement répété, prends 来...去.',
+    tipEn:
+      'Tip: mental image of a pendulum swinging. When you see repeated back-and-forth motion, reach for 来...去.'
+  },
+  {
+    id: 'b12-redup-haohao-special',
+    title: '好好 : le cas spécial (« comme il faut »)',
+    titleEn: '好好: the special case («properly»)',
+    body:
+      '好好 (py hǎo hāo, souvent prononcé hǎo hāo avec 2e syllabe en 1er ton) ressemble à un simple redoublement de 好, mais c\'est devenu un ADVERBE SPÉCIAL et figé qui signifie « comme il faut / bien / à fond / proprement ».\n' +
+      '\n' +
+      'Se place JUSTE AVANT le verbe, PAS besoin de 地.\n' +
+      '\n' +
+      'Contextes ultra-fréquents :\n' +
+      '- 好好学习 (py hǎo hāo xué xí) « bien étudier ». Slogan célèbre : 好好学习，天天向上 (« étudie bien, progresse chaque jour »).\n' +
+      '- 好好吃饭 (py hǎo hāo chī fàn) « manger comme il faut ». Ce que disent les parents.\n' +
+      '- 好好休息 (py hǎo hāo xiū xi) « bien se reposer ».\n' +
+      '- 好好想想 (py hǎo hāo xiǎng xiang) « bien réfléchir ». Note : combine 好好 + réduplication.\n' +
+      '- 好好玩 (py hǎo hāo wán) « bien s\'amuser ». Ex : 祝你们好好玩 « amusez-vous bien ! ».\n' +
+      '\n' +
+      'Version en résultat complément 好好的 = « bien fait, parfaitement ». Ex : 他把车洗得好好的 (py tā bǎ chē xǐ de hǎo hāo de) « il a lavé la voiture nickel ». Ex : 房间收拾得好好的 « la chambre est parfaitement rangée ».\n' +
+      '\n' +
+      'Combine avec redoublement de verbe pour extra chaleur : 好好看看 (py hǎo hāo kàn kan) « regarde bien attentivement ». Ex : 好好听听 « écoute bien ».\n' +
+      '\n' +
+      'Attention : 好好 n\'est PAS le sens de « pas mal » (qui est 还好). Ne pas confondre.',
+    bodyEn:
+      '好好 (hǎo hāo, often 2nd syllable in 1st tone) looks like a simple 好 reduplication, but has become a SPECIAL, FROZEN ADVERB meaning «properly / well / thoroughly / neatly». Placed JUST BEFORE the verb, NO need for 地. Ultra-frequent contexts: 好好学习 (hǎo hāo xué xí) «study well». Famous slogan: 好好学习，天天向上 («study well, progress every day»). 好好吃饭 (hǎo hāo chī fàn) «eat properly». What parents say. 好好休息 «rest well». 好好想想 «think it over». Note: combines 好好 + reduplication. 好好玩 «have fun». Ex: 祝你们好好玩 «have fun!». Complement version 好好的 = «neatly done, perfectly». Ex: 他把车洗得好好的 «he washed the car nicely». Ex: 房间收拾得好好的 «room is perfectly tidy». Combines with verb reduplication for extra warmth: 好好看看 (hǎo hāo kàn kan) «take a good careful look». Ex: 好好听听 «listen carefully». Careful: 好好 is NOT «not bad» (that\'s 还好). Don\'t confuse.',
+    items: [
+      { hanzi: '好好', pinyin: 'hǎo hāo', meaning: 'comme il faut, bien', meaningEn: 'properly, well', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '好好学习', pinyin: 'hǎo hāo xué xí', meaning: 'bien étudier', meaningEn: 'study well', audio: 'audio/hsk1/hsk1_学习.wav' },
+      { hanzi: '好好吃饭', pinyin: 'hǎo hāo chī fàn', meaning: 'manger comme il faut', meaningEn: 'eat properly', audio: 'audio/hsk1/hsk1_吃饭.wav' },
+      { hanzi: '好好休息', pinyin: 'hǎo hāo xiū xi', meaning: 'bien se reposer', meaningEn: 'rest well', audio: 'audio/hsk2/hsk2_休息.wav' },
+      { hanzi: '好好想想', pinyin: 'hǎo hāo xiǎng xiang', meaning: 'bien réfléchir', meaningEn: 'think it over', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '好好玩', pinyin: 'hǎo hāo wán', meaning: 'bien s\'amuser', meaningEn: 'have fun', audio: 'audio/hsk2/hsk2_玩.wav' },
+      { hanzi: '好好的', pinyin: 'hǎo hāo de', meaning: 'nickel, parfaitement fait', meaningEn: 'perfectly done', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '天天向上', pinyin: 'tiān tiān xiàng shàng', meaning: 'progresser chaque jour', meaningEn: 'progress every day', audio: 'audio/hsk1/hsk1_天.wav' }
+    ],
+    tip:
+      'Astuce : quand tu veux INSISTER pour que qqn fasse qch bien (parents à enfants, prof à élèves), 好好 est le mot. À l\'oral, ultra fréquent.',
+    tipEn:
+      'Tip: when you want to INSIST someone do sth well (parents to kids, teachers to students), 好好 is the word. In speech, ultra-frequent.'
+  },
+  {
+    id: 'b12-redup-measure-word-and-numeral',
+    title: 'Redoublement de MW : « chacun » + Nb+MW : « pas à pas »',
+    titleEn: 'MW reduplication: «each» + Nb+MW: «step by step»',
+    body:
+      'Redoublement de MW seul = « chacun / chaque ». Plus emphatique que 每 + MW.\n' +
+      '\n' +
+      'Combinaisons courantes :\n' +
+      '- 家家 (py jiā jiā) « chaque foyer ».\n' +
+      '- 个个 (py gè gè) « chacun ». Ex : 他们个个都很聪明 (py tā men gè gè dōu hěn cōng ming) « ils sont tous intelligents (chacun d\'entre eux) ».\n' +
+      '- 人人 (py rén rén) « tout le monde ». Ex : 人人都喜欢猫 « tout le monde aime les chats ».\n' +
+      '- 天天 (py tiān tiān) « chaque jour ». Ex : 我天天喝咖啡 « je bois du café tous les jours ».\n' +
+      '- 年年 (py nián nián) « chaque année ». 处处 (py chù chù) « partout ».\n' +
+      '\n' +
+      'Souvent avec 都 pour renforcer l\'universalité. Ex : 春节的时候，家家都挂红灯笼 (py chūn jié de shí hòu, jiā jiā dōu guà hóng dēng lóng) « pour le Nouvel An chinois, chaque foyer accroche des lanternes rouges ».\n' +
+      '\n' +
+      'Nuance vs 每 + MW : 每家 = « chaque famille » (neutre). 家家(都) = « chaque famille, sans exception » (avec insistance et image vivante).\n' +
+      '\n' +
+      'Nombre + MW redoublé = « un à un / peu à peu ». Décrit progression, répétition ou groupement.\n' +
+      '- Structure : (Nb+MW) + (Nb+MW) + (地/的) + verbe/nom.\n' +
+      '- 一天一天 (py yì tiān yì tiān) « jour après jour ». Ex : 时间一天一天过去 « le temps passe jour après jour ».\n' +
+      '- 一次一次 « une fois après l\'autre / à chaque fois ».\n' +
+      '- 两个两个 (py liǎng ge liǎng ge) « deux par deux ». Ex : 学生们两个两个走进教室 « les élèves entrent 2 par 2 dans la classe ».\n' +
+      '- 一遍一遍地 « encore et encore ». Ex : 妈妈一遍一遍地告诉我要注意安全 (py mā ma yí biàn yí biàn de gào sù wǒ yào zhù yì ān quán) « maman m\'a répété maintes fois de faire attention ».\n' +
+      '\n' +
+      'Variante avec 又 pour renforcer : 一次又一次 (py yí cì yòu yí cì) « encore et encore », 一遍又一遍 « à répétition ».',
+    bodyEn:
+      'MW reduplication alone = «each / every». More emphatic than 每 + MW. Common combos: 家家 (jiā jiā) «every household». 个个 (gè gè) «each one». Ex: 他们个个都很聪明 «they\'re all smart (each one)». 人人 (rén rén) «everyone». Ex: 人人都喜欢猫 «everyone loves cats». 天天 (tiān tiān) «every day». Ex: 我天天喝咖啡 «I drink coffee every day». 年年 «every year». 处处 «everywhere». Often with 都 to reinforce universality. Ex: 春节的时候，家家都挂红灯笼 «during Chinese New Year, every home hangs red lanterns». Nuance vs 每 + MW: 每家 = «each family» (neutral). 家家(都) = «every family, no exception» (with emphasis and vivid image). Number + reduplicated MW = «one by one / step by step». Describes progression, repetition or grouping. Structure: (Nb+MW) + (Nb+MW) + (地/的) + verb/noun. 一天一天 «day after day». Ex: 时间一天一天过去 «time passes day after day». 一次一次 «over and over». 两个两个 «two by two». Ex: 学生们两个两个走进教室 «students enter 2 by 2». 一遍一遍地 «again and again». Ex: 妈妈一遍一遍地告诉我要注意安全 «mom told me over and over to be careful». Variant with 又: 一次又一次 «again and again», 一遍又一遍 «over and over».',
+    items: [
+      { hanzi: '家家', pinyin: 'jiā jiā', meaning: 'chaque foyer', meaningEn: 'every household', audio: 'audio/hsk1/hsk1_家.wav' },
+      { hanzi: '个个', pinyin: 'gè gè', meaning: 'chacun', meaningEn: 'each one', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '人人', pinyin: 'rén rén', meaning: 'tout le monde', meaningEn: 'everyone', audio: 'audio/hsk1/hsk1_人.wav' },
+      { hanzi: '天天', pinyin: 'tiān tiān', meaning: 'chaque jour', meaningEn: 'every day', audio: 'audio/hsk1/hsk1_天.wav' },
+      { hanzi: '年年', pinyin: 'nián nián', meaning: 'chaque année', meaningEn: 'every year', audio: 'audio/hsk1/hsk1_年.wav' },
+      { hanzi: '一天一天', pinyin: 'yì tiān yì tiān', meaning: 'jour après jour', meaningEn: 'day after day', audio: 'audio/hsk1/hsk1_天.wav' },
+      { hanzi: '一次一次', pinyin: 'yí cì yí cì', meaning: 'à chaque fois', meaningEn: 'over and over', audio: 'audio/hsk2/hsk2_次.wav' },
+      { hanzi: '一遍又一遍', pinyin: 'yí biàn yòu yí biàn', meaning: 'encore et encore', meaningEn: 'again and again', audio: 'audio/hsk3/hsk3_遍.wav' }
+    ],
+    tip:
+      'Astuce : les 2 patterns créent des images VIVANTES. 家家都 = tableau de tous les foyers illuminés. 一天一天 = calendrier qui défile. Choisis en fonction de l\'image que tu veux évoquer.',
+    tipEn:
+      'Tip: both patterns create VIVID images. 家家都 = picture of all lit-up homes. 一天一天 = calendar flipping. Pick based on the image you want to evoke.'
+  }
+];

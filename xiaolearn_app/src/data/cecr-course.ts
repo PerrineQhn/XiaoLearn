@@ -196,6 +196,7 @@ import {
   b12YouLearnSections,
   b12BiLearnSections,
   b12BiPrecisionLearnSections,
+  b12GrammarReduplicationAdvancedLearnSections,
   b22GrammarComplementM1LearnSections,
   b22GrammarComplementM2LearnSections,
   b22GrammarComplementM3LearnSections,
@@ -5347,7 +5348,36 @@ export const cecrLessonPaths: LessonPath[] = [
         quizQuestions: 10,
         learnSections: b12BiPrecisionLearnSections
       },
-{
+      {
+        id: "cecr-b12-grammar-redup-adv-m1",
+        title: "Réduplication avancée : V了V, V来V去, 好好, MW doublés",
+        titleEn: "Advanced reduplication: V了V, V来V去, 好好, doubled MW",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["reduplication", "grammar", "cecr:b12"],
+        introduction: {
+          title: "Réduplication niveau 2 : narration, va-et-vient et exhaustivité",
+          titleEn: "Reduplication level 2: narration, back-and-forth and exhaustiveness",
+          content: "Quatre patterns avancés qui prolongent la réduplication B1.1. (1) V + 了 + V (看了看, 想了想) = action passée BRÈVE et complétée, marqueur clé du récit oral. (2) V 来 V 去 (走来走去, 想来想去) = va-et-vient répété, image vivante d'un pendule. (3) 好好 (hǎo hāo) = adverbe figé « comme il faut / à fond », ultra fréquent (好好学习, 好好休息). (4) MW redoublé (家家, 天天, 人人) = « chacun sans exception », plus vivant que 每 ; Nb+MW redoublé (一天一天, 一遍又一遍) = progression pas à pas.",
+          contentEn: "Four advanced patterns that extend B1.1 reduplication. (1) V + 了 + V (看了看, 想了想) = BRIEF completed past action, key marker of oral narration. (2) V 来 V 去 (走来走去, 想来想去) = repeated back-and-forth, vivid pendulum image. (3) 好好 (hǎo hāo) = frozen adverb «properly / thoroughly», ultra-frequent (好好学习, 好好休息). (4) Doubled MW (家家, 天天, 人人) = «each without exception», more vivid than 每; Nb+MW doubled (一天一天, 一遍又一遍) = step-by-step progression.",
+          objectives: [
+            "Raconter au passé avec V + 了 + V",
+            "Peindre un va-et-vient avec V 来 V 去",
+            "Insister avec 好好 (« comme il faut »)",
+            "Utiliser MW redoublé et Nb+MW pour « chacun / peu à peu »"
+          ],
+          objectivesEn: [
+            "Narrate in the past with V + 了 + V",
+            "Paint back-and-forth with V 来 V 去",
+            "Emphasize with 好好 («properly»)",
+            "Use doubled MW and Nb+MW for «each / step by step»"
+          ]
+        },
+        flashcards: ["看了看", "走来走去", "好好", "家家", "个个", "天天", "一天一天", "一遍又一遍"],
+        quizQuestions: 10,
+        learnSections: b12GrammarReduplicationAdvancedLearnSections
+      },
+      {
         id: "cecr-b22-grammar-complement-m1",
         title: "Compléments de résultat : 完/好/懂/到",
         titleEn: "Result complements: 完/好/懂/到",
