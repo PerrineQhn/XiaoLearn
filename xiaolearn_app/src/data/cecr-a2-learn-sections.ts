@@ -3516,3 +3516,482 @@ export const a2NuancesWhetherOrNotLearnSections: LessonV2LearnSection[] = [
       'Quick test — if you can translate as « either A or B » → 还是. If it\'s « X or not X » → V-不-V.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances — Exprimer l'inquiétude (CGG #90) : 担心, 着急, 紧张, 怕, 放心, 关心
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesWorryBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-worry-danxin-zhaoji-jinzhang',
+    title: '担心, 着急, 紧张 : 3 façons de s\'inquiéter',
+    titleEn: '担心, 着急, 紧张: 3 ways to worry',
+    body:
+      'Ces 3 mots sont TOUS traduits par « s\'inquiéter » ou « être nerveux », mais ils ne sont PAS interchangeables.\n' +
+      '- 担心 (dān xīn) : verbe, inquiétude GÉNÉRALE. Le plus polyvalent. Structure : sujet + 担心 + objet/clause.\n' +
+      '  · Ex : 妈妈很担心孩子 (mā ma hěn dān xīn hái zi) « maman est très inquiète pour l\'enfant ».\n' +
+      '  · Ex : 我担心你会迟到 (wǒ dān xīn nǐ huì chí dào) « j\'ai peur que tu sois en retard ».\n' +
+      '  · Phrase clé : 别担心 (bié dān xīn) « ne t\'inquiète pas ».\n' +
+      '  · Renforcement avec 的 : 我们会按时到家的 « on sera à l\'heure, promis ».\n' +
+      '- 着急 (zháo jí) : adjectif, inquiétude URGENTE + impatience. Utilisé quand le temps presse.\n' +
+      '  · Ex : 快迟到了，我很着急 (kuài chí dào le, wǒ hěn zháo jí) « c\'est presque l\'heure, je stresse ! ».\n' +
+      '  · Ex : 你别着急，还有时间呢 « t\'énerve pas, on a encore le temps ».\n' +
+      '  · Ne prend PAS d\'objet direct (contrairement à 担心). Pour dire « ça me rend anxieux », utilise 让 + qqn + 着急.\n' +
+      '- 紧张 (jǐn zhāng) : adjectif, nervosité MOMENTANÉE (avant un examen, un discours). Sensation physique — cœur qui bat, mains moites.\n' +
+      '  · Ex : 第一次演讲，他非常紧张 (dì-yī cì yǎn jiǎng, tā fēi cháng jǐn zhāng) « pour son premier discours, il était très nerveux ».\n' +
+      '  · Ex : 明天我要面试了，现在有点紧张 (míng tiān wǒ yào miàn shì le, xiàn zài yǒu diǎn jǐn zhāng) « j\'ai un entretien demain, je suis un peu stressé ».\n' +
+      '- Comparaison :\n' +
+      '  · 担心 = inquiétude sur un résultat futur (« je m\'inquiète pour ta santé »).\n' +
+      '  · 着急 = inquiétude + urgence (« je stresse, on va rater le train »).\n' +
+      '  · 紧张 = nervosité corporelle du moment (« j\'ai le trac »).',
+    bodyEn:
+      'These 3 words are ALL translated as « to worry » or « to be nervous », but they are NOT interchangeable.\n' +
+      '- 担心 (dān xīn): verb, GENERAL worry. The most versatile. Structure: subject + 担心 + object/clause.\n' +
+      '  · Ex: 妈妈很担心孩子 « mom is very worried about the child ».\n' +
+      '  · Ex: 我担心你会迟到 « I\'m afraid you\'ll be late ».\n' +
+      '  · Key phrase: 别担心 « don\'t worry ».\n' +
+      '- 着急 (zháo jí): adjective, URGENT worry + impatience. Used when time is pressing.\n' +
+      '  · Ex: 快迟到了，我很着急 « we\'re almost late, I\'m stressing out! ».\n' +
+      '  · Ex: 你别着急，还有时间呢 « don\'t panic, we still have time ».\n' +
+      '  · Takes NO direct object (unlike 担心). Use 让 + someone + 着急 for « it makes me anxious ».\n' +
+      '- 紧张 (jǐn zhāng): adjective, MOMENTARY nervousness (before an exam, a speech). Physical sensation — pounding heart, sweaty palms.\n' +
+      '  · Ex: 第一次演讲，他非常紧张 « for his first speech, he was very nervous ».\n' +
+      '  · Ex: 明天我要面试了，现在有点紧张 « I have an interview tomorrow, I\'m a bit stressed ».\n' +
+      '- Comparison:\n' +
+      '  · 担心 = worry about a future outcome (« I\'m worried about your health »).\n' +
+      '  · 着急 = worry + urgency (« I\'m stressed, we\'ll miss the train »).\n' +
+      '  · 紧张 = bodily nervousness in the moment (« I have stage fright »).',
+    items: [
+      { hanzi: '担心', pinyin: 'dān xīn', meaning: 's\'inquiéter (général)', meaningEn: 'to worry (general)', audio: 'audio/hsk3/hsk3_担心.wav' },
+      { hanzi: '着急', pinyin: 'zháo jí', meaning: 's\'inquiéter (urgent), stresser', meaningEn: 'to worry (urgent), be anxious', audio: 'audio/hsk3/hsk3_着急.wav' },
+      { hanzi: '紧张', pinyin: 'jǐn zhāng', meaning: 'nerveux, tendu', meaningEn: 'nervous, tense', audio: 'audio/hsk4/hsk4_紧张.wav' },
+      { hanzi: '别担心', pinyin: 'bié dān xīn', meaning: 'ne t\'inquiète pas', meaningEn: 'don\'t worry', audio: 'audio/hsk3/hsk3_担心.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' },
+      { hanzi: '面试', pinyin: 'miàn shì', meaning: 'entretien', meaningEn: 'interview', audio: 'audio/hsk5/hsk5_面试.wav' }
+    ],
+    tip:
+      'Test rapide — si tu peux dire « je ne peux rien y faire, je m\'inquiète » → 担心. Si tu peux dire « vite, vite ! » → 着急. Si tu sens des papillons dans le ventre → 紧张.',
+    tipEn:
+      'Quick test — if you can say « I can\'t do anything about it, I\'m worried » → 担心. If you can say « quick, quick! » → 着急. If you feel butterflies in your stomach → 紧张.'
+  },
+  {
+    id: 'a2-worry-pa-haipa-fangxin',
+    title: '怕 / 害怕 : la peur + 放心 : rassurer',
+    titleEn: '怕 / 害怕: fear + 放心: to reassure',
+    body:
+      '- 怕 (pà) = « avoir peur de », « craindre que ». Structure : sujet + 怕 + nom OU + clause.\n' +
+      '  · Ex : 我怕明天会下雨 (wǒ pà míng tiān huì xià yǔ) « j\'ai peur qu\'il pleuve demain ».\n' +
+      '  · Ex : 我怕老鼠 « j\'ai peur des souris ».\n' +
+      '  · Avec 会 pour une possibilité future : 我怕他会生气 « j\'ai peur qu\'il se fâche ».\n' +
+      '- 害怕 (hài pà) = version un peu plus FORTE, plus concrète.\n' +
+      '  · Ex : 孩子一个人走夜路，妈妈很害怕 (hái zi yí ge rén zǒu yè lù, mā ma hěn hài pà) « l\'enfant marche seul la nuit, maman a très peur ».\n' +
+      '  · Souvent pour des peurs tangibles (serpents, obscurité). En pratique, 怕 et 害怕 se chevauchent.\n' +
+      '- 怕 vs 担心 : 我担心明天会下雨 et 我怕明天会下雨 se ressemblent, mais 怕 sonne plus personnellement affecté (« j\'espère vraiment que non »).\n' +
+      '- 恐怕 (kǒng pà) « je crains que... » : contient 怕 mais fonctionne différemment. Sert à INTRODUIRE une mauvaise nouvelle avec tact.\n' +
+      '  · Ex : 恐怕要下雨 « j\'ai bien peur qu\'il va pleuvoir ». Ne prend PAS de sujet, se place en début de clause.\n' +
+      '- 放心 (fàng xīn) = « ne pas s\'inquiéter, être rassuré ». Littéralement « déposer le cœur ». C\'est l\'OPPOSÉ de 担心.\n' +
+      '  · Ex : 你放心，我一定照顾好你的猫 (nǐ fàng xīn, wǒ yí dìng zhào gù hǎo nǐ de māo) « ne t\'en fais pas, je vais bien m\'occuper de ton chat ».\n' +
+      '  · Version polie : 请放心 « soyez rassuré ».\n' +
+      '  · Ex : 医生让病人放心，手术很顺利 « le médecin a rassuré le patient : l\'opération s\'est bien passée ».\n' +
+      '- Distinction avec 放松 (fàng sōng) : 放松 = « se détendre » physiquement/mentalement ; 放心 = arrêter de s\'inquiéter.',
+    bodyEn:
+      '- 怕 (pà) = « to be afraid of », « to fear that ». Structure: subject + 怕 + noun OR + clause.\n' +
+      '  · Ex: 我怕明天会下雨 « I\'m afraid it\'ll rain tomorrow ».\n' +
+      '  · Ex: 我怕老鼠 « I\'m afraid of mice ».\n' +
+      '  · With 会 for future possibility: 我怕他会生气 « I\'m afraid he\'ll get angry ».\n' +
+      '- 害怕 (hài pà) = a slightly STRONGER, more concrete version.\n' +
+      '  · Ex: 孩子一个人走夜路，妈妈很害怕 « the child walks alone at night, mom is very scared ».\n' +
+      '  · Often for tangible fears (snakes, darkness). In practice, 怕 and 害怕 overlap.\n' +
+      '- 怕 vs 担心: 我担心明天会下雨 and 我怕明天会下雨 sound similar, but 怕 sounds more personally affected (« I really hope not »).\n' +
+      '- 恐怕 (kǒng pà) « I\'m afraid that... »: contains 怕 but works differently. Used to INTRODUCE bad news tactfully.\n' +
+      '  · Ex: 恐怕要下雨 « I\'m afraid it\'s going to rain ». Takes NO subject, placed at the start of the clause.\n' +
+      '- 放心 (fàng xīn) = « to not worry, to be reassured ». Literally « to put down the heart ». The OPPOSITE of 担心.\n' +
+      '  · Ex: 你放心，我一定照顾好你的猫 « don\'t worry, I\'ll take good care of your cat ».\n' +
+      '  · Polite: 请放心 « rest assured ».\n' +
+      '  · Ex: 医生让病人放心，手术很顺利 « the doctor reassured the patient: the surgery went well ».\n' +
+      '- Distinction with 放松 (fàng sōng): 放松 = « to relax » physically/mentally; 放心 = to stop worrying.',
+    items: [
+      { hanzi: '怕', pinyin: 'pà', meaning: 'avoir peur de, craindre', meaningEn: 'be afraid of', audio: 'audio/hsk3/hsk3_怕.wav' },
+      { hanzi: '害怕', pinyin: 'hài pà', meaning: 'avoir peur (concret)', meaningEn: 'be scared (concrete)', audio: 'audio/hsk3/hsk3_害怕.wav' },
+      { hanzi: '恐怕', pinyin: 'kǒng pà', meaning: 'je crains que...', meaningEn: 'I\'m afraid that...', audio: 'audio/hsk4/hsk4_恐怕.wav' },
+      { hanzi: '放心', pinyin: 'fàng xīn', meaning: 'ne pas s\'inquiéter, être rassuré', meaningEn: 'not worry, be reassured', audio: 'audio/hsk3/hsk3_放心.wav' },
+      { hanzi: '放松', pinyin: 'fàng sōng', meaning: 'se détendre', meaningEn: 'to relax', audio: 'audio/hsk4/hsk4_放松.wav' },
+      { hanzi: '照顾', pinyin: 'zhào gù', meaning: 's\'occuper de, prendre soin', meaningEn: 'take care of', audio: 'audio/hsk3/hsk3_照顾.wav' }
+    ],
+    tip:
+      'Chaque fois que quelqu\'un est inquiet, tu peux répondre par 放心 + un engagement (« ne t\'en fais pas, je m\'en occupe »).',
+    tipEn:
+      'Whenever someone is worried, you can respond with 放心 + a commitment (« don\'t worry, I\'ll handle it »).'
+  },
+  {
+    id: 'a2-worry-guanxin-vs-danxin',
+    title: '关心 vs 担心 : « prendre soin » vs « se faire du souci »',
+    titleEn: '关心 vs 担心: « to care for » vs « to worry »',
+    body:
+      'Piège classique. Les 2 mots peuvent se traduire par « se soucier de », mais ils ne sont PAS interchangeables.\n' +
+      '- 关心 (guān xīn) = « prendre soin de », « se soucier positivement de ». Ton chaleureux, affectueux. Pas d\'anxiété.\n' +
+      '  · Ex : 父母很关心孩子的健康 (fù mǔ hěn guān xīn hái zi de jiàn kāng) « les parents veillent à la santé de leurs enfants » (attention bienveillante, sans crise).\n' +
+      '  · Ex : 我很关心你 « je pense à toi, tu comptes pour moi » — sens chaleureux, pas alarmé.\n' +
+      '- Phrase courante : 谢谢你的关心 (xiè xie nǐ de guān xīn) « merci pour ton attention/ta sollicitude ». C\'est la réponse quand quelqu\'un a demandé de tes nouvelles.\n' +
+      '- 担心 = « s\'inquiéter » avec anxiété. Sous-entend qu\'on craint que quelque chose n\'aille pas.\n' +
+      '  · Ex : 我很担心你最近的状态 (wǒ hěn dān xīn nǐ zuì jìn de zhuàng tài) « je m\'inquiète pour ton état ces derniers temps » — nuance : « je crois que quelque chose ne va pas ».\n' +
+      '- Comparaison :\n' +
+      '  · 关心 = « cœur bienveillant » (positif, affectueux).\n' +
+      '  · 担心 = « cœur chargé » (anxieux, alarmé).\n' +
+      '  · 我关心你 = « je pense à toi » (chaleureux).\n' +
+      '  · 我担心你 = « je m\'inquiète pour toi » (alarmé).\n' +
+      '- Sur le même sujet : 父母关心孩子 (chaleureux, ils veillent) vs 父母担心孩子 (ils s\'inquiètent, il y a un souci).',
+    bodyEn:
+      'Classic trap. The 2 words can both translate as « to care about », but they are NOT interchangeable.\n' +
+      '- 关心 (guān xīn) = « to care for », « to positively concern oneself with ». Warm, affectionate tone. No anxiety.\n' +
+      '  · Ex: 父母很关心孩子的健康 « parents care about their children\'s health » (kind attention, no crisis).\n' +
+      '  · Ex: 我很关心你 « I care about you, you matter to me » — warm sense, not alarmed.\n' +
+      '- Common phrase: 谢谢你的关心 « thank you for your concern ». The reply when someone has asked how you\'re doing.\n' +
+      '- 担心 = « to worry » with anxiety. Implies you fear something is wrong.\n' +
+      '  · Ex: 我很担心你最近的状态 « I\'m worried about how you\'ve been lately » — nuance: « I think something is off ».\n' +
+      '- Comparison:\n' +
+      '  · 关心 = « caring heart » (positive, affectionate).\n' +
+      '  · 担心 = « heavy heart » (anxious, alarmed).\n' +
+      '  · 我关心你 = « I care about you » (warm).\n' +
+      '  · 我担心你 = « I\'m worried about you » (alarmed).\n' +
+      '- Same subject: 父母关心孩子 (warm, they watch over) vs 父母担心孩子 (they worry, there\'s a problem).',
+    items: [
+      { hanzi: '关心', pinyin: 'guān xīn', meaning: 'prendre soin, se soucier (positif)', meaningEn: 'care about (positive)', audio: 'audio/hsk3/hsk3_关心.wav' },
+      { hanzi: '担心', pinyin: 'dān xīn', meaning: 's\'inquiéter (anxieux)', meaningEn: 'worry (anxious)', audio: 'audio/hsk3/hsk3_担心.wav' },
+      { hanzi: '谢谢你的关心', pinyin: 'xiè xie nǐ de guān xīn', meaning: 'merci pour ton attention', meaningEn: 'thank you for your concern', audio: 'audio/hsk3/hsk3_关心.wav' },
+      { hanzi: '健康', pinyin: 'jiàn kāng', meaning: 'santé, en bonne santé', meaningEn: 'health, healthy', audio: 'audio/hsk3/hsk3_健康.wav' },
+      { hanzi: '状态', pinyin: 'zhuàng tài', meaning: 'état, condition', meaningEn: 'state, condition', audio: 'audio/hsk5/hsk5_状态.wav' }
+    ],
+    tip:
+      'Quand quelqu\'un t\'a montré de l\'attention, remercie par 谢谢你的关心 — jamais 谢谢你的担心 (ce serait bizarre).',
+    tipEn:
+      'When someone has shown you care, thank them with 谢谢你的关心 — never 谢谢你的担心 (that would be weird).'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Grammaire A2 — Compléments de durée : « pendant X » vs « ça fait X »
+// (cecr-a2-grammar-m7) — Basé sur CGG #93 : compléments de quantité (durées).
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2GrammarDurationComplementsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-duration-completed-action',
+    title: 'Durée d\'une action ACHEVÉE : 了 après le verbe',
+    titleEn: 'Duration of a COMPLETED action: 了 after the verb',
+    body:
+      'Pour exprimer combien de temps a duré une action FINIE dans le passé, on utilise 了 juste après le verbe + la durée.\n' +
+      '\n' +
+      'Structure sans objet : sujet + verbe + 了 + durée.\n' +
+      '- Ex : 他跑了一个小时 (tā pǎo le yí ge xiǎo shí) « il a couru pendant une heure ». Le 了 marque que l\'action de courir est COMPLÈTE.\n' +
+      '\n' +
+      'Avec un objet, 3 options équivalentes existent :\n' +
+      '- Option 1 (répétition du verbe, très orale) : verbe + objet, verbe + 了 + durée. Ex : 我学中文学了两年 (wǒ xué zhōng wén xué le liǎng nián) « j\'ai étudié le chinois pendant 2 ans ».\n' +
+      '- Option 2 (durée avant objet) : verbe + 了 + durée + objet. Ex : 我学了两年中文 (wǒ xué le liǎng nián zhōng wén) — équivalent, plus direct.\n' +
+      '- Option 3 (avec 的, style « X de Y ») : verbe + 了 + durée + 的 + objet. Ex : 我学了两年的中文 (wǒ xué le liǎng nián de zhōng wén). Sonne comme « 2 ans de chinois ».\n' +
+      '\n' +
+      'Cas spécial des verbes SÉPARABLES (睡觉, 游泳) : l\'option 3 avec 的 est particulièrement naturelle.\n' +
+      '- Ex : 他睡了八个小时的觉 (tā shuì le bā gè xiǎo shí de jiào) « il a dormi 8 heures ». La durée se glisse entre les 2 syllabes du verbe séparable, avec 的.\n' +
+      '- Ex : 我游了半个小时的泳 (wǒ yóu le bàn ge xiǎo shí de yǒng) « j\'ai nagé une demi-heure ».\n' +
+      '\n' +
+      'Les 3 options veulent dire la même chose. À l\'oral, l\'option 1 (répétition) est très fréquente. À l\'écrit, options 2 et 3 sont plus concises.',
+    bodyEn:
+      'To express how long a COMPLETED past action lasted, use 了 right after the verb + duration. Structure without object: subj + verb + 了 + duration. Ex: 他跑了一个小时 «he ran for an hour». The 了 marks that the running is COMPLETE. With an object, 3 equivalent options exist: Option 1 (verb repetition, very oral): verb + obj, verb + 了 + duration. Ex: 我学中文学了两年 «I studied Chinese for 2 years». Option 2 (duration before object): verb + 了 + duration + obj. Ex: 我学了两年中文 — equivalent, more direct. Option 3 (with 的, «X of Y» style): verb + 了 + duration + 的 + obj. Ex: 我学了两年的中文. Sounds like «2 years of Chinese». Special case of SEPARABLE verbs (睡觉, 游泳): option 3 with 的 is particularly natural. Ex: 他睡了八个小时的觉 «he slept 8 hours». The duration slips between the 2 syllables of the separable verb, with 的. Ex: 我游了半个小时的泳 «I swam for half an hour». The 3 options mean the same thing. In speech, option 1 (repetition) is very frequent. In writing, options 2 and 3 are more concise.',
+    items: [
+      { hanzi: '了', pinyin: 'le', meaning: 'marqueur d\'action achevée', meaningEn: 'completed action marker', audio: 'audio/hsk1/hsk1_了.wav' },
+      { hanzi: '小时', pinyin: 'xiǎo shí', meaning: 'heure (durée)', meaningEn: 'hour (duration)', audio: 'audio/hsk2/hsk2_小时.wav' },
+      { hanzi: '分钟', pinyin: 'fēn zhōng', meaning: 'minute (durée)', meaningEn: 'minute (duration)', audio: 'audio/hsk1/hsk1_分钟.wav' },
+      { hanzi: '睡觉', pinyin: 'shuì jiào', meaning: 'dormir (verbe séparable)', meaningEn: 'sleep (separable verb)', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '游泳', pinyin: 'yóu yǒng', meaning: 'nager (verbe séparable)', meaningEn: 'swim (separable verb)', audio: 'audio/hsk2/hsk2_游泳.wav' },
+      { hanzi: '跑', pinyin: 'pǎo', meaning: 'courir', meaningEn: 'run', audio: 'audio/hsk2/hsk2_跑.wav' },
+      { hanzi: '学', pinyin: 'xué', meaning: 'étudier', meaningEn: 'study', audio: 'audio/hsk1/hsk1_学.wav' }
+    ],
+    tip:
+      'Retiens l\'option 2 (verbe + 了 + durée + objet) comme ta valeur par défaut : c\'est la plus courte et elle marche partout.',
+    tipEn:
+      'Remember option 2 (verb + 了 + duration + object) as your default: it\'s the shortest and works everywhere.'
+  },
+  {
+    id: 'a2-duration-ongoing-le-final',
+    title: 'Durée d\'une situation EN COURS : 了 en fin de phrase',
+    titleEn: 'Duration of an ONGOING situation: 了 at end of sentence',
+    body:
+      'Pour dire « ça fait X temps que... et ÇA CONTINUE encore », on utilise 了 en FIN DE PHRASE. Ce 了 marque un changement d\'état (« on est arrivé à ce point »).\n' +
+      '\n' +
+      'Structure : sujet + verbe + (objet) + durée + 了. PAS de 了 juste après le verbe cette fois.\n' +
+      '- Ex : 我来中国一个月了 (wǒ lái zhōng guó yí ge yuè le) « ça fait un mois que je suis en Chine (et je suis encore là) ». Sens : je suis venu il y a un mois, et j\'y suis toujours.\n' +
+      '\n' +
+      'Comparaison cruciale entre les 2 positions de 了 :\n' +
+      '- 我来了中国 (wǒ lái le zhōng guó) = « je suis venu en Chine » (action passée simple, achevée, on ne sait pas si je suis encore là).\n' +
+      '- 我来中国一个月了 = « ça fait un mois que je suis en Chine » (durée + toujours en cours).\n' +
+      '\n' +
+      'Autres exemples de « ça continue » :\n' +
+      '- 我们等他三个小时了 (wǒ men děng tā sān ge xiǎo shí le) « ça fait 3 heures qu\'on l\'attend (et on l\'attend toujours) ».\n' +
+      '- 他学中文两年了 (tā xué zhōng wén liǎng nián le) « ça fait 2 ans qu\'il apprend le chinois (et il continue) ».\n' +
+      '\n' +
+      'Renforcement possible avec 已经 (yǐ jīng) « déjà » devant la durée. Ex : 我已经来中国一个月了 « ça fait DÉJÀ un mois que je suis en Chine ».\n' +
+      '\n' +
+      'Attention : 了 en fin de phrase est ESSENTIEL. Sans lui, la phrase perd son sens de « ça continue ». 我来中国一个月 tout seul sonne incomplet et bizarre.\n' +
+      '\n' +
+      'Astuce test rapide :\n' +
+      '- « ça fait X et ça continue » → 了 EN FIN.\n' +
+      '- « j\'ai fait X pendant Y et c\'est fini » → 了 après le verbe.',
+    bodyEn:
+      'To say «it\'s been X and IT\'S STILL GOING», use 了 at the END of the sentence. This 了 marks a change of state («we\'ve reached this point»). Structure: subj + verb + (obj) + duration + 了. NO 了 right after the verb this time. Ex: 我来中国一个月了 «it\'s been a month since I came to China (and I\'m still here)». Crucial comparison of the 2 positions of 了: 我来了中国 = «I came to China» (simple past, completed, unclear if still there). 我来中国一个月了 = «it\'s been a month since I came to China» (duration + still ongoing). Other «still going» examples: 我们等他三个小时了 «we\'ve been waiting for him for 3 hours (still waiting)». 他学中文两年了 «it\'s been 2 years he\'s been learning Chinese (still going)». Reinforce with 已经 (yǐ jīng) «already» before the duration. Ex: 我已经来中国一个月了 «it\'s ALREADY been a month since I came to China». Careful: 了 at the end is ESSENTIAL. Without it, the sentence loses its «still going» sense. 我来中国一个月 alone sounds incomplete and weird. Quick test: «it\'s been X and it continues» → 了 AT END. «I did X for Y and it\'s done» → 了 after the verb.',
+    items: [
+      { hanzi: '了', pinyin: 'le', meaning: 'changement d\'état (en fin)', meaningEn: 'change of state (final)', audio: 'audio/hsk1/hsk1_了.wav' },
+      { hanzi: '已经', pinyin: 'yǐ jīng', meaning: 'déjà', meaningEn: 'already', audio: 'audio/hsk2/hsk2_已经.wav' },
+      { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '等', pinyin: 'děng', meaning: 'attendre', meaningEn: 'wait', audio: 'audio/hsk2/hsk2_等.wav' },
+      { hanzi: '中国', pinyin: 'zhōng guó', meaning: 'Chine', meaningEn: 'China', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '月', pinyin: 'yuè', meaning: 'mois', meaningEn: 'month', audio: 'audio/hsk1/hsk1_月.wav' },
+      { hanzi: '年', pinyin: 'nián', meaning: 'année', meaningEn: 'year', audio: 'audio/hsk1/hsk1_年.wav' }
+    ],
+    tip:
+      'Le 了 final est le pilier. Si tu oublies, ta phrase sonne comme « je viens en Chine un mois » — incomplet. Ferme toujours par 了.',
+    tipEn:
+      'The final 了 is the pillar. If you drop it, your sentence sounds like «I come China a month» — incomplete. Always close with 了.'
+  },
+  {
+    id: 'a2-duration-frequency-and-difference',
+    title: 'Compter des fois : 次/遍/回 et exprimer un écart avec 比',
+    titleEn: 'Counting occurrences: 次/遍/回 and expressing a gap with 比',
+    body:
+      'Compter les OCCURRENCES d\'une action :\n' +
+      '- 次 (cì) : mesureur GÉNÉRIQUE pour « fois ». Ex : 我去过那个餐厅三次 (wǒ qù guò nà ge cān tīng sān cì) « je suis allé à ce resto 3 fois ». Souvent avec 过 pour l\'expérience.\n' +
+      '- 遍 (biàn) : cycle COMPLET, du début à la fin. Ex : 这本书我看了两遍 (zhè běn shū wǒ kàn le liǎng biàn) « j\'ai lu ce livre 2 fois EN ENTIER ». Différent de 次 qui compte juste les occasions.\n' +
+      '- 回 (huí) : synonyme de 次, plus oral et nord-chinois. Ex : 我去过一回 « j\'y suis allé une fois ».\n' +
+      '\n' +
+      'Position de la fréquence quand il y a un objet — 2 options :\n' +
+      '- Après l\'objet : 我去过上海两次 (wǒ qù guò shàng hǎi liǎng cì).\n' +
+      '- Avant l\'objet : 我去过两次上海 (wǒ qù guò liǎng cì shàng hǎi). Un peu plus courant en oral.\n' +
+      '- Cas des PRONOMS : la fréquence reste juste après le verbe. Ex : 我找了他两次 (wǒ zhǎo le tā liǎng cì) « je l\'ai cherché 2 fois » (correct). PAS 我找了两次他 (incorrect).\n' +
+      '\n' +
+      'Exprimer un ÉCART dans une comparaison avec 比 : après [A 比 B + adjectif], on ajoute une quantité.\n' +
+      '- Écart PETIT : + 一点儿 (yì diǎnr) ou 一些 (yì xiē). Ex : 今天比昨天凉快一点儿 (jīn tiān bǐ zuó tiān liáng kuài yì diǎnr) « il fait un peu plus frais qu\'hier ».\n' +
+      '- Écart GRAND : + 得多 (de duō) ou 多了 (duō le). Ex : 她的中文比我流利得多 (tā de zhōng wén bǐ wǒ liú lì de duō) « son chinois est beaucoup plus fluide que le mien ». Ex : 流利多了 (même sens, formulation orale).\n' +
+      '- Écart PRÉCIS (chiffré) : directement après l\'adjectif. Ex : 我比弟弟大两岁 (wǒ bǐ dì di dà liǎng suì) « j\'ai 2 ans de plus que mon petit frère ». Ex : 贵十块钱 (guì shí kuài qián) « plus cher de 10 yuan ».\n' +
+      '- Sans 比 explicite : marche si le contexte est clair. Ex : 昨天很热，今天凉快一些 « hier il faisait chaud, aujourd\'hui c\'est un peu plus frais ».\n' +
+      '\n' +
+      'Règle d\'or : la quantité vient TOUJOURS APRÈS l\'adjectif dans les comparaisons. Jamais « 比 B 一点儿 adjectif ».',
+    bodyEn:
+      'Counting OCCURRENCES: 次 (cì): GENERIC measure word for «times». Ex: 我去过那个餐厅三次 «I\'ve been to that restaurant 3 times». Often with 过 for experience. 遍 (biàn): COMPLETE cycle, from start to finish. Ex: 这本书我看了两遍 «I read this book 2 times through». Different from 次 which just counts occasions. 回 (huí): synonym of 次, more oral and northern. Ex: 我去过一回 «I\'ve been there once». Position of frequency with an object — 2 options: After the object: 我去过上海两次. Before the object: 我去过两次上海. A bit more common in speech. PRONOUN case: frequency stays right after the verb. Ex: 我找了他两次 «I looked for him twice» (correct). NOT 我找了两次他 (wrong). Expressing a GAP in 比 comparisons: after [A 比 B + adjective], add a quantity. SMALL gap: + 一点儿 (yì diǎnr) or 一些 (yì xiē). Ex: 今天比昨天凉快一点儿 «it\'s a bit cooler today than yesterday». BIG gap: + 得多 (de duō) or 多了 (duō le). Ex: 她的中文比我流利得多 «her Chinese is much more fluent than mine». Ex: 流利多了 (same meaning, more oral). PRECISE gap (with number): directly after the adjective. Ex: 我比弟弟大两岁 «I\'m 2 years older than my little brother». Ex: 贵十块钱 «more expensive by 10 yuan». Without explicit 比: works if context is clear. Ex: 昨天很热，今天凉快一些 «yesterday was hot, today is a bit cooler». Golden rule: the quantity ALWAYS comes AFTER the adjective in comparisons. Never «比 B 一点儿 adjective».',
+    items: [
+      { hanzi: '次', pinyin: 'cì', meaning: 'fois (générique)', meaningEn: 'time(s) (generic)', audio: 'audio/hsk2/hsk2_次.wav' },
+      { hanzi: '遍', pinyin: 'biàn', meaning: 'fois (cycle complet)', meaningEn: 'time(s) (full cycle)', audio: 'audio/hsk4/hsk4_遍.wav' },
+      { hanzi: '回', pinyin: 'huí', meaning: 'fois (oral, nord)', meaningEn: 'time(s) (oral, northern)', audio: 'audio/hsk1/hsk1_回.wav' },
+      { hanzi: '一点儿', pinyin: 'yì diǎnr', meaning: 'un peu (petit écart)', meaningEn: 'a bit (small gap)', audio: 'audio/hsk1/hsk1_一点儿.wav' },
+      { hanzi: '得多', pinyin: 'de duō', meaning: 'beaucoup plus (écart grand)', meaningEn: 'much more (big gap)', audio: 'audio/hsk3/hsk3_多.wav' },
+      { hanzi: '多了', pinyin: 'duō le', meaning: 'beaucoup plus (oral)', meaningEn: 'much more (oral)', audio: 'audio/hsk3/hsk3_多.wav' },
+      { hanzi: '一些', pinyin: 'yì xiē', meaning: 'un peu, quelques', meaningEn: 'a bit, some', audio: 'audio/hsk2/hsk2_一些.wav' },
+      { hanzi: '比', pinyin: 'bǐ', meaning: 'comparé à', meaningEn: 'compared to', audio: 'audio/hsk2/hsk2_比.wav' }
+    ],
+    tip:
+      'Pense « adjectif D\'ABORD, quantité APRÈS ». Si tu dis 比他一点儿高, c\'est mort. Dis 比他高一点儿.',
+    tipEn:
+      'Think «adjective FIRST, quantity AFTER». Say 比他一点儿高 and you\'re toast. Say 比他高一点儿.'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Nuances — Dire « ça dépend » en conversation — CGG #94 (informel)
+// 看 / 要看 / 得看 / 看情况 : la boîte à outils orale pour ne pas trancher.
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesItDependsInformalLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-depends-kan-basics',
+    title: '看 / 要看 / 得看 : la base de « ça dépend »',
+    titleEn: '看 / 要看 / 得看: the base for « it depends »',
+    body:
+      'Pour dire « ça dépend », le chinois oral s\'appuie sur le verbe 看 (kàn, « voir / regarder »). L\'idée : « il faut voir [tel facteur] ». La structure est très régulière.\n' +
+      '\n' +
+      'Structure de base : (这 / 那) + 看 / 要看 / 得看 + [facteur].\n' +
+      '- 要看 (yào kàn) est le choix par défaut, ton neutre. C\'est la version que tu peux placer partout.\n' +
+      '- 得看 (děi kàn) ajoute une emphase : « il FAUT voir… ». Un poil plus insistant, comme si tu voulais rappeler à ton interlocuteur qu\'un facteur pèse.\n' +
+      '- 看 tout seul est très oral, familier, presque un haussement d\'épaule verbal.\n' +
+      '\n' +
+      'Exemples :\n' +
+      '- 这事要看老板怎么说 (zhè shì yào kàn lǎo bǎn zěn me shuō) « ça dépend de ce que dit le patron ».\n' +
+      '- 那得看天气怎么样 (nà děi kàn tiān qì zěn me yàng) « ça dépend de la météo ».\n' +
+      '- 看时间吧 (kàn shí jiān ba) « bof, ça dépend du timing ».\n' +
+      '\n' +
+      'Registre : décontracté à neutre. Ces trois formes couvrent 80 % des situations orales quotidiennes entre collègues, amis, famille.',
+    bodyEn:
+      'To say « it depends », spoken Chinese leans on the verb 看 (kàn, « to see / to look »). The idea: « we have to see [such factor] ». The structure is very regular.\n' +
+      '\n' +
+      'Base structure: (这 / 那) + 看 / 要看 / 得看 + [factor].\n' +
+      '- 要看 (yào kàn) is the neutral default. You can drop it anywhere.\n' +
+      '- 得看 (děi kàn) adds emphasis: « we MUST see… ». A touch more insistent, as if to remind the listener a factor weighs in.\n' +
+      '- 看 alone is very oral, casual, almost a verbal shrug.\n' +
+      '\n' +
+      'Examples:\n' +
+      '- 这事要看老板怎么说 « it depends on what the boss says ».\n' +
+      '- 那得看天气怎么样 « it depends on the weather ».\n' +
+      '- 看时间吧 « meh, depends on the timing ».\n' +
+      '\n' +
+      'Register: casual to neutral. These three forms cover 80% of daily oral situations with coworkers, friends, family.',
+    items: [
+      { hanzi: '看', pinyin: 'kàn', meaning: 'voir, dépendre de', meaningEn: 'to see, depend on', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '要看', pinyin: 'yào kàn', meaning: 'ça dépend (neutre)', meaningEn: 'it depends (neutral)', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '得看', pinyin: 'děi kàn', meaning: 'il FAUT voir (emphase)', meaningEn: 'we MUST see (emphasis)', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '老板', pinyin: 'lǎo bǎn', meaning: 'patron', meaningEn: 'boss', audio: 'audio/hsk2/hsk2_老板.wav' },
+      { hanzi: '天气', pinyin: 'tiān qì', meaning: 'météo', meaningEn: 'weather', audio: 'audio/hsk1/hsk1_天气.wav' },
+      { hanzi: '时间', pinyin: 'shí jiān', meaning: 'temps, timing', meaningEn: 'time, timing', audio: 'audio/hsk1/hsk1_时间.wav' }
+    ],
+    tip:
+      'Astuce : 看 seul en réponse fonctionne comme un haussement d\'épaule. « 看时间吧 » = « bof, ça dépend du timing ». Court, oral, super pratique.',
+    tipEn:
+      'Tip: bare 看 as an answer works like a verbal shrug. «看时间吧» = «meh, depends on the timing». Short, oral, super handy.'
+  },
+  {
+    id: 'a2-depends-kan-qingkuang',
+    title: '看情况 : la réponse évasive par excellence',
+    titleEn: '看情况: the go-to evasive answer',
+    body:
+      '看情况 (kàn qíng kuàng) littéralement « voir la situation ». C\'est LA réponse autonome ultra fréquente pour éluder une question sans dire non.\n' +
+      '\n' +
+      'Utilisation :\n' +
+      '- Réponse en un mot, sans complément. Ex : — 你周末来吗 ? — 看情况. « Tu viens ce weekend ? — Ça dépend. »\n' +
+      '- Ajoute 吧 pour adoucir encore : 看情况吧 (kàn qíng kuàng ba). Le 吧 fait « on verra bien, pas d\'engagement ».\n' +
+      '- Version étendue : 看情况再说 (kàn qíng kuàng zài shuō) « on verra selon les circonstances / on en reparlera plus tard ». Manière polie de reporter la décision.\n' +
+      '\n' +
+      'Exemples en contexte :\n' +
+      '- 周末去不去，看情况吧 (zhōu mò qù bú qù, kàn qíng kuàng ba) « on y va ce weekend ? ça dépend ».\n' +
+      '- 我明天能不能来，看情况再说 « je pourrai venir demain ou pas, ça dépendra des circonstances ».\n' +
+      '\n' +
+      'Registre : neutre-décontracté. Marche même en situation semi-polie (avec un supérieur pas trop rigide, un client familier). En contexte très formel, on lui préfère les patterns B1.2 (取决于, 视…而定).',
+    bodyEn:
+      '看情况 (kàn qíng kuàng) literally « to see the situation ». THE super common standalone response to dodge a question without saying no.\n' +
+      '\n' +
+      'Usage:\n' +
+      '- One-word reply, no complement. Ex: — 你周末来吗? — 看情况. « Coming this weekend? — Depends. »\n' +
+      '- Add 吧 to soften further: 看情况吧. The 吧 says « we\'ll see, no commitment ».\n' +
+      '- Extended version: 看情况再说 « we\'ll see according to circumstances / we\'ll discuss later ». Polite way to postpone a decision.\n' +
+      '\n' +
+      'Examples in context:\n' +
+      '- 周末去不去，看情况吧 « are we going this weekend? depends ».\n' +
+      '- 我明天能不能来，看情况再说 « whether I can come tomorrow depends on how things go ».\n' +
+      '\n' +
+      'Register: neutral-casual. Works even in semi-polite settings (with a chill boss, a familiar client). In very formal contexts, prefer B1.2 patterns (取决于, 视…而定).',
+    items: [
+      { hanzi: '看情况', pinyin: 'kàn qíng kuàng', meaning: 'ça dépend', meaningEn: 'it depends', audio: 'audio/hsk3/hsk3_情况.wav' },
+      { hanzi: '情况', pinyin: 'qíng kuàng', meaning: 'situation, circonstances', meaningEn: 'situation, circumstances', audio: 'audio/hsk3/hsk3_情况.wav' },
+      { hanzi: '吧', pinyin: 'ba', meaning: 'particule d\'adoucissement', meaningEn: 'softening particle', audio: 'audio/hsk1/hsk1_吧.wav' },
+      { hanzi: '再说', pinyin: 'zài shuō', meaning: 'on en reparlera', meaningEn: 'we\'ll see later', audio: 'audio/hsk2/hsk2_再说.wav' },
+      { hanzi: '周末', pinyin: 'zhōu mò', meaning: 'weekend', meaningEn: 'weekend', audio: 'audio/hsk2/hsk2_周末.wav' }
+    ],
+    tip:
+      'Astuce : à utiliser quand tu n\'as pas envie de trancher tout de suite. 看情况吧 est aussi une formule d\'attente polie — comme « on verra » en français.',
+    tipEn:
+      'Tip: use when you don\'t want to commit right away. 看情况吧 is also a polite delaying formula — like «we\'ll see» in English.'
+  },
+  {
+    id: 'a2-depends-kan-person-clause',
+    title: '看 + personne / clause : « c\'est toi qui vois »',
+    titleEn: '看 + person / clause: «you decide»',
+    body:
+      'Deuxième famille de constructions : 看 suivi d\'une personne ou d\'une clause avec question embarquée.\n' +
+      '\n' +
+      'Cas 1 : 看 + pronom (你 / 他 / 大家) = « c\'est [X] qui décide ».\n' +
+      '- Ex : 今晚吃什么，看你 (jīn wǎn chī shén me, kàn nǐ) « ce qu\'on mange ce soir, c\'est toi qui vois ».\n' +
+      '- Extensions courantes : 看你决定 (kàn nǐ jué dìng) « à toi de décider », 看你自己定 (kàn nǐ zì jǐ dìng) « décide toi-même ».\n' +
+      '- Très pratique pour renvoyer poliment la balle sans passer pour indécis.\n' +
+      '\n' +
+      'Cas 2 : 看 + clause avec question embarquée. La clause est souvent une question du type « bien ou pas bien / d\'accord ou pas ». Le 看 fait le pont vers l\'incertitude : pas besoin d\'un mot pour « si ».\n' +
+      '- Ex : 去不去看天气好不好 (qù bú qù kàn tiān qì hǎo bù hǎo) « on y va ou pas ? ça dépend s\'il fait beau ».\n' +
+      '- Ex : 看他愿不愿意 (kàn tā yuàn bú yuàn yì) « ça dépend s\'il est d\'accord ».\n' +
+      '- Ex : 看你想看什么 (kàn nǐ xiǎng kàn shén me) « ça dépend de ce que tu veux regarder ».\n' +
+      '- Ex : 能不能成功，就看他自己了 (néng bù néng chéng gōng, jiù kàn tā zì jǐ le) « la réussite dépend de lui ». Le 就…了 encadre et renforce.\n' +
+      '\n' +
+      'Ces deux cas cohabitent souvent : on renvoie à une personne ET on précise la variable à trancher.',
+    bodyEn:
+      'Second family: 看 followed by a person or an embedded-question clause.\n' +
+      '\n' +
+      'Case 1: 看 + pronoun (你 / 他 / 大家) = « [X] decides ».\n' +
+      '- Ex: 今晚吃什么，看你 « what we eat tonight, you decide ».\n' +
+      '- Common extensions: 看你决定 « up to you », 看你自己定 « decide for yourself ».\n' +
+      '- Handy to politely bounce the ball without looking indecisive.\n' +
+      '\n' +
+      'Case 2: 看 + clause with embedded question. The clause is often an A-not-A question. The 看 bridges to uncertainty: no need for a word for « whether ».\n' +
+      '- Ex: 去不去看天气好不好 « whether we go depends on the weather ».\n' +
+      '- Ex: 看他愿不愿意 « depends whether he\'s willing ».\n' +
+      '- Ex: 看你想看什么 « depends what you want to watch ».\n' +
+      '- Ex: 能不能成功，就看他自己了 « success depends on him ». 就…了 frames and reinforces.\n' +
+      '\n' +
+      'Both cases often coexist: bounce to a person AND spell out the variable.',
+    items: [
+      { hanzi: '看你', pinyin: 'kàn nǐ', meaning: 'c\'est toi qui vois', meaningEn: 'up to you', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '看你决定', pinyin: 'kàn nǐ jué dìng', meaning: 'à toi de décider', meaningEn: 'you decide', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '愿意', pinyin: 'yuàn yì', meaning: 'être d\'accord, vouloir bien', meaningEn: 'be willing', audio: 'audio/hsk3/hsk3_愿意.wav' },
+      { hanzi: '成功', pinyin: 'chéng gōng', meaning: 'réussir', meaningEn: 'succeed', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '自己', pinyin: 'zì jǐ', meaning: 'soi-même', meaningEn: 'oneself', audio: 'audio/hsk2/hsk2_自己.wav' }
+    ],
+    tip:
+      'Astuce : le 看 fait le pont vers l\'incertitude — pas besoin d\'un mot pour « si » (whether). 看他愿不愿意 = « ça dépend s\'il est d\'accord ». Économique.',
+    tipEn:
+      'Tip: 看 bridges to uncertainty — no need for a word for «whether». 看他愿不愿意 = «depends whether he agrees». Economical.'
+  },
+  {
+    id: 'a2-depends-context-and-playful',
+    title: '看场合 / 对象 / 时机 + 不一定 + 看缘分 / 心情 (ton oral)',
+    titleEn: '看场合 / 对象 / 时机 + 不一定 + 看缘分 / 心情 (oral tone)',
+    body:
+      'Troisième famille : 看 + nom de facteur. Structure ultra productive — apprends la formule, remplace le nom selon le contexte.\n' +
+      '\n' +
+      'Facteurs sociaux et contextuels :\n' +
+      '- 看场合 (kàn chǎng hé) « ça dépend de l\'occasion ». Utile pour parler de codes vestimentaires, ton, humour.\n' +
+      '- 看对象 (kàn duì xiàng) « ça dépend de la personne ». Ex : 说不说实话看对象 (shuō bù shuō shí huà kàn duì xiàng) « on dit la vérité ou pas selon la personne ».\n' +
+      '- 看时机 (kàn shí jī) « ça dépend du timing / du moment opportun ». Plus stratégique que 看时间.\n' +
+      '\n' +
+      'Facteurs institutionnels (bureau, école) :\n' +
+      '- 看政策 (kàn zhèng cè) « ça dépend du règlement / de la politique ».\n' +
+      '- 看规定 (kàn guī dìng) « ça dépend des règles ».\n' +
+      '- 看指标 (kàn zhǐ biāo) « ça dépend des objectifs ». Ex : 奖金多少看指标 (jiǎng jīn duō shao kàn zhǐ biāo) « le montant du bonus dépend des objectifs ».\n' +
+      '\n' +
+      'Alternatives sans expliciter le facteur :\n' +
+      '- 不一定 (bù yí dìng) « pas forcément ». Exprime l\'incertitude sans dire ce qui la cause.\n' +
+      '- 说不准 (shuō bù zhǔn) « difficile à dire ». Nuance de « je ne peux pas être catégorique ».\n' +
+      '\n' +
+      'Registre humoristique (à réserver aux amis) :\n' +
+      '- 看缘分 (kàn yuán fèn) « ça dépend du destin ». Pour parler d\'amour, de chance, de rencontres. Ton semi-ironique.\n' +
+      '- 看心情 (kàn xīn qíng) « ça dépend de mon humeur ». Blague classique entre amis. À NE JAMAIS utiliser avec un chef ou dans un contexte pro — ça sonne caprice.\n' +
+      '- Ex : 明天去不去郊游，看心情吧 (míng tiān qù bú qù jiāo yóu, kàn xīn qíng ba) « demain on va se balader ? ça dépend de mon humeur ».',
+    bodyEn:
+      'Third family: 看 + factor noun. Super productive structure — learn the pattern, swap the noun for context.\n' +
+      '\n' +
+      'Social / contextual factors:\n' +
+      '- 看场合 (kàn chǎng hé) « depends on the occasion ». Handy for dress codes, tone, humor.\n' +
+      '- 看对象 (kàn duì xiàng) « depends on the person ». Ex: 说不说实话看对象 « whether we tell the truth depends on the person ».\n' +
+      '- 看时机 (kàn shí jī) « depends on timing / the right moment ». More strategic than 看时间.\n' +
+      '\n' +
+      'Institutional factors (work, school):\n' +
+      '- 看政策 « depends on policy ».\n' +
+      '- 看规定 « depends on the rules ».\n' +
+      '- 看指标 « depends on the targets ». Ex: 奖金多少看指标 « the bonus amount depends on the targets ».\n' +
+      '\n' +
+      'Without spelling out the factor:\n' +
+      '- 不一定 (bù yí dìng) « not necessarily ». Expresses uncertainty without naming its cause.\n' +
+      '- 说不准 (shuō bù zhǔn) « hard to say ». Nuance of « I can\'t be definite ».\n' +
+      '\n' +
+      'Playful register (friends only):\n' +
+      '- 看缘分 (kàn yuán fèn) « depends on fate ». For love, luck, chance encounters. Semi-ironic tone.\n' +
+      '- 看心情 (kàn xīn qíng) « depends on my mood ». Classic joke among friends. NEVER use with a boss or in a pro setting — sounds bratty.\n' +
+      '- Ex: 明天去不去郊游，看心情吧 « are we hiking tomorrow? depends on my mood ».',
+    items: [
+      { hanzi: '看场合', pinyin: 'kàn chǎng hé', meaning: 'selon l\'occasion', meaningEn: 'depends on the occasion', audio: 'audio/hsk5/hsk5_场合.wav' },
+      { hanzi: '看对象', pinyin: 'kàn duì xiàng', meaning: 'selon la personne', meaningEn: 'depends on the person', audio: 'audio/hsk4/hsk4_对象.wav' },
+      { hanzi: '看时机', pinyin: 'kàn shí jī', meaning: 'selon le timing', meaningEn: 'depends on the timing', audio: 'audio/hsk5/hsk5_时机.wav' },
+      { hanzi: '不一定', pinyin: 'bù yí dìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk3/hsk3_一定.wav' },
+      { hanzi: '说不准', pinyin: 'shuō bù zhǔn', meaning: 'difficile à dire', meaningEn: 'hard to say', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '看缘分', pinyin: 'kàn yuán fèn', meaning: 'selon le destin', meaningEn: 'depends on fate', audio: 'audio/hsk6/hsk6_缘分.wav' },
+      { hanzi: '看心情', pinyin: 'kàn xīn qíng', meaning: 'selon mon humeur', meaningEn: 'depends on my mood', audio: 'audio/hsk4/hsk4_心情.wav' },
+      { hanzi: '心情', pinyin: 'xīn qíng', meaning: 'humeur, état d\'esprit', meaningEn: 'mood', audio: 'audio/hsk4/hsk4_心情.wav' }
+    ],
+    tip:
+      'Astuce : 看 + noun est très productif — apprends la structure et remplace le nom selon le contexte. Mais garde 看心情 et 看缘分 pour les amis, jamais pour le chef.',
+    tipEn:
+      'Tip: 看 + noun is very productive — learn the pattern and swap the noun by context. But keep 看心情 and 看缘分 for friends, never for the boss.'
+  }
+];

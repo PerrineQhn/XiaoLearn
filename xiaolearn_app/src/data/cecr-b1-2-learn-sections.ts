@@ -2871,3 +2871,326 @@ export const b12NuancesShifouYufouLearnSections: LessonV2LearnSection[] = [
       'Don\'t confuse with the pattern 不管 X 与否 which is redundant and incorrect. 与否 stands on its own.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances — Inquiétude avancée (CGG #91) : 操心, 烦恼, 焦虑, 担忧, chengyu
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-worry-caoxin-fannao-fachou',
+    title: '操心, 烦恼, 发愁 : différentes formes d\'inquiétude active',
+    titleEn: '操心, 烦恼, 发愁: different forms of active worry',
+    body:
+      '- 操心 (cāo xīn) : « se démener/faire des efforts par inquiétude ». Littéralement « exercer le cœur ». Souvent pour les affaires d\'autrui — parents qui s\'occupent de tout pour leurs enfants.\n' +
+      '  · Structure : 为 + [personne/sujet] + 操心.\n' +
+      '  · Ex : 妈妈总为孩子的事情操心 (mā ma zǒng wèi hái zi de shì qíng cāo xīn) « maman est toujours en train de se casser la tête pour les affaires des enfants ».\n' +
+      '  · Ex : 别为我操心了 « arrête de te faire du mouron pour moi ».\n' +
+      '  · Variante 瞎操心 (xiā cāo xīn) « s\'inquiéter pour rien ».\n' +
+      '  · Ton : implique un investissement ACTIF, pas juste anxieux.\n' +
+      '- 烦恼 (fán nǎo) : « être tracassé/embêté ». Nom OU adjectif/verbe. Composé de 烦 (agacé) + 恼 (irrité). Suggère des soucis qui te MINENT mentalement et t\'agacent.\n' +
+      '  · Ex : 他最近有很多烦恼 (tā zuì jìn yǒu hěn duō fán nǎo) « il a beaucoup de soucis ces temps-ci » (烦恼 = nom).\n' +
+      '  · Ex : 我最近很烦恼 « je suis vraiment embêté » (烦恼 = adjectif).\n' +
+      '  · Souvent pour problèmes qui NE se résolvent pas facilement.\n' +
+      '- 发愁 (fā chóu) : « broyer du noir/se ronger » sur un problème précis sans solution. Plus imagé et oral.\n' +
+      '  · Structure : 为 + [problème] + 发愁.\n' +
+      '  · Ex : 我在为工作发愁 (wǒ zài wèi gōng zuò fā chóu) « je me fais du souci pour mon boulot ».\n' +
+      '  · Suggère quelqu\'un les sourcils froncés, qui soupire.\n' +
+      '- Comparaison :\n' +
+      '  · 操心 = actif et impliqué (parent qui organise tout).\n' +
+      '  · 烦恼 = tracassé et agacé (soucis qui bouffent l\'énergie).\n' +
+      '  · 发愁 = pensif et déprimé sur UN problème spécifique.',
+    bodyEn:
+      '- 操心 (cāo xīn): « to trouble oneself / exert effort through worry ». Literally « to exercise the heart ». Often for other people\'s affairs — parents handling everything for their children.\n' +
+      '  · Structure: 为 + [person/subject] + 操心.\n' +
+      '  · Ex: 妈妈总为孩子的事情操心 « mom is always fretting over the children\'s affairs ».\n' +
+      '  · Ex: 别为我操心了 « stop worrying about me ».\n' +
+      '  · Variant 瞎操心 « to worry needlessly ».\n' +
+      '  · Tone: implies ACTIVE investment, not just anxiety.\n' +
+      '- 烦恼 (fán nǎo): « to be troubled / annoyed ». Noun OR adjective/verb. Composed of 烦 (annoyed) + 恼 (irritated). Suggests worries that WEAR YOU DOWN mentally and vex you.\n' +
+      '  · Ex: 他最近有很多烦恼 « he has a lot on his mind lately » (烦恼 = noun).\n' +
+      '  · Ex: 我最近很烦恼 « I\'ve been really bothered lately » (烦恼 = adjective).\n' +
+      '  · Often for problems that DON\'T resolve easily.\n' +
+      '- 发愁 (fā chóu): « to brood / gnaw at oneself » over a specific problem with no solution. More vivid and oral.\n' +
+      '  · Structure: 为 + [problem] + 发愁.\n' +
+      '  · Ex: 我在为工作发愁 « I\'m worrying about work ».\n' +
+      '  · Suggests someone with furrowed brows, sighing.\n' +
+      '- Comparison:\n' +
+      '  · 操心 = active and involved (parent organizing everything).\n' +
+      '  · 烦恼 = troubled and annoyed (worries eating your energy).\n' +
+      '  · 发愁 = pensive and gloomy over ONE specific issue.',
+    items: [
+      { hanzi: '操心', pinyin: 'cāo xīn', meaning: 'se démener par inquiétude', meaningEn: 'trouble oneself over', audio: 'audio/hsk5/hsk5_操心.wav' },
+      { hanzi: '烦恼', pinyin: 'fán nǎo', meaning: 'tracas, être tracassé', meaningEn: 'trouble, be bothered', audio: 'audio/hsk4/hsk4_烦恼.wav' },
+      { hanzi: '发愁', pinyin: 'fā chóu', meaning: 'se ronger, broyer du noir', meaningEn: 'to fret, brood', audio: 'audio/hsk5/hsk5_发愁.wav' },
+      { hanzi: '瞎操心', pinyin: 'xiā cāo xīn', meaning: 's\'inquiéter pour rien', meaningEn: 'worry needlessly', audio: 'audio/hsk5/hsk5_操心.wav' },
+      { hanzi: '事情', pinyin: 'shì qíng', meaning: 'affaire, chose', meaningEn: 'matter, affair', audio: 'audio/hsk2/hsk2_事情.wav' }
+    ],
+    tip:
+      'Les 3 sont plus expressifs que 担心. À utiliser quand tu veux vraiment décrire une souffrance mentale, pas juste une petite inquiétude.',
+    tipEn:
+      'All 3 are more expressive than 担心. Use them when you really want to describe mental suffering, not just a small worry.'
+  },
+  {
+    id: 'b12-worry-buan-jiaolu-formal',
+    title: '不安, 焦虑, 担忧, 忧虑 : de l\'oral formel à l\'écrit',
+    titleEn: '不安, 焦虑, 担忧, 忧虑: from formal speech to writing',
+    body:
+      '- 不安 (bù ān) littéralement « pas paisible ». Décrit un MALAISE, une inquiétude sans objet précis.\n' +
+      '  · Structure : 感到不安 / 很不安.\n' +
+      '  · Ex : 听到爆炸的消息，我们感到很不安 (tīng dào bào zhà de xiāo xi, wǒmen gǎn dào hěn bù ān) « en entendant la nouvelle de l\'explosion, on a ressenti un profond malaise ».\n' +
+      '  · Aussi pour des situations : 局势不安 « la situation est instable ». Registre : neutre-formel.\n' +
+      '- 焦虑 (jiāo lǜ) = « anxiété », « angoisse ». Plus intense que 担心, souvent chronique. Utilisé dans les discussions sur santé mentale (焦虑症 « trouble anxieux »).\n' +
+      '  · Ex : 很多年轻人对未来充满焦虑 (hěn duō nián qīng rén duì wèi lái chōng mǎn jiāo lǜ) « beaucoup de jeunes sont pleins d\'angoisse face à l\'avenir ».\n' +
+      '  · Combinaison 焦虑不安 « anxieux et agité » = état très agité.\n' +
+      '- 担忧 (dān yōu) : version FORMELLE de 担心. Contient 担 + 忧 (anxiété). Presse, écrit, discussions sérieuses.\n' +
+      '  · Ex : 父母担忧孩子的未来 « les parents se soucient de l\'avenir de l\'enfant » — ton plus grave.\n' +
+      '  · 令人担忧 « faisant se soucier les gens » (formule figée).\n' +
+      '- 忧虑 (yōu lǜ) : autre synonyme formel.\n' +
+      '  · Ex : 政府对于物价上涨表示忧虑 (zhèng fǔ duì yú wù jià shàng zhǎng biǎo shì yōu lǜ) « le gouvernement exprime sa préoccupation face à la hausse des prix ».\n' +
+      '  · Ex : 专家对环境污染深表忧虑 « les experts expriment de profondes préoccupations sur la pollution environnementale ».\n' +
+      '  · Construction typique : 对 + X + 表示/感到 + 忧虑.\n' +
+      '- Registres :\n' +
+      '  · 不安 = neutre à formel.\n' +
+      '  · 焦虑 = médical/psychologique.\n' +
+      '  · 担忧 / 忧虑 = écrit journalistique et officiel.',
+    bodyEn:
+      '- 不安 (bù ān) literally « not peaceful ». Describes MALAISE, worry without a specific object.\n' +
+      '  · Structure: 感到不安 / 很不安.\n' +
+      '  · Ex: 听到爆炸的消息，我们感到很不安 « on hearing the explosion news, we felt deeply uneasy ».\n' +
+      '  · Also for situations: 局势不安 « the situation is unstable ». Register: neutral-formal.\n' +
+      '- 焦虑 (jiāo lǜ) = « anxiety », « anguish ». More intense than 担心, often chronic. Used in mental health talk (焦虑症 « anxiety disorder »).\n' +
+      '  · Ex: 很多年轻人对未来充满焦虑 « many young people are full of anxiety about the future ».\n' +
+      '  · Combo 焦虑不安 « anxious and agitated » = highly agitated state.\n' +
+      '- 担忧 (dān yōu): FORMAL version of 担心. Contains 担 + 忧 (anxiety). Press, writing, serious discussion.\n' +
+      '  · Ex: 父母担忧孩子的未来 « parents are concerned about the child\'s future » — graver tone.\n' +
+      '  · 令人担忧 « worrying » (fixed formula).\n' +
+      '- 忧虑 (yōu lǜ): another formal synonym.\n' +
+      '  · Ex: 政府对于物价上涨表示忧虑 « the government expresses concern over rising prices ».\n' +
+      '  · Ex: 专家对环境污染深表忧虑 « experts express deep concern about environmental pollution ».\n' +
+      '  · Typical construction: 对 + X + 表示/感到 + 忧虑.\n' +
+      '- Registers:\n' +
+      '  · 不安 = neutral to formal.\n' +
+      '  · 焦虑 = medical/psychological.\n' +
+      '  · 担忧 / 忧虑 = journalistic and official writing.',
+    items: [
+      { hanzi: '不安', pinyin: 'bù ān', meaning: 'malaise, agité', meaningEn: 'uneasy, restless', audio: 'audio/hsk5/hsk5_不安.wav' },
+      { hanzi: '焦虑', pinyin: 'jiāo lǜ', meaning: 'anxiété, angoisse', meaningEn: 'anxiety, anguish', audio: 'audio/hsk6/hsk6_焦虑.wav' },
+      { hanzi: '担忧', pinyin: 'dān yōu', meaning: 's\'inquiéter (formel)', meaningEn: 'be concerned (formal)', audio: 'audio/hsk5/hsk5_担忧.wav' },
+      { hanzi: '忧虑', pinyin: 'yōu lǜ', meaning: 'préoccupation (formel)', meaningEn: 'concern (formal)', audio: 'audio/hsk6/hsk6_忧虑.wav' },
+      { hanzi: '感到', pinyin: 'gǎn dào', meaning: 'ressentir', meaningEn: 'to feel', audio: 'audio/hsk4/hsk4_感到.wav' },
+      { hanzi: '表示', pinyin: 'biǎo shì', meaning: 'exprimer, indiquer', meaningEn: 'to express', audio: 'audio/hsk4/hsk4_表示.wav' }
+    ],
+    tip:
+      'À l\'oral quotidien, garde 担心 / 紧张. Ces 4 mots servent surtout pour lire la presse ou pour un essai HSK.',
+    tipEn:
+      'In daily speech, stick to 担心 / 紧张. These 4 words are mainly for reading the press or writing an HSK essay.'
+  },
+  {
+    id: 'b12-worry-si-le-idioms',
+    title: 'Exagérations orales …死了 et idiomes chengyu',
+    titleEn: 'Oral exaggerations …死了 and chengyu idioms',
+    body:
+      '- Adjectif + 死了 = « ... à mourir » — exagération très courante à l\'oral pour intensifier une émotion.\n' +
+      '  · Ex : 急死了 (jí sǐ le) « je flippe grave / je stresse à mort ».\n' +
+      '  · Ex : 愁死了 (chóu sǐ le) « je me ronge à mort ».\n' +
+      '  · Ex : 弟弟晚上还没回家，急死我们了 ! (dì di wǎn shang hái méi huí jiā, jí sǐ wǒmen le) « notre petit frère n\'est pas encore rentré, on est morts d\'inquiétude ! ».\n' +
+      '  · Cette structure marche aussi pour d\'autres émotions (饿死了 « je meurs de faim », 累死了 « je suis crevé »).\n' +
+      '  · Registre : familier, très oral.\n' +
+      '- 提心吊胆 (tí xīn diào dǎn) : chengyu littéral « soulever le cœur, suspendre la vésicule ». Sens : être extrêmement inquiet, avoir le cœur qui bat, un « coup au cœur ».\n' +
+      '  · Ex : 听到他出事故的消息，真是提心吊胆 (tīng dào tā chū shì gù de xiāo xi, zhēn shi tí xīn diào dǎn) « en apprenant qu\'il a eu un accident, on avait vraiment le cœur battant ».\n' +
+      '  · Souvent en 让人提心吊胆 « qui fait perdre le sommeil aux gens ».\n' +
+      '- 坐立不安 (zuò lì bù ān) : chengyu littéral « pas paisible assis ou debout ». Sens : trop anxieux pour rester en place, faire les cent pas.\n' +
+      '  · Ex : 等结果的时候，他坐立不安 « en attendant le résultat, il n\'arrivait pas à tenir en place ».\n' +
+      '- Combinaisons possibles : 焦虑不安 « anxieux et agité », 提心吊胆坐立不安 « angoissé au max ».\n' +
+      '- Attention au registre : …死了 = décontracté, familier. Chengyu = plus littéraire, à réserver aux situations vraiment dramatiques.',
+    bodyEn:
+      '- Adjective + 死了 = « ... to death » — a very common oral exaggeration to intensify emotion.\n' +
+      '  · Ex: 急死了 « I\'m freaking out / stressed to death ».\n' +
+      '  · Ex: 愁死了 « I\'m worried sick ».\n' +
+      '  · Ex: 弟弟晚上还没回家，急死我们了! « little brother\'s not home yet, we\'re worried to death! ».\n' +
+      '  · This structure also works for other emotions (饿死了 « I\'m starving », 累死了 « I\'m exhausted »).\n' +
+      '  · Register: casual, very oral.\n' +
+      '- 提心吊胆 (tí xīn diào dǎn): chengyu literally « lift the heart, hang the gallbladder ». Meaning: to be extremely worried, heart pounding, « heart in throat ».\n' +
+      '  · Ex: 听到他出事故的消息，真是提心吊胆 « on hearing he had an accident, our hearts were really pounding ».\n' +
+      '  · Often as 让人提心吊胆 « makes people lose sleep ».\n' +
+      '- 坐立不安 (zuò lì bù ān): chengyu literally « uneasy sitting or standing ». Meaning: too anxious to stay still, pacing around.\n' +
+      '  · Ex: 等结果的时候，他坐立不安 « while waiting for the result, he couldn\'t sit still ».\n' +
+      '- Possible combos: 焦虑不安 « anxious and agitated », 提心吊胆坐立不安 « stressed to the max ».\n' +
+      '- Watch the register: …死了 = casual, familiar. Chengyu = more literary, reserve for truly dramatic situations.',
+    items: [
+      { hanzi: '急死了', pinyin: 'jí sǐ le', meaning: 'stresser à mort', meaningEn: 'stressed to death', audio: 'audio/hsk3/hsk3_急.wav' },
+      { hanzi: '愁死了', pinyin: 'chóu sǐ le', meaning: 'se ronger à mort', meaningEn: 'worried sick', audio: 'audio/hsk5/hsk5_愁.wav' },
+      { hanzi: '提心吊胆', pinyin: 'tí xīn diào dǎn', meaning: 'le cœur battant, très inquiet', meaningEn: 'heart pounding, very worried', audio: 'audio/hsk6/hsk6_提心吊胆.wav' },
+      { hanzi: '坐立不安', pinyin: 'zuò lì bù ān', meaning: 'ne pas tenir en place', meaningEn: 'unable to sit still', audio: 'audio/hsk6/hsk6_坐立不安.wav' },
+      { hanzi: '事故', pinyin: 'shì gù', meaning: 'accident', meaningEn: 'accident', audio: 'audio/hsk4/hsk4_事故.wav' },
+      { hanzi: '结果', pinyin: 'jié guǒ', meaning: 'résultat', meaningEn: 'result', audio: 'audio/hsk4/hsk4_结果.wav' }
+    ],
+    tip:
+      'Garde 提心吊胆 pour raconter une histoire pleine de suspense, garde …死了 pour râler dans un chat WeChat.',
+    tipEn:
+      'Save 提心吊胆 for telling a suspenseful story, save …死了 for grumbling in a WeChat chat.'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.2 Nuances — « Ça dépend » formel — CGG #95
+// 取决于, 由...决定, 视...而定, 有赖于, 以...为准 : les patterns écrits/pro.
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-depends-qujue-you',
+    title: '取决于 et 由...决定 : le langage formel',
+    titleEn: '取决于 and 由...决定: the formal register',
+    body:
+      '取决于 (qǔ jué yú) = « dépend de / est déterminé par ». Équivalent SOUTENU du 看 oral. Courant dans les rapports business, articles de presse, présentations.\n' +
+      '\n' +
+      'Structure : [résultat] + 取决于 + [facteur]. Ordre inverse du français : le résultat vient en premier.\n' +
+      '- Ex : 结果取决于样本大小 (jié guǒ qǔ jué yú yàng běn dà xiǎo) « le résultat dépend de la taille de l\'échantillon ».\n' +
+      '- Ex : 我们的计划能否成功取决于市场反应 (wǒ men de jì huà néng fǒu chéng gōng qǔ jué yú shì chǎng fǎn yìng) « le succès de notre projet dépend de la réaction du marché ». Noter le 能否 (« si oui ou non ») typique du registre écrit.\n' +
+      '\n' +
+      'Note : 决定于 (jué dìng yú) existe mais est moins fréquent que 取决于. Préfère 取决于 par défaut.\n' +
+      '\n' +
+      'Autre pattern connexe : 由 + [agent] + 决定 = « décidé par ». Met en avant l\'AGENT qui tranche plutôt que le facteur qui pèse.\n' +
+      '- Ex : 人选由委员会决定 (rén xuǎn yóu wěi yuán huì jué dìng) « le choix du candidat est décidé par le comité ».\n' +
+      '- Ex : 最终价格由市场决定 (zuì zhōng jià gé yóu shì chǎng jué dìng) « le prix final est décidé par le marché ».\n' +
+      '- Version orale légèrement polie : 这由你决定 (zhè yóu nǐ jué dìng) « à toi de décider ». Un peu plus soigné que le 看你决定 du A2.',
+    bodyEn:
+      '取决于 (qǔ jué yú) = « depends on / is determined by ». FORMAL equivalent of the oral 看. Common in business reports, press articles, presentations.\n' +
+      '\n' +
+      'Structure: [result] + 取决于 + [factor]. Reversed order from English: the result comes first.\n' +
+      '- Ex: 结果取决于样本大小 « the result depends on the sample size ».\n' +
+      '- Ex: 我们的计划能否成功取决于市场反应 « whether our project succeeds depends on the market reaction ». Note the written-register 能否 « whether or not ».\n' +
+      '\n' +
+      'Note: 决定于 (jué dìng yú) exists but is less common than 取决于. Default to 取决于.\n' +
+      '\n' +
+      'Related pattern: 由 + [agent] + 决定 = « decided by ». Foregrounds the AGENT who decides rather than the weighing factor.\n' +
+      '- Ex: 人选由委员会决定 « the candidate choice is decided by the committee ».\n' +
+      '- Ex: 最终价格由市场决定 « the final price is decided by the market ».\n' +
+      '- Slightly polite oral version: 这由你决定 « you decide ». A tick more polished than the A2\'s 看你决定.',
+    items: [
+      { hanzi: '取决于', pinyin: 'qǔ jué yú', meaning: 'dépendre de (formel)', meaningEn: 'depend on (formal)', audio: 'audio/hsk5/hsk5_取决于.wav' },
+      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décider, décision', meaningEn: 'decide, decision', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '由', pinyin: 'yóu', meaning: 'par, décidé par', meaningEn: 'by, decided by', audio: 'audio/hsk4/hsk4_由.wav' },
+      { hanzi: '市场', pinyin: 'shì chǎng', meaning: 'marché', meaningEn: 'market', audio: 'audio/hsk3/hsk3_市场.wav' },
+      { hanzi: '委员会', pinyin: 'wěi yuán huì', meaning: 'comité', meaningEn: 'committee', audio: 'audio/hsk5/hsk5_委员会.wav' },
+      { hanzi: '样本', pinyin: 'yàng běn', meaning: 'échantillon', meaningEn: 'sample', audio: 'audio/hsk5/hsk5_样本.wav' },
+      { hanzi: '反应', pinyin: 'fǎn yìng', meaning: 'réaction', meaningEn: 'reaction', audio: 'audio/hsk4/hsk4_反应.wav' }
+    ],
+    tip:
+      'Astuce : à l\'écrit pro, remplace tes 看 par 取决于, ton chinois monte d\'un cran. Et souviens-toi de l\'ordre : résultat AVANT, facteur APRÈS.',
+    tipEn:
+      'Tip: in pro writing, swap your 看 for 取决于, your Chinese jumps up a level. And remember the order: result FIRST, factor AFTER.'
+  },
+  {
+    id: 'b12-depends-shi-genju-fenqing',
+    title: '视...而定 / 根据...而定 + 要分情况',
+    titleEn: '视...而定 / 根据...而定 + 要分情况',
+    body:
+      '视 + [facteur] + 而定 (shì...ér dìng) = « déterminé selon [facteur] ». Registre OFFICIEL / documentaire. 视 signifie « considérer », 而定 « et décider ».\n' +
+      '- Ex : 视情况而定 (shì qíng kuàng ér dìng) « à décider selon la situation ». Équivalent SOUTENU du 看情况 oral.\n' +
+      '- Ex : 座次视地位而定 (zuò cì shì dì wèi ér dìng) « la place (à table) dépend du rang ».\n' +
+      '- Ex : 是否加班视工作量而定 (shì fǒu jiā bān shì gōng zuò liàng ér dìng) « les heures sup dépendent de la charge de travail ».\n' +
+      '\n' +
+      'Variante 根据 + [facteur] + 而定 / 来决定 = « selon [facteur] on décide ». Plus explicite que 视...而定, un poil moins formel.\n' +
+      '- Ex : 费用根据距离而定 (fèi yòng gēn jù jù lí ér dìng) « les frais sont calculés selon la distance ».\n' +
+      '- Ex : 奖金根据业绩来决定 (jiǎng jīn gēn jù yè jì lái jué dìng) « le bonus est décidé selon la performance ».\n' +
+      '\n' +
+      'Pattern semi-formel oral et écrit : 要分情况 (yào fēn qíng kuàng) « il faut distinguer les cas ». Plus ANALYTIQUE que 看情况 — signale que la réponse n\'est pas binaire.\n' +
+      '- Ex : 处理办法要分情况 (chǔ lǐ bàn fǎ yào fēn qíng kuàng) « la méthode de traitement dépend du cas ».\n' +
+      '- Ex : 这个问题要分情况讨论 (zhè ge wèn tí yào fēn qíng kuàng tǎo lùn) « il faut discuter ce problème cas par cas ».\n' +
+      '\n' +
+      'Version bureaucratique classique : 具体情况具体分析 (jù tǐ qíng kuàng jù tǐ fēn xī) « analyser chaque cas spécifique spécifiquement ». Formule figée héritée du langage administratif, très fréquente en réunion.',
+    bodyEn:
+      '视 + [factor] + 而定 (shì...ér dìng) = « determined according to [factor] ». OFFICIAL / documentary register. 视 means « to consider », 而定 « and decide ».\n' +
+      '- Ex: 视情况而定 « to be decided according to the situation ». FORMAL equivalent of oral 看情况.\n' +
+      '- Ex: 座次视地位而定 « the (dining) seat depends on rank ».\n' +
+      '- Ex: 是否加班视工作量而定 « whether to work overtime depends on the workload ».\n' +
+      '\n' +
+      'Variant 根据 + [factor] + 而定 / 来决定 = « decide according to [factor] ». More explicit than 视...而定, a touch less formal.\n' +
+      '- Ex: 费用根据距离而定 « fees are calculated according to distance ».\n' +
+      '- Ex: 奖金根据业绩来决定 « the bonus is decided according to performance ».\n' +
+      '\n' +
+      'Semi-formal spoken and written pattern: 要分情况 (yào fēn qíng kuàng) « we need to distinguish cases ». More ANALYTICAL than 看情况 — signals the answer isn\'t binary.\n' +
+      '- Ex: 处理办法要分情况 « the handling method depends on the case ».\n' +
+      '- Ex: 这个问题要分情况讨论 « this issue needs to be discussed case by case ».\n' +
+      '\n' +
+      'Classic bureaucratic version: 具体情况具体分析 (jù tǐ qíng kuàng jù tǐ fēn xī) « analyze each specific case specifically ». Fixed formula inherited from admin speech, very common in meetings.',
+    items: [
+      { hanzi: '视', pinyin: 'shì', meaning: 'considérer (formel)', meaningEn: 'consider (formal)', audio: 'audio/hsk5/hsk5_视.wav' },
+      { hanzi: '而定', pinyin: 'ér dìng', meaning: 'et décider (fixe)', meaningEn: 'and decide (fixed)', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '根据', pinyin: 'gēn jù', meaning: 'selon, d\'après', meaningEn: 'according to', audio: 'audio/hsk3/hsk3_根据.wav' },
+      { hanzi: '要分情况', pinyin: 'yào fēn qíng kuàng', meaning: 'il faut distinguer les cas', meaningEn: 'need to distinguish cases', audio: 'audio/hsk3/hsk3_情况.wav' },
+      { hanzi: '具体', pinyin: 'jù tǐ', meaning: 'concret, spécifique', meaningEn: 'specific, concrete', audio: 'audio/hsk4/hsk4_具体.wav' },
+      { hanzi: '分析', pinyin: 'fēn xī', meaning: 'analyser', meaningEn: 'analyze', audio: 'audio/hsk4/hsk4_分析.wav' },
+      { hanzi: '距离', pinyin: 'jù lí', meaning: 'distance', meaningEn: 'distance', audio: 'audio/hsk4/hsk4_距离.wav' },
+      { hanzi: '业绩', pinyin: 'yè jì', meaning: 'performance, résultats', meaningEn: 'performance, results', audio: 'audio/hsk6/hsk6_业绩.wav' }
+    ],
+    tip:
+      'Astuce : les 视 / 根据 sont pour les règlements écrits, les 要分情况 pour les réunions pro où tu montres ton esprit d\'analyse.',
+    tipEn:
+      'Tip: 视 / 根据 are for written regulations, 要分情况 for pro meetings where you show off analytical thinking.'
+  },
+  {
+    id: 'b12-depends-formal-scholarly',
+    title: '有赖于 / 有待 / 以...为准 : haut registre',
+    titleEn: '有赖于 / 有待 / 以...为准: high register',
+    body:
+      '有赖于 (yǒu lài yú) = « dépend de / repose sur ». Littéraire, souvent utilisé en taïwanais ou dans l\'analyse écrite. Nuance de « nécessite / requiert ». Plus fort que 取决于 : implique une CONDITION indispensable.\n' +
+      '- Ex : 经济发展有赖于创新 (jīng jì fā zhǎn yǒu lài yú chuàng xīn) « le développement économique repose sur l\'innovation ».\n' +
+      '- Ex : 项目的成功有赖于团队合作 (xiàng mù de chéng gōng yǒu lài yú tuán duì hé zuò) « le succès du projet repose sur le travail d\'équipe ».\n' +
+      '\n' +
+      '有待 + verbe (待 = attendre) = « en attente de ». Manière INDIRECTE d\'exprimer une dépendance : ce qui manque encore. Verbes fréquents : 决定, 确认, 讨论, 观察, 研究.\n' +
+      '- Ex : 细节有待确认 (xì jié yǒu dài què rèn) « les détails sont en attente de confirmation ».\n' +
+      '- Ex : 方案有待进一步讨论 (fāng àn yǒu dài jìn yí bù tǎo lùn) « le plan est en attente de discussion approfondie ».\n' +
+      '- Utilisé dans articles de presse, communiqués officiels, comptes-rendus.\n' +
+      '\n' +
+      '以...为准 (yǐ...wéi zhǔn) = « prendre... comme référence ». Apparaît dans contrats, documents légaux, notices officielles. Signale la source qui fait autorité.\n' +
+      '- Ex : 最终解释权以合同为准 (zuì zhōng jiě shì quán yǐ hé tong wéi zhǔn) « le droit d\'interprétation finale se base sur le contrat ». Formule ultra classique en bas des CGV.\n' +
+      '- Ex : 以官方公告为准 (yǐ guān fāng gōng gào wéi zhǔn) « se référer à l\'annonce officielle ».\n' +
+      '- Variante : 以...为依据 (yǐ...wéi yī jù) « prendre... comme fondement ». Ex : 判决以法律为依据 (pàn jué yǐ fǎ lǜ wéi yī jù) « le jugement se fonde sur la loi ».\n' +
+      '\n' +
+      'Guide rapide de sélection selon le registre :\n' +
+      '- Conversation quotidienne → 看 / 看情况.\n' +
+      '- Réunion pro / esprit d\'analyse → 取决于 / 要分情况.\n' +
+      '- Écrit business (rapports, mails soignés) → 取决于 / 由...决定.\n' +
+      '- Documents officiels et règlements → 视...而定 / 以...为准.\n' +
+      '- Style académique ou littéraire → 有赖于.',
+    bodyEn:
+      '有赖于 (yǒu lài yú) = « depends on / relies on ». Literary, often used in Taiwanese Chinese or in written analysis. Nuance of « requires ». Stronger than 取决于: implies a NECESSARY condition.\n' +
+      '- Ex: 经济发展有赖于创新 « economic development relies on innovation ».\n' +
+      '- Ex: 项目的成功有赖于团队合作 « project success relies on teamwork ».\n' +
+      '\n' +
+      '有待 + verb (待 = wait) = « awaiting ». INDIRECT way of expressing dependence: what\'s still missing. Frequent verbs: 决定, 确认, 讨论, 观察, 研究.\n' +
+      '- Ex: 细节有待确认 « details are awaiting confirmation ».\n' +
+      '- Ex: 方案有待进一步讨论 « the plan awaits further discussion ».\n' +
+      '- Used in press articles, official statements, minutes.\n' +
+      '\n' +
+      '以...为准 (yǐ...wéi zhǔn) = « take... as the reference ». Appears in contracts, legal docs, official notices. Names the authoritative source.\n' +
+      '- Ex: 最终解释权以合同为准 « the right of final interpretation is based on the contract ». Ultra classic clause at the bottom of T&Cs.\n' +
+      '- Ex: 以官方公告为准 « refer to the official announcement ».\n' +
+      '- Variant: 以...为依据 (yǐ...wéi yī jù) « take... as the basis ». Ex: 判决以法律为依据 « the judgment is based on the law ».\n' +
+      '\n' +
+      'Quick register-selection guide:\n' +
+      '- Daily conversation → 看 / 看情况.\n' +
+      '- Pro meeting / analytical mode → 取决于 / 要分情况.\n' +
+      '- Business writing (reports, polished emails) → 取决于 / 由...决定.\n' +
+      '- Official documents and regulations → 视...而定 / 以...为准.\n' +
+      '- Academic or literary style → 有赖于.',
+    items: [
+      { hanzi: '有赖于', pinyin: 'yǒu lài yú', meaning: 'reposer sur (littéraire)', meaningEn: 'rely on (literary)', audio: 'audio/hsk6/hsk6_有赖于.wav' },
+      { hanzi: '有待', pinyin: 'yǒu dài', meaning: 'en attente de', meaningEn: 'awaiting', audio: 'audio/hsk5/hsk5_有待.wav' },
+      { hanzi: '以...为准', pinyin: 'yǐ...wéi zhǔn', meaning: 'prendre... comme référence', meaningEn: 'take... as reference', audio: 'audio/hsk4/hsk4_准.wav' },
+      { hanzi: '合同', pinyin: 'hé tong', meaning: 'contrat', meaningEn: 'contract', audio: 'audio/hsk4/hsk4_合同.wav' },
+      { hanzi: '依据', pinyin: 'yī jù', meaning: 'fondement, base', meaningEn: 'basis, foundation', audio: 'audio/hsk6/hsk6_依据.wav' },
+      { hanzi: '创新', pinyin: 'chuàng xīn', meaning: 'innovation, innover', meaningEn: 'innovate, innovation', audio: 'audio/hsk5/hsk5_创新.wav' },
+      { hanzi: '确认', pinyin: 'què rèn', meaning: 'confirmer', meaningEn: 'confirm', audio: 'audio/hsk4/hsk4_确认.wav' },
+      { hanzi: '公告', pinyin: 'gōng gào', meaning: 'annonce officielle', meaningEn: 'official announcement', audio: 'audio/hsk6/hsk6_公告.wav' }
+    ],
+    tip:
+      'Astuce : ces patterns servent surtout à RECONNAÎTRE le sens dans un texte formel, pas forcément à les produire toi-même. Repère-les dans les articles et contrats.',
+    tipEn:
+      'Tip: these patterns are mainly for RECOGNIZING meaning in formal texts, not necessarily for producing them yourself. Spot them in articles and contracts.'
+  }
+];

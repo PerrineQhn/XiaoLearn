@@ -127,8 +127,11 @@ import {
   a2NuancesRealGreetingsLearnSections,
   a2NuancesFirstMeetingLearnSections,
   a2NuancesWhetherOrNotLearnSections,
+  a2NuancesWorryBasicsLearnSections,
+  a2NuancesItDependsInformalLearnSections,
   a2GrammarMeasureWordsLearnSections,
   a2GrammarModalsDirectionLearnSections,
+  a2GrammarDurationComplementsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -229,6 +232,8 @@ import {
   b12NuancesMeasureWordsAdvancedLearnSections,
   b12NuancesAlmostAdvancedLearnSections,
   b12NuancesShifouYufouLearnSections,
+  b12NuancesWorryAdvancedLearnSections,
+  b12NuancesItDependsFormalLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -2679,6 +2684,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["应该", "得", "必须", "一定要", "来", "去", "进来", "回去"],
         quizQuestions: 10,
         learnSections: a2GrammarModalsDirectionLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-m7",
+        title: "Compléments de durée : « pendant X » vs « ça fait X »",
+        titleEn: "Duration complements: « for X » vs « for X now »",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "grammar", difficulty: "beginner",
+        tags: ["duration", "le", "grammar", "cecr:a2"],
+        introduction: {
+          title: "Deux positions de 了, deux sens radicalement différents",
+          titleEn: "Two positions of 了, two radically different meanings",
+          content: "Exprimer une durée en chinois demande de choisir OÙ mettre 了. (1) 了 juste APRÈS LE VERBE = action achevée, une durée totale finie dans le passé (« il a couru pendant 1h »). Avec un objet, 3 options : répétition du verbe, durée avant objet, ou avec 的. Les verbes séparables (睡觉/游泳) préfèrent la forme avec 的. (2) 了 en FIN DE PHRASE = situation qui dure ENCORE, souvent avec 已经 (« ça fait 1 mois que je suis en Chine, et j'y suis toujours »). Ce point piège tous les apprenants. (3) Bonus : compter les fois avec 次/遍/回 et exprimer un écart de comparaison (一点儿, 得多, 多了, chiffre précis).",
+          contentEn: "Expressing duration in Chinese requires choosing WHERE to put 了. (1) 了 right AFTER THE VERB = completed action, a finite total duration in the past («he ran for 1h»). With an object, 3 options: verb repetition, duration before object, or with 的. Separable verbs (睡觉/游泳) prefer the 的 form. (2) 了 at the END OF SENTENCE = situation that IS STILL ONGOING, often with 已经 («it\'s been 1 month since I came to China, and I\'m still here»). This point trips up every learner. (3) Bonus: counting occurrences with 次/遍/回 and expressing a comparison gap (一点儿, 得多, 多了, precise number).",
+          objectives: [
+            "Placer 了 après le verbe pour une action achevée",
+            "Placer 了 en fin de phrase pour une situation en cours",
+            "Choisir entre 次 (générique), 遍 (cycle complet), 回 (oral)",
+            "Ajouter un écart après un adjectif en comparaison avec 比"
+          ],
+          objectivesEn: [
+            "Put 了 after the verb for a completed action",
+            "Put 了 at the sentence end for an ongoing situation",
+            "Choose between 次 (generic), 遍 (full cycle), 回 (oral)",
+            "Add a gap after the adjective in 比 comparisons"
+          ]
+        },
+        flashcards: ["了", "次", "遍", "一点儿", "多了", "得多"],
+        quizQuestions: 10,
+        learnSections: a2GrammarDurationComplementsLearnSections
       }
     ]
   },
@@ -3444,6 +3478,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["是不是", "有没有", "要不要", "能不能", "会不会", "还是"],
         quizQuestions: 10,
         learnSections: a2NuancesWhetherOrNotLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m16",
+        title: "Exprimer l'inquiétude : 担心, 着急, 紧张, 怕, 放心",
+        titleEn: "Expressing worry: 担心, 着急, 紧张, 怕, 放心",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "vocabulary", "cecr:a2"],
+        introduction: {
+          title: "5 mots pour l'inquiétude, chacun son rôle",
+          titleEn: "5 words for worry, each with its own role",
+          content: "En chinois, « s'inquiéter » n'est pas un seul mot. 担心 = inquiétude générale (妈妈担心孩子). 着急 = inquiétude urgente + impatience (快迟到了，我很着急). 紧张 = nervosité corporelle du moment, le trac (面试之前很紧张). Côté peur : 怕 / 害怕 pour craindre, 恐怕 pour introduire une mauvaise nouvelle. Pour rassurer : 放心 (« déposer le cœur »), opposé de 担心 — 你放心 = « ne t'en fais pas ». Piège classique : 关心 ≠ 担心. 关心 = « prendre soin de » (chaleureux), 担心 = « s'inquiéter » (anxieux). On dit 谢谢你的关心, jamais 谢谢你的担心 !",
+          contentEn: "In Chinese, « to worry » is not one single word. 担心 = general worry (妈妈担心孩子). 着急 = urgent worry + impatience (快迟到了，我很着急). 紧张 = bodily nervousness of the moment, stage fright (面试之前很紧张). For fear: 怕 / 害怕 to be afraid, 恐怕 to introduce bad news. To reassure: 放心 (« set down the heart »), opposite of 担心 — 你放心 = « don't worry ». Classic trap: 关心 ≠ 担心. 关心 = « to care for » (warm), 担心 = « to worry » (anxious). Say 谢谢你的关心, never 谢谢你的担心!",
+          objectives: [
+            "Choisir entre 担心 / 着急 / 紧张 selon le contexte",
+            "Utiliser 怕 / 害怕 et distinguer 恐怕 (mauvaise nouvelle)",
+            "Rassurer avec 放心 (opposé de 担心)",
+            "Ne pas confondre 关心 (chaleureux) et 担心 (anxieux)"
+          ],
+          objectivesEn: [
+            "Pick 担心 / 着急 / 紧张 by context",
+            "Use 怕 / 害怕 and distinguish 恐怕 (bad news)",
+            "Reassure with 放心 (opposite of 担心)",
+            "Don't confuse 关心 (warm) with 担心 (anxious)"
+          ]
+        },
+        flashcards: ["担心", "着急", "紧张", "怕", "害怕", "放心", "关心", "别担心"],
+        quizQuestions: 10,
+        learnSections: a2NuancesWorryBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m17",
+        title: "Dire « ça dépend » en conversation",
+        titleEn: "« It depends » in conversation",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "cecr:a2"],
+        introduction: {
+          title: "La boîte à outils orale de « ça dépend »",
+          titleEn: "The oral toolbox for « it depends »",
+          content: "Le chinois oral s'appuie sur le verbe 看 (voir) pour dire « ça dépend ». 看情况 = « ça dépend » en un mot, la réponse évasive par excellence. 要看 = neutre, 得看 = emphase, 看 seul = haussement d'épaule. On peut renvoyer à quelqu'un (看你 = c'est toi qui vois) ou à une clause (看他愿不愿意 = ça dépend s'il est d'accord). Structure ultra productive avec un nom de facteur : 看时间, 看天气, 看场合, 看对象. Alternatives : 不一定 (pas forcément), 说不准 (difficile à dire). Registre humoristique entre amis : 看缘分 (ça dépend du destin), 看心情 (ça dépend de mon humeur) — à ne JAMAIS utiliser avec le chef.",
+          contentEn: "Spoken Chinese leans on the verb 看 (to see) for « it depends ». 看情况 = « depends » in one word, the go-to evasive answer. 要看 = neutral, 得看 = emphasis, bare 看 = verbal shrug. Bounce to a person (看你 = up to you) or to a clause (看他愿不愿意 = depends whether he agrees). Super productive with a factor noun: 看时间, 看天气, 看场合, 看对象. Alternatives: 不一定 (not necessarily), 说不准 (hard to say). Playful register among friends: 看缘分 (depends on fate), 看心情 (depends on my mood) — NEVER with the boss.",
+          objectives: [
+            "Choisir entre 看 / 要看 / 得看 selon le ton voulu",
+            "Utiliser 看情况 comme réponse autonome",
+            "Combiner 看 avec une personne ou une clause en question",
+            "Distinguer les usages pro (看指标) et humoristiques (看心情)"
+          ],
+          objectivesEn: [
+            "Pick 看 / 要看 / 得看 by desired tone",
+            "Use 看情况 as a standalone answer",
+            "Combine 看 with a person or a question-clause",
+            "Distinguish pro usage (看指标) from playful (看心情)"
+          ]
+        },
+        flashcards: ["看", "要看", "看情况", "看你", "看时机", "不一定", "看缘分", "看心情"],
+        quizQuestions: 10,
+        learnSections: a2NuancesItDependsInformalLearnSections
       }
     ]
   },
@@ -6327,6 +6419,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["是否", "与否", "成功与否", "满意与否", "参加"],
         quizQuestions: 8,
         learnSections: b12NuancesShifouYufouLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m12",
+        title: "« Ça dépend » formel : 取决于, 视...而定, 有赖于",
+        titleEn: "Formal « it depends »: 取决于, 视...而定, 有赖于",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "cecr:b12"],
+        introduction: {
+          title: "Monter le registre : passer de 看 à 取决于 et 视...而定",
+          titleEn: "Raising the register: from 看 to 取决于 and 视...而定",
+          content: "En A2, on dit « ça dépend » avec 看 / 看情况. En B1.2, à l'écrit pro ou en réunion, on monte d'un cran. 取决于 (dépend de) est le pivot central : structure [résultat] + 取决于 + [facteur], ordre inverse du français. 由 X 决定 met l'agent qui tranche en avant. 视...而定 et 根据...而定 sont réservés au registre officiel (règlements, mails soignés). Version analytique en réunion : 要分情况 (« il faut distinguer les cas »). Haut registre : 有赖于 (littéraire, « repose sur »), 有待 (« en attente de »), 以...为准 (contrats, « faire foi »). Guide : conversation → 看 ; réunion pro → 取决于 / 要分情况 ; écrit business → 取决于 / 由...决定 ; documents officiels → 视...而定 / 以...为准 ; académique → 有赖于.",
+          contentEn: "At A2, we said « it depends » with 看 / 看情况. At B1.2, in professional writing or meetings, we raise the register. 取决于 (depends on) is the pivot: structure [result] + 取决于 + [factor], reversed order from English. 由 X 决定 foregrounds the deciding agent. 视...而定 and 根据...而定 belong to the official register (regulations, polished emails). Analytical meeting variant: 要分情况 (« we need to distinguish cases »). High register: 有赖于 (literary, « relies on »), 有待 (« awaiting »), 以...为准 (contracts, « prevails »). Guide: conversation → 看; pro meeting → 取决于 / 要分情况; business writing → 取决于 / 由...决定; official documents → 视...而定 / 以...为准; academic → 有赖于.",
+          objectives: [
+            "Construire [résultat] + 取决于 + [facteur] à l'écrit pro",
+            "Utiliser 由...决定 pour marquer l'agent qui tranche",
+            "Reconnaître 视...而定 et 根据...而定 dans les règlements",
+            "Repérer 有赖于, 有待, 以...为准 dans textes formels"
+          ],
+          objectivesEn: [
+            "Build [result] + 取决于 + [factor] in pro writing",
+            "Use 由...决定 to mark the deciding agent",
+            "Recognize 视...而定 and 根据...而定 in regulations",
+            "Spot 有赖于, 有待, 以...为准 in formal texts"
+          ]
+        },
+        flashcards: ["取决于", "决定", "视", "根据", "要分情况", "有赖于", "有待", "以...为准"],
+        quizQuestions: 10,
+        learnSections: b12NuancesItDependsFormalLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m13",
+        title: "Inquiétude avancée : 操心, 烦恼, 焦虑, 担忧 et idiomes",
+        titleEn: "Advanced worry: 操心, 烦恼, 焦虑, 担忧 and idioms",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "vocabulary", "cecr:b12"],
+        introduction: {
+          title: "Monter le registre au-delà de 担心",
+          titleEn: "Raising the register beyond 担心",
+          content: "Au B1.2, 担心 ne suffit plus. Pour l'inquiétude ACTIVE : 操心 (parents qui se démènent : 妈妈总为孩子操心), 烦恼 (soucis qui minent : 最近有很多烦恼), 发愁 (broyer du noir sur un problème précis). Pour le REGISTRE formel : 不安 (malaise général), 焦虑 (anxiété chronique, santé mentale), 担忧 / 忧虑 (presse et écrit officiel). À l'oral familier, la structure Adjectif + 死了 (急死了, 愁死了) exagère l'émotion. Les chengyu 提心吊胆 (« cœur en gorge ») et 坐立不安 (« impossible de tenir en place ») ajoutent du dramatique à un récit. Chaque mot a son terrain — mélange bien.",
+          contentEn: "At B1.2, 担心 no longer suffices. For ACTIVE worry: 操心 (parents busying themselves: 妈妈总为孩子操心), 烦恼 (worries wearing you down: 最近有很多烦恼), 发愁 (brooding over a specific problem). For FORMAL register: 不安 (general unease), 焦虑 (chronic anxiety, mental health), 担忧 / 忧虑 (press and official writing). In casual speech, Adjective + 死了 (急死了, 愁死了) exaggerates emotion. The chengyu 提心吊胆 (« heart in throat ») and 坐立不安 (« unable to sit still ») add drama to a story. Each word has its terrain — mix wisely.",
+          objectives: [
+            "Choisir 操心 / 烦恼 / 发愁 selon la forme d'inquiétude active",
+            "Employer 不安, 焦虑, 担忧, 忧虑 dans l'écrit formel",
+            "Exagérer à l'oral avec Adj + 死了 (急死了, 愁死了)",
+            "Placer les chengyu 提心吊胆 et 坐立不安 dans un récit"
+          ],
+          objectivesEn: [
+            "Choose 操心 / 烦恼 / 发愁 by the type of active worry",
+            "Use 不安, 焦虑, 担忧, 忧虑 in formal writing",
+            "Exaggerate in speech with Adj + 死了 (急死了, 愁死了)",
+            "Deploy chengyu 提心吊胆 and 坐立不安 in storytelling"
+          ]
+        },
+        flashcards: ["操心", "烦恼", "发愁", "不安", "焦虑", "担忧", "忧虑", "急死了", "提心吊胆"],
+        quizQuestions: 10,
+        learnSections: b12NuancesWorryAdvancedLearnSections
       }
     ]
   },
