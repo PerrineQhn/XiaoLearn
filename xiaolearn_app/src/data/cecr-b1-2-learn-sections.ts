@@ -3353,3 +3353,187 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
       'Tip: the key is YOUR OWN EXPECTATION. If you had predicted it, use 果然. If it astonishes you, use 竟然.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// cecr-b12-nuances-m15 — Particules finales avancées : 哟, 呗, 嘛, 罢了 + classiques
+// ═════════════════════════════════════════════════════════════════════════════
+export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-particle-yo-bei-ma-attitudes',
+    title: '哟, 呗, 嘛 : trois attitudes précieuses',
+    titleEn: '哟, 呗, 嘛: three precious attitudes',
+    body:
+      '哟 (yō) : particule PLAYFUL/musicale, rappels amicaux et avertissements SUCRÉS. Comme un « hein ? » chaleureux.\n' +
+      '- Ex : 小心开车哟 ! (xiǎo xīn kāi chē yō) « fais gaffe en conduisant, hein ! » — souci sincère, pas critique.\n' +
+      '- Ex : 别忘了给我打电话哟 « oublie pas de m\'appeler, d\'accord ? ».\n' +
+      '- Ex : 是你哟 ! (shì nǐ yō) « ah, c\'est toi ! » (surprise chaleureuse).\n' +
+      '- Ton : féminin/sucré/enfantin. À utiliser entre amis proches, pas au travail.\n' +
+      '\n' +
+      '呗 (bei) : particule « WHATEVER ». Résignation, indifférence, acceptation détendue. Comme un haussement d\'épaule verbal.\n' +
+      '- Ex : 不想去就不去呗 (bù xiǎng qù jiù bú qù bei) « t\'as pas envie ? bah, y va pas alors ». Zéro insistance.\n' +
+      '- Pattern figé : A 就 A 呗 « si c\'est A, alors A, on s\'en fout ». Ex : 贵就贵呗 « c\'est cher ? tant pis ».\n' +
+      '- Purement oral, familier. À bannir en pro.\n' +
+      '\n' +
+      '嘛 (ma) : NE PAS confondre avec 吗 (question). Ce 嘛 ajoute un ton EXPLICATIF, « ben oui c\'est évident ! ».\n' +
+      '- Ex : 他还是个孩子嘛 (tā hái shì gè hái zi ma) « c\'est encore un gamin, tu sais » — justification douce.\n' +
+      '- Aussi pour requêtes persuasives : 帮我一下嘛 « aide-moi, allez ! » (ton câlin).\n' +
+      '- Ton : sûr de soi, presque enjôleur.',
+    bodyEn:
+      '哟 (yō): PLAYFUL/musical particle, friendly reminders and SUGARY warnings. Like a warm « eh? ».\n' +
+      '- Ex: 小心开车哟! « be careful driving, ok? » — sincere concern, not criticism.\n' +
+      '- Ex: 别忘了给我打电话哟 « don\'t forget to call me, okay? ».\n' +
+      '- Ex: 是你哟! « ah, it\'s you! » (warm surprise).\n' +
+      '- Tone: feminine/sugary/childlike. Use with close friends, not at work.\n' +
+      '\n' +
+      '呗 (bei): « WHATEVER » particle. Resignation, indifference, relaxed acceptance. Like a verbal shrug.\n' +
+      '- Ex: 不想去就不去呗 « don\'t wanna go? then don\'t ». Zero insistence.\n' +
+      '- Fixed pattern: A 就 A 呗 « if A, then A, whatever ». Ex: 贵就贵呗 « expensive? oh well ».\n' +
+      '- Purely oral, colloquial. Ban from pro settings.\n' +
+      '\n' +
+      '嘛 (ma): DO NOT confuse with 吗 (question). This 嘛 adds an EXPLANATORY tone, « well yeah, obviously! ».\n' +
+      '- Ex: 他还是个孩子嘛 « he\'s still a kid, you know » — gentle justification.\n' +
+      '- Also for persuasive requests: 帮我一下嘛 « help me, come on! » (coaxing tone).\n' +
+      '- Tone: self-assured, almost wheedling.',
+    items: [
+      { hanzi: '哟', pinyin: 'yō', meaning: 'particule playful, avertissement sucré', meaningEn: 'playful particle, sugary warning', audio: 'audio/hsk4/hsk4_哟.wav' },
+      { hanzi: '呗', pinyin: 'bei', meaning: 'particule « whatever », résignation', meaningEn: '« whatever » particle, resignation', audio: 'audio/hsk5/hsk5_呗.wav' },
+      { hanzi: '嘛', pinyin: 'ma', meaning: 'particule explicative, ton évident', meaningEn: 'explanatory particle, obvious tone', audio: 'audio/hsk3/hsk3_嘛.wav' },
+      { hanzi: '小心开车哟', pinyin: 'xiǎo xīn kāi chē yō', meaning: 'fais gaffe en conduisant, hein !', meaningEn: 'be careful driving, ok?', audio: 'audio/hsk3/hsk3_小心.wav' },
+      { hanzi: '贵就贵呗', pinyin: 'guì jiù guì bei', meaning: 'c\'est cher ? tant pis', meaningEn: 'expensive? oh well', audio: 'audio/hsk2/hsk2_贵.wav' },
+      { hanzi: '他还是个孩子嘛', pinyin: 'tā hái shì gè hái zi ma', meaning: 'c\'est encore un gamin, tu sais', meaningEn: 'he\'s still a kid, you know', audio: 'audio/hsk2/hsk2_孩子.wav' },
+      { hanzi: '帮我一下嘛', pinyin: 'bāng wǒ yí xià ma', meaning: 'aide-moi, allez !', meaningEn: 'help me, come on!', audio: 'audio/hsk2/hsk2_帮.wav' },
+      { hanzi: '不想去就不去呗', pinyin: 'bù xiǎng qù jiù bú qù bei', meaning: 't\'as pas envie ? bah, y va pas', meaningEn: 'don\'t wanna go? then don\'t', audio: 'audio/hsk1/hsk1_去.wav' }
+    ],
+    tip:
+      'Astuce : ces 3 particules donnent BEAUCOUP de personnalité. 哟 = mignon, 呗 = décontracté, 嘛 = évident/enjôleur. Utilise-les avec parcimonie mais délibérément.',
+    tipEn:
+      'Tip: these 3 particles add A LOT of personality. 哟 = cute, 呗 = laid-back, 嘛 = obvious/coaxing. Use sparingly but deliberately.'
+  },
+  {
+    id: 'b12-particle-bale-eryi-formal',
+    title: '罢了 et 而已 : minimiser avec élégance',
+    titleEn: '罢了 and 而已: minimize with elegance',
+    body:
+      '罢了 (bà le) : particule LITTÉRAIRE composée. Signifie « rien de plus que / juste ça, un point c\'est tout ». Sert à MINIMISER quelque chose.\n' +
+      '\n' +
+      'Structure : [phrase minimisante] + 罢了. Souvent avec 只是 ou 不过 en amont.\n' +
+      '- Ex : 我只是开玩笑罢了 (wǒ zhǐ shì kāi wán xiào bà le) « je plaisantais, c\'est tout ». Excuse élégante.\n' +
+      '- Ex : 不过是小事罢了 « ce n\'est qu\'un détail, rien de plus ».\n' +
+      '- Ex : 说说罢了，别当真 « ce ne sont que des paroles, ne les prends pas au sérieux ».\n' +
+      '\n' +
+      'Registre : écrit, semi-formel, littéraire. Peut sonner intello à l\'oral décontracté.\n' +
+      '\n' +
+      '而已 (ér yǐ) : QUASI-SYNONYME plus oral et courant.\n' +
+      '- Ex : 我只是开个玩笑而已 « je faisais juste une blague ». Plus naturel en conversation quotidienne.\n' +
+      '- Ex : 不过五块钱而已 « c\'est juste 5 yuan, franchement ».\n' +
+      '\n' +
+      'Comparaison :\n' +
+      '- 罢了 : élégant, écrit, philosophique.\n' +
+      '- 而已 : oral naturel, sans façon.\n' +
+      '- Les 2 minimisent, mais 罢了 monte d\'un cran en registre.',
+    bodyEn:
+      '罢了 (bà le): LITERARY compound particle. Means « nothing more than / just that, that\'s all ». Used to MINIMIZE something.\n' +
+      '\n' +
+      'Structure: [minimizing sentence] + 罢了. Often paired with 只是 or 不过 upstream.\n' +
+      '- Ex: 我只是开玩笑罢了 « I was just joking, that\'s all ». Elegant excuse.\n' +
+      '- Ex: 不过是小事罢了 « it\'s just a trifle, nothing more ».\n' +
+      '- Ex: 说说罢了，别当真 « these are just words, don\'t take them seriously ».\n' +
+      '\n' +
+      'Register: written, semi-formal, literary. Can sound bookish in casual speech.\n' +
+      '\n' +
+      '而已 (ér yǐ): QUASI-SYNONYM, more oral and common.\n' +
+      '- Ex: 我只是开个玩笑而已 « I was just kidding ». More natural in daily talk.\n' +
+      '- Ex: 不过五块钱而已 « it\'s just 5 yuan, seriously ».\n' +
+      '\n' +
+      'Comparison:\n' +
+      '- 罢了: elegant, written, philosophical.\n' +
+      '- 而已: naturally spoken, unfussy.\n' +
+      '- Both minimize, but 罢了 steps up one register.',
+    items: [
+      { hanzi: '罢了', pinyin: 'bà le', meaning: 'rien de plus, un point c\'est tout', meaningEn: 'nothing more, that\'s all', audio: 'audio/hsk5/hsk5_罢了.wav' },
+      { hanzi: '而已', pinyin: 'ér yǐ', meaning: 'juste ça (oral)', meaningEn: 'just that (spoken)', audio: 'audio/hsk4/hsk4_而已.wav' },
+      { hanzi: '只是', pinyin: 'zhǐ shì', meaning: 'seulement, juste', meaningEn: 'only, just', audio: 'audio/hsk3/hsk3_只是.wav' },
+      { hanzi: '不过', pinyin: 'bù guò', meaning: 'seulement, mais', meaningEn: 'only, but', audio: 'audio/hsk2/hsk2_不过.wav' },
+      { hanzi: '开玩笑', pinyin: 'kāi wán xiào', meaning: 'plaisanter', meaningEn: 'joke', audio: 'audio/hsk3/hsk3_开玩笑.wav' },
+      { hanzi: '当真', pinyin: 'dàng zhēn', meaning: 'prendre au sérieux', meaningEn: 'take seriously', audio: 'audio/hsk4/hsk4_当真.wav' },
+      { hanzi: '我只是开玩笑罢了', pinyin: 'wǒ zhǐ shì kāi wán xiào bà le', meaning: 'je plaisantais, c\'est tout', meaningEn: 'I was just joking, that\'s all', audio: 'audio/hsk3/hsk3_开玩笑.wav' },
+      { hanzi: '不过是小事而已', pinyin: 'bú guò shì xiǎo shì ér yǐ', meaning: 'ce n\'est qu\'un détail', meaningEn: 'it\'s just a trifle', audio: 'audio/hsk4/hsk4_而已.wav' }
+    ],
+    tip:
+      'Astuce : en dissertation ou email formel, préfère 罢了. En chat WeChat, préfère 而已.',
+    tipEn:
+      'Tip: in essays or formal emails, prefer 罢了. In WeChat chats, prefer 而已.'
+  },
+  {
+    id: 'b12-particle-classical-ye-yi-hu-zai',
+    title: 'Particules classiques : 也, 矣, 乎, 哉 (à reconnaître)',
+    titleEn: 'Classical particles: 也, 矣, 乎, 哉 (recognize)',
+    body:
+      'En chinois CLASSIQUE (pré-XXe siècle), les particules finales remplaçaient la ponctuation. Elles persistent aujourd\'hui dans les citations, proverbes, textes anciens.\n' +
+      '\n' +
+      '也 (yě) classique = particule ASSERTIVE (marque de fait, définition). RIEN à voir avec le 也 moderne « aussi ».\n' +
+      '- Ex classique : 子非鱼，安知鱼之乐也 ? (zǐ fēi yú, ān zhī yú zhī lè yě) « tu n\'es pas un poisson, comment peux-tu connaître la joie du poisson ? » (Zhuangzi).\n' +
+      '- Moderne équivalent : 你不是鱼，怎么知道鱼的快乐 ?\n' +
+      '- Souvent en fin de phrase de définition : « X 者，Y 也 » = « X, c\'est Y ».\n' +
+      '\n' +
+      '矣 (yǐ) classique ≈ 了 moderne. Marque un ACCOMPLISSEMENT ou changement d\'état, souvent avec nostalgie ou lamentation.\n' +
+      '- Ex classique : 吾老矣 (wú lǎo yǐ) « je suis devenu vieux » (mélancolie).\n' +
+      '- Moderne : 我老了.\n' +
+      '\n' +
+      '乎 (hū) classique = particule INTERROGATIVE ≈ 吗 moderne, mais registre littéraire.\n' +
+      '- Ex classique : 大王尝闻布衣之怒乎 ? « le roi a-t-il jamais entendu parler de la colère du peuple ? » (Zhanguo Ce).\n' +
+      '- Moderne : 大王听说过平民百姓的愤怒吗 ?\n' +
+      '- Sert aussi en 学而时习之，不亦说乎 ? (Confucius) « étudier et pratiquer régulièrement, n\'est-ce pas plaisant ? ».\n' +
+      '\n' +
+      '哉 (zāi) classique = particule EXCLAMATIVE, admiration/lamentation.\n' +
+      '- Ex classique : 悲哉，秋之为气也 ! (bēi zāi, qiū zhī wéi qì yě) « qu\'elle est triste, l\'atmosphère de l\'automne ! » (Song Yu).\n' +
+      '- Moderne : 真悲伤啊，秋天的气氛 !\n' +
+      '- Aussi dans les louanges : 大哉，尧之为君 ! « quelle grandeur, le règne de Yao ! ».\n' +
+      '\n' +
+      'Registres pratiques d\'aujourd\'hui :\n' +
+      '- Tu les rencontres dans les CHENGYU, les citations, les textes anciens, la calligraphie.\n' +
+      '- Tu ne les produis PAS toi-même à l\'oral moderne.\n' +
+      '- Utile de les RECONNAÎTRE pour ne pas te bloquer sur un texte de 论语 ou un poème.',
+    bodyEn:
+      'In CLASSICAL Chinese (pre-20th c.), final particles replaced punctuation. They persist today in quotations, proverbs, ancient texts.\n' +
+      '\n' +
+      'Classical 也 (yě) = ASSERTIVE particle (fact, definition). NOTHING to do with modern 也 « also ».\n' +
+      '- Classical ex: 子非鱼，安知鱼之乐也? « you\'re not a fish, how do you know the joy of a fish? » (Zhuangzi).\n' +
+      '- Modern equiv: 你不是鱼，怎么知道鱼的快乐?\n' +
+      '- Often ends a definition: « X 者，Y 也 » = « X is Y ».\n' +
+      '\n' +
+      'Classical 矣 (yǐ) ≈ modern 了. Marks completion or state change, often with nostalgia or lament.\n' +
+      '- Classical ex: 吾老矣 « I have grown old » (melancholy).\n' +
+      '- Modern: 我老了.\n' +
+      '\n' +
+      'Classical 乎 (hū) = INTERROGATIVE particle ≈ modern 吗, literary register.\n' +
+      '- Classical ex: 大王尝闻布衣之怒乎? « has the king ever heard of the people\'s anger? » (Zhanguo Ce).\n' +
+      '- Modern: 大王听说过平民百姓的愤怒吗?\n' +
+      '- Also in 学而时习之，不亦说乎? (Confucius) « to study and practice regularly, is that not pleasant? ».\n' +
+      '\n' +
+      'Classical 哉 (zāi) = EXCLAMATIVE particle, admiration/lament.\n' +
+      '- Classical ex: 悲哉，秋之为气也! « how sad, the atmosphere of autumn! » (Song Yu).\n' +
+      '- Modern: 真悲伤啊，秋天的气氛!\n' +
+      '- Also in praise: 大哉，尧之为君! « how great, Yao\'s rule! ».\n' +
+      '\n' +
+      'Practical modern registers:\n' +
+      '- You meet them in CHENGYU, quotations, ancient texts, calligraphy.\n' +
+      '- You DON\'T produce them yourself in modern speech.\n' +
+      '- Useful to RECOGNIZE so you\'re not stuck on a Lunyu passage or a poem.',
+    items: [
+      { hanzi: '也', pinyin: 'yě', meaning: 'classique : particule assertive', meaningEn: 'classical: assertive particle', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '矣', pinyin: 'yǐ', meaning: 'classique : ≈ 了, accomplissement', meaningEn: 'classical: ≈ 了, completion', audio: 'audio/hsk6/hsk6_矣.wav' },
+      { hanzi: '乎', pinyin: 'hū', meaning: 'classique : ≈ 吗, question littéraire', meaningEn: 'classical: ≈ 吗, literary question', audio: 'audio/hsk5/hsk5_乎.wav' },
+      { hanzi: '哉', pinyin: 'zāi', meaning: 'classique : exclamation', meaningEn: 'classical: exclamation', audio: 'audio/hsk6/hsk6_哉.wav' },
+      { hanzi: '吾老矣', pinyin: 'wú lǎo yǐ', meaning: 'je suis devenu vieux (classique)', meaningEn: 'I have grown old (classical)', audio: 'audio/hsk3/hsk3_老.wav' },
+      { hanzi: '不亦说乎', pinyin: 'bù yì yuè hū', meaning: 'n\'est-ce pas plaisant ? (Confucius)', meaningEn: 'is it not pleasant? (Confucius)', audio: 'audio/hsk5/hsk5_乎.wav' },
+      { hanzi: '子非鱼', pinyin: 'zǐ fēi yú', meaning: 'tu n\'es pas un poisson (Zhuangzi)', meaningEn: 'you are not a fish (Zhuangzi)', audio: 'audio/hsk4/hsk4_鱼.wav' },
+      { hanzi: '论语', pinyin: 'lún yǔ', meaning: 'Analectes de Confucius', meaningEn: 'Confucius\' Analects', audio: 'audio/hsk6/hsk6_论语.wav' },
+      { hanzi: '文言', pinyin: 'wén yán', meaning: 'chinois classique', meaningEn: 'classical Chinese', audio: 'audio/hsk6/hsk6_文言.wav' }
+    ],
+    tip:
+      'Astuce : quand tu vois un texte se terminant par 也, 矣, 乎 ou 哉, c\'est probablement du wenyan (classique). Traite-les comme un signal de registre historique.',
+    tipEn:
+      'Tip: when you see a text ending with 也, 矣, 乎 or 哉, it\'s probably wenyan (classical). Treat them as a signal of historical register.'
+  }
+];

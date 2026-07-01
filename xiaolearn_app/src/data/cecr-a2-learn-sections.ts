@@ -3995,3 +3995,162 @@ export const a2NuancesItDependsInformalLearnSections: LessonV2LearnSection[] = [
       'Tip: 看 + noun is very productive — learn the pattern and swap the noun by context. But keep 看心情 and 看缘分 for friends, never for the boss.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// cecr-a2-grammar-m8 — Particules finales (base) : 吗, 呢, 吧, 啊, 啦, 的
+// ═════════════════════════════════════════════════════════════════════════════
+export const a2GrammarSentenceParticlesLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-particle-ma-ne-ba',
+    title: '吗, 呢, 吧 : les 3 particules essentielles',
+    titleEn: '吗, 呢, 吧: the 3 essential particles',
+    body:
+      'Les particules finales ne changent PAS le sens de base, mais elles CHANGENT LE TON. Sans elles, ton chinois sonne robotique.\n' +
+      '\n' +
+      '吗 (ma) : transforme une phrase affirmative en QUESTION oui/non. Neutre, marche partout.\n' +
+      '- Structure : [affirmation] + 吗 ?\n' +
+      '- Ex : 你是学生 (« tu es étudiant ») → 你是学生吗 ? (nǐ shì xué shēng ma) « tu es étudiant ? ».\n' +
+      '- Ex : 你饿了吗 ? (nǐ è le ma) « tu as faim ? ».\n' +
+      '- Variante mignonne : 么 (ma, même prononciation, ton neutre) plus doux, populaire en texto/SMS. Pas en formel. Ex : 你饿了么 ? (« t\'as faim, dis ? »).\n' +
+      '\n' +
+      '呢 (ne) : particule multi-fonctions. 3 usages principaux :\n' +
+      '- Renvoyer une question (« et toi ? ») : « 我很好，你呢 ? » « ça va, et toi ? ».\n' +
+      '- Marquer une action EN COURS : 他睡觉呢 (tā shuì jiào ne) « il dort en ce moment ».\n' +
+      '- Rendre une question réfléchie : 我该怎么办呢 ? (wǒ gāi zěn me bàn ne) « qu\'est-ce que je dois faire, moi ? ».\n' +
+      '\n' +
+      '吧 (ba) : ADOUCIT un ordre en SUGGESTION. Aussi pour SUPPOSER.\n' +
+      '- Ex : 我们一起去吧 (wǒmen yì qǐ qù ba) « allons-y ensemble ! » (invitation, pas ordre).\n' +
+      '- Ex : 你是老师吧 ? (nǐ shì lǎo shī ba) « tu es prof, non ? » (supposition).',
+    bodyEn:
+      'Sentence-final particles do NOT change core meaning, but they CHANGE THE TONE. Without them, your Chinese sounds robotic.\n' +
+      '\n' +
+      '吗 (ma): turns an affirmative sentence into a yes/no QUESTION. Neutral, works everywhere.\n' +
+      '- Structure: [statement] + 吗 ?\n' +
+      '- Ex: 你是学生 → 你是学生吗? « are you a student? ».\n' +
+      '- Ex: 你饿了吗? « are you hungry? ».\n' +
+      '- Cute variant: 么 (ma) softer, popular in texting. Not for formal use.\n' +
+      '\n' +
+      '呢 (ne): multi-function particle. 3 main uses:\n' +
+      '- Bounce a question back (« and you? »): « 我很好，你呢? » « I\'m fine, and you? ».\n' +
+      '- Mark an ONGOING action: 他睡觉呢 « he\'s sleeping right now ».\n' +
+      '- Make a question reflective: 我该怎么办呢? « what should I do, hmm? ».\n' +
+      '\n' +
+      '吧 (ba): SOFTENS an order into a SUGGESTION. Also for GUESSING.\n' +
+      '- Ex: 我们一起去吧 « let\'s go together! » (invitation, not command).\n' +
+      '- Ex: 你是老师吧? « you\'re a teacher, right? » (guess).',
+    items: [
+      { hanzi: '吗', pinyin: 'ma', meaning: 'particule question oui/non', meaningEn: 'yes/no question particle', audio: 'audio/hsk1/hsk1_吗.wav' },
+      { hanzi: '么', pinyin: 'ma', meaning: 'variante mignonne de 吗', meaningEn: 'cute variant of 吗', audio: 'audio/hsk1/hsk1_吗.wav' },
+      { hanzi: '呢', pinyin: 'ne', meaning: 'et toi ? / en cours / réflexion', meaningEn: 'and you? / ongoing / reflective', audio: 'audio/hsk1/hsk1_呢.wav' },
+      { hanzi: '吧', pinyin: 'ba', meaning: 'suggestion, supposition', meaningEn: 'suggestion, guess', audio: 'audio/hsk2/hsk2_吧.wav' },
+      { hanzi: '你饿了吗', pinyin: 'nǐ è le ma', meaning: 'tu as faim ?', meaningEn: 'are you hungry?', audio: 'audio/hsk3/hsk3_饿.wav' },
+      { hanzi: '你呢', pinyin: 'nǐ ne', meaning: 'et toi ?', meaningEn: 'and you?', audio: 'audio/hsk1/hsk1_呢.wav' },
+      { hanzi: '我们一起去吧', pinyin: 'wǒ men yī qǐ qù ba', meaning: 'allons-y ensemble !', meaningEn: 'let\'s go together!', audio: 'audio/hsk1/hsk1_一起.wav' },
+      { hanzi: '你是老师吧', pinyin: 'nǐ shì lǎo shī ba', meaning: 'tu es prof, non ?', meaningEn: 'you\'re a teacher, right?', audio: 'audio/hsk1/hsk1_老师.wav' }
+    ],
+    tip:
+      'Astuce : sans particules finales, ton chinois sonne comme un robot. Avec elles, tu montes d\'un niveau en fluidité immédiatement.',
+    tipEn:
+      'Tip: without sentence-final particles, your Chinese sounds robotic. With them, your fluency jumps a level instantly.'
+  },
+  {
+    id: 'a2-particle-a-la-emotional',
+    title: '啊/呀/哇/哪 et 啦 : émotion et urgence',
+    titleEn: '啊/呀/哇/哪 and 啦: emotion and urgency',
+    body:
+      '啊 (a) : particule d\'émotion universelle. Adoucit, exprime enthousiasme, surprise, chaleur.\n' +
+      '- Ex : 今天天气真好啊 ! (jīn tiān tiān qì zhēn hǎo a) « le temps est vraiment super aujourd\'hui ! ».\n' +
+      '- Ex : 好啊 ! (hǎo a) « OK ! d\'accord ! » (avec chaleur).\n' +
+      '\n' +
+      'Règle de sandhi : 啊 change de forme selon le son qui précède, pour la fluidité.\n' +
+      '- Après voyelle a/o/e/i/ü → 呀 (ya). Ex : 真是小孩子呀 ! (zhēn shì xiǎo hái zi ya) « quel gamin ! ».\n' +
+      '- Après u → 哇 (wa). Ex : 真苦哇 ! (zhēn kǔ wa) « c\'est vraiment amer ! ».\n' +
+      '- Après n → 哪 (na). Ex : 真好看哪 ! (zhēn hǎo kàn na) « c\'est vraiment beau ! ».\n' +
+      '\n' +
+      'Ces 4 formes (啊/呀/哇/哪) sont FONCTIONNELLEMENT IDENTIQUES. Seule la prononciation change.\n' +
+      '\n' +
+      '啦 (la) : fusion de 了 + 啊. Exprime URGENCE, FINALITÉ ou IMPATIENCE avec chaleur.\n' +
+      '- Ex : 快点啦 ! (kuài diǎn la) « dépêche-toi ! » (impatience amicale).\n' +
+      '- Ex : 我们要迟到啦 ! (wǒmen yào chí dào la) « on va être en retard ! ».\n' +
+      '- Ex : 好啦好啦 (hǎo la hǎo la) « ok ok c\'est bon ! » (résignation amusée).',
+    bodyEn:
+      '啊 (a): universal emotion particle. Softens, expresses enthusiasm, surprise, warmth.\n' +
+      '- Ex: 今天天气真好啊! « the weather is really nice today! ».\n' +
+      '- Ex: 好啊! « OK, sure! » (warmly).\n' +
+      '\n' +
+      'Sandhi rule: 啊 morphs based on the preceding sound, for fluency.\n' +
+      '- After vowel a/o/e/i/ü → 呀 (ya). Ex: 真是小孩子呀! « what a kid! ».\n' +
+      '- After u → 哇 (wa). Ex: 真苦哇! « it\'s really bitter! ».\n' +
+      '- After n → 哪 (na). Ex: 真好看哪! « it\'s really beautiful! ».\n' +
+      '\n' +
+      'These 4 forms (啊/呀/哇/哪) are FUNCTIONALLY IDENTICAL. Only pronunciation changes.\n' +
+      '\n' +
+      '啦 (la): fusion of 了 + 啊. Expresses URGENCY, FINALITY or WARM IMPATIENCE.\n' +
+      '- Ex: 快点啦! « hurry up! » (friendly impatience).\n' +
+      '- Ex: 我们要迟到啦! « we\'re gonna be late! ».\n' +
+      '- Ex: 好啦好啦 « ok ok that\'s enough! » (amused resignation).',
+    items: [
+      { hanzi: '啊', pinyin: 'a', meaning: 'particule d\'émotion universelle', meaningEn: 'universal emotion particle', audio: 'audio/hsk1/hsk1_啊.wav' },
+      { hanzi: '呀', pinyin: 'ya', meaning: 'variante de 啊 après voyelle', meaningEn: 'variant of 啊 after vowel', audio: 'audio/hsk1/hsk1_啊.wav' },
+      { hanzi: '哇', pinyin: 'wa', meaning: 'variante de 啊 après u', meaningEn: 'variant of 啊 after u', audio: 'audio/hsk1/hsk1_啊.wav' },
+      { hanzi: '哪', pinyin: 'na', meaning: 'variante de 啊 après n', meaningEn: 'variant of 啊 after n', audio: 'audio/hsk1/hsk1_啊.wav' },
+      { hanzi: '啦', pinyin: 'la', meaning: 'urgence + chaleur (了 + 啊)', meaningEn: 'urgency + warmth (了 + 啊)', audio: 'audio/hsk1/hsk1_了.wav' },
+      { hanzi: '好啊', pinyin: 'hǎo a', meaning: 'OK ! d\'accord !', meaningEn: 'OK! sure!', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '快点啦', pinyin: 'kuài diǎn la', meaning: 'dépêche-toi !', meaningEn: 'hurry up!', audio: 'audio/hsk2/hsk2_快.wav' },
+      { hanzi: '好啦好啦', pinyin: 'hǎo la hǎo la', meaning: 'ok ok c\'est bon !', meaningEn: 'ok ok, enough!', audio: 'audio/hsk1/hsk1_好.wav' }
+    ],
+    tip:
+      'Astuce : à l\'oral, glisse un 啊 ou un 啦 chaque fois que tu veux sonner naturel. Si tu ne les utilises jamais, ton chinois sonne trop mécanique.',
+    tipEn:
+      'Tip: in speech, drop in a 啊 or a 啦 whenever you want to sound natural. Never using them makes your Chinese too mechanical.'
+  },
+  {
+    id: 'a2-particle-de-certitude',
+    title: '的 en fin de phrase : la certitude',
+    titleEn: '的 at sentence end: certainty',
+    body:
+      'Attention : 的 (de) a de multiples usages (possession, adjectifs). Ici on parle du 的 DE FIN DE PHRASE, qui exprime CERTITUDE ou RASSURANCE.\n' +
+      '\n' +
+      'Sens : « pour sûr / c\'est garanti / je te le promets ».\n' +
+      '\n' +
+      'Souvent avec des modaux 会 (huì) ou 能 (néng).\n' +
+      '\n' +
+      'Structure : [affirmation avec 会/能/一定] + 的.\n' +
+      '- Ex : 你一定会成功的 (nǐ yí dìng huì chéng gōng de) « tu vas réussir, c\'est sûr ! » (encouragement fort).\n' +
+      '- Ex : 别担心，我们会按时到家的 (bié dān xīn, wǒmen huì àn shí dào jiā de) « t\'en fais pas, on rentrera à l\'heure, promis ».\n' +
+      '- Ex : 他会来的 (tā huì lái de) « il va venir, tu peux compter dessus ».\n' +
+      '\n' +
+      'Sans le 的 final, la phrase est correcte mais moins RASSURANTE. Avec 的, tu ajoutes une couche de conviction.\n' +
+      '\n' +
+      'Différence avec le pattern 是...的 (qui insiste sur une info spécifique — cf. leçon B1.1). Ici, 的 est SEUL en fin de phrase, sans 是.',
+    bodyEn:
+      'Careful: 的 (de) has multiple uses (possession, adjectives). Here we focus on SENTENCE-FINAL 的, which expresses CERTAINTY or REASSURANCE.\n' +
+      '\n' +
+      'Meaning: « for sure / it\'s guaranteed / I promise you ».\n' +
+      '\n' +
+      'Often used with modals 会 (huì) or 能 (néng).\n' +
+      '\n' +
+      'Structure: [statement with 会/能/一定] + 的.\n' +
+      '- Ex: 你一定会成功的 « you\'ll succeed, for sure! » (strong encouragement).\n' +
+      '- Ex: 别担心，我们会按时到家的 « don\'t worry, we\'ll get home on time, promise ».\n' +
+      '- Ex: 他会来的 « he will come, you can count on it ».\n' +
+      '\n' +
+      'Without final 的, the sentence is correct but less REASSURING. With 的, you add a layer of conviction.\n' +
+      '\n' +
+      'Different from the 是...的 pattern (which stresses a specific piece of info — see B1.1 lesson). Here, 的 stands ALONE at sentence end, without 是.',
+    items: [
+      { hanzi: '的', pinyin: 'de', meaning: 'particule de certitude (en fin de phrase)', meaningEn: 'certainty particle (sentence-final)', audio: 'audio/hsk1/hsk1_的.wav' },
+      { hanzi: '会', pinyin: 'huì', meaning: 'modal : va, sera capable de', meaningEn: 'modal: will, be able to', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '能', pinyin: 'néng', meaning: 'modal : pouvoir, être capable', meaningEn: 'modal: can, be able to', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '一定', pinyin: 'yí dìng', meaning: 'certainement, à coup sûr', meaningEn: 'certainly, definitely', audio: 'audio/hsk3/hsk3_一定.wav' },
+      { hanzi: '成功', pinyin: 'chéng gōng', meaning: 'réussir', meaningEn: 'succeed', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '你一定会成功的', pinyin: 'nǐ yí dìng huì chéng gōng de', meaning: 'tu vas réussir, c\'est sûr !', meaningEn: 'you\'ll succeed, for sure!', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '他会来的', pinyin: 'tā huì lái de', meaning: 'il va venir, promis', meaningEn: 'he will come, promise', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '别担心', pinyin: 'bié dān xīn', meaning: 't\'inquiète pas', meaningEn: 'don\'t worry', audio: 'audio/hsk3/hsk3_担心.wav' }
+    ],
+    tip:
+      'Astuce : chaque fois que tu veux rassurer ou promettre, ajoute 的 en fin. C\'est un des marqueurs les plus utilisés pour encourager quelqu\'un.',
+    tipEn:
+      'Tip: whenever you want to reassure or promise, add final 的. It\'s one of the most used markers to encourage someone.'
+  }
+];

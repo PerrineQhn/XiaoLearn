@@ -132,6 +132,7 @@ import {
   a2GrammarMeasureWordsLearnSections,
   a2GrammarModalsDirectionLearnSections,
   a2GrammarDurationComplementsLearnSections,
+  a2GrammarSentenceParticlesLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -235,6 +236,7 @@ import {
   b12NuancesWorryAdvancedLearnSections,
   b12NuancesItDependsFormalLearnSections,
   b12NuancesGuoranJingranLearnSections,
+  b12NuancesSentenceParticlesAdvancedLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -2714,6 +2716,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["了", "次", "遍", "一点儿", "多了", "得多"],
         quizQuestions: 10,
         learnSections: a2GrammarDurationComplementsLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-m8",
+        title: "Particules finales : 吗, 呢, 吧, 啊, 啦, 的",
+        titleEn: "Sentence-final particles: 吗, 呢, 吧, 啊, 啦, 的",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["particle", "grammar", "cecr:a2"],
+        introduction: {
+          title: "Les particules finales : le vernis émotionnel de l'oral chinois",
+          titleEn: "Sentence-final particles: the emotional varnish of spoken Chinese",
+          content: "Sans particules finales, ton chinois sonne comme un robot. 吗 transforme une phrase en question oui/non, 呢 renvoie une question ou marque une action en cours, 吧 adoucit un ordre en suggestion. 啊 (et ses variantes 呀/哇/哪 selon le son qui précède) porte l'émotion — enthousiasme, surprise, chaleur. 啦 (fusion de 了 + 啊) exprime l'urgence ou l'impatience amicale. Enfin, 的 en fin de phrase (sans 是) ajoute une couche de CERTITUDE et de rassurance, souvent avec 会/能.",
+          contentEn: "Without sentence-final particles, your Chinese sounds robotic. 吗 turns a sentence into a yes/no question, 呢 bounces a question or marks an ongoing action, 吧 softens a command into a suggestion. 啊 (with variants 呀/哇/哪 based on the preceding sound) carries emotion — enthusiasm, surprise, warmth. 啦 (fusion of 了 + 啊) expresses urgency or friendly impatience. Finally, sentence-final 的 (without 是) adds CERTAINTY and reassurance, often with 会/能.",
+          objectives: [
+            "Distinguer 吗 (question), 呢 (renvoi/en cours), 吧 (suggestion)",
+            "Utiliser 啊 et ses variantes 呀/哇/哪 selon le son",
+            "Ajouter 啦 pour l'urgence amicale",
+            "Placer 的 en fin pour rassurer ou promettre"
+          ],
+          objectivesEn: [
+            "Tell apart 吗 (question), 呢 (bounce/ongoing), 吧 (suggestion)",
+            "Use 啊 and its variants 呀/哇/哪 based on the preceding sound",
+            "Add 啦 for friendly urgency",
+            "Place final 的 to reassure or promise"
+          ]
+        },
+        flashcards: ["吗", "么", "呢", "吧", "啊", "呀", "啦", "的"],
+        quizQuestions: 10,
+        learnSections: a2GrammarSentenceParticlesLearnSections
       }
     ]
   },
@@ -6507,6 +6538,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["果然", "竟然", "居然", "没想到", "不料", "果真"],
         quizQuestions: 10,
         learnSections: b12NuancesGuoranJingranLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m15",
+        title: "Particules finales avancées : 哟, 呗, 嘛, 罢了 + classiques",
+        titleEn: "Advanced sentence-final particles: 哟, 呗, 嘛, 罢了 + classical",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 6], category: "grammar", difficulty: "intermediate",
+        tags: ["particle", "grammar", "cecr:b12"],
+        introduction: {
+          title: "Particules qui portent une attitude : du câlin au philosophique",
+          titleEn: "Particles that carry attitude: from cute to philosophical",
+          content: "Trois particules donnent BEAUCOUP de personnalité à l'oral : 哟 (playful, avertissement sucré), 呗 (whatever, indifférence détendue), 嘛 (évident/enjôleur — ne pas confondre avec 吗). Pour minimiser avec élégance, deux quasi-synonymes : 罢了 (littéraire, écrit) et 而已 (oral, courant). Enfin, une couche RECONNAISSANCE : les particules classiques 也 (assertive), 矣 (accomplissement), 乎 (question littéraire), 哉 (exclamation) — omniprésentes dans les chengyu, citations et textes anciens.",
+          contentEn: "Three particles add A LOT of personality in speech: 哟 (playful, sugary warning), 呗 (whatever, relaxed indifference), 嘛 (obvious/coaxing — not to confuse with 吗). To minimize with elegance, two near-synonyms: 罢了 (literary, written) and 而已 (spoken, common). Finally, a RECOGNITION layer: classical particles 也 (assertive), 矣 (completion), 乎 (literary question), 哉 (exclamation) — everywhere in chengyu, quotations and ancient texts.",
+          objectives: [
+            "Utiliser 哟 pour un avertissement sucré, 呗 pour l'indifférence, 嘛 pour l'évidence",
+            "Choisir 罢了 (écrit) vs 而已 (oral) pour minimiser",
+            "Reconnaître 也/矣/乎/哉 dans un texte classique",
+            "Ne pas confondre 嘛 (attitude) avec 吗 (question)"
+          ],
+          objectivesEn: [
+            "Use 哟 for sugary warnings, 呗 for indifference, 嘛 for obviousness",
+            "Choose 罢了 (written) vs 而已 (spoken) to minimize",
+            "Recognize 也/矣/乎/哉 in a classical text",
+            "Don't confuse 嘛 (attitude) with 吗 (question)"
+          ]
+        },
+        flashcards: ["哟", "呗", "嘛", "罢了", "而已", "也", "矣", "乎", "哉"],
+        quizQuestions: 10,
+        learnSections: b12NuancesSentenceParticlesAdvancedLearnSections
       }
     ]
   },
