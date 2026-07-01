@@ -138,6 +138,7 @@ import {
   a2NuancesCauseEffectBasicsLearnSections,
   a2NuancesPurposeBasicsLearnSections,
   a2NuancesTogetherLearnSections,
+  a2NuancesFrequencyLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -3726,6 +3727,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["一起", "一块儿", "一齐", "一同", "和", "跟", "与"],
         quizQuestions: 8,
         learnSections: a2NuancesTogetherLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m23",
+        title: "Mots de fréquence : toujours, souvent, parfois, jamais",
+        titleEn: "Frequency words: always, often, sometimes, never",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "adverb", "cecr:a2"],
+        introduction: {
+          title: "L'échelle complète des mots de fréquence",
+          titleEn: "The full frequency-words scale",
+          content: "Le chinois découpe la fréquence en une dizaine de mots aux nuances fines. Cette leçon organise TOUT l'éventail : de 100 % neutre (总是) à 100 % agacé (老是), en passant par 通常, 常常, 经常, 往往, puis vers le bas — 有时候, 偶尔, 很少, 几乎不, 从来不 — jusqu'à l'inédit 从来没...过 (« jamais dans ma vie »). Tu apprendras aussi le pattern-clé 每次...都 pour marquer une régularité sans faille. Confondre 常常 (« souvent ») avec 往往 (« ça tend à ») ou 从来不 (habitude) avec 从来没...过 (expérience) fait rater la nuance — mais après cette leçon, tu choisiras le bon mot d'instinct.",
+          contentEn: "Chinese slices frequency into a dozen words with fine nuances. This lesson organizes the WHOLE spectrum: from neutral 100% (总是) to annoyed 100% (老是), through 通常, 常常, 经常, 往往, then down — 有时候, 偶尔, 很少, 几乎不, 从来不 — to the unique 从来没...过 («never in my life»). You'll also learn the key pattern 每次...都 for marking unfailing regularity. Confusing 常常 («often») with 往往 («tends to») or 从来不 (habit) with 从来没...过 (experience) misses the nuance — but after this lesson, you'll pick the right word instinctively.",
+          objectives: [
+            "Distinguer 总是 (neutre) et 老是 (agacé) parmi les « toujours »",
+            "Choisir entre 通常, 常常, 经常, 往往 selon le contexte",
+            "Utiliser 每次...都 pour marquer un pattern sans exception",
+            "Ne pas confondre 从来不 (habitude) et 从来没...过 (expérience)"
+          ],
+          objectivesEn: [
+            "Distinguish 总是 (neutral) and 老是 (annoyed) among the «always» words",
+            "Pick between 通常, 常常, 经常, 往往 by context",
+            "Use 每次...都 to mark an exception-free pattern",
+            "Don't confuse 从来不 (habit) with 从来没...过 (experience)"
+          ]
+        },
+        flashcards: ["总是", "老是", "通常", "常常", "经常", "往往", "每次", "有时候", "偶尔", "很少", "几乎不", "从来不", "从来没", "过"],
+        quizQuestions: 10,
+        learnSections: a2NuancesFrequencyLearnSections
       }
     ]
   },

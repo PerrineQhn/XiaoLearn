@@ -4885,3 +4885,165 @@ export const a2NuancesTogetherLearnSections: LessonV2LearnSection[] = [
       'Tip: on a Chinese wedding invitation card, you\'ll read 请与我们一同分享. In a text between friends, you\'ll write 一起吃饭吧. Choose by channel.'
   }
 ];
+
+export const a2NuancesFrequencyLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-frequency-always-often',
+    title: '« Toujours » et « souvent » : 总是, 老是, 通常, 常常, 经常',
+    titleEn: '«Always» and «often»: 总是, 老是, 通常, 常常, 经常',
+    body:
+      'Le chinois offre plusieurs mots pour dire « toujours / souvent » avec des nuances de fréquence et de TON.\n' +
+      '\n' +
+      '总是 (zǒng shì) = « toujours » NEUTRE, marque une habitude constante. Se place avant le verbe.\n' +
+      '- Ex : 她总是帮助别人 (py tā zǒng shì bāng zhù bié rén) « elle aide toujours les autres ». Constat objectif.\n' +
+      '- Ex : 他总是迟到 (py tā zǒng shì chí dào) « il est toujours en retard ». Ton neutre.\n' +
+      '\n' +
+      '老是 (lǎo shì) = « toujours » avec AGACEMENT ou reproche. Version « ugh, ça recommence ». À l\'oral surtout.\n' +
+      '- Ex : 他老是忘记带钥匙 (py tā lǎo shì wàng jì dài yào shi) « il oublie toujours ses clés ! ». Ton exaspéré.\n' +
+      '- Ex : 你老是打断我 (py nǐ lǎo shì dǎ duàn wǒ) « tu m\'interromps sans arrêt ! ». Reproche.\n' +
+      '\n' +
+      'Version courte : à l\'oral décontracté, on peut dire 总 ou 老 seul (sans 是) : 他总迟到 / 他老忘记.\n' +
+      '\n' +
+      '通常 (tōng cháng) = « habituellement / d\'habitude » (pas 100 % mais la plupart du temps). Plus formel que « souvent ». Idéal pour routines et généralités.\n' +
+      '- Ex : 他通常七点起床 (py tā tōng cháng qī diǎn qǐ chuáng) « d\'habitude il se lève à 7 h ».\n' +
+      '- Ex : 冬天通常很冷 (py dōng tiān tōng cháng hěn lěng) « en hiver il fait généralement froid ».\n' +
+      '\n' +
+      '常常 (cháng cháng) = « souvent », très courant en oral et écrit.\n' +
+      '- Ex : 我常常吃中餐 (py wǒ cháng cháng chī zhōng cān) « je mange souvent chinois ».\n' +
+      '\n' +
+      '经常 (jīng cháng) = « souvent », interchangeable avec 常常. Un chouïa plus soutenu à l\'écrit.\n' +
+      '- Ex : 他经常运动 (py tā jīng cháng yùn dòng) « il fait souvent du sport ».\n' +
+      '\n' +
+      '常 seul (raccourci de 常常) : usage figé, surtout dans « 常来玩！» « viens souvent ! » (invitation) ou dans les proverbes.\n' +
+      '\n' +
+      'Récap de fréquence : 总是 (100 %, neutre) > 老是 (100 %, agacé) > 通常 (~80 %, formel) > 常常 / 经常 (~60-70 %, fréquent).',
+    bodyEn:
+      'Chinese offers several words for «always / often» with nuances of frequency and TONE. 总是 (zǒng shì) = NEUTRAL «always», marks a constant habit. Goes before the verb. Ex: 她总是帮助别人 «she always helps others». Objective statement. Ex: 他总是迟到 «he\'s always late». Neutral tone. 老是 (lǎo shì) = «always» with ANNOYANCE or reproach. The «ugh, here we go again» version. Mostly spoken. Ex: 他老是忘记带钥匙 «he\'s ALWAYS forgetting his keys!». Exasperated tone. Ex: 你老是打断我 «you keep interrupting me!». Reproach. Short version: in casual speech, one can say 总 or 老 alone (without 是): 他总迟到 / 他老忘记. 通常 (tōng cháng) = «usually / normally» (not 100% but most of the time). More formal than «often». Ideal for routines and general statements. Ex: 他通常七点起床 «he usually gets up at 7am». Ex: 冬天通常很冷 «in winter it\'s usually cold». 常常 (cháng cháng) = «often», very common in speech and writing. Ex: 我常常吃中餐 «I often eat Chinese food». 经常 (jīng cháng) = «often», interchangeable with 常常. Slightly more formal in writing. Ex: 他经常运动 «he often exercises». 常 alone (short for 常常): fixed usage, mostly in «常来玩！» «come visit often!» (invitation) or in proverbs. Frequency recap: 总是 (100%, neutral) > 老是 (100%, annoyed) > 通常 (~80%, formal) > 常常 / 经常 (~60-70%, frequent).',
+    items: [
+      { hanzi: '总是', pinyin: 'zǒng shì', meaning: 'toujours (neutre)', meaningEn: 'always (neutral)', audio: 'audio/hsk3/hsk3_总是.wav' },
+      { hanzi: '老是', pinyin: 'lǎo shì', meaning: 'toujours (agacé)', meaningEn: 'always (annoyed)', audio: 'audio/hsk2/hsk2_老是.wav' },
+      { hanzi: '通常', pinyin: 'tōng cháng', meaning: 'habituellement, d\'habitude', meaningEn: 'usually', audio: 'audio/hsk3/hsk3_通常.wav' },
+      { hanzi: '常常', pinyin: 'cháng cháng', meaning: 'souvent', meaningEn: 'often', audio: 'audio/hsk1/hsk1_常常.wav' },
+      { hanzi: '经常', pinyin: 'jīng cháng', meaning: 'souvent (un peu soutenu)', meaningEn: 'often (slightly formal)', audio: 'audio/hsk1/hsk1_经常.wav' },
+      { hanzi: '她总是帮助别人', pinyin: 'tā zǒng shì bāng zhù bié rén', meaning: 'elle aide toujours les autres', meaningEn: 'she always helps others', audio: 'audio/hsk2/hsk2_帮助.wav' },
+      { hanzi: '他总是迟到', pinyin: 'tā zǒng shì chí dào', meaning: 'il est toujours en retard', meaningEn: 'he\'s always late', audio: 'audio/hsk3/hsk3_迟到.wav' },
+      { hanzi: '他老是忘记带钥匙', pinyin: 'tā lǎo shì wàng jì dài yào shi', meaning: 'il oublie toujours ses clés', meaningEn: 'he always forgets his keys', audio: 'audio/hsk1/hsk1_忘记.wav' },
+      { hanzi: '你老是打断我', pinyin: 'nǐ lǎo shì dǎ duàn wǒ', meaning: 'tu m\'interromps sans arrêt', meaningEn: 'you keep interrupting me', audio: 'audio/hsk5/hsk5_打断.wav' },
+      { hanzi: '他通常七点起床', pinyin: 'tā tōng cháng qī diǎn qǐ chuáng', meaning: 'd\'habitude il se lève à 7 h', meaningEn: 'he usually gets up at 7', audio: 'audio/hsk1/hsk1_起床.wav' },
+      { hanzi: '冬天通常很冷', pinyin: 'dōng tiān tōng cháng hěn lěng', meaning: 'en hiver il fait généralement froid', meaningEn: 'winter is usually cold', audio: 'audio/hsk1/hsk1_冷.wav' },
+      { hanzi: '我常常吃中餐', pinyin: 'wǒ cháng cháng chī zhōng cān', meaning: 'je mange souvent chinois', meaningEn: 'I often eat Chinese food', audio: 'audio/hsk1/hsk1_常常.wav' },
+      { hanzi: '他经常运动', pinyin: 'tā jīng cháng yùn dòng', meaning: 'il fait souvent du sport', meaningEn: 'he often exercises', audio: 'audio/hsk1/hsk1_运动.wav' }
+    ],
+    tip:
+      'Astuce : pour un compliment sur qqn de fiable, préfère 总是 ; pour râler contre un défaut, prends 老是.',
+    tipEn:
+      'Tip: for a compliment about someone reliable, use 总是; to grumble about a flaw, pick 老是.'
+  },
+  {
+    id: 'a2-frequency-tends-and-everytime',
+    title: '« En règle générale » 往往 + « chaque fois » 每次...都',
+    titleEn: '«Generally» 往往 + «every time» 每次...都',
+    body:
+      '往往 (wǎng wǎng) = « en règle générale / tend à » — signale un pattern OBSERVÉ dans une condition. Nuance de « c\'est souvent le cas dans ce contexte ».\n' +
+      '\n' +
+      'Structure : sujet + 往往 + prédicat.\n' +
+      '- Ex : 有钱人往往比较自信 (py yǒu qián rén wǎng wǎng bǐ jiào zì xìn) « les gens riches ont tendance à être plus sûrs d\'eux ».\n' +
+      '- Ex : 下雨天往往堵车 (py xià yǔ tiān wǎng wǎng dǔ chē) « les jours de pluie, il y a souvent des embouteillages ». Constat contextuel.\n' +
+      '- Ex : 老年人往往喜欢安静 (py lǎo nián rén wǎng wǎng xǐ huan ān jìng) « les personnes âgées ont tendance à préférer le calme ».\n' +
+      '\n' +
+      'Différence vs 常常/经常 : 常常/经常 = « souvent » (compte les occurrences). 往往 = « ça tend à arriver » (règle sociologique/logique liée à un contexte).\n' +
+      '- 我常常晚睡 (py wǒ cháng cháng wǎn shuì) « je me couche souvent tard » (mon habitude).\n' +
+      '- 我压力大的时候往往失眠 (py wǒ yā lì dà de shí hou wǎng wǎng shī mián) « quand je suis stressé, j\'ai tendance à faire de l\'insomnie » (règle conditionnelle).\n' +
+      '\n' +
+      '每次...都... (měi cì ... dōu ...) = « chaque fois que..., à chaque fois... ». Insiste sur l\'absence d\'exception.\n' +
+      '\n' +
+      'Structure : (sujet) + 每次 + [événement] + (sujet) + 都 + [résultat systématique].\n' +
+      '- Ex : 我每次出门都忘记拿手机 (py wǒ měi cì chū mén dōu wàng jì ná shǒu jī) « chaque fois que je sors, j\'oublie mon téléphone ». Auto-critique.\n' +
+      '- Ex : 他每次来都带礼物 (py tā měi cì lái dōu dài lǐ wù) « chaque fois qu\'il vient, il apporte un cadeau ». Constat systématique.\n' +
+      '- Ex : 每次考试之前，我都很紧张 (py měi cì kǎo shì zhī qián, wǒ dōu hěn jǐn zhāng) « avant chaque examen, je suis toujours nerveux ». Cause récurrente.\n' +
+      '\n' +
+      'Le 都 est OBLIGATOIRE dans ce pattern. Sans lui, la phrase perd son sens systématique et sonne incomplète.\n' +
+      '\n' +
+      'Variantes : 每次...都... peut aussi utiliser 每天 (chaque jour), 每年 (chaque année), 每周 (chaque semaine) : 每天都 = « tous les jours sans exception ».',
+    bodyEn:
+      '往往 (wǎng wǎng) = «as a rule / tends to» — signals a pattern OBSERVED under a condition. Nuance of «it\'s often the case in this context». Structure: subject + 往往 + predicate. Ex: 有钱人往往比较自信 «wealthy people tend to be more confident». Ex: 下雨天往往堵车 «on rainy days there\'s often heavy traffic». Contextual observation. Ex: 老年人往往喜欢安静 «older people tend to prefer quiet». Difference vs 常常/经常: 常常/经常 = «often» (counts occurrences). 往往 = «it tends to happen» (sociological/logical rule tied to context). 我常常晚睡 «I often go to bed late» (my habit). 我压力大的时候往往失眠 «when I\'m stressed, I tend to have insomnia» (conditional rule). 每次...都... (měi cì ... dōu ...) = «every time..., every single time...». Emphasizes absence of exception. Structure: (subject) + 每次 + [event] + (subject) + 都 + [systematic result]. Ex: 我每次出门都忘记拿手机 «every time I go out, I forget my phone». Self-criticism. Ex: 他每次来都带礼物 «every time he comes, he brings a gift». Systematic observation. Ex: 每次考试之前，我都很紧张 «before every exam, I\'m always nervous». Recurring cause. 都 is MANDATORY in this pattern. Without it, the sentence loses its systematic meaning and sounds incomplete. Variants: 每次...都... can also use 每天 (every day), 每年 (every year), 每周 (every week): 每天都 = «every day without exception».',
+    items: [
+      { hanzi: '往往', pinyin: 'wǎng wǎng', meaning: 'en règle générale, tend à', meaningEn: 'as a rule, tends to', audio: 'audio/hsk3/hsk3_往往.wav' },
+      { hanzi: '每次', pinyin: 'měi cì', meaning: 'chaque fois', meaningEn: 'every time', audio: 'audio/hors-hsk/hors-hsk_每次.wav' },
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, à chaque fois (marqueur)', meaningEn: 'all, every time (marker)', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '有钱人往往比较自信', pinyin: 'yǒu qián rén wǎng wǎng bǐ jiào zì xìn', meaning: 'les gens riches ont tendance à être plus sûrs d\'eux', meaningEn: 'wealthy people tend to be more confident', audio: 'audio/hsk1/hsk1_自信.wav' },
+      { hanzi: '下雨天往往堵车', pinyin: 'xià yǔ tiān wǎng wǎng dǔ chē', meaning: 'les jours de pluie, il y a souvent des embouteillages', meaningEn: 'on rainy days there\'s often traffic', audio: 'audio/hsk4/hsk4_堵车.wav' },
+      { hanzi: '老年人往往喜欢安静', pinyin: 'lǎo nián rén wǎng wǎng xǐ huan ān jìng', meaning: 'les personnes âgées ont tendance à préférer le calme', meaningEn: 'older people tend to prefer quiet', audio: 'audio/hsk1/hsk1_安静.wav' },
+      { hanzi: '我压力大的时候往往失眠', pinyin: 'wǒ yā lì dà de shí hou wǎng wǎng shī mián', meaning: 'quand je suis stressé j\'ai tendance à faire de l\'insomnie', meaningEn: 'when stressed I tend to have insomnia', audio: 'audio/hsk1/hsk1_失眠.wav' },
+      { hanzi: '我每次出门都忘记拿手机', pinyin: 'wǒ měi cì chū mén dōu wàng jì ná shǒu jī', meaning: 'chaque fois que je sors, j\'oublie mon téléphone', meaningEn: 'every time I go out I forget my phone', audio: 'audio/hsk2/hsk2_出门.wav' },
+      { hanzi: '他每次来都带礼物', pinyin: 'tā měi cì lái dōu dài lǐ wù', meaning: 'chaque fois qu\'il vient, il apporte un cadeau', meaningEn: 'every time he comes, he brings a gift', audio: 'audio/hsk1/hsk1_礼物.wav' },
+      { hanzi: '每次考试之前，我都很紧张', pinyin: 'měi cì kǎo shì zhī qián, wǒ dōu hěn jǐn zhāng', meaning: 'avant chaque examen, je suis toujours nerveux', meaningEn: 'before every exam I\'m always nervous', audio: 'audio/hsk1/hsk1_紧张.wav' }
+    ],
+    tip:
+      'Astuce : le duo 每次...都 est LE marqueur du systématisme. Utilise-le pour dépeindre une routine sans faille (ou un défaut agaçant sans exception).',
+    tipEn:
+      'Tip: the 每次...都 duo is THE marker of systematicity. Use it to depict an unfailing routine (or an annoying flaw with no exception).'
+  },
+  {
+    id: 'a2-frequency-rarely-never',
+    title: 'Fréquence basse : 有时候, 偶尔, 很少, 几乎不, 从来不, 从来没...过',
+    titleEn: 'Low frequency: 有时候, 偶尔, 很少, 几乎不, 从来不, 从来没...过',
+    body:
+      '有时候 / 有时 (yǒu shí hou / yǒu shí) = « parfois ». La forme longue 有时候 est plus orale, la courte 有时 est plus écrite ou formelle. Placement flexible : début de phrase ou avant le verbe.\n' +
+      '- Ex : 我有时候在家做饭 (py wǒ yǒu shí hou zài jiā zuò fàn) « parfois je cuisine à la maison ».\n' +
+      '- Ex : 有时候我一个人去散步 (py yǒu shí hou wǒ yí gè rén qù sàn bù) « parfois je vais me promener seul ». Placement en début.\n' +
+      '\n' +
+      '偶尔 (ǒu ěr) = « occasionnellement / de temps en temps ». Moins fréquent que 有时候. Souvent avec 也.\n' +
+      '- Ex : 我们偶尔出去吃饭 (py wǒ men ǒu ěr chū qù chī fàn) « on sort manger de temps en temps ». Sortie exceptionnelle.\n' +
+      '- Ex : 我偶尔也听古典音乐 (py wǒ ǒu ěr yě tīng gǔ diǎn yīn yuè) « il m\'arrive de temps en temps d\'écouter du classique ». Événement rare.\n' +
+      '\n' +
+      '很少 (hěn shǎo) = « rarement ». Le 很 est ici FIGÉ, ne signifie pas vraiment « très ». Ne pas dire 少 seul, garder 很少.\n' +
+      '- Ex : 我很少看电影 (py wǒ hěn shǎo kàn diàn yǐng) « je regarde rarement des films ».\n' +
+      '- Ex : 他很少生气 (py tā hěn shǎo shēng qì) « il se met rarement en colère ». Trait de caractère.\n' +
+      '\n' +
+      '几乎不 (jī hū bù) = « presque jamais » (souligne la rareté extrême, avec 0.01 % de possibilité).\n' +
+      '- Ex : 他几乎不说话 (py tā jī hū bù shuō huà) « il ne parle presque jamais ».\n' +
+      '- Ex : 我几乎不喝咖啡 (py wǒ jī hū bù hē kā fēi) « je ne bois presque jamais de café ».\n' +
+      '\n' +
+      '从来不 / 从不 (cóng lái bù / cóng bù) = « jamais » HABITUEL (règle, principe). Emphase sur l\'absence totale depuis toujours jusqu\'à maintenant.\n' +
+      '- Ex : 他从来不喝酒 (py tā cóng lái bù hē jiǔ) « il ne boit jamais d\'alcool ». Principe personnel.\n' +
+      '- Ex : 我从来不撒谎 (py wǒ cóng lái bù sā huǎng) « je ne mens jamais ». Trait constant.\n' +
+      '- 从不 = version courte, un peu plus soutenue.\n' +
+      '\n' +
+      '从来没...过 (cóng lái méi ... guò) = « jamais... [dans le passé] ». Pour dire qu\'on n\'a JAMAIS EU L\'EXPÉRIENCE de qch dans sa vie. Le 过 (guò) marque l\'expérience passée.\n' +
+      '\n' +
+      'Structure : sujet + 从来没 + verbe + 过 + (objet).\n' +
+      '- Ex : 我从来没去过中国 (py wǒ cóng lái méi qù guò zhōng guó) « je ne suis jamais allé en Chine ».\n' +
+      '- Ex : 他从来没吃过日本菜 (py tā cóng lái méi chī guò rì běn cài) « il n\'a jamais goûté la cuisine japonaise ».\n' +
+      '\n' +
+      'Distinction cruciale 从来不 vs 从来没...过 :\n' +
+      '- 从来不喝酒 = « je ne bois JAMAIS d\'alcool (principe, refus habituel) ».\n' +
+      '- 从来没喝过酒 = « je n\'ai jamais BU d\'alcool dans ma vie (pas d\'expérience) ».',
+    bodyEn:
+      '有时候 / 有时 (yǒu shí hou / yǒu shí) = «sometimes». The long form 有时候 is more oral, the short 有时 more written or formal. Flexible placement: start of sentence or before the verb. Ex: 我有时候在家做饭 «sometimes I cook at home». Ex: 有时候我一个人去散步 «sometimes I go for a walk alone». Start placement. 偶尔 (ǒu ěr) = «occasionally / now and then». Less frequent than 有时候. Often with 也. Ex: 我们偶尔出去吃饭 «we go out to eat occasionally». Exceptional outing. Ex: 我偶尔也听古典音乐 «I occasionally listen to classical music too». Rare event. 很少 (hěn shǎo) = «rarely». 很 is FROZEN here, doesn\'t really mean «very». Don\'t say 少 alone, keep 很少. Ex: 我很少看电影 «I rarely watch movies». Ex: 他很少生气 «he rarely gets angry». Character trait. 几乎不 (jī hū bù) = «almost never» (emphasizes extreme rarity, with 0.01% possibility). Ex: 他几乎不说话 «he almost never speaks». Ex: 我几乎不喝咖啡 «I almost never drink coffee». 从来不 / 从不 (cóng lái bù / cóng bù) = HABITUAL «never» (rule, principle). Emphasizes total absence from always to now. Ex: 他从来不喝酒 «he never drinks alcohol». Personal principle. Ex: 我从来不撒谎 «I never lie». Constant trait. 从不 = short version, slightly more formal. 从来没...过 (cóng lái méi ... guò) = «never... [in the past]». Says one has NEVER EXPERIENCED sth in their life. 过 (guò) marks past experience. Structure: subject + 从来没 + verb + 过 + (object). Ex: 我从来没去过中国 «I\'ve never been to China». Ex: 他从来没吃过日本菜 «he\'s never tried Japanese food». Crucial distinction 从来不 vs 从来没...过: 从来不喝酒 = «I NEVER drink alcohol (principle, habitual refusal)». 从来没喝过酒 = «I\'ve never DRUNK alcohol in my life (no experience)».',
+    items: [
+      { hanzi: '有时候', pinyin: 'yǒu shí hou', meaning: 'parfois', meaningEn: 'sometimes', audio: 'audio/hsk3/hsk3_有时候.wav' },
+      { hanzi: '偶尔', pinyin: 'ǒu ěr', meaning: 'occasionnellement', meaningEn: 'occasionally', audio: 'audio/hsk1/hsk1_偶尔.wav' },
+      { hanzi: '很少', pinyin: 'hěn shǎo', meaning: 'rarement', meaningEn: 'rarely', audio: 'audio/hsk1/hsk1_少.wav' },
+      { hanzi: '几乎不', pinyin: 'jī hū bù', meaning: 'presque jamais', meaningEn: 'almost never', audio: 'audio/hsk3/hsk3_几乎.wav' },
+      { hanzi: '从来不', pinyin: 'cóng lái bù', meaning: 'jamais (habituel)', meaningEn: 'never (habitual)', audio: 'audio/hsk3/hsk3_从来.wav' },
+      { hanzi: '从来没', pinyin: 'cóng lái méi', meaning: 'jamais (expérience passée)', meaningEn: 'never (past experience)', audio: 'audio/hsk3/hsk3_从来.wav' },
+      { hanzi: '过', pinyin: 'guò', meaning: 'marqueur d\'expérience passée', meaningEn: 'past experience marker', audio: 'audio/hsk1/hsk1_过.wav' },
+      { hanzi: '我有时候在家做饭', pinyin: 'wǒ yǒu shí hou zài jiā zuò fàn', meaning: 'parfois je cuisine à la maison', meaningEn: 'sometimes I cook at home', audio: 'audio/hsk1/hsk1_做饭.wav' },
+      { hanzi: '我们偶尔出去吃饭', pinyin: 'wǒ men ǒu ěr chū qù chī fàn', meaning: 'on sort manger de temps en temps', meaningEn: 'we go out to eat occasionally', audio: 'audio/hsk1/hsk1_出去.wav' },
+      { hanzi: '我偶尔也听古典音乐', pinyin: 'wǒ ǒu ěr yě tīng gǔ diǎn yīn yuè', meaning: 'il m\'arrive de temps en temps d\'écouter du classique', meaningEn: 'I occasionally listen to classical music', audio: 'audio/hsk6/hsk6_古典.wav' },
+      { hanzi: '我很少看电影', pinyin: 'wǒ hěn shǎo kàn diàn yǐng', meaning: 'je regarde rarement des films', meaningEn: 'I rarely watch movies', audio: 'audio/hsk1/hsk1_电影.wav' },
+      { hanzi: '他很少生气', pinyin: 'tā hěn shǎo shēng qì', meaning: 'il se met rarement en colère', meaningEn: 'he rarely gets angry', audio: 'audio/hsk1/hsk1_生气.wav' },
+      { hanzi: '他几乎不说话', pinyin: 'tā jī hū bù shuō huà', meaning: 'il ne parle presque jamais', meaningEn: 'he almost never speaks', audio: 'audio/hsk1/hsk1_说话.wav' },
+      { hanzi: '我几乎不喝咖啡', pinyin: 'wǒ jī hū bù hē kā fēi', meaning: 'je ne bois presque jamais de café', meaningEn: 'I almost never drink coffee', audio: 'audio/hsk1/hsk1_咖啡.wav' },
+      { hanzi: '他从来不喝酒', pinyin: 'tā cóng lái bù hē jiǔ', meaning: 'il ne boit jamais d\'alcool', meaningEn: 'he never drinks alcohol', audio: 'audio/hsk2/hsk2_酒.wav' },
+      { hanzi: '我从来不撒谎', pinyin: 'wǒ cóng lái bù sā huǎng', meaning: 'je ne mens jamais', meaningEn: 'I never lie', audio: 'audio/hsk7/hsk7_撒谎.wav' },
+      { hanzi: '我从来没去过中国', pinyin: 'wǒ cóng lái méi qù guò zhōng guó', meaning: 'je ne suis jamais allé en Chine', meaningEn: 'I\'ve never been to China', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '他从来没吃过日本菜', pinyin: 'tā cóng lái méi chī guò rì běn cài', meaning: 'il n\'a jamais goûté la cuisine japonaise', meaningEn: 'he\'s never tried Japanese food', audio: 'audio/hsk1/hsk1_日本.wav' }
+    ],
+    tip:
+      'Astuce : sur l\'échelle de fréquence : 有时候 (~30 %) > 偶尔 (~10 %) > 很少 (~5 %) > 几乎不 (~1 %) > 从来不 (0 %, habitude) > 从来没...过 (0 %, expérience).',
+    tipEn:
+      'Tip: on the frequency scale: 有时候 (~30%) > 偶尔 (~10%) > 很少 (~5%) > 几乎不 (~1%) > 从来不 (0%, habit) > 从来没...过 (0%, experience).'
+  }
+];
