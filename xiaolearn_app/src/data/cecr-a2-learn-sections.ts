@@ -3163,3 +3163,232 @@ export const a2GrammarModalsDirectionLearnSections: LessonV2LearnSection[] = [
       'Practice picking 来 vs 去 based on «me the speaker». Close your eyes, feel where you are, then decide.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances A2 — 你好 en vrai : au-delà du manuel (cecr-a2-nuances-m12)
+// Basé sur CGG #97 : usages réels de 你好, salutations selon le contexte,
+// salutations observationnelles + 喂 au téléphone.
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesRealGreetingsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-real-greetings-nihao',
+    title: '你好 en vrai : formel et pour attirer l\'attention',
+    titleEn: '你好 in real life: formal and for getting attention',
+    body:
+      'Les manuels enseignent 你好 (nǐ hǎo) = « bonjour », mais en vrai les natifs l\'utilisent RAREMENT entre amis. Ça crée de la distance, comme dire « bonjour monsieur » à ton meilleur pote.\n' +
+      '\n' +
+      'Contextes où 你好 EST naturel :\n' +
+      '- Rencontre avec un inconnu ou une nouvelle connaissance.\n' +
+      '- Situation formelle (interview, réunion).\n' +
+      '- Quand tu ne sais pas quoi dire d\'autre — c\'est le défaut sûr.\n' +
+      '\n' +
+      '您好 (nín hǎo) : version RESPECTUEUSE avec 您. À utiliser avec profs, chefs, aînés, clients. Ex : 李教授，您好 (lǐ jiào shòu, nín hǎo) « bonjour professeur Li ».\n' +
+      '\n' +
+      '你好吗 (nǐ hǎo ma) ? = « comment vas-tu ? » — le manuel l\'enseigne, mais les Chinois ne l\'utilisent PRESQUE JAMAIS. Sonne bizarre en conversation courante. Le seul cas OK : après 好久不见 (retrouvailles). Ex : 好久不见，你好吗 (hǎo jiǔ bú jiàn, nǐ hǎo ma) « ça fait longtemps, tu vas bien ? ».\n' +
+      '\n' +
+      'À la place, les natifs demandent : 最近怎么样 (zuì jìn zěn me yàng) « quoi de neuf récemment ? » ou 最近忙吗 (zuì jìn máng ma) « occupé ces temps-ci ? ».\n' +
+      '\n' +
+      'USAGE PRINCIPAL de 你好 : « excusez-moi ». Bien plus courant que comme salutation. Pour aborder poliment un inconnu.\n' +
+      '- Ex : 你好，请问图书馆在哪里 (nǐ hǎo, qǐng wèn tú shū guǎn zài nǎ lǐ) « excusez-moi, où est la bibliothèque ? ».\n' +
+      '- Ex : 师傅，你好，去火车站多少钱 (shī fu, nǐ hǎo, qù huǒ chē zhàn duō shao qián) « bonjour, chef, combien pour la gare ? ».\n' +
+      '- Ex : 你好，洗手间在哪里 (nǐ hǎo, xǐ shǒu jiān zài nǎ lǐ) « excusez-moi, les toilettes ? ».',
+    bodyEn:
+      'Textbooks teach 你好 (nǐ hǎo) = «hello», but natives RARELY use it between friends. It creates distance, like saying «good day sir» to your best mate. Contexts where 你好 IS natural: meeting a stranger or new acquaintance; formal setting (interview, meeting); when you don\'t know what else to say — the safe default. 您好 (nín hǎo): RESPECTFUL version with 您. Use with teachers, bosses, elders, customers. Ex: 李教授，您好 «hello professor Li». 你好吗? = «how are you?» — textbooks teach it, but Chinese people ALMOST NEVER use it. Sounds weird in normal conversation. The only OK case: after 好久不见 (reunion). Ex: 好久不见，你好吗 «it\'s been a while, how are you?». Instead, natives ask: 最近怎么样 «what\'s new lately?» or 最近忙吗 «busy these days?». MAIN USE of 你好: «excuse me». Far more common than as a greeting. To politely approach a stranger. Ex: 你好，请问图书馆在哪里 «excuse me, where is the library?». Ex: 师傅，你好，去火车站多少钱 «hello, driver, how much to the train station?». Ex: 你好，洗手间在哪里 «excuse me, where\'s the restroom?».',
+    items: [
+      { hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'bonjour (formel / excusez-moi)', meaningEn: 'hello (formal / excuse me)', audio: 'audio/hsk1/hsk1_你好.wav' },
+      { hanzi: '您好', pinyin: 'nín hǎo', meaning: 'bonjour (respectueux)', meaningEn: 'hello (respectful)', audio: 'audio/hsk1/hsk1_您好.wav' },
+      { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli, singulier)', meaningEn: 'you (polite, singular)', audio: 'audio/hsk2/hsk2_您.wav' },
+      { hanzi: '请问', pinyin: 'qǐng wèn', meaning: 'excusez-moi, puis-je demander', meaningEn: 'excuse me, may I ask', audio: 'audio/hsk2/hsk2_请问.wav' },
+      { hanzi: '最近', pinyin: 'zuì jìn', meaning: 'récemment, ces temps-ci', meaningEn: 'recently, lately', audio: 'audio/hsk3/hsk3_最近.wav' },
+      { hanzi: '怎么样', pinyin: 'zěn me yàng', meaning: 'comment ça va, qu\'en penses-tu', meaningEn: 'how is it, what do you think', audio: 'audio/hsk1/hsk1_怎么样.wav' },
+      { hanzi: '师傅', pinyin: 'shī fu', meaning: 'chef (artisan, chauffeur)', meaningEn: 'master (craftsman, driver)', audio: 'audio/hsk4/hsk4_师傅.wav' }
+    ],
+    tip:
+      'Chaque fois que tu VOULAIS dire « excusez-moi », essaie 你好 à la place. C\'est ainsi que les natifs l\'utilisent le plus.',
+    tipEn:
+      'Whenever you WANTED to say «excuse me», try 你好 instead. That\'s how natives use it most.'
+  },
+  {
+    id: 'a2-real-greetings-time-and-group',
+    title: 'Salutations selon l\'heure et pour un groupe',
+    titleEn: 'Greetings by time and for a group',
+    body:
+      '早 (zǎo) = « salut » du matin. En vrai UNE syllabe suffit, pas 早上好.\n' +
+      '- Utilisable jusque vers 10h avec presque tout le monde (amis, collègues, voisins).\n' +
+      '- Registre formel : 早上好 (zǎo shàng hǎo) pour un chef ou un inconnu ; peut être combiné avec un titre. Ex : 王校长，早上好 (wáng xiào zhǎng, zǎo shàng hǎo) « bonjour monsieur le directeur Wang ».\n' +
+      '- À Taïwan on entend souvent 早安 (zǎo ān), équivalent poli, moins fréquent en Chine continentale.\n' +
+      '\n' +
+      '下午好 (xià wǔ hǎo) / 晚上好 (wǎn shàng hǎo) : « bon après-midi » / « bonsoir ». Beaucoup moins courants qu\'en français ! Réservés aux SITUATIONS FORMELLES (conférence, discours). Pas utilisés entre amis pour dire « bonsoir ». Ex : 晚上好，各位 (wǎn shàng hǎo, gè wèi) « bonsoir à tous » (formel).\n' +
+      '\n' +
+      '大家好 (dà jiā hǎo) = « bonjour à tous ». La façon standard de saluer un groupe. Utilisé par les profs qui entrent en classe, un intervenant, quelqu\'un qui rejoint un groupe. Ex : 大家好，我是李华 (dà jiā hǎo, wǒ shì lǐ huá) « bonjour à tous, je suis Li Hua ».\n' +
+      '\n' +
+      '你们好 (nǐ men hǎo) ? Grammaticalement correct mais sonne RAIDE. On préfère toujours 大家好, plus inclusif et naturel.\n' +
+      '\n' +
+      '吃了吗 (chī le ma) « t\'as mangé ? » : salutation TRADITIONNELLE, encore utilisée par les personnes âgées ou en zone rurale. Historique liée à l\'importance de la nourriture. N\'est PAS une invitation à manger : réponse standard = 吃了，你呢 (chī le, nǐ ne) ? (« oui, et toi ? »). Rare chez les jeunes urbains aujourd\'hui.',
+    bodyEn:
+      '早 (zǎo) = morning «hi». Actually ONE syllable is enough, not 早上好. Usable until around 10 a.m. with almost anyone (friends, coworkers, neighbors). Formal register: 早上好 (zǎo shàng hǎo) for a boss or stranger; can be combined with a title. Ex: 王校长，早上好 «good morning principal Wang». In Taiwan you often hear 早安 (zǎo ān), a polite equivalent, less frequent on the mainland. 下午好 / 晚上好: «good afternoon» / «good evening». Way less common than in English! Reserved for FORMAL SETTINGS (conference, speech). NOT used between friends to say «good evening». Ex: 晚上好，各位 «good evening everyone» (formal). 大家好 (dà jiā hǎo) = «hi everyone». The standard way to greet a group. Used by teachers entering class, a speaker, someone joining a group. Ex: 大家好，我是李华 «hi everyone, I\'m Li Hua». 你们好? Grammatically correct but sounds STIFF. Always prefer 大家好, more inclusive and natural. 吃了吗 «have you eaten?»: TRADITIONAL greeting, still used by elders or in rural areas. Historically linked to the importance of food. NOT an invitation to eat: standard reply = 吃了，你呢? («yes, and you?»). Rare among urban youth today.',
+    items: [
+      { hanzi: '早', pinyin: 'zǎo', meaning: 'salut (matin)', meaningEn: 'morning (hi)', audio: 'audio/hsk1/hsk1_早.wav' },
+      { hanzi: '早上好', pinyin: 'zǎo shàng hǎo', meaning: 'bonjour (matin, formel)', meaningEn: 'good morning (formal)', audio: 'audio/hsk1/hsk1_早上好.wav' },
+      { hanzi: '晚上好', pinyin: 'wǎn shàng hǎo', meaning: 'bonsoir (formel)', meaningEn: 'good evening (formal)', audio: 'audio/hsk1/hsk1_晚上好.wav' },
+      { hanzi: '大家好', pinyin: 'dà jiā hǎo', meaning: 'bonjour à tous', meaningEn: 'hi everyone', audio: 'audio/hsk1/hsk1_大家好.wav' },
+      { hanzi: '大家', pinyin: 'dà jiā', meaning: 'tout le monde', meaningEn: 'everyone', audio: 'audio/hsk2/hsk2_大家.wav' },
+      { hanzi: '各位', pinyin: 'gè wèi', meaning: 'mesdames et messieurs (formel)', meaningEn: 'everyone (formal)', audio: 'audio/hsk5/hsk5_各位.wav' },
+      { hanzi: '吃了吗', pinyin: 'chī le ma', meaning: 't\'as mangé ? (salutation trad.)', meaningEn: 'have you eaten? (trad. greeting)', audio: 'audio/hsk1/hsk1_吃.wav' }
+    ],
+    tip:
+      'La vraie « salutation » d\'un ami au matin dans un bureau chinois, c\'est un simple 早 lancé en passant. Pense-y comme un « salut » ultra-court.',
+    tipEn:
+      'The real morning «greeting» to a friend in a Chinese office is a simple 早 tossed in passing. Think of it as an ultra-short «hi».'
+  },
+  {
+    id: 'a2-real-greetings-name-observation-phone',
+    title: 'Appeler par le nom, salutations d\'observation, 喂 au téléphone',
+    titleEn: 'Calling by name, observation greetings, 喂 on the phone',
+    body:
+      'Appeler par le NOM ou le TITRE seul : une des façons LES PLUS NATURELLES de saluer.\n' +
+      '- Ex : 小王 (xiǎo wáng) ! « Xiao Wang ! ». 张老师 (zhāng lǎo shī) « prof Zhang ». 老板 (lǎo bǎn) « chef ! ». 师傅 (shī fu) « chef ! » (chauffeur, artisan). 经理 (jīng lǐ) « manager ! ».\n' +
+      '- Le NOM SEUL est la salutation. Pas besoin de 你好. La réponse est un simple 诶 (éi, « ouais ! ») ou un signe de tête.\n' +
+      '- Contexte collectif formel : élèves qui saluent en cœur « 老师好 » (lǎo shī hǎo) (« bonjour prof »).\n' +
+      '\n' +
+      'Salutations d\'OBSERVATION : très typiques du chinois. On énonce ce qui se passe visible.\n' +
+      '- Ex : ton voisin te voit partir → 上班去了 (shàng bān qù le) « tu pars bosser ! ». Rentrée du travail → 回来了 (huí lái le) « t\'es revenu ! ». Fin de journée → 下班了 (xià bān le) « tu finis ! ». Il pleut → 下雨了 (xià yǔ le) « il pleut ! ».\n' +
+      '- Ce ne sont PAS des questions. Réponds juste par un 嗯 (en, « mm-hm »), un sourire ou un hochement de tête. C\'est un « je te vois, bonjour » sans dire bonjour.\n' +
+      '- Le 了 marque le changement d\'état, dit sur un ton chaleureux.\n' +
+      '\n' +
+      '喂 (wéi) : la salutation AU TÉLÉPHONE. Ton MONTANT (« wéi ? » comme une question). NE DIS PAS 你好 pour décrocher : les Chinois trouveraient bizarre.\n' +
+      '- Ex : 喂，你好，请问哪位 (wéi, nǐ hǎo, qǐng wèn nǎ wèi) « allô, bonjour, qui est-ce ? ». On peut combiner 喂 + 你好 pour un appel pro.\n' +
+      '- Attention au TON : 喂 avec ton MONTANT = allô téléphone. 喂 avec ton DESCENDANT (wèi !) = « eh toi ! » pour interpeller quelqu\'un physiquement. Ce dernier peut sonner IMPOLI ou impatient — à éviter au tél.',
+    bodyEn:
+      'Calling by NAME or TITLE alone: one of the MOST NATURAL ways to greet. Ex: 小王! «Xiao Wang!». 张老师 «Prof Zhang». 老板 «boss!». 师傅 «chief!» (driver, craftsman). 经理 «manager!». The NAME ALONE is the greeting. No 你好 needed. The reply is a simple 诶 (éi, «yeah!») or a nod. Formal group setting: students greeting in unison «老师好» («hello teacher»). OBSERVATION greetings: very typical Chinese. You state what\'s visibly happening. Ex: your neighbor sees you leaving → 上班去了 «off to work!». Coming back from work → 回来了 «you\'re back!». End of day → 下班了 «done for the day!». It\'s raining → 下雨了 «it\'s raining!». These are NOT questions. Just reply with 嗯 (en, «mm-hm»), a smile or nod. It\'s an «I see you, hello» without saying hello. The 了 marks the change of state, said in a warm tone. 喂 (wéi): PHONE greeting. RISING tone («wéi?» like a question). DON\'T say 你好 to pick up: Chinese people would find it weird. Ex: 喂，你好，请问哪位 «hello, hi, who is it?». You can combine 喂 + 你好 for a pro call. Watch the TONE: 喂 with RISING tone = phone «hello». 喂 with FALLING tone (wèi!) = «hey you!» to physically call someone. The latter can sound RUDE or impatient — avoid it on the phone.',
+    items: [
+      { hanzi: '老师', pinyin: 'lǎo shī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' },
+      { hanzi: '老板', pinyin: 'lǎo bǎn', meaning: 'chef, patron', meaningEn: 'boss', audio: 'audio/hsk4/hsk4_老板.wav' },
+      { hanzi: '经理', pinyin: 'jīng lǐ', meaning: 'manager', meaningEn: 'manager', audio: 'audio/hsk3/hsk3_经理.wav' },
+      { hanzi: '上班', pinyin: 'shàng bān', meaning: 'aller au travail', meaningEn: 'go to work', audio: 'audio/hsk2/hsk2_上班.wav' },
+      { hanzi: '下班', pinyin: 'xià bān', meaning: 'finir le travail', meaningEn: 'finish work', audio: 'audio/hsk2/hsk2_下班.wav' },
+      { hanzi: '回来了', pinyin: 'huí lái le', meaning: 't\'es revenu !', meaningEn: 'you\'re back!', audio: 'audio/hsk1/hsk1_回来.wav' },
+      { hanzi: '喂', pinyin: 'wéi', meaning: 'allô (téléphone)', meaningEn: 'hello (phone)', audio: 'audio/hsk1/hsk1_喂.wav' },
+      { hanzi: '哪位', pinyin: 'nǎ wèi', meaning: 'qui est-ce (poli)', meaningEn: 'who is it (polite)', audio: 'audio/hsk3/hsk3_位.wav' }
+    ],
+    tip:
+      'Quand un livreur ou un serveur te salue avec 你好, c\'est aussi souvent « votre attention svp » plutôt qu\'un « bonjour » social. Réponds normalement.',
+    tipEn:
+      'When a delivery person or waiter greets you with 你好, it\'s often «excuse me, your attention please» rather than a social «hello». Just reply normally.'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances A2 — Premières rencontres, formalités et retrouvailles
+// (cecr-a2-nuances-m13) — basé sur CGG #98.
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesFirstMeetingLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-first-meeting-standard',
+    title: 'Rencontrer quelqu\'un pour la 1re fois : phrases courantes',
+    titleEn: 'Meeting someone for the 1st time: common phrases',
+    body:
+      '很高兴认识你 (hěn gāo xìng rèn shi nǐ) = « ravi de te rencontrer ». LE défaut par excellence, marche partout, formel comme décontracté. Le sujet 我 est souvent omis.\n' +
+      '- Ex : 你好，很高兴认识你 (nǐ hǎo, hěn gāo xìng rèn shi nǐ) « bonjour, ravi de te rencontrer » (en serrant la main).\n' +
+      '- Réponse : 我也很高兴认识你 (wǒ yě hěn gāo xìng rèn shi nǐ) « moi aussi, ravi » ou plus court 我也是 (wǒ yě shì) « moi aussi ».\n' +
+      '\n' +
+      '很高兴见到你 (hěn gāo xìng jiàn dào nǐ) = « ravi de te voir ». Utilise 见到 (voir) à la place de 认识 (connaître).\n' +
+      '\n' +
+      'Différence subtile :\n' +
+      '- 认识 (rèn shi) = « connaître, faire connaissance » → SPÉCIFIQUE à une 1re rencontre.\n' +
+      '- 见到 (jiàn dào) = « voir » (physiquement) → OK pour une 1re rencontre OU pour revoir quelqu\'un qu\'on connaît.\n' +
+      '- Ex : 很高兴见到你 « content de te voir » (avec quelqu\'un qu\'on ne connaissait que par messages jusque-là).\n' +
+      '\n' +
+      '认识你真好 (rèn shi nǐ zhēn hǎo) = « c\'est vraiment top de te connaître ». Plus personnel, plus chaleureux. À utiliser APRÈS avoir un peu discuté, quand on se sent vraiment content de la rencontre. Réponse : 认识你也真好 (rèn shi nǐ yě zhēn hǎo).\n' +
+      '\n' +
+      'Pour un groupe (formel, discours) : 今天认识各位朋友很高兴 (jīn tiān rèn shi gè wèi péng you hěn gāo xìng) « je suis très heureux de vous rencontrer aujourd\'hui ». 各位朋友 (gè wèi péng you) = « chers amis, mesdames et messieurs ». Réservé aux conférences, discours d\'ouverture. À ne pas utiliser pour retrouver 3 potes au café !',
+    bodyEn:
+      '很高兴认识你 (hěn gāo xìng rèn shi nǐ) = «nice to meet you». THE go-to default, works everywhere, formal or casual. The subject 我 is often omitted. Ex: 你好，很高兴认识你 «hello, nice to meet you» (shaking hands). Reply: 我也很高兴认识你 «me too, nice to meet you» or shorter 我也是 «me too». 很高兴见到你 (hěn gāo xìng jiàn dào nǐ) = «nice to see you». Uses 见到 (to see) instead of 认识 (to get to know). Subtle difference: 认识 = «know, get acquainted» → SPECIFIC to a 1st meeting. 见到 = «see» (physically) → OK for a 1st meeting OR seeing someone you already know. Ex: 很高兴见到你 «good to see you» (with someone you\'ve only known through messages until then). 认识你真好 (rèn shi nǐ zhēn hǎo) = «it\'s really great getting to know you». More personal, warmer. Use it AFTER chatting a bit, when you genuinely feel happy about the encounter. Reply: 认识你也真好. For a group (formal, speech): 今天认识各位朋友很高兴 «I\'m very glad to meet everyone today». 各位朋友 = «dear friends, ladies and gentlemen». Reserved for conferences, opening speeches. Don\'t use it to meet up with 3 buddies at a café!',
+    items: [
+      { hanzi: '很高兴认识你', pinyin: 'hěn gāo xìng rèn shi nǐ', meaning: 'ravi de te rencontrer', meaningEn: 'nice to meet you', audio: 'audio/hsk1/hsk1_很高兴认识你.wav' },
+      { hanzi: '认识', pinyin: 'rèn shi', meaning: 'connaître, faire connaissance', meaningEn: 'to know, get acquainted', audio: 'audio/hsk1/hsk1_认识.wav' },
+      { hanzi: '见到', pinyin: 'jiàn dào', meaning: 'voir (rencontrer)', meaningEn: 'to see (meet)', audio: 'audio/hsk1/hsk1_见.wav' },
+      { hanzi: '高兴', pinyin: 'gāo xìng', meaning: 'content, ravi', meaningEn: 'happy, glad', audio: 'audio/hsk1/hsk1_高兴.wav' },
+      { hanzi: '我也是', pinyin: 'wǒ yě shì', meaning: 'moi aussi', meaningEn: 'me too', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '朋友', pinyin: 'péng you', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' }
+    ],
+    tip:
+      'Dans 90 % des situations, 很高兴认识你 marche parfaitement. Garde les autres tournures pour les situations plus spécifiques.',
+    tipEn:
+      'In 90 % of situations, 很高兴认识你 works perfectly. Save the other phrasings for more specific situations.'
+  },
+  {
+    id: 'a2-first-meeting-formal',
+    title: 'Formel et respectueux : 幸会 et 很荣幸认识您',
+    titleEn: 'Formal and respectful: 幸会 and 很荣幸认识您',
+    body:
+      '幸会 (xìng huì) = « enchanté » formel. Littéralement « rencontre chanceuse ». Réservé aux contextes PRO ou RESPECTUEUX (réunions d\'affaires, rencontre avec un prof).\n' +
+      '- Souvent DOUBLÉ : 幸会幸会 (xìng huì xìng huì) en serrant la main. Le doublement amplifie la politesse, sans changer le sens.\n' +
+      '- Registre un peu VIEILLI, rare entre jeunes. Équivalent français : « ravi de faire votre connaissance ».\n' +
+      '- Si on te dit 幸会, réponds par 幸会 en écho, ou par 我也很荣幸 (wǒ yě hěn róng xìng) « je suis honoré aussi ».\n' +
+      '\n' +
+      '很荣幸认识您 (hěn róng xìng rèn shi nín) = « je suis très HONORÉ de vous rencontrer ». Le maximum de respect. Utilisé pour un VIP, quelqu\'un qu\'on admire profondément.\n' +
+      '- Éléments clés : 荣幸 (róng xìng, « honoré ») + 您 (nín, vous poli).\n' +
+      '- Variante : 见到您很荣幸 (jiàn dào nín hěn róng xìng) « honoré de vous voir ».\n' +
+      '- Encore plus formel : 认识您是我的荣幸 (rèn shi nín shì wǒ de róng xìng) « vous rencontrer est un honneur pour moi ».\n' +
+      '- Situations : prof réputé, haut responsable, personnalité publique.\n' +
+      '\n' +
+      'Nuances de choix :\n' +
+      '- 认识您很荣幸 sous-entend que tu SAVAIS qui il/elle était avant.\n' +
+      '- 见到您很荣幸 = politesse générale quand tu rencontres quelqu\'un d\'important.\n' +
+      '- En pratique les 2 marchent au moment où tu serres la main.',
+    bodyEn:
+      '幸会 (xìng huì) = formal «pleased to meet you». Literally «lucky meeting». Reserved for PRO or RESPECTFUL settings (business meetings, meeting a professor). Often DOUBLED: 幸会幸会 while shaking hands. The doubling amplifies politeness without changing meaning. Slightly OLD-FASHIONED register, rare among young people. English equivalent: «delighted to make your acquaintance». If someone says 幸会 to you, echo back with 幸会, or with 我也很荣幸 «I\'m honored too». 很荣幸认识您 (hěn róng xìng rèn shi nín) = «I\'m truly HONORED to meet you». Maximum respect. Used for a VIP, someone you deeply admire. Key elements: 荣幸 («honored») + 您 (polite you). Variant: 见到您很荣幸 «honored to see you». Even more formal: 认识您是我的荣幸 «meeting you is an honor for me». Situations: renowned professor, high official, public figure. Nuance of choice: 认识您很荣幸 implies you KNEW who they were beforehand. 见到您很荣幸 = general politeness when meeting someone important. In practice both work at the moment of the handshake.',
+    items: [
+      { hanzi: '幸会', pinyin: 'xìng huì', meaning: 'enchanté (formel)', meaningEn: 'pleased to meet you (formal)', audio: 'audio/hsk5/hsk5_幸会.wav' },
+      { hanzi: '荣幸', pinyin: 'róng xìng', meaning: 'honoré', meaningEn: 'honored', audio: 'audio/hsk5/hsk5_荣幸.wav' },
+      { hanzi: '很荣幸', pinyin: 'hěn róng xìng', meaning: 'très honoré', meaningEn: 'very honored', audio: 'audio/hsk5/hsk5_荣幸.wav' },
+      { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli, singulier)', meaningEn: 'you (polite)', audio: 'audio/hsk2/hsk2_您.wav' },
+      { hanzi: '认识您', pinyin: 'rèn shi nín', meaning: 'vous rencontrer', meaningEn: 'to meet you (polite)', audio: 'audio/hsk1/hsk1_认识.wav' }
+    ],
+    tip:
+      'Si tu hésites en contexte pro, 很荣幸认识您 avec 您 est le choix le plus sûr. Le 您 seul signale déjà que tu élèves le niveau.',
+    tipEn:
+      'When in doubt in a pro setting, 很荣幸认识您 with 您 is the safest pick. Just using 您 already signals you\'re raising the register.'
+  },
+  {
+    id: 'a2-first-meeting-famous-reunion',
+    title: 'Célébrités, connexions instantanées et retrouvailles',
+    titleEn: 'Celebrities, instant connections and reunions',
+    body:
+      '久仰大名 (jiǔ yǎng dà míng) = « votre réputation vous précède ». Littéralement « depuis longtemps j\'admire votre grand nom ». RÉSERVÉ à quelqu\'un de VRAIMENT connu ou distingué.\n' +
+      '- Composants : 久仰 (jiǔ yǎng, « depuis longtemps j\'admire ») + 大名 (dà míng, « grand nom », honorifique).\n' +
+      '- Ex : à un auteur célèbre → 莫言老师，久仰大名！您的小说深深打动了我 (mò yán lǎo shī, jiǔ yǎng dà míng ! nín de xiǎo shuō shēn shēn dǎ dòng le wǒ) « professeur Mo Yan, votre nom m\'est familier depuis longtemps ! Vos romans m\'ont profondément touché ».\n' +
+      '- Version doublée : 久仰久仰 (jiǔ yǎng jiǔ yǎng) en serrant la main.\n' +
+      '- Variante quasi-identique : 久闻大名 (jiǔ wén dà míng) « depuis longtemps j\'entends votre nom ».\n' +
+      '- À ne PAS utiliser avec un inconnu random — seulement si la personne est vraiment reconnue.\n' +
+      '\n' +
+      '相见恨晚 (xiāng jiàn hèn wǎn) = « regret de s\'être rencontrés si tard ». Un chengyu (idiome 4 caractères).\n' +
+      '- Sens : « on s\'entend tellement bien, pourquoi ne s\'est-on pas rencontrés plus tôt ! ». Sentiment POSITIF malgré le 恨 (regret).\n' +
+      '- N\'est PAS une salutation initiale. À utiliser APRÈS avoir discuté un moment, quand tu réalises que ton nouvel interlocuteur t\'inspire vraiment.\n' +
+      '- Ex : 真是相见恨晚 (zhēn shi xiāng jiàn hèn wǎn) ! « quel dommage qu\'on ne se soit pas rencontrés plus tôt ! ».\n' +
+      '- Ex : 我跟他有种相见恨晚的感觉 (wǒ gēn tā yǒu zhǒng xiāng jiàn hèn wǎn de gǎn jué) « avec lui, j\'ai l\'impression qu\'on aurait dû se rencontrer plus tôt ».\n' +
+      '\n' +
+      '好久不见 (hǎo jiǔ bú jiàn) = « ça fait longtemps ! ». RETROUVAILLES avec quelqu\'un qu\'on connaît déjà. Ne PAS utiliser en 1re rencontre.\n' +
+      '- Ex : 老李，好久不见 ! 你也在这里吃饭吗 (lǎo lǐ, hǎo jiǔ bú jiàn ! nǐ yě zài zhè lǐ chī fàn ma) ? « Lao Li, ça fait longtemps ! tu manges aussi ici ? ».\n' +
+      '- Renforcement : 好久不见了 (hǎo jiǔ bú jiàn le) avec 了 en fin, marque encore plus le temps écoulé.\n' +
+      '- Formel/littéraire : 久违了 (jiǔ wéi le) ou l\'ancien 别来无恙 (bié lái wú yàng) « j\'espère que tu vas bien depuis notre séparation ». Rare aujourd\'hui.\n' +
+      '- Souvent suivi d\'un 最近好吗 (zuì jìn hǎo ma) ? (« comment ça va récemment ? ») ou 最近怎么样 (zuì jìn zěn me yàng) ?',
+    bodyEn:
+      '久仰大名 (jiǔ yǎng dà míng) = «your reputation precedes you». Literally «for a long time I\'ve admired your great name». RESERVED for someone TRULY renowned or distinguished. Components: 久仰 («I\'ve long admired») + 大名 («great name», honorific). Ex: to a famous author → 莫言老师，久仰大名！您的小说深深打动了我 «Professor Mo Yan, I\'ve long known your name! Your novels moved me deeply». Doubled version: 久仰久仰 while shaking hands. Near-identical variant: 久闻大名 «I\'ve long heard your name». Do NOT use with a random stranger — only if the person is genuinely recognized. 相见恨晚 (xiāng jiàn hèn wǎn) = «regret meeting so late». A chengyu (4-character idiom). Sense: «we get along so well, why didn\'t we meet earlier!». POSITIVE feeling despite the 恨 (regret). NOT an initial greeting. Use it AFTER chatting a while, when you realize your new acquaintance really clicks with you. Ex: 真是相见恨晚! «what a shame we didn\'t meet earlier!». Ex: 我跟他有种相见恨晚的感觉 «with him, I feel we should have met earlier». 好久不见 (hǎo jiǔ bú jiàn) = «long time no see!». REUNIONS with someone you already know. Do NOT use for a 1st meeting. Ex: 老李，好久不见 ! 你也在这里吃饭吗? «Lao Li, long time no see! you\'re eating here too?». Reinforcement: 好久不见了 with final 了 emphasizes even more time elapsed. Formal/literary: 久违了 (jiǔ wéi le) or the old 别来无恙 (bié lái wú yàng) «I hope you\'ve been well since we parted». Rare today. Often followed by 最近好吗? («how have you been recently?») or 最近怎么样?',
+    items: [
+      { hanzi: '久仰大名', pinyin: 'jiǔ yǎng dà míng', meaning: 'votre réputation vous précède', meaningEn: 'your reputation precedes you', audio: 'audio/hsk6/hsk6_久仰.wav' },
+      { hanzi: '相见恨晚', pinyin: 'xiāng jiàn hèn wǎn', meaning: 'regret de s\'être rencontrés si tard', meaningEn: 'regret meeting so late', audio: 'audio/hsk6/hsk6_相见恨晚.wav' },
+      { hanzi: '好久不见', pinyin: 'hǎo jiǔ bú jiàn', meaning: 'ça fait longtemps', meaningEn: 'long time no see', audio: 'audio/hsk1/hsk1_好久不见.wav' },
+      { hanzi: '久违了', pinyin: 'jiǔ wéi le', meaning: 'ça fait longtemps (formel)', meaningEn: 'long time no see (formal)', audio: 'audio/hsk6/hsk6_久违.wav' },
+      { hanzi: '最近好吗', pinyin: 'zuì jìn hǎo ma', meaning: 'comment ça va récemment', meaningEn: 'how have you been recently', audio: 'audio/hsk3/hsk3_最近.wav' },
+      { hanzi: '小说', pinyin: 'xiǎo shuō', meaning: 'roman', meaningEn: 'novel', audio: 'audio/hsk4/hsk4_小说.wav' }
+    ],
+    tip:
+      'Distinction cruciale — 你好 pour aborder, 很高兴认识你 pour 1re rencontre, 好久不见 pour retrouver quelqu\'un. Confondre les 3 sonne bizarre aux Chinois.',
+    tipEn:
+      'Crucial distinction — 你好 to approach, 很高兴认识你 for a 1st meeting, 好久不见 to reunite. Mixing the 3 up sounds strange to Chinese ears.'
+  }
+];

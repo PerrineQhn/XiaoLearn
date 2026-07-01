@@ -124,6 +124,8 @@ import {
   a2NuancesZenmeBasicsLearnSections,
   a2NuancesCommonMistakesLearnSections,
   a2NuancesAlmostBasicsLearnSections,
+  a2NuancesRealGreetingsLearnSections,
+  a2NuancesFirstMeetingLearnSections,
   a2GrammarMeasureWordsLearnSections,
   a2GrammarModalsDirectionLearnSections,
 } from './cecr-a2-learn-sections';
@@ -3353,6 +3355,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["差不多", "快要", "就要", "即将", "了"],
         quizQuestions: 8,
         learnSections: a2NuancesAlmostBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m12",
+        title: "你好 en vrai — au-delà du manuel",
+        titleEn: "Real 你好 — beyond the textbook",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 1, hskLevels: [1, 2], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "greeting", "cecr:a2"],
+        introduction: {
+          title: "你好 comme les natifs l'utilisent vraiment",
+          titleEn: "你好 the way natives actually use it",
+          content: "Les manuels enseignent 你好 = « bonjour », mais les natifs l'utilisent SURTOUT pour dire « excusez-moi » à un inconnu. Entre amis, on préfère un simple 早 le matin, le prénom lancé, ou une salutation d'OBSERVATION comme 回来了 (« t'es revenu ! »). 你好吗 ? est un mythe scolaire — préfère 最近怎么样. Au téléphone : 喂 (ton MONTANT), jamais 你好 pour décrocher. 您好 marque le respect avec les profs, chefs et clients. 大家好 salue un groupe (jamais 你们好, trop raide).",
+          contentEn: "Textbooks teach 你好 = «hello», but natives MAINLY use it to say «excuse me» to a stranger. Between friends, prefer a simple 早 in the morning, calling by first name, or an OBSERVATION greeting like 回来了 («you\'re back!»). 你好吗? is a school myth — prefer 最近怎么样. On the phone: 喂 (RISING tone), never 你好 to pick up. 您好 marks respect with teachers, bosses and customers. 大家好 greets a group (never 你们好, too stiff).",
+          objectives: [
+            "Réserver 你好 aux inconnus / situations formelles / « excusez-moi »",
+            "Utiliser 早 / 大家好 / le nom seul entre amis et collègues",
+            "Décoder les salutations d'observation (回来了, 下班了)",
+            "Décrocher au téléphone avec 喂 sur ton montant"
+          ],
+          objectivesEn: [
+            "Reserve 你好 for strangers / formal settings / «excuse me»",
+            "Use 早 / 大家好 / just the name among friends and coworkers",
+            "Decode observation greetings (回来了, 下班了)",
+            "Answer the phone with 喂 on a rising tone"
+          ]
+        },
+        flashcards: ["你好", "您好", "早", "大家好", "喂", "上班去了", "回来了", "师傅"],
+        quizQuestions: 8,
+        learnSections: a2NuancesRealGreetingsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m13",
+        title: "Premières rencontres, formalités et retrouvailles",
+        titleEn: "First meetings, formalities and reunions",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "greeting", "cecr:a2"],
+        introduction: {
+          title: "Trois moments, trois familles de phrases",
+          titleEn: "Three moments, three families of phrases",
+          content: "1re rencontre : 很高兴认识你 (défaut passe-partout) ou 很高兴见到你 (aussi OK si on se connaissait par écrit). Contexte pro / respectueux : 幸会 (souvent doublé 幸会幸会) et 很荣幸认识您 avec 您 pour un VIP. Personne célèbre : 久仰大名 (« votre réputation vous précède ») — uniquement si vraiment reconnue. Après discussion, si ça matche : 相见恨晚 (« dommage qu'on ne se soit pas rencontrés plus tôt »). Retrouvailles : 好久不见 + 最近怎么样. Confondre 你好 / 很高兴认识你 / 好久不见 sonne bizarre.",
+          contentEn: "First meeting: 很高兴认识你 (all-purpose default) or 很高兴见到你 (also OK if you knew each other in writing). Pro / respectful context: 幸会 (often doubled 幸会幸会) and 很荣幸认识您 with 您 for a VIP. Famous person: 久仰大名 («your reputation precedes you») — only if truly renowned. After chatting, if you click: 相见恨晚 («shame we didn\'t meet earlier»). Reunion: 好久不见 + 最近怎么样. Mixing up 你好 / 很高兴认识你 / 好久不见 sounds off.",
+          objectives: [
+            "Choisir 很高兴认识你 comme défaut passe-partout",
+            "Monter le registre avec 幸会 et 很荣幸认识您 + 您",
+            "Utiliser 久仰大名 uniquement pour une célébrité",
+            "Distinguer 1re rencontre (很高兴认识你) vs retrouvailles (好久不见)"
+          ],
+          objectivesEn: [
+            "Pick 很高兴认识你 as the all-purpose default",
+            "Raise the register with 幸会 and 很荣幸认识您 + 您",
+            "Use 久仰大名 only for a celebrity",
+            "Distinguish 1st meeting (很高兴认识你) vs reunion (好久不见)"
+          ]
+        },
+        flashcards: ["很高兴认识你", "很高兴见到你", "幸会", "很荣幸", "久仰大名", "相见恨晚", "好久不见"],
+        quizQuestions: 10,
+        learnSections: a2NuancesFirstMeetingLearnSections
       }
     ]
   },
