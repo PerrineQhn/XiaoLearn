@@ -6,6 +6,9 @@ import { grammarLessonsHsk1Bases } from './grammar-lessons-hsk1-bases';
 import { grammarLessonsHsk2Modaux } from './grammar-lessons-hsk2-modaux';
 import { grammarLessonsHsk2Prepositions } from './grammar-lessons-hsk2-prepositions';
 import { grammarLessonsHsk3Complements } from './grammar-lessons-hsk3-complements';
+import { grammarLessonsHsk34Essentials } from './grammar-lessons-hsk3-4-essentials';
+import { grammarLessonsHsk45Modality } from './grammar-lessons-hsk4-5-modality';
+import { grammarLessonsHsk56Advanced } from './grammar-lessons-hsk5-6-advanced';
 
 /**
  * Leçons de grammaire avec quiz adaptés
@@ -651,7 +654,13 @@ export const grammarLessons: LessonItem[] = [
   // HSK2 prépositions + imminence + indéfinis (从/离/到, 对/给/跟/和, 快...了, 什么都)
   ...grammarLessonsHsk2Prepositions,
   // HSK3 compléments verbaux + conditionnels (direction simple/composé, degré, possibilité, 如果...就, 只有...才)
-  ...grammarLessonsHsk3Complements
+  ...grammarLessonsHsk3Complements,
+  // HSK3-4 essentiels (虽然...但是, 的/得/地, 越来越, directionnels figuratifs)
+  ...grammarLessonsHsk34Essentials,
+  // HSK4-5 modalité + causatifs (使/令, 一...都/也...不, 大概/也许/可能/恐怕, 不见得/未必/说不定)
+  ...grammarLessonsHsk45Modality,
+  // HSK5-6 avancé (rhétorique + connecteurs soutenus : 与其...不如, 宁可, 难道...吗, 何况, 反正/索性, 而/从而/因而/于是)
+  ...grammarLessonsHsk56Advanced
 ];
 
 // Fonction helper pour récupérer une leçon de grammaire par ID
