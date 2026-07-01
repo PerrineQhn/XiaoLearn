@@ -181,6 +181,7 @@ import {
   b11NuancesKaiComplementLearnSections,
   b11GrammarConditionalLearnSections,
   b11GrammarReduplicationProgressiveLearnSections,
+  b11GrammarSeparableVerbsLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -3989,6 +3990,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["看看", "试试", "一下", "慢慢", "高高兴兴", "一...就", "越来越", "一边"],
         quizQuestions: 10,
         learnSections: b11GrammarReduplicationProgressiveLearnSections
+      },
+      {
+        id: "cecr-b11-grammar-separable-m1",
+        title: "Verbes séparables : le sandwich chinois",
+        titleEn: "Separable verbs: the Chinese sandwich",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["separable-verbs", "grammar", "cecr:b11"],
+        introduction: {
+          title: "Verbes séparables : ouvrir le sandwich",
+          titleEn: "Separable verbs: opening the sandwich",
+          content: "Certains verbes chinois (帮忙, 睡觉, 见面, 结婚, 开会, 打开, 看见...) ONT L'AIR d'un mot mais peuvent SE SÉPARER pour laisser passer 了/过/着, une durée, une fréquence, un possessif ou 一下. C'est LE piège classique des apprenants : 我帮忙了他 ✗ → 我帮了他的忙 ✓. Deux familles : Verbe-Objet (帮 + 忙, 睡 + 觉, 见 + 面) et Verbe-Complément (打 + 开, 看 + 见). Attention : les vrais composés comme 学习, 工作 NE se séparent JAMAIS. Objectif : maîtriser le sandwich (particule/durée au milieu), la stratégie 跟+personne pour ajouter un objet, et la réduplication (聊聊天 ✓, pas 聊天聊天 ✗).",
+          contentEn: "Some Chinese verbs (帮忙, 睡觉, 见面, 结婚, 开会, 打开, 看见...) LOOK like one word but can SPLIT to let 了/过/着, a duration, frequency, possessive or 一下 slide in. This is THE classic learner trap: 我帮忙了他 ✗ → 我帮了他的忙 ✓. Two families: Verb-Object (帮 + 忙, 睡 + 觉, 见 + 面) and Verb-Complement (打 + 开, 看 + 见). Careful: true compounds like 学习, 工作 NEVER split. Goal: master the sandwich (particle/duration in the middle), the 跟+person strategy to add an object, and reduplication (聊聊天 ✓, not 聊天聊天 ✗).",
+          objectives: [
+            "Distinguer verbes séparables vs composés vrais",
+            "Glisser 了/过/着 et compléments entre verbe et objet",
+            "Insérer durée, fréquence, 一下, possessif au milieu",
+            "Ajouter un objet (跟+personne) et redoubler correctement"
+          ],
+          objectivesEn: [
+            "Tell separable verbs from true compounds",
+            "Slide 了/过/着 and complements between verb and object",
+            "Insert duration, frequency, 一下, possessive in the middle",
+            "Add an object (跟+person) and reduplicate correctly"
+          ]
+        },
+        flashcards: ["帮忙", "睡觉", "见面", "聊天", "结婚", "开会", "打开", "看见"],
+        quizQuestions: 10,
+        learnSections: b11GrammarSeparableVerbsLearnSections
       }
     ]
   },

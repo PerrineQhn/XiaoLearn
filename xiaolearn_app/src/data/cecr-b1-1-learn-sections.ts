@@ -2642,3 +2642,173 @@ export const b11GrammarReduplicationProgressiveLearnSections: LessonV2LearnSecti
       'These 3 patterns are fluency TOKENS very useful in speech. Once mastered, your sentences sound livelier and more native.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Grammaire B1.1 — Verbes séparables (CGG #85)
+// (cecr-b11-grammar-separable-m1)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b11GrammarSeparableVerbsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-separable-what-are',
+    title: 'Verbes séparables : c\'est quoi et pourquoi c\'est un piège',
+    titleEn: 'Separable verbs: what they are and why they trip you up',
+    body:
+      'Certains verbes chinois ONT L\'AIR d\'un mot mais peuvent SE SÉPARER pour laisser passer d\'autres éléments. C\'est LE piège classique pour les apprenants.\n' +
+      '\n' +
+      '2 grandes catégories :\n' +
+      '- Verbe-Objet séparables : verbe + objet lexicalisés en unité. 帮忙 (py bāng máng « aider » = 帮 + 忙), 睡觉 (py shuì jiào « dormir » = 睡 + 觉), 见面 (py jiàn miàn « se rencontrer » = 见 + 面), 吃饭 (py chī fàn « manger » = 吃 + 饭), 说话 (py shuō huà « parler » = 说 + 话), 结婚, 上班, 上课, 洗澡, 生气, 跑步, 游泳, 开会, 考试, 请假, 放假, 发烧, 跳舞, 毕业, 排队, 握手, 撒谎, 鼓掌.\n' +
+      '- Verbe-Complément séparables : verbe + complément résultatif ou potentiel. 打开 (py dǎ kāi « ouvrir »), 看见 (py kàn jiàn « voir »), 听见 (py tīng jiàn « entendre »), 找到 (py zhǎo dào « trouver »), 记住 (py jì zhù « retenir »), 想起 (py xiǎng qǐ « se rappeler »), 学会 (py xué huì « maîtriser »), 完成 (py wán chéng « accomplir »), 离开 (py lí kāi « partir »).\n' +
+      '\n' +
+      'Point CRUCIAL vs verbes composés normaux :\n' +
+      '- Verbe normal 学习 (py xué xí « étudier ») : les particules VONT APRÈS l\'ensemble. 我学习了 (py wǒ xué xí le) ✓.\n' +
+      '- Verbe séparable 帮忙 : la particule SE GLISSE ENTRE. 我帮了忙 (py wǒ bāng le máng) ✓, PAS 我帮忙了 ✗ dans certains cas.\n' +
+      '\n' +
+      'Comment reconnaître : mémoriser au fur et à mesure. Souvent le 2e caractère est un nom sémantique (面 « visage » dans 见面, 觉 « sommeil » dans 睡觉, 步 « pas » dans 跑步), ou un complément (开, 到, 见, 住).\n' +
+      '\n' +
+      'Attention : les VRAIS verbes composés comme 学习, 工作, 休息 NE se séparent JAMAIS. 我学了习 ✗ n\'existe pas.',
+    bodyEn:
+      'Some Chinese verbs LOOK like one word but can SPLIT to let other elements slide in. This is THE classic trap for learners. 2 big categories: (1) Verb-Object separables: verb + object lexicalized as one unit. 帮忙 (bāng máng «help» = 帮 + 忙), 睡觉 (shuì jiào «sleep» = 睡 + 觉), 见面 (jiàn miàn «meet» = 见 + 面), 吃饭, 说话, 结婚, 上班, 上课, 洗澡, 生气, 跑步, 游泳, 开会, 考试, 请假, 放假, 发烧, 跳舞, 毕业, 排队, 握手, 撒谎, 鼓掌. (2) Verb-Complement separables: verb + resultative or potential complement. 打开 (dǎ kāi «open»), 看见 (kàn jiàn «see»), 听见, 找到, 记住, 想起, 学会, 完成, 离开. CRUCIAL point vs normal compound verbs: normal verb 学习: particles go AFTER the whole thing (我学习了 ✓). Separable 帮忙: particle slides IN BETWEEN (我帮了忙 ✓, NOT 我帮忙了 in certain cases). How to recognize: memorize as you go. Often the 2nd character is a semantic noun (面 «face» in 见面, 觉 «sleep» in 睡觉, 步 «step» in 跑步), or a complement (开, 到, 见, 住). Careful: TRUE compound verbs like 学习, 工作, 休息 NEVER split. 我学了习 ✗ doesn\'t exist.',
+    items: [
+      { hanzi: '帮忙', pinyin: 'bāng máng', meaning: 'aider (V-O sép.)', meaningEn: 'help (V-O sep.)', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '睡觉', pinyin: 'shuì jiào', meaning: 'dormir (V-O sép.)', meaningEn: 'sleep (V-O sep.)', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '见面', pinyin: 'jiàn miàn', meaning: 'se rencontrer (V-O sép.)', meaningEn: 'meet (V-O sep.)', audio: 'audio/hsk3/hsk3_见面.wav' },
+      { hanzi: '结婚', pinyin: 'jié hūn', meaning: 'se marier (V-O sép.)', meaningEn: 'get married', audio: 'audio/hsk3/hsk3_结婚.wav' },
+      { hanzi: '开会', pinyin: 'kāi huì', meaning: 'être en réunion (V-O sép.)', meaningEn: 'have a meeting', audio: 'audio/hsk3/hsk3_开会.wav' },
+      { hanzi: '打开', pinyin: 'dǎ kāi', meaning: 'ouvrir (V-C sép.)', meaningEn: 'open (V-C sep.)', audio: 'audio/hsk2/hsk2_打开.wav' },
+      { hanzi: '看见', pinyin: 'kàn jiàn', meaning: 'voir (V-C sép.)', meaningEn: 'see (V-C sep.)', audio: 'audio/hsk1/hsk1_看见.wav' },
+      { hanzi: '学习', pinyin: 'xué xí', meaning: 'étudier (NON séparable)', meaningEn: 'study (NOT separable)', audio: 'audio/hsk1/hsk1_学习.wav' }
+    ],
+    tip:
+      'Image du sandwich. Le verbe séparable, c\'est deux tranches de pain (verbe + objet). Quand tu veux mettre du fromage (了, 过, une durée...), tu ouvres le sandwich, tu glisses au milieu.',
+    tipEn:
+      'Sandwich metaphor. A separable verb is two slices of bread (verb + object). When you want to add cheese (了, 过, a duration...), you open the sandwich and slide it in the middle.'
+  },
+  {
+    id: 'b11-separable-sandwich-particles',
+    title: 'Sandwich 1 : particules 了/过/着 et compléments',
+    titleEn: 'Sandwich 1: particles 了/过/着 and complements',
+    body:
+      '了 (py le, complétion) doit se glisser JUSTE APRÈS la partie verbe.\n' +
+      '- Ex : 结婚 → 结了婚 (py jié le hūn). 结了婚以后，她就不工作了 (py jié le hūn yǐ hòu, tā jiù bù gōng zuò le) « après s\'être mariée, elle a arrêté de travailler ».\n' +
+      '- Ex : 睡了觉, 吃了饭, 结了婚.\n' +
+      '- ERREUR : 我结婚了她 ✗ ; correct : 我跟她结婚了 (cf. section 4).\n' +
+      '\n' +
+      '过 (py guò, expérience) — pareil, entre les deux.\n' +
+      '- Ex : 唱歌 → 我们一起唱过歌 (py wǒmen yì qǐ chàng guò gē) « on a déjà chanté ensemble ».\n' +
+      '- Ex : 结过婚 « avoir été marié·e » (avec ou sans y être encore).\n' +
+      '\n' +
+      '着 (py zhe, en cours) — pareil.\n' +
+      '- Ex : 开会 → 我们正开着会呢 (py wǒmen zhèng kāi zhe huì ne) « on est en pleine réunion ».\n' +
+      '- Ex : 上着课 « en pleine classe ».\n' +
+      '\n' +
+      'Compléments RÉSULTATIFS entre les deux parties. Verbe + complément + objet.\n' +
+      '- Ex : 看病 (voir un médecin) → 病人看完病就去取药了 (py bìng rén kàn wán bìng jiù qù qǔ yào le) « après la consultation, le patient est allé chercher ses médicaments ». 看 + 完 + 病.\n' +
+      '\n' +
+      'Compléments POTENTIELS 得/不 pour les verbes verbe-complément.\n' +
+      '- Ex : 完成 → 我们完不成这个任务 (py wǒmen wán bù chéng zhè ge rèn wu) « on ne pourra pas achever cette tâche ». 完 + 不 + 成.\n' +
+      '- Ex : 打开 → 你的文件我打不开 (py nǐ de wén jiàn wǒ dǎ bù kāi) « je n\'arrive pas à ouvrir ton fichier ». 打 + 不 + 开.\n' +
+      '- Version positive : 打得开 « peut être ouvert ».',
+    bodyEn:
+      '了 (le, completion) slides JUST AFTER the verb part. Ex: 结婚 → 结了婚. 结了婚以后，她就不工作了 = «after getting married, she stopped working». Ex: 睡了觉, 吃了饭, 结了婚. ERROR: 我结婚了她 ✗ ; correct: 我跟她结婚了. 过 (guò, experience): same, between the two parts. Ex: 唱歌 → 我们一起唱过歌 «we\'ve sung together before». Ex: 结过婚 «has been married». 着 (zhe, ongoing): same. Ex: 开会 → 我们正开着会呢 «we\'re in the middle of a meeting». Ex: 上着课 «in the middle of class». RESULTATIVE complements go between the two parts. Verb + complement + object. Ex: 看病 → 病人看完病就去取药了 = «after the consultation, the patient went to fetch meds». 看 + 完 + 病. POTENTIAL complements 得/不 for verb-complement verbs. Ex: 完成 → 我们完不成这个任务 = «we can\'t finish this task». 完 + 不 + 成. Ex: 打开 → 你的文件我打不开 = «I can\'t open your file». Positive: 打得开 «can be opened».',
+    items: [
+      { hanzi: '结了婚', pinyin: 'jié le hūn', meaning: 's\'est marié·e (了 au milieu)', meaningEn: 'got married', audio: 'audio/hsk3/hsk3_结婚.wav' },
+      { hanzi: '唱过歌', pinyin: 'chàng guò gē', meaning: 'a déjà chanté (过 au milieu)', meaningEn: 'has sung before', audio: 'audio/hsk2/hsk2_唱歌.wav' },
+      { hanzi: '开着会', pinyin: 'kāi zhe huì', meaning: 'en pleine réunion (着 au milieu)', meaningEn: 'in a meeting', audio: 'audio/hsk3/hsk3_开会.wav' },
+      { hanzi: '看完病', pinyin: 'kàn wán bìng', meaning: 'fini la consultation', meaningEn: 'finished consultation', audio: 'audio/hsk2/hsk2_看.wav' },
+      { hanzi: '完不成', pinyin: 'wán bù chéng', meaning: 'ne peut pas achever', meaningEn: 'cannot complete', audio: 'audio/hsk3/hsk3_完成.wav' },
+      { hanzi: '打不开', pinyin: 'dǎ bù kāi', meaning: 'ne peut pas ouvrir', meaningEn: 'cannot open', audio: 'audio/hsk2/hsk2_打开.wav' },
+      { hanzi: '打得开', pinyin: 'dǎ de kāi', meaning: 'peut être ouvert', meaningEn: 'can be opened', audio: 'audio/hsk2/hsk2_打开.wav' },
+      { hanzi: '结过婚', pinyin: 'jié guò hūn', meaning: 'a été marié·e', meaningEn: 'has been married', audio: 'audio/hsk3/hsk3_结婚.wav' }
+    ],
+    tip:
+      'La particule DOIT toucher le verbe. Si tu essaies de la mettre à la fin (帮忙了 sans autre chose), tu risques de sonner incorrect. Ouvre le sandwich.',
+    tipEn:
+      'The particle MUST touch the verb. If you try to stick it at the end (帮忙了 alone), you risk sounding wrong. Open the sandwich.'
+  },
+  {
+    id: 'b11-separable-time-and-soften',
+    title: 'Sandwich 2 : durée, fréquence, mesures, 一下, possessifs',
+    titleEn: 'Sandwich 2: duration, frequency, measures, 一下, possessives',
+    body:
+      'Fréquence (次, 遍, 回) — glisse au milieu.\n' +
+      '- Ex : 见面 → 来中国以后，我们只见过一次面 (py lái zhōng guó yǐ hòu, wǒmen zhǐ jiàn guò yí cì miàn) « depuis mon arrivée en Chine, on ne s\'est vus qu\'une fois ». 见 + 过 + 一次 + 面.\n' +
+      '\n' +
+      'Durée — au milieu, souvent avec 的 pour lier à l\'objet.\n' +
+      '- Ex : 聊天 → 我们聊了两个小时的天 (py wǒmen liáo le liǎng ge xiǎo shí de tiān) « on a discuté 2 heures ». 聊 + 了 + 两个小时 + 的 + 天. Le 的 rend la phrase plus fluide.\n' +
+      '- Ex : 睡觉 → 他睡了八个小时的觉 « il a dormi 8 heures ».\n' +
+      '- ERREUR fréquente : 我们聊了两个小时天 (sans 的) — grammatical mais sonne moins naturel. Mieux : avec 的.\n' +
+      '\n' +
+      '一下(儿) — adoucit, rend l\'action rapide.\n' +
+      '- Ex : 点头 → 他点了一下儿头 (py tā diǎn le yí xiàr tóu) « il a hoché brièvement de la tête ». 点 + 了 + 一下儿 + 头.\n' +
+      '\n' +
+      'Mesure GÉNÉRIQUE 个 — pour un ton décontracté, style « allez, un petit... ».\n' +
+      '- Ex : 见面 → 我们见个面吧 (py wǒmen jiàn ge miàn ba) « allons prendre un petit café ensemble » (littéralement « voyons-nous »). 见 + 个 + 面.\n' +
+      '- Ex : 帮忙 → 你帮个忙 « rends-moi un service ».\n' +
+      '\n' +
+      'Possessifs 我的, 你的... — spécifient à qui appartient l\'action.\n' +
+      '- Ex : 帮忙 → 他经常帮我的忙 (py tā jīng cháng bāng wǒ de máng) « il me rend souvent service ». 帮 + 我的 + 忙 (« il aide MON affaire »).\n' +
+      '- Ex : 生气 → 别生我的气 « ne te fâche pas contre moi ».',
+    bodyEn:
+      'Frequency (次, 遍, 回): slides in the middle. Ex: 见面 → 来中国以后，我们只见过一次面 = «since I came to China, we\'ve only met once». 见 + 过 + 一次 + 面. Duration: in the middle, often with 的 to link to the object. Ex: 聊天 → 我们聊了两个小时的天 = «we chatted for 2 hours». 聊 + 了 + 两个小时 + 的 + 天. The 的 makes it flow. Ex: 睡觉 → 他睡了八个小时的觉 «he slept 8 hours». Frequent error: 我们聊了两个小时天 (without 的) — grammatical but less natural. Better: with 的. 一下(儿): softens, makes the action brief. Ex: 点头 → 他点了一下儿头 = «he briefly nodded». GENERIC measure 个: for a casual tone, «a little...». Ex: 见面 → 我们见个面吧 = «let\'s catch up». 见 + 个 + 面. Ex: 帮忙 → 你帮个忙 «do me a favor». Possessives 我的, 你的...: specify who the action belongs to. Ex: 帮忙 → 他经常帮我的忙 = «he often helps me». 帮 + 我的 + 忙 («helps MY affair»). Ex: 生气 → 别生我的气 «don\'t be mad at me».',
+    items: [
+      { hanzi: '见过一次面', pinyin: 'jiàn guò yí cì miàn', meaning: 'se sont vus une fois', meaningEn: 'met once', audio: 'audio/hsk3/hsk3_见面.wav' },
+      { hanzi: '聊了两个小时的天', pinyin: 'liáo le liǎng ge xiǎo shí de tiān', meaning: 'ont discuté 2 heures', meaningEn: 'chatted 2 hours', audio: 'audio/hsk3/hsk3_聊天.wav' },
+      { hanzi: '睡了八个小时的觉', pinyin: 'shuì le bā ge xiǎo shí de jiào', meaning: 'a dormi 8 heures', meaningEn: 'slept 8 hours', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '点了一下儿头', pinyin: 'diǎn le yí xiàr tóu', meaning: 'a hoché la tête', meaningEn: 'nodded briefly', audio: 'audio/hsk2/hsk2_点.wav' },
+      { hanzi: '见个面', pinyin: 'jiàn ge miàn', meaning: 'se voir un peu (décontracté)', meaningEn: 'catch up (casual)', audio: 'audio/hsk3/hsk3_见面.wav' },
+      { hanzi: '帮个忙', pinyin: 'bāng ge máng', meaning: 'rendre un service', meaningEn: 'do a favor', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '帮我的忙', pinyin: 'bāng wǒ de máng', meaning: 'me rendre service', meaningEn: 'help me out', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '生我的气', pinyin: 'shēng wǒ de qì', meaning: 'être fâché contre moi', meaningEn: 'be mad at me', audio: 'audio/hsk3/hsk3_生气.wav' }
+    ],
+    tip:
+      'Le sandwich est modulaire. Tu peux même mettre 了 + durée + 的 en même temps (« 睡了八个小时的觉 »). Tant que tu respectes l\'ordre verbe → filling → objet, ça marche.',
+    tipEn:
+      'The sandwich is modular. You can even put 了 + duration + 的 all at once («睡了八个小时的觉»). As long as you keep the order verb → filling → object, it works.'
+  },
+  {
+    id: 'b11-separable-object-reduplication',
+    title: 'Ajouter un objet et redoubler : les pièges finaux',
+    titleEn: 'Adding an object and reduplicating: final traps',
+    body:
+      'Comment ajouter une PERSONNE aux verbes séparables ? Deux stratégies.\n' +
+      '\n' +
+      'Stratégie 1 : 跟/和 + personne + verbe entier. Le séparable reste soudé.\n' +
+      '- Ex : 结婚 → 我想跟她结婚 (py wǒ xiǎng gēn tā jié hūn) « je veux l\'épouser ». PAS 结婚她 ✗.\n' +
+      '- Ex : 见面 → 跟朋友见面 « voir des amis ».\n' +
+      '- Ex : 聊天 → 跟他聊天 « discuter avec lui ».\n' +
+      '- Ex : 道歉 → 跟你道歉 « te présenter des excuses ».\n' +
+      '\n' +
+      'Stratégie 2 : LAISSER TOMBER l\'objet du séparable et mettre le nouvel objet à sa place. Marche pour certains verbes.\n' +
+      '- Ex : 帮忙 → 我们可以帮你 (py wǒmen kě yǐ bāng nǐ) « on peut t\'aider ». PAS 帮忙你 ✗. 忙 disparaît, 你 prend sa place.\n' +
+      '- Ex : 见面 → 见你 marche (bien que 见 seul soit moins courant que 见 + 面).\n' +
+      '\n' +
+      'RÉDUPLICATION des verbes séparables — seule la partie VERBE se redouble, JAMAIS l\'objet.\n' +
+      '- Ex : 聊天 → 聊聊天 (py liáo liao tiān) « bavarder un peu ». PAS 聊天聊天 ✗.\n' +
+      '- Ex : 帮忙 → 帮帮忙 « donner un petit coup de main ».\n' +
+      '- Ex : 见面 → 见见面 « se voir un peu ». Ex : 我们见见面吧 « on se voit ? ».\n' +
+      '- Sens : action DOUCE, brève, cool, informelle.\n' +
+      '\n' +
+      'ERREURS classiques à retenir :\n' +
+      '- Séparer un verbe qui NE l\'est PAS : 我学了习 ✗. Correct : 我学习了.\n' +
+      '- Oublier de séparer quand c\'est requis : 我睡觉了一个小时 ✗. Correct : 我睡了一个小时的觉.\n' +
+      '- Aspectuel mal placé : 我帮忙了他 ✗. Correct : 我帮了他的忙.\n' +
+      '- Redoubler tout le verbe : 聊天聊天 ✗. Correct : 聊聊天.',
+    bodyEn:
+      'How to add a PERSON to separable verbs? Two strategies. Strategy 1: 跟/和 + person + whole verb. The separable stays welded. Ex: 结婚 → 我想跟她结婚 = «I want to marry her». NOT 结婚她 ✗. Ex: 见面 → 跟朋友见面 «meet friends». Ex: 聊天 → 跟他聊天 «chat with him». Ex: 道歉 → 跟你道歉 «apologize to you». Strategy 2: DROP the object of the separable and put the new object in its place. Works for certain verbs. Ex: 帮忙 → 我们可以帮你 = «we can help you». NOT 帮忙你 ✗. 忙 disappears, 你 takes its place. Ex: 见面 → 见你 works. REDUPLICATION of separable verbs: only the VERB part reduplicates, NEVER the object. Ex: 聊天 → 聊聊天 = «chat a bit». NOT 聊天聊天 ✗. Ex: 帮忙 → 帮帮忙 «give a little hand». Ex: 见面 → 见见面 «see each other a bit». Meaning: SOFT, brief, cool, informal action. CLASSIC ERRORS: Splitting a non-separable verb: 我学了习 ✗ → 我学习了 ✓. Forgetting to split when required: 我睡觉了一个小时 ✗ → 我睡了一个小时的觉 ✓. Misplaced aspect: 我帮忙了他 ✗ → 我帮了他的忙 ✓. Reduplicating the whole verb: 聊天聊天 ✗ → 聊聊天 ✓.',
+    items: [
+      { hanzi: '跟她结婚', pinyin: 'gēn tā jié hūn', meaning: 'l\'épouser (stratégie 跟)', meaningEn: 'marry her', audio: 'audio/hsk3/hsk3_结婚.wav' },
+      { hanzi: '跟朋友见面', pinyin: 'gēn péng you jiàn miàn', meaning: 'voir des amis', meaningEn: 'meet friends', audio: 'audio/hsk3/hsk3_见面.wav' },
+      { hanzi: '跟他聊天', pinyin: 'gēn tā liáo tiān', meaning: 'discuter avec lui', meaningEn: 'chat with him', audio: 'audio/hsk3/hsk3_聊天.wav' },
+      { hanzi: '帮你', pinyin: 'bāng nǐ', meaning: 't\'aider (stratégie objet remplacé)', meaningEn: 'help you', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '聊聊天', pinyin: 'liáo liao tiān', meaning: 'bavarder un peu', meaningEn: 'chat a bit', audio: 'audio/hsk3/hsk3_聊天.wav' },
+      { hanzi: '帮帮忙', pinyin: 'bāng bang máng', meaning: 'donner un coup de main', meaningEn: 'lend a hand', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '见见面', pinyin: 'jiàn jian miàn', meaning: 'se voir un peu', meaningEn: 'meet up briefly', audio: 'audio/hsk3/hsk3_见面.wav' },
+      { hanzi: '道歉', pinyin: 'dào qiàn', meaning: 's\'excuser (V-O sép.)', meaningEn: 'apologize', audio: 'audio/hsk4/hsk4_道歉.wav' }
+    ],
+    tip:
+      'Si tu doutes qu\'un verbe soit séparable, teste mentalement de mettre 了 entre les deux. Si ça sonne bien (帮了忙 ✓), c\'est séparable. Sinon (学了习 ✗), c\'est un mot indivisible.',
+    tipEn:
+      'If you\'re unsure whether a verb is separable, mentally try to slip 了 between the two parts. Sounds fine (帮了忙 ✓)? Separable. Sounds off (学了习 ✗)? Indivisible.'
+  }
+];
