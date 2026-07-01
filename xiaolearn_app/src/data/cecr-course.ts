@@ -139,6 +139,9 @@ import {
   a2NuancesPurposeBasicsLearnSections,
   a2NuancesTogetherLearnSections,
   a2NuancesFrequencyLearnSections,
+  a2GrammaireZaiBasicsLearnSections,
+  a2GrammaireGuoExperienceLearnSections,
+  a2NuancesAllPart1LearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -190,6 +193,7 @@ import {
   b11GrammarReduplicationProgressiveLearnSections,
   b11GrammarSeparableVerbsLearnSections,
   b11GrammarPivotalSentencesLearnSections,
+  b11NuancesZaiAbstractLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -251,6 +255,7 @@ import {
   b12NuancesChoicesAdvancedLearnSections,
   b12NuancesCauseEffectAdvancedLearnSections,
   b12NuancesPurposeFormalLearnSections,
+  b12NuancesAllPart2LearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -2759,6 +2764,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["吗", "么", "呢", "吧", "啊", "呀", "啦", "的"],
         quizQuestions: 10,
         learnSections: a2GrammarSentenceParticlesLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-m9",
+        title: "Le mot 在 : localisation, cadre d'action, « -ing »",
+        titleEn: "The word 在: location, action setting, \"-ing\"",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 2], category: "grammar", difficulty: "beginner",
+        tags: ["grammar", "particle", "cecr:a2"],
+        introduction: {
+          title: "在 : trois missions, un seul caractère",
+          titleEn: "在: three missions, one character",
+          content: "在 (zài) est un couteau suisse. Il DIT OÙ ON EST (我在家 = « je suis à la maison »), il PLACE LE CADRE D'UNE ACTION (我在家吃饭 = « je mange à la maison ») et, sans lieu, il transforme le verbe en présent progressif « en train de » (我在看书 = « je suis en train de lire »). Il remplace même 是 pour la localisation — ne jamais dire 我是在家. Cette leçon fixe ces trois emplois, plus 正在 (emphase), 呢 (particule oral) et la différence avec 着.",
+          contentEn: "在 (zài) is a Swiss army knife. It SAYS WHERE YOU ARE (我在家 = «I'm at home»), it FRAMES AN ACTION IN A PLACE (我在家吃饭 = «I eat at home») and, without a place, it turns the verb into a progressive «-ing» (我在看书 = «I'm reading»). It even replaces 是 for location — never say 我是在家. This lesson locks in these three uses, plus 正在 (emphasis), 呢 (oral particle) and the contrast with 着.",
+          objectives: [
+            "Localiser avec 在 + lieu + localisateur (里/上/下)",
+            "Placer 在 + lieu AVANT le verbe (cadre), APRÈS pour 住/坐/放",
+            "Marquer le progressif : 在 + verbe (+ 正在, 呢)",
+            "Nier avec 不在 (lieu) vs 没在 (action)"
+          ],
+          objectivesEn: [
+            "Localize with 在 + place + localizer (里/上/下)",
+            "Place 在 + place BEFORE the verb (setting), AFTER for 住/坐/放",
+            "Mark progressive: 在 + verb (+ 正在, 呢)",
+            "Negate with 不在 (place) vs 没在 (action)"
+          ]
+        },
+        flashcards: ["在", "里", "上", "下", "旁边", "住", "正在", "呢", "着"],
+        quizQuestions: 10,
+        learnSections: a2GrammaireZaiBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-m10",
+        title: "Le particule 过 : marquer une expérience vécue",
+        titleEn: "The 过 particle: marking a life experience",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 2], category: "grammar", difficulty: "beginner",
+        tags: ["grammar", "particle", "aspect", "cecr:a2"],
+        introduction: {
+          title: "过 : le CV d'expériences de vie",
+          titleEn: "过: the life-experience resume",
+          content: "过 (guo, ton neutre) est LA particule qui transforme un verbe en « déjà fait au moins une fois dans ma vie ». 我去过北京 = « je suis (déjà) allé à Pékin » — sans dire quand, ce qui compte c'est que ça a eu lieu au moins une fois. Elle se place TOUJOURS juste après le verbe : Sujet + Verbe + 过 + (Objet). La négation impose 没 (jamais 不) : 我没去过中国. Cette leçon fixe la structure, la négation avec 没(有)/从来, la fréquence avec 次, et le contraste crucial 过 vs 了 (expérience de vie vs action complétée à un moment précis).",
+          contentEn: "过 (guo, neutral tone) is THE particle that turns a verb into «already done at least once in my life». 我去过北京 = «I've (already) been to Beijing» — without saying when, what matters is that it happened at least once. It ALWAYS goes right after the verb: Subject + Verb + 过 + (Object). Negation requires 没 (never 不): 我没去过中国. This lesson locks in the structure, negation with 没(有)/从来, frequency with 次, and the crucial contrast 过 vs 了 (life experience vs completed action at a specific moment).",
+          objectives: [
+            "Placer 过 juste après le verbe pour marquer une expérience vécue",
+            "Nier avec 没(有)...过 (jamais 不) et renforcer avec 从来",
+            "Compter les occurrences avec 次 (deux positions possibles)",
+            "Choisir 过 (CV de vie) vs 了 (moment daté)"
+          ],
+          objectivesEn: [
+            "Place 过 right after the verb to mark a life experience",
+            "Negate with 没(有)...过 (never 不) and reinforce with 从来",
+            "Count occurrences with 次 (two possible positions)",
+            "Choose 过 (life resume) vs 了 (dated moment)"
+          ]
+        },
+        flashcards: ["过", "没", "从来", "次", "了", "已经", "去", "吃", "看", "尝"],
+        quizQuestions: 10,
+        learnSections: a2GrammaireGuoExperienceLearnSections
       }
     ]
   },
@@ -3756,6 +3819,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["总是", "老是", "通常", "常常", "经常", "往往", "每次", "有时候", "偶尔", "很少", "几乎不", "从来不", "从来没", "过"],
         quizQuestions: 10,
         learnSections: a2NuancesFrequencyLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m24",
+        title: "Exprimer « tous » : 都, 所有, 每, 全",
+        titleEn: "Expressing \"all\": 都, 所有, 每, 全",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 2], category: "grammar", difficulty: "beginner",
+        tags: ["nuance", "quantifier", "cecr:a2"],
+        introduction: {
+          title: "Les 4 outils de base pour « tout, tous »",
+          titleEn: "The 4 basic tools for «all, every»",
+          content: "Dire « tous » en chinois n'est pas aussi simple qu'en français. Cette leçon organise les 4 outils fondamentaux : 都 (marqueur qui suit le sujet et signale la participation totale), 所有 (modifie un nom pour balayer un ensemble), 每 (individualise « chaque » avec un classificateur), et 全 / 全部 (insiste sur l'intégralité). Tu apprendras aussi les combinaisons stars : 每...都, 全都, ainsi que 什么都 / 哪儿都 pour l'inclusion totale. Confondre 都 avec 所有 ou oublier le classificateur derrière 每 fait sonner ta phrase bancale — mais après cette leçon, tu placeras chaque outil à sa juste place.",
+          contentEn: "Saying «all» in Chinese isn't as simple as in English. This lesson organizes the 4 fundamental tools: 都 (marker that follows the subject and signals total participation), 所有 (modifies a noun to sweep a set), 每 (individualizes «each» with a classifier), and 全 / 全部 (emphasizes wholeness). You'll also learn the star combos: 每...都, 全都, plus 什么都 / 哪儿都 for total inclusion. Confusing 都 with 所有 or dropping the classifier after 每 makes your sentence wobble — but after this lesson, you'll place each tool exactly where it belongs.",
+          objectives: [
+            "Placer 都 correctement (SUJET + 都 + VERBE, jamais avant le sujet)",
+            "Choisir entre 都, 所有 et 每 selon collectif / balayage / distributif",
+            "Utiliser 每 + classificateur + 都 pour marquer « chacun sans exception »",
+            "Ajouter de l'emphase avec 全都 / 全部都 (« pas un ne manque »)"
+          ],
+          objectivesEn: [
+            "Place 都 correctly (SUBJECT + 都 + VERB, never before the subject)",
+            "Pick between 都, 所有 and 每 by collective / sweeping / distributive",
+            "Use 每 + classifier + 都 to mark «each without exception»",
+            "Add emphasis with 全都 / 全部都 («not one missing»)"
+          ]
+        },
+        flashcards: ["都", "所有", "的", "每", "个", "全", "全部", "全都", "什么都"],
+        quizQuestions: 10,
+        learnSections: a2NuancesAllPart1LearnSections
       }
     ]
   },
@@ -5227,6 +5319,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["关于", "对于", "至于", "就", "而言", "来说", "拿", "说起", "说到"],
         quizQuestions: 10,
         learnSections: b11NuancesTopicConnectorsLearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m13",
+        title: "在 abstrait : 在...上, 在...下, 在...方面",
+        titleEn: "Abstract 在: 在...上, 在...下, 在...方面",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["nuance", "register", "abstract", "cecr:b1"],
+        introduction: {
+          title: "Quand 在 quitte l'espace physique",
+          titleEn: "When 在 leaves physical space",
+          content: "Au niveau B1, 在 se combine à 上, 下 et 方面 pour cadrer des DOMAINES ABSTRAITS, des CAUSES ou des ASPECTS. 在...上 (« sur le plan de »), 在...下 (« sous l'influence de »), 在...方面 (« en matière de ») : trois structures qui transforment ta prose de plate à professionnelle. Elles apparaissent dans les essais, les entretiens, les rapports. Maîtrise-les et tu passes de « je parle chinois » à « j'argumente en chinois ».",
+          contentEn: "At B1 level, 在 combines with 上, 下 and 方面 to frame ABSTRACT DOMAINS, CAUSES or ASPECTS. 在...上 («on the level of»), 在...下 («under the influence of»), 在...方面 («in terms of»): three structures that turn your prose from flat to professional. They appear in essays, interviews, reports. Master them and you go from «I speak Chinese» to «I argue in Chinese».",
+          objectives: [
+            "Cadrer un sujet abstrait avec 在...上",
+            "Attribuer une cause/contexte avec 在...下",
+            "Préciser un domaine avec 在...方面",
+            "Arbitrer 在...上 vs 在...方面 selon registre"
+          ],
+          objectivesEn: [
+            "Frame an abstract topic with 在...上",
+            "Attribute a cause/context with 在...下",
+            "Specify a domain with 在...方面",
+            "Choose 在...上 vs 在...方面 by register"
+          ]
+        },
+        flashcards: ["在", "上", "下", "方面", "影响", "帮助", "情况", "领导", "鼓励", "压力"],
+        quizQuestions: 10,
+        learnSections: b11NuancesZaiAbstractLearnSections
       }
     ]
   },
@@ -6987,6 +7108,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["以免", "免得", "省得", "以便", "以", "以期", "为...起见", "为...而", "旨在"],
         quizQuestions: 10,
         learnSections: b12NuancesPurposeFormalLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m20",
+        title: "Nuances de « tout » : 一切, 个个, 皆, 尽皆",
+        titleEn: "Nuances of \"all\": 一切, 个个, 皆, 尽皆",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 5, hskLevels: [4, 5], category: "grammar", difficulty: "advanced",
+        tags: ["nuance", "register", "literary", "cecr:b1"],
+        introduction: {
+          title: "Le « tout » avancé : abstrait, affectif, littéraire",
+          titleEn: "Advanced «all»: abstract, affective, literary",
+          content: "Au-delà de 都 / 所有 / 每 / 全, le chinois offre 4 nuances plus subtiles pour dire « tout, tous ». 一切 englobe l'ABSTRAIT et le PHILOSOPHIQUE (« tout dans la vie », « toutes les difficultés »). 个个 (et ses cousins 天天, 人人, 处处) apporte une CHALEUR AFFECTIVE quand on parle d'un groupe qu'on connaît. 皆 est un mot CLASSIQUE hérité du chinois littéraire, réservé aux chengyu et discours soutenus. 尽皆 pousse encore plus loin le registre littéraire. Cette leçon te permet de RECONNAÎTRE ces tournures dans la presse, la littérature et les discours — un objectif clé de la lecture avancée.",
+          contentEn: "Beyond 都 / 所有 / 每 / 全, Chinese offers 4 more subtle nuances for «all, every». 一切 encompasses the ABSTRACT and PHILOSOPHICAL («everything in life», «all difficulties»). 个个 (and its cousins 天天, 人人, 处处) brings AFFECTIVE WARMTH when talking about a group you know. 皆 is a CLASSICAL word inherited from literary Chinese, reserved for chengyu and formal speech. 尽皆 pushes the literary register even further. This lesson empowers you to RECOGNIZE these turns in press, literature and speeches — a key advanced-reading objective.",
+          objectives: [
+            "Choisir 一切 pour la totalité abstraite (vs 所有 pour l'ensemble concret)",
+            "Utiliser 个个 / 天天 / 人人 / 处处 pour un ton chaleureux et emphatique",
+            "Reconnaître 皆 dans les chengyu (皆大欢喜, 众人皆知) et discours écrits",
+            "Comprendre 尽皆 comme registre littéraire soutenu"
+          ],
+          objectivesEn: [
+            "Pick 一切 for abstract totality (vs 所有 for concrete sets)",
+            "Use 个个 / 天天 / 人人 / 处处 for a warm, emphatic tone",
+            "Recognize 皆 in chengyu (皆大欢喜, 众人皆知) and written speech",
+            "Understand 尽皆 as elevated literary register"
+          ]
+        },
+        flashcards: ["一切", "个个", "天天", "人人", "处处", "皆", "尽皆", "皆大欢喜", "众人皆知"],
+        quizQuestions: 10,
+        learnSections: b12NuancesAllPart2LearnSections
       }
     ]
   },

@@ -5047,3 +5047,433 @@ export const a2NuancesFrequencyLearnSections: LessonV2LearnSection[] = [
       'Tip: on the frequency scale: 有时候 (~30%) > 偶尔 (~10%) > 很少 (~5%) > 几乎不 (~1%) > 从来不 (0%, habit) > 从来没...过 (0%, experience).'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Grammaire — 在 basique : localisation, cadre d'action, « -ing » (CGG #61)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2GrammaireZaiBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-zai-location-basics',
+    title: 'Localisation avec 在 : dire où est qqch',
+    titleEn: 'Location with 在: say where something is',
+    body:
+      '在 (zài) est un des mots-outils les plus fréquents en chinois. Sa fonction PREMIÈRE : indiquer une LOCALISATION.\n' +
+      '\n' +
+      'Structure basique : Sujet + 在 + Lieu → « X est à/dans... ».\n' +
+      '- Ex : 我在家 (py wǒ zài jiā) « je suis à la maison ». Pas besoin de verbe « être » supplémentaire, 在 fait tout.\n' +
+      '- Ex : 手机在桌子上 (py shǒu jī zài zhuō zi shàng) « le téléphone est sur la table ». Les particules de position (上, 里, 下...) précisent le lieu.\n' +
+      '\n' +
+      'Localisateurs courants :\n' +
+      '- 里 (lǐ) « dans, à l\'intérieur » : 书在包里 (py shū zài bāo lǐ) « le livre est dans le sac ».\n' +
+      '- 上 (shàng) « sur » : 猫在椅子上 (py māo zài yǐ zi shàng) « le chat est sur la chaise ».\n' +
+      '- 下 (xià) « sous » : 狗在桌子下 (py gǒu zài zhuō zi xià) « le chien est sous la table ».\n' +
+      '- 前 (qián) « devant » / 后 (hòu) « derrière » : 车在门前 (py chē zài mén qián) « la voiture est devant la porte ».\n' +
+      '- 旁边 (páng biān) « à côté » : 商店在银行旁边 (py shāng diàn zài yín háng páng biān) « le magasin est à côté de la banque ».\n' +
+      '\n' +
+      'Négation : 不在 (bù zài) « ne pas être à/là ».\n' +
+      '- Ex : 老板不在办公室 (py lǎo bǎn bù zài bàn gōng shì) « le patron n\'est pas au bureau ».\n' +
+      '\n' +
+      'Erreur classique : ne PAS dire 我是在家. En chinois, 在 remplace 是 pour la localisation.',
+    bodyEn:
+      '在 (zài) is one of the most frequent function words in Chinese. Its PRIMARY role: indicating LOCATION. Basic structure: Subject + 在 + Place → «X is at/in...». Ex: 我在家 «I\'m at home». No extra «to be» needed, 在 does everything. Ex: 手机在桌子上 «the phone is on the table». Position particles (上, 里, 下...) specify the place. Common localizers: 里 (lǐ) «inside»: 书在包里 «the book is in the bag». 上 (shàng) «on»: 猫在椅子上 «the cat is on the chair». 下 (xià) «under»: 狗在桌子下 «the dog is under the table». 前 (qián) «in front» / 后 (hòu) «behind»: 车在门前 «the car is in front of the door». 旁边 (páng biān) «next to»: 商店在银行旁边 «the shop is next to the bank». Negation: 不在 (bù zài) «not at/there». Ex: 老板不在办公室 «the boss isn\'t in the office». Classic mistake: do NOT say 我是在家. In Chinese, 在 replaces 是 for location.',
+    items: [
+      { hanzi: '在', pinyin: 'zài', meaning: 'à, dans, se trouver à', meaningEn: 'at, in, to be located at', audio: 'audio/hsk1/hsk1_在.wav' },
+      { hanzi: '里', pinyin: 'lǐ', meaning: 'dans, à l\'intérieur', meaningEn: 'inside', audio: 'audio/hsk1/hsk1_里.wav' },
+      { hanzi: '上', pinyin: 'shàng', meaning: 'sur, au-dessus', meaningEn: 'on, above', audio: 'audio/hsk1/hsk1_上.wav' },
+      { hanzi: '下', pinyin: 'xià', meaning: 'sous, en dessous', meaningEn: 'under, below', audio: 'audio/hsk1/hsk1_下.wav' },
+      { hanzi: '旁边', pinyin: 'páng biān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' },
+      { hanzi: '不在', pinyin: 'bù zài', meaning: 'ne pas être à/là', meaningEn: 'not at/there', audio: 'audio/hsk1/hsk1_不.wav' },
+      { hanzi: '我在家', pinyin: 'wǒ zài jiā', meaning: 'je suis à la maison', meaningEn: 'I\'m at home', audio: 'audio/hsk1/hsk1_家.wav' },
+      { hanzi: '手机在桌子上', pinyin: 'shǒu jī zài zhuō zi shàng', meaning: 'le téléphone est sur la table', meaningEn: 'the phone is on the table', audio: 'audio/hsk1/hsk1_桌子.wav' },
+      { hanzi: '书在包里', pinyin: 'shū zài bāo lǐ', meaning: 'le livre est dans le sac', meaningEn: 'the book is in the bag', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '猫在椅子上', pinyin: 'māo zài yǐ zi shàng', meaning: 'le chat est sur la chaise', meaningEn: 'the cat is on the chair', audio: 'audio/hsk1/hsk1_椅子.wav' },
+      { hanzi: '狗在桌子下', pinyin: 'gǒu zài zhuō zi xià', meaning: 'le chien est sous la table', meaningEn: 'the dog is under the table', audio: 'audio/hsk1/hsk1_狗.wav' },
+      { hanzi: '商店在银行旁边', pinyin: 'shāng diàn zài yín háng páng biān', meaning: 'le magasin est à côté de la banque', meaningEn: 'the shop is next to the bank', audio: 'audio/hsk2/hsk2_旁边.wav' },
+      { hanzi: '老板不在办公室', pinyin: 'lǎo bǎn bù zài bàn gōng shì', meaning: 'le patron n\'est pas au bureau', meaningEn: 'the boss isn\'t in the office', audio: 'audio/hsk3/hsk3_办公室.wav' }
+    ],
+    tip:
+      'Astuce : le duo 在 + localisateur (里/上/下) est la base absolue. Retiens toujours le localisateur associé au lieu.',
+    tipEn:
+      'Tip: the 在 + localizer (里/上/下) duo is the absolute foundation. Always memorize the localizer that goes with the place.'
+  },
+  {
+    id: 'a2-zai-where-actions-happen',
+    title: 'Où se passe l\'action : 在 + lieu + verbe',
+    titleEn: 'Where the action happens: 在 + place + verb',
+    body:
+      'Pour dire OÙ SE DÉROULE UNE ACTION, on place « 在 + lieu » AVANT le verbe.\n' +
+      '\n' +
+      'Structure : Sujet + 在 + Lieu + Verbe (+ Objet).\n' +
+      '- Ex : 我在家吃饭 (py wǒ zài jiā chī fàn) « je mange à la maison ». D\'abord le CADRE (à la maison), puis l\'action (manger).\n' +
+      '- Ex : 孩子们在公园玩 (py hái zi men zài gōng yuán wán) « les enfants jouent au parc ».\n' +
+      '- Ex : 我们在餐厅见面 (py wǒ men zài cān tīng jiàn miàn) « on se rejoint au restaurant ».\n' +
+      '\n' +
+      'Différence cruciale entre PLACEMENT AVANT et APRÈS le verbe :\n' +
+      '- 我在图书馆学习 (py wǒ zài tú shū guǎn xué xí) = « j\'étudie À LA BIBLIOTHÈQUE » (cadre de l\'action).\n' +
+      '- 我住在北京 (py wǒ zhù zài běi jīng) = « j\'habite À PÉKIN » (résultat/destination — le 在 s\'accole au verbe car il indique la LOCALISATION FINALE de l\'action de résider).\n' +
+      '\n' +
+      'Verbes qui aiment 在 APRÈS (car ils sous-entendent une localisation résultante) : 住 (habiter), 坐 (s\'asseoir), 站 (rester debout), 躺 (s\'allonger), 放 (poser).\n' +
+      '- Ex : 请坐在这里 (py qǐng zuò zài zhè lǐ) « asseyez-vous ici ».\n' +
+      '- Ex : 把书放在桌子上 (py bǎ shū fàng zài zhuō zi shàng) « pose le livre sur la table ».\n' +
+      '\n' +
+      'Question : « où fais-tu X ? » = 你在哪儿 + verbe ? Ex : 你在哪儿工作 ? (py nǐ zài nǎr gōng zuò) « où travailles-tu ? ».',
+    bodyEn:
+      'To say WHERE AN ACTION UNFOLDS, place «在 + place» BEFORE the verb. Structure: Subject + 在 + Place + Verb (+ Object). Ex: 我在家吃饭 «I eat at home». First the SETTING (at home), then the action (eat). Ex: 孩子们在公园玩 «the kids play at the park». Ex: 我们在餐厅见面 «we meet at the restaurant». Crucial difference between BEFORE and AFTER the verb placement: 我在图书馆学习 = «I study AT THE LIBRARY» (setting of the action). 我住在北京 = «I live IN BEIJING» (result/destination — 在 sticks to the verb because it marks the FINAL LOCATION of the residing action). Verbs that like 在 AFTER (they imply a resulting location): 住 (live), 坐 (sit), 站 (stand), 躺 (lie down), 放 (put). Ex: 请坐在这里 «please sit here». Ex: 把书放在桌子上 «put the book on the table». Question: «where do you X?» = 你在哪儿 + verb? Ex: 你在哪儿工作? «where do you work?».',
+    items: [
+      { hanzi: '在家吃饭', pinyin: 'zài jiā chī fàn', meaning: 'manger à la maison', meaningEn: 'eat at home', audio: 'audio/hsk1/hsk1_吃饭.wav' },
+      { hanzi: '住', pinyin: 'zhù', meaning: 'habiter, loger', meaningEn: 'live, reside', audio: 'audio/hsk1/hsk1_住.wav' },
+      { hanzi: '坐', pinyin: 'zuò', meaning: 's\'asseoir', meaningEn: 'sit', audio: 'audio/hsk1/hsk1_坐.wav' },
+      { hanzi: '放', pinyin: 'fàng', meaning: 'poser, placer', meaningEn: 'put, place', audio: 'audio/hsk3/hsk3_放.wav' },
+      { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où', meaningEn: 'where', audio: 'audio/hsk1/hsk1_哪儿.wav' },
+      { hanzi: '我在家吃饭', pinyin: 'wǒ zài jiā chī fàn', meaning: 'je mange à la maison', meaningEn: 'I eat at home', audio: 'audio/hsk1/hsk1_吃饭.wav' },
+      { hanzi: '孩子们在公园玩', pinyin: 'hái zi men zài gōng yuán wán', meaning: 'les enfants jouent au parc', meaningEn: 'the kids play at the park', audio: 'audio/hsk3/hsk3_公园.wav' },
+      { hanzi: '我们在餐厅见面', pinyin: 'wǒ men zài cān tīng jiàn miàn', meaning: 'on se rejoint au restaurant', meaningEn: 'we meet at the restaurant', audio: 'audio/hsk3/hsk3_餐厅.wav' },
+      { hanzi: '我在图书馆学习', pinyin: 'wǒ zài tú shū guǎn xué xí', meaning: 'j\'étudie à la bibliothèque', meaningEn: 'I study at the library', audio: 'audio/hsk3/hsk3_图书馆.wav' },
+      { hanzi: '我住在北京', pinyin: 'wǒ zhù zài běi jīng', meaning: 'j\'habite à Pékin', meaningEn: 'I live in Beijing', audio: 'audio/hsk1/hsk1_北京.wav' },
+      { hanzi: '请坐在这里', pinyin: 'qǐng zuò zài zhè lǐ', meaning: 'asseyez-vous ici', meaningEn: 'please sit here', audio: 'audio/hsk1/hsk1_请坐.wav' },
+      { hanzi: '把书放在桌子上', pinyin: 'bǎ shū fàng zài zhuō zi shàng', meaning: 'pose le livre sur la table', meaningEn: 'put the book on the table', audio: 'audio/hsk3/hsk3_放.wav' },
+      { hanzi: '你在哪儿工作', pinyin: 'nǐ zài nǎr gōng zuò', meaning: 'où travailles-tu ?', meaningEn: 'where do you work?', audio: 'audio/hsk1/hsk1_工作.wav' }
+    ],
+    tip:
+      'Astuce : par défaut, 在 + lieu se met AVANT le verbe. Ne mets 在 APRÈS le verbe que pour 住/坐/站/放 et compagnie.',
+    tipEn:
+      'Tip: by default, 在 + place goes BEFORE the verb. Only put 在 AFTER the verb for 住/坐/站/放 and their friends.'
+  },
+  {
+    id: 'a2-zai-progressive-ing',
+    title: 'Action en cours : 在 + verbe = « en train de »',
+    titleEn: 'Ongoing action: 在 + verb = «-ing»',
+    body:
+      '在 placé DIRECTEMENT DEVANT UN VERBE (sans lieu) marque une action EN COURS, comme « be + -ing » en anglais.\n' +
+      '\n' +
+      'Structure : Sujet + 在 + Verbe (+ Objet).\n' +
+      '- Ex : 我在看书 (py wǒ zài kàn shū) « je suis en train de lire ». Action au moment où je parle.\n' +
+      '- Ex : 他在打电话 (py tā zài dǎ diàn huà) « il est en train de téléphoner ». Ne dérange pas !\n' +
+      '- Ex : 妈妈在做饭 (py mā ma zài zuò fàn) « maman est en train de cuisiner ».\n' +
+      '\n' +
+      'Version emphatique 正在 (zhèng zài) : insiste sur « juste maintenant, précisément ». Un peu plus formel/écrit.\n' +
+      '- Ex : 他正在开会 (py tā zhèng zài kāi huì) « il est PRÉCISÉMENT en réunion (là) ».\n' +
+      '- Ex : 我正在写邮件 (py wǒ zhèng zài xiě yóu jiàn) « je suis en plein milieu d\'écrire un email ».\n' +
+      '\n' +
+      'Particule 呢 en fin de phrase renforce l\'aspect « en train de » à l\'oral : 你在做什么呢 ? (py nǐ zài zuò shén me ne) « qu\'est-ce que tu fais (là, maintenant) ? ».\n' +
+      '\n' +
+      'Négation = 没在 (méi zài) : ne pas être en train de.\n' +
+      '- Ex : 我没在睡觉，我在工作 (py wǒ méi zài shuì jiào, wǒ zài gōng zuò) « je ne suis pas en train de dormir, je travaille ».\n' +
+      '\n' +
+      '在 vs 着 : 在 = action en cours dynamique (« être en train de FAIRE ») ; 着 = état continu statique (« être ASSIS », « porter »). Ex : 他在坐 (bizarre) vs 他坐着 (py tā zuò zhe) (il est assis).',
+    bodyEn:
+      '在 placed DIRECTLY BEFORE A VERB (no place) marks an ONGOING action, like «be + -ing» in English. Structure: Subject + 在 + Verb (+ Object). Ex: 我在看书 «I\'m reading». Action at the moment of speech. Ex: 他在打电话 «he\'s on the phone». Don\'t disturb! Ex: 妈妈在做饭 «mom is cooking». Emphatic version 正在 (zhèng zài): insists on «right now, precisely». Slightly more formal/written. Ex: 他正在开会 «he\'s RIGHT NOW in a meeting». Ex: 我正在写邮件 «I\'m in the middle of writing an email». Particle 呢 at the end of the sentence reinforces the «-ing» aspect orally: 你在做什么呢? «what are you doing (right now)?». Negation = 没在 (méi zài): not in the process of. Ex: 我没在睡觉，我在工作 «I\'m not sleeping, I\'m working». 在 vs 着: 在 = dynamic ongoing action («being in the process of DOING»); 着 = static continuous state («being SEATED», «wearing»). Ex: 他在坐 (weird) vs 他坐着 (he is seated).',
+    items: [
+      { hanzi: '在看书', pinyin: 'zài kàn shū', meaning: 'être en train de lire', meaningEn: 'be reading', audio: 'audio/hsk1/hsk1_看书.wav' },
+      { hanzi: '正在', pinyin: 'zhèng zài', meaning: 'être précisément en train de', meaningEn: 'be right now in the middle of', audio: 'audio/hsk2/hsk2_正在.wav' },
+      { hanzi: '呢', pinyin: 'ne', meaning: 'particule d\'action en cours', meaningEn: 'ongoing action particle', audio: 'audio/hsk1/hsk1_呢.wav' },
+      { hanzi: '着', pinyin: 'zhe', meaning: 'particule d\'état continu', meaningEn: 'continuous state particle', audio: 'audio/hsk2/hsk2_着.wav' },
+      { hanzi: '没在', pinyin: 'méi zài', meaning: 'ne pas être en train de', meaningEn: 'not be in the process of', audio: 'audio/hsk1/hsk1_没.wav' },
+      { hanzi: '我在看书', pinyin: 'wǒ zài kàn shū', meaning: 'je suis en train de lire', meaningEn: 'I\'m reading', audio: 'audio/hsk1/hsk1_看书.wav' },
+      { hanzi: '他在打电话', pinyin: 'tā zài dǎ diàn huà', meaning: 'il est en train de téléphoner', meaningEn: 'he\'s on the phone', audio: 'audio/hsk1/hsk1_打电话.wav' },
+      { hanzi: '妈妈在做饭', pinyin: 'mā ma zài zuò fàn', meaning: 'maman est en train de cuisiner', meaningEn: 'mom is cooking', audio: 'audio/hsk1/hsk1_做饭.wav' },
+      { hanzi: '他正在开会', pinyin: 'tā zhèng zài kāi huì', meaning: 'il est précisément en réunion', meaningEn: 'he\'s right now in a meeting', audio: 'audio/hsk3/hsk3_开会.wav' },
+      { hanzi: '我正在写邮件', pinyin: 'wǒ zhèng zài xiě yóu jiàn', meaning: 'je suis en plein milieu d\'écrire un email', meaningEn: 'I\'m in the middle of writing an email', audio: 'audio/hsk3/hsk3_邮件.wav' },
+      { hanzi: '你在做什么呢', pinyin: 'nǐ zài zuò shén me ne', meaning: 'qu\'est-ce que tu fais (là) ?', meaningEn: 'what are you doing (right now)?', audio: 'audio/hsk1/hsk1_什么.wav' },
+      { hanzi: '我没在睡觉，我在工作', pinyin: 'wǒ méi zài shuì jiào, wǒ zài gōng zuò', meaning: 'je ne dors pas, je travaille', meaningEn: 'I\'m not sleeping, I\'m working', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '他坐着', pinyin: 'tā zuò zhe', meaning: 'il est assis', meaningEn: 'he is seated', audio: 'audio/hsk1/hsk1_坐.wav' }
+    ],
+    tip:
+      'Astuce : le trio 在 / 正在 / 呢 marque le présent progressif ; 呢 est le plus casual, 正在 le plus insistant.',
+    tipEn:
+      'Tip: the 在 / 正在 / 呢 trio marks the progressive present; 呢 is the most casual, 正在 the most insistent.'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Grammaire — 过 : marquer une expérience vécue (CGG #60)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2GrammaireGuoExperienceLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-guo-experience-basics',
+    title: '过 : marquer une expérience vécue',
+    titleEn: '过: mark a life experience',
+    body:
+      'En chinois, on n\'utilise pas de temps verbal comme en français. À la place, on emploie des particules qui montrent COMMENT une action se déroule (aspect). 过 (guo, ton neutre) marque l\'ASPECT EXPÉRIENTIEL : « avoir fait au moins une fois dans sa vie ».\n' +
+      '\n' +
+      'Structure : Sujet + Verbe + 过 + (Objet).\n' +
+      '- Ex : 我去过北京 (py wǒ qù guo běi jīng) « je suis (déjà) allé à Pékin ». Sans préciser quand.\n' +
+      '- Ex : 我吃过日本菜 (py wǒ chī guo rì běn cài) « j\'ai (déjà) mangé japonais ». Une fois au moins.\n' +
+      '- Ex : 他学过法语 (py tā xué guo fǎ yǔ) « il a (autrefois) étudié le français ». Expérience passée, peut-être oubliée aujourd\'hui.\n' +
+      '\n' +
+      'Équivalent français : le passé composé « j\'ai déjà + participe » avec la nuance d\'expérience de vie.\n' +
+      '\n' +
+      '过 vs 了 :\n' +
+      '- 我吃了饭 (py wǒ chī le fàn) = « j\'ai mangé (l\'action est terminée à un moment précis) ». Action complétée.\n' +
+      '- 我吃过日本菜 (py wǒ chī guo rì běn cài) = « j\'ai (déjà une fois) mangé japonais ». Expérience de vie sans moment précis.\n' +
+      '\n' +
+      'Prononciation : 过 en tant que particule = ton neutre léger (guo). Attention à ne pas le confondre avec 过 (guò, 4e ton) qui est un verbe indépendant (« traverser, passer »).\n' +
+      '\n' +
+      'Verbe + 过 courants : 去过, 吃过, 看过, 听过, 学过, 见过, 做过, 玩过, 尝过 (goûter).\n' +
+      '- Ex : 你看过这部电影吗 ? (py nǐ kàn guo zhè bù diàn yǐng ma) « as-tu déjà vu ce film ? ».\n' +
+      '- Ex : 我听过这首歌 (py wǒ tīng guo zhè shǒu gē) « j\'ai déjà entendu cette chanson ».',
+    bodyEn:
+      'In Chinese, there\'s no verb tense like in French. Instead, particles show HOW an action unfolds (aspect). 过 (guo, neutral tone) marks the EXPERIENTIAL ASPECT: «to have done something at least once in one\'s life». Structure: Subject + Verb + 过 + (Object). Ex: 我去过北京 «I\'ve (already) been to Beijing». Without specifying when. Ex: 我吃过日本菜 «I\'ve (already) eaten Japanese food». At least once. Ex: 他学过法语 «he (once) studied French». Past experience, maybe forgotten today. French equivalent: passé composé «I\'ve already + past participle» with the nuance of life experience. 过 vs 了: 我吃了饭 = «I ate (the action is done at a specific moment)». Completed action. 我吃过日本菜 = «I\'ve (once already) eaten Japanese». Life experience with no specific moment. Pronunciation: 过 as a particle = light neutral tone (guo). Don\'t confuse with 过 (guò, 4th tone), an independent verb («to cross, pass»). Common Verb + 过: 去过, 吃过, 看过, 听过, 学过, 见过, 做过, 玩过, 尝过 (taste). Ex: 你看过这部电影吗? «have you seen this movie?». Ex: 我听过这首歌 «I\'ve heard this song».',
+    items: [
+      { hanzi: '过', pinyin: 'guo', meaning: 'particule d\'expérience vécue', meaningEn: 'life-experience particle', audio: 'audio/hsk1/hsk1_过.wav' },
+      { hanzi: '去过', pinyin: 'qù guo', meaning: 'être (déjà) allé', meaningEn: 'have been to', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '吃过', pinyin: 'chī guo', meaning: 'avoir (déjà) mangé', meaningEn: 'have (already) eaten', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '看过', pinyin: 'kàn guo', meaning: 'avoir (déjà) vu/lu', meaningEn: 'have (already) seen/read', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '学过', pinyin: 'xué guo', meaning: 'avoir (autrefois) étudié', meaningEn: 'have (once) studied', audio: 'audio/hsk1/hsk1_学.wav' },
+      { hanzi: '尝', pinyin: 'cháng', meaning: 'goûter', meaningEn: 'taste', audio: 'audio/hsk3/hsk3_尝.wav' },
+      { hanzi: '我去过北京', pinyin: 'wǒ qù guo běi jīng', meaning: 'je suis déjà allé à Pékin', meaningEn: 'I\'ve been to Beijing', audio: 'audio/hsk1/hsk1_北京.wav' },
+      { hanzi: '我吃过日本菜', pinyin: 'wǒ chī guo rì běn cài', meaning: 'j\'ai déjà mangé japonais', meaningEn: 'I\'ve eaten Japanese food', audio: 'audio/hsk2/hsk2_日本.wav' },
+      { hanzi: '他学过法语', pinyin: 'tā xué guo fǎ yǔ', meaning: 'il a autrefois étudié le français', meaningEn: 'he once studied French', audio: 'audio/hsk1/hsk1_学.wav' },
+      { hanzi: '你看过这部电影吗', pinyin: 'nǐ kàn guo zhè bù diàn yǐng ma', meaning: 'as-tu déjà vu ce film ?', meaningEn: 'have you seen this movie?', audio: 'audio/hsk1/hsk1_电影.wav' },
+      { hanzi: '我听过这首歌', pinyin: 'wǒ tīng guo zhè shǒu gē', meaning: 'j\'ai déjà entendu cette chanson', meaningEn: 'I\'ve heard this song', audio: 'audio/hsk3/hsk3_歌.wav' }
+    ],
+    tip:
+      'Astuce : chaque fois que tu veux dire « déjà + verbe au moins une fois », pense 过. C\'est LE marqueur d\'expérience de vie.',
+    tipEn:
+      'Tip: whenever you want to say «already + verb at least once», think 过. It IS the life-experience marker.'
+  },
+  {
+    id: 'a2-guo-negation-and-frequency',
+    title: 'Négation 没...过 et fréquence avec 次',
+    titleEn: 'Negation 没...过 and frequency with 次',
+    body:
+      'Négation : pour dire « je n\'ai jamais fait X », on emploie 没 (méi) ou 没有 (méi yǒu) DEVANT le verbe, en gardant 过 APRÈS.\n' +
+      '\n' +
+      'Structure : Sujet + 没(有) + Verbe + 过 + (Objet).\n' +
+      '- Ex : 我没去过中国 (py wǒ méi qù guo zhōng guó) « je ne suis jamais allé en Chine ».\n' +
+      '- Ex : 他没吃过榴莲 (py tā méi chī guo liú lián) « il n\'a jamais goûté au durian ».\n' +
+      '\n' +
+      'Erreur classique : on n\'utilise JAMAIS 不 pour nier une expérience passée. C\'est TOUJOURS 没. Dire 我不去过中国 est faux.\n' +
+      '\n' +
+      'Question type : Verbe + 过 + Objet + 吗 ? ou Verbe + 过 + Objet + 没有 ?\n' +
+      '- Ex : 你去过日本吗 ? (py nǐ qù guo rì běn ma) « es-tu déjà allé au Japon ? ».\n' +
+      '- Ex : 你看过这本书没有 ? (py nǐ kàn guo zhè běn shū méi yǒu) « as-tu déjà lu ce livre ? ».\n' +
+      '\n' +
+      'Renforcer avec 从来 (cóng lái) « jamais depuis toujours » : 从来 + 没(有) + Verbe + 过 = « jamais de la vie ».\n' +
+      '- Ex : 他从来没喝过酒 (py tā cóng lái méi hē guo jiǔ) « il n\'a jamais bu d\'alcool de sa vie ». Ton plus emphatique.\n' +
+      '- Ex : 我从来没吃过这么辣的东西 (py wǒ cóng lái méi chī guo zhè me là de dōng xi) « je n\'ai jamais mangé un truc aussi épicé ».\n' +
+      '\n' +
+      'Compter les occurrences avec 次 (cì) « fois » : Sujet + Verbe + 过 + Objet + [nombre] + 次.\n' +
+      '- Ex : 我去过北京三次 (py wǒ qù guo běi jīng sān cì) « je suis allé à Pékin trois fois ».\n' +
+      '- Ex : 我看过那部电影两次 (py wǒ kàn guo nà bù diàn yǐng liǎng cì) « j\'ai vu ce film deux fois ».\n' +
+      '\n' +
+      'Position flexible de 次 : on peut aussi dire 我去过三次北京, même sens.',
+    bodyEn:
+      'Negation: to say «I\'ve never done X», use 没 (méi) or 没有 (méi yǒu) BEFORE the verb, keeping 过 AFTER. Structure: Subject + 没(有) + Verb + 过 + (Object). Ex: 我没去过中国 «I\'ve never been to China». Ex: 他没吃过榴莲 «he\'s never tried durian». Classic mistake: NEVER use 不 to negate a past experience. It\'s ALWAYS 没. Saying 我不去过中国 is wrong. Yes/no question: Verb + 过 + Object + 吗? or Verb + 过 + Object + 没有? Ex: 你去过日本吗? «have you been to Japan?». Ex: 你看过这本书没有? «have you read this book?». Reinforce with 从来 (cóng lái) «ever since always»: 从来 + 没(有) + Verb + 过 = «never in life». Ex: 他从来没喝过酒 «he\'s never had alcohol in his life». More emphatic. Ex: 我从来没吃过这么辣的东西 «I\'ve never eaten something this spicy». Count occurrences with 次 (cì) «times»: Subject + Verb + 过 + Object + [number] + 次. Ex: 我去过北京三次 «I\'ve been to Beijing three times». Ex: 我看过那部电影两次 «I\'ve seen that movie twice». Flexible 次 position: you can also say 我去过三次北京, same meaning.',
+    items: [
+      { hanzi: '没', pinyin: 'méi', meaning: 'ne...pas (aspect passé)', meaningEn: 'not (past aspect)', audio: 'audio/hsk1/hsk1_没.wav' },
+      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne...pas (forme longue)', meaningEn: 'not (long form)', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '从来', pinyin: 'cóng lái', meaning: 'jamais depuis toujours', meaningEn: 'ever, never (emphatic)', audio: 'audio/hsk3/hsk3_从来.wav' },
+      { hanzi: '次', pinyin: 'cì', meaning: 'fois (occurrence)', meaningEn: 'time (occurrence)', audio: 'audio/hsk2/hsk2_次.wav' },
+      { hanzi: '我没去过中国', pinyin: 'wǒ méi qù guo zhōng guó', meaning: 'je ne suis jamais allé en Chine', meaningEn: 'I\'ve never been to China', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '他没吃过榴莲', pinyin: 'tā méi chī guo liú lián', meaning: 'il n\'a jamais goûté au durian', meaningEn: 'he\'s never tried durian', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '你去过日本吗', pinyin: 'nǐ qù guo rì běn ma', meaning: 'es-tu déjà allé au Japon ?', meaningEn: 'have you been to Japan?', audio: 'audio/hsk2/hsk2_日本.wav' },
+      { hanzi: '你看过这本书没有', pinyin: 'nǐ kàn guo zhè běn shū méi yǒu', meaning: 'as-tu déjà lu ce livre ?', meaningEn: 'have you read this book?', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '他从来没喝过酒', pinyin: 'tā cóng lái méi hē guo jiǔ', meaning: 'il n\'a jamais bu d\'alcool de sa vie', meaningEn: 'he\'s never drunk alcohol', audio: 'audio/hsk2/hsk2_酒.wav' },
+      { hanzi: '我从来没吃过这么辣的东西', pinyin: 'wǒ cóng lái méi chī guo zhè me là de dōng xi', meaning: 'je n\'ai jamais mangé un truc aussi épicé', meaningEn: 'I\'ve never eaten something this spicy', audio: 'audio/hsk3/hsk3_辣.wav' },
+      { hanzi: '我去过北京三次', pinyin: 'wǒ qù guo běi jīng sān cì', meaning: 'je suis allé à Pékin trois fois', meaningEn: 'I\'ve been to Beijing three times', audio: 'audio/hsk1/hsk1_北京.wav' },
+      { hanzi: '我看过那部电影两次', pinyin: 'wǒ kàn guo nà bù diàn yǐng liǎng cì', meaning: 'j\'ai vu ce film deux fois', meaningEn: 'I\'ve seen that movie twice', audio: 'audio/hsk1/hsk1_电影.wav' }
+    ],
+    tip:
+      'Astuce : le duo 没...过 remplace TOUJOURS 不...过. Retiens : 不 nie une habitude/tendance, 没 nie une action/expérience passée.',
+    tipEn:
+      'Tip: the 没...过 duo ALWAYS replaces 不...过. Remember: 不 negates a habit/tendency, 没 negates an action/past experience.'
+  },
+  {
+    id: 'a2-guo-vs-le-and-combined',
+    title: '过 vs 了 : nuance expérience vs action complétée',
+    titleEn: '过 vs 了: experience vs completed action',
+    body:
+      'Les DEUX marqueurs se réfèrent au passé, mais avec un ANGLE DIFFÉRENT :\n' +
+      '- 过 = « j\'ai (déjà) fait ça, ça fait partie de mon expérience de vie » (SANS moment précis).\n' +
+      '- 了 = « l\'action est COMPLÉTÉE à un moment donné » (souvent AVEC contexte temporel).\n' +
+      '\n' +
+      'Comparaison directe :\n' +
+      '- 我吃过日本菜 (py wǒ chī guo rì běn cài) « j\'ai déjà mangé japonais (dans ma vie) ». Compte comme expérience.\n' +
+      '- 昨天我吃了日本菜 (py zuó tiān wǒ chī le rì běn cài) « hier j\'ai mangé japonais ». Événement daté, terminé.\n' +
+      '\n' +
+      'Choix guidé par la QUESTION :\n' +
+      '- Question sur l\'expérience de vie → réponse en 过 : 你去过法国吗 ? → 我去过 / 我没去过.\n' +
+      '- Question sur un événement précis → réponse en 了 : 你今天吃饭了吗 ? → 吃了 / 没吃.\n' +
+      '\n' +
+      '过 + 了 dans la même phrase : possible pour insister sur « déjà FAIT, c\'est BOUCLÉ ». Le 过 marque l\'expérience, le 了 final ajoute « c\'est réglé, ne me le redemande pas ».\n' +
+      '\n' +
+      'Structure : Sujet + Verbe + 过 + (Objet) + 了.\n' +
+      '- Ex : 我看过这本书了 (py wǒ kàn guo zhè běn shū le) « je l\'ai déjà lu (ce livre) ». Réponse à « tu veux lire ce livre ? ».\n' +
+      '- Ex : 这部电影我看过了 (py zhè bù diàn yǐng wǒ kàn guo le) « ce film, je l\'ai déjà vu ». Ton final « pas la peine de me le proposer ».\n' +
+      '- On peut renforcer avec 已经 (yǐ jīng) « déjà » : 我已经吃过了 (py wǒ yǐ jīng chī guo le) « j\'ai déjà mangé ».\n' +
+      '\n' +
+      'Nuance conversationnelle : sans 了 = information neutre (« j\'y suis allé un jour ») ; avec 了 = réponse à une invitation/proposition (« déjà fait, merci »).\n' +
+      '- 我去过日本 (py wǒ qù guo rì běn) (fait de vie, cadre curriculum) vs 我去过日本了 (py wǒ qù guo rì běn le) (donc on ne prévoit plus ce voyage).\n' +
+      '\n' +
+      'Verbes qui rejettent 过 : les verbes NÉCESSAIREMENT durables comme 是 (être), 有 (avoir), 认识 (connaître), 姓 (avoir pour nom de famille) ne prennent PAS 过 car ils désignent des états, pas des expériences.',
+    bodyEn:
+      'BOTH markers refer to the past, but from a DIFFERENT ANGLE: 过 = «I\'ve (already) done that, it\'s part of my life experience» (WITHOUT a specific moment). 了 = «the action is COMPLETED at a given moment» (often WITH temporal context). Direct comparison: 我吃过日本菜 «I\'ve already eaten Japanese food (in my life)». Counts as experience. 昨天我吃了日本菜 «yesterday I ate Japanese food». Dated, finished event. Choice guided by the QUESTION: Question about life experience → answer with 过: 你去过法国吗? → 我去过 / 我没去过. Question about a specific event → answer with 了: 你今天吃饭了吗? → 吃了 / 没吃. 过 + 了 in the same sentence: possible to insist on «already DONE, it\'s WRAPPED UP». The 过 marks experience, the final 了 adds «it\'s settled, don\'t ask again». Structure: Subject + Verb + 过 + (Object) + 了. Ex: 我看过这本书了 «I\'ve already read it (this book)». Reply to «do you want to read this book?». Ex: 这部电影我看过了 «this movie, I\'ve already seen it». Final tone «no need to suggest it to me». You can reinforce with 已经 (yǐ jīng) «already»: 我已经吃过了 «I\'ve already eaten». Conversational nuance: without 了 = neutral info («I went there once»); with 了 = reply to an invitation/proposal («already done, thanks»). 我去过日本 (life fact, resume frame) vs 我去过日本了 (so we\'re not planning this trip anymore). Verbs that reject 过: NECESSARILY durable verbs like 是 (be), 有 (have), 认识 (know), 姓 (be surnamed) do NOT take 过 because they name states, not experiences.',
+    items: [
+      { hanzi: '了', pinyin: 'le', meaning: 'particule d\'action complétée', meaningEn: 'completed-action particle', audio: 'audio/hsk1/hsk1_了.wav' },
+      { hanzi: '已经', pinyin: 'yǐ jīng', meaning: 'déjà', meaningEn: 'already', audio: 'audio/hsk2/hsk2_已经.wav' },
+      { hanzi: '昨天', pinyin: 'zuó tiān', meaning: 'hier', meaningEn: 'yesterday', audio: 'audio/hsk1/hsk1_昨天.wav' },
+      { hanzi: '我吃过日本菜', pinyin: 'wǒ chī guo rì běn cài', meaning: 'j\'ai déjà mangé japonais (vie)', meaningEn: 'I\'ve eaten Japanese food (life)', audio: 'audio/hsk2/hsk2_日本.wav' },
+      { hanzi: '昨天我吃了日本菜', pinyin: 'zuó tiān wǒ chī le rì běn cài', meaning: 'hier j\'ai mangé japonais', meaningEn: 'yesterday I ate Japanese food', audio: 'audio/hsk1/hsk1_昨天.wav' },
+      { hanzi: '我看过这本书了', pinyin: 'wǒ kàn guo zhè běn shū le', meaning: 'je l\'ai déjà lu (ce livre)', meaningEn: 'I\'ve already read it (this book)', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '这部电影我看过了', pinyin: 'zhè bù diàn yǐng wǒ kàn guo le', meaning: 'ce film, je l\'ai déjà vu', meaningEn: 'this movie, I\'ve already seen it', audio: 'audio/hsk1/hsk1_电影.wav' },
+      { hanzi: '我已经吃过了', pinyin: 'wǒ yǐ jīng chī guo le', meaning: 'j\'ai déjà mangé', meaningEn: 'I\'ve already eaten', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '我去过日本', pinyin: 'wǒ qù guo rì běn', meaning: 'je suis (déjà) allé au Japon', meaningEn: 'I\'ve been to Japan', audio: 'audio/hsk2/hsk2_日本.wav' },
+      { hanzi: '我去过日本了', pinyin: 'wǒ qù guo rì běn le', meaning: 'j\'y suis déjà allé (donc bon)', meaningEn: 'I\'ve already been (so, done)', audio: 'audio/hsk2/hsk2_日本.wav' }
+    ],
+    tip:
+      'Astuce : quand tu doutes entre 过 et 了 : « ça a laissé une trace dans mon CV de vie ? » → 过. « Ça s\'est passé, c\'est fini, à ce moment précis ? » → 了.',
+    tipEn:
+      'Tip: when unsure between 过 and 了: «did it leave a trace on my life resume?» → 过. «Did it happen, done, at that specific moment?» → 了.'
+  }
+];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Nuances — Exprimer « tous » Part 1 : 都, 所有, 每, 全 (CGG #57)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesAllPart1LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-all-dou-participation',
+    title: '都 : marquer que « tout le monde » fait qch',
+    titleEn: '都: marking that «everyone» does sth',
+    body:
+      '都 (dōu) est le PREMIER outil pour dire « tous, tous ensemble ». Il SUIT le sujet et PRÉCÈDE le verbe.\n' +
+      '\n' +
+      'Structure : Sujet pluriel + 都 + Verbe.\n' +
+      '- Ex : 他们都来了 (py tā men dōu lái le) « ils sont tous venus ». 都 signale que tous les membres du groupe sont concernés.\n' +
+      '- Ex : 我们都喜欢中国菜 (py wǒ men dōu xǐ huan zhōng guó cài) « nous aimons tous la cuisine chinoise ».\n' +
+      '- Ex : 学生都在教室 (py xué shēng dōu zài jiào shì) « les étudiants sont tous en classe ».\n' +
+      '\n' +
+      'Règle absolue : 都 vient TOUJOURS AVANT le verbe, JAMAIS avant le sujet. Ne dis pas 都我们 mais 我们都.\n' +
+      '\n' +
+      '都 + questions : 你们都是中国人吗？(py nǐ men dōu shì zhōng guó rén ma) « êtes-vous tous chinois ? ».\n' +
+      '\n' +
+      '都 avec un mot interrogatif = « tout, n\'importe quoi » : 什么 + 都 forme une INCLUSION TOTALE (voir plus loin dans le parcours).\n' +
+      '- Ex : 他什么都吃 (py tā shén me dōu chī) « il mange TOUT / n\'importe quoi ». 什么 n\'est plus une question ici.\n' +
+      '- Ex : 我什么都不知道 (py wǒ shén me dōu bù zhī dào) « je ne sais RIEN » (négation totale).\n' +
+      '- Ex : 她哪儿都想去 (py tā nǎ r dōu xiǎng qù) « elle veut aller PARTOUT ».\n' +
+      '\n' +
+      'Négation : 都不 = « tous NE ...pas » (négation totale) ; 不都 = « pas tous » (négation partielle).\n' +
+      '- Ex : 他们都不来 (py tā men dōu bù lái) « ils ne viennent AUCUN ». vs 他们不都来 (py tā men bù dōu lái) « ils ne viennent pas tous (certains oui) ».',
+    bodyEn:
+      '都 (dōu) is the FIRST tool for saying «all, everyone together». It FOLLOWS the subject and PRECEDES the verb. Structure: Plural subject + 都 + Verb. Ex: 他们都来了 «they all came». 都 signals that every group member is concerned. Ex: 我们都喜欢中国菜 «we all like Chinese food». Ex: 学生都在教室 «the students are all in class». Absolute rule: 都 ALWAYS comes BEFORE the verb, NEVER before the subject. Don\'t say 都我们, say 我们都. 都 + questions: 你们都是中国人吗？«are you all Chinese?». 都 with a question word = «anything, everything»: 什么 + 都 forms TOTAL INCLUSION. Ex: 他什么都吃 «he eats ANYTHING». 什么 is no longer a question here. Ex: 我什么都不知道 «I know NOTHING» (total negation). Ex: 她哪儿都想去 «she wants to go EVERYWHERE». Negation: 都不 = «NONE of them do» (total negation); 不都 = «not all» (partial negation). Ex: 他们都不来 «NONE of them come». vs 他们不都来 «they don\'t all come (some do)».',
+    items: [
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tous ensemble', meaningEn: 'all, altogether', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '什么', pinyin: 'shén me', meaning: 'quoi ; (avec 都) tout', meaningEn: 'what; (with 都) anything', audio: 'audio/hsk1/hsk1_什么.wav' },
+      { hanzi: '哪儿', pinyin: 'nǎ r', meaning: 'où ; (avec 都) partout', meaningEn: 'where; (with 都) everywhere', audio: 'audio/hsk1/hsk1_哪儿.wav' },
+      { hanzi: '他们都来了', pinyin: 'tā men dōu lái le', meaning: 'ils sont tous venus', meaningEn: 'they all came', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '我们都喜欢中国菜', pinyin: 'wǒ men dōu xǐ huan zhōng guó cài', meaning: 'nous aimons tous la cuisine chinoise', meaningEn: 'we all like Chinese food', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '学生都在教室', pinyin: 'xué shēng dōu zài jiào shì', meaning: 'les étudiants sont tous en classe', meaningEn: 'students are all in class', audio: 'audio/hsk1/hsk1_学生.wav' },
+      { hanzi: '你们都是中国人吗', pinyin: 'nǐ men dōu shì zhōng guó rén ma', meaning: 'êtes-vous tous chinois ?', meaningEn: 'are you all Chinese?', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '他什么都吃', pinyin: 'tā shén me dōu chī', meaning: 'il mange tout / n\'importe quoi', meaningEn: 'he eats anything', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '我什么都不知道', pinyin: 'wǒ shén me dōu bù zhī dào', meaning: 'je ne sais rien', meaningEn: 'I know nothing', audio: 'audio/hsk1/hsk1_知道.wav' },
+      { hanzi: '她哪儿都想去', pinyin: 'tā nǎ r dōu xiǎng qù', meaning: 'elle veut aller partout', meaningEn: 'she wants to go everywhere', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '他们都不来', pinyin: 'tā men dōu bù lái', meaning: 'aucun d\'eux ne vient', meaningEn: 'none of them come', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '他们不都来', pinyin: 'tā men bù dōu lái', meaning: 'ils ne viennent pas tous', meaningEn: 'they don\'t all come', audio: 'audio/hsk1/hsk1_来.wav' }
+    ],
+    tip:
+      'Astuce : 都 est le mot-outil de la totalité de groupe. Retiens ordre : SUJET + 都 + VERBE.',
+    tipEn:
+      'Tip: 都 is the totality-of-group toolword. Remember the order: SUBJECT + 都 + VERB.'
+  },
+  {
+    id: 'a2-all-suoyou-mei',
+    title: '所有 et 每 : chaque item, un par un',
+    titleEn: '所有 and 每: each item, one by one',
+    body:
+      '所有 (suǒ yǒu) « tous les... » MODIFIE UN NOM, contrairement à 都 qui suit le sujet. Il balaye la totalité d\'un ensemble.\n' +
+      '\n' +
+      'Structure : 所有 + (的) + Nom + (都 + Verbe).\n' +
+      '- Ex : 所有的学生都通过了考试 (py suǒ yǒu de xué shēng dōu tōng guò le kǎo shì) « tous les étudiants ont réussi l\'examen ». Souvent avec 的 et suivi de 都.\n' +
+      '- Ex : 所有人都同意 (py suǒ yǒu rén dōu tóng yì) « tout le monde est d\'accord ».\n' +
+      '- Ex : 所有的门都锁了 (py suǒ yǒu de mén dōu suǒ le) « toutes les portes sont fermées à clé ».\n' +
+      '\n' +
+      'Registre : 所有 est un chouïa plus formel/écrit que 都 seul.\n' +
+      '\n' +
+      '每 (měi) « chaque » individualise : chaque membre EST CONSIDÉRÉ SÉPARÉMENT. Requiert un CLASSIFICATEUR.\n' +
+      '\n' +
+      'Structure : 每 + Classificateur + Nom + (都 + Verbe).\n' +
+      '- Ex : 每个人都很努力 (py měi gè rén dōu hěn nǔ lì) « chaque personne travaille dur ». Le 都 est quasi-obligatoire ici.\n' +
+      '- Ex : 每天我都跑步 (py měi tiān wǒ dōu pǎo bù) « chaque jour, je cours ». 每天 est fixé (pas besoin de 个).\n' +
+      '- Ex : 每本书都很有趣 (py měi běn shū dōu hěn yǒu qù) « chaque livre est intéressant ».\n' +
+      '\n' +
+      '每天 / 每年 / 每次 sont FIGÉS sans classificateur ; 每 + [autre nom] requiert 个 ou son classificateur : 每个学生, 每一位老师, 每一本书.\n' +
+      '\n' +
+      '每...都 vs 都 seul : 每 met le SPOT SUR CHAQUE INDIVIDU (« CHACUN sans exception ») ; 都 seul est plus collectif (« l\'ensemble »).\n' +
+      '- Ex collective : 他们都在 (py tā men dōu zài) « ils sont tous là (l\'ensemble) ».\n' +
+      '- Ex individuelle : 每个人都在 (py měi gè rén dōu zài) « chacun est là (un par un) ».\n' +
+      '\n' +
+      'Cas typiques :\n' +
+      '- 每次 + 都 = « chaque fois... systématiquement... ».\n' +
+      '- 每天 + 都 = « chaque jour... sans exception... ».',
+    bodyEn:
+      '所有 (suǒ yǒu) «all the ...» MODIFIES A NOUN, unlike 都 which follows the subject. It sweeps the totality of a set. Structure: 所有 + (的) + Noun + (都 + Verb). Ex: 所有的学生都通过了考试 «all students passed the exam». Often with 的 and followed by 都. Ex: 所有人都同意 «everyone agrees». Ex: 所有的门都锁了 «all doors are locked». Register: 所有 is a hair more formal/written than 都 alone. 每 (měi) «each» individualizes: each member IS CONSIDERED SEPARATELY. Requires a CLASSIFIER. Structure: 每 + Classifier + Noun + (都 + Verb). Ex: 每个人都很努力 «each person works hard». 都 is almost mandatory here. Ex: 每天我都跑步 «every day I run». 每天 is fixed (no need for 个). Ex: 每本书都很有趣 «every book is interesting». 每天 / 每年 / 每次 are FIXED without classifier; 每 + [other noun] requires 个 or its classifier: 每个学生, 每一位老师, 每一本书. 每...都 vs 都 alone: 每 spotlights EACH INDIVIDUAL («EACH one without exception»); 都 alone is more collective («the whole»). Collective ex: 他们都在 «they\'re all there (the group)». Individual ex: 每个人都在 «each one is there (one by one)». Typical cases: 每次 + 都 = «every time... systematically...». 每天 + 都 = «every day... without exception...».',
+    items: [
+      { hanzi: '所有', pinyin: 'suǒ yǒu', meaning: 'tous les...', meaningEn: 'all the...', audio: 'audio/hsk4/hsk4_所有.wav' },
+      { hanzi: '的', pinyin: 'de', meaning: 'particule de détermination', meaningEn: 'possessive/modifier particle', audio: 'audio/hsk1/hsk1_的.wav' },
+      { hanzi: '每', pinyin: 'měi', meaning: 'chaque', meaningEn: 'each, every', audio: 'audio/hsk2/hsk2_每.wav' },
+      { hanzi: '个', pinyin: 'gè', meaning: 'classificateur générique', meaningEn: 'generic classifier', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '所有的学生都通过了考试', pinyin: 'suǒ yǒu de xué shēng dōu tōng guò le kǎo shì', meaning: 'tous les étudiants ont réussi l\'examen', meaningEn: 'all students passed the exam', audio: 'audio/hsk2/hsk2_考试.wav' },
+      { hanzi: '所有人都同意', pinyin: 'suǒ yǒu rén dōu tóng yì', meaning: 'tout le monde est d\'accord', meaningEn: 'everyone agrees', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '所有的门都锁了', pinyin: 'suǒ yǒu de mén dōu suǒ le', meaning: 'toutes les portes sont fermées à clé', meaningEn: 'all doors are locked', audio: 'audio/hsk2/hsk2_门.wav' },
+      { hanzi: '每个人都很努力', pinyin: 'měi gè rén dōu hěn nǔ lì', meaning: 'chaque personne travaille dur', meaningEn: 'each person works hard', audio: 'audio/hsk3/hsk3_努力.wav' },
+      { hanzi: '每天我都跑步', pinyin: 'měi tiān wǒ dōu pǎo bù', meaning: 'chaque jour, je cours', meaningEn: 'every day I run', audio: 'audio/hsk2/hsk2_跑步.wav' },
+      { hanzi: '每本书都很有趣', pinyin: 'měi běn shū dōu hěn yǒu qù', meaning: 'chaque livre est intéressant', meaningEn: 'each book is interesting', audio: 'audio/hsk3/hsk3_有趣.wav' },
+      { hanzi: '他们都在', pinyin: 'tā men dōu zài', meaning: 'ils sont tous là', meaningEn: 'they\'re all here', audio: 'audio/hsk1/hsk1_在.wav' },
+      { hanzi: '每个人都在', pinyin: 'měi gè rén dōu zài', meaning: 'chacun est là', meaningEn: 'each person is here', audio: 'audio/hsk1/hsk1_在.wav' }
+    ],
+    tip:
+      'Astuce : quand tu veux marteler « CHAQUE, un par un », prends 每 + classificateur + 都. Pour un simple constat collectif, 都 seul suffit.',
+    tipEn:
+      'Tip: when you want to hammer «EACH, one by one», use 每 + classifier + 都. For a simple collective observation, 都 alone is enough.'
+  },
+  {
+    id: 'a2-all-quan-quanbu',
+    title: '全 et 全部 : totalité et emphase',
+    titleEn: '全 and 全部: totality and emphasis',
+    body:
+      '全 (quán) et 全部 (quán bù) « tout, entier, la totalité » ajoutent une insistance sur l\'INTÉGRALITÉ. 全 est court et familier ; 全部 un peu plus formel.\n' +
+      '\n' +
+      'Devant un nom : 全 / 全部 + (的) + Nom.\n' +
+      '- Ex : 全家 (py quán jiā) « toute la famille ». 全 se colle directement au nom court.\n' +
+      '- Ex : 全班同学 (py quán bān tóng xué) « toute la classe ».\n' +
+      '- Ex : 全部的钱 (py quán bù de qián) « tout l\'argent ». Plus explicite avec 的.\n' +
+      '\n' +
+      'Combiné avec 都 : 全都 / 全部都 + Verbe = « ABSOLUMENT tous ». Emphase maximale.\n' +
+      '- Ex : 孩子们全都笑了 (py hái zi men quán dōu xiào le) « les enfants ont TOUS ri (sans exception) ».\n' +
+      '- Ex : 我的书全都在这里 (py wǒ de shū quán dōu zài zhè lǐ) « tous mes livres sont ici, absolument tous ».\n' +
+      '- Ex : 他们全部都同意 (py tā men quán bù dōu tóng yì) « ils sont tous d\'accord, à 100 % ».\n' +
+      '\n' +
+      'Différence 都 / 所有 / 全 :\n' +
+      '- 都 = suit le sujet, signale que la totalité participe.\n' +
+      '- 所有 = modifie un nom, balaie l\'ensemble.\n' +
+      '- 全 / 全部 = insiste sur la totalité (« pas UN de manquant »), plus expressif.\n' +
+      '\n' +
+      'Cumul possible : 所有的学生全都通过了 (py suǒ yǒu de xué shēng quán dōu tōng guò le) « TOUS les étudiants ont TOUS réussi (sans exception) ». Un peu redondant mais très emphatique.\n' +
+      '\n' +
+      '全 comme adjectif = « entier » : 全世界 (py quán shì jiè) « le monde entier », 全国 (py quán guó) « le pays entier », 全年 (py quán nián) « toute l\'année ».',
+    bodyEn:
+      '全 (quán) and 全部 (quán bù) «all, whole, the totality» add emphasis on WHOLENESS. 全 is short and casual; 全部 slightly more formal. Before a noun: 全 / 全部 + (的) + Noun. Ex: 全家 «the whole family». 全 sticks directly to short nouns. Ex: 全班同学 «the whole class». Ex: 全部的钱 «all the money». More explicit with 的. Combined with 都: 全都 / 全部都 + Verb = «ABSOLUTELY all». Maximum emphasis. Ex: 孩子们全都笑了 «the children ALL laughed (no exception)». Ex: 我的书全都在这里 «all my books are here, absolutely all». Ex: 他们全部都同意 «they all agree, 100%». Difference 都 / 所有 / 全: 都 = follows subject, signals total participation. 所有 = modifies a noun, sweeps the set. 全 / 全部 = insists on totality («not ONE missing»), more expressive. Possible stacking: 所有的学生全都通过了 «ALL students ALL passed (without exception)». A bit redundant but very emphatic. 全 as adjective = «whole»: 全世界 «the whole world», 全国 «the whole country», 全年 «the whole year».',
+    items: [
+      { hanzi: '全', pinyin: 'quán', meaning: 'entier, tout', meaningEn: 'whole, all', audio: 'audio/hsk4/hsk4_全.wav' },
+      { hanzi: '全部', pinyin: 'quán bù', meaning: 'la totalité, tous', meaningEn: 'the whole, all', audio: 'audio/hsk4/hsk4_全部.wav' },
+      { hanzi: '全都', pinyin: 'quán dōu', meaning: 'absolument tous', meaningEn: 'absolutely all', audio: 'audio/hsk4/hsk4_全.wav' },
+      { hanzi: '全家', pinyin: 'quán jiā', meaning: 'toute la famille', meaningEn: 'the whole family', audio: 'audio/hsk1/hsk1_家.wav' },
+      { hanzi: '全班同学', pinyin: 'quán bān tóng xué', meaning: 'toute la classe', meaningEn: 'the whole class', audio: 'audio/hsk2/hsk2_同学.wav' },
+      { hanzi: '全部的钱', pinyin: 'quán bù de qián', meaning: 'tout l\'argent', meaningEn: 'all the money', audio: 'audio/hsk1/hsk1_钱.wav' },
+      { hanzi: '孩子们全都笑了', pinyin: 'hái zi men quán dōu xiào le', meaning: 'les enfants ont tous ri (sans exception)', meaningEn: 'the children all laughed (no exception)', audio: 'audio/hsk2/hsk2_孩子.wav' },
+      { hanzi: '我的书全都在这里', pinyin: 'wǒ de shū quán dōu zài zhè lǐ', meaning: 'tous mes livres sont ici, absolument tous', meaningEn: 'all my books are here, absolutely all', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '他们全部都同意', pinyin: 'tā men quán bù dōu tóng yì', meaning: 'ils sont tous d\'accord, à 100 %', meaningEn: 'they all agree, 100%', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '全世界', pinyin: 'quán shì jiè', meaning: 'le monde entier', meaningEn: 'the whole world', audio: 'audio/hsk3/hsk3_世界.wav' },
+      { hanzi: '全国', pinyin: 'quán guó', meaning: 'le pays entier', meaningEn: 'the whole country', audio: 'audio/hsk3/hsk3_全国.wav' },
+      { hanzi: '全年', pinyin: 'quán nián', meaning: 'toute l\'année', meaningEn: 'the whole year', audio: 'audio/hsk1/hsk1_年.wav' }
+    ],
+    tip:
+      'Astuce : pour ajouter du poids à ta totalité (« pas un ne manque à l\'appel »), prends 全都 ou 全部都. Sinon 都 suffit.',
+    tipEn:
+      'Tip: to add weight to your totality («not one missing»), use 全都 or 全部都. Otherwise 都 does the job.'
+  }
+];

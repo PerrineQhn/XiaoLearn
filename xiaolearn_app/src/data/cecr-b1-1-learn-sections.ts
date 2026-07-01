@@ -3069,3 +3069,137 @@ export const b11NuancesTopicConnectorsLearnSections: LessonV2LearnSection[] = [
       'In speech, 说起/说到 is your best tool to CHAIN naturally. You don\'t break the conversation, you keep it flowing.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.1 Nuances — 在 abstrait : 在...上, 在...下, 在...方面 (CGG #61)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b11NuancesZaiAbstractLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-zai-topic-shang',
+    title: '« Sur le plan de... » : 在...上',
+    titleEn: '«In terms of / on the level of»: 在...上',
+    body:
+      'Au-delà de l\'espace physique, 在...上 introduit un DOMAINE ABSTRAIT, un ANGLE de discussion. Équivalent français : « sur le plan de », « en matière de », « quant à ».\n' +
+      '\n' +
+      'Structure : 在 + [Sujet abstrait] + 上，[phrase].\n' +
+      '- Ex : 在学习方法上，每个人都有自己的习惯 (zài xué xí fāng fǎ shàng, měi gè rén dōu yǒu zì jǐ de xí guàn) « en matière de méthode d\'étude, chacun a ses habitudes ».\n' +
+      '- Ex : 在这个问题上，我们意见不一致 (zài zhè gè wèn tí shàng, wǒmen yì jiàn bù yī zhì) « sur cette question, nous ne sommes pas d\'accord ».\n' +
+      '- Ex : 在经济上，中国发展很快 (zài jīng jì shàng, zhōng guó fā zhǎn hěn kuài) « sur le plan économique, la Chine se développe vite ».\n' +
+      '\n' +
+      'Sujets ABSTRAITS typiques : 教育 (éducation), 经济 (économie), 文化 (culture), 政治 (politique), 感情 (sentiment), 心理 (psychologie), 工作 (travail).\n' +
+      '- Ex : 在感情上，他很脆弱 (zài gǎn qíng shàng, tā hěn cuì ruò) « émotionnellement, il est fragile ».\n' +
+      '- Ex : 在工作上，她很认真 (zài gōng zuò shàng, tā hěn rèn zhēn) « au travail, elle est très sérieuse ».\n' +
+      '\n' +
+      'Position : quasi-toujours en TÊTE de phrase pour cadrer le sujet. Le 上 est OBLIGATOIRE — sans lui, la structure ne fonctionne pas.\n' +
+      '\n' +
+      'Ne PAS confondre avec le 上 spatial (« sur »). Ici 上 est ABSTRAIT : « au niveau de », pas « posé sur ».',
+    bodyEn:
+      'Beyond physical space, 在...上 introduces an ABSTRACT DOMAIN, an ANGLE of discussion. English equivalent: «in terms of», «as regards», «on the level of». Structure: 在 + [abstract topic] + 上，[sentence]. Ex: 在学习方法上，每个人都有自己的习惯 «in terms of study method, everyone has their own habits». Ex: 在这个问题上，我们意见不一致 «on this issue, we don\'t agree». Ex: 在经济上，中国发展很快 «economically, China develops fast». Typical ABSTRACT topics: 教育 (education), 经济 (economy), 文化 (culture), 政治 (politics), 感情 (emotion), 心理 (psychology), 工作 (work). Ex: 在感情上，他很脆弱 «emotionally he\'s fragile». Ex: 在工作上，她很认真 «at work she\'s serious». Position: almost always at the HEAD of the sentence to frame the topic. 上 is MANDATORY — without it, the structure fails. Do NOT confuse with spatial 上 («on»). Here 上 is ABSTRACT: «at the level of», not «resting on».',
+    items: [
+      { hanzi: '在...上', pinyin: 'zài ... shàng', meaning: 'sur le plan de, en matière de', meaningEn: 'in terms of, as regards', audio: 'audio/hsk1/hsk1_上.wav' },
+      { hanzi: '经济', pinyin: 'jīng jì', meaning: 'économie', meaningEn: 'economy', audio: 'audio/hsk4/hsk4_经济.wav' },
+      { hanzi: '教育', pinyin: 'jiào yù', meaning: 'éducation', meaningEn: 'education', audio: 'audio/hsk4/hsk4_教育.wav' },
+      { hanzi: '感情', pinyin: 'gǎn qíng', meaning: 'sentiment, émotion', meaningEn: 'emotion, feeling', audio: 'audio/hsk4/hsk4_感情.wav' },
+      { hanzi: '意见', pinyin: 'yì jiàn', meaning: 'avis, opinion', meaningEn: 'opinion, view', audio: 'audio/hsk4/hsk4_意见.wav' },
+      { hanzi: '在学习方法上，每个人都有自己的习惯', pinyin: 'zài xué xí fāng fǎ shàng, měi gè rén dōu yǒu zì jǐ de xí guàn', meaning: 'en matière de méthode d\'étude, chacun a ses habitudes', meaningEn: 'in study methods, everyone has their own habits', audio: 'audio/hsk3/hsk3_方法.wav' },
+      { hanzi: '在这个问题上，我们意见不一致', pinyin: 'zài zhè gè wèn tí shàng, wǒmen yì jiàn bù yī zhì', meaning: 'sur cette question, nous ne sommes pas d\'accord', meaningEn: 'on this issue we don\'t agree', audio: 'audio/hsk2/hsk2_问题.wav' },
+      { hanzi: '在经济上，中国发展很快', pinyin: 'zài jīng jì shàng, zhōng guó fā zhǎn hěn kuài', meaning: 'sur le plan économique, la Chine se développe vite', meaningEn: 'economically, China develops fast', audio: 'audio/hsk4/hsk4_发展.wav' },
+      { hanzi: '在感情上，他很脆弱', pinyin: 'zài gǎn qíng shàng, tā hěn cuì ruò', meaning: 'émotionnellement, il est fragile', meaningEn: 'emotionally he\'s fragile', audio: 'audio/hsk4/hsk4_感情.wav' },
+      { hanzi: '在工作上，她很认真', pinyin: 'zài gōng zuò shàng, tā hěn rèn zhēn', meaning: 'au travail, elle est très sérieuse', meaningEn: 'at work she\'s very serious', audio: 'audio/hsk4/hsk4_认真.wav' }
+    ],
+    tip:
+      'Astuce : 在...上 = cadrage thématique de la phrase. À employer dans une conversation soutenue ou un écrit pour signaler « je change d\'angle ».',
+    tipEn:
+      'Tip: 在...上 = thematic framing of the sentence. Use it in polished speech or writing to signal «I\'m switching angles».'
+  },
+  {
+    id: 'b11-zai-conditions-xia',
+    title: '« Sous l\'influence de... » : 在...下',
+    titleEn: '«Under the influence of...»: 在...下',
+    body:
+      '在...下 introduit une CONDITION, un CONTEXTE, une INFLUENCE. Équivalent : « sous », « dans le cadre de », « grâce à ».\n' +
+      '\n' +
+      'Structure : 在 + [Condition/Cause] + 下，[phrase].\n' +
+      '- Ex : 在父母的影响下，他选择了当医生 (zài fù mǔ de yǐng xiǎng xià, tā xuǎn zé le dāng yī shēng) « sous l\'influence de ses parents, il a choisi de devenir médecin ».\n' +
+      '- Ex : 在朋友的帮助下，我完成了这个项目 (zài péng you de bāng zhù xià, wǒ wán chéng le zhè gè xiàng mù) « grâce à l\'aide de mes amis, j\'ai terminé ce projet ». Cause bienveillante.\n' +
+      '- Ex : 在这种情况下，我们必须马上决定 (zài zhè zhǒng qíng kuàng xià, wǒmen bì xū mǎ shàng jué dìng) « dans ces circonstances, nous devons décider immédiatement ». Contexte situationnel.\n' +
+      '\n' +
+      'Combinaisons FRÉQUENTES :\n' +
+      '- 在...的影响下 « sous l\'influence de... »\n' +
+      '- 在...的帮助下 « grâce à l\'aide de... »\n' +
+      '- 在...的支持下 « avec le soutien de... »\n' +
+      '- 在...的领导下 « sous la direction de... »\n' +
+      '- 在...的鼓励下 « encouragé par... »\n' +
+      '- 在这种情况下 « dans ces conditions »\n' +
+      '- 在...的压力下 « sous la pression de... »\n' +
+      '\n' +
+      'Nuance importante : 在...下 signale une CAUSE EXTERNE qui déclenche/permet l\'action principale. Utile pour attribuer le mérite/blâme.\n' +
+      '- Ex : 在他的鼓励下，我勇敢地站了起来 (zài tā de gǔ lì xià, wǒ yǒng gǎn de zhàn le qǐ lái) « encouragé par lui, je me suis levé courageusement ».\n' +
+      '\n' +
+      'Registre : légèrement soutenu, très fréquent à l\'écrit (essais, discours, journaux).',
+    bodyEn:
+      '在...下 introduces a CONDITION, a CONTEXT, an INFLUENCE. Equivalent: «under», «within the framework of», «thanks to». Structure: 在 + [condition/cause] + 下，[sentence]. Ex: 在父母的影响下，他选择了当医生 «under his parents\' influence, he chose to become a doctor». Ex: 在朋友的帮助下，我完成了这个项目 «thanks to my friends\' help, I completed this project». Benign cause. Ex: 在这种情况下，我们必须马上决定 «in these circumstances, we must decide immediately». Situational context. FREQUENT combos: 在...的影响下 «under the influence of», 在...的帮助下 «thanks to the help of», 在...的支持下 «with the support of», 在...的领导下 «under the leadership of», 在...的鼓励下 «encouraged by», 在这种情况下 «in these conditions», 在...的压力下 «under the pressure of». Important nuance: 在...下 signals an EXTERNAL CAUSE that triggers/enables the main action. Useful for attributing credit/blame. Ex: 在他的鼓励下，我勇敢地站了起来 «encouraged by him, I stood up bravely». Register: slightly formal, very common in writing (essays, speeches, newspapers).',
+    items: [
+      { hanzi: '在...下', pinyin: 'zài ... xià', meaning: 'sous, grâce à, dans le cadre de', meaningEn: 'under, thanks to', audio: 'audio/hsk1/hsk1_下.wav' },
+      { hanzi: '影响', pinyin: 'yǐng xiǎng', meaning: 'influence, influencer', meaningEn: 'influence', audio: 'audio/hsk3/hsk3_影响.wav' },
+      { hanzi: '帮助', pinyin: 'bāng zhù', meaning: 'aide, aider', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮助.wav' },
+      { hanzi: '情况', pinyin: 'qíng kuàng', meaning: 'situation, circonstance', meaningEn: 'situation, circumstance', audio: 'audio/hsk4/hsk4_情况.wav' },
+      { hanzi: '领导', pinyin: 'lǐng dǎo', meaning: 'direction, dirigeant', meaningEn: 'leadership, leader', audio: 'audio/hsk4/hsk4_领导.wav' },
+      { hanzi: '鼓励', pinyin: 'gǔ lì', meaning: 'encouragement, encourager', meaningEn: 'encouragement, encourage', audio: 'audio/hsk4/hsk4_鼓励.wav' },
+      { hanzi: '压力', pinyin: 'yā lì', meaning: 'pression, stress', meaningEn: 'pressure, stress', audio: 'audio/hsk4/hsk4_压力.wav' },
+      { hanzi: '在父母的影响下，他选择了当医生', pinyin: 'zài fù mǔ de yǐng xiǎng xià, tā xuǎn zé le dāng yī shēng', meaning: 'sous l\'influence de ses parents, il a choisi de devenir médecin', meaningEn: 'under his parents\' influence, he chose to become a doctor', audio: 'audio/hsk3/hsk3_选择.wav' },
+      { hanzi: '在朋友的帮助下，我完成了这个项目', pinyin: 'zài péng you de bāng zhù xià, wǒ wán chéng le zhè gè xiàng mù', meaning: 'grâce à mes amis, j\'ai terminé ce projet', meaningEn: 'thanks to my friends, I completed this project', audio: 'audio/hsk4/hsk4_项目.wav' },
+      { hanzi: '在这种情况下，我们必须马上决定', pinyin: 'zài zhè zhǒng qíng kuàng xià, wǒmen bì xū mǎ shàng jué dìng', meaning: 'dans ces circonstances, nous devons décider immédiatement', meaningEn: 'in these circumstances, we must decide right away', audio: 'audio/hsk4/hsk4_决定.wav' },
+      { hanzi: '在他的鼓励下，我勇敢地站了起来', pinyin: 'zài tā de gǔ lì xià, wǒ yǒng gǎn de zhàn le qǐ lái', meaning: 'encouragé par lui, je me suis levé courageusement', meaningEn: 'encouraged by him, I stood up bravely', audio: 'audio/hsk4/hsk4_勇敢.wav' }
+    ],
+    tip:
+      'Astuce : 在...下 = mise en contexte causale. C\'est LE marqueur pour dire « voici le facteur qui a permis/imposé la suite ».',
+    tipEn:
+      'Tip: 在...下 = causal contextualization. It\'s THE marker to say «here\'s the factor that enabled/forced what follows».'
+  },
+  {
+    id: 'b11-zai-domain-fangmian',
+    title: '« En matière de... » : 在...方面',
+    titleEn: '«In the domain of...»: 在...方面',
+    body:
+      '在...方面 (zài ... fāng miàn) est la version LA PLUS PRÉCISE et LA PLUS FORMELLE pour délimiter un DOMAINE, un ASPECT, une SPÉCIALITÉ. Équivalent : « en matière de », « dans le domaine de », « côté ».\n' +
+      '\n' +
+      'Structure : 在 + [Domaine] + 方面，[phrase].\n' +
+      '- Ex : 在沟通方面，她比其他同事更出色 (zài gōu tōng fāng miàn, tā bǐ qí tā tóng shì gèng chū sè) « en matière de communication, elle surpasse les autres collègues ».\n' +
+      '- Ex : 在语言学习方面，坚持是关键 (zài yǔ yán xué xí fāng miàn, jiān chí shì guān jiàn) « en matière d\'apprentissage des langues, la persévérance est la clé ».\n' +
+      '- Ex : 他在数学方面很有天赋 (tā zài shù xué fāng miàn hěn yǒu tiān fù) « il est très doué dans le domaine des maths ». Placement flexible : peut aussi venir après le sujet.\n' +
+      '\n' +
+      '在...上 vs 在...方面 :\n' +
+      '- 在...上 = plus court, plus général, plus fluide à l\'oral. Ex : 在教育上.\n' +
+      '- 在...方面 = plus précis, plus formel, courant à l\'écrit et dans les entretiens. Ex : 在教育方面.\n' +
+      '- Dans 90 % des cas, ils sont interchangeables. 方面 est un chouïa plus « professionnel ».\n' +
+      '\n' +
+      '在...方面 dans un CV/entretien :\n' +
+      '- 在市场营销方面我有五年经验 (zài shì chǎng yíng xiāo fāng miàn wǒ yǒu wǔ nián jīng yàn) « côté marketing, j\'ai 5 ans d\'expérience ».\n' +
+      '- 在团队合作方面我很有优势 (zài tuán duì hé zuò fāng miàn wǒ hěn yǒu yōu shì) « en matière de travail d\'équipe, j\'ai un atout ».\n' +
+      '\n' +
+      'Combinable avec des comparaisons :\n' +
+      '- 在这方面，中国走在了世界前列 (zài zhè fāng miàn, zhōng guó zǒu zài le shì jiè qián liè) « dans ce domaine, la Chine est à l\'avant-garde mondiale ».\n' +
+      '- 在健康方面，运动比饮食更重要 (zài jiàn kāng fāng miàn, yùn dòng bǐ yǐn shí gèng zhòng yào) « côté santé, l\'exercice compte plus que l\'alimentation ».',
+    bodyEn:
+      '在...方面 (zài ... fāng miàn) is the MOST PRECISE and MOST FORMAL version to delimit a DOMAIN, an ASPECT, a SPECIALTY. Equivalent: «in the domain of», «as regards», «on the... side». Structure: 在 + [domain] + 方面，[sentence]. Ex: 在沟通方面，她比其他同事更出色 «in communication, she outshines other colleagues». Ex: 在语言学习方面，坚持是关键 «in language learning, persistence is key». Ex: 他在数学方面很有天赋 «he\'s gifted in maths». Flexible placement: can also come after the subject. 在...上 vs 在...方面: 在...上 = shorter, more general, smoother orally. Ex: 在教育上. 在...方面 = more precise, more formal, common in writing and interviews. Ex: 在教育方面. In 90% of cases, they\'re interchangeable. 方面 is a touch more «professional». 在...方面 in a CV/interview: 在市场营销方面我有五年经验 «in marketing, I have 5 years of experience». 在团队合作方面我很有优势 «in teamwork, I have an edge». Combinable with comparisons: 在这方面，中国走在了世界前列 «in this domain, China leads the world». 在健康方面，运动比饮食更重要 «health-wise, exercise matters more than diet».',
+    items: [
+      { hanzi: '在...方面', pinyin: 'zài ... fāng miàn', meaning: 'en matière de, dans le domaine de', meaningEn: 'in the domain of, as regards', audio: 'audio/hsk4/hsk4_方面.wav' },
+      { hanzi: '方面', pinyin: 'fāng miàn', meaning: 'aspect, domaine', meaningEn: 'aspect, domain', audio: 'audio/hsk4/hsk4_方面.wav' },
+      { hanzi: '沟通', pinyin: 'gōu tōng', meaning: 'communication', meaningEn: 'communication', audio: 'audio/hsk4/hsk4_沟通.wav' },
+      { hanzi: '经验', pinyin: 'jīng yàn', meaning: 'expérience', meaningEn: 'experience', audio: 'audio/hsk4/hsk4_经验.wav' },
+      { hanzi: '天赋', pinyin: 'tiān fù', meaning: 'talent, don', meaningEn: 'talent, gift', audio: 'audio/hsk5/hsk5_天赋.wav' },
+      { hanzi: '在沟通方面，她比其他同事更出色', pinyin: 'zài gōu tōng fāng miàn, tā bǐ qí tā tóng shì gèng chū sè', meaning: 'en matière de communication, elle surpasse les autres collègues', meaningEn: 'in communication, she outshines other colleagues', audio: 'audio/hsk4/hsk4_同事.wav' },
+      { hanzi: '在语言学习方面，坚持是关键', pinyin: 'zài yǔ yán xué xí fāng miàn, jiān chí shì guān jiàn', meaning: 'en matière d\'apprentissage des langues, la persévérance est la clé', meaningEn: 'in language learning, persistence is key', audio: 'audio/hsk4/hsk4_坚持.wav' },
+      { hanzi: '他在数学方面很有天赋', pinyin: 'tā zài shù xué fāng miàn hěn yǒu tiān fù', meaning: 'il est très doué dans le domaine des maths', meaningEn: 'he\'s very gifted in maths', audio: 'audio/hsk3/hsk3_数学.wav' },
+      { hanzi: '在市场营销方面我有五年经验', pinyin: 'zài shì chǎng yíng xiāo fāng miàn wǒ yǒu wǔ nián jīng yàn', meaning: 'côté marketing, j\'ai 5 ans d\'expérience', meaningEn: 'in marketing, I have 5 years of experience', audio: 'audio/hsk4/hsk4_经验.wav' },
+      { hanzi: '在团队合作方面我很有优势', pinyin: 'zài tuán duì hé zuò fāng miàn wǒ hěn yǒu yōu shì', meaning: 'en matière de travail d\'équipe, j\'ai un atout', meaningEn: 'in teamwork, I have an edge', audio: 'audio/hsk5/hsk5_优势.wav' },
+      { hanzi: '在健康方面，运动比饮食更重要', pinyin: 'zài jiàn kāng fāng miàn, yùn dòng bǐ yǐn shí gèng zhòng yào', meaning: 'côté santé, l\'exercice compte plus que l\'alimentation', meaningEn: 'health-wise, exercise matters more than diet', audio: 'audio/hsk3/hsk3_健康.wav' }
+    ],
+    tip:
+      'Astuce : 方面 = « le côté X ». Utilise-le dans un CV, un rapport, ou pour préciser dans une phrase soutenue.',
+    tipEn:
+      'Tip: 方面 = «the X side». Use it in a CV, a report, or to specify in polished speech.'
+  }
+];

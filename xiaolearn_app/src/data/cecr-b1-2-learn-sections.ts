@@ -4426,3 +4426,151 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
       'Tip: these 3 patterns are for RECOGNITION in press and pro docs. For production, stick with 为了 as your default — except for the frozen phrases (为安全起见, etc.).'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.2 Nuances — Exprimer « tous » Part 2 : 一切, 个个, 皆, 尽皆 (CGG #58)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesAllPart2LearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-all-yiqie',
+    title: '一切 : « tout » abstrait et englobant',
+    titleEn: '一切: abstract, all-encompassing «all»',
+    body:
+      '一切 (yī qiè) « tout, toute chose » désigne la TOTALITÉ ABSTRAITE : circonstances, situations, événements, choses en général. À la différence de 所有 qui balaie un ensemble concret, 一切 englobe une réalité VASTE.\n' +
+      '\n' +
+      'Structure : 一切 + (都) + Verbe / Adjectif. Peut aussi être objet en fin de phrase.\n' +
+      '- Ex : 一切都很好 (py yī qiè dōu hěn hǎo) « tout va bien ». Réponse rassurante universelle.\n' +
+      '- Ex : 一切都变了 (py yī qiè dōu biàn le) « tout a changé ». Ampleur philosophique.\n' +
+      '- Ex : 感谢你为我做的一切 (py gǎn xiè nǐ wèi wǒ zuò de yī qiè) « merci pour tout ce que tu as fait pour moi ». 一切 en objet.\n' +
+      '- Ex : 一切皆有可能 (py yī qiè jiē yǒu kě néng) « tout est possible ». Registre poétique/slogan.\n' +
+      '\n' +
+      '一切 vs 所有 :\n' +
+      '- 所有 = « tous les X » (X délimité, concret) : 所有的学生, 所有的书.\n' +
+      '- 一切 = « tout, dans son entièreté » (abstrait, sans énumérer) : 一切困难, 一切都好.\n' +
+      '- On ne dit PAS 所有困难 mais 一切困难 (py yī qiè kùn nan) « toutes les difficultés (dans l\'ensemble) ».\n' +
+      '\n' +
+      'Collocations FIXES avec 一切 :\n' +
+      '- 一切都好 (py yī qiè dōu hǎo) « tout va bien ».\n' +
+      '- 尽一切努力 (py jìn yī qiè nǔ lì) « faire tous les efforts possibles ».\n' +
+      '- 不惜一切代价 (py bù xī yī qiè dài jià) « à tout prix, quels qu\'en soient les coûts ».\n' +
+      '- 一切从头开始 (py yī qiè cóng tóu kāi shǐ) « tout recommencer depuis le début ».\n' +
+      '- 一切按计划进行 (py yī qiè àn jì huà jìn xíng) « tout se déroule selon le plan ».\n' +
+      '\n' +
+      'Registre : légèrement soutenu, très fréquent à l\'écrit et dans les discours. Ton philosophique/englobant.',
+    bodyEn:
+      '一切 (yī qiè) «all, everything» refers to ABSTRACT TOTALITY: circumstances, situations, events, things in general. Unlike 所有 which sweeps a concrete set, 一切 encompasses a VAST reality. Structure: 一切 + (都) + Verb / Adjective. Can also be an object at sentence end. Ex: 一切都很好 «everything\'s fine». Universal reassuring reply. Ex: 一切都变了 «everything has changed». Philosophical scope. Ex: 感谢你为我做的一切 «thank you for everything you\'ve done for me». 一切 as object. Ex: 一切皆有可能 «anything is possible». Poetic/slogan register. 一切 vs 所有: 所有 = «all the X» (X bounded, concrete): 所有的学生, 所有的书. 一切 = «everything, in its entirety» (abstract, without enumerating): 一切困难, 一切都好. You DON\'T say 所有困难 but 一切困难 «all difficulties (in the whole)». FIXED collocations with 一切: 一切都好 «all is well». 尽一切努力 «make every possible effort». 不惜一切代价 «at any cost, whatever it takes». 一切从头开始 «start everything from scratch». 一切按计划进行 «everything proceeds according to plan». Register: mildly formal, very common in writing and speeches. Philosophical/all-embracing tone.',
+    items: [
+      { hanzi: '一切', pinyin: 'yī qiè', meaning: 'tout, toute chose (abstrait)', meaningEn: 'all, everything (abstract)', audio: 'audio/hsk4/hsk4_一切.wav' },
+      { hanzi: '一切都很好', pinyin: 'yī qiè dōu hěn hǎo', meaning: 'tout va bien', meaningEn: 'everything\'s fine', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '一切都变了', pinyin: 'yī qiè dōu biàn le', meaning: 'tout a changé', meaningEn: 'everything has changed', audio: 'audio/hsk3/hsk3_变.wav' },
+      { hanzi: '感谢你为我做的一切', pinyin: 'gǎn xiè nǐ wèi wǒ zuò de yī qiè', meaning: 'merci pour tout ce que tu as fait pour moi', meaningEn: 'thank you for everything you\'ve done for me', audio: 'audio/hsk4/hsk4_感谢.wav' },
+      { hanzi: '一切皆有可能', pinyin: 'yī qiè jiē yǒu kě néng', meaning: 'tout est possible', meaningEn: 'anything is possible', audio: 'audio/hsk2/hsk2_可能.wav' },
+      { hanzi: '一切困难', pinyin: 'yī qiè kùn nan', meaning: 'toutes les difficultés', meaningEn: 'all difficulties', audio: 'audio/hsk4/hsk4_困难.wav' },
+      { hanzi: '一切都好', pinyin: 'yī qiè dōu hǎo', meaning: 'tout va bien', meaningEn: 'all is well', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '尽一切努力', pinyin: 'jìn yī qiè nǔ lì', meaning: 'faire tous les efforts possibles', meaningEn: 'make every possible effort', audio: 'audio/hsk3/hsk3_努力.wav' },
+      { hanzi: '不惜一切代价', pinyin: 'bù xī yī qiè dài jià', meaning: 'à tout prix, quels qu\'en soient les coûts', meaningEn: 'at any cost, whatever it takes', audio: 'audio/hsk5/hsk5_代价.wav' },
+      { hanzi: '一切从头开始', pinyin: 'yī qiè cóng tóu kāi shǐ', meaning: 'tout recommencer depuis le début', meaningEn: 'start everything from scratch', audio: 'audio/hsk1/hsk1_开始.wav' },
+      { hanzi: '一切按计划进行', pinyin: 'yī qiè àn jì huà jìn xíng', meaning: 'tout se déroule selon le plan', meaningEn: 'everything proceeds according to plan', audio: 'audio/hsk4/hsk4_计划.wav' }
+    ],
+    tip:
+      'Astuce : quand la totalité est ABSTRAITE ou COSMIQUE (« tout dans la vie », « toutes les difficultés »), 一切 est le mot juste. 所有 reste pour les ensembles CONCRETS.',
+    tipEn:
+      'Tip: when totality is ABSTRACT or COSMIC («everything in life», «all difficulties»), 一切 is the right word. 所有 stays for CONCRETE sets.'
+  },
+  {
+    id: 'b12-all-gege-emphasis',
+    title: '个个 : « chacun d\'entre eux » avec chaleur',
+    titleEn: '个个: «each one of them» with warmth',
+    body:
+      '个个 (gè gè) « chacun sans exception » est une reduplication de 个 qui insiste chaleureusement sur le fait que TOUS les membres d\'un groupe (personnes ou objets comptables) sont concernés. Ton oral et affectueux.\n' +
+      '\n' +
+      'Structure : Sujet + 个个 + Verbe / Adjectif. Fonctionne comme 都 mais avec une touche personnelle.\n' +
+      '- Ex : 同学们个个参加了比赛 (py tóng xué men gè gè cān jiā le bǐ sài) « chaque camarade a participé à la compétition ». Chaleur du groupe.\n' +
+      '- Ex : 他的孩子个个都很聪明 (py tā de hái zi gè gè dōu hěn cōng ming) « ses enfants sont tous intelligents, chacun à sa manière ». Compliment personnel.\n' +
+      '- Ex : 我们班的女生个个漂亮 (py wǒ men bān de nǚ shēng gè gè piào liang) « les filles de notre classe sont toutes jolies, chacune ».\n' +
+      '\n' +
+      '个个 vs 每个 :\n' +
+      '- 每个 = neutre, distributif, formel : 每个学生都努力.\n' +
+      '- 个个 = affectif, mise en valeur individuelle : 学生们个个都努力. Rend le compliment/constat plus vivant.\n' +
+      '\n' +
+      'Autres réduplications de classificateurs : le pattern « CL + CL » signifie « chaque, tous » pour d\'autres classificateurs aussi.\n' +
+      '- 天天 (py tiān tiān) « chaque jour » : 他天天来 (py tā tiān tiān lái) « il vient chaque jour ».\n' +
+      '- 家家 (py jiā jiā) « chaque foyer » : 家家都有电视 (py jiā jiā dōu yǒu diàn shì) « chaque foyer a une télé ».\n' +
+      '- 人人 (py rén rén) « chacun » : 人人都想成功 (py rén rén dōu xiǎng chéng gōng) « chacun veut réussir ».\n' +
+      '- 处处 (py chù chù) « partout » : 处处都是花 (py chù chù dōu shì huā) « il y a des fleurs partout ».\n' +
+      '\n' +
+      'Contraintes :\n' +
+      '- Ne pas utiliser 个个 avec des noms non-comptables (eau, sable...).\n' +
+      '- Le sujet doit être un GROUPE DÉFINI ou identifiable dans le contexte.\n' +
+      '- Souvent renforcé par 都 : 个个都 « chacun sans exception ».\n' +
+      '\n' +
+      'Ton : légèrement admiratif ou emphatique, très fréquent en oral. Fait partie du charme rhétorique du chinois parlé.',
+    bodyEn:
+      '个个 (gè gè) «each one without exception» is a reduplication of 个 that warmly insists that ALL members of a group (people or countable objects) are concerned. Oral and affectionate tone. Structure: Subject + 个个 + Verb / Adjective. Works like 都 but with a personal touch. Ex: 同学们个个参加了比赛 «every classmate joined the competition». Group warmth. Ex: 他的孩子个个都很聪明 «his kids are all smart, each in their own way». Personal compliment. Ex: 我们班的女生个个漂亮 «the girls in our class are all pretty, each one». 个个 vs 每个: 每个 = neutral, distributive, formal: 每个学生都努力. 个个 = affective, spotlight on individuals: 学生们个个都努力. Makes the compliment/observation more vivid. Other classifier reduplications: the «CL + CL» pattern means «each, all» for other classifiers too. 天天 «every day»: 他天天来 «he comes every day». 家家 «every household»: 家家都有电视 «every household has a TV». 人人 «everyone»: 人人都想成功 «everyone wants to succeed». 处处 «everywhere»: 处处都是花 «there are flowers everywhere». Constraints: Don\'t use 个个 with non-countable nouns (water, sand...). The subject must be a DEFINED GROUP or identifiable in context. Often reinforced by 都: 个个都 «each without exception». Tone: mildly admiring or emphatic, very common in speech. Part of spoken Chinese\'s rhetorical charm.',
+    items: [
+      { hanzi: '个个', pinyin: 'gè gè', meaning: 'chacun sans exception (chaleur)', meaningEn: 'each one without exception (warmth)', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '天天', pinyin: 'tiān tiān', meaning: 'chaque jour', meaningEn: 'every day', audio: 'audio/hsk1/hsk1_天.wav' },
+      { hanzi: '人人', pinyin: 'rén rén', meaning: 'chacun', meaningEn: 'everyone', audio: 'audio/hsk1/hsk1_人.wav' },
+      { hanzi: '处处', pinyin: 'chù chù', meaning: 'partout', meaningEn: 'everywhere', audio: 'audio/hsk5/hsk5_处处.wav' },
+      { hanzi: '同学们个个参加了比赛', pinyin: 'tóng xué men gè gè cān jiā le bǐ sài', meaning: 'chaque camarade a participé à la compétition', meaningEn: 'every classmate joined the competition', audio: 'audio/hsk3/hsk3_比赛.wav' },
+      { hanzi: '他的孩子个个都很聪明', pinyin: 'tā de hái zi gè gè dōu hěn cōng ming', meaning: 'ses enfants sont tous intelligents', meaningEn: 'his kids are all smart', audio: 'audio/hsk3/hsk3_聪明.wav' },
+      { hanzi: '我们班的女生个个漂亮', pinyin: 'wǒ men bān de nǚ shēng gè gè piào liang', meaning: 'les filles de notre classe sont toutes jolies', meaningEn: 'the girls in our class are all pretty', audio: 'audio/hsk1/hsk1_漂亮.wav' },
+      { hanzi: '他天天来', pinyin: 'tā tiān tiān lái', meaning: 'il vient chaque jour', meaningEn: 'he comes every day', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '家家都有电视', pinyin: 'jiā jiā dōu yǒu diàn shì', meaning: 'chaque foyer a une télé', meaningEn: 'every household has a TV', audio: 'audio/hsk1/hsk1_电视.wav' },
+      { hanzi: '人人都想成功', pinyin: 'rén rén dōu xiǎng chéng gōng', meaning: 'chacun veut réussir', meaningEn: 'everyone wants to succeed', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '处处都是花', pinyin: 'chù chù dōu shì huā', meaning: 'il y a des fleurs partout', meaningEn: 'there are flowers everywhere', audio: 'audio/hsk3/hsk3_花.wav' }
+    ],
+    tip:
+      'Astuce : 个个 met le SPOT AFFECTIF sur chaque membre. À utiliser pour complimenter ou décrire un groupe qu\'on connaît, pas pour un rapport neutre.',
+    tipEn:
+      'Tip: 个个 puts an AFFECTIVE spotlight on each member. Use it to compliment or describe a group you know, not for a neutral report.'
+  },
+  {
+    id: 'b12-all-jie-jinjie-formal',
+    title: '皆 et 尽皆 : totalité classique et littéraire',
+    titleEn: '皆 and 尽皆: classical and literary totality',
+    body:
+      '皆 (jiē) « tous, tout entier » est un mot classique CLASSIQUE (héritage du chinois littéraire). En chinois moderne, il ne s\'utilise QUE dans des expressions figées ou un registre très soutenu (discours, articles éditoriaux, poésie).\n' +
+      '\n' +
+      'Structure : Sujet + 皆 + Verbe. Ton archaïsant.\n' +
+      '- Ex : 众人皆知 (py zhòng rén jiē zhī) « tout le monde le sait ». Chengyu classique.\n' +
+      '- Ex : 万物皆有灵 (py wàn wù jiē yǒu líng) « toutes les choses ont une âme ». Ton philosophique.\n' +
+      '- Ex : 一切皆有可能 (py yī qiè jiē yǒu kě néng) « tout est possible » (aussi avec 一切 vu précédemment).\n' +
+      '\n' +
+      'Expressions figées avec 皆 à connaître PASSIVEMENT :\n' +
+      '- 皆大欢喜 (py jiē dà huān xǐ) « tout le monde est content » (chengyu, souvent fin de film).\n' +
+      '- 有目共睹，众人皆知 (py yǒu mù gòng dǔ, zhòng rén jiē zhī) « c\'est un fait notoire ».\n' +
+      '- 放之四海而皆准 (py fàng zhī sì hǎi ér jiē zhǔn) « valable partout dans le monde ».\n' +
+      '- 前功尽弃 (py qián gōng jìn qì) (attention : 尽 seul, pas 尽皆) « tous les efforts précédents sont perdus ».\n' +
+      '\n' +
+      '尽 / 尽皆 (jìn / jìn jiē) « entièrement, tous » : version encore plus emphatique et littéraire, désigne l\'inclusion complète.\n' +
+      '- Ex : 他们尽皆欢笑 (py tā men jìn jiē huān xiào) « tous rirent de bon cœur ». Registre roman/narratif.\n' +
+      '- Ex : 财产尽皆散尽 (py cái chǎn jìn jiē sàn jìn) « toute la fortune fut entièrement dissipée ». Registre historique.\n' +
+      '\n' +
+      'Registre et usage :\n' +
+      '- À l\'ORAL : quasi jamais utilisés. Prends 都 / 所有 / 全都.\n' +
+      '- À l\'ÉCRIT LITTÉRAIRE ou dans les DISCOURS solennels : 皆 apporte une touche classique appréciée.\n' +
+      '- À la LECTURE : très fréquent dans les journaux, les traités philosophiques, les traductions de sagesse.\n' +
+      '\n' +
+      'Reconnaissance passive : c\'est un objectif clé de la reconnaissance à ce niveau. Tu n\'as pas besoin de PRODUIRE 皆, mais tu dois COMPRENDRE quand tu le rencontres.',
+    bodyEn:
+      '皆 (jiē) «all, entire» is a CLASSICAL word (heritage of literary Chinese). In modern Chinese, it\'s used ONLY in fixed expressions or very formal register (speeches, editorials, poetry). Structure: Subject + 皆 + Verb. Archaic tone. Ex: 众人皆知 «everyone knows it». Classical chengyu. Ex: 万物皆有灵 «all things have a soul». Philosophical tone. Ex: 一切皆有可能 «anything is possible» (also with 一切 seen earlier). Fixed expressions with 皆 to know PASSIVELY: 皆大欢喜 «everyone\'s happy» (chengyu, often movie ending). 有目共睹，众人皆知 «it\'s a well-known fact». 放之四海而皆准 «valid everywhere in the world». 前功尽弃 (caution: 尽 alone, not 尽皆) «all previous efforts wasted». 尽 / 尽皆 (jìn / jìn jiē) «entirely, all»: even more emphatic and literary version, indicates complete inclusion. Ex: 他们尽皆欢笑 «they all laughed heartily». Novel/narrative register. Ex: 财产尽皆散尽 «the whole fortune was entirely squandered». Historical register. Register and usage: SPOKEN: almost never used. Take 都 / 所有 / 全都. LITERARY WRITTEN or in SOLEMN speeches: 皆 adds an appreciated classical touch. READING: very common in newspapers, philosophical treatises, wisdom translations. Passive recognition: this is a key recognition goal at this level. You don\'t need to PRODUCE 皆, but you must UNDERSTAND it when you meet it.',
+    items: [
+      { hanzi: '皆', pinyin: 'jiē', meaning: 'tous (classique)', meaningEn: 'all (classical)', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '尽皆', pinyin: 'jìn jiē', meaning: 'entièrement, tous (littéraire)', meaningEn: 'entirely, all (literary)', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '皆大欢喜', pinyin: 'jiē dà huān xǐ', meaning: 'tout le monde est content (chengyu)', meaningEn: 'everyone\'s happy (chengyu)', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '众人皆知', pinyin: 'zhòng rén jiē zhī', meaning: 'tout le monde le sait (chengyu)', meaningEn: 'everyone knows it (chengyu)', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '万物皆有灵', pinyin: 'wàn wù jiē yǒu líng', meaning: 'toutes les choses ont une âme', meaningEn: 'all things have a soul', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '一切皆有可能', pinyin: 'yī qiè jiē yǒu kě néng', meaning: 'tout est possible', meaningEn: 'anything is possible', audio: 'audio/hsk2/hsk2_可能.wav' },
+      { hanzi: '放之四海而皆准', pinyin: 'fàng zhī sì hǎi ér jiē zhǔn', meaning: 'valable partout dans le monde', meaningEn: 'valid everywhere in the world', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '前功尽弃', pinyin: 'qián gōng jìn qì', meaning: 'tous les efforts précédents sont perdus', meaningEn: 'all previous efforts wasted', audio: 'audio/hsk5/hsk5_尽.wav' },
+      { hanzi: '他们尽皆欢笑', pinyin: 'tā men jìn jiē huān xiào', meaning: 'tous rirent de bon cœur', meaningEn: 'they all laughed heartily', audio: 'audio/hsk5/hsk5_皆.wav' },
+      { hanzi: '财产尽皆散尽', pinyin: 'cái chǎn jìn jiē sàn jìn', meaning: 'toute la fortune fut entièrement dissipée', meaningEn: 'the whole fortune was entirely squandered', audio: 'audio/hsk5/hsk5_财产.wav' }
+    ],
+    tip:
+      'Astuce : 皆 = « signal registre soutenu » à la lecture. En production, reste sur 都/所有/全都 sauf citation d\'un chengyu ou discours écrit.',
+    tipEn:
+      'Tip: 皆 = «formal register signal» when reading. For production, stick with 都/所有/全都 unless quoting a chengyu or writing a speech.'
+  }
+];
