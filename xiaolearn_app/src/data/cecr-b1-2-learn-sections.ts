@@ -3194,3 +3194,162 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
       'Tip: these patterns are mainly for RECOGNIZING meaning in formal texts, not necessarily for producing them yourself. Spot them in articles and contracts.'
   }
 ];
+
+// --- cecr-b12-nuances-m14 — 果然 vs 竟然 : confirmation vs surprise -------
+export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-jingran-surprise',
+    title: '竟然 : quand la surprise nous saisit',
+    titleEn: '竟然: when surprise catches us',
+    body:
+      '竟然 (jìng rán) = « à ma grande surprise / de manière inattendue ». S\'utilise quand quelque chose se produit CONTRE tes attentes.\n' +
+      '\n' +
+      'Structure : sujet + 竟然 + verbe/adjectif.\n' +
+      '\n' +
+      'Ton non-neutre : porte toujours une émotion, positive ou négative selon le contexte.\n' +
+      '- Admiration : 你才来中国半年，竟然说得这么好 (nǐ cái lái zhōng guó bàn nián, jìng rán shuō de zhè me hǎo) « ça fait à peine 6 mois que tu es en Chine, et pourtant tu parles déjà super bien ! ».\n' +
+      '- Désapprobation : 妈妈的生日你竟然忘了 (mā ma de shēng rì nǐ jìng rán wàng le) « t\'as osé oublier l\'anniversaire de maman ».\n' +
+      '- Astonishment neutre : 他竟然真的成功了 (tā jìng rán zhēn de chéng gōng le) « il a vraiment réussi, incroyable ».\n' +
+      '\n' +
+      'Ne pas confondre avec 反而 ou 却 : ces derniers marquent une opposition SANS émotion (« au contraire », « pourtant »). Ex : 他练习不多，考试反而考得很好 (tā liàn xí bù duō, kǎo shì fǎn ér kǎo de hěn hǎo) « il ne s\'entraîne pas beaucoup, pourtant il a réussi l\'examen » (constat neutre, pas de surprise émotionnelle).',
+    bodyEn:
+      '竟然 (jìng rán) = « to my great surprise / unexpectedly ». Used when something happens AGAINST your expectations.\n' +
+      '\n' +
+      'Structure: subject + 竟然 + verb/adjective.\n' +
+      '\n' +
+      'Non-neutral tone: always carries emotion, positive or negative depending on context.\n' +
+      '- Admiration: 你才来中国半年，竟然说得这么好 « you\'ve only been in China for 6 months, and yet you already speak so well! ».\n' +
+      '- Disapproval: 妈妈的生日你竟然忘了 « you actually forgot Mom\'s birthday ».\n' +
+      '- Neutral astonishment: 他竟然真的成功了 « he really succeeded, unbelievable ».\n' +
+      '\n' +
+      'Do not confuse with 反而 or 却: these mark an opposition WITHOUT emotion (« on the contrary », « yet »). Ex: 他练习不多，考试反而考得很好 « he doesn\'t practice much, yet he did well in the exam » (neutral observation, no emotional surprise).',
+    items: [
+      { hanzi: '竟然', pinyin: 'jìng rán', meaning: 'à ma grande surprise', meaningEn: 'to my surprise', audio: 'audio/hsk4/hsk4_竟然.wav' },
+      { hanzi: '真的', pinyin: 'zhēn de', meaning: 'vraiment', meaningEn: 'really', audio: 'audio/hsk2/hsk2_真.wav' },
+      { hanzi: '成功', pinyin: 'chéng gōng', meaning: 'réussir', meaningEn: 'succeed', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '忘', pinyin: 'wàng', meaning: 'oublier', meaningEn: 'forget', audio: 'audio/hsk3/hsk3_忘.wav' },
+      { hanzi: '反而', pinyin: 'fǎn ér', meaning: 'au contraire (sans émotion)', meaningEn: 'on the contrary (no emotion)', audio: 'audio/hsk4/hsk4_反而.wav' },
+      { hanzi: '却', pinyin: 'què', meaning: 'pourtant, cependant', meaningEn: 'however, yet', audio: 'audio/hsk4/hsk4_却.wav' }
+    ],
+    tip:
+      'Astuce : chaque fois que tu ressens « quoi ?! », « waouh ! », « comment ça se peut ?! » → c\'est le moment de 竟然.',
+    tipEn:
+      'Tip: whenever you feel « what?! », « wow! », « how can that be?! » → that\'s when 竟然 fits.'
+  },
+  {
+    id: 'b12-jingran-alternatives',
+    title: 'Variantes : 居然 (plus fort), 竟, 没想到 (plus doux), 不料 (littéraire)',
+    titleEn: 'Variants: 居然 (stronger), 竟, 没想到 (softer), 不料 (literary)',
+    body:
+      '居然 (jū rán) : version PLUS FORTE que 竟然. Surprise ou choc intenses. Peut se placer AVANT le sujet pour effet dramatique.\n' +
+      '- Ex : 这么大的通知，你居然没看见 (zhè me dà de tōng zhī, nǐ jū rán méi kàn jiàn) « une annonce aussi grosse et t\'as même pas vue ?! ».\n' +
+      '- Ex : 居然会有这种事 (jū rán huì yǒu zhè zhǒng shì) « il peut vraiment y avoir un truc pareil ?! » (choc pur).\n' +
+      '\n' +
+      '竟 (jìng) : forme COURTE et LITTÉRAIRE de 竟然. Surtout à l\'écrit soutenu, rare en conversation.\n' +
+      '- Ex : 他竟不知道 (tā jìng bù zhī dào) « il ne sait pourtant pas » (style narratif).\n' +
+      '\n' +
+      '没想到 (méi xiǎng dào) : « je ne m\'attendais pas à ». Surprise DOUCE, sans émotion forte, ton neutre. S\'utilise en début de proposition.\n' +
+      '- Ex : 我以为他会迟到，没想到他提前到了 (wǒ yǐ wéi tā huì chí dào, méi xiǎng dào tā tí qián dào le) « je pensais qu\'il serait en retard, et finalement il est arrivé en avance ».\n' +
+      '\n' +
+      '不料 (bù liào) : « contre toute attente », LITTÉRAIRE et écrit. En début de 2e clause après une pause. Style journalistique, roman.\n' +
+      '- Ex : 我本来以为今天会晴，不料下午下起了大雨 (wǒ běn lái yǐ wéi jīn tiān huì qíng, bù liào xià wǔ xià qǐ le dà yǔ) « je pensais qu\'il ferait beau aujourd\'hui, mais l\'après-midi il s\'est mis à pleuvoir des cordes ».\n' +
+      '\n' +
+      'Échelle de force : 没想到 (doux, oral neutre) < 竟然 (surprise standard émotionnelle) < 居然 (choc intense) < 不料 (littéraire narratif).',
+    bodyEn:
+      '居然 (jū rán): STRONGER version than 竟然. Intense surprise or shock. Can be placed BEFORE the subject for dramatic effect.\n' +
+      '- Ex: 这么大的通知，你居然没看见 « such a big announcement and you didn\'t even see it?! ».\n' +
+      '- Ex: 居然会有这种事 « can something like that really happen?! » (pure shock).\n' +
+      '\n' +
+      '竟 (jìng): SHORT and LITERARY form of 竟然. Mostly in polished writing, rare in conversation.\n' +
+      '- Ex: 他竟不知道 « yet he doesn\'t know » (narrative style).\n' +
+      '\n' +
+      '没想到 (méi xiǎng dào): « I didn\'t expect ». SOFT surprise, no strong emotion, neutral tone. Used at the start of a clause.\n' +
+      '- Ex: 我以为他会迟到，没想到他提前到了 « I thought he\'d be late, but he actually arrived early ».\n' +
+      '\n' +
+      '不料 (bù liào): « against all expectations », LITERARY and written. At the start of the 2nd clause after a pause. Journalistic, novel style.\n' +
+      '- Ex: 我本来以为今天会晴，不料下午下起了大雨 « I originally thought it would be sunny today, but in the afternoon it started pouring ».\n' +
+      '\n' +
+      'Strength scale: 没想到 (soft, neutral spoken) < 竟然 (standard emotional surprise) < 居然 (intense shock) < 不料 (literary narrative).',
+    items: [
+      { hanzi: '居然', pinyin: 'jū rán', meaning: 'contre toute attente (fort)', meaningEn: 'unexpectedly (strong)', audio: 'audio/hsk5/hsk5_居然.wav' },
+      { hanzi: '竟', pinyin: 'jìng', meaning: 'pourtant (littéraire)', meaningEn: 'yet (literary)', audio: 'audio/hsk4/hsk4_竟.wav' },
+      { hanzi: '没想到', pinyin: 'méi xiǎng dào', meaning: 'je ne m\'attendais pas à', meaningEn: 'didn\'t expect', audio: 'audio/hsk3/hsk3_想.wav' },
+      { hanzi: '不料', pinyin: 'bù liào', meaning: 'contre toute attente (littéraire)', meaningEn: 'unexpectedly (literary)', audio: 'audio/hsk6/hsk6_不料.wav' },
+      { hanzi: '通知', pinyin: 'tōng zhī', meaning: 'annonce, notification', meaningEn: 'notice, notification', audio: 'audio/hsk4/hsk4_通知.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' },
+      { hanzi: '提前', pinyin: 'tí qián', meaning: 'en avance', meaningEn: 'in advance', audio: 'audio/hsk4/hsk4_提前.wav' }
+    ],
+    tip:
+      'Astuce : pour rester naturel à l\'oral, jongle entre 没想到 (léger) et 竟然 (émotionnel). Réserve 居然 pour les vrais chocs et 不料 pour l\'écrit.',
+    tipEn:
+      'Tip: to sound natural in speech, alternate between 没想到 (light) and 竟然 (emotional). Save 居然 for real shocks and 不料 for writing.'
+  },
+  {
+    id: 'b12-guoran-confirmation',
+    title: '果然 : « comme prévu » + 果真 (vérifier une rumeur)',
+    titleEn: '果然: « as expected » + 果真 (verifying a rumor)',
+    body:
+      '果然 (guǒ rán) = « comme je le pensais / en effet / sans surprise ». S\'utilise quand la réalité CONFIRME ce que tu avais prédit. Opposé exact de 竟然.\n' +
+      '\n' +
+      'Structure : sujet + 果然 + verbe/adjectif.\n' +
+      '\n' +
+      'Ton : neutre ou légèrement satisfait (« j\'avais raison »).\n' +
+      '- Ex : 他果然没来 (tā guǒ rán méi lái) « comme prévu, il n\'est pas venu ».\n' +
+      '\n' +
+      'Pattern prédiction + confirmation : on énonce d\'abord ce qu\'on attendait, puis 果然 + résultat.\n' +
+      '- Ex : 他答应很快回来，果然不到十分钟就到了 (tā dā ying hěn kuài huí lai, guǒ rán bú dào shí fēn zhōng jiù dào le) « il avait promis de revenir vite, et effectivement il est là en moins de 10 minutes ».\n' +
+      '- Ex : 妈妈说不太热，果然凉快 (mā ma shuō bú tài rè, guǒ rán liáng kuài) « maman avait dit qu\'il ne ferait pas trop chaud, et effectivement il fait frais ».\n' +
+      '\n' +
+      'Formules figées :\n' +
+      '- 果然如此 (guǒ rán rú cǐ) « c\'est bien ce que je pensais / c\'est bien ça ».\n' +
+      '- 果然不出所料 (guǒ rán bù chū suǒ liào) « exactement comme prédit / rien d\'étonnant ».\n' +
+      '\n' +
+      '果真 (guǒ zhēn) : sœur formelle de 果然. La différence :\n' +
+      '- 果然 = « ma prédiction s\'est réalisée » (basé sur MA prévision).\n' +
+      '- 果真 = « c\'est vraiment le cas » (vérifier une rumeur ou un ouï-dire).\n' +
+      '- Ex : 大家都说这个地方漂亮，我去了一次，果真如此 (dà jiā dōu shuō zhè ge dì fāng piào liang, wǒ qù le yí cì, guǒ zhēn rú cǐ) « tout le monde dit que cet endroit est beau, j\'y suis allé, et c\'est effectivement le cas ». Vérifier ce que d\'autres ont dit.\n' +
+      '- Ex : 传说这个山会有仙人出现，我们去了果真看到了 (chuán shuō zhè ge shān huì yǒu xiān rén chū xiàn, wǒ men qù le guǒ zhēn kàn dào le) « la légende dit qu\'un immortel apparaît sur cette montagne, et effectivement on l\'a vu » (vérification d\'un ouï-dire, plus formel).\n' +
+      '\n' +
+      'Test rapide 竟然 vs 果然 :\n' +
+      '- Tu attendais que ça arrive ? OUI → 果然.\n' +
+      '- Tu attendais que ça arrive ? NON → 竟然.',
+    bodyEn:
+      '果然 (guǒ rán) = « as I thought / indeed / no surprise ». Used when reality CONFIRMS what you predicted. Exact opposite of 竟然.\n' +
+      '\n' +
+      'Structure: subject + 果然 + verb/adjective.\n' +
+      '\n' +
+      'Tone: neutral or slightly satisfied (« I was right »).\n' +
+      '- Ex: 他果然没来 « as expected, he didn\'t come ».\n' +
+      '\n' +
+      'Prediction + confirmation pattern: first state what you expected, then 果然 + result.\n' +
+      '- Ex: 他答应很快回来，果然不到十分钟就到了 « he promised to come back soon, and indeed he\'s here in less than 10 minutes ».\n' +
+      '- Ex: 妈妈说不太热，果然凉快 « Mom said it wouldn\'t be too hot, and indeed it\'s cool ».\n' +
+      '\n' +
+      'Fixed formulas:\n' +
+      '- 果然如此 « that\'s exactly what I thought / that\'s just it ».\n' +
+      '- 果然不出所料 « exactly as predicted / no wonder ».\n' +
+      '\n' +
+      '果真 (guǒ zhēn): formal sister of 果然. The difference:\n' +
+      '- 果然 = « my prediction came true » (based on MY forecast).\n' +
+      '- 果真 = « it really is the case » (verifying a rumor or hearsay).\n' +
+      '- Ex: 大家都说这个地方漂亮，我去了一次，果真如此 « everyone says this place is beautiful, I went once, and it really is ». Verifying what others said.\n' +
+      '- Ex: 传说这个山会有仙人出现，我们去了果真看到了 « legend has it an immortal appears on this mountain, and we went and really saw one » (hearsay verification, more formal).\n' +
+      '\n' +
+      'Quick 竟然 vs 果然 test:\n' +
+      '- Were you expecting it to happen? YES → 果然.\n' +
+      '- Were you expecting it to happen? NO → 竟然.',
+    items: [
+      { hanzi: '果然', pinyin: 'guǒ rán', meaning: 'comme prévu, en effet', meaningEn: 'as expected, indeed', audio: 'audio/hsk4/hsk4_果然.wav' },
+      { hanzi: '果真', pinyin: 'guǒ zhēn', meaning: 'c\'est vraiment le cas', meaningEn: 'it really is the case', audio: 'audio/hsk5/hsk5_果真.wav' },
+      { hanzi: '果然如此', pinyin: 'guǒ rán rú cǐ', meaning: 'c\'est bien ça', meaningEn: 'just as I thought', audio: 'audio/hsk4/hsk4_果然.wav' },
+      { hanzi: '不出所料', pinyin: 'bù chū suǒ liào', meaning: 'sans surprise, comme prédit', meaningEn: 'as predicted, no surprise', audio: 'audio/hsk6/hsk6_所料.wav' },
+      { hanzi: '答应', pinyin: 'dā ying', meaning: 'promettre, accepter', meaningEn: 'promise, agree', audio: 'audio/hsk4/hsk4_答应.wav' },
+      { hanzi: '凉快', pinyin: 'liáng kuài', meaning: 'frais, agréable', meaningEn: 'cool, pleasant', audio: 'audio/hsk3/hsk3_凉快.wav' },
+      { hanzi: '传说', pinyin: 'chuán shuō', meaning: 'légende, on raconte que', meaningEn: 'legend, it\'s said that', audio: 'audio/hsk5/hsk5_传说.wav' }
+    ],
+    tip:
+      'Astuce : la clé, c\'est TON ATTENTE personnelle. Si tu avais prédit, c\'est 果然. Si ça t\'étonne, c\'est 竟然.',
+    tipEn:
+      'Tip: the key is YOUR OWN EXPECTATION. If you had predicted it, use 果然. If it astonishes you, use 竟然.'
+  }
+];

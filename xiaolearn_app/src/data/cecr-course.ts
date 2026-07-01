@@ -234,6 +234,7 @@ import {
   b12NuancesShifouYufouLearnSections,
   b12NuancesWorryAdvancedLearnSections,
   b12NuancesItDependsFormalLearnSections,
+  b12NuancesGuoranJingranLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -6477,6 +6478,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["操心", "烦恼", "发愁", "不安", "焦虑", "担忧", "忧虑", "急死了", "提心吊胆"],
         quizQuestions: 10,
         learnSections: b12NuancesWorryAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m14",
+        title: "果然 vs 竟然 : confirmation vs surprise",
+        titleEn: "果然 vs 竟然: confirmation vs surprise",
+        duration: 12, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "adverb", "cecr:b12"],
+        introduction: {
+          title: "L'attente comme boussole : 果然 confirme, 竟然 surprend",
+          titleEn: "Expectation as compass: 果然 confirms, 竟然 surprises",
+          content: "果然 (guǒ rán) et 竟然 (jìng rán) forment un couple parfaitement opposé, articulé autour d'une seule question : t'attendais-tu à ce résultat ? Si oui, c'est 果然, ton neutre ou satisfait (« j'avais raison »). Si non, c'est 竟然, ton chargé d'émotion — admiration, désapprobation ou pur étonnement. Autour d'eux gravitent des variantes essentielles : 居然 (choc intense), 没想到 (surprise douce à l'oral), 不料 (littéraire), 果真 (vérifier une rumeur). En B1.2, choisir le bon marqueur, c'est signaler ta relation à l'événement.",
+          contentEn: "果然 (guǒ rán) and 竟然 (jìng rán) form a perfectly opposite pair, hinged on a single question: did you expect this outcome? If yes, use 果然, neutral or satisfied tone (« I was right »). If no, use 竟然, emotion-loaded tone — admiration, disapproval or pure astonishment. Around them orbit essential variants: 居然 (intense shock), 没想到 (soft spoken surprise), 不料 (literary), 果真 (verifying a rumor). At B1.2, choosing the right marker means signaling your relationship to the event.",
+          objectives: [
+            "Distinguer 果然 (attendu) vs 竟然 (inattendu) selon ton attente",
+            "Placer 居然 pour un choc intense et 没想到 pour surprise douce",
+            "Reconnaître 不料 et 竟 dans un texte littéraire ou narratif",
+            "Utiliser 果真 pour vérifier une rumeur, distinct de 果然"
+          ],
+          objectivesEn: [
+            "Tell 果然 (expected) apart from 竟然 (unexpected) via your expectation",
+            "Deploy 居然 for intense shock and 没想到 for soft surprise",
+            "Recognize 不料 and 竟 in literary or narrative texts",
+            "Use 果真 to verify a rumor, distinct from 果然"
+          ]
+        },
+        flashcards: ["果然", "竟然", "居然", "没想到", "不料", "果真"],
+        quizQuestions: 10,
+        learnSections: b12NuancesGuoranJingranLearnSections
       }
     ]
   },
