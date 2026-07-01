@@ -167,6 +167,7 @@ import {
   b11NuancesYeConcessionLearnSections,
   b11NuancesHuiNengKeyiLearnSections,
   b11NuancesKaiComplementLearnSections,
+  b11GrammarConditionalLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -249,6 +250,7 @@ import {
   b21NuancesM5LearnSections,
   b21NuancesM6LearnSections,
   b21NuancesM7LearnSections,
+  b21NuancesConditionalAdvancedLearnSections,
 } from './cecr-b2-1-learn-sections';
 import {
   b22StructureM1LearnSections,
@@ -3560,6 +3562,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["就", "才", "就是", "就来", "才来", "才三点", "就会了"],
         quizQuestions: 12,
         learnSections: b11JiuCaiLearnSections
+      },
+      {
+        id: "cecr-b11-grammar-conditional-m1",
+        title: "如果...就 et famille des conditionnels",
+        titleEn: "如果...就 and conditional family",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [2, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["conditional", "grammar", "cecr:b11"],
+        introduction: {
+          title: "如果...就 : le squelette du conditionnel chinois",
+          titleEn: "如果...就: the backbone of Chinese conditionals",
+          content: "如果 + [condition]，(就) + [résultat] est la structure par défaut, oral comme écrit. Ex : 如果明天天气好，我们就去爬山 (s'il fait beau demain, on ira randonner). Variantes essentielles : 要是 (plus décontracté, oral, très nordiste), 的话 (à la FIN de la condition, souvent avec 如果/要是 ou même seul : 你想去的话，就早点出发). À l'oral, on peut même TOUT omettre : 你累了，去休息一会儿 — le contexte porte la conditionnalité. Le résultat change de ton selon le mot choisi : 就 (direct, neutre), 那/那么 (doux, raisonnement), 请 (poli, pro). 那/那么 peut aussi lancer une réponse en réaction à ce que dit l'autre. Objectif : maîtriser les 3 marqueurs de condition et savoir choisir le bon mot du résultat.",
+          contentEn: "如果 + [condition], (就) + [result] is the default structure, oral and written. Ex: 如果明天天气好，我们就去爬山 = «if the weather is nice tomorrow, we\'ll go hiking». Essential variants: 要是 (more casual, oral, very northern), 的话 (at the END of the condition, often with 如果/要是 or even alone: 你想去的话，就早点出发). In speech, you can even OMIT everything: 你累了，去休息一会儿 — context carries the conditionality. The result changes tone based on the word chosen: 就 (direct, neutral), 那/那么 (soft, reasoning), 请 (polite, professional). 那/那么 can also start a reply in reaction to what the other person said. Goal: master the 3 condition markers and know how to pick the right result word.",
+          objectives: [
+            "Construire 如果...就 (défaut) et 要是...就 (oral)",
+            "Placer 的话 à la fin de la condition (seul ou combiné)",
+            "Comprendre le conditionnel implicite (sans marqueur)",
+            "Choisir 就 / 那 / 那么 / 请 selon le ton"
+          ],
+          objectivesEn: [
+            "Build 如果...就 (default) and 要是...就 (oral)",
+            "Place 的话 at the end of the condition (alone or combined)",
+            "Grasp the implicit conditional (no marker)",
+            "Pick 就 / 那 / 那么 / 请 by tone"
+          ]
+        },
+        flashcards: ["如果", "要是", "的话", "就", "那", "那么"],
+        quizQuestions: 10,
+        learnSections: b11GrammarConditionalLearnSections
       }
     ]
   },
@@ -6881,6 +6912,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["反而", "反倒", "却", "相反", "答应", "越来越", "越…越", "日益", "增加"],
         quizQuestions: 8,
         learnSections: b21NuancesM7LearnSections
+      },
+      {
+        id: "cecr-b21-nuances-m8",
+        title: "Conditionnels avancés — registres formels + 要不是",
+        titleEn: "Advanced conditionals — formal registers + 要不是",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "grammar", difficulty: "advanced",
+        tags: ["conditional", "nuance", "cecr:b21"],
+        introduction: {
+          title: "Monter en registre et exprimer le contrefactuel",
+          titleEn: "Level up register and express counterfactuals",
+          content: "Deux dimensions avancées du « si » chinois. (1) L'ÉCHELLE DE FORMALITÉ : au-delà de 如果/要是, on trouve 假如 (jiǎ rú, conseil sérieux et posé), 若 (ruò, courant dans les emails pro et panneaux), 倘若 (tǎng ruò, prose littéraire), et 假设 (jiǎ shè, « supposons que », académique). Utile à RECONNAÎTRE plus qu'à produire — quand tu vois 若有需要，请随时联系我, tu sais que c'est juste un « si » formel. (2) LE CONTREFACTUEL avec 要不是 (yào bú shì) : la condition s'est bel et bien réalisée dans le réel, et on imagine le monde SANS elle. Deux usages : gratitude (要不是你提醒我，我就忘了 = si tu ne m'avais pas rappelé, j'aurais oublié) et reproche/regret (要不是你们迟到，我们早就到了). Le partenaire naturel de 要不是 est 早就 (zǎo jiù, « depuis longtemps déjà »), qui ancre le résultat imaginé dans le passé. Piège : ne pas confondre 要不是 (contrefactuel) avec 如果不是 (neutre).",
+          contentEn: "Two advanced dimensions of the Chinese «if». (1) FORMALITY SCALE: beyond 如果/要是, you find 假如 (jiǎ rú, serious measured advice), 若 (ruò, common in pro emails and signs), 倘若 (tǎng ruò, literary prose), and 假设 (jiǎ shè, «suppose that», academic). Useful to RECOGNIZE more than produce — when you see 若有需要，请随时联系我, you know it\'s just a formal «if». (2) COUNTERFACTUAL with 要不是 (yào bú shì): the condition really did happen in real life, and we imagine the world WITHOUT it. Two uses: gratitude (要不是你提醒我，我就忘了 = if you hadn\'t reminded me, I would\'ve forgotten) and reproach/regret (要不是你们迟到，我们早就到了 = if you hadn\'t been late, we\'d have arrived long ago). Natural partner of 要不是 is 早就 (zǎo jiù, «long ago already»), which anchors the imagined result in the past. Trap: don\'t confuse 要不是 (counterfactual) with 如果不是 (neutral).",
+          objectives: [
+            "Reconnaître 假如 / 若 / 倘若 / 假设 selon le registre",
+            "Utiliser 若 dans un email pro chinois",
+            "Construire 要不是...就/早就 pour la gratitude",
+            "Distinguer 要不是 (contrefactuel) de 如果不是 (neutre)"
+          ],
+          objectivesEn: [
+            "Recognize 假如 / 若 / 倘若 / 假设 by register",
+            "Use 若 in a Chinese pro email",
+            "Build 要不是...就/早就 for gratitude",
+            "Tell 要不是 (counterfactual) from 如果不是 (neutral)"
+          ]
+        },
+        flashcards: ["假如", "若", "倘若", "假设", "要不是", "早就"],
+        quizQuestions: 10,
+        learnSections: b21NuancesConditionalAdvancedLearnSections
       }
     ]
   },

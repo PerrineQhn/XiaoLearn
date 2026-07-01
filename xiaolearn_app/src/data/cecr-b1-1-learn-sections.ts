@@ -2397,3 +2397,122 @@ export const b11NuancesKaiComplementLearnSections: LessonV2LearnSection[] = [
       'These 2 special senses stand out because CONTEXT (cooking or jewelry) instantly clears up what 开 means. Otherwise these sentences would sound cryptic.'
   }
 ];
+
+// --- cecr-b11-grammar-conditional-m1 — 如果...就 et famille des conditionnels ---
+export const b11GrammarConditionalLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-conditional-ruguo-jiu',
+    title: '如果...就... : le conditionnel neutre',
+    titleEn: '如果...就... : the neutral conditional',
+    body:
+      'Structure de base : 如果 + [condition]，(就) + [résultat]. C\'est le conditionnel par DÉFAUT, oral comme écrit.\n' +
+      '\n' +
+      'Deux exemples typiques :\n' +
+      '- 如果明天天气好，我们就去爬山 (rúguǒ míngtiān tiān qì hǎo, wǒmen jiù qù pá shān) « s\'il fait beau demain, on ira randonner ».\n' +
+      '- 如果我今天学会了这个汉字，我就奖励自己喝杯珍珠奶茶 (rúguǒ wǒ jīn tiān xué huì le zhè ge hàn zì, wǒ jiù jiǎng lì zì jǐ hē bēi zhēn zhū nǎi chá) « si je maîtrise ce caractère aujourd\'hui, je m\'offre un bubble tea ».\n' +
+      '\n' +
+      'Règle : 就 marque « alors, dans ce cas ». Il vient AVANT le verbe principal du résultat, APRÈS le sujet.\n' +
+      '\n' +
+      'Astuce d\'ordre : 就 est optionnel quand le lien condition-résultat est évident. 如果明天天气好，我们去爬山 sonne parfaitement naturel.\n' +
+      '\n' +
+      'Position du sujet : le sujet peut venir AVANT ou APRÈS 如果. Les 2 formes 如果我有时间 (rúguǒ wǒ yǒu shí jiān) et 我如果有时间 (wǒ rú guǒ yǒu shí jiān) sont équivalentes.',
+    bodyEn:
+      'Base structure: 如果 + [condition], (就) + [result]. This is the DEFAULT conditional, oral and written. Ex: 如果明天天气好，我们就去爬山 = «if the weather is nice tomorrow, we\'ll go hiking». Ex: 如果我今天学会了这个汉字，我就奖励自己喝杯珍珠奶茶 = «if I master this character today, I\'ll treat myself to a bubble tea». Rule: 就 marks «then, in that case». It comes BEFORE the main verb of the result, AFTER the subject. Order tip: 就 is optional when the condition-result link is obvious. 如果明天天气好，我们去爬山 sounds perfectly natural. Subject position: the subject can come BEFORE or AFTER 如果. Both 如果我有时间 and 我如果有时间 are equivalent.',
+    items: [
+      { hanzi: '如果', pinyin: 'rú guǒ', meaning: 'si (neutre)', meaningEn: 'if (neutral)', audio: 'audio/hsk3/hsk3_如果.wav' },
+      { hanzi: '就', pinyin: 'jiù', meaning: 'alors, dans ce cas', meaningEn: 'then', audio: 'audio/hsk2/hsk2_就.wav' },
+      { hanzi: '如果明天天气好', pinyin: 'rú guǒ míng tiān tiān qì hǎo', meaning: 's\'il fait beau demain', meaningEn: 'if the weather is nice tomorrow', audio: 'audio/hsk1/hsk1_天气.wav' },
+      { hanzi: '我们就去爬山', pinyin: 'wǒ men jiù qù pá shān', meaning: 'on ira randonner', meaningEn: 'we\'ll go hiking', audio: 'audio/hsk3/hsk3_爬山.wav' },
+      { hanzi: '如果我有时间', pinyin: 'rú guǒ wǒ yǒu shí jiān', meaning: 'si j\'ai le temps', meaningEn: 'if I have time', audio: 'audio/hsk2/hsk2_时间.wav' }
+    ],
+    tip:
+      'À retenir comme bloc : 如果...就 est ton défaut. Si tu ne sais pas quel « si » utiliser, prends 如果.',
+    tipEn:
+      'Memorize as a block: 如果...就 is your default. If you\'re unsure which «if» to use, pick 如果.'
+  },
+  {
+    id: 'b11-conditional-yaoshi-dehua',
+    title: '要是 (oral) et 的话 (framer la condition)',
+    titleEn: '要是 (oral) and 的话 (framing the condition)',
+    body:
+      '要是 (yào shi) signifie exactement comme 如果, mais plus DÉCONTRACTÉ, plus chaleureux. Très fréquent au quotidien, surtout au nord de la Chine.\n' +
+      '\n' +
+      'Ex : 要是你明天有时间，就跟我一起去长城吧 (yào shi nǐ míng tiān yǒu shí jiān, jiù gēn wǒ yì qǐ qù cháng chéng ba) « si tu as le temps demain, viens avec moi à la Grande Muraille ». Le 吧 en fin de phrase rend l\'invitation plus douce.\n' +
+      '\n' +
+      '的话 (de huà) se met À LA FIN de la clause de condition, comme pour dire « dans ce cas ». Deux usages :\n' +
+      '- Combiné avec 如果 ou 要是 pour DOUBLE clarté : 如果你现在不能打电话的话，我们就发信息吧 (rú guǒ nǐ xiàn zài bù néng dǎ diàn huà de huà, wǒmen jiù fā xìn xī ba) « si tu peux pas appeler, on s\'envoie un message ».\n' +
+      '- Seul, sans 如果, très courant à l\'oral : 你想去的话，我们就早点出发 (nǐ xiǎng qù de huà, wǒ men jiù zǎo diǎn chū fā) « si tu veux y aller, on part plus tôt ».\n' +
+      '\n' +
+      'Règle : toutes les combinaisons marchent — 要是...的话, 如果...的话, ou 的话 tout seul.',
+    bodyEn:
+      '要是 (yào shi) means exactly like 如果, but more CASUAL and warm. Very common in daily life, especially in northern China. Ex: 要是你明天有时间，就跟我一起去长城吧 = «if you have time tomorrow, come with me to the Great Wall». The 吧 at the end softens the invitation. 的话 (de huà) goes at the END of the condition clause, like saying «in that case». Two uses: (1) Combined with 如果 or 要是 for double clarity: 如果你现在不能打电话的话，我们就发信息吧 = «if you can\'t call, we\'ll text». (2) Alone, without 如果, very common in speech: 你想去的话，我们就早点出发 = «if you want to go, we\'ll leave earlier». All combinations work: 要是...的话, 如果...的话, or 的话 alone.',
+    items: [
+      { hanzi: '要是', pinyin: 'yào shi', meaning: 'si (oral, chaleureux)', meaningEn: 'if (casual)', audio: 'audio/hsk4/hsk4_要是.wav' },
+      { hanzi: '的话', pinyin: 'de huà', meaning: 'dans ce cas (fin de clause)', meaningEn: 'in that case', audio: 'audio/hsk4/hsk4_的话.wav' },
+      { hanzi: '要是你明天有时间', pinyin: 'yào shi nǐ míng tiān yǒu shí jiān', meaning: 'si tu as le temps demain', meaningEn: 'if you have time tomorrow', audio: 'audio/hsk2/hsk2_时间.wav' },
+      { hanzi: '你想去的话', pinyin: 'nǐ xiǎng qù de huà', meaning: 'si tu veux y aller', meaningEn: 'if you want to go', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '发信息', pinyin: 'fā xìn xī', meaning: 'envoyer un message', meaningEn: 'send a message', audio: 'audio/hsk3/hsk3_信息.wav' }
+    ],
+    tip:
+      'À l\'oral décontracté, glisse 的话 à la fin de n\'importe quelle phrase pour la transformer en condition. C\'est un des marqueurs les plus « naturels » du chinois parlé.',
+    tipEn:
+      'In casual speech, slip 的话 at the end of any sentence to turn it into a condition. One of the most natural markers in spoken Chinese.'
+  },
+  {
+    id: 'b11-conditional-implicit',
+    title: 'Conditionnel implicite : sans marqueur du tout',
+    titleEn: 'Implicit conditional: no marker at all',
+    body:
+      'À l\'oral, il est parfaitement possible de SUPPRIMER le « si » et de laisser le contexte parler. Quand la condition vient en premier et le résultat suit, l\'auditeur comprend seul le lien de conditionnalité.\n' +
+      '\n' +
+      'Deux exemples typiques :\n' +
+      '- 你累了，去休息一会儿 (nǐ lèi le, qù xiū xi yí huìr) « si tu es fatigué, va te reposer un peu ». Pas de 如果 ni de 要是, mais le sens conditionnel est clair.\n' +
+      '- 明天下雨，我不去了 (míng tiān xià yǔ, wǒ bú qù le) « s\'il pleut demain, je ne viens plus ».\n' +
+      '\n' +
+      'Règle : fonctionne surtout avec des conditions COURTES et QUOTIDIENNES (météo, temps, disponibilité).\n' +
+      '\n' +
+      'Attention : si la condition est complexe ou ambiguë, remets 如果 ou 要是 pour clarifier. Le sans-marqueur suppose une lecture aisée du contexte.',
+    bodyEn:
+      'In speech, it\'s perfectly OK to DROP the «if» and let context speak. When the condition comes first and the result follows, the listener grasps the conditional link. Ex: 你累了，去休息一会儿 = «if you\'re tired, go rest a bit». No 如果 or 要是, but the conditional meaning is clear. Ex: 明天下雨，我不去了 = «if it rains tomorrow, I\'m not going anymore». Rule: works mostly with SHORT and everyday conditions (weather, time, availability). Warning: if the condition is complex or ambiguous, put back 如果 or 要是 to clarify. The unmarked form assumes easy context reading.',
+    items: [
+      { hanzi: '你累了', pinyin: 'nǐ lèi le', meaning: 'si tu es fatigué', meaningEn: 'if you\'re tired', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '去休息一会儿', pinyin: 'qù xiū xi yí huìr', meaning: 'va te reposer un peu', meaningEn: 'go rest a bit', audio: 'audio/hsk2/hsk2_休息.wav' },
+      { hanzi: '明天下雨', pinyin: 'míng tiān xià yǔ', meaning: 's\'il pleut demain', meaningEn: 'if it rains tomorrow', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '我不去了', pinyin: 'wǒ bú qù le', meaning: 'je n\'y vais plus', meaningEn: 'I\'m not going anymore', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '休息', pinyin: 'xiū xi', meaning: 'se reposer', meaningEn: 'rest', audio: 'audio/hsk2/hsk2_休息.wav' }
+    ],
+    tip:
+      'Entendre les Chinois enchaîner deux phrases courtes sans marqueur explicite est très courant. Ça sonne fluide et naturel — tant que le contexte est simple.',
+    tipEn:
+      'Hearing Chinese speakers link two short sentences without any explicit marker is very common. It sounds fluid and natural — as long as the context is simple.'
+  },
+  {
+    id: 'b11-conditional-then-words',
+    title: 'Les mots du résultat : 就, 那/那么, 请',
+    titleEn: 'The result words: 就, 那/那么, 请',
+    body:
+      'Ton choix pour la clause de résultat CHANGE le ton de la phrase.\n' +
+      '\n' +
+      '- 就 (jiù) : le plus courant, direct, « alors tout de suite B ». Position : après le sujet, avant le verbe. Ex : 如果你现在走，我就放心了 (rú guǒ nǐ xiàn zài zǒu, wǒ jiù fàng xīn le) « si tu pars maintenant, je serai rassuré ».\n' +
+      '- 那 / 那么 (nà / nà me) : plus DOUX, « dans ce cas ». Sonne comme un raisonnement, pas une conclusion ferme. 那么 est un chouïa plus posé que 那. Ex : 如果他知道，那他一定会告诉我 (rú guǒ tā zhī dào, nà tā yí dìng huì gào sù wǒ) « s\'il sait, alors il va sûrement me le dire ».\n' +
+      '- 那就 : combine la douceur de 那 avec la clarté de 就. Ex : 要是你不喜欢吃辣的，那我们就点别的菜吧 (yào shi nǐ bù xǐ huan chī là de, nà wǒmen jiù diǎn bié de cài ba) « si t\'aimes pas le piquant, on commande autre chose alors ».\n' +
+      '\n' +
+      '那/那么 en réaction : à l\'oral, on peut commencer une réponse par 那 ou 那么, sans aucun « si » précédent — la condition étant ce que l\'interlocuteur vient de dire. Ex : 你不想去，那么我们就改天吧 (nǐ bù xiǎng qù, nà me wǒmen jiù gǎi tiān ba) « tu veux pas y aller ? alors on remet à un autre jour ».\n' +
+      '\n' +
+      '请 (qǐng) : pour un résultat POLI, dans les emails, panneaux, service client. Ex : 如果你有任何问题，请随时联系我们 (rú guǒ nǐ yǒu rèn hé wèn tí, qǐng suí shí lián xì wǒmen) « si vous avez des questions, contactez-nous à tout moment ». Sonne pro et propre.',
+    bodyEn:
+      'Your choice for the result clause CHANGES the tone. 就 (jiù): most common, direct, «then B right away». Position: after subject, before verb. Ex: 如果你现在走，我就放心了 = «if you leave now, I\'ll be reassured». 那 / 那么 (nà / nà me): softer, «in that case». Sounds like reasoning, not a firm conclusion. 那么 is slightly more measured than 那. Ex: 如果他知道，那他一定会告诉我 = «if he knows, he\'ll surely tell me». 那就 combines the softness of 那 with the clarity of 就. Ex: 要是你不喜欢吃辣的，那我们就点别的菜吧 = «if you don\'t like spicy food, let\'s order something else then». 那/那么 as reaction: in speech, you can start a reply with 那 or 那么, without any preceding «if» — the condition being what the other person just said. 请 (qǐng): for a POLITE result, in emails, signs, customer service. Sounds professional.',
+    items: [
+      { hanzi: '那', pinyin: 'nà', meaning: 'alors (doux, réactif)', meaningEn: 'then (soft)', audio: 'audio/hsk1/hsk1_那.wav' },
+      { hanzi: '那么', pinyin: 'nà me', meaning: 'alors, dans ce cas (posé)', meaningEn: 'in that case', audio: 'audio/hsk2/hsk2_那么.wav' },
+      { hanzi: '那就', pinyin: 'nà jiù', meaning: 'alors dans ce cas', meaningEn: 'then in that case', audio: 'audio/hsk1/hsk1_那.wav' },
+      { hanzi: '请', pinyin: 'qǐng', meaning: 'veuillez (poli)', meaningEn: 'please (polite)', audio: 'audio/hsk1/hsk1_请.wav' },
+      { hanzi: '放心', pinyin: 'fàng xīn', meaning: 'être rassuré', meaningEn: 'be reassured', audio: 'audio/hsk3/hsk3_放心.wav' },
+      { hanzi: '联系', pinyin: 'lián xì', meaning: 'contacter', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' }
+    ],
+    tip:
+      'Pour choisir : 就 = neutre direct, 那/那么 = doux et réactif, 请 = poli et pro. Tu peux aussi tout omettre si le résultat est évident.',
+    tipEn:
+      'To pick: 就 = direct neutral, 那/那么 = soft and reactive, 请 = polite and professional. You can also omit everything if the result is obvious.'
+  }
+];

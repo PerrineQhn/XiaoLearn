@@ -1552,3 +1552,69 @@ export const b21NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Poetic phrase: «越是简单的事情越是难做好» = the simpler a thing, the harder to do well. Very-used Chinese philosophical maxim — cite it to show your reflection.'
   }
 ];
+
+// --- cecr-b21-nuances-conditional-advanced — Conditionnels avancés ------------
+export const b21NuancesConditionalAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b21-conditional-formal-scale',
+    title: '« Si » formels : 假如 / 若 / 倘若 / 假设',
+    titleEn: 'Formal «if»: 假如 / 若 / 倘若 / 假设',
+    body:
+      'Le chinois écrit et formel offre plusieurs alternatives à 如果 selon le registre. Utile à RECONNAÎTRE, pas indispensable à produire au quotidien.\n' +
+      '\n' +
+      'Échelle de formalité du plus décontracté au plus soutenu :\n' +
+      '- 要是 : oral et conversationnel (nord de la Chine surtout).\n' +
+      '- 如果 : neutre, marche partout.\n' +
+      '- 假如 (jiǎ rú) : conseil sérieux, présentation soignée. Fait un peu « littéraire » à l\'oral décontracté. Ex : 假如有困难，你一定要告诉我 (jiǎ rú yǒu kùn nán, nǐ yí dìng yào gào sù wǒ) « en cas de difficulté, dis-le moi absolument ». Le ton est ferme et attentionné.\n' +
+      '- 若 (ruò) : courant en emails pro, panneaux, avis officiels. Bref et efficace. Ex : 若有需要，请随时联系我 (ruò yǒu xū yào, qǐng suí shí lián xì wǒ) « en cas de besoin, contactez-moi ».\n' +
+      '- 倘若 (tǎng ruò) : littéraire, prose formelle. Rare dans le langage courant.\n' +
+      '- 假设 (jiǎ shè) : « supposons que », usage académique ou scientifique. Ex : 假设这个理论是对的… (jiǎ shè zhè ge lǐ lùn shì duì de) « supposons que cette théorie soit correcte… ».\n' +
+      '\n' +
+      'Règle pratique : à l\'oral, garde 要是 ou 如果. À l\'écrit formel, tu peux monter à 假如 ou 若 selon le degré de sérieux.',
+    bodyEn:
+      'Written and formal Chinese offers several alternatives to 如果 by register. Useful to RECOGNIZE, not essential to produce daily. Formality scale from casual to elevated: 要是 (oral, casual, mostly northern China); 如果 (neutral, universal); 假如 (jiǎ rú, serious advice, polished delivery — sounds a bit «literary» in casual speech); 若 (ruò, common in pro emails, signs, official notices — short and efficient); 倘若 (tǎng ruò, literary, formal prose — rare in daily speech); 假设 (jiǎ shè, «suppose that», academic or scientific). Practical rule: in speech, stick with 要是 or 如果. In formal writing, go up to 假如 or 若 depending on seriousness.',
+    items: [
+      { hanzi: '假如', pinyin: 'jiǎ rú', meaning: 'si (soutenu, conseil)', meaningEn: 'if (elevated, advice)', audio: 'audio/hsk5/hsk5_假如.wav' },
+      { hanzi: '若', pinyin: 'ruò', meaning: 'si (écrit pro, bref)', meaningEn: 'if (written, short)', audio: 'audio/hsk6/hsk6_若.wav' },
+      { hanzi: '倘若', pinyin: 'tǎng ruò', meaning: 'si (littéraire)', meaningEn: 'if (literary)', audio: 'audio/hsk6/hsk6_倘若.wav' },
+      { hanzi: '假设', pinyin: 'jiǎ shè', meaning: 'supposons que (académique)', meaningEn: 'suppose that (academic)', audio: 'audio/hsk5/hsk5_假设.wav' },
+      { hanzi: '若有需要', pinyin: 'ruò yǒu xū yào', meaning: 'en cas de besoin', meaningEn: 'if needed', audio: 'audio/hsk4/hsk4_需要.wav' },
+      { hanzi: '假如有困难', pinyin: 'jiǎ rú yǒu kùn nán', meaning: 'en cas de difficulté', meaningEn: 'in case of difficulty', audio: 'audio/hsk4/hsk4_困难.wav' }
+    ],
+    tip:
+      'Quand tu lis un email pro chinois qui commence par 若, ne panique pas — c\'est juste un « si » écrit-soutenu. Le reste de la phrase suit la même logique que 如果.',
+    tipEn:
+      'When you read a Chinese pro email starting with 若, don\'t panic — it\'s just an elevated-written «if». The rest of the sentence follows the same logic as 如果.'
+  },
+  {
+    id: 'b21-conditional-counterfactual-yaobushi',
+    title: '要不是 : « si ce n\'était pas... » (contrefactuel)',
+    titleEn: '要不是: «if it weren\'t for...» (counterfactual)',
+    body:
+      '要不是 (yào bú shì) exprime une condition CONTREFACTUELLE : quelque chose s\'est réellement produit, et on imagine ce que le monde aurait été SANS cela. Traduit par « si ce n\'était pas de… », « n\'eût été… ».\n' +
+      '\n' +
+      'Structure : 要不是 + [ce qui s\'est réellement passé]，(就 / 早就) + [ce qui se serait passé sinon].\n' +
+      '\n' +
+      'Deux usages principaux :\n' +
+      '- GRATITUDE : reconnaître qu\'on doit qch à qqn. Ex : 要不是你提醒我，我就忘了 (yào bú shì nǐ tí xǐng wǒ, wǒ jiù wàng le) « si tu ne m\'avais pas rappelé, j\'aurais oublié ». En vrai, l\'oubli n\'a pas eu lieu grâce au rappel.\n' +
+      '- REPROCHE / REGRET : imaginer un résultat meilleur si l\'événement ne s\'était pas produit. Ex : 要不是你们迟到，我们早就到了 (yào bú shì nǐmen chí dào, wǒmen zǎo jiù dào le) « si vous n\'étiez pas en retard, on serait déjà arrivés depuis longtemps ».\n' +
+      '\n' +
+      '早就 (zǎo jiù) : très souvent en pair avec 要不是. Signifie « depuis longtemps déjà », ancre le résultat imaginé DANS LE PASSÉ. « 我们早就到了 » = « on serait déjà arrivés depuis un moment ». Combinaison très fréquente à l\'oral.\n' +
+      '\n' +
+      'Attention : ne confonds pas 要不是 avec 如果不是 (« si ce n\'est pas », neutre). 要不是 est spécifiquement CONTREFACTUEL et implique que la condition s\'est bien réalisée dans la vraie vie.',
+    bodyEn:
+      '要不是 (yào bú shì) expresses a COUNTERFACTUAL condition: something actually happened, and we imagine what the world would\'ve been WITHOUT it. Translated as «if it weren\'t for…», «had it not been for…». Structure: 要不是 + [what really happened], (就 / 早就) + [what would have happened otherwise]. Two main uses: (1) GRATITUDE: acknowledging you owe something to someone. Ex: 要不是你提醒我，我就忘了 = «if you hadn\'t reminded me, I would\'ve forgotten». (2) REPROACH / REGRET: imagining a better outcome if the event hadn\'t happened. Ex: 要不是你们迟到，我们早就到了 = «if you hadn\'t been late, we\'d have arrived long ago». 早就 (zǎo jiù): often paired with 要不是. Means «long ago already», anchors the imagined result IN THE PAST. Warning: don\'t confuse 要不是 with 如果不是 (neutral «if not»). 要不是 is specifically COUNTERFACTUAL and implies the condition did really happen in real life.',
+    items: [
+      { hanzi: '要不是', pinyin: 'yào bú shì', meaning: 'si ce n\'était pas (contrefactuel)', meaningEn: 'if it weren\'t for', audio: 'audio/hsk5/hsk5_要不是.wav' },
+      { hanzi: '早就', pinyin: 'zǎo jiù', meaning: 'depuis longtemps déjà', meaningEn: 'long ago already', audio: 'audio/hsk4/hsk4_早就.wav' },
+      { hanzi: '要不是你提醒我', pinyin: 'yào bú shì nǐ tí xǐng wǒ', meaning: 'si tu ne m\'avais pas rappelé', meaningEn: 'if you hadn\'t reminded me', audio: 'audio/hsk4/hsk4_提醒.wav' },
+      { hanzi: '我就忘了', pinyin: 'wǒ jiù wàng le', meaning: 'j\'aurais oublié', meaningEn: 'I would have forgotten', audio: 'audio/hsk3/hsk3_忘.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' },
+      { hanzi: '我们早就到了', pinyin: 'wǒ men zǎo jiù dào le', meaning: 'on serait déjà arrivés', meaningEn: 'we\'d have arrived long ago', audio: 'audio/hsk2/hsk2_到.wav' }
+    ],
+    tip:
+      'Quand tu veux remercier quelqu\'un de manière chaleureuse, 要不是 est parfait. « 要不是你 + verbe, 我早就... » est un pattern à mémoriser en bloc.',
+    tipEn:
+      'When you want to warmly thank someone, 要不是 is perfect. «要不是你 + verb, 我早就...» is a pattern to memorize as a block.'
+  }
+];
