@@ -4786,3 +4786,102 @@ export const a2NuancesCauseEffectBasicsLearnSections: LessonV2LearnSection[] = [
       'Tip: whenever a fact is accepted and you want to draw a practical conclusion, 既然...就 fits perfectly. The 就 is MANDATORY.'
   }
 ];
+
+export const a2NuancesTogetherLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-together-yiqi-yikuair',
+    title: '一起 et 一块儿 : « ensemble » au quotidien',
+    titleEn: '一起 and 一块儿: «together» in daily life',
+    body:
+      'Les 4 mots pour « ensemble » commencent tous par 一 (« un »), suggérant l\'unité. Voici les 2 les plus courants pour l\'oral quotidien.\n' +
+      '\n' +
+      '一起 (yì qǐ) = LE défaut universel. Neutre, versatile, oral comme écrit. Le mot à connaître en priorité.\n' +
+      '\n' +
+      'Structure : sujet + (和/跟 + personne) + 一起 + verbe. Le partenaire est optionnel.\n' +
+      '- Ex : 我们一起去公园散步 (py wǒmen yì qǐ qù gōng yuán sàn bù) « on va se promener au parc ensemble ».\n' +
+      '- Ex : 我和你一起去 (py wǒ hé nǐ yì qǐ qù) « je viens avec toi ». Le 和 (« avec ») introduit le compagnon.\n' +
+      '- Ex : 你跟我们一起吃饭吧 (py nǐ gēn wǒ men yì qǐ chī fàn ba) « mange avec nous ». Le 跟 est équivalent oral de 和.\n' +
+      '- Ex : 每个周末我们一起看电影 « chaque weekend on regarde un film ensemble ».\n' +
+      '\n' +
+      '一块儿 (yí kuàir) = équivalent COLLOQUIAL et NORDISTE, très ami. Le 儿 final trahit le parler pékinois. Prononcé "yí kuàir" (yī devient 2e ton devant le 4e ton de 块).\n' +
+      '\n' +
+      'Structure : identique à 一起.\n' +
+      '- Ex : 下班后，我们一块儿去吃饭 (py xià bān hòu, wǒmen yí kuàir qù chī fàn) « après le boulot, on va manger ensemble ». Ton copain-copine.\n' +
+      '- Ex : 咱们一块儿走吧 « allons-y ensemble ». 咱们 (nous inclusif) + 一块儿 = ultra Beijing.\n' +
+      '\n' +
+      'Comparaison : dans le sud de la Chine ou à l\'écrit, on préfère 一起. À l\'écrit formel, 一起 est le seul choix approprié entre ces deux.\n' +
+      '\n' +
+      'Astuce prononciation : le 儿 dans 一块儿 se prononce comme un « r » collé à la fin de 块, pas comme « तr ». C\'est un rétroflexe qui donne cette sonorité typique du mandarin nordiste.',
+    bodyEn:
+      'All 4 words for «together» start with 一 («one»), suggesting unity. Here are the 2 most common ones for daily spoken use. 一起 (yì qǐ) = THE universal default. Neutral, versatile, spoken and written. The one to know first. Structure: subject + (和/跟 + person) + 一起 + verb. Partner is optional. Ex: 我们一起去公园散步 «let\'s take a walk in the park together». Ex: 我和你一起去 «I\'ll come with you». 和 («with») introduces the companion. Ex: 你跟我们一起吃饭吧 «eat with us». 跟 is the oral equivalent of 和. Ex: 每个周末我们一起看电影 «every weekend we watch a movie together». 一块儿 (yí kuàir) = COLLOQUIAL and NORTHERN equivalent, very friendly. The final 儿 betrays the Beijing accent. Pronounced "yí kuàir" (yī becomes 2nd tone before the 4th tone of 块). Structure: same as 一起. Ex: 下班后，我们一块儿去吃饭 «after work, let\'s go eat together». Buddy tone. Ex: 咱们一块儿走吧 «let\'s go together». 咱们 (inclusive we) + 一块儿 = ultra Beijing. Comparison: in southern China or in writing, 一起 is preferred. In formal writing, 一起 is the only appropriate choice between the two. Pronunciation tip: the 儿 in 一块儿 sounds like an «r» stuck to the end of 块, not like a separate syllable. It\'s a retroflex giving that typical northern Mandarin sound.',
+    items: [
+      { hanzi: '一起', pinyin: 'yì qǐ', meaning: 'ensemble (neutre)', meaningEn: 'together (neutral)', audio: 'audio/hsk1/hsk1_一起.wav' },
+      { hanzi: '一块儿', pinyin: 'yí kuàir', meaning: 'ensemble (oral, nord)', meaningEn: 'together (oral, northern)', audio: 'audio/hsk3/hsk3_一块儿.wav' },
+      { hanzi: '和', pinyin: 'hé', meaning: 'et, avec', meaningEn: 'and, with', audio: 'audio/hsk1/hsk1_和.wav' },
+      { hanzi: '跟', pinyin: 'gēn', meaning: 'avec (oral)', meaningEn: 'with (oral)', audio: 'audio/hsk2/hsk2_跟.wav' },
+      { hanzi: '我们一起去公园散步', pinyin: 'wǒ men yì qǐ qù gōng yuán sàn bù', meaning: 'on va se promener au parc ensemble', meaningEn: 'let\'s walk in the park together', audio: 'audio/hsk3/hsk3_散步.wav' },
+      { hanzi: '我和你一起去', pinyin: 'wǒ hé nǐ yì qǐ qù', meaning: 'je viens avec toi', meaningEn: 'I\'ll come with you', audio: 'audio/hsk1/hsk1_一起.wav' },
+      { hanzi: '你跟我们一起吃饭吧', pinyin: 'nǐ gēn wǒ men yì qǐ chī fàn ba', meaning: 'mange avec nous', meaningEn: 'eat with us', audio: 'audio/hsk1/hsk1_吃饭.wav' },
+      { hanzi: '每个周末我们一起看电影', pinyin: 'měi ge zhōu mò wǒ men yì qǐ kàn diàn yǐng', meaning: 'chaque weekend on regarde un film ensemble', meaningEn: 'every weekend we watch a movie together', audio: 'audio/hsk1/hsk1_电影.wav' },
+      { hanzi: '下班后，我们一块儿去吃饭', pinyin: 'xià bān hòu, wǒ men yí kuàir qù chī fàn', meaning: 'après le boulot, on va manger ensemble', meaningEn: 'after work, let\'s eat together', audio: 'audio/hsk2/hsk2_下班.wav' },
+      { hanzi: '咱们一块儿走吧', pinyin: 'zán men yí kuàir zǒu ba', meaning: 'allons-y ensemble', meaningEn: 'let\'s go together', audio: 'audio/hsk3/hsk3_咱们.wav' }
+    ],
+    tip:
+      'Astuce : à l\'oral avec des amis, 一块儿 sonne chaleureux. Dans une réunion pro, un email ou un contexte écrit, garde toujours 一起.',
+    tipEn:
+      'Tip: orally with friends, 一块儿 sounds warm. In a work meeting, an email or written context, always stick with 一起.'
+  },
+  {
+    id: 'a2-together-yiqi-yitong',
+    title: '一齐 (simultané) et 一同 (soutenu) : registres particuliers',
+    titleEn: '一齐 (simultaneous) and 一同 (formal): specific registers',
+    body:
+      '一齐 (yì qí) = « ensemble AU MÊME INSTANT / en cœur / en synchronisation ». Insiste sur la SIMULTANÉITÉ.\n' +
+      '\n' +
+      'Structure : sujet pluriel + 一齐 + verbe.\n' +
+      '- Ex : 他们一齐举手 (py tā men yì qí jǔ shǒu) « ils ont levé la main tous en même temps ». La synchronicité est essentielle.\n' +
+      '- Ex : 大家一齐鼓掌 « tout le monde a applaudi en cœur ». Applaudissements coordonnés.\n' +
+      '- Ex : 学生们一齐回答 « les élèves ont répondu tous ensemble ». En chœur.\n' +
+      '- Ex : 五个国家的代表一齐签字 « les représentants des 5 pays ont signé simultanément ».\n' +
+      '\n' +
+      'Nuance vs 一起 : 一起 = « ensemble » (fait joint, temps possiblement décalé). 一齐 = « ensemble » (fait joint ET simultané au même moment).\n' +
+      '- 他们一起工作 = ils travaillent ensemble (peuvent avoir des horaires différents).\n' +
+      '- 他们一齐鼓掌 = ils applaudissent tous en même temps (mouvement synchronisé).\n' +
+      '\n' +
+      'Registre : plutôt écrit, journalistique, littéraire. À l\'oral quotidien, 一起 fait le job même quand il y a synchronicité (contexte suffit).\n' +
+      '\n' +
+      '一同 (yì tóng) = « ensemble » FORMEL/SOUTENU. Registre presse, invitations officielles, discours.\n' +
+      '\n' +
+      'Structure : sujet + (与 + personne) + 一同 + verbe. Note le 与 (yǔ, « avec ») qui remplace le familier 和/跟.\n' +
+      '- Ex : 我与朋友一同参观了博物馆 (py wǒ yǔ péng you yì tóng cān guān le bó wù guǎn) « j\'ai visité le musée avec un ami ». Style écrit soutenu.\n' +
+      '- Ex : 请与我们一同庆祝 « rejoignez-nous pour célébrer ». Invitation formelle.\n' +
+      '- Ex : 两国元首一同出席 « les chefs d\'État des deux pays ont assisté ensemble ». Style presse politique.\n' +
+      '- Ex : 与会者一同合影 « les participants ont pris une photo de groupe ». Communiqué officiel.\n' +
+      '\n' +
+      'À l\'oral décontracté ou avec un ami, dire 我与朋友一同 sonne pompeux — préfère 我和朋友一起.\n' +
+      '\n' +
+      'Récap des 4 registres :\n' +
+      '- 一起 : neutre, TOUS contextes. Le défaut à connaître.\n' +
+      '- 一块儿 : oral, nord de la Chine, amis proches.\n' +
+      '- 一齐 : écrit, insiste sur la synchronisation exacte.\n' +
+      '- 一同 : soutenu, presse, invitations officielles, avec 与.',
+    bodyEn:
+      '一齐 (yì qí) = «together AT THE SAME MOMENT / in unison / in sync». Emphasizes SIMULTANEITY. Structure: plural subject + 一齐 + verb. Ex: 他们一齐举手 «they all raised their hands at the same time». Synchrony is essential. Ex: 大家一齐鼓掌 «everyone applauded in unison». Coordinated clapping. Ex: 学生们一齐回答 «the students answered together». In chorus. Ex: 五个国家的代表一齐签字 «representatives of the 5 countries signed simultaneously». Nuance vs 一起: 一起 = «together» (joint action, possibly at different times). 一齐 = «together» (joint AND simultaneous). 他们一起工作 = they work together (schedules may differ). 他们一齐鼓掌 = they applaud simultaneously (synchronized movement). Register: more written, journalistic, literary. Orally, 一起 does the job even when there\'s synchronicity (context is enough). 一同 (yì tóng) = FORMAL/ELEVATED «together». Press, official invitations, speeches. Structure: subject + (与 + person) + 一同 + verb. Note 与 (yǔ, «with») replaces familiar 和/跟. Ex: 我与朋友一同参观了博物馆 «I visited the museum with a friend». Elevated written style. Ex: 请与我们一同庆祝 «join us to celebrate». Formal invitation. Ex: 两国元首一同出席 «heads of state of both countries attended together». Political press. Ex: 与会者一同合影 «attendees took a group photo». Official communiqué. In casual speech with a friend, 我与朋友一同 sounds pompous — use 我和朋友一起. Register recap: 一起 neutral, ALL contexts (the default); 一块儿 oral, northern China, close friends; 一齐 written, insists on exact synchronization; 一同 formal, press, official invitations, with 与.',
+    items: [
+      { hanzi: '一齐', pinyin: 'yì qí', meaning: 'ensemble (au même instant)', meaningEn: 'together (at the same moment)', audio: 'audio/hsk4/hsk4_一齐.wav' },
+      { hanzi: '一同', pinyin: 'yì tóng', meaning: 'ensemble (soutenu)', meaningEn: 'together (formal)', audio: 'audio/hsk5/hsk5_一同.wav' },
+      { hanzi: '与', pinyin: 'yǔ', meaning: 'avec, et (soutenu)', meaningEn: 'with, and (formal)', audio: 'audio/hsk4/hsk4_与.wav' },
+      { hanzi: '他们一齐举手', pinyin: 'tā men yì qí jǔ shǒu', meaning: 'ils ont levé la main tous en même temps', meaningEn: 'they all raised their hands at the same time', audio: 'audio/hsk4/hsk4_举.wav' },
+      { hanzi: '大家一齐鼓掌', pinyin: 'dà jiā yì qí gǔ zhǎng', meaning: 'tout le monde a applaudi en cœur', meaningEn: 'everyone applauded in unison', audio: 'audio/hsk5/hsk5_鼓掌.wav' },
+      { hanzi: '学生们一齐回答', pinyin: 'xué sheng men yì qí huí dá', meaning: 'les élèves ont répondu tous ensemble', meaningEn: 'the students answered together', audio: 'audio/hsk2/hsk2_回答.wav' },
+      { hanzi: '五个国家的代表一齐签字', pinyin: 'wǔ ge guó jiā de dài biǎo yì qí qiān zì', meaning: 'les représentants des 5 pays ont signé simultanément', meaningEn: 'representatives of the 5 countries signed simultaneously', audio: 'audio/hsk5/hsk5_签.wav' },
+      { hanzi: '我与朋友一同参观了博物馆', pinyin: 'wǒ yǔ péng you yì tóng cān guān le bó wù guǎn', meaning: 'j\'ai visité le musée avec un ami', meaningEn: 'I visited the museum with a friend', audio: 'audio/hsk4/hsk4_参观.wav' },
+      { hanzi: '请与我们一同庆祝', pinyin: 'qǐng yǔ wǒ men yì tóng qìng zhù', meaning: 'rejoignez-nous pour célébrer', meaningEn: 'join us to celebrate', audio: 'audio/hsk4/hsk4_庆祝.wav' },
+      { hanzi: '两国元首一同出席', pinyin: 'liǎng guó yuán shǒu yì tóng chū xí', meaning: 'les chefs d\'État des deux pays ont assisté ensemble', meaningEn: 'heads of state of both countries attended together', audio: 'audio/hsk5/hsk5_出席.wav' }
+    ],
+    tip:
+      'Astuce : dans une invitation carton d\'un mariage chinois, on lira 请与我们一同分享. Dans un texto entre amis, on écrira 一起吃饭吧. Choisis selon le canal.',
+    tipEn:
+      'Tip: on a Chinese wedding invitation card, you\'ll read 请与我们一同分享. In a text between friends, you\'ll write 一起吃饭吧. Choose by channel.'
+  }
+];

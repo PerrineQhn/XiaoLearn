@@ -137,6 +137,7 @@ import {
   a2NuancesChoicesBasicsLearnSections,
   a2NuancesCauseEffectBasicsLearnSections,
   a2NuancesPurposeBasicsLearnSections,
+  a2NuancesTogetherLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -3696,6 +3697,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["为了", "来", "好", "好让", "为的是", "之所以"],
         quizQuestions: 10,
         learnSections: a2NuancesPurposeBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m22",
+        title: "« Ensemble » : 一起, 一块儿, 一齐, 一同",
+        titleEn: "«Together»: 一起, 一块儿, 一齐, 一同",
+        duration: 10, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "vocabulary", "cecr:a2"],
+        introduction: {
+          title: "Les 4 façons de dire « ensemble »",
+          titleEn: "The 4 ways to say «together»",
+          content: "Le chinois offre 4 mots pour « ensemble », tous formés à partir de 一 (« un ») : 一起, 一块儿, 一齐 et 一同. Chacun a son terrain de jeu : 一起 est LE défaut neutre pour tout contexte, 一块儿 sonne colloquial et nordiste entre amis, 一齐 insiste sur la simultanéité exacte (applaudir en cœur), 一同 monte le registre pour la presse et les invitations officielles avec 与. Confondre les 4 fait rater le ton — dire 与朋友一同 à un pote sonne pompeux, dire 一块儿 dans un email formel jure. Choisis par canal.",
+          contentEn: "Chinese offers 4 words for «together», all built from 一 («one»): 一起, 一块儿, 一齐 and 一同. Each has its turf: 一起 is THE neutral default for any context, 一块儿 sounds colloquial and northern between friends, 一齐 insists on exact simultaneity (clapping in unison), 一同 raises the register for press and official invitations with 与. Mixing them up misses the tone — saying 与朋友一同 to a buddy sounds pompous; saying 一块儿 in a formal email clashes. Choose by channel.",
+          objectives: [
+            "Utiliser 一起 comme défaut neutre dans tous les contextes",
+            "Reconnaître 一块儿 comme colloquial nordiste entre amis",
+            "Employer 一齐 pour insister sur une action simultanée",
+            "Choisir 一同 avec 与 pour un registre soutenu"
+          ],
+          objectivesEn: [
+            "Use 一起 as the neutral default in any context",
+            "Recognize 一块儿 as colloquial northern between friends",
+            "Use 一齐 to emphasize a simultaneous action",
+            "Pick 一同 with 与 for a formal register"
+          ]
+        },
+        flashcards: ["一起", "一块儿", "一齐", "一同", "和", "跟", "与"],
+        quizQuestions: 8,
+        learnSections: a2NuancesTogetherLearnSections
       }
     ]
   },
