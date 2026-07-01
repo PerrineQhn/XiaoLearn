@@ -2052,6 +2052,123 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '老早 a une coloration affective (souvent reproche ou nostalgie) que 早已 n\'a pas. « 我老早就告诉你了！» sous-entend : pourquoi tu n\'as pas écouté ?',
     tipEn:
       '老早 carries an emotional shade (often reproach or nostalgia) that 早已 lacks. «我老早就告诉你了！» implies : why didn\'t you listen?'
+  },
+  {
+    id: 'b22-dou-le',
+    title: '都...了 : « déjà » avec émotion',
+    titleEn: '都...了: "already" with an emotional reaction',
+    body:
+      'Structure : **都 + [temps / âge / quantité / étape] + 了**.\n' +
+      '\n' +
+      '了 apporte le sens temporel (« déjà, ça a changé »), 都 y ajoute la **RÉACTION** — impatience ou surprise.\n' +
+      '\n' +
+      'Contraste avec 已经 :\n' +
+      '- 已经九点了 (yǐjīng jiǔ diǎn le) = info neutre « il est déjà 9h »\n' +
+      '- 都九点了，我们该走了 (dōu jiǔ diǎn le, wǒmen gāi zǒu le) = « il est DÉJÀ 9h, il faut y aller ! » (impatience)\n' +
+      '\n' +
+      'Sur la surprise : 孩子都长这么高了 (háizi dōu zhǎng zhème gāo le) « le gamin a déjà grandi comme ça ! ».\n' +
+      '\n' +
+      'Astuce : chaque fois qu\'on entend 都...了, il faut chercher l\'émotion sous-jacente (impatience, étonnement, constat frappant).',
+    bodyEn:
+      'Structure: 都 + [time / age / amount / stage] + 了. 了 carries the temporal sense (already, changed), 都 adds the REACTION — impatience or surprise. Contrast with 已经: 已经九点了 = neutral fact «it\'s already 9». 都九点了，我们该走了 = «it\'s ALREADY 9, we gotta go!» (impatience). Surprise use: 孩子都长这么高了 (the kid has already grown this tall!). Tip: whenever you hear 都...了, look for the underlying emotion — impatience, amazement, striking realisation.',
+    items: [
+      { hanzi: '都...了', pinyin: 'dōu ... le', meaning: 'déjà (avec émotion)', meaningEn: 'already (emotional)', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '九点', pinyin: 'jiǔ diǎn', meaning: 'neuf heures', meaningEn: 'nine o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
+      { hanzi: '长', pinyin: 'zhǎng', meaning: 'grandir', meaningEn: 'grow', audio: 'audio/hsk2/hsk2_长.wav' },
+      { hanzi: '孩子', pinyin: 'hái zi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk2/hsk2_孩子.wav' },
+      { hanzi: '这么', pinyin: 'zhè me', meaning: 'aussi, à ce point', meaningEn: 'this / so', audio: 'audio/hsk2/hsk2_这么.wav' }
+    ],
+    tip:
+      'Petit test : si on peut ajouter un « ! » impatient ou étonné en français, c\'est du 都...了. Sinon, on reste sur 已经.',
+    tipEn:
+      'Quick test: if you could add an impatient or amazed «!» in English, use 都...了. Otherwise, stick with 已经.'
+  },
+  {
+    id: 'b22-dou-hai',
+    title: '都...还... : reprocher que ça n\'ait pas encore changé',
+    titleEn: '都...还...: complaining that things still haven\'t moved',
+    body:
+      'Structure : **都 + [étape atteinte] + 了 ，[sujet] + 还 + [situation inattendue]**.\n' +
+      '\n' +
+      'Sens : « on en est déjà là, et pourtant tu / on n\'a PAS encore... ? » → surprise, inquiétude, reproche léger.\n' +
+      '\n' +
+      '- 都十二点了，你还不睡？ (dōu shí\'èr diǎn le, nǐ hái bù shuì?) « il est déjà minuit et tu ne dors toujours pas ? »\n' +
+      '- 都三十岁了，你还不结婚？ (dōu sānshí suì le, nǐ hái bù jiéhūn?) « tu as déjà 30 ans et tu n\'es toujours pas marié ? »\n' +
+      '\n' +
+      'Formule figée : **都什么时候了** (dōu shénme shíhou le) « regarde l\'heure ! » — souvent suivi d\'une plainte : 都什么时候了，你还在玩手机 ! (« il est tard, et tu es encore sur ton téléphone ! »).\n' +
+      '\n' +
+      'Variante : **都什么年代了** (dōu shénme niándài le) « dans quelle époque on vit ! » quand on veut critiquer quelque chose de démodé.',
+    bodyEn:
+      'Structure: 都 + [stage reached] + 了, [subject] + 还 + [unexpected situation]. Meaning: «we\'re already at this stage, and yet you/we STILL haven\'t…?» → surprise, worry, gentle reproach. Examples: 都十二点了，你还不睡？ (it\'s already midnight and you\'re still not sleeping?); 都三十岁了，你还不结婚？ (you\'re already 30 and still not married?). Fixed idiom: 都什么时候了 = «look at the time!» — often followed by a complaint: 都什么时候了，你还在玩手机！ (it\'s late and you\'re still on your phone!). Variant: 都什么年代了 = «what era are we in!» — used to criticize something outdated.',
+    items: [
+      { hanzi: '都...还...', pinyin: 'dōu ... hái ...', meaning: 'déjà... et toujours...', meaningEn: 'already... yet still...', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '还', pinyin: 'hái', meaning: 'encore, toujours', meaningEn: 'still', audio: 'audio/hsk1/hsk1_还.wav' },
+      { hanzi: '都什么时候了', pinyin: 'dōu shén me shí hou le', meaning: 'regarde l\'heure !', meaningEn: 'look at the time!', audio: 'audio/hsk1/hsk1_时候.wav' },
+      { hanzi: '都什么年代了', pinyin: 'dōu shén me nián dài le', meaning: 'quelle époque !', meaningEn: 'what era!', audio: 'audio/hsk5/hsk5_年代.wav' },
+      { hanzi: '玩手机', pinyin: 'wán shǒu jī', meaning: 'jouer avec son téléphone', meaningEn: 'play on the phone', audio: 'audio/hsk2/hsk2_手机.wav' }
+    ],
+    tip:
+      '都...还... = « le décalage temporel devient un reproche ». Le ton est vivant, souvent parental ; à réserver aux relations proches.',
+    tipEn:
+      '都...还... = «the time gap becomes a reproach». The tone is lively, often parental; save it for close relationships.'
+  },
+  {
+    id: 'b22-lian-dou',
+    title: '连...都/也 : « même » (cas extrême)',
+    titleEn: '连...都/也: "even" (extreme case)',
+    body:
+      '都 peut souligner un cas **EXTRÊME** ou **SURPRENANT** → traduction « même ».\n' +
+      '\n' +
+      'Formule cadre : **连 (lián) + [cas surprenant] + 都/也 + prédicat**.\n' +
+      '\n' +
+      '- 连小孩子都看得懂 (lián xiǎo háizi dōu kàn de dǒng) « même un petit enfant peut comprendre »\n' +
+      '- 这么简单的问题，他都不会 (zhème jiǎndān de wèntí, tā dōu bú huì) « il n\'arrive même pas à faire un problème aussi simple » (ici 连 est sous-entendu par le contexte)\n' +
+      '- 连饭都没吃 (lián fàn dōu méi chī) « il n\'a même pas mangé »\n' +
+      '\n' +
+      '都 et 也 sont largement interchangeables dans ce cadre ; 都 sonne un peu plus fort, 也 un peu plus doux.\n' +
+      '\n' +
+      'Astuce : le lien avec le sens « tous » est logique — si MÊME ce cas extrême est concerné, alors tous le sont.',
+    bodyEn:
+      '都 can highlight an EXTREME or SURPRISING case → translated «even». Frame: 连 (lián) + [surprising case] + 都/也 + predicate. Examples: 连小孩子都看得懂 (even a small child can understand); 这么简单的问题，他都不会 (he can\'t even do such a simple problem — 连 is implied); 连饭都没吃 (he didn\'t even eat). 都 and 也 are largely interchangeable in this frame; 都 hits a bit harder, 也 is softer. Tip: the link with «all» is logical — if EVEN this extreme case is affected, then all are.',
+    items: [
+      { hanzi: '连', pinyin: 'lián', meaning: 'même (marqueur)', meaningEn: 'even (marker)', audio: 'audio/hsk4/hsk4_连.wav' },
+      { hanzi: '连...都', pinyin: 'lián ... dōu', meaning: 'même... (fort)', meaningEn: 'even... (stronger)', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '连...也', pinyin: 'lián ... yě', meaning: 'même... (doux)', meaningEn: 'even... (softer)', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '简单', pinyin: 'jiǎn dān', meaning: 'simple', meaningEn: 'simple', audio: 'audio/hsk3/hsk3_简单.wav' },
+      { hanzi: '问题', pinyin: 'wèn tí', meaning: 'question, problème', meaningEn: 'question, problem', audio: 'audio/hsk2/hsk2_问题.wav' }
+    ],
+    tip:
+      '连 peut être omis quand le contexte est très clair, mais le 都/也 reste. 一句话都没说 (il n\'a pas dit un seul mot).',
+    tipEn:
+      '连 can be dropped when context is very clear, but 都/也 stays. 一句话都没说 = he didn\'t say a single word.'
+  },
+  {
+    id: 'b22-lai-dou-lai-le',
+    title: '来都来了 : accepter le fait accompli',
+    titleEn: '来都来了: accepting the done deed',
+    body:
+      'Structure : **[verbe] + 都 + [même verbe] + 了 ， [suggestion]**.\n' +
+      '\n' +
+      'Sens : l\'action est faite, la résistance est inutile, autant en profiter → souvent adouci par **吧** en fin de phrase.\n' +
+      '\n' +
+      '- 来都来了，我们就进去看看吧 (lái dōu lái le, wǒmen jiù jìnqù kànkan ba) « on est venus jusqu\'ici, autant entrer voir »\n' +
+      '- 买都买了，别后悔了 (mǎi dōu mǎi le, bié hòuhuǐ le) « tu l\'as déjà acheté, ne regrette pas maintenant »\n' +
+      '- 说都说了 (shuō dōu shuō le) « c\'est dit, tu ne peux plus le reprendre »\n' +
+      '\n' +
+      'Astuce : c\'est une manière très naturelle de reconnaître un fait accompli avec un soupçon de sagesse pragmatique.',
+    bodyEn:
+      'Structure: [verb] + 都 + [same verb] + 了, [suggestion]. Meaning: the action is done, resistance is pointless, might as well make the best of it — often softened by 吧 at the end. Examples: 来都来了，我们就进去看看吧 (we came all the way here, might as well go in and take a look); 买都买了，别后悔了 (you already bought it, no point regretting now); 说都说了 (it\'s said, you can\'t take it back). Tip: a very natural way to acknowledge a done deed with a touch of pragmatic wisdom.',
+    items: [
+      { hanzi: '来都来了', pinyin: 'lái dōu lái le', meaning: 'on est déjà là', meaningEn: 'we\'re already here', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '买都买了', pinyin: 'mǎi dōu mǎi le', meaning: 'tu l\'as déjà acheté', meaningEn: 'you already bought it', audio: 'audio/hsk1/hsk1_买.wav' },
+      { hanzi: '说都说了', pinyin: 'shuō dōu shuō le', meaning: 'c\'est déjà dit', meaningEn: 'it\'s already said', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '后悔', pinyin: 'hòu huǐ', meaning: 'regretter', meaningEn: 'regret', audio: 'audio/hsk4/hsk4_后悔.wav' },
+      { hanzi: '进去', pinyin: 'jìn qù', meaning: 'entrer', meaningEn: 'go in', audio: 'audio/hsk2/hsk2_进去.wav' }
+    ],
+    tip:
+      'On peut appliquer le pattern à presque n\'importe quel verbe monosyllabique : 做都做了 (c\'est fait), 写都写了 (c\'est écrit), 忘都忘了 (c\'est oublié). Très expressif à l\'oral.',
+    tipEn:
+      'The pattern fits almost any monosyllabic verb: 做都做了 (it\'s done), 写都写了 (it\'s written), 忘都忘了 (it\'s forgotten). Highly expressive in speech.'
   }
 ];
 

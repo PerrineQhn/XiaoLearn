@@ -1244,6 +1244,93 @@ export const a2GrammarYeDouLearnSections: LessonV2LearnSection[] = [
       'Les deux peuvent coexister : 我们也都是学生 (nous aussi nous sommes tous étudiants). L\'ordre est fixe : 也 AVANT 都.',
     tipEn:
       'Both can coexist: 我们也都是学生 (we too are all students). Order is fixed: 也 BEFORE 都.'
+  },
+  {
+    id: 'a2-dou-word-order',
+    title: '都 : l\'ensemble couvert vient AVANT',
+    titleEn: '都: what 都 covers must come BEFORE it',
+    body:
+      'Règle d\'or : ce que 都 couvre doit se trouver **AVANT** 都, jamais après.\n' +
+      '\n' +
+      '- Structure sujet : sujet + 都 + verbe → 他们都喜欢喝茶 (tāmen dōu xǐhuān hē chá) « ils aiment tous boire du thé »\n' +
+      '- Structure objet : [objet-ensemble] + sujet + 都 + verbe → 这两本书我都看过 (zhè liǎng běn shū wǒ dōu kàn guò) « j\'ai lu ces deux livres » — on remonte l\'objet en tête (structure topique)\n' +
+      '\n' +
+      'Erreur classique : 我都看过这两本书 sonne mal, car l\'ensemble (les deux livres) est APRÈS 都.\n' +
+      '\n' +
+      'Astuce : à chaque phrase avec 都, se demander « qu\'est-ce que 都 est en train de couvrir ? » — la réponse doit toujours être AVANT 都.',
+    bodyEn:
+      'Golden rule: whatever 都 covers must come BEFORE 都, never after. Subject structure: subject + 都 + verb → 他们都喜欢喝茶 (they all like tea). Object structure: [object-group] + subject + 都 + verb → 这两本书我都看过 (I\'ve read both books) — the object is topicalized to the front. Classic mistake: 我都看过这两本书 sounds off because the group is placed AFTER 都. Tip: with each 都 sentence, ask «what is 都 covering?» — the answer must always sit BEFORE 都.',
+    items: [
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, toutes', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '他们', pinyin: 'tā men', meaning: 'ils, elles', meaningEn: 'they', audio: 'audio/hsk1/hsk1_他们.wav' },
+      { hanzi: '喜欢', pinyin: 'xǐ huān', meaning: 'aimer', meaningEn: 'like', audio: 'audio/hsk1/hsk1_喜欢.wav' },
+      { hanzi: '这两本书', pinyin: 'zhè liǎng běn shū', meaning: 'ces deux livres', meaningEn: 'these two books', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '看过', pinyin: 'kàn guò', meaning: 'avoir lu / vu', meaningEn: 'have read / seen', audio: 'audio/hsk1/hsk1_看.wav' }
+    ],
+    tip:
+      'Comme test rapide : pointe du doigt ce que « tous » couvre dans la phrase française — en chinois, ce mot doit être posé AVANT 都.',
+    tipEn:
+      'Quick test: point at what «all» refers to in the English sentence — in Chinese, that phrase must sit BEFORE 都.'
+  },
+  {
+    id: 'a2-mei-dou',
+    title: '每...都... : « chaque X sans exception »',
+    titleEn: '每...都...: "each X, no exception"',
+    body:
+      'Structure : **每 + [temps / personne / objet] + 都 + verbe**.\n' +
+      '\n' +
+      '每 (měi) introduit l\'ensemble, 都 confirme que rien n\'est laissé de côté.\n' +
+      '\n' +
+      '- 每天我都给妈妈打电话 (měi tiān wǒ dōu gěi māma dǎ diànhuà) « j\'appelle maman chaque jour »\n' +
+      '- 每个人都要来 (měi ge rén dōu yào lái) « tout le monde doit venir »\n' +
+      '- 每次他都迟到 (měi cì tā dōu chídào) « à chaque fois, il est en retard »\n' +
+      '\n' +
+      'Règle : 都 est presque toujours obligatoire dans ce pattern ; l\'omettre sonne incomplet.',
+    bodyEn:
+      'Structure: 每 + [time / person / object] + 都 + verb. 每 (měi) sets up the group, 都 confirms nothing is left out. Examples: 每天我都给妈妈打电话 (I call mum every day); 每个人都要来 (everybody has to come); 每次他都迟到 (he is late every single time). Rule: 都 is almost always mandatory in this pattern — dropping it sounds incomplete.',
+    items: [
+      { hanzi: '每', pinyin: 'měi', meaning: 'chaque', meaningEn: 'each, every', audio: 'audio/hsk2/hsk2_每.wav' },
+      { hanzi: '每天', pinyin: 'měi tiān', meaning: 'chaque jour', meaningEn: 'every day', audio: 'audio/hsk2/hsk2_每天.wav' },
+      { hanzi: '每个人', pinyin: 'měi ge rén', meaning: 'chaque personne', meaningEn: 'everyone', audio: 'audio/hsk2/hsk2_每个人.wav' },
+      { hanzi: '每次', pinyin: 'měi cì', meaning: 'chaque fois', meaningEn: 'every time', audio: 'audio/hsk2/hsk2_每次.wav' },
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, sans exception', meaningEn: 'all, without exception', audio: 'audio/hsk1/hsk1_都.wav' }
+    ],
+    tip:
+      'Penser 每 = « pour chaque » et 都 = « et sans exception ». Les deux forment un duo quasi indissociable.',
+    tipEn:
+      'Think of 每 as «for each» and 都 as «and without exception». They act as an almost inseparable duo.'
+  },
+  {
+    id: 'a2-question-dou',
+    title: 'Mot interrogatif + 都 = universalité',
+    titleEn: 'Question word + 都 = universal reference',
+    body:
+      'Un mot interrogatif placé devant 都 arrête de poser une question et couvre **TOUT** :\n' +
+      '\n' +
+      '- 什么 (shénme, quoi) → 什么都 = « tout »\n' +
+      '- 谁 (shéi, qui) → 谁都 = « tout le monde »\n' +
+      '- 哪儿 (nǎr, où) → 哪儿都 = « partout »\n' +
+      '\n' +
+      'Exemple positif : 她什么都想学 (tā shénme dōu xiǎng xué) « elle veut tout apprendre ».\n' +
+      '\n' +
+      'En phrase négative avec 不/没, ça bascule vers « rien, personne, nulle part » :\n' +
+      '- 他谁都不认识 (tā shéi dōu bú rènshi) « il ne connaît personne »\n' +
+      '- 我什么都没吃 (wǒ shénme dōu méi chī) « je n\'ai rien mangé »\n' +
+      '\n' +
+      'Astuce : pour rendre explicite le « peu importe / no matter », on peut ajouter 无论 (wúlùn) ou 不管 (bùguǎn) au début → 不管你什么时候来，我都欢迎 (bùguǎn nǐ shénme shíhou lái, wǒ dōu huānyíng) « quand que tu viennes, tu es le bienvenu ».',
+    bodyEn:
+      'A question word placed before 都 stops asking a question and instead covers EVERYTHING. 什么 (what) → 什么都 = «everything». 谁 (who) → 谁都 = «everyone». 哪儿 (where) → 哪儿都 = «everywhere». Positive: 她什么都想学 (she wants to learn everything). In a negative sentence with 不/没, it flips to «nothing, no one, nowhere»: 他谁都不认识 (he doesn\'t know anyone); 我什么都没吃 (I ate nothing). Tip: to make «no matter» explicit, add 无论 (wúlùn) or 不管 (bùguǎn) at the start: 不管你什么时候来，我都欢迎 (no matter when you come, you\'re welcome).',
+    items: [
+      { hanzi: '什么都', pinyin: 'shén me dōu', meaning: 'tout / n\'importe quoi', meaningEn: 'anything / everything', audio: 'audio/hsk1/hsk1_什么.wav' },
+      { hanzi: '谁都', pinyin: 'shéi dōu', meaning: 'tout le monde / personne', meaningEn: 'anyone / no one', audio: 'audio/hsk1/hsk1_谁.wav' },
+      { hanzi: '哪儿都', pinyin: 'nǎr dōu', meaning: 'partout / nulle part', meaningEn: 'anywhere / nowhere', audio: 'audio/hsk1/hsk1_哪儿.wav' },
+      { hanzi: '不管', pinyin: 'bù guǎn', meaning: 'peu importe', meaningEn: 'no matter', audio: 'audio/hsk4/hsk4_不管.wav' },
+      { hanzi: '无论', pinyin: 'wú lùn', meaning: 'quel que soit', meaningEn: 'no matter (formal)', audio: 'audio/hsk4/hsk4_无论.wav' }
+    ],
+    tip:
+      'Repère mental : mot-question + 都 en phrase affirmative = « tout / partout / tout le monde » ; en phrase négative = « rien / nulle part / personne ».',
+    tipEn:
+      'Memory anchor: question word + 都 in a positive sentence = «all/everywhere/everyone»; in a negative sentence = «nothing/nowhere/no one».'
   }
 ];
 
