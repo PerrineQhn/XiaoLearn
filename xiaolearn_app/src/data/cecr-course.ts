@@ -133,6 +133,7 @@ import {
   a2GrammarModalsDirectionLearnSections,
   a2GrammarDurationComplementsLearnSections,
   a2GrammarSentenceParticlesLearnSections,
+  a2NuancesNeBasicsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -240,6 +241,7 @@ import {
   b12NuancesItDependsFormalLearnSections,
   b12NuancesGuoranJingranLearnSections,
   b12NuancesSentenceParticlesAdvancedLearnSections,
+  b12NuancesNeAdvancedLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3571,6 +3573,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["看", "要看", "看情况", "看你", "看时机", "不一定", "看缘分", "看心情"],
         quizQuestions: 10,
         learnSections: a2NuancesItDependsInformalLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m18",
+        title: "呢 : maîtriser la particule multi-fonctions",
+        titleEn: "呢: mastering the multi-purpose particle",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["particle", "nuance", "cecr:a2"],
+        introduction: {
+          title: "呢 : la particule caméléon du chinois oral",
+          titleEn: "呢: the chameleon particle of spoken Chinese",
+          content: "呢 est une particule ultra-fréquente qui change de rôle selon la position. En question courte (你呢?), elle renvoie la balle sans répéter la structure. Après un mot interrogatif (谁呢?), elle transforme la question directe en réflexion à voix haute (« je me demande... »). En fin d'affirmation (还早呢), elle ajoute une emphase chaleureuse (« je te dis / tu sais »). Au milieu de phrase (我呢，喜欢安静), elle marque un topic et crée un contraste doux. Maîtriser ces 4 usages débloque un pan entier du chinois conversationnel.",
+          contentEn: "呢 is an ultra-frequent particle that changes role by position. In a short question (你呢?), it bounces the ball back without restating the structure. After a question word (谁呢?), it turns a direct question into thinking out loud («I wonder...»). At the end of a statement (还早呢), it adds warm emphasis («I tell you / you know»). Mid-sentence (我呢，喜欢安静), it marks a topic and creates gentle contrast. Mastering these 4 uses unlocks a whole slice of conversational Chinese.",
+          objectives: [
+            "Renvoyer une question avec [topic] + 呢 sans répéter la structure",
+            "Utiliser 呢 après 谁/什么/哪儿 pour marquer la réflexion (« je me demande »)",
+            "Ajouter 呢 en fin d'affirmation pour un ton chaleureux (还早呢)",
+            "Placer 呢 après un topic mid-phrase pour créer un contraste doux"
+          ],
+          objectivesEn: [
+            "Bounce a question with [topic] + 呢 without restating structure",
+            "Use 呢 after 谁/什么/哪儿 to mark reflection («I wonder»)",
+            "Add 呢 at the end of a statement for warm tone (还早呢)",
+            "Place 呢 after a mid-sentence topic to create gentle contrast"
+          ]
+        },
+        flashcards: ["呢", "你呢", "还早呢", "谁呢", "我呢", "怎么办呢"],
+        quizQuestions: 10,
+        learnSections: a2NuancesNeBasicsLearnSections
       }
     ]
   },
@@ -6657,6 +6688,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["哟", "呗", "嘛", "罢了", "而已", "也", "矣", "乎", "哉"],
         quizQuestions: 10,
         learnSections: b12NuancesSentenceParticlesAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m16",
+        title: "呢 avancé : action en cours, choix doux, sarcasme 还...呢",
+        titleEn: "Advanced 呢: ongoing action, soft choices, sarcastic 还...呢",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["particle", "nuance", "cecr:b12"],
+        introduction: {
+          title: "呢 avancé : occupé, choisir en douceur, dégonfler un frimeur",
+          titleEn: "Advanced 呢: busy, softly choosing, deflating a show-off",
+          content: "Au-delà des usages de base, 呢 se déploie dans 3 patterns plus subtils. (在) + verbe + 呢 : signale une action en cours avec le sous-texte « je suis occupé, ne me dérange pas » — 我在打电话呢. 还是 X 呢 : adoucit une alternative pour respecter le choix de l'autre — 吃披萨呢，还是中餐呢? est bien plus consultatif qu'un 还是 sec. Enfin le 还 X 呢 SARCASTIQUE, sans lien avec « encore » : plante un scepticisme cinglant (还朋友呢，从来不帮我 « soi-disant ami, il n'aide jamais »). Ces 3 patterns font la couleur du chinois oral avancé.",
+          contentEn: "Beyond the basic uses, 呢 unfolds in 3 subtler patterns. (在) + verb + 呢: signals an ongoing action with the subtext «I'm busy, don't bother me» — 我在打电话呢. 还是 X 呢: softens an alternative to respect the other's preference — 吃披萨呢，还是中餐呢? is far more consultative than a dry 还是. Finally the SARCASTIC 还 X 呢, unrelated to «still»: plants a biting skepticism (还朋友呢，从来不帮我 «so-called friend, never helps»). These 3 patterns give advanced spoken Chinese its color.",
+          objectives: [
+            "Combiner 在 + verbe + 呢 pour dire « je suis occupé, laisse-moi »",
+            "Adoucir un choix avec [option] 呢，还是 [option] 呢",
+            "Décoder et employer le 还 X 呢 sarcastique (« soi-disant... »)",
+            "Distinguer les 3 呢 avancés à l'oral par le ton et le contexte"
+          ],
+          objectivesEn: [
+            "Combine 在 + verb + 呢 to say «I'm busy, leave me be»",
+            "Soften a choice with [option] 呢, 还是 [option] 呢",
+            "Decode and use the sarcastic 还 X 呢 («so-called...»)",
+            "Tell apart the 3 advanced 呢 uses by tone and context"
+          ]
+        },
+        flashcards: ["在...呢", "还是...呢", "还...呢", "正在", "还名牌儿呢", "还朋友呢"],
+        quizQuestions: 10,
+        learnSections: b12NuancesNeAdvancedLearnSections
       }
     ]
   },

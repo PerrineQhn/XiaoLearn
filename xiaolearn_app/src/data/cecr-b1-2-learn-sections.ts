@@ -3868,3 +3868,113 @@ export const b12GrammarReduplicationAdvancedLearnSections: LessonV2LearnSection[
       'Tip: both patterns create VIVID images. 家家都 = picture of all lit-up homes. 一天一天 = calendar flipping. Pick based on the image you want to evoke.'
   }
 ];
+
+// --- cecr-b12-nuances-ne — 呢 avancé : (在)...呢, 还是...呢, 还...呢 ------------
+export const b12NuancesNeAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-ne-ongoing-action',
+    title: '(在) ... 呢 : action en cours + « je ne suis pas dispo »',
+    titleEn: '(在) ... 呢: ongoing action + «I\'m not available»',
+    body:
+      'Combine 在 (progressif) + verbe + 呢 pour indiquer une action en cours ET ajouter un sous-texte « donc je suis occupé, ne me dérange pas ».\n' +
+      '\n' +
+      'Structure : sujet + (在/正在) + verbe + (objet) + 呢.\n' +
+      '\n' +
+      '- Ex : 我在打电话呢 (py wǒ zài dǎ diàn huà ne) « je suis au téléphone (là) ». Contexte : quelqu\'un demande à te parler, tu réponds ainsi pour signaler que tu ne peux pas.\n' +
+      '- Ex : 我在做饭呢 « je fais la cuisine (ne me dérange pas) ». Ex : 妈妈在睡觉呢 « maman dort (parle moins fort) ».\n' +
+      '\n' +
+      'Sous-texte typique : « ...donc j\'ai pas le temps », « ...c\'est pour ça que je peux pas », « ...alors laisse-moi tranquille ».\n' +
+      '\n' +
+      'Sans 呢 : 我在打电话 = simple constat neutre. Avec 呢 : 我在打电话呢 = « je suis en communication, tu peux repasser ».\n' +
+      '\n' +
+      'Fonctionne aussi sans 在, juste avec 呢 en fin. Ex : 我做饭呢 « je fais la cuisine ». Un peu plus court, oral.',
+    bodyEn:
+      'Combine 在 (progressive) + verb + 呢 to signal an ongoing action AND add the subtext «so I\'m busy, don\'t bother me». Structure: subject + (在/正在) + verb + (object) + 呢. Ex: 我在打电话呢 (wǒ zài dǎ diàn huà ne) «I\'m on the phone». Context: someone asks to talk to you, you reply this way to signal you can\'t. Ex: 我在做饭呢 «I\'m cooking (don\'t bother)». Ex: 妈妈在睡觉呢 «Mom\'s sleeping (keep it down)». Typical subtext: «...so I don\'t have time», «...that\'s why I can\'t», «...so leave me alone». Without 呢: 我在打电话 = neutral statement. With 呢: 我在打电话呢 = «I\'m on a call, come back later». Also works without 在, just 呢 at the end. Ex: 我做饭呢 «I\'m cooking». Shorter, colloquial.',
+    items: [
+      { hanzi: '在...呢', pinyin: 'zài ... ne', meaning: 'être en train de... (avec « je suis occupé »)', meaningEn: 'in the middle of... (with «I\'m busy»)', audio: 'audio/hsk2/hsk2_在.wav' },
+      { hanzi: '正在', pinyin: 'zhèng zài', meaning: 'être justement en train de', meaningEn: 'right in the middle of', audio: 'audio/hsk2/hsk2_正在.wav' },
+      { hanzi: '我在打电话呢', pinyin: 'wǒ zài dǎ diàn huà ne', meaning: 'je suis au téléphone (là)', meaningEn: 'I\'m on the phone (right now)', audio: 'audio/hsk2/hsk2_打电话.wav' },
+      { hanzi: '我在做饭呢', pinyin: 'wǒ zài zuò fàn ne', meaning: 'je suis en train de faire la cuisine', meaningEn: 'I\'m cooking', audio: 'audio/hsk2/hsk2_做饭.wav' },
+      { hanzi: '妈妈在睡觉呢', pinyin: 'mā ma zài shuì jiào ne', meaning: 'maman dort (parle moins fort)', meaningEn: 'Mom\'s sleeping (keep it down)', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '他在看书呢', pinyin: 'tā zài kàn shū ne', meaning: 'il est en train de lire', meaningEn: 'he\'s reading', audio: 'audio/hsk1/hsk1_看书.wav' },
+      { hanzi: '我做饭呢', pinyin: 'wǒ zuò fàn ne', meaning: 'je fais la cuisine (oral court)', meaningEn: 'I\'m cooking (short colloquial)', audio: 'audio/hsk2/hsk2_做饭.wav' }
+    ],
+    tip:
+      'Astuce : chaque fois que tu veux dire « je suis en plein X, laisse-moi », combine 在 + verbe + 呢. C\'est LA formule d\'excuse polie.',
+    tipEn:
+      'Tip: whenever you want to say «I\'m in the middle of X, leave me be», combine 在 + verb + 呢. It\'s THE polite excuse formula.'
+  },
+  {
+    id: 'b12-ne-soften-choice',
+    title: '呢，还是...呢 : adoucir un choix',
+    titleEn: '呢, 还是...呢: softening a choice',
+    body:
+      'Le pattern 还是 (« ou bien ») peut sembler direct. Ajouter 呢 après chaque option (ou juste la 1ère) le rend BEAUCOUP plus doux, comme une consultation amicale.\n' +
+      '\n' +
+      'Structure : [option A] + 呢，还是 + [option B] + (呢) ?\n' +
+      '\n' +
+      '- Ex : 我们今晚吃披萨呢，还是吃中餐呢 ? (py wǒmen jīn wǎn chī pī sà ne, hái shi chī zhōng cān ne) « on mange pizza ce soir, ou plutôt de la cuisine chinoise ? ». Ton d\'invitation.\n' +
+      '- Ex : 你要红的呢，还是蓝的 ? (tu peux mettre 呢 juste sur la 1ère option) « tu veux le rouge, ou plutôt le bleu ? ».\n' +
+      '- Ex : 我们坐地铁去呢，还是打车 ? « on prend le métro, ou plutôt un taxi ? ».\n' +
+      '\n' +
+      'Nuance vs 还是 seul :\n' +
+      '- 吃披萨还是吃中餐 ? = direct, tranché, presque impatient.\n' +
+      '- 吃披萨呢，还是吃中餐呢 ? = doux, consultation, respect de la préférence de l\'autre.\n' +
+      '\n' +
+      'Culturellement précieux : en Chine, les questions trop directes peuvent paraître agressives. Ce pattern crée un espace de choix confortable.',
+    bodyEn:
+      'The 还是 («or») pattern can feel direct. Adding 呢 after each option (or just the 1st) makes it MUCH softer, like a friendly consultation. Structure: [option A] + 呢, 还是 + [option B] + (呢)? Ex: 我们今晚吃披萨呢，还是吃中餐呢? (wǒmen jīn wǎn chī pī sà ne, hái shi chī zhōng cān ne) «shall we have pizza tonight, or rather Chinese food?». Inviting tone. Ex: 你要红的呢，还是蓝的? (you can put 呢 on just the 1st option) «do you want the red one, or the blue?». Ex: 我们坐地铁去呢，还是打车? «shall we take the metro, or grab a taxi?». Nuance vs 还是 alone: 吃披萨还是吃中餐? = direct, blunt, almost impatient. 吃披萨呢，还是吃中餐呢? = soft, consultation, respect for the other\'s preference. Culturally valuable: in China, questions that are too direct can feel aggressive. This pattern creates a comfortable space of choice.',
+    items: [
+      { hanzi: '还是...呢', pinyin: 'hái shi ... ne', meaning: 'ou bien... (adouci)', meaningEn: 'or... (softened)', audio: 'audio/hsk2/hsk2_还是.wav' },
+      { hanzi: '还是', pinyin: 'hái shi', meaning: 'ou bien', meaningEn: 'or (choice)', audio: 'audio/hsk2/hsk2_还是.wav' },
+      { hanzi: '披萨', pinyin: 'pī sà', meaning: 'pizza', meaningEn: 'pizza', audio: 'audio/hsk3/hsk3_披萨.wav' },
+      { hanzi: '中餐', pinyin: 'zhōng cān', meaning: 'cuisine chinoise', meaningEn: 'Chinese cuisine', audio: 'audio/hsk3/hsk3_中餐.wav' },
+      { hanzi: '打车', pinyin: 'dǎ chē', meaning: 'prendre un taxi', meaningEn: 'take a cab', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '我们今晚吃披萨呢，还是吃中餐呢', pinyin: 'wǒ men jīn wǎn chī pī sà ne, hái shi chī zhōng cān ne', meaning: 'on mange pizza ce soir, ou cuisine chinoise ?', meaningEn: 'pizza tonight, or Chinese food?', audio: 'audio/hsk3/hsk3_中餐.wav' },
+      { hanzi: '你要红的呢，还是蓝的', pinyin: 'nǐ yào hóng de ne, hái shi lán de', meaning: 'tu veux le rouge, ou le bleu ?', meaningEn: 'the red one, or the blue?', audio: 'audio/hsk2/hsk2_红.wav' },
+      { hanzi: '我们坐地铁去呢，还是打车', pinyin: 'wǒ men zuò dì tiě qù ne, hái shi dǎ chē', meaning: 'on prend le métro, ou un taxi ?', meaningEn: 'metro or cab?', audio: 'audio/hsk3/hsk3_地铁.wav' }
+    ],
+    tip:
+      'Astuce : quand tu proposes un choix à quelqu\'un que tu ne veux pas presser (invités, aînés, chef), utilise cette forme adoucie.',
+    tipEn:
+      'Tip: when offering a choice to someone you don\'t want to rush (guests, elders, boss), use this softened form.'
+  },
+  {
+    id: 'b12-ne-skepticism-hai',
+    title: '还...呢 : sarcasme et scepticisme',
+    titleEn: '还...呢: sarcasm and skepticism',
+    body:
+      'Ce pattern PIQUANT sert à exprimer un scepticisme sarcastique face à une prétention qui te semble exagérée ou fausse. Sens : « et il/elle prétend/soi-disant... ».\n' +
+      '\n' +
+      'Attention : le 还 ici n\'est PAS « encore ». C\'est un « même / soi-disant » chargé d\'ironie.\n' +
+      '\n' +
+      'Structure : 还 + [nom prétendu] + 呢 ，[preuve que c\'est faux ou décevant].\n' +
+      '\n' +
+      '- Ex : 还名牌儿呢，我听都没听过 (py hái míng páir ne, wǒ tīng dōu méi tīng guò) « soi-disant une marque connue ? j\'en ai même pas entendu parler ». Décrit qqn qui frime avec un « faux » luxe.\n' +
+      '- Ex : 还有名的专家呢，这水平还没我高 (py hái yǒu míng de zhuān jiā ne, zhè shuǐ píng hái méi wǒ gāo) « soi-disant expert reconnu ? il a même pas mon niveau ».\n' +
+      '- Ex : 还著名诗人呢，这诗写的我都看不懂 (py hái zhù míng shī rén ne, zhè shī xiě de wǒ dōu kàn bù dǒng) « soi-disant poète célèbre ? j\'y comprends rien à son poème ».\n' +
+      '- Ex : 还朋友呢，从来不帮我 « soi-disant ami ? il ne m\'aide jamais ». Reproche pointu.\n' +
+      '\n' +
+      'Structure typique en 2 temps :\n' +
+      '1. 还 X 呢 (plante le scepticisme).\n' +
+      '2. Preuve concrète de la déception (le KO).\n' +
+      '\n' +
+      'Ton : moqueur, désabusé, parfois amusé. À utiliser avec précaution : peut froisser si mal dosé, mais entre amis c\'est très expressif.',
+    bodyEn:
+      'This SPICY pattern expresses sarcastic skepticism at a pretension you find exaggerated or fake. Meaning: «and he/she claims/so-called...». Careful: 还 here is NOT «still». It\'s an ironic «even / so-called». Structure: 还 + [claimed noun] + 呢, [proof that it\'s fake or disappointing]. Ex: 还名牌儿呢，我听都没听过 (hái míng páir ne, wǒ tīng dōu méi tīng guò) «so-called known brand? I\'ve never even heard of it». Describes someone flexing fake luxury. Ex: 还有名的专家呢，这水平还没我高 «so-called famous expert? his level is below mine». Ex: 还著名诗人呢，这诗写的我都看不懂 «so-called famous poet? I don\'t understand a word of his poem». Ex: 还朋友呢，从来不帮我 «so-called friend? he never helps me». Sharp reproach. Typical 2-beat structure: 1. 还 X 呢 (plants skepticism). 2. Concrete proof of disappointment (the KO). Tone: mocking, disillusioned, sometimes amused. Use with care: can hurt if mistuned, but among friends it\'s highly expressive.',
+    items: [
+      { hanzi: '还...呢', pinyin: 'hái ... ne', meaning: 'soi-disant... (sarcastique)', meaningEn: 'so-called... (sarcastic)', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '名牌儿', pinyin: 'míng páir', meaning: 'marque de luxe / marque connue', meaningEn: 'famous brand', audio: 'audio/hsk3/hsk3_名牌.wav' },
+      { hanzi: '专家', pinyin: 'zhuān jiā', meaning: 'expert', meaningEn: 'expert', audio: 'audio/hsk4/hsk4_专家.wav' },
+      { hanzi: '著名', pinyin: 'zhù míng', meaning: 'célèbre, renommé', meaningEn: 'famous', audio: 'audio/hsk4/hsk4_著名.wav' },
+      { hanzi: '还名牌儿呢', pinyin: 'hái míng páir ne', meaning: 'soi-disant une grande marque !', meaningEn: 'so-called big brand!', audio: 'audio/hsk3/hsk3_名牌.wav' },
+      { hanzi: '还朋友呢', pinyin: 'hái péng you ne', meaning: 'soi-disant un ami !', meaningEn: 'so-called friend!', audio: 'audio/hsk1/hsk1_朋友.wav' },
+      { hanzi: '还有名的专家呢，这水平还没我高', pinyin: 'hái yǒu míng de zhuān jiā ne, zhè shuǐ píng hái méi wǒ gāo', meaning: 'soi-disant expert reconnu, même pas mon niveau', meaningEn: 'so-called famous expert, not even my level', audio: 'audio/hsk4/hsk4_水平.wav' },
+      { hanzi: '还朋友呢，从来不帮我', pinyin: 'hái péng you ne, cóng lái bù bāng wǒ', meaning: 'soi-disant un ami, il ne m\'aide jamais', meaningEn: 'so-called friend, never helps me', audio: 'audio/hsk2/hsk2_帮.wav' }
+    ],
+    tip:
+      'Astuce : parfait pour déflater une prétention sans être frontalement grossier. Une des tournures les plus vivantes du chinois oral.',
+    tipEn:
+      'Tip: perfect for deflating a pretension without being outright rude. One of the liveliest turns of spoken Chinese.'
+  }
+];

@@ -4309,3 +4309,135 @@ export const a2NuancesHaiBasicsLearnSections: LessonV2LearnSection[] = [
       'Tip: when you see 还 right in front of a concrete object (书/钱/伞), think «return» (huán). Before a verb/adjective, it\'s the adverb (hái).'
   }
 ];
+
+// --- cecr-a2-nuances-ne — 呢 : particule multi-fonctions (base) ------------
+export const a2NuancesNeBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-ne-elliptical',
+    title: '呢 : questions courtes « et toi ? »',
+    titleEn: '呢: short «and you?» questions',
+    body:
+      'LE premier usage à connaître : renvoyer une question sans répéter toute la structure.\n' +
+      '\n' +
+      'Structure : [phrase A]，[topic B] + 呢 ?\n' +
+      '\n' +
+      '- Ex : 我有一个妹妹。你呢 ? (py wǒ yǒu yí ge mèi mei. nǐ ne) « j\'ai une petite sœur, et toi ? ». Pas besoin de reformuler la question.\n' +
+      '- Ex : 我要喝咖啡，你呢 ? « je prends un café, et toi ? ».\n' +
+      '- Ex : 今天很热，昨天呢 ? « il fait chaud aujourd\'hui, et hier ? ».\n' +
+      '\n' +
+      'Marche avec n\'importe quel élément : personne (你/他/她), lieu (北京/上海), temps (昨天/明天), objet (这个/那个).\n' +
+      '\n' +
+      'Attention : ne pas ajouter 吗 après 呢. 你呢吗 ✗ n\'existe pas.',
+    bodyEn:
+      'THE first use to know: bounce a question back without repeating the whole structure. Structure: [sentence A], [topic B] + 呢? Ex: 我有一个妹妹。你呢? (wǒ yǒu yí ge mèi mei. nǐ ne) «I have a little sister, and you?». No need to restate the question. Ex: 我要喝咖啡，你呢? «I\'ll have a coffee, and you?». Ex: 今天很热，昨天呢? «it\'s hot today, and yesterday?». Works with any element: person (你/他/她), place (北京/上海), time (昨天/明天), object (这个/那个). Careful: don\'t add 吗 after 呢. 你呢吗 ✗ doesn\'t exist.',
+    items: [
+      { hanzi: '呢', pinyin: 'ne', meaning: 'particule interrogative « et... ? »', meaningEn: 'question particle «and...?»', audio: 'audio/hsk1/hsk1_呢.wav' },
+      { hanzi: '你呢', pinyin: 'nǐ ne', meaning: 'et toi ?', meaningEn: 'and you?', audio: 'audio/hsk1/hsk1_你.wav' },
+      { hanzi: '他呢', pinyin: 'tā ne', meaning: 'et lui ?', meaningEn: 'and him?', audio: 'audio/hsk1/hsk1_他.wav' },
+      { hanzi: '昨天呢', pinyin: 'zuó tiān ne', meaning: 'et hier ?', meaningEn: 'and yesterday?', audio: 'audio/hsk1/hsk1_昨天.wav' },
+      { hanzi: '这个呢', pinyin: 'zhè ge ne', meaning: 'et celui-ci ?', meaningEn: 'and this one?', audio: 'audio/hsk1/hsk1_这个.wav' },
+      { hanzi: '我有一个妹妹，你呢', pinyin: 'wǒ yǒu yí ge mèi mei, nǐ ne', meaning: 'j\'ai une petite sœur, et toi ?', meaningEn: 'I have a little sister, and you?', audio: 'audio/hsk1/hsk1_妹妹.wav' },
+      { hanzi: '今天很热，昨天呢', pinyin: 'jīn tiān hěn rè, zuó tiān ne', meaning: 'il fait chaud aujourd\'hui, et hier ?', meaningEn: 'it\'s hot today, and yesterday?', audio: 'audio/hsk1/hsk1_今天.wav' }
+    ],
+    tip:
+      'Astuce : dans une conversation naturelle, tu utiliseras 呢 des dizaines de fois par jour. C\'est la façon la plus rapide de renvoyer la balle.',
+    tipEn:
+      'Tip: in natural conversation, you\'ll use 呢 dozens of times a day. It\'s the fastest way to bounce the ball back.'
+  },
+  {
+    id: 'a2-ne-rhetorical-wondering',
+    title: '呢 : « je me demande... » (question rhétorique)',
+    titleEn: '呢: «I wonder...» (rhetorical question)',
+    body:
+      '呢 après un mot interrogatif (谁/什么/哪儿/怎么) transforme une question directe en RÉFLEXION à voix haute.\n' +
+      '\n' +
+      'Sens : « je me demande... / hmm, où / qui / quoi... ».\n' +
+      '\n' +
+      'Structure : phrase avec question word + 呢 ?\n' +
+      '\n' +
+      '- Ex : 这是谁的笔呢 ? (py zhè shì shéi de bǐ ne) « je me demande à qui est ce stylo ». Découverte, tu réfléchis à voix haute, tu ne demandes pas à quelqu\'un précis.\n' +
+      '- Ex : 他去哪儿了呢 ? (py tā qù nǎr le ne) « je me demande où il est parti ». Ton contemplatif.\n' +
+      '- Ex : 这到底是什么呢 ? (py zhè dào dǐ shì shén me ne) « c\'est quoi ce truc, au juste ? ».\n' +
+      '- Ex : 明天会下雨吗，怎么办呢 ? « et s\'il pleut demain, on fait comment ? ». Réflexion sur un souci.\n' +
+      '\n' +
+      'Nuance vs question sans 呢 : 谁的笔 ? (« à qui est le stylo ? », demande directe à qqn) vs 谁的笔呢 ? (« je me demande à qui est ce stylo », réflexion pour soi).',
+    bodyEn:
+      '呢 after a question word (谁/什么/哪儿/怎么) turns a direct question into THINKING out loud. Meaning: «I wonder... / hmm, where / who / what...». Structure: sentence with question word + 呢? Ex: 这是谁的笔呢? (zhè shì shéi de bǐ ne) «I wonder whose pen this is». Discovery, thinking aloud, not asking anyone in particular. Ex: 他去哪儿了呢? «I wonder where he went». Contemplative tone. Ex: 这到底是什么呢? «what on earth is this?». Ex: 明天会下雨吗，怎么办呢? «what if it rains tomorrow, how do we deal?». Nuance vs question without 呢: 谁的笔? («whose pen?», direct question to someone) vs 谁的笔呢? («I wonder whose pen this is», self-reflection).',
+    items: [
+      { hanzi: '谁呢', pinyin: 'shéi ne', meaning: 'qui donc ? (je me demande)', meaningEn: 'who then? (wondering)', audio: 'audio/hsk1/hsk1_谁.wav' },
+      { hanzi: '什么呢', pinyin: 'shén me ne', meaning: 'quoi donc ?', meaningEn: 'what then?', audio: 'audio/hsk1/hsk1_什么.wav' },
+      { hanzi: '哪儿呢', pinyin: 'nǎr ne', meaning: 'où donc ?', meaningEn: 'where then?', audio: 'audio/hsk1/hsk1_哪儿.wav' },
+      { hanzi: '怎么办呢', pinyin: 'zěn me bàn ne', meaning: 'comment faire alors ?', meaningEn: 'what to do then?', audio: 'audio/hsk2/hsk2_怎么办.wav' },
+      { hanzi: '这是谁的笔呢', pinyin: 'zhè shì shéi de bǐ ne', meaning: 'à qui est ce stylo, je me demande', meaningEn: 'whose pen is this, I wonder', audio: 'audio/hsk1/hsk1_笔.wav' },
+      { hanzi: '他去哪儿了呢', pinyin: 'tā qù nǎr le ne', meaning: 'où est-il donc parti ?', meaningEn: 'where did he go, I wonder', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '这到底是什么呢', pinyin: 'zhè dào dǐ shì shén me ne', meaning: 'c\'est quoi ça au juste ?', meaningEn: 'what on earth is this?', audio: 'audio/hsk1/hsk1_什么.wav' }
+    ],
+    tip:
+      'Astuce : 呢 rend ta question plus douce, moins directe. Utile quand tu ne veux pas mettre la pression sur quelqu\'un.',
+    tipEn:
+      'Tip: 呢 makes your question softer, less direct. Useful when you don\'t want to pressure someone.'
+  },
+  {
+    id: 'a2-ne-emphasize-statement',
+    title: '呢 en fin d\'affirmation : « je te dis / tu sais »',
+    titleEn: '呢 at the end of a statement: «I tell you / you know»',
+    body:
+      'À la fin d\'une PHRASE AFFIRMATIVE, 呢 ajoute une EMPHASE douce. Sens = « je te le dis / c\'est encore le cas / je t\'assure ».\n' +
+      '\n' +
+      'Souvent avec 还 (encore), 真 (vraiment), 得很 (très).\n' +
+      '\n' +
+      'Structure : phrase affirmative + 呢.\n' +
+      '\n' +
+      '- Ex : 还早呢 (py hái zǎo ne) « il est encore tôt, tu sais » (rassurant, sans reproche).\n' +
+      '- Ex : 我还没吃呢 « je n\'ai pas encore mangé, moi » (peut être insistant ou attend qu\'on te propose).\n' +
+      '- Ex : 好吃得很呢 (py hǎo chī de hěn ne) « c\'est vachement bon, tu sais ! ».\n' +
+      '- Ex : 他忙得很呢 « il est super occupé, je te dis ».\n' +
+      '\n' +
+      'Nuance : ajoute une couche d\'affirmation chaleureuse. Sans 呢, la phrase est neutre. Avec 呢, elle sonne « informelle et engageante ».',
+    bodyEn:
+      'At the end of an AFFIRMATIVE sentence, 呢 adds soft EMPHASIS. Meaning = «I\'m telling you / it\'s still the case / I assure you». Often with 还 (still), 真 (really), 得很 (very). Structure: affirmative sentence + 呢. Ex: 还早呢 (hái zǎo ne) «it\'s still early, you know» (reassuring, no reproach). Ex: 我还没吃呢 «I haven\'t eaten yet, myself» (can be emphatic or hint at wanting to be offered). Ex: 好吃得很呢 «it\'s super tasty, you know!». Ex: 他忙得很呢 «he\'s so busy, I tell you». Nuance: adds a warm layer of affirmation. Without 呢, the sentence is neutral. With 呢, it sounds «informal and engaging».',
+    items: [
+      { hanzi: '还早呢', pinyin: 'hái zǎo ne', meaning: 'il est encore tôt, tu sais', meaningEn: 'still early, you know', audio: 'audio/hsk1/hsk1_早.wav' },
+      { hanzi: '还没吃呢', pinyin: 'hái méi chī ne', meaning: 'pas encore mangé', meaningEn: 'haven\'t eaten yet', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '好吃得很呢', pinyin: 'hǎo chī de hěn ne', meaning: 'c\'est vachement bon !', meaningEn: 'super tasty!', audio: 'audio/hsk1/hsk1_好吃.wav' },
+      { hanzi: '忙得很呢', pinyin: 'máng de hěn ne', meaning: 'super occupé, je te dis', meaningEn: 'super busy, I tell you', audio: 'audio/hsk2/hsk2_忙.wav' },
+      { hanzi: '真好呢', pinyin: 'zhēn hǎo ne', meaning: 'c\'est vraiment bien, tu sais', meaningEn: 'really nice, you know', audio: 'audio/hsk1/hsk1_真.wav' },
+      { hanzi: '还', pinyin: 'hái', meaning: 'encore', meaningEn: 'still', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '得很', pinyin: 'de hěn', meaning: 'très (postposé)', meaningEn: 'very (postposed)', audio: 'audio/hsk1/hsk1_很.wav' }
+    ],
+    tip:
+      'Astuce : ce 呢-là adoucit la phrase. Utilise-le pour rassurer, calmer, ou pour partager une info avec un ton complice.',
+    tipEn:
+      'Tip: this 呢 softens the sentence. Use it to reassure, calm, or share info with a complicit tone.'
+  },
+  {
+    id: 'a2-ne-mid-sentence-topic',
+    title: '呢 au milieu de phrase : marquer le contraste',
+    titleEn: '呢 mid-sentence: marking contrast',
+    body:
+      '呢 peut aussi apparaître au milieu de la phrase pour MARQUER UN TOPIC et créer un CONTRASTE. Sens : « quant à... / lui/elle par contre... ».\n' +
+      '\n' +
+      'Structure : [topic A + commentaire A]，[topic B] + 呢，[commentaire B].\n' +
+      '\n' +
+      '- Ex : 他喜欢热闹，我呢，喜欢安静 (py tā xǐ huan rè nao, wǒ ne, xǐ huan ān jìng) « il aime l\'ambiance, moi par contre, j\'aime le calme ».\n' +
+      '- Ex : 姐姐很聪明，妹妹呢，很漂亮 « la grande sœur est intelligente, la petite par contre, elle est très belle ». Distribution de qualités.\n' +
+      '- Ex : 上海的房子很贵，北京呢，也不便宜 « les logements à Shanghai sont chers, à Beijing aussi c\'est pas donné ».\n' +
+      '\n' +
+      'Effet : 呢 fait pivoter la conversation en douceur d\'un sujet à un autre, tout en soulignant le contraste. Plus élégant que dire brutalement 但是 (mais).',
+    bodyEn:
+      '呢 can also appear MID-sentence to MARK A TOPIC and create CONTRAST. Meaning: «as for... / X on the other hand...». Structure: [topic A + comment A], [topic B] + 呢, [comment B]. Ex: 他喜欢热闹，我呢，喜欢安静 «he likes buzz, me on the other hand, I like quiet». Ex: 姐姐很聪明，妹妹呢，很漂亮 «big sister is smart, little sister on the other hand is beautiful». Distribution of qualities. Ex: 上海的房子很贵，北京呢，也不便宜 «Shanghai housing is expensive, Beijing isn\'t cheap either». Effect: 呢 smoothly pivots the conversation from one topic to another while underlining the contrast. More elegant than bluntly using 但是 (but).',
+    items: [
+      { hanzi: '我呢', pinyin: 'wǒ ne', meaning: 'moi par contre / quant à moi', meaningEn: 'me on the other hand', audio: 'audio/hsk1/hsk1_我.wav' },
+      { hanzi: '他呢', pinyin: 'tā ne', meaning: 'lui par contre', meaningEn: 'him on the other hand', audio: 'audio/hsk1/hsk1_他.wav' },
+      { hanzi: '热闹', pinyin: 'rè nao', meaning: 'animé, ambiance', meaningEn: 'lively, bustling', audio: 'audio/hsk3/hsk3_热闹.wav' },
+      { hanzi: '安静', pinyin: 'ān jìng', meaning: 'calme, tranquille', meaningEn: 'quiet', audio: 'audio/hsk3/hsk3_安静.wav' },
+      { hanzi: '他喜欢热闹，我呢，喜欢安静', pinyin: 'tā xǐ huan rè nao, wǒ ne, xǐ huan ān jìng', meaning: 'il aime l\'ambiance, moi le calme', meaningEn: 'he likes buzz, me quiet', audio: 'audio/hsk3/hsk3_安静.wav' },
+      { hanzi: '姐姐很聪明，妹妹呢，很漂亮', pinyin: 'jiě jie hěn cōng ming, mèi mei ne, hěn piào liang', meaning: 'la grande est intelligente, la petite belle', meaningEn: 'big sister is smart, little sister is pretty', audio: 'audio/hsk1/hsk1_姐姐.wav' },
+      { hanzi: '上海的房子很贵，北京呢，也不便宜', pinyin: 'shàng hǎi de fáng zi hěn guì, běi jīng ne, yě bù pián yi', meaning: 'à Shanghai les logements sont chers, à Pékin pas donné non plus', meaningEn: 'housing in Shanghai is expensive, Beijing isn\'t cheap either', audio: 'audio/hsk2/hsk2_贵.wav' }
+    ],
+    tip:
+      'Astuce : ce pattern est LE signal du chinois oral fluide. Dès que tu compares 2 choses/personnes/lieux, glisse-le.',
+    tipEn:
+      'Tip: this pattern is THE signal of fluent spoken Chinese. Whenever you compare 2 things/people/places, slip it in.'
+  }
+];
