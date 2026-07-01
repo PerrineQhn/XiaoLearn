@@ -2445,3 +2445,96 @@ export const a2NuancesM7LearnSections: LessonV2LearnSection[] = [
       'In front of a distressed loved one, NEVER start with 为什么. It\'s read as «justify yourself». Always 怎么了？(what\'s wrong?) then 你需要什么吗？(do you need anything?).'
   }
 ];
+
+export const a2NuancesKaiMainVerbLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-kai-family-1-open',
+    title: '开 famille 1 : ouvrir, activer, rendre disponible',
+    titleEn: '开 family 1: open, activate, make available',
+    body:
+      'L\'idée centrale de 开 : passer d\'un état FERMÉ, éteint ou scellé à un état OUVERT, actif ou libre. Cette métaphore couvre bien plus que les portes.\n' +
+      '\n' +
+      'Objets physiques : 开门 (kāi mén) « ouvrir la porte », 开窗 (kāi chuāng) « ouvrir la fenêtre ». Antonyme systématique : 关 (guān) « fermer ».\n' +
+      '\n' +
+      'Appareils électriques : le chinois considère qu\'allumer un appareil, c\'est « ouvrir » son circuit. 开灯 (kāi dēng) « allumer la lumière », 开空调 (kāi kōngtiáo) « mettre la clim », 开电脑 (kāi diànnǎo) « allumer l\'ordi ». Ex : 天黑了，快开灯吧 (tiān hēi le, kuài kāi dēng ba) « il fait noir, allume vite ».\n' +
+      '\n' +
+      'Fleurs : 花开了 (huā kāi le) « les fleurs ont éclos » — même métaphore, appliquée aux pétales qui s\'ouvrent.\n' +
+      '\n' +
+      'Documents officiels : dans le sens « ouvrir un dossier / émettre un papier ». 开发票 (kāi fāpiào) « émettre une facture », 开证明 (kāi zhèngmíng) « délivrer un certificat », 开药 (kāi yào) « prescrire des médicaments », 开户 (kāi hù) « ouvrir un compte bancaire ».\n' +
+      '\n' +
+      'Ouverture d\'esprit et sentiments : 开心 (kāi xīn) « content » = littéralement « cœur ouvert ». 开朗 (kāi lǎng) « ouvert, jovial ». 开放 (kāi fàng) « ouvert (société, esprit) ». Ex : 跟你聊天以后，我开心多了 (gēn nǐ liáotiān yǐhòu, wǒ kāi xīn duō le) « après avoir discuté avec toi, je vais beaucoup mieux ».',
+    bodyEn:
+      'The core idea of 开: shift from CLOSED, off, or sealed to OPEN, active, or free. This metaphor covers far more than doors. Physical objects: 开门 (open the door), 开窗 (open the window). Systematic antonym: 关 (close). Electric devices: Chinese treats turning on a device as «opening» its circuit. 开灯 (turn on the light), 开空调 (turn on the AC), 开电脑 (turn on the computer). Ex: 天黑了，快开灯吧 = «it\'s dark, turn on the light quickly». Flowers: 花开了 (the flowers have bloomed) — same metaphor applied to petals opening up. Official documents: in the sense «open a file / issue a paper». 开发票 (issue an invoice), 开证明 (deliver a certificate), 开药 (prescribe meds), 开户 (open a bank account). Open-mindedness and feelings: 开心 «happy» = literally «open heart». 开朗 «open, cheerful». 开放 «open (society, mind)». Ex: 跟你聊天以后，我开心多了 = «after chatting with you, I feel much better».',
+    items: [
+      { hanzi: '开门', pinyin: 'kāi mén', meaning: 'ouvrir la porte', meaningEn: 'open the door', audio: 'audio/hsk1/hsk1_开门.wav' },
+      { hanzi: '开灯', pinyin: 'kāi dēng', meaning: 'allumer la lumière', meaningEn: 'turn on the light', audio: 'audio/hsk1/hsk1_开灯.wav' },
+      { hanzi: '开空调', pinyin: 'kāi kōng tiáo', meaning: 'allumer la clim', meaningEn: 'turn on the AC', audio: 'audio/hsk3/hsk3_空调.wav' },
+      { hanzi: '开发票', pinyin: 'kāi fā piào', meaning: 'émettre une facture', meaningEn: 'issue an invoice', audio: 'audio/hsk4/hsk4_发票.wav' },
+      { hanzi: '开心', pinyin: 'kāi xīn', meaning: 'content, joyeux', meaningEn: 'happy', audio: 'audio/hsk1/hsk1_开心.wav' },
+      { hanzi: '花开了', pinyin: 'huā kāi le', meaning: 'les fleurs ont éclos', meaningEn: 'the flowers bloomed', audio: 'audio/hsk3/hsk3_花.wav' }
+    ],
+    tip:
+      'Quand tu vois un mot nouveau contenant 开, demande-toi ce qui était « fermé » et devient « ouvert ». Ça marche 8 fois sur 10.',
+    tipEn:
+      'When you meet a new word containing 开, ask yourself what was «closed» and becomes «open». It works 8 times out of 10.'
+  },
+  {
+    id: 'a2-kai-family-2-launch',
+    title: '开 famille 2 : lancer, démarrer une activité',
+    titleEn: '开 family 2: launch, start an activity',
+    body:
+      'Ici 开 lance une activité qui était en pause ou en attente. Le verbe le plus général est 开始 (kāi shǐ) « commencer », qui marche presque partout : 会议开始了 (huìyì kāi shǐ le) « la réunion a commencé », 我们开始上课吧 (wǒmen kāi shǐ shàng kè ba) « on commence le cours ».\n' +
+      '\n' +
+      'Compounds figés du calendrier ou de la routine : à mémoriser en bloc. 开学 (kāi xué) « la rentrée / débuter l\'année scolaire », 开工 (kāi gōng) « démarrer les travaux, se remettre au boulot », 开饭 (kāi fàn) « le repas est servi ».\n' +
+      '\n' +
+      'Attention : 开学 ≠ 开始学. 开学 (kāi xué) signifie « la rentrée scolaire » (compound figé). 开始学 (kāi shǐ xué) signifie « commencer à étudier » (verbe + verbe).\n' +
+      '\n' +
+      'Version orale et vive : à l\'oral décontracté, 开 s\'attache directement à un verbe monosyllabique pour dire « démarrer X avec énergie ». 开吃 (kāi chī) « allez, on mange », 开聊 (kāi liáo) « on cause », 开跑 (kāi pǎo) « on court ». Plus vif que 开始吃. Ex : 人都到齐了，我们开吃吧 (rén dōu dào qí le, wǒmen kāi chī ba) « tout le monde est là, on attaque ».\n' +
+      '\n' +
+      'Compound célèbre : 开玩笑 (kāi wánxiào) « plaisanter, blaguer » — littéralement « lancer une blague ». Souvent en 别开玩笑了 (bié kāi wánxiào le) « arrête de rigoler ».',
+    bodyEn:
+      'Here 开 launches an activity that was paused or pending. The most general verb is 开始 (start), which works almost everywhere: 会议开始了 = «the meeting has started», 我们开始上课吧 = «let\'s start the class». Fixed compounds for the calendar or routine: memorize as blocks. 开学 «school starts / new school year begins», 开工 «start work / get back to work», 开饭 «the meal is served». Watch out: 开学 ≠ 开始学. 开学 = «start of the school year» (frozen compound). 开始学 = «start studying» (verb + verb). Spoken lively version: in casual speech, 开 attaches directly to a monosyllabic verb to say «start X with energy». 开吃 «let\'s eat», 开聊 «let\'s chat», 开跑 «let\'s run». Livelier than 开始吃. Ex: 人都到齐了，我们开吃吧 = «everyone\'s here, let\'s dig in». Famous compound: 开玩笑 «joke around» — literally «launch a joke». Often as 别开玩笑了 = «stop joking around».',
+    items: [
+      { hanzi: '开始', pinyin: 'kāi shǐ', meaning: 'commencer', meaningEn: 'start, begin', audio: 'audio/hsk2/hsk2_开始.wav' },
+      { hanzi: '开学', pinyin: 'kāi xué', meaning: 'rentrée scolaire', meaningEn: 'school starts', audio: 'audio/hsk3/hsk3_开学.wav' },
+      { hanzi: '开工', pinyin: 'kāi gōng', meaning: 'démarrer les travaux', meaningEn: 'start work', audio: 'audio/hsk4/hsk4_工作.wav' },
+      { hanzi: '开饭', pinyin: 'kāi fàn', meaning: 'le repas est servi', meaningEn: 'the meal is served', audio: 'audio/hsk1/hsk1_饭.wav' },
+      { hanzi: '开玩笑', pinyin: 'kāi wán xiào', meaning: 'plaisanter, blaguer', meaningEn: 'joke around', audio: 'audio/hsk4/hsk4_开玩笑.wav' }
+    ],
+    tip:
+      'À l\'écrit soutenu ou officiel, on préfère 开始 ou 开启 (kāi qǐ, « inaugurer, ouvrir un nouveau chapitre »). À l\'oral vif, 开 + verbe court est très naturel.',
+    tipEn:
+      'In formal writing, prefer 开始 or 开启 (inaugurate, open a new chapter). In lively speech, 开 + short verb is very natural.'
+  },
+  {
+    id: 'a2-kai-family-3-operate',
+    title: '开 famille 3 : conduire, opérer, tenir un établissement',
+    titleEn: '开 family 3: drive, operate, run a business',
+    body:
+      'Cette famille couvre l\'ACTIVITÉ CONTINUE d\'utiliser une machine, tenir un commerce ou animer un événement.\n' +
+      '\n' +
+      'Véhicules motorisés : 开车 (kāi chē) « conduire », 开飞机 (kāi fēi jī) « piloter un avion », 开船 (kāi chuán) « naviguer ». Ex : 他每天开车去上班 (tā měi tiān kāi chē qù shàng bān) « il vient au boulot en voiture tous les jours ».\n' +
+      '\n' +
+      'Attention : pour vélo ou cheval, on utilise 骑 (qí « chevaucher »), pas 开.\n' +
+      '\n' +
+      'Le véhicule sujet : 火车开了 (huǒ chē kāi le) « le train est parti », 船开了 (chuán kāi le) « le bateau a levé l\'ancre ». Le focus est le départ du véhicule sans mentionner le conducteur.\n' +
+      '\n' +
+      'Tenir un commerce : 开店 (kāi diàn) « ouvrir / tenir un magasin », 开公司 (kāi gōng sī) « lancer / diriger une entreprise », 开餐厅 (kāi cān tīng) « ouvrir / tenir un resto ». Ex : 她想开店，以后自己当老板 (tā xiǎng kāi diàn, yǐhòu zì jǐ dāng lǎo bǎn) « elle veut ouvrir un magasin, devenir sa propre patronne ».\n' +
+      '\n' +
+      'Animer un événement : 开会 (kāi huì) « tenir une réunion », 开派对 (kāi pài duì) « faire une fête », 开演唱会 (kāi yǎn chàng huì) « donner un concert ». Ex : 我们下午三点开会 (wǒmen xià wǔ sān diǎn kāi huì) « on a une réunion à 15 h ». En cours de réunion : 我们正在开会 (wǒmen zhèng zài kāi huì) « on est en réunion ».',
+    bodyEn:
+      'This family covers the CONTINUOUS ACTIVITY of using a machine, running a business, or holding an event. Motor vehicles: 开车 (drive), 开飞机 (pilot a plane), 开船 (sail). Ex: 他每天开车去上班 = «he drives to work every day». Watch out: for bike or horse, use 骑 (qí «ride»), not 开. Vehicle as subject: 火车开了 = «the train has left», 船开了 = «the boat has cast off». The focus is the vehicle\'s departure without mentioning the driver. Running a business: 开店 «open/run a shop», 开公司 «launch/run a company», 开餐厅 «open/run a restaurant». Ex: 她想开店，以后自己当老板 = «she wants to open a shop and be her own boss». Holding an event: 开会 «hold a meeting», 开派对 «throw a party», 开演唱会 «give a concert». Ex: 我们下午三点开会 = «we have a meeting at 3 pm». Mid-meeting: 我们正在开会 = «we\'re in a meeting».',
+    items: [
+      { hanzi: '开车', pinyin: 'kāi chē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
+      { hanzi: '开船', pinyin: 'kāi chuán', meaning: 'naviguer, faire partir un bateau', meaningEn: 'sail', audio: 'audio/hsk3/hsk3_船.wav' },
+      { hanzi: '开店', pinyin: 'kāi diàn', meaning: 'ouvrir / tenir un magasin', meaningEn: 'open/run a shop', audio: 'audio/hsk1/hsk1_商店.wav' },
+      { hanzi: '开公司', pinyin: 'kāi gōng sī', meaning: 'lancer / diriger une entreprise', meaningEn: 'run a company', audio: 'audio/hsk2/hsk2_公司.wav' },
+      { hanzi: '开会', pinyin: 'kāi huì', meaning: 'tenir une réunion', meaningEn: 'hold a meeting', audio: 'audio/hsk3/hsk3_开会.wav' },
+      { hanzi: '开演唱会', pinyin: 'kāi yǎn chàng huì', meaning: 'donner un concert', meaningEn: 'give a concert', audio: 'audio/hsk4/hsk4_演出.wav' }
+    ],
+    tip:
+      '开会 ne signifie pas seulement « démarrer une réunion » mais aussi la TENIR pendant sa durée. C\'est le sens « opérer / faire fonctionner ».',
+    tipEn:
+      '开会 doesn\'t just mean «start a meeting» — it also means HOLDING it for its whole duration. That\'s the «operate / keep running» sense.'
+  }
+];

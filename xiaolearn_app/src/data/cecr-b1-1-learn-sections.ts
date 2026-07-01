@@ -2325,3 +2325,75 @@ export const b11NuancesHuiNengKeyiLearnSections: LessonV2LearnSection[] = [
       'When you\'re writing a text to hand in (HSK essay, article, formal email), you can replace some 能 with 能够 to raise the register. But in a WeChat chat, keep 能.'
   }
 ];
+
+export const b11NuancesKaiComplementLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-kai-family-4-complement',
+    title: '开 famille 4 : complément de résultat (« séparer, étaler, libérer »)',
+    titleEn: '开 family 4: resultative complement («separate, spread, release»)',
+    body:
+      'Ici 开 vient en SECONDE POSITION, après un autre verbe. Il agit comme COMPLÉMENT DE RÉSULTAT : le premier verbe dit l\'action, 开 dit le résultat.\n' +
+      '\n' +
+      'Trois sous-sens qui se recoupent : « SÉPARER », « ÉTALER », « LIBÉRER ».\n' +
+      '\n' +
+      'Séparer / écarter :\n' +
+      '- 拉开 (lā kāi) « tirer pour ouvrir » — 他把窗帘拉开了 (tā bǎ chuāng lián lā kāi le) « il a tiré les rideaux ».\n' +
+      '- 推开 (tuī kāi) « pousser pour ouvrir ».\n' +
+      '- 分开 (fēn kāi) « séparer, partager ».\n' +
+      '\n' +
+      'Étaler / déployer :\n' +
+      '- 展开 (zhǎn kāi) « déployer, ouvrir en grand ».\n' +
+      '- 铺开 (pū kāi) « étaler à plat » — 他把地图铺开在桌子上 (tā bǎ dì tú pū kāi zài zhuō zi shàng) « il a étalé la carte sur la table ».\n' +
+      '- 散开 (sàn kāi) « se disperser » (foule qui se disperse).\n' +
+      '\n' +
+      'Libérer / défaire :\n' +
+      '- 解开 (jiě kāi) « défaire (un nœud), résoudre (un puzzle) ».\n' +
+      '- 松开 (sōng kāi) « desserrer, lâcher ».\n' +
+      '- 打开 (dǎ kāi) « ouvrir » (une boîte, un livre, une appli). Le plus général — c\'est aussi un complément (打 « frapper/agir » + 开 « résultat ouvert »).\n' +
+      '\n' +
+      'Négations : 门没开 (mén méi kāi) « la porte ne s\'est pas ouverte » = résultat non atteint. Complément potentiel : 这个结我打不开 (zhè ge jié wǒ dǎ bù kāi) « je n\'arrive pas à défaire ce nœud ». Version positive : 打得开 (dǎ de kāi) « ça peut s\'ouvrir ».\n' +
+      '\n' +
+      'Usage psychologique : 想开 (xiǎng kāi) « prendre du recul, accepter » — quand on relâche une pensée qui tient au cœur. 看开 (kàn kāi) « voir les choses avec détachement ». Ex : 别太难过，慢慢想开一点 (bié tài nán guò, màn màn xiǎng kāi yì diǎn) « ne sois pas trop triste, prends du recul petit à petit ». C\'est la métaphore « libérer » appliquée à l\'esprit.',
+    bodyEn:
+      'Here 开 comes in SECOND POSITION, after another verb. It acts as a RESULTATIVE COMPLEMENT: the first verb names the action, 开 states the result. Three overlapping sub-senses: «SEPARATE», «SPREAD», «RELEASE». Separate / pull apart: 拉开 «pull open» — 他把窗帘拉开了 = «he drew the curtains open». 推开 «push open». 分开 «separate, share». Spread / unfold: 展开 «unfold, open wide». 铺开 «lay flat» — 他把地图铺开在桌子上 = «he spread the map on the table». 散开 «scatter» (crowd dispersing). Release / undo: 解开 «untie a knot, solve a puzzle». 松开 «loosen, let go». 打开 «open» (a box, a book, an app). The most general — also a complement (打 «hit/act» + 开 «open result»). Negations: 门没开 = «the door didn\'t open» (result not reached). Potential complement: 这个结我打不开 = «I can\'t untie this knot». Positive form: 打得开 = «it can be opened». Psychological use: 想开 «take a step back, accept» — when you release a thought clinging to your heart. 看开 «see things with detachment». Ex: 别太难过，慢慢想开一点 = «don\'t be too sad, gradually let go a bit». That\'s the «release» metaphor applied to the mind.',
+    items: [
+      { hanzi: '打开', pinyin: 'dǎ kāi', meaning: 'ouvrir (boîte, appli)', meaningEn: 'open (box, app)', audio: 'audio/hsk3/hsk3_打开.wav' },
+      { hanzi: '拉开', pinyin: 'lā kāi', meaning: 'tirer pour ouvrir', meaningEn: 'pull open', audio: 'audio/hsk4/hsk4_拉.wav' },
+      { hanzi: '分开', pinyin: 'fēn kāi', meaning: 'séparer, partager', meaningEn: 'separate', audio: 'audio/hsk3/hsk3_分开.wav' },
+      { hanzi: '展开', pinyin: 'zhǎn kāi', meaning: 'déployer, ouvrir en grand', meaningEn: 'unfold', audio: 'audio/hsk5/hsk5_展开.wav' },
+      { hanzi: '解开', pinyin: 'jiě kāi', meaning: 'défaire, résoudre', meaningEn: 'untie, solve', audio: 'audio/hsk4/hsk4_解决.wav' },
+      { hanzi: '松开', pinyin: 'sōng kāi', meaning: 'desserrer, lâcher', meaningEn: 'loosen, let go', audio: 'audio/hsk4/hsk4_松.wav' },
+      { hanzi: '想开', pinyin: 'xiǎng kāi', meaning: 'prendre du recul, accepter', meaningEn: 'take a step back', audio: 'audio/hsk2/hsk2_想.wav' }
+    ],
+    tip:
+      'Quand 开 est en 2e position, cherche l\'idée d\'écartement, d\'étalement ou de relâchement. Ça éclaire le sens de nombreux verbes composés.',
+    tipEn:
+      'When 开 is in 2nd position, look for the idea of pulling apart, spreading, or letting go. It lights up the meaning of many compound verbs.'
+  },
+  {
+    id: 'b11-kai-family-5-special',
+    title: '开 famille 5 : sens spéciaux figés',
+    titleEn: '开 family 5: fixed special senses',
+    body:
+      'Deux usages qui ne rentrent PAS dans les 4 grandes familles et se retiennent comme des blocs.\n' +
+      '\n' +
+      'CUISINE — l\'eau qui bout : 水开了 (shuǐ kāi le) « l\'eau bout ». Métaphore de l\'eau qui « s\'ouvre » en bulles, mais en pratique c\'est un sens fixe. Négation : 水还没开 (shuǐ hái méi kāi) « l\'eau ne bout pas encore ». Ex : 水开了，可以下面了 (shuǐ kāi le, kě yǐ xià miàn le) « l\'eau bout, on peut mettre les nouilles ».\n' +
+      '\n' +
+      'BIJOUTERIE — l\'or et les carats : 十八开金 (shí bā kāi jīn) « or 18 carats ». 开 fait ici office d\'UNITÉ pour la pureté de l\'or, exactement comme « karat » en anglais. Ex : 24开金 (èr shí sì kāi jīn) « or 24 carats, or pur ».\n' +
+      '\n' +
+      'Il existe quelques autres usages rares (tailles de papier, expressions littéraires) mais tu peux les apprendre au cas par cas.',
+    bodyEn:
+      'Two uses that DON\'T fit the 4 main families and are memorized as blocks. COOKING — water boiling: 水开了 = «the water is boiling». Metaphor of water «opening up» into bubbles, but in practice it\'s a fixed sense. Negation: 水还没开 = «the water isn\'t boiling yet». Ex: 水开了，可以下面了 = «water\'s boiling, we can drop in the noodles». JEWELRY — gold and karats: 十八开金 = «18-karat gold». 开 acts as a UNIT for gold purity, exactly like «karat» in English. Ex: 24开金 = «24-karat gold, pure gold». A few other rare uses exist (paper sizes, literary expressions) but you can learn them case by case.',
+    items: [
+      { hanzi: '水开了', pinyin: 'shuǐ kāi le', meaning: 'l\'eau bout', meaningEn: 'the water is boiling', audio: 'audio/hsk1/hsk1_水.wav' },
+      { hanzi: '下面', pinyin: 'xià miàn', meaning: 'mettre les nouilles (dans l\'eau)', meaningEn: 'drop noodles into the water', audio: 'audio/hsk3/hsk3_面条.wav' },
+      { hanzi: '十八开金', pinyin: 'shí bā kāi jīn', meaning: 'or 18 carats', meaningEn: '18-karat gold', audio: 'audio/hsk5/hsk5_金.wav' },
+      { hanzi: '金', pinyin: 'jīn', meaning: 'or (métal)', meaningEn: 'gold (metal)', audio: 'audio/hsk5/hsk5_金.wav' },
+      { hanzi: '纯', pinyin: 'chún', meaning: 'pur', meaningEn: 'pure', audio: 'audio/hsk5/hsk5_纯.wav' }
+    ],
+    tip:
+      'Ces 2 sens spéciaux se reconnaissent parce que le CONTEXTE (cuisine ou bijouterie) éclaire immédiatement le sens de 开. Sinon ces phrases sonneraient énigmatiques.',
+    tipEn:
+      'These 2 special senses stand out because CONTEXT (cooking or jewelry) instantly clears up what 开 means. Otherwise these sentences would sound cryptic.'
+  }
+];

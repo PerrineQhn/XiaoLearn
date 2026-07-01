@@ -120,6 +120,7 @@ import {
   a2NuancesM5LearnSections,
   a2NuancesM6LearnSections,
   a2NuancesM7LearnSections,
+  a2NuancesKaiMainVerbLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -165,6 +166,7 @@ import {
   b11NuancesDouLearnSections,
   b11NuancesYeConcessionLearnSections,
   b11NuancesHuiNengKeyiLearnSections,
+  b11NuancesKaiComplementLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -3166,6 +3168,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["怎么样", "怎么", "为什么", "怎么了", "用", "最近", "担心", "关心"],
         quizQuestions: 8,
         learnSections: a2NuancesM7LearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m8",
+        title: "开 comme verbe principal — ouvrir, lancer, opérer",
+        titleEn: "开 as main verb — open, launch, operate",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "vocabulary", "cecr:a2"],
+        introduction: {
+          title: "Un verbe, trois familles de sens à ancrer",
+          titleEn: "One verb, three sense families to nail down",
+          content: "开 est un des verbes les plus polyvalents du chinois. Trois grandes familles quand il est verbe principal : (1) OUVRIR / ACTIVER — 开门 (ouvrir la porte), 开灯 (allumer), 开心 (littéralement « cœur ouvert »). (2) LANCER une activité — 开始, 开学 (rentrée), 开玩笑 (blaguer), et à l'oral vif 开吃 / 开跑. (3) OPÉRER / CONDUIRE — 开车 (conduire), 开店 (tenir un magasin), 开会 (tenir une réunion, pas juste la démarrer). Attention : 开学 ≠ 开始学 (rentrée vs commencer à étudier). Et pour vélo ou cheval, c'est 骑, pas 开.",
+          contentEn: "开 is one of Chinese\'s most versatile verbs. Three main families as a main verb: (1) OPEN / ACTIVATE — 开门 (open the door), 开灯 (turn on), 开心 (literally «open heart»). (2) LAUNCH an activity — 开始, 开学 (school start), 开玩笑 (joke), and in lively speech 开吃 / 开跑. (3) OPERATE / DRIVE — 开车 (drive), 开店 (run a shop), 开会 (hold a meeting, not just start it). Watch out: 开学 ≠ 开始学 (school year start vs begin studying). And for bike or horse, use 骑, not 开.",
+          objectives: [
+            "Distinguer les 3 familles (ouvrir / lancer / opérer)",
+            "Éviter les pièges (开学 vs 开始学, 开 vs 骑)",
+            "Utiliser 开会 pour TENIR une réunion",
+            "Reconnaître 开心 / 开朗 comme métaphores « cœur ouvert »"
+          ],
+          objectivesEn: [
+            "Distinguish the 3 families (open / launch / operate)",
+            "Avoid the traps (开学 vs 开始学, 开 vs 骑)",
+            "Use 开会 for HOLDING a meeting",
+            "Recognize 开心 / 开朗 as «open heart» metaphors"
+          ]
+        },
+        flashcards: ["开", "开门", "开车", "开会", "开始", "开心"],
+        quizQuestions: 8,
+        learnSections: a2NuancesKaiMainVerbLearnSections
       }
     ]
   },
@@ -4463,6 +4494,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["会", "能", "可以", "能够", "很会", "很能"],
         quizQuestions: 8,
         learnSections: b11NuancesHuiNengKeyiLearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m11",
+        title: "开 comme complément + sens fixes",
+        titleEn: "开 as complement + fixed senses",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "complement", "cecr:b11"],
+        introduction: {
+          title: "Quand 开 vient en seconde position, tout change",
+          titleEn: "When 开 comes second, everything changes",
+          content: "Deuxième vie de 开 : COMPLÉMENT DE RÉSULTAT après un verbe d\'action. Le premier verbe dit l\'action, 开 dit le résultat — écarter, étaler ou libérer. Trois sous-familles : SÉPARER (拉开, 推开, 分开), ÉTALER (展开, 铺开, 散开), LIBÉRER (解开, 松开, 打开). Négations : 门没开 (résultat non atteint), 打不开 (impossible), 打得开 (possible). Bonus psychologique : 想开 / 看开 = « prendre du recul, lâcher prise ». Plus deux SENS FIXES à mémoriser : 水开了 (l\'eau bout — cuisine) et 十八开金 (or 18 carats — bijouterie).",
+          contentEn: "Second life of 开: RESULTATIVE COMPLEMENT after an action verb. The first verb names the action, 开 states the result — pull apart, spread, or release. Three sub-families: SEPARATE (拉开, 推开, 分开), SPREAD (展开, 铺开, 散开), RELEASE (解开, 松开, 打开). Negations: 门没开 (result not reached), 打不开 (impossible), 打得开 (possible). Psychological bonus: 想开 / 看开 = «take a step back, let go». Plus two FIXED SENSES to memorize: 水开了 (the water boils — cooking) and 十八开金 (18-karat gold — jewelry).",
+          objectives: [
+            "Reconnaître 开 comme complément de résultat",
+            "Construire 打不开 / 打得开 (complément potentiel)",
+            "Utiliser 想开 / 看开 pour « lâcher prise »",
+            "Mémoriser les 2 sens fixes (水开 et 开金)"
+          ],
+          objectivesEn: [
+            "Recognize 开 as a resultative complement",
+            "Build 打不开 / 打得开 (potential complement)",
+            "Use 想开 / 看开 for «let go»",
+            "Memorize the 2 fixed senses (水开 and 开金)"
+          ]
+        },
+        flashcards: ["打开", "分开", "想开", "解开", "水开", "十八开金"],
+        quizQuestions: 8,
+        learnSections: b11NuancesKaiComplementLearnSections
       }
     ]
   },
