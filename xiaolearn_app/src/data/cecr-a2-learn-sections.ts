@@ -4441,3 +4441,123 @@ export const a2NuancesNeBasicsLearnSections: LessonV2LearnSection[] = [
       'Tip: this pattern is THE signal of fluent spoken Chinese. Whenever you compare 2 things/people/places, slip it in.'
   }
 ];
+
+// --- cecr-a2-nuances-m19 — Exprimer un choix : bases (CGG #74) ------------
+export const a2NuancesChoicesBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-choices-haishi-huozhe',
+    title: '还是 (question) vs 或者 (affirmation) : distinction fondamentale',
+    titleEn: '还是 (question) vs 或者 (statement): the core split',
+    body:
+      'En français, « ou » sert pour les questions ET les affirmations. En chinois, on distingue.\n' +
+      '\n' +
+      '还是 (hái shi) = « ou » DANS UNE QUESTION. Attend un CHOIX précis.\n' +
+      '- Structure : (是) + option A + 还是 + option B ?\n' +
+      '- Ex : 你喜欢茶还是咖啡 ? (py nǐ xǐ huan chá hái shi kā fēi) « tu préfères le thé ou le café ? ».\n' +
+      '- Ex : 我们星期六去还是星期天去 ? « on y va samedi ou dimanche ? ».\n' +
+      '- Pas de 吗 avec 还是 : la question est déjà signalée.\n' +
+      '\n' +
+      '或者 (huò zhě) = « ou » DANS UNE AFFIRMATION. Décrit des POSSIBILITÉS sans demander de choix.\n' +
+      '- Structure simple : A + 或者 + B.\n' +
+      '- Ex : 我可以坐地铁或者打车 « je peux prendre le métro ou un taxi ».\n' +
+      '- Structure appariée : 或者 A，或者 B (pour insister).\n' +
+      '- Ex : 周末我或者在家休息，或者出去散步 (py zhōu mò wǒ huò zhě zài jiā xiū xi, huò zhě chū qù sàn bù) « le weekend, soit je me repose à la maison, soit je sors marcher ».\n' +
+      '\n' +
+      '或是 (huò shì) : quasi-synonyme de 或者, PLUS FORMEL et fréquent à Taïwan. En Chine continentale à l\'écrit ou dans un contexte soutenu.\n' +
+      '- Ex : 小李晚上或是在家看书，或是在公园散步 « le soir, Xiao Li soit lit à la maison, soit se promène au parc ».\n' +
+      '\n' +
+      'Sans « ou » explicite : à l\'oral détendu, on peut LISTER 2 options avec une pause et une intonation montante.\n' +
+      '- Ex : 我们星期六去，星期天去 ? (à l\'oral, intonation questionnante) « on y va samedi ou dimanche ? ».',
+    bodyEn:
+      'In English, «or» works for both questions and statements. Chinese splits it. 还是 (hái shi) = «or» IN A QUESTION, expects a specific CHOICE: 你喜欢茶还是咖啡? «do you prefer tea or coffee?». No 吗 with 还是 — the question is already marked. 或者 (huò zhě) = «or» IN A STATEMENT, lists POSSIBILITIES without asking for a pick: 我可以坐地铁或者打车. Paired form 或者 A, 或者 B insists: 周末我或者在家休息，或者出去散步 «on weekends, I either rest at home or go for a walk». 或是 (huò shì) is a MORE FORMAL near-synonym of 或者, common in Taiwan and in written mainland Chinese. In casual speech, you can also just LIST 2 options with rising intonation to signal a question: 我们星期六去，星期天去?',
+    items: [
+      { hanzi: '还是', pinyin: 'hái shi', meaning: 'ou (dans une question)', meaningEn: 'or (in a question)', audio: 'audio/hsk2/hsk2_还是.wav' },
+      { hanzi: '或者', pinyin: 'huò zhě', meaning: 'ou (dans une affirmation)', meaningEn: 'or (in a statement)', audio: 'audio/hsk3/hsk3_或者.wav' },
+      { hanzi: '或是', pinyin: 'huò shì', meaning: 'ou (formel / Taïwan)', meaningEn: 'or (formal / Taiwan)', audio: 'audio/hsk3/hsk3_或.wav' },
+      { hanzi: '你喜欢茶还是咖啡', pinyin: 'nǐ xǐ huan chá hái shi kā fēi', meaning: 'tu préfères le thé ou le café ?', meaningEn: 'do you prefer tea or coffee?', audio: 'audio/hsk1/hsk1_咖啡.wav' },
+      { hanzi: '我们星期六去还是星期天去', pinyin: 'wǒ men xīng qī liù qù hái shi xīng qī tiān qù', meaning: 'on y va samedi ou dimanche ?', meaningEn: 'shall we go Saturday or Sunday?', audio: 'audio/hsk1/hsk1_星期六.wav' },
+      { hanzi: '我可以坐地铁或者打车', pinyin: 'wǒ kě yǐ zuò dì tiě huò zhě dǎ chē', meaning: 'je peux prendre le métro ou un taxi', meaningEn: 'I can take the subway or grab a cab', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '周末我或者在家休息，或者出去散步', pinyin: 'zhōu mò wǒ huò zhě zài jiā xiū xi, huò zhě chū qù sàn bù', meaning: 'le weekend, soit je me repose, soit je vais marcher', meaningEn: 'on weekends, either I rest or I go for a walk', audio: 'audio/hsk2/hsk2_休息.wav' }
+    ],
+    tip:
+      'Astuce mnémo : question → 还是 ; affirmation → 或者. Erreur ultra fréquente : dire « 你喜欢茶或者咖啡 ? » ✗ (mixer les deux).',
+    tipEn:
+      'Memory hook: question → 还是; statement → 或者. Super common mistake: saying «你喜欢茶或者咖啡?» ✗ (mixing the two).'
+  },
+  {
+    id: 'a2-choices-yaome-ultimatum',
+    title: '要么...要么... : « soit... soit... » (ultimatum)',
+    titleEn: '要么...要么...: «either... or...» (ultimatum)',
+    body:
+      '要么 (yào me) présente un choix FERME entre 2 (ou plus) options, avec l\'idée « il n\'y a pas d\'autre alternative ».\n' +
+      '\n' +
+      'Ton d\'ultimatum ou de décision importante. Plus fort que 或者 (neutre).\n' +
+      '\n' +
+      'Structure : 要么 + option A，要么 + option B.\n' +
+      '- Ex : 假期要么去海边，要么去爬山，我们总得选一个 (py jià qī yào me qù hǎi biān, yào me qù pá shān, wǒmen zǒng děi xuǎn yí ge) « pour les vacances, soit on va à la mer, soit on va en montagne, il faut choisir ».\n' +
+      '- Ex : 你要么好好学习，要么退学 « soit tu bosses sérieusement, soit tu quittes l\'école ». Ultimatum parent-enfant.\n' +
+      '- Ex : 要么现在做，要么永远别做 « soit tu le fais maintenant, soit tu ne le fais jamais ».\n' +
+      '\n' +
+      'Extension à 3+ options possible : 要么 A，要么 B，要么 C.\n' +
+      '\n' +
+      'Nuance vs 或者 : 或者 = neutre (« ou »). 要么 = ferme (« soit... soit... et rien d\'autre »).\n' +
+      '\n' +
+      'Nuance vs 还是 : 还是 pose une QUESTION (« lequel ? »). 要么 présente les OPTIONS mais dans une phrase déclarative.',
+    bodyEn:
+      '要么 (yào me) presents a FIRM choice between 2 (or more) options: «there\'s no other alternative». Ultimatum or important decision tone. Stronger than the neutral 或者. Structure: 要么 + A, 要么 + B. Ex: 假期要么去海边，要么去爬山，我们总得选一个 «for the holidays, either the sea or the mountains, we have to pick one». Ex: 你要么好好学习，要么退学 «either you study seriously, or you drop out» — parent-child ultimatum. Ex: 要么现在做，要么永远别做 «either do it now or never». Extends to 3+ options: 要么 A, 要么 B, 要么 C. Nuance vs 或者: 或者 is neutral; 要么 is firm. Nuance vs 还是: 还是 asks a QUESTION; 要么 declares OPTIONS.',
+    items: [
+      { hanzi: '要么', pinyin: 'yào me', meaning: 'soit... (choix ferme)', meaningEn: 'either... (firm choice)', audio: 'audio/hsk4/hsk4_要么.wav' },
+      { hanzi: '要么...要么...', pinyin: 'yào me ... yào me ...', meaning: 'soit... soit...', meaningEn: 'either... or...', audio: 'audio/hsk4/hsk4_要么.wav' },
+      { hanzi: '假期要么去海边，要么去爬山', pinyin: 'jià qī yào me qù hǎi biān, yào me qù pá shān', meaning: 'les vacances, soit la mer soit la montagne', meaningEn: 'holidays: either the sea or the mountains', audio: 'audio/hsk3/hsk3_爬山.wav' },
+      { hanzi: '你要么好好学习，要么退学', pinyin: 'nǐ yào me hǎo hǎo xué xí, yào me tuì xué', meaning: 'soit tu bosses, soit tu quittes l\'école', meaningEn: 'either you study hard, or you drop out', audio: 'audio/hsk2/hsk2_学习.wav' },
+      { hanzi: '要么现在做，要么永远别做', pinyin: 'yào me xiàn zài zuò, yào me yǒng yuǎn bié zuò', meaning: 'soit maintenant, soit jamais', meaningEn: 'either now or never', audio: 'audio/hsk4/hsk4_永远.wav' },
+      { hanzi: '总得选一个', pinyin: 'zǒng děi xuǎn yí ge', meaning: 'il faut bien en choisir un', meaningEn: 'have to pick one', audio: 'audio/hsk3/hsk3_选.wav' }
+    ],
+    tip:
+      'Astuce : quand tu veux insister « il n\'y a que ces 2 options », c\'est 要么. Utile pour poser des limites claires.',
+    tipEn:
+      'Tip: when you want to insist «only these 2 options exist», use 要么. Good for setting clear limits.'
+  },
+  {
+    id: 'a2-choices-bushi-jiushi-huo-huo',
+    title: '不是...就是... (habitude) + 或...或... (littéraire)',
+    titleEn: '不是...就是... (habit) + 或...或... (literary)',
+    body:
+      '不是 A 就是 B (bú shi... jiù shi...) = « si ce n\'est pas A, alors c\'est B ». Décrit une HABITUDE ou un pattern récurrent où seulement 2 possibilités existent.\n' +
+      '- Structure : 不是 + option A + 就是 + option B.\n' +
+      '- Ex : 周末他们不是出去郊游，就是在家休息 (py zhōu mò tā men bú shi chū qù jiāo yóu, jiù shi zài jiā xiū xi) « le weekend, soit ils sortent se promener, soit ils se reposent à la maison ». Tu décris leurs habitudes.\n' +
+      '- Ex : 他吃饭不是吃面就是吃饭 « pour manger, il prend soit des nouilles soit du riz ». Prévisible.\n' +
+      '- Ex : 广州的天气不是晴天就是下雨 « à Canton, il fait soit beau soit il pleut ». Description de climat typique.\n' +
+      '\n' +
+      'Nuance clé vs 要么 :\n' +
+      '- 要么 A 要么 B = tu PRÉSENTES un choix à faire.\n' +
+      '- 不是 A 就是 B = tu DÉCRIS une habitude ou prédiction, sans exiger de choix.\n' +
+      '\n' +
+      '或...或... (huò... huò...) = « soit... soit... » FORMEL/LITTÉRAIRE. Chinois écrit, presse, contexte académique.\n' +
+      '- Structure : 或 + option A，或 + option B. Sans redoublement (contrairement à 或者).\n' +
+      '- Ex : 运动会上，同学们或参加跑步，或参加跳高 (py yùn dòng huì shàng, tóng xué men huò cān jiā pǎo bù, huò cān jiā tiào gāo) « au meeting sportif, les élèves participaient soit à la course, soit au saut en hauteur ». Ton descriptif élégant.\n' +
+      '- Décrit souvent des CATÉGORIES parallèles (les uns... les autres...).\n' +
+      '- À l\'oral décontracté, on préfère 有的...有的... (« certains... d\'autres... »).\n' +
+      '\n' +
+      'Recap des 5 patterns vus jusqu\'ici :\n' +
+      '- 还是 (question, choix demandé).\n' +
+      '- 或者/或是 (affirmation, possibilités neutres).\n' +
+      '- 要么 A 要么 B (ultimatum, choix imposé).\n' +
+      '- 不是 A 就是 B (habitude prévisible).\n' +
+      '- 或 A 或 B (littéraire, catégories parallèles).',
+    bodyEn:
+      '不是 A 就是 B (bú shi... jiù shi...) = «if not A, then B». Describes a HABIT or predictable pattern with only 2 possibilities. Ex: 周末他们不是出去郊游，就是在家休息 «on weekends, they either go for a walk or rest at home». You describe their habits. Ex: 他吃饭不是吃面就是吃饭 «for meals, he has either noodles or rice» — predictable. Ex: 广州的天气不是晴天就是下雨 «Canton weather is either sunny or rainy». Key nuance vs 要么: 要么 A 要么 B PRESENTS a choice; 不是 A 就是 B DESCRIBES a habit or prediction, no choice required. 或...或... (huò... huò...) = FORMAL/LITERARY «either... or...». Written Chinese, press, academic contexts. Structure: 或 + A, 或 + B (no doubling like 或者). Ex: 运动会上，同学们或参加跑步，或参加跳高. Often describes PARALLEL CATEGORIES (some... others...). In casual speech, use 有的...有的... instead. Recap of 5 patterns: 还是 (question), 或者/或是 (statement, neutral), 要么 A 要么 B (ultimatum), 不是 A 就是 B (habit), 或 A 或 B (literary).',
+    items: [
+      { hanzi: '不是...就是...', pinyin: 'bú shi ... jiù shi ...', meaning: 'si ce n\'est pas... alors c\'est...', meaningEn: 'if not... then...', audio: 'audio/hsk1/hsk1_不是.wav' },
+      { hanzi: '或...或...', pinyin: 'huò ... huò ...', meaning: 'soit... soit... (formel)', meaningEn: 'either... or... (formal)', audio: 'audio/hsk3/hsk3_或.wav' },
+      { hanzi: '周末他们不是出去郊游，就是在家休息', pinyin: 'zhōu mò tā men bú shi chū qù jiāo yóu, jiù shi zài jiā xiū xi', meaning: 'le weekend, ils sortent se promener ou se reposent', meaningEn: 'on weekends, they either go out or rest at home', audio: 'audio/hsk2/hsk2_休息.wav' },
+      { hanzi: '广州的天气不是晴天就是下雨', pinyin: 'guǎng zhōu de tiān qì bú shi qíng tiān jiù shi xià yǔ', meaning: 'à Canton, il fait beau ou il pleut', meaningEn: 'in Canton, it\'s either sunny or rainy', audio: 'audio/hsk2/hsk2_天气.wav' },
+      { hanzi: '运动会上，同学们或参加跑步，或参加跳高', pinyin: 'yùn dòng huì shàng, tóng xué men huò cān jiā pǎo bù, huò cān jiā tiào gāo', meaning: 'au meeting sportif, soit course soit saut en hauteur', meaningEn: 'at the sports meet, either running or high jump', audio: 'audio/hsk2/hsk2_跑步.wav' },
+      { hanzi: '有的...有的...', pinyin: 'yǒu de ... yǒu de ...', meaning: 'certains... d\'autres...', meaningEn: 'some... others...', audio: 'audio/hsk3/hsk3_有的.wav' }
+    ],
+    tip:
+      'Astuce : chaque pattern porte un TON. Question douce → 还是. Neutre → 或者. Ferme → 要么. Habituel → 不是...就是. Formel → 或...或.',
+    tipEn:
+      'Tip: each pattern carries a TONE. Soft question → 还是. Neutral → 或者. Firm → 要么. Habitual → 不是...就是. Formal → 或...或.'
+  }
+];

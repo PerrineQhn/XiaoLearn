@@ -3978,3 +3978,157 @@ export const b12NuancesNeAdvancedLearnSections: LessonV2LearnSection[] = [
       'Tip: perfect for deflating a pretension without being outright rude. One of the liveliest turns of spoken Chinese.'
   }
 ];
+
+// --- cecr-b12-nuances-m17 — Exprimer un choix : avancé (CGG #75 + #76) ----
+export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-choices-ningke-yebu',
+    title: '宁可/宁愿...也不... : « plutôt X que Y » (préférence forte)',
+    titleEn: '宁可/宁愿...也不...: «rather X than Y» (strong preference)',
+    body:
+      'Pattern pour exprimer une PRÉFÉRENCE FORTE quand les 2 options sont peu attractives : « plutôt A que B ». On choisit le moindre mal.\n' +
+      '\n' +
+      'Structure : sujet + 宁可 / 宁愿 + action A，也不 + action B.\n' +
+      '\n' +
+      '宁可 (nìng kě) et 宁愿 (nìng yuàn) sont largement interchangeables. 宁愿 sonne un poil plus formel/expressif.\n' +
+      '\n' +
+      '- Ex : 她宁愿少赚点钱，也不愿违背良心 (py tā nìng yuàn shǎo zhuàn diǎn qián, yě bù yuàn wéi bèi liáng xīn) « elle préfère gagner moins d\'argent que trahir sa conscience ». Choix moral.\n' +
+      '- Ex : 我宁可自己吃苦，也不让家人受累 « je préfère souffrir moi-même plutôt que faire souffrir ma famille ». Sacrifice personnel.\n' +
+      '- Ex : 他宁愿走路，也不坐爸爸的车 « il préfère marcher plutôt que monter dans la voiture de son père ».\n' +
+      '\n' +
+      'Ton : refus catégorique de la 2e option, souvent enjeu moral ou éthique.\n' +
+      '\n' +
+      'Variante : 宁可/宁愿 A，不 B (sans 也) — version plus courte, orale.\n' +
+      '- Ex : 宁可信其有，不可信其无 « mieux vaut y croire que ne pas y croire » (chengyu, référence aux superstitions).',
+    bodyEn:
+      'Pattern for STRONG PREFERENCE when both options are unappealing: «rather A than B» — you pick the lesser evil. Structure: subject + 宁可 / 宁愿 + action A, 也不 + action B. 宁可 (nìng kě) and 宁愿 (nìng yuàn) are largely interchangeable. 宁愿 sounds a touch more formal/expressive. Ex: 她宁愿少赚点钱，也不愿违背良心 «she\'d rather earn less than betray her conscience» — moral stakes. Ex: 我宁可自己吃苦，也不让家人受累 «I\'d rather suffer myself than burden my family» — personal sacrifice. Ex: 他宁愿走路，也不坐爸爸的车 «he\'d rather walk than get in his dad\'s car». Tone: flat rejection of option 2, often ethical stakes. Shortened variant: 宁可/宁愿 A, 不 B (no 也) — punchier, oral. Ex: 宁可信其有，不可信其无 «better to believe it than not» — famous chengyu on superstitions.',
+    items: [
+      { hanzi: '宁可', pinyin: 'nìng kě', meaning: 'plutôt (que)', meaningEn: 'rather (than)', audio: 'audio/hsk5/hsk5_宁可.wav' },
+      { hanzi: '宁愿', pinyin: 'nìng yuàn', meaning: 'préférer plutôt', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
+      { hanzi: '也不', pinyin: 'yě bù', meaning: 'plutôt que de', meaningEn: 'rather than', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '她宁愿少赚点钱，也不愿违背良心', pinyin: 'tā nìng yuàn shǎo zhuàn diǎn qián, yě bù yuàn wéi bèi liáng xīn', meaning: 'elle préfère gagner moins que trahir sa conscience', meaningEn: 'she\'d rather earn less than betray her conscience', audio: 'audio/hsk5/hsk5_良心.wav' },
+      { hanzi: '我宁可自己吃苦，也不让家人受累', pinyin: 'wǒ nìng kě zì jǐ chī kǔ, yě bù ràng jiā rén shòu lèi', meaning: 'je préfère souffrir plutôt que faire souffrir ma famille', meaningEn: 'I\'d rather suffer than burden my family', audio: 'audio/hsk4/hsk4_吃苦.wav' },
+      { hanzi: '他宁愿走路，也不坐爸爸的车', pinyin: 'tā nìng yuàn zǒu lù, yě bù zuò bà ba de chē', meaning: 'il préfère marcher plutôt que monter dans la voiture', meaningEn: 'he\'d rather walk than take his dad\'s car', audio: 'audio/hsk2/hsk2_走路.wav' },
+      { hanzi: '宁可信其有，不可信其无', pinyin: 'nìng kě xìn qí yǒu, bù kě xìn qí wú', meaning: 'mieux vaut y croire que ne pas y croire', meaningEn: 'better to believe it than not', audio: 'audio/hsk4/hsk4_相信.wav' }
+    ],
+    tip:
+      'Astuce : ce pattern révèle des VALEURS PROFONDES. À utiliser quand l\'enjeu est vraiment important. Ne pas l\'utiliser pour « je préfère du thé au café » (trop dramatique).',
+    tipEn:
+      'Tip: this pattern reveals DEEP VALUES. Use when stakes are real. Don\'t use for «I prefer tea over coffee» (way too dramatic).'
+  },
+  {
+    id: 'b12-choices-yuqi-buru',
+    title: '与其...不如... : « plutôt que A, mieux vaut B » (jugement)',
+    titleEn: '与其...不如...: «rather than A, better B» (judgment)',
+    body:
+      'Pattern pour JUGER qu\'une option B est objectivement MEILLEURE que A. Utile pour donner un conseil ou recommander.\n' +
+      '\n' +
+      'Structure : 与其 + [option A]，不如 + [option B].\n' +
+      '\n' +
+      '与其 (yǔ qí) introduit l\'option MOINS bonne. 不如 (bù rú) introduit la RECOMMANDÉE.\n' +
+      '\n' +
+      '- Ex : 与其堵在路上着急，不如坐地铁去吧 (py yǔ qí dǔ zài lù shang zháo jí, bù rú zuò dì tiě qù ba) « plutôt que s\'énerver dans les bouchons, autant prendre le métro ». Suggestion pragmatique. Le 吧 en fin adoucit.\n' +
+      '- Ex : 与其一个人在家难过，不如出去散散步 « plutôt que rester triste seul à la maison, sors donc marcher un peu ». Conseil bienveillant.\n' +
+      '\n' +
+      'Renforcements : 倒不如 (dào bù rú) ou 还不如 (hái bù rú) pour insister sur « il vaut CARRÉMENT mieux ».\n' +
+      '- Ex : 与其等他，倒不如自己去 « plutôt qu\'attendre lui, autant y aller soi-même ».\n' +
+      '\n' +
+      'Nuance vs 宁可...也不 :\n' +
+      '- 与其...不如 = JUGEMENT objectif (« B est mieux que A »).\n' +
+      '- 宁可...也不 = PRÉFÉRENCE personnelle (« je préfère A à B »).\n' +
+      '\n' +
+      'Variante avec préférence : 与其...宁可/宁愿... = « plutôt que A, je préfère B ». Combine analyse et préférence personnelle.\n' +
+      '- Ex : 与其看那部没营养的电影，我宁愿在家睡觉 (py yǔ qí kàn nà bù méi yíng yǎng de diàn yǐng, wǒ nìng yuàn zài jiā shuì jiào) « plutôt que regarder ce film sans intérêt, je préfère dormir chez moi ». Ton délibératif.',
+    bodyEn:
+      'Pattern for JUDGING option B objectively BETTER than A. Great for advising or recommending. Structure: 与其 + [A], 不如 + [B]. 与其 introduces the WORSE option; 不如 introduces the RECOMMENDED one. Ex: 与其堵在路上着急，不如坐地铁去吧 «rather than fume in traffic, let\'s just take the subway» — pragmatic suggestion, 吧 softens. Ex: 与其一个人在家难过，不如出去散散步 «rather than mope alone, go for a walk» — caring advice. Intensifiers: 倒不如 (dào bù rú) or 还不如 (hái bù rú) push «it\'s DEFINITELY better»: 与其等他，倒不如自己去. Nuance vs 宁可...也不: 与其...不如 = objective JUDGMENT; 宁可...也不 = personal PREFERENCE. Combo variant 与其...宁可/宁愿... mixes analysis and preference: 与其看那部没营养的电影，我宁愿在家睡觉 «rather than watch that empty movie, I\'d rather sleep at home».',
+    items: [
+      { hanzi: '与其', pinyin: 'yǔ qí', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk5/hsk5_与其.wav' },
+      { hanzi: '不如', pinyin: 'bù rú', meaning: 'autant / mieux vaut', meaningEn: 'better to / not as good as', audio: 'audio/hsk4/hsk4_不如.wav' },
+      { hanzi: '倒不如', pinyin: 'dào bù rú', meaning: 'il vaut carrément mieux', meaningEn: 'far better to', audio: 'audio/hsk4/hsk4_不如.wav' },
+      { hanzi: '与其堵在路上着急，不如坐地铁去吧', pinyin: 'yǔ qí dǔ zài lù shang zháo jí, bù rú zuò dì tiě qù ba', meaning: 'plutôt qu\'être coincé, autant prendre le métro', meaningEn: 'rather than being stuck, just take the subway', audio: 'audio/hsk3/hsk3_地铁.wav' },
+      { hanzi: '与其一个人在家难过，不如出去散散步', pinyin: 'yǔ qí yí ge rén zài jiā nán guò, bù rú chū qù sàn sàn bù', meaning: 'plutôt que déprimer, sors marcher un peu', meaningEn: 'rather than mope alone, go walk a bit', audio: 'audio/hsk3/hsk3_散步.wav' },
+      { hanzi: '与其等他，倒不如自己去', pinyin: 'yǔ qí děng tā, dào bù rú zì jǐ qù', meaning: 'plutôt que l\'attendre, autant y aller seul', meaningEn: 'rather than wait for him, just go yourself', audio: 'audio/hsk2/hsk2_等.wav' },
+      { hanzi: '与其看那部没营养的电影，我宁愿在家睡觉', pinyin: 'yǔ qí kàn nà bù méi yíng yǎng de diàn yǐng, wǒ nìng yuàn zài jiā shuì jiào', meaning: 'plutôt que ce film vide, je préfère dormir', meaningEn: 'rather than that empty movie, I\'d rather sleep', audio: 'audio/hsk1/hsk1_电影.wav' }
+    ],
+    tip:
+      'Astuce : 与其...不如 est parfait pour conseiller quelqu\'un. Tu compares 2 options, tu recommandes la meilleure.',
+    tipEn:
+      'Tip: 与其...不如 is perfect for advising. Compare 2 options, recommend the better one.'
+  },
+  {
+    id: 'b12-choices-buru-yaobu-suggestions',
+    title: '不如 seul et 要不 : suggérer une alternative',
+    titleEn: '不如 alone and 要不: suggesting an alternative',
+    body:
+      '不如 SEUL (sans 与其) = « et si on... ? / autant... ». Suggestion douce basée sur la situation actuelle.\n' +
+      '\n' +
+      'Structure : [situation actuelle]，不如 + [alternative] + 吧.\n' +
+      '- Ex : 外面太冷了，不如我们在家吃火锅吧 (py wài miàn tài lěng le, bù rú wǒ men zài jiā chī huǒ guō ba) « il fait trop froid dehors, si on faisait plutôt du hot pot à la maison ? ». Le 吧 rend la proposition amicale.\n' +
+      '- Ex : 你不如给他打个电话 « et si tu lui passais un coup de fil ? ».\n' +
+      '\n' +
+      '要不 (yào bu) = « ou sinon... / que dis-tu de... ». Encore plus décontracté, atmosphère de brainstorming.\n' +
+      '\n' +
+      'Contraction de 要不然 (yào bù rán, « si ce n\'est pas ainsi »).\n' +
+      '\n' +
+      'Structure : [situation]，要不 + [suggestion] + (吧/?).\n' +
+      '- Ex : 今天有点累，要不我们改天再见 ? (py jīn tiān yǒu diǎn lèi, yào bù wǒmen gǎi tiān zài jiàn) « je suis un peu crevé aujourd\'hui, on se voit un autre jour ? ». Cherche l\'accord.\n' +
+      '- Ex : 我们迷路了，要不问问那个人吧 « on est perdus, si on demandait à ce passant ? ».\n' +
+      '\n' +
+      'Nuances entre les 3 suggestions :\n' +
+      '- 不如 = suggestion réfléchie, « autant... ».\n' +
+      '- 要不 = suggestion spontanée, « et si...? ».\n' +
+      '- 与其...不如 = analyse comparée, « plutôt que... mieux vaut... ».',
+    bodyEn:
+      '不如 ALONE (without 与其) = «what if we... / might as well...». Gentle suggestion based on the current situation. Structure: [current situation], 不如 + [alternative] + 吧. Ex: 外面太冷了，不如我们在家吃火锅吧 «it\'s too cold outside, how about hot pot at home?» — 吧 makes it friendly. Ex: 你不如给他打个电话 «why not give him a call?». 要不 (yào bu) = «or how about... / what if...». Even more casual, brainstorming vibe. Contraction of 要不然 (yào bù rán, «if not this»). Structure: [situation], 要不 + [suggestion] + (吧/?). Ex: 今天有点累，要不我们改天再见? «I\'m tired today, shall we meet another day?» — seeks agreement. Ex: 我们迷路了，要不问问那个人吧 «we\'re lost, how about asking that person?». Nuances between the 3 suggestions: 不如 = thoughtful, «might as well»; 要不 = spontaneous, «what if?»; 与其...不如 = comparative analysis, «rather than... better...».',
+    items: [
+      { hanzi: '不如', pinyin: 'bù rú', meaning: 'et si... / autant...', meaningEn: 'how about / might as well', audio: 'audio/hsk4/hsk4_不如.wav' },
+      { hanzi: '要不', pinyin: 'yào bu', meaning: 'ou sinon / et si', meaningEn: 'or how about / what if', audio: 'audio/hsk3/hsk3_要不.wav' },
+      { hanzi: '要不然', pinyin: 'yào bù rán', meaning: 'sinon, si ce n\'est ainsi', meaningEn: 'otherwise, if not', audio: 'audio/hsk4/hsk4_要不然.wav' },
+      { hanzi: '外面太冷了，不如我们在家吃火锅吧', pinyin: 'wài miàn tài lěng le, bù rú wǒ men zài jiā chī huǒ guō ba', meaning: 'trop froid dehors, si on faisait un hot pot ?', meaningEn: 'too cold outside, how about hot pot at home?', audio: 'audio/hsk4/hsk4_火锅.wav' },
+      { hanzi: '你不如给他打个电话', pinyin: 'nǐ bù rú gěi tā dǎ ge diàn huà', meaning: 'et si tu lui passais un coup de fil ?', meaningEn: 'why not give him a call?', audio: 'audio/hsk1/hsk1_电话.wav' },
+      { hanzi: '今天有点累，要不我们改天再见', pinyin: 'jīn tiān yǒu diǎn lèi, yào bu wǒ men gǎi tiān zài jiàn', meaning: 'un peu crevé, on se voit un autre jour ?', meaningEn: 'a bit tired, another day?', audio: 'audio/hsk3/hsk3_改天.wav' },
+      { hanzi: '我们迷路了，要不问问那个人吧', pinyin: 'wǒ men mí lù le, yào bu wèn wen nà ge rén ba', meaning: 'on est perdus, si on demandait à ce passant ?', meaningEn: 'we\'re lost, how about asking that person?', audio: 'audio/hsk4/hsk4_迷路.wav' }
+    ],
+    tip:
+      'Astuce : 要不 est ULTRA fréquent à l\'oral. Chaque fois que tu proposes un plan B, il fait le job.',
+    tipEn:
+      'Tip: 要不 is SUPER frequent in speech. Anytime you float a plan B, it fits.'
+  },
+  {
+    id: 'b12-choices-haishi-ba-thoughtful',
+    title: '还是...吧 : « en fin de compte, ... » (décision réfléchie)',
+    titleEn: '还是...吧: «in the end, ...» (thoughtful decision)',
+    body:
+      'Attention : ce 还是 n\'est PAS le 还是 des questions (« ou »). C\'est un ADVERBE qui signifie « après réflexion / au final / plutôt ».\n' +
+      '\n' +
+      'Sens : après avoir pesé les options, on conclut sur la meilleure.\n' +
+      '\n' +
+      'Structure : sujet + 还是 + verbe/action + 吧.\n' +
+      '- Ex : 太晚了，你还是打车回家吧 (py tài wǎn le, nǐ hái shi dǎ chē huí jiā ba) « il est tard, prends plutôt un taxi pour rentrer ». Ton bienveillant, réfléchi.\n' +
+      '- Ex : 天气不好，我们还是别去了吧 « le temps est mauvais, autant ne pas y aller ». Décision de reculer.\n' +
+      '- Ex : 这个太贵了，还是买那个吧 « celui-là est trop cher, prends plutôt l\'autre ».\n' +
+      '- Ex : 还是我来吧 (py hái shi wǒ lái ba) « laisse, c\'est moi qui vais le faire ». Prendre le relais.\n' +
+      '\n' +
+      'Nuance : implique qu\'on a PENSÉ à d\'autres possibilités avant de recommander celle-ci. Souvent avec 吧 qui adoucit en suggestion.\n' +
+      '\n' +
+      'Distinction cruciale avec le 还是 « ou » :\n' +
+      '- Question : 你要咖啡还是茶 ? « tu veux café ou thé ? ». Le 还是 lie 2 options.\n' +
+      '- Décision : 你还是喝茶吧 « prends plutôt du thé ». Le 还是 est adverbe.\n' +
+      '\n' +
+      'Combiné avec un verbe modal : 我们还是应该... « on ferait bien de... ». Recommandation adoucie.',
+    bodyEn:
+      'Careful: this 还是 is NOT the question 还是 («or»). It\'s an ADVERB meaning «after reflection / in the end / rather». Sense: having weighed options, you land on the best one. Structure: subject + 还是 + verb/action + 吧. Ex: 太晚了，你还是打车回家吧 «it\'s late, better grab a taxi home» — caring, thoughtful. Ex: 天气不好，我们还是别去了吧 «weather\'s bad, better not go» — decision to pull back. Ex: 这个太贵了，还是买那个吧 «this one is too expensive, better get that one». Ex: 还是我来吧 «let me handle it» — stepping in. Nuance: implies you CONSIDERED other options before recommending this. Often paired with 吧 to soften into a suggestion. Crucial distinction with question 还是: Question: 你要咖啡还是茶? — 还是 links 2 options. Decision: 你还是喝茶吧 — 还是 is an adverb. Modal combo: 我们还是应该... «we\'d better...» — softened recommendation.',
+    items: [
+      { hanzi: '还是...吧', pinyin: 'hái shi ... ba', meaning: 'plutôt / au final, ...', meaningEn: 'better / in the end, ...', audio: 'audio/hsk2/hsk2_还是.wav' },
+      { hanzi: '太晚了，你还是打车回家吧', pinyin: 'tài wǎn le, nǐ hái shi dǎ chē huí jiā ba', meaning: 'il est tard, prends un taxi', meaningEn: 'it\'s late, better take a taxi home', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '天气不好，我们还是别去了吧', pinyin: 'tiān qì bù hǎo, wǒ men hái shi bié qù le ba', meaning: 'temps pourri, autant ne pas y aller', meaningEn: 'bad weather, better not go', audio: 'audio/hsk2/hsk2_天气.wav' },
+      { hanzi: '这个太贵了，还是买那个吧', pinyin: 'zhè ge tài guì le, hái shi mǎi nà ge ba', meaning: 'trop cher, achète plutôt l\'autre', meaningEn: 'too expensive, get that one instead', audio: 'audio/hsk2/hsk2_贵.wav' },
+      { hanzi: '还是我来吧', pinyin: 'hái shi wǒ lái ba', meaning: 'laisse, je m\'en occupe', meaningEn: 'let me handle it', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '我们还是应该...', pinyin: 'wǒ men hái shi yīng gāi ...', meaning: 'on ferait bien de...', meaningEn: 'we\'d better...', audio: 'audio/hsk3/hsk3_应该.wav' }
+    ],
+    tip:
+      'Astuce : dans une conversation, si tu proposes une action après avoir réfléchi, 还是 + verbe + 吧 est parfait. Sonne mature et pesé, pas impulsif.',
+    tipEn:
+      'Tip: in conversation, when you suggest an action after thinking, 还是 + verb + 吧 fits perfectly. Sounds mature and considered, not impulsive.'
+  }
+];

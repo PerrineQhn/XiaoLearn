@@ -134,6 +134,7 @@ import {
   a2GrammarDurationComplementsLearnSections,
   a2GrammarSentenceParticlesLearnSections,
   a2NuancesNeBasicsLearnSections,
+  a2NuancesChoicesBasicsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -242,6 +243,7 @@ import {
   b12NuancesGuoranJingranLearnSections,
   b12NuancesSentenceParticlesAdvancedLearnSections,
   b12NuancesNeAdvancedLearnSections,
+  b12NuancesChoicesAdvancedLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3602,6 +3604,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["呢", "你呢", "还早呢", "谁呢", "我呢", "怎么办呢"],
         quizQuestions: 10,
         learnSections: a2NuancesNeBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m19",
+        title: "Exprimer un choix : 还是, 或者, 要么, 不是...就是",
+        titleEn: "Expressing choices: 还是, 或者, 要么, 不是...就是",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["choice", "conjunction", "cecr:a2"],
+        introduction: {
+          title: "Exprimer un choix : les 5 patterns de base",
+          titleEn: "Expressing a choice: the 5 base patterns",
+          content: "Là où le français se contente d'un « ou » universel, le chinois distribue le rôle sur plusieurs mots selon le ton et la fonction. 还是 pour les questions (« thé ou café ? »), 或者/或是 pour les possibilités neutres en affirmation, 要么...要么 pour poser un ultimatum, 不是...就是 pour décrire une habitude prévisible, et enfin 或...或 dans un registre littéraire. Cette leçon fixe l'usage précis de chacun pour éviter le piège classique « 你喜欢茶或者咖啡 ? » ✗.",
+          contentEn: "Where English relies on a single «or», Chinese spreads the job across several words by tone and function. 还是 for questions («tea or coffee?»), 或者/或是 for neutral possibilities in statements, 要么...要么 for ultimatums, 不是...就是 for describing a predictable habit, and 或...或 in literary register. This lesson pins down each usage so you avoid the classic trap «你喜欢茶或者咖啡?» ✗.",
+          objectives: [
+            "Choisir 还是 (question) vs 或者/或是 (affirmation) sans se tromper",
+            "Poser un ultimatum avec 要么...要么...",
+            "Décrire une habitude prévisible avec 不是...就是...",
+            "Reconnaître le 或...或 littéraire face à l'oral 有的...有的..."
+          ],
+          objectivesEn: [
+            "Pick 还是 (question) vs 或者/或是 (statement) reliably",
+            "Set an ultimatum with 要么...要么...",
+            "Describe a predictable habit with 不是...就是...",
+            "Spot literary 或...或 vs spoken 有的...有的..."
+          ]
+        },
+        flashcards: ["还是", "或者", "或是", "要么", "不是", "就是"],
+        quizQuestions: 10,
+        learnSections: a2NuancesChoicesBasicsLearnSections
       }
     ]
   },
@@ -6717,6 +6748,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["在...呢", "还是...呢", "还...呢", "正在", "还名牌儿呢", "还朋友呢"],
         quizQuestions: 10,
         learnSections: b12NuancesNeAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m17",
+        title: "Choix avancés : 宁可, 与其...不如, 不如, 要不, 还是...吧",
+        titleEn: "Advanced choices: 宁可, 与其...不如, 不如, 要不, 还是...吧",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["choice", "conjunction", "cecr:b12"],
+        introduction: {
+          title: "Choix avancés : préférences fortes et suggestions nuancées",
+          titleEn: "Advanced choices: strong preferences and nuanced suggestions",
+          content: "Après les 5 patterns de base, le chinois offre des tournures fines pour peser un choix. 宁可/宁愿...也不 exprime une préférence forte, souvent à enjeu moral (« plutôt A que B »). 与其...不如 juge objectivement qu'une option est meilleure (« plutôt que A, mieux vaut B »). 不如 seul et 要不 servent à SUGGÉRER une alternative en douceur, très oraux. Enfin, 还是...吧 (adverbe, pas « ou »!) marque une décision réfléchie après avoir pesé les options. Cette leçon fixe les tons et les contextes de chaque tournure.",
+          contentEn: "Beyond the 5 base patterns, Chinese offers finer turns for weighing a choice. 宁可/宁愿...也不 expresses strong preference, often with moral stakes («rather A than B»). 与其...不如 gives an objective judgment («rather than A, better B»). 不如 alone and 要不 softly SUGGEST an alternative, both very oral. Finally, 还是...吧 (adverb, not «or»!) marks a thoughtful decision after weighing options. This lesson pins down each tone and context.",
+          objectives: [
+            "Utiliser 宁可/宁愿...也不 pour une préférence à enjeu fort",
+            "Recommander avec 与其...不如... et intensifier avec 倒不如/还不如",
+            "Suggérer en douceur avec 不如... 吧 et 要不... (吧/?)",
+            "Distinguer le 还是 « ou » de l'adverbe 还是...吧 (décision réfléchie)"
+          ],
+          objectivesEn: [
+            "Use 宁可/宁愿...也不 for high-stakes preference",
+            "Recommend with 与其...不如... and intensify via 倒不如/还不如",
+            "Softly suggest with 不如... 吧 and 要不... (吧/?)",
+            "Tell apart the «or» 还是 from the adverbial 还是...吧 (thoughtful decision)"
+          ]
+        },
+        flashcards: ["宁可", "宁愿", "与其", "不如", "要不", "还是...吧", "倒不如"],
+        quizQuestions: 10,
+        learnSections: b12NuancesChoicesAdvancedLearnSections
       }
     ]
   },
