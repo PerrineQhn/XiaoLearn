@@ -2516,3 +2516,129 @@ export const b11GrammarConditionalLearnSections: LessonV2LearnSection[] = [
       'To pick: 就 = direct neutral, 那/那么 = soft and reactive, 请 = polite and professional. You can also omit everything if the result is obvious.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Grammaire B1.1 — Réduplication verbes/adjectifs + patterns temporels/progressifs
+// (cecr-b11-grammar-redup-m1)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b11GrammarReduplicationProgressiveLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-grammar-verb-reduplication',
+    title: 'Réduplication de verbes : « essayer un peu, un petit... »',
+    titleEn: 'Verb reduplication: «try a bit, a little...»',
+    body:
+      'Redoubler un verbe adoucit l\'action et lui donne un aspect BRIEF, ESSAI, ou TENTATIVE. Sens : « un petit peu, essayer de... ».\n' +
+      '\n' +
+      'Structures selon le type de verbe :\n' +
+      '- Verbe monosyllabique : V + V ou V + 一 + V (identiques). Ex : 看看 (kàn kan) « jeter un œil », 看一看 (même sens).\n' +
+      '- Verbe dissyllabique : VV en un bloc, sans 一 entre. Ex : 休息休息 (xiū xi xiū xi) « se reposer un peu ». 讨论讨论 (tǎo lùn tǎo lùn) « discuter un peu ».\n' +
+      '\n' +
+      'Sens et effets :\n' +
+      '1) Adoucir la demande : 你看看这个 (nǐ kàn kan zhè ge) « jette un œil à ça » (moins direct que 你看这个).\n' +
+      '2) Essayer, tenter : 你试试 (nǐ shì shi) « essaie voir ». Le pattern 试试看 (shì shi kàn) est très courant.\n' +
+      '3) Action brève, sans engagement : 我想想 (wǒ xiǎng xiang) « je réfléchis un peu » (plus doux que 我想).\n' +
+      '\n' +
+      'Attention au ton : le 2e verbe se prononce en ton NEUTRE (kàn kan, pas kàn kàn).\n' +
+      '\n' +
+      'Pattern V + 一下 : équivalent proche de la réduplication. Ex : 看一下 = 看看 ≈ « jeter un œil ». 一下 marche avec les verbes qui NE se rédupliquent PAS bien.\n' +
+      '- Ex : 我等一下 (wǒ děng yí xià) « j\'attends une petite seconde ».\n' +
+      '\n' +
+      'Ne pas confondre avec : la réduplication d\'adjectifs (section suivante), qui a un sens différent.',
+    bodyEn:
+      'Reduplicating a verb softens the action and gives it a BRIEF, TRY, or TENTATIVE aspect. Meaning: «a little bit, try to...». Structures by verb type: Monosyllabic verb: V + V or V + 一 + V (same). Ex: 看看 (kàn kan) «take a look», 看一看 (same). Disyllabic verb: VV in one block, no 一 between. Ex: 休息休息 «rest a bit». 讨论讨论 «discuss a bit». Meanings/effects: (1) Soften request: 你看看这个 «take a look at this» (less direct than 你看这个). (2) Try, attempt: 你试试 «give it a try». 试试看 pattern is very common. (3) Brief action, no commitment: 我想想 «let me think a bit» (softer than 我想). Tone caution: 2nd verb is NEUTRAL tone (kàn kan, not kàn kàn). V + 一下 pattern: close equivalent of reduplication. Ex: 看一下 = 看看 ≈ «take a look». 一下 works with verbs that don\'t reduplicate well. Ex: 我等一下 «I\'ll wait a sec». Don\'t confuse with adjective reduplication (next section) — different meaning.',
+    items: [
+      { hanzi: '看看', pinyin: 'kàn kan', meaning: 'jeter un œil', meaningEn: 'take a look', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '试试', pinyin: 'shì shi', meaning: 'essayer un peu', meaningEn: 'give it a try', audio: 'audio/hsk3/hsk3_试.wav' },
+      { hanzi: '想想', pinyin: 'xiǎng xiang', meaning: 'réfléchir un peu', meaningEn: 'think a bit', audio: 'audio/hsk1/hsk1_想.wav' },
+      { hanzi: '休息休息', pinyin: 'xiū xi xiū xi', meaning: 'se reposer un peu', meaningEn: 'rest a bit', audio: 'audio/hsk2/hsk2_休息.wav' },
+      { hanzi: '讨论讨论', pinyin: 'tǎo lùn tǎo lùn', meaning: 'discuter un peu', meaningEn: 'discuss a bit', audio: 'audio/hsk4/hsk4_讨论.wav' },
+      { hanzi: '一下', pinyin: 'yí xià', meaning: 'un petit peu, une seconde', meaningEn: 'a little bit', audio: 'audio/hsk2/hsk2_一下.wav' },
+      { hanzi: '等一下', pinyin: 'děng yí xià', meaning: 'attendre une seconde', meaningEn: 'wait a sec', audio: 'audio/hsk2/hsk2_等.wav' },
+      { hanzi: '试试看', pinyin: 'shì shi kàn', meaning: 'essaie voir', meaningEn: 'give it a try', audio: 'audio/hsk3/hsk3_试.wav' }
+    ],
+    tip:
+      'Quand tu demandes qch en chinois, redoubler ou ajouter 一下 rend ta phrase 10 fois plus polie. C\'est un des marqueurs de fluidité.',
+    tipEn:
+      'When asking something in Chinese, reduplicating or adding 一下 makes your sentence 10 times more polite. One of the fluency markers.'
+  },
+  {
+    id: 'b11-grammar-adjective-reduplication',
+    title: 'Réduplication d\'adjectifs : « bien, vraiment, très »',
+    titleEn: 'Adjective reduplication: «well, really, very»',
+    body:
+      'Redoubler un adjectif INTENSIFIE et donne un sens VIVANT, imagé. Souvent utilisé pour décrire des scènes ou pour adverbialiser.\n' +
+      '\n' +
+      'Adjectif monosyllabique : AA — devient un adverbe descriptif, souvent suivi de 地.\n' +
+      '- Ex : 慢慢 (màn màn) « lentement, tranquillement ». 慢慢地走 (màn màn de zǒu) « marche tranquillement ».\n' +
+      '- Ex : 好好 (hǎo hǎo) « bien, comme il faut ». 好好休息 (hǎo hǎo xiū xi) « repose-toi bien ».\n' +
+      '- Ex : 高高兴兴 (gāo gao xìng xìng) « joyeusement » (2 adjectifs redoublés en AABB, cf. plus bas).\n' +
+      '\n' +
+      'Adjectif dissyllabique — pattern AABB : chaque syllabe est redoublée. Donne une image vivante et poétique.\n' +
+      '- 高兴 (heureux) → 高高兴兴 « tout content ». Ex : 他高高兴兴地回家了 (tā gāo gao xìng xìng de huí jiā le) « il est rentré tout content ».\n' +
+      '- 干净 (propre) → 干干净净 « impeccable, tout propre ». Ex : 房间干干净净的 (fáng jiān gān gān jìng jìng de) « la pièce est nickel ».\n' +
+      '- 快乐 (joyeux) → 快快乐乐 (kuài kuài lè lè) « très joyeux ».\n' +
+      '- 漂亮 (joli) → 漂漂亮亮 (piào piao liàng liàng) « très joli, tout beau ».\n' +
+      '\n' +
+      'Nuances :\n' +
+      '- AA (monosyllabique) : adverbial, souvent avec 地. Sens de manière.\n' +
+      '- AABB (dissyllabique) : descriptif, souvent en fin de phrase avec 的. Sens de qualité intensifiée, aspect vivant.\n' +
+      '\n' +
+      'Attention : tous les adjectifs ne se rédupliquent pas. Les patterns AABB sont surtout pour les adjectifs concrets et courants.',
+    bodyEn:
+      'Reduplicating an adjective INTENSIFIES and gives a VIVID, image-rich sense. Often used to describe scenes or adverbialize. Monosyllabic adjective: AA — becomes a descriptive adverb, often with 地. Ex: 慢慢 «slowly, easy». 慢慢地走 «walk easy». Ex: 好好 «well, properly». 好好休息 «rest well». Disyllabic adjective — AABB pattern: each syllable is reduplicated. Vivid, poetic image. 高兴 → 高高兴兴 «all happy». Ex: 他高高兴兴地回家了 «he went home all happy». 干净 → 干干净净 «spotless». 快乐 → 快快乐乐 «very joyful». 漂亮 → 漂漂亮亮 «all pretty». Nuances: AA (mono): adverbial, often with 地, manner sense. AABB (disyllabic): descriptive, often sentence-final with 的, intensified quality, vivid feel. Careful: not all adjectives reduplicate. AABB patterns are mainly for concrete common adjectives.',
+    items: [
+      { hanzi: '慢慢', pinyin: 'màn màn', meaning: 'lentement, tranquillement', meaningEn: 'slowly', audio: 'audio/hsk2/hsk2_慢.wav' },
+      { hanzi: '好好', pinyin: 'hǎo hǎo', meaning: 'bien, comme il faut', meaningEn: 'well, properly', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '高高兴兴', pinyin: 'gāo gao xìng xìng', meaning: 'tout content', meaningEn: 'all happy', audio: 'audio/hsk1/hsk1_高兴.wav' },
+      { hanzi: '干干净净', pinyin: 'gān gān jìng jìng', meaning: 'impeccable, nickel', meaningEn: 'spotless', audio: 'audio/hsk3/hsk3_干净.wav' },
+      { hanzi: '快快乐乐', pinyin: 'kuài kuài lè lè', meaning: 'très joyeux', meaningEn: 'very joyful', audio: 'audio/hsk2/hsk2_快乐.wav' },
+      { hanzi: '漂漂亮亮', pinyin: 'piào piao liàng liàng', meaning: 'très joli, tout beau', meaningEn: 'all pretty', audio: 'audio/hsk1/hsk1_漂亮.wav' },
+      { hanzi: '地', pinyin: 'de', meaning: 'particule adverbiale', meaningEn: 'adverbial particle', audio: 'audio/hsk3/hsk3_地.wav' },
+      { hanzi: '的', pinyin: 'de', meaning: 'particule descriptive', meaningEn: 'descriptive particle', audio: 'audio/hsk1/hsk1_的.wav' }
+    ],
+    tip:
+      'La réduplication d\'adjectifs est un des marqueurs les plus « colorés » du chinois oral. Si tu veux décrire une scène avec vivacité, les patterns AA + 地 ou AABB + 的 te donneront un rendu instantanément plus riche.',
+    tipEn:
+      'Adjective reduplication is one of the most «colorful» markers in spoken Chinese. To describe a scene vividly, AA + 地 or AABB + 的 patterns instantly enrich your speech.'
+  },
+  {
+    id: 'b11-grammar-yi-jiu-yuelai-yibian',
+    title: '一...就 (dès que) + 越来越 (de plus en plus) + 一边...一边 (en même temps)',
+    titleEn: '一...就 (as soon as) + 越来越 (more and more) + 一边...一边 (at the same time)',
+    body:
+      '一...就 (yī...jiù) = « dès que... alors ». Structure : 一 + verbe/situation A，就 + résultat/action B. Signale une réaction IMMÉDIATE.\n' +
+      '- Ex : 我一到家就吃饭 (wǒ yí dào jiā jiù chī fàn) « dès que je rentre, je mange ».\n' +
+      '- Ex : 他一喝酒就唱歌 (tā yī hē jiǔ jiù chàng gē) « dès qu\'il boit un verre, il chante ».\n' +
+      '- Ex : 这件事我一听就懂了 (zhè jiàn shì wǒ yī tīng jiù dǒng le) « ce truc, je l\'ai compris dès que je l\'ai entendu ».\n' +
+      '- Attention au ton : 一 devient 2e ton devant 4e ton, 4e ton devant les autres. Ici 一到 (yí dào), 一喝 (yī hē), 一听 (yī tīng).\n' +
+      '\n' +
+      '越来越 (yuè lái yuè) = « de plus en plus... ». Structure : 越来越 + adjectif/verbe.\n' +
+      '- Ex : 天气越来越冷 (tiān qì yuè lái yuè lěng) « le temps devient de plus en plus froid ».\n' +
+      '- Ex : 我越来越喜欢中文 (wǒ yuè lái yuè xǐ huan zhōng wén) « je kiffe le chinois de plus en plus ».\n' +
+      '- Variante : 越...越... (yuè...yuè...) = « plus... plus... ». Ex : 越学越难 (yuè xué yuè nán) « plus on étudie, plus c\'est dur ». Ex : 他越说越生气 (tā yuè shuō yuè shēng qì) « plus il parle, plus il s\'énerve ».\n' +
+      '\n' +
+      '一边...一边 (yī biān...yī biān) = « en même temps, à la fois... et... ». Structure : 一边 + verbe1，一边 + verbe2. Sert à dire qu\'on fait 2 actions SIMULTANÉMENT.\n' +
+      '- Ex : 他一边吃饭一边看电视 (tā yī biān chī fàn yī biān kàn diàn shì) « il mange et regarde la télé en même temps ».\n' +
+      '- Ex : 我一边走路一边听歌 (wǒ yī biān zǒu lù yī biān tīng gē) « je marche en écoutant de la musique ».\n' +
+      '- Version courte : 边...边... (sans le 一) est acceptable à l\'oral rapide.\n' +
+      '\n' +
+      'Attention : 一边...一边 concerne 2 actions du MÊME sujet. Pour 2 actions de sujets différents, on utilise d\'autres structures (同时, 的同时).',
+    bodyEn:
+      '一...就 (yī...jiù) = «as soon as... then». Structure: 一 + verb/situation A, 就 + result B. IMMEDIATE reaction. Ex: 我一到家就吃饭 «as soon as I get home, I eat». Ex: 他一喝酒就唱歌 «as soon as he drinks, he sings». Ex: 这件事我一听就懂了 «I got it as soon as I heard it». Tone note: 一 becomes 2nd tone before 4th tone, 4th tone before others. 越来越 (yuè lái yuè) = «more and more». Structure: 越来越 + adjective/verb. Ex: 天气越来越冷 «weather is getting colder». Ex: 我越来越喜欢中文 «I like Chinese more and more». Variant: 越...越... = «the more... the more...». Ex: 越学越难 «the more you study, the harder». Ex: 他越说越生气 «the more he talks, the angrier he gets». 一边...一边 (yī biān...yī biān) = «at the same time». Structure: 一边 + V1, 一边 + V2. 2 SIMULTANEOUS actions. Ex: 他一边吃饭一边看电视 «he eats and watches TV at the same time». Ex: 我一边走路一边听歌 «I walk while listening to music». Short: 边...边... acceptable in fast speech. Careful: 一边...一边 is for 2 actions of the SAME subject. For 2 different subjects, use 同时, 的同时.',
+    items: [
+      { hanzi: '一...就', pinyin: 'yī...jiù', meaning: 'dès que... alors', meaningEn: 'as soon as... then', audio: 'audio/hsk1/hsk1_就.wav' },
+      { hanzi: '越来越', pinyin: 'yuè lái yuè', meaning: 'de plus en plus', meaningEn: 'more and more', audio: 'audio/hsk3/hsk3_越.wav' },
+      { hanzi: '越...越...', pinyin: 'yuè...yuè...', meaning: 'plus... plus...', meaningEn: 'the more... the more...', audio: 'audio/hsk3/hsk3_越.wav' },
+      { hanzi: '一边', pinyin: 'yī biān', meaning: 'à la fois, en même temps', meaningEn: 'at the same time', audio: 'audio/hsk3/hsk3_一边.wav' },
+      { hanzi: '一到家就', pinyin: 'yí dào jiā jiù', meaning: 'dès que je rentre', meaningEn: 'as soon as I get home', audio: 'audio/hsk2/hsk2_到.wav' },
+      { hanzi: '越来越冷', pinyin: 'yuè lái yuè lěng', meaning: 'de plus en plus froid', meaningEn: 'colder and colder', audio: 'audio/hsk1/hsk1_冷.wav' },
+      { hanzi: '一边吃一边看', pinyin: 'yī biān chī yī biān kàn', meaning: 'manger et regarder en même temps', meaningEn: 'eat and watch at once', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '同时', pinyin: 'tóng shí', meaning: 'en même temps', meaningEn: 'simultaneously', audio: 'audio/hsk3/hsk3_同时.wav' }
+    ],
+    tip:
+      'Ces 3 patterns sont des JETONS de fluidité très utiles à l\'oral. Une fois maîtrisés, tes phrases deviennent plus vivantes et natives.',
+    tipEn:
+      'These 3 patterns are fluency TOKENS very useful in speech. Once mastered, your sentences sound livelier and more native.'
+  }
+];

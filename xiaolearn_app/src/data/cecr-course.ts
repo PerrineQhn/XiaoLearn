@@ -125,6 +125,7 @@ import {
   a2NuancesCommonMistakesLearnSections,
   a2NuancesAlmostBasicsLearnSections,
   a2GrammarMeasureWordsLearnSections,
+  a2GrammarModalsDirectionLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -172,6 +173,7 @@ import {
   b11NuancesHuiNengKeyiLearnSections,
   b11NuancesKaiComplementLearnSections,
   b11GrammarConditionalLearnSections,
+  b11GrammarReduplicationProgressiveLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -2644,6 +2646,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["个", "本", "杯", "碗", "条", "张", "双", "套"],
         quizQuestions: 10,
         learnSections: a2GrammarMeasureWordsLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-m6",
+        title: "Modaux d'obligation + compléments directionnels de base",
+        titleEn: "Obligation modals + basic directional complements",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "grammar", difficulty: "beginner",
+        tags: ["modal", "direction-complement", "grammar", "cecr:a2"],
+        introduction: {
+          title: "Dire « il faut » + savoir aller/venir",
+          titleEn: "Say «must» + know come/go",
+          content: "Deux blocs grammaticaux essentiels du A2 tardif. (1) Les modaux d'obligation : 应该 (conseil doux « devrait »), 得 (děi, nécessité pratique orale « il faut »), 必须 (obligation absolue « OBLIGATOIRE »), 一定要 (insistance émotionnelle « il FAUT absolument »). Échelle : 应该 < 得 < 一定要 < 必须. La négation change de modal — pour 得, on utilise 不用 (pas besoin) et non 不得. (2) Les compléments directionnels 来/去 : 来 = vers le locuteur, 去 = loin du locuteur. Verbes directionnels de base : 进来/进去 (entrer), 出来/出去 (sortir), 回来/回去 (revenir), 过来/过去 (venir/y aller), 起来 (se lever). Composition VERBE + DIRECTIONNEL + 来/去 : 他走进来了 « il est entré à pied vers moi ».",
+          contentEn: "Two essential blocks for late A2. (1) Obligation modals: 应该 (soft advice «should»), 得 (děi, oral practical necessity «gotta»), 必须 (absolute obligation «MUST»), 一定要 (emotional insistence «really must»). Scale: 应该 < 得 < 一定要 < 必须. Negation changes: for 得, use 不用 (no need), not 不得. (2) Directional complements 来/去: 来 = toward speaker, 去 = away. Basic directional verbs: 进来/进去 (enter), 出来/出去 (exit), 回来/回去 (come/go back), 过来/过去 (come/go over), 起来 (rise). Composition VERB + DIRECTIONAL + 来/去: 他走进来了 «he walked in toward me».",
+          objectives: [
+            "Classer 4 modaux d'obligation sur une échelle de force",
+            "Nier correctement (不用 pour 得, 不必 pour 必须)",
+            "Choisir 来 vs 去 selon la position du locuteur",
+            "Composer VERBE + directionnel + 来/去"
+          ],
+          objectivesEn: [
+            "Rank 4 obligation modals on a force scale",
+            "Negate correctly (不用 for 得, 不必 for 必须)",
+            "Pick 来 vs 去 based on speaker position",
+            "Compose VERB + directional + 来/去"
+          ]
+        },
+        flashcards: ["应该", "得", "必须", "一定要", "来", "去", "进来", "回去"],
+        quizQuestions: 10,
+        learnSections: a2GrammarModalsDirectionLearnSections
       }
     ]
   },
@@ -3714,6 +3745,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["如果", "要是", "的话", "就", "那", "那么"],
         quizQuestions: 10,
         learnSections: b11GrammarConditionalLearnSections
+      },
+      {
+        id: "cecr-b11-grammar-redup-m1",
+        title: "Réduplication verbes/adjectifs + 一...就 + 越来越 + 一边...一边",
+        titleEn: "Verb/adj reduplication + 一...就 + 越来越 + 一边...一边",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["reduplication", "grammar", "cecr:b11"],
+        introduction: {
+          title: "Les jetons de fluidité du chinois oral",
+          titleEn: "The fluency tokens of spoken Chinese",
+          content: "Deux familles de patterns qui font passer ton chinois de « scolaire » à « natif ». (1) Réduplication : verbes redoublés (看看 « jeter un œil », 试试 « essaie voir », 休息休息 « repose-toi un peu ») pour adoucir et essayer, avec V + 一下 comme alternative ; adjectifs redoublés monosyllabiques (慢慢地 « lentement ») ou dissyllabiques en AABB (高高兴兴 « tout content ») pour intensifier avec un rendu vivant. (2) Patterns temporels/simultanés : 一...就 (dès que... alors, réaction immédiate), 越来越 (de plus en plus, progression) + variante 越...越..., 一边...一边 (2 actions simultanées du même sujet).",
+          contentEn: "Two pattern families that take your Chinese from «schoolbook» to «native». (1) Reduplication: reduplicated verbs (看看 «take a look», 试试 «give it a try», 休息休息 «rest a bit») to soften and try, with V + 一下 as alternative; reduplicated adjectives, monosyllabic (慢慢地 «slowly») or disyllabic AABB (高高兴兴 «all happy») to intensify with a vivid feel. (2) Temporal/simultaneous patterns: 一...就 (as soon as... then, immediate reaction), 越来越 (more and more, progression) + variant 越...越..., 一边...一边 (2 simultaneous actions from same subject).",
+          objectives: [
+            "Rédupliquer verbes (VV, VVV, V一下) pour adoucir",
+            "Rédupliquer adjectifs (AA + 地, AABB + 的) pour intensifier",
+            "Utiliser 一...就 pour une réaction immédiate",
+            "Combiner 越来越 et 一边...一边 pour la fluidité"
+          ],
+          objectivesEn: [
+            "Reduplicate verbs (VV, VVV, V一下) to soften",
+            "Reduplicate adjectives (AA + 地, AABB + 的) to intensify",
+            "Use 一...就 for immediate reaction",
+            "Combine 越来越 and 一边...一边 for fluency"
+          ]
+        },
+        flashcards: ["看看", "试试", "一下", "慢慢", "高高兴兴", "一...就", "越来越", "一边"],
+        quizQuestions: 10,
+        learnSections: b11GrammarReduplicationProgressiveLearnSections
       }
     ]
   },

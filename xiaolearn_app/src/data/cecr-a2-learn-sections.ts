@@ -3068,3 +3068,98 @@ export const a2NuancesAlmostBasicsLearnSections: LessonV2LearnSection[] = [
       'The final 了 is essential — without it, the structure doesn\'t work. Think of 快要 as «it\'s coming, get ready».'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Grammaire A2 — Modaux d'obligation + compléments directionnels de base
+// (cecr-a2-grammar-m6)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2GrammarModalsDirectionLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-grammar-modals-obligation',
+    title: 'Modaux d\'obligation : 应该, 得, 必须, 一定要',
+    titleEn: 'Obligation modals: 应该, 得, 必须, 一定要',
+    body:
+      'Le chinois offre plusieurs modaux pour marquer l\'obligation ou le conseil, du plus doux au plus ferme.\n' +
+      '\n' +
+      '应该 (yīng gāi) = « devrait / il faudrait » — obligation MORALE ou conseil. Neutre.\n' +
+      '- Structure : sujet + 应该 + verbe. Ex : 你应该多喝水 (nǐ yīng gāi duō hē shuǐ) « tu devrais boire plus d\'eau ».\n' +
+      '- Négation : 不应该. Ex : 你不应该迟到 (« tu ne devrais pas être en retard »).\n' +
+      '\n' +
+      '得 (děi, PAS de) = « il faut / je dois » — nécessité PRATIQUE, oral. Attention : se lit « děi » pas « de » quand c\'est le modal.\n' +
+      '- Ex : 我得走了 (wǒ děi zǒu le) « il faut que j\'y aille ». Très oral, très courant.\n' +
+      '- Négation : on n\'utilise PAS 不得, on utilise 不用 (bú yòng) « pas besoin ». Ex : 你不用去 (nǐ bú yòng qù) « pas besoin d\'y aller ».\n' +
+      '\n' +
+      '必须 (bì xū) = « OBLIGATOIRE, il faut absolument » — le plus ferme. Registre formel ou insistant.\n' +
+      '- Ex : 学生必须交作业 (xué shēng bì xū jiāo zuò yè) « les élèves DOIVENT rendre les devoirs ».\n' +
+      '- Négation : 不必 (bú bì) « pas nécessaire ».\n' +
+      '\n' +
+      '一定要 (yí dìng yào) = « il FAUT absolument » — insistance émotionnelle, souvent avec enthousiasme ou souci.\n' +
+      '- Ex : 你一定要来我的婚礼 (nǐ yí dìng yào lái wǒ de hūn lǐ) « il faut absolument que tu viennes à mon mariage ».\n' +
+      '- Négation : 一定不要 = « surtout ne fais pas ». Ex : 一定不要迟到 « surtout ne sois pas en retard ».\n' +
+      '\n' +
+      'Échelle de force : 应该 (conseil doux) < 得 (nécessité pratique) < 一定要 (insistance perso) < 必须 (obligation absolue).',
+    bodyEn:
+      'Chinese offers several modals for obligation/advice, from soft to firm. 应该 (yīng gāi) = «should» — moral obligation or advice. Neutral. Structure: subj + 应该 + verb. Ex: 你应该多喝水 «you should drink more water». Negation: 不应该. 得 (děi, NOT de) = «must / gotta» — PRACTICAL necessity, spoken. Careful: read «děi» not «de» when it\'s the modal. Ex: 我得走了 «I gotta go». Very oral, very common. Negation: NOT 不得, use 不用 (bú yòng) «no need». 必须 (bì xū) = «MANDATORY, absolutely must» — firmest. Formal or insistent. Ex: 学生必须交作业 «students MUST turn in homework». Negation: 不必 (bú bì) «not necessary». 一定要 (yí dìng yào) = «really must» — emotional emphasis, often with enthusiasm or concern. Ex: 你一定要来我的婚礼 «you absolutely must come to my wedding». Negation: 一定不要 = «make sure you don\'t». Force scale: 应该 (soft advice) < 得 (practical) < 一定要 (personal insistence) < 必须 (absolute).',
+    items: [
+      { hanzi: '应该', pinyin: 'yīng gāi', meaning: 'devrait, il faudrait', meaningEn: 'should', audio: 'audio/hsk3/hsk3_应该.wav' },
+      { hanzi: '得', pinyin: 'děi', meaning: 'il faut, je dois (oral)', meaningEn: 'must (oral)', audio: 'audio/hsk3/hsk3_得.wav' },
+      { hanzi: '必须', pinyin: 'bì xū', meaning: 'obligatoirement', meaningEn: 'must, mandatory', audio: 'audio/hsk3/hsk3_必须.wav' },
+      { hanzi: '一定要', pinyin: 'yí dìng yào', meaning: 'il faut absolument', meaningEn: 'really must', audio: 'audio/hsk2/hsk2_一定.wav' },
+      { hanzi: '不用', pinyin: 'bú yòng', meaning: 'pas besoin', meaningEn: 'no need', audio: 'audio/hsk2/hsk2_不用.wav' },
+      { hanzi: '不必', pinyin: 'bú bì', meaning: 'pas nécessaire', meaningEn: 'not necessary', audio: 'audio/hsk4/hsk4_不必.wav' }
+    ],
+    tip:
+      'À l\'oral quotidien 得 est ultra fréquent, à l\'écrit ou en public 必须 est plus « correct ». Choisis selon l\'intensité que tu veux transmettre.',
+    tipEn:
+      'In daily speech 得 is super common; in writing or public 必须 sounds more «proper». Pick based on the intensity you want to convey.'
+  },
+  {
+    id: 'a2-grammar-direction-complements',
+    title: 'Compléments directionnels simples : verbe + 来/去',
+    titleEn: 'Simple directional complements: verb + 来/去',
+    body:
+      'Structure : verbe de mouvement + 来 (vers moi) OU 去 (loin de moi).\n' +
+      '\n' +
+      '来 vs 去 : décidé par la position du LOCUTEUR.\n' +
+      '- 你过来 (nǐ guò lai) « viens ici » (vers moi qui parle).\n' +
+      '- 你过去 (nǐ guò qu) « va là-bas » (loin de moi).\n' +
+      '\n' +
+      'Verbes directionnels + 来/去 (pattern de base) :\n' +
+      '- 上来/上去 : monter (vers moi / loin de moi). Ex : 快上来吧 (kuài shàng lái ba) « monte vite (ici) ».\n' +
+      '- 下来/下去 : descendre. Ex : 请下来 (qǐng xià lái) « descends (vers moi) ».\n' +
+      '- 进来/进去 : entrer. Ex : 请进来 (qǐng jìn lái) « entre (chez moi) ». Ex : 他进去了 (tā jìn qù le) « il est entré (dans une pièce loin de moi) ».\n' +
+      '- 出来/出去 : sortir. Ex : 我出去买东西 (wǒ chū qù mǎi dōng xi) « je sors faire des courses ».\n' +
+      '- 回来/回去 : revenir / retourner. Ex : 妈妈回来了 (mā ma huí lái le) « maman est rentrée » (vers moi).\n' +
+      '- 过来/过去 : venir / y aller. Ex : 你过来 « viens ici », 我过去 « j\'y vais ».\n' +
+      '- 起来 : se lever / monter (surtout avec 站/坐). Ex : 请站起来 (qǐng zhàn qǐ lái) « lève-toi ».\n' +
+      '\n' +
+      'Composition VERBE + DIRECTIONNEL + 来/去 :\n' +
+      '- Structure : verbe d\'action + directionnel + 来/去.\n' +
+      '- Ex : 他走进来了 (tā zǒu jìn lái le) « il est entré (à pied, vers moi) ». Décompose : 走 (marcher) + 进 (dans) + 来 (vers moi).\n' +
+      '- Ex : 我拿出去 (wǒ ná chū qù) « je le sors (dehors, loin de moi) ». 拿 (prendre) + 出 (dehors) + 去 (loin).\n' +
+      '- Ex : 请你坐下来 (qǐng nǐ zuò xià lái) « assieds-toi (par ici) ».\n' +
+      '\n' +
+      'Cas OBJET : si un objet suit, il vient AVANT 来/去 ou APRÈS le directionnel.\n' +
+      '- Ex : 我买回来一本书 (wǒ mǎi huí lái yì běn shū) « j\'ai rapporté un livre ». Ou : 我买了一本书回来.\n' +
+      '- Attention aux lieux : le lieu-destination vient AVANT 来/去. Ex : 他跑进房间来 (tā pǎo jìn fáng jiān lái) « il est entré dans la pièce en courant ».',
+    bodyEn:
+      'Structure: motion verb + 来 (toward me) OR 去 (away from me). 来 vs 去 decided by SPEAKER position. 你过来 «come here» (toward me). 你过去 «go there» (away from me). Directional verbs + 来/去 (base pattern): 上来/上去 (go up), 下来/下去 (go down), 进来/进去 (enter), 出来/出去 (exit), 回来/回去 (come/go back), 过来/过去 (come/go over), 起来 (stand up/rise, especially with 站/坐). Composition VERB + DIRECTIONAL + 来/去: action verb + directional + 来/去. Ex: 他走进来了 «he walked in (toward me)». 走 (walk) + 进 (in) + 来 (toward me). Ex: 我拿出去 «I\'ll take it out (away)». 拿 (take) + 出 (out) + 去 (away). Ex: 请你坐下来 «please sit down (here)». OBJECT case: if an object follows, it comes BEFORE 来/去 or AFTER the directional. Ex: 我买回来一本书 «I brought back a book». Or: 我买了一本书回来. Place-destination goes BEFORE 来/去: 他跑进房间来 «he ran into the room».',
+    items: [
+      { hanzi: '来', pinyin: 'lái', meaning: 'venir (vers le locuteur)', meaningEn: 'come (toward speaker)', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '去', pinyin: 'qù', meaning: 'aller (loin du locuteur)', meaningEn: 'go (away)', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '进来', pinyin: 'jìn lái', meaning: 'entrer (vers moi)', meaningEn: 'come in', audio: 'audio/hsk2/hsk2_进.wav' },
+      { hanzi: '进去', pinyin: 'jìn qù', meaning: 'entrer (loin de moi)', meaningEn: 'go in', audio: 'audio/hsk2/hsk2_进.wav' },
+      { hanzi: '出来', pinyin: 'chū lái', meaning: 'sortir (vers moi)', meaningEn: 'come out', audio: 'audio/hsk2/hsk2_出.wav' },
+      { hanzi: '出去', pinyin: 'chū qù', meaning: 'sortir (loin de moi)', meaningEn: 'go out', audio: 'audio/hsk2/hsk2_出.wav' },
+      { hanzi: '回来', pinyin: 'huí lái', meaning: 'revenir', meaningEn: 'come back', audio: 'audio/hsk1/hsk1_回.wav' },
+      { hanzi: '回去', pinyin: 'huí qù', meaning: 'retourner', meaningEn: 'go back', audio: 'audio/hsk1/hsk1_回.wav' },
+      { hanzi: '过来', pinyin: 'guò lái', meaning: 'venir par ici', meaningEn: 'come over', audio: 'audio/hsk2/hsk2_过.wav' },
+      { hanzi: '起来', pinyin: 'qǐ lái', meaning: 'se lever, monter', meaningEn: 'get up, rise', audio: 'audio/hsk2/hsk2_起来.wav' }
+    ],
+    tip:
+      'Entraîne-toi à choisir 来 vs 去 en fonction de « moi qui parle ». Ferme les yeux, sens où tu es, puis décide.',
+    tipEn:
+      'Practice picking 来 vs 去 based on «me the speaker». Close your eyes, feel where you are, then decide.'
+  }
+];
