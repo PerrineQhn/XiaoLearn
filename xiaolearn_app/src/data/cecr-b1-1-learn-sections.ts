@@ -2073,3 +2073,161 @@ export const b11NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Hierarchy oral → written for «moreover»: 还 (oral, basic) < 而且 (oral standard) < 并且 (written) < 此外 (very formal, written). Choose by expected register.'
   }
 ];
+
+export const b11NuancesDouLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-dou-neg-total-vs-partial',
+    title: '都不 vs 不都 — négation totale vs partielle',
+    titleEn: '都不 vs 不都 — total vs partial negation',
+    body:
+      'Une petite différence d\'ordre inverse complètement le sens.\n' +
+      '\n' +
+      'Les deux structures :\n' +
+      '- **都不** (dōu bù) = négation **TOTALE** : « aucun / pas un seul ». Structure : [Groupe] + 都 + 不 + verbe/adj.\n' +
+      '  - 这些菜都不是辣的 (zhèxiē cài dōu bú shì là de) « aucun de ces plats n\'est épicé »\n' +
+      '  - 他们都不来 (tāmen dōu bù lái) « aucun d\'eux ne vient »\n' +
+      '- **不都** (bù dōu) = négation **PARTIELLE** : « pas tous » (donc certains oui). Structure : [Groupe] + 不 + 都 + verbe/adj.\n' +
+      '  - 这些菜不都是辣的 (zhèxiē cài bù dōu shì là de) « tous ces plats ne sont pas épicés » (donc certains le sont)\n' +
+      '\n' +
+      'Piège français : « ils ne viennent pas tous » est ambigu en français mais **très précis** en chinois.\n' +
+      '\n' +
+      'Attention : la place de 不 change le sens complètement — c\'est l\'ordre qui compte.',
+    bodyEn:
+      '都不 (dōu bù) = TOTAL negation: «none / not a single one». Structure: [Group] + 都 + 不 + verb/adj. 这些菜都不是辣的 = none of these dishes is spicy. 他们都不来 = none of them is coming. 不都 (bù dōu) = PARTIAL negation: «not all» (so some yes). Structure: [Group] + 不 + 都 + verb/adj. 这些菜不都是辣的 = not all of these dishes are spicy (so some are). French trap: «they don\'t all come» is ambiguous in French but very precise in Chinese. Watch out: the position of 不 flips the meaning — word order is what matters.',
+    items: [
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '不', pinyin: 'bù', meaning: 'ne...pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' },
+      { hanzi: '都不', pinyin: 'dōu bù', meaning: 'aucun, pas un seul', meaningEn: 'none, not a single one', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '不都', pinyin: 'bù dōu', meaning: 'pas tous', meaningEn: 'not all', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '辣', pinyin: 'là', meaning: 'épicé', meaningEn: 'spicy', audio: 'audio/hsk4/hsk4_辣.wav' }
+    ],
+    tip:
+      '都不 = « personne / aucun » ; 不都 = « pas tous » (implique une exception). Retiens : le 不 après 都 « ratisse tout », le 不 avant 都 « laisse des îlots ».',
+    tipEn:
+      '都不 = «no one / none»; 不都 = «not all» (implies an exception). Remember: 不 after 都 «sweeps everything clean», 不 before 都 «leaves islands».'
+  },
+  {
+    id: 'b11-yidian-dou-bu',
+    title: '一点都不 / 一点都没 — « pas du tout »',
+    titleEn: '一点都不 / 一点都没 — «not at all»',
+    body:
+      'Structure : sujet + **一点 + 都 + 不/没** + verbe/adjectif.\n' +
+      '\n' +
+      '一点 (yìdiǎn) = « un peu ». Encadré par 都/也 et 不/没, il signale la plus petite quantité imaginable, poussée à zéro → « pas du tout ».\n' +
+      '- 这个办法一点都不麻烦 (zhège bànfǎ yìdiǎn dōu bù máfan) « cette méthode n\'est pas du tout compliquée »\n' +
+      '- 我一点都不累 (wǒ yìdiǎn dōu bú lèi) « je ne suis pas du tout fatigué »\n' +
+      '- Avec 没 : 昨天他一点都没吃 (zuótiān tā yìdiǎn dōu méi chī) « hier il n\'a rien mangé du tout »\n' +
+      '\n' +
+      'Variante **一点也不** : 也 peut remplacer 都 avec la même force. 我一点也不困 (wǒ yìdiǎn yě bù kùn) « je ne suis pas du tout somnolent ».\n' +
+      '\n' +
+      'Renforcement plus fort que le simple 不 : 不麻烦 = « pas compliqué » (neutre), 一点都不麻烦 = « pas du tout compliqué » (insistance).',
+    bodyEn:
+      'Structure: subject + 一点 + 都 + 不/没 + verb/adj. 一点 (yìdiǎn) = «a little». Framed by 都/也 and 不/没, it signals the smallest imaginable amount, pushed to zero → «not at all». 这个办法一点都不麻烦 = this method is not at all complicated. 我一点都不累 = I\'m not tired at all. With 没: 昨天他一点都没吃 = yesterday he didn\'t eat anything at all. Variant 一点也不: 也 can replace 都 with the same force. 我一点也不困 = I\'m not sleepy at all. Stronger than plain 不: 不麻烦 = «not complicated» (neutral), 一点都不麻烦 = «not complicated at all» (emphatic).',
+    items: [
+      { hanzi: '一点', pinyin: 'yì diǎn', meaning: 'un peu', meaningEn: 'a little', audio: 'audio/hsk1/hsk1_一点.wav' },
+      { hanzi: '一点都不', pinyin: 'yì diǎn dōu bù', meaning: 'pas du tout', meaningEn: 'not at all', audio: 'audio/hsk1/hsk1_一点.wav' },
+      { hanzi: '一点也不', pinyin: 'yì diǎn yě bù', meaning: 'pas du tout (variante)', meaningEn: 'not at all (variant)', audio: 'audio/hsk1/hsk1_一点.wav' },
+      { hanzi: '麻烦', pinyin: 'má fan', meaning: 'compliqué, ennuyeux', meaningEn: 'complicated, bothersome', audio: 'audio/hsk3/hsk3_麻烦.wav' },
+      { hanzi: '累', pinyin: 'lèi', meaning: 'fatigué', meaningEn: 'tired', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '困', pinyin: 'kùn', meaning: 'somnolent', meaningEn: 'sleepy', audio: 'audio/hsk4/hsk4_困.wav' }
+    ],
+    tip:
+      'Chaque fois que tu veux insister sur « pas du tout », pense au trio 一点 + 都/也 + 不/没. C\'est aussi la formule pour un compliment discret : 一点都不辣 (pas piquant du tout) pour rassurer quelqu\'un.',
+    tipEn:
+      'Whenever you want to emphasize «not at all», think of the trio 一点 + 都/也 + 不/没. It\'s also the formula for a discreet compliment: 一点都不辣 (not spicy at all) to reassure someone.'
+  }
+];
+
+export const b11NuancesYeConcessionLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-ye-concession-basics',
+    title: '也 = « quand même » : le sens de concession',
+    titleEn: '也 = «still/anyway»: the concessive meaning',
+    body:
+      'Au-delà de « aussi », 也 sert aussi à marquer une **RÉSISTANCE** : quelque chose reste vrai malgré une condition ou un obstacle.\n' +
+      '\n' +
+      'Le premier segment pose l\'obstacle, 也 délivre le résultat qui **NE FLÉCHIT PAS**. Se traduit par « quand même, tout de même, malgré tout ».\n' +
+      '\n' +
+      'Trois familles de patterns à connaître :\n' +
+      '- **就算/即使/哪怕...也** (concession hypothétique) — « même si »\n' +
+      '- **无论/不管...也** (concession universelle) — « quoi que »\n' +
+      '- **再...也** (concession de degré) — « aussi X que ce soit »',
+    bodyEn:
+      'Beyond «also», 也 also marks RESISTANCE: something stays true despite a condition or obstacle. The first clause sets the obstacle, 也 delivers the result that DOESN\'T BUDGE. Translated as «still, anyway, all the same». Three pattern families to know: 就算/即使/哪怕...也 (hypothetical concession) = «even if»; 无论/不管...也 (universal concession) = «whatever»; 再...也 (degree concession) = «no matter how X».',
+    items: [
+      { hanzi: '也', pinyin: 'yě', meaning: 'aussi ; quand même', meaningEn: 'also; still', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '就算', pinyin: 'jiù suàn', meaning: 'même si (oral)', meaningEn: 'even if (spoken)', audio: 'audio/hsk4/hsk4_就.wav' },
+      { hanzi: '即使', pinyin: 'jí shǐ', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk4/hsk4_即使.wav' },
+      { hanzi: '哪怕', pinyin: 'nǎ pà', meaning: 'même si (fort)', meaningEn: 'even if (strong)', audio: 'audio/hsk5/hsk5_哪怕.wav' },
+      { hanzi: '无论', pinyin: 'wú lùn', meaning: 'quoi que (écrit)', meaningEn: 'no matter (written)', audio: 'audio/hsk4/hsk4_无论.wav' },
+      { hanzi: '不管', pinyin: 'bù guǎn', meaning: 'quoi que (oral)', meaningEn: 'no matter (spoken)', audio: 'audio/hsk4/hsk4_不管.wav' }
+    ],
+    tip:
+      'Quand tu vois 也 dans la 2e clause avec un obstacle en 1re clause, pense « still » en anglais, « quand même » en français. Ce n\'est plus 也 = « aussi ».',
+    tipEn:
+      'When you see 也 in the 2nd clause with an obstacle in the 1st clause, think «still» in English. It\'s no longer 也 = «also».'
+  },
+  {
+    id: 'b11-jiusuan-jishi-napa-ye',
+    title: '就算 / 即使 / 哪怕 ... 也 — « même si »',
+    titleEn: '就算 / 即使 / 哪怕 ... 也 — «even if»',
+    body:
+      'Structure : **就算/即使/哪怕** + [condition hypothétique]，[sujet] + **也** + [résultat qui tient bon].\n' +
+      '\n' +
+      'Les trois variantes :\n' +
+      '- **就算** (jiùsuàn) : le plus **oral**, familier.\n' +
+      '  - 就算下大雨，我也要去看演唱会 (jiùsuàn xià dàyǔ, wǒ yě yào qù kàn yǎnchànghuì) « même s\'il pleut fort, j\'irai quand même au concert »\n' +
+      '- **即使** (jíshǐ) : **neutre**, utilisable à l\'oral comme à l\'écrit.\n' +
+      '  - 即使你不同意，我也会这么做 (jíshǐ nǐ bù tóngyì, wǒ yě huì zhème zuò) « même si tu n\'es pas d\'accord, je le ferai quand même »\n' +
+      '- **哪怕** (nǎpà) : le plus **fort**, souligne un cas extrême.\n' +
+      '  - 哪怕只有一点希望，我也不会放弃 (nǎpà zhǐyǒu yìdiǎn xīwàng, wǒ yě bú huì fàngqì) « même s\'il ne reste qu\'une lueur d\'espoir, je n\'abandonnerai pas »',
+    bodyEn:
+      'Structure: 就算/即使/哪怕 + [hypothetical condition], [subject] + 也 + [result that holds]. 就算 (jiùsuàn): most spoken, casual. 就算下大雨，我也要去看演唱会 = even if it pours, I\'m going to the concert anyway. 即使 (jíshǐ): neutral, oral and written. 即使你不同意，我也会这么做 = even if you disagree, I\'ll do it anyway. 哪怕 (nǎpà): strongest, highlights an extreme case. 哪怕只有一点希望，我也不会放弃 = even if there\'s only a glimmer of hope, I won\'t give up.',
+    items: [
+      { hanzi: '就算', pinyin: 'jiù suàn', meaning: 'même si (oral)', meaningEn: 'even if (spoken)', audio: 'audio/hsk4/hsk4_就.wav' },
+      { hanzi: '即使', pinyin: 'jí shǐ', meaning: 'même si (neutre)', meaningEn: 'even if (neutral)', audio: 'audio/hsk4/hsk4_即使.wav' },
+      { hanzi: '哪怕', pinyin: 'nǎ pà', meaning: 'même si (extrême)', meaningEn: 'even if (extreme)', audio: 'audio/hsk5/hsk5_哪怕.wav' },
+      { hanzi: '希望', pinyin: 'xī wàng', meaning: 'espoir, espérer', meaningEn: 'hope', audio: 'audio/hsk2/hsk2_希望.wav' },
+      { hanzi: '放弃', pinyin: 'fàng qì', meaning: 'abandonner', meaningEn: 'give up', audio: 'audio/hsk4/hsk4_放弃.wav' },
+      { hanzi: '同意', pinyin: 'tóng yì', meaning: 'être d\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' }
+    ],
+    tip:
+      'Les trois sont interchangeables 90 % du temps. Choisir 就算 à l\'oral décontracté, 即使 par défaut, 哪怕 pour dramatiser un cas extrême.',
+    tipEn:
+      'All three are interchangeable 90% of the time. Pick 就算 for casual speech, 即使 by default, 哪怕 to dramatize an extreme case.'
+  },
+  {
+    id: 'b11-wulun-buguan-ye-zai-zenme',
+    title: '无论/不管...也 + 再...也 + 怎么也 — « quoi qu\'il arrive »',
+    titleEn: '无论/不管...也 + 再...也 + 怎么也 — «whatever happens»',
+    body:
+      'Trois patterns de concession universelle ou de degré.\n' +
+      '\n' +
+      '**无论/不管** + [gamme de possibilités]，[sujet] + **也** + [résultat stable] : quand la condition couvre PLUSIEURS cas.\n' +
+      '- 无论你说什么，我也不会改变主意 (wúlùn nǐ shuō shénme, wǒ yě bú huì gǎibiàn zhǔyi) « quoi que tu dises, je ne changerai pas d\'avis »\n' +
+      '- 无论 = plus écrit, 不管 = plus oral. Note : dans ce pattern, 都 est très souvent utilisé à la place de 也 avec un sens quasi identique.\n' +
+      '\n' +
+      '**再** + [adjectif/verbe] ... **也** + [résultat] : concession sur un DEGRÉ, « aussi X que ce soit, ... quand même ».\n' +
+      '- 这件衣服再贵，我也要买 (zhè jiàn yīfu zài guì, wǒ yě yào mǎi) « aussi chère soit-elle, je vais l\'acheter »\n' +
+      '- 工作再忙，他也会陪孩子吃晚饭 (gōngzuò zài máng, tā yě huì péi háizi chī wǎnfàn) « aussi occupé soit-il, il dîne avec ses enfants »\n' +
+      '\n' +
+      '**怎么** + **也** + 不/没 + verbe : « on a beau essayer par tous les moyens, ça ne marche pas ». Frustration.\n' +
+      '- 昨天晚上我怎么也睡不着 (zuótiān wǎnshang wǒ zěnme yě shuì bù zháo) « hier soir je ne pouvais pas m\'endormir, quoi que je fasse »\n' +
+      '\n' +
+      'Attention : dans les 3 patterns, l\'ordre est **TOUJOURS** [obstacle/gamme/degré] PUIS [résultat avec 也]. Ne pas inverser.',
+    bodyEn:
+      'Three patterns of universal or degree concession. 无论/不管 + [range of possibilities], [subject] + 也 + [stable result]: when the condition covers SEVERAL cases. 无论你说什么，我也不会改变主意 = whatever you say, I won\'t change my mind. 无论 = more written, 不管 = more spoken. Note: in this pattern, 都 is very often used in place of 也 with nearly identical meaning. 再 + [adj/verb] ... 也 + [result]: concession on a DEGREE, «no matter how X, still...». 这件衣服再贵，我也要买 = however expensive it is, I\'m buying it. 工作再忙，他也会陪孩子吃晚饭 = however busy work is, he has dinner with the kids. 怎么 + 也 + 不/没 + verb: «no matter how hard we try, it doesn\'t work». Frustration. 昨天晚上我怎么也睡不着 = last night I couldn\'t fall asleep no matter what. In all 3 patterns, order is ALWAYS [obstacle/range/degree] THEN [result with 也]. Don\'t swap.',
+    items: [
+      { hanzi: '无论', pinyin: 'wú lùn', meaning: 'quoi que (écrit)', meaningEn: 'no matter (written)', audio: 'audio/hsk4/hsk4_无论.wav' },
+      { hanzi: '不管', pinyin: 'bù guǎn', meaning: 'quoi que (oral)', meaningEn: 'no matter (spoken)', audio: 'audio/hsk4/hsk4_不管.wav' },
+      { hanzi: '再', pinyin: 'zài', meaning: 'encore ; aussi (degré)', meaningEn: 'again; however (degree)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '怎么', pinyin: 'zěn me', meaning: 'comment', meaningEn: 'how', audio: 'audio/hsk1/hsk1_怎么.wav' },
+      { hanzi: '改变', pinyin: 'gǎi biàn', meaning: 'changer', meaningEn: 'change', audio: 'audio/hsk4/hsk4_改变.wav' },
+      { hanzi: '主意', pinyin: 'zhǔ yi', meaning: 'idée, avis', meaningEn: 'idea, mind', audio: 'audio/hsk4/hsk4_主意.wav' }
+    ],
+    tip:
+      'Astuce mnémo : 无论/不管 = « quoi que », 再...也 = « aussi X que », 怎么也 = « impossible de ». Les 3 patterns partagent 也 comme pivot du résultat qui ne bouge pas.',
+    tipEn:
+      'Mnemonic tip: 无论/不管 = «whatever», 再...也 = «no matter how X», 怎么也 = «impossible to». All 3 patterns share 也 as the pivot of the unmoving result.'
+  }
+];

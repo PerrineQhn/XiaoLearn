@@ -162,6 +162,8 @@ import {
   b11NuancesM5LearnSections,
   b11NuancesM6LearnSections,
   b11NuancesM7LearnSections,
+  b11NuancesDouLearnSections,
+  b11NuancesYeConcessionLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -288,6 +290,7 @@ import {
   b22NuancesM5LearnSections,
   b22NuancesM6LearnSections,
   b22NuancesM7LearnSections,
+  b22NuancesYeFixedLearnSections,
 } from './cecr-b2-2-learn-sections';
 import {
   c11ConvM1LearnSections,
@@ -4370,6 +4373,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["一边", "又", "同时", "而且", "并且", "另外", "此外"],
         quizQuestions: 8,
         learnSections: b11NuancesM7LearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m8",
+        title: "都不 vs 不都 — négation totale/partielle",
+        titleEn: "都不 vs 不都 — total/partial negation",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [1, 3], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "grammar", "cecr:b11"],
+        introduction: {
+          title: "都 + 不 : l\\'ordre change tout",
+          titleEn: "都 + 不: word order flips the meaning",
+          content: "都不 (dōu bù) = négation TOTALE : « aucun / pas un seul ». Structure [Groupe] + 都 + 不 + verbe. 这些菜都不是辣的 = aucun de ces plats n\\'est épicé. 他们都不来 = aucun d\\'eux ne vient. 不都 (bù dōu) = négation PARTIELLE : « pas tous » (donc certains oui). Structure [Groupe] + 不 + 都 + verbe. 这些菜不都是辣的 = pas tous ces plats sont épicés (donc certains le sont). Piège français : « ils ne viennent pas tous » est ambigu en français, TRÈS précis en chinois. La place de 不 change tout. Renforcement « pas du tout » : 一点 + 都/也 + 不/没 + verbe. 我一点都不累 = je ne suis pas du tout fatigué. 昨天他一点都没吃 = hier il n\\'a rien mangé du tout. Variante : 一点也不 (也 remplace 都).",
+          contentEn: "都不 (dōu bù) = TOTAL negation: «none / not a single one». Structure [Group] + 都 + 不 + verb. 这些菜都不是辣的 = none of these dishes is spicy. 他们都不来 = none of them is coming. 不都 (bù dōu) = PARTIAL negation: «not all» (so some yes). Structure [Group] + 不 + 都 + verb. 这些菜不都是辣的 = not all of these dishes are spicy (so some are). French trap: «they don\\'t all come» is ambiguous in French, VERY precise in Chinese. 不 position flips everything. Emphatic «not at all»: 一点 + 都/也 + 不/没 + verb. 我一点都不累 = I\\'m not tired at all. 昨天他一点都没吃 = he didn\\'t eat anything at all yesterday. Variant: 一点也不 (也 replaces 都).",
+          objectives: [
+            "Distinguer 都不 (aucun) vs 不都 (pas tous)",
+            "Construire 一点都不 / 一点都没 pour « pas du tout »",
+            "Interchanger 都 et 也 dans 一点 + 也/都 + 不",
+            "Éviter le piège du français ambigu « pas tous »"
+          ],
+          objectivesEn: [
+            "Distinguish 都不 (none) vs 不都 (not all)",
+            "Build 一点都不 / 一点都没 for «not at all»",
+            "Swap 都 and 也 in 一点 + 也/都 + 不",
+            "Avoid the French ambiguous «not all» trap"
+          ]
+        },
+        flashcards: ["都", "不", "都不", "不都", "一点", "一点都不", "麻烦", "累"],
+        quizQuestions: 8,
+        learnSections: b11NuancesDouLearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m9",
+        title: "也 concession — quand même, malgré tout",
+        titleEn: "也 concession — still, anyway",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "grammar", "cecr:b11"],
+        introduction: {
+          title: "也 = résistance : le résultat qui ne fléchit pas",
+          titleEn: "也 = resistance: the unyielding result",
+          content: "Au-delà de « aussi », 也 marque une RÉSISTANCE : le résultat reste vrai malgré l\\'obstacle. 3 patterns : (1) 就算/即使/哪怕...也 « même si » — 就算下大雨，我也要去 = même s\\'il pleut fort, j\\'irai quand même. 就算 = oral, 即使 = neutre, 哪怕 = extrême. (2) 无论/不管...也 « quoi que » — 无论你说什么，我也不会改变主意. 无论 écrit, 不管 oral. Note : 都 remplace souvent 也 dans ce pattern. (3) 再...也 « aussi X que » — 这件衣服再贵，我也要买 = aussi chère soit-elle, je l\\'achète. Bonus 怎么也 = « impossible de » (frustration) — 我怎么也睡不着. Règle : TOUJOURS obstacle PUIS 也 + résultat.",
+          contentEn: "Beyond «also», 也 marks RESISTANCE: the result stays true despite the obstacle. 3 patterns: (1) 就算/即使/哪怕...也 «even if» — 就算下大雨，我也要去 = even if it pours, I\\'m going anyway. 就算 = spoken, 即使 = neutral, 哪怕 = extreme. (2) 无论/不管...也 «whatever» — 无论你说什么，我也不会改变主意. 无论 written, 不管 spoken. Note: 都 often replaces 也 in this pattern. (3) 再...也 «no matter how X» — 这件衣服再贵，我也要买 = however expensive, I\\'m buying it. Bonus 怎么也 = «impossible to» (frustration) — 我怎么也睡不着. Rule: ALWAYS obstacle THEN 也 + result.",
+          objectives: [
+            "Distinguer 也 = « aussi » vs 也 = « quand même »",
+            "Choisir 就算 / 即使 / 哪怕 selon l\\'intensité",
+            "Construire 无论/不管...也 (concession universelle)",
+            "Utiliser 再...也 et 怎么也 (degré et frustration)"
+          ],
+          objectivesEn: [
+            "Distinguish 也 = «also» vs 也 = «still»",
+            "Pick 就算 / 即使 / 哪怕 by intensity",
+            "Build 无论/不管...也 (universal concession)",
+            "Use 再...也 and 怎么也 (degree and frustration)"
+          ]
+        },
+        flashcards: ["也", "就算", "即使", "哪怕", "无论", "不管", "再", "怎么"],
+        quizQuestions: 8,
+        learnSections: b11NuancesYeConcessionLearnSections
       }
     ]
   },
@@ -7992,6 +8053,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["帮助", "帮忙", "帮", "忙", "协助", "配合", "合作", "支持"],
         quizQuestions: 8,
         learnSections: b22NuancesM7LearnSections
+      },
+      {
+        id: "cecr-b22-nuances-m8",
+        title: "也 caché — mots figés et adoucissement",
+        titleEn: "Hidden 也 — fixed expressions and softening",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 5, hskLevels: [3, 5], category: "vocabulary", difficulty: "advanced",
+        tags: ["nuance", "grammar", "cecr:b22"],
+        introduction: {
+          title: "也 comme adoucisseur, comme pivot d\\'options, comme bloc figé",
+          titleEn: "也 as softener, options pivot, and fixed chunk",
+          content: "Trois usages « cachés » de 也. (1) ADOUCIR : 我觉得这样做也不太好 est plus doux que 我觉得这样做不太好. 也是 en réponse = « c\\'est vrai, tu marques un point » — « 外面下雨了 » « 也是，那就明天去吧 ». (2) 也好...也好 = « peu importe X ou Y ». 坐地铁也好，打车也好，只要准时到就行. Variante littéraire 也罢. (3) MOTS FIGÉS : 也许 (yěxǔ) = « peut-être » avant verbe. 也就是说 = « autrement dit » introduit une reformulation. 再也不 = « plus jamais » avec émotion (serment), version passée 再也没...过. Nuance clé : 不再 (neutre) « ne plus » vs 再也不 (émotionnel) « ne plus JAMAIS ». Ces 4 blocs s\\'apprennent sans décomposer.",
+          contentEn: "Three «hidden» uses of 也. (1) SOFTEN: 我觉得这样做也不太好 is softer than 我觉得这样做不太好. 也是 as a reply = «true, you have a point» — «外面下雨了» «也是，那就明天去吧». (2) 也好...也好 = «whichever X or Y». 坐地铁也好，打车也好，只要准时到就行. Literary variant 也罢. (3) FIXED CHUNKS: 也许 (yěxǔ) = «maybe» before verb. 也就是说 = «in other words» introduces rephrasing. 再也不 = «never again» with emotion (oath), past version 再也没...过. Key nuance: 不再 (neutral) «no longer» vs 再也不 (emotional) «NEVER again». These 4 chunks are memorized without decomposing.",
+          objectives: [
+            "Utiliser 也 pour adoucir une opinion (也是, 也不太好)",
+            "Construire 也好...也好 pour lister des options acceptées",
+            "Mémoriser 也许 / 也就是说 comme blocs figés",
+            "Choisir 再也不 (émotionnel) vs 不再 (neutre)"
+          ],
+          objectivesEn: [
+            "Use 也 to soften an opinion (也是, 也不太好)",
+            "Build 也好...也好 to list accepted options",
+            "Memorize 也许 / 也就是说 as fixed chunks",
+            "Pick 再也不 (emotional) vs 不再 (neutral)"
+          ]
+        },
+        flashcards: ["也是", "也许", "也就是说", "也好", "再也不", "不再", "随便", "抽烟"],
+        quizQuestions: 8,
+        learnSections: b22NuancesYeFixedLearnSections
       }
     ]
   },

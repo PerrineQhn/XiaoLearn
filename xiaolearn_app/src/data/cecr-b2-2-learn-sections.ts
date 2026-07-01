@@ -2401,3 +2401,97 @@ export const b22NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Help hierarchy in Chinese : 帮 (oral, friend) < 帮忙 (oral, favor) < 帮助 (general, written) < 协助 (pro, structured) < 支援 (back-up, emergency) < 援助 (humanitarian aid).'
   }
 ];
+
+export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b22-ye-softening',
+    title: '也 pour adoucir un avis',
+    titleEn: '也 to soften an opinion',
+    body:
+      'Glisser 也 dans une phrase d\'opinion la rend **moins tranchée**, comme si on partageait une observation plutôt qu\'un jugement.\n' +
+      '\n' +
+      'Exemples clés :\n' +
+      '- 我觉得这样做也不太好 (wǒ juéde zhèyàng zuò yě bú tài hǎo) « je trouve que faire comme ça, c\'est pas top » (plus doux que 我觉得这样做不太好 = « c\'est pas bien »)\n' +
+      '- 我也只是随便说说，你别太在意 (wǒ yě zhǐshì suíbiàn shuōshuo, nǐ bié tài zàiyì) « je dis ça comme ça, n\'y prête pas trop attention »\n' +
+      '\n' +
+      '**也是** (yěshì) comme réponse courte = « c\'est vrai, tu marques un point » : quand ce que dit l\'autre te fait reconsidérer.\n' +
+      '- « 外面下雨了 » « 也是，那就明天去吧 » (« il pleut dehors » « c\'est vrai, allons-y demain alors »)\n' +
+      '\n' +
+      'Dans une phrase : 你说得也是 (nǐ shuō de yěshì) « ce que tu dis est juste aussi » (concession polie).',
+    bodyEn:
+      'Slipping 也 into an opinion sentence makes it less blunt, as if you were sharing an observation rather than a judgment. 我觉得这样做也不太好 = I think doing it this way isn\'t great (softer than 我觉得这样做不太好 = «it\'s not good»). 我也只是随便说说，你别太在意 = I\'m just saying, don\'t take it too seriously. 也是 (yěshì) as a short reply = «true, you have a point»: when what the other person says makes you reconsider. «外面下雨了» «也是，那就明天去吧» («it\'s raining outside» «true, let\'s go tomorrow then»). In a sentence: 你说得也是 = what you\'re saying is also right (polite concession).',
+    items: [
+      { hanzi: '也', pinyin: 'yě', meaning: 'aussi ; adoucisseur', meaningEn: 'also; softener', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '也是', pinyin: 'yě shì', meaning: 'c\'est vrai (concession)', meaningEn: 'true, fair point', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '随便', pinyin: 'suí biàn', meaning: 'comme on veut, en passant', meaningEn: 'as one likes, casually', audio: 'audio/hsk4/hsk4_随便.wav' },
+      { hanzi: '在意', pinyin: 'zài yì', meaning: 'y prêter attention', meaningEn: 'take to heart', audio: 'audio/hsk5/hsk5_在意.wav' },
+      { hanzi: '觉得', pinyin: 'jué de', meaning: 'trouver, penser', meaningEn: 'think, find', audio: 'audio/hsk2/hsk2_觉得.wav' }
+    ],
+    tip:
+      '也 sert de **rembourrage** pour ne pas paraître trop catégorique. C\'est un marqueur de politesse et de nuance très fréquent en chinois oral.',
+    tipEn:
+      '也 acts as padding to avoid sounding too blunt. It\'s a very common marker of politeness and nuance in spoken Chinese.'
+  },
+  {
+    id: 'b22-ye-yeruo-yehao',
+    title: '也好...也好 — « peu importe lequel »',
+    titleEn: '也好...也好 — «whichever one, no matter»',
+    body:
+      'Structure : [**Option A**] + **也好**，[**Option B**] + **也好**，[résultat qui tient pour les 2].\n' +
+      '\n' +
+      'Sens : lister des options et les **accepter toutes**, « peu importe X ou Y, ça me va ».\n' +
+      '\n' +
+      'Exemples :\n' +
+      '- 坐地铁也好，打车也好，只要能准时到就行 (zuò dìtiě yěhǎo, dǎchē yěhǎo, zhǐyào néng zhǔnshí dào jiù xíng) « métro ou taxi, peu importe, du moment qu\'on arrive à l\'heure »\n' +
+      '- 去也好，不去也好，你自己决定 (qù yěhǎo, bú qù yěhǎo, nǐ zìjǐ juédìng) « que tu y ailles ou non, c\'est toi qui décides »\n' +
+      '\n' +
+      'Variante littéraire : **也罢** (yěbà) fonctionne à l\'identique dans un registre soutenu.',
+    bodyEn:
+      'Structure: [Option A] + 也好，[Option B] + 也好，[result that holds for both]. Meaning: list options and accept them all, «no matter X or Y, that works for me». 坐地铁也好，打车也好，只要能准时到就行 = subway or taxi, doesn\'t matter, as long as we arrive on time. 去也好，不去也好，你自己决定 = go or not, it\'s your decision. Literary variant: 也罢 (yěbà) works identically in a formal register.',
+    items: [
+      { hanzi: '也好', pinyin: 'yě hǎo', meaning: 'peu importe (option A ou B)', meaningEn: 'whichever, either way', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '也罢', pinyin: 'yě bà', meaning: 'peu importe (littéraire)', meaningEn: 'so be it (literary)', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '打车', pinyin: 'dǎ chē', meaning: 'prendre un taxi', meaningEn: 'take a taxi', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '准时', pinyin: 'zhǔn shí', meaning: 'à l\'heure', meaningEn: 'on time', audio: 'audio/hsk4/hsk4_准时.wav' },
+      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' }
+    ],
+    tip:
+      'Ce pattern exprime une acceptation résignée mais bienveillante, souvent utilisé pour montrer qu\'on ne veut pas trancher soi-même.',
+    tipEn:
+      'This pattern expresses a resigned but kind acceptance, often used to show you don\'t want to decide yourself.'
+  },
+  {
+    id: 'b22-ye-fixed-words',
+    title: '也许 / 也就是说 / 再也不 vs 不再 — mots figés avec 也',
+    titleEn: '也许 / 也就是说 / 再也不 vs 不再 — fixed expressions with 也',
+    body:
+      'Quatre expressions figées à apprendre comme des **blocs**.\n' +
+      '\n' +
+      '- **也许** (yěxǔ) = « peut-être ». Adverbe figé, se place avant le verbe.\n' +
+      '  - 他还没回消息，也许在开会 (tā hái méi huí xiāoxi, yěxǔ zài kāihuì) « il n\'a pas répondu, peut-être qu\'il est en réunion »\n' +
+      '- **也就是说** (yě jiù shì shuō) = « autrement dit, ça veut dire que ». Introduit une reformulation.\n' +
+      '  - 这个月底交，也就是说，我们只剩三天了 (zhège yuèdǐ jiāo, yě jiù shì shuō, wǒmen zhǐ shèng sān tiān le) « à rendre en fin de mois, autrement dit il ne nous reste que 3 jours »\n' +
+      '- **再也不** (zài yě bù) = « plus jamais » avec **émotion** (serment, colère). Souvent avec 了 en fin de phrase.\n' +
+      '  - 上次被骗了以后，我再也不相信他了 (shàng cì bèi piàn le yǐhòu, wǒ zài yě bù xiāngxìn tā le) « après m\'être fait avoir la dernière fois, je ne lui fais plus jamais confiance »\n' +
+      '- Version passée : **再也没** + verbe + **过** : « ne...plus jamais » (constat historique).\n' +
+      '  - 从那天起，他再也没来过 (cóng nà tiān qǐ, tā zài yě méi lái guò) « depuis ce jour, il n\'est plus jamais revenu »\n' +
+      '\n' +
+      'Nuance : **不再** (bú zài) = « ne...plus » **neutre**. 他不再抽烟了 (tā bú zài chōuyān le) « il ne fume plus » (constat calme, sans émotion). 他再也不抽烟了 (tā zài yě bù chōuyān le) sonne comme un serment « il ne fumera plus JAMAIS ».\n' +
+      '\n' +
+      'Attention : ces 4 items sont figés — ne cherche pas à les décomposer littéralement, apprends-les comme des blocs.',
+    bodyEn:
+      'Four fixed expressions to learn as chunks. 也许 (yěxǔ) = «maybe». Fixed adverb, before the verb. 他还没回消息，也许在开会 = he hasn\'t replied, maybe he\'s in a meeting. 也就是说 (yě jiù shì shuō) = «in other words, that means». Introduces a rephrasing. 这个月底交，也就是说，我们只剩三天了 = due end of month, meaning we only have 3 days left. 再也不 (zài yě bù) = «never again» with EMOTION (oath, anger). Often with 了 at the end. 上次被骗了以后，我再也不相信他了 = after being tricked last time, I\'ll never trust him again. Past version: 再也没 + verb + 过: «never again did» (historical). 从那天起，他再也没来过 = from that day on, he never came again. Nuance: 不再 (bú zài) = «no longer» neutral. 他不再抽烟了 = he doesn\'t smoke anymore (calm statement). 他再也不抽烟了 sounds like an oath «he\'ll NEVER smoke again». These 4 items are fixed — don\'t decompose them literally, learn them as chunks.',
+    items: [
+      { hanzi: '也许', pinyin: 'yě xǔ', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk3/hsk3_也许.wav' },
+      { hanzi: '也就是说', pinyin: 'yě jiù shì shuō', meaning: 'autrement dit', meaningEn: 'in other words', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '再也不', pinyin: 'zài yě bù', meaning: 'plus jamais (serment)', meaningEn: 'never again (emotional)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '再也没', pinyin: 'zài yě méi', meaning: 'ne...plus jamais (passé)', meaningEn: 'never again (past)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '不再', pinyin: 'bú zài', meaning: 'ne...plus (neutre)', meaningEn: 'no longer (neutral)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '抽烟', pinyin: 'chōu yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_抽烟.wav' }
+    ],
+    tip:
+      'Distinction clé : **不再** = constat neutre, **再也不** = serment émotionnel. Choisis selon le ton que tu veux donner : rapport factuel ou promesse solennelle.',
+    tipEn:
+      'Key distinction: 不再 = neutral statement, 再也不 = emotional oath. Pick by the tone you want: factual report or solemn promise.'
+  }
+];
