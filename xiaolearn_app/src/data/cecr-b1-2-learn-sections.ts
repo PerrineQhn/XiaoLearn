@@ -375,6 +375,248 @@ export const b12BiLearnSections: LessonV2LearnSection[] = [
       'L\'œil cherche le pattern fixe : Sujet + 比 + Référence + Adjectif. Si tu vois 很 entre 比 et l\'adjectif, c\'est faux. Si tu vois une quantité, elle est après l\'adjectif.',
     tipEn:
       'Eye looks for the fixed pattern: Subject + 比 + Reference + Adjective. If you see 很 between 比 and the adjective, it\'s wrong. If you see a quantity, it goes after the adjective.'
+  },
+  {
+    id: 'b12-bi-meiyou-buxiang',
+    title: '没有 pour « pas aussi X que »',
+    titleEn: '没有 for «not as X as»',
+    body:
+      'Structure : A + 没有 + B + adjectif = A n\'est pas aussi X que B.\n' +
+      '\n' +
+      'Ex : 这间房没有那间大 (zhè jiān fáng méiyǒu nà jiān dà) « cette pièce n\'est pas aussi grande que celle-là ».\n' +
+      '\n' +
+      'Astuce : pour insister sur l\'écart, ajoute 那么 (nàme) ou 这么 (zhème) avant l\'adjectif.\n' +
+      '- 这间房没有那间那么大 (zhè jiān fáng méiyǒu nà jiān nàme dà) « loin d\'être aussi grande que celle-là »\n' +
+      '\n' +
+      'Alternative proche : 不像...那么... (búxiàng...nàme...) = « pas comme... à ce point là ».\n' +
+      '- 他不像他哥哥那么高 (tā bú xiàng tā gēge nàme gāo) « il n\'est pas aussi grand que son grand frère »\n' +
+      '\n' +
+      'Règle : utilise 不像 quand la comparaison est plus une question de RESSEMBLANCE que de mesure précise.',
+    bodyEn:
+      'Structure: A + 没有 + B + adjective = A is not as X as B. 这间房没有那间大 = this room isn\'t as big as that one. To emphasize the gap, add 那么/这么 before the adjective: 这间房没有那间那么大 = far from being as big. Close alternative: 不像...那么... = «not like... to that extent». 他不像他哥哥那么高 = he\'s not as tall as his big brother. Use 不像 when the comparison is more about RESEMBLANCE than measurement.',
+    items: [
+      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne pas atteindre (moins que)', meaningEn: 'not reach (less than)', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '那么', pinyin: 'nà me', meaning: 'à ce point-là (loin)', meaningEn: 'to that extent (far)', audio: 'audio/hsk2/hsk2_那么.wav' },
+      { hanzi: '这么', pinyin: 'zhè me', meaning: 'à ce point-là (proche)', meaningEn: 'to this extent (near)', audio: 'audio/hsk2/hsk2_这么.wav' },
+      { hanzi: '不像', pinyin: 'bú xiàng', meaning: 'pas comme', meaningEn: 'not like', audio: 'audio/hsk3/hsk3_像.wav' },
+      { hanzi: '高', pinyin: 'gāo', meaning: 'grand (taille)', meaningEn: 'tall', audio: 'audio/hsk1/hsk1_高.wav' },
+      { hanzi: '大', pinyin: 'dà', meaning: 'grand', meaningEn: 'big', audio: 'audio/hsk1/hsk1_大.wav' }
+    ],
+    tip:
+      '没有 est le choix par défaut pour dire « moins X que ». Ajoute 那么/这么 pour renforcer l\'impression d\'écart.',
+    tipEn:
+      '没有 is the default for «less X than». Add 那么/这么 to emphasize the gap.'
+  },
+  {
+    id: 'b12-yiyang-you-question',
+    title: '跟/和...一样 + 有 dans la question',
+    titleEn: '跟/和...一样 + 有 in questions',
+    body:
+      'Structure « pareil » : A + 跟 (ou 和) + B + 一样.\n' +
+      '- 我的手机跟你的一样 (wǒ de shǒujī gēn nǐ de yīyàng) « mon téléphone est identique au tien »\n' +
+      '\n' +
+      'Avec un adjectif pour préciser sur QUOI : A + 跟/和 + B + 一样 + adjectif.\n' +
+      '- 我跟她一样忙 (wǒ gēn tā yīyàng máng) « je suis aussi occupée qu\'elle »\n' +
+      '\n' +
+      'Négation : 不 devant 一样 → A + 跟/和 + B + 不一样.\n' +
+      '- 我的看法跟你的不一样 (wǒ de kànfǎ gēn nǐ de bù yīyàng) « mon avis diffère du tien »\n' +
+      '\n' +
+      'Version écrite/formelle : 相同 (xiāngtóng).\n' +
+      '- 我们的想法相同 (wǒmen de xiǎngfǎ xiāngtóng) « nos idées sont identiques »\n' +
+      '- À l\'oral, garde 一样.\n' +
+      '\n' +
+      'Attention : pour demander si A atteint le NIVEAU de B, on utilise 有 et non 一样. Structure : A + 有 + B + adj + 吗 ?\n' +
+      '- 你有他高吗 ？ (nǐ yǒu tā gāo ma?) « est-ce que tu es aussi grand que lui ? »\n' +
+      '- Renforcé : 你有他那么快吗 ？ (nǐ yǒu tā nàme kuài ma?) « t\'es aussi rapide que lui ? »\n' +
+      '\n' +
+      'Réponses typiques : 我没有他高 (moins) ou 我跟他一样高 (pareil). On ne répond pas avec 有 en réponse.',
+    bodyEn:
+      '«Same» structure: A + 跟 (or 和) + B + 一样. 我的手机跟你的一样 = my phone is the same as yours. With an adjective to specify: A + 跟/和 + B + 一样 + adj. 我跟她一样忙 = I\'m as busy as her. Negation: 不 before 一样. 我的看法跟你的不一样 = my opinion differs from yours. Formal written form: 相同 (xiāngtóng). 我们的想法相同 = our ideas are the same. Speak with 一样. IMPORTANT: to ask if A reaches B\'s level, use 有, not 一样: A + 有 + B + adj + 吗? 你有他高吗？= are you as tall as him? Reinforced: 你有他那么快吗？= are you as fast as him? Reply with 我没有他高 (less) or 我跟他一样高 (same), never 有 in the reply.',
+    items: [
+      { hanzi: '跟', pinyin: 'gēn', meaning: 'avec, comme', meaningEn: 'with, like', audio: 'audio/hsk3/hsk3_跟.wav' },
+      { hanzi: '和', pinyin: 'hé', meaning: 'et, avec', meaningEn: 'and, with', audio: 'audio/hsk1/hsk1_和.wav' },
+      { hanzi: '一样', pinyin: 'yí yàng', meaning: 'pareil', meaningEn: 'same', audio: 'audio/hsk3/hsk3_一样.wav' },
+      { hanzi: '不一样', pinyin: 'bù yí yàng', meaning: 'différent', meaningEn: 'different', audio: 'audio/hsk3/hsk3_一样.wav' },
+      { hanzi: '相同', pinyin: 'xiāng tóng', meaning: 'identique (écrit)', meaningEn: 'identical (written)', audio: 'audio/hsk5/hsk5_相同.wav' },
+      { hanzi: '有', pinyin: 'yǒu', meaning: 'atteindre (question niveau)', meaningEn: 'reach (level question)', audio: 'audio/hsk1/hsk1_有.wav' },
+      { hanzi: '看法', pinyin: 'kàn fǎ', meaning: 'point de vue', meaningEn: 'opinion', audio: 'audio/hsk4/hsk4_看法.wav' }
+    ],
+    tip:
+      'À l\'oral, on demande TOUJOURS 有 + B + adj + 吗 (pas 一样). C\'est un des petits détails qui fait sonner ton chinois naturel.',
+    tipEn:
+      'In speech, ALWAYS ask 有 + B + adj + 吗 (not 一样). It\'s a small detail that makes your Chinese sound native.'
+  },
+  {
+    id: 'b12-bi-geng-hai',
+    title: '更 vs 还 après 比 : neutre vs émotionnel',
+    titleEn: '更 vs 还 after 比: neutral vs emotional',
+    body:
+      'Structure : A + 比 + B + 更/还 + adjectif = « A est ENCORE PLUS X que B ».\n' +
+      '\n' +
+      '更 (gèng) = choix neutre, tous registres. Convient à l\'écrit comme à l\'oral.\n' +
+      '- 他的手机比我的更贵 (tā de shǒujī bǐ wǒ de gèng guì) « son téléphone est encore plus cher que le mien »\n' +
+      '\n' +
+      '还 (hái) = émotion, surprise, réaction personnelle. Plus oral et vivant.\n' +
+      '- 今天比昨天还冷 (jīntiān bǐ zuótiān hái lěng) « il fait ENCORE PLUS froid qu\'hier ! »\n' +
+      '\n' +
+      'Règle pratique : essai calme et factuel → 更. Surprise, émotion → 还. Dans un essai ou rapport → 更 par défaut ; dans une conversation animée → 还 est souvent plus naturel.\n' +
+      '\n' +
+      'Attention : 更 et 还 vivent DANS la structure 比. On ne peut pas dire 他更贵 seul comme comparaison sauf si le contexte a déjà posé la référence (une phrase avant, par exemple).',
+    bodyEn:
+      'Structure: A + 比 + B + 更/还 + adj = «A is EVEN MORE X than B». 更 (gèng) = neutral, all registers, spoken and written. 他的手机比我的更贵 = his phone is even more expensive than mine. 还 (hái) = emotion, surprise, personal reaction. More spoken, livelier. 今天比昨天还冷 = it\'s EVEN colder than yesterday! Practical rule: calm and factual → 更. Surprise, emotion → 还. In an essay or report → default to 更; in a lively conversation → 还 often feels more natural. NB: 更 and 还 live INSIDE the 比 structure. You can\'t say 他更贵 alone as a comparison unless the reference was set in the previous sentence.',
+    items: [
+      { hanzi: '更', pinyin: 'gèng', meaning: 'encore plus (neutre)', meaningEn: 'even more (neutral)', audio: 'audio/hsk3/hsk3_更.wav' },
+      { hanzi: '还', pinyin: 'hái', meaning: 'encore (émotionnel)', meaningEn: 'even (emotional)', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '贵', pinyin: 'guì', meaning: 'cher', meaningEn: 'expensive', audio: 'audio/hsk2/hsk2_贵.wav' },
+      { hanzi: '冷', pinyin: 'lěng', meaning: 'froid', meaningEn: 'cold', audio: 'audio/hsk1/hsk1_冷.wav' },
+      { hanzi: '聪明', pinyin: 'cōng míng', meaning: 'intelligent', meaningEn: 'smart', audio: 'audio/hsk3/hsk3_聪明.wav' },
+      { hanzi: '手机', pinyin: 'shǒu jī', meaning: 'téléphone', meaningEn: 'phone', audio: 'audio/hsk2/hsk2_手机.wav' }
+    ],
+    tip:
+      'Test rapide : si tu dirais « ENCORE PLUS X ! » avec un point d\'exclamation, prends 还. Si tu dirais juste « encore plus X », prends 更.',
+    tipEn:
+      'Quick test: if you\'d say «EVEN MORE X!» with an exclamation, use 还. If you\'d just say «even more X», use 更.'
+  }
+];
+
+// --- cecr-b12-bi-m2 — 比 avancé : précision, actions, écarts ---------------
+export const b12BiPrecisionLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-bi-gap-modifiers',
+    title: 'Écart petit / grand : 一点儿, 一些, 得多, 多了',
+    titleEn: 'Small / big gap: 一点儿, 一些, 得多, 多了',
+    body:
+      'Structure : A + 比 + B + adjectif + modificateur d\'écart.\n' +
+      '\n' +
+      'Écart petit :\n' +
+      '- 一点儿 (yìdiǎnr) : oral, décontracté. Ex : 今天比昨天热一点儿 (jīntiān bǐ zuótiān rè yìdiǎnr) « il fait un peu plus chaud qu\'hier ».\n' +
+      '- 一些 (yìxiē) : équivalent, un chouïa plus neutre. Ex : 这本书比那本厚一些 (zhè běn shū bǐ nà běn hòu yìxiē) « ce livre est un peu plus épais ».\n' +
+      '\n' +
+      'Écart grand :\n' +
+      '- 得多 (de duō) : écrit et oral. Ex : 新电脑比旧电脑快得多 (xīn diànnǎo bǐ jiù diànnǎo kuài de duō) « le nouvel ordi est bien plus rapide que l\'ancien ».\n' +
+      '- 多了 (duō le) : très fréquent à l\'oral. Ex : 新电脑比旧电脑快多了 (xīn diànnǎo bǐ jiù diànnǎo kuài duō le).\n' +
+      '\n' +
+      'Attention : le modificateur d\'écart vient TOUJOURS APRÈS l\'adjectif, jamais avant. 比旧电脑很多快 ✗, 比旧电脑很快 ✗. Une fois que 比 est là, on ne remet ni 很 ni 很多 devant l\'adjectif.',
+    bodyEn:
+      'Structure: A + 比 + B + adjective + gap modifier. Small gap: 一点儿 (yìdiǎnr) — casual, spoken (今天比昨天热一点儿 = a bit hotter than yesterday); 一些 (yìxiē) — equivalent, slightly more neutral. Big gap: 得多 (de duō) — spoken and written (新电脑比旧电脑快得多 = much faster); 多了 (duō le) — very common in speech (新电脑比旧电脑快多了). Warning: the gap modifier ALWAYS comes AFTER the adjective, never before. Once 比 is in play, no 很 or 很多 before the adjective.',
+    items: [
+      { hanzi: '一点儿', pinyin: 'yì diǎnr', meaning: 'un peu', meaningEn: 'a bit', audio: 'audio/hsk2/hsk2_一点儿.wav' },
+      { hanzi: '一些', pinyin: 'yì xiē', meaning: 'un peu, quelques', meaningEn: 'a bit, some', audio: 'audio/hsk3/hsk3_一些.wav' },
+      { hanzi: '得多', pinyin: 'de duō', meaning: 'beaucoup plus (post-adj)', meaningEn: 'much more (post-adj)', audio: 'audio/hsk3/hsk3_多.wav' },
+      { hanzi: '多了', pinyin: 'duō le', meaning: 'beaucoup plus (oral)', meaningEn: 'much more (spoken)', audio: 'audio/hsk1/hsk1_多.wav' },
+      { hanzi: '快', pinyin: 'kuài', meaning: 'rapide', meaningEn: 'fast', audio: 'audio/hsk2/hsk2_快.wav' },
+      { hanzi: '热', pinyin: 'rè', meaning: 'chaud', meaningEn: 'hot', audio: 'audio/hsk1/hsk1_热.wav' },
+      { hanzi: '厚', pinyin: 'hòu', meaning: 'épais', meaningEn: 'thick', audio: 'audio/hsk4/hsk4_厚.wav' }
+    ],
+    tip:
+      'Ordre à mémoriser : A + 比 + B + adjectif + modificateur d\'écart. Le modificateur ne vient JAMAIS avant l\'adjectif.',
+    tipEn:
+      'Order to memorize: A + 比 + B + adjective + gap modifier. The modifier NEVER goes before the adjective.'
+  },
+  {
+    id: 'b12-bi-quantity-complement',
+    title: 'Écart exact : quantité après l\'adjectif',
+    titleEn: 'Exact gap: quantity after the adjective',
+    body:
+      'Structure : A + 比 + B + adjectif mesurable + quantité chiffrée.\n' +
+      '\n' +
+      'Fonctionne uniquement avec des adjectifs MESURABLES : 大, 高, 长, 贵, 远, 重…\n' +
+      '\n' +
+      'Exemples :\n' +
+      '- 她比我大三岁 (tā bǐ wǒ dà sān suì) « elle a 3 ans de plus que moi »\n' +
+      '- 这本书比那本贵二十块 (zhè běn shū bǐ nà běn guì èrshí kuài) « ce livre est 20 yuan plus cher »\n' +
+      '- 我家比他家远两公里 (wǒ jiā bǐ tā jiā yuǎn liǎng gōnglǐ) « ma maison est 2 km plus loin »\n' +
+      '\n' +
+      'Attention : le pattern ne marche PAS avec 没有. 我没有她大三岁 ✗ n\'existe pas.\n' +
+      '\n' +
+      'Astuce pour « X est moins Y que Z par N » :\n' +
+      '- Option 1 : inverse l\'adjectif → 我比她小三岁 (wǒ bǐ tā xiǎo sān suì) « j\'ai 3 ans de moins qu\'elle ». Utilise l\'antonyme mesurable (小/矮/轻/低/短).\n' +
+      '- Option 2 : renverse A et B → 她比我大三岁 (même info, autre perspective).',
+    bodyEn:
+      'Structure: A + 比 + B + measurable adjective + numeric quantity. Only works with MEASURABLE adjectives: 大, 高, 长, 贵, 远, 重… 她比我大三岁 = she\'s 3 years older than me. 这本书比那本贵二十块 = this book is 20 yuan more expensive. 我家比他家远两公里 = my place is 2 km farther. IMPORTANT: this pattern does NOT work with 没有. 我没有她大三岁 ✗ doesn\'t exist. To say «X is less Y than Z by N»: (a) flip the adjective — 我比她小三岁 = I\'m 3 years younger. Use the measurable antonym (小/矮/轻/低/短); (b) flip A and B — 她比我大三岁 (same info, different angle).',
+    items: [
+      { hanzi: '大', pinyin: 'dà', meaning: 'grand, âgé', meaningEn: 'big, older', audio: 'audio/hsk1/hsk1_大.wav' },
+      { hanzi: '小', pinyin: 'xiǎo', meaning: 'petit, plus jeune', meaningEn: 'small, younger', audio: 'audio/hsk1/hsk1_小.wav' },
+      { hanzi: '岁', pinyin: 'suì', meaning: 'ans (âge)', meaningEn: 'years (age)', audio: 'audio/hsk1/hsk1_岁.wav' },
+      { hanzi: '贵', pinyin: 'guì', meaning: 'cher', meaningEn: 'expensive', audio: 'audio/hsk2/hsk2_贵.wav' },
+      { hanzi: '远', pinyin: 'yuǎn', meaning: 'loin', meaningEn: 'far', audio: 'audio/hsk2/hsk2_远.wav' },
+      { hanzi: '公里', pinyin: 'gōng lǐ', meaning: 'kilomètre', meaningEn: 'kilometer', audio: 'audio/hsk4/hsk4_公里.wav' },
+      { hanzi: '块', pinyin: 'kuài', meaning: 'yuan (oral)', meaningEn: 'yuan (spoken)', audio: 'audio/hsk1/hsk1_块.wav' }
+    ],
+    tip:
+      'Les natifs jonglent constamment entre les 2 options (inverser l\'adjectif ou inverser A/B). Choisis celle qui sonne le plus clair pour ta phrase.',
+    tipEn:
+      'Natives constantly juggle between the 2 options (flip the adjective or flip A/B). Pick whichever reads more clearly.'
+  },
+  {
+    id: 'b12-bi-action-de-complement',
+    title: 'Comparer des actions : le complément 得',
+    titleEn: 'Comparing actions: the 得 complement',
+    body:
+      'Pour comparer non pas des personnes mais LA MANIÈRE dont elles font quelque chose, on utilise le complément 得.\n' +
+      '\n' +
+      'Structure 1 (comparaison d\'abord) : A + 比 + B + verbe + 得 + adjectif.\n' +
+      '- 他比我跑得快 (tā bǐ wǒ pǎo de kuài) « il court plus vite que moi »\n' +
+      '\n' +
+      'Structure 2 (action d\'abord) : A + verbe + 得 + 比 + B + adjectif.\n' +
+      '- 他跑得比我快 (tā pǎo de bǐ wǒ kuài) — même sens, plus naturel à l\'oral.\n' +
+      '\n' +
+      'Cas avec objet : quand le verbe a un objet, on RÉPÈTE le verbe avant 得.\n' +
+      '- 他说汉语说得比我好 (tā shuō hànyǔ shuō de bǐ wǒ hǎo) « il parle chinois mieux que moi »\n' +
+      '- Le premier 说 porte l\'objet 汉语, le second porte le complément.\n' +
+      '\n' +
+      'Cas avancé (verbes ET objets différents) :\n' +
+      '- 你说法语说得比我说中文好 (nǐ shuō fǎyǔ shuō de bǐ wǒ shuō zhōngwén hǎo) « tu parles français mieux que je ne parle chinois ». Structure longue mais logique claire.\n' +
+      '\n' +
+      '一样 pour actions équivalentes : structures parallèles avec 跟/和 + B + 一样 + verbe + 得 + adj OU verbe + 得 + 跟 B 一样 + adj.\n' +
+      '- 我跟他一样跑得快 = 我跑得跟他一样快 (les deux marchent).',
+    bodyEn:
+      'To compare not people but the WAY they do something, use the 得 complement. Structure 1 (comparison first): A + 比 + B + verb + 得 + adj. 他比我跑得快 = he runs faster than me. Structure 2 (action first): A + verb + 得 + 比 + B + adj. 他跑得比我快 — same meaning, more natural in speech. With an object: REPEAT the verb before 得. 他说汉语说得比我好 = he speaks Chinese better than me. First 说 carries the object 汉语, second carries the complement. Advanced case (different verbs AND objects): 你说法语说得比我说中文好 = you speak French better than I speak Chinese. 一样 for equivalent actions: A + 跟/和 + B + 一样 + verb + 得 + adj OR verb + 得 + 跟 B 一样 + adj. 我跟他一样跑得快 = 我跑得跟他一样快.',
+    items: [
+      { hanzi: '得', pinyin: 'de', meaning: 'particule de manière', meaningEn: 'manner particle', audio: 'audio/hsk1/hsk1_的.wav' },
+      { hanzi: '跑', pinyin: 'pǎo', meaning: 'courir', meaningEn: 'run', audio: 'audio/hsk2/hsk2_跑.wav' },
+      { hanzi: '快', pinyin: 'kuài', meaning: 'rapide', meaningEn: 'fast', audio: 'audio/hsk2/hsk2_快.wav' },
+      { hanzi: '说', pinyin: 'shuō', meaning: 'parler', meaningEn: 'speak', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '汉语', pinyin: 'hàn yǔ', meaning: 'chinois (langue)', meaningEn: 'Chinese (language)', audio: 'audio/hsk1/hsk1_汉语.wav' },
+      { hanzi: '好', pinyin: 'hǎo', meaning: 'bien', meaningEn: 'well', audio: 'audio/hsk1/hsk1_好.wav' }
+    ],
+    tip:
+      'La répétition du verbe surprend au début. Mémorise la formule « verbe + objet + verbe + 得 + comparaison » comme un bloc.',
+    tipEn:
+      'The verb repetition looks strange at first. Memorize «verb + object + verb + 得 + comparison» as a chunk.'
+  },
+  {
+    id: 'b12-bi-duo-shao-zao-wan',
+    title: '多/少/早/晚 : quantifier une action comparée',
+    titleEn: '多/少/早/晚: quantifying a compared action',
+    body:
+      'Structure : A + 比 + B + [多/少/早/晚] + verbe + quantité.\n' +
+      '\n' +
+      'Direction : 多 (plus), 少 (moins), 早 (plus tôt), 晚 (plus tard). Ils viennent AVANT le verbe.\n' +
+      '\n' +
+      'Exemples :\n' +
+      '- 我比他早到十五分钟 (wǒ bǐ tā zǎo dào shíwǔ fēnzhōng) « je suis arrivé 15 min plus tôt que lui »\n' +
+      '- 我比他多吃了五个饺子 (wǒ bǐ tā duō chī le wǔ ge jiǎozi) « j\'ai mangé 5 raviolis de plus que lui »\n' +
+      '- 她比我少睡两个小时 (tā bǐ wǒ shǎo shuì liǎng ge xiǎoshí) « elle dort 2 h de moins que moi »\n' +
+      '- 他比我晚走了半个小时 (tā bǐ wǒ wǎn zǒu le bàn ge xiǎoshí) « il est parti 30 min plus tard »\n' +
+      '\n' +
+      'Règle mnémonique : 多/少/早/晚 = direction (plus/moins/plus tôt/plus tard) ; la quantité en fin de phrase = taille de l\'écart.',
+    bodyEn:
+      'Structure: A + 比 + B + [多/少/早/晚] + verb + quantity. Direction: 多 (more), 少 (less), 早 (earlier), 晚 (later). They come BEFORE the verb. 我比他早到十五分钟 = I arrived 15 min earlier than him. 我比他多吃了五个饺子 = I ate 5 more dumplings than him. 她比我少睡两个小时 = she sleeps 2 hours less than me. 他比我晚走了半个小时 = he left 30 min later. Mnemonic: 多/少/早/晚 = direction; quantity at the end = size of the gap.',
+    items: [
+      { hanzi: '多', pinyin: 'duō', meaning: 'plus (pré-verbe)', meaningEn: 'more (pre-verb)', audio: 'audio/hsk1/hsk1_多.wav' },
+      { hanzi: '少', pinyin: 'shǎo', meaning: 'moins (pré-verbe)', meaningEn: 'less (pre-verb)', audio: 'audio/hsk1/hsk1_少.wav' },
+      { hanzi: '早', pinyin: 'zǎo', meaning: 'plus tôt', meaningEn: 'earlier', audio: 'audio/hsk1/hsk1_早.wav' },
+      { hanzi: '晚', pinyin: 'wǎn', meaning: 'plus tard', meaningEn: 'later', audio: 'audio/hsk2/hsk2_晚.wav' },
+      { hanzi: '到', pinyin: 'dào', meaning: 'arriver', meaningEn: 'arrive', audio: 'audio/hsk2/hsk2_到.wav' },
+      { hanzi: '睡', pinyin: 'shuì', meaning: 'dormir', meaningEn: 'sleep', audio: 'audio/hsk1/hsk1_睡.wav' },
+      { hanzi: '饺子', pinyin: 'jiǎo zi', meaning: 'ravioli', meaningEn: 'dumpling', audio: 'audio/hsk4/hsk4_饺子.wav' },
+      { hanzi: '分钟', pinyin: 'fēn zhōng', meaning: 'minute', meaningEn: 'minute', audio: 'audio/hsk1/hsk1_分钟.wav' }
+    ],
+    tip:
+      'À distinguer du complément 得 (qui compare LA MANIÈRE d\'agir). Ici, on compare une QUANTITÉ ou un DÉLAI, pas la qualité.',
+    tipEn:
+      'Distinguish from the 得 complement (which compares the WAY of acting). Here we compare a QUANTITY or DELAY, not quality.'
   }
 ];
 

@@ -2495,3 +2495,159 @@ export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
       'Key distinction: 不再 = neutral statement, 再也不 = emotional oath. Pick by the tone you want: factual report or solemn promise.'
   }
 ];
+
+// --- cecr-b22-nuances-m9 — Comparaisons avancées : 相比, 不如, 不比, 于 --------
+export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b22-bi-frame-comparison',
+    title: '跟...相比 / 比起...(来) : cadrer la comparaison',
+    titleEn: '跟...相比 / 比起...(来): framing the comparison',
+    body:
+      'Ces 2 tournures INTRODUISENT une comparaison avant de la faire, comme « par rapport à » ou « comparé à » en français.\n' +
+      '\n' +
+      '**跟 + [référence] + 相比，[phrase principale]** = cadre NEUTRE.\n' +
+      '- 跟去年相比，今年的生意好多了 (gēn qùnián xiāngbǐ, jīnnián de shēngyi hǎo duō le) « par rapport à l\'an dernier, les affaires vont bien mieux cette année »\n' +
+      '\n' +
+      'Variante formelle : 与...相比 (yǔ) — dans les articles de presse, rapports d\'entreprise.\n' +
+      '\n' +
+      'Version courte à l\'oral : 跟...比 sans 相.\n' +
+      '- 跟去年比，今年好多了 (gēn qùnián bǐ, jīnnián hǎo duō le)\n' +
+      '\n' +
+      '**比起 + [chose A] + (来)，[phrase principale]** = cadre ÉVALUATIF, tu vas exprimer une préférence ou un jugement.\n' +
+      '- 比起坐地铁来，我更喜欢骑自行车 (bǐqǐ zuò dìtiě lái, wǒ gèng xǐhuān qí zìxíngchē) « plutôt que le métro, je préfère le vélo »\n' +
+      '\n' +
+      '来 est optionnel et adoucit sans changer le sens. La phrase principale contient typiquement 更, 还, 喜欢, 宁愿.\n' +
+      '\n' +
+      'Bonus : 相比之下 (xiāngbǐ zhī xià) = « en comparaison, à côté » en début de 2e phrase.\n' +
+      '- 小李很安静。相比之下，小张就活泼多了 (xiǎo Lǐ hěn ānjìng. xiāngbǐ zhī xià, xiǎo Zhāng jiù huópō duō le)',
+    bodyEn:
+      'These 2 turns INTRODUCE a comparison before making it, like «compared to» or «as opposed to». 跟 + [reference] + 相比, [main clause] = NEUTRAL frame. 跟去年相比，今年的生意好多了 = compared to last year, business is much better this year. Formal variant: 与...相比 (yǔ) — press articles, business reports. Short spoken form: 跟...比 without 相. 比起 + [thing A] + (来), [main clause] = EVALUATIVE frame — you\'re about to state a preference or judgment. 比起坐地铁来，我更喜欢骑自行车 = rather than the metro, I prefer cycling. 来 is optional and softens without changing meaning. Main clause typically has 更, 还, 喜欢, 宁愿. Bonus: 相比之下 (xiāngbǐ zhī xià) = «in comparison, by contrast» at the start of the second sentence.',
+    items: [
+      { hanzi: '相比', pinyin: 'xiāng bǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
+      { hanzi: '跟...相比', pinyin: 'gēn...xiāng bǐ', meaning: 'par rapport à', meaningEn: 'compared to', audio: 'audio/hsk3/hsk3_跟.wav' },
+      { hanzi: '与...相比', pinyin: 'yǔ...xiāng bǐ', meaning: 'par rapport à (formel)', meaningEn: 'compared to (formal)', audio: 'audio/hsk4/hsk4_与.wav' },
+      { hanzi: '比起', pinyin: 'bǐ qǐ', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '相比之下', pinyin: 'xiāng bǐ zhī xià', meaning: 'en comparaison', meaningEn: 'by comparison', audio: 'audio/hsk5/hsk5_相比.wav' },
+      { hanzi: '宁愿', pinyin: 'nìng yuàn', meaning: 'préférer (rhétorique)', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
+      { hanzi: '生意', pinyin: 'shēng yi', meaning: 'affaires', meaningEn: 'business', audio: 'audio/hsk4/hsk4_生意.wav' }
+    ],
+    tip:
+      '跟...相比 cadre une observation ; 比起...(来) prépare une préférence. Les deux sont utiles pour structurer un raisonnement à l\'écrit.',
+    tipEn:
+      '跟...相比 frames an observation; 比起...(来) sets up a preference. Both are useful for structuring an argument in writing.'
+  },
+  {
+    id: 'b22-bi-3-flavors-less',
+    title: '没有 vs 不如 vs 不比 : 3 « moins que »',
+    titleEn: '没有 vs 不如 vs 不比: 3 «less than»s',
+    body:
+      'Les 3 se traduisent tous par « moins que », mais avec des sens BIEN différents.\n' +
+      '\n' +
+      '**没有** (méiyǒu) : FAIT constaté, neutre. « A est simplement moins X que B ».\n' +
+      '- 这间房没有那间大 (zhè jiān fáng méiyǒu nà jiān dà) « cette pièce est moins grande »\n' +
+      '\n' +
+      '**不如** (bùrú) : JUGEMENT évaluatif. « A tombe en dessous de B » → B est la meilleure option / le standard supérieur.\n' +
+      '- 我做饭不如妈妈 (wǒ zuò fàn bùrú māma) « ma cuisine n\'arrive pas à la cheville de celle de maman »\n' +
+      '- Peut se passer d\'adjectif — « pas à la hauteur ».\n' +
+      '- On peut ajouter un adjectif pour préciser : 我做饭不如妈妈好吃 (wǒ zuò fàn bùrú māma hǎochī) « pas aussi savoureux »\n' +
+      '\n' +
+      '**不比** (bù bǐ) : PAS vraiment « moins que ». Sert à DÉMENTIR l\'idée que A dépasse B.\n' +
+      '- 我不比她高 (wǒ bù bǐ tā gāo) ≠ « je suis plus petit qu\'elle » MAIS « je ne suis pas plus grand qu\'elle » (on pourrait être égaux ou elle pourrait être plus grande).\n' +
+      '- 这家餐厅不比那家贵 (zhè jiā cāntīng bù bǐ nà jiā guì) « ce resto n\'est pas plus cher que celui-là » → réponse à quelqu\'un qui supposait le contraire.\n' +
+      '- Si tu voulais dire « ce resto est moins cher », tu dirais 这家比那家便宜 ou 这家没有那家贵.\n' +
+      '\n' +
+      'Attention : ne confonds pas les 3. 没有 = fait, 不如 = jugement, 不比 = démenti.',
+    bodyEn:
+      'All 3 translate as «less than», but with VERY different meanings. 没有 (méiyǒu): observed FACT, neutral. «A is simply less X than B». 这间房没有那间大 = this room is less big. 不如 (bùrú): evaluative JUDGMENT. «A falls below B» → B is the better option / superior standard. 我做饭不如妈妈 = my cooking doesn\'t come close to mom\'s. Can drop the adjective — «not up to par». Add an adjective to specify: 我做饭不如妈妈好吃 = not as tasty. 不比 (bù bǐ): NOT really «less than». Used to DENY that A exceeds B. 我不比她高 ≠ «I\'m shorter than her» BUT «I\'m not taller than her» (we could be equal, or she could be taller). 这家餐厅不比那家贵 = this restaurant isn\'t more expensive than that one → reply to someone who assumed otherwise. To say «this restaurant is cheaper», use 这家比那家便宜 or 这家没有那家贵. Don\'t confuse the 3: 没有 = fact, 不如 = judgment, 不比 = denial.',
+    items: [
+      { hanzi: '不如', pinyin: 'bù rú', meaning: 'moins bien que (jugement)', meaningEn: 'not as good as (judgment)', audio: 'audio/hsk4/hsk4_不如.wav' },
+      { hanzi: '不比', pinyin: 'bù bǐ', meaning: 'pas plus que (démenti)', meaningEn: 'no more than (denial)', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'moins que (fait)', meaningEn: 'less than (fact)', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '做饭', pinyin: 'zuò fàn', meaning: 'cuisiner', meaningEn: 'cook', audio: 'audio/hsk2/hsk2_做饭.wav' },
+      { hanzi: '好吃', pinyin: 'hǎo chī', meaning: 'délicieux', meaningEn: 'tasty', audio: 'audio/hsk2/hsk2_好吃.wav' },
+      { hanzi: '餐厅', pinyin: 'cān tīng', meaning: 'restaurant', meaningEn: 'restaurant', audio: 'audio/hsk4/hsk4_餐厅.wav' },
+      { hanzi: '便宜', pinyin: 'pián yi', meaning: 'bon marché', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' }
+    ],
+    tip:
+      'Mémo : 没有 = simple constat, 不如 = déception (B est meilleur), 不比 = « eh non, tu te trompes ».',
+    tipEn:
+      'Memo: 没有 = plain statement, 不如 = disappointment (B is better), 不比 = «nope, you\'re wrong».'
+  },
+  {
+    id: 'b22-bi-chunks-informal',
+    title: '比不上 / 比不过 / 没法比 / 差远了 : rejeter une comparaison',
+    titleEn: '比不上 / 比不过 / 没法比 / 差远了: rejecting a comparison',
+    body:
+      '4 tournures ORALES et fixes très fréquentes chez les natifs pour marquer un écart.\n' +
+      '\n' +
+      '**比不上** (bǐ bu shàng) = « ne peut pas être comparé (à un niveau supérieur) ». Souvent en modestie.\n' +
+      '- 我的中文比不上你 (wǒ de zhōngwén bǐ bu shàng nǐ) « mon chinois n\'arrive pas à ton niveau »\n' +
+      '\n' +
+      '**比不过** (bǐ bu guò) = « ne peut pas battre » (nuance de COMPÉTITION).\n' +
+      '- 我比不过他 (wǒ bǐ bu guò tā) « je ne peux pas rivaliser avec lui »\n' +
+      '\n' +
+      '**没法比** (méi fǎ bǐ) = « il n\'y a même pas de comparaison à faire » (écart énorme).\n' +
+      '- 这两个根本没法比 (zhè liǎng ge gēnběn méi fǎ bǐ) « ces 2-là, aucune comparaison possible »\n' +
+      '\n' +
+      '**差远了** (chà yuǎn le) = « loin, très loin » (le plus familier). Souvent en réponse modeste à un compliment.\n' +
+      '- « — Ta cuisine est aussi bonne que celle d\'un chef ! — 差远了 » (« pas du tout »)\n' +
+      '\n' +
+      'Astuce : 比不上/过 sont des compléments potentiels avec 不 sur le verbe 比. Ce sont des blocs à mémoriser, pas des structures à composer.',
+    bodyEn:
+      '4 SPOKEN and fixed turns very common with natives to mark a gap. 比不上 (bǐ bu shàng) = «can\'t be compared (upward)». Often used in modesty. 我的中文比不上你 = my Chinese doesn\'t reach your level. 比不过 (bǐ bu guò) = «can\'t beat» (COMPETITION nuance). 我比不过他 = I can\'t compete with him. 没法比 (méi fǎ bǐ) = «there\'s no comparison to make» (huge gap). 这两个根本没法比 = these two can\'t even be compared. 差远了 (chà yuǎn le) = «far, far off» (most casual). Often a modest reply to a compliment: «— Your cooking is chef-level! — 差远了 (not at all)». Grammar note: 比不上/过 are potential complements with 不 on the verb 比. These are chunks to memorize, not structures to compose.',
+    items: [
+      { hanzi: '比不上', pinyin: 'bǐ bu shàng', meaning: 'ne pas atteindre le niveau', meaningEn: 'can\'t reach the level', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '比不过', pinyin: 'bǐ bu guò', meaning: 'ne pas pouvoir rivaliser', meaningEn: 'can\'t beat', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '没法比', pinyin: 'méi fǎ bǐ', meaning: 'aucune comparaison possible', meaningEn: 'no way to compare', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '差远了', pinyin: 'chà yuǎn le', meaning: 'loin d\'être ça', meaningEn: 'far from it', audio: 'audio/hsk3/hsk3_差.wav' },
+      { hanzi: '根本', pinyin: 'gēn běn', meaning: 'fondamentalement, du tout', meaningEn: 'fundamentally, at all', audio: 'audio/hsk4/hsk4_根本.wav' },
+      { hanzi: '中文', pinyin: 'zhōng wén', meaning: 'chinois (langue)', meaningEn: 'Chinese language', audio: 'audio/hsk3/hsk3_中文.wav' }
+    ],
+    tip:
+      '4 formules à sortir en tchat pour paraître naturel — surtout 差远了 pour esquiver un compliment en toute humilité.',
+    tipEn:
+      '4 chunks to drop in chat to sound native — especially 差远了 to humbly dodge a compliment.'
+  },
+  {
+    id: 'b22-bi-hyperbole-formal',
+    title: 'Formes rhétoriques : 比 N 还 N et les 于 compounds',
+    titleEn: 'Rhetorical forms: 比 N 还 N and 于 compounds',
+    body:
+      '**HYPERBOLE** : 比 + [nom] + 还 + [même nom] = « plus N que N ». Pattern culturel et vivant, souvent joueur ou sarcastique.\n' +
+      '- 他比狐狸还狐狸 (tā bǐ húli hái húli) « il est plus rusé qu\'un renard » (le renard incarne la ruse en Chine)\n' +
+      '- 他比老板还老板 (tā bǐ lǎobǎn hái lǎobǎn) « il fait plus le chef que le vrai chef » (moquerie)\n' +
+      '- 比小孩还小孩 (bǐ xiǎohái hái xiǎohái) « plus gamin qu\'un gamin »\n' +
+      '\n' +
+      'Rarement neutre — utilise pour taquiner, se moquer, ou faire de l\'ironie. À éviter dans un écrit sérieux.\n' +
+      '\n' +
+      '**REGISTRE FORMEL** : les 于 compounds. Adjectif mesurable + 于 (yú) = verbe compact de comparaison. Fréquents en presse, contrats, science, math.\n' +
+      '- 高于 (gāo yú) : supérieur à — 今年的销售额高于去年 (jīnnián de xiāoshòu\'é gāo yú qùnián) « les ventes de cette année sont supérieures à celles de l\'an dernier »\n' +
+      '- 低于 (dī yú) : inférieur à\n' +
+      '- 大于 (dà yú) : plus grand que (aussi en math : 5 大于 3 = 5 > 3)\n' +
+      '- 小于 (xiǎo yú) : plus petit que\n' +
+      '- 多于 (duō yú) : plus nombreux que\n' +
+      '- 少于 (shǎo yú) : moins nombreux que\n' +
+      '- 早于 / 晚于 : plus tôt / plus tard\n' +
+      '- 优于 (yōu yú) : supérieur à (qualité)\n' +
+      '\n' +
+      'En conversation courante, préfère la structure 比. Les 于 compounds sont surtout à reconnaître à l\'écrit.\n' +
+      '\n' +
+      'Attention : 比 N 还 N est vivant et amusant mais réservé à l\'oral décontracté ou l\'écrit ludique.',
+    bodyEn:
+      'HYPERBOLE: 比 + [noun] + 还 + [same noun] = «more N than N». Vivid cultural pattern, often playful or sarcastic. 他比狐狸还狐狸 = he\'s craftier than a fox (the fox embodies cunning in China). 他比老板还老板 = he acts more boss than the real boss (mocking). 比小孩还小孩 = more childish than a child. Rarely neutral — use to tease, mock, or be ironic. Avoid in serious writing. FORMAL REGISTER: 于 compounds. Measurable adjective + 于 (yú) = compact comparison verb. Common in press, contracts, science, math. 高于 = above; 低于 = below; 大于 = greater than (also math: 5 大于 3 = 5 > 3); 小于 = less than; 多于 = more than; 少于 = fewer than; 早于/晚于 = earlier/later; 优于 = superior to (quality). In everyday speech, prefer 比. 于 compounds are mostly for recognition in writing. 比 N 还 N is fun but reserved for casual speech or playful writing.',
+    items: [
+      { hanzi: '狐狸', pinyin: 'hú li', meaning: 'renard (rusé)', meaningEn: 'fox (cunning)', audio: 'audio/hsk5/hsk5_狐狸.wav' },
+      { hanzi: '高于', pinyin: 'gāo yú', meaning: 'supérieur à', meaningEn: 'above, higher than', audio: 'audio/hsk1/hsk1_高.wav' },
+      { hanzi: '低于', pinyin: 'dī yú', meaning: 'inférieur à', meaningEn: 'below, lower than', audio: 'audio/hsk3/hsk3_低.wav' },
+      { hanzi: '大于', pinyin: 'dà yú', meaning: 'plus grand que', meaningEn: 'greater than', audio: 'audio/hsk1/hsk1_大.wav' },
+      { hanzi: '小于', pinyin: 'xiǎo yú', meaning: 'plus petit que', meaningEn: 'less than', audio: 'audio/hsk1/hsk1_小.wav' },
+      { hanzi: '多于', pinyin: 'duō yú', meaning: 'plus nombreux que', meaningEn: 'more than', audio: 'audio/hsk1/hsk1_多.wav' },
+      { hanzi: '少于', pinyin: 'shǎo yú', meaning: 'moins nombreux que', meaningEn: 'fewer than', audio: 'audio/hsk1/hsk1_少.wav' },
+      { hanzi: '优于', pinyin: 'yōu yú', meaning: 'supérieur à (qualité)', meaningEn: 'superior to (quality)', audio: 'audio/hsk5/hsk5_优秀.wav' }
+    ],
+    tip:
+      '比 N 还 N pour l\'oral ludique (« il est plus X que X ! ») ; 于 compounds pour la presse et les rapports. Deux registres opposés, mêmes idées.',
+    tipEn:
+      '比 N 还 N for playful speech («more X than X!»); 于 compounds for press and reports. Two opposite registers, same ideas.'
+  }
+];

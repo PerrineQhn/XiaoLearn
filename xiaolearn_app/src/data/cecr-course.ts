@@ -177,6 +177,7 @@ import {
   b12HaiLearnSections,
   b12YouLearnSections,
   b12BiLearnSections,
+  b12BiPrecisionLearnSections,
   b22GrammarComplementM1LearnSections,
   b22GrammarComplementM2LearnSections,
   b22GrammarComplementM3LearnSections,
@@ -292,6 +293,7 @@ import {
   b22NuancesM6LearnSections,
   b22NuancesM7LearnSections,
   b22NuancesYeFixedLearnSections,
+  b22BiAdvancedLearnSections,
 } from './cecr-b2-2-learn-sections';
 import {
   c11ConvM1LearnSections,
@@ -4767,6 +4769,35 @@ export const cecrLessonPaths: LessonPath[] = [
         quizQuestions: 10,
         learnSections: b12BiLearnSections
       },
+      {
+        id: "cecr-b12-bi-m2",
+        title: "比 avancé — précision, actions, écarts",
+        titleEn: "Advanced 比 — precision, actions, gaps",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["bi", "comparative", "grammar", "cecr:b12"],
+        introduction: {
+          title: "Doser l'écart, comparer les actions, chiffrer la différence",
+          titleEn: "Sizing the gap, comparing actions, quantifying the difference",
+          content: "Une fois la structure A + 比 + B + adjectif maîtrisée, il reste 4 raffinements clés. (1) Doser l'écart avec 一点儿/一些 (petit) ou 得多/多了 (grand) — TOUJOURS après l'adjectif : 今天比昨天热一点儿 (un peu plus chaud), 新电脑比旧的快多了 (bien plus rapide). (2) Écart exact avec adjectif mesurable + quantité : 她比我大三岁 (3 ans de plus), 这本书比那本贵二十块. (3) Comparer des actions avec le complément 得 : 他比我跑得快 ou 他跑得比我快 ; avec objet, on RÉPÈTE le verbe : 他说汉语说得比我好. (4) Quantifier une action comparée avec 多/少/早/晚 avant le verbe : 我比他早到十五分钟 (arrivé 15 min plus tôt), 她比我少睡两个小时.",
+          contentEn: "Once A + 比 + B + adjective is solid, 4 key refinements remain. (1) Size the gap with 一点儿/一些 (small) or 得多/多了 (big) — ALWAYS after the adjective: 今天比昨天热一点儿 (a bit hotter), 新电脑比旧的快多了 (much faster). (2) Exact gap with measurable adjective + quantity: 她比我大三岁 (3 years older), 这本书比那本贵二十块. (3) Compare actions with the 得 complement: 他比我跑得快 or 他跑得比我快; with an object, REPEAT the verb: 他说汉语说得比我好. (4) Quantify a compared action with 多/少/早/晚 before the verb: 我比他早到十五分钟 (15 min earlier), 她比我少睡两个小时.",
+          objectives: [
+            "Doser l'écart avec 一点儿 / 得多 / 多了",
+            "Chiffrer avec adjectif mesurable + quantité",
+            "Comparer des actions avec le complément 得",
+            "Quantifier avec 多/少/早/晚 + verbe"
+          ],
+          objectivesEn: [
+            "Size the gap with 一点儿 / 得多 / 多了",
+            "Quantify with measurable adjective + quantity",
+            "Compare actions with the 得 complement",
+            "Quantify actions with 多/少/早/晚 + verb"
+          ]
+        },
+        flashcards: ["一点儿", "多了", "得多", "得", "多", "少", "早", "晚"],
+        quizQuestions: 10,
+        learnSections: b12BiPrecisionLearnSections
+      },
 {
         id: "cecr-b22-grammar-complement-m1",
         title: "Compléments de résultat : 完/好/懂/到",
@@ -8112,6 +8143,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["也是", "也许", "也就是说", "也好", "再也不", "不再", "随便", "抽烟"],
         quizQuestions: 8,
         learnSections: b22NuancesYeFixedLearnSections
+      },
+      {
+        id: "cecr-b22-nuances-m9",
+        title: "Comparaisons avancées — 相比, 不如, 不比, 于",
+        titleEn: "Advanced comparisons — 相比, 不如, 不比, 于",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 5, hskLevels: [4, 6], category: "grammar", difficulty: "advanced",
+        tags: ["comparison", "nuance", "cecr:b22"],
+        introduction: {
+          title: "Cadrer, hiérarchiser, démentir : les comparaisons de haut niveau",
+          titleEn: "Framing, ranking, denying: high-level comparisons",
+          content: "Au-delà du 比 basique, 4 outils rhétoriques. (1) CADRER : 跟...相比 (neutre, « par rapport à ») pose une référence ; 比起...(来) prépare une préférence (« plutôt que »). Bonus : 相比之下 relie 2 phrases en contraste. (2) 3 « moins que » : 没有 = fait neutre, 不如 = jugement (B est mieux — 我做饭不如妈妈), 不比 = DÉMENTI (« pas plus que » ≠ « moins que ») — 我不比她高 signifie « je ne suis pas plus grand qu'elle », pas « plus petit ». (3) 4 blocs oraux pour rejeter une comparaison : 比不上 (pas au niveau), 比不过 (perdre la compétition), 没法比 (incomparable), 差远了 (loin, TRÈS loin — parfait pour esquiver un compliment). (4) 2 registres opposés : hyperbole 比 N 还 N (« il est plus X que X ! » — 比狐狸还狐狸) pour l'oral joueur ; 于 compounds (高于, 低于, 大于, 少于, 优于) pour la presse et les rapports.",
+          contentEn: "Beyond basic 比, 4 rhetorical tools. (1) FRAME: 跟...相比 (neutral, «compared to») sets a reference; 比起...(来) sets up a preference («rather than»). Bonus: 相比之下 links two contrasted sentences. (2) 3 «less than»s: 没有 = plain fact, 不如 = judgment (B is better — 我做饭不如妈妈), 不比 = DENIAL («no more than» ≠ «less than») — 我不比她高 means «I'm not taller than her», not «shorter». (3) 4 spoken chunks to reject a comparison: 比不上 (not at level), 比不过 (lose the contest), 没法比 (incomparable), 差远了 (far, VERY far — perfect for dodging a compliment). (4) 2 opposite registers: hyperbole 比 N 还 N («more X than X!» — 比狐狸还狐狸) for playful speech; 于 compounds (高于, 低于, 大于, 少于, 优于) for press and reports.",
+          objectives: [
+            "Cadrer avec 跟...相比 vs 比起...(来)",
+            "Distinguer 没有 / 不如 / 不比 (fait, jugement, démenti)",
+            "Utiliser 比不上 / 差远了 pour rejeter une comparaison",
+            "Reconnaître les 于 compounds à l'écrit formel"
+          ],
+          objectivesEn: [
+            "Frame with 跟...相比 vs 比起...(来)",
+            "Distinguish 没有 / 不如 / 不比 (fact, judgment, denial)",
+            "Use 比不上 / 差远了 to reject a comparison",
+            "Recognize 于 compounds in formal writing"
+          ]
+        },
+        flashcards: ["相比", "比起", "不如", "不比", "比不上", "差远了", "高于", "低于"],
+        quizQuestions: 10,
+        learnSections: b22BiAdvancedLearnSections
       }
     ]
   },
