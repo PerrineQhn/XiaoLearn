@@ -121,6 +121,7 @@ import {
   a2NuancesM6LearnSections,
   a2NuancesM7LearnSections,
   a2NuancesKaiMainVerbLearnSections,
+  a2NuancesZenmeBasicsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -216,6 +217,7 @@ import {
   b12NuancesM5LearnSections,
   b12NuancesM6LearnSections,
   b12NuancesM7LearnSections,
+  b12NuancesZenmeEmotionalLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3199,6 +3201,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["开", "开门", "开车", "开会", "开始", "开心"],
         quizQuestions: 8,
         learnSections: a2NuancesKaiMainVerbLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m9",
+        title: "怎么 vs 怎么样 vs 什么样 — 3 façons de demander « comment »",
+        titleEn: "怎么 vs 怎么样 vs 什么样 — 3 ways to ask \"how\"",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["nuance", "question-words", "cecr:a2"],
+        introduction: {
+          title: "Trois « comment » à ne plus confondre",
+          titleEn: "Three «how»s to stop mixing up",
+          content: "怎么 + verbe = demande une MÉTHODE (这个字怎么写 ? comment on écrit ce caractère ?). 怎么 reste JUSTE AVANT le verbe. 怎么样 = demande un JUGEMENT / une évaluation (你最近怎么样 ? comment ça va ?). Sert aussi à proposer (…，怎么样 ?) et donne 不怎么样 « bof ». 什么样(的) + nom = demande un TYPE ou une DESCRIPTION (什么样的人 ? quel genre de personne ?). Test simple : réponse = adjectif → 怎么样 ; réponse = verbe/action → 怎么 ; réponse = description → 什么样. Alternatives par registre : 怎样 (posé), 如何 (écrit), 哪种 (options limitées).",
+          contentEn: "怎么 + verb = asks for a METHOD (这个字怎么写? how do you write this character?). 怎么 stays RIGHT BEFORE the verb. 怎么样 = asks for a JUDGMENT / evaluation (你最近怎么样? how have you been?). Also used to propose (…，怎么样?) and gives 不怎么样 «meh». 什么样(的) + noun = asks for a TYPE or DESCRIPTION (什么样的人? what kind of person?). Simple test: answer = adjective → 怎么样; answer = verb/action → 怎么; answer = description → 什么样. Register alternatives: 怎样 (measured), 如何 (written), 哪种 (limited options).",
+          objectives: [
+            "Placer 怎么 JUSTE AVANT le verbe pour demander une méthode",
+            "Utiliser 怎么样 pour un jugement, une évaluation ou une proposition",
+            "Construire 什么样的 + nom pour demander un type",
+            "Éviter la confusion 怎么样 (jugement) vs 什么样 (description)"
+          ],
+          objectivesEn: [
+            "Place 怎么 RIGHT BEFORE the verb to ask about method",
+            "Use 怎么样 for judgment, evaluation, or proposal",
+            "Build 什么样的 + noun to ask about type",
+            "Avoid the 怎么样 (judgment) vs 什么样 (description) mix-up"
+          ]
+        },
+        flashcards: ["怎么", "怎么样", "什么样", "怎样", "如何", "哪种"],
+        quizQuestions: 8,
+        learnSections: a2NuancesZenmeBasicsLearnSections
       }
     ]
   },
@@ -5937,6 +5968,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["每", "任何", "凡是", "所有", "一切", "全部", "都", "愿意"],
         quizQuestions: 8,
         learnSections: b12NuancesM7LearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m8",
+        title: "怎么 émotionnel — surprise, plainte, exclamation",
+        titleEn: "Emotional 怎么 — surprise, complaint, exclamation",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["nuance", "grammar", "cecr:b12"],
+        introduction: {
+          title: "Quand 怎么 arrête d'être une question",
+          titleEn: "When 怎么 stops being a question",
+          content: "怎么 + négation (你怎么没来 ?) = « comment ça se fait que… ? » — SURPRISE ou reproche léger, pas la question neutre 为什么. 怎么了 ? = signale qu'on PERÇOIT un problème (你怎么了 ?). 是怎么回事 ? = « c'est quoi ce délire ? » — demande une explication. 怎么会 + verbe = « comment est-ce possible ». 怎么这样 = déception, plainte. 怎么这么 + adjectif = plainte sur un degré (怎么这么贵 !). 怎么…都/也 = universalité (« peu importe comment »). 怎么还 + verbe = « ça continue alors qu'on pensait fini ». 怎么就 + verbe = « c'est déjà fini alors qu'on pensait que ça durait ».",
+          contentEn: "怎么 + negation (你怎么没来?) = «how come you didn't come?» — SURPRISE or light reproach, not the neutral question 为什么. 怎么了? = signals you PERCEIVE a problem (你怎么了?). 是怎么回事? = «what's going on?» — demands an explanation. 怎么会 + verb = «how is it possible». 怎么这样 = disappointment, complaint. 怎么这么 + adjective = complaint about a degree (怎么这么贵! «it's SO expensive!»). 怎么…都/也 = universality («no matter how»). 怎么还 + verb = «still going when we thought it was over». 怎么就 + verb = «already over when we thought it'd last».",
+          objectives: [
+            "Distinguer 怎么 (surprise) vs 为什么 (question neutre)",
+            "Utiliser 怎么了 ? et 是怎么回事 ? pour signaler un problème",
+            "Manier 怎么会 / 怎么这样 / 怎么这么 comme exclamations",
+            "Construire 怎么...都/也 (universalité) et 怎么还/就 (timing)"
+          ],
+          objectivesEn: [
+            "Distinguish 怎么 (surprise) vs 为什么 (neutral question)",
+            "Use 怎么了? and 是怎么回事? to flag a problem",
+            "Wield 怎么会 / 怎么这样 / 怎么这么 as exclamations",
+            "Build 怎么...都/也 (universality) and 怎么还/就 (timing)"
+          ]
+        },
+        flashcards: ["怎么了", "怎么会", "怎么这样", "怎么这么", "是怎么回事", "怎么也", "怎么还", "怎么就"],
+        quizQuestions: 10,
+        learnSections: b12NuancesZenmeEmotionalLearnSections
       }
     ]
   },

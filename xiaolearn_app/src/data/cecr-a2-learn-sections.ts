@@ -2538,3 +2538,101 @@ export const a2NuancesKaiMainVerbLearnSections: LessonV2LearnSection[] = [
       '开会 doesn\'t just mean «start a meeting» — it also means HOLDING it for its whole duration. That\'s the «operate / keep running» sense.'
   }
 ];
+
+// --- cecr-a2-nuances-m9 — 怎么 vs 怎么样 vs 什么样 ------------------------
+export const a2NuancesZenmeBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-zenme-method',
+    title: '怎么 + verbe : demander la méthode',
+    titleEn: '怎么 + verb: asking about method',
+    body:
+      'Structure : (sujet) + 怎么 + verbe + (objet) ?\n' +
+      '\n' +
+      '怎么 avant un verbe demande le « comment faire ». Ex : 这个字怎么写 (zhè ge zì zěn me xiě) « comment écrit-on ce caractère ? ».\n' +
+      '\n' +
+      'Ex : 这道菜怎么做 (zhè dào cài zěn me zuò) « comment prépare-t-on ce plat ? ».\n' +
+      '\n' +
+      'Directions : usage constant avec 去/走/到. Ex : 去地铁站怎么走 (qù dì tiě zhàn zěn me zǒu) « comment on va à la station de métro ? ». Peut se dire seul (怎么走 ?) quand le contexte pointe la destination.\n' +
+      '\n' +
+      'Attention à l\'ordre : en français « comment » vient en tête, en chinois 怎么 reste JUSTE AVANT LE VERBE, à la place où irait la réponse. L\'objet monte en début de phrase comme topique : 这道菜 (topique) + 怎么 + 做.\n' +
+      '\n' +
+      'Alternatives par registre : 怎样 (zěn yàng) un peu plus posé (cours, présentation) ; 如何 (rú hé) très écrit (titres, essais). À l\'oral, garde 怎么.',
+    bodyEn:
+      'Structure: (subject) + 怎么 + verb + (object)? 怎么 before a verb asks «how do you do X?». Ex: 这个字怎么写 (zěn me xiě) = «how do you write this character?». Ex: 这道菜怎么做 = «how do you make this dish?». Directions: constant usage with 去/走/到. Ex: 去地铁站怎么走 = «how do you get to the subway station?». Can stand alone (怎么走?) when context points to the destination. Watch the word order: in English «how» comes first, but in Chinese 怎么 stays RIGHT BEFORE THE VERB — where the answer would go. The object moves to sentence-initial as a topic: 这道菜 (topic) + 怎么 + 做. Register alternatives: 怎样 (zěn yàng) slightly more measured (classes, presentations); 如何 (rú hé) very written (titles, essays). In speech, stick with 怎么.',
+    items: [
+      { hanzi: '怎么', pinyin: 'zěn me', meaning: 'comment (méthode)', meaningEn: 'how (method)', audio: 'audio/hsk1/hsk1_怎么.wav' },
+      { hanzi: '怎么写', pinyin: 'zěn me xiě', meaning: 'comment écrit-on', meaningEn: 'how do you write', audio: 'audio/hsk2/hsk2_写.wav' },
+      { hanzi: '怎么做', pinyin: 'zěn me zuò', meaning: 'comment fait-on', meaningEn: 'how do you make', audio: 'audio/hsk1/hsk1_做.wav' },
+      { hanzi: '怎么走', pinyin: 'zěn me zǒu', meaning: 'comment y aller', meaningEn: 'how to get there', audio: 'audio/hsk2/hsk2_怎么走.wav' },
+      { hanzi: '怎样', pinyin: 'zěn yàng', meaning: 'comment (posé)', meaningEn: 'how (measured)', audio: 'audio/hsk3/hsk3_怎样.wav' },
+      { hanzi: '如何', pinyin: 'rú hé', meaning: 'comment (écrit)', meaningEn: 'how (written)', audio: 'audio/hsk4/hsk4_如何.wav' }
+    ],
+    tip:
+      'Demande-toi toujours où irait la réponse. Elle vient avant le verbe → 怎么 aussi.',
+    tipEn:
+      'Always ask yourself where the answer would go. Answer comes before the verb → so does 怎么.'
+  },
+  {
+    id: 'a2-zenmeyang-evaluation',
+    title: '怎么样 : demander une évaluation ou proposer',
+    titleEn: '怎么样: asking for an evaluation or proposing',
+    body:
+      'Structure : [sujet] + 怎么样 ? pour demander un JUGEMENT. Ex : 你最近怎么样 (nǐ zuì jìn zěn me yàng) « comment ça va ces temps-ci ? ». Ex : 昨天的面试怎么样 (zuó tiān de miàn shì zěn me yàng) « il s\'est passé comment, l\'entretien d\'hier ? ».\n' +
+      '\n' +
+      'Test simple : si la réponse attendue est un adjectif (bien, mal, pas mal, fatigant…), c\'est 怎么样.\n' +
+      '\n' +
+      'Proposition : après une suggestion, [action]，怎么样 ? = « ça te dit ? ». Ex : 我们先喝咖啡，怎么样 (wǒ men xiān hē kā fēi, zěn me yàng) « on prend un café d\'abord, ça te va ? ». Plus doux qu\'une proposition directe.\n' +
+      '\n' +
+      '不怎么样 (bù zěn me yàng) = « bof, pas top ». Réponse standard négative sans être blessant. Ex : 这家店的服务不怎么样 (zhè jiā diàn de fú wù bù zěn me yàng) « le service ici est pas top ».\n' +
+      '\n' +
+      '怎么样了 ? = « comment ça a fini ? » (demande une MAJ). Ex : 面试怎么样了 (miàn shì zěn me yàng le) « l\'entretien, ça a donné quoi ? ». Le 了 indique qu\'un résultat est attendu.\n' +
+      '\n' +
+      'Verbe + 得 + 怎么样 ? = « à quel point tu... ? ». Ex : 你中文说得怎么样 (nǐ zhōng wén shuō de zěn me yàng) « tu parles chinois à quel niveau ? ».',
+    bodyEn:
+      'Structure: [subject] + 怎么样? asks for a JUDGMENT. Ex: 你最近怎么样 = «how have you been lately?». Ex: 昨天的面试怎么样 = «how did yesterday\'s interview go?». Simple test: if the expected answer is an adjective (fine, bad, not bad, tiring…), use 怎么样. Proposal: after a suggestion, [action]，怎么样? = «what do you say?». Ex: 我们先喝咖啡，怎么样 = «let\'s grab a coffee first, does that work?». Softer than a direct proposal. 不怎么样 (bù zěn me yàng) = «meh, not great». Standard negative reply without being harsh. Ex: 这家店的服务不怎么样 = «the service here isn\'t great». 怎么样了? = «how did it end up?» (asks for an UPDATE). Ex: 面试怎么样了 = «what came of the interview?». The 了 signals that a result is expected. Verb + 得 + 怎么样? = «how well do you…?». Ex: 你中文说得怎么样 = «how well do you speak Chinese?».',
+    items: [
+      { hanzi: '怎么样', pinyin: 'zěn me yàng', meaning: 'comment (jugement)', meaningEn: 'how (judgment)', audio: 'audio/hsk1/hsk1_怎么样.wav' },
+      { hanzi: '不怎么样', pinyin: 'bù zěn me yàng', meaning: 'pas top, bof', meaningEn: 'not great, meh', audio: 'audio/hsk3/hsk3_不怎么样.wav' },
+      { hanzi: '最近', pinyin: 'zuì jìn', meaning: 'ces temps-ci', meaningEn: 'lately', audio: 'audio/hsk3/hsk3_最近.wav' },
+      { hanzi: '面试', pinyin: 'miàn shì', meaning: 'entretien d\'embauche', meaningEn: 'job interview', audio: 'audio/hsk4/hsk4_面试.wav' },
+      { hanzi: '服务', pinyin: 'fú wù', meaning: 'service', meaningEn: 'service', audio: 'audio/hsk4/hsk4_服务.wav' },
+      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk2/hsk2_咖啡.wav' }
+    ],
+    tip:
+      '怎么样 pose une question de qualité ou d\'état ; 怎么 pose une question de méthode. Confondre les deux est l\'erreur la plus fréquente des apprenants.',
+    tipEn:
+      '怎么样 asks a quality/state question; 怎么 asks a method question. Mixing them up is the most common learner mistake.'
+  },
+  {
+    id: 'a2-shenmeyang-type',
+    title: '什么样(的) : demander le type ou les qualités',
+    titleEn: '什么样(的): asking about type or qualities',
+    body:
+      'Structure : 什么样 + 的 + nom ? = « quel genre de X ? ». 什么样的 modifie le nom qui suit.\n' +
+      '\n' +
+      'Ex : 你想找什么样的男朋友 (nǐ xiǎng zhǎo shén me yàng de nán péng yǒu) « quel genre de copain tu cherches ? ». Attend une description.\n' +
+      '\n' +
+      'Templates fréquents : 什么样的人 (personnalité), 什么样的东西 (propriétés), 什么样的方法 (procédure).\n' +
+      '\n' +
+      'Ex : 他是个什么样的人 (tā shì gè shén me yàng de rén) « c\'est quel genre de personne ? » (attend : gentil, ambitieux, tranquille…).\n' +
+      '\n' +
+      'Variante avec 是...的 : ...是什么样的 ? pour décrire la NATURE d\'une chose abstraite. Ex : 你的工作是什么样的 (nǐ de gōng zuò shì shén me yàng de) « c\'est comment ton boulot ? » (description du contenu, pas jugement).\n' +
+      '\n' +
+      '哪种 / 哪样 : « lequel parmi X » quand les options sont limitées. Ex : 你喜欢哪种女孩 (nǐ xǐ huan nǎ zhǒng nǚ hái) « t\'aimes lequel des types ? » (implique des catégories connues). Vs 什么样 = ouvert (« décris-moi »).\n' +
+      '\n' +
+      'Piège classique 什么样 vs 怎么样 : 什么样 = description de type ; 怎么样 = jugement. « 这家店怎么样 » attend « pas mal / cher » ; « 这家店是什么样的 » attend « petit resto de hot pot, très typé ».',
+    bodyEn:
+      'Structure: 什么样 + 的 + noun? = «what kind of X?». 什么样的 modifies the noun that follows. Ex: 你想找什么样的男朋友 = «what kind of boyfriend are you looking for?». Expects a description. Frequent templates: 什么样的人 (personality), 什么样的东西 (properties), 什么样的方法 (procedure). Ex: 他是个什么样的人 = «what kind of person is he?» (expects: kind, ambitious, quiet…). Variant with 是...的: ...是什么样的? to describe the NATURE of an abstract thing. Ex: 你的工作是什么样的 = «what\'s your job like?» (content description, not judgment). 哪种 / 哪样: «which one among X» when options are limited. Ex: 你喜欢哪种女孩 = «which type do you like?» (implies known categories). Vs 什么样 = open («describe it»). Classic trap 什么样 vs 怎么样: 什么样 = type description; 怎么样 = judgment. «这家店怎么样» expects «not bad / expensive»; «这家店是什么样的» expects «tiny hot pot place, very authentic».',
+    items: [
+      { hanzi: '什么样', pinyin: 'shén me yàng', meaning: 'quel genre', meaningEn: 'what kind', audio: 'audio/hsk3/hsk3_什么样.wav' },
+      { hanzi: '男朋友', pinyin: 'nán péng yǒu', meaning: 'petit ami', meaningEn: 'boyfriend', audio: 'audio/hsk2/hsk2_男朋友.wav' },
+      { hanzi: '方法', pinyin: 'fāng fǎ', meaning: 'méthode', meaningEn: 'method', audio: 'audio/hsk4/hsk4_方法.wav' },
+      { hanzi: '工作', pinyin: 'gōng zuò', meaning: 'travail', meaningEn: 'work, job', audio: 'audio/hsk1/hsk1_工作.wav' },
+      { hanzi: '哪种', pinyin: 'nǎ zhǒng', meaning: 'quel type (parmi)', meaningEn: 'which type (among)', audio: 'audio/hsk3/hsk3_哪种.wav' }
+    ],
+    tip:
+      'Si tu attends une DESCRIPTION → 什么样(的). Si tu attends un JUGEMENT → 怎么样.',
+    tipEn:
+      'If you expect a DESCRIPTION → 什么样(的). If you expect a JUDGMENT → 怎么样.'
+  }
+];

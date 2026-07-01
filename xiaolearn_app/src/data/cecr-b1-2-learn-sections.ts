@@ -2308,3 +2308,134 @@ export const b12NuancesM7LearnSections: LessonV2LearnSection[] = [
       '«我愿意为你做一切» is a CLASSIC Chinese declaration of love. Don\'t use lightly: 一切 carries a total commitment that doesn\'t fade.'
   }
 ];
+
+// --- cecr-b12-nuances-m8 — 怎么 émotionnel ------------------------------
+export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-zenme-how-come',
+    title: '怎么 = « comment ça se fait ? » (surprise, reproche léger)',
+    titleEn: '怎么 = «how come?» (surprise, light reproach)',
+    body:
+      'Quand 怎么 est associé à une négation (不/没) ou à une situation inattendue, il glisse de « méthode » vers « raison ». Sens ≈ « comment se fait-il ? », « comment ça, tu... ? ».\n' +
+      '\n' +
+      'Ex : 你怎么没来 (nǐ zěn me méi lái) « comment ça se fait que tu ne sois pas venu ? » (surprise). Vs 你怎么去 (nǐ zěn me qù) « tu y vas comment ? » (méthode).\n' +
+      '\n' +
+      'Ex : 他怎么不吃 (tā zěn me bù chī) « comment ça se fait qu\'il ne mange pas ? ».\n' +
+      '\n' +
+      'Sans négation, le contexte suffit : quelqu\'un débarque à minuit → 你怎么来了 (nǐ zěn me lái le) « comment ça se fait que tu sois venu ? » (surprise pure).\n' +
+      '\n' +
+      '怎么 vs 为什么 : 为什么 (wèi shén me) = « pourquoi ? » NEUTRE et FACTUEL. 怎么 en sens raison = surprise, agacement, ou reproche léger. Ex : 你为什么没来 (nǐ wèi shén me méi lái) = question calme ; 你怎么没来 (nǐ zěn me méi lái) = ils attendaient, elles sont surprises.\n' +
+      '\n' +
+      'Règle : à l\'écrit formel ou pour une question posée, prends 为什么. Pour réagir sur le vif à qch d\'inattendu, prends 怎么.',
+    bodyEn:
+      'When 怎么 pairs with negation (不/没) or an unexpected situation, it shifts from «method» to «reason». Meaning ≈ «how come?», «what do you mean, you…?». Ex: 你怎么没来 = «how come you didn\'t come?» (surprise). Vs 你怎么去 = «how are you going?» (method). Ex: 他怎么不吃 = «how come he isn\'t eating?». Without negation, context is enough: someone shows up at midnight → 你怎么来了 = «how come you came?» (pure surprise). 怎么 vs 为什么: 为什么 (wèi shén me) = «why?» NEUTRAL and FACTUAL. 怎么 in the reason sense = surprise, annoyance, or light reproach. Ex: 你为什么没来 = calm question; 你怎么没来 = they were waiting, they\'re surprised. Rule: in formal writing or for an even-toned question, use 为什么. To react on the fly to something unexpected, use 怎么.',
+    items: [
+      { hanzi: '怎么', pinyin: 'zěn me', meaning: 'comment (surprise, raison)', meaningEn: 'how (surprise, reason)', audio: 'audio/hsk1/hsk1_怎么.wav' },
+      { hanzi: '为什么', pinyin: 'wèi shén me', meaning: 'pourquoi (neutre)', meaningEn: 'why (neutral)', audio: 'audio/hsk2/hsk2_为什么.wav' },
+      { hanzi: '没', pinyin: 'méi', meaning: 'ne...pas (passé)', meaningEn: 'not (past)', audio: 'audio/hsk1/hsk1_没.wav' },
+      { hanzi: '不', pinyin: 'bù', meaning: 'ne...pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' },
+      { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' }
+    ],
+    tip:
+      'La couleur émotionnelle change même si la traduction française est proche. Écoute l\'intonation du locuteur, pas juste les mots.',
+    tipEn:
+      'The emotional color changes even when the English translation sounds close. Listen to the speaker\'s intonation, not just the words.'
+  },
+  {
+    id: 'b12-zenme-le-huishi',
+    title: '怎么了 ? et 是怎么回事 ? — signaler un problème',
+    titleEn: '怎么了? and 是怎么回事? — flagging a problem',
+    body:
+      '怎么了 ? (zěn me le) : « qu\'est-ce qui se passe ? / qu\'est-ce que tu as ? » — s\'utilise quand tu SENS un problème (mine triste, silence gênant, objet cassé). Le 了 marque un changement d\'état.\n' +
+      '\n' +
+      'Ex : 你怎么了 (nǐ zěn me le) « qu\'est-ce que t\'as ? / ça va pas ? ». Le ton fait tout : peut être bienveillant ou impatient.\n' +
+      '\n' +
+      'Distinction importante : 怎么了 ? = signale qu\'un problème est perçu. 怎么样了 ? = demande la SUITE / la MISE À JOUR (comment ça a évolué). Ex : 面试怎么了 (miàn shì zěn me le) = pb à l\'entretien ? / 面试怎么样了 (miàn shì zěn me yàng le) = ça a donné quoi ?\n' +
+      '\n' +
+      '是怎么回事 ? (shì zěn me huí shì) : « c\'est quoi ce truc ? / explique-moi ce qui se passe » — sert à demander une explication d\'une situation étrange, retard, message bizarre, règle inattendue.\n' +
+      '\n' +
+      'Ex : 这是怎么回事 (zhè shì zěn me huí shì) « c\'est quoi ce délire ? ».\n' +
+      '\n' +
+      'Ex : 网络又断了，是怎么回事 (wǎng luò yòu duàn le, shì zěn me huí shì) « internet est encore coupé, c\'est quoi ce truc ? ».',
+    bodyEn:
+      '怎么了? (zěn me le): «what\'s going on? / what\'s wrong with you?» — used when you SENSE a problem (sad face, awkward silence, broken object). 了 marks a state change. Ex: 你怎么了 = «what\'s up? / are you okay?». Tone matters: can be caring or impatient. Key distinction: 怎么了? = signals a perceived problem. 怎么样了? = asks for a FOLLOW-UP / UPDATE (how did it evolve). Ex: 面试怎么了 = problem at the interview? / 面试怎么样了 = how did it go? 是怎么回事? (shì zěn me huí shì): «what is this? / explain what\'s going on» — used to demand an explanation for a strange situation, delay, weird message, unexpected rule. Ex: 这是怎么回事 = «what the heck is going on?». Ex: 网络又断了，是怎么回事 = «internet\'s down again, what\'s the deal?».',
+    items: [
+      { hanzi: '怎么了', pinyin: 'zěn me le', meaning: 'qu\'est-ce qui se passe', meaningEn: 'what\'s wrong', audio: 'audio/hsk2/hsk2_怎么了.wav' },
+      { hanzi: '是怎么回事', pinyin: 'shì zěn me huí shì', meaning: 'c\'est quoi ce truc', meaningEn: 'what\'s the deal', audio: 'audio/hsk4/hsk4_回事.wav' },
+      { hanzi: '怎么样了', pinyin: 'zěn me yàng le', meaning: 'ça a donné quoi', meaningEn: 'how did it go', audio: 'audio/hsk1/hsk1_怎么样.wav' },
+      { hanzi: '网络', pinyin: 'wǎng luò', meaning: 'internet, réseau', meaningEn: 'internet, network', audio: 'audio/hsk4/hsk4_网络.wav' },
+      { hanzi: '断', pinyin: 'duàn', meaning: 'couper, interrompre', meaningEn: 'cut off', audio: 'audio/hsk4/hsk4_断.wav' }
+    ],
+    tip:
+      'Quand tu VEUX qu\'on t\'explique un événement bizarre, prends 是怎么回事. Quand tu perçois qu\'un problème EXISTE, prends 怎么了.',
+    tipEn:
+      'When you WANT someone to explain a weird event, use 是怎么回事. When you sense a problem EXISTS, use 怎么了.'
+  },
+  {
+    id: 'b12-zenme-hui-zenme-zheme',
+    title: '怎么会 / 怎么这样 / 怎么这么 : surprise, plainte, désarroi',
+    titleEn: '怎么会 / 怎么这样 / 怎么这么: surprise, complaint, dismay',
+    body:
+      'Ces 3 structures ne cherchent PAS une info réelle : le locuteur RÉAGIT à qch qui le choque.\n' +
+      '\n' +
+      '怎么会 + verbe : « comment est-ce possible que... ? ». Le 会 apporte le sens de possibilité. Ex : 你怎么会这么说 (nǐ zěn me huì zhè me shuō) « comment tu peux dire un truc pareil ? » (choc, pas question réelle).\n' +
+      '\n' +
+      'Peut se dire seul : 怎么会 (zěn me huì) ? = « c\'est pas possible ». Ou renforcé : 怎么会呢 (zěn me huì ne) ? avec 呢 pour plus d\'incrédulité.\n' +
+      '\n' +
+      '怎么这样 : « c\'est quoi ce plan ? / comment on peut être comme ça ? ». Compact, chargé émotionnellement. Ex : 你怎么这样 (nǐ zěn me zhè yàng) « comment tu peux être comme ça ? » (déception, reproche léger).\n' +
+      '\n' +
+      'Variante : 怎么会这样 (zěn me huì zhè yàng) ? penche vers l\'incrédulité plutôt que la plainte.\n' +
+      '\n' +
+      '怎么这么 + adjectif : « pourquoi c\'est aussi X ! ». Surprise ou plainte sur un DEGRÉ. 这么 apporte l\'intensité.\n' +
+      '\n' +
+      'Ex : 这个菜怎么这么贵 (zhè ge cài zěn me zhè me guì) « il est HYPER cher, ce plat ! ». C\'est plus une plainte qu\'une demande de tarif détaillé.\n' +
+      '\n' +
+      'Autres adjectifs qui marchent : 慢 (màn, lent), 冷 (lěng, froid), 难 (nán, difficile), 远 (yuǎn, loin)…',
+    bodyEn:
+      'These 3 structures are NOT hunting for real info: the speaker REACTS to something shocking. 怎么会 + verb: «how is it possible that…?». 会 adds the sense of possibility. Ex: 你怎么会这么说 = «how can you say something like that?» (shock, not a real question). Can stand alone: 怎么会? = «no way». Or intensified: 怎么会呢? with 呢 for extra disbelief. 怎么这样: «what kind of way is that? / how can you be like that?». Compact, emotionally loaded. Ex: 你怎么这样 = «how can you act like that?» (disappointment, light reproach). Variant: 怎么会这样? leans toward disbelief rather than complaint. 怎么这么 + adjective: «why is it so X!». Surprise or complaint about a DEGREE. 这么 adds intensity. Ex: 这个菜怎么这么贵 = «this dish is SO expensive!». It\'s more a complaint than a request for a detailed price. Other adjectives that work: 慢 (slow), 冷 (cold), 难 (hard), 远 (far)…',
+    items: [
+      { hanzi: '怎么会', pinyin: 'zěn me huì', meaning: 'comment est-ce possible', meaningEn: 'how is that possible', audio: 'audio/hsk2/hsk2_会.wav' },
+      { hanzi: '怎么这样', pinyin: 'zěn me zhè yàng', meaning: 'comment peux-tu être comme ça', meaningEn: 'how can you be like that', audio: 'audio/hsk2/hsk2_这样.wav' },
+      { hanzi: '怎么这么', pinyin: 'zěn me zhè me', meaning: 'pourquoi c\'est si', meaningEn: 'why is it so', audio: 'audio/hsk2/hsk2_这么.wav' },
+      { hanzi: '贵', pinyin: 'guì', meaning: 'cher (prix)', meaningEn: 'expensive', audio: 'audio/hsk2/hsk2_贵.wav' },
+      { hanzi: '难', pinyin: 'nán', meaning: 'difficile', meaningEn: 'hard, difficult', audio: 'audio/hsk3/hsk3_难.wav' },
+      { hanzi: '远', pinyin: 'yuǎn', meaning: 'loin', meaningEn: 'far', audio: 'audio/hsk2/hsk2_远.wav' }
+    ],
+    tip:
+      'Ces 3 patterns servent à VENTILER une émotion. En chinois, on ne pose pas une vraie question, on manifeste sa réaction.',
+    tipEn:
+      'These 3 patterns are used to VENT an emotion. In Chinese, you\'re not asking a real question — you\'re expressing your reaction.'
+  },
+  {
+    id: 'b12-zenme-dou-ye-hai-jiu',
+    title: '怎么...都/也 (« peu importe ») + 怎么还/就 (timing)',
+    titleEn: '怎么...都/也 («no matter») + 怎么还/就 (timing)',
+    body:
+      '怎么...都 = « peu importe comment, le résultat est le même ». 怎么 arrête de poser une question et prend le sens général « n\'importe quel moyen ». Ex : 这件事你怎么做都行 (zhè jiàn shì nǐ zěn me zuò dōu xíng) « ce truc, tu le fais comme tu veux, ça va ». Ex : 别人怎么想都不重要 (bié rén zěn me xiǎng dōu bù zhòng yào) « peu importe ce que pensent les autres ».\n' +
+      '\n' +
+      '怎么也 + 不/没 = « quoi qu\'on essaie, ça marche pas ». Version FRUSTRATION. Ex : 我怎么也睡不着 (wǒ zěn me yě shuì bù zháo) « je n\'arrive pas à dormir quoi que je fasse ». Ex : 他怎么也不同意 (tā zěn me yě bù tóng yì) « il ne veut RIEN entendre ».\n' +
+      '\n' +
+      'Variante d\'obligation : 怎么也得 + verbe = « il faut absolument que, quoi qu\'il arrive ». Ex : 怎么也得吃点东西 (zěn me yě děi chī diǎn dōng xi) « il faut au moins manger un peu, coûte que coûte ».\n' +
+      '\n' +
+      '怎么还 + verbe : surprise qu\'une chose CONTINUE alors qu\'on la pensait finie. Ex : 你怎么还在用那个旧手机 (nǐ zěn me hái zài yòng nà ge jiù shǒu jī) « comment ça se fait que tu utilises ENCORE ce vieux téléphone ? ».\n' +
+      '\n' +
+      '怎么就 + verbe : surprise qu\'une chose se soit passée TROP VITE, trop tôt, ou trop brusquement. Ex : 你怎么就放弃了 (nǐ zěn me jiù fàng qì le) « déjà tu abandonnes ? ».\n' +
+      '\n' +
+      'Nuance : 怎么还 = « on attendait un changement, il n\'a pas eu lieu » ; 怎么就 = « on attendait qu\'un état dure, il a déjà changé ».',
+    bodyEn:
+      '怎么...都 = «no matter how, the result is the same». 怎么 stops being a question and takes the generic meaning «any means». Ex: 这件事你怎么做都行 = «this thing, do it however you want, it works». Ex: 别人怎么想都不重要 = «it doesn\'t matter what others think». 怎么也 + 不/没 = «no matter what we try, it doesn\'t work». FRUSTRATION version. Ex: 我怎么也睡不着 = «I can\'t fall asleep no matter what I do». Ex: 他怎么也不同意 = «he WON\'T agree no matter what». Obligation variant: 怎么也得 + verb = «I absolutely must, no matter what». Ex: 怎么也得吃点东西 = «you\'ve got to eat at least a bit, no matter what». 怎么还 + verb: surprise that something is STILL going on when we thought it was over. Ex: 你怎么还在用那个旧手机 = «how come you\'re STILL using that old phone?». 怎么就 + verb: surprise that something happened TOO FAST, too early, or too abruptly. Ex: 你怎么就放弃了 = «you\'re giving up already?». Nuance: 怎么还 = «we expected a change, it didn\'t happen»; 怎么就 = «we expected a state to last, it already changed».',
+    items: [
+      { hanzi: '怎么也', pinyin: 'zěn me yě', meaning: 'quoi qu\'on fasse', meaningEn: 'no matter what', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '怎么还', pinyin: 'zěn me hái', meaning: 'comment ça, encore', meaningEn: 'how come still', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '怎么就', pinyin: 'zěn me jiù', meaning: 'comment ça, déjà', meaningEn: 'how come already', audio: 'audio/hsk2/hsk2_就.wav' },
+      { hanzi: '睡不着', pinyin: 'shuì bù zháo', meaning: 'ne pas arriver à dormir', meaningEn: 'can\'t fall asleep', audio: 'audio/hsk3/hsk3_睡觉.wav' },
+      { hanzi: '同意', pinyin: 'tóng yì', meaning: 'être d\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '放弃', pinyin: 'fàng qì', meaning: 'abandonner', meaningEn: 'give up', audio: 'audio/hsk4/hsk4_放弃.wav' },
+      { hanzi: '重要', pinyin: 'zhòng yào', meaning: 'important', meaningEn: 'important', audio: 'audio/hsk3/hsk3_重要.wav' }
+    ],
+    tip:
+      '都 (universel) et 也 (universel aussi mais souvent avec négation) transforment 怎么 en marqueur d\'universalité. 还 et 就 gardent 怎么 en surprise mais ajoutent une dimension temporelle.',
+    tipEn:
+      '都 (universal) and 也 (universal too, but often with negation) turn 怎么 into a universality marker. 还 and 就 keep 怎么 as surprise but add a temporal dimension.'
+  }
+];
