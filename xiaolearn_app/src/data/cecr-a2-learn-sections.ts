@@ -3392,3 +3392,127 @@ export const a2NuancesFirstMeetingLearnSections: LessonV2LearnSection[] = [
       'Crucial distinction — 你好 to approach, 很高兴认识你 for a 1st meeting, 好久不见 to reunite. Mixing the 3 up sounds strange to Chinese ears.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Nuances — « si oui ou non » (whether or not) — CGG #96
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesWhetherOrNotLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-whether-verb-bu-verb',
+    title: 'Structure V-不-V : la base de « si oui ou non »',
+    titleEn: 'V-不-V structure: the basis of « whether or not »',
+    body:
+      'Le chinois n\'a PAS un mot unique pour « si oui ou non » à la mode française. À la place, on présente les 2 possibilités : verbe + 不 + verbe.\n' +
+      '- Structure : (sujet) + verbe + 不 + verbe + (objet).\n' +
+      '- Ex : 我不在乎她喜不喜欢 (wǒ bú zài hu tā xǐ bu xǐ huan) « je me fiche qu\'elle aime ou pas ».\n' +
+      '- Ex : 你去不去 ? (nǐ qù bu qù) « tu y vas ou pas ? ».\n' +
+      '- Attention : PAS de 吗 avec cette structure ! Et surtout PAS de 如果 (« si »). 如果 introduit une CONDITION hypothétique, alors que V-不-V exprime une INCERTITUDE oui/non.\n' +
+      '- Pour un verbe/adjectif dissyllabique, 2 formes possibles :\n' +
+      '  · Forme complète : 喜欢不喜欢 (xǐ huan bù xǐ huan).\n' +
+      '  · Forme courte : 喜不喜欢 (xǐ bu xǐ huan) — juste le 1er caractère avant 不. Sonne un peu plus vif à l\'oral.\n' +
+      '- Ex avec un adjectif : 你累不累 ? (nǐ lèi bu lèi) « fatigué ou pas ? ».\n' +
+      '- Ex avec un dissyllabique court : 明白不明白 = 明不明白 (míng bu míng bái) « t\'as compris ou pas ? ».\n' +
+      '- Registre : neutre à décontracté. Parfait pour la conversation quotidienne, les questions indirectes.',
+    bodyEn:
+      'Chinese does NOT have a single word for « whether or not » like in French/English. Instead, you lay out the 2 options: verb + 不 + verb.\n' +
+      '- Structure: (subject) + verb + 不 + verb + (object).\n' +
+      '- Ex: 我不在乎她喜不喜欢 « I don\'t care whether she likes it or not ».\n' +
+      '- Ex: 你去不去? « are you going or not? ».\n' +
+      '- Careful: NO 吗 with this structure! And especially NO 如果 (« if »). 如果 introduces a hypothetical CONDITION, whereas V-不-V expresses yes/no UNCERTAINTY.\n' +
+      '- For a disyllabic verb/adjective, 2 possible forms:\n' +
+      '  · Full form: 喜欢不喜欢.\n' +
+      '  · Short form: 喜不喜欢 — just the 1st character before 不. Sounds a bit livelier orally.\n' +
+      '- Ex with an adjective: 你累不累? « tired or not? ».\n' +
+      '- Ex with a disyllabic short form: 明白不明白 = 明不明白 « got it or not? ».\n' +
+      '- Register: neutral to casual. Perfect for daily conversation and indirect questions.',
+    items: [
+      { hanzi: '去不去', pinyin: 'qù bu qù', meaning: 'aller ou pas', meaningEn: 'go or not', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '喜不喜欢', pinyin: 'xǐ bu xǐ huan', meaning: 'aimer ou pas', meaningEn: 'like or not', audio: 'audio/hsk1/hsk1_喜欢.wav' },
+      { hanzi: '累不累', pinyin: 'lèi bu lèi', meaning: 'fatigué ou pas', meaningEn: 'tired or not', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '明不明白', pinyin: 'míng bu míng bái', meaning: 'comprendre ou pas', meaningEn: 'understand or not', audio: 'audio/hsk3/hsk3_明白.wav' },
+      { hanzi: '在乎', pinyin: 'zài hu', meaning: 'se soucier de', meaningEn: 'care about', audio: 'audio/hsk4/hsk4_在乎.wav' }
+    ],
+    tip:
+      'Le V-不-V est utilisable partout où le français dirait « je me demande si », « je ne sais pas si », « je te demande si ». C\'est le passe-partout du chinois oral.',
+    tipEn:
+      'V-不-V works everywhere French/English would say « I wonder if », « I don\'t know if », « I\'m asking if ». It\'s the go-to structure in spoken Chinese.'
+  },
+  {
+    id: 'a2-whether-common-variants',
+    title: '是不是, 有没有, 要不要, 能不能, 会不会 : les 5 grands classiques',
+    titleEn: '是不是, 有没有, 要不要, 能不能, 会不会: the 5 great classics',
+    body:
+      'Ces 5 formes suivent le même patron V-不-V mais chacune a son domaine.\n' +
+      '- 是不是 (shì bu shì) = « est-ce que oui ou non » — vérifier un fait ou une identité.\n' +
+      '  · Ex : 他问我是不是老师 (tā wèn wǒ shì bu shì lǎo shī) « il m\'a demandé si j\'étais prof ».\n' +
+      '  · Ex : 你是不是累了 (nǐ shì bu shì lèi le) « tu es fatigué ou pas ? ».\n' +
+      '- 有没有 (yǒu méi yǒu) : cas SPÉCIAL — 有 se nie avec 没, jamais avec 不. Donc c\'est 有没有, PAS 有不有 ✗.\n' +
+      '  · Pour la possession : 我不知道他有没有女朋友 (wǒ bù zhī dào tā yǒu méi yǒu nǚ péng you) « je ne sais pas s\'il a une copine ».\n' +
+      '  · Pour une action passée : 我不知道他有没有来 (wǒ bù zhī dào tā yǒu méi yǒu lái) « je ne sais pas s\'il est venu ».\n' +
+      '- 要不要 (yào bu yào) : décisions, offres, choix. Littéralement « vouloir ou pas » mais s\'utilise comme « faut-il faire X ou pas ».\n' +
+      '  · Ex : 她在考虑要不要换工作 (tā zài kǎo lǜ yào bu yào huàn gōng zuò) « elle se demande si elle doit changer de boulot ».\n' +
+      '  · Ex : 你要不要来 ? « tu viens ou pas ? ».\n' +
+      '  · Variante 该不该 (gāi bu gāi) « faut-il / faudrait-il » — accent sur « moralement, est-ce judicieux ».\n' +
+      '- 能不能 (néng bu néng) : capacité, possibilité. Ex : 我不确定我能不能通过考试 (wǒ bù què dìng wǒ néng bu néng tōng guò kǎo shì) « je ne sais pas si je réussirai l\'examen ».\n' +
+      '  · Variante 可不可以 (kě bu kě yǐ) : PERMISSION polie. Ex : 我可不可以请假 « je peux demander un congé ? ».\n' +
+      '- 会不会 (huì bu huì) : événements futurs, probabilité. Ex : 我在想明天会不会下雨 (wǒ zài xiǎng míng tiān huì bu huì xià yǔ) « je me demande s\'il va pleuvoir demain ».\n' +
+      '  · Sert aussi à adoucir une supposition (« et si... ? »).',
+    bodyEn:
+      'These 5 forms follow the V-不-V pattern but each has its own domain.\n' +
+      '- 是不是 = « is it or isn\'t it » — checking a fact or identity. Ex: 他问我是不是老师 « he asked me whether I\'m a teacher ».\n' +
+      '- 有没有: SPECIAL case — 有 is negated with 没, never with 不. So it\'s 有没有, NOT 有不有 ✗. Ex: 我不知道他有没有来 « I don\'t know whether he came ».\n' +
+      '- 要不要: decisions, offers, choices. Literally « want or not » but used as « should we do X or not ». Ex: 她在考虑要不要换工作 « she\'s wondering whether to change jobs ». Variant 该不该 « should we ».\n' +
+      '- 能不能: capacity, possibility. Ex: 我不确定我能不能通过考试 « I\'m not sure whether I\'ll pass the exam ». Variant 可不可以 for polite permission.\n' +
+      '- 会不会: future events, probability. Ex: 我在想明天会不会下雨 « I wonder whether it\'ll rain tomorrow ». Also softens a hypothesis (« what if... »).',
+    items: [
+      { hanzi: '是不是', pinyin: 'shì bu shì', meaning: 'est-ce que oui ou non', meaningEn: 'is it or not', audio: 'audio/hsk1/hsk1_是.wav' },
+      { hanzi: '有没有', pinyin: 'yǒu méi yǒu', meaning: 'avoir ou pas', meaningEn: 'have or not', audio: 'audio/hsk1/hsk1_有.wav' },
+      { hanzi: '要不要', pinyin: 'yào bu yào', meaning: 'vouloir/falloir ou pas', meaningEn: 'want/should or not', audio: 'audio/hsk2/hsk2_要.wav' },
+      { hanzi: '能不能', pinyin: 'néng bu néng', meaning: 'pouvoir ou pas', meaningEn: 'be able or not', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '会不会', pinyin: 'huì bu huì', meaning: 'va-t-il / probablement ou pas', meaningEn: 'will or not', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '可不可以', pinyin: 'kě bu kě yǐ', meaning: 'peut-on (permission)', meaningEn: 'may or not', audio: 'audio/hsk2/hsk2_可以.wav' }
+    ],
+    tip:
+      'Ces 5 formes sont vraiment les briques centrales du chinois oral. Apprends-les comme des blocs.',
+    tipEn:
+      'These 5 forms are truly the central bricks of spoken Chinese. Learn them as fixed chunks.'
+  },
+  {
+    id: 'a2-whether-haishi-alternative',
+    title: '还是 seul : « soit A, soit B » comme alternative',
+    titleEn: '还是 alone: « either A or B » as an alternative',
+    body:
+      'Quand les 2 possibilités NE SONT PAS de simples opposés (« oui / non »), mais des OPTIONS DISTINCTES, on utilise 还是 (hái shi) « ou bien... ».\n' +
+      '- Structure : ... + option A + 还是 + option B.\n' +
+      '- Ex : 我不知道这是真的还是只是一个故事 (wǒ bù zhī dào zhè shì zhēn de hái shi zhǐ shì yí ge gù shi) « je ne sais pas si c\'est vrai ou si c\'est juste une histoire ». Ici A ≠ non-A.\n' +
+      '- Ex : 你想喝咖啡还是茶 (nǐ xiǎng hē kā fēi hái shi chá) « tu veux du café ou du thé ? » (2 options distinctes, pas un oui/non).\n' +
+      '- Ex : 你今天来还是明天来 (nǐ jīn tiān lái hái shi míng tiān lái) « tu viens aujourd\'hui ou demain ? ».\n' +
+      '- Différence avec V-不-V :\n' +
+      '  · V-不-V = « X ou non-X » (opposition binaire).\n' +
+      '  · 还是 = « X ou Y » (choix entre 2 options différentes).\n' +
+      '- Attention : ne pas confondre avec 或者 (huò zhě) « ou » qui sert dans les phrases AFFIRMATIVES à énumérer des options (Ex : 你可以坐地铁或者打车 « tu peux prendre le métro OU un taxi »). 还是 est réservé aux QUESTIONS ou aux incertitudes.\n' +
+      '- Bonus : « 我们去还是不去 ? » et « 我们去不去 ? » signifient à peu près pareil, mais le 1er avec 还是 sonne un peu plus délibératif (« on y va ou on n\'y va pas, faut choisir »).',
+    bodyEn:
+      'When the 2 options are NOT simple opposites (« yes / no ») but DISTINCT choices, you use 还是 (hái shi) « or ».\n' +
+      '- Structure: ... + option A + 还是 + option B.\n' +
+      '- Ex: 我不知道这是真的还是只是一个故事 « I don\'t know whether this is true or just a story ». A ≠ non-A.\n' +
+      '- Ex: 你想喝咖啡还是茶 « coffee or tea? » (2 distinct options, not a yes/no).\n' +
+      '- Difference with V-不-V:\n' +
+      '  · V-不-V = « X or non-X » (binary opposition).\n' +
+      '  · 还是 = « X or Y » (choice between 2 different options).\n' +
+      '- Careful: don\'t confuse with 或者 (huò zhě) « or », used in AFFIRMATIVE sentences to list options. 还是 is reserved for QUESTIONS or uncertainties.\n' +
+      '- Bonus: « 我们去还是不去? » ≈ « 我们去不去? » but the former with 还是 sounds a bit more deliberative (« are we going or not, we must decide »).',
+    items: [
+      { hanzi: '还是', pinyin: 'hái shi', meaning: 'ou bien (choix)', meaningEn: 'or (choice)', audio: 'audio/hsk3/hsk3_还是.wav' },
+      { hanzi: '或者', pinyin: 'huò zhě', meaning: 'ou (affirmatif)', meaningEn: 'or (affirmative)', audio: 'audio/hsk3/hsk3_或者.wav' },
+      { hanzi: '真的', pinyin: 'zhēn de', meaning: 'vraiment / vrai', meaningEn: 'really / true', audio: 'audio/hsk2/hsk2_真.wav' },
+      { hanzi: '故事', pinyin: 'gù shi', meaning: 'histoire', meaningEn: 'story', audio: 'audio/hsk3/hsk3_故事.wav' },
+      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk1/hsk1_咖啡.wav' }
+    ],
+    tip:
+      'Le test rapide — si tu peux traduire par « soit A soit B » → 还是. Si c\'est « X ou pas X » → V-不-V.',
+    tipEn:
+      'Quick test — if you can translate as « either A or B » → 还是. If it\'s « X or not X » → V-不-V.'
+  }
+];

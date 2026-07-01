@@ -2786,3 +2786,88 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
       'It\'s one of the most misunderstood patterns for French speakers. Focus first on RECOGNIZING it when listening before producing it yourself.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.2 Nuances — « si oui ou non » formel : 是否 et 与否 — CGG #96
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesShifouYufouLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-whether-shifou-formal',
+    title: '是否 : « si oui ou non » formel et écrit',
+    titleEn: '是否: formal, written « whether or not »',
+    body:
+      '是否 (shì fǒu) est la version SOUTENUE de « si oui ou non ». Compose 是 (« être ») + 否 (« non » formel/classique). Sens ≈ « que ce soit oui ou non ».\n' +
+      '- Structure : (sujet) + 是否 + verbe/adj.\n' +
+      '- Ex : 他在考虑是否参加这个活动 (tā zài kǎo lǜ shì fǒu cān jiā zhè ge huó dòng) « il réfléchit à s\'il participe à cet événement ». À l\'oral décontracté on aurait dit 考虑要不要参加.\n' +
+      '- Ex : 我不确定他是否同意 (wǒ bù què dìng tā shì fǒu tóng yì) « je ne suis pas sûr qu\'il accepte ».\n' +
+      '- Ex : 请确认您是否收到邮件 (qǐng què rèn nín shì fǒu shōu dào yóu jiàn) « veuillez confirmer si vous avez reçu l\'email ». Typique d\'un email pro.\n' +
+      '- Registres : usage dans la presse, les documents officiels, la correspondance pro, l\'écrit académique. À l\'oral décontracté, sonne un peu ampoulé — préfère V-不-V ou 要不要.\n' +
+      '- Avantage stylistique : concis (un mot au lieu de V-不-V), élégant, sérieux. Un article de journal préférera 是否 à V-不-V.\n' +
+      '- Bonus : forme composée 是否成功 (shì fǒu chéng gōng) « si (c\'est) un succès ou non », très fréquente dans les rapports.',
+    bodyEn:
+      '是否 (shì fǒu) is the FORMAL version of « whether or not ». Composed of 是 (« be ») + 否 (formal/classical « no »). Meaning ≈ « whether it be yes or no ».\n' +
+      '- Structure: (subject) + 是否 + verb/adj.\n' +
+      '- Ex: 他在考虑是否参加这个活动 « he\'s considering whether to attend this event ». Casually you\'d say 考虑要不要参加.\n' +
+      '- Ex: 我不确定他是否同意 « I\'m not sure whether he agrees ».\n' +
+      '- Ex: 请确认您是否收到邮件 « please confirm whether you received the email ». Typical pro email.\n' +
+      '- Registers: press, official documents, professional correspondence, academic writing. In casual speech, sounds a bit stuffy — prefer V-不-V or 要不要.\n' +
+      '- Stylistic advantage: concise (one word instead of V-不-V), elegant, serious. A newspaper article will pick 是否 over V-不-V.\n' +
+      '- Bonus: fixed compound 是否成功 « whether (it\'s) a success or not », very common in reports.',
+    items: [
+      { hanzi: '是否', pinyin: 'shì fǒu', meaning: 'si oui ou non (formel)', meaningEn: 'whether or not (formal)', audio: 'audio/hsk4/hsk4_是否.wav' },
+      { hanzi: '考虑', pinyin: 'kǎo lǜ', meaning: 'considérer, réfléchir à', meaningEn: 'consider', audio: 'audio/hsk3/hsk3_考虑.wav' },
+      { hanzi: '参加', pinyin: 'cān jiā', meaning: 'participer, prendre part', meaningEn: 'participate', audio: 'audio/hsk3/hsk3_参加.wav' },
+      { hanzi: '确认', pinyin: 'què rèn', meaning: 'confirmer', meaningEn: 'confirm', audio: 'audio/hsk4/hsk4_确认.wav' },
+      { hanzi: '同意', pinyin: 'tóng yì', meaning: 'être d\'accord, accepter', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '成功', pinyin: 'chéng gōng', meaning: 'réussite, réussir', meaningEn: 'success, succeed', audio: 'audio/hsk4/hsk4_成功.wav' }
+    ],
+    tip:
+      'Chaque fois que tu es tenté d\'utiliser 要不要 ou 是不是 à l\'écrit pro, essaie 是否 à la place. Ton chinois va monter en niveau d\'un cran.',
+    tipEn:
+      'Whenever you\'re tempted to use 要不要 or 是不是 in professional writing, try 是否 instead. Your Chinese will jump up a level.'
+  },
+  {
+    id: 'b12-whether-yufou-literary',
+    title: '与否 : la version littéraire post-verbale',
+    titleEn: '与否: the literary post-verbal version',
+    body:
+      '与否 (yǔ fǒu) est encore PLUS soutenue que 是否. Différence-clé : elle se place APRÈS le verbe ou l\'adjectif, pas avant.\n' +
+      '- Structure : ... + verbe/adj + 与否 + suite.\n' +
+      '- Ex : 他愿意与否对我们来说很重要 (tā yuàn yì yǔ fǒu duì wǒmen lái shuō hěn zhòng yào) « qu\'il soit d\'accord ou non est très important pour nous ». Le groupe 他愿意与否 fait bloc, devient sujet.\n' +
+      '- Ex : 成功与否，全靠自己 (chéng gōng yǔ fǒu, quán kào zì jǐ) « réussir ou non, tout dépend de soi ». Ici 成功与否 (« la réussite ou non ») fonctionne comme un nom.\n' +
+      '- Comparaison 是否 vs 与否 :\n' +
+      '  · 是否 : AVANT le verbe. 是否参加, 是否成功.\n' +
+      '  · 与否 : APRÈS le verbe/adj, transforme la clause en NOM. 参加与否 (« participation ou non »), 成功与否 (« la réussite ou non »).\n' +
+      '  · 我不知道是否参加 = 我不知道参加与否 (même sens, structure inversée).\n' +
+      '- Combinaisons figées fréquentes :\n' +
+      '  · 成功与否 (chéng gōng yǔ fǒu) « réussir ou non ».\n' +
+      '  · 满意与否 (mǎn yì yǔ fǒu) « (être) satisfait ou non ».\n' +
+      '  · 可行与否 (kě xíng yǔ fǒu) « faisable ou non ».\n' +
+      '  · 愿意与否 (yuàn yì yǔ fǒu) « vouloir ou non ».\n' +
+      '- Registres : quasi exclusivement écrit — rapports formels, articles de presse, essais, publications académiques. À l\'oral quotidien, ça sonnerait comme si tu récitais du Baudelaire au bistrot.',
+    bodyEn:
+      '与否 (yǔ fǒu) is even MORE formal than 是否. Key difference: it goes AFTER the verb or adjective, not before.\n' +
+      '- Structure: ... + verb/adj + 与否 + rest.\n' +
+      '- Ex: 他愿意与否对我们来说很重要 « whether he agrees or not is very important to us ». The group 他愿意与否 acts as a chunk, becomes the subject.\n' +
+      '- Ex: 成功与否，全靠自己 « succeed or not, it all depends on yourself ». Here 成功与否 acts as a noun.\n' +
+      '- 是否 vs 与否:\n' +
+      '  · 是否: BEFORE the verb. 是否参加, 是否成功.\n' +
+      '  · 与否: AFTER verb/adj, turns the clause into a NOUN. 参加与否, 成功与否.\n' +
+      '  · 我不知道是否参加 = 我不知道参加与否 (same meaning, mirrored structure).\n' +
+      '- Common fixed combos: 成功与否, 满意与否, 可行与否, 愿意与否.\n' +
+      '- Registers: almost exclusively written — formal reports, press, essays, academic publications. Using it in daily speech would sound like reciting Shakespeare at a pub.',
+    items: [
+      { hanzi: '与否', pinyin: 'yǔ fǒu', meaning: 'ou non (littéraire)', meaningEn: 'or not (literary)', audio: 'audio/hsk6/hsk6_与否.wav' },
+      { hanzi: '成功与否', pinyin: 'chéng gōng yǔ fǒu', meaning: 'réussir ou non', meaningEn: 'succeed or not', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '满意与否', pinyin: 'mǎn yì yǔ fǒu', meaning: 'satisfait ou non', meaningEn: 'satisfied or not', audio: 'audio/hsk3/hsk3_满意.wav' },
+      { hanzi: '可行', pinyin: 'kě xíng', meaning: 'faisable', meaningEn: 'feasible', audio: 'audio/hsk5/hsk5_可行.wav' },
+      { hanzi: '愿意', pinyin: 'yuàn yì', meaning: 'être disposé à, vouloir bien', meaningEn: 'be willing', audio: 'audio/hsk3/hsk3_愿意.wav' },
+      { hanzi: '靠', pinyin: 'kào', meaning: 'dépendre de, s\'appuyer sur', meaningEn: 'rely on', audio: 'audio/hsk4/hsk4_靠.wav' }
+    ],
+    tip:
+      'Ne pas confondre avec le pattern 不管 X 与否 qui fait redondance et est incorrect. 与否 se suffit à lui-même.',
+    tipEn:
+      'Don\'t confuse with the pattern 不管 X 与否 which is redundant and incorrect. 与否 stands on its own.'
+  }
+];

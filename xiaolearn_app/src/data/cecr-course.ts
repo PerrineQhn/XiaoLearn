@@ -126,6 +126,7 @@ import {
   a2NuancesAlmostBasicsLearnSections,
   a2NuancesRealGreetingsLearnSections,
   a2NuancesFirstMeetingLearnSections,
+  a2NuancesWhetherOrNotLearnSections,
   a2GrammarMeasureWordsLearnSections,
   a2GrammarModalsDirectionLearnSections,
 } from './cecr-a2-learn-sections';
@@ -227,6 +228,7 @@ import {
   b12NuancesZenmeEmotionalLearnSections,
   b12NuancesMeasureWordsAdvancedLearnSections,
   b12NuancesAlmostAdvancedLearnSections,
+  b12NuancesShifouYufouLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3413,6 +3415,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["很高兴认识你", "很高兴见到你", "幸会", "很荣幸", "久仰大名", "相见恨晚", "好久不见"],
         quizQuestions: 10,
         learnSections: a2NuancesFirstMeetingLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m14",
+        title: "« Si oui ou non » : V-不-V et 还是",
+        titleEn: "« Whether or not »: V-不-V and 还是",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["nuance", "grammar", "cecr:a2"],
+        introduction: {
+          title: "Le chinois n'a pas un mot pour « si oui ou non »",
+          titleEn: "Chinese has no single word for « whether or not »",
+          content: "Le chinois n'a PAS un mot unique pour « si oui ou non » — il présente les 2 possibilités : V-不-V. 我不知道他去不去 = « je ne sais pas s'il y va ». Variantes : 是不是 (fait), 有没有 (possession/passé, JAMAIS 有不有 ✗), 要不要 (décision), 能不能 (capacité), 会不会 (futur). Attention : PAS de 吗, PAS de 如果 (qui est une condition). Pour des options DISTINCTES (pas oui/non), on prend 还是 : 你想喝咖啡还是茶 ? Test rapide — « soit A soit B » → 还是 ; « X ou pas X » → V-不-V. Ne pas confondre 还是 avec 或者 (affirmatif « ou »).",
+          contentEn: "Chinese has NO single word for « whether or not » — it lays out the 2 options: V-不-V. 我不知道他去不去 = « I don't know whether he's going ». Variants: 是不是 (fact), 有没有 (possession/past, NEVER 有不有 ✗), 要不要 (decision), 能不能 (capacity), 会不会 (future). Careful: no 吗, no 如果 (which is a condition). For DISTINCT options (not yes/no), use 还是: 你想喝咖啡还是茶? Quick test — « either A or B » → 还是; « X or not X » → V-不-V. Don't confuse 还是 with 或者 (affirmative « or »).",
+          objectives: [
+            "Construire V-不-V et sa version courte (喜不喜欢)",
+            "Choisir 是不是 / 有没有 / 要不要 / 能不能 / 会不会 selon le cas",
+            "Utiliser 还是 pour des options distinctes",
+            "Éviter 吗, 如果 et 有不有 ✗"
+          ],
+          objectivesEn: [
+            "Build V-不-V and its short form (喜不喜欢)",
+            "Pick 是不是 / 有没有 / 要不要 / 能不能 / 会不会 by context",
+            "Use 还是 for distinct options",
+            "Avoid 吗, 如果 and 有不有 ✗"
+          ]
+        },
+        flashcards: ["是不是", "有没有", "要不要", "能不能", "会不会", "还是"],
+        quizQuestions: 10,
+        learnSections: a2NuancesWhetherOrNotLearnSections
       }
     ]
   },
@@ -6267,6 +6298,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["几乎", "将近", "差点儿", "差点儿没", "险些", "所有"],
         quizQuestions: 10,
         learnSections: b12NuancesAlmostAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m11",
+        title: "« Si oui ou non » formel : 是否 et 与否",
+        titleEn: "Formal « whether or not »: 是否 and 与否",
+        duration: 12, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["nuance", "grammar", "cecr:b12"],
+        introduction: {
+          title: "Monter le registre : passer du V-不-V à 是否 / 与否",
+          titleEn: "Raising the register: from V-不-V to 是否 / 与否",
+          content: "À l'écrit pro, à la presse ou dans un rapport, on abandonne le V-不-V décontracté au profit de deux formes soutenues. 是否 (shì fǒu) = « si oui ou non » AVANT le verbe : 请确认您是否收到邮件 « veuillez confirmer si vous avez reçu l'email ». Concis, élégant, sérieux. 与否 (yǔ fǒu), encore plus littéraire, se place APRÈS le verbe/adj et transforme la clause en NOM : 成功与否，全靠自己 « réussir ou non, tout dépend de soi ». Combinaisons figées : 成功与否, 满意与否, 可行与否, 愿意与否. À l'oral quotidien, ces formes sonnent guindées — réserve-les à l'écrit formel.",
+          contentEn: "In professional writing, press, or reports, we drop casual V-不-V for two formal forms. 是否 (shì fǒu) = « whether or not » BEFORE the verb: 请确认您是否收到邮件 « please confirm whether you received the email ». Concise, elegant, serious. 与否 (yǔ fǒu), even more literary, goes AFTER the verb/adj and turns the clause into a NOUN: 成功与否，全靠自己 « succeed or not, it all depends on yourself ». Fixed combos: 成功与否, 满意与否, 可行与否, 愿意与否. In daily speech these sound stiff — reserve them for formal writing.",
+          objectives: [
+            "Utiliser 是否 avant le verbe à l'écrit pro",
+            "Placer 与否 APRÈS le verbe pour nominaliser",
+            "Reconnaître les combinaisons figées (成功与否, 满意与否)",
+            "Éviter le doublon 不管 X 与否"
+          ],
+          objectivesEn: [
+            "Use 是否 before the verb in professional writing",
+            "Place 与否 AFTER the verb to nominalize",
+            "Recognize fixed combos (成功与否, 满意与否)",
+            "Avoid the redundancy 不管 X 与否"
+          ]
+        },
+        flashcards: ["是否", "与否", "成功与否", "满意与否", "参加"],
+        quizQuestions: 8,
+        learnSections: b12NuancesShifouYufouLearnSections
       }
     ]
   },
