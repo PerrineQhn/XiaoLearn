@@ -2439,3 +2439,189 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
       '都 (universal) and 也 (universal too, but often with negation) turn 怎么 into a universality marker. 还 and 就 keep 怎么 as surprise but add a temporal dimension.'
   }
 ];
+
+// --- cecr-b12-nuances-m9 — Mots de mesure avancés -------------------------
+export const b12NuancesMeasureWordsAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-mw-verbal-cishi-biantang',
+    title: 'Compter les actions : 次 / 遍 / 趟',
+    titleEn: 'Counting actions: 次 / 遍 / 趟',
+    body:
+      'Pour compter combien de FOIS une action a eu lieu, il faut un CLASSIFICATEUR VERBAL. L\'anglais et le français emploient partout « fois », mais le chinois distingue.\n' +
+      '\n' +
+      '次 (cì) : neutre, compte les OCCURRENCES sans dire si l\'action a été complète ou pas.\n' +
+      '\n' +
+      'Structure : verbe + nombre + 次. Ex : 我去过三次 (wǒ qù guò sān cì) « j\'y suis allé 3 fois ». Ex : 我试过两次 (j\'ai essayé 2 fois).\n' +
+      '\n' +
+      '遍 (biàn) : cycle COMPLET du début à la fin. Livre lu de bout en bout, film regardé en entier.\n' +
+      '\n' +
+      'Ex : 这本书我看了两遍 (zhè běn shū wǒ kàn le liǎng biàn) « j\'ai lu ce livre 2 fois EN ENTIER ». Ex : 再说一遍 (dis-le encore une fois, en entier) — c\'est ce que dit un prof qui veut qu\'on RÉPÈTE tout depuis le début.\n' +
+      '\n' +
+      'Différence essentielle avec 次 : 我看了三次 = j\'y ai jeté 3 coups d\'œil / 我看了三遍 = j\'ai relu 3 fois en entier.\n' +
+      '\n' +
+      '趟 (tàng) : compte un TRAJET vers un lieu. Implique un déplacement physique.\n' +
+      '\n' +
+      'Ex : 我得跑一趟银行 (wǒ děi pǎo yí tàng yín háng) « il faut que je passe à la banque ». Ex : 去一趟超市 (faire un saut au supermarché).\n' +
+      '\n' +
+      'Références temporelles avec 次 comme nom : 这次 (cette fois), 上次 (la dernière fois), 下次 (la prochaine fois). Ex : 下次再说吧 (xià cì zài shuō ba) « on en reparle la prochaine fois ».\n' +
+      '\n' +
+      'Attention : avec 次, on N\'AJOUTE PAS 个 (上次, pas 上个次). Par contre avec 星期 : 上星期 et 上个星期 sont tous deux corrects.',
+    bodyEn:
+      'To count how many TIMES an action happened, you need a VERBAL CLASSIFIER. English and French use «times» everywhere, but Chinese distinguishes. 次 (cì): neutral, counts OCCURRENCES without saying if the action was complete. Structure: verb + number + 次. Ex: 我去过三次 «I went 3 times». Ex: 我试过两次 (I tried 2 times). 遍 (biàn): COMPLETE cycle from start to finish. Book read cover to cover, movie watched all the way through. Ex: 这本书我看了两遍 «I read this book twice ALL THE WAY». Ex: 再说一遍 (say it once more, in full) — what a teacher says to make you REPEAT from the start. Key difference from 次: 我看了三次 = I glanced at it 3 times / 我看了三遍 = I re-read it 3 full times. 趟 (tàng): counts a TRIP to a place. Implies physical movement. Ex: 我得跑一趟银行 «I need to run to the bank». Ex: 去一趟超市 (make a trip to the supermarket). Time references with 次 as noun: 这次 (this time), 上次 (last time), 下次 (next time). Ex: 下次再说吧 «let\'s talk about it next time». Watch out: with 次, DON\'T add 个 (上次, not 上个次). But with 星期: 上星期 and 上个星期 are both correct.',
+    items: [
+      { hanzi: '次', pinyin: 'cì', meaning: 'MW verbal : occurrence', meaningEn: 'verbal MW: occurrence', audio: 'audio/hsk2/hsk2_次.wav' },
+      { hanzi: '遍', pinyin: 'biàn', meaning: 'MW verbal : cycle complet', meaningEn: 'verbal MW: full cycle', audio: 'audio/hsk4/hsk4_遍.wav' },
+      { hanzi: '趟', pinyin: 'tàng', meaning: 'MW verbal : trajet', meaningEn: 'verbal MW: trip', audio: 'audio/hsk5/hsk5_趟.wav' },
+      { hanzi: '这次', pinyin: 'zhè cì', meaning: 'cette fois', meaningEn: 'this time', audio: 'audio/hsk2/hsk2_这次.wav' },
+      { hanzi: '上次', pinyin: 'shàng cì', meaning: 'la dernière fois', meaningEn: 'last time', audio: 'audio/hsk2/hsk2_上次.wav' },
+      { hanzi: '下次', pinyin: 'xià cì', meaning: 'la prochaine fois', meaningEn: 'next time', audio: 'audio/hsk2/hsk2_下次.wav' },
+      { hanzi: '银行', pinyin: 'yín háng', meaning: 'banque', meaningEn: 'bank', audio: 'audio/hsk3/hsk3_银行.wav' }
+    ],
+    tip:
+      'Test rapide — c\'est une visite ? 次. C\'est un cycle complet ? 遍. Il y a un trajet ? 趟.',
+    tipEn:
+      'Quick test — is it a visit? 次. A full cycle? 遍. A trip? 趟.'
+  },
+  {
+    id: 'b12-mw-mei-reduplication',
+    title: '每 + MW et redoublement du MW : « chaque »',
+    titleEn: '每 + MW and MW reduplication: «each»',
+    body:
+      'Le chinois offre PLUSIEURS façons de dire « chaque / tous », avec des nuances différentes.\n' +
+      '\n' +
+      '每 + MW + nom = NEUTRE « chaque ». Souvent renforcé par 都 dans la 2e clause.\n' +
+      '\n' +
+      'Ex : 每个学生都要交作业 (měi ge xué shēng dōu yào jiāo zuò yè) « chaque élève doit rendre les devoirs ».\n' +
+      '\n' +
+      'Aussi avec les MW verbaux : 我每次去都下雨 (wǒ měi cì qù dōu xià yǔ) « à chaque fois que j\'y vais, il pleut ».\n' +
+      '\n' +
+      'MW redoublé + 都 = EMPHATIQUE « chaque, tous sans exception ». Plus fort que 每.\n' +
+      '\n' +
+      'Formes courantes : 个个 (personnes/choses), 天天 (jours), 年年 (années), 次次 (chaque fois), 件件 (chaque item), 家家 (chaque famille/foyer).\n' +
+      '\n' +
+      'Ex : 他们个个都很认真 (tā men gè gè dōu hěn rèn zhēn) « ils sont TOUS sérieux, sans exception ».\n' +
+      '\n' +
+      'Ex : 他天天加班 (tā tiān tiān jiā bān) « il fait des heures sup TOUS LES JOURS ».\n' +
+      '\n' +
+      'Compare : 每个人都来了 (« tout le monde est venu », neutre) vs 个个都来了 (« tous sont venus, sans exception », emphatique, parfois surprise).',
+    bodyEn:
+      'Chinese offers SEVERAL ways to say «each / all», with different nuances. 每 + MW + noun = NEUTRAL «each». Often reinforced by 都 in the 2nd clause. Ex: 每个学生都要交作业 «each student must hand in homework». Also with verbal MW: 我每次去都下雨 «every time I go, it rains». Reduplicated MW + 都 = EMPHATIC «each, all without exception». Stronger than 每. Common forms: 个个 (people/things), 天天 (days), 年年 (years), 次次 (each time), 件件 (each item), 家家 (each family/household). Ex: 他们个个都很认真 «they\'re ALL serious, without exception». Ex: 他天天加班 «he works overtime EVERY DAY». Compare: 每个人都来了 («everyone came», neutral) vs 个个都来了 («all came, without exception», emphatic, sometimes with surprise).',
+    items: [
+      { hanzi: '每', pinyin: 'měi', meaning: 'chaque (neutre)', meaningEn: 'each (neutral)', audio: 'audio/hsk2/hsk2_每.wav' },
+      { hanzi: '每个', pinyin: 'měi ge', meaning: 'chaque (personne/chose)', meaningEn: 'each (person/thing)', audio: 'audio/hsk2/hsk2_每个.wav' },
+      { hanzi: '每次', pinyin: 'měi cì', meaning: 'chaque fois', meaningEn: 'each time', audio: 'audio/hsk3/hsk3_每次.wav' },
+      { hanzi: '个个', pinyin: 'gè gè', meaning: 'tous sans exception (emphatique)', meaningEn: 'all without exception (emphatic)', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '天天', pinyin: 'tiān tiān', meaning: 'tous les jours (emphatique)', meaningEn: 'every day (emphatic)', audio: 'audio/hsk1/hsk1_天.wav' },
+      { hanzi: '交作业', pinyin: 'jiāo zuò yè', meaning: 'rendre les devoirs', meaningEn: 'hand in homework', audio: 'audio/hsk3/hsk3_作业.wav' },
+      { hanzi: '认真', pinyin: 'rèn zhēn', meaning: 'sérieux, appliqué', meaningEn: 'serious, diligent', audio: 'audio/hsk3/hsk3_认真.wav' }
+    ],
+    tip:
+      '每 fait le boulot dans 90% des cas. Le redoublement s\'utilise quand tu veux SOULIGNER l\'exhaustivité ou marquer une petite surprise / émotion.',
+    tipEn:
+      '每 does the job 90% of the time. Reduplication is used when you want to STRESS exhaustiveness or mark mild surprise/emotion.'
+  },
+  {
+    id: 'b12-mw-yimw-yimw-patterns',
+    title: 'Patterns 一MW一MW : étape par étape, un à un, de plus en plus',
+    titleEn: '一MW一MW patterns: step by step, one by one, more and more',
+    body:
+      'Plusieurs structures avec 一 + MW se ressemblent mais signifient des choses différentes.\n' +
+      '\n' +
+      '一MW一MW (地) + verbe = étape par étape : action progressive, méthodique, un morceau à la fois.\n' +
+      '\n' +
+      'Ex : 别急，一点一点说 (bié jí, yì diǎn yì diǎn shuō) « pas de panique, dis-le petit à petit ».\n' +
+      '\n' +
+      'Ex : 请一个房间一个房间检查 (qǐng yí ge fáng jiān yí ge fáng jiān jiǎn chá) « vérifiez pièce par pièce ».\n' +
+      '\n' +
+      '一MWMW地 + verbe = un à un séquentiellement : items traités les uns après les autres, sens d\'ordre visible.\n' +
+      '\n' +
+      'Ex : 他们一个个地走进来 (tā men yí gè gè de zǒu jìn lái) « ils sont entrés un par un ».\n' +
+      '\n' +
+      'Nuance vs 个个 emphatique : 个个都来了 = tous sont venus (totalité). 一个个地走进来 = un par un (séquence).\n' +
+      '\n' +
+      '一MW比一MW + adjectif = de plus en plus : intensité qui monte au fil du temps.\n' +
+      '\n' +
+      'Ex : 天气一天比一天冷 (tiān qì yì tiān bǐ yì tiān lěng) « il fait de plus en plus froid chaque jour ».\n' +
+      '\n' +
+      'Ex : 一年比一年好 (« de mieux en mieux d\'année en année »), 一次比一次顺利 (« de plus en plus facile à chaque fois »).\n' +
+      '\n' +
+      '一MW又一MW = successivement (oral, vif) :\n' +
+      '\n' +
+      'Ex : 问题一个又一个出现 (wèn tí yí ge yòu yí ge chū xiàn) « les problèmes surgissent l\'un après l\'autre ».\n' +
+      '\n' +
+      '一MW接一MW = successivement (écrit, narratif) :\n' +
+      '\n' +
+      'Ex : 消息一条接一条 (xiāo xi yì tiáo jiē yì tiáo) « les messages arrivent en chaîne ». Sens plus « journalistique ».',
+    bodyEn:
+      'Several 一 + MW structures look similar but mean different things. 一MW一MW (地) + verb = step by step: progressive, methodical action, one chunk at a time. Ex: 别急，一点一点说 «no rush, tell it bit by bit». Ex: 请一个房间一个房间检查 «check room by room». 一MWMW地 + verb = one by one sequentially: items handled one after another, visible order. Ex: 他们一个个地走进来 «they came in one by one». Nuance vs emphatic 个个: 个个都来了 = all came (totality). 一个个地走进来 = one by one (sequence). 一MW比一MW + adjective = more and more: intensity climbing over time. Ex: 天气一天比一天冷 «it gets colder day by day». Ex: 一年比一年好 («better and better year by year»), 一次比一次顺利 («easier every time»). 一MW又一MW = one after another (spoken, lively): Ex: 问题一个又一个出现 «problems keep coming one after another». 一MW接一MW = one after another (written, narrative): Ex: 消息一条接一条 «messages come in a chain». More «journalistic» tone.',
+    items: [
+      { hanzi: '一点一点', pinyin: 'yì diǎn yì diǎn', meaning: 'petit à petit', meaningEn: 'bit by bit', audio: 'audio/hsk2/hsk2_一点.wav' },
+      { hanzi: '一个个', pinyin: 'yí gè gè', meaning: 'un par un', meaningEn: 'one by one', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '一天比一天', pinyin: 'yì tiān bǐ yì tiān', meaning: 'de jour en jour', meaningEn: 'day by day (more and more)', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '一年比一年', pinyin: 'yì nián bǐ yì nián', meaning: 'd\'année en année', meaningEn: 'year by year', audio: 'audio/hsk1/hsk1_年.wav' },
+      { hanzi: '检查', pinyin: 'jiǎn chá', meaning: 'vérifier', meaningEn: 'check, inspect', audio: 'audio/hsk3/hsk3_检查.wav' },
+      { hanzi: '出现', pinyin: 'chū xiàn', meaning: 'apparaître, surgir', meaningEn: 'appear, arise', audio: 'audio/hsk3/hsk3_出现.wav' },
+      { hanzi: '顺利', pinyin: 'shùn lì', meaning: 'sans encombre, facile', meaningEn: 'smooth, easy', audio: 'audio/hsk4/hsk4_顺利.wav' }
+    ],
+    tip:
+      '4 patterns proches mais distincts. Le mot central (地 / 比 / 又 / 接) change tout.',
+    tipEn:
+      '4 similar but distinct patterns. The central word (地 / 比 / 又 / 接) changes everything.'
+  },
+  {
+    id: 'b12-mw-negation-and-registers',
+    title: '一MW + 都/也 + 不/没 (« pas un seul ») + MW événementiels + registres',
+    titleEn: '一MW + 都/也 + 不/没 («not a single») + event MW + registers',
+    body:
+      '一MW + 都/也 + 不/没 + verbe = « pas un seul ». Négation emphatique.\n' +
+      '\n' +
+      'Ex : 我一个都不认识 (wǒ yí ge dōu bù rèn shi) « je n\'en connais AUCUN ».\n' +
+      '\n' +
+      'Ex : 他一句话也没说 (tā yí jù huà yě méi shuō) « il n\'a pas dit UN SEUL mot ».\n' +
+      '\n' +
+      '都 et 也 sont équivalents ici, 都 un peu plus fréquent.\n' +
+      '\n' +
+      'Version renforcée avec 连 : 连一MW都/也 + négation. Ex : 他连一句话都没说 « il n\'a même pas dit UN SEUL mot ». Plus dramatique.\n' +
+      '\n' +
+      'MW ÉVÉNEMENTIELS (ajoutent du relief) :\n' +
+      '\n' +
+      '通 (tōng) : une bonne longue tranche. 他给我打了一通电话 (tā gěi wǒ dǎ le yì tōng diàn huà) « il m\'a passé un coup de fil (long) ».\n' +
+      '\n' +
+      '顿 (dùn) : une bonne dose. Repas complet, réprimande sérieuse, bagarre. 一顿饭 (un vrai repas), 他挨了一顿骂 (tā āi le yí dùn mà) « il s\'est fait bien engueuler ».\n' +
+      '\n' +
+      '阵 (zhèn) : rafale, bouffée. Vent, applaudissements, rire, douleur. 大家响起了一阵掌声 (« une salve d\'applaudissements a éclaté »).\n' +
+      '\n' +
+      '场 (chǎng) : un événement, un épisode. Pluie, match, dispute, film. 昨晚下了一场雨 (« il a plu hier soir » — un vrai épisode de pluie).\n' +
+      '\n' +
+      'REGISTRE FORMEL (à reconnaître, souvent remplaçable par 个 en oral) :\n' +
+      '\n' +
+      '位 (wèi) : personne, poli. Invités, professionnels, aînés. 一位专家 « un expert » (vs 一个专家 plus neutre).\n' +
+      '\n' +
+      '份 (fèn) : documents en contexte pro. 一份报告 « un rapport », 一份合同 « un contrat ».\n' +
+      '\n' +
+      '项 (xiàng) : politiques, tâches, mesures. 一项政策.\n' +
+      '\n' +
+      '条 (tiáo) : règles, actualités, messages. 一条消息, 一条规定.\n' +
+      '\n' +
+      '则 (zé) : très écrit, avis officiels et news. 一则通知 « un avis officiel ».\n' +
+      '\n' +
+      'Bonus : quelques chunks très fréquents. 来一份 (une portion, resto), 点一杯 (commander un verre), 买两张 (2 billets), 帮个忙 (rendre service), 有个问题 (j\'ai une question), 聊两句 (jaser un peu).',
+    bodyEn:
+      '一MW + 都/也 + 不/没 + verb = «not a single». Emphatic negation. Ex: 我一个都不认识 «I don\'t know ANY of them». Ex: 他一句话也没说 «he didn\'t say A SINGLE word». 都 and 也 are equivalent here, 都 slightly more frequent. Reinforced with 连: 连一MW都/也 + negation. Ex: 他连一句话都没说 «he didn\'t even say ONE word». More dramatic. EVENT MW (add texture): 通 (tōng): a good long stretch. 他给我打了一通电话 «he gave me a long phone call». 顿 (dùn): a hearty dose. Full meal, serious scolding, fight. 一顿饭 (a real meal), 他挨了一顿骂 «he got a good scolding». 阵 (zhèn): burst, gust. Wind, applause, laughter, pain. 大家响起了一阵掌声 («a burst of applause erupted»). 场 (chǎng): an event, an episode. Rain, match, argument, movie. 昨晚下了一场雨 («it rained last night» — a real spell of rain). FORMAL REGISTER (recognize, often swappable with 个 in speech): 位 (wèi): person, polite. Guests, professionals, elders. 一位专家 «an expert» (vs more neutral 一个专家). 份 (fèn): documents in pro contexts. 一份报告 «a report», 一份合同 «a contract». 项 (xiàng): policies, tasks, measures. 一项政策. 条 (tiáo): rules, news, messages. 一条消息, 一条规定. 则 (zé): very written, official notices and news. 一则通知 «an official notice». Bonus: some very frequent chunks. 来一份 (a portion, restaurant), 点一杯 (order a drink), 买两张 (2 tickets), 帮个忙 (do a favor), 有个问题 (I have a question), 聊两句 (chat a bit).',
+    items: [
+      { hanzi: '通', pinyin: 'tōng', meaning: 'MW appel téléphonique (long)', meaningEn: 'MW (long) phone call', audio: 'audio/hsk4/hsk4_通.wav' },
+      { hanzi: '顿', pinyin: 'dùn', meaning: 'MW repas, réprimande', meaningEn: 'MW meal, scolding', audio: 'audio/hsk4/hsk4_顿.wav' },
+      { hanzi: '阵', pinyin: 'zhèn', meaning: 'MW rafale, bouffée', meaningEn: 'MW burst, gust', audio: 'audio/hsk4/hsk4_阵.wav' },
+      { hanzi: '场', pinyin: 'chǎng', meaning: 'MW événement, épisode', meaningEn: 'MW event, episode', audio: 'audio/hsk3/hsk3_场.wav' },
+      { hanzi: '位', pinyin: 'wèi', meaning: 'MW personne (poli)', meaningEn: 'MW person (polite)', audio: 'audio/hsk3/hsk3_位.wav' },
+      { hanzi: '份', pinyin: 'fèn', meaning: 'MW document, portion', meaningEn: 'MW document, portion', audio: 'audio/hsk4/hsk4_份.wav' },
+      { hanzi: '项', pinyin: 'xiàng', meaning: 'MW politique, tâche', meaningEn: 'MW policy, task', audio: 'audio/hsk4/hsk4_项.wav' },
+      { hanzi: '则', pinyin: 'zé', meaning: 'MW écrit : avis, news', meaningEn: 'MW written: notice, news', audio: 'audio/hsk5/hsk5_则.wav' },
+      { hanzi: '掌声', pinyin: 'zhǎng shēng', meaning: 'applaudissements', meaningEn: 'applause', audio: 'audio/hsk5/hsk5_掌声.wav' }
+    ],
+    tip:
+      'À l\'oral décontracté, 个 remplace presque toujours ces MW formels. À l\'écrit ou dans un contexte pro, monter en registre = crédibilité.',
+    tipEn:
+      'In casual speech, 个 almost always replaces these formal MW. In writing or pro contexts, moving up the register = credibility.'
+  }
+];

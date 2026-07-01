@@ -122,6 +122,7 @@ import {
   a2NuancesM7LearnSections,
   a2NuancesKaiMainVerbLearnSections,
   a2NuancesZenmeBasicsLearnSections,
+  a2GrammarMeasureWordsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -218,6 +219,7 @@ import {
   b12NuancesM6LearnSections,
   b12NuancesM7LearnSections,
   b12NuancesZenmeEmotionalLearnSections,
+  b12NuancesMeasureWordsAdvancedLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -2610,6 +2612,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["要", "想", "不要", "不想", "我要", "我想", "想你", "想家", "要工作"],
         quizQuestions: 10,
         learnSections: a2GrammarYaoXiangLearnSections
+      },
+      {
+        id: "cecr-a2-grammar-mw-m1",
+        title: "Mots de mesure : bases et catégories",
+        titleEn: "Measure words: basics and categories",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["measure-words", "grammar", "cecr:a2"],
+        introduction: {
+          title: "Nombre + MW + nom : la brique de base du chinois",
+          titleEn: "Number + MW + noun: the core Chinese building block",
+          content: "En chinois, tu ne peux JAMAIS dire « 3 livres » directement. Il faut un CLASSIFICATEUR entre le nombre et le nom : 三本书, pas 三书 ✗. Chaque nom a son MW favori (个 générique, 本 pour livres, 杯 pour tasses, 条 pour choses longues, 张 pour surfaces plates, 双 pour paires identiques…). Le MW s'utilise aussi après 这/那 (这本书 « ce livre »), avec 哪 pour poser une question (哪本 « lequel »), avec 半 pour dire « demi » (半个小时 = 30 min, 三个半小时 = 3 h 30). 两 sert à COMPTER, 二 aux ordinaux et dates. Certains MW décrivent la forme (块, 片, 条, 张), d'autres le contenant (杯, 碗, 瓶), d'autres encore des groupes (群, 堆, 套).",
+          contentEn: "In Chinese you can NEVER say «3 books» directly. You need a CLASSIFIER between the number and the noun: 三本书, not 三书 ✗. Each noun has its favorite MW (个 generic, 本 for books, 杯 for cups, 条 for long things, 张 for flat surfaces, 双 for identical pairs…). MW are also used after 这/那 (这本书 «this book»), with 哪 for questions (哪本 «which one»), and with 半 for «half» (半个小时 = 30 min, 三个半小时 = 3.5 h). 两 is for COUNTING, 二 for ordinals and dates. Some MW describe shape (块, 片, 条, 张), others containers (杯, 碗, 瓶), and others groupings (群, 堆, 套).",
+          objectives: [
+            "Placer le MW entre le nombre et le nom",
+            "Choisir entre 两 (compter) et 二 (ordinal/formel)",
+            "Utiliser 半 avant ou après le MW selon le sens",
+            "Choisir le bon MW selon la forme ou le contenant"
+          ],
+          objectivesEn: [
+            "Place the MW between number and noun",
+            "Choose between 两 (counting) and 二 (ordinal/formal)",
+            "Use 半 before or after the MW depending on meaning",
+            "Pick the right MW by shape or container"
+          ]
+        },
+        flashcards: ["个", "本", "杯", "碗", "条", "张", "双", "套"],
+        quizQuestions: 10,
+        learnSections: a2GrammarMeasureWordsLearnSections
       }
     ]
   },
@@ -5997,6 +6028,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["怎么了", "怎么会", "怎么这样", "怎么这么", "是怎么回事", "怎么也", "怎么还", "怎么就"],
         quizQuestions: 10,
         learnSections: b12NuancesZenmeEmotionalLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m9",
+        title: "Mots de mesure avancés — actions, emphase, registre",
+        titleEn: "Advanced measure words — actions, emphasis, register",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["measure-words", "nuance", "cecr:b12"],
+        introduction: {
+          title: "Compter les actions, marquer l'emphase, monter en registre",
+          titleEn: "Counting actions, marking emphasis, going up in register",
+          content: "Après les bases, les MW deviennent un outil expressif. Pour compter les actions : 次 (occurrence neutre), 遍 (cycle complet du début à la fin), 趟 (trajet vers un lieu). Pour dire « chaque » : 每 + MW (neutre) ou MW redoublé (个个, 天天 — emphatique). Patterns 一MW一MW : étape par étape (一点一点), un à un (一个个地), de plus en plus (一天比一天), successivement (一个又一个 / 一条接一条). Négation emphatique : 一MW + 都/也 + 不/没 = « pas un seul » (renforçable avec 连). MW événementiels 通/顿/阵/场 pour donner du relief. Registre formel : 位 (personne polie), 份 (documents), 项 (mesures), 则 (news écrites).",
+          contentEn: "Beyond the basics, MW become an expressive tool. To count actions: 次 (neutral occurrence), 遍 (full cycle from start to finish), 趟 (trip to a place). To say «each»: 每 + MW (neutral) or reduplicated MW (个个, 天天 — emphatic). 一MW一MW patterns: step by step (一点一点), one by one (一个个地), more and more (一天比一天), one after another (一个又一个 / 一条接一条). Emphatic negation: 一MW + 都/也 + 不/没 = «not a single» (can be strengthened with 连). Event MW 通/顿/阵/场 for texture. Formal register: 位 (polite person), 份 (documents), 项 (measures), 则 (written news).",
+          objectives: [
+            "Distinguer 次 / 遍 / 趟 pour compter les actions",
+            "Choisir entre 每 + MW et MW redoublé selon l'emphase",
+            "Manier 一MW一MW, 一MW比一MW, 一MW又一MW",
+            "Monter en registre avec 位, 份, 项, 则 et les MW événementiels"
+          ],
+          objectivesEn: [
+            "Distinguish 次 / 遍 / 趟 to count actions",
+            "Choose 每 + MW vs reduplicated MW by emphasis",
+            "Handle 一MW一MW, 一MW比一MW, 一MW又一MW",
+            "Move up in register with 位, 份, 项, 则 and event MW"
+          ]
+        },
+        flashcards: ["次", "遍", "趟", "每", "位", "份", "顿", "阵", "场"],
+        quizQuestions: 10,
+        learnSections: b12NuancesMeasureWordsAdvancedLearnSections
       }
     ]
   },

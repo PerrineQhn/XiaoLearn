@@ -2636,3 +2636,166 @@ export const a2NuancesZenmeBasicsLearnSections: LessonV2LearnSection[] = [
       'If you expect a DESCRIPTION → 什么样(的). If you expect a JUDGMENT → 怎么样.'
   }
 ];
+
+// --- cecr-a2-grammar-mw-m1 — Mots de mesure : bases -----------------------
+export const a2GrammarMeasureWordsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-mw-basics',
+    title: 'Nombre + MW + nom : la structure obligatoire',
+    titleEn: 'Number + MW + noun: the mandatory structure',
+    body:
+      'En chinois, tu ne peux PAS dire directement « 3 livres ». Il faut un CLASSIFICATEUR (mot de mesure) entre le nombre et le nom.\n' +
+      '\n' +
+      'Structure : [nombre] + [MW] + [nom]. Ex : 我买了三本书 (wǒ mǎi le sān běn shū) « j\'ai acheté 3 livres ». 本 (běn) est le classificateur pour les livres reliés.\n' +
+      '\n' +
+      'Erreur classique : 三书 ✗ n\'existe pas. Le MW est OBLIGATOIRE.\n' +
+      '\n' +
+      '个 (ge) est le MW « générique » : marche pour les personnes et beaucoup de concepts abstraits (三个朋友, 一个问题). Mais pour les objets physiques, il vaut mieux le vrai MW (三本书, pas 三个书 qui sonne étranger).\n' +
+      '\n' +
+      'Structure démonstrative : 这/那 + MW + nom. Ex : 那杯咖啡很苦 (nà bēi kā fēi hěn kǔ) « ce café est amer ». 那咖啡 ✗ ne marche pas.\n' +
+      '\n' +
+      'Avec quantité et démonstratif : 这/那 + nombre + MW + nom. Ex : 这两位老师很严格 (zhè liǎng wèi lǎo shī hěn yán gé) « ces 2 profs sont sévères ». 位 (wèi) = MW poli pour les personnes.\n' +
+      '\n' +
+      'MW seul sans nombre = « un » implicite : 我想喝杯咖啡 (wǒ xiǎng hē bēi kā fēi) « j\'aimerais un café ». Très courant à l\'oral détendu (来杯水, 买本书).\n' +
+      '\n' +
+      'Nom omis quand contexte clair : 你要几个 ? 要三个 (« combien tu en veux ? j\'en veux 3 »). Le nom pommes/objets est sous-entendu.',
+    bodyEn:
+      'In Chinese, you CANNOT say «3 books» directly. You need a CLASSIFIER (measure word) between the number and the noun. Structure: [number] + [MW] + [noun]. Ex: 我买了三本书 (wǒ mǎi le sān běn shū) «I bought 3 books». 本 (běn) is the classifier for bound books. Classic mistake: 三书 ✗ doesn\'t exist — the MW is MANDATORY. 个 (ge) is the «generic» MW: works for people and many abstract concepts (三个朋友, 一个问题). For physical objects, use the specific MW (三本书 not 三个书, which sounds odd). Demonstrative structure: 这/那 + MW + noun. Ex: 那杯咖啡很苦 «that cup of coffee is bitter». 那咖啡 ✗ doesn\'t work. With quantity and demonstrative: 这/那 + number + MW + noun. Ex: 这两位老师很严格 «these 2 teachers are strict». 位 (wèi) = polite MW for people. MW alone without a number = implicit «one»: 我想喝杯咖啡 «I\'d like a coffee». Very common in relaxed speech (来杯水, 买本书). Noun dropped when context is clear: 你要几个? 要三个 («how many? I want 3»). The noun (apples/objects) is understood.',
+    items: [
+      { hanzi: '个', pinyin: 'ge', meaning: 'MW générique (personnes, abstrait)', meaningEn: 'generic MW (people, abstract)', audio: 'audio/hsk1/hsk1_个.wav' },
+      { hanzi: '本', pinyin: 'běn', meaning: 'MW livres reliés', meaningEn: 'MW bound books', audio: 'audio/hsk1/hsk1_本.wav' },
+      { hanzi: '位', pinyin: 'wèi', meaning: 'MW personne (poli)', meaningEn: 'MW person (polite)', audio: 'audio/hsk3/hsk3_位.wav' },
+      { hanzi: '朋友', pinyin: 'péng yǒu', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' },
+      { hanzi: '问题', pinyin: 'wèn tí', meaning: 'question, problème', meaningEn: 'question, problem', audio: 'audio/hsk2/hsk2_问题.wav' },
+      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk2/hsk2_咖啡.wav' }
+    ],
+    tip:
+      'Quand tu comptes, pointes ou spécifies une INSTANCE, il te faut un MW. Quand tu parles d\'une chose en général comme concept, tu peux omettre le MW (我喜欢咖啡 « j\'aime le café » sans MW).',
+    tipEn:
+      'When you count, point, or specify an INSTANCE, you need a MW. When you talk about a thing in general as a concept, you can drop the MW (我喜欢咖啡 «I like coffee» — no MW).'
+  },
+  {
+    id: 'a2-mw-liang-ban-na',
+    title: '两 vs 二, 半, 哪 : nombres et questions',
+    titleEn: '两 vs 二, 半, 哪: numbers and questions',
+    body:
+      '两 (liǎng) vs 二 (èr) : les 2 signifient « 2 » mais s\'utilisent différemment.\n' +
+      '\n' +
+      '两 : « 2 » qui COMPTE avec un MW. 两本书, 两个人, 两杯水. C\'est ton défaut au quotidien.\n' +
+      '\n' +
+      '二 : dans les contextes formels, séquences, ordinaux, dates. Ex : 他住在二楼 (tā zhù zài èr lóu) « il habite au 2e étage ». Aussi dans 第二 (deuxième), 二月 (février), lecture de numéros (téléphone, ID).\n' +
+      '\n' +
+      '半 (bàn) = « moitié ». 2 positions selon le sens :\n' +
+      '\n' +
+      '半 + MW + nom = « une demi-... ». Ex : 再等半个小时吧 (zài děng bàn ge xiǎo shí ba) « attends encore une demi-heure ». Half OF one unit.\n' +
+      '\n' +
+      'Nombre + MW + 半 + nom = « X et demi ». Ex : 我们聊了三个半小时 (wǒmen liáo le sān ge bàn xiǎo shí) « on a discuté 3 h et demie ». X unités + une demi supplémentaire.\n' +
+      '\n' +
+      'Attention à l\'ordre : 三个半小时 ✓ / 三个小时半 ✗. Le 半 vient JUSTE APRÈS le MW, avant le nom.\n' +
+      '\n' +
+      '哪 + MW + nom = « quel/lequel » : Ex : 你想买哪本 (nǐ xiǎng mǎi nǎ běn) « lequel tu veux acheter ? ». Le nom peut disparaître quand le contexte est clair.',
+    bodyEn:
+      '两 (liǎng) vs 二 (èr): both mean «2» but are used differently. 两: «2» that COUNTS with a MW. 两本书, 两个人, 两杯水. This is your everyday default. 二: in formal contexts, sequences, ordinals, dates. Ex: 他住在二楼 «he lives on the 2nd floor». Also in 第二 (second), 二月 (February), reading numbers (phone, ID). 半 (bàn) = «half». 2 positions depending on meaning: 半 + MW + noun = «half a ...». Ex: 再等半个小时吧 «wait another half hour». Half OF one unit. Number + MW + 半 + noun = «X and a half». Ex: 我们聊了三个半小时 «we talked for 3.5 hours». X units + an extra half. Watch the order: 三个半小时 ✓ / 三个小时半 ✗. 半 comes RIGHT AFTER the MW, before the noun. 哪 + MW + noun = «which»: Ex: 你想买哪本 «which one do you want to buy?». The noun can drop when context is clear.',
+    items: [
+      { hanzi: '两', pinyin: 'liǎng', meaning: '2 (pour compter)', meaningEn: '2 (for counting)', audio: 'audio/hsk2/hsk2_两.wav' },
+      { hanzi: '二', pinyin: 'èr', meaning: '2 (ordinal, formel)', meaningEn: '2 (ordinal, formal)', audio: 'audio/hsk1/hsk1_二.wav' },
+      { hanzi: '半', pinyin: 'bàn', meaning: 'moitié, demi', meaningEn: 'half', audio: 'audio/hsk3/hsk3_半.wav' },
+      { hanzi: '哪', pinyin: 'nǎ', meaning: 'quel, lequel', meaningEn: 'which', audio: 'audio/hsk1/hsk1_哪.wav' },
+      { hanzi: '小时', pinyin: 'xiǎo shí', meaning: 'heure', meaningEn: 'hour', audio: 'audio/hsk2/hsk2_小时.wav' },
+      { hanzi: '第二', pinyin: 'dì èr', meaning: 'deuxième', meaningEn: 'second', audio: 'audio/hsk2/hsk2_第二.wav' }
+    ],
+    tip:
+      'Dans le doute, 两 pour compter, 二 pour lire ou nommer. Pour le demi, l\'ordre change tout : 半个 = 0.5 unité, 一个半 = 1.5 unité.',
+    tipEn:
+      'When in doubt, 两 to count, 二 to read or name. For half, order changes everything: 半个 = 0.5 unit, 一个半 = 1.5 unit.'
+  },
+  {
+    id: 'a2-mw-containers-shapes',
+    title: 'MW selon la forme et le contenant',
+    titleEn: 'MW by shape and container',
+    body:
+      'Les MW ne servent pas qu\'à compter : ils DÉCRIVENT la forme ou le contenant. Choisir le bon MW rend le chinois vivant.\n' +
+      '\n' +
+      'CONTENANTS (restauration surtout) :\n' +
+      '\n' +
+      '杯 (bēi) : tasse, verre. 一杯咖啡, 一杯水.\n' +
+      '\n' +
+      '碗 (wǎn) : bol. 一碗面 (un bol de nouilles), 一碗汤.\n' +
+      '\n' +
+      '盘 (pán) : assiette. 一盘菜.\n' +
+      '\n' +
+      '瓶 (píng) : bouteille. 一瓶酒, 一瓶水.\n' +
+      '\n' +
+      'Le MW change ton IMAGE : 一杯咖啡 (café servi en tasse) vs 一瓶咖啡 (café en bouteille).\n' +
+      '\n' +
+      'FORMES :\n' +
+      '\n' +
+      '块 (kuài) : morceau, bloc. 一块蛋糕 (part de gâteau), 一块肉, 一块肥皂. Aussi pour l\'argent (一块钱 = 1 yuan).\n' +
+      '\n' +
+      '片 (piàn) : tranche plate et fine. 一片面包, 一片叶子, 一片药 (comprimé).\n' +
+      '\n' +
+      '条 (tiáo) : long et fin. 一条路, 一条河, 一条鱼, 一条裤子. Ultra polyvalent, aussi pour choses abstraites longues : 一条消息 (message), 一条规定 (règle).\n' +
+      '\n' +
+      '张 (zhāng) : surface plate. 一张纸, 一张桌子, 一张票, 一张床. Aussi pour les visages : 一张脸.\n' +
+      '\n' +
+      'PAIRES :\n' +
+      '\n' +
+      '双 (shuāng) : paire IDENTIQUE, surtout parties du corps et ce qui les couvre. 一双鞋, 一双袜子, 一双手套, 一双筷子, 一双眼睛, 一双手.\n' +
+      '\n' +
+      '对 (duì) : paire COMPLÉMENTAIRE ou couple. 一对夫妻 (couple marié), 一对耳环 (paire de boucles), 一对花瓶 (vases assortis).',
+    bodyEn:
+      'MW don\'t just count: they DESCRIBE the shape or container. Picking the right MW makes Chinese come alive. CONTAINERS (restaurant esp.): 杯 (bēi): cup, glass. 一杯咖啡, 一杯水. 碗 (wǎn): bowl. 一碗面 (a bowl of noodles), 一碗汤. 盘 (pán): plate. 一盘菜. 瓶 (píng): bottle. 一瓶酒, 一瓶水. The MW changes your IMAGE: 一杯咖啡 (coffee served in a cup) vs 一瓶咖啡 (coffee in a bottle). SHAPES: 块 (kuài): piece, block. 一块蛋糕 (a slice of cake), 一块肉, 一块肥皂. Also for money (一块钱 = 1 yuan). 片 (piàn): flat, thin slice. 一片面包, 一片叶子, 一片药 (a pill). 条 (tiáo): long and thin. 一条路, 一条河, 一条鱼, 一条裤子. Very versatile, also for abstract long things: 一条消息 (message), 一条规定 (rule). 张 (zhāng): flat surface. 一张纸, 一张桌子, 一张票, 一张床. Also for faces: 一张脸. PAIRS: 双 (shuāng): IDENTICAL pair, mostly body parts and what covers them. 一双鞋, 一双袜子, 一双手套, 一双筷子, 一双眼睛, 一双手. 对 (duì): COMPLEMENTARY pair or couple. 一对夫妻 (married couple), 一对耳环 (pair of earrings), 一对花瓶 (matching vases).',
+    items: [
+      { hanzi: '杯', pinyin: 'bēi', meaning: 'MW tasse, verre', meaningEn: 'MW cup, glass', audio: 'audio/hsk1/hsk1_杯.wav' },
+      { hanzi: '碗', pinyin: 'wǎn', meaning: 'MW bol', meaningEn: 'MW bowl', audio: 'audio/hsk3/hsk3_碗.wav' },
+      { hanzi: '瓶', pinyin: 'píng', meaning: 'MW bouteille', meaningEn: 'MW bottle', audio: 'audio/hsk2/hsk2_瓶.wav' },
+      { hanzi: '块', pinyin: 'kuài', meaning: 'MW morceau, bloc', meaningEn: 'MW piece, block', audio: 'audio/hsk1/hsk1_块.wav' },
+      { hanzi: '片', pinyin: 'piàn', meaning: 'MW tranche fine', meaningEn: 'MW thin slice', audio: 'audio/hsk3/hsk3_片.wav' },
+      { hanzi: '条', pinyin: 'tiáo', meaning: 'MW long et fin', meaningEn: 'MW long and thin', audio: 'audio/hsk3/hsk3_条.wav' },
+      { hanzi: '张', pinyin: 'zhāng', meaning: 'MW surface plate', meaningEn: 'MW flat surface', audio: 'audio/hsk2/hsk2_张.wav' },
+      { hanzi: '双', pinyin: 'shuāng', meaning: 'MW paire identique', meaningEn: 'MW identical pair', audio: 'audio/hsk3/hsk3_双.wav' },
+      { hanzi: '对', pinyin: 'duì', meaning: 'MW paire complémentaire', meaningEn: 'MW complementary pair', audio: 'audio/hsk1/hsk1_对.wav' }
+    ],
+    tip:
+      'Quand tu apprends un nouveau nom, note aussi son MW favori. Pense au MW comme à un article français : « un » vs « une » signale déjà la catégorie.',
+    tipEn:
+      'When you learn a new noun, jot down its favorite MW too. Think of the MW like a French article: «un» vs «une» already signals the category.'
+  },
+  {
+    id: 'a2-mw-collectives',
+    title: 'MW collectifs : groupes, tas, séries',
+    titleEn: 'Collective MW: groups, piles, sets',
+    body:
+      'Ces MW décrivent comment les items sont REGROUPÉS.\n' +
+      '\n' +
+      '群 (qún) : troupeau, foule (personnes ou animaux). 一群人 (une foule), 一群羊 (troupeau de moutons). Ex : 门口站着一群人 (mén kǒu zhàn zhe yì qún rén) « il y a une foule à l\'entrée ».\n' +
+      '\n' +
+      '堆 (duī) : tas, monceau (objets empilés, souvent en désordre). 一堆书, 一堆衣服, 一堆问题.\n' +
+      '\n' +
+      '排 (pái) : rangée, ligne ordonnée. 一排椅子, 一排树.\n' +
+      '\n' +
+      '串 (chuàn) : ensemble accroché ensemble. 一串葡萄 (grappe de raisin), 一串钥匙 (trousseau), 一串烤肉 (brochette).\n' +
+      '\n' +
+      '套 (tào) : ENSEMBLE complet, kit. Très utile : 一套教材 (jeu de manuels), 一套房子 (appartement = « ensemble de pièces »), 一套西装 (costume complet), 一套方案 (plan complet). Ex : 他买了一套教材 (tā mǎi le yí tào jiào cái) « il a acheté un jeu complet de manuels ».\n' +
+      '\n' +
+      '组 (zǔ) : groupe, équipe, jeu. Souvent pour data, piles, équipes. 一组数据.\n' +
+      '\n' +
+      '系列 (xìliè) : série (produits, événements, films).',
+    bodyEn:
+      'These MW describe how items are GROUPED. 群 (qún): herd, crowd (people or animals). 一群人 (a crowd), 一群羊 (a flock of sheep). Ex: 门口站着一群人 «there\'s a crowd at the entrance». 堆 (duī): heap, pile (stacked objects, often messy). 一堆书, 一堆衣服, 一堆问题. 排 (pái): row, orderly line. 一排椅子, 一排树. 串 (chuàn): items strung together. 一串葡萄 (bunch of grapes), 一串钥匙 (bunch of keys), 一串烤肉 (skewer). 套 (tào): complete SET, kit. Very useful: 一套教材 (set of textbooks), 一套房子 (apartment = «set of rooms»), 一套西装 (full suit), 一套方案 (full plan). Ex: 他买了一套教材 «he bought a full set of textbooks». 组 (zǔ): group, team, set. Often for data, batches, teams. 一组数据. 系列 (xìliè): series (products, events, films).',
+    items: [
+      { hanzi: '群', pinyin: 'qún', meaning: 'MW foule, troupeau', meaningEn: 'MW crowd, herd', audio: 'audio/hsk4/hsk4_群.wav' },
+      { hanzi: '堆', pinyin: 'duī', meaning: 'MW tas, monceau', meaningEn: 'MW heap, pile', audio: 'audio/hsk5/hsk5_堆.wav' },
+      { hanzi: '排', pinyin: 'pái', meaning: 'MW rangée', meaningEn: 'MW row', audio: 'audio/hsk4/hsk4_排.wav' },
+      { hanzi: '串', pinyin: 'chuàn', meaning: 'MW ensemble accroché', meaningEn: 'MW string, cluster', audio: 'audio/hsk5/hsk5_串.wav' },
+      { hanzi: '套', pinyin: 'tào', meaning: 'MW ensemble complet, kit', meaningEn: 'MW full set, kit', audio: 'audio/hsk4/hsk4_套.wav' },
+      { hanzi: '组', pinyin: 'zǔ', meaning: 'MW groupe, équipe', meaningEn: 'MW group, team', audio: 'audio/hsk4/hsk4_组.wav' },
+      { hanzi: '教材', pinyin: 'jiào cái', meaning: 'manuel scolaire', meaningEn: 'textbook', audio: 'audio/hsk5/hsk5_教材.wav' },
+      { hanzi: '葡萄', pinyin: 'pú tao', meaning: 'raisin', meaningEn: 'grapes', audio: 'audio/hsk4/hsk4_葡萄.wav' }
+    ],
+    tip:
+      'Le MW collectif AJOUTE de l\'info. 一串钥匙 = clés sur un anneau. 一堆书 = livres empilés (souvent en pagaille). L\'image change.',
+    tipEn:
+      'Collective MW ADD information. 一串钥匙 = keys on a ring. 一堆书 = stacked books (often messy). The image shifts.'
+  }
+];
