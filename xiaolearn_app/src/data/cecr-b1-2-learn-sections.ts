@@ -4132,3 +4132,297 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       'Tip: in conversation, when you suggest an action after thinking, 还是 + verb + 吧 fits perfectly. Sounds mature and considered, not impulsive.'
   }
 ];
+
+// --- cecr-b12-nuances-cause-effect-advanced — Cause et effet avancé ------
+export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-cause-formal-youyu-yinci',
+    title: '由于 et 因此 : registre écrit et professionnel',
+    titleEn: '由于 and 因此: written and professional register',
+    body:
+      '由于 (yóu yú) = « en raison de / du fait de » — version FORMELLE de 因为. Presse, rapports officiels, écrits pro.\n' +
+      '\n' +
+      'Structure : 由于 + [cause]，(所以 / 因此) + [résultat].\n' +
+      '- Ex : 由于雪下得太大，因此火车晚点了 (py yóu yú xuě xià de tài dà, yīn cǐ huǒ chē wǎn diǎn le) « en raison de fortes chutes de neige, le train a été retardé ». Sonne comme un communiqué.\n' +
+      '- Ex : 由于交通堵塞，会议推迟了半小时 « suite à un embouteillage, la réunion a été retardée d\'une demi-heure ».\n' +
+      '- Peut se combiner avec 所以, 因此, ou seul.\n' +
+      '\n' +
+      '因此 (yīn cǐ) = « par conséquent / dès lors » — connecteur formel, académique. Peut se combiner avec 由于 mais PAS avec 因为 (redondance : 因为...因此 ✗).\n' +
+      '\n' +
+      'Structure : [cause]，因此 + [résultat].\n' +
+      '- Ex : 他提前完成了任务，因此有时间帮助别人 « il a fini sa tâche à l\'avance, il a donc du temps pour aider les autres ». Version formelle de 所以.\n' +
+      '- Registre : essais, articles, présentations pro.\n' +
+      '\n' +
+      '因而 (yīn ér) = quasi-synonyme de 因此, encore un chouïa plus littéraire. Souvent interchangeable.\n' +
+      '- Ex : 他饮食很健康，也经常锻炼，因而身体很棒 « il mange sainement et fait du sport régulièrement, d\'où sa forme éclatante ».\n' +
+      '\n' +
+      'Ordre du registre : 所以 (oral neutre) < 因此 (écrit pro) < 因而 (écrit littéraire).',
+    bodyEn:
+      '由于 (yóu yú) = «due to / owing to» — FORMAL version of 因为. Press, official reports, professional writing. Structure: 由于 + [cause], (所以 / 因此) + [result]. Ex: 由于雪下得太大，因此火车晚点了 «due to heavy snowfall, the train was delayed» — sounds like a bulletin. Ex: 由于交通堵塞，会议推迟了半小时 «due to traffic, the meeting was pushed back 30 min». Combines with 所以, 因此, or stands alone. 因此 (yīn cǐ) = «consequently / therefore» — formal, academic connector. Pairs with 由于 but NOT with 因为 (redundant: 因为...因此 ✗). Structure: [cause], 因此 + [result]. Ex: 他提前完成了任务，因此有时间帮助别人 «he finished his task early, therefore has time to help others». Formal version of 所以. Register: essays, articles, pro presentations. 因而 (yīn ér) = near-synonym of 因此, slightly more literary. Often interchangeable. Ex: 他饮食很健康，也经常锻炼，因而身体很棒. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary written).',
+    items: [
+      { hanzi: '由于', pinyin: 'yóu yú', meaning: 'en raison de, du fait de', meaningEn: 'due to, owing to', audio: 'audio/hsk4/hsk4_由于.wav' },
+      { hanzi: '因此', pinyin: 'yīn cǐ', meaning: 'par conséquent', meaningEn: 'therefore, consequently', audio: 'audio/hsk4/hsk4_因此.wav' },
+      { hanzi: '因而', pinyin: 'yīn ér', meaning: 'ainsi, d\'où', meaningEn: 'thus, hence', audio: 'audio/hsk5/hsk5_因而.wav' },
+      { hanzi: '由于雪下得太大，因此火车晚点了', pinyin: 'yóu yú xuě xià de tài dà, yīn cǐ huǒ chē wǎn diǎn le', meaning: 'en raison de la neige, le train a été retardé', meaningEn: 'due to heavy snow, the train was delayed', audio: 'audio/hsk3/hsk3_火车.wav' },
+      { hanzi: '由于交通堵塞，会议推迟了半小时', pinyin: 'yóu yú jiāo tōng dǔ sè, huì yì tuī chí le bàn xiǎo shí', meaning: 'à cause d\'embouteillages, la réunion est retardée', meaningEn: 'due to traffic jam, the meeting was delayed', audio: 'audio/hsk4/hsk4_堵.wav' },
+      { hanzi: '他提前完成了任务，因此有时间帮助别人', pinyin: 'tā tí qián wán chéng le rèn wù, yīn cǐ yǒu shí jiān bāng zhù bié rén', meaning: 'il a fini en avance, donc il peut aider les autres', meaningEn: 'he finished early, so he can help others', audio: 'audio/hsk4/hsk4_任务.wav' },
+      { hanzi: '他饮食很健康，也经常锻炼，因而身体很棒', pinyin: 'tā yǐn shí hěn jiàn kāng, yě jīng cháng duàn liàn, yīn ér shēn tǐ hěn bàng', meaning: 'il mange sain et fait du sport, d\'où sa forme', meaningEn: 'he eats well and exercises, hence his great shape', audio: 'audio/hsk4/hsk4_锻炼.wav' }
+    ],
+    tip:
+      'Astuce : à l\'écrit soutenu, remplace tes 因为...所以 par 由于...因此. Tu passes de « prise de tête » à « analyse pro ».',
+    tipEn:
+      'Tip: in formal writing, swap 因为...所以 for 由于...因此. You go from «rant» to «pro analysis».'
+  },
+  {
+    id: 'b12-cause-kejian-conger',
+    title: '可见 (conclusion) et 从而 (méthode → résultat)',
+    titleEn: '可见 (conclusion) and 从而 (method → result)',
+    body:
+      '可见 (kě jiàn) = « ça se voit / cela montre que ». Sert à tirer une CONCLUSION à partir d\'observations.\n' +
+      '\n' +
+      'Structure : [preuve/observation]，可见 + [conclusion].\n' +
+      '- Ex : 他每天加班到很晚，可见他的工作非常忙 (py tā měi tiān jiā bān dào hěn wǎn, kě jiàn tā de gōng zuò fēi cháng máng) « il fait des heures sup tous les jours jusqu\'à tard, ça montre que son boulot est super chargé ».\n' +
+      '- Ex : 这本书卖了一百万本，可见非常受欢迎 « ce livre s\'est vendu à 1 million d\'exemplaires, ça prouve qu\'il a un immense succès ».\n' +
+      '\n' +
+      'Registre : argumentation, essais, discussions rationnelles. Ton analytique.\n' +
+      '\n' +
+      '从而 (cóng ér) = « ainsi / par ce moyen ». Lie une MÉTHODE ou ACTION à son résultat obtenu. Sens de « en faisant ceci, on accomplit cela ».\n' +
+      '\n' +
+      'Structure : [méthode/action]，从而 + [résultat].\n' +
+      '- Ex : 他每天练习一个小时，从而大大提高了汉语水平 (py tā měi tiān liàn xí yí ge xiǎo shí, cóng ér dà dà tí gāo le hàn yǔ shuǐ píng) « il s\'entraîne 1 h par jour, améliorant considérablement son niveau de chinois ».\n' +
+      '- Ex : 政府降低了利率，从而刺激了经济 « le gouvernement a baissé les taux, stimulant ainsi l\'économie ». Rapport économique.\n' +
+      '\n' +
+      'Registres : rapports, écrits techniques, articles académiques. À l\'oral courant, on préfère 所以.',
+    bodyEn:
+      '可见 (kě jiàn) = «you can tell / it shows that». Draws a CONCLUSION from observations. Structure: [proof/observation], 可见 + [conclusion]. Ex: 他每天加班到很晚，可见他的工作非常忙 «he works late every day, showing his job is super busy». Ex: 这本书卖了一百万本，可见非常受欢迎 «this book sold 1 million copies, proving it\'s hugely popular». Register: argument, essays, rational discussions. Analytical tone. 从而 (cóng ér) = «thereby / by which». Links a METHOD or ACTION to the result obtained. Sense: «by doing this, one accomplishes that». Structure: [method/action], 从而 + [result]. Ex: 他每天练习一个小时，从而大大提高了汉语水平 «he practices 1 h a day, greatly improving his Chinese». Ex: 政府降低了利率，从而刺激了经济 «the government lowered rates, thereby stimulating the economy» — econ report. Register: reports, technical writing, academic papers. In everyday speech, 所以 is preferred.',
+    items: [
+      { hanzi: '可见', pinyin: 'kě jiàn', meaning: 'cela montre que', meaningEn: 'it shows that, evidently', audio: 'audio/hsk5/hsk5_可见.wav' },
+      { hanzi: '从而', pinyin: 'cóng ér', meaning: 'ainsi, par ce moyen', meaningEn: 'thereby, thus', audio: 'audio/hsk5/hsk5_从而.wav' },
+      { hanzi: '他每天加班到很晚，可见他的工作非常忙', pinyin: 'tā měi tiān jiā bān dào hěn wǎn, kě jiàn tā de gōng zuò fēi cháng máng', meaning: 'il fait des heures sup tard, ça montre qu\'il est chargé', meaningEn: 'he works late daily, showing his job is very busy', audio: 'audio/hsk4/hsk4_加班.wav' },
+      { hanzi: '这本书卖了一百万本，可见非常受欢迎', pinyin: 'zhè běn shū mài le yì bǎi wàn běn, kě jiàn fēi cháng shòu huān yíng', meaning: 'ce livre vendu à 1M, prouve son succès', meaningEn: 'the book sold 1M copies, proving its success', audio: 'audio/hsk3/hsk3_欢迎.wav' },
+      { hanzi: '他每天练习一个小时，从而大大提高了汉语水平', pinyin: 'tā měi tiān liàn xí yí ge xiǎo shí, cóng ér dà dà tí gāo le hàn yǔ shuǐ píng', meaning: 'il s\'entraîne 1h/jour, améliorant son chinois', meaningEn: 'he practices 1 h/day, greatly improving his Chinese', audio: 'audio/hsk4/hsk4_水平.wav' },
+      { hanzi: '政府降低了利率，从而刺激了经济', pinyin: 'zhèng fǔ jiàng dī le lì lǜ, cóng ér cì jī le jīng jì', meaning: 'gouv. a baissé les taux, stimulant l\'économie', meaningEn: 'gov cut rates, thereby stimulating the economy', audio: 'audio/hsk5/hsk5_经济.wav' }
+    ],
+    tip:
+      'Astuce : 可见 = « on en conclut ». 从而 = « et ça produit tel résultat ». Deux outils précieux pour l\'argumentation.',
+    tipEn:
+      'Tip: 可见 = «we can conclude». 从而 = «and it yields this result». Two precious tools for argumentation.'
+  },
+  {
+    id: 'b12-cause-yizhi-yizhiyu',
+    title: '以致 (résultat malheureux) et 以至于 (résultat extrême)',
+    titleEn: '以致 (unfortunate result) and 以至于 (extreme result)',
+    body:
+      'Attention : ces 2 se prononcent presque pareil (yǐ zhì) mais ont des USAGES distincts.\n' +
+      '\n' +
+      '以致 (yǐ zhì) = « ce qui a entraîné » — résultat NÉGATIF ou non voulu. Ton de regret.\n' +
+      '\n' +
+      'Structure : (由于) + [cause]，以致 + [résultat malheureux].\n' +
+      '- Ex : 他忽视了医生的建议，以致病情恶化 (py tā hū shì le yī shēng de jiàn yì, yǐ zhì bìng qíng è huà) « il a ignoré les conseils du médecin, ce qui a entraîné une aggravation de son état ». Regret.\n' +
+      '- Ex : 由于疏忽，以致造成了损失 « en raison d\'une négligence, des pertes ont été occasionnées ».\n' +
+      '- Fréquent dans les récits d\'accidents, échecs, mishaps.\n' +
+      '\n' +
+      '以至于 (yǐ zhì yú) = « au point que » — résultat EXTRÊME (peut être positif ou négatif). Souligne l\'INTENSITÉ de la cause.\n' +
+      '\n' +
+      'Structure : [cause intense]，以至于 + [résultat marquant].\n' +
+      '- Ex : 他工作太忙，以至于没有时间陪家人 (py tā gōng zuò tài máng, yǐ zhì yú méi yǒu shí jiān péi jiā rén) « il est tellement occupé qu\'il n\'a pas le temps pour sa famille ».\n' +
+      '- Ex : 她跑得太快，以至于摔倒了 « elle a couru tellement vite qu\'elle est tombée ».\n' +
+      '- Ex : 他的解释太清楚，以至于我们一下子就懂了 « son explication était si claire qu\'on a compris tout de suite » (positif).\n' +
+      '\n' +
+      'Distinction : 以致 = résultat MALHEUREUX. 以至于 = résultat EXTRÊME (positif ou négatif). Homonyme à l\'oral, différencié à l\'écrit.',
+    bodyEn:
+      'Careful: these 2 sound nearly identical (yǐ zhì) but have distinct USAGES. 以致 (yǐ zhì) = «which led to» — NEGATIVE or unwanted result. Regretful tone. Structure: (由于) + [cause], 以致 + [unfortunate result]. Ex: 他忽视了医生的建议，以致病情恶化 «he ignored the doctor\'s advice, which caused his condition to worsen» — regret. Ex: 由于疏忽，以致造成了损失 «due to negligence, losses ensued». Common in accident/failure stories. 以至于 (yǐ zhì yú) = «to the point that» — EXTREME result (positive or negative). Highlights the cause\'s INTENSITY. Structure: [intense cause], 以至于 + [striking result]. Ex: 他工作太忙，以至于没有时间陪家人 «he\'s so busy he has no time for family». Ex: 她跑得太快，以至于摔倒了 «she ran so fast she fell». Ex: 他的解释太清楚，以至于我们一下子就懂了 «his explanation was so clear we got it instantly» (positive). Distinction: 以致 = UNFORTUNATE. 以至于 = EXTREME (either polarity). Homophone spoken, split written.',
+    items: [
+      { hanzi: '以致', pinyin: 'yǐ zhì', meaning: 'ce qui a entraîné (négatif)', meaningEn: 'which led to (negative)', audio: 'audio/hsk5/hsk5_以致.wav' },
+      { hanzi: '以至于', pinyin: 'yǐ zhì yú', meaning: 'au point que', meaningEn: 'to the point that', audio: 'audio/hsk5/hsk5_以至于.wav' },
+      { hanzi: '他忽视了医生的建议，以致病情恶化', pinyin: 'tā hū shì le yī shēng de jiàn yì, yǐ zhì bìng qíng è huà', meaning: 'il a ignoré les conseils, ce qui a aggravé son état', meaningEn: 'he ignored advice, causing his condition to worsen', audio: 'audio/hsk4/hsk4_建议.wav' },
+      { hanzi: '由于疏忽，以致造成了损失', pinyin: 'yóu yú shū hū, yǐ zhì zào chéng le sǔn shī', meaning: 'par négligence, des pertes ont été causées', meaningEn: 'due to negligence, losses ensued', audio: 'audio/hsk5/hsk5_损失.wav' },
+      { hanzi: '他工作太忙，以至于没有时间陪家人', pinyin: 'tā gōng zuò tài máng, yǐ zhì yú méi yǒu shí jiān péi jiā rén', meaning: 'si occupé qu\'il n\'a pas de temps pour sa famille', meaningEn: 'so busy he has no time for family', audio: 'audio/hsk4/hsk4_陪.wav' },
+      { hanzi: '她跑得太快，以至于摔倒了', pinyin: 'tā pǎo de tài kuài, yǐ zhì yú shuāi dǎo le', meaning: 'elle a couru si vite qu\'elle est tombée', meaningEn: 'she ran so fast she fell', audio: 'audio/hsk4/hsk4_摔.wav' },
+      { hanzi: '他的解释太清楚，以至于我们一下子就懂了', pinyin: 'tā de jiě shì tài qīng chǔ, yǐ zhì yú wǒ men yí xià zi jiù dǒng le', meaning: 'explication si claire qu\'on a compris de suite', meaningEn: 'so clear we understood immediately', audio: 'audio/hsk4/hsk4_解释.wav' }
+    ],
+    tip:
+      'Astuce : à l\'oral, tout le monde comprend selon le contexte. À l\'écrit, choisis avec soin — un « 以致 » là où tu voulais « 以至于 » sonne négativement.',
+    tipEn:
+      'Tip: orally, context clarifies. In writing, choose carefully — an 以致 where you meant 以至于 reads as negative.'
+  },
+  {
+    id: 'b12-cause-literary-zhi-suoyi-jianyu-gu',
+    title: '之所以...是因为..., 鉴于, 因...而, 故 : registre soutenu',
+    titleEn: '之所以...是因为..., 鉴于, 因...而, 故: elevated register',
+    body:
+      '之所以...是因为... (zhī suǒ yǐ... shì yīn wèi...) = « la raison pour laquelle... est que... ». INVERSE l\'ordre normal : effet d\'abord, cause après. Ton analytique.\n' +
+      '\n' +
+      'Structure : sujet + 之所以 + [résultat]，是因为 + [cause].\n' +
+      '- Ex : 他之所以成功，是因为他非常努力 (py tā zhī suǒ yǐ chéng gōng, shì yīn wèi tā fēi cháng nǔ lì) « s\'il a réussi, c\'est parce qu\'il travaille énormément ».\n' +
+      '- Version parallèle 之所以...是为了... = « la raison pour laquelle... c\'est pour... » (but au lieu de cause).\n' +
+      '- Ex : 他之所以辞职，是为了专心创业 « s\'il a démissionné, c\'est pour se consacrer à son entreprise ». Attention : 是为了 = but ; 是因为 = cause. Deux structures parallèles.\n' +
+      '\n' +
+      '鉴于 (jiàn yú) = « compte tenu de / vu que ». Introduit une SITUATION qui a été soigneusement pesée avant d\'agir. Registre officiel, administratif.\n' +
+      '- Ex : 鉴于近期安全问题，我们加强了校园巡逻 (py jiàn yú jìn qī ān quán wèn tí, wǒ men jiā qiáng le xiào yuán xún luó) « vu les récents problèmes de sécurité, nous avons renforcé les patrouilles du campus ». Communiqué officiel.\n' +
+      '- Ex : 鉴于以上情况，公司决定... « au vu de ce qui précède, l\'entreprise décide de... ». Structure d\'email pro.\n' +
+      '\n' +
+      '因...而... (yīn... ér...) = « à cause de X, Y » ou « en raison de X, Y ». CONCIS et élégant, très fréquent à l\'écrit soutenu.\n' +
+      '\n' +
+      'Structure : sujet + 因 + [cause] + 而 + [effet].\n' +
+      '- Ex : 他因表现出色而获得了奖励 (py tā yīn biǎo xiàn chū sè ér huò dé le jiǎng lì) « il a reçu une récompense en raison de son excellente performance ».\n' +
+      '- Ex : 她因病请假 « elle a demandé un congé pour cause de maladie ». Ultra concis.\n' +
+      '\n' +
+      '故 (gù) = « donc / c\'est pourquoi » CLASSIQUE, un seul caractère. Registre très soutenu, écrit officiel, style ancien.\n' +
+      '- Ex : 他已经适应了国外的生活，故不打算再回国 (py tā yǐ jīng shì yìng le guó wài de shēng huó, gù bù dǎ suan zài huí guó) « il s\'est adapté à la vie à l\'étranger, il n\'envisage donc pas de rentrer ».\n' +
+      '- Peut se combiner avec 因 : 因...故... = « parce que... c\'est pourquoi... ». Ex : 因下雨，故取消 « en raison de la pluie, annulation ».\n' +
+      '\n' +
+      'Ordre du registre : 所以 (oral neutre) < 因此 (écrit pro) < 因而 (littéraire) < 故 (classique / juridique).',
+    bodyEn:
+      '之所以...是因为... (zhī suǒ yǐ... shì yīn wèi...) = «the reason why... is that...». REVERSES the normal order: effect first, cause after. Analytical tone. Structure: subject + 之所以 + [result], 是因为 + [cause]. Ex: 他之所以成功，是因为他非常努力 «the reason he succeeded is that he works extremely hard». Parallel variant 之所以...是为了... = «the reason... is in order to...» (purpose, not cause). Ex: 他之所以辞职，是为了专心创业 «the reason he resigned is to focus on his startup». Careful: 是为了 = purpose; 是因为 = cause. 鉴于 (jiàn yú) = «in view of / given». Introduces a SITUATION carefully weighed before action. Official, administrative register. Ex: 鉴于近期安全问题，我们加强了校园巡逻 «in view of recent security issues, we\'ve reinforced campus patrols» — official bulletin. Ex: 鉴于以上情况，公司决定... «in view of the above, the company decides...» — pro email structure. 因...而... (yīn... ér...) = «because of X, Y». CONCISE and elegant, very frequent in elevated writing. Structure: subject + 因 + [cause] + 而 + [effect]. Ex: 他因表现出色而获得了奖励 «he received an award due to outstanding performance». Ex: 她因病请假 «she took leave due to illness» — ultra concise. 故 (gù) = «therefore / hence» CLASSICAL, single character. Very elevated register, official writing, ancient style. Ex: 他已经适应了国外的生活，故不打算再回国 «he adapted to life abroad, hence he doesn\'t plan to return». Combines with 因: 因...故... = «because... therefore...». Ex: 因下雨，故取消. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary) < 故 (classical / legal).',
+    items: [
+      { hanzi: '之所以...是因为...', pinyin: 'zhī suǒ yǐ ... shì yīn wèi ...', meaning: 'la raison pour laquelle... est que...', meaningEn: 'the reason why... is that...', audio: 'audio/hsk5/hsk5_之所以.wav' },
+      { hanzi: '之所以...是为了...', pinyin: 'zhī suǒ yǐ ... shì wèi le ...', meaning: 'la raison pour laquelle... c\'est pour...', meaningEn: 'the reason why... is in order to...', audio: 'audio/hsk5/hsk5_之所以.wav' },
+      { hanzi: '鉴于', pinyin: 'jiàn yú', meaning: 'compte tenu de, vu que', meaningEn: 'in view of, given', audio: 'audio/hsk6/hsk6_鉴于.wav' },
+      { hanzi: '因...而...', pinyin: 'yīn ... ér ...', meaning: 'à cause de X, Y', meaningEn: 'because of X, Y', audio: 'audio/hsk5/hsk5_因.wav' },
+      { hanzi: '故', pinyin: 'gù', meaning: 'donc, c\'est pourquoi (classique)', meaningEn: 'therefore (classical)', audio: 'audio/hsk5/hsk5_故.wav' },
+      { hanzi: '他之所以成功，是因为他非常努力', pinyin: 'tā zhī suǒ yǐ chéng gōng, shì yīn wèi tā fēi cháng nǔ lì', meaning: 's\'il a réussi, c\'est parce qu\'il travaille dur', meaningEn: 'he succeeded because he works extremely hard', audio: 'audio/hsk4/hsk4_成功.wav' },
+      { hanzi: '他之所以辞职，是为了专心创业', pinyin: 'tā zhī suǒ yǐ cí zhí, shì wèi le zhuān xīn chuàng yè', meaning: 's\'il a démissionné, c\'est pour son entreprise', meaningEn: 'he resigned in order to focus on his startup', audio: 'audio/hsk5/hsk5_辞职.wav' },
+      { hanzi: '鉴于近期安全问题，我们加强了校园巡逻', pinyin: 'jiàn yú jìn qī ān quán wèn tí, wǒ men jiā qiáng le xiào yuán xún luó', meaning: 'vu les problèmes de sécurité, patrouilles renforcées', meaningEn: 'given recent security issues, patrols were reinforced', audio: 'audio/hsk4/hsk4_安全.wav' },
+      { hanzi: '他因表现出色而获得了奖励', pinyin: 'tā yīn biǎo xiàn chū sè ér huò dé le jiǎng lì', meaning: 'récompense pour son excellente performance', meaningEn: 'he got a reward due to outstanding performance', audio: 'audio/hsk5/hsk5_表现.wav' },
+      { hanzi: '她因病请假', pinyin: 'tā yīn bìng qǐng jià', meaning: 'elle a demandé un congé maladie', meaningEn: 'she took sick leave', audio: 'audio/hsk3/hsk3_请假.wav' },
+      { hanzi: '他已经适应了国外的生活，故不打算再回国', pinyin: 'tā yǐ jīng shì yìng le guó wài de shēng huó, gù bù dǎ suan zài huí guó', meaning: 'adapté à l\'étranger, n\'envisage pas de rentrer', meaningEn: 'adjusted abroad, hence no plan to return', audio: 'audio/hsk4/hsk4_适应.wav' }
+    ],
+    tip:
+      'Astuce : ces 4 patterns servent surtout à la RECONNAISSANCE dans un texte pro/journalistique. Pour la production, garde les basiques 因为/所以/于是 à l\'oral et 由于/因此 à l\'écrit.',
+    tipEn:
+      'Tip: these 4 patterns are mostly for RECOGNITION in pro/journalistic texts. For output, stick with basic 因为/所以/于是 orally and 由于/因此 in writing.'
+  }
+];
+
+// --- cecr-b12-nuances-purpose-formal — But formel & littéraire ------------
+export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-purpose-yimian-miande-shengde',
+    title: '以免 / 免得 / 省得 : « pour éviter que »',
+    titleEn: '以免 / 免得 / 省得: «to avoid that»',
+    body:
+      'Ces 3 connecteurs signalent qu\'on fait qch POUR ÉVITER un mauvais résultat. Ils partagent le sens de « pour éviter que / de peur que / sinon ». Diffèrent par leur REGISTRE.\n' +
+      '\n' +
+      '以免 (yǐ miǎn) = le plus FORMEL. Écrit, avertissements officiels, instructions.\n' +
+      '- Ex : 请带雨伞，以免被雨淋湿 (py qǐng dài yǔ sǎn, yǐ miǎn bèi yǔ lín shī) « prends un parapluie, pour ne pas te faire tremper ». Ton panneau d\'affichage.\n' +
+      '- Ex : 关灯，以免浪费电 « éteins la lumière, pour éviter le gaspillage ».\n' +
+      '\n' +
+      '免得 (miǎn de) = COURANT et oral. Conversation quotidienne.\n' +
+      '- Ex : 早点睡觉，免得明天起不来 (py zǎo diǎn shuì jiào, miǎn de míng tiān qǐ bù lái) « couche-toi tôt, sinon tu vas galérer à te lever demain ».\n' +
+      '- Ex : 带件外套，免得着凉 « prends une veste, sinon tu vas prendre froid ». Conseil amical.\n' +
+      '\n' +
+      '省得 (shěng de) = TRÈS DÉCONTRACTÉ, entre amis. Signifie « pour s\'épargner la peine de ».\n' +
+      '- Ex : 我打车去，省得找停车位 (py wǒ dǎ chē qù, shěng de zhǎo tíng chē wèi) « je prends un taxi, comme ça pas besoin de chercher une place ». Style « la flemme ».\n' +
+      '- Ex : 一起去吧，省得跑两次 « viens avec moi, comme ça pas besoin d\'y aller 2 fois ».\n' +
+      '\n' +
+      'Échelle : 以免 (formel écrit) < 免得 (oral standard) < 省得 (oral décontracté). Même sens de base.',
+    bodyEn:
+      'These 3 connectors signal doing something TO AVOID a bad outcome. They share the meaning «to avoid / lest / otherwise», but differ by REGISTER. 以免 (yǐ miǎn) = the most FORMAL. Written, official warnings, instructions. Ex: 请带雨伞，以免被雨淋湿 «bring an umbrella so you don\'t get drenched» — signboard tone. Ex: 关灯，以免浪费电 «turn off the lights to avoid wasting electricity». 免得 (miǎn de) = COMMON and oral. Everyday conversation. Ex: 早点睡觉，免得明天起不来 «go to bed early, otherwise you\'ll struggle to wake up». Ex: 带件外套，免得着凉 «bring a jacket, otherwise you\'ll catch a cold» — friendly advice. 省得 (shěng de) = VERY CASUAL, among friends. Means «to save oneself the trouble of». Ex: 我打车去，省得找停车位 «I\'ll grab a taxi so I don\'t have to hunt for parking» — «can\'t be bothered» vibe. Ex: 一起去吧，省得跑两次 «come with me, saves us a second trip». Scale: 以免 (formal written) < 免得 (standard oral) < 省得 (casual oral). Same base meaning.',
+    items: [
+      { hanzi: '以免', pinyin: 'yǐ miǎn', meaning: 'pour éviter que (formel)', meaningEn: 'to avoid (formal)', audio: 'audio/hsk5/hsk5_以免.wav' },
+      { hanzi: '免得', pinyin: 'miǎn de', meaning: 'pour éviter, sinon', meaningEn: 'to avoid, lest', audio: 'audio/hsk4/hsk4_免得.wav' },
+      { hanzi: '省得', pinyin: 'shěng de', meaning: 'pour éviter la peine, comme ça', meaningEn: 'to save trouble, this way', audio: 'audio/hsk4/hsk4_省.wav' },
+      { hanzi: '请带雨伞，以免被雨淋湿', pinyin: 'qǐng dài yǔ sǎn, yǐ miǎn bèi yǔ lín shī', meaning: 'prends un parapluie, pour ne pas te faire tremper', meaningEn: 'bring an umbrella to avoid getting drenched', audio: 'audio/hsk3/hsk3_雨伞.wav' },
+      { hanzi: '早点睡觉，免得明天起不来', pinyin: 'zǎo diǎn shuì jiào, miǎn de míng tiān qǐ bù lái', meaning: 'couche-toi tôt, sinon tu ne pourras pas te lever', meaningEn: 'sleep early, otherwise you won\'t get up tomorrow', audio: 'audio/hsk1/hsk1_睡觉.wav' },
+      { hanzi: '带件外套，免得着凉', pinyin: 'dài jiàn wài tào, miǎn de zháo liáng', meaning: 'prends une veste, sinon tu attrapes froid', meaningEn: 'take a jacket, otherwise you\'ll catch a cold', audio: 'audio/hsk3/hsk3_外套.wav' },
+      { hanzi: '我打车去，省得找停车位', pinyin: 'wǒ dǎ chē qù, shěng de zhǎo tíng chē wèi', meaning: 'je prends un taxi, comme ça pas de place à chercher', meaningEn: 'I\'ll cab it — no need to hunt for parking', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '一起去吧，省得跑两次', pinyin: 'yī qǐ qù ba, shěng de pǎo liǎng cì', meaning: 'viens avec moi, comme ça pas 2 trajets', meaningEn: 'come with me, saves us a second trip', audio: 'audio/hsk1/hsk1_一起.wav' }
+    ],
+    tip:
+      'Astuce : quand tu veux dire « au cas où » ou « pour éviter que », choisis selon ton contexte. Panneau public → 以免. Chat avec un pote → 免得 ou 省得.',
+    tipEn:
+      'Tip: when you want to say «just in case» or «to avoid that», pick by context. Public sign → 以免. Chat with a friend → 免得 or 省得.'
+  },
+  {
+    id: 'b12-purpose-yibian-yi-yiqi',
+    title: '以便 / 以 / 以期 : registre écrit et académique',
+    titleEn: '以便 / 以 / 以期: written and academic register',
+    body:
+      '以便 (yǐ biàn) = « afin que / de sorte que » FORMEL. Documents pro, instructions officielles. Version soutenue de 好.\n' +
+      '\n' +
+      'Structure : [action]，以便 + [but].\n' +
+      '- Ex : 我们提前准备材料，以便会议顺利进行 (py wǒ men tí qián zhǔn bèi cái liào, yǐ biàn huì yì shùn lì jìn xíng) « nous préparons les documents en amont afin que la réunion se déroule sans accroc ».\n' +
+      '\n' +
+      'Souvent avec 能 / 可以 pour ajouter la nuance de capacité : 以便能够, 以便可以.\n' +
+      '- Ex : 请提前预约，以便我们能更好地为您服务 « merci de réserver à l\'avance, afin que nous puissions mieux vous servir ». Style « service client ».\n' +
+      '\n' +
+      '以 (yǐ) SEUL = ultra-formel, littéraire, classique. Version raccourcie de 以便.\n' +
+      '\n' +
+      'Structure : [action]，以 + [verbe = but].\n' +
+      '- Ex : 他建立基金，以帮助贫困学生 (py tā jiàn lì jī jīn, yǐ bāng zhù pín kùn xué shēng) « il a fondé une association, afin d\'aider les élèves défavorisés ».\n' +
+      '- Registre : textes juridiques, actes officiels, journalisme soutenu, littérature. Rarement à l\'oral.\n' +
+      '\n' +
+      '以期 (yǐ qī) = « dans l\'espoir de » — action entreprise avec espoir d\'un résultat POSITIF non garanti.\n' +
+      '\n' +
+      'Structure : [action]，以期 + [résultat espéré].\n' +
+      '- Ex : 公司投资新设备，以期提高竞争力 (py gōng sī tóu zī xīn shè bèi, yǐ qī tí gāo jìng zhēng lì) « l\'entreprise a investi dans du nouveau matériel, en espérant améliorer sa compétitivité ». Rapport annuel.\n' +
+      '- Ex : 政府推行改革，以期改善民生 « le gouvernement a lancé des réformes, dans l\'espoir d\'améliorer la qualité de vie ». Communiqué officiel.\n' +
+      '\n' +
+      'Différence 以便 vs 以期 : 以便 = résultat attendu (assez sûr). 以期 = résultat espéré (incertain).',
+    bodyEn:
+      '以便 (yǐ biàn) = «so that / in order to» FORMAL. Pro documents, official instructions. Elevated version of 好. Structure: [action], 以便 + [purpose]. Ex: 我们提前准备材料，以便会议顺利进行 «we prepare materials early so the meeting runs smoothly». Often paired with 能 / 可以 for the capability nuance: 以便能够, 以便可以. Ex: 请提前预约，以便我们能更好地为您服务 «please book ahead so we can serve you better» — customer-service tone. 以 (yǐ) ALONE = ultra-formal, literary, classical. Shortened 以便. Structure: [action], 以 + [verb = purpose]. Ex: 他建立基金，以帮助贫困学生 «he founded a fund to help underprivileged students». Register: legal texts, official acts, high-register journalism, literature. Rarely oral. 以期 (yǐ qī) = «in the hope of» — action undertaken hoping for a POSITIVE but uncertain result. Structure: [action], 以期 + [hoped result]. Ex: 公司投资新设备，以期提高竞争力 «the company invested in new equipment, hoping to boost competitiveness» — annual report. Ex: 政府推行改革，以期改善民生 «the government launched reforms, in hopes of improving living standards». Difference 以便 vs 以期: 以便 = expected result (fairly sure); 以期 = hoped-for result (uncertain).',
+    items: [
+      { hanzi: '以便', pinyin: 'yǐ biàn', meaning: 'afin que, de sorte que', meaningEn: 'so that, in order to', audio: 'audio/hsk5/hsk5_以便.wav' },
+      { hanzi: '以', pinyin: 'yǐ', meaning: 'afin de (littéraire)', meaningEn: 'in order to (literary)', audio: 'audio/hsk3/hsk3_以.wav' },
+      { hanzi: '以期', pinyin: 'yǐ qī', meaning: 'dans l\'espoir de', meaningEn: 'in the hope of', audio: 'audio/hsk6/hsk6_以期.wav' },
+      { hanzi: '我们提前准备材料，以便会议顺利进行', pinyin: 'wǒ men tí qián zhǔn bèi cái liào, yǐ biàn huì yì shùn lì jìn xíng', meaning: 'on prépare les documents pour que la réunion se déroule bien', meaningEn: 'we prep materials early so the meeting runs smoothly', audio: 'audio/hsk4/hsk4_材料.wav' },
+      { hanzi: '请提前预约，以便我们能更好地为您服务', pinyin: 'qǐng tí qián yù yuē, yǐ biàn wǒ men néng gèng hǎo dì wèi nín fú wù', meaning: 'réservez à l\'avance pour qu\'on vous serve mieux', meaningEn: 'book ahead so we can serve you better', audio: 'audio/hsk4/hsk4_预约.wav' },
+      { hanzi: '他建立基金，以帮助贫困学生', pinyin: 'tā jiàn lì jī jīn, yǐ bāng zhù pín kùn xué shēng', meaning: 'il a créé un fonds afin d\'aider les élèves défavorisés', meaningEn: 'he set up a fund to help underprivileged students', audio: 'audio/hsk6/hsk6_基金.wav' },
+      { hanzi: '公司投资新设备，以期提高竞争力', pinyin: 'gōng sī tóu zī xīn shè bèi, yǐ qī tí gāo jìng zhēng lì', meaning: 'la boîte investit, en espérant gagner en compétitivité', meaningEn: 'the company invested, hoping to boost competitiveness', audio: 'audio/hsk5/hsk5_投资.wav' },
+      { hanzi: '政府推行改革，以期改善民生', pinyin: 'zhèng fǔ tuī xíng gǎi gé, yǐ qī gǎi shàn mín shēng', meaning: 'le gouvernement lance des réformes, espérant améliorer la vie', meaningEn: 'the government pushes reforms, hoping to improve living', audio: 'audio/hsk5/hsk5_改革.wav' }
+    ],
+    tip:
+      'Astuce : ces 3 sont surtout pour la LECTURE de textes formels. Reconnaître > produire.',
+    tipEn:
+      'Tip: these 3 are mostly for READING formal texts. Recognize > produce.'
+  },
+  {
+    id: 'b12-purpose-weiqijian-weier-zhizai',
+    title: '为...起见 + 为...而 + 旨在 : buts nobles et officiels',
+    titleEn: '为...起见 + 为...而 + 旨在: noble and official purposes',
+    body:
+      '为...起见 (wèi ... qǐ jiàn) = « pour le bien de / par souci de ». Souvent dans des formules figées.\n' +
+      '\n' +
+      'Structure : 为 + [nom abstrait] + 起见，[action].\n' +
+      '\n' +
+      'Formules ULTRA fréquentes à mémoriser :\n' +
+      '- 为安全起见 (wèi ān quán qǐ jiàn) « par sécurité ». Ex : 为安全起见，请系好安全带 « par sécurité, attachez votre ceinture ».\n' +
+      '- 为保险起见 (wèi bǎo xiǎn qǐ jiàn) « au cas où / par précaution ». Ex : 为保险起见，我们再检查一遍 « pour être sûr, on revérifie ».\n' +
+      '- 为公平起见 « par souci d\'équité ». Ex : 为公平起见，每个人得到同样的机会 « par équité, chacun a la même chance ».\n' +
+      '\n' +
+      'Registre : consignes, annonces, textes pro. Le pattern est FIGÉ.\n' +
+      '\n' +
+      '为...而... (wèi ... ér ...) = « pour... (grand but) ... ». Registre LITTÉRAIRE, slogans, engagements nobles.\n' +
+      '\n' +
+      'Structure : sujet + 为 + [grand but] + 而 + [action].\n' +
+      '- Ex : 我们为和平而奋斗 (py wǒ men wèi hé píng ér fèn dòu) « nous luttons pour la paix ». Ton solennel.\n' +
+      '- Ex : 他们为祖国而牺牲 « ils se sont sacrifiés pour la patrie ».\n' +
+      '- Ex : 为梦想而努力 « lutter pour son rêve ».\n' +
+      '- Contextes : discours politiques, mottos d\'entreprise, engagements nobles. Fait très cérémonieux.\n' +
+      '\n' +
+      '旨在 (zhǐ zài) = « viser à / avoir pour objectif de ». Langue officielle des institutions, politiques, projets.\n' +
+      '\n' +
+      'Structure : [entité/action] + 旨在 + [but].\n' +
+      '- Ex : 这项政策旨在减少环境污染 (py zhè xiàng zhèng cè zhǐ zài jiǎn shǎo huán jìng wū rǎn) « cette politique vise à réduire la pollution environnementale ». Style communiqué gouvernemental.\n' +
+      '- Ex : 这个项目旨在帮助农民 « ce projet vise à aider les paysans ».\n' +
+      '- Registre : presse, rapports institutionnels, présentations pro. LA formule pour décrire un objectif officiel.',
+    bodyEn:
+      '为...起见 (wèi ... qǐ jiàn) = «for the sake of / out of concern for». Often in FIXED formulas. Structure: 为 + [abstract noun] + 起见, [action]. MUST-KNOW frozen phrases: 为安全起见 «for safety» (为安全起见，请系好安全带 «for safety, buckle up»); 为保险起见 «just in case / as a precaution» (为保险起见，我们再检查一遍 «to be safe, let\'s check again»); 为公平起见 «for fairness» (为公平起见，每个人得到同样的机会 «for fairness, everyone gets the same shot»). Register: guidelines, announcements, pro texts. The pattern is FIXED. 为...而... (wèi ... ér ...) = «for ... (grand purpose)... ». LITERARY register, slogans, noble commitments. Structure: subject + 为 + [grand purpose] + 而 + [action]. Ex: 我们为和平而奋斗 «we fight for peace» — solemn tone. Ex: 他们为祖国而牺牲 «they sacrificed themselves for the motherland». Ex: 为梦想而努力 «work hard for one\'s dream». Contexts: political speeches, corporate mottos, noble commitments. Very ceremonial. 旨在 (zhǐ zài) = «to aim at / have as objective». Official language of institutions, policies, projects. Structure: [entity/action] + 旨在 + [purpose]. Ex: 这项政策旨在减少环境污染 «this policy aims to reduce environmental pollution» — government communiqué style. Ex: 这个项目旨在帮助农民 «this project aims to help farmers». Register: press, institutional reports, pro presentations. THE formula for describing an official goal.',
+    items: [
+      { hanzi: '为...起见', pinyin: 'wèi ... qǐ jiàn', meaning: 'par souci de, pour le bien de', meaningEn: 'for the sake of', audio: 'audio/hsk3/hsk3_为.wav' },
+      { hanzi: '为安全起见', pinyin: 'wèi ān quán qǐ jiàn', meaning: 'par sécurité', meaningEn: 'for safety', audio: 'audio/hsk3/hsk3_安全.wav' },
+      { hanzi: '为保险起见', pinyin: 'wèi bǎo xiǎn qǐ jiàn', meaning: 'par précaution, au cas où', meaningEn: 'as a precaution, just in case', audio: 'audio/hsk4/hsk4_保险.wav' },
+      { hanzi: '为...而...', pinyin: 'wèi ... ér ...', meaning: 'pour... (grand but)...', meaningEn: 'for ... (grand purpose) ...', audio: 'audio/hsk3/hsk3_为.wav' },
+      { hanzi: '旨在', pinyin: 'zhǐ zài', meaning: 'viser à, avoir pour objectif de', meaningEn: 'to aim at', audio: 'audio/hsk6/hsk6_旨在.wav' },
+      { hanzi: '为安全起见，请系好安全带', pinyin: 'wèi ān quán qǐ jiàn, qǐng jì hǎo ān quán dài', meaning: 'par sécurité, attachez votre ceinture', meaningEn: 'for safety, please buckle up', audio: 'audio/hsk4/hsk4_安全带.wav' },
+      { hanzi: '我们为和平而奋斗', pinyin: 'wǒ men wèi hé píng ér fèn dòu', meaning: 'nous luttons pour la paix', meaningEn: 'we fight for peace', audio: 'audio/hsk5/hsk5_和平.wav' },
+      { hanzi: '这项政策旨在减少环境污染', pinyin: 'zhè xiàng zhèng cè zhǐ zài jiǎn shǎo huán jìng wū rǎn', meaning: 'cette politique vise à réduire la pollution', meaningEn: 'this policy aims to cut environmental pollution', audio: 'audio/hsk5/hsk5_政策.wav' },
+      { hanzi: '这个项目旨在帮助农民', pinyin: 'zhè ge xiàng mù zhǐ zài bāng zhù nóng mín', meaning: 'ce projet vise à aider les paysans', meaningEn: 'this project aims to help farmers', audio: 'audio/hsk5/hsk5_项目.wav' }
+    ],
+    tip:
+      'Astuce : les 3 patterns sont à RECONNAÎTRE dans la presse et documents pro. À produire, garde 为了 comme défaut sauf pour les formules figées (为安全起见, etc.).',
+    tipEn:
+      'Tip: these 3 patterns are for RECOGNITION in press and pro docs. For production, stick with 为了 as your default — except for the frozen phrases (为安全起见, etc.).'
+  }
+];

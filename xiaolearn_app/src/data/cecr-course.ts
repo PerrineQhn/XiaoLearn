@@ -135,6 +135,8 @@ import {
   a2GrammarSentenceParticlesLearnSections,
   a2NuancesNeBasicsLearnSections,
   a2NuancesChoicesBasicsLearnSections,
+  a2NuancesCauseEffectBasicsLearnSections,
+  a2NuancesPurposeBasicsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
   b11LeStateChangeLearnSections,
@@ -181,6 +183,7 @@ import {
   b11NuancesYeConcessionLearnSections,
   b11NuancesHuiNengKeyiLearnSections,
   b11NuancesKaiComplementLearnSections,
+  b11NuancesTopicConnectorsLearnSections,
   b11GrammarConditionalLearnSections,
   b11GrammarReduplicationProgressiveLearnSections,
   b11GrammarSeparableVerbsLearnSections,
@@ -244,6 +247,8 @@ import {
   b12NuancesSentenceParticlesAdvancedLearnSections,
   b12NuancesNeAdvancedLearnSections,
   b12NuancesChoicesAdvancedLearnSections,
+  b12NuancesCauseEffectAdvancedLearnSections,
+  b12NuancesPurposeFormalLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3633,6 +3638,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["还是", "或者", "或是", "要么", "不是", "就是"],
         quizQuestions: 10,
         learnSections: a2NuancesChoicesBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m20",
+        title: "Cause et effet : 因为...所以, 于是, 结果, 既然...就",
+        titleEn: "Cause and effect: 因为...所以, 于是, 结果, 既然...就",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "grammar", difficulty: "beginner",
+        tags: ["cause-effect", "connector", "cecr:a2"],
+        introduction: {
+          title: "Cause et effet : les 4 patterns de base",
+          titleEn: "Cause and effect: the 4 base patterns",
+          content: "Le français évite « parce que... donc... » (redondant). Le chinois, LUI, adore le duo 因为...所以... et l'utilise sans complexe. Cette leçon fixe les 4 patterns de cause-effet à connaître au niveau A2. 因为...所以... reste le classique, mais peut se réduire à une des deux moitiés, voire disparaître totalement (juxtaposition seule). 于是 raconte une suite narrative (« du coup »). 结果 souligne un twist inattendu (« résultat des courses »). Enfin, 既然...就... enchaîne un fait ACCEPTÉ à une conséquence pratique, à ne pas confondre avec 如果...就... (hypothétique). Tu sortiras de cette leçon avec un vrai éventail pour lier tes phrases.",
+          contentEn: "English avoids «because... so...» (redundant). Chinese LOVES the 因为...所以... duo and uses it without shame. This lesson pins down the 4 cause-effect patterns for A2. 因为...所以... is the classic, but can drop to just one half, or vanish entirely (mere juxtaposition). 于是 narrates a sequel («and so»). 结果 highlights an unexpected twist («in the end»). Finally, 既然...就... links an ACCEPTED fact to a practical consequence — don't confuse with 如果...就... (hypothetical). You'll leave with a real toolkit for linking your sentences.",
+          objectives: [
+            "Utiliser 因为...所以... et savoir laisser tomber les connecteurs quand le lien est évident",
+            "Raconter une suite d'événements avec 于是",
+            "Signaler un twist ou résultat inattendu avec 结果",
+            "Distinguer 既然...就... (fait admis) de 如果...就... (hypothèse)"
+          ],
+          objectivesEn: [
+            "Use 因为...所以... and drop the connectors when the link is obvious",
+            "Narrate a sequence with 于是",
+            "Signal a twist or unexpected result with 结果",
+            "Tell 既然...就... (accepted fact) from 如果...就... (hypothesis)"
+          ]
+        },
+        flashcards: ["因为", "所以", "于是", "结果", "既然", "就"],
+        quizQuestions: 10,
+        learnSections: a2NuancesCauseEffectBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m21",
+        title: "Exprimer le but : 为了, 来, 好, 为的是, 之所以...是为了",
+        titleEn: "Expressing purpose: 为了, 来, 好, 为的是, 之所以...是为了",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [2, 3], category: "grammar", difficulty: "beginner",
+        tags: ["purpose", "connector", "cecr:a2"],
+        introduction: {
+          title: "Exprimer le but : les 5 patterns de base",
+          titleEn: "Expressing purpose: the 5 base patterns",
+          content: "Là où le français dit « pour » à toutes les sauces, le chinois distribue le rôle sur plusieurs mots selon le registre et la position dans la phrase. 为了 est LE connecteur par défaut, neutre, à placer en tête. 来 lie 2 verbes de façon courte et orale (« il utilise une appli pour apprendre »). 好 / 好让 servent à l'oral pour dire « pour que » — souvent quand le but concerne quelqu'un d'autre. Enfin, 为的是 et 之所以...是为了... permettent de METTRE LE BUT EN AVANT après l'action, avec un ton explicatif ou analytique. Attention : à ne pas confondre avec 因为 (« parce que ») — 为了 vise un OBJECTIF, pas une CAUSE.",
+          contentEn: "Where English piles «to / for / in order to» on everything, Chinese spreads the job across several words by register and position. 为了 is THE default connector — neutral, sits at the front. 来 links 2 verbs in a punchy, oral way («he uses an app to learn»). 好 / 好让 handle spoken «so that» — often when the purpose concerns someone else. Finally, 为的是 and 之所以...是为了... put the PURPOSE UP FRONT after the action, with an explanatory or analytical tone. Careful: don't mix up with 因为 («because») — 为了 targets a GOAL, not a CAUSE.",
+          objectives: [
+            "Utiliser 为了 comme connecteur du but par défaut",
+            "Relier 2 verbes à l'oral avec 来",
+            "Dire « pour que » à l'oral avec 好 et 好让",
+            "Mettre l'accent sur le but avec 为的是 et 之所以...是为了"
+          ],
+          objectivesEn: [
+            "Use 为了 as the default purpose connector",
+            "Link 2 verbs orally with 来",
+            "Say «so that» orally with 好 and 好让",
+            "Emphasize the goal with 为的是 and 之所以...是为了"
+          ]
+        },
+        flashcards: ["为了", "来", "好", "好让", "为的是", "之所以"],
+        quizQuestions: 10,
+        learnSections: a2NuancesPurposeBasicsLearnSections
       }
     ]
   },
@@ -5075,6 +5138,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["打开", "分开", "想开", "解开", "水开", "十八开金"],
         quizQuestions: 8,
         learnSections: b11NuancesKaiComplementLearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m12",
+        title: "Connecter des topics : 关于, 对于, 至于, 就...而言, 说起",
+        titleEn: "Connecting topics: 关于, 对于, 至于, 就...而言, 说起",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "vocabulary", difficulty: "intermediate",
+        tags: ["connector", "topic", "cecr:b11"],
+        introduction: {
+          title: "Trois façons de dire « à propos de » — et savoir laquelle choisir",
+          titleEn: "Three ways to say «about» — and knowing which to pick",
+          content: "En français « à propos de / concernant / quant à » couvre tout. En chinois, cinq patterns se partagent le rôle et ne sont PAS interchangeables. 关于 annonce neutrement un sujet (et peut modifier un nom via 的 — pouvoir unique). 对于 introduit ta réaction ou ton avis. 至于 pivote vers un nouveau sujet après en avoir discuté un premier — jamais en ouverture. 就...而言 est le registre écrit/académique de « en termes de » ; son équivalent oral 就...来说 (et le très courant 对...来说) sert au quotidien. Enfin, 拿...来说 illustre par un exemple concret, et 说起 / 说到 est LE connecteur oral naturel pour rebondir sur un sujet évoqué (« au fait, ça me fait penser »). Maîtriser ce trio + duos = fluidifier ta parole et structurer tes écrits.",
+          contentEn: "In English «about / concerning / as for» covers everything. In Chinese, five patterns share the job and are NOT interchangeable. 关于 neutrally announces a topic (and can modify a noun via 的 — unique power). 对于 introduces your reaction or opinion. 至于 pivots to a new topic after discussing a first — never used to open. 就...而言 is the written/academic register of «in terms of»; its spoken counterpart 就...来说 (and the very common 对...来说) fits everyday use. Finally, 拿...来说 illustrates with a concrete example, and 说起 / 说到 is THE natural spoken connector to bounce off a mentioned topic («by the way, that reminds me»). Mastering this trio + pairs = smoother speech and better-structured writing.",
+          objectives: [
+            "Choisir 关于 / 对于 / 至于 selon la fonction (annoncer / réagir / pivoter)",
+            "Basculer entre 就...而言 (écrit) et 就...来说 / 对...来说 (oral)",
+            "Illustrer par un exemple avec 拿...来说 / 来讲",
+            "Enchaîner naturellement avec 说起 / 说到 à l'oral"
+          ],
+          objectivesEn: [
+            "Pick 关于 / 对于 / 至于 by function (announce / react / pivot)",
+            "Switch between 就...而言 (written) and 就...来说 / 对...来说 (spoken)",
+            "Illustrate with an example via 拿...来说 / 来讲",
+            "Chain naturally with 说起 / 说到 in speech"
+          ]
+        },
+        flashcards: ["关于", "对于", "至于", "就", "而言", "来说", "拿", "说起", "说到"],
+        quizQuestions: 10,
+        learnSections: b11NuancesTopicConnectorsLearnSections
       }
     ]
   },
@@ -6777,6 +6869,64 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["宁可", "宁愿", "与其", "不如", "要不", "还是...吧", "倒不如"],
         quizQuestions: 10,
         learnSections: b12NuancesChoicesAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m18",
+        title: "Cause et effet formel : 由于, 因此, 从而, 之所以, 鉴于",
+        titleEn: "Formal cause and effect: 由于, 因此, 从而, 之所以, 鉴于",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["cause-effect", "connector", "cecr:b12"],
+        introduction: {
+          title: "Cause et effet avancé : registres pro, littéraire et classique",
+          titleEn: "Advanced cause and effect: pro, literary and classical registers",
+          content: "Au-delà de 因为...所以..., le chinois offre une gamme entière de connecteurs cause-effet gradués par registre. À l'écrit pro, 由于...因此... remplace 因为...所以... et sonne « communiqué officiel ». 因而 pousse le curseur vers le littéraire. 可见 tire une conclusion à partir d'observations (« ça montre que »). 从而 relie une méthode à son résultat (« et par là même »). 以致 signale un résultat MALHEUREUX, 以至于 un résultat EXTRÊME (positif ou négatif). Le pattern 之所以...是因为... INVERSE l'ordre pour analyser (effet d'abord, cause après). 鉴于 introduit une situation officiellement pesée. 因...而... concise à l'extrême. Et 故 est le connecteur classique/juridique. Cette leçon te donne le pouvoir de RECONNAÎTRE ces tournures dans un article, un rapport ou un contrat.",
+          contentEn: "Beyond 因为...所以..., Chinese offers a whole tiered range of cause-effect connectors by register. In pro writing, 由于...因此... replaces 因为...所以... and sounds like an «official bulletin». 因而 pushes toward literary. 可见 draws a conclusion from observations («it shows that»). 从而 links a method to its result («thereby»). 以致 signals an UNFORTUNATE result, 以至于 an EXTREME result (positive or negative). The 之所以...是因为... pattern REVERSES order to analyze (effect first, cause after). 鉴于 introduces an officially weighed situation. 因...而... is extremely concise. And 故 is the classical/legal connector. This lesson empowers you to RECOGNIZE these turns in an article, a report or a contract.",
+          objectives: [
+            "Remplacer 因为...所以... par 由于...因此... à l'écrit pro",
+            "Tirer une conclusion avec 可见 et lier méthode-résultat avec 从而",
+            "Distinguer 以致 (résultat malheureux) et 以至于 (résultat extrême)",
+            "Inverser l'ordre avec 之所以...是因为..., peser une situation avec 鉴于, condenser avec 因...而... et reconnaître 故"
+          ],
+          objectivesEn: [
+            "Swap 因为...所以... for 由于...因此... in pro writing",
+            "Draw a conclusion with 可见 and link method-result with 从而",
+            "Tell 以致 (unfortunate result) from 以至于 (extreme result)",
+            "Reverse order with 之所以...是因为..., weigh with 鉴于, condense with 因...而... and spot 故"
+          ]
+        },
+        flashcards: ["由于", "因此", "因而", "可见", "从而", "以致", "以至于", "之所以", "鉴于", "故"],
+        quizQuestions: 10,
+        learnSections: b12NuancesCauseEffectAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m19",
+        title: "But formel : 以免, 以便, 以, 以期, 为...起见, 旨在",
+        titleEn: "Formal purpose: 以免, 以便, 以, 以期, 为...起见, 旨在",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [4, 5], category: "grammar", difficulty: "intermediate",
+        tags: ["purpose", "connector", "cecr:b12"],
+        introduction: {
+          title: "But formel : registres pro, littéraire et institutionnel",
+          titleEn: "Formal purpose: pro, literary and institutional registers",
+          content: "Au-delà de 为了 et 好, le chinois offre une gamme entière de tournures de but graduées par registre. Pour ÉVITER un mauvais résultat, on a le trio 以免 / 免得 / 省得, du formel écrit au plus décontracté. Pour une intention pro, 以便 remplace 好 dans les documents officiels. 以 (seul) est ultra-littéraire. 以期 marque l'espoir d'un résultat non garanti — parfait dans un rapport annuel. 为...起见 s'utilise dans des formules figées (为安全起见, 为保险起见). 为...而... a un ton solennel des discours politiques. Enfin, 旨在 est LA formule officielle pour décrire un objectif d'institution ou de projet. Cette leçon te permet de RECONNAÎTRE ces tournures dans la presse, un rapport ou un communiqué.",
+          contentEn: "Beyond 为了 and 好, Chinese offers a whole tiered set of purpose expressions by register. To PREVENT a bad outcome, use the trio 以免 / 免得 / 省得, from formal written to super casual. For a pro intention, 以便 replaces 好 in official documents. 以 (alone) is ultra-literary. 以期 marks the hope for an uncertain result — perfect in an annual report. 为...起见 slots into fixed formulas (为安全起见, 为保险起见). 为...而... carries the solemn tone of political speeches. Finally, 旨在 is THE official formula for describing an institution or project goal. This lesson empowers you to RECOGNIZE these turns in press, reports and communiqués.",
+          objectives: [
+            "Choisir 以免 / 免得 / 省得 selon le registre (écrit → oral décontracté)",
+            "Utiliser 以便 dans un email pro et reconnaître 以 (littéraire) et 以期 (résultat espéré)",
+            "Mémoriser 为安全起见 / 为保险起见 / 为公平起见 (formules figées)",
+            "Reconnaître 为...而... (littéraire, solennel) et 旨在 (objectif officiel)"
+          ],
+          objectivesEn: [
+            "Pick 以免 / 免得 / 省得 by register (written → casual oral)",
+            "Use 以便 in pro emails and spot 以 (literary) and 以期 (hoped result)",
+            "Memorize 为安全起见 / 为保险起见 / 为公平起见 (fixed phrases)",
+            "Spot 为...而... (literary, solemn) and 旨在 (official objective)"
+          ]
+        },
+        flashcards: ["以免", "免得", "省得", "以便", "以", "以期", "为...起见", "为...而", "旨在"],
+        quizQuestions: 10,
+        learnSections: b12NuancesPurposeFormalLearnSections
       }
     ]
   },

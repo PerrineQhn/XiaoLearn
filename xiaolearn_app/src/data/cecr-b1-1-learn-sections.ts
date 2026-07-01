@@ -2947,3 +2947,125 @@ export const b11GrammarPivotalSentencesLearnSections: LessonV2LearnSection[] = [
       'The 4 fixed patterns (称...为, 说...是, 收...做, 选...当) are super frequent in writing and radio. Memorizing them as blocks = instant reading boost.'
   }
 ];
+
+// --- cecr-b11-nuances-m12 — Connecter des topics : « à propos de » ---------
+export const b11NuancesTopicConnectorsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-topic-guanyu-duiyu-zhiyu',
+    title: '关于, 对于, 至于 : « à propos de » selon le contexte',
+    titleEn: '关于, 对于, 至于: «about» depending on context',
+    body:
+      'Trois mots pour « à propos de / concernant » qui ne sont PAS interchangeables.\n' +
+      '\n' +
+      '关于 (guān yú) = « à propos de / concernant ». Neutre, sert à ANNONCER un sujet. Comme dessiner un cercle autour d\'un thème.\n' +
+      '- Structure : 关于 + [sujet]，[commentaire].\n' +
+      '- Ex : 关于你的建议，我们下周讨论 (guān yú nǐ de jiàn yì, wǒmen xià zhōu tǎo lùn) « concernant ta proposition, on en discutera la semaine prochaine ».\n' +
+      '- Point unique : peut modifier un nom via 的. Ex : 一本关于中国历史的书 (yì běn guān yú zhōng guó lì shǐ de shū) « un livre sur l\'histoire de la Chine ». Les autres synonymes ne peuvent PAS faire ça.\n' +
+      '- Registre : neutre à semi-formel. Emails, discussions, présentations.\n' +
+      '\n' +
+      '对于 (duì yú) = « à propos de » avec une NUANCE d\'attitude/réaction. Comme pointer du doigt un sujet pour donner son avis.\n' +
+      '- Structure : 对于 + [sujet]，[opinion/réaction].\n' +
+      '- Ex : 对于这个决定，我完全支持 (duì yú zhè ge jué dìng, wǒ wán quán zhī chí) « concernant cette décision, je la soutiens totalement ».\n' +
+      '- Ex : 对于这个问题，专家们有不同的看法 (duì yú zhè ge wèn tí, zhuān jiā men yǒu bù tóng de kàn fǎ) « à propos de cette question, les experts ont des avis différents ».\n' +
+      '- Nuance vs 关于 : 关于 introduit neutrement, 对于 sonne « voici mon avis ». En pratique, souvent interchangeables ; les natifs les mixent.\n' +
+      '\n' +
+      '至于 (zhì yú) = « quant à / en ce qui concerne » — pour PASSER À UN NOUVEAU sujet lié après avoir discuté d\'un premier.\n' +
+      '- Structure : [1er sujet discuté]，至于 + [nouveau sujet]，[commentaire].\n' +
+      '- Ex : 我们明天去公园，至于午餐，可以带三明治 (wǒmen míng tiān qù gōng yuán, zhì yú wǔ cān, kě yǐ dài sān míng zhì) « demain on va au parc, quant au déjeuner, on peut apporter des sandwiches ».\n' +
+      '- Ex : 数学考试我复习好了，至于英语，还没开始 (shù xué kǎo shì wǒ fù xí hǎo le, zhì yú yīng yǔ, hái méi kāi shǐ) « pour les maths j\'ai révisé, quant à l\'anglais, j\'ai pas encore commencé ».\n' +
+      '- Ne s\'utilise PAS en début de conversation. Sert de PIVOT vers un point secondaire.',
+    bodyEn:
+      'Three words for «about / concerning» that are NOT interchangeable. 关于 (guān yú) = neutral, ANNOUNCES a topic. Like drawing a circle around a theme. Structure: 关于 + [topic]，[comment]. Ex: 关于你的建议，我们下周讨论 «about your suggestion, we\'ll discuss it next week». UNIQUE point: can modify a noun via 的. Ex: 一本关于中国历史的书 «a book about Chinese history». The others CAN\'T. Register: neutral to semi-formal. 对于 (duì yú) = «about» with a nuance of ATTITUDE/reaction. Like pointing at a topic to give your opinion. Structure: 对于 + [topic]，[opinion]. Ex: 对于这个决定，我完全支持 «about this decision, I fully support it». Ex: 对于这个问题，专家们有不同的看法 «about this issue, experts have different views». Nuance vs 关于: 关于 introduces neutrally, 对于 sounds «here\'s my take». Often interchangeable; natives mix them. 至于 (zhì yú) = «as for / regarding» — to MOVE ONTO A NEW related topic after discussing a first. Structure: [1st topic discussed]，至于 + [new topic]，[comment]. Ex: 我们明天去公园，至于午餐，可以带三明治 «tomorrow we\'re going to the park; as for lunch, we can bring sandwiches». Ex: 数学考试我复习好了，至于英语，还没开始 «I\'ve reviewed for the math test; as for English, haven\'t started». NOT used at the start of a conversation. Serves as a PIVOT to a secondary point.',
+    items: [
+      { hanzi: '关于', pinyin: 'guān yú', meaning: 'concernant, à propos de (neutre)', meaningEn: 'concerning, about (neutral)', audio: 'audio/hsk4/hsk4_关于.wav' },
+      { hanzi: '对于', pinyin: 'duì yú', meaning: 'à propos de (avec avis)', meaningEn: 'about (with attitude)', audio: 'audio/hsk4/hsk4_对于.wav' },
+      { hanzi: '至于', pinyin: 'zhì yú', meaning: 'quant à, en ce qui concerne', meaningEn: 'as for, regarding', audio: 'audio/hsk5/hsk5_至于.wav' },
+      { hanzi: '关于你的建议', pinyin: 'guān yú nǐ de jiàn yì', meaning: 'concernant ta proposition', meaningEn: 'concerning your suggestion', audio: 'audio/hsk4/hsk4_建议.wav' },
+      { hanzi: '一本关于中国历史的书', pinyin: 'yì běn guān yú zhōng guó lì shǐ de shū', meaning: 'un livre sur l\'histoire de la Chine', meaningEn: 'a book about Chinese history', audio: 'audio/hsk3/hsk3_历史.wav' },
+      { hanzi: '对于这个决定，我完全支持', pinyin: 'duì yú zhè ge jué dìng, wǒ wán quán zhī chí', meaning: 'concernant cette décision, je soutiens totalement', meaningEn: 'about this decision, I fully support it', audio: 'audio/hsk5/hsk5_决定.wav' },
+      { hanzi: '对于这个问题', pinyin: 'duì yú zhè ge wèn tí', meaning: 'à propos de cette question', meaningEn: 'about this issue', audio: 'audio/hsk2/hsk2_问题.wav' },
+      { hanzi: '至于午餐，可以带三明治', pinyin: 'zhì yú wǔ cān, kě yǐ dài sān míng zhì', meaning: 'quant au déjeuner, on peut apporter des sandwiches', meaningEn: 'as for lunch, we can bring sandwiches', audio: 'audio/hsk5/hsk5_至于.wav' },
+      { hanzi: '至于英语，还没开始', pinyin: 'zhì yú yīng yǔ, hái méi kāi shǐ', meaning: 'quant à l\'anglais, pas encore commencé', meaningEn: 'as for English, haven\'t started', audio: 'audio/hsk2/hsk2_英语.wav' }
+    ],
+    tip:
+      '关于 pour lancer, 对于 pour donner ton avis, 至于 pour ajouter « et par ailleurs… ». Le trio couvre tous les cas.',
+    tipEn:
+      '关于 to open, 对于 to give your take, 至于 to add «and by the way…». The trio covers every case.'
+  },
+  {
+    id: 'b11-topic-jiu-eryan-laishuo',
+    title: '就...而言 (formel) + 就...来说 (courant) : « en termes de »',
+    titleEn: '就...而言 (formal) + 就...来说 (everyday): «in terms of»',
+    body:
+      'Les 2 signifient « en ce qui concerne / du point de vue de ». Diffèrent par le REGISTRE.\n' +
+      '\n' +
+      '就...而言 (jiù ... ér yán) = « en termes de / du point de vue de » — REGISTRE ÉLEVÉ, écrit, académique, présentations.\n' +
+      '- Structure : 就 + [aspect spécifique] + 而言，[commentaire].\n' +
+      '- Ex : 就价格而言，这家餐厅不算贵 (jiù jià gé ér yán, zhè jiā cān tīng bù suàn guì) « en termes de prix, ce restaurant n\'est pas cher ». Sonne analytique.\n' +
+      '- Ex : 就技术水平而言，这款手机领先市场 (jiù jì shù shuǐ píng ér yán, zhè kuǎn shǒu jī lǐng xiān shì chǎng) « d\'un point de vue technique, ce smartphone est en tête du marché ». Style rapport.\n' +
+      '- Ex : 就规模而言，这是全国最大的工厂 (jiù guī mó ér yán, zhè shì quán guó zuì dà de gōng chǎng) « en termes de taille, c\'est la plus grande usine du pays ».\n' +
+      '- À éviter dans une conversation détendue — sonne trop pédant.\n' +
+      '\n' +
+      '就...来说 (jiù ... lái shuō) = même sens, VERSION COURANTE et orale. Bien plus utilisable au quotidien.\n' +
+      '- Structure : 就 + [aspect / personne] + 来说，[commentaire].\n' +
+      '- Ex : 就我来说，周末喜欢待在家里 (jiù wǒ lái shuō, zhōu mò xǐ huan dāi zài jiā lǐ) « pour ma part, le weekend j\'aime rester chez moi ». Introduit une opinion perso.\n' +
+      '- Ex : 就他来说，工作最重要 (jiù tā lái shuō, gōng zuò zuì zhòng yào) « en ce qui le concerne, le travail est le plus important ».\n' +
+      '- Ex : 就价钱来说，这个还可以 (jiù jià qián lái shuō, zhè ge hái kě yǐ) « côté prix, ça reste correct ».\n' +
+      '\n' +
+      'Alternative similaire : 对我来说 (duì wǒ lái shuō) « pour moi » — encore plus courant à l\'oral, presque équivalent à 就我来说. Ex : 对我来说，睡眠很重要 (duì wǒ lái shuō, shuì mián hěn zhòng yào) « pour moi, le sommeil est essentiel ».',
+    bodyEn:
+      'Both mean «as for / from the perspective of». They differ in REGISTER. 就...而言 (jiù ... ér yán) = «in terms of» — HIGH register, written, academic, presentations. Structure: 就 + [specific aspect] + 而言，[comment]. Ex: 就价格而言，这家餐厅不算贵 «in terms of price, this restaurant isn\'t expensive». Analytical. Ex: 就技术水平而言，这款手机领先市场 «technically, this phone leads the market». Report-style. Ex: 就规模而言，这是全国最大的工厂 «in terms of size, this is the country\'s biggest factory». Avoid in casual chat — sounds pedantic. 就...来说 (jiù ... lái shuō) = same meaning, EVERYDAY spoken version. Structure: 就 + [aspect / person] + 来说，[comment]. Ex: 就我来说，周末喜欢待在家里 «personally, I like staying home on weekends». Introduces personal opinion. Ex: 就他来说，工作最重要 «as for him, work is most important». Ex: 就价钱来说，这个还可以 «price-wise, this is okay». Similar alt: 对我来说 (duì wǒ lái shuō) «for me» — even more common orally, almost equivalent to 就我来说. Ex: 对我来说，睡眠很重要 «for me, sleep is essential».',
+    items: [
+      { hanzi: '就...而言', pinyin: 'jiù ... ér yán', meaning: 'en termes de (formel)', meaningEn: 'in terms of (formal)', audio: 'audio/hsk6/hsk6_而言.wav' },
+      { hanzi: '就...来说', pinyin: 'jiù ... lái shuō', meaning: 'en termes de (courant)', meaningEn: 'in terms of (everyday)', audio: 'audio/hsk3/hsk3_来.wav' },
+      { hanzi: '对...来说', pinyin: 'duì ... lái shuō', meaning: 'pour... (oral)', meaningEn: 'for... (spoken)', audio: 'audio/hsk2/hsk2_对.wav' },
+      { hanzi: '就价格而言', pinyin: 'jiù jià gé ér yán', meaning: 'en termes de prix', meaningEn: 'in terms of price', audio: 'audio/hsk4/hsk4_价格.wav' },
+      { hanzi: '就技术水平而言', pinyin: 'jiù jì shù shuǐ píng ér yán', meaning: 'd\'un point de vue technique', meaningEn: 'in technical terms', audio: 'audio/hsk4/hsk4_技术.wav' },
+      { hanzi: '就规模而言', pinyin: 'jiù guī mó ér yán', meaning: 'en termes de taille', meaningEn: 'in terms of scale', audio: 'audio/hsk5/hsk5_规模.wav' },
+      { hanzi: '就我来说', pinyin: 'jiù wǒ lái shuō', meaning: 'pour ma part', meaningEn: 'for my part', audio: 'audio/hsk1/hsk1_我.wav' },
+      { hanzi: '就他来说，工作最重要', pinyin: 'jiù tā lái shuō, gōng zuò zuì zhòng yào', meaning: 'pour lui, le travail est le plus important', meaningEn: 'for him, work matters most', audio: 'audio/hsk1/hsk1_工作.wav' },
+      { hanzi: '对我来说，睡眠很重要', pinyin: 'duì wǒ lái shuō, shuì mián hěn zhòng yào', meaning: 'pour moi, le sommeil est essentiel', meaningEn: 'for me, sleep is essential', audio: 'audio/hsk4/hsk4_睡眠.wav' }
+    ],
+    tip:
+      'À l\'écrit HSK ou rapport pro, 就...而言 impressionne. À l\'oral, 就...来说 ou 对...来说 suffit.',
+    tipEn:
+      'On HSK writing or pro reports, 就...而言 shines. In speech, 就...来说 or 对...来说 is enough.'
+  },
+  {
+    id: 'b11-topic-na-laishuo-shuoqi',
+    title: '拿...来说 (exemple) + 说起/说到 (« au fait, ça me fait penser »)',
+    titleEn: '拿...来说 (example) + 说起/说到 («by the way, that reminds me»)',
+    body:
+      '拿...来说 / 来讲 (ná ... lái shuō / lái jiǎng) = « prenons... comme exemple » — pour ILLUSTRER par un cas concret.\n' +
+      '- Structure : 拿 + [exemple concret] + 来说 / 来讲，[explication].\n' +
+      '- Ex : 学外语很难，拿英语来说，我学了五年还不流利 (xué wài yǔ hěn nán, ná yīng yǔ lái shuō, wǒ xué le wǔ nián hái bù liú lì) « apprendre une langue étrangère c\'est dur : prenons l\'anglais, ça fait 5 ans que j\'étudie et je ne suis toujours pas fluent ».\n' +
+      '- Ex : 拿我们公司来说，员工都很敬业 (ná wǒmen gōng sī lái shuō, yuán gōng dōu hěn jìng yè) « prenons notre entreprise : les employés sont tous très dévoués ».\n' +
+      '- 拿...来说 et 拿...来讲 sont interchangeables. Choisir librement.\n' +
+      '- Registre : semi-formel, adapté à une présentation, une argumentation, une explication pédagogique.\n' +
+      '\n' +
+      '说起 / 说到 (shuō qǐ / shuō dào) = « au fait... / ça me fait penser à... / puisqu\'on parle de... » — connecteur ULTRA oral et NATUREL pour transitioner vers un sujet évoqué.\n' +
+      '- Structure : 说起 / 说到 + [sujet]，[commentaire].\n' +
+      '- Ex : 说起中国菜，我最喜欢火锅 (shuō qǐ zhōng guó cài, wǒ zuì xǐ huan huǒ guō) « à propos de cuisine chinoise, moi c\'est le hot pot que je préfère ». Ça enchaîne fluide.\n' +
+      '- Ex : 说到旅行，你去过日本吗 ? (shuō dào lǚ xíng, nǐ qù guò rì běn ma) « à propos de voyage, t\'as déjà été au Japon ? ».\n' +
+      '- Ex : 说起来，我明天有事 (shuō qǐ lái, wǒ míng tiān yǒu shì) « au fait, j\'ai un truc de prévu demain ».\n' +
+      '- 说起 et 说到 sont interchangeables à 95 %. 说到 est peut-être un chouïa plus « oral », 说起 très légèrement plus « introspectif », mais dans les faits, prends celui qui vient à ta tête.\n' +
+      '- Idéal pour : rebondir sur un sujet que ton interlocuteur vient de mentionner. Rendre la conversation fluide sans transition brutale.',
+    bodyEn:
+      '拿...来说 / 来讲 (ná ... lái shuō / lái jiǎng) = «take... as an example» — to ILLUSTRATE with a concrete case. Structure: 拿 + [concrete example] + 来说 / 来讲，[explanation]. Ex: 学外语很难，拿英语来说，我学了五年还不流利 «learning a foreign language is hard: take English, I\'ve studied 5 years and still not fluent». Ex: 拿我们公司来说，员工都很敬业 «take our company: the employees are all very dedicated». 拿...来说 and 拿...来讲 are interchangeable. Register: semi-formal, fits presentations, arguments, teaching. 说起 / 说到 (shuō qǐ / shuō dào) = «by the way... / that reminds me... / since we\'re talking about» — ULTRA spoken, NATURAL connector to transition to a mentioned topic. Structure: 说起 / 说到 + [topic]，[comment]. Ex: 说起中国菜，我最喜欢火锅 «about Chinese food, hot pot is my favorite». Smooth handoff. Ex: 说到旅行，你去过日本吗 ? «speaking of travel, have you been to Japan?». Ex: 说起来，我明天有事 «by the way, I have something on tomorrow». 说起 and 说到 are 95% interchangeable. 说到 slightly more «spoken», 说起 a hair more «introspective», but in practice, use whichever comes to mind. Ideal for: bouncing off a topic your interlocutor just mentioned. Makes conversation flow with no jarring transition.',
+    items: [
+      { hanzi: '拿...来说', pinyin: 'ná ... lái shuō', meaning: 'prenons... comme exemple', meaningEn: 'take... as an example', audio: 'audio/hsk3/hsk3_拿.wav' },
+      { hanzi: '拿...来讲', pinyin: 'ná ... lái jiǎng', meaning: 'prenons... (variante)', meaningEn: 'take... (variant)', audio: 'audio/hsk3/hsk3_讲.wav' },
+      { hanzi: '说起', pinyin: 'shuō qǐ', meaning: 'à propos de, ça me fait penser', meaningEn: 'speaking of, that reminds me', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '说到', pinyin: 'shuō dào', meaning: 'à propos de (variante)', meaningEn: 'speaking of (variant)', audio: 'audio/hsk1/hsk1_说.wav' },
+      { hanzi: '拿英语来说', pinyin: 'ná yīng yǔ lái shuō', meaning: 'prenons l\'anglais', meaningEn: 'take English', audio: 'audio/hsk2/hsk2_英语.wav' },
+      { hanzi: '拿我们公司来说', pinyin: 'ná wǒmen gōng sī lái shuō', meaning: 'prenons notre entreprise', meaningEn: 'take our company', audio: 'audio/hsk2/hsk2_公司.wav' },
+      { hanzi: '说起中国菜', pinyin: 'shuō qǐ zhōng guó cài', meaning: 'à propos de cuisine chinoise', meaningEn: 'speaking of Chinese food', audio: 'audio/hsk1/hsk1_菜.wav' },
+      { hanzi: '说到旅行', pinyin: 'shuō dào lǚ xíng', meaning: 'à propos de voyage', meaningEn: 'speaking of travel', audio: 'audio/hsk4/hsk4_旅行.wav' },
+      { hanzi: '说起来，我明天有事', pinyin: 'shuō qǐ lái, wǒ míng tiān yǒu shì', meaning: 'au fait, j\'ai un truc demain', meaningEn: 'by the way, I have plans tomorrow', audio: 'audio/hsk1/hsk1_明天.wav' }
+    ],
+    tip:
+      'À l\'oral, 说起/说到 est ton meilleur outil pour ENCHAÎNER naturellement. Tu ne casses pas la conversation, tu la fluidifies.',
+    tipEn:
+      'In speech, 说起/说到 is your best tool to CHAIN naturally. You don\'t break the conversation, you keep it flowing.'
+  }
+];

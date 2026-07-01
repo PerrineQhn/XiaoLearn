@@ -4561,3 +4561,228 @@ export const a2NuancesChoicesBasicsLearnSections: LessonV2LearnSection[] = [
       'Tip: each pattern carries a TONE. Soft question → 还是. Neutral → 或者. Firm → 要么. Habitual → 不是...就是. Formal → 或...或.'
   }
 ];
+
+// --- cecr-a2-nuances-m20 — Exprimer le but (base) -------------------------
+export const a2NuancesPurposeBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-purpose-weile-lai',
+    title: '为了 + 来 : les 2 patterns fondamentaux « pour... »',
+    titleEn: '为了 + 来: the 2 base patterns for «for/in order to»',
+    body:
+      '为了 (wèi le) = « pour, afin de ». C\'est LE connecteur du but PAR DÉFAUT. Neutre, marche partout.\n' +
+      '\n' +
+      'Structure : 为了 + [but]，[action].\n' +
+      '- Ex : 为了学好中文，我每天听播客 (py wèi le xué hǎo zhōng wén, wǒ měi tiān tīng bō kè) « pour bien apprendre le chinois, j\'écoute des podcasts tous les jours ».\n' +
+      '- Ex : 为了健康，他每天跑步 « pour rester en forme, il court chaque jour ».\n' +
+      '\n' +
+      'Attention : ne pas confondre avec 因为 (« parce que »). 为了 = OBJECTIF à atteindre. 因为 = RAISON qui a déclenché.\n' +
+      '- Ex : 我学中文因为我喜欢中国 « j\'apprends le chinois parce que j\'aime la Chine » (cause).\n' +
+      '- Ex : 我学中文为了去中国旅行 « j\'apprends pour voyager en Chine » (but).\n' +
+      '\n' +
+      'Note : le 了 dans 为了 fait partie du mot, ne marque PAS le passé.\n' +
+      '\n' +
+      '来 (lái) = « pour ». Connecteur COURT et oral, lie 2 verbes.\n' +
+      '\n' +
+      'Structure : [action 1] + 来 + [action 2 = but].\n' +
+      '- Ex : 他用手机应用来学中文 (py tā yòng shǒu jī yìng yòng lái xué zhōng wén) « il utilise des appli pour apprendre le chinois ».\n' +
+      '- Ex : 我打电话来告诉你 « je t\'appelle pour te dire ».\n' +
+      '- Ex : 他来这儿来找工作 « il est venu ici pour chercher du boulot ».\n' +
+      '\n' +
+      'Souvent avec 用 (utiliser), 来 (venir), 去 (aller).',
+    bodyEn:
+      '为了 (wèi le) = «for, in order to». THE default purpose connector — neutral, works everywhere. Structure: 为了 + [purpose], [action]. Ex: 为了学好中文，我每天听播客 «to master Chinese, I listen to podcasts daily». Ex: 为了健康，他每天跑步 «to stay healthy, he runs every day». Careful: don\'t confuse with 因为 («because»). 为了 = GOAL to reach; 因为 = REASON that triggered. Ex: 我学中文因为我喜欢中国 «I study Chinese because I love China» (cause) vs. 我学中文为了去中国旅行 «I study Chinese to travel to China» (purpose). Note: the 了 in 为了 is part of the word, NOT a past marker. 来 (lái) = «for/to». SHORT and oral connector linking 2 verbs. Structure: [action 1] + 来 + [action 2 = purpose]. Ex: 他用手机应用来学中文 «he uses apps to learn Chinese». Ex: 我打电话来告诉你 «I\'m calling to tell you». Ex: 他来这儿来找工作 «he came here to look for work». Often paired with 用 (use), 来 (come), 去 (go).',
+    items: [
+      { hanzi: '为了', pinyin: 'wèi le', meaning: 'pour, afin de', meaningEn: 'in order to, for', audio: 'audio/hsk3/hsk3_为了.wav' },
+      { hanzi: '来', pinyin: 'lái', meaning: 'pour (lier 2 verbes)', meaningEn: 'to (link 2 verbs)', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '为了学好中文，我每天听播客', pinyin: 'wèi le xué hǎo zhōng wén, wǒ měi tiān tīng bō kè', meaning: 'pour bien apprendre le chinois, j\'écoute des podcasts', meaningEn: 'to master Chinese, I listen to podcasts daily', audio: 'audio/hsk1/hsk1_中文.wav' },
+      { hanzi: '为了健康，他每天跑步', pinyin: 'wèi le jiàn kāng, tā měi tiān pǎo bù', meaning: 'pour la santé, il court chaque jour', meaningEn: 'for his health, he runs every day', audio: 'audio/hsk3/hsk3_健康.wav' },
+      { hanzi: '我学中文为了去中国旅行', pinyin: 'wǒ xué zhōng wén wèi le qù zhōng guó lǚ xíng', meaning: 'j\'apprends le chinois pour voyager en Chine', meaningEn: 'I\'m learning Chinese to travel to China', audio: 'audio/hsk2/hsk2_旅行.wav' },
+      { hanzi: '他用手机应用来学中文', pinyin: 'tā yòng shǒu jī yìng yòng lái xué zhōng wén', meaning: 'il utilise une appli pour apprendre le chinois', meaningEn: 'he uses an app to learn Chinese', audio: 'audio/hsk2/hsk2_手机.wav' },
+      { hanzi: '我打电话来告诉你', pinyin: 'wǒ dǎ diàn huà lái gào su nǐ', meaning: 'je t\'appelle pour te dire', meaningEn: 'I\'m calling to tell you', audio: 'audio/hsk1/hsk1_电话.wav' }
+    ],
+    tip:
+      'Astuce : à l\'écrit ou formellement, préfère 为了. À l\'oral avec un enchaînement de verbes, 来 est plus court et fluide.',
+    tipEn:
+      'Tip: for writing or formal contexts, pick 为了. In speech with linked verbs, 来 is punchier and flows better.'
+  },
+  {
+    id: 'a2-purpose-hao-haorang',
+    title: '好 et 好让 : « pour que » à l\'oral',
+    titleEn: '好 and 好让: «so that» in speech',
+    body:
+      '好 (hǎo) en connecteur = « pour que / afin que ». Très oral, très naturel entre 2 clauses. Peut passer pour « pour » ou « afin de ».\n' +
+      '\n' +
+      'Structure : [action 1]，好 + [but].\n' +
+      '- Ex : 我提前完成作业，好有时间休息 (py wǒ tí qián wán chéng zuò yè, hǎo yǒu shí jiān xiū xi) « je finis les devoirs à l\'avance, comme ça j\'aurai du temps pour me reposer ». Même sujet.\n' +
+      '- Ex : 大声说，好让大家都听见 « parle fort, pour que tout le monde entende ». Sujets différents.\n' +
+      '- Ex : 早点儿走，好赶上火车 « pars plus tôt, comme ça tu attrapes le train ».\n' +
+      '\n' +
+      '好让 (hǎo ràng) = « pour que quelqu\'un puisse ». Utilisé quand le but concerne QUELQU\'UN D\'AUTRE que le sujet initial.\n' +
+      '\n' +
+      'Structure : [action 1]，好让 + [personne] + [ce qu\'elle peut faire].\n' +
+      '- Ex : 请把门开着，好让客人进来 (py qǐng bǎ mén kāi zhe, hǎo ràng kè rén jìn lái) « laisse la porte ouverte pour que les invités puissent entrer ».\n' +
+      '- Ex : 说慢一点儿，好让我听懂 « parle un peu plus lentement pour que je comprenne ».\n' +
+      '\n' +
+      'Nuance vs 为了 : 为了 est plus large et formel. 好/好让 est très conversationnel, oral quotidien.',
+    bodyEn:
+      '好 (hǎo) as a connector = «so that / in order that». Very oral, natural between 2 clauses. Can render as «to» or «in order to». Structure: [action 1], 好 + [purpose]. Ex: 我提前完成作业，好有时间休息 «I finish homework early so I\'ll have time to rest» — same subject. Ex: 大声说，好让大家都听见 «speak up so everyone hears» — different subjects. Ex: 早点儿走，好赶上火车 «leave earlier so you catch the train». 好让 (hǎo ràng) = «so that someone can». Used when the purpose concerns SOMEONE OTHER than the initial subject. Structure: [action 1], 好让 + [person] + [what they can do]. Ex: 请把门开着，好让客人进来 «keep the door open so guests can come in». Ex: 说慢一点儿，好让我听懂 «speak slower so I understand». Nuance vs 为了: 为了 is broader and more formal; 好/好让 is very conversational, daily oral.',
+    items: [
+      { hanzi: '好', pinyin: 'hǎo', meaning: 'pour que, afin que (oral)', meaningEn: 'so that (oral)', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '好让', pinyin: 'hǎo ràng', meaning: 'pour que quelqu\'un puisse', meaningEn: 'so that someone can', audio: 'audio/hsk2/hsk2_让.wav' },
+      { hanzi: '我提前完成作业，好有时间休息', pinyin: 'wǒ tí qián wán chéng zuò yè, hǎo yǒu shí jiān xiū xi', meaning: 'je finis les devoirs tôt, pour avoir le temps de me reposer', meaningEn: 'I finish homework early to have time to rest', audio: 'audio/hsk2/hsk2_休息.wav' },
+      { hanzi: '大声说，好让大家都听见', pinyin: 'dà shēng shuō, hǎo ràng dà jiā dōu tīng jiàn', meaning: 'parle fort, que tout le monde entende', meaningEn: 'speak loudly so everyone hears', audio: 'audio/hsk1/hsk1_大家.wav' },
+      { hanzi: '早点儿走，好赶上火车', pinyin: 'zǎo diǎn ér zǒu, hǎo gǎn shàng huǒ chē', meaning: 'pars plus tôt, comme ça tu attrapes le train', meaningEn: 'leave earlier so you catch the train', audio: 'audio/hsk2/hsk2_火车.wav' },
+      { hanzi: '请把门开着，好让客人进来', pinyin: 'qǐng bǎ mén kāi zhe, hǎo ràng kè rén jìn lái', meaning: 'laisse la porte ouverte pour que les invités entrent', meaningEn: 'keep the door open so guests can enter', audio: 'audio/hsk2/hsk2_门.wav' },
+      { hanzi: '说慢一点儿，好让我听懂', pinyin: 'shuō màn yī diǎn ér, hǎo ràng wǒ tīng dǒng', meaning: 'parle plus lentement pour que je comprenne', meaningEn: 'speak slower so I understand', audio: 'audio/hsk2/hsk2_听.wav' }
+    ],
+    tip:
+      'Astuce : 好让 = « pour que quelqu\'un puisse ». Ultra pratique quand tu fais qch pour la commodité de qqn d\'autre.',
+    tipEn:
+      'Tip: 好让 = «so that someone can». Super handy when you\'re doing something for someone else\'s convenience.'
+  },
+  {
+    id: 'a2-purpose-weideshi-zhi-suoyi-shi-weile',
+    title: '为的是 + 之所以...是为了 : mettre le but en avant',
+    titleEn: '为的是 + 之所以...是为了: putting the purpose front and center',
+    body:
+      '为的是 (wèi de shì) = « la raison, c\'est pour... ». Structure : [action]，为的是 + [but]. Emphase sur l\'intention.\n' +
+      '- Ex : 他每天跑步，为的是保持健康 (py tā měi tiān pǎo bù, wèi de shì bǎo chí jiàn kāng) « il court tous les jours, c\'est pour rester en forme ». Ton explicatif, comme si on clarifiait la motivation.\n' +
+      '- Ex : 我学中文，为的是了解中国文化 « j\'apprends le chinois, c\'est pour comprendre la culture chinoise ».\n' +
+      '\n' +
+      'Nuance vs 为了 : 为了 vient EN TÊTE. 为的是 vient APRÈS l\'action, insiste sur « voici pourquoi ».\n' +
+      '- 为了保持健康，他每天跑步 (défaut, sobre).\n' +
+      '- 他每天跑步，为的是保持健康 (« il fait ça, c\'est pour... », emphase pédagogique).\n' +
+      '\n' +
+      '之所以...是为了... (zhī suǒ yǐ ... shì wèi le) = « la raison pour laquelle... c\'est pour ». Formel, analytique.\n' +
+      '\n' +
+      'Structure : sujet + 之所以 + [action]，是为了 + [but].\n' +
+      '- Ex : 他之所以辞职，是为了专心创业 (py tā zhī suǒ yǐ cí zhí, shì wèi le zhuān xīn chuàng yè) « s\'il a démissionné, c\'est pour se consacrer à son entreprise ». Registre soutenu.\n' +
+      '- Ex : 我们之所以选这个方案，是为了节省成本 « nous avons choisi cette option, c\'est pour économiser des coûts ». Style rapport.\n' +
+      '\n' +
+      'Ne pas confondre avec 之所以...是因为... (cause au lieu de but).\n' +
+      '- 是为了 = BUT visé.\n' +
+      '- 是因为 = CAUSE passée.',
+    bodyEn:
+      '为的是 (wèi de shì) = «the reason is to...». Structure: [action], 为的是 + [purpose]. Emphasizes intention. Ex: 他每天跑步，为的是保持健康 «he runs every day — the reason is to stay healthy». Explanatory tone, as if clarifying motivation. Ex: 我学中文，为的是了解中国文化 «I study Chinese, the reason is to understand Chinese culture». Nuance vs 为了: 为了 comes UP FRONT; 为的是 comes AFTER the action, insists on «here\'s why». 为了保持健康，他每天跑步 (default, plain) vs 他每天跑步，为的是保持健康 («he does that — it\'s to...», teaching-tone emphasis). 之所以...是为了... (zhī suǒ yǐ ... shì wèi le) = «the reason (why) ... is to ...». Formal, analytical. Structure: subject + 之所以 + [action], 是为了 + [purpose]. Ex: 他之所以辞职，是为了专心创业 «the reason he quit is to focus on his startup». Elevated register. Ex: 我们之所以选这个方案，是为了节省成本 «the reason we chose this plan is to save costs». Report style. Don\'t confuse with 之所以...是因为... (cause instead of purpose). 是为了 = intended PURPOSE; 是因为 = past CAUSE.',
+    items: [
+      { hanzi: '为的是', pinyin: 'wèi de shì', meaning: 'la raison, c\'est pour', meaningEn: 'the reason is to', audio: 'audio/hsk3/hsk3_为了.wav' },
+      { hanzi: '之所以', pinyin: 'zhī suǒ yǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk4/hsk4_之所以.wav' },
+      { hanzi: '是为了', pinyin: 'shì wèi le', meaning: 'c\'est pour (but)', meaningEn: 'is to (purpose)', audio: 'audio/hsk3/hsk3_为了.wav' },
+      { hanzi: '他每天跑步，为的是保持健康', pinyin: 'tā měi tiān pǎo bù, wèi de shì bǎo chí jiàn kāng', meaning: 'il court chaque jour, c\'est pour rester en forme', meaningEn: 'he runs daily — the reason is to stay healthy', audio: 'audio/hsk3/hsk3_健康.wav' },
+      { hanzi: '我学中文，为的是了解中国文化', pinyin: 'wǒ xué zhōng wén, wèi de shì liǎo jiě zhōng guó wén huà', meaning: 'j\'apprends le chinois, c\'est pour comprendre la culture', meaningEn: 'I study Chinese, the reason is to understand the culture', audio: 'audio/hsk3/hsk3_文化.wav' },
+      { hanzi: '他之所以辞职，是为了专心创业', pinyin: 'tā zhī suǒ yǐ cí zhí, shì wèi le zhuān xīn chuàng yè', meaning: 's\'il a démissionné, c\'est pour se consacrer à son entreprise', meaningEn: 'the reason he quit is to focus on his startup', audio: 'audio/hsk5/hsk5_辞职.wav' },
+      { hanzi: '我们之所以选这个方案，是为了节省成本', pinyin: 'wǒ men zhī suǒ yǐ xuǎn zhè ge fāng àn, shì wèi le jié shěng chéng běn', meaning: 'nous avons choisi ce plan, c\'est pour économiser', meaningEn: 'the reason we chose this plan is to save costs', audio: 'audio/hsk5/hsk5_方案.wav' }
+    ],
+    tip:
+      'Astuce : 之所以...是为了 est ton meilleur ami dans une dissertation HSK ou un email pro. Insiste sur la logique et rend le but explicite.',
+    tipEn:
+      'Tip: 之所以...是为了 is your best friend for an HSK essay or a pro email. Highlights logic and makes the purpose explicit.'
+  }
+];
+
+// --- cecr-a2-nuances-cause-effect-basics — Cause et effet : basiques ------
+export const a2NuancesCauseEffectBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-cause-basics-yinwei-suoyi',
+    title: '因为...所以... : le classique, et sans connecteur',
+    titleEn: '因为...所以...: the classic, and no connector',
+    body:
+      'Le chinois adore le DUO 因为 + 所以 ensemble (contrairement au français qui évite « parce que... donc... »).\n' +
+      '\n' +
+      'Structure : 因为 + [cause]，所以 + [résultat].\n' +
+      '- Ex : 因为明天有考试，所以我想早一点儿睡觉 (py yīn wèi míng tiān yǒu kǎo shì, suǒ yǐ wǒ xiǎng zǎo yì diǎnr shuì jiào) « comme j\'ai un examen demain, je veux me coucher tôt ».\n' +
+      '\n' +
+      'Utiliser un seul des deux est aussi correct : soit 因为... seul (répondre à « pourquoi »), soit 所以... seul (cause déjà connue).\n' +
+      '- Ex : 因为下雨了 « parce qu\'il pleut ».\n' +
+      '- Ex : 所以我没来 « donc je ne suis pas venu ».\n' +
+      '\n' +
+      'Sans connecteur — approche ULTRA élégante : juste juxtaposer cause + résultat séparés par une virgule. Le contexte fait le lien.\n' +
+      '- Ex : 他生病了，没来上课 (py tā shēng bìng le, méi lái shàng kè) « il est tombé malade, il n\'est pas venu en cours ». Cause et effet évidents, aucun besoin de mot de liaison. Très naturel à l\'oral.',
+    bodyEn:
+      'Chinese loves the DUO 因为 + 所以 together (unlike English which avoids «because... so...»). Structure: 因为 + [cause], 所以 + [result]. Ex: 因为明天有考试，所以我想早一点儿睡觉 «since I have an exam tomorrow, I want to sleep early». Using only one of the two is also fine: 因为... alone (answering «why»), or 所以... alone (cause already known). Ex: 因为下雨了 «because it\'s raining». Ex: 所以我没来 «so I didn\'t come». No connector — ULTRA elegant: just juxtapose cause + result separated by a comma. Context does the linking. Ex: 他生病了，没来上课 «he got sick, he didn\'t come to class». Cause and effect obvious, no need for a link word. Very natural orally.',
+    items: [
+      { hanzi: '因为', pinyin: 'yīn wèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '所以', pinyin: 'suǒ yǐ', meaning: 'donc, c\'est pourquoi', meaningEn: 'so, therefore', audio: 'audio/hsk2/hsk2_所以.wav' },
+      { hanzi: '因为...所以...', pinyin: 'yīn wèi ... suǒ yǐ ...', meaning: 'parce que... donc...', meaningEn: 'because... so...', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '因为明天有考试，所以我想早一点儿睡觉', pinyin: 'yīn wèi míng tiān yǒu kǎo shì, suǒ yǐ wǒ xiǎng zǎo yì diǎnr shuì jiào', meaning: 'comme j\'ai un examen demain, je veux dormir tôt', meaningEn: 'since I have an exam tomorrow, I want to sleep early', audio: 'audio/hsk2/hsk2_考试.wav' },
+      { hanzi: '因为下雨了', pinyin: 'yīn wèi xià yǔ le', meaning: 'parce qu\'il pleut', meaningEn: 'because it\'s raining', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '所以我没来', pinyin: 'suǒ yǐ wǒ méi lái', meaning: 'donc je ne suis pas venu', meaningEn: 'so I didn\'t come', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '他生病了，没来上课', pinyin: 'tā shēng bìng le, méi lái shàng kè', meaning: 'il est tombé malade, il n\'est pas venu en cours', meaningEn: 'he got sick, he didn\'t come to class', audio: 'audio/hsk3/hsk3_生病.wav' }
+    ],
+    tip:
+      'Astuce : quand le lien est ÉVIDENT, laisse tomber les connecteurs. Le chinois oral zappe le 因为/所以 dans la majorité des cas.',
+    tipEn:
+      'Tip: when the link is OBVIOUS, drop the connectors. Spoken Chinese skips 因为/所以 most of the time.'
+  },
+  {
+    id: 'a2-cause-basics-yushi-jieguo',
+    title: '于是 (narration) et 结果 (retournement)',
+    titleEn: '于是 (narration) and 结果 (twist)',
+    body:
+      '于是 (yú shì) = « et alors / du coup ». Enchaîne un événement et une ACTION prise en réponse. Ton narratif.\n' +
+      '\n' +
+      'Structure : [événement]，于是 + [action prise].\n' +
+      '- Ex : 他不喜欢这个工作，于是离开了这家公司 (py tā bù xǐ huan zhè ge gōng zuò, yú shì lí kāi le zhè jiā gōng sī) « il n\'aimait pas ce boulot, du coup il a quitté l\'entreprise ».\n' +
+      '- Ex : 太累了，于是他睡着了 « il était trop fatigué, du coup il s\'est endormi ».\n' +
+      '\n' +
+      'Différent de 所以 : 于是 raconte une histoire, 所以 explique une conséquence logique. 所以 = neutre. 于是 = narratif.\n' +
+      '\n' +
+      '结果 (jié guǒ) = « au final / résultat des courses ». Introduit un résultat INATTENDU, ironique ou contraire aux attentes.\n' +
+      '\n' +
+      'Structure : [plan/attente]，结果 + [ce qui s\'est vraiment passé].\n' +
+      '- Ex : 他们准备去野餐，结果下起了大雨 (py tā men zhǔn bèi qù yě cān, jié guǒ xià qǐ le dà yǔ) « ils voulaient pique-niquer, résultat il a plu à torrents ».\n' +
+      '- Ex : 我以为他会同意，结果他拒绝了 « je pensais qu\'il accepterait, mais finalement il a refusé ».\n' +
+      '\n' +
+      'Nuance : 结果 signale souvent un rebondissement, un plot twist, une surprise déçue.',
+    bodyEn:
+      '于是 (yú shì) = «and then / so». Chains an event with an ACTION taken in response. Narrative tone. Structure: [event], 于是 + [action]. Ex: 他不喜欢这个工作，于是离开了这家公司 «he didn\'t like his job, so he left the company». Ex: 太累了，于是他睡着了 «he was too tired, so he fell asleep». Different from 所以: 于是 tells a story, 所以 explains a logical consequence. 所以 = neutral. 于是 = narrative. 结果 (jié guǒ) = «in the end / as it turned out». Introduces an UNEXPECTED, ironic or counter-expectation result. Structure: [plan/expectation], 结果 + [what really happened]. Ex: 他们准备去野餐，结果下起了大雨 «they planned a picnic, and it poured». Ex: 我以为他会同意，结果他拒绝了 «I thought he\'d agree, but he refused». Nuance: 结果 often signals a plot twist, a disappointment.',
+    items: [
+      { hanzi: '于是', pinyin: 'yú shì', meaning: 'et alors, du coup', meaningEn: 'and then, so', audio: 'audio/hsk4/hsk4_于是.wav' },
+      { hanzi: '结果', pinyin: 'jié guǒ', meaning: 'au final, résultat', meaningEn: 'in the end, as it turned out', audio: 'audio/hsk3/hsk3_结果.wav' },
+      { hanzi: '他不喜欢这个工作，于是离开了这家公司', pinyin: 'tā bù xǐ huan zhè ge gōng zuò, yú shì lí kāi le zhè jiā gōng sī', meaning: 'il n\'aimait pas ce boulot, du coup il a démissionné', meaningEn: 'he didn\'t like his job, so he quit', audio: 'audio/hsk2/hsk2_工作.wav' },
+      { hanzi: '太累了，于是他睡着了', pinyin: 'tài lèi le, yú shì tā shuì zháo le', meaning: 'trop fatigué, du coup il s\'est endormi', meaningEn: 'too tired, so he fell asleep', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '他们准备去野餐，结果下起了大雨', pinyin: 'tā men zhǔn bèi qù yě cān, jié guǒ xià qǐ le dà yǔ', meaning: 'ils voulaient pique-niquer, résultat il a plu', meaningEn: 'they planned a picnic, and it poured', audio: 'audio/hsk4/hsk4_野餐.wav' },
+      { hanzi: '我以为他会同意，结果他拒绝了', pinyin: 'wǒ yǐ wéi tā huì tóng yì, jié guǒ tā jù jué le', meaning: 'je pensais qu\'il accepterait, mais il a refusé', meaningEn: 'I thought he\'d agree, but he refused', audio: 'audio/hsk3/hsk3_同意.wav' }
+    ],
+    tip:
+      'Astuce : 于是 pour raconter une suite logique, 结果 pour souligner le twist. Dans un récit oral, ces 2 mots donnent du relief.',
+    tipEn:
+      'Tip: 于是 for a logical sequel, 结果 to highlight the twist. In oral storytelling, these 2 words add texture.'
+  },
+  {
+    id: 'a2-cause-basics-jiran-jiu',
+    title: '既然...就... : « puisque..., alors... »',
+    titleEn: '既然...就...: «since..., then...»',
+    body:
+      'Ce duo introduit un FAIT DÉJÀ ACCEPTÉ (既然) et propose une conséquence logique (就), souvent suggestion ou conseil.\n' +
+      '\n' +
+      'Structure : 既然 + [fait admis]，就 + [suggestion/conclusion logique].\n' +
+      '- Ex : 既然天气这么好，我们就去公园吧 (py jì rán tiān qì zhè me hǎo, wǒ men jiù qù gōng yuán ba) « puisqu\'il fait si beau, allons au parc ».\n' +
+      '- Ex : 既然你不想去，就别去了 « puisque tu ne veux pas y aller, alors n\'y va pas ».\n' +
+      '- Ex : 既然大家都同意，我们就开始吧 « puisque tout le monde est d\'accord, commençons ».\n' +
+      '\n' +
+      'Distinction cruciale vs 如果...就... (si...alors) :\n' +
+      '- 如果 = HYPOTHÉTIQUE (peut arriver, peut ne pas arriver).\n' +
+      '- 既然 = ACCEPTÉ / RECONNU (déjà vrai).\n' +
+      '\n' +
+      'Ex contraste : 如果下雨，我们就不去 « s\'il pleut, on n\'y va pas » (on ne sait pas encore). 既然下雨了，我们就不去 « puisqu\'il pleut, on n\'y va pas » (fait acquis, il pleut déjà).\n' +
+      '\n' +
+      'Souvent avec 吧 pour proposer, avec 别 pour déconseiller.',
+    bodyEn:
+      'This duo introduces an ALREADY ACCEPTED FACT (既然) and proposes a logical consequence (就), often a suggestion or advice. Structure: 既然 + [accepted fact], 就 + [suggestion/logical conclusion]. Ex: 既然天气这么好，我们就去公园吧 «since the weather is so nice, let\'s go to the park». Ex: 既然你不想去，就别去了 «since you don\'t want to go, then don\'t». Ex: 既然大家都同意，我们就开始吧 «since everyone agrees, let\'s start». Crucial distinction vs 如果...就... (if...then): 如果 = HYPOTHETICAL (may or may not happen); 既然 = ACCEPTED / ACKNOWLEDGED (already true). Contrast: 如果下雨，我们就不去 «if it rains, we\'re not going» (still unknown). 既然下雨了，我们就不去 «since it\'s raining, we\'re not going» (it already is). Often with 吧 to propose, with 别 to dissuade.',
+    items: [
+      { hanzi: '既然', pinyin: 'jì rán', meaning: 'puisque, du moment que', meaningEn: 'since, given that', audio: 'audio/hsk4/hsk4_既然.wav' },
+      { hanzi: '就', pinyin: 'jiù', meaning: 'alors (conséquence)', meaningEn: 'then (consequence)', audio: 'audio/hsk2/hsk2_就.wav' },
+      { hanzi: '既然...就...', pinyin: 'jì rán ... jiù ...', meaning: 'puisque... alors...', meaningEn: 'since... then...', audio: 'audio/hsk4/hsk4_既然.wav' },
+      { hanzi: '既然天气这么好，我们就去公园吧', pinyin: 'jì rán tiān qì zhè me hǎo, wǒ men jiù qù gōng yuán ba', meaning: 'puisqu\'il fait si beau, allons au parc', meaningEn: 'since the weather is so nice, let\'s go to the park', audio: 'audio/hsk3/hsk3_公园.wav' },
+      { hanzi: '既然你不想去，就别去了', pinyin: 'jì rán nǐ bù xiǎng qù, jiù bié qù le', meaning: 'puisque tu ne veux pas y aller, n\'y va pas', meaningEn: 'since you don\'t want to go, don\'t', audio: 'audio/hsk2/hsk2_别.wav' },
+      { hanzi: '既然大家都同意，我们就开始吧', pinyin: 'jì rán dà jiā dōu tóng yì, wǒ men jiù kāi shǐ ba', meaning: 'puisque tout le monde est d\'accord, commençons', meaningEn: 'since everyone agrees, let\'s start', audio: 'audio/hsk2/hsk2_开始.wav' },
+      { hanzi: '如果下雨，我们就不去', pinyin: 'rú guǒ xià yǔ, wǒ men jiù bú qù', meaning: 's\'il pleut, on n\'y va pas', meaningEn: 'if it rains, we\'re not going', audio: 'audio/hsk3/hsk3_如果.wav' },
+      { hanzi: '既然下雨了，我们就不去', pinyin: 'jì rán xià yǔ le, wǒ men jiù bú qù', meaning: 'puisqu\'il pleut, on n\'y va pas', meaningEn: 'since it\'s raining, we\'re not going', audio: 'audio/hsk1/hsk1_下雨.wav' }
+    ],
+    tip:
+      'Astuce : à chaque fois qu\'un fait est admis et que tu veux en tirer une conclusion pratique, 既然...就 est parfait. Le 就 est OBLIGATOIRE.',
+    tipEn:
+      'Tip: whenever a fact is accepted and you want to draw a practical conclusion, 既然...就 fits perfectly. The 就 is MANDATORY.'
+  }
+];
