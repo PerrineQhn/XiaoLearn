@@ -2,6 +2,10 @@ import type { LessonItem } from '../types';
 import { grammarLessonsSubstack } from './grammar-lessons-substack';
 import { grammarLessonsExtended } from './grammar-lessons-extended';
 import { grammarLessonsExtra } from './grammar-lessons-extra';
+import { grammarLessonsHsk1Bases } from './grammar-lessons-hsk1-bases';
+import { grammarLessonsHsk2Modaux } from './grammar-lessons-hsk2-modaux';
+import { grammarLessonsHsk2Prepositions } from './grammar-lessons-hsk2-prepositions';
+import { grammarLessonsHsk3Complements } from './grammar-lessons-hsk3-complements';
 
 /**
  * Leçons de grammaire avec quiz adaptés
@@ -639,7 +643,15 @@ export const grammarLessons: LessonItem[] = [
   ...grammarLessonsExtended,
   // V13 — 10 nouvelles leçons (也, 都, 一边...一边, 给, 是...的,
   // 不仅...而且, 即使...也, 只要...就, 哪怕, 由于...因此)
-  ...grammarLessonsExtra
+  ...grammarLessonsExtra,
+  // HSK1 socle — 5 fiches base (是, 有, mots interrogatifs, 二/两, 几/多少)
+  ...grammarLessonsHsk1Bases,
+  // HSK2 modaux + adverbes (想, 要, 能/可以, 一点儿/有点儿, 又/再/还)
+  ...grammarLessonsHsk2Modaux,
+  // HSK2 prépositions + imminence + indéfinis (从/离/到, 对/给/跟/和, 快...了, 什么都)
+  ...grammarLessonsHsk2Prepositions,
+  // HSK3 compléments verbaux + conditionnels (direction simple/composé, degré, possibilité, 如果...就, 只有...才)
+  ...grammarLessonsHsk3Complements
 ];
 
 // Fonction helper pour récupérer une leçon de grammaire par ID
