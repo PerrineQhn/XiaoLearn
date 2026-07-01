@@ -2625,3 +2625,164 @@ export const b12NuancesMeasureWordsAdvancedLearnSections: LessonV2LearnSection[]
       'In casual speech, 个 almost always replaces these formal MW. In writing or pro contexts, moving up the register = credibility.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances B1.2 — « Presque » avancé : 几乎, 将近, 差点儿, 差点儿没
+// (cecr-b12-nuances-m10)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-almost-jihu',
+    title: '几乎 : « presque » formel / emphatique',
+    titleEn: '几乎: formal / emphatic «almost»',
+    body:
+      '几乎 (jī hū) partage le sens de « presque » mais avec un registre plus SOUTENU ou EMPHATIQUE. Fréquent à l\'écrit et dans les discours.\n' +
+      '\n' +
+      'Se combine surtout avec verbes, adjectifs, quantifieurs et 都 pour appuyer une généralisation.\n' +
+      '\n' +
+      'Combinaisons hyper courantes :\n' +
+      '\n' +
+      '- 几乎所有人 (jī hū suǒ yǒu rén) « quasiment tout le monde ».\n' +
+      '- 几乎每天 (jī hū měi tiān) « quasiment tous les jours ».\n' +
+      '- 几乎不 (jī hū bù) « à peine, presque pas ».\n' +
+      '\n' +
+      'Ex : 他几乎每天都喝咖啡 (tā jī hū měi tiān dōu hē kā fēi) « il boit un café presque tous les jours ». Le 都 renforce la généralisation.\n' +
+      '\n' +
+      'Ex : 我几乎忘了这件事 (wǒ jī hū wàng le zhè jiàn shì) « j\'ai failli oublier ce truc ». À l\'oral décontracté on utiliserait plutôt 差点儿忘了 (cf. section 3).\n' +
+      '\n' +
+      'Différence majeure vs 差不多 : 几乎 ne peut PAS répondre SEUL. « 你好了吗 ? » — 几乎 ✗ ne marche pas. Il faut toujours qu\'il modifie quelque chose.\n' +
+      '\n' +
+      'Quand choisir 几乎 plutôt que 差不多 :\n' +
+      '\n' +
+      '- Registre écrit/formel → 几乎.\n' +
+      '- Généralisations larges avec 所有 / 每 / 都 → 几乎.\n' +
+      '- Réponse courte à l\'oral → 差不多.\n' +
+      '- Contexte décontracté → 差不多.',
+    bodyEn:
+      '几乎 (jī hū) shares the meaning of «almost» but with a more FORMAL or EMPHATIC register. Frequent in writing and speeches. Mostly combines with verbs, adjectives, quantifiers and 都 to back up a generalization. Very common combos: 几乎所有人 (jī hū suǒ yǒu rén) «practically everyone». 几乎每天 (jī hū měi tiān) «practically every day». 几乎不 (jī hū bù) «hardly, almost not». Ex: 他几乎每天都喝咖啡 (tā jī hū měi tiān dōu hē kā fēi) «he drinks coffee almost every day». The 都 strengthens the generalization. Ex: 我几乎忘了这件事 (wǒ jī hū wàng le zhè jiàn shì) «I almost forgot this thing». In casual speech we\'d rather say 差点儿忘了 (see section 3). Key difference vs 差不多: 几乎 CANNOT stand ALONE as a reply. «你好了吗?» — 几乎 ✗ doesn\'t work. It must always modify something. When to pick 几乎 over 差不多: written/formal register → 几乎. Broad generalizations with 所有 / 每 / 都 → 几乎. Short spoken reply → 差不多. Casual context → 差不多.',
+    items: [
+      { hanzi: '几乎', pinyin: 'jī hū', meaning: 'presque, quasiment', meaningEn: 'almost, nearly', audio: 'audio/hsk4/hsk4_几乎.wav' },
+      { hanzi: '所有', pinyin: 'suǒ yǒu', meaning: 'tous, la totalité de', meaningEn: 'all, the whole of', audio: 'audio/hsk4/hsk4_所有.wav' },
+      { hanzi: '每天', pinyin: 'měi tiān', meaning: 'chaque jour', meaningEn: 'every day', audio: 'audio/hsk2/hsk2_每天.wav' },
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tou(te)s', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
+      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk1/hsk1_咖啡.wav' },
+      { hanzi: '忘', pinyin: 'wàng', meaning: 'oublier', meaningEn: 'to forget', audio: 'audio/hsk3/hsk3_忘.wav' }
+    ],
+    tip:
+      '几乎 est ton « presque » d\'essai HSK, d\'article de journal ou de présentation. 差不多 pour discuter avec ton pote.',
+    tipEn:
+      '几乎 is your «almost» for HSK essays, newspaper articles or presentations. 差不多 for chatting with your buddy.'
+  },
+  {
+    id: 'b12-almost-jiangjin',
+    title: '将近 : « presque » spécifique aux nombres',
+    titleEn: '将近: number-specific «almost»',
+    body:
+      '将近 (jiāng jìn) sert UNIQUEMENT devant un nombre. Signifie « un peu moins que », « frisant », « près de ». Ton objectif et factuel.\n' +
+      '\n' +
+      'Structure : 将近 + nombre + (MW) + (nom).\n' +
+      '\n' +
+      'Ex : 他将近三十岁了 (tā jiāng jìn sān shí suì le) « il a bientôt trente ans » (peut-être 28 ou 29, pas encore atteint).\n' +
+      '\n' +
+      'Ex : 这个项目花了将近一百万 (zhè ge xiàng mù huā le jiāng jìn yī bǎi wàn) « ce projet a coûté près d\'un million ». Sonne pro et précis.\n' +
+      '\n' +
+      'Ex : 这个寺庙有将近五百年的历史 (zhè ge sì miào yǒu jiāng jìn wǔ bǎi nián de lì shǐ) « ce temple a près de 500 ans d\'histoire ».\n' +
+      '\n' +
+      'Attention : ne fonctionne PAS avec des verbes ou adjectifs. 将近喜欢 ✗, 将近好 ✗.\n' +
+      '\n' +
+      'Différence de registre vs 差不多 devant un nombre :\n' +
+      '\n' +
+      '- 差不多五十个人来了 = « une cinquantaine de personnes » (estimation floue).\n' +
+      '- 将近五十个人来了 = « près de 50 » (précis, encore un peu en dessous). Style rapport ou news.',
+    bodyEn:
+      '将近 (jiāng jìn) is used ONLY before a number. Means «slightly less than», «bordering on», «close to». Objective, factual tone. Structure: 将近 + number + (MW) + (noun). Ex: 他将近三十岁了 (tā jiāng jìn sān shí suì le) «he\'s almost thirty» (maybe 28 or 29, not yet there). Ex: 这个项目花了将近一百万 (zhè ge xiàng mù huā le jiāng jìn yī bǎi wàn) «this project cost close to a million». Sounds pro and precise. Ex: 这个寺庙有将近五百年的历史 (zhè ge sì miào yǒu jiāng jìn wǔ bǎi nián de lì shǐ) «this temple has close to 500 years of history». Warning: does NOT work with verbs or adjectives. 将近喜欢 ✗, 将近好 ✗. Register difference vs 差不多 with a number: 差不多五十个人来了 = «about fifty people» (fuzzy estimate). 将近五十个人来了 = «nearly 50» (precise, still slightly below). Report or news style.',
+    items: [
+      { hanzi: '将近', pinyin: 'jiāng jìn', meaning: 'près de, presque (nombre)', meaningEn: 'close to, nearly (number)', audio: 'audio/hsk5/hsk5_将近.wav' },
+      { hanzi: '项目', pinyin: 'xiàng mù', meaning: 'projet', meaningEn: 'project', audio: 'audio/hsk4/hsk4_项目.wav' },
+      { hanzi: '花', pinyin: 'huā', meaning: 'dépenser (temps/argent)', meaningEn: 'spend (time/money)', audio: 'audio/hsk3/hsk3_花.wav' },
+      { hanzi: '一百万', pinyin: 'yī bǎi wàn', meaning: 'un million', meaningEn: 'one million', audio: 'audio/hsk2/hsk2_百.wav' },
+      { hanzi: '寺庙', pinyin: 'sì miào', meaning: 'temple', meaningEn: 'temple', audio: 'audio/hsk5/hsk5_寺庙.wav' },
+      { hanzi: '历史', pinyin: 'lì shǐ', meaning: 'histoire', meaningEn: 'history', audio: 'audio/hsk3/hsk3_历史.wav' }
+    ],
+    tip:
+      'Rapport pro, article de presse, discussion factuelle avec chiffres → 将近. À l\'oral décontracté avec un chiffre approximatif → 差不多.',
+    tipEn:
+      'Pro report, news article, factual discussion with numbers → 将近. Casual speech with an approximate number → 差不多.'
+  },
+  {
+    id: 'b12-almost-chadianr',
+    title: '差点儿 : le « à deux doigts de » qui n\'a pas eu lieu',
+    titleEn: '差点儿: the «within a hair of» that DIDN\'T happen',
+    body:
+      '差点儿 (chà diǎnr, aussi écrit 差一点儿) exprime qu\'une action AURAIT PU se produire mais NE S\'EST PAS PRODUITE. C\'est le « à deux doigts de » français, l\'échappée belle.\n' +
+      '\n' +
+      'Point CRUCIAL : l\'action n\'a PAS eu lieu. Si tu dis 我差点儿忘了 (wǒ chà diǎnr wàng le), tu n\'as PAS oublié — tu t\'es rappelé juste à temps.\n' +
+      '\n' +
+      'Structure : sujet + 差点儿 + verbe + (了).\n' +
+      '\n' +
+      'Ex : 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) « il a failli tomber » (il n\'est pas tombé).\n' +
+      '\n' +
+      'Ex : 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) « j\'ai failli oublier ton anniversaire » (mais je m\'en suis souvenu).\n' +
+      '\n' +
+      'Coloration émotionnelle : soulagement, surprise, ou parfois regret. Utilisé en oral vivant.\n' +
+      '\n' +
+      'Variante avec 就 : 差点儿就... pour insister sur « à un cheveu près ». Ex : 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) « j\'ai VRAIMENT failli être en retard » (mais je ne l\'ai pas été).\n' +
+      '\n' +
+      'Registre formel/écrit : 险些 (xiǎn xiē) — même sens, ton dramatique/littéraire. Ex : 他险些出事 (tā xiǎn xiē chū shì) « il a failli avoir un accident » (dans un rapport de presse).',
+    bodyEn:
+      '差点儿 (chà diǎnr, also written 差一点儿) expresses that an action COULD have happened but DID NOT. It\'s the French «within a hair of», the narrow escape. CRUCIAL point: the action did NOT happen. If you say 我差点儿忘了 (wǒ chà diǎnr wàng le), you did NOT forget — you remembered just in time. Structure: subject + 差点儿 + verb + (了). Ex: 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) «he almost fell» (he didn\'t fall). Ex: 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) «I almost forgot your birthday» (but I remembered). Emotional coloring: relief, surprise, sometimes regret. Used in lively speech. Variant with 就: 差点儿就... to stress «by a hair». Ex: 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) «I REALLY almost was late» (but I wasn\'t). Formal/written register: 险些 (xiǎn xiē) — same meaning, dramatic/literary tone. Ex: 他险些出事 (tā xiǎn xiē chū shì) «he narrowly avoided an accident» (in a news report).',
+    items: [
+      { hanzi: '差点儿', pinyin: 'chà diǎnr', meaning: 'à deux doigts de, failli', meaningEn: 'almost, nearly (didn\'t happen)', audio: 'audio/hsk4/hsk4_差点儿.wav' },
+      { hanzi: '摔倒', pinyin: 'shuāi dǎo', meaning: 'tomber, trébucher', meaningEn: 'to fall over', audio: 'audio/hsk4/hsk4_摔倒.wav' },
+      { hanzi: '生日', pinyin: 'shēng rì', meaning: 'anniversaire', meaningEn: 'birthday', audio: 'audio/hsk2/hsk2_生日.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'to be late', audio: 'audio/hsk3/hsk3_迟到.wav' },
+      { hanzi: '险些', pinyin: 'xiǎn xiē', meaning: 'de justesse (formel)', meaningEn: 'narrowly (formal)', audio: 'audio/hsk6/hsk6_险些.wav' },
+      { hanzi: '出事', pinyin: 'chū shì', meaning: 'avoir un accident', meaningEn: 'have an accident', audio: 'audio/hsk4/hsk4_出事.wav' }
+    ],
+    tip:
+      'À chaque fois que tu penses « ouf, j\'ai évité de justesse ! », c\'est 差点儿. Le contexte émotionnel (soulagement, frayeur passée) le rend très fréquent à l\'oral.',
+    tipEn:
+      'Whenever you think «phew, I dodged it!», it\'s 差点儿. The emotional context (relief, past fright) makes it very common in speech.'
+  },
+  {
+    id: 'b12-almost-chadianr-mei',
+    title: '差点儿没 : le piège de la double négation',
+    titleEn: '差点儿没: the double-negation trap',
+    body:
+      '差点儿没 (chà diǎnr méi) est une structure ADVANCED : le sens dépend de si l\'action est SOUHAITÉE ou NON.\n' +
+      '\n' +
+      'Cas 1 — verbe DÉSIRABLE : l\'action A EU LIEU, de justesse.\n' +
+      '\n' +
+      '- Ex : 我差点儿没赶上火车 (wǒ chà diǎnr méi gǎn shàng huǒ chē) « j\'ai FAILLI rater le train » = j\'ai attrapé le train à la dernière seconde. Attraper le train est désirable → « failli ne pas y arriver » signifie qu\'on y est arrivé.\n' +
+      '- Ex : 他差点儿没通过考试 (tā chà diǎnr méi tōng guò kǎo shì) « il a failli rater l\'examen » = il a réussi, mais tout juste.\n' +
+      '\n' +
+      'Cas 2 — verbe UNDÉSIRABLE : l\'action N\'A PAS eu lieu.\n' +
+      '\n' +
+      '- Ex : 我差点儿没迟到 (wǒ chà diǎnr méi chí dào) « j\'ai failli être à l\'heure... juste » = j\'ai été à l\'heure (être en retard aurait été mauvais, donc « failli ne pas être en retard » = « failli l\'être »). Sens ambigu, contexte crucial.\n' +
+      '\n' +
+      'Comparaison à 差点儿 sans 没 :\n' +
+      '\n' +
+      '- 我差点儿迟到 = « j\'ai failli être en retard » (je ne l\'ai PAS été — comportement classique de 差点儿).\n' +
+      '- 我差点儿没赶上 = « j\'ai failli ne pas attraper » (je L\'AI attrapé — le 没 flippe le sens).\n' +
+      '\n' +
+      'Piège : la structure est identique mais l\'action-cible change de camp. La règle : demande-toi « le locuteur voulait-il que ça arrive ou pas ? ».\n' +
+      '\n' +
+      'Alternative plus simple : si 差点儿没 te bloque, exprime la même idée par une phrase plus claire. Ex : 我差点儿错过火车，但是赶上了 (wǒ chà diǎnr cuò guò huǒ chē, dàn shì gǎn shàng le) « j\'ai failli louper le train, mais je l\'ai eu ».',
+    bodyEn:
+      '差点儿没 (chà diǎnr méi) is an ADVANCED structure: meaning depends on whether the action is DESIRED or NOT. Case 1 — DESIRABLE verb: action DID happen, barely. Ex: 我差点儿没赶上火车 (wǒ chà diǎnr méi gǎn shàng huǒ chē) «I ALMOST missed the train» = I caught the train at the last second. Catching the train is desirable → «almost not making it» means we did make it. Ex: 他差点儿没通过考试 (tā chà diǎnr méi tōng guò kǎo shì) «he almost failed the exam» = he passed, but just barely. Case 2 — UNDESIRABLE verb: action DID NOT happen. Ex: 我差点儿没迟到 (wǒ chà diǎnr méi chí dào) «I almost was on time... just» = I was on time (being late would be bad, so «almost not being late» = «almost was late»). Ambiguous, context critical. Comparison to 差点儿 without 没: 我差点儿迟到 = «I almost was late» (I was NOT — classic 差点儿 behavior). 我差点儿没赶上 = «I almost didn\'t catch it» (I DID catch it — 没 flips the meaning). Trap: same structure but target action switches side. Rule: ask yourself «did the speaker want this to happen or not?». Simpler alternative: if 差点儿没 blocks you, express the same idea more clearly. Ex: 我差点儿错过火车，但是赶上了 (wǒ chà diǎnr cuò guò huǒ chē, dàn shì gǎn shàng le) «I almost missed the train, but I caught it».',
+    items: [
+      { hanzi: '差点儿没', pinyin: 'chà diǎnr méi', meaning: '« failli ne pas » (sens variable)', meaningEn: '«almost didn\'t» (variable meaning)', audio: 'audio/hsk4/hsk4_差点儿.wav' },
+      { hanzi: '赶上', pinyin: 'gǎn shàng', meaning: 'rattraper, arriver à temps', meaningEn: 'catch up, make it in time', audio: 'audio/hsk4/hsk4_赶上.wav' },
+      { hanzi: '火车', pinyin: 'huǒ chē', meaning: 'train', meaningEn: 'train', audio: 'audio/hsk1/hsk1_火车.wav' },
+      { hanzi: '通过', pinyin: 'tōng guò', meaning: 'réussir, passer (examen)', meaningEn: 'pass (an exam)', audio: 'audio/hsk4/hsk4_通过.wav' },
+      { hanzi: '考试', pinyin: 'kǎo shì', meaning: 'examen', meaningEn: 'exam', audio: 'audio/hsk2/hsk2_考试.wav' },
+      { hanzi: '错过', pinyin: 'cuò guò', meaning: 'manquer, rater', meaningEn: 'miss (something)', audio: 'audio/hsk5/hsk5_错过.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'to be late', audio: 'audio/hsk3/hsk3_迟到.wav' }
+    ],
+    tip:
+      'C\'est un des patterns les plus mal compris par les apprenants francophones. Concentre-toi d\'abord sur la RECONNAISSANCE à l\'écoute avant de le produire toi-même.',
+    tipEn:
+      'It\'s one of the most misunderstood patterns for French speakers. Focus first on RECOGNIZING it when listening before producing it yourself.'
+  }
+];

@@ -2988,3 +2988,83 @@ export const a2NuancesCommonMistakesLearnSections: LessonV2LearnSection[] = [
       'For every sentence with 没, check there is NO 了 in the same segment. For every sentence with several 了, drop one — it will almost always sound better.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Nuances A2 — 差不多 & 快要...了 : dire « presque »
+// (cecr-a2-nuances-m11)
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesAlmostBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-almost-chabuduo',
+    title: '差不多 : le « presque » polyvalent',
+    titleEn: '差不多: the versatile «almost»',
+    body:
+      '差不多 (chà bù duō) littéralement « peu de différence ». C\'est le « presque » le plus versatile et le plus utilisé du quotidien.\n' +
+      '\n' +
+      '3 usages principaux :\n' +
+      '\n' +
+      '1) Deux choses ~similaires : 这两个差不多大 (zhè liǎng ge chà bù duō dà) « ces 2 font à peu près la même taille ».\n' +
+      '\n' +
+      '2) Presque fini / presque prêt : 我的作业差不多写完了 (wǒ de zuò yè chà bù duō xiě wán le) « mon devoir est presque fini ».\n' +
+      '\n' +
+      '3) Réponse SEULE : « 你好了吗 ? » « 差不多了 » « ça y est ? / — presque, oui ». Très courant à l\'oral.\n' +
+      '\n' +
+      'Registre : décontracté, chaleureux. Idéal en famille, entre amis, au marché.\n' +
+      '\n' +
+      'Avec les NOMBRES aussi : 差不多五十个人来了 (« environ 50 personnes sont venues », estimation grossière). Pour être PRÉCIS avec un nombre, préfère 将近 (B1).\n' +
+      '\n' +
+      'Attention : ne le confonds pas avec 差不多的 (« l\'à-peu-près », négatif : décrit quelque chose de médiocre) — c\'est un autre sens.',
+    bodyEn:
+      '差不多 (chà bù duō) literally means «little difference». It is the most versatile and most-used «almost» in daily life. 3 main uses: (1) Two ~similar things: 这两个差不多大 (zhè liǎng ge chà bù duō dà) «these 2 are roughly the same size». (2) Almost finished / almost ready: 我的作业差不多写完了 (wǒ de zuò yè chà bù duō xiě wán le) «my homework is almost done». (3) STANDALONE answer: «你好了吗?» «差不多了» «all set? — almost, yes». Very common in speech. Register: casual, warm. Perfect with family, friends, at the market. Also with NUMBERS: 差不多五十个人来了 («about 50 people came», loose estimate). For PRECISE numeric approximation, prefer 将近 (B1). Careful: don\'t confuse it with 差不多的 («mediocre», negative: describes something so-so) — different meaning.',
+    items: [
+      { hanzi: '差不多', pinyin: 'chà bù duō', meaning: 'presque, à peu près', meaningEn: 'almost, roughly', audio: 'audio/hsk4/hsk4_差不多.wav' },
+      { hanzi: '差不多了', pinyin: 'chà bù duō le', meaning: 'presque prêt / presque fini', meaningEn: 'almost ready / almost done', audio: 'audio/hsk4/hsk4_差不多.wav' },
+      { hanzi: '大', pinyin: 'dà', meaning: 'grand', meaningEn: 'big', audio: 'audio/hsk1/hsk1_大.wav' },
+      { hanzi: '作业', pinyin: 'zuò yè', meaning: 'devoirs', meaningEn: 'homework', audio: 'audio/hsk3/hsk3_作业.wav' },
+      { hanzi: '写完', pinyin: 'xiě wán', meaning: 'finir d\'écrire', meaningEn: 'finish writing', audio: 'audio/hsk2/hsk2_写.wav' },
+      { hanzi: '好了', pinyin: 'hǎo le', meaning: 'c\'est bon / prêt', meaningEn: 'ready / done', audio: 'audio/hsk1/hsk1_好.wav' }
+    ],
+    tip:
+      'Quand tu doutes du bon « presque » à utiliser à l\'oral, 差不多 marche 90 % du temps. C\'est ton défaut le plus sûr.',
+    tipEn:
+      'When in doubt about which «almost» to use in speech, 差不多 works 90% of the time. It\'s your safest default.'
+  },
+  {
+    id: 'a2-almost-kuaiyao',
+    title: '快要...了 : « ça va bientôt se passer »',
+    titleEn: '快要...了: «it\'s about to happen»',
+    body:
+      'Structure : sujet + 快要 + verbe + 了. Signale qu\'un événement est IMMINENT (« sur le point de », « d\'une seconde à l\'autre »).\n' +
+      '\n' +
+      'Le 了 en fin de phrase marque le changement d\'état à venir.\n' +
+      '\n' +
+      'Ex : 我们快要到家了 (wǒmen kuài yào dào jiā le) « on va bientôt être chez nous ».\n' +
+      '\n' +
+      'Ex : 电影快要开始了 (diàn yǐng kuài yào kāi shǐ le) « le film va bientôt commencer ». Typique des annonces au cinéma.\n' +
+      '\n' +
+      'Formes raccourcies à l\'oral : 快...了 (encore plus court) ou 要...了 (juste 要 sans 快).\n' +
+      '\n' +
+      '- 快到了 (kuài dào le) « on y est bientôt ».\n' +
+      '- 要下雨了 (yào xià yǔ le) « il va pleuvoir ».\n' +
+      '\n' +
+      '就要...了 (jiù yào ... le) : quasi-synonyme, avec une nuance de « à un moment PRÉCIS attendu ». Ex : 火车就要开了 (huǒ chē jiù yào kāi le) « le train est sur le point de partir » (à l\'horaire annoncé).\n' +
+      '\n' +
+      'Registres formels : 将要 (jiāng yào) et 即将 (jí jiāng) pour les annonces officielles. Ex : 会议即将开始 (huì yì jí jiāng kāi shǐ) « la réunion va commencer ». Sonne comme un haut-parleur d\'aéroport. À l\'oral tous les jours, garde 快要...了.',
+    bodyEn:
+      'Structure: subject + 快要 + verb + 了. Signals an IMMINENT event («about to», «any second now»). The sentence-final 了 marks the upcoming change of state. Ex: 我们快要到家了 (wǒmen kuài yào dào jiā le) «we\'ll be home soon». Ex: 电影快要开始了 (diàn yǐng kuài yào kāi shǐ le) «the movie is about to start». Typical of cinema announcements. Shortened forms in speech: 快...了 (even shorter) or 要...了 (just 要 without 快). 快到了 (kuài dào le) «almost there». 要下雨了 (yào xià yǔ le) «it\'s going to rain». 就要...了 (jiù yào ... le): near-synonym with a nuance of «at a SPECIFIC expected time». Ex: 火车就要开了 (huǒ chē jiù yào kāi le) «the train is about to leave» (at its scheduled time). Formal registers: 将要 (jiāng yào) and 即将 (jí jiāng) for official announcements. Ex: 会议即将开始 (huì yì jí jiāng kāi shǐ) «the meeting is about to begin». Sounds like an airport PA. For daily speech, stick with 快要...了.',
+    items: [
+      { hanzi: '快要', pinyin: 'kuài yào', meaning: 'sur le point de, bientôt', meaningEn: 'about to, soon', audio: 'audio/hsk2/hsk2_快.wav' },
+      { hanzi: '就要', pinyin: 'jiù yào', meaning: 'sur le point de (moment précis)', meaningEn: 'about to (specific moment)', audio: 'audio/hsk2/hsk2_就.wav' },
+      { hanzi: '到家', pinyin: 'dào jiā', meaning: 'arriver à la maison', meaningEn: 'get home', audio: 'audio/hsk2/hsk2_到.wav' },
+      { hanzi: '开始', pinyin: 'kāi shǐ', meaning: 'commencer', meaningEn: 'to begin', audio: 'audio/hsk2/hsk2_开始.wav' },
+      { hanzi: '下雨', pinyin: 'xià yǔ', meaning: 'pleuvoir', meaningEn: 'to rain', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '即将', pinyin: 'jí jiāng', meaning: 'sur le point de (formel)', meaningEn: 'about to (formal)', audio: 'audio/hsk5/hsk5_即将.wav' },
+      { hanzi: '了', pinyin: 'le', meaning: 'particule de changement d\'état', meaningEn: 'change-of-state particle', audio: 'audio/hsk1/hsk1_了.wav' }
+    ],
+    tip:
+      'Le 了 final est essentiel — sans lui, la structure ne fonctionne pas. Pense à 快要 comme « ça arrive, tiens-toi prêt ».',
+    tipEn:
+      'The final 了 is essential — without it, the structure doesn\'t work. Think of 快要 as «it\'s coming, get ready».'
+  }
+];

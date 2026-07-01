@@ -123,6 +123,7 @@ import {
   a2NuancesKaiMainVerbLearnSections,
   a2NuancesZenmeBasicsLearnSections,
   a2NuancesCommonMistakesLearnSections,
+  a2NuancesAlmostBasicsLearnSections,
   a2GrammarMeasureWordsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
@@ -221,6 +222,7 @@ import {
   b12NuancesM7LearnSections,
   b12NuancesZenmeEmotionalLearnSections,
   b12NuancesMeasureWordsAdvancedLearnSections,
+  b12NuancesAlmostAdvancedLearnSections,
 } from './cecr-b1-2-learn-sections';
 import {
   b21GrammarLianM1LearnSections,
@@ -3291,6 +3293,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["是", "有", "很", "岁", "了", "没", "所以", "因为"],
         quizQuestions: 10,
         learnSections: a2NuancesCommonMistakesLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m11",
+        title: "差不多 et 快要...了 : dire « presque »",
+        titleEn: "差不多 and 快要...了: saying «almost»",
+        duration: 12, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "vocabulary", difficulty: "beginner",
+        tags: ["nuance", "vocabulary", "cecr:a2"],
+        introduction: {
+          title: "Deux « presque » indispensables du quotidien",
+          titleEn: "Two everyday «almost» words you can't skip",
+          content: "Le chinois n'a pas UN mot pour « presque » mais toute une famille. Cette leçon te donne les 2 briques les plus utiles au niveau A2. 差不多 (chà bù duō) est le passe-partout : deux choses similaires, une action presque finie, ou une réponse SEULE (« 差不多了 » = « presque, oui »). 快要...了 (kuài yào ... le) signale qu'un événement est imminent : 电影快要开始了 « le film va bientôt commencer ». Le 了 final est OBLIGATOIRE. Variantes à connaître : formes raccourcies 快...了 / 要...了, quasi-synonyme 就要...了, et versions formelles 将要 / 即将 pour les annonces officielles.",
+          contentEn: "Chinese doesn't have ONE word for «almost» but a whole family. This lesson gives you the 2 most useful bricks at A2 level. 差不多 (chà bù duō) is the all-purpose one: two similar things, an action almost done, or a STANDALONE reply («差不多了» = «almost, yes»). 快要...了 (kuài yào ... le) signals an imminent event: 电影快要开始了 «the movie is about to start». The final 了 is MANDATORY. Variants to know: shortened forms 快...了 / 要...了, near-synonym 就要...了, and formal versions 将要 / 即将 for official announcements.",
+          objectives: [
+            "Utiliser 差不多 dans ses 3 usages (similarité, presque fini, réponse seule)",
+            "Construire la structure 快要 + V + 了 sans oublier le 了 final",
+            "Reconnaître les formes raccourcies 快...了 et 要...了 à l'oral",
+            "Distinguer les registres 快要 (oral) vs 即将 / 将要 (formel)"
+          ],
+          objectivesEn: [
+            "Use 差不多 in its 3 uses (similarity, almost done, standalone reply)",
+            "Build the 快要 + V + 了 structure without forgetting the final 了",
+            "Recognize shortened forms 快...了 and 要...了 in speech",
+            "Distinguish registers 快要 (spoken) vs 即将 / 将要 (formal)"
+          ]
+        },
+        flashcards: ["差不多", "快要", "就要", "即将", "了"],
+        quizQuestions: 8,
+        learnSections: a2NuancesAlmostBasicsLearnSections
       }
     ]
   },
@@ -6087,6 +6118,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["次", "遍", "趟", "每", "位", "份", "顿", "阵", "场"],
         quizQuestions: 10,
         learnSections: b12NuancesMeasureWordsAdvancedLearnSections
+      },
+      {
+        id: "cecr-b12-nuances-m10",
+        title: "« Presque » avancé : 几乎, 将近, 差点儿, 差点儿没",
+        titleEn: "Advanced «almost»: 几乎, 将近, 差点儿, 差点儿没",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 4, hskLevels: [3, 5], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "vocabulary", "cecr:b12"],
+        introduction: {
+          title: "Choisir le bon « presque » selon la situation",
+          titleEn: "Picking the right «almost» for the situation",
+          content: "Après 差不多 et 快要 vus en A2, cette leçon débloque les 4 « presque » qui font la différence à l'écrit et à l'oral avancé. 几乎 (jī hū) est le « presque » formel ou emphatique, idéal avec 所有 / 每 / 都. 将近 (jiāng jìn) sert UNIQUEMENT devant un nombre — jamais un verbe ou adjectif. 差点儿 (chà diǎnr) exprime le « à deux doigts de » : l'action N'A PAS eu lieu (soulagement, échappée belle). Enfin, 差点儿没 est le piège du niveau : le sens dépend du caractère désirable ou non de l'action. Reconnaître d'abord, produire ensuite.",
+          contentEn: "After 差不多 and 快要 seen at A2, this lesson unlocks the 4 «almost» words that make the difference in writing and advanced speech. 几乎 (jī hū) is the formal or emphatic «almost», ideal with 所有 / 每 / 都. 将近 (jiāng jìn) is used ONLY before a number — never a verb or adjective. 差点儿 (chà diǎnr) expresses the «within a hair of»: the action did NOT happen (relief, narrow escape). Finally, 差点儿没 is the level trap: meaning depends on whether the action is desired or not. Recognize first, produce later.",
+          objectives: [
+            "Utiliser 几乎 avec 所有 / 每 / 都 pour les généralisations",
+            "Placer 将近 uniquement devant un nombre (jamais un verbe/adjectif)",
+            "Comprendre que 差点儿 = l'action n'a PAS eu lieu",
+            "Analyser 差点儿没 en se demandant si l'action était désirable ou non"
+          ],
+          objectivesEn: [
+            "Use 几乎 with 所有 / 每 / 都 for generalizations",
+            "Place 将近 only before a number (never a verb/adjective)",
+            "Understand that 差点儿 = action did NOT happen",
+            "Analyze 差点儿没 by asking if the action was desirable or not"
+          ]
+        },
+        flashcards: ["几乎", "将近", "差点儿", "差点儿没", "险些", "所有"],
+        quizQuestions: 10,
+        learnSections: b12NuancesAlmostAdvancedLearnSections
       }
     ]
   },
