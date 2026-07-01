@@ -164,6 +164,7 @@ import {
   b11NuancesM7LearnSections,
   b11NuancesDouLearnSections,
   b11NuancesYeConcessionLearnSections,
+  b11NuancesHuiNengKeyiLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -4431,6 +4432,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["也", "就算", "即使", "哪怕", "无论", "不管", "再", "怎么"],
         quizQuestions: 8,
         learnSections: b11NuancesYeConcessionLearnSections
+      },
+      {
+        id: "cecr-b11-nuances-m10",
+        title: "会 vs 能 vs 可以 — nuances avancées",
+        titleEn: "会 vs 能 vs 可以 — advanced nuances",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [2, 4], category: "vocabulary", difficulty: "intermediate",
+        tags: ["nuance", "modal", "cecr:b11"],
+        introduction: {
+          title: "Trois modaux, trois zones de flou à maîtriser",
+          titleEn: "Three modals, three grey zones to master",
+          content: "Au-delà du trio A1 (appris / possible / permis), 3 zones fines : (1) chevauchement 能 vs 可以 pour la permission — 我能坐吗？ (est-ce faisable ?) vs 我可以坐吗？ (me le permets-tu ?). Réponse toujours en 可以 / 不可以, jamais 能 seul. (2) 很会 vs 很能 : jugement sur quelqu'un. 很会说话 = compliment sur la qualité (bien maîtriser) ; 很能吃 = constat sur la quantité (grosse capacité). (3) 能够 = jumeau formel de 能, à l'écrit et dans les discours. 这项技术能够帮助医生 (formel). En chat WeChat, on garde 能. Négation : on repasse toujours à 不能.",
+          contentEn: "Beyond the A1 trio (learned / possible / allowed), 3 fine zones: (1) overlap 能 vs 可以 for permission — 我能坐吗？(is it feasible?) vs 我可以坐吗？(will you permit me?). Always answer with 可以 / 不可以, never a bare 能. (2) 很会 vs 很能: judging someone. 很会说话 = compliment on quality (masters it well); 很能吃 = fact about quantity (big capacity). (3) 能够 = formal twin of 能, in writing and speeches. 这项技术能够帮助医生 (formal). In WeChat chat, keep 能. Negation always reverts to 不能.",
+          objectives: [
+            "Choisir 能 (faisable) vs 可以 (permission) en question",
+            "Répondre à une permission avec 可以 / 不可以",
+            "Distinguer 很会 (qualité) vs 很能 (quantité)",
+            "Utiliser 能够 à l'écrit formel, 能 à l'oral"
+          ],
+          objectivesEn: [
+            "Pick 能 (feasible) vs 可以 (permission) in questions",
+            "Answer permission with 可以 / 不可以",
+            "Distinguish 很会 (quality) vs 很能 (quantity)",
+            "Use 能够 in formal writing, 能 in speech"
+          ]
+        },
+        flashcards: ["会", "能", "可以", "能够", "很会", "很能"],
+        quizQuestions: 8,
+        learnSections: b11NuancesHuiNengKeyiLearnSections
       }
     ]
   },

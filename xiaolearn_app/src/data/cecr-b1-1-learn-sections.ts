@@ -2231,3 +2231,97 @@ export const b11NuancesYeConcessionLearnSections: LessonV2LearnSection[] = [
       'Mnemonic tip: 无论/不管 = «whatever», 再...也 = «no matter how X», 怎么也 = «impossible to». All 3 patterns share 也 as the pivot of the unmoving result.'
   }
 ];
+
+export const b11NuancesHuiNengKeyiLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-hui-neng-keyi-overlap',
+    title: 'Chevauchement 能 vs 可以 pour la permission',
+    titleEn: 'Overlap 能 vs 可以 for permission',
+    body:
+      'En pratique, 能 et 可以 se chevauchent souvent quand il s\'agit de demander la permission. Les 2 sont acceptés à l\'oral, mais avec une nuance de sens :\n' +
+      '- 我能坐这儿吗？ (wǒ néng zuò zhèr ma?) → penche vers « la place est-elle libre / est-ce faisable ? ».\n' +
+      '- 我可以坐这儿吗？ (wǒ kěyǐ zuò zhèr ma?) → penche vers « me le permets-tu ? ».\n' +
+      '\n' +
+      'Règle d\'or : quand tu veux CLAIREMENT demander une permission, 可以 est le choix le plus sûr et neutre.\n' +
+      '\n' +
+      'Détail important : les questions de permission se répondent avec 可以 / 不可以, PAS avec un simple 能. « 我可以进来吗？ » « 可以，请进 » ✓ ; « 能，请进 » ✗.\n' +
+      '\n' +
+      'Exemple typique :\n' +
+      '- « 老师，我可以问一个问题吗？ » (lǎoshī, wǒ kěyǐ wèn yí gè wèntí ma?) « professeur, puis-je poser une question ? » — permission attendue.\n' +
+      '- « 老师，我能问一个问题吗？ » sonnera à peu près pareil mais un peu plus timide, comme si tu doutais que le moment s\'y prête.',
+    bodyEn:
+      'In practice, 能 and 可以 often overlap when asking for permission. Both are accepted in speech, with a nuance: 我能坐这儿吗？leans toward «is the seat free / is it feasible?»; 我可以坐这儿吗？leans toward «will you permit me?». Golden rule: when you CLEARLY want to ask for permission, 可以 is the safest, most neutral choice. Important detail: permission questions are answered with 可以 / 不可以, NOT with a bare 能. «我可以进来吗？» «可以，请进» ✓; «能，请进» ✗. Typical example: «老师，我可以问一个问题吗？» = «Teacher, may I ask a question?» — expected permission. «老师，我能问一个问题吗？» sounds about the same but a bit more tentative, as if you doubted the moment was right.',
+    items: [
+      { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir (faisable)', meaningEn: 'can (feasible)', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir (permis)', meaningEn: 'may (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '坐', pinyin: 'zuò', meaning: 's\'asseoir', meaningEn: 'sit', audio: 'audio/hsk1/hsk1_坐.wav' },
+      { hanzi: '进来', pinyin: 'jìn lái', meaning: 'entrer', meaningEn: 'come in', audio: 'audio/hsk2/hsk2_进.wav' },
+      { hanzi: '问题', pinyin: 'wèn tí', meaning: 'question', meaningEn: 'question', audio: 'audio/hsk2/hsk2_问题.wav' },
+      { hanzi: '老师', pinyin: 'lǎo shī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' }
+    ],
+    tip:
+      'Pour poser une question de permission, utilise 可以. Pour répondre à ce genre de question, utilise 可以 ou 不可以. Ne réponds jamais par un 能 seul.',
+    tipEn:
+      'To ask a permission question, use 可以. To answer one, use 可以 or 不可以. Never answer with a bare 能.'
+  },
+  {
+    id: 'b11-hen-hui-hen-neng',
+    title: '很会 / 很能 : juger quelqu\'un',
+    titleEn: '很会 / 很能: judging someone',
+    body:
+      'Ajouter 很 (hěn) devant 会 ou 能 fait glisser le sens : ce n\'est plus une simple capacité, c\'est un jugement porté sur quelqu\'un.\n' +
+      '\n' +
+      '他很会说话 (tā hěn huì shuōhuà) « il est très bon en communication » : décrit quelqu\'un qui a le sens du discours (diplomate, persuasif, drôle). Ce qu\'on juge, c\'est le NIVEAU de maîtrise → compliment.\n' +
+      '\n' +
+      '他很会做菜 (tā hěn huì zuò cài) « il cuisine super bien » : compliment sur la qualité.\n' +
+      '\n' +
+      '他很能吃 (tā hěn néng chī) « il mange énormément » : décrit quelqu\'un qui a une CAPACITÉ importante. Ce n\'est ni un compliment ni une critique, juste un constat sur le volume.\n' +
+      '\n' +
+      '他很能喝 (tā hěn néng hē) « il tient super bien l\'alcool » (ou « il boit beaucoup ») : capacité physique.\n' +
+      '\n' +
+      'Règle d\'or : 很会 X = *bien maîtriser* X (qualité), 很能 X = *pouvoir beaucoup* X (quantité, capacité brute).',
+    bodyEn:
+      'Adding 很 (hěn) before 会 or 能 shifts the meaning: it\'s no longer plain ability, it\'s a judgment about someone. 他很会说话 = «he\'s great at communicating»: describes someone with a sense for discourse (diplomatic, persuasive, funny). What\'s judged is the LEVEL of mastery → compliment. 他很会做菜 = «he cooks super well»: compliment on quality. 他很能吃 = «he eats a lot»: describes someone with a large CAPACITY. Neither compliment nor criticism, just a fact about volume. 他很能喝 = «he holds alcohol super well» (or «he drinks a lot»): physical capacity. Key rule: 很会 X = *master X well* (quality); 很能 X = *do a lot of X* (quantity, raw capacity).',
+    items: [
+      { hanzi: '很会', pinyin: 'hěn huì', meaning: 'très doué (qualité)', meaningEn: 'very skilled (quality)', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '很能', pinyin: 'hěn néng', meaning: 'très capable (quantité)', meaningEn: 'very able (quantity)', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '说话', pinyin: 'shuō huà', meaning: 'parler, s\'exprimer', meaningEn: 'speak, talk', audio: 'audio/hsk2/hsk2_说话.wav' },
+      { hanzi: '做菜', pinyin: 'zuò cài', meaning: 'cuisiner', meaningEn: 'cook', audio: 'audio/hsk2/hsk2_做.wav' },
+      { hanzi: '吃', pinyin: 'chī', meaning: 'manger', meaningEn: 'eat', audio: 'audio/hsk1/hsk1_吃.wav' },
+      { hanzi: '喝', pinyin: 'hē', meaning: 'boire', meaningEn: 'drink', audio: 'audio/hsk1/hsk1_喝.wav' }
+    ],
+    tip:
+      'Quand tu veux complimenter quelqu\'un sur une compétence bien exécutée, choisis 很会. Quand tu veux souligner une capacité impressionnante en volume (manger, boire, dormir…), choisis 很能.',
+    tipEn:
+      'To compliment someone on a skill well done, pick 很会. To point out an impressive capacity in volume (eating, drinking, sleeping…), pick 很能.'
+  },
+  {
+    id: 'b11-nenggou-formal',
+    title: '能够 — le jumeau formel de 能',
+    titleEn: '能够 — the formal twin of 能',
+    body:
+      '能够 (nénggòu) partage exactement le même sens que 能 (« être en mesure de »), mais dans un registre plus SOUTENU / ÉCRIT.\n' +
+      '\n' +
+      'Contextes typiques :\n' +
+      '- Écriture journalistique ou administrative : 这项技术能够帮助医生早期发现癌症 (zhè xiàng jìshù nénggòu bāngzhù yīshēng zǎoqī fāxiàn áizhèng) « cette technologie permet aux médecins de détecter le cancer précocement ».\n' +
+      '- Discours formels : 我们能够克服所有困难 (wǒmen nénggòu kèfú suǒyǒu kùnnan) « nous saurons surmonter toutes les difficultés ».\n' +
+      '\n' +
+      'En conversation courante, on garde 能 (plus court, plus naturel).\n' +
+      '\n' +
+      'Attention : 能够 s\'utilise majoritairement en phrase POSITIVE. Pour la négation, on repasse à 不能 (rarement 不能够, qui sonne lourd).',
+    bodyEn:
+      '能够 (nénggòu) shares exactly the same meaning as 能 («be able to»), but in a more FORMAL / WRITTEN register. Typical contexts: journalistic or administrative writing — 这项技术能够帮助医生早期发现癌症 = «this technology enables doctors to detect cancer early.» Formal speeches — 我们能够克服所有困难 = «we will overcome all difficulties.» In casual conversation, stick with 能 (shorter, more natural). Watch out: 能够 is used mostly in POSITIVE sentences. For negation, switch back to 不能 (rarely 不能够, which sounds heavy).',
+    items: [
+      { hanzi: '能够', pinyin: 'néng gòu', meaning: 'être en mesure de (formel)', meaningEn: 'be able to (formal)', audio: 'audio/hsk3/hsk3_能够.wav' },
+      { hanzi: '技术', pinyin: 'jì shù', meaning: 'technique, technologie', meaningEn: 'technology', audio: 'audio/hsk4/hsk4_技术.wav' },
+      { hanzi: '发现', pinyin: 'fā xiàn', meaning: 'découvrir, détecter', meaningEn: 'discover, detect', audio: 'audio/hsk3/hsk3_发现.wav' },
+      { hanzi: '克服', pinyin: 'kè fú', meaning: 'surmonter', meaningEn: 'overcome', audio: 'audio/hsk5/hsk5_克服.wav' },
+      { hanzi: '困难', pinyin: 'kùn nan', meaning: 'difficulté', meaningEn: 'difficulty', audio: 'audio/hsk4/hsk4_困难.wav' },
+      { hanzi: '医生', pinyin: 'yī shēng', meaning: 'médecin', meaningEn: 'doctor', audio: 'audio/hsk1/hsk1_医生.wav' }
+    ],
+    tip:
+      'Quand tu écris un texte à rendre (essai HSK, article, mail formel), tu peux remplacer certains 能 par 能够 pour élever le registre. Mais dans un chat WeChat, garde 能.',
+    tipEn:
+      'When you\'re writing a text to hand in (HSK essay, article, formal email), you can replace some 能 with 能够 to raise the register. But in a WeChat chat, keep 能.'
+  }
+];

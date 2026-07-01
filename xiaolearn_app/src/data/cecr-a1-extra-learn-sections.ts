@@ -1883,6 +1883,68 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Récap : 会 = appris (skill) | 能 = capable maintenant (capacité) | 可以 = autorisé (permission). « 我会，但不能，因为不可以 » = je sais, mais je ne peux pas, parce que je n\'ai pas le droit. Phrase qui résume tout.',
     tipEn:
       'Recap: 会 = learned (skill) | 能 = able now (capacity) | 可以 = allowed (permission). «我会，但不能，因为不可以» = I know how, but I can\'t, because I\'m not allowed. The summary phrase.'
+  },
+  {
+    id: 'a1-hui-neng-keyi-overview',
+    title: 'Trois « can » à distinguer : la question de fond',
+    titleEn: 'Three «can»s to distinguish: the underlying question',
+    body:
+      'En français, « pouvoir » recouvre tout. En chinois, 3 mots répondent à 3 questions différentes :\n' +
+      '- **Est-ce que j\'ai appris ?** → 会 (huì)\n' +
+      '- **Est-ce que mon corps ou la situation me le permettent maintenant ?** → 能 (néng)\n' +
+      '- **Est-ce que c\'est autorisé ?** → 可以 (kěyǐ)\n' +
+      '\n' +
+      'Exemple qui combine les 3 : 我会开车，可是今天喝了酒，不能开，也不可以开公司的车 (wǒ huì kāichē, kěshì jīntiān hē le jiǔ, bù néng kāi, yě bù kěyǐ kāi gōngsī de chē) « je sais conduire, mais j\'ai bu aujourd\'hui, je ne peux donc pas (physiquement) conduire, et je n\'ai pas non plus le droit (règlement) de conduire la voiture de l\'entreprise ».\n' +
+      '\n' +
+      'Décomposition :\n' +
+      '- 我会开车 → 会 = compétence acquise (rien n\'a changé).\n' +
+      '- 今天喝了酒，不能开 → 不能 = l\'alcool bloque physiquement.\n' +
+      '- 不可以开公司的车 → 不可以 = règlement d\'entreprise interdit.',
+    bodyEn:
+      'In English, «can» covers everything. In Chinese, 3 words answer 3 different questions: Did I learn it? → 会 (huì). Does my body or the situation allow it right now? → 能 (néng). Is it allowed? → 可以 (kěyǐ). Example combining all 3: 我会开车，可是今天喝了酒，不能开，也不可以开公司的车 = «I know how to drive, but I drank today, so I can\'t (physically) drive, and I\'m also not allowed (by company rules) to drive the company car.» Breakdown: 我会开车 → 会 = learned skill (nothing changed). 今天喝了酒，不能开 → 不能 = alcohol physically blocks. 不可以开公司的车 → 不可以 = company rule forbids.',
+    items: [
+      { hanzi: '会', pinyin: 'huì', meaning: 'savoir faire (appris)', meaningEn: 'know how to (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir (possible)', meaningEn: 'can (possible)', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir (autorisé)', meaningEn: 'may (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '开车', pinyin: 'kāi chē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
+      { hanzi: '喝酒', pinyin: 'hē jiǔ', meaning: 'boire de l\'alcool', meaningEn: 'drink alcohol', audio: 'audio/hsk2/hsk2_喝.wav' },
+      { hanzi: '公司', pinyin: 'gōng sī', meaning: 'entreprise', meaningEn: 'company', audio: 'audio/hsk2/hsk2_公司.wav' }
+    ],
+    tip:
+      'Avant de choisir « can » en chinois, pose la question : *appris, possible ou permis ?* La bonne réponse te donne le bon modal.',
+    tipEn:
+      'Before picking «can» in Chinese, ask: *learned, possible, or allowed?* The right answer gives you the right modal.'
+  },
+  {
+    id: 'a1-hui-neng-keyi-negatives',
+    title: '不会 / 不能 / 不可以 — 3 façons de dire « non »',
+    titleEn: '不会 / 不能 / 不可以 — 3 ways to say «no»',
+    body:
+      'Les 3 négations donnent 3 raisons différentes qu\'une action n\'a pas lieu :\n' +
+      '- **不会** (bú huì) : je n\'ai jamais appris. Ex : 我不会游泳 (wǒ bú huì yóuyǒng) « je ne sais pas nager ».\n' +
+      '- **不能** (bù néng) : mon corps ou la situation me bloquent. Ex : 今天有事，我不能来 (jīntiān yǒu shì, wǒ bù néng lái) « j\'ai un truc aujourd\'hui, je ne peux pas venir ».\n' +
+      '- **不可以** (bù kěyǐ) : c\'est interdit. Ex : 学生不可以带手机进考场 (xuéshēng bù kěyǐ dài shǒujī jìn kǎochǎng) « les élèves ne peuvent pas apporter de téléphone en salle d\'examen ».\n' +
+      '\n' +
+      'Nuance de ton entre 不能 et 不可以 :\n' +
+      '- 不可以 sonne comme une règle stricte, du genre écrit sur un panneau.\n' +
+      '- 不能 sonne plus doux, car il pointe des circonstances plutôt qu\'une autorité.\n' +
+      '- Les locuteurs préfèrent souvent 不能 en conversation polie même quand une règle est réellement en cause. 这里不能抽烟 (zhèlǐ bù néng chōuyān) sonne plus doux que 这里不可以抽烟, mais les 2 signalent la même interdiction.\n' +
+      '\n' +
+      'Attention : 不会 a aussi un sens de prédiction (« ce n\'est pas probable que »). Ex : 他不会迟到的 (tā bú huì chídào de) « il ne sera pas en retard ». C\'est le contexte qui tranche.',
+    bodyEn:
+      'The 3 negatives give 3 different reasons an action doesn\'t happen. 不会 (bú huì): I never learned. 我不会游泳 = «I can\'t swim.» 不能 (bù néng): body or situation blocks me. 今天有事，我不能来 = «I have something today, I can\'t come.» 不可以 (bù kěyǐ): it\'s forbidden. 学生不可以带手机进考场 = «students may not bring phones into the exam room.» Tone nuance between 不能 and 不可以: 不可以 sounds like a strict rule (sign-on-a-wall type). 不能 sounds softer because it points to circumstances rather than authority. Speakers often prefer 不能 in polite conversation even when a rule is truly in play. 这里不能抽烟 sounds softer than 这里不可以抽烟, but both signal the same ban. Watch out: 不会 also has a prediction meaning («not likely to»). 他不会迟到的 = «he won\'t be late.» Context decides.',
+    items: [
+      { hanzi: '不会', pinyin: 'bú huì', meaning: 'ne pas savoir (appris)', meaningEn: 'not know how (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '不能', pinyin: 'bù néng', meaning: 'ne pas pouvoir (bloqué)', meaningEn: 'can\'t (blocked)', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '不可以', pinyin: 'bù kě yǐ', meaning: 'ne pas avoir le droit', meaningEn: 'not allowed', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '游泳', pinyin: 'yóu yǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
+      { hanzi: '抽烟', pinyin: 'chōu yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
+      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' }
+    ],
+    tip:
+      'Au lieu de « non c\'est interdit ! », préfère 这里不能... en français poli. Ça sonne moins autoritaire, comme si tu partageais une contrainte plutôt qu\'imposer une règle.',
+    tipEn:
+      'Instead of «no it\'s forbidden!», prefer 这里不能... to sound polite. Less authoritarian, as if sharing a constraint rather than imposing a rule.'
   }
 ];
 
