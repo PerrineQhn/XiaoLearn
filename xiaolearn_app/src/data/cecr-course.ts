@@ -122,6 +122,7 @@ import {
   a2NuancesM7LearnSections,
   a2NuancesKaiMainVerbLearnSections,
   a2NuancesZenmeBasicsLearnSections,
+  a2NuancesCommonMistakesLearnSections,
   a2GrammarMeasureWordsLearnSections,
 } from './cecr-a2-learn-sections';
 import {
@@ -3261,6 +3262,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["怎么", "怎么样", "什么样", "怎样", "如何", "哪种"],
         quizQuestions: 8,
         learnSections: a2NuancesZenmeBasicsLearnSections
+      },
+      {
+        id: "cecr-a2-nuances-m10",
+        title: "Erreurs courantes des débutants — 是, 有, âge, ordre, 了",
+        titleEn: "Common beginner mistakes — 是, 有, age, order, 了",
+        duration: 15, locked: false, completed: false,
+        hskLevel: 2, hskLevels: [1, 3], category: "grammar", difficulty: "beginner",
+        tags: ["nuance", "common-mistakes", "cecr:a2"],
+        introduction: {
+          title: "Consolider les erreurs les plus visibles",
+          titleEn: "Consolidate the most visible mistakes",
+          content: "Cinq réflexes à installer pour ne plus « parler français avec des mots chinois ». (1) Pas de 是 devant un adjectif : 今天很冷, pas 今天是冷. (2) 是 identifie, 有 situe/possède, 在 localise. (3) L\\'âge se dit sans verbe : 我三十岁, et on répond aux questions en RÉPÉTANT le verbe (喜欢 pour dire « oui, j\\'aime »). (4) L\\'ordre est Sujet + TEMPS + LIEU + VERBE — 我明天在家吃饭, pas 我吃饭明天. (5) 因为...所以 acceptent un seul des deux ; 了 ne se double pas et ne coexiste JAMAIS avec 没.",
+          contentEn: "Five reflexes to install so you stop «speaking French with Chinese words». (1) No 是 before an adjective: 今天很冷, not 今天是冷. (2) 是 identifies, 有 locates/owns, 在 pinpoints location. (3) Age takes no verb: 我三十岁, and answer questions by REPEATING the verb (喜欢 to say «yes, I do»). (4) Word order is Subject + TIME + PLACE + VERB — 我明天在家吃饭, not 我吃饭明天. (5) 因为...所以 accept just one of the two; 了 doesn\\'t double and NEVER coexists with 没.",
+          objectives: [
+            "Remplacer 是 par 很 devant un adjectif",
+            "Choisir entre 是 (identité), 有 (existence) et 在 (localisation)",
+            "Répondre par écho (verbe/adj) au lieu de « oui »",
+            "Placer TEMPS et LIEU AVANT le verbe + éviter 了 avec 没 ou en double"
+          ],
+          objectivesEn: [
+            "Replace 是 with 很 before an adjective",
+            "Pick between 是 (identity), 有 (existence) and 在 (location)",
+            "Answer by echo (verb/adj) instead of «yes»",
+            "Place TIME and PLACE BEFORE the verb + avoid 了 with 没 or doubled"
+          ]
+        },
+        flashcards: ["是", "有", "很", "岁", "了", "没", "所以", "因为"],
+        quizQuestions: 10,
+        learnSections: a2NuancesCommonMistakesLearnSections
       }
     ]
   },

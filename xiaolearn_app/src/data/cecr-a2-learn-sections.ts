@@ -2799,3 +2799,192 @@ export const a2GrammarMeasureWordsLearnSections: LessonV2LearnSection[] = [
       'Collective MW ADD information. 一串钥匙 = keys on a ring. 一堆书 = stacked books (often messy). The image shifts.'
   }
 ];
+
+// --- cecr-a2-nuances-m10 — Erreurs courantes des débutants ------------------
+export const a2NuancesCommonMistakesLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-mistakes-shi-with-adjectives',
+    title: 'Ne PAS mettre 是 devant un adjectif',
+    titleEn: 'Do NOT put 是 before an adjective',
+    body:
+      'En français on dit « il EST fatigué ». En chinois, on ne met PAS 是 devant un adjectif. Les adjectifs chinois fonctionnent comme des verbes d\'état.\n' +
+      '\n' +
+      'Erreur classique : 今天是冷 ✗ « aujourd\'hui il est froid ».\n' +
+      '\n' +
+      'Correct : 今天很冷 (jīn tiān hěn lěng) « aujourd\'hui il fait froid ». Le 很 sert de tampon pour que la phrase coule, il ne signifie pas forcément « très ».\n' +
+      '\n' +
+      'Autre exemple : 我很忙 (wǒ hěn máng) « je suis occupé », PAS 我是忙 ✗.\n' +
+      '\n' +
+      '很 peut être omis quand un autre adverbe est là : 我不忙 (« je ne suis pas occupé »), 我太累了 (« je suis trop fatigué »).\n' +
+      '\n' +
+      'Structure : sujet + (很 / 太 / 不…) + adjectif. Pas de 是.\n' +
+      '\n' +
+      'Exception : le pattern 是...的 sert à insister (« c\'est... qui »), mais c\'est une autre structure spécifique.',
+    bodyEn:
+      'In French we say «he IS tired». In Chinese, do NOT put 是 before an adjective. Chinese adjectives work like stative verbs. Classic mistake: 今天是冷 ✗ «today is cold». Correct: 今天很冷 (jīn tiān hěn lěng) «it\'s cold today». 很 is a buffer so the sentence flows, it does not necessarily mean «very». Another example: 我很忙 (wǒ hěn máng) «I\'m busy», NOT 我是忙 ✗. 很 can be dropped when another adverb is present: 我不忙 («I\'m not busy»), 我太累了 («I\'m too tired»). Structure: subject + (很 / 太 / 不…) + adjective. No 是. Exception: the 是...的 pattern emphasizes («it\'s… that»), but that\'s a different specific structure.',
+    items: [
+      { hanzi: '很', pinyin: 'hěn', meaning: 'très, tampon devant adjectif', meaningEn: 'very, buffer before adjective', audio: 'audio/hsk1/hsk1_很.wav' },
+      { hanzi: '冷', pinyin: 'lěng', meaning: 'froid', meaningEn: 'cold', audio: 'audio/hsk1/hsk1_冷.wav' },
+      { hanzi: '忙', pinyin: 'máng', meaning: 'occupé, affairé', meaningEn: 'busy', audio: 'audio/hsk2/hsk2_忙.wav' },
+      { hanzi: '累', pinyin: 'lèi', meaning: 'fatigué', meaningEn: 'tired', audio: 'audio/hsk2/hsk2_累.wav' },
+      { hanzi: '太', pinyin: 'tài', meaning: 'trop', meaningEn: 'too, overly', audio: 'audio/hsk1/hsk1_太.wav' },
+      { hanzi: '不', pinyin: 'bù', meaning: 'ne pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' }
+    ],
+    tip:
+      'Chaque fois que tu veux dire « je suis + adjectif », arrête-toi et remplace 是 par 很. Le réflexe est difficile à installer mais c\'est un des marqueurs les plus visibles d\'un chinois naturel.',
+    tipEn:
+      'Every time you want to say «I am + adjective», stop and swap 是 for 很. The reflex is hard to build but it\'s one of the most visible markers of natural Chinese.'
+  },
+  {
+    id: 'a2-mistakes-you-vs-shi',
+    title: '有 vs 是 : possession/existence vs identification',
+    titleEn: '有 vs 是: possession/existence vs identification',
+    body:
+      '是 (shì) et 有 (yǒu) ne se recoupent PAS. L\'un identifie, l\'autre situe.\n' +
+      '\n' +
+      '是 = « être = » : identifier ou définir. Structure A 是 B.\n' +
+      '\n' +
+      'Ex : 他是学生 (tā shì xué shēng) « il est étudiant » (identification). Ex : 这是我的书 (zhè shì wǒ de shū) « c\'est mon livre ».\n' +
+      '\n' +
+      '有 = « il y a / posséder » : existence ou possession.\n' +
+      '\n' +
+      'Ex de possession : 我有一只猫 (wǒ yǒu yì zhī māo) « j\'ai un chat ». Ex : 我家有三只猫 (wǒ jiā yǒu sān zhī māo) « il y a 3 chats chez moi ».\n' +
+      '\n' +
+      'Ex d\'existence : 桌子上有一本书 (zhuō zi shàng yǒu yì běn shū) « il y a un livre sur la table ».\n' +
+      '\n' +
+      'Erreur classique : 这里是很多人 ✗ (calque de « here is many people »). Correct : 这里有很多人 (zhè lǐ yǒu hěn duō rén) « il y a beaucoup de monde ici ».\n' +
+      '\n' +
+      'Bonus : pour dire OÙ une chose se trouve, on utilise 在 (zài). Ex : 东西在桌子上 (dōng xi zài zhuō zi shàng) « les affaires SONT sur la table ». C\'est un 3e pattern, distinct de 是 et 有.',
+    bodyEn:
+      '是 (shì) and 有 (yǒu) do NOT overlap. One identifies, the other locates. 是 = «to be =»: identify or define. Structure A 是 B. Ex: 他是学生 «he is a student» (identification). Ex: 这是我的书 «this is my book». 有 = «there is / to have»: existence or possession. Possession ex: 我有一只猫 «I have a cat». Ex: 我家有三只猫 «there are 3 cats at my place». Existence ex: 桌子上有一本书 «there\'s a book on the table». Classic mistake: 这里是很多人 ✗ (calque of «here is many people»). Correct: 这里有很多人 «there are lots of people here». Bonus: to say WHERE a thing is located, use 在 (zài). Ex: 东西在桌子上 «the stuff IS on the table». That\'s a 3rd pattern, distinct from 是 and 有.',
+    items: [
+      { hanzi: '是', pinyin: 'shì', meaning: 'être (identification A = B)', meaningEn: 'to be (identification A = B)', audio: 'audio/hsk1/hsk1_是.wav' },
+      { hanzi: '有', pinyin: 'yǒu', meaning: 'avoir, il y a', meaningEn: 'to have, there is', audio: 'audio/hsk1/hsk1_有.wav' },
+      { hanzi: '在', pinyin: 'zài', meaning: 'se trouver à, être à', meaningEn: 'to be located at', audio: 'audio/hsk1/hsk1_在.wav' },
+      { hanzi: '学生', pinyin: 'xué shēng', meaning: 'étudiant, élève', meaningEn: 'student', audio: 'audio/hsk1/hsk1_学生.wav' },
+      { hanzi: '猫', pinyin: 'māo', meaning: 'chat', meaningEn: 'cat', audio: 'audio/hsk1/hsk1_猫.wav' },
+      { hanzi: '桌子', pinyin: 'zhuō zi', meaning: 'table', meaningEn: 'table', audio: 'audio/hsk1/hsk1_桌子.wav' }
+    ],
+    tip:
+      'Test rapide en français : si tu peux dire « il y a » ou « avoir », c\'est 有. Si tu peux dire « est/sont = équivalent », c\'est 是. Si tu peux dire « se trouve à », c\'est 在.',
+    tipEn:
+      'Quick French test: if you can say «there is» or «to have», use 有. If you can say «is/are = equivalent», use 是. If you can say «is located at», use 在.'
+  },
+  {
+    id: 'a2-mistakes-age-and-yes-answers',
+    title: 'L\'âge sans 是 + répondre par écho au lieu de « oui »',
+    titleEn: 'Age without 是 + answering by echo instead of «yes»',
+    body:
+      'L\'ÂGE : en chinois, on ne dit PAS d\'équivalent de « avoir » ou « être » pour l\'âge. On DONNE le nombre + 岁.\n' +
+      '\n' +
+      'Erreur : 我是三十岁 ✗ « je suis 30 ans ». Correct : 我三十岁 (wǒ sān shí suì) « j\'ai 30 ans ». Juste sujet + nombre + 岁.\n' +
+      '\n' +
+      'Formel/littéraire : 我今年有三十岁 accepté mais moins courant. Le naturel c\'est SANS verbe.\n' +
+      '\n' +
+      'Pour demander : 你多大 ? (informel), 您今年多大岁数 ? (poli aux aînés). Jamais 你是几岁 ✗.\n' +
+      '\n' +
+      'RÉPONDRE PAR ÉCHO : le chinois n\'a pas un « oui » universel comme en français.\n' +
+      '\n' +
+      'Le pattern natif : on REPREND le verbe ou l\'adjectif de la question.\n' +
+      '\n' +
+      'Ex : « 你喜欢中国菜吗 ? » (nǐ xǐ huan zhōng guó cài ma) « tu aimes la cuisine chinoise ? » → réponse naturelle : 喜欢 (xǐ huan) « oui, j\'aime ». PAS 对 (correct) ni 是的 (« oui ») en réponse spontanée.\n' +
+      '\n' +
+      'Ex : « 你累吗 ? » → 累 (« oui je suis fatigué ») ou 有点累 (« un peu ») ou 不累 (« non »).\n' +
+      '\n' +
+      'Pour NIER : 不 + verbe/adj. Ex : 不喜欢, 不累, 不去.\n' +
+      '\n' +
+      '对 (duì) = « c\'est ça / correct ». S\'utilise pour confirmer un ÉNONCÉ, pas pour répondre à un verbe.\n' +
+      '\n' +
+      '是的 (shì de) = « oui » poli/formel. OK dans un email pro, moins naturel à l\'oral décontracté.',
+    bodyEn:
+      'AGE: in Chinese, do NOT use an equivalent of «to have» or «to be» for age. You GIVE the number + 岁. Mistake: 我是三十岁 ✗ «I am 30 years». Correct: 我三十岁 (wǒ sān shí suì) «I\'m 30». Just subject + number + 岁. Formal/literary: 我今年有三十岁 accepted but less common. Natural = NO verb. To ask: 你多大? (casual), 您今年多大岁数? (polite to elders). Never 你是几岁 ✗. ANSWERING BY ECHO: Chinese doesn\'t have a universal «yes» like French. The native pattern: REPEAT the verb or adjective from the question. Ex: «你喜欢中国菜吗?» «do you like Chinese food?» → natural reply: 喜欢 (xǐ huan) «yes, I like it». NOT 对 (correct) or 是的 («yes») as a spontaneous reply. Ex: «你累吗?» → 累 («yes I\'m tired») or 有点累 («a bit») or 不累 («no»). To negate: 不 + verb/adj. Ex: 不喜欢, 不累, 不去. 对 (duì) = «that\'s right / correct». Used to confirm a STATEMENT, not to reply to a verb. 是的 (shì de) = polite/formal «yes». Fine in a work email, less natural in casual speech.',
+    items: [
+      { hanzi: '岁', pinyin: 'suì', meaning: 'ans (âge)', meaningEn: 'years old', audio: 'audio/hsk1/hsk1_岁.wav' },
+      { hanzi: '多大', pinyin: 'duō dà', meaning: 'quel âge', meaningEn: 'how old', audio: 'audio/hsk1/hsk1_多大.wav' },
+      { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'aimer', meaningEn: 'to like', audio: 'audio/hsk1/hsk1_喜欢.wav' },
+      { hanzi: '对', pinyin: 'duì', meaning: 'correct, c\'est ça', meaningEn: 'right, correct', audio: 'audio/hsk1/hsk1_对.wav' },
+      { hanzi: '是的', pinyin: 'shì de', meaning: 'oui (poli/formel)', meaningEn: 'yes (polite/formal)', audio: 'audio/hsk1/hsk1_是.wav' },
+      { hanzi: '不', pinyin: 'bù', meaning: 'ne pas (négation)', meaningEn: 'not (negation)', audio: 'audio/hsk1/hsk1_不.wav' }
+    ],
+    tip:
+      'Entends la question comme un miroir. La réponse porte le même verbe que la question. Ça évite aussi les pièges des questions négatives.',
+    tipEn:
+      'Hear the question as a mirror. The answer carries the same verb as the question. It also avoids the pitfalls of negative questions.'
+  },
+  {
+    id: 'a2-mistakes-a-not-a-word-order',
+    title: 'Répondre aux questions A-不-A + ordre TEMPS/LIEU',
+    titleEn: 'Answering A-not-A questions + TIME/PLACE word order',
+    body:
+      'QUESTIONS A-不-A : forme oui/non typique en chinois. Verbe/adj + 不 + Verbe/adj + ? Ex : 你去不去 (nǐ qù bu qù) « tu y vas ou pas ? ». Ex : 忙不忙 (busy or not), 有没有 (avoir ou pas).\n' +
+      '\n' +
+      'La question TE DONNE les mots de réponse. Réponds simplement 去 (oui) ou 不去 (non). PAS 对/是.\n' +
+      '\n' +
+      'Ex : « 妈妈问我忙不忙 » → 我回答说不忙 (wǒ huí dá shuō bù máng) « j\'ai répondu que je n\'étais pas occupé ».\n' +
+      '\n' +
+      'ORDRE DES MOTS TEMPS/LIEU : plus rigide qu\'en français. La règle générale :\n' +
+      '\n' +
+      'Sujet + TEMPS + LIEU + VERBE + OBJET\n' +
+      '\n' +
+      'Ex : 我明天去北京 (wǒ míng tiān qù běi jīng) « je vais à Pékin demain ». Le TEMPS 明天 vient JUSTE APRÈS le sujet, PAS à la fin. Erreur classique : 我去北京明天 ✗.\n' +
+      '\n' +
+      'Ex de lieu avant verbe : 我在家吃饭 (wǒ zài jiā chī fàn) « je mange à la maison ». PAS 我吃饭在家 ✗. Le lieu 在家 (à la maison) vient AVANT le verbe.\n' +
+      '\n' +
+      'Si plusieurs éléments de temps : du plus général au plus précis (année → mois → jour → heure).\n' +
+      '\n' +
+      'POSITION DE 也 (aussi) : entre sujet et verbe. Ex : 我也是学生 (wǒ yě shì xué shēng) « je suis aussi étudiant ». PAS 我是也学生 ✗. Idem pour 都 et autres adverbes courts.',
+    bodyEn:
+      'A-不-A QUESTIONS: classic Chinese yes/no form. Verb/adj + 不 + Verb/adj + ? Ex: 你去不去 (nǐ qù bu qù) «are you going or not?». Ex: 忙不忙 (busy or not), 有没有 (have or not). The question GIVES you the answer words. Just reply 去 (yes) or 不去 (no). NOT 对/是. Ex: «妈妈问我忙不忙» → 我回答说不忙 (wǒ huí dá shuō bù máng) «I replied that I wasn\'t busy». TIME/PLACE WORD ORDER: more rigid than in French. General rule: Subject + TIME + PLACE + VERB + OBJECT. Ex: 我明天去北京 (wǒ míng tiān qù běi jīng) «I\'m going to Beijing tomorrow». TIME 明天 comes RIGHT AFTER the subject, NOT at the end. Classic mistake: 我去北京明天 ✗. Place-before-verb ex: 我在家吃饭 (wǒ zài jiā chī fàn) «I eat at home». NOT 我吃饭在家 ✗. The place 在家 (at home) comes BEFORE the verb. If several time elements: from broadest to most specific (year → month → day → hour). POSITION OF 也 (also): between subject and verb. Ex: 我也是学生 (wǒ yě shì xué shēng) «I\'m also a student». NOT 我是也学生 ✗. Same for 都 and other short adverbs.',
+    items: [
+      { hanzi: '去', pinyin: 'qù', meaning: 'aller, y aller', meaningEn: 'to go', audio: 'audio/hsk1/hsk1_去.wav' },
+      { hanzi: '明天', pinyin: 'míng tiān', meaning: 'demain', meaningEn: 'tomorrow', audio: 'audio/hsk1/hsk1_明天.wav' },
+      { hanzi: '北京', pinyin: 'běi jīng', meaning: 'Pékin', meaningEn: 'Beijing', audio: 'audio/hsk1/hsk1_北京.wav' },
+      { hanzi: '在家', pinyin: 'zài jiā', meaning: 'à la maison', meaningEn: 'at home', audio: 'audio/hsk1/hsk1_家.wav' },
+      { hanzi: '吃饭', pinyin: 'chī fàn', meaning: 'manger, prendre un repas', meaningEn: 'to eat, have a meal', audio: 'audio/hsk1/hsk1_吃饭.wav' },
+      { hanzi: '也', pinyin: 'yě', meaning: 'aussi', meaningEn: 'also, too', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tou(te)s', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' }
+    ],
+    tip:
+      'Quand tu construis une phrase, pense « QUAND + OÙ + QUOI ». Le temps et le lieu se placent AVANT l\'action, pas après. C\'est l\'inverse du français « je vais à Pékin demain ».',
+    tipEn:
+      'When you build a sentence, think «WHEN + WHERE + WHAT». Time and place come BEFORE the action, not after. It\'s the opposite of the French «I\'m going to Beijing tomorrow».'
+  },
+  {
+    id: 'a2-mistakes-yinwei-suoyi-and-le',
+    title: '因为...所以 (flexibilité) + 了 (ne pas doubler, pas avec 没)',
+    titleEn: '因为...所以 (flexibility) + 了 (don\'t double, don\'t use with 没)',
+    body:
+      '因为...所以... = « parce que... donc... ». Les manuels imposent le duo, mais en pratique, on peut ne garder QU\'UN des deux.\n' +
+      '\n' +
+      'Ex complet : 因为下雨，所以我们不去公园 (yīn wèi xià yǔ, suǒ yǐ wǒmen bú qù gōng yuán) « comme il pleut, on n\'ira pas au parc ».\n' +
+      '\n' +
+      'Ex sans 所以 : 因为我很忙，我不去了 (yīn wèi wǒ hěn máng, wǒ bú qù le) « je suis très occupé, du coup je n\'y vais pas ». Naturel et fluide.\n' +
+      '\n' +
+      'Ex sans 因为 : 我很忙，所以不去了 (wǒ hěn máng, suǒ yǐ bú qù le) « je suis très occupé, donc je n\'y vais pas ».\n' +
+      '\n' +
+      'Utiliser les 2 rend la phrase un peu scolaire, comme si tu récites un manuel. À l\'oral, garde-en un seul.\n' +
+      '\n' +
+      '了 : deux erreurs très fréquentes.\n' +
+      '\n' +
+      '1) Ne PAS mettre 了 avec 没 pour nier une action passée. Le 没 signifie déjà « n\'a pas eu lieu », donc 了 (« a eu lieu ») est contradictoire. Erreur : 昨天我没去公园了 ✗. Correct : 昨天我没去公园 (zuó tiān wǒ méi qù gōng yuán) « hier je ne suis pas allé au parc ».\n' +
+      '\n' +
+      '2) Ne PAS doubler 了 dans la même clause. Un seul 了 suffit. Erreur : 我昨天去了北京了 ✗ (deux 了). Correct : soit 我昨天去了北京 (accent sur l\'action accomplie), soit 昨天我去北京了 (accent sur le changement de situation).\n' +
+      '\n' +
+      'Rappel : 了 n\'est PAS un marqueur du passé. Il marque un ACCOMPLISSEMENT ou un CHANGEMENT D\'ÉTAT. Toutes les phrases au passé n\'ont pas besoin de 了.',
+    bodyEn:
+      '因为...所以... = «because... so...». Textbooks push the duo, but in practice, you can keep just ONE of the two. Full ex: 因为下雨，所以我们不去公园 (yīn wèi xià yǔ, suǒ yǐ wǒmen bú qù gōng yuán) «since it\'s raining, we won\'t go to the park». Without 所以: 因为我很忙，我不去了 (yīn wèi wǒ hěn máng, wǒ bú qù le) «I\'m really busy, so I\'m not going». Natural and fluid. Without 因为: 我很忙，所以不去了 (wǒ hěn máng, suǒ yǐ bú qù le) «I\'m really busy, so I\'m not going». Using both makes the sentence slightly bookish, as if you were reciting a textbook. In speech, keep just one. 了: two very common mistakes. 1) Do NOT put 了 with 没 to negate a past action. 没 already means «didn\'t happen», so 了 («did happen») contradicts it. Mistake: 昨天我没去公园了 ✗. Correct: 昨天我没去公园 «yesterday I didn\'t go to the park». 2) Do NOT double 了 in the same clause. One 了 is enough. Mistake: 我昨天去了北京了 ✗ (two 了). Correct: either 我昨天去了北京 (focus on the completed action) or 昨天我去北京了 (focus on the change of situation). Reminder: 了 is NOT a past-tense marker. It marks COMPLETION or CHANGE OF STATE. Not every past-tense sentence needs 了.',
+    items: [
+      { hanzi: '因为', pinyin: 'yīn wèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '所以', pinyin: 'suǒ yǐ', meaning: 'donc, alors', meaningEn: 'so, therefore', audio: 'audio/hsk2/hsk2_所以.wav' },
+      { hanzi: '了', pinyin: 'le', meaning: 'particule d\'accomplissement / changement d\'état', meaningEn: 'completion / change-of-state particle', audio: 'audio/hsk1/hsk1_了.wav' },
+      { hanzi: '没', pinyin: 'méi', meaning: 'ne pas (au passé)', meaningEn: 'not (past)', audio: 'audio/hsk1/hsk1_没.wav' },
+      { hanzi: '下雨', pinyin: 'xià yǔ', meaning: 'pleuvoir', meaningEn: 'to rain', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '公园', pinyin: 'gōng yuán', meaning: 'parc', meaningEn: 'park', audio: 'audio/hsk3/hsk3_公园.wav' },
+      { hanzi: '昨天', pinyin: 'zuó tiān', meaning: 'hier', meaningEn: 'yesterday', audio: 'audio/hsk1/hsk1_昨天.wav' }
+    ],
+    tip:
+      'À chaque phrase avec 没, vérifie qu\'il n\'y a AUCUN 了 dans le même segment. À chaque phrase avec plusieurs 了, retire-en un — presque toujours ça sonnera mieux.',
+    tipEn:
+      'For every sentence with 没, check there is NO 了 in the same segment. For every sentence with several 了, drop one — it will almost always sound better.'
+  }
+];
