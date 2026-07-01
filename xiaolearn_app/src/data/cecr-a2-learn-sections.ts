@@ -4154,3 +4154,158 @@ export const a2GrammarSentenceParticlesLearnSections: LessonV2LearnSection[] = [
       'Tip: whenever you want to reassure or promise, add final 的. It\'s one of the most used markers to encourage someone.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// A2 Nuances — 还 (hái/huán) : encore, aussi, rendre (base) — CGG #82
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const a2NuancesHaiBasicsLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'a2-hai-still-timeline',
+    title: '还 : « encore / toujours pas » (chronologie)',
+    titleEn: '还: «still / not yet» (timeline)',
+    body:
+      'L\'usage le plus courant : 还 marque qu\'une action ou un état CONTINUE, ou qu\'un événement attendu N\'A PAS ENCORE eu lieu.\n' +
+      '\n' +
+      '还 + 在 + verbe = ENCORE en train de faire. Marque une action continue qui devrait peut-être avoir cessé.\n' +
+      '- Ex : 他还在睡觉 (tā hái zài shuì jiào) « il dort encore ».\n' +
+      '- Ex : 外面还在下雨 (wài miàn hái zài xià yǔ) « il pleut toujours dehors ».\n' +
+      '\n' +
+      '还没(有) + verbe = PAS ENCORE fait. Sous-entend que l\'action va probablement arriver.\n' +
+      '- Attention : on utilise TOUJOURS 没 (pas 不) — on parle d\'un événement qui ne s\'est pas produit jusqu\'à maintenant.\n' +
+      '- Ex : 我还没看那部电影 (wǒ hái méi kàn nà bù diàn yǐng) « je n\'ai pas encore vu ce film ».\n' +
+      '- Ex : 妈妈还没回来 « maman n\'est pas encore rentrée ».\n' +
+      '\n' +
+      '还 + adjectif = un ÉTAT continue inchangé. Sens : « toujours / encore + adj ».\n' +
+      '- Ex : 还早 (hái zǎo) « il est encore tôt ».\n' +
+      '- Ex : 还不晚 (hái bù wǎn) « il n\'est pas encore tard ».\n' +
+      '- Ex : 奶奶九十岁了，还很健康 « grand-mère a 90 ans et elle est encore en très bonne santé ».',
+    bodyEn:
+      'The most common use: 还 marks that an action/state CONTINUES, or that an expected event HAS NOT YET happened.\n' +
+      '\n' +
+      '还 + 在 + verb = STILL doing. Marks an ongoing action that maybe should have stopped.\n' +
+      '- Ex: 他还在睡觉 «he\'s still sleeping».\n' +
+      '- Ex: 外面还在下雨 «it\'s still raining outside».\n' +
+      '\n' +
+      '还没(有) + verb = NOT YET done. Implies the action will probably happen.\n' +
+      '- Careful: ALWAYS use 没 (not 不) — we\'re talking about an event that hasn\'t occurred up to now.\n' +
+      '- Ex: 我还没看那部电影 «I haven\'t seen that movie yet».\n' +
+      '- Ex: 妈妈还没回来 «mom isn\'t back yet».\n' +
+      '\n' +
+      '还 + adjective = a STATE that continues unchanged. Meaning: «still + adj».\n' +
+      '- Ex: 还早 «it\'s still early».\n' +
+      '- Ex: 还不晚 «it\'s not too late yet».\n' +
+      '- Ex: 奶奶九十岁了，还很健康 «grandma is 90 and still very healthy».',
+    items: [
+      { hanzi: '还', pinyin: 'hái', meaning: 'encore, toujours', meaningEn: 'still, yet', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '还在', pinyin: 'hái zài', meaning: 'encore en train de', meaningEn: 'still in the middle of', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '还没', pinyin: 'hái méi', meaning: 'pas encore', meaningEn: 'not yet', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '还早', pinyin: 'hái zǎo', meaning: 'il est encore tôt', meaningEn: 'still early', audio: 'audio/hsk1/hsk1_早.wav' },
+      { hanzi: '他还在睡觉', pinyin: 'tā hái zài shuì jiào', meaning: 'il dort encore', meaningEn: 'he\'s still sleeping', audio: 'audio/hsk2/hsk2_睡觉.wav' },
+      { hanzi: '我还没看', pinyin: 'wǒ hái méi kàn', meaning: 'je n\'ai pas encore vu', meaningEn: 'I haven\'t seen yet', audio: 'audio/hsk1/hsk1_看.wav' },
+      { hanzi: '妈妈还没回来', pinyin: 'mā ma hái méi huí lái', meaning: 'maman n\'est pas encore rentrée', meaningEn: 'mom isn\'t back yet', audio: 'audio/hsk2/hsk2_回来.wav' }
+    ],
+    tip:
+      'Astuce : quand tu penses « encore » (dans le sens temporel), 还 est ton mot. Si c\'est un chinois qui te dit 还没到 « pas encore arrivé », relax, il arrive bientôt.',
+    tipEn:
+      'Tip: whenever you think «still» (in the temporal sense), 还 is your word. If a Chinese person says 还没到 «not there yet», relax — they\'re on the way.'
+  },
+  {
+    id: 'a2-hai-adding-info',
+    title: '还 : ajouter une info (« aussi / et en plus »)',
+    titleEn: '还: adding info («also / on top»)',
+    body:
+      '还 sert aussi à AJOUTER une info sur le même sujet. Différent de 也 !\n' +
+      '\n' +
+      '也 = « aussi » (simple ajout entre 2 sujets ou 2 propositions).\n' +
+      '还 = « en plus / de surcroît » — ajoute une PROPRIÉTÉ SUPPLÉMENTAIRE à ce qui vient d\'être dit sur le même sujet. Sonne beaucoup plus naturel que d\'énumérer.\n' +
+      '\n' +
+      '- Ex : 这个餐厅菜好吃，还很便宜 (zhè ge cān tīng cài hǎo chī, hái hěn pián yi) « ce resto la bouffe est bonne, et en plus c\'est pas cher ». Ce n\'est pas 也便宜.\n' +
+      '- Ex : 他会说中文，还会说日语 « il parle chinois, et il parle aussi japonais ».\n' +
+      '- Ex : 我喜欢咖啡，还喜欢茶 « j\'aime le café, et j\'aime aussi le thé ». Ici 还 sonne plus fluide que 也.\n' +
+      '\n' +
+      '不仅...还... (bù jǐn... hái...) = « non seulement... mais aussi... ». Version plus soutenue, pour insister.\n' +
+      '- Ex : 她不仅漂亮，还很聪明 (tā bù jǐn piào liang, hái hěn cōng ming) « elle est non seulement belle, mais aussi très intelligente ».\n' +
+      '- Ex : 这个手机不仅便宜，还很好看 « ce téléphone est non seulement pas cher, mais aussi joli ».',
+    bodyEn:
+      '还 also ADDS info about the same subject. Different from 也!\n' +
+      '\n' +
+      '也 = «also» (simple addition between 2 subjects or 2 clauses).\n' +
+      '还 = «on top of that / moreover» — adds an EXTRA PROPERTY to what was just said about the same subject. Sounds far more natural than piling up 也.\n' +
+      '\n' +
+      '- Ex: 这个餐厅菜好吃，还很便宜 «this restaurant\'s food is good, and on top it\'s cheap». Not 也便宜.\n' +
+      '- Ex: 他会说中文，还会说日语 «he speaks Chinese, and also Japanese».\n' +
+      '- Ex: 我喜欢咖啡，还喜欢茶 «I like coffee, and I like tea too». Here 还 flows better than 也.\n' +
+      '\n' +
+      '不仅...还... = «not only... but also...». Slightly formal, for emphasis.\n' +
+      '- Ex: 她不仅漂亮，还很聪明 «she\'s not only beautiful but also very smart».\n' +
+      '- Ex: 这个手机不仅便宜，还很好看 «this phone is not only cheap but also nice-looking».',
+    items: [
+      { hanzi: '还', pinyin: 'hái', meaning: 'en plus, de surcroît', meaningEn: 'moreover, on top', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '也', pinyin: 'yě', meaning: 'aussi (simple ajout)', meaningEn: 'also (simple)', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '不仅', pinyin: 'bù jǐn', meaning: 'non seulement', meaningEn: 'not only', audio: 'audio/hsk3/hsk3_不仅.wav' },
+      { hanzi: '便宜', pinyin: 'pián yi', meaning: 'bon marché', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' },
+      { hanzi: '聪明', pinyin: 'cōng ming', meaning: 'intelligent', meaningEn: 'smart', audio: 'audio/hsk3/hsk3_聪明.wav' },
+      { hanzi: '菜好吃，还很便宜', pinyin: 'cài hǎo chī, hái hěn pián yi', meaning: 'la bouffe est bonne, et en plus pas chère', meaningEn: 'the food is good, and on top cheap', audio: 'audio/hsk2/hsk2_便宜.wav' },
+      { hanzi: '不仅漂亮，还很聪明', pinyin: 'bù jǐn piào liang, hái hěn cōng ming', meaning: 'non seulement belle, mais aussi intelligente', meaningEn: 'not only beautiful but also smart', audio: 'audio/hsk3/hsk3_聪明.wav' }
+    ],
+    tip:
+      'Astuce : quand tu veux ENRICHIR ta description d\'un même sujet, utilise 还. C\'est le petit détail qui fait la différence entre « je liste des faits » et « je raconte de manière fluide ».',
+    tipEn:
+      'Tip: when you want to ENRICH your description of one subject, use 还. It\'s the small detail that makes the difference between «listing facts» and «telling smoothly».'
+  },
+  {
+    id: 'a2-hai-huan-return',
+    title: '还 = 还(huán) : rendre, restituer',
+    titleEn: '还 = 还(huán): to return, give back',
+    body:
+      'Surprise ! Le caractère 还 se prononce AUSSI huán (2e ton) avec un sens complètement différent : « rendre / restituer ».\n' +
+      '\n' +
+      'C\'est un verbe. Le contexte + les objets typiques (livres, argent, objets prêtés) rendent le sens évident.\n' +
+      '\n' +
+      'Structure : sujet + 还 + objet.\n' +
+      '- Ex : 我明天还书 (wǒ míng tiān huán shū) « je rends les livres demain ».\n' +
+      '- Ex : 快点还钱 (kuài diǎn huán qián) « rends l\'argent vite ».\n' +
+      '- Ex : 我还伞 « je rapporte le parapluie ».\n' +
+      '\n' +
+      'Combinaison courante avec 把 : 把 + objet + 还给 + personne.\n' +
+      '- Ex : 把钱还给他 (bǎ qián huán gěi tā) « rends-lui l\'argent ». 还给 = « restituer à ».\n' +
+      '- Ex : 请把我的书还给我 « rends-moi mon livre s\'il te plaît ».\n' +
+      '\n' +
+      'Distinguer 还(hái) et 还(huán) :\n' +
+      '- 还(hái) = adverbe : « encore, aussi, en plus ».\n' +
+      '- 还(huán) = verbe : « rendre ». Se place devant un objet concret qui peut se prêter/emprunter.\n' +
+      '- Ex ambigu : 我还没还他钱 (wǒ hái méi huán tā qián) « je ne lui ai pas encore rendu l\'argent » — les 2 dans la même phrase ! Le 1er = adverbe, le 2e = verbe.',
+    bodyEn:
+      'Surprise! The character 还 also reads huán (2nd tone) with a completely different meaning: «return / give back».\n' +
+      '\n' +
+      'It\'s a verb. Context + typical objects (books, money, borrowed items) make the meaning obvious.\n' +
+      '\n' +
+      'Structure: subject + 还 + object.\n' +
+      '- Ex: 我明天还书 «I\'ll return the books tomorrow».\n' +
+      '- Ex: 快点还钱 «pay back the money fast».\n' +
+      '- Ex: 我还伞 «I\'m returning the umbrella».\n' +
+      '\n' +
+      'Common combo with 把: 把 + object + 还给 + person.\n' +
+      '- Ex: 把钱还给他 «give him back the money». 还给 = «return to».\n' +
+      '- Ex: 请把我的书还给我 «please give me back my book».\n' +
+      '\n' +
+      'Distinguishing 还(hái) and 还(huán):\n' +
+      '- 还(hái) = adverb: «still, also, moreover».\n' +
+      '- 还(huán) = verb: «return». Sits in front of a concrete object that can be lent/borrowed.\n' +
+      '- Ambiguous ex: 我还没还他钱 «I haven\'t returned him the money yet» — both in one sentence! 1st = adverb, 2nd = verb.',
+    items: [
+      { hanzi: '还', pinyin: 'huán', meaning: 'rendre, restituer (verbe)', meaningEn: 'return, give back (verb)', audio: 'audio/hsk2/hsk2_还.wav' },
+      { hanzi: '还书', pinyin: 'huán shū', meaning: 'rendre les livres', meaningEn: 'return books', audio: 'audio/hsk1/hsk1_书.wav' },
+      { hanzi: '还钱', pinyin: 'huán qián', meaning: 'rembourser l\'argent', meaningEn: 'pay back money', audio: 'audio/hsk1/hsk1_钱.wav' },
+      { hanzi: '还给', pinyin: 'huán gěi', meaning: 'restituer à', meaningEn: 'give back to', audio: 'audio/hsk2/hsk2_给.wav' },
+      { hanzi: '把', pinyin: 'bǎ', meaning: 'marque l\'objet déplacé', meaningEn: 'marks disposed object', audio: 'audio/hsk3/hsk3_把.wav' },
+      { hanzi: '把钱还给他', pinyin: 'bǎ qián huán gěi tā', meaning: 'rends-lui l\'argent', meaningEn: 'give him back the money', audio: 'audio/hsk1/hsk1_钱.wav' },
+      { hanzi: '我还没还他钱', pinyin: 'wǒ hái méi huán tā qián', meaning: 'je ne lui ai pas encore rendu l\'argent', meaningEn: 'I haven\'t given him back the money yet', audio: 'audio/hsk1/hsk1_钱.wav' }
+    ],
+    tip:
+      'Astuce : quand tu vois 还 juste devant un objet concret (书/钱/伞), pense « rendre » (huán). Devant un verbe ou adjectif, c\'est l\'adverbe (hái).',
+    tipEn:
+      'Tip: when you see 还 right in front of a concrete object (书/钱/伞), think «return» (huán). Before a verb/adjective, it\'s the adverb (hái).'
+  }
+];

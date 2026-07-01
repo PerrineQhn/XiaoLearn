@@ -182,6 +182,7 @@ import {
   b11GrammarConditionalLearnSections,
   b11GrammarReduplicationProgressiveLearnSections,
   b11GrammarSeparableVerbsLearnSections,
+  b11GrammarPivotalSentencesLearnSections,
 } from './cecr-b1-1-learn-sections';
 import {
   b12BuLearnSections,
@@ -4019,6 +4020,35 @@ export const cecrLessonPaths: LessonPath[] = [
         flashcards: ["帮忙", "睡觉", "见面", "聊天", "结婚", "开会", "打开", "看见"],
         quizQuestions: 10,
         learnSections: b11GrammarSeparableVerbsLearnSections
+      },
+      {
+        id: "cecr-b11-grammar-pivotal-m1",
+        title: "Phrases pivots : 让, 叫, 请, 帮, 教 et plus",
+        titleEn: "Pivotal sentences: 让, 叫, 请, 帮, 教 and more",
+        duration: 14, locked: false, completed: false,
+        hskLevel: 3, hskLevels: [3, 4], category: "grammar", difficulty: "intermediate",
+        tags: ["pivotal", "grammar", "cecr:b11"],
+        introduction: {
+          title: "Phrases pivots : faire faire à quelqu'un",
+          titleEn: "Pivotal sentences: making someone do something",
+          content: "Une phrase pivot enchaîne DEUX verbes autour d'un nom/pronom qui joue DEUX rôles : objet du 1er verbe ET sujet du 2e. Ex : 老师让我们回家 « le prof nous laisse rentrer » — 我们 est objet de 让 ET sujet de 回家. Contrairement au français, aucun mot de liaison (à, de, que) n'est nécessaire : le chinois relie directement. Les verbes pivots vont du plus neutre (让) au plus autoritaire (叫, 命令), en passant par le poli (请), coopératif (帮), pédagogique (教), formel/pro (派, 建议, 同意, 要求) et les patterns figés (称...为, 选...当). La négation se met TOUJOURS avant le verbe pivot, jamais avant le 2e verbe.",
+          contentEn: "A pivotal sentence chains TWO verbs around a noun/pronoun that plays TWO roles: object of the 1st verb AND subject of the 2nd. Ex: 老师让我们回家 «the teacher lets us go home» — 我们 is object of 让 AND subject of 回家. Unlike English, no linker (to, that, for) is needed: Chinese connects directly. Pivot verbs range from most neutral (让) to most authoritative (叫, 命令), including polite (请), cooperative (帮), teaching (教), formal/pro (派, 建议, 同意, 要求), and fixed patterns (称...为, 选...当). Negation ALWAYS goes before the pivot verb, never before the 2nd verb.",
+          objectives: [
+            "Repérer la structure pivot (double rôle du pivot)",
+            "Nier correctement (不/没 avant le verbe pivot)",
+            "Choisir 让 / 叫 / 请 / 帮 / 教 selon le ton",
+            "Manier les verbes formels et patterns figés (称...为, 选...当)"
+          ],
+          objectivesEn: [
+            "Spot pivotal structure (pivot\'s double role)",
+            "Negate correctly (不/没 before the pivot verb)",
+            "Pick 让 / 叫 / 请 / 帮 / 教 by tone",
+            "Handle formal verbs and fixed patterns (称...为, 选...当)"
+          ]
+        },
+        flashcards: ["让", "叫", "请", "帮", "教", "派", "建议", "同意", "要求"],
+        quizQuestions: 10,
+        learnSections: b11GrammarPivotalSentencesLearnSections
       }
     ]
   },

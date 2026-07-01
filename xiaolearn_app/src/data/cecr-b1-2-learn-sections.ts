@@ -3537,3 +3537,167 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
       'Tip: when you see a text ending with 也, 矣, 乎 or 哉, it\'s probably wenyan (classical). Treat them as a signal of historical register.'
   }
 ];
+
+// ═════════════════════════════════════════════════════════════════════════════
+// B1.2 Nuances — 还 avancé : évaluation modeste, 还是, expressions figées — CGG #83
+// ═════════════════════════════════════════════════════════════════════════════
+
+export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b12-hai-degree-comparison',
+    title: '还 : « assez bien » (modeste) + « encore plus » (comparaison)',
+    titleEn: '还: «pretty good» (modest) + «even more» (comparison)',
+    body:
+      '还 + adjectif = évaluation MODESTE et polie : « assez, plutôt, pas mal ». Reflète le goût chinois d\'éviter les compliments extrêmes.\n' +
+      '- Ex : 还不错 (hái bú cuò) « pas mal » (mais souvent signifie « très bien » en modestie).\n' +
+      '- Ex : 还可以 (hái kě yǐ) « ça va, c\'est OK ».\n' +
+      '- Ex : 还好 (hái hǎo) « pas mal, plutôt bien ».\n' +
+      '- Ex : 还行 (hái xíng) « ça marche ».\n' +
+      '- Ex : 这个电影还不错 (zhè ge diàn yǐng hái bú cuò) « ce film est pas mal du tout » (traduction souvent « il est très bien » selon contexte).\n' +
+      '\n' +
+      'Attention : « 还不错 » n\'est pas négatif ! C\'est une façon POLIE et MODESTE de dire du bien.\n' +
+      '\n' +
+      'A 比 B 还 + adjectif = « A est ENCORE PLUS X que B », avec surprise.\n' +
+      '- Ex : 今天比昨天还热 (jīn tiān bǐ zuó tiān hái rè) « aujourd\'hui il fait ENCORE PLUS chaud qu\'hier ».\n' +
+      '- Ex : 他比老板还忙 (tā bǐ lǎo bǎn hái máng) « il est encore plus occupé que le boss ».\n' +
+      '- Nuance vs 更 : 更 = « encore plus » (constat neutre), 还 = « encore plus, ça m\'étonne / c\'est fort ! ».',
+    bodyEn:
+      '还 + adjective = MODEST and polite evaluation: «pretty, rather, not bad». Reflects the Chinese taste for avoiding extreme compliments.\n' +
+      '- Ex: 还不错 «not bad» (often actually means «very good», said modestly).\n' +
+      '- Ex: 还可以 «it\'s OK, alright».\n' +
+      '- Ex: 还好 «not bad, pretty good».\n' +
+      '- Ex: 还行 «works fine».\n' +
+      '- Ex: 这个电影还不错 «this movie is pretty good» (often translated as «it\'s very good» by context).\n' +
+      '\n' +
+      'Careful: «还不错» is NOT negative! It\'s a POLITE and MODEST way to praise.\n' +
+      '\n' +
+      'A 比 B 还 + adjective = «A is EVEN MORE X than B», with a note of surprise.\n' +
+      '- Ex: 今天比昨天还热 «today it\'s EVEN HOTTER than yesterday».\n' +
+      '- Ex: 他比老板还忙 «he\'s even busier than the boss».\n' +
+      '- Nuance vs 更: 更 = «even more» (neutral observation); 还 = «even more, that surprises me / that\'s strong!».',
+    items: [
+      { hanzi: '还不错', pinyin: 'hái bú cuò', meaning: 'pas mal (compliment modeste)', meaningEn: 'not bad (modest praise)', audio: 'audio/hsk2/hsk2_不错.wav' },
+      { hanzi: '还可以', pinyin: 'hái kě yǐ', meaning: 'ça va, OK', meaningEn: 'it\'s OK', audio: 'audio/hsk2/hsk2_可以.wav' },
+      { hanzi: '还好', pinyin: 'hái hǎo', meaning: 'pas mal, plutôt bien', meaningEn: 'pretty good', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '还行', pinyin: 'hái xíng', meaning: 'ça marche', meaningEn: 'works fine', audio: 'audio/hsk3/hsk3_行.wav' },
+      { hanzi: '比', pinyin: 'bǐ', meaning: 'comparaison : que', meaningEn: 'comparison: than', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '今天比昨天还热', pinyin: 'jīn tiān bǐ zuó tiān hái rè', meaning: 'aujourd\'hui il fait encore plus chaud qu\'hier', meaningEn: 'today is even hotter than yesterday', audio: 'audio/hsk1/hsk1_热.wav' },
+      { hanzi: '他比老板还忙', pinyin: 'tā bǐ lǎo bǎn hái máng', meaning: 'il est encore plus occupé que le boss', meaningEn: 'he\'s even busier than the boss', audio: 'audio/hsk2/hsk2_忙.wav' },
+      { hanzi: '更', pinyin: 'gèng', meaning: 'encore plus (neutre)', meaningEn: 'even more (neutral)', audio: 'audio/hsk3/hsk3_更.wav' }
+    ],
+    tip:
+      'Astuce : quand un Chinois te dit 你中文说得还不错, c\'est un vrai compliment ! Ne prends pas ça pour « bof, moyen ».',
+    tipEn:
+      'Tip: when a Chinese person tells you 你中文说得还不错, it\'s a real compliment! Don\'t read it as «meh, average».'
+  },
+  {
+    id: 'b12-hai-haishi-choice-suggestion',
+    title: '还是 : choix, suggestion, concession',
+    titleEn: '还是: choice, suggestion, concession',
+    body:
+      '还是 (hái shi) = combinaison spéciale avec 3 usages distincts.\n' +
+      '\n' +
+      '1. CHOIX dans une question : « ou / ou bien ». N\'ajoute PAS 吗 (还是 signale déjà la question).\n' +
+      '- Ex : 你要咖啡还是茶 ? (nǐ yào kā fēi hái shi chá) « tu veux du café ou du thé ? ».\n' +
+      '- Ex : 我们今天去还是明天去 ? « on y va aujourd\'hui ou demain ? ».\n' +
+      '- Rappel : pour dire « ou » dans une AFFIRMATION, c\'est 或者 (huò zhě), pas 还是.\n' +
+      '\n' +
+      '2. SUGGESTION DOUCE : 还是 + action + 吧 = « le mieux serait de... / plutôt que... ».\n' +
+      '- Ex : 太累了，我们还是回家吧 (tài lèi le, wǒ men hái shi huí jiā ba) « on est trop crevés, autant rentrer à la maison ».\n' +
+      '- Ex : 太贵了，还是别买了 « c\'est trop cher, mieux vaut ne pas acheter ».\n' +
+      '- Ex : 还是我来吧 « laisse, c\'est moi qui vais le faire ». Ton doux, reconsidère la situation.\n' +
+      '\n' +
+      '3. CONCESSION / PERSISTANCE : « quand même / malgré tout ».\n' +
+      '- Ex : 下雨了，我还是要出门 (xià yǔ le, wǒ hái shi yào chū mén) « il pleut, mais je dois quand même sortir ».\n' +
+      '- Ex : 他很累，还是要坚持工作 « il est très fatigué, mais il tient bon quand même ».\n' +
+      '- Version renforcée : 也还是要 = « quand même il faut... ». Ex : 很累也还是要工作 « même fatigué, il faut quand même bosser ».',
+    bodyEn:
+      '还是 (hái shi) = special combo with 3 distinct uses.\n' +
+      '\n' +
+      '1. CHOICE in a question: «or». Does NOT take 吗 (还是 already signals the question).\n' +
+      '- Ex: 你要咖啡还是茶? «coffee or tea?».\n' +
+      '- Ex: 我们今天去还是明天去? «are we going today or tomorrow?».\n' +
+      '- Reminder: to say «or» in a STATEMENT, use 或者 (huò zhě), not 还是.\n' +
+      '\n' +
+      '2. SOFT SUGGESTION: 还是 + action + 吧 = «better to... / rather than...».\n' +
+      '- Ex: 太累了，我们还是回家吧 «we\'re too tired, let\'s just head home».\n' +
+      '- Ex: 太贵了，还是别买了 «too pricey, better not buy».\n' +
+      '- Ex: 还是我来吧 «here, let me do it». Soft tone, reconsidering the situation.\n' +
+      '\n' +
+      '3. CONCESSION / PERSISTENCE: «anyway / all the same».\n' +
+      '- Ex: 下雨了，我还是要出门 «it\'s raining, but I still have to go out».\n' +
+      '- Ex: 他很累，还是要坚持工作 «he\'s very tired but keeps working anyway».\n' +
+      '- Reinforced version: 也还是要 = «even so, must...». Ex: 很累也还是要工作 «even tired, still gotta work».',
+    items: [
+      { hanzi: '还是', pinyin: 'hái shi', meaning: 'ou (choix) / plutôt / quand même', meaningEn: 'or (choice) / rather / still', audio: 'audio/hsk3/hsk3_还是.wav' },
+      { hanzi: '或者', pinyin: 'huò zhě', meaning: 'ou (affirmation)', meaningEn: 'or (statement)', audio: 'audio/hsk3/hsk3_或者.wav' },
+      { hanzi: '咖啡还是茶', pinyin: 'kā fēi hái shi chá', meaning: 'café ou thé ?', meaningEn: 'coffee or tea?', audio: 'audio/hsk3/hsk3_咖啡.wav' },
+      { hanzi: '还是回家吧', pinyin: 'hái shi huí jiā ba', meaning: 'autant rentrer à la maison', meaningEn: 'better head home', audio: 'audio/hsk1/hsk1_回家.wav' },
+      { hanzi: '还是我来吧', pinyin: 'hái shi wǒ lái ba', meaning: 'laisse, c\'est moi qui fais', meaningEn: 'let me handle it', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '还是要出门', pinyin: 'hái shi yào chū mén', meaning: 'il faut quand même sortir', meaningEn: 'still have to go out', audio: 'audio/hsk2/hsk2_出门.wav' },
+      { hanzi: '坚持', pinyin: 'jiān chí', meaning: 'persévérer, tenir bon', meaningEn: 'persist, keep going', audio: 'audio/hsk4/hsk4_坚持.wav' },
+      { hanzi: '也还是要', pinyin: 'yě hái shi yào', meaning: 'quand même, il faut', meaningEn: 'still have to, even so', audio: 'audio/hsk3/hsk3_还是.wav' }
+    ],
+    tip:
+      'Astuce : les 3 usages sont distincts. Test rapide — question → choix ; avec 吧 → suggestion ; face à un obstacle → persistance.',
+    tipEn:
+      'Tip: the 3 uses are distinct. Quick test — question → choice; with 吧 → suggestion; against an obstacle → persistence.'
+  },
+  {
+    id: 'b12-hai-set-phrases',
+    title: 'Expressions figées avec 还 : 还好, 还不如, 还用...吗',
+    titleEn: 'Set phrases with 还: 还好, 还不如, 还用...吗',
+    body:
+      '还好 en début de phrase = « heureusement / par chance » (soulagement).\n' +
+      '- Attention : différent de 还好 = « assez bien » (au milieu d\'une évaluation). La POSITION change le sens.\n' +
+      '- Ex : 忘记带伞了，还好没下雨 (wàng jì dài sǎn le, hái hǎo méi xià yǔ) « j\'ai oublié mon parapluie, heureusement il n\'a pas plu ».\n' +
+      '- Ex : 还好你来了 « heureusement que tu es venu ».\n' +
+      '\n' +
+      '还不如 (hái bù rú) = « autant / mieux vaut... que... » — suggère une alternative meilleure face à une situation insatisfaisante. Littéralement « pas aussi bien que ».\n' +
+      '- Ex : 这样等下去还不如走路去 (zhè yàng děng xià qù hái bù rú zǒu lù qù) « à ce rythme, autant y aller à pied ».\n' +
+      '- Ex : 天天加班还不如换工作 « à faire des heures sup tous les jours, autant changer de boulot ».\n' +
+      '\n' +
+      '还用问吗 ? / 还用说吗 ? (hái yòng wèn ma / hái yòng shuō ma) = questions RHÉTORIQUES = « bien sûr ! / c\'est évident ! ».\n' +
+      '- Littéralement « faut-il encore le demander ? ».\n' +
+      '- Ex : « 你饿吗 ? » « 还用问吗 ? 我一天没吃了 ! » « t\'as faim ? » « tu m\'demandes ! j\'ai rien mangé de la journée ! ».\n' +
+      '- Ex : 我妈的饺子最好吃，还用说吗 ! « les raviolis de ma mère sont les meilleurs, ça se passe de commentaire ! ».\n' +
+      '\n' +
+      'Combinaisons pratiques à mémoriser :\n' +
+      '- 还好 + phrase positive = « heureusement... ».\n' +
+      '- 还不如 + meilleure alternative = « mieux vaut... ».\n' +
+      '- 还用 + 问/说 + 吗 = « bien sûr ! » (rhétorique).',
+    bodyEn:
+      '还好 at sentence start = «luckily / fortunately» (relief).\n' +
+      '- Careful: different from 还好 = «pretty good» (mid-evaluation). POSITION changes the meaning.\n' +
+      '- Ex: 忘记带伞了，还好没下雨 «I forgot my umbrella, luckily it didn\'t rain».\n' +
+      '- Ex: 还好你来了 «lucky you came».\n' +
+      '\n' +
+      '还不如 (hái bù rú) = «might as well / better to... than...» — suggests a better alternative when facing an unsatisfactory situation. Literally «not as good as».\n' +
+      '- Ex: 这样等下去还不如走路去 «at this rate, might as well walk».\n' +
+      '- Ex: 天天加班还不如换工作 «doing overtime every day, might as well switch jobs».\n' +
+      '\n' +
+      '还用问吗? / 还用说吗? (hái yòng wèn ma / hái yòng shuō ma) = RHETORICAL questions = «obviously! / of course!».\n' +
+      '- Literally «do you even need to ask?».\n' +
+      '- Ex: «你饿吗?» «还用问吗? 我一天没吃了!» «are you hungry?» «are you kidding? I haven\'t eaten all day!».\n' +
+      '- Ex: 我妈的饺子最好吃，还用说吗! «my mom\'s dumplings are the best, no need to say it!».\n' +
+      '\n' +
+      'Handy combos to memorize:\n' +
+      '- 还好 + positive statement = «luckily...».\n' +
+      '- 还不如 + better alternative = «might as well...».\n' +
+      '- 还用 + 问/说 + 吗 = «obviously!» (rhetorical).',
+    items: [
+      { hanzi: '还好', pinyin: 'hái hǎo', meaning: 'heureusement / pas mal', meaningEn: 'luckily / pretty good', audio: 'audio/hsk1/hsk1_好.wav' },
+      { hanzi: '还不如', pinyin: 'hái bù rú', meaning: 'autant / mieux vaut', meaningEn: 'might as well / better to', audio: 'audio/hsk3/hsk3_不如.wav' },
+      { hanzi: '还用', pinyin: 'hái yòng', meaning: 'faut-il encore (rhétorique)', meaningEn: 'do you even need to', audio: 'audio/hsk2/hsk2_用.wav' },
+      { hanzi: '还好没下雨', pinyin: 'hái hǎo méi xià yǔ', meaning: 'heureusement il n\'a pas plu', meaningEn: 'luckily it didn\'t rain', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '还好你来了', pinyin: 'hái hǎo nǐ lái le', meaning: 'heureusement que tu es venu', meaningEn: 'lucky you came', audio: 'audio/hsk1/hsk1_来.wav' },
+      { hanzi: '还不如走路去', pinyin: 'hái bù rú zǒu lù qù', meaning: 'autant y aller à pied', meaningEn: 'might as well walk', audio: 'audio/hsk2/hsk2_走路.wav' },
+      { hanzi: '还用问吗', pinyin: 'hái yòng wèn ma', meaning: 'faut-il vraiment demander ? (évident)', meaningEn: 'do you even need to ask? (obvious)', audio: 'audio/hsk2/hsk2_问.wav' },
+      { hanzi: '还用说吗', pinyin: 'hái yòng shuō ma', meaning: 'ça se passe de commentaire !', meaningEn: 'goes without saying!', audio: 'audio/hsk1/hsk1_说.wav' }
+    ],
+    tip:
+      'Astuce : ces 3 expressions font partie du chinois oral fluide. Les entendre = les reconnaître. Les utiliser = sonner naturel.',
+    tipEn:
+      'Tip: these 3 expressions belong to fluent spoken Chinese. Hearing them = recognizing them. Using them = sounding natural.'
+  }
+];

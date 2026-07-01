@@ -2812,3 +2812,138 @@ export const b11GrammarSeparableVerbsLearnSections: LessonV2LearnSection[] = [
       'If you\'re unsure whether a verb is separable, mentally try to slip 了 between the two parts. Sounds fine (帮了忙 ✓)? Separable. Sounds off (学了习 ✗)? Indivisible.'
   }
 ];
+
+// --- cecr-b11-grammar-pivotal — Phrases pivots (让, 叫, 请, 帮, 教...) --------
+export const b11GrammarPivotalSentencesLearnSections: LessonV2LearnSection[] = [
+  {
+    id: 'b11-pivotal-basics',
+    title: 'Phrase pivot : structure et négation',
+    titleEn: 'Pivotal sentence: structure and negation',
+    body:
+      'Une phrase pivot a DEUX verbes reliés par un nom/pronom qui fait DOUBLE JEU : il est objet du 1er verbe ET sujet du 2e.\n' +
+      '\n' +
+      'Structure : sujet + verbe pivot + pivot (personne/chose) + 2e verbe/action.\n' +
+      '- Ex : 老师让我们回家 (py lǎo shī ràng wǒmen huí jiā) « le prof nous laisse rentrer ». 我们 = objet de 让 ET sujet de 回家.\n' +
+      '\n' +
+      'Comparé au français, PAS besoin de « à », « de » ou « que ». Le chinois relie directement.\n' +
+      '\n' +
+      'Négation : 不 ou 没 se place AVANT le verbe pivot (le 1er), JAMAIS avant le 2e verbe.\n' +
+      '- Ex : 老师不让我们回家 « le prof ne nous laisse pas rentrer ».\n' +
+      '- Ex : 妈妈没让我买那个 (py mā ma méi ràng wǒ mǎi nà ge) « maman ne m\'a pas laissé acheter ça ».\n' +
+      '\n' +
+      'Ne pas confondre avec :\n' +
+      '- Verbes en série (même sujet) : 我去商店买东西 « je vais au magasin acheter des trucs » — c\'est MOI qui fait les 2 actions.\n' +
+      '- Phrase pivot : 老师让我买东西 « le prof me demande d\'acheter des trucs » — c\'est LE PROF qui demande, c\'est MOI qui achète.\n' +
+      '- Phrase 把 : manipule un objet.\n' +
+      '- Passif 被 : le sujet subit l\'action.',
+    bodyEn:
+      'A pivotal sentence has TWO verbs linked by a noun/pronoun that plays DOUBLE DUTY: it\'s the object of the 1st verb AND the subject of the 2nd. Structure: subject + pivot verb + pivot (person/thing) + 2nd verb/action. Ex: 老师让我们回家 «the teacher lets us go home». 我们 = object of 让 AND subject of 回家. Compared to English, NO «to», «that» or «for» needed — Chinese connects directly. NEGATION: 不 or 没 goes BEFORE the pivot verb (the 1st), NEVER before the 2nd. Ex: 老师不让我们回家 «the teacher doesn\'t let us go home». Ex: 妈妈没让我买那个 «mom didn\'t let me buy that». Don\'t confuse with: Serial verbs (same subject): 我去商店买东西 «I go to the store to buy stuff» — I do both actions. Pivotal: 老师让我买东西 «the teacher asks me to buy stuff» — the teacher asks, I buy. 把 sentence: manipulating an object. Passive 被: subject undergoes action.',
+    items: [
+      { hanzi: '让', pinyin: 'ràng', meaning: 'laisser, permettre, faire faire', meaningEn: 'let, make, ask to', audio: 'audio/hsk2/hsk2_让.wav' },
+      { hanzi: '老师让我们回家', pinyin: 'lǎo shī ràng wǒmen huí jiā', meaning: 'le prof nous laisse rentrer', meaningEn: 'teacher lets us go home', audio: 'audio/hsk1/hsk1_老师.wav' },
+      { hanzi: '老师不让我们回家', pinyin: 'lǎo shī bú ràng wǒmen huí jiā', meaning: 'le prof ne nous laisse pas rentrer', meaningEn: 'teacher doesn\'t let us go home', audio: 'audio/hsk1/hsk1_老师.wav' },
+      { hanzi: '妈妈没让我买那个', pinyin: 'mā ma méi ràng wǒ mǎi nà ge', meaning: 'maman ne m\'a pas laissé acheter ça', meaningEn: 'mom didn\'t let me buy that', audio: 'audio/hsk1/hsk1_妈妈.wav' },
+      { hanzi: '我去商店买东西', pinyin: 'wǒ qù shāng diàn mǎi dōng xi', meaning: 'je vais au magasin acheter (série)', meaningEn: 'I go to the store to buy (serial)', audio: 'audio/hsk1/hsk1_商店.wav' },
+      { hanzi: '老师让我买东西', pinyin: 'lǎo shī ràng wǒ mǎi dōng xi', meaning: 'le prof me demande d\'acheter (pivot)', meaningEn: 'teacher asks me to buy (pivot)', audio: 'audio/hsk1/hsk1_买.wav' }
+    ],
+    tip:
+      'Test rapide — si le 1er sujet FAIT FAIRE quelque chose à quelqu\'un d\'autre, c\'est une phrase pivot.',
+    tipEn:
+      'Quick test — if the 1st subject MAKES someone else DO something, it\'s a pivotal sentence.'
+  },
+  {
+    id: 'b11-pivotal-common-verbs',
+    title: 'Verbes pivots courants : 让, 叫, 请, 帮, 教',
+    titleEn: 'Common pivot verbs: 让, 叫, 请, 帮, 教',
+    body:
+      '让 (ràng) — le plus polyvalent : « laisser / permettre / faire faire / demander ». Ton neutre.\n' +
+      '- Ex : 妈妈让我早点儿回家 (py mā ma ràng wǒ zǎo diǎnr huí jiā) « maman m\'a dit de rentrer plus tôt ».\n' +
+      '- Ex : 老师让学生回答问题 « le prof fait répondre les élèves ».\n' +
+      '\n' +
+      '叫 (jiào) — instructions DIRECTES, sonne plus autoritaire.\n' +
+      '- Ex : 老板叫他马上来办公室 (py lǎo bǎn jiào tā mǎ shàng lái bàn gōng shì) « le boss lui a dit de venir immédiatement au bureau ». Nuance de commandement.\n' +
+      '\n' +
+      '请 (qǐng) — POLI, invitation ou requête courtoise.\n' +
+      '- Ex : 我请你帮我一个忙 (py wǒ qǐng nǐ bāng wǒ yí ge máng) « je te demande de me rendre service ».\n' +
+      '- Ex : 请他们进来吧 « invitons-les à entrer ».\n' +
+      '\n' +
+      '帮 (bāng) — aider quelqu\'un à faire quelque chose.\n' +
+      '- Ex : 哥哥帮我搬家具 (py gē ge bāng wǒ bān jiā jù) « mon grand frère m\'aide à déplacer les meubles ». Le pivot fait l\'action avec ton aide.\n' +
+      '\n' +
+      '教 (jiāo) — enseigner à quelqu\'un à faire.\n' +
+      '- Ex : 奶奶教我包饺子 (py nǎi nai jiāo wǒ bāo jiǎo zi) « ma grand-mère m\'apprend à faire des raviolis ». En français « apprendre à + qch » ; en chinois direct sans mot de liaison.\n' +
+      '\n' +
+      'Comparaison rapide :\n' +
+      '- 让 = neutre par défaut.\n' +
+      '- 叫 = ordre + autorité.\n' +
+      '- 请 = poli + demande.\n' +
+      '- 帮 = coopération (avec toi).\n' +
+      '- 教 = transmettre un savoir.',
+    bodyEn:
+      '让 (ràng) — most versatile: «let / allow / make / ask». Neutral tone. Ex: 妈妈让我早点儿回家 «mom told me to come home earlier». Ex: 老师让学生回答问题 «teacher makes students answer». 叫 (jiào) — DIRECT instructions, more authoritative. Ex: 老板叫他马上来办公室 «the boss told him to come to the office immediately». Command flavor. 请 (qǐng) — POLITE, invitation or courteous request. Ex: 我请你帮我一个忙 «I ask you to do me a favor». Ex: 请他们进来吧 «let\'s invite them in». 帮 (bāng) — help someone do something. Ex: 哥哥帮我搬家具 «my older brother helps me move the furniture». The pivot does the action with your help. 教 (jiāo) — teach someone to do. Ex: 奶奶教我包饺子 «my grandma teaches me to make dumplings». In English «teach to + do»; Chinese direct, no linker. Quick comparison: 让 = default neutral. 叫 = order + authority. 请 = polite + request. 帮 = cooperation (with you). 教 = pass on knowledge.',
+    items: [
+      { hanzi: '让', pinyin: 'ràng', meaning: 'laisser, faire faire (neutre)', meaningEn: 'let, make (neutral)', audio: 'audio/hsk2/hsk2_让.wav' },
+      { hanzi: '叫', pinyin: 'jiào', meaning: 'dire de (autoritaire)', meaningEn: 'tell to (authoritative)', audio: 'audio/hsk1/hsk1_叫.wav' },
+      { hanzi: '请', pinyin: 'qǐng', meaning: 'inviter, prier (poli)', meaningEn: 'invite, ask (polite)', audio: 'audio/hsk1/hsk1_请.wav' },
+      { hanzi: '帮', pinyin: 'bāng', meaning: 'aider', meaningEn: 'help', audio: 'audio/hsk3/hsk3_帮.wav' },
+      { hanzi: '教', pinyin: 'jiāo', meaning: 'enseigner', meaningEn: 'teach', audio: 'audio/hsk3/hsk3_教.wav' },
+      { hanzi: '妈妈让我早点儿回家', pinyin: 'mā ma ràng wǒ zǎo diǎnr huí jiā', meaning: 'maman m\'a dit de rentrer plus tôt', meaningEn: 'mom told me to come home earlier', audio: 'audio/hsk1/hsk1_妈妈.wav' },
+      { hanzi: '老板叫他马上来', pinyin: 'lǎo bǎn jiào tā mǎ shàng lái', meaning: 'le boss lui a dit de venir tout de suite', meaningEn: 'the boss told him to come at once', audio: 'audio/hsk3/hsk3_老板.wav' },
+      { hanzi: '我请你帮我一个忙', pinyin: 'wǒ qǐng nǐ bāng wǒ yí ge máng', meaning: 'je te demande de me rendre service', meaningEn: 'I ask you to do me a favor', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '哥哥帮我搬家具', pinyin: 'gē ge bāng wǒ bān jiā jù', meaning: 'mon frère m\'aide à déplacer les meubles', meaningEn: 'my brother helps me move the furniture', audio: 'audio/hsk2/hsk2_哥哥.wav' },
+      { hanzi: '奶奶教我包饺子', pinyin: 'nǎi nai jiāo wǒ bāo jiǎo zi', meaning: 'grand-mère m\'apprend à faire des raviolis', meaningEn: 'grandma teaches me to make dumplings', audio: 'audio/hsk3/hsk3_教.wav' }
+    ],
+    tip:
+      'Chaque fois que tu veux dire « je fais X faire Y à Z », pense au verbe pivot le plus adapté au niveau de politesse.',
+    tipEn:
+      'Whenever you want to say «I make Z do Y», think of the pivot verb best suited to the politeness level.'
+  },
+  {
+    id: 'b11-pivotal-formal-and-appointment',
+    title: 'Verbes pivots formels et spécialisés',
+    titleEn: 'Formal and specialized pivot verbs',
+    body:
+      '派 (pài) — envoyer/dépêcher, contexte pro.\n' +
+      '- Ex : 公司派她去上海出差 (py gōng sī pài tā qù shàng hǎi chū chāi) « l\'entreprise l\'a envoyée à Shanghai en déplacement pro ».\n' +
+      '\n' +
+      '建议 (jiàn yì) — suggérer (conseil doux).\n' +
+      '- Ex : 医生建议他多休息 (py yī shēng jiàn yì tā duō xiū xi) « le médecin lui a conseillé de se reposer davantage ». Sonne plus doux qu\'une obligation.\n' +
+      '\n' +
+      '同意 (tóng yì) — accepter que qqn fasse quelque chose.\n' +
+      '- Ex : 学校同意学生们组织活动 (py xué xiào tóng yì xué shēng men zǔ zhī huó dòng) « l\'école a accepté que les étudiants organisent des activités ». Implique une demande préalable.\n' +
+      '\n' +
+      '要求 (yāo qiú) — exiger, plus fort.\n' +
+      '- Ex : 经理要求员工按时完成项目 (py jīng lǐ yāo qiú yuán gōng àn shí wán chéng xiàng mù) « le manager exige que les employés finissent le projet à temps ». Ton d\'autorité.\n' +
+      '\n' +
+      '命令 (mìng lìng) — ordonner (usage militaire, très formel).\n' +
+      '- Ex : 将军命令士兵立即撤退 (py jiāng jūn mìng lìng shì bīng lì jí chè tuì) « le général a ordonné aux soldats de battre en retraite immédiatement ».\n' +
+      '\n' +
+      '表扬 / 批评 — évaluations : féliciter / critiquer QUELQU\'UN POUR une action.\n' +
+      '- Ex : 老师表扬她帮助同学 (py lǎo shī biǎo yáng tā bāng zhù tóng xué) « le prof l\'a félicitée d\'avoir aidé ses camarades ». Pas besoin de « pour » — la structure pivot fait le lien.\n' +
+      '- Ex : 妈妈批评我不收拾房间 (py mā ma pī píng wǒ bù shōu shi fáng jiān) « maman m\'a reproché de ne pas ranger ma chambre ».\n' +
+      '\n' +
+      'Structures FIGÉES à retenir :\n' +
+      '- 称 X 为 Y (py chēng X wéi Y) « appeler X un Y ». Ex : 大家称他为专家 « tout le monde l\'appelle un expert ». Registre formel.\n' +
+      '- 说 X 是 Y « dire que X est Y ». Ex : 同事们都说她是好领导 « les collègues disent tous qu\'elle est une bonne cheffe ».\n' +
+      '- 收 X 做 Y (py shōu X zuò Y) « accepter X comme Y ». Ex : 教授收我做研究生 « le prof m\'a accepté comme doctorant ».\n' +
+      '- 选 X 当 Y (py xuǎn X dāng Y) « élire X comme Y ». Ex : 同学们选他当班长 « les camarades l\'ont élu délégué de classe ». Ex : 我们选她当队长 « on l\'a choisie comme cheffe d\'équipe ».',
+    bodyEn:
+      '派 (pài) — send/dispatch, pro context. Ex: 公司派她去上海出差 «the company sent her to Shanghai on a business trip». 建议 (jiàn yì) — suggest (soft advice). Ex: 医生建议他多休息 «the doctor advised him to rest more». Softer than an obligation. 同意 (tóng yì) — agree that someone does something. Ex: 学校同意学生们组织活动 «the school agreed to let students organize activities». Implies a prior request. 要求 (yāo qiú) — require, stronger. Ex: 经理要求员工按时完成项目 «the manager requires employees to finish the project on time». Authoritative. 命令 (mìng lìng) — order (military, very formal). Ex: 将军命令士兵立即撤退 «the general ordered the soldiers to retreat immediately». 表扬 / 批评 — evaluations: praise / criticize SOMEONE FOR an action. Ex: 老师表扬她帮助同学 «the teacher praised her for helping classmates». No «for» needed — the pivot structure links it. Ex: 妈妈批评我不收拾房间 «mom criticized me for not tidying my room». FIXED structures to memorize: 称 X 为 Y «call X a Y». Ex: 大家称他为专家 «everyone calls him an expert». Formal register. 说 X 是 Y «say X is Y». Ex: 同事们都说她是好领导 «colleagues all say she\'s a good leader». 收 X 做 Y «accept X as Y». Ex: 教授收我做研究生 «the prof accepted me as a PhD student». 选 X 当 Y «elect X as Y». Ex: 同学们选他当班长 «classmates elected him class rep». Ex: 我们选她当队长 «we chose her as team leader».',
+    items: [
+      { hanzi: '派', pinyin: 'pài', meaning: 'envoyer, dépêcher', meaningEn: 'send, dispatch', audio: 'audio/hsk4/hsk4_派.wav' },
+      { hanzi: '建议', pinyin: 'jiàn yì', meaning: 'suggérer, conseiller', meaningEn: 'suggest, advise', audio: 'audio/hsk4/hsk4_建议.wav' },
+      { hanzi: '同意', pinyin: 'tóng yì', meaning: 'accepter, être d\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '要求', pinyin: 'yāo qiú', meaning: 'exiger, demander', meaningEn: 'require, demand', audio: 'audio/hsk4/hsk4_要求.wav' },
+      { hanzi: '命令', pinyin: 'mìng lìng', meaning: 'ordonner', meaningEn: 'order', audio: 'audio/hsk5/hsk5_命令.wav' },
+      { hanzi: '公司派她去上海', pinyin: 'gōng sī pài tā qù shàng hǎi', meaning: 'l\'entreprise l\'envoie à Shanghai', meaningEn: 'the company sends her to Shanghai', audio: 'audio/hsk2/hsk2_公司.wav' },
+      { hanzi: '医生建议他多休息', pinyin: 'yī shēng jiàn yì tā duō xiū xi', meaning: 'le médecin lui conseille de se reposer', meaningEn: 'the doctor advises him to rest', audio: 'audio/hsk1/hsk1_医生.wav' },
+      { hanzi: '老师表扬她帮助同学', pinyin: 'lǎo shī biǎo yáng tā bāng zhù tóng xué', meaning: 'le prof la félicite d\'avoir aidé', meaningEn: 'teacher praises her for helping', audio: 'audio/hsk4/hsk4_表扬.wav' },
+      { hanzi: '大家称他为专家', pinyin: 'dà jiā chēng tā wéi zhuān jiā', meaning: 'tout le monde l\'appelle un expert', meaningEn: 'everyone calls him an expert', audio: 'audio/hsk5/hsk5_称.wav' },
+      { hanzi: '同学们选他当班长', pinyin: 'tóng xué men xuǎn tā dāng bān zhǎng', meaning: 'les camarades l\'ont élu délégué', meaningEn: 'classmates elected him class rep', audio: 'audio/hsk4/hsk4_选.wav' }
+    ],
+    tip:
+      'Les 4 patterns figés (称...为, 说...是, 收...做, 选...当) sont ultra fréquents à l\'écrit et à la radio. Les mémoriser comme blocs = boost immédiat en lecture.',
+    tipEn:
+      'The 4 fixed patterns (称...为, 说...是, 收...做, 选...当) are super frequent in writing and radio. Memorizing them as blocks = instant reading boost.'
+  }
+];
