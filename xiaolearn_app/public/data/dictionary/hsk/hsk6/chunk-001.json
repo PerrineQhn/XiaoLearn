@@ -74,7 +74,7 @@
       },
       {
         "chinese": "这件衣服太昂贵了",
-        "pinyin": "zhèjiàn yīfu tài ángguì le",
+        "pinyin": "zhèjiàn yīfú tài ángguì le",
         "translationFr": "Ce vêtement est trop cher",
         "translationEn": "This piece of clothing is too expensive"
       },
@@ -252,7 +252,7 @@
       },
       {
         "chinese": "暗示的意思",
-        "pinyin": "ànshì de yìsī",
+        "pinyin": "ànshì de yìsi",
         "translationFr": "Le sens implicite",
         "translationEn": "The implicit meaning"
       }
@@ -310,7 +310,7 @@
       },
       {
         "chinese": "败下阵来",
-        "pinyin": "bàixiàzhènlái",
+        "pinyin": "bài xià zhèn lái",
         "translationFr": "Être vaincu",
         "translationEn": "Be defeated"
       }
@@ -414,7 +414,7 @@
     "examples": [
       {
         "chinese": "白白浪费时间",
-        "pinyin": "báibáilàngfèi shíjiān",
+        "pinyin": "bái bái làng fèi shíjiān",
         "translationFr": "Perdre du temps pour rien",
         "translationEn": "Wasting time for nothing"
       },
@@ -426,7 +426,7 @@
       },
       {
         "chinese": "白白等了一天",
-        "pinyin": "báibái děng le yìtiān",
+        "pinyin": "báibái děng le yītiān",
         "translationFr": "Avoir attendu toute une journée pour rien",
         "translationEn": "Waited all day for nothing"
       }
@@ -640,19 +640,19 @@
     "examples": [
       {
         "chinese": "百货商店",
-        "pinyin": "bǎihuòshāngdiàn",
+        "pinyin": "bǎi huò shāng diàn",
         "translationFr": "Grand magasin",
         "translationEn": "Department store"
       },
       {
         "chinese": "百货公司",
-        "pinyin": "bǎihuògōngsī",
+        "pinyin": "bǎi huò gōng sī",
         "translationFr": "Société de vente au détail",
         "translationEn": "Wholesale company"
       },
       {
         "chinese": "百货大楼",
-        "pinyin": "bǎihuòdàlóu",
+        "pinyin": "bǎi huò dà lóu",
         "translationFr": "Centre commercial",
         "translationEn": "Shopping mall"
       }
@@ -705,7 +705,7 @@
       },
       {
         "chinese": "他是一名白领。",
-        "pinyin": "tā shì yìmíng báilǐng。",
+        "pinyin": "tā shì yīmíng báilǐng",
         "translationFr": "Il est un travailleur blanc-collar.",
         "translationEn": "He is a white-collar worker"
       }
@@ -756,7 +756,7 @@
       },
       {
         "chinese": "去亲戚家拜年",
-        "pinyin": "qù qīnqijiā bàinián",
+        "pinyin": "qù qīnqījiā bàinián",
         "translationFr": "Aller chez les proches pour les vœux",
         "translationEn": "Visit relatives for New Year's greetings"
       },
@@ -809,7 +809,7 @@
     "examples": [
       {
         "chinese": "摆脱困境",
-        "pinyin": "bǎituōkùnjìng",
+        "pinyin": "bǎi tuō kùn jìng",
         "translationFr": "Se sortir d'une situation difficile",
         "translationEn": "To get out of difficulty"
       },
@@ -879,7 +879,7 @@
       },
       {
         "chinese": "头版新闻",
-        "pinyin": "tóubǎnxīnwén",
+        "pinyin": "tóu bǎn xīn wén",
         "translationFr": "Nouvelles en première page",
         "translationEn": "Front-page news"
       }
@@ -1278,7 +1278,7 @@
       },
       {
         "chinese": "火山爆发",
-        "pinyin": "huǒshānbàofā",
+        "pinyin": "huǒ shān bào fā",
         "translationFr": "Éruption volcanique",
         "translationEn": "Volcanic eruption"
       }
@@ -1440,13 +1440,13 @@
     "examples": [
       {
         "chinese": "报刊上有很多有趣的文章。",
-        "pinyin": "bàokān shàng yǒu hěnduō yǒuqù de wénzhāng。",
+        "pinyin": "bàokān shàng yǒu hěnduō yǒuqù de wénzhāng",
         "translationFr": "Il y a beaucoup d'articles intéressants dans les journaux et périodiques.",
         "translationEn": "There are many interesting articles in the newspapers."
       },
       {
         "chinese": "我每天都会读一些报刊。",
-        "pinyin": "wǒ měitiān dōu huì dú yìxiē bàokān。",
+        "pinyin": "wǒ měitiān dōu huì dú yīxiē bàokān",
         "translationFr": "J'lis régulièrement des journaux et des périodiques tous les jours.",
         "translationEn": "I regularly read some newspapers every day."
       }
@@ -1492,7 +1492,7 @@
     "examples": [
       {
         "chinese": "暴力行为",
-        "pinyin": "bàolìxíngwéi",
+        "pinyin": "bào lì xíng wéi",
         "translationFr": "comportement violent",
         "translationEn": "Violent behavior"
       },
@@ -1544,13 +1544,13 @@
     "examples": [
       {
         "chinese": "他把真相暴露了。",
-        "pinyin": "tā bǎ zhēnxiàng bàolù le。",
+        "pinyin": "tā bǎ zhēnxiàng bàolù le",
         "translationFr": "Il a révélé la vérité.",
         "translationEn": "He revealed the truth."
       },
       {
         "chinese": "她暴露了自己的弱点。",
-        "pinyin": "tā bàolù le zìjǐ de ruòdiǎn。",
+        "pinyin": "tā bàolù le zìjǐ de ruòdiǎn",
         "translationFr": "Elle a dévoilé ses faiblesses.",
         "translationEn": "She exposed her weaknesses."
       }
@@ -1603,7 +1603,7 @@
       },
       {
         "chinese": "保暖衣服",
-        "pinyin": "bǎonuǎn yīfu",
+        "pinyin": "bǎonuǎn yīfú",
         "translationFr": "Vêtements chauds",
         "translationEn": "Warm clothing"
       },
@@ -1656,7 +1656,7 @@
     "examples": [
       {
         "chinese": "报社记者",
-        "pinyin": "bàoshèjìzhě",
+        "pinyin": "bào shè jì zhě",
         "translationFr": "Journaliste de presse",
         "translationEn": "Press journalist"
       },
@@ -1823,7 +1823,7 @@
     "examples": [
       {
         "chinese": "社会保障",
-        "pinyin": "shèhuìbǎozhàng",
+        "pinyin": "shè huì bǎo zhàng",
         "translationFr": "Sécurité sociale",
         "translationEn": "Social security"
       },
@@ -1894,7 +1894,7 @@
       },
       {
         "chinese": "被动局面",
-        "pinyin": "bèidòngjúmiàn",
+        "pinyin": "bèi dòng jú miàn",
         "translationFr": "Situation passive",
         "translationEn": "Passive situation"
       }
@@ -2054,7 +2054,7 @@
       },
       {
         "chinese": "这是一个悲剧",
-        "pinyin": "zhè shì yígè bēijù",
+        "pinyin": "zhèshì yígè bēijù",
         "translationFr": "C'est une tragédie",
         "translationEn": "This is a tragedy"
       },
@@ -2287,7 +2287,7 @@
       },
       {
         "chinese": "我穿了一件背心去游泳。",
-        "pinyin": "wǒ chuān le yíjiàn bèixīn qù yóuyǒng。",
+        "pinyin": "wǒ chuān le yījiàn bèixīn qù yóuyǒng",
         "translationFr": "Je suis allé nager en portant une veste sans manches.",
         "translationEn": "I went swimming wearing a vest."
       }
@@ -2390,7 +2390,7 @@
     "examples": [
       {
         "chinese": "信心倍增",
-        "pinyin": "xìnxīnbèizēng",
+        "pinyin": "xìn xīn bèi zēng",
         "translationFr": "La confiance a doublé",
         "translationEn": "Confidence doubled"
       },
@@ -2506,13 +2506,13 @@
     "examples": [
       {
         "chinese": "他正在跑步。",
-        "pinyin": "tā zhèngzài pǎobù。",
+        "pinyin": "tā zhèngzài pǎobù",
         "translationFr": "Il court.",
         "translationEn": "He is running."
       },
       {
         "chinese": "小狗在院子里奔跑。",
-        "pinyin": "xiǎogǒu zài yuànzi lǐ bēnpǎo。",
+        "pinyin": "xiǎogǒu zài yuànzi lǐ bēnpǎo",
         "translationFr": "Le chien court dans la cour.",
         "translationEn": "The puppy runs in the yard."
       }
@@ -2559,13 +2559,13 @@
     "examples": [
       {
         "chinese": "这个房子本身很美丽。",
-        "pinyin": "zhège fángzi běnshēn hěn měilì。",
+        "pinyin": "zhège fángzi běnshēn hěn měilì",
         "translationFr": "Cette maison elle-même est très belle.",
         "translationEn": "This house itself is very beautiful."
       },
       {
         "chinese": "他本身是一个好学生。",
-        "pinyin": "tā běnshēn shì yígè hào xuéshēng。",
+        "pinyin": "tā běnshēn shì yígè hǎo xuéshēng",
         "translationFr": "Il lui-même est un bon étudiant.",
         "translationEn": "He himself is a good student."
       }
@@ -2611,13 +2611,13 @@
     "examples": [
       {
         "chinese": "他来自本土。",
-        "pinyin": "tā láizì běntǔ。",
+        "pinyin": "tā láizì běntǔ",
         "translationFr": "Il vient de son pays natal.",
         "translationEn": "He comes from his homeland."
       },
       {
         "chinese": "我的家乡在本土。",
-        "pinyin": "wǒ de jiāxiāng zài běntǔ。",
+        "pinyin": "wǒ de jiāxiāng zài běntǔ",
         "translationFr": "Ma ville natale est dans mon pays natal.",
         "translationEn": "My hometown is in my native land."
       }
@@ -2666,13 +2666,13 @@
     "examples": [
       {
         "chinese": "门要关上。",
-        "pinyin": "mén yào guānshàng。",
+        "pinyin": "ményào guānshàng",
         "translationFr": "La porte doit être fermée.",
         "translationEn": "The door should be closed."
       },
       {
         "chinese": "把书合上。",
-        "pinyin": "bǎ shū hé shàng。",
+        "pinyin": "bǎ shūhé shàng",
         "translationFr": "Ferme le livre.",
         "translationEn": "Close the book."
       }
@@ -2733,7 +2733,7 @@
       },
       {
         "chinese": "避而不谈",
-        "pinyin": "bìérbùtán",
+        "pinyin": "bì ér bù tán",
         "translationFr": "Éviter d'en parler",
         "translationEn": "Avoid talking about it"
       }
@@ -2780,13 +2780,13 @@
     "examples": [
       {
         "chinese": "他逼我跟他一起去。",
-        "pinyin": "tā bī wǒ gēn tā yìqǐ qù。",
+        "pinyin": "tā bī wǒ gēn tā yìqǐ qù",
         "translationFr": "Il m'a forcé à l'accompagner avec lui.",
         "translationEn": "He forced me to go with him."
       },
       {
         "chinese": "她逼我把秘密说出来。",
-        "pinyin": "tā bī wǒ bǎ mìmì shuō chūlái。",
+        "pinyin": "tā bī wǒ bǎ mìmì shuō chūlái",
         "translationFr": "Elle m'a obligé à avouer le secret.",
         "translationEn": "She made me confess the secret."
       }
@@ -2849,7 +2849,7 @@
       },
       {
         "chinese": "编写教材",
-        "pinyin": "biānxiějiàocái",
+        "pinyin": "biān xiě jiào cái",
         "translationFr": "Rédiger un manuel",
         "translationEn": "Write teaching materials"
       }
@@ -2896,13 +2896,13 @@
     "examples": [
       {
         "chinese": "花遍地开。",
-        "pinyin": "huā biàndì kāi。",
+        "pinyin": "huā biàndì kāi",
         "translationFr": "Les fleurs sont partout dans le jardin.",
         "translationEn": "Flowers are everywhere in the garden."
       },
       {
         "chinese": "病毒遍地传播。",
-        "pinyin": "bìngdú biàndì chuánbō。",
+        "pinyin": "bìngdú biàndì chuánbō",
         "translationFr": "Le virus se propage partout.",
         "translationEn": "The virus spreads everywhere."
       }
@@ -3064,7 +3064,7 @@
     "examples": [
       {
         "chinese": "编写教材",
-        "pinyin": "biānxiějiàocái",
+        "pinyin": "biān xiě jiào cái",
         "translationFr": "Rédiger un manuel",
         "translationEn": "Write teaching materials"
       },
@@ -3076,7 +3076,7 @@
       },
       {
         "chinese": "编写程序",
-        "pinyin": "biānxiěchéngxù",
+        "pinyin": "biān xiě chéng xù",
         "translationFr": "Écrire un programme",
         "translationEn": "Write a program"
       }
@@ -3180,7 +3180,7 @@
     "examples": [
       {
         "chinese": "打个比方",
-        "pinyin": "dǎgèbǐfāng",
+        "pinyin": "dǎ gè bǐ fāng",
         "translationFr": "Donner un exemple",
         "translationEn": "Give an example"
       },
@@ -3192,7 +3192,7 @@
       },
       {
         "chinese": "举个比方",
-        "pinyin": "jǔ gè bǐfāng",
+        "pinyin": "jǔgè bǐfāng",
         "translationFr": "Prendre un exemple",
         "translationEn": "Take an example"
       }
@@ -3296,19 +3296,19 @@
     "examples": [
       {
         "chinese": "病毒感染",
-        "pinyin": "bìngdúgǎnrǎn",
+        "pinyin": "bìng dú gǎn rǎn",
         "translationFr": "infection virale",
         "translationEn": "Viral infection"
       },
       {
         "chinese": "电脑病毒",
-        "pinyin": "diànnǎobìngdú",
+        "pinyin": "diàn nǎo bìng dú",
         "translationFr": "virus informatique",
         "translationEn": "Computer virus"
       },
       {
         "chinese": "病毒传播",
-        "pinyin": "bìngdúchuánbō",
+        "pinyin": "bìng dú chuán bō",
         "translationFr": "传播病毒",
         "translationEn": "Spread viruses"
       }
@@ -3353,7 +3353,7 @@
     "examples": [
       {
         "chinese": "必修课程",
-        "pinyin": "bìxiūkèchéng",
+        "pinyin": "bì xiū kè chéng",
         "translationFr": "Cours obligatoire",
         "translationEn": "Compulsory course"
       },
@@ -3576,19 +3576,19 @@
     "examples": [
       {
         "chinese": "薄弱环节",
-        "pinyin": "bóruòhuánjié",
+        "pinyin": "bó ruò huán jié",
         "translationFr": "Maillon faible",
         "translationEn": "Weak link"
       },
       {
         "chinese": "基础薄弱",
-        "pinyin": "jīchǔbóruò",
+        "pinyin": "jī chǔ bó ruò",
         "translationFr": "Bases fragiles",
         "translationEn": "Weak foundation"
       },
       {
         "chinese": "力量薄弱",
-        "pinyin": "lìliàngbóruò",
+        "pinyin": "lì liàng bó ruò",
         "translationFr": "Force insuffisante",
         "translationEn": "Insufficient strength"
       }
@@ -3750,7 +3750,7 @@
     "examples": [
       {
         "chinese": "一块布",
-        "pinyin": "yíkuài bù",
+        "pinyin": "yīkuài bù",
         "translationFr": "Un morceau de tissu",
         "translationEn": "A piece of cloth"
       },
@@ -3808,7 +3808,7 @@
     "examples": [
       {
         "chinese": "补衣服",
-        "pinyin": "bǔ yīfu",
+        "pinyin": "bǔ yīfú",
         "translationFr": "Raccommoder un vêtement",
         "translationEn": "Mend clothes"
       },
@@ -3866,13 +3866,13 @@
     "examples": [
       {
         "chinese": "我捕了一条鱼。",
-        "pinyin": "wǒ bǔ le yìtiáo yú。",
+        "pinyin": "wǒbǔ le yītiáo yú",
         "translationFr": "J'ai capturé un poisson.",
         "translationEn": "I caught a fish"
       },
       {
         "chinese": "他试图捕获这个目标。",
-        "pinyin": "tā shìtú bǔhuò zhège mùbiāo。",
+        "pinyin": "tā shìtú bǔhuò zhège mùbiāo",
         "translationFr": "Il a essayé de capturer cet objectif.",
         "translationEn": "He tried to capture this target"
       }
@@ -3922,19 +3922,19 @@
     "examples": [
       {
         "chinese": "他变得不耐烦了",
-        "pinyin": "tā biànde búnàifán le",
+        "pinyin": "tā biàndé bùnàifán le",
         "translationFr": "Il est devenu impatient",
         "translationEn": "He became impatient"
       },
       {
         "chinese": "不耐烦地等着",
-        "pinyin": "búnàifán dì děng zhe",
+        "pinyin": "bùnàifán dì děng zhe",
         "translationFr": "Attendre avec impatience",
         "translationEn": "Waiting impatiently"
       },
       {
         "chinese": "表现出不耐烦",
-        "pinyin": "biǎoxiàn chū búnàifán",
+        "pinyin": "biǎoxiàn chū bùnàifán",
         "translationFr": "Montrer de l'impatience",
         "translationEn": "Show impatience"
       }
@@ -3986,13 +3986,13 @@
       },
       {
         "chinese": "心里不安",
-        "pinyin": "xīnlǐbùān",
+        "pinyin": "xīn lǐ bù ān",
         "translationFr": "Avoir le cœur inquiet",
         "translationEn": "Have an unsettled heart"
       },
       {
         "chinese": "坐立不安",
-        "pinyin": "zuòlìbùān",
+        "pinyin": "zuò lì bù ān",
         "translationFr": "Ne pas tenir en place",
         "translationEn": "Be unable to sit still"
       }
@@ -4038,7 +4038,7 @@
     "examples": [
       {
         "chinese": "不曾见过",
-        "pinyin": "bùcéng jiàn guò",
+        "pinyin": "bùcéng jiànguò",
         "translationFr": "N'avoir jamais vu",
         "translationEn": "Never seen before"
       },
@@ -4156,13 +4156,13 @@
     "examples": [
       {
         "chinese": "这个计划不成立。",
-        "pinyin": "zhège jìhuà bù chénglì。",
+        "pinyin": "zhège jìhuà bù chénglì",
         "translationFr": "Ce plan ne aboutira à aucun résultat.",
         "translationEn": "This plan will not succeed"
       },
       {
         "chinese": "他不成功。",
-        "pinyin": "tā bù chénggōng。",
+        "pinyin": "tā bù chénggōng",
         "translationFr": "Il ne réussira pas.",
         "translationEn": "He will not succeed"
       }
@@ -4215,7 +4215,7 @@
       },
       {
         "chinese": "不得了",
-        "pinyin": "bùdéliǎo",
+        "pinyin": "bùdéle",
         "translationFr": "Incroyable; terrible",
         "translationEn": "Unbelievable; terrible"
       },
@@ -4268,13 +4268,13 @@
     "examples": [
       {
         "chinese": "我们是部队。",
-        "pinyin": "wǒmen shì bùduì.",
+        "pinyin": "wǒmen shì bùduì",
         "translationFr": "Nous sommes une unité militaire.",
         "translationEn": "Cotton fabric"
       },
       {
         "chinese": "他们属于不同的部队。",
-        "pinyin": "tāmen shǔyú bùtóng de bùduì.",
+        "pinyin": "tāmen shǔyú bùtóng de bùduì",
         "translationFr": "Ils appartiennent à différentes unités militaires.",
         "translationEn": "They belong to different units"
       }
@@ -4321,19 +4321,19 @@
     "examples": [
       {
         "chinese": "不顾危险",
-        "pinyin": "búgù wēixiǎn",
+        "pinyin": "bùgù wēixiǎn",
         "translationFr": "Sans se soucier du danger",
         "translationEn": "Without regard for danger"
       },
       {
         "chinese": "不顾一切",
-        "pinyin": "búgùyíqiè",
+        "pinyin": "bù gù yī qiè",
         "translationFr": "Sans se soucier de rien",
         "translationEn": "Without regard for anything"
       },
       {
         "chinese": "不顾后果",
-        "pinyin": "búgùhòuguǒ",
+        "pinyin": "bù gù hòu guǒ",
         "translationFr": "Sans se soucier des conséquences",
         "translationEn": "Without considering the consequences"
       }
@@ -4380,13 +4380,13 @@
     "examples": [
       {
         "chinese": "看到漂亮的裙子就不禁想要买。",
-        "pinyin": "kàndào piàoliang de qúnzǐ jiù bùjīn xiǎngyào mǎi。",
+        "pinyin": "kàndào piàoliàng de qúnzi jiù bùjīn xiǎngyào mǎi",
         "translationFr": "En voyant une robe belle, on ne peut s'empêcher d'en vouloir acheter.",
         "translationEn": "Can't help but want to buy it"
       },
       {
         "chinese": "听到这首歌就不禁想起过去。",
-        "pinyin": "tīngdào zhè shǒugē jiù bùjīn xiǎngqǐ guòqù。",
+        "pinyin": "tīngdào zhè shǒugē jiù bùjīn xiǎngqǐ guòqù",
         "translationFr": "En entendant cette chanson, on ne peut s'empêcher de penser au passé.",
         "translationEn": "Hearing this song can't help but make one think of the past."
       }
@@ -4432,13 +4432,13 @@
     "examples": [
       {
         "chinese": "补课是因为生病错过了上周的数学课。",
-        "pinyin": "bǔkè shìyīnwéi shēngbìng cuòguò le shàngzhōu de shùxuékè。",
+        "pinyin": "bǔkè shìyīnwèi shēngbìng cuòguò le shàngzhōu de shùxuékè",
         "translationFr": "La raison d'aller en cours supplémentaire était qu'il avait manqué la mathématiques de la semaine précédente à cause de maladie.",
         "translationEn": "The reason for extra classes was missing last week's math class due to illness."
       },
       {
         "chinese": "为了赶上进度，我们需要补课。",
-        "pinyin": "wèile gǎnshàng jìndù， wǒmen xūyào bǔkè。",
+        "pinyin": "wèile gǎnshàng jìndù wǒmen xūyào bǔkè",
         "translationFr": "Pour rattraper notre avancement, nous avons besoin de reprendre des cours.",
         "translationEn": "To catch up with our progress, we need extra classes."
       }
@@ -4484,13 +4484,13 @@
     "examples": [
       {
         "chinese": "不料他会来。",
-        "pinyin": "búliào tā huì lái.",
+        "pinyin": "bùliào tāhuìlái",
         "translationFr": "Il est venu, ce qui m'a surpris.",
         "translationEn": "To my surprise, he came."
       },
       {
         "chinese": "不料这场雨下了一整天。",
-        "pinyin": "búliào zhèchǎng yǔ xià le yìzhěngtiān.",
+        "pinyin": "bùliào zhèchǎng yǔxià le yīzhěngtiān",
         "translationFr": "Il a plu pendant toute la journée, ce qui est surprenant.",
         "translationEn": "It rained all day, which is surprising."
       }
@@ -4539,19 +4539,19 @@
     "examples": [
       {
         "chinese": "身体不适",
-        "pinyin": "shēntǐ búshì",
+        "pinyin": "shēntǐ bùshì",
         "translationFr": "Se sentir indisposé",
         "translationEn": "Feeling unwell physically."
       },
       {
         "chinese": "感到不适",
-        "pinyin": "gǎndào búshì",
+        "pinyin": "gǎndào bùshì",
         "translationFr": "Ressentir un malaise",
         "translationEn": "Feeling uncomfortable."
       },
       {
         "chinese": "胃部不适",
-        "pinyin": "wèibùbúshì",
+        "pinyin": "wèi bù bù shì",
         "translationFr": "Inconfort gastrique",
         "translationEn": "Stomach discomfort."
       }
@@ -4726,7 +4726,7 @@
       },
       {
         "chinese": "关键部位",
-        "pinyin": "guānjiànbùwèi",
+        "pinyin": "guān jiàn bù wèi",
         "translationFr": "Zone critique",
         "translationEn": "Critical area."
       }
@@ -4772,13 +4772,13 @@
     "examples": [
       {
         "chinese": "我的儿子在补习数学。",
-        "pinyin": "wǒ de érzi zài bǔxí shùxué。",
+        "pinyin": "wǒ de érzi zài bǔxí shùxué",
         "translationFr": "Mon fils suit des cours supplémentaires en mathématiques.",
         "translationEn": "My son is having extra math lessons."
       },
       {
         "chinese": "她每天晚上都去补习英语。",
-        "pinyin": "tā měitiānwǎnshàng dōu qù bǔxí yīngyǔ。",
+        "pinyin": "tā měi tiān wǎn shàng dōu qù bǔxí yīngyǔ",
         "translationFr": "Elle va prendre des cours supplémentaires en anglais tous les soirs.",
         "translationEn": "She goes for extra English classes every evening."
       }
@@ -4880,7 +4880,7 @@
     "examples": [
       {
         "chinese": "不宜过多",
-        "pinyin": "bùyí guò duō",
+        "pinyin": "bùyí guòduō",
         "translationFr": "Il ne convient pas d'en avoir trop",
         "translationEn": "It's not advisable to have too much of it."
       },
@@ -4938,19 +4938,19 @@
     "examples": [
       {
         "chinese": "激动不已",
-        "pinyin": "jīdòngbùyǐ",
+        "pinyin": "jī dòng bù yǐ",
         "translationFr": "Être très ému",
         "translationEn": "Very excited."
       },
       {
         "chinese": "惊叹不已",
-        "pinyin": "jīngtànbùyǐ",
+        "pinyin": "jīng tàn bù yǐ",
         "translationFr": "Être émerveillé sans fin",
         "translationEn": "Extremely amazed without end."
       },
       {
         "chinese": "感慨不已",
-        "pinyin": "gǎnkǎibùyǐ",
+        "pinyin": "gǎn kǎi bù yǐ",
         "translationFr": "Être profondément ému",
         "translationEn": "Deeply moved without end."
       }
@@ -5008,7 +5008,7 @@
       },
       {
         "chinese": "布置任务",
-        "pinyin": "bùzhìrènwu",
+        "pinyin": "bù zhì rèn wù",
         "translationFr": "Assigner des tâches",
         "translationEn": "Assign tasks"
       }
@@ -5054,7 +5054,7 @@
     "examples": [
       {
         "chinese": "不止一次",
-        "pinyin": "bùzhǐyícì",
+        "pinyin": "bù zhǐ yī cì",
         "translationFr": "Plus d'une fois",
         "translationEn": "More than once"
       },
@@ -5112,13 +5112,13 @@
     "examples": [
       {
         "chinese": "他不会至于那样做。",
-        "pinyin": "tā búhuì zhìyú nàyàng zuò。",
+        "pinyin": "tā búhuì zhìyú nàyàng zuò",
         "translationFr": "Il ne va pas jusqu'à faire cela.",
         "translationEn": "He won't go that far"
       },
       {
         "chinese": "这个问题不至于影响我们的合作。",
-        "pinyin": "zhège wèntí búzhìyú yǐngxiǎng wǒmen de hézuò。",
+        "pinyin": "zhège wèntí bùzhìyú yǐngxiǎng wǒmen de hézuò",
         "translationFr": "Ce problème ne va pas si loin qu'à affecter notre collaboration.",
         "translationEn": "This issue won't affect our cooperation so much"
       }
@@ -5164,7 +5164,7 @@
     "examples": [
       {
         "chinese": "操作步骤",
-        "pinyin": "cāozuòbùzhòu",
+        "pinyin": "cāo zuò bù zhòu",
         "translationFr": "étapes d'action",
         "translationEn": "Operation steps"
       },
@@ -5176,7 +5176,7 @@
       },
       {
         "chinese": "具体步骤",
-        "pinyin": "jùtǐbùzhòu",
+        "pinyin": "jù tǐ bù zhòu",
         "translationFr": "étapes précises",
         "translationEn": "Specific steps"
       }
@@ -5221,13 +5221,13 @@
     "examples": [
       {
         "chinese": "他踩了按钮。",
-        "pinyin": "tā cǎi le ànniǔ。",
+        "pinyin": "tā cǎi le ànniǔ",
         "translationFr": "Il a appuyé sur le bouton.",
         "translationEn": "He pressed the button"
       },
       {
         "chinese": "她踩着自行车前进。",
-        "pinyin": "tā cǎi zhe zìxíngchē qiánjìn。",
+        "pinyin": "tā cǎi zhe zìxíngchē qiánjìn",
         "translationFr": "Elle pédale en avançant.",
         "translationEn": "She pedals forward"
       }
@@ -5275,7 +5275,7 @@
     "examples": [
       {
         "chinese": "我猜测他会来",
-        "pinyin": "wǒ cāicè tā huì lái",
+        "pinyin": "wǒ cāicè tāhuìlái",
         "translationFr": "Je suppose qu'il viendra",
         "translationEn": "I suppose he will come"
       },
@@ -5333,7 +5333,7 @@
     "examples": [
       {
         "chinese": "个人财产",
-        "pinyin": "gèréncáichǎn",
+        "pinyin": "gè rén cái chǎn",
         "translationFr": "Propriété personnelle",
         "translationEn": "Personal property"
       },
@@ -5397,7 +5397,7 @@
       },
       {
         "chinese": "精神财富",
-        "pinyin": "jīngshéncáifù",
+        "pinyin": "jīng shén cái fù",
         "translationFr": "Richesse spirituelle",
         "translationEn": "Spiritual wealth"
       },
@@ -5514,7 +5514,7 @@
       },
       {
         "chinese": "雨后的彩虹",
-        "pinyin": "yǔ hòu de cǎihóng",
+        "pinyin": "yǔhòu de cǎihóng",
         "translationFr": "Arc-en-ciel après la pluie",
         "translationEn": "Rainbow after rain"
       },
@@ -5578,7 +5578,7 @@
       },
       {
         "chinese": "才华横溢",
-        "pinyin": "cáihuáhéngyì",
+        "pinyin": "cái huá héng yì",
         "translationFr": "Débordant de talent",
         "translationEn": "Overflowing with talent"
       }
@@ -5683,13 +5683,13 @@
     "examples": [
       {
         "chinese": "采纳你的建议。",
-        "pinyin": "cǎinà nǐ de jiànyì。",
+        "pinyin": "cǎinà nǐ de jiànyì",
         "translationFr": "Accepter votre suggestion.",
         "translationEn": "Adopt your suggestion"
       },
       {
         "chinese": "我们采纳了他的意见。",
-        "pinyin": "wǒmen cǎinà le tā de yìjiàn。",
+        "pinyin": "wǒmen cǎinà le tā de yìjiàn",
         "translationFr": "Nous avons accepté son opinion.",
         "translationEn": "We adopted his opinion"
       }
@@ -5852,19 +5852,19 @@
     "examples": [
       {
         "chinese": "财务部门",
-        "pinyin": "cáiwùbùmén",
+        "pinyin": "cái wù bù mén",
         "translationFr": "département financier",
         "translationEn": "Finance department"
       },
       {
         "chinese": "财务报告",
-        "pinyin": "cáiwùbàogào",
+        "pinyin": "cái wù bào gào",
         "translationFr": "rapport financier",
         "translationEn": "Financial report"
       },
       {
         "chinese": "财务管理",
-        "pinyin": "cáiwùguǎnlǐ",
+        "pinyin": "cái wù guǎn lǐ",
         "translationFr": "gouvernance financière",
         "translationEn": "Financial management"
       }
@@ -6025,13 +6025,13 @@
     "examples": [
       {
         "chinese": "仓库里有很多货物。",
-        "pinyin": "cāngkù lǐ yǒu hěnduō huòwù。",
+        "pinyin": "cāngkù lǐ yǒu hěnduō huòwù",
         "translationFr": "L'entrepôt contient de nombreux produits.",
         "translationEn": "The warehouse contains many goods"
       },
       {
         "chinese": "我们需要扩建仓库来储存更多商品。",
-        "pinyin": "wǒmen xūyào kuòjiàn cāngkù lái chǔcún gèng duō shāngpǐn。",
+        "pinyin": "wǒmen xūyào kuòjiàn cāngkù lái chǔcún gèng duō shāngpǐn",
         "translationFr": "Nous devons agrandir l'entrepôt pour stocker plus de marchandises.",
         "translationEn": "We need to expand the warehouse to store more products"
       }
@@ -6083,7 +6083,7 @@
       },
       {
         "chinese": "他有残疾。",
-        "pinyin": "tā yǒu cánjí。",
+        "pinyin": "tā yǒu cánjí",
         "translationFr": "Il a un handicap.",
         "translationEn": "He has a disability"
       }
@@ -6135,7 +6135,7 @@
       },
       {
         "chinese": "我们将参展。",
-        "pinyin": "wǒmen jiāng cānzhǎn。",
+        "pinyin": "wǒmen jiāng cānzhǎn",
         "translationFr": "Nous participerons à l'exposition.",
         "translationEn": "We will participate in the exhibition"
       }
@@ -6187,7 +6187,7 @@
       },
       {
         "chinese": "内蒙古草原",
-        "pinyin": "nèiměnggǔcǎoyuán",
+        "pinyin": "nèi méng gǔ cǎo yuán",
         "translationFr": "Prairie de Mongolie intérieure",
         "translationEn": "Inner Mongolia grassland"
       },
@@ -6303,7 +6303,7 @@
       },
       {
         "chinese": "策划一次成功的营销活动",
-        "pinyin": "cèhuà yícì chénggōng de yíngxiāo huódòng",
+        "pinyin": "cèhuà yīcì chénggōng de yíngxiāo huódòng",
         "translationFr": "筹划一次成功的营销活动",
         "translationEn": "Plan a successful marketing event"
       }
@@ -6410,13 +6410,13 @@
     "examples": [
       {
         "chinese": "他的策略是先建立市场基础。",
-        "pinyin": "tā de cèlüè shì xiān jiànlì shìchǎng jīchǔ。",
+        "pinyin": "tā de cèlüè shì xiān jiànlì shìchǎng jīchǔ",
         "translationFr": "Sa stratégie consiste à d'abord établir une base de marché.",
         "translationEn": "His strategy is to first establish market foundations."
       },
       {
         "chinese": "他们使用了正确的战术来赢得比赛。",
-        "pinyin": "tāmen shǐyòng le zhèngquè de zhànshù lái yíngdé bǐsài。",
+        "pinyin": "tāmen shǐyòng le zhèngquè de zhànshù lái yíngdé bǐsài",
         "translationFr": "Ils ont utilisé des tactiques appropriées pour gagner la partie.",
         "translationEn": "They used appropriate tactics to win the game."
       }
@@ -6459,7 +6459,7 @@
     "examples": [
       {
         "chinese": "层次分明",
-        "pinyin": "céngcìfēnmíng",
+        "pinyin": "céng cì fēn míng",
         "translationFr": "Niveaux bien distincts",
         "translationEn": "Distinct levels"
       },
@@ -6575,7 +6575,7 @@
       },
       {
         "chinese": "一把叉子",
-        "pinyin": "yìbǎ chāzi",
+        "pinyin": "yībǎ chāzi",
         "translationFr": "Une fourchette",
         "translationEn": "A fork"
       },
@@ -6973,13 +6973,13 @@
     "examples": [
       {
         "chinese": "这个计划有长短。",
-        "pinyin": "zhège jìhuà yǒu chángduǎn。",
+        "pinyin": "zhège jìhuà yǒu chángduǎn",
         "translationFr": "Ce plan a des avantages et des inconvénients.",
         "translationEn": "This plan has pros and cons"
       },
       {
         "chinese": "他做事很长短。",
-        "pinyin": "tā zuòshì hěn chángduǎn。",
+        "pinyin": "tā zuòshì hěn chángduǎn",
         "translationFr": "Il agit de manière imprudente, sans tenir compte des avantages et des inconvénients.",
         "translationEn": "He acts recklessly, without considering advantages and disadvantages"
       }
@@ -7028,13 +7028,13 @@
     "examples": [
       {
         "chinese": "这是一个体育馆。",
-        "pinyin": "zhè shì yígè tǐyùguǎn。",
+        "pinyin": "zhèshì yígè tǐyùguǎn",
         "translationFr": "C'est un gymnase.",
         "translationEn": "It is a gymnasium"
       },
       {
         "chinese": "学校有一个游泳池。",
-        "pinyin": "xuéxiào yǒu yígè yóuyǒngchí。",
+        "pinyin": "xuéxiào yǒu yígè yóuyǒngchí",
         "translationFr": "L'école a une piscine.",
         "translationEn": "The school has a swimming pool"
       }
@@ -7196,19 +7196,19 @@
     "examples": [
       {
         "chinese": "厂家直销",
-        "pinyin": "chǎngjiāzhíxiāo",
+        "pinyin": "chǎng jiā zhí xiāo",
         "translationFr": "Vente directe du fabricant",
         "translationEn": "Factory direct sales"
       },
       {
         "chinese": "生产厂家",
-        "pinyin": "shēngchǎnchǎngjiā",
+        "pinyin": "shēng chǎn chǎng jiā",
         "translationFr": "Fabricant",
         "translationEn": "Manufacturers"
       },
       {
         "chinese": "厂家供货",
-        "pinyin": "chǎngjiā gònghuò",
+        "pinyin": "chǎngjiā gōnghuò",
         "translationFr": "Fourniture par le fabricant",
         "translationEn": "Factory supply"
       }
@@ -7254,13 +7254,13 @@
     "examples": [
       {
         "chinese": "场景布置得很好。",
-        "pinyin": "chǎngjǐng bùzhì dé hěn hǎo。",
+        "pinyin": "chǎngjǐng bùzhì dé hěn hǎo",
         "translationFr": "Le cadre est bien mis en place.",
         "translationEn": "The scene was well set up"
       },
       {
         "chinese": "他们讨论了新的市场场景。",
-        "pinyin": "tāmen tǎolùn le xīn de shìchǎng chǎngjǐng。",
+        "pinyin": "tāmen tǎolùn le xīn de shìchǎng chǎngjǐng",
         "translationFr": "Ils ont discuté des nouveaux contextes sur les marchés.",
         "translationEn": "They discussed new market scenarios"
       }
@@ -7373,7 +7373,7 @@
       },
       {
         "chinese": "他们常年来往于两国之间。",
-        "pinyin": "tāmen chángnián láiwǎng yú liǎngguózhījiān。",
+        "pinyin": "tāmen chángnián láiwǎng yú liǎng guó zhī jiān",
         "translationFr": "Ils se rendent régulièrement entre les deux pays toute l'année.",
         "translationEn": "They frequently travel between the two countries throughout the year"
       }
@@ -7419,13 +7419,13 @@
     "examples": [
       {
         "chinese": "厂商生产汽车。",
-        "pinyin": "chǎngshāng shēngchǎn qìchē。",
+        "pinyin": "chǎngshāng shēngchǎn qìchē",
         "translationFr": "Le fabricant produit des voitures.",
         "translationEn": "The manufacturer produces cars"
       },
       {
         "chinese": "这家厂商专门制造家具。",
-        "pinyin": "zhèjiā chǎngshāng zhuānmén zhìzào jiājù。",
+        "pinyin": "zhèjiā chǎngshāng zhuānmén zhìzào jiājù",
         "translationFr": "Cette entreprise de fabrication spécialise la production de meubles.",
         "translationEn": "This company specializes in furniture production"
       }
@@ -7473,7 +7473,7 @@
     "examples": [
       {
         "chinese": "健康长寿",
-        "pinyin": "jiànkāngchángshòu",
+        "pinyin": "jiàn kāng cháng shòu",
         "translationFr": "Santé et longévité",
         "translationEn": "Health and longevity"
       },
@@ -7485,7 +7485,7 @@
       },
       {
         "chinese": "祝您长寿",
-        "pinyin": "zhùnínchángshòu",
+        "pinyin": "zhù nín cháng shòu",
         "translationFr": "Je vous souhaite longue vie",
         "translationEn": "Wishing you a long life"
       }
@@ -7532,13 +7532,13 @@
     "examples": [
       {
         "chinese": "道路畅通。",
-        "pinyin": "dàolù chàngtōng。",
+        "pinyin": "dàolù chàngtōng",
         "translationFr": "La circulation est fluide.",
         "translationEn": "The road is well-connected"
       },
       {
         "chinese": "交流畅通无阻。",
-        "pinyin": "jiāoliú chàngtōngwúzǔ。",
+        "pinyin": "jiāoliú chàng tōng wú zǔ",
         "translationFr": "L'échange se fait sans entrave.",
         "translationEn": "Communication flows freely without hindrance"
       }
@@ -7819,13 +7819,13 @@
     "examples": [
       {
         "chinese": "他在股市里炒股票。",
-        "pinyin": "tā zài gǔshì lǐ chǎogǔpiào。",
+        "pinyin": "tā zài gǔshì lǐ chǎogǔpiào",
         "translationFr": "Il spéculait sur les actions sur le marché boursier.",
         "translationEn": "He was speculating in the stock market"
       },
       {
         "chinese": "她喜欢炒股，但不太了解市场。",
-        "pinyin": "tā xǐhuan chǎogǔ， dàn bú tài liǎojiě shìchǎng。",
+        "pinyin": "tā xǐhuān chǎogǔ dàn bù tài liǎojiě shìchǎng",
         "translationFr": "Elle aimait spéculer sur les actions, mais ne connaissait pas bien le marché.",
         "translationEn": "She enjoyed trading stocks but didn't understand the market well"
       }
@@ -8101,7 +8101,7 @@
     "examples": [
       {
         "chinese": "超越自我",
-        "pinyin": "chāoyuèzìwǒ",
+        "pinyin": "chāo yuè zì wǒ",
         "translationFr": "Se dépasser soi-même",
         "translationEn": "Exceed oneself"
       },
@@ -8217,13 +8217,13 @@
     "examples": [
       {
         "chinese": "他们的想法有很大的差异。",
-        "pinyin": "tāmen de xiǎngfǎ yǒu hěndà de chāyì。",
+        "pinyin": "tāmen de xiǎngfǎ yǒu hěndà de chāyì",
         "translationFr": "Ils ont de grandes différences d'idées.",
         "translationEn": "Their ideas are quite different."
       },
       {
         "chinese": "这两本书在内容上有些差异。",
-        "pinyin": "zhè liǎngběnshū zài nèiróng shàng yǒuxiē chāyì。",
+        "pinyin": "zhè liǎngběnshū zài nèiróng shàng yǒuxiē chāyì",
         "translationFr": "Ces deux livres ont quelques disparités en matière de contenu.",
         "translationEn": "These two books have some differences in content."
       }
@@ -8271,13 +8271,13 @@
     "examples": [
       {
         "chinese": "电源插座",
-        "pinyin": "diànyuánchāzuò",
+        "pinyin": "diàn yuán chā zuò",
         "translationFr": "Prise de courant",
         "translationEn": "Electric socket"
       },
       {
         "chinese": "找个插座",
-        "pinyin": "zhǎo gè chāzuò",
+        "pinyin": "zhǎogè chāzuò",
         "translationFr": "Trouver une prise",
         "translationEn": "Find a socket"
       },
@@ -8399,7 +8399,7 @@
       },
       {
         "chinese": "趁热打铁",
-        "pinyin": "chènrèdǎtiě",
+        "pinyin": "chèn rè dǎ tiě",
         "translationFr": "Battre le fer tant qu'il est chaud",
         "translationEn": "Strike while the iron is hot"
       }
@@ -8446,13 +8446,13 @@
     "examples": [
       {
         "chinese": "他成功地完成了任务。",
-        "pinyin": "tā chénggōng dì wánchéng le rènwu。",
+        "pinyin": "tā chénggōng dì wánchéng le rènwù",
         "translationFr": "Il a réussi à terminer la tâche.",
         "translationEn": "He successfully completed the task."
       },
       {
         "chinese": "这个计划最终取得了成功。",
-        "pinyin": "zhège jìhuà zuìzhōng qǔdé le chénggōng。",
+        "pinyin": "zhège jìhuà zuìzhōng qǔdé le chénggōng",
         "translationFr": "Ce plan a finalement réussi.",
         "translationEn": "This plan ultimately succeeded."
       }
@@ -8548,19 +8548,19 @@
     "examples": [
       {
         "chinese": "盛饭",
-        "pinyin": "shèngfàn",
+        "pinyin": "chéngfàn",
         "translationFr": "Servir du riz",
         "translationEn": "To serve rice"
       },
       {
         "chinese": "盛汤",
-        "pinyin": "shèng tāng",
+        "pinyin": "shèngtāng",
         "translationFr": "Servir de la soupe",
         "translationEn": "To serve soup"
       },
       {
         "chinese": "盛满了水",
-        "pinyin": "shèng mǎn le shuǐ",
+        "pinyin": "shèngmǎn le shuǐ",
         "translationFr": "Rempli d'eau",
         "translationEn": "Full of water"
       }
@@ -8607,13 +8607,13 @@
     "examples": [
       {
         "chinese": "桌子腿撑起来了。",
-        "pinyin": "zhuōzi tuǐ chēngqǐlái le。",
+        "pinyin": "zhuōzi tuǐ chēngqǐlái le",
         "translationFr": "Les jambes de la table se sont relevées.",
         "translationEn": "The table legs stood up."
       },
       {
         "chinese": "他撑起了伞来遮挡阳光。",
-        "pinyin": "tā chēngqǐ le sǎn lái zhēdǎng yángguāng。",
+        "pinyin": "tā chēngqǐ le sǎn lái zhēdǎng yángguāng",
         "translationFr": "Il a ouvert l'parapluie pour se protéger du soleil.",
         "translationEn": "He opened the umbrella to shield from the sun."
       }
@@ -8785,7 +8785,7 @@
       },
       {
         "chinese": "荣誉称号",
-        "pinyin": "róngyùchēnghào",
+        "pinyin": "róng yù chēng hào",
         "translationFr": "Titre honorifique",
         "translationEn": "Honorific title"
       },
@@ -8837,19 +8837,19 @@
     "examples": [
       {
         "chinese": "怎么称呼",
-        "pinyin": "zěnme chēnghu",
+        "pinyin": "zěnme chēnghū",
         "translationFr": "Comment vous appelez-vous",
         "translationEn": "How should I address you?"
       },
       {
         "chinese": "称呼他为老师",
-        "pinyin": "chēnghu tā wèi lǎoshī",
+        "pinyin": "chēnghū tā wèi lǎoshī",
         "translationFr": "L'appeler professeur",
         "translationEn": "Call him teacher"
       },
       {
         "chinese": "亲切的称呼",
-        "pinyin": "qīnqiè de chēnghu",
+        "pinyin": "qīnqiè de chēnghū",
         "translationFr": "Appellation affectueuse",
         "translationEn": "affectionate title"
       }
@@ -8908,7 +8908,7 @@
       },
       {
         "chinese": "成交量",
-        "pinyin": "chéngjiāoliáng",
+        "pinyin": "chéngjiāoliàng",
         "translationFr": "Volume de transactions",
         "translationEn": "volume of transactions"
       }
@@ -8956,13 +8956,13 @@
     "examples": [
       {
         "chinese": "我们承诺提供最好的服务。",
-        "pinyin": "wǒmen chéngnuò tígōng zuìhǎo de fúwù。",
+        "pinyin": "wǒmen chéngnuò tígōng zuìhǎo de fúwù",
         "translationFr": "Nous promettons d'offrir le meilleur service.",
         "translationEn": "We promise to provide the best service."
       },
       {
         "chinese": "他承诺会准时到达。",
-        "pinyin": "tā chéngnuò huì zhǔnshídàodá。",
+        "pinyin": "tā chéngnuò huì zhǔn shí dào dá",
         "translationFr": "Il s'est engagé à arriver à l'heure.",
         "translationEn": "He promised to arrive on time."
       }
@@ -9011,19 +9011,19 @@
     "examples": [
       {
         "chinese": "成千上万的人",
-        "pinyin": "chéngqiānshàngwàn de rén",
+        "pinyin": "chéng qiān shàng wàn de rén",
         "translationFr": "Des milliers de personnes",
         "translationEn": "Thousands upon thousands of people"
       },
       {
         "chinese": "成千上万的观众",
-        "pinyin": "chéngqiānshàngwàn de guānzhòng",
+        "pinyin": "chéng qiān shàng wàn de guānzhòng",
         "translationFr": "Des milliers de spectateurs",
         "translationEn": "Thousands upon thousands of spectators"
       },
       {
         "chinese": "成千上万的机会",
-        "pinyin": "chéngqiānshàngwàn de jīhuì",
+        "pinyin": "chéng qiān shàng wàn de jīhuì",
         "translationFr": "D'innombrables opportunités",
         "translationEn": "Thousands upon thousands of opportunities"
       }
@@ -9127,7 +9127,7 @@
     "examples": [
       {
         "chinese": "取得成效",
-        "pinyin": "qǔdéchéngxiào",
+        "pinyin": "qǔ dé chéng xiào",
         "translationFr": "Obtenir des résultats",
         "translationEn": "To achieve results"
       },
@@ -9139,7 +9139,7 @@
       },
       {
         "chinese": "初见成效",
-        "pinyin": "chūjiànchéngxiào",
+        "pinyin": "chū jiàn chéng xiào",
         "translationFr": "Commencer à porter ses fruits",
         "translationEn": "Initial success"
       }
@@ -9191,7 +9191,7 @@
       },
       {
         "chinese": "诚信为本",
-        "pinyin": "chéngxìnwèiběn",
+        "pinyin": "chéng xìn wèi běn",
         "translationFr": "L'honnêteté comme fondement",
         "translationEn": "Honesty as the foundation"
       },
@@ -9249,7 +9249,7 @@
       },
       {
         "chinese": "成语故事",
-        "pinyin": "chéngyǔgùshì",
+        "pinyin": "chéng yǔ gù shì",
         "translationFr": "Histoire d'un proverbe",
         "translationEn": "Idiom stories"
       },
@@ -9302,13 +9302,13 @@
     "examples": [
       {
         "chinese": "这是一个城镇。",
-        "pinyin": "zhè shì yígè chéngzhèn。",
+        "pinyin": "zhèshì yígè chéngzhèn",
         "translationFr": "C'est une petite ville.",
         "translationEn": "This is a town."
       },
       {
         "chinese": "他们住在城镇里。",
-        "pinyin": "tāmen zhù zàichéngzhèn lǐ。",
+        "pinyin": "tāmen zhù zàichéngzhèn lǐ",
         "translationFr": "Ils habitent dans un bourg.",
         "translationEn": "They live in the town."
       }
@@ -9411,7 +9411,7 @@
     "examples": [
       {
         "chinese": "心情沉重",
-        "pinyin": "xīnqíngchénzhòng",
+        "pinyin": "xīn qíng chén zhòng",
         "translationFr": "Avoir le cœur lourd",
         "translationEn": "Heavy-hearted"
       },
@@ -9470,13 +9470,13 @@
     "examples": [
       {
         "chinese": "他撤销了合同。",
-        "pinyin": "tā chèxiāo le hétong。",
+        "pinyin": "tā chèxiāo le hétóng",
         "translationFr": "Il a annulé le contrat.",
         "translationEn": "He canceled the contract."
       },
       {
         "chinese": "我不小心撤销了交易。",
-        "pinyin": "wǒ bù xiǎoxīn chèxiāo le jiāoyì。",
+        "pinyin": "wǒ bù xiǎoxīn chèxiāo le jiāoyì",
         "translationFr": "Je n'ai pas fait attention et j'ai annulé la transaction.",
         "translationEn": "I accidentally canceled the transaction."
       }
@@ -9523,7 +9523,7 @@
     "examples": [
       {
         "chinese": "一把尺",
-        "pinyin": "yìbǎ chǐ",
+        "pinyin": "yībǎ chǐ",
         "translationFr": "Une règle",
         "translationEn": "A ruler"
       },
@@ -9587,7 +9587,7 @@
       },
       {
         "chinese": "量尺寸",
-        "pinyin": "liángchǐcùn",
+        "pinyin": "liàngchǐcùn",
         "translationFr": "Prendre les mesures",
         "translationEn": "Take measurements"
       },
@@ -9697,13 +9697,13 @@
     "examples": [
       {
         "chinese": "我持有这个护照。",
-        "pinyin": "wǒ chíyǒu zhège hùzhào。",
+        "pinyin": "wǒ chíyǒu zhège hùzhào",
         "translationFr": "Je tiens ce passeport.",
         "translationEn": "I hold this passport"
       },
       {
         "chinese": "他持有不同的观点。",
-        "pinyin": "tā chíyǒu bùtóng de guāndiǎn。",
+        "pinyin": "tā chíyǒu bùtóng de guāndiǎn",
         "translationFr": "Il a une opinion différente.",
         "translationEn": "He has a different opinion"
       }
@@ -9753,13 +9753,13 @@
     "examples": [
       {
         "chinese": "他冲向门口。",
-        "pinyin": "tā chōngxiàng ménkǒu。",
+        "pinyin": "tā chōngxiàng ménkǒu",
         "translationFr": "Il s'élança vers la porte.",
         "translationEn": "He rushed towards the door"
       },
       {
         "chinese": "水从管道中冲出来。",
-        "pinyin": "shuǐ cóng guǎndào zhōng chōng chūlái。",
+        "pinyin": "shuǐcóng guǎndào zhōngchōng chūlái",
         "translationFr": "L'eau se précipita du tuyau.",
         "translationEn": "Water gushed out from the pipe"
       }
@@ -9936,7 +9936,7 @@
       },
       {
         "chinese": "他的突然出现对她的计划产生了巨大冲击。",
-        "pinyin": "tā de tūrán chūxiàn duì tā de jìhuà chǎnshēng le jùdà chōngjī。",
+        "pinyin": "tā de tūrán chūxiàn duì tā de jìhuà chǎnshēng le jùdà chōngjī",
         "translationFr": "Sa apparition soudaine a eu un grand impact sur ses plans.",
         "translationEn": "Her sudden appearance had a great impact on her plans"
       }
@@ -10097,7 +10097,7 @@
     "examples": [
       {
         "chinese": "发生冲突",
-        "pinyin": "fāshēngchōngtū",
+        "pinyin": "fā shēng chōng tū",
         "translationFr": "éclater en conflit",
         "translationEn": "Conflict erupted"
       },
@@ -10159,13 +10159,13 @@
       },
       {
         "chinese": "别愁",
-        "pinyin": "bié chóu",
+        "pinyin": "biéchóu",
         "translationFr": "Ne t'inquiète pas",
         "translationEn": "Don't worry"
       },
       {
         "chinese": "愁眉不展",
-        "pinyin": "chóuméibùzhǎn",
+        "pinyin": "chóu méi bù zhǎn",
         "translationFr": "Avoir les sourcils froncés d'inquiétude",
         "translationEn": "Worrying frown unexpressed"
       }
@@ -10211,13 +10211,13 @@
     "examples": [
       {
         "chinese": "筹备会议",
-        "pinyin": "chóubèihuìyì",
+        "pinyin": "chóu bèi huì yì",
         "translationFr": "Préparer une réunion",
         "translationEn": "Prepare for a meeting"
       },
       {
         "chinese": "筹备工作",
-        "pinyin": "chóubèigōngzuò",
+        "pinyin": "chóu bèi gōng zuò",
         "translationFr": "Travail de préparation",
         "translationEn": "Preparation work"
       },
@@ -10328,7 +10328,7 @@
     "examples": [
       {
         "chinese": "抽象概念",
-        "pinyin": "chōuxiànggàiniàn",
+        "pinyin": "chōu xiàng gài niàn",
         "translationFr": "Concept abstrait",
         "translationEn": "Abstract concept"
       },
@@ -10340,7 +10340,7 @@
       },
       {
         "chinese": "抽象思维",
-        "pinyin": "chōuxiàngsīwéi",
+        "pinyin": "chōu xiàng sī wéi",
         "translationFr": "Pensée abstraite",
         "translationEn": "Abstract thinking"
       }
@@ -10388,13 +10388,13 @@
     "examples": [
       {
         "chinese": "除掉这个障碍。",
-        "pinyin": "chúdiào zhège zhàngài。",
+        "pinyin": "chúdiào zhège zhàngài",
         "translationFr": "Éliminer cet obstacle.",
         "translationEn": "Eliminate this obstacle"
       },
       {
         "chinese": "除了你，其他人都来了。",
-        "pinyin": "chúle nǐ， qítārén dōu lái le。",
+        "pinyin": "chúle nǐ qítārén dōu lái le",
         "translationFr": "Sauf toi, tous les autres sont venus.",
         "translationEn": "Everyone came except you"
       }
@@ -10447,13 +10447,13 @@
     "examples": [
       {
         "chinese": "他把珠子串起来。",
-        "pinyin": "tā bǎ zhūzǐ chuàn qǐlái。",
+        "pinyin": "tā bǎ zhūzi chuàn qǐlái",
         "translationFr": "Il a enfilé les perles sur la ficelle.",
         "translationEn": "He strung the beads together"
       },
       {
         "chinese": "我们把这些文件串在一起。",
-        "pinyin": "wǒmen bǎ zhèxiē wénjiàn chuàn zài yìqǐ。",
+        "pinyin": "wǒmen bǎ zhèxiē wénjiàn chuàn zài yìqǐ",
         "translationFr": "Nous avons enfilé ces documents ensemble.",
         "translationEn": "We strung these files together"
       }
@@ -10678,13 +10678,13 @@
     "examples": [
       {
         "chinese": "创办一家公司",
-        "pinyin": "chuàngbàn yìjiā gōngsī",
+        "pinyin": "chuàngbàn yījiā gōngsī",
         "translationFr": "Fonder une entreprise",
         "translationEn": "Found a company"
       },
       {
         "chinese": "创办一所学校",
-        "pinyin": "chuàngbàn yìsuǒ xuéxiào",
+        "pinyin": "chuàngbàn yīsuǒ xuéxiào",
         "translationFr": "Établir une école",
         "translationEn": "Establish a school"
       }
@@ -10739,7 +10739,7 @@
       },
       {
         "chinese": "创作一首歌",
-        "pinyin": "chuàngzuò yìshǒugē",
+        "pinyin": "chuàngzuò yīshǒugē",
         "translationFr": "composer une chanson",
         "translationEn": "Compose a song"
       }
@@ -10788,13 +10788,13 @@
     "examples": [
       {
         "chinese": "窗口很小。",
-        "pinyin": "chuāngkǒu hěnxiǎo。",
+        "pinyin": "chuāngkǒu hěnxiǎo",
         "translationFr": "La fenêtre est très petite.",
         "translationEn": "The window is very small"
       },
       {
         "chinese": "服务窗口。",
-        "pinyin": "fúwù chuāngkǒu。",
+        "pinyin": "fúwù chuāngkǒu",
         "translationFr": "Guichet de service.",
         "translationEn": "Service window"
       }
@@ -10958,13 +10958,13 @@
     "examples": [
       {
         "chinese": "他很有创意。",
-        "pinyin": "tā hěn yǒu chuàngyì。",
+        "pinyin": "tā hěn yǒu chuàngyì",
         "translationFr": "Il est très créatif.",
         "translationEn": "He is very creative"
       },
       {
         "chinese": "这个设计非常有创意。",
-        "pinyin": "zhège shèjì fēicháng yǒu chuàngyì。",
+        "pinyin": "zhège shèjì fēicháng yǒu chuàngyì",
         "translationFr": "Ce design est très créatif.",
         "translationEn": "This design is extremely creative"
       }
@@ -11127,7 +11127,7 @@
     "examples": [
       {
         "chinese": "传授知识",
-        "pinyin": "chuánshòu zhīshi",
+        "pinyin": "chuánshòu zhīshí",
         "translationFr": "Transmettre des connaissances",
         "translationEn": "Transmit knowledge"
       },
@@ -11186,13 +11186,13 @@
     "examples": [
       {
         "chinese": "他把信息传给了她。",
-        "pinyin": "tā bǎ xìnxī chuángěi le tā。",
+        "pinyin": "tā bǎ xìnxī chuángěi le tā",
         "translationFr": "Il lui a transmis l'information.",
         "translationEn": "He passed the information to her"
       },
       {
         "chinese": "父亲将他的智慧传授给儿子。",
-        "pinyin": "fùqīn jiāng tā de zhìhuì chuánshòugěi érzi。",
+        "pinyin": "fùqīn jiāng tā de zhìhuì chuánshòugěi érzi",
         "translationFr": "Le père a transmis sa sagesse à son fils.",
         "translationEn": "Father imparted his wisdom to his son"
       }
@@ -11300,13 +11300,13 @@
     "examples": [
       {
         "chinese": "船只是水上交通工具。",
-        "pinyin": "chuánzhǐ shì shuǐshàng jiāotōnggōngjù。",
+        "pinyin": "chuánzhī shì shuǐshàng jiāo tōng gōng jù",
         "translationFr": "Les navires sont des moyens de transport sur l'eau.",
         "translationEn": "Ships are water transportation vehicles"
       },
       {
         "chinese": "这艘船只用于旅游。",
-        "pinyin": "zhè sōu chuánzhī yòngyú lǚyóu。",
+        "pinyin": "zhèsōu chuánzhī yòngyú lǚyóu",
         "translationFr": "Ce navire est utilisé pour le tourisme.",
         "translationEn": "This ship is used for tourism"
       }
@@ -11468,13 +11468,13 @@
     "examples": [
       {
         "chinese": "学校处处干净。",
-        "pinyin": "xuéxiào chùchù gānjìng。",
+        "pinyin": "xuéxiào chùchù gānjìng",
         "translationFr": "L'école est partout propre.",
         "translationEn": "The school is clean everywhere"
       },
       {
         "chinese": "他处处关心别人。",
-        "pinyin": "tā chùchù guānxīn biérén。",
+        "pinyin": "tā chùchù guānxīn biérén",
         "translationFr": "Il s'occupe de tous les autres partout.",
         "translationEn": "He is always concerned about others."
       }
@@ -11575,13 +11575,13 @@
     "examples": [
       {
         "chinese": "初等教育",
-        "pinyin": "chūděngjiàoyù",
+        "pinyin": "chū děng jiào yù",
         "translationFr": "Éducation primaire",
         "translationEn": "primary education"
       },
       {
         "chinese": "基础知识",
-        "pinyin": "jīchǔzhīshi",
+        "pinyin": "jī chǔ zhī shí",
         "translationFr": "Connaissances de base",
         "translationEn": "basic knowledge"
       }
@@ -11635,7 +11635,7 @@
       },
       {
         "chinese": "行政处罚",
-        "pinyin": "xíngzhèngchǔfá",
+        "pinyin": "xíng zhèng chǔ fá",
         "translationFr": "Sanction administrative",
         "translationEn": "administrative punishment"
       },
@@ -11700,7 +11700,7 @@
       },
       {
         "chinese": "除非另有说明",
-        "pinyin": "chúfēi lìng yǒu shuōmíng",
+        "pinyin": "chúfēi lìngyǒu shuōmíng",
         "translationFr": "Sauf indication contraire",
         "translationEn": "Unless otherwise specified"
       }
@@ -11816,7 +11816,7 @@
       },
       {
         "chinese": "出境签证",
-        "pinyin": "chūjìngqiānzhèng",
+        "pinyin": "chū jìng qiān zhèng",
         "translationFr": "Visa de sortie",
         "translationEn": "exit visa"
       }
@@ -11987,7 +11987,7 @@
       },
       {
         "chinese": "纯属巧合",
-        "pinyin": "chúnshǔqiǎohé",
+        "pinyin": "chún shǔ qiǎo hé",
         "translationFr": "Pure coïncidence",
         "translationEn": "mere coincidence"
       }
@@ -12034,13 +12034,13 @@
     "examples": [
       {
         "chinese": "我们出入都要刷卡。",
-        "pinyin": "wǒmen chūrù dōu yào shuākǎ。",
+        "pinyin": "wǒmen chūrù dōu yào shuākǎ",
         "translationFr": "Nous devons scanner notre carte pour entrer et sortir.",
         "translationEn": "We need to swipe our cards for entry and exit."
       },
       {
         "chinese": "这个月的出入很大。",
-        "pinyin": "zhège yuè de chūrù hěndà。",
+        "pinyin": "zhège yuè de chūrù hěndà",
         "translationFr": "Ce mois-ci, les dépenses et les revenus sont très différents.",
         "translationEn": "This month's income and expenses differ greatly."
       }
@@ -12088,7 +12088,7 @@
     "examples": [
       {
         "chinese": "出示证件",
-        "pinyin": "chūshìzhèngjiàn",
+        "pinyin": "chū shì zhèng jiàn",
         "translationFr": "Présenter ses papiers",
         "translationEn": "Show your ID."
       },
@@ -12275,7 +12275,7 @@
       },
       {
         "chinese": "出于某种原因",
-        "pinyin": "chūyú mǒuzhǒngyuányīn",
+        "pinyin": "chūyú mǒu zhǒng yuán yīn",
         "translationFr": "Pour une raison quelconque",
         "translationEn": "For some reason"
       }
@@ -12496,13 +12496,13 @@
     "examples": [
       {
         "chinese": "他跳了三次。",
-        "pinyin": "tā tiào le sāncì。",
+        "pinyin": "tā tiào le sāncì",
         "translationFr": "Il a sauté trois fois.",
         "translationEn": "He jumped three times"
       },
       {
         "chinese": "这个多项式的次数是五次。",
-        "pinyin": "zhège duōxiàngshì de cìshù shì wǔcì。",
+        "pinyin": "zhège duōxiàngshì de cìshù shì wǔcì",
         "translationFr": "Le degré de ce polynôme est cinq.",
         "translationEn": "The degree of this polynomial is five"
       }
@@ -12549,7 +12549,7 @@
     "examples": [
       {
         "chinese": "匆匆忙忙",
-        "pinyin": "cōngcōngmángmáng",
+        "pinyin": "cōng cōng máng máng",
         "translationFr": "Pressé et affairé",
         "translationEn": "Hastily"
       },
@@ -12665,7 +12665,7 @@
     "examples": [
       {
         "chinese": "从未见过面",
-        "pinyin": "cóngwèijiànguò miàn",
+        "pinyin": "cóng wèi jiàn guò miàn",
         "translationFr": "Jamais vu personne",
         "translationEn": "Never met face to face"
       },
@@ -12736,7 +12736,7 @@
       },
       {
         "chinese": "从业年限长的员工- cóngyè niánxiàn cháng de yuángōng- Employés avec une longue expérience professionnelle",
-        "pinyin": "cóngyè niánxiàn cháng de yuángōng - c ó ngy è ni á nxi à n ch á ng de yu á ng ō ng - Employ é s avec une longue exp é rience professionnelle",
+        "pinyin": "cóngyè niánxiàn zhǎng de yuángōng",
         "translationFr": "",
         "translationEn": "Employees with long professional experience"
       }
@@ -12783,13 +12783,13 @@
     "examples": [
       {
         "chinese": "他看到她和别的男生在一起，醋劲大发。",
-        "pinyin": "tā kàndào tā hé biéde nánshēng zài yìqǐ， cùjìn dàfā。",
+        "pinyin": "tā kàndào tā hé biéde nánshēng zài yìqǐ cùjìn dàfā",
         "translationFr": "Il a vu qu'elle était avec un autre garçon et il est devenu très jaloux.",
         "translationEn": "He saw her with another boy and he became very jealous"
       },
       {
         "chinese": "她的醋劲儿很强。",
-        "pinyin": "tā de cùjìner hěn qiáng。",
+        "pinyin": "tā de cùjìner hěnqiáng",
         "translationFr": "Sa jalousie amoureuse est très forte.",
         "translationEn": "Her romantic jealousy is very strong"
       }
@@ -12952,19 +12952,19 @@
     "examples": [
       {
         "chinese": "一寸光阴",
-        "pinyin": "yícùn guāngyīn",
+        "pinyin": "yīcùn guāngyīn",
         "translationFr": "Un pouce de temps",
         "translationEn": "An inch of time"
       },
       {
         "chinese": "一寸光阴一寸金",
-        "pinyin": "yícùnguāngyīnyícùnjīn",
+        "pinyin": "yī cùn guāng yīn yī cùn jīn",
         "translationFr": "Un pouce de temps vaut un pouce d'or",
         "translationEn": "An inch of time is worth an inch of gold"
       },
       {
         "chinese": "一寸土地一寸金",
-        "pinyin": "yícùn tǔdì yícùn jīn",
+        "pinyin": "yīcùn tǔdì yīcùn jīn",
         "translationFr": "Un pouce de terre vaut un pouce d'or",
         "translationEn": "An inch of land is worth an inch of gold"
       }
@@ -13010,19 +13010,19 @@
     "examples": [
       {
         "chinese": "存储空间",
-        "pinyin": "cúnchǔkōngjiān",
+        "pinyin": "cún chǔ kōng jiān",
         "translationFr": "Espace de stockage",
         "translationEn": "Storage space"
       },
       {
         "chinese": "存储设备",
-        "pinyin": "cúnchǔshèbèi",
+        "pinyin": "cún chǔ shè bèi",
         "translationFr": "Dispositif de stockage",
         "translationEn": "Storage device"
       },
       {
         "chinese": "存储容量大- cúnchǔ róngliàng dà- Grande capacité de stockage",
-        "pinyin": "cúnchǔróngliàng dà - c ú nch ǔ r ó ngli à ng d à - Grande capacit é de stockage",
+        "pinyin": "cún chǔ róng liàng dà",
         "translationFr": "",
         "translationEn": "Large storage capacity"
       }
@@ -13070,13 +13070,13 @@
     "examples": [
       {
         "chinese": "村庄很小。",
-        "pinyin": "cūnzhuāng hěnxiǎo。",
+        "pinyin": "cūnzhuāng hěnxiǎo",
         "translationFr": "Le village est petit.",
         "translationEn": "The village is very small"
       },
       {
         "chinese": "我们住在村庄里。",
-        "pinyin": "wǒmen zhù zài cūnzhuāng lǐ。",
+        "pinyin": "wǒmen zhù zài cūnzhuāng lǐ",
         "translationFr": "Nous vivons dans le village.",
         "translationEn": "We live in the village"
       }
@@ -13189,7 +13189,7 @@
       },
       {
         "chinese": "搭衣服",
-        "pinyin": "dā yīfu",
+        "pinyin": "dā yīfú",
         "translationFr": "Dresser des vêtements",
         "translationEn": "Dress clothes"
       }
@@ -13359,19 +13359,19 @@
     "examples": [
       {
         "chinese": "听到这个消息我大吃一惊",
-        "pinyin": "tīngdào zhège xiāoxī wǒ dàchīyìjīng",
+        "pinyin": "tīngdào zhège xiāoxī wǒ dà chī yī jīng",
         "translationFr": "J'ai été très surpris d'entendre cette nouvelle",
         "translationEn": "I was greatly surprised to hear this news"
       },
       {
         "chinese": "大吃一惊的表情",
-        "pinyin": "dàchīyìjīng de biǎoqíng",
+        "pinyin": "dà chī yī jīng de biǎoqíng",
         "translationFr": "Expression de grande surprise",
         "translationEn": "Expression of great surprise"
       },
       {
         "chinese": "大吃一惊的反应",
-        "pinyin": "dàchīyìjīng de fǎnyìng",
+        "pinyin": "dà chī yī jīng de fǎnyìng",
         "translationFr": "Réaction de choc",
         "translationEn": "Reaction of shock"
       }
@@ -13476,13 +13476,13 @@
     "examples": [
       {
         "chinese": "这个故事打动了很多人。",
-        "pinyin": "zhège gùshì dǎdòng le hěnduō rén。",
+        "pinyin": "zhège gùshì dǎdòng le hěnduō rén",
         "translationFr": "Cette histoire a ému beaucoup de personnes.",
         "translationEn": "This story moved many people."
       },
       {
         "chinese": "他的表演深深打动了观众。",
-        "pinyin": "tā de biǎoyǎn shēnshēn dǎdòng le guānzhòng。",
+        "pinyin": "tā de biǎoyǎn shēnshēn dǎdòng le guānzhòng",
         "translationFr": "Son spectacle a profondément ému le public.",
         "translationEn": "His performance deeply moved the audience."
       }
@@ -13530,19 +13530,19 @@
     "examples": [
       {
         "chinese": "大都很好",
-        "pinyin": "dàdōu hěn hǎo",
+        "pinyin": "dàdū hěn hǎo",
         "translationFr": "Principalement très bien",
         "translationEn": "Primarily very good"
       },
       {
         "chinese": "大都同意这个观点",
-        "pinyin": "dàdōu tóngyì zhège guāndiǎn",
+        "pinyin": "dàdū tóngyì zhège guāndiǎn",
         "translationFr": "La plupart sont d'accord avec ce point de vue",
         "translationEn": "Most agreed with this view"
       },
       {
         "chinese": "大都使用中文交流- dàdū shǐyòng zhōngwén jiāoliú- La plupart communiquent en chinois",
-        "pinyin": "dàdōu shǐyòng zhōngwén jiāoliú - d à d ū sh ǐ y ò ng zh ō ngw é n ji ā oli ú - La plupart communiquent en chinois",
+        "pinyin": "dàdū shǐyòng zhōngwén jiāoliú",
         "translationFr": "",
         "translationEn": "Most use Chinese for communication"
       }
@@ -13594,13 +13594,13 @@
       },
       {
         "chinese": "方大方大度的人- dàfang dàfāng dàdù de rén- Personne généreuse et magnanime",
-        "pinyin": "fāng dàfāng dàdù de rén - d à fang d à f ā ng d à d ù de r é n - Personne g é n é reuse et magnanime",
+        "pinyin": "fāng dàfāng dàdù de rén",
         "translationFr": "",
         "translationEn": "A generous and magnanimous person"
       },
       {
         "chinese": "方大方大度的行为- dàfang dàfāng dàdù de xíngwéi- Comportement généreux et magnanime",
-        "pinyin": "fāng dàfāng dàdù de xíngwéi - d à fang d à f ā ng d à d ù de x í ngw é i - Comportement g é n é reux et magnanime",
+        "pinyin": "fāng dàfāng dàdù de xíngwéi",
         "translationFr": "",
         "translationEn": "A generous and magnanimous behavior"
       }
@@ -13658,7 +13658,7 @@
       },
       {
         "chinese": "答复信件- dáfù xìnjiàn- Répondre à une lettre",
-        "pinyin": "dáfù xìnjiàn - d á f ù x ì nji à n - R é pondre à une lettre",
+        "pinyin": "dáfù xìnjiàn",
         "translationFr": "",
         "translationEn": "Reply to a letter"
       }
@@ -13890,7 +13890,7 @@
       },
       {
         "chinese": "呆若木鸡",
-        "pinyin": "dāiruòmùjī",
+        "pinyin": "dāi ruò mù jī",
         "translationFr": "Être figé comme une poule de bois",
         "translationEn": "Stare like a wooden chicken"
       }
@@ -13936,7 +13936,7 @@
     "examples": [
       {
         "chinese": "付出代价",
-        "pinyin": "fùchūdàijià",
+        "pinyin": "fù chū dài jià",
         "translationFr": "Payer le prix",
         "translationEn": "Make a sacrifice"
       },
@@ -13994,7 +13994,7 @@
     "examples": [
       {
         "chinese": "银行贷款",
-        "pinyin": "yínhángdàikuǎn",
+        "pinyin": "yín háng dài kuǎn",
         "translationFr": "prêt bancaire",
         "translationEn": "Bank loan"
       },
@@ -14062,7 +14062,7 @@
       },
       {
         "chinese": "代理服务",
-        "pinyin": "dàilǐfúwù",
+        "pinyin": "dài lǐ fú wù",
         "translationFr": "Service de représentation",
         "translationEn": "Agency service"
       }
@@ -14120,7 +14120,7 @@
       },
       {
         "chinese": "带领公司发展- dàilǐng gōngsī fāzhǎn- Diriger le développement de l'entreprise",
-        "pinyin": "dàilǐng gōngsī fāzhǎn - d à il ǐ ng g ō ngs ī f ā zh ǎ n - Diriger le d é veloppement de l'entreprise",
+        "pinyin": "dàilǐng gōngsī fāzhǎn",
         "translationFr": "",
         "translationEn": "Lead company development"
       }
@@ -14166,19 +14166,19 @@
     "examples": [
       {
         "chinese": "打击犯罪",
-        "pinyin": "dǎjīfànzuì",
+        "pinyin": "dǎ jī fàn zuì",
         "translationFr": "Lutter contre la criminalité",
         "translationEn": "Lead company development"
       },
       {
         "chinese": "打击恐怖主义",
-        "pinyin": "dǎjī kǒngbùzhǔyì",
+        "pinyin": "dǎjī kǒng bù zhǔ yì",
         "translationFr": "Lutter contre le terrorisme",
         "translationEn": "Combat crime"
       },
       {
         "chinese": "打击非法活动- dǎjī fēifǎ huódòng- Réprimer les activités illégales",
-        "pinyin": "dǎjī fēifǎhuódòng - d ǎ j ī f ē if ǎ hu ó d ò ng - R é primer les activit é s ill é gales",
+        "pinyin": "dǎjī fēi fǎ huó dòng",
         "translationFr": "",
         "translationEn": "Combat terrorism"
       }
@@ -14224,7 +14224,7 @@
     "examples": [
       {
         "chinese": "打架斗殴",
-        "pinyin": "dǎjiàdòuōu",
+        "pinyin": "dǎ jià dòu ōu",
         "translationFr": "Se battre et se quereller",
         "translationEn": "Crack down on illegal activities"
       },
@@ -14409,7 +14409,7 @@
       },
       {
         "chinese": "蛋白质补充剂- dànbáizhì bǔchōng jì- Complément de protéines",
-        "pinyin": "dànbáizhì bǔchōngjì - d à nb á izh ì b ǔ ch ō ng j ì - Compl é ment de prot é ines",
+        "pinyin": "dànbáizhì bǔchōngjì",
         "translationFr": "",
         "translationEn": "Protein source"
       }
@@ -14466,7 +14466,7 @@
       },
       {
         "chinese": "单纯的动机- dānchún de dòngjī- Motif pur",
-        "pinyin": "dānchún de dòngjī - d ā nch ú n de d ò ngj ī - Motif pur",
+        "pinyin": "dānchún de dòngjī",
         "translationFr": "",
         "translationEn": "Simple idea"
       }
@@ -14524,7 +14524,7 @@
       },
       {
         "chinese": "单调的音乐- dāndiào de yīnyuè- Musique monotone",
-        "pinyin": "dāndiào de yīnyuè - d ā ndi à o de y ī nyu è - Musique monotone",
+        "pinyin": "dāndiào de yīnyuè",
         "translationFr": "",
         "translationEn": "Monotone music"
       }
@@ -14570,13 +14570,13 @@
     "examples": [
       {
         "chinese": "他有一个重要的档案。",
-        "pinyin": "tā yǒu yígè zhòngyào de dàngàn。",
+        "pinyin": "tā yǒu yígè zhòngyào de dàngàn",
         "translationFr": "Il a un dossier important.",
         "translationEn": "He has an important file."
       },
       {
         "chinese": "我们需要归档这些文件。",
-        "pinyin": "wǒmen xūyào guīdàng zhèxiē wénjiàn。",
+        "pinyin": "wǒmen xūyào guīdàng zhèxiē wénjiàn",
         "translationFr": "Nous devons archiver ces documents.",
         "translationEn": "We need to archive these documents."
       }
@@ -14634,7 +14634,7 @@
       },
       {
         "chinese": "当场解决- dāngchǎng jiějué- Résoudre immédiatement",
-        "pinyin": "dāngchǎng jiějué - d ā ngch ǎ ng ji ě ju é - R é soudre imm é diatement",
+        "pinyin": "dāngchǎng jiějué",
         "translationFr": "",
         "translationEn": "Resolve immediately"
       }
@@ -14692,7 +14692,7 @@
       },
       {
         "chinese": "当初的想法- dāngchū de xiǎngfǎ- L'idée initiale",
-        "pinyin": "dāngchū de xiǎngfǎ - d ā ngch ū de xi ǎ ngf ǎ - L'id é e initiale",
+        "pinyin": "dāngchū de xiǎngfǎ",
         "translationFr": "",
         "translationEn": "The initial idea"
       }
@@ -14738,19 +14738,19 @@
     "examples": [
       {
         "chinese": "当代艺术",
-        "pinyin": "dāngdàiyìshù",
+        "pinyin": "dāng dài yì shù",
         "translationFr": "Art contemporain",
         "translationEn": "Contemporary art"
       },
       {
         "chinese": "当代文学",
-        "pinyin": "dāngdàiwénxué",
+        "pinyin": "dāng dài wén xué",
         "translationFr": "Littérature contemporaine",
         "translationEn": "Contemporary literature"
       },
       {
         "chinese": "当代社会- dāngdài shèhuì- Société contemporaine",
-        "pinyin": "dāngdài shèhuì - d ā ngd à i sh è hu ì - Soci é t é contemporaine",
+        "pinyin": "dāngdài shèhuì",
         "translationFr": "",
         "translationEn": "Contemporary society"
       }
@@ -14796,19 +14796,19 @@
     "examples": [
       {
         "chinese": "当今社会",
-        "pinyin": "dāngjīnshèhuì",
+        "pinyin": "dāng jīn shè huì",
         "translationFr": "Société actuelle",
         "translationEn": "Society nowadays"
       },
       {
         "chinese": "当今世界",
-        "pinyin": "dāngjīnshìjiè",
+        "pinyin": "dāng jīn shì jiè",
         "translationFr": "Monde actuel",
         "translationEn": "The current world"
       },
       {
         "chinese": "当今时代- dāngjīn shídài- Ère actuelle",
-        "pinyin": "dāngjīn shídài - d ā ngj ī n sh í d à i - È re actuelle",
+        "pinyin": "dāngjīn shídài",
         "translationFr": "",
         "translationEn": "Current era"
       }
@@ -14906,13 +14906,13 @@
     "examples": [
       {
         "chinese": "昨天我收到你的邮件，今天我就回复了。",
-        "pinyin": "zuótiān wǒ shōudào nǐ de yóujiàn， jīntiān wǒ jiù huífù le。",
+        "pinyin": "zuótiān wǒ shōudào nǐ de yóujiàn jīntiān wǒ jiù huífù le",
         "translationFr": "Hier, je t'ai reçu ton email, et j'ai répondu le jour même.",
         "translationEn": "I received your email yesterday, and replied the same day."
       },
       {
         "chinese": "他答应今天来，结果当天下雨了。",
-        "pinyin": "tā dāying jīntiān lái， jiéguǒ dāngtiān xiàyǔ le。",
+        "pinyin": "tā dāyìng jīntiān lái jiéguǒ dàngtiān xiàyǔ le",
         "translationFr": "Il m'a dit qu'il viendrait aujourd'hui, mais il a fait la pluie le jour même.",
         "translationEn": "He said he would come today, but it rained that day."
       }
@@ -14972,7 +14972,7 @@
       },
       {
         "chinese": "当下状态- dāngxià zhuàngtài- État actuel",
-        "pinyin": "dāngxià zhuàngtài - d ā ngxi à zhu à ngt à i - É tat actuel",
+        "pinyin": "dāngxià zhuàngtài",
         "translationFr": "",
         "translationEn": "Current state"
       }
@@ -15030,7 +15030,7 @@
       },
       {
         "chinese": "当选官员- dāngxuǎn guānyuán- Être élu fonctionnaire",
-        "pinyin": "dāngxuǎn guānyuán - d ā ngxu ǎ n gu ā nyu á n - Ê tre é lu fonctionnaire",
+        "pinyin": "dāngxuǎn guānyuán",
         "translationFr": "",
         "translationEn": "Be elected as an official"
       }
@@ -15082,7 +15082,7 @@
       },
       {
         "chinese": "她的诞生成为了一个家庭的美好记忆。",
-        "pinyin": "tā de dànshēng chéngwéi le yígè jiātíng de měihǎojìyì。",
+        "pinyin": "tā de dànshēng chéngwéi le yígè jiātíng de měi hǎo jì yì",
         "translationFr": "Sa naissance est devenue un beau souvenir pour la famille.",
         "translationEn": "The birth became a beautiful memory for the family."
       }
@@ -15130,7 +15130,7 @@
     "examples": [
       {
         "chinese": "耽误时间",
-        "pinyin": "dānwùshíjiān",
+        "pinyin": "dān wù shí jiān",
         "translationFr": "Retarder le temps",
         "translationEn": "Waste time"
       },
@@ -15142,7 +15142,7 @@
       },
       {
         "chinese": "耽误计划- dānwu jìhuà- Retarder un plan",
-        "pinyin": "dānwù jìhuà - d ā nwu j ì hu à - Retarder un plan",
+        "pinyin": "dānwù jìhuà",
         "translationFr": "",
         "translationEn": "Delay plans"
       }
@@ -15189,13 +15189,13 @@
     "examples": [
       {
         "chinese": "我很担心我的朋友。",
-        "pinyin": "wǒ hěn dānxīn wǒ de péngyǒu。",
+        "pinyin": "wǒ hěn dānxīn wǒ de péngyǒu",
         "translationFr": "Je m'inquiète pour mon ami.",
         "translationEn": "I'm very concerned about my friend."
       },
       {
         "chinese": "他很担忧天气预报。",
-        "pinyin": "tā hěn dānyōu tiānqìyùbào。",
+        "pinyin": "tā hěn dānyōu tiān qì yù bào",
         "translationFr": "Il s'inquiète pour la météo.",
         "translationEn": "He is worried about the weather forecast."
       }
@@ -15243,13 +15243,13 @@
     "examples": [
       {
         "chinese": "这是一个小岛。",
-        "pinyin": "zhè shì yígè xiǎodǎo。",
+        "pinyin": "zhèshì yígè xiǎodǎo",
         "translationFr": "C'est une petite île.",
         "translationEn": "This is a small island."
       },
       {
         "chinese": "那里有两座岛屿。",
-        "pinyin": "nàlǐ yǒu liǎngzuò dǎoyǔ。",
+        "pinyin": "nàlǐ yǒu liǎngzuò dǎoyǔ",
         "translationFr": "Il y a deux îles là-bas.",
         "translationEn": "There are two islands over there."
       }
@@ -15307,7 +15307,7 @@
       },
       {
         "chinese": "企业倒闭- qǐyè dǎobì- Faillite d'une entreprise",
-        "pinyin": "qǐyèdǎobì - q ǐ y è d ǎ ob ì - Faillite d'une entreprise",
+        "pinyin": "qǐ yè dǎo bì",
         "translationFr": "",
         "translationEn": "Business failure - Faillite d'une entreprise"
       }
@@ -15353,19 +15353,19 @@
     "examples": [
       {
         "chinese": "倒车入库",
-        "pinyin": "dǎochē rùkù",
+        "pinyin": "dàochē rùkù",
         "translationFr": "Rembobiner pour ranger dans le garage",
         "translationEn": "Reverse parking."
       },
       {
         "chinese": "倒车雷达",
-        "pinyin": "dǎochē léidá",
+        "pinyin": "dàochē léidá",
         "translationFr": "Radar de recul",
         "translationEn": "Reverse radar."
       },
       {
         "chinese": "倒车影像- dǎochē yǐngxiàng- Image de recul",
-        "pinyin": "dǎochē yǐngxiàng - d ǎ och ē y ǐ ngxi à ng - Image de recul",
+        "pinyin": "dàochē yǐngxiàng",
         "translationFr": "",
         "translationEn": "Reverse image - Image de recul"
       }
@@ -15411,7 +15411,7 @@
     "examples": [
       {
         "chinese": "道德教育",
-        "pinyin": "dàodéjiàoyù",
+        "pinyin": "dào dé jiào yù",
         "translationFr": "Éducation morale",
         "translationEn": "Moral education."
       },
@@ -15423,7 +15423,7 @@
       },
       {
         "chinese": "道德规范- dàodé guīfàn- Règles morales",
-        "pinyin": "dàodéguīfàn - d à od é gu ī f à n - R è gles morales",
+        "pinyin": "dào dé guī fàn",
         "translationFr": "",
         "translationEn": "Moral norms - Règles morales"
       }
@@ -15469,19 +15469,19 @@
     "examples": [
       {
         "chinese": "倒是不错",
-        "pinyin": "dǎo shì búcuò",
+        "pinyin": "dào shì bùcuò",
         "translationFr": "En fait, c'est pas mal",
         "translationEn": "Actually, it's not bad."
       },
       {
         "chinese": "倒是有些问题",
-        "pinyin": "dǎo shì yǒuxiē wèntí",
+        "pinyin": "dào shì yǒuxiē wèntí",
         "translationFr": "En fait, il y a quelques problèmes",
         "translationEn": "Actually, there are some issues."
       },
       {
         "chinese": "倒是有点意思- dàoshì yǒudiǎn yìsi- En fait, ça a un peu d'intérêt",
-        "pinyin": "dǎo shì yǒudiǎn yìsī - d à osh ì y ǒ udi ǎ n y ì si - En fait , ç a a un peu d'int é r ê t",
+        "pinyin": "dào shì yǒudiǎn yìsi",
         "translationFr": "",
         "translationEn": "Actually, it has a bit of interest."
       }
@@ -15584,13 +15584,13 @@
     "examples": [
       {
         "chinese": "桌子和椅子要搭配。",
-        "pinyin": "zhuōzi hé yǐzi yào dāpèi。",
+        "pinyin": "zhuōzi hé yǐzi yào dāpèi",
         "translationFr": "La table et la chaise doivent s'assortir.",
         "translationEn": "The table and chair should match."
       },
       {
         "chinese": "请把同类的书搭配在一起。",
-        "pinyin": "qǐng bǎ tónglèi de shū dāpèi zài yìqǐ。",
+        "pinyin": "qǐng bǎ tónglèi de shū dāpèi zài yìqǐ",
         "translationFr": "Veuillez mettre ensemble les livres de même catégorie.",
         "translationEn": "Please put books of the same category together."
       }
@@ -15638,13 +15638,13 @@
     "examples": [
       {
         "chinese": "他是中国的大使。",
-        "pinyin": "tā shì zhōngguó de dàshǐ。",
+        "pinyin": "tā shì zhōngguó de dàshǐ",
         "translationFr": "Il est ambassadeur de Chine.",
         "translationEn": "He is China's ambassador."
       },
       {
         "chinese": "这位大使访问了法国。",
-        "pinyin": "zhèwèi dàshǐ fǎngwèn le fǎguó。",
+        "pinyin": "zhèwèi dàshǐ fǎngwèn le fǎguó",
         "translationFr": "Cette ambassadeur a visité la France.",
         "translationEn": "This ambassador visited France."
       }
@@ -15692,13 +15692,13 @@
     "examples": [
       {
         "chinese": "他是古筝的大师。",
-        "pinyin": "tā shì gǔzhēng de dàshī。",
+        "pinyin": "tā shì gǔzhēng de dàshī",
         "translationFr": "Il est un grand maître de la guzheng.",
         "translationEn": "He is a master of guzheng."
       },
       {
         "chinese": "她是茶道的大师。",
-        "pinyin": "tā shì chádào de dàshī。",
+        "pinyin": "tā shì chádào de dàshī",
         "translationFr": "Elle est une grande maîtresse du théâtre du thé.",
         "translationEn": "She is a tea ceremony master."
       }
@@ -15755,7 +15755,7 @@
       },
       {
         "chinese": "大洋洲的旅游景点- Dàyángzhōu de lǚyóu jǐngdiǎn- Sites touristiques d'Océanie",
-        "pinyin": "dàyángzhōu de lǚyóujǐngdiǎn - D à y á ngzh ō u de l ǚ y ó u j ǐ ngdi ǎ n - Sites touristiques d'Oc é anie",
+        "pinyin": "dàyángzhōu de lǚ yóu jǐng diǎn",
         "translationFr": "",
         "translationEn": "Tourist attractions in Oceania"
       }
@@ -15856,7 +15856,7 @@
     "examples": [
       {
         "chinese": "打仗的士兵",
-        "pinyin": "dǎzhàng dī shìbīng",
+        "pinyin": "dǎzhàng de shìbīng",
         "translationFr": "Soldats qui font la guerre",
         "translationEn": "Soldiers in battle"
       },
@@ -15868,7 +15868,7 @@
       },
       {
         "chinese": "打仗的后果- dǎzhàng de hòuguǒ- Conséquences de faire la guerre",
-        "pinyin": "dǎzhàng de hòuguǒ - d ǎ zh à ng de h ò ugu ǒ - Cons é quences de faire la guerre",
+        "pinyin": "dǎzhàng de hòuguǒ",
         "translationFr": "",
         "translationEn": "Consequences of warfare"
       }
@@ -15926,7 +15926,7 @@
       },
       {
         "chinese": "大致方向- dàzhì fāngxiàng- Direction approximative",
-        "pinyin": "dàzhì fāngxiàng - d à zh ì f ā ngxi à ng - Direction approximative",
+        "pinyin": "dàzhì fāngxiàng",
         "translationFr": "",
         "translationEn": "Approximate direction"
       }
@@ -15984,7 +15984,7 @@
       },
       {
         "chinese": "得了这个机会- déle zhège jīhuì- Saisir cette opportunité",
-        "pinyin": "dé le zhègè jīhuì - d é le zh è ge j ī hu ì - Saisir cette opportunit é",
+        "pinyin": "dé le zhège jīhuì",
         "translationFr": "",
         "translationEn": "To seize this opportunity"
       }
@@ -16030,7 +16030,7 @@
     "examples": [
       {
         "chinese": "等级制度",
-        "pinyin": "děngjízhìdù",
+        "pinyin": "děng jí zhì dù",
         "translationFr": "Système de niveaux",
         "translationEn": "Ranking system"
       },
@@ -16042,7 +16042,7 @@
       },
       {
         "chinese": "等级评定- děngjí píngdìng- Évaluation des niveaux",
-        "pinyin": "děngjí píngdìng - d ě ngj í p í ngd ì ng - É valuation des niveaux",
+        "pinyin": "děngjí píngdìng",
         "translationFr": "",
         "translationEn": "Level evaluation"
       }
@@ -16087,19 +16087,19 @@
     "examples": [
       {
         "chinese": "红灯笼",
-        "pinyin": "hóngdēnglong",
+        "pinyin": "hóngdēnglóng",
         "translationFr": "Lampion rouge",
         "translationEn": "Red lantern"
       },
       {
         "chinese": "灯笼节",
-        "pinyin": "dēnglong jié",
+        "pinyin": "dēnglóng jié",
         "translationFr": "Festival des lanternes",
         "translationEn": "Lantern festival"
       },
       {
         "chinese": "灯笼的制作- dēnglong de zhìzuò- Fabrication de lampions",
-        "pinyin": "dēnglong de zhìzuò - d ē nglong de zh ì zu ò - Fabrication de lampions",
+        "pinyin": "dēnglóng de zhìzuò",
         "translationFr": "",
         "translationEn": "Production of lanterns"
       }
@@ -16157,7 +16157,7 @@
       },
       {
         "chinese": "得以发展- déyǐ fāzhǎn- Afin de développer",
-        "pinyin": "déyǐ fāzhǎn - d é y ǐ f ā zh ǎ n - Afin de d é velopper",
+        "pinyin": "déyǐ fāzhǎn",
         "translationFr": "",
         "translationEn": "In order to develop"
       }
@@ -16215,7 +16215,7 @@
       },
       {
         "chinese": "得知结果- dézhī jiéguǒ- Apprendre le résultat",
-        "pinyin": "dézhī jiéguǒ - d é zh ī ji é gu ǒ - Apprendre le r é sultat",
+        "pinyin": "dézhī jiéguǒ",
         "translationFr": "",
         "translationEn": "To learn the result"
       }
@@ -16327,7 +16327,7 @@
       },
       {
         "chinese": "电饭锅的使用方法- diànfànguō de shǐyòng fāngfǎ- Méthode d'utilisation d'une cuisinière électrique",
-        "pinyin": "diànfànguō de shǐyòng fāngfǎ - di à nf à ngu ō de sh ǐ y ò ng f ā ngf ǎ - M é thode d'utilisation d'une cuisini è re é lectrique",
+        "pinyin": "diànfànguō de shǐyòng fāngfǎ",
         "translationFr": "",
         "translationEn": "Method of using an electric cooker"
       }
@@ -16430,7 +16430,7 @@
     "examples": [
       {
         "chinese": "电力公司",
-        "pinyin": "diànlìgōngsī",
+        "pinyin": "diàn lì gōng sī",
         "translationFr": "Société d'électricité",
         "translationEn": "Electricity company"
       },
@@ -16483,19 +16483,19 @@
     "examples": [
       {
         "chinese": "开幕典礼",
-        "pinyin": "kāimùdiǎnlǐ",
+        "pinyin": "kāi mù diǎn lǐ",
         "translationFr": "Cérémonie d'ouverture",
         "translationEn": "Opening ceremony"
       },
       {
         "chinese": "颁奖典礼",
-        "pinyin": "bānjiǎngdiǎnlǐ",
+        "pinyin": "bān jiǎng diǎn lǐ",
         "translationFr": "Cérémonie de remise des prix",
         "translationEn": "Awards ceremony"
       },
       {
         "chinese": "颁奖典礼的筹备工作- diǎnlǐ bānjiǎng de chóngbèi gōngzuò- Préparation d'une cérémonie de remise des prix",
-        "pinyin": "bānjiǎngdiǎnlǐ de chóubèigōngzuò - di ǎ nl ǐ b ā nji ǎ ng de ch ó ngb è i g ō ngzu ò - Pr é paration d'une c é r é monie de remise des prix",
+        "pinyin": "bān jiǎng diǎn lǐ de chóu bèi gōng zuò",
         "translationFr": "",
         "translationEn": "Preparation for an awards ceremony"
       }
@@ -16553,7 +16553,7 @@
       },
       {
         "chinese": "店铺的经营策略- diànpù de jīngyíng cèlüè- Stratégie de gestion d'une boutique",
-        "pinyin": "diànpù de jīngyíngcèlüè - di à np ù de j ī ngy í ng c è l ü è - Strat é gie de gestion d'une boutique",
+        "pinyin": "diànpù de jīng yíng cè lüè",
         "translationFr": "",
         "translationEn": "Retail strategy for a shop"
       }
@@ -16611,7 +16611,7 @@
       },
       {
         "chinese": "点燃希望- diǎnrán xīwàng- Allumer l'espoir",
-        "pinyin": "diǎnrán xīwàng - di ǎ nr á n x ī w à ng - Allumer l'espoir",
+        "pinyin": "diǎnrán xīwàng",
         "translationFr": "",
         "translationEn": "Light hope"
       }
@@ -16657,19 +16657,19 @@
     "examples": [
       {
         "chinese": "典型例子",
-        "pinyin": "diǎnxíng lìzǐ",
+        "pinyin": "diǎnxíng lìzi",
         "translationFr": "Exemple typique",
         "translationEn": "Typical example"
       },
       {
         "chinese": "典型人物",
-        "pinyin": "diǎnxíngrénwù",
+        "pinyin": "diǎn xíng rén wù",
         "translationFr": "Personnage typique",
         "translationEn": "Typical person"
       },
       {
         "chinese": "典型的案例- diǎnxíng de ànliè- Cas typique",
-        "pinyin": "diǎnxíng de ànlì - di ǎ nx í ng de à nli è - Cas typique",
+        "pinyin": "diǎnxíng de ànlì",
         "translationFr": "",
         "translationEn": "Typical case"
       }
@@ -16715,19 +16715,19 @@
     "examples": [
       {
         "chinese": "电源开关",
-        "pinyin": "diànyuánkāiguān",
+        "pinyin": "diàn yuán kāi guān",
         "translationFr": "Interrupteur d'alimentation électrique",
         "translationEn": "Electric power switch"
       },
       {
         "chinese": "电源插座",
-        "pinyin": "diànyuánchāzuò",
+        "pinyin": "diàn yuán chā zuò",
         "translationFr": "Prise électrique",
         "translationEn": "Electric socket"
       },
       {
         "chinese": "电源管理- diànyuán guǎnlǐ- Gestion de l'alimentation électrique",
-        "pinyin": "diànyuán guǎnlǐ - di à nyu á n gu ǎ nl ǐ - Gestion de l'alimentation é lectrique",
+        "pinyin": "diànyuán guǎnlǐ",
         "translationFr": "",
         "translationEn": "Electricity management"
       }
@@ -16841,7 +16841,7 @@
       },
       {
         "chinese": "调动计划- diàodòng jìhuà- Plan de déplacement",
-        "pinyin": "diàodòng jìhuà - di à od ò ng j ì hu à - Plan de d é placement",
+        "pinyin": "diàodòng jìhuà",
         "translationFr": "",
         "translationEn": "Plan for relocation"
       }
@@ -16899,7 +16899,7 @@
       },
       {
         "chinese": "钓鱼的技巧- diàoyú de jìqiǎo- Techniques de pêche",
-        "pinyin": "diàoyú de jìqiǎo - di à oy ú de j ì qi ǎ o - Techniques de p ê che",
+        "pinyin": "diàoyú de jìqiǎo",
         "translationFr": "",
         "translationEn": "Fishing techniques"
       }
@@ -16946,13 +16946,13 @@
     "examples": [
       {
         "chinese": "我们到达了目的地。",
-        "pinyin": "wǒmen dàodá le mùdìdì。",
+        "pinyin": "wǒmen dàodá le mùdìdì",
         "translationFr": "Nous sommes arrivés à notre destination.",
         "translationEn": "We arrived at our destination."
       },
       {
         "chinese": "他终于到达了山顶。",
-        "pinyin": "tā zhōngyú dàodá le shāndǐng。",
+        "pinyin": "tā zhōngyú dàodá le shāndǐng",
         "translationFr": "Il est enfin arrivé au sommet de la montagne.",
         "translationEn": "He finally reached the mountain top."
       }
@@ -17011,7 +17011,7 @@
       },
       {
         "chinese": "地道的文化- dìdao de wénhuà- Culture authentique",
-        "pinyin": "dìdào de wénhuà - d ì dao de w é nhu à - Culture authentique",
+        "pinyin": "dìdào de wénhuà",
         "translationFr": "",
         "translationEn": "Authentic culture"
       }
@@ -17058,13 +17058,13 @@
     "examples": [
       {
         "chinese": "他跌倒了。",
-        "pinyin": "tā diēdǎo le。",
+        "pinyin": "tā diēdǎo le",
         "translationFr": "Il est tombé.",
         "translationEn": "He fell down."
       },
       {
         "chinese": "股价下跌了。",
-        "pinyin": "gǔjià xiàdiē le。",
+        "pinyin": "gǔjià xiàdiē le",
         "translationFr": "Le cours des actions a baissé.",
         "translationEn": "The stock price fell."
       }
@@ -17170,13 +17170,13 @@
     "examples": [
       {
         "chinese": "我们必须抵抗诱惑。",
-        "pinyin": "wǒmen bìxū dǐkàng yòuhuò。",
+        "pinyin": "wǒmen bìxū dǐkàng yòuhuò",
         "translationFr": "Nous devons résister à l'attirance.",
         "translationEn": "We must resist temptation."
       },
       {
         "chinese": "他没有抵抗就屈服了。",
-        "pinyin": "tā méiyǒu dǐkàng jiù qūfú le。",
+        "pinyin": "tā méiyǒu dǐkàng jiù qūfú le",
         "translationFr": "Il n'a pas résisté et a cédé.",
         "translationEn": "He did not resist and gave in."
       }
@@ -17233,7 +17233,7 @@
       },
       {
         "chinese": "顶峰- dǐngfēng- Sommet",
-        "pinyin": "dǐngfēng - d ǐ ngf ē ng - Sommet",
+        "pinyin": "dǐngfēng",
         "translationFr": "",
         "translationEn": "Peak (顶峰)"
       }
@@ -17291,7 +17291,7 @@
       },
       {
         "chinese": "订单处理- dìngdān chǔlǐ- Traitement de la commande",
-        "pinyin": "dìngdān chǔlǐ - d ì ngd ā n ch ǔ l ǐ - Traitement de la commande",
+        "pinyin": "dìngdān chǔlǐ",
         "translationFr": "",
         "translationEn": "Order processing - Treatment of the order"
       }
@@ -17337,7 +17337,7 @@
     "examples": [
       {
         "chinese": "订婚戒指",
-        "pinyin": "dìnghūnjièzhǐ",
+        "pinyin": "dìng hūn jiè zhǐ",
         "translationFr": "Anneau de fiançailles",
         "translationEn": "Engagement ring"
       },
@@ -17349,7 +17349,7 @@
       },
       {
         "chinese": "订婚的准备- dìnghūn de zhǔnbèi- Préparation des fiançailles",
-        "pinyin": "dìnghūn de zhǔnbèi - d ì ngh ū n de zh ǔ nb è i - Pr é paration des fian ç ailles",
+        "pinyin": "dìnghūn de zhǔnbèi",
         "translationFr": "",
         "translationEn": "Preparation for engagement"
       }
@@ -17402,7 +17402,7 @@
       },
       {
         "chinese": "我们需要重新定价。",
-        "pinyin": "wǒmen xūyào chóngxīn dìngjià。",
+        "pinyin": "wǒmen xūyào chóngxīn dìngjià",
         "translationFr": "Nous devons réévaluer le prix.",
         "translationEn": "We need to reprice."
       }
@@ -17450,13 +17450,13 @@
     "examples": [
       {
         "chinese": "我们可以定时开会。",
-        "pinyin": "wǒmen kěyǐ dìngshí kāihuì。",
+        "pinyin": "wǒmen kěyǐ dìngshí kāihuì",
         "translationFr": "Nous pouvons programmer nos réunions.",
         "translationEn": "We can schedule meetings at fixed times."
       },
       {
         "chinese": "每天定时锻炼身体。",
-        "pinyin": "měitiān dìngshí duànliànshēntǐ。",
+        "pinyin": "měitiān dìngshí duàn liàn shēn tǐ",
         "translationFr": "Faire de l'exercice régulièrement à des heures fixes.",
         "translationEn": "Exercise regularly at fixed hours."
       }
@@ -17502,13 +17502,13 @@
     "examples": [
       {
         "chinese": "请定位这个产品在市场上的位置。",
-        "pinyin": "qǐng dìngwèi zhège chǎnpǐn zài shìchǎng shàng de wèizhì。",
+        "pinyin": "qǐng dìngwèi zhège chǎnpǐn zài shìchǎng shàng de wèizhì",
         "translationFr": "Veuillez situer ce produit sur le marché.",
         "translationEn": "Please locate this product in the market."
       },
       {
         "chinese": "他被定位为公司的首席执行官。",
-        "pinyin": "tā bèi dìngwèi wèi gōngsī de shǒuxí zhíxíngguān。",
+        "pinyin": "tā bèi dìngwèi wèi gōngsī de shǒuxí zhíxíngguān",
         "translationFr": "Il a été positionné comme PDG de l'entreprise.",
         "translationEn": "He was positioned as the company's CEO."
       }
@@ -17569,7 +17569,7 @@
       },
       {
         "chinese": "定义规则- dìngyì guīzé- Règle de définition",
-        "pinyin": "dìngyì guīzé - d ì ngy ì gu ī z é - R è gle de d é finition",
+        "pinyin": "dìngyì guīzé",
         "translationFr": "",
         "translationEn": "Define rules - Rule of definition"
       }
@@ -17627,7 +17627,7 @@
       },
       {
         "chinese": "定制服务- dìngzhì fúwù- Service personnalisé",
-        "pinyin": "dìngzhì fúwù - d ì ngzh ì f ú w ù - Service personnalis é",
+        "pinyin": "dìngzhì fúwù",
         "translationFr": "",
         "translationEn": "Customized service - Personalized service"
       }
@@ -17673,19 +17673,19 @@
     "examples": [
       {
         "chinese": "低碳生活",
-        "pinyin": "dī tàn shēnghuó",
+        "pinyin": "dītàn shēnghuó",
         "translationFr": "vie à basse empreinte carbone",
         "translationEn": "Low-carbon living"
       },
       {
         "chinese": "低碳经济",
-        "pinyin": "dī tàn jīngjì",
+        "pinyin": "dītàn jīngjì",
         "translationFr": "économie à basse empreinte carbone",
         "translationEn": "Low-carbon economy"
       },
       {
         "chinese": "低碳出行",
-        "pinyin": "dī tàn chūxíng",
+        "pinyin": "dītàn chūxíng",
         "translationFr": "déplacement à basse empreinte carbone",
         "translationEn": "Low-carbon travel"
       }
@@ -17741,7 +17741,7 @@
       },
       {
         "chinese": "地形分析- dìxíng fēnxī- Analyse topographique",
-        "pinyin": "dìxíng fēnxī - d ì x í ng f ē nx ī - Analyse topographique",
+        "pinyin": "dìxíng fēnxī",
         "translationFr": "",
         "translationEn": "Topographical analysis"
       }
@@ -17799,7 +17799,7 @@
       },
       {
         "chinese": "地域特色- dìyù tèsè- Caractéristiques régionales",
-        "pinyin": "dìyù tèsè - d ì y ù t è s è - Caract é ristiques r é gionales",
+        "pinyin": "dìyù tèsè",
         "translationFr": "",
         "translationEn": "Regional characteristics"
       }
@@ -17857,7 +17857,7 @@
       },
       {
         "chinese": "地质勘探- dìzhì kāntàn- Exploration géologique",
-        "pinyin": "dìzhìkāntàn - d ì zh ì k ā nt à n - Exploration g é ologique",
+        "pinyin": "dì zhì kān tàn",
         "translationFr": "",
         "translationEn": "Geological exploration"
       }
@@ -17903,7 +17903,7 @@
     "examples": [
       {
         "chinese": "一栋楼",
-        "pinyin": "yídòng lóu",
+        "pinyin": "yīdòng lóu",
         "translationFr": "Un bâtiment",
         "translationEn": "A building"
       },
@@ -17915,7 +17915,7 @@
       },
       {
         "chinese": "三栋别墅- sān dòng biéshù- Trois villas",
-        "pinyin": "sāndòng biéshù - s ā n d ò ng bi é sh ù - Trois villas",
+        "pinyin": "sāndòng biéshù",
         "translationFr": "",
         "translationEn": "Three villas"
       }
@@ -17973,7 +17973,7 @@
       },
       {
         "chinese": "动机分析- dòngjī fēnxī- Analyse de la motivation",
-        "pinyin": "dòngjī fēnxī - d ò ngj ī f ē nx ī - Analyse de la motivation",
+        "pinyin": "dòngjī fēnxī",
         "translationFr": "",
         "translationEn": "Motive analysis"
       }
@@ -18019,7 +18019,7 @@
     "examples": [
       {
         "chinese": "动力系统",
-        "pinyin": "dònglìxìtǒng",
+        "pinyin": "dòng lì xì tǒng",
         "translationFr": "Système de propulsion",
         "translationEn": "Power system"
       },
@@ -18031,7 +18031,7 @@
       },
       {
         "chinese": "动力装置- dònglì zhuāngzhì- Moteur",
-        "pinyin": "dònglìzhuāngzhì - d ò ngl ì zhu ā ngzh ì - Moteur",
+        "pinyin": "dòng lì zhuāng zhì",
         "translationFr": "",
         "translationEn": "Engine"
       }
@@ -18089,7 +18089,7 @@
       },
       {
         "chinese": "动漫产业- dòngmàn chǎnyè- Industrie de l'anime et des mangas",
-        "pinyin": "dòngmàn chǎnyè - d ò ngm à n ch ǎ ny è - Industrie de l'anime et des mangas",
+        "pinyin": "dòngmàn chǎnyè",
         "translationFr": "",
         "translationEn": "Animation and manga industry"
       }
@@ -18135,7 +18135,7 @@
     "examples": [
       {
         "chinese": "动态变化",
-        "pinyin": "dòngtàibiànhuà",
+        "pinyin": "dòng tài biàn huà",
         "translationFr": "Changement dynamique",
         "translationEn": "Dynamic change"
       },
@@ -18147,7 +18147,7 @@
       },
       {
         "chinese": "动态管理- dòngtài guǎnlǐ- Gestion dynamique",
-        "pinyin": "dòngtài guǎnlǐ - d ò ngt à i gu ǎ nl ǐ - Gestion dynamique",
+        "pinyin": "dòngtài guǎnlǐ",
         "translationFr": "",
         "translationEn": "Dynamic management"
       }
@@ -18205,7 +18205,7 @@
       },
       {
         "chinese": "动听的歌声- dòngtīng de gēshēng- Chant harmonieux",
-        "pinyin": "dòngtīng de gēshēng - d ò ngt ī ng de g ē sh ē ng - Chant harmonieux",
+        "pinyin": "dòngtīng de gēshēng",
         "translationFr": "",
         "translationEn": "Harmonious singing voice"
       }
@@ -18263,7 +18263,7 @@
       },
       {
         "chinese": "逗趣儿- dòu qùr- Amusement",
-        "pinyin": "dòuqùér - d ò u q ù r - Amusement",
+        "pinyin": "dòuqùér",
         "translationFr": "",
         "translationEn": "Amusement"
       }
@@ -18310,13 +18310,13 @@
     "examples": [
       {
         "chinese": "他为了理想而斗争。",
-        "pinyin": "tā wèile lǐxiǎng ér dòuzhēng。",
+        "pinyin": "tā wèile lǐxiǎng ér dòuzhēng",
         "translationFr": "Il lutte pour ses idées.",
         "translationEn": "He struggles for his ideals."
       },
       {
         "chinese": "她在法庭上与对方斗争。",
-        "pinyin": "tā zài fǎtíng shàng yǔ duìfāng dòuzhēng。",
+        "pinyin": "tā zài fǎtíng shàng yǔ duìfāng dòuzhēng",
         "translationFr": "Elle se bat en cour de justice contre l'adversaire.",
         "translationEn": "She fights in court against her opponent."
       }
@@ -18377,7 +18377,7 @@
       },
       {
         "chinese": "毒蛇- dúshé- Serpent venimeux",
-        "pinyin": "dúshé - d ú sh é - Serpent venimeux",
+        "pinyin": "dúshé",
         "translationFr": "",
         "translationEn": "Venomous snake"
       }
@@ -18424,7 +18424,7 @@
     "examples": [
       {
         "chinese": "渡过难关",
-        "pinyin": "dùguònánguān",
+        "pinyin": "dù guò nán guān",
         "translationFr": "traverser une période difficile",
         "translationEn": "To overcome difficulties"
       },
@@ -18478,13 +18478,13 @@
     "examples": [
       {
         "chinese": "这件事的端点在哪里？",
-        "pinyin": "zhèjiàn shì de duāndiǎn zài nǎlǐ？",
+        "pinyin": "zhèjiàn shì de duāndiǎn zài nǎlǐ",
         "translationFr": "Où se trouve le point d'origine de cet événement ?",
         "translationEn": "Where is the starting point of this matter?"
       },
       {
         "chinese": "他是个端人。",
-        "pinyin": "tā shì gè duān rén。",
+        "pinyin": "tā shì gè duān rén",
         "translationFr": "C'est une personne honnête.",
         "translationEn": "He is an honest person."
       }
@@ -18548,7 +18548,7 @@
       },
       {
         "chinese": "短缺的劳动力- duǎnquē de láodònglì- Pénurie de main-d'œuvre",
-        "pinyin": "duǎnquē de láodònglì - du ǎ nqu ē de l á od ò ngl ì - P é nurie de main - d'œ uvre",
+        "pinyin": "duǎnquē de láodònglì",
         "translationFr": "",
         "translationEn": "Shortage of labor force"
       }
@@ -18606,7 +18606,7 @@
       },
       {
         "chinese": "对称美- duìchèn měi- Beauté symétrique",
-        "pinyin": "duìchèn měi - du ì ch è n m ě i - Beaut é sym é trique",
+        "pinyin": "duìchèn měi",
         "translationFr": "",
         "translationEn": "Symmetrical beauty"
       }
@@ -18664,7 +18664,7 @@
       },
       {
         "chinese": "对接的挑战- duìjiē de tiǎozhàn- Défis de la connexion",
-        "pinyin": "duìjiē de tiǎozhàn - du ì ji ē de ti ǎ ozh à n - D é fis de la connexion",
+        "pinyin": "duìjiē de tiǎozhàn",
         "translationFr": "",
         "translationEn": "Challenges of connection"
       }
@@ -18711,13 +18711,13 @@
     "examples": [
       {
         "chinese": "我对抗困难。",
-        "pinyin": "wǒ duìkàng kùnnán。",
+        "pinyin": "wǒ duìkàng kùnnán",
         "translationFr": "Je me bats contre les difficultés.",
         "translationEn": "I fight against difficulties"
       },
       {
         "chinese": "他们对抗敌人的攻击。",
-        "pinyin": "tāmen duìkàng dírén de gōngjī。",
+        "pinyin": "tāmen duìkàng dírén de gōngjī",
         "translationFr": "Ils résistent aux attaques des ennemis.",
         "translationEn": "They resist the enemy's attack"
       }
@@ -18778,7 +18778,7 @@
       },
       {
         "chinese": "对立的关系- duìlì de guānxì- Relations d'opposition",
-        "pinyin": "duìlì de guānxì - du ì l ì de gu ā nx ì - Relations d'opposition",
+        "pinyin": "duìlì de guānxì",
         "translationFr": "",
         "translationEn": "Opposition relations"
       }
@@ -18836,7 +18836,7 @@
       },
       {
         "chinese": "对应的挑战- duìyìng de tiǎozhàn- Défis correspondants",
-        "pinyin": "duìyìng de tiǎozhàn - du ì y ì ng de ti ǎ ozh à n - D é fis correspondants",
+        "pinyin": "duìyìng de tiǎozhàn",
         "translationFr": "",
         "translationEn": "Corresponding challenges"
       }
@@ -18883,13 +18883,13 @@
     "examples": [
       {
         "chinese": "蹲下来休息一下。",
-        "pinyin": "dūnxiàlái xiūxi yíxià。",
+        "pinyin": "dūnxiàlái xiūxī yīxià",
         "translationFr": "S'accroupir pour se reposer un moment.",
         "translationEn": "Squat down to rest for a moment"
       },
       {
         "chinese": "他蹲在树下等朋友。",
-        "pinyin": "tā dūn zài shù xià děng péngyǒu。",
+        "pinyin": "tā dūn zài shùxià děng péngyǒu",
         "translationFr": "Il s'est accroupi sous l'arbre pour attendre son ami.",
         "translationEn": "He squatted under the tree waiting for his friend"
       }
@@ -18946,7 +18946,7 @@
       },
       {
         "chinese": "顿时改变主意- dùnshí gǎibiàn zhǔyì- Changer d'avis tout de suite",
-        "pinyin": "dùnshí gǎibiàn zhǔyì - d ù nsh í g ǎ ibi à n zh ǔ y ì - Changer d'avis tout de suite",
+        "pinyin": "dùnshí gǎibiàn zhǔyì",
         "translationFr": "",
         "translationEn": "Changed my mind immediately"
       }
@@ -19063,7 +19063,7 @@
       },
       {
         "chinese": "躲避的技巧- duǒbì de jìqiǎo- Techniques d'évitement",
-        "pinyin": "duǒbì de jìqiǎo - du ǒ b ì de j ì qi ǎ o - Techniques d'é vitement",
+        "pinyin": "duǒbì de jìqiǎo",
         "translationFr": "",
         "translationEn": "Techniques for evasion"
       }
@@ -19109,19 +19109,19 @@
     "examples": [
       {
         "chinese": "多才多艺的学生",
-        "pinyin": "duōcáiduōyì de xuéshēng",
+        "pinyin": "duō cái duō yì de xuéshēng",
         "translationFr": "Étudiant polyvalent",
         "translationEn": "A versatile student"
       },
       {
         "chinese": "多才多艺的艺术家",
-        "pinyin": "duōcáiduōyì de yìshùjiā",
+        "pinyin": "duō cái duō yì de yìshùjiā",
         "translationFr": "Artiste talentueux dans de nombreux domaines",
         "translationEn": "A talented artist in many fields"
       },
       {
         "chinese": "多才多艺的员工- duōcái-duōyì de yuángōng- Employé polyvalent",
-        "pinyin": "duōcáiduōyì de yuángōng - du ō c á i - du ō y ì de yu á ng ō ng - Employ é polyvalent",
+        "pinyin": "duō cái duō yì de yuángōng",
         "translationFr": "",
         "translationEn": "A versatile employee"
       }
@@ -19179,7 +19179,7 @@
       },
       {
         "chinese": "多亏了这个机会- duōkuīle zhège jīhuì- Heureusement que j'ai eu cette opportunité",
-        "pinyin": "duōkuī le zhège jīhuì - du ō ku ī le zh è ge j ī hu ì - Heureusement que j'ai eu cette opportunit é",
+        "pinyin": "duōkuī le zhège jīhuì",
         "translationFr": "",
         "translationEn": "Fortunately, I had this opportunity"
       }
@@ -19231,7 +19231,7 @@
       },
       {
         "chinese": "电子多媒体广告",
-        "pinyin": "diànzǐ duōméitǐ guǎnggào",
+        "pinyin": "diànzi duōméitǐ guǎnggào",
         "translationFr": "publicité multimédia numérique",
         "translationEn": "Digital multimedia advertising"
       }
@@ -19278,13 +19278,13 @@
     "examples": [
       {
         "chinese": "他夺去了那本书。",
-        "pinyin": "tā duóqù le nàběnshū。",
+        "pinyin": "tā duóqù le nàběnshū",
         "translationFr": "Il a pris ce livre.",
         "translationEn": "He took the book"
       },
       {
         "chinese": "我们夺回了主动权。",
-        "pinyin": "wǒmen duóhuí le zhǔdòngquán。",
+        "pinyin": "wǒmen duóhuí le zhǔdòngquán",
         "translationFr": "Nous avons repris le contrôle.",
         "translationEn": "We regained control"
       }
@@ -19344,7 +19344,7 @@
       },
       {
         "chinese": "多余的资源- duōyú de zīyuán- Ressources en trop",
-        "pinyin": "duōyú de zīyuán - du ō y ú de z ī yu á n - Ressources en trop",
+        "pinyin": "duōyú de zīyuán",
         "translationFr": "",
         "translationEn": "Excess resources"
       }
@@ -19402,7 +19402,7 @@
       },
       {
         "chinese": "多元化的策略- duōyuán huà de cèlüè- Stratégies diversifiées",
-        "pinyin": "duōyuánhuà de cèlüè - du ō yu á n hu à de c è l ü è - Strat é gies diversifi é es",
+        "pinyin": "duōyuánhuà de cèlüè",
         "translationFr": "",
         "translationEn": "Diversified strategies"
       }
@@ -19448,13 +19448,13 @@
     "examples": [
       {
         "chinese": "这是一个都市。",
-        "pinyin": "zhè shì yígè dūshì。",
+        "pinyin": "zhèshì yígè dūshì",
         "translationFr": "C'est une ville.",
         "translationEn": "This is a city"
       },
       {
         "chinese": "北京是大城市，也是都市。",
-        "pinyin": "běijīng shì dàichéngshì， yě shì dūshì。",
+        "pinyin": "běijīng shì dàchéngshì yě shì dūshì",
         "translationFr": "Beijing est une grande ville, elle est aussi une métropole.",
         "translationEn": "Beijing is a big city, it's also a metropolis"
       }
@@ -19512,7 +19512,7 @@
       },
       {
         "chinese": "恶劣的环境- èliè de huánjìng- Environnement détestable",
-        "pinyin": "èliè de huánjìng - è li è de hu á nj ì ng - Environnement d é testable",
+        "pinyin": "èliè de huánjìng",
         "translationFr": "",
         "translationEn": "Detestable environment"
       }
@@ -19570,7 +19570,7 @@
       },
       {
         "chinese": "耳环的种类- ěrhuán de zhǒnglèi- Types de boucles d'oreilles",
-        "pinyin": "ěrhuán de zhǒnglèi - ě rhu á n de zh ǒ ngl è i - Types de boucles d'oreilles",
+        "pinyin": "ěrhuán de zhǒnglèi",
         "translationFr": "",
         "translationEn": "Types of earrings"
       }
@@ -19622,7 +19622,7 @@
       },
       {
         "chinese": "儿童健康检查",
-        "pinyin": "értóng jiànkāngjiǎnchá",
+        "pinyin": "értóng jiàn kāng jiǎn chá",
         "translationFr": "Examens de santé pour enfants",
         "translationEn": "Child health checkup"
       }
@@ -19668,19 +19668,19 @@
     "examples": [
       {
         "chinese": "二氧化碳排放",
-        "pinyin": "èryǎnghuàtàn páifàng",
+        "pinyin": "èr yǎng huà tàn páifàng",
         "translationFr": "Émissions de dioxyde de carbone",
         "translationEn": "Carbon dioxide emissions"
       },
       {
         "chinese": "二氧化碳吸收",
-        "pinyin": "èryǎnghuàtàn xīshōu",
+        "pinyin": "èr yǎng huà tàn xīshōu",
         "translationFr": "Absorption de dioxyde de carbone",
         "translationEn": "Carbon dioxide absorption"
       },
       {
         "chinese": "二氧化碳的影响- èryǎnghuàtàn de yǐngxiǎng- Impact du dioxyde de carbone",
-        "pinyin": "èryǎnghuàtàn de yǐngxiǎng - è ry ǎ nghu à t à n de y ǐ ngxi ǎ ng - Impact du dioxyde de carbone",
+        "pinyin": "èr yǎng huà tàn de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of carbon dioxide"
       }
@@ -19738,7 +19738,7 @@
       },
       {
         "chinese": "恶心的感觉- ěxin de gǎnjué- Sentiment de dégoût",
-        "pinyin": "ěxīn de gǎnjué - ě xin de g ǎ nju é - Sentiment de d é go û t",
+        "pinyin": "ěxīn de gǎnjué",
         "translationFr": "",
         "translationEn": "A feeling of nausea"
       }
@@ -19785,7 +19785,7 @@
     "examples": [
       {
         "chinese": "病发",
-        "pinyin": "bìng fā",
+        "pinyin": "bìngfā",
         "translationFr": "Maladie qui apparaît",
         "translationEn": "Illness onset"
       },
@@ -19851,7 +19851,7 @@
       },
       {
         "chinese": "发愁的解决方法- fāchóu de jiějué fāngfǎ- Solutions pour l'inquiétude",
-        "pinyin": "fāchóu de jiějué fāngfǎ - f ā ch ó u de ji ě ju é f ā ngf ǎ - Solutions pour l'inqui é tude",
+        "pinyin": "fāchóu de jiějué fāngfǎ",
         "translationFr": "",
         "translationEn": "Solutions to worries"
       }
@@ -19949,19 +19949,19 @@
     "examples": [
       {
         "chinese": "法定假日",
-        "pinyin": "fǎdìng jiǎrì",
+        "pinyin": "fǎdìng jiàrì",
         "translationFr": "Jour férié légal",
         "translationEn": "Legal holiday"
       },
       {
         "chinese": "法定年龄",
-        "pinyin": "fǎdìngniánlíng",
+        "pinyin": "fǎ dìng nián líng",
         "translationFr": "Âge légal",
         "translationEn": "Legal age"
       },
       {
         "chinese": "法定的权利- fǎdìng de quánlì- Droits légaux",
-        "pinyin": "fǎdìng de quánlì - f ǎ d ì ng de qu á nl ì - Droits l é gaux",
+        "pinyin": "fǎdìng de quánlì",
         "translationFr": "",
         "translationEn": "Legal rights"
       }
@@ -20013,13 +20013,13 @@
       },
       {
         "chinese": "发动战争",
-        "pinyin": "fādòngzhànzhēng",
+        "pinyin": "fā dòng zhàn zhēng",
         "translationFr": "Déclencher une guerre",
         "translationEn": "To initiate a war"
       },
       {
         "chinese": "发动机- fādòngjī- Moteur",
-        "pinyin": "fādòngjī - f ā d ò ngj ī - Moteur",
+        "pinyin": "fādòngjī",
         "translationFr": "",
         "translationEn": "Engine"
       }
@@ -20129,7 +20129,7 @@
       },
       {
         "chinese": "法官的权力- fǎguān de quánlì- Pouvoirs d'un juge",
-        "pinyin": "fǎguān de quánlì - f ǎ gu ā n de qu á nl ì - Pouvoirs d'un juge",
+        "pinyin": "fǎguān de quánlì",
         "translationFr": "",
         "translationEn": "The judge's powers"
       }
@@ -20187,7 +20187,7 @@
       },
       {
         "chinese": "发光的效果- fāguāng de xiàoguǒ- Effet lumineux",
-        "pinyin": "fāguāng de xiàoguǒ - f ā gu ā ng de xi à ogu ǒ - Effet lumineux",
+        "pinyin": "fāguāng de xiàoguǒ",
         "translationFr": "",
         "translationEn": "The effect of light emission"
       }
@@ -20245,7 +20245,7 @@
       },
       {
         "chinese": "法规的影响- fǎguī de yǐngxiǎng- Impact des réglementations",
-        "pinyin": "fǎguī de yǐngxiǎng - f ǎ gu ī de y ǐ ngxi ǎ ng - Impact des r é glementations",
+        "pinyin": "fǎguī de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of regulations-"
       }
@@ -20292,7 +20292,7 @@
     "examples": [
       {
         "chinese": "违反规定",
-        "pinyin": "wéifǎnguīdìng",
+        "pinyin": "wéi fǎn guī dìng",
         "translationFr": "Enfreindre les règles",
         "translationEn": "Violating rules"
       },
@@ -20351,13 +20351,13 @@
     "examples": [
       {
         "chinese": "翻一番",
-        "pinyin": "fānyìfān",
+        "pinyin": "fānyīfān",
         "translationFr": "doubler",
         "translationEn": "Double"
       },
       {
         "chinese": "这是番薯。",
-        "pinyin": "zhè shì fānshǔ。",
+        "pinyin": "zhèshì fānshǔ",
         "translationFr": "C'est du manioc.",
         "translationEn": "This is sweet potato."
       }
@@ -20412,13 +20412,13 @@
       },
       {
         "chinese": "妨碍交通",
-        "pinyin": "fángàijiāotōng",
+        "pinyin": "fáng ài jiāo tōng",
         "translationFr": "Gêner la circulation",
         "translationEn": "Obstructing traffic"
       },
       {
         "chinese": "妨碍的后果- fáng'ài de hòuguǒ- Conséquences de l'obstruction",
-        "pinyin": "fángài de hòuguǒ - f á ng'à i de h ò ugu ǒ - Cons é quences de l'obstruction",
+        "pinyin": "fángài de hòuguǒ",
         "translationFr": "",
         "translationEn": "The consequences of obstruction-"
       }
@@ -20470,13 +20470,13 @@
       },
       {
         "chinese": "放大照片",
-        "pinyin": "fàngdà zhàopiàn",
+        "pinyin": "fàngdà zhàopiān",
         "translationFr": "Agrandir une photo",
         "translationEn": "Taking a magnified photo"
       },
       {
         "chinese": "放大的效果- fàngdà de xiàoguǒ- Effet d'agrandissement",
-        "pinyin": "fàngdà de xiàoguǒ - f à ngd à de xi à ogu ǒ - Effet d'agrandissement",
+        "pinyin": "fàngdà de xiàoguǒ",
         "translationFr": "",
         "translationEn": "Effects of magnification-"
       }
@@ -20522,19 +20522,19 @@
     "examples": [
       {
         "chinese": "方方面面的考虑",
-        "pinyin": "fāngfāngmiànmiàn de kǎolǜ",
+        "pinyin": "fāng fāng miàn miàn de kǎolǜ",
         "translationFr": "Considérations de tous les aspects",
         "translationEn": "Considerations from all angles"
       },
       {
         "chinese": "方方面面的影响",
-        "pinyin": "fāngfāngmiànmiàn de yǐngxiǎng",
+        "pinyin": "fāng fāng miàn miàn de yǐngxiǎng",
         "translationFr": "Impact de tous les côtés",
         "translationEn": "Impacts from all sides"
       },
       {
         "chinese": "方方面面的挑战- fāngfāngmiànmiàn de tiǎozhàn- Défis de tous les aspects",
-        "pinyin": "fāngfāngmiànmiàn de tiǎozhàn - f ā ngf ā ngmi à nmi à n de ti ǎ ozh à n - D é fis de tous les aspects",
+        "pinyin": "fāng fāng miàn miàn de tiǎozhàn",
         "translationFr": "",
         "translationEn": "Challenges from all aspects-"
       }
@@ -20639,7 +20639,7 @@
       },
       {
         "chinese": "买房时要考虑房价。",
-        "pinyin": "mǎifáng shí yào kǎolǜ fángjià。",
+        "pinyin": "mǎifáng shíyào kǎolǜ fángjià",
         "translationFr": "Lors de l'achat d'un logement, il faut prendre en compte le prix du logement.",
         "translationEn": "When buying a house, you should consider the housing price."
       }
@@ -20698,7 +20698,7 @@
       },
       {
         "chinese": "访谈的内容- fǎngtán de nèiróng- Contenu de l'interview",
-        "pinyin": "fǎngtán de nèiróng - f ǎ ngt á n de n è ir ó ng - Contenu de l'interview",
+        "pinyin": "fǎngtán de nèiróng",
         "translationFr": "",
         "translationEn": "Content of the interview-"
       }
@@ -20756,7 +20756,7 @@
       },
       {
         "chinese": "方位的影响- fāngwèi de yǐngxiǎng- Impact de l'orientation",
-        "pinyin": "fāngwèi de yǐngxiǎng - f ā ngw è i de y ǐ ngxi ǎ ng - Impact de l'orientation",
+        "pinyin": "fāngwèi de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of orientation-"
       }
@@ -20814,7 +20814,7 @@
       },
       {
         "chinese": "方言的影响- fāngyán de yǐngxiǎng- Impact des dialectes",
-        "pinyin": "fāngyán de yǐngxiǎng - f ā ngy á n de y ǐ ngxi ǎ ng - Impact des dialectes",
+        "pinyin": "fāngyán de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of dialects-"
       }
@@ -20872,7 +20872,7 @@
       },
       {
         "chinese": "防治的策略- fángzhì de cèlüè- Stratégies de prévention et de contrôle",
-        "pinyin": "fángzhì de cèlüè - f á ngzh ì de c è l ü è - Strat é gies de pr é vention et de contr ô le",
+        "pinyin": "fángzhì de cèlüè",
         "translationFr": "",
         "translationEn": "Strategies for prevention and control"
       }
@@ -20986,7 +20986,7 @@
       },
       {
         "chinese": "繁忙的城市- fánmáng de chéngshì- Ville occupée",
-        "pinyin": "fánmáng de chéngshì - f á nm á ng de ch é ngsh ì - Ville occup é e",
+        "pinyin": "fánmáng de chéngshì",
         "translationFr": "",
         "translationEn": "Busy city"
       }
@@ -21044,7 +21044,7 @@
       },
       {
         "chinese": "凡是的情况- fánshì de qíngkuàng- Toutes les situations",
-        "pinyin": "fánshì de qíngkuàng - f á nsh ì de q í ngku à ng - Toutes les situations",
+        "pinyin": "fánshì de qíngkuàng",
         "translationFr": "",
         "translationEn": "All situations"
       }
@@ -21143,13 +21143,13 @@
     "examples": [
       {
         "chinese": "他繁殖了这种植物。",
-        "pinyin": "tā fánzhí le zhèzhǒng zhíwù。",
+        "pinyin": "tā fánzhí le zhèzhǒng zhíwù",
         "translationFr": "Il a propagé cette plante.",
         "translationEn": "He propagated this plant"
       },
       {
         "chinese": "这个想法在社会上迅速繁殖开来。",
-        "pinyin": "zhège xiǎngfǎ zài shèhuì shàng xùnsù fánzhí kāilái。",
+        "pinyin": "zhège xiǎngfǎ zài shèhuì shàng xùnsù fánzhí kāilái",
         "translationFr": "Cette idée s'est propagée rapidement dans la société.",
         "translationEn": "This idea spread quickly in society"
       }
@@ -21200,7 +21200,7 @@
       },
       {
         "chinese": "电子发票",
-        "pinyin": "diànzǐ fāpiào",
+        "pinyin": "diànzi fāpiào",
         "translationFr": "facture électronique",
         "translationEn": "Electronic invoice"
       },
@@ -21262,7 +21262,7 @@
       },
       {
         "chinese": "发行的策略- fāxíng de cèlüè- Stratégies de publication",
-        "pinyin": "fāxíng de cèlüè - f ā x í ng de c è l ü è - Strat é gies de publication",
+        "pinyin": "fāxíng de cèlüè",
         "translationFr": "",
         "translationEn": "Publishing strategies"
       }
@@ -21309,13 +21309,13 @@
     "examples": [
       {
         "chinese": "发炎的部位很疼。",
-        "pinyin": "fāyán de bùwèi hěn téng。",
+        "pinyin": "fāyán de bùwèi hěn téng",
         "translationFr": "La partie qui s'est inflamée est très douloureuse.",
         "translationEn": "The inflamed part is very painful"
       },
       {
         "chinese": "这种药物可以防止发炎。",
-        "pinyin": "zhèzhǒng yàowù kěyǐ fángzhǐ fāyán。",
+        "pinyin": "zhèzhǒng yàowù kěyǐ fángzhǐ fāyán",
         "translationFr": "Ce médicament peut prévenir l'inflammation.",
         "translationEn": "This medicine can prevent inflammation"
       }
@@ -21362,7 +21362,7 @@
     "examples": [
       {
         "chinese": "生长发育",
-        "pinyin": "shēngchángfàyù",
+        "pinyin": "shēng zhǎng fā yù",
         "translationFr": "Croissance et développement",
         "translationEn": "Growth and development"
       },
@@ -21374,7 +21374,7 @@
       },
       {
         "chinese": "发育的影响- fāyù de yǐngxiǎng- Impact du développement",
-        "pinyin": "fāyù de yǐngxiǎng - f ā y ù de y ǐ ngxi ǎ ng - Impact du d é veloppement",
+        "pinyin": "fāyù de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of development"
       }
@@ -21432,7 +21432,7 @@
       },
       {
         "chinese": "肥沃的土地- féiwò de tǔdì- Terre fertile",
-        "pinyin": "féiwò de tǔdì - f é iw ò de t ǔ d ì - Terre fertile",
+        "pinyin": "féiwò de tǔdì",
         "translationFr": "",
         "translationEn": "Fertile land"
       }
@@ -21540,7 +21540,7 @@
       },
       {
         "chinese": "肥胖的预防- féipàng de yùfáng- Prévention de l'obésité",
-        "pinyin": "féipàng de yùfáng - f é ip à ng de y ù f á ng - Pr é vention de l'ob é sit é",
+        "pinyin": "féipàng de yùfáng",
         "translationFr": "",
         "translationEn": "Prevention of obesity"
       }
@@ -21586,7 +21586,7 @@
     "examples": [
       {
         "chinese": "飞速发展",
-        "pinyin": "fēisùfāzhǎn",
+        "pinyin": "fēi sù fā zhǎn",
         "translationFr": "Développement très rapide",
         "translationEn": "Rapid development"
       },
@@ -21650,7 +21650,7 @@
       },
       {
         "chinese": "肥沃土地的影响- féiwò tǔdì de yǐngxiǎng- Impact des terres fertiles",
-        "pinyin": "féiwò tǔdì de yǐngxiǎng - f é iw ò t ǔ d ì de y ǐ ngxi ǎ ng - Impact des terres fertiles",
+        "pinyin": "féiwò tǔdì de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of fertile land"
       }
@@ -21708,7 +21708,7 @@
       },
       {
         "chinese": "肺炎的预防- fèiyán de yùfáng- Prévention de la pneumonie",
-        "pinyin": "fèiyán de yùfáng - f è iy á n de y ù f á ng - Pr é vention de la pneumonie",
+        "pinyin": "fèiyán de yùfáng",
         "translationFr": "",
         "translationEn": "Prevention of pneumonia"
       }
@@ -21810,7 +21810,7 @@
     "examples": [
       {
         "chinese": "封闭系统",
-        "pinyin": "fēngbìxìtǒng",
+        "pinyin": "fēng bì xì tǒng",
         "translationFr": "Système fermé",
         "translationEn": "Closed system"
       },
@@ -21822,7 +21822,7 @@
       },
       {
         "chinese": "封闭的影响- fēngbì de yǐngxiǎng- Impact d'une fermeture",
-        "pinyin": "fēngbì de yǐngxiǎng - f ē ngb ì de y ǐ ngxi ǎ ng - Impact d'une fermeture",
+        "pinyin": "fēngbì de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of closure"
       }
@@ -21868,19 +21868,19 @@
     "examples": [
       {
         "chinese": "风光秀丽",
-        "pinyin": "fēngguāngxiùlì",
+        "pinyin": "fēng guāng xiù lì",
         "translationFr": "Paysages magnifiques",
         "translationEn": "Magnificent scenery"
       },
       {
         "chinese": "风光旖旎",
-        "pinyin": "fēngguāngyǐnǐ",
+        "pinyin": "fēng guāng yǐ nǐ",
         "translationFr": "Scènes pittoresques",
         "translationEn": "Picturesque scenes"
       },
       {
         "chinese": "风光的美- fēngguāng de měi- Beauté des paysages",
-        "pinyin": "fēngguāng de měi - f ē nggu ā ng de m ě i - Beaut é des paysages",
+        "pinyin": "fēngguāng de měi",
         "translationFr": "",
         "translationEn": "The beauty of the scenery"
       }
@@ -21938,7 +21938,7 @@
       },
       {
         "chinese": "风力的影响- fēnglì de yǐngxiǎng- Impact du vent",
-        "pinyin": "fēnglì de yǐngxiǎng - f ē ngl ì de y ǐ ngxi ǎ ng - Impact du vent",
+        "pinyin": "fēnglì de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of wind"
       }
@@ -21985,13 +21985,13 @@
     "examples": [
       {
         "chinese": "他们分工作业。",
-        "pinyin": "tāmen fēngōng zuòyè。",
+        "pinyin": "tāmen fēngōng zuòyè",
         "translationFr": "Ils se partagent les tâches.",
         "translationEn": "They share tasks"
       },
       {
         "chinese": "我们应该合理分工。",
-        "pinyin": "wǒmen yīnggāi hélǐ fēngōng。",
+        "pinyin": "wǒmen yīnggāi hélǐ fēngōng",
         "translationFr": "Nous devrions diviser le travail de manière raisonnable.",
         "translationEn": "We should divide work reasonably"
       }
@@ -22048,7 +22048,7 @@
       },
       {
         "chinese": "丰收的影响- fēngshōu de yǐngxiǎng- Impact d'une bonne récolte",
-        "pinyin": "fēngshōu de yǐngxiǎng - f ē ngsh ō u de y ǐ ngxi ǎ ng - Impact d'une bonne r é colte",
+        "pinyin": "fēngshōu de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of a good harvest"
       }
@@ -22095,13 +22095,13 @@
     "examples": [
       {
         "chinese": "他总是尽力奉献他的时间帮助别人。",
-        "pinyin": "tā zǒngshì jìnlì fèngxiàn tā de shíjiān bāngzhù biérén。",
+        "pinyin": "tā zǒngshì jìnlì fèngxiàn tā de shíjiān bāngzhù biérén",
         "translationFr": "Il s'efforce toujours d'offrir son temps pour aider les autres.",
         "translationEn": "He always strives to contribute his time to help others"
       },
       {
         "chinese": "她奉献了多年的时间来研究这个课题。",
-        "pinyin": "tā fèngxiàn le duōnián de shíjiān lái yánjiū zhège kètí。",
+        "pinyin": "tā fèngxiàn le duōnián de shíjiān lái yánjiū zhège kètí",
         "translationFr": "Elle a consacré de nombreuses années à étudier ce sujet.",
         "translationEn": "She devoted many years to studying this topic"
       }
@@ -22204,7 +22204,7 @@
       },
       {
         "chinese": "分级管理",
-        "pinyin": "fēnjíguǎnlǐ",
+        "pinyin": "fēn jí guǎn lǐ",
         "translationFr": "Gestion par classification",
         "translationEn": "Classified management"
       }
@@ -22251,13 +22251,13 @@
     "examples": [
       {
         "chinese": "他非常愤怒。",
-        "pinyin": "tā fēicháng fènnù。",
+        "pinyin": "tā fēicháng fènnù",
         "translationFr": "Il est furieux.",
         "translationEn": "He is very angry."
       },
       {
         "chinese": "她对这种行为感到愤怒。",
-        "pinyin": "tā duì zhèzhǒng xíngwéi gǎndào fènnù。",
+        "pinyin": "tā duì zhèzhǒng xíngwéi gǎndào fènnù",
         "translationFr": "Elle est en colère face à ce comportement.",
         "translationEn": "She is angry about this behavior."
       }
@@ -22302,7 +22302,7 @@
     "examples": [
       {
         "chinese": "分期付款",
-        "pinyin": "fēnqīfùkuǎn",
+        "pinyin": "fēn qī fù kuǎn",
         "translationFr": "Paiement échelonné",
         "translationEn": "Installment payment"
       },
@@ -22314,7 +22314,7 @@
       },
       {
         "chinese": "分期的优势- fēnqī de yōushì- Avantages du paiement échelonné",
-        "pinyin": "fēnqī de yōushì - f ē nq ī de y ō ush ì - Avantages du paiement é chelonn é",
+        "pinyin": "fēnqī de yōushì",
         "translationFr": "",
         "translationEn": "Advantages of installment payments"
       }
@@ -22372,7 +22372,7 @@
       },
       {
         "chinese": "分散的影响- fēnsàn de yǐngxiǎng- Impact de la dispersion",
-        "pinyin": "fēnsàn de yǐngxiǎng - f ē ns à n de y ǐ ngxi ǎ ng - Impact de la dispersion",
+        "pinyin": "fēnsàn de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of dispersion"
       }
@@ -22430,7 +22430,7 @@
       },
       {
         "chinese": "氛围的影响- fēnwéi de yǐngxiǎng- Impact d'une ambiance",
-        "pinyin": "fēnwéi de yǐngxiǎng - f ē nw é i de y ǐ ngxi ǎ ng - Impact d'une ambiance",
+        "pinyin": "fēnwéi de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of the atmosphere"
       }
@@ -22535,13 +22535,13 @@
     "examples": [
       {
         "chinese": "水面上浮着一片叶子。",
-        "pinyin": "shuǐmiàn shàngfú zhe yípiàn yèzi。",
+        "pinyin": "shuǐmiàn shàngfú zhe yīpiàn yèzi",
         "translationFr": "Une feuille flotte sur la surface de l'eau.",
         "translationEn": "A leaf floats on the water's surface"
       },
       {
         "chinese": "他的想法太浮了，没有实际意义。",
-        "pinyin": "tā de xiǎngfǎ tài fú le， méiyǒu shíjìyìyì。",
+        "pinyin": "tā de xiǎngfǎ tàifú le méiyǒu shí jì yì yì",
         "translationFr": "Sa pensée est trop superficielle et n'a pas de sens pratique.",
         "translationEn": "His idea is too superficial, lacking practical significance."
       }
@@ -22591,7 +22591,7 @@
     "examples": [
       {
         "chinese": "副总经理",
-        "pinyin": "fùzǒngjīnglǐ",
+        "pinyin": "fù zǒng jīng lǐ",
         "translationFr": "Vice-directeur général",
         "translationEn": "Deputy general manager"
       },
@@ -22603,7 +22603,7 @@
       },
       {
         "chinese": "副作用- fù zuòyòng- Effets secondaires",
-        "pinyin": "fùzuòyòng - f ù zu ò y ò ng - Effets secondaires",
+        "pinyin": "fùzuòyòng",
         "translationFr": "",
         "translationEn": "Side effects"
       }
@@ -22655,7 +22655,7 @@
       },
       {
         "chinese": "服从安排",
-        "pinyin": "fúcóngānpái",
+        "pinyin": "fú cóng ān pái",
         "translationFr": "Obéir aux dispositions",
         "translationEn": "Obey arrangements"
       }
@@ -22701,7 +22701,7 @@
     "examples": [
       {
         "chinese": "课外辅导",
-        "pinyin": "kèwàifǔdǎo",
+        "pinyin": "kè wài fǔ dǎo",
         "translationFr": "soutien scolaire extra-classe",
         "translationEn": "After-school tutoring"
       },
@@ -22769,7 +22769,7 @@
       },
       {
         "chinese": "幅度的影响- fúdù de yǐngxiǎng- Impact d'une amplitude",
-        "pinyin": "fúdù de yǐngxiǎng - f ú d ù de y ǐ ngxi ǎ ng - Impact d'une amplitude",
+        "pinyin": "fúdù de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "The impact of the amplitude"
       }
@@ -22821,13 +22821,13 @@
       },
       {
         "chinese": "覆盖面积",
-        "pinyin": "fùgàimiànjī",
+        "pinyin": "fù gài miàn jī",
         "translationFr": "Surface couverte",
         "translationEn": "Covered area"
       },
       {
         "chinese": "覆盖的影响- fùgài de yǐngxiǎng- Impact d'une couverture",
-        "pinyin": "fùgài de yǐngxiǎng - f ù g à i de y ǐ ngxi ǎ ng - Impact d'une couverture",
+        "pinyin": "fùgài de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of coverage"
       }
@@ -22937,7 +22937,7 @@
       },
       {
         "chinese": "附件的作用- fùjiàn de zuòyòng- Rôle des pièces jointes",
-        "pinyin": "fùjiàn de zuòyòng - f ù ji à n de zu ò y ò ng - R ô le des pi è ces jointes",
+        "pinyin": "fùjiàn de zuòyòng",
         "translationFr": "",
         "translationEn": "Role of attachments"
       }
@@ -22983,19 +22983,19 @@
     "examples": [
       {
         "chinese": "员工福利",
-        "pinyin": "yuángōngfúlì",
+        "pinyin": "yuán gōng fú lì",
         "translationFr": "avantages sociaux pour les employés",
         "translationEn": "Employee benefits"
       },
       {
         "chinese": "福利待遇",
-        "pinyin": "fúlìdàiyù",
+        "pinyin": "fú lì dài yù",
         "translationFr": "avantages salariaux",
         "translationEn": "Salary benefits"
       },
       {
         "chinese": "社会福利",
-        "pinyin": "shèhuìfúlì",
+        "pinyin": "shè huì fú lì",
         "translationFr": "Bénéfices sociaux",
         "translationEn": "Social benefits"
       }
@@ -23039,7 +23039,7 @@
     "examples": [
       {
         "chinese": "负面影响",
-        "pinyin": "fùmiànyǐngxiǎng",
+        "pinyin": "fù miàn yǐng xiǎng",
         "translationFr": "Impact négatif",
         "translationEn": "Negative impact"
       },
@@ -23051,7 +23051,7 @@
       },
       {
         "chinese": "负面的影响- fùmiàn de yǐngxiǎng- Impact négatif",
-        "pinyin": "fùmiàn de yǐngxiǎng - f ù mi à n de y ǐ ngxi ǎ ng - Impact n é gatif",
+        "pinyin": "fùmiàn de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Negative impact"
       }
@@ -23109,7 +23109,7 @@
       },
       {
         "chinese": "夫人的作用- fūrén de zuòyòng- Rôle d'une épouse",
-        "pinyin": "fūrén de zuòyòng - f ū r é n de zu ò y ò ng - R ô le d'une é pouse",
+        "pinyin": "fūrén de zuòyòng",
         "translationFr": "",
         "translationEn": "Role of the lady"
       }
@@ -23219,7 +23219,7 @@
       },
       {
         "chinese": "富裕的影响- fùyù de yǐngxiǎng- Impact d'une vie aisée",
-        "pinyin": "fùyù de yǐngxiǎng - f ù y ù de y ǐ ngxi ǎ ng - Impact d'une vie ais é e",
+        "pinyin": "fùyù de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of a wealthy life"
       }
@@ -23329,7 +23329,7 @@
       },
       {
         "chinese": "辅助的作用- fǔzhù de zuòyòng- Rôle du soutien",
-        "pinyin": "fǔzhù de zuòyòng - f ǔ zh ù de zu ò y ò ng - R ô le du soutien",
+        "pinyin": "fǔzhù de zuòyòng",
         "translationFr": "",
         "translationEn": "Supportive role"
       }
@@ -23445,7 +23445,7 @@
       },
       {
         "chinese": "改编的挑战- gǎibiān de tiǎozhàn- Défis de l'adaptation",
-        "pinyin": "gǎibiān de tiǎozhàn - g ǎ ibi ā n de ti ǎ ozh à n - D é fis de l'adaptation",
+        "pinyin": "gǎibiān de tiǎozhàn",
         "translationFr": "",
         "translationEn": "Challenges of adaptation-"
       }
@@ -23503,7 +23503,7 @@
       },
       {
         "chinese": "概率的应用- gàilǜ de yìngyòng- Application de la probabilité",
-        "pinyin": "gàilǜ de yìngyòng - g à il ǜ de y ì ngy ò ng - Application de la probabilit é",
+        "pinyin": "gàilǜ de yìngyòng",
         "translationFr": "",
         "translationEn": "Application of probability-"
       }
@@ -23549,7 +23549,7 @@
     "examples": [
       {
         "chinese": "改造社会",
-        "pinyin": "gǎizàoshèhuì",
+        "pinyin": "gǎi zào shè huì",
         "translationFr": "Transformer la société",
         "translationEn": "Transform society"
       },
@@ -23602,13 +23602,13 @@
     "examples": [
       {
         "chinese": "他肝了一整晚玩电子游戏。",
-        "pinyin": "tā gān le yì zhěngwǎn wán diànzǐyóuxì。",
+        "pinyin": "tā gān le yī zhěngwǎn wán diàn zǐ yóu xì",
         "translationFr": "Il a travaillé dur toute la nuit à jouer aux jeux vidéo.",
         "translationEn": "He worked hard all night playing video games."
       },
       {
         "chinese": "这款游戏肝起来很磨人。",
-        "pinyin": "zhè kuǎn yóuxì gān qǐlái hěn mó rén。",
+        "pinyin": "zhè kuǎn yóuxì gān qǐlái hěnmó rén",
         "translationFr": "Ce jeu nécessite beaucoup de travail acharné pour progresser.",
         "translationEn": "This game requires a lot of hard work to progress."
       }
@@ -23651,13 +23651,13 @@
     "examples": [
       {
         "chinese": "干脆不去",
-        "pinyin": "gāncuì bú qù",
+        "pinyin": "gāncuì bùqù",
         "translationFr": "Allons-y",
         "translationEn": "Just go for it"
       },
       {
         "chinese": "干脆利落",
-        "pinyin": "gāncuìlìluò",
+        "pinyin": "gān cuì lì luò",
         "translationFr": "coupure nette",
         "translationEn": "A clean and decisive approach"
       },
@@ -23719,7 +23719,7 @@
       },
       {
         "chinese": "尴尬的原因- gāngà de yuányīn- Raisons de l'embarras",
-        "pinyin": "gāngà de yuányīn - g ā ng à de yu á ny ī n - Raisons de l'embarras",
+        "pinyin": "gāngà de yuányīn",
         "translationFr": "",
         "translationEn": "Reasons for embarrassment-"
       }
@@ -23777,7 +23777,7 @@
       },
       {
         "chinese": "钢笔的历史- gāngbǐ de lìshǐ- Histoire du stylo à plume",
-        "pinyin": "gāngbǐ de lìshǐ - g ā ngb ǐ de l ì sh ǐ - Histoire du stylo à plume",
+        "pinyin": "gāngbǐ de lìshǐ",
         "translationFr": "",
         "translationEn": "History of the fountain pen-"
       }
@@ -23824,13 +23824,13 @@
     "examples": [
       {
         "chinese": "港口有很多船只。",
-        "pinyin": "gǎngkǒu yǒu hěnduō chuánzhī。",
+        "pinyin": "gǎngkǒu yǒu hěnduō chuánzhī",
         "translationFr": "Le port contient de nombreux bateaux.",
         "translationEn": "The port contains many ships."
       },
       {
         "chinese": "我们将在港口装卸货物。",
-        "pinyin": "wǒmen jiāng zài gǎngkǒu zhuāngxièhuòwù。",
+        "pinyin": "wǒmen jiāng zài gǎngkǒu zhuāng xiè huò wù",
         "translationFr": "Nous chargerons et déchargerons des marchandises au port.",
         "translationEn": "We will load and unload goods at the port."
       }
@@ -23875,13 +23875,13 @@
     "examples": [
       {
         "chinese": "他在这家公司担任销售岗位。",
-        "pinyin": "tā zài zhèjiā gōngsī dānrèn xiāoshòu gǎngwèi。",
+        "pinyin": "tā zài zhèjiā gōngsī dānrèn xiāoshòu gǎngwèi",
         "translationFr": "Il occupe le poste de commercial dans cette entreprise.",
         "translationEn": "He holds a sales position in this company."
       },
       {
         "chinese": "这个社区需要更多从事教育岗位的人才。",
-        "pinyin": "zhège shèqū xūyào gèng duō cóngshì jiàoyù gǎngwèi de réncái。",
+        "pinyin": "zhège shèqū xūyào gèng duō cóngshì jiàoyù gǎngwèi de réncái",
         "translationFr": "Ce quartier a besoin d'enseignants pour ces postes d'éducation.",
         "translationEn": "This community needs more talent for educational positions."
       }
@@ -23939,7 +23939,7 @@
       },
       {
         "chinese": "干旱的预防- gānhàn de yùfáng- Prévention de la sécheresse",
-        "pinyin": "gānhàn de yùfáng - g ā nh à n de y ù f á ng - Pr é vention de la s é cheresse",
+        "pinyin": "gānhàn de yùfáng",
         "translationFr": "",
         "translationEn": "Prevention of drought-"
       }
@@ -23997,7 +23997,7 @@
       },
       {
         "chinese": "感激的表达- gǎnjī de biǎodá- Expression de la gratitude",
-        "pinyin": "gǎnjī de biǎodá - g ǎ nj ī de bi ǎ od á - Expression de la gratitude",
+        "pinyin": "gǎnjī de biǎodá",
         "translationFr": "",
         "translationEn": "Expression of gratitude-"
       }
@@ -24109,7 +24109,7 @@
       },
       {
         "chinese": "感染的预防- gǎnrǎn de yùfáng- Prévention des infections",
-        "pinyin": "gǎnrǎn de yùfáng - g ǎ nr ǎ n de y ù f á ng - Pr é vention des infections",
+        "pinyin": "gǎnrǎn de yùfáng",
         "translationFr": "",
         "translationEn": "Prevention of infections"
       }
@@ -24155,7 +24155,7 @@
     "examples": [
       {
         "chinese": "干扰信号",
-        "pinyin": "gānrǎoxìnhào",
+        "pinyin": "gān rǎo xìn hào",
         "translationFr": "Signal d'interférence",
         "translationEn": "Interference signal"
       },
@@ -24167,7 +24167,7 @@
       },
       {
         "chinese": "干扰的影响- gānrǎo de yǐngxiǎng- Impact des interférences",
-        "pinyin": "gānrǎo de yǐngxiǎng - g ā nr ǎ o de y ǐ ngxi ǎ ng - Impact des interf é rences",
+        "pinyin": "gānrǎo de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of interference"
       }
@@ -24225,7 +24225,7 @@
       },
       {
         "chinese": "感想的表达- gǎnxiǎng de biǎodá- Expression des impressions",
-        "pinyin": "gǎnxiǎng de biǎodá - g ǎ nxi ǎ ng de bi ǎ od á - Expression des impressions",
+        "pinyin": "gǎnxiǎng de biǎodá",
         "translationFr": "",
         "translationEn": "Expression of impressions"
       }
@@ -24283,7 +24283,7 @@
       },
       {
         "chinese": "干燥的影响- gānzào de yǐngxiǎng- Impact du dessèchement",
-        "pinyin": "gānzào de yǐngxiǎng - g ā nz à o de y ǐ ngxi ǎ ng - Impact du dess è chement",
+        "pinyin": "gānzào de yǐngxiǎng",
         "translationFr": "",
         "translationEn": "Impact of dryness"
       }
@@ -24330,13 +24330,13 @@
     "examples": [
       {
         "chinese": "这是一个高层建筑。",
-        "pinyin": "zhè shì yígè gāocéngjiànzhù。",
+        "pinyin": "zhèshì yígè gāo céng jiàn zhù",
         "translationFr": "C'est un immeuble de plusieurs étages.",
         "translationEn": "It is a high-rise building"
       },
       {
         "chinese": "他的办公室在高层。",
-        "pinyin": "tā de bàngōngshì zài gāocéng。",
+        "pinyin": "tā de bàngōngshì zài gāocéng",
         "translationFr": "Son bureau est dans l'étage supérieur.",
         "translationEn": "His office is on the upper floor"
       }
@@ -24436,7 +24436,7 @@
     "examples": [
       {
         "chinese": "高等教育",
-        "pinyin": "gāoděngjiàoyù",
+        "pinyin": "gāo děng jiào yù",
         "translationFr": "Éducation supérieure",
         "translationEn": "Higher education"
       },
@@ -24546,7 +24546,7 @@
       },
       {
         "chinese": "珠穆朗玛高峰",
-        "pinyin": "zhūmùlǎngmǎ gāofēng",
+        "pinyin": "zhū mù lǎng mǎ gāofēng",
         "translationFr": "sommet du Mont Everest",
         "translationEn": "Mount Everest peak"
       }
@@ -24607,7 +24607,7 @@
       },
       {
         "chinese": "稿件的审核- gǎojiàn de shěnhé- Vérification d'un brouillon",
-        "pinyin": "gǎojiàn de shěnhé - g ǎ oji à n de sh ě nh é - V é rification d'un brouillon",
+        "pinyin": "gǎojiàn de shěnhé",
         "translationFr": "",
         "translationEn": "Review of manuscripts"
       }
@@ -24706,13 +24706,13 @@
     "examples": [
       {
         "chinese": "他是一位高手。",
-        "pinyin": "tā shì yíwèi gāoshǒu。",
+        "pinyin": "tā shì yīwèi gāoshǒu",
         "translationFr": "Il est un grand maître.",
         "translationEn": "He is a master"
       },
       {
         "chinese": "她在茶艺方面是个高手。",
-        "pinyin": "tā zài cháyì fāngmiàn shì gè gāoshǒu。",
+        "pinyin": "tā zài cháyì fāngmiàn shì gè gāoshǒu",
         "translationFr": "Elle est une grande maîtresse en thé délicat.",
         "translationEn": "She is an expert in tea art"
       }
@@ -24759,13 +24759,13 @@
     "examples": [
       {
         "chinese": "高新技术产业",
-        "pinyin": "gāoxīnjìshù chǎnyè",
+        "pinyin": "gāo xīn jì shù chǎnyè",
         "translationFr": "Industrie des hautes technologies",
         "translationEn": "High-tech industry"
       },
       {
         "chinese": "高新技术企业",
-        "pinyin": "gāoxīnjìshù qǐyè",
+        "pinyin": "gāo xīn jì shù qǐyè",
         "translationFr": "Entreprise des hautes technologies",
         "translationEn": "High-tech enterprise"
       }
@@ -24811,13 +24811,13 @@
     "examples": [
       {
         "chinese": "高原地区",
-        "pinyin": "gāoyuándìqū",
+        "pinyin": "gāo yuán dì qū",
         "translationFr": "Région de plateau",
         "translationEn": "Highland region"
       },
       {
         "chinese": "高原气候",
-        "pinyin": "gāoyuánqìhòu",
+        "pinyin": "gāo yuán qì hòu",
         "translationFr": "Climat de plateau",
         "translationEn": "Highland climate"
       }
@@ -24864,13 +24864,13 @@
     "examples": [
       {
         "chinese": "他正在写一篇稿件。",
-        "pinyin": "tā zhèngzài xiě yìpiān gǎojiàn。",
+        "pinyin": "tā zhèngzài xiě yīpiān gǎojiàn",
         "translationFr": "Il rédige un brouillon.",
         "translationEn": "He is writing a draft."
       },
       {
         "chinese": "我需要一份稿件作为参考。",
-        "pinyin": "wǒ xūyào yífèn gǎojiàn zuòwéi cānkǎo。",
+        "pinyin": "wǒ xūyào yīfèn gǎojiàn zuòwéi cānkǎo",
         "translationFr": "J'ai besoin d'un projet écrit pour me servir de référence.",
         "translationEn": "I need a written document as a reference."
       }
@@ -24975,7 +24975,7 @@
       },
       {
         "chinese": "隔壁邻居",
-        "pinyin": "gébìlínjū",
+        "pinyin": "gé bì lín jū",
         "translationFr": "Voisin voisin",
         "translationEn": "Neighboring neighbor"
       }
@@ -25021,13 +25021,13 @@
     "examples": [
       {
         "chinese": "歌唱一首歌",
-        "pinyin": "gēchàng yìshǒugē",
+        "pinyin": "gēchàng yīshǒugē",
         "translationFr": "chanter une chanson",
         "translationEn": "Singing a song"
       },
       {
         "chinese": "她喜欢唱歌",
-        "pinyin": "tā xǐhuan chànggē",
+        "pinyin": "tā xǐhuān chànggē",
         "translationFr": "Elle aime chanter",
         "translationEn": "She likes to sing"
       }
@@ -25079,7 +25079,7 @@
       },
       {
         "chinese": "革命的历史- gémìng de lìshǐ- Histoire de la révolution",
-        "pinyin": "gémìng de lìshǐ - g é m ì ng de l ì sh ǐ - Histoire de la r é volution",
+        "pinyin": "gémìng de lìshǐ",
         "translationFr": "",
         "translationEn": "History of the revolution"
       }
@@ -25229,7 +25229,7 @@
     "examples": [
       {
         "chinese": "跟踪调查",
-        "pinyin": "gēnzōngdiàochá",
+        "pinyin": "gēn zōng diào chá",
         "translationFr": "Enquête de suivi",
         "translationEn": "Follow-up investigation"
       },
@@ -25445,13 +25445,13 @@
     "examples": [
       {
         "chinese": "公安部门正在加强巡逻。",
-        "pinyin": "gōngānbùmén zhèngzài jiāqiáng xúnluó。",
+        "pinyin": "gōng ān bù mén zhèngzài jiāqiáng xúnluó",
         "translationFr": "Les services de sécurité publique renforcent leurs patrouilles.",
         "translationEn": "Public security departments are strengthening patrols."
       },
       {
         "chinese": "发生突发事件时，公安部门会迅速响应。",
-        "pinyin": "fāshēng tūfāshìjiàn shí， gōngānbùmén huì xùnsù xiǎngyìng。",
+        "pinyin": "fāshēng tū fā shì jiàn shí gōng ān bù mén huì xùnsù xiǎngyìng",
         "translationFr": "En cas d'événement imprévu, les services de sécurité publique réagissent rapidement.",
         "translationEn": "In the event of an emergency, public security departments will respond quickly."
       }
@@ -25548,13 +25548,13 @@
     "examples": [
       {
         "chinese": "工夫不负有心人",
-        "pinyin": "gōngfū búfù yǒuxīnrén",
+        "pinyin": "gōngfu bùfù yǒuxīnrén",
         "translationFr": "Le travail acharné ne déçoit pas les personnes déterminées",
         "translationEn": "Hard work does not disappoint those who are determined"
       },
       {
         "chinese": "工夫时间",
-        "pinyin": "gōngfū shíjiān",
+        "pinyin": "gōngfu shíjiān",
         "translationFr": "Temps de travail",
         "translationEn": "Working hours"
       }
@@ -25759,13 +25759,13 @@
     "examples": [
       {
         "chinese": "供给 食物。",
-        "pinyin": "gōngjǐ shíwù。",
+        "pinyin": "gōngjǐ shíwù",
         "translationFr": "Fournir de la nourriture.",
         "translationEn": "Supply food"
       },
       {
         "chinese": "供给 水源。",
-        "pinyin": "gōngjǐ shuǐyuán。",
+        "pinyin": "gōngjǐ shuǐyuán",
         "translationFr": "Fournir une source d'eau.",
         "translationEn": "Supply water source"
       }
@@ -25813,13 +25813,13 @@
     "examples": [
       {
         "chinese": "他攻击我。",
-        "pinyin": "tā gōngjī wǒ。",
+        "pinyin": "tā gōngjī wǒ",
         "translationFr": "Il m'attaque.",
         "translationEn": "He attacks me"
       },
       {
         "chinese": "军队正在攻击敌方阵地。",
-        "pinyin": "jūnduì zhèngzài gōngjī dífāng zhèndì。",
+        "pinyin": "jūnduì zhèngzài gōngjī dífāng zhèndì",
         "translationFr": "L'armée attaque les positions ennemies.",
         "translationEn": "The army is attacking enemy positions"
       }
@@ -25918,7 +25918,7 @@
     "examples": [
       {
         "chinese": "公民权利",
-        "pinyin": "gōngmínquánlì",
+        "pinyin": "gōng mín quán lì",
         "translationFr": "Droits des citoyens",
         "translationEn": "Citizens' rights"
       },
@@ -26028,7 +26028,7 @@
       },
       {
         "chinese": "功效不佳",
-        "pinyin": "gōngxiào bù jiā",
+        "pinyin": "gōngxiào bùjiā",
         "translationFr": "Efficacité médiocre",
         "translationEn": "Poorly effective"
       }
@@ -26126,13 +26126,13 @@
     "examples": [
       {
         "chinese": "公益事业",
-        "pinyin": "gōngyìshìyè",
+        "pinyin": "gōng yì shì yè",
         "translationFr": "Œuvre de charité",
         "translationEn": "Charitable cause"
       },
       {
         "chinese": "公益活动",
-        "pinyin": "gōngyìhuódòng",
+        "pinyin": "gōng yì huó dòng",
         "translationFr": "Activités de bien public",
         "translationEn": "Public welfare activity"
       }
@@ -26386,13 +26386,13 @@
     "examples": [
       {
         "chinese": "公主爱读书。",
-        "pinyin": "gōngzhǔ ài dúshū。",
+        "pinyin": "gōngzhǔ ài dúshū",
         "translationFr": "La princesse aime lire des livres.",
         "translationEn": "The princess loves reading books."
       },
       {
         "chinese": "这是公主的宫殿。",
-        "pinyin": "zhè shì gōngzhǔ de gōngdiàn。",
+        "pinyin": "zhèshì gōngzhǔ de gōngdiàn",
         "translationFr": "C'est le palais de la princesse.",
         "translationEn": "This is the princess's palace."
       }
@@ -26438,7 +26438,7 @@
     "examples": [
       {
         "chinese": "\"沟渠",
-        "pinyin": "\"gōuqú",
+        "pinyin": "gōuqú",
         "translationFr": "Canal",
         "translationEn": "canal"
       },
@@ -26548,7 +26548,7 @@
       },
       {
         "chinese": "顾全大局",
-        "pinyin": "gùquándàjú",
+        "pinyin": "gù quán dà jú",
         "translationFr": "tenir compte de l'ensemble de la situation",
         "translationEn": "consider the overall situation"
       }
@@ -26598,13 +26598,13 @@
     "examples": [
       {
         "chinese": "他拐了弯道。",
-        "pinyin": "tā guǎi le wāndào。",
+        "pinyin": "tā guǎi le wāndào",
         "translationFr": "Il a fait un crochet par la courbe.",
         "translationEn": "He took a detour at the bend."
       },
       {
         "chinese": "她拄着拐杖走路。",
-        "pinyin": "tā zhǔzhe guǎizhàng zǒulù。",
+        "pinyin": "tā zhǔzhe guǎizhàng zǒulù",
         "translationFr": "Elle marche avec une canne.",
         "translationEn": "She walks with a cane."
       }
@@ -26705,13 +26705,13 @@
     "examples": [
       {
         "chinese": "罐头",
-        "pinyin": "guàntóu",
+        "pinyin": "guàntou",
         "translationFr": "Conserve",
         "translationEn": "canned food"
       },
       {
         "chinese": "罐子",
-        "pinyin": "guànzǐ",
+        "pinyin": "guànzi",
         "translationFr": "Pot",
         "translationEn": "pot"
       }
@@ -26809,13 +26809,13 @@
     "examples": [
       {
         "chinese": "你对他的关爱让他感到很开心。",
-        "pinyin": "nǐ duì tā de guānài ràng tā gǎndào hěn kāixīn。",
+        "pinyin": "nǐ duì tā de guānài ràng tā gǎndào hěn kāixīn",
         "translationFr": "Tu lui montrant de l'affection et de la sollicitude te rend heureux.",
         "translationEn": "You showing affection to him makes him very happy."
       },
       {
         "chinese": "他对我们公司的关爱让我们很感动。",
-        "pinyin": "tā duì wǒmen gōngsī de guānài ràng wǒmen hěn gǎndòng。",
+        "pinyin": "tā duì wǒmen gōngsī de guānài ràng wǒmen hěn gǎndòng",
         "translationFr": "Sa sollicitude envers notre entreprise nous touche beaucoup.",
         "translationEn": "His care for our company deeply touches us."
       }
@@ -26862,13 +26862,13 @@
     "examples": [
       {
         "chinese": "管道内有水。",
-        "pinyin": "guǎndào nèi yǒu shuǐ。",
+        "pinyin": "guǎndào nèiyǒu shuǐ",
         "translationFr": "Il y a de l'eau dans le tuyau.",
         "translationEn": "There is water in the pipe."
       },
       {
         "chinese": "他的话是管道消息。",
-        "pinyin": "tā dehuà shì guǎndào xiāoxī。",
+        "pinyin": "tā dehuà shì guǎndào xiāoxī",
         "translationFr": "Ses paroles sont des informations provenant du tuyau.",
         "translationEn": "His words are pipeline news."
       }
@@ -26913,7 +26913,7 @@
     "examples": [
       {
         "chinese": "官方消息",
-        "pinyin": "guānfāngxiāoxī",
+        "pinyin": "guān fāng xiāo xī",
         "translationFr": "Message officiel",
         "translationEn": "Official information"
       },
@@ -26966,13 +26966,13 @@
     "examples": [
       {
         "chinese": "这片森林广阔无边。",
-        "pinyin": "zhè piàn sēnlín guǎngkuò wúbiān。",
+        "pinyin": "zhèpiàn sēnlín guǎngkuò wúbiān",
         "translationFr": "Ce forêt est large et sans fin.",
         "translationEn": "This forest is vast and boundless."
       },
       {
         "chinese": "他的视野很广阔。",
-        "pinyin": "tā de shìyě hěn guǎngkuò。",
+        "pinyin": "tā de shìyě hěn guǎngkuò",
         "translationFr": "Sa vue est très vaste.",
         "translationEn": "His vision is very broad."
       }
@@ -27020,13 +27020,13 @@
     "examples": [
       {
         "chinese": "我们去观光公园。",
-        "pinyin": "wǒmen qù guānguāng gōngyuán。",
+        "pinyin": "wǒmen qù guānguāng gōngyuán",
         "translationFr": "Nous allons visiter le parc d'attractions.",
         "translationEn": "We go to the amusement park."
       },
       {
         "chinese": "他们经常去观光旅游。",
-        "pinyin": "tāmen jīngcháng qù guānguānglǚyóu。",
+        "pinyin": "tāmen jīngcháng qù guān guāng lǚ yóu",
         "translationFr": "Ils fréquentent souvent des lieux touristiques.",
         "translationEn": "They often go sightseeing."
       }
@@ -27074,7 +27074,7 @@
     "examples": [
       {
         "chinese": "关怀备至",
-        "pinyin": "guānhuáibèizhì",
+        "pinyin": "guān huái bèi zhì",
         "translationFr": "S'occuper avec attention",
         "translationEn": "showing great concern"
       },
@@ -27127,13 +27127,13 @@
     "examples": [
       {
         "chinese": "他们之间有联系。",
-        "pinyin": "tāmen zhījiān yǒu liánxì。",
+        "pinyin": "tāmen zhījiān yǒu liánxì",
         "translationFr": "Ils sont en relation les uns avec les autres.",
         "translationEn": "They are in contact."
       },
       {
         "chinese": "这两个概念有关联。",
-        "pinyin": "zhè liǎnggè gàiniàn yǒu guānlián。",
+        "pinyin": "zhè liǎnggè gàiniàn yǒu guānlián",
         "translationFr": "Ces deux concepts sont liés.",
         "translationEn": "These two concepts are related."
       }
@@ -27284,13 +27284,13 @@
     "examples": [
       {
         "chinese": "古典音乐",
-        "pinyin": "gǔdiǎnyīnyuè",
+        "pinyin": "gǔ diǎn yīn yuè",
         "translationFr": "musique classique",
         "translationEn": "Classical music."
       },
       {
         "chinese": "古典文学",
-        "pinyin": "gǔdiǎnwénxué",
+        "pinyin": "gǔ diǎn wén xué",
         "translationFr": "littérature classique",
         "translationEn": "Classical literature."
       }
@@ -27337,13 +27337,13 @@
     "examples": [
       {
         "chinese": "他喜欢孤独。",
-        "pinyin": "tā xǐhuan gūdú。",
+        "pinyin": "tā xǐhuān gūdú",
         "translationFr": "Il aime la solitude.",
         "translationEn": "He likes solitude."
       },
       {
         "chinese": "她享受着一个人的孤独时光。",
-        "pinyin": "tā xiǎngshòu zhe yígè rén de gūdú shíguāng。",
+        "pinyin": "tā xiǎngshòu zhe yígè rén de gūdú shíguāng",
         "translationFr": "Elle profite du temps seul qu'elle passe.",
         "translationEn": "She enjoys her alone time."
       }
@@ -27391,13 +27391,13 @@
     "examples": [
       {
         "chinese": "我的姑姑来我家做客。",
-        "pinyin": "wǒ de gūgu lái wǒjiā zuòkè。",
+        "pinyin": "wǒ de gūgū lái wǒjiā zuòkè",
         "translationFr": "Ma tante paternelle vient passer la visite chez moi.",
         "translationEn": "My aunt came to visit my home."
       },
       {
         "chinese": "姑姑做的菜很好吃。",
-        "pinyin": "gūgu zuò de cài hěn hǎochī。",
+        "pinyin": "gūgū zuò de cài hěn hǎochī",
         "translationFr": "La cuisine de ma tante est très bonne.",
         "translationEn": "The food she made is very delicious."
       }
@@ -27442,13 +27442,13 @@
     "examples": [
       {
         "chinese": "他跪在地上。",
-        "pinyin": "tā guì zài dìshàng。",
+        "pinyin": "tā guì zài dìshàng",
         "translationFr": "Il s'agenouille sur le sol.",
         "translationEn": "He knelt on the ground."
       },
       {
         "chinese": "她向老师跪下。",
-        "pinyin": "tā xiàng lǎoshī guìxià。",
+        "pinyin": "tā xiàng lǎoshī guìxià",
         "translationFr": "Elle s'agenouille devant son professeur.",
         "translationEn": "She kneeled before the teacher."
       }
@@ -27547,13 +27547,13 @@
     "examples": [
       {
         "chinese": "地铁在轨道上行驶。",
-        "pinyin": "dìtiě zài guǐdào shàng xíngshǐ。",
+        "pinyin": "dìtiě zài guǐdào shàng xíngshǐ",
         "translationFr": "Le métro se déplace sur la voie.",
         "translationEn": "The subway runs on the tracks."
       },
       {
         "chinese": "卫星绕地球的轨道运行。",
-        "pinyin": "wèixīng rào dìqiú de guǐdào yùnxíng。",
+        "pinyin": "wèixīng rào dìqiú de guǐdào yùnxíng",
         "translationFr": "L'卫星围绕地球的轨道运行。- Le satellite orbite autour de la Terre.",
         "translationEn": "The satellite orbits around the Earth."
       }
@@ -27762,7 +27762,7 @@
       },
       {
         "chinese": "没有规矩",
-        "pinyin": "méiyǒuguījǔ",
+        "pinyin": "méi yǒu guī jǔ",
         "translationFr": "Pas de règles",
         "translationEn": "Without rules."
       }
@@ -27808,7 +27808,7 @@
     "examples": [
       {
         "chinese": "贵重物品",
-        "pinyin": "guìzhòngwùpǐn",
+        "pinyin": "guì zhòng wù pǐn",
         "translationFr": "Objets précieux",
         "translationEn": "Valuable items."
       },
@@ -28016,13 +28016,13 @@
     "examples": [
       {
         "chinese": "国产汽车",
-        "pinyin": "guóchǎnqìchē",
+        "pinyin": "guó chǎn qì chē",
         "translationFr": "Voiture produite localement",
         "translationEn": "Domestic car"
       },
       {
         "chinese": "国产软件",
-        "pinyin": "guóchǎnruǎnjiàn",
+        "pinyin": "guó chǎn ruǎn jiàn",
         "translationFr": "Logiciel national",
         "translationEn": "Domestic software"
       }

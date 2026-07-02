@@ -10,13 +10,13 @@
     "examples": [
       {
         "chinese": "真啊，你还会说中文。",
-        "pinyin": "zhēn a， nǐ hái huì shuō zhōngwén。",
+        "pinyin": "zhēn a nǐ hái huì shuō zhōngwén",
         "translationFr": "Ah ! Tu sais encore parler chinois.",
         "translationEn": "Ah! You still speak Chinese."
       },
       {
         "chinese": "啊，下雨了！",
-        "pinyin": "a， xiàyǔ le！",
+        "pinyin": "a xiàyǔ le",
         "translationFr": "Oh ! Il pleut !",
         "translationEn": "Oh! It's raining!"
       }
@@ -73,7 +73,7 @@
       },
       {
         "chinese": "什么爱好？",
-        "pinyin": "shénme àihào？",
+        "pinyin": "shénme àihào",
         "translationFr": "Quels sont vos loisirs ?",
         "translationEn": "What are your hobbies?"
       },
@@ -184,13 +184,13 @@
       },
       {
         "chinese": "你在几班？",
-        "pinyin": "nǐ zài jǐbān？",
+        "pinyin": "nǐ zài jǐbān",
         "translationFr": "Tu es dans quelle classe ?",
         "translationEn": "Which class are you in?"
       },
       {
         "chinese": "我们班有三十个学生",
-        "pinyin": "wǒmen bān yǒu sānshígè xuéshēng",
+        "pinyin": "wǒmen bānyǒu sānshígè xuéshēng",
         "translationFr": "Notre classe a trente élèves",
         "translationEn": "Our class has thirty students."
       }
@@ -245,13 +245,13 @@
       },
       {
         "chinese": "你能帮我吗？",
-        "pinyin": "nǐ néng bāng wǒ ma？",
+        "pinyin": "nǐ néng bāng wǒ ma",
         "translationFr": "Puis-je t'aider ?",
         "translationEn": "Can you help me?"
       },
       {
         "chinese": "我来帮你",
-        "pinyin": "wǒ lái bāng nǐ",
+        "pinyin": "wǒlái bāng nǐ",
         "translationFr": "Je viens t'aider",
         "translationEn": "I'll help you."
       },
@@ -263,7 +263,7 @@
       },
       {
         "chinese": "需要帮忙吗？",
-        "pinyin": "xūyào bāngmáng ma？",
+        "pinyin": "xūyào bāngmáng ma",
         "translationFr": "Besoin d'aide ?",
         "translationEn": "Do you need help?"
       }
@@ -320,7 +320,7 @@
       },
       {
         "chinese": "帮个忙",
-        "pinyin": "bāng gè máng",
+        "pinyin": "bānggè máng",
         "translationFr": "Faites-moi une petite faveur",
         "translationEn": "Help me."
       }
@@ -447,7 +447,7 @@
       },
       {
         "chinese": "我的本子在哪儿？",
-        "pinyin": "wǒ de běnzi zài nǎér？",
+        "pinyin": "wǒ de běnzi zài nǎér",
         "translationFr": "Où est mon cahier ?",
         "translationEn": "Handbag."
       },
@@ -519,7 +519,7 @@
       },
       {
         "chinese": "没有...比",
-        "pinyin": "méiyǒu . . . bǐ",
+        "pinyin": "méiyǒu bǐ",
         "translationFr": "Il n'y a pas... plus",
         "translationEn": "There is nothing... more"
       },
@@ -584,13 +584,13 @@
     "examples": [
       {
         "chinese": "他用钢笔写信。",
-        "pinyin": "tā yòng gāngbǐ xiěxìn。",
+        "pinyin": "tā yòng gāngbǐ xiěxìn",
         "translationFr": "Il écrit une lettre avec un stylo.",
         "translationEn": "He wrote a letter with a pen."
       },
       {
         "chinese": "她画了一笔漂亮的画。",
-        "pinyin": "tā huà le yìbǐ piàoliang de huà。",
+        "pinyin": "tā huà le yībǐ piàoliàng de huà",
         "translationFr": "Elle a dessiné un beau trait dans son tableau.",
         "translationEn": "She drew a beautiful stroke on her painting."
       }
@@ -697,13 +697,13 @@
     "examples": [
       {
         "chinese": "对不起，我迟到了。",
-        "pinyin": "duìbùqǐ， wǒ chídào le。",
+        "pinyin": "duìbùqǐ wǒ chídào le",
         "translationFr": "Pardon, je suis en retard.",
         "translationEn": "Pardon, I'm late."
       },
       {
         "chinese": "我不知道这个问题的答案，不好意思。",
-        "pinyin": "wǒ bù zhīdào zhège wèntí de dáàn， bùhǎoyìsi。",
+        "pinyin": "wǒ bù zhīdào zhège wèntí de dáàn bù hǎo yì sī",
         "translationFr": "Je ne sais pas la réponse à cette question, je m'excuse.",
         "translationEn": "I don't know the answer to this question, sorry."
       }
@@ -756,13 +756,13 @@
     "examples": [
       {
         "chinese": "这个东西还可以。",
-        "pinyin": "zhège dōngxī hái kěyǐ。",
+        "pinyin": "zhège dōngxī hái kěyǐ",
         "translationFr": "Ce produit est correct.",
         "translationEn": "This thing is still okay."
       },
       {
         "chinese": "他的表现不错。",
-        "pinyin": "tā de biǎoxiàn búcuò。",
+        "pinyin": "tā de biǎoxiàn bùcuò",
         "translationFr": "Sa performance est correcte.",
         "translationEn": "His performance was good."
       }
@@ -809,19 +809,19 @@
     "examples": [
       {
         "chinese": "很长",
-        "pinyin": "hěn cháng",
+        "pinyin": "hěnzhǎng",
         "translationFr": "très long",
         "translationEn": "very long"
       },
       {
         "chinese": "长短不一",
-        "pinyin": "chángduǎnbùyī",
+        "pinyin": "cháng duǎn bù yī",
         "translationFr": "de longueurs variées",
         "translationEn": "of varying lengths"
       },
       {
         "chinese": "时间很长",
-        "pinyin": "shíjiān hěn cháng",
+        "pinyin": "shíjiān hěnzhǎng",
         "translationFr": "ça dure longtemps",
         "translationEn": "It's very long"
       }
@@ -867,7 +867,7 @@
     "examples": [
       {
         "chinese": "车站在哪儿？",
-        "pinyin": "chēzhàn zài nǎér？",
+        "pinyin": "chēzhàn zài nǎér",
         "translationFr": "Où est la gare ?",
         "translationEn": "Go to the station."
       },
@@ -879,7 +879,7 @@
       },
       {
         "chinese": "公共汽车站",
-        "pinyin": "gōnggòngqìchē zhàn",
+        "pinyin": "gōng gòng qì chē zhàn",
         "translationFr": "arrêt de bus",
         "translationEn": "Bus stop."
       }
@@ -1006,13 +1006,13 @@
       },
       {
         "chinese": "上床睡觉",
-        "pinyin": "shàngchuángshuìjiào",
+        "pinyin": "shàng chuáng shuì jiào",
         "translationFr": "aller se coucher",
         "translationEn": "Go to bed and sleep."
       },
       {
         "chinese": "一张床",
-        "pinyin": "yìzhāng chuáng",
+        "pinyin": "yīzhāng chuáng",
         "translationFr": "un lit",
         "translationEn": "A bed."
       }
@@ -1171,7 +1171,7 @@
       },
       {
         "chinese": "她出门了，家里没人。",
-        "pinyin": "tā chūmén le， jiālǐ méi rén。",
+        "pinyin": "tā chūmén le jiālǐ méi rén",
         "translationFr": "Elle est sortie, il n'y a personne à la maison.",
         "translationEn": "She went out, there's nobody at home."
       }
@@ -1228,7 +1228,7 @@
       },
       {
         "chinese": "我要出去",
-        "pinyin": "wǒ yào chūqù",
+        "pinyin": "wǒyào chūqù",
         "translationFr": "je vais sortir",
         "translationEn": "I'm going out"
       },
@@ -1278,13 +1278,13 @@
     "examples": [
       {
         "chinese": "他唱了一首歌。",
-        "pinyin": "tā chàng le yìshǒugē。",
+        "pinyin": "tā chàng le yīshǒugē",
         "translationFr": "Il a chanté une chanson.",
         "translationEn": "He sang a song"
       },
       {
         "chinese": "她喜欢听这首歌的词。",
-        "pinyin": "tā xǐhuan tīng zhè shǒugē de cí。",
+        "pinyin": "tā xǐhuān tīng zhè shǒugē de cí",
         "translationFr": "Elle aime écouter les paroles de cette chanson.",
         "translationEn": "She likes listening to the lyrics of this song"
       }
@@ -1332,7 +1332,7 @@
     "examples": [
       {
         "chinese": "一次",
-        "pinyin": "yícì",
+        "pinyin": "yīcì",
         "translationFr": "Une fois",
         "translationEn": "once"
       },
@@ -1400,13 +1400,13 @@
       },
       {
         "chinese": "从家到学校",
-        "pinyin": "cóng jiā dào xuéxiào",
+        "pinyin": "cóngjiā dào xuéxiào",
         "translationFr": "De la maison à l'école",
         "translationEn": "from home to school"
       },
       {
         "chinese": "从早到晚",
-        "pinyin": "cóngzǎodàowǎn",
+        "pinyin": "cóng zǎo dào wǎn",
         "translationFr": "Du matin au soir",
         "translationEn": "from morning till night"
       },
@@ -1470,13 +1470,13 @@
     "examples": [
       {
         "chinese": "他从小喜欢画画。",
-        "pinyin": "tā cóngxiǎo xǐhuan huàhuà。",
+        "pinyin": "tā cóngxiǎo xǐhuān huàhuà",
         "translationFr": "Il aime dessiner depuis l'enfance.",
         "translationEn": "He has liked drawing since he was young"
       },
       {
         "chinese": "她从小就很聪明。",
-        "pinyin": "tā cóngxiǎo jiù hěn cōngming。",
+        "pinyin": "tā cóngxiǎo jiù hěn cōngmíng",
         "translationFr": "Elle est très intelligente depuis l'enfance.",
         "translationEn": "She has always been very intelligent"
       }
@@ -1528,13 +1528,13 @@
       },
       {
         "chinese": "不对，错了",
-        "pinyin": "bú duì， cuò le",
+        "pinyin": "bù duì cuò le",
         "translationFr": "Non, mauvais.",
         "translationEn": "No, wrong"
       },
       {
         "chinese": "我错了",
-        "pinyin": "wǒ cuò le",
+        "pinyin": "wǒcuò le",
         "translationFr": "Je me trompe.",
         "translationEn": "I'm wrong"
       },
@@ -1552,7 +1552,7 @@
       },
       {
         "chinese": "做错了",
-        "pinyin": "zuò cuò le",
+        "pinyin": "zuòcuò le",
         "translationFr": "faire une erreur",
         "translationEn": "make a mistake"
       },
@@ -1779,13 +1779,13 @@
     "examples": [
       {
         "chinese": "但他是工人。",
-        "pinyin": "dàn tā shì gōngrén。",
+        "pinyin": "dàn tā shì gōngrén",
         "translationFr": "Seulement, il est ouvrier.",
         "translationEn": "Only, he is a worker."
       },
       {
         "chinese": "但你不能这样想。",
-        "pinyin": "dàn nǐ bùnéng zhèyàng xiǎng。",
+        "pinyin": "dàn nǐ bùnéng zhèyàng xiǎng",
         "translationFr": "Mais tu ne devrais pas penser comme ça.",
         "translationEn": "But you shouldn't think like that."
       }
@@ -1832,13 +1832,13 @@
     "examples": [
       {
         "chinese": "他学习很好，但是身体不太好。",
-        "pinyin": "tā xuéxí hěn hǎo， dànshì shēntǐ bútàihǎo。",
+        "pinyin": "tā xuéxí hěn hǎo dànshì shēntǐ bùtàihǎo",
         "translationFr": "Il étudie bien, mais sa santé n'est pas très bonne.",
         "translationEn": "He studies very well, but his health isn't great."
       },
       {
         "chinese": "我们应该早点回家，但是外面天气很好。",
-        "pinyin": "wǒmen yīnggāi zǎodiǎn huíjiā， dànshì wàimiàn tiānqì hěn hǎo。",
+        "pinyin": "wǒmen yīnggāi zǎodiǎn huíjiā dànshì wàimiàn tiānqì hěn hǎo",
         "translationFr": "Nous devrions rentrer tôt, mais il fait très beau dehors.",
         "translationEn": "We should go home early, but it's nice outside."
       }
@@ -1886,13 +1886,13 @@
     "examples": [
       {
         "chinese": "我必须完成这项任务。",
-        "pinyin": "wǒ bìxū wánchéng zhèxiàng rènwu。",
+        "pinyin": "wǒ bìxū wánchéng zhèxiàng rènwù",
         "translationFr": "Je dois accomplir cette tâche.",
         "translationEn": "I must complete this task."
       },
       {
         "chinese": "你应该遵守交通规则。",
-        "pinyin": "nǐ yīnggāi zūnshǒu jiāotōngguīzé。",
+        "pinyin": "nǐ yīnggāi zūnshǒu jiāo tōng guī zé",
         "translationFr": "Vous devez respecter les règles de circulation.",
         "translationEn": "You should遵守交通规则"
       }
@@ -1957,7 +1957,7 @@
       },
       {
         "chinese": "高兴地说",
-        "pinyin": "gāoxìng dì shuō",
+        "pinyin": "gāoxìng dìshuō",
         "translationFr": "dire avec joie",
         "translationEn": "Say happily"
       },
@@ -2017,7 +2017,7 @@
     "examples": [
       {
         "chinese": "等一下",
-        "pinyin": "děng yíxià",
+        "pinyin": "děng yīxià",
         "translationFr": "Attends un instant",
         "translationEn": "Wait a moment"
       },
@@ -2080,7 +2080,7 @@
       },
       {
         "chinese": "你想点什么？",
-        "pinyin": "nǐ xiǎng diǎn shénme？",
+        "pinyin": "nǐ xiǎngdiǎn shénme",
         "translationFr": "Que voulez-vous commander ?",
         "translationEn": "What would you like to order?"
       },
@@ -2131,13 +2131,13 @@
     "examples": [
       {
         "chinese": "我们去地铁站。",
-        "pinyin": "wǒmen qù dìtiězhàn。",
+        "pinyin": "wǒmen qù dìtiězhàn",
         "translationFr": "Allons à la gare de métro.",
         "translationEn": "We're going to the subway station."
       },
       {
         "chinese": "他每天乘地铁上班。",
-        "pinyin": "tā měitiān chéng dìtiě shàngbān。",
+        "pinyin": "tā měitiān chéng dìtiě shàngbān",
         "translationFr": "Il va au travail en métro tous les jours.",
         "translationEn": "He goes to work by subway every day."
       }
@@ -2187,7 +2187,7 @@
       },
       {
         "chinese": "动一动",
-        "pinyin": "dòngyidòng",
+        "pinyin": "dòngyīdòng",
         "translationFr": "Bouge un peu",
         "translationEn": "Move a little"
       },
@@ -2237,13 +2237,13 @@
     "examples": [
       {
         "chinese": "我懂了。",
-        "pinyin": "wǒ dǒng le。",
+        "pinyin": "wǒ dǒng le",
         "translationFr": "Je comprends.",
         "translationEn": "I understand."
       },
       {
         "chinese": "他没有听懂我在说什么。",
-        "pinyin": "tā méiyǒu tīngdǒng wǒ zài shuō shénme。",
+        "pinyin": "tā méiyǒu tīngdǒng wǒ zài shuō shénme",
         "translationFr": "Il ne m'a pas compris.",
         "translationEn": "He didn't understand what I was saying."
       }
@@ -2288,13 +2288,13 @@
     "examples": [
       {
         "chinese": "我们去饭馆吃饭。",
-        "pinyin": "wǒmen qù fànguǎn chīfàn。",
+        "pinyin": "wǒmen qù fànguǎn chīfàn",
         "translationFr": "Allons au restaurant manger.",
         "translationEn": "We go to the restaurant for dinner."
       },
       {
         "chinese": "他经常在饭馆里吃晚饭。",
-        "pinyin": "tā jīngcháng zài fànguǎn lǐ chīwǎnfàn。",
+        "pinyin": "tā jīngcháng zài fànguǎn lǐ chīwǎnfàn",
         "translationFr": "Il mange souvent son dîner dans un restaurant.",
         "translationEn": "He often eats dinner in a restaurant."
       }
@@ -2345,7 +2345,7 @@
       },
       {
         "chinese": "飞机飞得很高",
-        "pinyin": "fēijī fēi dé hěn gāo",
+        "pinyin": "fēijī fēidé hěn gāo",
         "translationFr": "L'avion vole très haut",
         "translationEn": "The plane flies very high."
       },
@@ -2498,7 +2498,7 @@
       },
       {
         "chinese": "谁告诉你的？",
-        "pinyin": "shuí gàosù nǐ de？",
+        "pinyin": "shuí gàosù nǐ de",
         "translationFr": "Qui te l'a dit ?",
         "translationEn": "Who told you?"
       }
@@ -2544,13 +2544,13 @@
     "examples": [
       {
         "chinese": "我在高中学习数学。",
-        "pinyin": "wǒ zài gāozhōng xuéxí shùxué。",
+        "pinyin": "wǒ zài gāozhōng xuéxí shùxué",
         "translationFr": "Je studyais les mathématiques au lycée.",
         "translationEn": "I studied math in high school."
       },
       {
         "chinese": "她从高中毕业后考上了大学。",
-        "pinyin": "tā cóng gāozhōngbìyè hòu kǎoshàng le dàxué。",
+        "pinyin": "tā cóng gāo zhōng bì yè hòu kǎoshàng le dàxué",
         "translationFr": "Elle est passée à l'université après avoir terminé son lycée.",
         "translationEn": "She went to university after graduating from high school."
       }
@@ -2624,7 +2624,7 @@
       },
       {
         "chinese": "跟...一样",
-        "pinyin": "gēn . . . yíyàng",
+        "pinyin": "gēn yīyàng",
         "translationFr": "Comme...",
         "translationEn": "Like..."
       }
@@ -2671,13 +2671,13 @@
     "examples": [
       {
         "chinese": "他个子很高。",
-        "pinyin": "tā gèzi hěn gāo。",
+        "pinyin": "tā gèzi hěn gāo",
         "translationFr": "Il est très grand.",
         "translationEn": "He is very tall."
       },
       {
         "chinese": "这棵树的个子不大。",
-        "pinyin": "zhè kē shù de gèzi bú dà。",
+        "pinyin": "zhèkēshù de gèzi bù dà",
         "translationFr": "Ce arbre n'est pas très grand.",
         "translationEn": "This tree isn't very tall."
       }
@@ -2724,13 +2724,13 @@
     "examples": [
       {
         "chinese": "我们坐公交车去公园。",
-        "pinyin": "wǒmen zuò gōngjiāochē qù gōngyuán。",
+        "pinyin": "wǒmen zuò gōngjiāochē qù gōngyuán",
         "translationFr": "Nous prenons l'autobus pour aller au parc.",
         "translationEn": "We take the bus to the park."
       },
       {
         "chinese": "他每天早上乘公交上班。",
-        "pinyin": "tā měitiān zǎo shàngchéng gōngjiāo shàngbān。",
+        "pinyin": "tā měitiān zǎo shàngchéng gōngjiāo shàngbān",
         "translationFr": "Il prend l'autobus tous les matins pour aller travailler.",
         "translationEn": "He takes the bus every morning to work."
       }
@@ -2787,7 +2787,7 @@
       },
       {
         "chinese": "过来一下",
-        "pinyin": "guòlái yíxià",
+        "pinyin": "guòlái yīxià",
         "translationFr": "viens par ici un moment",
         "translationEn": "Come over for a moment"
       }
@@ -2838,7 +2838,7 @@
       },
       {
         "chinese": "我见过他",
-        "pinyin": "wǒ jiàn guò tā",
+        "pinyin": "wǒjiàn guò tā",
         "translationFr": "je l'ai déjà vu",
         "translationEn": "I've seen him before"
       },
@@ -2889,13 +2889,13 @@
     "examples": [
       {
         "chinese": "他过来了。",
-        "pinyin": "tā guòlái le.",
+        "pinyin": "tā guòlái le",
         "translationFr": "Il est venu.",
         "translationEn": "He came over."
       },
       {
         "chinese": "她从门外进来，然后过来坐在我旁边。",
-        "pinyin": "tā cóng ménwài jìnlái, ránhòu guòlái zuòzài wǒ pángbiān.",
+        "pinyin": "tā cóng ménwài jìnlái ránhòu guòlái zuòzài wǒ pángbiān",
         "translationFr": "Elle est entrée par la porte et est venue s'asseoir à côté de moi.",
         "translationEn": "She entered through the door and sat beside me."
       }
@@ -2943,13 +2943,13 @@
     "examples": [
       {
         "chinese": "过年的时候，我们通常会和家人团聚。",
-        "pinyin": "guònián de shíhòu， wǒmen tōngcháng huì hé jiārén tuánjù。",
+        "pinyin": "guònián de shíhòu wǒmen tōngcháng huì hé jiārén tuánjù",
         "translationFr": "À l'année chinoise, nous avons généralement l'habitude de nous réunir avec la famille.",
         "translationEn": "During the Spring Festival, we usually gather with our family."
       },
       {
         "chinese": "我们会在过年时贴春联。",
-        "pinyin": "wǒmen huì zài guònián shí tiē chūnlián。",
+        "pinyin": "wǒmen huì zài guònián shítiē chūnlián",
         "translationFr": "Nous collons généralement des春联 (coupons de bonne fortune) à l'année chinoise.",
         "translationEn": "We would put up春联 during the New Year."
       }
@@ -3052,25 +3052,25 @@
     "examples": [
       {
         "chinese": "...还是...？",
-        "pinyin": ". . . háishì . . .？",
+        "pinyin": "háishì",
         "translationFr": "... ou ... ?",
         "translationEn": "... or ... ?"
       },
       {
         "chinese": "茶还是咖啡？",
-        "pinyin": "chá háishì kāfēi？",
+        "pinyin": "chá háishì kāfēi",
         "translationFr": "thé ou café ?",
         "translationEn": "Tea or coffee?"
       },
       {
         "chinese": "今天还是明天？",
-        "pinyin": "jīntiān háishì míngtiān？",
+        "pinyin": "jīntiān háishì míngtiān",
         "translationFr": "aujourd'hui ou demain ?",
         "translationEn": "Today or tomorrow?"
       },
       {
         "chinese": "去还是不去？",
-        "pinyin": "qù háishì bú qù？",
+        "pinyin": "qù háishì bùqù",
         "translationFr": "Aller ou ne pas aller ?",
         "translationEn": "Go or not to go?"
       },
@@ -3119,13 +3119,13 @@
     "examples": [
       {
         "chinese": "天空是黑色的。",
-        "pinyin": "tiānkōng shì hēisè de。",
+        "pinyin": "tiānkōng shì hēisè de",
         "translationFr": "Le ciel est noir.",
         "translationEn": "The sky is black"
       },
       {
         "chinese": "墙壁漆成了黑色。",
-        "pinyin": "qiángbì qīchéng le hēisè。",
+        "pinyin": "qiángbì qīchéng le hēisè",
         "translationFr": "La peinture a été faite en noir sur les murs.",
         "translationEn": "The walls were painted black"
       }
@@ -3170,7 +3170,7 @@
     "examples": [
       {
         "chinese": "一杯红茶",
-        "pinyin": "yìbēi hóngchá",
+        "pinyin": "yībēi hóngchá",
         "translationFr": "Une tasse de thé noir",
         "translationEn": "A cup of black tea"
       },
@@ -3182,7 +3182,7 @@
       },
       {
         "chinese": "英国人喜欢喝红茶",
-        "pinyin": "yīngguórén xǐhuan hē hóngchá",
+        "pinyin": "yīngguórén xǐhuān hē hóngchá",
         "translationFr": "Les Anglais aiment le thé noir",
         "translationEn": "British people like to drink black tea"
       }
@@ -3227,13 +3227,13 @@
     "examples": [
       {
         "chinese": "这朵花是红色的。",
-        "pinyin": "zhè duǒhuā shì hóngsè de。",
+        "pinyin": "zhè duǒhuā shì hóngsè de",
         "translationFr": "Cette fleur est rouge.",
         "translationEn": "This flower is red"
       },
       {
         "chinese": "红色的旗帜。",
-        "pinyin": "hóngsè de qízhì。",
+        "pinyin": "hóngsè de qízhì",
         "translationFr": "Le drapeau est rouge.",
         "translationEn": "Red flag"
       }
@@ -3335,13 +3335,13 @@
     "examples": [
       {
         "chinese": "他喜欢画画。",
-        "pinyin": "tā xǐhuan huàhuà。",
+        "pinyin": "tā xǐhuān huàhuà",
         "translationFr": "Il aime dessiner.",
         "translationEn": "He likes to draw"
       },
       {
         "chinese": "她画了一幅美丽的风景画。",
-        "pinyin": "tā huà le yìfú měilì de fēngjǐnghuà。",
+        "pinyin": "tā huà le yīfú měilì de fēngjǐnghuà",
         "translationFr": "Elle a peint un beau paysage.",
         "translationEn": "She drew a beautiful landscape painting"
       }
@@ -3391,19 +3391,19 @@
     "examples": [
       {
         "chinese": "这朵花很漂亮",
-        "pinyin": "zhè duǒhuā hěnpiàoliang",
+        "pinyin": "zhè duǒhuā hěnpiàoliàng",
         "translationFr": "Cette fleur est très belle",
         "translationEn": "This flower is very beautiful"
       },
       {
         "chinese": "我喜欢花",
-        "pinyin": "wǒ xǐhuan huā",
+        "pinyin": "wǒ xǐhuān huā",
         "translationFr": "J'aime les fleurs",
         "translationEn": "I like flowers"
       },
       {
         "chinese": "春天花开了",
-        "pinyin": "chūntiān huā kāi le",
+        "pinyin": "chūntiān huākāi le",
         "translationFr": "Les fleurs fleurissent au printemps",
         "translationEn": "In spring, flowers bloom"
       }
@@ -3454,13 +3454,13 @@
       },
       {
         "chinese": "这个花了多少钱？",
-        "pinyin": "zhège huā le duōshǎo qián？",
+        "pinyin": "zhège huā le duōshǎo qián",
         "translationFr": "Combien ça a coûté ?",
         "translationEn": "How much did this cost?"
       },
       {
         "chinese": "我花了两个小时做作业",
-        "pinyin": "wǒ huā le liǎnggè xiǎoshí zuòzuòyè",
+        "pinyin": "wǒhuā le liǎnggè xiǎoshí zuòzuòyè",
         "translationFr": "J'ai passé deux heures sur mes devoirs",
         "translationEn": "I spent two hours doing homework"
       }
@@ -3578,7 +3578,7 @@
       },
       {
         "chinese": "你什么时候回来？",
-        "pinyin": "nǐ shénme shíhòu huílái？",
+        "pinyin": "nǐ shénme shíhòu huílái",
         "translationFr": "Quand es-tu revenu ?",
         "translationEn": "When did you come back?"
       },
@@ -3634,7 +3634,7 @@
       },
       {
         "chinese": "我要回去",
-        "pinyin": "wǒ yào huíqù",
+        "pinyin": "wǒyào huíqù",
         "translationFr": "je veux rentrer",
         "translationEn": "I want to go back"
       },
@@ -3684,13 +3684,13 @@
     "examples": [
       {
         "chinese": "一间房间",
-        "pinyin": "yìjiān fángjiān",
+        "pinyin": "yījiān fángjiān",
         "translationFr": "Une chambre",
         "translationEn": "A room"
       },
       {
         "chinese": "我住三间房",
-        "pinyin": "wǒ zhù sānjiānfáng",
+        "pinyin": "wǒzhù sānjiānfáng",
         "translationFr": "J'habite un trois-pièces",
         "translationEn": "I live in three rooms"
       },
@@ -3753,7 +3753,7 @@
       },
       {
         "chinese": "教书",
-        "pinyin": "jiàoshū",
+        "pinyin": "jiāoshū",
         "translationFr": "enseigner",
         "translationEn": "Teach books"
       },
@@ -3806,13 +3806,13 @@
     "examples": [
       {
         "chinese": "这是我的教室。",
-        "pinyin": "zhè shì wǒ de jiàoshì。",
+        "pinyin": "zhè shì wǒ de jiàoshì",
         "translationFr": "C'est ma salle de classe.",
         "translationEn": "This is my classroom"
       },
       {
         "chinese": "他们在教室里上课。",
-        "pinyin": "tāmen zài jiàoshì lǐ shàngkè。",
+        "pinyin": "tāmen zài jiàoshì lǐ shàngkè",
         "translationFr": "Ils sont en train d'apprendre dans la salle de classe.",
         "translationEn": "They are having class in the classroom"
       }
@@ -3861,13 +3861,13 @@
       },
       {
         "chinese": "机场在哪儿？",
-        "pinyin": "jīchǎng zài nǎér？",
+        "pinyin": "jīchǎng zài nǎér",
         "translationFr": "où se trouve l'aéroport ?",
         "translationEn": "Where is the airport?"
       },
       {
         "chinese": "到机场要多长时间？",
-        "pinyin": "dào jīchǎng yào duōchángshíjiān？",
+        "pinyin": "dào jīchǎng yào duō zhǎng shí jiān",
         "translationFr": "combien de temps faut-il pour arriver à l'aéroport ?",
         "translationEn": "How long does it take to get to the airport?"
       },
@@ -3879,7 +3879,7 @@
       },
       {
         "chinese": "北京机场",
-        "pinyin": "běijīngjīchǎng",
+        "pinyin": "běi jīng jī chǎng",
         "translationFr": "aéroport de Beijing",
         "translationEn": "Beijing Airport"
       }
@@ -3930,7 +3930,7 @@
       },
       {
         "chinese": "你记得吗？",
-        "pinyin": "nǐ jìde ma？",
+        "pinyin": "nǐ jìde ma",
         "translationFr": "Tu te souviens ?",
         "translationEn": "Do you remember?"
       },
@@ -3948,7 +3948,7 @@
       },
       {
         "chinese": "还记得吗？",
-        "pinyin": "hái jìde ma？",
+        "pinyin": "hái jìde ma",
         "translationFr": "Tu te souviens encore ?",
         "translationEn": "Do you still remember?"
       }
@@ -3992,13 +3992,13 @@
     "examples": [
       {
         "chinese": "自我介绍",
-        "pinyin": "zìwǒjièshào",
+        "pinyin": "zì wǒ jiè shào",
         "translationFr": "introduction",
         "translationEn": "Self-introduction"
       },
       {
         "chinese": "介绍一下",
-        "pinyin": "jièshào yíxià",
+        "pinyin": "jièshào yīxià",
         "translationFr": "présentez-vous",
         "translationEn": "Introduce yourself"
       },
@@ -4110,13 +4110,13 @@
     "examples": [
       {
         "chinese": "我家近学校。",
-        "pinyin": "wǒjiā jìn xuéxiào。",
+        "pinyin": "wǒjiā jìn xuéxiào",
         "translationFr": "Ma maison est proche de l'école.",
         "translationEn": "My house is near the school"
       },
       {
         "chinese": "他们住在近的地方。",
-        "pinyin": "tāmen zhù zài jìn de dìfāng。",
+        "pinyin": "tāmen zhù zài jìn de dìfāng",
         "translationFr": "Ils habitent à proximité.",
         "translationEn": "They live nearby"
       }
@@ -4163,13 +4163,13 @@
     "examples": [
       {
         "chinese": "我经常去公园散步。",
-        "pinyin": "wǒ jīngcháng qù gōngyuán sànbù。",
+        "pinyin": "wǒ jīngcháng qù gōngyuán sànbù",
         "translationFr": "Je vais souvent se promener dans le parc.",
         "translationEn": "I often go to the park for a walk"
       },
       {
         "chinese": "他经常吃早饭。",
-        "pinyin": "tā jīngcháng chī zǎofàn。",
+        "pinyin": "tā jīngcháng chī zǎofàn",
         "translationFr": "Il mange son petit-déjeuner quotidiennement.",
         "translationEn": "He eats breakfast regularly"
       }
@@ -4340,7 +4340,7 @@
       },
       {
         "chinese": "机票多少钱？",
-        "pinyin": "jīpiào duōshǎo qián？",
+        "pinyin": "jīpiào duōshǎo qián",
         "translationFr": "Combien coûte le billet d'avion ?",
         "translationEn": "How much does the plane ticket cost?"
       }
@@ -4468,7 +4468,7 @@
       },
       {
         "chinese": "这是一家酒店。",
-        "pinyin": "zhè shì yìjiā jiǔdiàn。",
+        "pinyin": "zhèshì yījiā jiǔdiàn",
         "translationFr": "C'est un établissement hôtelier.",
         "translationEn": "This is a hotel."
       }
@@ -4520,13 +4520,13 @@
       },
       {
         "chinese": "我要一杯咖啡",
-        "pinyin": "wǒ yào yìbēi kāfēi",
+        "pinyin": "wǒyào yībēi kāfēi",
         "translationFr": "Je veux une tasse de café",
         "translationEn": "I want a cup of coffee"
       },
       {
         "chinese": "你的咖啡要加糖吗？",
-        "pinyin": "nǐ de kāfēi yào jiātáng ma？",
+        "pinyin": "nǐ de kāfēi yào jiātáng ma",
         "translationFr": "Veux-tu du sucre dans ton café ?",
         "translationEn": "Do you want sugar in your coffee?"
       },
@@ -4594,7 +4594,7 @@
       },
       {
         "chinese": "从头开始",
-        "pinyin": "cóngtóukāishǐ",
+        "pinyin": "cóng tóu kāi shǐ",
         "translationFr": "recommencer depuis le début",
         "translationEn": "Start from the beginning"
       }
@@ -4694,13 +4694,13 @@
       },
       {
         "chinese": "明天我要考中文",
-        "pinyin": "míngtiān wǒ yào kǎo zhōngwén",
+        "pinyin": "míngtiān wǒyào kǎo zhōngwén",
         "translationFr": "Demain j'ai un examen de chinois",
         "translationEn": "Tomorrow I have a Chinese exam"
       },
       {
         "chinese": "他考得很好",
-        "pinyin": "tā kǎo dé hěn hǎo",
+        "pinyin": "tā kǎodé hěn hǎo",
         "translationFr": "Il a bien réussi son examen",
         "translationEn": "He did very well on the exam"
       }
@@ -4757,7 +4757,7 @@
       },
       {
         "chinese": "考试难吗？",
-        "pinyin": "kǎoshì nán ma？",
+        "pinyin": "kǎoshì nán ma",
         "translationFr": "L'examen est difficile ?",
         "translationEn": "Is the exam difficult?"
       },
@@ -4781,13 +4781,13 @@
       },
       {
         "chinese": "期末考试",
-        "pinyin": "qīmòkǎoshì",
+        "pinyin": "qī mò kǎo shì",
         "translationFr": "examen de fin d'année",
         "translationEn": "Final exam"
       },
       {
         "chinese": "考试成绩",
-        "pinyin": "kǎoshìchéngjì",
+        "pinyin": "kǎo shì chéng jì",
         "translationFr": "notes d'examen",
         "translationEn": "Exam scores"
       }
@@ -4831,13 +4831,13 @@
     "examples": [
       {
         "chinese": "他可能来了。",
-        "pinyin": "tā kěnéng lái le。",
+        "pinyin": "tā kěnéng lái le",
         "translationFr": "Il peut être venu.",
         "translationEn": "He may have come"
       },
       {
         "chinese": "这个计划可能是成功的。",
-        "pinyin": "zhège jìhuà kěnéng shì chénggōng de。",
+        "pinyin": "zhège jìhuà kěnéng shì chénggōng de",
         "translationFr": "Ce projet pourrait être réussi.",
         "translationEn": "This plan might be successful"
       }
@@ -4902,7 +4902,7 @@
       },
       {
         "chinese": "时间过得真快",
-        "pinyin": "shíjiān guò dé zhēn kuài",
+        "pinyin": "shíjiān guòdé zhēnkuài",
         "translationFr": "Le temps passe vite",
         "translationEn": "Time flies so quickly"
       },
@@ -4914,7 +4914,7 @@
       },
       {
         "chinese": "走得很快",
-        "pinyin": "zǒu dé hěnkuài",
+        "pinyin": "zǒudé hěnkuài",
         "translationFr": "Il marche vite",
         "translationEn": "He walks very fast"
       }
@@ -4957,13 +4957,13 @@
     "examples": [
       {
         "chinese": "我很快乐。",
-        "pinyin": "wǒ hěn kuàilè。",
+        "pinyin": "wǒ hěn kuàilè",
         "translationFr": "Je me sens heureux.",
         "translationEn": "I am very happy"
       },
       {
         "chinese": "他快乐地笑了。",
-        "pinyin": "tā kuàilè dì xiào le。",
+        "pinyin": "tā kuàilè dìxiào le",
         "translationFr": "Il rit joyeusement.",
         "translationEn": "He laughed joyfully"
       }
@@ -5008,13 +5008,13 @@
     "examples": [
       {
         "chinese": "门快要开了。",
-        "pinyin": "mén kuàiyào kāi le。",
+        "pinyin": "mén kuàiyào kāi le",
         "translationFr": "La porte va s'ouvrir.",
         "translationEn": "The door is about to open"
       },
       {
         "chinese": "他快要下班了。",
-        "pinyin": "tā kuàiyào xiàbān le。",
+        "pinyin": "tā kuàiyào xiàbān le",
         "translationFr": "Il va bientôt terminer son travail.",
         "translationEn": "He is about to finish work"
       }
@@ -5063,19 +5063,19 @@
     "examples": [
       {
         "chinese": "穿裤子",
-        "pinyin": "chuān kùzǐ",
+        "pinyin": "chuān kùzi",
         "translationFr": "porter des pantalons",
         "translationEn": "To wear pants"
       },
       {
         "chinese": "这条裤子",
-        "pinyin": "zhè tiáo kùzǐ",
+        "pinyin": "zhè tiáo kùzi",
         "translationFr": "ces pantalons",
         "translationEn": "These pants"
       },
       {
         "chinese": "裤子太长了",
-        "pinyin": "kùzǐ tài cháng le",
+        "pinyin": "kùzi tàizhǎng le",
         "translationFr": "ce pantalon est trop long",
         "translationEn": "The pants are too long"
       }
@@ -5119,13 +5119,13 @@
     "examples": [
       {
         "chinese": "我们打篮球。",
-        "pinyin": "wǒmen dǎlánqiú。",
+        "pinyin": "wǒmen dǎlánqiú",
         "translationFr": "Nous jouons au basketball.",
         "translationEn": "We play basketball"
       },
       {
         "chinese": "他每天晚上都去打篮球。",
-        "pinyin": "tā měitiānwǎnshàng dōu qù dǎlánqiú。",
+        "pinyin": "tā měi tiān wǎn shàng dōu qù dǎlánqiú",
         "translationFr": "Il va jouer au basket-ball tous les soirs.",
         "translationEn": "He goes to play basketball every evening"
       }
@@ -5168,7 +5168,7 @@
     "examples": [
       {
         "chinese": "很累",
-        "pinyin": "hěn lèi",
+        "pinyin": "hěnlèi",
         "translationFr": "Je suis fatigué",
         "translationEn": "Very tired"
       },
@@ -5180,19 +5180,19 @@
       },
       {
         "chinese": "工作很累",
-        "pinyin": "gōngzuò hěn lèi",
+        "pinyin": "gōngzuò hěnlèi",
         "translationFr": "Le travail est fatigant",
         "translationEn": "Work is very tiring"
       },
       {
         "chinese": "我累了",
-        "pinyin": "wǒ lèi le",
+        "pinyin": "wǒlèi le",
         "translationFr": "Je suis fatigué",
         "translationEn": "I'm tired"
       },
       {
         "chinese": "别太累",
-        "pinyin": "bié tài lèi",
+        "pinyin": "biétàilèi",
         "translationFr": "Ne sois pas trop fatigué",
         "translationEn": "Don't be too tired"
       },
@@ -5249,13 +5249,13 @@
     "examples": [
       {
         "chinese": "我要离家去旅行。",
-        "pinyin": "wǒ yào líjiā qù lǚxíng。",
+        "pinyin": "wǒyào líjiā qù lǚxíng",
         "translationFr": "Je vais quitter la maison pour voyager.",
         "translationEn": "I want to leave home for a trip"
       },
       {
         "chinese": "他们已经离得很远了。",
-        "pinyin": "tāmen yǐjīng lí dé hěn yuǎn le。",
+        "pinyin": "tāmen yǐjīng lídé hěn yuǎn le",
         "translationFr": "Ils se sont éloignés l'un de l'autre très loin.",
         "translationEn": "They are already far apart"
       }
@@ -5307,13 +5307,13 @@
       },
       {
         "chinese": "里面有什么？",
-        "pinyin": "lǐmiàn yǒu shénme？",
+        "pinyin": "lǐmiàn yǒu shénme",
         "translationFr": "Qu'y a-t-il dedans ?",
         "translationEn": "What's inside?"
       },
       {
         "chinese": "包里面有一本书",
-        "pinyin": "bāo lǐmiàn yǒu yì běnshū",
+        "pinyin": "bāo lǐmiàn yǒu yī běnshū",
         "translationFr": "Il y a un livre dans le sac",
         "translationEn": "There is a book in the bag"
       }
@@ -5361,7 +5361,7 @@
     "examples": [
       {
         "chinese": "几楼？",
-        "pinyin": "jǐlóu？",
+        "pinyin": "jǐlóu",
         "translationFr": "Quel étage ?",
         "translationEn": "Which floor?"
       },
@@ -5426,7 +5426,7 @@
       },
       {
         "chinese": "这条路",
-        "pinyin": "zhè tiáo lù",
+        "pinyin": "zhètiáo lù",
         "translationFr": "cette route",
         "translationEn": "This road"
       },
@@ -5438,7 +5438,7 @@
       },
       {
         "chinese": "路上小心",
-        "pinyin": "lùshang xiǎoxīn",
+        "pinyin": "lùshàng xiǎoxīn",
         "translationFr": "Attention aux piétons",
         "translationEn": "Be careful on the road"
       }
@@ -5485,7 +5485,7 @@
     "examples": [
       {
         "chinese": "一杯绿茶",
-        "pinyin": "yìbēi lǜchá",
+        "pinyin": "yībēi lǜchá",
         "translationFr": "Une tasse de thé vert",
         "translationEn": "A cup of green tea"
       },
@@ -5497,7 +5497,7 @@
       },
       {
         "chinese": "中国人喜欢喝绿茶",
-        "pinyin": "zhōngguó rén xǐhuan hē lǜchá",
+        "pinyin": "zhōngguó rén xǐhuān hē lǜchá",
         "translationFr": "Les Chinois aiment le thé vert",
         "translationEn": "Chinese people like to drink green tea"
       }
@@ -5541,13 +5541,13 @@
     "examples": [
       {
         "chinese": "树叶是绿色的。",
-        "pinyin": "shùyè shì lǜsè de。",
+        "pinyin": "shùyè shì lǜsè de",
         "translationFr": "Les feuilles des arbres sont vertes.",
         "translationEn": "The leaves are green."
       },
       {
         "chinese": "他穿了一件绿色的衣服。",
-        "pinyin": "tā chuān le yíjiàn lǜsè de yīfu。",
+        "pinyin": "tā chuān le yījiàn lǜsè de yīfú",
         "translationFr": "Il porte une veste verte.",
         "translationEn": "He is wearing a green coat."
       }
@@ -5591,19 +5591,19 @@
     "examples": [
       {
         "chinese": "在路上",
-        "pinyin": "zài lùshang",
+        "pinyin": "zài lùshàng",
         "translationFr": "Sur le chemin",
         "translationEn": "On the road"
       },
       {
         "chinese": "路上小心",
-        "pinyin": "lùshang xiǎoxīn",
+        "pinyin": "lùshàng xiǎoxīn",
         "translationFr": "Attention aux piétons",
         "translationEn": "Be careful on the road"
       },
       {
         "chinese": "路上很堵",
-        "pinyin": "lùshang hěn dǔ",
+        "pinyin": "lùshàng hěn dǔ",
         "translationFr": "La route est bouchée",
         "translationEn": "The road is very congested"
       }
@@ -5647,13 +5647,13 @@
     "examples": [
       {
         "chinese": "我们去旅游。",
-        "pinyin": "wǒmen qù lǚyóu。",
+        "pinyin": "wǒmen qù lǚyóu",
         "translationFr": "Nous allons faire un voyage.",
         "translationEn": "We are going on a trip"
       },
       {
         "chinese": "他是一名旅游作家。",
-        "pinyin": "tā shì yìmíng lǚyóu zuòjiā。",
+        "pinyin": "tā shì yīmíng lǚyóu zuòjiā",
         "translationFr": "Il est un écrivain de tourisme.",
         "translationEn": "He is a travel writer"
       }
@@ -5711,13 +5711,13 @@
       },
       {
         "chinese": "他走得很慢",
-        "pinyin": "tā zǒu dé hěn màn",
+        "pinyin": "tā zǒu dé hěnmàn",
         "translationFr": "Il marche très lentement",
         "translationEn": "He walks very slowly"
       },
       {
         "chinese": "慢慢来，不着急",
-        "pinyin": "mànmànlái， bù zháojí",
+        "pinyin": "mànmànlái bù zháojí",
         "translationFr": "Prends ton temps, ne t'inquiète pas",
         "translationEn": "Take your time, don't rush"
       },
@@ -5729,7 +5729,7 @@
       },
       {
         "chinese": "走得很慢",
-        "pinyin": "zǒu dé hěn màn",
+        "pinyin": "zǒudé hěnmàn",
         "translationFr": "Il marche lentement",
         "translationEn": "He walks very slowly"
       },
@@ -5919,7 +5919,7 @@
       },
       {
         "chinese": "门在哪儿？",
-        "pinyin": "mén zài nǎér？",
+        "pinyin": "mén zài nǎér",
         "translationFr": "Où est la porte ?",
         "translationEn": "Where is the door?"
       },
@@ -5937,7 +5937,7 @@
       },
       {
         "chinese": "门开着",
-        "pinyin": "mén kāi zhe",
+        "pinyin": "ménkāi zhe",
         "translationFr": "la porte est ouverte",
         "translationEn": "The door is open"
       },
@@ -6045,7 +6045,7 @@
     "examples": [
       {
         "chinese": "门票多少钱？",
-        "pinyin": "ménpiào duōshǎo qián？",
+        "pinyin": "ménpiào duōshǎo qián",
         "translationFr": "Combien coûte le billet ?",
         "translationEn": "How much are the tickets?"
       },
@@ -6102,13 +6102,13 @@
     "examples": [
       {
         "chinese": "吃面",
-        "pinyin": "chī miàn",
+        "pinyin": "chīmiàn",
         "translationFr": "Manger des nouilles",
         "translationEn": "Eat noodles"
       },
       {
         "chinese": "我喜欢吃面",
-        "pinyin": "wǒ xǐhuan chī miàn",
+        "pinyin": "wǒ xǐhuān chīmiàn",
         "translationFr": "J'aime les nouilles",
         "translationEn": "I like eating noodles"
       },
@@ -6163,7 +6163,7 @@
     "examples": [
       {
         "chinese": "张三的名字",
-        "pinyin": "zhāng sān de míngzì",
+        "pinyin": "zhāngsān de míngzì",
         "translationFr": "Le nom de Zhang San",
         "translationEn": "Zhang San's name"
       },
@@ -6284,7 +6284,7 @@
     "examples": [
       {
         "chinese": "一杯奶茶",
-        "pinyin": "yìbēi nǎichá",
+        "pinyin": "yībēi nǎichá",
         "translationFr": "Une tasse de thé au lait",
         "translationEn": "A cup of milk tea"
       },
@@ -6296,7 +6296,7 @@
       },
       {
         "chinese": "年轻人喜欢喝奶茶",
-        "pinyin": "niánqīngrén xǐhuan hē nǎichá",
+        "pinyin": "niánqīngrén xǐhuān hē nǎichá",
         "translationFr": "Les jeunes aiment le bubble tea",
         "translationEn": "Young people enjoy drinking milk tea"
       }
@@ -6344,31 +6344,31 @@
     "examples": [
       {
         "chinese": "我奶奶",
-        "pinyin": "wǒ nǎinai",
+        "pinyin": "wǒ nǎinǎi",
         "translationFr": "ma grand-mère",
         "translationEn": "My grandmother"
       },
       {
         "chinese": "奶奶好",
-        "pinyin": "nǎinai hǎo",
+        "pinyin": "nǎinǎi hǎo",
         "translationFr": "bonjour grand-mère",
         "translationEn": "Grandmother is well"
       },
       {
         "chinese": "奶奶多大？",
-        "pinyin": "nǎinai duō dà？",
+        "pinyin": "nǎinǎi duōdà",
         "translationFr": "grand-mère, quel âge as-tu?",
         "translationEn": "How old is your grandmother?"
       },
       {
         "chinese": "奶奶做饭很好吃",
-        "pinyin": "nǎinai zuòfàn hěn hǎochī",
+        "pinyin": "nǎinǎi zuòfàn hěn hǎochī",
         "translationFr": "Grand-mère prépare de bons plats",
         "translationEn": "Grandmother cooks very deliciously"
       },
       {
         "chinese": "奶奶住在农村",
-        "pinyin": "nǎinai zhù zài nóngcūn",
+        "pinyin": "nǎinǎi zhù zài nóngcūn",
         "translationFr": "Grand-mère habite dans une campagne",
         "translationEn": "Grandmother lives in the countryside"
       }
@@ -6411,13 +6411,13 @@
     "examples": [
       {
         "chinese": "你应该那么做。",
-        "pinyin": "nǐ yīnggāi nàme zuò。",
+        "pinyin": "nǐ yīnggāi nàme zuò",
         "translationFr": "Tu devrais agir ainsi.",
         "translationEn": "You should do that"
       },
       {
         "chinese": "我们可以那么办。",
-        "pinyin": "wǒmen kěyǐ nàme bàn。",
+        "pinyin": "wǒmen kěyǐ nàme bàn",
         "translationFr": "Nous pouvons faire comme cela.",
         "translationEn": "We can handle it that way"
       }
@@ -6466,19 +6466,19 @@
     "examples": [
       {
         "chinese": "那个男孩儿",
-        "pinyin": "nàge nánháiér",
+        "pinyin": "nàge nánháier",
         "translationFr": "ce garçon",
         "translationEn": "That boy"
       },
       {
         "chinese": "小男孩儿",
-        "pinyin": "xiǎo nánháiér",
+        "pinyin": "xiǎo nánháier",
         "translationFr": "garçonnet",
         "translationEn": "Little boy"
       },
       {
         "chinese": "男孩儿们",
-        "pinyin": "nánháiér men",
+        "pinyin": "nánháier men",
         "translationFr": "Les garçons",
         "translationEn": "Boys"
       }
@@ -6522,13 +6522,13 @@
     "examples": [
       {
         "chinese": "他那样做。",
-        "pinyin": "tā nàyàng zuò。",
+        "pinyin": "tā nàyàng zuò",
         "translationFr": "Il fait comme cela.",
         "translationEn": "He does it that way."
       },
       {
         "chinese": "这样才对。",
-        "pinyin": "zhèyàng cái duì。",
+        "pinyin": "zhèyàng cái duì",
         "translationFr": "C'est ainsi qu'il faut faire.",
         "translationEn": "That's how it should be done."
       }
@@ -6575,13 +6575,13 @@
     "examples": [
       {
         "chinese": "一只鸟在天上飞。",
-        "pinyin": "yìzhī niǎo zài tiānshàngfēi。",
+        "pinyin": "yīzhī niǎo zài tiānshàngfēi",
         "translationFr": "Un oiseau vole dans le ciel.",
         "translationEn": "A bird is flying in the sky."
       },
       {
         "chinese": "鸟群在森林里鸣叫。",
-        "pinyin": "niǎoqún zài sēnlín lǐ míngjiào。",
+        "pinyin": "niǎoqún zài sēnlín lǐ míngjiào",
         "translationFr": "Une volée d'oiseaux chante dans la forêt.",
         "translationEn": "A flock of birds is singing in the forest."
       }
@@ -6774,13 +6774,13 @@
       },
       {
         "chinese": "别跑！",
-        "pinyin": "biépǎo！",
+        "pinyin": "biépǎo",
         "translationFr": "Ne cours pas !",
         "translationEn": "Don't run!"
       },
       {
         "chinese": "快跑！",
-        "pinyin": "kuài pǎo！",
+        "pinyin": "kuài pǎo",
         "translationFr": "Courre vite !",
         "translationEn": "Run quickly!"
       }
@@ -6825,7 +6825,7 @@
     "examples": [
       {
         "chinese": "我喜欢跑步",
-        "pinyin": "wǒ xǐhuan pǎobù",
+        "pinyin": "wǒ xǐhuān pǎobù",
         "translationFr": "J'aime courir",
         "translationEn": "I like running."
       },
@@ -7114,13 +7114,13 @@
       },
       {
         "chinese": "这个球是谁的？",
-        "pinyin": "zhège qiú shì shuí de？",
+        "pinyin": "zhège qiúshì shuí de",
         "translationFr": "À qui est ce ballon ?",
         "translationEn": "Whose ball is this?"
       },
       {
         "chinese": "我买了一个新球",
-        "pinyin": "wǒ mǎi le yígè xīn qiú",
+        "pinyin": "wǒ mǎi le yígè xīnqiú",
         "translationFr": "J'ai acheté un nouveau ballon",
         "translationEn": "I bought a new ball."
       }
@@ -7174,7 +7174,7 @@
       },
       {
         "chinese": "他妻子很漂亮",
-        "pinyin": "tā qīzǐ hěnpiàoliang",
+        "pinyin": "tā qīzǐ hěnpiàoliàng",
         "translationFr": "Sa femme est très belle",
         "translationEn": "His wife is very beautiful."
       },
@@ -7224,13 +7224,13 @@
     "examples": [
       {
         "chinese": "让他进来。",
-        "pinyin": "ràng tā jìnlái。",
+        "pinyin": "ràng tā jìnlái",
         "translationFr": "Permettez-lui d'entrer.",
         "translationEn": "Let him come in."
       },
       {
         "chinese": "让孩子们玩一会儿。",
-        "pinyin": "ràng háizi men wán yíhuìer。",
+        "pinyin": "ràng háizi men wán yīhuìer",
         "translationFr": "Laissez les enfants jouer un peu.",
         "translationEn": "Let the kids play for a while."
       }
@@ -7404,7 +7404,7 @@
     "examples": [
       {
         "chinese": "上来！",
-        "pinyin": "shànglái！",
+        "pinyin": "shànglái",
         "translationFr": "Monte !",
         "translationEn": "Monte!"
       },
@@ -7473,7 +7473,7 @@
       },
       {
         "chinese": "上面写着什么？",
-        "pinyin": "shàngmiàn xiě zhe shénme？",
+        "pinyin": "shàngmiàn xiě zhe shénme",
         "translationFr": "Qu'est-ce qui est écrit dessus ?",
         "translationEn": "What's written above?"
       }
@@ -7585,7 +7585,7 @@
       },
       {
         "chinese": "喜欢上网",
-        "pinyin": "xǐhuan shàngwǎng",
+        "pinyin": "xǐhuān shàngwǎng",
         "translationFr": "J'aime être en ligne",
         "translationEn": "I like to be online."
       },
@@ -7642,7 +7642,7 @@
       },
       {
         "chinese": "生日快乐",
-        "pinyin": "shēngrìkuàilè",
+        "pinyin": "shēng rì kuài lè",
         "translationFr": "joyeux-anniversaire",
         "translationEn": "Happy birthday"
       },
@@ -7654,7 +7654,7 @@
       },
       {
         "chinese": "生日礼物",
-        "pinyin": "shēngrìlǐwù",
+        "pinyin": "shēng rì lǐ wù",
         "translationFr": "cadeau-d'anniversaire",
         "translationEn": "Birthday gift"
       },
@@ -7722,13 +7722,13 @@
       },
       {
         "chinese": "锻炼身体",
-        "pinyin": "duànliànshēntǐ",
+        "pinyin": "duàn liàn shēn tǐ",
         "translationFr": "faire de l'exercice",
         "translationEn": "Exercise"
       },
       {
         "chinese": "身体健康",
-        "pinyin": "shēntǐjiànkāng",
+        "pinyin": "shēn tǐ jiàn kāng",
         "translationFr": "bien portant",
         "translationEn": "In good health"
       },
@@ -7845,13 +7845,13 @@
     "examples": [
       {
         "chinese": "他有很多事情要做。",
-        "pinyin": "tā yǒu hěnduō shìqíng yào zuò。",
+        "pinyin": "tā yǒu hěnduō shìqíng yào zuò",
         "translationFr": "Il a beaucoup d'affaires à faire.",
         "translationEn": "He has a lot to do"
       },
       {
         "chinese": "这件事很重要。",
-        "pinyin": "zhèjiàn shì hěn zhòngyào。",
+        "pinyin": "zhèjiàn shì hěn zhòngyào",
         "translationFr": "Cette affaire est très importante.",
         "translationEn": "This matter is very important"
       }
@@ -7973,13 +7973,13 @@
     "examples": [
       {
         "chinese": "我的手表坏了。",
-        "pinyin": "wǒ de shǒubiǎo huài le。",
+        "pinyin": "wǒ de shǒubiǎo huài le",
         "translationFr": "Ma montre est cassée.",
         "translationEn": "My watch broke"
       },
       {
         "chinese": "妈妈给我买了一个新的手表。",
-        "pinyin": "māma gěi wǒ mǎi le yígè xīn de shǒubiǎo。",
+        "pinyin": "māmā gěi wǒ mǎi le yígè xīn de shǒubiǎo",
         "translationFr": "Maman m'a acheté une nouvelle montre.",
         "translationEn": "Mom bought me a new watch"
       }
@@ -8035,7 +8035,7 @@
       },
       {
         "chinese": "书包在哪儿？",
-        "pinyin": "shūbāo zài nǎér？",
+        "pinyin": "shūbāo zài nǎér",
         "translationFr": "où est mon sac à dos ?",
         "translationEn": "Where is my backpack?"
       }
@@ -8083,13 +8083,13 @@
     "examples": [
       {
         "chinese": "我的椅子不舒服。",
-        "pinyin": "wǒ de yǐzi bù shūfú。",
+        "pinyin": "wǒ de yǐzi bù shūfú",
         "translationFr": "Ma chaise ne me plaît pas.",
         "translationEn": "My chair doesn't feel good"
       },
       {
         "chinese": "他在这里感到很舒服。",
-        "pinyin": "tā zài zhèlǐ gǎndào hěn shūfú。",
+        "pinyin": "tā zài zhèlǐ gǎndào hěn shūfú",
         "translationFr": "Il se sent très à l'aise ici.",
         "translationEn": "He feels very comfortable here"
       }
@@ -8198,13 +8198,13 @@
     "examples": [
       {
         "chinese": "虽然他很累，但他还是去了图书馆。",
-        "pinyin": "suīrán tā hěn lèi， dàn tā háishì qù le túshūguǎn。",
+        "pinyin": "suīrán tā hěn lèi dàn tā háishì qù le túshūguǎn",
         "translationFr": "Bien qu'il soit fatigué, il est allé à la bibliothèque.",
         "translationEn": "Although he was very tired, but he still went to the library."
       },
       {
         "chinese": "他虽然聪明，但并不总是对的。",
-        "pinyin": "tā suīrán cōngming， dàn bìng bù zǒngshì duì de。",
+        "pinyin": "tā suīrán cōngmíng dàn bìng bù zǒngshì duì de",
         "translationFr": "Bien qu'il soit intelligent, il n'est pas toujours correct.",
         "translationEn": "Although he is smart, but he is not always right."
       }
@@ -8252,13 +8252,13 @@
     "examples": [
       {
         "chinese": "他生病了，所以他没来上课。",
-        "pinyin": "tā shēngbìng le， suǒyǐ tā méi lái shàngkè。",
+        "pinyin": "tā shēngbìng le suǒyǐ tā méilái shàngkè",
         "translationFr": "Il est malade, donc il n'est pas venu en classe.",
         "translationEn": "He is sick, so he didn't come to class."
       },
       {
         "chinese": "她迟到了，所以她错过了早上的会议。",
-        "pinyin": "tā chídào le， suǒyǐ tā cuòguò le zǎoshàng de huìyì。",
+        "pinyin": "tā chídào le suǒyǐ tā cuòguò le zǎoshàng de huìyì",
         "translationFr": "Elle est arrivée en retard, donc elle a manqué la réunion du matin.",
         "translationEn": "She arrived late, so she missed the morning meeting."
       }
@@ -8360,13 +8360,13 @@
     "examples": [
       {
         "chinese": "这个问题是关于题目的。",
-        "pinyin": "zhège wèntí shì guānyú tímù dì。",
+        "pinyin": "zhège wèntí shì guānyú tímù de",
         "translationFr": "Cette question est sur le sujet.",
         "translationEn": "This question is about the topic."
       },
       {
         "chinese": "请在试卷上题写你的名字。",
-        "pinyin": "qǐng zài shìjuàn shàng tíxiě nǐ de míngzì。",
+        "pinyin": "qǐng zài shìjuàn shàng tíxiě nǐ de míngzì",
         "translationFr": "Veuillez inscrire votre nom sur la feuille d'examen.",
         "translationEn": "Please write your name on the test paper."
       }
@@ -8419,13 +8419,13 @@
       },
       {
         "chinese": "我喜欢踢足球",
-        "pinyin": "wǒ xǐhuan tīzúqiú",
+        "pinyin": "wǒ xǐhuān tīzúqiú",
         "translationFr": "J'aime jouer au football",
         "translationEn": "I like playing football"
       },
       {
         "chinese": "你会踢足球吗？",
-        "pinyin": "nǐ huì tīzúqiú ma？",
+        "pinyin": "nǐ huì tīzúqiú ma",
         "translationFr": "Tu joues au football ?",
         "translationEn": "Can you play football?"
       },
@@ -8482,7 +8482,7 @@
     "examples": [
       {
         "chinese": "一条河",
-        "pinyin": "yìtiáo hé",
+        "pinyin": "yītiáo hé",
         "translationFr": "Un fleuve",
         "translationEn": "A river"
       },
@@ -8540,7 +8540,7 @@
       },
       {
         "chinese": "喜欢跳舞",
-        "pinyin": "xǐhuan tiàowǔ",
+        "pinyin": "xǐhuān tiàowǔ",
         "translationFr": "aimer danser",
         "translationEn": "Like to dance"
       },
@@ -8594,7 +8594,7 @@
       },
       {
         "chinese": "头发",
-        "pinyin": "tóufa",
+        "pinyin": "tóufà",
         "translationFr": "Cheveux",
         "translationEn": "Hair"
       }
@@ -8762,13 +8762,13 @@
     "examples": [
       {
         "chinese": "我们把作业写完了。",
-        "pinyin": "wǒmen bǎ zuòyè xiě wán le。",
+        "pinyin": "wǒmen bǎ zuòyè xiě wán le",
         "translationFr": "Nous avons fini notre devoir.",
         "translationEn": "We finished our homework."
       },
       {
         "chinese": "他终于完成了任务。",
-        "pinyin": "tā zhōngyú wánchéng le rènwu。",
+        "pinyin": "tā zhōngyú wánchéng le rènwù",
         "translationFr": "Il a enfin terminé sa tâche.",
         "translationEn": "He finally completed his task."
       }
@@ -8816,13 +8816,13 @@
     "examples": [
       {
         "chinese": "他的财富有万。",
-        "pinyin": "tā de cáifù yǒu wàn。",
+        "pinyin": "tā de cáifù yǒu wàn",
         "translationFr": "Sa fortune compte dix mille unités.",
         "translationEn": "His wealth is ten thousand."
       },
       {
         "chinese": "这本书有万页。",
-        "pinyin": "zhè běnshū yǒu wànyè。",
+        "pinyin": "zhè běnshū yǒu wànyè",
         "translationFr": "Ce livre comporte dix mille pages.",
         "translationEn": "This book has ten thousand pages."
       }
@@ -8931,7 +8931,7 @@
       },
       {
         "chinese": "往上看",
-        "pinyin": "wǎng shàng kàn",
+        "pinyin": "wǎngshàng kàn",
         "translationFr": "Regarder vers le haut.",
         "translationEn": "Look up."
       }
@@ -9041,13 +9041,13 @@
     "examples": [
       {
         "chinese": "他坐在了主席位。",
-        "pinyin": "tā zuòzài le zhǔxí wèi。",
+        "pinyin": "tā zuòzài le zhǔxí wèi",
         "translationFr": "Il s'est placé à la place du président.",
         "translationEn": "He took the seat of the chairman."
       },
       {
         "chinese": "这个文件有十六位。",
-        "pinyin": "zhège wénjiàn yǒu shíliùwèi。",
+        "pinyin": "zhège wénjiàn yǒu shíliùwèi",
         "translationFr": "Ce fichier a seize bits.",
         "translationEn": "This file has sixteen bits."
       }
@@ -9095,13 +9095,13 @@
     "examples": [
       {
         "chinese": "你知道为什么他没来吗？",
-        "pinyin": "nǐ zhīdào wèishénme tā méi lái ma？",
+        "pinyin": "nǐ zhīdào wèishénme tā méilái ma",
         "translationFr": "Sais-tu pourquoi il n'est pas venu ?",
         "translationEn": "Do you know why he didn't come?"
       },
       {
         "chinese": "我想知道为什么会有这样的结果。",
-        "pinyin": "wǒ xiǎng zhīdào wèishénme huì yǒu zhèyàng de jiéguǒ。",
+        "pinyin": "wǒ xiǎng zhīdào wèishénme huì yǒu zhèyàng de jiéguǒ",
         "translationFr": "Je veux savoir pourquoi il en est arrivé ainsi.",
         "translationEn": "I want to know why such a result occurred."
       }
@@ -9157,19 +9157,19 @@
       },
       {
         "chinese": "洗衣服",
-        "pinyin": "xǐyīfu",
+        "pinyin": "xǐyīfú",
         "translationFr": "Laver du linge.",
         "translationEn": "Wash clothes."
       },
       {
         "chinese": "吃饭前要洗手",
-        "pinyin": "chīfàn qián yào xǐshǒu",
+        "pinyin": "chīfàn qiányào xǐshǒu",
         "translationFr": "Se laver les mains avant de manger.",
         "translationEn": "Wash your hands before eating."
       },
       {
         "chinese": "我要去洗澡",
-        "pinyin": "wǒ yào qù xǐzǎo",
+        "pinyin": "wǒyào qù xǐzǎo",
         "translationFr": "Je vais prendre une douche.",
         "translationEn": "I'm going to take a shower."
       }
@@ -9214,7 +9214,7 @@
     "examples": [
       {
         "chinese": "下来！",
-        "pinyin": "xiàlái！",
+        "pinyin": "xiàlái",
         "translationFr": "Descends !",
         "translationEn": "Come down!"
       },
@@ -9332,7 +9332,7 @@
     "examples": [
       {
         "chinese": "笑一笑",
-        "pinyin": "xiàoyixiào",
+        "pinyin": "xiàoyīxiào",
         "translationFr": "Sourire.",
         "translationEn": "Smile."
       },
@@ -9344,19 +9344,19 @@
       },
       {
         "chinese": "你笑什么？",
-        "pinyin": "nǐ xiào shénme？",
+        "pinyin": "nǐ xiào shénme",
         "translationFr": "Pourquoi tu ris ?",
         "translationEn": "What are you laughing at?"
       },
       {
         "chinese": "别笑我",
-        "pinyin": "bié xiào wǒ",
+        "pinyin": "biéxiào wǒ",
         "translationFr": "Ne rigole pas avec moi.",
         "translationEn": "Don't laugh at me."
       },
       {
         "chinese": "开心地笑",
-        "pinyin": "kāixīn dì xiào",
+        "pinyin": "kāixīn dìxiào",
         "translationFr": "Rire joyeusement.",
         "translationEn": "Laugh happily."
       }
@@ -9455,13 +9455,13 @@
     "examples": [
       {
         "chinese": "小时候，他喜欢和朋友们一起玩。",
-        "pinyin": "xiǎoshíhòu， tā xǐhuan hé péngyǒu men yìqǐ wán。",
+        "pinyin": "xiǎoshíhòu tā xǐhuān hé péngyǒu men yìqǐ wán",
         "translationFr": "Enfant, il aimait jouer avec ses amis.",
         "translationEn": "When he was young, he liked to play with his friends."
       },
       {
         "chinese": "我们小时候经常去河边捉小鱼。",
-        "pinyin": "wǒmen xiǎoshíhòu jīngcháng qù hébiān zhuō xiǎoyú。",
+        "pinyin": "wǒmen xiǎoshíhòu jīngcháng qù hébiān zhuō xiǎoyú",
         "translationFr": "Nous passions souvent notre enfance à attraper des petits poissons près du ruisseau.",
         "translationEn": "We often went to the riverbank to catch small fish when we were young."
       }
@@ -9515,13 +9515,13 @@
       },
       {
         "chinese": "继续下去",
-        "pinyin": "jìxùxiàqù",
+        "pinyin": "jì xù xià qù",
         "translationFr": "Continuer",
         "translationEn": "Keep going."
       },
       {
         "chinese": "坚持下去",
-        "pinyin": "jiānchíxiàqù",
+        "pinyin": "jiān chí xià qù",
         "translationFr": "Persévérer",
         "translationEn": "Persist."
       }
@@ -9569,13 +9569,13 @@
     "examples": [
       {
         "chinese": "他姓什么？",
-        "pinyin": "tā xìng shénme？",
+        "pinyin": "tā xìng shénme",
         "translationFr": "Quel est son nom de famille ?",
         "translationEn": "What's his surname?"
       },
       {
         "chinese": "我姓李。",
-        "pinyin": "wǒ xìnglǐ。",
+        "pinyin": "wǒ xìnglǐ",
         "translationFr": "Je suis du nom de famille Li.",
         "translationEn": "My surname is Li."
       }
@@ -9619,13 +9619,13 @@
     "examples": [
       {
         "chinese": "他的姓名是李明。",
-        "pinyin": "tā de xìngmíng shì lǐ míng。",
+        "pinyin": "tā de xìngmíng shì lǐmíng",
         "translationFr": "Son nom complet est Li Ming.",
         "translationEn": "His name is Li Ming."
       },
       {
         "chinese": "姓名登记处。",
-        "pinyin": "xìngmíng dēngjìchù。",
+        "pinyin": "xìngmíng dēngjìchù",
         "translationFr": "Bureau de l'enregistrement des noms.",
         "translationEn": "Registry office for names."
       }
@@ -9674,7 +9674,7 @@
     "examples": [
       {
         "chinese": "洗手间在哪儿？",
-        "pinyin": "xǐshǒujiān zài nǎér？",
+        "pinyin": "xǐshǒujiān zài nǎér",
         "translationFr": "les toilettes où sont-elles ?",
         "translationEn": "Where are the washrooms?"
       },
@@ -9786,13 +9786,13 @@
     "examples": [
       {
         "chinese": "他有一只眼睛。",
-        "pinyin": "tā yǒu yìzhī yǎnjīng.",
+        "pinyin": "tā yǒu yīzhī yǎnjīng",
         "translationFr": "Il a un œil.",
         "translationEn": "He has one eye."
       },
       {
         "chinese": "双眼明亮。",
-        "pinyin": "shuāngyǎn míngliàng。",
+        "pinyin": "shuāngyǎn míngliàng",
         "translationFr": "Les yeux sont brillants.",
         "translationEn": "Both eyes are bright."
       }
@@ -9838,13 +9838,13 @@
     "examples": [
       {
         "chinese": "这本书的颜色是什么？",
-        "pinyin": "zhè běnshū de yánsè shì shénme？",
+        "pinyin": "zhè běnshū de yánsè shì shénme",
         "translationFr": "Quelle est la couleur de ce livre ?",
         "translationEn": "What color is this book?"
       },
       {
         "chinese": "墙的颜色是蓝色的。",
-        "pinyin": "qiáng de yánsè shì lánsè de。",
+        "pinyin": "qiáng de yánsè shì lánsè de",
         "translationFr": "La couleur du mur est bleue.",
         "translationEn": "The wall's color is blue."
       }
@@ -9992,31 +9992,31 @@
     "examples": [
       {
         "chinese": "我爷爷",
-        "pinyin": "wǒ yéye",
+        "pinyin": "wǒ yéyé",
         "translationFr": "mon grand-père",
         "translationEn": "My grandfather"
       },
       {
         "chinese": "爷爷好",
-        "pinyin": "yéye hǎo",
+        "pinyin": "yéyé hǎo",
         "translationFr": "Papa est bien?",
         "translationEn": "Grandfather is well?"
       },
       {
         "chinese": "爷爷多大？",
-        "pinyin": "yéye duō dà？",
+        "pinyin": "yéyé duōdà",
         "translationFr": "Papa, quel âge as-tu?",
         "translationEn": "How old is grandpa?"
       },
       {
         "chinese": "爷爷八十岁了",
-        "pinyin": "yéye bāshísuì le",
+        "pinyin": "yéyé bāshísuì le",
         "translationFr": "Grand-père a quatre-vingts ans",
         "translationEn": "Grandpa is eighty years old."
       },
       {
         "chinese": "爷爷身体很好",
-        "pinyin": "yéye shēntǐ hěn hǎo",
+        "pinyin": "yéyé shēntǐ hěn hǎo",
         "translationFr": "Grand-père est en bonne santé",
         "translationEn": "Grandpa is in good health."
       }
@@ -10060,13 +10060,13 @@
     "examples": [
       {
         "chinese": "你等一会儿。",
-        "pinyin": "nǐ děng yíhuìer。",
+        "pinyin": "nǐ děng yīhuìer",
         "translationFr": "Attends un instant.",
         "translationEn": "Wait a moment."
       },
       {
         "chinese": "我过一会儿再来。",
-        "pinyin": "wǒ guò yíhuìer zài lái。",
+        "pinyin": "wǒguò yīhuìer zài lái",
         "translationFr": "Je reviens dans un instant.",
         "translationEn": "I'll come back later."
       }
@@ -10114,13 +10114,13 @@
     "examples": [
       {
         "chinese": "他已经来了。",
-        "pinyin": "tā yǐjīng lái le。",
+        "pinyin": "tā yǐjīng lái le",
         "translationFr": "Il est déjà venu.",
         "translationEn": "He has already come."
       },
       {
         "chinese": "我们已经吃过了。",
-        "pinyin": "wǒmen yǐjīng chī guò le。",
+        "pinyin": "wǒmen yǐjīng chī guò le",
         "translationFr": "Nous avons déjà mangé.",
         "translationEn": "We have already eaten."
       }
@@ -10163,13 +10163,13 @@
     "examples": [
       {
         "chinese": "天气很阴。",
-        "pinyin": "tiānqì hěn yīn。",
+        "pinyin": "tiānqì hěn yīn",
         "translationFr": "Le temps est nuageux.",
         "translationEn": "The weather is very cloudy."
       },
       {
         "chinese": "这是一张阴的照片。",
-        "pinyin": "zhè shì yìzhāng yīn de zhàopiàn。",
+        "pinyin": "zhèshì yīzhāng yīn de zhàopiān",
         "translationFr": "C'est une photo trop sombre.",
         "translationEn": "This is a photo that's too dark."
       }
@@ -10224,13 +10224,13 @@
     "examples": [
       {
         "chinese": "因为下雨，我们取消了野餐。",
-        "pinyin": "yīnwèi xiàyǔ， wǒmen qǔxiāo le yěcān。",
+        "pinyin": "yīnwèi xiàyǔ wǒmen qǔxiāo le yěcān",
         "translationFr": "Parce qu'il pleuvait, nous avons annulé notre pique-nique.",
         "translationEn": "Because it was raining, we canceled the picnic."
       },
       {
         "chinese": "因为他生病了，所以他没来上课。",
-        "pinyin": "yīnwèi tā shēngbìng le， suǒyǐ tā méi lái shàngkè。",
+        "pinyin": "yīnwèi tā shēngbìng le suǒyǐ tā méilái shàngkè",
         "translationFr": "Parce qu'il était malade, il n'est pas venu en classe.",
         "translationEn": "Because he was sick, so he didn't come to class."
       }
@@ -10349,13 +10349,13 @@
     "examples": [
       {
         "chinese": "你的意思是说我不对吗？",
-        "pinyin": "nǐ de yìsī shì shuō wǒ bú duì ma？",
+        "pinyin": "nǐ de yìsi shì shuō wǒ bù duì ma",
         "translationFr": "Est-ce que tu veux dire que je me trompe ?",
         "translationEn": "Is your meaning that I'm wrong?"
       },
       {
         "chinese": "这个礼物的意思就是感谢。",
-        "pinyin": "zhège lǐwù de yìsī jiùshì gǎnxiè。",
+        "pinyin": "zhège lǐwù de yìsi jiùshì gǎnxiè",
         "translationFr": "Ce cadeau a pour signification mon appréciation.",
         "translationEn": "The meaning of this gift is gratitude."
       }
@@ -10538,13 +10538,13 @@
     "examples": [
       {
         "chinese": "这本书很有意思。",
-        "pinyin": "zhè běnshū hěn yǒuyìsī。",
+        "pinyin": "zhè běnshū hěn yǒuyìsi",
         "translationFr": "Ce livre est intéressant.",
         "translationEn": "Turn right"
       },
       {
         "chinese": "他的演讲很有趣。",
-        "pinyin": "tā de yǎnjiǎng hěn yǒuqù。",
+        "pinyin": "tā de yǎnjiǎng hěn yǒuqù",
         "translationFr": "Son discours était intéressant.",
         "translationEn": "Right hand"
       }
@@ -10659,7 +10659,7 @@
       },
       {
         "chinese": "我有时候看中国电影",
-        "pinyin": "wǒ yǒushíhòu kàn zhòngguó diànyǐng",
+        "pinyin": "wǒ yǒushíhòu kàn zhōngguó diànyǐng",
         "translationFr": "Parfois je regarde des films chinois",
         "translationEn": "Sometimes I watch Chinese movies"
       }
@@ -10704,13 +10704,13 @@
     "examples": [
       {
         "chinese": "我喜欢游泳",
-        "pinyin": "wǒ xǐhuan yóuyǒng",
+        "pinyin": "wǒ xǐhuān yóuyǒng",
         "translationFr": "J'aime nager",
         "translationEn": "I like swimming"
       },
       {
         "chinese": "你会游泳吗？",
-        "pinyin": "nǐ huì yóuyǒng ma？",
+        "pinyin": "nǐ huì yóuyǒng ma",
         "translationFr": "Tu nages ?",
         "translationEn": "Can you swim?"
       },
@@ -10728,7 +10728,7 @@
       },
       {
         "chinese": "游泳池在哪儿？",
-        "pinyin": "yóuyǒngchí zài nǎér？",
+        "pinyin": "yóuyǒngchí zài nǎér",
         "translationFr": "Où est la piscine ?",
         "translationEn": "Where is the swimming pool?"
       }
@@ -10831,19 +10831,19 @@
       },
       {
         "chinese": "太远了",
-        "pinyin": "tài yuǎn le",
+        "pinyin": "tàiyuǎn le",
         "translationFr": "trop loin",
         "translationEn": "Too far"
       },
       {
         "chinese": "离这儿远吗？",
-        "pinyin": "lí zhèér yuǎn ma？",
+        "pinyin": "lí zhèér yuǎn ma",
         "translationFr": "est-ce que c'est loin d'ici ?",
         "translationEn": "Is it far from here?"
       },
       {
         "chinese": "不太远",
-        "pinyin": "bú tài yuǎn",
+        "pinyin": "bùtàiyuǎn",
         "translationFr": "pas trop loin",
         "translationEn": "Not too far"
       },
@@ -10905,13 +10905,13 @@
     "examples": [
       {
         "chinese": "我每天早上跑步。",
-        "pinyin": "wǒ měitiān zǎoshàng pǎobù。",
+        "pinyin": "wǒ měitiān zǎoshàng pǎobù",
         "translationFr": "Je fais du sport tous les matins.",
         "translationEn": "I run every morning"
       },
       {
         "chinese": "他们经常打篮球。",
-        "pinyin": "tāmen jīngcháng dǎlánqiú。",
+        "pinyin": "tāmen jīngcháng dǎlánqiú",
         "translationFr": "Ils font du basketball souvent.",
         "translationEn": "They often play basketball"
       }
@@ -11017,19 +11017,19 @@
     "examples": [
       {
         "chinese": "我丈夫",
-        "pinyin": "wǒ zhàngfu",
+        "pinyin": "wǒ zhàngfū",
         "translationFr": "Mon époux",
         "translationEn": "My husband"
       },
       {
         "chinese": "她丈夫是老师",
-        "pinyin": "tā zhàngfu shì lǎoshī",
+        "pinyin": "tā zhàngfū shì lǎoshī",
         "translationFr": "Son époux est professeur",
         "translationEn": "Her husband is a teacher"
       },
       {
         "chinese": "丈夫和妻子",
-        "pinyin": "zhàngfu hé qīzǐ",
+        "pinyin": "zhàngfū hé qīzǐ",
         "translationFr": "Époux et femme",
         "translationEn": "Husband and wife"
       }
@@ -11129,13 +11129,13 @@
     "examples": [
       {
         "chinese": "你吃了这么多了。",
-        "pinyin": "nǐ chī le zhème duō le。",
+        "pinyin": "nǐ chī le zhème duō le",
         "translationFr": "Tu as mangé autant.",
         "translationEn": "You have eaten so much."
       },
       {
         "chinese": "她说话这么温柔。",
-        "pinyin": "tā shuōhuà zhème wēnróu。",
+        "pinyin": "tā shuōhuà zhème wēnróu",
         "translationFr": "Elle parle comme ceci, doucement.",
         "translationEn": "She speaks so gently."
       }
@@ -11233,13 +11233,13 @@
     "examples": [
       {
         "chinese": "他这样做。",
-        "pinyin": "tā zhèyàng zuò。",
+        "pinyin": "tā zhèyàng zuò",
         "translationFr": "Il fait ainsi.",
         "translationEn": "He does it this way."
       },
       {
         "chinese": "这样很好。",
-        "pinyin": "zhèyàng hěn hǎo。",
+        "pinyin": "zhèyàng hěn hǎo",
         "translationFr": "C'est ainsi que cela se passe.",
         "translationEn": "That's how it is."
       }
@@ -11350,7 +11350,7 @@
       },
       {
         "chinese": "准备一下",
-        "pinyin": "zhǔnbèi yíxià",
+        "pinyin": "zhǔnbèi yīxià",
         "translationFr": "me préparer",
         "translationEn": "Get ready."
       },
@@ -11406,7 +11406,7 @@
     "examples": [
       {
         "chinese": "自己洗衣服",
-        "pinyin": "zìjǐ xǐyīfu",
+        "pinyin": "zìjǐ xǐyīfú",
         "translationFr": "Se laver les vêtements",
         "translationEn": "Wash clothes by oneself."
       },
@@ -11476,13 +11476,13 @@
       },
       {
         "chinese": "从这儿走要多长时间？",
-        "pinyin": "cóng zhèér zǒu yào duōchángshíjiān？",
+        "pinyin": "cóng zhèér zǒuyào duō zhǎng shí jiān",
         "translationFr": "Combien de temps faut-il pour marcher d'ici ?",
         "translationEn": "How long does it take to walk from here?"
       },
       {
         "chinese": "我走了，再见",
-        "pinyin": "wǒ zǒu le， zàijiàn",
+        "pinyin": "wǒ zǒu le zàijiàn",
         "translationFr": "Je pars, au revoir.",
         "translationEn": "I'm leaving, goodbye."
       }
@@ -11536,13 +11536,13 @@
       },
       {
         "chinese": "我喜欢走路",
-        "pinyin": "wǒ xǐhuan zǒulù",
+        "pinyin": "wǒ xǐhuān zǒulù",
         "translationFr": "J'aime marcher",
         "translationEn": "I like walking."
       },
       {
         "chinese": "从这儿走路去要二十分钟",
-        "pinyin": "cóng zhèér zǒulù qù yào èrshífēnzhōng",
+        "pinyin": "cóng zhèér zǒulù qù yào èr shí fēn zhōng",
         "translationFr": "Vingt minutes à pied d'ici",
         "translationEn": "It takes twenty minutes to walk from here."
       }
@@ -11788,7 +11788,7 @@
       },
       {
         "chinese": "足球比赛",
-        "pinyin": "zúqiúbǐsài",
+        "pinyin": "zú qiú bǐ sài",
         "translationFr": "match de football",
         "translationEn": "soccer game"
       },

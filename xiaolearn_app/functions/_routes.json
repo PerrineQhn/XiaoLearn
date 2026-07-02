@@ -1,6 +1,0 @@
-{
-  "version": 1,
-  "description": "Ce dossier contient des Firebase Cloud Functions (déployées via Firebase, pas Cloudflare). Ce fichier dit à Cloudflare Pages de ne pas scanner ce dossier pour des Pages Functions.",
-  "include": [],
-  "exclude": ["/*"]
-}
