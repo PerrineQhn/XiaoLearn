@@ -303,30 +303,6 @@ export default function DictionaryEntryPage({
             </section>
           )}
 
-          {/* V18 — Voir aussi : mots curés (relatedIds) OU calculés par fallback (caractère partagé / thème). */}
-          {related.length > 0 && (
-            <section className="dict-entry-section dict-entry-related">
-              <h3>{language === 'fr' ? 'Voir aussi' : 'See also'}</h3>
-              <div className="dict-entry-related-grid">
-                {related.map((r) => (
-                  <button
-                    type="button"
-                    key={r.id}
-                    className="dict-entry-related-card"
-                    onClick={() => onSelectEntry(r.id)}
-                  >
-                    <span className="dict-entry-related-hanzi">{r.hanzi}</span>
-                    <span className="dict-entry-related-pinyin">{r.pinyin}</span>
-                    <span className="dict-entry-related-tr">
-                      {language === 'en'
-                        ? r.translationEn || r.translationFr
-                        : r.translationFr || r.translationEn}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
         </article>
 
         <aside className="dict-entry-sidebar">
@@ -370,6 +346,33 @@ export default function DictionaryEntryPage({
                   <span className="dict-entry-tag" key={tag}>
                     {tag}
                   </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* V18 — Voir aussi : mots curés (relatedIds) OU calculés par fallback. Version sidebar compacte. */}
+          {related.length > 0 && (
+            <div className="dict-entry-card">
+              <h4>{language === 'fr' ? 'Voir aussi' : 'See also'}</h4>
+              <div className="dict-entry-related-list">
+                {related.map((r) => (
+                  <button
+                    type="button"
+                    key={r.id}
+                    className="dict-entry-related-row"
+                    onClick={() => onSelectEntry(r.id)}
+                  >
+                    <span className="dict-entry-related-row-hanzi">{r.hanzi}</span>
+                    <span className="dict-entry-related-row-meta">
+                      <span className="dict-entry-related-row-pinyin">{r.pinyin}</span>
+                      <span className="dict-entry-related-row-tr">
+                        {language === 'en'
+                          ? r.translationEn || r.translationFr
+                          : r.translationFr || r.translationEn}
+                      </span>
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>
@@ -594,47 +597,57 @@ const commonStyles = `
     margin: 0;
     color: var(--text-secondary);
   }
-  /* V18 — Section « Voir aussi » : grille de cartes cliquables vers les mots liés. */
-  .dict-entry-related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: var(--spacing-sm);
-  }
-  .dict-entry-related-card {
+  /* V18 — Section « Voir aussi » (sidebar) : liste verticale compacte de mots liés. */
+  .dict-entry-related-list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    background: var(--bg-primary);
+    gap: var(--spacing-xs, 6px);
+  }
+  .dict-entry-related-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: var(--spacing-md);
+    padding: 8px 10px;
     cursor: pointer;
     text-align: left;
     font-family: inherit;
     transition: all var(--transition-base);
   }
-  .dict-entry-related-card:hover {
-    border-color: var(--jade-green);
-    background: var(--bg-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  .dict-entry-related-row:hover {
+    border-color: var(--primary-red-light, var(--primary-red));
+    background: var(--bg-primary);
+    transform: translateX(2px);
   }
-  .dict-entry-related-hanzi {
+  .dict-entry-related-row-hanzi {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-primary);
-    line-height: 1.1;
+    line-height: 1;
+    flex-shrink: 0;
   }
-  .dict-entry-related-pinyin {
+  .dict-entry-related-row-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
+  }
+  .dict-entry-related-row-pinyin {
     font-style: italic;
     color: var(--jade-green);
-    font-size: 0.85rem;
-  }
-  .dict-entry-related-tr {
-    color: var(--text-secondary);
     font-size: 0.8rem;
-    line-height: 1.3;
+    line-height: 1.1;
+  }
+  .dict-entry-related-row-tr {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .dict-entry-examples {
     display: flex;
