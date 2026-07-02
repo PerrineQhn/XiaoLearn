@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Calligraphie chinoise</title>
+  <desc id="desc">Illustration en encre sur papier pour la calligraphie.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7f7f7"/>
+      <stop offset="100%" stop-color="#ededed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M210 620 C330 280 460 750 620 320 C760 750 930 310 1110 620" stroke="#1f2233" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <text x="120" y="220" fill="#d8483e" font-size="190" font-family="Noto Serif SC, serif">书法</text>
+  <text x="380" y="220" fill="#1f2233" font-size="68" font-family="Plus Jakarta Sans, sans-serif">Shūfǎ · Calligraphie</text>
+</svg>

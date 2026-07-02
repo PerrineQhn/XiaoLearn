@@ -1,0 +1,316 @@
+/*
+ * responsive-app.css — couches responsive pour app.xiaolearn.com
+ * ---------------------------------------------------------------
+ * Stratégie :
+ *   >  1024 px → desktop classique (sidebar visible, layout existant)
+ *   ≤ 1024 px → tablette / mobile : sidebar = drawer slide-in à gauche
+ *               avec overlay sombre cliquable pour fermer
+ *   ≤  540 px → téléphone : tweaks de typo, paddings, cards
+ *
+ * Hook côté App.tsx : on ajoute la classe `sidebar-open` sur .app-container
+ * quand le drawer doit être visible. Le bouton hamburger dans la topbar
+ * toggle cet état.
+ *
+ * Le CSS App.css existant a déjà des @media spots — celui-ci les complète
+ * au lieu de les remplacer (évite les régressions).
+ */
+
+/* ============================================================
+ * 1) BOUTON HAMBURGER DANS LA TOPBAR (caché sur desktop)
+ * ============================================================ */
+.xl-topbar-hamburger {
+  display: none; /* caché en desktop */
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #fff;
+  color: #1f2937;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.12s ease;
+}
+.xl-topbar-hamburger:hover {
+  background: #fafafa;
+}
+.xl-topbar-hamburger svg {
+  width: 20px;
+  height: 20px;
+}
+.dark-mode .xl-topbar-hamburger,
+[data-theme="dark"] .xl-topbar-hamburger {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f3f4f6;
+}
+
+/* ============================================================
+ * 2) DRAWER OVERLAY (caché par défaut)
+ * ============================================================ */
+.xl-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 10, 8, 0.5);
+  z-index: 90;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* ============================================================
+ * 3) ≤ 1024 px — Tablette / Mobile : sidebar devient drawer
+ * ============================================================ */
+/* ⚠ Breakpoint 1023 et non 1024 :
+   - iPad 9,7" / 10,2" en paysage font exactement 1024 px de large
+   - iPad Pro 12,9" en portrait fait 1024 px aussi
+   Inclure 1024 dans le drawer mode rendait inutilement étroite la zone
+   "tablette paysage" qui a largement la place d'afficher la sidebar
+   normale (1024 - 240 sidebar = 784 px de contenu).
+   Avec 1023 : portrait iPad 11"/12,9" Air = drawer ; paysage = sidebar. */
+@media (max-width: 1023px) {
+  /* Le bouton hamburger apparait dans la topbar */
+  .xl-topbar-hamburger {
+    display: inline-flex;
+  }
+
+  /* En tablette/mobile, on passe à 3 colonnes : hamburger | search | actions.
+     Garde tout sur UNE ligne sans wrap. */
+  .xl-app-topbar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  /* Le grid layout passe en une seule colonne — la sidebar
+     sort du flow grâce à position: fixed.
+     ⚠ CRITIQUE : reset aussi grid-template-areas et la sidebar elle-même,
+     sinon les areas "sidebar" et "topbar/main" restent définies → le grid
+     crée 2 tracks de colonnes implicites alors qu'on n'en fournit qu'une
+     (1fr), et la colonne "main" est rejetée à droite, créant une énorme
+     zone vide à gauche (~50% sur 834px). Bug observé sur iPad. */
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "topbar" "main";
+    grid-template-rows: auto 1fr;
+  }
+  .app-container > .sidebar {
+    grid-area: unset; /* déjà hors flow via position: fixed */
+  }
+
+  /* Sidebar : drawer slide-in depuis la gauche.
+     V11 — fix scroll iOS : on utilise `height` explicite (100dvh = dynamic
+     viewport height, qui gère la barre d'adresse mobile) au lieu de
+     top+bottom seuls. Sinon le flex column n'avait pas une hauteur définie,
+     et `.sidebar-scroll { flex:1 }` ne calculait pas sa hauteur → pas de scroll. */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;            /* fallback */
+    height: 100dvh;           /* navigateurs modernes : exclut la barre URL */
+    max-height: 100vh;
+    max-height: 100dvh;
+    width: min(85vw, 280px);
+    transform: translateX(-100%);
+    transition: transform 0.24s ease;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    /* Important : on retire le overflow hidden hérité du desktop pour
+       laisser le flex column gérer son propre scroll via .sidebar-scroll. */
+    overflow: visible;
+  }
+  /* Force .sidebar-scroll à avoir une basis 0 plutôt que auto pour
+     que le flex 1 fonctionne dans le container fixed sur iOS. */
+  .sidebar .sidebar-scroll {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* État ouvert (toggled depuis App.tsx) */
+  .app-container.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+  .app-container.sidebar-open .xl-sidebar-overlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Main content prend toute la largeur */
+  .main-content {
+    padding: var(--spacing-xl) clamp(1rem, 3vw, 2rem);
+    max-width: 100%;
+  }
+
+  /* Topbar reste sticky mais ajuste */
+  .xl-app-topbar {
+    padding: 10px 14px;
+  }
+}
+
+/* ============================================================
+ * 4) ≤ 820 px — Tablette portrait : tweaks de spacing
+ * ============================================================ */
+@media (max-width: 820px) {
+  .main-content {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  /* Grilles 3+ colonnes → 2 colonnes */
+  .lesson-grid,
+  .theme-grid,
+  .path-grid,
+  .review-mode-grid,
+  .stats-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--spacing-md) !important;
+  }
+  /* Cards plus compactes */
+  .lesson-card,
+  .theme-card,
+  .review-card {
+    padding: var(--spacing-md) !important;
+  }
+  /* Titres principaux un peu plus petits */
+  .page-title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem) !important;
+  }
+}
+
+/* ============================================================
+ * 5) ≤ 540 px — Téléphone : layout 1 colonne, typo compacte
+ * ============================================================ */
+@media (max-width: 540px) {
+  /* Topbar très compacte */
+  .xl-app-topbar {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .xl-topbar-hamburger {
+    width: 36px;
+    height: 36px;
+    margin-right: 4px;
+  }
+  .xl-global-search-input {
+    font-size: 12.5px;
+  }
+
+  /* Main content : marges très réduites */
+  .main-content {
+    padding: var(--spacing-md) 12px;
+  }
+
+  /* Toutes les grilles → 1 colonne */
+  .lesson-grid,
+  .theme-grid,
+  .path-grid,
+  .review-mode-grid,
+  .stats-grid,
+  .features-grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-sm) !important;
+  }
+
+  /* Cards et boutons compacts */
+  .lesson-card,
+  .theme-card,
+  .review-card,
+  .feature-card,
+  .card {
+    padding: var(--spacing-md) !important;
+    border-radius: 14px !important;
+  }
+
+  /* Titres */
+  .page-title {
+    font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+  }
+  h1 { font-size: clamp(1.4rem, 5.5vw, 1.85rem); }
+  h2 { font-size: clamp(1.2rem, 4.5vw, 1.55rem); }
+  h3 { font-size: clamp(1.05rem, 3.5vw, 1.2rem); }
+
+  /* Boutons : zone tactile ≥ 40 px */
+  .btn,
+  button {
+    min-height: 40px;
+  }
+  .btn-sm {
+    min-height: 34px;
+  }
+
+  /* Tableaux : scroll horizontal forcé */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Modals : pleine largeur avec marges minimales */
+  .modal,
+  .login-modal,
+  .conv-modal {
+    width: calc(100% - 16px) !important;
+    max-width: 100% !important;
+    margin: 8px !important;
+  }
+
+  /* Sidebar en mobile : un peu plus large pour confort */
+  .sidebar {
+    width: 88vw;
+    max-width: 320px;
+  }
+}
+
+/* ============================================================
+ * 6) Drawer auto-close : quand l'utilisateur clique sur un nav-item
+ * mobile, on ferme le drawer. Implémenté côté JS (App.tsx), mais on
+ * peut aussi le faire en CSS sur un :focus-within → on évite, ce
+ * serait fragile pour la nav clavier.
+ * ============================================================ */
+
+/* ============================================================
+ * 7) Conversations / Messages : sidebar conv → drawer mobile
+ * ============================================================ */
+@media (max-width: 640px) {
+  /* Si la conv est ouverte (présence de .conv-view dans le main),
+     on masque la sidebar des conversations. C'est déjà géré dans
+     conversations.css via :has(), on s'assure juste que le layout
+     ne déborde pas. */
+  .conversations-page {
+    min-height: calc(100vh - 60px); /* compense la topbar */
+  }
+}
+
+/* ============================================================
+ * 8) Audio button : toujours 44 px en mobile pour ne pas être manqué
+ * ============================================================ */
+@media (max-width: 540px) {
+  .audio-btn--sm {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .audio-btn--lg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* ============================================================
+ * 9) Accessibility : reduce motion preference
+ * ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .xl-sidebar-overlay {
+    transition: none !important;
+  }
+}

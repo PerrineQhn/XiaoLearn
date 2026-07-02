@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { allProducts } from '../data/products';
+
+const paymentsBaseUrl = import.meta.env.PUBLIC_PAYMENTS_BASE_URL || 'https://payments.xiaolearn.com';
+const catalog = allProducts.map((product) => ({
+  id: product.id,
+  name: product.name,
+  price: product.price,
+  currency: product.currency,
+}));
+const excludedFromCart = ['app-yearly'];
+---
+
+<BaseLayout title="Panier - XiaoLearn Shop" description="Finalisez vos achats XiaoLearn en une seule commande.">
+  <section class="section cart-section">
+    <div class="container cart-container">
+      <h1>Votre panier</h1>
+      <p class="cart-subtitle">Regroupez vos achats en une seule commande Stripe.</p>
+
+      <div class="cart-card">
+        <div id="cart-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ paymentsBaseUrl, catalog, excludedFromCart }}>
+    (() => {
+      const CART_STORAGE_KEY = 'xiaolearn_cart_v1';
+      const content = document.getElementById('cart-content');
+      if (!content) return;
+
+      const catalogMap = new Map(catalog.map((item) => [item.id, item]));
+      const excludedSet = new Set(excludedFromCart);
+      const formatPrice = (value, currency = 'EUR') =>
+        new Intl.NumberFormat('fr-FR', { style: 'currency', currency }).format(value);
+
+      const readCart = () => {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      };
+
+      const writeCart = (items) => {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      };
+
+      const normalizeCart = (items) => {
+        const deduped = new Map();
+        items.forEach((item) => {
+          if (!item || typeof item !== 'object') return;
+          const productId = typeof item.productId === 'string' ? item.productId.trim() : '';
+          if (!productId || !catalogMap.has(productId) || excludedSet.has(productId)) return;
+          const level = typeof item.level === 'string' ? item.level.trim() : '';
+          const normalized = level ? { productId, level } : { productId };
+          deduped.set(`${productId}::${level}`, normalized);
+        });
+        return Array.from(deduped.values());
+      };
+
+      const removeItem = (key) => {
+        const current = normalizeCart(readCart());
+        const next = current.filter((item) => `${item.productId}::${item.level || ''}` !== key);
+        writeCart(next);
+        render(next);
+      };
+
+      const clearCart = () => {
+        writeCart([]);
+        render([]);
+      };
+
+      const checkoutCart = async (items) => {
+        const button = document.getElementById('checkout-cart-btn');
+        const errorBox = document.getElementById('cart-error');
+        if (errorBox) errorBox.textContent = '';
+        if (button instanceof HTMLButtonElement) {
+          button.disabled = true;
+          button.textContent = 'Redirection...';
+        }
+
+        try {
+          const response = await fetch(`${paymentsBaseUrl}/api/checkout-cart`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ items }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.url) {
+            throw new Error(data.error || 'Impossible de créer la session de paiement');
+          }
+          window.location.href = data.url;
+        } catch (error) {
+          if (errorBox) errorBox.textContent = String(error.message || error || 'Erreur de paiement');
+          if (button instanceof HTMLButtonElement) {
+            button.disabled = false;
+            button.textContent = 'Passer au paiement';
+          }
+        }
+      };
+
+      const render = (rawItems) => {
+        const items = normalizeCart(rawItems);
+        writeCart(items);
+
+        if (items.length === 0) {
+          content.innerHTML = `
+            <div class="cart-empty">
+              <p>Votre panier est vide.</p>
+              <a class="btn btn-primary" href="/produits">Découvrir les produits</a>
+            </div>
+          `;
+          return;
+        }
+
+        const rows = items
+          .map((item) => {
+            const product = catalogMap.get(item.productId);
+            const key = `${item.productId}::${item.level || ''}`;
+            const levelLabel = item.level ? `<span class="cart-level">Niveau: ${item.level}</span>` : '';
+            return `
+              <li class="cart-item">
+                <div class="cart-item-main">
+                  <strong>${product.name}</strong>
+                  ${levelLabel}
+                </div>
+                <div class="cart-item-right">
+                  <span class="cart-price">${formatPrice(product.price, product.currency)}</span>
+                  <button class="cart-remove" type="button" data-remove-key="${key}">Retirer</button>
+                </div>
+              </li>
+            `;
+          })
+          .join('');
+
+        const total = items.reduce((sum, item) => {
+          const product = catalogMap.get(item.productId);
+          return sum + (product ? product.price : 0);
+        }, 0);
+
+        content.innerHTML = `
+          <ul class="cart-list">${rows}</ul>
+          <div class="cart-footer">
+            <div class="cart-total">Total: <strong>${formatPrice(total)}</strong></div>
+            <div class="cart-actions">
+              <button id="checkout-cart-btn" class="btn btn-primary" type="button">Passer au paiement</button>
+              <button id="clear-cart-btn" class="btn btn-secondary" type="button">Vider le panier</button>
+              <a class="btn btn-ghost" href="/produits">Continuer mes achats</a>
+            </div>
+            <p id="cart-error" class="cart-error"></p>
+          </div>
+        `;
+
+        const checkoutBtn = document.getElementById('checkout-cart-btn');
+        if (checkoutBtn instanceof HTMLButtonElement) {
+          checkoutBtn.addEventListener('click', () => checkoutCart(items));
+        }
+
+        const clearBtn = document.getElementById('clear-cart-btn');
+        if (clearBtn instanceof HTMLButtonElement) {
+          clearBtn.addEventListener('click', clearCart);
+        }
+
+        content.querySelectorAll('[data-remove-key]').forEach((button) => {
+          button.addEventListener('click', () => removeItem(button.getAttribute('data-remove-key') || ''));
+        });
+      };
+
+      render(readCart());
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .cart-container {
+    max-width: 900px;
+  }
+
+  .cart-subtitle {
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+  }
+
+  .cart-card {
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-xl);
+  }
+
+  .cart-empty {
+    display: grid;
+    justify-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .cart-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-sm);
+    margin: 0;
+    padding: 0;
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+  }
+
+  .cart-item-main {
+    display: grid;
+    gap: 4px;
+  }
+
+  .cart-level {
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+  }
+
+  .cart-item-right {
+    display: grid;
+    justify-items: end;
+    gap: 6px;
+  }
+
+  .cart-price {
+    color: var(--primary-red);
+    font-weight: 700;
+  }
+
+  .cart-remove {
+    border: 0;
+    background: transparent;
+    color: var(--text-tertiary);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.82rem;
+  }
+
+  .cart-footer {
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+    padding-top: var(--spacing-lg);
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .cart-total {
+    font-size: 1.1rem;
+  }
+
+  .cart-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    background: transparent;
+  }
+
+  .cart-error {
+    min-height: 1.25rem;
+    color: #b22222;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .cart-item {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    .cart-item-right {
+      width: 100%;
+      justify-items: start;
+    }
+  }
+</style>

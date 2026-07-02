@@ -1,0 +1,259 @@
+/*
+ * PronunciationDrill.css — exercice bonus de prononciation en fin de leçon.
+ * Aligné palette XiaoLearn.
+ */
+
+.pron-drill {
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-light, #ece4d5);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pron-drill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pron-drill-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary, #1f2233);
+}
+.pron-drill-header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary, #6b7280);
+  font-size: 13.5px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.pron-drill-progress {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #6b7280);
+  background: var(--primary-red-light, #fae0dc);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* ----- Card du mot courant ----- */
+.pron-drill-card {
+  background: #fffaf3;
+  border: 1px solid var(--border-light, #ece4d5);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.pron-drill-card--match {
+  border-color: #1f6a4b;
+  background: #f0fdf4;
+}
+.pron-drill-card--close {
+  border-color: #d97706;
+  background: #fffbeb;
+}
+.pron-drill-card--mismatch {
+  border-color: var(--primary-red, #e05040);
+  background: #fef2f2;
+}
+
+.pron-drill-hanzi {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text-primary, #1f2233);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+.pron-drill-pinyin {
+  font-size: 18px;
+  color: var(--text-secondary, #6b7280);
+  margin-top: -4px;
+}
+
+.pron-drill-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.pron-drill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg-primary, #ffffff);
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text-primary, #1f2233);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.pron-drill-btn:hover:not(:disabled) {
+  background: #faf6ed;
+  border-color: var(--primary-red, #e05040);
+}
+.pron-drill-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.pron-drill-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pron-drill-btn--primary {
+  background: var(--primary-red, #e05040);
+  border-color: var(--primary-red, #e05040);
+  color: #ffffff;
+}
+.pron-drill-btn--primary:hover:not(:disabled) {
+  background: var(--primary-red-hover, #c73826);
+  border-color: var(--primary-red-hover, #c73826);
+}
+
+/* `--danger` = enregistrement en cours. Forcé en rouge plein avec texte
+   blanc pour éviter tout cas où un thème parent ou une cascade plus
+   spécifique remettrait le bg en blanc (bug observé : white-on-white). */
+.pron-drill-btn.pron-drill-btn--danger {
+  background: #e05040;
+  border-color: #e05040;
+  color: #ffffff;
+  animation: pron-drill-pulse 1.2s ease-in-out infinite;
+}
+.pron-drill-btn.pron-drill-btn--danger:hover:not(:disabled) {
+  background: #c73826;
+  border-color: #c73826;
+  color: #ffffff;
+}
+@keyframes pron-drill-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(224, 80, 64, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(224, 80, 64, 0);
+  }
+}
+
+.pron-drill-btn--ghost {
+  background: transparent;
+}
+
+/* ----- Feedback bloc ----- */
+.pron-drill-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+.pron-drill-feedback strong {
+  font-weight: 700;
+  font-size: 15px;
+}
+.pron-drill-transcript {
+  font-size: 13px;
+  opacity: 0.9;
+}
+.pron-drill-feedback--match {
+  background: #d4f4dc;
+  color: #1f6a4b;
+}
+.pron-drill-feedback--close {
+  background: #fef0c7;
+  color: #92500e;
+}
+.pron-drill-feedback--mismatch {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+}
+
+/* ----- Feedback row : verdict + score badge sur la même ligne ----- */
+.pron-drill-feedback-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pron-drill-feedback-verdict {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.pron-drill-score-badge {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: rgba(255, 255, 255, 0.75);
+}
+.pron-drill-score-badge-max {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+.pron-drill-score-badge--match {
+  color: #1f6a4b;
+}
+.pron-drill-score-badge--close {
+  color: #92500e;
+}
+.pron-drill-score-badge--mismatch {
+  color: var(--primary-red, #e05040);
+}
+
+/* ----- Écran de fin (résumé) ----- */
+.pron-drill--summary {
+  text-align: center;
+}
+.pron-drill-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 4px;
+}
+.pron-drill-score-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-red, #e05040);
+  letter-spacing: 0.01em;
+}
+.pron-drill-score-total {
+  font-size: 28px;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.pron-drill--unsupported {
+  background: #f9fafb;
+  color: var(--text-secondary, #6b7280);
+}

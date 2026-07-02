@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-06-30T07:50:24.545Z",
+  "scannedFiles": [
+    "src/data/cecr-a1-extra-learn-sections.ts",
+    "src/data/cecr-a2-learn-sections.ts",
+    "src/data/cecr-b1-1-learn-sections.ts",
+    "src/data/cecr-b1-2-learn-sections.ts",
+    "src/data/cecr-b2-1-learn-sections.ts",
+    "src/data/cecr-b2-2-learn-sections.ts",
+    "src/data/cecr-c1-1-learn-sections.ts",
+    "src/data/cecr-c1-2-learn-sections.ts",
+    "src/data/cecr-c2-1-learn-sections.ts",
+    "src/data/cecr-c2-2-learn-sections.ts",
+    "src/data/first-steps-learn-sections.ts",
+    "src/data/pinyin-learn-sections.ts"
+  ],
+  "totalItems": 2511,
+  "presentCount": 2511,
+  "missingCount": 0,
+  "missing": []
+}

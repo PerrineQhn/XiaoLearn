@@ -1,0 +1,625 @@
+{
+  "region": "chengdu",
+  "npcs": [
+    {
+      "npc_id": "npc_chengdu_guide",
+      "npc_name_cn": "导游",
+      "npc_name_fr": "Guide",
+      "portrait": "res://assets/portraits/guide.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来成都！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái Chéngdū!",
+              "fr": "Bonjour ! Bienvenue à Chengdu !",
+              "audio": "",
+              "teaches": ["hsk4_001", "hsk4_002"]
+            },
+            {
+              "cn": "这个城市以熊猫闻名，但不仅有熊猫。",
+              "pinyin": "Zhège chéngshì yǐ xióngmāo wénmíng, búguò bújǐn yǒu xióngmāo.",
+              "fr": "Cette ville est célèbre pour les pandas, mais pas seulement pour cela.",
+              "audio": "",
+              "teaches": ["hsk4_003", "hsk4_004"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'est-ce qu'il y a d'autre ?",
+              "text_cn": "还有什么别的吗？",
+              "next": "other_attractions"
+            },
+            {
+              "text_fr": "Je veux voir les pandas !",
+              "text_cn": "我想看熊猫！",
+              "next": "pandas"
+            }
+          ]
+        },
+        "other_attractions": {
+          "lines": [
+            {
+              "cn": "不管你喜不喜欢自然，这里都有很多文化景点。",
+              "pinyin": "Búguǎn nǐ xǐbuxi huān zìránzì, zhèlǐ dōu yǒu hěn duō wénhuà jǐngdiǎn.",
+              "fr": "Que vous aimiez la nature ou non, il y a de nombreux sites culturels ici.",
+              "audio": "",
+              "teaches": ["hsk4_005", "hsk4_006", "hsk4_007"]
+            }
+          ],
+          "next": "end"
+        },
+        "pandas": {
+          "lines": [
+            {
+              "cn": "大熊猫保护区里有很多可爱的熊猫。",
+              "pinyin": "Dà xióngmāo bǎohùqū lǐ yǒu hěn duō kě'ài de xióngmāo.",
+              "fr": "La réserve de pandas géants a de nombreux pandas adorables.",
+              "audio": "",
+              "teaches": ["hsk4_008", "hsk4_009"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_panda_keeper",
+      "npc_name_cn": "熊猫饲养员",
+      "npc_name_fr": "Soigneur de pandas",
+      "portrait": "res://assets/portraits/panda_keeper.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是熊猫饲养员。",
+              "pinyin": "Nǐ hǎo! Wǒ shì xióngmāo sìyǎngyuàn.",
+              "fr": "Bonjour ! Je suis soigneur de pandas.",
+              "audio": "",
+              "teaches": ["hsk4_010", "hsk4_011"]
+            },
+            {
+              "cn": "即使很困难，我也很享受这个工作。",
+              "pinyin": "Jíshǐ hěn kùnnan, wǒ yě hěn xiǎngshòu zhège gōngzuò.",
+              "fr": "Même si c'est difficile, j'aime beaucoup ce travail.",
+              "audio": "",
+              "teaches": ["hsk4_012", "hsk4_013"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Que font les pandas ?",
+              "text_cn": "熊猫做什么？",
+              "next": "panda_behavior"
+            },
+            {
+              "text_fr": "Comment les soignez-vous ?",
+              "text_cn": "你怎样照顾他们？",
+              "next": "care"
+            }
+          ]
+        },
+        "panda_behavior": {
+          "lines": [
+            {
+              "cn": "熊猫每天吃很多竹子。他们很懒，但很可爱。",
+              "pinyin": "Xióngmāo měi tiān chī hěn duō zhúzi. Tāmen hěn lǎn, búguò hěn kě'ài.",
+              "fr": "Les pandas mangent beaucoup de bambou tous les jours. Ils sont paresseux mais adorables.",
+              "audio": "",
+              "teaches": ["hsk4_014", "hsk4_015", "hsk4_016"]
+            }
+          ],
+          "next": "end"
+        },
+        "care": {
+          "lines": [
+            {
+              "cn": "我们给他们新鲜的竹子，保证他们健康。",
+              "pinyin": "Wǒmen gěi tāmen xīnxiān de zhúzi, bǎozhèng tāmen jiànkāng.",
+              "fr": "Nous leur donnons du bambou frais et assurons qu'ils sont en bonne santé.",
+              "audio": "",
+              "teaches": ["hsk4_017", "hsk4_018"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_tea_master",
+      "npc_name_cn": "茶艺师",
+      "npc_name_fr": "Maître du thé",
+      "portrait": "res://assets/portraits/tea_master.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的茶馆！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de chá guǎn!",
+              "fr": "Bonjour ! Bienvenue dans mon salon de thé !",
+              "audio": "",
+              "teaches": ["hsk4_019", "hsk4_020"]
+            },
+            {
+              "cn": "在这里，茶不仅是饮料，而且是一种艺术。",
+              "pinyin": "Zài zhèlǐ, chá bújǐn shì yǐnliào, érqiě shì yī zhǒng yìshù.",
+              "fr": "Ici, le thé n'est pas seulement une boisson, c'est aussi un art.",
+              "audio": "",
+              "teaches": ["hsk4_021", "hsk4_022", "hsk4_023"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Pouvez-vous m'enseigner ?",
+              "text_cn": "你能教我吗？",
+              "next": "teach"
+            },
+            {
+              "text_fr": "Quel thé recommandez-vous ?",
+              "text_cn": "你推荐什么茶？",
+              "next": "recommend"
+            }
+          ]
+        },
+        "teach": {
+          "lines": [
+            {
+              "cn": "当然可以。首先，你要了解茶的品质。",
+              "pinyin": "Dāngrán kěyǐ. Shǒuxiān, nǐ yào liǎojiě chá de pǐnzhì.",
+              "fr": "Bien sûr. D'abord, vous devez comprendre la qualité du thé.",
+              "audio": "",
+              "teaches": ["hsk4_024", "hsk4_025", "hsk4_026"]
+            }
+          ],
+          "next": "end"
+        },
+        "recommend": {
+          "lines": [
+            {
+              "cn": "我推荐龙井。虽然很昂贵，但值得一尝。",
+              "pinyin": "Wǒ tuījiàn Lóngjǐng. Suīrán hěn ānggui, búguò zhíde yī cháng.",
+              "fr": "Je recommande le Longjing. C'est cher mais ça vaut le coup.",
+              "audio": "",
+              "teaches": ["hsk4_027", "hsk4_028", "hsk4_029"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_street_artist",
+      "npc_name_cn": "街头艺术家",
+      "npc_name_fr": "Artiste de rue",
+      "portrait": "res://assets/portraits/artist.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我在街头画画。",
+              "pinyin": "Nǐ hǎo! Wǒ zài jiētou huàhuà.",
+              "fr": "Bonjour ! Je peins dans la rue.",
+              "audio": "",
+              "teaches": ["hsk4_030", "hsk4_031"]
+            },
+            {
+              "cn": "虽然没有高级的工作室，但这样很自由。",
+              "pinyin": "Suīrán méiyǒu gāojí de gōngzuòshì, búguò zhèyàng hěn zìyóu.",
+              "fr": "Bien que je n'aie pas d'atelier sophistiqué, c'est très libre ainsi.",
+              "audio": "",
+              "teaches": ["hsk4_032", "hsk4_033"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'est-ce que vous peignez ?",
+              "text_cn": "你画什么？",
+              "next": "painting"
+            },
+            {
+              "text_fr": "Ça plaît à beaucoup de gens ?",
+              "text_cn": "很多人喜欢吗？",
+              "next": "popularity"
+            }
+          ]
+        },
+        "painting": {
+          "lines": [
+            {
+              "cn": "我画城市和人物。即使不完美，也有灵气。",
+              "pinyin": "Wǒ huà chéngshì hé rénwù. Jíshǐ búwánměi, yě yǒu língqì.",
+              "fr": "Je peins la ville et des gens. Même s'ils ne sont pas parfaits, ils ont de la vie.",
+              "audio": "",
+              "teaches": ["hsk4_034", "hsk4_035", "hsk4_036"]
+            }
+          ],
+          "next": "end"
+        },
+        "popularity": {
+          "lines": [
+            {
+              "cn": "是的。不管什么风格，总有人欣赏。",
+              "pinyin": "Shì de. Búguǎn shénme fēnggé, zǒng yǒu rén xīnshǎng.",
+              "fr": "Oui. Quel que soit le style, il y a toujours quelqu'un pour apprécier.",
+              "audio": "",
+              "teaches": ["hsk4_037", "hsk4_038"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_mahjong_player",
+      "npc_name_cn": "麻将玩家",
+      "npc_name_fr": "Joueur de mahjong",
+      "portrait": "res://assets/portraits/mahjong_player.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我在玩麻将。",
+              "pinyin": "Nǐ hǎo! Wǒ zài wán májiàng.",
+              "fr": "Bonjour ! Je joue au mahjong.",
+              "audio": "",
+              "teaches": ["hsk4_039", "hsk4_040"]
+            },
+            {
+              "cn": "这是中国的传统游戏。很多人喜欢玩。",
+              "pinyin": "Zhè shì Zhōngguó de chuántǒng yóuxì. Hěn duō rén xǐhuān wán.",
+              "fr": "C'est un jeu traditionnel chinois. Beaucoup de gens aiment y jouer.",
+              "audio": "",
+              "teaches": ["hsk4_041", "hsk4_042"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Vous m'enseignez ?",
+              "text_cn": "你教我吗？",
+              "next": "teach"
+            },
+            {
+              "text_fr": "C'est difficile ?",
+              "text_cn": "这很难吗？",
+              "next": "difficulty"
+            }
+          ]
+        },
+        "teach": {
+          "lines": [
+            {
+              "cn": "可以，但你需要很多耐心。规则很复杂。",
+              "pinyin": "Kěyǐ, búguò nǐ xūyào hěn duō nàixīn. Guīzé hěn fùzá.",
+              "fr": "D'accord, mais vous aurez besoin de beaucoup de patience. Les règles sont complexes.",
+              "audio": "",
+              "teaches": ["hsk4_043", "hsk4_044", "hsk4_045"]
+            }
+          ],
+          "next": "end"
+        },
+        "difficulty": {
+          "lines": [
+            {
+              "cn": "起初很难，但一旦学会了，就会上瘾。",
+              "pinyin": "Qǐ chū hěn nán, búguò yīdàn xuéhuì le, jiù huì shàngyǐn.",
+              "fr": "Au début c'est difficile, mais une fois que vous l'apprenez, c'est addictif.",
+              "audio": "",
+              "teaches": ["hsk4_046", "hsk4_047", "hsk4_048"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_sichuan_cook",
+      "npc_name_cn": "四川厨师",
+      "npc_name_fr": "Cuisinier du Sichuan",
+      "portrait": "res://assets/portraits/cook.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的饭馆！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de fànguǎn!",
+              "fr": "Bonjour ! Bienvenue dans mon restaurant !",
+              "audio": "",
+              "teaches": ["hsk4_049", "hsk4_050"]
+            },
+            {
+              "cn": "我做四川菜。虽然很辣，但非常美味。",
+              "pinyin": "Wǒ zuò Sìchuān cài. Suīrán hěn là, búguò fēicháng měiwèi.",
+              "fr": "Je fais de la cuisine du Sichuan. C'est épicé mais délicieux.",
+              "audio": "",
+              "teaches": ["hsk4_051", "hsk4_052", "hsk4_053"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est très épicé ?",
+              "text_cn": "很辣吗？",
+              "next": "spicy"
+            },
+            {
+              "text_fr": "Qu'est-ce que vous recommandez ?",
+              "text_cn": "你推荐什么？",
+              "next": "recommend"
+            }
+          ]
+        },
+        "spicy": {
+          "lines": [
+            {
+              "cn": "是的。不管你能不能吃辣，我都有其他选择。",
+              "pinyin": "Shì de. Búguǎn nǐ néngbuméng chī là, wǒ dōu yǒu qítā xuǎnzé.",
+              "fr": "Oui. Que vous aimiez les épices ou non, j'ai d'autres options.",
+              "audio": "",
+              "teaches": ["hsk4_054", "hsk4_055"]
+            }
+          ],
+          "next": "end"
+        },
+        "recommend": {
+          "lines": [
+            {
+              "cn": "我推荐麻辣烫。即使你害怕辣，也应该尝尝。",
+              "pinyin": "Wǒ tuījiàn málà tàng. Jíshǐ nǐ hàipà là, yě yīnggāi chángtang.",
+              "fr": "Je recommande le hot pot épicé. Même si vous avez peur de l'épicé, vous devez essayer.",
+              "audio": "",
+              "teaches": ["hsk4_056", "hsk4_057", "hsk4_058"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_shopkeeper",
+      "npc_name_cn": "店主",
+      "npc_name_fr": "Commerçant",
+      "portrait": "res://assets/portraits/shopkeeper.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的店。",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de diàn.",
+              "fr": "Bonjour ! Bienvenue dans mon magasin.",
+              "audio": "",
+              "teaches": ["hsk4_059", "hsk4_060"]
+            },
+            {
+              "cn": "不仅卖衣服，还卖纪念品和手工艺品。",
+              "pinyin": "bújǐn mài yīfu, háiyě mài jìniàn pǐn hé shǒu gōngyìpǐn.",
+              "fr": "Je vends non seulement des vêtements, mais aussi des souvenirs et de l'artisanat.",
+              "audio": "",
+              "teaches": ["hsk4_061", "hsk4_062"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Montrez-moi les souvenirs.",
+              "text_cn": "给我看纪念品。",
+              "next": "souvenirs"
+            },
+            {
+              "text_fr": "Avez-vous des vêtements traditionnels ?",
+              "text_cn": "你有传统衣服吗？",
+              "next": "traditional"
+            }
+          ]
+        },
+        "souvenirs": {
+          "lines": [
+            {
+              "cn": "这些都是本地的特产。质量很好，价格也合理。",
+              "pinyin": "Zhèxiē dōu shì běndì de tèchǎn. Zhìliàng hěn hǎo, jiàgé yě héli.",
+              "fr": "Ce sont tous des produits locaux. La qualité est bonne et le prix raisonnable.",
+              "audio": "",
+              "teaches": ["hsk4_063", "hsk4_064", "hsk4_065"]
+            }
+          ],
+          "next": "end"
+        },
+        "traditional": {
+          "lines": [
+            {
+              "cn": "有的。这些衣服保留了传统风格。",
+              "pinyin": "Yǒu de. Zhèxiē yīfu bǎoliú le chuántǒng fēnggé.",
+              "fr": "Oui. Ces vêtements gardent le style traditionnel.",
+              "audio": "",
+              "teaches": ["hsk4_066", "hsk4_067"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_musician",
+      "npc_name_cn": "音乐家",
+      "npc_name_fr": "Musicien",
+      "portrait": "res://assets/portraits/musician.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是音乐家。",
+              "pinyin": "Nǐ hǎo! Wǒ shì yīnyuè jiā.",
+              "fr": "Bonjour ! Je suis musicien.",
+              "audio": "",
+              "teaches": ["hsk4_068", "hsk4_069"]
+            },
+            {
+              "cn": "我演奏传统乐器。即使很少人听，我也继续演奏。",
+              "pinyin": "Wǒ yǎnzòu chuántǒng yuèqì. Jíshǐ hěn shǎo rén tīng, wǒ yě jìxù yǎnzòu.",
+              "fr": "Je joue des instruments traditionnels. Même si peu de gens écoutent, je continue.",
+              "audio": "",
+              "teaches": ["hsk4_070", "hsk4_071", "hsk4_072"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quel instrument jouez-vous ?",
+              "text_cn": "你演奏什么乐器？",
+              "next": "instrument"
+            },
+            {
+              "text_fr": "Pouvez-vous jouer quelque chose ?",
+              "text_cn": "你能演奏一首吗？",
+              "next": "play"
+            }
+          ]
+        },
+        "instrument": {
+          "lines": [
+            {
+              "cn": "我主要演奏古琴和笛子。都很古老。",
+              "pinyin": "Wǒ zhǔyào yǎnzòu gǔqín hé dízi. Dōu hěn gǔlǎo.",
+              "fr": "Je joue principalement du qin et de la flûte. Tous deux sont très anciens.",
+              "audio": "",
+              "teaches": ["hsk4_073", "hsk4_074"]
+            }
+          ],
+          "next": "end"
+        },
+        "play": {
+          "lines": [
+            {
+              "cn": "好的。这是一首关于春天的曲子。",
+              "pinyin": "Hǎo de. Zhè shì yī shǒu guānyú chūntiān de qūzi.",
+              "fr": "D'accord. C'est une mélodie sur le printemps.",
+              "audio": "",
+              "teaches": ["hsk4_075", "hsk4_076"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_dancer",
+      "npc_name_cn": "舞蹈演员",
+      "npc_name_fr": "Danseur",
+      "portrait": "res://assets/portraits/dancer.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是舞蹈演员。",
+              "pinyin": "Nǐ hǎo! Wǒ shì wǔdào yǎnyuán.",
+              "fr": "Bonjour ! Je suis danseur.",
+              "audio": "",
+              "teaches": ["hsk4_077", "hsk4_078"]
+            },
+            {
+              "cn": "我演舞蹈已经很多年。虽然很疲劳，但很值得。",
+              "pinyin": "Wǒ yǎn wǔdào yǐjīng hěn duō nián. Suīrán hěn píláo, búguò hěn zhíde.",
+              "fr": "Je danse depuis de nombreuses années. C'est fatigant mais gratifiant.",
+              "audio": "",
+              "teaches": ["hsk4_079", "hsk4_080", "hsk4_081"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quel style de danse faites-vous ?",
+              "text_cn": "你跳什么风格的舞蹈？",
+              "next": "style"
+            },
+            {
+              "text_fr": "Vous travaillez dans une compagnie ?",
+              "text_cn": "你在舞蹈公司工作吗？",
+              "next": "company"
+            }
+          ]
+        },
+        "style": {
+          "lines": [
+            {
+              "cn": "我跳民族舞蹈。无论什么传统，都很美。",
+              "pinyin": "Wǒ tiào mínzú wǔdào. Wúlùn shénme chuántǒng, dōu hěn měi.",
+              "fr": "Je danse les danses folkloriques. Toutes les traditions sont belles.",
+              "audio": "",
+              "teaches": ["hsk4_082", "hsk4_083"]
+            }
+          ],
+          "next": "end"
+        },
+        "company": {
+          "lines": [
+            {
+              "cn": "不，我自己工作。不管有没有舞台，我都会跳。",
+              "pinyin": "Búguò, wǒ zìjǐ gōngzuò. Búguǎn yǒuméiyǒu wǔtái, wǒ dōu huì tiào.",
+              "fr": "Non, je travaille indépendamment. Qu'il y ait ou non une scène, je danse.",
+              "audio": "",
+              "teaches": ["hsk4_084", "hsk4_085"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_herbalist",
+      "npc_name_cn": "草药医生",
+      "npc_name_fr": "Herboriste",
+      "portrait": "res://assets/portraits/herbalist.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是草药医生。",
+              "pinyin": "Nǐ hǎo! Wǒ shì cǎoyào yīshēng.",
+              "fr": "Bonjour ! Je suis herboriste.",
+              "audio": "",
+              "teaches": ["hsk4_086", "hsk4_087"]
+            },
+            {
+              "cn": "我用古代的方法治疗。不仅有效，而且没有副作用。",
+              "pinyin": "Wǒ yòng gǔdài de fāngfǎ zhìliáo. bújǐn yǒuxiào, érqiě méiyǒu fùzuòyòng.",
+              "fr": "Je guéris avec des méthodes anciennes. C'est efficace et sans effets secondaires.",
+              "audio": "",
+              "teaches": ["hsk4_088", "hsk4_089", "hsk4_090"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Comment ça marche ?",
+              "text_cn": "这怎样工作？",
+              "next": "how_works"
+            },
+            {
+              "text_fr": "Pouvez-vous m'aider ?",
+              "text_cn": "你能帮我吗？",
+              "next": "help"
+            }
+          ]
+        },
+        "how_works": {
+          "lines": [
+            {
+              "cn": "我用各种草药和根。中国医学已经五千年历史。",
+              "pinyin": "Wǒ yòng gèzhǒng cǎoyào hé gēn. Zhōngguó yīxué yǐjīng wǔ qiān nián lìshǐ.",
+              "fr": "J'utilise diverses herbes et racines. La médecine chinoise a 5000 ans d'histoire.",
+              "audio": "",
+              "teaches": ["hsk4_091", "hsk4_092"]
+            }
+          ],
+          "next": "end"
+        },
+        "help": {
+          "lines": [
+            {
+              "cn": "可以的。告诉我你的症状，我会开药方。",
+              "pinyin": "Kěyǐ de. Gàosu wǒ nǐ de zhèngzhuàng, wǒ huì kāi yàofāng.",
+              "fr": "Bien sûr. Dites-moi vos symptômes et je vous prescrirai une formule.",
+              "audio": "",
+              "teaches": ["hsk4_093", "hsk4_094"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    }
+  ]
+}

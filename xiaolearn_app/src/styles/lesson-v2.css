@@ -1,0 +1,1973 @@
+/*
+ * lesson-v2.css — tous les styles sont scoped sous `.lesson-v2`
+ * ---------------------------------------------------------------
+ * Palette alignée avec dashboard-v2.css : rouge chinois + crème + or.
+ * Rien ici ne doit fuiter vers le reste de l'app ; en cas de doute,
+ * préfixer le sélecteur par `.lesson-v2`.
+ */
+
+.lesson-v2 {
+  --lv2-bg: #fffaf3;
+  --lv2-card-bg: #ffffff;
+  --lv2-text: #1f2937;
+  --lv2-text-muted: #6b7280;
+  --lv2-border: #f0e6d4;
+  --lv2-primary: #c6302c;        /* rouge chinois */
+  --lv2-primary-dark: #9c2521;
+  --lv2-gold: #d4a537;           /* or */
+  --lv2-gold-soft: #fbe9b8;
+  --lv2-success: #16a34a;
+  --lv2-success-soft: #dcfce7;
+  --lv2-danger: #dc2626;
+  --lv2-danger-soft: #fee2e2;
+  --lv2-radius: 14px;
+  --lv2-radius-sm: 10px;
+
+  color: var(--lv2-text);
+  background: var(--lv2-bg);
+  min-height: 100%;
+  padding: 24px 16px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =========================
+   Topbar + stepper
+   ========================= */
+
+.lesson-v2 .lv2-topbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+.lesson-v2 .lv2-stepper-track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--lv2-border);
+  overflow: hidden;
+}
+
+.lesson-v2 .lv2-stepper-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--lv2-primary), var(--lv2-gold));
+  transition: width 300ms ease;
+}
+
+.lesson-v2 .lv2-stepper-labels {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+}
+
+.lesson-v2 .lv2-stepper-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--lv2-text-muted);
+}
+
+.lesson-v2 .lv2-stepper-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--lv2-border);
+  color: var(--lv2-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.lesson-v2 .lv2-stepper-label--done .lv2-stepper-dot {
+  background: var(--lv2-primary);
+  color: #fff;
+}
+
+.lesson-v2 .lv2-stepper-label--done {
+  color: var(--lv2-text);
+  font-weight: 500;
+}
+
+/* =========================
+   Content
+   ========================= */
+
+.lesson-v2 .lv2-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lesson-v2 .lv2-section {
+  background: var(--lv2-card-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius);
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(198, 48, 44, 0.06);
+}
+
+.lesson-v2 .lv2-section-header h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  color: var(--lv2-text);
+}
+
+.lesson-v2 .lv2-section-header p {
+  margin: 0 0 18px;
+  color: var(--lv2-text-muted);
+  font-size: 14px;
+}
+
+.lesson-v2 .lv2-section-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Variante centrée pour l'écran de fin : un seul bouton "Terminer" centré. */
+.lesson-v2 .lv2-section-actions--center {
+  justify-content: center;
+}
+
+.lesson-v2 .lv2-section-actions--center .lv2-btn {
+  min-width: 220px;
+}
+
+/* =========================
+   Boutons
+   ========================= */
+
+.lesson-v2 .lv2-btn {
+  border: none;
+  border-radius: var(--lv2-radius-sm);
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.lesson-v2 .lv2-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lesson-v2 .lv2-btn--primary {
+  background: var(--lv2-primary);
+  color: #fff;
+}
+
+.lesson-v2 .lv2-btn--primary:hover:not(:disabled) {
+  background: var(--lv2-primary-dark);
+}
+
+.lesson-v2 .lv2-btn--lg {
+  padding: 14px 22px;
+  font-size: 17px;
+}
+
+.lesson-v2 .lv2-btn--ghost {
+  background: transparent;
+  color: var(--lv2-text);
+  border: 1px solid var(--lv2-border);
+}
+
+.lesson-v2 .lv2-btn--ghost:hover {
+  background: var(--lv2-border);
+}
+
+.lesson-v2 .lv2-btn--link {
+  background: transparent;
+  color: var(--lv2-primary);
+  padding: 6px 10px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.lesson-v2 .lv2-btn--link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Intro
+   ========================= */
+
+.lesson-v2 .lv2-intro-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lesson-v2 .lv2-hsk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: var(--lv2-hsk-color, var(--lv2-primary));
+}
+
+.lesson-v2 .lv2-intro-category,
+.lesson-v2 .lv2-intro-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: var(--lv2-border);
+  color: var(--lv2-text);
+}
+
+.lesson-v2 .lv2-intro-chip--xp {
+  background: var(--lv2-gold-soft);
+  color: #7a5a0b;
+  font-weight: 700;
+}
+
+.lesson-v2 .lv2-intro-title {
+  margin: 0 0 4px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.lesson-v2 .lv2-intro-subtitle {
+  margin: 0 0 18px;
+  color: var(--lv2-text-muted);
+  font-size: 15px;
+}
+
+.lesson-v2 .lv2-intro-objectives {
+  background: var(--lv2-bg);
+  border-radius: var(--lv2-radius-sm);
+  border: 1px dashed var(--lv2-border);
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+
+.lesson-v2 .lv2-intro-objectives h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lv2-primary);
+}
+
+.lesson-v2 .lv2-intro-objectives ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+
+/* =========================
+   Examples
+   ========================= */
+
+.lesson-v2 .lv2-examples-list {
+  display: grid;
+  gap: 12px;
+}
+
+.lesson-v2 .lv2-example {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--lv2-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 14px 16px;
+}
+
+/* Groupe contrôles à DROITE (audio modèle + micro prononciation).
+   Le main avant a flex:1 et pousse le groupe en bout de ligne. */
+.lesson-v2 .lv2-example-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 2px; /* légèrement aligné avec la baseline du hanzi */
+}
+
+.lesson-v2 .lv2-example-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.lesson-v2 .lv2-example-hanzi {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.lesson-v2 .lv2-example-pinyin {
+  font-size: 14px;
+  color: var(--lv2-primary);
+  margin-bottom: 2px;
+}
+
+.lesson-v2 .lv2-example-translation {
+  font-size: 14px;
+  color: var(--lv2-text-muted);
+}
+
+/* Bouton audio — aligné sur le style du micro PronunciationCheck :
+   cercle 32×32, bordure 1.5px, blanc/rouge, SVG line-art à l'intérieur. */
+.lesson-v2 .lv2-example-audio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 50%;
+  background: var(--bg-primary, #ffffff);
+  color: var(--primary-red, #e05040);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  flex-shrink: 0;
+}
+
+.lesson-v2 .lv2-example-audio:hover {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.lesson-v2 .lv2-example-audio:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   Practice (exercise)
+   ========================= */
+
+.lesson-v2 .lv2-exercise {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lesson-v2 .lv2-exercise-prompt {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lesson-v2 .lv2-exercise-sentence {
+  font-size: 22px;
+  font-weight: 500;
+  padding: 16px;
+  background: var(--lv2-bg);
+  border-radius: var(--lv2-radius-sm);
+  text-align: center;
+}
+
+/* --- Phrase mal ordonnée (error-correction) -------------------------- */
+.lesson-v2 .lv2-exercise-jumbled {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fef2f2;
+  border: 1px dashed #fca5a5;
+  border-radius: var(--lv2-radius-sm);
+}
+.lesson-v2 .lv2-exercise-jumbled-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #b91c1c;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.lesson-v2 .lv2-exercise-jumbled-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.lesson-v2 .lv2-exercise-jumbled-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.lesson-v2 .lv2-exercise-jumbled-pos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fca5a5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-v2 .lv2-exercise-jumbled-text {
+  line-height: 1.2;
+}
+.lesson-v2 .lv2-exercise-jumbled-target {
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 1.4;
+}
+.lesson-v2 .lv2-jumbled-target-label {
+  font-weight: 700;
+  color: #b91c1c;
+}
+.lesson-v2 .lv2-jumbled-target-text {
+  font-style: italic;
+}
+
+/* Auto-pinyin injecté après chaque run de hanzi dans body/tip/explanation.
+   Discret pour ne pas perturber la lecture, mais lisible. */
+.lesson-v2 .auto-pinyin,
+.lesson-v2 .manual-pinyin {
+  font-size: 0.85em;
+  color: var(--lv2-text-soft, #6b7280);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+/* Le pinyin auto-injecté ajoute une espace avant la parenthèse, le pinyin
+   manuel utilise des spans aria-hidden pour la parenthèse → légère unification
+   de l'espacement. */
+.lesson-v2 .manual-pinyin {
+  white-space: nowrap;
+}
+
+/* --- DialogueResponseCard (mini-dialogue + choix de la dernière réplique) -- */
+.lesson-v2 .lv2-exercise-badge--dialogue {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.lesson-v2 .lv2-dialogue-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  background: var(--lv2-bg, #fffaf3);
+  border: 1px solid var(--lv2-border, #ede4d3);
+  border-radius: var(--lv2-radius-sm, 12px);
+}
+.lesson-v2 .lv2-dialogue-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid;
+}
+.lesson-v2 .lv2-dialogue-bubble--other {
+  align-self: flex-start;
+  background: #fff;
+  border-color: #ede4d3;
+  border-bottom-left-radius: 4px;
+}
+.lesson-v2 .lv2-dialogue-bubble--user {
+  align-self: flex-end;
+  background: #fef2f2;
+  border-color: #fecaca;
+  border-bottom-right-radius: 4px;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder {
+  border-style: dashed;
+  opacity: 0.75;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder.is-correct {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+  border-style: solid;
+  opacity: 1;
+}
+.lesson-v2 .lv2-dialogue-bubble--placeholder.is-wrong {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  border-style: solid;
+  opacity: 1;
+}
+.lesson-v2 .lv2-dialogue-speaker {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.lesson-v2 .lv2-dialogue-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-v2 .lv2-dialogue-hanzi {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--lv2-text, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lesson-v2 .lv2-dialogue-hanzi--ghost {
+  font-style: italic;
+  color: #9ca3af;
+}
+.lesson-v2 .lv2-dialogue-pinyin {
+  font-size: 13px;
+  font-style: italic;
+  color: #6b7280;
+}
+.lesson-v2 .lv2-dialogue-trad {
+  font-size: 13px;
+  color: #4b5563;
+}
+.lesson-v2 .lv2-dialogue-audio {
+  background: transparent;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: background 0.12s;
+}
+.lesson-v2 .lv2-dialogue-audio:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* --- ContextReactCard (situation + choix de la phrase appropriée) -------- */
+.lesson-v2 .lv2-exercise-badge--context {
+  background: #fef3c7;
+  color: #92400e;
+}
+.lesson-v2 .lv2-context-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff8e1;
+  border: 1px solid #fbd38d;
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--lv2-radius-sm, 12px);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #78350f;
+}
+.lesson-v2 .lv2-context-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.lesson-v2 .lv2-context-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Indice de sens (traduction) pour les exercices `fill` : permet au
+   learner de savoir ce que la phrase veut dire avant de choisir. */
+.lesson-v2 .lv2-exercise-meaning {
+  margin-top: -4px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--lv2-muted, #555);
+  background: transparent;
+  border-left: 3px solid var(--lv2-accent-soft, #facc15);
+  text-align: left;
+  line-height: 1.5;
+}
+
+.lesson-v2 .lv2-meaning-label {
+  font-weight: 600;
+  color: var(--lv2-text, #111);
+}
+
+.lesson-v2 .lv2-meaning-text {
+  font-style: italic;
+}
+
+.lesson-v2 .lv2-fill-blank {
+  display: inline-block;
+  min-width: 60px;
+  border-bottom: 2px dashed var(--lv2-primary);
+  color: var(--lv2-primary);
+  padding: 0 8px;
+}
+
+.lesson-v2 .lv2-fill-filled {
+  display: inline-block;
+  min-width: 60px;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.lesson-v2 .lv2-fill-filled.is-correct {
+  background: var(--lv2-success-soft);
+  color: var(--lv2-success);
+}
+
+.lesson-v2 .lv2-fill-filled.is-wrong {
+  background: var(--lv2-danger-soft);
+  color: var(--lv2-danger);
+}
+
+.lesson-v2 .lv2-exercise-choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.lesson-v2 .lv2-choice {
+  background: var(--lv2-card-bg);
+  border: 2px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 12px 14px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.lesson-v2 .lv2-choice:hover:not(:disabled) {
+  border-color: var(--lv2-primary);
+}
+
+.lesson-v2 .lv2-choice--selected {
+  border-color: var(--lv2-primary);
+  background: #fdecec;
+}
+
+.lesson-v2 .lv2-choice--correct {
+  border-color: var(--lv2-success);
+  background: var(--lv2-success-soft);
+  color: var(--lv2-success);
+  font-weight: 700;
+}
+
+/* Placeholder ∅ rien : affiché à la place d'un choice vide (ex: fill où la
+   bonne réponse est "ne rien insérer"). Distinct visuellement pour qu'on
+   comprenne que c'est un choix explicite, pas une erreur de rendu. */
+.lesson-v2 .lv2-choice-empty {
+  font-style: italic;
+  opacity: 0.85;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.lesson-v2 .lv2-choice-empty-sym {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* Gras inline dans les explanations (mini-markdown **...**) */
+.lesson-v2 .lv2-feedback-explanation .lv2-md-bold {
+  color: var(--primary-red, #8A2820);
+  font-weight: 700;
+  background: rgba(216, 72, 62, 0.08);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.lesson-v2 .lv2-feedback-explanation em {
+  font-style: italic;
+  color: var(--lv2-text-secondary, #6b5d4a);
+}
+
+.lesson-v2 .lv2-choice--wrong {
+  border-color: var(--lv2-danger);
+  background: var(--lv2-danger-soft);
+  color: var(--lv2-danger);
+  font-weight: 700;
+}
+
+.lesson-v2 .lv2-choice--dimmed {
+  opacity: 0.45;
+}
+
+.lesson-v2 .lv2-exercise-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lesson-v2 .lv2-exercise-feedback {
+  border-radius: var(--lv2-radius-sm);
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.lesson-v2 .lv2-exercise-feedback.is-correct {
+  background: var(--lv2-success-soft);
+  color: #065f46;
+}
+
+.lesson-v2 .lv2-exercise-feedback.is-wrong {
+  background: var(--lv2-danger-soft);
+  color: #7f1d1d;
+}
+
+.lesson-v2 .lv2-feedback-headline {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.lesson-v2 .lv2-feedback-line {
+  margin-bottom: 2px;
+}
+
+.lesson-v2 .lv2-feedback-explanation {
+  margin-top: 6px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Phase 3A IA — bouton « Demander à l'IA : pourquoi ? » dans le feedback
+   d'un exercice raté. Couleur sobre pour rester discret en bas du feedback,
+   mais cliquable. Dispatch xiaolearn:openAiChat avec le contexte de l'exo. */
+.lesson-v2 .lv2-ask-ai-why-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px dashed rgba(185, 28, 28, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.lesson-v2 .lv2-ask-ai-why-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(185, 28, 28, 0.7);
+}
+
+/* =========================
+   V8 — badges & order type
+   ========================= */
+
+.lesson-v2 .lv2-exercise-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.lesson-v2 .lv2-exercise-badge--grammar-quiz {
+  background: #fef3c7;
+  color: #78350f;
+}
+.lesson-v2 .lv2-exercise-badge--translation {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.lesson-v2 .lv2-exercise-badge--error-correction {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+.lesson-v2 .lv2-exercise-badge--order {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* =========================
+   Audio button in exercise prompt
+   ========================= */
+.lesson-v2 .lv2-exercise-audio-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin-bottom: 6px;
+  border-radius: 14px;
+  border: 2px solid #b45309;
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+  color: #7c2d12;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 6px rgba(124, 45, 18, 0.12);
+}
+.lesson-v2 .lv2-exercise-audio-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 45, 18, 0.2);
+}
+.lesson-v2 .lv2-exercise-audio-btn:active {
+  transform: translateY(0);
+}
+.lesson-v2 .lv2-exercise-audio-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.lesson-v2 .lv2-exercise-audio-label {
+  line-height: 1;
+}
+
+/* Order exercise — slot + pool */
+.lesson-v2 .lv2-exercise--order {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lesson-v2 .lv2-order-slot-label {
+  font-size: 13px;
+  color: #1e3a8a;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.lesson-v2 .lv2-order-slot {
+  min-height: 56px;
+  padding: 12px;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--lv2-radius-sm);
+  background: #f8fafc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.lesson-v2 .lv2-order-slot-placeholder {
+  font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+}
+.lesson-v2 .lv2-order-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+}
+.lesson-v2 .lv2-order-chip {
+  font-family: 'Noto Serif SC', var(--lv2-font, system-ui), serif;
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s, border-color 0.15s;
+}
+.lesson-v2 .lv2-order-chip:hover:not(:disabled) {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+.lesson-v2 .lv2-order-chip--picked {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e3a8a;
+}
+.lesson-v2 .lv2-order-chip--pool {
+  background: #ffffff;
+}
+.lesson-v2 .lv2-order-chip:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* =========================
+   Summary
+   ========================= */
+
+.lesson-v2 .lv2-summary-hero h2 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+
+.lesson-v2 .lv2-summary-hero p {
+  margin: 0 0 20px;
+  color: var(--lv2-text-muted);
+}
+
+.lesson-v2 .lv2-summary-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.lesson-v2 .lv2-stat {
+  background: var(--lv2-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+
+.lesson-v2 .lv2-stat--xp {
+  background: var(--lv2-gold-soft);
+  border-color: var(--lv2-gold);
+}
+
+.lesson-v2 .lv2-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--lv2-primary);
+}
+
+.lesson-v2 .lv2-stat--xp .lv2-stat-value {
+  color: #7a5a0b;
+}
+
+.lesson-v2 .lv2-stat-label {
+  font-size: 13px;
+  color: var(--lv2-text-muted);
+  margin-top: 4px;
+}
+
+.lesson-v2 .lv2-summary-takeaways {
+  background: var(--lv2-bg);
+  border-radius: var(--lv2-radius-sm);
+  border: 1px dashed var(--lv2-border);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.lesson-v2 .lv2-summary-takeaways h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--lv2-primary);
+}
+
+.lesson-v2 .lv2-summary-takeaways ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+}
+
+.lesson-v2 .lv2-summary-next-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--lv2-text-muted);
+  margin-bottom: 6px;
+}
+
+.lesson-v2 .lv2-summary-next-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, #fdecec, #fbe9b8);
+  border: 1px solid var(--lv2-gold);
+  border-radius: var(--lv2-radius-sm);
+  padding: 14px 16px;
+}
+
+.lesson-v2 .lv2-summary-next-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lesson-v2 .lv2-summary-next-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.lesson-v2 .lv2-summary-next-duration {
+  font-size: 13px;
+  color: var(--lv2-text-muted);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 520px) {
+  .lesson-v2 .lv2-intro-title {
+    font-size: 24px;
+  }
+  .lesson-v2 .lv2-exercise-choices {
+    grid-template-columns: 1fr;
+  }
+  .lesson-v2 .lv2-summary-stats {
+    grid-template-columns: 1fr;
+  }
+  .lesson-v2 .lv2-summary-next-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* --- Blocs dialogue / reading intégrés ---------------------------------- */
+.lesson-v2 .lv2-inline-block {
+  margin-top: 16px;
+  background: #fffaf3;
+  border: 1px solid #f0e6d4;
+  border-radius: 14px;
+  padding: 14px;
+}
+.lesson-v2 .lv2-inline-header {
+  border-bottom: 1px dashed #f0e6d4;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+.lesson-v2 .lv2-inline-header h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #c6302c;
+}
+.lesson-v2 .lv2-inline-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+}
+.lesson-v2 .lv2-inline-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.lesson-v2 .lv2-inline-toggle {
+  background: #fff;
+  border: 1px solid #f0e6d4;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #6b7280;
+}
+.lesson-v2 .lv2-inline-toggle.is-on {
+  background: #fbe9b8;
+  color: #5a3f06;
+  border-color: #d4a537;
+}
+.lesson-v2 .lv2-inline-line {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0e6d4;
+}
+.lesson-v2 .lv2-inline-line:last-child {
+  border-bottom: none;
+}
+.lesson-v2 .lv2-inline-segment {
+  padding: 8px 0;
+  border-bottom: 1px dashed #f0e6d4;
+}
+.lesson-v2 .lv2-inline-segment:last-child {
+  border-bottom: none;
+}
+.lesson-v2 .lv2-inline-speaker {
+  font-weight: 700;
+  color: #c6302c;
+  font-size: 14px;
+}
+/* Body = row (text à gauche + audio button à droite), pattern identique
+   aux `.lv2-example` des Exemples. La colonne texte est dans .lv2-inline-text. */
+.lesson-v2 .lv2-inline-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+.lesson-v2 .lv2-inline-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+/* L'audio button utilise .lv2-example-audio (défini plus haut) ; cette
+   classe lv2-inline-audio ne sert plus qu'à un éventuel ajustement vertical
+   léger pour s'aligner sur la baseline du hanzi (qui est plus petit ici). */
+.lesson-v2 .lv2-inline-audio {
+  margin-top: 0;
+}
+.lesson-v2 .lv2-inline-hanzi {
+  font-size: 18px;
+  line-height: 1.45;
+}
+.lesson-v2 .lv2-inline-pinyin {
+  font-size: 12.5px;
+  color: #6b7280;
+  font-style: italic;
+}
+.lesson-v2 .lv2-inline-translation {
+  font-size: 13.5px;
+  color: #1f2937;
+}
+.lesson-v2 .lv2-inline-note {
+  margin-top: 4px;
+  background: #fbe9b8;
+  border-left: 3px solid #d4a537;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #5a3f06;
+  border-radius: 6px;
+}
+@media (max-width: 640px) {
+  .lesson-v2 .lv2-inline-line {
+    grid-template-columns: 55px 1fr;
+  }
+}
+
+/* =========================
+   Phase "Apprentissage" (learn)
+   ========================= */
+
+.lesson-v2 .lv2-section--learn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lesson-v2 .lv2-learn-section {
+  background: var(--lv2-card-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.lesson-v2 .lv2-learn-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lesson-v2 .lv2-learn-section-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--lv2-text);
+}
+
+.lesson-v2 .lv2-learn-section-tonename {
+  font-size: 13px;
+  color: var(--lv2-primary);
+  font-weight: 600;
+  background: #fde4e3;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.lesson-v2 .lv2-learn-section-body {
+  color: var(--lv2-text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+.lesson-v2 .lv2-learn-section-body p {
+  margin: 0 0 10px;
+}
+.lesson-v2 .lv2-learn-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- V20 — Blocs structurés du body parsing (StructuredLearnBody) --- */
+.lesson-v2 .lv2-structured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lesson-v2 .lv2-block {
+  line-height: 1.6;
+}
+.lesson-v2 .lv2-block--paragraph {
+  margin: 0;
+  color: var(--lv2-text);
+}
+.lesson-v2 .lv2-block--rule,
+.lesson-v2 .lv2-block--exception,
+.lesson-v2 .lv2-block--note {
+  border-radius: var(--lv2-radius-sm, 10px);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 4px solid;
+}
+.lesson-v2 .lv2-block-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.lesson-v2 .lv2-block-icon {
+  font-size: 14px;
+}
+.lesson-v2 .lv2-block-content {
+  font-size: 14.5px;
+  color: var(--lv2-text);
+}
+
+/* Règle : palette XiaoLearn rouge */
+.lesson-v2 .lv2-block--rule {
+  background: rgba(216, 72, 62, 0.06);
+  border-left-color: var(--primary-red, #d8483e);
+}
+.lesson-v2 .lv2-block--rule .lv2-block-label {
+  color: var(--primary-red, #8A2820);
+}
+
+/* Exception : ambre warning */
+.lesson-v2 .lv2-block--exception {
+  background: rgba(245, 158, 11, 0.08);
+  border-left-color: #f59e0b;
+}
+.lesson-v2 .lv2-block--exception .lv2-block-label {
+  color: #92500e;
+}
+
+/* Astuce / note : jaune ampoule */
+.lesson-v2 .lv2-block--note {
+  background: rgba(250, 204, 21, 0.12);
+  border-left-color: #facc15;
+}
+.lesson-v2 .lv2-block--note .lv2-block-label {
+  color: #854d0e;
+}
+
+/* --- V21 — Listes d'exemples + gras/italique --- */
+
+/* Listes d'exemples — style sobre et neutre, pas de fond agressif */
+.lesson-v2 .lv2-block-examples {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.lesson-v2 .lv2-block-examples li {
+  padding: 2px 0 2px 18px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lv2-text, #1f2233);
+}
+.lesson-v2 .lv2-block-examples li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: var(--lv2-text-soft, #9ca3af);
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.55;
+}
+
+/* Intro avant la liste ("Phrases-bouées :" par exemple) */
+.lesson-v2 .lv2-block-intro-text {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Mini-markdown : **gras** et *italique* */
+.lesson-v2 .lv2-structured-body strong {
+  color: var(--primary-red, #8A2820);
+  font-weight: 700;
+  background: rgba(216, 72, 62, 0.08);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+.lesson-v2 .lv2-structured-body em {
+  font-style: italic;
+  color: var(--lv2-text-secondary, #6b5d4a);
+}
+
+/* Contour tonal --- */
+
+.lesson-v2 .lv2-tone-contour {
+  --lv2-tone-color: #0ea5e9;
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 12px 14px;
+  background: #fff8ee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-v2 .lv2-tone-contour-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lesson-v2 .lv2-tone-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--lv2-tone-color);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.lesson-v2 .lv2-tone-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+.lesson-v2 .lv2-tone-hanzi {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.lesson-v2 .lv2-tone-pinyin {
+  font-size: 13px;
+  color: var(--lv2-text-muted);
+  font-style: italic;
+}
+
+.lesson-v2 .lv2-tone-play {
+  border: 1px solid var(--lv2-tone-color);
+  background: #fff;
+  color: var(--lv2-tone-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 120ms ease;
+}
+.lesson-v2 .lv2-tone-play:hover {
+  transform: scale(1.08);
+}
+
+.lesson-v2 .lv2-tone-svg {
+  width: 100%;
+  height: 96px;
+  color: #1f2937;
+  display: block;
+}
+
+/* Items d'apprentissage --- */
+
+.lesson-v2 .lv2-learn-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-v2 .lv2-learn-item {
+  display: grid;
+  /* Ordre : hanzi (auto) | pinyin (auto) | meaning (1fr) | controls (auto)
+     Les contrôles audio+micro sont à DROITE, après la traduction. */
+  grid-template-columns: minmax(56px, auto) auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  background: #fdf8ed;
+}
+.lesson-v2 .lv2-learn-item-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.lesson-v2 .lv2-learn-item-hanzi {
+  font-size: 22px;
+  font-weight: 600;
+}
+.lesson-v2 .lv2-learn-item-pinyin {
+  font-size: 14px;
+  color: var(--lv2-text-muted);
+  font-style: italic;
+}
+.lesson-v2 .lv2-learn-item-meaning {
+  font-size: 14px;
+  color: var(--lv2-text);
+}
+/* Bouton audio LearnItem — aligné sur le style du micro PronunciationCheck */
+.lesson-v2 .lv2-learn-item-audio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1.5px solid var(--border-light, #ece4d5);
+  border-radius: 50%;
+  background: var(--bg-primary, #ffffff);
+  color: var(--primary-red, #e05040);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  flex-shrink: 0;
+}
+.lesson-v2 .lv2-learn-item-audio:hover {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #e05040);
+  transform: scale(1.05);
+}
+.lesson-v2 .lv2-learn-item-audio:active {
+  transform: scale(0.95);
+}
+
+/* Paires minimales --- */
+
+.lesson-v2 .lv2-learn-minimal-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lesson-v2 .lv2-learn-minimal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-v2 .lv2-learn-minimal-header strong {
+  font-size: 14px;
+  color: var(--lv2-text);
+}
+.lesson-v2 .lv2-learn-minimal-header span {
+  font-size: 12.5px;
+  color: var(--lv2-text-muted);
+}
+
+.lesson-v2 .lv2-minimal-pairs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.lesson-v2 .lv2-minimal-pair {
+  --lv2-tone-color: var(--lv2-primary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px 12px;
+  border: 2px solid var(--lv2-tone-color);
+  border-radius: var(--lv2-radius-sm);
+  background: #fff;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.lesson-v2 .lv2-minimal-pair:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+.lesson-v2 .lv2-minimal-pair-tone {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--lv2-tone-color);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.lesson-v2 .lv2-minimal-pair-hanzi {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--lv2-text);
+}
+.lesson-v2 .lv2-minimal-pair-pinyin {
+  font-size: 13px;
+  color: var(--lv2-tone-color);
+  font-style: italic;
+  font-weight: 600;
+}
+.lesson-v2 .lv2-minimal-pair-meaning {
+  font-size: 12px;
+  color: var(--lv2-text-muted);
+  text-align: center;
+}
+.lesson-v2 .lv2-minimal-pair-audio {
+  font-size: 14px;
+  color: var(--lv2-tone-color);
+  margin-top: 2px;
+}
+
+/* Astuce --- */
+
+.lesson-v2 .lv2-learn-tip {
+  background: var(--lv2-gold-soft);
+  border-left: 4px solid var(--lv2-gold);
+  padding: 10px 14px;
+  border-radius: var(--lv2-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lesson-v2 .lv2-learn-tip-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7a5a10;
+}
+.lesson-v2 .lv2-learn-tip-text {
+  font-size: 14px;
+  color: #5a3f06;
+  line-height: 1.45;
+}
+
+/* Bouton « Demander à l'IA » — placé en fin de section Apprendre, ouvre le
+   floating chat avec un prompt contextuel pré-rempli (event xiaolearn:openAiChat). */
+.lesson-v2 .lv2-learn-ask-ai {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.lesson-v2 .lv2-learn-ask-ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lv2-primary, #b91c1c);
+  background: rgba(185, 28, 28, 0.06);
+  border: 1px dashed rgba(185, 28, 28, 0.35);
+  border-radius: var(--lv2-radius-sm, 8px);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.lesson-v2 .lv2-learn-ask-ai-btn:hover {
+  background: rgba(185, 28, 28, 0.12);
+  border-color: rgba(185, 28, 28, 0.55);
+}
+.lesson-v2 .lv2-learn-ask-ai-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   Récap enrichi — accuracy ring, feedback, mistakes
+   ========================= */
+
+.lesson-v2 .lv2-summary-accuracy {
+  --lv2-accuracy-color: var(--lv2-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0 6px;
+}
+
+.lesson-v2 .lv2-summary-accuracy-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(var(--lv2-accuracy-color) 0deg, rgba(0,0,0,0.06) 0deg);
+}
+
+.lesson-v2 .lv2-summary-accuracy-inner {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: var(--lv2-card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: inset 0 0 0 1px var(--lv2-border);
+}
+
+.lesson-v2 .lv2-summary-accuracy-value {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--lv2-accuracy-color);
+  line-height: 1;
+}
+
+.lesson-v2 .lv2-summary-accuracy-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lv2-text-muted);
+}
+
+.lesson-v2 .lv2-summary-feedback {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--lv2-text);
+  font-style: italic;
+  max-width: 520px;
+  line-height: 1.45;
+}
+
+.lesson-v2 .lv2-summary-mistakes {
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius);
+  background: var(--lv2-card-bg);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-v2 .lv2-summary-mistakes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lesson-v2 .lv2-summary-mistakes-head h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--lv2-text);
+}
+
+.lesson-v2 .lv2-summary-mistakes-empty {
+  font-size: 13px;
+  color: var(--lv2-success);
+  font-weight: 600;
+}
+
+.lesson-v2 .lv2-summary-mistakes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lesson-v2 .lv2-summary-mistake {
+  border: 1px solid var(--lv2-border);
+  background: #fffaf3;
+  border-radius: var(--lv2-radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lesson-v2 .lv2-summary-mistake-prompt {
+  font-size: 14px;
+  color: var(--lv2-text);
+  font-weight: 600;
+}
+
+.lesson-v2 .lv2-summary-mistake-row {
+  display: flex;
+  gap: 8px;
+  font-size: 13.5px;
+  align-items: baseline;
+}
+.lesson-v2 .lv2-summary-mistake-label {
+  color: var(--lv2-text-muted);
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.lesson-v2 .lv2-summary-mistake-answer {
+  font-weight: 600;
+}
+.lesson-v2 .lv2-summary-mistake-row--wrong .lv2-summary-mistake-answer {
+  color: var(--lv2-danger);
+  text-decoration: line-through;
+}
+.lesson-v2 .lv2-summary-mistake-row--right .lv2-summary-mistake-answer {
+  color: var(--lv2-success);
+}
+.lesson-v2 .lv2-summary-mistake-explanation {
+  margin-top: 2px;
+  padding: 8px 10px;
+  background: var(--lv2-gold-soft);
+  border-left: 3px solid var(--lv2-gold);
+  border-radius: 6px;
+  color: #5a3f06;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.lesson-v2 .lv2-btn--link {
+  background: none;
+  border: none;
+  color: var(--lv2-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+.lesson-v2 .lv2-btn--link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .lesson-v2 .lv2-learn-item {
+    grid-template-columns: minmax(48px, auto) 1fr 34px;
+    row-gap: 2px;
+  }
+  .lesson-v2 .lv2-learn-item-meaning {
+    grid-column: 1 / -1;
+    color: var(--lv2-text-muted);
+    font-size: 13px;
+  }
+}
+
+/* ============================================================
+   Phrases tokenisées (style Seonsaengnim)
+   ============================================================
+   Une phrase est décomposée en tokens colorés selon leur rôle
+   grammatical (Sujet / Verbe / Objet / Temps / Particule /
+   Complément / Modificateur / Copule / Connecteur / Lieu).
+   On affiche d'abord la légende (chips de tous les rôles présents),
+   puis chaque phrase avec sa traduction tokenisée pour comparer.
+*/
+.lesson-v2 .lv2-tokens-block {
+  background: var(--lv2-card-bg);
+  border: 1px solid var(--lv2-border);
+  border-radius: var(--lv2-radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lesson-v2 .lv2-tokens-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.lesson-v2 .lv2-tokens-sentence {
+  border-top: 1px dashed var(--lv2-border);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lesson-v2 .lv2-tokens-sentence:first-child,
+.lesson-v2 .lv2-tokens-legend + .lv2-tokens-sentence {
+  border-top: none;
+  padding-top: 0;
+}
+.lesson-v2 .lv2-tokens-lang-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lv2-text-muted);
+  font-weight: 600;
+}
+.lesson-v2 .lv2-tokens-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+}
+.lesson-v2 .lv2-tok {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1.5px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.lesson-v2 .lv2-tok-pinyin {
+  font-size: 10.5px;
+  font-style: italic;
+  opacity: 0.75;
+  font-weight: 400;
+}
+.lesson-v2 .lv2-tokens-note {
+  margin-top: 6px;
+  background: #fbe9b8;
+  border-left: 3px solid #d4a537;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #5a3f06;
+  border-radius: 6px;
+}
+
+/* Chip de légende — mini-pill juste avec le label, même couleur. */
+.lesson-v2 .lv2-tok-chip {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  font-family: inherit;
+}
+
+/* Couleurs par rôle. Bleu pâle, vert pâle, jaune doux, etc.
+   Volontairement claires : on garde le hanzi lisible (noir/dark) au centre. */
+.lesson-v2 .lv2-tok--sujet,
+.lesson-v2 .lv2-tok-chip--sujet {
+  background: #d6ebff;
+  border-color: #5e9ee0;
+  color: #1f4a7a;
+}
+.lesson-v2 .lv2-tok--verbe,
+.lesson-v2 .lv2-tok-chip--verbe {
+  background: #fde6cf;
+  border-color: #e8a45c;
+  color: #6b3812;
+}
+.lesson-v2 .lv2-tok--objet,
+.lesson-v2 .lv2-tok-chip--objet {
+  background: #d1f1d3;
+  border-color: #5fb05f;
+  color: #20571f;
+}
+.lesson-v2 .lv2-tok--temps,
+.lesson-v2 .lv2-tok-chip--temps {
+  background: #ffe0e0;
+  border-color: #e76f6f;
+  color: #6c2424;
+}
+.lesson-v2 .lv2-tok--lieu,
+.lesson-v2 .lv2-tok-chip--lieu {
+  background: #d6e7ff;
+  border-color: #6a8cd4;
+  color: #244070;
+}
+.lesson-v2 .lv2-tok--particule,
+.lesson-v2 .lv2-tok-chip--particule {
+  background: #e8e0f5;
+  border-color: #8b6dc8;
+  color: #3d2870;
+}
+.lesson-v2 .lv2-tok--complement,
+.lesson-v2 .lv2-tok-chip--complement {
+  background: #d4f0ed;
+  border-color: #4eaba1;
+  color: #1e4e48;
+}
+.lesson-v2 .lv2-tok--modificateur,
+.lesson-v2 .lv2-tok-chip--modificateur {
+  background: #f9d6e2;
+  border-color: #d169a0;
+  color: #6c2148;
+}
+.lesson-v2 .lv2-tok--copule,
+.lesson-v2 .lv2-tok-chip--copule {
+  background: #d5f1eb;
+  border-color: #4dbfa8;
+  color: #1c4f43;
+}
+.lesson-v2 .lv2-tok--connecteur,
+.lesson-v2 .lv2-tok-chip--connecteur {
+  background: #ece8d4;
+  border-color: #b8a558;
+  color: #5b4d18;
+}
+
+/* Ponctuation collée aux tokens (virgules, points, etc.) rendue en texte
+   plat plutôt que dans un bloc coloré. */
+.lesson-v2 .lv2-tok-wrap {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+}
+.lesson-v2 .lv2-tok-punct {
+  display: inline-flex;
+  align-items: flex-end;
+  padding: 6px 2px;
+  font-size: 16px;
+  color: var(--lv2-text);
+  white-space: pre;
+}
+
+/* ---------- OfflineLessonButton (header de leçon) ----------------------- */
+.lesson-v2 .offline-lesson-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #ede4d3;
+  border-radius: 999px;
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.lesson-v2 .offline-lesson-btn:hover:not(:disabled) {
+  background: #f9f5ec;
+  color: #1f2937;
+  border-color: #d4c5a9;
+}
+.lesson-v2 .offline-lesson-btn.is-downloaded {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+  color: #047857;
+}
+.lesson-v2 .offline-lesson-btn.is-downloaded:hover {
+  background: #a7f3d0;
+}
+.lesson-v2 .offline-lesson-btn.is-downloading {
+  cursor: progress;
+  color: #fff;
+  background: var(--lv2-text);
+  border-color: var(--lv2-text);
+}
+.lesson-v2 .offline-lesson-btn-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.2s ease;
+  pointer-events: none;
+}
+.lesson-v2 .offline-lesson-btn-label {
+  position: relative; /* au-dessus du progress fill */
+  z-index: 1;
+}

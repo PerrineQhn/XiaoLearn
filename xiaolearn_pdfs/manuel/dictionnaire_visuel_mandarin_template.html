@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dictionnaire visuel — Mandarin (template)</title>
+  <style>
+    /*
+      Template A4 à compléter avec tes images.
+
+      Utilisation :
+      - Mets ce fichier dans un dossier.
+      - Mets le fichier mandarin_volume1_data.json à côté.
+      - Mets tes images dans ./images_hd/ (ou sous-dossiers).
+      - Option HD : lance build_hd_images.py pour générer ./images_hd/
+        (le template l'utilise en priorité).
+      - Ouvre le fichier via un petit serveur local (recommandé) :
+          python -m http.server 8000
+        puis ouvre :
+          http://localhost:8000
+      - Ctrl/Cmd+P -> Enregistrer en PDF.
+    */
+
+    :root{
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --sidebar-w: 16mm;
+      --pad-x: 10mm;
+      --pad-y: 10mm;
+      --ink: #5c3d2e;
+      --muted: #8b6f5e;
+      --line: rgba(92,61,46,0.15);
+      --paper: #fdfbf7;
+      --paper-texture: #f9f5ed;
+      --ui-bg: #2d1b12;
+      --ui-ink: #f5e6d3;
+      --accent-gold: #d4a574;
+      --accent-red: #c84848;
+      --tab-color: #8b6f5e;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--ui-bg);
+      color:var(--ui-ink);
+    }
+
+    .controls{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: linear-gradient(to right, rgba(45,27,18,0.95), rgba(61,38,24,0.95));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(212,165,116,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .badge{
+      font-size:12px;
+      letter-spacing:0.08em;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,165,116,0.3);
+      background: rgba(212,165,116,0.1);
+      opacity:0.95;
+    }
+
+    .hint{ font-size:13px; opacity:0.85; }
+
+    button{
+      appearance:none;
+      border:1px solid var(--accent-gold);
+      background: rgba(212,165,116,0.15);
+      color:var(--ui-ink);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:700;
+      transition: all 0.3s ease;
+    }
+
+    button:hover{
+      background: rgba(212,165,116,0.25);
+      box-shadow: 0 0 12px rgba(212,165,116,0.3);
+    }
+
+    #book{ padding: 18px 0 40px; }
+
+    .sheet{
+      width: var(--page-w);
+      height: var(--page-h);
+      background: var(--paper);
+      margin: 16px auto;
+      position: relative;
+      color: var(--ink);
+      box-shadow: 0 24px 80px rgba(92,61,46,0.25);
+      overflow: hidden;
+    }
+
+    .sheet::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(92,61,46,0.008) 2px,
+          rgba(92,61,46,0.008) 4px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sidebar{
+      position:absolute;
+      right:0;
+      top:0;
+      width: var(--sidebar-w);
+      height: 100%;
+      background: linear-gradient(to bottom, #3d2618, #2d1b12);
+      padding:2mm 1.5mm;
+      display:flex;
+      flex-direction:column;
+      gap:0.5mm;
+      justify-content:center;
+      align-items:stretch;
+      box-shadow: inset 4px 0 12px rgba(0,0,0,0.3);
+    }
+
+    .sidebar a{
+      display:block;
+      width:100%;
+    }
+
+    .tab{
+      height:20mm;
+      width:100%;
+      border:2px solid rgba(212,165,116,0.15);
+      border-radius:8px;
+      opacity:0.55;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background: rgba(212,165,116,0.06);
+      transition: all 0.3s ease;
+    }
+
+    .tab:hover{
+      opacity:0.85;
+      transform: scale(1.02);
+    }
+
+    .tab.active{
+      opacity:1;
+      border-color: var(--accent-gold);
+      background: rgba(212,165,116,0.15);
+      box-shadow: 0 0 12px rgba(212,165,116,0.3);
+    }
+
+    .tab.active:hover{
+      opacity:1;
+      transform: scale(1.02);
+    }
+
+    .tab span{
+      writing-mode: vertical-rl;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color:#f5e6d3;
+      font-weight:800;
+      text-align:center;
+      text-transform: uppercase;
+    }
+
+    .content{
+      position:absolute;
+      left:0;
+      top:0;
+      width: calc(100% - var(--sidebar-w));
+      height: 100%;
+      padding: var(--pad-y) var(--pad-x);
+      display:grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 5mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 10mm;
+      padding-bottom: 3mm;
+      border-bottom: 2px solid var(--line);
+      position: relative;
+    }
+
+    .header::after{
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-gold);
+    }
+
+    .kicker{
+      font-size:11px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .title{
+      margin:0;
+      font-size:28px;
+      line-height:1.1;
+      font-weight:900;
+      color: var(--ink);
+    }
+
+    .subtitle{
+      margin-top:6px;
+      color: var(--muted);
+      font-size:14px;
+    }
+
+    .meta{
+      text-align:right;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.4;
+      white-space:nowrap;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 53mm);
+      gap: 3mm;
+      align-content: start;
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--paper);
+      display:flex;
+      flex-direction: column;
+      height: 53mm;
+      box-shadow: 0 2px 8px rgba(92,61,46,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover{
+      box-shadow: 0 4px 16px rgba(92,61,46,0.15);
+      transform: translateY(-1px);
+    }
+
+    .imgwrap{
+      background: linear-gradient(135deg, rgba(92,61,46,0.03), rgba(92,61,46,0.01));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .imgwrap a{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease;
+      text-decoration: none;
+    }
+
+    .imgwrap a:hover{
+      opacity: 0.85;
+    }
+
+    .imgwrap a img,
+    .imgwrap img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+    .placeholder{
+      font-size:10px;
+      color: rgba(92,61,46,0.45);
+      padding: 10px;
+      text-align:center;
+      word-break: break-word;
+    }
+
+    .text{
+      padding: 6px 8px 8px;
+      border-top: 1px solid var(--line);
+      flex-shrink: 0;
+      overflow: hidden;
+      height: 22mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hanzi{
+      margin:0;
+      font-size:20px;
+      font-family: "STKaiti", "KaiTi", "STFangsong", "FangSong", serif;
+      font-weight:600;
+      line-height:1.1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pinyin{
+      margin-top:3px;
+      font-size:10px;
+      color: var(--muted);
+      letter-spacing:0.02em;
+      font-weight:800;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .fr{
+      margin-top:3px;
+      font-size:10px;
+      color: var(--ink);
+      opacity:0.85;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.3;
+      max-height: 2.6em;
+    }
+
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top: 3mm;
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      position: relative;
+    }
+
+    .footer::before{
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-gold);
+    }
+
+    /* Couverture */
+    .cover{
+      padding: 0;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url('./images_hd/cover.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .cover::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
+      pointer-events: none;
+    }
+
+    .cover-content{
+      position: absolute;
+      bottom: 10mm;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      text-align: center;
+    }
+
+    .cover .brand{
+      margin:0;
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:0.02em;
+      color:#5c3d2e;
+      text-shadow: 0 2px 4px rgba(255,255,255,0.9);
+    }
+
+    .cover .note{
+      display: none;
+    }
+
+    .cover .bottom{
+      display: none;
+    }
+
+    /* Introduction */
+    .toc{
+      padding: 14mm 16mm;
+      display:grid;
+      grid-template-rows: auto 1fr;
+      gap: 8mm;
+      background: var(--paper);
+      position: relative;
+    }
+
+    .toc::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(92,61,46,0.008) 2px,
+          rgba(92,61,46,0.008) 4px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .toc h2{
+      margin:0;
+      font-size:28px;
+      font-weight:950;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+    }
+
+    .toc h2::after{
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-gold);
+      margin-top: 8px;
+    }
+
+    .toc table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .toc td{
+      padding:10px 8px;
+      border-bottom: 1px solid var(--line);
+      vertical-align:top;
+      color: var(--ink);
+    }
+
+    .toc .dot{
+      width:100%;
+      border-bottom:2px dotted rgba(92,61,46,0.2);
+      transform: translateY(-3px);
+    }
+
+    .toc .pageno{
+      text-align:right;
+      font-variant-numeric: tabular-nums;
+      width: 20mm;
+      color: var(--muted);
+      font-weight:800;
+    }
+
+    /* Impression */
+    @page { size: A4; margin: 0; }
+    @media print{
+      body{ background: var(--paper); }
+      #book{ padding: 0; }
+      .controls{ display:none; }
+      .sheet{ margin:0; box-shadow:none; }
+      .sheet{ page-break-after: always; }
+      .sheet::before{ display:none; }
+      .sheet *{
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+      .card:hover{ box-shadow: 0 2px 8px rgba(92,61,46,0.08); transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+      <span class="badge">Template — dictionnaire visuel mandarin</span>
+      <span class="hint">Données dans <b>mandarin_volume1_data.json</b> + images dans <b>images/</b> (ou <b>images_hd/</b>).</span>
+    </div>
+    <button id="btnPrint" type="button">Imprimer / Exporter en PDF</button>
+  </div>
+
+  <main id="book"></main>
+
+  <script>
+    // ----------------
+    // 1) DONNÉES
+    // ----------------
+    const BOOK_URL = "mandarin_volume1_data.json";
+    const IMAGE_BASE = "images_hd";
+    const IMAGE_FALLBACK_BASE = "images";
+    let BOOK = null;
+
+    async function initBook(){
+      const res = await fetch(BOOK_URL, { cache: "no-store" });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      BOOK = await res.json();
+    }
+
+    // ----------------
+    // 2) RENDU
+    // ----------------
+    const PAGE_CAPACITY = 16;
+
+    function chunk(arr, size){
+      const out = [];
+      for(let i=0;i<arr.length;i+=size) out.push(arr.slice(i, i+size));
+      return out;
+    }
+
+    function el(tag, attrs = {}, children = []){
+      const node = document.createElement(tag);
+      for(const [k,v] of Object.entries(attrs)){
+        if(k === "class") node.className = v;
+        else if(k === "html") node.innerHTML = v;
+        else if(k === "style") node.setAttribute("style", v);
+        else node.setAttribute(k, v);
+      }
+      for(const c of children){
+        if(c == null) continue;
+        if(typeof c === "string") node.appendChild(document.createTextNode(c));
+        else node.appendChild(c);
+      }
+      return node;
+    }
+
+    function withImageBase(src, base){
+      if(!src) return src;
+      const prefix = "./images_hd/";
+      if(src.startsWith(prefix)) return `./${base}/${src.slice(prefix.length)}`;
+      return src;
+    }
+
+    function card(item, catKey, addId = false){
+      const imgwrap = el("div", { class: "imgwrap" });
+      const suggestedPath = (!item.img && item.slug && catKey) ? `images/${catKey}/${item.slug}.png` : "";
+
+      if(item.img){
+        const preferredSrc = withImageBase(item.img, IMAGE_BASE);
+        const fallbackSrc = withImageBase(item.img, IMAGE_FALLBACK_BASE);
+        const img = el("img", { src: preferredSrc, alt: item.fr || item.hanzi || "" });
+        if(fallbackSrc && fallbackSrc !== preferredSrc) img.dataset.fallback = fallbackSrc;
+        img.onerror = () => {
+          if(img.dataset.fallback){
+            const nextSrc = img.dataset.fallback;
+            delete img.dataset.fallback;
+            img.src = nextSrc;
+            return;
+          }
+          imgwrap.innerHTML = "";
+          const hint = suggestedPath ? `Suggestion : ${suggestedPath}` : "";
+          imgwrap.appendChild(el("div", { class: "placeholder" }, [
+            `Image introuvable : ${item.img}` + (hint ? ` • ${hint}` : "")
+          ]));
+        };
+        imgwrap.appendChild(img);
+      } else {
+        const msg = suggestedPath ? `Ajoute une image : ${suggestedPath}` : "Ajoute une image (champ img)";
+        imgwrap.appendChild(el("div", { class: "placeholder" }, [msg]));
+      }
+
+      const text = el("div", { class: "text" }, [
+        el("p", { class: "hanzi" }, [item.hanzi || ""]),
+        el("div", { class: "pinyin" }, [item.pinyin || ""]),
+        el("div", { class: "fr" }, [item.fr || ""])
+      ]);
+
+      const cardAttrs = { class: "card" };
+      // Ajouter un ID unique si demandé et si item a un slug
+      if(addId && item.slug && catKey){
+        cardAttrs.id = `item-${catKey}-${item.slug}`;
+      }
+
+      return el("div", cardAttrs, [imgwrap, text]);
+    }
+
+    function sidebar(categories, activeKey){
+      const sb = el("aside", { class: "sidebar" });
+      for(const cat of categories){
+        const link = el("a", { href: `#section-${cat.key}`, style: "text-decoration:none; display:block;" });
+        const t = el(
+          "div",
+          { class: "tab" + (cat.key === activeKey ? " active" : ""), style: `background:var(--tab-color); cursor:pointer;` },
+          [el("span", {}, [cat.name])]
+        );
+        link.appendChild(t);
+        sb.appendChild(link);
+      }
+      return sb;
+    }
+
+    function pageHeader(book, cat, pageIndexInCat){
+      const header = el("div", { class: "header" });
+      const left = el("div", {}, [
+        el("div", { class: "kicker" }, [book.title]),
+        el("h3", { class: "title" }, [cat.name]),
+        el("div", { class: "subtitle" }, [book.subtitle])
+      ]);
+
+      const meta = el("div", { class: "meta" }, [
+        String(pageIndexInCat + 1).padStart(2, '0')
+      ]);
+
+      header.appendChild(left);
+      header.appendChild(meta);
+      return header;
+    }
+
+    function footer(book, globalPageNo){
+      return el("div", { class: "footer" }, [
+        el("div", {}, [book.title]),
+        el("div", {}, [String(globalPageNo).padStart(2, "0")])
+      ]);
+    }
+
+    function cover(book){
+      const sheet = el("section", { class: "sheet cover" });
+
+      // Titre en haut
+      const topContent = el("div", {
+        style: "position:absolute; top:30mm; left:50%; transform:translateX(-50%); text-align:center; z-index:2; width:85%;"
+      }, [
+        el("div", {
+          style: "font-size:68px; font-weight:700; color:#5c3d2e; margin-bottom:15px; font-family:'STKaiti','KaiTi','FangSong','STFangsong',serif; letter-spacing:0.05em;"
+        }, ["中文视觉词典"]),
+        el("div", {
+          style: "font-size:32px; font-weight:600; color:#5c3d2e; margin-bottom:20px; font-family:'Georgia','Garamond','Times New Roman',serif; letter-spacing:0.02em;"
+        }, ["Dictionnaire Visuel Chinois-Français"]),
+        el("div", {
+          style: "display:inline-block; background:#d4a574; color:#fdfbf7; font-size:20px; font-weight:700; padding:8px 35px; border-radius:50px; font-family:'Georgia','Garamond','Times New Roman',serif; letter-spacing:0.15em; box-shadow:0 4px 12px rgba(92,61,46,0.2);"
+        }, ["VOLUME 01"])
+      ]);
+
+      // XiaoLearn en bas (position plus basse)
+      const bottomContent = el("div", {
+        style: "position:absolute; bottom:6mm; left:50%; transform:translateX(-50%); z-index:2; text-align:center;"
+      }, [
+        el("div", { class: "brand" }, ["XiaoLearn"])
+      ]);
+
+      sheet.appendChild(topContent);
+      sheet.appendChild(bottomContent);
+      return sheet;
+    }
+
+    function introduction(book){
+      const sheet = el("section", { class: "sheet toc" });
+      const content = el("div", { style: "padding:20mm 18mm; line-height:1.7; color:var(--ink);" });
+
+      // Titre
+      content.appendChild(el("h2", { style: "color:var(--ink); font-size:28px; margin:0 0 25px 0; text-align:center; font-weight:900;" }, ["Introduction"]));
+
+      // Pourquoi ce livre
+      content.appendChild(el("h3", { style: "color:var(--accent-gold); font-size:16px; margin:20px 0 10px 0; font-weight:800;" }, ["Pourquoi ce livre ?"]));
+      content.appendChild(el("p", { style: "margin:0 0 15px 0; font-size:13px; text-align:justify;" }, [
+        "Apprendre le mandarin peut sembler intimidant au premier abord, avec ses milliers de caractères et ses tons complexes. Ce dictionnaire visuel a été créé pour rendre cet apprentissage plus accessible et naturel. En associant chaque mot à une image claire et mémorable, vous construirez votre vocabulaire de manière intuitive, comme vous l'avez fait pour votre langue maternelle."
+      ]));
+
+      // Mon objectif
+      content.appendChild(el("h3", { style: "color:var(--accent-gold); font-size:16px; margin:20px 0 10px 0; font-weight:800;" }, ["Mon objectif avec ce livre"]));
+      content.appendChild(el("p", { style: "margin:0 0 15px 0; font-size:13px; text-align:justify;" }, [
+        "Mon objectif est de vous offrir un outil pratique et complet qui accompagne votre apprentissage quotidien du mandarin. Que vous soyez débutant complet ou que vous cherchiez à consolider vos bases, ce livre est conçu pour être à la fois un support d'apprentissage et un compagnon de révision. Chaque section thématique vous permet de progresser pas à pas, en organisant le vocabulaire de manière logique et contextualisée."
+      ]));
+
+      // Avec ce livre vous allez
+      content.appendChild(el("h3", { style: "color:var(--accent-gold); font-size:16px; margin:20px 0 10px 0; font-weight:800;" }, ["Avec ce livre, vous allez..."]));
+      const liste = el("ul", { style: "margin:0 0 15px 0; padding-left:25px; font-size:13px;" });
+      const points = [
+        "Mémoriser près de 400 mots essentiels grâce aux associations visuelles",
+        "Maîtriser l'écriture des caractères chinois avec les grilles de pratique",
+        "Comprendre le système pinyin et ses règles de prononciation",
+        "Réviser efficacement avec les pages d'exercices dédiées",
+        "Naviguer facilement entre vocabulaire et exercices grâce aux liens interactifs",
+        "Progresser à votre rythme, section par section"
+      ];
+      points.forEach(point => {
+        liste.appendChild(el("li", { style: "margin-bottom:8px;" }, [point]));
+      });
+      content.appendChild(liste);
+
+      // Mot d'encouragement
+      content.appendChild(el("h3", { style: "color:var(--accent-gold); font-size:16px; margin:20px 0 10px 0; font-weight:800;" }, ["Un mot d'encouragement"]));
+      content.appendChild(el("p", { style: "margin:0 0 20px 0; font-size:13px; text-align:justify; font-style:italic;" }, [
+        "L'apprentissage du mandarin est un voyage magnifique qui vous ouvrira les portes d'une culture millénaire. Ne vous découragez pas face aux difficultés initiales : chaque caractère appris, chaque mot mémorisé est une victoire. Prenez votre temps, pratiquez régulièrement, et surtout, prenez plaisir à découvrir cette langue fascinante. 加油 (jiāyóu) — Courage !"
+      ]));
+
+      content.appendChild(el("div", { style: "text-align:center; margin-top:30px; padding-top:20px; border-top:2px solid var(--line);" }, [
+        el("p", { style: "font-size:14px; font-weight:700; color:var(--muted); margin:0;" }, ["Bonne chance dans votre apprentissage !"])
+      ]));
+
+      sheet.appendChild(content);
+      return sheet;
+    }
+
+    function getCombination(initial, final){
+      // Règles de combinaisons pinyin
+      if(!initial || !final) return "";
+
+      // Règles spéciales pour certaines combinaisons impossibles
+      const invalidCombos = {
+        // j, q, x ne peuvent pas se combiner avec certaines finales
+        "j": ["o", "ong", "ou", "u", "ua", "uai", "uan", "uang", "uei", "uen", "ueng", "uo"],
+        "q": ["o", "ong", "ou", "u", "ua", "uai", "uan", "uang", "uei", "uen", "ueng", "uo"],
+        "x": ["o", "ong", "ou", "u", "ua", "uai", "uan", "uang", "uei", "uen", "ueng", "uo"],
+        // zh, ch, sh, r ne peuvent pas se combiner avec ü, üe, üan, ün
+        "zh": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        "ch": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        "sh": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        "r": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        // z, c, s ne peuvent pas se combiner avec certaines finales
+        "z": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        "c": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        "s": ["i", "ia", "ie", "ian", "iang", "iao", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün"],
+        // Autres règles
+        "b": ["e", "ei", "en", "eng", "er", "ong", "iong", "iou", "ü", "üe", "üan", "ün", "ueng"],
+        "p": ["e", "ei", "en", "eng", "er", "ong", "iong", "iou", "ü", "üe", "üan", "ün", "ueng"],
+        "m": ["e", "ei", "en", "eng", "er", "ong", "iong", "iou", "ü", "üe", "üan", "ün", "ueng"],
+        "f": ["e", "ei", "en", "eng", "er", "ia", "ie", "iao", "ian", "iang", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün", "ueng"],
+        "d": ["ong", "iong", "ü", "üe", "üan", "ün"],
+        "t": ["ong", "iong", "ü", "üe", "üan", "ün"],
+        "n": ["ong", "iong"],
+        "l": ["ong", "iong"],
+        "g": ["i", "ia", "ie", "iao", "ian", "iang", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün", "uei", "uen", "ueng"],
+        "k": ["i", "ia", "ie", "iao", "ian", "iang", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün", "uei", "uen", "ueng"],
+        "h": ["i", "ia", "ie", "iao", "ian", "iang", "in", "ing", "iong", "iou", "ü", "üe", "üan", "ün", "uei", "uen", "ueng"]
+      };
+
+      if(invalidCombos[initial] && invalidCombos[initial].includes(final)){
+        return "";
+      }
+
+      // Transformation pour j, q, x avec ü
+      if((initial === "j" || initial === "q" || initial === "x") && final.startsWith("ü")){
+        // ü devient u après j, q, x
+        return initial + final.replace("ü", "u");
+      }
+
+      // Cas spéciaux pour certaines finales
+      if(final === "iou") return initial + "iu";
+      if(final === "uei") return initial + "ui";
+      if(final === "uen") return initial + "un";
+
+      return initial + final;
+    }
+
+    function render(){
+      const root = document.getElementById("book");
+      root.innerHTML = "";
+
+      const pageChunks = [];
+      for(const cat of BOOK.categories){
+        pageChunks.push({ cat, chunks: chunk(cat.items || [], PAGE_CAPACITY) });
+      }
+
+      // Couverture = 1, Introduction = 2, puis pages thématiques.
+      root.appendChild(cover(BOOK));
+      root.appendChild(introduction(BOOK));
+
+      let globalPageNo = 3;
+      for(const entry of pageChunks){
+        const { cat, chunks } = entry;
+        for(let i=0;i<chunks.length;i++){
+          const sheetAttrs = { class: "sheet" };
+          // Ajouter un ID à la première page de chaque section
+          if(i === 0){
+            sheetAttrs.id = `section-${cat.key}`;
+          }
+          const sheet = el("section", sheetAttrs);
+          sheet.appendChild(sidebar(BOOK.categories, cat.key));
+
+          const content = el("div", { class: "content" });
+          content.appendChild(pageHeader(BOOK, cat, i));
+
+          const g = el("div", { class: "grid" });
+          // Ajouter des IDs aux cartes pour pouvoir y faire référence
+          for(const item of chunks[i]) g.appendChild(card(item, cat.key, true));
+          for(let k=chunks[i].length;k<PAGE_CAPACITY;k++){
+            g.appendChild(card({ hanzi: "", pinyin: "", fr: "", img: "", slug: "" }, cat.key, false));
+          }
+
+          content.appendChild(g);
+          content.appendChild(footer(BOOK, globalPageNo));
+          sheet.appendChild(content);
+
+          root.appendChild(sheet);
+          globalPageNo += 1;
+        }
+      }
+
+      // ===============================
+      // EXERCICES - Pages de révision visuelle
+      // ===============================
+      for(const entry of pageChunks){
+        const { cat, chunks } = entry;
+        for(let i=0;i<chunks.length;i++){
+          const sheet = el("section", { class: "sheet" });
+          sheet.appendChild(sidebar(BOOK.categories, cat.key));
+
+          const content = el("div", { class: "content" });
+
+          // Header différent pour les exercices
+          const header = el("div", { class: "page-header" });
+          const left = el("div", {}, [
+            el("div", { class: "kicker" }, ["EXERCICES - RÉVISION VISUELLE"]),
+            el("h3", { class: "title" }, [cat.name]),
+            el("div", { class: "subtitle" }, ["Écrivez les mots en chinois (hanzi + pinyin)"])
+          ]);
+          const meta = el("div", { class: "meta" }, [
+            String(i + 1).padStart(2, '0')
+          ]);
+          header.appendChild(left);
+          header.appendChild(meta);
+          content.appendChild(header);
+
+          const g = el("div", { class: "grid" });
+          for(const item of chunks[i]){
+            // Carte sans texte, juste l'image cliquable
+            const c = el("div", { class: "card" });
+
+            const imgWrap = el("div", { class: "imgwrap" });
+            if(item.img){
+              // Lien vers la carte correspondante dans le vocabulaire
+              const link = el("a", {
+                href: item.slug ? `#item-${cat.key}-${item.slug}` : "#",
+                style: "display:flex; width:100%; height:100%; align-items:center; justify-content:center; text-decoration:none;"
+              });
+              const img = el("img", { src: item.img, alt: item.hanzi, loading: "lazy" });
+              link.appendChild(img);
+              imgWrap.appendChild(link);
+            }
+            c.appendChild(imgWrap);
+
+            // Zone vide pour écrire
+            const textArea = el("div", { class: "text", style: "min-height: 22mm;" });
+            c.appendChild(textArea);
+            g.appendChild(c);
+          }
+          for(let k=chunks[i].length;k<PAGE_CAPACITY;k++){
+            g.appendChild(card({ hanzi: "", pinyin: "", fr: "", img: "", slug: "" }, cat.key, false));
+          }
+
+          content.appendChild(g);
+          content.appendChild(footer(BOOK, globalPageNo));
+          sheet.appendChild(content);
+
+          root.appendChild(sheet);
+          globalPageNo += 1;
+        }
+      }
+
+      // ===============================
+      // EXERCICES - Grilles d'écriture
+      // ===============================
+      for(const entry of pageChunks){
+        const { cat, chunks } = entry;
+        // Créer autant de pages de grilles que de pages de vocabulaire
+        for(let i=0; i<chunks.length; i++){
+          const sheet = el("section", { class: "sheet" });
+          sheet.appendChild(sidebar(BOOK.categories, cat.key));
+
+          const content = el("div", { class: "content", style: "padding:8mm 10mm; gap:3mm;" });
+
+          const header = el("div", { class: "page-header" });
+          const left = el("div", {}, [
+            el("div", { class: "kicker" }, ["EXERCICES - ÉCRITURE"]),
+            el("h3", { class: "title" }, [cat.name]),
+            el("div", { class: "subtitle" }, ["Pratiquez l'écriture des caractères chinois"])
+          ]);
+          const meta = el("div", { class: "meta" }, [
+            String(i + 1).padStart(2, '0')
+          ]);
+          header.appendChild(left);
+          header.appendChild(meta);
+          content.appendChild(header);
+
+          // Grille d'écriture 11 colonnes × 16 lignes (cellules carrées, grille rectangulaire)
+          const gridCols = 11;
+          const gridRows = 16; // +5 lignes par rapport à 11
+          const cellSize = 14.5; // mm pour cellules carrées
+          const gridWidth = gridCols * cellSize;
+          const gridHeight = gridRows * cellSize;
+          const gridContainer = el("div", {
+            style: `width:${gridWidth}mm; height:${gridHeight}mm; display:grid; grid-template-columns:repeat(${gridCols}, 1fr); grid-template-rows:repeat(${gridRows}, 1fr); gap:0; border:1px solid var(--line); margin: 0 auto;`
+          });
+          for(let j=0; j<(gridCols * gridRows); j++){
+            const cell = el("div", {
+              style: "border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center;"
+            });
+            gridContainer.appendChild(cell);
+          }
+          content.appendChild(gridContainer);
+
+          content.appendChild(footer(BOOK, globalPageNo));
+          sheet.appendChild(content);
+
+          root.appendChild(sheet);
+          globalPageNo += 1;
+        }
+      }
+
+      // ===============================
+      // PINYIN - Page de référence
+      // ===============================
+      const pinyinSheet = el("section", { class: "sheet" });
+      const pinyinContent = el("div", { class: "content", style: "padding:15mm; width:100%;" });
+
+      pinyinContent.appendChild(el("h2", { style: "color:var(--ink); font-size:24px; margin:0 0 15px 0; text-align:center;" }, ["Tableau Pinyin"]));
+
+      pinyinContent.appendChild(el("p", { style: "color:var(--muted); font-size:12px; margin-bottom:20px; text-align:center;" }, [
+        "Le pinyin est le système de romanisation du chinois mandarin. Utilisez ce tableau pour apprendre la prononciation des caractères."
+      ]));
+
+      // Table des initiales
+      const initialsTitle = el("h3", { style: "color:var(--ink); font-size:16px; margin:15px 0 8px 0;" }, ["Initiales (consonnes)"]);
+      const initialsTable = el("table", { style: "width:100%; border-collapse:collapse; margin-bottom:20px;" });
+      const initialsData = [
+        ["b", "p", "m", "f"],
+        ["d", "t", "n", "l"],
+        ["g", "k", "h", ""],
+        ["j", "q", "x", ""],
+        ["zh", "ch", "sh", "r"],
+        ["z", "c", "s", ""],
+        ["y", "w", "", ""]
+      ];
+      initialsData.forEach(row => {
+        const tr = el("tr");
+        row.forEach(cell => {
+          const td = el("td", {
+            style: "border:1px solid var(--line); padding:8px; text-align:center; font-size:14px; font-weight:700; color:var(--ink);"
+          }, [cell]);
+          tr.appendChild(td);
+        });
+        initialsTable.appendChild(tr);
+      });
+
+      // Table des finales
+      const finalsTitle = el("h3", { style: "color:var(--ink); font-size:16px; margin:15px 0 8px 0;" }, ["Finales (voyelles)"]);
+      const finalsTable = el("table", { style: "width:100%; border-collapse:collapse; margin-bottom:20px;" });
+      const finalsData = [
+        ["a", "o", "e", "i", "u", "ü"],
+        ["ai", "ei", "ui", "ao", "ou", "iu"],
+        ["ie", "üe", "er", "", "", ""],
+        ["an", "en", "in", "un", "ün", ""],
+        ["ang", "eng", "ing", "ong", "", ""]
+      ];
+      finalsData.forEach(row => {
+        const tr = el("tr");
+        row.forEach(cell => {
+          const td = el("td", {
+            style: "border:1px solid var(--line); padding:8px; text-align:center; font-size:14px; font-weight:700; color:var(--ink);"
+          }, [cell]);
+          tr.appendChild(td);
+        });
+        finalsTable.appendChild(tr);
+      });
+
+      // Tonalités
+      const tonesTitle = el("h3", { style: "color:var(--ink); font-size:16px; margin:15px 0 8px 0;" }, ["Les 4 tons + ton neutre"]);
+      const tonesGrid = el("div", { style: "display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; margin-top:10px;" });
+
+      const tones = [
+        { num: "1", name: "Premier ton", desc: "Haut et plat", ex: "mā (妈 mère)" },
+        { num: "2", name: "Deuxième ton", desc: "Montant", ex: "má (麻 chanvre)" },
+        { num: "3", name: "Troisième ton", desc: "Descendant-montant", ex: "mǎ (马 cheval)" },
+        { num: "4", name: "Quatrième ton", desc: "Descendant", ex: "mà (骂 gronder)" },
+        { num: "·", name: "Ton neutre", desc: "Léger et court", ex: "ma (吗 particule)" }
+      ];
+
+      tones.forEach(tone => {
+        const box = el("div", { style: "background:var(--paper-texture); border:1px solid var(--line); border-radius:8px; padding:10px; text-align:center;" });
+        box.appendChild(el("div", { style: "font-size:24px; font-weight:700; color:var(--accent-gold); margin-bottom:5px;" }, [tone.num]));
+        box.appendChild(el("div", { style: "font-size:11px; font-weight:700; color:var(--ink); margin-bottom:3px;" }, [tone.name]));
+        box.appendChild(el("div", { style: "font-size:10px; color:var(--muted); margin-bottom:5px;" }, [tone.desc]));
+        box.appendChild(el("div", { style: "font-size:11px; color:var(--ink);" }, [tone.ex]));
+        tonesGrid.appendChild(box);
+      });
+
+      pinyinContent.appendChild(initialsTitle);
+      pinyinContent.appendChild(initialsTable);
+      pinyinContent.appendChild(finalsTitle);
+      pinyinContent.appendChild(finalsTable);
+      pinyinContent.appendChild(tonesTitle);
+      pinyinContent.appendChild(tonesGrid);
+
+      pinyinContent.appendChild(footer(BOOK, globalPageNo));
+      pinyinSheet.appendChild(pinyinContent);
+      root.appendChild(pinyinSheet);
+      globalPageNo += 1;
+
+      // ===============================
+      // PINYIN - Tableau de combinaisons (Page 1/2)
+      // ===============================
+      const comboSheet1 = el("section", { class: "sheet" });
+      const comboContent1 = el("div", { class: "content", style: "padding:10mm; width:100%;" });
+
+      comboContent1.appendChild(el("h2", { style: "color:var(--ink); font-size:20px; margin:0 0 8px 0; text-align:center;" }, ["Tableau des combinaisons Pinyin (1/2)"]));
+
+      // Finales complètes
+      const finals = ["", "a", "ai", "an", "ang", "ao", "e", "ei", "en", "eng", "er", "i", "ia", "ian", "iang", "iao", "ie", "in", "ing", "iong", "iou", "o", "ong", "ou", "u", "ua", "uai", "uan", "uang", "uei", "uen", "ueng", "uo", "ü", "üan", "üe", "ün"];
+
+      // Première moitié des initiales
+      const initials1 = ["", "b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "h"];
+
+      const comboTable1 = el("table", { style: "width:100%; border-collapse:collapse; font-size:7px; table-layout:fixed;" });
+
+      // En-tête avec les initiales
+      const headerRow1 = el("tr");
+      initials1.forEach(init => {
+        const th = el("th", {
+          style: "border:1px solid var(--line); padding:2px; text-align:center; font-weight:800; background:rgba(212,165,116,0.15); color:var(--ink); font-size:8px;"
+        }, [init || "finale"]);
+        headerRow1.appendChild(th);
+      });
+      comboTable1.appendChild(headerRow1);
+
+      // Lignes de combinaisons
+      finals.forEach(final => {
+        if (!final) return; // Skip empty final
+        const tr = el("tr");
+
+        // Colonne de la finale
+        const tdFinal = el("td", {
+          style: "border:1px solid var(--line); padding:3px; text-align:center; font-weight:700; background:rgba(212,165,116,0.1); color:var(--ink); font-size:8px;"
+        }, [final]);
+        tr.appendChild(tdFinal);
+
+        // Colonnes des combinaisons
+        initials1.slice(1).forEach(init => {
+          const combo = getCombination(init, final);
+          const td = el("td", {
+            style: `border:1px solid var(--line); padding:3px; text-align:center; color:var(--ink); font-size:7px; ${combo ? '' : 'background:rgba(0,0,0,0.02);'}`
+          }, [combo]);
+          tr.appendChild(td);
+        });
+
+        comboTable1.appendChild(tr);
+      });
+
+      comboContent1.appendChild(comboTable1);
+      comboContent1.appendChild(footer(BOOK, globalPageNo));
+      comboSheet1.appendChild(comboContent1);
+      root.appendChild(comboSheet1);
+      globalPageNo += 1;
+
+      // ===============================
+      // PINYIN - Tableau de combinaisons (Page 2/2)
+      // ===============================
+      const comboSheet2 = el("section", { class: "sheet" });
+      const comboContent2 = el("div", { class: "content", style: "padding:10mm; width:100%;" });
+
+      comboContent2.appendChild(el("h2", { style: "color:var(--ink); font-size:20px; margin:0 0 8px 0; text-align:center;" }, ["Tableau des combinaisons Pinyin (2/2)"]));
+
+      // Deuxième moitié des initiales
+      const initials2 = ["", "j", "q", "x", "zh", "ch", "sh", "r", "z", "c", "s"];
+
+      const comboTable2 = el("table", { style: "width:100%; border-collapse:collapse; font-size:7px; table-layout:fixed;" });
+
+      // En-tête avec les initiales
+      const headerRow2 = el("tr");
+      initials2.forEach(init => {
+        const th = el("th", {
+          style: "border:1px solid var(--line); padding:2px; text-align:center; font-weight:800; background:rgba(212,165,116,0.15); color:var(--ink); font-size:8px;"
+        }, [init || "finale"]);
+        headerRow2.appendChild(th);
+      });
+      comboTable2.appendChild(headerRow2);
+
+      // Lignes de combinaisons
+      finals.forEach(final => {
+        if (!final) return; // Skip empty final
+        const tr = el("tr");
+
+        // Colonne de la finale
+        const tdFinal = el("td", {
+          style: "border:1px solid var(--line); padding:3px; text-align:center; font-weight:700; background:rgba(212,165,116,0.1); color:var(--ink); font-size:8px;"
+        }, [final]);
+        tr.appendChild(tdFinal);
+
+        // Colonnes des combinaisons
+        initials2.slice(1).forEach(init => {
+          const combo = getCombination(init, final);
+          const td = el("td", {
+            style: `border:1px solid var(--line); padding:3px; text-align:center; color:var(--ink); font-size:7px; ${combo ? '' : 'background:rgba(0,0,0,0.02);'}`
+          }, [combo]);
+          tr.appendChild(td);
+        });
+
+        comboTable2.appendChild(tr);
+      });
+
+      comboContent2.appendChild(comboTable2);
+      comboContent2.appendChild(footer(BOOK, globalPageNo));
+      comboSheet2.appendChild(comboContent2);
+      root.appendChild(comboSheet2);
+      globalPageNo += 1;
+
+      // ===============================
+      // CARACTÈRES - Grille de pratique générale
+      // ===============================
+      const charSheet = el("section", { class: "sheet" });
+      const charContent = el("div", { class: "content", style: "padding:8mm 10mm; display:flex; flex-direction:column; gap:3mm; width:100%;" });
+
+      charContent.appendChild(el("h2", { style: "color:var(--ink); font-size:20px; margin:0; text-align:center;" }, ["Pratique des caractères chinois"]));
+      charContent.appendChild(el("p", { style: "color:var(--muted); font-size:10px; margin:0; text-align:center;" }, [
+        "Utilisez cette grille pour pratiquer l'écriture des caractères. Tracez chaque caractère plusieurs fois pour mémoriser les traits."
+      ]));
+
+      // Grande grille 13 colonnes × 18 lignes (cellules carrées, grille rectangulaire)
+      const charGridCols = 13;
+      const charGridRows = 18; // +5 lignes par rapport à 13
+      const charCellSize = 13.5; // mm pour cellules carrées
+      const charGridWidth = charGridCols * charCellSize;
+      const charGridHeight = charGridRows * charCellSize;
+      const bigGrid = el("div", {
+        style: `width:${charGridWidth}mm; height:${charGridHeight}mm; display:grid; grid-template-columns:repeat(${charGridCols}, 1fr); grid-template-rows:repeat(${charGridRows}, 1fr); gap:0; border:1px solid var(--line); margin: 0 auto;`
+      });
+      for(let i=0; i<(charGridCols * charGridRows); i++){
+        const cell = el("div", {
+          style: "border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center;"
+        });
+        bigGrid.appendChild(cell);
+      }
+      charContent.appendChild(bigGrid);
+
+      charContent.appendChild(footer(BOOK, globalPageNo));
+      charSheet.appendChild(charContent);
+      root.appendChild(charSheet);
+      globalPageNo += 1;
+    }
+
+    // ----------------
+    // 3) SELF-TESTS (console)
+    // ----------------
+    function assert(cond, msg){
+      if(!cond) throw new Error(msg);
+    }
+
+    function runSelfTests(){
+      // chunk()
+      assert(JSON.stringify(chunk([1,2,3], 2)) === JSON.stringify([[1,2],[3]]), "chunk() should split correctly");
+      assert(chunk([], 16).length === 0, "chunk([]) should be empty");
+
+      // clés uniques
+      const keys = BOOK.categories.map(c => c.key);
+      assert(new Set(keys).size === keys.length, "category keys should be unique");
+
+      // pages
+      const expectedThematic = BOOK.categories.reduce((acc, c) => acc + Math.ceil((c.items||[]).length / PAGE_CAPACITY), 0);
+      const expectedExercises = (expectedThematic * 2) + 4; // révision visuelle (même nombre que vocab) + grilles écriture (même nombre que vocab) + pinyin + 2 pages combinaisons + pratique
+      const expectedTotal = 2 + expectedThematic + expectedExercises; // cover + introduction + thematic + exercices
+      const root = document.getElementById("book");
+      const actual = root.children.length;
+      assert(actual === expectedTotal, `expected ${expectedTotal} sheets, got ${actual}`);
+
+      console.log("Self-tests OK", { expectedTotal, actual });
+    }
+
+    document.getElementById("btnPrint").addEventListener("click", () => window.print());
+
+    // Init
+    initBook()
+      .then(() => {
+        render();
+        runSelfTests();
+      })
+      .catch((err) => {
+        console.error("Impossible de charger mandarin_volume1_data.json", err);
+        const root = document.getElementById("book");
+        root.innerHTML = "<div style='max-width:900px;margin:40px auto;color:#e2e8f0;font-family:system-ui;line-height:1.5;'><h2>Erreur de chargement</h2><p>Le fichier <b>mandarin_volume1_data.json</b> est introuvable ou bloqué par le navigateur.</p><p>Solution : lance un serveur local et ouvre via <b>http://localhost:8000</b> :</p><pre style='background:rgba(226,232,240,0.08);padding:12px;border-radius:12px;overflow:auto;'>python -m http.server 8000</pre></div>";
+      });
+  </script>
+</body>
+</html>

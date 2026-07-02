@@ -1,0 +1,4 @@
+MakeMeAHanzi dataset (graphics.txt)
+Source: https://github.com/skishore/makemeahanzi
+Commit: 618dbab8a8ddefb958763c8b4afbaa741a4460de
+Downloaded: 2026-02-05

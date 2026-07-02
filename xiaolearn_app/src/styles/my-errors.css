@@ -1,0 +1,478 @@
+/*
+ * my-errors.css — Carnet d'erreurs personnel
+ * -------------------------------------------
+ * Style aligné sur le carnet d'erreurs Seonsaengnim, palette XiaoLearn.
+ */
+
+.my-errors-page {
+  --me-bg: #fffaf3;
+  --me-card-bg: #ffffff;
+  --me-text: #1f2937;
+  --me-text-muted: #5e6075;
+  --me-text-soft: #8a8c9f;
+  --me-border: #ece4d5;
+  --me-border-strong: #e0d4ba;
+  --me-primary: #c6302c;
+  --me-primary-soft: #fde7e5;
+  --me-amber: #f0b762;
+  --me-amber-soft: #fbe9b8;
+
+  color: var(--me-text);
+  background: var(--me-bg);
+  min-height: 100%;
+  padding: 28px 20px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1080px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------
+ * Header
+ * ------------------------------------------------------------------------ */
+
+.me-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.me-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--me-text-soft);
+  margin: 0 0 8px;
+}
+.me-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin: 0 0 8px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.me-subtitle {
+  max-width: 64ch;
+  margin: 0 auto;
+  color: var(--me-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------------------------
+ * Stats (4 cartes)
+ * ------------------------------------------------------------------------ */
+
+.me-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.me-stat-card {
+  background: var(--me-card-bg);
+  border: 1px solid var(--me-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.me-stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--me-text-soft);
+  margin-bottom: 6px;
+}
+.me-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--me-text);
+  line-height: 1;
+}
+.me-stat-value--accent {
+  color: var(--me-primary);
+}
+.me-stat-value-small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.me-stat-mult {
+  font-size: 0.75rem;
+  color: var(--me-text-soft);
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Section "À travailler"
+ * ------------------------------------------------------------------------ */
+
+.me-work-section {
+  background: linear-gradient(135deg, #fff8eb 0%, #fff1d1 100%);
+  border: 1px solid #f0d49c;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  position: relative;
+}
+.me-work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.me-work-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--me-amber);
+  color: #6b4a0a;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.me-work-sub {
+  font-size: 0.78rem;
+  color: var(--me-text-muted);
+  font-weight: 500;
+}
+.me-work-count-badge {
+  background: var(--me-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.me-work-intro {
+  margin: 4px 0 4px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.me-work-help {
+  margin: 0 0 14px;
+  font-size: 0.88rem;
+  color: var(--me-text-muted);
+}
+
+.me-work-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.me-work-card {
+  background: var(--me-card-bg);
+  border: 1px solid var(--me-border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.me-work-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.me-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.me-work-mult {
+  background: var(--me-primary-soft);
+  color: var(--me-primary);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.me-work-correct {
+  margin: 4px 0 4px;
+}
+.me-work-correct-hanzi {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: #e0f0e6;
+  color: #1b5e3e;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.me-work-wrong {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--me-text-muted);
+}
+.me-work-wrong-label {
+  font-weight: 600;
+}
+.me-work-wrong-text {
+  text-decoration: line-through;
+  color: #8b1f1c;
+  font-weight: 600;
+}
+.me-work-explanation {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--me-text);
+  line-height: 1.5;
+  font-style: italic;
+}
+.me-practice-btn {
+  margin-top: 4px;
+  padding: 10px 14px;
+  background: var(--me-amber);
+  border: none;
+  border-radius: 10px;
+  color: #6b4a0a;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.me-practice-btn:hover {
+  background: #e0a447;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------------
+ * Onglets sources
+ * ------------------------------------------------------------------------ */
+
+.me-source-tabs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid var(--me-border);
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  flex-wrap: wrap;
+}
+.me-source-tab {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--me-text-soft);
+  cursor: pointer;
+  border-radius: 999px;
+}
+.me-source-tab:hover {
+  color: var(--me-text);
+}
+.me-source-tab.is-active {
+  background: #1f2937;
+  color: #fff;
+}
+.me-result-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--me-text-soft);
+  padding: 4px 8px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Filtres catégories
+ * ------------------------------------------------------------------------ */
+
+.me-cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.me-cat-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--me-card-bg);
+  border: 1px solid var(--me-border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--me-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.me-cat-filter:hover {
+  border-color: var(--me-primary);
+  color: var(--me-primary);
+}
+.me-cat-filter.is-active {
+  background: #1f2937;
+  color: #fff;
+  border-color: #1f2937;
+}
+.me-cat-filter-count {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 2px;
+}
+.me-cat-filter.is-active .me-cat-filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Groupes par période
+ * ------------------------------------------------------------------------ */
+
+.me-group {
+  margin-bottom: 24px;
+}
+.me-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--me-border);
+  margin-bottom: 12px;
+}
+.me-group-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--me-text-soft);
+}
+.me-group-count {
+  font-size: 0.78rem;
+  color: var(--me-text-soft);
+  font-weight: 600;
+}
+.me-group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.me-group-item {
+  background: var(--me-card-bg);
+  border: 1px solid var(--me-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.me-group-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--me-text-soft);
+}
+.me-group-source {
+  font-weight: 600;
+  color: var(--me-text);
+}
+.me-group-mult {
+  background: var(--me-primary-soft);
+  color: var(--me-primary);
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.me-group-delete {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--me-text-soft);
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.15s ease;
+}
+.me-group-delete:hover {
+  background: var(--me-primary);
+  color: #fff;
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------------
+ * Empty state
+ * ------------------------------------------------------------------------ */
+
+.me-empty {
+  background: var(--me-card-bg);
+  border: 1px dashed var(--me-border-strong);
+  border-radius: 14px;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--me-text-muted);
+}
+.me-empty-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+.me-empty h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--me-text);
+}
+.me-empty p {
+  margin: 0 auto;
+  max-width: 48ch;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Clear button
+ * ------------------------------------------------------------------------ */
+
+.me-clear-btn {
+  background: transparent;
+  border: 1px solid var(--me-border-strong);
+  color: var(--me-text-soft);
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.me-clear-btn:hover {
+  background: var(--me-primary-soft);
+  border-color: var(--me-primary);
+  color: var(--me-primary);
+}
+
+/* ---------------------------------------------------------------------------
+ * Responsive
+ * ------------------------------------------------------------------------ */
+
+@media (max-width: 820px) {
+  .me-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .me-work-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .my-errors-page {
+    padding: 20px 12px 60px;
+  }
+  .me-stat-value {
+    font-size: 1.5rem;
+  }
+  .me-work-section {
+    padding: 14px 14px;
+  }
+}

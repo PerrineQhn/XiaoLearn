@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Qingming</title>
+  <desc id="desc">Illustration printaniere pour Qingming.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eefaf6"/>
+      <stop offset="100%" stop-color="#dff3eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 760 C250 660 550 830 800 740 C1080 640 1340 780 1600 710 L1600 900 L0 900 Z" fill="#2f9d8a" opacity="0.3"/>
+  <circle cx="1320" cy="180" r="120" fill="#ffffff" opacity="0.7"/>
+  <text x="120" y="430" fill="#2f9d8a" font-size="210" font-family="Noto Serif SC, serif">清明节</text>
+  <text x="120" y="530" fill="#1f2233" font-size="62" font-family="Plus Jakarta Sans, sans-serif">Qīngmíng jié · Mémoire familiale</text>
+</svg>

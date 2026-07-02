@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Conditions Générales de Vente - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <h1>Conditions Générales de Vente</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <h2>Article 1 - Objet</h2>
+      <p>
+        Les présentes Conditions Générales de Vente (CGV) régissent les ventes de produits numériques
+        (abonnements, fichiers PDF, decks Anki) proposés par XiaoLearn sur le site shop.xiaolearn.com.
+      </p>
+      <p>
+        Toute commande implique l'acceptation sans réserve des présentes CGV.
+      </p>
+
+      <h2>Article 2 - Produits</h2>
+      <p>Les produits proposés à la vente sont :</p>
+      <ul>
+        <li><strong>Abonnements :</strong> Accès à l'application web XiaoLearn (mensuel ou annuel)</li>
+        <li><strong>Manuels PDF :</strong> Fichiers numériques téléchargeables</li>
+        <li><strong>Decks Anki :</strong> Fichiers .apkg pour l'application Anki</li>
+      </ul>
+      <p>
+        Les caractéristiques essentielles des produits sont présentées sur les pages de vente.
+        Les photographies et illustrations sont non contractuelles.
+      </p>
+
+      <h2>Article 3 - Prix</h2>
+      <p>
+        Les prix sont indiqués en euros TTC. XiaoLearn se réserve le droit de modifier ses prix à
+        tout moment, les produits étant facturés au prix en vigueur au moment de la validation de
+        la commande.
+      </p>
+      <p>
+        Pour les abonnements, le prix applicable est celui en vigueur au moment du renouvellement.
+      </p>
+
+      <h2>Article 4 - Commande</h2>
+      <p>
+        Pour effectuer une commande, le client doit cliquer sur le bouton d'achat du produit souhaité.
+        Il est alors redirigé vers la page de paiement sécurisée Stripe.
+      </p>
+      <p>
+        La commande est confirmée par l'envoi d'un email de confirmation contenant les détails de
+        l'achat et les instructions d'accès au produit.
+      </p>
+
+      <h2>Article 5 - Paiement</h2>
+      <p>
+        Le paiement s'effectue par carte bancaire via la plateforme sécurisée Stripe. Les données
+        bancaires ne sont jamais transmises à XiaoLearn.
+      </p>
+      <p>
+        Pour les abonnements, le paiement est automatiquement prélevé à chaque date anniversaire
+        (mensuelle ou annuelle) jusqu'à résiliation.
+      </p>
+
+      <h2>Article 6 - Livraison</h2>
+      <p>
+        Les produits numériques sont délivrés immédiatement après confirmation du paiement :
+      </p>
+      <ul>
+        <li><strong>Abonnements :</strong> Activation immédiate sur le compte XiaoLearn</li>
+        <li><strong>PDF et Anki :</strong> Lien de téléchargement envoyé par email</li>
+      </ul>
+
+      <h2>Article 7 - Droit de rétractation</h2>
+      <p>
+        Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne
+        peut être exercé pour les contenus numériques fournis sur un support immatériel dont
+        l'exécution a commencé avec l'accord préalable du consommateur.
+      </p>
+      <p>
+        <strong>Cependant, XiaoLearn offre une garantie "Satisfait ou remboursé" de 14 jours :</strong>
+        si vous n'êtes pas satisfait de votre achat, contactez-nous dans les 14 jours suivant l'achat
+        pour obtenir un remboursement intégral, sans justification nécessaire.
+      </p>
+
+      <h2>Article 8 - Abonnements et résiliation</h2>
+      <p>
+        Les abonnements sont renouvelés automatiquement à leur échéance. Le client peut résilier
+        son abonnement à tout moment depuis son espace client ou en contactant le support.
+      </p>
+      <p>
+        La résiliation prend effet à la fin de la période de facturation en cours. Aucun
+        remboursement au prorata n'est effectué.
+      </p>
+
+      <h2>Article 9 - Propriété intellectuelle</h2>
+      <p>
+        Les produits achetés sont concédés sous licence personnelle et non transférable.
+        Toute reproduction, revente ou partage non autorisé est strictement interdit.
+      </p>
+
+      <h2>Article 10 - Responsabilité</h2>
+      <p>
+        XiaoLearn ne saurait être tenue responsable des dommages indirects résultant de
+        l'utilisation des produits. La responsabilité de XiaoLearn est limitée au montant
+        de la commande.
+      </p>
+
+      <h2>Article 11 - Protection des données</h2>
+      <p>
+        Les données personnelles collectées sont traitées conformément à notre
+        <a href="/politique-confidentialite">Politique de confidentialité</a>.
+      </p>
+
+      <h2>Article 12 - Litiges</h2>
+      <p>
+        En cas de litige, une solution amiable sera recherchée avant toute action judiciaire.
+        À défaut d'accord, le litige sera porté devant les tribunaux français compétents.
+      </p>
+      <p>
+        Conformément à l'article L612-1 du Code de la consommation, le consommateur peut recourir
+        gratuitement à un médiateur de la consommation.
+      </p>
+
+      <h2>Article 13 - Modification des CGV</h2>
+      <p>
+        XiaoLearn se réserve le droit de modifier les présentes CGV à tout moment. Les CGV
+        applicables sont celles en vigueur au moment de la commande.
+      </p>
+
+      <p class="update-date">
+        <em>Dernière mise à jour : Février 2026</em>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--bg-secondary);
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .page-header h1 {
+    margin: 0;
+  }
+
+  .content {
+    max-width: 800px;
+  }
+
+  .content h2 {
+    font-size: 1.25rem;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-red);
+  }
+
+  .content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+  }
+
+  .content ul {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+  }
+
+  .content li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .content a {
+    color: var(--primary-red);
+    text-decoration: underline;
+  }
+
+  .content a:hover {
+    text-decoration: none;
+  }
+
+  .update-date {
+    margin-top: var(--spacing-2xl);
+    color: var(--text-tertiary);
+  }
+</style>

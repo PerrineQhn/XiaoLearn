@@ -1,0 +1,196 @@
+/*
+ * PronunciationFeedback.css — score global + score par caractère + détail
+ * expandable phonèmes/tons. Aligné palette XiaoLearn.
+ */
+
+.pron-fb {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: inherit;
+}
+
+/* Variante compacte (vue lesson inline) : layout en ligne, taille réduite */
+.pron-fb--compact {
+  gap: 6px;
+}
+.pron-fb--compact .pron-fb-summary {
+  font-size: 12.5px;
+}
+.pron-fb--compact .pron-fb-char-hanzi {
+  font-size: 16px;
+}
+.pron-fb--compact .pron-fb-char-score {
+  font-size: 10.5px;
+  min-width: 22px;
+  height: 16px;
+}
+
+/* ----- Summary : score global + label ----- */
+.pron-fb-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.pron-fb-score {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.pron-fb-score-max {
+  font-size: 10.5px;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.pron-fb-score--gold {
+  background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%);
+  color: #5a3f0c;
+  box-shadow: 0 1px 2px rgba(245, 158, 11, 0.25);
+}
+.pron-fb-score--green {
+  background: #d4f4dc;
+  color: #1f6a4b;
+}
+.pron-fb-score--amber {
+  background: #fef0c7;
+  color: #92500e;
+}
+.pron-fb-score--red {
+  background: var(--primary-red-light, #fae0dc);
+  color: var(--primary-red, #e05040);
+}
+
+.pron-fb-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+/* ----- Score par caractère ----- */
+.pron-fb-chars {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+
+.pron-fb-char {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 28px;
+}
+
+.pron-fb-char-hanzi {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  line-height: 1;
+}
+
+.pron-fb-char-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Marqueur spécifique pour les caractères non prononcés (Omission) */
+.pron-fb-char-score--omission {
+  background: #e5e7eb;
+  color: #6b7280;
+  font-style: normal;
+}
+
+/* ----- Pinyin coloré par syllabe ----- */
+.pron-fb-pinyin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  padding: 2px 0;
+}
+
+.pron-fb-pinyin-syl {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: help;
+  /* Les classes pron-fb-score--* appliquent la couleur de fond + texte */
+}
+
+/* ----- Tips contextuels (hints pédagogiques) ----- */
+.pron-fb-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #fffaf3;
+  border-left: 3px solid var(--primary-red, #e05040);
+  border-radius: 4px 8px 8px 4px;
+  margin-top: 2px;
+}
+
+.pron-fb-tips-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 700;
+}
+
+.pron-fb-tips-list {
+  margin: 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-primary, #1f2937);
+  line-height: 1.45;
+}
+
+.pron-fb-tips-list li {
+  padding: 0;
+}
+.pron-fb-tips-list li::before {
+  content: '→ ';
+  color: var(--primary-red, #e05040);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* Mode compact : pinyin plus petit, tips plus discret */
+.pron-fb--compact .pron-fb-pinyin-syl {
+  font-size: 12.5px;
+  padding: 1px 6px;
+}
+.pron-fb--compact .pron-fb-tips {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+.pron-fb--compact .pron-fb-tips-list {
+  font-size: 12px;
+}

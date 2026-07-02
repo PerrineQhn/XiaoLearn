@@ -1,0 +1,60 @@
+{
+  "name": "chinese-learners",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prebuild": "node scripts/prune-cloudflare-assets.mjs && npm run build:chunks",
+    "build": "tsc && vite build",
+    "build:chunks": "node scripts/split-hors-hsk.mjs",
+    "preview": "vite preview",
+    "build:data": "node scripts/buildDataset.mjs",
+    "sync:hsk": "node scripts/generateHskData.mjs",
+    "generate:audio": "node scripts/generateAudioAI.mjs",
+    "generate:audio:cloud": "node scripts/generateAudioAI.mjs --cloud",
+    "generate:audio:core": "node scripts/generateCoreAudio.mjs",
+    "generate:audio:phrases": "node scripts/generate-phrase-audio.mjs",
+    "generate:audio:phrases:slow": "node scripts/generate-phrase-audio.mjs --slow",
+    "generate:audio:dialogues": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs",
+    "generate:audio:dialogues:slow": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs --slow",
+    "generate:audio:readings": "node --env-file=.env.local scripts/generate-reading-audio.mjs",
+    "generate:audio:readings:slow": "node --env-file=.env.local scripts/generate-reading-audio.mjs --slow",
+    "generate:audio:learn-sections": "node --env-file=.env.local scripts/generate-learn-sections-audio.mjs",
+    "generate:audio:learn-sections:slow": "node --env-file=.env.local scripts/generate-learn-sections-audio.mjs --slow",
+    "generate:audio:slow:all": "npm run generate:audio:phrases:slow && npm run generate:audio:dialogues:slow && npm run generate:audio:readings:slow && npm run generate:audio:learn-sections:slow",
+    "generate:audio:all": "node --env-file=.env.local scripts/generate-all-audio.mjs",
+    "generate:audio:test": "node scripts/test_generate_sample.mjs",
+    "upload:audio": "node --env-file=.env.local scripts/upload-audio-to-r2.mjs",
+    "upload:audio:dry": "node --env-file=.env.local scripts/upload-audio-to-r2.mjs --dry-run",
+    "test:audio": "python3 scripts/test_audio.py",
+    "analyze:audio": "python3 scripts/compare_audio_quality.py",
+    "check:google": "./scripts/check_google_cloud.sh",
+    "export:cplayer-lyrics": "node scripts/export_cplayer_lyrics_json.mjs"
+  },
+  "dependencies": {
+    "firebase": "^12.6.0",
+    "hanzi-writer": "^3.7.2",
+    "opencc-js": "^1.0.5",
+    "pinyin-pro": "^3.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.700.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "firebase-tools": "^15.17.0",
+    "papaparse": "^5.4.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8",
+    "vite-plugin-pwa": "^0.20.5",
+    "vitest": "^2.1.8"
+  },
+  "optionalDependencies": {
+    "@xenova/transformers": "^2.17.2"
+  }
+}

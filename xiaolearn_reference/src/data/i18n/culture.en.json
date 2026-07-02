@@ -1,0 +1,146 @@
+{
+  "calendrier-fetes": {
+    "titleEn": "Lunar Calendar and Festivals",
+    "summaryEn": "Understand the logic of lunar months, lunar phases, and major festive times.",
+    "periodEn": "",
+    "traditionsEn": [],
+    "keyPointsEn": [
+      "Dates vary each year in the Gregorian calendar.",
+      "Some festivals follow the moon, others the solar terms.",
+      "Mastering this framework aids in understanding common cultural vocabulary."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/calendrier-fetes.jpeg\"\n    alt=\"Page of an ancient Chinese calendar.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Visual representation of the traditional Chinese calendar and its seasonal rhythm.</figcaption>\n</figure>\n\n<h2>Why this reference is important</h2>\n<p>The traditional calendar is a major reference for festivals, but also for daily conversations about dates, family trips, and seasonal habits.</p>\n\n<h2>Distinguish two logics</h2>\n<ul>\n  <li><strong>Lunar calendar</strong>: structure of many major festivals (New Year, Lanterns, Mid-Autumn).</li>\n  <li><strong>Solar terms</strong>: seasonal references like Qingming.</li>\n</ul>\n\n<h2>Learning tip</h2>\n<p>When encountering a Chinese festival, always verify: lunar date, approximate Gregorian date, and associated vocabulary. This triple reference avoids confusion.</p>"
+  },
+  "calligraphie": {
+    "titleEn": "Calligraphy and Writing",
+    "summaryEn": "Characters are not just a graphical system: they also carry an artistic tradition.",
+    "periodEn": "",
+    "traditionsEn": [],
+    "keyPointsEn": [
+      "Calligraphy connects gesture, legibility, and aesthetics.",
+      "Several historical styles coexist in cultural usage.",
+      "UNESCO recognized as intangible cultural heritage."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/calligraphie.jpeg\"\n    alt=\"Chinese calligraphy brush.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Gesture and calligraphic tools, at the heart of the Chinese written tradition.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>Chinese calligraphy is not only a beautiful writing. It is also an art of movement, rhythm, and composition. It occupies a historical place in education and visual arts.</p>\n\n<h2>What it means for the learner</h2>\n<ul>\n  <li>Observing strokes helps better memorize the structure of characters.</li>\n  <li>Understanding the order of strokes reinforces manuscript readability.</li>\n  <li>Seeing ancient styles helps recognize certain cultural references.</li>\n</ul>\n\n<h2>Learning tip</h2>\n<p>Memorizing a character by decomposing its graphical structure (components, visual axis, proportion) is often more effective than a purely linear memorization.</p>"
+  },
+  "culture-du-the": {
+    "titleEn": "Tea, Hospitality, and Sociability",
+    "summaryEn": "Tea is both a daily beverage, a practical social gesture, and a cultural identity vector.",
+    "periodEn": "",
+    "traditionsEn": [],
+    "keyPointsEn": [
+      "Tea is involved in daily life, hospitality, and certain ceremonies.",
+      "Tea families are diverse (green, white, oolong, etc.).",
+      "Tea heritage is recognized by UNESCO."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/culture-du-the.jpeg\"\n    alt=\"Tea service during a Chinese ceremony.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Tea preparation and service in a context of conviviality and hospitality.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>In China, tea is both a agricultural product, a daily beverage, and a social gesture. Offering tea is often a sign of politeness and hospitality.</p>\n\n<h2>Practices to know</h2>\n<ul>\n  <li>Tea service during family or professional gatherings.</li>\n  <li>Choosing the type of tea based on the context, season, or local habits.</li>\n  <li>Valuing the production and preparation skills.</li>\n</ul>\n\n<h2>Learning tip</h2>\n<p>Memorize a minimal useful vocabulary in interaction: type of tea, taste, temperature, invitation formula. This micro-lexicon is very useful in real situations.</p>"
+  },
+  "dragon-boat": {
+    "titleEn": "Dragon Boat Festival",
+    "summaryEn": "Celebrated on the 5th day of the 5th lunar month, the Dragon Boat Festival is known for its dragon boat races and zongzi.",
+    "periodEn": "May to June (5th day of the 5th lunar month)",
+    "traditionsEn": [
+      "Dragon boat races",
+      "Zongzi preparation and sharing",
+      "Local rituals related to protection and health"
+    ],
+    "keyPointsEn": [
+      "Associated with historical and regional stories, such as Qu Yuan's.",
+      "Declared to the UNESCO Representative List in 2009.",
+      "Combines collective sports, ritual cuisine, and local identity."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/dragon-boat.jpeg\"\n    alt=\"Dragon boat teams during the Hong Kong Dragon Boat Festival.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Dragon boat teams competing during the Dragon Boat Festival.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>The Dragon Boat Festival (Duānwǔ) is celebrated on the 5th day of the 5th lunar month. It is known for dragon boat races and zongzi consumption, but its practices vary by region.</p>\n\n<h2>Main Practices</h2>\n<ul>\n  <li>Team dragon boat races.</li>\n  <li>Zongzi preparation and sharing (glutinous rice wrapped in leaves).</li>\n  <li>Local rituals of protection and health in some areas.</li>\n</ul>\n\n<h2>Cultural Reading</h2>\n<p>This festival shows how a tradition can be both local, familial, performative, and transnational. Dragon boat races are now practiced beyond China.</p>\n\n<h2>Useful Vocabulary</h2>\n<ul>\n  <li>龙舟 lóngzhōu : dragon boat</li>\n  <li>赛龙舟 sài lóngzhōu : dragon boat race</li>\n  <li>粽子 zòngzi : glutinous rice wrapped in leaves</li>\n</ul>"
+  },
+  "lantern-festival": {
+    "titleEn": "Tangyuan Festival",
+    "summaryEn": "Celebrated as the end of the New Year cycle with lanterns, riddle games, and glutinous rice balls.",
+    "periodEn": "February to March (15th day of the 1st lunar month)",
+    "traditionsEn": [
+      "Public lantern displays and exhibitions",
+      "Riddle games on lanterns (cāidēngmí)",
+      "Consumption of tangyuan or yuanxiao"
+    ],
+    "keyPointsEn": [
+      "Corresponds to the first full moon of the lunar year.",
+      "Marks the end of New Year celebrations.",
+      "Lanterns and public riddles play a central role."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/lantern-festival.jpeg\"\n    alt=\"Red lanterns during the Tangyuan Festival.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Lanterns illuminated during the Tangyuan Festival (Yuanxiao Festival).</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>The Tangyuan Festival is celebrated on the 15th day of the first lunar month. It introduces the first full moon of the year and concludes the cycle of New Year celebrations.</p>\n\n<h2>Main Practices</h2>\n<ul>\n  <li>Public display and observation of lanterns.</li>\n  <li>Public riddle games on lanterns, sometimes within families and sometimes in public places.</li>\n  <li>Consumption of tangyuan or yuanxiao, round foods associated with the idea of unity.</li>\n</ul>\n\n<h2>Regional Nuances</h2>\n<p>The dessert name often varies by region. In the north, yuánxiāo is more commonly used, while in the south, tāngyuán is more commonly used. Preparation techniques are not strictly identical.</p>\n\n<h2>Useful Vocabulary</h2>\n<ul>\n  <li>灯笼 dēnglóng : lantern</li>\n  <li>猜灯谜 cāi dēngmí : riddle game on lantern</li>\n  <li>元宵 yuánxiāo : glutinous rice ball (north)</li>\n  <li>汤圆 tāngyuán : glutinous rice ball (south)</li>\n</ul>"
+  },
+  "mid-autumn": {
+    "titleEn": "Mid-Autumn Festival",
+    "summaryEn": "Family reunion celebration held during the full moon of the 8th lunar month, associated with mooncakes.",
+    "periodEn": "September to October (15th day of the 8th lunar month)",
+    "traditionsEn": [
+      "Family reunion and evening meal",
+      "Moon watching",
+      "Sharing mooncakes"
+    ],
+    "keyPointsEn": [
+      "Occurs on the 15th day of the 8th lunar month.",
+      "Associated with family reunion and moon watching.",
+      "Mooncakes are a very visible cultural and commercial marker."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/mid-autumn.jpeg\"\n    alt=\"Mooncakes served for the Mid-Autumn Festival.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Mooncakes shared at the Mid-Autumn Festival.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>The Mid-Autumn Festival is celebrated during the full moon of the 8th lunar month. In many families, it is associated with returning home, evening conviviality, and sharing mooncakes.</p>\n\n<h2>Common Practices</h2>\n<ul>\n  <li>Familial dinner and reunions.</li>\n  <li>Moon watching (shǎngyuè).</li>\n  <li>Exchange and tasting of mooncakes, often given as gifts.</li>\n</ul>\n\n<h2>Symbolic Dimension</h2>\n<p>The roundness of the moon and mooncakes is related to the idea of reunion (tuányuán). This festival is also a strong moment in media, seasonal commerce, and family communication.</p>\n\n<h2>Useful Vocabulary</h2>\n<ul>\n  <li>中秋节 Zhōngqiū jié : Mid-Autumn Festival</li>\n  <li>月饼 yuèbǐng : mooncake</li>\n  <li>赏月 shǎngyuè : admire the moon</li>\n  <li>团圆 tuányuán : family reunion</li>\n</ul>"
+  },
+  "qingming": {
+    "titleEn": "Tomb Sweeping Day (Qingming)",
+    "summaryEn": "Family memory and tomb cleaning associated with spring outings.",
+    "periodEn": "Around April 4th or 5th (beginning of April)",
+    "traditionsEn": [
+      "Tomb cleaning and offerings",
+      "Family memorial rituals",
+      "Spring outings (tàqīng)"
+    ],
+    "keyPointsEn": [
+      "Linked to the solar term system.",
+      "Combines familial piety and spring season.",
+      "Tomb cleaning practice is central."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/qingming.jpeg\"\n    alt=\"Qingming scene at Tamsui.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Family remembrance and memorial during Qingming.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>Tomb Sweeping Day is located around the beginning of April. It is associated with family memory, ancestors, and tomb cleaning. The term qīngmíng can be understood as \"clear and bright\".</p>\n\n<h2>Common Practices</h2>\n<ul>\n  <li>Clean the family tomb.</li>\n  <li>Offer offerings or flowers according to family customs.</li>\n  <li>Meet as a family around the genealogical memory.</li>\n</ul>\n\n<h2>Spring Dimension</h2>\n<p>Beyond commemoration, the period is also linked to spring outings (tàqīng). This dual dimension, collected and seasonal, is characteristic of Tomb Sweeping Day.</p>\n\n<h2>Useful Vocabulary</h2>\n<ul>\n  <li>扫墓 sǎomù : clean a tomb</li>\n  <li>祭祖 jìzǔ : honor ancestors</li>\n  <li>踏青 tàqīng : spring outing</li>\n</ul>"
+  },
+  "qixi": {
+    "titleEn": "Qixi (Double Seventh)",
+    "summaryEn": "Celebration of the 7th day of the 7th lunar month, associated with the legend of Niúláng and Zhīnǚ.",
+    "periodEn": "August (7th day of the 7th lunar month)",
+    "traditionsEn": [
+      "Myths and imagery around the bridge of magpies",
+      "Symbolic observations of the sky (Vega and Altair)",
+      "Modern romantic gestures and gifts"
+    ],
+    "keyPointsEn": [
+      "Often presented as the Chinese Valentine's Day.",
+      "Linked to the stars Altair and Vega in popular tales.",
+      "Has undergone modern reinterpretations in urban contexts."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/qixi.jpeg\"\n    alt=\"Ancient painting related to the Qīxī festival and its romantic imagery.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Visual reference to the legend of Qīxī and its romantic imagination.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>Qixi is celebrated on the 7th day of the 7th lunar month. The festival is based on the tale of the Weaver (Zhīnǚ) and the Cowherd (Niúláng), who are separated by the Milky Way and reunited once a year.</p>\n\n<h2>Between tradition and modernity</h2>\n<ul>\n  <li>Narrative and symbolic dimensions in classical cultural references.</li>\n  <li>Connection with artisanal practices in historical regional usages.</li>\n  <li>Modern reinterpretation as a romantic day in urban contexts.</li>\n</ul>\n\n<h2>Learning point</h2>\n<p>Qixi is a good example of a charged cultural term: understanding its meaning requires knowledge of the myth, the lunar calendar, and contemporary usages.</p>\n\n<h2>Useful vocabulary</h2>\n<ul>\n  <li>牛郎 Niúláng: the Cowherd</li>\n  <li>织女 Zhīnǚ: the Weaver</li>\n  <li>银河 yínhé: the Milky Way</li>\n  <li>鹊桥 quèqiáo: the bridge of magpies</li>\n</ul>"
+  },
+  "rituels-famille": {
+    "titleEn": "Family Rites and Memory",
+    "summaryEn": "Connection to ancestors, reunion, and respectful gestures structure many festivals.",
+    "periodEn": "",
+    "traditionsEn": [],
+    "keyPointsEn": [
+      "Filial piety is a key to understanding many practices.",
+      "Rituals are expressed both in domestic life and in public space.",
+      "The lexicon of kinship and respect is central for the learner."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/rituels-famille.jpeg\"\n    alt=\"Chinese New Year family reunion meal.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Family reunion meal, central to traditional festivals.</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>In many Chinese festivals, the family is not a backdrop: it is the axis of practice. Reunion, respect for elders, and memory of ancestors organize the gestures and language.</p>\n\n<h2>Concrete manifestations</h2>\n<ul>\n  <li>Intergenerational family reunion meals.</li>\n  <li>Visits and wishes codified by age and status.</li>\n  <li>Memorial rituals in dedicated moments.</li>\n</ul>\n\n<h2>Learning advice</h2>\n<p>Prioritize the vocabulary of the family, greetings, and marks of respect. This lexical field is very frequent in real cultural exchanges.</p>"
+  },
+  "spring-festival": {
+    "titleEn": "Chinese New Year (Spring Festival)",
+    "summaryEn": "Major period of family reunion, wishes, and prosperity rituals that opens the new lunar year.",
+    "periodEn": "End of January to February (1st lunar month)",
+    "traditionsEn": [
+      "Family reunion dinner during the New Year's Eve",
+      "Red decorations, wishes, and hóngbāo",
+      "Visits to close relatives and local rituals"
+    ],
+    "keyPointsEn": [
+      "Begins with the new moon between January 21st and February 20th according to the Gregorian calendar.",
+      "The festive cycle extends until the Lantern Festival.",
+      "Family reunion and wish gestures are central."
+    ],
+    "htmlEn": "<figure class=\"culture-figure\">\n  <img\n    src=\"/images/culture/photos/spring-festival.jpeg\"\n    alt=\"Lion dance during Chinese New Year.\"\n    loading=\"lazy\"\n  />\n  <figcaption>Lion dance, festive symbol of Chinese New Year (Chūnjié).</figcaption>\n</figure>\n\n<h2>Context</h2>\n<p>The Chinese New Year is the most important traditional festival of the lunar calendar. In mainland China, the most frequent official term is <strong>Spring Festival</strong> (Chūnjié). The period combines household preparation, family mobility, and prosperity-related rituals, health, and family cohesion practices.</p>\n\n<h2>Rhythm of the festival</h2>\n<ul>\n  <li>Before the festival: cleaning the house, shopping, red decoration.</li>\n  <li>New Year's Eve: family reunion dinner (niányèfàn).</li>\n  <li>Following days: visits to close relatives, wishes, hóngbāo, local rituals.</li>\n  <li>Closure: Lantern Festival (15th day of the 1st lunar month).</li>\n</ul>\n\n<h2>Cultural codes useful for learners</h2>\n<p>Red and gold are associated with good luck and abundance. The language of wishes is very formulaic: it is often more important to say a context-adapted phrase than the length of the message.</p>\n\n<h2>Useful vocabulary</h2>\n<ul>\n  <li>过年 guònián: pass the New Year</li>\n  <li>红包 hóngbāo: red envelope</li>\n  <li>拜年 bàinián: present wishes</li>\n  <li>年夜饭 niányèfàn: New Year's Eve dinner</li>\n</ul>"
+  }
+}

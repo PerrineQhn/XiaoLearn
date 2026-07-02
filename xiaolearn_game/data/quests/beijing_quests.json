@@ -1,0 +1,240 @@
+{
+  "region": "beijing",
+  "quests": [
+    {
+      "id": "beijing_quest_001",
+      "title_fr": "Premières salutations",
+      "title_cn": "第一次问候",
+      "description_fr": "Apprenez les formules de politesse de base en parlant avec le garde de la Cité Interdite.",
+      "description_cn": "与故宫卫兵交谈，学习基本礼貌用语。",
+      "region": "beijing",
+      "auto_start": true,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "id": "obj_talk_guard",
+          "type": "talk_to_npc",
+          "target_npc": "npc_palace_guard",
+          "description_fr": "Parler avec le Garde Impérial à la Cité Interdite",
+          "description_cn": "与故宫卫兵对话"
+        },
+        {
+          "id": "obj_learn_nihao",
+          "type": "learn_word",
+          "target_word": "hsk1_001",
+          "description_fr": "Apprendre '你好' (Bonjour)",
+          "description_cn": "学会'你好'"
+        },
+        {
+          "id": "obj_learn_zaijian",
+          "type": "learn_word",
+          "target_word": "hsk1_003",
+          "description_fr": "Apprendre '再见' (Au revoir)",
+          "description_cn": "学会'再见'"
+        }
+      ],
+      "rewards": {
+        "vocab_pack": "hsk1_beijing",
+        "unlock_quest": "beijing_quest_002",
+        "message_fr": "Vous avez appris vos premières salutations en mandarin !",
+        "message_cn": "你学会了第一批问候语！"
+      },
+      "npc_dialogue_active": {
+        "npc_palace_guard": "start"
+      },
+      "npc_dialogue_completed": {
+        "npc_palace_guard": "completed"
+      }
+    },
+    {
+      "id": "beijing_quest_002",
+      "title_fr": "Le marché de Wang Fu Jing",
+      "title_cn": "王府井市场",
+      "description_fr": "Visitez le marchand de thé et apprenez à compter en mandarin pour faire vos achats.",
+      "description_cn": "拜访茶商，学习中文数字以便购物。",
+      "region": "beijing",
+      "auto_start": false,
+      "prerequisites": ["beijing_quest_001"],
+      "objectives": [
+        {
+          "id": "obj_talk_merchant",
+          "type": "talk_to_npc",
+          "target_npc": "npc_tea_merchant",
+          "description_fr": "Parler avec le marchand de thé",
+          "description_cn": "与茶商对话"
+        },
+        {
+          "id": "obj_quiz_numbers",
+          "type": "answer_quiz",
+          "quiz_id": "quiz_numbers_001",
+          "description_fr": "Réussir le quiz sur les chiffres",
+          "description_cn": "完成数字测验"
+        },
+        {
+          "id": "obj_learn_numbers",
+          "type": "learn_word",
+          "target_word": "hsk1_021",
+          "description_fr": "Apprendre '十' (dix)",
+          "description_cn": "学会'十'"
+        }
+      ],
+      "rewards": {
+        "unlock_quest": "beijing_quest_003",
+        "message_fr": "Vous savez maintenant compter jusqu'à dix en mandarin !",
+        "message_cn": "你现在会用中文数到十了！"
+      },
+      "npc_dialogue_active": {
+        "npc_tea_merchant": "start"
+      },
+      "npc_dialogue_completed": {
+        "npc_tea_merchant": "completed"
+      }
+    },
+    {
+      "id": "beijing_quest_003",
+      "title_fr": "Rencontre à la Cité Interdite",
+      "title_cn": "故宫相遇",
+      "description_fr": "Faites connaissance avec l'étudiant(e) et apprenez à vous présenter en mandarin.",
+      "description_cn": "认识学生，学习用中文自我介绍。",
+      "region": "beijing",
+      "auto_start": false,
+      "prerequisites": ["beijing_quest_002"],
+      "objectives": [
+        {
+          "id": "obj_talk_student",
+          "type": "talk_to_npc",
+          "target_npc": "npc_student",
+          "description_fr": "Rencontrer l'étudiant(e)",
+          "description_cn": "与学生相遇"
+        },
+        {
+          "id": "obj_quiz_intro",
+          "type": "answer_quiz",
+          "quiz_id": "quiz_intro_001",
+          "description_fr": "Réussir le quiz de présentation",
+          "description_cn": "完成自我介绍测验"
+        },
+        {
+          "id": "obj_learn_wo",
+          "type": "learn_word",
+          "target_word": "hsk1_004",
+          "description_fr": "Apprendre '我' (Je / Moi)",
+          "description_cn": "学会'我'"
+        },
+        {
+          "id": "obj_learn_pengyou",
+          "type": "learn_word",
+          "target_word": "hsk1_040",
+          "description_fr": "Apprendre '朋友' (Ami)",
+          "description_cn": "学会'朋友'"
+        }
+      ],
+      "rewards": {
+        "unlock_quest": "beijing_quest_004",
+        "message_fr": "Vous savez maintenant vous présenter en mandarin !",
+        "message_cn": "你现在会用中文自我介绍了！"
+      },
+      "npc_dialogue_active": {
+        "npc_student": "start"
+      },
+      "npc_dialogue_completed": {
+        "npc_student": "completed"
+      }
+    },
+    {
+      "id": "beijing_quest_004",
+      "title_fr": "Les saveurs de Beijing",
+      "title_cn": "北京的味道",
+      "description_fr": "Découvrez la cuisine locale avec le vendeur de rue et apprenez le vocabulaire de la nourriture.",
+      "description_cn": "与街头小贩了解本地美食，学习食物词汇。",
+      "region": "beijing",
+      "auto_start": false,
+      "prerequisites": ["beijing_quest_003"],
+      "objectives": [
+        {
+          "id": "obj_talk_vendor",
+          "type": "talk_to_npc",
+          "target_npc": "npc_food_vendor",
+          "description_fr": "Parler avec le vendeur de rue",
+          "description_cn": "与街头小贩对话"
+        },
+        {
+          "id": "obj_quiz_food",
+          "type": "answer_quiz",
+          "quiz_id": "quiz_food_numbers",
+          "description_fr": "Réussir le quiz sur les chiffres des aliments",
+          "description_cn": "完成食物数字测验"
+        },
+        {
+          "id": "obj_learn_chi",
+          "type": "learn_word",
+          "target_word": "hsk1_029",
+          "description_fr": "Apprendre '吃' (Manger)",
+          "description_cn": "学会'吃'"
+        }
+      ],
+      "rewards": {
+        "unlock_quest": "beijing_quest_005",
+        "message_fr": "Vous connaissez maintenant les bases du vocabulaire alimentaire !",
+        "message_cn": "你现在掌握了基本的食物词汇！"
+      },
+      "npc_dialogue_active": {
+        "npc_food_vendor": "start"
+      },
+      "npc_dialogue_completed": {
+        "npc_food_vendor": "completed"
+      }
+    },
+    {
+      "id": "beijing_quest_005",
+      "title_fr": "L'ancien et le nouveau",
+      "title_cn": "古与今",
+      "description_fr": "Visitez les sites emblématiques de Beijing et conversez avec le sage pour comprendre l'histoire de la Chine.",
+      "description_cn": "游览北京标志性景点，与智者交谈，了解中国历史。",
+      "region": "beijing",
+      "auto_start": false,
+      "prerequisites": ["beijing_quest_004"],
+      "objectives": [
+        {
+          "id": "obj_visit_gugong",
+          "type": "visit_location",
+          "target_location": "gugong",
+          "description_fr": "Visiter la Cité Interdite (故宫)",
+          "description_cn": "参观故宫"
+        },
+        {
+          "id": "obj_visit_tiananmen",
+          "type": "visit_location",
+          "target_location": "tiananmen",
+          "description_fr": "Visiter la place Tian'anmen (天安门)",
+          "description_cn": "参观天安门广场"
+        },
+        {
+          "id": "obj_talk_elder",
+          "type": "talk_to_npc",
+          "target_npc": "npc_elder",
+          "description_fr": "Discuter avec le Sage de la place Tian'anmen",
+          "description_cn": "与天安门广场的老人交谈"
+        },
+        {
+          "id": "obj_quiz_china",
+          "type": "answer_quiz",
+          "quiz_id": "quiz_china_word",
+          "description_fr": "Réussir le quiz sur le nom de la Chine",
+          "description_cn": "完成关于'中国'的测验"
+        }
+      ],
+      "rewards": {
+        "message_fr": "Félicitations ! Vous avez complété Beijing ! Shanghai vous attend — mais il vous faut d'abord progresser en HSK1.",
+        "message_cn": "恭喜！你完成了北京！上海在等你——但首先你需要提升HSK1水平。",
+        "vocab_mastery_check": "hsk1"
+      },
+      "npc_dialogue_active": {
+        "npc_elder": "start"
+      },
+      "npc_dialogue_completed": {
+        "npc_elder": "completed"
+      }
+    }
+  ]
+}

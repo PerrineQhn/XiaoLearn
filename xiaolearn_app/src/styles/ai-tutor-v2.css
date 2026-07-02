@@ -1,0 +1,929 @@
+/*
+ * ai-tutor-v2.css — scoped sous `.ai-tutor-v2`
+ */
+
+.ai-tutor-v2 {
+  --at2-bg: #fffaf3;
+  --at2-card-bg: #ffffff;
+  --at2-text: #1f2937;
+  --at2-text-muted: #6b7280;
+  --at2-border: #f0e6d4;
+  --at2-primary: #c6302c;
+  --at2-primary-dark: #9c2521;
+  --at2-gold: #d4a537;
+  --at2-gold-soft: #fbe9b8;
+  --at2-radius: 14px;
+  --at2-radius-sm: 10px;
+  /* Hauteur de la topbar globale (xl-app-topbar) — ajuster si elle bouge. */
+  --at2-topbar-h: 64px;
+
+  color: var(--at2-text);
+  background: var(--at2-bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 16px 16px;
+  /* Hauteur fixe = viewport - topbar : la page ne s'étend plus avec les
+     messages, seule la zone .at2-messages scroll en interne. */
+  height: calc(100dvh - var(--at2-topbar-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Mode redimensionné : quand l'utilisateur a manuellement défini la hauteur
+   de la conversation via la poignée, on libère les contraintes viewport pour
+   permettre à la conversation de dépasser 100dvh (la page devient scrollable). */
+.ai-tutor-v2.is-resized {
+  height: auto;
+  min-height: calc(100dvh - var(--at2-topbar-h));
+  overflow: visible;
+}
+.ai-tutor-v2.is-resized .at2-layout {
+  flex: 0 0 auto;
+}
+
+/* Poignée de redimensionnement : barre visible en bas de .at2-conversation.
+   Pas de marges négatives (interaction problématique avec overflow:hidden
+   du parent qui clip la poignée par le bas). On reste inset dans le padding
+   et on assume une bordure visible sur tout le pourtour. */
+.ai-tutor-v2 .at2-resize-handle {
+  height: 28px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ns-resize;
+  color: #7a5a0b;
+  font-size: 18px;
+  line-height: 1;
+  user-select: none;
+  background: var(--at2-gold-soft);
+  border: 1px solid var(--at2-gold);
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.ai-tutor-v2 .at2-resize-handle:hover {
+  background: var(--at2-gold);
+  color: #fff;
+  border-color: var(--at2-gold);
+}
+.ai-tutor-v2 .at2-resize-handle:active {
+  background: var(--at2-primary);
+  color: #fff;
+  border-color: var(--at2-primary);
+}
+.ai-tutor-v2 .at2-resize-handle span {
+  letter-spacing: 4px;
+  transform: translateY(-2px);
+  font-weight: 700;
+}
+
+/* Vrai mobile uniquement (≤ 600px) : pas de poignée (tactile peu précis,
+   écran déjà petit). Sur tablette / desktop avec DevTools ouvert, la
+   poignée reste visible — l'utilisateur peut toujours dézoomer si gêne. */
+@media (max-width: 600px) {
+  .ai-tutor-v2 .at2-resize-handle {
+    display: none;
+  }
+}
+
+/* Header actions : groupe le toggle wide + le badge online à droite */
+.ai-tutor-v2 .at2-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-tutor-v2 .at2-wide-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--at2-card-bg);
+  color: var(--at2-text-muted);
+  border: 1px solid var(--at2-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.ai-tutor-v2 .at2-wide-toggle:hover {
+  background: var(--at2-gold-soft);
+  border-color: var(--at2-gold);
+  color: var(--at2-text);
+}
+.ai-tutor-v2 .at2-wide-toggle[aria-pressed="true"] {
+  background: var(--at2-primary);
+  color: #fff;
+  border-color: var(--at2-primary);
+}
+.ai-tutor-v2 .at2-wide-toggle[aria-pressed="true"]:hover {
+  background: var(--at2-primary-dark);
+  border-color: var(--at2-primary-dark);
+}
+
+/* Sur mobile, le bouton wide n'a aucun sens (sidebar déjà cachée + plein
+   écran par défaut) → on le masque. */
+@media (max-width: 900px) {
+  .ai-tutor-v2 .at2-wide-toggle {
+    display: none;
+  }
+}
+
+/* Buttons */
+.ai-tutor-v2 .at2-btn {
+  border: none;
+  border-radius: var(--at2-radius-sm);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ai-tutor-v2 .at2-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.ai-tutor-v2 .at2-btn--primary {
+  background: var(--at2-primary);
+  color: #fff;
+}
+.ai-tutor-v2 .at2-btn--primary:hover:not(:disabled) {
+  background: var(--at2-primary-dark);
+}
+.ai-tutor-v2 .at2-btn--ghost {
+  background: transparent;
+  color: var(--at2-text);
+  border: 1px solid var(--at2-border);
+}
+.ai-tutor-v2 .at2-btn--ghost:hover {
+  background: var(--at2-border);
+}
+.ai-tutor-v2 .at2-btn--link {
+  background: transparent;
+  color: var(--at2-primary);
+  padding: 6px 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Header — simplifié à la Seonsaengnim : titre + sous-titre à gauche,
+   "En ligne" à droite. Pas d'avatar gradient, pas de sélecteur de mode. */
+.ai-tutor-v2 .at2-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 4px 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--at2-border);
+}
+.ai-tutor-v2 .at2-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-hero-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-hero-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fde9e8 0%, #fbf1cf 100%);
+  border: 1px solid #f4c8c3;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(200, 52, 46, 0.12);
+}
+.ai-tutor-v2 .at2-hero-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ai-tutor-v2 .at2-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-hero h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--at2-text);
+}
+.ai-tutor-v2 .at2-hero p {
+  margin: 0;
+  color: var(--at2-text-muted);
+  font-size: 13px;
+}
+.ai-tutor-v2 .at2-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--at2-text-muted);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.ai-tutor-v2 .at2-status-dot {
+  width: 8px;
+  height: 8px;
+  background: #16a34a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 2-column layout — sidebar conversations + chat. Plus de colonne droite. */
+.ai-tutor-v2 .at2-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-height: 0; /* permet à at2-conversation de shrink correctement */
+}
+@media (max-width: 720px) {
+  .ai-tutor-v2 .at2-layout {
+    grid-template-columns: 1fr;
+  }
+  .ai-tutor-v2 .at2-sidebar--convs {
+    display: none;
+  }
+}
+
+.ai-tutor-v2 .at2-sidebar {
+  background: var(--at2-card-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+}
+.ai-tutor-v2 .at2-sidebar-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--at2-text-muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ai-tutor-v2 .at2-categories {
+  display: grid;
+  gap: 4px;
+}
+.ai-tutor-v2 .at2-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  border-radius: var(--at2-radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  color: var(--at2-text);
+}
+.ai-tutor-v2 .at2-category:hover {
+  background: var(--at2-border);
+}
+.ai-tutor-v2 .at2-category.is-active {
+  background: var(--at2-gold-soft);
+  color: #7a5a0b;
+  font-weight: 700;
+}
+
+.ai-tutor-v2 .at2-prompts {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--at2-border);
+}
+.ai-tutor-v2 .at2-prompt {
+  text-align: left;
+  background: var(--at2-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.ai-tutor-v2 .at2-prompt:hover {
+  border-color: var(--at2-primary);
+}
+
+/* ====================================================================== */
+/* Sidebar conversations (gauche) — style Seonsaengnim                     */
+/* ====================================================================== */
+.ai-tutor-v2 .at2-sidebar--convs {
+  padding: 12px;
+  gap: 10px;
+}
+
+.ai-tutor-v2 .at2-new-conv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+  border: none;
+  border-radius: var(--at2-radius-sm);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.ai-tutor-v2 .at2-new-conv-btn:hover {
+  background: #a82723;
+  transform: translateY(-1px);
+}
+.ai-tutor-v2 .at2-new-conv-plus {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ai-tutor-v2 .at2-convs-empty {
+  text-align: center;
+  padding: 18px 8px;
+  color: var(--at2-text-muted);
+}
+.ai-tutor-v2 .at2-convs-empty-line {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.ai-tutor-v2 .at2-convs-empty-line + .at2-convs-empty-line {
+  margin-top: 6px;
+}
+.ai-tutor-v2 .at2-convs-empty-cta {
+  font-weight: 600;
+  color: var(--at2-text);
+}
+
+.ai-tutor-v2 .at2-convs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+.ai-tutor-v2 .at2-conv-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  border-radius: var(--at2-radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: var(--at2-text);
+  text-align: left;
+  transition: background 0.12s ease;
+}
+.ai-tutor-v2 .at2-conv-item:hover {
+  background: var(--at2-border);
+}
+.ai-tutor-v2 .at2-conv-item.is-active {
+  background: var(--at2-gold-soft, #fbe9b8);
+  color: #7a5a0b;
+  font-weight: 600;
+}
+.ai-tutor-v2 .at2-conv-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.ai-tutor-v2 .at2-conv-delete {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--at2-text-muted);
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.12s ease, background 0.12s ease, color 0.12s ease;
+  cursor: pointer;
+}
+.ai-tutor-v2 .at2-conv-item:hover .at2-conv-delete,
+.ai-tutor-v2 .at2-conv-item:focus-within .at2-conv-delete {
+  opacity: 1;
+}
+.ai-tutor-v2 .at2-conv-delete:hover {
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+}
+
+/* ====================================================================== */
+/* Welcome bubble (empty state, message d'accueil)                         */
+/* ====================================================================== */
+.ai-tutor-v2 .at2-welcome-bubble {
+  background: var(--at2-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--at2-text);
+  white-space: pre-line;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Catégories en pills horizontales (déplacées depuis la sidebar) */
+.ai-tutor-v2 .at2-empty-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.ai-tutor-v2 .at2-category--pill {
+  border: 1px solid var(--at2-border);
+  background: var(--at2-card-bg);
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.ai-tutor-v2 .at2-category--pill:hover {
+  border-color: var(--at2-primary, #c6302c);
+}
+.ai-tutor-v2 .at2-category--pill.is-active {
+  background: var(--at2-primary, #c6302c);
+  color: #fff;
+  border-color: var(--at2-primary, #c6302c);
+}
+.ai-tutor-v2 .at2-empty-prompts {
+  display: grid;
+  gap: 6px;
+}
+/* Override at2-empty constraints — laisse plus de place */
+.ai-tutor-v2 .at2-empty {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 560px;
+  color: var(--at2-text-muted);
+  padding-top: 12px;
+}
+
+/* Conversation — occupe toute la hauteur de la colonne grid du layout.
+   Le composer reste collé en bas, et .at2-messages OU .at2-empty scrollent
+   en interne (flex:1 + overflow-y:auto sur eux). overflow:hidden ici clip
+   les coins arrondis proprement, et tous les enfants doivent fit dedans. */
+.ai-tutor-v2 .at2-conversation {
+  background: var(--at2-card-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+.ai-tutor-v2 .at2-empty {
+  /* flex:1 + min-height:0 → l'empty state shrink pour laisser de la place
+     au composer ET à la poignée resize en bas. Si son contenu dépasse, on
+     scrolle INTERNEMENT plutôt que de pousser la poignée hors viewport. */
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 0;
+  text-align: center;
+  color: var(--at2-text-muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+.ai-tutor-v2 .at2-empty h3 {
+  margin: 0 0 6px;
+  color: var(--at2-text);
+}
+
+.ai-tutor-v2 .at2-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+}
+
+.ai-tutor-v2 .at2-message {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.ai-tutor-v2 .at2-message--user {
+  flex-direction: row-reverse;
+}
+.ai-tutor-v2 .at2-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--at2-gold-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.ai-tutor-v2 .at2-avatar--user {
+  background: var(--at2-border);
+}
+
+/* Variante image : le <img> remplace l'emoji. object-fit:cover évite la
+   distorsion pour les photos non-carrées (souvent le cas des photos Google
+   qui sont rectangulaires). overflow:hidden + le border-radius:50% du
+   parent donnent l'effet rond clean. */
+.ai-tutor-v2 .at2-avatar--image {
+  overflow: hidden;
+  padding: 0;
+}
+.ai-tutor-v2 .at2-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero avatar (en-tête de la page, 56x56) : même logique mais avec le
+   border-radius spécifique du hero (14px) et sans cover trop agressif —
+   Prof. Xiao est dessiné, pas une photo, donc on veut le voir en entier. */
+.ai-tutor-v2 .at2-hero-avatar--image {
+  overflow: hidden;
+  padding: 0;
+}
+.ai-tutor-v2 .at2-hero-avatar--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ai-tutor-v2 .at2-message-body {
+  max-width: 70%;
+  background: var(--at2-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.ai-tutor-v2 .at2-message--user .at2-message-body {
+  background: #fdecec;
+  border-color: #f5c7c5;
+}
+.ai-tutor-v2 .at2-message-author {
+  font-size: 11px;
+  color: var(--at2-text-muted);
+  margin-bottom: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.ai-tutor-v2 .at2-message-text {
+  white-space: pre-wrap;
+}
+
+/* Typing */
+.ai-tutor-v2 .at2-typing {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.ai-tutor-v2 .at2-typing-body {
+  background: var(--at2-bg);
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ai-tutor-v2 .at2-typing-author {
+  font-size: 11px;
+  color: var(--at2-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.ai-tutor-v2 .at2-typing-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+.ai-tutor-v2 .at2-typing-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--at2-primary);
+  animation: at2-bounce 1s infinite ease-in-out;
+}
+.ai-tutor-v2 .at2-typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.ai-tutor-v2 .at2-typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes at2-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}
+.ai-tutor-v2 .at2-typing-label {
+  font-size: 12px;
+  color: var(--at2-text-muted);
+  font-style: italic;
+}
+
+/* Composer — taille fixe en bas de la conversation, ne scroll pas */
+.ai-tutor-v2 .at2-composer {
+  border-top: 1px solid var(--at2-border);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.ai-tutor-v2 .at2-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 60px;
+  border: 1px solid var(--at2-border);
+  border-radius: var(--at2-radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--at2-bg);
+}
+.ai-tutor-v2 .at2-textarea:focus {
+  outline: 2px solid var(--at2-primary);
+  outline-offset: -1px;
+}
+.ai-tutor-v2 .at2-composer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .ai-tutor-v2 .at2-layout {
+    grid-template-columns: 1fr;
+  }
+  .ai-tutor-v2 .at2-sidebar--convs {
+    display: none;
+  }
+}
+
+/* ====================================================================== */
+/* Vocabulary popup (clic sur un mot chinois)                              */
+/* ====================================================================== */
+/* Hanzi cliquables — soulignage pointillé pour signaler « + d'infos au clic ».
+   On utilise text-decoration plutôt que border-bottom pour que le
+   pointillé suive le retour à la ligne sans rompre l'inline-flow. */
+.ai-tutor-v2 .at2-vocab-token {
+  cursor: help;
+  border-radius: 4px;
+  padding: 0 1px;
+  text-decoration: underline dotted #c6302c;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: background 0.12s ease, text-decoration-color 0.12s ease;
+}
+.ai-tutor-v2 .at2-vocab-token:hover,
+.ai-tutor-v2 .at2-vocab-token:focus {
+  background: var(--at2-gold-soft, #fbe9b8);
+  text-decoration-color: #9c2521;
+  outline: none;
+}
+
+.at2-vocab-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 1000;
+}
+.at2-vocab-popup {
+  position: fixed;
+  z-index: 1001;
+  min-width: 220px;
+  max-width: 280px;
+  background: #fff;
+  border: 1px solid #e5d7c0;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  padding: 14px 14px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1f2937;
+  animation: at2-vocab-pop 0.14s ease-out;
+}
+@keyframes at2-vocab-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.at2-vocab-popup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.at2-vocab-popup-audio {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #c6302c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+.at2-vocab-popup-audio:hover {
+  background: #9c2521;
+}
+.at2-vocab-popup-hanzi {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1f2937;
+  margin: 0;
+}
+.at2-vocab-popup-pinyin {
+  font-size: 13px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 2px 0 0;
+}
+.at2-vocab-popup-translation {
+  font-size: 14px;
+  color: #1f2937;
+  margin: 8px 0 12px;
+  font-weight: 500;
+  font-style: italic;
+}
+.at2-vocab-popup-breakdown {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0 0 10px;
+  border-top: 1px dashed #e5d7c0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.at2-vocab-popup-breakdown-row {
+  display: grid;
+  grid-template-columns: 22px auto 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+.at2-vocab-popup-breakdown-char {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.at2-vocab-popup-breakdown-pinyin {
+  font-size: 12px;
+  font-style: italic;
+  color: #6b7280;
+}
+.at2-vocab-popup-breakdown-sense {
+  font-size: 12.5px;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.at2-vocab-popup-enriching {
+  font-size: 10.5px;
+  font-style: italic;
+  color: #9aa0a6;
+  margin: -4px 0 8px;
+  text-align: right;
+}
+.at2-vocab-popup-example {
+  background: #faf6ed;
+  border: 1px solid #f0e6d4;
+  border-radius: 10px;
+  padding: 8px 10px 9px;
+  margin: 0 0 12px;
+}
+.at2-vocab-popup-example-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b08800;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.at2-vocab-popup-example-hanzi {
+  margin: 0;
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.at2-vocab-popup-example-pinyin {
+  margin: 1px 0 0;
+  font-size: 11.5px;
+  font-style: italic;
+  color: #6b7280;
+}
+.at2-vocab-popup-example-translation {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #1f2937;
+  font-style: italic;
+}
+.at2-vocab-popup-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.at2-vocab-popup-action--add {
+  background: #fbe9b8;
+  color: #7a5a0b;
+  border-color: #f1d77a;
+}
+.at2-vocab-popup-action--add:hover {
+  background: #f7dc8c;
+}
+.at2-vocab-popup-action--already {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+  cursor: default;
+}
+.at2-vocab-popup-action--full {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+.at2-vocab-popup-action--locked {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+  font-style: italic;
+}
+.at2-vocab-popup-empty {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}

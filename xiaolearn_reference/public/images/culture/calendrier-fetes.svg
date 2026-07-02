@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Calendrier lunaire</title>
+  <desc id="desc">Illustration d un calendrier avec phases de lune.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f2f8ff"/>
+      <stop offset="100%" stop-color="#e5f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="140" y="170" width="1320" height="560" rx="34" fill="#ffffff" stroke="#cfe0f5" stroke-width="8"/>
+  <circle cx="290" cy="280" r="42" fill="#1f2233"/>
+  <circle cx="440" cy="280" r="42" fill="#8a8c9f"/>
+  <circle cx="590" cy="280" r="42" fill="#f0b762"/>
+  <text x="180" y="520" fill="#1f2233" font-size="120" font-family="Plus Jakarta Sans, sans-serif">Calendrier lunaire</text>
+  <text x="180" y="610" fill="#2f9d8a" font-size="56" font-family="Plus Jakarta Sans, sans-serif">Repères annuels des fêtes traditionnelles</text>
+</svg>

@@ -1,0 +1,625 @@
+{
+  "region": "xian",
+  "npcs": [
+    {
+      "npc_id": "npc_xian_guide",
+      "npc_name_cn": "导游",
+      "npc_name_fr": "Guide",
+      "portrait": "res://assets/portraits/guide.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来西安！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái Xī'ān!",
+              "fr": "Bonjour ! Bienvenue à Xi'an !",
+              "audio": "",
+              "teaches": ["hsk3_001", "hsk3_002"]
+            },
+            {
+              "cn": "这是一个古代的城市，有很多历史。",
+              "pinyin": "Zhè shì yīgè gǔdài de chéngshì, yǒu hěn duō lìshǐ.",
+              "fr": "C'est une ancienne ville avec beaucoup d'histoire.",
+              "audio": "",
+              "teaches": ["hsk3_003", "hsk3_004"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'y a-t-il de spécial ici ?",
+              "text_cn": "这里有什么特别的？",
+              "next": "special"
+            },
+            {
+              "text_fr": "J'aimerais en savoir plus.",
+              "text_cn": "我想了解更多。",
+              "next": "learn_more"
+            }
+          ]
+        },
+        "special": {
+          "lines": [
+            {
+              "cn": "除了兵马俑，还有城墙和大雁塔。",
+              "pinyin": "Chúle bīngmǎ yǒng, háiyǒu chéngqiáng hé Dàyàn Tǎ.",
+              "fr": "Outre l'Armée de terre cuite, il y a les murs et la Pagode de la Grande Oie.",
+              "audio": "",
+              "teaches": ["hsk3_005", "hsk3_006", "hsk3_007"]
+            }
+          ],
+          "next": "end"
+        },
+        "learn_more": {
+          "lines": [
+            {
+              "cn": "西安曾经是中国的首都。",
+              "pinyin": "Xī'ān céngjīng shì Zhōngguó de shǒudū.",
+              "fr": "Xi'an a autrefois été la capitale de la Chine.",
+              "audio": "",
+              "teaches": ["hsk3_008", "hsk3_009"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_warrior_guide",
+      "npc_name_cn": "武士导游",
+      "npc_name_fr": "Guide guerrier",
+      "portrait": "res://assets/portraits/warrior.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来兵马俑！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái bīngmǎ yǒng!",
+              "fr": "Bonjour ! Bienvenue à l'Armée de terre cuite !",
+              "audio": "",
+              "teaches": ["hsk3_010", "hsk3_011"]
+            },
+            {
+              "cn": "这些兵马俑是两千多年前的。",
+              "pinyin": "Zhèxiē bīngmǎ yǒng shì liǎng qiān duō nián qián de.",
+              "fr": "Ces guerriers en terre cuite datent de plus de 2000 ans.",
+              "audio": "",
+              "teaches": ["hsk3_012", "hsk3_013"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est incroyable !",
+              "text_cn": "太不可思议了！",
+              "next": "amazing"
+            },
+            {
+              "text_fr": "Comment ont-elles été fabriquées ?",
+              "text_cn": "这些是怎样做的？",
+              "next": "made"
+            }
+          ]
+        },
+        "amazing": {
+          "lines": [
+            {
+              "cn": "比其他任何东西都古老。",
+              "pinyin": "Bǐ qítā rènhé dōngxi dōu gǔlǎo.",
+              "fr": "C'est plus ancien que n'importe quoi d'autre.",
+              "audio": "",
+              "teaches": ["hsk3_014", "hsk3_015"]
+            }
+          ],
+          "next": "end"
+        },
+        "made": {
+          "lines": [
+            {
+              "cn": "古代的工人用泥做的。每个都不一样。",
+              "pinyin": "Gǔdài de gōngrén yòng ní zuò de. Měi ge dōu búyīyàng.",
+              "fr": "Les anciens ouvriers les ont faits avec de l'argile. Chacun est différent.",
+              "audio": "",
+              "teaches": ["hsk3_016", "hsk3_017", "hsk3_018"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_muslim_vendor",
+      "npc_name_cn": "穆斯林商人",
+      "npc_name_fr": "Vendeur musulman",
+      "portrait": "res://assets/portraits/merchant.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来街道！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái jiēdào!",
+              "fr": "Bonjour ! Bienvenue sur la rue !",
+              "audio": "",
+              "teaches": ["hsk3_019", "hsk3_020"]
+            },
+            {
+              "cn": "我卖最好的食物。要不要尝尝？",
+              "pinyin": "Wǒ mài zuì hǎo de shíwù. Yàobuàoyao chángtang?",
+              "fr": "Je vends les meilleurs aliments. Vous voulez goûter ?",
+              "audio": "",
+              "teaches": ["hsk3_021", "hsk3_022"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est quoi votre spécialité ?",
+              "text_cn": "你的特色是什么？",
+              "next": "specialty"
+            },
+            {
+              "text_fr": "Qu'est-ce que vous recommandez ?",
+              "text_cn": "你推荐什么？",
+              "next": "recommend"
+            }
+          ]
+        },
+        "specialty": {
+          "lines": [
+            {
+              "cn": "我的特色是羊肉汤和肉夹馍。",
+              "pinyin": "Wǒ de tèsè shì yángròu tāng hé ròu jiā mó.",
+              "fr": "Ma spécialité est la soupe d'agneau et le sandwich à la viande.",
+              "audio": "",
+              "teaches": ["hsk3_023", "hsk3_024", "hsk3_025"]
+            }
+          ],
+          "next": "end"
+        },
+        "recommend": {
+          "lines": [
+            {
+              "cn": "我推荐肉夹馍。虽然便宜，但是很好吃。",
+              "pinyin": "Wǒ tuījiàn ròu jiā mó. Suīrán piányi, búguò hěn hǎochī.",
+              "fr": "Je recommande le sandwich à la viande. C'est bon marché mais délicieux.",
+              "audio": "",
+              "teaches": ["hsk3_026", "hsk3_027", "hsk3_028"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_wall_guard",
+      "npc_name_cn": "城墙守卫",
+      "npc_name_fr": "Gardien du mur",
+      "portrait": "res://assets/portraits/guard.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！你要上城墙吗？",
+              "pinyin": "Nǐ hǎo! Nǐ yào shàng chéngqiáng ma?",
+              "fr": "Bonjour ! Vous voulez monter sur le mur ?",
+              "audio": "",
+              "teaches": ["hsk3_029", "hsk3_030"]
+            },
+            {
+              "cn": "这个城墙很古老。它可以保护城市。",
+              "pinyin": "Zhège chéngqiáng hěn gǔlǎo. Tā kěyǐ bǎohù chéngshì.",
+              "fr": "Ce mur est très ancien. Il peut protéger la ville.",
+              "audio": "",
+              "teaches": ["hsk3_031", "hsk3_032"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est magnifique !",
+              "text_cn": "很棒！",
+              "next": "great"
+            },
+            {
+              "text_fr": "Depuis quand existe-t-il ?",
+              "text_cn": "它从什么时候开始的？",
+              "next": "when"
+            }
+          ]
+        },
+        "great": {
+          "lines": [
+            {
+              "cn": "对！从这上面可以看整个城市。",
+              "pinyin": "Duì! Cóng zhè shàngmiàn kěyǐ kàn zhěnggè chéngshì.",
+              "fr": "Oui ! De là on peut voir toute la ville.",
+              "audio": "",
+              "teaches": ["hsk3_033", "hsk3_034"]
+            }
+          ],
+          "next": "end"
+        },
+        "when": {
+          "lines": [
+            {
+              "cn": "城墙是一千多年前建的。",
+              "pinyin": "Chéngqiáng shì yī qiān duō nián qián jiàn de.",
+              "fr": "Le mur a été construit il y a plus de mille ans.",
+              "audio": "",
+              "teaches": ["hsk3_035", "hsk3_036"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_historian",
+      "npc_name_cn": "历史学家",
+      "npc_name_fr": "Historien",
+      "portrait": "res://assets/portraits/scholar.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是历史学家。我研究西安的历史。",
+              "pinyin": "Nǐ hǎo! Wǒ shì lìshǐ xuéjiā. Wǒ yánjiū Xī'ān de lìshǐ.",
+              "fr": "Bonjour ! Je suis historien. J'étudie l'histoire de Xi'an.",
+              "audio": "",
+              "teaches": ["hsk3_037", "hsk3_038"]
+            },
+            {
+              "cn": "西安有很长很长的历史。",
+              "pinyin": "Xī'ān yǒu hěn cháng hěn cháng de lìshǐ.",
+              "fr": "Xi'an a une très longue histoire.",
+              "audio": "",
+              "teaches": ["hsk3_039", "hsk3_040"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est fascinant !",
+              "text_cn": "很有意思！",
+              "next": "interesting"
+            },
+            {
+              "text_fr": "Vous pouvez me raconter une histoire ?",
+              "text_cn": "你能给我讲一个故事吗？",
+              "next": "story"
+            }
+          ]
+        },
+        "interesting": {
+          "lines": [
+            {
+              "cn": "对！西安的历史比其他地方更古老。",
+              "pinyin": "Duì! Xī'ān de lìshǐ bǐ qítā dìfang gèng gǔlǎo.",
+              "fr": "Oui ! L'histoire de Xi'an est plus ancienne qu'ailleurs.",
+              "audio": "",
+              "teaches": ["hsk3_041", "hsk3_042"]
+            }
+          ],
+          "next": "end"
+        },
+        "story": {
+          "lines": [
+            {
+              "cn": "好的。很久很久以前，西安是丝绸之路的起点。",
+              "pinyin": "Hǎo de. Hěn jiǔ hěn jiǔ yǐqián, Xī'ān shì sīchóu zhī lù de qǐdiǎn.",
+              "fr": "D'accord. Il y a très longtemps, Xi'an était le point de départ de la Route de la Soie.",
+              "audio": "",
+              "teaches": ["hsk3_043", "hsk3_044", "hsk3_045"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_noodle_cook",
+      "npc_name_cn": "面条厨师",
+      "npc_name_fr": "Cuisinier de nouilles",
+      "portrait": "res://assets/portraits/cook.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的面馆！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de miàn guǎn!",
+              "fr": "Bonjour ! Bienvenue dans mon restaurant de nouilles !",
+              "audio": "",
+              "teaches": ["hsk3_046", "hsk3_047"]
+            },
+            {
+              "cn": "我做的面条是西安最有名的。",
+              "pinyin": "Wǒ zuò de miàntiáo shì Xī'ān zuì yǒumíng de.",
+              "fr": "Mes nouilles sont les plus célèbres de Xi'an.",
+              "audio": "",
+              "teaches": ["hsk3_048", "hsk3_049"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Quel type de nouilles avez-vous ?",
+              "text_cn": "你有什么种类的面条？",
+              "next": "types"
+            },
+            {
+              "text_fr": "Je veux manger tout de suite.",
+              "text_cn": "我现在想吃。",
+              "next": "eat_now"
+            }
+          ]
+        },
+        "types": {
+          "lines": [
+            {
+              "cn": "我有油泼面、辣汤面、和菠菜面。",
+              "pinyin": "Wǒ yǒu yóupō miàn, làtāng miàn, hé bōcài miàn.",
+              "fr": "J'ai des nouilles à l'huile épicée, des nouilles en soupe épicée, et des nouilles aux épinards.",
+              "audio": "",
+              "teaches": ["hsk3_050", "hsk3_051", "hsk3_052"]
+            }
+          ],
+          "next": "end"
+        },
+        "eat_now": {
+          "lines": [
+            {
+              "cn": "太好了！你要哪一种？",
+              "pinyin": "Tài hǎo le! Nǐ yào nǎ yī zhǒng?",
+              "fr": "Excellent ! Lequel vous voulez ?",
+              "audio": "",
+              "teaches": ["hsk3_053", "hsk3_054"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_scholar",
+      "npc_name_cn": "学者",
+      "npc_name_fr": "Érudit",
+      "portrait": "res://assets/portraits/scholar.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是书院的学者。",
+              "pinyin": "Nǐ hǎo! Wǒ shì shūyuàn de xuézhě.",
+              "fr": "Bonjour ! Je suis un érudit de l'académie.",
+              "audio": "",
+              "teaches": ["hsk3_055", "hsk3_056"]
+            },
+            {
+              "cn": "我教学生们中国古代的哲学。",
+              "pinyin": "Wǒ jiāo xuésheng men Zhōngguó gǔdài de zhéxué.",
+              "fr": "J'enseigne la philosophie chinoise ancienne aux étudiants.",
+              "audio": "",
+              "teaches": ["hsk3_057", "hsk3_058"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Qu'enseignez-vous ?",
+              "text_cn": "你教什么？",
+              "next": "teaching"
+            },
+            {
+              "text_fr": "C'est intéressant ?",
+              "text_cn": "这很有意思吗？",
+              "next": "interesting"
+            }
+          ]
+        },
+        "teaching": {
+          "lines": [
+            {
+              "cn": "我教儒家和道家的思想。",
+              "pinyin": "Wǒ jiāo rújiā hé dàojiā de sīxiǎng.",
+              "fr": "J'enseigne la pensée confucéenne et taoïste.",
+              "audio": "",
+              "teaches": ["hsk3_059", "hsk3_060"]
+            }
+          ],
+          "next": "end"
+        },
+        "interesting": {
+          "lines": [
+            {
+              "cn": "非常有意思！这可以改变我们对世界的看法。",
+              "pinyin": "Fēicháng yǒuqù! Zhè kěyǐ gǎibiàn wǒmen duì shìjiè de kànfǎ.",
+              "fr": "Très intéressant ! Cela peut changer notre façon de voir le monde.",
+              "audio": "",
+              "teaches": ["hsk3_061", "hsk3_062", "hsk3_063"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_soldier",
+      "npc_name_cn": "士兵",
+      "npc_name_fr": "Soldat",
+      "portrait": "res://assets/portraits/soldier.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是一个士兵。",
+              "pinyin": "Nǐ hǎo! Wǒ shì yīgè shìbīng.",
+              "fr": "Bonjour ! Je suis soldat.",
+              "audio": "",
+              "teaches": ["hsk3_064", "hsk3_065"]
+            },
+            {
+              "cn": "我保护城市和城墙。这是很重要的工作。",
+              "pinyin": "Wǒ bǎohù chéngshì hé chéngqiáng. Zhè shì hěn zhòngyào de gōngzuò.",
+              "fr": "Je protège la ville et le mur. C'est un travail très important.",
+              "audio": "",
+              "teaches": ["hsk3_066", "hsk3_067"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "C'est difficile ?",
+              "text_cn": "这很困难吗？",
+              "next": "difficult"
+            },
+            {
+              "text_fr": "Vous aimez votre travail ?",
+              "text_cn": "你喜欢你的工作吗？",
+              "next": "like_work"
+            }
+          ]
+        },
+        "difficult": {
+          "lines": [
+            {
+              "cn": "有时候很困难，但是很值得。",
+              "pinyin": "Yǒu shíhou hěn kùnnan, búguò hěn zhíde.",
+              "fr": "C'est parfois difficile, mais cela en vaut la peine.",
+              "audio": "",
+              "teaches": ["hsk3_068", "hsk3_069"]
+            }
+          ],
+          "next": "end"
+        },
+        "like_work": {
+          "lines": [
+            {
+              "cn": "非常喜欢。我为城市和人民骄傲。",
+              "pinyin": "Fēicháng xǐhuān. Wǒ wèi chéngshì hé rénmín jiāo'ào.",
+              "fr": "Beaucoup ! Je suis fier de servir la ville et le peuple.",
+              "audio": "",
+              "teaches": ["hsk3_070", "hsk3_071"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_artisan",
+      "npc_name_cn": "工匠",
+      "npc_name_fr": "Artisan",
+      "portrait": "res://assets/portraits/artisan.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！欢迎来我的工作坊！",
+              "pinyin": "Nǐ hǎo! Huānyíng lái wǒ de gōngzuòfāng!",
+              "fr": "Bonjour ! Bienvenue dans mon atelier !",
+              "audio": "",
+              "teaches": ["hsk3_072", "hsk3_073"]
+            },
+            {
+              "cn": "我做陶瓷和木雕。都很特别。",
+              "pinyin": "Wǒ zuò táocí hé mù diāo. Dōu hěn tèbié.",
+              "fr": "Je fais de la céramique et des sculptures sur bois. C'est très spécial.",
+              "audio": "",
+              "teaches": ["hsk3_074", "hsk3_075"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Comment apprenez-vous ?",
+              "text_cn": "你怎样学的？",
+              "next": "learning"
+            },
+            {
+              "text_fr": "Vous pouvez vendre vos œuvres ?",
+              "text_cn": "你能卖你的作品吗？",
+              "next": "sell"
+            }
+          ]
+        },
+        "learning": {
+          "lines": [
+            {
+              "cn": "我从我的爸爸学的。他也是工匠。",
+              "pinyin": "Wǒ cóng wǒ de bàba xué de. Tā yě shì gōngjiàng.",
+              "fr": "J'ai appris de mon père. Il est aussi artisan.",
+              "audio": "",
+              "teaches": ["hsk3_076", "hsk3_077", "hsk3_078"]
+            }
+          ],
+          "next": "end"
+        },
+        "sell": {
+          "lines": [
+            {
+              "cn": "可以的。很多人喜欢我的作品。",
+              "pinyin": "Kěyǐ de. Hěn duō rén xǐhuān wǒ de zuòpǐn.",
+              "fr": "Oui. Beaucoup de gens aiment mes œuvres.",
+              "audio": "",
+              "teaches": ["hsk3_079", "hsk3_080"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    },
+    {
+      "npc_id": "npc_storyteller",
+      "npc_name_cn": "讲故事的人",
+      "npc_name_fr": "Conteur",
+      "portrait": "res://assets/portraits/storyteller.png",
+      "dialogue_tree": {
+        "start": {
+          "lines": [
+            {
+              "cn": "你好！我是讲故事的人。",
+              "pinyin": "Nǐ hǎo! Wǒ shì jiǎng gùshì de rén.",
+              "fr": "Bonjour ! Je suis conteur.",
+              "audio": "",
+              "teaches": ["hsk3_081", "hsk3_082"]
+            },
+            {
+              "cn": "我知道很多古代的故事。想听吗？",
+              "pinyin": "Wǒ zhīdào hěn duō gǔdài de gùshì. Xiǎng tīng ma?",
+              "fr": "Je connais beaucoup d'histoires anciennes. Vous voulez écouter ?",
+              "audio": "",
+              "teaches": ["hsk3_083", "hsk3_084"]
+            }
+          ],
+          "choices": [
+            {
+              "text_fr": "Oui, s'il vous plaît !",
+              "text_cn": "好的，请讲！",
+              "next": "story_time"
+            },
+            {
+              "text_fr": "Qu'est-ce que vous racontez ?",
+              "text_cn": "你讲什么故事？",
+              "next": "what_stories"
+            }
+          ]
+        },
+        "story_time": {
+          "lines": [
+            {
+              "cn": "好的。有一个皇帝，他很想去月球...",
+              "pinyin": "Hǎo de. Yǒu yīgè huángdì, tā hěn xiǎng qù yuèqiú...",
+              "fr": "D'accord. Il y avait un empereur qui voulait aller sur la lune...",
+              "audio": "",
+              "teaches": ["hsk3_085", "hsk3_086"]
+            }
+          ],
+          "next": "end"
+        },
+        "what_stories": {
+          "lines": [
+            {
+              "cn": "我讲关于皇帝、武士和仙人的故事。",
+              "pinyin": "Wǒ jiǎng guānyú huángdì, wǔshì hé xiānrén de gùshì.",
+              "fr": "Je raconte des histoires d'empereurs, de guerriers et d'immortels.",
+              "audio": "",
+              "teaches": ["hsk3_087", "hsk3_088"]
+            }
+          ],
+          "next": "end"
+        }
+      }
+    }
+  ]
+}

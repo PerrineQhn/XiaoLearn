@@ -1,0 +1,400 @@
+/*
+ * dialogue-reading-v2.css — styles partagés pour DialoguePageV2 + ReadingPageV2
+ * ------------------------------------------------------------------------------
+ * Scoped sous `.dialogue-v2` et `.reading-v2` pour éviter toute collision avec
+ * le reste de l'app. Palette cohérente avec les autres pages V2 (ivoire, rouge
+ * impérial, or).
+ */
+
+.dialogue-v2,
+.reading-v2 {
+  --dr-bg: #fffaf3;
+  --dr-card-bg: #ffffff;
+  --dr-text: #1f2937;
+  --dr-text-muted: #6b7280;
+  --dr-border: #f0e6d4;
+  --dr-primary: #c6302c;
+  --dr-primary-dark: #9c2521;
+  --dr-gold: #d4a537;
+  --dr-gold-soft: #fbe9b8;
+  --dr-success: #16a34a;
+  --dr-success-soft: #dcfce7;
+  --dr-radius: 14px;
+  --dr-radius-sm: 10px;
+  color: var(--dr-text);
+  background: var(--dr-bg);
+  min-height: 100%;
+  padding: 24px 16px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* --- Boutons ------------------------------------------------------------ */
+.dialogue-v2 .dr-btn,
+.reading-v2 .dr-btn {
+  border: none;
+  border-radius: var(--dr-radius-sm);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dialogue-v2 .dr-btn--primary,
+.reading-v2 .dr-btn--primary {
+  background: var(--dr-primary);
+  color: #fff;
+}
+.dialogue-v2 .dr-btn--primary:hover,
+.reading-v2 .dr-btn--primary:hover {
+  background: var(--dr-primary-dark);
+}
+.dialogue-v2 .dr-btn--ghost,
+.reading-v2 .dr-btn--ghost {
+  background: transparent;
+  color: var(--dr-text);
+  border: 1px solid var(--dr-border);
+}
+.dialogue-v2 .dr-btn--ghost:hover,
+.reading-v2 .dr-btn--ghost:hover {
+  background: var(--dr-border);
+}
+.dialogue-v2 .dr-btn--link,
+.reading-v2 .dr-btn--link {
+  background: transparent;
+  color: var(--dr-primary);
+  padding: 6px 10px;
+  font-weight: 500;
+}
+
+/* --- Header ------------------------------------------------------------- */
+.dialogue-v2 .dr-header,
+.reading-v2 .dr-header {
+  margin-bottom: 18px;
+}
+.dialogue-v2 .dr-header h1,
+.reading-v2 .dr-header h1 {
+  margin: 6px 0 4px;
+  font-size: 26px;
+}
+.dialogue-v2 .dr-header p,
+.reading-v2 .dr-header p {
+  margin: 0;
+  color: var(--dr-text-muted);
+  font-size: 14px;
+}
+
+/* --- Filtres niveau ---------------------------------------------------- */
+.dialogue-v2 .dr-filters,
+.reading-v2 .dr-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: var(--dr-card-bg);
+  border: 1px solid var(--dr-border);
+  border-radius: var(--dr-radius-sm);
+  padding: 6px;
+  margin-bottom: 16px;
+}
+.dialogue-v2 .dr-filter,
+.reading-v2 .dr-filter {
+  border: none;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dr-text-muted);
+}
+.dialogue-v2 .dr-filter--active,
+.reading-v2 .dr-filter--active {
+  background: var(--dr-primary);
+  color: #fff;
+}
+
+/* --- Toggle affichage -------------------------------------------------- */
+.dialogue-v2 .dr-toggles,
+.reading-v2 .dr-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+.dialogue-v2 .dr-toggle,
+.reading-v2 .dr-toggle {
+  background: var(--dr-card-bg);
+  border: 1px solid var(--dr-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--dr-text-muted);
+}
+.dialogue-v2 .dr-toggle.is-on,
+.reading-v2 .dr-toggle.is-on {
+  background: var(--dr-gold-soft);
+  color: #5a3f06;
+  border-color: var(--dr-gold);
+}
+
+/* --- Liste des entrées -------------------------------------------------- */
+.dialogue-v2 .dr-list,
+.reading-v2 .dr-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.dialogue-v2 .dr-list-item,
+.reading-v2 .dr-list-item {
+  background: var(--dr-card-bg);
+  border: 1px solid var(--dr-border);
+  border-radius: var(--dr-radius);
+  padding: 14px;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+  text-align: left;
+}
+.dialogue-v2 .dr-list-item:hover,
+.reading-v2 .dr-list-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--dr-primary);
+}
+.dialogue-v2 .dr-list-level,
+.reading-v2 .dr-list-level {
+  display: inline-block;
+  background: var(--dr-gold-soft);
+  color: #5a3f06;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 10px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.dialogue-v2 .dr-list-theme,
+.reading-v2 .dr-list-theme {
+  font-size: 12px;
+  color: var(--dr-text-muted);
+  margin-bottom: 4px;
+}
+.dialogue-v2 .dr-list-title,
+.reading-v2 .dr-list-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.dialogue-v2 .dr-list-excerpt,
+.reading-v2 .dr-list-excerpt {
+  font-size: 13px;
+  color: var(--dr-text-muted);
+  line-height: 1.45;
+}
+
+/* --- Détail ------------------------------------------------------------ */
+.dialogue-v2 .dr-detail,
+.reading-v2 .dr-detail {
+  background: var(--dr-card-bg);
+  border: 1px solid var(--dr-border);
+  border-radius: var(--dr-radius);
+  padding: 20px;
+}
+.dialogue-v2 .dr-detail-head,
+.reading-v2 .dr-detail-head {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--dr-border);
+}
+.dialogue-v2 .dr-detail-title,
+.reading-v2 .dr-detail-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+.dialogue-v2 .dr-detail-context,
+.reading-v2 .dr-detail-context {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dr-text-muted);
+  font-style: italic;
+}
+
+/* --- Lignes de dialogue ------------------------------------------------ */
+.dialogue-v2 .dr-line {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--dr-border);
+}
+.dialogue-v2 .dr-line:last-child {
+  border-bottom: none;
+}
+.dialogue-v2 .dr-speaker {
+  font-weight: 700;
+  color: var(--dr-primary);
+  font-size: 15px;
+}
+.dialogue-v2 .dr-line-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.dialogue-v2 .dr-line-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dialogue-v2 .dr-play {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--dr-border);
+  background: #fff;
+  color: var(--dr-primary);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+.dialogue-v2 .dr-play:hover {
+  background: var(--dr-primary);
+  color: #fff;
+}
+.dialogue-v2 .dr-play:active {
+  transform: scale(0.95);
+}
+.dialogue-v2 .dr-play--on {
+  background: var(--dr-primary);
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(198, 48, 44, 0.15);
+}
+.dialogue-v2 .dr-line--active {
+  background: rgba(198, 48, 44, 0.04);
+  border-radius: 6px;
+}
+.dialogue-v2 .dr-hanzi {
+  font-size: 20px;
+  line-height: 1.45;
+}
+.dialogue-v2 .dr-pinyin,
+.reading-v2 .dr-pinyin {
+  font-size: 13px;
+  color: var(--dr-text-muted);
+  font-style: italic;
+}
+.dialogue-v2 .dr-translation,
+.reading-v2 .dr-translation {
+  font-size: 14px;
+  color: var(--dr-text);
+}
+.dialogue-v2 .dr-note,
+.reading-v2 .dr-note {
+  margin-top: 4px;
+  background: var(--dr-gold-soft);
+  border-left: 3px solid var(--dr-gold);
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #5a3f06;
+  border-radius: 6px;
+}
+
+/* --- Segments de lecture ---------------------------------------------- */
+.reading-v2 .dr-intro {
+  background: var(--dr-gold-soft);
+  border-left: 4px solid var(--dr-gold);
+  padding: 10px 14px;
+  border-radius: var(--dr-radius-sm);
+  font-size: 14px;
+  color: #5a3f06;
+  margin-bottom: 14px;
+}
+.reading-v2 .dr-segment {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--dr-border);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.reading-v2 .dr-segment:last-child {
+  border-bottom: none;
+}
+.reading-v2 .dr-hanzi {
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+/* --- Vocab + comprehension -------------------------------------------- */
+.dialogue-v2 .dr-section,
+.reading-v2 .dr-section {
+  margin-top: 18px;
+}
+.dialogue-v2 .dr-section h3,
+.reading-v2 .dr-section h3 {
+  font-size: 15px;
+  margin: 0 0 8px;
+  color: var(--dr-primary);
+}
+.dialogue-v2 .dr-vocab,
+.reading-v2 .dr-vocab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dialogue-v2 .dr-vocab span,
+.reading-v2 .dr-vocab span {
+  background: var(--dr-bg);
+  border: 1px solid var(--dr-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 15px;
+}
+.dialogue-v2 .dr-qa,
+.reading-v2 .dr-qa {
+  background: var(--dr-bg);
+  border-radius: var(--dr-radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.dialogue-v2 .dr-qa-q,
+.reading-v2 .dr-qa-q {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.dialogue-v2 .dr-qa-a,
+.reading-v2 .dr-qa-a {
+  color: var(--dr-success);
+  font-size: 14px;
+}
+.dialogue-v2 .dr-qa-a.is-hidden,
+.reading-v2 .dr-qa-a.is-hidden {
+  filter: blur(5px);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- Empty ------------------------------------------------------------ */
+.dialogue-v2 .dr-empty,
+.reading-v2 .dr-empty {
+  background: var(--dr-card-bg);
+  border: 1px dashed var(--dr-border);
+  border-radius: var(--dr-radius);
+  padding: 40px;
+  text-align: center;
+  color: var(--dr-text-muted);
+}
+
+/* --- Mobile ----------------------------------------------------------- */
+@media (max-width: 640px) {
+  .dialogue-v2 .dr-line {
+    grid-template-columns: 60px 1fr;
+  }
+}

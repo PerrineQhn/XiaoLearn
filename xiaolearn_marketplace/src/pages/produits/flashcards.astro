@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { ankiDecks } from '../../data/products';
+---
+
+<BaseLayout title="Decks Anki - XiaoLearn Shop">
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">🎴 Decks Anki</span>
+      <h1>Flashcards intelligentes</h1>
+      <p>Mémorisez efficacement le vocabulaire chinois avec le système de répétition espacée Anki</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        {ankiDecks.map(product => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment ça marche -->
+  <section class="section how-it-works">
+    <div class="container">
+      <h2 class="text-center">Comment ça marche ?</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Téléchargez Anki</h3>
+          <p>Installez l'application gratuite Anki sur votre ordinateur ou téléphone.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Importez le deck</h3>
+          <p>Double-cliquez sur le fichier .apkg pour l'importer dans Anki.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Révisez chaque jour</h3>
+          <p>L'algorithme vous présente les cartes au moment optimal pour la mémorisation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu des decks -->
+  <section class="section content-section">
+    <div class="container">
+      <h2 class="text-center">Ce que contiennent nos decks</h2>
+
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-icon">🔊</div>
+          <h3>Audio natif</h3>
+          <p>Chaque carte inclut la prononciation enregistrée par des locuteurs natifs chinois.</p>
+        </div>
+        <div class="content-item">
+          <div class="content-icon">🖼️</div>
+          <h3>Images mnémotechniques</h3>
+          <p>Des illustrations créatives pour ancrer chaque caractère dans votre mémoire.</p>
+        </div>
+        <div class="content-item">
+          <div class="content-icon">📝</div>
+          <h3>Exemples de phrases</h3>
+          <p>Apprenez les caractères en contexte avec des phrases d'exemple authentiques.</p>
+        </div>
+        <div class="content-item">
+          <div class="content-icon">✍️</div>
+          <h3>Ordre des traits</h3>
+          <p>Animations montrant comment écrire correctement chaque caractère.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="text-center">Questions fréquentes</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Qu'est-ce qu'Anki ?</summary>
+          <p>Anki est une application de flashcards gratuite utilisant la répétition espacée. C'est l'un des outils les plus efficaces pour mémoriser du vocabulaire à long terme.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Les decks fonctionnent-ils sur mobile ?</summary>
+          <p>Oui ! Anki est disponible sur iOS (AnkiMobile, payant), Android (AnkiDroid, gratuit) et ordinateur (gratuit). Nos decks sont compatibles avec toutes les versions.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Les mises à jour sont-elles incluses ?</summary>
+          <p>Oui, vous recevrez gratuitement toutes les futures mises à jour du deck (corrections, nouveaux contenus).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je modifier les cartes ?</summary>
+          <p>Absolument ! Une fois importé dans Anki, le deck vous appartient. Vous pouvez modifier, ajouter ou supprimer des cartes selon vos besoins.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(240, 183, 98, 0.1));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+  }
+
+  .page-badge {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.15);
+    color: #8B5CF6;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .how-it-works {
+    background: var(--bg-secondary);
+  }
+
+  .how-it-works h2 {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(120deg, var(--primary-red), var(--gold-accent));
+    color: var(--text-inverse);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .step h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 640px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .content-section h2 {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .content-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+  }
+
+  .content-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .content-item h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .content-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .faq-section {
+    background: var(--bg-secondary);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .faq-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: var(--spacing-lg);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--primary-red);
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+</style>

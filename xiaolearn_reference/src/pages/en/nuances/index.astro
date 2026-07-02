@@ -1,0 +1,364 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import NuanceCard from '../../../components/NuanceCard.astro';
+import { getCollection } from 'astro:content';
+import { getNuanceCategoryLabelEn, getNuanceEntryEn } from '../../../utils/enContentTranslations';
+
+const allNuances = await getCollection('nuances');
+
+const sortedNuances = allNuances.sort((a, b) => {
+  if (a.data.level !== b.data.level) {
+    return a.data.level - b.data.level;
+  }
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const translatedNuances = sortedNuances.map((entry) => {
+  const translated = getNuanceEntryEn(entry);
+  return {
+    entry,
+    translated,
+    searchableText: `${translated.title} ${entry.data.words.join(' ')} ${entry.data.pinyin.join(' ')} ${translated.summary}`.toLowerCase(),
+  };
+});
+---
+
+<BaseLayout
+  title="Nuances and near-synonyms"
+  description="Understand differences between similar Chinese words with examples and usage notes."
+  lang="en"
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Nuances' }]} locale="en" />
+      <h1><span class="text-gradient">Nuances</span> and near-synonyms</h1>
+      <p>
+        Understand subtle differences between Chinese words that look similar.
+        Practical notes and examples to avoid common confusion.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {sortedNuances.length > 0 ? (
+        <>
+          <div class="filter-panel card">
+            <div class="filter-grid">
+              <label class="filter-control">
+                <span>Search</span>
+                <input
+                  id="nuances-search"
+                  type="search"
+                  placeholder="Ex: 会, 能, 可以, bù, méi..."
+                />
+              </label>
+
+              <label class="filter-control">
+                <span>Level</span>
+                <select id="nuances-level">
+                  <option value="all">All levels</option>
+                  <option value="1">HSK 1</option>
+                  <option value="2">HSK 2</option>
+                  <option value="3">HSK 3</option>
+                  <option value="4">HSK 4</option>
+                </select>
+              </label>
+
+              <label class="filter-control">
+                <span>Category</span>
+                <select id="nuances-category">
+                  <option value="all">All</option>
+                  <option value="synonyms">Synonyms</option>
+                  <option value="homophones">Homophones</option>
+                  <option value="similar characters">Similar characters</option>
+                  <option value="nearby grammar">Nearby grammar</option>
+                </select>
+              </label>
+
+              <button id="nuances-reset" class="btn btn-secondary btn-sm filter-reset" type="button">
+                Reset
+              </button>
+            </div>
+            <p id="nuances-count" class="results-count">{translatedNuances.length} nuances shown</p>
+          </div>
+
+          <div class="nuances-grid" id="nuances-grid">
+            {translatedNuances.map(({ entry, searchableText }) => (
+              <div
+                class="nuance-item"
+                data-level={String(entry.data.level)}
+                data-category={getNuanceCategoryLabelEn(entry.data.category)}
+                data-search={searchableText}
+              >
+                <NuanceCard entry={entry} locale="en" />
+              </div>
+            ))}
+          </div>
+
+          <p id="nuances-empty" class="empty-note hidden">
+            No results. Adjust filters or search terms.
+          </p>
+        </>
+      ) : (
+        <div class="empty-state">
+          <span class="empty-icon">🔍</span>
+          <h3>Content in progress</h3>
+          <p>Nuance comparisons are being expanded. More English material is coming.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="info-box">
+        <h2>Why these nuances matter</h2>
+        <p>
+          In Chinese, many words can be translated the same way in English, but their use is very different.
+          For example, “can” may be 会, 能 or 可以 depending on context. Mastering these nuances is essential
+          for natural, precise Mandarin.
+        </p>
+        <div class="tips">
+          <div class="tip">
+            <span class="tip-icon">💡</span>
+            <div>
+              <h4>Tip</h4>
+              <p>Learn these distinctions through examples rather than abstract rules.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <span class="tip-icon">📝</span>
+            <div>
+              <h4>Practice</h4>
+              <p>Build your own sentences with each word to lock in the difference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (() => {
+    const cards = Array.from(document.querySelectorAll('.nuance-item'));
+    const searchInput = document.getElementById('nuances-search');
+    const levelSelect = document.getElementById('nuances-level');
+    const categorySelect = document.getElementById('nuances-category');
+    const resetButton = document.getElementById('nuances-reset');
+    const countNode = document.getElementById('nuances-count');
+    const emptyNode = document.getElementById('nuances-empty');
+
+    if (!cards.length || !searchInput || !levelSelect || !categorySelect || !countNode || !emptyNode) {
+      return;
+    }
+
+    const applyFilters = () => {
+      const query = String(searchInput.value || '').toLowerCase().trim();
+      const level = String(levelSelect.value || 'all');
+      const category = String(categorySelect.value || 'all');
+
+      let visible = 0;
+      cards.forEach((card) => {
+        const cardLevel = String(card.getAttribute('data-level') || '');
+        const cardCategory = String(card.getAttribute('data-category') || '');
+        const searchable = String(card.getAttribute('data-search') || '');
+
+        const matchesQuery = !query || searchable.includes(query);
+        const matchesLevel = level === 'all' || cardLevel === level;
+        const matchesCategory = category === 'all' || cardCategory === category;
+        const show = matchesQuery && matchesLevel && matchesCategory;
+
+        card.classList.toggle('hidden', !show);
+        if (show) visible += 1;
+      });
+
+      countNode.textContent = visible + ' nuance' + (visible > 1 ? 's' : '') + ' shown';
+      emptyNode.classList.toggle('hidden', visible !== 0);
+    };
+
+    const onChange = () => applyFilters();
+    searchInput.addEventListener('input', onChange);
+    levelSelect.addEventListener('change', onChange);
+    categorySelect.addEventListener('change', onChange);
+
+    resetButton?.addEventListener('click', () => {
+      searchInput.value = '';
+      levelSelect.value = 'all';
+      categorySelect.value = 'all';
+      applyFilters();
+    });
+
+    applyFilters();
+  })();
+</script>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--jade-green-light), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 600px;
+  }
+
+  .filter-panel {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: var(--spacing-md);
+    align-items: end;
+  }
+
+  .filter-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .filter-control span {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  .filter-control input,
+  .filter-control select {
+    height: 44px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: 0 var(--spacing-md);
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+  }
+
+  .filter-reset {
+    height: 44px;
+    align-self: end;
+  }
+
+  .results-count {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  .nuances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .empty-note {
+    margin-top: var(--spacing-lg);
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+  }
+
+  .empty-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .empty-state h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .empty-state p {
+    color: var(--text-tertiary);
+  }
+
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+
+  .info-box {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+  }
+
+  .info-box h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-box > p {
+    max-width: 700px;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .tip {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-accent);
+    border-radius: var(--radius-lg);
+  }
+
+  .tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .tip h4 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .tip p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 960px) {
+    .filter-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-reset {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .filter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .filter-reset {
+      grid-column: auto;
+    }
+  }
+</style>

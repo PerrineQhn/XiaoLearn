@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-05-29T16:36:56.605Z",
+  "mode": "write",
+  "totalCleaned": 136,
+  "byFile": {
+    "hsk1.json": {
+      "count": 0,
+      "samples": []
+    },
+    "hsk2.json": {
+      "count": 0,
+      "samples": []
+    },
+    "hsk3.json": {
+      "count": 0,
+      "samples": []
+    },
+    "hsk4.json": {
+      "count": 0,
+      "samples": []
+    },
+    "hsk5.json": {
+      "count": 0,
+      "samples": []
+    },
+    "hsk6.json": {
+      "count": 136,
+      "samples": [
+        {
+          "before": {
+            "chinese": "从业年限长的员工- cóngyè niánxiàn cháng de yuángōng- Employés avec une longue expérience professionnelle",
+            "pinyin": "cóng yè nián xiàn cháng de yuán gōng - cóngyè niánxiàn cháng de yuángōng- Employés avec une longue expérience professionnelle",
+            "translationFr": ""
+          },
+          "after": {
+            "chinese": "从业年限长的员工",
+            "pinyin": "cóngyè niánxiàn cháng de yuángōng",
+            "translationFr": "Employés avec une longue expérience professionnelle"
+          }
+        },
+        {
+          "before": {
+            "chinese": "存储容量大- cúnchǔ róngliàng dà- Grande capacité de stockage",
+            "pinyin": "cún chǔ róng liàng dà - cúnchǔ róngliàng dà- Grande capacité de stockage",
+            "translationFr": ""
+          },
+          "after": {
+            "chinese": "存储容量大",
+            "pinyin": "cúnchǔ róngliàng dà",
+            "translationFr": "Grande capacité de stockage"
+          }
+        },
+        {
+          "before": {
+            "chinese": "大都使用中文交流- dàdū shǐyòng zhōngwén jiāoliú- La plupart communiquent en chinois",
+            "pinyin": "dà dōu shǐ yòng zhōng wén jiāo liú - dàdū shǐyòng zhōngwén jiāoliú- La plupart communiquent en chinois",
+            "translationFr": ""
+          },
+          "after": {
+            "chinese": "大都使用中文交流",
+            "pinyin": "dàdū shǐyòng zhōngwén jiāoliú",
+            "translationFr": "La plupart communiquent en chinois"
+          }
+        }
+      ]
+    },
+    "hsk7.json": {
+      "count": 0,
+      "samples": []
+    }
+  }
+}

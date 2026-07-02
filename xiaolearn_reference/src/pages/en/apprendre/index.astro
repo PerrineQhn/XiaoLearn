@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { LEARNING_CONTENT } from '../../../data/learning-content';
+
+const canonicalUrl = 'https://xiaolearn.com/en/apprendre';
+
+const guides = LEARNING_CONTENT.filter((c) => c.type === 'guide');
+const lists = LEARNING_CONTENT.filter((c) => c.type === 'liste');
+
+const formatDate = (iso: string) => {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch {
+    return iso;
+  }
+};
+const lastUpdated = formatDate(
+  LEARNING_CONTENT
+    .map((c) => c.updatedAt)
+    .sort((a, b) => b.localeCompare(a))[0] ?? '2026-05-12'
+);
+---
+
+<BaseLayout
+  title="Learn Mandarin"
+  description="Short guides and curated lists to go from 'zero Mandarin' to usable phrases — no detour. Each page links to dictionary entries to dig deeper."
+  canonical={canonicalUrl}
+  lang="en"
+>
+  <section class="learn-hero">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Home', href: '/en' }, { label: 'Learn' }]} locale="en" />
+      <p class="hero-kicker">METHOD · BEGINNER LEVEL</p>
+      <h1>Learn Mandarin</h1>
+      <p class="hero-lead">
+        Short guides and curated lists to go from "zero Mandarin"
+        to usable phrases — no detour. Each page links back to
+        the dictionary entries to dig deeper.
+      </p>
+      <p class="hero-updated">Updated on {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="learn-catalog">
+        {[...guides.slice(0, 3), ...lists.slice(0, 3), ...guides.slice(3), ...lists.slice(3)].map((c) => {
+          const title = c.titleEn ?? c.title;
+          const description = c.shortDescriptionEn ?? c.shortDescription;
+          return (
+            <a
+              href={c.status === 'published' ? `/en/apprendre/${c.slug}` : '#'}
+              class={`catalog-card catalog-card--${c.type} ${c.status === 'soon' ? 'is-soon' : ''}`}
+              aria-disabled={c.status === 'soon' ? 'true' : undefined}
+            >
+              {c.type === 'guide' && (
+                <div class="card-hero card-hero--guide">
+                  <span class="card-badge">GUIDE</span>
+                  {c.featuredPinyin && <span class="card-pinyin-top">{c.featuredPinyin}</span>}
+                  <span class="card-hanzi">{c.featuredHanzi}</span>
+                </div>
+              )}
+              {c.type === 'liste' && (
+                <div class="card-hero card-hero--liste">
+                  <span class="card-badge">LIST</span>
+                  <span class="card-count">{c.count}</span>
+                  <span class="card-count-label">WORDS</span>
+                </div>
+              )}
+              <div class="card-body">
+                <h2 class="card-title">{title}</h2>
+                <p class="card-description">{description}</p>
+                <footer class="card-footer">
+                  {c.status === 'soon' ? (
+                    <span class="card-soon-tag">Coming soon</span>
+                  ) : (
+                    <span class="card-meta">
+                      {c.type === 'liste' && c.count ? `${c.count} words` : `${c.sections?.reduce((acc, s) => acc + s.entries.length, 0) ?? 0} examples`}
+                    </span>
+                  )}
+                  {c.status === 'published' && (
+                    <span class="card-cta">
+                      {c.type === 'guide' ? 'Read the guide' : 'View the list'} <span class="arrow">→</span>
+                    </span>
+                  )}
+                </footer>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cta">
+    <div class="container">
+      <div class="app-cta-card">
+        <h2>Keep learning Mandarin</h2>
+        <p>
+          Create your free account to add these words to your flashcards
+          and progress day after day.
+        </p>
+        <div class="app-cta-buttons">
+          <a href="https://app.xiaolearn.com?lang=en" class="btn btn-primary">Create my free account</a>
+          <a href="/en/dictionnaire" class="btn btn-ghost">Explore the dictionary →</a>
+        </div>
+        <p class="app-cta-foot">Free forever. No card required.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .learn-hero { padding: var(--spacing-xl) 0 var(--spacing-lg); }
+  .hero-kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+  }
+  .learn-hero h1 {
+    margin: 0 0 var(--spacing-md);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15;
+    max-width: 16ch;
+  }
+  .hero-lead {
+    max-width: 60ch;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-md);
+  }
+  .hero-updated {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .learn-catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+  .catalog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  }
+  .catalog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-medium);
+  }
+  .catalog-card.is-soon { opacity: 0.7; cursor: not-allowed; pointer-events: none; }
+
+  .card-hero {
+    position: relative;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-light);
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-hero--guide { background: var(--bg-secondary); }
+  .card-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    padding: 0.2rem 0.65rem;
+    border: 1px solid var(--border-medium);
+    background: var(--bg-primary);
+    border-radius: var(--radius-full);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+  }
+  .card-pinyin-top {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-md);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-tertiary);
+  }
+  .card-hanzi {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1;
+    text-align: center;
+  }
+  .card-hero--liste {
+    background: linear-gradient(135deg, #fbf3df, #f6e7c1);
+    color: #6e5314;
+  }
+  .card-count {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #6e5314;
+  }
+  .card-count-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #8a6c20;
+    margin-top: 4px;
+  }
+
+  .card-body { padding: var(--spacing-lg); flex: 1; display: flex; flex-direction: column; }
+  .card-title { font-size: 1rem; font-weight: 600; line-height: 1.35; margin: 0 0 var(--spacing-sm); color: var(--text-primary); }
+  .card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-light);
+    font-size: 0.85rem;
+  }
+  .card-meta { color: var(--text-tertiary); }
+  .card-cta { color: var(--primary-red); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+  .card-cta .arrow { transition: transform var(--transition-base); }
+  .catalog-card:hover .card-cta .arrow { transform: translateX(3px); }
+  .card-soon-tag {
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--radius-full);
+    background: var(--bg-accent);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  .section--cta { padding-top: var(--spacing-md); }
+  .app-cta-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .app-cta-card h2 { margin: 0 0 var(--spacing-sm); }
+  .app-cta-card p { color: var(--text-secondary); margin: 0 auto var(--spacing-lg); max-width: 52ch; }
+  .app-cta-buttons { display: inline-flex; gap: var(--spacing-md); flex-wrap: wrap; justify-content: center; margin-bottom: var(--spacing-sm); }
+  .app-cta-foot { font-size: 0.85rem; color: var(--text-tertiary); margin: 0; }
+
+  @media (max-width: 1024px) { .learn-catalog { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .learn-catalog { grid-template-columns: 1fr; gap: var(--spacing-md); }
+    .card-hanzi { font-size: 2.1rem; }
+    .card-count { font-size: 3rem; }
+    .app-cta-card { padding: var(--spacing-xl); }
+    .app-cta-buttons { flex-direction: column; align-items: stretch; }
+  }
+</style>

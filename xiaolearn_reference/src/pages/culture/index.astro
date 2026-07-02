@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+interface CultureFestivalCard {
+  slug: string;
+  name: string;
+  hanzi: string;
+  summary: string;
+  periodLabel: string;
+  monthStart: number;
+  monthEnd: number;
+  traditions: string[];
+}
+
+interface CultureHighlightCard {
+  slug: string;
+  title: string;
+  summary: string;
+  icon: string;
+}
+
+function getNextFestivalDistance(monthStart: number, fromMonth: number): number {
+  if (monthStart < 1 || monthStart > 12) return 99;
+  if (monthStart >= fromMonth) return monthStart - fromMonth;
+  return 12 - fromMonth + monthStart;
+}
+
+const cultureEntries = await getCollection('culture');
+
+const allFestivals: CultureFestivalCard[] = cultureEntries
+  .filter((entry) => entry.data.category === 'fete')
+  .map((entry) => ({
+    slug: entry.id,
+    name: entry.data.title,
+    hanzi: entry.data.hanzi ?? '',
+    summary: entry.data.summary,
+    periodLabel: entry.data.period ?? '',
+    monthStart: entry.data.monthStart ?? 13,
+    monthEnd: entry.data.monthEnd ?? entry.data.monthStart ?? 13,
+    traditions: entry.data.traditions ?? [],
+  }))
+  .sort((a, b) => {
+    if (a.monthStart !== b.monthStart) return a.monthStart - b.monthStart;
+    if (a.monthEnd !== b.monthEnd) return a.monthEnd - b.monthEnd;
+    return a.name.localeCompare(b.name, 'fr');
+  });
+
+const currentMonth = new Date().getMonth() + 1;
+const upcomingFestivals = [...allFestivals]
+  .sort((a, b) => {
+    const distanceA = getNextFestivalDistance(a.monthStart, currentMonth);
+    const distanceB = getNextFestivalDistance(b.monthStart, currentMonth);
+    if (distanceA !== distanceB) return distanceA - distanceB;
+    return a.monthStart - b.monthStart;
+  })
+  .slice(0, 5);
+
+const highlightOrder = ['calendrier-fetes', 'rituels-famille', 'calligraphie', 'culture-du-the'];
+const highlights: CultureHighlightCard[] = cultureEntries
+  .filter((entry) => entry.data.category === 'repere')
+  .map((entry) => ({
+    slug: entry.id,
+    title: entry.data.title,
+    summary: entry.data.summary,
+    icon: entry.data.icon ?? '文',
+  }))
+  .sort((a, b) => {
+    const orderA = highlightOrder.indexOf(a.slug);
+    const orderB = highlightOrder.indexOf(b.slug);
+    const safeA = orderA >= 0 ? orderA : Number.MAX_SAFE_INTEGER;
+    const safeB = orderB >= 0 ? orderB : Number.MAX_SAFE_INTEGER;
+    if (safeA !== safeB) return safeA - safeB;
+    return a.title.localeCompare(b.title, 'fr');
+  });
+---
+
+<BaseLayout
+  title="Culture chinoise"
+  description="Repères culturels essentiels : fêtes traditionnelles, symboles et pratiques du quotidien en Chine."
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Culture' }]} />
+      <h1>Culture <span class="text-gradient">chinoise</span></h1>
+      <p>
+        Au-delà de la langue : comprendre les fêtes, les codes sociaux et les références
+        culturelles qui donnent du sens aux mots.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-accent">À venir</span>
+        <h2>Fêtes à surveiller</h2>
+        <p>Sélection des prochains temps forts du calendrier traditionnel.</p>
+      </div>
+
+      <div class="festival-grid">
+        {upcomingFestivals.map((festival) => (
+          <article class="festival-card">
+            <div class="festival-meta">
+              {festival.hanzi && <span class="hanzi">{festival.hanzi}</span>}
+            </div>
+            <h3>{festival.name}</h3>
+            {festival.periodLabel && <p class="festival-period">{festival.periodLabel}</p>}
+            <p>{festival.summary}</p>
+            <ul>
+              {festival.traditions.slice(0, 3).map((tradition) => (
+                <li>{tradition}</li>
+              ))}
+            </ul>
+            <a class="card-link" href={`/culture/fetes/${festival.slug}`}>Lire la fiche →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-secondary">Repères</span>
+        <h2>Axes culturels pour progresser</h2>
+      </div>
+      <div class="highlight-grid">
+        {highlights.map((item) => (
+          <article class="highlight-card">
+            <span class="icon">{item.icon}</span>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+            <a class="card-link" href={`/culture/reperes/${item.slug}`}>Approfondir →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Calendrier annuel simplifié</h2>
+        <p>Les dates exactes varient selon le calendrier lunaire ; utilisez cette vue comme repère.</p>
+      </div>
+
+      <div class="timeline">
+        {allFestivals.map((festival) => (
+          <article class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>{festival.name} <span>{festival.hanzi}</span></h3>
+              <p class="timeline-period">{festival.periodLabel}</p>
+              <p>{festival.summary}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--bg-accent), var(--bg-secondary));
+    padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    max-width: 740px;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .festival-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+  }
+
+  .festival-meta {
+    min-height: 2.1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hanzi {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--primary-red);
+  }
+
+  .festival-period {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .timeline-period {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+  }
+
+  .festival-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .festival-card p {
+    font-size: 0.92rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .festival-card ul {
+    list-style: none;
+    display: grid;
+    gap: 4px;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .festival-card li::before {
+    content: '•';
+    color: var(--jade-green);
+    margin-right: 6px;
+  }
+
+  .alt-bg {
+    background: var(--bg-secondary);
+  }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .highlight-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+  }
+
+  .highlight-card .icon {
+    font-family: var(--font-serif);
+    color: var(--primary-red);
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .highlight-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .card-link {
+    display: inline-flex;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--jade-green);
+    margin-top: var(--spacing-xs);
+  }
+
+  .card-link:hover {
+    color: var(--primary-red);
+  }
+
+  .timeline {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: 0 0 0 4px var(--primary-red-light);
+  }
+
+  .timeline-item .content {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    padding: var(--spacing-md);
+  }
+
+  .timeline-item h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+
+  .timeline-item h3 span {
+    font-family: var(--font-serif);
+    color: var(--primary-red);
+    margin-left: 6px;
+  }
+</style>

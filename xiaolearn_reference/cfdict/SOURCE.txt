@@ -1,0 +1,4 @@
+CFDICT (Chinese-French dictionary) from Chine Informations
+Source: https://chine.in/mandarin/open/CFDICT/
+Downloaded: 2026-02-05
+File: cfdict.u8
