@@ -27,7 +27,14 @@ type Block =
   | { kind: 'paragraph'; text: string; listItems?: string[]; listIntro?: string }
   | { kind: 'rule'; text: string; listItems?: string[]; listIntro?: string }
   | { kind: 'exception'; text: string; listItems?: string[]; listIntro?: string }
-  | { kind: 'note'; text: string; listItems?: string[]; listIntro?: string };
+  | { kind: 'note'; text: string; listItems?: string[]; listIntro?: string }
+  | {
+      kind: 'topic-card';
+      hanzi: string;
+      pinyin?: string;
+      description: string;
+      examples?: string[];
+    };
 
 /** Capitalise la 1re lettre (en gérant les caractères accentués / unicode). */
 function capitalize(s: string): string {
@@ -61,7 +68,7 @@ function parseBody(body: string): Block[] {
 
   // Étape 2 : convertir en blocks bruts, en gérant les listes explicites.
   const SPLIT_RE =
-    /(?<=[.!?])\s+(?=(?:RÈGLE\s*(?:D[''’]OR)?\s*:|Règle\s*:|Exception\b|Astuce\s*:|Remarque\s*:|Attention\s*:))/g;
+    /(?<=[.!?])\s+(?=(?:RÈGLE\s*(?:D[''’]OR)?\s*:|Règle\s*:|Exception\b|Astuce\s*:|Remarque\s*:|Attention\s*:|[\u4e00-\u9fff]{1,4}\s*\([^)]+\)\s*[^:]{1,80}:))/g;
 
   const blocks: Block[] = [];
 
@@ -72,7 +79,7 @@ function parseBody(body: string): Block[] {
 
   const flushList = () => {
     if (listBuffer.length === 0) return;
-    if (listAttachedToBlock) {
+    if (listAttachedToBlock && listAttachedToBlock.kind !== 'topic-card') {
       // Attache la liste au dernier bloc créé (l'intro était dans son texte)
       listAttachedToBlock.listItems = [...listBuffer];
       listAttachedToBlock.listIntro = listIntro;
@@ -137,6 +144,71 @@ function parseBody(body: string): Block[] {
       }
       return;
     }
+    // Topic-card : « HANZI (pinyin) description : ex1, ex2, ex3. »
+    // Utile pour découper les gros paragraphes qui présentent plusieurs
+    // sous-sujets thématiques (ex : suffixes de lieux 店/馆/院).
+    // Anti-faux-positifs :
+    //   - la partie « description » ne doit pas contenir de ':' internes
+    //   - il faut au moins un exemple séparé par des virgules OU une glose
+    //     multi-mots pour éviter les cas type « 苹果 (píngguǒ) est mon fruit »
+    const topicMatch = seg.match(
+      /^([\u4e00-\u9fff]{1,4})\s*\(([^)]+)\)\s*([^:]{1,80}?):\s*(.+?)\.?\s*$/
+    );
+    if (topicMatch) {
+      const [, hanzi, pinyin, description, rest] = topicMatch;
+      const trimmedDesc = description.trim();
+      let trimmedRest = rest.trim();
+      // Anti-faux-positifs :
+      //   - description ne doit pas être vide et doit ressembler à une
+      //     description (pas juste un verbe copule court)
+      //   - rest doit ressembler à une liste d'exemples : contient une virgule
+      //     OU commence par un hanzi (typique d'un exemple chinois)
+      const pinyinLooksValid = looksLikePinyin(pinyin);
+      const restStartsWithHanzi = /^[\u4e00-\u9fff]/.test(trimmedRest);
+      const descIsMeaningful = trimmedDesc.length >= 3;
+      // Détection d'une éventuelle phrase de conclusion collée à la fin :
+      // ex. « ... 电影院 (diànyǐngyuàn) cinéma. Reconnaître ces 3 suffixes... »
+      // Si le rest contient un « . » suivi d'un espace + majuscule ASCII
+      // (typique d'une phrase FR/EN qui commence), on scinde.
+      let trailingConclusion: string | null = null;
+      const conclusionSplit = trimmedRest.match(
+        /^(.+?[\u4e00-\u9fff\)\w])\.\s+([A-ZÀ-Ý][a-zà-ÿ].{5,})$/
+      );
+      if (conclusionSplit) {
+        trimmedRest = conclusionSplit[1].trim();
+        trailingConclusion = conclusionSplit[2].trim();
+      }
+      const restHasComma = /,/.test(trimmedRest);
+      if (
+        pinyinLooksValid &&
+        descIsMeaningful &&
+        (restHasComma || restStartsWithHanzi)
+      ) {
+        // Split exemples par virgule (top-level uniquement — préserve les
+        // parenthèses pinyin qui ne contiennent pas de virgules internes en
+        // pratique).
+        const examples = trimmedRest
+          .split(/,\s*/)
+          .map((e) => e.trim())
+          .filter(Boolean);
+        if (examples.length > 0) {
+          blocks.push({
+            kind: 'topic-card',
+            hanzi,
+            pinyin: pinyin.trim(),
+            description: trimmedDesc,
+            examples
+          });
+          // Si une phrase de conclusion suivait, la traiter récursivement
+          // comme paragraphe standard (ou marker).
+          if (trailingConclusion) {
+            processSegment(trailingConclusion);
+          }
+          return;
+        }
+      }
+    }
+
     // Sinon : paragraphe simple. Si le texte se termine par ":" et qu'une liste
     // suit, le ":" sert d'intro de liste.
     if (/:\s*$/.test(seg)) {
@@ -177,21 +249,24 @@ const ICON: Record<Block['kind'], string> = {
   paragraph: '',
   rule: '📏',
   exception: '⚠️',
-  note: '💡'
+  note: '💡',
+  'topic-card': ''
 };
 
 const LABEL_FR: Record<Block['kind'], string> = {
   paragraph: '',
   rule: 'Règle',
   exception: 'Exception',
-  note: 'Astuce'
+  note: 'Astuce',
+  'topic-card': ''
 };
 
 const LABEL_EN: Record<Block['kind'], string> = {
   paragraph: '',
   rule: 'Rule',
   exception: 'Exception',
-  note: 'Tip'
+  note: 'Tip',
+  'topic-card': ''
 };
 
 /**
@@ -384,6 +459,32 @@ export default function StructuredLearnBody({
   return (
     <div className="lv2-structured-body">
       {blocks.map((block, i) => {
+        // Topic-card : forme dédiée, rendu autonome (pas de listItems partagés)
+        if (block.kind === 'topic-card') {
+          return (
+            <div key={i} className="lv2-block lv2-block--topic">
+              <div className="lv2-block-topic-header">
+                <span className="lv2-block-topic-hanzi">{block.hanzi}</span>
+                {block.pinyin && (
+                  <span className="lv2-block-topic-pinyin">
+                    ({block.pinyin})
+                  </span>
+                )}
+                <span className="lv2-block-topic-desc">
+                  {renderInlineMarkdown(block.description)}
+                </span>
+              </div>
+              {block.examples && block.examples.length > 0 && (
+                <ul className="lv2-block-topic-examples">
+                  {block.examples.map((ex, j) => (
+                    <li key={j}>{renderInlineMarkdown(ex)}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          );
+        }
+
         const hasList = block.listItems && block.listItems.length > 0;
 
         const intro =

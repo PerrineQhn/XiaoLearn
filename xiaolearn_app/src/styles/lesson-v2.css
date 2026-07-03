@@ -1319,6 +1319,74 @@
   margin-bottom: 4px;
 }
 
+/* --- V22 — Topic-cards : sous-sujets thématiques dans un paragraphe libre --- */
+.lesson-v2 .lv2-block--topic {
+  background: #FFF8EC;
+  border-radius: var(--lv2-radius-sm, 10px);
+  border-left: 4px solid #d97706;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lesson-v2 .lv2-block-topic-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
+  line-height: 1.4;
+}
+.lesson-v2 .lv2-block-topic-hanzi {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-red, #8A2820);
+  line-height: 1;
+}
+.lesson-v2 .lv2-block-topic-pinyin {
+  font-style: italic;
+  color: var(--lv2-text-soft, #9ca3af);
+  font-size: 0.95rem;
+}
+.lesson-v2 .lv2-block-topic-desc {
+  color: var(--lv2-text, #1f2233);
+  font-size: 14.5px;
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.lesson-v2 .lv2-block-topic-examples {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.lesson-v2 .lv2-block-topic-examples li {
+  padding: 2px 0 2px 18px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lv2-text, #1f2233);
+}
+.lesson-v2 .lv2-block-topic-examples li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  color: #d97706;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.55;
+}
+@media (max-width: 480px) {
+  .lesson-v2 .lv2-block--topic {
+    padding: 10px 12px;
+  }
+  .lesson-v2 .lv2-block-topic-hanzi {
+    font-size: 1.25rem;
+  }
+}
+
 /* Mini-markdown : **gras** et *italique* */
 .lesson-v2 .lv2-structured-body strong {
   color: var(--primary-red, #8A2820);
