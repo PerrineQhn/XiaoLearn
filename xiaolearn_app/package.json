@@ -7,9 +7,11 @@
     "dev": "vite",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prebuild": "node scripts/prune-cloudflare-assets.mjs && npm run build:chunks",
+    "prebuild": "npm run build:chunks",
     "build": "tsc && vite build",
+    "postbuild": "node scripts/prune-cloudflare-assets.mjs",
     "build:chunks": "node scripts/split-hors-hsk.mjs",
+    "deploy": "CF_PAGES=1 npm run build && npx wrangler pages deploy dist --project-name=xiaolearnapp --branch=main --commit-dirty=true",
     "preview": "vite preview",
     "build:data": "node scripts/buildDataset.mjs",
     "sync:hsk": "node scripts/generateHskData.mjs",
@@ -28,6 +30,7 @@
     "generate:audio:all": "node --env-file=.env.local scripts/generate-all-audio.mjs",
     "generate:audio:test": "node scripts/test_generate_sample.mjs",
     "upload:audio": "node --env-file=.env.local scripts/upload-audio-to-r2.mjs",
+    "restore:audio": "node --env-file=.env.local scripts/restore-audio-from-r2.mjs",
     "upload:audio:dry": "node --env-file=.env.local scripts/upload-audio-to-r2.mjs --dry-run",
     "test:audio": "python3 scripts/test_audio.py",
     "analyze:audio": "python3 scripts/compare_audio_quality.py",
@@ -52,7 +55,8 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
     "vite-plugin-pwa": "^0.20.5",
-    "vitest": "^2.1.8"
+    "vitest": "^2.1.8",
+    "wrangler": "^4.107.0"
   },
   "optionalDependencies": {
     "@xenova/transformers": "^2.17.2"
