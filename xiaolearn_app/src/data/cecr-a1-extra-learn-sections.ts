@@ -240,11 +240,11 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese country names are often chosen to evoke the original sound. 法国 = "Fǎ guó" ≈ France, 美国 = "Měi guó" ("beautiful country") = USA.',
     items: [
-      { hanzi: '中国', pinyin: 'Zhōng guó', meaning: 'Chine (« pays du milieu »)', meaningEn: 'China ("middle country")', audio: 'audio/hsk1/hsk1_中国.wav' },
-      { hanzi: '法国', pinyin: 'Fǎ guó', meaning: 'France', meaningEn: 'France', audio: 'audio/hsk1/hsk1_法国.wav' },
-      { hanzi: '美国', pinyin: 'Měi guó', meaning: 'États-Unis', meaningEn: 'USA', audio: 'audio/hsk1/hsk1_美国.wav' },
-      { hanzi: '英国', pinyin: 'Yīng guó', meaning: 'Royaume-Uni', meaningEn: 'UK', audio: 'audio/hsk1/hsk1_英国.wav' },
-      { hanzi: '日本', pinyin: 'Rì běn', meaning: 'Japon (« origine du soleil »)', meaningEn: 'Japan ("origin of the sun")', audio: 'audio/hsk1/hsk1_日本.wav' }
+      { hanzi: '中国', pinyin: 'zhōngguó', meaning: 'Chine (« pays du milieu »)', meaningEn: 'China ("middle country")', audio: 'audio/hsk1/hsk1_中国.wav' },
+      { hanzi: '法国', pinyin: 'fǎguó', meaning: 'France', meaningEn: 'France', audio: 'audio/hsk1/hsk1_法国.wav' },
+      { hanzi: '美国', pinyin: 'měiguó', meaning: 'États-Unis', meaningEn: 'USA', audio: 'audio/hsk1/hsk1_美国.wav' },
+      { hanzi: '英国', pinyin: 'yīngguó', meaning: 'Royaume-Uni', meaningEn: 'UK', audio: 'audio/hsk1/hsk1_英国.wav' },
+      { hanzi: '日本', pinyin: 'rìběn', meaning: 'Japon (« origine du soleil »)', meaningEn: 'Japan ("origin of the sun")', audio: 'audio/hsk1/hsk1_日本.wav' }
     ],
     tip:
       'Attention : Japon est une exception, son nom chinois est 日本 et non 日国. Pour former « Japonais », on dit 日本人 (rìběnrén).',
@@ -337,8 +337,8 @@ export const weekDaysLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese weekdays are numbers. Monday = "day 1", Tuesday = "day 2", etc. Just count 1–6 and you know the week.\nRule: 星期 + [digit 1-6] for Monday → Saturday. Exception: Sunday = 星期日 or 星期天 ("the sky").',
     items: [
-      { hanzi: '星期', pinyin: 'xīng qī', meaning: 'semaine', meaningEn: 'week', audio: 'audio/hsk1/hsk1_星期.wav' },
-      { hanzi: '星期日', pinyin: 'xīng qī rì', meaning: 'dimanche', meaningEn: 'Sunday', audio: 'audio/hsk1/hsk1_星期日.wav' }
+      { hanzi: '星期', pinyin: 'xīngqī', meaning: 'semaine', meaningEn: 'week', audio: 'audio/hsk1/hsk1_星期.wav' },
+      { hanzi: '星期日', pinyin: 'xīngqīrì', meaning: 'dimanche', meaningEn: 'Sunday', audio: 'audio/hsk1/hsk1_星期日.wav' }
     ],
     tip:
       'Deux variantes possibles : 星期 (plus formel) et 周 (zhōu, plus court et moderne). 周一 = lundi. Les deux sont interchangeables à l\'oral comme à l\'écrit.',
@@ -569,7 +569,7 @@ export const colorsLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '黑', pinyin: 'hēi', meaning: 'noir', meaningEn: 'black', audio: 'audio/hsk1/hsk1_黑.wav' },
       { hanzi: '白', pinyin: 'bái', meaning: 'blanc', meaningEn: 'white', audio: 'audio/hsk1/hsk1_白.wav' },
-      { hanzi: '颜色', pinyin: 'yán sè', meaning: 'couleur (terme général)', meaningEn: 'color (general)', audio: 'audio/hsk1/hsk1_颜色.wav' }
+      { hanzi: '颜色', pinyin: 'yánsè', meaning: 'couleur (terme général)', meaningEn: 'color (general)', audio: 'audio/hsk1/hsk1_颜色.wav' }
     ],
     tip:
       'Pour demander « quelle couleur ? » : 什么颜色 ? (shén me yán sè) — « quoi + couleur ? ». Réponse standard : [couleur] + 色 ou juste la couleur.',
@@ -1078,10 +1078,10 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
       '请 (qǐng, please / go ahead), 谢谢 (xièxie, thank you), 不客气 (bú kèqi, you\'re welcome — reply to 谢谢), 对不起 (duìbuqǐ, sorry). These 4 are the social backbone in China. 请 opens a request, never at the end (≠ English «please» at end). 不客气 is universal as reply to 谢谢. Add 没关系 (méi guānxi, no problem — reply to 对不起) and you function socially.',
     items: [
       { hanzi: '请', pinyin: 'qǐng', meaning: 's\'il vous plaît', meaningEn: 'please', audio: 'audio/hsk1/hsk1_请.wav' },
-      { hanzi: '谢谢', pinyin: 'xiè xie', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
-      { hanzi: '不客气', pinyin: 'bú kè qi', meaning: 'de rien', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
-      { hanzi: '对不起', pinyin: 'duì bu qǐ', meaning: 'pardon', meaningEn: 'sorry', audio: 'audio/hsk1/hsk1_对不起.wav' },
-      { hanzi: '没关系', pinyin: 'méi guān xi', meaning: 'pas grave', meaningEn: 'no problem', audio: 'audio/hsk1/hsk1_没关系.wav' }
+      { hanzi: '谢谢', pinyin: 'xièxiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
+      { hanzi: '不客气', pinyin: 'bù kèqì', meaning: 'de rien', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
+      { hanzi: '对不起', pinyin: 'duìbùqǐ', meaning: 'pardon', meaningEn: 'sorry', audio: 'audio/hsk1/hsk1_对不起.wav' },
+      { hanzi: '没关系', pinyin: 'méiguānxì', meaning: 'pas grave', meaningEn: 'no problem', audio: 'audio/hsk1/hsk1_没关系.wav' }
     ],
     tip:
       '请 se place TOUJOURS au début de la phrase, jamais à la fin : 请坐 (asseyez-vous svp), pas 坐请. C\'est l\'inverse du français.',
@@ -1102,11 +1102,11 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '麻烦你 (máfan nǐ, sorry to trouble you) : to ask a favor, warmer than 请. 麻烦你帮我 = would you mind helping me. 辛苦了 (xīnkǔ le, thanks for the work) : to a delivery person, a colleague after a task, the taxi driver dropping you off. Universal and warm — skipping it sounds cold. 加油 (jiāyóu, chin up / you got this) : to encourage.',
     items: [
-      { hanzi: '麻烦', pinyin: 'má fan', meaning: 'déranger, ennui', meaningEn: 'trouble', audio: 'audio/hsk4/hsk4_麻烦.wav' },
-      { hanzi: '辛苦了', pinyin: 'xīn kǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for the work', audio: 'audio/hsk4/hsk4_辛苦.wav' },
-      { hanzi: '加油', pinyin: 'jiā yóu', meaning: 'bon courage', meaningEn: 'go for it', audio: 'audio/hsk2/hsk2_加油.wav' },
+      { hanzi: '麻烦', pinyin: 'máfán', meaning: 'déranger, ennui', meaningEn: 'trouble', audio: 'audio/hsk4/hsk4_麻烦.wav' },
+      { hanzi: '辛苦了', pinyin: 'xīnkǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for the work', audio: 'audio/hsk4/hsk4_辛苦.wav' },
+      { hanzi: '加油', pinyin: 'jiāyóu', meaning: 'bon courage', meaningEn: 'go for it', audio: 'audio/hsk2/hsk2_加油.wav' },
       { hanzi: '帮', pinyin: 'bāng', meaning: 'aider', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮.wav' },
-      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir, OK', meaningEn: 'can, OK', audio: 'audio/hsk1/hsk1_可以.wav' }
+      { hanzi: '可以', pinyin: 'kěyǐ', meaning: 'pouvoir, OK', meaningEn: 'can, OK', audio: 'audio/hsk1/hsk1_可以.wav' }
     ],
     tip:
       '辛苦了 est culturellement énorme. À retenir : DÈS qu\'un Chinois vient de faire quelque chose pour toi (te servir, te livrer, t\'aider), 辛苦了 est attendu. Plus chaud que 谢谢.',
@@ -1132,11 +1132,11 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Lifebuoy phrases: 请再说一遍 (please say it again), 慢一点 (slower), 我听不懂 (I don\'t catch what you\'re saying), 你说什么？(what did you say?). To spell a character: 这个字怎么写？(how do you write it?). For meaning: 这是什么意思？(what does it mean?). These 5 phrases get you out of almost any A1 jam.',
     items: [
-      { hanzi: '再说一遍', pinyin: 'zài shuō yí biàn', meaning: 'redire, répéter', meaningEn: 'say again', audio: 'audio/hsk2/hsk2_再说.wav' },
-      { hanzi: '慢一点', pinyin: 'màn yì diǎn', meaning: 'plus lentement', meaningEn: 'slower', audio: 'audio/hsk2/hsk2_慢.wav' },
-      { hanzi: '听不懂', pinyin: 'tīng bu dǒng', meaning: 'ne pas comprendre (audio)', meaningEn: 'can\'t understand (audio)', audio: 'audio/hsk2/hsk2_听.wav' },
-      { hanzi: '意思', pinyin: 'yì si', meaning: 'sens, signification', meaningEn: 'meaning', audio: 'audio/hsk2/hsk2_意思.wav' },
-      { hanzi: '怎么写', pinyin: 'zěn me xiě', meaning: 'comment écrit-on', meaningEn: 'how to write', audio: 'audio/hsk1/hsk1_怎么.wav' }
+      { hanzi: '再说一遍', pinyin: 'zàishuō yībiàn', meaning: 'redire, répéter', meaningEn: 'say again', audio: 'audio/hsk2/hsk2_再说.wav' },
+      { hanzi: '慢一点', pinyin: 'màn yìdiǎn', meaning: 'plus lentement', meaningEn: 'slower', audio: 'audio/hsk2/hsk2_慢.wav' },
+      { hanzi: '听不懂', pinyin: 'tīngbùdǒng', meaning: 'ne pas comprendre (audio)', meaningEn: 'can\'t understand (audio)', audio: 'audio/hsk2/hsk2_听.wav' },
+      { hanzi: '意思', pinyin: 'yìsi', meaning: 'sens, signification', meaningEn: 'meaning', audio: 'audio/hsk2/hsk2_意思.wav' },
+      { hanzi: '怎么写', pinyin: 'zěnme xiě', meaning: 'comment écrit-on', meaningEn: 'how to write', audio: 'audio/hsk1/hsk1_怎么.wav' }
     ],
     tip:
       'Distinction CLÉ : 听不懂 (je n\'entends/comprends pas la langue) vs 不知道 (je ne sais pas). Si on te demande « où est la gare ? », réponds 不知道 ; si on te parle trop vite, réponds 我听不懂.',
@@ -1160,10 +1160,10 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '怎么读 (zěnme dú, how is it pronounced). 这个字怎么读？= how is this character pronounced? For the tone: 第几声？(which tone?) — reply: 第一声 (1st), 第二声 (2nd), 第三声 (3rd), 第四声 (4th). To confirm: 是不是 X？(is it X?). Learner\'s magic phrase: 我学中文，所以我说得不太好 (I\'m learning, so I don\'t speak well yet) — disarms the listener, adjusts their pace.',
     items: [
-      { hanzi: '怎么读', pinyin: 'zěn me dú', meaning: 'comment ça se prononce', meaningEn: 'how to pronounce', audio: 'audio/hsk1/hsk1_读.wav' },
+      { hanzi: '怎么读', pinyin: 'zěnme dú', meaning: 'comment ça se prononce', meaningEn: 'how to pronounce', audio: 'audio/hsk1/hsk1_读.wav' },
       { hanzi: '声', pinyin: 'shēng', meaning: 'ton, voix', meaningEn: 'tone, voice', audio: 'audio/hsk1/hsk1_声.wav' },
       { hanzi: '第', pinyin: 'dì', meaning: 'préfixe ordinal', meaningEn: 'ordinal prefix', audio: 'audio/hsk2/hsk2_第.wav' },
-      { hanzi: '中文', pinyin: 'zhōng wén', meaning: 'chinois (langue)', meaningEn: 'Chinese (language)', audio: 'audio/hsk1/hsk1_中文.wav' },
+      { hanzi: '中文', pinyin: 'zhōngwén', meaning: 'chinois (langue)', meaningEn: 'Chinese (language)', audio: 'audio/hsk1/hsk1_中文.wav' },
       { hanzi: '说', pinyin: 'shuō', meaning: 'dire, parler', meaningEn: 'speak', audio: 'audio/hsk1/hsk1_说.wav' }
     ],
     tip:
@@ -1216,10 +1216,10 @@ export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '明白了 (I got it — caught the meaning). 知道了 (noted / OK I know now). Difference: 明白 = intellectual understanding; 知道 = info received. To prompt more: 然后呢？(and then?), 真的吗？(really?). To punctuate: 哦 (ah!), 嗯 (OK), 是吗 (oh really?). These little words keep a conversation alive — without them, the other thinks you\'re lost.',
     items: [
-      { hanzi: '明白', pinyin: 'míng bai', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
-      { hanzi: '知道', pinyin: 'zhī dào', meaning: 'savoir', meaningEn: 'know', audio: 'audio/hsk2/hsk2_知道.wav' },
-      { hanzi: '然后', pinyin: 'rán hòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
-      { hanzi: '真的', pinyin: 'zhēn de', meaning: 'vraiment', meaningEn: 'really', audio: 'audio/hsk2/hsk2_真.wav' },
+      { hanzi: '明白', pinyin: 'míngbái', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
+      { hanzi: '知道', pinyin: 'zhīdào', meaning: 'savoir', meaningEn: 'know', audio: 'audio/hsk2/hsk2_知道.wav' },
+      { hanzi: '然后', pinyin: 'ránhòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
+      { hanzi: '真的', pinyin: 'zhēnde', meaning: 'vraiment', meaningEn: 'really', audio: 'audio/hsk2/hsk2_真.wav' },
       { hanzi: '哦', pinyin: 'ò', meaning: 'ah ! (réaction)', meaningEn: 'oh!', audio: 'audio/hsk1/hsk1_哦.wav' }
     ],
     tip:
@@ -1245,11 +1245,11 @@ export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese fillers buy you thinking time WITHOUT looking lost. 那个 (nèige, «uh…») — the equivalent of «um». 这个 (zhèige, same). 嗯… (ǹg) — neutral sound while searching. 怎么说呢 (zěnme shuō ne, how to put it). Crucial: without fillers, a long silence in Chinese is interpreted as «didn\'t understand». With them, you signal «I\'m thinking, it\'s coming».',
     items: [
-      { hanzi: '那个', pinyin: 'nèi ge', meaning: 'euh, ce/cet', meaningEn: 'um, that', audio: 'audio/hsk1/hsk1_那.wav' },
-      { hanzi: '这个', pinyin: 'zhèi ge', meaning: 'euh, ce/cet', meaningEn: 'um, this', audio: 'audio/hsk1/hsk1_这.wav' },
+      { hanzi: '那个', pinyin: 'nàge', meaning: 'euh, ce/cet', meaningEn: 'um, that', audio: 'audio/hsk1/hsk1_那.wav' },
+      { hanzi: '这个', pinyin: 'zhège', meaning: 'euh, ce/cet', meaningEn: 'um, this', audio: 'audio/hsk1/hsk1_这.wav' },
       { hanzi: '嗯', pinyin: 'ǹg', meaning: 'mmm (réflexion)', meaningEn: 'mmm (thinking)', audio: 'audio/hsk2/hsk2_嗯.wav' },
-      { hanzi: '怎么说', pinyin: 'zěn me shuō', meaning: 'comment dire', meaningEn: 'how to say', audio: 'audio/hsk1/hsk1_怎么.wav' },
-      { hanzi: '比如', pinyin: 'bǐ rú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk3/hsk3_比如.wav' }
+      { hanzi: '怎么说', pinyin: 'zěnme shuō', meaning: 'comment dire', meaningEn: 'how to say', audio: 'audio/hsk1/hsk1_怎么.wav' },
+      { hanzi: '比如', pinyin: 'bǐrú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk3/hsk3_比如.wav' }
     ],
     tip:
       'Anecdote piège : 那个 (nèige) sonne phonétiquement comme l\'insulte raciste anglaise « n-word ». Aux États-Unis ou avec un anglophone, prononce 那个 plutôt « nàge » (ton 4) ou évite-le. En Chine, aucun problème.',
@@ -1272,11 +1272,11 @@ export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '然后 (then). 还有 (and also). 比如 (for example). These 3 connectors let you string multiple bits of info without breaking rhythm. «我喜欢看书，然后听音乐，还有跑步，比如周末». Without these connectors, you make isolated sentences with no flow. Bonus: 因为 (because) to justify — «我学中文，因为我喜欢中国文化».',
     items: [
-      { hanzi: '然后', pinyin: 'rán hòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
-      { hanzi: '还有', pinyin: 'hái yǒu', meaning: 'et aussi', meaningEn: 'and also', audio: 'audio/hsk2/hsk2_还有.wav' },
-      { hanzi: '因为', pinyin: 'yīn wèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
-      { hanzi: '所以', pinyin: 'suǒ yǐ', meaning: 'donc', meaningEn: 'so', audio: 'audio/hsk2/hsk2_所以.wav' },
-      { hanzi: '但是', pinyin: 'dàn shì', meaning: 'mais', meaningEn: 'but', audio: 'audio/hsk2/hsk2_但是.wav' }
+      { hanzi: '然后', pinyin: 'ránhòu', meaning: 'ensuite', meaningEn: 'then', audio: 'audio/hsk3/hsk3_然后.wav' },
+      { hanzi: '还有', pinyin: 'háiyǒu', meaning: 'et aussi', meaningEn: 'and also', audio: 'audio/hsk2/hsk2_还有.wav' },
+      { hanzi: '因为', pinyin: 'yīnwèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '所以', pinyin: 'suǒyǐ', meaning: 'donc', meaningEn: 'so', audio: 'audio/hsk2/hsk2_所以.wav' },
+      { hanzi: '但是', pinyin: 'dànshì', meaning: 'mais', meaningEn: 'but', audio: 'audio/hsk2/hsk2_但是.wav' }
     ],
     tip:
       'En chinois, 因为 X 所以 Y va souvent ensemble (« parce que X, donc Y »), même quand le français se contenterait du seul « parce que ». Ça structure mieux la phrase.',
@@ -1306,7 +1306,7 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '要', pinyin: 'yào', meaning: 'vouloir', meaningEn: 'want', audio: 'audio/hsk1/hsk1_要.wav' },
       { hanzi: '杯', pinyin: 'bēi', meaning: 'tasse, verre', meaningEn: 'cup, glass', audio: 'audio/hsk1/hsk1_杯.wav' },
-      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk2/hsk2_咖啡.wav' },
+      { hanzi: '咖啡', pinyin: 'kāfēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk2/hsk2_咖啡.wav' },
       { hanzi: '热', pinyin: 'rè', meaning: 'chaud', meaningEn: 'hot', audio: 'audio/hsk1/hsk1_热.wav' },
       { hanzi: '冰', pinyin: 'bīng', meaning: 'glace, glacé', meaningEn: 'ice', audio: 'audio/hsk5/hsk5_冰.wav' }
     ],
@@ -1333,10 +1333,10 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
       '请去 X (please take me to X). 请去机场 (to the airport), 请去人民广场 (People\'s Square). Give an address: 这是地址 (here\'s the address) + show your phone. During the ride: 慢一点 (slower), 这里 (here), 停一下 (stop). Arrival: 多少钱? (how much?), 收据 (receipt — for official taxis). Today Didi 滴滴 has replaced 80% of street-hailed taxis: order via app, price shown.',
     items: [
       { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
-      { hanzi: '机场', pinyin: 'jī chǎng', meaning: 'aéroport', meaningEn: 'airport', audio: 'audio/hsk2/hsk2_机场.wav' },
-      { hanzi: '地址', pinyin: 'dì zhǐ', meaning: 'adresse', meaningEn: 'address', audio: 'audio/hsk4/hsk4_地址.wav' },
+      { hanzi: '机场', pinyin: 'jīchǎng', meaning: 'aéroport', meaningEn: 'airport', audio: 'audio/hsk2/hsk2_机场.wav' },
+      { hanzi: '地址', pinyin: 'dìzhǐ', meaning: 'adresse', meaningEn: 'address', audio: 'audio/hsk4/hsk4_地址.wav' },
       { hanzi: '停', pinyin: 'tíng', meaning: 'arrêter', meaningEn: 'stop', audio: 'audio/hsk4/hsk4_停.wav' },
-      { hanzi: '滴滴', pinyin: 'dī dī', meaning: 'Didi (Uber chinois)', meaningEn: 'Didi (Chinese Uber)', audio: 'audio/hsk6/hsk6_滴滴.wav' }
+      { hanzi: '滴滴', pinyin: 'dīdī', meaning: 'Didi (Uber chinois)', meaningEn: 'Didi (Chinese Uber)', audio: 'audio/hsk6/hsk6_滴滴.wav' }
     ],
     tip:
       'Astuce : pour éviter de mal prononcer une adresse, montre l\'écran du téléphone au chauffeur en disant 这里 (zhèlǐ, ici). Plus efficace que de batailler avec les tons.',
@@ -1363,9 +1363,9 @@ export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '先', pinyin: 'xiān', meaning: 'd\'abord', meaningEn: 'first', audio: 'audio/hsk2/hsk2_先.wav' },
       { hanzi: '走', pinyin: 'zǒu', meaning: 'partir, marcher', meaningEn: 'leave, walk', audio: 'audio/hsk1/hsk1_走.wav' },
-      { hanzi: '改天', pinyin: 'gǎi tiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
-      { hanzi: '回头', pinyin: 'huí tóu', meaning: 'plus tard (oral)', meaningEn: 'later (spoken)', audio: 'audio/hsk5/hsk5_回头.wav' },
-      { hanzi: '下次', pinyin: 'xià cì', meaning: 'la prochaine fois', meaningEn: 'next time', audio: 'audio/hsk2/hsk2_下次.wav' }
+      { hanzi: '改天', pinyin: 'gǎitiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
+      { hanzi: '回头', pinyin: 'huítóu', meaning: 'plus tard (oral)', meaningEn: 'later (spoken)', audio: 'audio/hsk5/hsk5_回头.wav' },
+      { hanzi: '下次', pinyin: 'xiàcì', meaning: 'la prochaine fois', meaningEn: 'next time', audio: 'audio/hsk2/hsk2_下次.wav' }
     ],
     tip:
       'Une vraie sortie chinoise = 3 temps : (1) annonce 我先走了, (2) raison brève 我有点事, (3) projection 改天见. Sauter une étape sonne brusque. Le tout en 5 secondes.',
@@ -1387,11 +1387,11 @@ export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '路上小心 (take care on the way): a formula ALWAYS appreciated. Said by the one STAYING to the one LEAVING. Works for 5-min or 3-hour trips. Variants: 慢走 (take it easy — by shopkeepers), 一路平安 (safe travels — for a long trip). To close networks: 保持联系 (keep in touch), 有空联系 (hit me up when free).',
     items: [
-      { hanzi: '路上', pinyin: 'lù shang', meaning: 'sur la route', meaningEn: 'on the road', audio: 'audio/hsk3/hsk3_路上.wav' },
-      { hanzi: '小心', pinyin: 'xiǎo xīn', meaning: 'fais attention', meaningEn: 'be careful', audio: 'audio/hsk3/hsk3_小心.wav' },
-      { hanzi: '慢走', pinyin: 'màn zǒu', meaning: 'va doucement', meaningEn: 'take it easy', audio: 'audio/hsk2/hsk2_慢走.wav' },
-      { hanzi: '联系', pinyin: 'lián xì', meaning: 'contact', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' },
-      { hanzi: '保持', pinyin: 'bǎo chí', meaning: 'maintenir', meaningEn: 'keep, maintain', audio: 'audio/hsk5/hsk5_保持.wav' }
+      { hanzi: '路上', pinyin: 'lùshàng', meaning: 'sur la route', meaningEn: 'on the road', audio: 'audio/hsk3/hsk3_路上.wav' },
+      { hanzi: '小心', pinyin: 'xiǎoxīn', meaning: 'fais attention', meaningEn: 'be careful', audio: 'audio/hsk3/hsk3_小心.wav' },
+      { hanzi: '慢走', pinyin: 'mànzǒu', meaning: 'va doucement', meaningEn: 'take it easy', audio: 'audio/hsk2/hsk2_慢走.wav' },
+      { hanzi: '联系', pinyin: 'liánxì', meaning: 'contact', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' },
+      { hanzi: '保持', pinyin: 'bǎochí', meaning: 'maintenir', meaningEn: 'keep, maintain', audio: 'audio/hsk5/hsk5_保持.wav' }
     ],
     tip:
       'Si tu sors d\'un magasin/restaurant chinois, le commerçant te dira presque toujours 慢走 (« va doucement »). Pas une vraie demande, juste une formule de politesse. Tu peux répondre 谢谢 ou un signe de tête.',
@@ -1417,9 +1417,9 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
       '能不能 + verb (can you…?) : the politest way to ask something of a stranger. 能不能帮我？(could you help me?). Variants: 可不可以 + verb, 麻烦你 + verb. To politely decline: 不好意思，我有事. Always start with 不好意思 = massively softens.',
     items: [
       { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir', meaningEn: 'can, be able', audio: 'audio/hsk1/hsk1_能.wav' },
-      { hanzi: '可不可以', pinyin: 'kě bu kě yǐ', meaning: 'est-ce possible', meaningEn: 'is it possible', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '可不可以', pinyin: 'kěbùkěyǐ', meaning: 'est-ce possible', meaningEn: 'is it possible', audio: 'audio/hsk1/hsk1_可以.wav' },
       { hanzi: '帮我', pinyin: 'bāng wǒ', meaning: 'm\'aider', meaningEn: 'help me', audio: 'audio/hsk2/hsk2_帮.wav' },
-      { hanzi: '不好意思', pinyin: 'bù hǎo yì si', meaning: 'pardon, désolé', meaningEn: 'excuse me, sorry', audio: 'audio/hsk2/hsk2_不好意思.wav' },
+      { hanzi: '不好意思', pinyin: 'bùhǎoyìsī', meaning: 'pardon, désolé', meaningEn: 'excuse me, sorry', audio: 'audio/hsk2/hsk2_不好意思.wav' },
       { hanzi: '事', pinyin: 'shì', meaning: 'affaire, chose', meaningEn: 'matter, thing', audio: 'audio/hsk1/hsk1_事.wav' }
     ],
     tip:
@@ -1445,10 +1445,10 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
       'Ask for a place: X 在哪儿？(where is X?). 厕所在哪儿？(toilets?), 地铁站在哪儿？(metro station?). Possible replies: 一直走 (straight ahead), 左转 (turn left), 右转 (turn right), 在 X 旁边 (next to X). If you don\'t catch it: 慢一点 + 怎么去？ or 你能写一下吗？(can you write it?).',
     items: [
       { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où', meaningEn: 'where', audio: 'audio/hsk1/hsk1_哪儿.wav' },
-      { hanzi: '一直', pinyin: 'yì zhí', meaning: 'tout droit', meaningEn: 'straight', audio: 'audio/hsk3/hsk3_一直.wav' },
+      { hanzi: '一直', pinyin: 'yìzhí', meaning: 'tout droit', meaningEn: 'straight', audio: 'audio/hsk3/hsk3_一直.wav' },
       { hanzi: '左', pinyin: 'zuǒ', meaning: 'gauche', meaningEn: 'left', audio: 'audio/hsk2/hsk2_左.wav' },
       { hanzi: '右', pinyin: 'yòu', meaning: 'droite', meaningEn: 'right', audio: 'audio/hsk2/hsk2_右.wav' },
-      { hanzi: '旁边', pinyin: 'páng biān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' }
+      { hanzi: '旁边', pinyin: 'pángbiān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' }
     ],
     tip:
       'Astuce : ouvre 高德地图 (gāo dé dìtú) ou 百度地图 (bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
@@ -1515,8 +1515,8 @@ export const a1NuancesM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '百', pinyin: 'bǎi', meaning: 'cent', meaningEn: 'hundred', audio: 'audio/hsk2/hsk2_百.wav' },
       { hanzi: '千', pinyin: 'qiān', meaning: 'mille', meaningEn: 'thousand', audio: 'audio/hsk2/hsk2_千.wav' },
       { hanzi: '万', pinyin: 'wàn', meaning: 'dix mille', meaningEn: 'ten thousand', audio: 'audio/hsk3/hsk3_万.wav' },
-      { hanzi: '两百', pinyin: 'liǎng bǎi', meaning: '200', meaningEn: '200', audio: 'audio/hsk2/hsk2_两.wav' },
-      { hanzi: '两千', pinyin: 'liǎng qiān', meaning: '2000', meaningEn: '2000', audio: 'audio/hsk2/hsk2_两.wav' }
+      { hanzi: '两百', pinyin: 'liǎngbǎi', meaning: '200', meaningEn: '200', audio: 'audio/hsk2/hsk2_两.wav' },
+      { hanzi: '两千', pinyin: 'liǎngqiān', meaning: '2000', meaningEn: '2000', audio: 'audio/hsk2/hsk2_两.wav' }
     ],
     tip:
       'Au quotidien, dans les petits commerces : « 两百块 » (200 yuans) est plus courant que « 二百块 ». Pour 220, on dit « 两百二十 » (la seconde fois c\'est 二 dans la dizaine).',
@@ -1547,9 +1547,9 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '你', pinyin: 'nǐ', meaning: 'tu', meaningEn: 'you (informal)', audio: 'audio/hsk1/hsk1_你.wav' },
       { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli)', meaningEn: 'you (formal)', audio: 'audio/hsk1/hsk1_您.wav' },
-      { hanzi: '你们', pinyin: 'nǐ men', meaning: 'vous (pluriel)', meaningEn: 'you (plural)', audio: 'audio/hsk1/hsk1_你们.wav' },
-      { hanzi: '您好', pinyin: 'nín hǎo', meaning: 'bonjour (poli)', meaningEn: 'hello (formal)', audio: 'audio/hsk1/hsk1_您好.wav' },
-      { hanzi: '客户', pinyin: 'kè hù', meaning: 'client', meaningEn: 'customer', audio: 'audio/hsk5/hsk5_客户.wav' }
+      { hanzi: '你们', pinyin: 'nǐmen', meaning: 'vous (pluriel)', meaningEn: 'you (plural)', audio: 'audio/hsk1/hsk1_你们.wav' },
+      { hanzi: '您好', pinyin: 'nínhǎo', meaning: 'bonjour (poli)', meaningEn: 'hello (formal)', audio: 'audio/hsk1/hsk1_您好.wav' },
+      { hanzi: '客户', pinyin: 'kèhù', meaning: 'client', meaningEn: 'customer', audio: 'audio/hsk5/hsk5_客户.wav' }
     ],
     tip:
       'Si tu hésites en début de conversation, utilise 您 — tu peux toujours redescendre vers 你 si l\'autre te le propose (« 叫我 X 就行 »). L\'inverse (passer de 你 à 您) crée un froid.',
@@ -1571,11 +1571,11 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Beyond 您, respect is shown via TITLES. 老师 (lǎoshī, teacher) — used for ANY educator or expert. 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X. 先生 (xiānsheng, mister) — Mr/sir, formal. 女士 (nǚshì, madam) — Mrs/ma\'am formal. 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions. Prefer 美女 (spoken) or 女士 (formal).',
     items: [
-      { hanzi: '老师', pinyin: 'lǎo shī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' },
-      { hanzi: '师傅', pinyin: 'shī fu', meaning: 'maître, monsieur', meaningEn: 'master, sir', audio: 'audio/hsk5/hsk5_师傅.wav' },
-      { hanzi: '先生', pinyin: 'xiān sheng', meaning: 'monsieur', meaningEn: 'mister', audio: 'audio/hsk1/hsk1_先生.wav' },
-      { hanzi: '女士', pinyin: 'nǚ shì', meaning: 'madame', meaningEn: 'madam', audio: 'audio/hsk5/hsk5_女士.wav' },
-      { hanzi: '美女', pinyin: 'měi nǚ', meaning: 'mademoiselle (oral)', meaningEn: 'miss (spoken)', audio: 'audio/hsk4/hsk4_美女.wav' }
+      { hanzi: '老师', pinyin: 'lǎoshī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' },
+      { hanzi: '师傅', pinyin: 'shīfù', meaning: 'maître, monsieur', meaningEn: 'master, sir', audio: 'audio/hsk5/hsk5_师傅.wav' },
+      { hanzi: '先生', pinyin: 'xiānshēng', meaning: 'monsieur', meaningEn: 'mister', audio: 'audio/hsk1/hsk1_先生.wav' },
+      { hanzi: '女士', pinyin: 'nǚshì', meaning: 'madame', meaningEn: 'madam', audio: 'audio/hsk5/hsk5_女士.wav' },
+      { hanzi: '美女', pinyin: 'měinǚ', meaning: 'mademoiselle (oral)', meaningEn: 'miss (spoken)', audio: 'audio/hsk4/hsk4_美女.wav' }
     ],
     tip:
       'Astuce : devant un taxi/chauffeur Didi, dis « 师傅 ». C\'est le mot qui fluidifie tout. Plus chaleureux que 先生 et culturellement reconnu.',
@@ -1607,7 +1607,7 @@ export const a1NuancesM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '是', pinyin: 'shì', meaning: 'être (identité)', meaningEn: 'be (identity)', audio: 'audio/hsk1/hsk1_是.wav' },
       { hanzi: '在', pinyin: 'zài', meaning: 'être (lieu)', meaningEn: 'be (place)', audio: 'audio/hsk1/hsk1_在.wav' },
       { hanzi: '有', pinyin: 'yǒu', meaning: 'avoir, il y a', meaningEn: 'have, there is', audio: 'audio/hsk1/hsk1_有.wav' },
-      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne pas avoir', meaningEn: 'not have', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '没有', pinyin: 'méiyǒu', meaning: 'ne pas avoir', meaningEn: 'not have', audio: 'audio/hsk1/hsk1_没有.wav' },
       { hanzi: '里', pinyin: 'lǐ', meaning: 'à l\'intérieur', meaningEn: 'inside', audio: 'audio/hsk1/hsk1_里.wav' }
     ],
     tip:
@@ -1663,8 +1663,8 @@ export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '也', pinyin: 'yě', meaning: 'aussi', meaningEn: 'also, too', audio: 'audio/hsk1/hsk1_也.wav' },
       { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tout', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
-      { hanzi: '我们', pinyin: 'wǒ men', meaning: 'nous', meaningEn: 'we', audio: 'audio/hsk1/hsk1_我们.wav' },
-      { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'aimer', meaningEn: 'like', audio: 'audio/hsk1/hsk1_喜欢.wav' },
+      { hanzi: '我们', pinyin: 'wǒmen', meaning: 'nous', meaningEn: 'we', audio: 'audio/hsk1/hsk1_我们.wav' },
+      { hanzi: '喜欢', pinyin: 'xǐhuān', meaning: 'aimer', meaningEn: 'like', audio: 'audio/hsk1/hsk1_喜欢.wav' },
       { hanzi: '茶', pinyin: 'chá', meaning: 'thé', meaningEn: 'tea', audio: 'audio/hsk1/hsk1_茶.wav' }
     ],
     tip:
@@ -1694,7 +1694,7 @@ export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
       { hanzi: '没', pinyin: 'méi', meaning: 'ne pas (passé)', meaningEn: 'not (past)', audio: 'audio/hsk1/hsk1_没.wav' },
       { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' },
       { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
-      { hanzi: '他们', pinyin: 'tā men', meaning: 'ils, eux', meaningEn: 'they', audio: 'audio/hsk1/hsk1_他们.wav' }
+      { hanzi: '他们', pinyin: 'tāmen', meaning: 'ils, eux', meaningEn: 'they', audio: 'audio/hsk1/hsk1_他们.wav' }
     ],
     tip:
       'Règle de fer : 不 pour le présent/futur (我不去 = je n\'y vais pas) et 没 pour le passé (我没去 = je n\'y suis pas allé). Confusion = signature débutant.',
@@ -1723,10 +1723,10 @@ export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '几 (jǐ, how many — for 1 to 10 roughly): used when expecting a SMALL number. 你有几个朋友？ = how many friends? (3-4 expected). Always followed by a classifier. 多少 (duōshao, how much — for 10+, or unknown): big number, unknown sum. 多少钱？ = how much money? Not necessarily followed by a classifier. Common mistake: using 几 for a price → 几钱 ✗; correct → 多少钱.',
     items: [
-      { hanzi: '多少', pinyin: 'duō shao', meaning: 'combien (grand)', meaningEn: 'how much (big)', audio: 'audio/hsk1/hsk1_多少.wav' },
+      { hanzi: '多少', pinyin: 'duōshǎo', meaning: 'combien (grand)', meaningEn: 'how much (big)', audio: 'audio/hsk1/hsk1_多少.wav' },
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (petit)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
       { hanzi: '钱', pinyin: 'qián', meaning: 'argent', meaningEn: 'money', audio: 'audio/hsk1/hsk1_钱.wav' },
-      { hanzi: '朋友', pinyin: 'péng you', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' },
+      { hanzi: '朋友', pinyin: 'péngyǒu', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' },
       { hanzi: '人', pinyin: 'rén', meaning: 'personne', meaningEn: 'person', audio: 'audio/hsk1/hsk1_人.wav' }
     ],
     tip:
@@ -1753,8 +1753,8 @@ export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '多', pinyin: 'duō', meaning: 'beaucoup', meaningEn: 'many, much', audio: 'audio/hsk1/hsk1_多.wav' },
       { hanzi: '少', pinyin: 'shǎo', meaning: 'peu', meaningEn: 'few, little', audio: 'audio/hsk1/hsk1_少.wav' },
-      { hanzi: '很多', pinyin: 'hěn duō', meaning: 'beaucoup de', meaningEn: 'many', audio: 'audio/hsk1/hsk1_很多.wav' },
-      { hanzi: '不少', pinyin: 'bù shǎo', meaning: 'pas mal, beaucoup', meaningEn: 'quite a lot', audio: 'audio/hsk2/hsk2_不少.wav' },
+      { hanzi: '很多', pinyin: 'hěnduō', meaning: 'beaucoup de', meaningEn: 'many', audio: 'audio/hsk1/hsk1_很多.wav' },
+      { hanzi: '不少', pinyin: 'bùshǎo', meaning: 'pas mal, beaucoup', meaningEn: 'quite a lot', audio: 'audio/hsk2/hsk2_不少.wav' },
       { hanzi: '比', pinyin: 'bǐ', meaning: 'que (compare)', meaningEn: 'than', audio: 'audio/hsk2/hsk2_比.wav' }
     ],
     tip:
@@ -1808,11 +1808,11 @@ export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '来/去 combine with directional verbs: 上 (go up), 下 (go down), 进 (enter), 出 (exit), 回 (return). Four canonical examples: 上来 = come up TOWARD you, 下去 = go down AWAY, 进来 = enter (toward speaker — «come in!»), 出去 = exit (away from speaker — «get out!»). When someone knocks and you yell «come in» → 请进来. Always from speaker\'s POV.',
     items: [
-      { hanzi: '上来', pinyin: 'shàng lái', meaning: 'monter (vers moi)', meaningEn: 'come up', audio: 'audio/hsk2/hsk2_上.wav' },
-      { hanzi: '下去', pinyin: 'xià qù', meaning: 'descendre (loin)', meaningEn: 'go down', audio: 'audio/hsk2/hsk2_下.wav' },
-      { hanzi: '进来', pinyin: 'jìn lái', meaning: 'entrer (vers moi)', meaningEn: 'come in', audio: 'audio/hsk2/hsk2_进.wav' },
-      { hanzi: '出去', pinyin: 'chū qù', meaning: 'sortir (loin)', meaningEn: 'go out', audio: 'audio/hsk2/hsk2_出.wav' },
-      { hanzi: '回来', pinyin: 'huí lái', meaning: 'revenir', meaningEn: 'come back', audio: 'audio/hsk1/hsk1_回.wav' }
+      { hanzi: '上来', pinyin: 'shànglái', meaning: 'monter (vers moi)', meaningEn: 'come up', audio: 'audio/hsk2/hsk2_上.wav' },
+      { hanzi: '下去', pinyin: 'xiàqù', meaning: 'descendre (loin)', meaningEn: 'go down', audio: 'audio/hsk2/hsk2_下.wav' },
+      { hanzi: '进来', pinyin: 'jìnlái', meaning: 'entrer (vers moi)', meaningEn: 'come in', audio: 'audio/hsk2/hsk2_进.wav' },
+      { hanzi: '出去', pinyin: 'chūqù', meaning: 'sortir (loin)', meaningEn: 'go out', audio: 'audio/hsk2/hsk2_出.wav' },
+      { hanzi: '回来', pinyin: 'huílái', meaning: 'revenir', meaningEn: 'come back', audio: 'audio/hsk1/hsk1_回.wav' }
     ],
     tip:
       'Mnémotechnique : pense aux portes. Quelqu\'un frappe → 请进来 (entrez vers moi). Tu sors d\'une réunion → 我先出去 (je sors d\'abord, loin de la pièce). Toujours basé sur OÙ TU ES PHYSIQUEMENT.',
@@ -1845,8 +1845,8 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '会', pinyin: 'huì', meaning: 'savoir faire', meaningEn: 'know how to', audio: 'audio/hsk1/hsk1_会.wav' },
       { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir', meaningEn: 'can, be able', audio: 'audio/hsk1/hsk1_能.wav' },
-      { hanzi: '开车', pinyin: 'kāi chē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
-      { hanzi: '游泳', pinyin: 'yóu yǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
+      { hanzi: '开车', pinyin: 'kāichē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
+      { hanzi: '游泳', pinyin: 'yóuyǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
       { hanzi: '说', pinyin: 'shuō', meaning: 'parler', meaningEn: 'speak', audio: 'audio/hsk1/hsk1_说.wav' }
     ],
     tip:
@@ -1873,11 +1873,11 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '可以 (kěyǐ, be allowed / can with permission). 我可以坐这里吗？= may I sit here? Difference from 能: 可以 often implies PERMISSION (social, legal), 能 a material CAPACITY. 你可以走了 = you may leave (I permit it). 你能走吗？= are you able to leave? In speech to accept: 可以 (OK), 不可以 (no, not OK).',
     items: [
-      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir (permission)', meaningEn: 'can (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '可以', pinyin: 'kěyǐ', meaning: 'pouvoir (permission)', meaningEn: 'can (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
       { hanzi: '坐', pinyin: 'zuò', meaning: 's\'asseoir', meaningEn: 'sit', audio: 'audio/hsk1/hsk1_坐.wav' },
-      { hanzi: '吸烟', pinyin: 'xī yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
-      { hanzi: '允许', pinyin: 'yǔn xǔ', meaning: 'permettre', meaningEn: 'allow', audio: 'audio/hsk5/hsk5_允许.wav' },
-      { hanzi: '禁止', pinyin: 'jìn zhǐ', meaning: 'interdire', meaningEn: 'forbid', audio: 'audio/hsk6/hsk6_禁止.wav' }
+      { hanzi: '吸烟', pinyin: 'xīyān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
+      { hanzi: '允许', pinyin: 'yǔnxǔ', meaning: 'permettre', meaningEn: 'allow', audio: 'audio/hsk5/hsk5_允许.wav' },
+      { hanzi: '禁止', pinyin: 'jìnzhǐ', meaning: 'interdire', meaningEn: 'forbid', audio: 'audio/hsk6/hsk6_禁止.wav' }
     ],
     tip:
       'Récap : 会 = appris (skill) | 能 = capable maintenant (capacité) | 可以 = autorisé (permission). « 我会，但不能，因为不可以 » = je sais, mais je ne peux pas, parce que je n\'ai pas le droit. Phrase qui résume tout.',
@@ -1905,10 +1905,10 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '会', pinyin: 'huì', meaning: 'savoir faire (appris)', meaningEn: 'know how to (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
       { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir (possible)', meaningEn: 'can (possible)', audio: 'audio/hsk1/hsk1_能.wav' },
-      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir (autorisé)', meaningEn: 'may (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
-      { hanzi: '开车', pinyin: 'kāi chē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
-      { hanzi: '喝酒', pinyin: 'hē jiǔ', meaning: 'boire de l\'alcool', meaningEn: 'drink alcohol', audio: 'audio/hsk2/hsk2_喝.wav' },
-      { hanzi: '公司', pinyin: 'gōng sī', meaning: 'entreprise', meaningEn: 'company', audio: 'audio/hsk2/hsk2_公司.wav' }
+      { hanzi: '可以', pinyin: 'kěyǐ', meaning: 'pouvoir (autorisé)', meaningEn: 'may (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '开车', pinyin: 'kāichē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
+      { hanzi: '喝酒', pinyin: 'hējiǔ', meaning: 'boire de l\'alcool', meaningEn: 'drink alcohol', audio: 'audio/hsk2/hsk2_喝.wav' },
+      { hanzi: '公司', pinyin: 'gōngsī', meaning: 'entreprise', meaningEn: 'company', audio: 'audio/hsk2/hsk2_公司.wav' }
     ],
     tip:
       'Avant de choisir « can » en chinois, pose la question : *appris, possible ou permis ?* La bonne réponse te donne le bon modal.',
@@ -1934,12 +1934,12 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'The 3 negatives give 3 different reasons an action doesn\'t happen. 不会 (bú huì): I never learned. 我不会游泳 = «I can\'t swim.» 不能 (bù néng): body or situation blocks me. 今天有事，我不能来 = «I have something today, I can\'t come.» 不可以 (bù kěyǐ): it\'s forbidden. 学生不可以带手机进考场 = «students may not bring phones into the exam room.» Tone nuance between 不能 and 不可以: 不可以 sounds like a strict rule (sign-on-a-wall type). 不能 sounds softer because it points to circumstances rather than authority. Speakers often prefer 不能 in polite conversation even when a rule is truly in play. 这里不能抽烟 sounds softer than 这里不可以抽烟, but both signal the same ban. Watch out: 不会 also has a prediction meaning («not likely to»). 他不会迟到的 = «he won\'t be late.» Context decides.',
     items: [
-      { hanzi: '不会', pinyin: 'bú huì', meaning: 'ne pas savoir (appris)', meaningEn: 'not know how (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
-      { hanzi: '不能', pinyin: 'bù néng', meaning: 'ne pas pouvoir (bloqué)', meaningEn: 'can\'t (blocked)', audio: 'audio/hsk1/hsk1_能.wav' },
-      { hanzi: '不可以', pinyin: 'bù kě yǐ', meaning: 'ne pas avoir le droit', meaningEn: 'not allowed', audio: 'audio/hsk1/hsk1_可以.wav' },
-      { hanzi: '游泳', pinyin: 'yóu yǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
-      { hanzi: '抽烟', pinyin: 'chōu yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
-      { hanzi: '迟到', pinyin: 'chí dào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' }
+      { hanzi: '不会', pinyin: 'búhuì', meaning: 'ne pas savoir (appris)', meaningEn: 'not know how (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
+      { hanzi: '不能', pinyin: 'bùnéng', meaning: 'ne pas pouvoir (bloqué)', meaningEn: 'can\'t (blocked)', audio: 'audio/hsk1/hsk1_能.wav' },
+      { hanzi: '不可以', pinyin: 'bù kěyǐ', meaning: 'ne pas avoir le droit', meaningEn: 'not allowed', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '游泳', pinyin: 'yóuyǒng', meaning: 'nager', meaningEn: 'swim', audio: 'audio/hsk2/hsk2_游泳.wav' },
+      { hanzi: '抽烟', pinyin: 'chōuyān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_吸烟.wav' },
+      { hanzi: '迟到', pinyin: 'chídào', meaning: 'être en retard', meaningEn: 'be late', audio: 'audio/hsk3/hsk3_迟到.wav' }
     ],
     tip:
       'Au lieu de « non c\'est interdit ! », préfère 这里不能... en français poli. Ça sonne moins autoritaire, comme si tu partageais une contrainte plutôt qu\'imposer une règle.',

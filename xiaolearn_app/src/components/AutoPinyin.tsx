@@ -121,7 +121,7 @@ function segmentHanziRun(text: string): string[] {
 
 /** Cache simple hanzi → pinyin pour éviter de recomputer dans le même render. */
 const pinyinCache = new Map<string, string>();
-const getPinyin = (hanzi: string): string => {
+export const getPinyin = (hanzi: string): string => {
   const cached = pinyinCache.get(hanzi);
   if (cached !== undefined) return cached;
   try {

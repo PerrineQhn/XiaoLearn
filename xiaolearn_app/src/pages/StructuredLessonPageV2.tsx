@@ -32,7 +32,7 @@ import type {
 import { playHanziAudio, playAudioWithFallback } from '../utils/audio';
 import PronunciationCheck from '../components/PronunciationCheck';
 import OfflineLessonButton from '../components/OfflineLessonButton';
-import AutoPinyin from '../components/AutoPinyin';
+import AutoPinyin, { getPinyin as getPinyinForHanzi } from '../components/AutoPinyin';
 import StructuredLearnBody from '../components/StructuredLearnBody';
 import PronunciationDrill, {
   type PronunciationDrillItem
@@ -1566,6 +1566,41 @@ const ExerciseCard = ({
   }, [exercise.audio, exercise.audioHanzi, exercise.prompt]);
   const resolvedAudioHanzi = exercise.audioHanzi || autoHanziFromPrompt;
   const hasAudio = Boolean(exercise.audio || resolvedAudioHanzi);
+
+  // ── Rendu spécial "translation" chinois→français ───────────────────────
+  // Pour un exercice de type `translation` dont le prompt contient une
+  // phrase chinoise entre « … », on l'affiche mise en avant (comme un
+  // bloc `sentence`) avec le pinyin auto-généré JUSTE DESSOUS pour aider
+  // la lecture. Le prompt est réduit à sa partie hors guillemets
+  // (« Traduis : »).
+  const translationSentence = useMemo(() => {
+    if (exercise.type !== 'translation') return null;
+    const src = promptText || '';
+    const quoted = src.match(/«\s*([^»]+?)\s*»/);
+    if (!quoted) return null;
+    const raw = quoted[1].trim();
+    // Ne s'applique QUE si le contenu entre guillemets est majoritairement chinois
+    const hanziMatches = raw.match(/[一-鿿]/g);
+    if (!hanziMatches || hanziMatches.length < 2) return null;
+    // Concatène les runs de hanzi pour obtenir le pinyin (on ignore ? ！ 。)
+    const hanziOnly = raw
+      .match(/[一-鿿]+/g)
+      ?.join('') ?? '';
+    if (!hanziOnly) return null;
+    const py = getPinyinForHanzi(hanziOnly);
+    return { hanzi: raw, pinyin: py };
+  }, [exercise.type, promptText]);
+
+  // Retire la partie « ... » du prompt (déjà rendue dans le bloc sentence)
+  // pour ne pas dupliquer visuellement. Garde la question qui précède.
+  const displayedPromptText = useMemo(() => {
+    if (!translationSentence) return promptText;
+    return (promptText || '')
+      .replace(/«[^»]+»\s*[?？!！]?/g, '')
+      .replace(/\s*:\s*$/, ' :')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }, [translationSentence, promptText]);
   const playExerciseAudio = useCallback(() => {
     if (resolvedAudioHanzi) {
       playHanziAudio(resolvedAudioHanzi, exercise.audio).catch(() => {});
@@ -1633,9 +1668,18 @@ const ExerciseCard = ({
           )}
         </div>
       )}
-      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(displayedPromptText)}</div>
 
-      {showSentenceText && sentenceText && !errorCorrectionSegments && (
+      {translationSentence && (
+        <div className="lv2-exercise-sentence lv2-exercise-sentence--translation">
+          <div className="lv2-exercise-sentence-hanzi">{translationSentence.hanzi}</div>
+          {translationSentence.pinyin && (
+            <div className="lv2-exercise-sentence-pinyin">{translationSentence.pinyin}</div>
+          )}
+        </div>
+      )}
+
+      {showSentenceText && sentenceText && !errorCorrectionSegments && !translationSentence && (
         <div className="lv2-exercise-sentence">
           {exercise.type === 'fill'
             ? renderFillSentence(sentenceText, answered, selectedIndex, exercise.choices, exercise.correctIndex)

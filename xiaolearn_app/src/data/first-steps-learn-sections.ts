@@ -36,7 +36,7 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Mandarin has no single word for "hello" like English. The default reflex is 你好 (nǐhǎo), literally "you + good". You can use it all day, with almost anyone.\nThe respectful version is 您好 (nínhǎo), with 您 — a polite "you" reserved for elders, customers, teachers.',
     items: [
-      { hanzi: '你好', pinyin: 'nǐ hǎo', meaning: 'bonjour (standard)', meaningEn: 'hello (standard)', audio: 'audio/hsk1/hsk1_你好.wav' },
+      { hanzi: '你好', pinyin: 'nǐhǎo', meaning: 'bonjour (standard)', meaningEn: 'hello (standard)', audio: 'audio/hsk1/hsk1_你好.wav' },
       { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli, singulier)', meaningEn: 'you (polite, singular)', audio: 'audio/hsk1/hsk1_您.wav' },
       { hanzi: '你', pinyin: 'nǐ', meaning: 'tu', meaningEn: 'you', audio: 'audio/hsk1/hsk1_你.wav' },
       { hanzi: '好', pinyin: 'hǎo', meaning: 'bien, bon', meaningEn: 'good, well', audio: 'audio/hsk1/hsk1_好.wav' }
@@ -55,10 +55,10 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'For a warmer or context-specific greeting, stick 好 (good) after a time of day. The pattern is always: [time] + 好.',
     items: [
-      { hanzi: '早上', pinyin: 'zǎo shàng', meaning: 'le matin', meaningEn: 'morning', audio: 'audio/hsk1/hsk1_早上.wav' },
+      { hanzi: '早上', pinyin: 'zǎoshàng', meaning: 'le matin', meaningEn: 'morning', audio: 'audio/hsk1/hsk1_早上.wav' },
       { hanzi: '早', pinyin: 'zǎo', meaning: '« salut ! » (matin, familier)', meaningEn: '"morning!" (casual)', audio: 'audio/hsk1/hsk1_早.wav' },
-      { hanzi: '中午', pinyin: 'zhōng wǔ', meaning: 'midi, la mi-journée', meaningEn: 'noon, midday', audio: 'audio/hsk1/hsk1_中午.wav' },
-      { hanzi: '晚上', pinyin: 'wǎn shàng', meaning: 'le soir', meaningEn: 'evening', audio: 'audio/hsk1/hsk1_晚上.wav' }
+      { hanzi: '中午', pinyin: 'zhōngwǔ', meaning: 'midi, la mi-journée', meaningEn: 'noon, midday', audio: 'audio/hsk1/hsk1_中午.wav' },
+      { hanzi: '晚上', pinyin: 'wǎnshàng', meaning: 'le soir', meaningEn: 'evening', audio: 'audio/hsk1/hsk1_晚上.wav' }
     ],
     tip:
       '早上好 (zǎoshànghǎo) = « bonjour (matin) », 晚上好 (wǎnshànghǎo) = « bonsoir ». Un simple 早 ! suffit entre collègues en arrivant au bureau.',
@@ -74,8 +74,8 @@ export const greetingsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '再见 (zàijiàn) literally means "again + see" — "see you again". Between friends, 拜拜 (bái bái) is common, borrowed from English "bye bye". To thank as you leave, 谢谢 (xièxiè) is a must.',
     items: [
-      { hanzi: '再见', pinyin: 'zài jiàn', meaning: 'au revoir', meaningEn: 'goodbye', audio: 'audio/hsk1/hsk1_再见.wav' },
-      { hanzi: '谢谢', pinyin: 'xiè xiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' }
+      { hanzi: '再见', pinyin: 'zàijiàn', meaning: 'au revoir', meaningEn: 'goodbye', audio: 'audio/hsk1/hsk1_再见.wav' },
+      { hanzi: '谢谢', pinyin: 'xièxiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' }
     ],
     tip:
       'Dans un contexte professionnel, on dit 明天见 (míngtiān jiàn) « à demain » ou 下次见 (xiàcìjiàn) « à la prochaine fois ». Le 见 final fonctionne comme un modèle réutilisable.',
@@ -128,7 +128,7 @@ export const introductionsLearnSections: LessonV2LearnSection[] = [
       'Two structures. The most natural: 我叫 + [name] (wǒ jiào = "I am called"). The more formal: 我的名字是 + [name] (wǒ de míng zì shì = "my name is").\nTo ask someone\'s name: 你叫什么名字? ("you + called + what + name?").',
     items: [
       { hanzi: '叫', pinyin: 'jiào', meaning: 's\'appeler, appeler', meaningEn: 'to be called, to call', audio: 'audio/hsk1/hsk1_叫.wav' },
-      { hanzi: '名字', pinyin: 'míng zì', meaning: 'le nom, le prénom', meaningEn: 'name', audio: 'audio/hsk1/hsk1_名字.wav' },
+      { hanzi: '名字', pinyin: 'míngzì', meaning: 'le nom, le prénom', meaningEn: 'name', audio: 'audio/hsk1/hsk1_名字.wav' },
       { hanzi: '是', pinyin: 'shì', meaning: 'être', meaningEn: 'to be', audio: 'audio/hsk1/hsk1_是.wav' }
     ],
     tip:
@@ -176,8 +176,8 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '谢谢 (xièxiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēicháng gǎnxiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (búkèqì), literally "don\'t + make + ceremony" — "you\'re welcome".',
     items: [
-      { hanzi: '谢谢', pinyin: 'xiè xiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
-      { hanzi: '不客气', pinyin: 'bú kè qì', meaning: 'pas de quoi, je t\'en prie', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
+      { hanzi: '谢谢', pinyin: 'xièxiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
+      { hanzi: '不客气', pinyin: 'bù kèqì', meaning: 'pas de quoi, je t\'en prie', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
       { hanzi: '请', pinyin: 'qǐng', meaning: 's\'il vous plaît, je vous prie', meaningEn: 'please', audio: 'audio/hsk1/hsk1_请.wav' }
     ],
     tip:
@@ -198,10 +198,10 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Two levels of apology. 对不起 (duì bu qǐ) is the strongest one, literally "cannot + face + you". 打扰 (dǎrǎo) "I\'m bothering you" is used when interrupting someone.\nThe warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
     items: [
-      { hanzi: '对不起', pinyin: 'duì bu qǐ', meaning: 'pardon, je suis désolé', meaningEn: 'sorry, I apologize', audio: 'audio/hsk1/hsk1_对不起.wav' },
-      { hanzi: '没关系', pinyin: 'méi guān xi', meaning: 'ce n\'est rien, pas grave', meaningEn: 'no problem, it\'s OK', audio: 'audio/hsk1/hsk1_没关系.wav' },
-      { hanzi: '没事', pinyin: 'méi shì', meaning: 'ce n\'est rien (familier)', meaningEn: 'it\'s nothing (casual)', audio: 'audio/hsk1/hsk1_没事.wav' },
-      { hanzi: '打扰', pinyin: 'dǎ rǎo', meaning: 'déranger', meaningEn: 'to bother, disturb', audio: 'audio/hsk1/hsk1_打扰.wav' }
+      { hanzi: '对不起', pinyin: 'duìbùqǐ', meaning: 'pardon, je suis désolé', meaningEn: 'sorry, I apologize', audio: 'audio/hsk1/hsk1_对不起.wav' },
+      { hanzi: '没关系', pinyin: 'méiguānxì', meaning: 'ce n\'est rien, pas grave', meaningEn: 'no problem, it\'s OK', audio: 'audio/hsk1/hsk1_没关系.wav' },
+      { hanzi: '没事', pinyin: 'méishì', meaning: 'ce n\'est rien (familier)', meaningEn: 'it\'s nothing (casual)', audio: 'audio/hsk1/hsk1_没事.wav' },
+      { hanzi: '打扰', pinyin: 'dǎrǎo', meaning: 'déranger', meaningEn: 'to bother, disturb', audio: 'audio/hsk1/hsk1_打扰.wav' }
     ],
     tip:
       '对不起 est réservé aux vraies excuses. Pour un simple « pardon, excusez-moi » en passant, on dit plutôt 不好意思 (bùhǎoyìsi) — plus léger, plus social.',
@@ -230,7 +230,7 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '什么 (shénme) = "what". Place it exactly where the answer goes, no word-swap: 你叫什么? ("you called what?"), 这是什么? ("this is what?").\n谁 (shéi, sometimes shuí) = "who". Same logic: 他是谁? ("he is who?").',
     items: [
-      { hanzi: '什么', pinyin: 'shén me', meaning: 'quoi, quel', meaningEn: 'what', audio: 'audio/hsk1/hsk1_什么.wav' },
+      { hanzi: '什么', pinyin: 'shénme', meaning: 'quoi, quel', meaningEn: 'what', audio: 'audio/hsk1/hsk1_什么.wav' },
       { hanzi: '谁', pinyin: 'shéi', meaning: 'qui', meaningEn: 'who', audio: 'audio/hsk1/hsk1_谁.wav' }
     ],
     tip:
@@ -253,8 +253,8 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '哪', pinyin: 'nǎ', meaning: 'lequel', meaningEn: 'which', audio: 'audio/hsk1/hsk1_哪.wav' },
       { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où (nord de la Chine)', meaningEn: 'where (northern usage)', audio: 'audio/hsk1/hsk1_哪儿.wav' },
-      { hanzi: '哪里', pinyin: 'nǎ lǐ', meaning: 'où (standard)', meaningEn: 'where (standard)', audio: 'audio/hsk1/hsk1_哪里.wav' },
-      { hanzi: '怎么', pinyin: 'zěn me', meaning: 'comment, pourquoi', meaningEn: 'how, why', audio: 'audio/hsk1/hsk1_怎么.wav' }
+      { hanzi: '哪里', pinyin: 'nǎlǐ', meaning: 'où (standard)', meaningEn: 'where (standard)', audio: 'audio/hsk1/hsk1_哪里.wav' },
+      { hanzi: '怎么', pinyin: 'zěnme', meaning: 'comment, pourquoi', meaningEn: 'how, why', audio: 'audio/hsk1/hsk1_怎么.wav' }
     ],
     tip:
       '哪儿 (nǎr) sonne plus pékinois avec son « r » final. 哪里 (nǎlǐ) est plus neutre et s\'écrit plus souvent dans les manuels. Les deux signifient exactement la même chose.',
@@ -273,7 +273,7 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
       'Two words for "how many". 几 (jǐ) for small counts, typically under 10 (几岁 = how old, 几点 = what time). 多少 (duōshǎo) for everything else, no upper limit (多少钱 = how much does it cost?).',
     items: [
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (peu)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
-      { hanzi: '多少', pinyin: 'duō shǎo', meaning: 'combien (indéfini)', meaningEn: 'how much/many', audio: 'audio/hsk1/hsk1_多少.wav' },
+      { hanzi: '多少', pinyin: 'duōshǎo', meaning: 'combien (indéfini)', meaningEn: 'how much/many', audio: 'audio/hsk1/hsk1_多少.wav' },
       { hanzi: '吗', pinyin: 'ma', meaning: 'particule interrogative', meaningEn: 'question particle', audio: 'audio/hsk1/hsk1_吗.wav' }
     ],
     tip:
@@ -325,7 +325,7 @@ export const yesNoLearnSections: LessonV2LearnSection[] = [
       'To say "yes, OK", several choices depending on register:\n  • 好 (hǎo) — most common, "fine, OK"\n  • 可以 (kěyǐ) — "possible, that works"\n  • 行 (xíng) — "that\'s fine, cool" (more casual)',
     items: [
       { hanzi: '好', pinyin: 'hǎo', meaning: 'bien, d\'accord', meaningEn: 'good, OK', audio: 'audio/hsk1/hsk1_好.wav' },
-      { hanzi: '可以', pinyin: 'kě yǐ', meaning: 'pouvoir, c\'est possible', meaningEn: 'can, it\'s possible', audio: 'audio/hsk1/hsk1_可以.wav' },
+      { hanzi: '可以', pinyin: 'kěyǐ', meaning: 'pouvoir, c\'est possible', meaningEn: 'can, it\'s possible', audio: 'audio/hsk1/hsk1_可以.wav' },
       { hanzi: '行', pinyin: 'xíng', meaning: 'ça marche, ça va', meaningEn: 'OK, that works', audio: 'audio/hsk1/hsk1_行.wav' }
     ],
     tip:
@@ -426,10 +426,10 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Four core reference words: 现在 (xiànzài) = now, 今天 (jīntiān) = today, 明天 (míngtiān) = tomorrow, 昨天 (zuótiān) = yesterday.\nKey point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
     items: [
-      { hanzi: '现在', pinyin: 'xiàn zài', meaning: 'maintenant', meaningEn: 'now', audio: 'audio/hsk1/hsk1_现在.wav' },
-      { hanzi: '今天', pinyin: 'jīn tiān', meaning: 'aujourd\'hui', meaningEn: 'today', audio: 'audio/hsk1/hsk1_今天.wav' },
-      { hanzi: '明天', pinyin: 'míng tiān', meaning: 'demain', meaningEn: 'tomorrow', audio: 'audio/hsk1/hsk1_明天.wav' },
-      { hanzi: '昨天', pinyin: 'zuó tiān', meaning: 'hier', meaningEn: 'yesterday', audio: 'audio/hsk1/hsk1_昨天.wav' }
+      { hanzi: '现在', pinyin: 'xiànzài', meaning: 'maintenant', meaningEn: 'now', audio: 'audio/hsk1/hsk1_现在.wav' },
+      { hanzi: '今天', pinyin: 'jīntiān', meaning: 'aujourd\'hui', meaningEn: 'today', audio: 'audio/hsk1/hsk1_今天.wav' },
+      { hanzi: '明天', pinyin: 'míngtiān', meaning: 'demain', meaningEn: 'tomorrow', audio: 'audio/hsk1/hsk1_明天.wav' },
+      { hanzi: '昨天', pinyin: 'zuótiān', meaning: 'hier', meaningEn: 'yesterday', audio: 'audio/hsk1/hsk1_昨天.wav' }
     ],
     tip:
       'Pas de conjugaison en chinois : c\'est 昨天/今天/明天 qui dit si l\'action est passée, présente ou future. Le verbe, lui, ne change jamais.',
@@ -445,11 +445,11 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese splits the day into distinct blocks. Combine them with 今天/明天 for precision: 今天下午 (this afternoon), 明天上午 (tomorrow morning).',
     items: [
-      { hanzi: '早上', pinyin: 'zǎo shàng', meaning: 'tôt le matin', meaningEn: 'early morning', audio: 'audio/hsk1/hsk1_早上.wav' },
-      { hanzi: '上午', pinyin: 'shàng wǔ', meaning: 'matinée', meaningEn: 'late morning', audio: 'audio/hsk1/hsk1_上午.wav' },
-      { hanzi: '中午', pinyin: 'zhōng wǔ', meaning: 'midi', meaningEn: 'noon', audio: 'audio/hsk1/hsk1_中午.wav' },
-      { hanzi: '下午', pinyin: 'xià wǔ', meaning: 'après-midi', meaningEn: 'afternoon', audio: 'audio/hsk1/hsk1_下午.wav' },
-      { hanzi: '晚上', pinyin: 'wǎn shàng', meaning: 'soir', meaningEn: 'evening', audio: 'audio/hsk1/hsk1_晚上.wav' }
+      { hanzi: '早上', pinyin: 'zǎoshàng', meaning: 'tôt le matin', meaningEn: 'early morning', audio: 'audio/hsk1/hsk1_早上.wav' },
+      { hanzi: '上午', pinyin: 'shàngwǔ', meaning: 'matinée', meaningEn: 'late morning', audio: 'audio/hsk1/hsk1_上午.wav' },
+      { hanzi: '中午', pinyin: 'zhōngwǔ', meaning: 'midi', meaningEn: 'noon', audio: 'audio/hsk1/hsk1_中午.wav' },
+      { hanzi: '下午', pinyin: 'xiàwǔ', meaning: 'après-midi', meaningEn: 'afternoon', audio: 'audio/hsk1/hsk1_下午.wav' },
+      { hanzi: '晚上', pinyin: 'wǎnshàng', meaning: 'soir', meaningEn: 'evening', audio: 'audio/hsk1/hsk1_晚上.wav' }
     ],
     tip:
       'Attention : 早上 couvre le tout tôt le matin (6-9h), 上午 plutôt 9h-midi. Après midi, 中午 court jusqu\'à 14h environ, puis 下午, puis 晚上.',
@@ -471,8 +471,8 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '点', pinyin: 'diǎn', meaning: 'heure (pour les heures pleines)', meaningEn: 'o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
       { hanzi: '分', pinyin: 'fēn', meaning: 'minute', meaningEn: 'minute', audio: 'audio/hsk1/hsk1_分.wav' },
-      { hanzi: '小时', pinyin: 'xiǎo shí', meaning: 'heure (durée)', meaningEn: 'hour (duration)', audio: 'audio/hsk1/hsk1_小时.wav' },
-      { hanzi: '星期', pinyin: 'xīng qī', meaning: 'semaine', meaningEn: 'week', audio: 'audio/hsk1/hsk1_星期.wav' }
+      { hanzi: '小时', pinyin: 'xiǎoshí', meaning: 'heure (durée)', meaningEn: 'hour (duration)', audio: 'audio/hsk1/hsk1_小时.wav' },
+      { hanzi: '星期', pinyin: 'xīngqī', meaning: 'semaine', meaningEn: 'week', audio: 'audio/hsk1/hsk1_星期.wav' }
     ],
     tip:
       'Différence importante : 点 = heure à laquelle (2 点 = 2 heures), 小时 = durée en heures (2 小时 = 2 heures d\'affilée). Les deux ne sont pas interchangeables.',
@@ -495,8 +495,8 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '爸爸 (bàba) = dad, 妈妈 (māma) = mom — the sweetest words in Chinese, with their affectionate reduplication. For a formal register, say 父亲 (fùqīn) and 母亲 (mǔqīn).',
     items: [
-      { hanzi: '爸爸', pinyin: 'bà ba', meaning: 'papa', meaningEn: 'dad', audio: 'audio/hsk1/hsk1_爸爸.wav' },
-      { hanzi: '妈妈', pinyin: 'mā ma', meaning: 'maman', meaningEn: 'mom', audio: 'audio/hsk1/hsk1_妈妈.wav' },
+      { hanzi: '爸爸', pinyin: 'bàbà', meaning: 'papa', meaningEn: 'dad', audio: 'audio/hsk1/hsk1_爸爸.wav' },
+      { hanzi: '妈妈', pinyin: 'māmā', meaning: 'maman', meaningEn: 'mom', audio: 'audio/hsk1/hsk1_妈妈.wav' },
       { hanzi: '家', pinyin: 'jiā', meaning: 'famille, foyer', meaningEn: 'family, home', audio: 'audio/hsk1/hsk1_家.wav' }
     ],
     tip:
@@ -519,10 +519,10 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese always distinguishes older vs. younger siblings. 哥哥 = older brother, 弟弟 = younger brother, 姐姐 = older sister, 妹妹 = younger sister.\nThere\'s no way to say just "brother" without ranking — relative age is central in a Chinese family.',
     items: [
-      { hanzi: '哥哥', pinyin: 'gē ge', meaning: 'grand frère', meaningEn: 'older brother', audio: 'audio/hsk1/hsk1_哥哥.wav' },
-      { hanzi: '弟弟', pinyin: 'dì di', meaning: 'petit frère', meaningEn: 'younger brother', audio: 'audio/hsk1/hsk1_弟弟.wav' },
-      { hanzi: '姐姐', pinyin: 'jiě jie', meaning: 'grande sœur', meaningEn: 'older sister', audio: 'audio/hsk1/hsk1_姐姐.wav' },
-      { hanzi: '妹妹', pinyin: 'mèi mei', meaning: 'petite sœur', meaningEn: 'younger sister', audio: 'audio/hsk1/hsk1_妹妹.wav' }
+      { hanzi: '哥哥', pinyin: 'gēgē', meaning: 'grand frère', meaningEn: 'older brother', audio: 'audio/hsk1/hsk1_哥哥.wav' },
+      { hanzi: '弟弟', pinyin: 'dìdi', meaning: 'petit frère', meaningEn: 'younger brother', audio: 'audio/hsk1/hsk1_弟弟.wav' },
+      { hanzi: '姐姐', pinyin: 'jiějiě', meaning: 'grande sœur', meaningEn: 'older sister', audio: 'audio/hsk1/hsk1_姐姐.wav' },
+      { hanzi: '妹妹', pinyin: 'mèimèi', meaning: 'petite sœur', meaningEn: 'younger sister', audio: 'audio/hsk1/hsk1_妹妹.wav' }
     ],
     tip:
       'Par extension, on appelle 姐姐 (jiějie) une femme un peu plus âgée qu\'on apprécie, même sans lien familial. Pareil pour 哥哥 avec un homme.',
@@ -543,11 +543,11 @@ export const familyLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'For your children: 儿子 (érzi) = son, 女儿 (nǚér) = daughter, 孩子 (háizi) = child (generic).\nFor a spouse, formal: 丈夫 (zhàngfu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
     items: [
-      { hanzi: '儿子', pinyin: 'ér zi', meaning: 'fils', meaningEn: 'son', audio: 'audio/hsk1/hsk1_儿子.wav' },
-      { hanzi: '女儿', pinyin: 'nǚ ér', meaning: 'fille (enfant)', meaningEn: 'daughter', audio: 'audio/hsk1/hsk1_女儿.wav' },
-      { hanzi: '孩子', pinyin: 'hái zi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk1/hsk1_孩子.wav' },
-      { hanzi: '丈夫', pinyin: 'zhàng fu', meaning: 'mari', meaningEn: 'husband', audio: 'audio/hsk1/hsk1_丈夫.wav' },
-      { hanzi: '妻子', pinyin: 'qī zi', meaning: 'épouse', meaningEn: 'wife', audio: 'audio/hsk1/hsk1_妻子.wav' }
+      { hanzi: '儿子', pinyin: 'érzi', meaning: 'fils', meaningEn: 'son', audio: 'audio/hsk1/hsk1_儿子.wav' },
+      { hanzi: '女儿', pinyin: 'nǚér', meaning: 'fille (enfant)', meaningEn: 'daughter', audio: 'audio/hsk1/hsk1_女儿.wav' },
+      { hanzi: '孩子', pinyin: 'háizi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk1/hsk1_孩子.wav' },
+      { hanzi: '丈夫', pinyin: 'zhàngfū', meaning: 'mari', meaningEn: 'husband', audio: 'audio/hsk1/hsk1_丈夫.wav' },
+      { hanzi: '妻子', pinyin: 'qīzǐ', meaning: 'épouse', meaningEn: 'wife', audio: 'audio/hsk1/hsk1_妻子.wav' }
     ],
     tip:
       '« Avez-vous des enfants ? » se demande avec 你有孩子吗 ? (nǐ yǒu hái zi ma). Réponse typique : 有两个 (j\'en ai deux) ou 没有 (je n\'en ai pas).',
@@ -600,8 +600,8 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '水', pinyin: 'shuǐ', meaning: 'eau', meaningEn: 'water', audio: 'audio/hsk1/hsk1_水.wav' },
       { hanzi: '茶', pinyin: 'chá', meaning: 'thé', meaningEn: 'tea', audio: 'audio/hsk1/hsk1_茶.wav' },
-      { hanzi: '咖啡', pinyin: 'kā fēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk1/hsk1_咖啡.wav' },
-      { hanzi: '牛奶', pinyin: 'niú nǎi', meaning: 'lait', meaningEn: 'milk', audio: 'audio/hsk1/hsk1_牛奶.wav' }
+      { hanzi: '咖啡', pinyin: 'kāfēi', meaning: 'café', meaningEn: 'coffee', audio: 'audio/hsk1/hsk1_咖啡.wav' },
+      { hanzi: '牛奶', pinyin: 'niúnǎi', meaning: 'lait', meaningEn: 'milk', audio: 'audio/hsk1/hsk1_牛奶.wav' }
     ],
     tip:
       'En Chine, l\'eau à boire est généralement chaude ou tiède, pas glacée. Si tu veux de l\'eau froide, précise 冰水 (bīngshuǐ). Dire simplement 我要水 te donnera probablement de l\'eau chaude.',
@@ -623,9 +623,9 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
       '菜 (cài) = dish, vegetable. 米饭 (mǐfàn) = cooked rice as a side. 苹果 (píngguǒ) = apple.\nTo order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
     items: [
       { hanzi: '菜', pinyin: 'cài', meaning: 'plat, légume', meaningEn: 'dish, vegetable', audio: 'audio/hsk1/hsk1_菜.wav' },
-      { hanzi: '米饭', pinyin: 'mǐ fàn', meaning: 'riz cuit', meaningEn: 'cooked rice', audio: 'audio/hsk1/hsk1_米饭.wav' },
-      { hanzi: '苹果', pinyin: 'píng guǒ', meaning: 'pomme', meaningEn: 'apple', audio: 'audio/hsk1/hsk1_苹果.wav' },
-      { hanzi: '喜欢', pinyin: 'xǐ huan', meaning: 'aimer (apprécier)', meaningEn: 'to like', audio: 'audio/hsk1/hsk1_喜欢.wav' }
+      { hanzi: '米饭', pinyin: 'mǐfàn', meaning: 'riz cuit', meaningEn: 'cooked rice', audio: 'audio/hsk1/hsk1_米饭.wav' },
+      { hanzi: '苹果', pinyin: 'píngguǒ', meaning: 'pomme', meaningEn: 'apple', audio: 'audio/hsk1/hsk1_苹果.wav' },
+      { hanzi: '喜欢', pinyin: 'xǐhuān', meaning: 'aimer (apprécier)', meaningEn: 'to like', audio: 'audio/hsk1/hsk1_喜欢.wav' }
     ],
     tip:
       '菜 est à la fois « légume » et « plat » au restaurant. Une 菜单 (càidān) est un menu, un 点菜 (diǎncài) c\'est le fait de choisir ses plats. Le contexte tranche toujours.',
@@ -697,7 +697,7 @@ export const wantsNeedsLearnSections: LessonV2LearnSection[] = [
       '有 (yǒu) = "to have, there is". It is the only Chinese verb whose negation is NOT with 不 but with 没: 没有 (méiyǒu) = "not to have, there isn\'t".\nExamples: 我有一只猫 (I have a cat), 我没有钱 (I don\'t have money).',
     items: [
       { hanzi: '有', pinyin: 'yǒu', meaning: 'avoir, il y a', meaningEn: 'to have, there is', audio: 'audio/hsk1/hsk1_有.wav' },
-      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'ne pas avoir', meaningEn: 'not to have', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '没有', pinyin: 'méiyǒu', meaning: 'ne pas avoir', meaningEn: 'not to have', audio: 'audio/hsk1/hsk1_没有.wav' },
       { hanzi: '没', pinyin: 'méi', meaning: 'ne pas (verbes d\'état / passé)', meaningEn: 'not (for 有 and past)', audio: 'audio/hsk1/hsk1_没.wav' }
     ],
     tip:
@@ -803,8 +803,8 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'The day starts with two verbs: 起床 (qǐchuáng) = to get up, literally "rise from the bed", and 睡觉 (shuìjiào) = to sleep, "do the sleeping". Both are compound verbs used as single units.\nExamples: 我七点起床 (I get up at 7), 我十一点睡觉 (I sleep at 11 PM).',
     items: [
-      { hanzi: '起床', pinyin: 'qǐ chuáng', meaning: 'se lever', meaningEn: 'to get up', audio: 'audio/hsk1/hsk1_起床.wav' },
-      { hanzi: '睡觉', pinyin: 'shuì jiào', meaning: 'dormir', meaningEn: 'to sleep', audio: 'audio/hsk1/hsk1_睡觉.wav' }
+      { hanzi: '起床', pinyin: 'qǐchuáng', meaning: 'se lever', meaningEn: 'to get up', audio: 'audio/hsk1/hsk1_起床.wav' },
+      { hanzi: '睡觉', pinyin: 'shuìjiào', meaning: 'dormir', meaningEn: 'to sleep', audio: 'audio/hsk1/hsk1_睡觉.wav' }
     ],
     tip:
       '起床 et 睡觉 sont appelés « verbes séparables » : on peut insérer des mots entre les deux syllabes. 睡一个好觉 = « faire un bon sommeil ». Pas besoin de s\'en préoccuper tout de suite — on les apprend d\'abord en bloc.',
@@ -824,9 +824,9 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '工作 (gōngzuò) = to work / work (same word for verb and noun). 学习 (xuéxí) = to study, learn.\nBoth are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
     items: [
-      { hanzi: '工作', pinyin: 'gōng zuò', meaning: 'travailler, travail', meaningEn: 'to work, job', audio: 'audio/hsk1/hsk1_工作.wav' },
-      { hanzi: '学习', pinyin: 'xué xí', meaning: 'étudier, apprendre', meaningEn: 'to study, learn', audio: 'audio/hsk1/hsk1_学习.wav' },
-      { hanzi: '老师', pinyin: 'lǎo shī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' }
+      { hanzi: '工作', pinyin: 'gōngzuò', meaning: 'travailler, travail', meaningEn: 'to work, job', audio: 'audio/hsk1/hsk1_工作.wav' },
+      { hanzi: '学习', pinyin: 'xuéxí', meaning: 'étudier, apprendre', meaningEn: 'to study, learn', audio: 'audio/hsk1/hsk1_学习.wav' },
+      { hanzi: '老师', pinyin: 'lǎoshī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' }
     ],
     tip:
       'Beaucoup de mots chinois sont à la fois verbe et nom selon la place dans la phrase. 工作 = travailler OU un travail ; 学习 = étudier OU des études. Le contexte (et la grammaire) tranche.',
@@ -852,9 +852,9 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '上', pinyin: 'shàng', meaning: 'monter, sur, aller à', meaningEn: 'up, on, to go', audio: 'audio/hsk1/hsk1_上.wav' },
       { hanzi: '下', pinyin: 'xià', meaning: 'descendre, sous, finir', meaningEn: 'down, below, to finish', audio: 'audio/hsk1/hsk1_下.wav' },
-      { hanzi: '上班', pinyin: 'shàng bān', meaning: 'aller au travail', meaningEn: 'to go to work', audio: 'audio/hsk1/hsk1_上班.wav' },
-      { hanzi: '下班', pinyin: 'xià bān', meaning: 'finir le travail', meaningEn: 'to leave work', audio: 'audio/hsk1/hsk1_下班.wav' },
-      { hanzi: '上学', pinyin: 'shàng xué', meaning: 'aller à l\'école', meaningEn: 'to go to school', audio: 'audio/hsk1/hsk1_上学.wav' }
+      { hanzi: '上班', pinyin: 'shàngbān', meaning: 'aller au travail', meaningEn: 'to go to work', audio: 'audio/hsk1/hsk1_上班.wav' },
+      { hanzi: '下班', pinyin: 'xiàbān', meaning: 'finir le travail', meaningEn: 'to leave work', audio: 'audio/hsk1/hsk1_下班.wav' },
+      { hanzi: '上学', pinyin: 'shàngxué', meaning: 'aller à l\'école', meaningEn: 'to go to school', audio: 'audio/hsk1/hsk1_上学.wav' }
     ],
     tip:
       'Tu peux résumer ta journée en une phrase : 我早上八点上班，下午六点下班 = « je commence à 8h, je finis à 18h ». 上 et 下 sont partout — dans les adresses, les transports, les étages.',

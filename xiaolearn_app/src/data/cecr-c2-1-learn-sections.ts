@@ -27,11 +27,11 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Open: 各位学者，今天我想就 X 这一议题展开论述 (esteemed scholars, today I will develop the topic X). Philosophical vocab: 论述 (lùnshù, expound), 阐释 (chǎnshì, elucidate), 释义 (shìyì, exegesis), 注疏 (zhùshū, classical commentary). Citation: 朱熹《四书章句集注》中说 X (per Zhu Xi in his Commentaries on the Four Books). Frame a thesis: 我的论点可概括为以下几点. Close: 此乃笔者之拙见，敬请各位斧正 (this is the author\'s humble view, please give your corrections).',
     items: [
-      { hanzi: '论述', pinyin: 'lùn shù', meaning: 'exposer (académique)', meaningEn: 'expound', audio: 'audio/hsk6/hsk6_论述.wav' },
-      { hanzi: '阐释', pinyin: 'chǎn shì', meaning: 'élucider', meaningEn: 'elucidate', audio: 'audio/hsk6/hsk6_阐释.wav' },
-      { hanzi: '释义', pinyin: 'shì yì', meaning: 'exégèse', meaningEn: 'exegesis', audio: 'audio/hsk6/hsk6_释义.wav' },
-      { hanzi: '拙见', pinyin: 'zhuō jiàn', meaning: 'humble vue', meaningEn: 'humble view', audio: 'audio/hsk6/hsk6_拙见.wav' },
-      { hanzi: '斧正', pinyin: 'fǔ zhèng', meaning: 'corriger (poliment)', meaningEn: 'kindly correct', audio: 'audio/hsk6/hsk6_斧正.wav' }
+      { hanzi: '论述', pinyin: 'lùnshù', meaning: 'exposer (académique)', meaningEn: 'expound', audio: 'audio/hsk6/hsk6_论述.wav' },
+      { hanzi: '阐释', pinyin: 'chǎnshì', meaning: 'élucider', meaningEn: 'elucidate', audio: 'audio/hsk6/hsk6_阐释.wav' },
+      { hanzi: '释义', pinyin: 'shìyì', meaning: 'exégèse', meaningEn: 'exegesis', audio: 'audio/hsk6/hsk6_释义.wav' },
+      { hanzi: '拙见', pinyin: 'zhuōjiàn', meaning: 'humble vue', meaningEn: 'humble view', audio: 'audio/hsk6/hsk6_拙见.wav' },
+      { hanzi: '斧正', pinyin: 'fǔzhèng', meaning: 'corriger (poliment)', meaningEn: 'kindly correct', audio: 'audio/hsk6/hsk6_斧正.wav' }
     ],
     tip:
       '« 此乃笔者之拙见，敬请各位斧正 » est la formule de clôture la PLUS soutenue en académique chinois. 拙见 (humble vue) + 斧正 (le « ciseau » de correction) = humilité maximale. Effet : crédibilité instantanée auprès d\'un panel de seniors.',
@@ -59,9 +59,9 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '云', pinyin: 'yún', meaning: 'dit (classique)', meaningEn: 'says (classical)', audio: 'audio/hsk6/hsk6_云.wav' },
       { hanzi: '曰', pinyin: 'yuē', meaning: 'dit (très classique)', meaningEn: 'says (very classical)', audio: 'audio/hsk6/hsk6_曰.wav' },
-      { hanzi: '据载', pinyin: 'jù zǎi', meaning: 'selon les annales', meaningEn: 'per the records', audio: 'audio/hsk6/hsk6_据载.wav' },
-      { hanzi: '古训', pinyin: 'gǔ xùn', meaning: 'enseignement antique', meaningEn: 'ancient teaching', audio: 'audio/hsk6/hsk6_古训.wav' },
-      { hanzi: '现实', pinyin: 'xiàn shí', meaning: 'réalité actuelle', meaningEn: 'current reality', audio: 'audio/hsk5/hsk5_现实.wav' }
+      { hanzi: '据载', pinyin: 'jùzài', meaning: 'selon les annales', meaningEn: 'per the records', audio: 'audio/hsk6/hsk6_据载.wav' },
+      { hanzi: '古训', pinyin: 'gǔxùn', meaning: 'enseignement antique', meaningEn: 'ancient teaching', audio: 'audio/hsk6/hsk6_古训.wav' },
+      { hanzi: '现实', pinyin: 'xiànshí', meaning: 'réalité actuelle', meaningEn: 'current reality', audio: 'audio/hsk5/hsk5_现实.wav' }
     ],
     tip:
       '« 这句古训放在今天依然有现实意义 » est la formule magique pour ANCRER une citation classique dans le présent. Sans cet ancrage, ta citation paraît érudite mais déconnectée. Le pont passé ↔ présent = signal de la maturité intellectuelle chinoise.',
@@ -90,11 +90,11 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: discussing the value of a work (novel, poetry, film) with a Chinese critic. Vocab: 文学价值 (literary value), 艺术成就 (artistic achievement), 主题深度 (thematic depth), 笔触 (bǐchù, narrative touch/style). Stance: 我个人认为这部作品的核心价值在于 X (the core of this work is X). Elegant disagreement: 我对您的看法有些不同，我认为 X 反而是 Y. Formal refutation combo: 诚然 X，然而 Y (concession + recovery — C1+ formal rhetoric). Close: 文学评论本就见仁见智 (literary criticism is inherently subjective — consensus formula to close politely).',
     items: [
-      { hanzi: '文学', pinyin: 'wén xué', meaning: 'littérature', meaningEn: 'literature', audio: 'audio/hsk5/hsk5_文学.wav' },
-      { hanzi: '成就', pinyin: 'chéng jiù', meaning: 'accomplissement', meaningEn: 'achievement', audio: 'audio/hsk5/hsk5_成就.wav' },
-      { hanzi: '深度', pinyin: 'shēn dù', meaning: 'profondeur', meaningEn: 'depth', audio: 'audio/hsk5/hsk5_深度.wav' },
-      { hanzi: '笔触', pinyin: 'bǐ chù', meaning: 'touche, style narratif', meaningEn: 'narrative touch', audio: 'audio/hsk6/hsk6_笔触.wav' },
-      { hanzi: '见仁见智', pinyin: 'jiàn rén jiàn zhì', meaning: 'à chacun son avis', meaningEn: 'each to their view', audio: 'audio/hsk6/hsk6_见仁.wav' }
+      { hanzi: '文学', pinyin: 'wénxué', meaning: 'littérature', meaningEn: 'literature', audio: 'audio/hsk5/hsk5_文学.wav' },
+      { hanzi: '成就', pinyin: 'chéngjiù', meaning: 'accomplissement', meaningEn: 'achievement', audio: 'audio/hsk5/hsk5_成就.wav' },
+      { hanzi: '深度', pinyin: 'shēndù', meaning: 'profondeur', meaningEn: 'depth', audio: 'audio/hsk5/hsk5_深度.wav' },
+      { hanzi: '笔触', pinyin: 'bǐchù', meaning: 'touche, style narratif', meaningEn: 'narrative touch', audio: 'audio/hsk6/hsk6_笔触.wav' },
+      { hanzi: '见仁见智', pinyin: 'jiànrénjiànzhì', meaning: 'à chacun son avis', meaningEn: 'each to their view', audio: 'audio/hsk6/hsk6_见仁.wav' }
     ],
     tip:
       '« 见仁见智 » est le chengyu CLÔTURE de tout débat critique chinois. Il signale : « ni toi ni moi n\'avons tort, c\'est une question d\'angle ». Permet de TERMINER sans humilier l\'autre. À mémoriser pour clore élégamment toute discussion intellectuelle.',
@@ -125,11 +125,11 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Recommendation: 我向您推荐 X，作者是 Y (I recommend X by author Y). Situate in a school: 这部作品属于 X 流派 (this work belongs to school X). Chinese literary schools: 朦胧诗派 (obscure poetry), 寻根派 (root-seeking school), 先锋派 (avant-garde). Major C2 authors: 莫言 (Mo Yan, Nobel 2012), 余华 (Yu Hua, 活着), 阎连科 (Yan Lianke), 王小波 (Wang Xiaobo). Justify: 这部作品的价值在于 X (the value of this work lies in X). Effect: 读后令人深思 (reading prompts reflection). Hedge: 当然，每个读者的感受可能不同 (of course, each reader may feel differently).',
     items: [
-      { hanzi: '流派', pinyin: 'liú pài', meaning: 'école, courant', meaningEn: 'school, current', audio: 'audio/hsk6/hsk6_流派.wav' },
-      { hanzi: '朦胧', pinyin: 'méng lóng', meaning: 'obscur, brumeux', meaningEn: 'obscure, hazy', audio: 'audio/hsk6/hsk6_朦胧.wav' },
-      { hanzi: '寻根', pinyin: 'xún gēn', meaning: 'chercher les racines', meaningEn: 'seek roots', audio: 'audio/hsk6/hsk6_寻根.wav' },
-      { hanzi: '先锋', pinyin: 'xiān fēng', meaning: 'avant-garde', meaningEn: 'vanguard', audio: 'audio/hsk6/hsk6_先锋.wav' },
-      { hanzi: '深思', pinyin: 'shēn sī', meaning: 'réflexion profonde', meaningEn: 'deep thought', audio: 'audio/hsk6/hsk6_深思.wav' }
+      { hanzi: '流派', pinyin: 'liúpài', meaning: 'école, courant', meaningEn: 'school, current', audio: 'audio/hsk6/hsk6_流派.wav' },
+      { hanzi: '朦胧', pinyin: 'ménglóng', meaning: 'obscur, brumeux', meaningEn: 'obscure, hazy', audio: 'audio/hsk6/hsk6_朦胧.wav' },
+      { hanzi: '寻根', pinyin: 'xúngēn', meaning: 'chercher les racines', meaningEn: 'seek roots', audio: 'audio/hsk6/hsk6_寻根.wav' },
+      { hanzi: '先锋', pinyin: 'xiānfēng', meaning: 'avant-garde', meaningEn: 'vanguard', audio: 'audio/hsk6/hsk6_先锋.wav' },
+      { hanzi: '深思', pinyin: 'shēnsī', meaning: 'réflexion profonde', meaningEn: 'deep thought', audio: 'audio/hsk6/hsk6_深思.wav' }
     ],
     tip:
       'Pour montrer ta culture littéraire C2 : situe l\'œuvre dans son ÉCOLE (流派). Ex : « 余华属于先锋派，但 70 年代后转向了人文写实 ». Cette MISE EN CONTEXTE historique de l\'auteur signale immédiatement le niveau lettré.',
@@ -160,11 +160,11 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: working with an editor on translating a work. Vocab: 翻译 (translation), 译者 (translator), 原文 (source text), 译文 (target text), 直译 (literal) vs 意译 (free). To defend a choice: 我倾向于意译，因为直译会损失 X 的意境 (I lean toward free translation as the literal would lose X). 意境 (atmosphere/poetic mood) is a KEY Chinese word — strictly UNTRANSLATABLE. To discuss: 这个词在中文里有 X 层含义，您建议如何处理？(this word has X layers in Chinese, how to render?). Close: 翻译本就是一种再创作 (translation is inherently a RE-CREATION) — classic phrase attributed to Yan Fu (严复).',
     items: [
-      { hanzi: '译者', pinyin: 'yì zhě', meaning: 'traducteur', meaningEn: 'translator', audio: 'audio/hsk6/hsk6_译者.wav' },
-      { hanzi: '直译', pinyin: 'zhí yì', meaning: 'traduction littérale', meaningEn: 'literal translation', audio: 'audio/hsk6/hsk6_直译.wav' },
-      { hanzi: '意译', pinyin: 'yì yì', meaning: 'traduction libre', meaningEn: 'free translation', audio: 'audio/hsk6/hsk6_意译.wav' },
-      { hanzi: '意境', pinyin: 'yì jìng', meaning: 'ambiance poétique', meaningEn: 'poetic mood', audio: 'audio/hsk6/hsk6_意境.wav' },
-      { hanzi: '再创作', pinyin: 'zài chuàng zuò', meaning: 'recréation', meaningEn: 'recreation', audio: 'audio/hsk6/hsk6_再创作.wav' }
+      { hanzi: '译者', pinyin: 'yìzhě', meaning: 'traducteur', meaningEn: 'translator', audio: 'audio/hsk6/hsk6_译者.wav' },
+      { hanzi: '直译', pinyin: 'zhíyì', meaning: 'traduction littérale', meaningEn: 'literal translation', audio: 'audio/hsk6/hsk6_直译.wav' },
+      { hanzi: '意译', pinyin: 'yìyì', meaning: 'traduction libre', meaningEn: 'free translation', audio: 'audio/hsk6/hsk6_意译.wav' },
+      { hanzi: '意境', pinyin: 'yìjìng', meaning: 'ambiance poétique', meaningEn: 'poetic mood', audio: 'audio/hsk6/hsk6_意境.wav' },
+      { hanzi: '再创作', pinyin: 'zài chuàngzuò', meaning: 'recréation', meaningEn: 'recreation', audio: 'audio/hsk6/hsk6_再创作.wav' }
     ],
     tip:
       'Yan Fu (严复, 1854-1921) a posé les 3 principes de la traduction : 信达雅 (xìn dá yǎ — fidélité, fluidité, élégance). Toute discussion sérieuse de traduction zh↔fr passe par ces 3 critères. Citer 信达雅 = signal de connaissance théorique IMMÉDIAT.',
@@ -191,11 +191,11 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Steps: (1) read aloud, (2) count chars/verses (5 or 7), (3) spot rhymes, (4) identify key images, (5) render. Vocab: 五言 (5-char verse), 七言 (7-char), 平从 (level vs oblique tones — metric rule), 对仗 (parallelism). Discussion: 这首诗的核心意象是什么？(what is the central image?). To render: 我们可以保留原文的对仗结构，但调整字数. Method phrase: 译诗须传神，不必拘泥于字面 (translating a poem = transmitting the spirit, no need to stick to the letter). 传神 (transmit the spirit) is a key word.',
     items: [
-      { hanzi: '五言', pinyin: 'wǔ yán', meaning: 'vers à 5 caractères', meaningEn: '5-char verse', audio: 'audio/hsk6/hsk6_五言.wav' },
-      { hanzi: '对仗', pinyin: 'duì zhàng', meaning: 'parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },
-      { hanzi: '意象', pinyin: 'yì xiàng', meaning: 'image (poétique)', meaningEn: 'poetic image', audio: 'audio/hsk6/hsk6_意象.wav' },
-      { hanzi: '传神', pinyin: 'chuán shén', meaning: 'transmettre l\'esprit', meaningEn: 'transmit the spirit', audio: 'audio/hsk6/hsk6_传神.wav' },
-      { hanzi: '拘泥', pinyin: 'jū nì', meaning: 's\'attacher (à la lettre)', meaningEn: 'stick rigidly to', audio: 'audio/hsk6/hsk6_拘泥.wav' }
+      { hanzi: '五言', pinyin: 'wǔyán', meaning: 'vers à 5 caractères', meaningEn: '5-char verse', audio: 'audio/hsk6/hsk6_五言.wav' },
+      { hanzi: '对仗', pinyin: 'duìzhàng', meaning: 'parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },
+      { hanzi: '意象', pinyin: 'yìxiàng', meaning: 'image (poétique)', meaningEn: 'poetic image', audio: 'audio/hsk6/hsk6_意象.wav' },
+      { hanzi: '传神', pinyin: 'chuánshén', meaning: 'transmettre l\'esprit', meaningEn: 'transmit the spirit', audio: 'audio/hsk6/hsk6_传神.wav' },
+      { hanzi: '拘泥', pinyin: 'jūnì', meaning: 's\'attacher (à la lettre)', meaningEn: 'stick rigidly to', audio: 'audio/hsk6/hsk6_拘泥.wav' }
     ],
     tip:
       '« 译诗须传神，不必拘泥于字面 » est l\'adage des traducteurs poétiques chinois. 传神 > 字面 (esprit > lettre). Cite-le pour défendre une traduction CRÉATIVE plutôt que littérale d\'un poème — argument irréfutable.',
@@ -227,9 +227,9 @@ export const c21ConvM4LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '仁', pinyin: 'rén', meaning: 'humanité (Confucius)', meaningEn: 'humaneness', audio: 'audio/hsk6/hsk6_仁.wav' },
       { hanzi: '义', pinyin: 'yì', meaning: 'justice, devoir', meaningEn: 'righteousness', audio: 'audio/hsk6/hsk6_义.wav' },
-      { hanzi: '中庸', pinyin: 'zhōng yōng', meaning: 'juste milieu', meaningEn: 'golden mean', audio: 'audio/hsk6/hsk6_中庸.wav' },
-      { hanzi: '智慧', pinyin: 'zhì huì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智慧.wav' },
-      { hanzi: '面临', pinyin: 'miàn lín', meaning: 'faire face à', meaningEn: 'face', audio: 'audio/hsk5/hsk5_面临.wav' }
+      { hanzi: '中庸', pinyin: 'zhōngyōng', meaning: 'juste milieu', meaningEn: 'golden mean', audio: 'audio/hsk6/hsk6_中庸.wav' },
+      { hanzi: '智慧', pinyin: 'zhìhuì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智慧.wav' },
+      { hanzi: '面临', pinyin: 'miànlín', meaning: 'faire face à', meaningEn: 'face', audio: 'audio/hsk5/hsk5_面临.wav' }
     ],
     tip:
       'Le 中庸 (juste milieu) est UN concept central confucéen. À mobiliser quand un Chinois hésite entre 2 extrêmes : « 也许中庸之道才是答案 » (peut-être la voie du juste milieu est la réponse). Phrase culturellement résonante.',
@@ -251,11 +251,11 @@ export const c21ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: discussing Confucianism\'s relevance today (in education, management, Chinese politics). Pro stance: 孔子的思想至今仍有现实意义 (Confucius\'s thought retains current relevance), notably 仁 (humanity), 礼 (rites/courtesy), 学而时习之 (learn and regularly practice). Critical stance: 但有些观念已不适合现代社会 (some notions no longer fit modern society), like 三纲五常 (3 bonds and 5 virtues, old hierarchies). Synthesis: 我认为可以批判地继承传统 (I think we can critically inherit tradition). 批判地继承 (critically inherit) is a Maoist formula that became standard for discussing heritage.',
     items: [
-      { hanzi: '孔子', pinyin: 'kǒng zǐ', meaning: 'Confucius', meaningEn: 'Confucius', audio: 'audio/hsk5/hsk5_孔子.wav' },
-      { hanzi: '思想', pinyin: 'sī xiǎng', meaning: 'pensée', meaningEn: 'thought', audio: 'audio/hsk5/hsk5_思想.wav' },
+      { hanzi: '孔子', pinyin: 'kǒngzi', meaning: 'Confucius', meaningEn: 'Confucius', audio: 'audio/hsk5/hsk5_孔子.wav' },
+      { hanzi: '思想', pinyin: 'sīxiǎng', meaning: 'pensée', meaningEn: 'thought', audio: 'audio/hsk5/hsk5_思想.wav' },
       { hanzi: '礼', pinyin: 'lǐ', meaning: 'rites, étiquette', meaningEn: 'rites', audio: 'audio/hsk5/hsk5_礼.wav' },
-      { hanzi: '继承', pinyin: 'jì chéng', meaning: 'hériter', meaningEn: 'inherit', audio: 'audio/hsk5/hsk5_继承.wav' },
-      { hanzi: '批判', pinyin: 'pī pàn', meaning: 'critique, critiquer', meaningEn: 'critique', audio: 'audio/hsk6/hsk6_批判.wav' }
+      { hanzi: '继承', pinyin: 'jìchéng', meaning: 'hériter', meaningEn: 'inherit', audio: 'audio/hsk5/hsk5_继承.wav' },
+      { hanzi: '批判', pinyin: 'pīpàn', meaning: 'critique, critiquer', meaningEn: 'critique', audio: 'audio/hsk6/hsk6_批判.wav' }
     ],
     tip:
       '« 批判地继承 » est UNE formule passe-partout du discours intellectuel chinois sur le patrimoine. Elle te permet de NUANCER (« on prend le bon, on rejette le mauvais ») sans être ni totalement pour ni contre. Diplomate et culturellement attendue.',
@@ -285,11 +285,11 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: interviewed as an author/researcher. Key phrases: 这次的写作灵感来自 X (this writing is inspired by X). 灵感 (línggǎn, inspiration). Describe process: 我前后修改了 X 次 (I revised X times). 我用了 X 年完成这部作品. Deep meaning: 我想表达的核心思想是 X (the central idea I want to convey is X). When asked about projects: 目前正在构思下一部作品 (I\'m currently conceiving the next work). 构思 (conceive, plan) is very formal for a work in gestation. Close modestly: 希望读者能从中获得一些启示 (I hope readers will draw some lessons).',
     items: [
-      { hanzi: '灵感', pinyin: 'líng gǎn', meaning: 'inspiration', meaningEn: 'inspiration', audio: 'audio/hsk6/hsk6_灵感.wav' },
-      { hanzi: '修改', pinyin: 'xiū gǎi', meaning: 'réviser, corriger', meaningEn: 'revise', audio: 'audio/hsk5/hsk5_修改.wav' },
-      { hanzi: '表达', pinyin: 'biǎo dá', meaning: 'exprimer', meaningEn: 'express', audio: 'audio/hsk4/hsk4_表达.wav' },
-      { hanzi: '构思', pinyin: 'gòu sī', meaning: 'concevoir (œuvre)', meaningEn: 'conceive (work)', audio: 'audio/hsk6/hsk6_构思.wav' },
-      { hanzi: '启示', pinyin: 'qǐ shì', meaning: 'enseignement', meaningEn: 'enlightenment', audio: 'audio/hsk6/hsk6_启示.wav' }
+      { hanzi: '灵感', pinyin: 'línggǎn', meaning: 'inspiration', meaningEn: 'inspiration', audio: 'audio/hsk6/hsk6_灵感.wav' },
+      { hanzi: '修改', pinyin: 'xiūgǎi', meaning: 'réviser, corriger', meaningEn: 'revise', audio: 'audio/hsk5/hsk5_修改.wav' },
+      { hanzi: '表达', pinyin: 'biǎodá', meaning: 'exprimer', meaningEn: 'express', audio: 'audio/hsk4/hsk4_表达.wav' },
+      { hanzi: '构思', pinyin: 'gòusī', meaning: 'concevoir (œuvre)', meaningEn: 'conceive (work)', audio: 'audio/hsk6/hsk6_构思.wav' },
+      { hanzi: '启示', pinyin: 'qǐshì', meaning: 'enseignement', meaningEn: 'enlightenment', audio: 'audio/hsk6/hsk6_启示.wav' }
     ],
     tip:
       'Modestie obligatoire chinoise pour un auteur : « 希望读者能从中获得一些启示 ». Ne JAMAIS dire « 我相信我的作品很重要 ». L\'auto-promotion explicite est culturellement mal vue ; la modestie effacée renforce paradoxalement le prestige.',
@@ -314,11 +314,11 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Open: 各位书友，大家好 (dear book friends). 书友 (book friend) is very warm. Launch discussion: 这本书最让您印象深刻的是什么？(what struck you most?). Invite all: 请每位都分享一下. Synthesize: 大家提到了几个共同的主题 X. To restart: 但也有一个细节我们没有讨论，那就是 X (a detail we haven\'t discussed is X). Close: 谢谢大家的精彩分享，下次我们读 X. Tone: convivial yet structured. Chinese 书友 appreciate a host who DRAWS connections between interventions.',
     items: [
-      { hanzi: '书友', pinyin: 'shū yǒu', meaning: 'ami lecteur', meaningEn: 'book friend', audio: 'audio/hsk5/hsk5_书友.wav' },
-      { hanzi: '印象', pinyin: 'yìn xiàng', meaning: 'impression', meaningEn: 'impression', audio: 'audio/hsk4/hsk4_印象.wav' },
-      { hanzi: '深刻', pinyin: 'shēn kè', meaning: 'profond (impression)', meaningEn: 'deep (impression)', audio: 'audio/hsk5/hsk5_深刻.wav' },
-      { hanzi: '主题', pinyin: 'zhǔ tí', meaning: 'thème', meaningEn: 'theme', audio: 'audio/hsk5/hsk5_主题.wav' },
-      { hanzi: '细节', pinyin: 'xì jié', meaning: 'détail', meaningEn: 'detail', audio: 'audio/hsk5/hsk5_细节.wav' }
+      { hanzi: '书友', pinyin: 'shūyǒu', meaning: 'ami lecteur', meaningEn: 'book friend', audio: 'audio/hsk5/hsk5_书友.wav' },
+      { hanzi: '印象', pinyin: 'yìnxiàng', meaning: 'impression', meaningEn: 'impression', audio: 'audio/hsk4/hsk4_印象.wav' },
+      { hanzi: '深刻', pinyin: 'shēnkè', meaning: 'profond (impression)', meaningEn: 'deep (impression)', audio: 'audio/hsk5/hsk5_深刻.wav' },
+      { hanzi: '主题', pinyin: 'zhǔtí', meaning: 'thème', meaningEn: 'theme', audio: 'audio/hsk5/hsk5_主题.wav' },
+      { hanzi: '细节', pinyin: 'xìjié', meaning: 'détail', meaningEn: 'detail', audio: 'audio/hsk5/hsk5_细节.wav' }
     ],
     tip:
       'Pour qu\'un cercle de lecture chinois fonctionne, l\'animateur doit DÉSIGNER nommément les participants (« 张老师，您怎么看 ? »). Sans cela, par modestie, plusieurs n\'oseront pas parler. Même règle qu\'en réunion pro chinoise.',
@@ -348,11 +348,11 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese figures of speech: 比喻 (metaphor — 像 X 一样), 夸张 (hyperbole — 三千丈白发), 对偶 (parallelism — 风调雨顺), 排比 (anaphora — 我们要 X，要 Y，要 Z), 反问 (rhetorical question — 难道不是吗？). In C2 speech, mobilizing a figure supports the argument and marks the LITERATE. Ex: «教育之于一个民族，犹如水之于鱼» (education for a nation is like water for a fish) — 比喻 + 之于…犹如. Oratorical closing: 时不我待 (time waits for no one — chengyu). 时不我待，让我们行动起来 = powerful mobilization.',
     items: [
-      { hanzi: '比喻', pinyin: 'bǐ yù', meaning: 'métaphore', meaningEn: 'metaphor', audio: 'audio/hsk6/hsk6_比喻.wav' },
-      { hanzi: '夸张', pinyin: 'kuā zhāng', meaning: 'hyperbole', meaningEn: 'hyperbole', audio: 'audio/hsk5/hsk5_夸张.wav' },
-      { hanzi: '排比', pinyin: 'pái bǐ', meaning: 'anaphore', meaningEn: 'anaphora', audio: 'audio/hsk6/hsk6_排比.wav' },
-      { hanzi: '反问', pinyin: 'fǎn wèn', meaning: 'question rhétorique', meaningEn: 'rhetorical question', audio: 'audio/hsk6/hsk6_反问.wav' },
-      { hanzi: '时不我待', pinyin: 'shí bù wǒ dài', meaning: 'le temps n\'attend pas', meaningEn: 'time waits not', audio: 'audio/hsk6/hsk6_时.wav' }
+      { hanzi: '比喻', pinyin: 'bǐyù', meaning: 'métaphore', meaningEn: 'metaphor', audio: 'audio/hsk6/hsk6_比喻.wav' },
+      { hanzi: '夸张', pinyin: 'kuāzhāng', meaning: 'hyperbole', meaningEn: 'hyperbole', audio: 'audio/hsk5/hsk5_夸张.wav' },
+      { hanzi: '排比', pinyin: 'páibǐ', meaning: 'anaphore', meaningEn: 'anaphora', audio: 'audio/hsk6/hsk6_排比.wav' },
+      { hanzi: '反问', pinyin: 'fǎnwèn', meaning: 'question rhétorique', meaningEn: 'rhetorical question', audio: 'audio/hsk6/hsk6_反问.wav' },
+      { hanzi: '时不我待', pinyin: 'shíbùwǒdài', meaning: 'le temps n\'attend pas', meaningEn: 'time waits not', audio: 'audio/hsk6/hsk6_时.wav' }
     ],
     tip:
       'Combo C2 percutant : 排比 (anaphore) + 反问 (question rhétorique). Ex : « 我们要勇敢，要坚定，要前行。难道不是吗 ? ». L\'anaphore monte l\'émotion ; la question rhétorique fait participer. Effet immédiat sur l\'auditoire chinois.',
@@ -383,11 +383,11 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: paying tribute to a mentor, parent, colleague. Vocab: 悼念 (commemorate/mourn), 追忆 (recall), 缅怀 (honor the memory — VERY formal). Opening: 今天，我们怀着沉痛的心情悼念 X (today, with heavy hearts, we commemorate X). 沉痛 (deep pain) is MANDATORY in eulogy. Evoke the life: X 一生致力于 Y (X dedicated their life to Y). Cite a virtue: X 的 Z 精神将激励我们继续前行 (the Z spirit of X will inspire us to continue). Close: 安息吧，我们永远怀念您 (rest in peace, we will always remember you). 安息 (rest in peace) is the sanctioned expression.',
     items: [
-      { hanzi: '悼念', pinyin: 'dào niàn', meaning: 'commémorer (deuil)', meaningEn: 'commemorate', audio: 'audio/hsk6/hsk6_悼念.wav' },
-      { hanzi: '缅怀', pinyin: 'miǎn huái', meaning: 'honorer la mémoire', meaningEn: 'cherish the memory', audio: 'audio/hsk6/hsk6_缅怀.wav' },
-      { hanzi: '沉痛', pinyin: 'chén tòng', meaning: 'douleur profonde', meaningEn: 'deep grief', audio: 'audio/hsk6/hsk6_沉痛.wav' },
-      { hanzi: '激励', pinyin: 'jī lì', meaning: 'inspirer', meaningEn: 'inspire', audio: 'audio/hsk6/hsk6_激励.wav' },
-      { hanzi: '安息', pinyin: 'ān xī', meaning: 'reposer en paix', meaningEn: 'rest in peace', audio: 'audio/hsk6/hsk6_安息.wav' }
+      { hanzi: '悼念', pinyin: 'dàoniàn', meaning: 'commémorer (deuil)', meaningEn: 'commemorate', audio: 'audio/hsk6/hsk6_悼念.wav' },
+      { hanzi: '缅怀', pinyin: 'miǎnhuái', meaning: 'honorer la mémoire', meaningEn: 'cherish the memory', audio: 'audio/hsk6/hsk6_缅怀.wav' },
+      { hanzi: '沉痛', pinyin: 'chéntòng', meaning: 'douleur profonde', meaningEn: 'deep grief', audio: 'audio/hsk6/hsk6_沉痛.wav' },
+      { hanzi: '激励', pinyin: 'jīlì', meaning: 'inspirer', meaningEn: 'inspire', audio: 'audio/hsk6/hsk6_激励.wav' },
+      { hanzi: '安息', pinyin: 'ānxī', meaning: 'reposer en paix', meaningEn: 'rest in peace', audio: 'audio/hsk6/hsk6_安息.wav' }
     ],
     tip:
       'Dans un éloge funèbre chinois, la VIE > la MORT. On évoque longuement les contributions du défunt (50% du discours), brièvement le deuil (30%), puis l\'héritage qui inspire (20%). Inverser cette hiérarchie = perçu comme déprimant ou centré sur soi.',
@@ -418,11 +418,11 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 引言 → 文献综述 → 论点 → 论证 → 反驳潜在异议 → 结论 → 参考文献. Opening: 自古以来，X 一直是一个重要的话题 (since ancient times, X has been an important topic). 据笔者所知 (to the author\'s knowledge). For the thesis: 本文的核心论点是 X. Argue: 第一，X 表明 Y / 进一步而言，Z. Anticipate: 有人或许会反驳说 X，但 Y. Close: 综上所述，本文得出 X 的结论 / 这一发现对 Y 具有重要意义. Tone: DENSE, IMPERSONAL, ARGUMENTATIVE. No «我» → 笔者 or «本研究». Avoid overly flowery chengyu (reserved for literary creation) — academic essay privileges PRECISION.',
     items: [
-      { hanzi: '文献', pinyin: 'wén xiàn', meaning: 'littérature scientif.', meaningEn: 'scholarly literature', audio: 'audio/hsk6/hsk6_文献.wav' },
-      { hanzi: '综述', pinyin: 'zōng shù', meaning: 'synthèse, revue', meaningEn: 'review (literature)', audio: 'audio/hsk6/hsk6_综述.wav' },
-      { hanzi: '论证', pinyin: 'lùn zhèng', meaning: 'argumentation', meaningEn: 'argumentation', audio: 'audio/hsk6/hsk6_论证.wav' },
-      { hanzi: '异议', pinyin: 'yì yì', meaning: 'objection', meaningEn: 'objection', audio: 'audio/hsk6/hsk6_异议.wav' },
-      { hanzi: '据笔者所知', pinyin: 'jù bǐ zhě suǒ zhī', meaning: 'à la connaissance de l\'auteur', meaningEn: 'to the author\'s knowledge', audio: 'audio/hsk6/hsk6_笔者.wav' }
+      { hanzi: '文献', pinyin: 'wénxiàn', meaning: 'littérature scientif.', meaningEn: 'scholarly literature', audio: 'audio/hsk6/hsk6_文献.wav' },
+      { hanzi: '综述', pinyin: 'zōngshù', meaning: 'synthèse, revue', meaningEn: 'review (literature)', audio: 'audio/hsk6/hsk6_综述.wav' },
+      { hanzi: '论证', pinyin: 'lùnzhèng', meaning: 'argumentation', meaningEn: 'argumentation', audio: 'audio/hsk6/hsk6_论证.wav' },
+      { hanzi: '异议', pinyin: 'yìyì', meaning: 'objection', meaningEn: 'objection', audio: 'audio/hsk6/hsk6_异议.wav' },
+      { hanzi: '据笔者所知', pinyin: 'jù bǐzhě suǒzhī', meaning: 'à la connaissance de l\'auteur', meaningEn: 'to the author\'s knowledge', audio: 'audio/hsk6/hsk6_笔者.wav' }
     ],
     tip:
       '« 据笔者所知 » est la formule magique d\'HUMILITÉ scientifique chinoise. Elle reconnaît les limites de tes connaissances tout en marquant ton sérieux. Indispensable dans toute thèse / article académique en chinois — son absence te fait passer pour arrogant.',
@@ -453,11 +453,11 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: writing a review for a Chinese academic journal. Vocab: 同行评议 (peer review), 录用 (accept), 修改后录用 (accept with revisions), 拒稿 (reject). Positive set phrases: 本文选题新颖 (original topic), 论证严密 (rigorous argumentation), 文献丰富 (rich bibliography). Constructive criticism: 第二部分的论证略显薄弱 (part 2 is a bit weak), 建议作者补充 X (author should add X). Close: 总体而言，本文具有较高的学术价值，建议修改后录用. Tone: RIGOR + RESPECT for the work. Avoid sarcasm or personal judgment.',
     items: [
-      { hanzi: '同行', pinyin: 'tóng háng', meaning: 'pair (métier)', meaningEn: 'peer (profession)', audio: 'audio/hsk6/hsk6_同行.wav' },
-      { hanzi: '评议', pinyin: 'píng yì', meaning: 'évaluer (académique)', meaningEn: 'evaluate (academic)', audio: 'audio/hsk6/hsk6_评议.wav' },
-      { hanzi: '录用', pinyin: 'lù yòng', meaning: 'accepter', meaningEn: 'accept', audio: 'audio/hsk6/hsk6_录用.wav' },
-      { hanzi: '严密', pinyin: 'yán mì', meaning: 'rigoureux', meaningEn: 'rigorous', audio: 'audio/hsk6/hsk6_严密.wav' },
-      { hanzi: '薄弱', pinyin: 'bó ruò', meaning: 'faible (argument)', meaningEn: 'weak (argument)', audio: 'audio/hsk6/hsk6_薄弱.wav' }
+      { hanzi: '同行', pinyin: 'tóngháng', meaning: 'pair (métier)', meaningEn: 'peer (profession)', audio: 'audio/hsk6/hsk6_同行.wav' },
+      { hanzi: '评议', pinyin: 'píngyì', meaning: 'évaluer (académique)', meaningEn: 'evaluate (academic)', audio: 'audio/hsk6/hsk6_评议.wav' },
+      { hanzi: '录用', pinyin: 'lùyòng', meaning: 'accepter', meaningEn: 'accept', audio: 'audio/hsk6/hsk6_录用.wav' },
+      { hanzi: '严密', pinyin: 'yánmì', meaning: 'rigoureux', meaningEn: 'rigorous', audio: 'audio/hsk6/hsk6_严密.wav' },
+      { hanzi: '薄弱', pinyin: 'bóruò', meaning: 'faible (argument)', meaningEn: 'weak (argument)', audio: 'audio/hsk6/hsk6_薄弱.wav' }
     ],
     tip:
       'Critique constructive en peer review chinois : utilise toujours « 略显 X » (un peu X) plutôt que « 完全 X » (totalement X). « 略显薄弱 » > « 完全薄弱 ». La modération du verbe permet à l\'auteur de SAUVER LA FACE et de réviser sans hostilité.',
@@ -490,8 +490,8 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '道', pinyin: 'dào', meaning: 'voie, principe', meaningEn: 'way, principle', audio: 'audio/hsk5/hsk5_道.wav' },
       { hanzi: '德', pinyin: 'dé', meaning: 'vertu', meaningEn: 'virtue', audio: 'audio/hsk6/hsk6_德.wav' },
       { hanzi: '礼', pinyin: 'lǐ', meaning: 'rites, étiquette', meaningEn: 'rites', audio: 'audio/hsk5/hsk5_礼.wav' },
-      { hanzi: '道德', pinyin: 'dào dé', meaning: 'morale', meaningEn: 'morality', audio: 'audio/hsk5/hsk5_道德.wav' },
-      { hanzi: '礼仪', pinyin: 'lǐ yí', meaning: 'rites et étiquette', meaningEn: 'rites and etiquette', audio: 'audio/hsk6/hsk6_礼仪.wav' }
+      { hanzi: '道德', pinyin: 'dàodé', meaning: 'morale', meaningEn: 'morality', audio: 'audio/hsk5/hsk5_道德.wav' },
+      { hanzi: '礼仪', pinyin: 'lǐyí', meaning: 'rites et étiquette', meaningEn: 'rites and etiquette', audio: 'audio/hsk6/hsk6_礼仪.wav' }
     ],
     tip:
       'Test de discussion C2 : si un Chinois dit « 这个人没有德 » (cette personne n\'a pas de vertu), il dit qu\'elle est moralement creuse. « 没有礼 » signifie qu\'elle est mal élevée. La distinction permet de NUANCER ton jugement social.',
@@ -522,7 +522,7 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '义', pinyin: 'yì', meaning: 'justice, devoir', meaningEn: 'righteousness', audio: 'audio/hsk6/hsk6_义.wav' },
       { hanzi: '信', pinyin: 'xìn', meaning: 'foi, fiabilité', meaningEn: 'trust, reliability', audio: 'audio/hsk3/hsk3_信.wav' },
       { hanzi: '智', pinyin: 'zhì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智.wav' },
-      { hanzi: '五常', pinyin: 'wǔ cháng', meaning: '5 vertus cardinales', meaningEn: '5 cardinal virtues', audio: 'audio/hsk6/hsk6_五常.wav' }
+      { hanzi: '五常', pinyin: 'wǔcháng', meaning: '5 vertus cardinales', meaningEn: '5 cardinal virtues', audio: 'audio/hsk6/hsk6_五常.wav' }
     ],
     tip:
       '« 见义勇为 » (voir le juste et oser agir) est UN chengyu honoré socialement. À mobiliser pour louer une action courageuse altruiste : « 这是见义勇为的精神 ». Très puissant émotionnellement, signal de respect maximal.',
@@ -558,11 +558,11 @@ export const c21NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '阴 (yīn) = FEMININE principle, dark, cold, inner, earth, moon, water. 阳 (yáng) = MASCULINE principle, bright, hot, outer, sky, sun, fire. Not static dualism — a FLOW (太极图: Tao symbol with 1 dot of each color in the other). 五行 (5 phases): 木 (wood) → 火 (fire) → 土 (earth) → 金 (metal) → 水 (water). Cycles: 相生 (generation: wood→fire→earth→metal→water→wood) and 相克 (domination: wood→earth→water→fire→metal→wood). This cosmology structures traditional medicine, fengshui, calendar, and classical nomenclature. Knowing these terms unlocks ANY traditional Chinese text.',
     items: [
-      { hanzi: '阴阳', pinyin: 'yīn yáng', meaning: 'yin et yang', meaningEn: 'yin and yang', audio: 'audio/hsk5/hsk5_阴阳.wav' },
-      { hanzi: '五行', pinyin: 'wǔ xíng', meaning: '5 phases', meaningEn: '5 phases', audio: 'audio/hsk6/hsk6_五行.wav' },
+      { hanzi: '阴阳', pinyin: 'yīnyáng', meaning: 'yin et yang', meaningEn: 'yin and yang', audio: 'audio/hsk5/hsk5_阴阳.wav' },
+      { hanzi: '五行', pinyin: 'wǔxíng', meaning: '5 phases', meaningEn: '5 phases', audio: 'audio/hsk6/hsk6_五行.wav' },
       { hanzi: '相生', pinyin: 'xiāng shēng', meaning: 's\'engendrer', meaningEn: 'mutually generate', audio: 'audio/hsk6/hsk6_相生.wav' },
-      { hanzi: '相克', pinyin: 'xiāng kè', meaning: 'se dominer', meaningEn: 'mutually overcome', audio: 'audio/hsk6/hsk6_相克.wav' },
-      { hanzi: '太极', pinyin: 'tài jí', meaning: 'taiji', meaningEn: 'taiji', audio: 'audio/hsk6/hsk6_太极.wav' }
+      { hanzi: '相克', pinyin: 'xiāngkè', meaning: 'se dominer', meaningEn: 'mutually overcome', audio: 'audio/hsk6/hsk6_相克.wav' },
+      { hanzi: '太极', pinyin: 'tàijí', meaning: 'taiji', meaningEn: 'taiji', audio: 'audio/hsk6/hsk6_太极.wav' }
     ],
     tip:
       '« 阴阳平衡 » (équilibre yin-yang) = formule centrale de la médecine traditionnelle chinoise. À mobiliser pour parler d\'équilibre dans n\'importe quel domaine (alimentation, vie pro/perso, santé). Concept profondément culturel, valorisé socialement.',
@@ -590,8 +590,8 @@ export const c21NuancesM2LearnSections: LessonV2LearnSection[] = [
       { hanzi: '诗', pinyin: 'shī', meaning: 'poésie (classique)', meaningEn: 'poetry (classical)', audio: 'audio/hsk5/hsk5_诗.wav' },
       { hanzi: '词', pinyin: 'cí', meaning: 'poème chanté Song', meaningEn: 'Song sung poem', audio: 'audio/hsk5/hsk5_词.wav' },
       { hanzi: '曲', pinyin: 'qǔ', meaning: 'poème théâtral Yuan', meaningEn: 'Yuan theatrical poem', audio: 'audio/hsk5/hsk5_曲.wav' },
-      { hanzi: '词牌', pinyin: 'cí pái', meaning: 'modèle métrique 词', meaningEn: 'cí metric template', audio: 'audio/hsk6/hsk6_词牌.wav' },
-      { hanzi: '李白', pinyin: 'lǐ bái', meaning: 'Li Bai (poète Tang)', meaningEn: 'Li Bai (Tang poet)', audio: 'audio/hsk5/hsk5_李白.wav' }
+      { hanzi: '词牌', pinyin: 'cípái', meaning: 'modèle métrique 词', meaningEn: 'cí metric template', audio: 'audio/hsk6/hsk6_词牌.wav' },
+      { hanzi: '李白', pinyin: 'lǐbái', meaning: 'Li Bai (poète Tang)', meaningEn: 'Li Bai (Tang poet)', audio: 'audio/hsk5/hsk5_李白.wav' }
     ],
     tip:
       'Astuce mnémotechnique : 诗 (Tang) → 词 (Song) → 曲 (Yuan). Ordre chronologique des dynasties. Si tu retiens cet ordre, tu ne te trompes plus de forme. Et tu peux nommer les grands : Tang→李白杜甫, Song→苏轼李清照, Yuan→关汉卿.',
@@ -619,11 +619,11 @@ export const c21NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '中庸 (zhōngyōng) = THE CONFUCIAN GOLDEN MEAN. Not bland average, but the virtue of avoiding extremes through wisdom. Work: 《中庸》, one of the Four Books. 中立 (zhōnglì) = political/diplomatic NEUTRALITY. 保持中立 (stay neutral). Connotes refusal to take sides. 中间 (zhōngjiān) = SPATIAL or TEMPORAL MIDDLE (at center, between 2). 中间人 (intermediary). More concrete. Conceptual hierarchy: 中庸 (moral virtue) ≠ 中立 (political position) ≠ 中间 (physical/temporal position). Confusing 中庸 and 中立 = philosophical error. 中庸 IMPLIES active judgment on the good; 中立 is ABSTENTION.',
     items: [
-      { hanzi: '中庸', pinyin: 'zhōng yōng', meaning: 'juste milieu confucéen', meaningEn: 'Confucian golden mean', audio: 'audio/hsk6/hsk6_中庸.wav' },
-      { hanzi: '中立', pinyin: 'zhōng lì', meaning: 'neutralité', meaningEn: 'neutrality', audio: 'audio/hsk6/hsk6_中立.wav' },
-      { hanzi: '中间', pinyin: 'zhōng jiān', meaning: 'milieu (spatial)', meaningEn: 'middle (spatial)', audio: 'audio/hsk2/hsk2_中间.wav' },
-      { hanzi: '保持', pinyin: 'bǎo chí', meaning: 'maintenir', meaningEn: 'maintain', audio: 'audio/hsk4/hsk4_保持.wav' },
-      { hanzi: '极端', pinyin: 'jí duān', meaning: 'extrême', meaningEn: 'extreme', audio: 'audio/hsk6/hsk6_极端.wav' }
+      { hanzi: '中庸', pinyin: 'zhōngyōng', meaning: 'juste milieu confucéen', meaningEn: 'Confucian golden mean', audio: 'audio/hsk6/hsk6_中庸.wav' },
+      { hanzi: '中立', pinyin: 'zhōnglì', meaning: 'neutralité', meaningEn: 'neutrality', audio: 'audio/hsk6/hsk6_中立.wav' },
+      { hanzi: '中间', pinyin: 'zhōngjiān', meaning: 'milieu (spatial)', meaningEn: 'middle (spatial)', audio: 'audio/hsk2/hsk2_中间.wav' },
+      { hanzi: '保持', pinyin: 'bǎochí', meaning: 'maintenir', meaningEn: 'maintain', audio: 'audio/hsk4/hsk4_保持.wav' },
+      { hanzi: '极端', pinyin: 'jíduān', meaning: 'extrême', meaningEn: 'extreme', audio: 'audio/hsk6/hsk6_极端.wav' }
     ],
     tip:
       '« 中庸之道 » (la voie du juste milieu) est un compliment intellectuel chinois. Dire d\'une décision « 这是中庸之道 » signifie : sage, mesurée, évitant les extrêmes. Plus puissant que « 平衡 » (équilibre) — connote la sagesse confucéenne.',
@@ -648,11 +648,11 @@ export const c21NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '天下 (tiānxià) = «ALL-UNDER-HEAVEN» — Chinese imperial concept covering the civilized world under the moral authority of the Son of Heaven. Not reducible to the modern State. 天下兴亡，匹夫有责 (each has responsibility for the world\'s fate — 顾炎武, famous maxim). 国家 (guójiā) = modern NATION-STATE, political-legal entity. Westphalian concept adopted late 19th c. 民族 (mínzú) = ETHNIC NATION/people. Modern China defines itself as a 多民族国家 (multi-ethnic state with 56 recognized ethnicities). The distinction structures all debate on Chinese identity. 天下 = imperial vision; 国家 = modern vision; 民族 = cultural identity.',
     items: [
-      { hanzi: '天下', pinyin: 'tiān xià', meaning: 'tout-sous-le-ciel', meaningEn: 'all-under-heaven', audio: 'audio/hsk6/hsk6_天下.wav' },
-      { hanzi: '国家', pinyin: 'guó jiā', meaning: 'État-nation', meaningEn: 'nation-state', audio: 'audio/hsk2/hsk2_国家.wav' },
-      { hanzi: '民族', pinyin: 'mín zú', meaning: 'nation ethnique', meaningEn: 'ethnic nation', audio: 'audio/hsk5/hsk5_民族.wav' },
-      { hanzi: '匹夫', pinyin: 'pǐ fū', meaning: 'le commun (homme)', meaningEn: 'common man', audio: 'audio/hsk6/hsk6_匹夫.wav' },
-      { hanzi: '兴亡', pinyin: 'xīng wáng', meaning: 'essor et chute', meaningEn: 'rise and fall', audio: 'audio/hsk6/hsk6_兴亡.wav' }
+      { hanzi: '天下', pinyin: 'tiānxià', meaning: 'tout-sous-le-ciel', meaningEn: 'all-under-heaven', audio: 'audio/hsk6/hsk6_天下.wav' },
+      { hanzi: '国家', pinyin: 'guójiā', meaning: 'État-nation', meaningEn: 'nation-state', audio: 'audio/hsk2/hsk2_国家.wav' },
+      { hanzi: '民族', pinyin: 'mínzú', meaning: 'nation ethnique', meaningEn: 'ethnic nation', audio: 'audio/hsk5/hsk5_民族.wav' },
+      { hanzi: '匹夫', pinyin: 'pǐfū', meaning: 'le commun (homme)', meaningEn: 'common man', audio: 'audio/hsk6/hsk6_匹夫.wav' },
+      { hanzi: '兴亡', pinyin: 'xīngwáng', meaning: 'essor et chute', meaningEn: 'rise and fall', audio: 'audio/hsk6/hsk6_兴亡.wav' }
     ],
     tip:
       'La maxime « 天下兴亡，匹夫有责 » est UNE des phrases les plus citées en discours patriotique chinois. La connaître + la citer correctement = signal IMMÉDIAT de respect culturel et de connaissance lettrée. Auteur : 顾炎武 (Gu Yanwu, dynastie Qing).',
@@ -681,8 +681,8 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
       { hanzi: '言', pinyin: 'yán', meaning: 'parler, parole', meaningEn: 'speak, speech', audio: 'audio/hsk5/hsk5_言.wav' },
       { hanzi: '而', pinyin: 'ér', meaning: 'et, alors (classique)', meaningEn: 'and, then (classical)', audio: 'audio/hsk5/hsk5_而.wav' },
       { hanzi: '于', pinyin: 'yú', meaning: 'à, dans (classique)', meaningEn: 'at, in (classical)', audio: 'audio/hsk5/hsk5_于.wav' },
-      { hanzi: '言论', pinyin: 'yán lùn', meaning: 'discours, propos', meaningEn: 'discourse', audio: 'audio/hsk6/hsk6_言论.wav' },
-      { hanzi: '名言', pinyin: 'míng yán', meaning: 'citation célèbre', meaningEn: 'famous saying', audio: 'audio/hsk5/hsk5_名言.wav' }
+      { hanzi: '言论', pinyin: 'yánlùn', meaning: 'discours, propos', meaningEn: 'discourse', audio: 'audio/hsk6/hsk6_言论.wav' },
+      { hanzi: '名言', pinyin: 'míngyán', meaning: 'citation célèbre', meaningEn: 'famous saying', audio: 'audio/hsk5/hsk5_名言.wav' }
     ],
     tip:
       '« 学而时习之，不亦说乎 » (apprendre et pratiquer régulièrement, n\'est-ce pas un plaisir ?) — première phrase des 《论语》. Si tu peux la citer en chinois en discussion, tu signales IMMÉDIATEMENT ton niveau lettré. À mémoriser absolument.',
@@ -707,10 +707,10 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '是非 (shìfēi) = TRUE AND FALSE (EPISTEMIC axis — what is factually TRUE). 明辨是非 (clearly distinguish true from false). Connotes intellectual rigor. 善恶 (shàn\'è) = GOOD AND EVIL (MORAL axis — inner qualities). 善有善报，恶有恶报 (good attracts good, evil attracts evil — karma). Connotes deep ethics. 对错 (duì cuò) = RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action). 对错很重要 (right vs wrong matters). More everyday and concrete. Hierarchy: 对错 (concrete action) < 是非 (epistemic fact) < 善恶 (deep moral). Classic mistake: confusing 是非 (truth) and 善恶 (morality) — a fact may be 是 but 恶.',
     items: [
-      { hanzi: '是非', pinyin: 'shì fēi', meaning: 'le vrai et le faux', meaningEn: 'right and wrong (true)', audio: 'audio/hsk6/hsk6_是非.wav' },
-      { hanzi: '善恶', pinyin: 'shàn è', meaning: 'le bien et le mal', meaningEn: 'good and evil', audio: 'audio/hsk6/hsk6_善恶.wav' },
-      { hanzi: '对错', pinyin: 'duì cuò', meaning: 'juste et erroné', meaningEn: 'right and wrong (correct)', audio: 'audio/hsk5/hsk5_对错.wav' },
-      { hanzi: '明辨', pinyin: 'míng biàn', meaning: 'distinguer clairement', meaningEn: 'clearly distinguish', audio: 'audio/hsk6/hsk6_明辨.wav' },
+      { hanzi: '是非', pinyin: 'shìfēi', meaning: 'le vrai et le faux', meaningEn: 'right and wrong (true)', audio: 'audio/hsk6/hsk6_是非.wav' },
+      { hanzi: '善恶', pinyin: 'shànè', meaning: 'le bien et le mal', meaningEn: 'good and evil', audio: 'audio/hsk6/hsk6_善恶.wav' },
+      { hanzi: '对错', pinyin: 'duìcuò', meaning: 'juste et erroné', meaningEn: 'right and wrong (correct)', audio: 'audio/hsk5/hsk5_对错.wav' },
+      { hanzi: '明辨', pinyin: 'míngbiàn', meaning: 'distinguer clairement', meaningEn: 'clearly distinguish', audio: 'audio/hsk6/hsk6_明辨.wav' },
       { hanzi: '报', pinyin: 'bào', meaning: 'rétribuer, retour', meaningEn: 'recompense, return', audio: 'audio/hsk4/hsk4_报.wav' }
     ],
     tip:
@@ -744,7 +744,7 @@ export const c21NuancesM5LearnSections: LessonV2LearnSection[] = [
       { hanzi: '心', pinyin: 'xīn', meaning: 'cœur, esprit-cœur', meaningEn: 'heart-mind', audio: 'audio/hsk1/hsk1_心.wav' },
       { hanzi: '灵', pinyin: 'líng', meaning: 'âme, esprit subtil', meaningEn: 'soul', audio: 'audio/hsk6/hsk6_灵.wav' },
       { hanzi: '神', pinyin: 'shén', meaning: 'esprit divin', meaningEn: 'divine spirit', audio: 'audio/hsk5/hsk5_神.wav' },
-      { hanzi: '心灵', pinyin: 'xīn líng', meaning: 'esprit-cœur', meaningEn: 'heart-spirit', audio: 'audio/hsk6/hsk6_心灵.wav' }
+      { hanzi: '心灵', pinyin: 'xīnlíng', meaning: 'esprit-cœur', meaningEn: 'heart-spirit', audio: 'audio/hsk6/hsk6_心灵.wav' }
     ],
     tip:
       '« 身心灵 » (corps-cœur-âme) est une trilogie devenue à la mode dans le bien-être chinois moderne (yoga, méditation, développement personnel). Cite-le pour parler holistique : « 我们要追求身心灵的平衡 » (chercher l\'équilibre corps-cœur-âme). Très tendance.',
@@ -770,8 +770,8 @@ export const c21NuancesM5LearnSections: LessonV2LearnSection[] = [
       { hanzi: '天', pinyin: 'tiān', meaning: 'ciel', meaningEn: 'heaven, sky', audio: 'audio/hsk1/hsk1_天.wav' },
       { hanzi: '地', pinyin: 'dì', meaning: 'terre', meaningEn: 'earth', audio: 'audio/hsk2/hsk2_地.wav' },
       { hanzi: '人', pinyin: 'rén', meaning: 'humain', meaningEn: 'human', audio: 'audio/hsk1/hsk1_人.wav' },
-      { hanzi: '三才', pinyin: 'sān cái', meaning: 'les 3 puissances', meaningEn: 'the 3 powers', audio: 'audio/hsk6/hsk6_三才.wav' },
-      { hanzi: '天命', pinyin: 'tiān mìng', meaning: 'mandat céleste', meaningEn: 'heavenly mandate', audio: 'audio/hsk6/hsk6_天命.wav' }
+      { hanzi: '三才', pinyin: 'sāncái', meaning: 'les 3 puissances', meaningEn: 'the 3 powers', audio: 'audio/hsk6/hsk6_三才.wav' },
+      { hanzi: '天命', pinyin: 'tiānmìng', meaning: 'mandat céleste', meaningEn: 'heavenly mandate', audio: 'audio/hsk6/hsk6_天命.wav' }
     ],
     tip:
       '« 天时地利人和 » est UN des chengyu les plus utilisés en analyse stratégique chinoise (business, politique, sport). Pour louer un succès : « 这是天时地利人和的结果 » (résultat de la convergence du moment, du lieu et de l\'harmonie humaine).',
@@ -799,11 +799,11 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '意境 (yìjìng) = POETIC ATMOSPHERE / mood of a Chinese artistic work. Strictly UNTRANSLATABLE — fusion of image (意) and setting (境) that creates deep emotion. Central concept of Chinese aesthetics. 氛围 (fēnwéi) = general AMBIENCE (place, event, conversation). 节日的氛围 (a festival\'s atmosphere). More universal and social. 风格 (fēnggé) = STYLE (artistic, personal, sartorial). 这位画家的风格 (this painter\'s style). More formal on creative identity. Hierarchy: 氛围 (general ambience) < 风格 (artistic identity) < 意境 (ineffable Chinese aesthetic concept). To praise a Chinese work: 这首诗很有意境 = maximum compliment.',
     items: [
-      { hanzi: '意境', pinyin: 'yì jìng', meaning: 'atmosphère poétique', meaningEn: 'poetic atmosphere', audio: 'audio/hsk6/hsk6_意境.wav' },
-      { hanzi: '氛围', pinyin: 'fēn wéi', meaning: 'ambiance générale', meaningEn: 'general ambience', audio: 'audio/hsk6/hsk6_氛围.wav' },
-      { hanzi: '风格', pinyin: 'fēng gé', meaning: 'style', meaningEn: 'style', audio: 'audio/hsk5/hsk5_风格.wav' },
-      { hanzi: '画家', pinyin: 'huà jiā', meaning: 'peintre', meaningEn: 'painter', audio: 'audio/hsk5/hsk5_画家.wav' },
-      { hanzi: '节日', pinyin: 'jié rì', meaning: 'fête', meaningEn: 'festival', audio: 'audio/hsk3/hsk3_节日.wav' }
+      { hanzi: '意境', pinyin: 'yìjìng', meaning: 'atmosphère poétique', meaningEn: 'poetic atmosphere', audio: 'audio/hsk6/hsk6_意境.wav' },
+      { hanzi: '氛围', pinyin: 'fēnwéi', meaning: 'ambiance générale', meaningEn: 'general ambience', audio: 'audio/hsk6/hsk6_氛围.wav' },
+      { hanzi: '风格', pinyin: 'fēnggé', meaning: 'style', meaningEn: 'style', audio: 'audio/hsk5/hsk5_风格.wav' },
+      { hanzi: '画家', pinyin: 'huàjiā', meaning: 'peintre', meaningEn: 'painter', audio: 'audio/hsk5/hsk5_画家.wav' },
+      { hanzi: '节日', pinyin: 'jiérì', meaning: 'fête', meaningEn: 'festival', audio: 'audio/hsk3/hsk3_节日.wav' }
     ],
     tip:
       'Compliment ULTIME pour une œuvre chinoise (poème, calligraphie, paysage, jardin) : « 这很有意境 ». Plus puissant que « 很美 » (beau) ou « 很好 ». Le mot 意境 signale que tu APPRÉCIES la profondeur esthétique chinoise — flatterie maximale d\'un artiste local.',
@@ -828,11 +828,11 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '人格 (réngé) = PERSONALITY IN PSYCHO-LEGAL SENSE (person as moral subject). 人格尊严 (personal dignity), 人格分裂 (split personality). More formal/scientific. 品格 (pǐngé) = MORAL CHARACTER (virtuous qualities). 品格高尚 (noble character), 培养品格 (form character). Connotes VIRTUE. 性格 (xìnggé) = TEMPERAMENT, psychological traits (introverted, extroverted, calm). 性格内向 (introverted temperament). More everyday. Hierarchy: 性格 (psycho temperament) < 人格 (legal/moral personality) < 品格 (virtuous character). Classic mistake: 性格高尚 ✗ → 品格高尚 ✓ (temperament is neutral, VIRTUE is noble).',
     items: [
-      { hanzi: '人格', pinyin: 'rén gé', meaning: 'personnalité (juridique)', meaningEn: 'personhood', audio: 'audio/hsk6/hsk6_人格.wav' },
-      { hanzi: '品格', pinyin: 'pǐn gé', meaning: 'caractère moral', meaningEn: 'moral character', audio: 'audio/hsk6/hsk6_品格.wav' },
-      { hanzi: '性格', pinyin: 'xìng gé', meaning: 'tempérament', meaningEn: 'temperament', audio: 'audio/hsk4/hsk4_性格.wav' },
-      { hanzi: '高尚', pinyin: 'gāo shàng', meaning: 'noble (moral)', meaningEn: 'noble (moral)', audio: 'audio/hsk6/hsk6_高尚.wav' },
-      { hanzi: '尊严', pinyin: 'zūn yán', meaning: 'dignité', meaningEn: 'dignity', audio: 'audio/hsk6/hsk6_尊严.wav' }
+      { hanzi: '人格', pinyin: 'réngé', meaning: 'personnalité (juridique)', meaningEn: 'personhood', audio: 'audio/hsk6/hsk6_人格.wav' },
+      { hanzi: '品格', pinyin: 'pǐngé', meaning: 'caractère moral', meaningEn: 'moral character', audio: 'audio/hsk6/hsk6_品格.wav' },
+      { hanzi: '性格', pinyin: 'xìnggé', meaning: 'tempérament', meaningEn: 'temperament', audio: 'audio/hsk4/hsk4_性格.wav' },
+      { hanzi: '高尚', pinyin: 'gāoshàng', meaning: 'noble (moral)', meaningEn: 'noble (moral)', audio: 'audio/hsk6/hsk6_高尚.wav' },
+      { hanzi: '尊严', pinyin: 'zūnyán', meaning: 'dignité', meaningEn: 'dignity', audio: 'audio/hsk6/hsk6_尊严.wav' }
     ],
     tip:
       'Pour louer une personne âgée chinoise : « 您的品格让我深受感动 » (votre caractère me touche profondément). 品格 reconnaît la VERTU MORALE accumulée — flatte mieux que 性格 (tempérament neutre). Compliment ultime pour un mentor/aîné.',
@@ -863,8 +863,8 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
       { hanzi: '智', pinyin: 'zhì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智.wav' },
       { hanzi: '知', pinyin: 'zhī', meaning: 'connaître, savoir', meaningEn: 'know', audio: 'audio/hsk1/hsk1_知道.wav' },
       { hanzi: '识', pinyin: 'shí', meaning: 'reconnaître, discerner', meaningEn: 'recognize', audio: 'audio/hsk5/hsk5_识.wav' },
-      { hanzi: '智慧', pinyin: 'zhì huì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智慧.wav' },
-      { hanzi: '见识', pinyin: 'jiàn shí', meaning: 'expérience, ouverture', meaningEn: 'experience, breadth', audio: 'audio/hsk6/hsk6_见识.wav' }
+      { hanzi: '智慧', pinyin: 'zhìhuì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智慧.wav' },
+      { hanzi: '见识', pinyin: 'jiànshí', meaning: 'expérience, ouverture', meaningEn: 'experience, breadth', audio: 'audio/hsk6/hsk6_见识.wav' }
     ],
     tip:
       '« 增长见识 » (élargir son expérience/sa vue) est un objectif culturellement valorisé en Chine. À utiliser pour parler de voyage, lecture, rencontres : « 我希望多出去走走，增长见识 » (j\'aimerais voyager plus pour élargir ma vue). Très bien reçu.',
@@ -889,11 +889,11 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '境界 (jìngjiè) = SPIRITUAL/PHILOSOPHICAL LEVEL attained (state of being). 王国维 (Wang Guowei) posed the «三种境界» of creation: (1) 独上高楼，望尽天涯路; (2) 衣带渐宽终不悔; (3) 蓦然回首，那人却在灯火阑珊处. Deeply cultural. 层次 (céngcì) = STRUCTURAL LEVEL (layers of analysis, hierarchy). 高层次的人 (person of high intellectual/social level). More structural. 水平 (shuǐpíng) = MEASURABLE LEVEL (competence, performance). 学习水平 (academic level). More quantitative. Hierarchy: 水平 (concrete measurable) < 层次 (structural intellectual) < 境界 (spiritual philosophical). To praise a sage: «您的境界让我景仰» (your spiritual level inspires my respect).',
     items: [
-      { hanzi: '境界', pinyin: 'jìng jiè', meaning: 'niveau spirituel', meaningEn: 'spiritual level', audio: 'audio/hsk6/hsk6_境界.wav' },
-      { hanzi: '层次', pinyin: 'céng cì', meaning: 'niveau structurel', meaningEn: 'structural level', audio: 'audio/hsk6/hsk6_层次.wav' },
-      { hanzi: '水平', pinyin: 'shuǐ píng', meaning: 'niveau mesurable', meaningEn: 'measurable level', audio: 'audio/hsk3/hsk3_水平.wav' },
-      { hanzi: '景仰', pinyin: 'jǐng yǎng', meaning: 'admirer (respect)', meaningEn: 'revere', audio: 'audio/hsk6/hsk6_景仰.wav' },
-      { hanzi: '王国维', pinyin: 'wáng guó wéi', meaning: 'Wang Guowei (lettré)', meaningEn: 'Wang Guowei (scholar)', audio: 'audio/hsk6/hsk6_王国维.wav' }
+      { hanzi: '境界', pinyin: 'jìngjiè', meaning: 'niveau spirituel', meaningEn: 'spiritual level', audio: 'audio/hsk6/hsk6_境界.wav' },
+      { hanzi: '层次', pinyin: 'céngcì', meaning: 'niveau structurel', meaningEn: 'structural level', audio: 'audio/hsk6/hsk6_层次.wav' },
+      { hanzi: '水平', pinyin: 'shuǐpíng', meaning: 'niveau mesurable', meaningEn: 'measurable level', audio: 'audio/hsk3/hsk3_水平.wav' },
+      { hanzi: '景仰', pinyin: 'jǐngyǎng', meaning: 'admirer (respect)', meaningEn: 'revere', audio: 'audio/hsk6/hsk6_景仰.wav' },
+      { hanzi: '王国维', pinyin: 'wángguówéi', meaning: 'Wang Guowei (lettré)', meaningEn: 'Wang Guowei (scholar)', audio: 'audio/hsk6/hsk6_王国维.wav' }
     ],
     tip:
       'Connaître les « 三种境界 » de Wang Guowei est UN signal de niveau lettré C2. Si tu peux les MENTIONNER en discussion (« 像王国维说的三种境界 »), tu signales immédiatement ton niveau de compréhension culturelle profonde. Très impressionnant en milieu intellectuel chinois.',
@@ -927,11 +927,11 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '文言文 (classical Chinese) isn\'t a DEAD language — it\'s the cultural RESERVOIR all formal modern Chinese draws from. When an editorialist writes 不容置疑 («beyond doubt»), 不可逾越 («uncrossable»), that\'s condensed 文言. When a politician cites 子曰 X («Confucius says X»), that\'s raw 文言. Without 文言 basics, you PLATEAU at C1.5 — you don\'t decode 30% of formal editorials. With these basics, you unlock: editorials, philosophy, poetry, classical novels, calligraphy. Huge ROI for a few dozen hours of study. Approach: not formal grammar, but 50 key phrases to memorize + spot the particles.',
     items: [
-      { hanzi: '文言文', pinyin: 'wén yán wén', meaning: 'chinois classique', meaningEn: 'classical Chinese', audio: 'audio/hsk6/hsk6_文言.wav' },
-      { hanzi: '白话', pinyin: 'bái huà', meaning: 'chinois parlé moderne', meaningEn: 'modern vernacular', audio: 'audio/hsk6/hsk6_白话.wav' },
-      { hanzi: '不容置疑', pinyin: 'bù róng zhì yí', meaning: 'hors de doute', meaningEn: 'beyond doubt', audio: 'audio/hsk6/hsk6_不容.wav' },
-      { hanzi: '逾越', pinyin: 'yú yuè', meaning: 'franchir, transgresser', meaningEn: 'cross over', audio: 'audio/hsk6/hsk6_逾越.wav' },
-      { hanzi: '储备', pinyin: 'chǔ bèi', meaning: 'réservoir', meaningEn: 'reserve', audio: 'audio/hsk6/hsk6_储备.wav' }
+      { hanzi: '文言文', pinyin: 'wényánwén', meaning: 'chinois classique', meaningEn: 'classical Chinese', audio: 'audio/hsk6/hsk6_文言.wav' },
+      { hanzi: '白话', pinyin: 'báihuà', meaning: 'chinois parlé moderne', meaningEn: 'modern vernacular', audio: 'audio/hsk6/hsk6_白话.wav' },
+      { hanzi: '不容置疑', pinyin: 'bùróngzhìyí', meaning: 'hors de doute', meaningEn: 'beyond doubt', audio: 'audio/hsk6/hsk6_不容.wav' },
+      { hanzi: '逾越', pinyin: 'yúyuè', meaning: 'franchir, transgresser', meaningEn: 'cross over', audio: 'audio/hsk6/hsk6_逾越.wav' },
+      { hanzi: '储备', pinyin: 'chǔbèi', meaning: 'réservoir', meaningEn: 'reserve', audio: 'audio/hsk6/hsk6_储备.wav' }
     ],
     tip:
       'Investis 30 min/jour pendant 1 mois sur le 文言. Méthode : lire CHAQUE matin 1 phrase de Confucius en VO + sa traduction. Au bout de 30 jours, tu reconnais 30 phrases — assez pour décoder les citations dans la presse moderne. Routine simple, ROI massif.',
@@ -960,7 +960,7 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '友', pinyin: 'yǒu', meaning: 'compagnon (classique)', meaningEn: 'companion', audio: 'audio/hsk6/hsk6_友.wav' },
       { hanzi: '学', pinyin: 'xué', meaning: 'étudier', meaningEn: 'study', audio: 'audio/hsk1/hsk1_学.wav' },
       { hanzi: '习', pinyin: 'xí', meaning: 'pratiquer répét.', meaningEn: 'repeatedly practice', audio: 'audio/hsk1/hsk1_习.wav' },
-      { hanzi: '密度', pinyin: 'mì dù', meaning: 'densité', meaningEn: 'density', audio: 'audio/hsk6/hsk6_密度.wav' }
+      { hanzi: '密度', pinyin: 'mìdù', meaning: 'densité', meaningEn: 'density', audio: 'audio/hsk6/hsk6_密度.wav' }
     ],
     tip:
       'Quand tu lis du 文言, isole CHAQUE caractère mentalement et donne-lui son sens. Puis assemble. C\'est lent mais c\'est la SEULE méthode. Sauter rend incompréhensible. Le 文言 récompense la lenteur — comme la calligraphie ou le thé.',
@@ -988,9 +988,9 @@ export const c21WenyanIntroM2LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '之', pinyin: 'zhī', meaning: 'particule classique', meaningEn: 'classical particle', audio: 'audio/hsk5/hsk5_之.wav' },
       { hanzi: '书', pinyin: 'shū', meaning: 'livre', meaningEn: 'book', audio: 'audio/hsk1/hsk1_书.wav' },
-      { hanzi: '武城', pinyin: 'wǔ chéng', meaning: 'Wucheng (cité)', meaningEn: 'Wucheng', audio: 'audio/hsk6/hsk6_武城.wav' },
-      { hanzi: '代词', pinyin: 'dài cí', meaning: 'pronom', meaningEn: 'pronoun', audio: 'audio/hsk6/hsk6_代词.wav' },
-      { hanzi: '语境', pinyin: 'yǔ jìng', meaning: 'contexte (linguistique)', meaningEn: 'context', audio: 'audio/hsk6/hsk6_语境.wav' }
+      { hanzi: '武城', pinyin: 'wǔchéng', meaning: 'Wucheng (cité)', meaningEn: 'Wucheng', audio: 'audio/hsk6/hsk6_武城.wav' },
+      { hanzi: '代词', pinyin: 'dàicí', meaning: 'pronom', meaningEn: 'pronoun', audio: 'audio/hsk6/hsk6_代词.wav' },
+      { hanzi: '语境', pinyin: 'yǔjìng', meaning: 'contexte (linguistique)', meaningEn: 'context', audio: 'audio/hsk6/hsk6_语境.wav' }
     ],
     tip:
       'Le test mémo de 之 : « après 之 quoi ? » Nom → de. Verbe accompli → cela. Nom de lieu → aller à. Cette question simple résout 95% des cas. Mémorise-la et applique-la mécaniquement les 50 premières fois.',
@@ -1023,8 +1023,8 @@ export const c21WenyanIntroM2LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '者', pinyin: 'zhě', meaning: 'celui qui (suffixe)', meaningEn: 'the one who', audio: 'audio/hsk5/hsk5_者.wav' },
       { hanzi: '所', pinyin: 'suǒ', meaning: 'ce qui est (passif)', meaningEn: 'that which is', audio: 'audio/hsk5/hsk5_所.wav' },
-      { hanzi: '学者', pinyin: 'xué zhě', meaning: 'érudit', meaningEn: 'scholar', audio: 'audio/hsk5/hsk5_学者.wav' },
-      { hanzi: '记者', pinyin: 'jì zhě', meaning: 'journaliste', meaningEn: 'journalist', audio: 'audio/hsk4/hsk4_记者.wav' },
+      { hanzi: '学者', pinyin: 'xuézhě', meaning: 'érudit', meaningEn: 'scholar', audio: 'audio/hsk5/hsk5_学者.wav' },
+      { hanzi: '记者', pinyin: 'jìzhě', meaning: 'journaliste', meaningEn: 'journalist', audio: 'audio/hsk4/hsk4_记者.wav' },
       { hanzi: '所闻', pinyin: 'suǒ wén', meaning: 'ce qu\'on entend', meaningEn: 'what one hears', audio: 'audio/hsk6/hsk6_所闻.wav' }
     ],
     tip:
@@ -1058,7 +1058,7 @@ export const c21WenyanIntroM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '也', pinyin: 'yě', meaning: 'particule définitionnelle', meaningEn: 'definitional particle', audio: 'audio/hsk1/hsk1_也.wav' },
       { hanzi: '矣', pinyin: 'yǐ', meaning: 'aspect accompli (classique)', meaningEn: 'accomplished aspect', audio: 'audio/hsk6/hsk6_矣.wav' },
       { hanzi: '本', pinyin: 'běn', meaning: 'fondement, racine', meaningEn: 'foundation, root', audio: 'audio/hsk2/hsk2_本.wav' },
-      { hanzi: '大丈夫', pinyin: 'dà zhàng fu', meaning: 'véritable homme', meaningEn: 'true man', audio: 'audio/hsk6/hsk6_大丈夫.wav' },
+      { hanzi: '大丈夫', pinyin: 'dàzhàngfū', meaning: 'véritable homme', meaningEn: 'true man', audio: 'audio/hsk6/hsk6_大丈夫.wav' },
       { hanzi: '谓', pinyin: 'wèi', meaning: 'appeler, nommer (formel)', meaningEn: 'call, name (formal)', audio: 'audio/hsk6/hsk6_谓.wav' }
     ],
     tip:
@@ -1090,7 +1090,7 @@ export const c21WenyanIntroM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '哉', pinyin: 'zāi', meaning: 'particule exclamative', meaningEn: 'exclamative particle', audio: 'audio/hsk6/hsk6_哉.wav' },
       { hanzi: '不亦', pinyin: 'bú yì', meaning: 'n\'est-ce pas', meaningEn: 'is it not', audio: 'audio/hsk6/hsk6_不亦.wav' },
       { hanzi: '说', pinyin: 'yuè', meaning: '= 悦 joie (classique)', meaningEn: '= 悦 joy (classical)', audio: 'audio/hsk6/hsk6_悦.wav' },
-      { hanzi: '善哉', pinyin: 'shàn zāi', meaning: 'comme c\'est bien !', meaningEn: 'how good!', audio: 'audio/hsk6/hsk6_善哉.wav' }
+      { hanzi: '善哉', pinyin: 'shànzāi', meaning: 'comme c\'est bien !', meaningEn: 'how good!', audio: 'audio/hsk6/hsk6_善哉.wav' }
     ],
     tip:
       '« 不亦 X 乎 » est UNE formule à mémoriser. Elle apparait 3 fois dans la 1re phrase des Analectes. À utiliser en discussion intellectuelle pour poser une question rhétorique soutenue : « 这不亦是一种智慧乎 ? » (n\'est-ce pas une forme de sagesse ?).',
@@ -1122,10 +1122,10 @@ export const c21WenyanIntroM4LearnSections: LessonV2LearnSection[] = [
       '子曰：「学而时习之，不亦说乎? 有朋自远方来，不亦乐乎? 人不知而不愠，不亦君子乎?」 Let\'s parse: 子 (the Master = Confucius) 曰 (says) — ritual citation formula. 学 (study) 而 (and) 时 (in due time) 习 (practice) 之 (it), 不亦 (is it not) 说 (= 悦 joy) 乎 (?) — learn + review = joy. 有 (have) 朋 (friend) 自 (from) 远方 (faraway region) 来 (come), 不亦乐乎 = a friend comes from afar, is this not happiness. 人 (others) 不知 (not know/recognize) 而 (yet) 不愠 (not be affected), 不亦君子乎 = not to be recognized without resenting it, is this not the noble man\'s mark. EVERY Chinese schoolchild knows it. Citing it signals YOUR cultured level.',
     items: [
       { hanzi: '子曰', pinyin: 'zǐ yuē', meaning: 'le Maître dit', meaningEn: 'the Master said', audio: 'audio/hsk6/hsk6_子曰.wav' },
-      { hanzi: '远方', pinyin: 'yuǎn fāng', meaning: 'lointain', meaningEn: 'faraway place', audio: 'audio/hsk5/hsk5_远方.wav' },
+      { hanzi: '远方', pinyin: 'yuǎnfāng', meaning: 'lointain', meaningEn: 'faraway place', audio: 'audio/hsk5/hsk5_远方.wav' },
       { hanzi: '愠', pinyin: 'yùn', meaning: 'se froisser intérieurement', meaningEn: 'inwardly resent', audio: 'audio/hsk6/hsk6_愠.wav' },
-      { hanzi: '君子', pinyin: 'jūn zǐ', meaning: 'noble homme', meaningEn: 'gentleman', audio: 'audio/hsk6/hsk6_君子.wav' },
-      { hanzi: '论语', pinyin: 'lún yǔ', meaning: 'Analectes', meaningEn: 'Analects', audio: 'audio/hsk6/hsk6_论语.wav' }
+      { hanzi: '君子', pinyin: 'jūnzǐ', meaning: 'noble homme', meaningEn: 'gentleman', audio: 'audio/hsk6/hsk6_君子.wav' },
+      { hanzi: '论语', pinyin: 'lúnyǔ', meaning: 'Analectes', meaningEn: 'Analects', audio: 'audio/hsk6/hsk6_论语.wav' }
     ],
     tip:
       'Mémorise la 1re ligne : 子曰：学而时习之，不亦说乎 ? 12 caractères. Si tu peux les RÉCITER en chinois en discussion, tu signales un niveau lettré C2 immédiatement. Investissement : 5 min de mémorisation. Bénéfice : durable et impressionnant.',
@@ -1184,11 +1184,11 @@ export const c21PhiloClassiqueM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '孔子 (Confucius, 551-479 BCE) born in the kingdom of Lu (modern Shandong). Orphaned of father early, raised poor by his mother. Becomes minor official, then teaches. Accepts students regardless of social origin (revolutionary at the time) — hence his title as «first universal teacher» in Chinese history. Travels 13 years across kingdoms to offer his political ideas to rulers — ALL reject them. Returns home, teaches until death. He dies thinking he failed. 200 years later, his thought becomes state pillar under the Han dynasty. Today: his tomb at Qufu (Shandong) is a UNESCO site, the 孔府 (Kong Palace) where his descendants lived for 2000 years is still visitable.',
     items: [
-      { hanzi: '孔子', pinyin: 'kǒng zǐ', meaning: 'Confucius', meaningEn: 'Confucius', audio: 'audio/hsk5/hsk5_孔子.wav' },
-      { hanzi: '鲁国', pinyin: 'lǔ guó', meaning: 'royaume de Lu', meaningEn: 'kingdom of Lu', audio: 'audio/hsk6/hsk6_鲁国.wav' },
-      { hanzi: '曲阜', pinyin: 'qū fù', meaning: 'Qufu (ville natale)', meaningEn: 'Qufu (hometown)', audio: 'audio/hsk6/hsk6_曲阜.wav' },
-      { hanzi: '弟子', pinyin: 'dì zǐ', meaning: 'disciple', meaningEn: 'disciple', audio: 'audio/hsk6/hsk6_弟子.wav' },
-      { hanzi: '思想', pinyin: 'sī xiǎng', meaning: 'pensée', meaningEn: 'thought', audio: 'audio/hsk5/hsk5_思想.wav' }
+      { hanzi: '孔子', pinyin: 'kǒngzi', meaning: 'Confucius', meaningEn: 'Confucius', audio: 'audio/hsk5/hsk5_孔子.wav' },
+      { hanzi: '鲁国', pinyin: 'lǔguó', meaning: 'royaume de Lu', meaningEn: 'kingdom of Lu', audio: 'audio/hsk6/hsk6_鲁国.wav' },
+      { hanzi: '曲阜', pinyin: 'qūfù', meaning: 'Qufu (ville natale)', meaningEn: 'Qufu (hometown)', audio: 'audio/hsk6/hsk6_曲阜.wav' },
+      { hanzi: '弟子', pinyin: 'dìzǐ', meaning: 'disciple', meaningEn: 'disciple', audio: 'audio/hsk6/hsk6_弟子.wav' },
+      { hanzi: '思想', pinyin: 'sīxiǎng', meaning: 'pensée', meaningEn: 'thought', audio: 'audio/hsk5/hsk5_思想.wav' }
     ],
     tip:
       'Si tu visites le Shandong, va à Qufu : tombe + 孔庙 (temple) + 孔府 (palais). Site UNESCO, foule modérée hors Nouvel An. Pour un Européen amateur de Confucius, c\'est UN pèlerinage qui change le rapport au texte.',
@@ -1222,10 +1222,10 @@ export const c21PhiloClassiqueM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '五常 (5 constant virtues): 仁 (benevolent humanity — central concept), 义 (righteousness/moral duty), 礼 (rites/social propriety), 智 (practical wisdom), 信 (trustworthiness). Memorize these 5 as a CHAIN — each virtue feeds another. 五伦 (5 fundamental social relations): 君臣 (ruler-subject), 父子 (father-son, became the model of 孝 filial piety), 夫妇 (husband-wife), 兄弟 (brothers, friendship model), 朋友 (friends). Each relation has RECIPROCAL DUTIES. 孝 (filial piety) survives in modern China: caring for elderly parents is a LEGAL DUTY in China (2013 law requiring regular visits to elderly parents). Confucius remains operational.',
     items: [
-      { hanzi: '五常', pinyin: 'wǔ cháng', meaning: '5 vertus cardinales', meaningEn: '5 cardinal virtues', audio: 'audio/hsk6/hsk6_五常.wav' },
-      { hanzi: '五伦', pinyin: 'wǔ lún', meaning: '5 relations sociales', meaningEn: '5 social relations', audio: 'audio/hsk6/hsk6_五伦.wav' },
+      { hanzi: '五常', pinyin: 'wǔcháng', meaning: '5 vertus cardinales', meaningEn: '5 cardinal virtues', audio: 'audio/hsk6/hsk6_五常.wav' },
+      { hanzi: '五伦', pinyin: 'wǔlún', meaning: '5 relations sociales', meaningEn: '5 social relations', audio: 'audio/hsk6/hsk6_五伦.wav' },
       { hanzi: '孝', pinyin: 'xiào', meaning: 'piété filiale', meaningEn: 'filial piety', audio: 'audio/hsk5/hsk5_孝.wav' },
-      { hanzi: '夫妇', pinyin: 'fū fù', meaning: 'mari et femme', meaningEn: 'husband and wife', audio: 'audio/hsk6/hsk6_夫妇.wav' },
+      { hanzi: '夫妇', pinyin: 'fūfù', meaning: 'mari et femme', meaningEn: 'husband and wife', audio: 'audio/hsk6/hsk6_夫妇.wav' },
       { hanzi: '臣', pinyin: 'chén', meaning: 'sujet, ministre', meaningEn: 'subject, minister', audio: 'audio/hsk6/hsk6_臣.wav' }
     ],
     tip:
@@ -1253,8 +1253,8 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '《道德经》(Dào Dé Jīng) attributed to 老子 (Lao Zi, 6th c. BCE) — semi-legendary figure, Zhou archivist. The text opens with: 道可道，非常道。名可名，非常名 = «the Way that can be said/defined is not the eternal Way. The name that can be named is not the eternal name». First paradox: SAYING THE DAO diminishes it. The Dao is UNSAYABLE, what words can reach is only an approximation. This opening is one of the most-cited phrases in all Chinese literature. To memorize: 道可道 (3x 道, the 1st = noun, 2nd = verb «say») 非常道 (is not the eternal Dao). Very pretty rhythm. If you cite this to a cultured Chinese, they\'ll grasp your level immediately.',
     items: [
-      { hanzi: '道德经', pinyin: 'dào dé jīng', meaning: 'Tao Te King', meaningEn: 'Dao De Jing', audio: 'audio/hsk6/hsk6_道德经.wav' },
-      { hanzi: '老子', pinyin: 'lǎo zǐ', meaning: 'Lao Zi', meaningEn: 'Lao Zi', audio: 'audio/hsk6/hsk6_老子.wav' },
+      { hanzi: '道德经', pinyin: 'dàodéjīng', meaning: 'Tao Te King', meaningEn: 'Dao De Jing', audio: 'audio/hsk6/hsk6_道德经.wav' },
+      { hanzi: '老子', pinyin: 'lǎozi', meaning: 'Lao Zi', meaningEn: 'Lao Zi', audio: 'audio/hsk6/hsk6_老子.wav' },
       { hanzi: '可', pinyin: 'kě', meaning: 'pouvoir, qui peut', meaningEn: 'can be', audio: 'audio/hsk2/hsk2_可.wav' },
       { hanzi: '非', pinyin: 'fēi', meaning: 'n\'est pas (formel)', meaningEn: 'is not (formal)', audio: 'audio/hsk5/hsk5_非.wav' },
       { hanzi: '名', pinyin: 'míng', meaning: 'nom, nommer', meaningEn: 'name, to name', audio: 'audio/hsk2/hsk2_名.wav' }
@@ -1284,11 +1284,11 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '庄子 (Zhuang Zi, ~369-286 BCE) develops Daoism through poetic PARABLES (vs Lao Zi\'s aphorisms). The most famous: 庄周梦蝶 («Zhuang Zhou dreams [he is] a butterfly»). «One day, Zhuang Zhou dreamed he was a butterfly, fluttering freely. He didn\'t know he was Zhuang Zhou. Suddenly he woke, and was Zhuang Zhou again. But he no longer knew: had Zhuang Zhou dreamed of being a butterfly, or was a butterfly now dreaming of being Zhuang Zhou?». Question: what distinguishes dream from waking, human from nature, subject from object? 物化 (transformation of things) abolishes borders. This parable inspires writers (Borges in «The Circular Ruins»), films, and remains one of the most-known phrases in China.',
     items: [
-      { hanzi: '庄子', pinyin: 'zhuāng zǐ', meaning: 'Zhuang Zi', meaningEn: 'Zhuang Zi', audio: 'audio/hsk6/hsk6_庄子.wav' },
-      { hanzi: '庄周梦蝶', pinyin: 'zhuāng zhōu mèng dié', meaning: 'rêve du papillon', meaningEn: 'butterfly dream', audio: 'audio/hsk6/hsk6_庄周.wav' },
-      { hanzi: '蝴蝶', pinyin: 'hú dié', meaning: 'papillon', meaningEn: 'butterfly', audio: 'audio/hsk5/hsk5_蝴蝶.wav' },
+      { hanzi: '庄子', pinyin: 'zhuāngzi', meaning: 'Zhuang Zi', meaningEn: 'Zhuang Zi', audio: 'audio/hsk6/hsk6_庄子.wav' },
+      { hanzi: '庄周梦蝶', pinyin: 'zhuāngzhōumèngdié', meaning: 'rêve du papillon', meaningEn: 'butterfly dream', audio: 'audio/hsk6/hsk6_庄周.wav' },
+      { hanzi: '蝴蝶', pinyin: 'húdié', meaning: 'papillon', meaningEn: 'butterfly', audio: 'audio/hsk5/hsk5_蝴蝶.wav' },
       { hanzi: '梦', pinyin: 'mèng', meaning: 'rêve', meaningEn: 'dream', audio: 'audio/hsk4/hsk4_梦.wav' },
-      { hanzi: '物化', pinyin: 'wù huà', meaning: 'transformation des choses', meaningEn: 'transformation of things', audio: 'audio/hsk6/hsk6_物化.wav' }
+      { hanzi: '物化', pinyin: 'wùhuà', meaning: 'transformation des choses', meaningEn: 'transformation of things', audio: 'audio/hsk6/hsk6_物化.wav' }
     ],
     tip:
       '« 庄周梦蝶 » est UNE référence philosophique passe-partout. Pour évoquer la fluidité de l\'identité, le rapport rêve/réalité, ou simplement signaler ton niveau lettré : « 这让我想起庄周梦蝶 » (cela me fait penser à Zhuang Zhou et au papillon). Effet immédiat sur l\'auditoire chinois cultivé.',
@@ -1320,9 +1320,9 @@ export const c21PhiloClassiqueM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '法家 (Legalist School) rests on ONE postulate: humans are NATURALLY BAD, self-interested, calculating. So governing by VIRTUE (Confucian option) is utopian. We need LAW 法, clear and applied to ALL without exception, backed by REWARD and PUNISHMENT. Theorists: 商鞅 (Shang Yang, 4th c. BCE) applied Legalism to the Qin kingdom, which became all-powerful and unified China in 221 BCE. 韩非 (Han Fei, 3rd c. BCE) synthesized the doctrine in 《韩非子》. Legalist triad: 法 (law), 术 (techniques of power/bureaucratic control), 势 (position of power, throne\'s authority). For Han Fei, a ruler must MANIPULATE the 3 levers in parallel. Modernity: Chinese governance remains largely Legalist under a Confucian facade.',
     items: [
-      { hanzi: '法家', pinyin: 'fǎ jiā', meaning: 'École des légistes', meaningEn: 'Legalist School', audio: 'audio/hsk6/hsk6_法家.wav' },
-      { hanzi: '商鞅', pinyin: 'shāng yāng', meaning: 'Shang Yang', meaningEn: 'Shang Yang', audio: 'audio/hsk6/hsk6_商鞅.wav' },
-      { hanzi: '韩非', pinyin: 'hán fēi', meaning: 'Han Fei', meaningEn: 'Han Fei', audio: 'audio/hsk6/hsk6_韩非.wav' },
+      { hanzi: '法家', pinyin: 'fǎjiā', meaning: 'École des légistes', meaningEn: 'Legalist School', audio: 'audio/hsk6/hsk6_法家.wav' },
+      { hanzi: '商鞅', pinyin: 'shāngyāng', meaning: 'Shang Yang', meaningEn: 'Shang Yang', audio: 'audio/hsk6/hsk6_商鞅.wav' },
+      { hanzi: '韩非', pinyin: 'hánfēi', meaning: 'Han Fei', meaningEn: 'Han Fei', audio: 'audio/hsk6/hsk6_韩非.wav' },
       { hanzi: '术', pinyin: 'shù', meaning: 'techniques (politiques)', meaningEn: 'techniques', audio: 'audio/hsk6/hsk6_术.wav' },
       { hanzi: '势', pinyin: 'shì', meaning: 'position de pouvoir', meaningEn: 'positional power', audio: 'audio/hsk6/hsk6_势.wav' }
     ],
@@ -1354,11 +1354,11 @@ export const c21PhiloClassiqueM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '儒表法里 («Confucian on the surface, Legalist inside») = formula CREATED BY HISTORIANS to characterize Chinese governance for 2000 years. Han emperors officially rehabilitate Confucius (the State presents as benevolent), but in practice apply Legalist methods (strict laws, centralized bureaucracy, control, punishments). This duality explains why some Western observers think China «Confucian and harmonious» while power levers remain Legalist. Modernity: Xi Jinping\'s China continues this tradition — Confucian moral discourse (中国梦, 共同富裕) + Legalist control apparatus (Big Data, social score, legal firmness). Mastering 儒表法里 = geopolitical understanding key.',
     items: [
-      { hanzi: '儒表法里', pinyin: 'rú biǎo fǎ lǐ', meaning: 'confucéen façade, légiste fond', meaningEn: 'Confucian outside, Legalist inside', audio: 'audio/hsk6/hsk6_儒表.wav' },
-      { hanzi: '表面', pinyin: 'biǎo miàn', meaning: 'surface, façade', meaningEn: 'surface', audio: 'audio/hsk5/hsk5_表面.wav' },
-      { hanzi: '里面', pinyin: 'lǐ miàn', meaning: 'intérieur', meaningEn: 'inside', audio: 'audio/hsk2/hsk2_里面.wav' },
-      { hanzi: '治理', pinyin: 'zhì lǐ', meaning: 'gouvernance', meaningEn: 'governance', audio: 'audio/hsk6/hsk6_治理.wav' },
-      { hanzi: '传统', pinyin: 'chuán tǒng', meaning: 'tradition', meaningEn: 'tradition', audio: 'audio/hsk5/hsk5_传统.wav' }
+      { hanzi: '儒表法里', pinyin: 'rúbiǎofǎ lǐ', meaning: 'confucéen façade, légiste fond', meaningEn: 'Confucian outside, Legalist inside', audio: 'audio/hsk6/hsk6_儒表.wav' },
+      { hanzi: '表面', pinyin: 'biǎomiàn', meaning: 'surface, façade', meaningEn: 'surface', audio: 'audio/hsk5/hsk5_表面.wav' },
+      { hanzi: '里面', pinyin: 'lǐmiàn', meaning: 'intérieur', meaningEn: 'inside', audio: 'audio/hsk2/hsk2_里面.wav' },
+      { hanzi: '治理', pinyin: 'zhìlǐ', meaning: 'gouvernance', meaningEn: 'governance', audio: 'audio/hsk6/hsk6_治理.wav' },
+      { hanzi: '传统', pinyin: 'chuántǒng', meaning: 'tradition', meaningEn: 'tradition', audio: 'audio/hsk5/hsk5_传统.wav' }
     ],
     tip:
       'En analyse politique avec un Chinois cultivé : « 中国治理一直是儒表法里 » (la gouvernance chinoise est toujours 儒表法里). Phrase qui SIGNE ta connaissance de la longue durée historique. Bien plus profonde que de simples observations sur l\'actualité. Effet immédiat sur la qualité du débat.',
@@ -1389,11 +1389,11 @@ export const c21PhiloClassiqueM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '佛教 (Buddhism) enters China in the 1st century CE via the Silk Road (Indo-Chinese caravans). First temple: 白马寺 (White Horse Temple) in Luoyang, founded 68 CE under Emperor Ming of Han. Under the Tang (618-907), explosion: massive sutra translation, creation of 禅宗 (Chan, meditative school that becomes Zen in Japan), construction of major monasteries (莫高窟 Mogao, 龙门 Longmen). Sinicization: Indian Buddhism, abstract, fuses with Chinese 道 (Tao) to become more PRACTICAL and IMAGISTIC. 观音 (Guanyin, bodhisattva of compassion) feminizes in China (while Avalokiteśvara is masculine in India). Today: ~250M Buddhists in China — largest Buddhist population in the world.',
     items: [
-      { hanzi: '佛教', pinyin: 'fó jiào', meaning: 'bouddhisme', meaningEn: 'Buddhism', audio: 'audio/hsk6/hsk6_佛教.wav' },
-      { hanzi: '白马寺', pinyin: 'bái mǎ sì', meaning: 'Temple du Cheval Blanc', meaningEn: 'White Horse Temple', audio: 'audio/hsk6/hsk6_白马.wav' },
-      { hanzi: '禅宗', pinyin: 'chán zōng', meaning: 'école Chan', meaningEn: 'Chan school', audio: 'audio/hsk6/hsk6_禅宗.wav' },
-      { hanzi: '观音', pinyin: 'guān yīn', meaning: 'Guanyin (bodhisattva)', meaningEn: 'Guanyin', audio: 'audio/hsk6/hsk6_观音.wav' },
-      { hanzi: '寺庙', pinyin: 'sì miào', meaning: 'temple bouddhiste', meaningEn: 'Buddhist temple', audio: 'audio/hsk5/hsk5_寺庙.wav' }
+      { hanzi: '佛教', pinyin: 'fójiào', meaning: 'bouddhisme', meaningEn: 'Buddhism', audio: 'audio/hsk6/hsk6_佛教.wav' },
+      { hanzi: '白马寺', pinyin: 'báimǎsì', meaning: 'Temple du Cheval Blanc', meaningEn: 'White Horse Temple', audio: 'audio/hsk6/hsk6_白马.wav' },
+      { hanzi: '禅宗', pinyin: 'chánzōng', meaning: 'école Chan', meaningEn: 'Chan school', audio: 'audio/hsk6/hsk6_禅宗.wav' },
+      { hanzi: '观音', pinyin: 'guānyīn', meaning: 'Guanyin (bodhisattva)', meaningEn: 'Guanyin', audio: 'audio/hsk6/hsk6_观音.wav' },
+      { hanzi: '寺庙', pinyin: 'sìmiào', meaning: 'temple bouddhiste', meaningEn: 'Buddhist temple', audio: 'audio/hsk5/hsk5_寺庙.wav' }
     ],
     tip:
       'Si tu visites Luoyang (Henan), va au 白马寺 et aux 龙门 (grottes). Ensemble UNESCO. Le 白马寺 est le PREMIER temple bouddhiste de Chine — racine d\'une tradition de 2000 ans. Pour un curieux de spiritualité chinoise, c\'est le pèlerinage initial.',
@@ -1420,10 +1420,10 @@ export const c21PhiloClassiqueM4LearnSections: LessonV2LearnSection[] = [
       '禅 (chán) from Sanskrit dhyāna («meditation»), via 禅宗 (Chan school) which becomes Japanese 禅 (Zen) after passing through Korea. Chan\'s originality: rejecting heavy SUTRAS, focus on DIRECT AWAKENING through meditation 坐禅 (sitting meditation, Jap. zazen) and 公案 (gong\'àn, koan, paradoxical riddles). Master Bodhidharma 达摩 reportedly meditated 9 years facing a wall at Shaolin — model of devotion. Famous Chan phrase: 不立文字，直指人心 = «not relying on any word, aiming directly at the human heart». Awakening is INSTANT and OUTSIDE language. Today: 禅 practice revives in urban China (retreats, meditation apps), often in lay form close to Western mindfulness.',
     items: [
       { hanzi: '禅', pinyin: 'chán', meaning: 'méditation Chan', meaningEn: 'Chan meditation', audio: 'audio/hsk6/hsk6_禅.wav' },
-      { hanzi: '坐禅', pinyin: 'zuò chán', meaning: 'méditer assis', meaningEn: 'sitting meditation', audio: 'audio/hsk6/hsk6_坐禅.wav' },
-      { hanzi: '公案', pinyin: 'gōng àn', meaning: 'koan', meaningEn: 'koan', audio: 'audio/hsk6/hsk6_公案.wav' },
-      { hanzi: '达摩', pinyin: 'dá mó', meaning: 'Bodhidharma', meaningEn: 'Bodhidharma', audio: 'audio/hsk6/hsk6_达摩.wav' },
-      { hanzi: '少林', pinyin: 'shào lín', meaning: 'Shaolin', meaningEn: 'Shaolin', audio: 'audio/hsk6/hsk6_少林.wav' }
+      { hanzi: '坐禅', pinyin: 'zuòchán', meaning: 'méditer assis', meaningEn: 'sitting meditation', audio: 'audio/hsk6/hsk6_坐禅.wav' },
+      { hanzi: '公案', pinyin: 'gōngàn', meaning: 'koan', meaningEn: 'koan', audio: 'audio/hsk6/hsk6_公案.wav' },
+      { hanzi: '达摩', pinyin: 'dámó', meaning: 'Bodhidharma', meaningEn: 'Bodhidharma', audio: 'audio/hsk6/hsk6_达摩.wav' },
+      { hanzi: '少林', pinyin: 'shàolín', meaning: 'Shaolin', meaningEn: 'Shaolin', audio: 'audio/hsk6/hsk6_少林.wav' }
     ],
     tip:
       'Si tu pratiques mindfulness ou méditation en Occident, c\'est une descendance directe du 禅 chinois. Mentionner cette filiation à un Chinois pratiquant : « 我的冥想习惯其实源于中国禅宗 » (ma pratique vient en fait du Chan chinois). Crée un PONT culturel immédiat.',
@@ -1453,11 +1453,11 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '绝句 (juéjù, «cut quatrain») = 4 lines, each 5 characters (五绝) or 7 characters (七绝). Shortest and most popular form of classical poetry. Constraints: (1) RHYME between lines 2 and 4 (sometimes also line 1), (2) ALTERNATION of level tones (平 píng, tone 1 or 2 in modern Mandarin) and oblique (仄 zè, tones 3 and 4), (3) Possible PARALLELISM between lines (ex: «high sky» ↔ «deep water»). Iconic example: Li Bai\'s 《静夜思》 (5 char × 4 lines = only 20 chars). The 绝句 condenses in 20-28 characters what a French poem would take 4 stanzas to express. Radical economy = style lesson.',
     items: [
-      { hanzi: '绝句', pinyin: 'jué jù', meaning: 'quatrain', meaningEn: 'quatrain', audio: 'audio/hsk6/hsk6_绝句.wav' },
-      { hanzi: '五绝', pinyin: 'wǔ jué', meaning: 'quatrain à 5 char.', meaningEn: '5-char quatrain', audio: 'audio/hsk6/hsk6_五绝.wav' },
-      { hanzi: '七绝', pinyin: 'qī jué', meaning: 'quatrain à 7 char.', meaningEn: '7-char quatrain', audio: 'audio/hsk6/hsk6_七绝.wav' },
+      { hanzi: '绝句', pinyin: 'juéjù', meaning: 'quatrain', meaningEn: 'quatrain', audio: 'audio/hsk6/hsk6_绝句.wav' },
+      { hanzi: '五绝', pinyin: 'wǔjué', meaning: 'quatrain à 5 char.', meaningEn: '5-char quatrain', audio: 'audio/hsk6/hsk6_五绝.wav' },
+      { hanzi: '七绝', pinyin: 'qījué', meaning: 'quatrain à 7 char.', meaningEn: '7-char quatrain', audio: 'audio/hsk6/hsk6_七绝.wav' },
       { hanzi: '韵', pinyin: 'yùn', meaning: 'rime', meaningEn: 'rhyme', audio: 'audio/hsk6/hsk6_韵.wav' },
-      { hanzi: '平仄', pinyin: 'píng zè', meaning: 'tons plats / obliques', meaningEn: 'level/oblique tones', audio: 'audio/hsk6/hsk6_平仄.wav' }
+      { hanzi: '平仄', pinyin: 'píngzè', meaning: 'tons plats / obliques', meaningEn: 'level/oblique tones', audio: 'audio/hsk6/hsk6_平仄.wav' }
     ],
     tip:
       'Pour APPRÉCIER un 绝句, lis-le À VOIX HAUTE en chinois — la musicalité tonale est la moitié du sens. Une traduction plate perd 50% du poème. Investis 10 min dans la prononciation correcte d\'un seul 绝句, c\'est plus formateur que 100 traductions lues.',
@@ -1484,11 +1484,11 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '律诗 (lǜshī, «regulated poem») = 8 lines, in 五律 or 七律. Much more demanding than the 绝句. Rules: (1) RHYME on lines 2, 4, 6, 8, (2) STRICT TONE ALTERNATION per a codified schema, (3) MANDATORY ANTITHESIS between lines 3-4 (central pair 1) and 5-6 (central pair 2). Antithesis imposes syntactic + semantic correspondences between lines: noun ↔ noun, verb ↔ verb, adjective ↔ adjective, and coherent semantic categories (color ↔ color, landscape ↔ landscape). Preferred form of Du Fu (杜甫), nicknamed «诗圣» (Sage of Poetry). 律诗 = summit of classical Chinese poetry in terms of TECHNICAL demand. VERY hard form to compose; even harder to translate.',
     items: [
-      { hanzi: '律诗', pinyin: 'lǜ shī', meaning: 'poème régulé', meaningEn: 'regulated poem', audio: 'audio/hsk6/hsk6_律诗.wav' },
-      { hanzi: '对仗', pinyin: 'duì zhàng', meaning: 'antithèse, parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },
-      { hanzi: '诗圣', pinyin: 'shī shèng', meaning: 'Sage de la poésie', meaningEn: 'Sage of Poetry', audio: 'audio/hsk6/hsk6_诗圣.wav' },
-      { hanzi: '严格', pinyin: 'yán gé', meaning: 'strict, rigoureux', meaningEn: 'strict', audio: 'audio/hsk5/hsk5_严格.wav' },
-      { hanzi: '规则', pinyin: 'guī zé', meaning: 'règle', meaningEn: 'rule', audio: 'audio/hsk5/hsk5_规则.wav' }
+      { hanzi: '律诗', pinyin: 'lǜshī', meaning: 'poème régulé', meaningEn: 'regulated poem', audio: 'audio/hsk6/hsk6_律诗.wav' },
+      { hanzi: '对仗', pinyin: 'duìzhàng', meaning: 'antithèse, parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },
+      { hanzi: '诗圣', pinyin: 'shīshèng', meaning: 'Sage de la poésie', meaningEn: 'Sage of Poetry', audio: 'audio/hsk6/hsk6_诗圣.wav' },
+      { hanzi: '严格', pinyin: 'yángé', meaning: 'strict, rigoureux', meaningEn: 'strict', audio: 'audio/hsk5/hsk5_严格.wav' },
+      { hanzi: '规则', pinyin: 'guīzé', meaning: 'règle', meaningEn: 'rule', audio: 'audio/hsk5/hsk5_规则.wav' }
     ],
     tip:
       'Si tu lis Du Fu (cf. leçon m3), prends UN 律诗 et passe 30 min à analyser : compte les 8 vers, repère les rimes en pinyin, identifie l\'antithèse 3-4 et 5-6. Cette analyse une fois faite déverrouille tous les autres 律诗. Investissement : 30 min. Bénéfice : compréhension de tout l\'art Du Fu.',
@@ -1522,11 +1522,11 @@ export const c21PoetryM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '李白 (Li Bai, 701-762) born in Sichuan or Central Asia (debated origin). Early talent: poems recommended to Tang emperor Xuanzong, who invites him to court. But Li Bai prefers wine and freedom: quarrels with ministers, is sent away. Life of a traveler. Tragic death per legend: drowned trying to embrace the moon\'s reflection in a river, drunk. Style: FREE, IMAGISTIC, COSMIC. Obsessive themes: the moon 月, wine 酒, majestic nature, travel, nostalgia 思乡. Nicknamed 诗仙 («Immortal of Poetry») in contrast to Du Fu, the «Sage». Works: ~1000 surviving poems. Most famous quatrain: 《静夜思》(only 20 characters, studied next lesson).',
     items: [
-      { hanzi: '李白', pinyin: 'lǐ bái', meaning: 'Li Bai', meaningEn: 'Li Bai', audio: 'audio/hsk5/hsk5_李白.wav' },
-      { hanzi: '诗仙', pinyin: 'shī xiān', meaning: 'Immortel de la poésie', meaningEn: 'Immortal of Poetry', audio: 'audio/hsk6/hsk6_诗仙.wav' },
+      { hanzi: '李白', pinyin: 'lǐbái', meaning: 'Li Bai', meaningEn: 'Li Bai', audio: 'audio/hsk5/hsk5_李白.wav' },
+      { hanzi: '诗仙', pinyin: 'shīxiān', meaning: 'Immortel de la poésie', meaningEn: 'Immortal of Poetry', audio: 'audio/hsk6/hsk6_诗仙.wav' },
       { hanzi: '月', pinyin: 'yuè', meaning: 'lune', meaningEn: 'moon', audio: 'audio/hsk1/hsk1_月.wav' },
       { hanzi: '酒', pinyin: 'jiǔ', meaning: 'alcool, vin', meaningEn: 'wine, alcohol', audio: 'audio/hsk3/hsk3_酒.wav' },
-      { hanzi: '思乡', pinyin: 'sī xiāng', meaning: 'nostalgie du pays', meaningEn: 'homesickness', audio: 'audio/hsk6/hsk6_思乡.wav' }
+      { hanzi: '思乡', pinyin: 'sīxiāng', meaning: 'nostalgie du pays', meaningEn: 'homesickness', audio: 'audio/hsk6/hsk6_思乡.wav' }
     ],
     tip:
       'Li Bai est UN poète à choisir comme « ton préféré » dans une discussion littéraire chinoise. Universellement aimé, accessible, romantique. Phrase utile : « 我最喜欢的中国诗人是李白 » (mon poète chinois préféré est Li Bai). Réponse 100% sécure qui ouvre une vraie discussion.',
@@ -1554,11 +1554,11 @@ export const c21PoetryM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '《静夜思》(«Thoughts on a Quiet Night») by Li Bai. 20 characters: 床前明月光，疑是地上霜。举头望明月，低头思故乡。 Let\'s parse: 床前 (before the bed) 明月光 (the bright moonlight), 疑 (I doubt) 是 (it is) 地上霜 (frost on the ground). 举头 (I lift my head) 望 (and look at) 明月 (the bright moon), 低头 (I lower my head) 思 (and think of) 故乡 (my home village). Poetic mechanism: the moon/frost confusion creates a chill, up/down movement creates emotional swing, the moon becomes the BRIDGE between the exile and home. EVERY Chinese (primary school) knows this poem BY HEART. If you can recite it, you can strike up a poetic discussion with any Chinese.',
     items: [
-      { hanzi: '静夜思', pinyin: 'jìng yè sī', meaning: 'Pensée nocturne', meaningEn: 'Quiet Night Thought', audio: 'audio/hsk6/hsk6_静夜思.wav' },
-      { hanzi: '床前', pinyin: 'chuáng qián', meaning: 'devant le lit', meaningEn: 'before the bed', audio: 'audio/hsk5/hsk5_床.wav' },
+      { hanzi: '静夜思', pinyin: 'jìngyè sī', meaning: 'Pensée nocturne', meaningEn: 'Quiet Night Thought', audio: 'audio/hsk6/hsk6_静夜思.wav' },
+      { hanzi: '床前', pinyin: 'chuángqián', meaning: 'devant le lit', meaningEn: 'before the bed', audio: 'audio/hsk5/hsk5_床.wav' },
       { hanzi: '霜', pinyin: 'shuāng', meaning: 'givre', meaningEn: 'frost', audio: 'audio/hsk6/hsk6_霜.wav' },
-      { hanzi: '低头', pinyin: 'dī tóu', meaning: 'baisser la tête', meaningEn: 'lower head', audio: 'audio/hsk5/hsk5_低头.wav' },
-      { hanzi: '故乡', pinyin: 'gù xiāng', meaning: 'pays natal', meaningEn: 'native village', audio: 'audio/hsk5/hsk5_故乡.wav' }
+      { hanzi: '低头', pinyin: 'dītóu', meaning: 'baisser la tête', meaningEn: 'lower head', audio: 'audio/hsk5/hsk5_低头.wav' },
+      { hanzi: '故乡', pinyin: 'gùxiāng', meaning: 'pays natal', meaningEn: 'native village', audio: 'audio/hsk5/hsk5_故乡.wav' }
     ],
     tip:
       'Apprends ces 20 caractères PAR CŒUR. C\'est l\'investissement n°1 de niveau C2.1. Si tu peux les RÉCITER en chinois en discussion, tu signales un niveau qui suspendra la conversation : « vous connaissez Jingye Si en chinois ? ». Effet émotionnel garanti.',
@@ -1592,11 +1592,11 @@ export const c21PoetryM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '杜甫 (Du Fu, 712-770) born in Henan. Friend and contemporary of Li Bai (they meet in 744), but radically different life: unhappy official, witness of the An Lushan rebellion (755-763) that ravages the Tang empire. His poetry becomes the MIRROR OF COLLECTIVE SUFFERING: war, exile, hunger, family separation, natural disasters. Nicknamed 诗圣 («Sage of Poetry») and 诗史 («History in Poems») as his works document the era. Style: RIGOROUS (master of 律诗), GRAVE, MORAL. Major works: 《春望》(spring viewed during war), 《茅屋为秋风所破歌》(his thatched hut destroyed by autumn wind — he thinks of the poor before himself). Dies in 770, sick, on a boat. Today: Du Fu\'s home in Chengdu (杜甫草堂) is a major museum.',
     items: [
-      { hanzi: '杜甫', pinyin: 'dù fǔ', meaning: 'Du Fu', meaningEn: 'Du Fu', audio: 'audio/hsk6/hsk6_杜甫.wav' },
-      { hanzi: '诗圣', pinyin: 'shī shèng', meaning: 'Sage de la poésie', meaningEn: 'Sage of Poetry', audio: 'audio/hsk6/hsk6_诗圣.wav' },
-      { hanzi: '安史之乱', pinyin: 'ān shǐ zhī luàn', meaning: 'révolte d\'An Lushan', meaningEn: 'An Lushan rebellion', audio: 'audio/hsk6/hsk6_安史.wav' },
-      { hanzi: '草堂', pinyin: 'cǎo táng', meaning: 'hutte de chaume', meaningEn: 'thatched cottage', audio: 'audio/hsk6/hsk6_草堂.wav' },
-      { hanzi: '苦难', pinyin: 'kǔ nàn', meaning: 'souffrance', meaningEn: 'suffering', audio: 'audio/hsk6/hsk6_苦难.wav' }
+      { hanzi: '杜甫', pinyin: 'dùfǔ', meaning: 'Du Fu', meaningEn: 'Du Fu', audio: 'audio/hsk6/hsk6_杜甫.wav' },
+      { hanzi: '诗圣', pinyin: 'shīshèng', meaning: 'Sage de la poésie', meaningEn: 'Sage of Poetry', audio: 'audio/hsk6/hsk6_诗圣.wav' },
+      { hanzi: '安史之乱', pinyin: 'ānshǐzhīluàn', meaning: 'révolte d\'An Lushan', meaningEn: 'An Lushan rebellion', audio: 'audio/hsk6/hsk6_安史.wav' },
+      { hanzi: '草堂', pinyin: 'cǎotáng', meaning: 'hutte de chaume', meaningEn: 'thatched cottage', audio: 'audio/hsk6/hsk6_草堂.wav' },
+      { hanzi: '苦难', pinyin: 'kǔnàn', meaning: 'souffrance', meaningEn: 'suffering', audio: 'audio/hsk6/hsk6_苦难.wav' }
     ],
     tip:
       'Si tu visites Chengdu (Sichuan), va au 杜甫草堂 — reconstitution du jardin où Du Fu vécut, paisible, instructif, gratuit. Pour qui aime la poésie, c\'est un lieu de RECUEILLEMENT. Plus discret que les sites de Li Bai et plus émouvant pour beaucoup de Chinois.',
@@ -1620,11 +1620,11 @@ export const c21PoetryM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Li Bai and Du Fu are the fundamental OPPOSITION in Chinese poetry. Li Bai = JOY, INTOXICATION, COSMOS, INDIVIDUAL FREEDOM. Du Fu = SUFFERING, RIGOR, MORALITY, COLLECTIVE ENGAGEMENT. Nicknamed 诗仙 (Immortal) vs 诗圣 (Sage). This opposition is the Chinese equivalent of Dionysus vs Apollo, Rimbaud vs Hugo, individual vs collective, Romanticism vs Classicism. Asking a cultured Chinese: «您更喜欢李白还是杜甫?» (do you prefer Li Bai or Du Fu?) opens a revealing discussion. Many confess: «young, I loved Li Bai; aging, I prefer Du Fu». The Li Bai → Du Fu evolution follows psychological maturity. MAGIC question to launch a deep literary debate.',
     items: [
-      { hanzi: '对比', pinyin: 'duì bǐ', meaning: 'contraste', meaningEn: 'contrast', audio: 'audio/hsk5/hsk5_对比.wav' },
-      { hanzi: '浪漫', pinyin: 'làng màn', meaning: 'romantique', meaningEn: 'romantic', audio: 'audio/hsk5/hsk5_浪漫.wav' },
-      { hanzi: '严肃', pinyin: 'yán sù', meaning: 'sérieux, grave', meaningEn: 'grave, serious', audio: 'audio/hsk5/hsk5_严肃.wav' },
-      { hanzi: '成熟', pinyin: 'chéng shú', meaning: 'mûr, mature', meaningEn: 'mature', audio: 'audio/hsk5/hsk5_成熟.wav' },
-      { hanzi: '偏爱', pinyin: 'piān ài', meaning: 'préférence', meaningEn: 'preference', audio: 'audio/hsk6/hsk6_偏爱.wav' }
+      { hanzi: '对比', pinyin: 'duìbǐ', meaning: 'contraste', meaningEn: 'contrast', audio: 'audio/hsk5/hsk5_对比.wav' },
+      { hanzi: '浪漫', pinyin: 'làngmàn', meaning: 'romantique', meaningEn: 'romantic', audio: 'audio/hsk5/hsk5_浪漫.wav' },
+      { hanzi: '严肃', pinyin: 'yánsù', meaning: 'sérieux, grave', meaningEn: 'grave, serious', audio: 'audio/hsk5/hsk5_严肃.wav' },
+      { hanzi: '成熟', pinyin: 'chéngshú', meaning: 'mûr, mature', meaningEn: 'mature', audio: 'audio/hsk5/hsk5_成熟.wav' },
+      { hanzi: '偏爱', pinyin: 'piānài', meaning: 'préférence', meaningEn: 'preference', audio: 'audio/hsk6/hsk6_偏爱.wav' }
     ],
     tip:
       'Pour conclure une discussion poétique, dis : « 我年轻时喜欢李白，现在更欣赏杜甫的深度 » (jeune j\'aimais Li Bai, maintenant j\'apprécie davantage la profondeur de Du Fu). Phrase qui SIGNALE ta maturité intellectuelle ET ta connaissance des 2 poètes. Effet immédiat sur la perception de ton interlocuteur.',
@@ -1655,11 +1655,11 @@ export const c21PoetryM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '李清照 (Li Qingzhao, 1084-1155) born under Northern Song in a literate family: father high official, cultured mother. Married at 18 to 赵明诚 (Zhao Mingcheng), erudite antique collector. HARMONIOUS intellectual couple who collaborate on 《金石录》(catalog of inscriptions). 1st-half-of-life poetry: marital JOY, refined life. DISASTER in 1127: Jurchen invasion, exile south, loss of collections, husband\'s death in 1129. 2nd-half poetry: GRIEF and SOLITUDE. Specialist of 词 (Song sung poetry). Most-cited work: 《声声慢》opening with 7 consecutive reduplications: 寻寻觅觅，冷冷清清，凄凄惨惨戚戚 — incomparable climate of desolation. Nicknamed 千古第一才女 («1st genius woman through the ages»). Proves classical Chinese literature made room for exceptional female voices.',
     items: [
-      { hanzi: '李清照', pinyin: 'lǐ qīng zhào', meaning: 'Li Qingzhao', meaningEn: 'Li Qingzhao', audio: 'audio/hsk6/hsk6_李清照.wav' },
+      { hanzi: '李清照', pinyin: 'lǐqīngzhào', meaning: 'Li Qingzhao', meaningEn: 'Li Qingzhao', audio: 'audio/hsk6/hsk6_李清照.wav' },
       { hanzi: '词', pinyin: 'cí', meaning: 'poème chanté Song', meaningEn: 'Song sung poem', audio: 'audio/hsk5/hsk5_词.wav' },
-      { hanzi: '才女', pinyin: 'cái nǚ', meaning: 'femme de génie', meaningEn: 'woman of genius', audio: 'audio/hsk6/hsk6_才女.wav' },
-      { hanzi: '千古', pinyin: 'qiān gǔ', meaning: 'millénaire, à travers les siècles', meaningEn: 'through the ages', audio: 'audio/hsk6/hsk6_千古.wav' },
-      { hanzi: '寻觅', pinyin: 'xún mì', meaning: 'chercher (poétique)', meaningEn: 'seek (poetic)', audio: 'audio/hsk6/hsk6_寻觅.wav' }
+      { hanzi: '才女', pinyin: 'cáinǚ', meaning: 'femme de génie', meaningEn: 'woman of genius', audio: 'audio/hsk6/hsk6_才女.wav' },
+      { hanzi: '千古', pinyin: 'qiāngǔ', meaning: 'millénaire, à travers les siècles', meaningEn: 'through the ages', audio: 'audio/hsk6/hsk6_千古.wav' },
+      { hanzi: '寻觅', pinyin: 'xúnmì', meaning: 'chercher (poétique)', meaningEn: 'seek (poetic)', audio: 'audio/hsk6/hsk6_寻觅.wav' }
     ],
     tip:
       'Mentionner 李清照 dans une discussion de poésie chinoise est UN signal de connaissance fine. La plupart des étrangers connaissent Li Bai et Du Fu mais s\'arrêtent là. Citer une POÉTESSE = montrer que tu vas au-delà du canon scolaire. Effet : « ce francophone connaît la littérature chinoise PROFONDÉMENT ».',
@@ -1688,9 +1688,9 @@ export const c21PoetryM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '《声声慢》(«Slowly, sound after sound») opens with 14 characters in 7 reduplication pairs: 寻寻 (seek seek) 觅觅 (search search) 冷冷 (cold cold) 清清 (desolate desolate) 凄凄 (melancholy melancholy) 惨惨 (despairing despairing) 戚戚 (heartbreaking heartbreaking). No other opening in world literature uses 7 consecutive reduplications. The effect: a physically FELT climate of DESOLATION. The most known English translation renders: «I seek, I seek, cold and desolate, sad sad and heart-rending». This poem is studied in ALL Chinese textbooks and remains one of the absolute summits of Song 词. Memorizing it is a challenge within reach of a motivated C2.1.',
     items: [
-      { hanzi: '声声慢', pinyin: 'shēng shēng màn', meaning: 'Slowly, sound after sound', meaningEn: 'Slowly, sound after sound', audio: 'audio/hsk6/hsk6_声声慢.wav' },
-      { hanzi: '寻觅', pinyin: 'xún mì', meaning: 'rechercher', meaningEn: 'search', audio: 'audio/hsk6/hsk6_寻觅.wav' },
-      { hanzi: '凄凉', pinyin: 'qī liáng', meaning: 'désolé, glaçant', meaningEn: 'desolate', audio: 'audio/hsk6/hsk6_凄凉.wav' },
+      { hanzi: '声声慢', pinyin: 'shēngshēngmàn', meaning: 'Slowly, sound after sound', meaningEn: 'Slowly, sound after sound', audio: 'audio/hsk6/hsk6_声声慢.wav' },
+      { hanzi: '寻觅', pinyin: 'xúnmì', meaning: 'rechercher', meaningEn: 'search', audio: 'audio/hsk6/hsk6_寻觅.wav' },
+      { hanzi: '凄凉', pinyin: 'qīliáng', meaning: 'désolé, glaçant', meaningEn: 'desolate', audio: 'audio/hsk6/hsk6_凄凉.wav' },
       { hanzi: '惨', pinyin: 'cǎn', meaning: 'désespéré, sombre', meaningEn: 'despairing', audio: 'audio/hsk6/hsk6_惨.wav' },
       { hanzi: '戚', pinyin: 'qī', meaning: 'navrant, accablant', meaningEn: 'heart-rending', audio: 'audio/hsk6/hsk6_戚.wav' }
     ],

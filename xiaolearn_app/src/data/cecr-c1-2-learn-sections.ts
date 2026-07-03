@@ -32,11 +32,11 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: 我想咨询一下关于 X 的法律问题. Vocab: 纠纷 (jiūfēn, dispute), 起诉 (qǐsù, sue), 仲裁 (zhòngcái, arbitration), 调解 (tiáojiě, mediation). Ask analysis: 您能否帮我分析一下风险？(could you analyze the risk?). Key phrase: 如果走法律程序，胜诉的可能性有多大？(if we litigate, what are the win chances?). In Chinese culture, 调解 (mediation) is PRIVILEGED over 诉讼 (lawsuit) — saying «我们先尝试调解吧» shows maturity. Lawsuits = wasted time + lost face.',
     items: [
-      { hanzi: '咨询', pinyin: 'zī xún', meaning: 'consulter', meaningEn: 'consult', audio: 'audio/hsk5/hsk5_咨询.wav' },
-      { hanzi: '纠纷', pinyin: 'jiū fēn', meaning: 'litige, différend', meaningEn: 'dispute', audio: 'audio/hsk6/hsk6_纠纷.wav' },
-      { hanzi: '起诉', pinyin: 'qǐ sù', meaning: 'poursuivre en justice', meaningEn: 'sue', audio: 'audio/hsk6/hsk6_起诉.wav' },
-      { hanzi: '调解', pinyin: 'tiáo jiě', meaning: 'médiation', meaningEn: 'mediation', audio: 'audio/hsk6/hsk6_调解.wav' },
-      { hanzi: '胜诉', pinyin: 'shèng sù', meaning: 'gagner un procès', meaningEn: 'win a case', audio: 'audio/hsk6/hsk6_胜诉.wav' }
+      { hanzi: '咨询', pinyin: 'zīxún', meaning: 'consulter', meaningEn: 'consult', audio: 'audio/hsk5/hsk5_咨询.wav' },
+      { hanzi: '纠纷', pinyin: 'jiūfēn', meaning: 'litige, différend', meaningEn: 'dispute', audio: 'audio/hsk6/hsk6_纠纷.wav' },
+      { hanzi: '起诉', pinyin: 'qǐsù', meaning: 'poursuivre en justice', meaningEn: 'sue', audio: 'audio/hsk6/hsk6_起诉.wav' },
+      { hanzi: '调解', pinyin: 'tiáojiě', meaning: 'médiation', meaningEn: 'mediation', audio: 'audio/hsk6/hsk6_调解.wav' },
+      { hanzi: '胜诉', pinyin: 'shèngsù', meaning: 'gagner un procès', meaningEn: 'win a case', audio: 'audio/hsk6/hsk6_胜诉.wav' }
     ],
     tip:
       'En cas de litige, dis « 我们先尝试调解吧 » avant d\'envisager 起诉. Cette préférence pour la médiation est CULTURELLEMENT attendue. Aller direct au procès te fait passer pour quelqu\'un d\'agressif et peu raisonnable.',
@@ -68,11 +68,11 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Contract 合同 structure: 甲方 (Party A), 乙方 (Party B), 标的 (subject matter), 价款 (price), 期限 (duration), 违约责任 (breach liability), 不可抗力 (force majeure), 争议解决 (dispute resolution). Clarify: 这条款的具体含义是什么？Ask change: 我希望在第 X 条加上 Y. Safeguard: 我建议增加一条不可抗力条款. Close: 这份合同我需要带回去研究 — NEVER sign on the spot.',
     items: [
-      { hanzi: '合同', pinyin: 'hé tong', meaning: 'contrat', meaningEn: 'contract', audio: 'audio/hsk4/hsk4_合同.wav' },
-      { hanzi: '甲方', pinyin: 'jiǎ fāng', meaning: 'partie A', meaningEn: 'party A', audio: 'audio/hsk6/hsk6_甲方.wav' },
-      { hanzi: '违约', pinyin: 'wéi yuē', meaning: 'rupture de contrat', meaningEn: 'breach', audio: 'audio/hsk6/hsk6_违约.wav' },
-      { hanzi: '不可抗力', pinyin: 'bù kě kàng lì', meaning: 'force majeure', meaningEn: 'force majeure', audio: 'audio/hsk6/hsk6_不可抗力.wav' },
-      { hanzi: '争议', pinyin: 'zhēng yì', meaning: 'différend', meaningEn: 'dispute', audio: 'audio/hsk6/hsk6_争议.wav' }
+      { hanzi: '合同', pinyin: 'hétóng', meaning: 'contrat', meaningEn: 'contract', audio: 'audio/hsk4/hsk4_合同.wav' },
+      { hanzi: '甲方', pinyin: 'jiǎfāng', meaning: 'partie A', meaningEn: 'party A', audio: 'audio/hsk6/hsk6_甲方.wav' },
+      { hanzi: '违约', pinyin: 'wéiyuē', meaning: 'rupture de contrat', meaningEn: 'breach', audio: 'audio/hsk6/hsk6_违约.wav' },
+      { hanzi: '不可抗力', pinyin: 'bùkěkànglì', meaning: 'force majeure', meaningEn: 'force majeure', audio: 'audio/hsk6/hsk6_不可抗力.wav' },
+      { hanzi: '争议', pinyin: 'zhēngyì', meaning: 'différend', meaningEn: 'dispute', audio: 'audio/hsk6/hsk6_争议.wav' }
     ],
     tip:
       'TOUS les contrats sino-étrangers doivent inclure une clause 争议解决 (résolution des différends) qui précise : juridiction (中国/香港/新加坡), langue de procédure, et préférence pour 仲裁 vs 诉讼. SANS cette clause, en cas de litige tu dépendras de la juridiction par défaut, qui peut être très défavorable.',
@@ -102,11 +102,11 @@ export const c12ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Pre-nego: know the other\'s 关系 (network) + 面子 (public face). Avoid direct «no»: prefer 这个我们可以再考虑 (we can reconsider) or 这个有点困难 (a bit difficult) which MEAN NO without saying it. Read signals: 让我们再研究一下 (let\'s study it more) = often a polite «no». To push: 我们的诚意是希望长期合作 (our sincerity is to aim for long-term collaboration). 长期 (long-term) is the Chinese business keyword. Don\'t conclude too fast: a meal after formal nego is MANDATORY to seal the 关系.',
     items: [
-      { hanzi: '关系', pinyin: 'guān xì', meaning: 'relation, réseau', meaningEn: 'relationship, network', audio: 'audio/hsk3/hsk3_关系.wav' },
-      { hanzi: '面子', pinyin: 'miàn zi', meaning: 'face, prestige', meaningEn: 'face, prestige', audio: 'audio/hsk5/hsk5_面子.wav' },
-      { hanzi: '考虑', pinyin: 'kǎo lǜ', meaning: 'considérer', meaningEn: 'consider', audio: 'audio/hsk4/hsk4_考虑.wav' },
-      { hanzi: '困难', pinyin: 'kùn nan', meaning: 'difficile', meaningEn: 'difficult', audio: 'audio/hsk4/hsk4_困难.wav' },
-      { hanzi: '长期', pinyin: 'cháng qī', meaning: 'long terme', meaningEn: 'long-term', audio: 'audio/hsk5/hsk5_长期.wav' }
+      { hanzi: '关系', pinyin: 'guānxì', meaning: 'relation, réseau', meaningEn: 'relationship, network', audio: 'audio/hsk3/hsk3_关系.wav' },
+      { hanzi: '面子', pinyin: 'miànzi', meaning: 'face, prestige', meaningEn: 'face, prestige', audio: 'audio/hsk5/hsk5_面子.wav' },
+      { hanzi: '考虑', pinyin: 'kǎolǜ', meaning: 'considérer', meaningEn: 'consider', audio: 'audio/hsk4/hsk4_考虑.wav' },
+      { hanzi: '困难', pinyin: 'kùnnán', meaning: 'difficile', meaningEn: 'difficult', audio: 'audio/hsk4/hsk4_困难.wav' },
+      { hanzi: '长期', pinyin: 'chángqī', meaning: 'long terme', meaningEn: 'long-term', audio: 'audio/hsk5/hsk5_长期.wav' }
     ],
     tip:
       '« 让我们再研究一下 » est l\'un des « non » les plus polis en business chinois. Si tu l\'entends 2x, abandonne la proposition initiale et change d\'angle. Insister à la 3e fois = perte de face mutuelle.',
@@ -131,11 +131,11 @@ export const c12ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 背景 → 问题 → 战略方案 → 预期效果 → 风险 → 行动计划. Opening: 各位领导，我今天向大家汇报 X 的战略方案. Present a datum: 据统计 X (per statistics X). Argue: 之所以选择这个方案，是因为 X (the reason we picked this plan is X). Anticipate objection: 有人可能担心 X，但是 Y. Close: 我希望各位领导能给予支持 (I hope for your support). 给予支持 = expected formula to request hierarchical approval.',
     items: [
-      { hanzi: '汇报', pinyin: 'huì bào', meaning: 'rapporter, présenter', meaningEn: 'report (to superior)', audio: 'audio/hsk5/hsk5_汇报.wav' },
-      { hanzi: '据统计', pinyin: 'jù tǒng jì', meaning: 'selon les statistiques', meaningEn: 'per statistics', audio: 'audio/hsk5/hsk5_统计.wav' },
-      { hanzi: '之所以', pinyin: 'zhī suǒ yǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk5/hsk5_之所以.wav' },
-      { hanzi: '担心', pinyin: 'dān xīn', meaning: 's\'inquiéter', meaningEn: 'worry', audio: 'audio/hsk3/hsk3_担心.wav' },
-      { hanzi: '给予', pinyin: 'jǐ yǔ', meaning: 'donner, accorder', meaningEn: 'give, grant', audio: 'audio/hsk6/hsk6_给予.wav' }
+      { hanzi: '汇报', pinyin: 'huìbào', meaning: 'rapporter, présenter', meaningEn: 'report (to superior)', audio: 'audio/hsk5/hsk5_汇报.wav' },
+      { hanzi: '据统计', pinyin: 'jùtǒngjì', meaning: 'selon les statistiques', meaningEn: 'per statistics', audio: 'audio/hsk5/hsk5_统计.wav' },
+      { hanzi: '之所以', pinyin: 'zhīsuǒyǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk5/hsk5_之所以.wav' },
+      { hanzi: '担心', pinyin: 'dānxīn', meaning: 's\'inquiéter', meaningEn: 'worry', audio: 'audio/hsk3/hsk3_担心.wav' },
+      { hanzi: '给予', pinyin: 'jǐyǔ', meaning: 'donner, accorder', meaningEn: 'give, grant', audio: 'audio/hsk6/hsk6_给予.wav' }
     ],
     tip:
       'Combo argument C1 : « 之所以 X，是因为 Y ». Marque la rigueur du raisonnement causal. Très utilisé en pitch business + débat. Plus soutenu que 因为 X，所以 Y standard.',
@@ -169,11 +169,11 @@ export const c12ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: public speaking on a societal topic. Open solemnly: 各位朋友，今天我想跟大家分享 X 的看法. State observation: 我们身边正发生着 X 的现象. Mobilize values: 我们追求的是 X. Key verbs: 倡导 (chàngdǎo, advocate), 呼吁 (hūyù, call upon), 推动 (tuīdòng, push forward). Motivational combo: 让我们携手 X (let\'s join hands for X — 携手 is very formal). Close: 让我们共同努力，把这个梦想变成现实 (turn this dream into reality). Tone: FORMAL but not overly lyrical.',
     items: [
-      { hanzi: '现象', pinyin: 'xiàn xiàng', meaning: 'phénomène', meaningEn: 'phenomenon', audio: 'audio/hsk5/hsk5_现象.wav' },
-      { hanzi: '追求', pinyin: 'zhuī qiú', meaning: 'aspirer à', meaningEn: 'pursue', audio: 'audio/hsk5/hsk5_追求.wav' },
-      { hanzi: '倡导', pinyin: 'chàng dǎo', meaning: 'prôner', meaningEn: 'advocate', audio: 'audio/hsk6/hsk6_倡导.wav' },
-      { hanzi: '推动', pinyin: 'tuī dòng', meaning: 'faire avancer', meaningEn: 'push forward', audio: 'audio/hsk5/hsk5_推动.wav' },
-      { hanzi: '携手', pinyin: 'xié shǒu', meaning: 'main dans la main', meaningEn: 'hand in hand', audio: 'audio/hsk6/hsk6_携手.wav' }
+      { hanzi: '现象', pinyin: 'xiànxiàng', meaning: 'phénomène', meaningEn: 'phenomenon', audio: 'audio/hsk5/hsk5_现象.wav' },
+      { hanzi: '追求', pinyin: 'zhuīqiú', meaning: 'aspirer à', meaningEn: 'pursue', audio: 'audio/hsk5/hsk5_追求.wav' },
+      { hanzi: '倡导', pinyin: 'chàngdǎo', meaning: 'prôner', meaningEn: 'advocate', audio: 'audio/hsk6/hsk6_倡导.wav' },
+      { hanzi: '推动', pinyin: 'tuīdòng', meaning: 'faire avancer', meaningEn: 'push forward', audio: 'audio/hsk5/hsk5_推动.wav' },
+      { hanzi: '携手', pinyin: 'xiéshǒu', meaning: 'main dans la main', meaningEn: 'hand in hand', audio: 'audio/hsk6/hsk6_携手.wav' }
     ],
     tip:
       '« 让我们携手 X » + « 共同努力 » est la formule d\'appel à l\'action politique chinoise. Très utilisée dans les discours officiels et campagnes sociales. Effet immédiat de mobilisation collective.',
@@ -202,11 +202,11 @@ export const c12ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 我们的使命 (mission) → 主要工作 (activities) → 已取得的成果 (results) → 未来的计划 (future). Vocab: 公益 (public interest), 慈善 (charity), 志愿者 (volunteer), 募捐 (fundraising). Phrase: 我们致力于 X (we are dedicated to X — 致力于 is formal). To mobilize: 我们诚邀您加入我们的行列 (we sincerely invite you to join our ranks — 诚邀 + 行列 = very formal). Witness impact: 我们已经帮助了 X 个人. Close: 您的支持，意味着 X (your support means X — punchy formula).',
     items: [
-      { hanzi: '使命', pinyin: 'shǐ mìng', meaning: 'mission', meaningEn: 'mission', audio: 'audio/hsk6/hsk6_使命.wav' },
-      { hanzi: '公益', pinyin: 'gōng yì', meaning: 'intérêt public', meaningEn: 'public interest', audio: 'audio/hsk6/hsk6_公益.wav' },
-      { hanzi: '志愿者', pinyin: 'zhì yuàn zhě', meaning: 'bénévole', meaningEn: 'volunteer', audio: 'audio/hsk5/hsk5_志愿者.wav' },
-      { hanzi: '致力于', pinyin: 'zhì lì yú', meaning: 'se consacrer à', meaningEn: 'be dedicated to', audio: 'audio/hsk6/hsk6_致力.wav' },
-      { hanzi: '诚邀', pinyin: 'chéng yāo', meaning: 'inviter sincèrement', meaningEn: 'sincerely invite', audio: 'audio/hsk6/hsk6_邀.wav' }
+      { hanzi: '使命', pinyin: 'shǐmìng', meaning: 'mission', meaningEn: 'mission', audio: 'audio/hsk6/hsk6_使命.wav' },
+      { hanzi: '公益', pinyin: 'gōngyì', meaning: 'intérêt public', meaningEn: 'public interest', audio: 'audio/hsk6/hsk6_公益.wav' },
+      { hanzi: '志愿者', pinyin: 'zhìyuànzhě', meaning: 'bénévole', meaningEn: 'volunteer', audio: 'audio/hsk5/hsk5_志愿者.wav' },
+      { hanzi: '致力于', pinyin: 'zhìlìyú', meaning: 'se consacrer à', meaningEn: 'be dedicated to', audio: 'audio/hsk6/hsk6_致力.wav' },
+      { hanzi: '诚邀', pinyin: 'chéngyāo', meaning: 'inviter sincèrement', meaningEn: 'sincerely invite', audio: 'audio/hsk6/hsk6_邀.wav' }
     ],
     tip:
       '« 您的支持，意味着 X » est la formule de don ultime. À la place de « 请捐款 » (donnez), tu rends l\'acte SIGNIFIANT. Ex : « 您的支持，意味着一个孩子能上学 » = ton don signifie qu\'un enfant pourra aller à l\'école.',
@@ -241,11 +241,11 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Formal frame: 我今天找您谈话是关于 X 的事情. Verbs: 谈话 (formal interview), 警告 (warn), 处分 (sanction). State facts: 根据我们了解到的情况 X. Ask for explanation: 您能否说明一下情况？Set follow-up: 公司决定 X / 根据公司规定，您需要 X. Close humanely: 我们希望您能从这件事中吸取教训 (hope you draw a lesson). In Chinese culture, HR interview = chance to EDUCATE, not just punish. Key phrase: 我们相信您能改进 (we trust your ability to improve).',
     items: [
-      { hanzi: '谈话', pinyin: 'tán huà', meaning: 'entretien (formel)', meaningEn: 'formal interview', audio: 'audio/hsk5/hsk5_谈话.wav' },
-      { hanzi: '警告', pinyin: 'jǐng gào', meaning: 'avertir', meaningEn: 'warn', audio: 'audio/hsk5/hsk5_警告.wav' },
-      { hanzi: '处分', pinyin: 'chǔ fèn', meaning: 'sanction', meaningEn: 'sanction', audio: 'audio/hsk6/hsk6_处分.wav' },
-      { hanzi: '吸取', pinyin: 'xī qǔ', meaning: 'tirer (leçon)', meaningEn: 'draw (lesson)', audio: 'audio/hsk6/hsk6_吸取.wav' },
-      { hanzi: '教训', pinyin: 'jiào xùn', meaning: 'leçon, enseignement', meaningEn: 'lesson', audio: 'audio/hsk5/hsk5_教训.wav' }
+      { hanzi: '谈话', pinyin: 'tánhuà', meaning: 'entretien (formel)', meaningEn: 'formal interview', audio: 'audio/hsk5/hsk5_谈话.wav' },
+      { hanzi: '警告', pinyin: 'jǐnggào', meaning: 'avertir', meaningEn: 'warn', audio: 'audio/hsk5/hsk5_警告.wav' },
+      { hanzi: '处分', pinyin: 'chǔfèn', meaning: 'sanction', meaningEn: 'sanction', audio: 'audio/hsk6/hsk6_处分.wav' },
+      { hanzi: '吸取', pinyin: 'xīqǔ', meaning: 'tirer (leçon)', meaningEn: 'draw (lesson)', audio: 'audio/hsk6/hsk6_吸取.wav' },
+      { hanzi: '教训', pinyin: 'jiàoxùn', meaning: 'leçon, enseignement', meaningEn: 'lesson', audio: 'audio/hsk5/hsk5_教训.wav' }
     ],
     tip:
       'Toujours conclure un entretien disciplinaire chinois par une porte ouverte (« 我们相信您能改进 »). Sinon, l\'employé perd la face et démissionne ou se ferme. La culture confucéenne valorise la rééducation > la punition pure.',
@@ -277,11 +277,11 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Prep ground: 我有一件事要跟您谈，希望您冷静听. Announce: 公司决定与您解除劳动合同 (the company decided to terminate your contract). Justify: 由于 X 的原因 (always invoke a cause). Soften: 这不是您个人能力的问题 (this isn\'t about your personal ability). Vocab: 解除合同 (terminate), 补偿金 (compensation), 离职手续 (departure formalities), 推荐信 (recommendation letter). Always offer: 我们可以为您提供推荐信. Close: 我个人非常感谢您过去的贡献 (personally, thank you for your past contributions) — humanizes the moment.',
     items: [
-      { hanzi: '解除', pinyin: 'jiě chú', meaning: 'résilier, lever', meaningEn: 'terminate, lift', audio: 'audio/hsk6/hsk6_解除.wav' },
-      { hanzi: '劳动合同', pinyin: 'láo dòng hé tong', meaning: 'contrat de travail', meaningEn: 'labor contract', audio: 'audio/hsk5/hsk5_劳动.wav' },
-      { hanzi: '补偿金', pinyin: 'bǔ cháng jīn', meaning: 'indemnité', meaningEn: 'compensation', audio: 'audio/hsk6/hsk6_补偿.wav' },
-      { hanzi: '推荐信', pinyin: 'tuī jiàn xìn', meaning: 'lettre de reco', meaningEn: 'recommendation letter', audio: 'audio/hsk5/hsk5_推荐.wav' },
-      { hanzi: '贡献', pinyin: 'gòng xiàn', meaning: 'contribution', meaningEn: 'contribution', audio: 'audio/hsk5/hsk5_贡献.wav' }
+      { hanzi: '解除', pinyin: 'jiěchú', meaning: 'résilier, lever', meaningEn: 'terminate, lift', audio: 'audio/hsk6/hsk6_解除.wav' },
+      { hanzi: '劳动合同', pinyin: 'láodònghétóng', meaning: 'contrat de travail', meaningEn: 'labor contract', audio: 'audio/hsk5/hsk5_劳动.wav' },
+      { hanzi: '补偿金', pinyin: 'bǔchángjīn', meaning: 'indemnité', meaningEn: 'compensation', audio: 'audio/hsk6/hsk6_补偿.wav' },
+      { hanzi: '推荐信', pinyin: 'tuījiànxìn', meaning: 'lettre de reco', meaningEn: 'recommendation letter', audio: 'audio/hsk5/hsk5_推荐.wav' },
+      { hanzi: '贡献', pinyin: 'gòngxiàn', meaning: 'contribution', meaningEn: 'contribution', audio: 'audio/hsk5/hsk5_贡献.wav' }
     ],
     tip:
       'Le licenciement chinois respectueux INCLUT toujours : (1) cause objective (économique, restructuration), (2) reconnaissance des contributions passées, (3) offre de 推荐信 + 补偿金. Sans ces 3 éléments, le 关系 explose et la réputation RH de la boîte chute.',
@@ -316,11 +316,11 @@ export const c12ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '10-min structure: 团队 → 痛点 → 解决方案 → 市场 → 商业模式 → 数据 → 融资计划. Vocab: 估值 (valuation), 融资 (fundraising), 商业模式 (business model), 现金流 (cashflow), 退出机制 (exit mechanism). Opening pitch: 我们解决的痛点是 X (the pain point we solve is X). 痛点 (pain point) is an obsessive Chinese VC KEYWORD. Strengths: 我们的护城河是 X (our moat is X — Buffett metaphor, 护城河 = moat). Close: 我们希望融资 X 万美元 (we want to raise X). Chinese VCs want to SEE NUMBERS fast.',
     items: [
-      { hanzi: '估值', pinyin: 'gū zhí', meaning: 'valorisation', meaningEn: 'valuation', audio: 'audio/hsk6/hsk6_估值.wav' },
-      { hanzi: '融资', pinyin: 'róng zī', meaning: 'levée de fonds', meaningEn: 'fundraising', audio: 'audio/hsk6/hsk6_融资.wav' },
-      { hanzi: '商业模式', pinyin: 'shāng yè mó shì', meaning: 'modèle économique', meaningEn: 'business model', audio: 'audio/hsk6/hsk6_商业.wav' },
-      { hanzi: '痛点', pinyin: 'tòng diǎn', meaning: 'pain point', meaningEn: 'pain point', audio: 'audio/hsk6/hsk6_痛点.wav' },
-      { hanzi: '护城河', pinyin: 'hù chéng hé', meaning: 'moat (avantage)', meaningEn: 'moat (advantage)', audio: 'audio/hsk6/hsk6_护城河.wav' }
+      { hanzi: '估值', pinyin: 'gūzhí', meaning: 'valorisation', meaningEn: 'valuation', audio: 'audio/hsk6/hsk6_估值.wav' },
+      { hanzi: '融资', pinyin: 'róngzī', meaning: 'levée de fonds', meaningEn: 'fundraising', audio: 'audio/hsk6/hsk6_融资.wav' },
+      { hanzi: '商业模式', pinyin: 'shāngyèmóshì', meaning: 'modèle économique', meaningEn: 'business model', audio: 'audio/hsk6/hsk6_商业.wav' },
+      { hanzi: '痛点', pinyin: 'tòngdiǎn', meaning: 'pain point', meaningEn: 'pain point', audio: 'audio/hsk6/hsk6_痛点.wav' },
+      { hanzi: '护城河', pinyin: 'hùchénghé', meaning: 'moat (avantage)', meaningEn: 'moat (advantage)', audio: 'audio/hsk6/hsk6_护城河.wav' }
     ],
     tip:
       'Le VC chinois te demandera CASH-FLOW + 痛点 dans les 60 premières secondes. Si tu ne peux pas ARTICULER ton 痛点 en 1 phrase claire, le VC zappe. Cette discipline d\'élévator pitch en chinois est non-négociable en 2026.',
@@ -351,11 +351,11 @@ export const c12ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 风险描述 → 影响评估 → 当前应对措施 → 建议. Phrases: 我必须向各位董事报告一个潜在风险 (I must report a potential risk to the board). 潜在 (qiánzài, latent/potential) = governance keyword. Quantify: 影响可能在 X 之间. Measures: 我们已经采取的措施包括 X. Ask: 我建议董事会授权 X (I recommend the board authorize X). 授权 (authorize) is the governance keyword. Close: 我会随时向董事会汇报进展. Tone: SERIOUS, FACTUAL, never alarmist.',
     items: [
-      { hanzi: '董事', pinyin: 'dǒng shì', meaning: 'administrateur', meaningEn: 'board director', audio: 'audio/hsk6/hsk6_董事.wav' },
-      { hanzi: '潜在', pinyin: 'qián zài', meaning: 'latent, potentiel', meaningEn: 'latent, potential', audio: 'audio/hsk6/hsk6_潜在.wav' },
-      { hanzi: '采取', pinyin: 'cǎi qǔ', meaning: 'adopter, prendre', meaningEn: 'adopt, take', audio: 'audio/hsk5/hsk5_采取.wav' },
-      { hanzi: '措施', pinyin: 'cuò shī', meaning: 'mesure', meaningEn: 'measure', audio: 'audio/hsk5/hsk5_措施.wav' },
-      { hanzi: '授权', pinyin: 'shòu quán', meaning: 'autoriser', meaningEn: 'authorize', audio: 'audio/hsk6/hsk6_授权.wav' }
+      { hanzi: '董事', pinyin: 'dǒngshì', meaning: 'administrateur', meaningEn: 'board director', audio: 'audio/hsk6/hsk6_董事.wav' },
+      { hanzi: '潜在', pinyin: 'qiánzài', meaning: 'latent, potentiel', meaningEn: 'latent, potential', audio: 'audio/hsk6/hsk6_潜在.wav' },
+      { hanzi: '采取', pinyin: 'cǎiqǔ', meaning: 'adopter, prendre', meaningEn: 'adopt, take', audio: 'audio/hsk5/hsk5_采取.wav' },
+      { hanzi: '措施', pinyin: 'cuòshī', meaning: 'mesure', meaningEn: 'measure', audio: 'audio/hsk5/hsk5_措施.wav' },
+      { hanzi: '授权', pinyin: 'shòuquán', meaning: 'autoriser', meaningEn: 'authorize', audio: 'audio/hsk6/hsk6_授权.wav' }
     ],
     tip:
       'Au CA chinois, présenter un risque SANS mesures déjà prises = perte de crédibilité. La structure « 风险 → 我们déjà fait X → recommandons Y » montre que tu maîtrises la situation et n\'es pas en panique.',
@@ -388,11 +388,11 @@ export const c12ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Frame: pro dispute between dept A (e.g. sales) and dept B (e.g. R&D). Stance: 我作为公司高层，希望从全局角度看这个问题 (as exec, I see it from a global angle). 全局 (overall view) is the keyword. Reformulate: 销售部担心的是 X，研发部坚持的是 Y. Identify the COMMON GOOD: 双方的目标都是公司的发展. Propose: 我们能否找一个折中方案，既满足 X 又考虑 Y？Decision: 经过权衡，我决定 X (after weighing, I decide X). 权衡 (weighing pros and cons) shows deliberation.',
     items: [
-      { hanzi: '高层', pinyin: 'gāo céng', meaning: 'haute direction', meaningEn: 'top management', audio: 'audio/hsk6/hsk6_高层.wav' },
-      { hanzi: '全局', pinyin: 'quán jú', meaning: 'vue d\'ensemble', meaningEn: 'overall view', audio: 'audio/hsk6/hsk6_全局.wav' },
-      { hanzi: '坚持', pinyin: 'jiān chí', meaning: 'persister, insister', meaningEn: 'insist', audio: 'audio/hsk4/hsk4_坚持.wav' },
-      { hanzi: '满足', pinyin: 'mǎn zú', meaning: 'satisfaire', meaningEn: 'satisfy', audio: 'audio/hsk4/hsk4_满足.wav' },
-      { hanzi: '权衡', pinyin: 'quán héng', meaning: 'peser, balancer', meaningEn: 'weigh', audio: 'audio/hsk6/hsk6_权衡.wav' }
+      { hanzi: '高层', pinyin: 'gāocéng', meaning: 'haute direction', meaningEn: 'top management', audio: 'audio/hsk6/hsk6_高层.wav' },
+      { hanzi: '全局', pinyin: 'quánjú', meaning: 'vue d\'ensemble', meaningEn: 'overall view', audio: 'audio/hsk6/hsk6_全局.wav' },
+      { hanzi: '坚持', pinyin: 'jiānchí', meaning: 'persister, insister', meaningEn: 'insist', audio: 'audio/hsk4/hsk4_坚持.wav' },
+      { hanzi: '满足', pinyin: 'mǎnzú', meaning: 'satisfaire', meaningEn: 'satisfy', audio: 'audio/hsk4/hsk4_满足.wav' },
+      { hanzi: '权衡', pinyin: 'quánhéng', meaning: 'peser, balancer', meaningEn: 'weigh', audio: 'audio/hsk6/hsk6_权衡.wav' }
     ],
     tip:
       '« 经过权衡，我决定 X » est la formule de décision exécutive chinoise. 权衡 montre que tu n\'as PAS décidé impulsivement. Sans cette formule, ta décision peut paraître arbitraire et fragiliser ton autorité.',
@@ -423,11 +423,11 @@ export const c12ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Open: 各位来自世界各地的朋友，大家好. Cultural mention: 古人云 X (the ancients said X — classical citation secures credibility). Articulate thesis: 今天我想分享 X 给我们的启示 (today I share the lessons of X). 启示 (revelation) more formal than 教训 (lesson). Examples: 让我举一个例子 X. Strong verbs: 阐述 (expound), 揭示 (reveal). Close: 让我们记住 X (let\'s remember X). 谢谢大家的聆听 + slight bow. For SIMULTANEOUS interpretation: slow + pauses between 8-10-word groups = huge help for interpreters.',
     items: [
-      { hanzi: '古人云', pinyin: 'gǔ rén yún', meaning: 'les anciens disaient', meaningEn: 'the ancients said', audio: 'audio/hsk6/hsk6_古人.wav' },
-      { hanzi: '启示', pinyin: 'qǐ shì', meaning: 'enseignement, révélation', meaningEn: 'revelation', audio: 'audio/hsk6/hsk6_启示.wav' },
-      { hanzi: '阐述', pinyin: 'chǎn shù', meaning: 'exposer en détail', meaningEn: 'expound', audio: 'audio/hsk6/hsk6_阐述.wav' },
-      { hanzi: '揭示', pinyin: 'jiē shì', meaning: 'révéler', meaningEn: 'reveal', audio: 'audio/hsk6/hsk6_揭示.wav' },
-      { hanzi: '聆听', pinyin: 'líng tīng', meaning: 'écouter avec attention', meaningEn: 'listen attentively', audio: 'audio/hsk6/hsk6_聆听.wav' }
+      { hanzi: '古人云', pinyin: 'gǔrényún', meaning: 'les anciens disaient', meaningEn: 'the ancients said', audio: 'audio/hsk6/hsk6_古人.wav' },
+      { hanzi: '启示', pinyin: 'qǐshì', meaning: 'enseignement, révélation', meaningEn: 'revelation', audio: 'audio/hsk6/hsk6_启示.wav' },
+      { hanzi: '阐述', pinyin: 'chǎnshù', meaning: 'exposer en détail', meaningEn: 'expound', audio: 'audio/hsk6/hsk6_阐述.wav' },
+      { hanzi: '揭示', pinyin: 'jiēshì', meaning: 'révéler', meaningEn: 'reveal', audio: 'audio/hsk6/hsk6_揭示.wav' },
+      { hanzi: '聆听', pinyin: 'língtīng', meaning: 'écouter avec attention', meaningEn: 'listen attentively', audio: 'audio/hsk6/hsk6_聆听.wav' }
     ],
     tip:
       'Citer 古人云 + une maxime classique au début d\'une keynote chinoise = signal IMMÉDIAT de respect culturel. Ex : « 古人云：千里之行，始于足下 » (un voyage de 1000 li commence par un pas) — Lao Zi. Effet : public chinois immédiatement réceptif.',
@@ -460,11 +460,11 @@ export const c12ConvM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: 摘要 (abstract) → 引言 (intro) → 现状 (status quo) → 分析 (analysis) → 政策建议 (recommendations) → 结论 (conclusion) → 参考文献 (references). Opening: 本白皮书旨在探讨 X (this white paper aims to explore X). 本 (this / present) + noun = sanctioned formula of admin/academic language. Recommendations: 我们呼吁有关部门采取以下措施. Close: 我们期待与社会各界共同推动 X 的发展 (we hope to advance X with all of society). Tone: DENSE, IMPERSONAL, FACTUAL. No «我» in a white paper → prefer 笔者 (the author) or «本研究».',
     items: [
-      { hanzi: '白皮书', pinyin: 'bái pí shū', meaning: 'livre blanc', meaningEn: 'white paper', audio: 'audio/hsk6/hsk6_白皮书.wav' },
-      { hanzi: '摘要', pinyin: 'zhāi yào', meaning: 'résumé, abstract', meaningEn: 'abstract', audio: 'audio/hsk6/hsk6_摘要.wav' },
-      { hanzi: '引言', pinyin: 'yǐn yán', meaning: 'introduction', meaningEn: 'introduction', audio: 'audio/hsk6/hsk6_引言.wav' },
-      { hanzi: '探讨', pinyin: 'tàn tǎo', meaning: 'explorer (intellectuel)', meaningEn: 'explore', audio: 'audio/hsk5/hsk5_探讨.wav' },
-      { hanzi: '笔者', pinyin: 'bǐ zhě', meaning: 'l\'auteur (de cet écrit)', meaningEn: 'the author (of this text)', audio: 'audio/hsk6/hsk6_笔者.wav' }
+      { hanzi: '白皮书', pinyin: 'báipíshū', meaning: 'livre blanc', meaningEn: 'white paper', audio: 'audio/hsk6/hsk6_白皮书.wav' },
+      { hanzi: '摘要', pinyin: 'zhāiyào', meaning: 'résumé, abstract', meaningEn: 'abstract', audio: 'audio/hsk6/hsk6_摘要.wav' },
+      { hanzi: '引言', pinyin: 'yǐnyán', meaning: 'introduction', meaningEn: 'introduction', audio: 'audio/hsk6/hsk6_引言.wav' },
+      { hanzi: '探讨', pinyin: 'tàntǎo', meaning: 'explorer (intellectuel)', meaningEn: 'explore', audio: 'audio/hsk5/hsk5_探讨.wav' },
+      { hanzi: '笔者', pinyin: 'bǐzhě', meaning: 'l\'auteur (de cet écrit)', meaningEn: 'the author (of this text)', audio: 'audio/hsk6/hsk6_笔者.wav' }
     ],
     tip:
       'Dans un livre blanc chinois, JAMAIS « 我 ». Toujours 笔者 ou « 本研究 » ou « 本报告 ». L\'utilisation de la 1re personne décrédibilise immédiatement le texte académique chinois — l\'objectivité passe par l\'effacement du sujet.',
@@ -495,10 +495,10 @@ export const c12ConvM7LearnSections: LessonV2LearnSection[] = [
       'Frame: collective address to authority (govt, company, university) on a public-interest topic. Opening: 致 X (to X) — formal epistolary. Cause: 我们，作为 X，对 Y 表示深切的关注. 深切 (deep) marks seriousness. Demands: 我们呼吁 X / 我们要求 X. Hierarchy: 呼吁 (appeal) < 请求 (request) < 要求 (demand) < 强烈要求 (strong demand). Close: 我们期待您能积极回应我们的诉求 (we hope for an active response). Sign: name + title + organization. Multi-signer petition: 此致敬礼 + collective name («100 名 X 联署» — co-signed by 100 X).',
     items: [
       { hanzi: '致', pinyin: 'zhì', meaning: 'à (formel)', meaningEn: 'to (formal)', audio: 'audio/hsk5/hsk5_致.wav' },
-      { hanzi: '深切', pinyin: 'shēn qiè', meaning: 'profond, sincère', meaningEn: 'deep, sincere', audio: 'audio/hsk6/hsk6_深切.wav' },
-      { hanzi: '关注', pinyin: 'guān zhù', meaning: 'préoccupation, attention', meaningEn: 'concern', audio: 'audio/hsk5/hsk5_关注.wav' },
-      { hanzi: '强烈', pinyin: 'qiáng liè', meaning: 'fort, intense', meaningEn: 'strong, intense', audio: 'audio/hsk5/hsk5_强烈.wav' },
-      { hanzi: '联署', pinyin: 'lián shǔ', meaning: 'co-signer', meaningEn: 'co-sign', audio: 'audio/hsk6/hsk6_联署.wav' }
+      { hanzi: '深切', pinyin: 'shēnqiè', meaning: 'profond, sincère', meaningEn: 'deep, sincere', audio: 'audio/hsk6/hsk6_深切.wav' },
+      { hanzi: '关注', pinyin: 'guānzhù', meaning: 'préoccupation, attention', meaningEn: 'concern', audio: 'audio/hsk5/hsk5_关注.wav' },
+      { hanzi: '强烈', pinyin: 'qiángliè', meaning: 'fort, intense', meaningEn: 'strong, intense', audio: 'audio/hsk5/hsk5_强烈.wav' },
+      { hanzi: '联署', pinyin: 'liánshǔ', meaning: 'co-signer', meaningEn: 'co-sign', audio: 'audio/hsk6/hsk6_联署.wav' }
     ],
     tip:
       'Une pétition chinoise EFFICACE escalade la demande : 呼吁 → 请求 → 要求 → 强烈要求. Si tu commences par 强烈要求, tu coupes la marge de discussion et l\'autorité se braque. Garde l\'escalade pour les pétitions de 2e ou 3e tour.',
@@ -526,11 +526,11 @@ export const c12NuancesM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '实现 (shíxiàn) = REALIZE a dream / abstract goal. 实现梦想 / 实现目标. Connotes future PROJECTION becoming present. Noble verb. 完成 (wánchéng) = COMPLETE a concrete bounded task. 完成任务 / 完成作业. Connotes end of activity with deadline. 达成 (dáchéng) = REACH an agreement/consensus, mutually with another. 达成协议 / 达成共识. Connotes collaboration and NEGOTIATED result. Hierarchy: 完成 (concrete bounded) < 实现 (abstract noble) < 达成 (collaborative). Classic mistake: 完成梦想 ✗ → 实现梦想 ✓.',
     items: [
-      { hanzi: '实现', pinyin: 'shí xiàn', meaning: 'réaliser', meaningEn: 'realize', audio: 'audio/hsk5/hsk5_实现.wav' },
-      { hanzi: '完成', pinyin: 'wán chéng', meaning: 'achever', meaningEn: 'complete', audio: 'audio/hsk3/hsk3_完成.wav' },
-      { hanzi: '达成', pinyin: 'dá chéng', meaning: 'parvenir à', meaningEn: 'reach (agreement)', audio: 'audio/hsk5/hsk5_达成.wav' },
-      { hanzi: '梦想', pinyin: 'mèng xiǎng', meaning: 'rêve', meaningEn: 'dream', audio: 'audio/hsk5/hsk5_梦想.wav' },
-      { hanzi: '协议', pinyin: 'xié yì', meaning: 'accord', meaningEn: 'agreement', audio: 'audio/hsk5/hsk5_协议.wav' }
+      { hanzi: '实现', pinyin: 'shíxiàn', meaning: 'réaliser', meaningEn: 'realize', audio: 'audio/hsk5/hsk5_实现.wav' },
+      { hanzi: '完成', pinyin: 'wánchéng', meaning: 'achever', meaningEn: 'complete', audio: 'audio/hsk3/hsk3_完成.wav' },
+      { hanzi: '达成', pinyin: 'dáchéng', meaning: 'parvenir à', meaningEn: 'reach (agreement)', audio: 'audio/hsk5/hsk5_达成.wav' },
+      { hanzi: '梦想', pinyin: 'mèngxiǎng', meaning: 'rêve', meaningEn: 'dream', audio: 'audio/hsk5/hsk5_梦想.wav' },
+      { hanzi: '协议', pinyin: 'xiéyì', meaning: 'accord', meaningEn: 'agreement', audio: 'audio/hsk5/hsk5_协议.wav' }
     ],
     tip:
       'Mémoriser 3 collocations clés C1 : 实现梦想 (réaliser un rêve), 完成任务 (achever une tâche), 达成共识 (parvenir au consensus). Ces blocs figés sont irremplaçables.',
@@ -553,11 +553,11 @@ export const c12NuancesM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '建议 (jiànyì) = SUGGESTION (most universal, oral and written). 我建议你 X. Addressed to individual or group. 提议 (tíyì) = FORMAL PROPOSAL (in meetings, votes). 我提议我们投票 (I move we vote). More structured, sometimes voted on. 倡议 (chàngyì) = PUBLIC INITIATIVE (campaign launch, movement). 倡议节约用水 (launch an initiative to save water). Connotes COLLECTIVE and symbolic SCOPE. Hierarchy: 建议 (universal) < 提议 (formal meeting) < 倡议 (public initiative). «一带一路倡议» (Belt and Road Initiative) — why 倡议 not 建议? Geopolitical scale.',
     items: [
-      { hanzi: '建议', pinyin: 'jiàn yì', meaning: 'suggérer, suggestion', meaningEn: 'suggest, suggestion', audio: 'audio/hsk3/hsk3_建议.wav' },
-      { hanzi: '提议', pinyin: 'tí yì', meaning: 'proposition (vote)', meaningEn: 'motion, proposal', audio: 'audio/hsk6/hsk6_提议.wav' },
-      { hanzi: '倡议', pinyin: 'chàng yì', meaning: 'initiative publique', meaningEn: 'initiative', audio: 'audio/hsk6/hsk6_倡议.wav' },
-      { hanzi: '投票', pinyin: 'tóu piào', meaning: 'voter', meaningEn: 'vote', audio: 'audio/hsk5/hsk5_投票.wav' },
-      { hanzi: '一带一路', pinyin: 'yí dài yí lù', meaning: 'Belt and Road', meaningEn: 'Belt and Road', audio: 'audio/hsk6/hsk6_一带.wav' }
+      { hanzi: '建议', pinyin: 'jiànyì', meaning: 'suggérer, suggestion', meaningEn: 'suggest, suggestion', audio: 'audio/hsk3/hsk3_建议.wav' },
+      { hanzi: '提议', pinyin: 'tíyì', meaning: 'proposition (vote)', meaningEn: 'motion, proposal', audio: 'audio/hsk6/hsk6_提议.wav' },
+      { hanzi: '倡议', pinyin: 'chàngyì', meaning: 'initiative publique', meaningEn: 'initiative', audio: 'audio/hsk6/hsk6_倡议.wav' },
+      { hanzi: '投票', pinyin: 'tóupiào', meaning: 'voter', meaningEn: 'vote', audio: 'audio/hsk5/hsk5_投票.wav' },
+      { hanzi: '一带一路', pinyin: 'yīdài yīlù', meaning: 'Belt and Road', meaningEn: 'Belt and Road', audio: 'audio/hsk6/hsk6_一带.wav' }
     ],
     tip:
       'Dans un white paper / discours politique, dire « 我们倡议 X » est PUISSANT. Ça transforme une simple suggestion en MOUVEMENT collectif avec aura symbolique. Le diplomatique chinois utilise 倡议 stratégiquement pour cadrer ses initiatives géopolitiques.',
@@ -583,11 +583,11 @@ export const c12NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '保持 (bǎochí) = KEEP a state (quality, level). 保持安静 (stay silent), 保持联系 (stay in touch). Most universal. 维持 (wéichí) = MAINTAIN despite difficulty (active effort). 维持秩序 (maintain order), 维持生活 (sustain livelihood). Connotes EFFORT to prevent collapse. 维护 (wéihù) = PROTECT, actively defend. 维护权利 (defend rights), 维护和平 (defend peace). Connotes DEFENSE against threat. Hierarchy: 保持 (stable state) < 维持 (active anti-collapse effort) < 维护 (defense vs threat). Classic mistake: 保持权利 ✗ → 维护权利 ✓ (rights DEFENDED, not passively kept).',
     items: [
-      { hanzi: '保持', pinyin: 'bǎo chí', meaning: 'maintenir, garder', meaningEn: 'keep, maintain', audio: 'audio/hsk4/hsk4_保持.wav' },
-      { hanzi: '维持', pinyin: 'wéi chí', meaning: 'maintenir (effort)', meaningEn: 'sustain (effort)', audio: 'audio/hsk5/hsk5_维持.wav' },
-      { hanzi: '维护', pinyin: 'wéi hù', meaning: 'défendre, protéger', meaningEn: 'defend', audio: 'audio/hsk5/hsk5_维护.wav' },
-      { hanzi: '秩序', pinyin: 'zhì xù', meaning: 'ordre', meaningEn: 'order', audio: 'audio/hsk5/hsk5_秩序.wav' },
-      { hanzi: '权利', pinyin: 'quán lì', meaning: 'droit', meaningEn: 'right', audio: 'audio/hsk5/hsk5_权利.wav' }
+      { hanzi: '保持', pinyin: 'bǎochí', meaning: 'maintenir, garder', meaningEn: 'keep, maintain', audio: 'audio/hsk4/hsk4_保持.wav' },
+      { hanzi: '维持', pinyin: 'wéichí', meaning: 'maintenir (effort)', meaningEn: 'sustain (effort)', audio: 'audio/hsk5/hsk5_维持.wav' },
+      { hanzi: '维护', pinyin: 'wéihù', meaning: 'défendre, protéger', meaningEn: 'defend', audio: 'audio/hsk5/hsk5_维护.wav' },
+      { hanzi: '秩序', pinyin: 'zhìxù', meaning: 'ordre', meaningEn: 'order', audio: 'audio/hsk5/hsk5_秩序.wav' },
+      { hanzi: '权利', pinyin: 'quánlì', meaning: 'droit', meaningEn: 'right', audio: 'audio/hsk5/hsk5_权利.wav' }
     ],
     tip:
       'Mémoriser : 保持 + état (安静/联系/健康), 维持 + ordre/vie (秩序/生活/纪律), 维护 + valeur (权利/和平/利益). La grammaire est dans l\'objet. Le mauvais collocataire = signal immédiat d\'erreur.',
@@ -610,11 +610,11 @@ export const c12NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '破坏 (pòhuài) = DESTROY / damage (most universal). 破坏环境 (destroy the environment), 破坏关系 (break a relationship). Often reversible. 摧毁 (cuīhuǐ) = COMPLETELY DESTROY (erase, raze). 摧毁建筑 (raze a building), 摧毁信心 (annihilate confidence). Irreversible, brutal. 损害 (sǔnhài) = HARM, prejudice (effect on value, interest). 损害健康 (harm health), 损害利益 (harm interests). Connotes PREJUDICE rather than physical destruction. Hierarchy: 损害 (partial prejudice) < 破坏 (normal destruction) < 摧毁 (total destruction).',
     items: [
-      { hanzi: '破坏', pinyin: 'pò huài', meaning: 'détruire, endommager', meaningEn: 'destroy, damage', audio: 'audio/hsk5/hsk5_破坏.wav' },
-      { hanzi: '摧毁', pinyin: 'cuī huǐ', meaning: 'anéantir', meaningEn: 'annihilate', audio: 'audio/hsk6/hsk6_摧毁.wav' },
-      { hanzi: '损害', pinyin: 'sǔn hài', meaning: 'nuire à', meaningEn: 'harm', audio: 'audio/hsk6/hsk6_损害.wav' },
-      { hanzi: '建筑', pinyin: 'jiàn zhù', meaning: 'bâtiment', meaningEn: 'building', audio: 'audio/hsk5/hsk5_建筑.wav' },
-      { hanzi: '利益', pinyin: 'lì yì', meaning: 'intérêt', meaningEn: 'interest', audio: 'audio/hsk5/hsk5_利益.wav' }
+      { hanzi: '破坏', pinyin: 'pòhuài', meaning: 'détruire, endommager', meaningEn: 'destroy, damage', audio: 'audio/hsk5/hsk5_破坏.wav' },
+      { hanzi: '摧毁', pinyin: 'cuīhuǐ', meaning: 'anéantir', meaningEn: 'annihilate', audio: 'audio/hsk6/hsk6_摧毁.wav' },
+      { hanzi: '损害', pinyin: 'sǔnhài', meaning: 'nuire à', meaningEn: 'harm', audio: 'audio/hsk6/hsk6_损害.wav' },
+      { hanzi: '建筑', pinyin: 'jiànzhù', meaning: 'bâtiment', meaningEn: 'building', audio: 'audio/hsk5/hsk5_建筑.wav' },
+      { hanzi: '利益', pinyin: 'lìyì', meaning: 'intérêt', meaningEn: 'interest', audio: 'audio/hsk5/hsk5_利益.wav' }
     ],
     tip:
       'En éditorial / juridique, choisir le bon mot signale ta précision. « 这政策损害了消费者利益 » (préjudice) est juste ; « 摧毁消费者 » serait absurde (consommateurs pas anéantis physiquement). Le bon registre = crédibilité.',
@@ -640,11 +640,11 @@ export const c12NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '提出 (tíchū) = RAISE / propose (idea, question). 提出建议 / 提出问题. Neutral act of putting forward. 提倡 (tíchàng) = ADVOCATE, encourage (a behavior / value). 提倡环保 (advocate environmental protection), 提倡阅读. MORAL / SOCIAL connotation. 提升 (tíshēng) = ELEVATE (level, position). 提升能力 / 提升地位. Connotation of QUANTIFIABLE progression. Test: «raise an idea» → 提出; «encourage a behavior» → 提倡; «raise a level» → 提升. Three verbs in 提 + component that radically change meaning.',
     items: [
-      { hanzi: '提出', pinyin: 'tí chū', meaning: 'soulever, proposer', meaningEn: 'raise, put forward', audio: 'audio/hsk4/hsk4_提出.wav' },
-      { hanzi: '提倡', pinyin: 'tí chàng', meaning: 'prôner', meaningEn: 'advocate', audio: 'audio/hsk5/hsk5_提倡.wav' },
-      { hanzi: '提升', pinyin: 'tí shēng', meaning: 'élever', meaningEn: 'elevate', audio: 'audio/hsk5/hsk5_提升.wav' },
-      { hanzi: '环保', pinyin: 'huán bǎo', meaning: 'protection de l\'env.', meaningEn: 'env. protection', audio: 'audio/hsk5/hsk5_环保.wav' },
-      { hanzi: '能力', pinyin: 'néng lì', meaning: 'capacité', meaningEn: 'ability', audio: 'audio/hsk4/hsk4_能力.wav' }
+      { hanzi: '提出', pinyin: 'tíchū', meaning: 'soulever, proposer', meaningEn: 'raise, put forward', audio: 'audio/hsk4/hsk4_提出.wav' },
+      { hanzi: '提倡', pinyin: 'tíchàng', meaning: 'prôner', meaningEn: 'advocate', audio: 'audio/hsk5/hsk5_提倡.wav' },
+      { hanzi: '提升', pinyin: 'tíshēng', meaning: 'élever', meaningEn: 'elevate', audio: 'audio/hsk5/hsk5_提升.wav' },
+      { hanzi: '环保', pinyin: 'huánbǎo', meaning: 'protection de l\'env.', meaningEn: 'env. protection', audio: 'audio/hsk5/hsk5_环保.wav' },
+      { hanzi: '能力', pinyin: 'nénglì', meaning: 'capacité', meaningEn: 'ability', audio: 'audio/hsk4/hsk4_能力.wav' }
     ],
     tip:
       'Combo CV chinois C1 : « 提升团队的执行能力 » (élever la capacité d\'exécution de l\'équipe). Verbe-clé du leadership chinois. Apparaît dans 90% des CV cadres.',
@@ -672,10 +672,10 @@ export const c12NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '功能 (gōngnéng) = FUNCTIONALITY of an object/system (what it CAN DO). 这部手机有很多功能 (this phone has many functions). Concrete, technical. 功用 (gōngyòng) = practical UTILITY of a TOOL or method (what it\'s FOR). 这种药的功用是 X (this drug\'s use is X). More formal. 用途 (yòngtú) = USAGE / DESTINATION (what it\'s used for). 这房间的用途是 X (this room\'s use is X). Connotes USE CATEGORY. Hierarchy: 功能 (multiple capabilities) ≠ 功用 (specific utility) ≠ 用途 (destination/category). Test: «it has 5 X» → 功能; «its X is to heal» → 功用; «its X is residential» → 用途.',
     items: [
-      { hanzi: '功能', pinyin: 'gōng néng', meaning: 'fonctionnalité', meaningEn: 'functionality', audio: 'audio/hsk5/hsk5_功能.wav' },
-      { hanzi: '功用', pinyin: 'gōng yòng', meaning: 'utilité', meaningEn: 'utility', audio: 'audio/hsk6/hsk6_功用.wav' },
-      { hanzi: '用途', pinyin: 'yòng tú', meaning: 'usage, destination', meaningEn: 'use, purpose', audio: 'audio/hsk5/hsk5_用途.wav' },
-      { hanzi: '系统', pinyin: 'xì tǒng', meaning: 'système', meaningEn: 'system', audio: 'audio/hsk4/hsk4_系统.wav' },
+      { hanzi: '功能', pinyin: 'gōngnéng', meaning: 'fonctionnalité', meaningEn: 'functionality', audio: 'audio/hsk5/hsk5_功能.wav' },
+      { hanzi: '功用', pinyin: 'gōngyòng', meaning: 'utilité', meaningEn: 'utility', audio: 'audio/hsk6/hsk6_功用.wav' },
+      { hanzi: '用途', pinyin: 'yòngtú', meaning: 'usage, destination', meaningEn: 'use, purpose', audio: 'audio/hsk5/hsk5_用途.wav' },
+      { hanzi: '系统', pinyin: 'xìtǒng', meaning: 'système', meaningEn: 'system', audio: 'audio/hsk4/hsk4_系统.wav' },
       { hanzi: '药', pinyin: 'yào', meaning: 'médicament', meaningEn: 'medicine', audio: 'audio/hsk2/hsk2_药.wav' }
     ],
     tip:
@@ -704,11 +704,11 @@ export const c12NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '方便 (fāngbiàn) = CONVENIENT / handy (most universal, oral and written). 这里很方便 / 您方便吗？. Broadest. Also: 方便 = euphemism for going to toilet (mafan: 我去方便一下). 便利 (biànlì) = CONVENIENCE (noun: a convenient service / facility). 便利店 (convenience store), 提供便利. More written/marketing. 便捷 (biànjié) = CONVENIENT AND FAST (combines convenience + efficiency). 便捷的支付方式 (convenient and fast payment method). Connotes TECHNOLOGY / digital. Hierarchy: 方便 (universal) < 便利 (convenience service) < 便捷 (fast+convenient tech). In 2026, 便捷 has become the Chinese digital marketing keyword.',
     items: [
-      { hanzi: '方便', pinyin: 'fāng biàn', meaning: 'pratique', meaningEn: 'convenient', audio: 'audio/hsk2/hsk2_方便.wav' },
-      { hanzi: '便利', pinyin: 'biàn lì', meaning: 'commodité', meaningEn: 'convenience', audio: 'audio/hsk5/hsk5_便利.wav' },
-      { hanzi: '便捷', pinyin: 'biàn jié', meaning: 'pratique et rapide', meaningEn: 'convenient & fast', audio: 'audio/hsk6/hsk6_便捷.wav' },
-      { hanzi: '便利店', pinyin: 'biàn lì diàn', meaning: 'convenience store', meaningEn: 'convenience store', audio: 'audio/hsk5/hsk5_便利店.wav' },
-      { hanzi: '支付', pinyin: 'zhī fù', meaning: 'paiement', meaningEn: 'payment', audio: 'audio/hsk6/hsk6_支付.wav' }
+      { hanzi: '方便', pinyin: 'fāngbiàn', meaning: 'pratique', meaningEn: 'convenient', audio: 'audio/hsk2/hsk2_方便.wav' },
+      { hanzi: '便利', pinyin: 'biànlì', meaning: 'commodité', meaningEn: 'convenience', audio: 'audio/hsk5/hsk5_便利.wav' },
+      { hanzi: '便捷', pinyin: 'biànjié', meaning: 'pratique et rapide', meaningEn: 'convenient & fast', audio: 'audio/hsk6/hsk6_便捷.wav' },
+      { hanzi: '便利店', pinyin: 'biànlìdiàn', meaning: 'convenience store', meaningEn: 'convenience store', audio: 'audio/hsk5/hsk5_便利店.wav' },
+      { hanzi: '支付', pinyin: 'zhīfù', meaning: 'paiement', meaningEn: 'payment', audio: 'audio/hsk6/hsk6_支付.wav' }
     ],
     tip:
       'PIÈGE social : « 您方便的时候 » (quand ça vous arrange) est utile en pro. MAIS « 您方便一下 » (faites-vous une commodité) est ambigu et peut sonner comme aller aux toilettes. Préfère « 您方便的时候 + 联系我 » pour éviter le malentendu.',
@@ -731,11 +731,11 @@ export const c12NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '依据 (yījù) = BASED ON / refer to (a fact, norm, rule). 依据法律 X (per law X). More formal/legal. Often + reference noun. 凭借 (píngjiè) = BY VIRTUE OF (an asset, skill, quality). 凭借自己的能力 / 凭借努力. Connotes the instrument of success. More written. 依靠 (yīkào) = RELY ON / lean on (a person, support). 依靠父母 / 依靠政府. Connotes DEPENDENCE/support. More oral and emotional. Hierarchy: 依据 (formal reference) ≠ 凭借 (personal asset) ≠ 依靠 (dependent support). «凭借自己的努力获得成功» = thanks to own efforts (Chinese virtue of autonomy).',
     items: [
-      { hanzi: '依据', pinyin: 'yī jù', meaning: 'sur la base de', meaningEn: 'based on', audio: 'audio/hsk6/hsk6_依据.wav' },
-      { hanzi: '凭借', pinyin: 'píng jiè', meaning: 'grâce à', meaningEn: 'by virtue of', audio: 'audio/hsk6/hsk6_凭借.wav' },
-      { hanzi: '依靠', pinyin: 'yī kào', meaning: 'compter sur', meaningEn: 'rely on', audio: 'audio/hsk5/hsk5_依靠.wav' },
-      { hanzi: '法律', pinyin: 'fǎ lǜ', meaning: 'loi', meaningEn: 'law', audio: 'audio/hsk4/hsk4_法律.wav' },
-      { hanzi: '努力', pinyin: 'nǔ lì', meaning: 'effort', meaningEn: 'effort', audio: 'audio/hsk3/hsk3_努力.wav' }
+      { hanzi: '依据', pinyin: 'yījù', meaning: 'sur la base de', meaningEn: 'based on', audio: 'audio/hsk6/hsk6_依据.wav' },
+      { hanzi: '凭借', pinyin: 'píngjiè', meaning: 'grâce à', meaningEn: 'by virtue of', audio: 'audio/hsk6/hsk6_凭借.wav' },
+      { hanzi: '依靠', pinyin: 'yīkào', meaning: 'compter sur', meaningEn: 'rely on', audio: 'audio/hsk5/hsk5_依靠.wav' },
+      { hanzi: '法律', pinyin: 'fǎlǜ', meaning: 'loi', meaningEn: 'law', audio: 'audio/hsk4/hsk4_法律.wav' },
+      { hanzi: '努力', pinyin: 'nǔlì', meaning: 'effort', meaningEn: 'effort', audio: 'audio/hsk3/hsk3_努力.wav' }
     ],
     tip:
       '« 凭借自己的努力 » est culturellement TRÈS valorisé en CV/entretien chinois. Inverse : « 依靠家人 » sonne dépendant et faible. Pour un cadre, toujours mettre en avant le 凭借 (mérite personnel) plutôt que le 依靠 (soutien externe).',
@@ -761,11 +761,11 @@ export const c12NuancesM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '减少 (jiǎnshǎo) = REDUCE in quantity (most universal). 减少污染 / 减少开支. 减轻 (jiǎnqīng) = LIGHTEN (a weight, pain, burden). 减轻负担 (lighten the burden), 减轻痛苦 (relieve pain). Connotes RELIEF. 削减 (xuējiǎn) = SLASH, cut drastically (budgets, positions). 削减预算 (slash the budget), 削减人员 (cut staff). Brutal verb, often negative. Hierarchy: 减轻 (gentle alleviate) < 减少 (neutral reduce) < 削减 (brutal slash). In econ op-eds, 削减 marks austerity; 减轻 marks compassion; 减少 stays neutral/technical.',
     items: [
-      { hanzi: '减少', pinyin: 'jiǎn shǎo', meaning: 'réduire', meaningEn: 'reduce', audio: 'audio/hsk4/hsk4_减少.wav' },
-      { hanzi: '减轻', pinyin: 'jiǎn qīng', meaning: 'alléger', meaningEn: 'lighten', audio: 'audio/hsk5/hsk5_减轻.wav' },
-      { hanzi: '削减', pinyin: 'xuē jiǎn', meaning: 'sabrer, couper', meaningEn: 'slash', audio: 'audio/hsk6/hsk6_削减.wav' },
-      { hanzi: '负担', pinyin: 'fù dān', meaning: 'fardeau', meaningEn: 'burden', audio: 'audio/hsk5/hsk5_负担.wav' },
-      { hanzi: '预算', pinyin: 'yù suàn', meaning: 'budget', meaningEn: 'budget', audio: 'audio/hsk5/hsk5_预算.wav' }
+      { hanzi: '减少', pinyin: 'jiǎnshǎo', meaning: 'réduire', meaningEn: 'reduce', audio: 'audio/hsk4/hsk4_减少.wav' },
+      { hanzi: '减轻', pinyin: 'jiǎnqīng', meaning: 'alléger', meaningEn: 'lighten', audio: 'audio/hsk5/hsk5_减轻.wav' },
+      { hanzi: '削减', pinyin: 'xuējiǎn', meaning: 'sabrer, couper', meaningEn: 'slash', audio: 'audio/hsk6/hsk6_削减.wav' },
+      { hanzi: '负担', pinyin: 'fùdān', meaning: 'fardeau', meaningEn: 'burden', audio: 'audio/hsk5/hsk5_负担.wav' },
+      { hanzi: '预算', pinyin: 'yùsuàn', meaning: 'budget', meaningEn: 'budget', audio: 'audio/hsk5/hsk5_预算.wav' }
     ],
     tip:
       'Quand un dirigeant chinois dit « 我们将削减预算 » plutôt que « 我们将减少预算 », il signale FERMETÉ et choix difficile assumé. Le choix lexical révèle l\'intention politique. À écouter avec attention dans les conférences de presse.',
@@ -790,11 +790,11 @@ export const c12NuancesM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '增加 (zēngjiā) = INCREASE a QUANTITY (number, sum). 增加人手 / 增加预算. Most universal quantitative. 提高 (tígāo) = RAISE A LEVEL (quality, capacity, price). 提高效率 / 提高价格 / 提高生活质量. On the qualitative scale. 增长 (zēngzhǎng) = GROW continuously over time (economic, demographic). 经济增长 / 人口增长. Connotes SUSTAINED progression. Hierarchy: 增加 (one-off quantity) ≠ 提高 (qualitative level) ≠ 增长 (continuous growth). Mistake: 提高人口 ✗ → 增长人口 ✓ or 增加人口 ✓. Population has GROWTH, not raised quality.',
     items: [
-      { hanzi: '增加', pinyin: 'zēng jiā', meaning: 'augmenter (quantité)', meaningEn: 'increase (quantity)', audio: 'audio/hsk4/hsk4_增加.wav' },
-      { hanzi: '提高', pinyin: 'tí gāo', meaning: 'élever (niveau)', meaningEn: 'raise (level)', audio: 'audio/hsk3/hsk3_提高.wav' },
-      { hanzi: '增长', pinyin: 'zēng zhǎng', meaning: 'croître (continu)', meaningEn: 'grow (continuous)', audio: 'audio/hsk5/hsk5_增长.wav' },
-      { hanzi: '效率', pinyin: 'xiào lǜ', meaning: 'efficacité', meaningEn: 'efficiency', audio: 'audio/hsk5/hsk5_效率.wav' },
-      { hanzi: '人口', pinyin: 'rén kǒu', meaning: 'population', meaningEn: 'population', audio: 'audio/hsk4/hsk4_人口.wav' }
+      { hanzi: '增加', pinyin: 'zēngjiā', meaning: 'augmenter (quantité)', meaningEn: 'increase (quantity)', audio: 'audio/hsk4/hsk4_增加.wav' },
+      { hanzi: '提高', pinyin: 'tígāo', meaning: 'élever (niveau)', meaningEn: 'raise (level)', audio: 'audio/hsk3/hsk3_提高.wav' },
+      { hanzi: '增长', pinyin: 'zēngzhǎng', meaning: 'croître (continu)', meaningEn: 'grow (continuous)', audio: 'audio/hsk5/hsk5_增长.wav' },
+      { hanzi: '效率', pinyin: 'xiàolǜ', meaning: 'efficacité', meaningEn: 'efficiency', audio: 'audio/hsk5/hsk5_效率.wav' },
+      { hanzi: '人口', pinyin: 'rénkǒu', meaning: 'population', meaningEn: 'population', audio: 'audio/hsk4/hsk4_人口.wav' }
     ],
     tip:
       '3 collocations C1 à mémoriser comme un trio inséparable : 增加预算 (augmenter le budget — quantité), 提高效率 (améliorer l\'efficacité — niveau), 经济增长 (croissance économique — continue). Erreur de l\'un = erreur grave de niveau.',
@@ -820,11 +820,11 @@ export const c12NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '来往 (láiwǎng) = COME AND GO (physical movement OR social contact). 街上来往的人很多 (many people coming and going on the street). 我和他没有来往 = I have no contact with him. 往来 (wǎnglái) = EXCHANGES (formal, especially commercial / diplomatic). 商业往来 (commercial relations), 国家间的往来 (inter-state exchanges). More formal. 交往 (jiāowǎng) = social INTERACTION, sustained RELATIONSHIP (with idea of DURATION). 他们交往多年 (they\'ve interacted for years). Also: 交往 = dating someone (couple). Hierarchy: 来往 (movement / occasional contact) < 交往 (sustained relationship) < 往来 (formal commercial/diplomatic).',
     items: [
-      { hanzi: '来往', pinyin: 'lái wǎng', meaning: 'aller et venir', meaningEn: 'come and go', audio: 'audio/hsk4/hsk4_来往.wav' },
-      { hanzi: '往来', pinyin: 'wǎng lái', meaning: 'échanges (formel)', meaningEn: 'exchanges (formal)', audio: 'audio/hsk6/hsk6_往来.wav' },
-      { hanzi: '交往', pinyin: 'jiāo wǎng', meaning: 'fréquenter', meaningEn: 'interact, date', audio: 'audio/hsk5/hsk5_交往.wav' },
-      { hanzi: '商业', pinyin: 'shāng yè', meaning: 'commercial', meaningEn: 'commercial', audio: 'audio/hsk5/hsk5_商业.wav' },
-      { hanzi: '国家', pinyin: 'guó jiā', meaning: 'pays', meaningEn: 'country', audio: 'audio/hsk2/hsk2_国家.wav' }
+      { hanzi: '来往', pinyin: 'láiwǎng', meaning: 'aller et venir', meaningEn: 'come and go', audio: 'audio/hsk4/hsk4_来往.wav' },
+      { hanzi: '往来', pinyin: 'wǎnglái', meaning: 'échanges (formel)', meaningEn: 'exchanges (formal)', audio: 'audio/hsk6/hsk6_往来.wav' },
+      { hanzi: '交往', pinyin: 'jiāowǎng', meaning: 'fréquenter', meaningEn: 'interact, date', audio: 'audio/hsk5/hsk5_交往.wav' },
+      { hanzi: '商业', pinyin: 'shāngyè', meaning: 'commercial', meaningEn: 'commercial', audio: 'audio/hsk5/hsk5_商业.wav' },
+      { hanzi: '国家', pinyin: 'guójiā', meaning: 'pays', meaningEn: 'country', audio: 'audio/hsk2/hsk2_国家.wav' }
     ],
     tip:
       'AMBIGUÏTÉ ROMANTIQUE : « 我们在交往 » = on sort ensemble (officiellement en couple). Si tu veux dire « on se voit / on est en contact », préfère « 我们有联系 » ou « 我们经常见面 ». 交往 vis-à-vis d\'une personne = couple, vis-à-vis d\'un groupe = fréquentation neutre.',
@@ -849,11 +849,11 @@ export const c12NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '经历 (jīnglì) = LIVED EXPERIENCE (events traversed). 这是一段难忘的经历 (this was an unforgettable experience). Concrete, EVENTUAL. Verb: have lived through. 经验 (jīngyàn) = ACCUMULATED EXPERIENCE (know-how). 我有 5 年的经验 (I have 5 years of experience). Professional competence. 阅历 (yuèlì) = LIFE EXPERIENCE (wisdom, perspective, worldly knowledge). 他阅历丰富 (he has lived much, has perspective). More written, nobler. Connotes WISDOM accumulated through life, not just pro. Hierarchy: 经历 (lived event) < 经验 (pro know-how) < 阅历 (broad life wisdom).',
     items: [
-      { hanzi: '经历', pinyin: 'jīng lì', meaning: 'vivre (expérience)', meaningEn: 'undergo, experience', audio: 'audio/hsk4/hsk4_经历.wav' },
-      { hanzi: '经验', pinyin: 'jīng yàn', meaning: 'expérience pro', meaningEn: 'experience (pro)', audio: 'audio/hsk3/hsk3_经验.wav' },
-      { hanzi: '阅历', pinyin: 'yuè lì', meaning: 'expérience de la vie', meaningEn: 'life experience', audio: 'audio/hsk6/hsk6_阅历.wav' },
-      { hanzi: '难忘', pinyin: 'nán wàng', meaning: 'inoubliable', meaningEn: 'unforgettable', audio: 'audio/hsk5/hsk5_难忘.wav' },
-      { hanzi: '丰富', pinyin: 'fēng fù', meaning: 'riche, abondant', meaningEn: 'rich, abundant', audio: 'audio/hsk4/hsk4_丰富.wav' }
+      { hanzi: '经历', pinyin: 'jīnglì', meaning: 'vivre (expérience)', meaningEn: 'undergo, experience', audio: 'audio/hsk4/hsk4_经历.wav' },
+      { hanzi: '经验', pinyin: 'jīngyàn', meaning: 'expérience pro', meaningEn: 'experience (pro)', audio: 'audio/hsk3/hsk3_经验.wav' },
+      { hanzi: '阅历', pinyin: 'yuèlì', meaning: 'expérience de la vie', meaningEn: 'life experience', audio: 'audio/hsk6/hsk6_阅历.wav' },
+      { hanzi: '难忘', pinyin: 'nánwàng', meaning: 'inoubliable', meaningEn: 'unforgettable', audio: 'audio/hsk5/hsk5_难忘.wav' },
+      { hanzi: '丰富', pinyin: 'fēngfù', meaning: 'riche, abondant', meaningEn: 'rich, abundant', audio: 'audio/hsk4/hsk4_丰富.wav' }
     ],
     tip:
       'Compliment soutenu pour un senior chinois : « 您阅历丰富，希望能给我一些指点 » (votre expérience de vie est riche, j\'espère vos conseils). 阅历 reconnaît la SAGESSE et pas seulement la pro — flatte un senior beaucoup mieux que 经验.',
@@ -881,11 +881,11 @@ export const c12NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '质量 (zhìliàng) = MATERIAL QUALITY (product, work). 这件衣服质量很好 (this shirt is good quality). Most universal for an object/product. 品质 (pǐnzhì) = INTRINSIC / moral QUALITY (noble object OR human character). 高品质的产品 (premium product), 优秀的品质 (excellent moral qualities). More marketing/moral. 素质 (sùzhì) = HUMAN QUALITY (education, civic behavior). 国民素质 (citizens\' civic quality), 提高素质. Connotes SOCIAL/CIVIC LEVEL. Hierarchy: 质量 (material) < 品质 (noble object/morality) < 素质 (human civic). Mistake: 这个人质量好 ✗ → 这个人素质高 ✓ (human quality is 素质).',
     items: [
-      { hanzi: '质量', pinyin: 'zhì liàng', meaning: 'qualité (matériel)', meaningEn: 'quality (material)', audio: 'audio/hsk3/hsk3_质量.wav' },
-      { hanzi: '品质', pinyin: 'pǐn zhì', meaning: 'qualité (noble)', meaningEn: 'quality (noble)', audio: 'audio/hsk6/hsk6_品质.wav' },
-      { hanzi: '素质', pinyin: 'sù zhì', meaning: 'qualité (humaine)', meaningEn: 'human quality', audio: 'audio/hsk5/hsk5_素质.wav' },
-      { hanzi: '产品', pinyin: 'chǎn pǐn', meaning: 'produit', meaningEn: 'product', audio: 'audio/hsk4/hsk4_产品.wav' },
-      { hanzi: '国民', pinyin: 'guó mín', meaning: 'citoyen', meaningEn: 'citizen', audio: 'audio/hsk6/hsk6_国民.wav' }
+      { hanzi: '质量', pinyin: 'zhìliàng', meaning: 'qualité (matériel)', meaningEn: 'quality (material)', audio: 'audio/hsk3/hsk3_质量.wav' },
+      { hanzi: '品质', pinyin: 'pǐnzhì', meaning: 'qualité (noble)', meaningEn: 'quality (noble)', audio: 'audio/hsk6/hsk6_品质.wav' },
+      { hanzi: '素质', pinyin: 'sùzhì', meaning: 'qualité (humaine)', meaningEn: 'human quality', audio: 'audio/hsk5/hsk5_素质.wav' },
+      { hanzi: '产品', pinyin: 'chǎnpǐn', meaning: 'produit', meaningEn: 'product', audio: 'audio/hsk4/hsk4_产品.wav' },
+      { hanzi: '国民', pinyin: 'guómín', meaning: 'citoyen', meaningEn: 'citizen', audio: 'audio/hsk6/hsk6_国民.wav' }
     ],
     tip:
       '« 国民素质 » est un concept TRÈS débattu en Chine — il englobe éducation, politesse, comportement public. Dans une discussion sociale, dire « 我们需要提高素质 » est socialement NOBLE et engageant. Apprends ce mot — il revient partout dans le débat civique.',
@@ -910,11 +910,11 @@ export const c12NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '一点 (yìdiǎn) = a little (NEUTRAL, oral and written). 我有一点累. Also negative: 一点也不累 = not at all tired. Universal. 丝毫 (sīháo) = THE SLIGHTEST (almost always NEGATIVE, written). 我没有丝毫的怀疑 = I have not the SLIGHTEST doubt. More emphatic than 一点. 毫无 (háowú) = HAVE NONE AT ALL (absolute negation, written). 毫无道理 (makes no sense), 毫无希望 (without any hope). 毫无 + abstract noun. Hierarchy: 一点 (neutral oral) < 丝毫 (emphatic written, mostly negative) < 毫无 (absolute, abstract). In C1+ writing, 毫无 and 丝毫 mark formal-register lexical mastery.',
     items: [
-      { hanzi: '一点', pinyin: 'yì diǎn', meaning: 'un peu', meaningEn: 'a little', audio: 'audio/hsk1/hsk1_一点.wav' },
-      { hanzi: '丝毫', pinyin: 'sī háo', meaning: 'le moindre', meaningEn: 'the slightest', audio: 'audio/hsk6/hsk6_丝毫.wav' },
-      { hanzi: '毫无', pinyin: 'háo wú', meaning: 'aucun(e) (absolu)', meaningEn: 'none at all', audio: 'audio/hsk6/hsk6_毫无.wav' },
-      { hanzi: '怀疑', pinyin: 'huái yí', meaning: 'douter', meaningEn: 'doubt', audio: 'audio/hsk4/hsk4_怀疑.wav' },
-      { hanzi: '道理', pinyin: 'dào lǐ', meaning: 'raison, sens', meaningEn: 'reason, sense', audio: 'audio/hsk4/hsk4_道理.wav' }
+      { hanzi: '一点', pinyin: 'yìdiǎn', meaning: 'un peu', meaningEn: 'a little', audio: 'audio/hsk1/hsk1_一点.wav' },
+      { hanzi: '丝毫', pinyin: 'sīháo', meaning: 'le moindre', meaningEn: 'the slightest', audio: 'audio/hsk6/hsk6_丝毫.wav' },
+      { hanzi: '毫无', pinyin: 'háowú', meaning: 'aucun(e) (absolu)', meaningEn: 'none at all', audio: 'audio/hsk6/hsk6_毫无.wav' },
+      { hanzi: '怀疑', pinyin: 'huáiyí', meaning: 'douter', meaningEn: 'doubt', audio: 'audio/hsk4/hsk4_怀疑.wav' },
+      { hanzi: '道理', pinyin: 'dàolǐ', meaning: 'raison, sens', meaningEn: 'reason, sense', audio: 'audio/hsk4/hsk4_道理.wav' }
     ],
     tip:
       'Pour réfuter en débat C1+ : « 您的论点毫无说服力 » (votre argument n\'a AUCUNE force de conviction). 毫无 + 说服力/根据/道理 = combo percutant pour démolir un opposant SANS l\'insulter directement.',
@@ -947,11 +947,11 @@ export const c12ChengyuAdvancedM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '三顾茅庐 («3 visits to the cottage»): Liu Bei, hearing of the reclusive genius 诸葛亮, comes 3 times to his hut. The first 2 times the sage is absent. The 3rd, Liu Bei waits hours in the snow. Moved, Zhuge Liang agrees to become his strategist. Modern sense: RECRUIT with perseverance and humility. Phrase: 我们要有三顾茅庐的精神 («we need the 3-visits spirit»). 桃园结义 («peach garden oath»): Liu Bei, Guan Yu and Zhang Fei swear blood brotherhood in a flowering orchard. Model of UNBREAKABLE FRIENDSHIP. If 2 Chinese friends say «我们桃园结义», it\'s a strong compliment on their bond.',
     items: [
-      { hanzi: '三顾茅庐', pinyin: 'sān gù máo lú', meaning: '3 visites pour recruter', meaningEn: '3 humble visits', audio: 'audio/hsk6/hsk6_三顾.wav' },
-      { hanzi: '桃园结义', pinyin: 'táo yuán jié yì', meaning: 'fraternité jurée', meaningEn: 'sworn brotherhood', audio: 'audio/hsk6/hsk6_桃园.wav' },
-      { hanzi: '诸葛亮', pinyin: 'zhū gě liàng', meaning: 'Zhuge Liang (stratège)', meaningEn: 'Zhuge Liang', audio: 'audio/hsk6/hsk6_诸葛.wav' },
-      { hanzi: '刘备', pinyin: 'liú bèi', meaning: 'Liu Bei (empereur Shu)', meaningEn: 'Liu Bei', audio: 'audio/hsk6/hsk6_刘备.wav' },
-      { hanzi: '精神', pinyin: 'jīng shén', meaning: 'esprit, état d\'esprit', meaningEn: 'spirit', audio: 'audio/hsk4/hsk4_精神.wav' }
+      { hanzi: '三顾茅庐', pinyin: 'sāngùmáolú', meaning: '3 visites pour recruter', meaningEn: '3 humble visits', audio: 'audio/hsk6/hsk6_三顾.wav' },
+      { hanzi: '桃园结义', pinyin: 'táoyuán jiéyì', meaning: 'fraternité jurée', meaningEn: 'sworn brotherhood', audio: 'audio/hsk6/hsk6_桃园.wav' },
+      { hanzi: '诸葛亮', pinyin: 'zhūgěliàng', meaning: 'Zhuge Liang (stratège)', meaningEn: 'Zhuge Liang', audio: 'audio/hsk6/hsk6_诸葛.wav' },
+      { hanzi: '刘备', pinyin: 'liúbèi', meaning: 'Liu Bei (empereur Shu)', meaningEn: 'Liu Bei', audio: 'audio/hsk6/hsk6_刘备.wav' },
+      { hanzi: '精神', pinyin: 'jīngshén', meaning: 'esprit, état d\'esprit', meaningEn: 'spirit', audio: 'audio/hsk4/hsk4_精神.wav' }
     ],
     tip:
       'Pour recruter un talent rare, dis : « 我会三顾茅庐 ». Tu signales que tu prends la chasse au sérieux. Le candidat sait que tu connais la culture chinoise du recrutement basée sur l\'INSISTANCE respectueuse. Effet immédiat sur l\'engagement de ton interlocuteur.',
@@ -977,11 +977,11 @@ export const c12ChengyuAdvancedM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '望梅止渴 («see plums to quench thirst»): Cao Cao, marching with thirsty troops, tells them there\'s a plum orchard over the hill. Salivation keeps them going to the next spring. Meaning: CONSOLE oneself with illusory hope. Modern use: 这只是望梅止渴 = it\'s just self-deception. 草船借箭 («borrow arrows with straw boats»): Zhuge Liang, ordered to produce 100,000 arrows in 3 days, sends straw-covered boats toward the enemy camp at night. Thinking it\'s an attack, the enemy fires thousands of arrows that stick in the straw. Modern sense: GENIUS RUSE that turns the adversary\'s resources. Loved by Chinese entrepreneurs.',
     items: [
-      { hanzi: '望梅止渴', pinyin: 'wàng méi zhǐ kě', meaning: 'consolation illusoire', meaningEn: 'wishful thinking', audio: 'audio/hsk6/hsk6_望梅.wav' },
-      { hanzi: '草船借箭', pinyin: 'cǎo chuán jiè jiàn', meaning: 'ruse géniale', meaningEn: 'genius ruse', audio: 'audio/hsk6/hsk6_草船.wav' },
-      { hanzi: '曹操', pinyin: 'cáo cāo', meaning: 'Cao Cao', meaningEn: 'Cao Cao', audio: 'audio/hsk6/hsk6_曹操.wav' },
-      { hanzi: '战略', pinyin: 'zhàn lüè', meaning: 'stratégie', meaningEn: 'strategy', audio: 'audio/hsk5/hsk5_战略.wav' },
-      { hanzi: '资源', pinyin: 'zī yuán', meaning: 'ressources', meaningEn: 'resources', audio: 'audio/hsk5/hsk5_资源.wav' }
+      { hanzi: '望梅止渴', pinyin: 'wàngméizhǐkě', meaning: 'consolation illusoire', meaningEn: 'wishful thinking', audio: 'audio/hsk6/hsk6_望梅.wav' },
+      { hanzi: '草船借箭', pinyin: 'cǎochuánjièjiàn', meaning: 'ruse géniale', meaningEn: 'genius ruse', audio: 'audio/hsk6/hsk6_草船.wav' },
+      { hanzi: '曹操', pinyin: 'cáocāo', meaning: 'Cao Cao', meaningEn: 'Cao Cao', audio: 'audio/hsk6/hsk6_曹操.wav' },
+      { hanzi: '战略', pinyin: 'zhànlüè', meaning: 'stratégie', meaningEn: 'strategy', audio: 'audio/hsk5/hsk5_战略.wav' },
+      { hanzi: '资源', pinyin: 'zīyuán', meaning: 'ressources', meaningEn: 'resources', audio: 'audio/hsk5/hsk5_资源.wav' }
     ],
     tip:
       'Pour décrire un PIVOT entrepreneurial intelligent (Airbnb qui transforme appartements en hôtels, Uber chauffeurs particuliers), tu peux dire : « 这是现代版的草船借箭 » (c\'est un草船借箭 moderne). Sonne lettré ET pertinent — combo gagnant en pitch business chinois.',
@@ -1008,11 +1008,11 @@ export const c12ChengyuAdvancedM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '悬梁刺股 («hang braid, prick thigh») merges 2 anecdotes: 孙敬 (Sun Jing, Han) tied his braid to a ceiling beam to avoid falling asleep reading; 苏秦 (Su Qin, Warring States) pricked his thigh with an awl when sleepy. Both became high officials. Meaning: study at the COST OF ONESELF. 凿壁偷光 («drill wall, steal light»): 匡衡 (Kuang Heng, Han), too poor for candles, drilled his neighbor\'s wall to use THEIR light. Became Prime Minister. Meaning: STUDY DESPITE POVERTY. These 2 chengyu are on all Chinese school walls. Common phrase: 我们要发扬悬梁刺股的精神 («we must perpetuate the spirit of sacrifice through study»).',
     items: [
-      { hanzi: '悬梁刺股', pinyin: 'xuán liáng cì gǔ', meaning: 'étudier au prix de soi', meaningEn: 'study at all costs', audio: 'audio/hsk6/hsk6_悬梁.wav' },
-      { hanzi: '凿壁偷光', pinyin: 'záo bì tōu guāng', meaning: 'étudier dans pauvreté', meaningEn: 'study in poverty', audio: 'audio/hsk6/hsk6_凿壁.wav' },
-      { hanzi: '苏秦', pinyin: 'sū qín', meaning: 'Su Qin (stratège)', meaningEn: 'Su Qin', audio: 'audio/hsk6/hsk6_苏秦.wav' },
-      { hanzi: '发扬', pinyin: 'fā yáng', meaning: 'perpétuer (esprit)', meaningEn: 'carry forward', audio: 'audio/hsk6/hsk6_发扬.wav' },
-      { hanzi: '勤奋', pinyin: 'qín fèn', meaning: 'assidu', meaningEn: 'diligent', audio: 'audio/hsk6/hsk6_勤奋.wav' }
+      { hanzi: '悬梁刺股', pinyin: 'xuánliángcìgǔ', meaning: 'étudier au prix de soi', meaningEn: 'study at all costs', audio: 'audio/hsk6/hsk6_悬梁.wav' },
+      { hanzi: '凿壁偷光', pinyin: 'záobìtōuguāng', meaning: 'étudier dans pauvreté', meaningEn: 'study in poverty', audio: 'audio/hsk6/hsk6_凿壁.wav' },
+      { hanzi: '苏秦', pinyin: 'sūqín', meaning: 'Su Qin (stratège)', meaningEn: 'Su Qin', audio: 'audio/hsk6/hsk6_苏秦.wav' },
+      { hanzi: '发扬', pinyin: 'fāyáng', meaning: 'perpétuer (esprit)', meaningEn: 'carry forward', audio: 'audio/hsk6/hsk6_发扬.wav' },
+      { hanzi: '勤奋', pinyin: 'qínfèn', meaning: 'assidu', meaningEn: 'diligent', audio: 'audio/hsk6/hsk6_勤奋.wav' }
     ],
     tip:
       'Pour féliciter un étudiant chinois qui réussit après gros effort : « 你真有悬梁刺股的精神 » — compliment ULTIME, montre que tu reconnais le sacrifice. À utiliser pour un étudiant chinois qui a réussi son 高考, soutenu sa thèse, etc. Effet émotionnel garanti.',
@@ -1038,11 +1038,11 @@ export const c12ChengyuAdvancedM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '韦编三绝 («[book] straps broken 3 times»): Confucius, passionate reader of 易经 (Yìjīng, Book of Changes), reportedly read his copy so often that the leather straps binding the bamboo slats broke 3 times. Meaning: ASSIDUOUS and deep reading. For a monumental intellectual work: 这本书我已经韦编三绝 (I\'ve reread this book dozens of times). 学而不厌 («study without weariness») comes from 论语 (Analects): 学而不厌，诲人不倦 (study without tiring, teach without flagging). Motto of the ideal teacher. To praise a mentor: «老师真是学而不厌». Intellectual combo: citing these 2 chengyu in an education discussion = IMMEDIATE C1.2 signal.',
     items: [
-      { hanzi: '韦编三绝', pinyin: 'wéi biān sān jué', meaning: 'lecture obsessionnelle', meaningEn: 'obsessive reading', audio: 'audio/hsk6/hsk6_韦编.wav' },
-      { hanzi: '学而不厌', pinyin: 'xué ér bù yàn', meaning: 'étudier sans se lasser', meaningEn: 'study tirelessly', audio: 'audio/hsk6/hsk6_学而.wav' },
-      { hanzi: '论语', pinyin: 'lún yǔ', meaning: 'Analectes (Confucius)', meaningEn: 'Analects', audio: 'audio/hsk6/hsk6_论语.wav' },
-      { hanzi: '诲人不倦', pinyin: 'huì rén bú juàn', meaning: 'enseigner sans se fatiguer', meaningEn: 'teach untiringly', audio: 'audio/hsk6/hsk6_诲人.wav' },
-      { hanzi: '易经', pinyin: 'yì jīng', meaning: 'Livre des Mutations', meaningEn: 'I Ching', audio: 'audio/hsk6/hsk6_易经.wav' }
+      { hanzi: '韦编三绝', pinyin: 'wéibiānsānjué', meaning: 'lecture obsessionnelle', meaningEn: 'obsessive reading', audio: 'audio/hsk6/hsk6_韦编.wav' },
+      { hanzi: '学而不厌', pinyin: 'xuéérbùyàn', meaning: 'étudier sans se lasser', meaningEn: 'study tirelessly', audio: 'audio/hsk6/hsk6_学而.wav' },
+      { hanzi: '论语', pinyin: 'lúnyǔ', meaning: 'Analectes (Confucius)', meaningEn: 'Analects', audio: 'audio/hsk6/hsk6_论语.wav' },
+      { hanzi: '诲人不倦', pinyin: 'huìrénbùjuàn', meaning: 'enseigner sans se fatiguer', meaningEn: 'teach untiringly', audio: 'audio/hsk6/hsk6_诲人.wav' },
+      { hanzi: '易经', pinyin: 'yìjīng', meaning: 'Livre des Mutations', meaningEn: 'I Ching', audio: 'audio/hsk6/hsk6_易经.wav' }
     ],
     tip:
       'Pour féliciter un mentor chinois qui t\'a transmis beaucoup : « 您是学而不厌，诲人不倦 ». Citation directe des 论语. Compliment SUPRÊME en milieu académique chinois — tu signales que tu connais les classiques + reconnais sa qualité. Combo gagnant.',
@@ -1070,11 +1070,11 @@ export const c12ChengyuAdvancedM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'A 歇后语 works in 2 steps: (1) an enigmatic scene, (2) a punchline revealing the meaning. Often the punchline rests on a PHONETIC PUN. Iconic example: 外甥打灯笼 — 照舅(旧). «The nephew holds the lantern: lights up his uncle (= as before)». 照舅 (zhào jiù, light the uncle) sounds like 照旧 (zhào jiù, as usual). Orally, you often say ONLY the 1st part: «这事啊，外甥打灯笼…» and the other laughs, completing internally. If you can place the 1st part + your listeners understand, it\'s a deep CULTURAL COMPLICITY moment. Learn 5-10 standard 歇后语 to deploy.',
     items: [
-      { hanzi: '歇后语', pinyin: 'xiē hòu yǔ', meaning: 'expression à chute', meaningEn: 'two-part allegorical', audio: 'audio/hsk6/hsk6_歇后.wav' },
-      { hanzi: '外甥', pinyin: 'wài shēng', meaning: 'neveu (côté maternel)', meaningEn: 'nephew (maternal)', audio: 'audio/hsk6/hsk6_外甥.wav' },
-      { hanzi: '灯笼', pinyin: 'dēng long', meaning: 'lanterne', meaningEn: 'lantern', audio: 'audio/hsk5/hsk5_灯笼.wav' },
-      { hanzi: '照旧', pinyin: 'zhào jiù', meaning: 'comme d\'habitude', meaningEn: 'as usual', audio: 'audio/hsk6/hsk6_照旧.wav' },
-      { hanzi: '谐音', pinyin: 'xié yīn', meaning: 'jeu phonétique', meaningEn: 'homophonic pun', audio: 'audio/hsk6/hsk6_谐音.wav' }
+      { hanzi: '歇后语', pinyin: 'xiēhòuyǔ', meaning: 'expression à chute', meaningEn: 'two-part allegorical', audio: 'audio/hsk6/hsk6_歇后.wav' },
+      { hanzi: '外甥', pinyin: 'wàishēng', meaning: 'neveu (côté maternel)', meaningEn: 'nephew (maternal)', audio: 'audio/hsk6/hsk6_外甥.wav' },
+      { hanzi: '灯笼', pinyin: 'dēnglóng', meaning: 'lanterne', meaningEn: 'lantern', audio: 'audio/hsk5/hsk5_灯笼.wav' },
+      { hanzi: '照旧', pinyin: 'zhàojiù', meaning: 'comme d\'habitude', meaningEn: 'as usual', audio: 'audio/hsk6/hsk6_照旧.wav' },
+      { hanzi: '谐音', pinyin: 'xiéyīn', meaning: 'jeu phonétique', meaningEn: 'homophonic pun', audio: 'audio/hsk6/hsk6_谐音.wav' }
     ],
     tip:
       'Le 歇后语 est UN test de complicité culturelle : si l\'autre RIT en complétant la chute, vous êtes au même niveau d\'initiation à la culture chinoise. Si l\'autre demande « 然后呢 ? » (et puis ?), tu as un débutant en face. Adapte ton registre.',
@@ -1096,11 +1096,11 @@ export const c12ChengyuAdvancedM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '黄鼠狼给鸡拜年 — 没安好心 («the weasel wishes the chicken Happy New Year — not with good intentions»). The weasel eats chickens: if she comes to wish them a happy new year, she\'s plotting. Meaning: BEWARE of suspicious friendliness. 八仙过海 — 各显神通 («the 8 Immortals cross the sea — each displays their power»). The 8 Taoist Immortals, having to cross the sea without boats, each use their magical power. Meaning: EVERYONE gives their best in a hard situation, cooperatively. To launch a collective project: «这次项目，我们八仙过海，各显神通!» Very motivating + culturally rich.',
     items: [
-      { hanzi: '黄鼠狼', pinyin: 'huáng shǔ láng', meaning: 'belette', meaningEn: 'weasel', audio: 'audio/hsk6/hsk6_黄鼠狼.wav' },
-      { hanzi: '拜年', pinyin: 'bài nián', meaning: 'souhaiter le Nouvel An', meaningEn: 'New Year visit', audio: 'audio/hsk5/hsk5_拜年.wav' },
-      { hanzi: '八仙', pinyin: 'bā xiān', meaning: '8 Immortels (taoïstes)', meaningEn: '8 Immortals', audio: 'audio/hsk6/hsk6_八仙.wav' },
-      { hanzi: '神通', pinyin: 'shén tōng', meaning: 'pouvoir magique', meaningEn: 'magical power', audio: 'audio/hsk6/hsk6_神通.wav' },
-      { hanzi: '各显', pinyin: 'gè xiǎn', meaning: 'chacun déploie', meaningEn: 'each shows', audio: 'audio/hsk6/hsk6_各.wav' }
+      { hanzi: '黄鼠狼', pinyin: 'huángshǔláng', meaning: 'belette', meaningEn: 'weasel', audio: 'audio/hsk6/hsk6_黄鼠狼.wav' },
+      { hanzi: '拜年', pinyin: 'bàinián', meaning: 'souhaiter le Nouvel An', meaningEn: 'New Year visit', audio: 'audio/hsk5/hsk5_拜年.wav' },
+      { hanzi: '八仙', pinyin: 'bāxiān', meaning: '8 Immortels (taoïstes)', meaningEn: '8 Immortals', audio: 'audio/hsk6/hsk6_八仙.wav' },
+      { hanzi: '神通', pinyin: 'shéntōng', meaning: 'pouvoir magique', meaningEn: 'magical power', audio: 'audio/hsk6/hsk6_神通.wav' },
+      { hanzi: '各显', pinyin: 'gèxiǎn', meaning: 'chacun déploie', meaningEn: 'each shows', audio: 'audio/hsk6/hsk6_各.wav' }
     ],
     tip:
       'Pour lancer un kickoff de projet créatif chinois, dis : « 这次项目，我们八仙过海，各显神通 ! » L\'équipe entend : « chacun a un don unique, qu\'il l\'apporte ». Effet motivant immédiat. Bien plus chic que « let\'s do our best ». Adopte-le.',
@@ -1135,11 +1135,11 @@ export const c12BusinessM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '关系 (guānxi) isn\'t declared, it\'s BUILT through long-term investment. Base resources: 同学 (university classmates — extremely strong relation in China), 同乡 (people from the same province), 战友 (military comrades), 老朋友 (old friends). Mechanics: invite each other to eat 吃饭, give gifts 送礼 (never excessive lest discomfort), invite to weddings and funerals, help concretely (CV, intro to a doctor, admin issue). RECIPROCITY is the golden rule — receiving without giving = closing yourself off. The worst: asking a favor of someone WITHOUT prior 关系 — perceived as rude. Build first, ask later.',
     items: [
-      { hanzi: '关系', pinyin: 'guān xi', meaning: 'réseau, lien', meaningEn: 'connections', audio: 'audio/hsk3/hsk3_关系.wav' },
-      { hanzi: '同学', pinyin: 'tóng xué', meaning: 'camarade de classe', meaningEn: 'classmate', audio: 'audio/hsk1/hsk1_同学.wav' },
-      { hanzi: '老乡', pinyin: 'lǎo xiāng', meaning: 'compatriote provincial', meaningEn: 'fellow provincial', audio: 'audio/hsk5/hsk5_老乡.wav' },
-      { hanzi: '送礼', pinyin: 'sòng lǐ', meaning: 'offrir un cadeau', meaningEn: 'give a gift', audio: 'audio/hsk5/hsk5_送礼.wav' },
-      { hanzi: '互相', pinyin: 'hù xiāng', meaning: 'mutuellement', meaningEn: 'mutually', audio: 'audio/hsk4/hsk4_互相.wav' }
+      { hanzi: '关系', pinyin: 'guānxì', meaning: 'réseau, lien', meaningEn: 'connections', audio: 'audio/hsk3/hsk3_关系.wav' },
+      { hanzi: '同学', pinyin: 'tóngxué', meaning: 'camarade de classe', meaningEn: 'classmate', audio: 'audio/hsk1/hsk1_同学.wav' },
+      { hanzi: '老乡', pinyin: 'lǎoxiāng', meaning: 'compatriote provincial', meaningEn: 'fellow provincial', audio: 'audio/hsk5/hsk5_老乡.wav' },
+      { hanzi: '送礼', pinyin: 'sònglǐ', meaning: 'offrir un cadeau', meaningEn: 'give a gift', audio: 'audio/hsk5/hsk5_送礼.wav' },
+      { hanzi: '互相', pinyin: 'hùxiāng', meaning: 'mutuellement', meaningEn: 'mutually', audio: 'audio/hsk4/hsk4_互相.wav' }
     ],
     tip:
       'Pour activer 关系 efficacement : passe par un INTERMÉDIAIRE qui connaît les 2 parties. « 我朋友老李推荐我找您 » (mon ami Lao Li m\'a recommandé de vous contacter) ouvre 10x plus de portes que de contacter directement un inconnu. Le 介绍人 (intermédiaire) est un rouage clé.',
@@ -1162,11 +1162,11 @@ export const c12BusinessM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '给面子 (give face) = publicly honor someone. Accept an invitation, compliment in meetings, ask advice PUBLICLY (shows you value the other). 丢面子 (lose face) = be publicly humiliated. Frontal criticism, public contradiction, visible disagreement. In Western oral culture we say «it\'s ok to disagree» — in Chinese, public disagreement = relational catastrophe. 留面子 (preserve the other\'s face) = magic formula. If you see a colleague err in a meeting, DON\'T CORRECT them publicly — address them later in private. That\'s 留面子. This concept structures 80% of Chinese pro behavior — ignoring it = involuntary sabotage of all your relationships.',
     items: [
-      { hanzi: '面子', pinyin: 'miàn zi', meaning: 'face sociale', meaningEn: 'social face', audio: 'audio/hsk5/hsk5_面子.wav' },
-      { hanzi: '给面子', pinyin: 'gěi miàn zi', meaning: 'donner la face', meaningEn: 'give face', audio: 'audio/hsk5/hsk5_给面子.wav' },
-      { hanzi: '丢面子', pinyin: 'diū miàn zi', meaning: 'perdre la face', meaningEn: 'lose face', audio: 'audio/hsk5/hsk5_丢.wav' },
-      { hanzi: '留面子', pinyin: 'liú miàn zi', meaning: 'préserver la face', meaningEn: 'save the other\'s face', audio: 'audio/hsk5/hsk5_留.wav' },
-      { hanzi: '公开', pinyin: 'gōng kāi', meaning: 'public, ouvertement', meaningEn: 'publicly', audio: 'audio/hsk5/hsk5_公开.wav' }
+      { hanzi: '面子', pinyin: 'miànzi', meaning: 'face sociale', meaningEn: 'social face', audio: 'audio/hsk5/hsk5_面子.wav' },
+      { hanzi: '给面子', pinyin: 'gěimiànzi', meaning: 'donner la face', meaningEn: 'give face', audio: 'audio/hsk5/hsk5_给面子.wav' },
+      { hanzi: '丢面子', pinyin: 'diūmiànzi', meaning: 'perdre la face', meaningEn: 'lose face', audio: 'audio/hsk5/hsk5_丢.wav' },
+      { hanzi: '留面子', pinyin: 'liúmiànzi', meaning: 'préserver la face', meaningEn: 'save the other\'s face', audio: 'audio/hsk5/hsk5_留.wav' },
+      { hanzi: '公开', pinyin: 'gōngkāi', meaning: 'public, ouvertement', meaningEn: 'publicly', audio: 'audio/hsk5/hsk5_公开.wav' }
     ],
     tip:
       'Règle d\'or pro Chine : critique en privé, complimente en public. L\'inverse de la règle américaine. Si tu dois reprendre un collègue chinois, fais-le 1-on-1, jamais en réunion. Sinon, même si tu as RAISON sur le fond, tu PERDRAS la collaboration.',
@@ -1198,11 +1198,11 @@ export const c12BusinessM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In Chinese culture, expression of trust = eating and drinking together. At the office, you\'re in PROFESSION; at the table, in HUMAN dimension. Important deals are often closed at the 2nd or 3rd banquet, not the 1st meeting. 白酒 (sorghum liquor at 50-55° ABV) plays a key role: it «拉近距离» (closes the distance). The more you\'ve drunk together, the more the 关系 is anchored. For Western drinkers: caution, 白酒 is MUCH stronger than wine. Strategy: drink 1 glass when the host toasts, but 意思意思 (small symbolic sip) the rest of the time. Request water or tea between toasts. Eat before drinking — NEVER on an empty stomach.',
     items: [
-      { hanzi: '酒桌', pinyin: 'jiǔ zhuō', meaning: 'table de banquet', meaningEn: 'banquet table', audio: 'audio/hsk6/hsk6_酒桌.wav' },
-      { hanzi: '白酒', pinyin: 'bái jiǔ', meaning: 'alcool de sorgho', meaningEn: 'sorghum liquor', audio: 'audio/hsk5/hsk5_白酒.wav' },
-      { hanzi: '拉近', pinyin: 'lā jìn', meaning: 'rapprocher', meaningEn: 'bring closer', audio: 'audio/hsk6/hsk6_拉.wav' },
-      { hanzi: '距离', pinyin: 'jù lí', meaning: 'distance', meaningEn: 'distance', audio: 'audio/hsk5/hsk5_距离.wav' },
-      { hanzi: '意思意思', pinyin: 'yì si yì si', meaning: 'petit geste', meaningEn: 'token gesture', audio: 'audio/hsk5/hsk5_意思.wav' }
+      { hanzi: '酒桌', pinyin: 'jiǔzhuō', meaning: 'table de banquet', meaningEn: 'banquet table', audio: 'audio/hsk6/hsk6_酒桌.wav' },
+      { hanzi: '白酒', pinyin: 'báijiǔ', meaning: 'alcool de sorgho', meaningEn: 'sorghum liquor', audio: 'audio/hsk5/hsk5_白酒.wav' },
+      { hanzi: '拉近', pinyin: 'lājìn', meaning: 'rapprocher', meaningEn: 'bring closer', audio: 'audio/hsk6/hsk6_拉.wav' },
+      { hanzi: '距离', pinyin: 'jùlí', meaning: 'distance', meaningEn: 'distance', audio: 'audio/hsk5/hsk5_距离.wav' },
+      { hanzi: '意思意思', pinyin: 'yìsi yìsi', meaning: 'petit geste', meaningEn: 'token gesture', audio: 'audio/hsk5/hsk5_意思.wav' }
     ],
     tip:
       'Si tu ne peux/veux PAS boire, signale-le AVANT le banquet (à l\'organisateur ou au plus haut placé). Phrase : « 我对酒精过敏，今晚以茶代酒 » (allergique à l\'alcool, ce soir thé). Ce signalement préalable préserve le 面子 de tous. Improviser au moment du toast = panique générale.',
@@ -1231,11 +1231,11 @@ export const c12BusinessM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Younger generations + tech sector prefer 商务茶 (business tea) to 白酒. Meet in a 茶馆 (tea house) or private hotel salon. Codes: host chooses the tea (普洱 pǔ\'ěr, 龙井 lóngjǐng, 铁观音 tiěguānyīn — 3 star teas). Prepared by a 茶艺师 (ceremonial). Conversation calmer, more strategic. Advantages: no drunkenness, no hangover, clear head to decide. Drawbacks: less emotional 拉近距离 — some seniors still prefer traditional 酒桌 to «test» a partner. Compromise: start the relationship at 商务茶, seal big deals at 酒桌.',
     items: [
-      { hanzi: '商务茶', pinyin: 'shāng wù chá', meaning: 'thé d\'affaires', meaningEn: 'business tea', audio: 'audio/hsk6/hsk6_商务.wav' },
-      { hanzi: '茶馆', pinyin: 'chá guǎn', meaning: 'maison de thé', meaningEn: 'tea house', audio: 'audio/hsk5/hsk5_茶馆.wav' },
-      { hanzi: '普洱', pinyin: 'pǔ ěr', meaning: 'thé puer', meaningEn: 'pu\'er tea', audio: 'audio/hsk6/hsk6_普洱.wav' },
-      { hanzi: '龙井', pinyin: 'lóng jǐng', meaning: 'thé Longjing', meaningEn: 'Longjing tea', audio: 'audio/hsk6/hsk6_龙井.wav' },
-      { hanzi: '茶艺', pinyin: 'chá yì', meaning: 'art du thé', meaningEn: 'tea ceremony', audio: 'audio/hsk6/hsk6_茶艺.wav' }
+      { hanzi: '商务茶', pinyin: 'shāngwù chá', meaning: 'thé d\'affaires', meaningEn: 'business tea', audio: 'audio/hsk6/hsk6_商务.wav' },
+      { hanzi: '茶馆', pinyin: 'cháguǎn', meaning: 'maison de thé', meaningEn: 'tea house', audio: 'audio/hsk5/hsk5_茶馆.wav' },
+      { hanzi: '普洱', pinyin: 'pǔěr', meaning: 'thé puer', meaningEn: 'pu\'er tea', audio: 'audio/hsk6/hsk6_普洱.wav' },
+      { hanzi: '龙井', pinyin: 'lóngjǐng', meaning: 'thé Longjing', meaningEn: 'Longjing tea', audio: 'audio/hsk6/hsk6_龙井.wav' },
+      { hanzi: '茶艺', pinyin: 'cháyì', meaning: 'art du thé', meaningEn: 'tea ceremony', audio: 'audio/hsk6/hsk6_茶艺.wav' }
     ],
     tip:
       'Pour louer un thé chinois, dis : « 这茶喝起来有回甘 » (回甘 = douceur qui revient en fin de bouche). Cette expression de connaisseur signale ta familiarité avec la culture du thé. Si l\'hôte est amateur, il/elle te respectera immédiatement.',
@@ -1270,11 +1270,11 @@ export const c12BusinessM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In Chinese, 打 X 折 = you PAY X/10 of the initial price. So 打八折 = 80% of price = 20% off. Common French speaker mistake: thinking 八折 = 80% off. CATASTROPHE in negotiation if you forget. Mnemonic: THE NUMBER INDICATES WHAT YOU PAY. 打九折 = 90% (10% off), 打七折 = 70% (30% off), 打半价 = half price. To ask for a discount: 能不能打个折？(can we have a discount?) — open formula. For a specific discount: 能打八折吗？(80% of price?). The seller may counter 打八五折 (85% — worse for you). Key skill: mentally compute the conversion without slipping.',
     items: [
-      { hanzi: '打折', pinyin: 'dǎ zhé', meaning: 'remise', meaningEn: 'discount', audio: 'audio/hsk5/hsk5_打折.wav' },
-      { hanzi: '八折', pinyin: 'bā zhé', meaning: '80% (=20% off)', meaningEn: '80% (=20% off)', audio: 'audio/hsk5/hsk5_八.wav' },
-      { hanzi: '半价', pinyin: 'bàn jià', meaning: 'moitié prix', meaningEn: 'half price', audio: 'audio/hsk5/hsk5_半价.wav' },
-      { hanzi: '原价', pinyin: 'yuán jià', meaning: 'prix initial', meaningEn: 'original price', audio: 'audio/hsk5/hsk5_原价.wav' },
-      { hanzi: '便宜', pinyin: 'pián yi', meaning: 'pas cher', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' }
+      { hanzi: '打折', pinyin: 'dǎzhé', meaning: 'remise', meaningEn: 'discount', audio: 'audio/hsk5/hsk5_打折.wav' },
+      { hanzi: '八折', pinyin: 'bāzhé', meaning: '80% (=20% off)', meaningEn: '80% (=20% off)', audio: 'audio/hsk5/hsk5_八.wav' },
+      { hanzi: '半价', pinyin: 'bànjià', meaning: 'moitié prix', meaningEn: 'half price', audio: 'audio/hsk5/hsk5_半价.wav' },
+      { hanzi: '原价', pinyin: 'yuánjià', meaning: 'prix initial', meaningEn: 'original price', audio: 'audio/hsk5/hsk5_原价.wav' },
+      { hanzi: '便宜', pinyin: 'piányi', meaning: 'pas cher', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' }
     ],
     tip:
       'En soldes, vois 打三折 (= 70% de réduction) c\'est ÉNORME. 打七折 (30% de réduction) c\'est correct. 打九折 (10% de réduction) c\'est faiblard. Connaitre le code te permet de NÉGOCIER : « 我希望您能打到八折 » (je veux 20% de remise). Soyons précis sur le chiffre demandé.',
@@ -1304,11 +1304,11 @@ export const c12BusinessM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Vocab: 付款方式 (payment mode: 现金/转账/支票 cash/wire/check), 定金 (deposit, usually 30%), 尾款 (balance, on delivery), 分期 (installments), 押金 (refundable deposit). Timing: 交货期 (delivery date), 工期 (project duration). Penalty: 违约金 (breach penalty, fixed by contract). 盖章 (affix seal): IN CHINA, the company\'s OFFICIAL SEAL (公章, red round seal) prevails over individual signature. Without seal, a contract remains WEAK even if signed. For a doc to be legally binding: signature AND seal. Seals are strictly controlled by 财务 (finance dept) — their use is a solemn act.',
     items: [
-      { hanzi: '定金', pinyin: 'dìng jīn', meaning: 'acompte', meaningEn: 'deposit', audio: 'audio/hsk6/hsk6_定金.wav' },
-      { hanzi: '尾款', pinyin: 'wěi kuǎn', meaning: 'solde', meaningEn: 'balance', audio: 'audio/hsk6/hsk6_尾款.wav' },
-      { hanzi: '违约金', pinyin: 'wéi yuē jīn', meaning: 'pénalité de rupture', meaningEn: 'breach penalty', audio: 'audio/hsk6/hsk6_违约.wav' },
-      { hanzi: '盖章', pinyin: 'gài zhāng', meaning: 'apposer le sceau', meaningEn: 'affix seal', audio: 'audio/hsk6/hsk6_盖章.wav' },
-      { hanzi: '公章', pinyin: 'gōng zhāng', meaning: 'sceau officiel', meaningEn: 'official seal', audio: 'audio/hsk6/hsk6_公章.wav' }
+      { hanzi: '定金', pinyin: 'dìngjīn', meaning: 'acompte', meaningEn: 'deposit', audio: 'audio/hsk6/hsk6_定金.wav' },
+      { hanzi: '尾款', pinyin: 'wěikuǎn', meaning: 'solde', meaningEn: 'balance', audio: 'audio/hsk6/hsk6_尾款.wav' },
+      { hanzi: '违约金', pinyin: 'wéiyuējīn', meaning: 'pénalité de rupture', meaningEn: 'breach penalty', audio: 'audio/hsk6/hsk6_违约.wav' },
+      { hanzi: '盖章', pinyin: 'gàizhāng', meaning: 'apposer le sceau', meaningEn: 'affix seal', audio: 'audio/hsk6/hsk6_盖章.wav' },
+      { hanzi: '公章', pinyin: 'gōngzhāng', meaning: 'sceau officiel', meaningEn: 'official seal', audio: 'audio/hsk6/hsk6_公章.wav' }
     ],
     tip:
       'Si on te présente un contrat chinois SANS le 公章 rouge, REFUSE poliment et demande qu\'il soit apposé. Sans ce sceau, en cas de litige, ta position est faible. Phrase : « 麻烦请加盖公章 » (apposez le sceau officiel s\'il vous plaît). Geste pro standard.',
@@ -1342,11 +1342,11 @@ export const c12BusinessM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Mandatory format: (1) Greet hierarchically (各位领导，各位来宾，大家好!). (2) Introduce yourself (我是 X 公司的 Y, 担任 Z 职位). (3) Announce the topic (今天我向各位介绍 X). (4) State duration (我的发言大约 X 分钟). (5) Start. First paragraph: company presentation (成立于 X 年, 总部在 X, 主营业务 X). To show legitimacy: 我们在 X 行业拥有 X 年的经验 (we have X years of experience in the X sector). 拥有 (own) sounds more pro than 有. NEVER start with «大家好» alone — too casual in B2B. Always hierarchize the address.',
     items: [
-      { hanzi: '各位', pinyin: 'gè wèi', meaning: 'chacun de vous', meaningEn: 'each of you', audio: 'audio/hsk5/hsk5_各位.wav' },
-      { hanzi: '担任', pinyin: 'dān rèn', meaning: 'occuper (un poste)', meaningEn: 'hold (a position)', audio: 'audio/hsk5/hsk5_担任.wav' },
-      { hanzi: '总部', pinyin: 'zǒng bù', meaning: 'siège social', meaningEn: 'headquarters', audio: 'audio/hsk6/hsk6_总部.wav' },
-      { hanzi: '主营业务', pinyin: 'zhǔ yíng yè wù', meaning: 'activité principale', meaningEn: 'core business', audio: 'audio/hsk6/hsk6_主营.wav' },
-      { hanzi: '拥有', pinyin: 'yōng yǒu', meaning: 'posséder', meaningEn: 'possess', audio: 'audio/hsk5/hsk5_拥有.wav' }
+      { hanzi: '各位', pinyin: 'gèwèi', meaning: 'chacun de vous', meaningEn: 'each of you', audio: 'audio/hsk5/hsk5_各位.wav' },
+      { hanzi: '担任', pinyin: 'dānrèn', meaning: 'occuper (un poste)', meaningEn: 'hold (a position)', audio: 'audio/hsk5/hsk5_担任.wav' },
+      { hanzi: '总部', pinyin: 'zǒngbù', meaning: 'siège social', meaningEn: 'headquarters', audio: 'audio/hsk6/hsk6_总部.wav' },
+      { hanzi: '主营业务', pinyin: 'zhǔyíngyèwù', meaning: 'activité principale', meaningEn: 'core business', audio: 'audio/hsk6/hsk6_主营.wav' },
+      { hanzi: '拥有', pinyin: 'yōngyǒu', meaning: 'posséder', meaningEn: 'possess', audio: 'audio/hsk5/hsk5_拥有.wav' }
     ],
     tip:
       'Si tu présentes à des dirigeants chinois ET étrangers ensemble, tu peux ouvrir : « 各位领导，dear guests，大家好 ». L\'alternance bilingue mesurée signale ta capacité de pont culturel. Effet immédiat sur les RH transnationales.',
@@ -1376,10 +1376,10 @@ export const c12BusinessM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese pitch ALWAYS ends on a note of OPENING and RESPECT. Vocab: 合作共赢 (win-win cooperation), 互利互惠 (mutually beneficial), 携手共进 (advance hand in hand). Phrase: 期待与贵公司携手合作，共创美好未来 (I look forward to hand-in-hand cooperation to create a bright future). 共创 (co-create) + 美好未来 (bright future) = very Chinese combo. Closing chengyu: 互利共赢 or 共创未来 or 蒸蒸日上 (booming). The 贵 (your honorable) preceding 公司/校/国 = MANDATORY respect marker for the partner\'s entity. Without 贵, your pitch sounds BANAL.',
     items: [
-      { hanzi: '合作共赢', pinyin: 'hé zuò gòng yíng', meaning: 'coopération gagnant-gagnant', meaningEn: 'win-win cooperation', audio: 'audio/hsk6/hsk6_合作.wav' },
-      { hanzi: '互利', pinyin: 'hù lì', meaning: 'mutuellement bénéfique', meaningEn: 'mutually beneficial', audio: 'audio/hsk6/hsk6_互利.wav' },
-      { hanzi: '携手', pinyin: 'xié shǒu', meaning: 'main dans la main', meaningEn: 'hand in hand', audio: 'audio/hsk6/hsk6_携手.wav' },
-      { hanzi: '共创', pinyin: 'gòng chuàng', meaning: 'cocréer', meaningEn: 'co-create', audio: 'audio/hsk6/hsk6_共创.wav' },
+      { hanzi: '合作共赢', pinyin: 'hézuò gòngyíng', meaning: 'coopération gagnant-gagnant', meaningEn: 'win-win cooperation', audio: 'audio/hsk6/hsk6_合作.wav' },
+      { hanzi: '互利', pinyin: 'hùlì', meaning: 'mutuellement bénéfique', meaningEn: 'mutually beneficial', audio: 'audio/hsk6/hsk6_互利.wav' },
+      { hanzi: '携手', pinyin: 'xiéshǒu', meaning: 'main dans la main', meaningEn: 'hand in hand', audio: 'audio/hsk6/hsk6_携手.wav' },
+      { hanzi: '共创', pinyin: 'gòngchuàng', meaning: 'cocréer', meaningEn: 'co-create', audio: 'audio/hsk6/hsk6_共创.wav' },
       { hanzi: '贵', pinyin: 'guì', meaning: 'votre honorable', meaningEn: 'your honorable', audio: 'audio/hsk5/hsk5_贵.wav' }
     ],
     tip:
@@ -1413,11 +1413,11 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Standard timeline of a Chinese born in 2010: 2013-16 kindergarten (3 yrs), 2016-22 primary (6 yrs, internal exams), 2022-25 middle school (3 yrs, ends with 中考), 2025-28 high school (3 yrs, ends with 高考), 2028-32 bachelor (4 yrs), maybe 2032-35 master, 2035-40 PhD. 义务教育 (compulsory schooling) covers 9 years (primary + middle), free. High school and university paid (modest in public, expensive in private). Class hours: average Chinese child = 8am-5pm school + 7pm-10pm homework/private tutoring. 鸡娃 (jīwá, «chicken kid») phenomenon: parents who over-push children academically. Major SOCIETAL topic — burnout, teen suicide, psychological pressure.',
     items: [
-      { hanzi: '幼儿园', pinyin: 'yòu ér yuán', meaning: 'maternelle', meaningEn: 'kindergarten', audio: 'audio/hsk5/hsk5_幼儿园.wav' },
-      { hanzi: '义务教育', pinyin: 'yì wù jiào yù', meaning: 'scolarité obligatoire', meaningEn: 'compulsory education', audio: 'audio/hsk6/hsk6_义务.wav' },
-      { hanzi: '中考', pinyin: 'zhōng kǎo', meaning: 'examen entrée lycée', meaningEn: 'high school entry exam', audio: 'audio/hsk6/hsk6_中考.wav' },
-      { hanzi: '鸡娃', pinyin: 'jī wá', meaning: 'enfant sur-poussé', meaningEn: 'over-pushed child', audio: 'audio/hsk6/hsk6_鸡娃.wav' },
-      { hanzi: '压力', pinyin: 'yā lì', meaning: 'pression', meaningEn: 'pressure', audio: 'audio/hsk4/hsk4_压力.wav' }
+      { hanzi: '幼儿园', pinyin: 'yòuéryuán', meaning: 'maternelle', meaningEn: 'kindergarten', audio: 'audio/hsk5/hsk5_幼儿园.wav' },
+      { hanzi: '义务教育', pinyin: 'yìwùjiàoyù', meaning: 'scolarité obligatoire', meaningEn: 'compulsory education', audio: 'audio/hsk6/hsk6_义务.wav' },
+      { hanzi: '中考', pinyin: 'zhōngkǎo', meaning: 'examen entrée lycée', meaningEn: 'high school entry exam', audio: 'audio/hsk6/hsk6_中考.wav' },
+      { hanzi: '鸡娃', pinyin: 'jīwá', meaning: 'enfant sur-poussé', meaningEn: 'over-pushed child', audio: 'audio/hsk6/hsk6_鸡娃.wav' },
+      { hanzi: '压力', pinyin: 'yālì', meaning: 'pression', meaningEn: 'pressure', audio: 'audio/hsk4/hsk4_压力.wav' }
     ],
     tip:
       'Pour discuter le 鸡娃 avec un parent chinois : ne JAMAIS critiquer frontalement. Cela touche aux choix EXISTENTIELS de la famille. Préfère : « 我能想象这种压力 » (j\'imagine cette pression) + « 您觉得有平衡的方法吗 ? » (voyez-vous un moyen d\'équilibrer ?). Empathie + question ouverte = ouverture de dialogue.',
@@ -1446,11 +1446,11 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '课外辅导 (extra-school tutoring) was a $100B+ industry in 2020 (新东方, 学而思 leaders). In 2021, «双减» policy («double reduction»): reduction of homework + ban on for-profit tutoring for curriculum subjects (math, English). Effects: massive bankruptcies, teacher unemployment, but classes often moved underground (1-on-1 at home). Vocab: 补习班 (catch-up class), 一对一 (1-on-1 lesson), 在线教育 (online lessons), 学区房 (apartment in a good school district — price spike). The topic is politically explosive: it reveals education access inequality.',
     items: [
-      { hanzi: '辅导', pinyin: 'fǔ dǎo', meaning: 'tutorat, soutien', meaningEn: 'tutoring', audio: 'audio/hsk5/hsk5_辅导.wav' },
-      { hanzi: '双减', pinyin: 'shuāng jiǎn', meaning: 'double réduction', meaningEn: 'double reduction', audio: 'audio/hsk6/hsk6_双减.wav' },
-      { hanzi: '补习', pinyin: 'bǔ xí', meaning: 'cours de rattrapage', meaningEn: 'catch-up class', audio: 'audio/hsk6/hsk6_补习.wav' },
-      { hanzi: '一对一', pinyin: 'yī duì yī', meaning: 'un à un', meaningEn: 'one-on-one', audio: 'audio/hsk5/hsk5_一对一.wav' },
-      { hanzi: '学区房', pinyin: 'xué qū fáng', meaning: 'logement de quartier scolaire', meaningEn: 'school district housing', audio: 'audio/hsk6/hsk6_学区.wav' }
+      { hanzi: '辅导', pinyin: 'fǔdǎo', meaning: 'tutorat, soutien', meaningEn: 'tutoring', audio: 'audio/hsk5/hsk5_辅导.wav' },
+      { hanzi: '双减', pinyin: 'shuāngjiǎn', meaning: 'double réduction', meaningEn: 'double reduction', audio: 'audio/hsk6/hsk6_双减.wav' },
+      { hanzi: '补习', pinyin: 'bǔxí', meaning: 'cours de rattrapage', meaningEn: 'catch-up class', audio: 'audio/hsk6/hsk6_补习.wav' },
+      { hanzi: '一对一', pinyin: 'yīduìyī', meaning: 'un à un', meaningEn: 'one-on-one', audio: 'audio/hsk5/hsk5_一对一.wav' },
+      { hanzi: '学区房', pinyin: 'xuéqū fáng', meaning: 'logement de quartier scolaire', meaningEn: 'school district housing', audio: 'audio/hsk6/hsk6_学区.wav' }
     ],
     tip:
       'Le 学区房 a longtemps été UN obsession des classes moyennes urbaines. Acheter un appart de 50m² à 5M ¥ pour son entrée dans une école d\'élite était courant. La régulation 2021 a calmé le jeu mais le phénomène reste révélateur de la pression éducative chinoise.',
@@ -1488,11 +1488,11 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '高考 takes place every year June 7-9. Over 10 million candidates simultaneously. NATIONAL mobilization: traffic banned around exam centers, parents waiting all day, taxi drivers free for candidates, police present. Tradition: the mother wears a 旗袍 (qípáo, traditional dress) — 旗 sounds like «opening/success». The family eats a bowl of 鱼 (fish — homophone of 余 «surplus») the night before. The candidate holds a lucky charm (jade, Confucius medal). It\'s a NATIONAL event that suspends the country. Vocab: 考场 (exam center), 监考 (supervisor), 答题卡 (answer sheet), 准考证 (admission card). If you\'re in China in early June, watch a news broadcast — 高考 coverage is intense.',
     items: [
-      { hanzi: '考场', pinyin: 'kǎo chǎng', meaning: 'centre d\'examen', meaningEn: 'exam center', audio: 'audio/hsk6/hsk6_考场.wav' },
-      { hanzi: '监考', pinyin: 'jiān kǎo', meaning: 'surveiller un examen', meaningEn: 'invigilate', audio: 'audio/hsk6/hsk6_监考.wav' },
-      { hanzi: '答题卡', pinyin: 'dá tí kǎ', meaning: 'feuille de réponses', meaningEn: 'answer sheet', audio: 'audio/hsk6/hsk6_答题.wav' },
-      { hanzi: '准考证', pinyin: 'zhǔn kǎo zhèng', meaning: 'carte d\'admission', meaningEn: 'admission ticket', audio: 'audio/hsk6/hsk6_准考.wav' },
-      { hanzi: '旗袍', pinyin: 'qí páo', meaning: 'robe qipao traditionnelle', meaningEn: 'qipao dress', audio: 'audio/hsk6/hsk6_旗袍.wav' }
+      { hanzi: '考场', pinyin: 'kǎochǎng', meaning: 'centre d\'examen', meaningEn: 'exam center', audio: 'audio/hsk6/hsk6_考场.wav' },
+      { hanzi: '监考', pinyin: 'jiānkǎo', meaning: 'surveiller un examen', meaningEn: 'invigilate', audio: 'audio/hsk6/hsk6_监考.wav' },
+      { hanzi: '答题卡', pinyin: 'dátíkǎ', meaning: 'feuille de réponses', meaningEn: 'answer sheet', audio: 'audio/hsk6/hsk6_答题.wav' },
+      { hanzi: '准考证', pinyin: 'zhǔnkǎozhèng', meaning: 'carte d\'admission', meaningEn: 'admission ticket', audio: 'audio/hsk6/hsk6_准考.wav' },
+      { hanzi: '旗袍', pinyin: 'qípáo', meaning: 'robe qipao traditionnelle', meaningEn: 'qipao dress', audio: 'audio/hsk6/hsk6_旗袍.wav' }
     ],
     tip:
       'Si tu connais une famille chinoise dont l\'enfant passe le 高考, envoie un message le 7 juin matin : « 祝您家孩子高考顺利，金榜题名 ! » (succès au 高考, votre nom sur la liste d\'or !). 金榜题名 = chengyu impérial (réussir l\'examen mandarinal, son nom sur la liste rouge). Touche émotionnelle GARANTIE.',
@@ -1522,9 +1522,9 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '985', pinyin: 'jiǔ bā wǔ', meaning: '985 (universités élite)', meaningEn: '985 (elite unis)', audio: 'audio/hsk6/hsk6_985.wav' },
       { hanzi: '211', pinyin: 'èr yāo yāo', meaning: '211 (top 100)', meaningEn: '211 (top 100)', audio: 'audio/hsk6/hsk6_211.wav' },
-      { hanzi: '清华', pinyin: 'qīng huá', meaning: 'Tsinghua', meaningEn: 'Tsinghua', audio: 'audio/hsk6/hsk6_清华.wav' },
-      { hanzi: '本科', pinyin: 'běn kē', meaning: 'licence (4 ans)', meaningEn: 'bachelor (4 yrs)', audio: 'audio/hsk6/hsk6_本科.wav' },
-      { hanzi: '专科', pinyin: 'zhuān kē', meaning: 'cycle court (2-3 ans)', meaningEn: 'short cycle (2-3 yrs)', audio: 'audio/hsk6/hsk6_专科.wav' }
+      { hanzi: '清华', pinyin: 'qīnghuá', meaning: 'Tsinghua', meaningEn: 'Tsinghua', audio: 'audio/hsk6/hsk6_清华.wav' },
+      { hanzi: '本科', pinyin: 'běnkē', meaning: 'licence (4 ans)', meaningEn: 'bachelor (4 yrs)', audio: 'audio/hsk6/hsk6_本科.wav' },
+      { hanzi: '专科', pinyin: 'zhuānkē', meaning: 'cycle court (2-3 ans)', meaningEn: 'short cycle (2-3 yrs)', audio: 'audio/hsk6/hsk6_专科.wav' }
     ],
     tip:
       'Pour démarrer une conversation universitaire en Chine : « 您是哪个学校毕业的 ? » (de quelle université êtes-vous diplômé ?). Question STANDARD, pas indiscrète. Réponse 985 ou 211 = signal de fierté ; réponse école régulière = humble. Adapte ton ton.',
@@ -1553,11 +1553,11 @@ export const c12EducationSystemM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '海归 (hǎiguī, «sea turtle») = pun on 海归 («returned from overseas»). Designates a Chinese who studied abroad and returned. In 2000-2010: PRESTIGIOUS status, premium salaries, direct executive positions. Today (2020s): ambivalence. China educates its elites excellently, local universities rival Ivy League. Plus pandemic + geopolitical tensions + post-2020 xenophobia DEPRECIATED some foreign degrees. New term: 海带 (hǎidài, «seaweed» homophone of 海待 «海归 waiting») = unemployed 海归, ironic narrative. A 海归\'s value now depends on university + field. Oxford 海归 in physics = highly valued; obscure-school 海归 in marketing = doubt.',
     items: [
-      { hanzi: '海归', pinyin: 'hǎi guī', meaning: 'diplômé d\'outre-mer rentré', meaningEn: 'returnee', audio: 'audio/hsk6/hsk6_海归.wav' },
-      { hanzi: '留学', pinyin: 'liú xué', meaning: 'étudier à l\'étranger', meaningEn: 'study abroad', audio: 'audio/hsk5/hsk5_留学.wav' },
-      { hanzi: '海带', pinyin: 'hǎi dài', meaning: '海归 au chômage (humour)', meaningEn: 'jobless returnee (slang)', audio: 'audio/hsk6/hsk6_海带.wav' },
-      { hanzi: '勉强', pinyin: 'miǎn qiǎng', meaning: 'à peine', meaningEn: 'barely', audio: 'audio/hsk5/hsk5_勉强.wav' },
-      { hanzi: '失业', pinyin: 'shī yè', meaning: 'chômage', meaningEn: 'unemployment', audio: 'audio/hsk5/hsk5_失业.wav' }
+      { hanzi: '海归', pinyin: 'hǎiguī', meaning: 'diplômé d\'outre-mer rentré', meaningEn: 'returnee', audio: 'audio/hsk6/hsk6_海归.wav' },
+      { hanzi: '留学', pinyin: 'liúxué', meaning: 'étudier à l\'étranger', meaningEn: 'study abroad', audio: 'audio/hsk5/hsk5_留学.wav' },
+      { hanzi: '海带', pinyin: 'hǎidài', meaning: '海归 au chômage (humour)', meaningEn: 'jobless returnee (slang)', audio: 'audio/hsk6/hsk6_海带.wav' },
+      { hanzi: '勉强', pinyin: 'miǎnqiǎng', meaning: 'à peine', meaningEn: 'barely', audio: 'audio/hsk5/hsk5_勉强.wav' },
+      { hanzi: '失业', pinyin: 'shīyè', meaning: 'chômage', meaningEn: 'unemployment', audio: 'audio/hsk5/hsk5_失业.wav' }
     ],
     tip:
       'Si tu es un 海归 français en quête d\'emploi en Chine : MENTIONNE l\'aspect technique de ta formation (sciences, ingénierie, finance) AVANT le côté culturel. Le marché chinois 2026 valorise l\'expertise concrète plus que le « j\'ai vécu à Paris ». Adapte ton CV à ce nouveau pragmatisme.',
@@ -1589,11 +1589,11 @@ export const c12EducationSystemM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'For incoming foreigners: 中国政府奖学金 (CSC, China Scholarship Council, equivalent of Erasmus+ to study in China) covers tuition + housing + insurance + monthly allowance (~3000-3500 ¥). Apply via Chinese embassy or host university. For outgoing Chinese: 国家公派留学 (state funding to study abroad), often PhD with return commitment. Exchanges: 交换生 (semester/year at partner university), 双学位 (double degree). To study at a 985 (Tsinghua, Peking) for free, CSC is your BEST entry point. Competitive but accessible with a strong file. Typical deadline: December-March for following September entry.',
     items: [
-      { hanzi: '奖学金', pinyin: 'jiǎng xué jīn', meaning: 'bourse', meaningEn: 'scholarship', audio: 'audio/hsk5/hsk5_奖学金.wav' },
-      { hanzi: '公派', pinyin: 'gōng pài', meaning: 'envoyé par l\'État', meaningEn: 'state-funded', audio: 'audio/hsk6/hsk6_公派.wav' },
-      { hanzi: '交换生', pinyin: 'jiāo huàn shēng', meaning: 'étudiant en échange', meaningEn: 'exchange student', audio: 'audio/hsk6/hsk6_交换.wav' },
-      { hanzi: '双学位', pinyin: 'shuāng xué wèi', meaning: 'double diplôme', meaningEn: 'double degree', audio: 'audio/hsk6/hsk6_双.wav' },
-      { hanzi: '津贴', pinyin: 'jīn tiē', meaning: 'allocation', meaningEn: 'allowance', audio: 'audio/hsk6/hsk6_津贴.wav' }
+      { hanzi: '奖学金', pinyin: 'jiǎngxuéjīn', meaning: 'bourse', meaningEn: 'scholarship', audio: 'audio/hsk5/hsk5_奖学金.wav' },
+      { hanzi: '公派', pinyin: 'gōngpài', meaning: 'envoyé par l\'État', meaningEn: 'state-funded', audio: 'audio/hsk6/hsk6_公派.wav' },
+      { hanzi: '交换生', pinyin: 'jiāohuàn shēng', meaning: 'étudiant en échange', meaningEn: 'exchange student', audio: 'audio/hsk6/hsk6_交换.wav' },
+      { hanzi: '双学位', pinyin: 'shuāngxuéwèi', meaning: 'double diplôme', meaningEn: 'double degree', audio: 'audio/hsk6/hsk6_双.wav' },
+      { hanzi: '津贴', pinyin: 'jīntiē', meaning: 'allocation', meaningEn: 'allowance', audio: 'audio/hsk6/hsk6_津贴.wav' }
     ],
     tip:
       'Pour CSC, la lettre de motivation chinoise (申请理由 shēnqǐng lǐyóu) compte ÉNORMÉMENT. Évite « 我喜欢中国文化 » trop vague. Mets en avant un projet de recherche PRÉCIS lié à un prof chinois cible. Mentionner un prof par son nom + lire 1 de ses articles = signal de sérieux.',
@@ -1625,11 +1625,11 @@ export const c12LawSocietyM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Top: 宪法 (Constitution, adopted 1982, amended 5 times — most recently 2018 to allow Xi Jinping\'s 3rd term). Below: 法律 (laws passed by 全国人民代表大会, NPC — National People\'s Congress, or its Standing Committee). Then: 行政法规 (State Council regulations), 部门规章 (ministerial orders), 地方性法规 (local regulations). Specificity: Chinese LAW is CIVIL (codified, not common law). Judicial rulings DON\'T have precedent value. Unified Civil Code promulgated in 2020 (《民法典》, the 1st civil code in PRC history). For international litigation, REQUIRE in your contracts: jurisdiction + language + applicable law specified.',
     items: [
-      { hanzi: '宪法', pinyin: 'xiàn fǎ', meaning: 'Constitution', meaningEn: 'Constitution', audio: 'audio/hsk6/hsk6_宪法.wav' },
-      { hanzi: '人大', pinyin: 'rén dà', meaning: 'ANP (Assemblée populaire)', meaningEn: 'NPC', audio: 'audio/hsk6/hsk6_人大.wav' },
-      { hanzi: '法规', pinyin: 'fǎ guī', meaning: 'règlement', meaningEn: 'regulation', audio: 'audio/hsk6/hsk6_法规.wav' },
-      { hanzi: '民法典', pinyin: 'mín fǎ diǎn', meaning: 'Code civil', meaningEn: 'Civil Code', audio: 'audio/hsk6/hsk6_民法.wav' },
-      { hanzi: '管辖', pinyin: 'guǎn xiá', meaning: 'juridiction', meaningEn: 'jurisdiction', audio: 'audio/hsk6/hsk6_管辖.wav' }
+      { hanzi: '宪法', pinyin: 'xiànfǎ', meaning: 'Constitution', meaningEn: 'Constitution', audio: 'audio/hsk6/hsk6_宪法.wav' },
+      { hanzi: '人大', pinyin: 'réndà', meaning: 'ANP (Assemblée populaire)', meaningEn: 'NPC', audio: 'audio/hsk6/hsk6_人大.wav' },
+      { hanzi: '法规', pinyin: 'fǎguī', meaning: 'règlement', meaningEn: 'regulation', audio: 'audio/hsk6/hsk6_法规.wav' },
+      { hanzi: '民法典', pinyin: 'mínfǎdiǎn', meaning: 'Code civil', meaningEn: 'Civil Code', audio: 'audio/hsk6/hsk6_民法.wav' },
+      { hanzi: '管辖', pinyin: 'guǎnxiá', meaning: 'juridiction', meaningEn: 'jurisdiction', audio: 'audio/hsk6/hsk6_管辖.wav' }
     ],
     tip:
       'Pour un contrat sino-étranger : exige une clause d\'arbitrage 仲裁 (CIETAC à Pékin, ou HKIAC à HK) plutôt que 诉讼 devant tribunal local chinois. L\'arbitrage est neutre, plus rapide, et reconnu internationalement (Convention de New York). Différence de capital pour ta protection.',
@@ -1663,11 +1663,11 @@ export const c12LawSocietyM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Plaintiff side: 原告 files 起诉 (suit). Defendant side: 被告 receives 传票 (summons). Representation: each has 律师 (lawyer). 法官 (judge) instructs. Procedure goes through 一审 (1st instance, basic or intermediate court), if dissatisfied: 上诉 (appeal) → 二审 (2nd instance). In China, NO popular jury — only professional judges. Public hearing except sensitive cases (minors, state security, privacy). Outcome: 判决 (judgment) or 调解 (mediation, ENCOURAGED by the system). Criminal penalties: 罚款 (fine), 有期徒刑 (fixed-term prison), 无期 (life), 死刑 (death penalty, still applied). Chinese trials on average FASTER than Western ones.',
     items: [
-      { hanzi: '原告', pinyin: 'yuán gào', meaning: 'plaignant', meaningEn: 'plaintiff', audio: 'audio/hsk6/hsk6_原告.wav' },
-      { hanzi: '被告', pinyin: 'bèi gào', meaning: 'accusé', meaningEn: 'defendant', audio: 'audio/hsk6/hsk6_被告.wav' },
-      { hanzi: '法官', pinyin: 'fǎ guān', meaning: 'juge', meaningEn: 'judge', audio: 'audio/hsk5/hsk5_法官.wav' },
-      { hanzi: '律师', pinyin: 'lǜ shī', meaning: 'avocat', meaningEn: 'lawyer', audio: 'audio/hsk4/hsk4_律师.wav' },
-      { hanzi: '判决', pinyin: 'pàn jué', meaning: 'jugement', meaningEn: 'judgment', audio: 'audio/hsk6/hsk6_判决.wav' }
+      { hanzi: '原告', pinyin: 'yuángào', meaning: 'plaignant', meaningEn: 'plaintiff', audio: 'audio/hsk6/hsk6_原告.wav' },
+      { hanzi: '被告', pinyin: 'bèigào', meaning: 'accusé', meaningEn: 'defendant', audio: 'audio/hsk6/hsk6_被告.wav' },
+      { hanzi: '法官', pinyin: 'fǎguān', meaning: 'juge', meaningEn: 'judge', audio: 'audio/hsk5/hsk5_法官.wav' },
+      { hanzi: '律师', pinyin: 'lǜshī', meaning: 'avocat', meaningEn: 'lawyer', audio: 'audio/hsk4/hsk4_律师.wav' },
+      { hanzi: '判决', pinyin: 'pànjué', meaning: 'jugement', meaningEn: 'judgment', audio: 'audio/hsk6/hsk6_判决.wav' }
     ],
     tip:
       'Si tu es impliqué dans un litige en Chine, 1ère règle : prends un avocat 律师 LOCAL spécialisé dans ton domaine. Les avocats étrangers ne peuvent pas plaider en Chine — ils doivent passer par un cabinet chinois. Préfère un cabinet ayant des associés bilingues. Coût : 1000-5000 ¥/h pour un avocat senior à Pékin/Shanghai.',
@@ -1700,11 +1700,11 @@ export const c12LawSocietyM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In China, 女权主义 (feminism) remains a contested movement, sometimes censored on social media (Weibo shut down several feminist accounts in 2021-22). The term 剩女 («leftover women») was propagated by the State (All-China Women\'s Federation campaign) to push 27+ women to marry quickly. Seen critically as a social control tool. Chinese #MeToo movement (2018): brief explosion, then crackdown. Iconic case: Peng Shuai (tennis player, 2021, accusations against an ex-vice-PM — public disappearance). Discourse for women: simultaneous pressure to marry, have children, AND succeed in career. 全职妈妈 (stay-at-home mother) phenomenon re-emerging under the 3-child policy + daycare difficulties.',
     items: [
-      { hanzi: '女权', pinyin: 'nǚ quán', meaning: 'droits des femmes', meaningEn: 'women\'s rights', audio: 'audio/hsk6/hsk6_女权.wav' },
-      { hanzi: '剩女', pinyin: 'shèng nǚ', meaning: 'femme «restante»', meaningEn: 'leftover woman', audio: 'audio/hsk6/hsk6_剩女.wav' },
-      { hanzi: '歧视', pinyin: 'qí shì', meaning: 'discrimination', meaningEn: 'discrimination', audio: 'audio/hsk6/hsk6_歧视.wav' },
-      { hanzi: '全职', pinyin: 'quán zhí', meaning: 'temps plein', meaningEn: 'full-time', audio: 'audio/hsk5/hsk5_全职.wav' },
-      { hanzi: '催婚', pinyin: 'cuī hūn', meaning: 'pousser à se marier', meaningEn: 'push to marry', audio: 'audio/hsk6/hsk6_催婚.wav' }
+      { hanzi: '女权', pinyin: 'nǚquán', meaning: 'droits des femmes', meaningEn: 'women\'s rights', audio: 'audio/hsk6/hsk6_女权.wav' },
+      { hanzi: '剩女', pinyin: 'shèngnǚ', meaning: 'femme «restante»', meaningEn: 'leftover woman', audio: 'audio/hsk6/hsk6_剩女.wav' },
+      { hanzi: '歧视', pinyin: 'qíshì', meaning: 'discrimination', meaningEn: 'discrimination', audio: 'audio/hsk6/hsk6_歧视.wav' },
+      { hanzi: '全职', pinyin: 'quánzhí', meaning: 'temps plein', meaningEn: 'full-time', audio: 'audio/hsk5/hsk5_全职.wav' },
+      { hanzi: '催婚', pinyin: 'cuīhūn', meaning: 'pousser à se marier', meaningEn: 'push to marry', audio: 'audio/hsk6/hsk6_催婚.wav' }
     ],
     tip:
       'Si tu discutes féminisme avec une amie chinoise, ÉCOUTE plus que tu ne parles. Le contexte chinois est complexe — pression familiale 催婚, censure étatique, débats internes au mouvement. Pose : « 你怎么看 ? ». Évite de plaquer un cadre occidental — ça frustre.',
@@ -1737,11 +1737,11 @@ export const c12LawSocietyM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Family planning policy 计划生育: 一孩 (1 child) imposed in 1978 under Deng Xiaoping to curb growth. Consequences: 30M+ forced abortions/sterilizations, gender imbalance (30M-woman shortage), 独生子女 (only-child) generation. 2016: 二孩 (2 children allowed). 2021: 三孩 (3 children, reacting to birthrate collapse). Effect: MINIMAL. Urban society has INTERNALIZED only-child culture + high housing/education/daycare costs = little desire. 2022: for the 1st time since 1961, Chinese POPULATION DECLINED. India overtakes China in population in 2023. Accelerated aging: major 21st-century challenge for China.',
     items: [
-      { hanzi: '计划生育', pinyin: 'jì huà shēng yù', meaning: 'planification familiale', meaningEn: 'family planning', audio: 'audio/hsk6/hsk6_计划.wav' },
-      { hanzi: '独生子女', pinyin: 'dú shēng zǐ nǚ', meaning: 'enfant unique', meaningEn: 'only child', audio: 'audio/hsk6/hsk6_独生.wav' },
-      { hanzi: '出生率', pinyin: 'chū shēng lǜ', meaning: 'taux de natalité', meaningEn: 'birthrate', audio: 'audio/hsk6/hsk6_出生.wav' },
-      { hanzi: '老龄化', pinyin: 'lǎo líng huà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄.wav' },
-      { hanzi: '人口', pinyin: 'rén kǒu', meaning: 'population', meaningEn: 'population', audio: 'audio/hsk4/hsk4_人口.wav' }
+      { hanzi: '计划生育', pinyin: 'jìhuàshēngyù', meaning: 'planification familiale', meaningEn: 'family planning', audio: 'audio/hsk6/hsk6_计划.wav' },
+      { hanzi: '独生子女', pinyin: 'dúshēngzǐnǚ', meaning: 'enfant unique', meaningEn: 'only child', audio: 'audio/hsk6/hsk6_独生.wav' },
+      { hanzi: '出生率', pinyin: 'chūshēnglǜ', meaning: 'taux de natalité', meaningEn: 'birthrate', audio: 'audio/hsk6/hsk6_出生.wav' },
+      { hanzi: '老龄化', pinyin: 'lǎolínghuà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄.wav' },
+      { hanzi: '人口', pinyin: 'rénkǒu', meaning: 'population', meaningEn: 'population', audio: 'audio/hsk4/hsk4_人口.wav' }
     ],
     tip:
       'En 2026, la natalité chinoise est UN sujet stratégique. Si tu discutes économie chinoise, mentionne le défi démographique : « 人口老龄化是中国未来 30 年最大的挑战之一 » (le vieillissement est l\'un des plus grands défis de la Chine pour les 30 prochaines années). Phrase passe-partout d\'analyse économique.',
@@ -1775,11 +1775,11 @@ export const c12LawSocietyM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '防火长城 («Great Wall of Fire») = unofficial nickname for the Great Firewall (GFW). Official: 网络长城. Blocks Western services (Google, FB, Twitter/X, YouTube, Instagram, WhatsApp, partial Wikipedia, NYT, BBC Chinese, etc.). Chinese substitutes: 百度 (Baidu) for Google, 微信 (WeChat) for WhatsApp, 微博 (Weibo) for Twitter, 抖音 (Douyin) for TikTok, 哔哩哔哩 (Bilibili) for YouTube. Bypass: 翻墙 («jump the wall» = use a VPN). Legally gray area — tolerated for foreigners + researchers, riskier for Chinese citizens. In 2026, the GFW is more EFFECTIVE than in 2015 — many VPNs blocked. If you live in China, prepare a RELIABLE corporate VPN before arrival.',
     items: [
-      { hanzi: '防火长城', pinyin: 'fáng huǒ cháng chéng', meaning: 'Great Firewall', meaningEn: 'Great Firewall', audio: 'audio/hsk6/hsk6_防火.wav' },
-      { hanzi: '翻墙', pinyin: 'fān qiáng', meaning: 'sauter le mur (VPN)', meaningEn: 'jump the wall (VPN)', audio: 'audio/hsk6/hsk6_翻墙.wav' },
-      { hanzi: '微信', pinyin: 'wēi xìn', meaning: 'WeChat', meaningEn: 'WeChat', audio: 'audio/hsk5/hsk5_微信.wav' },
-      { hanzi: '微博', pinyin: 'wēi bó', meaning: 'Weibo', meaningEn: 'Weibo', audio: 'audio/hsk6/hsk6_微博.wav' },
-      { hanzi: '哔哩哔哩', pinyin: 'bì lī bì lī', meaning: 'Bilibili', meaningEn: 'Bilibili', audio: 'audio/hsk6/hsk6_哔哩.wav' }
+      { hanzi: '防火长城', pinyin: 'fánghuǒ chángchéng', meaning: 'Great Firewall', meaningEn: 'Great Firewall', audio: 'audio/hsk6/hsk6_防火.wav' },
+      { hanzi: '翻墙', pinyin: 'fānqiáng', meaning: 'sauter le mur (VPN)', meaningEn: 'jump the wall (VPN)', audio: 'audio/hsk6/hsk6_翻墙.wav' },
+      { hanzi: '微信', pinyin: 'wēixìn', meaning: 'WeChat', meaningEn: 'WeChat', audio: 'audio/hsk5/hsk5_微信.wav' },
+      { hanzi: '微博', pinyin: 'wēibó', meaning: 'Weibo', meaningEn: 'Weibo', audio: 'audio/hsk6/hsk6_微博.wav' },
+      { hanzi: '哔哩哔哩', pinyin: 'bìlī bìlī', meaning: 'Bilibili', meaningEn: 'Bilibili', audio: 'audio/hsk6/hsk6_哔哩.wav' }
     ],
     tip:
       'Si tu pars en Chine en 2026, INSTALLE ton VPN AVANT de quitter ton pays (les sites de VPN sont bloqués depuis la Chine). Choisis un VPN d\'entreprise (Astrill, ExpressVPN, NordVPN) plutôt qu\'un gratuit. Sans VPN fonctionnel, tu seras coupé de WhatsApp/Gmail/Instagram dès l\'atterrissage.',
@@ -1809,11 +1809,11 @@ export const c12LawSocietyM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '网络安全法 (Cybersecurity Law, 2017) imposes: (1) local hosting of Chinese personal data, (2) cooperation with authorities, (3) certification of critical equipment. 2021 laws: 数据安全法 (Data Security Law) + 个人信息保护法 (PIPL — equivalent of European GDPR, but stricter on state side). For a foreign company operating in China: high compliance cost (audit, hosting, regulated transfers). Content censorship via 敏感词 (auto-filtered keywords): 64 (= June 4, 1989, Tiananmen), dissident names (刘晓波, 艾未未), references to Tibet/Xinjiang/Falun Gong. On WeChat, Weibo, etc., a message containing a 敏感词 can be silently DELETED. Avoid these topics online in China — basic prudence rule.',
     items: [
-      { hanzi: '网络安全', pinyin: 'wǎng luò ān quán', meaning: 'cybersécurité', meaningEn: 'cybersecurity', audio: 'audio/hsk6/hsk6_网络.wav' },
-      { hanzi: '数据安全', pinyin: 'shù jù ān quán', meaning: 'sécurité des données', meaningEn: 'data security', audio: 'audio/hsk6/hsk6_数据.wav' },
-      { hanzi: '个人信息', pinyin: 'gè rén xìn xī', meaning: 'données personnelles', meaningEn: 'personal data', audio: 'audio/hsk5/hsk5_个人.wav' },
-      { hanzi: '敏感词', pinyin: 'mǐn gǎn cí', meaning: 'mot sensible', meaningEn: 'sensitive word', audio: 'audio/hsk6/hsk6_敏感.wav' },
-      { hanzi: '过滤', pinyin: 'guò lǜ', meaning: 'filtrer', meaningEn: 'filter', audio: 'audio/hsk6/hsk6_过滤.wav' }
+      { hanzi: '网络安全', pinyin: 'wǎngluòānquán', meaning: 'cybersécurité', meaningEn: 'cybersecurity', audio: 'audio/hsk6/hsk6_网络.wav' },
+      { hanzi: '数据安全', pinyin: 'shùjùānquán', meaning: 'sécurité des données', meaningEn: 'data security', audio: 'audio/hsk6/hsk6_数据.wav' },
+      { hanzi: '个人信息', pinyin: 'gèrénxìnxī', meaning: 'données personnelles', meaningEn: 'personal data', audio: 'audio/hsk5/hsk5_个人.wav' },
+      { hanzi: '敏感词', pinyin: 'mǐngǎn cí', meaning: 'mot sensible', meaningEn: 'sensitive word', audio: 'audio/hsk6/hsk6_敏感.wav' },
+      { hanzi: '过滤', pinyin: 'guòlǜ', meaning: 'filtrer', meaningEn: 'filter', audio: 'audio/hsk6/hsk6_过滤.wav' }
     ],
     tip:
       'En Chine, sépare TES discussions sensibles : (1) en personne sans téléphone à proximité, (2) via Signal hors GFW (avec VPN). Évite WeChat pour TOUT sujet sensible — tout est lisible par les autorités. Cette discipline protège tes interlocuteurs chinois autant que toi.',

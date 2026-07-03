@@ -34,11 +34,11 @@ export const b22StructureM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'We propose a trade-off: the rejected option comes after 与其, the chosen one after 不如. 与其抱怨，不如行动 = rather than complain, better to act. Unlike 比 which compares objectively, 与其…不如 carries a value judgment, often advice. In speech, 与其 is often dropped if context is clear: 不如你先走 = better you leave first.',
     items: [
-      { hanzi: '与其', pinyin: 'yǔ qí', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk6/hsk6_与其.wav' },
-      { hanzi: '不如', pinyin: 'bù rú', meaning: 'autant vaut, mieux', meaningEn: 'better, rather', audio: 'audio/hsk5/hsk5_不如.wav' },
-      { hanzi: '还不如', pinyin: 'hái bù rú', meaning: 'autant valoir', meaningEn: 'might as well', audio: 'audio/hsk5/hsk5_还不如.wav' },
-      { hanzi: '抱怨', pinyin: 'bào yuàn', meaning: 'se plaindre', meaningEn: 'complain', audio: 'audio/hsk5/hsk5_抱怨.wav' },
-      { hanzi: '行动', pinyin: 'xíng dòng', meaning: 'agir, action', meaningEn: 'act, action', audio: 'audio/hsk5/hsk5_行动.wav' }
+      { hanzi: '与其', pinyin: 'yǔqí', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk6/hsk6_与其.wav' },
+      { hanzi: '不如', pinyin: 'bùrú', meaning: 'autant vaut, mieux', meaningEn: 'better, rather', audio: 'audio/hsk5/hsk5_不如.wav' },
+      { hanzi: '还不如', pinyin: 'hái bùrú', meaning: 'autant valoir', meaningEn: 'might as well', audio: 'audio/hsk5/hsk5_还不如.wav' },
+      { hanzi: '抱怨', pinyin: 'bàoyuàn', meaning: 'se plaindre', meaningEn: 'complain', audio: 'audio/hsk5/hsk5_抱怨.wav' },
+      { hanzi: '行动', pinyin: 'xíngdòng', meaning: 'agir, action', meaningEn: 'act, action', audio: 'audio/hsk5/hsk5_行动.wav' }
     ],
     tip:
       'Piège fréquent : 与其 ne compare PAS deux choses/personnes, il compare deux ACTIONS ou situations. Pour comparer deux objets, garde 比 (他比我高). Pour comparer deux décisions, passe à 与其…不如.',
@@ -60,11 +60,11 @@ export const b22StructureM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '还不如 = "one might as well just". It\'s the exasperated / resigned version of 与其…不如. Used when you find the current option so inefficient you\'re half-joking or criticizing: 这个工资，还不如去送外卖 = with this salary, you might as well deliver meals. 你这么不努力，还不如别学了 = since you don\'t work, might as well quit. Oral tone, often ironic or disillusioned. Avoid in formal writing.',
     items: [
-      { hanzi: '工资', pinyin: 'gōng zī', meaning: 'salaire', meaningEn: 'salary', audio: 'audio/hsk4/hsk4_工资.wav' },
-      { hanzi: '送外卖', pinyin: 'sòng wài mài', meaning: 'livrer des repas', meaningEn: 'deliver meals', audio: 'audio/hsk4/hsk4_外卖.wav' },
-      { hanzi: '浪费', pinyin: 'làng fèi', meaning: 'gaspiller', meaningEn: 'waste', audio: 'audio/hsk4/hsk4_浪费.wav' },
-      { hanzi: '效率', pinyin: 'xiào lǜ', meaning: 'efficacité', meaningEn: 'efficiency', audio: 'audio/hsk6/hsk6_效率.wav' },
-      { hanzi: '值得', pinyin: 'zhí dé', meaning: 'mériter, valoir', meaningEn: 'worth', audio: 'audio/hsk4/hsk4_值得.wav' }
+      { hanzi: '工资', pinyin: 'gōngzī', meaning: 'salaire', meaningEn: 'salary', audio: 'audio/hsk4/hsk4_工资.wav' },
+      { hanzi: '送外卖', pinyin: 'sòng wàimài', meaning: 'livrer des repas', meaningEn: 'deliver meals', audio: 'audio/hsk4/hsk4_外卖.wav' },
+      { hanzi: '浪费', pinyin: 'làngfèi', meaning: 'gaspiller', meaningEn: 'waste', audio: 'audio/hsk4/hsk4_浪费.wav' },
+      { hanzi: '效率', pinyin: 'xiàolǜ', meaning: 'efficacité', meaningEn: 'efficiency', audio: 'audio/hsk6/hsk6_效率.wav' },
+      { hanzi: '值得', pinyin: 'zhíde', meaning: 'mériter, valoir', meaningEn: 'worth', audio: 'audio/hsk4/hsk4_值得.wav' }
     ],
     tip:
       'En dialogue, 还不如 est souvent précédé de 这样 : 这样还不如… = « comme ça, autant vaudrait… ». Ça renforce le côté « regarde, la situation actuelle est pire que l\'alternative proposée ».',
@@ -90,11 +90,11 @@ export const b22StructureM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'The tone rises a notch above 与其. 宁可 marks an assumed preference, often at a cost. 我宁可加班，也不拖延 = I\'d rather do overtime than procrastinate. Variant 宁愿 = same meaning, more written. With negation in the second clause (也不): 宁死也不投降 = rather die than surrender. 与其 compares two neutral options; 宁可 asserts personal firmness.',
     items: [
-      { hanzi: '宁可', pinyin: 'nìng kě', meaning: 'plutôt (sacrifice)', meaningEn: 'would rather (sacrifice)', audio: 'audio/hsk6/hsk6_宁可.wav' },
-      { hanzi: '宁愿', pinyin: 'nìng yuàn', meaning: 'préférer (écrit)', meaningEn: 'prefer (written)', audio: 'audio/hsk5/hsk5_宁愿.wav' },
+      { hanzi: '宁可', pinyin: 'nìngkě', meaning: 'plutôt (sacrifice)', meaningEn: 'would rather (sacrifice)', audio: 'audio/hsk6/hsk6_宁可.wav' },
+      { hanzi: '宁愿', pinyin: 'nìngyuàn', meaning: 'préférer (écrit)', meaningEn: 'prefer (written)', audio: 'audio/hsk5/hsk5_宁愿.wav' },
       { hanzi: '也不', pinyin: 'yě bù', meaning: 'même pas', meaningEn: 'nor, also not', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '加班', pinyin: 'jiā bān', meaning: 'heures supplémentaires', meaningEn: 'overtime', audio: 'audio/hsk4/hsk4_加班.wav' },
-      { hanzi: '投降', pinyin: 'tóu xiáng', meaning: 'se rendre', meaningEn: 'surrender', audio: 'audio/hsk6/hsk6_投降.wav' }
+      { hanzi: '加班', pinyin: 'jiābān', meaning: 'heures supplémentaires', meaningEn: 'overtime', audio: 'audio/hsk4/hsk4_加班.wav' },
+      { hanzi: '投降', pinyin: 'tóuxiáng', meaning: 'se rendre', meaningEn: 'surrender', audio: 'audio/hsk6/hsk6_投降.wav' }
     ],
     tip:
       'Différence clé avec 与其 : 与其 = je compare deux options ; 宁可 = j\'en accepte une quitte à en subir le prix. 宁可 garde un parfum stoïque.',
@@ -122,10 +122,10 @@ export const b22StructureM2LearnSections: LessonV2LearnSection[] = [
       'The most common form uses negation: 宁可 A 也不 B = "rather A than ever B". 宁可饿着也不吃剩饭 = rather stay hungry than eat leftovers. 宁可走路，也不坐地铁 = rather walk than take the metro. Three golden rules: (1) B\'s verb must be negated (也不, 也不会, 也没有), (2) A is the costly option you prefer, (3) B is the rejected one, even if seemingly more comfortable. Opposite of French intuition — careful.',
     items: [
       { hanzi: '饿', pinyin: 'è', meaning: 'avoir faim', meaningEn: 'hungry', audio: 'audio/hsk3/hsk3_饿.wav' },
-      { hanzi: '剩饭', pinyin: 'shèng fàn', meaning: 'restes (repas)', meaningEn: 'leftovers', audio: 'audio/hsk4/hsk4_剩.wav' },
-      { hanzi: '辞职', pinyin: 'cí zhí', meaning: 'démissionner', meaningEn: 'resign', audio: 'audio/hsk5/hsk5_辞职.wav' },
-      { hanzi: '委屈', pinyin: 'wěi qū', meaning: 'être lésé, avaler une humiliation', meaningEn: 'feel wronged', audio: 'audio/hsk5/hsk5_委屈.wav' },
-      { hanzi: '坚持', pinyin: 'jiān chí', meaning: 'tenir bon', meaningEn: 'stand firm', audio: 'audio/hsk4/hsk4_坚持.wav' }
+      { hanzi: '剩饭', pinyin: 'shèngfàn', meaning: 'restes (repas)', meaningEn: 'leftovers', audio: 'audio/hsk4/hsk4_剩.wav' },
+      { hanzi: '辞职', pinyin: 'cízhí', meaning: 'démissionner', meaningEn: 'resign', audio: 'audio/hsk5/hsk5_辞职.wav' },
+      { hanzi: '委屈', pinyin: 'wěiqū', meaning: 'être lésé, avaler une humiliation', meaningEn: 'feel wronged', audio: 'audio/hsk5/hsk5_委屈.wav' },
+      { hanzi: '坚持', pinyin: 'jiānchí', meaning: 'tenir bon', meaningEn: 'stand firm', audio: 'audio/hsk4/hsk4_坚持.wav' }
     ],
     tip:
       'Dans la littérature et la rhétorique, on croise souvent le schéma extrême 宁可…也不… avec 死 : 宁死不屈 = plutôt mourir que céder. Ce slogan classique résume l\'esprit de la structure.',
@@ -151,12 +151,12 @@ export const b22StructureM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Two conditionals NEVER to mix. 只要 A 就 B = it\'s enough for A, then B (open, permissive). 只要你来，我就开心. 只有 A 才 B = only if A, then B (closed, restrictive). 只有努力，才能成功 = only effort brings success. Mnemonic: 就 permits ("as soon as it suffices"), 才 restricts ("not before"). Swapping the two flips the argument entirely.',
     items: [
-      { hanzi: '只要', pinyin: 'zhǐ yào', meaning: 'il suffit que', meaningEn: 'as long as', audio: 'audio/hsk4/hsk4_只要.wav' },
-      { hanzi: '只有', pinyin: 'zhǐ yǒu', meaning: 'seulement si', meaningEn: 'only if', audio: 'audio/hsk3/hsk3_只有.wav' },
+      { hanzi: '只要', pinyin: 'zhǐyào', meaning: 'il suffit que', meaningEn: 'as long as', audio: 'audio/hsk4/hsk4_只要.wav' },
+      { hanzi: '只有', pinyin: 'zhǐyǒu', meaning: 'seulement si', meaningEn: 'only if', audio: 'audio/hsk3/hsk3_只有.wav' },
       { hanzi: '就', pinyin: 'jiù', meaning: 'alors (permissif)', meaningEn: 'then (permissive)', audio: 'audio/hsk2/hsk2_就.wav' },
       { hanzi: '才', pinyin: 'cái', meaning: 'alors (restrictif)', meaningEn: 'only then (restrictive)', audio: 'audio/hsk2/hsk2_才.wav' },
-      { hanzi: '努力', pinyin: 'nǔ lì', meaning: 'faire des efforts', meaningEn: 'work hard', audio: 'audio/hsk3/hsk3_努力.wav' },
-      { hanzi: '成功', pinyin: 'chéng gōng', meaning: 'réussir', meaningEn: 'succeed', audio: 'audio/hsk4/hsk4_成功.wav' }
+      { hanzi: '努力', pinyin: 'nǔlì', meaning: 'faire des efforts', meaningEn: 'work hard', audio: 'audio/hsk3/hsk3_努力.wav' },
+      { hanzi: '成功', pinyin: 'chénggōng', meaning: 'réussir', meaningEn: 'succeed', audio: 'audio/hsk4/hsk4_成功.wav' }
     ],
     tip:
       'En examen (HSK, grammaire), les QCM jouent TOUJOURS sur le couple 就/才. Ne laisse jamais l\'un sans son partenaire.',
@@ -179,11 +179,11 @@ export const b22StructureM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '只有…才 locks in an EXCLUSIVE condition: no other path works. 只有通过练习，才能说得流利 = only through practice can one speak fluently. 才 is often reinforced by 能/才能 (capacity) or 会 (future possibility): 只有冷静，才能做出正确的判断. To further emphasize, prefix with 除非: 除非你同意，否则我不会做 = unless you agree, I won\'t do it. Press, debate, essay register — very common in written exams.',
     items: [
-      { hanzi: '练习', pinyin: 'liàn xí', meaning: 's\'exercer', meaningEn: 'practice', audio: 'audio/hsk3/hsk3_练习.wav' },
-      { hanzi: '流利', pinyin: 'liú lì', meaning: 'couramment', meaningEn: 'fluently', audio: 'audio/hsk5/hsk5_流利.wav' },
-      { hanzi: '冷静', pinyin: 'lěng jìng', meaning: 'calme, sang-froid', meaningEn: 'calm, composed', audio: 'audio/hsk5/hsk5_冷静.wav' },
-      { hanzi: '判断', pinyin: 'pàn duàn', meaning: 'juger, jugement', meaningEn: 'judge, judgment', audio: 'audio/hsk5/hsk5_判断.wav' },
-      { hanzi: '除非', pinyin: 'chú fēi', meaning: 'à moins que', meaningEn: 'unless', audio: 'audio/hsk5/hsk5_除非.wav' }
+      { hanzi: '练习', pinyin: 'liànxí', meaning: 's\'exercer', meaningEn: 'practice', audio: 'audio/hsk3/hsk3_练习.wav' },
+      { hanzi: '流利', pinyin: 'liúlì', meaning: 'couramment', meaningEn: 'fluently', audio: 'audio/hsk5/hsk5_流利.wav' },
+      { hanzi: '冷静', pinyin: 'lěngjìng', meaning: 'calme, sang-froid', meaningEn: 'calm, composed', audio: 'audio/hsk5/hsk5_冷静.wav' },
+      { hanzi: '判断', pinyin: 'pànduàn', meaning: 'juger, jugement', meaningEn: 'judge, judgment', audio: 'audio/hsk5/hsk5_判断.wav' },
+      { hanzi: '除非', pinyin: 'chúfēi', meaning: 'à moins que', meaningEn: 'unless', audio: 'audio/hsk5/hsk5_除非.wav' }
     ],
     tip:
       'Piège d\'écrit : ne confonds pas 只有 (condition exclusive) avec 除了 (exception) ni avec 只 (simplement). 只有你能帮我 = tu es le SEUL à pouvoir m\'aider. 只你能帮我 ≠ correct à l\'écrit.',
@@ -212,12 +212,12 @@ export const b22ArtsM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Before 1918, China wrote in 文言文 (classical, unreadable aloud). Lu Xun publishes 《狂人日记》 in 白话文, written Chinese as spoken. It\'s a seismic rupture: suddenly literature addresses the literate population at large, not scholars alone. The May Fourth Movement 1919 (五四运动) institutionalizes this reform. Today every novel, article, textbook reads in 白话文; 文言文 stays a school subject.',
     items: [
-      { hanzi: '鲁迅', pinyin: 'lǔ xùn', meaning: 'Lu Xun', meaningEn: 'Lu Xun', audio: 'audio/hsk6/hsk6_鲁迅.wav' },
-      { hanzi: '白话文', pinyin: 'bái huà wén', meaning: 'chinois vernaculaire', meaningEn: 'vernacular Chinese', audio: 'audio/hsk6/hsk6_白话文.wav' },
-      { hanzi: '文言文', pinyin: 'wén yán wén', meaning: 'chinois classique', meaningEn: 'classical Chinese', audio: 'audio/hsk6/hsk6_文言文.wav' },
-      { hanzi: '狂人日记', pinyin: 'kuáng rén rì jì', meaning: 'Journal d\'un fou', meaningEn: 'Diary of a Madman', audio: 'audio/hsk6/hsk6_狂人日记.wav' },
+      { hanzi: '鲁迅', pinyin: 'lǔxùn', meaning: 'Lu Xun', meaningEn: 'Lu Xun', audio: 'audio/hsk6/hsk6_鲁迅.wav' },
+      { hanzi: '白话文', pinyin: 'báihuàwén', meaning: 'chinois vernaculaire', meaningEn: 'vernacular Chinese', audio: 'audio/hsk6/hsk6_白话文.wav' },
+      { hanzi: '文言文', pinyin: 'wényánwén', meaning: 'chinois classique', meaningEn: 'classical Chinese', audio: 'audio/hsk6/hsk6_文言文.wav' },
+      { hanzi: '狂人日记', pinyin: 'kuángrénrìjì', meaning: 'Journal d\'un fou', meaningEn: 'Diary of a Madman', audio: 'audio/hsk6/hsk6_狂人日记.wav' },
       { hanzi: '阿Q正传', pinyin: 'ā q zhèng zhuàn', meaning: 'La véritable histoire d\'A Q', meaningEn: 'The True Story of Ah Q', audio: 'audio/hsk6/hsk6_阿Q正传.wav' },
-      { hanzi: '五四运动', pinyin: 'wǔ sì yùn dòng', meaning: 'Mouvement du 4 mai 1919', meaningEn: 'May Fourth Movement 1919', audio: 'audio/hsk6/hsk6_五四运动.wav' }
+      { hanzi: '五四运动', pinyin: 'wǔsìyùndòng', meaning: 'Mouvement du 4 mai 1919', meaningEn: 'May Fourth Movement 1919', audio: 'audio/hsk6/hsk6_五四运动.wav' }
     ]
   }
 ];
@@ -236,12 +236,12 @@ export const b22ArtsM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '5th generation (late 80s-90s): 张艺谋 (Zhang Yimou, 《红高粱》, 《英雄》) and 陈凯歌 (Chen Kaige, 《霸王别姬》, Palme d\'Or 1993) bring a flamboyant aesthetic and historical narratives. 6th generation (2000s): 贾樟柯 (Jia Zhangke) films urban China in transition, far from epics. Today China\'s 票房 is the world\'s #1, with local films exceeding $1 billion without ever releasing abroad.',
     items: [
-      { hanzi: '导演', pinyin: 'dǎo yǎn', meaning: 'réalisateur', meaningEn: 'director', audio: 'audio/hsk5/hsk5_导演.wav' },
-      { hanzi: '演员', pinyin: 'yǎn yuán', meaning: 'acteur', meaningEn: 'actor', audio: 'audio/hsk4/hsk4_演员.wav' },
-      { hanzi: '电影节', pinyin: 'diàn yǐng jié', meaning: 'festival de cinéma', meaningEn: 'film festival', audio: 'audio/hsk5/hsk5_电影节.wav' },
-      { hanzi: '票房', pinyin: 'piào fáng', meaning: 'box-office', meaningEn: 'box office', audio: 'audio/hsk6/hsk6_票房.wav' },
-      { hanzi: '张艺谋', pinyin: 'zhāng yì móu', meaning: 'Zhang Yimou', meaningEn: 'Zhang Yimou', audio: 'audio/hsk5/hsk5_张艺谋.wav' },
-      { hanzi: '陈凯歌', pinyin: 'chén kǎi gē', meaning: 'Chen Kaige', meaningEn: 'Chen Kaige', audio: 'audio/hsk5/hsk5_陈凯歌.wav' }
+      { hanzi: '导演', pinyin: 'dǎoyǎn', meaning: 'réalisateur', meaningEn: 'director', audio: 'audio/hsk5/hsk5_导演.wav' },
+      { hanzi: '演员', pinyin: 'yǎnyuán', meaning: 'acteur', meaningEn: 'actor', audio: 'audio/hsk4/hsk4_演员.wav' },
+      { hanzi: '电影节', pinyin: 'diànyǐngjié', meaning: 'festival de cinéma', meaningEn: 'film festival', audio: 'audio/hsk5/hsk5_电影节.wav' },
+      { hanzi: '票房', pinyin: 'piàofáng', meaning: 'box-office', meaningEn: 'box office', audio: 'audio/hsk6/hsk6_票房.wav' },
+      { hanzi: '张艺谋', pinyin: 'zhāngyìmóu', meaning: 'Zhang Yimou', meaningEn: 'Zhang Yimou', audio: 'audio/hsk5/hsk5_张艺谋.wav' },
+      { hanzi: '陈凯歌', pinyin: 'chénkǎigē', meaning: 'Chen Kaige', meaningEn: 'Chen Kaige', audio: 'audio/hsk5/hsk5_陈凯歌.wav' }
     ]
   }
 ];
@@ -260,12 +260,12 @@ export const b22ArtsM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '邓丽君 (Teresa Teng, 1953-1995) marked the whole Sinophone Asia with 《月亮代表我的心》 — her voice crossed the bamboo curtain between Taiwan and PRC in the 80s. 周杰伦 (Jay Chou) dominated the 2000s, mixing rap, jazz and traditional Chinese elements. Today, the 华语乐坛 runs through 选秀节目 (talent shows) like 《歌手》 or 《乘风破浪的姐姐》. 邓紫棋 (G.E.M.) and 华晨宇 (Hua Chenyu) are leading figures.',
     items: [
-      { hanzi: '邓丽君', pinyin: 'dèng lì jūn', meaning: 'Teresa Teng', meaningEn: 'Teresa Teng', audio: 'audio/hsk6/hsk6_邓丽君.wav' },
-      { hanzi: '周杰伦', pinyin: 'zhōu jié lún', meaning: 'Jay Chou', meaningEn: 'Jay Chou', audio: 'audio/hsk5/hsk5_周杰伦.wav' },
-      { hanzi: '歌手', pinyin: 'gē shǒu', meaning: 'chanteur', meaningEn: 'singer', audio: 'audio/hsk4/hsk4_歌手.wav' },
-      { hanzi: '专辑', pinyin: 'zhuān jí', meaning: 'album', meaningEn: 'album', audio: 'audio/hsk5/hsk5_专辑.wav' },
-      { hanzi: '演唱会', pinyin: 'yǎn chàng huì', meaning: 'concert', meaningEn: 'concert', audio: 'audio/hsk5/hsk5_演唱会.wav' },
-      { hanzi: '选秀节目', pinyin: 'xuǎn xiù jié mù', meaning: 'télé-crochet, talent show', meaningEn: 'talent show', audio: 'audio/hsk6/hsk6_选秀节目.wav' }
+      { hanzi: '邓丽君', pinyin: 'dènglìjūn', meaning: 'Teresa Teng', meaningEn: 'Teresa Teng', audio: 'audio/hsk6/hsk6_邓丽君.wav' },
+      { hanzi: '周杰伦', pinyin: 'zhōujiélún', meaning: 'Jay Chou', meaningEn: 'Jay Chou', audio: 'audio/hsk5/hsk5_周杰伦.wav' },
+      { hanzi: '歌手', pinyin: 'gēshǒu', meaning: 'chanteur', meaningEn: 'singer', audio: 'audio/hsk4/hsk4_歌手.wav' },
+      { hanzi: '专辑', pinyin: 'zhuānjí', meaning: 'album', meaningEn: 'album', audio: 'audio/hsk5/hsk5_专辑.wav' },
+      { hanzi: '演唱会', pinyin: 'yǎnchànghuì', meaning: 'concert', meaningEn: 'concert', audio: 'audio/hsk5/hsk5_演唱会.wav' },
+      { hanzi: '选秀节目', pinyin: 'xuǎnxiù jiémù', meaning: 'télé-crochet, talent show', meaningEn: 'talent show', audio: 'audio/hsk6/hsk6_选秀节目.wav' }
     ]
   }
 ];
@@ -294,13 +294,13 @@ export const b22ArtsM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese calligraphy is considered the supreme art, above painting. It requires the 文房四宝: 笔 (brush), 墨 (ink stick), 纸 (rice paper), 砚 (inkstone). Five styles in historical order: 篆书 (seal, ancient) → 隶书 (clerical) → 楷书 (regular, what you learn at school) → 行书 (running, semi-cursive) → 草书 (cursive, "wild grass"). 王羲之 (Wang Xizhi, 4th c.) is 书圣, the "Sage of Calligraphy".',
     items: [
-      { hanzi: '书法', pinyin: 'shū fǎ', meaning: 'calligraphie', meaningEn: 'calligraphy', audio: 'audio/hsk5/hsk5_书法.wav' },
-      { hanzi: '文房四宝', pinyin: 'wén fáng sì bǎo', meaning: 'les 4 trésors du lettré', meaningEn: 'Four Treasures of Study', audio: 'audio/hsk6/hsk6_文房四宝.wav' },
+      { hanzi: '书法', pinyin: 'shūfǎ', meaning: 'calligraphie', meaningEn: 'calligraphy', audio: 'audio/hsk5/hsk5_书法.wav' },
+      { hanzi: '文房四宝', pinyin: 'wénfángsìbǎo', meaning: 'les 4 trésors du lettré', meaningEn: 'Four Treasures of Study', audio: 'audio/hsk6/hsk6_文房四宝.wav' },
       { hanzi: '笔', pinyin: 'bǐ', meaning: 'pinceau', meaningEn: 'brush', audio: 'audio/hsk1/hsk1_笔.wav' },
       { hanzi: '墨', pinyin: 'mò', meaning: 'encre', meaningEn: 'ink', audio: 'audio/hsk6/hsk6_墨.wav' },
-      { hanzi: '楷书', pinyin: 'kǎi shū', meaning: 'style régulier', meaningEn: 'regular script', audio: 'audio/hsk6/hsk6_楷书.wav' },
-      { hanzi: '草书', pinyin: 'cǎo shū', meaning: 'style cursif', meaningEn: 'cursive script', audio: 'audio/hsk6/hsk6_草书.wav' },
-      { hanzi: '山水画', pinyin: 'shān shuǐ huà', meaning: 'peinture de paysage', meaningEn: 'landscape painting', audio: 'audio/hsk6/hsk6_山水画.wav' }
+      { hanzi: '楷书', pinyin: 'kǎishū', meaning: 'style régulier', meaningEn: 'regular script', audio: 'audio/hsk6/hsk6_楷书.wav' },
+      { hanzi: '草书', pinyin: 'cǎoshū', meaning: 'style cursif', meaningEn: 'cursive script', audio: 'audio/hsk6/hsk6_草书.wav' },
+      { hanzi: '山水画', pinyin: 'shānshuǐhuà', meaning: 'peinture de paysage', meaningEn: 'landscape painting', audio: 'audio/hsk6/hsk6_山水画.wav' }
     ],
     tip:
       'Tester sa compréhension d\'un style : sais-tu reconnaître un 楷书 (angles nets, traits séparés) d\'un 草书 (un seul mouvement, presque illisible) ? C\'est la première étape.',
@@ -332,13 +332,13 @@ export const b22HealthM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Traditional Chinese Medicine (中医) doesn\'t treat an isolated organ but the overall balance between 阴/阳 and the five elements (五行). Diagnosis follows the 望闻问切 method — look, listen/smell, ask, palpate the pulse. Main therapies: 针灸 (needles and moxibustion), 推拿 (deep massage), 中药 (herbal decoctions), 拔罐 (cupping). Key concepts: 气 (vital energy), 血 (blood), 经络 (meridians linking organs).',
     items: [
-      { hanzi: '中医', pinyin: 'zhōng yī', meaning: 'médecine chinoise', meaningEn: 'Chinese medicine', audio: 'audio/hsk4/hsk4_中医.wav' },
-      { hanzi: '针灸', pinyin: 'zhēn jiǔ', meaning: 'acupuncture-moxibustion', meaningEn: 'acupuncture', audio: 'audio/hsk6/hsk6_针灸.wav' },
-      { hanzi: '推拿', pinyin: 'tuī ná', meaning: 'massage thérapeutique', meaningEn: 'therapeutic massage', audio: 'audio/hsk6/hsk6_推拿.wav' },
-      { hanzi: '中药', pinyin: 'zhōng yào', meaning: 'pharmacopée chinoise', meaningEn: 'Chinese medicine', audio: 'audio/hsk4/hsk4_中药.wav' },
+      { hanzi: '中医', pinyin: 'zhōngyī', meaning: 'médecine chinoise', meaningEn: 'Chinese medicine', audio: 'audio/hsk4/hsk4_中医.wav' },
+      { hanzi: '针灸', pinyin: 'zhēnjiǔ', meaning: 'acupuncture-moxibustion', meaningEn: 'acupuncture', audio: 'audio/hsk6/hsk6_针灸.wav' },
+      { hanzi: '推拿', pinyin: 'tuīná', meaning: 'massage thérapeutique', meaningEn: 'therapeutic massage', audio: 'audio/hsk6/hsk6_推拿.wav' },
+      { hanzi: '中药', pinyin: 'zhōngyào', meaning: 'pharmacopée chinoise', meaningEn: 'Chinese medicine', audio: 'audio/hsk4/hsk4_中药.wav' },
       { hanzi: '气', pinyin: 'qì', meaning: 'énergie vitale', meaningEn: 'vital energy, qi', audio: 'audio/hsk1/hsk1_气.wav' },
-      { hanzi: '经络', pinyin: 'jīng luò', meaning: 'méridiens', meaningEn: 'meridians', audio: 'audio/hsk6/hsk6_经络.wav' },
-      { hanzi: '阴阳', pinyin: 'yīn yáng', meaning: 'yin et yang', meaningEn: 'yin and yang', audio: 'audio/hsk5/hsk5_阴阳.wav' }
+      { hanzi: '经络', pinyin: 'jīngluò', meaning: 'méridiens', meaningEn: 'meridians', audio: 'audio/hsk6/hsk6_经络.wav' },
+      { hanzi: '阴阳', pinyin: 'yīnyáng', meaning: 'yin et yang', meaningEn: 'yin and yang', audio: 'audio/hsk5/hsk5_阴阳.wav' }
     ],
     tip:
       'En Chine urbaine aujourd\'hui, beaucoup de patients mixent les deux médecines : 中西医结合. Ton généraliste peut te prescrire à la fois un antibiotique occidental et une décoction de plantes.',
@@ -365,13 +365,13 @@ export const b22HealthM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Typical sequence: you arrive at the hospital (医院), get a numbered ticket at the counter — 挂号. Wait in the waiting room (候诊). The doctor sees you (看病), prescribes (开药). You go to the in-hospital pharmacy to collect drugs (取药) and pay (付款). For admission (住院), a deposit (押金) is often required. Public insurance 医保 reimburses part. Departments: 内科 (internal), 外科 (surgery), 儿科 (pediatrics), 皮肤科 (dermatology).',
     items: [
-      { hanzi: '医院', pinyin: 'yī yuàn', meaning: 'hôpital', meaningEn: 'hospital', audio: 'audio/hsk1/hsk1_医院.wav' },
-      { hanzi: '门诊', pinyin: 'mén zhěn', meaning: 'consultation externe', meaningEn: 'outpatient', audio: 'audio/hsk6/hsk6_门诊.wav' },
-      { hanzi: '急诊', pinyin: 'jí zhěn', meaning: 'urgences', meaningEn: 'emergency', audio: 'audio/hsk6/hsk6_急诊.wav' },
-      { hanzi: '挂号', pinyin: 'guà hào', meaning: 'prendre un ticket médical', meaningEn: 'register for consultation', audio: 'audio/hsk5/hsk5_挂号.wav' },
-      { hanzi: '看病', pinyin: 'kàn bìng', meaning: 'consulter un médecin', meaningEn: 'see a doctor', audio: 'audio/hsk2/hsk2_看病.wav' },
-      { hanzi: '开药', pinyin: 'kāi yào', meaning: 'prescrire', meaningEn: 'prescribe', audio: 'audio/hsk4/hsk4_开药.wav' },
-      { hanzi: '医保', pinyin: 'yī bǎo', meaning: 'assurance santé', meaningEn: 'health insurance', audio: 'audio/hsk6/hsk6_医保.wav' }
+      { hanzi: '医院', pinyin: 'yīyuàn', meaning: 'hôpital', meaningEn: 'hospital', audio: 'audio/hsk1/hsk1_医院.wav' },
+      { hanzi: '门诊', pinyin: 'ménzhěn', meaning: 'consultation externe', meaningEn: 'outpatient', audio: 'audio/hsk6/hsk6_门诊.wav' },
+      { hanzi: '急诊', pinyin: 'jízhěn', meaning: 'urgences', meaningEn: 'emergency', audio: 'audio/hsk6/hsk6_急诊.wav' },
+      { hanzi: '挂号', pinyin: 'guàhào', meaning: 'prendre un ticket médical', meaningEn: 'register for consultation', audio: 'audio/hsk5/hsk5_挂号.wav' },
+      { hanzi: '看病', pinyin: 'kànbìng', meaning: 'consulter un médecin', meaningEn: 'see a doctor', audio: 'audio/hsk2/hsk2_看病.wav' },
+      { hanzi: '开药', pinyin: 'kāiyào', meaning: 'prescrire', meaningEn: 'prescribe', audio: 'audio/hsk4/hsk4_开药.wav' },
+      { hanzi: '医保', pinyin: 'yībǎo', meaning: 'assurance santé', meaningEn: 'health insurance', audio: 'audio/hsk6/hsk6_医保.wav' }
     ]
   }
 ];
@@ -394,13 +394,13 @@ export const b22HealthM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '养生 covers food, sleep, emotions, gentle exercise. Morning in the parks: seniors practicing 太极拳 and 气功, families doing 散步. Table: 食疗 ("healing through food") — cooling watermelon in summer, restorative soups in winter. Ritual: 喝热水 year-round, cold is deemed harmful to the 气. Modern dark side: 亚健康 (chronic fatigue without diagnosis), 抑郁症 (depression, whose recognition has been growing since 2020).',
     items: [
-      { hanzi: '养生', pinyin: 'yǎng shēng', meaning: 'cultiver la santé', meaningEn: 'nurture life', audio: 'audio/hsk6/hsk6_养生.wav' },
-      { hanzi: '太极拳', pinyin: 'tài jí quán', meaning: 'taichi', meaningEn: 'tai chi', audio: 'audio/hsk5/hsk5_太极拳.wav' },
-      { hanzi: '气功', pinyin: 'qì gōng', meaning: 'qigong', meaningEn: 'qigong', audio: 'audio/hsk5/hsk5_气功.wav' },
-      { hanzi: '散步', pinyin: 'sàn bù', meaning: 'promenade', meaningEn: 'stroll', audio: 'audio/hsk4/hsk4_散步.wav' },
-      { hanzi: '热水', pinyin: 'rè shuǐ', meaning: 'eau chaude', meaningEn: 'hot water', audio: 'audio/hsk1/hsk1_热水.wav' },
-      { hanzi: '亚健康', pinyin: 'yà jiàn kāng', meaning: '« sub-santé »', meaningEn: 'sub-health', audio: 'audio/hsk6/hsk6_亚健康.wav' },
-      { hanzi: '抑郁症', pinyin: 'yì yù zhèng', meaning: 'dépression', meaningEn: 'depression', audio: 'audio/hsk6/hsk6_抑郁症.wav' }
+      { hanzi: '养生', pinyin: 'yǎngshēng', meaning: 'cultiver la santé', meaningEn: 'nurture life', audio: 'audio/hsk6/hsk6_养生.wav' },
+      { hanzi: '太极拳', pinyin: 'tàijíquán', meaning: 'taichi', meaningEn: 'tai chi', audio: 'audio/hsk5/hsk5_太极拳.wav' },
+      { hanzi: '气功', pinyin: 'qìgōng', meaning: 'qigong', meaningEn: 'qigong', audio: 'audio/hsk5/hsk5_气功.wav' },
+      { hanzi: '散步', pinyin: 'sànbù', meaning: 'promenade', meaningEn: 'stroll', audio: 'audio/hsk4/hsk4_散步.wav' },
+      { hanzi: '热水', pinyin: 'rèshuǐ', meaning: 'eau chaude', meaningEn: 'hot water', audio: 'audio/hsk1/hsk1_热水.wav' },
+      { hanzi: '亚健康', pinyin: 'yàjiànkāng', meaning: '« sub-santé »', meaningEn: 'sub-health', audio: 'audio/hsk6/hsk6_亚健康.wav' },
+      { hanzi: '抑郁症', pinyin: 'yìyùzhèng', meaning: 'dépression', meaningEn: 'depression', audio: 'audio/hsk6/hsk6_抑郁症.wav' }
     ],
     tip:
       'Si une amie chinoise te propose 喝热水 quand tu es malade, ce n\'est pas une blague — c\'est l\'équivalent culturel du « soigne-toi bien » universel.',
@@ -429,13 +429,13 @@ export const b22DebateM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'A B2 argument is built in three moves. (1) Open: 我认为 or 在我看来 to state a thesis; 从…来看 to adopt an angle. (2) Justify: 因为 (neutral), 由于 (formal), 之所以…是因为 for a reverse reasoning. (3) Illustrate: 例如 / 比如 / 举例来说. Then enrich with 另外, 此外, 再说 to add without re-launching the same idea.',
     items: [
-      { hanzi: '认为', pinyin: 'rèn wéi', meaning: 'penser que', meaningEn: 'think that', audio: 'audio/hsk4/hsk4_认为.wav' },
-      { hanzi: '在我看来', pinyin: 'zài wǒ kàn lái', meaning: 'selon moi', meaningEn: 'in my view', audio: 'audio/hsk5/hsk5_在我看来.wav' },
-      { hanzi: '因为', pinyin: 'yīn wèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
-      { hanzi: '由于', pinyin: 'yóu yú', meaning: 'du fait que', meaningEn: 'due to', audio: 'audio/hsk4/hsk4_由于.wav' },
-      { hanzi: '例如', pinyin: 'lì rú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk5/hsk5_例如.wav' },
-      { hanzi: '另外', pinyin: 'lìng wài', meaning: 'en outre', meaningEn: 'besides', audio: 'audio/hsk4/hsk4_另外.wav' },
-      { hanzi: '此外', pinyin: 'cǐ wài', meaning: 'en plus', meaningEn: 'in addition', audio: 'audio/hsk5/hsk5_此外.wav' }
+      { hanzi: '认为', pinyin: 'rènwéi', meaning: 'penser que', meaningEn: 'think that', audio: 'audio/hsk4/hsk4_认为.wav' },
+      { hanzi: '在我看来', pinyin: 'zàiwǒkànlái', meaning: 'selon moi', meaningEn: 'in my view', audio: 'audio/hsk5/hsk5_在我看来.wav' },
+      { hanzi: '因为', pinyin: 'yīnwèi', meaning: 'parce que', meaningEn: 'because', audio: 'audio/hsk2/hsk2_因为.wav' },
+      { hanzi: '由于', pinyin: 'yóuyú', meaning: 'du fait que', meaningEn: 'due to', audio: 'audio/hsk4/hsk4_由于.wav' },
+      { hanzi: '例如', pinyin: 'lìrú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk5/hsk5_例如.wav' },
+      { hanzi: '另外', pinyin: 'lìngwài', meaning: 'en outre', meaningEn: 'besides', audio: 'audio/hsk4/hsk4_另外.wav' },
+      { hanzi: '此外', pinyin: 'cǐwài', meaning: 'en plus', meaningEn: 'in addition', audio: 'audio/hsk5/hsk5_此外.wav' }
     ]
   }
 ];
@@ -463,13 +463,13 @@ export const b22DebateM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'The Chinese "yes, but" technique begins by acknowledging (的确, 不可否认, 虽然…但是), then introduces a real nuance (不过 softer than 但是, 然而 formal, 其实 which reveals reality). Follow with cautious generalizations (一般来说, 通常, 大多数) and restrictions (只是, 不一定). The whole creates an argument that feels balanced — highly valued in formal Chinese contexts.',
     items: [
-      { hanzi: '的确', pinyin: 'dí què', meaning: 'certes, en effet', meaningEn: 'admittedly, indeed', audio: 'audio/hsk5/hsk5_的确.wav' },
-      { hanzi: '不可否认', pinyin: 'bù kě fǒu rèn', meaning: 'on ne peut nier', meaningEn: 'undeniable', audio: 'audio/hsk6/hsk6_不可否认.wav' },
-      { hanzi: '不过', pinyin: 'bú guò', meaning: 'cependant', meaningEn: 'however', audio: 'audio/hsk3/hsk3_不过.wav' },
-      { hanzi: '然而', pinyin: 'rán ér', meaning: 'toutefois', meaningEn: 'yet, however', audio: 'audio/hsk4/hsk4_然而.wav' },
-      { hanzi: '其实', pinyin: 'qí shí', meaning: 'en réalité', meaningEn: 'actually', audio: 'audio/hsk3/hsk3_其实.wav' },
-      { hanzi: '一般来说', pinyin: 'yī bān lái shuō', meaning: 'en général', meaningEn: 'generally speaking', audio: 'audio/hsk5/hsk5_一般来说.wav' },
-      { hanzi: '不一定', pinyin: 'bù yí dìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk4/hsk4_不一定.wav' }
+      { hanzi: '的确', pinyin: 'díquè', meaning: 'certes, en effet', meaningEn: 'admittedly, indeed', audio: 'audio/hsk5/hsk5_的确.wav' },
+      { hanzi: '不可否认', pinyin: 'bùkěfǒurèn', meaning: 'on ne peut nier', meaningEn: 'undeniable', audio: 'audio/hsk6/hsk6_不可否认.wav' },
+      { hanzi: '不过', pinyin: 'bùguò', meaning: 'cependant', meaningEn: 'however', audio: 'audio/hsk3/hsk3_不过.wav' },
+      { hanzi: '然而', pinyin: 'ránér', meaning: 'toutefois', meaningEn: 'yet, however', audio: 'audio/hsk4/hsk4_然而.wav' },
+      { hanzi: '其实', pinyin: 'qíshí', meaning: 'en réalité', meaningEn: 'actually', audio: 'audio/hsk3/hsk3_其实.wav' },
+      { hanzi: '一般来说', pinyin: 'yìbānláishuō', meaning: 'en général', meaningEn: 'generally speaking', audio: 'audio/hsk5/hsk5_一般来说.wav' },
+      { hanzi: '不一定', pinyin: 'bù yídìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk4/hsk4_不一定.wav' }
     ]
   }
 ];
@@ -493,14 +493,14 @@ export const b22DebateM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In China, bluntly saying 这是错的 in a meeting can cost 面子. Prefer: 我不太同意, 恐怕不是这样, 这种看法值得商榷 (ultra-formal, for writing or high-level meetings). Reserve 我反对 for explicitly contradictory debates. To conclude, step up formality: 总之 (spoken) → 总的来说 → 综上所述 (written) → 因此 (therefore).',
     items: [
-      { hanzi: '同意', pinyin: 'tóng yì', meaning: 'être d\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
-      { hanzi: '反对', pinyin: 'fǎn duì', meaning: 's\'opposer', meaningEn: 'oppose', audio: 'audio/hsk4/hsk4_反对.wav' },
-      { hanzi: '恐怕', pinyin: 'kǒng pà', meaning: 'je crains que', meaningEn: 'I\'m afraid', audio: 'audio/hsk4/hsk4_恐怕.wav' },
-      { hanzi: '商榷', pinyin: 'shāng què', meaning: 'mériter discussion', meaningEn: 'worth discussing', audio: 'audio/hsk6/hsk6_商榷.wav' },
-      { hanzi: '总之', pinyin: 'zǒng zhī', meaning: 'en bref', meaningEn: 'in short', audio: 'audio/hsk4/hsk4_总之.wav' },
-      { hanzi: '综上所述', pinyin: 'zōng shàng suǒ shù', meaning: 'au vu de ce qui précède', meaningEn: 'in light of the above', audio: 'audio/hsk6/hsk6_综上所述.wav' },
-      { hanzi: '因此', pinyin: 'yīn cǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
-      { hanzi: '面子', pinyin: 'miàn zi', meaning: 'face, réputation', meaningEn: 'face, reputation', audio: 'audio/hsk5/hsk5_面子.wav' }
+      { hanzi: '同意', pinyin: 'tóngyì', meaning: 'être d\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '反对', pinyin: 'fǎnduì', meaning: 's\'opposer', meaningEn: 'oppose', audio: 'audio/hsk4/hsk4_反对.wav' },
+      { hanzi: '恐怕', pinyin: 'kǒngpà', meaning: 'je crains que', meaningEn: 'I\'m afraid', audio: 'audio/hsk4/hsk4_恐怕.wav' },
+      { hanzi: '商榷', pinyin: 'shāngquè', meaning: 'mériter discussion', meaningEn: 'worth discussing', audio: 'audio/hsk6/hsk6_商榷.wav' },
+      { hanzi: '总之', pinyin: 'zǒngzhī', meaning: 'en bref', meaningEn: 'in short', audio: 'audio/hsk4/hsk4_总之.wav' },
+      { hanzi: '综上所述', pinyin: 'zōngshàngsuǒshù', meaning: 'au vu de ce qui précède', meaningEn: 'in light of the above', audio: 'audio/hsk6/hsk6_综上所述.wav' },
+      { hanzi: '因此', pinyin: 'yīncǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
+      { hanzi: '面子', pinyin: 'miànzi', meaning: 'face, réputation', meaningEn: 'face, reputation', audio: 'audio/hsk5/hsk5_面子.wav' }
     ],
     tip:
       'Règle d\'or : plus le contexte est formel / hiérarchique, plus 恐怕 et 商榷 deviennent utiles. Les réunions officielles chinoises n\'utilisent presque jamais 你错了.',
@@ -533,9 +533,9 @@ export const b22StructureM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '既然 (jìrán) introduces a cause ALREADY accepted by both speakers: we no longer justify it, we draw its consequence. 既然你已经决定了，就别后悔 = since you\'ve already decided, don\'t regret it. Major difference with 因为: 因为 INFORMS of the cause (the other doesn\'t know it), 既然 PRESUPPOSES it (the other knows). Often followed by 就 (logical) or 那(就) (casual).',
     items: [
-      { hanzi: '既然', pinyin: 'jì rán', meaning: 'puisque', meaningEn: 'since', audio: 'audio/hsk5/hsk5_既然.wav' },
-      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' },
-      { hanzi: '后悔', pinyin: 'hòu huǐ', meaning: 'regretter', meaningEn: 'regret', audio: 'audio/hsk4/hsk4_后悔.wav' },
+      { hanzi: '既然', pinyin: 'jìrán', meaning: 'puisque', meaningEn: 'since', audio: 'audio/hsk5/hsk5_既然.wav' },
+      { hanzi: '决定', pinyin: 'juédìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '后悔', pinyin: 'hòuhuǐ', meaning: 'regretter', meaningEn: 'regret', audio: 'audio/hsk4/hsk4_后悔.wav' },
       { hanzi: '那', pinyin: 'nà', meaning: 'alors', meaningEn: 'then', audio: 'audio/hsk1/hsk1_那.wav' },
       { hanzi: '就', pinyin: 'jiù', meaning: 'donc, alors', meaningEn: 'then, so', audio: 'audio/hsk2/hsk2_就.wav' }
     ],
@@ -561,9 +561,9 @@ export const b22StructureM4LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '既', pinyin: 'jì', meaning: 'à la fois', meaningEn: 'both', audio: 'audio/hsk6/hsk6_既.wav' },
       { hanzi: '又', pinyin: 'yòu', meaning: 'aussi, et', meaningEn: 'also, and', audio: 'audio/hsk3/hsk3_又.wav' },
-      { hanzi: '便宜', pinyin: 'pián yi', meaning: 'pas cher', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' },
-      { hanzi: '好吃', pinyin: 'hǎo chī', meaning: 'bon (à manger)', meaningEn: 'tasty', audio: 'audio/hsk1/hsk1_好吃.wav' },
-      { hanzi: '质量', pinyin: 'zhì liàng', meaning: 'qualité', meaningEn: 'quality', audio: 'audio/hsk4/hsk4_质量.wav' }
+      { hanzi: '便宜', pinyin: 'piányi', meaning: 'pas cher', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' },
+      { hanzi: '好吃', pinyin: 'hǎochī', meaning: 'bon (à manger)', meaningEn: 'tasty', audio: 'audio/hsk1/hsk1_好吃.wav' },
+      { hanzi: '质量', pinyin: 'zhìliàng', meaning: 'qualité', meaningEn: 'quality', audio: 'audio/hsk4/hsk4_质量.wav' }
     ],
     tip:
       '既…又 introduit toujours DEUX adjectifs/qualités du MÊME sujet. Si les sujets diffèrent, repasse à 不但…而且 ou 既然.',
@@ -592,9 +592,9 @@ export const b22StructureM5LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '以', pinyin: 'yǐ', meaning: 'avec, prendre', meaningEn: 'with, take', audio: 'audio/hsk4/hsk4_以.wav' },
       { hanzi: '为', pinyin: 'wéi', meaning: 'comme, pour', meaningEn: 'as, for', audio: 'audio/hsk2/hsk2_为.wav' },
-      { hanzi: '中心', pinyin: 'zhōng xīn', meaning: 'centre', meaningEn: 'center', audio: 'audio/hsk3/hsk3_中心.wav' },
+      { hanzi: '中心', pinyin: 'zhōngxīn', meaning: 'centre', meaningEn: 'center', audio: 'audio/hsk3/hsk3_中心.wav' },
       { hanzi: '主', pinyin: 'zhǔ', meaning: 'principal', meaningEn: 'main', audio: 'audio/hsk3/hsk3_主.wav' },
-      { hanzi: '为主', pinyin: 'wéi zhǔ', meaning: 'comme principal', meaningEn: 'as main', audio: 'audio/hsk5/hsk5_为主.wav' }
+      { hanzi: '为主', pinyin: 'wéizhǔ', meaning: 'comme principal', meaningEn: 'as main', audio: 'audio/hsk5/hsk5_为主.wav' }
     ],
     tip:
       'À retenir comme bloc figé : 以…为主 (donner la priorité à), 以…为荣 (être fier de), 以…为例 (prendre comme exemple). Très productif en composition écrite.',
@@ -620,9 +620,9 @@ export const b22StructureM5LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '荣', pinyin: 'róng', meaning: 'honneur, gloire', meaningEn: 'honor, glory', audio: 'audio/hsk6/hsk6_荣.wav' },
       { hanzi: '耻', pinyin: 'chǐ', meaning: 'honte', meaningEn: 'shame', audio: 'audio/hsk6/hsk6_耻.wav' },
-      { hanzi: '骄傲', pinyin: 'jiāo ào', meaning: 'fier', meaningEn: 'proud', audio: 'audio/hsk4/hsk4_骄傲.wav' },
-      { hanzi: '悠久', pinyin: 'yōu jiǔ', meaning: 'ancien, long', meaningEn: 'long-standing', audio: 'audio/hsk6/hsk6_悠久.wav' },
-      { hanzi: '历史', pinyin: 'lì shǐ', meaning: 'histoire', meaningEn: 'history', audio: 'audio/hsk3/hsk3_历史.wav' }
+      { hanzi: '骄傲', pinyin: 'jiāoào', meaning: 'fier', meaningEn: 'proud', audio: 'audio/hsk4/hsk4_骄傲.wav' },
+      { hanzi: '悠久', pinyin: 'yōujiǔ', meaning: 'ancien, long', meaningEn: 'long-standing', audio: 'audio/hsk6/hsk6_悠久.wav' },
+      { hanzi: '历史', pinyin: 'lìshǐ', meaning: 'histoire', meaningEn: 'history', audio: 'audio/hsk3/hsk3_历史.wav' }
     ],
     tip:
       '以你为荣 sonne plus solennel et plus chaleureux que 为你骄傲 — préfère-le pour féliciter un proche après un grand succès.',
@@ -650,11 +650,11 @@ export const b22StructureM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Formal version of 不但…而且 (B1). More written, more solemn. 这本书不仅内容深刻，而且文笔优美 = this book is not only deep but also beautifully written. Register variants: 不只 (spoken) < 不但 (standard) < 不仅 (written) < 不仅仅 (emphatic). The 2nd element can use 还、也、更 instead of 而且 to grade up.',
     items: [
-      { hanzi: '不仅', pinyin: 'bù jǐn', meaning: 'non seulement', meaningEn: 'not only', audio: 'audio/hsk5/hsk5_不仅.wav' },
-      { hanzi: '而且', pinyin: 'ér qiě', meaning: 'mais aussi', meaningEn: 'but also', audio: 'audio/hsk3/hsk3_而且.wav' },
-      { hanzi: '深刻', pinyin: 'shēn kè', meaning: 'profond', meaningEn: 'profound', audio: 'audio/hsk5/hsk5_深刻.wav' },
-      { hanzi: '文笔', pinyin: 'wén bǐ', meaning: 'style d\'écriture', meaningEn: 'writing style', audio: 'audio/hsk6/hsk6_文笔.wav' },
-      { hanzi: '优美', pinyin: 'yōu měi', meaning: 'gracieux, beau', meaningEn: 'graceful, fine', audio: 'audio/hsk5/hsk5_优美.wav' }
+      { hanzi: '不仅', pinyin: 'bùjǐn', meaning: 'non seulement', meaningEn: 'not only', audio: 'audio/hsk5/hsk5_不仅.wav' },
+      { hanzi: '而且', pinyin: 'érqiě', meaning: 'mais aussi', meaningEn: 'but also', audio: 'audio/hsk3/hsk3_而且.wav' },
+      { hanzi: '深刻', pinyin: 'shēnkè', meaning: 'profond', meaningEn: 'profound', audio: 'audio/hsk5/hsk5_深刻.wav' },
+      { hanzi: '文笔', pinyin: 'wénbǐ', meaning: 'style d\'écriture', meaningEn: 'writing style', audio: 'audio/hsk6/hsk6_文笔.wav' },
+      { hanzi: '优美', pinyin: 'yōuměi', meaning: 'gracieux, beau', meaningEn: 'graceful, fine', audio: 'audio/hsk5/hsk5_优美.wav' }
     ],
     tip:
       'Pour graduer encore plus fort : 不仅 A 反而 B = non seulement pas A mais au contraire B. Très efficace pour exprimer une surprise ou un retournement.',
@@ -679,11 +679,11 @@ export const b22StructureM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In the 2nd clause, replace 而且 with 还 (additionally), 也 (also), 更 (even more) for nuance. 他不仅会说中文，还会写汉字 = he doesn\'t only speak Chinese, he also writes characters. 不仅仅 (doubled) intensifies: «not just, but much more». 这不仅仅是钱的问题 = this is not JUST a money issue.',
     items: [
-      { hanzi: '不仅仅', pinyin: 'bù jǐn jǐn', meaning: 'pas seulement', meaningEn: 'not just', audio: 'audio/hsk6/hsk6_不仅仅.wav' },
+      { hanzi: '不仅仅', pinyin: 'bùjǐnjǐn', meaning: 'pas seulement', meaningEn: 'not just', audio: 'audio/hsk6/hsk6_不仅仅.wav' },
       { hanzi: '还', pinyin: 'hái', meaning: 'encore, en plus', meaningEn: 'still, also', audio: 'audio/hsk2/hsk2_还.wav' },
       { hanzi: '更', pinyin: 'gèng', meaning: 'encore plus', meaningEn: 'even more', audio: 'audio/hsk3/hsk3_更.wav' },
       { hanzi: '钱', pinyin: 'qián', meaning: 'argent', meaningEn: 'money', audio: 'audio/hsk1/hsk1_钱.wav' },
-      { hanzi: '问题', pinyin: 'wèn tí', meaning: 'question, problème', meaningEn: 'question, issue', audio: 'audio/hsk2/hsk2_问题.wav' }
+      { hanzi: '问题', pinyin: 'wèntí', meaning: 'question, problème', meaningEn: 'question, issue', audio: 'audio/hsk2/hsk2_问题.wav' }
     ],
     tip:
       '不仅仅 + 是 X 的问题 (« pas QU\'une question de X ») est une formule rhétorique extrêmement courante dans les éditoriaux et discours.',
@@ -710,11 +710,11 @@ export const b22StructureM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '即使 (jíshǐ) introduces an extreme hypothesis, often counter-factual, followed mandatorily by 也 in the 2nd clause. 即使下雨，我也要去 = even if it rains, I\'m going. Difference from 虽然: 虽然 = real accepted fact («although it\'s raining [it really is]»), 即使 = hypothetical («even if it were to rain»). Register variants: 哪怕 (oral, expressive), 即便 (written), 就算 (spoken/casual).',
     items: [
-      { hanzi: '即使', pinyin: 'jí shǐ', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_即使.wav' },
-      { hanzi: '哪怕', pinyin: 'nǎ pà', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_哪怕.wav' },
-      { hanzi: '就算', pinyin: 'jiù suàn', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_就算.wav' },
-      { hanzi: '即便', pinyin: 'jí biàn', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk6/hsk6_即便.wav' },
-      { hanzi: '坚持', pinyin: 'jiān chí', meaning: 'persévérer', meaningEn: 'persist', audio: 'audio/hsk4/hsk4_坚持.wav' }
+      { hanzi: '即使', pinyin: 'jíshǐ', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_即使.wav' },
+      { hanzi: '哪怕', pinyin: 'nǎpà', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_哪怕.wav' },
+      { hanzi: '就算', pinyin: 'jiùsuàn', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_就算.wav' },
+      { hanzi: '即便', pinyin: 'jíbiàn', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk6/hsk6_即便.wav' },
+      { hanzi: '坚持', pinyin: 'jiānchí', meaning: 'persévérer', meaningEn: 'persist', audio: 'audio/hsk4/hsk4_坚持.wav' }
     ],
     tip:
       'Le 也 est obligatoire dans la 2e proposition. Sans 也, la phrase n\'est pas grammaticale en chinois standard. C\'est l\'erreur n°1 des apprenants francophones.',
@@ -736,11 +736,11 @@ export const b22StructureM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '哪怕 (nǎpà) = «even if», with a stronger emotional charge than 即使. Often used to express determination, sacrifice, love. 哪怕只有一线希望，我也不放弃 = even if there\'s only a glimmer of hope, I won\'t give up. 哪怕你不爱我了 = even if you no longer love me. Very present in love songs, dramatic films, motivational speech. Also mandatorily followed by 也.',
     items: [
-      { hanzi: '一线', pinyin: 'yí xiàn', meaning: 'une lueur', meaningEn: 'a glimmer', audio: 'audio/hsk5/hsk5_一线.wav' },
-      { hanzi: '希望', pinyin: 'xī wàng', meaning: 'espoir', meaningEn: 'hope', audio: 'audio/hsk2/hsk2_希望.wav' },
-      { hanzi: '放弃', pinyin: 'fàng qì', meaning: 'renoncer', meaningEn: 'give up', audio: 'audio/hsk4/hsk4_放弃.wav' },
+      { hanzi: '一线', pinyin: 'yīxiàn', meaning: 'une lueur', meaningEn: 'a glimmer', audio: 'audio/hsk5/hsk5_一线.wav' },
+      { hanzi: '希望', pinyin: 'xīwàng', meaning: 'espoir', meaningEn: 'hope', audio: 'audio/hsk2/hsk2_希望.wav' },
+      { hanzi: '放弃', pinyin: 'fàngqì', meaning: 'renoncer', meaningEn: 'give up', audio: 'audio/hsk4/hsk4_放弃.wav' },
       { hanzi: '爱', pinyin: 'ài', meaning: 'aimer', meaningEn: 'love', audio: 'audio/hsk1/hsk1_爱.wav' },
-      { hanzi: '相信', pinyin: 'xiāng xìn', meaning: 'croire', meaningEn: 'believe', audio: 'audio/hsk3/hsk3_相信.wav' }
+      { hanzi: '相信', pinyin: 'xiāngxìn', meaning: 'croire', meaningEn: 'believe', audio: 'audio/hsk3/hsk3_相信.wav' }
     ],
     tip:
       'Si tu hésites entre 即使 et 哪怕 : 即使 = neutre logique, 哪怕 = chargé d\'émotion (engagement, pari, sacrifice).',
@@ -774,8 +774,8 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '京剧 (jīngjù) born in 19th-century Beijing, now a national emblem. Combines singing 唱 (chàng), rhythmic speech 念 (niàn), acrobatic gestures 做 (zuò), and martial combat 打 (dǎ). 4 main roles: 生 (male), 旦 (female), 净 (painted-face, strong character), 丑 (clown). 脸谱 (liǎnpǔ) makeup highly coded: red = loyalty, white = treachery, black = integrity, yellow = cruelty. Key works: 《霸王别姬》(Farewell My Concubine), 《贵妃醉酒》(The Drunken Concubine).',
     items: [
-      { hanzi: '京剧', pinyin: 'jīng jù', meaning: 'opéra de Pékin', meaningEn: 'Beijing opera', audio: 'audio/hsk5/hsk5_京剧.wav' },
-      { hanzi: '脸谱', pinyin: 'liǎn pǔ', meaning: 'maquillage facial', meaningEn: 'face makeup', audio: 'audio/hsk6/hsk6_脸谱.wav' },
+      { hanzi: '京剧', pinyin: 'jīngjù', meaning: 'opéra de Pékin', meaningEn: 'Beijing opera', audio: 'audio/hsk5/hsk5_京剧.wav' },
+      { hanzi: '脸谱', pinyin: 'liǎnpǔ', meaning: 'maquillage facial', meaningEn: 'face makeup', audio: 'audio/hsk6/hsk6_脸谱.wav' },
       { hanzi: '生', pinyin: 'shēng', meaning: 'rôle masculin', meaningEn: 'male role', audio: 'audio/hsk1/hsk1_生.wav' },
       { hanzi: '旦', pinyin: 'dàn', meaning: 'rôle féminin', meaningEn: 'female role', audio: 'audio/hsk5/hsk5_旦.wav' },
       { hanzi: '丑', pinyin: 'chǒu', meaning: 'rôle comique', meaningEn: 'clown role', audio: 'audio/hsk4/hsk4_丑.wav' }
@@ -799,11 +799,11 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'China has 300+ regional opera forms. 越剧 (yuèjù, Zhejiang) — feminine, lyrical, famous for 《梁山伯与祝英台》. 川剧 (chuānjù, Sichuan) — famous for 变脸 (face-changing: actor switches masks in a second via a secret movement). 粤剧 (yuèjù, Cantonese) — popular in Hong Kong, Canton, and Chinese diasporas. Each opera has its dialects, costumes, instruments. All recognized as UNESCO intangible heritage.',
     items: [
-      { hanzi: '川剧', pinyin: 'chuān jù', meaning: 'opéra du Sichuan', meaningEn: 'Sichuan opera', audio: 'audio/hsk6/hsk6_川剧.wav' },
-      { hanzi: '变脸', pinyin: 'biàn liǎn', meaning: 'changement de visage', meaningEn: 'face-changing', audio: 'audio/hsk6/hsk6_变脸.wav' },
-      { hanzi: '粤剧', pinyin: 'yuè jù', meaning: 'opéra cantonais', meaningEn: 'Cantonese opera', audio: 'audio/hsk6/hsk6_粤剧.wav' },
-      { hanzi: '戏曲', pinyin: 'xì qǔ', meaning: 'opéra traditionnel', meaningEn: 'traditional opera', audio: 'audio/hsk5/hsk5_戏曲.wav' },
-      { hanzi: '面具', pinyin: 'miàn jù', meaning: 'masque', meaningEn: 'mask', audio: 'audio/hsk5/hsk5_面具.wav' }
+      { hanzi: '川剧', pinyin: 'chuānjù', meaning: 'opéra du Sichuan', meaningEn: 'Sichuan opera', audio: 'audio/hsk6/hsk6_川剧.wav' },
+      { hanzi: '变脸', pinyin: 'biànliǎn', meaning: 'changement de visage', meaningEn: 'face-changing', audio: 'audio/hsk6/hsk6_变脸.wav' },
+      { hanzi: '粤剧', pinyin: 'yuèjù', meaning: 'opéra cantonais', meaningEn: 'Cantonese opera', audio: 'audio/hsk6/hsk6_粤剧.wav' },
+      { hanzi: '戏曲', pinyin: 'xìqǔ', meaning: 'opéra traditionnel', meaningEn: 'traditional opera', audio: 'audio/hsk5/hsk5_戏曲.wav' },
+      { hanzi: '面具', pinyin: 'miànjù', meaning: 'masque', meaningEn: 'mask', audio: 'audio/hsk5/hsk5_面具.wav' }
     ],
     tip:
       'Le 变脸 du 川剧 reste un secret de famille jalousement gardé : techniques transmises uniquement de maître à apprenti, jamais filmées en gros plan.',
@@ -830,11 +830,11 @@ export const b22ArtsM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '四合院 (sìhéyuàn, «4-sided courtyard»): traditional Beijing house, 4 buildings around a central courtyard. Symbol of the Chinese extended family. Curved roofs 屋顶 (wūdǐng) with tiles 瓦 (wǎ). Red doors 红门 and stone lion guardians 石狮子. Largely lost in Beijing during 90s demolitions, but heritage-listed. The 紫禁城 (Forbidden City) is the imperial extension: 9,999 rooms around hierarchically-ordered courtyards.',
     items: [
-      { hanzi: '四合院', pinyin: 'sì hé yuàn', meaning: 'maison à cour', meaningEn: 'courtyard house', audio: 'audio/hsk6/hsk6_四合院.wav' },
-      { hanzi: '紫禁城', pinyin: 'zǐ jìn chéng', meaning: 'Cité Interdite', meaningEn: 'Forbidden City', audio: 'audio/hsk6/hsk6_紫禁城.wav' },
-      { hanzi: '屋顶', pinyin: 'wū dǐng', meaning: 'toit', meaningEn: 'roof', audio: 'audio/hsk5/hsk5_屋顶.wav' },
+      { hanzi: '四合院', pinyin: 'sìhéyuàn', meaning: 'maison à cour', meaningEn: 'courtyard house', audio: 'audio/hsk6/hsk6_四合院.wav' },
+      { hanzi: '紫禁城', pinyin: 'zǐjìnchéng', meaning: 'Cité Interdite', meaningEn: 'Forbidden City', audio: 'audio/hsk6/hsk6_紫禁城.wav' },
+      { hanzi: '屋顶', pinyin: 'wūdǐng', meaning: 'toit', meaningEn: 'roof', audio: 'audio/hsk5/hsk5_屋顶.wav' },
       { hanzi: '瓦', pinyin: 'wǎ', meaning: 'tuile', meaningEn: 'tile', audio: 'audio/hsk6/hsk6_瓦.wav' },
-      { hanzi: '石狮子', pinyin: 'shí shī zi', meaning: 'lion de pierre', meaningEn: 'stone lion', audio: 'audio/hsk6/hsk6_石狮子.wav' }
+      { hanzi: '石狮子', pinyin: 'shíshīzi', meaning: 'lion de pierre', meaningEn: 'stone lion', audio: 'audio/hsk6/hsk6_石狮子.wav' }
     ],
     tip:
       'Les couleurs sont codifiées : jaune réservé à l\'empereur (toits de la Cité Interdite), rouge pour la noblesse, vert pour les princes. Un toit de tuiles jaunes signale immédiatement le pouvoir impérial.',
@@ -857,11 +857,11 @@ export const b22ArtsM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Architectural boom since the 90s. Shanghai: 浦东 (Pudong) with 东方明珠 (Oriental Pearl), 上海中心大厦 (Shanghai Tower, 632m, world\'s 2nd-tallest). Beijing: 鸟巢 (Bird\'s Nest, 2008 Olympic stadium), 水立方 (Water Cube). «Fusion» trend: Suzhou Museum by I.M. Pei (贝聿铭), blending modernity with classical garden lines. Vocabulary: 建筑师 (architect), 摩天大楼 (skyscraper).',
     items: [
-      { hanzi: '建筑', pinyin: 'jiàn zhù', meaning: 'architecture, bâtiment', meaningEn: 'architecture, building', audio: 'audio/hsk5/hsk5_建筑.wav' },
-      { hanzi: '建筑师', pinyin: 'jiàn zhù shī', meaning: 'architecte', meaningEn: 'architect', audio: 'audio/hsk5/hsk5_建筑师.wav' },
-      { hanzi: '摩天大楼', pinyin: 'mó tiān dà lóu', meaning: 'gratte-ciel', meaningEn: 'skyscraper', audio: 'audio/hsk6/hsk6_摩天大楼.wav' },
-      { hanzi: '鸟巢', pinyin: 'niǎo cháo', meaning: 'nid d\'oiseau (stade)', meaningEn: 'Bird\'s Nest', audio: 'audio/hsk6/hsk6_鸟巢.wav' },
-      { hanzi: '设计', pinyin: 'shè jì', meaning: 'design', meaningEn: 'design', audio: 'audio/hsk5/hsk5_设计.wav' }
+      { hanzi: '建筑', pinyin: 'jiànzhù', meaning: 'architecture, bâtiment', meaningEn: 'architecture, building', audio: 'audio/hsk5/hsk5_建筑.wav' },
+      { hanzi: '建筑师', pinyin: 'jiànzhùshī', meaning: 'architecte', meaningEn: 'architect', audio: 'audio/hsk5/hsk5_建筑师.wav' },
+      { hanzi: '摩天大楼', pinyin: 'mótiāndàlóu', meaning: 'gratte-ciel', meaningEn: 'skyscraper', audio: 'audio/hsk6/hsk6_摩天大楼.wav' },
+      { hanzi: '鸟巢', pinyin: 'niǎocháo', meaning: 'nid d\'oiseau (stade)', meaningEn: 'Bird\'s Nest', audio: 'audio/hsk6/hsk6_鸟巢.wav' },
+      { hanzi: '设计', pinyin: 'shèjì', meaning: 'design', meaningEn: 'design', audio: 'audio/hsk5/hsk5_设计.wav' }
     ],
     tip:
       'Pékin a ses « 5 monstres » architecturaux contemporains : CCTV (le « pantalon »), 鸟巢, 水立方, 国家大剧院 (« l\'œuf »), 大兴机场 (l\'étoile de mer). Chacun controversé mais devenu emblème.',
@@ -888,10 +888,10 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐng dé zhèn) in Jiangxi, producing for 1,000 years. Iconic styles: 青花 (blue and white, Yuan dynasty), 粉彩 (polychrome, Qing), 釉里红 (red under glaze). Process: 高岭土 (kaolin) clay fired at 1,300°C. Highly collected — Ming/Qing pieces can reach millions at auction.',
     items: [
-      { hanzi: '瓷器', pinyin: 'cí qì', meaning: 'porcelaine', meaningEn: 'porcelain', audio: 'audio/hsk5/hsk5_瓷器.wav' },
-      { hanzi: '青花', pinyin: 'qīng huā', meaning: 'bleu et blanc', meaningEn: 'blue and white', audio: 'audio/hsk6/hsk6_青花.wav' },
-      { hanzi: '景德镇', pinyin: 'jǐng dé zhèn', meaning: 'Jingdezhen (capitale)', meaningEn: 'Jingdezhen (capital)', audio: 'audio/hsk6/hsk6_景德镇.wav' },
-      { hanzi: '陶瓷', pinyin: 'táo cí', meaning: 'céramique', meaningEn: 'ceramics', audio: 'audio/hsk5/hsk5_陶瓷.wav' },
+      { hanzi: '瓷器', pinyin: 'cíqì', meaning: 'porcelaine', meaningEn: 'porcelain', audio: 'audio/hsk5/hsk5_瓷器.wav' },
+      { hanzi: '青花', pinyin: 'qīnghuā', meaning: 'bleu et blanc', meaningEn: 'blue and white', audio: 'audio/hsk6/hsk6_青花.wav' },
+      { hanzi: '景德镇', pinyin: 'jǐngdézhèn', meaning: 'Jingdezhen (capitale)', meaningEn: 'Jingdezhen (capital)', audio: 'audio/hsk6/hsk6_景德镇.wav' },
+      { hanzi: '陶瓷', pinyin: 'táocí', meaning: 'céramique', meaningEn: 'ceramics', audio: 'audio/hsk5/hsk5_陶瓷.wav' },
       { hanzi: '釉', pinyin: 'yòu', meaning: 'glaçure', meaningEn: 'glaze', audio: 'audio/hsk6/hsk6_釉.wav' }
     ],
     tip:
@@ -919,11 +919,11 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '丝绸 (silk): another Chinese invention, kept secret for 3,000 years. The 丝绸之路 (Silk Road) linked Chang\'an (Xi\'an) to Rome. Current centers: Suzhou, Hangzhou. 玉 (jade): a sacred Chinese stone, more precious than gold. Considered embodiment of 5 Confucian virtues: purity 仁, integrity 义, wisdom 智, courage 勇, cleanness 洁. Colors: 白玉 (white jade, rarest), 翠玉 (emerald green). Strong symbolic gift: 平安扣 (jade peace medallion).',
     items: [
-      { hanzi: '丝绸', pinyin: 'sī chóu', meaning: 'soie', meaningEn: 'silk', audio: 'audio/hsk5/hsk5_丝绸.wav' },
+      { hanzi: '丝绸', pinyin: 'sīchóu', meaning: 'soie', meaningEn: 'silk', audio: 'audio/hsk5/hsk5_丝绸.wav' },
       { hanzi: '玉', pinyin: 'yù', meaning: 'jade', meaningEn: 'jade', audio: 'audio/hsk5/hsk5_玉.wav' },
-      { hanzi: '丝绸之路', pinyin: 'sī chóu zhī lù', meaning: 'Route de la Soie', meaningEn: 'Silk Road', audio: 'audio/hsk6/hsk6_丝绸之路.wav' },
-      { hanzi: '白玉', pinyin: 'bái yù', meaning: 'jade blanc', meaningEn: 'white jade', audio: 'audio/hsk6/hsk6_白玉.wav' },
-      { hanzi: '翡翠', pinyin: 'fěi cuì', meaning: 'jadéite verte', meaningEn: 'emerald jade', audio: 'audio/hsk6/hsk6_翡翠.wav' }
+      { hanzi: '丝绸之路', pinyin: 'sīchóuzhīlù', meaning: 'Route de la Soie', meaningEn: 'Silk Road', audio: 'audio/hsk6/hsk6_丝绸之路.wav' },
+      { hanzi: '白玉', pinyin: 'báiyù', meaning: 'jade blanc', meaningEn: 'white jade', audio: 'audio/hsk6/hsk6_白玉.wav' },
+      { hanzi: '翡翠', pinyin: 'fěicuì', meaning: 'jadéite verte', meaningEn: 'emerald jade', audio: 'audio/hsk6/hsk6_翡翠.wav' }
     ],
     tip:
       'Offrir du jade à un Chinois est un geste très chargé positivement. Évite par contre d\'en offrir cassé ou ébréché : très mauvais augure (le jade « protège » son porteur, casser = la protection est rompue).',
@@ -951,11 +951,11 @@ export const b22HealthM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Popular sports: 篮球 (basketball — NBA is huge), 足球 (soccer), 乒乓球 (ping-pong, national sport), 羽毛球 (badminton, widely played). Indoor: 健身房 (gym), 跑步机 (treadmill). Key verbs: 锻炼 (exercise, work out), 出汗 (sweat), 放松 (relax). Useful phrase: 我每周锻炼三次 = I work out 3 times a week.',
     items: [
-      { hanzi: '锻炼', pinyin: 'duàn liàn', meaning: 'faire du sport', meaningEn: 'exercise', audio: 'audio/hsk3/hsk3_锻炼.wav' },
-      { hanzi: '健身房', pinyin: 'jiàn shēn fáng', meaning: 'salle de gym', meaningEn: 'gym', audio: 'audio/hsk5/hsk5_健身房.wav' },
-      { hanzi: '篮球', pinyin: 'lán qiú', meaning: 'basket', meaningEn: 'basketball', audio: 'audio/hsk2/hsk2_篮球.wav' },
-      { hanzi: '乒乓球', pinyin: 'pīng pāng qiú', meaning: 'ping-pong', meaningEn: 'ping-pong', audio: 'audio/hsk4/hsk4_乒乓球.wav' },
-      { hanzi: '出汗', pinyin: 'chū hàn', meaning: 'transpirer', meaningEn: 'sweat', audio: 'audio/hsk5/hsk5_出汗.wav' }
+      { hanzi: '锻炼', pinyin: 'duànliàn', meaning: 'faire du sport', meaningEn: 'exercise', audio: 'audio/hsk3/hsk3_锻炼.wav' },
+      { hanzi: '健身房', pinyin: 'jiànshēnfáng', meaning: 'salle de gym', meaningEn: 'gym', audio: 'audio/hsk5/hsk5_健身房.wav' },
+      { hanzi: '篮球', pinyin: 'lánqiú', meaning: 'basket', meaningEn: 'basketball', audio: 'audio/hsk2/hsk2_篮球.wav' },
+      { hanzi: '乒乓球', pinyin: 'pīngpāngqiú', meaning: 'ping-pong', meaningEn: 'ping-pong', audio: 'audio/hsk4/hsk4_乒乓球.wav' },
+      { hanzi: '出汗', pinyin: 'chūhàn', meaning: 'transpirer', meaningEn: 'sweat', audio: 'audio/hsk5/hsk5_出汗.wav' }
     ],
     tip:
       'Demander « tu fais du sport ? » à un Chinois sonne souvent comme « tu vas à la salle ? » — l\'idée d\'exercice physique régulier 锻炼 est plus présente que celle d\'un sport de compétition.',
@@ -984,11 +984,11 @@ export const b22HealthM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Sports health vocab: 受伤 (get injured), 扭伤 (sprain), 拉伤 (strain), 肌肉酸痛 (sore muscles). Recovery: 休息 (rest), 冰敷 (ice), 按摩 (massage), 热身 (warm-up), 拉伸 (stretching). Typical phrase: 我跑步的时候扭伤了脚踝 = I sprained my ankle while running. Chinese sports culture integrates gentle recovery (tai chi, massage, traditional medicine).',
     items: [
-      { hanzi: '受伤', pinyin: 'shòu shāng', meaning: 'se blesser', meaningEn: 'get injured', audio: 'audio/hsk4/hsk4_受伤.wav' },
-      { hanzi: '扭伤', pinyin: 'niǔ shāng', meaning: 'entorse', meaningEn: 'sprain', audio: 'audio/hsk5/hsk5_扭伤.wav' },
-      { hanzi: '热身', pinyin: 'rè shēn', meaning: 'échauffement', meaningEn: 'warm-up', audio: 'audio/hsk5/hsk5_热身.wav' },
-      { hanzi: '按摩', pinyin: 'àn mó', meaning: 'massage', meaningEn: 'massage', audio: 'audio/hsk4/hsk4_按摩.wav' },
-      { hanzi: '休息', pinyin: 'xiū xi', meaning: 'se reposer', meaningEn: 'rest', audio: 'audio/hsk2/hsk2_休息.wav' }
+      { hanzi: '受伤', pinyin: 'shòushāng', meaning: 'se blesser', meaningEn: 'get injured', audio: 'audio/hsk4/hsk4_受伤.wav' },
+      { hanzi: '扭伤', pinyin: 'niǔshāng', meaning: 'entorse', meaningEn: 'sprain', audio: 'audio/hsk5/hsk5_扭伤.wav' },
+      { hanzi: '热身', pinyin: 'rèshēn', meaning: 'échauffement', meaningEn: 'warm-up', audio: 'audio/hsk5/hsk5_热身.wav' },
+      { hanzi: '按摩', pinyin: 'ànmó', meaning: 'massage', meaningEn: 'massage', audio: 'audio/hsk4/hsk4_按摩.wav' },
+      { hanzi: '休息', pinyin: 'xiūxī', meaning: 'se reposer', meaningEn: 'rest', audio: 'audio/hsk2/hsk2_休息.wav' }
     ],
     tip:
       'Si tu te blesses en Chine et qu\'on te propose 推拿 (tuīná), c\'est du massage thérapeutique TCM ; 按摩 (ànmó) seul peut être plus généraliste (relaxation).',
@@ -1017,11 +1017,11 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '营养 (yíngyǎng, nutrition): central concept. 均衡饮食 (balanced diet). Food families: 蛋白质 (proteins), 碳水化合物 (carbs — often shortened to 碳水), 脂肪 (fats), 维生素 (vitamins), 矿物质 (minerals). In China, the TCM idea of «hot/cold» foods (热性/凉性) coexists with Western nutrition. 上火 (shànghuǒ, «going on fire») = excess of hot foods → pimple, sore throat.',
     items: [
-      { hanzi: '营养', pinyin: 'yíng yǎng', meaning: 'nutrition', meaningEn: 'nutrition', audio: 'audio/hsk4/hsk4_营养.wav' },
-      { hanzi: '均衡', pinyin: 'jūn héng', meaning: 'équilibré', meaningEn: 'balanced', audio: 'audio/hsk6/hsk6_均衡.wav' },
-      { hanzi: '蛋白质', pinyin: 'dàn bái zhì', meaning: 'protéine', meaningEn: 'protein', audio: 'audio/hsk5/hsk5_蛋白质.wav' },
-      { hanzi: '维生素', pinyin: 'wéi shēng sù', meaning: 'vitamine', meaningEn: 'vitamin', audio: 'audio/hsk5/hsk5_维生素.wav' },
-      { hanzi: '上火', pinyin: 'shàng huǒ', meaning: 'excès de chaleur (TCM)', meaningEn: 'excess heat (TCM)', audio: 'audio/hsk5/hsk5_上火.wav' }
+      { hanzi: '营养', pinyin: 'yíngyǎng', meaning: 'nutrition', meaningEn: 'nutrition', audio: 'audio/hsk4/hsk4_营养.wav' },
+      { hanzi: '均衡', pinyin: 'jūnhéng', meaning: 'équilibré', meaningEn: 'balanced', audio: 'audio/hsk6/hsk6_均衡.wav' },
+      { hanzi: '蛋白质', pinyin: 'dànbáizhì', meaning: 'protéine', meaningEn: 'protein', audio: 'audio/hsk5/hsk5_蛋白质.wav' },
+      { hanzi: '维生素', pinyin: 'wéishēngsù', meaning: 'vitamine', meaningEn: 'vitamin', audio: 'audio/hsk5/hsk5_维生素.wav' },
+      { hanzi: '上火', pinyin: 'shànghuǒ', meaning: 'excès de chaleur (TCM)', meaningEn: 'excess heat (TCM)', audio: 'audio/hsk5/hsk5_上火.wav' }
     ],
     tip:
       '上火 est un concept que tout Chinois utilise au quotidien. Si tu manges trop épicé, frit ou de mangues : « 你上火了 ». La réponse ? Boire du thé chrysanthème 菊花茶 ou de la 凉茶 (boissons « froides »).',
@@ -1044,11 +1044,11 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '减肥 (jiǎnféi, lose weight): a huge topic in China, especially among young women. 节食 (deprive yourself), 间歇性禁食 (intermittent fasting — imported concept), 健身餐 (fitness meal). Trends: low-carb 低碳水, vegan 纯素, vegetarian 素食. But also the rebound: «报复性饮食» (compulsive eating after a diet). Useful phrase: 我在减肥，少吃点 = I\'m on a diet, I eat little.',
     items: [
-      { hanzi: '减肥', pinyin: 'jiǎn féi', meaning: 'perdre du poids', meaningEn: 'lose weight', audio: 'audio/hsk4/hsk4_减肥.wav' },
-      { hanzi: '节食', pinyin: 'jié shí', meaning: 'se restreindre', meaningEn: 'restrict diet', audio: 'audio/hsk5/hsk5_节食.wav' },
-      { hanzi: '素食', pinyin: 'sù shí', meaning: 'végétarien', meaningEn: 'vegetarian', audio: 'audio/hsk5/hsk5_素食.wav' },
-      { hanzi: '健身', pinyin: 'jiàn shēn', meaning: 'fitness', meaningEn: 'fitness', audio: 'audio/hsk5/hsk5_健身.wav' },
-      { hanzi: '热量', pinyin: 'rè liàng', meaning: 'calorie', meaningEn: 'calorie', audio: 'audio/hsk5/hsk5_热量.wav' }
+      { hanzi: '减肥', pinyin: 'jiǎnféi', meaning: 'perdre du poids', meaningEn: 'lose weight', audio: 'audio/hsk4/hsk4_减肥.wav' },
+      { hanzi: '节食', pinyin: 'jiéshí', meaning: 'se restreindre', meaningEn: 'restrict diet', audio: 'audio/hsk5/hsk5_节食.wav' },
+      { hanzi: '素食', pinyin: 'sùshí', meaning: 'végétarien', meaningEn: 'vegetarian', audio: 'audio/hsk5/hsk5_素食.wav' },
+      { hanzi: '健身', pinyin: 'jiànshēn', meaning: 'fitness', meaningEn: 'fitness', audio: 'audio/hsk5/hsk5_健身.wav' },
+      { hanzi: '热量', pinyin: 'rèliàng', meaning: 'calorie', meaningEn: 'calorie', audio: 'audio/hsk5/hsk5_热量.wav' }
     ],
     tip:
       'Sujet sensible : commenter le poids (« tu as grossi/maigri ») reste très fréquent en Chine, surtout en famille. Pas malveillant culturellement, mais peut blesser une personne occidentale.',
@@ -1076,11 +1076,11 @@ export const b22HealthM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '心理健康 (mental health): long taboo in China, opening up since 2010. 抑郁症 (depression), 焦虑 (anxiety), 失眠 (insomnia), 压力大 (high pressure). 心理咨询 (psy consultation) remains rare but growing, especially in big cities. A new generation speaks more openly of 内卷 («involution», exhausting hyper-competition) and 躺平 («lying flat», refusing pressure).',
     items: [
-      { hanzi: '心理', pinyin: 'xīn lǐ', meaning: 'psychologie', meaningEn: 'psychology', audio: 'audio/hsk4/hsk4_心理.wav' },
-      { hanzi: '抑郁', pinyin: 'yì yù', meaning: 'dépression', meaningEn: 'depression', audio: 'audio/hsk6/hsk6_抑郁.wav' },
-      { hanzi: '焦虑', pinyin: 'jiāo lǜ', meaning: 'anxiété', meaningEn: 'anxiety', audio: 'audio/hsk6/hsk6_焦虑.wav' },
-      { hanzi: '失眠', pinyin: 'shī mián', meaning: 'insomnie', meaningEn: 'insomnia', audio: 'audio/hsk5/hsk5_失眠.wav' },
-      { hanzi: '压力', pinyin: 'yā lì', meaning: 'pression, stress', meaningEn: 'pressure, stress', audio: 'audio/hsk4/hsk4_压力.wav' }
+      { hanzi: '心理', pinyin: 'xīnlǐ', meaning: 'psychologie', meaningEn: 'psychology', audio: 'audio/hsk4/hsk4_心理.wav' },
+      { hanzi: '抑郁', pinyin: 'yìyù', meaning: 'dépression', meaningEn: 'depression', audio: 'audio/hsk6/hsk6_抑郁.wav' },
+      { hanzi: '焦虑', pinyin: 'jiāolǜ', meaning: 'anxiété', meaningEn: 'anxiety', audio: 'audio/hsk6/hsk6_焦虑.wav' },
+      { hanzi: '失眠', pinyin: 'shīmián', meaning: 'insomnie', meaningEn: 'insomnia', audio: 'audio/hsk5/hsk5_失眠.wav' },
+      { hanzi: '压力', pinyin: 'yālì', meaning: 'pression, stress', meaningEn: 'pressure, stress', audio: 'audio/hsk4/hsk4_压力.wav' }
     ],
     tip:
       '内卷 et 躺平 sont devenus des memes générationnels. Comprendre ces deux mots = comprendre la Chine urbaine post-2020 (jeunes diplômés débordés / qui décrochent).',
@@ -1104,11 +1104,11 @@ export const b22HealthM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Useful vocab: 放松 (relax), 冥想 (meditate), 深呼吸 (deep breath), 倾诉 (confide). Destressing activities in China: 茶 (drinking tea), 太极 (tai chi), 散步 (walking), 写日记 (journaling). Useful phrase: 我最近压力很大，需要放松 = I\'m very stressed lately, I need to relax. Ask: 你最近怎么样？睡得好吗？= how have you been? Sleeping well?',
     items: [
-      { hanzi: '放松', pinyin: 'fàng sōng', meaning: 'se détendre', meaningEn: 'relax', audio: 'audio/hsk4/hsk4_放松.wav' },
-      { hanzi: '冥想', pinyin: 'míng xiǎng', meaning: 'méditer', meaningEn: 'meditate', audio: 'audio/hsk6/hsk6_冥想.wav' },
-      { hanzi: '深呼吸', pinyin: 'shēn hū xī', meaning: 'respiration profonde', meaningEn: 'deep breath', audio: 'audio/hsk5/hsk5_深呼吸.wav' },
-      { hanzi: '倾诉', pinyin: 'qīng sù', meaning: 'se confier', meaningEn: 'confide', audio: 'audio/hsk6/hsk6_倾诉.wav' },
-      { hanzi: '调节', pinyin: 'tiáo jié', meaning: 'réguler', meaningEn: 'regulate', audio: 'audio/hsk5/hsk5_调节.wav' }
+      { hanzi: '放松', pinyin: 'fàngsōng', meaning: 'se détendre', meaningEn: 'relax', audio: 'audio/hsk4/hsk4_放松.wav' },
+      { hanzi: '冥想', pinyin: 'míngxiǎng', meaning: 'méditer', meaningEn: 'meditate', audio: 'audio/hsk6/hsk6_冥想.wav' },
+      { hanzi: '深呼吸', pinyin: 'shēnhūxī', meaning: 'respiration profonde', meaningEn: 'deep breath', audio: 'audio/hsk5/hsk5_深呼吸.wav' },
+      { hanzi: '倾诉', pinyin: 'qīngsù', meaning: 'se confier', meaningEn: 'confide', audio: 'audio/hsk6/hsk6_倾诉.wav' },
+      { hanzi: '调节', pinyin: 'tiáojié', meaning: 'réguler', meaningEn: 'regulate', audio: 'audio/hsk5/hsk5_调节.wav' }
     ],
     tip:
       'Demander « 你需要倾诉吗？» (« tu as besoin de te confier ? ») à un proche stressé est très bien reçu. Plus chaleureux que « 你怎么了 ? » qui peut sembler intrusif.',
@@ -1133,11 +1133,11 @@ export const b22HealthM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '老龄化社会 (aging society): a major challenge for China. 老人 (elderly), 退休 (retirement). One-child policy (1979-2015) → 4-2-1 (4 grandparents, 2 parents, 1 child). Children carry the cultural duty 孝 (xiào, filial piety) of caring for parents. 养老院 (retirement home) still frowned upon but growing. Health vocab: 老花眼 (presbyopia), 高血压 (hypertension), 糖尿病 (diabetes).',
     items: [
-      { hanzi: '老龄化', pinyin: 'lǎo líng huà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄化.wav' },
-      { hanzi: '退休', pinyin: 'tuì xiū', meaning: 'retraite', meaningEn: 'retirement', audio: 'audio/hsk4/hsk4_退休.wav' },
-      { hanzi: '孝顺', pinyin: 'xiào shùn', meaning: 'piété filiale', meaningEn: 'filial piety', audio: 'audio/hsk5/hsk5_孝顺.wav' },
-      { hanzi: '养老院', pinyin: 'yǎng lǎo yuàn', meaning: 'maison de retraite', meaningEn: 'retirement home', audio: 'audio/hsk6/hsk6_养老院.wav' },
-      { hanzi: '高血压', pinyin: 'gāo xuè yā', meaning: 'hypertension', meaningEn: 'hypertension', audio: 'audio/hsk5/hsk5_高血压.wav' }
+      { hanzi: '老龄化', pinyin: 'lǎolínghuà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄化.wav' },
+      { hanzi: '退休', pinyin: 'tuìxiū', meaning: 'retraite', meaningEn: 'retirement', audio: 'audio/hsk4/hsk4_退休.wav' },
+      { hanzi: '孝顺', pinyin: 'xiàoshùn', meaning: 'piété filiale', meaningEn: 'filial piety', audio: 'audio/hsk5/hsk5_孝顺.wav' },
+      { hanzi: '养老院', pinyin: 'yǎnglǎoyuàn', meaning: 'maison de retraite', meaningEn: 'retirement home', audio: 'audio/hsk6/hsk6_养老院.wav' },
+      { hanzi: '高血压', pinyin: 'gāoxuèyā', meaning: 'hypertension', meaningEn: 'hypertension', audio: 'audio/hsk5/hsk5_高血压.wav' }
     ],
     tip:
       'Dire d\'un ami « 你很孝顺 » est un compliment fort qui honore son éducation. À l\'inverse, 不孝 (búxiào) reste l\'une des pires accusations sociales.',
@@ -1160,11 +1160,11 @@ export const b22HealthM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Chinese urban retirees have dense social lives. 广场舞 (square dance) — a national phenomenon, 100M practitioners, source of noise tensions. 公园 (park) — tai chi, mahjong 麻将, group singing. 带孙子 (look after grandchildren) — key role: grandparents often take over from working parents. 广场舞大妈 («square aunties») have become a sociological meme: energetic, organized, sometimes feared.',
     items: [
-      { hanzi: '广场舞', pinyin: 'guǎng chǎng wǔ', meaning: 'danse de place', meaningEn: 'square dance', audio: 'audio/hsk6/hsk6_广场舞.wav' },
-      { hanzi: '公园', pinyin: 'gōng yuán', meaning: 'parc', meaningEn: 'park', audio: 'audio/hsk3/hsk3_公园.wav' },
-      { hanzi: '麻将', pinyin: 'má jiàng', meaning: 'mahjong', meaningEn: 'mahjong', audio: 'audio/hsk5/hsk5_麻将.wav' },
-      { hanzi: '孙子', pinyin: 'sūn zi', meaning: 'petit-fils', meaningEn: 'grandson', audio: 'audio/hsk4/hsk4_孙子.wav' },
-      { hanzi: '退休金', pinyin: 'tuì xiū jīn', meaning: 'pension', meaningEn: 'pension', audio: 'audio/hsk6/hsk6_退休金.wav' }
+      { hanzi: '广场舞', pinyin: 'guǎngchǎng wǔ', meaning: 'danse de place', meaningEn: 'square dance', audio: 'audio/hsk6/hsk6_广场舞.wav' },
+      { hanzi: '公园', pinyin: 'gōngyuán', meaning: 'parc', meaningEn: 'park', audio: 'audio/hsk3/hsk3_公园.wav' },
+      { hanzi: '麻将', pinyin: 'májiāng', meaning: 'mahjong', meaningEn: 'mahjong', audio: 'audio/hsk5/hsk5_麻将.wav' },
+      { hanzi: '孙子', pinyin: 'sūnzi', meaning: 'petit-fils', meaningEn: 'grandson', audio: 'audio/hsk4/hsk4_孙子.wav' },
+      { hanzi: '退休金', pinyin: 'tuìxiūjīn', meaning: 'pension', meaningEn: 'pension', audio: 'audio/hsk6/hsk6_退休金.wav' }
     ],
     tip:
       'Si tu visites Pékin tôt le matin (6h-7h), va dans un parc : tu verras des centaines de retraités faire taichi, calligraphie sur dalles avec de l\'eau, danse en couple. C\'est culturel à observer.',
@@ -1191,11 +1191,11 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'To compare in B2 argumentation: 相比之下 (in comparison), 比起来 (compared with), 与 X 相比 (compared to X — formal). Example: 与传统教育相比，在线课程更灵活 = compared to traditional education, online classes are more flexible. Distinction from simple 比 (X 比 Y high): 相比/与…相比 introduces a whole COMPARED CLAUSE, not just two items.',
     items: [
-      { hanzi: '相比', pinyin: 'xiāng bǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
-      { hanzi: '相比之下', pinyin: 'xiāng bǐ zhī xià', meaning: 'par comparaison', meaningEn: 'in comparison', audio: 'audio/hsk6/hsk6_相比之下.wav' },
-      { hanzi: '传统', pinyin: 'chuán tǒng', meaning: 'traditionnel', meaningEn: 'traditional', audio: 'audio/hsk4/hsk4_传统.wav' },
-      { hanzi: '灵活', pinyin: 'líng huó', meaning: 'flexible', meaningEn: 'flexible', audio: 'audio/hsk4/hsk4_灵活.wav' },
-      { hanzi: '区别', pinyin: 'qū bié', meaning: 'différence', meaningEn: 'difference', audio: 'audio/hsk4/hsk4_区别.wav' }
+      { hanzi: '相比', pinyin: 'xiāngbǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
+      { hanzi: '相比之下', pinyin: 'xiāngbǐzhīxià', meaning: 'par comparaison', meaningEn: 'in comparison', audio: 'audio/hsk6/hsk6_相比之下.wav' },
+      { hanzi: '传统', pinyin: 'chuántǒng', meaning: 'traditionnel', meaningEn: 'traditional', audio: 'audio/hsk4/hsk4_传统.wav' },
+      { hanzi: '灵活', pinyin: 'línghuó', meaning: 'flexible', meaningEn: 'flexible', audio: 'audio/hsk4/hsk4_灵活.wav' },
+      { hanzi: '区别', pinyin: 'qūbié', meaning: 'différence', meaningEn: 'difference', audio: 'audio/hsk4/hsk4_区别.wav' }
     ],
     tip:
       '与 X 相比 est une formule de l\'écrit académique. À l\'oral spontané, 跟 X 比起来 est plus naturel.',
@@ -1216,11 +1216,11 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '相反 (xiāngfǎn, on the contrary) introduces strong opposition. 我以为他会拒绝，相反，他立刻同意了 = I thought he\'d refuse, on the contrary he agreed immediately. 反之 (fǎn zhī, conversely — formal) heavily used in writing. 然而 (rán\'ér, however) opposition + concession. 这个方案很好，然而成本太高 = this plan is good, however the cost is too high. Increasing force: 不过 < 但是 < 然而 < 相反.',
     items: [
-      { hanzi: '相反', pinyin: 'xiāng fǎn', meaning: 'au contraire', meaningEn: 'on the contrary', audio: 'audio/hsk4/hsk4_相反.wav' },
-      { hanzi: '反之', pinyin: 'fǎn zhī', meaning: 'à l\'inverse', meaningEn: 'conversely', audio: 'audio/hsk6/hsk6_反之.wav' },
-      { hanzi: '然而', pinyin: 'rán ér', meaning: 'cependant', meaningEn: 'however', audio: 'audio/hsk4/hsk4_然而.wav' },
-      { hanzi: '拒绝', pinyin: 'jù jué', meaning: 'refuser', meaningEn: 'refuse', audio: 'audio/hsk4/hsk4_拒绝.wav' },
-      { hanzi: '成本', pinyin: 'chéng běn', meaning: 'coût', meaningEn: 'cost', audio: 'audio/hsk5/hsk5_成本.wav' }
+      { hanzi: '相反', pinyin: 'xiāngfǎn', meaning: 'au contraire', meaningEn: 'on the contrary', audio: 'audio/hsk4/hsk4_相反.wav' },
+      { hanzi: '反之', pinyin: 'fǎnzhī', meaning: 'à l\'inverse', meaningEn: 'conversely', audio: 'audio/hsk6/hsk6_反之.wav' },
+      { hanzi: '然而', pinyin: 'ránér', meaning: 'cependant', meaningEn: 'however', audio: 'audio/hsk4/hsk4_然而.wav' },
+      { hanzi: '拒绝', pinyin: 'jùjué', meaning: 'refuser', meaningEn: 'refuse', audio: 'audio/hsk4/hsk4_拒绝.wav' },
+      { hanzi: '成本', pinyin: 'chéngběn', meaning: 'coût', meaningEn: 'cost', audio: 'audio/hsk5/hsk5_成本.wav' }
     ],
     tip:
       'Dans un essai, alterne 然而 et 不过 pour ne pas répéter. 反之 est très spécialisé : surtout dans les démonstrations logiques (« si X alors Y, à l\'inverse… »).',
@@ -1248,11 +1248,11 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'To illustrate an argument: 例如 (for example — neutral), 比如说 (like for example — spoken), 譬如 (for instance — formal, literary), 拿 X 来说 (take X). Example: 拿北京来说，房价已经太高了 = take Beijing, real estate prices are already too high. The 拿…来说 structure targets a specific case illustrating a general trend.',
     items: [
-      { hanzi: '例如', pinyin: 'lì rú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk5/hsk5_例如.wav' },
-      { hanzi: '譬如', pinyin: 'pì rú', meaning: 'par exemple (soutenu)', meaningEn: 'for instance (formal)', audio: 'audio/hsk6/hsk6_譬如.wav' },
-      { hanzi: '比如说', pinyin: 'bǐ rú shuō', meaning: 'comme par exemple', meaningEn: 'like for instance', audio: 'audio/hsk3/hsk3_比如.wav' },
-      { hanzi: '房价', pinyin: 'fáng jià', meaning: 'prix immobilier', meaningEn: 'housing prices', audio: 'audio/hsk5/hsk5_房价.wav' },
-      { hanzi: '案例', pinyin: 'àn lì', meaning: 'cas, exemple', meaningEn: 'case, example', audio: 'audio/hsk5/hsk5_案例.wav' }
+      { hanzi: '例如', pinyin: 'lìrú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk5/hsk5_例如.wav' },
+      { hanzi: '譬如', pinyin: 'pìrú', meaning: 'par exemple (soutenu)', meaningEn: 'for instance (formal)', audio: 'audio/hsk6/hsk6_譬如.wav' },
+      { hanzi: '比如说', pinyin: 'bǐrúshuō', meaning: 'comme par exemple', meaningEn: 'like for instance', audio: 'audio/hsk3/hsk3_比如.wav' },
+      { hanzi: '房价', pinyin: 'fángjià', meaning: 'prix immobilier', meaningEn: 'housing prices', audio: 'audio/hsk5/hsk5_房价.wav' },
+      { hanzi: '案例', pinyin: 'ànlì', meaning: 'cas, exemple', meaningEn: 'case, example', audio: 'audio/hsk5/hsk5_案例.wav' }
     ],
     tip:
       'En oral, ne dis JAMAIS 譬如 (te fait passer pour pédant). En écrit, 譬如 est élégant. Règle : 比如 partout, 例如 dans des contextes formels, 譬如 réservé à l\'écrit littéraire.',
@@ -1277,10 +1277,10 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
       'To anchor an argument in fact: 据 (according to), 据统计 (according to statistics), 数据显示 (data show), 调查表明 (survey reveals). 据 + source + 报道/介绍 = according to X. 据新华社报道 = according to Xinhua agency. Number vocab: 百分比 (percentage), 比例 (proportion), 增长 (growth), 下降 (decline). Phrase: 据统计，去年 GDP 增长了 5.2% = per statistics, GDP grew 5.2% last year.',
     items: [
       { hanzi: '据', pinyin: 'jù', meaning: 'selon', meaningEn: 'according to', audio: 'audio/hsk5/hsk5_据.wav' },
-      { hanzi: '统计', pinyin: 'tǒng jì', meaning: 'statistique', meaningEn: 'statistics', audio: 'audio/hsk5/hsk5_统计.wav' },
-      { hanzi: '数据', pinyin: 'shù jù', meaning: 'données', meaningEn: 'data', audio: 'audio/hsk5/hsk5_数据.wav' },
-      { hanzi: '显示', pinyin: 'xiǎn shì', meaning: 'montrer', meaningEn: 'show, display', audio: 'audio/hsk4/hsk4_显示.wav' },
-      { hanzi: '调查', pinyin: 'diào chá', meaning: 'enquête', meaningEn: 'survey, investigation', audio: 'audio/hsk5/hsk5_调查.wav' }
+      { hanzi: '统计', pinyin: 'tǒngjì', meaning: 'statistique', meaningEn: 'statistics', audio: 'audio/hsk5/hsk5_统计.wav' },
+      { hanzi: '数据', pinyin: 'shùjù', meaning: 'données', meaningEn: 'data', audio: 'audio/hsk5/hsk5_数据.wav' },
+      { hanzi: '显示', pinyin: 'xiǎnshì', meaning: 'montrer', meaningEn: 'show, display', audio: 'audio/hsk4/hsk4_显示.wav' },
+      { hanzi: '调查', pinyin: 'diàochá', meaning: 'enquête', meaningEn: 'survey, investigation', audio: 'audio/hsk5/hsk5_调查.wav' }
     ],
     tip:
       'Pour gagner en crédibilité dans un débat formel chinois, cite TOUJOURS la source : « 据X日报报道 ». Sans source, l\'argument paraît subjectif.',
@@ -1309,11 +1309,11 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'To express a cause at B2: 由于 (due to — formal), 因为 (because — neutral), 之所以…是因为 (the reason… is that — emphatic). 由于天气恶劣，航班取消了 = due to bad weather, the flight is canceled. 之所以失败，是因为准备不足 = the reason we failed is insufficient preparation. The inverted 之所以 structure highlights the result before explaining the cause: very oratorical.',
     items: [
-      { hanzi: '由于', pinyin: 'yóu yú', meaning: 'du fait que', meaningEn: 'due to', audio: 'audio/hsk4/hsk4_由于.wav' },
-      { hanzi: '之所以', pinyin: 'zhī suǒ yǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk5/hsk5_之所以.wav' },
-      { hanzi: '恶劣', pinyin: 'è liè', meaning: 'mauvais (conditions)', meaningEn: 'severe, bad', audio: 'audio/hsk5/hsk5_恶劣.wav' },
-      { hanzi: '航班', pinyin: 'háng bān', meaning: 'vol (avion)', meaningEn: 'flight', audio: 'audio/hsk5/hsk5_航班.wav' },
-      { hanzi: '原因', pinyin: 'yuán yīn', meaning: 'cause, raison', meaningEn: 'cause, reason', audio: 'audio/hsk4/hsk4_原因.wav' }
+      { hanzi: '由于', pinyin: 'yóuyú', meaning: 'du fait que', meaningEn: 'due to', audio: 'audio/hsk4/hsk4_由于.wav' },
+      { hanzi: '之所以', pinyin: 'zhīsuǒyǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk5/hsk5_之所以.wav' },
+      { hanzi: '恶劣', pinyin: 'èliè', meaning: 'mauvais (conditions)', meaningEn: 'severe, bad', audio: 'audio/hsk5/hsk5_恶劣.wav' },
+      { hanzi: '航班', pinyin: 'hángbān', meaning: 'vol (avion)', meaningEn: 'flight', audio: 'audio/hsk5/hsk5_航班.wav' },
+      { hanzi: '原因', pinyin: 'yuányīn', meaning: 'cause, raison', meaningEn: 'cause, reason', audio: 'audio/hsk4/hsk4_原因.wav' }
     ],
     tip:
       '之所以 X 是因为 Y est une formule très efficace pour ouvrir une démonstration : tu énonces la conclusion, puis tu expliques. Très utilisé en rhétorique politique et juridique.',
@@ -1335,11 +1335,11 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '因此 (yīncǐ, therefore — formal), 所以 (suǒyǐ, so — neutral), 因而 (yīn\'ér, hence — formal), 从而 (cóng\'ér, thereby — formal, marks logical sequence). 从而 often introduces a positive consequence or achieved goal: 减少了开支，从而提高了利润 = we cut spending, thereby boosting profits. 因而 is more neutral. Hierarchy: 所以 (oral) < 因此 (mixed) < 因而/从而 (written).',
     items: [
-      { hanzi: '因此', pinyin: 'yīn cǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
-      { hanzi: '因而', pinyin: 'yīn ér', meaning: 'de ce fait', meaningEn: 'hence', audio: 'audio/hsk6/hsk6_因而.wav' },
-      { hanzi: '从而', pinyin: 'cóng ér', meaning: 'et par là', meaningEn: 'thereby', audio: 'audio/hsk5/hsk5_从而.wav' },
-      { hanzi: '开支', pinyin: 'kāi zhī', meaning: 'dépense', meaningEn: 'expenditure', audio: 'audio/hsk6/hsk6_开支.wav' },
-      { hanzi: '利润', pinyin: 'lì rùn', meaning: 'bénéfice', meaningEn: 'profit', audio: 'audio/hsk5/hsk5_利润.wav' }
+      { hanzi: '因此', pinyin: 'yīncǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
+      { hanzi: '因而', pinyin: 'yīnér', meaning: 'de ce fait', meaningEn: 'hence', audio: 'audio/hsk6/hsk6_因而.wav' },
+      { hanzi: '从而', pinyin: 'cóngér', meaning: 'et par là', meaningEn: 'thereby', audio: 'audio/hsk5/hsk5_从而.wav' },
+      { hanzi: '开支', pinyin: 'kāizhī', meaning: 'dépense', meaningEn: 'expenditure', audio: 'audio/hsk6/hsk6_开支.wav' },
+      { hanzi: '利润', pinyin: 'lìrùn', meaning: 'bénéfice', meaningEn: 'profit', audio: 'audio/hsk5/hsk5_利润.wav' }
     ],
     tip:
       'Dans un essai B2-C1, alterne 因此 et 从而 pour rythmer. Évite de répéter 所以 plus de 2x dans un même paragraphe : ça sonne oral.',
@@ -1365,11 +1365,11 @@ export const b22DebateM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '总之 (in short) — quick concluder, oral and written. 总的来说 (overall) — more measured wrap-up. 综上所述 (in light of the above) — very formal, typical of essay or report conclusions. 一言以蔽之 (in a word) — chengyu, scholarly register. The closing marker introduces the conclusion without adding anything: the synthesis that follows must carry the weight.',
     items: [
-      { hanzi: '总之', pinyin: 'zǒng zhī', meaning: 'en bref', meaningEn: 'in short', audio: 'audio/hsk4/hsk4_总之.wav' },
-      { hanzi: '总的来说', pinyin: 'zǒng de lái shuō', meaning: 'dans l\'ensemble', meaningEn: 'overall', audio: 'audio/hsk5/hsk5_总的来说.wav' },
-      { hanzi: '综上所述', pinyin: 'zōng shàng suǒ shù', meaning: 'au vu de ce qui précède', meaningEn: 'in light of the above', audio: 'audio/hsk6/hsk6_综上所述.wav' },
-      { hanzi: '总结', pinyin: 'zǒng jié', meaning: 'résumer', meaningEn: 'summarize', audio: 'audio/hsk4/hsk4_总结.wav' },
-      { hanzi: '结论', pinyin: 'jié lùn', meaning: 'conclusion', meaningEn: 'conclusion', audio: 'audio/hsk5/hsk5_结论.wav' }
+      { hanzi: '总之', pinyin: 'zǒngzhī', meaning: 'en bref', meaningEn: 'in short', audio: 'audio/hsk4/hsk4_总之.wav' },
+      { hanzi: '总的来说', pinyin: 'zǒngdeláishuō', meaning: 'dans l\'ensemble', meaningEn: 'overall', audio: 'audio/hsk5/hsk5_总的来说.wav' },
+      { hanzi: '综上所述', pinyin: 'zōngshàngsuǒshù', meaning: 'au vu de ce qui précède', meaningEn: 'in light of the above', audio: 'audio/hsk6/hsk6_综上所述.wav' },
+      { hanzi: '总结', pinyin: 'zǒngjié', meaning: 'résumer', meaningEn: 'summarize', audio: 'audio/hsk4/hsk4_总结.wav' },
+      { hanzi: '结论', pinyin: 'jiélùn', meaning: 'conclusion', meaningEn: 'conclusion', audio: 'audio/hsk5/hsk5_结论.wav' }
     ],
     tip:
       'À l\'oral, 总之 suffit. À l\'écrit B2+, alterne 综上所述 (formel) et 总的来说 (modéré). Ne combine jamais 总之 + 综上所述 : redondance lourde.',
@@ -1395,11 +1395,11 @@ export const b22DebateM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'To avoid ending flat, open toward the future: 展望未来 (look ahead), 期待 (hope, expect), 值得 (deserve to). 这个议题值得进一步探讨 = this topic deserves further exploration. 我们期待… = we hope… 展望未来，… = looking to the future,… These formulas signal still-moving thought, open to debate — highly valued in Chinese academic argumentation.',
     items: [
-      { hanzi: '展望', pinyin: 'zhǎn wàng', meaning: 'envisager, regarder vers', meaningEn: 'envision, look forward', audio: 'audio/hsk6/hsk6_展望.wav' },
-      { hanzi: '期待', pinyin: 'qī dài', meaning: 'attendre, espérer', meaningEn: 'expect, hope', audio: 'audio/hsk4/hsk4_期待.wav' },
-      { hanzi: '值得', pinyin: 'zhí dé', meaning: 'mériter', meaningEn: 'deserve, worth', audio: 'audio/hsk4/hsk4_值得.wav' },
-      { hanzi: '议题', pinyin: 'yì tí', meaning: 'sujet de débat', meaningEn: 'debate topic', audio: 'audio/hsk6/hsk6_议题.wav' },
-      { hanzi: '探讨', pinyin: 'tàn tǎo', meaning: 'approfondir', meaningEn: 'explore deeply', audio: 'audio/hsk6/hsk6_探讨.wav' }
+      { hanzi: '展望', pinyin: 'zhǎnwàng', meaning: 'envisager, regarder vers', meaningEn: 'envision, look forward', audio: 'audio/hsk6/hsk6_展望.wav' },
+      { hanzi: '期待', pinyin: 'qīdài', meaning: 'attendre, espérer', meaningEn: 'expect, hope', audio: 'audio/hsk4/hsk4_期待.wav' },
+      { hanzi: '值得', pinyin: 'zhíde', meaning: 'mériter', meaningEn: 'deserve, worth', audio: 'audio/hsk4/hsk4_值得.wav' },
+      { hanzi: '议题', pinyin: 'yìtí', meaning: 'sujet de débat', meaningEn: 'debate topic', audio: 'audio/hsk6/hsk6_议题.wav' },
+      { hanzi: '探讨', pinyin: 'tàntǎo', meaning: 'approfondir', meaningEn: 'explore deeply', audio: 'audio/hsk6/hsk6_探讨.wav' }
     ],
     tip:
       'Une bonne conclusion B2+ chinoise = synthèse + ouverture. Termine par « 这个问题值得我们继续思考 » = ce sujet mérite que nous continuions à y réfléchir. Touche élégante.',
@@ -1446,11 +1446,11 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Beyond basic «真的吗？» (really?), B2 distinguishes nuances: 太好了 (great!), 真不错 (really nice), 难以置信 (unbelievable). For surprise: 没想到 (I wouldn\'t have thought), 居然 (would you believe…), 竟然 (same, more spoken). For bad news: 太糟糕了 (that sucks), 真可惜 (what a pity), 我替你难过 (I\'m sad for you). Reacting naturally means not getting stuck on 哦 (oh) or 是吗 (oh really).',
     items: [
-      { hanzi: '没想到', pinyin: 'méi xiǎng dào', meaning: 'je n\'aurais pas pensé', meaningEn: 'wouldn\'t have thought', audio: 'audio/hsk4/hsk4_没想到.wav' },
-      { hanzi: '居然', pinyin: 'jū rán', meaning: 'figure-toi (surprise)', meaningEn: 'unexpectedly', audio: 'audio/hsk5/hsk5_居然.wav' },
-      { hanzi: '竟然', pinyin: 'jìng rán', meaning: 'figure-toi (oral)', meaningEn: 'actually (spoken)', audio: 'audio/hsk5/hsk5_竟然.wav' },
-      { hanzi: '难以置信', pinyin: 'nán yǐ zhì xìn', meaning: 'incroyable', meaningEn: 'unbelievable', audio: 'audio/hsk6/hsk6_难以置信.wav' },
-      { hanzi: '可惜', pinyin: 'kě xī', meaning: 'dommage', meaningEn: 'pity', audio: 'audio/hsk4/hsk4_可惜.wav' }
+      { hanzi: '没想到', pinyin: 'méixiǎngdào', meaning: 'je n\'aurais pas pensé', meaningEn: 'wouldn\'t have thought', audio: 'audio/hsk4/hsk4_没想到.wav' },
+      { hanzi: '居然', pinyin: 'jūrán', meaning: 'figure-toi (surprise)', meaningEn: 'unexpectedly', audio: 'audio/hsk5/hsk5_居然.wav' },
+      { hanzi: '竟然', pinyin: 'jìngrán', meaning: 'figure-toi (oral)', meaningEn: 'actually (spoken)', audio: 'audio/hsk5/hsk5_竟然.wav' },
+      { hanzi: '难以置信', pinyin: 'nányǐzhìxìn', meaning: 'incroyable', meaningEn: 'unbelievable', audio: 'audio/hsk6/hsk6_难以置信.wav' },
+      { hanzi: '可惜', pinyin: 'kěxī', meaning: 'dommage', meaningEn: 'pity', audio: 'audio/hsk4/hsk4_可惜.wav' }
     ],
     tip:
       'Astuce sociale : devant une bonne nouvelle, surenchère ! 真的吗？太厉害了！恭喜恭喜！. Une seule réaction = froide.',
@@ -1480,11 +1480,11 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'To sympathize: 我理解你 (I get you), 我能想象 (I can imagine), 这真不容易 (that\'s really hard). To encourage: 加油 (chin up — ubiquitous), 别灰心 (don\'t lose heart), 一切都会好的 (it\'ll all work out). To close politely: 你保重 (take care). Avoid empty phrases like 没事的 («it\'s nothing») in front of real grief — feels dismissive.',
     items: [
-      { hanzi: '理解', pinyin: 'lǐ jiě', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_理解.wav' },
-      { hanzi: '想象', pinyin: 'xiǎng xiàng', meaning: 'imaginer', meaningEn: 'imagine', audio: 'audio/hsk5/hsk5_想象.wav' },
-      { hanzi: '加油', pinyin: 'jiā yóu', meaning: 'bon courage', meaningEn: 'chin up', audio: 'audio/hsk2/hsk2_加油.wav' },
-      { hanzi: '灰心', pinyin: 'huī xīn', meaning: 'se décourager', meaningEn: 'lose heart', audio: 'audio/hsk5/hsk5_灰心.wav' },
-      { hanzi: '保重', pinyin: 'bǎo zhòng', meaning: 'prends soin', meaningEn: 'take care', audio: 'audio/hsk5/hsk5_保重.wav' }
+      { hanzi: '理解', pinyin: 'lǐjiě', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_理解.wav' },
+      { hanzi: '想象', pinyin: 'xiǎngxiàng', meaning: 'imaginer', meaningEn: 'imagine', audio: 'audio/hsk5/hsk5_想象.wav' },
+      { hanzi: '加油', pinyin: 'jiāyóu', meaning: 'bon courage', meaningEn: 'chin up', audio: 'audio/hsk2/hsk2_加油.wav' },
+      { hanzi: '灰心', pinyin: 'huīxīn', meaning: 'se décourager', meaningEn: 'lose heart', audio: 'audio/hsk5/hsk5_灰心.wav' },
+      { hanzi: '保重', pinyin: 'bǎozhòng', meaning: 'prends soin', meaningEn: 'take care', audio: 'audio/hsk5/hsk5_保重.wav' }
     ],
     tip:
       '加油 ne se traduit pas vraiment. Selon contexte : « courage », « tu peux le faire », « allez ». Universellement positif, jamais sarcastique.',
@@ -1515,11 +1515,11 @@ export const b22ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Classic compliments: 你今天很漂亮 (you look beautiful today), 你的中文真好 (your Chinese is great), 这件衣服很适合你 (that outfit suits you). For work: 你做得真棒 (well done), 太厉害了 (impressive). Subtler: 你眼光真好 (you have good taste), 你考虑得很周到 (you thought of everything). Avoid hollow flattery — Chinese people spot it fast. Always specify WHAT is good.',
     items: [
-      { hanzi: '漂亮', pinyin: 'piào liang', meaning: 'beau, joli', meaningEn: 'beautiful', audio: 'audio/hsk1/hsk1_漂亮.wav' },
-      { hanzi: '适合', pinyin: 'shì hé', meaning: 'aller bien à', meaningEn: 'suit', audio: 'audio/hsk4/hsk4_适合.wav' },
-      { hanzi: '厉害', pinyin: 'lì hai', meaning: 'impressionnant', meaningEn: 'impressive', audio: 'audio/hsk4/hsk4_厉害.wav' },
-      { hanzi: '眼光', pinyin: 'yǎn guāng', meaning: 'goût, perspicacité', meaningEn: 'taste, vision', audio: 'audio/hsk5/hsk5_眼光.wav' },
-      { hanzi: '周到', pinyin: 'zhōu dào', meaning: 'attentionné', meaningEn: 'thoughtful', audio: 'audio/hsk6/hsk6_周到.wav' }
+      { hanzi: '漂亮', pinyin: 'piàoliàng', meaning: 'beau, joli', meaningEn: 'beautiful', audio: 'audio/hsk1/hsk1_漂亮.wav' },
+      { hanzi: '适合', pinyin: 'shìhé', meaning: 'aller bien à', meaningEn: 'suit', audio: 'audio/hsk4/hsk4_适合.wav' },
+      { hanzi: '厉害', pinyin: 'lìhài', meaning: 'impressionnant', meaningEn: 'impressive', audio: 'audio/hsk4/hsk4_厉害.wav' },
+      { hanzi: '眼光', pinyin: 'yǎnguāng', meaning: 'goût, perspicacité', meaningEn: 'taste, vision', audio: 'audio/hsk5/hsk5_眼光.wav' },
+      { hanzi: '周到', pinyin: 'zhōudào', meaning: 'attentionné', meaningEn: 'thoughtful', audio: 'audio/hsk6/hsk6_周到.wav' }
     ],
     tip:
       '你的中文真好 est la phrase entendue 1000x. Pour féliciter QUELQU\'UN qui parle français/anglais, varie : 你的发音很地道 (ta prononciation est authentique), 你的语法非常准 (ta grammaire est précise).',
@@ -1545,11 +1545,11 @@ export const b22ConvM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'In China, accepting a direct compliment («Thanks!») can sound arrogant. Traditional responses: 哪里哪里 (lit. «where where» = no no), 过奖了 (you flatter), 您客气了 (you\'re too polite). More modern: 谢谢，不过还差得远 (thanks, but I\'m still far). For Chinese: 我还在学 (I\'m still learning), 还差得远 (I have a long way to go). This modesty 谦虚 (qiānxū) is culturally valued.',
     items: [
-      { hanzi: '哪里', pinyin: 'nǎ lǐ', meaning: 'où (mais non)', meaningEn: 'where (= no no)', audio: 'audio/hsk1/hsk1_哪里.wav' },
-      { hanzi: '过奖', pinyin: 'guò jiǎng', meaning: 'flatter', meaningEn: 'over-praise', audio: 'audio/hsk6/hsk6_过奖.wav' },
-      { hanzi: '客气', pinyin: 'kè qi', meaning: 'poli, courtois', meaningEn: 'polite', audio: 'audio/hsk2/hsk2_客气.wav' },
-      { hanzi: '谦虚', pinyin: 'qiān xū', meaning: 'modeste', meaningEn: 'modest', audio: 'audio/hsk5/hsk5_谦虚.wav' },
-      { hanzi: '差得远', pinyin: 'chà de yuǎn', meaning: 'loin du compte', meaningEn: 'far from it', audio: 'audio/hsk5/hsk5_差得远.wav' }
+      { hanzi: '哪里', pinyin: 'nǎlǐ', meaning: 'où (mais non)', meaningEn: 'where (= no no)', audio: 'audio/hsk1/hsk1_哪里.wav' },
+      { hanzi: '过奖', pinyin: 'guòjiǎng', meaning: 'flatter', meaningEn: 'over-praise', audio: 'audio/hsk6/hsk6_过奖.wav' },
+      { hanzi: '客气', pinyin: 'kèqì', meaning: 'poli, courtois', meaningEn: 'polite', audio: 'audio/hsk2/hsk2_客气.wav' },
+      { hanzi: '谦虚', pinyin: 'qiānxū', meaning: 'modeste', meaningEn: 'modest', audio: 'audio/hsk5/hsk5_谦虚.wav' },
+      { hanzi: '差得远', pinyin: 'chàdeyuǎn', meaning: 'loin du compte', meaningEn: 'far from it', audio: 'audio/hsk5/hsk5_差得远.wav' }
     ],
     tip:
       'Acceptable aussi de répondre 谢谢 + détourner : « 谢谢，是因为我练得多 » (merci, c\'est parce que j\'ai beaucoup pratiqué) — tu remercies SANS te valoriser.',
@@ -1576,11 +1576,11 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Different from formal debate: here you\'re among friends or colleagues. Gentle formulas: 我觉得不一定 (I don\'t think so necessarily), 嗯…我有点不同意 (hmm… I don\'t fully agree), 我倒觉得… (I rather think that…). To suggest an alternative: 这样会不会更好？(would this maybe be better?). Soften with 不过 (but — light) rather than 但是 (but — sharper).',
     items: [
-      { hanzi: '不一定', pinyin: 'bù yí dìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk3/hsk3_不一定.wav' },
-      { hanzi: '不同意', pinyin: 'bù tóng yì', meaning: 'pas d\'accord', meaningEn: 'disagree', audio: 'audio/hsk3/hsk3_同意.wav' },
+      { hanzi: '不一定', pinyin: 'bù yídìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk3/hsk3_不一定.wav' },
+      { hanzi: '不同意', pinyin: 'bù tóngyì', meaning: 'pas d\'accord', meaningEn: 'disagree', audio: 'audio/hsk3/hsk3_同意.wav' },
       { hanzi: '倒', pinyin: 'dào', meaning: 'plutôt, au contraire', meaningEn: 'rather, on the contrary', audio: 'audio/hsk5/hsk5_倒.wav' },
-      { hanzi: '不过', pinyin: 'bú guò', meaning: 'mais (léger)', meaningEn: 'but (mild)', audio: 'audio/hsk3/hsk3_不过.wav' },
-      { hanzi: '建议', pinyin: 'jiàn yì', meaning: 'suggérer', meaningEn: 'suggest', audio: 'audio/hsk4/hsk4_建议.wav' }
+      { hanzi: '不过', pinyin: 'bùguò', meaning: 'mais (léger)', meaningEn: 'but (mild)', audio: 'audio/hsk3/hsk3_不过.wav' },
+      { hanzi: '建议', pinyin: 'jiànyì', meaning: 'suggérer', meaningEn: 'suggest', audio: 'audio/hsk4/hsk4_建议.wav' }
     ],
     tip:
       '我倒觉得 est très utile : tu introduis une opinion contraire SANS attaquer. « 你说他懒，我倒觉得他只是累 » = tu dis qu\'il est paresseux, moi je trouve qu\'il est juste fatigué.',
@@ -1604,11 +1604,11 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'At work: 我有一个不同的看法 (I have a different view), 我们可以再讨论一下 (we can discuss further), 这个想法很有意思，但… (interesting idea, but…). The classic sandwich: compliment + reservation + opening. 您的方案非常好，我有一点小建议，您觉得呢？ Asking the other\'s opinion at the end (您觉得呢/你觉得呢) opens dialogue rather than closing.',
     items: [
-      { hanzi: '看法', pinyin: 'kàn fǎ', meaning: 'point de vue', meaningEn: 'viewpoint', audio: 'audio/hsk4/hsk4_看法.wav' },
-      { hanzi: '讨论', pinyin: 'tǎo lùn', meaning: 'discuter', meaningEn: 'discuss', audio: 'audio/hsk4/hsk4_讨论.wav' },
-      { hanzi: '方案', pinyin: 'fāng àn', meaning: 'plan, proposition', meaningEn: 'plan, proposal', audio: 'audio/hsk5/hsk5_方案.wav' },
-      { hanzi: '小建议', pinyin: 'xiǎo jiàn yì', meaning: 'petite suggestion', meaningEn: 'small suggestion', audio: 'audio/hsk4/hsk4_建议.wav' },
-      { hanzi: '想法', pinyin: 'xiǎng fǎ', meaning: 'idée', meaningEn: 'idea, thought', audio: 'audio/hsk4/hsk4_想法.wav' }
+      { hanzi: '看法', pinyin: 'kànfǎ', meaning: 'point de vue', meaningEn: 'viewpoint', audio: 'audio/hsk4/hsk4_看法.wav' },
+      { hanzi: '讨论', pinyin: 'tǎolùn', meaning: 'discuter', meaningEn: 'discuss', audio: 'audio/hsk4/hsk4_讨论.wav' },
+      { hanzi: '方案', pinyin: 'fāngàn', meaning: 'plan, proposition', meaningEn: 'plan, proposal', audio: 'audio/hsk5/hsk5_方案.wav' },
+      { hanzi: '小建议', pinyin: 'xiǎo jiànyì', meaning: 'petite suggestion', meaningEn: 'small suggestion', audio: 'audio/hsk4/hsk4_建议.wav' },
+      { hanzi: '想法', pinyin: 'xiǎngfǎ', meaning: 'idée', meaningEn: 'idea, thought', audio: 'audio/hsk4/hsk4_想法.wav' }
     ],
     tip:
       'Astuce d\'or en réunion chinoise : ne JAMAIS dire « 你错了 » à un supérieur. Toujours formuler comme une suggestion : « 我想我们可以从另一个角度看 » (je pense qu\'on pourrait voir sous un autre angle).',
@@ -1638,10 +1638,10 @@ export const b22ConvM4LearnSections: LessonV2LearnSection[] = [
       'Pick up: 喂，您好 (hello). Introduce: 我是X公司的小王 (I\'m Wang from company X). Ask: 请问 X 在吗 ? (excuse me, is X there?). If X absent: X 不在，您要留言吗？(X isn\'t here, want to leave a message?). 请稍等 = one moment. 您打错了 = wrong number. Close: 不打扰您了 (I\'ll let you go), 再见 (goodbye). On the phone, in a pro context, always 您 (formal you), not 你.',
     items: [
       { hanzi: '喂', pinyin: 'wéi', meaning: 'allô', meaningEn: 'hello (phone)', audio: 'audio/hsk1/hsk1_喂.wav' },
-      { hanzi: '请问', pinyin: 'qǐng wèn', meaning: 'excusez-moi', meaningEn: 'may I ask', audio: 'audio/hsk1/hsk1_请问.wav' },
-      { hanzi: '留言', pinyin: 'liú yán', meaning: 'laisser un message', meaningEn: 'leave a message', audio: 'audio/hsk5/hsk5_留言.wav' },
+      { hanzi: '请问', pinyin: 'qǐngwèn', meaning: 'excusez-moi', meaningEn: 'may I ask', audio: 'audio/hsk1/hsk1_请问.wav' },
+      { hanzi: '留言', pinyin: 'liúyán', meaning: 'laisser un message', meaningEn: 'leave a message', audio: 'audio/hsk5/hsk5_留言.wav' },
       { hanzi: '稍等', pinyin: 'shāo děng', meaning: 'patientez un peu', meaningEn: 'wait a moment', audio: 'audio/hsk4/hsk4_稍等.wav' },
-      { hanzi: '打扰', pinyin: 'dǎ rǎo', meaning: 'déranger', meaningEn: 'disturb', audio: 'audio/hsk4/hsk4_打扰.wav' }
+      { hanzi: '打扰', pinyin: 'dǎrǎo', meaning: 'déranger', meaningEn: 'disturb', audio: 'audio/hsk4/hsk4_打扰.wav' }
     ],
     tip:
       '喂 se prononce avec un ton 2 montant au tél (wéi), pas le 4 normal (wèi). Le 2 est devenu la norme téléphonique nationale.',
@@ -1671,11 +1671,11 @@ export const b22ConvM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'WeChat 微信 has replaced pro email in China. Start politely: 您好，方便聊一下吗？(hi, do you have a moment?), 抱歉打扰您 (sorry to bother). Ask: 麻烦您 + verb (could I trouble you to…), 能否 + verb (could you…). Confirm: 收到，谢谢 (received, thanks). Close: 辛苦了 (you\'ve worked hard — almost mandatory). Short voice notes (≤ 30s) OK between colleagues, not with a client.',
     items: [
-      { hanzi: '微信', pinyin: 'wēi xìn', meaning: 'WeChat', meaningEn: 'WeChat', audio: 'audio/hsk5/hsk5_微信.wav' },
-      { hanzi: '方便', pinyin: 'fāng biàn', meaning: 'pratique, dispo', meaningEn: 'convenient', audio: 'audio/hsk3/hsk3_方便.wav' },
-      { hanzi: '抱歉', pinyin: 'bào qiàn', meaning: 'désolé', meaningEn: 'sorry', audio: 'audio/hsk4/hsk4_抱歉.wav' },
-      { hanzi: '麻烦', pinyin: 'má fan', meaning: 'déranger, ennui', meaningEn: 'trouble, bother', audio: 'audio/hsk4/hsk4_麻烦.wav' },
-      { hanzi: '辛苦了', pinyin: 'xīn kǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for your work', audio: 'audio/hsk4/hsk4_辛苦.wav' }
+      { hanzi: '微信', pinyin: 'wēixìn', meaning: 'WeChat', meaningEn: 'WeChat', audio: 'audio/hsk5/hsk5_微信.wav' },
+      { hanzi: '方便', pinyin: 'fāngbiàn', meaning: 'pratique, dispo', meaningEn: 'convenient', audio: 'audio/hsk3/hsk3_方便.wav' },
+      { hanzi: '抱歉', pinyin: 'bàoqiàn', meaning: 'désolé', meaningEn: 'sorry', audio: 'audio/hsk4/hsk4_抱歉.wav' },
+      { hanzi: '麻烦', pinyin: 'máfán', meaning: 'déranger, ennui', meaningEn: 'trouble, bother', audio: 'audio/hsk4/hsk4_麻烦.wav' },
+      { hanzi: '辛苦了', pinyin: 'xīnkǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for your work', audio: 'audio/hsk4/hsk4_辛苦.wav' }
     ],
     tip:
       '辛苦了 est culturellement énorme. Le supérieur le dit à l\'employé en fin de journée, le client au prestataire. L\'oublier est perçu comme froid voire impoli.',
@@ -1707,11 +1707,11 @@ export const b22ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Prepare the ground: 我有件事要告诉你… (I have something to tell you…), 我不知道怎么说… (I don\'t know how to say it…), 你要做好心理准备 (mentally prepare). The news: 出事了 (something happened), 计划取消了 (plan canceled), 项目失败了 (project failed). Soften with 不太顺利 (not going great) rather than 失败 (failure) when possible. Always follow with a path forward: 但是我们可以…',
     items: [
-      { hanzi: '告诉', pinyin: 'gào sù', meaning: 'dire à', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
-      { hanzi: '出事', pinyin: 'chū shì', meaning: 'arriver un problème', meaningEn: 'something happens', audio: 'audio/hsk5/hsk5_出事.wav' },
-      { hanzi: '取消', pinyin: 'qǔ xiāo', meaning: 'annuler', meaningEn: 'cancel', audio: 'audio/hsk4/hsk4_取消.wav' },
-      { hanzi: '失败', pinyin: 'shī bài', meaning: 'échouer', meaningEn: 'fail', audio: 'audio/hsk4/hsk4_失败.wav' },
-      { hanzi: '顺利', pinyin: 'shùn lì', meaning: 'sans heurt', meaningEn: 'smooth', audio: 'audio/hsk4/hsk4_顺利.wav' }
+      { hanzi: '告诉', pinyin: 'gàosù', meaning: 'dire à', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
+      { hanzi: '出事', pinyin: 'chūshì', meaning: 'arriver un problème', meaningEn: 'something happens', audio: 'audio/hsk5/hsk5_出事.wav' },
+      { hanzi: '取消', pinyin: 'qǔxiāo', meaning: 'annuler', meaningEn: 'cancel', audio: 'audio/hsk4/hsk4_取消.wav' },
+      { hanzi: '失败', pinyin: 'shībài', meaning: 'échouer', meaningEn: 'fail', audio: 'audio/hsk4/hsk4_失败.wav' },
+      { hanzi: '顺利', pinyin: 'shùnlì', meaning: 'sans heurt', meaningEn: 'smooth', audio: 'audio/hsk4/hsk4_顺利.wav' }
     ],
     tip:
       'Culturellement, en Chine on n\'annonce JAMAIS une mauvaise nouvelle à brûle-pourpoint. Toujours un préambule (« je dois te dire quelque chose »), même 5 secondes. Sauter cette étape est perçu comme brutal.',
@@ -1735,11 +1735,11 @@ export const b22ConvM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Light: 不好意思 (excuse me, most common in speech), 抱歉 (sorry, more written). Medium: 对不起 (I\'m sorry, sincere). Strong: 真的对不起 (truly sorry), 非常抱歉 (extremely sorry). Very strong: 我向您道歉 (I apologize to you, formal), 我错了 (I was wrong). Follow with a brief reason + fix: 因为堵车，我会赶紧过来 = cause + corrective action. Apology without follow-up = feels light.',
     items: [
-      { hanzi: '不好意思', pinyin: 'bù hǎo yì si', meaning: 'excuse-moi', meaningEn: 'excuse me', audio: 'audio/hsk2/hsk2_不好意思.wav' },
-      { hanzi: '对不起', pinyin: 'duì bu qǐ', meaning: 'pardon, désolé', meaningEn: 'sorry', audio: 'audio/hsk1/hsk1_对不起.wav' },
-      { hanzi: '抱歉', pinyin: 'bào qiàn', meaning: 'désolé (écrit)', meaningEn: 'sorry (written)', audio: 'audio/hsk4/hsk4_抱歉.wav' },
-      { hanzi: '道歉', pinyin: 'dào qiàn', meaning: 'présenter ses excuses', meaningEn: 'apologize', audio: 'audio/hsk5/hsk5_道歉.wav' },
-      { hanzi: '原谅', pinyin: 'yuán liàng', meaning: 'pardonner', meaningEn: 'forgive', audio: 'audio/hsk4/hsk4_原谅.wav' }
+      { hanzi: '不好意思', pinyin: 'bùhǎoyìsī', meaning: 'excuse-moi', meaningEn: 'excuse me', audio: 'audio/hsk2/hsk2_不好意思.wav' },
+      { hanzi: '对不起', pinyin: 'duìbùqǐ', meaning: 'pardon, désolé', meaningEn: 'sorry', audio: 'audio/hsk1/hsk1_对不起.wav' },
+      { hanzi: '抱歉', pinyin: 'bàoqiàn', meaning: 'désolé (écrit)', meaningEn: 'sorry (written)', audio: 'audio/hsk4/hsk4_抱歉.wav' },
+      { hanzi: '道歉', pinyin: 'dàoqiàn', meaning: 'présenter ses excuses', meaningEn: 'apologize', audio: 'audio/hsk5/hsk5_道歉.wav' },
+      { hanzi: '原谅', pinyin: 'yuánliàng', meaning: 'pardonner', meaningEn: 'forgive', audio: 'audio/hsk4/hsk4_原谅.wav' }
     ],
     tip:
       '不好意思 sert à BEAUCOUP plus que s\'excuser : aussi pour interpeller (« excusez-moi madame »), pour décliner (« 不好意思，我有事 »). Couteau suisse social.',
@@ -1768,10 +1768,10 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
       'Indirect speech in Chinese: no tense agreement like French/English. 他说他明天来 = he said he\'d come tomorrow (lit. «he says he tomorrow come»). Speaking verbs: 说 (say — neutral), 告诉 X (tell X), 问 (ask), 回答 (reply). 他告诉我他不能来 = he told me he couldn\'t come. To report a question, keep the interrogative order: 他问我什么时候去 (he asked me when I\'d go).',
     items: [
       { hanzi: '说', pinyin: 'shuō', meaning: 'dire', meaningEn: 'say', audio: 'audio/hsk1/hsk1_说.wav' },
-      { hanzi: '告诉', pinyin: 'gào sù', meaning: 'dire à qqn', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
+      { hanzi: '告诉', pinyin: 'gàosù', meaning: 'dire à qqn', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
       { hanzi: '问', pinyin: 'wèn', meaning: 'demander', meaningEn: 'ask', audio: 'audio/hsk1/hsk1_问.wav' },
-      { hanzi: '回答', pinyin: 'huí dá', meaning: 'répondre', meaningEn: 'reply', audio: 'audio/hsk3/hsk3_回答.wav' },
-      { hanzi: '提到', pinyin: 'tí dào', meaning: 'mentionner', meaningEn: 'mention', audio: 'audio/hsk4/hsk4_提到.wav' }
+      { hanzi: '回答', pinyin: 'huídá', meaning: 'répondre', meaningEn: 'reply', audio: 'audio/hsk3/hsk3_回答.wav' },
+      { hanzi: '提到', pinyin: 'tídào', meaning: 'mentionner', meaningEn: 'mention', audio: 'audio/hsk4/hsk4_提到.wav' }
     ],
     tip:
       'Erreur classique : oublier que 告诉 a un objet obligatoire (告诉 + qui). On dit « 他告诉我X », JAMAIS « 他告诉X » seul. Différence fondamentale avec 说.',
@@ -1797,11 +1797,11 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Speaker distance: 据说 (jùshuō, it\'s said), 听说 (tīngshuō, I heard), 大家都说 (everyone says), 有人说 (someone said). 据说他要换工作 = the word is he\'s changing jobs. To qualify: 不知道是不是真的 (don\'t know if it\'s true), 据说而已 (just a rumor). 听说 is more personal (I heard), 据说 more distant (the rumor says). Heavily used in spoken Chinese to avoid personal commitment.',
     items: [
-      { hanzi: '据说', pinyin: 'jù shuō', meaning: 'on dit que', meaningEn: 'it is said', audio: 'audio/hsk5/hsk5_据说.wav' },
-      { hanzi: '听说', pinyin: 'tīng shuō', meaning: 'j\'ai entendu dire', meaningEn: 'I heard', audio: 'audio/hsk2/hsk2_听说.wav' },
-      { hanzi: '传言', pinyin: 'chuán yán', meaning: 'rumeur', meaningEn: 'rumor', audio: 'audio/hsk6/hsk6_传言.wav' },
-      { hanzi: '消息', pinyin: 'xiāo xi', meaning: 'nouvelle, info', meaningEn: 'news, info', audio: 'audio/hsk4/hsk4_消息.wav' },
-      { hanzi: '真假', pinyin: 'zhēn jiǎ', meaning: 'vrai ou faux', meaningEn: 'true or false', audio: 'audio/hsk5/hsk5_真假.wav' }
+      { hanzi: '据说', pinyin: 'jùshuō', meaning: 'on dit que', meaningEn: 'it is said', audio: 'audio/hsk5/hsk5_据说.wav' },
+      { hanzi: '听说', pinyin: 'tīngshuō', meaning: 'j\'ai entendu dire', meaningEn: 'I heard', audio: 'audio/hsk2/hsk2_听说.wav' },
+      { hanzi: '传言', pinyin: 'chuányán', meaning: 'rumeur', meaningEn: 'rumor', audio: 'audio/hsk6/hsk6_传言.wav' },
+      { hanzi: '消息', pinyin: 'xiāoxī', meaning: 'nouvelle, info', meaningEn: 'news, info', audio: 'audio/hsk4/hsk4_消息.wav' },
+      { hanzi: '真假', pinyin: 'zhēnjiǎ', meaning: 'vrai ou faux', meaningEn: 'true or false', audio: 'audio/hsk5/hsk5_真假.wav' }
     ],
     tip:
       'Astuce : commence ta phrase par 听说 plutôt que 我觉得 quand tu rapportes quelque chose dont tu n\'es pas sûr. Tu actes la distance et tu n\'engages pas ta crédibilité.',
@@ -1837,10 +1837,10 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
       'Prepare the exit: 那好 (well then), 那这样吧 (let\'s do that), 嗯…那我先… (well… so I\'ll first…). Announce the exit: 我得走了 (I need to go), 时间不早了 (it\'s getting late), 还有事要办 (I have things to do). Warmly take leave: 改天再聊 (let\'s chat another day), 保持联系 (stay in touch), 路上小心 (be safe on the way). A blunt exit («拜拜！») feels cold.',
     items: [
       { hanzi: '走了', pinyin: 'zǒu le', meaning: 'partir', meaningEn: 'going', audio: 'audio/hsk1/hsk1_走.wav' },
-      { hanzi: '改天', pinyin: 'gǎi tiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
-      { hanzi: '联系', pinyin: 'lián xì', meaning: 'contacter', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' },
-      { hanzi: '小心', pinyin: 'xiǎo xīn', meaning: 'fais attention', meaningEn: 'be careful', audio: 'audio/hsk3/hsk3_小心.wav' },
-      { hanzi: '路上', pinyin: 'lù shang', meaning: 'sur la route', meaningEn: 'on the way', audio: 'audio/hsk3/hsk3_路上.wav' }
+      { hanzi: '改天', pinyin: 'gǎitiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
+      { hanzi: '联系', pinyin: 'liánxì', meaning: 'contacter', meaningEn: 'contact', audio: 'audio/hsk4/hsk4_联系.wav' },
+      { hanzi: '小心', pinyin: 'xiǎoxīn', meaning: 'fais attention', meaningEn: 'be careful', audio: 'audio/hsk3/hsk3_小心.wav' },
+      { hanzi: '路上', pinyin: 'lùshàng', meaning: 'sur la route', meaningEn: 'on the way', audio: 'audio/hsk3/hsk3_路上.wav' }
     ],
     tip:
       '路上小心 = formule chaleureuse universelle quand quelqu\'un part. Va aussi pour un trajet en métro de 5 minutes. Marque l\'attention.',
@@ -1867,11 +1867,11 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Beyond 谢谢: 太感谢你了 (thanks so much), 谢谢你的帮助 (thanks for your help — specify FOR WHAT), 真不知道怎么感谢你 (I don\'t know how to thank you). Very formal: 万分感谢 (a thousand thanks), 不胜感激 (extremely grateful — written). If the other minimizes («不客气» = no problem), you can insist: 真的，不是客气话 (truly, not just being polite). In China, SPECIFIC gratitude («thanks for doing X») is stronger than a simple 谢谢.',
     items: [
-      { hanzi: '感谢', pinyin: 'gǎn xiè', meaning: 'remercier (formel)', meaningEn: 'thank (formal)', audio: 'audio/hsk4/hsk4_感谢.wav' },
-      { hanzi: '帮助', pinyin: 'bāng zhù', meaning: 'aide', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮助.wav' },
-      { hanzi: '不胜感激', pinyin: 'bú shèng gǎn jī', meaning: 'extrêmement reconnaissant', meaningEn: 'deeply grateful', audio: 'audio/hsk6/hsk6_感激.wav' },
-      { hanzi: '客气话', pinyin: 'kè qi huà', meaning: 'parole de politesse', meaningEn: 'pleasantry', audio: 'audio/hsk5/hsk5_客气.wav' },
-      { hanzi: '感激', pinyin: 'gǎn jī', meaning: 'reconnaissance', meaningEn: 'gratitude', audio: 'audio/hsk5/hsk5_感激.wav' }
+      { hanzi: '感谢', pinyin: 'gǎnxiè', meaning: 'remercier (formel)', meaningEn: 'thank (formal)', audio: 'audio/hsk4/hsk4_感谢.wav' },
+      { hanzi: '帮助', pinyin: 'bāngzhù', meaning: 'aide', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮助.wav' },
+      { hanzi: '不胜感激', pinyin: 'bùshènggǎnjī', meaning: 'extrêmement reconnaissant', meaningEn: 'deeply grateful', audio: 'audio/hsk6/hsk6_感激.wav' },
+      { hanzi: '客气话', pinyin: 'kèqìhuà', meaning: 'parole de politesse', meaningEn: 'pleasantry', audio: 'audio/hsk5/hsk5_客气.wav' },
+      { hanzi: '感激', pinyin: 'gǎnjī', meaning: 'reconnaissance', meaningEn: 'gratitude', audio: 'audio/hsk5/hsk5_感激.wav' }
     ],
     tip:
       'Si on t\'a vraiment rendu service, dis « 改天我请你吃饭 » (un autre jour je t\'invite au resto). C\'est la promesse de réciprocité culturelle, plus forte que tout merci verbal.',
@@ -1899,11 +1899,11 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '觉得 (juéde, feel/find) : subjective opinion, intuition, sensation. 我觉得这个菜很好吃 = I find this dish tasty (personal sense). 认为 (rènwéi, consider/think) : reasoned opinion, considered conviction. 我认为这个政策不公平 = I judge this policy unfair (judgment). Simple rule : 觉得 = taste/sensation/intuition ; 认为 = judgment/analysis/conclusion. In an essay or formal debate, prefer 认为. In daily life, 觉得 is more natural.',
     items: [
-      { hanzi: '觉得', pinyin: 'jué de', meaning: 'trouver, sentir', meaningEn: 'feel, find', audio: 'audio/hsk2/hsk2_觉得.wav' },
-      { hanzi: '认为', pinyin: 'rèn wéi', meaning: 'estimer, juger', meaningEn: 'consider, judge', audio: 'audio/hsk3/hsk3_认为.wav' },
-      { hanzi: '主观', pinyin: 'zhǔ guān', meaning: 'subjectif', meaningEn: 'subjective', audio: 'audio/hsk6/hsk6_主观.wav' },
-      { hanzi: '客观', pinyin: 'kè guān', meaning: 'objectif', meaningEn: 'objective', audio: 'audio/hsk5/hsk5_客观.wav' },
-      { hanzi: '判断', pinyin: 'pàn duàn', meaning: 'juger', meaningEn: 'judge', audio: 'audio/hsk5/hsk5_判断.wav' }
+      { hanzi: '觉得', pinyin: 'juéde', meaning: 'trouver, sentir', meaningEn: 'feel, find', audio: 'audio/hsk2/hsk2_觉得.wav' },
+      { hanzi: '认为', pinyin: 'rènwéi', meaning: 'estimer, juger', meaningEn: 'consider, judge', audio: 'audio/hsk3/hsk3_认为.wav' },
+      { hanzi: '主观', pinyin: 'zhǔguān', meaning: 'subjectif', meaningEn: 'subjective', audio: 'audio/hsk6/hsk6_主观.wav' },
+      { hanzi: '客观', pinyin: 'kèguān', meaning: 'objectif', meaningEn: 'objective', audio: 'audio/hsk5/hsk5_客观.wav' },
+      { hanzi: '判断', pinyin: 'pànduàn', meaning: 'juger', meaningEn: 'judge', audio: 'audio/hsk5/hsk5_判断.wav' }
     ],
     tip:
       'Test rapide : peut-on remplacer par « avoir l\'impression » ? Oui → 觉得. Par « considérer que » ? Oui → 认为. 我觉得他不喜欢我 (j\'ai l\'impression que…). 我认为这是错的 (je considère que c\'est faux).',
@@ -1925,11 +1925,11 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '以为 (yǐwéi, mistakenly believe) ALWAYS implies the belief turned out false. A total semantic trap for English speakers. 我以为他会来 = I thought he\'d come (and he didn\'t — belief was wrong). You CANNOT say «我以为这是真的» if it\'s actually true. If belief is verified → 我觉得 or 我认为. 以为 = «I (mistakenly) thought». Often followed by a reveal : 我以为今天没课，结果有 = I thought there was no class today, turns out there is.',
     items: [
-      { hanzi: '以为', pinyin: 'yǐ wéi', meaning: 'croire à tort', meaningEn: 'mistakenly think', audio: 'audio/hsk3/hsk3_以为.wav' },
-      { hanzi: '其实', pinyin: 'qí shí', meaning: 'en fait', meaningEn: 'actually', audio: 'audio/hsk3/hsk3_其实.wav' },
-      { hanzi: '结果', pinyin: 'jié guǒ', meaning: 'au final, résultat', meaningEn: 'in the end', audio: 'audio/hsk4/hsk4_结果.wav' },
-      { hanzi: '原来', pinyin: 'yuán lái', meaning: 'en fait (révélation)', meaningEn: 'turns out', audio: 'audio/hsk4/hsk4_原来.wav' },
-      { hanzi: '意外', pinyin: 'yì wài', meaning: 'inattendu', meaningEn: 'unexpected', audio: 'audio/hsk4/hsk4_意外.wav' }
+      { hanzi: '以为', pinyin: 'yǐwéi', meaning: 'croire à tort', meaningEn: 'mistakenly think', audio: 'audio/hsk3/hsk3_以为.wav' },
+      { hanzi: '其实', pinyin: 'qíshí', meaning: 'en fait', meaningEn: 'actually', audio: 'audio/hsk3/hsk3_其实.wav' },
+      { hanzi: '结果', pinyin: 'jiéguǒ', meaning: 'au final, résultat', meaningEn: 'in the end', audio: 'audio/hsk4/hsk4_结果.wav' },
+      { hanzi: '原来', pinyin: 'yuánlái', meaning: 'en fait (révélation)', meaningEn: 'turns out', audio: 'audio/hsk4/hsk4_原来.wav' },
+      { hanzi: '意外', pinyin: 'yìwài', meaning: 'inattendu', meaningEn: 'unexpected', audio: 'audio/hsk4/hsk4_意外.wav' }
     ],
     tip:
       'Phrase-piège typique : « 我以为你是中国人 » est un COMPLIMENT déguisé pour un étranger qui parle bien chinois (sous-entendu : tu m\'as trompé, je te prenais pour un Chinois). Inverse en français : « ah bon, tu n\'es pas chinois ? ».',
@@ -1955,11 +1955,11 @@ export const b22NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '必须 (bìxū) = EXTERNAL obligation, rule, duty. 你必须按时到 = you must arrive on time (imposed rule). 一定 (yídìng) = certainty/personal insistence. 你一定要来 = you absolutely must come (affective insistence). Radical difference : 必须 = the rule demands it ; 一定 = I insist on it happening. For «must» as «very likely», also 一定 : 他一定到了 = he must have arrived.',
     items: [
-      { hanzi: '必须', pinyin: 'bì xū', meaning: 'devoir (obligation)', meaningEn: 'must (rule)', audio: 'audio/hsk3/hsk3_必须.wav' },
-      { hanzi: '一定', pinyin: 'yí dìng', meaning: 'sûrement, absolument', meaningEn: 'definitely', audio: 'audio/hsk3/hsk3_一定.wav' },
-      { hanzi: '按时', pinyin: 'àn shí', meaning: 'à l\'heure', meaningEn: 'on time', audio: 'audio/hsk4/hsk4_按时.wav' },
-      { hanzi: '规定', pinyin: 'guī dìng', meaning: 'règle', meaningEn: 'rule', audio: 'audio/hsk4/hsk4_规定.wav' },
-      { hanzi: '坚持', pinyin: 'jiān chí', meaning: 'insister, tenir à', meaningEn: 'insist', audio: 'audio/hsk4/hsk4_坚持.wav' }
+      { hanzi: '必须', pinyin: 'bìxū', meaning: 'devoir (obligation)', meaningEn: 'must (rule)', audio: 'audio/hsk3/hsk3_必须.wav' },
+      { hanzi: '一定', pinyin: 'yídìng', meaning: 'sûrement, absolument', meaningEn: 'definitely', audio: 'audio/hsk3/hsk3_一定.wav' },
+      { hanzi: '按时', pinyin: 'ànshí', meaning: 'à l\'heure', meaningEn: 'on time', audio: 'audio/hsk4/hsk4_按时.wav' },
+      { hanzi: '规定', pinyin: 'guīdìng', meaning: 'règle', meaningEn: 'rule', audio: 'audio/hsk4/hsk4_规定.wav' },
+      { hanzi: '坚持', pinyin: 'jiānchí', meaning: 'insister, tenir à', meaningEn: 'insist', audio: 'audio/hsk4/hsk4_坚持.wav' }
     ],
     tip:
       'Erreur classique : utiliser 必须 pour insister auprès d\'un ami (« tu DOIS venir à mon mariage »). Trop froid, sonne juridique. Préfère « 你一定要来 » (insistance chaleureuse).',
@@ -1984,11 +1984,11 @@ export const b22NuancesM2LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '应该 (yīnggāi) = should, moral recommendation. 你应该多休息 = you should rest more (advice). 得 (děi, pronounced děi when meaning obligation) = spoken duty, concrete necessity. 我得走了 = I gotta go (urgent, practical). 得 is strictly spoken, never formal writing. Hierarchy of obligation : 应该 (should) < 得 (oral, need) < 一定要 (insistent) < 必须 (rule) < 不得不 (forced against will).',
     items: [
-      { hanzi: '应该', pinyin: 'yīng gāi', meaning: 'devrait', meaningEn: 'should', audio: 'audio/hsk3/hsk3_应该.wav' },
+      { hanzi: '应该', pinyin: 'yīnggāi', meaning: 'devrait', meaningEn: 'should', audio: 'audio/hsk3/hsk3_应该.wav' },
       { hanzi: '得', pinyin: 'děi', meaning: 'devoir (oral)', meaningEn: 'have to (spoken)', audio: 'audio/hsk2/hsk2_得.wav' },
-      { hanzi: '不得不', pinyin: 'bù dé bù', meaning: 'être forcé de', meaningEn: 'forced to', audio: 'audio/hsk5/hsk5_不得不.wav' },
-      { hanzi: '需要', pinyin: 'xū yào', meaning: 'avoir besoin', meaningEn: 'need', audio: 'audio/hsk3/hsk3_需要.wav' },
-      { hanzi: '建议', pinyin: 'jiàn yì', meaning: 'conseil', meaningEn: 'advice', audio: 'audio/hsk4/hsk4_建议.wav' }
+      { hanzi: '不得不', pinyin: 'bùdébù', meaning: 'être forcé de', meaningEn: 'forced to', audio: 'audio/hsk5/hsk5_不得不.wav' },
+      { hanzi: '需要', pinyin: 'xūyào', meaning: 'avoir besoin', meaningEn: 'need', audio: 'audio/hsk3/hsk3_需要.wav' },
+      { hanzi: '建议', pinyin: 'jiànyì', meaning: 'conseil', meaningEn: 'advice', audio: 'audio/hsk4/hsk4_建议.wav' }
     ],
     tip:
       'Attention : 得 a 3 prononciations selon contexte. dé (obtenir : 得到), de (particule : 跑得快), děi (devoir : 我得走). C\'est la troisième la plus piégée. À l\'oral, c\'est děi.',
@@ -2016,11 +2016,11 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '已经 (yǐjīng, already) = factual statement of completion. 我已经吃了 = I\'ve already eaten (fact). 都 (dōu, already — emphatic) = surprise, exclamation, often with a number. 都十二点了，快睡吧 = it\'s ALREADY midnight, go to bed! Subtlety : 都 emphasizes «that much already!» with surprise, 已经 stays neutral. 他都八十了 = he\'s already 80 (wow!). 他已经八十了 = he\'s 80 (info).',
     items: [
-      { hanzi: '已经', pinyin: 'yǐ jīng', meaning: 'déjà (factuel)', meaningEn: 'already (fact)', audio: 'audio/hsk2/hsk2_已经.wav' },
+      { hanzi: '已经', pinyin: 'yǐjīng', meaning: 'déjà (factuel)', meaningEn: 'already (fact)', audio: 'audio/hsk2/hsk2_已经.wav' },
       { hanzi: '都', pinyin: 'dōu', meaning: 'déjà (emphatique)', meaningEn: 'already (emphatic)', audio: 'audio/hsk1/hsk1_都.wav' },
-      { hanzi: '半夜', pinyin: 'bàn yè', meaning: 'minuit', meaningEn: 'midnight', audio: 'audio/hsk5/hsk5_半夜.wav' },
-      { hanzi: '完成', pinyin: 'wán chéng', meaning: 'achever', meaningEn: 'complete', audio: 'audio/hsk3/hsk3_完成.wav' },
-      { hanzi: '惊讶', pinyin: 'jīng yà', meaning: 'surprise', meaningEn: 'surprised', audio: 'audio/hsk5/hsk5_惊讶.wav' }
+      { hanzi: '半夜', pinyin: 'bànyè', meaning: 'minuit', meaningEn: 'midnight', audio: 'audio/hsk5/hsk5_半夜.wav' },
+      { hanzi: '完成', pinyin: 'wánchéng', meaning: 'achever', meaningEn: 'complete', audio: 'audio/hsk3/hsk3_完成.wav' },
+      { hanzi: '惊讶', pinyin: 'jīngyà', meaning: 'surprise', meaningEn: 'surprised', audio: 'audio/hsk5/hsk5_惊讶.wav' }
     ],
     tip:
       '都 + chiffre + 了 = formule de surprise très oral. « 都九月了 » = on est DÉJÀ en septembre (le temps file). À retenir comme bloc.',
@@ -2042,11 +2042,11 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '早已 (zǎoyǐ) = already long ago, formal and written. 这件事我早已忘了 = I forgot about this long ago. 老早 (lǎozǎo) = same sense but spoken and expressive. 我老早就跟你说过 = I told you long ago. Difference from 已经 : 早已/老早 add temporal depth («for a LONG TIME now»). Often followed by 就 : 早已就… / 老早就…',
     items: [
-      { hanzi: '早已', pinyin: 'zǎo yǐ', meaning: 'depuis longtemps déjà', meaningEn: 'long since', audio: 'audio/hsk6/hsk6_早已.wav' },
-      { hanzi: '老早', pinyin: 'lǎo zǎo', meaning: 'depuis longtemps (oral)', meaningEn: 'long ago (spoken)', audio: 'audio/hsk5/hsk5_老早.wav' },
-      { hanzi: '忘记', pinyin: 'wàng jì', meaning: 'oublier', meaningEn: 'forget', audio: 'audio/hsk3/hsk3_忘记.wav' },
-      { hanzi: '过去', pinyin: 'guò qù', meaning: 'passé', meaningEn: 'past', audio: 'audio/hsk2/hsk2_过去.wav' },
-      { hanzi: '从前', pinyin: 'cóng qián', meaning: 'autrefois', meaningEn: 'in the past', audio: 'audio/hsk5/hsk5_从前.wav' }
+      { hanzi: '早已', pinyin: 'zǎoyǐ', meaning: 'depuis longtemps déjà', meaningEn: 'long since', audio: 'audio/hsk6/hsk6_早已.wav' },
+      { hanzi: '老早', pinyin: 'lǎozǎo', meaning: 'depuis longtemps (oral)', meaningEn: 'long ago (spoken)', audio: 'audio/hsk5/hsk5_老早.wav' },
+      { hanzi: '忘记', pinyin: 'wàngjì', meaning: 'oublier', meaningEn: 'forget', audio: 'audio/hsk3/hsk3_忘记.wav' },
+      { hanzi: '过去', pinyin: 'guòqù', meaning: 'passé', meaningEn: 'past', audio: 'audio/hsk2/hsk2_过去.wav' },
+      { hanzi: '从前', pinyin: 'cóngqián', meaning: 'autrefois', meaningEn: 'in the past', audio: 'audio/hsk5/hsk5_从前.wav' }
     ],
     tip:
       '老早 a une coloration affective (souvent reproche ou nostalgie) que 早已 n\'a pas. « 我老早就告诉你了！» sous-entend : pourquoi tu n\'as pas écouté ?',
@@ -2073,10 +2073,10 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       'Structure: 都 + [time / age / amount / stage] + 了. 了 carries the temporal sense (already, changed), 都 adds the REACTION — impatience or surprise. Contrast with 已经: 已经九点了 = neutral fact «it\'s already 9». 都九点了，我们该走了 = «it\'s ALREADY 9, we gotta go!» (impatience). Surprise use: 孩子都长这么高了 (the kid has already grown this tall!). Tip: whenever you hear 都...了, look for the underlying emotion — impatience, amazement, striking realisation.',
     items: [
       { hanzi: '都...了', pinyin: 'dōu ... le', meaning: 'déjà (avec émotion)', meaningEn: 'already (emotional)', audio: 'audio/hsk1/hsk1_都.wav' },
-      { hanzi: '九点', pinyin: 'jiǔ diǎn', meaning: 'neuf heures', meaningEn: 'nine o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
+      { hanzi: '九点', pinyin: 'jiǔdiǎn', meaning: 'neuf heures', meaningEn: 'nine o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
       { hanzi: '长', pinyin: 'zhǎng', meaning: 'grandir', meaningEn: 'grow', audio: 'audio/hsk2/hsk2_长.wav' },
-      { hanzi: '孩子', pinyin: 'hái zi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk2/hsk2_孩子.wav' },
-      { hanzi: '这么', pinyin: 'zhè me', meaning: 'aussi, à ce point', meaningEn: 'this / so', audio: 'audio/hsk2/hsk2_这么.wav' }
+      { hanzi: '孩子', pinyin: 'háizi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk2/hsk2_孩子.wav' },
+      { hanzi: '这么', pinyin: 'zhème', meaning: 'aussi, à ce point', meaningEn: 'this / so', audio: 'audio/hsk2/hsk2_这么.wav' }
     ],
     tip:
       'Petit test : si on peut ajouter un « ! » impatient ou étonné en français, c\'est du 都...了. Sinon, on reste sur 已经.',
@@ -2103,9 +2103,9 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '都...还...', pinyin: 'dōu ... hái ...', meaning: 'déjà... et toujours...', meaningEn: 'already... yet still...', audio: 'audio/hsk1/hsk1_都.wav' },
       { hanzi: '还', pinyin: 'hái', meaning: 'encore, toujours', meaningEn: 'still', audio: 'audio/hsk1/hsk1_还.wav' },
-      { hanzi: '都什么时候了', pinyin: 'dōu shén me shí hou le', meaning: 'regarde l\'heure !', meaningEn: 'look at the time!', audio: 'audio/hsk1/hsk1_时候.wav' },
-      { hanzi: '都什么年代了', pinyin: 'dōu shén me nián dài le', meaning: 'quelle époque !', meaningEn: 'what era!', audio: 'audio/hsk5/hsk5_年代.wav' },
-      { hanzi: '玩手机', pinyin: 'wán shǒu jī', meaning: 'jouer avec son téléphone', meaningEn: 'play on the phone', audio: 'audio/hsk2/hsk2_手机.wav' }
+      { hanzi: '都什么时候了', pinyin: 'dōu shénme shíhòu le', meaning: 'regarde l\'heure !', meaningEn: 'look at the time!', audio: 'audio/hsk1/hsk1_时候.wav' },
+      { hanzi: '都什么年代了', pinyin: 'dōu shénme niándài le', meaning: 'quelle époque !', meaningEn: 'what era!', audio: 'audio/hsk5/hsk5_年代.wav' },
+      { hanzi: '玩手机', pinyin: 'wán shǒujī', meaning: 'jouer avec son téléphone', meaningEn: 'play on the phone', audio: 'audio/hsk2/hsk2_手机.wav' }
     ],
     tip:
       '都...还... = « le décalage temporel devient un reproche ». Le ton est vivant, souvent parental ; à réserver aux relations proches.',
@@ -2134,8 +2134,8 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '连', pinyin: 'lián', meaning: 'même (marqueur)', meaningEn: 'even (marker)', audio: 'audio/hsk4/hsk4_连.wav' },
       { hanzi: '连...都', pinyin: 'lián ... dōu', meaning: 'même... (fort)', meaningEn: 'even... (stronger)', audio: 'audio/hsk1/hsk1_都.wav' },
       { hanzi: '连...也', pinyin: 'lián ... yě', meaning: 'même... (doux)', meaningEn: 'even... (softer)', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '简单', pinyin: 'jiǎn dān', meaning: 'simple', meaningEn: 'simple', audio: 'audio/hsk3/hsk3_简单.wav' },
-      { hanzi: '问题', pinyin: 'wèn tí', meaning: 'question, problème', meaningEn: 'question, problem', audio: 'audio/hsk2/hsk2_问题.wav' }
+      { hanzi: '简单', pinyin: 'jiǎndān', meaning: 'simple', meaningEn: 'simple', audio: 'audio/hsk3/hsk3_简单.wav' },
+      { hanzi: '问题', pinyin: 'wèntí', meaning: 'question, problème', meaningEn: 'question, problem', audio: 'audio/hsk2/hsk2_问题.wav' }
     ],
     tip:
       '连 peut être omis quand le contexte est très clair, mais le 都/也 reste. 一句话都没说 (il n\'a pas dit un seul mot).',
@@ -2162,8 +2162,8 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       { hanzi: '来都来了', pinyin: 'lái dōu lái le', meaning: 'on est déjà là', meaningEn: 'we\'re already here', audio: 'audio/hsk1/hsk1_来.wav' },
       { hanzi: '买都买了', pinyin: 'mǎi dōu mǎi le', meaning: 'tu l\'as déjà acheté', meaningEn: 'you already bought it', audio: 'audio/hsk1/hsk1_买.wav' },
       { hanzi: '说都说了', pinyin: 'shuō dōu shuō le', meaning: 'c\'est déjà dit', meaningEn: 'it\'s already said', audio: 'audio/hsk1/hsk1_说.wav' },
-      { hanzi: '后悔', pinyin: 'hòu huǐ', meaning: 'regretter', meaningEn: 'regret', audio: 'audio/hsk4/hsk4_后悔.wav' },
-      { hanzi: '进去', pinyin: 'jìn qù', meaning: 'entrer', meaningEn: 'go in', audio: 'audio/hsk2/hsk2_进去.wav' }
+      { hanzi: '后悔', pinyin: 'hòuhuǐ', meaning: 'regretter', meaningEn: 'regret', audio: 'audio/hsk4/hsk4_后悔.wav' },
+      { hanzi: '进去', pinyin: 'jìnqù', meaning: 'entrer', meaningEn: 'go in', audio: 'audio/hsk2/hsk2_进去.wav' }
     ],
     tip:
       'On peut appliquer le pattern à presque n\'importe quel verbe monosyllabique : 做都做了 (c\'est fait), 写都写了 (c\'est écrit), 忘都忘了 (c\'est oublié). Très expressif à l\'oral.',
@@ -2187,11 +2187,11 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '突然 (tūrán, sudden) : can be adjective AND adverb. Describes an objectively abrupt event. 一个突然的决定 = a sudden decision. 他突然来了 = he came suddenly. 忽然 (hūrán, all of a sudden) : adverb only. Stresses the subjective experience of surprise. 我忽然想起 = it suddenly came back to me. If you can say «abruptly» → 突然. If «suddenly I…» → 忽然 fits better.',
     items: [
-      { hanzi: '突然', pinyin: 'tū rán', meaning: 'soudain (adj+adv)', meaningEn: 'sudden (adj+adv)', audio: 'audio/hsk3/hsk3_突然.wav' },
-      { hanzi: '忽然', pinyin: 'hū rán', meaning: 'tout à coup (adv)', meaningEn: 'all of a sudden', audio: 'audio/hsk3/hsk3_忽然.wav' },
-      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décision', meaningEn: 'decision', audio: 'audio/hsk3/hsk3_决定.wav' },
-      { hanzi: '想起', pinyin: 'xiǎng qǐ', meaning: 'se rappeler', meaningEn: 'recall', audio: 'audio/hsk3/hsk3_想起.wav' },
-      { hanzi: '惊喜', pinyin: 'jīng xǐ', meaning: 'surprise heureuse', meaningEn: 'happy surprise', audio: 'audio/hsk5/hsk5_惊喜.wav' }
+      { hanzi: '突然', pinyin: 'tūrán', meaning: 'soudain (adj+adv)', meaningEn: 'sudden (adj+adv)', audio: 'audio/hsk3/hsk3_突然.wav' },
+      { hanzi: '忽然', pinyin: 'hūrán', meaning: 'tout à coup (adv)', meaningEn: 'all of a sudden', audio: 'audio/hsk3/hsk3_忽然.wav' },
+      { hanzi: '决定', pinyin: 'juédìng', meaning: 'décision', meaningEn: 'decision', audio: 'audio/hsk3/hsk3_决定.wav' },
+      { hanzi: '想起', pinyin: 'xiǎngqǐ', meaning: 'se rappeler', meaningEn: 'recall', audio: 'audio/hsk3/hsk3_想起.wav' },
+      { hanzi: '惊喜', pinyin: 'jīngxǐ', meaning: 'surprise heureuse', meaningEn: 'happy surprise', audio: 'audio/hsk5/hsk5_惊喜.wav' }
     ],
     tip:
       'Test grammatical : 一个 _ 的 + nom (« un X soudain ») → seul 突然 fonctionne. « 一个突然的电话 » ✓ ; « 一个忽然的电话 » ✗.',
@@ -2213,11 +2213,11 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '一下子 (yíxiàzi, in one go, in a flash) : marks absolute speed + complete result. 一下子就明白了 = I got it all in a flash. 一下子下了大雨 = it suddenly poured. Difference from 突然/忽然 : 一下子 adds completeness («in a split second, all done»). Common spoken synonym : 一下 (without 子). Don\'t confuse with 一下 («a bit», verbal classifier) : 看一下 = take a quick look.',
     items: [
-      { hanzi: '一下子', pinyin: 'yí xià zi', meaning: 'd\'un coup', meaningEn: 'in one go', audio: 'audio/hsk4/hsk4_一下子.wav' },
-      { hanzi: '明白', pinyin: 'míng bai', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
-      { hanzi: '下雨', pinyin: 'xià yǔ', meaning: 'pleuvoir', meaningEn: 'rain', audio: 'audio/hsk1/hsk1_下雨.wav' },
-      { hanzi: '马上', pinyin: 'mǎ shàng', meaning: 'tout de suite', meaningEn: 'right away', audio: 'audio/hsk3/hsk3_马上.wav' },
-      { hanzi: '立刻', pinyin: 'lì kè', meaning: 'immédiatement', meaningEn: 'immediately', audio: 'audio/hsk5/hsk5_立刻.wav' }
+      { hanzi: '一下子', pinyin: 'yīxiàzi', meaning: 'd\'un coup', meaningEn: 'in one go', audio: 'audio/hsk4/hsk4_一下子.wav' },
+      { hanzi: '明白', pinyin: 'míngbái', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
+      { hanzi: '下雨', pinyin: 'xiàyǔ', meaning: 'pleuvoir', meaningEn: 'rain', audio: 'audio/hsk1/hsk1_下雨.wav' },
+      { hanzi: '马上', pinyin: 'mǎshàng', meaning: 'tout de suite', meaningEn: 'right away', audio: 'audio/hsk3/hsk3_马上.wav' },
+      { hanzi: '立刻', pinyin: 'lìkè', meaning: 'immédiatement', meaningEn: 'immediately', audio: 'audio/hsk5/hsk5_立刻.wav' }
     ],
     tip:
       'Astuce : 一下子 ajoute presque toujours une notion d\'INTENSITÉ + COMPLÉTUDE. Compare : 突然下雨了 (il s\'est mis à pleuvoir) vs 一下子下大雨了 (il s\'est mis à pleuvoir des trombes en un éclair).',
@@ -2243,11 +2243,11 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '大约 (dàyuē, about) = NUMERIC/temporal approximation. 大约二十个人 = about 20 people. 大约三点 = around 3pm. Always followed by quantity or time. 大概 (dàgài, probably) = hypothesis, supposition. 他大概不会来 = he probably won\'t come. Also : 大概的内容 = the gist. Difference : 大约 = how many? (number), 大概 = is it? (probability). Frequent French speaker confusion.',
     items: [
-      { hanzi: '大约', pinyin: 'dà yuē', meaning: 'environ (chiffre)', meaningEn: 'about (number)', audio: 'audio/hsk5/hsk5_大约.wav' },
-      { hanzi: '大概', pinyin: 'dà gài', meaning: 'probablement', meaningEn: 'probably', audio: 'audio/hsk4/hsk4_大概.wav' },
-      { hanzi: '可能', pinyin: 'kě néng', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk2/hsk2_可能.wav' },
-      { hanzi: '或许', pinyin: 'huò xǔ', meaning: 'peut-être (écrit)', meaningEn: 'perhaps (written)', audio: 'audio/hsk5/hsk5_或许.wav' },
-      { hanzi: '估计', pinyin: 'gū jì', meaning: 'estimer', meaningEn: 'estimate', audio: 'audio/hsk4/hsk4_估计.wav' }
+      { hanzi: '大约', pinyin: 'dàyuē', meaning: 'environ (chiffre)', meaningEn: 'about (number)', audio: 'audio/hsk5/hsk5_大约.wav' },
+      { hanzi: '大概', pinyin: 'dàgài', meaning: 'probablement', meaningEn: 'probably', audio: 'audio/hsk4/hsk4_大概.wav' },
+      { hanzi: '可能', pinyin: 'kěnéng', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk2/hsk2_可能.wav' },
+      { hanzi: '或许', pinyin: 'huòxǔ', meaning: 'peut-être (écrit)', meaningEn: 'perhaps (written)', audio: 'audio/hsk5/hsk5_或许.wav' },
+      { hanzi: '估计', pinyin: 'gūjì', meaning: 'estimer', meaningEn: 'estimate', audio: 'audio/hsk4/hsk4_估计.wav' }
     ],
     tip:
       'Test simple : peut-on remplacer par « probablement » → 大概. Par « à peu près » + chiffre → 大约. « Le concert dure 大约2 heures » ; « Il 大概 ne viendra pas ».',
@@ -2270,11 +2270,11 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '差不多 (chàbuduō, almost, about) : a Chinese cultural signature. Primary sense : «not much missing» = almost the same. Covers 3 uses : (1) similarity : 这两个差不多 = these two are about the same. (2) approximation : 差不多十块 = about 10 yuan. (3) sufficiency : 差不多了，可以了 = good enough, OK. Lin Yutang made it a national trait : Chinese prefer 差不多 to absolute precision. Very useful in speech, avoid in pro where precision is expected.',
     items: [
-      { hanzi: '差不多', pinyin: 'chà bu duō', meaning: 'presque, à peu près', meaningEn: 'almost', audio: 'audio/hsk2/hsk2_差不多.wav' },
+      { hanzi: '差不多', pinyin: 'chàbuduō', meaning: 'presque, à peu près', meaningEn: 'almost', audio: 'audio/hsk2/hsk2_差不多.wav' },
       { hanzi: '差', pinyin: 'chà', meaning: 'manquer', meaningEn: 'lack', audio: 'audio/hsk3/hsk3_差.wav' },
-      { hanzi: '类似', pinyin: 'lèi sì', meaning: 'similaire', meaningEn: 'similar', audio: 'audio/hsk5/hsk5_类似.wav' },
-      { hanzi: '相似', pinyin: 'xiāng sì', meaning: 'ressembler', meaningEn: 'resemble', audio: 'audio/hsk5/hsk5_相似.wav' },
-      { hanzi: '差异', pinyin: 'chā yì', meaning: 'différence', meaningEn: 'difference', audio: 'audio/hsk6/hsk6_差异.wav' }
+      { hanzi: '类似', pinyin: 'lèisì', meaning: 'similaire', meaningEn: 'similar', audio: 'audio/hsk5/hsk5_类似.wav' },
+      { hanzi: '相似', pinyin: 'xiāngsì', meaning: 'ressembler', meaningEn: 'resemble', audio: 'audio/hsk5/hsk5_相似.wav' },
+      { hanzi: '差异', pinyin: 'chāyì', meaning: 'différence', meaningEn: 'difference', audio: 'audio/hsk6/hsk6_差异.wav' }
     ],
     tip:
       'En milieu pro chinois, si on te répond 差不多 à une question précise, ça peut signifier 2 choses : (1) « c\'est en gros bon » (positif) ou (2) « j\'ai pas vraiment regardé en détail » (esquive). Pose une question de précision pour clarifier.',
@@ -2303,9 +2303,9 @@ export const b22NuancesM6LearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '看', pinyin: 'kàn', meaning: 'regarder', meaningEn: 'look', audio: 'audio/hsk1/hsk1_看.wav' },
       { hanzi: '见', pinyin: 'jiàn', meaning: 'voir (résultat)', meaningEn: 'see (result)', audio: 'audio/hsk1/hsk1_见.wav' },
-      { hanzi: '看见', pinyin: 'kàn jiàn', meaning: 'avoir vu', meaningEn: 'saw', audio: 'audio/hsk1/hsk1_看见.wav' },
-      { hanzi: '见到', pinyin: 'jiàn dào', meaning: 'voir, croiser', meaningEn: 'see, encounter', audio: 'audio/hsk2/hsk2_见到.wav' },
-      { hanzi: '见面', pinyin: 'jiàn miàn', meaning: 'se rencontrer', meaningEn: 'meet face to face', audio: 'audio/hsk3/hsk3_见面.wav' }
+      { hanzi: '看见', pinyin: 'kànjiàn', meaning: 'avoir vu', meaningEn: 'saw', audio: 'audio/hsk1/hsk1_看见.wav' },
+      { hanzi: '见到', pinyin: 'jiàndào', meaning: 'voir, croiser', meaningEn: 'see, encounter', audio: 'audio/hsk2/hsk2_见到.wav' },
+      { hanzi: '见面', pinyin: 'jiànmiàn', meaning: 'se rencontrer', meaningEn: 'meet face to face', audio: 'audio/hsk3/hsk3_见面.wav' }
     ],
     tip:
       'Erreur fréquente : « 我没看 » (je n\'ai pas regardé — je n\'ai pas porté mon attention) vs « 我没看见 » (j\'ai regardé mais je n\'ai rien vu). Premier = manque d\'attention, second = manque de résultat.',
@@ -2327,11 +2327,11 @@ export const b22NuancesM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '见到 (jiàndào) = see/run into, neutral. Can be planned or not. 我今天见到了老师 = I saw the teacher today. 遇见 (yùjiàn) or 碰见 (pèngjiàn) = CHANCE encounter, randomness. 我在街上遇见了他 = I bumped into him in the street. 遇 / 碰 carry the chance idea. For a planned meeting (appointment), use 见 or 见面. Key difference : 见到 = factual, 遇见 = highlights the randomness.',
     items: [
-      { hanzi: '遇见', pinyin: 'yù jiàn', meaning: 'rencontrer (hasard)', meaningEn: 'run into (chance)', audio: 'audio/hsk3/hsk3_遇见.wav' },
-      { hanzi: '碰见', pinyin: 'pèng jiàn', meaning: 'tomber sur (hasard)', meaningEn: 'bump into', audio: 'audio/hsk4/hsk4_碰见.wav' },
-      { hanzi: '相遇', pinyin: 'xiāng yù', meaning: 'se rencontrer (fortuit)', meaningEn: 'meet by chance', audio: 'audio/hsk5/hsk5_相遇.wav' },
+      { hanzi: '遇见', pinyin: 'yùjiàn', meaning: 'rencontrer (hasard)', meaningEn: 'run into (chance)', audio: 'audio/hsk3/hsk3_遇见.wav' },
+      { hanzi: '碰见', pinyin: 'pèngjiàn', meaning: 'tomber sur (hasard)', meaningEn: 'bump into', audio: 'audio/hsk4/hsk4_碰见.wav' },
+      { hanzi: '相遇', pinyin: 'xiāngyù', meaning: 'se rencontrer (fortuit)', meaningEn: 'meet by chance', audio: 'audio/hsk5/hsk5_相遇.wav' },
       { hanzi: '约', pinyin: 'yuē', meaning: 'donner rdv', meaningEn: 'arrange to meet', audio: 'audio/hsk3/hsk3_约.wav' },
-      { hanzi: '巧合', pinyin: 'qiǎo hé', meaning: 'coïncidence', meaningEn: 'coincidence', audio: 'audio/hsk6/hsk6_巧合.wav' }
+      { hanzi: '巧合', pinyin: 'qiǎohé', meaning: 'coïncidence', meaningEn: 'coincidence', audio: 'audio/hsk6/hsk6_巧合.wav' }
     ],
     tip:
       '遇见 a une coloration romantique en chinois moderne. C\'est le mot des chansons d\'amour, des films romantiques. « 遇见你 » = te rencontrer (sous-entendu : c\'était le destin).',
@@ -2359,11 +2359,11 @@ export const b22NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '帮助 (bāngzhù) = help, can be NOUN or VERB. Followed by direct object : 我帮助他 = I help him. More written, more formal. 帮忙 (bāngmáng) = give a hand. SEPARABLE verb : say 帮我一个忙 (do me a favor), 帮你的忙 (give you a hand). More spoken, more situational. The difference is BETWEEN help-as-concept (帮助) and help-as-specific-service (帮忙). 我需要你的帮助 = I need your help (general). 我需要你帮忙 = I need you to help me (now, on this).',
     items: [
-      { hanzi: '帮助', pinyin: 'bāng zhù', meaning: 'aider (général)', meaningEn: 'help (general)', audio: 'audio/hsk2/hsk2_帮助.wav' },
-      { hanzi: '帮忙', pinyin: 'bāng máng', meaning: 'donner un coup de main', meaningEn: 'give a hand', audio: 'audio/hsk3/hsk3_帮忙.wav' },
+      { hanzi: '帮助', pinyin: 'bāngzhù', meaning: 'aider (général)', meaningEn: 'help (general)', audio: 'audio/hsk2/hsk2_帮助.wav' },
+      { hanzi: '帮忙', pinyin: 'bāngmáng', meaning: 'donner un coup de main', meaningEn: 'give a hand', audio: 'audio/hsk3/hsk3_帮忙.wav' },
       { hanzi: '帮', pinyin: 'bāng', meaning: 'aider', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮.wav' },
       { hanzi: '忙', pinyin: 'máng', meaning: 'occupé, affaire', meaningEn: 'busy, matter', audio: 'audio/hsk1/hsk1_忙.wav' },
-      { hanzi: '请求', pinyin: 'qǐng qiú', meaning: 'demander, requête', meaningEn: 'request', audio: 'audio/hsk5/hsk5_请求.wav' }
+      { hanzi: '请求', pinyin: 'qǐngqiú', meaning: 'demander, requête', meaningEn: 'request', audio: 'audio/hsk5/hsk5_请求.wav' }
     ],
     tip:
       'Erreur classique : « 我帮助你一下 » est faux car 一下 ne s\'insère pas dans 帮助. Dis « 我帮你一下 » (oral) ou « 我帮助你 » sans 一下. Pour insérer une mesure → utilise 帮 ou 帮忙.',
@@ -2389,11 +2389,11 @@ export const b22NuancesM7LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '协助 (xiézhù) = assist, collaborate. Very formal, pro context. Implies a hierarchical or structured collaborative relationship : 协助经理 = assist the manager. 警方协助调查 = police assist the investigation. NEVER between friends («协助你买菜» would sound absurd, say 帮你). Remember : 协 carries the idea of coordinated COLLABORATION. Close synonyms : 配合 (cooperate by following another\'s plan), 合作 (collaborate as partners).',
     items: [
-      { hanzi: '协助', pinyin: 'xié zhù', meaning: 'assister (formel)', meaningEn: 'assist (formal)', audio: 'audio/hsk5/hsk5_协助.wav' },
-      { hanzi: '配合', pinyin: 'pèi hé', meaning: 'coopérer', meaningEn: 'cooperate', audio: 'audio/hsk5/hsk5_配合.wav' },
-      { hanzi: '合作', pinyin: 'hé zuò', meaning: 'collaborer', meaningEn: 'collaborate', audio: 'audio/hsk4/hsk4_合作.wav' },
-      { hanzi: '调查', pinyin: 'diào chá', meaning: 'enquête', meaningEn: 'investigation', audio: 'audio/hsk5/hsk5_调查.wav' },
-      { hanzi: '支持', pinyin: 'zhī chí', meaning: 'soutenir', meaningEn: 'support', audio: 'audio/hsk3/hsk3_支持.wav' }
+      { hanzi: '协助', pinyin: 'xiézhù', meaning: 'assister (formel)', meaningEn: 'assist (formal)', audio: 'audio/hsk5/hsk5_协助.wav' },
+      { hanzi: '配合', pinyin: 'pèihé', meaning: 'coopérer', meaningEn: 'cooperate', audio: 'audio/hsk5/hsk5_配合.wav' },
+      { hanzi: '合作', pinyin: 'hézuò', meaning: 'collaborer', meaningEn: 'collaborate', audio: 'audio/hsk4/hsk4_合作.wav' },
+      { hanzi: '调查', pinyin: 'diàochá', meaning: 'enquête', meaningEn: 'investigation', audio: 'audio/hsk5/hsk5_调查.wav' },
+      { hanzi: '支持', pinyin: 'zhīchí', meaning: 'soutenir', meaningEn: 'support', audio: 'audio/hsk3/hsk3_支持.wav' }
     ],
     tip:
       'Hiérarchie d\'aide en chinois : 帮 (oral, ami) < 帮忙 (oral, service) < 帮助 (général, écrit) < 协助 (pro, structuré) < 支援 (renfort, urgence) < 援助 (aide humanitaire).',
@@ -2423,9 +2423,9 @@ export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
     items: [
       { hanzi: '也', pinyin: 'yě', meaning: 'aussi ; adoucisseur', meaningEn: 'also; softener', audio: 'audio/hsk1/hsk1_也.wav' },
       { hanzi: '也是', pinyin: 'yě shì', meaning: 'c\'est vrai (concession)', meaningEn: 'true, fair point', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '随便', pinyin: 'suí biàn', meaning: 'comme on veut, en passant', meaningEn: 'as one likes, casually', audio: 'audio/hsk4/hsk4_随便.wav' },
-      { hanzi: '在意', pinyin: 'zài yì', meaning: 'y prêter attention', meaningEn: 'take to heart', audio: 'audio/hsk5/hsk5_在意.wav' },
-      { hanzi: '觉得', pinyin: 'jué de', meaning: 'trouver, penser', meaningEn: 'think, find', audio: 'audio/hsk2/hsk2_觉得.wav' }
+      { hanzi: '随便', pinyin: 'suíbiàn', meaning: 'comme on veut, en passant', meaningEn: 'as one likes, casually', audio: 'audio/hsk4/hsk4_随便.wav' },
+      { hanzi: '在意', pinyin: 'zàiyì', meaning: 'y prêter attention', meaningEn: 'take to heart', audio: 'audio/hsk5/hsk5_在意.wav' },
+      { hanzi: '觉得', pinyin: 'juéde', meaning: 'trouver, penser', meaningEn: 'think, find', audio: 'audio/hsk2/hsk2_觉得.wav' }
     ],
     tip:
       '也 sert de **rembourrage** pour ne pas paraître trop catégorique. C\'est un marqueur de politesse et de nuance très fréquent en chinois oral.',
@@ -2449,11 +2449,11 @@ export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Structure: [Option A] + 也好，[Option B] + 也好，[result that holds for both]. Meaning: list options and accept them all, «no matter X or Y, that works for me». 坐地铁也好，打车也好，只要能准时到就行 = subway or taxi, doesn\'t matter, as long as we arrive on time. 去也好，不去也好，你自己决定 = go or not, it\'s your decision. Literary variant: 也罢 (yěbà) works identically in a formal register.',
     items: [
-      { hanzi: '也好', pinyin: 'yě hǎo', meaning: 'peu importe (option A ou B)', meaningEn: 'whichever, either way', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '也罢', pinyin: 'yě bà', meaning: 'peu importe (littéraire)', meaningEn: 'so be it (literary)', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '打车', pinyin: 'dǎ chē', meaning: 'prendre un taxi', meaningEn: 'take a taxi', audio: 'audio/hsk3/hsk3_打车.wav' },
-      { hanzi: '准时', pinyin: 'zhǔn shí', meaning: 'à l\'heure', meaningEn: 'on time', audio: 'audio/hsk4/hsk4_准时.wav' },
-      { hanzi: '决定', pinyin: 'jué dìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' }
+      { hanzi: '也好', pinyin: 'yěhǎo', meaning: 'peu importe (option A ou B)', meaningEn: 'whichever, either way', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '也罢', pinyin: 'yěbà', meaning: 'peu importe (littéraire)', meaningEn: 'so be it (literary)', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '打车', pinyin: 'dǎchē', meaning: 'prendre un taxi', meaningEn: 'take a taxi', audio: 'audio/hsk3/hsk3_打车.wav' },
+      { hanzi: '准时', pinyin: 'zhǔnshí', meaning: 'à l\'heure', meaningEn: 'on time', audio: 'audio/hsk4/hsk4_准时.wav' },
+      { hanzi: '决定', pinyin: 'juédìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' }
     ],
     tip:
       'Ce pattern exprime une acceptation résignée mais bienveillante, souvent utilisé pour montrer qu\'on ne veut pas trancher soi-même.',
@@ -2482,12 +2482,12 @@ export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Four fixed expressions to learn as chunks. 也许 (yěxǔ) = «maybe». Fixed adverb, before the verb. 他还没回消息，也许在开会 = he hasn\'t replied, maybe he\'s in a meeting. 也就是说 (yě jiù shì shuō) = «in other words, that means». Introduces a rephrasing. 这个月底交，也就是说，我们只剩三天了 = due end of month, meaning we only have 3 days left. 再也不 (zài yě bù) = «never again» with EMOTION (oath, anger). Often with 了 at the end. 上次被骗了以后，我再也不相信他了 = after being tricked last time, I\'ll never trust him again. Past version: 再也没 + verb + 过: «never again did» (historical). 从那天起，他再也没来过 = from that day on, he never came again. Nuance: 不再 (bú zài) = «no longer» neutral. 他不再抽烟了 = he doesn\'t smoke anymore (calm statement). 他再也不抽烟了 sounds like an oath «he\'ll NEVER smoke again». These 4 items are fixed — don\'t decompose them literally, learn them as chunks.',
     items: [
-      { hanzi: '也许', pinyin: 'yě xǔ', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk3/hsk3_也许.wav' },
-      { hanzi: '也就是说', pinyin: 'yě jiù shì shuō', meaning: 'autrement dit', meaningEn: 'in other words', audio: 'audio/hsk1/hsk1_也.wav' },
-      { hanzi: '再也不', pinyin: 'zài yě bù', meaning: 'plus jamais (serment)', meaningEn: 'never again (emotional)', audio: 'audio/hsk2/hsk2_再.wav' },
-      { hanzi: '再也没', pinyin: 'zài yě méi', meaning: 'ne...plus jamais (passé)', meaningEn: 'never again (past)', audio: 'audio/hsk2/hsk2_再.wav' },
-      { hanzi: '不再', pinyin: 'bú zài', meaning: 'ne...plus (neutre)', meaningEn: 'no longer (neutral)', audio: 'audio/hsk2/hsk2_再.wav' },
-      { hanzi: '抽烟', pinyin: 'chōu yān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_抽烟.wav' }
+      { hanzi: '也许', pinyin: 'yěxǔ', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk3/hsk3_也许.wav' },
+      { hanzi: '也就是说', pinyin: 'yějiùshìshuō', meaning: 'autrement dit', meaningEn: 'in other words', audio: 'audio/hsk1/hsk1_也.wav' },
+      { hanzi: '再也不', pinyin: 'zàiyě bù', meaning: 'plus jamais (serment)', meaningEn: 'never again (emotional)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '再也没', pinyin: 'zàiyě méi', meaning: 'ne...plus jamais (passé)', meaningEn: 'never again (past)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '不再', pinyin: 'bùzài', meaning: 'ne...plus (neutre)', meaningEn: 'no longer (neutral)', audio: 'audio/hsk2/hsk2_再.wav' },
+      { hanzi: '抽烟', pinyin: 'chōuyān', meaning: 'fumer', meaningEn: 'smoke', audio: 'audio/hsk4/hsk4_抽烟.wav' }
     ],
     tip:
       'Distinction clé : **不再** = constat neutre, **再也不** = serment émotionnel. Choisis selon le ton que tu veux donner : rapport factuel ou promesse solennelle.',
@@ -2523,13 +2523,13 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'These 2 turns INTRODUCE a comparison before making it, like «compared to» or «as opposed to». 跟 + [reference] + 相比, [main clause] = NEUTRAL frame. 跟去年相比，今年的生意好多了 = compared to last year, business is much better this year. Formal variant: 与...相比 (yǔ) — press articles, business reports. Short spoken form: 跟...比 without 相. 比起 + [thing A] + (来), [main clause] = EVALUATIVE frame — you\'re about to state a preference or judgment. 比起坐地铁来，我更喜欢骑自行车 = rather than the metro, I prefer cycling. 来 is optional and softens without changing meaning. Main clause typically has 更, 还, 喜欢, 宁愿. Bonus: 相比之下 (xiāngbǐ zhī xià) = «in comparison, by contrast» at the start of the second sentence.',
     items: [
-      { hanzi: '相比', pinyin: 'xiāng bǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
+      { hanzi: '相比', pinyin: 'xiāngbǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
       { hanzi: '跟...相比', pinyin: 'gēn...xiāng bǐ', meaning: 'par rapport à', meaningEn: 'compared to', audio: 'audio/hsk3/hsk3_跟.wav' },
       { hanzi: '与...相比', pinyin: 'yǔ...xiāng bǐ', meaning: 'par rapport à (formel)', meaningEn: 'compared to (formal)', audio: 'audio/hsk4/hsk4_与.wav' },
-      { hanzi: '比起', pinyin: 'bǐ qǐ', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk2/hsk2_比.wav' },
-      { hanzi: '相比之下', pinyin: 'xiāng bǐ zhī xià', meaning: 'en comparaison', meaningEn: 'by comparison', audio: 'audio/hsk5/hsk5_相比.wav' },
-      { hanzi: '宁愿', pinyin: 'nìng yuàn', meaning: 'préférer (rhétorique)', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
-      { hanzi: '生意', pinyin: 'shēng yi', meaning: 'affaires', meaningEn: 'business', audio: 'audio/hsk4/hsk4_生意.wav' }
+      { hanzi: '比起', pinyin: 'bǐqǐ', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '相比之下', pinyin: 'xiāngbǐzhīxià', meaning: 'en comparaison', meaningEn: 'by comparison', audio: 'audio/hsk5/hsk5_相比.wav' },
+      { hanzi: '宁愿', pinyin: 'nìngyuàn', meaning: 'préférer (rhétorique)', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
+      { hanzi: '生意', pinyin: 'shēngyì', meaning: 'affaires', meaningEn: 'business', audio: 'audio/hsk4/hsk4_生意.wav' }
     ],
     tip:
       '跟...相比 cadre une observation ; 比起...(来) prépare une préférence. Les deux sont utiles pour structurer un raisonnement à l\'écrit.',
@@ -2560,13 +2560,13 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'All 3 translate as «less than», but with VERY different meanings. 没有 (méiyǒu): observed FACT, neutral. «A is simply less X than B». 这间房没有那间大 = this room is less big. 不如 (bùrú): evaluative JUDGMENT. «A falls below B» → B is the better option / superior standard. 我做饭不如妈妈 = my cooking doesn\'t come close to mom\'s. Can drop the adjective — «not up to par». Add an adjective to specify: 我做饭不如妈妈好吃 = not as tasty. 不比 (bù bǐ): NOT really «less than». Used to DENY that A exceeds B. 我不比她高 ≠ «I\'m shorter than her» BUT «I\'m not taller than her» (we could be equal, or she could be taller). 这家餐厅不比那家贵 = this restaurant isn\'t more expensive than that one → reply to someone who assumed otherwise. To say «this restaurant is cheaper», use 这家比那家便宜 or 这家没有那家贵. Don\'t confuse the 3: 没有 = fact, 不如 = judgment, 不比 = denial.',
     items: [
-      { hanzi: '不如', pinyin: 'bù rú', meaning: 'moins bien que (jugement)', meaningEn: 'not as good as (judgment)', audio: 'audio/hsk4/hsk4_不如.wav' },
-      { hanzi: '不比', pinyin: 'bù bǐ', meaning: 'pas plus que (démenti)', meaningEn: 'no more than (denial)', audio: 'audio/hsk2/hsk2_比.wav' },
-      { hanzi: '没有', pinyin: 'méi yǒu', meaning: 'moins que (fait)', meaningEn: 'less than (fact)', audio: 'audio/hsk1/hsk1_没有.wav' },
-      { hanzi: '做饭', pinyin: 'zuò fàn', meaning: 'cuisiner', meaningEn: 'cook', audio: 'audio/hsk2/hsk2_做饭.wav' },
-      { hanzi: '好吃', pinyin: 'hǎo chī', meaning: 'délicieux', meaningEn: 'tasty', audio: 'audio/hsk2/hsk2_好吃.wav' },
-      { hanzi: '餐厅', pinyin: 'cān tīng', meaning: 'restaurant', meaningEn: 'restaurant', audio: 'audio/hsk4/hsk4_餐厅.wav' },
-      { hanzi: '便宜', pinyin: 'pián yi', meaning: 'bon marché', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' }
+      { hanzi: '不如', pinyin: 'bùrú', meaning: 'moins bien que (jugement)', meaningEn: 'not as good as (judgment)', audio: 'audio/hsk4/hsk4_不如.wav' },
+      { hanzi: '不比', pinyin: 'bùbǐ', meaning: 'pas plus que (démenti)', meaningEn: 'no more than (denial)', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '没有', pinyin: 'méiyǒu', meaning: 'moins que (fait)', meaningEn: 'less than (fact)', audio: 'audio/hsk1/hsk1_没有.wav' },
+      { hanzi: '做饭', pinyin: 'zuòfàn', meaning: 'cuisiner', meaningEn: 'cook', audio: 'audio/hsk2/hsk2_做饭.wav' },
+      { hanzi: '好吃', pinyin: 'hǎochī', meaning: 'délicieux', meaningEn: 'tasty', audio: 'audio/hsk2/hsk2_好吃.wav' },
+      { hanzi: '餐厅', pinyin: 'cāntīng', meaning: 'restaurant', meaningEn: 'restaurant', audio: 'audio/hsk4/hsk4_餐厅.wav' },
+      { hanzi: '便宜', pinyin: 'piányi', meaning: 'bon marché', meaningEn: 'cheap', audio: 'audio/hsk2/hsk2_便宜.wav' }
     ],
     tip:
       'Mémo : 没有 = simple constat, 不如 = déception (B est meilleur), 不比 = « eh non, tu te trompes ».',
@@ -2596,12 +2596,12 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '4 SPOKEN and fixed turns very common with natives to mark a gap. 比不上 (bǐ bu shàng) = «can\'t be compared (upward)». Often used in modesty. 我的中文比不上你 = my Chinese doesn\'t reach your level. 比不过 (bǐ bu guò) = «can\'t beat» (COMPETITION nuance). 我比不过他 = I can\'t compete with him. 没法比 (méi fǎ bǐ) = «there\'s no comparison to make» (huge gap). 这两个根本没法比 = these two can\'t even be compared. 差远了 (chà yuǎn le) = «far, far off» (most casual). Often a modest reply to a compliment: «— Your cooking is chef-level! — 差远了 (not at all)». Grammar note: 比不上/过 are potential complements with 不 on the verb 比. These are chunks to memorize, not structures to compose.',
     items: [
-      { hanzi: '比不上', pinyin: 'bǐ bu shàng', meaning: 'ne pas atteindre le niveau', meaningEn: 'can\'t reach the level', audio: 'audio/hsk2/hsk2_比.wav' },
-      { hanzi: '比不过', pinyin: 'bǐ bu guò', meaning: 'ne pas pouvoir rivaliser', meaningEn: 'can\'t beat', audio: 'audio/hsk2/hsk2_比.wav' },
-      { hanzi: '没法比', pinyin: 'méi fǎ bǐ', meaning: 'aucune comparaison possible', meaningEn: 'no way to compare', audio: 'audio/hsk2/hsk2_比.wav' },
-      { hanzi: '差远了', pinyin: 'chà yuǎn le', meaning: 'loin d\'être ça', meaningEn: 'far from it', audio: 'audio/hsk3/hsk3_差.wav' },
-      { hanzi: '根本', pinyin: 'gēn běn', meaning: 'fondamentalement, du tout', meaningEn: 'fundamentally, at all', audio: 'audio/hsk4/hsk4_根本.wav' },
-      { hanzi: '中文', pinyin: 'zhōng wén', meaning: 'chinois (langue)', meaningEn: 'Chinese language', audio: 'audio/hsk3/hsk3_中文.wav' }
+      { hanzi: '比不上', pinyin: 'bǐbùshàng', meaning: 'ne pas atteindre le niveau', meaningEn: 'can\'t reach the level', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '比不过', pinyin: 'bǐ bùguò', meaning: 'ne pas pouvoir rivaliser', meaningEn: 'can\'t beat', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '没法比', pinyin: 'méifǎ bǐ', meaning: 'aucune comparaison possible', meaningEn: 'no way to compare', audio: 'audio/hsk2/hsk2_比.wav' },
+      { hanzi: '差远了', pinyin: 'chàyuǎnle', meaning: 'loin d\'être ça', meaningEn: 'far from it', audio: 'audio/hsk3/hsk3_差.wav' },
+      { hanzi: '根本', pinyin: 'gēnběn', meaning: 'fondamentalement, du tout', meaningEn: 'fundamentally, at all', audio: 'audio/hsk4/hsk4_根本.wav' },
+      { hanzi: '中文', pinyin: 'zhōngwén', meaning: 'chinois (langue)', meaningEn: 'Chinese language', audio: 'audio/hsk3/hsk3_中文.wav' }
     ],
     tip:
       '4 formules à sortir en tchat pour paraître naturel — surtout 差远了 pour esquiver un compliment en toute humilité.',
@@ -2636,14 +2636,14 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'HYPERBOLE: 比 + [noun] + 还 + [same noun] = «more N than N». Vivid cultural pattern, often playful or sarcastic. 他比狐狸还狐狸 = he\'s craftier than a fox (the fox embodies cunning in China). 他比老板还老板 = he acts more boss than the real boss (mocking). 比小孩还小孩 = more childish than a child. Rarely neutral — use to tease, mock, or be ironic. Avoid in serious writing. FORMAL REGISTER: 于 compounds. Measurable adjective + 于 (yú) = compact comparison verb. Common in press, contracts, science, math. 高于 = above; 低于 = below; 大于 = greater than (also math: 5 大于 3 = 5 > 3); 小于 = less than; 多于 = more than; 少于 = fewer than; 早于/晚于 = earlier/later; 优于 = superior to (quality). In everyday speech, prefer 比. 于 compounds are mostly for recognition in writing. 比 N 还 N is fun but reserved for casual speech or playful writing.',
     items: [
-      { hanzi: '狐狸', pinyin: 'hú li', meaning: 'renard (rusé)', meaningEn: 'fox (cunning)', audio: 'audio/hsk5/hsk5_狐狸.wav' },
-      { hanzi: '高于', pinyin: 'gāo yú', meaning: 'supérieur à', meaningEn: 'above, higher than', audio: 'audio/hsk1/hsk1_高.wav' },
-      { hanzi: '低于', pinyin: 'dī yú', meaning: 'inférieur à', meaningEn: 'below, lower than', audio: 'audio/hsk3/hsk3_低.wav' },
-      { hanzi: '大于', pinyin: 'dà yú', meaning: 'plus grand que', meaningEn: 'greater than', audio: 'audio/hsk1/hsk1_大.wav' },
-      { hanzi: '小于', pinyin: 'xiǎo yú', meaning: 'plus petit que', meaningEn: 'less than', audio: 'audio/hsk1/hsk1_小.wav' },
-      { hanzi: '多于', pinyin: 'duō yú', meaning: 'plus nombreux que', meaningEn: 'more than', audio: 'audio/hsk1/hsk1_多.wav' },
-      { hanzi: '少于', pinyin: 'shǎo yú', meaning: 'moins nombreux que', meaningEn: 'fewer than', audio: 'audio/hsk1/hsk1_少.wav' },
-      { hanzi: '优于', pinyin: 'yōu yú', meaning: 'supérieur à (qualité)', meaningEn: 'superior to (quality)', audio: 'audio/hsk5/hsk5_优秀.wav' }
+      { hanzi: '狐狸', pinyin: 'húlí', meaning: 'renard (rusé)', meaningEn: 'fox (cunning)', audio: 'audio/hsk5/hsk5_狐狸.wav' },
+      { hanzi: '高于', pinyin: 'gāoyú', meaning: 'supérieur à', meaningEn: 'above, higher than', audio: 'audio/hsk1/hsk1_高.wav' },
+      { hanzi: '低于', pinyin: 'dīyú', meaning: 'inférieur à', meaningEn: 'below, lower than', audio: 'audio/hsk3/hsk3_低.wav' },
+      { hanzi: '大于', pinyin: 'dàyú', meaning: 'plus grand que', meaningEn: 'greater than', audio: 'audio/hsk1/hsk1_大.wav' },
+      { hanzi: '小于', pinyin: 'xiǎoyú', meaning: 'plus petit que', meaningEn: 'less than', audio: 'audio/hsk1/hsk1_小.wav' },
+      { hanzi: '多于', pinyin: 'duōyú', meaning: 'plus nombreux que', meaningEn: 'more than', audio: 'audio/hsk1/hsk1_多.wav' },
+      { hanzi: '少于', pinyin: 'shǎoyú', meaning: 'moins nombreux que', meaningEn: 'fewer than', audio: 'audio/hsk1/hsk1_少.wav' },
+      { hanzi: '优于', pinyin: 'yōuyú', meaning: 'supérieur à (qualité)', meaningEn: 'superior to (quality)', audio: 'audio/hsk5/hsk5_优秀.wav' }
     ],
     tip:
       '比 N 还 N pour l\'oral ludique (« il est plus X que X ! ») ; 于 compounds pour la presse et les rapports. Deux registres opposés, mêmes idées.',

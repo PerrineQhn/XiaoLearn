@@ -379,6 +379,24 @@
   border-radius: var(--lv2-radius-sm);
   text-align: center;
 }
+/* Variante "translation" : hanzi grand + pinyin (italique, discret) sous la phrase */
+.lesson-v2 .lv2-exercise-sentence--translation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lesson-v2 .lv2-exercise-sentence-hanzi {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.lesson-v2 .lv2-exercise-sentence-pinyin {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--lv2-text-soft, #6b7280);
+  letter-spacing: 0.01em;
+}
 
 /* --- Phrase mal ordonnée (error-correction) -------------------------- */
 .lesson-v2 .lv2-exercise-jumbled {
