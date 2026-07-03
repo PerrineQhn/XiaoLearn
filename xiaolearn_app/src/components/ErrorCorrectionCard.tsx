@@ -12,6 +12,8 @@
 
 import { getCategoryMeta, type ErrorEntry, type ErrorSeverity } from '../types/error-journal';
 import { playHanziAudio } from '../utils/audio';
+import type { Language } from '../i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Props {
   entry: ErrorEntry;
@@ -19,12 +21,20 @@ interface Props {
   onRetry?: (corrected: string) => void;
   /** Mode compact pour la sidebar conversations / cartes en grid. */
   compact?: boolean;
+  /** Langue UI. Par défaut, lue depuis LanguageContext. */
+  language?: Language;
 }
 
-const SEVERITY_LABEL: Record<ErrorSeverity, string> = {
+const SEVERITY_LABEL_FR: Record<ErrorSeverity, string> = {
   mineure: 'Mineure',
   importante: 'Importante',
   critique: 'Critique'
+};
+
+const SEVERITY_LABEL_EN: Record<ErrorSeverity, string> = {
+  mineure: 'Minor',
+  importante: 'Important',
+  critique: 'Critical'
 };
 
 const SEVERITY_COLOR: Record<ErrorSeverity, { bg: string; fg: string }> = {
@@ -33,9 +43,15 @@ const SEVERITY_COLOR: Record<ErrorSeverity, { bg: string; fg: string }> = {
   critique: { bg: '#fde7e5', fg: '#b8264b' }
 };
 
-const ErrorCorrectionCard = ({ entry, onRetry, compact = false }: Props) => {
+const ErrorCorrectionCard = ({ entry, onRetry, compact = false, language }: Props) => {
   const meta = getCategoryMeta(entry.category);
   const sev = SEVERITY_COLOR[entry.severity];
+  const ctxLang = useLanguage();
+  const effectiveLang = language ?? ctxLang;
+  const t = effectiveLang === 'en'
+    ? { retry: 'Retry', listen: 'Listen' }
+    : { retry: 'Réessayer', listen: 'Écouter' };
+  const severityLabelMap = effectiveLang === 'en' ? SEVERITY_LABEL_EN : SEVERITY_LABEL_FR;
 
   const handleListen = () => {
     // 1) Extrait UNIQUEMENT les runs de hanzi de correctText (skip pinyin,
@@ -98,7 +114,7 @@ const ErrorCorrectionCard = ({ entry, onRetry, compact = false }: Props) => {
             fontWeight: 700
           }}
         >
-          • {SEVERITY_LABEL[entry.severity]}
+          • {severityLabelMap[entry.severity]}
         </span>
       </div>
 
@@ -186,7 +202,7 @@ const ErrorCorrectionCard = ({ entry, onRetry, compact = false }: Props) => {
               gap: 4
             }}
           >
-            <span aria-hidden="true">↻</span> Réessayer
+            <span aria-hidden="true">↻</span> {t.retry}
           </button>
         )}
         <button
@@ -205,7 +221,7 @@ const ErrorCorrectionCard = ({ entry, onRetry, compact = false }: Props) => {
             gap: 4
           }}
         >
-          <span aria-hidden="true">🔊</span> Écouter
+          <span aria-hidden="true">🔊</span> {t.listen}
         </button>
       </div>
     </div>

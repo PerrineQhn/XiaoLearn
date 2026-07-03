@@ -12,6 +12,8 @@
  * expliquant que le mode lent n'est pas encore généré pour ce contenu.
  */
 import type { CSSProperties } from 'react';
+import type { Language } from '../i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export type AudioSpeed = 'normal' | 'slow';
 
@@ -26,6 +28,8 @@ interface Props {
   className?: string;
   /** Compact (icônes seulement) vs étendu (icônes + libellés). Défaut : étendu. */
   size?: 'compact' | 'default';
+  /** Langue UI. Par défaut, lue depuis LanguageContext. */
+  language?: Language;
 }
 
 export default function AudioSpeedToggle({
@@ -35,9 +39,29 @@ export default function AudioSpeedToggle({
   style,
   className,
   size = 'default',
+  language,
 }: Props) {
   const isSlow = mode === 'slow';
   const isCompact = size === 'compact';
+  const ctxLang = useLanguage();
+  const effectiveLang = language ?? ctxLang;
+  const t = effectiveLang === 'en'
+    ? {
+        ariaLabel: 'Audio speed',
+        notAvailable: 'Slow (shadowing) mode not yet available for this content',
+        slowActive: 'Slow mode on · click to return to normal speed',
+        activateSlow: 'Enable slow mode (great for shadowing)',
+        slow: 'Slow',
+        normal: 'Normal',
+      }
+    : {
+        ariaLabel: 'Vitesse audio',
+        notAvailable: 'Mode lent (shadowing) non encore disponible pour ce contenu',
+        slowActive: 'Mode lent activé · cliquer pour repasser à la vitesse normale',
+        activateSlow: 'Activer le mode lent (idéal pour le shadowing)',
+        slow: 'Lent',
+        normal: 'Normal',
+      };
 
   const handleClick = () => {
     if (!slowAvailable && !isSlow) return; // ne pas activer slow s'il n'est pas dispo
@@ -45,17 +69,17 @@ export default function AudioSpeedToggle({
   };
 
   const title = !slowAvailable
-    ? 'Mode lent (shadowing) non encore disponible pour ce contenu'
+    ? t.notAvailable
     : isSlow
-      ? 'Mode lent activé · cliquer pour repasser à la vitesse normale'
-      : 'Activer le mode lent (idéal pour le shadowing)';
+      ? t.slowActive
+      : t.activateSlow;
 
   return (
     <button
       type="button"
       role="switch"
       aria-checked={isSlow}
-      aria-label="Vitesse audio"
+      aria-label={t.ariaLabel}
       title={title}
       onClick={handleClick}
       disabled={!slowAvailable && !isSlow}
@@ -83,7 +107,7 @@ export default function AudioSpeedToggle({
       <span aria-hidden="true" style={{ fontSize: isCompact ? 14 : 15 }}>
         {isSlow ? '🐢' : '🐇'}
       </span>
-      {!isCompact && <span>{isSlow ? 'Lent' : 'Normal'}</span>}
+      {!isCompact && <span>{isSlow ? t.slow : t.normal}</span>}
     </button>
   );
 }

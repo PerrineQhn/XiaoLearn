@@ -1,12 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getAudioSrcCandidates, resolveAudioSrc } from '../utils/audio';
+import type { Language } from '../i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface AudioButtonProps {
   src: string;
   label?: string;
+  /** Langue UI. Par défaut, lue depuis LanguageContext. */
+  language?: Language;
 }
 
-const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
+const AudioButton = ({ src, label, language }: AudioButtonProps) => {
+  const ctxLang = useLanguage();
+  const effectiveLang = language ?? ctxLang;
+  const t = effectiveLang === 'en'
+    ? { listen: 'Listen', retry: 'Retry', pause: 'Pause', notFound: 'Audio not found', cantPlay: 'Cannot play' }
+    : { listen: 'Écouter', retry: 'Réessayer', pause: 'Pause', notFound: 'Audio introuvable', cantPlay: 'Lecture impossible' };
+  const effectiveLabel = label ?? t.listen;
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +46,7 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
         setSrcIndex(srcIndex + 1);
         return;
       }
-      setError('Audio introuvable');
+      setError(t.notFound);
       setIsPlaying(false);
     };
 
@@ -77,7 +87,7 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
         setSrcIndex(srcIndex + 1);
         return;
       }
-      setError('Lecture impossible');
+      setError(t.cantPlay);
     }
   };
 
@@ -91,7 +101,7 @@ const AudioButton = ({ src, label = 'Écouter' }: AudioButtonProps) => {
         {error ? '⚠️' : isPlaying ? '🔊' : '🎧'}
       </span>
       <span className="audio-label">
-        {error ? 'Réessayer' : isPlaying ? 'Pause' : label}
+        {error ? t.retry : isPlaying ? t.pause : effectiveLabel}
       </span>
       {isPlaying && <span className="audio-pulse" aria-hidden="true" />}
     </button>

@@ -119,10 +119,12 @@ import { attachDialoguesAndReadingsToCecrPaths } from './data/cecr-dialogue-read
 attachDialoguesAndReadingsToCecrPaths(cecrLessonPaths);
 import { getSimpleLessonById } from './data/simple-lessons';
 import { getGrammarLessonById } from './data/grammar-lessons';
-import { getCopy, type Language } from './i18n';
+import { getCopy } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 import { useDashboardState } from './hooks/useDashboardState';
 import { useDailyGoals } from './hooks/useDailyGoals';
+import { useLanguagePref } from './hooks/useLanguagePref';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { useDailyActivity } from './hooks/useDailyActivity';
 import { useBattleStats } from './hooks/useBattleStats';
 import { useBattleMatchmaking } from './hooks/useBattleMatchmaking';
@@ -348,7 +350,7 @@ function App() {
     } catch { /* ignore */ }
     return 'home';
   });
-  const [language, setLanguage] = useState<Language>('fr');
+  const [language, setLanguage] = useLanguagePref();
   const [darkMode, setDarkMode] = useState(false);
   const colorTheme = 'asian-red';
   const [selectedLesson, setSelectedLesson] = useState<{ pathId: string; lessonId: string } | null>(null);
@@ -2511,6 +2513,7 @@ function App() {
   // Si l'utilisateur n'est pas connecté, afficher uniquement la page de connexion
   if (!user) {
     return (
+      <LanguageProvider value={language}>
       <div className="login-page-wrapper" data-theme={colorTheme}>
         <InteractiveGridBackground />
         <div className="login-page-content">
@@ -2542,10 +2545,12 @@ function App() {
           </div>
         </div>
       </div>
+      </LanguageProvider>
     );
   }
 
   return (
+    <LanguageProvider value={language}>
     <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'} ${sidebarOpen ? 'sidebar-open' : ''} ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
       {/* Background interactif : grille canvas pâle qui s'illumine en rouge
           autour du curseur. Premier enfant pour rester derrière le reste
@@ -2927,6 +2932,7 @@ function App() {
       <StreakMilestoneToast bonus={dashboardState.bonus} language={language} />
       <XpBonusToast language={language} />
     </div>
+    </LanguageProvider>
   );
 }
 

@@ -34,6 +34,8 @@ export interface BilanQuestion {
   contextEn?: string;
   /** Pour mcq + fill : choix ; pour match : paires à afficher (unused ici). */
   choices: string[];
+  /** Traduction EN des choices — obligatoire uniquement si les choix contiennent du texte français. */
+  choicesEn?: string[];
   correctIndex: number;
   /** Explication affichée en correction. */
   explanationFr: string;

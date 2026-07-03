@@ -381,6 +381,10 @@ export default function LevelBilanPage({
                 } else if (selectedIdx === idx) {
                   state = 'selected';
                 }
+                const displayChoice =
+                  language === 'fr'
+                    ? choice
+                    : currentQ.choicesEn?.[idx] ?? choice;
                 return (
                   <li key={idx}>
                     <button
@@ -392,7 +396,7 @@ export default function LevelBilanPage({
                       <span className="lvb-choice-letter">
                         {String.fromCharCode(65 + idx)}
                       </span>
-                      <span className="lvb-choice-text">{choice}</span>
+                      <span className="lvb-choice-text">{displayChoice}</span>
                       {revealed && idx === currentQ.correctIndex && (
                         <span className="lvb-choice-icon" aria-hidden="true">✓</span>
                       )}
@@ -626,11 +630,19 @@ export default function LevelBilanPage({
                     <div className="lvb-mistake-compare">
                       <span className="lvb-mistake-wrong">
                         {language === 'fr' ? 'Ta réponse : ' : 'Your answer: '}
-                        <em>{q.choices[a.selectedIndex]}</em>
+                        <em>
+                          {language === 'fr'
+                            ? q.choices[a.selectedIndex]
+                            : q.choicesEn?.[a.selectedIndex] ?? q.choices[a.selectedIndex]}
+                        </em>
                       </span>
                       <span className="lvb-mistake-right">
                         {language === 'fr' ? 'Bonne réponse : ' : 'Correct: '}
-                        <strong>{q.choices[q.correctIndex]}</strong>
+                        <strong>
+                          {language === 'fr'
+                            ? q.choices[q.correctIndex]
+                            : q.choicesEn?.[q.correctIndex] ?? q.choices[q.correctIndex]}
+                        </strong>
                       </span>
                     </div>
                     <p className="lvb-mistake-expl">
