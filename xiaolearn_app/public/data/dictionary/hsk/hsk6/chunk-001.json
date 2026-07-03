@@ -55,7 +55,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "bank; shore"
+    "translationEn": "bank; shore",
+    "explanationEn": "The noun 岸 (àn) means \"bank\". It can also be translated as \"shore\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0002": {
     "id": "hsk6-0002",
@@ -113,7 +114,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "expensive; costly"
+    "translationEn": "expensive; costly",
+    "explanationEn": "The adjective 昂贵 (ángguì) means \"expensive\". It can also be translated as \"costly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0003": {
     "id": "hsk6-0003",
@@ -171,7 +173,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "case; example (legal)"
+    "translationEn": "case; example (legal)",
+    "explanationEn": "The noun 案例 (ànlì) means \"case\". It can also be translated as \"example (legal)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0004": {
     "id": "hsk6-0004",
@@ -227,7 +230,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "massage"
+    "translationEn": "massage",
+    "explanationEn": "按摩 (ànmó) means \"massage\". It belongs to the health vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0005": {
     "id": "hsk6-0005",
@@ -285,7 +289,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to imply; to suggest"
+    "translationEn": "to imply; to suggest",
+    "explanationEn": "The verb 暗示 (ànshì) means \"to imply\". It can also be translated as \"to suggest\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0006": {
     "id": "hsk6-0006",
@@ -343,7 +348,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to lose; to fail"
+    "translationEn": "to lose; to fail",
+    "explanationEn": "The verb 败 (bài) means \"to lose\". It can also be translated as \"to fail\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0007": {
     "id": "hsk6-0007",
@@ -401,7 +407,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to place; to arrange; to balance"
+    "translationEn": "to place; to arrange; to balance",
+    "explanationEn": "The verb 摆 (bǎi) means \"to place\". It can also be translated as \"to arrange\", \"to balance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0008": {
     "id": "hsk6-0008",
@@ -459,7 +466,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in vain; for nothing"
+    "translationEn": "in vain; for nothing",
+    "explanationEn": "The adverb 白白 (báibái) means \"in vain\". It can also be translated as \"for nothing\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0009": {
     "id": "hsk6-0009",
@@ -517,7 +525,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to visit"
+    "translationEn": "to visit",
+    "explanationEn": "The verb 拜访 (bàifǎng) means \"to visit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0010": {
     "id": "hsk6-0010",
@@ -575,7 +584,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to arrange; to place"
+    "translationEn": "to arrange; to place",
+    "explanationEn": "The verb 摆放 (bǎifàng) means \"to arrange\". It can also be translated as \"to place\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0011": {
     "id": "hsk6-0011",
@@ -627,7 +637,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "percentage point"
+    "translationEn": "percentage point",
+    "explanationEn": "The noun 百分点 (bǎifēndiǎn) means \"percentage point\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0012": {
     "id": "hsk6-0012",
@@ -685,7 +696,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "various goods; department store"
+    "translationEn": "various goods; department store",
+    "explanationEn": "The noun 百货 (bǎihuò) means \"various goods\". It can also be translated as \"department store\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0013": {
     "id": "hsk6-0013",
@@ -737,7 +749,8 @@
       "hsk6-0027"
     ],
     "translationFrAlt": [],
-    "translationEn": "white-collar worker; office employee"
+    "translationEn": "white-collar worker; office employee",
+    "explanationEn": "The noun 白领 (báilǐng) means \"white-collar worker\". It can also be translated as \"office employee\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0014": {
     "id": "hsk6-0014",
@@ -796,7 +809,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to wish someone a happy new year"
+    "translationEn": "to wish someone a happy new year",
+    "explanationEn": "The verb 拜年 (bàinián) means \"to wish someone a happy new year\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0015": {
     "id": "hsk6-0015",
@@ -854,7 +868,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to get rid of; to摆脱束缚"
+    "translationEn": "to get rid of; to摆脱束缚",
+    "explanationEn": "The verb 摆脱 (bǎituō) means \"to get rid of\". It can also be translated as \"to摆脱束缚\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0016": {
     "id": "hsk6-0016",
@@ -912,7 +927,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "edition; page"
+    "translationEn": "edition; page",
+    "explanationEn": "The noun 版 (bǎn) means \"edition\". It can also be translated as \"page\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0017": {
     "id": "hsk6-0017",
@@ -970,7 +986,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "version; edition"
+    "translationEn": "version; edition",
+    "explanationEn": "The noun 版本 (bǎnběn) means \"version\". It can also be translated as \"edition\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0018": {
     "id": "hsk6-0018",
@@ -1028,7 +1045,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "baseball"
+    "translationEn": "baseball",
+    "explanationEn": "The noun 棒球 (bàngqiú) means \"baseball\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0019": {
     "id": "hsk6-0019",
@@ -1086,7 +1104,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "example; model"
+    "translationEn": "example; model",
+    "explanationEn": "The noun 榜样 (bǎngyàng) means \"example\". It can also be translated as \"model\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0020": {
     "id": "hsk6-0020",
@@ -1144,7 +1163,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "accompany; follow"
+    "translationEn": "accompany; follow",
+    "explanationEn": "The verb 伴随 (bànsuí) means \"accompany\". It can also be translated as \"follow\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0021": {
     "id": "hsk6-0021",
@@ -1203,7 +1223,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "play (a role); interpret"
+    "translationEn": "play (a role); interpret",
+    "explanationEn": "The verb 扮演 (bànyǎn) means \"play (a role)\". It can also be translated as \"interpret\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0022": {
     "id": "hsk6-0022",
@@ -1258,7 +1279,8 @@
       "hsk6-0045",
       "hsk6-0048"
     ],
-    "translationEn": "explode; burst"
+    "translationEn": "explode; burst",
+    "explanationEn": "The verb 爆 (bào) means \"explode\". It can also be translated as \"burst\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0023": {
     "id": "hsk6-0023",
@@ -1313,7 +1335,8 @@
       "hsk6-0349",
       "hsk6-0351"
     ],
-    "translationEn": "explode; erupt"
+    "translationEn": "explode; erupt",
+    "explanationEn": "The verb 爆发 (bàofā) means \"explode\". It can also be translated as \"erupt\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0024": {
     "id": "hsk6-0024",
@@ -1371,7 +1394,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "keep; store; be responsible for"
+    "translationEn": "keep; store; be responsible for",
+    "explanationEn": "The verb 保管 (bǎoguǎn) means \"keep\". It can also be translated as \"store\", \"be responsible for\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0025": {
     "id": "hsk6-0025",
@@ -1426,7 +1450,8 @@
       "hsk6-0022",
       "hsk6-0023"
     ],
-    "translationEn": "healthcare; hygiene"
+    "translationEn": "healthcare; hygiene",
+    "explanationEn": "The verb 保健 (bǎojiàn) means \"healthcare\". It can also be translated as \"hygiene\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0026": {
     "id": "hsk6-0026",
@@ -1478,7 +1503,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "press; newspapers and magazines"
+    "translationEn": "press; newspapers and magazines",
+    "explanationEn": "The noun 报刊 (bàokān) means \"press\". It can also be translated as \"newspapers and magazines\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0027": {
     "id": "hsk6-0027",
@@ -1530,7 +1556,8 @@
       "hsk6-0011"
     ],
     "translationFrAlt": [],
-    "translationEn": "violence"
+    "translationEn": "violence",
+    "explanationEn": "The noun 暴力 (bàolì) means \"violence\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0028": {
     "id": "hsk6-0028",
@@ -1584,7 +1611,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "expose; reveal; uncover"
+    "translationEn": "expose; reveal; uncover",
+    "explanationEn": "The verb 暴露 (bàolù) means \"expose\". It can also be translated as \"reveal\", \"uncover\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0029": {
     "id": "hsk6-0029",
@@ -1643,7 +1671,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "keep warm; protect from cold"
+    "translationEn": "keep warm; protect from cold",
+    "explanationEn": "The verb 保暖 (bǎonuǎn) means \"keep warm\". It can also be translated as \"protect from cold\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0030": {
     "id": "hsk6-0030",
@@ -1701,7 +1730,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "newsroom; publishing house"
+    "translationEn": "newsroom; publishing house",
+    "explanationEn": "The noun 报社 (bàoshè) means \"newsroom\". It can also be translated as \"publishing house\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0031": {
     "id": "hsk6-0031",
@@ -1757,7 +1787,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "warranty; guarantee"
+    "translationEn": "warranty; guarantee",
+    "explanationEn": "保修 (bǎoxiū) means \"warranty\". It can also be translated as \"guarantee\". It belongs to the shopping vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0032": {
     "id": "hsk6-0032",
@@ -1810,7 +1841,8 @@
       "hsk6-0048"
     ],
     "translationFrAlt": [],
-    "translationEn": "to explode; explosion"
+    "translationEn": "to explode; explosion",
+    "explanationEn": "The verb 爆炸 (bàozhà) means \"to explode\". It can also be translated as \"explosion\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0033": {
     "id": "hsk6-0033",
@@ -1869,7 +1901,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "guarantee; protect; warranty"
+    "translationEn": "guarantee; protect; warranty",
+    "explanationEn": "The verb 保障 (bǎozhàng) means \"guarantee\". It can also be translated as \"protect\", \"warranty\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0034": {
     "id": "hsk6-0034",
@@ -1927,7 +1960,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "passive"
+    "translationEn": "passive",
+    "explanationEn": "The adjective 被动 (bèidòng) means \"passive\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0035": {
     "id": "hsk6-0035",
@@ -1977,7 +2011,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "pessimistic"
+    "translationEn": "pessimistic",
+    "explanationEn": "The adjective 悲观 (bēiguān) means \"pessimistic\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0036": {
     "id": "hsk6-0036",
@@ -2035,7 +2070,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "North Pole; Arctic"
+    "translationEn": "North Pole; Arctic",
+    "explanationEn": "The noun 北极 (běijí) means \"North Pole\". It can also be translated as \"Arctic\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0037": {
     "id": "hsk6-0037",
@@ -2093,7 +2129,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "tragedy"
+    "translationEn": "tragedy",
+    "explanationEn": "The noun 悲剧 (bēijù) means \"tragedy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0038": {
     "id": "hsk6-0038",
@@ -2151,7 +2188,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "North America"
+    "translationEn": "North America",
+    "explanationEn": "The noun 北美洲 (Běiměizhōu) means \"North America\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0039": {
     "id": "hsk6-0039",
@@ -2209,7 +2247,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "forced; compelled"
+    "translationEn": "forced; compelled",
+    "explanationEn": "The verb 被迫 (bèipò) means \"forced\". It can also be translated as \"compelled\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0040": {
     "id": "hsk6-0040",
@@ -2267,7 +2306,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "sad; sorrowful; grieved"
+    "translationEn": "sad; sorrowful; grieved",
+    "explanationEn": "The adjective 悲伤 (bēishāng) means \"sad\". It can also be translated as \"sorrowful\", \"grieved\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0041": {
     "id": "hsk6-0041",
@@ -2319,7 +2359,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "vest; tank top; undershirt"
+    "translationEn": "vest; tank top; undershirt",
+    "explanationEn": "The noun 背心 (bèixīn) means \"vest\". It can also be translated as \"tank top\", \"undershirt\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0042": {
     "id": "hsk6-0042",
@@ -2377,7 +2418,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "backup; spare"
+    "translationEn": "backup; spare",
+    "explanationEn": "The adjective 备用 (bèiyòng) means \"backup\". It can also be translated as \"spare\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0043": {
     "id": "hsk6-0043",
@@ -2435,7 +2477,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "increase manyfold; double"
+    "translationEn": "increase manyfold; double",
+    "explanationEn": "The verb 倍增 (bèizēng) means \"increase manyfold\". It can also be translated as \"double\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0044": {
     "id": "hsk6-0044",
@@ -2493,7 +2536,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "instinct; instinctive"
+    "translationEn": "instinct; instinctive",
+    "explanationEn": "The noun 本能 (běnnéng) means \"instinct\". It can also be translated as \"instinctive\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0045": {
     "id": "hsk6-0045",
@@ -2545,7 +2589,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to run"
+    "translationEn": "to run",
+    "explanationEn": "The verb 奔跑 (bēnpǎo) means \"to run\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0046": {
     "id": "hsk6-0046",
@@ -2597,7 +2642,8 @@
       "hsk6-0022"
     ],
     "translationFrAlt": [],
-    "translationEn": "in itself; by itself"
+    "translationEn": "in itself; by itself",
+    "explanationEn": "The pronoun 本身 (běnshēn) means \"in itself\". It can also be translated as \"by itself\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0047": {
     "id": "hsk6-0047",
@@ -2652,7 +2698,8 @@
       "hsk6-0013",
       "hsk6-0026"
     ],
-    "translationEn": "local; indigenous; national"
+    "translationEn": "local; indigenous; national",
+    "explanationEn": "The noun 本土 (běntǔ) means \"local\". It can also be translated as \"indigenous\", \"national\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0048": {
     "id": "hsk6-0048",
@@ -2708,7 +2755,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to close; to shut"
+    "translationEn": "to close; to shut",
+    "explanationEn": "The verb 闭 (bì) means \"to close\". It can also be translated as \"to shut\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0049": {
     "id": "hsk6-0049",
@@ -2766,7 +2814,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to avoid; to dodge"
+    "translationEn": "to avoid; to dodge",
+    "explanationEn": "The verb 避 (bì) means \"to avoid\". It can also be translated as \"to dodge\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0050": {
     "id": "hsk6-0050",
@@ -2824,7 +2873,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "to force; to compel; to press"
+    "translationEn": "to force; to compel; to press",
+    "explanationEn": "The verb 逼 (bī) means \"to force\". It can also be translated as \"to compel\", \"to press\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0051": {
     "id": "hsk6-0051",
@@ -2882,7 +2932,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to compile; to write; to braid; to invent"
+    "translationEn": "to compile; to write; to braid; to invent",
+    "explanationEn": "The verb 编 (biān) means \"to compile\". It can also be translated as \"to write\", \"to braid\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0052": {
     "id": "hsk6-0052",
@@ -2934,7 +2985,8 @@
       "hsk6-0313"
     ],
     "translationFrAlt": [],
-    "translationEn": "everywhere; all over the place"
+    "translationEn": "everywhere; all over the place",
+    "explanationEn": "The adverb 遍地 (biàndì) means \"everywhere\". It can also be translated as \"all over the place\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0053": {
     "id": "hsk6-0053",
@@ -2993,7 +3045,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to edit; to compile; editor; writer"
+    "translationEn": "to edit; to compile; editor; writer",
+    "explanationEn": "The verb 编辑 (biānjí) means \"to edit\". It can also be translated as \"to compile\", \"editor\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0054": {
     "id": "hsk6-0054",
@@ -3051,7 +3104,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "practical; convenient; quick"
+    "translationEn": "practical; convenient; quick",
+    "explanationEn": "The adjective 便捷 (biànjié) means \"practical\". It can also be translated as \"convenient\", \"quick\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0055": {
     "id": "hsk6-0055",
@@ -3109,7 +3163,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to write; to compile; to author"
+    "translationEn": "to write; to compile; to author",
+    "explanationEn": "The verb 编写 (biānxiě) means \"to write\". It can also be translated as \"to compile\", \"to author\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0056": {
     "id": "hsk6-0056",
@@ -3167,7 +3222,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to deteriorate; to spoil; to go bad"
+    "translationEn": "to deteriorate; to spoil; to go bad",
+    "explanationEn": "The verb 变质 (biànzhì) means \"to deteriorate\". It can also be translated as \"to spoil\", \"to go bad\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0057": {
     "id": "hsk6-0057",
@@ -3225,7 +3281,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "for example; such as"
+    "translationEn": "for example; such as",
+    "explanationEn": "The noun 比方 (bǐfang) means \"for example\". It can also be translated as \"such as\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0058": {
     "id": "hsk6-0058",
@@ -3283,7 +3340,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "soldier; military; weapon"
+    "translationEn": "soldier; military; weapon",
+    "explanationEn": "The noun 兵 (bīng) means \"soldier\". It can also be translated as \"military\", \"weapon\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0059": {
     "id": "hsk6-0059",
@@ -3339,7 +3397,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "virus"
+    "translationEn": "virus",
+    "explanationEn": "病毒 (bìngdú) means \"virus\". It belongs to the health vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0060": {
     "id": "hsk6-0060",
@@ -3391,7 +3450,8 @@
       "hsk6-0455"
     ],
     "translationFrAlt": [],
-    "translationEn": "compulsory (course)"
+    "translationEn": "compulsory (course)",
+    "explanationEn": "The adjective 必修 (bìxiū) means \"compulsory (course)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0061": {
     "id": "hsk6-0061",
@@ -3449,7 +3509,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "proportion; specific gravity"
+    "translationEn": "proportion; specific gravity",
+    "explanationEn": "The noun 比重 (bǐzhòng) means \"proportion\". It can also be translated as \"specific gravity\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0062": {
     "id": "hsk6-0062",
@@ -3505,7 +3566,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to sow; to broadcast; to emit"
+    "translationEn": "to sow; to broadcast; to emit",
+    "explanationEn": "The verb 播 (bō) means \"to sow\". It can also be translated as \"to broadcast\", \"to emit\". It belongs to the technology vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0063": {
     "id": "hsk6-0063",
@@ -3563,7 +3625,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "exposition; fair"
+    "translationEn": "exposition; fair",
+    "explanationEn": "The noun 博览会 (bólǎnhuì) means \"exposition\". It can also be translated as \"fair\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0064": {
     "id": "hsk6-0064",
@@ -3621,7 +3684,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "weak; fragile"
+    "translationEn": "weak; fragile",
+    "explanationEn": "The adjective 薄弱 (bóruò) means \"weak\". It can also be translated as \"fragile\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0065": {
     "id": "hsk6-0065",
@@ -3679,7 +3743,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to sow; to plant"
+    "translationEn": "to sow; to plant",
+    "explanationEn": "The verb 播种 (bōzhǒng) means \"to sow\". It can also be translated as \"to plant\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0066": {
     "id": "hsk6-0066",
@@ -3737,7 +3802,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "neck"
+    "translationEn": "neck",
+    "explanationEn": "The noun 脖子 (bózi) means \"neck\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0067": {
     "id": "hsk6-0067",
@@ -3795,7 +3861,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fabric; cloth"
+    "translationEn": "fabric; cloth",
+    "explanationEn": "The noun 布 (bù) means \"fabric\". It can also be translated as \"cloth\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0068": {
     "id": "hsk6-0068",
@@ -3853,7 +3920,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to repair; to make up for; to fill in"
+    "translationEn": "to repair; to make up for; to fill in",
+    "explanationEn": "The verb 补 (bǔ) means \"to repair\". It can also be translated as \"to make up for\", \"to fill in\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0069": {
     "id": "hsk6-0069",
@@ -3909,7 +3977,8 @@
       "hsk6-0045"
     ],
     "explanation": "",
-    "translationEn": "to catch; to trap"
+    "translationEn": "to catch; to trap",
+    "explanationEn": "The verb 捕 (bǔ) means \"to catch\". It can also be translated as \"to trap\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0070": {
     "id": "hsk6-0070",
@@ -3967,7 +4036,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "impatient; annoyed"
+    "translationEn": "impatient; annoyed",
+    "explanationEn": "The adjective 不耐烦 (bú nàifán) means \"impatient\". It can also be translated as \"annoyed\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0071": {
     "id": "hsk6-0071",
@@ -4025,7 +4095,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "insecure; uneasy"
+    "translationEn": "insecure; uneasy",
+    "explanationEn": "The adjective 不安 (bù'ān) means \"insecure\". It can also be translated as \"uneasy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0072": {
     "id": "hsk6-0072",
@@ -4083,7 +4154,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "never...; never had"
+    "translationEn": "never...; never had",
+    "explanationEn": "The adverb 不曾 (bùcéng) means \"never...\". It can also be translated as \"never had\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0073": {
     "id": "hsk6-0073",
@@ -4142,7 +4214,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to compensate; to indemnify; to make up for"
+    "translationEn": "to compensate; to indemnify; to make up for",
+    "explanationEn": "The verb 补偿 (bǔcháng) means \"to compensate\". It can also be translated as \"to indemnify\", \"to make up for\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0074": {
     "id": "hsk6-0074",
@@ -4196,7 +4269,8 @@
       "hsk6-0070",
       "hsk6-0071"
     ],
-    "translationEn": "not succeed; is it that (question particle)"
+    "translationEn": "not succeed; is it that (question particle)",
+    "explanationEn": "The verb 不成 (bùchéng) means \"not succeed\". It can also be translated as \"is it that (question particle)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0075": {
     "id": "hsk6-0075",
@@ -4254,7 +4328,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "cannot; must not"
+    "translationEn": "cannot; must not",
+    "explanationEn": "The verb 不得 (bùdé) means \"cannot\". It can also be translated as \"must not\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0076": {
     "id": "hsk6-0076",
@@ -4308,7 +4383,8 @@
       "hsk6-0027",
       "hsk6-0041"
     ],
-    "translationEn": "army; troop; military unit"
+    "translationEn": "army; troop; military unit",
+    "explanationEn": "The noun 部队 (bùduì) means \"army\". It can also be translated as \"troop\", \"military unit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0077": {
     "id": "hsk6-0077",
@@ -4366,7 +4442,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "without regard for; despite"
+    "translationEn": "without regard for; despite",
+    "explanationEn": "The verb 不顾 (búgù) means \"without regard for\". It can also be translated as \"despite\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0078": {
     "id": "hsk6-0078",
@@ -4418,7 +4495,8 @@
       "hsk6-0072"
     ],
     "translationFrAlt": [],
-    "translationEn": "cannot help but"
+    "translationEn": "cannot help but",
+    "explanationEn": "The adverb 不禁 (bùjīn) means \"cannot help but\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0079": {
     "id": "hsk6-0079",
@@ -4470,7 +4548,8 @@
       "hsk6-0002"
     ],
     "translationFrAlt": [],
-    "translationEn": "make up for classes; catch-up class"
+    "translationEn": "make up for classes; catch-up class",
+    "explanationEn": "补课 (bǔkè) means \"make up for classes\". It can also be translated as \"catch-up class\". It belongs to the school vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0080": {
     "id": "hsk6-0080",
@@ -4526,7 +4605,8 @@
       "hsk6-0071",
       "hsk6-0072"
     ],
-    "translationEn": "unexpectedly; contrary to expectations"
+    "translationEn": "unexpectedly; contrary to expectations",
+    "explanationEn": "The conjunction 不料 (búliào) means \"unexpectedly\". It can also be translated as \"contrary to expectations\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0081": {
     "id": "hsk6-0081",
@@ -4584,7 +4664,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "uncomfortable; indisposed; unease"
+    "translationEn": "uncomfortable; indisposed; unease",
+    "explanationEn": "The adjective 不适 (búshì) means \"uncomfortable\". It can also be translated as \"indisposed\", \"unease\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0082": {
     "id": "hsk6-0082",
@@ -4642,7 +4723,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "occasionally; from time to time"
+    "translationEn": "occasionally; from time to time",
+    "explanationEn": "The adverb 不时 (bùshí) means \"occasionally\". It can also be translated as \"from time to time\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0083": {
     "id": "hsk6-0083",
@@ -4701,7 +4783,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "subsidy; allowance; provide subsidy"
+    "translationEn": "subsidy; allowance; provide subsidy",
+    "explanationEn": "The noun 补贴 (bǔtiē) means \"subsidy\". It can also be translated as \"allowance\", \"provide subsidy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0084": {
     "id": "hsk6-0084",
@@ -4759,7 +4842,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "part of the body; area"
+    "translationEn": "part of the body; area",
+    "explanationEn": "The noun 部位 (bùwèi) means \"part of the body\". It can also be translated as \"area\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0085": {
     "id": "hsk6-0085",
@@ -4809,7 +4893,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "have private lessons"
+    "translationEn": "have private lessons",
+    "explanationEn": "The verb 补习 (bǔxí) means \"have private lessons\". It belongs to the school vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0086": {
     "id": "hsk6-0086",
@@ -4867,7 +4952,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "not allowed; forbidden"
+    "translationEn": "not allowed; forbidden",
+    "explanationEn": "The verb 不许 (bùxǔ) means \"not allowed\". It can also be translated as \"forbidden\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0087": {
     "id": "hsk6-0087",
@@ -4925,7 +5011,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "inappropriate; not advisable"
+    "translationEn": "inappropriate; not advisable",
+    "explanationEn": "The adverb 不宜 (bùyí) means \"inappropriate\". It can also be translated as \"not advisable\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0088": {
     "id": "hsk6-0088",
@@ -4983,7 +5070,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "unceasingly; continuously"
+    "translationEn": "unceasingly; continuously",
+    "explanationEn": "The adverb 不已 (bùyǐ) means \"unceasingly\". It can also be translated as \"continuously\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0089": {
     "id": "hsk6-0089",
@@ -5041,7 +5129,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "decorate; arrange; assign tasks"
+    "translationEn": "decorate; arrange; assign tasks",
+    "explanationEn": "The verb 布置 (bùzhì) means \"decorate\". It can also be translated as \"arrange\", \"assign tasks\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0090": {
     "id": "hsk6-0090",
@@ -5099,7 +5188,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "more than; not limited to"
+    "translationEn": "more than; not limited to",
+    "explanationEn": "The adverb 不止 (bùzhǐ) means \"more than\". It can also be translated as \"not limited to\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0091": {
     "id": "hsk6-0091",
@@ -5151,7 +5241,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "not to the extent that"
+    "translationEn": "not to the extent that",
+    "explanationEn": "The verb 不至于 (búzhìyú) means \"not to the extent that\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0092": {
     "id": "hsk6-0092",
@@ -5207,7 +5298,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "not get to the point where"
+    "translationEn": "not get to the point where",
+    "explanationEn": "步骤 (bùzhòu) means \"not get to the point where\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0093": {
     "id": "hsk6-0093",
@@ -5262,7 +5354,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "step; process"
+    "translationEn": "step; process",
+    "explanationEn": "The verb 踩 (cǎi) means \"step\". It can also be translated as \"process\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0094": {
     "id": "hsk6-0094",
@@ -5320,7 +5413,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to step on; to stomp"
+    "translationEn": "to step on; to stomp",
+    "explanationEn": "The verb 猜测 (cāicè) means \"to step on\". It can also be translated as \"to stomp\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0095": {
     "id": "hsk6-0095",
@@ -5378,7 +5472,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to guess; to speculate; to conjecture"
+    "translationEn": "to guess; to speculate; to conjecture",
+    "explanationEn": "The noun 财产 (cáichǎn) means \"to guess\". It can also be translated as \"to speculate\", \"to conjecture\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0096": {
     "id": "hsk6-0096",
@@ -5436,7 +5531,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "property; assets; wealth"
+    "translationEn": "property; assets; wealth",
+    "explanationEn": "The noun 财富 (cáifù) means \"property\". It can also be translated as \"assets\", \"wealth\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0097": {
     "id": "hsk6-0097",
@@ -5495,7 +5591,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "wealth; riches"
+    "translationEn": "wealth; riches",
+    "explanationEn": "The verb 采购 (cǎigòu) means \"wealth\". It can also be translated as \"riches\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0098": {
     "id": "hsk6-0098",
@@ -5553,7 +5650,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to purchase; to buy in bulk; procurement"
+    "translationEn": "to purchase; to buy in bulk; procurement",
+    "explanationEn": "The noun 彩虹 (cǎihóng) means \"to purchase\". It can also be translated as \"to buy in bulk\", \"procurement\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0099": {
     "id": "hsk6-0099",
@@ -5611,7 +5709,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "rainbow"
+    "translationEn": "rainbow",
+    "explanationEn": "The noun 才华 (cáihuá) means \"rainbow\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0100": {
     "id": "hsk6-0100",
@@ -5669,7 +5768,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "talent; gift"
+    "translationEn": "talent; gift",
+    "explanationEn": "The verb 采集 (cǎijí) means \"talent\". It can also be translated as \"gift\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0101": {
     "id": "hsk6-0101",
@@ -5723,7 +5823,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to collect; to gather"
+    "translationEn": "to collect; to gather",
+    "explanationEn": "The verb 采纳 (cǎinà) means \"to collect\". It can also be translated as \"to gather\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0102": {
     "id": "hsk6-0102",
@@ -5781,7 +5882,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to adopt; to accept (an idea)"
+    "translationEn": "to adopt; to accept (an idea)",
+    "explanationEn": "The noun 才能 (cáinéng) means \"to adopt\". It can also be translated as \"to accept (an idea)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0103": {
     "id": "hsk6-0103",
@@ -5839,7 +5941,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "talent; ability; capacity"
+    "translationEn": "talent; ability; capacity",
+    "explanationEn": "The noun 彩票 (cǎipiào) means \"talent\". It can also be translated as \"ability\", \"capacity\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0104": {
     "id": "hsk6-0104",
@@ -5895,7 +5998,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "lottery ticket"
+    "translationEn": "lottery ticket",
+    "explanationEn": "财务 (cáiwù) means \"lottery ticket\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0105": {
     "id": "hsk6-0105",
@@ -5953,7 +6057,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "finance"
+    "translationEn": "finance",
+    "explanationEn": "The noun 财物 (cáiwù) means \"finance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0106": {
     "id": "hsk6-0106",
@@ -6011,7 +6116,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "material; substance"
+    "translationEn": "material; substance",
+    "explanationEn": "The noun 材质 (cáizhì) means \"material\". It can also be translated as \"substance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0107": {
     "id": "hsk6-0107",
@@ -6063,7 +6169,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "warehouse; storage facility; depot"
+    "translationEn": "warehouse; storage facility; depot",
+    "explanationEn": "The noun 仓库 (cāngkù) means \"warehouse\". It can also be translated as \"storage facility\", \"depot\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0108": {
     "id": "hsk6-0108",
@@ -6116,7 +6223,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "disability; handicap"
+    "translationEn": "disability; handicap",
+    "explanationEn": "The noun 残疾 (cánjí) means \"disability\". It can also be translated as \"handicap\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0109": {
     "id": "hsk6-0109",
@@ -6168,7 +6276,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "participate in an exhibition"
+    "translationEn": "participate in an exhibition",
+    "explanationEn": "The verb 参展 (cānzhǎn) means \"participate in an exhibition\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0110": {
     "id": "hsk6-0110",
@@ -6226,7 +6335,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "prairie; steppe"
+    "translationEn": "prairie; steppe",
+    "explanationEn": "The noun 草原 (cǎoyuán) means \"prairie\". It can also be translated as \"steppe\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0111": {
     "id": "hsk6-0111",
@@ -6283,7 +6393,8 @@
       "hsk6-0047"
     ],
     "explanation": "",
-    "translationEn": "side; lateral"
+    "translationEn": "side; lateral",
+    "explanationEn": "The noun 侧 (cè) means \"side\". It can also be translated as \"lateral\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0112": {
     "id": "hsk6-0112",
@@ -6338,7 +6449,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "plan; organize; planification"
+    "translationEn": "plan; organize; planification",
+    "explanationEn": "The verb 策划 (cèhuà) means \"plan\". It can also be translated as \"organize\", \"planification\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0113": {
     "id": "hsk6-0113",
@@ -6396,7 +6508,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "measure; survey"
+    "translationEn": "measure; survey",
+    "explanationEn": "The verb 测量 (cèliáng) means \"measure\". It can also be translated as \"survey\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0114": {
     "id": "hsk6-0114",
@@ -6446,7 +6559,8 @@
       "hsk6-0041"
     ],
     "translationFrAlt": [],
-    "translationEn": "tactic; strategy"
+    "translationEn": "tactic; strategy",
+    "explanationEn": "The noun 策略 (cèlüè) means \"tactic\". It can also be translated as \"strategy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0115": {
     "id": "hsk6-0115",
@@ -6504,7 +6618,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "level; layer; hierarchy"
+    "translationEn": "level; layer; hierarchy",
+    "explanationEn": "The noun 层次 (céngcì) means \"level\". It can also be translated as \"layer\", \"hierarchy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0116": {
     "id": "hsk6-0116",
@@ -6556,7 +6671,8 @@
       "hsk6-0407"
     ],
     "translationFrAlt": [],
-    "translationEn": "plane; dimension; level"
+    "translationEn": "plane; dimension; level",
+    "explanationEn": "The noun 层面 (céngmiàn) means \"plane\". It can also be translated as \"dimension\", \"level\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0117": {
     "id": "hsk6-0117",
@@ -6614,7 +6730,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fork; prong"
+    "translationEn": "fork; prong",
+    "explanationEn": "The noun 叉 (chā) means \"fork\". It can also be translated as \"prong\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0118": {
     "id": "hsk6-0118",
@@ -6672,7 +6789,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "demolish; dismantle"
+    "translationEn": "demolish; dismantle",
+    "explanationEn": "The verb 拆除 (chāichú) means \"demolish\". It can also be translated as \"dismantle\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0119": {
     "id": "hsk6-0119",
@@ -6731,7 +6849,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "output; production; yield"
+    "translationEn": "output; production; yield",
+    "explanationEn": "The noun 产出 (chǎnchū) means \"output\". It can also be translated as \"production\", \"yield\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0120": {
     "id": "hsk6-0120",
@@ -6789,7 +6908,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "place of origin; production site"
+    "translationEn": "place of origin; production site",
+    "explanationEn": "The noun 产地 (chǎndì) means \"place of origin\". It can also be translated as \"production site\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0121": {
     "id": "hsk6-0121",
@@ -6847,7 +6967,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "intestine; bowel"
+    "translationEn": "intestine; bowel",
+    "explanationEn": "The noun 肠 (cháng) means \"intestine\". It can also be translated as \"bowel\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0122": {
     "id": "hsk6-0122",
@@ -6905,7 +7026,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "sitting; performance; number of sittings"
+    "translationEn": "sitting; performance; number of sittings",
+    "explanationEn": "The noun 场次 (chǎngcì) means \"sitting\". It can also be translated as \"performance\", \"number of sittings\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0123": {
     "id": "hsk6-0123",
@@ -6959,7 +7081,8 @@
       "hsk6-0120",
       "hsk6-0122"
     ],
-    "translationEn": "place; ground; site"
+    "translationEn": "place; ground; site",
+    "explanationEn": "The noun 场地 (chǎngdì) means \"place\". It can also be translated as \"ground\", \"site\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0124": {
     "id": "hsk6-0124",
@@ -7014,7 +7137,8 @@
       "hsk6-0026",
       "hsk6-0027"
     ],
-    "translationEn": "length; merit and demerit"
+    "translationEn": "length; merit and demerit",
+    "explanationEn": "The noun 长短 (chángduǎn) means \"length\". It can also be translated as \"merit and demerit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0125": {
     "id": "hsk6-0125",
@@ -7069,7 +7193,8 @@
       "hsk6-0127",
       "hsk6-0130"
     ],
-    "translationEn": "stadium; hall; sports facility"
+    "translationEn": "stadium; hall; sports facility",
+    "explanationEn": "The noun 场馆 (chǎngguǎn) means \"stadium\". It can also be translated as \"hall\", \"sports facility\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0126": {
     "id": "hsk6-0126",
@@ -7125,7 +7250,8 @@
       "hsk6-0493",
       "hsk6-0495"
     ],
-    "translationEn": "conventional; habitual; routine"
+    "translationEn": "conventional; habitual; routine",
+    "explanationEn": "The noun 常规 (chángguī) means \"conventional\". It can also be translated as \"habitual\", \"routine\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0127": {
     "id": "hsk6-0127",
@@ -7183,7 +7309,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "occasion; circumstance"
+    "translationEn": "occasion; circumstance",
+    "explanationEn": "The noun 场合 (chǎnghé) means \"occasion\". It can also be translated as \"circumstance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0128": {
     "id": "hsk6-0128",
@@ -7241,7 +7368,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "manufacturer; factory"
+    "translationEn": "manufacturer; factory",
+    "explanationEn": "The noun 厂家 (chǎngjiā) means \"manufacturer\". It can also be translated as \"factory\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0129": {
     "id": "hsk6-0129",
@@ -7295,7 +7423,8 @@
       "hsk6-0130"
     ],
     "explanation": "",
-    "translationEn": "scene; setting; situation"
+    "translationEn": "scene; setting; situation",
+    "explanationEn": "The noun 场景 (chǎngjǐng) means \"scene\". It can also be translated as \"setting\", \"situation\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0130": {
     "id": "hsk6-0130",
@@ -7353,7 +7482,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "scene; spectacle; situation"
+    "translationEn": "scene; spectacle; situation",
+    "explanationEn": "The noun 场面 (chǎngmiàn) means \"scene\". It can also be translated as \"spectacle\", \"situation\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0131": {
     "id": "hsk6-0131",
@@ -7405,7 +7535,8 @@
       "hsk6-0052"
     ],
     "translationFrAlt": [],
-    "translationEn": "all year round; for many years"
+    "translationEn": "all year round; for many years",
+    "explanationEn": "The adverb 常年 (chángnián) means \"all year round\". It can also be translated as \"for many years\". It belongs to the time vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0132": {
     "id": "hsk6-0132",
@@ -7460,7 +7591,8 @@
       "hsk6-0369",
       "hsk6-0374"
     ],
-    "translationEn": "manufacturer; producer"
+    "translationEn": "manufacturer; producer",
+    "explanationEn": "The noun 厂商 (chǎngshāng) means \"manufacturer\". It can also be translated as \"producer\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0133": {
     "id": "hsk6-0133",
@@ -7519,7 +7651,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "longevity; live a long life"
+    "translationEn": "longevity; live a long life",
+    "explanationEn": "The adjective 长寿 (chángshòu) means \"longevity\". It can also be translated as \"live a long life\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0134": {
     "id": "hsk6-0134",
@@ -7573,7 +7706,8 @@
       "hsk6-0455"
     ],
     "explanation": "",
-    "translationEn": "unobstructed; smooth; without hindrance"
+    "translationEn": "unobstructed; smooth; without hindrance",
+    "explanationEn": "The adjective 畅通 (chàngtōng) means \"unobstructed\". It can also be translated as \"smooth\", \"without hindrance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0135": {
     "id": "hsk6-0135",
@@ -7631,7 +7765,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "room temperature"
+    "translationEn": "room temperature",
+    "explanationEn": "The noun 常温 (chángwēn) means \"room temperature\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0136": {
     "id": "hsk6-0136",
@@ -7690,7 +7825,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "sell well; best-seller"
+    "translationEn": "sell well; best-seller",
+    "explanationEn": "The adjective 畅销 (chàngxiāo) means \"sell well\". It can also be translated as \"best-seller\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0137": {
     "id": "hsk6-0137",
@@ -7748,7 +7884,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "copy; recopy; plagiarize"
+    "translationEn": "copy; recopy; plagiarize",
+    "explanationEn": "The verb 抄 (chāo) means \"copy\". It can also be translated as \"recopy\", \"plagiarize\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0138": {
     "id": "hsk6-0138",
@@ -7806,7 +7943,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dynastie"
+    "translationEn": "dynastie",
+    "explanationEn": "The noun 朝代 (cháodài) means \"dynastie\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0139": {
     "id": "hsk6-0139",
@@ -7858,7 +7996,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "speculate in stocks"
+    "translationEn": "speculate in stocks",
+    "explanationEn": "炒股 (chǎogǔ) means \"speculate in stocks\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0140": {
     "id": "hsk6-0140",
@@ -7914,7 +8053,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "quarrel"
+    "translationEn": "quarrel",
+    "explanationEn": "The verb 吵架 (chǎojià) means \"quarrel\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0141": {
     "id": "hsk6-0141",
@@ -7972,7 +8112,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "trend; current; fashion"
+    "translationEn": "trend; current; fashion",
+    "explanationEn": "The noun 潮流 (cháoliú) means \"trend\". It can also be translated as \"current\", \"fashion\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0142": {
     "id": "hsk6-0142",
@@ -8030,7 +8171,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "humid; moist"
+    "translationEn": "humid; moist",
+    "explanationEn": "The adjective 潮湿 (cháoshī) means \"humid\". It can also be translated as \"moist\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0143": {
     "id": "hsk6-0143",
@@ -8088,7 +8230,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "mock; ridicule"
+    "translationEn": "mock; ridicule",
+    "explanationEn": "The verb 嘲笑 (cháoxiào) means \"mock\". It can also be translated as \"ridicule\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0144": {
     "id": "hsk6-0144",
@@ -8146,7 +8289,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "surpass; exceed; transcend"
+    "translationEn": "surpass; exceed; transcend",
+    "explanationEn": "The verb 超越 (chāoyuè) means \"surpass\". It can also be translated as \"exceed\", \"transcend\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0145": {
     "id": "hsk6-0145",
@@ -8204,7 +8348,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "search for; consult; make a query"
+    "translationEn": "search for; consult; make a query",
+    "explanationEn": "The verb 查询 (cháxún) means \"search for\". It can also be translated as \"consult\", \"make a query\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0146": {
     "id": "hsk6-0146",
@@ -8258,7 +8403,8 @@
       "hsk6-0047"
     ],
     "explanation": "",
-    "translationEn": "difference; gap; divergence; classifier for difference"
+    "translationEn": "difference; gap; divergence; classifier for difference",
+    "explanationEn": "The noun 差异 (chāyì) means \"difference\". It can also be translated as \"gap\", \"divergence\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0147": {
     "id": "hsk6-0147",
@@ -8316,7 +8462,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "power outlet"
+    "translationEn": "power outlet",
+    "explanationEn": "The noun 插座 (chāzuò) means \"power outlet\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0148": {
     "id": "hsk6-0148",
@@ -8374,7 +8521,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "revoke; withdraw; recall"
+    "translationEn": "revoke; withdraw; recall",
+    "explanationEn": "The verb 撤回 (chèhuí) means \"revoke\". It can also be translated as \"withdraw\", \"recall\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0149": {
     "id": "hsk6-0149",
@@ -8432,7 +8580,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "take advantage of; while"
+    "translationEn": "take advantage of; while",
+    "explanationEn": "The preposition 趁 (chèn) means \"take advantage of\". It can also be translated as \"while\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0150": {
     "id": "hsk6-0150",
@@ -8491,7 +8640,8 @@
       "hsk6-0164",
       "hsk6-0185"
     ],
-    "translationEn": "become; succeed; accomplish; classifier for success"
+    "translationEn": "become; succeed; accomplish; classifier for success",
+    "explanationEn": "The measure word 成 (chéng) means \"become\". It can also be translated as \"succeed\", \"accomplish\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0151": {
     "id": "hsk6-0151",
@@ -8535,7 +8685,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to multiply by two"
+    "translationEn": "to multiply by two",
+    "explanationEn": "乘2 (chéng) means \"to multiply by two\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0152": {
     "id": "hsk6-0152",
@@ -8593,7 +8744,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to serve (food); to contain; to fill"
+    "translationEn": "to serve (food); to contain; to fill",
+    "explanationEn": "The verb 盛 (chéng) means \"to serve (food)\". It can also be translated as \"to contain\", \"to fill\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0153": {
     "id": "hsk6-0153",
@@ -8649,7 +8801,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "to support; to uphold; to stand up for"
+    "translationEn": "to support; to uphold; to stand up for",
+    "explanationEn": "The verb 撑 (chēng) means \"to support\". It can also be translated as \"to uphold\", \"to stand up for\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0154": {
     "id": "hsk6-0154",
@@ -8707,7 +8860,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to handle; to organize"
+    "translationEn": "to handle; to organize",
+    "explanationEn": "The verb 承办 (chéngbàn) means \"to handle\". It can also be translated as \"to organize\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0155": {
     "id": "hsk6-0155",
@@ -8766,7 +8920,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to punish; to chastise; punishment"
+    "translationEn": "to punish; to chastise; punishment",
+    "explanationEn": "The verb 惩罚 (chéngfá) means \"to punish\". It can also be translated as \"to chastise\", \"punishment\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0156": {
     "id": "hsk6-0156",
@@ -8824,7 +8979,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "title; honorific title"
+    "translationEn": "title; honorific title",
+    "explanationEn": "The noun 称号 (chēnghào) means \"title\". It can also be translated as \"honorific title\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0157": {
     "id": "hsk6-0157",
@@ -8883,7 +9039,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to call someone; to address someone; appellation"
+    "translationEn": "to call someone; to address someone; appellation",
+    "explanationEn": "The verb 称呼 (chēnghu) means \"to call someone\". It can also be translated as \"to address someone\", \"appellation\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0158": {
     "id": "hsk6-0158",
@@ -8942,7 +9099,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to conclude a deal; transaction"
+    "translationEn": "to conclude a deal; transaction",
+    "explanationEn": "The verb 成交 (chéngjiāo) means \"to conclude a deal\". It can also be translated as \"transaction\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0159": {
     "id": "hsk6-0159",
@@ -8998,7 +9156,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to promise; engagement; promise"
+    "translationEn": "to promise; engagement; promise",
+    "explanationEn": "The verb 承诺 (chéngnuò) means \"to promise\". It can also be translated as \"engagement\", \"promise\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0160": {
     "id": "hsk6-0160",
@@ -9056,7 +9215,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "thousands upon thousands; countless"
+    "translationEn": "thousands upon thousands; countless",
+    "explanationEn": "The expression 成千上万 (chéngqiān-shàngwàn) means \"thousands upon thousands\". It can also be translated as \"countless\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0161": {
     "id": "hsk6-0161",
@@ -9114,7 +9274,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to present; to show; to manifest"
+    "translationEn": "to present; to show; to manifest",
+    "explanationEn": "The verb 呈现 (chéngxiàn) means \"to present\". It can also be translated as \"to show\", \"to manifest\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0162": {
     "id": "hsk6-0162",
@@ -9172,7 +9333,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "result; effectiveness; effect"
+    "translationEn": "result; effectiveness; effect",
+    "explanationEn": "The noun 成效 (chéngxiào) means \"result\". It can also be translated as \"effectiveness\", \"effect\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0163": {
     "id": "hsk6-0163",
@@ -9230,7 +9392,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "honesty; integrity; good faith"
+    "translationEn": "honesty; integrity; good faith",
+    "explanationEn": "The noun 诚信 (chéngxìn) means \"honesty\". It can also be translated as \"integrity\", \"good faith\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0164": {
     "id": "hsk6-0164",
@@ -9288,7 +9451,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "idiomatic expression; Chinese proverb"
+    "translationEn": "idiomatic expression; Chinese proverb",
+    "explanationEn": "The noun 成语 (chéngyǔ) means \"idiomatic expression\". It can also be translated as \"Chinese proverb\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0165": {
     "id": "hsk6-0165",
@@ -9340,7 +9504,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "city and town; urban area"
+    "translationEn": "city and town; urban area",
+    "explanationEn": "The noun 城镇 (chéngzhèn) means \"city and town\". It can also be translated as \"urban area\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0166": {
     "id": "hsk6-0166",
@@ -9398,7 +9563,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to call...as; to name"
+    "translationEn": "to call...as; to name",
+    "explanationEn": "The verb 称作 (chēngzuò) means \"to call...as\". It can also be translated as \"to name\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0167": {
     "id": "hsk6-0167",
@@ -9456,7 +9622,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "heavy; weighty; oppressive"
+    "translationEn": "heavy; weighty; oppressive",
+    "explanationEn": "The adjective 沉重 (chénzhòng) means \"heavy\". It can also be translated as \"weighty\", \"oppressive\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0168": {
     "id": "hsk6-0168",
@@ -9510,7 +9677,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to cancel; to revoke; to annul"
+    "translationEn": "to cancel; to revoke; to annul",
+    "explanationEn": "The verb 撤销 (chèxiāo) means \"to cancel\". It can also be translated as \"to revoke\", \"to annul\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0169": {
     "id": "hsk6-0169",
@@ -9568,7 +9736,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "classifier for ruler; measure word for ruler"
+    "translationEn": "classifier for ruler; measure word for ruler",
+    "explanationEn": "The noun 尺 (chǐ) means \"classifier for ruler\". It can also be translated as \"measure word for ruler\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0170": {
     "id": "hsk6-0170",
@@ -9626,7 +9795,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dimension; size; measurement"
+    "translationEn": "dimension; size; measurement",
+    "explanationEn": "The noun 尺寸 (chǐcùn) means \"dimension\". It can also be translated as \"size\", \"measurement\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0171": {
     "id": "hsk6-0171",
@@ -9684,7 +9854,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "durable; lasting; persistent"
+    "translationEn": "durable; lasting; persistent",
+    "explanationEn": "The adjective 持久 (chíjiǔ) means \"durable\". It can also be translated as \"lasting\", \"persistent\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0172": {
     "id": "hsk6-0172",
@@ -9739,7 +9910,8 @@
       "hsk6-0032"
     ],
     "explanation": "",
-    "translationEn": "to hold; to possess"
+    "translationEn": "to hold; to possess",
+    "explanationEn": "The verb 持有 (chíyǒu) means \"to hold\". It can also be translated as \"to possess\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0173": {
     "id": "hsk6-0173",
@@ -9801,7 +9973,8 @@
       "hsk6-0011",
       "hsk6-0013"
     ],
-    "translationEn": "towards; against; directly (in a figurative sense); sometimes: pungent (smell; taste)"
+    "translationEn": "towards; against; directly (in a figurative sense); sometimes: pungent (smell; taste)",
+    "explanationEn": "The preposition 冲 (chòng) means \"towards\". It can also be translated as \"against\", \"directly (in a figurative sense)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0174": {
     "id": "hsk6-0174",
@@ -9857,7 +10030,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to worship; to venerate; to idolize"
+    "translationEn": "to worship; to venerate; to idolize",
+    "explanationEn": "The verb 崇拜 (chóngbài) means \"to worship\". It can also be translated as \"to venerate\", \"to idolize\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0175": {
     "id": "hsk6-0175",
@@ -9916,7 +10090,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "impulsive; hasty"
+    "translationEn": "impulsive; hasty",
+    "explanationEn": "The adjective 冲动 (chōngdòng) means \"impulsive\". It can also be translated as \"hasty\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0176": {
     "id": "hsk6-0176",
@@ -9971,7 +10146,8 @@
       "hsk6-0250",
       "hsk6-0289"
     ],
-    "translationEn": "to impact; to collide with; to strike"
+    "translationEn": "to impact; to collide with; to strike",
+    "explanationEn": "The verb 冲击 (chōngjī) means \"to impact\". It can also be translated as \"to collide with\", \"to strike\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0177": {
     "id": "hsk6-0177",
@@ -10025,7 +10201,8 @@
       "hsk6-0022",
       "hsk6-0023"
     ],
-    "translationEn": "to rebuild; reconstruction"
+    "translationEn": "to rebuild; reconstruction",
+    "explanationEn": "The verb 重建 (chóngjiàn) means \"to rebuild\". It can also be translated as \"reconstruction\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0178": {
     "id": "hsk6-0178",
@@ -10084,7 +10261,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "replenish; enrich; full"
+    "translationEn": "replenish; enrich; full",
+    "explanationEn": "The verb 充实 (chōngshí) means \"replenish\". It can also be translated as \"enrich\", \"full\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0179": {
     "id": "hsk6-0179",
@@ -10140,7 +10318,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "conflict"
+    "translationEn": "conflict",
+    "explanationEn": "The noun 冲突 (chōngtū) means \"conflict\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0180": {
     "id": "hsk6-0180",
@@ -10198,7 +10377,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to worry about"
+    "translationEn": "to worry about",
+    "explanationEn": "The verb 愁 (chóu) means \"to worry about\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0181": {
     "id": "hsk6-0181",
@@ -10256,7 +10436,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "prepare; organize in advance"
+    "translationEn": "prepare; organize in advance",
+    "explanationEn": "The verb 筹备 (chóubèi) means \"prepare\". It can also be translated as \"organize in advance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0182": {
     "id": "hsk6-0182",
@@ -10315,7 +10496,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "draw lottery; draw lots"
+    "translationEn": "draw lottery; draw lots",
+    "explanationEn": "The verb 抽奖 (chōujiǎng) means \"draw lottery\". It can also be translated as \"draw lots\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0183": {
     "id": "hsk6-0183",
@@ -10374,7 +10556,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "abstract; abstraction"
+    "translationEn": "abstract; abstraction",
+    "explanationEn": "The adjective 抽象 (chōuxiàng) means \"abstract\". It can also be translated as \"abstraction\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0184": {
     "id": "hsk6-0184",
@@ -10433,7 +10616,8 @@
       "hsk6-0013",
       "hsk6-0022"
     ],
-    "translationEn": "divide; remove; except"
+    "translationEn": "divide; remove; except",
+    "explanationEn": "The preposition 除 (chú) means \"divide\". It can also be translated as \"remove\", \"except\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0185": {
     "id": "hsk6-0185",
@@ -10490,7 +10674,8 @@
       "hsk6-0022",
       "hsk6-0023"
     ],
-    "translationEn": "classifier for threading; skewer; series"
+    "translationEn": "classifier for threading; skewer; series",
+    "explanationEn": "The measure word 串 (chuàn) means \"classifier for threading\". It can also be translated as \"skewer\", \"series\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0186": {
     "id": "hsk6-0186",
@@ -10549,7 +10734,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "transmit; inheritance; perpetuate"
+    "translationEn": "transmit; inheritance; perpetuate",
+    "explanationEn": "The verb 传承 (chuánchéng) means \"transmit\". It can also be translated as \"inheritance\", \"perpetuate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0187": {
     "id": "hsk6-0187",
@@ -10607,7 +10793,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "transmit; communicate; pass on"
+    "translationEn": "transmit; communicate; pass on",
+    "explanationEn": "The verb 传达 (chuándá) means \"transmit\". It can also be translated as \"communicate\", \"pass on\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0188": {
     "id": "hsk6-0188",
@@ -10665,7 +10852,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "rush into; charge at; brave"
+    "translationEn": "rush into; charge at; brave",
+    "explanationEn": "The verb 闯 (chuǎng) means \"rush into\". It can also be translated as \"charge at\", \"brave\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0189": {
     "id": "hsk6-0189",
@@ -10720,7 +10908,8 @@
       "hsk6-0023"
     ],
     "explanation": "",
-    "translationEn": "found; establish; create"
+    "translationEn": "found; establish; create",
+    "explanationEn": "The verb 创办 (chuàngbàn) means \"found\". It can also be translated as \"establish\", \"create\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0190": {
     "id": "hsk6-0190",
@@ -10774,7 +10963,8 @@
       "hsk6-0023"
     ],
     "explanation": "",
-    "translationEn": "founded; established; created"
+    "translationEn": "founded; established; created",
+    "explanationEn": "The verb 创建 (chuàngjiàn) means \"founded\". It can also be translated as \"established\", \"created\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0191": {
     "id": "hsk6-0191",
@@ -10828,7 +11018,8 @@
       "hsk6-0027",
       "hsk6-0041"
     ],
-    "translationEn": "window; windowpane; counter"
+    "translationEn": "window; windowpane; counter",
+    "explanationEn": "The noun 窗口 (chuāngkǒu) means \"window\". It can also be translated as \"windowpane\", \"counter\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0192": {
     "id": "hsk6-0192",
@@ -10886,7 +11077,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "founded; established; created"
+    "translationEn": "founded; established; created",
+    "explanationEn": "The verb 创立 (chuànglì) means \"founded\". It can also be translated as \"established\", \"created\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0193": {
     "id": "hsk6-0193",
@@ -10944,7 +11136,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "pass through; traverse"
+    "translationEn": "pass through; traverse",
+    "explanationEn": "The verb 穿过 (chuānguò) means \"pass through\". It can also be translated as \"traverse\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0194": {
     "id": "hsk6-0194",
@@ -11000,7 +11193,8 @@
       "hsk6-0013",
       "hsk6-0026"
     ],
-    "translationEn": "creativity; creative idea"
+    "translationEn": "creativity; creative idea",
+    "explanationEn": "The noun 创意 (chuàngyì) means \"creativity\". It can also be translated as \"creative idea\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0195": {
     "id": "hsk6-0195",
@@ -11056,7 +11250,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "contagious"
+    "translationEn": "contagious",
+    "explanationEn": "传染 (chuánrǎn) means \"contagious\". It belongs to the health vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0196": {
     "id": "hsk6-0196",
@@ -11114,7 +11309,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "contagious disease; infectious disease"
+    "translationEn": "contagious disease; infectious disease",
+    "explanationEn": "The noun 传染病 (chuánrǎnbìng) means \"contagious disease\". It can also be translated as \"infectious disease\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0197": {
     "id": "hsk6-0197",
@@ -11172,7 +11368,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to teach; to transmit (knowledge)"
+    "translationEn": "to teach; to transmit (knowledge)",
+    "explanationEn": "The verb 传授 (chuánshòu) means \"to teach\". It can also be translated as \"to transmit (knowledge)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0198": {
     "id": "hsk6-0198",
@@ -11228,7 +11425,8 @@
       "hsk6-0197",
       "hsk6-0199"
     ],
-    "translationEn": "to transmit; to transfer; transmission"
+    "translationEn": "to transmit; to transfer; transmission",
+    "explanationEn": "The verb 传输 (chuánshū) means \"to transmit\". It can also be translated as \"to transfer\", \"transmission\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0199": {
     "id": "hsk6-0199",
@@ -11286,7 +11484,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fax; facsimile"
+    "translationEn": "fax; facsimile",
+    "explanationEn": "The noun 传真 (chuánzhēn) means \"fax\". It can also be translated as \"facsimile\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0200": {
     "id": "hsk6-0200",
@@ -11340,7 +11539,8 @@
       "hsk6-0041",
       "hsk6-0047"
     ],
-    "translationEn": "vessel; ship; maritime vessel"
+    "translationEn": "vessel; ship; maritime vessel",
+    "explanationEn": "The noun 船只 (chuánzhī) means \"vessel\". It can also be translated as \"ship\", \"maritime vessel\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0201": {
     "id": "hsk6-0201",
@@ -11398,7 +11598,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "initial; preliminary; primary"
+    "translationEn": "initial; preliminary; primary",
+    "explanationEn": "The adjective 初步 (chūbù) means \"initial\". It can also be translated as \"preliminary\", \"primary\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0202": {
     "id": "hsk6-0202",
@@ -11454,7 +11655,8 @@
       "hsk6-0213",
       "hsk6-0119"
     ],
-    "translationEn": "to appear on stage; to make an appearance"
+    "translationEn": "to appear on stage; to make an appearance",
+    "explanationEn": "出场 (chūchǎng) means \"to appear on stage\". It can also be translated as \"to make an appearance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0203": {
     "id": "hsk6-0203",
@@ -11508,7 +11710,8 @@
       "hsk6-0011",
       "hsk6-0013"
     ],
-    "translationEn": "everywhere; in all places"
+    "translationEn": "everywhere; in all places",
+    "explanationEn": "The adverb 处处 (chùchù) means \"everywhere\". It can also be translated as \"in all places\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0204": {
     "id": "hsk6-0204",
@@ -11562,7 +11765,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to store; to keep; to preserve"
+    "translationEn": "to store; to keep; to preserve",
+    "explanationEn": "The verb 储存 (chǔcún) means \"to store\". It can also be translated as \"to keep\", \"to preserve\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0205": {
     "id": "hsk6-0205",
@@ -11616,7 +11820,8 @@
       "hsk6-0134"
     ],
     "explanation": "",
-    "translationEn": "elementary; primary"
+    "translationEn": "elementary; primary",
+    "explanationEn": "The adjective 初等 (chūděng) means \"elementary\". It can also be translated as \"primary\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0206": {
     "id": "hsk6-0206",
@@ -11675,7 +11880,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to punish; to penalize; to sanction"
+    "translationEn": "to punish; to penalize; to sanction",
+    "explanationEn": "The verb 处罚 (chǔfá) means \"to punish\". It can also be translated as \"to penalize\", \"to sanction\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0207": {
     "id": "hsk6-0207",
@@ -11733,7 +11939,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "except if; unless"
+    "translationEn": "except if; unless",
+    "explanationEn": "The conjunction 除非 (chúfēi) means \"except if\". It can also be translated as \"unless\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0208": {
     "id": "hsk6-0208",
@@ -11791,7 +11998,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "vertical; perpendicular"
+    "translationEn": "vertical; perpendicular",
+    "explanationEn": "The adjective 垂直 (chuízhí) means \"vertical\". It can also be translated as \"perpendicular\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0209": {
     "id": "hsk6-0209",
@@ -11849,7 +12057,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to leave the country; to exit the territory"
+    "translationEn": "to leave the country; to exit the territory",
+    "explanationEn": "The verb 出境 (chūjìng) means \"to leave the country\". It can also be translated as \"to exit the territory\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0210": {
     "id": "hsk6-0210",
@@ -11907,7 +12116,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to exert effort; to contribute"
+    "translationEn": "to exert effort; to contribute",
+    "explanationEn": "The verb 出力 (chūlì) means \"to exert effort\". It can also be translated as \"to contribute\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0211": {
     "id": "hsk6-0211",
@@ -11962,7 +12172,8 @@
       "hsk6-0210",
       "hsk6-0214"
     ],
-    "translationEn": "become famous; famous"
+    "translationEn": "become famous; famous",
+    "explanationEn": "出名 (chūmíng) means \"become famous\". It can also be translated as \"famous\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0212": {
     "id": "hsk6-0212",
@@ -12020,7 +12231,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "pure; simple; solely"
+    "translationEn": "pure; simple; solely",
+    "explanationEn": "The adjective 纯 (chún) means \"pure\". It can also be translated as \"simple\", \"solely\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0213": {
     "id": "hsk6-0213",
@@ -12075,7 +12287,8 @@
       "hsk6-0210",
       "hsk6-0214"
     ],
-    "translationEn": "enter and exit; access; divergence"
+    "translationEn": "enter and exit; access; divergence",
+    "explanationEn": "The verb 出入 (chūrù) means \"enter and exit\". It can also be translated as \"access\", \"divergence\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0214": {
     "id": "hsk6-0214",
@@ -12133,7 +12346,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "show; present; exhibit"
+    "translationEn": "show; present; exhibit",
+    "explanationEn": "The verb 出示 (chūshì) means \"show\". It can also be translated as \"present\", \"exhibit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0215": {
     "id": "hsk6-0215",
@@ -12192,7 +12406,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "save; deposit; savings"
+    "translationEn": "save; deposit; savings",
+    "explanationEn": "The verb 储蓄 (chǔxù) means \"save\". It can also be translated as \"deposit\", \"savings\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0216": {
     "id": "hsk6-0216",
@@ -12250,7 +12465,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "go out; take a trip; travel"
+    "translationEn": "go out; take a trip; travel",
+    "explanationEn": "The verb 出游 (chūyóu) means \"go out\". It can also be translated as \"take a trip\", \"travel\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0217": {
     "id": "hsk6-0217",
@@ -12308,7 +12524,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "because of; due to"
+    "translationEn": "because of; due to",
+    "explanationEn": "The verb 出于 (chūyú) means \"because of\". It can also be translated as \"due to\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0218": {
     "id": "hsk6-0218",
@@ -12366,7 +12583,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "thorn"
+    "translationEn": "thorn",
+    "explanationEn": "The noun 刺 (cì) means \"thorn\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0219": {
     "id": "hsk6-0219",
@@ -12424,7 +12642,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "at this moment; at the moment; just now"
+    "translationEn": "at this moment; at the moment; just now",
+    "explanationEn": "The noun 此刻 (cǐkè) means \"at this moment\". It can also be translated as \"at the moment\", \"just now\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0220": {
     "id": "hsk6-0220",
@@ -12482,7 +12701,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "porcelain"
+    "translationEn": "porcelain",
+    "explanationEn": "The noun 瓷器 (cíqì) means \"porcelain\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0221": {
     "id": "hsk6-0221",
@@ -12536,7 +12756,8 @@
       "hsk6-0026",
       "hsk6-0027"
     ],
-    "translationEn": "number of times; frequency"
+    "translationEn": "number of times; frequency",
+    "explanationEn": "The noun 次数 (cìshù) means \"number of times\". It can also be translated as \"frequency\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0222": {
     "id": "hsk6-0222",
@@ -12594,7 +12815,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "hastily; hurriedly"
+    "translationEn": "hastily; hurriedly",
+    "explanationEn": "The noun 匆匆 (cōngcōng) means \"hastily\". It can also be translated as \"hurriedly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0223": {
     "id": "hsk6-0223",
@@ -12652,7 +12874,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "hurried; rushed"
+    "translationEn": "hurried; rushed",
+    "explanationEn": "The adjective 匆忙 (cōngmáng) means \"hurried\". It can also be translated as \"rushed\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0224": {
     "id": "hsk6-0224",
@@ -12711,7 +12934,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "never before"
+    "translationEn": "never before",
+    "explanationEn": "从未 (cóngwèi) means \"never before\". It belongs to the euphemism vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0225": {
     "id": "hsk6-0225",
@@ -12769,7 +12993,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "work in; be engaged in"
+    "translationEn": "work in; be engaged in",
+    "explanationEn": "The noun 从业 (cóngyè) means \"work in\". It can also be translated as \"be engaged in\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0226": {
     "id": "hsk6-0226",
@@ -12823,7 +13048,8 @@
       "hsk6-0041",
       "hsk6-0047"
     ],
-    "translationEn": "vinegar"
+    "translationEn": "vinegar",
+    "explanationEn": "The noun 醋 (cù) means \"vinegar\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0227": {
     "id": "hsk6-0227",
@@ -12881,7 +13107,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "crispy; crunchy"
+    "translationEn": "crispy; crunchy",
+    "explanationEn": "The adjective 脆 (cuì) means \"crispy\". It can also be translated as \"crunchy\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0228": {
     "id": "hsk6-0228",
@@ -12939,7 +13166,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fragile; vulnerable"
+    "translationEn": "fragile; vulnerable",
+    "explanationEn": "The noun 脆弱 (cuìruò) means \"fragile\". It can also be translated as \"vulnerable\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0229": {
     "id": "hsk6-0229",
@@ -12997,7 +13225,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "inch (Chinese measurement)"
+    "translationEn": "inch (Chinese measurement)",
+    "explanationEn": "The noun 寸 (cùn) means \"inch (Chinese measurement)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0230": {
     "id": "hsk6-0230",
@@ -13056,7 +13285,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to store; storage; memory (computing)"
+    "translationEn": "to store; storage; memory (computing)",
+    "explanationEn": "The noun 存储 (cúnchǔ) means \"to store\". It can also be translated as \"storage\", \"memory (computing)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0231": {
     "id": "hsk6-0231",
@@ -13111,7 +13341,8 @@
       "hsk6-0041",
       "hsk6-0047"
     ],
-    "translationEn": "village"
+    "translationEn": "village",
+    "explanationEn": "The noun 村庄 (cūnzhuāng) means \"village\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0232": {
     "id": "hsk6-0232",
@@ -13169,7 +13400,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "setback; defeat; frustration; mishap"
+    "translationEn": "setback; defeat; frustration; mishap",
+    "explanationEn": "The noun 挫折 (cuòzhé) means \"setback\". It can also be translated as \"defeat\", \"frustration\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0233": {
     "id": "hsk6-0233",
@@ -13230,7 +13462,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "to join; to take; to construct; to interact"
+    "translationEn": "to join; to take; to construct; to interact",
+    "explanationEn": "The verb 搭 (dā) means \"to join\". It can also be translated as \"to take\", \"to construct\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0234": {
     "id": "hsk6-0234",
@@ -13288,7 +13521,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to have dealings with; to enter into contact with; to deal with; to negotiate with"
+    "translationEn": "to have dealings with; to enter into contact with; to deal with; to negotiate with",
+    "explanationEn": "The verb 打交道 (dǎ jiāodao) means \"to have dealings with\". It can also be translated as \"to enter into contact with\", \"to deal with\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0235": {
     "id": "hsk6-0235",
@@ -13346,7 +13580,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "minister; imperial counselor"
+    "translationEn": "minister; imperial counselor",
+    "explanationEn": "The noun 大臣 (dàchén) means \"minister\". It can also be translated as \"imperial counselor\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0236": {
     "id": "hsk6-0236",
@@ -13404,7 +13639,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "be greatly surprised; be shocked; be stunned"
+    "translationEn": "be greatly surprised; be shocked; be stunned",
+    "explanationEn": "The verb 大吃一惊 (dàchī-yìjīng) means \"be greatly surprised\". It can also be translated as \"be shocked\", \"be stunned\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0237": {
     "id": "hsk6-0237",
@@ -13462,7 +13698,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "earth; ground"
+    "translationEn": "earth; ground",
+    "explanationEn": "The noun 大地 (dàdì) means \"earth\". It can also be translated as \"ground\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0238": {
     "id": "hsk6-0238",
@@ -13517,7 +13754,8 @@
       "hsk6-0250",
       "hsk6-0251"
     ],
-    "translationEn": "to touch emotionally; to move"
+    "translationEn": "to touch emotionally; to move",
+    "explanationEn": "The verb 打动 (dǎdòng) means \"to touch emotionally\". It can also be translated as \"to move\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0239": {
     "id": "hsk6-0239",
@@ -13575,7 +13813,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "mainly; mostly; generally"
+    "translationEn": "mainly; mostly; generally",
+    "explanationEn": "The noun 大都 (dàdū) means \"mainly\". It can also be translated as \"mostly\", \"generally\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0240": {
     "id": "hsk6-0240",
@@ -13633,7 +13872,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "generous; open-handed; magnanimous (in terms of behavior or style)"
+    "translationEn": "generous; open-handed; magnanimous (in terms of behavior or style)",
+    "explanationEn": "The noun 大方 (dàfang) means \"generous\". It can also be translated as \"open-handed\", \"magnanimous (in terms of behavior or style)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0241": {
     "id": "hsk6-0241",
@@ -13691,7 +13931,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "reply to a question or formal request"
+    "translationEn": "reply to a question or formal request",
+    "explanationEn": "The noun 答复 (dáfù) means \"reply to a question or formal request\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0242": {
     "id": "hsk6-0242",
@@ -13749,7 +13990,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "significantly; considerably"
+    "translationEn": "significantly; considerably",
+    "explanationEn": "The noun 大幅 (dàfú) means \"significantly\". It can also be translated as \"considerably\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0243": {
     "id": "hsk6-0243",
@@ -13807,7 +14049,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "everyone; people"
+    "translationEn": "everyone; people",
+    "explanationEn": "The noun 大伙儿 (dàhuǒr) means \"everyone\". It can also be translated as \"people\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0244": {
     "id": "hsk6-0244",
@@ -13865,7 +14108,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "handle; receive"
+    "translationEn": "handle; receive",
+    "explanationEn": "The verb 待 (dài) means \"handle\". It can also be translated as \"receive\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0245": {
     "id": "hsk6-0245",
@@ -13923,7 +14167,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "stay; remain; be stupid"
+    "translationEn": "stay; remain; be stupid",
+    "explanationEn": "The verb 呆 (dāi) means \"stay\". It can also be translated as \"remain\", \"be stupid\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0246": {
     "id": "hsk6-0246",
@@ -13981,7 +14226,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "price; cost; sacrifice"
+    "translationEn": "price; cost; sacrifice",
+    "explanationEn": "The noun 代价 (dàijià) means \"price\". It can also be translated as \"cost\", \"sacrifice\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0247": {
     "id": "hsk6-0247",
@@ -14037,7 +14283,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "loan"
+    "translationEn": "loan",
+    "explanationEn": "贷款 (dàikuǎn) means \"loan\". It belongs to the money vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0248": {
     "id": "hsk6-0248",
@@ -14095,7 +14342,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "agent; represent; act on behalf of"
+    "translationEn": "agent; represent; act on behalf of",
+    "explanationEn": "The noun 代理 (dàilǐ) means \"agent\". It can also be translated as \"represent\", \"act on behalf of\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0249": {
     "id": "hsk6-0249",
@@ -14153,7 +14401,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "lead; guide; direct"
+    "translationEn": "lead; guide; direct",
+    "explanationEn": "The verb 带领 (dàilǐng) means \"lead\". It can also be translated as \"guide\", \"direct\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0250": {
     "id": "hsk6-0250",
@@ -14211,7 +14460,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "strike; attack; repress"
+    "translationEn": "strike; attack; repress",
+    "explanationEn": "The verb 打击 (dǎjī) means \"strike\". It can also be translated as \"attack\", \"repress\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0251": {
     "id": "hsk6-0251",
@@ -14269,7 +14519,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fight; brawl"
+    "translationEn": "fight; brawl",
+    "explanationEn": "The verb 打架 (dǎjià) means \"fight\". It can also be translated as \"brawl\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0252": {
     "id": "hsk6-0252",
@@ -14327,7 +14578,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "clock in"
+    "translationEn": "clock in",
+    "explanationEn": "The verb 打卡 (dǎkǎ) means \"clock in\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0253": {
     "id": "hsk6-0253",
@@ -14384,7 +14636,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "thunder"
+    "translationEn": "thunder",
+    "explanationEn": "The verb 打雷 (dǎléi) means \"thunder\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0254": {
     "id": "hsk6-0254",
@@ -14441,7 +14694,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "protein"
+    "translationEn": "protein",
+    "explanationEn": "The noun 蛋白质 (dànbáizhì) means \"protein\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0255": {
     "id": "hsk6-0255",
@@ -14499,7 +14753,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "simple; pure; innocent"
+    "translationEn": "simple; pure; innocent",
+    "explanationEn": "The noun 单纯 (dānchún) means \"simple\". It can also be translated as \"pure\", \"innocent\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0256": {
     "id": "hsk6-0256",
@@ -14557,7 +14812,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "monotonous; boring; repetitive"
+    "translationEn": "monotonous; boring; repetitive",
+    "explanationEn": "The noun 单调 (dāndiào) means \"monotonous\". It can also be translated as \"boring\", \"repetitive\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0257": {
     "id": "hsk6-0257",
@@ -14609,7 +14865,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "file; dossier (informational or administrative)"
+    "translationEn": "file; dossier (informational or administrative)",
+    "explanationEn": "The noun 档案 (dàng'àn) means \"file\". It can also be translated as \"dossier (informational or administrative)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0258": {
     "id": "hsk6-0258",
@@ -14667,7 +14924,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "on the spot; immediately; on the scene"
+    "translationEn": "on the spot; immediately; on the scene",
+    "explanationEn": "The noun 当场 (dāngchǎng) means \"on the spot\". It can also be translated as \"immediately\", \"on the scene\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0259": {
     "id": "hsk6-0259",
@@ -14725,7 +14983,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "at first; originally; in the past"
+    "translationEn": "at first; originally; in the past",
+    "explanationEn": "The noun 当初 (dāngchū) means \"at first\". It can also be translated as \"originally\", \"in the past\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0260": {
     "id": "hsk6-0260",
@@ -14783,7 +15042,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "contemporary; nowadays"
+    "translationEn": "contemporary; nowadays",
+    "explanationEn": "The noun 当代 (dāngdài) means \"contemporary\". It can also be translated as \"nowadays\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0261": {
     "id": "hsk6-0261",
@@ -14841,7 +15101,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "today; currently"
+    "translationEn": "today; currently",
+    "explanationEn": "The noun 当今 (dāngjīn) means \"today\". It can also be translated as \"currently\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0262": {
     "id": "hsk6-0262",
@@ -14893,7 +15154,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in person; face-to-face; directly"
+    "translationEn": "in person; face-to-face; directly",
+    "explanationEn": "The noun 当面 (dāngmiàn) means \"in person\". It can also be translated as \"face-to-face\", \"directly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0263": {
     "id": "hsk6-0263",
@@ -14947,7 +15209,8 @@
       "hsk6-0264"
     ],
     "explanation": "",
-    "translationEn": "the same day; that day"
+    "translationEn": "the same day; that day",
+    "explanationEn": "The noun 当天 (dàngtiān) means \"the same day\". It can also be translated as \"that day\". It belongs to the time vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0264": {
     "id": "hsk6-0264",
@@ -15005,7 +15268,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "present moment; now"
+    "translationEn": "present moment; now",
+    "explanationEn": "The noun 当下 (dāngxià) means \"present moment\". It can also be translated as \"now\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0265": {
     "id": "hsk6-0265",
@@ -15063,7 +15327,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "be elected; be chosen for a post or position"
+    "translationEn": "be elected; be chosen for a post or position",
+    "explanationEn": "The noun 当选 (dāngxuǎn) means \"be elected\". It can also be translated as \"be chosen for a post or position\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0266": {
     "id": "hsk6-0266",
@@ -15117,7 +15382,8 @@
       "hsk6-0045"
     ],
     "explanation": "",
-    "translationEn": "come into being; be born; see the light (of an idea or event)"
+    "translationEn": "come into being; be born; see the light (of an idea or event)",
+    "explanationEn": "The verb 诞生 (dànshēng) means \"come into being\". It can also be translated as \"be born\", \"see the light (of an idea or event)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0267": {
     "id": "hsk6-0267",
@@ -15175,7 +15441,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "delay; miss a chance due to unforeseen circumstances"
+    "translationEn": "delay; miss a chance due to unforeseen circumstances",
+    "explanationEn": "The noun 耽误 (dānwu) means \"delay\". It can also be translated as \"miss a chance due to unforeseen circumstances\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0268": {
     "id": "hsk6-0268",
@@ -15229,7 +15496,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "worry about; be concerned about something (often related to future problems or potential risks)"
+    "translationEn": "worry about; be concerned about something (often related to future problems or potential risks)",
+    "explanationEn": "The verb 担忧 (dānyōu) means \"worry about\". It can also be translated as \"be concerned about something (often related to future problems or potential risks)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0269": {
     "id": "hsk6-0269",
@@ -15282,7 +15550,8 @@
       "hsk6-0041",
       "hsk6-0047"
     ],
-    "translationEn": "island"
+    "translationEn": "island",
+    "explanationEn": "The noun 岛 (dǎo) means \"island\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0270": {
     "id": "hsk6-0270",
@@ -15340,7 +15609,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "closure"
+    "translationEn": "closure",
+    "explanationEn": "The noun 倒闭 (dǎobì) means \"closure\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0271": {
     "id": "hsk6-0271",
@@ -15398,7 +15668,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "reverse; to reverse"
+    "translationEn": "reverse; to reverse",
+    "explanationEn": "The noun 倒车 (dǎochē) means \"reverse\". It can also be translated as \"to reverse\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0272": {
     "id": "hsk6-0272",
@@ -15456,7 +15727,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "morality; ethics"
+    "translationEn": "morality; ethics",
+    "explanationEn": "The noun 道德 (dàodé) means \"morality\". It can also be translated as \"ethics\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0273": {
     "id": "hsk6-0273",
@@ -15514,7 +15786,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in fact; actually; however"
+    "translationEn": "in fact; actually; however",
+    "explanationEn": "The noun 倒是 (dàoshì) means \"in fact\". It can also be translated as \"actually\", \"however\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0274": {
     "id": "hsk6-0274",
@@ -15570,7 +15843,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "supervisor; thesis advisor"
+    "translationEn": "supervisor; thesis advisor",
+    "explanationEn": "导师 (dǎoshī) means \"supervisor\". It can also be translated as \"thesis advisor\". It belongs to the education vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0275": {
     "id": "hsk6-0275",
@@ -15624,7 +15898,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "match; coordinate (clothing or objects)"
+    "translationEn": "match; coordinate (clothing or objects)",
+    "explanationEn": "The verb 搭配 (dāpèi) means \"match\". It can also be translated as \"coordinate (clothing or objects)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0276": {
     "id": "hsk6-0276",
@@ -15678,7 +15953,8 @@
       "hsk6-0239",
       "hsk6-0240"
     ],
-    "translationEn": "ambassador"
+    "translationEn": "ambassador",
+    "explanationEn": "The noun 大使 (dàshǐ) means \"ambassador\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0277": {
     "id": "hsk6-0277",
@@ -15730,7 +16006,8 @@
       "hsk6-0240"
     ],
     "translationFrAlt": [],
-    "translationEn": "master; great master"
+    "translationEn": "master; great master",
+    "explanationEn": "The noun 大师 (dàshī) means \"master\". It can also be translated as \"great master\". It belongs to the family vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0278": {
     "id": "hsk6-0278",
@@ -15787,7 +16064,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "Oceania"
+    "translationEn": "Oceania",
+    "explanationEn": "The noun 大洋洲 (Dàyángzhōu) means \"Oceania\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0279": {
     "id": "hsk6-0279",
@@ -15843,7 +16121,8 @@
       "hsk6-0252",
       "hsk6-0253"
     ],
-    "translationEn": "create; make; forge"
+    "translationEn": "create; make; forge",
+    "explanationEn": "The verb 打造 (dǎzào) means \"create\". It can also be translated as \"make\", \"forge\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0280": {
     "id": "hsk6-0280",
@@ -15901,7 +16180,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to wage war; to fight; to go to war"
+    "translationEn": "to wage war; to fight; to go to war",
+    "explanationEn": "The verb 打仗 (dǎzhàng) means \"to wage war\". It can also be translated as \"to fight\", \"to go to war\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0281": {
     "id": "hsk6-0281",
@@ -15959,7 +16239,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in general; roughly"
+    "translationEn": "in general; roughly",
+    "explanationEn": "The noun 大致 (dàzhì) means \"in general\". It can also be translated as \"roughly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0282": {
     "id": "hsk6-0282",
@@ -16017,7 +16298,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "finally"
+    "translationEn": "finally",
+    "explanationEn": "The verb 得了 (déle) means \"finally\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0283": {
     "id": "hsk6-0283",
@@ -16074,7 +16356,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "level; grade"
+    "translationEn": "level; grade",
+    "explanationEn": "The noun 等级 (děngjí) means \"level\". It can also be translated as \"grade\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0284": {
     "id": "hsk6-0284",
@@ -16132,7 +16415,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "lantern"
+    "translationEn": "lantern",
+    "explanationEn": "The noun 灯笼 (dēnglong) means \"lantern\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0285": {
     "id": "hsk6-0285",
@@ -16190,7 +16474,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "so as to; in order to"
+    "translationEn": "so as to; in order to",
+    "explanationEn": "The verb 得以 (déyǐ) means \"so as to\". It can also be translated as \"in order to\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0286": {
     "id": "hsk6-0286",
@@ -16248,7 +16533,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to learn of; to find out"
+    "translationEn": "to learn of; to find out",
+    "explanationEn": "The noun 得知 (dézhī) means \"to learn of\". It can also be translated as \"to find out\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0287": {
     "id": "hsk6-0287",
@@ -16302,7 +16588,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "drop; drip"
+    "translationEn": "drop; drip",
+    "explanationEn": "The verb 滴 (dī) means \"drop\". It can also be translated as \"drip\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0288": {
     "id": "hsk6-0288",
@@ -16360,7 +16647,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "electric cooker (for rice)"
+    "translationEn": "electric cooker (for rice)",
+    "explanationEn": "The noun 电饭锅 (diànfànguō) means \"electric cooker (for rice)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0289": {
     "id": "hsk6-0289",
@@ -16416,7 +16704,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to click"
+    "translationEn": "to click",
+    "explanationEn": "点击 (diǎnjī) means \"to click\". It belongs to the technology vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0290": {
     "id": "hsk6-0290",
@@ -16470,7 +16759,8 @@
       "hsk6-0295",
       "hsk6-0318"
     ],
-    "translationEn": "electric power; electricity"
+    "translationEn": "electric power; electricity",
+    "explanationEn": "The noun 电力 (diànlì) means \"electric power\". It can also be translated as \"electricity\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0291": {
     "id": "hsk6-0291",
@@ -16528,7 +16818,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "solemn ceremony; official ceremony (like a wedding or inauguration)"
+    "translationEn": "solemn ceremony; official ceremony (like a wedding or inauguration)",
+    "explanationEn": "The noun 典礼 (diǎnlǐ) means \"solemn ceremony\". It can also be translated as \"official ceremony (like a wedding or inauguration)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0292": {
     "id": "hsk6-0292",
@@ -16586,7 +16877,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "shop; store"
+    "translationEn": "shop; store",
+    "explanationEn": "The noun 店铺 (diànpù) means \"shop\". It can also be translated as \"store\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0293": {
     "id": "hsk6-0293",
@@ -16644,7 +16936,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to ignite; to light up"
+    "translationEn": "to ignite; to light up",
+    "explanationEn": "The verb 点燃 (diǎnrán) means \"to ignite\". It can also be translated as \"to light up\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0294": {
     "id": "hsk6-0294",
@@ -16702,7 +16995,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "typical; model; typical example"
+    "translationEn": "typical; model; typical example",
+    "explanationEn": "The noun 典型 (diǎnxíng) means \"typical\". It can also be translated as \"model\", \"typical example\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0295": {
     "id": "hsk6-0295",
@@ -16760,7 +17054,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "power supply; electric source"
+    "translationEn": "power supply; electric source",
+    "explanationEn": "The noun 电源 (diànyuán) means \"power supply\". It can also be translated as \"electric source\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0296": {
     "id": "hsk6-0296",
@@ -16816,7 +17111,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "to suspend; to hang (an object or person)"
+    "translationEn": "to suspend; to hang (an object or person)",
+    "explanationEn": "The verb 吊 (diào) means \"to suspend\". It can also be translated as \"to hang (an object or person)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0297": {
     "id": "hsk6-0297",
@@ -16874,7 +17170,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to move; to transfer (a person or an object); to change posts (at work or in military life)"
+    "translationEn": "to move; to transfer (a person or an object); to change posts (at work or in military life)",
+    "explanationEn": "The noun 调动 (diàodòng) means \"to move\". It can also be translated as \"to transfer (a person or an object)\", \"to change posts (at work or in military life)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0298": {
     "id": "hsk6-0298",
@@ -16932,7 +17229,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to fish with a rod"
+    "translationEn": "to fish with a rod",
+    "explanationEn": "The noun 钓鱼 (diàoyú) means \"to fish with a rod\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0299": {
     "id": "hsk6-0299",
@@ -16986,7 +17284,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to arrive at destination"
+    "translationEn": "to arrive at destination",
+    "explanationEn": "The verb 抵达 (dǐdá) means \"to arrive at destination\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0300": {
     "id": "hsk6-0300",
@@ -17044,7 +17343,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "authentic; genuine (taste; accent; manner)"
+    "translationEn": "authentic; genuine (taste; accent; manner)",
+    "explanationEn": "The noun 地道 (dìdao) means \"authentic\". It can also be translated as \"genuine (taste\", \"accent\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0301": {
     "id": "hsk6-0301",
@@ -17099,7 +17399,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "to fall; to drop"
+    "translationEn": "to fall; to drop",
+    "explanationEn": "The verb 跌 (diē) means \"to fall\". It can also be translated as \"to drop\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0302": {
     "id": "hsk6-0302",
@@ -17156,7 +17457,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "place; aspect"
+    "translationEn": "place; aspect",
+    "explanationEn": "地方 (dìfāng) means \"place\". It can also be translated as \"aspect\". It belongs to the grammar vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0303": {
     "id": "hsk6-0303",
@@ -17208,7 +17510,8 @@
       "hsk6-0023"
     ],
     "translationFrAlt": [],
-    "translationEn": "to resist; to oppose"
+    "translationEn": "to resist; to oppose",
+    "explanationEn": "The verb 抵抗 (dǐkàng) means \"to resist\". It can also be translated as \"to oppose\". It belongs to the family vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0304": {
     "id": "hsk6-0304",
@@ -17266,7 +17569,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "peak; summit"
+    "translationEn": "peak; summit",
+    "explanationEn": "The noun 顶 (dǐng) means \"peak\". It can also be translated as \"summit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0305": {
     "id": "hsk6-0305",
@@ -17324,7 +17628,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "order; contract"
+    "translationEn": "order; contract",
+    "explanationEn": "The noun 订单 (dìngdān) means \"order\". It can also be translated as \"contract\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0306": {
     "id": "hsk6-0306",
@@ -17382,7 +17687,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "engagement; betrothal"
+    "translationEn": "engagement; betrothal",
+    "explanationEn": "The noun 订婚 (dìnghūn) means \"engagement\". It can also be translated as \"betrothal\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0307": {
     "id": "hsk6-0307",
@@ -17436,7 +17742,8 @@
       "hsk6-0310",
       "hsk6-0311"
     ],
-    "translationEn": "price; quotation"
+    "translationEn": "price; quotation",
+    "explanationEn": "The noun 定价 (dìngjià) means \"price\". It can also be translated as \"quotation\". It belongs to the shopping vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0308": {
     "id": "hsk6-0308",
@@ -17488,7 +17795,8 @@
       "hsk6-0334"
     ],
     "translationFrAlt": [],
-    "translationEn": "to set a time; to schedule"
+    "translationEn": "to set a time; to schedule",
+    "explanationEn": "The verb 定时 (dìngshí) means \"to set a time\". It can also be translated as \"to schedule\". It belongs to the time vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0309": {
     "id": "hsk6-0309",
@@ -17544,7 +17852,8 @@
       "hsk6-0366",
       "hsk6-0307"
     ],
-    "translationEn": "to define position; to locate"
+    "translationEn": "to define position; to locate",
+    "explanationEn": "定位 (dìngwèi) means \"to define position\". It can also be translated as \"to locate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0310": {
     "id": "hsk6-0310",
@@ -17602,7 +17911,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to define; to state definition"
+    "translationEn": "to define; to state definition",
+    "explanationEn": "The noun 定义 (dìngyì) means \"to define\". It can also be translated as \"to state definition\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0311": {
     "id": "hsk6-0311",
@@ -17660,7 +17970,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to customize; to order made-to-measure"
+    "translationEn": "to customize; to order made-to-measure",
+    "explanationEn": "The noun 定制 (dìngzhì) means \"to customize\". It can also be translated as \"to order made-to-measure\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0312": {
     "id": "hsk6-0312",
@@ -17716,7 +18027,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "low carbon"
+    "translationEn": "low carbon",
+    "explanationEn": "低碳 (dītàn) means \"low carbon\". It belongs to the environment vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0313": {
     "id": "hsk6-0313",
@@ -17774,7 +18086,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "terrain characteristics; topography"
+    "translationEn": "terrain characteristics; topography",
+    "explanationEn": "The noun 地形 (dìxíng) means \"terrain characteristics\". It can also be translated as \"topography\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0314": {
     "id": "hsk6-0314",
@@ -17832,7 +18145,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "region; geographical area"
+    "translationEn": "region; geographical area",
+    "explanationEn": "The noun 地域 (dìyù) means \"region\". It can also be translated as \"geographical area\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0315": {
     "id": "hsk6-0315",
@@ -17890,7 +18204,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "geological features; geological characteristics of soil and rocks"
+    "translationEn": "geological features; geological characteristics of soil and rocks",
+    "explanationEn": "The noun 地质 (dìzhì) means \"geological features\". It can also be translated as \"geological characteristics of soil and rocks\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0316": {
     "id": "hsk6-0316",
@@ -17948,7 +18263,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "building classifier"
+    "translationEn": "building classifier",
+    "explanationEn": "The noun 栋 (dòng) means \"building classifier\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0317": {
     "id": "hsk6-0317",
@@ -18006,7 +18322,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "motivation"
+    "translationEn": "motivation",
+    "explanationEn": "The noun 动机 (dòngjī) means \"motivation\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0318": {
     "id": "hsk6-0318",
@@ -18064,7 +18381,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "building classifier"
+    "translationEn": "building classifier",
+    "explanationEn": "The noun 动力 (dònglì) means \"building classifier\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0319": {
     "id": "hsk6-0319",
@@ -18122,7 +18440,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "anime and manga"
+    "translationEn": "anime and manga",
+    "explanationEn": "The noun 动漫 (dòngmàn) means \"anime and manga\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0320": {
     "id": "hsk6-0320",
@@ -18180,7 +18499,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dynamic; change; activity"
+    "translationEn": "dynamic; change; activity",
+    "explanationEn": "The noun 动态 (dòngtài) means \"dynamic\". It can also be translated as \"change\", \"activity\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0321": {
     "id": "hsk6-0321",
@@ -18238,7 +18558,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "musical; pleasant to the ear"
+    "translationEn": "musical; pleasant to the ear",
+    "explanationEn": "The noun 动听 (dòngtīng) means \"musical\". It can also be translated as \"pleasant to the ear\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0322": {
     "id": "hsk6-0322",
@@ -18296,7 +18617,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "amuse (someone or something)"
+    "translationEn": "amuse (someone or something)",
+    "explanationEn": "The noun 逗 (dòu) means \"amuse (someone or something)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0323": {
     "id": "hsk6-0323",
@@ -18352,7 +18674,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "struggle for or against; accuse; denounce (someone or something)"
+    "translationEn": "struggle for or against; accuse; denounce (someone or something)",
+    "explanationEn": "The verb 斗争 (dòuzhēng) means \"struggle for or against\". It can also be translated as \"accuse\", \"denounce (someone or something)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0324": {
     "id": "hsk6-0324",
@@ -18410,7 +18733,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "poison; toxicity; drug; toxic; venomous; poisoned; cruel; viciously; fiercely"
+    "translationEn": "poison; toxicity; drug; toxic; venomous; poisoned; cruel; viciously; fiercely",
+    "explanationEn": "The noun 毒 (dú) means \"poison\". It can also be translated as \"toxicity\", \"drug\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0325": {
     "id": "hsk6-0325",
@@ -18464,7 +18788,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "cross; pass; overcome; ferry; boat for crossing"
+    "translationEn": "cross; pass; overcome; ferry; boat for crossing",
+    "explanationEn": "The verb 渡 (dù) means \"cross\". It can also be translated as \"pass\", \"overcome\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0326": {
     "id": "hsk6-0326",
@@ -18523,7 +18848,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "end; beginning; tip; classifier for long and thin objects"
+    "translationEn": "end; beginning; tip; classifier for long and thin objects",
+    "explanationEn": "The verb 端 (duān) means \"end\". It can also be translated as \"beginning\", \"tip\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0327": {
     "id": "hsk6-0327",
@@ -18581,7 +18907,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "shortage; lack of something"
+    "translationEn": "shortage; lack of something",
+    "explanationEn": "The noun 短缺 (duǎnquē) means \"shortage\". It can also be translated as \"lack of something\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0328": {
     "id": "hsk6-0328",
@@ -18639,7 +18966,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "symmetry"
+    "translationEn": "symmetry",
+    "explanationEn": "The noun 对称 (duìchèn) means \"symmetry\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0329": {
     "id": "hsk6-0329",
@@ -18697,7 +19025,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "connect; match; face up to"
+    "translationEn": "connect; match; face up to",
+    "explanationEn": "The verb 对接 (duìjiē) means \"connect\". It can also be translated as \"match\", \"face up to\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0330": {
     "id": "hsk6-0330",
@@ -18753,7 +19082,8 @@
       "hsk6-0332",
       "hsk6-0022"
     ],
-    "translationEn": "resist; oppose; face"
+    "translationEn": "resist; oppose; face",
+    "explanationEn": "The verb 对抗 (duìkàng) means \"resist\". It can also be translated as \"oppose\", \"face\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0331": {
     "id": "hsk6-0331",
@@ -18811,7 +19141,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "opposition; antagonism; to be opposed to"
+    "translationEn": "opposition; antagonism; to be opposed to",
+    "explanationEn": "The noun 对立 (duìlì) means \"opposition\". It can also be translated as \"antagonism\", \"to be opposed to\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0332": {
     "id": "hsk6-0332",
@@ -18869,7 +19200,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "correspond to; to be in relation with"
+    "translationEn": "correspond to; to be in relation with",
+    "explanationEn": "The verb 对应 (duìyìng) means \"correspond to\". It can also be translated as \"to be in relation with\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0333": {
     "id": "hsk6-0333",
@@ -18921,7 +19253,8 @@
       "hsk6-0045"
     ],
     "translationFrAlt": [],
-    "translationEn": "to squat"
+    "translationEn": "to squat",
+    "explanationEn": "The verb 蹲 (dūn) means \"to squat\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0334": {
     "id": "hsk6-0334",
@@ -18979,7 +19312,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "immediately; right away"
+    "translationEn": "immediately; right away",
+    "explanationEn": "The noun 顿时 (dùnshí) means \"immediately\". It can also be translated as \"right away\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0335": {
     "id": "hsk6-0335",
@@ -19038,7 +19372,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "to seize; to take by force; to win (a competition)"
+    "translationEn": "to seize; to take by force; to win (a competition)",
+    "explanationEn": "The verb 夺 (duó) means \"to seize\". It can also be translated as \"to take by force\", \"to win (a competition)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0336": {
     "id": "hsk6-0336",
@@ -19096,7 +19431,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to hide; to avoid; to dodge"
+    "translationEn": "to hide; to avoid; to dodge",
+    "explanationEn": "The verb 躲避 (duǒbì) means \"to hide\". It can also be translated as \"to avoid\", \"to dodge\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0337": {
     "id": "hsk6-0337",
@@ -19154,7 +19490,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "versatile; talented in many fields"
+    "translationEn": "versatile; talented in many fields",
+    "explanationEn": "The noun 多才多艺 (duōcái-duōyì) means \"versatile\". It can also be translated as \"talented in many fields\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0338": {
     "id": "hsk6-0338",
@@ -19212,7 +19549,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "thanks to; luckily for"
+    "translationEn": "thanks to; luckily for",
+    "explanationEn": "The noun 多亏 (duōkuī) means \"thanks to\". It can also be translated as \"luckily for\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0339": {
     "id": "hsk6-0339",
@@ -19264,7 +19602,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "multimedia"
+    "translationEn": "multimedia",
+    "explanationEn": "The noun 多媒体 (duōméitǐ) means \"multimedia\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0340": {
     "id": "hsk6-0340",
@@ -19319,7 +19658,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "to seize; to win (a competition)"
+    "translationEn": "to seize; to win (a competition)",
+    "explanationEn": "The verb 夺取 (duóqǔ) means \"to seize\". It can also be translated as \"to win (a competition)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0341": {
     "id": "hsk6-0341",
@@ -19377,7 +19717,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "superfluous; unnecessary; too much"
+    "translationEn": "superfluous; unnecessary; too much",
+    "explanationEn": "The noun 多余 (duōyú) means \"superfluous\". It can also be translated as \"unnecessary\", \"too much\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0342": {
     "id": "hsk6-0342",
@@ -19435,7 +19776,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "multidimensional; diversified"
+    "translationEn": "multidimensional; diversified",
+    "explanationEn": "The noun 多元 (duōyuán) means \"multidimensional\". It can also be translated as \"diversified\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0343": {
     "id": "hsk6-0343",
@@ -19487,7 +19829,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "urban; city"
+    "translationEn": "urban; city",
+    "explanationEn": "The noun 都市 (dūshì) means \"urban\". It can also be translated as \"city\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0344": {
     "id": "hsk6-0344",
@@ -19545,7 +19888,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "wicked; bad; detestable"
+    "translationEn": "wicked; bad; detestable",
+    "explanationEn": "The noun 恶劣 (èliè) means \"wicked\". It can also be translated as \"bad\", \"detestable\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0345": {
     "id": "hsk6-0345",
@@ -19603,7 +19947,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "earring; jewelry for the ear"
+    "translationEn": "earring; jewelry for the ear",
+    "explanationEn": "The noun 耳环 (ěrhuán) means \"earring\". It can also be translated as \"jewelry for the ear\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0346": {
     "id": "hsk6-0346",
@@ -19655,7 +20000,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "pediatrics; medicine for children"
+    "translationEn": "pediatrics; medicine for children",
+    "explanationEn": "The noun 儿科 (érkē) means \"pediatrics\". It can also be translated as \"medicine for children\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0347": {
     "id": "hsk6-0347",
@@ -19713,7 +20059,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "carbon dioxide"
+    "translationEn": "carbon dioxide",
+    "explanationEn": "The noun 二氧化碳 (èryǎnghuàtàn) means \"carbon dioxide\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0348": {
     "id": "hsk6-0348",
@@ -19771,7 +20118,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "nausea; disgust; be disgusted"
+    "translationEn": "nausea; disgust; be disgusted",
+    "explanationEn": "The noun 恶心 (ěxin) means \"nausea\". It can also be translated as \"disgust\", \"be disgusted\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0349": {
     "id": "hsk6-0349",
@@ -19826,7 +20174,8 @@
       "hsk6-0059",
       "hsk6-0196"
     ],
-    "translationEn": "fall ill; have an attack"
+    "translationEn": "fall ill; have an attack",
+    "explanationEn": "发病 (fābìng) means \"fall ill\". It can also be translated as \"have an attack\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0350": {
     "id": "hsk6-0350",
@@ -19884,7 +20233,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "worry; be concerned"
+    "translationEn": "worry; be concerned",
+    "explanationEn": "The verb 发愁 (fāchóu) means \"worry\". It can also be translated as \"be concerned\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0351": {
     "id": "hsk6-0351",
@@ -19936,7 +20286,8 @@
       "hsk6-0288"
     ],
     "translationFrAlt": [],
-    "translationEn": "generate electricity; produce electricity"
+    "translationEn": "generate electricity; produce electricity",
+    "explanationEn": "发电 (fādiàn) means \"generate electricity\". It can also be translated as \"produce electricity\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0352": {
     "id": "hsk6-0352",
@@ -19994,7 +20345,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "legal; statutory; prescribed by law"
+    "translationEn": "legal; statutory; prescribed by law",
+    "explanationEn": "The noun 法定 (fǎdìng) means \"legal\". It can also be translated as \"statutory\", \"prescribed by law\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0353": {
     "id": "hsk6-0353",
@@ -20052,7 +20404,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "start up; launch; trigger"
+    "translationEn": "start up; launch; trigger",
+    "explanationEn": "The verb 发动 (fādòng) means \"start up\". It can also be translated as \"launch\", \"trigger\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0354": {
     "id": "hsk6-0354",
@@ -20104,7 +20457,8 @@
       "hsk6-0350"
     ],
     "translationFrAlt": [],
-    "translationEn": "distribute; issue; disburse (funds)"
+    "translationEn": "distribute; issue; disburse (funds)",
+    "explanationEn": "The verb 发放 (fāfàng) means \"distribute\". It can also be translated as \"issue\", \"disburse (funds)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0355": {
     "id": "hsk6-0355",
@@ -20162,7 +20516,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "judge"
+    "translationEn": "judge",
+    "explanationEn": "The noun 法官 (fǎguān) means \"judge\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0356": {
     "id": "hsk6-0356",
@@ -20220,7 +20575,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "emit light; shine"
+    "translationEn": "emit light; shine",
+    "explanationEn": "The verb 发光 (fāguāng) means \"emit light\". It can also be translated as \"shine\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0357": {
     "id": "hsk6-0357",
@@ -20278,7 +20634,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "regulation; rule; law"
+    "translationEn": "regulation; rule; law",
+    "explanationEn": "The noun 法规 (fǎguī) means \"regulation\". It can also be translated as \"rule\", \"law\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0358": {
     "id": "hsk6-0358",
@@ -20337,7 +20694,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "commit (an error; a crime); violate; be guilty of"
+    "translationEn": "commit (an error; a crime); violate; be guilty of",
+    "explanationEn": "The verb 犯 (fàn) means \"commit (an error\". It can also be translated as \"a crime)\", \"violate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0359": {
     "id": "hsk6-0359",
@@ -20393,7 +20751,8 @@
       "hsk6-0022",
       "hsk6-0023"
     ],
-    "translationEn": "classifier for actions or events; round; time"
+    "translationEn": "classifier for actions or events; round; time",
+    "explanationEn": "The measure word 番 (fān) means \"classifier for actions or events\". It can also be translated as \"round\", \"time\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0360": {
     "id": "hsk6-0360",
@@ -20451,7 +20810,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "hinder; interfere with; obstruct"
+    "translationEn": "hinder; interfere with; obstruct",
+    "explanationEn": "The verb 妨碍 (fáng'ài) means \"hinder\". It can also be translated as \"interfere with\", \"obstruct\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0361": {
     "id": "hsk6-0361",
@@ -20509,7 +20869,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "enlarge; amplify; magnify"
+    "translationEn": "enlarge; amplify; magnify",
+    "explanationEn": "The verb 放大 (fàngdà) means \"enlarge\". It can also be translated as \"amplify\", \"magnify\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0362": {
     "id": "hsk6-0362",
@@ -20567,7 +20928,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in all aspects; from every angle"
+    "translationEn": "in all aspects; from every angle",
+    "explanationEn": "The noun 方方面面 (fāngfāngmiànmiàn名) means \"in all aspects\". It can also be translated as \"from every angle\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0363": {
     "id": "hsk6-0363",
@@ -20619,7 +20981,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "let fly; release; make fly"
+    "translationEn": "let fly; release; make fly",
+    "explanationEn": "The verb 放飞 (fàngfēi) means \"let fly\". It can also be translated as \"release\", \"make fly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0364": {
     "id": "hsk6-0364",
@@ -20673,7 +21036,8 @@
       "hsk6-0026",
       "hsk6-0027"
     ],
-    "translationEn": "real estate price; housing price"
+    "translationEn": "real estate price; housing price",
+    "explanationEn": "The noun 房价 (fángjià) means \"real estate price\". It can also be translated as \"housing price\". It belongs to the housing vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0365": {
     "id": "hsk6-0365",
@@ -20731,7 +21095,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "interview; talk show"
+    "translationEn": "interview; talk show",
+    "explanationEn": "The noun 访谈 (fǎngtán) means \"interview\". It can also be translated as \"talk show\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0366": {
     "id": "hsk6-0366",
@@ -20789,7 +21154,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "orientation; direction; position"
+    "translationEn": "orientation; direction; position",
+    "explanationEn": "The noun 方位 (fāngwèi) means \"orientation\". It can also be translated as \"direction\", \"position\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0367": {
     "id": "hsk6-0367",
@@ -20847,7 +21213,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dialect; regional language"
+    "translationEn": "dialect; regional language",
+    "explanationEn": "The noun 方言 (fāngyán) means \"dialect\". It can also be translated as \"regional language\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0368": {
     "id": "hsk6-0368",
@@ -20905,7 +21272,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "prevention and control; prevent and manage"
+    "translationEn": "prevention and control; prevent and manage",
+    "explanationEn": "The verb 防治 (fángzhì) means \"prevention and control\". It can also be translated as \"prevent and manage\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0369": {
     "id": "hsk6-0369",
@@ -20961,7 +21329,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "feedback"
+    "translationEn": "feedback",
+    "explanationEn": "反馈 (fǎnkuì) means \"feedback\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0370": {
     "id": "hsk6-0370",
@@ -21019,7 +21388,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "busy; occupied; preoccupied"
+    "translationEn": "busy; occupied; preoccupied",
+    "explanationEn": "The noun 繁忙 (fánmáng) means \"busy\". It can also be translated as \"occupied\", \"preoccupied\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0371": {
     "id": "hsk6-0371",
@@ -21077,7 +21447,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "all; every; any"
+    "translationEn": "all; every; any",
+    "explanationEn": "The noun 凡（是） (fán(shì)) means \"all\". It can also be translated as \"every\", \"any\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0372": {
     "id": "hsk6-0372",
@@ -21129,7 +21500,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "reflect; introspect"
+    "translationEn": "reflect; introspect",
+    "explanationEn": "The verb 反思 (fǎnsī) means \"reflect\". It can also be translated as \"introspect\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0373": {
     "id": "hsk6-0373",
@@ -21181,7 +21553,8 @@
       "hsk6-0032"
     ],
     "translationFrAlt": [],
-    "translationEn": "reproduce; procreate"
+    "translationEn": "reproduce; procreate",
+    "explanationEn": "The verb 繁殖 (fánzhí) means \"reproduce\". It can also be translated as \"procreate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0374": {
     "id": "hsk6-0374",
@@ -21237,7 +21610,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "invoice; receipt"
+    "translationEn": "invoice; receipt",
+    "explanationEn": "发票 (fāpiào) means \"invoice\". It can also be translated as \"receipt\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0375": {
     "id": "hsk6-0375",
@@ -21295,7 +21669,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "publish; release (a product; a journal)"
+    "translationEn": "publish; release (a product; a journal)",
+    "explanationEn": "The verb 发行 (fāxíng) means \"publish\". It can also be translated as \"release (a product\", \"a journal)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0376": {
     "id": "hsk6-0376",
@@ -21349,7 +21724,8 @@
       "hsk6-0350",
       "hsk6-0353"
     ],
-    "translationEn": "to inflame; to be inflamed (of an organ or body part)"
+    "translationEn": "to inflame; to be inflamed (of an organ or body part)",
+    "explanationEn": "The verb 发炎 (fāyán) means \"to inflame\". It can also be translated as \"to be inflamed (of an organ or body part)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0377": {
     "id": "hsk6-0377",
@@ -21407,7 +21783,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to develop; to grow up physically or intellectually"
+    "translationEn": "to develop; to grow up physically or intellectually",
+    "explanationEn": "The noun 发育 (fāyù) means \"to develop\". It can also be translated as \"to grow up physically or intellectually\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0378": {
     "id": "hsk6-0378",
@@ -21465,7 +21842,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fatty; obese; fertile; rich; fertilizer"
+    "translationEn": "fatty; obese; fertile; rich; fertilizer",
+    "explanationEn": "The noun 肥 (féi) means \"fatty\". It can also be translated as \"obese\", \"fertile\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0379": {
     "id": "hsk6-0379",
@@ -21515,7 +21893,8 @@
       "hsk6-0041"
     ],
     "translationFrAlt": [],
-    "translationEn": "lung"
+    "translationEn": "lung",
+    "explanationEn": "The noun 肺 (fèi) means \"lung\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0380": {
     "id": "hsk6-0380",
@@ -21573,7 +21952,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "obese; to be obese"
+    "translationEn": "obese; to be obese",
+    "explanationEn": "The noun 肥胖 (féipàng) means \"obese\". It can also be translated as \"to be obese\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0381": {
     "id": "hsk6-0381",
@@ -21625,7 +22005,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "very quickly; at an extreme speed"
+    "translationEn": "very quickly; at an extreme speed",
+    "explanationEn": "The verb 飞速 (fēisù) means \"very quickly\". It can also be translated as \"at an extreme speed\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0382": {
     "id": "hsk6-0382",
@@ -21683,7 +22064,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fertile; rich in nutrients"
+    "translationEn": "fertile; rich in nutrients",
+    "explanationEn": "The noun 肥沃 (féiwò) means \"fertile\". It can also be translated as \"rich in nutrients\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0383": {
     "id": "hsk6-0383",
@@ -21741,7 +22123,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "pneumonia"
+    "translationEn": "pneumonia",
+    "explanationEn": "The noun 肺炎 (fèiyán) means \"pneumonia\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0384": {
     "id": "hsk6-0384",
@@ -21797,7 +22180,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "pink"
+    "translationEn": "pink",
+    "explanationEn": "粉 (fěn) means \"pink\". It belongs to the colors vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0385": {
     "id": "hsk6-0385",
@@ -21855,7 +22239,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to close; to shut; to isolate; closed (in a social or political context)"
+    "translationEn": "to close; to shut; to isolate; closed (in a social or political context)",
+    "explanationEn": "The noun 封闭 (fēngbì) means \"to close\". It can also be translated as \"to shut\", \"to isolate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0386": {
     "id": "hsk6-0386",
@@ -21913,7 +22298,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "picturesque scenery; magnificent view; natural beauty of a landscape"
+    "translationEn": "picturesque scenery; magnificent view; natural beauty of a landscape",
+    "explanationEn": "The noun 风光 (fēngguāng) means \"picturesque scenery\". It can also be translated as \"magnificent view\", \"natural beauty of a landscape\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0387": {
     "id": "hsk6-0387",
@@ -21971,7 +22357,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "wind; wind force"
+    "translationEn": "wind; wind force",
+    "explanationEn": "The noun 风力 (fēnglì) means \"wind\". It can also be translated as \"wind force\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0388": {
     "id": "hsk6-0388",
@@ -22023,7 +22410,8 @@
       "hsk6-0463"
     ],
     "translationFrAlt": [],
-    "translationEn": "to allocate work; to distribute tasks"
+    "translationEn": "to allocate work; to distribute tasks",
+    "explanationEn": "分工 (fēngōng) means \"to allocate work\". It can also be translated as \"to distribute tasks\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0389": {
     "id": "hsk6-0389",
@@ -22081,7 +22469,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "good harvest; agricultural success"
+    "translationEn": "good harvest; agricultural success",
+    "explanationEn": "The noun 丰收 (fēngshōu) means \"good harvest\". It can also be translated as \"agricultural success\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0390": {
     "id": "hsk6-0390",
@@ -22133,7 +22522,8 @@
       "hsk6-0045"
     ],
     "translationFrAlt": [],
-    "translationEn": "to give; to offer; to dedicate (one's time or efforts to a cause or others)"
+    "translationEn": "to give; to offer; to dedicate (one's time or efforts to a cause or others)",
+    "explanationEn": "The verb 奉献 (fèngxiàn) means \"to give\". It can also be translated as \"to offer\", \"to dedicate (one's time or efforts to a cause or others)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0391": {
     "id": "hsk6-0391",
@@ -22185,7 +22575,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "storm; rain and wind (often used as a metaphor for difficulties or trials in life)"
+    "translationEn": "storm; rain and wind (often used as a metaphor for difficulties or trials in life)",
+    "explanationEn": "The noun 风雨 (fēngyǔ) means \"storm\". It can also be translated as \"rain and wind (often used as a metaphor for difficulties or trials in life)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0392": {
     "id": "hsk6-0392",
@@ -22237,7 +22628,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to classify; to categorize; classification"
+    "translationEn": "to classify; to categorize; classification",
+    "explanationEn": "The verb 分级 (fēnjí) means \"to classify\". It can also be translated as \"to categorize\", \"classification\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0393": {
     "id": "hsk6-0393",
@@ -22289,7 +22681,8 @@
       "hsk6-0455"
     ],
     "translationFrAlt": [],
-    "translationEn": "anger; to be angry"
+    "translationEn": "anger; to be angry",
+    "explanationEn": "The adjective 愤怒 (fènnù) means \"anger\". It can also be translated as \"to be angry\". It belongs to the emotions vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0394": {
     "id": "hsk6-0394",
@@ -22347,7 +22740,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to spread out over time; to pay in installments"
+    "translationEn": "to spread out over time; to pay in installments",
+    "explanationEn": "The verb 分期 (fēnqī) means \"to spread out over time\". It can also be translated as \"to pay in installments\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0395": {
     "id": "hsk6-0395",
@@ -22405,7 +22799,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to disperse; to scatter"
+    "translationEn": "to disperse; to scatter",
+    "explanationEn": "The noun 分散 (fēnsàn) means \"to disperse\". It can also be translated as \"to scatter\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0396": {
     "id": "hsk6-0396",
@@ -22463,7 +22858,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "atmosphere; ambiance"
+    "translationEn": "atmosphere; ambiance",
+    "explanationEn": "The noun 氛围 (fēnwéi) means \"atmosphere\". It can also be translated as \"ambiance\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0397": {
     "id": "hsk6-0397",
@@ -22521,7 +22917,8 @@
       "hsk6-0195",
       "hsk6-0022"
     ],
-    "translationEn": "to wear (clothing); to obey; to serve (in the context of military service or administrative function)"
+    "translationEn": "to wear (clothing); to obey; to serve (in the context of military service or administrative function)",
+    "explanationEn": "The verb 服 (fú) means \"to wear (clothing)\". It can also be translated as \"to obey\", \"to serve (in the context of military service or administrative function)\". It belongs to the health vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0398": {
     "id": "hsk6-0398",
@@ -22578,7 +22975,8 @@
       "hsk6-0032",
       "hsk6-0045"
     ],
-    "translationEn": "to float; to surface on a liquid; to appear on the surface (in a metaphorical or physical context)"
+    "translationEn": "to float; to surface on a liquid; to appear on the surface (in a metaphorical or physical context)",
+    "explanationEn": "The verb 浮 (fú) means \"to float\". It can also be translated as \"to surface on a liquid\", \"to appear on the surface (in a metaphorical or physical context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0399": {
     "id": "hsk6-0399",
@@ -22636,7 +23034,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "assistant; vice-; secondary (e.g. 副经理…)"
+    "translationEn": "assistant; vice-; secondary (e.g. 副经理…)",
+    "explanationEn": "The noun 副2 (fù) means \"assistant\". It can also be translated as \"vice-\", \"secondary (e.g. 副经理…)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0400": {
     "id": "hsk6-0400",
@@ -22688,7 +23087,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to obey; to submit"
+    "translationEn": "to obey; to submit",
+    "explanationEn": "The noun 服从 (fúcóng) means \"to obey\". It can also be translated as \"to submit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0401": {
     "id": "hsk6-0401",
@@ -22744,7 +23144,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "tutoring"
+    "translationEn": "tutoring",
+    "explanationEn": "辅导 (fǔdǎo) means \"tutoring\". It belongs to the education vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0402": {
     "id": "hsk6-0402",
@@ -22802,7 +23203,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "magnitude; extent; scale (in the context of variation or impact)"
+    "translationEn": "magnitude; extent; scale (in the context of variation or impact)",
+    "explanationEn": "The noun 幅度 (fúdù) means \"magnitude\". It can also be translated as \"extent\", \"scale (in the context of variation or impact)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0403": {
     "id": "hsk6-0403",
@@ -22860,7 +23262,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to cover; to overlay (an object or surface with another object or substance)"
+    "translationEn": "to cover; to overlay (an object or surface with another object or substance)",
+    "explanationEn": "The noun 覆盖 (fùgài) means \"to cover\". It can also be translated as \"to overlay (an object or surface with another object or substance)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0404": {
     "id": "hsk6-0404",
@@ -22912,7 +23315,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "symbol; sign (used in mathematics, chemistry, or logic to represent an idea or quantity)"
+    "translationEn": "symbol; sign (used in mathematics, chemistry, or logic to represent an idea or quantity)",
+    "explanationEn": "The noun 符号 (fúhào) means \"symbol\". It can also be translated as \"sign (used in mathematics, chemistry, or logic to represent an idea or quantity)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0405": {
     "id": "hsk6-0405",
@@ -22970,7 +23374,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "accessory; attachment (in an administrative or technical context)"
+    "translationEn": "accessory; attachment (in an administrative or technical context)",
+    "explanationEn": "The noun 附件 (fùjiàn) means \"accessory\". It can also be translated as \"attachment (in an administrative or technical context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0406": {
     "id": "hsk6-0406",
@@ -23026,7 +23431,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "welfare benefits"
+    "translationEn": "welfare benefits",
+    "explanationEn": "福利 (fúlì) means \"welfare benefits\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0407": {
     "id": "hsk6-0407",
@@ -23084,7 +23490,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "negative"
+    "translationEn": "negative",
+    "explanationEn": "The noun 负面 (fùmiàn) means \"negative\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0408": {
     "id": "hsk6-0408",
@@ -23142,7 +23549,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "madam; Mrs."
+    "translationEn": "madam; Mrs.",
+    "explanationEn": "The noun 夫人 (fūrén) means \"madam\". It can also be translated as \"Mrs.\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0409": {
     "id": "hsk6-0409",
@@ -23194,7 +23602,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "take (medicine); take (a substance)"
+    "translationEn": "take (medicine); take (a substance)",
+    "explanationEn": "The noun 服用 (fúyòng) means \"take (medicine)\". It can also be translated as \"take (a substance)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0410": {
     "id": "hsk6-0410",
@@ -23252,7 +23661,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "wealthy; prosperous"
+    "translationEn": "wealthy; prosperous",
+    "explanationEn": "The noun 富裕 (fùyù) means \"wealthy\". It can also be translated as \"prosperous\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0411": {
     "id": "hsk6-0411",
@@ -23304,7 +23714,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "grant; confer (a quality or right to someone or something)"
+    "translationEn": "grant; confer (a quality or right to someone or something)",
+    "explanationEn": "The noun 赋予 (fùyǔ) means \"grant\". It can also be translated as \"confer (a quality or right to someone or something)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0412": {
     "id": "hsk6-0412",
@@ -23362,7 +23773,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "assist; support; aid (in a medical, technical, or social context)"
+    "translationEn": "assist; support; aid (in a medical, technical, or social context)",
+    "explanationEn": "The noun 辅助 (fǔzhù) means \"assist\". It can also be translated as \"support\", \"aid (in a medical, technical, or social context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0413": {
     "id": "hsk6-0413",
@@ -23420,7 +23832,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "this; that; said (written style determiner)"
+    "translationEn": "this; that; said (written style determiner)",
+    "explanationEn": "The determiner 该2 (gāi) means \"this\". It can also be translated as \"that\", \"said (written style determiner)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0414": {
     "id": "hsk6-0414",
@@ -23478,7 +23891,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "adapt; revise (a text; an artwork or scenario for it to be more appropriate to a new context or audience)"
+    "translationEn": "adapt; revise (a text; an artwork or scenario for it to be more appropriate to a new context or audience)",
+    "explanationEn": "The verb 改编 (gǎibiān) means \"adapt\". It can also be translated as \"revise (a text\", \"an artwork or scenario for it to be more appropriate to a new context or audience)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0415": {
     "id": "hsk6-0415",
@@ -23536,7 +23950,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "probability; chance; mathematical probability"
+    "translationEn": "probability; chance; mathematical probability",
+    "explanationEn": "The noun 概率 (gàilǜ) means \"probability\". It can also be translated as \"chance\", \"mathematical probability\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0416": {
     "id": "hsk6-0416",
@@ -23588,7 +24003,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "transform; reform; renovate (in the context of change or improvement of a system, structure, or organization)"
+    "translationEn": "transform; reform; renovate (in the context of change or improvement of a system, structure, or organization)",
+    "explanationEn": "The verb 改造 (gǎizào) means \"transform\". It can also be translated as \"reform\", \"renovate (in the context of change or improvement of a system, structure, or organization)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0417": {
     "id": "hsk6-0417",
@@ -23638,7 +24054,8 @@
       "hsk6-0047"
     ],
     "translationFrAlt": [],
-    "translationEn": "liver"
+    "translationEn": "liver",
+    "explanationEn": "The noun 肝 (gān) means \"liver\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0418": {
     "id": "hsk6-0418",
@@ -23694,7 +24111,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "plainly; straightforwardly"
+    "translationEn": "plainly; straightforwardly",
+    "explanationEn": "The adverb 干脆 (gāncuì) means \"plainly\". It can also be translated as \"straightforwardly\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0419": {
     "id": "hsk6-0419",
@@ -23752,7 +24170,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "embarrassing; awkward; embarrassment"
+    "translationEn": "embarrassing; awkward; embarrassment",
+    "explanationEn": "The noun 尴尬 (gāngà) means \"embarrassing\". It can also be translated as \"awkward\", \"embarrassment\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0420": {
     "id": "hsk6-0420",
@@ -23810,7 +24229,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "fountain pen; metal pen"
+    "translationEn": "fountain pen; metal pen",
+    "explanationEn": "The noun 钢笔 (gāngbǐ) means \"fountain pen\". It can also be translated as \"metal pen\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0421": {
     "id": "hsk6-0421",
@@ -23862,7 +24282,8 @@
       "hsk6-0041"
     ],
     "translationFrAlt": [],
-    "translationEn": "port (for ships)"
+    "translationEn": "port (for ships)",
+    "explanationEn": "The noun 港口 (gǎngkǒu) means \"port (for ships)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0422": {
     "id": "hsk6-0422",
@@ -23914,7 +24335,8 @@
       "hsk6-0104"
     ],
     "explanation": "",
-    "translationEn": "post; position"
+    "translationEn": "post; position",
+    "explanationEn": "The noun 岗位 (gǎngwèi) means \"post\". It can also be translated as \"position\". It belongs to the work vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0423": {
     "id": "hsk6-0423",
@@ -23972,7 +24394,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dry; arid; drought"
+    "translationEn": "dry; arid; drought",
+    "explanationEn": "The noun 干旱 (gānhàn) means \"dry\". It can also be translated as \"arid\", \"drought\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0424": {
     "id": "hsk6-0424",
@@ -24030,7 +24453,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to be grateful; to thank someone for something; to feel obliged to someone"
+    "translationEn": "to be grateful; to thank someone for something; to feel obliged to someone",
+    "explanationEn": "The noun 感激 (gǎnjī) means \"to be grateful\". It can also be translated as \"to thank someone for something\", \"to feel obliged to someone\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0425": {
     "id": "hsk6-0425",
@@ -24084,7 +24508,8 @@
       "hsk6-0203",
       "hsk6-0011"
     ],
-    "translationEn": "hurry up; act quickly; rush to do something"
+    "translationEn": "hurry up; act quickly; rush to do something",
+    "explanationEn": "The adverb 赶忙 (gǎnmáng) means \"hurry up\". It can also be translated as \"act quickly\", \"rush to do something\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0426": {
     "id": "hsk6-0426",
@@ -24142,7 +24567,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "infect; be infected; infection"
+    "translationEn": "infect; be infected; infection",
+    "explanationEn": "The verb 感染 (gǎnrǎn) means \"infect\". It can also be translated as \"be infected\", \"infection\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0427": {
     "id": "hsk6-0427",
@@ -24200,7 +24626,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "interfere; disturb; interference"
+    "translationEn": "interfere; disturb; interference",
+    "explanationEn": "The verb 干扰 (gānrǎo) means \"interfere\". It can also be translated as \"disturb\", \"interference\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0428": {
     "id": "hsk6-0428",
@@ -24258,7 +24685,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "impressions; reflections; thoughts (often used to express feelings or opinions after experiencing something or reading a text)"
+    "translationEn": "impressions; reflections; thoughts (often used to express feelings or opinions after experiencing something or reading a text)",
+    "explanationEn": "The noun 感想 (gǎnxiǎng) means \"impressions\". It can also be translated as \"reflections\", \"thoughts (often used to express feelings or opinions after experiencing something or reading a text)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0429": {
     "id": "hsk6-0429",
@@ -24316,7 +24744,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "dry; parched; dried out"
+    "translationEn": "dry; parched; dried out",
+    "explanationEn": "The noun 干燥 (gānzào) means \"dry\". It can also be translated as \"parched\", \"dried out\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0430": {
     "id": "hsk6-0430",
@@ -24370,7 +24799,8 @@
       "hsk6-0115",
       "hsk6-0431"
     ],
-    "translationEn": "upper management; high-level (in an organizational context)"
+    "translationEn": "upper management; high-level (in an organizational context)",
+    "explanationEn": "The noun 高层 (gāocéng) means \"upper management\". It can also be translated as \"high-level (in an organizational context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0431": {
     "id": "hsk6-0431",
@@ -24422,7 +24852,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "excellent; superior; remarkable"
+    "translationEn": "excellent; superior; remarkable",
+    "explanationEn": "The noun 高超 (gāochāo) means \"excellent\". It can also be translated as \"superior\", \"remarkable\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0432": {
     "id": "hsk6-0432",
@@ -24474,7 +24905,8 @@
       "hsk6-0431"
     ],
     "translationFrAlt": [],
-    "translationEn": "advanced; higher level (in an academic or professional context)"
+    "translationEn": "advanced; higher level (in an academic or professional context)",
+    "explanationEn": "The adjective 高等 (gāoděng) means \"advanced\". It can also be translated as \"higher level (in an academic or professional context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0433": {
     "id": "hsk6-0433",
@@ -24526,7 +24958,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "high-end; luxury; top-tier (in a product, service, or technology context)"
+    "translationEn": "high-end; luxury; top-tier (in a product, service, or technology context)",
+    "explanationEn": "The noun 高端 (gāoduān) means \"high-end\". It can also be translated as \"luxury\", \"top-tier (in a product, service, or technology context)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0434": {
     "id": "hsk6-0434",
@@ -24582,7 +25015,8 @@
       "hsk6-0433",
       "hsk6-0436"
     ],
-    "translationEn": "peak; summit; highest point (in the context of performance or evolution)"
+    "translationEn": "peak; summit; highest point (in the context of performance or evolution)",
+    "explanationEn": "The noun 高峰 (gāofēng) means \"peak\". It can also be translated as \"summit\", \"highest point (in the context of performance or evolution)\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0435": {
     "id": "hsk6-0435",
@@ -24640,7 +25074,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "draft; manuscript; document prepared for publication"
+    "translationEn": "draft; manuscript; document prepared for publication",
+    "explanationEn": "The noun 稿件 (gǎojiàn) means \"draft\". It can also be translated as \"manuscript\", \"document prepared for publication\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0436": {
     "id": "hsk6-0436",
@@ -24692,7 +25127,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "noble; virtuous"
+    "translationEn": "noble; virtuous",
+    "explanationEn": "The noun 高尚 (gāoshàng) means \"noble\". It can also be translated as \"virtuous\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0437": {
     "id": "hsk6-0437",
@@ -24746,7 +25182,8 @@
       "hsk6-0433",
       "hsk6-0436"
     ],
-    "translationEn": "expert; master in a specific field"
+    "translationEn": "expert; master in a specific field",
+    "explanationEn": "The noun 高手 (gāoshǒu) means \"expert\". It can also be translated as \"master in a specific field\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0438": {
     "id": "hsk6-0438",
@@ -24798,7 +25235,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "advanced technologies; high-tech"
+    "translationEn": "advanced technologies; high-tech",
+    "explanationEn": "The noun 高新技术 (gāoxīn-jìshù) means \"advanced technologies\". It can also be translated as \"high-tech\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0439": {
     "id": "hsk6-0439",
@@ -24850,7 +25288,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "highland"
+    "translationEn": "highland",
+    "explanationEn": "The noun 高原 (gāoyuán) means \"highland\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0440": {
     "id": "hsk6-0440",
@@ -24904,7 +25343,8 @@
       "hsk6-0026",
       "hsk6-0027"
     ],
-    "translationEn": "draft; manuscript; document prepared for publication"
+    "translationEn": "draft; manuscript; document prepared for publication",
+    "explanationEn": "The noun 稿子 (gǎozi) means \"draft\". It can also be translated as \"manuscript\", \"document prepared for publication\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0441": {
     "id": "hsk6-0441",
@@ -24956,7 +25396,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to cut; to slice; to separate"
+    "translationEn": "to cut; to slice; to separate",
+    "explanationEn": "The verb 割 (gē) means \"to cut\". It can also be translated as \"to slice\", \"to separate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0442": {
     "id": "hsk6-0442",
@@ -25008,7 +25449,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "adjacent wall; neighboring room"
+    "translationEn": "adjacent wall; neighboring room",
+    "explanationEn": "The noun 隔壁 (gébì) means \"adjacent wall\". It can also be translated as \"neighboring room\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0443": {
     "id": "hsk6-0443",
@@ -25060,7 +25502,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to sing"
+    "translationEn": "to sing",
+    "explanationEn": "The verb 歌唱 (gēchàng) means \"to sing\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0444": {
     "id": "hsk6-0444",
@@ -25112,7 +25555,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "revolution; revolutionary"
+    "translationEn": "revolution; revolutionary",
+    "explanationEn": "The noun 革命 (gémìng) means \"revolution\". It can also be translated as \"revolutionary\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0445": {
     "id": "hsk6-0445",
@@ -25164,7 +25608,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "in front of; nearby"
+    "translationEn": "in front of; nearby",
+    "explanationEn": "The noun 跟前 (gēnqián) means \"in front of\". It can also be translated as \"nearby\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0446": {
     "id": "hsk6-0446",
@@ -25216,7 +25661,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to follow; to accompany; to keep an eye on"
+    "translationEn": "to follow; to accompany; to keep an eye on",
+    "explanationEn": "The verb 跟随 (gēnsuí) means \"to follow\". It can also be translated as \"to accompany\", \"to keep an eye on\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0447": {
     "id": "hsk6-0447",
@@ -25268,7 +25714,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to pursue; to track; to follow closely"
+    "translationEn": "to pursue; to track; to follow closely",
+    "explanationEn": "The verb 跟踪 (gēnzōng) means \"to pursue\". It can also be translated as \"to track\", \"to follow closely\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0448": {
     "id": "hsk6-0448",
@@ -25320,7 +25767,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "individual; individual unit"
+    "translationEn": "individual; individual unit",
+    "explanationEn": "The noun 个体 (gètǐ) means \"individual\". It can also be translated as \"individual unit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0449": {
     "id": "hsk6-0449",
@@ -25377,7 +25825,8 @@
       "hsk6-0459",
       "hsk6-0460"
     ],
-    "translationEn": "public"
+    "translationEn": "public",
+    "explanationEn": "The adjective 公 (gōng) means \"public\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0450": {
     "id": "hsk6-0450",
@@ -25431,7 +25880,8 @@
       "hsk6-0041",
       "hsk6-0047"
     ],
-    "translationEn": "palace; temple"
+    "translationEn": "palace; temple",
+    "explanationEn": "The noun 宫 (gōng) means \"palace\". It can also be translated as \"temple\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0451": {
     "id": "hsk6-0451",
@@ -25483,7 +25933,8 @@
       "hsk6-0459"
     ],
     "translationFrAlt": [],
-    "translationEn": "public security; police force"
+    "translationEn": "public security; police force",
+    "explanationEn": "The noun 公安 (gōng'ān) means \"public security\". It can also be translated as \"police force\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0452": {
     "id": "hsk6-0452",
@@ -25535,7 +25986,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "construction site"
+    "translationEn": "construction site",
+    "explanationEn": "The noun 工地 (gōngdì) means \"construction site\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0453": {
     "id": "hsk6-0453",
@@ -25587,7 +26039,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "time; effort; work"
+    "translationEn": "time; effort; work",
+    "explanationEn": "The noun 工夫 (gōngfu) means \"time\". It can also be translated as \"effort\", \"work\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0454": {
     "id": "hsk6-0454",
@@ -25639,7 +26092,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "announcement; public notice"
+    "translationEn": "announcement; public notice",
+    "explanationEn": "The noun 公告 (gōnggào) means \"announcement\". It can also be translated as \"public notice\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0455": {
     "id": "hsk6-0455",
@@ -25693,7 +26147,8 @@
       "hsk6-0449",
       "hsk6-0480"
     ],
-    "translationEn": "consolidate; reinforce; strengthen"
+    "translationEn": "consolidate; reinforce; strengthen",
+    "explanationEn": "The adjective 巩固 (gǒnggù) means \"consolidate\". It can also be translated as \"reinforce\", \"strengthen\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0456": {
     "id": "hsk6-0456",
@@ -25745,7 +26200,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "total; in all; altogether"
+    "translationEn": "total; in all; altogether",
+    "explanationEn": "The noun 共计 (gòngjì) means \"total\". It can also be translated as \"in all\", \"altogether\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0457": {
     "id": "hsk6-0457",
@@ -25799,7 +26255,8 @@
       "hsk6-0028",
       "hsk6-0032"
     ],
-    "translationEn": "to supply; to provide"
+    "translationEn": "to supply; to provide",
+    "explanationEn": "The verb 供给 (gōngjǐ) means \"to supply\". It can also be translated as \"to provide\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0458": {
     "id": "hsk6-0458",
@@ -25853,7 +26310,8 @@
       "hsk6-0023",
       "hsk6-0025"
     ],
-    "translationEn": "to attack; to strike"
+    "translationEn": "to attack; to strike",
+    "explanationEn": "The verb 攻击 (gōngjī) means \"to attack\". It can also be translated as \"to strike\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0459": {
     "id": "hsk6-0459",
@@ -25905,7 +26363,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "public; open"
+    "translationEn": "public; open",
+    "explanationEn": "The noun 公开 (gōngkāi) means \"public\". It can also be translated as \"open\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0460": {
     "id": "hsk6-0460",
@@ -25957,7 +26416,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "citizen; member of a political community"
+    "translationEn": "citizen; member of a political community",
+    "explanationEn": "The noun 公民 (gōngmín) means \"citizen\". It can also be translated as \"member of a political community\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0461": {
     "id": "hsk6-0461",
@@ -26009,7 +26469,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "widely recognized; publicly acknowledged"
+    "translationEn": "widely recognized; publicly acknowledged",
+    "explanationEn": "The noun 公认 (gōngrèn) means \"widely recognized\". It can also be translated as \"publicly acknowledged\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0462": {
     "id": "hsk6-0462",
@@ -26061,7 +26522,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "effectiveness; effect; result"
+    "translationEn": "effectiveness; effect; result",
+    "explanationEn": "The noun 功效 (gōngxiào) means \"effectiveness\". It can also be translated as \"effect\", \"result\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0463": {
     "id": "hsk6-0463",
@@ -26113,7 +26575,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "work process; production step"
+    "translationEn": "work process; production step",
+    "explanationEn": "The noun 工序 (gōngxù) means \"work process\". It can also be translated as \"production step\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0464": {
     "id": "hsk6-0464",
@@ -26165,7 +26628,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "public welfare; charitable work"
+    "translationEn": "public welfare; charitable work",
+    "explanationEn": "The noun 公益 (gōngyì) means \"public welfare\". It can also be translated as \"charitable work\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0465": {
     "id": "hsk6-0465",
@@ -26217,7 +26681,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to supply; to provide goods or services"
+    "translationEn": "to supply; to provide goods or services",
+    "explanationEn": "The noun 供应 (gōngyìng) means \"to supply\". It can also be translated as \"to provide goods or services\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0466": {
     "id": "hsk6-0466",
@@ -26269,7 +26734,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "AD  era; after Christ"
+    "translationEn": "AD  era; after Christ",
+    "explanationEn": "The noun 公元 (gōngyuán) means \"AD  era\". It can also be translated as \"after Christ\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0467": {
     "id": "hsk6-0467",
@@ -26321,7 +26787,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "just; equitable; impartial"
+    "translationEn": "just; equitable; impartial",
+    "explanationEn": "The noun 公正 (gōngzhèng) means \"just\". It can also be translated as \"equitable\", \"impartial\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0468": {
     "id": "hsk6-0468",
@@ -26373,7 +26840,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "public; general public"
+    "translationEn": "public; general public",
+    "explanationEn": "The noun 公众 (gōngzhòng) means \"public\". It can also be translated as \"general public\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0469": {
     "id": "hsk6-0469",
@@ -26425,7 +26893,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "princess"
+    "translationEn": "princess",
+    "explanationEn": "The noun 公主 (gōngzhǔ) means \"princess\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0470": {
     "id": "hsk6-0470",
@@ -26477,7 +26946,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "ditch; trench; canal"
+    "translationEn": "ditch; trench; canal",
+    "explanationEn": "The noun 沟 (gōu) means \"ditch\". It can also be translated as \"trench\", \"canal\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0471": {
     "id": "hsk6-0471",
@@ -26529,7 +26999,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "structure; construction; to construct"
+    "translationEn": "structure; construction; to construct",
+    "explanationEn": "The noun 构造 (gòuzào) means \"structure\". It can also be translated as \"construction\", \"to construct\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0472": {
     "id": "hsk6-0472",
@@ -26585,7 +27056,8 @@
       "hsk6-0032"
     ],
     "explanation": "",
-    "translationEn": "consult; seek advice from; take into consideration"
+    "translationEn": "consult; seek advice from; take into consideration",
+    "explanationEn": "The verb 顾 (gù) means \"consult\". It can also be translated as \"seek advice from\", \"take into consideration\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0473": {
     "id": "hsk6-0473",
@@ -26640,7 +27112,8 @@
       "hsk6-0032"
     ],
     "explanation": "",
-    "translationEn": "turn; make a detour; turn at"
+    "translationEn": "turn; make a detour; turn at",
+    "explanationEn": "The verb 拐 (guǎi) means \"turn\". It can also be translated as \"make a detour\", \"turn at\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0474": {
     "id": "hsk6-0474",
@@ -26692,7 +27165,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "turn; make a detour; turn at"
+    "translationEn": "turn; make a detour; turn at",
+    "explanationEn": "The verb 拐弯 (guǎiwān) means \"turn\". It can also be translated as \"make a detour\", \"turn at\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0475": {
     "id": "hsk6-0475",
@@ -26744,7 +27218,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "can; pot"
+    "translationEn": "can; pot",
+    "explanationEn": "The noun 罐 (guàn) means \"can\". It can also be translated as \"pot\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0476": {
     "id": "hsk6-0476",
@@ -26796,7 +27271,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "official; government employee"
+    "translationEn": "official; government employee",
+    "explanationEn": "The noun 官 (guān) means \"official\". It can also be translated as \"government employee\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0477": {
     "id": "hsk6-0477",
@@ -26848,7 +27324,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to care for; to be concerned about"
+    "translationEn": "to care for; to be concerned about",
+    "explanationEn": "The verb 关爱 (guān'ài) means \"to care for\". It can also be translated as \"to be concerned about\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0478": {
     "id": "hsk6-0478",
@@ -26900,7 +27377,8 @@
       "hsk6-0011"
     ],
     "translationFrAlt": [],
-    "translationEn": "pipe; conduit"
+    "translationEn": "pipe; conduit",
+    "explanationEn": "The noun 管道 (guǎndào) means \"pipe\". It can also be translated as \"conduit\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0479": {
     "id": "hsk6-0479",
@@ -26952,7 +27430,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "definitive; official"
+    "translationEn": "definitive; official",
+    "explanationEn": "The noun 官方 (guānfāng) means \"definitive\". It can also be translated as \"official\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0480": {
     "id": "hsk6-0480",
@@ -27006,7 +27485,8 @@
       "hsk6-0449",
       "hsk6-0455"
     ],
-    "translationEn": "vast; broad"
+    "translationEn": "vast; broad",
+    "explanationEn": "The adjective 广阔 (guǎngkuò) means \"vast\". It can also be translated as \"broad\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0481": {
     "id": "hsk6-0481",
@@ -27061,7 +27541,8 @@
       "hsk6-0022",
       "hsk6-0023"
     ],
-    "translationEn": "to sightsee; to tour"
+    "translationEn": "to sightsee; to tour",
+    "explanationEn": "The verb 观光 (guānguāng) means \"to sightsee\". It can also be translated as \"to tour\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0482": {
     "id": "hsk6-0482",
@@ -27113,7 +27594,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to care for; to take care of"
+    "translationEn": "to care for; to take care of",
+    "explanationEn": "The noun 关怀 (guānhuái) means \"to care for\". It can also be translated as \"to take care of\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0483": {
     "id": "hsk6-0483",
@@ -27167,7 +27649,8 @@
       "hsk6-0025",
       "hsk6-0028"
     ],
-    "translationEn": "to connect; to have a connection"
+    "translationEn": "to connect; to have a connection",
+    "explanationEn": "The verb 关联 (guānlián) means \"to connect\". It can also be translated as \"to have a connection\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0484": {
     "id": "hsk6-0484",
@@ -27219,7 +27702,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to admire; to appreciate"
+    "translationEn": "to admire; to appreciate",
+    "explanationEn": "The noun 观赏 (guānshǎng) means \"to admire\". It can also be translated as \"to appreciate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0485": {
     "id": "hsk6-0485",
@@ -27271,7 +27755,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "official; government employee"
+    "translationEn": "official; government employee",
+    "explanationEn": "The noun 官员 (guānyuán) means \"official\". It can also be translated as \"government employee\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0486": {
     "id": "hsk6-0486",
@@ -27323,7 +27808,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "classical; traditional"
+    "translationEn": "classical; traditional",
+    "explanationEn": "The adjective 古典 (gǔdiǎn) means \"classical\". It can also be translated as \"traditional\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0487": {
     "id": "hsk6-0487",
@@ -27377,7 +27863,8 @@
       "hsk6-0449",
       "hsk6-0455"
     ],
-    "translationEn": "lonely; isolated"
+    "translationEn": "lonely; isolated",
+    "explanationEn": "The adjective 孤独 (gūdú) means \"lonely\". It can also be translated as \"isolated\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0488": {
     "id": "hsk6-0488",
@@ -27429,7 +27916,8 @@
       "hsk6-0027"
     ],
     "translationFrAlt": [],
-    "translationEn": "aunt's sister; maternal aunt"
+    "translationEn": "aunt's sister; maternal aunt",
+    "explanationEn": "The noun 姑姑 (gūgu) means \"aunt's sister\". It can also be translated as \"maternal aunt\". It belongs to the family vocabulary and appears at the HSK 6 level."
   },
   "hsk6-0489": {
     "id": "hsk6-0489",
@@ -27481,7 +27969,8 @@
     ],
     "explanation": "",
     "translationFrAlt": [],
-    "translationEn": "to kneel; to bow"
+    "translationEn": "to kneel; to bow",
+    "explanationEn": "The verb 跪 (guì) means \"to kneel\". It can also be translated as \"to bow\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0490": {
     "id": "hsk6-0490",
@@ -27533,7 +28022,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to return; to go back; to report"
+    "translationEn": "to return; to go back; to report",
+    "explanationEn": "The verb 归 (guī) means \"to return\". It can also be translated as \"to go back\", \"to report\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0491": {
     "id": "hsk6-0491",
@@ -27587,7 +28077,8 @@
       "hsk6-0011",
       "hsk6-0013"
     ],
-    "translationEn": "track; orbit; path"
+    "translationEn": "track; orbit; path",
+    "explanationEn": "The noun 轨道 (guǐdào) means \"track\". It can also be translated as \"orbit\", \"path\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0492": {
     "id": "hsk6-0492",
@@ -27639,7 +28130,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "standard; norm; regulate"
+    "translationEn": "standard; norm; regulate",
+    "explanationEn": "The noun 规范 (guīfàn) means \"standard\". It can also be translated as \"norm\", \"regulate\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0493": {
     "id": "hsk6-0493",
@@ -27691,7 +28183,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to plan; to devise a plan"
+    "translationEn": "to plan; to devise a plan",
+    "explanationEn": "The noun 规划 (guīhuà) means \"to plan\". It can also be translated as \"to devise a plan\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0494": {
     "id": "hsk6-0494",
@@ -27743,7 +28236,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "to return; to give back"
+    "translationEn": "to return; to give back",
+    "explanationEn": "The noun 归还 (guīhuán) means \"to return\". It can also be translated as \"to give back\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0495": {
     "id": "hsk6-0495",
@@ -27795,7 +28289,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "rules; norms"
+    "translationEn": "rules; norms",
+    "explanationEn": "The noun 规矩 (guīju) means \"rules\". It can also be translated as \"norms\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0496": {
     "id": "hsk6-0496",
@@ -27847,7 +28342,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "valuable; precious"
+    "translationEn": "valuable; precious",
+    "explanationEn": "The noun 贵重 (guìzhòng) means \"valuable\". It can also be translated as \"precious\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0497": {
     "id": "hsk6-0497",
@@ -27899,7 +28395,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "precious; valuable"
+    "translationEn": "precious; valuable",
+    "explanationEn": "The noun 古迹 (gǔjì) means \"precious\". It can also be translated as \"valuable\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0498": {
     "id": "hsk6-0498",
@@ -27951,7 +28448,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "stick; cane, classifier for stick or cane"
+    "translationEn": "stick; cane, classifier for stick or cane",
+    "explanationEn": "The noun 棍 (gùn) means \"stick\". It can also be translated as \"cane, classifier for stick or cane\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0499": {
     "id": "hsk6-0499",
@@ -28003,7 +28501,8 @@
       ],
       "correctChoiceIndex": 0
     },
-    "translationEn": "national treasure; cultural relic"
+    "translationEn": "national treasure; cultural relic",
+    "explanationEn": "The noun 国宝 (guóbǎo) means \"national treasure\". It can also be translated as \"cultural relic\". It is part of the HSK 6 vocabulary."
   },
   "hsk6-0500": {
     "id": "hsk6-0500",
@@ -28058,6 +28557,7 @@
       "hsk6-0134"
     ],
     "explanation": "",
-    "translationEn": "domestic; produced in country"
+    "translationEn": "domestic; produced in country",
+    "explanationEn": "The adjective 国产 (guóchǎn) means \"domestic\". It can also be translated as \"produced in country\". It is part of the HSK 6 vocabulary."
   }
 }
