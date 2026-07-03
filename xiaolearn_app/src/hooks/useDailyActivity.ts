@@ -1,14 +1,16 @@
 /**
- * useDailyActivity.ts — heatmap d'activité flashcards (V9)
+ * useDailyActivity.ts — heatmap d'activité flashcards (V9 + V13 lessons)
  * --------------------------------------------------------------
  * Enregistre localement (localStorage) une entrée par jour avec :
- *   - cardsReviewed  : # cartes revues ce jour-là
- *   - xpEarned       : XP cumulée
+ *   - cardsReviewed     : # cartes revues ce jour-là
+ *   - xpEarned          : XP cumulée
  *   - sessionsCompleted : # sessions terminées
+ *   - lessonsCompleted  : # leçons complétées (V13)
  *
  * Expose :
  *   - `recordSession(summary)`                    → additionne les compteurs
  *   - `recordCardReview({ xpEarned, rating })`    → +1 carte + XP
+ *   - `recordLessonCompletion(lessonId)`          → +1 leçon (idempotent par jour)
  *   - `entries`                                    → Map<date → DailyActivity>
  *   - `getLastNWeeks(n)`                           → tableau 7×n pour heatmap
  *   - `currentStreak`                              → nombre de jours consécutifs
@@ -96,6 +98,11 @@ export interface UseDailyActivityReturn {
   };
   recordCardReview: (rating: ReviewRating) => void;
   recordSession: (summary: FlashcardSessionSummary) => void;
+  /**
+   * Enregistre la complétion d'une leçon. Idempotent : une même leçon
+   * complétée plusieurs fois le même jour = 1 seul incrément.
+   */
+  recordLessonCompletion: (lessonId: string) => void;
   /** Pour les tests / outils debug : écrase tout. */
   reset: () => void;
 }
@@ -139,16 +146,35 @@ export function useDailyActivity(): UseDailyActivityReturn {
           existing.sessionsCompleted,
           value.sessionsCompleted || 0
         );
+        // Union des ids leçons complétées (ordre stable, dédupliqué). Le
+        // compteur `lessonsCompleted` prend max(count local, count cloud,
+        // taille de l'union) pour rester cohérent même si un device a écrit
+        // le count sans les ids (rétrocompat).
+        const existingIds = existing.lessonsCompletedIds ?? [];
+        const incomingIds = value.lessonsCompletedIds ?? [];
+        const mergedIdsSet = new Set<string>([...existingIds, ...incomingIds]);
+        const mergedIds = mergedIdsSet.size > 0 ? Array.from(mergedIdsSet) : undefined;
+        const bestLessons = Math.max(
+          existing.lessonsCompleted ?? 0,
+          value.lessonsCompleted || 0,
+          mergedIdsSet.size
+        );
+        const lessonsChanged =
+          bestLessons !== (existing.lessonsCompleted ?? 0) ||
+          mergedIdsSet.size !== existingIds.length;
         if (
           bestCards !== existing.cardsReviewed ||
           bestXp !== existing.xpEarned ||
-          bestSessions !== existing.sessionsCompleted
+          bestSessions !== existing.sessionsCompleted ||
+          lessonsChanged
         ) {
           merged.set(dateKey, {
             date: dateKey,
             cardsReviewed: bestCards,
             xpEarned: bestXp,
-            sessionsCompleted: bestSessions
+            sessionsCompleted: bestSessions,
+            lessonsCompleted: bestLessons,
+            lessonsCompletedIds: mergedIds
           });
           changed = true;
         }
@@ -181,12 +207,41 @@ export function useDailyActivity(): UseDailyActivityReturn {
         date: key,
         cardsReviewed: 0,
         xpEarned: 0,
-        sessionsCompleted: 0
+        sessionsCompleted: 0,
+        lessonsCompleted: 0,
+        lessonsCompletedIds: [] as string[]
       };
       next.set(key, {
         ...existing,
         cardsReviewed: existing.cardsReviewed + 1,
         xpEarned: existing.xpEarned + xp
+      });
+      return next;
+    });
+  }, []);
+
+  const recordLessonCompletion = useCallback((lessonId: string) => {
+    if (!lessonId) return;
+    const key = todayKey();
+    setEntries(prev => {
+      const existing = prev.get(key) ?? {
+        date: key,
+        cardsReviewed: 0,
+        xpEarned: 0,
+        sessionsCompleted: 0,
+        lessonsCompleted: 0,
+        lessonsCompletedIds: [] as string[]
+      };
+      const seenIds = existing.lessonsCompletedIds ?? [];
+      // Garde d'idempotence : si cette leçon a déjà été comptée aujourd'hui,
+      // on ne bump pas le compteur (pas de mutation d'entries → pas de
+      // re-render inutile ni de sync Firestore).
+      if (seenIds.includes(lessonId)) return prev;
+      const next = new Map(prev);
+      next.set(key, {
+        ...existing,
+        lessonsCompleted: (existing.lessonsCompleted ?? 0) + 1,
+        lessonsCompletedIds: [...seenIds, lessonId]
       });
       return next;
     });
@@ -200,7 +255,9 @@ export function useDailyActivity(): UseDailyActivityReturn {
         date: key,
         cardsReviewed: 0,
         xpEarned: 0,
-        sessionsCompleted: 0
+        sessionsCompleted: 0,
+        lessonsCompleted: 0,
+        lessonsCompletedIds: [] as string[]
       };
       // Les cartes ont déjà été comptées par recordCardReview ; on incrémente
       // uniquement sessionsCompleted ici, en se basant sur la présence d'au
@@ -303,6 +360,7 @@ export function useDailyActivity(): UseDailyActivityReturn {
     totals,
     recordCardReview,
     recordSession,
+    recordLessonCompletion,
     reset
   };
 }

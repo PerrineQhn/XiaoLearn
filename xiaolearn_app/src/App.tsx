@@ -123,6 +123,7 @@ import { getCopy, type Language } from './i18n';
 import { useCustomLists } from './hooks/useCustomLists';
 import { useDashboardState } from './hooks/useDashboardState';
 import { useDailyGoals } from './hooks/useDailyGoals';
+import { useDailyActivity } from './hooks/useDailyActivity';
 import { useBattleStats } from './hooks/useBattleStats';
 import { useBattleMatchmaking } from './hooks/useBattleMatchmaking';
 import { usePublicProfileSync } from './hooks/usePublicProfileSync';
@@ -636,11 +637,32 @@ function App() {
   // Si l'utilisateur n'a rien custom, on retombe sur les défauts historiques
   // (50 XP, 10 min). Les targets cards/lessons à 0 = pas d'objectif quantifié.
   const dailyGoalsHook = useDailyGoals();
+  // V13 — Compteurs du jour (cartes / leçons) pour brancher les objectifs
+  // configurables. On lit la Map d'entries et on prend la clé locale du jour
+  // (aligné sur `toLocalDateKey` du hook). Rétrocompat : les anciennes
+  // entrées peuvent ne pas avoir `lessonsCompleted` (fallback 0).
+  const dailyActivity = useDailyActivity();
+  const todayActivity = useMemo(() => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    const key = `${y}-${m}-${d}`;
+    const entry = dailyActivity.entries.get(key);
+    return {
+      cardsReviewed: entry?.cardsReviewed ?? 0,
+      lessonsCompleted: entry?.lessonsCompleted ?? 0
+    };
+  }, [dailyActivity.entries]);
   const dashboardState = useDashboardState({
     dueCardsCount: lessonProgress.reviewItems.length,
     nextLessonTitle: nextLessonToResume?.title,
     nextLessonId: nextLessonToResume?.id,
-    xpDailyTarget: dailyGoalsHook.goals.xpTarget
+    xpDailyTarget: dailyGoalsHook.goals.xpTarget,
+    cardsDailyTarget: dailyGoalsHook.goals.cardsTarget,
+    lessonsDailyTarget: dailyGoalsHook.goals.lessonsTarget,
+    cardsReviewedToday: todayActivity.cardsReviewed,
+    lessonsCompletedToday: todayActivity.lessonsCompleted
   });
 
   // --- Centre de notifications — push() d'événements dérivés de l'état ------
@@ -1615,6 +1637,10 @@ function App() {
         if (prev.includes(completedLessonId)) return prev;
         return [...prev, completedLessonId];
       });
+      // V13 — tracking objectif "leçons du jour". Idempotent par leçon+jour
+      // grâce à `lessonsCompletedIds` (une même leçon rejouée le même jour
+      // n'incrémente pas le compteur).
+      dailyActivity.recordLessonCompletion(completedLessonId);
     }
   };
 
@@ -2414,6 +2440,13 @@ function App() {
           cecrPaths={cecrPathsState}
           cecrLevels={cecrLevels}
           completedLessonIds={completedLessonsSet}
+          // V13 — Objectifs quotidiens configurables (Réglages → Apprentissage)
+          // + compteurs du jour issus de useDailyActivity (partagé via
+          // localStorage/Firestore avec FlashcardPageV5).
+          cardsDailyTarget={dailyGoalsHook.goals.cardsTarget}
+          lessonsDailyTarget={dailyGoalsHook.goals.lessonsTarget}
+          cardsReviewedToday={todayActivity.cardsReviewed}
+          lessonsCompletedToday={todayActivity.lessonsCompleted}
           onStartReview={() => setView('review')}
           onOpenFlashcards={() => setView('flashcards')}
           onOpenLesson={(lessonId) => {

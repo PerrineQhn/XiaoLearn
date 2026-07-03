@@ -134,6 +134,19 @@ export interface DailyActivity {
   xpEarned: number;
   /** Nombre de sessions terminées. */
   sessionsCompleted: number;
+  /**
+   * Nombre de leçons complétées ce jour-là (V13 — objectifs quotidiens).
+   * Optionnel pour la rétrocompat avec les entrées V4 déjà persistées :
+   * quand absent, on considère 0. Comptabilisé de manière idempotente
+   * (une leçon complétée plusieurs fois le même jour = 1 seul incrément
+   * grâce à `lessonsCompletedIds`).
+   */
+  lessonsCompleted?: number;
+  /**
+   * Ids des leçons déjà comptées aujourd'hui — sert de garde d'idempotence
+   * pour `recordLessonCompletion(lessonId)`. Optionnel pour la rétrocompat.
+   */
+  lessonsCompletedIds?: string[];
 }
 
 /** Niveau d'intensité pour colorier une cellule de heatmap. */

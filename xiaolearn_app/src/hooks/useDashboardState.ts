@@ -130,7 +130,19 @@ export const getNextMilestone = (
 
 export interface DailyGoalTargets {
   cardsDue: { current: number; target: number };
+  /**
+   * V13 — Progression cartes révisées du jour vs cible configurable dans
+   * Réglages → Apprentissage. Distinct de `cardsDue` (SRS due count) pour ne
+   * pas casser les usages historiques (notifications, page Flashcards).
+   * `target = 0` = pas d'objectif quantifié (fallback sur `cardsDue`).
+   */
+  cardsGoal: { current: number; target: number };
   lessonToResume: { title: string; id?: string } | null;
+  /**
+   * V13 — Progression leçons complétées du jour vs cible configurable.
+   * `target = 0` = pas d'objectif quantifié.
+   */
+  lessonsGoal: { current: number; target: number };
   xpGoal: { current: number; target: number };
   timerMinutes: number;
 }
@@ -269,6 +281,16 @@ export interface DashboardInput {
   timerMinutes?: number;
   /** Objectif XP/jour personnalisé. Si omis, défaut 50. */
   xpDailyTarget?: number;
+  /**
+   * V13 — Objectifs quotidiens configurables (Réglages → Apprentissage).
+   * `0` ou `undefined` = pas d'objectif quantifié (fallback sur le
+   * comportement historique dans HomePageV2).
+   */
+  cardsDailyTarget?: number;
+  lessonsDailyTarget?: number;
+  /** Progression du jour (compteurs venant de `useDailyActivity`). */
+  cardsReviewedToday?: number;
+  lessonsCompletedToday?: number;
 }
 
 export interface DashboardApi {
@@ -690,15 +712,38 @@ export const useDashboardState = (input: DashboardInput): DashboardApi => {
     if (streakState.isAliveToday) done += 1;
 
     return {
+      // Ne pas muter cardsDue (rétrocompat notifs / page Flashcards) — c'est
+      // toujours le compte SRS "due now" avec l'ancienne target hardcodée.
       cardsDue: { current: input.dueCardsCount ?? 0, target: 10 },
+      // V13 — Nouvel indicateur : progression vs cible configurable
+      // (Réglages → Apprentissage). target=0 = pas d'objectif quantifié.
+      cardsGoal: {
+        current: input.cardsReviewedToday ?? 0,
+        target: input.cardsDailyTarget ?? 0
+      },
       lessonToResume: input.nextLessonTitle
         ? { title: input.nextLessonTitle, id: input.nextLessonId }
         : null,
+      lessonsGoal: {
+        current: input.lessonsCompletedToday ?? 0,
+        target: input.lessonsDailyTarget ?? 0
+      },
       xpGoal: { current: todayXp, target: xpDailyTarget },
       timerMinutes
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [input.dueCardsCount, input.nextLessonTitle, input.nextLessonId, todayXp, streakState.isAliveToday, timerMinutes]);
+  }, [
+    input.dueCardsCount,
+    input.nextLessonTitle,
+    input.nextLessonId,
+    input.cardsDailyTarget,
+    input.lessonsDailyTarget,
+    input.cardsReviewedToday,
+    input.lessonsCompletedToday,
+    todayXp,
+    streakState.isAliveToday,
+    timerMinutes
+  ]);
 
   // Debug helper: expose dailyTarget (utilisé pour "done / target" si tu veux réintégrer)
   void dailyTarget;

@@ -87,6 +87,15 @@ export interface HomePageV2Props {
   onOpenFlashcards?: () => void;
   /** Nombre de cartes individuelles dues en SRS (≠ leçons à revoir). */
   dueFlashcardsCount?: number;
+  /**
+   * V13 — Objectifs quotidiens configurables (Réglages → Apprentissage) et
+   * compteurs de progression du jour. `0` ou `undefined` = pas d'objectif
+   * quantifié (fallback sur le comportement historique dans DailyGoalCard).
+   */
+  cardsDailyTarget?: number;
+  lessonsDailyTarget?: number;
+  cardsReviewedToday?: number;
+  lessonsCompletedToday?: number;
   onOpenLesson: (lessonId: string) => void;
   onOpenAiTutor: (prompt?: string) => void;
   onOpenPath: () => void;
@@ -215,66 +224,106 @@ const DailyGoalCard = ({
   // Critère "vraie activité" = au moins 1 XP gagné aujourd'hui (révision,
   // leçon, exercice... toutes les sources awardXp comptent).
   const hasRealActivityToday = goal.xpGoal.current > 0;
+
+  // V13 — Basculement objectif quantifié (Réglages → Apprentissage) vs
+  // comportement historique (SRS due count / lesson to resume).
+  const cardsTargetActive = goal.cardsGoal.target > 0;
+  const cardsGoalDone = cardsTargetActive
+    ? goal.cardsGoal.current >= goal.cardsGoal.target
+    : flashcardsDue === 0 && hasRealActivityToday;
+
+  const lessonsTargetActive = goal.lessonsGoal.target > 0;
+  const lessonsGoalDone = lessonsTargetActive
+    ? goal.lessonsGoal.current >= goal.lessonsGoal.target
+    : hasRealActivityToday;
+
   const done =
-    (flashcardsDue === 0 && hasRealActivityToday ? 1 : 0) +
+    (cardsGoalDone ? 1 : 0) +
     (goal.xpGoal.current >= goal.xpGoal.target ? 1 : 0) +
-    (hasRealActivityToday ? 1 : 0);
+    (lessonsGoalDone ? 1 : 0);
+
+  // -- Card cartes (icon 🃏) --------------------------------------------------
+  const cardsTask = cardsTargetActive
+    ? {
+        icon: '🃏',
+        // Objectif quantifié : "X/Y cartes révisées" + bouton Réviser tant que
+        // pas atteint (et qu'il reste des cartes dues).
+        label: `${goal.cardsGoal.current}/${goal.cardsGoal.target} ${
+          language === 'fr' ? 'cartes révisées' : 'cards reviewed'
+        }`,
+        action:
+          !cardsGoalDone && flashcardsDue > 0
+            ? {
+                label: language === 'fr' ? 'Réviser' : 'Review',
+                onClick: cardsTaskClick
+              }
+            : null,
+        done: cardsGoalDone
+      }
+    : {
+        icon: '🃏',
+        // V11 fallback — 3 états visuels historiques :
+        label:
+          flashcardsDue === 0
+            ? hasRealActivityToday
+              ? language === 'fr'
+                ? 'Révision terminée'
+                : 'Review completed'
+              : language === 'fr'
+                ? 'Aucune carte à réviser'
+                : 'No cards to review'
+            : `${flashcardsDue} ${
+                language === 'fr' ? 'cartes à réviser' : 'cards to review'
+              }`,
+        action:
+          flashcardsDue > 0
+            ? {
+                label: language === 'fr' ? 'Réviser' : 'Review',
+                onClick: cardsTaskClick
+              }
+            : null,
+        done: flashcardsDue === 0 && hasRealActivityToday
+      };
+
+  // -- Card leçons (icon 📚) --------------------------------------------------
+  const lessonsTask = lessonsTargetActive
+    ? {
+        icon: '📚',
+        // Objectif quantifié : "X/Y leçons du jour". Bouton Reprendre affiché
+        // tant que l'objectif n'est pas atteint ET qu'il y a une leçon à
+        // reprendre.
+        label: `${goal.lessonsGoal.current}/${goal.lessonsGoal.target} ${
+          language === 'fr' ? 'leçons du jour' : 'lessons today'
+        }`,
+        action:
+          !lessonsGoalDone && goal.lessonToResume
+            ? {
+                label: language === 'fr' ? 'Reprendre' : 'Resume',
+                onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
+              }
+            : null,
+        done: lessonsGoalDone
+      }
+    : {
+        icon: '📚',
+        label: goal.lessonToResume
+          ? `${language === 'fr' ? 'Continuer' : 'Continue'} "${goal.lessonToResume.title}"`
+          : language === 'fr'
+          ? 'Aucune leçon en cours'
+          : 'No lesson in progress',
+        action:
+          goal.lessonToResume
+            ? {
+                label: language === 'fr' ? 'Reprendre' : 'Resume',
+                onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
+              }
+            : null,
+        done: hasRealActivityToday
+      };
 
   const tasks = [
-    {
-      icon: '🃏',
-      // V11 — 3 états visuels :
-      //  - flashcardsDue > 0 : "X cartes à réviser" + bouton Réviser
-      //  - flashcardsDue === 0 && hasRealActivityToday : "Révision terminée"
-      //    (label gratifiant car l'utilisateur a fait le travail aujourd'hui)
-      //  - flashcardsDue === 0 && !hasRealActivityToday : "Aucune carte à
-      //    réviser" (état neutre, SRS n'a rien à proposer)
-      label:
-        flashcardsDue === 0
-          ? hasRealActivityToday
-            ? language === 'fr'
-              ? 'Révision terminée'
-              : 'Review completed'
-            : language === 'fr'
-              ? 'Aucune carte à réviser'
-              : 'No cards to review'
-          : `${flashcardsDue} ${
-              language === 'fr' ? 'cartes à réviser' : 'cards to review'
-            }`,
-      action:
-        flashcardsDue > 0
-          ? {
-              label: language === 'fr' ? 'Réviser' : 'Review',
-              onClick: cardsTaskClick
-            }
-          : null,
-      // Coche seulement si "rien à réviser ET activité réelle aujourd'hui".
-      // Sinon "rien à réviser" sans aucune action est trompeur (le user n'a
-      // rien fait, l'objectif ne doit pas paraître accompli).
-      done: flashcardsDue === 0 && hasRealActivityToday
-    },
-    {
-      icon: '📚',
-      label: goal.lessonToResume
-        ? `${language === 'fr' ? 'Continuer' : 'Continue'} "${goal.lessonToResume.title}"`
-        : language === 'fr'
-        ? 'Aucune leçon en cours'
-        : 'No lesson in progress',
-      action:
-        goal.lessonToResume
-          ? {
-              // Priorise l'id de la vraie leçon CECR portée par le goal. Si
-              // absent (ancien code), retombe sur le lessonToResumeId hérité
-              // (un id de mot SRS — imparfait mais historique).
-              label: language === 'fr' ? 'Reprendre' : 'Resume',
-              onClick: () => onOpenLesson(goal.lessonToResume?.id ?? lessonToResumeId ?? '')
-            }
-          : null,
-      // V11 — coche basé sur l'activité réelle (XP earned > 0), pas
-      // streakAlive (qui devient true juste à l'ouverture via pingAlive).
-      // Sinon le simple fait d'ouvrir l'accueil cochait cette tâche.
-      done: hasRealActivityToday
-    },
+    cardsTask,
+    lessonsTask,
     {
       icon: '⭐',
       label: `${language === 'fr' ? 'Gagner' : 'Earn'} ${goal.xpGoal.target} XP (${goal.xpGoal.current}/${goal.xpGoal.target})`,
@@ -1723,7 +1772,11 @@ const HomePageV2 = (props: HomePageV2Props) => {
     onOpenIdeas,
     unreadAnnouncementsCount,
     isLevelBilanPassed,
-    onOpenBilan
+    onOpenBilan,
+    cardsDailyTarget,
+    lessonsDailyTarget,
+    cardsReviewedToday,
+    lessonsCompletedToday
   } = props;
 
   // Trouve la prochaine vraie leçon CECR/HSK à reprendre (première non-complétée
@@ -1746,7 +1799,11 @@ const HomePageV2 = (props: HomePageV2Props) => {
   const dashboard = useDashboardState({
     dueCardsCount,
     nextLessonTitle: nextLessonToResume?.title,
-    nextLessonId: nextLessonToResume?.id
+    nextLessonId: nextLessonToResume?.id,
+    cardsDailyTarget,
+    lessonsDailyTarget,
+    cardsReviewedToday,
+    lessonsCompletedToday
   });
 
   // Ping "utilisateur vivant aujourd'hui" à chaque ouverture du dashboard.
