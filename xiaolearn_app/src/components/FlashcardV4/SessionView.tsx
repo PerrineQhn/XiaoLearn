@@ -3,12 +3,18 @@
  * --------------------------------------------------------------
  * Runner d'une session de flashcards en mode "single pile". Iterate through
  * `cards`, displays the current card with the appropriate StudyMode component,
- * shows the rating buttons (Again/Hard/Good/Easy) after reveal, and calls
+ * shows the rating buttons (Difficile/Bien/Simple) after reveal, and calls
  * `onFinish(summary)` when the pile is empty.
  *
- * Branchement avec useFlashcardSRS : le parent fournit `onRate(cardId, quality)`
- * qui appelle `answerCard(quality)` en interne. Ce composant NE connaît PAS
- * la logique SRS ; il ne fait que collecter les ratings et appeler le callback.
+ * V20 — UI 3 boutons : Difficile (again/qualité 1) · Bien (good/qualité 3)
+ * · Simple (easy/qualité 4). Le niveau intermédiaire "hard" (qualité 2)
+ * n'est plus exposé à l'utilisateur mais reste disponible côté SRS pour
+ * un futur retour à 4 niveaux si besoin.
+ *
+ * Branchement avec useFlashcardSRS / useWordSRS : le parent fournit
+ * `onRate(cardId, quality)` qui appelle `answerCard(quality)` ou
+ * `wordSrs.rate(id, quality)` en interne. Ce composant NE connaît PAS la
+ * logique SRS ; il ne fait que collecter les ratings et appeler le callback.
  *
  * Le parent peut également fournir `onCardReviewed(rating)` pour mettre à
  * jour l'activité quotidienne (heatmap) à chaque carte.
@@ -271,25 +277,22 @@ export function SessionView({
         return;
       }
       if (!revealed) return;
-      // V16 — Raccourcis 1/2/3/4 pour les 4 niveaux SRS + alias flèches.
+      // V20 — Raccourcis 1/2/3 pour les 3 boutons exposés (Difficile / Bien / Simple).
+      // Mapping quality : Difficile=1 (again), Bien=3 (good), Simple=4 (easy).
+      // Alias flèches : ← = Difficile, → = Bien (backward-compat).
       if (e.key === '1') {
         e.preventDefault();
         handleRate('again');
       } else if (e.key === '2') {
         e.preventDefault();
-        if (!forbidGood) handleRate('hard');
-      } else if (e.key === '3') {
-        e.preventDefault();
         if (!forbidGood) handleRate('good');
-      } else if (e.key === '4') {
+      } else if (e.key === '3') {
         e.preventDefault();
         if (!forbidGood) handleRate('easy');
       } else if (e.key === 'ArrowLeft') {
-        // Backward-compat : flèche gauche = again
         e.preventDefault();
         handleRate('again');
       } else if (e.key === 'ArrowRight') {
-        // Backward-compat : flèche droite = good
         e.preventDefault();
         if (!forbidGood) handleRate('good');
       }
@@ -340,39 +343,24 @@ export function SessionView({
       {/* Carte active */}
       <div className="fc4-session-stage">{modeContent}</div>
 
-      {/* Boutons rating — 4 niveaux SRS (again / hard / good / easy) */}
-      <div className={`fc4-session-ratings fc4-session-ratings--4 ${revealed ? 'is-visible' : ''}`}>
+      {/* Boutons rating — 3 niveaux exposés (Difficile / Bien / Simple).
+          Mapping quality : Difficile=1 (again), Bien=3 (good), Simple=4 (easy).
+          Le rating quality=2 (hard) reste dispo côté SRS mais n'est plus
+          exposé à l'UI. */}
+      <div className={`fc4-session-ratings fc4-session-ratings--3 ${revealed ? 'is-visible' : ''}`}>
         <button
           type="button"
           className="fc4-rating fc4-rating--again"
           onClick={() => handleRate('again')}
           disabled={!revealed}
-          aria-label={language === 'fr' ? 'À revoir' : 'Again'}
+          aria-label={language === 'fr' ? 'Difficile' : 'Hard'}
           title={language === 'fr' ? 'Touche 1 — pas retrouvé' : 'Key 1 — didn\'t know'}
         >
           <span className="fc4-rating-icon" aria-hidden>✗</span>
           <span className="fc4-rating-label">
-            {language === 'fr' ? 'À revoir' : 'Again'}
-          </span>
-          <span className="fc4-rating-kbd" aria-hidden>1</span>
-        </button>
-        <button
-          type="button"
-          className={`fc4-rating fc4-rating--hard ${forbidGood ? 'fc4-rating--forbidden' : ''}`}
-          onClick={() => !forbidGood && handleRate('hard')}
-          disabled={!revealed || forbidGood}
-          aria-label={language === 'fr' ? 'Difficile' : 'Hard'}
-          title={
-            forbidGood
-              ? language === 'fr' ? 'Réponse fausse — choisir À revoir' : 'Answer incorrect'
-              : language === 'fr' ? 'Touche 2 — galère mais OK' : 'Key 2 — tough'
-          }
-        >
-          <span className="fc4-rating-icon" aria-hidden>~</span>
-          <span className="fc4-rating-label">
             {language === 'fr' ? 'Difficile' : 'Hard'}
           </span>
-          <span className="fc4-rating-kbd" aria-hidden>2</span>
+          <span className="fc4-rating-kbd" aria-hidden>1</span>
         </button>
         <button
           type="button"
@@ -382,41 +370,41 @@ export function SessionView({
           aria-label={language === 'fr' ? 'Bien' : 'Good'}
           title={
             forbidGood
-              ? language === 'fr' ? 'Réponse fausse — choisir À revoir' : 'Answer incorrect'
-              : language === 'fr' ? 'Touche 3 — retrouvé' : 'Key 3 — recalled'
+              ? language === 'fr' ? 'Réponse fausse — choisir Difficile' : 'Answer incorrect — pick Hard'
+              : language === 'fr' ? 'Touche 2 — retrouvé' : 'Key 2 — recalled'
           }
         >
           <span className="fc4-rating-icon" aria-hidden>✓</span>
           <span className="fc4-rating-label">
             {language === 'fr' ? 'Bien' : 'Good'}
           </span>
-          <span className="fc4-rating-kbd" aria-hidden>3</span>
+          <span className="fc4-rating-kbd" aria-hidden>2</span>
         </button>
         <button
           type="button"
           className={`fc4-rating fc4-rating--easy ${forbidGood ? 'fc4-rating--forbidden' : ''}`}
           onClick={() => !forbidGood && handleRate('easy')}
           disabled={!revealed || forbidGood}
-          aria-label={language === 'fr' ? 'Facile' : 'Easy'}
+          aria-label={language === 'fr' ? 'Simple' : 'Easy'}
           title={
             forbidGood
-              ? language === 'fr' ? 'Réponse fausse — choisir À revoir' : 'Answer incorrect'
-              : language === 'fr' ? 'Touche 4 — instantané' : 'Key 4 — instant'
+              ? language === 'fr' ? 'Réponse fausse — choisir Difficile' : 'Answer incorrect — pick Hard'
+              : language === 'fr' ? 'Touche 3 — instantané' : 'Key 3 — instant'
           }
         >
           <span className="fc4-rating-icon" aria-hidden>★</span>
           <span className="fc4-rating-label">
-            {language === 'fr' ? 'Facile' : 'Easy'}
+            {language === 'fr' ? 'Simple' : 'Easy'}
           </span>
-          <span className="fc4-rating-kbd" aria-hidden>4</span>
+          <span className="fc4-rating-kbd" aria-hidden>3</span>
         </button>
       </div>
 
       {/* Indices clavier sous la carte */}
       <div className={`fc4-session-kbd ${revealed ? 'is-visible' : ''}`}>
         {language === 'fr'
-          ? 'Espace : retourner · 1 À revoir · 2 Difficile · 3 Bien · 4 Facile'
-          : 'Space: flip · 1 Again · 2 Hard · 3 Good · 4 Easy'}
+          ? 'Espace : retourner · 1 Difficile · 2 Bien · 3 Simple'
+          : 'Space: flip · 1 Hard · 2 Good · 3 Easy'}
       </div>
     </div>
   );

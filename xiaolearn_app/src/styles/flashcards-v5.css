@@ -1173,26 +1173,14 @@
  *  FlashcardPageV5 enveloppe SessionView/SpeedRound/Summary dans
  *  `.fc5-root.fc5-session-shell`. Les enfants utilisent les classes fc4-*.
  *  Ce bloc redessine ENTIÈREMENT la session pour reproduire la mise en page
- *  Seonsaengnim :
+ *  Seonsaengnim.
  *
- *    ┌─────────────────────────────────────────────────────────────────┐
- *    │ ✕ Quitter   🇨🇳→🇫🇷  ━━━━━━━━━━━━━━━━━━━━  1 / 8   +42 XP      │ ← topbar
- *    │                                                                 │
- *    │                  ┌─────────────────────────┐                    │
- *    │                  │ [mot]              🔊   │                    │
- *    │                  │         你好             │                    │
- *    │                  │        nǐ hǎo           │                    │
- *    │                  │ 📖 Leçon 1    Retourner ↩│                    │
- *    │                  └─────────────────────────┘                    │
- *    │                                                                 │
- *    │              [✗ Je ne sais pas]   [✓ Je sais]                   │
- *    │                                                                 │
- *    │     Espace : retourner · ← : je ne sais pas · → : je sais       │
- *    └─────────────────────────────────────────────────────────────────┘
- *
- *  Carte : 520 × 340 (aspect ≈ 23/15, landscape, 24px radius).
+ *  Carte  : 520 × 340 (aspect ≈ 23/15, landscape, 24px radius).
  *  Back   : gradient rouge foncé XiaoLearn (Seonsaengnim = vert sombre).
- *  Ratings: 2 boutons seulement (Je ne sais pas / Je sais), style soft-tint.
+ *  Ratings: 3 boutons (Difficile / Bien / Simple), quality mapping 1/3/4
+ *           (le niveau intermédiaire quality=2 reste dispo pour un futur
+ *           retour à 4 niveaux). La classe `.fc4-rating--hard` est
+ *           conservée dans le CSS mais n'est plus utilisée par le JSX.
  *  Clavier: hints explicites sous la carte une fois révélée.
  * ============================================================================ */
 
@@ -1877,7 +1865,8 @@
   border-color: transparent !important;
 }
 
-/* Mode 4 niveaux : sur mobile, on passe en 2x2 grid pour éviter l'écrasement */
+/* Mode 4 niveaux (déprécié côté UI, mais conservé pour compat éventuelle) :
+   sur mobile, on passe en 2x2 grid pour éviter l'écrasement. */
 .fc5-session-shell .fc4-session-ratings--4 {
   max-width: 640px;
   flex-wrap: wrap;
@@ -1891,6 +1880,24 @@
   }
   .fc5-session-shell .fc4-session-ratings--4 .fc4-rating {
     max-width: 100%;
+  }
+}
+
+/* Mode 3 niveaux (Difficile / Bien / Simple) — grid 3 colonnes tout le temps,
+   y compris sur mobile (ne pas stacker pour préserver l'accès rapide au clavier
+   visuel « 1 · 2 · 3 »). */
+.fc5-session-shell .fc4-session-ratings--3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 560px;
+}
+.fc5-session-shell .fc4-session-ratings--3 .fc4-rating {
+  max-width: 100%;
+}
+@media (max-width: 520px) {
+  .fc5-session-shell .fc4-session-ratings--3 {
+    gap: 8px;
   }
 }
 

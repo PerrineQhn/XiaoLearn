@@ -232,10 +232,10 @@ const COPY = {
     summaryCards: 'cartes revues',
     summaryAccuracy: 'Précision',
     summaryDuration: 'Durée',
-    summaryAgain: 'À revoir',
+    summaryAgain: 'Difficile',
     summaryHard: 'Difficile',
     summaryGood: 'Bien',
-    summaryEasy: 'Facile',
+    summaryEasy: 'Simple',
     summaryBack: 'Retour au dashboard',
     noRateWarning:
       'Mode preview — ta progression SRS ne sera pas sauvegardée (aucun onRate branché).'
@@ -361,7 +361,7 @@ const COPY = {
     summaryCards: 'cards reviewed',
     summaryAccuracy: 'Accuracy',
     summaryDuration: 'Duration',
-    summaryAgain: 'Again',
+    summaryAgain: 'Hard',
     summaryHard: 'Hard',
     summaryGood: 'Good',
     summaryEasy: 'Easy',
@@ -2779,28 +2779,24 @@ function SummaryScreen({
           </div>
         </div>
 
+        {/* V20 — Résumé passé de 4 catégories à 3 (Difficile / Bien / Simple).
+            On additionne les compteurs historiques `hardCount` (quality=2, plus
+            exposé dans l'UI) avec `againCount` sous « Difficile » pour ne rien
+            perdre des sessions passées ou d'un éventuel retour à 4 niveaux. */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 8,
             marginBottom: 24
           }}
         >
           <div>
             <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--fc5-danger)' }}>
-              {summary.againCount}
+              {summary.againCount + summary.hardCount}
             </div>
             <div style={{ fontSize: 11, color: 'var(--fc5-text-muted)' }}>
               {copy.summaryAgain}
-            </div>
-          </div>
-          <div>
-            <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--fc5-warn)' }}>
-              {summary.hardCount}
-            </div>
-            <div style={{ fontSize: 11, color: 'var(--fc5-text-muted)' }}>
-              {copy.summaryHard}
             </div>
           </div>
           <div>
