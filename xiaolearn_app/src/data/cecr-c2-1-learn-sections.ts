@@ -25,7 +25,16 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : conclure par 此乃笔者之拙见，敬请各位斧正 — humilité **lettrée** maximale, formule de clôture la plus prisée du registre académique chinois.',
     bodyEn:
-      'Open: 各位学者，今天我想就 X 这一议题展开论述 (esteemed scholars, today I will develop the topic X). Philosophical vocab: 论述 (lùnshù, expound), 阐释 (chǎnshì, elucidate), 释义 (shìyì, exegesis), 注疏 (zhùshū, classical commentary). Citation: 朱熹《四书章句集注》中说 X (per Zhu Xi in his Commentaries on the Four Books). Frame a thesis: 我的论点可概括为以下几点. Close: 此乃笔者之拙见，敬请各位斧正 (this is the author\'s humble view, please give your corrections).',
+      'Open: 各位学者，今天我想就 X 这一议题展开论述 (esteemed scholars, today I will develop the topic X).\n' +
+      '\n' +
+      'Philosophical vocab:\n' +
+      '\n' +
+      '- 论述 (lùnshù, expound)\n' +
+      '- 阐释 (chǎnshì, elucidate)\n' +
+      '- 释义 (shìyì, exegesis)\n' +
+      '- 注疏 (zhùshū, classical commentary)\n' +
+      '\n' +
+      'Citation: 朱熹《四书章句集注》中说 X (per Zhu Xi in his Commentaries on the Four Books). Frame a thesis: 我的论点可概括为以下几点. Close: 此乃笔者之拙见，敬请各位斧正 (this is the author\'s humble view, please give your corrections).',
     items: [
       { hanzi: '论述', pinyin: 'lùnshù', meaning: 'exposer (académique)', meaningEn: 'expound', audio: 'audio/hsk6/hsk6_论述.wav' },
       { hanzi: '阐释', pinyin: 'chǎnshì', meaning: 'élucider', meaningEn: 'elucidate', audio: 'audio/hsk6/hsk6_阐释.wav' },
@@ -55,7 +64,16 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour ancrer dans le présent, dis 这句古训放在今天依然有现实意义 (cet enseignement antique reste pertinent aujourd\'hui). Le combo 古训 + 现实意义 = passerelle **lettrée** entre classique et contemporain, indispensable en académique.',
     bodyEn:
-      'Direct citation: 《论语》有云：«X» (the Analects say: X). 《道德经》第 X 章曰 : Y (chap. X of the Daode jing says Y). Citation verbs: 云 (yún, says — classical), 曰 (yuē, says — very classical), 据载 (per the annals), 古书云 (ancient texts say). To interpret: 此言之意 (the meaning of this saying), 这句话提示我们 X (this phrase suggests us X). To apply: 这句古训放在今天依然有现实意义 (this ancient teaching remains relevant today). Formal combo: 古训 + 现实意义 = bridge between classical and contemporary, valued in Chinese academia.',
+      'Direct citation: 《论语》有云：«X» (the Analects say: X). 《道德经》第 X 章曰 : Y (chap. X of the Daode jing says Y).\n' +
+      '\n' +
+      'Citation verbs:\n' +
+      '\n' +
+      '- 云 (yún, says — classical)\n' +
+      '- 曰 (yuē, says — very classical)\n' +
+      '- 据载 (per the annals)\n' +
+      '- 古书云 (ancient texts say)\n' +
+      '\n' +
+      'To interpret: 此言之意 (the meaning of this saying), 这句话提示我们 X (this phrase suggests us X). To apply: 这句古训放在今天依然有现实意义 (this ancient teaching remains relevant today). Formal combo: 古训 + 现实意义 = bridge between classical and contemporary, valued in Chinese academia.',
     items: [
       { hanzi: '云', pinyin: 'yún', meaning: 'dit (classique)', meaningEn: 'says (classical)', audio: 'audio/hsk6/hsk6_云.wav' },
       { hanzi: '曰', pinyin: 'yuē', meaning: 'dit (très classique)', meaningEn: 'says (very classical)', audio: 'audio/hsk6/hsk6_曰.wav' },
@@ -88,7 +106,16 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour clore sans humilier, dis 文学评论本就见仁见智 — chéngyǔ consensuel qui signale « ni toi ni moi n\'avons tort, c\'est une question d\'angle ».',
     bodyEn:
-      'Frame: discussing the value of a work (novel, poetry, film) with a Chinese critic. Vocab: 文学价值 (literary value), 艺术成就 (artistic achievement), 主题深度 (thematic depth), 笔触 (bǐchù, narrative touch/style). Stance: 我个人认为这部作品的核心价值在于 X (the core of this work is X). Elegant disagreement: 我对您的看法有些不同，我认为 X 反而是 Y. Formal refutation combo: 诚然 X，然而 Y (concession + recovery — C1+ formal rhetoric). Close: 文学评论本就见仁见智 (literary criticism is inherently subjective — consensus formula to close politely).',
+      'Frame: discussing the value of a work (novel, poetry, film) with a Chinese critic.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 文学价值 (literary value)\n' +
+      '- 艺术成就 (artistic achievement)\n' +
+      '- 主题深度 (thematic depth)\n' +
+      '- 笔触 (bǐchù, narrative touch/style)\n' +
+      '\n' +
+      'Stance: 我个人认为这部作品的核心价值在于 X (the core of this work is X). Elegant disagreement: 我对您的看法有些不同，我认为 X 反而是 Y. Formal refutation combo: 诚然 X，然而 Y (concession + recovery — C1+ formal rhetoric). Close: 文学评论本就见仁见智 (literary criticism is inherently subjective — consensus formula to close politely).',
     items: [
       { hanzi: '文学', pinyin: 'wénxué', meaning: 'littérature', meaningEn: 'literature', audio: 'audio/hsk5/hsk5_文学.wav' },
       { hanzi: '成就', pinyin: 'chéngjiù', meaning: 'accomplissement', meaningEn: 'achievement', audio: 'audio/hsk5/hsk5_成就.wav' },
@@ -123,7 +150,15 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ajoute toujours la précaution 当然，每个读者的感受可能不同 — humilité **lettrée** indispensable pour ne pas paraître dogmatique.',
     bodyEn:
-      'Recommendation: 我向您推荐 X，作者是 Y (I recommend X by author Y). Situate in a school: 这部作品属于 X 流派 (this work belongs to school X). Chinese literary schools: 朦胧诗派 (obscure poetry), 寻根派 (root-seeking school), 先锋派 (avant-garde). Major C2 authors: 莫言 (Mo Yan, Nobel 2012), 余华 (Yu Hua, 活着), 阎连科 (Yan Lianke), 王小波 (Wang Xiaobo). Justify: 这部作品的价值在于 X (the value of this work lies in X). Effect: 读后令人深思 (reading prompts reflection). Hedge: 当然，每个读者的感受可能不同 (of course, each reader may feel differently).',
+      'Recommendation: 我向您推荐 X，作者是 Y (I recommend X by author Y). Situate in a school: 这部作品属于 X 流派 (this work belongs to school X).\n' +
+      '\n' +
+      'Chinese literary schools:\n' +
+      '\n' +
+      '- 朦胧诗派 (obscure poetry)\n' +
+      '- 寻根派 (root-seeking school)\n' +
+      '- 先锋派 (avant-garde)\n' +
+      '\n' +
+      'Major C2 authors: 莫言 (Mo Yan, Nobel 2012), 余华 (Yu Hua, 活着), 阎连科 (Yan Lianke), 王小波 (Wang Xiaobo). Justify: 这部作品的价值在于 X (the value of this work lies in X). Effect: 读后令人深思 (reading prompts reflection). Hedge: 当然，每个读者的感受可能不同 (of course, each reader may feel differently).',
     items: [
       { hanzi: '流派', pinyin: 'liúpài', meaning: 'école, courant', meaningEn: 'school, current', audio: 'audio/hsk6/hsk6_流派.wav' },
       { hanzi: '朦胧', pinyin: 'ménglóng', meaning: 'obscur, brumeux', meaningEn: 'obscure, hazy', audio: 'audio/hsk6/hsk6_朦胧.wav' },
@@ -158,7 +193,17 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour conclure, dis 翻译本就是一种再创作 — formule **classique** attribuée à Yan Fu (严复), idéale en clôture de débat traductologique.',
     bodyEn:
-      'Frame: working with an editor on translating a work. Vocab: 翻译 (translation), 译者 (translator), 原文 (source text), 译文 (target text), 直译 (literal) vs 意译 (free). To defend a choice: 我倾向于意译，因为直译会损失 X 的意境 (I lean toward free translation as the literal would lose X). 意境 (atmosphere/poetic mood) is a KEY Chinese word — strictly UNTRANSLATABLE. To discuss: 这个词在中文里有 X 层含义，您建议如何处理？(this word has X layers in Chinese, how to render?). Close: 翻译本就是一种再创作 (translation is inherently a RE-CREATION) — classic phrase attributed to Yan Fu (严复).',
+      'Frame: working with an editor on translating a work.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 翻译 (translation)\n' +
+      '- 译者 (translator)\n' +
+      '- 原文 (source text)\n' +
+      '- 译文 (target text)\n' +
+      '- 直译 (literal) vs 意译 (free)\n' +
+      '\n' +
+      'To defend a choice: 我倾向于意译，因为直译会损失 X 的意境 (I lean toward free translation as the literal would lose X). 意境 (atmosphere/poetic mood) is a KEY Chinese word — strictly UNTRANSLATABLE. To discuss: 这个词在中文里有 X 层含义，您建议如何处理？(this word has X layers in Chinese, how to render?). Close: 翻译本就是一种再创作 (translation is inherently a RE-CREATION) — classic phrase attributed to Yan Fu (严复).',
     items: [
       { hanzi: '译者', pinyin: 'yìzhě', meaning: 'traducteur', meaningEn: 'translator', audio: 'audio/hsk6/hsk6_译者.wav' },
       { hanzi: '直译', pinyin: 'zhíyì', meaning: 'traduction littérale', meaningEn: 'literal translation', audio: 'audio/hsk6/hsk6_直译.wav' },
@@ -189,7 +234,15 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 译诗须传神，不必拘泥于字面 — traduire un poème = transmettre l\'**esprit** (传神), pas s\'attacher à la lettre. Adage **classique** des traducteurs chinois.',
     bodyEn:
-      'Steps: (1) read aloud, (2) count chars/verses (5 or 7), (3) spot rhymes, (4) identify key images, (5) render. Vocab: 五言 (5-char verse), 七言 (7-char), 平从 (level vs oblique tones — metric rule), 对仗 (parallelism). Discussion: 这首诗的核心意象是什么？(what is the central image?). To render: 我们可以保留原文的对仗结构，但调整字数. Method phrase: 译诗须传神，不必拘泥于字面 (translating a poem = transmitting the spirit, no need to stick to the letter). 传神 (transmit the spirit) is a key word.',
+      'Steps:\n' +
+      '\n' +
+      '- (1) read aloud\n' +
+      '- (2) count chars/verses (5 or 7)\n' +
+      '- (3) spot rhymes\n' +
+      '- (4) identify key images\n' +
+      '- (5) render\n' +
+      '\n' +
+      'Vocab: 五言 (5-char verse), 七言 (7-char), 平从 (level vs oblique tones — metric rule), 对仗 (parallelism). Discussion: 这首诗的核心意象是什么？(what is the central image?). To render: 我们可以保留原文的对仗结构，但调整字数. Method phrase: 译诗须传神，不必拘泥于字面 (translating a poem = transmitting the spirit, no need to stick to the letter). 传神 (transmit the spirit) is a key word.',
     items: [
       { hanzi: '五言', pinyin: 'wǔyán', meaning: 'vers à 5 caractères', meaningEn: '5-char verse', audio: 'audio/hsk6/hsk6_五言.wav' },
       { hanzi: '对仗', pinyin: 'duìzhàng', meaning: 'parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },
@@ -223,7 +276,17 @@ export const c21ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : conclure par 但最终的选择还是在您自己 — le respect de l\'autonomie est **confucéen**, le sage conseille mais ne décide pas pour autrui.',
     bodyEn:
-      'Frame: a Chinese asks for advice on an ethical choice. You mobilize classical thought. Vocab: 道 (way/principle), 德 (virtue), 仁 (Confucian humanity), 义 (justice/duty), 中庸 (golden mean). Phrase: 在我看来，您面临的是一个 X 的问题 (in my view, you face an X problem). Cite: 孔子曰 X / 老子说 X. Apply: 这个智慧告诉我们 X (this wisdom tells us X). Recommendation: 我建议您从 X 的角度看 (consider it from angle X). Important: 但最终的选择还是在您自己 (the final choice is yours). Respect for AUTONOMY is Confucian — the sage ADVISES, does not DECIDE for another.',
+      'Frame: a Chinese asks for advice on an ethical choice. You mobilize classical thought.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 道 (way/principle)\n' +
+      '- 德 (virtue)\n' +
+      '- 仁 (Confucian humanity)\n' +
+      '- 义 (justice/duty)\n' +
+      '- 中庸 (golden mean)\n' +
+      '\n' +
+      'Phrase: 在我看来，您面临的是一个 X 的问题 (in my view, you face an X problem). Cite: 孔子曰 X / 老子说 X. Apply: 这个智慧告诉我们 X (this wisdom tells us X). Recommendation: 我建议您从 X 的角度看 (consider it from angle X). Important: 但最终的选择还是在您自己 (the final choice is yours). Respect for AUTONOMY is Confucian — the sage ADVISES, does not DECIDE for another.',
     items: [
       { hanzi: '仁', pinyin: 'rén', meaning: 'humanité (Confucius)', meaningEn: 'humaneness', audio: 'audio/hsk6/hsk6_仁.wav' },
       { hanzi: '义', pinyin: 'yì', meaning: 'justice, devoir', meaningEn: 'righteousness', audio: 'audio/hsk6/hsk6_义.wav' },
@@ -346,7 +409,15 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : combo C2 percutant 排比 (anaphore) + 反问 (question **rhétorique**). Ex : 我们要勇敢，要坚定，要前行。难道不是吗 ? L\'anaphore monte l\'émotion, la question rhétorique fait participer. Pour mobiliser, conclure par le chéngyǔ 时不我待 (le temps ne nous attend pas).',
     bodyEn:
-      'Chinese figures of speech: 比喻 (metaphor — 像 X 一样), 夸张 (hyperbole — 三千丈白发), 对偶 (parallelism — 风调雨顺), 排比 (anaphora — 我们要 X，要 Y，要 Z), 反问 (rhetorical question — 难道不是吗？). In C2 speech, mobilizing a figure supports the argument and marks the LITERATE. Ex: «教育之于一个民族，犹如水之于鱼» (education for a nation is like water for a fish) — 比喻 + 之于…犹如. Oratorical closing: 时不我待 (time waits for no one — chengyu). 时不我待，让我们行动起来 = powerful mobilization.',
+      'Chinese figures of speech:\n' +
+      '\n' +
+      '- 比喻 (metaphor — 像 X 一样)\n' +
+      '- 夸张 (hyperbole — 三千丈白发)\n' +
+      '- 对偶 (parallelism — 风调雨顺)\n' +
+      '- 排比 (anaphora — 我们要 X，要 Y，要 Z)\n' +
+      '- 反问 (rhetorical question — 难道不是吗？)\n' +
+      '\n' +
+      'In C2 speech, mobilizing a figure supports the argument and marks the LITERATE. Ex: «教育之于一个民族，犹如水之于鱼» (education for a nation is like water for a fish) — 比喻 + 之于…犹如. Oratorical closing: 时不我待 (time waits for no one — chengyu). 时不我待，让我们行动起来 = powerful mobilization.',
     items: [
       { hanzi: '比喻', pinyin: 'bǐyù', meaning: 'métaphore', meaningEn: 'metaphor', audio: 'audio/hsk6/hsk6_比喻.wav' },
       { hanzi: '夸张', pinyin: 'kuāzhāng', meaning: 'hyperbole', meaningEn: 'hyperbole', audio: 'audio/hsk5/hsk5_夸张.wav' },
@@ -381,7 +452,15 @@ export const c21ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : dans un éloge funèbre chinois, la VIE > la MORT. On évoque longuement les contributions du défunt (50%), brièvement le deuil (30%), puis l\'héritage qui inspire (20%). Inverser cette hiérarchie = perçu comme déprimant.',
     bodyEn:
-      'Frame: paying tribute to a mentor, parent, colleague. Vocab: 悼念 (commemorate/mourn), 追忆 (recall), 缅怀 (honor the memory — VERY formal). Opening: 今天，我们怀着沉痛的心情悼念 X (today, with heavy hearts, we commemorate X). 沉痛 (deep pain) is MANDATORY in eulogy. Evoke the life: X 一生致力于 Y (X dedicated their life to Y). Cite a virtue: X 的 Z 精神将激励我们继续前行 (the Z spirit of X will inspire us to continue). Close: 安息吧，我们永远怀念您 (rest in peace, we will always remember you). 安息 (rest in peace) is the sanctioned expression.',
+      'Frame: paying tribute to a mentor, parent, colleague.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 悼念 (commemorate/mourn)\n' +
+      '- 追忆 (recall)\n' +
+      '- 缅怀 (honor the memory — VERY formal)\n' +
+      '\n' +
+      'Opening: 今天，我们怀着沉痛的心情悼念 X (today, with heavy hearts, we commemorate X). 沉痛 (deep pain) is MANDATORY in eulogy. Evoke the life: X 一生致力于 Y (X dedicated their life to Y). Cite a virtue: X 的 Z 精神将激励我们继续前行 (the Z spirit of X will inspire us to continue). Close: 安息吧，我们永远怀念您 (rest in peace, we will always remember you). 安息 (rest in peace) is the sanctioned expression.',
     items: [
       { hanzi: '悼念', pinyin: 'dàoniàn', meaning: 'commémorer (deuil)', meaningEn: 'commemorate', audio: 'audio/hsk6/hsk6_悼念.wav' },
       { hanzi: '缅怀', pinyin: 'miǎnhuái', meaning: 'honorer la mémoire', meaningEn: 'cherish the memory', audio: 'audio/hsk6/hsk6_缅怀.wav' },
@@ -451,7 +530,16 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : utilise toujours 略显 X (un peu X) plutôt que 完全 X (totalement X). La modération du verbe permet à l\'auteur de SAUVER LA FACE et de réviser sans hostilité — éthique **lettrée** du dialogue.',
     bodyEn:
-      'Frame: writing a review for a Chinese academic journal. Vocab: 同行评议 (peer review), 录用 (accept), 修改后录用 (accept with revisions), 拒稿 (reject). Positive set phrases: 本文选题新颖 (original topic), 论证严密 (rigorous argumentation), 文献丰富 (rich bibliography). Constructive criticism: 第二部分的论证略显薄弱 (part 2 is a bit weak), 建议作者补充 X (author should add X). Close: 总体而言，本文具有较高的学术价值，建议修改后录用. Tone: RIGOR + RESPECT for the work. Avoid sarcasm or personal judgment.',
+      'Frame: writing a review for a Chinese academic journal.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 同行评议 (peer review)\n' +
+      '- 录用 (accept)\n' +
+      '- 修改后录用 (accept with revisions)\n' +
+      '- 拒稿 (reject)\n' +
+      '\n' +
+      'Positive set phrases: 本文选题新颖 (original topic), 论证严密 (rigorous argumentation), 文献丰富 (rich bibliography). Constructive criticism: 第二部分的论证略显薄弱 (part 2 is a bit weak), 建议作者补充 X (author should add X). Close: 总体而言，本文具有较高的学术价值，建议修改后录用. Tone: RIGOR + RESPECT for the work. Avoid sarcasm or personal judgment.',
     items: [
       { hanzi: '同行', pinyin: 'tóngháng', meaning: 'pair (métier)', meaningEn: 'peer (profession)', audio: 'audio/hsk6/hsk6_同行.wav' },
       { hanzi: '评议', pinyin: 'píngyì', meaning: 'évaluer (académique)', meaningEn: 'evaluate (academic)', audio: 'audio/hsk6/hsk6_评议.wav' },
@@ -485,7 +573,13 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : Confucius dit que sans 德, le 礼 est vide ; sans 礼, le 德 est invisible. En discussion sociale, 没有德 (sans vertu) = creux moralement ; 没有礼 (sans rites) = mal élevé.',
     bodyEn:
-      '道 (dào) = the WAY / metaphysical principle. For Confucians: the just moral way. For Lao Zi: the ultimate principle of the universe, UNNAMABLE («道可道，非常道» — the dao that can be named is not the true dao). 德 (dé) = the INTERIORIZED VIRTUE, active moral quality in the person. 道德 (morality) = combination of both: principle + lived virtue. 礼 (lǐ) = RITES, social etiquette that materializes virtue. 礼仪 (rites and etiquette). Functional hierarchy: 道 (abstract principle) → 德 (interiorized virtue) → 礼 (external rite). Confucius: without 德, 礼 is empty; without 礼, 德 is invisible. Inseparable triad of Chinese thought.',
+      '道 (dào) = the WAY / metaphysical principle. For Confucians: the just moral way. For Lao Zi: the ultimate principle of the universe, UNNAMABLE («道可道，非常道» — the dao that can be named is not the true dao).\n' +
+      '\n' +
+      '- 德 (dé) — the INTERIORIZED VIRTUE, active moral quality in the person\n' +
+      '- 道德 (morality) — = combination of both: principle + lived virtue\n' +
+      '- 礼 (lǐ) — RITES, social etiquette that materializes virtue\n' +
+      '\n' +
+      '礼仪 (rites and etiquette). Functional hierarchy: 道 (abstract principle) → 德 (interiorized virtue) → 礼 (external rite). Confucius: without 德, 礼 is empty; without 礼, 德 is invisible. Inseparable triad of Chinese thought.',
     items: [
       { hanzi: '道', pinyin: 'dào', meaning: 'voie, principe', meaningEn: 'way, principle', audio: 'audio/hsk5/hsk5_道.wav' },
       { hanzi: '德', pinyin: 'dé', meaning: 'vertu', meaningEn: 'virtue', audio: 'audio/hsk6/hsk6_德.wav' },
@@ -516,7 +610,12 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer une action courageuse altruiste, mobilise le chéngyǔ 见义勇为 : 这是见义勇为的精神. Phrase **socialement** honorée, signal de respect maximal.',
     bodyEn:
-      '仁 (rén, humanity, benevolence) = CARDINAL Confucian virtue. «仁者爱人» (the benevolent love others). 仁 is the basis of all. 义 (yì, justice/duty) = what one MUST do morally. 见义勇为 (see the just and dare to act). Often beyond personal gain. 信 (xìn, faith/reliability) = keep one\'s word. 信用 (moral credit). Forms with 仁义礼智信 the 五常 (5 cardinal virtues) structuring Confucian ethics. Hierarchy: 仁 (humanity sentiment), 义 (moral duty), 礼 (social rites), 智 (practical wisdom), 信 (fidelity). Any Chinese ethical debate mobilizes these 5 words — mastering them opens up thought.',
+      '仁 (rén, humanity, benevolence) = CARDINAL Confucian virtue. «仁者爱人» (the benevolent love others). 仁 is the basis of all. 义 (yì, justice/duty) = what one MUST do morally. 见义勇为 (see the just and dare to act). Often beyond personal gain.\n' +
+      '\n' +
+      '- 信 (xìn, faith/reliability) — keep one\'s word\n' +
+      '- 信用 (moral credit) — \n' +
+      '\n' +
+      'Forms with 仁义礼智信 the 五常 (5 cardinal virtues) structuring Confucian ethics. Hierarchy: 仁 (humanity sentiment), 义 (moral duty), 礼 (social rites), 智 (practical wisdom), 信 (fidelity). Any Chinese ethical debate mobilizes these 5 words — mastering them opens up thought.',
     items: [
       { hanzi: '仁', pinyin: 'rén', meaning: 'humanité, bienveillance', meaningEn: 'humaneness', audio: 'audio/hsk6/hsk6_仁.wav' },
       { hanzi: '义', pinyin: 'yì', meaning: 'justice, devoir', meaningEn: 'righteousness', audio: 'audio/hsk6/hsk6_义.wav' },
@@ -556,7 +655,10 @@ export const c21NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : cette cosmologie structure médecine traditionnelle, fengshui, calendrier et nomenclature **classique**. La formule 阴阳平衡 (équilibre yin-yang) reste centrale en discussion d\'équilibre dans tout domaine.',
     bodyEn:
-      '阴 (yīn) = FEMININE principle, dark, cold, inner, earth, moon, water. 阳 (yáng) = MASCULINE principle, bright, hot, outer, sky, sun, fire. Not static dualism — a FLOW (太极图: Tao symbol with 1 dot of each color in the other). 五行 (5 phases): 木 (wood) → 火 (fire) → 土 (earth) → 金 (metal) → 水 (water). Cycles: 相生 (generation: wood→fire→earth→metal→water→wood) and 相克 (domination: wood→earth→water→fire→metal→wood). This cosmology structures traditional medicine, fengshui, calendar, and classical nomenclature. Knowing these terms unlocks ANY traditional Chinese text.',
+      '- 阴 (yīn) — FEMININE principle, dark, cold, inner, earth, moon, water\n' +
+      '- 阳 (yáng) — MASCULINE principle, bright, hot, outer, sky, sun, fire\n' +
+      '\n' +
+      'Not static dualism — a FLOW (太极图: Tao symbol with 1 dot of each color in the other). 五行 (5 phases): 木 (wood) → 火 (fire) → 土 (earth) → 金 (metal) → 水 (water). Cycles: 相生 (generation: wood→fire→earth→metal→water→wood) and 相克 (domination: wood→earth→water→fire→metal→wood). This cosmology structures traditional medicine, fengshui, calendar, and classical nomenclature. Knowing these terms unlocks ANY traditional Chinese text.',
     items: [
       { hanzi: '阴阳', pinyin: 'yīnyáng', meaning: 'yin et yang', meaningEn: 'yin and yang', audio: 'audio/hsk5/hsk5_阴阳.wav' },
       { hanzi: '五行', pinyin: 'wǔxíng', meaning: '5 phases', meaningEn: '5 phases', audio: 'audio/hsk6/hsk6_五行.wav' },
@@ -617,7 +719,12 @@ export const c21NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 中庸之道 (la voie du juste milieu) est un compliment intellectuel chinois. Dire 这是中庸之道 = signaler une décision sage, mesurée, **confucéenne** — plus puissant que 平衡 (équilibre).',
     bodyEn:
-      '中庸 (zhōngyōng) = THE CONFUCIAN GOLDEN MEAN. Not bland average, but the virtue of avoiding extremes through wisdom. Work: 《中庸》, one of the Four Books. 中立 (zhōnglì) = political/diplomatic NEUTRALITY. 保持中立 (stay neutral). Connotes refusal to take sides. 中间 (zhōngjiān) = SPATIAL or TEMPORAL MIDDLE (at center, between 2). 中间人 (intermediary). More concrete. Conceptual hierarchy: 中庸 (moral virtue) ≠ 中立 (political position) ≠ 中间 (physical/temporal position). Confusing 中庸 and 中立 = philosophical error. 中庸 IMPLIES active judgment on the good; 中立 is ABSTENTION.',
+      '中庸 (zhōngyōng) = THE CONFUCIAN GOLDEN MEAN. Not bland average, but the virtue of avoiding extremes through wisdom. Work: 《中庸》, one of the Four Books.\n' +
+      '\n' +
+      '- 中立 (zhōnglì) — political/diplomatic NEUTRALITY\n' +
+      '- 保持中立 (stay neutral) — \n' +
+      '\n' +
+      'Connotes refusal to take sides. 中间 (zhōngjiān) = SPATIAL or TEMPORAL MIDDLE (at center, between 2). 中间人 (intermediary). More concrete. Conceptual hierarchy: 中庸 (moral virtue) ≠ 中立 (political position) ≠ 中间 (physical/temporal position). Confusing 中庸 and 中立 = philosophical error. 中庸 IMPLIES active judgment on the good; 中立 is ABSTENTION.',
     items: [
       { hanzi: '中庸', pinyin: 'zhōngyōng', meaning: 'juste milieu confucéen', meaningEn: 'Confucian golden mean', audio: 'audio/hsk6/hsk6_中庸.wav' },
       { hanzi: '中立', pinyin: 'zhōnglì', meaning: 'neutralité', meaningEn: 'neutrality', audio: 'audio/hsk6/hsk6_中立.wav' },
@@ -676,7 +783,15 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la première phrase des 《论语》 — 学而时习之，不亦说乎 (apprendre et pratiquer régulièrement, n\'est-ce pas un plaisir ?) — déploie les trois en action. La citer en discussion signale immédiatement le niveau **lettré**.',
     bodyEn:
-      '言 (yán) = speak / speech. Verb and noun in classical Chinese. Stays alive: 言论 (discourse), 言行 (words and deeds), 名言 (famous quote). «言之有理» (to have reason in one\'s words). 而 (ér) = AND / THEN / BUT — VERY productive classical connector. «学而时习之» (learn and practice regularly — first sentence of the Analects). «不亦乐乎» (isn\'t it joyful?). Lives in 而且, 然而, 进而. 于 (yú) = at / in / regarding — classical preposition. «出于 X» (originating from X), «关于 X» (concerning X), «至于 X» (as for X), «由于 X» (due to X). Mastering these 3 particles unlocks reading the Analects, Mencius, and any classical text.',
+      '言 (yán) = speak / speech. Verb and noun in classical Chinese.\n' +
+      '\n' +
+      'Stays alive:\n' +
+      '\n' +
+      '- 言论 (discourse)\n' +
+      '- 言行 (words and deeds)\n' +
+      '- 名言 (famous quote)\n' +
+      '\n' +
+      '«言之有理» (to have reason in one\'s words). 而 (ér) = AND / THEN / BUT — VERY productive classical connector. «学而时习之» (learn and practice regularly — first sentence of the Analects). «不亦乐乎» (isn\'t it joyful?). Lives in 而且, 然而, 进而. 于 (yú) = at / in / regarding — classical preposition. «出于 X» (originating from X), «关于 X» (concerning X), «至于 X» (as for X), «由于 X» (due to X). Mastering these 3 particles unlocks reading the Analects, Mencius, and any classical text.',
     items: [
       { hanzi: '言', pinyin: 'yán', meaning: 'parler, parole', meaningEn: 'speak, speech', audio: 'audio/hsk5/hsk5_言.wav' },
       { hanzi: '而', pinyin: 'ér', meaning: 'et, alors (classique)', meaningEn: 'and, then (classical)', audio: 'audio/hsk5/hsk5_而.wav' },
@@ -705,7 +820,12 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le proverbe 善有善报，恶有恶报，不是不报，时候未到 (le bien attire le bien, le mal le mal — pas de non-rétribution, juste pas le bon moment) est une croyance karmique chinoise très ancrée. À mobiliser pour consoler — « la justice viendra ».',
     bodyEn:
-      '是非 (shìfēi) = TRUE AND FALSE (EPISTEMIC axis — what is factually TRUE). 明辨是非 (clearly distinguish true from false). Connotes intellectual rigor. 善恶 (shàn\'è) = GOOD AND EVIL (MORAL axis — inner qualities). 善有善报，恶有恶报 (good attracts good, evil attracts evil — karma). Connotes deep ethics. 对错 (duì cuò) = RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action). 对错很重要 (right vs wrong matters). More everyday and concrete. Hierarchy: 对错 (concrete action) < 是非 (epistemic fact) < 善恶 (deep moral). Classic mistake: confusing 是非 (truth) and 善恶 (morality) — a fact may be 是 but 恶.',
+      '是非 (shìfēi) = TRUE AND FALSE (EPISTEMIC axis — what is factually TRUE). 明辨是非 (clearly distinguish true from false). Connotes intellectual rigor. 善恶 (shàn\'è) = GOOD AND EVIL (MORAL axis — inner qualities). 善有善报，恶有恶报 (good attracts good, evil attracts evil — karma). Connotes deep ethics.\n' +
+      '\n' +
+      '- 对错 (duì cuò) — RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action)\n' +
+      '- 对错很重要 (right vs wrong matters) — \n' +
+      '\n' +
+      'More everyday and concrete. Hierarchy: 对错 (concrete action) < 是非 (epistemic fact) < 善恶 (deep moral). Classic mistake: confusing 是非 (truth) and 善恶 (morality) — a fact may be 是 but 恶.',
     items: [
       { hanzi: '是非', pinyin: 'shìfēi', meaning: 'le vrai et le faux', meaningEn: 'right and wrong (true)', audio: 'audio/hsk6/hsk6_是非.wav' },
       { hanzi: '善恶', pinyin: 'shànè', meaning: 'le bien et le mal', meaningEn: 'good and evil', audio: 'audio/hsk6/hsk6_善恶.wav' },
@@ -738,7 +858,10 @@ export const c21NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la trilogie 身心灵 (corps-cœur-âme) est devenue à la mode dans le bien-être chinois moderne (yoga, méditation). Cite 我们要追求身心灵的平衡 (chercher l\'équilibre corps-cœur-âme) pour un effet **tendance** et culturellement résonant.',
     bodyEn:
-      '身 (shēn) = PHYSICAL BODY. 身体 (body), 身材 (figure). The material. 心 (xīn) = HEART/HEART-MIND. In Chinese, 心 IS the seat of thought AND feeling (not separated as in the West). 心情 (mood), 心思 (thought), 关心 (care about). 灵 (líng) = SOUL, subtle spirit. 灵魂 (soul), 心灵 (heart-spirit, in the spiritual sense). Rarer and more formal. 神 (shén) = DIVINE SPIRIT / radiance / divine aspect of human. 精神 (spirit, vivacity), 神采 (radiance), 神圣 (sacred). Hierarchy: 身 (physical body) < 心 (thinking heart-mind) < 灵 (spiritual soul) < 神 (divine). In Chinese, the absence of heart/reason separation is central — any debate with an educated person runs through understanding 心.',
+      '- 身 (shēn) — PHYSICAL BODY\n' +
+      '- 身体 (body) — 身材 (figure)\n' +
+      '\n' +
+      'The material. 心 (xīn) = HEART/HEART-MIND. In Chinese, 心 IS the seat of thought AND feeling (not separated as in the West). 心情 (mood), 心思 (thought), 关心 (care about). 灵 (líng) = SOUL, subtle spirit. 灵魂 (soul), 心灵 (heart-spirit, in the spiritual sense). Rarer and more formal. 神 (shén) = DIVINE SPIRIT / radiance / divine aspect of human. 精神 (spirit, vivacity), 神采 (radiance), 神圣 (sacred). Hierarchy: 身 (physical body) < 心 (thinking heart-mind) < 灵 (spiritual soul) < 神 (divine). In Chinese, the absence of heart/reason separation is central — any debate with an educated person runs through understanding 心.',
     items: [
       { hanzi: '身', pinyin: 'shēn', meaning: 'corps', meaningEn: 'body', audio: 'audio/hsk2/hsk2_身.wav' },
       { hanzi: '心', pinyin: 'xīn', meaning: 'cœur, esprit-cœur', meaningEn: 'heart-mind', audio: 'audio/hsk1/hsk1_心.wav' },
@@ -797,7 +920,12 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer une œuvre chinoise (poème, calligraphie, paysage, jardin), dis 这很有意境 — compliment **ultime**, plus puissant que 很美 ou 很好. Signale que tu APPRÉCIES la profondeur esthétique chinoise — flatterie maximale d\'un artiste local.',
     bodyEn:
-      '意境 (yìjìng) = POETIC ATMOSPHERE / mood of a Chinese artistic work. Strictly UNTRANSLATABLE — fusion of image (意) and setting (境) that creates deep emotion. Central concept of Chinese aesthetics. 氛围 (fēnwéi) = general AMBIENCE (place, event, conversation). 节日的氛围 (a festival\'s atmosphere). More universal and social. 风格 (fēnggé) = STYLE (artistic, personal, sartorial). 这位画家的风格 (this painter\'s style). More formal on creative identity. Hierarchy: 氛围 (general ambience) < 风格 (artistic identity) < 意境 (ineffable Chinese aesthetic concept). To praise a Chinese work: 这首诗很有意境 = maximum compliment.',
+      '意境 (yìjìng) = POETIC ATMOSPHERE / mood of a Chinese artistic work. Strictly UNTRANSLATABLE — fusion of image (意) and setting (境) that creates deep emotion. Central concept of Chinese aesthetics.\n' +
+      '\n' +
+      '- 氛围 (fēnwéi) — general AMBIENCE (place, event, conversation)\n' +
+      '- 节日的氛围 (a festival\'s atmosphere) — \n' +
+      '\n' +
+      'More universal and social. 风格 (fēnggé) = STYLE (artistic, personal, sartorial). 这位画家的风格 (this painter\'s style). More formal on creative identity. Hierarchy: 氛围 (general ambience) < 风格 (artistic identity) < 意境 (ineffable Chinese aesthetic concept). To praise a Chinese work: 这首诗很有意境 = maximum compliment.',
     items: [
       { hanzi: '意境', pinyin: 'yìjìng', meaning: 'atmosphère poétique', meaningEn: 'poetic atmosphere', audio: 'audio/hsk6/hsk6_意境.wav' },
       { hanzi: '氛围', pinyin: 'fēnwéi', meaning: 'ambiance générale', meaningEn: 'general ambience', audio: 'audio/hsk6/hsk6_氛围.wav' },
@@ -826,7 +954,10 @@ export const c21NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer une personne âgée chinoise, dis 您的品格让我深受感动. 品格 reconnaît la VERTU MORALE accumulée — compliment **ultime** pour un mentor ou un aîné.',
     bodyEn:
-      '人格 (réngé) = PERSONALITY IN PSYCHO-LEGAL SENSE (person as moral subject). 人格尊严 (personal dignity), 人格分裂 (split personality). More formal/scientific. 品格 (pǐngé) = MORAL CHARACTER (virtuous qualities). 品格高尚 (noble character), 培养品格 (form character). Connotes VIRTUE. 性格 (xìnggé) = TEMPERAMENT, psychological traits (introverted, extroverted, calm). 性格内向 (introverted temperament). More everyday. Hierarchy: 性格 (psycho temperament) < 人格 (legal/moral personality) < 品格 (virtuous character). Classic mistake: 性格高尚 ✗ → 品格高尚 ✓ (temperament is neutral, VIRTUE is noble).',
+      '- 人格 (réngé) — PERSONALITY IN PSYCHO-LEGAL SENSE (person as moral subject)\n' +
+      '- 人格尊严 (personal dignity) — 人格分裂 (split personality)\n' +
+      '\n' +
+      'More formal/scientific. 品格 (pǐngé) = MORAL CHARACTER (virtuous qualities). 品格高尚 (noble character), 培养品格 (form character). Connotes VIRTUE. 性格 (xìnggé) = TEMPERAMENT, psychological traits (introverted, extroverted, calm). 性格内向 (introverted temperament). More everyday. Hierarchy: 性格 (psycho temperament) < 人格 (legal/moral personality) < 品格 (virtuous character). Classic mistake: 性格高尚 ✗ → 品格高尚 ✓ (temperament is neutral, VIRTUE is noble).',
     items: [
       { hanzi: '人格', pinyin: 'réngé', meaning: 'personnalité (juridique)', meaningEn: 'personhood', audio: 'audio/hsk6/hsk6_人格.wav' },
       { hanzi: '品格', pinyin: 'pǐngé', meaning: 'caractère moral', meaningEn: 'moral character', audio: 'audio/hsk6/hsk6_品格.wav' },
@@ -858,7 +989,10 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 增长见识 (élargir son expérience) est un objectif culturellement valorisé. Pour parler voyage, lecture, rencontres : 我希望多出去走走，增长见识 — phrase très bien reçue, signal de **maturité** intellectuelle.',
     bodyEn:
-      '智 (zhì) = PRACTICAL WISDOM (knowing how to act with discernment). 智慧 (wisdom), 智者 (the wise). One of the Confucian 五常. Connotes APPLIED intelligence. 知 (zhī) = TO KNOW / KNOW (acquire by learning). 知识 (knowledge), 知道 (know). Broader, more passive. 识 (shí) = RECOGNIZE / IDENTIFY (distinguish among many). 认识 (know by experience), 见识 (sight / experience), 识别 (identify). Connotes DISCERNMENT capacity. Hierarchy: 知 (acquired knowledge) < 识 (discernment capacity) < 智 (applied practical wisdom). Compliment: «您是有智慧的人» > «您知识丰富» (wise > learned).',
+      '- 智 (zhì) — PRACTICAL WISDOM (knowing how to act with discernment)\n' +
+      '- 智慧 (wisdom) — 智者 (the wise)\n' +
+      '\n' +
+      'One of the Confucian 五常. Connotes APPLIED intelligence. 知 (zhī) = TO KNOW / KNOW (acquire by learning). 知识 (knowledge), 知道 (know). Broader, more passive. 识 (shí) = RECOGNIZE / IDENTIFY (distinguish among many). 认识 (know by experience), 见识 (sight / experience), 识别 (identify). Connotes DISCERNMENT capacity. Hierarchy: 知 (acquired knowledge) < 识 (discernment capacity) < 智 (applied practical wisdom). Compliment: «您是有智慧的人» > «您知识丰富» (wise > learned).',
     items: [
       { hanzi: '智', pinyin: 'zhì', meaning: 'sagesse', meaningEn: 'wisdom', audio: 'audio/hsk5/hsk5_智.wav' },
       { hanzi: '知', pinyin: 'zhī', meaning: 'connaître, savoir', meaningEn: 'know', audio: 'audio/hsk1/hsk1_知道.wav' },
@@ -887,7 +1021,10 @@ export const c21NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer un sage, dis 您的境界让我景仰 (votre niveau spirituel m\'inspire le respect). Connaître les 三种境界 de Wang Guowei (独上高楼...衣带渐宽...蓦然回首...) et savoir les mentionner — 像王国维说的三种境界 — signale un niveau **lettré** C2 immédiat.',
     bodyEn:
-      '境界 (jìngjiè) = SPIRITUAL/PHILOSOPHICAL LEVEL attained (state of being). 王国维 (Wang Guowei) posed the «三种境界» of creation: (1) 独上高楼，望尽天涯路; (2) 衣带渐宽终不悔; (3) 蓦然回首，那人却在灯火阑珊处. Deeply cultural. 层次 (céngcì) = STRUCTURAL LEVEL (layers of analysis, hierarchy). 高层次的人 (person of high intellectual/social level). More structural. 水平 (shuǐpíng) = MEASURABLE LEVEL (competence, performance). 学习水平 (academic level). More quantitative. Hierarchy: 水平 (concrete measurable) < 层次 (structural intellectual) < 境界 (spiritual philosophical). To praise a sage: «您的境界让我景仰» (your spiritual level inspires my respect).',
+      '- 境界 (jìngjiè) — SPIRITUAL/PHILOSOPHICAL LEVEL attained (state of being)\n' +
+      '- 王国维 (Wang Guowei) — posed the «三种境界» of creation: (1) 独上高楼，望尽天涯路; (2) 衣带渐宽终不悔; (3) 蓦然回首，那人却在灯火阑珊处\n' +
+      '\n' +
+      'Deeply cultural. 层次 (céngcì) = STRUCTURAL LEVEL (layers of analysis, hierarchy). 高层次的人 (person of high intellectual/social level). More structural. 水平 (shuǐpíng) = MEASURABLE LEVEL (competence, performance). 学习水平 (academic level). More quantitative. Hierarchy: 水平 (concrete measurable) < 层次 (structural intellectual) < 境界 (spiritual philosophical). To praise a sage: «您的境界让我景仰» (your spiritual level inspires my respect).',
     items: [
       { hanzi: '境界', pinyin: 'jìngjiè', meaning: 'niveau spirituel', meaningEn: 'spiritual level', audio: 'audio/hsk6/hsk6_境界.wav' },
       { hanzi: '层次', pinyin: 'céngcì', meaning: 'niveau structurel', meaningEn: 'structural level', audio: 'audio/hsk6/hsk6_层次.wav' },
@@ -954,7 +1091,13 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : lis LENTEMENT. Chaque caractère mérite son temps — isole-le mentalement, donne-lui son sens, puis assemble. Les Chinois cultivés mettent 10 minutes pour lire un poème de 28 caractères, et c\'est **normal**. Le 文言 récompense la lenteur, comme la calligraphie ou le thé.',
     bodyEn:
-      'In MODERN Chinese, we have bi-syllables: 朋友 (friend), 学习 (study), 国家 (country). In 文言, each character is ONE INDEPENDENT WORD: 朋 = friend, 友 = companion, 学 = study, 习 = repeatedly practice, 国 = state, 家 = family/clan. So a 文言 text has 2x fewer characters for the same information density. Example: 学而时习之 (5 chars) = «study (学) and (而) in due time (时) practice (习) it (之)», modern equivalent in ~15 syllables. Practical consequence: READ SLOWLY. Each character deserves its time. Cultured Chinese take 10 minutes to read a 28-character poem — and that\'s NORMAL.',
+      'In MODERN Chinese, we have bi-syllables:\n' +
+      '\n' +
+      '- 朋友 (friend)\n' +
+      '- 学习 (study)\n' +
+      '- 国家 (country)\n' +
+      '\n' +
+      'In 文言, each character is ONE INDEPENDENT WORD: 朋 = friend, 友 = companion, 学 = study, 习 = repeatedly practice, 国 = state, 家 = family/clan. So a 文言 text has 2x fewer characters for the same information density. Example: 学而时习之 (5 chars) = «study (学) and (而) in due time (时) practice (习) it (之)», modern equivalent in ~15 syllables. Practical consequence: READ SLOWLY. Each character deserves its time. Cultured Chinese take 10 minutes to read a 28-character poem — and that\'s NORMAL.',
     items: [
       { hanzi: '朋', pinyin: 'péng', meaning: 'ami (classique)', meaningEn: 'friend (classical)', audio: 'audio/hsk6/hsk6_朋.wav' },
       { hanzi: '友', pinyin: 'yǒu', meaning: 'compagnon (classique)', meaningEn: 'companion', audio: 'audio/hsk6/hsk6_友.wav' },
@@ -1019,7 +1162,14 @@ export const c21WenyanIntroM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 者 après un verbe/adjectif, 所 avant un verbe. Cette règle simple débloque la lecture des Entretiens et de Mencius.',
     bodyEn:
-      '者 (zhě) turns a VERB or ADJECTIVE into a NOUN. 善 (good) + 者 = 善者 (the one who is good, goodness). 学 (study) + 者 = 学者 (one who studies, scholar). 古之学者 = scholars of old. 仁者爱人 = the benevolent love others. Alive in modern Chinese: 学者 (scholar), 作者 (author), 读者 (reader), 记者 (journalist). 所 (suǒ) builds the PASSIVE: «that which is X» or «the X-ed thing». 所爱 = what is loved / the loved one. 所闻 = what is heard. 所见 = what is seen. Classical combo: 所以 (alive in modern as «therefore») = originally in 文言 «that by which», whence the derived causal sense.',
+      '者 (zhě) turns a VERB or ADJECTIVE into a NOUN. 善 (good) + 者 = 善者 (the one who is good, goodness). 学 (study) + 者 = 学者 (one who studies, scholar). 古之学者 = scholars of old. 仁者爱人 = the benevolent love others.\n' +
+      '\n' +
+      'Alive in modern Chinese:\n' +
+      '\n' +
+      '- 学者 (scholar) — 作者 (author), 读者 (reader), 记者 (journalist)\n' +
+      '- 所 (suǒ) — builds the PASSIVE: «that which is X» or «the X-ed thing»\n' +
+      '\n' +
+      '所爱 = what is loved / the loved one. 所闻 = what is heard. 所见 = what is seen. Classical combo: 所以 (alive in modern as «therefore») = originally in 文言 «that by which», whence the derived causal sense.',
     items: [
       { hanzi: '者', pinyin: 'zhě', meaning: 'celui qui (suffixe)', meaningEn: 'the one who', audio: 'audio/hsk5/hsk5_者.wav' },
       { hanzi: '所', pinyin: 'suǒ', meaning: 'ce qui est (passif)', meaningEn: 'that which is', audio: 'audio/hsk5/hsk5_所.wav' },
@@ -1220,7 +1370,15 @@ export const c21PhiloClassiqueM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer un ami chinois, dis 您真有仁义礼智信的精神 (vous avez l\'esprit des 5 vertus). Compliment **suprême** — montre que tu connais la matrice morale chinoise.',
     bodyEn:
-      '五常 (5 constant virtues): 仁 (benevolent humanity — central concept), 义 (righteousness/moral duty), 礼 (rites/social propriety), 智 (practical wisdom), 信 (trustworthiness). Memorize these 5 as a CHAIN — each virtue feeds another. 五伦 (5 fundamental social relations): 君臣 (ruler-subject), 父子 (father-son, became the model of 孝 filial piety), 夫妇 (husband-wife), 兄弟 (brothers, friendship model), 朋友 (friends). Each relation has RECIPROCAL DUTIES. 孝 (filial piety) survives in modern China: caring for elderly parents is a LEGAL DUTY in China (2013 law requiring regular visits to elderly parents). Confucius remains operational.',
+      '五常 (5 constant virtues):\n' +
+      '\n' +
+      '- 仁 (benevolent humanity — central concept)\n' +
+      '- 义 (righteousness/moral duty)\n' +
+      '- 礼 (rites/social propriety)\n' +
+      '- 智 (practical wisdom)\n' +
+      '- 信 (trustworthiness)\n' +
+      '\n' +
+      'Memorize these 5 as a CHAIN — each virtue feeds another. 五伦 (5 fundamental social relations): 君臣 (ruler-subject), 父子 (father-son, became the model of 孝 filial piety), 夫妇 (husband-wife), 兄弟 (brothers, friendship model), 朋友 (friends). Each relation has RECIPROCAL DUTIES. 孝 (filial piety) survives in modern China: caring for elderly parents is a LEGAL DUTY in China (2013 law requiring regular visits to elderly parents). Confucius remains operational.',
     items: [
       { hanzi: '五常', pinyin: 'wǔcháng', meaning: '5 vertus cardinales', meaningEn: '5 cardinal virtues', audio: 'audio/hsk6/hsk6_五常.wav' },
       { hanzi: '五伦', pinyin: 'wǔlún', meaning: '5 relations sociales', meaningEn: '5 social relations', audio: 'audio/hsk6/hsk6_五伦.wav' },
@@ -1318,7 +1476,15 @@ export const c21PhiloClassiqueM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la gouvernance chinoise contemporaine reste largement **légiste** sous une façade **confucéenne**. Cette grille de lecture éclaire la politique chinoise mieux que les grilles occidentales habituelles.',
     bodyEn:
-      '法家 (Legalist School) rests on ONE postulate: humans are NATURALLY BAD, self-interested, calculating. So governing by VIRTUE (Confucian option) is utopian. We need LAW 法, clear and applied to ALL without exception, backed by REWARD and PUNISHMENT. Theorists: 商鞅 (Shang Yang, 4th c. BCE) applied Legalism to the Qin kingdom, which became all-powerful and unified China in 221 BCE. 韩非 (Han Fei, 3rd c. BCE) synthesized the doctrine in 《韩非子》. Legalist triad: 法 (law), 术 (techniques of power/bureaucratic control), 势 (position of power, throne\'s authority). For Han Fei, a ruler must MANIPULATE the 3 levers in parallel. Modernity: Chinese governance remains largely Legalist under a Confucian facade.',
+      '法家 (Legalist School) rests on ONE postulate: humans are NATURALLY BAD, self-interested, calculating. So governing by VIRTUE (Confucian option) is utopian. We need LAW 法, clear and applied to ALL without exception, backed by REWARD and PUNISHMENT. Theorists: 商鞅 (Shang Yang, 4th c. BCE) applied Legalism to the Qin kingdom, which became all-powerful and unified China in 221 BCE. 韩非 (Han Fei, 3rd c. BCE) synthesized the doctrine in 《韩非子》.\n' +
+      '\n' +
+      'Legalist triad:\n' +
+      '\n' +
+      '- 法 (law)\n' +
+      '- 术 (techniques of power/bureaucratic control)\n' +
+      '- 势 (position of power, throne\'s authority)\n' +
+      '\n' +
+      'For Han Fei, a ruler must MANIPULATE the 3 levers in parallel. Modernity: Chinese governance remains largely Legalist under a Confucian facade.',
     items: [
       { hanzi: '法家', pinyin: 'fǎjiā', meaning: 'École des légistes', meaningEn: 'Legalist School', audio: 'audio/hsk6/hsk6_法家.wav' },
       { hanzi: '商鞅', pinyin: 'shāngyāng', meaning: 'Shang Yang', meaningEn: 'Shang Yang', audio: 'audio/hsk6/hsk6_商鞅.wav' },

@@ -24,7 +24,15 @@ export const c22ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : ne **JAMAIS** s\'excuser publiquement d\'une erreur — corrige discrètement la phrase suivante. Et n\'oublie pas : la préparation pèse pour **70% du succès**, donc demande toujours glossaire et slides à l\'avance.',
     bodyEn:
-      'Frame: you interpret (FR↔ZH) a speaker in real time (booth or whispering). Vocab: 同声传译 (simultaneous), 交替传译 (consecutive), 译员 (interpreter). Techniques: 跟读 (follow voice with 3-5 sec lag), 概括 (summarize if pace too fast), 预判 (anticipate sentence end). Useful phrases: 译员请您稍微放慢一点 (interpreter asks you to slow down). 该词在中文中没有完全对应 (this word has no exact equivalent). In pro context, NEVER apologize for an interpretation error in front of everyone — discreetly correct the next sentence. Preparation = 70% of success: ALWAYS REQUEST glossary and PowerPoint in advance.',
+      'Frame: you interpret (FR↔ZH) a speaker in real time (booth or whispering).\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 同声传译 (simultaneous)\n' +
+      '- 交替传译 (consecutive)\n' +
+      '- 译员 (interpreter)\n' +
+      '\n' +
+      'Techniques: 跟读 (follow voice with 3-5 sec lag), 概括 (summarize if pace too fast), 预判 (anticipate sentence end). Useful phrases: 译员请您稍微放慢一点 (interpreter asks you to slow down). 该词在中文中没有完全对应 (this word has no exact equivalent). In pro context, NEVER apologize for an interpretation error in front of everyone — discreetly correct the next sentence. Preparation = 70% of success: ALWAYS REQUEST glossary and PowerPoint in advance.',
     items: [
       { hanzi: '同声传译', pinyin: 'tóngshēng chuányì', meaning: 'interprétation simultanée', meaningEn: 'simultaneous interpretation', audio: 'audio/hsk6/hsk6_同声.wav' },
       { hanzi: '译员', pinyin: 'yìyuán', meaning: 'interprète', meaningEn: 'interpreter', audio: 'audio/hsk6/hsk6_译员.wav' },
@@ -52,7 +60,14 @@ export const c22ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : **JAMAIS inventer sans signaler**. Pour un terme nouveau (ex : tech récente), annonce-le clairement : 这个词目前没有标准译法，我建议译为 X (pas de standard, je propose X). L\'éthique pro exige la transparence.',
     bodyEn:
-      'Steps: (1) request topic and speaker list, (2) list 100-200 specialized terms, (3) pre-translate using reliable sources, (4) test pronunciation with a native. Request formula: 您能否提前给我会议的议程和参与者名单？Interpreter vocab: 术语 (specialized term), 术语库 (terminology database), 双语对照 (zh↔fr parallel). Sources: 联合国术语库, 中国译协 (Translators Association of China). For an INVENTED or very recent term (e.g. new tech): 这个词目前没有标准译法，我建议译为 X (no standard, I propose X). NEVER invent without flagging — professional ethics demand transparency.',
+      'Steps:\n' +
+      '\n' +
+      '- (1) request topic and speaker list\n' +
+      '- (2) list 100-200 specialized terms\n' +
+      '- (3) pre-translate using reliable sources\n' +
+      '- (4) test pronunciation with a native\n' +
+      '\n' +
+      'Request formula: 您能否提前给我会议的议程和参与者名单？Interpreter vocab: 术语 (specialized term), 术语库 (terminology database), 双语对照 (zh↔fr parallel). Sources: 联合国术语库, 中国译协 (Translators Association of China). For an INVENTED or very recent term (e.g. new tech): 这个词目前没有标准译法，我建议译为 X (no standard, I propose X). NEVER invent without flagging — professional ethics demand transparency.',
     items: [
       { hanzi: '术语', pinyin: 'shùyǔ', meaning: 'terme spécialisé', meaningEn: 'specialized term', audio: 'audio/hsk6/hsk6_术语.wav' },
       { hanzi: '议程', pinyin: 'yìchéng', meaning: 'agenda, programme', meaningEn: 'agenda', audio: 'audio/hsk6/hsk6_议程.wav' },
@@ -88,7 +103,16 @@ export const c22ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : mentionner « 第五代 » dans la première minute = signal **cinéphile** immédiat.',
     bodyEn:
-      'Vocab: 导演 (director), 编剧 (screenwriter), 摄影 (DP), 剧情 (plot), 情节 (incident), 镜头 (shot). Major directors: 张艺谋 (Zhang Yimou — Red Sorghum, Raise the Red Lantern), 陈凯歌 (Chen Kaige — Farewell My Concubine), 王家卫 (Wong Kar-wai, Hong Kong — In the Mood for Love), 贾樟柯 (Jia Zhangke — Platform). To analyze: 这部影片的核心主题是 X. 镜头语言非常独特 (the grammar of shots is singular). 张艺谋早期的色彩美学影响了一代导演. To situate: 这部电影属于第五代导演的代表作 (belongs to Fifth Generation works).',
+      'Vocab:\n' +
+      '\n' +
+      '- 导演 (director)\n' +
+      '- 编剧 (screenwriter)\n' +
+      '- 摄影 (DP)\n' +
+      '- 剧情 (plot)\n' +
+      '- 情节 (incident)\n' +
+      '- 镜头 (shot)\n' +
+      '\n' +
+      'Major directors: 张艺谋 (Zhang Yimou — Red Sorghum, Raise the Red Lantern), 陈凯歌 (Chen Kaige — Farewell My Concubine), 王家卫 (Wong Kar-wai, Hong Kong — In the Mood for Love), 贾樟柯 (Jia Zhangke — Platform). To analyze: 这部影片的核心主题是 X. 镜头语言非常独特 (the grammar of shots is singular). 张艺谋早期的色彩美学影响了一代导演. To situate: 这部电影属于第五代导演的代表作 (belongs to Fifth Generation works).',
     items: [
       { hanzi: '导演', pinyin: 'dǎoyǎn', meaning: 'réalisateur', meaningEn: 'director', audio: 'audio/hsk5/hsk5_导演.wav' },
       { hanzi: '编剧', pinyin: 'biānjù', meaning: 'scénariste', meaningEn: 'screenwriter', audio: 'audio/hsk6/hsk6_编剧.wav' },
@@ -126,7 +150,15 @@ export const c22ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'ASTUCE : pour une blague, le calque échoue — 直译会让观众一头雾水 (la traduction littérale laisse le spectateur perplexe). Les sous-titres officiels (Netflix, Bilibili) suivent des règles strictes ; les **字幕组** (Renren, Yanmo dans les années 2010) prennent plus de libertés et ont façonné une génération de spectateurs cosmopolites.',
     bodyEn:
-      'Physical constraints: max 2 lines, 12-15 Chinese chars or 35-40 Latin letters, 6 sec on screen max. Vocab: 字幕 (subtitles), 字幕组 (volunteer fansub team), 配音 (dubbing). Techniques: COMPRESS (cut hesitations, repetitions), TRANSCREATE (adapt a cultural joke), PRESERVE the tone (formal/casual/dialectal). For jokes: 直译会让观众一头雾水 (literal translation would leave viewer baffled). Prefer 本地化 (localization). Official subtitles (Netflix, Bilibili) follow strict rules; 字幕组 take more liberties. Chinese 字幕组 culture (Renren, Yanmo in the 2010s) shaped a generation of cosmopolitan viewers.',
+      'Physical constraints: max 2 lines, 12-15 Chinese chars or 35-40 Latin letters, 6 sec on screen max.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 字幕 (subtitles)\n' +
+      '- 字幕组 (volunteer fansub team)\n' +
+      '- 配音 (dubbing)\n' +
+      '\n' +
+      'Techniques: COMPRESS (cut hesitations, repetitions), TRANSCREATE (adapt a cultural joke), PRESERVE the tone (formal/casual/dialectal). For jokes: 直译会让观众一头雾水 (literal translation would leave viewer baffled). Prefer 本地化 (localization). Official subtitles (Netflix, Bilibili) follow strict rules; 字幕组 take more liberties. Chinese 字幕组 culture (Renren, Yanmo in the 2010s) shaped a generation of cosmopolitan viewers.',
     items: [
       { hanzi: '字幕', pinyin: 'zìmù', meaning: 'sous-titres', meaningEn: 'subtitles', audio: 'audio/hsk6/hsk6_字幕.wav' },
       { hanzi: '字幕组', pinyin: 'zìmùzǔ', meaning: 'équipe de fansub', meaningEn: 'fansub team', audio: 'audio/hsk6/hsk6_字幕组.wav' },
@@ -163,7 +195,15 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'ASTUCE : le cantonais utilise des caractères **absents** du mandarin standard — 嘅 (ge, particule possessive = 的), 嗰 (go2, ce/cet = 那个), 唔 (m4, pas = 不). Connaître ces trois caractères permet de lire 80% des écrits cantonais informels (Facebook HK, LIHKG).',
     bodyEn:
-      'Cantonese 粤语 (yuèyǔ) spoken by 80M Chinese (Guangdong + HK + diaspora). Greetings: 你好 = nei5 hou2 (but in HK often 哈囉 hā lōu), 早晨 (zou2 san4, morning hello), 唔該 (m4 goi1, thanks/excuse me). At restaurant: 一個 (yat1 go3, one), 多謝 (do1 ze6, thanks for a gift), 唔好意思 (m4 hou2 ji3 si3, sorry). Specifics: 9 tones (vs 4 in Mandarin). Traditional characters (繁體字) in HK and Macao, simplified (简体字) in Mainland. Cantonese uses characters ABSENT from standard Mandarin: 嘅 (ge, possessive particle = 的), 嗰 (go2, that = 那个), 唔 (m4, not = 不). Knowing these 3 = reading 80% of informal Cantonese writing (HK Facebook, LIHKG).',
+      'Cantonese 粤语 (yuèyǔ) spoken by 80M Chinese (Guangdong + HK + diaspora).\n' +
+      '\n' +
+      'Greetings:\n' +
+      '\n' +
+      '- 你好 = nei5 hou2 (but in HK often 哈囉 hā lōu)\n' +
+      '- 早晨 (zou2 san4, morning hello)\n' +
+      '- 唔該 (m4 goi1, thanks/excuse me)\n' +
+      '\n' +
+      'At restaurant: 一個 (yat1 go3, one), 多謝 (do1 ze6, thanks for a gift), 唔好意思 (m4 hou2 ji3 si3, sorry). Specifics: 9 tones (vs 4 in Mandarin). Traditional characters (繁體字) in HK and Macao, simplified (简体字) in Mainland. Cantonese uses characters ABSENT from standard Mandarin: 嘅 (ge, possessive particle = 的), 嗰 (go2, that = 那个), 唔 (m4, not = 不). Knowing these 3 = reading 80% of informal Cantonese writing (HK Facebook, LIHKG).',
     items: [
       { hanzi: '粤语', pinyin: 'yuèyǔ', meaning: 'cantonais', meaningEn: 'Cantonese', audio: 'audio/hsk6/hsk6_粤语.wav' },
       { hanzi: '繁體字', pinyin: 'fántǐ zì', meaning: 'caract. traditionnels', meaningEn: 'traditional chars', audio: 'audio/hsk6/hsk6_繁体.wav' },
@@ -238,7 +278,18 @@ export const c22ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour analyser une œuvre — 这部作品反映了一个时代的集体记忆 (cette œuvre reflète la mémoire collective d’une époque) ; pour la situer politiquement — 这部作品在当时是 X (censurée, contestée, applaudie).',
     bodyEn:
-      'Major waves: 伤痕文学 (scar literature, post-Cultural Revolution, 80s) → 寻根文学 (root-seeking) → 先锋文学 (avant-garde) → 新写实 (neo-realism) → 网络文学 (online literature, since 2000). Essential C2.2 authors: 莫言 (Mo Yan, Nobel 2012, magic realism Red Sorghum), 余华 (Yu Hua, To Live), 阎连科 (Yan Lianke, Lenin\'s Kisses), 王安忆 (Wang Anyi, Song of Everlasting Sorrow), 韩少功 (Han Shaogong), 苏童 (Su Tong). Women: 王安忆, 张悦然, 残雪. To analyze: 这部作品反映了一个时代的集体记忆 (this work reflects an era\'s collective memory). To situate politically: 这部作品在当时是 X (this work was X at the time — censored, contested, applauded).',
+      'Major waves: 伤痕文学 (scar literature, post-Cultural Revolution, 80s) → 寻根文学 (root-seeking) → 先锋文学 (avant-garde) → 新写实 (neo-realism) → 网络文学 (online literature, since 2000).\n' +
+      '\n' +
+      'Essential C2.2 authors:\n' +
+      '\n' +
+      '- 莫言 (Mo Yan, Nobel 2012, magic realism Red Sorghum)\n' +
+      '- 余华 (Yu Hua, To Live)\n' +
+      '- 阎连科 (Yan Lianke, Lenin\'s Kisses)\n' +
+      '- 王安忆 (Wang Anyi, Song of Everlasting Sorrow)\n' +
+      '- 韩少功 (Han Shaogong)\n' +
+      '- 苏童 (Su Tong)\n' +
+      '\n' +
+      'Women: 王安忆, 张悦然, 残雪. To analyze: 这部作品反映了一个时代的集体记忆 (this work reflects an era\'s collective memory). To situate politically: 这部作品在当时是 X (this work was X at the time — censored, contested, applauded).',
     items: [
       { hanzi: '伤痕', pinyin: 'shānghén', meaning: 'cicatrice', meaningEn: 'scar', audio: 'audio/hsk6/hsk6_伤痕.wav' },
       { hanzi: '集体', pinyin: 'jítǐ', meaning: 'collectif', meaningEn: 'collective', audio: 'audio/hsk5/hsk5_集体.wav' },
@@ -274,7 +325,17 @@ export const c22ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D’OR : pour discuter sérieusement le phénomène — 网络文学已成为中国文学的重要部分，不容忽视 (la littérature en ligne est devenue une part importante qu’on ne peut ignorer). **不容忽视** est une formule d’analyse **soutenue** très efficace.',
     bodyEn:
-      'Chinese 网络文学 (online literature) is a unique global phenomenon. Dominant platform: 起点中文网 (Qidian, founded 2002). Genres: 玄幻 (fantasy + martial arts), 都市 (urban romance), 修仙 (Taoist immortality), 穿越 (time travel — often a modern heroine sent to a dynasty), 末世 (post-apo). Business model: authors publish 1 chapter/day of 3000 chars, readers pay via micro-transactions. Phenomenon: exported in English (Webnovel/Wuxiaworld), influences global pop writing. To discuss: 网络文学已成为中国文学的重要部分，不容忽视 (online lit has become an important part of Chinese literature that cannot be ignored). 不容忽视 = formal analytic formula.',
+      'Chinese 网络文学 (online literature) is a unique global phenomenon. Dominant platform: 起点中文网 (Qidian, founded 2002).\n' +
+      '\n' +
+      'Genres:\n' +
+      '\n' +
+      '- 玄幻 (fantasy + martial arts)\n' +
+      '- 都市 (urban romance)\n' +
+      '- 修仙 (Taoist immortality)\n' +
+      '- 穿越 (time travel — often a modern heroine sent to a dynasty)\n' +
+      '- 末世 (post-apo)\n' +
+      '\n' +
+      'Business model: authors publish 1 chapter/day of 3000 chars, readers pay via micro-transactions. Phenomenon: exported in English (Webnovel/Wuxiaworld), influences global pop writing. To discuss: 网络文学已成为中国文学的重要部分，不容忽视 (online lit has become an important part of Chinese literature that cannot be ignored). 不容忽视 = formal analytic formula.',
     items: [
       { hanzi: '网络', pinyin: 'wǎngluò', meaning: 'réseau, internet', meaningEn: 'network', audio: 'audio/hsk5/hsk5_网络.wav' },
       { hanzi: '玄幻', pinyin: 'xuánhuàn', meaning: 'fantasy chinoise', meaningEn: 'Chinese fantasy', audio: 'audio/hsk6/hsk6_玄幻.wav' },
@@ -312,7 +373,15 @@ export const c22ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : le 导师 chinois moderne respecte l’**autonomie** — il guide sans imposer. C’est la différence avec le 师傅 (shīfu, maître artisan) qui transmet une technique précise. 师傅 = obéissance ; 导师 = dialogue.',
     bodyEn:
-      'Frame: a Chinese junior asks for career advice. Stance: 我把你当作朋友，分享我的经验 (I treat you as a friend and share my experience). Vocab: 导师 (mentor), 指导 (guide), 反馈 (feedback). Phrase to avoid: «你应该 X» (too directive). Prefer: 你可以考虑 X / 一种思路是 X. Reflection-prompting question: 你自己是怎么想的？(what do YOU think?). Encourage: 我相信你的判断 (I trust your judgment). The Chinese 导师 respects AUTONOMY — guides without imposing. Difference with 师傅 (shīfu, master artisan) who transmits a precise technique. 师傅 = obedience; 导师 = dialogue.',
+      'Frame: a Chinese junior asks for career advice. Stance: 我把你当作朋友，分享我的经验 (I treat you as a friend and share my experience).\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 导师 (mentor)\n' +
+      '- 指导 (guide)\n' +
+      '- 反馈 (feedback)\n' +
+      '\n' +
+      'Phrase to avoid: «你应该 X» (too directive). Prefer: 你可以考虑 X / 一种思路是 X. Reflection-prompting question: 你自己是怎么想的？(what do YOU think?). Encourage: 我相信你的判断 (I trust your judgment). The Chinese 导师 respects AUTONOMY — guides without imposing. Difference with 师傅 (shīfu, master artisan) who transmits a precise technique. 师傅 = obedience; 导师 = dialogue.',
     items: [
       { hanzi: '导师', pinyin: 'dǎoshī', meaning: 'mentor', meaningEn: 'mentor', audio: 'audio/hsk6/hsk6_导师.wav' },
       { hanzi: '指导', pinyin: 'zhǐdǎo', meaning: 'orienter', meaningEn: 'guide', audio: 'audio/hsk5/hsk5_指导.wav' },
@@ -340,7 +409,16 @@ export const c22ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ne dis JAMAIS « 你这里错了 » (tu t’es trompé) — préfère 我们能不能换一个角度看 X (peut-on regarder X sous un autre angle). Le mot **调整** (tiáozhěng, ajuster) est moins blessant que **改** (gǎi, corriger).',
     bodyEn:
-      'Cultural TRAP: direct feedback (American style) hurts 面子. But TOO soft feedback (traditional Chinese style) doesn\'t push forward. C2.2 solution: sandwich + question + co-construction. Steps: (1) recognize strengths (你这个 X 做得很好), (2) ask a question (你自己觉得 Y 部分怎么样？), (3) suggest (我觉得如果这样调整 Z 会更好), (4) invite discussion (你怎么看？). NEVER: «你这里错了» (you got it wrong here). Prefer: «我们能不能换一个角度看 X» (can we look at X from another angle). The word 调整 (adjust) is less hurtful than 改 (correct).',
+      'Cultural TRAP: direct feedback (American style) hurts 面子. But TOO soft feedback (traditional Chinese style) doesn\'t push forward. C2.2 solution: sandwich + question + co-construction.\n' +
+      '\n' +
+      'Steps:\n' +
+      '\n' +
+      '- (1) recognize strengths (你这个 X 做得很好)\n' +
+      '- (2) ask a question (你自己觉得 Y 部分怎么样？)\n' +
+      '- (3) suggest (我觉得如果这样调整 Z 会更好)\n' +
+      '- (4) invite discussion (你怎么看？)\n' +
+      '\n' +
+      'NEVER: «你这里错了» (you got it wrong here). Prefer: «我们能不能换一个角度看 X» (can we look at X from another angle). The word 调整 (adjust) is less hurtful than 改 (correct).',
     items: [
       { hanzi: '调整', pinyin: 'tiáozhěng', meaning: 'ajuster', meaningEn: 'adjust', audio: 'audio/hsk5/hsk5_调整.wav' },
       { hanzi: '角度', pinyin: 'jiǎodù', meaning: 'angle, perspective', meaningEn: 'angle', audio: 'audio/hsk5/hsk5_角度.wav' },
@@ -378,7 +456,17 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ne JAMAIS dire « 中国人都… » (généralisation) — préfère **很多中国人** (beaucoup de Chinois). De même, évite « 我们外国人觉得 X » (paternaliste) : préfère 我个人的观察是 X. L’individualisation du propos respecte la complexité.',
     bodyEn:
-      'Frame: long conversation with a cultured Chinese on fundamental China/West differences. Vocab: 文化差异 (cultural difference), 文化冲突 (clash), 文化融合 (fusion), 西方 (West), 东方 (East). To state a difference: 在中国，X 通常被视为 Y，而在西方可能不同 (in China, X is usually viewed as Y, while in the West it may differ). 被视为 (is viewed as) sounds formal and neutral. Avoid simplistic binary: 但其实 X 也存在 Y 的情况 (but actually X can also be Y). NEVER say «中国人都…» (generalization). Prefer «很多中国人» (many Chinese). Close: 跨文化理解需要时间和耐心 (intercultural understanding requires time and patience).',
+      'Frame: long conversation with a cultured Chinese on fundamental China/West differences.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 文化差异 (cultural difference)\n' +
+      '- 文化冲突 (clash)\n' +
+      '- 文化融合 (fusion)\n' +
+      '- 西方 (West)\n' +
+      '- 东方 (East)\n' +
+      '\n' +
+      'To state a difference: 在中国，X 通常被视为 Y，而在西方可能不同 (in China, X is usually viewed as Y, while in the West it may differ). 被视为 (is viewed as) sounds formal and neutral. Avoid simplistic binary: 但其实 X 也存在 Y 的情况 (but actually X can also be Y). NEVER say «中国人都…» (generalization). Prefer «很多中国人» (many Chinese). Close: 跨文化理解需要时间和耐心 (intercultural understanding requires time and patience).',
     items: [
       { hanzi: '差异', pinyin: 'chāyì', meaning: 'différence', meaningEn: 'difference', audio: 'audio/hsk5/hsk5_差异.wav' },
       { hanzi: '冲突', pinyin: 'chōngtū', meaning: 'conflit, choc', meaningEn: 'conflict', audio: 'audio/hsk5/hsk5_冲突.wav' },
@@ -414,7 +502,16 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : **话语权** se manie avec précaution. Surutilisé, il sonne **paranoïaque** ou défensif ; à l’oral, préfère 影响力 (influence) plus neutre. Réserve 话语权 aux écrits stratégiques.',
     bodyEn:
-      'Frame: speaking on China\'s place in the world. Vocab: 软实力 (soft power), 文化输出 (cultural export), 国际形象 (international image), 话语权 (huàyǔquán, discursive leverage). 话语权 is a KEY concept in Chinese geopolitical analysis — who CONTROLS the narrative. Phrases: 中国正在努力构建自己的话语体系 (China is building its own discursive system). To discuss: 中国的软实力还在起步阶段，但发展迅速 (Chinese soft power is starting but growing fast). Examples: 孔子学院, TikTok, 哪吒, 原神, 李子柒. Limits: 但西方对中国的认知仍存在偏见 (but Western perception of China remains biased). Close: 文化的影响力需要长期积累 (cultural influence accumulates long-term).',
+      'Frame: speaking on China\'s place in the world.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 软实力 (soft power)\n' +
+      '- 文化输出 (cultural export)\n' +
+      '- 国际形象 (international image)\n' +
+      '- 话语权 (huàyǔquán, discursive leverage)\n' +
+      '\n' +
+      '话语权 is a KEY concept in Chinese geopolitical analysis — who CONTROLS the narrative. Phrases: 中国正在努力构建自己的话语体系 (China is building its own discursive system). To discuss: 中国的软实力还在起步阶段，但发展迅速 (Chinese soft power is starting but growing fast). Examples: 孔子学院, TikTok, 哪吒, 原神, 李子柒. Limits: 但西方对中国的认知仍存在偏见 (but Western perception of China remains biased). Close: 文化的影响力需要长期积累 (cultural influence accumulates long-term).',
     items: [
       { hanzi: '软实力', pinyin: 'ruǎn shílì', meaning: 'soft power', meaningEn: 'soft power', audio: 'audio/hsk6/hsk6_软实力.wav' },
       { hanzi: '话语权', pinyin: 'huàyǔquán', meaning: 'leverage discursif', meaningEn: 'discursive power', audio: 'audio/hsk6/hsk6_话语权.wav' },
@@ -458,7 +555,15 @@ export const c22ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la formule **在效率和隐私之间，我们需要找到平衡** est la position **centriste** par excellence — elle évite autant l’apologétique pro-tech que la critique frontale du modèle chinois.',
     bodyEn:
-      'Vocab: 人工智能 (AI), 算法 (algorithm), 监控 (surveillance), 隐私 (privacy), 伦理 (ethics). Pro-AI Chinese stance: AI accelerates development, optimizes public services. Critical stance: 算法歧视 (algorithm bias), 监控社会 (surveillance society), 隐私泄露 (data leak). Set phrases: 在效率和隐私之间，我们需要找到平衡 (between efficiency and privacy, find balance). 算法不是中立的 (algorithms aren\'t neutral). To nuance Chinese specificity: 中国和西方对隐私的理解有所不同 (China and the West have different understandings of privacy). Legal frame: 个人信息保护法 (PIPL, 2021, Chinese GDPR equivalent). Close: 技术发展需要伦理边界 (tech development needs ethical limits).',
+      'Vocab:\n' +
+      '\n' +
+      '- 人工智能 (AI)\n' +
+      '- 算法 (algorithm)\n' +
+      '- 监控 (surveillance)\n' +
+      '- 隐私 (privacy)\n' +
+      '- 伦理 (ethics)\n' +
+      '\n' +
+      'Pro-AI Chinese stance: AI accelerates development, optimizes public services. Critical stance: 算法歧视 (algorithm bias), 监控社会 (surveillance society), 隐私泄露 (data leak). Set phrases: 在效率和隐私之间，我们需要找到平衡 (between efficiency and privacy, find balance). 算法不是中立的 (algorithms aren\'t neutral). To nuance Chinese specificity: 中国和西方对隐私的理解有所不同 (China and the West have different understandings of privacy). Legal frame: 个人信息保护法 (PIPL, 2021, Chinese GDPR equivalent). Close: 技术发展需要伦理边界 (tech development needs ethical limits).',
     items: [
       { hanzi: '人工智能', pinyin: 'réngōngzhìnéng', meaning: 'IA', meaningEn: 'AI', audio: 'audio/hsk6/hsk6_人工智能.wav' },
       { hanzi: '算法', pinyin: 'suànfǎ', meaning: 'algorithme', meaningEn: 'algorithm', audio: 'audio/hsk6/hsk6_算法.wav' },
@@ -527,7 +632,10 @@ export const c22NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique = confondre 时候 (descriptif) et 时机 (stratégique). « 这个时候 » = à ce moment ; « 这个时机 » = cette opportunité.',
     bodyEn:
-      '时间 (shíjiān) = abstract TIME/duration, resource. 时间不够 (not enough time). Most universal. 时候 (shíhòu) = specific MOMENT (when something happens). 我小的时候 (when I was little). More everyday and oral. 时刻 (shíkè) = precise INSTANT, crucial moment. 关键时刻 (crucial moment). Connotes IMPORTANCE. 时机 (shíjī) = OPPORTUNITY, favorable conjuncture. 抓住时机 (seize the opportunity). Connotes STRATEGY. Hierarchy: 时间 (duration) ≠ 时候 (moment) ≠ 时刻 (crucial instant) ≠ 时机 (opportunity). Classic mistake: confusing 时候 (descriptive) and 时机 (strategic). «这个时候» = at this moment; «这个时机» = this opportunity.',
+      '- 时间 (shíjiān) — abstract TIME/duration, resource\n' +
+      '- 时间不够 (not enough time) — \n' +
+      '\n' +
+      'Most universal. 时候 (shíhòu) = specific MOMENT (when something happens). 我小的时候 (when I was little). More everyday and oral. 时刻 (shíkè) = precise INSTANT, crucial moment. 关键时刻 (crucial moment). Connotes IMPORTANCE. 时机 (shíjī) = OPPORTUNITY, favorable conjuncture. 抓住时机 (seize the opportunity). Connotes STRATEGY. Hierarchy: 时间 (duration) ≠ 时候 (moment) ≠ 时刻 (crucial instant) ≠ 时机 (opportunity). Classic mistake: confusing 时候 (descriptive) and 时机 (strategic). «这个时候» = at this moment; «这个时机» = this opportunity.',
     items: [
       { hanzi: '时间', pinyin: 'shíjiān', meaning: 'temps (durée)', meaningEn: 'time (duration)', audio: 'audio/hsk1/hsk1_时间.wav' },
       { hanzi: '时候', pinyin: 'shíhòu', meaning: 'moment, quand', meaningEn: 'moment, when', audio: 'audio/hsk1/hsk1_时候.wav' },
@@ -555,7 +663,10 @@ export const c22NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : test rapide — « par cet effort » → 通过 ; « passer par cette ville » → 经过 ; « vivre cette épreuve » → 经历 ; « transiter via cet aéroport » → 经由. Le bon collocataire = signal de précision.',
     bodyEn:
-      '通过 (tōngguò) = BY MEANS OF / ADOPT (vote). 通过努力 (through effort), 通过提案 (adopt a proposal). Versatile. 经过 (jīngguò) = PASS THROUGH (place, period). 经过北京 (pass through Beijing), 经过几年的研究 (after several years of research). Connotes TEMPORAL/SPATIAL TRAVERSAL. 经历 (jīnglì) = LIVE/UNDERGO experience. 经历了一段困难时期 (lived through a difficult period). Connotes personal EXPERIENCE. 经由 (jīngyóu) = TRANSIT VIA (formal, especially for routes). 经由香港转机 (transit via HK). More formal. Hierarchy: 通过 (means) ≠ 经过 (traverse) ≠ 经历 (live) ≠ 经由 (formal transit).',
+      '- 通过 (tōngguò) — BY MEANS OF / ADOPT (vote)\n' +
+      '- 通过努力 (through effort) — 通过提案 (adopt a proposal)\n' +
+      '\n' +
+      'Versatile. 经过 (jīngguò) = PASS THROUGH (place, period). 经过北京 (pass through Beijing), 经过几年的研究 (after several years of research). Connotes TEMPORAL/SPATIAL TRAVERSAL. 经历 (jīnglì) = LIVE/UNDERGO experience. 经历了一段困难时期 (lived through a difficult period). Connotes personal EXPERIENCE. 经由 (jīngyóu) = TRANSIT VIA (formal, especially for routes). 经由香港转机 (transit via HK). More formal. Hierarchy: 通过 (means) ≠ 经过 (traverse) ≠ 经历 (live) ≠ 经由 (formal transit).',
     items: [
       { hanzi: '通过', pinyin: 'tōngguò', meaning: 'par le moyen de', meaningEn: 'by means of', audio: 'audio/hsk4/hsk4_通过.wav' },
       { hanzi: '经过', pinyin: 'jīngguò', meaning: 'passer par', meaningEn: 'pass through', audio: 'audio/hsk3/hsk3_经过.wav' },
@@ -645,7 +756,10 @@ export const c22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D’OR : **借此机会 X** est une formule de discours **soutenue** universelle. Pour ouvrir un éloge, un remerciement ou une annonce — 借此机会，我想感谢… sonne 10× plus soutenu que 我想感谢…. À mémoriser absolument pour C2.2.',
     bodyEn:
-      '附 (fù) = ATTACH / ENCLOSE. 附件 (email attachment), 附上 (enclose). «附此一份资料» (enclose this document). More written/admin. 顺 (shùn) = ALONG THE WAY / TAKING AN EXISTING MOVEMENT. 顺便 (along the way), 顺手 (within reach). 顺便买点东西 (buy something on the way). 趁 (chèn) = TAKE ADVANTAGE (of a favorable condition). 趁热打铁 (strike while the iron is hot — chengyu). 趁年轻多学点 (use youth to learn more). Connotes positive OPPORTUNISM. 借 (jiè) = ON THE PRETEXT OF / ON THE OCCASION OF (formal). 借此机会 (seize this occasion). 借此机会感谢大家 = on this occasion, I thank all. Hierarchy: 附 (admin attach) < 顺 (oral on the way) < 趁 (take advantage) < 借 (formal seize).',
+      '- 附 (fù) — ATTACH / ENCLOSE\n' +
+      '- 附件 (email attachment) — 附上 (enclose)\n' +
+      '\n' +
+      '«附此一份资料» (enclose this document). More written/admin. 顺 (shùn) = ALONG THE WAY / TAKING AN EXISTING MOVEMENT. 顺便 (along the way), 顺手 (within reach). 顺便买点东西 (buy something on the way). 趁 (chèn) = TAKE ADVANTAGE (of a favorable condition). 趁热打铁 (strike while the iron is hot — chengyu). 趁年轻多学点 (use youth to learn more). Connotes positive OPPORTUNISM. 借 (jiè) = ON THE PRETEXT OF / ON THE OCCASION OF (formal). 借此机会 (seize this occasion). 借此机会感谢大家 = on this occasion, I thank all. Hierarchy: 附 (admin attach) < 顺 (oral on the way) < 趁 (take advantage) < 借 (formal seize).',
     items: [
       { hanzi: '附', pinyin: 'fù', meaning: 'joindre, attacher', meaningEn: 'attach', audio: 'audio/hsk5/hsk5_附.wav' },
       { hanzi: '顺便', pinyin: 'shùnbiàn', meaning: 'au passage', meaningEn: 'on the way', audio: 'audio/hsk4/hsk4_顺便.wav' },
@@ -705,7 +819,14 @@ export const c22NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique = 临近 (sur le point d’arriver, **temps**) vs 邻近 (proche, **espace**). Astuce : le **chéngyǔ** 临阵磨枪 (aiguiser sa lance face au front = se préparer à la dernière minute) capture parfaitement le sens d’**imminence** de 临.',
     bodyEn:
-      '近 (jìn) = NEAR physically or temporally. 离这里很近 (very near here), 近代 (modern era). Versatile. 远 (yuǎn) = FAR. 远方 (afar), 远古 (distant antiquity). 邻 (lín) = NEIGHBOR, contiguous. 邻居 (neighbor), 邻国 (neighbor country), 邻近 (near, neighboring). Connotes CONTIGUITY. 临 (lín) = ABOUT TO / FACING. 临近毕业 (near graduation), 临海 (facing the sea), 临时 (temporary, ad hoc). Connotes IMMINENCE or SITUATION. Hierarchy: 近 (near) ≠ 邻 (contiguous neighbor) ≠ 临 (imminent/facing). Classic mistake: 临近 (about to arrive) vs 邻近 (near/neighboring). 临 implies TIME; 邻 implies SPACE.',
+      '近 (jìn) = NEAR physically or temporally. 离这里很近 (very near here), 近代 (modern era). Versatile.\n' +
+      '\n' +
+      '- 远 (yuǎn) — FAR\n' +
+      '- 远方 (afar) — 远古 (distant antiquity)\n' +
+      '- 邻 (lín) — NEIGHBOR, contiguous\n' +
+      '- 邻居 (neighbor) — 邻国 (neighbor country), 邻近 (near, neighboring)\n' +
+      '\n' +
+      'Connotes CONTIGUITY. 临 (lín) = ABOUT TO / FACING. 临近毕业 (near graduation), 临海 (facing the sea), 临时 (temporary, ad hoc). Connotes IMMINENCE or SITUATION. Hierarchy: 近 (near) ≠ 邻 (contiguous neighbor) ≠ 临 (imminent/facing). Classic mistake: 临近 (about to arrive) vs 邻近 (near/neighboring). 临 implies TIME; 邻 implies SPACE.',
     items: [
       { hanzi: '近', pinyin: 'jìn', meaning: 'proche', meaningEn: 'near', audio: 'audio/hsk2/hsk2_近.wav' },
       { hanzi: '远', pinyin: 'yuǎn', meaning: 'loin', meaningEn: 'far', audio: 'audio/hsk2/hsk2_远.wav' },
@@ -733,7 +854,10 @@ export const c22NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur ULTRA classique = confondre 再 (futur) et 又 (passé). 我又来了 = « je reviens (encore) » ; 我再来 = « je reviendrai ». Test mémo : 我昨天又去了 (passé) ≠ 我明天再去 (futur). Cette distinction marque la précision avancée.',
     bodyEn:
-      '复 (fù) = RETURN / REPEAT (formal, written). 复习 (review), 恢复 (restore), 复杂 (complex). 重 (chóng for repetition, zhòng for weight) = ONCE MORE. 重写 (rewrite). 重 + verb = new time. 再 (zài) = AGAIN / ANEW (before verb, FUTURE or hypothesis). 再说一遍 (say again). 又 (yòu) = AGAIN (before verb, PAST or habit). 又下雨了 (it\'s raining again). Temporal hierarchy: 再 (planned future) vs 又 (past/annoying repetition). VERY classic mistake: confusing 再 (future) and 又 (past). «我又来了» = I\'m back (once more) ; «我再来» = I\'ll come back. Mastering this distinction = sign of advanced precision.',
+      '- 复 (fù) — RETURN / REPEAT (formal, written)\n' +
+      '- 复习 (review) — 恢复 (restore), 复杂 (complex)\n' +
+      '\n' +
+      '重 (chóng for repetition, zhòng for weight) = ONCE MORE. 重写 (rewrite). 重 + verb = new time. 再 (zài) = AGAIN / ANEW (before verb, FUTURE or hypothesis). 再说一遍 (say again). 又 (yòu) = AGAIN (before verb, PAST or habit). 又下雨了 (it\'s raining again). Temporal hierarchy: 再 (planned future) vs 又 (past/annoying repetition). VERY classic mistake: confusing 再 (future) and 又 (past). «我又来了» = I\'m back (once more) ; «我再来» = I\'ll come back. Mastering this distinction = sign of advanced precision.',
     items: [
       { hanzi: '复', pinyin: 'fù', meaning: 'répéter (formel)', meaningEn: 'repeat (formal)', audio: 'audio/hsk5/hsk5_复.wav' },
       { hanzi: '重', pinyin: 'chóng', meaning: 'encore une fois', meaningEn: 'once more', audio: 'audio/hsk2/hsk2_重.wav' },
@@ -764,7 +888,10 @@ export const c22NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : test rapide — « après tout, X » → 毕竟 ; « au fait, X ? » → 究竟 ; « enfin X arrive » → 终于 ; « X arrivera tôt ou tard » → 终究. Le proverbe **真相终究会大白** est très utilisé pour rassurer dans une situation injuste.',
     bodyEn:
-      '终于 (zhōngyú) = FINALLY (after long wait — often POSITIVE). 我终于到了 (I\'ve finally arrived). Relief. 终究 (zhōngjiū) = AT THE END / SOONER OR LATER (fate, inevitable). 真相终究会大白 (truth ultimately surfaces). More written, philosophical. 毕竟 (bìjìng) = AFTER ALL (concession). 他毕竟还是个孩子 (after all, he\'s still a child). Softens a judgment. 究竟 (jiūjìng) = EXACTLY / AT BOTTOM (investigative insistence). 究竟发生了什么？(what exactly happened?). Hierarchy: 终于 (relief) ≠ 终究 (inevitable) ≠ 毕竟 (after-all concession) ≠ 究竟 (insistent inquiry). Test: «after all, X» → 毕竟; «what is X exactly?» → 究竟; «finally X arrives» → 终于; «X will happen sooner or later» → 终究.',
+      '- 终于 (zhōngyú) — FINALLY (after long wait — often POSITIVE)\n' +
+      '- 我终于到了 (I\'ve finally arrived) — \n' +
+      '\n' +
+      'Relief. 终究 (zhōngjiū) = AT THE END / SOONER OR LATER (fate, inevitable). 真相终究会大白 (truth ultimately surfaces). More written, philosophical. 毕竟 (bìjìng) = AFTER ALL (concession). 他毕竟还是个孩子 (after all, he\'s still a child). Softens a judgment. 究竟 (jiūjìng) = EXACTLY / AT BOTTOM (investigative insistence). 究竟发生了什么？(what exactly happened?). Hierarchy: 终于 (relief) ≠ 终究 (inevitable) ≠ 毕竟 (after-all concession) ≠ 究竟 (insistent inquiry). Test: «after all, X» → 毕竟; «what is X exactly?» → 究竟; «finally X arrives» → 终于; «X will happen sooner or later» → 终究.',
     items: [
       { hanzi: '终于', pinyin: 'zhōngyú', meaning: 'finalement', meaningEn: 'finally', audio: 'audio/hsk3/hsk3_终于.wav' },
       { hanzi: '终究', pinyin: 'zhōngjiū', meaning: 'tôt ou tard', meaningEn: 'sooner or later', audio: 'audio/hsk6/hsk6_终究.wav' },
@@ -792,7 +919,10 @@ export const c22NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D’OR : **势必 X** est le connecteur de **prédiction** politique et économique des éditoriaux chinois. Plus puissant que 一定 ou 必然, il connote la **dynamique structurelle**. Le manier dans une analyse = signal C2.2 d’analyste sérieux.',
     bodyEn:
-      '一定 (yídìng) = CERTAINLY (universal, oral and written). 我一定来 (I\'m certainly coming). Broadest. 必定 (bìdìng) = ASSUREDLY (slightly more formal, connotes personal conviction). 我必定支持 (I assuredly support). More engaged. 必然 (bìrán) = NECESSARILY (logical, formal analytic conclusion). 这是必然的结果 (it\'s the necessary result). More academic. 势必 (shìbì) = INEVITABLY (due to situation/conjuncture — 势 = momentum). 这种政策势必引发不满 (this policy will inevitably trigger discontent). Connotes PREDICTION based on dynamics. Hierarchy: 一定 (universal oral) < 必定 (personal commitment) < 必然 (logical) < 势必 (inevitable by conjuncture).',
+      '- 一定 (yídìng) — CERTAINLY (universal, oral and written)\n' +
+      '- 我一定来 (I\'m certainly coming) — \n' +
+      '\n' +
+      'Broadest. 必定 (bìdìng) = ASSUREDLY (slightly more formal, connotes personal conviction). 我必定支持 (I assuredly support). More engaged. 必然 (bìrán) = NECESSARILY (logical, formal analytic conclusion). 这是必然的结果 (it\'s the necessary result). More academic. 势必 (shìbì) = INEVITABLY (due to situation/conjuncture — 势 = momentum). 这种政策势必引发不满 (this policy will inevitably trigger discontent). Connotes PREDICTION based on dynamics. Hierarchy: 一定 (universal oral) < 必定 (personal commitment) < 必然 (logical) < 势必 (inevitable by conjuncture).',
     items: [
       { hanzi: '一定', pinyin: 'yídìng', meaning: 'certainement', meaningEn: 'certainly', audio: 'audio/hsk3/hsk3_一定.wav' },
       { hanzi: '必定', pinyin: 'bìdìng', meaning: 'assurément', meaningEn: 'assuredly', audio: 'audio/hsk6/hsk6_必定.wav' },
@@ -824,7 +954,10 @@ export const c22NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : **嘛** est le marqueur **oral** ultra-chinois — il dit « tu vois, c’est évident, voyons ». Sans 嘛 la phrase sonne sermonneur, avec 嘛 elle sonne **complice**. Petite particule, énorme effet relationnel.',
     bodyEn:
-      '啊 (a, ya) = affective exclamation/emphasis. 太好啊 (oh that\'s great). Softens. 呢 (ne) = rhetorical QUESTION or continuity. 你呢？(and you?). 我在想呢 (I\'m thinking). 吧 (ba) = SUGGESTION/AGREEMENT. 走吧 (let\'s go). 应该是吧 (probably so). Universal for softening orders. 嘛 (ma) = OBVIOUSNESS / EXPLANATION. 当然啦，他是你弟弟嘛 (of course, he\'s your little brother, you know). Connotes shared obviousness. 哟 (yo) = SURPRISE / ATTENTION (casual, expressive oral). 哟，你来了！(oh, you\'re here!). More youth/casual. Mastering final particles = FUNDAMENTAL difference between native oral and learner oral. Without particles, your Chinese sounds flat and foreign. With the right particles, you sound Chinese.',
+      '- 啊 (a, ya) — affective exclamation/emphasis\n' +
+      '- 太好啊 (oh that\'s great) — \n' +
+      '\n' +
+      'Softens. 呢 (ne) = rhetorical QUESTION or continuity. 你呢？(and you?). 我在想呢 (I\'m thinking). 吧 (ba) = SUGGESTION/AGREEMENT. 走吧 (let\'s go). 应该是吧 (probably so). Universal for softening orders. 嘛 (ma) = OBVIOUSNESS / EXPLANATION. 当然啦，他是你弟弟嘛 (of course, he\'s your little brother, you know). Connotes shared obviousness. 哟 (yo) = SURPRISE / ATTENTION (casual, expressive oral). 哟，你来了！(oh, you\'re here!). More youth/casual. Mastering final particles = FUNDAMENTAL difference between native oral and learner oral. Without particles, your Chinese sounds flat and foreign. With the right particles, you sound Chinese.',
     items: [
       { hanzi: '啊', pinyin: 'a', meaning: 'exclamation', meaningEn: 'exclamation', audio: 'audio/hsk1/hsk1_啊.wav' },
       { hanzi: '呢', pinyin: 'ne', meaning: 'question, continuité', meaningEn: 'question, continuation', audio: 'audio/hsk1/hsk1_呢.wav' },
@@ -852,7 +985,10 @@ export const c22NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur fréquente = utiliser 大家 dans un discours officiel — trop **familier**. Astuce : un discours officiel chinois s’ouvre par 各位领导，各位同仁，各位来宾 et se conclut seulement par 谢谢大家. Cette gradation formel → informel marque la **maturité oratoire**.',
     bodyEn:
-      '大家 (dàjiā) = EVERYONE (universal oral and written). 大家好 (hello everyone). Most used. 各位 (gèwèi) = EACH OF YOU (formal, marks individual respect in the group). 各位老师 (esteemed teachers). Use in formal speeches. 诸位 (zhūwèi) = LADIES AND GENTLEMEN (very formal, written or formal speech). 诸位来宾 (esteemed guests). Rarer, more solemn. 列位 (lièwèi) = EACH AT THEIR RANK (VERY formal, nearly archaic, theatrical). Hierarchy: 大家 (universal oral) < 各位 (respectful formal) < 诸位 (very formal speech) < 列位 (archaic ceremonial). Frequent mistake: using 大家 in an official speech = too casual. Prefer 各位.',
+      '- 大家 (dàjiā) — EVERYONE (universal oral and written)\n' +
+      '- 大家好 (hello everyone) — \n' +
+      '\n' +
+      'Most used. 各位 (gèwèi) = EACH OF YOU (formal, marks individual respect in the group). 各位老师 (esteemed teachers). Use in formal speeches. 诸位 (zhūwèi) = LADIES AND GENTLEMEN (very formal, written or formal speech). 诸位来宾 (esteemed guests). Rarer, more solemn. 列位 (lièwèi) = EACH AT THEIR RANK (VERY formal, nearly archaic, theatrical). Hierarchy: 大家 (universal oral) < 各位 (respectful formal) < 诸位 (very formal speech) < 列位 (archaic ceremonial). Frequent mistake: using 大家 in an official speech = too casual. Prefer 各位.',
     items: [
       { hanzi: '大家', pinyin: 'dàjiā', meaning: 'tout le monde', meaningEn: 'everyone', audio: 'audio/hsk1/hsk1_大家.wav' },
       { hanzi: '各位', pinyin: 'gèwèi', meaning: 'chacun de vous', meaningEn: 'each of you', audio: 'audio/hsk5/hsk5_各位.wav' },
@@ -911,7 +1047,17 @@ export const c22NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour louer un effort discret et long — 您 X 年来默默地付出，让人敬佩. **默默** reconnaît l’effort **invisible**, culturellement très valorisé en Chine — compliment ultime pour un mentor humble.',
     bodyEn:
-      'Formal Chinese loves REDUPLICATIONS that create rhythm and musicality. 莹莹 (yíng yíng) = bright bright (twinkling eyes). 泪光莹莹 (tears glisten). 渐渐 (jiànjiàn) = gradually. 天渐渐亮了 (day breaks gradually). 缓缓 (huǎnhuǎn) = slowly, calmly. 缓缓地走 (walk slowly). 默默 (mòmò) = silently, discreetly. 默默地工作 (work in silence). These 4 reduplications + hundreds of others (悠悠 peacefully, 漫漫 lengthily, 茫茫 vast) build the Chinese poetic ATMOSPHERE. Mastering 5-10 reduplications in C2.2 oral = signal of maximum LITERARY and emotional level. Reference: 李清照 opens 《声声慢》 with 7 consecutive reduplications.',
+      'Formal Chinese loves REDUPLICATIONS that create rhythm and musicality.\n' +
+      '\n' +
+      '- 莹莹 (yíng yíng) — bright bright (twinkling eyes)\n' +
+      '- 泪光莹莹 (tears glisten) — \n' +
+      '- 渐渐 (jiànjiàn) — gradually\n' +
+      '- 天渐渐亮了 (day breaks gradually) — \n' +
+      '- 缓缓 (huǎnhuǎn) — slowly, calmly\n' +
+      '- 缓缓地走 (walk slowly) — \n' +
+      '- 默默 (mòmò) — silently, discreetly\n' +
+      '\n' +
+      '默默地工作 (work in silence). These 4 reduplications + hundreds of others (悠悠 peacefully, 漫漫 lengthily, 茫茫 vast) build the Chinese poetic ATMOSPHERE. Mastering 5-10 reduplications in C2.2 oral = signal of maximum LITERARY and emotional level. Reference: 李清照 opens 《声声慢》 with 7 consecutive reduplications.',
     items: [
       { hanzi: '渐渐', pinyin: 'jiànjiàn', meaning: 'peu à peu', meaningEn: 'gradually', audio: 'audio/hsk5/hsk5_渐渐.wav' },
       { hanzi: '缓缓', pinyin: 'huǎnhuǎn', meaning: 'lentement', meaningEn: 'slowly', audio: 'audio/hsk6/hsk6_缓缓.wav' },
@@ -946,7 +1092,14 @@ export const c22RhetoricM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : l’exemple emblématique du poète **陆游** — 山重水复疑无路 (montagnes empilées, eaux repliées — je crois qu’il n’y a plus de route) / 柳暗花明又一村 (saules sombres, fleurs brillantes — encore un village). Devenu **proverbe** universel : « après l’épreuve, l’éclaircie ». À mémoriser pour encourager un proche dans la difficulté — effet émotionnel garanti.',
     bodyEn:
-      '对偶 (duì\'ǒu, parallelism) imposes STRICT SYMMETRY between 2 clauses: (1) SAME syllable count (4-4 or 7-7), (2) SAME syntactic structure, (3) SAME grammatical category per position (noun ↔ noun, verb ↔ verb), (4) OPPOSITE TONES (a 平 level line answers a 仄 oblique line). It\'s a musical + grammatical + semantic challenge. Iconic example by poet 陆游: 山重水复疑无路 (mountains piled, waters folded — I think there\'s no road) / 柳暗花明又一村 (dark willows, bright flowers — another village). Meaning became PROVERB: «after the trial, the clearing» — often cited to encourage in tough times.',
+      '对偶 (duì\'ǒu, parallelism) imposes STRICT SYMMETRY between 2 clauses:\n' +
+      '\n' +
+      '- (1) SAME syllable count (4-4 or 7-7)\n' +
+      '- (2) SAME syntactic structure\n' +
+      '- (3) SAME grammatical category per position (noun ↔ noun, verb ↔ verb)\n' +
+      '- (4) OPPOSITE TONES (a 平 level line answers a 仄 oblique line)\n' +
+      '\n' +
+      'It\'s a musical + grammatical + semantic challenge. Iconic example by poet 陆游: 山重水复疑无路 (mountains piled, waters folded — I think there\'s no road) / 柳暗花明又一村 (dark willows, bright flowers — another village). Meaning became PROVERB: «after the trial, the clearing» — often cited to encourage in tough times.',
     items: [
       { hanzi: '对偶', pinyin: 'duìǒu', meaning: 'parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对偶.wav' },
       { hanzi: '春联', pinyin: 'chūnlián', meaning: 'couplet du Nouvel An', meaningEn: 'New Year couplet', audio: 'audio/hsk6/hsk6_春联.wav' },
@@ -973,7 +1126,15 @@ export const c22RhetoricM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : trois contraintes — (1) 上联 finit sur un ton **oblique** (3 ou 4), (2) 下联 finit sur un ton **plat** (1 ou 2), (3) **parallélisme** strict mot à mot. Activité familiale annuelle qui transmet le 对偶 aux enfants.',
     bodyEn:
-      '春联 (New Year couplets) are pasted in pairs on doors for festivals. Format: 2 parallel lines (usually 7 characters each) + a HORIZONTAL BANNER above (4 characters). Classic example: 上联 (upper line, on the right facing the door): 一帆风顺年年好 («smooth-sailing, year after year good»). 下联 (lower line, on the left): 万事如意步步高 («10,000 things as wished, step by step higher»). 横批 (banner): 吉祥如意 («auspicious and as wished»). Rules: (1) 上联 ends with 仄 (oblique tone 3 or 4), (2) 下联 ends with 平 (level tone 1 or 2), (3) strict word-by-word parallelism. Annual family activity transmitting 对偶 to children.',
+      '春联 (New Year couplets) are pasted in pairs on doors for festivals. Format: 2 parallel lines (usually 7 characters each) + a HORIZONTAL BANNER above (4 characters). Classic example: 上联 (upper line, on the right facing the door): 一帆风顺年年好 («smooth-sailing, year after year good»). 下联 (lower line, on the left): 万事如意步步高 («10,000 things as wished, step by step higher»). 横批 (banner): 吉祥如意 («auspicious and as wished»).\n' +
+      '\n' +
+      'Rules:\n' +
+      '\n' +
+      '- (1) 上联 ends with 仄 (oblique tone 3 or 4)\n' +
+      '- (2) 下联 ends with 平 (level tone 1 or 2)\n' +
+      '- (3) strict word-by-word parallelism\n' +
+      '\n' +
+      'Annual family activity transmitting 对偶 to children.',
     items: [
       { hanzi: '上联', pinyin: 'shànglián', meaning: 'vers du haut', meaningEn: 'upper line', audio: 'audio/hsk6/hsk6_上联.wav' },
       { hanzi: '下联', pinyin: 'xiàlián', meaning: 'vers du bas', meaningEn: 'lower line', audio: 'audio/hsk6/hsk6_下联.wav' },
@@ -1122,7 +1283,12 @@ export const c22TranslationM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Yan Fu lui-même traduisait Huxley en chinois classique 文言 — choix très 雅 mais discuté côté 达 pour les lecteurs modernes. RÈGLE D\'OR : ces 3 critères restent la **grille** d\'évaluation standard des traductions chinoises depuis 125 ans.',
     bodyEn:
-      '严复 (Yan Fu, 1854-1921), translator of T.H. Huxley\'s «Evolution and Ethics», formulates in 1898 in his preface: 译事三难 信达雅 — «3 difficulties in translation: faithfulness, fluency, elegance». 信 (xìn): DON\'T BETRAY source text meaning. Absolute criterion but often in tension with the other 2. 达 (dá): let the TARGET text FLOW NATURALLY, without source-language calques. 雅 (yǎ): CHOOSE an elevated, elegant register. Yan Fu himself translated Huxley into classical 文言 — very 雅 choice but debated on 达 for modern readers. These 3 criteria remain the standard EVALUATION GRID for Chinese translations for 125 years. Every contemporary translator explicitly references them.',
+      '严复 (Yan Fu, 1854-1921), translator of T.H. Huxley\'s «Evolution and Ethics», formulates in 1898 in his preface: 译事三难 信达雅 — «3 difficulties in translation: faithfulness, fluency, elegance». 信 (xìn): DON\'T BETRAY source text meaning. Absolute criterion but often in tension with the other 2.\n' +
+      '\n' +
+      '- 达 (dá) — let the TARGET text FLOW NATURALLY, without source-language calques\n' +
+      '- 雅 (yǎ) — CHOOSE an elevated, elegant register\n' +
+      '\n' +
+      'Yan Fu himself translated Huxley into classical 文言 — very 雅 choice but debated on 达 for modern readers. These 3 criteria remain the standard EVALUATION GRID for Chinese translations for 125 years. Every contemporary translator explicitly references them.',
     items: [
       { hanzi: '严复', pinyin: 'yánfù', meaning: 'Yan Fu (traducteur)', meaningEn: 'Yan Fu', audio: 'audio/hsk6/hsk6_严复.wav' },
       { hanzi: '信达雅', pinyin: 'xìndáyǎ', meaning: 'fidélité-fluidité-élégance', meaningEn: 'faithfulness-fluency-elegance', audio: 'audio/hsk6/hsk6_信达雅.wav' },
@@ -1236,7 +1402,13 @@ export const c22TranslationM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : à une rencontre marquante, dire 我们真有缘 charge la situation d\'une **rhétorique** presque mystique très chinoise.',
     bodyEn:
-      '缘分 (yuánfèn) = PREDESTINED AFFINITY between 2 beings. Buddhist concept: our meetings aren\'t accidental, they obey a karma that brings together what must reunite. «You\'re destined» is a flat equivalent. Common use: «我们有缘» (we have yuanfen — we were destined to meet). Use to evoke a striking encounter, a well-matched couple, friends meeting by chance. 气 (qì) = VITAL ENERGY, animating principle circulating in every being and thing. Not just «breath» (Western medical sense) but COSMIC ENERGY. 气功 (qigong) cultivates this 气. 元气 (yuánqì) is original energy. 气场 (qì chǎng) is a person\'s aura. The translation «energy» misses the METAPHYSICAL dimension.',
+      '缘分 (yuánfèn) = PREDESTINED AFFINITY between 2 beings. Buddhist concept: our meetings aren\'t accidental, they obey a karma that brings together what must reunite. «You\'re destined» is a flat equivalent. Common use: «我们有缘» (we have yuanfen — we were destined to meet). Use to evoke a striking encounter, a well-matched couple, friends meeting by chance. 气 (qì) = VITAL ENERGY, animating principle circulating in every being and thing. Not just «breath» (Western medical sense) but COSMIC ENERGY.\n' +
+      '\n' +
+      '- 气功 (qigong) — cultivates this 气\n' +
+      '- 元气 (yuánqì) — is original energy\n' +
+      '- 气场 (qì chǎng) — is a person\'s aura\n' +
+      '\n' +
+      'The translation «energy» misses the METAPHYSICAL dimension.',
     items: [
       { hanzi: '缘分', pinyin: 'yuánfēn', meaning: 'affinité prédestinée', meaningEn: 'predestined affinity', audio: 'audio/hsk6/hsk6_缘分.wav' },
       { hanzi: '气', pinyin: 'qì', meaning: 'énergie vitale', meaningEn: 'vital energy', audio: 'audio/hsk1/hsk1_气.wav' },
@@ -1387,7 +1559,14 @@ export const c22ModernLitM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : choisis 1 auteur par an. En 5 ans, 5 univers maîtrisés = capital culturel énorme.',
     bodyEn:
-      'Beyond Mo Yan and Yu Hua, the contemporary canon includes: 阎连科 (Yan Lianke, born 1958, the absurd of the system — 《受活》, 《为人民服务》censored), 王安忆 (Wang Anyi, born 1954, cosmopolitan Shanghai — 《长恨歌》), 韩少功 (Han Shaogong, born 1953, root-seeking), 苏童 (Su Tong, born 1963, decadent atmosphere). Essential WOMEN: 张悦然 (Zhang Yueran, 80s generation), 残雪 (Can Xue, experimental, repeat Nobel finalist). Diaspora: 哈金 (Ha Jin, writes in English in US), 高行健 (Gao Xingjian, Nobel 2000, exiled in France). New generation: 双雪涛 (Shuang Xuetao), 班宇 (Ban Yu) — chroniclers of declining industrial Northeast. Knowing 5-10 names lets you HOLD an advanced Chinese literary discussion.',
+      'Beyond Mo Yan and Yu Hua, the contemporary canon includes:\n' +
+      '\n' +
+      '- 阎连科 (Yan Lianke, born 1958, the absurd of the system — 《受活》, 《为人民服务》censored)\n' +
+      '- 王安忆 (Wang Anyi, born 1954, cosmopolitan Shanghai — 《长恨歌》)\n' +
+      '- 韩少功 (Han Shaogong, born 1953, root-seeking)\n' +
+      '- 苏童 (Su Tong, born 1963, decadent atmosphere)\n' +
+      '\n' +
+      'Essential WOMEN: 张悦然 (Zhang Yueran, 80s generation), 残雪 (Can Xue, experimental, repeat Nobel finalist). Diaspora: 哈金 (Ha Jin, writes in English in US), 高行健 (Gao Xingjian, Nobel 2000, exiled in France). New generation: 双雪涛 (Shuang Xuetao), 班宇 (Ban Yu) — chroniclers of declining industrial Northeast. Knowing 5-10 names lets you HOLD an advanced Chinese literary discussion.',
     items: [
       { hanzi: '阎连科', pinyin: 'yánliánkē', meaning: 'Yan Lianke', meaningEn: 'Yan Lianke', audio: 'audio/hsk6/hsk6_阎连科.wav' },
       { hanzi: '王安忆', pinyin: 'wángānyì', meaning: 'Wang Anyi', meaningEn: 'Wang Anyi', audio: 'audio/hsk6/hsk6_王安忆.wav' },
@@ -1449,7 +1628,14 @@ export const c22ModernLitM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour entrer dans le genre, commence par 《北京折叠》 (50 pages) plutôt que la trilogie 三体 (1500 pages) — investissement minimal, ouverture maximale.',
     bodyEn:
-      'Since 刘慈欣\'s Hugo, Chinese SF EXPLODES in international visibility. 郝景芳 (Hao Jingfang, born 1984) wins Hugo 2016 for 《北京折叠》(«Folding Beijing») — dystopian short on urban inequalities. 陈楸帆 (Chen Qiufan, born 1981) explores AI and labor in 《荒潮》(«Waste Tide»). 夏笳 (Xia Jia, born 1984) writes poetic-feminist SF. 王晋康 (Wang Jinkang) remains the pioneer, writing since the 80s. Ken Liu (刘宇昆, Sino-American) is THE main translator — without him, export wouldn\'t have happened. Platform: 科幻世界 (Science Fiction World, Chengdu-based magazine, launches new talents). In Europe: ACTES SUD and BÉLIAL\' regularly publish translated authors. Chinese SF has become a MAJOR genre of world literature in 10 years.',
+      'Since 刘慈欣\'s Hugo, Chinese SF EXPLODES in international visibility.\n' +
+      '\n' +
+      '- 郝景芳 (Hao Jingfang, born 1984) — wins Hugo 2016 for 《北京折叠》(«Folding Beijing») — dystopian short on urban inequalities\n' +
+      '- 陈楸帆 (Chen Qiufan, born 1981) — explores AI and labor in 《荒潮》(«Waste Tide»)\n' +
+      '- 夏笳 (Xia Jia, born 1984) — writes poetic-feminist SF\n' +
+      '- 王晋康 (Wang Jinkang) — remains the pioneer, writing since the 80s\n' +
+      '\n' +
+      'Ken Liu (刘宇昆, Sino-American) is THE main translator — without him, export wouldn\'t have happened. Platform: 科幻世界 (Science Fiction World, Chengdu-based magazine, launches new talents). In Europe: ACTES SUD and BÉLIAL\' regularly publish translated authors. Chinese SF has become a MAJOR genre of world literature in 10 years.',
     items: [
       { hanzi: '科幻世界', pinyin: 'kēhuànshìjiè', meaning: 'Science Fiction World (revue)', meaningEn: 'Science Fiction World', audio: 'audio/hsk6/hsk6_科幻.wav' },
       { hanzi: '郝景芳', pinyin: 'hǎojǐngfāng', meaning: 'Hao Jingfang', meaningEn: 'Hao Jingfang', audio: 'audio/hsk6/hsk6_郝景芳.wav' },
@@ -1483,7 +1669,15 @@ export const c22DialectsM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : effet collatéral, déclin des langues régionales (cantonais à Canton, shanghaïen à Shanghai). Politique actuelle balancée — cours de cantonais à Canton, mais 普通话 reste prioritaire.',
     bodyEn:
-      '普通话 (pǔtōnghuà, lit. «common language») is officialized in 1956 as the PRC\'s national language. Its base: (1) PRONUNCIATION of Beijing Mandarin, (2) LEXICON of Northern Mandarin dialects, (3) GRAMMAR of modern vernacular works (especially Lu Xun\'s). ACTIVE promotion since 1956: mandatory school teaching, 100% 普通话 media, 普通话水平测试 (PSC) exams for civil servants (level 1甲 = excellent). Effect: from 50% of population speaking 普通话 in 1950 to 80% in 2020. COLLATERAL EFFECT: decline of regional languages (Cantonese in Canton, Shanghainese in Shanghai, etc.). Current debate: preserve dialects vs unify. Balanced policy by Beijing (Cantonese classes in Canton, but 普通话 remains priority).',
+      '普通话 (pǔtōnghuà, lit. «common language») is officialized in 1956 as the PRC\'s national language.\n' +
+      '\n' +
+      'Its base:\n' +
+      '\n' +
+      '- (1) PRONUNCIATION of Beijing Mandarin\n' +
+      '- (2) LEXICON of Northern Mandarin dialects\n' +
+      '- (3) GRAMMAR of modern vernacular works (especially Lu Xun\'s)\n' +
+      '\n' +
+      'ACTIVE promotion since 1956: mandatory school teaching, 100% 普通话 media, 普通话水平测试 (PSC) exams for civil servants (level 1甲 = excellent). Effect: from 50% of population speaking 普通话 in 1950 to 80% in 2020. COLLATERAL EFFECT: decline of regional languages (Cantonese in Canton, Shanghainese in Shanghai, etc.). Current debate: preserve dialects vs unify. Balanced policy by Beijing (Cantonese classes in Canton, but 普通话 remains priority).',
     items: [
       { hanzi: '普通话', pinyin: 'pǔtōnghuà', meaning: 'mandarin standard', meaningEn: 'Standard Mandarin', audio: 'audio/hsk5/hsk5_普通话.wav' },
       { hanzi: '推广', pinyin: 'tuīguǎng', meaning: 'promouvoir', meaningEn: 'promote', audio: 'audio/hsk5/hsk5_推广.wav' },
@@ -1540,7 +1734,16 @@ export const c22DialectsM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Géographie : Canton (广州), Hong Kong (香港), Macao (澳门), plus la **diaspora** mondiale (Chinatowns historiques de Vancouver, San Francisco, Londres). RÈGLE D\'OR : à HK, le cantonais reste la langue de la rue malgré la pression du 普通话 post-1997.',
     bodyEn:
-      'Frequent confusion: is 粤语 (Cantonese) a Mandarin DIALECT? Linguistically NO: it\'s a DISTINCT Chinese LANGUAGE, mutually UNintelligible with Mandarin orally. They share only WRITING (Chinese characters). Major phonological differences: (1) 6-9 TONES vs 4 in Mandarin (Cantonese is more melodious), (2) preserved final consonants -p, -t, -k (modern Mandarin lost them, but they existed in classical Chinese — hence Cantonese\'s PROXIMITY to 文言 in rhymes). Geography: Canton (广州), Hong Kong (香港), Macau (澳门), worldwide Cantonese diaspora (historic Chinatowns of Vancouver, San Francisco, London, etc.). Political status: in HK, Cantonese remains the street language despite 普通话 pressure post-1997.',
+      'Frequent confusion: is 粤语 (Cantonese) a Mandarin DIALECT? Linguistically NO: it\'s a DISTINCT Chinese LANGUAGE, mutually UNintelligible with Mandarin orally. They share only WRITING (Chinese characters).\n' +
+      '\n' +
+      'Major phonological differences:\n' +
+      '\n' +
+      '- (1) 6-9 TONES vs 4 in Mandarin (Cantonese is more melodious)\n' +
+      '- (2) preserved final consonants -p\n' +
+      '- -t\n' +
+      '- -k (modern Mandarin lost them, but they existed in classical Chinese — hence Cantonese\'s PROXIMITY to 文言 in rhymes)\n' +
+      '\n' +
+      'Geography: Canton (广州), Hong Kong (香港), Macau (澳门), worldwide Cantonese diaspora (historic Chinatowns of Vancouver, San Francisco, London, etc.). Political status: in HK, Cantonese remains the street language despite 普通话 pressure post-1997.',
     items: [
       { hanzi: '粤语', pinyin: 'yuèyǔ', meaning: 'cantonais', meaningEn: 'Cantonese', audio: 'audio/hsk6/hsk6_粤语.wav' },
       { hanzi: '广州', pinyin: 'guǎngzhōu', meaning: 'Canton (ville)', meaningEn: 'Canton city', audio: 'audio/hsk5/hsk5_广州.wav' },
@@ -1567,7 +1770,14 @@ export const c22DialectsM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : beaucoup de films sont d\'abord tournés en cantonais, puis doublés en mandarin pour le mainland. Mentionner 王家卫 à un Hongkongais nostalgique te place instantanément comme connaisseur de la **grande** époque.',
     bodyEn:
-      'Cantonese has radiated worldwide via 3 main vectors: (1) CANTOPOP 80s-90s — 张国荣 (Leslie Cheung), 梅艳芳 (Anita Mui), 王菲 (Faye Wong, who sings in both Cantonese AND Mandarin), Beyond. (2) HONG KONG CINEMA — 王家卫 (Wong Kar-wai, 《花样年华》/In the Mood for Love, 2000), 吴宇森 (John Woo), 周星驰 (Stephen Chow, absurd comedy), 成龙 (Jackie Chan), 李小龙 (Bruce Lee). Many films are first in Cantonese, dubbed in Mandarin for the mainland. (3) 武侠 (wuxia) novels of 金庸 (Jin Yong, 1924-2018) — saga of 14 novels, best-selling in Chinese history after the Little Red Book. Adapted into countless TV series. Cantonese often plays a parallel cultural role to Mandarin. Without this Cantonese pop culture, Chinese culture wouldn\'t have had the same global impact between 1980 and 2010.',
+      'Cantonese has radiated worldwide via 3 main vectors:\n' +
+      '\n' +
+      '- (1) CANTOPOP 80s-90s — 张国荣 (Leslie Cheung)\n' +
+      '- 梅艳芳 (Anita Mui)\n' +
+      '- 王菲 (Faye Wong, who sings in both Cantonese AND Mandarin)\n' +
+      '- Beyond\n' +
+      '\n' +
+      '(2) HONG KONG CINEMA — 王家卫 (Wong Kar-wai, 《花样年华》/In the Mood for Love, 2000), 吴宇森 (John Woo), 周星驰 (Stephen Chow, absurd comedy), 成龙 (Jackie Chan), 李小龙 (Bruce Lee). Many films are first in Cantonese, dubbed in Mandarin for the mainland. (3) 武侠 (wuxia) novels of 金庸 (Jin Yong, 1924-2018) — saga of 14 novels, best-selling in Chinese history after the Little Red Book. Adapted into countless TV series. Cantonese often plays a parallel cultural role to Mandarin. Without this Cantonese pop culture, Chinese culture wouldn\'t have had the same global impact between 1980 and 2010.',
     items: [
       { hanzi: '王家卫', pinyin: 'wángjiāwèi', meaning: 'Wong Kar-wai', meaningEn: 'Wong Kar-wai', audio: 'audio/hsk6/hsk6_王家卫.wav' },
       { hanzi: '花样年华', pinyin: 'huāyàngniánhuá', meaning: 'In the Mood for Love', meaningEn: 'In the Mood for Love', audio: 'audio/hsk6/hsk6_花样.wav' },
@@ -1728,7 +1938,12 @@ export const c22GlobalChinaM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Géographie de la diaspora : Asie SE (Singapour 75% chinois, Malaisie 23%, Indonésie ~10M), USA (5M+), Australie, Europe (France ~700K).',
     bodyEn:
-      'OFFICIAL Chinese distinction for the diaspora: 华侨 (huáqiáo) = Chinese abroad keeping CHINESE NATIONALITY (citizens living temporarily or long-term outside China). 华人 (huárén) = person of Chinese descent REGARDLESS of nationality. Generic term. 华裔 (huáyì) = Chinese descendant with ANOTHER nationality, typically born abroad («Chinese American», «Sino-French»). Administrative hierarchy in PRC: 华侨 has access to dedicated offices (国侨办), school for 海外华侨子女, BoC International bank. 华裔 is treated as foreigner (visa required). Numerical importance: 60M+ 华人/华裔 worldwide. Main hubs: SE Asia (Singapore 75% Chinese, Malaysia 23%, Indonesia 4%+ ~10M), USA (5M+), Australia, Europe (France ~700K).',
+      'OFFICIAL Chinese distinction for the diaspora:\n' +
+      '\n' +
+      '- 华侨 (huáqiáo) — Chinese abroad keeping CHINESE NATIONALITY (citizens living temporarily or long-term outside China)\n' +
+      '- 华人 (huárén) — person of Chinese descent REGARDLESS of nationality\n' +
+      '\n' +
+      'Generic term. 华裔 (huáyì) = Chinese descendant with ANOTHER nationality, typically born abroad («Chinese American», «Sino-French»). Administrative hierarchy in PRC: 华侨 has access to dedicated offices (国侨办), school for 海外华侨子女, BoC International bank. 华裔 is treated as foreigner (visa required). Numerical importance: 60M+ 华人/华裔 worldwide. Main hubs: SE Asia (Singapore 75% Chinese, Malaysia 23%, Indonesia 4%+ ~10M), USA (5M+), Australia, Europe (France ~700K).',
     items: [
       { hanzi: '华侨', pinyin: 'huáqiáo', meaning: 'Chinois à l\'étranger', meaningEn: 'Chinese citizen abroad', audio: 'audio/hsk6/hsk6_华侨.wav' },
       { hanzi: '华人', pinyin: 'huárén', meaning: 'personne d\'origine chinoise', meaningEn: 'Chinese-descent person', audio: 'audio/hsk6/hsk6_华人.wav' },
@@ -1760,7 +1975,13 @@ export const c22GlobalChinaM2LearnSections: LessonV2LearnSection[] = [
       '- 福建 (Fujian) — origine des Hokkien d\'Asie SE\n' +
       '- 浙江温州 (Wenzhou) — origine de la diaspora moderne en Europe',
     bodyEn:
-      '唐人街 (tángrén jiē, «street of Tang people») = traditional Chinese name for Chinatowns. Historically, the first Chinese emigrants (19th c.) claimed «people of Tang» rather than «people of Han» (汉人) as the Tang dynasty (618-907) was the golden age the southern Cantonese diaspora kept in memory. Iconic Chinatowns: San Francisco (oldest in North America, 1848), New York Manhattan, Vancouver, London Soho, Paris 13th (largest in Europe, ~50K Chinese), Bangkok Yaowarat. 侨乡 (qiáoxiāng, «overseas village») = Chinese regions of ORIGIN of the diaspora: 广东 (Guangdong, especially 台山/开平/江门 — origin of 80% of 19th-c North American Chinese), 福建 (Fujian, origin of SE Asian Hokkien), 浙江温州 (Wenzhou, whose modern European diaspora is significant).',
+      '唐人街 (tángrén jiē, «street of Tang people») = traditional Chinese name for Chinatowns. Historically, the first Chinese emigrants (19th c.) claimed «people of Tang» rather than «people of Han» (汉人) as the Tang dynasty (618-907) was the golden age the southern Cantonese diaspora kept in memory. Iconic Chinatowns: San Francisco (oldest in North America, 1848), New York Manhattan, Vancouver, London Soho, Paris 13th (largest in Europe, ~50K Chinese), Bangkok Yaowarat.\n' +
+      '\n' +
+      '侨乡 (qiáoxiāng, «overseas village») = Chinese regions of ORIGIN of the diaspora:\n' +
+      '\n' +
+      '- 广东 (Guangdong, especially 台山/开平/江门 — origin of 80% of 19th-c North American Chinese)\n' +
+      '- 福建 (Fujian, origin of SE Asian Hokkien)\n' +
+      '- 浙江温州 (Wenzhou, whose modern European diaspora is significant)',
     items: [
       { hanzi: '唐人街', pinyin: 'tángrénjiē', meaning: 'Chinatown', meaningEn: 'Chinatown', audio: 'audio/hsk6/hsk6_唐人.wav' },
       { hanzi: '侨乡', pinyin: 'qiáoxiāng', meaning: 'région d\'origine diaspora', meaningEn: 'diaspora origin region', audio: 'audio/hsk6/hsk6_侨乡.wav' },

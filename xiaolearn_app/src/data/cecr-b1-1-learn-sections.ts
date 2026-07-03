@@ -559,7 +559,13 @@ export const b11DeComplementLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si un objet suit le verbe, on le **duplique** (他说汉语说得很好) ou on le met en **tête** (他汉语说得很好).',
     bodyEn:
-      '得 comes AFTER the verb and introduces a judgment on manner or intensity. 他跑得很快 (he runs fast). 她唱得好 (she sings well). 我说得不清楚 (I speak unclearly). If there\'s an object after the verb, you either duplicate: 他说汉语说得很好 — or front it: 他汉语说得很好.',
+      '得 comes AFTER the verb and introduces a judgment on manner or intensity.\n' +
+      '\n' +
+      '- 他跑得很快 (he runs fast) — \n' +
+      '- 她唱得好 (she sings well) — \n' +
+      '- 我说得不清楚 (I speak unclearly) — \n' +
+      '\n' +
+      'If there\'s an object after the verb, you either duplicate: 他说汉语说得很好 — or front it: 他汉语说得很好.',
     items: [
       { hanzi: '得', pinyin: 'de', meaning: 'particule d\'évaluation', meaningEn: 'evaluative particle', audio: 'audio/hsk1/hsk1_得.wav' },
       { hanzi: '跑', pinyin: 'pǎo', meaning: 'courir', meaningEn: 'run', audio: 'audio/hsk2/hsk2_跑.wav' },
@@ -806,7 +812,13 @@ export const b11WorkJobsLearnSections: LessonV2LearnSection[] = [
       '- **师** (shī, maître) = expert : 老师, 律师, 厨师, 医师\n' +
       '- **家** (jiā, spécialiste) = créateur : 作家 (écrivain), 画家 (peintre), 艺术家 (artiste)',
     bodyEn:
-      'Most jobs follow a pattern. 员 (yuán, member) = doer: 服务员, 售货员, 销售员, 公务员. 师 (shī, master) = expert: 老师, 律师, 厨师, 医师. 家 (jiā, specialist) = creator: 作家 (writer), 画家 (painter), 艺术家 (artist). This spotting lets you decode a title before even knowing its meaning.',
+      'Most jobs follow a pattern.\n' +
+      '\n' +
+      '- 员 (yuán, member) — = doer: 服务员, 售货员, 销售员, 公务员\n' +
+      '- 师 (shī, master) — = expert: 老师, 律师, 厨师, 医师\n' +
+      '- 家 (jiā, specialist) — = creator: 作家 (writer), 画家 (painter), 艺术家 (artist)\n' +
+      '\n' +
+      'This spotting lets you decode a title before even knowing its meaning.',
     items: [
       { hanzi: '工作', pinyin: 'gōngzuò', meaning: 'travail', meaningEn: 'work', audio: 'audio/hsk1/hsk1_工作.wav' },
       { hanzi: '老板', pinyin: 'lǎobǎn', meaning: 'patron', meaningEn: 'boss', audio: 'audio/hsk3/hsk3_老板.wav' },
@@ -939,7 +951,12 @@ export const b11TravelTrainLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pense aussi aux classes — 二等座 (standard), 一等座, 商务座, 硬卧 / 软卧 (couchettes nuit).',
     bodyEn:
-      'The Chinese network has 3 main tiers. 高铁 (G): high-speed, >300 km/h, modern, pricey. 动车 (D): fast, 200-250 km/h, comfy. 普快/快速/特快 (K, T): classic slow trains, cheap, sometimes overnight. Classes: 二等座 (standard), 一等座, 商务座, 硬卧/软卧 (overnight sleepers).',
+      'The Chinese network has 3 main tiers.\n' +
+      '\n' +
+      '- 高铁 (G) — high-speed, >300 km/h, modern, pricey\n' +
+      '- 动车 (D) — fast, 200-250 km/h, comfy\n' +
+      '\n' +
+      '普快/快速/特快 (K, T): classic slow trains, cheap, sometimes overnight. Classes: 二等座 (standard), 一等座, 商务座, 硬卧/软卧 (overnight sleepers).',
     items: [
       { hanzi: '高铁', pinyin: 'gāotiě', meaning: 'TGV chinois', meaningEn: 'high-speed train', audio: 'audio/hsk4/hsk4_高铁.wav' },
       { hanzi: '动车', pinyin: 'dòngchē', meaning: 'train rapide D', meaningEn: 'D-train', audio: 'audio/hsk4/hsk4_动车.wav' },
@@ -970,7 +987,10 @@ export const b11TravelHotelLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : presque tous les hôtels chinois exigent un **押金** (dépôt de caution) de 200-500 ¥, rendu au check-out.',
     bodyEn:
-      '入住 (rùzhù) = check-in. 退房 (tuìfáng) = check-out, usually before noon. On arrival: 我预订了…的房间 (I booked a … room). Almost all Chinese hotels require a 押金 (deposit) of 200-500 ¥, refunded at check-out. Room types: 单人间 (single), 双人间 (twin), 大床房 (double bed).',
+      '- 入住 (rùzhù) — check-in\n' +
+      '- 退房 (tuìfáng) — check-out, usually before noon\n' +
+      '\n' +
+      'On arrival: 我预订了…的房间 (I booked a … room). Almost all Chinese hotels require a 押金 (deposit) of 200-500 ¥, refunded at check-out. Room types: 单人间 (single), 双人间 (twin), 大床房 (double bed).',
     items: [
       { hanzi: '酒店', pinyin: 'jiǔdiàn', meaning: 'hôtel', meaningEn: 'hotel', audio: 'audio/hsk2/hsk2_酒店.wav' },
       { hanzi: '前台', pinyin: 'qiántái', meaning: 'réception', meaningEn: 'reception', audio: 'audio/hsk4/hsk4_前台.wav' },
@@ -1103,7 +1123,15 @@ export const b11EmoComplimentLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour émettre un compliment, reste **précis** — évite « tu es bien », préfère 你做得真好 ou 你的 [X] 真漂亮.',
     bodyEn:
-      'In China, accepting a compliment with "thanks!" can sound arrogant. Traditional reply: 哪里哪里 (nǎ li nǎ li, "not at all"), 过奖了 (guò jiǎng le, "you flatter me"), 还差得远呢 (I\'m still far from it). When giving one: stay specific (avoid "you\'re nice"), prefer 你做得真好, 你的 [X] 真漂亮.',
+      'In China, accepting a compliment with "thanks!" can sound arrogant.\n' +
+      '\n' +
+      'Traditional reply:\n' +
+      '\n' +
+      '- 哪里哪里 (nǎ li nǎ li, "not at all")\n' +
+      '- 过奖了 (guò jiǎng le, "you flatter me")\n' +
+      '- 还差得远呢 (I\'m still far from it)\n' +
+      '\n' +
+      'When giving one: stay specific (avoid "you\'re nice"), prefer 你做得真好, 你的 [X] 真漂亮.',
     items: [
       { hanzi: '哪里', pinyin: 'nǎlǐ', meaning: 'mais non (refus compliment)', meaningEn: 'not at all', audio: 'audio/hsk1/hsk1_哪里.wav' },
       { hanzi: '过奖了', pinyin: 'guòjiǎng le', meaning: 'vous flattez trop', meaningEn: 'you flatter me', audio: 'audio/hsk5/hsk5_过奖.wav' },
@@ -1168,7 +1196,16 @@ export const b11HealthDoctorLearnSections: LessonV2LearnSection[] = [
       '- Le médecin **开药** (prescrit)\n' +
       '- Retrait à la **药房** (pharmacie de l\'hôpital)',
     bodyEn:
-      'Hospital flow (医院) in China: (1) 挂号处 (registration desk), pay the consultation fee, get a ticket. (2) Go to the specialty: 内科 (general), 外科 (surgery), 儿科 (pediatrics), 牙科 (dental). (3) Consult, describe: 我觉得... (I feel…), 我头疼 (my head hurts). (4) Doctor 开药 (prescribes). (5) Head to the 药房 (pharmacy) in the hospital.',
+      'Hospital flow (医院) in China: (1) 挂号处 (registration desk), pay the consultation fee, get a ticket.\n' +
+      '\n' +
+      '(2) Go to the specialty:\n' +
+      '\n' +
+      '- 内科 (general)\n' +
+      '- 外科 (surgery)\n' +
+      '- 儿科 (pediatrics)\n' +
+      '- 牙科 (dental)\n' +
+      '\n' +
+      '(3) Consult, describe: 我觉得... (I feel…), 我头疼 (my head hurts). (4) Doctor 开药 (prescribes). (5) Head to the 药房 (pharmacy) in the hospital.',
     items: [
       { hanzi: '医院', pinyin: 'yīyuàn', meaning: 'hôpital', meaningEn: 'hospital', audio: 'audio/hsk1/hsk1_医院.wav' },
       { hanzi: '挂号', pinyin: 'guàhào', meaning: 'enregistrement hospitalier', meaningEn: 'hospital registration', audio: 'audio/hsk5/hsk5_挂号.wav' },
@@ -1201,7 +1238,16 @@ export const b11HealthPharmacyLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : sur la boîte, 饭前 (avant repas), 饭后 (après), 睡前 (au coucher).',
     bodyEn:
-      '药店 (yàodiàn) = pharmacy. Forms: 药片 (tablet), 胶囊 (capsule), 药水 (syrup), 药膏 (ointment). Meds: 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Standard dosage: 一天三次，每次两片 (3 times/day, 2 tablets each). Box labels: 饭前 (before meals), 饭后 (after), 睡前 (bedtime).',
+      '药店 (yàodiàn) = pharmacy.\n' +
+      '\n' +
+      'Forms:\n' +
+      '\n' +
+      '- 药片 (tablet)\n' +
+      '- 胶囊 (capsule)\n' +
+      '- 药水 (syrup)\n' +
+      '- 药膏 (ointment)\n' +
+      '\n' +
+      'Meds: 感冒药, 退烧药, 止痛药, 消炎药, 抗生素. Standard dosage: 一天三次，每次两片 (3 times/day, 2 tablets each). Box labels: 饭前 (before meals), 饭后 (after), 睡前 (bedtime).',
     items: [
       { hanzi: '药店', pinyin: 'yàodiàn', meaning: 'pharmacie', meaningEn: 'pharmacy', audio: 'audio/hsk3/hsk3_药.wav' },
       { hanzi: '药片', pinyin: 'yàopiàn', meaning: 'cachet', meaningEn: 'tablet', audio: 'audio/hsk3/hsk3_药.wav' },
@@ -1238,7 +1284,15 @@ export const b11ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : évite le « 我觉得 » sec — ça sonne très **débutant**. Préfère 在我看来 ou 我个人认为 dès qu\'il s\'agit d\'argumenter.',
     bodyEn:
-      'Beyond A2 «我觉得», B1 adds nuance. Introduce: 在我看来 (in my view), 我个人认为 (personally I think), 从我的角度 (from my perspective). Acknowledge the other side: 我理解你的意思，但是… (I get your point, but…), 你说得有道理，不过… (you have a point, however…). Reinforce: 确实如此 (that\'s exactly it), 没错 (that\'s right). Important: avoid bare impersonal «我觉得» — sounds very beginner. Prefer 在我看来 or 我个人认为 when arguing.',
+      'Beyond A2 «我觉得», B1 adds nuance.\n' +
+      '\n' +
+      'Introduce:\n' +
+      '\n' +
+      '- 在我看来 (in my view)\n' +
+      '- 我个人认为 (personally I think)\n' +
+      '- 从我的角度 (from my perspective)\n' +
+      '\n' +
+      'Acknowledge the other side: 我理解你的意思，但是… (I get your point, but…), 你说得有道理，不过… (you have a point, however…). Reinforce: 确实如此 (that\'s exactly it), 没错 (that\'s right). Important: avoid bare impersonal «我觉得» — sounds very beginner. Prefer 在我看来 or 我个人认为 when arguing.',
     items: [
       { hanzi: '在我看来', pinyin: 'zàiwǒkànlái', meaning: 'à mon avis', meaningEn: 'in my view', audio: 'audio/hsk4/hsk4_看法.wav' },
       { hanzi: '个人', pinyin: 'gèrén', meaning: 'personnel', meaningEn: 'personal', audio: 'audio/hsk3/hsk3_个人.wav' },
@@ -1270,7 +1324,13 @@ export const b11ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour soutenir l\'autre — 别后悔 (ne regrette pas), 没关系，过去了 (laisse, c\'est passé).',
     bodyEn:
-      'Preference: 我更喜欢 X (I prefer X), 比起 X，我更喜欢 Y (between X and Y, I prefer Y), 我宁愿 X 也不 Y (I\'d rather X than Y — strong). Regret: 我后悔了 (I regret), 早知道就… (if I\'d known…), 要是…就好了 (if only…). Typical phrase: 早知道我就不来了 = if I\'d known I wouldn\'t have come. 早知道 marks late realization. Support: 别后悔 (don\'t regret), 没关系，过去了 (let it go, it\'s past).',
+      'Preference:\n' +
+      '\n' +
+      '- 我更喜欢 X (I prefer X)\n' +
+      '- 比起 X，我更喜欢 Y (between X and Y, I prefer Y)\n' +
+      '- 我宁愿 X 也不 Y (I\'d rather X than Y — strong)\n' +
+      '\n' +
+      'Regret: 我后悔了 (I regret), 早知道就… (if I\'d known…), 要是…就好了 (if only…). Typical phrase: 早知道我就不来了 = if I\'d known I wouldn\'t have come. 早知道 marks late realization. Support: 别后悔 (don\'t regret), 没关系，过去了 (let it go, it\'s past).',
     items: [
       { hanzi: '更', pinyin: 'gèng', meaning: 'plus, encore plus', meaningEn: 'more', audio: 'audio/hsk3/hsk3_更.wav' },
       { hanzi: '宁愿', pinyin: 'nìngyuàn', meaning: 'préférer (fort)', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
@@ -1306,7 +1366,16 @@ export const b11ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : coloration narrative avec **谁知道** (qui aurait cru) et **没想到** (je n\'aurais pas pensé). Aspect verbal — 了 (action accomplie), 过 (expérience vécue).',
     bodyEn:
-      'Time markers: 那时候 (back then), 当时 (at that moment), 后来 (later on), 接着 (next), 突然 (suddenly), 最后 (finally). Verbal aspect: 了 (completed action), 过 (lived experience, not necessarily recent — 我去过中国 = I\'ve been to China at least once). Story arc: initial situation (那时候我…) + trigger event (突然…) + development (然后…) + resolution (最后…). Narrative color: 谁知道 (who\'d have thought), 没想到 (didn\'t expect). Example: 那时候我才二十岁，突然接到一个电话…',
+      'Time markers:\n' +
+      '\n' +
+      '- 那时候 (back then)\n' +
+      '- 当时 (at that moment)\n' +
+      '- 后来 (later on)\n' +
+      '- 接着 (next)\n' +
+      '- 突然 (suddenly)\n' +
+      '- 最后 (finally)\n' +
+      '\n' +
+      'Verbal aspect: 了 (completed action), 过 (lived experience, not necessarily recent — 我去过中国 = I\'ve been to China at least once). Story arc: initial situation (那时候我…) + trigger event (突然…) + development (然后…) + resolution (最后…). Narrative color: 谁知道 (who\'d have thought), 没想到 (didn\'t expect). Example: 那时候我才二十岁，突然接到一个电话…',
     items: [
       { hanzi: '那时候', pinyin: 'nà shíhòu', meaning: 'à cette époque', meaningEn: 'back then', audio: 'audio/hsk3/hsk3_时候.wav' },
       { hanzi: '当时', pinyin: 'dāngshí', meaning: 'à ce moment-là', meaningEn: 'at the time', audio: 'audio/hsk5/hsk5_当时.wav' },
@@ -1338,7 +1407,15 @@ export const b11ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : réaction de l\'autre **attendue** (真的吗？/ 哈哈哈！) — sans réaction, l\'échange tombe à plat.',
     bodyEn:
-      'Start: 我跟你说一件好玩的事 (let me tell you something funny). For funny: 太搞笑了 (so funny), 笑死我了 (I died laughing — slang), 真有意思 (truly amusing). For awkward: 太尴尬了 (so awkward), 不好意思 (embarrassed), 我真想找个地缝钻进去 (I wanted to hide in a crack in the floor — idiomatic). Conclude: 这就是那时候发生的事 (that\'s what happened back then). Expected reaction: 真的吗？/ 哈哈哈！ No reaction = cold.',
+      'Start: 我跟你说一件好玩的事 (let me tell you something funny).\n' +
+      '\n' +
+      'For funny:\n' +
+      '\n' +
+      '- 太搞笑了 (so funny)\n' +
+      '- 笑死我了 (I died laughing — slang)\n' +
+      '- 真有意思 (truly amusing)\n' +
+      '\n' +
+      'For awkward: 太尴尬了 (so awkward), 不好意思 (embarrassed), 我真想找个地缝钻进去 (I wanted to hide in a crack in the floor — idiomatic). Conclude: 这就是那时候发生的事 (that\'s what happened back then). Expected reaction: 真的吗？/ 哈哈哈！ No reaction = cold.',
     items: [
       { hanzi: '好玩', pinyin: 'hǎowán', meaning: 'amusant', meaningEn: 'fun', audio: 'audio/hsk3/hsk3_好玩.wav' },
       { hanzi: '搞笑', pinyin: 'gǎoxiào', meaning: 'drôle', meaningEn: 'funny', audio: 'audio/hsk5/hsk5_搞笑.wav' },
@@ -1373,7 +1450,14 @@ export const b11ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : au B1, on évite encore **反对** (s\'opposer) sauf en débat formel — trop frontal en chinois social.',
     bodyEn:
-      'For: 我同意 (I agree), 完全同意 (totally), 我也是这么想的 (I think the same), 没错 (right). Against politely: 我不太同意 (I don\'t fully agree), 我看法不一样 (I have a different view), 我觉得不一定 (not necessarily). Give an argument: 因为…, 由于…, 比如…, 据我所知 (to my knowledge). Concession: 你说得对，不过… (you\'re right, but…). At B1, still avoid 反对 (oppose) outside formal debate — too frontal in social Chinese.',
+      'For:\n' +
+      '\n' +
+      '- 我同意 (I agree)\n' +
+      '- 完全同意 (totally)\n' +
+      '- 我也是这么想的 (I think the same)\n' +
+      '- 没错 (right)\n' +
+      '\n' +
+      'Against politely: 我不太同意 (I don\'t fully agree), 我看法不一样 (I have a different view), 我觉得不一定 (not necessarily). Give an argument: 因为…, 由于…, 比如…, 据我所知 (to my knowledge). Concession: 你说得对，不过… (you\'re right, but…). At B1, still avoid 反对 (oppose) outside formal debate — too frontal in social Chinese.',
     items: [
       { hanzi: '同意', pinyin: 'tóngyì', meaning: 'd\'accord', meaningEn: 'agree', audio: 'audio/hsk3/hsk3_同意.wav' },
       { hanzi: '完全', pinyin: 'wánquán', meaning: 'totalement', meaningEn: 'completely', audio: 'audio/hsk4/hsk4_完全.wav' },
@@ -1438,7 +1522,13 @@ export const b11ConvM4LearnSections: LessonV2LearnSection[] = [
       '- 谢谢，你过奖了 (merci, vous me flattez)\n' +
       '- 谢谢，我会继续努力 (merci, je continue à bosser — mix gratitude + humilité)',
     bodyEn:
-      'Beyond generic A2 «你真棒» (you\'re great), B1 specifies: 你的中文进步真快 (your Chinese is really improving fast), 你这个想法很有创意 (this idea is very creative), 你做得太到位了 (perfectly done). To congratulate a success: 恭喜！(congrats), 祝贺你！(same family), 太替你高兴了 (so happy for you). Modern acceptance: 谢谢，你过奖了 (thanks, you flatter me). Even more modern: 谢谢，我会继续努力 (thanks, I\'ll keep working). Gratitude + humility mix.',
+      'Beyond generic A2 «你真棒» (you\'re great), B1 specifies:\n' +
+      '\n' +
+      '- 你的中文进步真快 (your Chinese is really improving fast)\n' +
+      '- 你这个想法很有创意 (this idea is very creative)\n' +
+      '- 你做得太到位了 (perfectly done)\n' +
+      '\n' +
+      'To congratulate a success: 恭喜！(congrats), 祝贺你！(same family), 太替你高兴了 (so happy for you). Modern acceptance: 谢谢，你过奖了 (thanks, you flatter me). Even more modern: 谢谢，我会继续努力 (thanks, I\'ll keep working). Gratitude + humility mix.',
     items: [
       { hanzi: '进步', pinyin: 'jìnbù', meaning: 'progrès', meaningEn: 'progress', audio: 'audio/hsk4/hsk4_进步.wav' },
       { hanzi: '创意', pinyin: 'chuàngyì', meaning: 'créativité', meaningEn: 'creativity', audio: 'audio/hsk5/hsk5_创意.wav' },
@@ -1567,7 +1657,15 @@ export const b11ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : **évite** 你应该 (moralisateur) et 你必须 (autoritaire). Préfère 你可以考虑…',
     bodyEn:
-      'Open: 我跟你说一下我的想法，你参考一下 (let me share my thoughts, you decide). 你为什么不试试…？(why not try…?). Suggest: 也许你可以… (maybe you could…), 我建议你… (I suggest…), 不如…吧 (might as well…). Soften: 这只是我的建议 (this is just my advice), 你自己决定 (you decide). AVOID: 你应该 (you should — moralizing), 你必须 (you must — authoritarian). Prefer 你可以考虑… (you could consider). Chinese advice is INDIRECT to respect the other\'s autonomy.',
+      'Open: 我跟你说一下我的想法，你参考一下 (let me share my thoughts, you decide). 你为什么不试试…？(why not try…?).\n' +
+      '\n' +
+      'Suggest:\n' +
+      '\n' +
+      '- 也许你可以… (maybe you could…)\n' +
+      '- 我建议你… (I suggest…)\n' +
+      '- 不如…吧 (might as well…)\n' +
+      '\n' +
+      'Soften: 这只是我的建议 (this is just my advice), 你自己决定 (you decide). AVOID: 你应该 (you should — moralizing), 你必须 (you must — authoritarian). Prefer 你可以考虑… (you could consider). Chinese advice is INDIRECT to respect the other\'s autonomy.',
     items: [
       { hanzi: '建议', pinyin: 'jiànyì', meaning: 'suggérer', meaningEn: 'suggest', audio: 'audio/hsk4/hsk4_建议.wav' },
       { hanzi: '参考', pinyin: 'cānkǎo', meaning: 'consulter, à titre indicatif', meaningEn: 'reference', audio: 'audio/hsk4/hsk4_参考.wav' },
@@ -1660,7 +1758,18 @@ export const b11ConvM7LearnSections: LessonV2LearnSection[] = [
       '- 我希望有一天 X\n' +
       '- 我想找一份有意义的工作 (sujet d\'époque, très utilisé par les jeunes)',
     bodyEn:
-      'Narrative: 我在大学学了 X 年，毕业后去了 X 公司 (studied X years at uni, after grad went to X company). Pivot verbs: 学 (study), 毕业 (graduate), 工作 (work), 换工作 (change jobs), 跳槽 (jump ship for better — Chinese HR slang), 创业 (start a business). Ambitions: 我想在 X 年内 X (I\'d like X within X years), 我的目标是 X. For dreams: 我希望有一天 X (I hope one day). Very common modern phrase among young people: 我想找一份有意义的工作 (I want a job that has meaning) — generational topic.',
+      'Narrative: 我在大学学了 X 年，毕业后去了 X 公司 (studied X years at uni, after grad went to X company).\n' +
+      '\n' +
+      'Pivot verbs:\n' +
+      '\n' +
+      '- 学 (study)\n' +
+      '- 毕业 (graduate)\n' +
+      '- 工作 (work)\n' +
+      '- 换工作 (change jobs)\n' +
+      '- 跳槽 (jump ship for better — Chinese HR slang)\n' +
+      '- 创业 (start a business)\n' +
+      '\n' +
+      'Ambitions: 我想在 X 年内 X (I\'d like X within X years), 我的目标是 X. For dreams: 我希望有一天 X (I hope one day). Very common modern phrase among young people: 我想找一份有意义的工作 (I want a job that has meaning) — generational topic.',
     items: [
       { hanzi: '毕业', pinyin: 'bìyè', meaning: 'diplômé', meaningEn: 'graduate', audio: 'audio/hsk4/hsk4_毕业.wav' },
       { hanzi: '换工作', pinyin: 'huàn gōngzuò', meaning: 'changer de boulot', meaningEn: 'change jobs', audio: 'audio/hsk3/hsk3_换.wav' },
@@ -1920,7 +2029,12 @@ export const b11NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : test rapide — peux-tu **attraper** (拿) ? **apporter** (带) ? **enlacer** (抱) ?',
     bodyEn:
-      '拿 (ná) = take / hold in the hand (small object, active grip). 我拿着一本书 = I\'m holding a book. 帮我拿一下 = give me a hand to grab. 带 (dài) = bring / take along (object OR person, movement context). 我带了水 = I brought water. 我带孩子去公园 = I\'m taking the kids to the park. 抱 (bào) = hold in arms / hug. 抱孩子 (hold a baby), 抱你一下 (a hug). Difference: 拿 (hand, object) ≠ 带 (bring along) ≠ 抱 (arms, hug).',
+      '拿 (ná) = take / hold in the hand (small object, active grip). 我拿着一本书 = I\'m holding a book. 帮我拿一下 = give me a hand to grab. 带 (dài) = bring / take along (object OR person, movement context). 我带了水 = I brought water. 我带孩子去公园 = I\'m taking the kids to the park.\n' +
+      '\n' +
+      '- 抱 (bào) — hold in arms / hug\n' +
+      '- 抱孩子 (hold a baby) — 抱你一下 (a hug)\n' +
+      '\n' +
+      'Difference: 拿 (hand, object) ≠ 带 (bring along) ≠ 抱 (arms, hug).',
     items: [
       { hanzi: '拿', pinyin: 'ná', meaning: 'tenir, prendre', meaningEn: 'hold, take', audio: 'audio/hsk3/hsk3_拿.wav' },
       { hanzi: '带', pinyin: 'dài', meaning: 'apporter, amener', meaningEn: 'bring, take along', audio: 'audio/hsk3/hsk3_带.wav' },
@@ -1947,7 +2061,15 @@ export const b11NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 邮递员 = facteur (composé poste + passer + personne) — un beau résumé.',
     bodyEn:
-      '送 (sòng) = give as a gift / accompany / deliver. 我送你一个礼物 = I give you a gift. 我送你回家 = I\'ll see you home. Verb with 2 fundamental senses. 寄 (jì) = send by mail / courier. 我寄了一封信 = I sent a letter. 寄快递 = express shipping. 递 (dì) = pass (hand to hand). 把那个递给我 = pass that to me. Trinket, short distance. Three different verbs: 送 (gift or escort), 寄 (postal), 递 (hand to hand). 邮递员 = postman (compound: mail + pass + person).',
+      '送 (sòng) = give as a gift / accompany / deliver. 我送你一个礼物 = I give you a gift. 我送你回家 = I\'ll see you home. Verb with 2 fundamental senses. 寄 (jì) = send by mail / courier. 我寄了一封信 = I sent a letter. 寄快递 = express shipping. 递 (dì) = pass (hand to hand). 把那个递给我 = pass that to me. Trinket, short distance.\n' +
+      '\n' +
+      'Three different verbs:\n' +
+      '\n' +
+      '- 送 (gift or escort)\n' +
+      '- 寄 (postal)\n' +
+      '- 递 (hand to hand)\n' +
+      '\n' +
+      '邮递员 = postman (compound: mail + pass + person).',
     items: [
       { hanzi: '送', pinyin: 'sòng', meaning: 'offrir, accompagner', meaningEn: 'gift, escort', audio: 'audio/hsk2/hsk2_送.wav' },
       { hanzi: '寄', pinyin: 'jì', meaning: 'envoyer par poste', meaningEn: 'mail', audio: 'audio/hsk4/hsk4_寄.wav' },
@@ -3095,7 +3217,19 @@ export const b11NuancesZaiAbstractLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Ne PAS confondre avec le 上 spatial (« sur »). Ici 上 est ABSTRAIT : « au niveau de », pas « posé sur ».',
     bodyEn:
-      'Beyond physical space, 在...上 introduces an ABSTRACT DOMAIN, an ANGLE of discussion. English equivalent: «in terms of», «as regards», «on the level of». Structure: 在 + [abstract topic] + 上，[sentence]. Ex: 在学习方法上，每个人都有自己的习惯 «in terms of study method, everyone has their own habits». Ex: 在这个问题上，我们意见不一致 «on this issue, we don\'t agree». Ex: 在经济上，中国发展很快 «economically, China develops fast». Typical ABSTRACT topics: 教育 (education), 经济 (economy), 文化 (culture), 政治 (politics), 感情 (emotion), 心理 (psychology), 工作 (work). Ex: 在感情上，他很脆弱 «emotionally he\'s fragile». Ex: 在工作上，她很认真 «at work she\'s serious». Position: almost always at the HEAD of the sentence to frame the topic. 上 is MANDATORY — without it, the structure fails. Do NOT confuse with spatial 上 («on»). Here 上 is ABSTRACT: «at the level of», not «resting on».',
+      'Beyond physical space, 在...上 introduces an ABSTRACT DOMAIN, an ANGLE of discussion. English equivalent: «in terms of», «as regards», «on the level of». Structure: 在 + [abstract topic] + 上，[sentence]. Ex: 在学习方法上，每个人都有自己的习惯 «in terms of study method, everyone has their own habits». Ex: 在这个问题上，我们意见不一致 «on this issue, we don\'t agree». Ex: 在经济上，中国发展很快 «economically, China develops fast».\n' +
+      '\n' +
+      'Typical ABSTRACT topics:\n' +
+      '\n' +
+      '- 教育 (education)\n' +
+      '- 经济 (economy)\n' +
+      '- 文化 (culture)\n' +
+      '- 政治 (politics)\n' +
+      '- 感情 (emotion)\n' +
+      '- 心理 (psychology)\n' +
+      '- 工作 (work)\n' +
+      '\n' +
+      'Ex: 在感情上，他很脆弱 «emotionally he\'s fragile». Ex: 在工作上，她很认真 «at work she\'s serious». Position: almost always at the HEAD of the sentence to frame the topic. 上 is MANDATORY — without it, the structure fails. Do NOT confuse with spatial 上 («on»). Here 上 is ABSTRACT: «at the level of», not «resting on».',
     items: [
       { hanzi: '在...上', pinyin: 'zài ... shàng', meaning: 'sur le plan de, en matière de', meaningEn: 'in terms of, as regards', audio: 'audio/hsk1/hsk1_上.wav' },
       { hanzi: '经济', pinyin: 'jīngjì', meaning: 'économie', meaningEn: 'economy', audio: 'audio/hsk4/hsk4_经济.wav' },

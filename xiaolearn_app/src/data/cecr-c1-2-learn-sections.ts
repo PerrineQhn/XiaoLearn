@@ -30,7 +30,16 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : en culture chinoise, on **privilégie 调解** (médiation) avant 诉讼 (procès). Dire « 我们先尝试调解吧 » montre maturité — le procès = perte de temps **et** de face.',
     bodyEn:
-      'Frame: 我想咨询一下关于 X 的法律问题. Vocab: 纠纷 (jiūfēn, dispute), 起诉 (qǐsù, sue), 仲裁 (zhòngcái, arbitration), 调解 (tiáojiě, mediation). Ask analysis: 您能否帮我分析一下风险？(could you analyze the risk?). Key phrase: 如果走法律程序，胜诉的可能性有多大？(if we litigate, what are the win chances?). In Chinese culture, 调解 (mediation) is PRIVILEGED over 诉讼 (lawsuit) — saying «我们先尝试调解吧» shows maturity. Lawsuits = wasted time + lost face.',
+      'Frame: 我想咨询一下关于 X 的法律问题.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 纠纷 (jiūfēn, dispute)\n' +
+      '- 起诉 (qǐsù, sue)\n' +
+      '- 仲裁 (zhòngcái, arbitration)\n' +
+      '- 调解 (tiáojiě, mediation)\n' +
+      '\n' +
+      'Ask analysis: 您能否帮我分析一下风险？(could you analyze the risk?). Key phrase: 如果走法律程序，胜诉的可能性有多大？(if we litigate, what are the win chances?). In Chinese culture, 调解 (mediation) is PRIVILEGED over 诉讼 (lawsuit) — saying «我们先尝试调解吧» shows maturity. Lawsuits = wasted time + lost face.',
     items: [
       { hanzi: '咨询', pinyin: 'zīxún', meaning: 'consulter', meaningEn: 'consult', audio: 'audio/hsk5/hsk5_咨询.wav' },
       { hanzi: '纠纷', pinyin: 'jiūfēn', meaning: 'litige, différend', meaningEn: 'dispute', audio: 'audio/hsk6/hsk6_纠纷.wav' },
@@ -66,7 +75,18 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : **ne jamais signer sur place**. Conclure par 这份合同我需要带回去研究 (je dois étudier ce contrat plus en détail).',
     bodyEn:
-      'Contract 合同 structure: 甲方 (Party A), 乙方 (Party B), 标的 (subject matter), 价款 (price), 期限 (duration), 违约责任 (breach liability), 不可抗力 (force majeure), 争议解决 (dispute resolution). Clarify: 这条款的具体含义是什么？Ask change: 我希望在第 X 条加上 Y. Safeguard: 我建议增加一条不可抗力条款. Close: 这份合同我需要带回去研究 — NEVER sign on the spot.',
+      'Contract 合同 structure:\n' +
+      '\n' +
+      '- 甲方 (Party A)\n' +
+      '- 乙方 (Party B)\n' +
+      '- 标的 (subject matter)\n' +
+      '- 价款 (price)\n' +
+      '- 期限 (duration)\n' +
+      '- 违约责任 (breach liability)\n' +
+      '- 不可抗力 (force majeure)\n' +
+      '- 争议解决 (dispute resolution)\n' +
+      '\n' +
+      'Clarify: 这条款的具体含义是什么？Ask change: 我希望在第 X 条加上 Y. Safeguard: 我建议增加一条不可抗力条款. Close: 这份合同我需要带回去研究 — NEVER sign on the spot.',
     items: [
       { hanzi: '合同', pinyin: 'hétóng', meaning: 'contrat', meaningEn: 'contract', audio: 'audio/hsk4/hsk4_合同.wav' },
       { hanzi: '甲方', pinyin: 'jiǎfāng', meaning: 'partie A', meaningEn: 'party A', audio: 'audio/hsk6/hsk6_甲方.wav' },
@@ -167,7 +187,15 @@ export const c12ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ton **soutenu** mais pas lyrique à outrance. Le « 让我们携手 + 共同努力 » est la **formule consacrée** des appels à l\'action politiques chinois.',
     bodyEn:
-      'Frame: public speaking on a societal topic. Open solemnly: 各位朋友，今天我想跟大家分享 X 的看法. State observation: 我们身边正发生着 X 的现象. Mobilize values: 我们追求的是 X. Key verbs: 倡导 (chàngdǎo, advocate), 呼吁 (hūyù, call upon), 推动 (tuīdòng, push forward). Motivational combo: 让我们携手 X (let\'s join hands for X — 携手 is very formal). Close: 让我们共同努力，把这个梦想变成现实 (turn this dream into reality). Tone: FORMAL but not overly lyrical.',
+      'Frame: public speaking on a societal topic. Open solemnly: 各位朋友，今天我想跟大家分享 X 的看法. State observation: 我们身边正发生着 X 的现象. Mobilize values: 我们追求的是 X.\n' +
+      '\n' +
+      'Key verbs:\n' +
+      '\n' +
+      '- 倡导 (chàngdǎo, advocate)\n' +
+      '- 呼吁 (hūyù, call upon)\n' +
+      '- 推动 (tuīdòng, push forward)\n' +
+      '\n' +
+      'Motivational combo: 让我们携手 X (let\'s join hands for X — 携手 is very formal). Close: 让我们共同努力，把这个梦想变成现实 (turn this dream into reality). Tone: FORMAL but not overly lyrical.',
     items: [
       { hanzi: '现象', pinyin: 'xiànxiàng', meaning: 'phénomène', meaningEn: 'phenomenon', audio: 'audio/hsk5/hsk5_现象.wav' },
       { hanzi: '追求', pinyin: 'zhuīqiú', meaning: 'aspirer à', meaningEn: 'pursue', audio: 'audio/hsk5/hsk5_追求.wav' },
@@ -200,7 +228,16 @@ export const c12ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : conclure par **您的支持，意味着 X** (votre soutien signifie X). À la place du banal 请捐款, tu rends l\'acte **signifiant** — ex : 您的支持，意味着一个孩子能上学.',
     bodyEn:
-      'Structure: 我们的使命 (mission) → 主要工作 (activities) → 已取得的成果 (results) → 未来的计划 (future). Vocab: 公益 (public interest), 慈善 (charity), 志愿者 (volunteer), 募捐 (fundraising). Phrase: 我们致力于 X (we are dedicated to X — 致力于 is formal). To mobilize: 我们诚邀您加入我们的行列 (we sincerely invite you to join our ranks — 诚邀 + 行列 = very formal). Witness impact: 我们已经帮助了 X 个人. Close: 您的支持，意味着 X (your support means X — punchy formula).',
+      'Structure: 我们的使命 (mission) → 主要工作 (activities) → 已取得的成果 (results) → 未来的计划 (future).\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 公益 (public interest)\n' +
+      '- 慈善 (charity)\n' +
+      '- 志愿者 (volunteer)\n' +
+      '- 募捐 (fundraising)\n' +
+      '\n' +
+      'Phrase: 我们致力于 X (we are dedicated to X — 致力于 is formal). To mobilize: 我们诚邀您加入我们的行列 (we sincerely invite you to join our ranks — 诚邀 + 行列 = very formal). Witness impact: 我们已经帮助了 X 个人. Close: 您的支持，意味着 X (your support means X — punchy formula).',
     items: [
       { hanzi: '使命', pinyin: 'shǐmìng', meaning: 'mission', meaningEn: 'mission', audio: 'audio/hsk6/hsk6_使命.wav' },
       { hanzi: '公益', pinyin: 'gōngyì', meaning: 'intérêt public', meaningEn: 'public interest', audio: 'audio/hsk6/hsk6_公益.wav' },
@@ -239,7 +276,15 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : en culture confucéenne, l\'entretien RH = **chance d\'éduquer**, pas seulement de punir. Sans porte ouverte, l\'employé perd la face et se ferme ou démissionne.',
     bodyEn:
-      'Formal frame: 我今天找您谈话是关于 X 的事情. Verbs: 谈话 (formal interview), 警告 (warn), 处分 (sanction). State facts: 根据我们了解到的情况 X. Ask for explanation: 您能否说明一下情况？Set follow-up: 公司决定 X / 根据公司规定，您需要 X. Close humanely: 我们希望您能从这件事中吸取教训 (hope you draw a lesson). In Chinese culture, HR interview = chance to EDUCATE, not just punish. Key phrase: 我们相信您能改进 (we trust your ability to improve).',
+      'Formal frame: 我今天找您谈话是关于 X 的事情.\n' +
+      '\n' +
+      'Verbs:\n' +
+      '\n' +
+      '- 谈话 (formal interview)\n' +
+      '- 警告 (warn)\n' +
+      '- 处分 (sanction)\n' +
+      '\n' +
+      'State facts: 根据我们了解到的情况 X. Ask for explanation: 您能否说明一下情况？Set follow-up: 公司决定 X / 根据公司规定，您需要 X. Close humanely: 我们希望您能从这件事中吸取教训 (hope you draw a lesson). In Chinese culture, HR interview = chance to EDUCATE, not just punish. Key phrase: 我们相信您能改进 (we trust your ability to improve).',
     items: [
       { hanzi: '谈话', pinyin: 'tánhuà', meaning: 'entretien (formel)', meaningEn: 'formal interview', audio: 'audio/hsk5/hsk5_谈话.wav' },
       { hanzi: '警告', pinyin: 'jǐnggào', meaning: 'avertir', meaningEn: 'warn', audio: 'audio/hsk5/hsk5_警告.wav' },
@@ -275,7 +320,16 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le licenciement chinois respectueux **inclut toujours** (1) cause objective, (2) reconnaissance des contributions passées, (3) offre de 推荐信 + 补偿金. Sans ces 3 éléments, le 关系 explose.',
     bodyEn:
-      'Prep ground: 我有一件事要跟您谈，希望您冷静听. Announce: 公司决定与您解除劳动合同 (the company decided to terminate your contract). Justify: 由于 X 的原因 (always invoke a cause). Soften: 这不是您个人能力的问题 (this isn\'t about your personal ability). Vocab: 解除合同 (terminate), 补偿金 (compensation), 离职手续 (departure formalities), 推荐信 (recommendation letter). Always offer: 我们可以为您提供推荐信. Close: 我个人非常感谢您过去的贡献 (personally, thank you for your past contributions) — humanizes the moment.',
+      'Prep ground: 我有一件事要跟您谈，希望您冷静听. Announce: 公司决定与您解除劳动合同 (the company decided to terminate your contract). Justify: 由于 X 的原因 (always invoke a cause). Soften: 这不是您个人能力的问题 (this isn\'t about your personal ability).\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 解除合同 (terminate)\n' +
+      '- 补偿金 (compensation)\n' +
+      '- 离职手续 (departure formalities)\n' +
+      '- 推荐信 (recommendation letter)\n' +
+      '\n' +
+      'Always offer: 我们可以为您提供推荐信. Close: 我个人非常感谢您过去的贡献 (personally, thank you for your past contributions) — humanizes the moment.',
     items: [
       { hanzi: '解除', pinyin: 'jiěchú', meaning: 'résilier, lever', meaningEn: 'terminate, lift', audio: 'audio/hsk6/hsk6_解除.wav' },
       { hanzi: '劳动合同', pinyin: 'láodònghétóng', meaning: 'contrat de travail', meaningEn: 'labor contract', audio: 'audio/hsk5/hsk5_劳动.wav' },
@@ -314,7 +368,17 @@ export const c12ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : si tu ne peux pas **articuler ton 痛点 en 1 phrase claire** dans les 60 premières secondes, le VC zappe. Discipline d\'elevator pitch en chinois = non-négociable.',
     bodyEn:
-      '10-min structure: 团队 → 痛点 → 解决方案 → 市场 → 商业模式 → 数据 → 融资计划. Vocab: 估值 (valuation), 融资 (fundraising), 商业模式 (business model), 现金流 (cashflow), 退出机制 (exit mechanism). Opening pitch: 我们解决的痛点是 X (the pain point we solve is X). 痛点 (pain point) is an obsessive Chinese VC KEYWORD. Strengths: 我们的护城河是 X (our moat is X — Buffett metaphor, 护城河 = moat). Close: 我们希望融资 X 万美元 (we want to raise X). Chinese VCs want to SEE NUMBERS fast.',
+      '10-min structure: 团队 → 痛点 → 解决方案 → 市场 → 商业模式 → 数据 → 融资计划.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 估值 (valuation)\n' +
+      '- 融资 (fundraising)\n' +
+      '- 商业模式 (business model)\n' +
+      '- 现金流 (cashflow)\n' +
+      '- 退出机制 (exit mechanism)\n' +
+      '\n' +
+      'Opening pitch: 我们解决的痛点是 X (the pain point we solve is X). 痛点 (pain point) is an obsessive Chinese VC KEYWORD. Strengths: 我们的护城河是 X (our moat is X — Buffett metaphor, 护城河 = moat). Close: 我们希望融资 X 万美元 (we want to raise X). Chinese VCs want to SEE NUMBERS fast.',
     items: [
       { hanzi: '估值', pinyin: 'gūzhí', meaning: 'valorisation', meaningEn: 'valuation', audio: 'audio/hsk6/hsk6_估值.wav' },
       { hanzi: '融资', pinyin: 'róngzī', meaning: 'levée de fonds', meaningEn: 'fundraising', audio: 'audio/hsk6/hsk6_融资.wav' },
@@ -551,7 +615,12 @@ export const c12NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : dans un livre blanc ou discours politique, **我们倡议 X** est puissant — ça transforme une simple suggestion en mouvement **collectif** à aura symbolique. C\'est pourquoi on dit « 一带一路倡议 » (Belt and Road Initiative) : échelle géopolitique → 倡议, pas 建议.',
     bodyEn:
-      '建议 (jiànyì) = SUGGESTION (most universal, oral and written). 我建议你 X. Addressed to individual or group. 提议 (tíyì) = FORMAL PROPOSAL (in meetings, votes). 我提议我们投票 (I move we vote). More structured, sometimes voted on. 倡议 (chàngyì) = PUBLIC INITIATIVE (campaign launch, movement). 倡议节约用水 (launch an initiative to save water). Connotes COLLECTIVE and symbolic SCOPE. Hierarchy: 建议 (universal) < 提议 (formal meeting) < 倡议 (public initiative). «一带一路倡议» (Belt and Road Initiative) — why 倡议 not 建议? Geopolitical scale.',
+      '建议 (jiànyì) = SUGGESTION (most universal, oral and written). 我建议你 X. Addressed to individual or group.\n' +
+      '\n' +
+      '- 提议 (tíyì) — FORMAL PROPOSAL (in meetings, votes)\n' +
+      '- 我提议我们投票 (I move we vote) — \n' +
+      '\n' +
+      'More structured, sometimes voted on. 倡议 (chàngyì) = PUBLIC INITIATIVE (campaign launch, movement). 倡议节约用水 (launch an initiative to save water). Connotes COLLECTIVE and symbolic SCOPE. Hierarchy: 建议 (universal) < 提议 (formal meeting) < 倡议 (public initiative). «一带一路倡议» (Belt and Road Initiative) — why 倡议 not 建议? Geopolitical scale.',
     items: [
       { hanzi: '建议', pinyin: 'jiànyì', meaning: 'suggérer, suggestion', meaningEn: 'suggest, suggestion', audio: 'audio/hsk3/hsk3_建议.wav' },
       { hanzi: '提议', pinyin: 'tíyì', meaning: 'proposition (vote)', meaningEn: 'motion, proposal', audio: 'audio/hsk6/hsk6_提议.wav' },
@@ -581,7 +650,10 @@ export const c12NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique **保持权利 ✗ → 维护权利 ✓**. Les droits se *défendent*, ils ne se *gardent* pas passivement. La grammaire est dans l\'**objet** — le mauvais collocataire = signal immédiat d\'erreur de registre.',
     bodyEn:
-      '保持 (bǎochí) = KEEP a state (quality, level). 保持安静 (stay silent), 保持联系 (stay in touch). Most universal. 维持 (wéichí) = MAINTAIN despite difficulty (active effort). 维持秩序 (maintain order), 维持生活 (sustain livelihood). Connotes EFFORT to prevent collapse. 维护 (wéihù) = PROTECT, actively defend. 维护权利 (defend rights), 维护和平 (defend peace). Connotes DEFENSE against threat. Hierarchy: 保持 (stable state) < 维持 (active anti-collapse effort) < 维护 (defense vs threat). Classic mistake: 保持权利 ✗ → 维护权利 ✓ (rights DEFENDED, not passively kept).',
+      '- 保持 (bǎochí) — KEEP a state (quality, level)\n' +
+      '- 保持安静 (stay silent) — 保持联系 (stay in touch)\n' +
+      '\n' +
+      'Most universal. 维持 (wéichí) = MAINTAIN despite difficulty (active effort). 维持秩序 (maintain order), 维持生活 (sustain livelihood). Connotes EFFORT to prevent collapse. 维护 (wéihù) = PROTECT, actively defend. 维护权利 (defend rights), 维护和平 (defend peace). Connotes DEFENSE against threat. Hierarchy: 保持 (stable state) < 维持 (active anti-collapse effort) < 维护 (defense vs threat). Classic mistake: 保持权利 ✗ → 维护权利 ✓ (rights DEFENDED, not passively kept).',
     items: [
       { hanzi: '保持', pinyin: 'bǎochí', meaning: 'maintenir, garder', meaningEn: 'keep, maintain', audio: 'audio/hsk4/hsk4_保持.wav' },
       { hanzi: '维持', pinyin: 'wéichí', meaning: 'maintenir (effort)', meaningEn: 'sustain (effort)', audio: 'audio/hsk5/hsk5_维持.wav' },
@@ -608,7 +680,12 @@ export const c12NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : en éditorial / juridique, le choix lexical signale ta **précision**. « 这政策损害了消费者利益 » (préjudice) est juste ; « 摧毁消费者 » serait absurde — les consommateurs ne sont pas anéantis physiquement. Le bon registre = crédibilité.',
     bodyEn:
-      '破坏 (pòhuài) = DESTROY / damage (most universal). 破坏环境 (destroy the environment), 破坏关系 (break a relationship). Often reversible. 摧毁 (cuīhuǐ) = COMPLETELY DESTROY (erase, raze). 摧毁建筑 (raze a building), 摧毁信心 (annihilate confidence). Irreversible, brutal. 损害 (sǔnhài) = HARM, prejudice (effect on value, interest). 损害健康 (harm health), 损害利益 (harm interests). Connotes PREJUDICE rather than physical destruction. Hierarchy: 损害 (partial prejudice) < 破坏 (normal destruction) < 摧毁 (total destruction).',
+      '破坏 (pòhuài) = DESTROY / damage (most universal). 破坏环境 (destroy the environment), 破坏关系 (break a relationship). Often reversible.\n' +
+      '\n' +
+      '- 摧毁 (cuīhuǐ) — COMPLETELY DESTROY (erase, raze)\n' +
+      '- 摧毁建筑 (raze a building) — 摧毁信心 (annihilate confidence)\n' +
+      '\n' +
+      'Irreversible, brutal. 损害 (sǔnhài) = HARM, prejudice (effect on value, interest). 损害健康 (harm health), 损害利益 (harm interests). Connotes PREJUDICE rather than physical destruction. Hierarchy: 损害 (partial prejudice) < 破坏 (normal destruction) < 摧毁 (total destruction).',
     items: [
       { hanzi: '破坏', pinyin: 'pòhuài', meaning: 'détruire, endommager', meaningEn: 'destroy, damage', audio: 'audio/hsk5/hsk5_破坏.wav' },
       { hanzi: '摧毁', pinyin: 'cuīhuǐ', meaning: 'anéantir', meaningEn: 'annihilate', audio: 'audio/hsk6/hsk6_摧毁.wav' },
@@ -638,7 +715,12 @@ export const c12NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : test rapide — *soulever une idée* → 提出 ; *encourager un comportement* → 提倡 ; *augmenter un niveau* → 提升. Combo CV chinois C1 : **提升团队的执行能力** (verbe-clé du leadership chinois, dans 90% des CV cadres).',
     bodyEn:
-      '提出 (tíchū) = RAISE / propose (idea, question). 提出建议 / 提出问题. Neutral act of putting forward. 提倡 (tíchàng) = ADVOCATE, encourage (a behavior / value). 提倡环保 (advocate environmental protection), 提倡阅读. MORAL / SOCIAL connotation. 提升 (tíshēng) = ELEVATE (level, position). 提升能力 / 提升地位. Connotation of QUANTIFIABLE progression. Test: «raise an idea» → 提出; «encourage a behavior» → 提倡; «raise a level» → 提升. Three verbs in 提 + component that radically change meaning.',
+      '提出 (tíchū) = RAISE / propose (idea, question). 提出建议 / 提出问题. Neutral act of putting forward.\n' +
+      '\n' +
+      '- 提倡 (tíchàng) — ADVOCATE, encourage (a behavior / value)\n' +
+      '- 提倡环保 (advocate environmental protection) — 提倡阅读\n' +
+      '\n' +
+      'MORAL / SOCIAL connotation. 提升 (tíshēng) = ELEVATE (level, position). 提升能力 / 提升地位. Connotation of QUANTIFIABLE progression. Test: «raise an idea» → 提出; «encourage a behavior» → 提倡; «raise a level» → 提升. Three verbs in 提 + component that radically change meaning.',
     items: [
       { hanzi: '提出', pinyin: 'tíchū', meaning: 'soulever, proposer', meaningEn: 'raise, put forward', audio: 'audio/hsk4/hsk4_提出.wav' },
       { hanzi: '提倡', pinyin: 'tíchàng', meaning: 'prôner', meaningEn: 'advocate', audio: 'audio/hsk5/hsk5_提倡.wav' },
@@ -702,7 +784,12 @@ export const c12NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : 方便 est aussi un **euphémisme** pour aller aux toilettes (我去方便一下). « 您方便一下 » est ambigu — préfère **您方便的时候 + 联系我** pour dire « quand ça vous arrange ».',
     bodyEn:
-      '方便 (fāngbiàn) = CONVENIENT / handy (most universal, oral and written). 这里很方便 / 您方便吗？. Broadest. Also: 方便 = euphemism for going to toilet (mafan: 我去方便一下). 便利 (biànlì) = CONVENIENCE (noun: a convenient service / facility). 便利店 (convenience store), 提供便利. More written/marketing. 便捷 (biànjié) = CONVENIENT AND FAST (combines convenience + efficiency). 便捷的支付方式 (convenient and fast payment method). Connotes TECHNOLOGY / digital. Hierarchy: 方便 (universal) < 便利 (convenience service) < 便捷 (fast+convenient tech). In 2026, 便捷 has become the Chinese digital marketing keyword.',
+      '方便 (fāngbiàn) = CONVENIENT / handy (most universal, oral and written). 这里很方便 / 您方便吗？. Broadest. Also: 方便 = euphemism for going to toilet (mafan: 我去方便一下).\n' +
+      '\n' +
+      '- 便利 (biànlì) — = CONVENIENCE (noun: a convenient service / facility)\n' +
+      '- 便利店 (convenience store) — 提供便利\n' +
+      '\n' +
+      'More written/marketing. 便捷 (biànjié) = CONVENIENT AND FAST (combines convenience + efficiency). 便捷的支付方式 (convenient and fast payment method). Connotes TECHNOLOGY / digital. Hierarchy: 方便 (universal) < 便利 (convenience service) < 便捷 (fast+convenient tech). In 2026, 便捷 has become the Chinese digital marketing keyword.',
     items: [
       { hanzi: '方便', pinyin: 'fāngbiàn', meaning: 'pratique', meaningEn: 'convenient', audio: 'audio/hsk2/hsk2_方便.wav' },
       { hanzi: '便利', pinyin: 'biànlì', meaning: 'commodité', meaningEn: 'convenience', audio: 'audio/hsk5/hsk5_便利.wav' },
@@ -818,7 +905,12 @@ export const c12NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : **ambiguïté romantique**. « 我们在交往 » = on sort ensemble (officiellement en couple). Pour dire « on se voit / on est en contact », préfère **我们有联系** ou **我们经常见面**. 交往 + une personne = couple ; + un groupe = fréquentation neutre.',
     bodyEn:
-      '来往 (láiwǎng) = COME AND GO (physical movement OR social contact). 街上来往的人很多 (many people coming and going on the street). 我和他没有来往 = I have no contact with him. 往来 (wǎnglái) = EXCHANGES (formal, especially commercial / diplomatic). 商业往来 (commercial relations), 国家间的往来 (inter-state exchanges). More formal. 交往 (jiāowǎng) = social INTERACTION, sustained RELATIONSHIP (with idea of DURATION). 他们交往多年 (they\'ve interacted for years). Also: 交往 = dating someone (couple). Hierarchy: 来往 (movement / occasional contact) < 交往 (sustained relationship) < 往来 (formal commercial/diplomatic).',
+      '来往 (láiwǎng) = COME AND GO (physical movement OR social contact). 街上来往的人很多 (many people coming and going on the street). 我和他没有来往 = I have no contact with him.\n' +
+      '\n' +
+      '- 往来 (wǎnglái) — EXCHANGES (formal, especially commercial / diplomatic)\n' +
+      '- 商业往来 (commercial relations) — 国家间的往来 (inter-state exchanges)\n' +
+      '\n' +
+      'More formal. 交往 (jiāowǎng) = social INTERACTION, sustained RELATIONSHIP (with idea of DURATION). 他们交往多年 (they\'ve interacted for years). Also: 交往 = dating someone (couple). Hierarchy: 来往 (movement / occasional contact) < 交往 (sustained relationship) < 往来 (formal commercial/diplomatic).',
     items: [
       { hanzi: '来往', pinyin: 'láiwǎng', meaning: 'aller et venir', meaningEn: 'come and go', audio: 'audio/hsk4/hsk4_来往.wav' },
       { hanzi: '往来', pinyin: 'wǎnglái', meaning: 'échanges (formel)', meaningEn: 'exchanges (formal)', audio: 'audio/hsk6/hsk6_往来.wav' },
@@ -879,7 +971,12 @@ export const c12NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       '« 国民素质 » est un concept **très débattu** en Chine — il englobe éducation, politesse, comportement public. Dans une discussion sociale, dire « 我们需要提高素质 » est socialement noble et engageant.',
     bodyEn:
-      '质量 (zhìliàng) = MATERIAL QUALITY (product, work). 这件衣服质量很好 (this shirt is good quality). Most universal for an object/product. 品质 (pǐnzhì) = INTRINSIC / moral QUALITY (noble object OR human character). 高品质的产品 (premium product), 优秀的品质 (excellent moral qualities). More marketing/moral. 素质 (sùzhì) = HUMAN QUALITY (education, civic behavior). 国民素质 (citizens\' civic quality), 提高素质. Connotes SOCIAL/CIVIC LEVEL. Hierarchy: 质量 (material) < 品质 (noble object/morality) < 素质 (human civic). Mistake: 这个人质量好 ✗ → 这个人素质高 ✓ (human quality is 素质).',
+      '质量 (zhìliàng) = MATERIAL QUALITY (product, work). 这件衣服质量很好 (this shirt is good quality). Most universal for an object/product.\n' +
+      '\n' +
+      '- 品质 (pǐnzhì) — INTRINSIC / moral QUALITY (noble object OR human character)\n' +
+      '- 高品质的产品 (premium product) — 优秀的品质 (excellent moral qualities)\n' +
+      '\n' +
+      'More marketing/moral. 素质 (sùzhì) = HUMAN QUALITY (education, civic behavior). 国民素质 (citizens\' civic quality), 提高素质. Connotes SOCIAL/CIVIC LEVEL. Hierarchy: 质量 (material) < 品质 (noble object/morality) < 素质 (human civic). Mistake: 这个人质量好 ✗ → 这个人素质高 ✓ (human quality is 素质).',
     items: [
       { hanzi: '质量', pinyin: 'zhìliàng', meaning: 'qualité (matériel)', meaningEn: 'quality (material)', audio: 'audio/hsk3/hsk3_质量.wav' },
       { hanzi: '品质', pinyin: 'pǐnzhì', meaning: 'qualité (noble)', meaningEn: 'quality (noble)', audio: 'audio/hsk6/hsk6_品质.wav' },
@@ -908,7 +1005,12 @@ export const c12NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : en écrit C1+, **毫无** et **丝毫** marquent la maîtrise lexicale du **soutenu**. Pour réfuter en débat : « 您的论点毫无说服力 » (votre argument n\'a aucune force de conviction) — combo percutant pour démolir sans insulter.',
     bodyEn:
-      '一点 (yìdiǎn) = a little (NEUTRAL, oral and written). 我有一点累. Also negative: 一点也不累 = not at all tired. Universal. 丝毫 (sīháo) = THE SLIGHTEST (almost always NEGATIVE, written). 我没有丝毫的怀疑 = I have not the SLIGHTEST doubt. More emphatic than 一点. 毫无 (háowú) = HAVE NONE AT ALL (absolute negation, written). 毫无道理 (makes no sense), 毫无希望 (without any hope). 毫无 + abstract noun. Hierarchy: 一点 (neutral oral) < 丝毫 (emphatic written, mostly negative) < 毫无 (absolute, abstract). In C1+ writing, 毫无 and 丝毫 mark formal-register lexical mastery.',
+      '一点 (yìdiǎn) = a little (NEUTRAL, oral and written). 我有一点累. Also negative: 一点也不累 = not at all tired. Universal. 丝毫 (sīháo) = THE SLIGHTEST (almost always NEGATIVE, written). 我没有丝毫的怀疑 = I have not the SLIGHTEST doubt. More emphatic than 一点.\n' +
+      '\n' +
+      '- 毫无 (háowú) — HAVE NONE AT ALL (absolute negation, written)\n' +
+      '- 毫无道理 (makes no sense) — 毫无希望 (without any hope)\n' +
+      '\n' +
+      '毫无 + abstract noun. Hierarchy: 一点 (neutral oral) < 丝毫 (emphatic written, mostly negative) < 毫无 (absolute, abstract). In C1+ writing, 毫无 and 丝毫 mark formal-register lexical mastery.',
     items: [
       { hanzi: '一点', pinyin: 'yìdiǎn', meaning: 'un peu', meaningEn: 'a little', audio: 'audio/hsk1/hsk1_一点.wav' },
       { hanzi: '丝毫', pinyin: 'sīháo', meaning: 'le moindre', meaningEn: 'the slightest', audio: 'audio/hsk6/hsk6_丝毫.wav' },
@@ -1133,7 +1235,16 @@ export const c12BusinessM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : **construis d\'abord, sollicite ensuite**. La pire faute = demander un service à quelqu\'un avec qui tu n\'as jamais cultivé 关系 — perçu comme grossier. Recevoir sans donner = fermeture relationnelle immédiate.',
     bodyEn:
-      '关系 (guānxi) isn\'t declared, it\'s BUILT through long-term investment. Base resources: 同学 (university classmates — extremely strong relation in China), 同乡 (people from the same province), 战友 (military comrades), 老朋友 (old friends). Mechanics: invite each other to eat 吃饭, give gifts 送礼 (never excessive lest discomfort), invite to weddings and funerals, help concretely (CV, intro to a doctor, admin issue). RECIPROCITY is the golden rule — receiving without giving = closing yourself off. The worst: asking a favor of someone WITHOUT prior 关系 — perceived as rude. Build first, ask later.',
+      '关系 (guānxi) isn\'t declared, it\'s BUILT through long-term investment.\n' +
+      '\n' +
+      'Base resources:\n' +
+      '\n' +
+      '- 同学 (university classmates — extremely strong relation in China)\n' +
+      '- 同乡 (people from the same province)\n' +
+      '- 战友 (military comrades)\n' +
+      '- 老朋友 (old friends)\n' +
+      '\n' +
+      'Mechanics: invite each other to eat 吃饭, give gifts 送礼 (never excessive lest discomfort), invite to weddings and funerals, help concretely (CV, intro to a doctor, admin issue). RECIPROCITY is the golden rule — receiving without giving = closing yourself off. The worst: asking a favor of someone WITHOUT prior 关系 — perceived as rude. Build first, ask later.',
     items: [
       { hanzi: '关系', pinyin: 'guānxì', meaning: 'réseau, lien', meaningEn: 'connections', audio: 'audio/hsk3/hsk3_关系.wav' },
       { hanzi: '同学', pinyin: 'tóngxué', meaning: 'camarade de classe', meaningEn: 'classmate', audio: 'audio/hsk1/hsk1_同学.wav' },
@@ -1374,7 +1485,15 @@ export const c12BusinessM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la **phrase magique** à mémoriser mot pour mot — **期待与贵公司携手合作，共创美好未来**. Le **贵** (guì, votre honorable) précédant 公司/校/国 est obligatoire pour parler de l\'entité du partenaire. Sans 贵, ton pitch sonne banal.',
     bodyEn:
-      'Chinese pitch ALWAYS ends on a note of OPENING and RESPECT. Vocab: 合作共赢 (win-win cooperation), 互利互惠 (mutually beneficial), 携手共进 (advance hand in hand). Phrase: 期待与贵公司携手合作，共创美好未来 (I look forward to hand-in-hand cooperation to create a bright future). 共创 (co-create) + 美好未来 (bright future) = very Chinese combo. Closing chengyu: 互利共赢 or 共创未来 or 蒸蒸日上 (booming). The 贵 (your honorable) preceding 公司/校/国 = MANDATORY respect marker for the partner\'s entity. Without 贵, your pitch sounds BANAL.',
+      'Chinese pitch ALWAYS ends on a note of OPENING and RESPECT.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 合作共赢 (win-win cooperation)\n' +
+      '- 互利互惠 (mutually beneficial)\n' +
+      '- 携手共进 (advance hand in hand)\n' +
+      '\n' +
+      'Phrase: 期待与贵公司携手合作，共创美好未来 (I look forward to hand-in-hand cooperation to create a bright future). 共创 (co-create) + 美好未来 (bright future) = very Chinese combo. Closing chengyu: 互利共赢 or 共创未来 or 蒸蒸日上 (booming). The 贵 (your honorable) preceding 公司/校/国 = MANDATORY respect marker for the partner\'s entity. Without 贵, your pitch sounds BANAL.',
     items: [
       { hanzi: '合作共赢', pinyin: 'hézuò gòngyíng', meaning: 'coopération gagnant-gagnant', meaningEn: 'win-win cooperation', audio: 'audio/hsk6/hsk6_合作.wav' },
       { hanzi: '互利', pinyin: 'hùlì', meaning: 'mutuellement bénéfique', meaningEn: 'mutually beneficial', audio: 'audio/hsk6/hsk6_互利.wav' },
@@ -1411,7 +1530,17 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : le phénomène **鸡娃** (jīwá, « enfant-poule ») — parents qui sur-poussent académiquement — est un **sujet de société majeur** : burnout, suicide d\'adolescents, pression psychologique. À discuter avec **empathie**, jamais frontalement.',
     bodyEn:
-      'Standard timeline of a Chinese born in 2010: 2013-16 kindergarten (3 yrs), 2016-22 primary (6 yrs, internal exams), 2022-25 middle school (3 yrs, ends with 中考), 2025-28 high school (3 yrs, ends with 高考), 2028-32 bachelor (4 yrs), maybe 2032-35 master, 2035-40 PhD. 义务教育 (compulsory schooling) covers 9 years (primary + middle), free. High school and university paid (modest in public, expensive in private). Class hours: average Chinese child = 8am-5pm school + 7pm-10pm homework/private tutoring. 鸡娃 (jīwá, «chicken kid») phenomenon: parents who over-push children academically. Major SOCIETAL topic — burnout, teen suicide, psychological pressure.',
+      'Standard timeline of a Chinese born in 2010:\n' +
+      '\n' +
+      '- 2013-16 kindergarten (3 yrs)\n' +
+      '- 2016-22 primary (6 yrs, internal exams)\n' +
+      '- 2022-25 middle school (3 yrs, ends with 中考)\n' +
+      '- 2025-28 high school (3 yrs, ends with 高考)\n' +
+      '- 2028-32 bachelor (4 yrs)\n' +
+      '- maybe 2032-35 master\n' +
+      '- 2035-40 PhD\n' +
+      '\n' +
+      '义务教育 (compulsory schooling) covers 9 years (primary + middle), free. High school and university paid (modest in public, expensive in private). Class hours: average Chinese child = 8am-5pm school + 7pm-10pm homework/private tutoring. 鸡娃 (jīwá, «chicken kid») phenomenon: parents who over-push children academically. Major SOCIETAL topic — burnout, teen suicide, psychological pressure.',
     items: [
       { hanzi: '幼儿园', pinyin: 'yòuéryuán', meaning: 'maternelle', meaningEn: 'kindergarten', audio: 'audio/hsk5/hsk5_幼儿园.wav' },
       { hanzi: '义务教育', pinyin: 'yìwùjiàoyù', meaning: 'scolarité obligatoire', meaningEn: 'compulsory education', audio: 'audio/hsk6/hsk6_义务.wav' },
@@ -1444,7 +1573,16 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : sujet **politiquement explosif** — il révèle l\'**inégalité d\'accès** à l\'éducation. Le 学区房 (apparts à 5M ¥ pour 50m² près d\'une école d\'élite) reste révélateur de la pression éducative chinoise.',
     bodyEn:
-      '课外辅导 (extra-school tutoring) was a $100B+ industry in 2020 (新东方, 学而思 leaders). In 2021, «双减» policy («double reduction»): reduction of homework + ban on for-profit tutoring for curriculum subjects (math, English). Effects: massive bankruptcies, teacher unemployment, but classes often moved underground (1-on-1 at home). Vocab: 补习班 (catch-up class), 一对一 (1-on-1 lesson), 在线教育 (online lessons), 学区房 (apartment in a good school district — price spike). The topic is politically explosive: it reveals education access inequality.',
+      '课外辅导 (extra-school tutoring) was a $100B+ industry in 2020 (新东方, 学而思 leaders). In 2021, «双减» policy («double reduction»): reduction of homework + ban on for-profit tutoring for curriculum subjects (math, English). Effects: massive bankruptcies, teacher unemployment, but classes often moved underground (1-on-1 at home).\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 补习班 (catch-up class)\n' +
+      '- 一对一 (1-on-1 lesson)\n' +
+      '- 在线教育 (online lessons)\n' +
+      '- 学区房 (apartment in a good school district — price spike)\n' +
+      '\n' +
+      'The topic is politically explosive: it reveals education access inequality.',
     items: [
       { hanzi: '辅导', pinyin: 'fǔdǎo', meaning: 'tutorat, soutien', meaningEn: 'tutoring', audio: 'audio/hsk5/hsk5_辅导.wav' },
       { hanzi: '双减', pinyin: 'shuāngjiǎn', meaning: 'double réduction', meaningEn: 'double reduction', audio: 'audio/hsk6/hsk6_双减.wav' },
@@ -1486,7 +1624,16 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour souhaiter bonne chance à une famille — **祝您家孩子高考顺利，金榜题名 !** 金榜题名 = chéngyǔ impérial (réussir l\'examen mandarinal, son nom sur la liste rouge). Touche émotionnelle garantie.',
     bodyEn:
-      '高考 takes place every year June 7-9. Over 10 million candidates simultaneously. NATIONAL mobilization: traffic banned around exam centers, parents waiting all day, taxi drivers free for candidates, police present. Tradition: the mother wears a 旗袍 (qípáo, traditional dress) — 旗 sounds like «opening/success». The family eats a bowl of 鱼 (fish — homophone of 余 «surplus») the night before. The candidate holds a lucky charm (jade, Confucius medal). It\'s a NATIONAL event that suspends the country. Vocab: 考场 (exam center), 监考 (supervisor), 答题卡 (answer sheet), 准考证 (admission card). If you\'re in China in early June, watch a news broadcast — 高考 coverage is intense.',
+      '高考 takes place every year June 7-9. Over 10 million candidates simultaneously. NATIONAL mobilization: traffic banned around exam centers, parents waiting all day, taxi drivers free for candidates, police present. Tradition: the mother wears a 旗袍 (qípáo, traditional dress) — 旗 sounds like «opening/success». The family eats a bowl of 鱼 (fish — homophone of 余 «surplus») the night before. The candidate holds a lucky charm (jade, Confucius medal). It\'s a NATIONAL event that suspends the country.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 考场 (exam center)\n' +
+      '- 监考 (supervisor)\n' +
+      '- 答题卡 (answer sheet)\n' +
+      '- 准考证 (admission card)\n' +
+      '\n' +
+      'If you\'re in China in early June, watch a news broadcast — 高考 coverage is intense.',
     items: [
       { hanzi: '考场', pinyin: 'kǎochǎng', meaning: 'centre d\'examen', meaningEn: 'exam center', audio: 'audio/hsk6/hsk6_考场.wav' },
       { hanzi: '监考', pinyin: 'jiānkǎo', meaning: 'surveiller un examen', meaningEn: 'invigilate', audio: 'audio/hsk6/hsk6_监考.wav' },
@@ -1623,7 +1770,15 @@ export const c12LawSocietyM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour un litige international, exige dans tes contrats sino-étrangers une clause **仲裁** (CIETAC à Pékin, ou HKIAC à HK) plutôt que 诉讼 devant tribunal local chinois. L\'arbitrage est neutre, plus rapide, et reconnu internationalement (Convention de New York).',
     bodyEn:
-      'Top: 宪法 (Constitution, adopted 1982, amended 5 times — most recently 2018 to allow Xi Jinping\'s 3rd term). Below: 法律 (laws passed by 全国人民代表大会, NPC — National People\'s Congress, or its Standing Committee). Then: 行政法规 (State Council regulations), 部门规章 (ministerial orders), 地方性法规 (local regulations). Specificity: Chinese LAW is CIVIL (codified, not common law). Judicial rulings DON\'T have precedent value. Unified Civil Code promulgated in 2020 (《民法典》, the 1st civil code in PRC history). For international litigation, REQUIRE in your contracts: jurisdiction + language + applicable law specified.',
+      'Top: 宪法 (Constitution, adopted 1982, amended 5 times — most recently 2018 to allow Xi Jinping\'s 3rd term). Below: 法律 (laws passed by 全国人民代表大会, NPC — National People\'s Congress, or its Standing Committee).\n' +
+      '\n' +
+      'Then:\n' +
+      '\n' +
+      '- 行政法规 (State Council regulations)\n' +
+      '- 部门规章 (ministerial orders)\n' +
+      '- 地方性法规 (local regulations)\n' +
+      '\n' +
+      'Specificity: Chinese LAW is CIVIL (codified, not common law). Judicial rulings DON\'T have precedent value. Unified Civil Code promulgated in 2020 (《民法典》, the 1st civil code in PRC history). For international litigation, REQUIRE in your contracts: jurisdiction + language + applicable law specified.',
     items: [
       { hanzi: '宪法', pinyin: 'xiànfǎ', meaning: 'Constitution', meaningEn: 'Constitution', audio: 'audio/hsk6/hsk6_宪法.wav' },
       { hanzi: '人大', pinyin: 'réndà', meaning: 'ANP (Assemblée populaire)', meaningEn: 'NPC', audio: 'audio/hsk6/hsk6_人大.wav' },
@@ -1661,7 +1816,16 @@ export const c12LawSocietyM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : si tu es impliqué dans un litige en Chine, prends un **avocat 律师 local spécialisé**. Les avocats étrangers ne peuvent pas plaider en Chine — passage obligé par un cabinet chinois. Coût senior à Pékin/Shanghai : 1000-5000 ¥/h.',
     bodyEn:
-      'Plaintiff side: 原告 files 起诉 (suit). Defendant side: 被告 receives 传票 (summons). Representation: each has 律师 (lawyer). 法官 (judge) instructs. Procedure goes through 一审 (1st instance, basic or intermediate court), if dissatisfied: 上诉 (appeal) → 二审 (2nd instance). In China, NO popular jury — only professional judges. Public hearing except sensitive cases (minors, state security, privacy). Outcome: 判决 (judgment) or 调解 (mediation, ENCOURAGED by the system). Criminal penalties: 罚款 (fine), 有期徒刑 (fixed-term prison), 无期 (life), 死刑 (death penalty, still applied). Chinese trials on average FASTER than Western ones.',
+      'Plaintiff side: 原告 files 起诉 (suit). Defendant side: 被告 receives 传票 (summons). Representation: each has 律师 (lawyer). 法官 (judge) instructs. Procedure goes through 一审 (1st instance, basic or intermediate court), if dissatisfied: 上诉 (appeal) → 二审 (2nd instance). In China, NO popular jury — only professional judges. Public hearing except sensitive cases (minors, state security, privacy). Outcome: 判决 (judgment) or 调解 (mediation, ENCOURAGED by the system).\n' +
+      '\n' +
+      'Criminal penalties:\n' +
+      '\n' +
+      '- 罚款 (fine)\n' +
+      '- 有期徒刑 (fixed-term prison)\n' +
+      '- 无期 (life)\n' +
+      '- 死刑 (death penalty, still applied)\n' +
+      '\n' +
+      'Chinese trials on average FASTER than Western ones.',
     items: [
       { hanzi: '原告', pinyin: 'yuángào', meaning: 'plaignant', meaningEn: 'plaintiff', audio: 'audio/hsk6/hsk6_原告.wav' },
       { hanzi: '被告', pinyin: 'bèigào', meaning: 'accusé', meaningEn: 'defendant', audio: 'audio/hsk6/hsk6_被告.wav' },
@@ -1773,7 +1937,17 @@ export const c12LawSocietyM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : si tu pars en Chine, **installe ton VPN avant de quitter ton pays** (les sites de VPN sont bloqués depuis la Chine). Choisis un VPN d\'entreprise (Astrill, ExpressVPN, NordVPN) — sans VPN fonctionnel, tu seras coupé de WhatsApp/Gmail/Instagram dès l\'atterrissage.',
     bodyEn:
-      '防火长城 («Great Wall of Fire») = unofficial nickname for the Great Firewall (GFW). Official: 网络长城. Blocks Western services (Google, FB, Twitter/X, YouTube, Instagram, WhatsApp, partial Wikipedia, NYT, BBC Chinese, etc.). Chinese substitutes: 百度 (Baidu) for Google, 微信 (WeChat) for WhatsApp, 微博 (Weibo) for Twitter, 抖音 (Douyin) for TikTok, 哔哩哔哩 (Bilibili) for YouTube. Bypass: 翻墙 («jump the wall» = use a VPN). Legally gray area — tolerated for foreigners + researchers, riskier for Chinese citizens. In 2026, the GFW is more EFFECTIVE than in 2015 — many VPNs blocked. If you live in China, prepare a RELIABLE corporate VPN before arrival.',
+      '防火长城 («Great Wall of Fire») = unofficial nickname for the Great Firewall (GFW). Official: 网络长城. Blocks Western services (Google, FB, Twitter/X, YouTube, Instagram, WhatsApp, partial Wikipedia, NYT, BBC Chinese, etc.).\n' +
+      '\n' +
+      'Chinese substitutes:\n' +
+      '\n' +
+      '- 百度 (Baidu) for Google\n' +
+      '- 微信 (WeChat) for WhatsApp\n' +
+      '- 微博 (Weibo) for Twitter\n' +
+      '- 抖音 (Douyin) for TikTok\n' +
+      '- 哔哩哔哩 (Bilibili) for YouTube\n' +
+      '\n' +
+      'Bypass: 翻墙 («jump the wall» = use a VPN). Legally gray area — tolerated for foreigners + researchers, riskier for Chinese citizens. In 2026, the GFW is more EFFECTIVE than in 2015 — many VPNs blocked. If you live in China, prepare a RELIABLE corporate VPN before arrival.',
     items: [
       { hanzi: '防火长城', pinyin: 'fánghuǒ chángchéng', meaning: 'Great Firewall', meaningEn: 'Great Firewall', audio: 'audio/hsk6/hsk6_防火.wav' },
       { hanzi: '翻墙', pinyin: 'fānqiáng', meaning: 'sauter le mur (VPN)', meaningEn: 'jump the wall (VPN)', audio: 'audio/hsk6/hsk6_翻墙.wav' },
@@ -1807,7 +1981,13 @@ export const c12LawSocietyM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : en Chine, sépare tes discussions sensibles. Pour les sujets délicats — **en personne sans téléphone** ou via **Signal hors GFW** (avec VPN). Évite WeChat pour tout sujet sensible — tout est lisible par les autorités. Cette discipline protège tes interlocuteurs chinois autant que toi.',
     bodyEn:
-      '网络安全法 (Cybersecurity Law, 2017) imposes: (1) local hosting of Chinese personal data, (2) cooperation with authorities, (3) certification of critical equipment. 2021 laws: 数据安全法 (Data Security Law) + 个人信息保护法 (PIPL — equivalent of European GDPR, but stricter on state side). For a foreign company operating in China: high compliance cost (audit, hosting, regulated transfers). Content censorship via 敏感词 (auto-filtered keywords): 64 (= June 4, 1989, Tiananmen), dissident names (刘晓波, 艾未未), references to Tibet/Xinjiang/Falun Gong. On WeChat, Weibo, etc., a message containing a 敏感词 can be silently DELETED. Avoid these topics online in China — basic prudence rule.',
+      '网络安全法 (Cybersecurity Law, 2017) imposes:\n' +
+      '\n' +
+      '- (1) local hosting of Chinese personal data\n' +
+      '- (2) cooperation with authorities\n' +
+      '- (3) certification of critical equipment\n' +
+      '\n' +
+      '2021 laws: 数据安全法 (Data Security Law) + 个人信息保护法 (PIPL — equivalent of European GDPR, but stricter on state side). For a foreign company operating in China: high compliance cost (audit, hosting, regulated transfers). Content censorship via 敏感词 (auto-filtered keywords): 64 (= June 4, 1989, Tiananmen), dissident names (刘晓波, 艾未未), references to Tibet/Xinjiang/Falun Gong. On WeChat, Weibo, etc., a message containing a 敏感词 can be silently DELETED. Avoid these topics online in China — basic prudence rule.',
     items: [
       { hanzi: '网络安全', pinyin: 'wǎngluòānquán', meaning: 'cybersécurité', meaningEn: 'cybersecurity', audio: 'audio/hsk6/hsk6_网络.wav' },
       { hanzi: '数据安全', pinyin: 'shùjùānquán', meaning: 'sécurité des données', meaningEn: 'data security', audio: 'audio/hsk6/hsk6_数据.wav' },

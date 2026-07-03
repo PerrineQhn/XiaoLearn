@@ -119,7 +119,16 @@ export const b22StructureM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : c\'est l\'**inverse** de l\'intuition française.',
     bodyEn:
-      'The most common form uses negation: 宁可 A 也不 B = "rather A than ever B". 宁可饿着也不吃剩饭 = rather stay hungry than eat leftovers. 宁可走路，也不坐地铁 = rather walk than take the metro. Three golden rules: (1) B\'s verb must be negated (也不, 也不会, 也没有), (2) A is the costly option you prefer, (3) B is the rejected one, even if seemingly more comfortable. Opposite of French intuition — careful.',
+      'The most common form uses negation: 宁可 A 也不 B = "rather A than ever B". 宁可饿着也不吃剩饭 = rather stay hungry than eat leftovers. 宁可走路，也不坐地铁 = rather walk than take the metro.\n' +
+      '\n' +
+      'Three golden rules:\n' +
+      '\n' +
+      '- (1) B\'s verb must be negated (也不, 也不会, 也没有)\n' +
+      '- (2) A is the costly option you prefer\n' +
+      '- (3) B is the rejected one\n' +
+      '- even if seemingly more comfortable\n' +
+      '\n' +
+      'Opposite of French intuition — careful.',
     items: [
       { hanzi: '饿', pinyin: 'è', meaning: 'avoir faim', meaningEn: 'hungry', audio: 'audio/hsk3/hsk3_饿.wav' },
       { hanzi: '剩饭', pinyin: 'shèngfàn', meaning: 'restes (repas)', meaningEn: 'leftovers', audio: 'audio/hsk4/hsk4_剩.wav' },
@@ -292,7 +301,16 @@ export const b22ArtsM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 王羲之 (Wang Xizhi, IVe s.) est 书圣, le « **saint de la calligraphie** ».',
     bodyEn:
-      'Chinese calligraphy is considered the supreme art, above painting. It requires the 文房四宝: 笔 (brush), 墨 (ink stick), 纸 (rice paper), 砚 (inkstone). Five styles in historical order: 篆书 (seal, ancient) → 隶书 (clerical) → 楷书 (regular, what you learn at school) → 行书 (running, semi-cursive) → 草书 (cursive, "wild grass"). 王羲之 (Wang Xizhi, 4th c.) is 书圣, the "Sage of Calligraphy".',
+      'Chinese calligraphy is considered the supreme art, above painting.\n' +
+      '\n' +
+      'It requires the 文房四宝:\n' +
+      '\n' +
+      '- 笔 (brush)\n' +
+      '- 墨 (ink stick)\n' +
+      '- 纸 (rice paper)\n' +
+      '- 砚 (inkstone)\n' +
+      '\n' +
+      'Five styles in historical order: 篆书 (seal, ancient) → 隶书 (clerical) → 楷书 (regular, what you learn at school) → 行书 (running, semi-cursive) → 草书 (cursive, "wild grass"). 王羲之 (Wang Xizhi, 4th c.) is 书圣, the "Sage of Calligraphy".',
     items: [
       { hanzi: '书法', pinyin: 'shūfǎ', meaning: 'calligraphie', meaningEn: 'calligraphy', audio: 'audio/hsk5/hsk5_书法.wav' },
       { hanzi: '文房四宝', pinyin: 'wénfángsìbǎo', meaning: 'les 4 trésors du lettré', meaningEn: 'Four Treasures of Study', audio: 'audio/hsk6/hsk6_文房四宝.wav' },
@@ -330,7 +348,16 @@ export const b22HealthM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : concepts clés à mémoriser — 气 (énergie vitale), 血 (sang) et 经络 (méridiens qui relient les organes).',
     bodyEn:
-      'Traditional Chinese Medicine (中医) doesn\'t treat an isolated organ but the overall balance between 阴/阳 and the five elements (五行). Diagnosis follows the 望闻问切 method — look, listen/smell, ask, palpate the pulse. Main therapies: 针灸 (needles and moxibustion), 推拿 (deep massage), 中药 (herbal decoctions), 拔罐 (cupping). Key concepts: 气 (vital energy), 血 (blood), 经络 (meridians linking organs).',
+      'Traditional Chinese Medicine (中医) doesn\'t treat an isolated organ but the overall balance between 阴/阳 and the five elements (五行). Diagnosis follows the 望闻问切 method — look, listen/smell, ask, palpate the pulse.\n' +
+      '\n' +
+      'Main therapies:\n' +
+      '\n' +
+      '- 针灸 (needles and moxibustion)\n' +
+      '- 推拿 (deep massage)\n' +
+      '- 中药 (herbal decoctions)\n' +
+      '- 拔罐 (cupping)\n' +
+      '\n' +
+      'Key concepts: 气 (vital energy), 血 (blood), 经络 (meridians linking organs).',
     items: [
       { hanzi: '中医', pinyin: 'zhōngyī', meaning: 'médecine chinoise', meaningEn: 'Chinese medicine', audio: 'audio/hsk4/hsk4_中医.wav' },
       { hanzi: '针灸', pinyin: 'zhēnjiǔ', meaning: 'acupuncture-moxibustion', meaningEn: 'acupuncture', audio: 'audio/hsk6/hsk6_针灸.wav' },
@@ -363,7 +390,14 @@ export const b22HealthM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'L\'assurance publique 医保 rembourse une partie. Services à connaître : 内科 (interne), 外科 (chirurgie), 儿科 (pédiatrie), 皮肤科 (derma).',
     bodyEn:
-      'Typical sequence: you arrive at the hospital (医院), get a numbered ticket at the counter — 挂号. Wait in the waiting room (候诊). The doctor sees you (看病), prescribes (开药). You go to the in-hospital pharmacy to collect drugs (取药) and pay (付款). For admission (住院), a deposit (押金) is often required. Public insurance 医保 reimburses part. Departments: 内科 (internal), 外科 (surgery), 儿科 (pediatrics), 皮肤科 (dermatology).',
+      'Typical sequence: you arrive at the hospital (医院), get a numbered ticket at the counter — 挂号. Wait in the waiting room (候诊). The doctor sees you (看病), prescribes (开药). You go to the in-hospital pharmacy to collect drugs (取药) and pay (付款). For admission (住院), a deposit (押金) is often required. Public insurance 医保 reimburses part.\n' +
+      '\n' +
+      'Departments:\n' +
+      '\n' +
+      '- 内科 (internal)\n' +
+      '- 外科 (surgery)\n' +
+      '- 儿科 (pediatrics)\n' +
+      '- 皮肤科 (dermatology)',
     items: [
       { hanzi: '医院', pinyin: 'yīyuàn', meaning: 'hôpital', meaningEn: 'hospital', audio: 'audio/hsk1/hsk1_医院.wav' },
       { hanzi: '门诊', pinyin: 'ménzhěn', meaning: 'consultation externe', meaningEn: 'outpatient', audio: 'audio/hsk6/hsk6_门诊.wav' },
@@ -708,7 +742,13 @@ export const b22StructureM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : différence avec 虽然 — 虽然 = **fait réel** admis (« bien qu\'il pleuve [il pleut vraiment] »), 即使 = **hypothèse** (« même s\'il pleuvait »).',
     bodyEn:
-      '即使 (jíshǐ) introduces an extreme hypothesis, often counter-factual, followed mandatorily by 也 in the 2nd clause. 即使下雨，我也要去 = even if it rains, I\'m going. Difference from 虽然: 虽然 = real accepted fact («although it\'s raining [it really is]»), 即使 = hypothetical («even if it were to rain»). Register variants: 哪怕 (oral, expressive), 即便 (written), 就算 (spoken/casual).',
+      '即使 (jíshǐ) introduces an extreme hypothesis, often counter-factual, followed mandatorily by 也 in the 2nd clause. 即使下雨，我也要去 = even if it rains, I\'m going. Difference from 虽然: 虽然 = real accepted fact («although it\'s raining [it really is]»), 即使 = hypothetical («even if it were to rain»).\n' +
+      '\n' +
+      'Register variants:\n' +
+      '\n' +
+      '- 哪怕 (oral, expressive)\n' +
+      '- 即便 (written)\n' +
+      '- 就算 (spoken/casual)',
     items: [
       { hanzi: '即使', pinyin: 'jíshǐ', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_即使.wav' },
       { hanzi: '哪怕', pinyin: 'nǎpà', meaning: 'même si', meaningEn: 'even if', audio: 'audio/hsk5/hsk5_哪怕.wav' },
@@ -772,7 +812,14 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : œuvres clés à connaître — 《霸王别姬》 (Adieu ma concubine), 《贵妃醉酒》 (L\'ivresse de la concubine).',
     bodyEn:
-      '京剧 (jīngjù) born in 19th-century Beijing, now a national emblem. Combines singing 唱 (chàng), rhythmic speech 念 (niàn), acrobatic gestures 做 (zuò), and martial combat 打 (dǎ). 4 main roles: 生 (male), 旦 (female), 净 (painted-face, strong character), 丑 (clown). 脸谱 (liǎnpǔ) makeup highly coded: red = loyalty, white = treachery, black = integrity, yellow = cruelty. Key works: 《霸王别姬》(Farewell My Concubine), 《贵妃醉酒》(The Drunken Concubine).',
+      '京剧 (jīngjù) born in 19th-century Beijing, now a national emblem. Combines singing 唱 (chàng), rhythmic speech 念 (niàn), acrobatic gestures 做 (zuò), and martial combat 打 (dǎ).\n' +
+      '\n' +
+      '4 main roles:\n' +
+      '\n' +
+      '- 生 (male) — 旦 (female), 净 (painted-face, strong character), 丑 (clown)\n' +
+      '- 脸谱 (liǎnpǔ) — makeup highly coded: red = loyalty, white = treachery, black = integrity, yellow = cruelty\n' +
+      '\n' +
+      'Key works: 《霸王别姬》(Farewell My Concubine), 《贵妃醉酒》(The Drunken Concubine).',
     items: [
       { hanzi: '京剧', pinyin: 'jīngjù', meaning: 'opéra de Pékin', meaningEn: 'Beijing opera', audio: 'audio/hsk5/hsk5_京剧.wav' },
       { hanzi: '脸谱', pinyin: 'liǎnpǔ', meaning: 'maquillage facial', meaningEn: 'face makeup', audio: 'audio/hsk6/hsk6_脸谱.wav' },
@@ -797,7 +844,13 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
       '- 川剧 (Sichuan) — célèbre pour son 变脸 (l\'acteur change de masque en une seconde par un mouvement secret)\n' +
       '- 粤剧 (Cantonais) — populaire à Hong Kong, Canton et dans toutes les diasporas chinoises',
     bodyEn:
-      'China has 300+ regional opera forms. 越剧 (yuèjù, Zhejiang) — feminine, lyrical, famous for 《梁山伯与祝英台》. 川剧 (chuānjù, Sichuan) — famous for 变脸 (face-changing: actor switches masks in a second via a secret movement). 粤剧 (yuèjù, Cantonese) — popular in Hong Kong, Canton, and Chinese diasporas. Each opera has its dialects, costumes, instruments. All recognized as UNESCO intangible heritage.',
+      'China has 300+ regional opera forms.\n' +
+      '\n' +
+      '- 越剧 (yuèjù, Zhejiang) — — feminine, lyrical, famous for 《梁山伯与祝英台》\n' +
+      '- 川剧 (chuānjù, Sichuan) — famous for 变脸 (face-changing: actor switches masks in a second via a secret movement)\n' +
+      '- 粤剧 (yuèjù, Cantonese) — — popular in Hong Kong, Canton, and Chinese diasporas\n' +
+      '\n' +
+      'Each opera has its dialects, costumes, instruments. All recognized as UNESCO intangible heritage.',
     items: [
       { hanzi: '川剧', pinyin: 'chuānjù', meaning: 'opéra du Sichuan', meaningEn: 'Sichuan opera', audio: 'audio/hsk6/hsk6_川剧.wav' },
       { hanzi: '变脸', pinyin: 'biànliǎn', meaning: 'changement de visage', meaningEn: 'face-changing', audio: 'audio/hsk6/hsk6_变脸.wav' },
@@ -886,7 +939,15 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : très collectionnée — les pièces Ming/Qing peuvent atteindre des **millions** aux enchères.',
     bodyEn:
-      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐng dé zhèn) in Jiangxi, producing for 1,000 years. Iconic styles: 青花 (blue and white, Yuan dynasty), 粉彩 (polychrome, Qing), 釉里红 (red under glaze). Process: 高岭土 (kaolin) clay fired at 1,300°C. Highly collected — Ming/Qing pieces can reach millions at auction.',
+      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐng dé zhèn) in Jiangxi, producing for 1,000 years.\n' +
+      '\n' +
+      'Iconic styles:\n' +
+      '\n' +
+      '- 青花 (blue and white, Yuan dynasty)\n' +
+      '- 粉彩 (polychrome, Qing)\n' +
+      '- 釉里红 (red under glaze)\n' +
+      '\n' +
+      'Process: 高岭土 (kaolin) clay fired at 1,300°C. Highly collected — Ming/Qing pieces can reach millions at auction.',
     items: [
       { hanzi: '瓷器', pinyin: 'cíqì', meaning: 'porcelaine', meaningEn: 'porcelain', audio: 'audio/hsk5/hsk5_瓷器.wav' },
       { hanzi: '青花', pinyin: 'qīnghuā', meaning: 'bleu et blanc', meaningEn: 'blue and white', audio: 'audio/hsk6/hsk6_青花.wav' },
@@ -949,7 +1010,14 @@ export const b22HealthM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : phrase utile — 我每周锻炼三次 = je fais du sport 3 fois par semaine.',
     bodyEn:
-      'Popular sports: 篮球 (basketball — NBA is huge), 足球 (soccer), 乒乓球 (ping-pong, national sport), 羽毛球 (badminton, widely played). Indoor: 健身房 (gym), 跑步机 (treadmill). Key verbs: 锻炼 (exercise, work out), 出汗 (sweat), 放松 (relax). Useful phrase: 我每周锻炼三次 = I work out 3 times a week.',
+      'Popular sports:\n' +
+      '\n' +
+      '- 篮球 (basketball — NBA is huge)\n' +
+      '- 足球 (soccer)\n' +
+      '- 乒乓球 (ping-pong, national sport)\n' +
+      '- 羽毛球 (badminton, widely played)\n' +
+      '\n' +
+      'Indoor: 健身房 (gym), 跑步机 (treadmill). Key verbs: 锻炼 (exercise, work out), 出汗 (sweat), 放松 (relax). Useful phrase: 我每周锻炼三次 = I work out 3 times a week.',
     items: [
       { hanzi: '锻炼', pinyin: 'duànliàn', meaning: 'faire du sport', meaningEn: 'exercise', audio: 'audio/hsk3/hsk3_锻炼.wav' },
       { hanzi: '健身房', pinyin: 'jiànshēnfáng', meaning: 'salle de gym', meaningEn: 'gym', audio: 'audio/hsk5/hsk5_健身房.wav' },
@@ -982,7 +1050,14 @@ export const b22HealthM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la culture chinoise du sport intègre beaucoup la **récupération douce** (taichi, massage, médecine traditionnelle). Phrase typique : 我跑步的时候扭伤了脚踝.',
     bodyEn:
-      'Sports health vocab: 受伤 (get injured), 扭伤 (sprain), 拉伤 (strain), 肌肉酸痛 (sore muscles). Recovery: 休息 (rest), 冰敷 (ice), 按摩 (massage), 热身 (warm-up), 拉伸 (stretching). Typical phrase: 我跑步的时候扭伤了脚踝 = I sprained my ankle while running. Chinese sports culture integrates gentle recovery (tai chi, massage, traditional medicine).',
+      'Sports health vocab:\n' +
+      '\n' +
+      '- 受伤 (get injured)\n' +
+      '- 扭伤 (sprain)\n' +
+      '- 拉伤 (strain)\n' +
+      '- 肌肉酸痛 (sore muscles)\n' +
+      '\n' +
+      'Recovery: 休息 (rest), 冰敷 (ice), 按摩 (massage), 热身 (warm-up), 拉伸 (stretching). Typical phrase: 我跑步的时候扭伤了脚踝 = I sprained my ankle while running. Chinese sports culture integrates gentle recovery (tai chi, massage, traditional medicine).',
     items: [
       { hanzi: '受伤', pinyin: 'shòushāng', meaning: 'se blesser', meaningEn: 'get injured', audio: 'audio/hsk4/hsk4_受伤.wav' },
       { hanzi: '扭伤', pinyin: 'niǔshāng', meaning: 'entorse', meaningEn: 'sprain', audio: 'audio/hsk5/hsk5_扭伤.wav' },
@@ -1015,7 +1090,10 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : **上火** (« monter en feu ») = excès d\'aliments chauds → bouton, mal de gorge.',
     bodyEn:
-      '营养 (yíngyǎng, nutrition): central concept. 均衡饮食 (balanced diet). Food families: 蛋白质 (proteins), 碳水化合物 (carbs — often shortened to 碳水), 脂肪 (fats), 维生素 (vitamins), 矿物质 (minerals). In China, the TCM idea of «hot/cold» foods (热性/凉性) coexists with Western nutrition. 上火 (shànghuǒ, «going on fire») = excess of hot foods → pimple, sore throat.',
+      '- 营养 (yíngyǎng, nutrition) — central concept\n' +
+      '- 均衡饮食 (balanced diet) — \n' +
+      '\n' +
+      'Food families: 蛋白质 (proteins), 碳水化合物 (carbs — often shortened to 碳水), 脂肪 (fats), 维生素 (vitamins), 矿物质 (minerals). In China, the TCM idea of «hot/cold» foods (热性/凉性) coexists with Western nutrition. 上火 (shànghuǒ, «going on fire») = excess of hot foods → pimple, sore throat.',
     items: [
       { hanzi: '营养', pinyin: 'yíngyǎng', meaning: 'nutrition', meaningEn: 'nutrition', audio: 'audio/hsk4/hsk4_营养.wav' },
       { hanzi: '均衡', pinyin: 'jūnhéng', meaning: 'équilibré', meaningEn: 'balanced', audio: 'audio/hsk6/hsk6_均衡.wav' },
@@ -1042,7 +1120,10 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : le rebound — **报复性饮食** (manger compulsivement après un régime). Phrase utile : 我在减肥，少吃点.',
     bodyEn:
-      '减肥 (jiǎnféi, lose weight): a huge topic in China, especially among young women. 节食 (deprive yourself), 间歇性禁食 (intermittent fasting — imported concept), 健身餐 (fitness meal). Trends: low-carb 低碳水, vegan 纯素, vegetarian 素食. But also the rebound: «报复性饮食» (compulsive eating after a diet). Useful phrase: 我在减肥，少吃点 = I\'m on a diet, I eat little.',
+      '- 减肥 (jiǎnféi, lose weight) — a huge topic in China, especially among young women\n' +
+      '- 节食 (deprive yourself) — 间歇性禁食 (intermittent fasting — imported concept), 健身餐 (fitness meal)\n' +
+      '\n' +
+      'Trends: low-carb 低碳水, vegan 纯素, vegetarian 素食. But also the rebound: «报复性饮食» (compulsive eating after a diet). Useful phrase: 我在减肥，少吃点 = I\'m on a diet, I eat little.',
     items: [
       { hanzi: '减肥', pinyin: 'jiǎnféi', meaning: 'perdre du poids', meaningEn: 'lose weight', audio: 'audio/hsk4/hsk4_减肥.wav' },
       { hanzi: '节食', pinyin: 'jiéshí', meaning: 'se restreindre', meaningEn: 'restrict diet', audio: 'audio/hsk5/hsk5_节食.wav' },
@@ -1074,7 +1155,11 @@ export const b22HealthM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : une nouvelle génération parle plus librement de **内卷** (« involution », surcompétition épuisante) et **躺平** (« rester allongé », refuser la pression).',
     bodyEn:
-      '心理健康 (mental health): long taboo in China, opening up since 2010. 抑郁症 (depression), 焦虑 (anxiety), 失眠 (insomnia), 压力大 (high pressure). 心理咨询 (psy consultation) remains rare but growing, especially in big cities. A new generation speaks more openly of 内卷 («involution», exhausting hyper-competition) and 躺平 («lying flat», refusing pressure).',
+      '- 心理健康 (mental health) — long taboo in China, opening up since 2010\n' +
+      '- 抑郁症 (depression) — 焦虑 (anxiety), 失眠 (insomnia), 压力大 (high pressure)\n' +
+      '- 心理咨询 (psy consultation) — remains rare but growing, especially in big cities\n' +
+      '\n' +
+      'A new generation speaks more openly of 内卷 («involution», exhausting hyper-competition) and 躺平 («lying flat», refusing pressure).',
     items: [
       { hanzi: '心理', pinyin: 'xīnlǐ', meaning: 'psychologie', meaningEn: 'psychology', audio: 'audio/hsk4/hsk4_心理.wav' },
       { hanzi: '抑郁', pinyin: 'yìyù', meaning: 'dépression', meaningEn: 'depression', audio: 'audio/hsk6/hsk6_抑郁.wav' },
@@ -1102,7 +1187,14 @@ export const b22HealthM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : phrases utiles — 我最近压力很大，需要放松. Demander : 你最近怎么样？睡得好吗？',
     bodyEn:
-      'Useful vocab: 放松 (relax), 冥想 (meditate), 深呼吸 (deep breath), 倾诉 (confide). Destressing activities in China: 茶 (drinking tea), 太极 (tai chi), 散步 (walking), 写日记 (journaling). Useful phrase: 我最近压力很大，需要放松 = I\'m very stressed lately, I need to relax. Ask: 你最近怎么样？睡得好吗？= how have you been? Sleeping well?',
+      'Useful vocab:\n' +
+      '\n' +
+      '- 放松 (relax)\n' +
+      '- 冥想 (meditate)\n' +
+      '- 深呼吸 (deep breath)\n' +
+      '- 倾诉 (confide)\n' +
+      '\n' +
+      'Destressing activities in China: 茶 (drinking tea), 太极 (tai chi), 散步 (walking), 写日记 (journaling). Useful phrase: 我最近压力很大，需要放松 = I\'m very stressed lately, I need to relax. Ask: 你最近怎么样？睡得好吗？= how have you been? Sleeping well?',
     items: [
       { hanzi: '放松', pinyin: 'fàngsōng', meaning: 'se détendre', meaningEn: 'relax', audio: 'audio/hsk4/hsk4_放松.wav' },
       { hanzi: '冥想', pinyin: 'míngxiǎng', meaning: 'méditer', meaningEn: 'meditate', audio: 'audio/hsk6/hsk6_冥想.wav' },
@@ -1131,7 +1223,10 @@ export const b22HealthM7LearnSections: LessonV2LearnSection[] = [
       '- 高血压 (hypertension)\n' +
       '- 糖尿病 (diabète)',
     bodyEn:
-      '老龄化社会 (aging society): a major challenge for China. 老人 (elderly), 退休 (retirement). One-child policy (1979-2015) → 4-2-1 (4 grandparents, 2 parents, 1 child). Children carry the cultural duty 孝 (xiào, filial piety) of caring for parents. 养老院 (retirement home) still frowned upon but growing. Health vocab: 老花眼 (presbyopia), 高血压 (hypertension), 糖尿病 (diabetes).',
+      '- 老龄化社会 (aging society) — a major challenge for China\n' +
+      '- 老人 (elderly) — 退休 (retirement)\n' +
+      '\n' +
+      'One-child policy (1979-2015) → 4-2-1 (4 grandparents, 2 parents, 1 child). Children carry the cultural duty 孝 (xiào, filial piety) of caring for parents. 养老院 (retirement home) still frowned upon but growing. Health vocab: 老花眼 (presbyopia), 高血压 (hypertension), 糖尿病 (diabetes).',
     items: [
       { hanzi: '老龄化', pinyin: 'lǎolínghuà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄化.wav' },
       { hanzi: '退休', pinyin: 'tuìxiū', meaning: 'retraite', meaningEn: 'retirement', audio: 'audio/hsk4/hsk4_退休.wav' },
@@ -1158,7 +1253,13 @@ export const b22HealthM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : les **广场舞大妈** (« tatas de la place ») sont devenues un meme sociologique — énergiques, organisées, parfois redoutées.',
     bodyEn:
-      'Chinese urban retirees have dense social lives. 广场舞 (square dance) — a national phenomenon, 100M practitioners, source of noise tensions. 公园 (park) — tai chi, mahjong 麻将, group singing. 带孙子 (look after grandchildren) — key role: grandparents often take over from working parents. 广场舞大妈 («square aunties») have become a sociological meme: energetic, organized, sometimes feared.',
+      'Chinese urban retirees have dense social lives.\n' +
+      '\n' +
+      '- 广场舞 (square dance) — — a national phenomenon, 100M practitioners, source of noise tensions\n' +
+      '- 公园 (park) — — tai chi, mahjong 麻将, group singing\n' +
+      '- 带孙子 (look after grandchildren) — key role: grandparents often take over from working parents\n' +
+      '\n' +
+      '广场舞大妈 («square aunties») have become a sociological meme: energetic, organized, sometimes feared.',
     items: [
       { hanzi: '广场舞', pinyin: 'guǎngchǎng wǔ', meaning: 'danse de place', meaningEn: 'square dance', audio: 'audio/hsk6/hsk6_广场舞.wav' },
       { hanzi: '公园', pinyin: 'gōngyuán', meaning: 'parc', meaningEn: 'park', audio: 'audio/hsk3/hsk3_公园.wav' },
@@ -1189,7 +1290,13 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : distinction avec le simple 比 (X 比 Y 高) — 相比/与…相比 introduit toute une **proposition** comparée, pas juste deux items.',
     bodyEn:
-      'To compare in B2 argumentation: 相比之下 (in comparison), 比起来 (compared with), 与 X 相比 (compared to X — formal). Example: 与传统教育相比，在线课程更灵活 = compared to traditional education, online classes are more flexible. Distinction from simple 比 (X 比 Y high): 相比/与…相比 introduces a whole COMPARED CLAUSE, not just two items.',
+      'To compare in B2 argumentation:\n' +
+      '\n' +
+      '- 相比之下 (in comparison)\n' +
+      '- 比起来 (compared with)\n' +
+      '- 与 X 相比 (compared to X — formal)\n' +
+      '\n' +
+      'Example: 与传统教育相比，在线课程更灵活 = compared to traditional education, online classes are more flexible. Distinction from simple 比 (X 比 Y high): 相比/与…相比 introduces a whole COMPARED CLAUSE, not just two items.',
     items: [
       { hanzi: '相比', pinyin: 'xiāngbǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
       { hanzi: '相比之下', pinyin: 'xiāngbǐzhīxià', meaning: 'par comparaison', meaningEn: 'in comparison', audio: 'audio/hsk6/hsk6_相比之下.wav' },
@@ -1246,7 +1353,14 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la structure **拿…来说** cible un cas particulier qui illustre une tendance générale.',
     bodyEn:
-      'To illustrate an argument: 例如 (for example — neutral), 比如说 (like for example — spoken), 譬如 (for instance — formal, literary), 拿 X 来说 (take X). Example: 拿北京来说，房价已经太高了 = take Beijing, real estate prices are already too high. The 拿…来说 structure targets a specific case illustrating a general trend.',
+      'To illustrate an argument:\n' +
+      '\n' +
+      '- 例如 (for example — neutral)\n' +
+      '- 比如说 (like for example — spoken)\n' +
+      '- 譬如 (for instance — formal, literary)\n' +
+      '- 拿 X 来说 (take X)\n' +
+      '\n' +
+      'Example: 拿北京来说，房价已经太高了 = take Beijing, real estate prices are already too high. The 拿…来说 structure targets a specific case illustrating a general trend.',
     items: [
       { hanzi: '例如', pinyin: 'lìrú', meaning: 'par exemple', meaningEn: 'for example', audio: 'audio/hsk5/hsk5_例如.wav' },
       { hanzi: '譬如', pinyin: 'pìrú', meaning: 'par exemple (soutenu)', meaningEn: 'for instance (formal)', audio: 'audio/hsk6/hsk6_譬如.wav' },
@@ -1274,7 +1388,14 @@ export const b22DebateM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : vocabulaire chiffres — 百分比 (pourcentage), 比例 (proportion), 增长 (croissance), 下降 (baisse). Phrase : 据统计，去年 GDP 增长了 5.2%.',
     bodyEn:
-      'To anchor an argument in fact: 据 (according to), 据统计 (according to statistics), 数据显示 (data show), 调查表明 (survey reveals). 据 + source + 报道/介绍 = according to X. 据新华社报道 = according to Xinhua agency. Number vocab: 百分比 (percentage), 比例 (proportion), 增长 (growth), 下降 (decline). Phrase: 据统计，去年 GDP 增长了 5.2% = per statistics, GDP grew 5.2% last year.',
+      'To anchor an argument in fact:\n' +
+      '\n' +
+      '- 据 (according to)\n' +
+      '- 据统计 (according to statistics)\n' +
+      '- 数据显示 (data show)\n' +
+      '- 调查表明 (survey reveals)\n' +
+      '\n' +
+      '据 + source + 报道/介绍 = according to X. 据新华社报道 = according to Xinhua agency. Number vocab: 百分比 (percentage), 比例 (proportion), 增长 (growth), 下降 (decline). Phrase: 据统计，去年 GDP 增长了 5.2% = per statistics, GDP grew 5.2% last year.',
     items: [
       { hanzi: '据', pinyin: 'jù', meaning: 'selon', meaningEn: 'according to', audio: 'audio/hsk5/hsk5_据.wav' },
       { hanzi: '统计', pinyin: 'tǒngjì', meaning: 'statistique', meaningEn: 'statistics', audio: 'audio/hsk5/hsk5_统计.wav' },
@@ -1307,7 +1428,13 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la structure inversée **之所以** met l\'accent sur le résultat avant d\'expliquer la cause — très oratoire.',
     bodyEn:
-      'To express a cause at B2: 由于 (due to — formal), 因为 (because — neutral), 之所以…是因为 (the reason… is that — emphatic). 由于天气恶劣，航班取消了 = due to bad weather, the flight is canceled. 之所以失败，是因为准备不足 = the reason we failed is insufficient preparation. The inverted 之所以 structure highlights the result before explaining the cause: very oratorical.',
+      'To express a cause at B2:\n' +
+      '\n' +
+      '- 由于 (due to — formal)\n' +
+      '- 因为 (because — neutral)\n' +
+      '- 之所以…是因为 (the reason… is that — emphatic)\n' +
+      '\n' +
+      '由于天气恶劣，航班取消了 = due to bad weather, the flight is canceled. 之所以失败，是因为准备不足 = the reason we failed is insufficient preparation. The inverted 之所以 structure highlights the result before explaining the cause: very oratorical.',
     items: [
       { hanzi: '由于', pinyin: 'yóuyú', meaning: 'du fait que', meaningEn: 'due to', audio: 'audio/hsk4/hsk4_由于.wav' },
       { hanzi: '之所以', pinyin: 'zhīsuǒyǐ', meaning: 'la raison pour laquelle', meaningEn: 'the reason why', audio: 'audio/hsk5/hsk5_之所以.wav' },
@@ -1393,7 +1520,13 @@ export const b22DebateM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ces formules signalent une pensée **encore en mouvement**, ouverte au débat — très valorisé en argumentation académique chinoise.',
     bodyEn:
-      'To avoid ending flat, open toward the future: 展望未来 (look ahead), 期待 (hope, expect), 值得 (deserve to). 这个议题值得进一步探讨 = this topic deserves further exploration. 我们期待… = we hope… 展望未来，… = looking to the future,… These formulas signal still-moving thought, open to debate — highly valued in Chinese academic argumentation.',
+      'To avoid ending flat, open toward the future:\n' +
+      '\n' +
+      '- 展望未来 (look ahead)\n' +
+      '- 期待 (hope, expect)\n' +
+      '- 值得 (deserve to)\n' +
+      '\n' +
+      '这个议题值得进一步探讨 = this topic deserves further exploration. 我们期待… = we hope… 展望未来，… = looking to the future,… These formulas signal still-moving thought, open to debate — highly valued in Chinese academic argumentation.',
     items: [
       { hanzi: '展望', pinyin: 'zhǎnwàng', meaning: 'envisager, regarder vers', meaningEn: 'envision, look forward', audio: 'audio/hsk6/hsk6_展望.wav' },
       { hanzi: '期待', pinyin: 'qīdài', meaning: 'attendre, espérer', meaningEn: 'expect, hope', audio: 'audio/hsk4/hsk4_期待.wav' },
@@ -1444,7 +1577,13 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : réagir naturellement, c\'est ne **jamais** rester scotché à 哦 (oh) ou 是吗 (ah bon).',
     bodyEn:
-      'Beyond basic «真的吗？» (really?), B2 distinguishes nuances: 太好了 (great!), 真不错 (really nice), 难以置信 (unbelievable). For surprise: 没想到 (I wouldn\'t have thought), 居然 (would you believe…), 竟然 (same, more spoken). For bad news: 太糟糕了 (that sucks), 真可惜 (what a pity), 我替你难过 (I\'m sad for you). Reacting naturally means not getting stuck on 哦 (oh) or 是吗 (oh really).',
+      'Beyond basic «真的吗？» (really?), B2 distinguishes nuances:\n' +
+      '\n' +
+      '- 太好了 (great!)\n' +
+      '- 真不错 (really nice)\n' +
+      '- 难以置信 (unbelievable)\n' +
+      '\n' +
+      'For surprise: 没想到 (I wouldn\'t have thought), 居然 (would you believe…), 竟然 (same, more spoken). For bad news: 太糟糕了 (that sucks), 真可惜 (what a pity), 我替你难过 (I\'m sad for you). Reacting naturally means not getting stuck on 哦 (oh) or 是吗 (oh really).',
     items: [
       { hanzi: '没想到', pinyin: 'méixiǎngdào', meaning: 'je n\'aurais pas pensé', meaningEn: 'wouldn\'t have thought', audio: 'audio/hsk4/hsk4_没想到.wav' },
       { hanzi: '居然', pinyin: 'jūrán', meaning: 'figure-toi (surprise)', meaningEn: 'unexpectedly', audio: 'audio/hsk5/hsk5_居然.wav' },
@@ -1478,7 +1617,13 @@ export const b22ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : évite les phrases creuses comme 没事的 (« c\'est rien ») devant une vraie peine — perçu comme **dismissif**.',
     bodyEn:
-      'To sympathize: 我理解你 (I get you), 我能想象 (I can imagine), 这真不容易 (that\'s really hard). To encourage: 加油 (chin up — ubiquitous), 别灰心 (don\'t lose heart), 一切都会好的 (it\'ll all work out). To close politely: 你保重 (take care). Avoid empty phrases like 没事的 («it\'s nothing») in front of real grief — feels dismissive.',
+      'To sympathize:\n' +
+      '\n' +
+      '- 我理解你 (I get you)\n' +
+      '- 我能想象 (I can imagine)\n' +
+      '- 这真不容易 (that\'s really hard)\n' +
+      '\n' +
+      'To encourage: 加油 (chin up — ubiquitous), 别灰心 (don\'t lose heart), 一切都会好的 (it\'ll all work out). To close politely: 你保重 (take care). Avoid empty phrases like 没事的 («it\'s nothing») in front of real grief — feels dismissive.',
     items: [
       { hanzi: '理解', pinyin: 'lǐjiě', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_理解.wav' },
       { hanzi: '想象', pinyin: 'xiǎngxiàng', meaning: 'imaginer', meaningEn: 'imagine', audio: 'audio/hsk5/hsk5_想象.wav' },
@@ -1513,7 +1658,13 @@ export const b22ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : compliments plus subtils — 你眼光真好 (tu as bon goût), 你考虑得很周到 (tu as bien pensé à tout).',
     bodyEn:
-      'Classic compliments: 你今天很漂亮 (you look beautiful today), 你的中文真好 (your Chinese is great), 这件衣服很适合你 (that outfit suits you). For work: 你做得真棒 (well done), 太厉害了 (impressive). Subtler: 你眼光真好 (you have good taste), 你考虑得很周到 (you thought of everything). Avoid hollow flattery — Chinese people spot it fast. Always specify WHAT is good.',
+      'Classic compliments:\n' +
+      '\n' +
+      '- 你今天很漂亮 (you look beautiful today)\n' +
+      '- 你的中文真好 (your Chinese is great)\n' +
+      '- 这件衣服很适合你 (that outfit suits you)\n' +
+      '\n' +
+      'For work: 你做得真棒 (well done), 太厉害了 (impressive). Subtler: 你眼光真好 (you have good taste), 你考虑得很周到 (you thought of everything). Avoid hollow flattery — Chinese people spot it fast. Always specify WHAT is good.',
     items: [
       { hanzi: '漂亮', pinyin: 'piàoliàng', meaning: 'beau, joli', meaningEn: 'beautiful', audio: 'audio/hsk1/hsk1_漂亮.wav' },
       { hanzi: '适合', pinyin: 'shìhé', meaning: 'aller bien à', meaningEn: 'suit', audio: 'audio/hsk4/hsk4_适合.wav' },
@@ -1574,7 +1725,15 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour proposer une alternative, finir par une question ouverte — 这样会不会更好？(comme ça ce serait peut-être mieux ?).',
     bodyEn:
-      'Different from formal debate: here you\'re among friends or colleagues. Gentle formulas: 我觉得不一定 (I don\'t think so necessarily), 嗯…我有点不同意 (hmm… I don\'t fully agree), 我倒觉得… (I rather think that…). To suggest an alternative: 这样会不会更好？(would this maybe be better?). Soften with 不过 (but — light) rather than 但是 (but — sharper).',
+      'Different from formal debate: here you\'re among friends or colleagues.\n' +
+      '\n' +
+      'Gentle formulas:\n' +
+      '\n' +
+      '- 我觉得不一定 (I don\'t think so necessarily)\n' +
+      '- 嗯…我有点不同意 (hmm… I don\'t fully agree)\n' +
+      '- 我倒觉得… (I rather think that…)\n' +
+      '\n' +
+      'To suggest an alternative: 这样会不会更好？(would this maybe be better?). Soften with 不过 (but — light) rather than 但是 (but — sharper).',
     items: [
       { hanzi: '不一定', pinyin: 'bù yídìng', meaning: 'pas forcément', meaningEn: 'not necessarily', audio: 'audio/hsk3/hsk3_不一定.wav' },
       { hanzi: '不同意', pinyin: 'bù tóngyì', meaning: 'pas d\'accord', meaningEn: 'disagree', audio: 'audio/hsk3/hsk3_同意.wav' },
@@ -1602,7 +1761,13 @@ export const b22ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : demander l\'avis de l\'autre à la fin (您觉得呢/你觉得呢) **ouvre** le dialogue plutôt que de fermer.',
     bodyEn:
-      'At work: 我有一个不同的看法 (I have a different view), 我们可以再讨论一下 (we can discuss further), 这个想法很有意思，但… (interesting idea, but…). The classic sandwich: compliment + reservation + opening. 您的方案非常好，我有一点小建议，您觉得呢？ Asking the other\'s opinion at the end (您觉得呢/你觉得呢) opens dialogue rather than closing.',
+      'At work:\n' +
+      '\n' +
+      '- 我有一个不同的看法 (I have a different view)\n' +
+      '- 我们可以再讨论一下 (we can discuss further)\n' +
+      '- 这个想法很有意思，但… (interesting idea, but…)\n' +
+      '\n' +
+      'The classic sandwich: compliment + reservation + opening. 您的方案非常好，我有一点小建议，您觉得呢？ Asking the other\'s opinion at the end (您觉得呢/你觉得呢) opens dialogue rather than closing.',
     items: [
       { hanzi: '看法', pinyin: 'kànfǎ', meaning: 'point de vue', meaningEn: 'viewpoint', audio: 'audio/hsk4/hsk4_看法.wav' },
       { hanzi: '讨论', pinyin: 'tǎolùn', meaning: 'discuter', meaningEn: 'discuss', audio: 'audio/hsk4/hsk4_讨论.wav' },
@@ -1705,7 +1870,13 @@ export const b22ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : adoucir avec **不太顺利** (pas très bien) plutôt que 失败 (échec) si possible. Toujours suivre par une issue : 但是我们可以…',
     bodyEn:
-      'Prepare the ground: 我有件事要告诉你… (I have something to tell you…), 我不知道怎么说… (I don\'t know how to say it…), 你要做好心理准备 (mentally prepare). The news: 出事了 (something happened), 计划取消了 (plan canceled), 项目失败了 (project failed). Soften with 不太顺利 (not going great) rather than 失败 (failure) when possible. Always follow with a path forward: 但是我们可以…',
+      'Prepare the ground:\n' +
+      '\n' +
+      '- 我有件事要告诉你… (I have something to tell you…)\n' +
+      '- 我不知道怎么说… (I don\'t know how to say it…)\n' +
+      '- 你要做好心理准备 (mentally prepare)\n' +
+      '\n' +
+      'The news: 出事了 (something happened), 计划取消了 (plan canceled), 项目失败了 (project failed). Soften with 不太顺利 (not going great) rather than 失败 (failure) when possible. Always follow with a path forward: 但是我们可以…',
     items: [
       { hanzi: '告诉', pinyin: 'gàosù', meaning: 'dire à', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
       { hanzi: '出事', pinyin: 'chūshì', meaning: 'arriver un problème', meaningEn: 'something happens', audio: 'audio/hsk5/hsk5_出事.wav' },
@@ -1765,7 +1936,16 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour rapporter une **question**, garder l\'ordre interrogatif — 他问我什么时候去 (il m\'a demandé quand j\'y allais).',
     bodyEn:
-      'Indirect speech in Chinese: no tense agreement like French/English. 他说他明天来 = he said he\'d come tomorrow (lit. «he says he tomorrow come»). Speaking verbs: 说 (say — neutral), 告诉 X (tell X), 问 (ask), 回答 (reply). 他告诉我他不能来 = he told me he couldn\'t come. To report a question, keep the interrogative order: 他问我什么时候去 (he asked me when I\'d go).',
+      'Indirect speech in Chinese: no tense agreement like French/English. 他说他明天来 = he said he\'d come tomorrow (lit. «he says he tomorrow come»).\n' +
+      '\n' +
+      'Speaking verbs:\n' +
+      '\n' +
+      '- 说 (say — neutral)\n' +
+      '- 告诉 X (tell X)\n' +
+      '- 问 (ask)\n' +
+      '- 回答 (reply)\n' +
+      '\n' +
+      '他告诉我他不能来 = he told me he couldn\'t come. To report a question, keep the interrogative order: 他问我什么时候去 (he asked me when I\'d go).',
     items: [
       { hanzi: '说', pinyin: 'shuō', meaning: 'dire', meaningEn: 'say', audio: 'audio/hsk1/hsk1_说.wav' },
       { hanzi: '告诉', pinyin: 'gàosù', meaning: 'dire à qqn', meaningEn: 'tell', audio: 'audio/hsk2/hsk2_告诉.wav' },
@@ -1795,7 +1975,14 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour relativiser, ajouter 不知道是不是真的 (je ne sais pas si c\'est vrai) ou 据说而已 (c\'est juste une rumeur).',
     bodyEn:
-      'Speaker distance: 据说 (jùshuō, it\'s said), 听说 (tīngshuō, I heard), 大家都说 (everyone says), 有人说 (someone said). 据说他要换工作 = the word is he\'s changing jobs. To qualify: 不知道是不是真的 (don\'t know if it\'s true), 据说而已 (just a rumor). 听说 is more personal (I heard), 据说 more distant (the rumor says). Heavily used in spoken Chinese to avoid personal commitment.',
+      'Speaker distance:\n' +
+      '\n' +
+      '- 据说 (jùshuō, it\'s said)\n' +
+      '- 听说 (tīngshuō, I heard)\n' +
+      '- 大家都说 (everyone says)\n' +
+      '- 有人说 (someone said)\n' +
+      '\n' +
+      '据说他要换工作 = the word is he\'s changing jobs. To qualify: 不知道是不是真的 (don\'t know if it\'s true), 据说而已 (just a rumor). 听说 is more personal (I heard), 据说 more distant (the rumor says). Heavily used in spoken Chinese to avoid personal commitment.',
     items: [
       { hanzi: '据说', pinyin: 'jùshuō', meaning: 'on dit que', meaningEn: 'it is said', audio: 'audio/hsk5/hsk5_据说.wav' },
       { hanzi: '听说', pinyin: 'tīngshuō', meaning: 'j\'ai entendu dire', meaningEn: 'I heard', audio: 'audio/hsk2/hsk2_听说.wav' },
@@ -1834,7 +2021,13 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
       '- 保持联系 (on garde contact)\n' +
       '- 路上小心 (fais attention sur la route)',
     bodyEn:
-      'Prepare the exit: 那好 (well then), 那这样吧 (let\'s do that), 嗯…那我先… (well… so I\'ll first…). Announce the exit: 我得走了 (I need to go), 时间不早了 (it\'s getting late), 还有事要办 (I have things to do). Warmly take leave: 改天再聊 (let\'s chat another day), 保持联系 (stay in touch), 路上小心 (be safe on the way). A blunt exit («拜拜！») feels cold.',
+      'Prepare the exit:\n' +
+      '\n' +
+      '- 那好 (well then)\n' +
+      '- 那这样吧 (let\'s do that)\n' +
+      '- 嗯…那我先… (well… so I\'ll first…)\n' +
+      '\n' +
+      'Announce the exit: 我得走了 (I need to go), 时间不早了 (it\'s getting late), 还有事要办 (I have things to do). Warmly take leave: 改天再聊 (let\'s chat another day), 保持联系 (stay in touch), 路上小心 (be safe on the way). A blunt exit («拜拜！») feels cold.',
     items: [
       { hanzi: '走了', pinyin: 'zǒu le', meaning: 'partir', meaningEn: 'going', audio: 'audio/hsk1/hsk1_走.wav' },
       { hanzi: '改天', pinyin: 'gǎitiān', meaning: 'un autre jour', meaningEn: 'another day', audio: 'audio/hsk5/hsk5_改天.wav' },
@@ -1865,7 +2058,13 @@ export const b22ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si l\'autre minimise (« 不客气 »), tu peux insister — 真的，不是客气话 (vraiment, je ne dis pas ça par politesse).',
     bodyEn:
-      'Beyond 谢谢: 太感谢你了 (thanks so much), 谢谢你的帮助 (thanks for your help — specify FOR WHAT), 真不知道怎么感谢你 (I don\'t know how to thank you). Very formal: 万分感谢 (a thousand thanks), 不胜感激 (extremely grateful — written). If the other minimizes («不客气» = no problem), you can insist: 真的，不是客气话 (truly, not just being polite). In China, SPECIFIC gratitude («thanks for doing X») is stronger than a simple 谢谢.',
+      'Beyond 谢谢:\n' +
+      '\n' +
+      '- 太感谢你了 (thanks so much)\n' +
+      '- 谢谢你的帮助 (thanks for your help — specify FOR WHAT)\n' +
+      '- 真不知道怎么感谢你 (I don\'t know how to thank you)\n' +
+      '\n' +
+      'Very formal: 万分感谢 (a thousand thanks), 不胜感激 (extremely grateful — written). If the other minimizes («不客气» = no problem), you can insist: 真的，不是客气话 (truly, not just being polite). In China, SPECIFIC gratitude («thanks for doing X») is stronger than a simple 谢谢.',
     items: [
       { hanzi: '感谢', pinyin: 'gǎnxiè', meaning: 'remercier (formel)', meaningEn: 'thank (formal)', audio: 'audio/hsk4/hsk4_感谢.wav' },
       { hanzi: '帮助', pinyin: 'bāngzhù', meaning: 'aide', meaningEn: 'help', audio: 'audio/hsk2/hsk2_帮助.wav' },
@@ -2299,7 +2498,15 @@ export const b22NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Exemple-test : 我看了，但没看见 (j\'ai regardé mais je n\'ai rien vu). Attention : **见** seul ne s\'utilise quasiment jamais à l\'oral moderne.',
     bodyEn:
-      '看 (kàn) = ACTION of looking, voluntary process. 我在看电视 = I\'m watching TV. 看 implies duration, intention. 见 (jiàn) = RESULT of seeing, completed perception. 见 is almost never used alone in modern speech — only in compositions : 看见 (saw — result), 见到 (see, run into someone), 见面 (meet). English distinction : 看 = «look at», 见 = «see» (result). 我看了，但没看见 = I looked but didn\'t see anything.',
+      '看 (kàn) = ACTION of looking, voluntary process. 我在看电视 = I\'m watching TV. 看 implies duration, intention. 见 (jiàn) = RESULT of seeing, completed perception.\n' +
+      '\n' +
+      '见 is almost never used alone in modern speech — only in compositions :\n' +
+      '\n' +
+      '- 看见 (saw — result)\n' +
+      '- 见到 (see, run into someone)\n' +
+      '- 见面 (meet)\n' +
+      '\n' +
+      'English distinction : 看 = «look at», 见 = «see» (result). 我看了，但没看见 = I looked but didn\'t see anything.',
     items: [
       { hanzi: '看', pinyin: 'kàn', meaning: 'regarder', meaningEn: 'look', audio: 'audio/hsk1/hsk1_看.wav' },
       { hanzi: '见', pinyin: 'jiàn', meaning: 'voir (résultat)', meaningEn: 'see (result)', audio: 'audio/hsk1/hsk1_见.wav' },

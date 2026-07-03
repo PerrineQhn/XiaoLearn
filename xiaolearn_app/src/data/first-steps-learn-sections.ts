@@ -103,7 +103,13 @@ export const introductionsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle d\'or : les pronoms ne changent **jamais** — pas de conjugaison, pas de déclinaison. 我 veut dire aussi bien « je », « moi » ou « mon » selon le contexte.',
     bodyEn:
-      'Only three basic singular pronouns: 我 (wǒ) = I, 你 (nǐ) = you, 他/她 (tā) = he/she. For the plural, add 们 (men): 我们 = we, 你们 = you, 他们 = they.\nPronouns never change — no conjugation, no declension. 我 means "I", "me", or "my" depending on context.',
+      'Only three basic singular pronouns:\n' +
+      '\n' +
+      '- 我 (wǒ) = I\n' +
+      '- 你 (nǐ) = you\n' +
+      '- 他/她 (tā) = he/she\n' +
+      '\n' +
+      'For the plural, add 们 (men): 我们 = we, 你们 = you, 他们 = they. Pronouns never change — no conjugation, no declension. 我 means "I", "me", or "my" depending on context.',
     items: [
       { hanzi: '我', pinyin: 'wǒ', meaning: 'je, moi', meaningEn: 'I, me', audio: 'audio/hsk1/hsk1_我.wav' },
       { hanzi: '你', pinyin: 'nǐ', meaning: 'tu, toi', meaningEn: 'you', audio: 'audio/hsk1/hsk1_你.wav' },
@@ -196,7 +202,12 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : la réponse bienveillante est 没关系 (méi guān xi), littéralement « pas de rapport » — « pas grave ».',
     bodyEn:
-      'Two levels of apology. 对不起 (duì bu qǐ) is the strongest one, literally "cannot + face + you". 打扰 (dǎrǎo) "I\'m bothering you" is used when interrupting someone.\nThe warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
+      'Two levels of apology.\n' +
+      '\n' +
+      '- 对不起 (duì bu qǐ) — is the strongest one, literally "cannot + face + you"\n' +
+      '- 打扰 (dǎrǎo) — "I\'m bothering you" is used when interrupting someone\n' +
+      '\n' +
+      'The warm reply is 没关系 (méi guān xi) "no worries, it doesn\'t matter".',
     items: [
       { hanzi: '对不起', pinyin: 'duìbùqǐ', meaning: 'pardon, je suis désolé', meaningEn: 'sorry, I apologize', audio: 'audio/hsk1/hsk1_对不起.wav' },
       { hanzi: '没关系', pinyin: 'méiguānxì', meaning: 'ce n\'est rien, pas grave', meaningEn: 'no problem, it\'s OK', audio: 'audio/hsk1/hsk1_没关系.wav' },
@@ -270,7 +281,10 @@ export const questionsLearnSections: LessonV2LearnSection[] = [
       '- 几 (jǐ) — pour les **petits** nombres (moins de 10) : 几岁 (quel âge), 几点 (quelle heure)\n' +
       '- 多少 (duōshǎo) — pour tout le reste, sans limite : 多少钱 (combien ça coûte ?)',
     bodyEn:
-      'Two words for "how many". 几 (jǐ) for small counts, typically under 10 (几岁 = how old, 几点 = what time). 多少 (duōshǎo) for everything else, no upper limit (多少钱 = how much does it cost?).',
+      'Two words for "how many".\n' +
+      '\n' +
+      '- 几 (jǐ) — for small counts, typically under 10 (几岁 = how old, 几点 = what time)\n' +
+      '- 多少 (duōshǎo) — for everything else, no upper limit (多少钱 = how much does it cost?)',
     items: [
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (peu)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
       { hanzi: '多少', pinyin: 'duōshǎo', meaning: 'combien (indéfini)', meaningEn: 'how much/many', audio: 'audio/hsk1/hsk1_多少.wav' },
@@ -424,7 +438,14 @@ export const timeLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle d\'or : ces mots se placent **au début** de la phrase, pas à la fin comme en français. Exemple : 我今天去北京 = « je vais à Pékin aujourd\'hui ».',
     bodyEn:
-      'Four core reference words: 现在 (xiànzài) = now, 今天 (jīntiān) = today, 明天 (míngtiān) = tomorrow, 昨天 (zuótiān) = yesterday.\nKey point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
+      'Four core reference words:\n' +
+      '\n' +
+      '- 现在 (xiànzài) = now\n' +
+      '- 今天 (jīntiān) = today\n' +
+      '- 明天 (míngtiān) = tomorrow\n' +
+      '- 昨天 (zuótiān) = yesterday\n' +
+      '\n' +
+      'Key point: these words go at the start of the sentence, not the end like in English. 我今天去北京 = "I am going to Beijing today".',
     items: [
       { hanzi: '现在', pinyin: 'xiànzài', meaning: 'maintenant', meaningEn: 'now', audio: 'audio/hsk1/hsk1_现在.wav' },
       { hanzi: '今天', pinyin: 'jīntiān', meaning: 'aujourd\'hui', meaningEn: 'today', audio: 'audio/hsk1/hsk1_今天.wav' },
@@ -541,7 +562,13 @@ export const familyLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : pour le conjoint, on dit 丈夫 (zhàngfu) = mari et 妻子 (qī zi) = épouse en registre **formel**. À l\'oral, 老公 et 老婆 sont très utilisés.',
     bodyEn:
-      'For your children: 儿子 (érzi) = son, 女儿 (nǚér) = daughter, 孩子 (háizi) = child (generic).\nFor a spouse, formal: 丈夫 (zhàngfu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
+      'For your children:\n' +
+      '\n' +
+      '- 儿子 (érzi) = son\n' +
+      '- 女儿 (nǚér) = daughter\n' +
+      '- 孩子 (háizi) = child (generic)\n' +
+      '\n' +
+      'For a spouse, formal: 丈夫 (zhàngfu) = husband, 妻子 (qī zi) = wife. Casual: 老公, 老婆 (very common in speech).',
     items: [
       { hanzi: '儿子', pinyin: 'érzi', meaning: 'fils', meaningEn: 'son', audio: 'audio/hsk1/hsk1_儿子.wav' },
       { hanzi: '女儿', pinyin: 'nǚér', meaning: 'fille (enfant)', meaningEn: 'daughter', audio: 'audio/hsk1/hsk1_女儿.wav' },
@@ -620,7 +647,11 @@ export const foodDrinksLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour commander, une **seule** structure suffit. 我要 + [plat] (« je veux… »), ou 我要吃 + [plat] (« je veux manger… »).',
     bodyEn:
-      '菜 (cài) = dish, vegetable. 米饭 (mǐfàn) = cooked rice as a side. 苹果 (píngguǒ) = apple.\nTo order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
+      '- 菜 (cài) — dish, vegetable\n' +
+      '- 米饭 (mǐfàn) — cooked rice as a side\n' +
+      '- 苹果 (píngguǒ) — apple\n' +
+      '\n' +
+      'To order, one pattern: 我要 + [item] ("I want…"), or 我要吃 + [dish] ("I want to eat…").',
     items: [
       { hanzi: '菜', pinyin: 'cài', meaning: 'plat, légume', meaningEn: 'dish, vegetable', audio: 'audio/hsk1/hsk1_菜.wav' },
       { hanzi: '米饭', pinyin: 'mǐfàn', meaning: 'riz cuit', meaningEn: 'cooked rice', audio: 'audio/hsk1/hsk1_米饭.wav' },
@@ -723,7 +754,14 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle d\'or : le point de référence est toujours **celui qui parle**. 来我家 = « viens chez moi » (je suis chez moi). 去他家 = « va chez lui » (je ne suis pas chez lui).',
     bodyEn:
-      'Two essential motion verbs: 去 (qù) = to go, leave (moving away), 来 (lái) = to come, arrive (moving toward).\nThe reference point is always the speaker. 来我家 = "come to my place" (I\'m there). 去他家 = "go to his place" (I\'m not there).',
+      'Two essential motion verbs:\n' +
+      '\n' +
+      '- 去 (qù) = to go\n' +
+      '- leave (moving away)\n' +
+      '- 来 (lái) = to come\n' +
+      '- arrive (moving toward)\n' +
+      '\n' +
+      'The reference point is always the speaker. 来我家 = "come to my place" (I\'m there). 去他家 = "go to his place" (I\'m not there).',
     items: [
       { hanzi: '去', pinyin: 'qù', meaning: 'aller, partir', meaningEn: 'to go, leave', audio: 'audio/hsk1/hsk1_去.wav' },
       { hanzi: '来', pinyin: 'lái', meaning: 'venir, arriver', meaningEn: 'to come', audio: 'audio/hsk1/hsk1_来.wav' },
@@ -746,7 +784,13 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ils se combinent naturellement avec un objet. 说中文 (parler chinois), 听音乐 (écouter de la musique), 看书 (lire un livre).',
     bodyEn:
-      'Three core verbs for senses and communication.\n看 (kàn) = to look, see, read (a book).\n说 (shuō) = to say, speak.\n听 (tīng) = to listen, hear.\nYou say 说中文 (speak Chinese), 听音乐 (listen to music), 看书 (read a book).',
+      'Three core verbs for senses and communication.\n' +
+      '\n' +
+      '- 看 (kàn) — to look, see, read (a book)\n' +
+      '- 说 (shuō) — to say, speak\n' +
+      '- 听 (tīng) — to listen, hear\n' +
+      '\n' +
+      'You say 说中文 (speak Chinese), 听音乐 (listen to music), 看书 (read a book).',
     items: [
       { hanzi: '看', pinyin: 'kàn', meaning: 'regarder, voir, lire', meaningEn: 'to look, see, read', audio: 'audio/hsk1/hsk1_看.wav' },
       { hanzi: '说', pinyin: 'shuō', meaning: 'dire, parler', meaningEn: 'to say, speak', audio: 'audio/hsk1/hsk1_说.wav' },
@@ -771,7 +815,15 @@ export const commonVerbsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : 做 est extrêmement **productif**. 做饭 (cuisiner, « faire un repas »), 做作业 (faire les devoirs), 做工作 (faire un travail).',
     bodyEn:
-      'A handful of daily actions: 做 (zuò) = to do, 写 (xiě) = to write, 开 (kāi) = to open, start, 关 (guān) = to close.\n做 is extremely productive: 做饭 (to cook, "make a meal"), 做作业 (do homework), 做工作 (do work).',
+      'A handful of daily actions:\n' +
+      '\n' +
+      '- 做 (zuò) = to do\n' +
+      '- 写 (xiě) = to write\n' +
+      '- 开 (kāi) = to open\n' +
+      '- start\n' +
+      '- 关 (guān) = to close\n' +
+      '\n' +
+      '做 is extremely productive: 做饭 (to cook, "make a meal"), 做作业 (do homework), 做工作 (do work).',
     items: [
       { hanzi: '做', pinyin: 'zuò', meaning: 'faire', meaningEn: 'to do, make', audio: 'audio/hsk1/hsk1_做.wav' },
       { hanzi: '写', pinyin: 'xiě', meaning: 'écrire', meaningEn: 'to write', audio: 'audio/hsk1/hsk1_写.wav' },
@@ -822,7 +874,10 @@ export const dailyActionsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ils s\'insèrent directement dans une phrase. 我去工作 = « je vais travailler », 我学习中文 = « j\'étudie le chinois ».',
     bodyEn:
-      '工作 (gōngzuò) = to work / work (same word for verb and noun). 学习 (xuéxí) = to study, learn.\nBoth are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
+      '- 工作 (gōngzuò) — to work / work (same word for verb and noun)\n' +
+      '- 学习 (xuéxí) — to study, learn\n' +
+      '\n' +
+      'Both are reusable blocks: 我去工作 = "I\'m going to work", 我学习中文 = "I\'m studying Chinese".',
     items: [
       { hanzi: '工作', pinyin: 'gōngzuò', meaning: 'travailler, travail', meaningEn: 'to work, job', audio: 'audio/hsk1/hsk1_工作.wav' },
       { hanzi: '学习', pinyin: 'xuéxí', meaning: 'étudier, apprendre', meaningEn: 'to study, learn', audio: 'audio/hsk1/hsk1_学习.wav' },

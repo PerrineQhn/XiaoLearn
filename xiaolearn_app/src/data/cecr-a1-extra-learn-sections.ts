@@ -492,7 +492,13 @@ export const pronounsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : à l\'écrit, 他 est masculin et 她 féminin. À l\'oral, les deux se prononcent « tā », donc indistinguables.',
     bodyEn:
-      'Three basic pronouns: 我 (wǒ) = I, 你 (nǐ) = you, 他/她 (tā) = he/she. One word per person — no case variation (I/me/my = all 我).\nIn writing, 他 is male and 她 female. In speech both sound "tā", so indistinguishable.',
+      'Three basic pronouns:\n' +
+      '\n' +
+      '- 我 (wǒ) = I\n' +
+      '- 你 (nǐ) = you\n' +
+      '- 他/她 (tā) = he/she\n' +
+      '\n' +
+      'One word per person — no case variation (I/me/my = all 我). In writing, 他 is male and 她 female. In speech both sound "tā", so indistinguishable.',
     items: [
       { hanzi: '我', pinyin: 'wǒ', meaning: 'je, moi', meaningEn: 'I, me', audio: 'audio/hsk1/hsk1_我.wav' },
       { hanzi: '你', pinyin: 'nǐ', meaning: 'tu, toi', meaningEn: 'you', audio: 'audio/hsk1/hsk1_你.wav' },
@@ -692,7 +698,14 @@ export const buNegationLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Exception : 不 est la négation par défaut pour **tout**... sauf pour 有 (avoir). Pour nier 有, on utilise 没 → 没有.',
     bodyEn:
-      '不 (bù) is placed BEFORE the verb or adjective being negated.\nE.g.: 我不吃肉 (wǒ bù chīròu) = I don\'t eat meat. 她不高兴 (tā bùgāoxìng) = she is not happy.\nKey rule: 不 is the default negation for everything... except for 有 (to have). To negate 有, use 没: 没有.',
+      '不 (bù) is placed BEFORE the verb or adjective being negated.\n' +
+      '\n' +
+      'E.g.:\n' +
+      '\n' +
+      '- 我不吃肉 (wǒ bù chīròu) — I don\'t eat meat\n' +
+      '- 她不高兴 (tā bùgāoxìng) — she is not happy\n' +
+      '\n' +
+      'Key rule: 不 is the default negation for everything... except for 有 (to have). To negate 有, use 没: 没有.',
     items: [
       { hanzi: '不', pinyin: 'bù', meaning: 'ne… pas', meaningEn: 'not', audio: 'audio/hsk1/hsk1_不.wav' },
       { hanzi: '没', pinyin: 'méi', meaning: 'ne… pas (pour 有 et passé)', meaningEn: 'not (for 有 and past)', audio: 'audio/hsk1/hsk1_没.wav' }
@@ -1130,7 +1143,14 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour épeler un caractère, 这个字怎么写？(comment ça s\'écrit ?).',
     bodyEn:
-      'Lifebuoy phrases: 请再说一遍 (please say it again), 慢一点 (slower), 我听不懂 (I don\'t catch what you\'re saying), 你说什么？(what did you say?). To spell a character: 这个字怎么写？(how do you write it?). For meaning: 这是什么意思？(what does it mean?). These 5 phrases get you out of almost any A1 jam.',
+      'Lifebuoy phrases:\n' +
+      '\n' +
+      '- 请再说一遍 (please say it again)\n' +
+      '- 慢一点 (slower)\n' +
+      '- 我听不懂 (I don\'t catch what you\'re saying)\n' +
+      '- 你说什么？(what did you say?)\n' +
+      '\n' +
+      'To spell a character: 这个字怎么写？(how do you write it?). For meaning: 这是什么意思？(what does it mean?). These 5 phrases get you out of almost any A1 jam.',
     items: [
       { hanzi: '再说一遍', pinyin: 'zàishuō yībiàn', meaning: 'redire, répéter', meaningEn: 'say again', audio: 'audio/hsk2/hsk2_再说.wav' },
       { hanzi: '慢一点', pinyin: 'màn yìdiǎn', meaning: 'plus lentement', meaningEn: 'slower', audio: 'audio/hsk2/hsk2_慢.wav' },
@@ -1188,7 +1208,16 @@ export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : pour dire « non », **reprends le verbe** avec 不 (ex : « 你吃吗？ — 不吃 »). Pas de 不 isolé comme « non » en français.',
     bodyEn:
-      'Chinese has no strict «yes». 4 ways depending on context: 是 (that\'s it — confirm identity/fact), 对 (right — confirm info), 好 (OK / fine — accept), 行 (works — practical agreement). 嗯 (mmm — light yes, oral). For «no»: repeat the verb with 不: «你吃吗？— 不吃». No standalone 不 as «no» like in English.',
+      'Chinese has no strict «yes».\n' +
+      '\n' +
+      '4 ways depending on context:\n' +
+      '\n' +
+      '- 是 (that\'s it — confirm identity/fact)\n' +
+      '- 对 (right — confirm info)\n' +
+      '- 好 (OK / fine — accept)\n' +
+      '- 行 (works — practical agreement)\n' +
+      '\n' +
+      '嗯 (mmm — light yes, oral). For «no»: repeat the verb with 不: «你吃吗？— 不吃». No standalone 不 as «no» like in English.',
     items: [
       { hanzi: '是', pinyin: 'shì', meaning: 'oui (être)', meaningEn: 'yes (be)', audio: 'audio/hsk1/hsk1_是.wav' },
       { hanzi: '对', pinyin: 'duì', meaning: 'exact, juste', meaningEn: 'right', audio: 'audio/hsk1/hsk1_对.wav' },
@@ -1214,7 +1243,15 @@ export const a1ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour maintenir la conversation vivante, utilise des petits mots — 然后呢？(et ensuite ?), 真的吗？(vraiment ?), 哦 (ah !), 嗯 (OK), 是吗 (ah bon ?). Sans eux, l\'autre pense que tu ne suis pas.',
     bodyEn:
-      '明白了 (I got it — caught the meaning). 知道了 (noted / OK I know now). Difference: 明白 = intellectual understanding; 知道 = info received. To prompt more: 然后呢？(and then?), 真的吗？(really?). To punctuate: 哦 (ah!), 嗯 (OK), 是吗 (oh really?). These little words keep a conversation alive — without them, the other thinks you\'re lost.',
+      '明白了 (I got it — caught the meaning). 知道了 (noted / OK I know now). Difference: 明白 = intellectual understanding; 知道 = info received. To prompt more: 然后呢？(and then?), 真的吗？(really?).\n' +
+      '\n' +
+      'To punctuate:\n' +
+      '\n' +
+      '- 哦 (ah!)\n' +
+      '- 嗯 (OK)\n' +
+      '- 是吗 (oh really?)\n' +
+      '\n' +
+      'These little words keep a conversation alive — without them, the other thinks you\'re lost.',
     items: [
       { hanzi: '明白', pinyin: 'míngbái', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
       { hanzi: '知道', pinyin: 'zhīdào', meaning: 'savoir', meaningEn: 'know', audio: 'audio/hsk2/hsk2_知道.wav' },
@@ -1330,7 +1367,15 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour donner une adresse, **montre ton portable** en disant 这是地址. Aujourd\'hui Didi 滴滴 a remplacé 80 % des taxis hélés — tu commandes via app, le prix s\'affiche.',
     bodyEn:
-      '请去 X (please take me to X). 请去机场 (to the airport), 请去人民广场 (People\'s Square). Give an address: 这是地址 (here\'s the address) + show your phone. During the ride: 慢一点 (slower), 这里 (here), 停一下 (stop). Arrival: 多少钱? (how much?), 收据 (receipt — for official taxis). Today Didi 滴滴 has replaced 80% of street-hailed taxis: order via app, price shown.',
+      '请去 X (please take me to X). 请去机场 (to the airport), 请去人民广场 (People\'s Square). Give an address: 这是地址 (here\'s the address) + show your phone.\n' +
+      '\n' +
+      'During the ride:\n' +
+      '\n' +
+      '- 慢一点 (slower)\n' +
+      '- 这里 (here)\n' +
+      '- 停一下 (stop)\n' +
+      '\n' +
+      'Arrival: 多少钱? (how much?), 收据 (receipt — for official taxis). Today Didi 滴滴 has replaced 80% of street-hailed taxis: order via app, price shown.',
     items: [
       { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
       { hanzi: '机场', pinyin: 'jīchǎng', meaning: 'aéroport', meaningEn: 'airport', audio: 'audio/hsk2/hsk2_机场.wav' },
@@ -1359,7 +1404,13 @@ export const a1ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : justifie brièvement (我有事 = j\'ai à faire, 时间不早了 = il se fait tard) puis prépare la suite (改天见, 回头见, 下次见 = à plus tard).',
     bodyEn:
-      'Announce exit: 我先走了 (I\'ll head out first), 我得走了 (I gotta go). Warmer than 拜拜 (which sounds abrupt). Briefly justify: 我有事 (I have something to do), 时间不早了 (it\'s getting late). Set up the next: 改天见 (see you another day), 回头见 (see you later), 下次见 (until next time).',
+      'Announce exit: 我先走了 (I\'ll head out first), 我得走了 (I gotta go). Warmer than 拜拜 (which sounds abrupt). Briefly justify: 我有事 (I have something to do), 时间不早了 (it\'s getting late).\n' +
+      '\n' +
+      'Set up the next:\n' +
+      '\n' +
+      '- 改天见 (see you another day)\n' +
+      '- 回头见 (see you later)\n' +
+      '- 下次见 (until next time)',
     items: [
       { hanzi: '先', pinyin: 'xiān', meaning: 'd\'abord', meaningEn: 'first', audio: 'audio/hsk2/hsk2_先.wav' },
       { hanzi: '走', pinyin: 'zǒu', meaning: 'partir, marcher', meaningEn: 'leave, walk', audio: 'audio/hsk1/hsk1_走.wav' },
@@ -1442,7 +1493,16 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si tu ne comprends pas, demande 慢一点 + 怎么去？ ou 你能写一下吗？(tu peux l\'écrire ?).',
     bodyEn:
-      'Ask for a place: X 在哪儿？(where is X?). 厕所在哪儿？(toilets?), 地铁站在哪儿？(metro station?). Possible replies: 一直走 (straight ahead), 左转 (turn left), 右转 (turn right), 在 X 旁边 (next to X). If you don\'t catch it: 慢一点 + 怎么去？ or 你能写一下吗？(can you write it?).',
+      'Ask for a place: X 在哪儿？(where is X?). 厕所在哪儿？(toilets?), 地铁站在哪儿？(metro station?).\n' +
+      '\n' +
+      'Possible replies:\n' +
+      '\n' +
+      '- 一直走 (straight ahead)\n' +
+      '- 左转 (turn left)\n' +
+      '- 右转 (turn right)\n' +
+      '- 在 X 旁边 (next to X)\n' +
+      '\n' +
+      'If you don\'t catch it: 慢一点 + 怎么去？ or 你能写一下吗？(can you write it?).',
     items: [
       { hanzi: '哪儿', pinyin: 'nǎr', meaning: 'où', meaningEn: 'where', audio: 'audio/hsk1/hsk1_哪儿.wav' },
       { hanzi: '一直', pinyin: 'yìzhí', meaning: 'tout droit', meaningEn: 'straight', audio: 'audio/hsk3/hsk3_一直.wav' },
@@ -1482,7 +1542,11 @@ export const a1NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Exception : pour l\'heure on dit 两点 (2 h), mais 二月 (février) — le 月 fonctionne comme un ordinal.',
     bodyEn:
-      '二 (èr) = the number 2 in the abstract: counting (一二三 = 1, 2, 3), compound numbers (十二 = 12, 二十 = 20), ordinals (第二 = 2nd), months (二月 = February). 两 (liǎng) = 2 before a classifier. 两个人 (two people), 两本书 (two books), 两次 (twice). GOLDEN RULE: 两 + classifier. NEVER 二个人. Frequent exception for time: 两点 (2 o\'clock) but 二月 (February, the month) — the 月 functions as an ordinal, not a classifier.',
+      '- 二 (èr) — = the number 2 in the abstract: counting (一二三 = 1, 2, 3), compound numbers (十二 = 12, 二十 = 20), ordinals (第二 = 2nd), months (二月 = February)\n' +
+      '- 两 (liǎng) — 2 before a classifier\n' +
+      '- 两个人 (two people) — 两本书 (two books), 两次 (twice)\n' +
+      '\n' +
+      'GOLDEN RULE: 两 + classifier. NEVER 二个人. Frequent exception for time: 两点 (2 o\'clock) but 二月 (February, the month) — the 月 functions as an ordinal, not a classifier.',
     items: [
       { hanzi: '二', pinyin: 'èr', meaning: 'deux (chiffre)', meaningEn: 'two (digit)', audio: 'audio/hsk1/hsk1_二.wav' },
       { hanzi: '两', pinyin: 'liǎng', meaning: 'deux (+ classif.)', meaningEn: 'two (+ classif.)', audio: 'audio/hsk2/hsk2_两.wav' },
@@ -1543,7 +1607,10 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : entre amis et collègues du même rang, 你 est **normal**, pas familier. Le « vous de politesse » français est plus large que 您.',
     bodyEn:
-      '你 (nǐ) = you (informal, default neutral between adults of same age). 您 (nín) = formal you (respect marker). When to use 您: with someone older, a superior, a customer (if you\'re a seller), a visibly older stranger. 您 keeps «您好» (formal hello), NEVER «您们» plural — say «你们». Difference from English «you»: between friends and same-rank colleagues, 你 is NORMAL, not familiar.',
+      '- 你 (nǐ) — you (informal, default neutral between adults of same age)\n' +
+      '- 您 (nín) — formal you (respect marker)\n' +
+      '\n' +
+      'When to use 您: with someone older, a superior, a customer (if you\'re a seller), a visibly older stranger. 您 keeps «您好» (formal hello), NEVER «您们» plural — say «你们». Difference from English «you»: between friends and same-rank colleagues, 你 is NORMAL, not familiar.',
     items: [
       { hanzi: '你', pinyin: 'nǐ', meaning: 'tu', meaningEn: 'you (informal)', audio: 'audio/hsk1/hsk1_你.wav' },
       { hanzi: '您', pinyin: 'nín', meaning: 'vous (poli)', meaningEn: 'you (formal)', audio: 'audio/hsk1/hsk1_您.wav' },
@@ -1569,7 +1636,15 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : 小姐 (xiǎojiě, mademoiselle) est devenu un **piège** — connote « péripatéticienne » dans certaines régions. Préfère 美女 (oral) ou 女士 (formel).',
     bodyEn:
-      'Beyond 您, respect is shown via TITLES. 老师 (lǎoshī, teacher) — used for ANY educator or expert. 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X. 先生 (xiānsheng, mister) — Mr/sir, formal. 女士 (nǚshì, madam) — Mrs/ma\'am formal. 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions. Prefer 美女 (spoken) or 女士 (formal).',
+      'Beyond 您, respect is shown via TITLES.\n' +
+      '\n' +
+      '- 老师 (lǎoshī, teacher) — — used for ANY educator or expert\n' +
+      '- 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X\n' +
+      '- 先生 (xiānsheng, mister) — — Mr/sir, formal\n' +
+      '- 女士 (nǚshì, madam) — — Mrs/ma\'am formal\n' +
+      '- 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions\n' +
+      '\n' +
+      'Prefer 美女 (spoken) or 女士 (formal).',
     items: [
       { hanzi: '老师', pinyin: 'lǎoshī', meaning: 'professeur', meaningEn: 'teacher', audio: 'audio/hsk1/hsk1_老师.wav' },
       { hanzi: '师傅', pinyin: 'shīfù', meaning: 'maître, monsieur', meaningEn: 'master, sir', audio: 'audio/hsk5/hsk5_师傅.wav' },
@@ -1806,7 +1881,15 @@ export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle d\'or : **toujours** du point de vue du locuteur. Quand quelqu\'un frappe à la porte et tu cries « entrez » → 请进来.',
     bodyEn:
-      '来/去 combine with directional verbs: 上 (go up), 下 (go down), 进 (enter), 出 (exit), 回 (return). Four canonical examples: 上来 = come up TOWARD you, 下去 = go down AWAY, 进来 = enter (toward speaker — «come in!»), 出去 = exit (away from speaker — «get out!»). When someone knocks and you yell «come in» → 请进来. Always from speaker\'s POV.',
+      '来/去 combine with directional verbs:\n' +
+      '\n' +
+      '- 上 (go up)\n' +
+      '- 下 (go down)\n' +
+      '- 进 (enter)\n' +
+      '- 出 (exit)\n' +
+      '- 回 (return)\n' +
+      '\n' +
+      'Four canonical examples: 上来 = come up TOWARD you, 下去 = go down AWAY, 进来 = enter (toward speaker — «come in!»), 出去 = exit (away from speaker — «get out!»). When someone knocks and you yell «come in» → 请进来. Always from speaker\'s POV.',
     items: [
       { hanzi: '上来', pinyin: 'shànglái', meaning: 'monter (vers moi)', meaningEn: 'come up', audio: 'audio/hsk2/hsk2_上.wav' },
       { hanzi: '下去', pinyin: 'xiàqù', meaning: 'descendre (loin)', meaningEn: 'go down', audio: 'audio/hsk2/hsk2_下.wav' },
@@ -2041,7 +2124,17 @@ export const a1GrammarSvoLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Mêmes règles pour 今天 (aujourd\'hui), 昨天 (hier), 早上 (le matin), 晚上 (le soir), 现在 (maintenant).',
     bodyEn:
-      'In English you can say «I eat rice TOMORROW» — time can go at the end. In Chinese, NEVER. Time always goes BEFORE the verb, either right after the subject, or at the very beginning.\n\n✓ 我明天吃米饭 (I / tomorrow / eat / rice)\n✓ 明天我吃米饭 (tomorrow / I / eat / rice)\n✗ 我吃米饭明天 — forbidden, sounds totally off to a Chinese ear.\n\nSame rule for: 今天 (today), 昨天 (yesterday), 早上 (morning), 晚上 (evening), 现在 (now).',
+      'In English you can say «I eat rice TOMORROW» — time can go at the end. In Chinese, NEVER. Time always goes BEFORE the verb, either right after the subject, or at the very beginning. ✓ 我明天吃米饭 (I / tomorrow / eat / rice)\n' +
+      '✓ 明天我吃米饭 (tomorrow / I / eat / rice)\n' +
+      '✗ 我吃米饭明天 — forbidden, sounds totally off to a Chinese ear.\n' +
+      '\n' +
+      'Same rule for:\n' +
+      '\n' +
+      '- 今天 (today)\n' +
+      '- 昨天 (yesterday)\n' +
+      '- 早上 (morning)\n' +
+      '- 晚上 (evening)\n' +
+      '- 现在 (now)',
     tokenizedSentences: [
       {
         zh: [

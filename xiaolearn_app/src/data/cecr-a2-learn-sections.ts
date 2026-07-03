@@ -58,7 +58,15 @@ export const a2CityDirectionsLearnSections: LessonV2LearnSection[] = [
       '- 一直走 — tout droit sans s\'arrêter\n' +
       '- 过马路 — traverser la rue',
     bodyEn:
-      'To reply or give directions, Mandarin uses two main verbs: 走 (zǒu, walk/go) and 拐 (guǎi, turn). They always come after 往 (wǎng, toward) + direction: 往前走 (go straight), 往左拐 (turn left), 往右拐 (turn right). Distance follows: 一直走 (straight, no stopping), 过马路 (cross the street).',
+      'To reply or give directions, Mandarin uses two main verbs: 走 (zǒu, walk/go) and 拐 (guǎi, turn).\n' +
+      '\n' +
+      'They always come after 往 (wǎng, toward) + direction:\n' +
+      '\n' +
+      '- 往前走 (go straight)\n' +
+      '- 往左拐 (turn left)\n' +
+      '- 往右拐 (turn right)\n' +
+      '\n' +
+      'Distance follows: 一直走 (straight, no stopping), 过马路 (cross the street).',
     items: [
       { hanzi: '往前走', pinyin: 'wǎngqiánzǒu', meaning: 'aller tout droit', meaningEn: 'go straight', audio: 'audio/hsk2/hsk2_往前走.wav' },
       { hanzi: '往左拐', pinyin: 'wǎng zuǒ guǎi', meaning: 'tourner à gauche', meaningEn: 'turn left', audio: 'audio/hsk3/hsk3_往左拐.wav' },
@@ -85,7 +93,13 @@ export const a2CityDirectionsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour dire « X est à côté de Y », on utilise 在 — X 在 Y 旁边.',
     bodyEn:
-      'Position words come AFTER the noun: 银行旁边 (next to the bank), 银行对面 (across from the bank), 银行附近 (near the bank). To say "X is next to Y", use 在: X 在 Y 旁边. This is the reverse of English — in Chinese, the reference point comes first.',
+      'Position words come AFTER the noun:\n' +
+      '\n' +
+      '- 银行旁边 (next to the bank)\n' +
+      '- 银行对面 (across from the bank)\n' +
+      '- 银行附近 (near the bank)\n' +
+      '\n' +
+      'To say "X is next to Y", use 在: X 在 Y 旁边. This is the reverse of English — in Chinese, the reference point comes first.',
     items: [
       { hanzi: '旁边', pinyin: 'pángbiān', meaning: 'à côté de', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' },
       { hanzi: '对面', pinyin: 'duìmiàn', meaning: 'en face de', meaningEn: 'across from', audio: 'audio/hsk3/hsk3_对面.wav' },
@@ -163,7 +177,13 @@ export const a2CityPlacesLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : reconnaître ces 3 suffixes te permet de deviner **80 %** des noms de lieux.',
     bodyEn:
-      'Most Chinese urban places follow a fixed pattern: [function] + suffix. 店 (diàn) for shops: 书店 bookstore, 饭店 restaurant, 花店 florist. 馆 (guǎn) for cultural establishments: 图书馆 library, 博物馆 museum, 咖啡馆 café. 院 (yuàn) for big institutions: 医院 hospital, 电影院 cinema. Spotting these 3 suffixes lets you decode 80% of place names.',
+      'Most Chinese urban places follow a fixed pattern: **[function] + suffix**.\n' +
+      '\n' +
+      '- 店 (diàn) — for shops: 书店 bookstore, 饭店 restaurant, 花店 florist\n' +
+      '- 馆 (guǎn) — for cultural establishments: 图书馆 library, 博物馆 museum, 咖啡馆 café\n' +
+      '- 院 (yuàn) — for big institutions: 医院 hospital, 电影院 cinema\n' +
+      '\n' +
+      'Spotting these 3 suffixes lets you decode 80% of place names.',
     items: [
       { hanzi: '商店', pinyin: 'shāngdiàn', meaning: 'boutique', meaningEn: 'shop', audio: 'audio/hsk1/hsk1_商店.wav' },
       { hanzi: '图书馆', pinyin: 'túshūguǎn', meaning: 'bibliothèque', meaningEn: 'library', audio: 'audio/hsk3/hsk3_图书馆.wav' },
@@ -241,7 +261,15 @@ export const a2CityTaxiLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce paiement : 多少钱 ? (combien ?) — la réponse est presque toujours en **块**. Puis 用微信 (via WeChat) ou 用支付宝 (via Alipay), en scannant le QR code du chauffeur.',
     bodyEn:
-      '到了 (dào le, "arrived") is the short phrase driver or passenger drops at destination. To pinpoint the drop-off: 就在这儿 ("right here"), 前面 (a bit further), 路口 (at the crossing). Paying: 多少钱? (how much?) — answer is almost always in 块. Then: 用微信 (via WeChat) or 用支付宝 (via Alipay), scanning the driver\'s QR.',
+      '到了 (dào le, "arrived") is the short phrase driver or passenger drops at destination.\n' +
+      '\n' +
+      'To pinpoint the drop-off:\n' +
+      '\n' +
+      '- 就在这儿 ("right here")\n' +
+      '- 前面 (a bit further)\n' +
+      '- 路口 (at the crossing)\n' +
+      '\n' +
+      'Paying: 多少钱? (how much?) — answer is almost always in 块. Then: 用微信 (via WeChat) or 用支付宝 (via Alipay), scanning the driver\'s QR.',
     items: [
       { hanzi: '到了', pinyin: 'dào le', meaning: 'c\'est arrivé', meaningEn: 'we\'ve arrived', audio: 'audio/hsk2/hsk2_到了.wav' },
       { hanzi: '就在这儿', pinyin: 'jiù zài zhèr', meaning: 'juste ici', meaningEn: 'right here', audio: 'audio/hsk3/hsk3_就在这儿.wav' },
@@ -296,7 +324,14 @@ export const a2FoodOrderLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ne dis **jamais** 一个茶, c\'est 一杯茶.',
     bodyEn:
-      'Classifier depends on the container. 个 (gè): standard dishes, general (三个菜 = 3 dishes). 碗 (wǎn): anything served in a bowl (rice, soup, noodles) — 一碗米饭. 杯 (bēi): anything served in a glass (tea, juice, beer) — 一杯茶. 瓶 (píng): bottles — 一瓶啤酒. NEVER say 一个茶: it\'s 一杯茶.',
+      'Classifier depends on the container.\n' +
+      '\n' +
+      '- 个 (gè) — standard dishes, general (三个菜 = 3 dishes)\n' +
+      '- 碗 (wǎn) — anything served in a bowl (rice, soup, noodles) — 一碗米饭\n' +
+      '- 杯 (bēi) — anything served in a glass (tea, juice, beer) — 一杯茶\n' +
+      '- 瓶 (píng) — bottles — 一瓶啤酒\n' +
+      '\n' +
+      'NEVER say 一个茶: it\'s 一杯茶.',
     items: [
       { hanzi: '一个', pinyin: 'yígè', meaning: 'un (générique)', meaningEn: 'one (generic)', audio: 'audio/hsk1/hsk1_一个.wav' },
       { hanzi: '一碗', pinyin: 'yīwǎn', meaning: 'un bol de', meaningEn: 'a bowl of', audio: 'audio/hsk3/hsk3_一碗.wav' },
@@ -349,7 +384,15 @@ export const a2FoodTasteLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Pour juger un plat : 很好吃 (très bon), 太咸了 (trop salé), 有点辣 (un peu piquant).',
     bodyEn:
-      'In Sichuan, Hunan, Guizhou, you always get asked your spice level. Standard scale: 微辣 (mild), 中辣 (medium), 特辣 (extra hot). If you can\'t handle it: 不要辣 (no spice) or the magic phrase 我吃不了辣 (I can\'t eat spicy, lit. "I-eat-not-achievable spicy"). To judge: 很好吃 (very tasty), 太咸了 (too salty), 有点辣 (a bit spicy).',
+      'In Sichuan, Hunan, Guizhou, you always get asked your spice level.\n' +
+      '\n' +
+      'Standard scale:\n' +
+      '\n' +
+      '- 微辣 (mild)\n' +
+      '- 中辣 (medium)\n' +
+      '- 特辣 (extra hot)\n' +
+      '\n' +
+      'If you can\'t handle it: 不要辣 (no spice) or the magic phrase 我吃不了辣 (I can\'t eat spicy, lit. "I-eat-not-achievable spicy"). To judge: 很好吃 (very tasty), 太咸了 (too salty), 有点辣 (a bit spicy).',
     items: [
       { hanzi: '微辣', pinyin: 'wēilà', meaning: 'légèrement piquant', meaningEn: 'mildly spicy', audio: 'audio/hsk4/hsk4_微辣.wav' },
       { hanzi: '中辣', pinyin: 'zhōnglà', meaning: 'moyennement piquant', meaningEn: 'medium spicy', audio: 'audio/hsk3/hsk3_中辣.wav' },
@@ -437,7 +480,16 @@ export const a2FoodDrinksLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : sans sucre, sans lait — le thé chinois se boit **pur**.',
     bodyEn:
-      'The word 茶 (chá) conquered the world via two routes. Sea (Fujian, "te") → tea/thé/Tee. Land (Mandarin, "cha") → chai/çay. In China, tea is classified by color: 绿茶 (green, Zhejiang), 红茶 (red = "black tea" in the West), 乌龙茶 (oolong, semi-fermented), 普洱茶 (pu\'er, fermented, Yunnan). No sugar, no milk — Chinese tea is drunk pure.',
+      'The word 茶 (chá) conquered the world via two routes. Sea (Fujian, "te") → tea/thé/Tee. Land (Mandarin, "cha") → chai/çay.\n' +
+      '\n' +
+      'In China, tea is classified by color:\n' +
+      '\n' +
+      '- 绿茶 (green, Zhejiang)\n' +
+      '- 红茶 (red = "black tea" in the West)\n' +
+      '- 乌龙茶 (oolong, semi-fermented)\n' +
+      '- 普洱茶 (pu\'er, fermented, Yunnan)\n' +
+      '\n' +
+      'No sugar, no milk — Chinese tea is drunk pure.',
     items: [
       { hanzi: '茶', pinyin: 'chá', meaning: 'thé', meaningEn: 'tea', audio: 'audio/hsk1/hsk1_茶.wav' },
       { hanzi: '绿茶', pinyin: 'lǜchá', meaning: 'thé vert', meaningEn: 'green tea', audio: 'audio/hsk3/hsk3_绿茶.wav' },
@@ -542,7 +594,12 @@ export const a2ShoppingClothesLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si ça **couvre** une partie du corps = 穿 ; si ça **s\'accroche/s\'enfile** = 戴.',
     bodyEn:
-      'English "wear" splits in Chinese. 穿 (chuān): clothes, shoes, socks (穿衣服, 穿鞋, 穿袜子). 戴 (dài): accessories that attach (戴眼镜 glasses, 戴帽子 hat, 戴手表 watch, 戴戒指 ring). Mnemonic: if it covers a body part = 穿; if it attaches/slips on = 戴.',
+      'English "wear" splits in Chinese.\n' +
+      '\n' +
+      '- 穿 (chuān) — clothes, shoes, socks (穿衣服, 穿鞋, 穿袜子)\n' +
+      '- 戴 (dài) — accessories that attach (戴眼镜 glasses, 戴帽子 hat, 戴手表 watch, 戴戒指 ring)\n' +
+      '\n' +
+      'Mnemonic: if it covers a body part = 穿; if it attaches/slips on = 戴.',
     items: [
       { hanzi: '穿', pinyin: 'chuān', meaning: 'porter (vêtements)', meaningEn: 'wear (clothes)', audio: 'audio/hsk2/hsk2_穿.wav' },
       { hanzi: '戴', pinyin: 'dài', meaning: 'porter (accessoires)', meaningEn: 'wear (accessory)', audio: 'audio/hsk4/hsk4_戴.wav' },
@@ -571,7 +628,14 @@ export const a2ShoppingClothesLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : le verbe 试 se **redouble** pour adoucir (« un peu essayer »).',
     bodyEn:
-      'In China, sizes are either Western (S/M/L/XL) or Chinese: 小号 (S), 中号 (M), 大号 (L), 加大号 (XL). Useful phrases: 我可以试试吗? (may I try?), 试衣间在哪儿? (where\'s the fitting room?), 有别的颜色吗? (any other color?). The verb 试 is doubled to soften ("try a little").',
+      'In China, sizes are either Western (S/M/L/XL) or Chinese:\n' +
+      '\n' +
+      '- 小号 (S)\n' +
+      '- 中号 (M)\n' +
+      '- 大号 (L)\n' +
+      '- 加大号 (XL)\n' +
+      '\n' +
+      'Useful phrases: 我可以试试吗? (may I try?), 试衣间在哪儿? (where\'s the fitting room?), 有别的颜色吗? (any other color?). The verb 试 is doubled to soften ("try a little").',
     items: [
       { hanzi: '大号', pinyin: 'dà hào', meaning: 'grande taille (L)', meaningEn: 'large size', audio: 'audio/hsk3/hsk3_大号.wav' },
       { hanzi: '中号', pinyin: 'zhōng hào', meaning: 'taille moyenne (M)', meaningEn: 'medium size', audio: 'audio/hsk3/hsk3_中号.wav' },
@@ -826,7 +890,13 @@ export const a2DayWeatherLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : on peut les conjuguer comme des verbes normaux — 昨天下雨了 (il a plu hier), 明天会下雪 (il neigera demain).',
     bodyEn:
-      'Where English has fixed expressions ("it\'s raining"), Chinese uses VERBS. 下雨 (xiàyǔ) = "fall rain" = it rains. 下雪 (xiàxuě) = it snows. 刮风 (guāfēng) = it\'s windy (lit. "scrape wind"). Treat them as normal verbs: 昨天下雨了 (it rained yesterday), 明天会下雪 (it\'ll snow tomorrow).',
+      'Where English has fixed expressions ("it\'s raining"), Chinese uses VERBS.\n' +
+      '\n' +
+      '- 下雨 (xiàyǔ) — "fall rain" = it rains\n' +
+      '- 下雪 (xiàxuě) — it snows\n' +
+      '- 刮风 (guāfēng) — it\'s windy (lit\n' +
+      '\n' +
+      '"scrape wind"). Treat them as normal verbs: 昨天下雨了 (it rained yesterday), 明天会下雪 (it\'ll snow tomorrow).',
     items: [
       { hanzi: '下雨', pinyin: 'xiàyǔ', meaning: 'pleuvoir', meaningEn: 'rain', audio: 'audio/hsk2/hsk2_下雨.wav' },
       { hanzi: '下雪', pinyin: 'xiàxuě', meaning: 'neiger', meaningEn: 'snow', audio: 'audio/hsk2/hsk2_下雪.wav' },
@@ -942,7 +1012,16 @@ export const a2PhoneWechatLearnSections: LessonV2LearnSection[] = [
       '- 视频通话 — appel vidéo\n' +
       '- 朋友圈 — Moments, le fil d\'actualité',
     bodyEn:
-      '微信 (Wēi Xìn, "micro-message") is omnipresent in China: messenger, payment, mini-apps, social network, hospital, train ticket, public health. Key vocab: 加好友 (add friend), 扫一扫 (scan QR to add), 发消息 (send message), 语音 (voice message — THE preferred form in China), 视频通话 (video call), 朋友圈 (Moments, the feed).',
+      '微信 (Wēi Xìn, "micro-message") is omnipresent in China: messenger, payment, mini-apps, social network, hospital, train ticket, public health.\n' +
+      '\n' +
+      'Key vocab:\n' +
+      '\n' +
+      '- 加好友 (add friend)\n' +
+      '- 扫一扫 (scan QR to add)\n' +
+      '- 发消息 (send message)\n' +
+      '- 语音 (voice message — THE preferred form in China)\n' +
+      '- 视频通话 (video call)\n' +
+      '- 朋友圈 (Moments, the feed)',
     items: [
       { hanzi: '微信', pinyin: 'wēixìn', meaning: 'WeChat', meaningEn: 'WeChat', audio: 'audio/hsk4/hsk4_微信.wav' },
       { hanzi: '加好友', pinyin: 'jiā hǎoyǒu', meaning: 'ajouter un ami', meaningEn: 'add friend', audio: 'audio/hsk4/hsk4_加好友.wav' },
@@ -979,7 +1058,13 @@ export const a2PhoneEmergencyLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : le **了** final marque un changement d\'état.',
     bodyEn:
-      'Must-know before going to China: 110 police (警察), 119 fire (消防), 120 ambulance (救护车). To shout for help, standard cries: 救命! (jiù mìng!, "save me"), 帮帮我! (help me). Explain: 我病了 (I\'m sick), 我受伤了 (I\'m hurt), 我迷路了 (I\'m lost). Final 了 marks a state change.',
+      'Must-know before going to China:\n' +
+      '\n' +
+      '- 110 police (警察)\n' +
+      '- 119 fire (消防)\n' +
+      '- 120 ambulance (救护车)\n' +
+      '\n' +
+      'To shout for help, standard cries: 救命! (jiù mìng!, "save me"), 帮帮我! (help me). Explain: 我病了 (I\'m sick), 我受伤了 (I\'m hurt), 我迷路了 (I\'m lost). Final 了 marks a state change.',
     items: [
       { hanzi: '救命', pinyin: 'jiùmìng', meaning: 'au secours !', meaningEn: 'help! (cry)', audio: 'audio/hsk4/hsk4_救命.wav' },
       { hanzi: '警察', pinyin: 'jǐngchá', meaning: 'police', meaningEn: 'police', audio: 'audio/hsk3/hsk3_警察.wav' },
@@ -1012,7 +1097,9 @@ export const a2GrammarLePerfLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : 了 ne veut **pas** dire « passé » ! Le chinois n\'a pas de temps grammatical. 我吃饭 peut être présent ou futur selon le contexte ; 我吃了饭 souligne la **complétion**.',
     bodyEn:
-      '了 (le) has 3 distinct uses — here we cover only the first, the perfective 了. Placed right after the verb, it marks a completed action: 我吃了饭 (I ate). Careful: 了 does NOT mean "past"! Chinese has no grammatical tense. 我吃饭 can be present or future by context. 我吃了饭 stresses completion.',
+      '了 (le) has 3 distinct uses — here we cover only the first, the perfective 了. Placed right after the verb, it marks a completed action: 我吃了饭 (I ate).\n' +
+      '\n' +
+      'Careful: 了 does NOT mean "past"! Chinese has no grammatical tense. 我吃饭 can be present or future by context. 我吃了饭 stresses completion.',
     items: [
       { hanzi: '吃了', pinyin: 'chī le', meaning: 'avoir mangé', meaningEn: 'ate / have eaten', audio: 'audio/hsk1/hsk1_吃了.wav' },
       { hanzi: '去了', pinyin: 'qù le', meaning: 'y être allé', meaningEn: 'went', audio: 'audio/hsk1/hsk1_去了.wav' },
@@ -1034,7 +1121,15 @@ export const a2GrammarLePerfLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour la négation, on utilise **没 + verbe, SANS 了**. 我没吃饭 (je n\'ai pas mangé). Jamais 我没吃了饭 ✗.',
     bodyEn:
-      'Orally, 我吃了 alone sounds incomplete. A complement is needed: an object (我吃了饭), a quantity (我吃了两碗), or a time adverb (已经吃了). Negation: 没 + verb, NO 了. 我没吃饭 (I haven\'t eaten). Never 我没吃了饭 ✗.',
+      'Orally, 我吃了 alone sounds incomplete.\n' +
+      '\n' +
+      'A complement is needed:\n' +
+      '\n' +
+      '- an object (我吃了饭)\n' +
+      '- a quantity (我吃了两碗)\n' +
+      '- or a time adverb (已经吃了)\n' +
+      '\n' +
+      'Negation: 没 + verb, NO 了. 我没吃饭 (I haven\'t eaten). Never 我没吃了饭 ✗.',
     items: [
       { hanzi: '没', pinyin: 'méi', meaning: 'ne... pas (passé)', meaningEn: 'not (past)', audio: 'audio/hsk1/hsk1_没.wav' },
       { hanzi: '没吃', pinyin: 'méi chī', meaning: 'ne pas avoir mangé', meaningEn: 'didn\'t eat', audio: 'audio/hsk1/hsk1_没吃.wav' },
@@ -1233,7 +1328,12 @@ export const a2GrammarYeDouLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : les deux se placent **toujours avant le verbe**, jamais avant le sujet. Erreur typique 也我喜欢 ✗ — il faut 我也喜欢.',
     bodyEn:
-      'Two adverbs often confused. 也 (yě) = "also" as an echo: 他喜欢咖啡，我也喜欢 (he likes coffee, me too). 都 (dōu) = "all without exception": 我们都是学生 (we\'re all students). Absolute rule: both ALWAYS before the verb, never before subject. Typical error: 也我喜欢 ✗ — should be 我也喜欢.',
+      'Two adverbs often confused.\n' +
+      '\n' +
+      '- 也 (yě) — = "also" as an echo: 他喜欢咖啡，我也喜欢 (he likes coffee, me too)\n' +
+      '- 都 (dōu) — = "all without exception": 我们都是学生 (we\'re all students)\n' +
+      '\n' +
+      'Absolute rule: both ALWAYS before the verb, never before subject. Typical error: 也我喜欢 ✗ — should be 我也喜欢.',
     items: [
       { hanzi: '也', pinyin: 'yě', meaning: 'aussi', meaningEn: 'also', audio: 'audio/hsk1/hsk1_也.wav' },
       { hanzi: '都', pinyin: 'dōu', meaning: 'tous, toutes', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
@@ -1348,7 +1448,12 @@ export const a2GrammarYaoXiangLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour commander, **toujours 要** ; pour un projet hypothétique, plutôt 想.',
     bodyEn:
-      'Both translate "want", with different strengths. 要 (yào): firm will, close to "I want / I will". At the restaurant: 我要一杯咖啡. 想 (xiǎng): softer desire, close to "I\'d like / I\'m thinking of". 我想喝咖啡 (I feel like a coffee). To order: ALWAYS 要. For a hypothetical plan: rather 想.',
+      'Both translate "want", with different strengths. 要 (yào): firm will, close to "I want / I will". At the restaurant: 我要一杯咖啡.\n' +
+      '\n' +
+      '- 想 (xiǎng) — softer desire, close to "I\'d like / I\'m thinking of"\n' +
+      '- 我想喝咖啡 (I feel like a coffee) — \n' +
+      '\n' +
+      'To order: ALWAYS 要. For a hypothetical plan: rather 想.',
     items: [
       { hanzi: '要', pinyin: 'yào', meaning: 'vouloir (ferme)', meaningEn: 'want (firm)', audio: 'audio/hsk2/hsk2_要.wav' },
       { hanzi: '想', pinyin: 'xiǎng', meaning: 'avoir envie de', meaningEn: 'feel like', audio: 'audio/hsk1/hsk1_想.wav' },
@@ -1382,7 +1487,15 @@ export const a2CultureChunjieLearnSections: LessonV2LearnSection[] = [
       '- 鞭炮 — pétards pour chasser les démons\n' +
       '- 饺子 — raviolis au Nord le soir du réveillon',
     bodyEn:
-      '春节 (Chūnjié, Spring Festival) is the biggest Chinese holiday, celebrated 15 days around day 1 of the lunar calendar (late Jan-mid Feb). Five essential rituals: 团圆饭 (reunion dinner on the eve), 红包 (red envelopes with money), 春联 (red couplets pasted on doors), 鞭炮 (firecrackers to scare demons), 饺子 (dumplings in the North on NY Eve).',
+      '春节 (Chūnjié, Spring Festival) is the biggest Chinese holiday, celebrated 15 days around day 1 of the lunar calendar (late Jan-mid Feb).\n' +
+      '\n' +
+      'Five essential rituals:\n' +
+      '\n' +
+      '- 团圆饭 (reunion dinner on the eve)\n' +
+      '- 红包 (red envelopes with money)\n' +
+      '- 春联 (red couplets pasted on doors)\n' +
+      '- 鞭炮 (firecrackers to scare demons)\n' +
+      '- 饺子 (dumplings in the North on NY Eve)',
     items: [
       { hanzi: '春节', pinyin: 'chūnjié', meaning: 'Nouvel An chinois', meaningEn: 'Chinese New Year', audio: 'audio/hsk3/hsk3_春节.wav' },
       { hanzi: '团圆饭', pinyin: 'tuányuánfàn', meaning: 'repas de retrouvailles', meaningEn: 'reunion dinner', audio: 'audio/hsk4/hsk4_团圆饭.wav' },
@@ -1482,7 +1595,22 @@ export const a2CultureZodiacLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'ASTUCE : question typique 你属什么 ? (quel est ton signe ?) → réponse 我属龙.',
     bodyEn:
-      'Chinese zodiac (生肖, shēngxiào) has 12 animals in fixed order: 鼠 (rat), 牛 (ox), 虎 (tiger), 兔 (rabbit), 龙 (dragon), 蛇 (snake), 马 (horse), 羊 (goat), 猴 (monkey), 鸡 (rooster), 狗 (dog), 猪 (pig). Each lunar year carries one animal. 2026 is year of the 马 (horse). Typical question: 你属什么? (what\'s your sign?) → reply 我属龙.',
+      'Chinese zodiac (生肖, shēngxiào) has 12 animals in fixed order:\n' +
+      '\n' +
+      '- 鼠 (rat)\n' +
+      '- 牛 (ox)\n' +
+      '- 虎 (tiger)\n' +
+      '- 兔 (rabbit)\n' +
+      '- 龙 (dragon)\n' +
+      '- 蛇 (snake)\n' +
+      '- 马 (horse)\n' +
+      '- 羊 (goat)\n' +
+      '- 猴 (monkey)\n' +
+      '- 鸡 (rooster)\n' +
+      '- 狗 (dog)\n' +
+      '- 猪 (pig)\n' +
+      '\n' +
+      'Each lunar year carries one animal. 2026 is year of the 马 (horse). Typical question: 你属什么? (what\'s your sign?) → reply 我属龙.',
     items: [
       { hanzi: '生肖', pinyin: 'shēngxiào', meaning: 'signe du zodiaque', meaningEn: 'zodiac sign', audio: 'audio/hsk5/hsk5_生肖.wav' },
       { hanzi: '属', pinyin: 'shǔ', meaning: 'appartenir à (signe)', meaningEn: 'belong to (sign)', audio: 'audio/hsk4/hsk4_属.wav' },
@@ -1549,7 +1677,12 @@ export const a2ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : comme touriste, prévois du liquide pour petits commerces traditionnels qui ne reconnaissent pas tes cartes étrangères.',
     bodyEn:
-      '微信支付 (WeChat Pay) and 支付宝 (Alipay) dominate — 90% of transactions. 扫一下 (scan): show the QR code. 现金 (xiànjīn, cash) — less and less accepted. 刷卡 (bank card) — mostly accepted in big cities/hotels. 找零 (give change). 收据 (receipt — useful for expense reports). As a tourist, bring cash for small traditional shops that won\'t recognize foreign cards.',
+      '- 微信支付 (WeChat Pay) — and 支付宝 (Alipay) dominate — 90% of transactions\n' +
+      '- 扫一下 (scan) — show the QR code\n' +
+      '- 现金 (xiànjīn, cash) — — less and less accepted\n' +
+      '- 刷卡 (bank card) — — mostly accepted in big cities/hotels\n' +
+      '\n' +
+      '找零 (give change). 收据 (receipt — useful for expense reports). As a tourist, bring cash for small traditional shops that won\'t recognize foreign cards.',
     items: [
       { hanzi: '扫', pinyin: 'sǎo', meaning: 'scanner', meaningEn: 'scan', audio: 'audio/hsk5/hsk5_扫.wav' },
       { hanzi: '现金', pinyin: 'xiànjīn', meaning: 'liquide', meaningEn: 'cash', audio: 'audio/hsk5/hsk5_现金.wav' },
@@ -1583,7 +1716,19 @@ export const a2ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : en Chine, parler de la météo n\'est **pas** le brise-glace que c\'est en France/UK — on préfère « 你吃了吗？» (t\'as mangé ?). Mais en cas de tempête/canicule, ça reste pertinent — 太热了，受不了 (insupportable).',
     bodyEn:
-      'Start a chat: 今天天气怎么样？(how\'s the weather today?). Replies: 今天很热 (it\'s hot), 今天很冷 (cold), 下雨 (raining), 下雪 (snowing), 刮风 (windy), 多云 (cloudy), 晴天 (sunny). In China, weather is NOT the icebreaker it is in French/UK: «你吃了吗？» (have you eaten?) is preferred. But during storms/heatwaves, it\'s relevant: 太热了，受不了 (unbearable).',
+      'Start a chat: 今天天气怎么样？(how\'s the weather today?).\n' +
+      '\n' +
+      'Replies:\n' +
+      '\n' +
+      '- 今天很热 (it\'s hot)\n' +
+      '- 今天很冷 (cold)\n' +
+      '- 下雨 (raining)\n' +
+      '- 下雪 (snowing)\n' +
+      '- 刮风 (windy)\n' +
+      '- 多云 (cloudy)\n' +
+      '- 晴天 (sunny)\n' +
+      '\n' +
+      'In China, weather is NOT the icebreaker it is in French/UK: «你吃了吗？» (have you eaten?) is preferred. But during storms/heatwaves, it\'s relevant: 太热了，受不了 (unbearable).',
     items: [
       { hanzi: '天气', pinyin: 'tiānqì', meaning: 'météo', meaningEn: 'weather', audio: 'audio/hsk1/hsk1_天气.wav' },
       { hanzi: '热', pinyin: 'rè', meaning: 'chaud', meaningEn: 'hot', audio: 'audio/hsk1/hsk1_热.wav' },
@@ -1615,7 +1760,14 @@ export const a2ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce culturelle : **春捂秋冻** (au printemps couvre-toi, en automne accepte le frisquet) — sagesse chinoise sur l\'adaptation au climat.',
     bodyEn:
-      '4 seasons: 春天 (spring), 夏天 (summer), 秋天 (autumn), 冬天 (winter). Clothing: 衣服 (clothes), 外套 (coat), 毛衣 (sweater), T恤 (T-shirt), 裤子 (pants), 鞋 (shoes). To advise: 多穿一点 (put on more layers), 注意保暖 (mind keeping warm), 别感冒 (don\'t catch a cold). Cultural phrase: 春捂秋冻 (cover up in spring, accept the chill in fall) — Chinese wisdom on climate adaptation.',
+      '4 seasons:\n' +
+      '\n' +
+      '- 春天 (spring)\n' +
+      '- 夏天 (summer)\n' +
+      '- 秋天 (autumn)\n' +
+      '- 冬天 (winter)\n' +
+      '\n' +
+      'Clothing: 衣服 (clothes), 外套 (coat), 毛衣 (sweater), T恤 (T-shirt), 裤子 (pants), 鞋 (shoes). To advise: 多穿一点 (put on more layers), 注意保暖 (mind keeping warm), 别感冒 (don\'t catch a cold). Cultural phrase: 春捂秋冻 (cover up in spring, accept the chill in fall) — Chinese wisdom on climate adaptation.',
     items: [
       { hanzi: '春天', pinyin: 'chūntiān', meaning: 'printemps', meaningEn: 'spring', audio: 'audio/hsk3/hsk3_春天.wav' },
       { hanzi: '夏天', pinyin: 'xiàtiān', meaning: 'été', meaningEn: 'summer', audio: 'audio/hsk3/hsk3_夏天.wav' },
@@ -1648,7 +1800,16 @@ export const a2ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'À la pharmacie : 药店 (yàodiàn), 退烧药 (anti-fièvre), 感冒药 (anti-rhume). Si grave, **去医院** (aller à l\'hôpital — en Chine on va à l\'hôpital pour tout, pas chez le médecin de ville).',
     bodyEn:
-      'Symptoms: 我不舒服 (I don\'t feel well — catchall), 我感冒了 (I have a cold), 我发烧 (I have a fever), 我头疼 (I have a headache), 我肚子疼 (stomach ache), 我累 (I\'m tired). Key expressions: 你怎么了？(what\'s wrong?), 多休息 (rest up). For the pharmacy: 药店 (yàodiàn), 退烧药 (fever reducer), 感冒药 (cold meds). If serious: 去医院 (go to the hospital — in China you go to the hospital for everything, not a private doctor).',
+      'Symptoms:\n' +
+      '\n' +
+      '- 我不舒服 (I don\'t feel well — catchall)\n' +
+      '- 我感冒了 (I have a cold)\n' +
+      '- 我发烧 (I have a fever)\n' +
+      '- 我头疼 (I have a headache)\n' +
+      '- 我肚子疼 (stomach ache)\n' +
+      '- 我累 (I\'m tired)\n' +
+      '\n' +
+      'Key expressions: 你怎么了？(what\'s wrong?), 多休息 (rest up). For the pharmacy: 药店 (yàodiàn), 退烧药 (fever reducer), 感冒药 (cold meds). If serious: 去医院 (go to the hospital — in China you go to the hospital for everything, not a private doctor).',
     items: [
       { hanzi: '舒服', pinyin: 'shūfú', meaning: 'à l\'aise', meaningEn: 'comfortable', audio: 'audio/hsk3/hsk3_舒服.wav' },
       { hanzi: '感冒', pinyin: 'gǎnmào', meaning: 'rhume', meaningEn: 'cold', audio: 'audio/hsk3/hsk3_感冒.wav' },
@@ -1677,7 +1838,15 @@ export const a2ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : phrase typique des proches chinois **注意身体** (zhùyì shēntǐ, prends soin de ta santé) — l\'équivalent du « take care » mais avec une vraie inquiétude pour le corps. Très courant en famille.',
     bodyEn:
-      '我太累了 (I\'m exhausted), 我没睡好 (I slept badly), 我睡不着 (I can\'t fall asleep). Modern stress: 我压力大 (I\'m stressed), 工作很忙 (work is hectic). Encouragement: 加油 (chin up), 多休息 (rest), 早点睡觉 (sleep early). Typical Chinese loved-one phrase: 注意身体 (zhùyì shēntǐ, take care of your health). The equivalent of «take care» but with real concern for the body. Very common within families.',
+      '我太累了 (I\'m exhausted), 我没睡好 (I slept badly), 我睡不着 (I can\'t fall asleep). Modern stress: 我压力大 (I\'m stressed), 工作很忙 (work is hectic).\n' +
+      '\n' +
+      'Encouragement:\n' +
+      '\n' +
+      '- 加油 (chin up)\n' +
+      '- 多休息 (rest)\n' +
+      '- 早点睡觉 (sleep early)\n' +
+      '\n' +
+      'Typical Chinese loved-one phrase: 注意身体 (zhùyì shēntǐ, take care of your health). The equivalent of «take care» but with real concern for the body. Very common within families.',
     items: [
       { hanzi: '累', pinyin: 'lèi', meaning: 'fatigué', meaningEn: 'tired', audio: 'audio/hsk2/hsk2_累.wav' },
       { hanzi: '睡觉', pinyin: 'shuìjiào', meaning: 'dormir', meaningEn: 'sleep', audio: 'audio/hsk1/hsk1_睡觉.wav' },
@@ -1709,7 +1878,13 @@ export const a2ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Annuler/reporter poliment : **不好意思，我有事，能不能改天？** (désolé, j\'ai un truc, on peut changer ?). Préfère **改天** (un autre jour) à un refus sec.',
     bodyEn:
-      'Suggest: 我们什么时候见面？(when shall we meet?), 你周末有空吗？(free this weekend?), 我们一起吃饭吧 (let\'s eat together). Give a date: 明天 (tomorrow), 这个周末 (this weekend), 下星期 (next week), X 月 X 号 (specific date). Confirm: 几点？(what time?), 在哪儿见？(where?). Cancel/reschedule politely: 不好意思，我有事，能不能改天？(sorry, something came up, can we reschedule?). Prefer 改天 (another day) over a flat refusal.',
+      'Suggest:\n' +
+      '\n' +
+      '- 我们什么时候见面？(when shall we meet?)\n' +
+      '- 你周末有空吗？(free this weekend?)\n' +
+      '- 我们一起吃饭吧 (let\'s eat together)\n' +
+      '\n' +
+      'Give a date: 明天 (tomorrow), 这个周末 (this weekend), 下星期 (next week), X 月 X 号 (specific date). Confirm: 几点？(what time?), 在哪儿见？(where?). Cancel/reschedule politely: 不好意思，我有事，能不能改天？(sorry, something came up, can we reschedule?). Prefer 改天 (another day) over a flat refusal.',
     items: [
       { hanzi: '见面', pinyin: 'jiànmiàn', meaning: 'se rencontrer', meaningEn: 'meet', audio: 'audio/hsk3/hsk3_见面.wav' },
       { hanzi: '有空', pinyin: 'yǒukòng', meaning: 'avoir du temps libre', meaningEn: 'be free', audio: 'audio/hsk3/hsk3_有空.wav' },
@@ -1775,7 +1950,20 @@ export const a2ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Phrase modèle : 我早上七点起床，然后吃早饭，八点上班.',
     bodyEn:
-      'Simple structure: 早上 (morning) → 中午 (noon) → 下午 (afternoon) → 晚上 (evening). Key verbs: 起床 (get up), 吃早饭 (have breakfast), 上班 (go to work), 上学 (go to school), 吃午饭 (lunch), 下班 (get off work), 回家 (go home), 睡觉 (sleep). Connectors: 然后 (then), 接着 (next), 最后 (finally). Sample sentence: 我早上七点起床，然后吃早饭，八点上班.',
+      'Simple structure: 早上 (morning) → 中午 (noon) → 下午 (afternoon) → 晚上 (evening).\n' +
+      '\n' +
+      'Key verbs:\n' +
+      '\n' +
+      '- 起床 (get up)\n' +
+      '- 吃早饭 (have breakfast)\n' +
+      '- 上班 (go to work)\n' +
+      '- 上学 (go to school)\n' +
+      '- 吃午饭 (lunch)\n' +
+      '- 下班 (get off work)\n' +
+      '- 回家 (go home)\n' +
+      '- 睡觉 (sleep)\n' +
+      '\n' +
+      'Connectors: 然后 (then), 接着 (next), 最后 (finally). Sample sentence: 我早上七点起床，然后吃早饭，八点上班.',
     items: [
       { hanzi: '起床', pinyin: 'qǐchuáng', meaning: 'se lever', meaningEn: 'get up', audio: 'audio/hsk2/hsk2_起床.wav' },
       { hanzi: '上班', pinyin: 'shàngbān', meaning: 'aller travailler', meaningEn: 'go to work', audio: 'audio/hsk2/hsk2_上班.wav' },
@@ -1809,7 +1997,20 @@ export const a2ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce fréquence : 经常 (souvent), 有时候 (parfois), 偶尔 (occasionnellement), 从来不 (jamais).',
     bodyEn:
-      '我喜欢 + verb (I like). Common hobbies: 看书 (read), 看电视 (watch TV), 看电影 (films), 听音乐 (listen to music), 跑步 (run), 旅游 (travel), 玩游戏 (play games), 拍照 (take photos). To specify: 我喜欢中国电影 (I like Chinese films). To express frequency: 经常 (often), 有时候 (sometimes), 偶尔 (occasionally), 从来不 (never).',
+      '我喜欢 + verb (I like).\n' +
+      '\n' +
+      'Common hobbies:\n' +
+      '\n' +
+      '- 看书 (read)\n' +
+      '- 看电视 (watch TV)\n' +
+      '- 看电影 (films)\n' +
+      '- 听音乐 (listen to music)\n' +
+      '- 跑步 (run)\n' +
+      '- 旅游 (travel)\n' +
+      '- 玩游戏 (play games)\n' +
+      '- 拍照 (take photos)\n' +
+      '\n' +
+      'To specify: 我喜欢中国电影 (I like Chinese films). To express frequency: 经常 (often), 有时候 (sometimes), 偶尔 (occasionally), 从来不 (never).',
     items: [
       { hanzi: '看书', pinyin: 'kànshū', meaning: 'lire', meaningEn: 'read', audio: 'audio/hsk1/hsk1_看书.wav' },
       { hanzi: '电影', pinyin: 'diànyǐng', meaning: 'film', meaningEn: 'movie', audio: 'audio/hsk1/hsk1_电影.wav' },
@@ -1842,7 +2043,15 @@ export const a2ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'À table, le **partage de plats au centre** est la norme.',
     bodyEn:
-      'Enter: 几位？(how many — by the waiter). Reply: 两位 / 三位. Ask for the menu: 请给我菜单 (menu please). Order: 我要 X (I want X), 来一个 X (give me an X — more oral). Specify: 不要辣 (not spicy), 少盐 (less salt), 多放 X (more X). Water: 一壶水 (a pitcher of water — often free), 服务员 (waiter — to call). Bill: 买单 (mǎidān, the bill please). At the table, sharing dishes in the center is the norm.',
+      'Enter: 几位？(how many — by the waiter). Reply: 两位 / 三位. Ask for the menu: 请给我菜单 (menu please). Order: 我要 X (I want X), 来一个 X (give me an X — more oral).\n' +
+      '\n' +
+      'Specify:\n' +
+      '\n' +
+      '- 不要辣 (not spicy)\n' +
+      '- 少盐 (less salt)\n' +
+      '- 多放 X (more X)\n' +
+      '\n' +
+      'Water: 一壶水 (a pitcher of water — often free), 服务员 (waiter — to call). Bill: 买单 (mǎidān, the bill please). At the table, sharing dishes in the center is the norm.',
     items: [
       { hanzi: '位', pinyin: 'wèi', meaning: 'classif. personnes (poli)', meaningEn: 'classifier persons (polite)', audio: 'audio/hsk2/hsk2_位.wav' },
       { hanzi: '菜单', pinyin: 'càidān', meaning: 'menu', meaningEn: 'menu', audio: 'audio/hsk3/hsk3_菜单.wav' },
@@ -1874,7 +2083,13 @@ export const a2ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : les Chinois te demanderont 你吃习惯了吗？(tu t\'habitues à la cuisine ?). Réponds positivement même si tu galères, sinon tu **blesses**.',
     bodyEn:
-      'Positive: 很好吃 (very tasty), 太好吃了 (super tasty), 味道不错 (good flavor). Negative (rare at the restaurant, you don\'t complain in public): 有点淡 (a bit bland), 太咸了 (too salty), 太油 (too greasy). Chinese specifics: 鲜 (xiān, umami — supreme praise in Chinese cuisine), 清淡 (qīngdàn, mild/light — positive). Chinese people will ask 你吃习惯了吗？(are you used to the food?) — reply positively even if struggling, otherwise you hurt them.',
+      'Positive:\n' +
+      '\n' +
+      '- 很好吃 (very tasty)\n' +
+      '- 太好吃了 (super tasty)\n' +
+      '- 味道不错 (good flavor)\n' +
+      '\n' +
+      'Negative (rare at the restaurant, you don\'t complain in public): 有点淡 (a bit bland), 太咸了 (too salty), 太油 (too greasy). Chinese specifics: 鲜 (xiān, umami — supreme praise in Chinese cuisine), 清淡 (qīngdàn, mild/light — positive). Chinese people will ask 你吃习惯了吗？(are you used to the food?) — reply positively even if struggling, otherwise you hurt them.',
     items: [
       { hanzi: '好吃', pinyin: 'hǎochī', meaning: 'bon (à manger)', meaningEn: 'tasty', audio: 'audio/hsk1/hsk1_好吃.wav' },
       { hanzi: '味道', pinyin: 'wèidào', meaning: 'goût, saveur', meaningEn: 'flavor', audio: 'audio/hsk4/hsk4_味道.wav' },
@@ -1911,7 +2126,16 @@ export const a2ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Pour présenter quelqu\'un : 这是我朋友 X / 这是我同事 X.',
     bodyEn:
-      'Family: 爸爸 (dad), 妈妈 (mom), 哥哥 (older brother), 弟弟 (younger brother), 姐姐 (older sister), 妹妹 (younger sister). Friends: 朋友 (friend), 好朋友 (good friend), 男朋友 (boyfriend), 女朋友 (girlfriend). Work: 同事 (colleague), 老板 (boss), 同学 (classmate). Particularity: Chinese family distinguishes older/younger for siblings (not in English). Introduce someone: 这是我朋友 X / 这是我同事 X.',
+      'Family:\n' +
+      '\n' +
+      '- 爸爸 (dad)\n' +
+      '- 妈妈 (mom)\n' +
+      '- 哥哥 (older brother)\n' +
+      '- 弟弟 (younger brother)\n' +
+      '- 姐姐 (older sister)\n' +
+      '- 妹妹 (younger sister)\n' +
+      '\n' +
+      'Friends: 朋友 (friend), 好朋友 (good friend), 男朋友 (boyfriend), 女朋友 (girlfriend). Work: 同事 (colleague), 老板 (boss), 同学 (classmate). Particularity: Chinese family distinguishes older/younger for siblings (not in English). Introduce someone: 这是我朋友 X / 这是我同事 X.',
     items: [
       { hanzi: '朋友', pinyin: 'péngyǒu', meaning: 'ami', meaningEn: 'friend', audio: 'audio/hsk1/hsk1_朋友.wav' },
       { hanzi: '同事', pinyin: 'tóngshì', meaning: 'collègue', meaningEn: 'colleague', audio: 'audio/hsk3/hsk3_同事.wav' },
@@ -1946,7 +2170,19 @@ export const a2ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : critiquer un Chinois par un adjectif négatif fort en public = **perte de face**, même si c\'est vrai.',
     bodyEn:
-      'Common adjectives: 聪明 (smart), 善良 (kind), 友好 (friendly), 努力 (hardworking), 幽默 (funny), 安静 (quiet), 活泼 (lively), 热情 (warm), 冷淡 (cold). Phrase: 他人很好 (he\'s a good person), 她很聪明 (she\'s smart). To soften: 有点 + negative adjective (a bit — softens). 他有点害羞 (he\'s a bit shy). Avoid in public: criticizing a Chinese person with a strong negative adjective = loss of face, even if true.',
+      'Common adjectives:\n' +
+      '\n' +
+      '- 聪明 (smart)\n' +
+      '- 善良 (kind)\n' +
+      '- 友好 (friendly)\n' +
+      '- 努力 (hardworking)\n' +
+      '- 幽默 (funny)\n' +
+      '- 安静 (quiet)\n' +
+      '- 活泼 (lively)\n' +
+      '- 热情 (warm)\n' +
+      '- 冷淡 (cold)\n' +
+      '\n' +
+      'Phrase: 他人很好 (he\'s a good person), 她很聪明 (she\'s smart). To soften: 有点 + negative adjective (a bit — softens). 他有点害羞 (he\'s a bit shy). Avoid in public: criticizing a Chinese person with a strong negative adjective = loss of face, even if true.',
     items: [
       { hanzi: '聪明', pinyin: 'cōngmíng', meaning: 'intelligent', meaningEn: 'smart', audio: 'audio/hsk3/hsk3_聪明.wav' },
       { hanzi: '热情', pinyin: 'rèqíng', meaning: 'chaleureux', meaningEn: 'warm', audio: 'audio/hsk4/hsk4_热情.wav' },
@@ -2097,7 +2333,13 @@ export const a2NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour « parler à quelqu\'un » → 跟 X 说 (oral), 和 X 说 (neutre), 对 X 说 (un peu plus formel).',
     bodyEn:
-      '和 (hé) = and / with (NEUTRAL, written AND spoken). Works everywhere. 我和你一起去 = I\'m going with you. 跟 (gēn) = with (SPOKEN, warmer). 我跟你说 = I\'m telling you. Heavy among friends. 与 (yǔ) = and / with (FORMAL, WRITTEN). 中国与法国 = China and France. In speech, NEVER 与. Tip: for «talk to someone» → 跟 X 说 (spoken), 和 X 说 (neutral), 对 X 说 (slightly more formal).',
+      '和 (hé) = and / with (NEUTRAL, written AND spoken). Works everywhere. 我和你一起去 = I\'m going with you. 跟 (gēn) = with (SPOKEN, warmer). 我跟你说 = I\'m telling you. Heavy among friends. 与 (yǔ) = and / with (FORMAL, WRITTEN). 中国与法国 = China and France. In speech, NEVER 与.\n' +
+      '\n' +
+      'Tip:\n' +
+      '\n' +
+      '- for «talk to someone» → 跟 X 说 (spoken)\n' +
+      '- 和 X 说 (neutral)\n' +
+      '- 对 X 说 (slightly more formal)',
     items: [
       { hanzi: '和', pinyin: 'hé', meaning: 'et / avec', meaningEn: 'and / with', audio: 'audio/hsk1/hsk1_和.wav' },
       { hanzi: '跟', pinyin: 'gēn', meaning: 'avec (oral)', meaningEn: 'with (spoken)', audio: 'audio/hsk3/hsk3_跟.wav' },
@@ -2187,7 +2429,15 @@ export const a2NuancesM4LearnSections: LessonV2LearnSection[] = [
       '- 穿着 — porter (vêtement)\n' +
       '- 开着 — ouvert / allumé',
     bodyEn:
-      '着 (zhe) after a verb = state that LASTS (static). Different from progressive 在/正在 which marks action in progress. 他坐着 = he\'s sitting (static state). 门开着 = the door is open (state). 他在坐 = he\'s in the act of sitting down (action happening). At A2, learn 5 static verbs with 着: 站着 (standing), 坐着 (sitting), 拿着 (holding), 穿着 (wearing — clothes), 开着 (open / on).',
+      '着 (zhe) after a verb = state that LASTS (static). Different from progressive 在/正在 which marks action in progress. 他坐着 = he\'s sitting (static state). 门开着 = the door is open (state). 他在坐 = he\'s in the act of sitting down (action happening).\n' +
+      '\n' +
+      'At A2, learn 5 static verbs with 着:\n' +
+      '\n' +
+      '- 站着 (standing)\n' +
+      '- 坐着 (sitting)\n' +
+      '- 拿着 (holding)\n' +
+      '- 穿着 (wearing — clothes)\n' +
+      '- 开着 (open / on)',
     items: [
       { hanzi: '着', pinyin: 'zhe', meaning: 'particule état continu', meaningEn: 'continuous state particle', audio: 'audio/hsk2/hsk2_着.wav' },
       { hanzi: '坐着', pinyin: 'zuò zhe', meaning: 'assis', meaningEn: 'sitting', audio: 'audio/hsk1/hsk1_坐.wav' },
@@ -2309,7 +2559,13 @@ export const a2NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : évite 我不要 (je ne veux pas) sec + tu pars. Préfère **算了，我再想想** (laisse tomber, je vais réfléchir).',
     bodyEn:
-      'At the market, 一点 is your weapon: 便宜一点 (a bit cheaper), 再便宜一点 (a bit cheaper still), 少一点 (a little less). It\'s gentle and non-aggressive. To insist without rudeness: 真的太贵了 + 便宜一点吧 (really too expensive + a bit less please). Final 吧 softens («come on»). Avoid: 我不要 (I don\'t want) blunt + leaving. Prefer: 算了，我再想想 (forget it, I\'ll think it over).',
+      'At the market, 一点 is your weapon:\n' +
+      '\n' +
+      '- 便宜一点 (a bit cheaper)\n' +
+      '- 再便宜一点 (a bit cheaper still)\n' +
+      '- 少一点 (a little less)\n' +
+      '\n' +
+      'It\'s gentle and non-aggressive. To insist without rudeness: 真的太贵了 + 便宜一点吧 (really too expensive + a bit less please). Final 吧 softens («come on»). Avoid: 我不要 (I don\'t want) blunt + leaving. Prefer: 算了，我再想想 (forget it, I\'ll think it over).',
     items: [
       { hanzi: '少', pinyin: 'shǎo', meaning: 'peu', meaningEn: 'few, less', audio: 'audio/hsk1/hsk1_少.wav' },
       { hanzi: '吧', pinyin: 'ba', meaning: 'particule adoucissante', meaningEn: 'softener particle', audio: 'audio/hsk2/hsk2_吧.wav' },
@@ -2493,7 +2749,9 @@ export const a2NuancesKaiMainVerbLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Compound célèbre : 开玩笑 (kāi wánxiào) « plaisanter, blaguer » — littéralement « lancer une blague ». Souvent en 别开玩笑了 (bié kāi wánxiào le) « arrête de rigoler ».',
     bodyEn:
-      'Here 开 launches an activity that was paused or pending. The most general verb is 开始 (start), which works almost everywhere: 会议开始了 = «the meeting has started», 我们开始上课吧 = «let\'s start the class». Fixed compounds for the calendar or routine: memorize as blocks. 开学 «school starts / new school year begins», 开工 «start work / get back to work», 开饭 «the meal is served». Watch out: 开学 ≠ 开始学. 开学 = «start of the school year» (frozen compound). 开始学 = «start studying» (verb + verb). Spoken lively version: in casual speech, 开 attaches directly to a monosyllabic verb to say «start X with energy». 开吃 «let\'s eat», 开聊 «let\'s chat», 开跑 «let\'s run». Livelier than 开始吃. Ex: 人都到齐了，我们开吃吧 = «everyone\'s here, let\'s dig in». Famous compound: 开玩笑 «joke around» — literally «launch a joke». Often as 别开玩笑了 = «stop joking around».',
+      'Here 开 launches an activity that was paused or pending. The most general verb is 开始 (start), which works almost everywhere: 会议开始了 = «the meeting has started», 我们开始上课吧 = «let\'s start the class». Fixed compounds for the calendar or routine: memorize as blocks. 开学 «school starts / new school year begins», 开工 «start work / get back to work», 开饭 «the meal is served».\n' +
+      '\n' +
+      'Watch out: 开学 ≠ 开始学. 开学 = «start of the school year» (frozen compound). 开始学 = «start studying» (verb + verb). Spoken lively version: in casual speech, 开 attaches directly to a monosyllabic verb to say «start X with energy». 开吃 «let\'s eat», 开聊 «let\'s chat», 开跑 «let\'s run». Livelier than 开始吃. Ex: 人都到齐了，我们开吃吧 = «everyone\'s here, let\'s dig in». Famous compound: 开玩笑 «joke around» — literally «launch a joke». Often as 别开玩笑了 = «stop joking around».',
     items: [
       { hanzi: '开始', pinyin: 'kāishǐ', meaning: 'commencer', meaningEn: 'start, begin', audio: 'audio/hsk2/hsk2_开始.wav' },
       { hanzi: '开学', pinyin: 'kāixué', meaning: 'rentrée scolaire', meaningEn: 'school starts', audio: 'audio/hsk3/hsk3_开学.wav' },
@@ -2523,7 +2781,9 @@ export const a2NuancesKaiMainVerbLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Animer un événement : 开会 (kāi huì) « tenir une réunion », 开派对 (kāi pài duì) « faire une fête », 开演唱会 (kāi yǎn chàng huì) « donner un concert ». Ex : 我们下午三点开会 (wǒmen xià wǔ sān diǎn kāi huì) « on a une réunion à 15 h ». En cours de réunion : 我们正在开会 (wǒmen zhèng zài kāi huì) « on est en réunion ».',
     bodyEn:
-      'This family covers the CONTINUOUS ACTIVITY of using a machine, running a business, or holding an event. Motor vehicles: 开车 (drive), 开飞机 (pilot a plane), 开船 (sail). Ex: 他每天开车去上班 = «he drives to work every day». Watch out: for bike or horse, use 骑 (qí «ride»), not 开. Vehicle as subject: 火车开了 = «the train has left», 船开了 = «the boat has cast off». The focus is the vehicle\'s departure without mentioning the driver. Running a business: 开店 «open/run a shop», 开公司 «launch/run a company», 开餐厅 «open/run a restaurant». Ex: 她想开店，以后自己当老板 = «she wants to open a shop and be her own boss». Holding an event: 开会 «hold a meeting», 开派对 «throw a party», 开演唱会 «give a concert». Ex: 我们下午三点开会 = «we have a meeting at 3 pm». Mid-meeting: 我们正在开会 = «we\'re in a meeting».',
+      'This family covers the CONTINUOUS ACTIVITY of using a machine, running a business, or holding an event. Motor vehicles: 开车 (drive), 开飞机 (pilot a plane), 开船 (sail). Ex: 他每天开车去上班 = «he drives to work every day».\n' +
+      '\n' +
+      'Watch out: for bike or horse, use 骑 (qí «ride»), not 开. Vehicle as subject: 火车开了 = «the train has left», 船开了 = «the boat has cast off». The focus is the vehicle\'s departure without mentioning the driver. Running a business: 开店 «open/run a shop», 开公司 «launch/run a company», 开餐厅 «open/run a restaurant». Ex: 她想开店，以后自己当老板 = «she wants to open a shop and be her own boss». Holding an event: 开会 «hold a meeting», 开派对 «throw a party», 开演唱会 «give a concert». Ex: 我们下午三点开会 = «we have a meeting at 3 pm». Mid-meeting: 我们正在开会 = «we\'re in a meeting».',
     items: [
       { hanzi: '开车', pinyin: 'kāichē', meaning: 'conduire', meaningEn: 'drive', audio: 'audio/hsk2/hsk2_开车.wav' },
       { hanzi: '开船', pinyin: 'kāichuán', meaning: 'naviguer, faire partir un bateau', meaningEn: 'sail', audio: 'audio/hsk3/hsk3_船.wav' },
@@ -3016,7 +3276,9 @@ export const a2NuancesAlmostBasicsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ne le confonds pas avec 差不多的 (« l\'à-peu-près », négatif : décrit quelque chose de médiocre) — c\'est un autre sens.',
     bodyEn:
-      '差不多 (chà bù duō) literally means «little difference». It is the most versatile and most-used «almost» in daily life. 3 main uses: (1) Two ~similar things: 这两个差不多大 (zhè liǎng ge chà bù duō dà) «these 2 are roughly the same size». (2) Almost finished / almost ready: 我的作业差不多写完了 (wǒ de zuò yè chà bù duō xiě wán le) «my homework is almost done». (3) STANDALONE answer: «你好了吗?» «差不多了» «all set? — almost, yes». Very common in speech. Register: casual, warm. Perfect with family, friends, at the market. Also with NUMBERS: 差不多五十个人来了 («about 50 people came», loose estimate). For PRECISE numeric approximation, prefer 将近 (B1). Careful: don\'t confuse it with 差不多的 («mediocre», negative: describes something so-so) — different meaning.',
+      '差不多 (chà bù duō) literally means «little difference». It is the most versatile and most-used «almost» in daily life. 3 main uses: (1) Two ~similar things: 这两个差不多大 (zhè liǎng ge chà bù duō dà) «these 2 are roughly the same size». (2) Almost finished / almost ready: 我的作业差不多写完了 (wǒ de zuò yè chà bù duō xiě wán le) «my homework is almost done». (3) STANDALONE answer: «你好了吗?» «差不多了» «all set? — almost, yes». Very common in speech. Register: casual, warm. Perfect with family, friends, at the market. Also with NUMBERS: 差不多五十个人来了 («about 50 people came», loose estimate). For PRECISE numeric approximation, prefer 将近 (B1).\n' +
+      '\n' +
+      'Careful: don\'t confuse it with 差不多的 («mediocre», negative: describes something so-so) — different meaning.',
     items: [
       { hanzi: '差不多', pinyin: 'chàbuduō', meaning: 'presque, à peu près', meaningEn: 'almost, roughly', audio: 'audio/hsk4/hsk4_差不多.wav' },
       { hanzi: '差不多了', pinyin: 'chàbuduō le', meaning: 'presque prêt / presque fini', meaningEn: 'almost ready / almost done', audio: 'audio/hsk4/hsk4_差不多.wav' },
@@ -3052,7 +3314,12 @@ export const a2NuancesAlmostBasicsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Registres formels : 将要 (jiāng yào) et 即将 (jí jiāng) pour les annonces officielles. Ex : 会议即将开始 (huì yì jí jiāng kāi shǐ) « la réunion va commencer ». Sonne comme un haut-parleur d\'aéroport. À l\'oral tous les jours, garde 快要...了.',
     bodyEn:
-      'Structure: subject + 快要 + verb + 了. Signals an IMMINENT event («about to», «any second now»). The sentence-final 了 marks the upcoming change of state. Ex: 我们快要到家了 (wǒmen kuài yào dào jiā le) «we\'ll be home soon». Ex: 电影快要开始了 (diàn yǐng kuài yào kāi shǐ le) «the movie is about to start». Typical of cinema announcements. Shortened forms in speech: 快...了 (even shorter) or 要...了 (just 要 without 快). 快到了 (kuài dào le) «almost there». 要下雨了 (yào xià yǔ le) «it\'s going to rain». 就要...了 (jiù yào ... le): near-synonym with a nuance of «at a SPECIFIC expected time». Ex: 火车就要开了 (huǒ chē jiù yào kāi le) «the train is about to leave» (at its scheduled time). Formal registers: 将要 (jiāng yào) and 即将 (jí jiāng) for official announcements. Ex: 会议即将开始 (huì yì jí jiāng kāi shǐ) «the meeting is about to begin». Sounds like an airport PA. For daily speech, stick with 快要...了.',
+      'Structure: subject + 快要 + verb + 了. Signals an IMMINENT event («about to», «any second now»). The sentence-final 了 marks the upcoming change of state. Ex: 我们快要到家了 (wǒmen kuài yào dào jiā le) «we\'ll be home soon». Ex: 电影快要开始了 (diàn yǐng kuài yào kāi shǐ le) «the movie is about to start». Typical of cinema announcements. Shortened forms in speech: 快...了 (even shorter) or 要...了 (just 要 without 快).\n' +
+      '\n' +
+      '- 快到了 (kuài dào le) — «almost there»\n' +
+      '- 要下雨了 (yào xià yǔ le) — «it\'s going to rain»\n' +
+      '\n' +
+      '就要...了 (jiù yào ... le): near-synonym with a nuance of «at a SPECIFIC expected time». Ex: 火车就要开了 (huǒ chē jiù yào kāi le) «the train is about to leave» (at its scheduled time). Formal registers: 将要 (jiāng yào) and 即将 (jí jiāng) for official announcements. Ex: 会议即将开始 (huì yì jí jiāng kāi shǐ) «the meeting is about to begin». Sounds like an airport PA. For daily speech, stick with 快要...了.',
     items: [
       { hanzi: '快要', pinyin: 'kuàiyào', meaning: 'sur le point de, bientôt', meaningEn: 'about to, soon', audio: 'audio/hsk2/hsk2_快.wav' },
       { hanzi: '就要', pinyin: 'jiùyào', meaning: 'sur le point de (moment précis)', meaningEn: 'about to (specific moment)', audio: 'audio/hsk2/hsk2_就.wav' },
@@ -3100,7 +3367,16 @@ export const a2GrammarModalsDirectionLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Échelle de force : 应该 (conseil doux) < 得 (nécessité pratique) < 一定要 (insistance perso) < 必须 (obligation absolue).',
     bodyEn:
-      'Chinese offers several modals for obligation/advice, from soft to firm. 应该 (yīng gāi) = «should» — moral obligation or advice. Neutral. Structure: subj + 应该 + verb. Ex: 你应该多喝水 «you should drink more water». Negation: 不应该. 得 (děi, NOT de) = «must / gotta» — PRACTICAL necessity, spoken. Careful: read «děi» not «de» when it\'s the modal. Ex: 我得走了 «I gotta go». Very oral, very common. Negation: NOT 不得, use 不用 (bú yòng) «no need». 必须 (bì xū) = «MANDATORY, absolutely must» — firmest. Formal or insistent. Ex: 学生必须交作业 «students MUST turn in homework». Negation: 不必 (bú bì) «not necessary». 一定要 (yí dìng yào) = «really must» — emotional emphasis, often with enthusiasm or concern. Ex: 你一定要来我的婚礼 «you absolutely must come to my wedding». Negation: 一定不要 = «make sure you don\'t». Force scale: 应该 (soft advice) < 得 (practical) < 一定要 (personal insistence) < 必须 (absolute).',
+      'Chinese offers several modals for obligation/advice, from soft to firm. 应该 (yīng gāi) = «should» — moral obligation or advice. Neutral. Structure: subj + 应该 + verb. Ex: 你应该多喝水 «you should drink more water». Negation: 不应该. 得 (děi, NOT de) = «must / gotta» — PRACTICAL necessity, spoken.\n' +
+      '\n' +
+      'Careful: read «děi» not «de» when it\'s the modal. Ex: 我得走了 «I gotta go». Very oral, very common. Negation: NOT 不得, use 不用 (bú yòng) «no need». 必须 (bì xū) = «MANDATORY, absolutely must» — firmest. Formal or insistent. Ex: 学生必须交作业 «students MUST turn in homework».\n' +
+      '\n' +
+      'Negation:\n' +
+      '\n' +
+      '- 不必 (bú bì) — «not necessary»\n' +
+      '- 一定要 (yí dìng yào) — «really must» — emotional emphasis, often with enthusiasm or concern\n' +
+      '\n' +
+      'Ex: 你一定要来我的婚礼 «you absolutely must come to my wedding». Negation: 一定不要 = «make sure you don\'t». Force scale: 应该 (soft advice) < 得 (practical) < 一定要 (personal insistence) < 必须 (absolute).',
     items: [
       { hanzi: '应该', pinyin: 'yīnggāi', meaning: 'devrait, il faudrait', meaningEn: 'should', audio: 'audio/hsk3/hsk3_应该.wav' },
       { hanzi: '得', pinyin: 'děi', meaning: 'il faut, je dois (oral)', meaningEn: 'must (oral)', audio: 'audio/hsk3/hsk3_得.wav' },
@@ -3144,7 +3420,19 @@ export const a2GrammarModalsDirectionLearnSections: LessonV2LearnSection[] = [
       '- Ex : 我买回来一本书 (wǒ mǎi huí lái yì běn shū) « j\'ai rapporté un livre ». Ou : 我买了一本书回来.\n' +
       '- Attention aux lieux : le lieu-destination vient AVANT 来/去. Ex : 他跑进房间来 (tā pǎo jìn fáng jiān lái) « il est entré dans la pièce en courant ».',
     bodyEn:
-      'Structure: motion verb + 来 (toward me) OR 去 (away from me). 来 vs 去 decided by SPEAKER position. 你过来 «come here» (toward me). 你过去 «go there» (away from me). Directional verbs + 来/去 (base pattern): 上来/上去 (go up), 下来/下去 (go down), 进来/进去 (enter), 出来/出去 (exit), 回来/回去 (come/go back), 过来/过去 (come/go over), 起来 (stand up/rise, especially with 站/坐). Composition VERB + DIRECTIONAL + 来/去: action verb + directional + 来/去. Ex: 他走进来了 «he walked in (toward me)». 走 (walk) + 进 (in) + 来 (toward me). Ex: 我拿出去 «I\'ll take it out (away)». 拿 (take) + 出 (out) + 去 (away). Ex: 请你坐下来 «please sit down (here)». OBJECT case: if an object follows, it comes BEFORE 来/去 or AFTER the directional. Ex: 我买回来一本书 «I brought back a book». Or: 我买了一本书回来. Place-destination goes BEFORE 来/去: 他跑进房间来 «he ran into the room».',
+      'Structure: motion verb + 来 (toward me) OR 去 (away from me). 来 vs 去 decided by SPEAKER position. 你过来 «come here» (toward me). 你过去 «go there» (away from me).\n' +
+      '\n' +
+      'Directional verbs + 来/去 (base pattern):\n' +
+      '\n' +
+      '- 上来/上去 (go up)\n' +
+      '- 下来/下去 (go down)\n' +
+      '- 进来/进去 (enter)\n' +
+      '- 出来/出去 (exit)\n' +
+      '- 回来/回去 (come/go back)\n' +
+      '- 过来/过去 (come/go over)\n' +
+      '- 起来 (stand up/rise, especially with 站/坐)\n' +
+      '\n' +
+      'Composition VERB + DIRECTIONAL + 来/去: action verb + directional + 来/去. Ex: 他走进来了 «he walked in (toward me)». 走 (walk) + 进 (in) + 来 (toward me). Ex: 我拿出去 «I\'ll take it out (away)». 拿 (take) + 出 (out) + 去 (away). Ex: 请你坐下来 «please sit down (here)». OBJECT case: if an object follows, it comes BEFORE 来/去 or AFTER the directional. Ex: 我买回来一本书 «I brought back a book». Or: 我买了一本书回来. Place-destination goes BEFORE 来/去: 他跑进房间来 «he ran into the room».',
     items: [
       { hanzi: '来', pinyin: 'lái', meaning: 'venir (vers le locuteur)', meaningEn: 'come (toward speaker)', audio: 'audio/hsk1/hsk1_来.wav' },
       { hanzi: '去', pinyin: 'qù', meaning: 'aller (loin du locuteur)', meaningEn: 'go (away)', audio: 'audio/hsk1/hsk1_去.wav' },
@@ -4329,7 +4617,16 @@ export const a2NuancesNeBasicsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ne pas ajouter 吗 après 呢. 你呢吗 ✗ n\'existe pas.',
     bodyEn:
-      'THE first use to know: bounce a question back without repeating the whole structure. Structure: [sentence A], [topic B] + 呢? Ex: 我有一个妹妹。你呢? (wǒ yǒu yí ge mèi mei. nǐ ne) «I have a little sister, and you?». No need to restate the question. Ex: 我要喝咖啡，你呢? «I\'ll have a coffee, and you?». Ex: 今天很热，昨天呢? «it\'s hot today, and yesterday?». Works with any element: person (你/他/她), place (北京/上海), time (昨天/明天), object (这个/那个). Careful: don\'t add 吗 after 呢. 你呢吗 ✗ doesn\'t exist.',
+      'THE first use to know: bounce a question back without repeating the whole structure. Structure: [sentence A], [topic B] + 呢? Ex: 我有一个妹妹。你呢? (wǒ yǒu yí ge mèi mei. nǐ ne) «I have a little sister, and you?». No need to restate the question. Ex: 我要喝咖啡，你呢? «I\'ll have a coffee, and you?». Ex: 今天很热，昨天呢? «it\'s hot today, and yesterday?».\n' +
+      '\n' +
+      'Works with any element:\n' +
+      '\n' +
+      '- person (你/他/她)\n' +
+      '- place (北京/上海)\n' +
+      '- time (昨天/明天)\n' +
+      '- object (这个/那个)\n' +
+      '\n' +
+      'Careful: don\'t add 吗 after 呢. 你呢吗 ✗ doesn\'t exist.',
     items: [
       { hanzi: '呢', pinyin: 'ne', meaning: 'particule interrogative « et... ? »', meaningEn: 'question particle «and...?»', audio: 'audio/hsk1/hsk1_呢.wav' },
       { hanzi: '你呢', pinyin: 'nǐ ne', meaning: 'et toi ?', meaningEn: 'and you?', audio: 'audio/hsk1/hsk1_你.wav' },
@@ -4546,7 +4843,15 @@ export const a2NuancesChoicesBasicsLearnSections: LessonV2LearnSection[] = [
       '- 不是 A 就是 B (habitude prévisible).\n' +
       '- 或 A 或 B (littéraire, catégories parallèles).',
     bodyEn:
-      '不是 A 就是 B (bú shi... jiù shi...) = «if not A, then B». Describes a HABIT or predictable pattern with only 2 possibilities. Ex: 周末他们不是出去郊游，就是在家休息 «on weekends, they either go for a walk or rest at home». You describe their habits. Ex: 他吃饭不是吃面就是吃饭 «for meals, he has either noodles or rice» — predictable. Ex: 广州的天气不是晴天就是下雨 «Canton weather is either sunny or rainy». Key nuance vs 要么: 要么 A 要么 B PRESENTS a choice; 不是 A 就是 B DESCRIBES a habit or prediction, no choice required. 或...或... (huò... huò...) = FORMAL/LITERARY «either... or...». Written Chinese, press, academic contexts. Structure: 或 + A, 或 + B (no doubling like 或者). Ex: 运动会上，同学们或参加跑步，或参加跳高. Often describes PARALLEL CATEGORIES (some... others...). In casual speech, use 有的...有的... instead. Recap of 5 patterns: 还是 (question), 或者/或是 (statement, neutral), 要么 A 要么 B (ultimatum), 不是 A 就是 B (habit), 或 A 或 B (literary).',
+      '不是 A 就是 B (bú shi... jiù shi...) = «if not A, then B». Describes a HABIT or predictable pattern with only 2 possibilities. Ex: 周末他们不是出去郊游，就是在家休息 «on weekends, they either go for a walk or rest at home». You describe their habits. Ex: 他吃饭不是吃面就是吃饭 «for meals, he has either noodles or rice» — predictable. Ex: 广州的天气不是晴天就是下雨 «Canton weather is either sunny or rainy». Key nuance vs 要么: 要么 A 要么 B PRESENTS a choice; 不是 A 就是 B DESCRIBES a habit or prediction, no choice required. 或...或... (huò... huò...) = FORMAL/LITERARY «either... or...». Written Chinese, press, academic contexts. Structure: 或 + A, 或 + B (no doubling like 或者). Ex: 运动会上，同学们或参加跑步，或参加跳高. Often describes PARALLEL CATEGORIES (some... others...). In casual speech, use 有的...有的... instead.\n' +
+      '\n' +
+      'Recap of 5 patterns:\n' +
+      '\n' +
+      '- 还是 (question)\n' +
+      '- 或者/或是 (statement, neutral)\n' +
+      '- 要么 A 要么 B (ultimatum)\n' +
+      '- 不是 A 就是 B (habit)\n' +
+      '- 或 A 或 B (literary)',
     items: [
       { hanzi: '不是...就是...', pinyin: 'bú shi ... jiù shi ...', meaning: 'si ce n\'est pas... alors c\'est...', meaningEn: 'if not... then...', audio: 'audio/hsk1/hsk1_不是.wav' },
       { hanzi: '或...或...', pinyin: 'huò ... huò ...', meaning: 'soit... soit... (formel)', meaningEn: 'either... or... (formal)', audio: 'audio/hsk3/hsk3_或.wav' },
@@ -5076,7 +5381,17 @@ export const a2GrammaireZaiBasicsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Erreur classique : ne PAS dire 我是在家. En chinois, 在 remplace 是 pour la localisation.',
     bodyEn:
-      '在 (zài) is one of the most frequent function words in Chinese. Its PRIMARY role: indicating LOCATION. Basic structure: Subject + 在 + Place → «X is at/in...». Ex: 我在家 «I\'m at home». No extra «to be» needed, 在 does everything. Ex: 手机在桌子上 «the phone is on the table». Position particles (上, 里, 下...) specify the place. Common localizers: 里 (lǐ) «inside»: 书在包里 «the book is in the bag». 上 (shàng) «on»: 猫在椅子上 «the cat is on the chair». 下 (xià) «under»: 狗在桌子下 «the dog is under the table». 前 (qián) «in front» / 后 (hòu) «behind»: 车在门前 «the car is in front of the door». 旁边 (páng biān) «next to»: 商店在银行旁边 «the shop is next to the bank». Negation: 不在 (bù zài) «not at/there». Ex: 老板不在办公室 «the boss isn\'t in the office». Classic mistake: do NOT say 我是在家. In Chinese, 在 replaces 是 for location.',
+      '在 (zài) is one of the most frequent function words in Chinese. Its PRIMARY role: indicating LOCATION. Basic structure: Subject + 在 + Place → «X is at/in...». Ex: 我在家 «I\'m at home». No extra «to be» needed, 在 does everything. Ex: 手机在桌子上 «the phone is on the table». Position particles (上, 里, 下...) specify the place.\n' +
+      '\n' +
+      'Common localizers:\n' +
+      '\n' +
+      '- 里 (lǐ) — «inside»: 书在包里 «the book is in the bag»\n' +
+      '- 上 (shàng) — «on»: 猫在椅子上 «the cat is on the chair»\n' +
+      '- 下 (xià) — «under»: 狗在桌子下 «the dog is under the table»\n' +
+      '- 前 (qián) — «in front» / 后 (hòu) «behind»: 车在门前 «the car is in front of the door»\n' +
+      '- 旁边 (páng biān) — «next to»: 商店在银行旁边 «the shop is next to the bank»\n' +
+      '\n' +
+      'Negation: 不在 (bù zài) «not at/there». Ex: 老板不在办公室 «the boss isn\'t in the office». Classic mistake: do NOT say 我是在家. In Chinese, 在 replaces 是 for location.',
     items: [
       { hanzi: '在', pinyin: 'zài', meaning: 'à, dans, se trouver à', meaningEn: 'at, in, to be located at', audio: 'audio/hsk1/hsk1_在.wav' },
       { hanzi: '里', pinyin: 'lǐ', meaning: 'dans, à l\'intérieur', meaningEn: 'inside', audio: 'audio/hsk1/hsk1_里.wav' },
@@ -5119,7 +5434,17 @@ export const a2GrammaireZaiBasicsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Question : « où fais-tu X ? » = 你在哪儿 + verbe ? Ex : 你在哪儿工作 ? (py nǐ zài nǎr gōng zuò) « où travailles-tu ? ».',
     bodyEn:
-      'To say WHERE AN ACTION UNFOLDS, place «在 + place» BEFORE the verb. Structure: Subject + 在 + Place + Verb (+ Object). Ex: 我在家吃饭 «I eat at home». First the SETTING (at home), then the action (eat). Ex: 孩子们在公园玩 «the kids play at the park». Ex: 我们在餐厅见面 «we meet at the restaurant». Crucial difference between BEFORE and AFTER the verb placement: 我在图书馆学习 = «I study AT THE LIBRARY» (setting of the action). 我住在北京 = «I live IN BEIJING» (result/destination — 在 sticks to the verb because it marks the FINAL LOCATION of the residing action). Verbs that like 在 AFTER (they imply a resulting location): 住 (live), 坐 (sit), 站 (stand), 躺 (lie down), 放 (put). Ex: 请坐在这里 «please sit here». Ex: 把书放在桌子上 «put the book on the table». Question: «where do you X?» = 你在哪儿 + verb? Ex: 你在哪儿工作? «where do you work?».',
+      'To say WHERE AN ACTION UNFOLDS, place «在 + place» BEFORE the verb. Structure: Subject + 在 + Place + Verb (+ Object). Ex: 我在家吃饭 «I eat at home». First the SETTING (at home), then the action (eat). Ex: 孩子们在公园玩 «the kids play at the park». Ex: 我们在餐厅见面 «we meet at the restaurant». Crucial difference between BEFORE and AFTER the verb placement: 我在图书馆学习 = «I study AT THE LIBRARY» (setting of the action). 我住在北京 = «I live IN BEIJING» (result/destination — 在 sticks to the verb because it marks the FINAL LOCATION of the residing action).\n' +
+      '\n' +
+      'Verbs that like 在 AFTER (they imply a resulting location):\n' +
+      '\n' +
+      '- 住 (live)\n' +
+      '- 坐 (sit)\n' +
+      '- 站 (stand)\n' +
+      '- 躺 (lie down)\n' +
+      '- 放 (put)\n' +
+      '\n' +
+      'Ex: 请坐在这里 «please sit here». Ex: 把书放在桌子上 «put the book on the table». Question: «where do you X?» = 你在哪儿 + verb? Ex: 你在哪儿工作? «where do you work?».',
     items: [
       { hanzi: '在家吃饭', pinyin: 'zàijiā chīfàn', meaning: 'manger à la maison', meaningEn: 'eat at home', audio: 'audio/hsk1/hsk1_吃饭.wav' },
       { hanzi: '住', pinyin: 'zhù', meaning: 'habiter, loger', meaningEn: 'live, reside', audio: 'audio/hsk1/hsk1_住.wav' },
@@ -5310,7 +5635,15 @@ export const a2GrammaireGuoExperienceLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Verbes qui rejettent 过 : les verbes NÉCESSAIREMENT durables comme 是 (être), 有 (avoir), 认识 (connaître), 姓 (avoir pour nom de famille) ne prennent PAS 过 car ils désignent des états, pas des expériences.',
     bodyEn:
-      'BOTH markers refer to the past, but from a DIFFERENT ANGLE: 过 = «I\'ve (already) done that, it\'s part of my life experience» (WITHOUT a specific moment). 了 = «the action is COMPLETED at a given moment» (often WITH temporal context). Direct comparison: 我吃过日本菜 «I\'ve already eaten Japanese food (in my life)». Counts as experience. 昨天我吃了日本菜 «yesterday I ate Japanese food». Dated, finished event. Choice guided by the QUESTION: Question about life experience → answer with 过: 你去过法国吗? → 我去过 / 我没去过. Question about a specific event → answer with 了: 你今天吃饭了吗? → 吃了 / 没吃. 过 + 了 in the same sentence: possible to insist on «already DONE, it\'s WRAPPED UP». The 过 marks experience, the final 了 adds «it\'s settled, don\'t ask again». Structure: Subject + Verb + 过 + (Object) + 了. Ex: 我看过这本书了 «I\'ve already read it (this book)». Reply to «do you want to read this book?». Ex: 这部电影我看过了 «this movie, I\'ve already seen it». Final tone «no need to suggest it to me». You can reinforce with 已经 (yǐ jīng) «already»: 我已经吃过了 «I\'ve already eaten». Conversational nuance: without 了 = neutral info («I went there once»); with 了 = reply to an invitation/proposal («already done, thanks»). 我去过日本 (life fact, resume frame) vs 我去过日本了 (so we\'re not planning this trip anymore). Verbs that reject 过: NECESSARILY durable verbs like 是 (be), 有 (have), 认识 (know), 姓 (be surnamed) do NOT take 过 because they name states, not experiences.',
+      'BOTH markers refer to the past, but from a DIFFERENT ANGLE: 过 = «I\'ve (already) done that, it\'s part of my life experience» (WITHOUT a specific moment). 了 = «the action is COMPLETED at a given moment» (often WITH temporal context). Direct comparison: 我吃过日本菜 «I\'ve already eaten Japanese food (in my life)». Counts as experience. 昨天我吃了日本菜 «yesterday I ate Japanese food». Dated, finished event. Choice guided by the QUESTION: Question about life experience → answer with 过: 你去过法国吗? → 我去过 / 我没去过. Question about a specific event → answer with 了: 你今天吃饭了吗? → 吃了 / 没吃. 过 + 了 in the same sentence: possible to insist on «already DONE, it\'s WRAPPED UP». The 过 marks experience, the final 了 adds «it\'s settled, don\'t ask again». Structure: Subject + Verb + 过 + (Object) + 了. Ex: 我看过这本书了 «I\'ve already read it (this book)». Reply to «do you want to read this book?». Ex: 这部电影我看过了 «this movie, I\'ve already seen it». Final tone «no need to suggest it to me». You can reinforce with 已经 (yǐ jīng) «already»: 我已经吃过了 «I\'ve already eaten». Conversational nuance: without 了 = neutral info («I went there once»); with 了 = reply to an invitation/proposal («already done, thanks»). 我去过日本 (life fact, resume frame) vs 我去过日本了 (so we\'re not planning this trip anymore).\n' +
+      '\n' +
+      'Verbs that reject 过:\n' +
+      '\n' +
+      '- NECESSARILY durable verbs like 是 (be)\n' +
+      '- 有 (have)\n' +
+      '- 认识 (know)\n' +
+      '- 姓 (be surnamed) do NOT take 过 because they name states\n' +
+      '- not experiences',
     items: [
       { hanzi: '了', pinyin: 'le', meaning: 'particule d\'action complétée', meaningEn: 'completed-action particle', audio: 'audio/hsk1/hsk1_了.wav' },
       { hanzi: '已经', pinyin: 'yǐjīng', meaning: 'déjà', meaningEn: 'already', audio: 'audio/hsk2/hsk2_已经.wav' },

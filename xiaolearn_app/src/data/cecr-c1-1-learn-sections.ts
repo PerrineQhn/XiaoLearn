@@ -240,7 +240,16 @@ export const c11ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 我们将继续关注 X 的发展 est la **formule diplomatique** pour clore poliment sans s\'engager. JAMAIS de questions improvisées dans la déclaration — réserve-les au Q&A structuré.',
     bodyEn:
-      'Format: solemn opening 各位记者朋友，下午好 → body → conclusion. Vocab: 立场 (official position), 表态 (take a stand), 强调 (stress), 重申 (reiterate). Set phrases: 我们的立场是明确的 (our position is clear). 我们坚决反对 X (we firmly oppose X). 我们呼吁各方 X (we call on all parties to X). 我们将继续关注 X 的发展 (we will keep monitoring X). Close: 谢谢大家. NEVER take unscripted questions during the statement — save for structured Q&A.',
+      'Format: solemn opening 各位记者朋友，下午好 → body → conclusion.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 立场 (official position)\n' +
+      '- 表态 (take a stand)\n' +
+      '- 强调 (stress)\n' +
+      '- 重申 (reiterate)\n' +
+      '\n' +
+      'Set phrases: 我们的立场是明确的 (our position is clear). 我们坚决反对 X (we firmly oppose X). 我们呼吁各方 X (we call on all parties to X). 我们将继续关注 X 的发展 (we will keep monitoring X). Close: 谢谢大家. NEVER take unscripted questions during the statement — save for structured Q&A.',
     items: [
       { hanzi: '立场', pinyin: 'lìchǎng', meaning: 'position, stance', meaningEn: 'stance', audio: 'audio/hsk5/hsk5_立场.wav' },
       { hanzi: '强调', pinyin: 'qiángdiào', meaning: 'souligner', meaningEn: 'emphasize', audio: 'audio/hsk5/hsk5_强调.wav' },
@@ -277,7 +286,16 @@ export const c11ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : avec un supérieur, ton verre **plus bas** que le sien lors du toast. C\'est la **marque de respect** la plus visible — son absence est immédiatement remarquée.',
     bodyEn:
-      'Seating: guest of honor faces the door; main host backs to door. Dishes: NEVER fully finish your plate (signal: you didn\'t get enough). Toasts: with a superior, your glass LOWER than theirs (respect). Serve your neighbor before yourself. Refuse a dish: 谢谢，我吃饱了，您慢慢吃. Vocab: 主宾 (guest of honor), 敬酒 (toast), 干杯 (bottoms up), 随意 (small sip). Phrases: 大家随意 (help yourselves), 来，我敬您一杯 (let me toast you).',
+      'Seating: guest of honor faces the door; main host backs to door. Dishes: NEVER fully finish your plate (signal: you didn\'t get enough). Toasts: with a superior, your glass LOWER than theirs (respect). Serve your neighbor before yourself. Refuse a dish: 谢谢，我吃饱了，您慢慢吃.\n' +
+      '\n' +
+      'Vocab:\n' +
+      '\n' +
+      '- 主宾 (guest of honor)\n' +
+      '- 敬酒 (toast)\n' +
+      '- 干杯 (bottoms up)\n' +
+      '- 随意 (small sip)\n' +
+      '\n' +
+      'Phrases: 大家随意 (help yourselves), 来，我敬您一杯 (let me toast you).',
     items: [
       { hanzi: '主宾', pinyin: 'zhǔbīn', meaning: 'invité d\'honneur', meaningEn: 'guest of honor', audio: 'audio/hsk6/hsk6_主宾.wav' },
       { hanzi: '敬酒', pinyin: 'jìngjiǔ', meaning: 'porter un toast', meaningEn: 'toast', audio: 'audio/hsk5/hsk5_敬酒.wav' },
@@ -433,7 +451,16 @@ export const c11ConvM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la phrase d\'entrée 本报告旨在 X (ce rapport vise à X) — 旨在 (zhǐzài) sonne très **soutenu** sans être pédant. À mémoriser pour tout document C1+.',
     bodyEn:
-      'Structure: 背景 → 现状分析 → 主要发现 → 战略建议 → 风险评估 → 结论. Key verbs: 分析 (analyze), 发现 (find), 建议 (recommend), 评估 (assess). Opening phrases: 本报告旨在 X (this report aims to X) — 旨在 (zhǐzài) sounds very formal. For recommendations: 我们建议从以下三个方面入手 (we recommend acting on 3 fronts). For risks: 需要注意的是 X. Close: 综上所述, 我们认为 X 是当前最优选择 (in sum, X is the current optimal choice). 最优 (optimal) marks the strategic conclusion.',
+      'Structure: 背景 → 现状分析 → 主要发现 → 战略建议 → 风险评估 → 结论.\n' +
+      '\n' +
+      'Key verbs:\n' +
+      '\n' +
+      '- 分析 (analyze)\n' +
+      '- 发现 (find)\n' +
+      '- 建议 (recommend)\n' +
+      '- 评估 (assess)\n' +
+      '\n' +
+      'Opening phrases: 本报告旨在 X (this report aims to X) — 旨在 (zhǐzài) sounds very formal. For recommendations: 我们建议从以下三个方面入手 (we recommend acting on 3 fronts). For risks: 需要注意的是 X. Close: 综上所述, 我们认为 X 是当前最优选择 (in sum, X is the current optimal choice). 最优 (optimal) marks the strategic conclusion.',
     items: [
       { hanzi: '旨在', pinyin: 'zhǐzài', meaning: 'viser à', meaningEn: 'aim to', audio: 'audio/hsk6/hsk6_旨在.wav' },
       { hanzi: '战略', pinyin: 'zhànlüè', meaning: 'stratégie', meaningEn: 'strategy', audio: 'audio/hsk5/hsk5_战略.wav' },
@@ -527,7 +554,12 @@ export const c11NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : trois collocations à mémoriser comme signature C1 — **深入研究**, **深刻印象**, **深远影响**. L\'erreur fréquente 深刻研究 ✗ → 深入研究 ✓ trahit immédiatement le B2.',
     bodyEn:
-      '深入 (shēnrù) = deep in the PROCESS. 深入研究 (in-depth research), 深入了解 (deeply understand), 深入人心 (rooted in people\'s hearts). Verb or adv. 深刻 (shēnkè) = deep as felt IMPACT. 深刻的印象 (strong impression), 深刻的教训 (deep lesson). Adjective. Connotes effect on person. 深远 (shēnyuǎn) = deep and FAR-reaching in duration/scope. 深远的影响 (lasting and wide-reaching influence). Always collocates with 影响/意义. Hierarchy: 深入 (process) ≠ 深刻 (impression) ≠ 深远 (scope). Frequent mistake: 深刻研究 ✗ → 深入研究 ✓.',
+      '深入 (shēnrù) = deep in the PROCESS. 深入研究 (in-depth research), 深入了解 (deeply understand), 深入人心 (rooted in people\'s hearts). Verb or adv.\n' +
+      '\n' +
+      '- 深刻 (shēnkè) — deep as felt IMPACT\n' +
+      '- 深刻的印象 (strong impression) — 深刻的教训 (deep lesson)\n' +
+      '\n' +
+      'Adjective. Connotes effect on person. 深远 (shēnyuǎn) = deep and FAR-reaching in duration/scope. 深远的影响 (lasting and wide-reaching influence). Always collocates with 影响/意义. Hierarchy: 深入 (process) ≠ 深刻 (impression) ≠ 深远 (scope). Frequent mistake: 深刻研究 ✗ → 深入研究 ✓.',
     items: [
       { hanzi: '深入', pinyin: 'shēnrù', meaning: 'en profondeur', meaningEn: 'in-depth', audio: 'audio/hsk5/hsk5_深入.wav' },
       { hanzi: '深刻', pinyin: 'shēnkè', meaning: 'profond (impact)', meaningEn: 'profound (impact)', audio: 'audio/hsk5/hsk5_深刻.wav' },
@@ -741,7 +773,12 @@ export const c11NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : réserve 消亡 à ce qui est **vraiment** terminé. L\'erreur de débutant — utiliser 消亡 pour un secteur en déclin temporaire — signale l\'absence de maîtrise du registre.',
     bodyEn:
-      '衰落 (shuāiluò, decline) = gradual fall of a CIVILIZATION / institution. 帝国的衰落 (the decline of an empire). Historical connotation. 衰退 (shuāituì, recession / economic decline) = measurable slowdown, especially ECONOMIC. 经济衰退 (economic recession). Reversible, technical. 消亡 (xiāowáng, disappearance, extinction) = total END. 物种消亡 (species extinction), 文化消亡 (cultural extinction). Irreversible. Hierarchy: 衰退 (reversible technical) < 衰落 (historical gradual) < 消亡 (terminal). In a history thesis or op-ed, the right word signals your awareness of register.',
+      '衰落 (shuāiluò, decline) = gradual fall of a CIVILIZATION / institution. 帝国的衰落 (the decline of an empire). Historical connotation.\n' +
+      '\n' +
+      '- 衰退 (shuāituì, recession / economic decline) — measurable slowdown, especially ECONOMIC\n' +
+      '- 经济衰退 (economic recession) — \n' +
+      '\n' +
+      'Reversible, technical. 消亡 (xiāowáng, disappearance, extinction) = total END. 物种消亡 (species extinction), 文化消亡 (cultural extinction). Irreversible. Hierarchy: 衰退 (reversible technical) < 衰落 (historical gradual) < 消亡 (terminal). In a history thesis or op-ed, the right word signals your awareness of register.',
     items: [
       { hanzi: '衰落', pinyin: 'shuāiluò', meaning: 'déclin', meaningEn: 'decline', audio: 'audio/hsk6/hsk6_衰落.wav' },
       { hanzi: '衰退', pinyin: 'shuāituì', meaning: 'récession', meaningEn: 'recession', audio: 'audio/hsk6/hsk6_衰退.wav' },
@@ -869,7 +906,12 @@ export const c11NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : « 下决心 + verbe » sonne très authentique pour une résolution personnelle (下决心戒烟, 下决心学习). Plus **émotionnel** que 决定 + verbe — à utiliser pour parler d\'un changement de vie.',
     bodyEn:
-      '决定 (juédìng) = DECIDE (verb) or DECISION (noun) — universal, oral and written. 我决定去 / 这是公司的决定. Broadest. 决心 (juéxīn) = INNER RESOLVE, personal determination. 下决心 (resolve to), 决心戒烟 = resolve to quit smoking. INTIMATE and engaged connotation. 决议 (juéyì) = OFFICIAL RESOLUTION (assembly, party, UN). 通过一项决议 (pass a resolution). INSTITUTIONAL connotation. Hierarchy: 决定 (universal) < 决心 (intimate engaged) < 决议 (institutional). Mistake: 公司决心 ✗ (a company has no heart — use 决定). 联合国决心 ✗ → 联合国决议.',
+      '决定 (juédìng) = DECIDE (verb) or DECISION (noun) — universal, oral and written. 我决定去 / 这是公司的决定. Broadest. 决心 (juéxīn) = INNER RESOLVE, personal determination. 下决心 (resolve to), 决心戒烟 = resolve to quit smoking. INTIMATE and engaged connotation.\n' +
+      '\n' +
+      '- 决议 (juéyì) — OFFICIAL RESOLUTION (assembly, party, UN)\n' +
+      '- 通过一项决议 (pass a resolution) — \n' +
+      '\n' +
+      'INSTITUTIONAL connotation. Hierarchy: 决定 (universal) < 决心 (intimate engaged) < 决议 (institutional). Mistake: 公司决心 ✗ (a company has no heart — use 决定). 联合国决心 ✗ → 联合国决议.',
     items: [
       { hanzi: '决定', pinyin: 'juédìng', meaning: 'décider', meaningEn: 'decide', audio: 'audio/hsk3/hsk3_决定.wav' },
       { hanzi: '决心', pinyin: 'juéxīn', meaning: 'résolution intime', meaningEn: 'resolve', audio: 'audio/hsk5/hsk5_决心.wav' },
@@ -1143,7 +1185,12 @@ export const c11MediaDiscourseM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour **lire vite** la presse chinoise — ouvre 5 articles en parallèle, lis SEULEMENT les 导语. En 5 min, vue d\'ensemble de l\'actualité. Discipline de journaliste pro pour gérer le volume sans s\'épuiser.',
     bodyEn:
-      'Chinese 标题 (headline): short, factual, often 8-15 characters, sometimes in 2 lines (main + subhead 副标题). 导语 (lede): 1-2 sentences answering 5W+H (who, what, where, when, why, how). Read FIRST — gives 80% of the info. 主体 (body): chronological or thematic development, quotes in 「」 or 《》. 结尾 (close): can be a projection («预计未来…») or a quote. To read Chinese press FAST: headline → lede → first words of each paragraph. Reading every article in full will overwhelm you. Pro discipline.',
+      'Chinese 标题 (headline): short, factual, often 8-15 characters, sometimes in 2 lines (main + subhead 副标题). 导语 (lede): 1-2 sentences answering 5W+H (who, what, where, when, why, how). Read FIRST — gives 80% of the info.\n' +
+      '\n' +
+      '- 主体 (body) — chronological or thematic development, quotes in 「」 or 《》\n' +
+      '- 结尾 (close) — can be a projection («预计未来…») or a quote\n' +
+      '\n' +
+      'To read Chinese press FAST: headline → lede → first words of each paragraph. Reading every article in full will overwhelm you. Pro discipline.',
     items: [
       { hanzi: '标题', pinyin: 'biāotí', meaning: 'titre', meaningEn: 'headline', audio: 'audio/hsk5/hsk5_标题.wav' },
       { hanzi: '导语', pinyin: 'dǎoyǔ', meaning: 'chapeau (presse)', meaningEn: 'lede', audio: 'audio/hsk6/hsk6_导语.wav' },
@@ -1172,7 +1219,12 @@ export const c11MediaDiscourseM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le 新闻联播 a un ordre **rituel**. Le **temps** accordé à chaque dirigeant lors d\'une visite à l\'étranger est un **indicateur politique** surveillé par les analystes. Pour trianguler : Xinhua + Caixin + presse étrangère.',
     bodyEn:
-      '人民日报 (People\'s Daily): official Party voice, top in authority. Reading p.1 = reading the day\'s political line. 新华社 (Xinhua): state news agency, source of nearly all dispatches republished elsewhere. 央视 (CCTV) + 新闻联播 (the 7pm news, 30 min, watched/criticized by 100M+ nightly): fixed order — leaders → diplomacy → economy → society. 南方周末 (Southern Weekly, Canton-based): freer press within limits, social investigations. 财新 (Caixin): economic reference, more independent. To TRIANGULATE Chinese info: Xinhua + Caixin + foreign press (Reuters/Bloomberg in Chinese if you have access).',
+      '人民日报 (People\'s Daily): official Party voice, top in authority. Reading p.1 = reading the day\'s political line.\n' +
+      '\n' +
+      '- 新华社 (Xinhua) — state news agency, source of nearly all dispatches republished elsewhere\n' +
+      '- 央视 (CCTV) — + 新闻联播 (the 7pm news, 30 min, watched/criticized by 100M+ nightly): fixed order — leaders → diplomacy → economy → society\n' +
+      '\n' +
+      '南方周末 (Southern Weekly, Canton-based): freer press within limits, social investigations. 财新 (Caixin): economic reference, more independent. To TRIANGULATE Chinese info: Xinhua + Caixin + foreign press (Reuters/Bloomberg in Chinese if you have access).',
     items: [
       { hanzi: '人民日报', pinyin: 'rénmínrìbào', meaning: 'Quotidien du Peuple', meaningEn: 'People\'s Daily', audio: 'audio/hsk6/hsk6_人民.wav' },
       { hanzi: '新华社', pinyin: 'xīnhuáshè', meaning: 'Xinhua', meaningEn: 'Xinhua', audio: 'audio/hsk6/hsk6_新华社.wav' },
@@ -1209,7 +1261,11 @@ export const c11MediaDiscourseM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : tout discours officiel chinois depuis 1978 se positionne **par rapport à** 改革开放. Critiquer frontalement ce triptyque avec un Chinois est **inconfortable** : c\'est l\'une des sources du progrès dont chacun a profité. Discute, mais nuance.',
     bodyEn:
-      '改革 (reform) — modernizing economic structures. 开放 (opening) — to the outside world, foreign investment. 发展 (development) — ultimate goal. The 3 words form a system: you reform TO open, you open TO develop. 改革开放 (combined) = historical name of Deng Xiaoping\'s policy (Dec. 1978). Before: closed planned economy. After: Special Economic Zones (Shenzhen, Zhuhai, Xiamen, Shantou in 1980), WTO entry in 2001. All Chinese official discourse from 1978 to today positions itself RELATIVE TO 改革开放. Understanding this word = entry key to political discourse.',
+      '- 改革 (reform) — — modernizing economic structures\n' +
+      '- 开放 (opening) — — to the outside world, foreign investment\n' +
+      '- 发展 (development) — — ultimate goal\n' +
+      '\n' +
+      'The 3 words form a system: you reform TO open, you open TO develop. 改革开放 (combined) = historical name of Deng Xiaoping\'s policy (Dec. 1978). Before: closed planned economy. After: Special Economic Zones (Shenzhen, Zhuhai, Xiamen, Shantou in 1980), WTO entry in 2001. All Chinese official discourse from 1978 to today positions itself RELATIVE TO 改革开放. Understanding this word = entry key to political discourse.',
     items: [
       { hanzi: '改革', pinyin: 'gǎigé', meaning: 'réforme', meaningEn: 'reform', audio: 'audio/hsk5/hsk5_改革.wav' },
       { hanzi: '开放', pinyin: 'kāifàng', meaning: 'ouverture', meaningEn: 'opening', audio: 'audio/hsk5/hsk5_开放.wav' },
@@ -1393,7 +1449,13 @@ export const c11HistoryM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la question 这是哪个朝代 ? (de quelle dynastie ?) sonne **érudite** — les Chinois l\'utilisent constamment pour se repérer dans leur histoire. À adopter.',
     bodyEn:
-      'Chinese schoolchildren recite: 秦汉唐宋元明清 (qínhàn tángsòng yuán míngqīng) — 7 syllables for 2000 years. Mnemonic: «Qin a Han Tang son Yuan Ming Qing» (oral form that helps). 秦 (-221): short (15 years) but matrix of the empire — unification of currency, writing, measures. 汉 (4 centuries): opens the Silk Road, gives its name to 汉族 (95% of Chinese). 唐 (300 years): golden age — poetry, Buddhism, Chang\'an = largest city in the world. 宋 (300 years): tech (powder, compass, printing) but militarily weak. 元: Mongol rule. 明: Han restoration, Forbidden City. 清: Manchu, ends in revolution.',
+      'Chinese schoolchildren recite: 秦汉唐宋元明清 (qínhàn tángsòng yuán míngqīng) — 7 syllables for 2000 years. Mnemonic: «Qin a Han Tang son Yuan Ming Qing» (oral form that helps). 秦 (-221): short (15 years) but matrix of the empire — unification of currency, writing, measures.\n' +
+      '\n' +
+      '- 汉 (4 centuries) — opens the Silk Road, gives its name to 汉族 (95% of Chinese)\n' +
+      '- 唐 (300 years) — golden age — poetry, Buddhism, Chang\'an = largest city in the world\n' +
+      '- 宋 (300 years) — tech (powder, compass, printing) but militarily weak\n' +
+      '\n' +
+      '元: Mongol rule. 明: Han restoration, Forbidden City. 清: Manchu, ends in revolution.',
     items: [
       { hanzi: '秦', pinyin: 'qín', meaning: 'dyn. Qin', meaningEn: 'Qin dyn.', audio: 'audio/hsk6/hsk6_秦.wav' },
       { hanzi: '汉', pinyin: 'hàn', meaning: 'dyn. Han', meaningEn: 'Han dyn.', audio: 'audio/hsk2/hsk2_汉.wav' },
@@ -1511,7 +1573,15 @@ export const c11HistoryM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : 《红楼梦》 a sa propre **discipline universitaire** : 红学 (« études du Rouge »). Pour faire forte impression : « 我最近开始读红楼梦 » ouvre la porte d\'une discussion intellectuelle sérieuse.',
     bodyEn:
-      '《三国演义》(Romance of the Three Kingdoms) — 14th c., Luo Guanzhong. Period 220-280, Wei/Shu/Wu kingdoms. Figures: 关羽 (war god, deified), 诸葛亮 (genius strategist, model of the faithful counselor), 刘备 (the just emperor). 《水浒传》(Water Margin) — 108 bandit heroes at Liangshan marshes, anti-corruption. Model of popular resistance. 《西游记》(Journey to the West) — 16th c. The monk 唐僧 (Tang Seng) with 孙悟空 (Monkey King), 猪八戒 (Pig), 沙僧 seeks sutras in India. The most joyful and fantastic of the 4. 《红楼梦》(Dream of the Red Chamber) — 18th c., Cao Xueqin. Absolute peak: impossible loves in a declining great Qing family. Studied as its own discipline (红学, «redology»).',
+      '《三国演义》(Romance of the Three Kingdoms) — 14th c., Luo Guanzhong. Period 220-280, Wei/Shu/Wu kingdoms.\n' +
+      '\n' +
+      'Figures:\n' +
+      '\n' +
+      '- 关羽 (war god, deified)\n' +
+      '- 诸葛亮 (genius strategist, model of the faithful counselor)\n' +
+      '- 刘备 (the just emperor)\n' +
+      '\n' +
+      '《水浒传》(Water Margin) — 108 bandit heroes at Liangshan marshes, anti-corruption. Model of popular resistance. 《西游记》(Journey to the West) — 16th c. The monk 唐僧 (Tang Seng) with 孙悟空 (Monkey King), 猪八戒 (Pig), 沙僧 seeks sutras in India. The most joyful and fantastic of the 4. 《红楼梦》(Dream of the Red Chamber) — 18th c., Cao Xueqin. Absolute peak: impossible loves in a declining great Qing family. Studied as its own discipline (红学, «redology»).',
     items: [
       { hanzi: '三国演义', pinyin: 'sānguóyǎnyì', meaning: 'Trois Royaumes', meaningEn: 'Three Kingdoms', audio: 'audio/hsk6/hsk6_三国.wav' },
       { hanzi: '水浒传', pinyin: 'shuǐhǔzhuàn', meaning: 'Au bord de l\'eau', meaningEn: 'Water Margin', audio: 'audio/hsk6/hsk6_水浒.wav' },

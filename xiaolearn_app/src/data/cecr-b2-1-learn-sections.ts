@@ -116,7 +116,17 @@ export const b21GrammarLianM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si tu hésites, 一下 dépanne presque toujours.',
     bodyEn:
-      'To push indignation further, add 一 + a MINIMAL measure word after the negated verb. 连看也没看一眼 = didn\'t even glance once. 连喝也没喝一口 = didn\'t even take one sip. 连说也没说一句 = didn\'t even say one sentence. The measure depends on the verb: 一眼 (looks), 一口 (drinks/bites), 一句 (utterances), 一声 (sounds/greetings), 一下 (short acts). This extra layer makes the negation almost theatrical — big in novels and podcasts.',
+      'To push indignation further, add 一 + a MINIMAL measure word after the negated verb. 连看也没看一眼 = didn\'t even glance once. 连喝也没喝一口 = didn\'t even take one sip. 连说也没说一句 = didn\'t even say one sentence.\n' +
+      '\n' +
+      'The measure depends on the verb:\n' +
+      '\n' +
+      '- 一眼 (looks)\n' +
+      '- 一口 (drinks/bites)\n' +
+      '- 一句 (utterances)\n' +
+      '- 一声 (sounds/greetings)\n' +
+      '- 一下 (short acts)\n' +
+      '\n' +
+      'This extra layer makes the negation almost theatrical — big in novels and podcasts.',
     items: [
       { hanzi: '一眼', pinyin: 'yīyǎn', meaning: 'un coup d\'œil', meaningEn: 'a glance', audio: 'audio/hsk3/hsk3_眼.wav' },
       { hanzi: '一口', pinyin: 'yīkǒu', meaning: 'une gorgée / bouchée', meaningEn: 'a sip / a bite', audio: 'audio/hsk3/hsk3_口.wav' },
@@ -255,7 +265,13 @@ export const b21GrammarConjM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : si l\'une des trois pièces manque, la structure est bancale.',
     bodyEn:
-      'To say "no matter X, Y", you NEED: (1) 无论 (written) or 不管 (spoken), (2) a question word 谁/什么/哪/怎么 OR an A还是B alternative, (3) 都 or 也 in the second clause. Missing any piece = broken structure. 无论谁来，我都欢迎. 不管多忙，他都去健身房.',
+      'To say "no matter X, Y", you NEED:\n' +
+      '\n' +
+      '- (1) 无论 (written) or 不管 (spoken)\n' +
+      '- (2) a question word 谁/什么/哪/怎么 OR an A还是B alternative\n' +
+      '- (3) 都 or 也 in the second clause\n' +
+      '\n' +
+      'Missing any piece = broken structure. 无论谁来，我都欢迎. 不管多忙，他都去健身房.',
     items: [
       { hanzi: '无论', pinyin: 'wúlùn', meaning: 'peu importe (écrit)', meaningEn: 'no matter (written)', audio: 'audio/hsk5/hsk5_无论.wav' },
       { hanzi: '不管', pinyin: 'bùguǎn', meaning: 'peu importe (oral)', meaningEn: 'no matter (spoken)', audio: 'audio/hsk4/hsk4_不管.wav' },
@@ -421,7 +437,9 @@ export const b21TechM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'À noter : en Chine continentale, le **mobile** domine largement le desktop. Un 电脑 sert surtout au travail, le reste passe par 手机.',
     bodyEn:
-      'Modern Chinese digital life fits in three devices: 电脑, 手机, 屏幕. You open a 浏览器, visit a 网站, access an 账号 via a 密码. Note: in mainland China, mobile vastly dominates desktop — a 电脑 is mostly for work, everything else goes through 手机.',
+      'Modern Chinese digital life fits in three devices: 电脑, 手机, 屏幕. You open a 浏览器, visit a 网站, access an 账号 via a 密码.\n' +
+      '\n' +
+      'Note: in mainland China, mobile vastly dominates desktop — a 电脑 is mostly for work, everything else goes through 手机.',
     items: [
       { hanzi: '电脑', pinyin: 'diànnǎo', meaning: 'ordinateur', meaningEn: 'computer', audio: 'audio/hsk1/hsk1_电脑.wav' },
       { hanzi: '手机', pinyin: 'shǒujī', meaning: 'téléphone portable', meaningEn: 'mobile phone', audio: 'audio/hsk1/hsk1_手机.wav' },
@@ -471,7 +489,15 @@ export const b21TechM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les LLM chinois — 文心一言, 通义千问, DeepSeek — sont entraînés sur des 大数据 hébergés sur des 云. Comprendre ce trio est la clé pour lire la presse tech chinoise.',
     bodyEn:
-      '人工智能 breaks into "intelligence (智能) man-made (人工)". Three bricks: 算法 (algorithm), 数据 (data), 云计算 (cloud). Chinese LLMs — 文心一言, 通义千问, DeepSeek — are trained on 大数据 hosted on 云. Grasping this trio is the key to reading Chinese tech press.',
+      '人工智能 breaks into "intelligence (智能) man-made (人工)".\n' +
+      '\n' +
+      'Three bricks:\n' +
+      '\n' +
+      '- 算法 (algorithm)\n' +
+      '- 数据 (data)\n' +
+      '- 云计算 (cloud)\n' +
+      '\n' +
+      'Chinese LLMs — 文心一言, 通义千问, DeepSeek — are trained on 大数据 hosted on 云. Grasping this trio is the key to reading Chinese tech press.',
     items: [
       { hanzi: '人工智能', pinyin: 'réngōngzhìnéng', meaning: 'intelligence artificielle', meaningEn: 'artificial intelligence', audio: 'audio/hsk6/hsk6_人工智能.wav' },
       { hanzi: '算法', pinyin: 'suànfǎ', meaning: 'algorithme', meaningEn: 'algorithm', audio: 'audio/hsk6/hsk6_算法.wav' },
@@ -515,7 +541,15 @@ export const b21TechM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les billets papier disparaissent : même les marchés alimentaires acceptent les QR codes. Le cash reste utile seulement pour les touristes ou les très petits commerces ruraux.',
     bodyEn:
-      'In China, you pay with 支付宝 or 微信支付 by scanning a QR code (扫码). Actions: 付款 (pay), 转账 (transfer), 红包 (digital red envelope / gift). Paper bills are vanishing — even food markets accept QR codes. Cash stays useful only for tourists or very small rural shops.',
+      'In China, you pay with 支付宝 or 微信支付 by scanning a QR code (扫码).\n' +
+      '\n' +
+      'Actions:\n' +
+      '\n' +
+      '- 付款 (pay)\n' +
+      '- 转账 (transfer)\n' +
+      '- 红包 (digital red envelope / gift)\n' +
+      '\n' +
+      'Paper bills are vanishing — even food markets accept QR codes. Cash stays useful only for tourists or very small rural shops.',
     items: [
       { hanzi: '支付宝', pinyin: 'zhīfùbǎo', meaning: 'Alipay', meaningEn: 'Alipay', audio: 'audio/hsk5/hsk5_支付宝.wav' },
       { hanzi: '微信支付', pinyin: 'wēixìn zhīfù', meaning: 'WeChat Pay', meaningEn: 'WeChat Pay', audio: 'audio/hsk5/hsk5_微信支付.wav' },
@@ -536,7 +570,13 @@ export const b21TechM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Pour la restauration, 美团 et 饿了么 dominent le 外卖. La livraison **express** 快递 arrive souvent le lendemain, parfois le jour même — infrastructure qui stupéfie les Occidentaux.',
     bodyEn:
-      'The e-commerce trio: 淘宝 (C2C, everything), 京东 (B2C, higher quality), 拼多多 (group buying low-cost, exploding). For food, 美团 and 饿了么 dominate 外卖. Express 快递 usually arrives next day, sometimes same day — infrastructure that stuns Westerners.',
+      'The e-commerce trio:\n' +
+      '\n' +
+      '- 淘宝 (C2C, everything)\n' +
+      '- 京东 (B2C, higher quality)\n' +
+      '- 拼多多 (group buying low-cost, exploding)\n' +
+      '\n' +
+      'For food, 美团 and 饿了么 dominate 外卖. Express 快递 usually arrives next day, sometimes same day — infrastructure that stuns Westerners.',
     items: [
       { hanzi: '淘宝', pinyin: 'táobǎo', meaning: 'Taobao', meaningEn: 'Taobao', audio: 'audio/hsk4/hsk4_淘宝.wav' },
       { hanzi: '京东', pinyin: 'jīngdōng', meaning: 'JD.com', meaningEn: 'JD.com', audio: 'audio/hsk5/hsk5_京东.wav' },
@@ -622,7 +662,13 @@ export const b21EnvM2LearnSections: LessonV2LearnSection[] = [
       '- 二氧化碳 (CO₂)\n' +
       '- 极端天气 (météo extrême, de plus en plus fréquente depuis 2020)',
     bodyEn:
-      'In 2020, Xi Jinping announced two UN targets: 碳达峰 (carbon peak) by 2030 and 碳中和 (carbon neutrality) by 2060. This "double carbon" (双碳) frames Chinese energy policy. Vocabulary to grasp: 温室气体 (greenhouse gases), 二氧化碳 (CO₂), 极端天气 (extreme weather, ever more frequent since 2020).',
+      'In 2020, Xi Jinping announced two UN targets: 碳达峰 (carbon peak) by 2030 and 碳中和 (carbon neutrality) by 2060. This "double carbon" (双碳) frames Chinese energy policy.\n' +
+      '\n' +
+      'Vocabulary to grasp:\n' +
+      '\n' +
+      '- 温室气体 (greenhouse gases)\n' +
+      '- 二氧化碳 (CO₂)\n' +
+      '- 极端天气 (extreme weather, ever more frequent since 2020)',
     items: [
       { hanzi: '气候变化', pinyin: 'qìhòubiànhuà', meaning: 'changement climatique', meaningEn: 'climate change', audio: 'audio/hsk6/hsk6_气候变化.wav' },
       { hanzi: '全球变暖', pinyin: 'quánqiú biànnuǎn', meaning: 'réchauffement climatique', meaningEn: 'global warming', audio: 'audio/hsk6/hsk6_全球变暖.wav' },
@@ -649,7 +695,14 @@ export const b21EnvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les amendes vont jusqu\'à 200 yuans pour les particuliers, plusieurs milliers pour les entreprises. D\'autres villes suivent — Pékin, Hangzhou. Un vocabulaire militant émerge autour de 一次性 (jetable) et 塑料袋 (sac plastique).',
     bodyEn:
-      'Since July 2019, Shanghai enforces four sorting categories: 可回收物 (recyclables), 有害垃圾 (hazardous), 湿垃圾 (wet/organic), 干垃圾 (dry/other). Fines reach 200 yuan for individuals, thousands for businesses. Other cities follow — Beijing, Hangzhou. An activist vocabulary is emerging around 一次性 (disposable) and 塑料袋 (plastic bag).',
+      'Since July 2019, Shanghai enforces four sorting categories:\n' +
+      '\n' +
+      '- 可回收物 (recyclables)\n' +
+      '- 有害垃圾 (hazardous)\n' +
+      '- 湿垃圾 (wet/organic)\n' +
+      '- 干垃圾 (dry/other)\n' +
+      '\n' +
+      'Fines reach 200 yuan for individuals, thousands for businesses. Other cities follow — Beijing, Hangzhou. An activist vocabulary is emerging around 一次性 (disposable) and 塑料袋 (plastic bag).',
     items: [
       { hanzi: '垃圾', pinyin: 'lājī', meaning: 'déchets', meaningEn: 'garbage', audio: 'audio/hsk4/hsk4_垃圾.wav' },
       { hanzi: '分类', pinyin: 'fēnlèi', meaning: 'classer, trier', meaningEn: 'classify, sort', audio: 'audio/hsk5/hsk5_分类.wav' },
@@ -709,7 +762,16 @@ export const b21EconomicsM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Des noms phares — Alibaba, Meituan, ByteDance, BYD — sont tous passés par ces étapes.',
     bodyEn:
-      '创业 literally means "create (创) a venture (业)". The Chinese startup ecosystem concentrates at 中关村 (Beijing) and 深圳 (southern tech hub). Classic stages: 融资 (raise funds), 估值 (valuation), hitting 独角兽 (unicorn > $1B), then 上市 (IPO). Big names: Alibaba, Meituan, ByteDance, BYD — all went through these steps.',
+      '创业 literally means "create (创) a venture (业)". The Chinese startup ecosystem concentrates at 中关村 (Beijing) and 深圳 (southern tech hub).\n' +
+      '\n' +
+      'Classic stages:\n' +
+      '\n' +
+      '- 融资 (raise funds)\n' +
+      '- 估值 (valuation)\n' +
+      '- hitting 独角兽 (unicorn > $1B)\n' +
+      '- then 上市 (IPO)\n' +
+      '\n' +
+      'Big names: Alibaba, Meituan, ByteDance, BYD — all went through these steps.',
     items: [
       { hanzi: '创业', pinyin: 'chuàngyè', meaning: 'entreprendre', meaningEn: 'start a business', audio: 'audio/hsk5/hsk5_创业.wav' },
       { hanzi: '创始人', pinyin: 'chuàngshǐrén', meaning: 'fondateur', meaningEn: 'founder', audio: 'audio/hsk6/hsk6_创始人.wav' },
@@ -775,7 +837,16 @@ export const b21ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Phrase culturellement attendue : 大家有什么想法都可以提 (n\'hésitez pas à proposer). Sans cette invitation, les Chinois plus jeunes attendent que tu **désignes** nommément.',
     bodyEn:
-      'Open: 大家好，我们今天的会议有三个议题 (hello, we have 3 agenda items). Launch a topic: 第一个议题是 X / 我们先来讨论 X. Give the floor: 老张，你先说 / 你怎么看？Refocus: 这个问题我们一会儿再讨论 / 我们先回到主题. Key vocab: 议题 (agenda item), 主持 (chair), 主题 (topic), 进度 (progress). Culturally expected: 大家有什么想法都可以提 (feel free to share ideas) — shows you invite participation, otherwise younger Chinese wait to be called on.',
+      'Open: 大家好，我们今天的会议有三个议题 (hello, we have 3 agenda items). Launch a topic: 第一个议题是 X / 我们先来讨论 X. Give the floor: 老张，你先说 / 你怎么看？Refocus: 这个问题我们一会儿再讨论 / 我们先回到主题.\n' +
+      '\n' +
+      'Key vocab:\n' +
+      '\n' +
+      '- 议题 (agenda item)\n' +
+      '- 主持 (chair)\n' +
+      '- 主题 (topic)\n' +
+      '- 进度 (progress)\n' +
+      '\n' +
+      'Culturally expected: 大家有什么想法都可以提 (feel free to share ideas) — shows you invite participation, otherwise younger Chinese wait to be called on.',
     items: [
       { hanzi: '议题', pinyin: 'yìtí', meaning: 'point d\'agenda', meaningEn: 'agenda item', audio: 'audio/hsk6/hsk6_议题.wav' },
       { hanzi: '主持', pinyin: 'zhǔchí', meaning: 'présider', meaningEn: 'chair', audio: 'audio/hsk5/hsk5_主持.wav' },
@@ -832,7 +903,14 @@ export const b21ConvM2LearnSections: LessonV2LearnSection[] = [
       '- forcer la main poliment — 我们的预算有限 / 这是我们的最后报价\n' +
       '- conclure — 我们达成协议了 !',
     bodyEn:
-      'Open: 我们想了解一下贵公司的报价 (we\'d like to know your offer). Push: 这个价格我们觉得有点高 (a bit high), 还有没有调整的空间？(any room?). 空间 (space) = key Chinese negotiation vocab. Propose compromise: 如果 X，我们可以考虑 Y. Politely force: 我们的预算有限 (our budget is limited), 这是我们的最后报价 (this is our final offer). Close: 我们达成协议了！(we have an agreement!). In Chinese culture, hard negotiation is NORMAL and expected — accepting the first price can lose respect.',
+      'Open: 我们想了解一下贵公司的报价 (we\'d like to know your offer).\n' +
+      '\n' +
+      'Push:\n' +
+      '\n' +
+      '- 这个价格我们觉得有点高 (a bit high) — 还有没有调整的空间？(any room?)\n' +
+      '- 空间 (space) — key Chinese negotiation vocab\n' +
+      '\n' +
+      'Propose compromise: 如果 X，我们可以考虑 Y. Politely force: 我们的预算有限 (our budget is limited), 这是我们的最后报价 (this is our final offer). Close: 我们达成协议了！(we have an agreement!). In Chinese culture, hard negotiation is NORMAL and expected — accepting the first price can lose respect.',
     items: [
       { hanzi: '报价', pinyin: 'bàojià', meaning: 'devis, prix offert', meaningEn: 'quote', audio: 'audio/hsk6/hsk6_报价.wav' },
       { hanzi: '空间', pinyin: 'kōngjiān', meaning: 'marge, espace', meaningEn: 'room, space', audio: 'audio/hsk5/hsk5_空间.wav' },
@@ -859,7 +937,15 @@ export const b21ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : ne **jamais** signer sur place, même sous pression. La culture chinoise respecte qui prend son temps. Phrase magique : 我需要跟我的团队商量一下 (je dois en discuter avec mon équipe).',
     bodyEn:
-      'Vocab: 条款 (clauses), 条件 (conditions), 期限 (deadline), 责任 (responsibility), 违约 (breach of contract). Ask to clarify: 这个条款是什么意思？/ 我对 X 有点疑问. Propose change: 我们可以加一条 X (we can add an X clause). To safeguard: 我可以再考虑一下吗？(can I think it over?). CULTURAL TRAP: NEVER sign on the spot, even under pressure. Chinese culture respects taking time. Magic phrase: 我需要跟我的团队商量一下 (I need to discuss with my team).',
+      'Vocab:\n' +
+      '\n' +
+      '- 条款 (clauses)\n' +
+      '- 条件 (conditions)\n' +
+      '- 期限 (deadline)\n' +
+      '- 责任 (responsibility)\n' +
+      '- 违约 (breach of contract)\n' +
+      '\n' +
+      'Ask to clarify: 这个条款是什么意思？/ 我对 X 有点疑问. Propose change: 我们可以加一条 X (we can add an X clause). To safeguard: 我可以再考虑一下吗？(can I think it over?). CULTURAL TRAP: NEVER sign on the spot, even under pressure. Chinese culture respects taking time. Magic phrase: 我需要跟我的团队商量一下 (I need to discuss with my team).',
     items: [
       { hanzi: '条款', pinyin: 'tiáokuǎn', meaning: 'clause', meaningEn: 'clause', audio: 'audio/hsk6/hsk6_条款.wav' },
       { hanzi: '条件', pinyin: 'tiáojiàn', meaning: 'condition', meaningEn: 'condition', audio: 'audio/hsk4/hsk4_条件.wav' },
@@ -890,7 +976,14 @@ export const b21ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : toujours proposer une **solution** en même temps que le problème (我们的解决方案是 Y). Reporter un souci sans solution est culturellement perçu comme un manque d\'initiative.',
     bodyEn:
-      'Structure: 项目目前的进度 (current progress), 已完成的部分 (what\'s done), 正在进行 (in progress), 计划中的下一步 (planned next steps). Vocab: 完成度 (completion rate), 进展顺利 (going smoothly), 遇到了一些问题 (encountered issues). Positive phrase: 总体上按计划进行 (overall on schedule). If delayed: 因为 X，我们可能要延期一周 (cause + delay). Always propose a SOLUTION at the same time: 我们的解决方案是 Y. Reporting a problem WITHOUT a solution is culturally seen as lack of initiative.',
+      'Structure:\n' +
+      '\n' +
+      '- 项目目前的进度 (current progress)\n' +
+      '- 已完成的部分 (what\'s done)\n' +
+      '- 正在进行 (in progress)\n' +
+      '- 计划中的下一步 (planned next steps)\n' +
+      '\n' +
+      'Vocab: 完成度 (completion rate), 进展顺利 (going smoothly), 遇到了一些问题 (encountered issues). Positive phrase: 总体上按计划进行 (overall on schedule). If delayed: 因为 X，我们可能要延期一周 (cause + delay). Always propose a SOLUTION at the same time: 我们的解决方案是 Y. Reporting a problem WITHOUT a solution is culturally seen as lack of initiative.',
     items: [
       { hanzi: '进度', pinyin: 'jìndù', meaning: 'avancement', meaningEn: 'progress', audio: 'audio/hsk5/hsk5_进度.wav' },
       { hanzi: '完成度', pinyin: 'wánchéngdù', meaning: 'taux d\'achèvement', meaningEn: 'completion rate', audio: 'audio/hsk3/hsk3_完成.wav' },
@@ -919,7 +1012,17 @@ export const b21ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la phrase 这个数据需要进一步分析 (ces données méritent plus d\'analyse) montre une **prudence intellectuelle** très valorisée en pro chinois.',
     bodyEn:
-      'Introduce: 根据我们的数据 (based on our data). Verbs: 增长 (growth), 下降 (decline), 保持 (maintain), 超过 (exceed), 达到 (reach). Quantify: 增长了 X 个百分点 = increased X percentage points (≠ X% — subtle but important). Compare: 比上个季度 X (vs last quarter). Highlight: 值得注意的是 X (notable is X). Close: 总体来看 (overall), 数据显示 X (data shows X). Nuanced phrase: 这个数据需要进一步分析 (this data deserves more analysis) — shows intellectual caution, valued in Chinese pro settings.',
+      'Introduce: 根据我们的数据 (based on our data).\n' +
+      '\n' +
+      'Verbs:\n' +
+      '\n' +
+      '- 增长 (growth)\n' +
+      '- 下降 (decline)\n' +
+      '- 保持 (maintain)\n' +
+      '- 超过 (exceed)\n' +
+      '- 达到 (reach)\n' +
+      '\n' +
+      'Quantify: 增长了 X 个百分点 = increased X percentage points (≠ X% — subtle but important). Compare: 比上个季度 X (vs last quarter). Highlight: 值得注意的是 X (notable is X). Close: 总体来看 (overall), 数据显示 X (data shows X). Nuanced phrase: 这个数据需要进一步分析 (this data deserves more analysis) — shows intellectual caution, valued in Chinese pro settings.',
     items: [
       { hanzi: '数据', pinyin: 'shùjù', meaning: 'données', meaningEn: 'data', audio: 'audio/hsk5/hsk5_数据.wav' },
       { hanzi: '增长', pinyin: 'zēngzhǎng', meaning: 'croissance', meaningEn: 'growth', audio: 'audio/hsk5/hsk5_增长.wav' },
