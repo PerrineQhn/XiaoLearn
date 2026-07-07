@@ -210,13 +210,13 @@ export const nationalitiesLearnSections: LessonV2LearnSection[] = [
     title: 'La question : « d\'où viens-tu ? »',
     titleEn: 'The "where are you from?" question',
     body:
-      'La structure standard : 你是哪国人 ? (nǐ shì nǎ guó rén) — littéralement « tu + es + quel + pays + personne ? ». Compact mais très **régulier**.\n' +
+      'La structure standard : 你是哪国人 ? (nǐ shì nǎ guórén) — littéralement « tu + es + quel + pays + personne ? ». Compact mais très **régulier**.\n' +
       '\n' +
       'Règle : réponse en 我是 + [nationalité].\n' +
       '\n' +
       'Exemple : 我是法国人 (wǒ shì fǎguórén) — « je suis français ».',
     bodyEn:
-      'The standard pattern: 你是哪国人? (nǐ shì nǎ guó rén) — literally "you + are + which + country + person?". Compact but very regular.\nAnswer: 我是 + [nationality]. E.g. 我是法国人 (wǒ shì fǎguórén) — "I am French".',
+      'The standard pattern: 你是哪国人? (nǐ shì nǎ guórén) — literally "you + are + which + country + person?". Compact but very regular.\nAnswer: 我是 + [nationality]. E.g. 我是法国人 (wǒ shì fǎguórén) — "I am French".',
     items: [
       { hanzi: '哪', pinyin: 'nǎ', meaning: 'quel, lequel', meaningEn: 'which', audio: 'audio/hsk1/hsk1_哪.wav' },
       { hanzi: '国', pinyin: 'guó', meaning: 'pays', meaningEn: 'country', audio: 'audio/hsk1/hsk1_国.wav' },
@@ -300,13 +300,13 @@ export const numbersExtendedLearnSections: LessonV2LearnSection[] = [
     title: 'Les centaines et au-delà',
     titleEn: 'Hundreds and beyond',
       body:
-      '100 = 一百 (yī bǎi), 1 000 = 一千 (yī qiān). La logique reste la même : [chiffre] + 百, [chiffre] + 千.\n' +
+      '100 = 一百 (yī bǎi), 1 000 = 一千 (yīqiān). La logique reste la même : [chiffre] + 百, [chiffre] + 千.\n' +
       '\n' +
-      'Exception : 10 000 = 一万 (yī wàn). Le chinois regroupe par **10 000** et non par 1 000 comme l\'Occident.\n' +
+      'Exception : 10 000 = 一万 (yīwàn). Le chinois regroupe par **10 000** et non par 1 000 comme l\'Occident.\n' +
       '\n' +
       'Conséquence : 1 million = 一百万 (« 100 × 10 000 »).',
     bodyEn:
-      '100 = 一百 (yī bǎi), 1 000 = 一千 (yī qiān). Same rule: [digit] + 百, [digit] + 千.\nChinese quirk: 10 000 = 一万 (yī wàn). Chinese groups by 10 000 rather than 1 000 as the West does. 1 million = 一百万 ("100 × 10 000").',
+      '100 = 一百 (yī bǎi), 1 000 = 一千 (yīqiān). Same rule: [digit] + 百, [digit] + 千.\nChinese quirk: 10 000 = 一万 (yīwàn). Chinese groups by 10 000 rather than 1 000 as the West does. 1 million = 一百万 ("100 × 10 000").',
     items: [
       { hanzi: '百', pinyin: 'bǎi', meaning: 'cent', meaningEn: 'hundred', audio: 'audio/hsk1/hsk1_百.wav' },
       { hanzi: '千', pinyin: 'qiān', meaning: 'mille', meaningEn: 'thousand', audio: 'audio/hsk1/hsk1_千.wav' },
@@ -436,11 +436,11 @@ export const ageLearnSections: LessonV2LearnSection[] = [
       'Le mot-clé : 岁 (suì) = « année d\'âge, ans ». Il est **différent** de 年 (année calendaire).\n' +
       '\n' +
       'Trois formules selon l\'âge du destinataire :\n' +
-      '- Enfant (<10 ans) : 你几岁 ? (nǐ jǐ suì) — « tu as combien d\'années ? »\n' +
+      '- Enfant (<10 ans) : 你几岁 ? (nǐ jǐsuì) — « tu as combien d\'années ? »\n' +
       '- Adulte : 你多大 ? (nǐ duō dà) — « tu as quelle taille ? » (plus poli)\n' +
       '- Personne âgée : 您多大年纪 ? (plus respectueux)',
     bodyEn:
-      'Key word: 岁 (suì) = "year of age, years old". Different from 年 (calendar year).\nTo ask age, three options depending on the listener\'s likely age:\n  • Child (<10): 你几岁? (nǐ jǐ suì) — "how many years?"\n  • Adult: 你多大? (nǐ duō dà) — "how big are you?" (more polite)\n  • Elderly: 您多大年纪? (more respectful)',
+      'Key word: 岁 (suì) = "year of age, years old". Different from 年 (calendar year).\nTo ask age, three options depending on the listener\'s likely age:\n  • Child (<10): 你几岁? (nǐ jǐsuì) — "how many years?"\n  • Adult: 你多大? (nǐ duō dà) — "how big are you?" (more polite)\n  • Elderly: 您多大年纪? (more respectful)',
     items: [
       { hanzi: '岁', pinyin: 'suì', meaning: 'an (unité d\'âge)', meaningEn: 'years old', audio: 'audio/hsk1/hsk1_岁.wav' },
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (petit nombre)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
@@ -459,17 +459,17 @@ export const ageLearnSections: LessonV2LearnSection[] = [
     body:
       'Structure : 我 + [chiffre] + 岁.\n' +
       '\n' +
-      'Exemple : 我三十岁 (wǒ sān shí suì) = « j\'ai 30 ans ».\n' +
+      'Exemple : 我三十岁 (wǒ sānshísuì) = « j\'ai 30 ans ».\n' +
       '\n' +
       'Règle d\'or : le verbe « avoir » (有) n\'est **jamais** utilisé avec l\'âge — on met juste le chiffre directement.\n' +
       '\n' +
       'Attention : 我有三十岁 est une erreur **typique** de francophone. Dis juste 我三十岁.',
     bodyEn:
-      'Structure: 我 + [digit] + 岁. E.g. 我三十岁 (wǒ sān shí suì) = "I am 30".\nThe verb "to have" (有) is NOT used with age — just put the number directly.\n我有三十岁 is a classic French-speaker mistake. Just say 我三十岁.',
+      'Structure: 我 + [digit] + 岁. E.g. 我三十岁 (wǒ sānshísuì) = "I am 30".\nThe verb "to have" (有) is NOT used with age — just put the number directly.\n我有三十岁 is a classic French-speaker mistake. Just say 我三十岁.',
     tip:
-      'Pour un âge avec des demi : 我二十五岁半 (wǒ èrshíwǔ suì bàn) = « j\'ai 25 ans et demi ». 半 = moitié.',
+      'Pour un âge avec des demi : 我二十五岁半 (wǒ èrshíwǔsuì bàn) = « j\'ai 25 ans et demi ». 半 = moitié.',
     tipEn:
-      'For "and a half" ages: 我二十五岁半 (wǒ èrshíwǔ suì bàn) = "I\'m 25 and a half". 半 = half.'
+      'For "and a half" ages: 我二十五岁半 (wǒ èrshíwǔsuì bàn) = "I\'m 25 and a half". 半 = half.'
   }
 ];
 
@@ -578,9 +578,9 @@ export const colorsLearnSections: LessonV2LearnSection[] = [
       { hanzi: '颜色', pinyin: 'yánsè', meaning: 'couleur (terme général)', meaningEn: 'color (general)', audio: 'audio/hsk1/hsk1_颜色.wav' }
     ],
     tip:
-      'Pour demander « quelle couleur ? » : 什么颜色 ? (shén me yán sè) — « quoi + couleur ? ». Réponse standard : [couleur] + 色 ou juste la couleur.',
+      'Pour demander « quelle couleur ? » : 什么颜色 ? (shénme yánsè) — « quoi + couleur ? ». Réponse standard : [couleur] + 色 ou juste la couleur.',
     tipEn:
-      'To ask "what color?": 什么颜色? (shén me yán sè) — "what + color?". Standard answer: [color] + 色 or just the color.'
+      'To ask "what color?": 什么颜色? (shénme yánsè) — "what + color?". Standard answer: [color] + 色 or just the color.'
   }
 ];
 
@@ -1029,9 +1029,9 @@ export const classifiersLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Règle d\'or : structure obligatoire [chiffre] + [classificateur] + [nom].\n' +
       '\n' +
-      'Exemple : 三本书 (sān běn shū) = trois livres (littéralement « trois [reliure] livres »).',
+      'Exemple : 三本书 (sān běnshū) = trois livres (littéralement « trois [reliure] livres »).',
     bodyEn:
-      'In Chinese, you CAN\'T say "three books" directly. You need an intermediate word, called a "classifier" (or "measure word").\nMandatory structure: [number] + [classifier] + [noun].\nE.g. 三本书 (sān běn shū) = three books (literally "three [binding] books").',
+      'In Chinese, you CAN\'T say "three books" directly. You need an intermediate word, called a "classifier" (or "measure word").\nMandatory structure: [number] + [classifier] + [noun].\nE.g. 三本书 (sān běnshū) = three books (literally "three [binding] books").',
     tip:
       'Chaque nom a son classificateur préféré. Certains sont logiques (本 pour tout ce qui se feuillette), d\'autres historiques. Avec le temps, on les apprend par paires nom+classificateur.',
     tipEn:
@@ -1511,9 +1511,9 @@ export const a1ConvM7LearnSections: LessonV2LearnSection[] = [
       { hanzi: '旁边', pinyin: 'pángbiān', meaning: 'à côté', meaningEn: 'next to', audio: 'audio/hsk2/hsk2_旁边.wav' }
     ],
     tip:
-      'Astuce : ouvre 高德地图 (gāo dé dìtú) ou 百度地图 (bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
+      'Astuce : ouvre 高德地图 (gāodé dìtú) ou 百度地图 (bǎidù dìtú) sur ton téléphone. Plus fiable que demander aux passants car les Chinois donnent rarement des distances précises (« pas loin », « pas si proche »).',
     tipEn:
-      'Tip: open 高德地图 (gāo dé dìtú) or 百度地图 (bǎidù dìtú) on your phone. More reliable than asking passers-by, since Chinese rarely give precise distances («not far», «not so close»).'
+      'Tip: open 高德地图 (gāodé dìtú) or 百度地图 (bǎidù dìtú) on your phone. More reliable than asking passers-by, since Chinese rarely give precise distances («not far», «not so close»).'
   }
 ];
 
@@ -2004,18 +2004,18 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
     titleEn: '不会 / 不能 / 不可以 — 3 ways to say «no»',
     body:
       'Les 3 négations donnent 3 raisons différentes qu\'une action n\'a pas lieu :\n' +
-      '- **不会** (bú huì) : je n\'ai jamais appris. Ex : 我不会游泳 (wǒ bú huì yóuyǒng) « je ne sais pas nager ».\n' +
+      '- **不会** (bú huì) : je n\'ai jamais appris. Ex : 我不会游泳 (wǒ búhuì yóuyǒng) « je ne sais pas nager ».\n' +
       '- **不能** (bù néng) : mon corps ou la situation me bloquent. Ex : 今天有事，我不能来 (jīntiān yǒu shì, wǒ bù néng lái) « j\'ai un truc aujourd\'hui, je ne peux pas venir ».\n' +
-      '- **不可以** (bù kěyǐ) : c\'est interdit. Ex : 学生不可以带手机进考场 (xuéshēng bù kěyǐ dài shǒujī jìn kǎochǎng) « les élèves ne peuvent pas apporter de téléphone en salle d\'examen ».\n' +
+      '- **不可以** (bù kěyǐ) : c\'est interdit. Ex : 学生不可以带手机进考场 (xuéshēng bù kěyǐ dài shǒujī jìnkǎochǎng) « les élèves ne peuvent pas apporter de téléphone en salle d\'examen ».\n' +
       '\n' +
       'Nuance de ton entre 不能 et 不可以 :\n' +
       '- 不可以 sonne comme une règle stricte, du genre écrit sur un panneau.\n' +
       '- 不能 sonne plus doux, car il pointe des circonstances plutôt qu\'une autorité.\n' +
-      '- Les locuteurs préfèrent souvent 不能 en conversation polie même quand une règle est réellement en cause. 这里不能抽烟 (zhèlǐ bù néng chōuyān) sonne plus doux que 这里不可以抽烟, mais les 2 signalent la même interdiction.\n' +
+      '- Les locuteurs préfèrent souvent 不能 en conversation polie même quand une règle est réellement en cause. 这里不能抽烟 (zhèlǐ bùnéng chōuyān) sonne plus doux que 这里不可以抽烟, mais les 2 signalent la même interdiction.\n' +
       '\n' +
-      'Attention : 不会 a aussi un sens de prédiction (« ce n\'est pas probable que »). Ex : 他不会迟到的 (tā bú huì chídào de) « il ne sera pas en retard ». C\'est le contexte qui tranche.',
+      'Attention : 不会 a aussi un sens de prédiction (« ce n\'est pas probable que »). Ex : 他不会迟到的 (tā búhuì chídào de) « il ne sera pas en retard ». C\'est le contexte qui tranche.',
     bodyEn:
-      'The 3 negatives give 3 different reasons an action doesn\'t happen. 不会 (bú huì): I never learned. 我不会游泳 = «I can\'t swim.» 不能 (bù néng): body or situation blocks me. 今天有事，我不能来 = «I have something today, I can\'t come.» 不可以 (bù kěyǐ): it\'s forbidden. 学生不可以带手机进考场 = «students may not bring phones into the exam room.» Tone nuance between 不能 and 不可以: 不可以 sounds like a strict rule (sign-on-a-wall type). 不能 sounds softer because it points to circumstances rather than authority. Speakers often prefer 不能 in polite conversation even when a rule is truly in play. 这里不能抽烟 sounds softer than 这里不可以抽烟, but both signal the same ban. Watch out: 不会 also has a prediction meaning («not likely to»). 他不会迟到的 = «he won\'t be late.» Context decides.',
+      'The 3 negatives give 3 different reasons an action doesn\'t happen. 不会 (búhuì): I never learned. 我不会游泳 = «I can\'t swim.» 不能 (bùnéng): body or situation blocks me. 今天有事，我不能来 = «I have something today, I can\'t come.» 不可以 (bù kěyǐ): it\'s forbidden. 学生不可以带手机进考场 = «students may not bring phones into the exam room.» Tone nuance between 不能 and 不可以: 不可以 sounds like a strict rule (sign-on-a-wall type). 不能 sounds softer because it points to circumstances rather than authority. Speakers often prefer 不能 in polite conversation even when a rule is truly in play. 这里不能抽烟 sounds softer than 这里不可以抽烟, but both signal the same ban. Watch out: 不会 also has a prediction meaning («not likely to»). 他不会迟到的 = «he won\'t be late.» Context decides.',
     items: [
       { hanzi: '不会', pinyin: 'búhuì', meaning: 'ne pas savoir (appris)', meaningEn: 'not know how (learned)', audio: 'audio/hsk1/hsk1_会.wav' },
       { hanzi: '不能', pinyin: 'bùnéng', meaning: 'ne pas pouvoir (bloqué)', meaningEn: 'can\'t (blocked)', audio: 'audio/hsk1/hsk1_能.wav' },

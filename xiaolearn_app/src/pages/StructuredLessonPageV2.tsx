@@ -2221,10 +2221,14 @@ const OrderExerciseCard = ({
   // comme hint car c'est la phrase CHINOISE que l'utilisateur doit
   // reconstruire = spoiler total. On utilise UNIQUEMENT la version traduite
   // (sentenceFr / sentenceEn). Si pas de traduction dispo, pas de hint du tout.
+  // V23 BUG FIX : les data d'ordre utilisent `sentence` (pas `sentenceFr`).
+  // L'ancien code lisait `sentenceFr` qui n'existe PAS dans le type, retombait
+  // TOUJOURS sur `sentenceEn` et affichait l'anglais en mode FR.
+  const sentenceFrValue = exercise.sentenceFr ?? exercise.sentence;
   let hintText: string | undefined =
     language === 'en'
-      ? (exercise.sentenceEn ?? exercise.sentenceFr)
-      : (exercise.sentenceFr ?? exercise.sentenceEn);
+      ? (exercise.sentenceEn ?? sentenceFrValue)
+      : (sentenceFrValue ?? exercise.sentenceEn);
   // Si le prompt contient déjà le sens (cas "Ordonne : « Désolé de te déranger. »"
   // + hint "Désolé de te déranger."), on masque le label "Sens :" redondant.
   if (hintText) {

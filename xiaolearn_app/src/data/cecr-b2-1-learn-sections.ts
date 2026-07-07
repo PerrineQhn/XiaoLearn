@@ -1397,7 +1397,7 @@ export const b21NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : 算了 envers soi = renoncer ; envers l\'autre (« 算了吧 ! ») = légèrement agacé ou dismissif. Ton + contexte changent tout. Prudence en pro avec un supérieur.',
     bodyEn:
-      '算是 (suànshi) = can be considered as / counts as. 这算是一个不错的开始 = this can be considered a good start. Softens, qualifies. 算了 (suànle) = forget it, OK, leave it. 算了，我自己来 = forget it, I\'ll do it myself. Marks GIVING UP (not really positive). 算上 (suàn shàng) = include, count in. 把我也算上 = count me in too. Marks INCLUSION. Three VERY different senses with the same base verb 算 (count, calculate). Remember: 算是 (qualify) ≠ 算了 (give up) ≠ 算上 (include).',
+      '算是 (suànshi) = can be considered as / counts as. 这算是一个不错的开始 = this can be considered a good start. Softens, qualifies. 算了 (suànle) = forget it, OK, leave it. 算了，我自己来 = forget it, I\'ll do it myself. Marks GIVING UP (not really positive). 算上 (suànshàng) = include, count in. 把我也算上 = count me in too. Marks INCLUSION. Three VERY different senses with the same base verb 算 (count, calculate). Remember: 算是 (qualify) ≠ 算了 (give up) ≠ 算上 (include).',
     items: [
       { hanzi: '算是', pinyin: 'suànshì', meaning: 'considérer comme', meaningEn: 'count as', audio: 'audio/hsk5/hsk5_算.wav' },
       { hanzi: '算了', pinyin: 'suànle', meaning: 'laisse tomber', meaningEn: 'forget it', audio: 'audio/hsk4/hsk4_算了.wav' },
@@ -1668,10 +1668,10 @@ export const b21NuancesConditionalAdvancedLearnSections: LessonV2LearnSection[] 
       'Échelle de formalité du plus décontracté au plus soutenu :\n' +
       '- 要是 : oral et conversationnel (nord de la Chine surtout).\n' +
       '- 如果 : neutre, marche partout.\n' +
-      '- 假如 (jiǎ rú) : conseil sérieux, présentation soignée. Fait un peu « littéraire » à l\'oral décontracté. Ex : 假如有困难，你一定要告诉我 (jiǎ rú yǒu kùn nán, nǐ yí dìng yào gào sù wǒ) « en cas de difficulté, dis-le moi absolument ». Le ton est ferme et attentionné.\n' +
+      '- 假如 (jiǎrú) : conseil sérieux, présentation soignée. Fait un peu « littéraire » à l\'oral décontracté. Ex : 假如有困难，你一定要告诉我 (jiǎ rú yǒu kùn nán, nǐ yí dìng yào gào sù wǒ) « en cas de difficulté, dis-le moi absolument ». Le ton est ferme et attentionné.\n' +
       '- 若 (ruò) : courant en emails pro, panneaux, avis officiels. Bref et efficace. Ex : 若有需要，请随时联系我 (ruò yǒu xū yào, qǐng suí shí lián xì wǒ) « en cas de besoin, contactez-moi ».\n' +
-      '- 倘若 (tǎng ruò) : littéraire, prose formelle. Rare dans le langage courant.\n' +
-      '- 假设 (jiǎ shè) : « supposons que », usage académique ou scientifique. Ex : 假设这个理论是对的… (jiǎ shè zhè ge lǐ lùn shì duì de) « supposons que cette théorie soit correcte… ».\n' +
+      '- 倘若 (tǎngruò) : littéraire, prose formelle. Rare dans le langage courant.\n' +
+      '- 假设 (jiǎshè) : « supposons que », usage académique ou scientifique. Ex : 假设这个理论是对的… (jiǎ shè zhè ge lǐ lùn shì duì de) « supposons que cette théorie soit correcte… ».\n' +
       '\n' +
       'Règle pratique : à l\'oral, garde 要是 ou 如果. À l\'écrit formel, tu peux monter à 假如 ou 若 selon le degré de sérieux.',
     bodyEn:
@@ -1694,7 +1694,7 @@ export const b21NuancesConditionalAdvancedLearnSections: LessonV2LearnSection[] 
     title: '要不是 : « si ce n\'était pas... » (contrefactuel)',
     titleEn: '要不是: «if it weren\'t for...» (counterfactual)',
     body:
-      '要不是 (yào bú shì) exprime une condition CONTREFACTUELLE : quelque chose s\'est réellement produit, et on imagine ce que le monde aurait été SANS cela. Traduit par « si ce n\'était pas de… », « n\'eût été… ».\n' +
+      '要不是 (yàobúshì) exprime une condition CONTREFACTUELLE : quelque chose s\'est réellement produit, et on imagine ce que le monde aurait été SANS cela. Traduit par « si ce n\'était pas de… », « n\'eût été… ».\n' +
       '\n' +
       'Structure : 要不是 + [ce qui s\'est réellement passé]，(就 / 早就) + [ce qui se serait passé sinon].\n' +
       '\n' +
@@ -1702,11 +1702,11 @@ export const b21NuancesConditionalAdvancedLearnSections: LessonV2LearnSection[] 
       '- GRATITUDE : reconnaître qu\'on doit qch à qqn. Ex : 要不是你提醒我，我就忘了 (yào bú shì nǐ tí xǐng wǒ, wǒ jiù wàng le) « si tu ne m\'avais pas rappelé, j\'aurais oublié ». En vrai, l\'oubli n\'a pas eu lieu grâce au rappel.\n' +
       '- REPROCHE / REGRET : imaginer un résultat meilleur si l\'événement ne s\'était pas produit. Ex : 要不是你们迟到，我们早就到了 (yào bú shì nǐmen chí dào, wǒmen zǎo jiù dào le) « si vous n\'étiez pas en retard, on serait déjà arrivés depuis longtemps ».\n' +
       '\n' +
-      '早就 (zǎo jiù) : très souvent en pair avec 要不是. Signifie « depuis longtemps déjà », ancre le résultat imaginé DANS LE PASSÉ. « 我们早就到了 » = « on serait déjà arrivés depuis un moment ». Combinaison très fréquente à l\'oral.\n' +
+      '早就 (zǎojiù) : très souvent en pair avec 要不是. Signifie « depuis longtemps déjà », ancre le résultat imaginé DANS LE PASSÉ. « 我们早就到了 » = « on serait déjà arrivés depuis un moment ». Combinaison très fréquente à l\'oral.\n' +
       '\n' +
       'Attention : ne confonds pas 要不是 avec 如果不是 (« si ce n\'est pas », neutre). 要不是 est spécifiquement CONTREFACTUEL et implique que la condition s\'est bien réalisée dans la vraie vie.',
     bodyEn:
-      '要不是 (yào bú shì) expresses a COUNTERFACTUAL condition: something actually happened, and we imagine what the world would\'ve been WITHOUT it. Translated as «if it weren\'t for…», «had it not been for…». Structure: 要不是 + [what really happened], (就 / 早就) + [what would have happened otherwise]. Two main uses: (1) GRATITUDE: acknowledging you owe something to someone. Ex: 要不是你提醒我，我就忘了 = «if you hadn\'t reminded me, I would\'ve forgotten». (2) REPROACH / REGRET: imagining a better outcome if the event hadn\'t happened. Ex: 要不是你们迟到，我们早就到了 = «if you hadn\'t been late, we\'d have arrived long ago». 早就 (zǎo jiù): often paired with 要不是. Means «long ago already», anchors the imagined result IN THE PAST. Warning: don\'t confuse 要不是 with 如果不是 (neutral «if not»). 要不是 is specifically COUNTERFACTUAL and implies the condition did really happen in real life.',
+      '要不是 (yàobúshì) expresses a COUNTERFACTUAL condition: something actually happened, and we imagine what the world would\'ve been WITHOUT it. Translated as «if it weren\'t for…», «had it not been for…». Structure: 要不是 + [what really happened], (就 / 早就) + [what would have happened otherwise]. Two main uses: (1) GRATITUDE: acknowledging you owe something to someone. Ex: 要不是你提醒我，我就忘了 = «if you hadn\'t reminded me, I would\'ve forgotten». (2) REPROACH / REGRET: imagining a better outcome if the event hadn\'t happened. Ex: 要不是你们迟到，我们早就到了 = «if you hadn\'t been late, we\'d have arrived long ago». 早就 (zǎojiù): often paired with 要不是. Means «long ago already», anchors the imagined result IN THE PAST. Warning: don\'t confuse 要不是 with 如果不是 (neutral «if not»). 要不是 is specifically COUNTERFACTUAL and implies the condition did really happen in real life.',
     items: [
       { hanzi: '要不是', pinyin: 'yàobúshì', meaning: 'si ce n\'était pas (contrefactuel)', meaningEn: 'if it weren\'t for', audio: 'audio/hsk5/hsk5_要不是.wav' },
       { hanzi: '早就', pinyin: 'zǎojiù', meaning: 'depuis longtemps déjà', meaningEn: 'long ago already', audio: 'audio/hsk4/hsk4_早就.wav' },

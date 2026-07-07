@@ -176,11 +176,11 @@ export const politenessLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Plusieurs variantes selon le ton :\n' +
       '- 谢谢你 — merci à **toi** (plus personnel)\n' +
-      '- 非常感谢 (fēicháng gǎnxiè) — merci **beaucoup** (formel)\n' +
+      '- 非常感谢 (fēichánggǎnxiè) — merci **beaucoup** (formel)\n' +
       '\n' +
       'Pour répondre, on dit 不客气 (búkèqì), littéralement « ne + faire + cérémonie » — « pas de quoi ».',
     bodyEn:
-      '谢谢 (xièxiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēicháng gǎnxiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (búkèqì), literally "don\'t + make + ceremony" — "you\'re welcome".',
+      '谢谢 (xièxiè) is the universal "thanks". You can strengthen with 谢谢你 (thanks to you) or 非常感谢 (fēichánggǎnxiè) "many thanks" in a more formal context.\nTo reply, say 不客气 (búkèqì), literally "don\'t + make + ceremony" — "you\'re welcome".',
     items: [
       { hanzi: '谢谢', pinyin: 'xièxiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
       { hanzi: '不客气', pinyin: 'bù kèqì', meaning: 'pas de quoi, je t\'en prie', meaningEn: 'you\'re welcome', audio: 'audio/hsk1/hsk1_不客气.wav' },
@@ -484,11 +484,11 @@ export const timeLearnSections: LessonV2LearnSection[] = [
     body:
       'L\'heure se construit en deux blocs : chiffre + 点 (diǎn = heure) + chiffre + 分 (fēn = minute).\n' +
       '\n' +
-      'Exemple : 三点十五分 (sān diǎn shíwǔ fēn) = 3h15.\n' +
+      'Exemple : 三点十五分 (sāndiǎn shíwǔfēn) = 3h15.\n' +
       '\n' +
-      'Astuce : pour demander l\'heure, dis 现在几点 ? (xiàn zài jǐ diǎn) — « il est quelle heure ? ».',
+      'Astuce : pour demander l\'heure, dis 现在几点 ? (xiànzài jǐdiǎn) — « il est quelle heure ? ».',
     bodyEn:
-      'Time is built digit + 点 (diǎn = o\'clock) + digit + 分 (fēn = minute). Example: 三点十五分 (sān diǎn shíwǔ fēn) = 3:15.\nTo ask: 现在几点? (xiàn zài jǐ diǎn) — "what time is it?".',
+      'Time is built digit + 点 (diǎn = o\'clock) + digit + 分 (fēn = minute). Example: 三点十五分 (sāndiǎn shíwǔfēn) = 3:15.\nTo ask: 现在几点? (xiànzài jǐdiǎn) — "what time is it?".',
     items: [
       { hanzi: '点', pinyin: 'diǎn', meaning: 'heure (pour les heures pleines)', meaningEn: 'o\'clock', audio: 'audio/hsk1/hsk1_点.wav' },
       { hanzi: '分', pinyin: 'fēn', meaning: 'minute', meaningEn: 'minute', audio: 'audio/hsk1/hsk1_分.wav' },
@@ -577,9 +577,9 @@ export const familyLearnSections: LessonV2LearnSection[] = [
       { hanzi: '妻子', pinyin: 'qīzǐ', meaning: 'épouse', meaningEn: 'wife', audio: 'audio/hsk1/hsk1_妻子.wav' }
     ],
     tip:
-      '« Avez-vous des enfants ? » se demande avec 你有孩子吗 ? (nǐ yǒu hái zi ma). Réponse typique : 有两个 (j\'en ai deux) ou 没有 (je n\'en ai pas).',
+      '« Avez-vous des enfants ? » se demande avec 你有孩子吗 ? (nǐ yǒu háizi ma). Réponse typique : 有两个 (j\'en ai deux) ou 没有 (je n\'en ai pas).',
     tipEn:
-      '"Do you have children?" is asked 你有孩子吗? (nǐ yǒu hái zi ma). Typical answers: 有两个 (I have two) or 没有 (I don\'t have any).'
+      '"Do you have children?" is asked 你有孩子吗? (nǐ yǒu háizi ma). Typical answers: 有两个 (I have two) or 没有 (I don\'t have any).'
   }
 ];
 

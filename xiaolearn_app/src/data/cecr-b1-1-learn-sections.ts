@@ -2206,8 +2206,8 @@ export const b11NuancesDouLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les deux structures :\n' +
       '- **都不** (dōu bù) = négation **TOTALE** : « aucun / pas un seul ». Structure : [Groupe] + 都 + 不 + verbe/adj.\n' +
-      '  - 这些菜都不是辣的 (zhèxiē cài dōu bú shì là de) « aucun de ces plats n\'est épicé »\n' +
-      '  - 他们都不来 (tāmen dōu bù lái) « aucun d\'eux ne vient »\n' +
+      '  - 这些菜都不是辣的 (zhèxiē cài dōu búshì là de) « aucun de ces plats n\'est épicé »\n' +
+      '  - 他们都不来 (tāmen dōu bùlái) « aucun d\'eux ne vient »\n' +
       '- **不都** (bù dōu) = négation **PARTIELLE** : « pas tous » (donc certains oui). Structure : [Groupe] + 不 + 都 + verbe/adj.\n' +
       '  - 这些菜不都是辣的 (zhèxiē cài bù dōu shì là de) « tous ces plats ne sont pas épicés » (donc certains le sont)\n' +
       '\n' +
@@ -2240,7 +2240,7 @@ export const b11NuancesDouLearnSections: LessonV2LearnSection[] = [
       '- 我一点都不累 (wǒ yìdiǎn dōu bú lèi) « je ne suis pas du tout fatigué »\n' +
       '- Avec 没 : 昨天他一点都没吃 (zuótiān tā yìdiǎn dōu méi chī) « hier il n\'a rien mangé du tout »\n' +
       '\n' +
-      'Variante **一点也不** : 也 peut remplacer 都 avec la même force. 我一点也不困 (wǒ yìdiǎn yě bù kùn) « je ne suis pas du tout somnolent ».\n' +
+      'Variante **一点也不** : 也 peut remplacer 都 avec la même force. 我一点也不困 (wǒ yìdiǎn yě bùkùn) « je ne suis pas du tout somnolent ».\n' +
       '\n' +
       'Renforcement plus fort que le simple 不 : 不麻烦 = « pas compliqué » (neutre), 一点都不麻烦 = « pas du tout compliqué » (insistance).',
     bodyEn:
@@ -2393,9 +2393,9 @@ export const b11NuancesHuiNengKeyiLearnSections: LessonV2LearnSection[] = [
     body:
       'Ajouter 很 (hěn) devant 会 ou 能 fait glisser le sens : ce n\'est plus une simple capacité, c\'est un jugement porté sur quelqu\'un.\n' +
       '\n' +
-      '他很会说话 (tā hěn huì shuōhuà) « il est très bon en communication » : décrit quelqu\'un qui a le sens du discours (diplomate, persuasif, drôle). Ce qu\'on juge, c\'est le NIVEAU de maîtrise → compliment.\n' +
+      '他很会说话 (tā hěnhuì shuōhuà) « il est très bon en communication » : décrit quelqu\'un qui a le sens du discours (diplomate, persuasif, drôle). Ce qu\'on juge, c\'est le NIVEAU de maîtrise → compliment.\n' +
       '\n' +
-      '他很会做菜 (tā hěn huì zuò cài) « il cuisine super bien » : compliment sur la qualité.\n' +
+      '他很会做菜 (tā hěnhuì zuòcài) « il cuisine super bien » : compliment sur la qualité.\n' +
       '\n' +
       '他很能吃 (tā hěn néng chī) « il mange énormément » : décrit quelqu\'un qui a une CAPACITÉ importante. Ce n\'est ni un compliment ni une critique, juste un constat sur le volume.\n' +
       '\n' +
@@ -2425,7 +2425,7 @@ export const b11NuancesHuiNengKeyiLearnSections: LessonV2LearnSection[] = [
       '能够 (nénggòu) partage exactement le même sens que 能 (« être en mesure de »), mais dans un registre plus SOUTENU / ÉCRIT.\n' +
       '\n' +
       'Contextes typiques :\n' +
-      '- Écriture journalistique ou administrative : 这项技术能够帮助医生早期发现癌症 (zhè xiàng jìshù nénggòu bāngzhù yīshēng zǎoqī fāxiàn áizhèng) « cette technologie permet aux médecins de détecter le cancer précocement ».\n' +
+      '- Écriture journalistique ou administrative : 这项技术能够帮助医生早期发现癌症 (zhèxiàng jìshù nénggòu bāngzhù yīshēng zǎoqī fāxiàn áizhèng) « cette technologie permet aux médecins de détecter le cancer précocement ».\n' +
       '- Discours formels : 我们能够克服所有困难 (wǒmen nénggòu kèfú suǒyǒu kùnnan) « nous saurons surmonter toutes les difficultés ».\n' +
       '\n' +
       'En conversation courante, on garde 能 (plus court, plus naturel).\n' +
@@ -2459,23 +2459,23 @@ export const b11NuancesKaiComplementLearnSections: LessonV2LearnSection[] = [
       'Trois sous-sens qui se recoupent : « SÉPARER », « ÉTALER », « LIBÉRER ».\n' +
       '\n' +
       'Séparer / écarter :\n' +
-      '- 拉开 (lā kāi) « tirer pour ouvrir » — 他把窗帘拉开了 (tā bǎ chuāng lián lā kāi le) « il a tiré les rideaux ».\n' +
-      '- 推开 (tuī kāi) « pousser pour ouvrir ».\n' +
-      '- 分开 (fēn kāi) « séparer, partager ».\n' +
+      '- 拉开 (lākāi) « tirer pour ouvrir » — 他把窗帘拉开了 (tā bǎ chuānglián lākāi le) « il a tiré les rideaux ».\n' +
+      '- 推开 (tuīkāi) « pousser pour ouvrir ».\n' +
+      '- 分开 (fēnkāi) « séparer, partager ».\n' +
       '\n' +
       'Étaler / déployer :\n' +
-      '- 展开 (zhǎn kāi) « déployer, ouvrir en grand ».\n' +
+      '- 展开 (zhǎnkāi) « déployer, ouvrir en grand ».\n' +
       '- 铺开 (pū kāi) « étaler à plat » — 他把地图铺开在桌子上 (tā bǎ dì tú pū kāi zài zhuō zi shàng) « il a étalé la carte sur la table ».\n' +
-      '- 散开 (sàn kāi) « se disperser » (foule qui se disperse).\n' +
+      '- 散开 (sànkāi) « se disperser » (foule qui se disperse).\n' +
       '\n' +
       'Libérer / défaire :\n' +
-      '- 解开 (jiě kāi) « défaire (un nœud), résoudre (un puzzle) ».\n' +
-      '- 松开 (sōng kāi) « desserrer, lâcher ».\n' +
-      '- 打开 (dǎ kāi) « ouvrir » (une boîte, un livre, une appli). Le plus général — c\'est aussi un complément (打 « frapper/agir » + 开 « résultat ouvert »).\n' +
+      '- 解开 (jiěkāi) « défaire (un nœud), résoudre (un puzzle) ».\n' +
+      '- 松开 (sōngkāi) « desserrer, lâcher ».\n' +
+      '- 打开 (dǎkāi) « ouvrir » (une boîte, un livre, une appli). Le plus général — c\'est aussi un complément (打 « frapper/agir » + 开 « résultat ouvert »).\n' +
       '\n' +
-      'Négations : 门没开 (mén méi kāi) « la porte ne s\'est pas ouverte » = résultat non atteint. Complément potentiel : 这个结我打不开 (zhè ge jié wǒ dǎ bù kāi) « je n\'arrive pas à défaire ce nœud ». Version positive : 打得开 (dǎ de kāi) « ça peut s\'ouvrir ».\n' +
+      'Négations : 门没开 (mén méikāi) « la porte ne s\'est pas ouverte » = résultat non atteint. Complément potentiel : 这个结我打不开 (zhège jié wǒ dǎbùkāi) « je n\'arrive pas à défaire ce nœud ». Version positive : 打得开 (dǎ de kāi) « ça peut s\'ouvrir ».\n' +
       '\n' +
-      'Usage psychologique : 想开 (xiǎng kāi) « prendre du recul, accepter » — quand on relâche une pensée qui tient au cœur. 看开 (kàn kāi) « voir les choses avec détachement ». Ex : 别太难过，慢慢想开一点 (bié tài nán guò, màn màn xiǎng kāi yì diǎn) « ne sois pas trop triste, prends du recul petit à petit ». C\'est la métaphore « libérer » appliquée à l\'esprit.',
+      'Usage psychologique : 想开 (xiǎngkāi) « prendre du recul, accepter » — quand on relâche une pensée qui tient au cœur. 看开 (kàn kāi) « voir les choses avec détachement ». Ex : 别太难过，慢慢想开一点 (bié tài nán guò, màn màn xiǎng kāi yì diǎn) « ne sois pas trop triste, prends du recul petit à petit ». C\'est la métaphore « libérer » appliquée à l\'esprit.',
     bodyEn:
       'Here 开 comes in SECOND POSITION, after another verb. It acts as a RESULTATIVE COMPLEMENT: the first verb names the action, 开 states the result. Three overlapping sub-senses: «SEPARATE», «SPREAD», «RELEASE». Separate / pull apart: 拉开 «pull open» — 他把窗帘拉开了 = «he drew the curtains open». 推开 «push open». 分开 «separate, share». Spread / unfold: 展开 «unfold, open wide». 铺开 «lay flat» — 他把地图铺开在桌子上 = «he spread the map on the table». 散开 «scatter» (crowd dispersing). Release / undo: 解开 «untie a knot, solve a puzzle». 松开 «loosen, let go». 打开 «open» (a box, a book, an app). The most general — also a complement (打 «hit/act» + 开 «open result»). Negations: 门没开 = «the door didn\'t open» (result not reached). Potential complement: 这个结我打不开 = «I can\'t untie this knot». Positive form: 打得开 = «it can be opened». Psychological use: 想开 «take a step back, accept» — when you release a thought clinging to your heart. 看开 «see things with detachment». Ex: 别太难过，慢慢想开一点 = «don\'t be too sad, gradually let go a bit». That\'s the «release» metaphor applied to the mind.',
     items: [
@@ -2499,9 +2499,9 @@ export const b11NuancesKaiComplementLearnSections: LessonV2LearnSection[] = [
     body:
       'Deux usages qui ne rentrent PAS dans les 4 grandes familles et se retiennent comme des blocs.\n' +
       '\n' +
-      'CUISINE — l\'eau qui bout : 水开了 (shuǐ kāi le) « l\'eau bout ». Métaphore de l\'eau qui « s\'ouvre » en bulles, mais en pratique c\'est un sens fixe. Négation : 水还没开 (shuǐ hái méi kāi) « l\'eau ne bout pas encore ». Ex : 水开了，可以下面了 (shuǐ kāi le, kě yǐ xià miàn le) « l\'eau bout, on peut mettre les nouilles ».\n' +
+      'CUISINE — l\'eau qui bout : 水开了 (shuǐkāi le) « l\'eau bout ». Métaphore de l\'eau qui « s\'ouvre » en bulles, mais en pratique c\'est un sens fixe. Négation : 水还没开 (shuǐ hái méikāi) « l\'eau ne bout pas encore ». Ex : 水开了，可以下面了 (shuǐ kāi le, kě yǐ xià miàn le) « l\'eau bout, on peut mettre les nouilles ».\n' +
       '\n' +
-      'BIJOUTERIE — l\'or et les carats : 十八开金 (shí bā kāi jīn) « or 18 carats ». 开 fait ici office d\'UNITÉ pour la pureté de l\'or, exactement comme « karat » en anglais. Ex : 24开金 (èr shí sì kāi jīn) « or 24 carats, or pur ».\n' +
+      'BIJOUTERIE — l\'or et les carats : 十八开金 (shíbā kāijīn) « or 18 carats ». 开 fait ici office d\'UNITÉ pour la pureté de l\'or, exactement comme « karat » en anglais. Ex : 24开金 (èr shí sì kāi jīn) « or 24 carats, or pur ».\n' +
       '\n' +
       'Il existe quelques autres usages rares (tailles de papier, expressions littéraires) mais tu peux les apprendre au cas par cas.',
     bodyEn:
@@ -2537,7 +2537,7 @@ export const b11GrammarConditionalLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce d\'ordre : 就 est optionnel quand le lien condition-résultat est évident. 如果明天天气好，我们去爬山 sonne parfaitement naturel.\n' +
       '\n' +
-      'Position du sujet : le sujet peut venir AVANT ou APRÈS 如果. Les 2 formes 如果我有时间 (rúguǒ wǒ yǒu shí jiān) et 我如果有时间 (wǒ rú guǒ yǒu shí jiān) sont équivalentes.',
+      'Position du sujet : le sujet peut venir AVANT ou APRÈS 如果. Les 2 formes 如果我有时间 (rúguǒ wǒ yǒu shíjiān) et 我如果有时间 (wǒ rúguǒ yǒu shíjiān) sont équivalentes.',
     bodyEn:
       'Base structure: 如果 + [condition], (就) + [result]. This is the DEFAULT conditional, oral and written. Ex: 如果明天天气好，我们就去爬山 = «if the weather is nice tomorrow, we\'ll go hiking». Ex: 如果我今天学会了这个汉字，我就奖励自己喝杯珍珠奶茶 = «if I master this character today, I\'ll treat myself to a bubble tea». Rule: 就 marks «then, in that case». It comes BEFORE the main verb of the result, AFTER the subject. Order tip: 就 is optional when the condition-result link is obvious. 如果明天天气好，我们去爬山 sounds perfectly natural. Subject position: the subject can come BEFORE or AFTER 如果. Both 如果我有时间 and 我如果有时间 are equivalent.',
     items: [
@@ -2561,13 +2561,13 @@ export const b11GrammarConditionalLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Ex : 要是你明天有时间，就跟我一起去长城吧 (yào shi nǐ míng tiān yǒu shí jiān, jiù gēn wǒ yì qǐ qù cháng chéng ba) « si tu as le temps demain, viens avec moi à la Grande Muraille ». Le 吧 en fin de phrase rend l\'invitation plus douce.\n' +
       '\n' +
-      '的话 (de huà) se met À LA FIN de la clause de condition, comme pour dire « dans ce cas ». Deux usages :\n' +
+      '的话 (dehuà) se met À LA FIN de la clause de condition, comme pour dire « dans ce cas ». Deux usages :\n' +
       '- Combiné avec 如果 ou 要是 pour DOUBLE clarté : 如果你现在不能打电话的话，我们就发信息吧 (rú guǒ nǐ xiàn zài bù néng dǎ diàn huà de huà, wǒmen jiù fā xìn xī ba) « si tu peux pas appeler, on s\'envoie un message ».\n' +
       '- Seul, sans 如果, très courant à l\'oral : 你想去的话，我们就早点出发 (nǐ xiǎng qù de huà, wǒ men jiù zǎo diǎn chū fā) « si tu veux y aller, on part plus tôt ».\n' +
       '\n' +
       'Règle : toutes les combinaisons marchent — 要是...的话, 如果...的话, ou 的话 tout seul.',
     bodyEn:
-      '要是 (yào shi) means exactly like 如果, but more CASUAL and warm. Very common in daily life, especially in northern China. Ex: 要是你明天有时间，就跟我一起去长城吧 = «if you have time tomorrow, come with me to the Great Wall». The 吧 at the end softens the invitation. 的话 (de huà) goes at the END of the condition clause, like saying «in that case». Two uses: (1) Combined with 如果 or 要是 for double clarity: 如果你现在不能打电话的话，我们就发信息吧 = «if you can\'t call, we\'ll text». (2) Alone, without 如果, very common in speech: 你想去的话，我们就早点出发 = «if you want to go, we\'ll leave earlier». All combinations work: 要是...的话, 如果...的话, or 的话 alone.',
+      '要是 (yào shi) means exactly like 如果, but more CASUAL and warm. Very common in daily life, especially in northern China. Ex: 要是你明天有时间，就跟我一起去长城吧 = «if you have time tomorrow, come with me to the Great Wall». The 吧 at the end softens the invitation. 的话 (dehuà) goes at the END of the condition clause, like saying «in that case». Two uses: (1) Combined with 如果 or 要是 for double clarity: 如果你现在不能打电话的话，我们就发信息吧 = «if you can\'t call, we\'ll text». (2) Alone, without 如果, very common in speech: 你想去的话，我们就早点出发 = «if you want to go, we\'ll leave earlier». All combinations work: 要是...的话, 如果...的话, or 的话 alone.',
     items: [
       { hanzi: '要是', pinyin: 'yàoshì', meaning: 'si (oral, chaleureux)', meaningEn: 'if (casual)', audio: 'audio/hsk4/hsk4_要是.wav' },
       { hanzi: '的话', pinyin: 'dehuà', meaning: 'dans ce cas (fin de clause)', meaningEn: 'in that case', audio: 'audio/hsk4/hsk4_的话.wav' },
@@ -2654,7 +2654,7 @@ export const b11GrammarReduplicationProgressiveLearnSections: LessonV2LearnSecti
       '\n' +
       'Structures selon le type de verbe :\n' +
       '- Verbe monosyllabique : V + V ou V + 一 + V (identiques). Ex : 看看 (kàn kan) « jeter un œil », 看一看 (même sens).\n' +
-      '- Verbe dissyllabique : VV en un bloc, sans 一 entre. Ex : 休息休息 (xiū xi xiū xi) « se reposer un peu ». 讨论讨论 (tǎo lùn tǎo lùn) « discuter un peu ».\n' +
+      '- Verbe dissyllabique : VV en un bloc, sans 一 entre. Ex : 休息休息 (xiū xi xiū xi) « se reposer un peu ». 讨论讨论 (tǎolùn tǎolùn) « discuter un peu ».\n' +
       '\n' +
       'Sens et effets :\n' +
       '1) Adoucir la demande : 你看看这个 (nǐ kàn kan zhè ge) « jette un œil à ça » (moins direct que 你看这个).\n' +
@@ -2692,14 +2692,14 @@ export const b11GrammarReduplicationProgressiveLearnSections: LessonV2LearnSecti
       'Redoubler un adjectif INTENSIFIE et donne un sens VIVANT, imagé. Souvent utilisé pour décrire des scènes ou pour adverbialiser.\n' +
       '\n' +
       'Adjectif monosyllabique : AA — devient un adverbe descriptif, souvent suivi de 地.\n' +
-      '- Ex : 慢慢 (màn màn) « lentement, tranquillement ». 慢慢地走 (màn màn de zǒu) « marche tranquillement ».\n' +
-      '- Ex : 好好 (hǎo hǎo) « bien, comme il faut ». 好好休息 (hǎo hǎo xiū xi) « repose-toi bien ».\n' +
+      '- Ex : 慢慢 (mànmàn) « lentement, tranquillement ». 慢慢地走 (màn màn de zǒu) « marche tranquillement ».\n' +
+      '- Ex : 好好 (hǎohǎo) « bien, comme il faut ». 好好休息 (hǎo hǎo xiū xi) « repose-toi bien ».\n' +
       '- Ex : 高高兴兴 (gāo gao xìng xìng) « joyeusement » (2 adjectifs redoublés en AABB, cf. plus bas).\n' +
       '\n' +
       'Adjectif dissyllabique — pattern AABB : chaque syllabe est redoublée. Donne une image vivante et poétique.\n' +
       '- 高兴 (heureux) → 高高兴兴 « tout content ». Ex : 他高高兴兴地回家了 (tā gāo gao xìng xìng de huí jiā le) « il est rentré tout content ».\n' +
-      '- 干净 (propre) → 干干净净 « impeccable, tout propre ». Ex : 房间干干净净的 (fáng jiān gān gān jìng jìng de) « la pièce est nickel ».\n' +
-      '- 快乐 (joyeux) → 快快乐乐 (kuài kuài lè lè) « très joyeux ».\n' +
+      '- 干净 (propre) → 干干净净 « impeccable, tout propre ». Ex : 房间干干净净的 (fángjiān gāngānjìngjìng de) « la pièce est nickel ».\n' +
+      '- 快乐 (joyeux) → 快快乐乐 (kuàikuàilèlè) « très joyeux ».\n' +
       '- 漂亮 (joli) → 漂漂亮亮 (piào piao liàng liàng) « très joli, tout beau ».\n' +
       '\n' +
       'Nuances :\n' +
@@ -2731,23 +2731,23 @@ export const b11GrammarReduplicationProgressiveLearnSections: LessonV2LearnSecti
     body:
       '一...就 (yī...jiù) = « dès que... alors ». Structure : 一 + verbe/situation A，就 + résultat/action B. Signale une réaction IMMÉDIATE.\n' +
       '- Ex : 我一到家就吃饭 (wǒ yí dào jiā jiù chī fàn) « dès que je rentre, je mange ».\n' +
-      '- Ex : 他一喝酒就唱歌 (tā yī hē jiǔ jiù chàng gē) « dès qu\'il boit un verre, il chante ».\n' +
-      '- Ex : 这件事我一听就懂了 (zhè jiàn shì wǒ yī tīng jiù dǒng le) « ce truc, je l\'ai compris dès que je l\'ai entendu ».\n' +
-      '- Attention au ton : 一 devient 2e ton devant 4e ton, 4e ton devant les autres. Ici 一到 (yí dào), 一喝 (yī hē), 一听 (yī tīng).\n' +
+      '- Ex : 他一喝酒就唱歌 (tā yī hējiǔ jiù chànggē) « dès qu\'il boit un verre, il chante ».\n' +
+      '- Ex : 这件事我一听就懂了 (zhèjiàn shì wǒ yī tīng jiù dǒng le) « ce truc, je l\'ai compris dès que je l\'ai entendu ».\n' +
+      '- Attention au ton : 一 devient 2e ton devant 4e ton, 4e ton devant les autres. Ici 一到 (yí dào), 一喝 (yīhē), 一听 (yītīng).\n' +
       '\n' +
-      '越来越 (yuè lái yuè) = « de plus en plus... ». Structure : 越来越 + adjectif/verbe.\n' +
-      '- Ex : 天气越来越冷 (tiān qì yuè lái yuè lěng) « le temps devient de plus en plus froid ».\n' +
+      '越来越 (yuèláiyuè) = « de plus en plus... ». Structure : 越来越 + adjectif/verbe.\n' +
+      '- Ex : 天气越来越冷 (tiānqì yuèláiyuè lěng) « le temps devient de plus en plus froid ».\n' +
       '- Ex : 我越来越喜欢中文 (wǒ yuè lái yuè xǐ huan zhōng wén) « je kiffe le chinois de plus en plus ».\n' +
-      '- Variante : 越...越... (yuè...yuè...) = « plus... plus... ». Ex : 越学越难 (yuè xué yuè nán) « plus on étudie, plus c\'est dur ». Ex : 他越说越生气 (tā yuè shuō yuè shēng qì) « plus il parle, plus il s\'énerve ».\n' +
+      '- Variante : 越...越... (yuè...yuè...) = « plus... plus... ». Ex : 越学越难 (yuèxuéyuè nán) « plus on étudie, plus c\'est dur ». Ex : 他越说越生气 (tā yuè shuō yuè shēngqì) « plus il parle, plus il s\'énerve ».\n' +
       '\n' +
       '一边...一边 (yī biān...yī biān) = « en même temps, à la fois... et... ». Structure : 一边 + verbe1，一边 + verbe2. Sert à dire qu\'on fait 2 actions SIMULTANÉMENT.\n' +
-      '- Ex : 他一边吃饭一边看电视 (tā yī biān chī fàn yī biān kàn diàn shì) « il mange et regarde la télé en même temps ».\n' +
-      '- Ex : 我一边走路一边听歌 (wǒ yī biān zǒu lù yī biān tīng gē) « je marche en écoutant de la musique ».\n' +
+      '- Ex : 他一边吃饭一边看电视 (tā yībiān chīfàn yībiān kàndiànshì) « il mange et regarde la télé en même temps ».\n' +
+      '- Ex : 我一边走路一边听歌 (wǒ yībiān zǒulù yībiān tīnggē) « je marche en écoutant de la musique ».\n' +
       '- Version courte : 边...边... (sans le 一) est acceptable à l\'oral rapide.\n' +
       '\n' +
       'Attention : 一边...一边 concerne 2 actions du MÊME sujet. Pour 2 actions de sujets différents, on utilise d\'autres structures (同时, 的同时).',
     bodyEn:
-      '一...就 (yī...jiù) = «as soon as... then». Structure: 一 + verb/situation A, 就 + result B. IMMEDIATE reaction. Ex: 我一到家就吃饭 «as soon as I get home, I eat». Ex: 他一喝酒就唱歌 «as soon as he drinks, he sings». Ex: 这件事我一听就懂了 «I got it as soon as I heard it». Tone note: 一 becomes 2nd tone before 4th tone, 4th tone before others. 越来越 (yuè lái yuè) = «more and more». Structure: 越来越 + adjective/verb. Ex: 天气越来越冷 «weather is getting colder». Ex: 我越来越喜欢中文 «I like Chinese more and more». Variant: 越...越... = «the more... the more...». Ex: 越学越难 «the more you study, the harder». Ex: 他越说越生气 «the more he talks, the angrier he gets». 一边...一边 (yī biān...yī biān) = «at the same time». Structure: 一边 + V1, 一边 + V2. 2 SIMULTANEOUS actions. Ex: 他一边吃饭一边看电视 «he eats and watches TV at the same time». Ex: 我一边走路一边听歌 «I walk while listening to music». Short: 边...边... acceptable in fast speech. Careful: 一边...一边 is for 2 actions of the SAME subject. For 2 different subjects, use 同时, 的同时.',
+      '一...就 (yī...jiù) = «as soon as... then». Structure: 一 + verb/situation A, 就 + result B. IMMEDIATE reaction. Ex: 我一到家就吃饭 «as soon as I get home, I eat». Ex: 他一喝酒就唱歌 «as soon as he drinks, he sings». Ex: 这件事我一听就懂了 «I got it as soon as I heard it». Tone note: 一 becomes 2nd tone before 4th tone, 4th tone before others. 越来越 (yuèláiyuè) = «more and more». Structure: 越来越 + adjective/verb. Ex: 天气越来越冷 «weather is getting colder». Ex: 我越来越喜欢中文 «I like Chinese more and more». Variant: 越...越... = «the more... the more...». Ex: 越学越难 «the more you study, the harder». Ex: 他越说越生气 «the more he talks, the angrier he gets». 一边...一边 (yī biān...yī biān) = «at the same time». Structure: 一边 + V1, 一边 + V2. 2 SIMULTANEOUS actions. Ex: 他一边吃饭一边看电视 «he eats and watches TV at the same time». Ex: 我一边走路一边听歌 «I walk while listening to music». Short: 边...边... acceptable in fast speech. Careful: 一边...一边 is for 2 actions of the SAME subject. For 2 different subjects, use 同时, 的同时.',
     items: [
       { hanzi: '一...就', pinyin: 'yī...jiù', meaning: 'dès que... alors', meaningEn: 'as soon as... then', audio: 'audio/hsk1/hsk1_就.wav' },
       { hanzi: '越来越', pinyin: 'yuèláiyuè', meaning: 'de plus en plus', meaningEn: 'more and more', audio: 'audio/hsk3/hsk3_越.wav' },
@@ -3028,16 +3028,16 @@ export const b11GrammarPivotalSentencesLearnSections: LessonV2LearnSection[] = [
       '派 (pài) — envoyer/dépêcher, contexte pro.\n' +
       '- Ex : 公司派她去上海出差 (py gōng sī pài tā qù shàng hǎi chū chāi) « l\'entreprise l\'a envoyée à Shanghai en déplacement pro ».\n' +
       '\n' +
-      '建议 (jiàn yì) — suggérer (conseil doux).\n' +
+      '建议 (jiànyì) — suggérer (conseil doux).\n' +
       '- Ex : 医生建议他多休息 (py yī shēng jiàn yì tā duō xiū xi) « le médecin lui a conseillé de se reposer davantage ». Sonne plus doux qu\'une obligation.\n' +
       '\n' +
-      '同意 (tóng yì) — accepter que qqn fasse quelque chose.\n' +
+      '同意 (tóngyì) — accepter que qqn fasse quelque chose.\n' +
       '- Ex : 学校同意学生们组织活动 (py xué xiào tóng yì xué shēng men zǔ zhī huó dòng) « l\'école a accepté que les étudiants organisent des activités ». Implique une demande préalable.\n' +
       '\n' +
-      '要求 (yāo qiú) — exiger, plus fort.\n' +
+      '要求 (yāoqiú) — exiger, plus fort.\n' +
       '- Ex : 经理要求员工按时完成项目 (py jīng lǐ yāo qiú yuán gōng àn shí wán chéng xiàng mù) « le manager exige que les employés finissent le projet à temps ». Ton d\'autorité.\n' +
       '\n' +
-      '命令 (mìng lìng) — ordonner (usage militaire, très formel).\n' +
+      '命令 (mìnglìng) — ordonner (usage militaire, très formel).\n' +
       '- Ex : 将军命令士兵立即撤退 (py jiāng jūn mìng lìng shì bīng lì jí chè tuì) « le général a ordonné aux soldats de battre en retraite immédiatement ».\n' +
       '\n' +
       '表扬 / 批评 — évaluations : féliciter / critiquer QUELQU\'UN POUR une action.\n' +
@@ -3050,7 +3050,7 @@ export const b11GrammarPivotalSentencesLearnSections: LessonV2LearnSection[] = [
       '- 收 X 做 Y (py shōu X zuò Y) « accepter X comme Y ». Ex : 教授收我做研究生 « le prof m\'a accepté comme doctorant ».\n' +
       '- 选 X 当 Y (py xuǎn X dāng Y) « élire X comme Y ». Ex : 同学们选他当班长 « les camarades l\'ont élu délégué de classe ». Ex : 我们选她当队长 « on l\'a choisie comme cheffe d\'équipe ».',
     bodyEn:
-      '派 (pài) — send/dispatch, pro context. Ex: 公司派她去上海出差 «the company sent her to Shanghai on a business trip». 建议 (jiàn yì) — suggest (soft advice). Ex: 医生建议他多休息 «the doctor advised him to rest more». Softer than an obligation. 同意 (tóng yì) — agree that someone does something. Ex: 学校同意学生们组织活动 «the school agreed to let students organize activities». Implies a prior request. 要求 (yāo qiú) — require, stronger. Ex: 经理要求员工按时完成项目 «the manager requires employees to finish the project on time». Authoritative. 命令 (mìng lìng) — order (military, very formal). Ex: 将军命令士兵立即撤退 «the general ordered the soldiers to retreat immediately». 表扬 / 批评 — evaluations: praise / criticize SOMEONE FOR an action. Ex: 老师表扬她帮助同学 «the teacher praised her for helping classmates». No «for» needed — the pivot structure links it. Ex: 妈妈批评我不收拾房间 «mom criticized me for not tidying my room». FIXED structures to memorize: 称 X 为 Y «call X a Y». Ex: 大家称他为专家 «everyone calls him an expert». Formal register. 说 X 是 Y «say X is Y». Ex: 同事们都说她是好领导 «colleagues all say she\'s a good leader». 收 X 做 Y «accept X as Y». Ex: 教授收我做研究生 «the prof accepted me as a PhD student». 选 X 当 Y «elect X as Y». Ex: 同学们选他当班长 «classmates elected him class rep». Ex: 我们选她当队长 «we chose her as team leader».',
+      '派 (pài) — send/dispatch, pro context. Ex: 公司派她去上海出差 «the company sent her to Shanghai on a business trip». 建议 (jiànyì) — suggest (soft advice). Ex: 医生建议他多休息 «the doctor advised him to rest more». Softer than an obligation. 同意 (tóngyì) — agree that someone does something. Ex: 学校同意学生们组织活动 «the school agreed to let students organize activities». Implies a prior request. 要求 (yāoqiú) — require, stronger. Ex: 经理要求员工按时完成项目 «the manager requires employees to finish the project on time». Authoritative. 命令 (mìnglìng) — order (military, very formal). Ex: 将军命令士兵立即撤退 «the general ordered the soldiers to retreat immediately». 表扬 / 批评 — evaluations: praise / criticize SOMEONE FOR an action. Ex: 老师表扬她帮助同学 «the teacher praised her for helping classmates». No «for» needed — the pivot structure links it. Ex: 妈妈批评我不收拾房间 «mom criticized me for not tidying my room». FIXED structures to memorize: 称 X 为 Y «call X a Y». Ex: 大家称他为专家 «everyone calls him an expert». Formal register. 说 X 是 Y «say X is Y». Ex: 同事们都说她是好领导 «colleagues all say she\'s a good leader». 收 X 做 Y «accept X as Y». Ex: 教授收我做研究生 «the prof accepted me as a PhD student». 选 X 当 Y «elect X as Y». Ex: 同学们选他当班长 «classmates elected him class rep». Ex: 我们选她当队长 «we chose her as team leader».',
     items: [
       { hanzi: '派', pinyin: 'pài', meaning: 'envoyer, dépêcher', meaningEn: 'send, dispatch', audio: 'audio/hsk4/hsk4_派.wav' },
       { hanzi: '建议', pinyin: 'jiànyì', meaning: 'suggérer, conseiller', meaningEn: 'suggest, advise', audio: 'audio/hsk4/hsk4_建议.wav' },
@@ -3079,25 +3079,25 @@ export const b11NuancesTopicConnectorsLearnSections: LessonV2LearnSection[] = [
     body:
       'Trois mots pour « à propos de / concernant » qui ne sont PAS interchangeables.\n' +
       '\n' +
-      '关于 (guān yú) = « à propos de / concernant ». Neutre, sert à ANNONCER un sujet. Comme dessiner un cercle autour d\'un thème.\n' +
+      '关于 (guānyú) = « à propos de / concernant ». Neutre, sert à ANNONCER un sujet. Comme dessiner un cercle autour d\'un thème.\n' +
       '- Structure : 关于 + [sujet]，[commentaire].\n' +
       '- Ex : 关于你的建议，我们下周讨论 (guān yú nǐ de jiàn yì, wǒmen xià zhōu tǎo lùn) « concernant ta proposition, on en discutera la semaine prochaine ».\n' +
       '- Point unique : peut modifier un nom via 的. Ex : 一本关于中国历史的书 (yì běn guān yú zhōng guó lì shǐ de shū) « un livre sur l\'histoire de la Chine ». Les autres synonymes ne peuvent PAS faire ça.\n' +
       '- Registre : neutre à semi-formel. Emails, discussions, présentations.\n' +
       '\n' +
-      '对于 (duì yú) = « à propos de » avec une NUANCE d\'attitude/réaction. Comme pointer du doigt un sujet pour donner son avis.\n' +
+      '对于 (duìyú) = « à propos de » avec une NUANCE d\'attitude/réaction. Comme pointer du doigt un sujet pour donner son avis.\n' +
       '- Structure : 对于 + [sujet]，[opinion/réaction].\n' +
       '- Ex : 对于这个决定，我完全支持 (duì yú zhè ge jué dìng, wǒ wán quán zhī chí) « concernant cette décision, je la soutiens totalement ».\n' +
       '- Ex : 对于这个问题，专家们有不同的看法 (duì yú zhè ge wèn tí, zhuān jiā men yǒu bù tóng de kàn fǎ) « à propos de cette question, les experts ont des avis différents ».\n' +
       '- Nuance vs 关于 : 关于 introduit neutrement, 对于 sonne « voici mon avis ». En pratique, souvent interchangeables ; les natifs les mixent.\n' +
       '\n' +
-      '至于 (zhì yú) = « quant à / en ce qui concerne » — pour PASSER À UN NOUVEAU sujet lié après avoir discuté d\'un premier.\n' +
+      '至于 (zhìyú) = « quant à / en ce qui concerne » — pour PASSER À UN NOUVEAU sujet lié après avoir discuté d\'un premier.\n' +
       '- Structure : [1er sujet discuté]，至于 + [nouveau sujet]，[commentaire].\n' +
       '- Ex : 我们明天去公园，至于午餐，可以带三明治 (wǒmen míng tiān qù gōng yuán, zhì yú wǔ cān, kě yǐ dài sān míng zhì) « demain on va au parc, quant au déjeuner, on peut apporter des sandwiches ».\n' +
       '- Ex : 数学考试我复习好了，至于英语，还没开始 (shù xué kǎo shì wǒ fù xí hǎo le, zhì yú yīng yǔ, hái méi kāi shǐ) « pour les maths j\'ai révisé, quant à l\'anglais, j\'ai pas encore commencé ».\n' +
       '- Ne s\'utilise PAS en début de conversation. Sert de PIVOT vers un point secondaire.',
     bodyEn:
-      'Three words for «about / concerning» that are NOT interchangeable. 关于 (guān yú) = neutral, ANNOUNCES a topic. Like drawing a circle around a theme. Structure: 关于 + [topic]，[comment]. Ex: 关于你的建议，我们下周讨论 «about your suggestion, we\'ll discuss it next week». UNIQUE point: can modify a noun via 的. Ex: 一本关于中国历史的书 «a book about Chinese history». The others CAN\'T. Register: neutral to semi-formal. 对于 (duì yú) = «about» with a nuance of ATTITUDE/reaction. Like pointing at a topic to give your opinion. Structure: 对于 + [topic]，[opinion]. Ex: 对于这个决定，我完全支持 «about this decision, I fully support it». Ex: 对于这个问题，专家们有不同的看法 «about this issue, experts have different views». Nuance vs 关于: 关于 introduces neutrally, 对于 sounds «here\'s my take». Often interchangeable; natives mix them. 至于 (zhì yú) = «as for / regarding» — to MOVE ONTO A NEW related topic after discussing a first. Structure: [1st topic discussed]，至于 + [new topic]，[comment]. Ex: 我们明天去公园，至于午餐，可以带三明治 «tomorrow we\'re going to the park; as for lunch, we can bring sandwiches». Ex: 数学考试我复习好了，至于英语，还没开始 «I\'ve reviewed for the math test; as for English, haven\'t started». NOT used at the start of a conversation. Serves as a PIVOT to a secondary point.',
+      'Three words for «about / concerning» that are NOT interchangeable. 关于 (guānyú) = neutral, ANNOUNCES a topic. Like drawing a circle around a theme. Structure: 关于 + [topic]，[comment]. Ex: 关于你的建议，我们下周讨论 «about your suggestion, we\'ll discuss it next week». UNIQUE point: can modify a noun via 的. Ex: 一本关于中国历史的书 «a book about Chinese history». The others CAN\'T. Register: neutral to semi-formal. 对于 (duìyú) = «about» with a nuance of ATTITUDE/reaction. Like pointing at a topic to give your opinion. Structure: 对于 + [topic]，[opinion]. Ex: 对于这个决定，我完全支持 «about this decision, I fully support it». Ex: 对于这个问题，专家们有不同的看法 «about this issue, experts have different views». Nuance vs 关于: 关于 introduces neutrally, 对于 sounds «here\'s my take». Often interchangeable; natives mix them. 至于 (zhìyú) = «as for / regarding» — to MOVE ONTO A NEW related topic after discussing a first. Structure: [1st topic discussed]，至于 + [new topic]，[comment]. Ex: 我们明天去公园，至于午餐，可以带三明治 «tomorrow we\'re going to the park; as for lunch, we can bring sandwiches». Ex: 数学考试我复习好了，至于英语，还没开始 «I\'ve reviewed for the math test; as for English, haven\'t started». NOT used at the start of a conversation. Serves as a PIVOT to a secondary point.',
     items: [
       { hanzi: '关于', pinyin: 'guānyú', meaning: 'concernant, à propos de (neutre)', meaningEn: 'concerning, about (neutral)', audio: 'audio/hsk4/hsk4_关于.wav' },
       { hanzi: '对于', pinyin: 'duìyú', meaning: 'à propos de (avec avis)', meaningEn: 'about (with attitude)', audio: 'audio/hsk4/hsk4_对于.wav' },
@@ -3134,9 +3134,9 @@ export const b11NuancesTopicConnectorsLearnSections: LessonV2LearnSection[] = [
       '- Ex : 就他来说，工作最重要 (jiù tā lái shuō, gōng zuò zuì zhòng yào) « en ce qui le concerne, le travail est le plus important ».\n' +
       '- Ex : 就价钱来说，这个还可以 (jiù jià qián lái shuō, zhè ge hái kě yǐ) « côté prix, ça reste correct ».\n' +
       '\n' +
-      'Alternative similaire : 对我来说 (duì wǒ lái shuō) « pour moi » — encore plus courant à l\'oral, presque équivalent à 就我来说. Ex : 对我来说，睡眠很重要 (duì wǒ lái shuō, shuì mián hěn zhòng yào) « pour moi, le sommeil est essentiel ».',
+      'Alternative similaire : 对我来说 (duì wǒ láishuō) « pour moi » — encore plus courant à l\'oral, presque équivalent à 就我来说. Ex : 对我来说，睡眠很重要 (duì wǒ lái shuō, shuì mián hěn zhòng yào) « pour moi, le sommeil est essentiel ».',
     bodyEn:
-      'Both mean «as for / from the perspective of». They differ in REGISTER. 就...而言 (jiù ... ér yán) = «in terms of» — HIGH register, written, academic, presentations. Structure: 就 + [specific aspect] + 而言，[comment]. Ex: 就价格而言，这家餐厅不算贵 «in terms of price, this restaurant isn\'t expensive». Analytical. Ex: 就技术水平而言，这款手机领先市场 «technically, this phone leads the market». Report-style. Ex: 就规模而言，这是全国最大的工厂 «in terms of size, this is the country\'s biggest factory». Avoid in casual chat — sounds pedantic. 就...来说 (jiù ... lái shuō) = same meaning, EVERYDAY spoken version. Structure: 就 + [aspect / person] + 来说，[comment]. Ex: 就我来说，周末喜欢待在家里 «personally, I like staying home on weekends». Introduces personal opinion. Ex: 就他来说，工作最重要 «as for him, work is most important». Ex: 就价钱来说，这个还可以 «price-wise, this is okay». Similar alt: 对我来说 (duì wǒ lái shuō) «for me» — even more common orally, almost equivalent to 就我来说. Ex: 对我来说，睡眠很重要 «for me, sleep is essential».',
+      'Both mean «as for / from the perspective of». They differ in REGISTER. 就...而言 (jiù ... ér yán) = «in terms of» — HIGH register, written, academic, presentations. Structure: 就 + [specific aspect] + 而言，[comment]. Ex: 就价格而言，这家餐厅不算贵 «in terms of price, this restaurant isn\'t expensive». Analytical. Ex: 就技术水平而言，这款手机领先市场 «technically, this phone leads the market». Report-style. Ex: 就规模而言，这是全国最大的工厂 «in terms of size, this is the country\'s biggest factory». Avoid in casual chat — sounds pedantic. 就...来说 (jiù ... lái shuō) = same meaning, EVERYDAY spoken version. Structure: 就 + [aspect / person] + 来说，[comment]. Ex: 就我来说，周末喜欢待在家里 «personally, I like staying home on weekends». Introduces personal opinion. Ex: 就他来说，工作最重要 «as for him, work is most important». Ex: 就价钱来说，这个还可以 «price-wise, this is okay». Similar alt: 对我来说 (duì wǒ láishuō) «for me» — even more common orally, almost equivalent to 就我来说. Ex: 对我来说，睡眠很重要 «for me, sleep is essential».',
     items: [
       { hanzi: '就...而言', pinyin: 'jiù ... ér yán', meaning: 'en termes de (formel)', meaningEn: 'in terms of (formal)', audio: 'audio/hsk6/hsk6_而言.wav' },
       { hanzi: '就...来说', pinyin: 'jiù ... lái shuō', meaning: 'en termes de (courant)', meaningEn: 'in terms of (everyday)', audio: 'audio/hsk3/hsk3_来.wav' },
@@ -3302,7 +3302,7 @@ export const b11NuancesZaiAbstractLearnSections: LessonV2LearnSection[] = [
       'Structure : 在 + [Domaine] + 方面，[phrase].\n' +
       '- Ex : 在沟通方面，她比其他同事更出色 (zài gōu tōng fāng miàn, tā bǐ qí tā tóng shì gèng chū sè) « en matière de communication, elle surpasse les autres collègues ».\n' +
       '- Ex : 在语言学习方面，坚持是关键 (zài yǔ yán xué xí fāng miàn, jiān chí shì guān jiàn) « en matière d\'apprentissage des langues, la persévérance est la clé ».\n' +
-      '- Ex : 他在数学方面很有天赋 (tā zài shù xué fāng miàn hěn yǒu tiān fù) « il est très doué dans le domaine des maths ». Placement flexible : peut aussi venir après le sujet.\n' +
+      '- Ex : 他在数学方面很有天赋 (tā zài shùxué fāngmiàn hěn yǒu tiānfù) « il est très doué dans le domaine des maths ». Placement flexible : peut aussi venir après le sujet.\n' +
       '\n' +
       '在...上 vs 在...方面 :\n' +
       '- 在...上 = plus court, plus général, plus fluide à l\'oral. Ex : 在教育上.\n' +
@@ -3310,8 +3310,8 @@ export const b11NuancesZaiAbstractLearnSections: LessonV2LearnSection[] = [
       '- Dans 90 % des cas, ils sont interchangeables. 方面 est un chouïa plus « professionnel ».\n' +
       '\n' +
       '在...方面 dans un CV/entretien :\n' +
-      '- 在市场营销方面我有五年经验 (zài shì chǎng yíng xiāo fāng miàn wǒ yǒu wǔ nián jīng yàn) « côté marketing, j\'ai 5 ans d\'expérience ».\n' +
-      '- 在团队合作方面我很有优势 (zài tuán duì hé zuò fāng miàn wǒ hěn yǒu yōu shì) « en matière de travail d\'équipe, j\'ai un atout ».\n' +
+      '- 在市场营销方面我有五年经验 (zài shìchǎngyíngxiāo fāngmiàn wǒ yǒu wǔnián jīngyàn) « côté marketing, j\'ai 5 ans d\'expérience ».\n' +
+      '- 在团队合作方面我很有优势 (zài tuánduì hézuò fāngmiàn wǒ hěn yǒu yōushì) « en matière de travail d\'équipe, j\'ai un atout ».\n' +
       '\n' +
       'Combinable avec des comparaisons :\n' +
       '- 在这方面，中国走在了世界前列 (zài zhè fāng miàn, zhōng guó zǒu zài le shì jiè qián liè) « dans ce domaine, la Chine est à l\'avant-garde mondiale ».\n' +

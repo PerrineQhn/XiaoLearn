@@ -1449,7 +1449,7 @@ export const c11HistoryM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : la question 这是哪个朝代 ? (de quelle dynastie ?) sonne **érudite** — les Chinois l\'utilisent constamment pour se repérer dans leur histoire. À adopter.',
     bodyEn:
-      'Chinese schoolchildren recite: 秦汉唐宋元明清 (qínhàn tángsòng yuán míngqīng) — 7 syllables for 2000 years. Mnemonic: «Qin a Han Tang son Yuan Ming Qing» (oral form that helps). 秦 (-221): short (15 years) but matrix of the empire — unification of currency, writing, measures.\n' +
+      'Chinese schoolchildren recite: 秦汉唐宋元明清 (qínhàn tángsòngyuán míngqīng) — 7 syllables for 2000 years. Mnemonic: «Qin a Han Tang son Yuan Ming Qing» (oral form that helps). 秦 (-221): short (15 years) but matrix of the empire — unification of currency, writing, measures.\n' +
       '\n' +
       '- 汉 (4 centuries) — opens the Silk Road, gives its name to 汉族 (95% of Chinese)\n' +
       '- 唐 (300 years) — golden age — poetry, Buddhism, Chang\'an = largest city in the world\n' +

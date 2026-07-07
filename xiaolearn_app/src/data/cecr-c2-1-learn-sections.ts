@@ -19,7 +19,7 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
       '- 论述 (lùnshù) — exposer (académique)\n' +
       '- 阐释 (chǎnshì) — élucider\n' +
       '- 释义 (shìyì) — exégèse\n' +
-      '- 注疏 (zhù shū) — commentaire **classique**\n' +
+      '- 注疏 (zhùshū) — commentaire **classique**\n' +
       '\n' +
       'Pour citer : 朱熹《四书章句集注》中说 X (selon Zhu Xi dans ses Commentaires des Quatre Livres). Pour cadrer la thèse : 我的论点可概括为以下几点 (mon argument peut se résumer en plusieurs points).\n' +
       '\n' +
@@ -137,8 +137,8 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Écoles littéraires chinoises clés :\n' +
       '- 朦胧诗派 (ménglóngshī pài) — poésie obscure\n' +
-      '- 寻根派 (xún gēn pài) — école de la quête des racines\n' +
-      '- 先锋派 (xiānfēng pài) — avant-garde\n' +
+      '- 寻根派 (xúngēn pài) — école de la quête des racines\n' +
+      '- 先锋派 (xiānfēngpài) — avant-garde\n' +
       '\n' +
       'Auteurs majeurs C2 :\n' +
       '- 莫言 — Mo Yan, Nobel 2012\n' +
@@ -224,11 +224,11 @@ export const c21ConvM3LearnSections: LessonV2LearnSection[] = [
       'Traduire un poème **classique** suit une méthode rigoureuse : (1) lire à voix haute, (2) compter les caractères par vers (5 ou 7), (3) repérer les rimes, (4) identifier les images-clés, (5) restituer.\n' +
       '\n' +
       'Vocab métrique :\n' +
-      '- 五言 (wǔ yán) — vers à 5 caractères\n' +
-      '- 七言 (qī yán) — vers à 7 caractères\n' +
-      '- 平仄 (píng zè) — tons plats vs obliques, règle **métrique**\n' +
+      '- 五言 (wǔyán) — vers à 5 caractères\n' +
+      '- 七言 (qīyán) — vers à 7 caractères\n' +
+      '- 平仄 (píngzè) — tons plats vs obliques, règle **métrique**\n' +
       '- 对仗 (duìzhàng) — parallélisme\n' +
-      '- 意象 (yì xiàng) — image poétique\n' +
+      '- 意象 (yìxiàng) — image poétique\n' +
       '\n' +
       'Pour ouvrir la discussion : 这首诗的核心意象是什么 ? Pour le rendre : 我们可以保留原文的对仗结构，但调整字数.\n' +
       '\n' +
@@ -519,7 +519,7 @@ export const c21ConvM7LearnSections: LessonV2LearnSection[] = [
       '- 同行评议 (tóngháng píngyì) — peer review\n' +
       '- 录用 (lùyòng) — accepter\n' +
       '- 修改后录用 — accepter sous réserve de révision\n' +
-      '- 拒稿 (jù gǎo) — rejeter\n' +
+      '- 拒稿 (jùgǎo) — rejeter\n' +
       '\n' +
       'Formules positives :\n' +
       '- 本文选题新颖 — sujet original\n' +
@@ -812,7 +812,7 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
       'Trois axes chinois du bien et du mal, trois registres distincts : pragmatique, épistémique, moral. Confondre 是非 (vérité) et 善恶 (moralité) = erreur classique — un fait peut être 是 mais 恶.\n' +
       '\n' +
       'Les trois axes :\n' +
-      '- 对错 (duì cuò) — JUSTE et ERRONÉ (axe **pragmatique**), ce qui est correct dans une action. 对错很重要. Quotidien et concret\n' +
+      '- 对错 (duìcuò) — JUSTE et ERRONÉ (axe **pragmatique**), ce qui est correct dans une action. 对错很重要. Quotidien et concret\n' +
       '- 是非 (shìfēi) — LE VRAI et LE FAUX (axe **épistémique**), ce qui est factuellement vrai. 明辨是非 = distinguer clairement, connote la rigueur intellectuelle\n' +
       '- 善恶 (shàn\'è) — LE BIEN et LE MAL (axe **moral**), qualités intérieures. Éthique profonde\n' +
       '\n' +
@@ -822,7 +822,7 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       '是非 (shìfēi) = TRUE AND FALSE (EPISTEMIC axis — what is factually TRUE). 明辨是非 (clearly distinguish true from false). Connotes intellectual rigor. 善恶 (shàn\'è) = GOOD AND EVIL (MORAL axis — inner qualities). 善有善报，恶有恶报 (good attracts good, evil attracts evil — karma). Connotes deep ethics.\n' +
       '\n' +
-      '- 对错 (duì cuò) — RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action)\n' +
+      '- 对错 (duìcuò) — RIGHT AND WRONG (PRAGMATIC axis — what\'s correct in action)\n' +
       '- 对错很重要 (right vs wrong matters) — \n' +
       '\n' +
       'More everyday and concrete. Hierarchy: 对错 (concrete action) < 是非 (epistemic fact) < 善恶 (deep moral). Classic mistake: confusing 是非 (truth) and 善恶 (morality) — a fact may be 是 but 恶.',
@@ -1840,13 +1840,13 @@ export const c21PoetryM4LearnSections: LessonV2LearnSection[] = [
       '《声声慢》(Shēngshēngmàn, « Lentement, son après son ») de Li Qingzhao s\'ouvre par 14 caractères en 7 paires de redoublements — aucune autre ouverture en littérature mondiale n\'utilise 7 redoublements consécutifs.\n' +
       '\n' +
       'Les 7 paires :\n' +
-      '- 寻寻 (xún xún) — chercher chercher\n' +
+      '- 寻寻 (xúnxún) — chercher chercher\n' +
       '- 觅觅 (mì mì) — chercher chercher\n' +
-      '- 冷冷 (lěng lěng) — froid froid\n' +
-      '- 清清 (qīng qīng) — désolé désolé\n' +
-      '- 凄凄 (qī qī) — mélancolique mélancolique\n' +
-      '- 惨惨 (cǎn cǎn) — désespéré désespéré\n' +
-      '- 戚戚 (qī qī) — navrant navrant\n' +
+      '- 冷冷 (lěnglěng) — froid froid\n' +
+      '- 清清 (qīngqīng) — désolé désolé\n' +
+      '- 凄凄 (qīqī) — mélancolique mélancolique\n' +
+      '- 惨惨 (cǎncǎn) — désespéré désespéré\n' +
+      '- 戚戚 (qīqī) — navrant navrant\n' +
       '\n' +
       'L\'effet est un climat physiquement RESSENTI de DÉSOLATION. Traduction française la plus connue : « Je cherche, je cherche, froid désolé, triste triste navrant ». Étudié dans TOUS les manuels chinois, reste l\'un des sommets absolus du 词 Song.\n' +
       '\n' +

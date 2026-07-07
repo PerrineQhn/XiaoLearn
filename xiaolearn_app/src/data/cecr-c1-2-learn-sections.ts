@@ -60,11 +60,11 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
       'Un contrat chinois 合同 suit une **structure clausulaire fixe**. Connaître les sections et leur vocabulaire propre = condition pour négocier.\n' +
       '\n' +
       'Structure type :\n' +
-      '- 甲方 (jiǎ fāng) / 乙方 (yǐ fāng) — Partie A / Partie B\n' +
+      '- 甲方 (jiǎfāng) / 乙方 (yǐfāng) — Partie A / Partie B\n' +
       '- 标的 (biāodì) — objet du contrat\n' +
       '- 价款 (jiàkuǎn) — prix\n' +
       '- 期限 (qīxiàn) — durée\n' +
-      '- 违约责任 (wéiyuē zérèn) — responsabilité en cas de rupture\n' +
+      '- 违约责任 (wéiyuēzérèn) — responsabilité en cas de rupture\n' +
       '- 不可抗力 (bùkěkànglì) — force majeure\n' +
       '- 争议解决 (zhēngyì jiějué) — règlement des différends\n' +
       '\n' +
@@ -264,7 +264,7 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
       '- 谈话 (tánhuà) — entretien formel\n' +
       '- 警告 (jǐnggào) — avertir\n' +
       '- 处分 (chǔfèn) — sanction\n' +
-      '- 吸取教训 (xīqǔ jiàoxùn) — tirer une leçon\n' +
+      '- 吸取教训 (xīqǔjiàoxùn) — tirer une leçon\n' +
       '\n' +
       'Phrases-types de l\'entretien :\n' +
       '- 我今天找您谈话是关于 X 的事情 — cadre formel\n' +
@@ -306,7 +306,7 @@ export const c12ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire du licenciement :\n' +
       '- 解除合同 (jiěchú hétong) — résilier le contrat\n' +
-      '- 补偿金 (bǔcháng jīn) — indemnité\n' +
+      '- 补偿金 (bǔchángjīn) — indemnité\n' +
       '- 离职手续 (lízhí shǒuxù) — formalités de départ\n' +
       '- 推荐信 (tuījiànxìn) — lettre de recommandation\n' +
       '\n' +
@@ -358,7 +358,7 @@ export const c12ConvM5LearnSections: LessonV2LearnSection[] = [
       '- 商业模式 (shāngyèmóshì) — business model\n' +
       '- 现金流 (xiànjīnliú) — cashflow\n' +
       '- 退出机制 (tuìchū jīzhì) — sortie / exit\n' +
-      '- 痛点 (tòng diǎn) — pain point (**mot-clé obsessionnel** des VC chinois)\n' +
+      '- 痛点 (tòngdiǎn) — pain point (**mot-clé obsessionnel** des VC chinois)\n' +
       '- 护城河 (hùchénghé) — moat / douve (métaphore venue de Buffett)\n' +
       '\n' +
       'Phrases-piliers du pitch :\n' +
@@ -546,7 +546,7 @@ export const c12ConvM7LearnSections: LessonV2LearnSection[] = [
       '- 呼吁 (hūyù) — appel\n' +
       '- 请求 (qǐngqiú) — demande\n' +
       '- 要求 (yāoqiú) — exigence\n' +
-      '- 强烈要求 (qiángliè yāoqiú) — exigence forte\n' +
+      '- 强烈要求 (qiánglièyāoqiú) — exigence forte\n' +
       '\n' +
       'Phrases-piliers de la pétition :\n' +
       '- 致 X — formule épistolaire d\'adresse\n' +
@@ -1225,7 +1225,7 @@ export const c12BusinessM1LearnSections: LessonV2LearnSection[] = [
       '- 同学 (tóngxué) — camarades de promo universitaire (lien **extrêmement fort** en Chine)\n' +
       '- 同乡 (tóngxiāng) — gens de la même province\n' +
       '- 战友 (zhànyǒu) — camarades militaires\n' +
-      '- 老朋友 (lǎo péngyǒu) — vieux amis\n' +
+      '- 老朋友 (lǎopéngyǒu) — vieux amis\n' +
       '\n' +
       'Mécanique de la construction :\n' +
       '- 吃饭 — s\'inviter à manger\n' +
@@ -1330,7 +1330,7 @@ export const c12BusinessM2LearnSections: LessonV2LearnSection[] = [
       'Les 3 thés-stars du business chinois :\n' +
       '- 普洱 (pǔ\'ěr) — thé fermenté du Yunnan\n' +
       '- 龙井 (lóngjǐng) — thé vert de Hangzhou\n' +
-      '- 铁观音 (tiě guānyīn) — oolong du Fujian\n' +
+      '- 铁观音 (tiěguānyīn) — oolong du Fujian\n' +
       '\n' +
       'Avantages / inconvénients :\n' +
       '- (+) Pas d\'ivresse, pas de gueule de bois, tête claire pour décider\n' +
@@ -1402,10 +1402,10 @@ export const c12BusinessM3LearnSections: LessonV2LearnSection[] = [
       'Vocabulaire du paiement :\n' +
       '- 付款方式 (fùkuǎn fāngshì) — mode de paiement (现金 cash, 转账 virement, 支票 chèque)\n' +
       '- 定金 (dìngjīn) — acompte (~30%)\n' +
-      '- 尾款 (wěi kuǎn) — solde, à la livraison\n' +
+      '- 尾款 (wěikuǎn) — solde, à la livraison\n' +
       '- 分期 (fēnqī) — paiement échelonné\n' +
       '- 押金 (yājīn) — caution remboursable\n' +
-      '- 违约金 (wéiyuē jīn) — pénalité de rupture\n' +
+      '- 违约金 (wéiyuējīn) — pénalité de rupture\n' +
       '\n' +
       'Délais :\n' +
       '- 交货期 (jiāohuòqī) — date de livraison\n' +
@@ -1473,10 +1473,10 @@ export const c12BusinessM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire de la clôture :\n' +
       '- 合作共赢 (hézuò gòngyíng) — coopération gagnant-gagnant\n' +
-      '- 互利互惠 (hùlì hùhuì) — mutuellement bénéfique\n' +
-      '- 携手共进 (xiéshǒu gòng jìn) — avancer main dans la main\n' +
-      '- 共创 (gòng chuàng) — cocréer\n' +
-      '- 美好未来 (měihǎo wèilái) — bel avenir\n' +
+      '- 互利互惠 (hùlìhùhuì) — mutuellement bénéfique\n' +
+      '- 携手共进 (xiéshǒu gòngjìn) — avancer main dans la main\n' +
+      '- 共创 (gòngchuàng) — cocréer\n' +
+      '- 美好未来 (měihǎowèilái) — bel avenir\n' +
       '\n' +
       'Chéngyǔ de fin (au choix) :\n' +
       '- 互利共赢 — gagnant-gagnant\n' +
@@ -1563,7 +1563,7 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
       'Vocabulaire du shadow education :\n' +
       '- 补习班 (bǔxíbān) — cours de rattrapage\n' +
       '- 一对一 (yīduìyī) — cours particulier 1-on-1\n' +
-      '- 在线教育 (zàixiàn jiàoyù) — cours en ligne\n' +
+      '- 在线教育 (zàixiànjiàoyù) — cours en ligne\n' +
       '- 学区房 (xuéqū fáng) — appartement en secteur d\'élite scolaire\n' +
       '\n' +
       'La politique **双减** de 2021 (« double réduction ») :\n' +
@@ -1618,8 +1618,8 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire de l\'examen :\n' +
       '- 考场 (kǎochǎng) — centre d\'examen\n' +
-      '- 监考 (jiān kǎo) — surveillant\n' +
-      '- 答题卡 (dá tí kǎ) — feuille de réponses\n' +
+      '- 监考 (jiānkǎo) — surveillant\n' +
+      '- 答题卡 (dátíkǎ) — feuille de réponses\n' +
       '- 准考证 (zhǔnkǎozhèng) — carte d\'admission\n' +
       '\n' +
       'RÈGLE D\'OR : pour souhaiter bonne chance à une famille — **祝您家孩子高考顺利，金榜题名 !** 金榜题名 = chéngyǔ impérial (réussir l\'examen mandarinal, son nom sur la liste rouge). Touche émotionnelle garantie.',
@@ -1658,7 +1658,7 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
       '- **211 工程** (lancé pour le 21e siècle) — top 100 universités. Inclut les 985 + universités provinciales fortes\n' +
       '\n' +
       'Hors 985/211 :\n' +
-      '- 普通本科 (pǔtōng běnkē) — université régulière\n' +
+      '- 普通本科 (pǔtōngběnkē) — université régulière\n' +
       '- 专科 (zhuānkē) — cycle court 2-3 ans, équivalent BTS\n' +
       '\n' +
       'Récemment, le programme **双一流** (Double First-Class) remplace officiellement 985/211, mais les anciens labels restent dans le langage courant.\n' +
@@ -1850,8 +1850,8 @@ export const c12LawSocietyM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire-clé du débat :\n' +
       '- 女权 (nǚquán) — droits des femmes\n' +
-      '- 剩女 (shèng nǚ) — « femmes restantes » (femmes 27+ non mariées)\n' +
-      '- 催婚 (cuī hūn) — pression à se marier\n' +
+      '- 剩女 (shèngnǚ) — « femmes restantes » (femmes 27+ non mariées)\n' +
+      '- 催婚 (cuīhūn) — pression à se marier\n' +
       '- 全职妈妈 (quánzhí māma) — mère au foyer\n' +
       '\n' +
       'Jalons et tensions :\n' +
@@ -1925,8 +1925,8 @@ export const c12LawSocietyM3LearnSections: LessonV2LearnSection[] = [
       'Services bloqués vs équivalents chinois :\n' +
       '- Google → 百度 (bǎidù)\n' +
       '- WhatsApp → 微信 (Wēixìn / WeChat)\n' +
-      '- Twitter/X → 微博 (wēi bó)\n' +
-      '- TikTok → 抖音 (dǒu yīn)\n' +
+      '- Twitter/X → 微博 (wēibó)\n' +
+      '- TikTok → 抖音 (dǒuyīn)\n' +
       '- YouTube → 哔哩哔哩 (Bìlībìlī / Bilibili)\n' +
       '- Aussi bloqués : FB, Instagram, Wikipedia partiel, NYT, BBC Chinese\n' +
       '\n' +

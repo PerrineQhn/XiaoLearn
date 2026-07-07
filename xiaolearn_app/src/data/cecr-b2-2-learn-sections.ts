@@ -828,7 +828,7 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
       { hanzi: '丑', pinyin: 'chǒu', meaning: 'rôle comique', meaningEn: 'clown role', audio: 'audio/hsk4/hsk4_丑.wav' }
     ],
     tip:
-      'Anecdote utile : les rôles de 旦 (femme) étaient historiquement joués par des hommes — 梅兰芳 (méi lán fāng) reste le 旦 le plus célèbre du 20e siècle.',
+      'Anecdote utile : les rôles de 旦 (femme) étaient historiquement joués par des hommes — 梅兰芳 (méilánfāng) reste le 旦 le plus célèbre du 20e siècle.',
     tipEn:
       'Useful anecdote: 旦 (female) roles were historically played by men — 梅兰芳 (Mei Lanfang) is the most famous 20th-century 旦.'
   },
@@ -939,7 +939,7 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : très collectionnée — les pièces Ming/Qing peuvent atteindre des **millions** aux enchères.',
     bodyEn:
-      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐng dé zhèn) in Jiangxi, producing for 1,000 years.\n' +
+      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐngdézhèn) in Jiangxi, producing for 1,000 years.\n' +
       '\n' +
       'Iconic styles:\n' +
       '\n' +
@@ -2262,7 +2262,7 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '了 apporte le sens temporel (« déjà, ça a changé »), 都 y ajoute la **RÉACTION** — impatience ou surprise.\n' +
       '\n' +
       'Contraste avec 已经 :\n' +
-      '- 已经九点了 (yǐjīng jiǔ diǎn le) = info neutre « il est déjà 9h »\n' +
+      '- 已经九点了 (yǐjīng jiǔdiǎn le) = info neutre « il est déjà 9h »\n' +
       '- 都九点了，我们该走了 (dōu jiǔ diǎn le, wǒmen gāi zǒu le) = « il est DÉJÀ 9h, il faut y aller ! » (impatience)\n' +
       '\n' +
       'Sur la surprise : 孩子都长这么高了 (háizi dōu zhǎng zhème gāo le) « le gamin a déjà grandi comme ça ! ».\n' +
@@ -2320,9 +2320,9 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Formule cadre : **连 (lián) + [cas surprenant] + 都/也 + prédicat**.\n' +
       '\n' +
-      '- 连小孩子都看得懂 (lián xiǎo háizi dōu kàn de dǒng) « même un petit enfant peut comprendre »\n' +
+      '- 连小孩子都看得懂 (lián xiǎoháizi dōu kàndedǒng) « même un petit enfant peut comprendre »\n' +
       '- 这么简单的问题，他都不会 (zhème jiǎndān de wèntí, tā dōu bú huì) « il n\'arrive même pas à faire un problème aussi simple » (ici 连 est sous-entendu par le contexte)\n' +
-      '- 连饭都没吃 (lián fàn dōu méi chī) « il n\'a même pas mangé »\n' +
+      '- 连饭都没吃 (liánfàn dōu méi chī) « il n\'a même pas mangé »\n' +
       '\n' +
       '都 et 也 sont largement interchangeables dans ce cadre ; 都 sonne un peu plus fort, 也 un peu plus doux.\n' +
       '\n' +
@@ -2683,11 +2683,11 @@ export const b22NuancesYeFixedLearnSections: LessonV2LearnSection[] = [
       '- Version passée : **再也没** + verbe + **过** : « ne...plus jamais » (constat historique).\n' +
       '  - 从那天起，他再也没来过 (cóng nà tiān qǐ, tā zài yě méi lái guò) « depuis ce jour, il n\'est plus jamais revenu »\n' +
       '\n' +
-      'Nuance : **不再** (bú zài) = « ne...plus » **neutre**. 他不再抽烟了 (tā bú zài chōuyān le) « il ne fume plus » (constat calme, sans émotion). 他再也不抽烟了 (tā zài yě bù chōuyān le) sonne comme un serment « il ne fumera plus JAMAIS ».\n' +
+      'Nuance : **不再** (bú zài) = « ne...plus » **neutre**. 他不再抽烟了 (tā bú zài chōuyān le) « il ne fume plus » (constat calme, sans émotion). 他再也不抽烟了 (tā zàiyě bù chōuyān le) sonne comme un serment « il ne fumera plus JAMAIS ».\n' +
       '\n' +
       'Attention : ces 4 items sont figés — ne cherche pas à les décomposer littéralement, apprends-les comme des blocs.',
     bodyEn:
-      'Four fixed expressions to learn as chunks. 也许 (yěxǔ) = «maybe». Fixed adverb, before the verb. 他还没回消息，也许在开会 = he hasn\'t replied, maybe he\'s in a meeting. 也就是说 (yě jiù shì shuō) = «in other words, that means». Introduces a rephrasing. 这个月底交，也就是说，我们只剩三天了 = due end of month, meaning we only have 3 days left. 再也不 (zài yě bù) = «never again» with EMOTION (oath, anger). Often with 了 at the end. 上次被骗了以后，我再也不相信他了 = after being tricked last time, I\'ll never trust him again. Past version: 再也没 + verb + 过: «never again did» (historical). 从那天起，他再也没来过 = from that day on, he never came again. Nuance: 不再 (bú zài) = «no longer» neutral. 他不再抽烟了 = he doesn\'t smoke anymore (calm statement). 他再也不抽烟了 sounds like an oath «he\'ll NEVER smoke again». These 4 items are fixed — don\'t decompose them literally, learn them as chunks.',
+      'Four fixed expressions to learn as chunks. 也许 (yěxǔ) = «maybe». Fixed adverb, before the verb. 他还没回消息，也许在开会 = he hasn\'t replied, maybe he\'s in a meeting. 也就是说 (yějiùshìshuō) = «in other words, that means». Introduces a rephrasing. 这个月底交，也就是说，我们只剩三天了 = due end of month, meaning we only have 3 days left. 再也不 (zàiyě bù) = «never again» with EMOTION (oath, anger). Often with 了 at the end. 上次被骗了以后，我再也不相信他了 = after being tricked last time, I\'ll never trust him again. Past version: 再也没 + verb + 过: «never again did» (historical). 从那天起，他再也没来过 = from that day on, he never came again. Nuance: 不再 (bú zài) = «no longer» neutral. 他不再抽烟了 = he doesn\'t smoke anymore (calm statement). 他再也不抽烟了 sounds like an oath «he\'ll NEVER smoke again». These 4 items are fixed — don\'t decompose them literally, learn them as chunks.',
     items: [
       { hanzi: '也许', pinyin: 'yěxǔ', meaning: 'peut-être', meaningEn: 'maybe', audio: 'audio/hsk3/hsk3_也许.wav' },
       { hanzi: '也就是说', pinyin: 'yějiùshìshuō', meaning: 'autrement dit', meaningEn: 'in other words', audio: 'audio/hsk1/hsk1_也.wav' },
@@ -2725,10 +2725,10 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       '来 est optionnel et adoucit sans changer le sens. La phrase principale contient typiquement 更, 还, 喜欢, 宁愿.\n' +
       '\n' +
-      'Bonus : 相比之下 (xiāngbǐ zhī xià) = « en comparaison, à côté » en début de 2e phrase.\n' +
+      'Bonus : 相比之下 (xiāngbǐzhīxià) = « en comparaison, à côté » en début de 2e phrase.\n' +
       '- 小李很安静。相比之下，小张就活泼多了 (xiǎo Lǐ hěn ānjìng. xiāngbǐ zhī xià, xiǎo Zhāng jiù huópō duō le)',
     bodyEn:
-      'These 2 turns INTRODUCE a comparison before making it, like «compared to» or «as opposed to». 跟 + [reference] + 相比, [main clause] = NEUTRAL frame. 跟去年相比，今年的生意好多了 = compared to last year, business is much better this year. Formal variant: 与...相比 (yǔ) — press articles, business reports. Short spoken form: 跟...比 without 相. 比起 + [thing A] + (来), [main clause] = EVALUATIVE frame — you\'re about to state a preference or judgment. 比起坐地铁来，我更喜欢骑自行车 = rather than the metro, I prefer cycling. 来 is optional and softens without changing meaning. Main clause typically has 更, 还, 喜欢, 宁愿. Bonus: 相比之下 (xiāngbǐ zhī xià) = «in comparison, by contrast» at the start of the second sentence.',
+      'These 2 turns INTRODUCE a comparison before making it, like «compared to» or «as opposed to». 跟 + [reference] + 相比, [main clause] = NEUTRAL frame. 跟去年相比，今年的生意好多了 = compared to last year, business is much better this year. Formal variant: 与...相比 (yǔ) — press articles, business reports. Short spoken form: 跟...比 without 相. 比起 + [thing A] + (来), [main clause] = EVALUATIVE frame — you\'re about to state a preference or judgment. 比起坐地铁来，我更喜欢骑自行车 = rather than the metro, I prefer cycling. 来 is optional and softens without changing meaning. Main clause typically has 更, 还, 喜欢, 宁愿. Bonus: 相比之下 (xiāngbǐzhīxià) = «in comparison, by contrast» at the start of the second sentence.',
     items: [
       { hanzi: '相比', pinyin: 'xiāngbǐ', meaning: 'comparer', meaningEn: 'compare', audio: 'audio/hsk5/hsk5_相比.wav' },
       { hanzi: '跟...相比', pinyin: 'gēn...xiāng bǐ', meaning: 'par rapport à', meaningEn: 'compared to', audio: 'audio/hsk3/hsk3_跟.wav' },
@@ -2751,7 +2751,7 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
       'Les 3 se traduisent tous par « moins que », mais avec des sens BIEN différents.\n' +
       '\n' +
       '**没有** (méiyǒu) : FAIT constaté, neutre. « A est simplement moins X que B ».\n' +
-      '- 这间房没有那间大 (zhè jiān fáng méiyǒu nà jiān dà) « cette pièce est moins grande »\n' +
+      '- 这间房没有那间大 (zhèjiān fáng méiyǒu nàjiān dà) « cette pièce est moins grande »\n' +
       '\n' +
       '**不如** (bùrú) : JUGEMENT évaluatif. « A tombe en dessous de B » → B est la meilleure option / le standard supérieur.\n' +
       '- 我做饭不如妈妈 (wǒ zuò fàn bùrú māma) « ma cuisine n\'arrive pas à la cheville de celle de maman »\n' +
@@ -2760,12 +2760,12 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       '**不比** (bù bǐ) : PAS vraiment « moins que ». Sert à DÉMENTIR l\'idée que A dépasse B.\n' +
       '- 我不比她高 (wǒ bù bǐ tā gāo) ≠ « je suis plus petit qu\'elle » MAIS « je ne suis pas plus grand qu\'elle » (on pourrait être égaux ou elle pourrait être plus grande).\n' +
-      '- 这家餐厅不比那家贵 (zhè jiā cāntīng bù bǐ nà jiā guì) « ce resto n\'est pas plus cher que celui-là » → réponse à quelqu\'un qui supposait le contraire.\n' +
+      '- 这家餐厅不比那家贵 (zhèjiā cāntīng bùbǐ nàjiāguì) « ce resto n\'est pas plus cher que celui-là » → réponse à quelqu\'un qui supposait le contraire.\n' +
       '- Si tu voulais dire « ce resto est moins cher », tu dirais 这家比那家便宜 ou 这家没有那家贵.\n' +
       '\n' +
       'Attention : ne confonds pas les 3. 没有 = fait, 不如 = jugement, 不比 = démenti.',
     bodyEn:
-      'All 3 translate as «less than», but with VERY different meanings. 没有 (méiyǒu): observed FACT, neutral. «A is simply less X than B». 这间房没有那间大 = this room is less big. 不如 (bùrú): evaluative JUDGMENT. «A falls below B» → B is the better option / superior standard. 我做饭不如妈妈 = my cooking doesn\'t come close to mom\'s. Can drop the adjective — «not up to par». Add an adjective to specify: 我做饭不如妈妈好吃 = not as tasty. 不比 (bù bǐ): NOT really «less than». Used to DENY that A exceeds B. 我不比她高 ≠ «I\'m shorter than her» BUT «I\'m not taller than her» (we could be equal, or she could be taller). 这家餐厅不比那家贵 = this restaurant isn\'t more expensive than that one → reply to someone who assumed otherwise. To say «this restaurant is cheaper», use 这家比那家便宜 or 这家没有那家贵. Don\'t confuse the 3: 没有 = fact, 不如 = judgment, 不比 = denial.',
+      'All 3 translate as «less than», but with VERY different meanings. 没有 (méiyǒu): observed FACT, neutral. «A is simply less X than B». 这间房没有那间大 = this room is less big. 不如 (bùrú): evaluative JUDGMENT. «A falls below B» → B is the better option / superior standard. 我做饭不如妈妈 = my cooking doesn\'t come close to mom\'s. Can drop the adjective — «not up to par». Add an adjective to specify: 我做饭不如妈妈好吃 = not as tasty. 不比 (bùbǐ): NOT really «less than». Used to DENY that A exceeds B. 我不比她高 ≠ «I\'m shorter than her» BUT «I\'m not taller than her» (we could be equal, or she could be taller). 这家餐厅不比那家贵 = this restaurant isn\'t more expensive than that one → reply to someone who assumed otherwise. To say «this restaurant is cheaper», use 这家比那家便宜 or 这家没有那家贵. Don\'t confuse the 3: 没有 = fact, 不如 = judgment, 不比 = denial.',
     items: [
       { hanzi: '不如', pinyin: 'bùrú', meaning: 'moins bien que (jugement)', meaningEn: 'not as good as (judgment)', audio: 'audio/hsk4/hsk4_不如.wav' },
       { hanzi: '不比', pinyin: 'bùbǐ', meaning: 'pas plus que (démenti)', meaningEn: 'no more than (denial)', audio: 'audio/hsk2/hsk2_比.wav' },
@@ -2801,7 +2801,7 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 比不上/过 sont des compléments potentiels avec 不 sur le verbe 比. Ce sont des blocs à mémoriser, pas des structures à composer.',
     bodyEn:
-      '4 SPOKEN and fixed turns very common with natives to mark a gap. 比不上 (bǐ bu shàng) = «can\'t be compared (upward)». Often used in modesty. 我的中文比不上你 = my Chinese doesn\'t reach your level. 比不过 (bǐ bu guò) = «can\'t beat» (COMPETITION nuance). 我比不过他 = I can\'t compete with him. 没法比 (méi fǎ bǐ) = «there\'s no comparison to make» (huge gap). 这两个根本没法比 = these two can\'t even be compared. 差远了 (chà yuǎn le) = «far, far off» (most casual). Often a modest reply to a compliment: «— Your cooking is chef-level! — 差远了 (not at all)». Grammar note: 比不上/过 are potential complements with 不 on the verb 比. These are chunks to memorize, not structures to compose.',
+      '4 SPOKEN and fixed turns very common with natives to mark a gap. 比不上 (bǐ bu shàng) = «can\'t be compared (upward)». Often used in modesty. 我的中文比不上你 = my Chinese doesn\'t reach your level. 比不过 (bǐ bu guò) = «can\'t beat» (COMPETITION nuance). 我比不过他 = I can\'t compete with him. 没法比 (méifǎ bǐ) = «there\'s no comparison to make» (huge gap). 这两个根本没法比 = these two can\'t even be compared. 差远了 (chàyuǎnle) = «far, far off» (most casual). Often a modest reply to a compliment: «— Your cooking is chef-level! — 差远了 (not at all)». Grammar note: 比不上/过 are potential complements with 不 on the verb 比. These are chunks to memorize, not structures to compose.',
     items: [
       { hanzi: '比不上', pinyin: 'bǐbùshàng', meaning: 'ne pas atteindre le niveau', meaningEn: 'can\'t reach the level', audio: 'audio/hsk2/hsk2_比.wav' },
       { hanzi: '比不过', pinyin: 'bǐ bùguò', meaning: 'ne pas pouvoir rivaliser', meaningEn: 'can\'t beat', audio: 'audio/hsk2/hsk2_比.wav' },
@@ -2828,14 +2828,14 @@ export const b22BiAdvancedLearnSections: LessonV2LearnSection[] = [
       'Rarement neutre — utilise pour taquiner, se moquer, ou faire de l\'ironie. À éviter dans un écrit sérieux.\n' +
       '\n' +
       '**REGISTRE FORMEL** : les 于 compounds. Adjectif mesurable + 于 (yú) = verbe compact de comparaison. Fréquents en presse, contrats, science, math.\n' +
-      '- 高于 (gāo yú) : supérieur à — 今年的销售额高于去年 (jīnnián de xiāoshòu\'é gāo yú qùnián) « les ventes de cette année sont supérieures à celles de l\'an dernier »\n' +
-      '- 低于 (dī yú) : inférieur à\n' +
-      '- 大于 (dà yú) : plus grand que (aussi en math : 5 大于 3 = 5 > 3)\n' +
-      '- 小于 (xiǎo yú) : plus petit que\n' +
-      '- 多于 (duō yú) : plus nombreux que\n' +
-      '- 少于 (shǎo yú) : moins nombreux que\n' +
+      '- 高于 (gāoyú) : supérieur à — 今年的销售额高于去年 (jīnnián de xiāoshòu\'é gāo yú qùnián) « les ventes de cette année sont supérieures à celles de l\'an dernier »\n' +
+      '- 低于 (dīyú) : inférieur à\n' +
+      '- 大于 (dàyú) : plus grand que (aussi en math : 5 大于 3 = 5 > 3)\n' +
+      '- 小于 (xiǎoyú) : plus petit que\n' +
+      '- 多于 (duōyú) : plus nombreux que\n' +
+      '- 少于 (shǎoyú) : moins nombreux que\n' +
       '- 早于 / 晚于 : plus tôt / plus tard\n' +
-      '- 优于 (yōu yú) : supérieur à (qualité)\n' +
+      '- 优于 (yōuyú) : supérieur à (qualité)\n' +
       '\n' +
       'En conversation courante, préfère la structure 比. Les 于 compounds sont surtout à reconnaître à l\'écrit.\n' +
       '\n' +

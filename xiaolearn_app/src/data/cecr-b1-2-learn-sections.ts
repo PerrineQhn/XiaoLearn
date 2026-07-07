@@ -406,10 +406,10 @@ export const b12BiLearnSections: LessonV2LearnSection[] = [
     body:
       'Structure : A + 没有 + B + adjectif = A n\'est pas aussi X que B.\n' +
       '\n' +
-      'Ex : 这间房没有那间大 (zhè jiān fáng méiyǒu nà jiān dà) « cette pièce n\'est pas aussi grande que celle-là ».\n' +
+      'Ex : 这间房没有那间大 (zhèjiān fáng méiyǒu nàjiān dà) « cette pièce n\'est pas aussi grande que celle-là ».\n' +
       '\n' +
       'Astuce : pour insister sur l\'écart, ajoute 那么 (nàme) ou 这么 (zhème) avant l\'adjectif.\n' +
-      '- 这间房没有那间那么大 (zhè jiān fáng méiyǒu nà jiān nàme dà) « loin d\'être aussi grande que celle-là »\n' +
+      '- 这间房没有那间那么大 (zhèjiān fáng méiyǒu nà jiān nàme dà) « loin d\'être aussi grande que celle-là »\n' +
       '\n' +
       'Alternative proche : 不像...那么... (búxiàng...nàme...) = « pas comme... à ce point là ».\n' +
       '- 他不像他哥哥那么高 (tā bú xiàng tā gēge nàme gāo) « il n\'est pas aussi grand que son grand frère »\n' +
@@ -517,7 +517,7 @@ export const b12BiPrecisionLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Écart grand :\n' +
       '- 得多 (de duō) : écrit et oral. Ex : 新电脑比旧电脑快得多 (xīn diànnǎo bǐ jiù diànnǎo kuài de duō) « le nouvel ordi est bien plus rapide que l\'ancien ».\n' +
-      '- 多了 (duō le) : très fréquent à l\'oral. Ex : 新电脑比旧电脑快多了 (xīn diànnǎo bǐ jiù diànnǎo kuài duō le).\n' +
+      '- 多了 (duō le) : très fréquent à l\'oral. Ex : 新电脑比旧电脑快多了 (xīn diànnǎo bǐ jiùdiànnǎo kuài duō le).\n' +
       '\n' +
       'Attention : le modificateur d\'écart vient TOUJOURS APRÈS l\'adjectif, jamais avant. 比旧电脑很多快 ✗, 比旧电脑很快 ✗. Une fois que 比 est là, on ne remet ni 很 ni 很多 devant l\'adjectif.',
     bodyEn:
@@ -546,14 +546,14 @@ export const b12BiPrecisionLearnSections: LessonV2LearnSection[] = [
       'Fonctionne uniquement avec des adjectifs MESURABLES : 大, 高, 长, 贵, 远, 重…\n' +
       '\n' +
       'Exemples :\n' +
-      '- 她比我大三岁 (tā bǐ wǒ dà sān suì) « elle a 3 ans de plus que moi »\n' +
-      '- 这本书比那本贵二十块 (zhè běn shū bǐ nà běn guì èrshí kuài) « ce livre est 20 yuan plus cher »\n' +
-      '- 我家比他家远两公里 (wǒ jiā bǐ tā jiā yuǎn liǎng gōnglǐ) « ma maison est 2 km plus loin »\n' +
+      '- 她比我大三岁 (tā bǐ wǒ dà sānsuì) « elle a 3 ans de plus que moi »\n' +
+      '- 这本书比那本贵二十块 (zhè běnshū bǐ nà běnguì èrshíkuài) « ce livre est 20 yuan plus cher »\n' +
+      '- 我家比他家远两公里 (wǒjiā bǐ tājiā yuǎn liǎnggōnglǐ) « ma maison est 2 km plus loin »\n' +
       '\n' +
       'Attention : le pattern ne marche PAS avec 没有. 我没有她大三岁 ✗ n\'existe pas.\n' +
       '\n' +
       'Astuce pour « X est moins Y que Z par N » :\n' +
-      '- Option 1 : inverse l\'adjectif → 我比她小三岁 (wǒ bǐ tā xiǎo sān suì) « j\'ai 3 ans de moins qu\'elle ». Utilise l\'antonyme mesurable (小/矮/轻/低/短).\n' +
+      '- Option 1 : inverse l\'adjectif → 我比她小三岁 (wǒ bǐ tā xiǎo sānsuì) « j\'ai 3 ans de moins qu\'elle ». Utilise l\'antonyme mesurable (小/矮/轻/低/短).\n' +
       '- Option 2 : renverse A et B → 她比我大三岁 (même info, autre perspective).',
     bodyEn:
       'Structure: A + 比 + B + measurable adjective + numeric quantity. Only works with MEASURABLE adjectives: 大, 高, 长, 贵, 远, 重… 她比我大三岁 = she\'s 3 years older than me. 这本书比那本贵二十块 = this book is 20 yuan more expensive. 我家比他家远两公里 = my place is 2 km farther. IMPORTANT: this pattern does NOT work with 没有. 我没有她大三岁 ✗ doesn\'t exist. To say «X is less Y than Z by N»: (a) flip the adjective — 我比她小三岁 = I\'m 3 years younger. Use the measurable antonym (小/矮/轻/低/短); (b) flip A and B — 她比我大三岁 (same info, different angle).',
@@ -618,7 +618,7 @@ export const b12BiPrecisionLearnSections: LessonV2LearnSection[] = [
       'Direction : 多 (plus), 少 (moins), 早 (plus tôt), 晚 (plus tard). Ils viennent AVANT le verbe.\n' +
       '\n' +
       'Exemples :\n' +
-      '- 我比他早到十五分钟 (wǒ bǐ tā zǎo dào shíwǔ fēnzhōng) « je suis arrivé 15 min plus tôt que lui »\n' +
+      '- 我比他早到十五分钟 (wǒ bǐ tā zǎodào shíwǔfēnzhōng) « je suis arrivé 15 min plus tôt que lui »\n' +
       '- 我比他多吃了五个饺子 (wǒ bǐ tā duō chī le wǔ ge jiǎozi) « j\'ai mangé 5 raviolis de plus que lui »\n' +
       '- 她比我少睡两个小时 (tā bǐ wǒ shǎo shuì liǎng ge xiǎoshí) « elle dort 2 h de moins que moi »\n' +
       '- 他比我晚走了半个小时 (tā bǐ wǒ wǎn zǒu le bàn ge xiǎoshí) « il est parti 30 min plus tard »\n' +
@@ -1506,10 +1506,10 @@ export const b12MedSocialLearnSections: LessonV2LearnSection[] = [
       'La Chine a ses propres plateformes : Google, Facebook, YouTube et Instagram y sont **bloqués**.\n' +
       '\n' +
       'Les équivalents clés à connaître :\n' +
-      '- 微博 (wēi bó) : Weibo ≈ Twitter\n' +
-      '- 抖音 (dǒu yīn) : Douyin ≈ TikTok Chine\n' +
-      '- 小红书 (xiǎohóng shū) : Red Note ≈ Instagram + Pinterest\n' +
-      '- 知乎 (zhī hū) : ≈ Quora\n' +
+      '- 微博 (wēibó) : Weibo ≈ Twitter\n' +
+      '- 抖音 (dǒuyīn) : Douyin ≈ TikTok Chine\n' +
+      '- 小红书 (xiǎohóngshū) : Red Note ≈ Instagram + Pinterest\n' +
+      '- 知乎 (zhīhū) : ≈ Quora\n' +
       '- 哔哩哔哩 (bīlībīlī) : Bilibili ≈ YouTube jeune\n' +
       '- 百度 (bǎidù) : ≈ Google\n' +
       '\n' +
@@ -1606,7 +1606,7 @@ export const b12MedAdvertisingLearnSections: LessonV2LearnSection[] = [
       '- 口号 (kǒuhào) : slogan\n' +
       '- 优惠 (yōuhuì) : promotion\n' +
       '- 打折 (dǎzhé) : remise\n' +
-      '- 限时 (xiàn shí) : durée limitée\n' +
+      '- 限时 (xiànshí) : durée limitée\n' +
       '- 免费 (miǎnfèi) : gratuit\n' +
       '\n' +
       'Grands événements commerciaux : 双十一 (11/11, **Singles\' Day**, plus gros jour shopping au monde), 618 (anniversaire JD le 18 juin), 双十二 (12/12).\n' +
@@ -2591,17 +2591,17 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
     body:
       'Quand 怎么 est associé à une négation (不/没) ou à une situation inattendue, il glisse de « méthode » vers « raison ». Sens ≈ « comment se fait-il ? », « comment ça, tu... ? ».\n' +
       '\n' +
-      'Ex : 你怎么没来 (nǐ zěn me méi lái) « comment ça se fait que tu ne sois pas venu ? » (surprise). Vs 你怎么去 (nǐ zěn me qù) « tu y vas comment ? » (méthode).\n' +
+      'Ex : 你怎么没来 (nǐ zěnme méi lái) « comment ça se fait que tu ne sois pas venu ? » (surprise). Vs 你怎么去 (nǐ zěnme qù) « tu y vas comment ? » (méthode).\n' +
       '\n' +
-      'Ex : 他怎么不吃 (tā zěn me bù chī) « comment ça se fait qu\'il ne mange pas ? ».\n' +
+      'Ex : 他怎么不吃 (tā zěnme bùchī) « comment ça se fait qu\'il ne mange pas ? ».\n' +
       '\n' +
-      'Sans négation, le contexte suffit : quelqu\'un débarque à minuit → 你怎么来了 (nǐ zěn me lái le) « comment ça se fait que tu sois venu ? » (surprise pure).\n' +
+      'Sans négation, le contexte suffit : quelqu\'un débarque à minuit → 你怎么来了 (nǐ zěnme lái le) « comment ça se fait que tu sois venu ? » (surprise pure).\n' +
       '\n' +
-      '怎么 vs 为什么 : 为什么 (wèi shén me) = « pourquoi ? » NEUTRE et FACTUEL. 怎么 en sens raison = surprise, agacement, ou reproche léger. Ex : 你为什么没来 (nǐ wèi shén me méi lái) = question calme ; 你怎么没来 (nǐ zěn me méi lái) = ils attendaient, elles sont surprises.\n' +
+      '怎么 vs 为什么 : 为什么 (wèishénme) = « pourquoi ? » NEUTRE et FACTUEL. 怎么 en sens raison = surprise, agacement, ou reproche léger. Ex : 你为什么没来 (nǐ wèishénme méi lái) = question calme ; 你怎么没来 (nǐ zěnme méi lái) = ils attendaient, elles sont surprises.\n' +
       '\n' +
       'Règle : à l\'écrit formel ou pour une question posée, prends 为什么. Pour réagir sur le vif à qch d\'inattendu, prends 怎么.',
     bodyEn:
-      'When 怎么 pairs with negation (不/没) or an unexpected situation, it shifts from «method» to «reason». Meaning ≈ «how come?», «what do you mean, you…?». Ex: 你怎么没来 = «how come you didn\'t come?» (surprise). Vs 你怎么去 = «how are you going?» (method). Ex: 他怎么不吃 = «how come he isn\'t eating?». Without negation, context is enough: someone shows up at midnight → 你怎么来了 = «how come you came?» (pure surprise). 怎么 vs 为什么: 为什么 (wèi shén me) = «why?» NEUTRAL and FACTUAL. 怎么 in the reason sense = surprise, annoyance, or light reproach. Ex: 你为什么没来 = calm question; 你怎么没来 = they were waiting, they\'re surprised. Rule: in formal writing or for an even-toned question, use 为什么. To react on the fly to something unexpected, use 怎么.',
+      'When 怎么 pairs with negation (不/没) or an unexpected situation, it shifts from «method» to «reason». Meaning ≈ «how come?», «what do you mean, you…?». Ex: 你怎么没来 = «how come you didn\'t come?» (surprise). Vs 你怎么去 = «how are you going?» (method). Ex: 他怎么不吃 = «how come he isn\'t eating?». Without negation, context is enough: someone shows up at midnight → 你怎么来了 = «how come you came?» (pure surprise). 怎么 vs 为什么: 为什么 (wèishénme) = «why?» NEUTRAL and FACTUAL. 怎么 in the reason sense = surprise, annoyance, or light reproach. Ex: 你为什么没来 = calm question; 你怎么没来 = they were waiting, they\'re surprised. Rule: in formal writing or for an even-toned question, use 为什么. To react on the fly to something unexpected, use 怎么.',
     items: [
       { hanzi: '怎么', pinyin: 'zěnme', meaning: 'comment (surprise, raison)', meaningEn: 'how (surprise, reason)', audio: 'audio/hsk1/hsk1_怎么.wav' },
       { hanzi: '为什么', pinyin: 'wèishénme', meaning: 'pourquoi (neutre)', meaningEn: 'why (neutral)', audio: 'audio/hsk2/hsk2_为什么.wav' },
@@ -2619,19 +2619,19 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
     title: '怎么了 ? et 是怎么回事 ? — signaler un problème',
     titleEn: '怎么了? and 是怎么回事? — flagging a problem',
     body:
-      '怎么了 ? (zěn me le) : « qu\'est-ce qui se passe ? / qu\'est-ce que tu as ? » — s\'utilise quand tu SENS un problème (mine triste, silence gênant, objet cassé). Le 了 marque un changement d\'état.\n' +
+      '怎么了 ? (zěnme le) : « qu\'est-ce qui se passe ? / qu\'est-ce que tu as ? » — s\'utilise quand tu SENS un problème (mine triste, silence gênant, objet cassé). Le 了 marque un changement d\'état.\n' +
       '\n' +
-      'Ex : 你怎么了 (nǐ zěn me le) « qu\'est-ce que t\'as ? / ça va pas ? ». Le ton fait tout : peut être bienveillant ou impatient.\n' +
+      'Ex : 你怎么了 (nǐ zěnme le) « qu\'est-ce que t\'as ? / ça va pas ? ». Le ton fait tout : peut être bienveillant ou impatient.\n' +
       '\n' +
-      'Distinction importante : 怎么了 ? = signale qu\'un problème est perçu. 怎么样了 ? = demande la SUITE / la MISE À JOUR (comment ça a évolué). Ex : 面试怎么了 (miàn shì zěn me le) = pb à l\'entretien ? / 面试怎么样了 (miàn shì zěn me yàng le) = ça a donné quoi ?\n' +
+      'Distinction importante : 怎么了 ? = signale qu\'un problème est perçu. 怎么样了 ? = demande la SUITE / la MISE À JOUR (comment ça a évolué). Ex : 面试怎么了 (miànshì zěnme le) = pb à l\'entretien ? / 面试怎么样了 (miànshì zěnmeyàng le) = ça a donné quoi ?\n' +
       '\n' +
-      '是怎么回事 ? (shì zěn me huí shì) : « c\'est quoi ce truc ? / explique-moi ce qui se passe » — sert à demander une explication d\'une situation étrange, retard, message bizarre, règle inattendue.\n' +
+      '是怎么回事 ? (shì zěnmehuíshì) : « c\'est quoi ce truc ? / explique-moi ce qui se passe » — sert à demander une explication d\'une situation étrange, retard, message bizarre, règle inattendue.\n' +
       '\n' +
-      'Ex : 这是怎么回事 (zhè shì zěn me huí shì) « c\'est quoi ce délire ? ».\n' +
+      'Ex : 这是怎么回事 (zhèshì zěnmehuíshì) « c\'est quoi ce délire ? ».\n' +
       '\n' +
       'Ex : 网络又断了，是怎么回事 (wǎng luò yòu duàn le, shì zěn me huí shì) « internet est encore coupé, c\'est quoi ce truc ? ».',
     bodyEn:
-      '怎么了? (zěn me le): «what\'s going on? / what\'s wrong with you?» — used when you SENSE a problem (sad face, awkward silence, broken object). 了 marks a state change. Ex: 你怎么了 = «what\'s up? / are you okay?». Tone matters: can be caring or impatient. Key distinction: 怎么了? = signals a perceived problem. 怎么样了? = asks for a FOLLOW-UP / UPDATE (how did it evolve). Ex: 面试怎么了 = problem at the interview? / 面试怎么样了 = how did it go? 是怎么回事? (shì zěn me huí shì): «what is this? / explain what\'s going on» — used to demand an explanation for a strange situation, delay, weird message, unexpected rule. Ex: 这是怎么回事 = «what the heck is going on?». Ex: 网络又断了，是怎么回事 = «internet\'s down again, what\'s the deal?».',
+      '怎么了? (zěnme le): «what\'s going on? / what\'s wrong with you?» — used when you SENSE a problem (sad face, awkward silence, broken object). 了 marks a state change. Ex: 你怎么了 = «what\'s up? / are you okay?». Tone matters: can be caring or impatient. Key distinction: 怎么了? = signals a perceived problem. 怎么样了? = asks for a FOLLOW-UP / UPDATE (how did it evolve). Ex: 面试怎么了 = problem at the interview? / 面试怎么样了 = how did it go? 是怎么回事? (shì zěnmehuíshì): «what is this? / explain what\'s going on» — used to demand an explanation for a strange situation, delay, weird message, unexpected rule. Ex: 这是怎么回事 = «what the heck is going on?». Ex: 网络又断了，是怎么回事 = «internet\'s down again, what\'s the deal?».',
     items: [
       { hanzi: '怎么了', pinyin: 'zěnme le', meaning: 'qu\'est-ce qui se passe', meaningEn: 'what\'s wrong', audio: 'audio/hsk2/hsk2_怎么了.wav' },
       { hanzi: '是怎么回事', pinyin: 'shì zěnmehuíshì', meaning: 'c\'est quoi ce truc', meaningEn: 'what\'s the deal', audio: 'audio/hsk4/hsk4_回事.wav' },
@@ -2651,17 +2651,17 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
     body:
       'Ces 3 structures ne cherchent PAS une info réelle : le locuteur RÉAGIT à qch qui le choque.\n' +
       '\n' +
-      '怎么会 + verbe : « comment est-ce possible que... ? ». Le 会 apporte le sens de possibilité. Ex : 你怎么会这么说 (nǐ zěn me huì zhè me shuō) « comment tu peux dire un truc pareil ? » (choc, pas question réelle).\n' +
+      '怎么会 + verbe : « comment est-ce possible que... ? ». Le 会 apporte le sens de possibilité. Ex : 你怎么会这么说 (nǐ zěnme huì zhème shuō) « comment tu peux dire un truc pareil ? » (choc, pas question réelle).\n' +
       '\n' +
-      'Peut se dire seul : 怎么会 (zěn me huì) ? = « c\'est pas possible ». Ou renforcé : 怎么会呢 (zěn me huì ne) ? avec 呢 pour plus d\'incrédulité.\n' +
+      'Peut se dire seul : 怎么会 (zěnme huì) ? = « c\'est pas possible ». Ou renforcé : 怎么会呢 (zěnme huì ne) ? avec 呢 pour plus d\'incrédulité.\n' +
       '\n' +
-      '怎么这样 : « c\'est quoi ce plan ? / comment on peut être comme ça ? ». Compact, chargé émotionnellement. Ex : 你怎么这样 (nǐ zěn me zhè yàng) « comment tu peux être comme ça ? » (déception, reproche léger).\n' +
+      '怎么这样 : « c\'est quoi ce plan ? / comment on peut être comme ça ? ». Compact, chargé émotionnellement. Ex : 你怎么这样 (nǐ zěnme zhèyàng) « comment tu peux être comme ça ? » (déception, reproche léger).\n' +
       '\n' +
-      'Variante : 怎么会这样 (zěn me huì zhè yàng) ? penche vers l\'incrédulité plutôt que la plainte.\n' +
+      'Variante : 怎么会这样 (zěnme huì zhèyàng) ? penche vers l\'incrédulité plutôt que la plainte.\n' +
       '\n' +
       '怎么这么 + adjectif : « pourquoi c\'est aussi X ! ». Surprise ou plainte sur un DEGRÉ. 这么 apporte l\'intensité.\n' +
       '\n' +
-      'Ex : 这个菜怎么这么贵 (zhè ge cài zěn me zhè me guì) « il est HYPER cher, ce plat ! ». C\'est plus une plainte qu\'une demande de tarif détaillé.\n' +
+      'Ex : 这个菜怎么这么贵 (zhège cài zěnme zhème guì) « il est HYPER cher, ce plat ! ». C\'est plus une plainte qu\'une demande de tarif détaillé.\n' +
       '\n' +
       'Autres adjectifs qui marchent : 慢 (màn, lent), 冷 (lěng, froid), 难 (nán, difficile), 远 (yuǎn, loin)…',
     bodyEn:
@@ -2684,15 +2684,15 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
     title: '怎么...都/也 (« peu importe ») + 怎么还/就 (timing)',
     titleEn: '怎么...都/也 («no matter») + 怎么还/就 (timing)',
     body:
-      '怎么...都 = « peu importe comment, le résultat est le même ». 怎么 arrête de poser une question et prend le sens général « n\'importe quel moyen ». Ex : 这件事你怎么做都行 (zhè jiàn shì nǐ zěn me zuò dōu xíng) « ce truc, tu le fais comme tu veux, ça va ». Ex : 别人怎么想都不重要 (bié rén zěn me xiǎng dōu bù zhòng yào) « peu importe ce que pensent les autres ».\n' +
+      '怎么...都 = « peu importe comment, le résultat est le même ». 怎么 arrête de poser une question et prend le sens général « n\'importe quel moyen ». Ex : 这件事你怎么做都行 (zhèjiàn shì nǐ zěnme zuò dōuxíng) « ce truc, tu le fais comme tu veux, ça va ». Ex : 别人怎么想都不重要 (biérén zěnme xiǎng dōu bù zhòngyào) « peu importe ce que pensent les autres ».\n' +
       '\n' +
-      '怎么也 + 不/没 = « quoi qu\'on essaie, ça marche pas ». Version FRUSTRATION. Ex : 我怎么也睡不着 (wǒ zěn me yě shuì bù zháo) « je n\'arrive pas à dormir quoi que je fasse ». Ex : 他怎么也不同意 (tā zěn me yě bù tóng yì) « il ne veut RIEN entendre ».\n' +
+      '怎么也 + 不/没 = « quoi qu\'on essaie, ça marche pas ». Version FRUSTRATION. Ex : 我怎么也睡不着 (wǒ zěn me yě shuì bù zháo) « je n\'arrive pas à dormir quoi que je fasse ». Ex : 他怎么也不同意 (tā zěnme yě bù tóngyì) « il ne veut RIEN entendre ».\n' +
       '\n' +
       'Variante d\'obligation : 怎么也得 + verbe = « il faut absolument que, quoi qu\'il arrive ». Ex : 怎么也得吃点东西 (zěn me yě děi chī diǎn dōng xi) « il faut au moins manger un peu, coûte que coûte ».\n' +
       '\n' +
-      '怎么还 + verbe : surprise qu\'une chose CONTINUE alors qu\'on la pensait finie. Ex : 你怎么还在用那个旧手机 (nǐ zěn me hái zài yòng nà ge jiù shǒu jī) « comment ça se fait que tu utilises ENCORE ce vieux téléphone ? ».\n' +
+      '怎么还 + verbe : surprise qu\'une chose CONTINUE alors qu\'on la pensait finie. Ex : 你怎么还在用那个旧手机 (nǐ zěnme hái zài yòng nàge jiù shǒujī) « comment ça se fait que tu utilises ENCORE ce vieux téléphone ? ».\n' +
       '\n' +
-      '怎么就 + verbe : surprise qu\'une chose se soit passée TROP VITE, trop tôt, ou trop brusquement. Ex : 你怎么就放弃了 (nǐ zěn me jiù fàng qì le) « déjà tu abandonnes ? ».\n' +
+      '怎么就 + verbe : surprise qu\'une chose se soit passée TROP VITE, trop tôt, ou trop brusquement. Ex : 你怎么就放弃了 (nǐ zěnme jiù fàngqì le) « déjà tu abandonnes ? ».\n' +
       '\n' +
       'Nuance : 怎么还 = « on attendait un changement, il n\'a pas eu lieu » ; 怎么就 = « on attendait qu\'un état dure, il a déjà changé ».',
     bodyEn:
@@ -2724,11 +2724,11 @@ export const b12NuancesMeasureWordsAdvancedLearnSections: LessonV2LearnSection[]
       '\n' +
       '次 (cì) : neutre, compte les OCCURRENCES sans dire si l\'action a été complète ou pas.\n' +
       '\n' +
-      'Structure : verbe + nombre + 次. Ex : 我去过三次 (wǒ qù guò sān cì) « j\'y suis allé 3 fois ». Ex : 我试过两次 (j\'ai essayé 2 fois).\n' +
+      'Structure : verbe + nombre + 次. Ex : 我去过三次 (wǒ qùguò sāncì) « j\'y suis allé 3 fois ». Ex : 我试过两次 (j\'ai essayé 2 fois).\n' +
       '\n' +
       '遍 (biàn) : cycle COMPLET du début à la fin. Livre lu de bout en bout, film regardé en entier.\n' +
       '\n' +
-      'Ex : 这本书我看了两遍 (zhè běn shū wǒ kàn le liǎng biàn) « j\'ai lu ce livre 2 fois EN ENTIER ». Ex : 再说一遍 (dis-le encore une fois, en entier) — c\'est ce que dit un prof qui veut qu\'on RÉPÈTE tout depuis le début.\n' +
+      'Ex : 这本书我看了两遍 (zhè běnshū wǒ kàn le liǎngbiàn) « j\'ai lu ce livre 2 fois EN ENTIER ». Ex : 再说一遍 (dis-le encore une fois, en entier) — c\'est ce que dit un prof qui veut qu\'on RÉPÈTE tout depuis le début.\n' +
       '\n' +
       'Différence essentielle avec 次 : 我看了三次 = j\'y ai jeté 3 coups d\'œil / 我看了三遍 = j\'ai relu 3 fois en entier.\n' +
       '\n' +
@@ -2736,7 +2736,7 @@ export const b12NuancesMeasureWordsAdvancedLearnSections: LessonV2LearnSection[]
       '\n' +
       'Ex : 我得跑一趟银行 (wǒ děi pǎo yí tàng yín háng) « il faut que je passe à la banque ». Ex : 去一趟超市 (faire un saut au supermarché).\n' +
       '\n' +
-      'Références temporelles avec 次 comme nom : 这次 (cette fois), 上次 (la dernière fois), 下次 (la prochaine fois). Ex : 下次再说吧 (xià cì zài shuō ba) « on en reparle la prochaine fois ».\n' +
+      'Références temporelles avec 次 comme nom : 这次 (cette fois), 上次 (la dernière fois), 下次 (la prochaine fois). Ex : 下次再说吧 (xiàcì zàishuō ba) « on en reparle la prochaine fois ».\n' +
       '\n' +
       'Attention : avec 次, on N\'AJOUTE PAS 个 (上次, pas 上个次). Par contre avec 星期 : 上星期 et 上个星期 sont tous deux corrects.',
     bodyEn:
@@ -2768,15 +2768,15 @@ export const b12NuancesMeasureWordsAdvancedLearnSections: LessonV2LearnSection[]
       '\n' +
       'Ex : 每个学生都要交作业 (měi ge xué shēng dōu yào jiāo zuò yè) « chaque élève doit rendre les devoirs ».\n' +
       '\n' +
-      'Aussi avec les MW verbaux : 我每次去都下雨 (wǒ měi cì qù dōu xià yǔ) « à chaque fois que j\'y vais, il pleut ».\n' +
+      'Aussi avec les MW verbaux : 我每次去都下雨 (wǒ měicì qù dōu xiàyǔ) « à chaque fois que j\'y vais, il pleut ».\n' +
       '\n' +
       'MW redoublé + 都 = EMPHATIQUE « chaque, tous sans exception ». Plus fort que 每.\n' +
       '\n' +
       'Formes courantes : 个个 (personnes/choses), 天天 (jours), 年年 (années), 次次 (chaque fois), 件件 (chaque item), 家家 (chaque famille/foyer).\n' +
       '\n' +
-      'Ex : 他们个个都很认真 (tā men gè gè dōu hěn rèn zhēn) « ils sont TOUS sérieux, sans exception ».\n' +
+      'Ex : 他们个个都很认真 (tāmen gègè dōu hěn rènzhēn) « ils sont TOUS sérieux, sans exception ».\n' +
       '\n' +
-      'Ex : 他天天加班 (tā tiān tiān jiā bān) « il fait des heures sup TOUS LES JOURS ».\n' +
+      'Ex : 他天天加班 (tā tiāntiān jiābān) « il fait des heures sup TOUS LES JOURS ».\n' +
       '\n' +
       'Compare : 每个人都来了 (« tout le monde est venu », neutre) vs 个个都来了 (« tous sont venus, sans exception », emphatique, parfois surprise).',
     bodyEn:
@@ -2912,19 +2912,19 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
     title: '几乎 : « presque » formel / emphatique',
     titleEn: '几乎: formal / emphatic «almost»',
     body:
-      '几乎 (jī hū) partage le sens de « presque » mais avec un registre plus SOUTENU ou EMPHATIQUE. Fréquent à l\'écrit et dans les discours.\n' +
+      '几乎 (jīhū) partage le sens de « presque » mais avec un registre plus SOUTENU ou EMPHATIQUE. Fréquent à l\'écrit et dans les discours.\n' +
       '\n' +
       'Se combine surtout avec verbes, adjectifs, quantifieurs et 都 pour appuyer une généralisation.\n' +
       '\n' +
       'Combinaisons hyper courantes :\n' +
       '\n' +
-      '- 几乎所有人 (jī hū suǒ yǒu rén) « quasiment tout le monde ».\n' +
-      '- 几乎每天 (jī hū měi tiān) « quasiment tous les jours ».\n' +
-      '- 几乎不 (jī hū bù) « à peine, presque pas ».\n' +
+      '- 几乎所有人 (jīhū suǒyǒurén) « quasiment tout le monde ».\n' +
+      '- 几乎每天 (jīhū měitiān) « quasiment tous les jours ».\n' +
+      '- 几乎不 (jīhū bù) « à peine, presque pas ».\n' +
       '\n' +
-      'Ex : 他几乎每天都喝咖啡 (tā jī hū měi tiān dōu hē kā fēi) « il boit un café presque tous les jours ». Le 都 renforce la généralisation.\n' +
+      'Ex : 他几乎每天都喝咖啡 (tā jīhū měitiān dōu hēkāfēi) « il boit un café presque tous les jours ». Le 都 renforce la généralisation.\n' +
       '\n' +
-      'Ex : 我几乎忘了这件事 (wǒ jī hū wàng le zhè jiàn shì) « j\'ai failli oublier ce truc ». À l\'oral décontracté on utiliserait plutôt 差点儿忘了 (cf. section 3).\n' +
+      'Ex : 我几乎忘了这件事 (wǒ jīhū wàng le zhèjiàn shì) « j\'ai failli oublier ce truc ». À l\'oral décontracté on utiliserait plutôt 差点儿忘了 (cf. section 3).\n' +
       '\n' +
       'Différence majeure vs 差不多 : 几乎 ne peut PAS répondre SEUL. « 你好了吗 ? » — 几乎 ✗ ne marche pas. Il faut toujours qu\'il modifie quelque chose.\n' +
       '\n' +
@@ -2935,15 +2935,15 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
       '- Réponse courte à l\'oral → 差不多.\n' +
       '- Contexte décontracté → 差不多.',
     bodyEn:
-      '几乎 (jī hū) shares the meaning of «almost» but with a more FORMAL or EMPHATIC register. Frequent in writing and speeches. Mostly combines with verbs, adjectives, quantifiers and 都 to back up a generalization.\n' +
+      '几乎 (jīhū) shares the meaning of «almost» but with a more FORMAL or EMPHATIC register. Frequent in writing and speeches. Mostly combines with verbs, adjectives, quantifiers and 都 to back up a generalization.\n' +
       '\n' +
       'Very common combos:\n' +
       '\n' +
-      '- 几乎所有人 (jī hū suǒ yǒu rén) — «practically everyone»\n' +
-      '- 几乎每天 (jī hū měi tiān) — «practically every day»\n' +
-      '- 几乎不 (jī hū bù) — «hardly, almost not»\n' +
+      '- 几乎所有人 (jīhū suǒyǒurén) — «practically everyone»\n' +
+      '- 几乎每天 (jīhū měitiān) — «practically every day»\n' +
+      '- 几乎不 (jīhū bù) — «hardly, almost not»\n' +
       '\n' +
-      'Ex: 他几乎每天都喝咖啡 (tā jī hū měi tiān dōu hē kā fēi) «he drinks coffee almost every day». The 都 strengthens the generalization. Ex: 我几乎忘了这件事 (wǒ jī hū wàng le zhè jiàn shì) «I almost forgot this thing». In casual speech we\'d rather say 差点儿忘了 (see section 3). Key difference vs 差不多: 几乎 CANNOT stand ALONE as a reply. «你好了吗?» — 几乎 ✗ doesn\'t work. It must always modify something. When to pick 几乎 over 差不多: written/formal register → 几乎. Broad generalizations with 所有 / 每 / 都 → 几乎. Short spoken reply → 差不多. Casual context → 差不多.',
+      'Ex: 他几乎每天都喝咖啡 (tā jīhū měitiān dōu hēkāfēi) «he drinks coffee almost every day». The 都 strengthens the generalization. Ex: 我几乎忘了这件事 (wǒ jīhū wàng le zhèjiàn shì) «I almost forgot this thing». In casual speech we\'d rather say 差点儿忘了 (see section 3). Key difference vs 差不多: 几乎 CANNOT stand ALONE as a reply. «你好了吗?» — 几乎 ✗ doesn\'t work. It must always modify something. When to pick 几乎 over 差不多: written/formal register → 几乎. Broad generalizations with 所有 / 每 / 都 → 几乎. Short spoken reply → 差不多. Casual context → 差不多.',
     items: [
       { hanzi: '几乎', pinyin: 'jīhū', meaning: 'presque, quasiment', meaningEn: 'almost, nearly', audio: 'audio/hsk4/hsk4_几乎.wav' },
       { hanzi: '所有', pinyin: 'suǒyǒu', meaning: 'tous, la totalité de', meaningEn: 'all, the whole of', audio: 'audio/hsk4/hsk4_所有.wav' },
@@ -2962,15 +2962,15 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
     title: '将近 : « presque » spécifique aux nombres',
     titleEn: '将近: number-specific «almost»',
     body:
-      '将近 (jiāng jìn) sert UNIQUEMENT devant un nombre. Signifie « un peu moins que », « frisant », « près de ». Ton objectif et factuel.\n' +
+      '将近 (jiāngjìn) sert UNIQUEMENT devant un nombre. Signifie « un peu moins que », « frisant », « près de ». Ton objectif et factuel.\n' +
       '\n' +
       'Structure : 将近 + nombre + (MW) + (nom).\n' +
       '\n' +
-      'Ex : 他将近三十岁了 (tā jiāng jìn sān shí suì le) « il a bientôt trente ans » (peut-être 28 ou 29, pas encore atteint).\n' +
+      'Ex : 他将近三十岁了 (tā jiāngjìn sānshísuì le) « il a bientôt trente ans » (peut-être 28 ou 29, pas encore atteint).\n' +
       '\n' +
       'Ex : 这个项目花了将近一百万 (zhè ge xiàng mù huā le jiāng jìn yī bǎi wàn) « ce projet a coûté près d\'un million ». Sonne pro et précis.\n' +
       '\n' +
-      'Ex : 这个寺庙有将近五百年的历史 (zhè ge sì miào yǒu jiāng jìn wǔ bǎi nián de lì shǐ) « ce temple a près de 500 ans d\'histoire ».\n' +
+      'Ex : 这个寺庙有将近五百年的历史 (zhège sìmiào yǒu jiāngjìn wǔbǎinián de lìshǐ) « ce temple a près de 500 ans d\'histoire ».\n' +
       '\n' +
       'Attention : ne fonctionne PAS avec des verbes ou adjectifs. 将近喜欢 ✗, 将近好 ✗.\n' +
       '\n' +
@@ -2979,7 +2979,7 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
       '- 差不多五十个人来了 = « une cinquantaine de personnes » (estimation floue).\n' +
       '- 将近五十个人来了 = « près de 50 » (précis, encore un peu en dessous). Style rapport ou news.',
     bodyEn:
-      '将近 (jiāng jìn) is used ONLY before a number. Means «slightly less than», «bordering on», «close to». Objective, factual tone. Structure: 将近 + number + (MW) + (noun). Ex: 他将近三十岁了 (tā jiāng jìn sān shí suì le) «he\'s almost thirty» (maybe 28 or 29, not yet there). Ex: 这个项目花了将近一百万 (zhè ge xiàng mù huā le jiāng jìn yī bǎi wàn) «this project cost close to a million». Sounds pro and precise. Ex: 这个寺庙有将近五百年的历史 (zhè ge sì miào yǒu jiāng jìn wǔ bǎi nián de lì shǐ) «this temple has close to 500 years of history». Warning: does NOT work with verbs or adjectives. 将近喜欢 ✗, 将近好 ✗. Register difference vs 差不多 with a number: 差不多五十个人来了 = «about fifty people» (fuzzy estimate). 将近五十个人来了 = «nearly 50» (precise, still slightly below). Report or news style.',
+      '将近 (jiāngjìn) is used ONLY before a number. Means «slightly less than», «bordering on», «close to». Objective, factual tone. Structure: 将近 + number + (MW) + (noun). Ex: 他将近三十岁了 (tā jiāngjìn sānshísuì le) «he\'s almost thirty» (maybe 28 or 29, not yet there). Ex: 这个项目花了将近一百万 (zhè ge xiàng mù huā le jiāng jìn yī bǎi wàn) «this project cost close to a million». Sounds pro and precise. Ex: 这个寺庙有将近五百年的历史 (zhège sìmiào yǒu jiāngjìn wǔbǎinián de lìshǐ) «this temple has close to 500 years of history». Warning: does NOT work with verbs or adjectives. 将近喜欢 ✗, 将近好 ✗. Register difference vs 差不多 with a number: 差不多五十个人来了 = «about fifty people» (fuzzy estimate). 将近五十个人来了 = «nearly 50» (precise, still slightly below). Report or news style.',
     items: [
       { hanzi: '将近', pinyin: 'jiāngjìn', meaning: 'près de, presque (nombre)', meaningEn: 'close to, nearly (number)', audio: 'audio/hsk5/hsk5_将近.wav' },
       { hanzi: '项目', pinyin: 'xiàngmù', meaning: 'projet', meaningEn: 'project', audio: 'audio/hsk4/hsk4_项目.wav' },
@@ -3012,9 +3012,9 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Variante avec 就 : 差点儿就... pour insister sur « à un cheveu près ». Ex : 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) « j\'ai VRAIMENT failli être en retard » (mais je ne l\'ai pas été).\n' +
       '\n' +
-      'Registre formel/écrit : 险些 (xiǎn xiē) — même sens, ton dramatique/littéraire. Ex : 他险些出事 (tā xiǎn xiē chū shì) « il a failli avoir un accident » (dans un rapport de presse).',
+      'Registre formel/écrit : 险些 (xiǎnxiē) — même sens, ton dramatique/littéraire. Ex : 他险些出事 (tā xiǎnxiē chūshì) « il a failli avoir un accident » (dans un rapport de presse).',
     bodyEn:
-      '差点儿 (chà diǎnr, also written 差一点儿) expresses that an action COULD have happened but DID NOT. It\'s the French «within a hair of», the narrow escape. CRUCIAL point: the action did NOT happen. If you say 我差点儿忘了 (wǒ chà diǎnr wàng le), you did NOT forget — you remembered just in time. Structure: subject + 差点儿 + verb + (了). Ex: 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) «he almost fell» (he didn\'t fall). Ex: 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) «I almost forgot your birthday» (but I remembered). Emotional coloring: relief, surprise, sometimes regret. Used in lively speech. Variant with 就: 差点儿就... to stress «by a hair». Ex: 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) «I REALLY almost was late» (but I wasn\'t). Formal/written register: 险些 (xiǎn xiē) — same meaning, dramatic/literary tone. Ex: 他险些出事 (tā xiǎn xiē chū shì) «he narrowly avoided an accident» (in a news report).',
+      '差点儿 (chà diǎnr, also written 差一点儿) expresses that an action COULD have happened but DID NOT. It\'s the French «within a hair of», the narrow escape. CRUCIAL point: the action did NOT happen. If you say 我差点儿忘了 (wǒ chà diǎnr wàng le), you did NOT forget — you remembered just in time. Structure: subject + 差点儿 + verb + (了). Ex: 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) «he almost fell» (he didn\'t fall). Ex: 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) «I almost forgot your birthday» (but I remembered). Emotional coloring: relief, surprise, sometimes regret. Used in lively speech. Variant with 就: 差点儿就... to stress «by a hair». Ex: 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) «I REALLY almost was late» (but I wasn\'t). Formal/written register: 险些 (xiǎnxiē) — same meaning, dramatic/literary tone. Ex: 他险些出事 (tā xiǎnxiē chūshì) «he narrowly avoided an accident» (in a news report).',
     items: [
       { hanzi: '差点儿', pinyin: 'chàdiǎnér', meaning: 'à deux doigts de, failli', meaningEn: 'almost, nearly (didn\'t happen)', audio: 'audio/hsk4/hsk4_差点儿.wav' },
       { hanzi: '摔倒', pinyin: 'shuāidǎo', meaning: 'tomber, trébucher', meaningEn: 'to fall over', audio: 'audio/hsk4/hsk4_摔倒.wav' },
@@ -3080,16 +3080,16 @@ export const b12NuancesShifouYufouLearnSections: LessonV2LearnSection[] = [
     title: '是否 : « si oui ou non » formel et écrit',
     titleEn: '是否: formal, written « whether or not »',
     body:
-      '是否 (shì fǒu) est la version SOUTENUE de « si oui ou non ». Compose 是 (« être ») + 否 (« non » formel/classique). Sens ≈ « que ce soit oui ou non ».\n' +
+      '是否 (shìfǒu) est la version SOUTENUE de « si oui ou non ». Compose 是 (« être ») + 否 (« non » formel/classique). Sens ≈ « que ce soit oui ou non ».\n' +
       '- Structure : (sujet) + 是否 + verbe/adj.\n' +
-      '- Ex : 他在考虑是否参加这个活动 (tā zài kǎo lǜ shì fǒu cān jiā zhè ge huó dòng) « il réfléchit à s\'il participe à cet événement ». À l\'oral décontracté on aurait dit 考虑要不要参加.\n' +
-      '- Ex : 我不确定他是否同意 (wǒ bù què dìng tā shì fǒu tóng yì) « je ne suis pas sûr qu\'il accepte ».\n' +
-      '- Ex : 请确认您是否收到邮件 (qǐng què rèn nín shì fǒu shōu dào yóu jiàn) « veuillez confirmer si vous avez reçu l\'email ». Typique d\'un email pro.\n' +
+      '- Ex : 他在考虑是否参加这个活动 (tā zài kǎolǜ shìfǒu cānjiā zhège huódòng) « il réfléchit à s\'il participe à cet événement ». À l\'oral décontracté on aurait dit 考虑要不要参加.\n' +
+      '- Ex : 我不确定他是否同意 (wǒ bù quèdìng tā shìfǒu tóngyì) « je ne suis pas sûr qu\'il accepte ».\n' +
+      '- Ex : 请确认您是否收到邮件 (qǐng quèrèn nín shìfǒu shōudào yóujiàn) « veuillez confirmer si vous avez reçu l\'email ». Typique d\'un email pro.\n' +
       '- Registres : usage dans la presse, les documents officiels, la correspondance pro, l\'écrit académique. À l\'oral décontracté, sonne un peu ampoulé — préfère V-不-V ou 要不要.\n' +
       '- Avantage stylistique : concis (un mot au lieu de V-不-V), élégant, sérieux. Un article de journal préférera 是否 à V-不-V.\n' +
-      '- Bonus : forme composée 是否成功 (shì fǒu chéng gōng) « si (c\'est) un succès ou non », très fréquente dans les rapports.',
+      '- Bonus : forme composée 是否成功 (shìfǒu chénggōng) « si (c\'est) un succès ou non », très fréquente dans les rapports.',
     bodyEn:
-      '是否 (shì fǒu) is the FORMAL version of « whether or not ». Composed of 是 (« be ») + 否 (formal/classical « no »). Meaning ≈ « whether it be yes or no ».\n' +
+      '是否 (shìfǒu) is the FORMAL version of « whether or not ». Composed of 是 (« be ») + 否 (formal/classical « no »). Meaning ≈ « whether it be yes or no ».\n' +
       '- Structure: (subject) + 是否 + verb/adj.\n' +
       '- Ex: 他在考虑是否参加这个活动 « he\'s considering whether to attend this event ». Casually you\'d say 考虑要不要参加.\n' +
       '- Ex: 我不确定他是否同意 « I\'m not sure whether he agrees ».\n' +
@@ -3115,22 +3115,22 @@ export const b12NuancesShifouYufouLearnSections: LessonV2LearnSection[] = [
     title: '与否 : la version littéraire post-verbale',
     titleEn: '与否: the literary post-verbal version',
     body:
-      '与否 (yǔ fǒu) est encore PLUS soutenue que 是否. Différence-clé : elle se place APRÈS le verbe ou l\'adjectif, pas avant.\n' +
+      '与否 (yǔfǒu) est encore PLUS soutenue que 是否. Différence-clé : elle se place APRÈS le verbe ou l\'adjectif, pas avant.\n' +
       '- Structure : ... + verbe/adj + 与否 + suite.\n' +
-      '- Ex : 他愿意与否对我们来说很重要 (tā yuàn yì yǔ fǒu duì wǒmen lái shuō hěn zhòng yào) « qu\'il soit d\'accord ou non est très important pour nous ». Le groupe 他愿意与否 fait bloc, devient sujet.\n' +
+      '- Ex : 他愿意与否对我们来说很重要 (tā yuànyì yǔfǒu duì wǒmen láishuō hěn zhòngyào) « qu\'il soit d\'accord ou non est très important pour nous ». Le groupe 他愿意与否 fait bloc, devient sujet.\n' +
       '- Ex : 成功与否，全靠自己 (chéng gōng yǔ fǒu, quán kào zì jǐ) « réussir ou non, tout dépend de soi ». Ici 成功与否 (« la réussite ou non ») fonctionne comme un nom.\n' +
       '- Comparaison 是否 vs 与否 :\n' +
       '  · 是否 : AVANT le verbe. 是否参加, 是否成功.\n' +
       '  · 与否 : APRÈS le verbe/adj, transforme la clause en NOM. 参加与否 (« participation ou non »), 成功与否 (« la réussite ou non »).\n' +
       '  · 我不知道是否参加 = 我不知道参加与否 (même sens, structure inversée).\n' +
       '- Combinaisons figées fréquentes :\n' +
-      '  · 成功与否 (chéng gōng yǔ fǒu) « réussir ou non ».\n' +
-      '  · 满意与否 (mǎn yì yǔ fǒu) « (être) satisfait ou non ».\n' +
-      '  · 可行与否 (kě xíng yǔ fǒu) « faisable ou non ».\n' +
-      '  · 愿意与否 (yuàn yì yǔ fǒu) « vouloir ou non ».\n' +
+      '  · 成功与否 (chénggōng yǔfǒu) « réussir ou non ».\n' +
+      '  · 满意与否 (mǎnyì yǔfǒu) « (être) satisfait ou non ».\n' +
+      '  · 可行与否 (kěxíng yǔfǒu) « faisable ou non ».\n' +
+      '  · 愿意与否 (yuànyì yǔfǒu) « vouloir ou non ».\n' +
       '- Registres : quasi exclusivement écrit — rapports formels, articles de presse, essais, publications académiques. À l\'oral quotidien, ça sonnerait comme si tu récitais du Baudelaire au bistrot.',
     bodyEn:
-      '与否 (yǔ fǒu) is even MORE formal than 是否. Key difference: it goes AFTER the verb or adjective, not before.\n' +
+      '与否 (yǔfǒu) is even MORE formal than 是否. Key difference: it goes AFTER the verb or adjective, not before.\n' +
       '- Structure: ... + verb/adj + 与否 + rest.\n' +
       '- Ex: 他愿意与否对我们来说很重要 « whether he agrees or not is very important to us ». The group 他愿意与否 acts as a chunk, becomes the subject.\n' +
       '- Ex: 成功与否，全靠自己 « succeed or not, it all depends on yourself ». Here 成功与否 acts as a noun.\n' +
@@ -3165,36 +3165,36 @@ export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
     title: '操心, 烦恼, 发愁 : différentes formes d\'inquiétude active',
     titleEn: '操心, 烦恼, 发愁: different forms of active worry',
     body:
-      '- 操心 (cāo xīn) : « se démener/faire des efforts par inquiétude ». Littéralement « exercer le cœur ». Souvent pour les affaires d\'autrui — parents qui s\'occupent de tout pour leurs enfants.\n' +
+      '- 操心 (cāoxīn) : « se démener/faire des efforts par inquiétude ». Littéralement « exercer le cœur ». Souvent pour les affaires d\'autrui — parents qui s\'occupent de tout pour leurs enfants.\n' +
       '  · Structure : 为 + [personne/sujet] + 操心.\n' +
       '  · Ex : 妈妈总为孩子的事情操心 (mā ma zǒng wèi hái zi de shì qíng cāo xīn) « maman est toujours en train de se casser la tête pour les affaires des enfants ».\n' +
       '  · Ex : 别为我操心了 « arrête de te faire du mouron pour moi ».\n' +
-      '  · Variante 瞎操心 (xiā cāo xīn) « s\'inquiéter pour rien ».\n' +
+      '  · Variante 瞎操心 (xiācāoxīn) « s\'inquiéter pour rien ».\n' +
       '  · Ton : implique un investissement ACTIF, pas juste anxieux.\n' +
-      '- 烦恼 (fán nǎo) : « être tracassé/embêté ». Nom OU adjectif/verbe. Composé de 烦 (agacé) + 恼 (irrité). Suggère des soucis qui te MINENT mentalement et t\'agacent.\n' +
-      '  · Ex : 他最近有很多烦恼 (tā zuì jìn yǒu hěn duō fán nǎo) « il a beaucoup de soucis ces temps-ci » (烦恼 = nom).\n' +
+      '- 烦恼 (fánnǎo) : « être tracassé/embêté ». Nom OU adjectif/verbe. Composé de 烦 (agacé) + 恼 (irrité). Suggère des soucis qui te MINENT mentalement et t\'agacent.\n' +
+      '  · Ex : 他最近有很多烦恼 (tā zuìjìn yǒu hěnduō fánnǎo) « il a beaucoup de soucis ces temps-ci » (烦恼 = nom).\n' +
       '  · Ex : 我最近很烦恼 « je suis vraiment embêté » (烦恼 = adjectif).\n' +
       '  · Souvent pour problèmes qui NE se résolvent pas facilement.\n' +
-      '- 发愁 (fā chóu) : « broyer du noir/se ronger » sur un problème précis sans solution. Plus imagé et oral.\n' +
+      '- 发愁 (fāchóu) : « broyer du noir/se ronger » sur un problème précis sans solution. Plus imagé et oral.\n' +
       '  · Structure : 为 + [problème] + 发愁.\n' +
-      '  · Ex : 我在为工作发愁 (wǒ zài wèi gōng zuò fā chóu) « je me fais du souci pour mon boulot ».\n' +
+      '  · Ex : 我在为工作发愁 (wǒ zài wèi gōngzuò fāchóu) « je me fais du souci pour mon boulot ».\n' +
       '  · Suggère quelqu\'un les sourcils froncés, qui soupire.\n' +
       '- Comparaison :\n' +
       '  · 操心 = actif et impliqué (parent qui organise tout).\n' +
       '  · 烦恼 = tracassé et agacé (soucis qui bouffent l\'énergie).\n' +
       '  · 发愁 = pensif et déprimé sur UN problème spécifique.',
     bodyEn:
-      '- 操心 (cāo xīn): « to trouble oneself / exert effort through worry ». Literally « to exercise the heart ». Often for other people\'s affairs — parents handling everything for their children.\n' +
+      '- 操心 (cāoxīn): « to trouble oneself / exert effort through worry ». Literally « to exercise the heart ». Often for other people\'s affairs — parents handling everything for their children.\n' +
       '  · Structure: 为 + [person/subject] + 操心.\n' +
       '  · Ex: 妈妈总为孩子的事情操心 « mom is always fretting over the children\'s affairs ».\n' +
       '  · Ex: 别为我操心了 « stop worrying about me ».\n' +
       '  · Variant 瞎操心 « to worry needlessly ».\n' +
       '  · Tone: implies ACTIVE investment, not just anxiety.\n' +
-      '- 烦恼 (fán nǎo): « to be troubled / annoyed ». Noun OR adjective/verb. Composed of 烦 (annoyed) + 恼 (irritated). Suggests worries that WEAR YOU DOWN mentally and vex you.\n' +
+      '- 烦恼 (fánnǎo): « to be troubled / annoyed ». Noun OR adjective/verb. Composed of 烦 (annoyed) + 恼 (irritated). Suggests worries that WEAR YOU DOWN mentally and vex you.\n' +
       '  · Ex: 他最近有很多烦恼 « he has a lot on his mind lately » (烦恼 = noun).\n' +
       '  · Ex: 我最近很烦恼 « I\'ve been really bothered lately » (烦恼 = adjective).\n' +
       '  · Often for problems that DON\'T resolve easily.\n' +
-      '- 发愁 (fā chóu): « to brood / gnaw at oneself » over a specific problem with no solution. More vivid and oral.\n' +
+      '- 发愁 (fāchóu): « to brood / gnaw at oneself » over a specific problem with no solution. More vivid and oral.\n' +
       '  · Structure: 为 + [problem] + 发愁.\n' +
       '  · Ex: 我在为工作发愁 « I\'m worrying about work ».\n' +
       '  · Suggests someone with furrowed brows, sighing.\n' +
@@ -3219,18 +3219,18 @@ export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
     title: '不安, 焦虑, 担忧, 忧虑 : de l\'oral formel à l\'écrit',
     titleEn: '不安, 焦虑, 担忧, 忧虑: from formal speech to writing',
     body:
-      '- 不安 (bù ān) littéralement « pas paisible ». Décrit un MALAISE, une inquiétude sans objet précis.\n' +
+      '- 不安 (bùān) littéralement « pas paisible ». Décrit un MALAISE, une inquiétude sans objet précis.\n' +
       '  · Structure : 感到不安 / 很不安.\n' +
       '  · Ex : 听到爆炸的消息，我们感到很不安 (tīng dào bào zhà de xiāo xi, wǒmen gǎn dào hěn bù ān) « en entendant la nouvelle de l\'explosion, on a ressenti un profond malaise ».\n' +
       '  · Aussi pour des situations : 局势不安 « la situation est instable ». Registre : neutre-formel.\n' +
-      '- 焦虑 (jiāo lǜ) = « anxiété », « angoisse ». Plus intense que 担心, souvent chronique. Utilisé dans les discussions sur santé mentale (焦虑症 « trouble anxieux »).\n' +
-      '  · Ex : 很多年轻人对未来充满焦虑 (hěn duō nián qīng rén duì wèi lái chōng mǎn jiāo lǜ) « beaucoup de jeunes sont pleins d\'angoisse face à l\'avenir ».\n' +
+      '- 焦虑 (jiāolǜ) = « anxiété », « angoisse ». Plus intense que 担心, souvent chronique. Utilisé dans les discussions sur santé mentale (焦虑症 « trouble anxieux »).\n' +
+      '  · Ex : 很多年轻人对未来充满焦虑 (hěnduō niánqīngrén duì wèilái chōngmǎn jiāolǜ) « beaucoup de jeunes sont pleins d\'angoisse face à l\'avenir ».\n' +
       '  · Combinaison 焦虑不安 « anxieux et agité » = état très agité.\n' +
-      '- 担忧 (dān yōu) : version FORMELLE de 担心. Contient 担 + 忧 (anxiété). Presse, écrit, discussions sérieuses.\n' +
+      '- 担忧 (dānyōu) : version FORMELLE de 担心. Contient 担 + 忧 (anxiété). Presse, écrit, discussions sérieuses.\n' +
       '  · Ex : 父母担忧孩子的未来 « les parents se soucient de l\'avenir de l\'enfant » — ton plus grave.\n' +
       '  · 令人担忧 « faisant se soucier les gens » (formule figée).\n' +
-      '- 忧虑 (yōu lǜ) : autre synonyme formel.\n' +
-      '  · Ex : 政府对于物价上涨表示忧虑 (zhèng fǔ duì yú wù jià shàng zhǎng biǎo shì yōu lǜ) « le gouvernement exprime sa préoccupation face à la hausse des prix ».\n' +
+      '- 忧虑 (yōulǜ) : autre synonyme formel.\n' +
+      '  · Ex : 政府对于物价上涨表示忧虑 (zhèngfǔ duìyú wùjiàshàngzhǎng biǎoshì yōulǜ) « le gouvernement exprime sa préoccupation face à la hausse des prix ».\n' +
       '  · Ex : 专家对环境污染深表忧虑 « les experts expriment de profondes préoccupations sur la pollution environnementale ».\n' +
       '  · Construction typique : 对 + X + 表示/感到 + 忧虑.\n' +
       '- Registres :\n' +
@@ -3238,17 +3238,17 @@ export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
       '  · 焦虑 = médical/psychologique.\n' +
       '  · 担忧 / 忧虑 = écrit journalistique et officiel.',
     bodyEn:
-      '- 不安 (bù ān) literally « not peaceful ». Describes MALAISE, worry without a specific object.\n' +
+      '- 不安 (bùān) literally « not peaceful ». Describes MALAISE, worry without a specific object.\n' +
       '  · Structure: 感到不安 / 很不安.\n' +
       '  · Ex: 听到爆炸的消息，我们感到很不安 « on hearing the explosion news, we felt deeply uneasy ».\n' +
       '  · Also for situations: 局势不安 « the situation is unstable ». Register: neutral-formal.\n' +
-      '- 焦虑 (jiāo lǜ) = « anxiety », « anguish ». More intense than 担心, often chronic. Used in mental health talk (焦虑症 « anxiety disorder »).\n' +
+      '- 焦虑 (jiāolǜ) = « anxiety », « anguish ». More intense than 担心, often chronic. Used in mental health talk (焦虑症 « anxiety disorder »).\n' +
       '  · Ex: 很多年轻人对未来充满焦虑 « many young people are full of anxiety about the future ».\n' +
       '  · Combo 焦虑不安 « anxious and agitated » = highly agitated state.\n' +
-      '- 担忧 (dān yōu): FORMAL version of 担心. Contains 担 + 忧 (anxiety). Press, writing, serious discussion.\n' +
+      '- 担忧 (dānyōu): FORMAL version of 担心. Contains 担 + 忧 (anxiety). Press, writing, serious discussion.\n' +
       '  · Ex: 父母担忧孩子的未来 « parents are concerned about the child\'s future » — graver tone.\n' +
       '  · 令人担忧 « worrying » (fixed formula).\n' +
-      '- 忧虑 (yōu lǜ): another formal synonym.\n' +
+      '- 忧虑 (yōulǜ): another formal synonym.\n' +
       '  · Ex: 政府对于物价上涨表示忧虑 « the government expresses concern over rising prices ».\n' +
       '  · Ex: 专家对环境污染深表忧虑 « experts express deep concern about environmental pollution ».\n' +
       '  · Typical construction: 对 + X + 表示/感到 + 忧虑.\n' +
@@ -3275,15 +3275,15 @@ export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
     titleEn: 'Oral exaggerations …死了 and chengyu idioms',
     body:
       '- Adjectif + 死了 = « ... à mourir » — exagération très courante à l\'oral pour intensifier une émotion.\n' +
-      '  · Ex : 急死了 (jí sǐ le) « je flippe grave / je stresse à mort ».\n' +
+      '  · Ex : 急死了 (jísǐle) « je flippe grave / je stresse à mort ».\n' +
       '  · Ex : 愁死了 (chóu sǐ le) « je me ronge à mort ».\n' +
       '  · Ex : 弟弟晚上还没回家，急死我们了 ! (dì di wǎn shang hái méi huí jiā, jí sǐ wǒmen le) « notre petit frère n\'est pas encore rentré, on est morts d\'inquiétude ! ».\n' +
       '  · Cette structure marche aussi pour d\'autres émotions (饿死了 « je meurs de faim », 累死了 « je suis crevé »).\n' +
       '  · Registre : familier, très oral.\n' +
-      '- 提心吊胆 (tí xīn diào dǎn) : chengyu littéral « soulever le cœur, suspendre la vésicule ». Sens : être extrêmement inquiet, avoir le cœur qui bat, un « coup au cœur ».\n' +
+      '- 提心吊胆 (tíxīndiàodǎn) : chengyu littéral « soulever le cœur, suspendre la vésicule ». Sens : être extrêmement inquiet, avoir le cœur qui bat, un « coup au cœur ».\n' +
       '  · Ex : 听到他出事故的消息，真是提心吊胆 (tīng dào tā chū shì gù de xiāo xi, zhēn shi tí xīn diào dǎn) « en apprenant qu\'il a eu un accident, on avait vraiment le cœur battant ».\n' +
       '  · Souvent en 让人提心吊胆 « qui fait perdre le sommeil aux gens ».\n' +
-      '- 坐立不安 (zuò lì bù ān) : chengyu littéral « pas paisible assis ou debout ». Sens : trop anxieux pour rester en place, faire les cent pas.\n' +
+      '- 坐立不安 (zuòlìbùān) : chengyu littéral « pas paisible assis ou debout ». Sens : trop anxieux pour rester en place, faire les cent pas.\n' +
       '  · Ex : 等结果的时候，他坐立不安 « en attendant le résultat, il n\'arrivait pas à tenir en place ».\n' +
       '- Combinaisons possibles : 焦虑不安 « anxieux et agité », 提心吊胆坐立不安 « angoissé au max ».\n' +
       '- Attention au registre : …死了 = décontracté, familier. Chengyu = plus littéraire, à réserver aux situations vraiment dramatiques.',
@@ -3294,10 +3294,10 @@ export const b12NuancesWorryAdvancedLearnSections: LessonV2LearnSection[] = [
       '  · Ex: 弟弟晚上还没回家，急死我们了! « little brother\'s not home yet, we\'re worried to death! ».\n' +
       '  · This structure also works for other emotions (饿死了 « I\'m starving », 累死了 « I\'m exhausted »).\n' +
       '  · Register: casual, very oral.\n' +
-      '- 提心吊胆 (tí xīn diào dǎn): chengyu literally « lift the heart, hang the gallbladder ». Meaning: to be extremely worried, heart pounding, « heart in throat ».\n' +
+      '- 提心吊胆 (tíxīndiàodǎn): chengyu literally « lift the heart, hang the gallbladder ». Meaning: to be extremely worried, heart pounding, « heart in throat ».\n' +
       '  · Ex: 听到他出事故的消息，真是提心吊胆 « on hearing he had an accident, our hearts were really pounding ».\n' +
       '  · Often as 让人提心吊胆 « makes people lose sleep ».\n' +
-      '- 坐立不安 (zuò lì bù ān): chengyu literally « uneasy sitting or standing ». Meaning: too anxious to stay still, pacing around.\n' +
+      '- 坐立不安 (zuòlìbùān): chengyu literally « uneasy sitting or standing ». Meaning: too anxious to stay still, pacing around.\n' +
       '  · Ex: 等结果的时候，他坐立不安 « while waiting for the result, he couldn\'t sit still ».\n' +
       '- Possible combos: 焦虑不安 « anxious and agitated », 提心吊胆坐立不安 « stressed to the max ».\n' +
       '- Watch the register: …死了 = casual, familiar. Chengyu = more literary, reserve for truly dramatic situations.',
@@ -3327,26 +3327,26 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
     title: '取决于 et 由...决定 : le langage formel',
     titleEn: '取决于 and 由...决定: the formal register',
     body:
-      '取决于 (qǔ jué yú) = « dépend de / est déterminé par ». Équivalent SOUTENU du 看 oral. Courant dans les rapports business, articles de presse, présentations.\n' +
+      '取决于 (qǔjuéyú) = « dépend de / est déterminé par ». Équivalent SOUTENU du 看 oral. Courant dans les rapports business, articles de presse, présentations.\n' +
       '\n' +
       'Structure : [résultat] + 取决于 + [facteur]. Ordre inverse du français : le résultat vient en premier.\n' +
-      '- Ex : 结果取决于样本大小 (jié guǒ qǔ jué yú yàng běn dà xiǎo) « le résultat dépend de la taille de l\'échantillon ».\n' +
+      '- Ex : 结果取决于样本大小 (jiéguǒ qǔjuéyú yàngběn dàxiǎo) « le résultat dépend de la taille de l\'échantillon ».\n' +
       '- Ex : 我们的计划能否成功取决于市场反应 (wǒ men de jì huà néng fǒu chéng gōng qǔ jué yú shì chǎng fǎn yìng) « le succès de notre projet dépend de la réaction du marché ». Noter le 能否 (« si oui ou non ») typique du registre écrit.\n' +
       '\n' +
-      'Note : 决定于 (jué dìng yú) existe mais est moins fréquent que 取决于. Préfère 取决于 par défaut.\n' +
+      'Note : 决定于 (juédìng yú) existe mais est moins fréquent que 取决于. Préfère 取决于 par défaut.\n' +
       '\n' +
       'Autre pattern connexe : 由 + [agent] + 决定 = « décidé par ». Met en avant l\'AGENT qui tranche plutôt que le facteur qui pèse.\n' +
-      '- Ex : 人选由委员会决定 (rén xuǎn yóu wěi yuán huì jué dìng) « le choix du candidat est décidé par le comité ».\n' +
-      '- Ex : 最终价格由市场决定 (zuì zhōng jià gé yóu shì chǎng jué dìng) « le prix final est décidé par le marché ».\n' +
-      '- Version orale légèrement polie : 这由你决定 (zhè yóu nǐ jué dìng) « à toi de décider ». Un peu plus soigné que le 看你决定 du A2.',
+      '- Ex : 人选由委员会决定 (rénxuǎn yóu wěiyuánhuì juédìng) « le choix du candidat est décidé par le comité ».\n' +
+      '- Ex : 最终价格由市场决定 (zuìzhōng jiàgé yóu shìchǎng juédìng) « le prix final est décidé par le marché ».\n' +
+      '- Version orale légèrement polie : 这由你决定 (zhè yóu nǐ juédìng) « à toi de décider ». Un peu plus soigné que le 看你决定 du A2.',
     bodyEn:
-      '取决于 (qǔ jué yú) = « depends on / is determined by ». FORMAL equivalent of the oral 看. Common in business reports, press articles, presentations.\n' +
+      '取决于 (qǔjuéyú) = « depends on / is determined by ». FORMAL equivalent of the oral 看. Common in business reports, press articles, presentations.\n' +
       '\n' +
       'Structure: [result] + 取决于 + [factor]. Reversed order from English: the result comes first.\n' +
       '- Ex: 结果取决于样本大小 « the result depends on the sample size ».\n' +
       '- Ex: 我们的计划能否成功取决于市场反应 « whether our project succeeds depends on the market reaction ». Note the written-register 能否 « whether or not ».\n' +
       '\n' +
-      'Note: 决定于 (jué dìng yú) exists but is less common than 取决于. Default to 取决于.\n' +
+      'Note: 决定于 (juédìng yú) exists but is less common than 取决于. Default to 取决于.\n' +
       '\n' +
       'Related pattern: 由 + [agent] + 决定 = « decided by ». Foregrounds the AGENT who decides rather than the weighing factor.\n' +
       '- Ex: 人选由委员会决定 « the candidate choice is decided by the committee ».\n' +
@@ -3372,19 +3372,19 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
     titleEn: '视...而定 / 根据...而定 + 要分情况',
     body:
       '视 + [facteur] + 而定 (shì...ér dìng) = « déterminé selon [facteur] ». Registre OFFICIEL / documentaire. 视 signifie « considérer », 而定 « et décider ».\n' +
-      '- Ex : 视情况而定 (shì qíng kuàng ér dìng) « à décider selon la situation ». Équivalent SOUTENU du 看情况 oral.\n' +
-      '- Ex : 座次视地位而定 (zuò cì shì dì wèi ér dìng) « la place (à table) dépend du rang ».\n' +
-      '- Ex : 是否加班视工作量而定 (shì fǒu jiā bān shì gōng zuò liàng ér dìng) « les heures sup dépendent de la charge de travail ».\n' +
+      '- Ex : 视情况而定 (shì qíngkuàng érdìng) « à décider selon la situation ». Équivalent SOUTENU du 看情况 oral.\n' +
+      '- Ex : 座次视地位而定 (zuòcì shì dìwèi érdìng) « la place (à table) dépend du rang ».\n' +
+      '- Ex : 是否加班视工作量而定 (shìfǒu jiābān shì gōngzuòliàng érdìng) « les heures sup dépendent de la charge de travail ».\n' +
       '\n' +
       'Variante 根据 + [facteur] + 而定 / 来决定 = « selon [facteur] on décide ». Plus explicite que 视...而定, un poil moins formel.\n' +
-      '- Ex : 费用根据距离而定 (fèi yòng gēn jù jù lí ér dìng) « les frais sont calculés selon la distance ».\n' +
-      '- Ex : 奖金根据业绩来决定 (jiǎng jīn gēn jù yè jì lái jué dìng) « le bonus est décidé selon la performance ».\n' +
+      '- Ex : 费用根据距离而定 (fèiyòng gēnjù jùlí érdìng) « les frais sont calculés selon la distance ».\n' +
+      '- Ex : 奖金根据业绩来决定 (jiǎngjīn gēnjù yèjì lái juédìng) « le bonus est décidé selon la performance ».\n' +
       '\n' +
-      'Pattern semi-formel oral et écrit : 要分情况 (yào fēn qíng kuàng) « il faut distinguer les cas ». Plus ANALYTIQUE que 看情况 — signale que la réponse n\'est pas binaire.\n' +
-      '- Ex : 处理办法要分情况 (chǔ lǐ bàn fǎ yào fēn qíng kuàng) « la méthode de traitement dépend du cas ».\n' +
-      '- Ex : 这个问题要分情况讨论 (zhè ge wèn tí yào fēn qíng kuàng tǎo lùn) « il faut discuter ce problème cas par cas ».\n' +
+      'Pattern semi-formel oral et écrit : 要分情况 (yàofēn qíngkuàng) « il faut distinguer les cas ». Plus ANALYTIQUE que 看情况 — signale que la réponse n\'est pas binaire.\n' +
+      '- Ex : 处理办法要分情况 (chǔlǐ bànfǎ yàofēn qíngkuàng) « la méthode de traitement dépend du cas ».\n' +
+      '- Ex : 这个问题要分情况讨论 (zhège wèntí yàofēn qíngkuàng tǎolùn) « il faut discuter ce problème cas par cas ».\n' +
       '\n' +
-      'Version bureaucratique classique : 具体情况具体分析 (jù tǐ qíng kuàng jù tǐ fēn xī) « analyser chaque cas spécifique spécifiquement ». Formule figée héritée du langage administratif, très fréquente en réunion.',
+      'Version bureaucratique classique : 具体情况具体分析 (jùtǐqíngkuàng jùtǐfēnxī) « analyser chaque cas spécifique spécifiquement ». Formule figée héritée du langage administratif, très fréquente en réunion.',
     bodyEn:
       '视 + [factor] + 而定 (shì...ér dìng) = « determined according to [factor] ». OFFICIAL / documentary register. 视 means « to consider », 而定 « and decide ».\n' +
       '- Ex: 视情况而定 « to be decided according to the situation ». FORMAL equivalent of oral 看情况.\n' +
@@ -3395,11 +3395,11 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
       '- Ex: 费用根据距离而定 « fees are calculated according to distance ».\n' +
       '- Ex: 奖金根据业绩来决定 « the bonus is decided according to performance ».\n' +
       '\n' +
-      'Semi-formal spoken and written pattern: 要分情况 (yào fēn qíng kuàng) « we need to distinguish cases ». More ANALYTICAL than 看情况 — signals the answer isn\'t binary.\n' +
+      'Semi-formal spoken and written pattern: 要分情况 (yàofēn qíngkuàng) « we need to distinguish cases ». More ANALYTICAL than 看情况 — signals the answer isn\'t binary.\n' +
       '- Ex: 处理办法要分情况 « the handling method depends on the case ».\n' +
       '- Ex: 这个问题要分情况讨论 « this issue needs to be discussed case by case ».\n' +
       '\n' +
-      'Classic bureaucratic version: 具体情况具体分析 (jù tǐ qíng kuàng jù tǐ fēn xī) « analyze each specific case specifically ». Fixed formula inherited from admin speech, very common in meetings.',
+      'Classic bureaucratic version: 具体情况具体分析 (jùtǐqíngkuàng jùtǐfēnxī) « analyze each specific case specifically ». Fixed formula inherited from admin speech, very common in meetings.',
     items: [
       { hanzi: '视', pinyin: 'shì', meaning: 'considérer (formel)', meaningEn: 'consider (formal)', audio: 'audio/hsk5/hsk5_视.wav' },
       { hanzi: '而定', pinyin: 'érdìng', meaning: 'et décider (fixe)', meaningEn: 'and decide (fixed)', audio: 'audio/hsk3/hsk3_决定.wav' },
@@ -3420,13 +3420,13 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
     title: '有赖于 / 有待 / 以...为准 : haut registre',
     titleEn: '有赖于 / 有待 / 以...为准: high register',
     body:
-      '有赖于 (yǒu lài yú) = « dépend de / repose sur ». Littéraire, souvent utilisé en taïwanais ou dans l\'analyse écrite. Nuance de « nécessite / requiert ». Plus fort que 取决于 : implique une CONDITION indispensable.\n' +
-      '- Ex : 经济发展有赖于创新 (jīng jì fā zhǎn yǒu lài yú chuàng xīn) « le développement économique repose sur l\'innovation ».\n' +
-      '- Ex : 项目的成功有赖于团队合作 (xiàng mù de chéng gōng yǒu lài yú tuán duì hé zuò) « le succès du projet repose sur le travail d\'équipe ».\n' +
+      '有赖于 (yǒulàiyú) = « dépend de / repose sur ». Littéraire, souvent utilisé en taïwanais ou dans l\'analyse écrite. Nuance de « nécessite / requiert ». Plus fort que 取决于 : implique une CONDITION indispensable.\n' +
+      '- Ex : 经济发展有赖于创新 (jīngjì fāzhǎn yǒulàiyú chuàngxīn) « le développement économique repose sur l\'innovation ».\n' +
+      '- Ex : 项目的成功有赖于团队合作 (xiàngmù de chénggōng yǒulàiyú tuánduì hézuò) « le succès du projet repose sur le travail d\'équipe ».\n' +
       '\n' +
       '有待 + verbe (待 = attendre) = « en attente de ». Manière INDIRECTE d\'exprimer une dépendance : ce qui manque encore. Verbes fréquents : 决定, 确认, 讨论, 观察, 研究.\n' +
-      '- Ex : 细节有待确认 (xì jié yǒu dài què rèn) « les détails sont en attente de confirmation ».\n' +
-      '- Ex : 方案有待进一步讨论 (fāng àn yǒu dài jìn yí bù tǎo lùn) « le plan est en attente de discussion approfondie ».\n' +
+      '- Ex : 细节有待确认 (xìjié yǒudài quèrèn) « les détails sont en attente de confirmation ».\n' +
+      '- Ex : 方案有待进一步讨论 (fāngàn yǒudài jìnyíbù tǎolùn) « le plan est en attente de discussion approfondie ».\n' +
       '- Utilisé dans articles de presse, communiqués officiels, comptes-rendus.\n' +
       '\n' +
       '以...为准 (yǐ...wéi zhǔn) = « prendre... comme référence ». Apparaît dans contrats, documents légaux, notices officielles. Signale la source qui fait autorité.\n' +
@@ -3441,7 +3441,7 @@ export const b12NuancesItDependsFormalLearnSections: LessonV2LearnSection[] = [
       '- Documents officiels et règlements → 视...而定 / 以...为准.\n' +
       '- Style académique ou littéraire → 有赖于.',
     bodyEn:
-      '有赖于 (yǒu lài yú) = « depends on / relies on ». Literary, often used in Taiwanese Chinese or in written analysis. Nuance of « requires ». Stronger than 取决于: implies a NECESSARY condition.\n' +
+      '有赖于 (yǒulàiyú) = « depends on / relies on ». Literary, often used in Taiwanese Chinese or in written analysis. Nuance of « requires ». Stronger than 取决于: implies a NECESSARY condition.\n' +
       '- Ex: 经济发展有赖于创新 « economic development relies on innovation ».\n' +
       '- Ex: 项目的成功有赖于团队合作 « project success relies on teamwork ».\n' +
       '\n' +
@@ -3485,18 +3485,18 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
     title: '竟然 : quand la surprise nous saisit',
     titleEn: '竟然: when surprise catches us',
     body:
-      '竟然 (jìng rán) = « à ma grande surprise / de manière inattendue ». S\'utilise quand quelque chose se produit CONTRE tes attentes.\n' +
+      '竟然 (jìngrán) = « à ma grande surprise / de manière inattendue ». S\'utilise quand quelque chose se produit CONTRE tes attentes.\n' +
       '\n' +
       'Structure : sujet + 竟然 + verbe/adjectif.\n' +
       '\n' +
       'Ton non-neutre : porte toujours une émotion, positive ou négative selon le contexte.\n' +
       '- Admiration : 你才来中国半年，竟然说得这么好 (nǐ cái lái zhōng guó bàn nián, jìng rán shuō de zhè me hǎo) « ça fait à peine 6 mois que tu es en Chine, et pourtant tu parles déjà super bien ! ».\n' +
       '- Désapprobation : 妈妈的生日你竟然忘了 (mā ma de shēng rì nǐ jìng rán wàng le) « t\'as osé oublier l\'anniversaire de maman ».\n' +
-      '- Astonishment neutre : 他竟然真的成功了 (tā jìng rán zhēn de chéng gōng le) « il a vraiment réussi, incroyable ».\n' +
+      '- Astonishment neutre : 他竟然真的成功了 (tā jìngrán zhēnde chénggōng le) « il a vraiment réussi, incroyable ».\n' +
       '\n' +
       'Ne pas confondre avec 反而 ou 却 : ces derniers marquent une opposition SANS émotion (« au contraire », « pourtant »). Ex : 他练习不多，考试反而考得很好 (tā liàn xí bù duō, kǎo shì fǎn ér kǎo de hěn hǎo) « il ne s\'entraîne pas beaucoup, pourtant il a réussi l\'examen » (constat neutre, pas de surprise émotionnelle).',
     bodyEn:
-      '竟然 (jìng rán) = « to my great surprise / unexpectedly ». Used when something happens AGAINST your expectations.\n' +
+      '竟然 (jìngrán) = « to my great surprise / unexpectedly ». Used when something happens AGAINST your expectations.\n' +
       '\n' +
       'Structure: subject + 竟然 + verb/adjective.\n' +
       '\n' +
@@ -3524,32 +3524,32 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
     title: 'Variantes : 居然 (plus fort), 竟, 没想到 (plus doux), 不料 (littéraire)',
     titleEn: 'Variants: 居然 (stronger), 竟, 没想到 (softer), 不料 (literary)',
     body:
-      '居然 (jū rán) : version PLUS FORTE que 竟然. Surprise ou choc intenses. Peut se placer AVANT le sujet pour effet dramatique.\n' +
+      '居然 (jūrán) : version PLUS FORTE que 竟然. Surprise ou choc intenses. Peut se placer AVANT le sujet pour effet dramatique.\n' +
       '- Ex : 这么大的通知，你居然没看见 (zhè me dà de tōng zhī, nǐ jū rán méi kàn jiàn) « une annonce aussi grosse et t\'as même pas vue ?! ».\n' +
-      '- Ex : 居然会有这种事 (jū rán huì yǒu zhè zhǒng shì) « il peut vraiment y avoir un truc pareil ?! » (choc pur).\n' +
+      '- Ex : 居然会有这种事 (jūrán huì yǒu zhèzhǒng shì) « il peut vraiment y avoir un truc pareil ?! » (choc pur).\n' +
       '\n' +
       '竟 (jìng) : forme COURTE et LITTÉRAIRE de 竟然. Surtout à l\'écrit soutenu, rare en conversation.\n' +
-      '- Ex : 他竟不知道 (tā jìng bù zhī dào) « il ne sait pourtant pas » (style narratif).\n' +
+      '- Ex : 他竟不知道 (tā jìng bù zhīdào) « il ne sait pourtant pas » (style narratif).\n' +
       '\n' +
-      '没想到 (méi xiǎng dào) : « je ne m\'attendais pas à ». Surprise DOUCE, sans émotion forte, ton neutre. S\'utilise en début de proposition.\n' +
+      '没想到 (méixiǎngdào) : « je ne m\'attendais pas à ». Surprise DOUCE, sans émotion forte, ton neutre. S\'utilise en début de proposition.\n' +
       '- Ex : 我以为他会迟到，没想到他提前到了 (wǒ yǐ wéi tā huì chí dào, méi xiǎng dào tā tí qián dào le) « je pensais qu\'il serait en retard, et finalement il est arrivé en avance ».\n' +
       '\n' +
-      '不料 (bù liào) : « contre toute attente », LITTÉRAIRE et écrit. En début de 2e clause après une pause. Style journalistique, roman.\n' +
+      '不料 (bùliào) : « contre toute attente », LITTÉRAIRE et écrit. En début de 2e clause après une pause. Style journalistique, roman.\n' +
       '- Ex : 我本来以为今天会晴，不料下午下起了大雨 (wǒ běn lái yǐ wéi jīn tiān huì qíng, bù liào xià wǔ xià qǐ le dà yǔ) « je pensais qu\'il ferait beau aujourd\'hui, mais l\'après-midi il s\'est mis à pleuvoir des cordes ».\n' +
       '\n' +
       'Échelle de force : 没想到 (doux, oral neutre) < 竟然 (surprise standard émotionnelle) < 居然 (choc intense) < 不料 (littéraire narratif).',
     bodyEn:
-      '居然 (jū rán): STRONGER version than 竟然. Intense surprise or shock. Can be placed BEFORE the subject for dramatic effect.\n' +
+      '居然 (jūrán): STRONGER version than 竟然. Intense surprise or shock. Can be placed BEFORE the subject for dramatic effect.\n' +
       '- Ex: 这么大的通知，你居然没看见 « such a big announcement and you didn\'t even see it?! ».\n' +
       '- Ex: 居然会有这种事 « can something like that really happen?! » (pure shock).\n' +
       '\n' +
       '竟 (jìng): SHORT and LITERARY form of 竟然. Mostly in polished writing, rare in conversation.\n' +
       '- Ex: 他竟不知道 « yet he doesn\'t know » (narrative style).\n' +
       '\n' +
-      '没想到 (méi xiǎng dào): « I didn\'t expect ». SOFT surprise, no strong emotion, neutral tone. Used at the start of a clause.\n' +
+      '没想到 (méixiǎngdào): « I didn\'t expect ». SOFT surprise, no strong emotion, neutral tone. Used at the start of a clause.\n' +
       '- Ex: 我以为他会迟到，没想到他提前到了 « I thought he\'d be late, but he actually arrived early ».\n' +
       '\n' +
-      '不料 (bù liào): « against all expectations », LITERARY and written. At the start of the 2nd clause after a pause. Journalistic, novel style.\n' +
+      '不料 (bùliào): « against all expectations », LITERARY and written. At the start of the 2nd clause after a pause. Journalistic, novel style.\n' +
       '- Ex: 我本来以为今天会晴，不料下午下起了大雨 « I originally thought it would be sunny today, but in the afternoon it started pouring ».\n' +
       '\n' +
       'Strength scale: 没想到 (soft, neutral spoken) < 竟然 (standard emotional surprise) < 居然 (intense shock) < 不料 (literary narrative).',
@@ -3572,22 +3572,22 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
     title: '果然 : « comme prévu » + 果真 (vérifier une rumeur)',
     titleEn: '果然: « as expected » + 果真 (verifying a rumor)',
     body:
-      '果然 (guǒ rán) = « comme je le pensais / en effet / sans surprise ». S\'utilise quand la réalité CONFIRME ce que tu avais prédit. Opposé exact de 竟然.\n' +
+      '果然 (guǒrán) = « comme je le pensais / en effet / sans surprise ». S\'utilise quand la réalité CONFIRME ce que tu avais prédit. Opposé exact de 竟然.\n' +
       '\n' +
       'Structure : sujet + 果然 + verbe/adjectif.\n' +
       '\n' +
       'Ton : neutre ou légèrement satisfait (« j\'avais raison »).\n' +
-      '- Ex : 他果然没来 (tā guǒ rán méi lái) « comme prévu, il n\'est pas venu ».\n' +
+      '- Ex : 他果然没来 (tā guǒrán méi lái) « comme prévu, il n\'est pas venu ».\n' +
       '\n' +
       'Pattern prédiction + confirmation : on énonce d\'abord ce qu\'on attendait, puis 果然 + résultat.\n' +
       '- Ex : 他答应很快回来，果然不到十分钟就到了 (tā dā ying hěn kuài huí lai, guǒ rán bú dào shí fēn zhōng jiù dào le) « il avait promis de revenir vite, et effectivement il est là en moins de 10 minutes ».\n' +
       '- Ex : 妈妈说不太热，果然凉快 (mā ma shuō bú tài rè, guǒ rán liáng kuài) « maman avait dit qu\'il ne ferait pas trop chaud, et effectivement il fait frais ».\n' +
       '\n' +
       'Formules figées :\n' +
-      '- 果然如此 (guǒ rán rú cǐ) « c\'est bien ce que je pensais / c\'est bien ça ».\n' +
-      '- 果然不出所料 (guǒ rán bù chū suǒ liào) « exactement comme prédit / rien d\'étonnant ».\n' +
+      '- 果然如此 (guǒránrúcǐ) « c\'est bien ce que je pensais / c\'est bien ça ».\n' +
+      '- 果然不出所料 (guǒrán bùchūsuǒliào) « exactement comme prédit / rien d\'étonnant ».\n' +
       '\n' +
-      '果真 (guǒ zhēn) : sœur formelle de 果然. La différence :\n' +
+      '果真 (guǒzhēn) : sœur formelle de 果然. La différence :\n' +
       '- 果然 = « ma prédiction s\'est réalisée » (basé sur MA prévision).\n' +
       '- 果真 = « c\'est vraiment le cas » (vérifier une rumeur ou un ouï-dire).\n' +
       '- Ex : 大家都说这个地方漂亮，我去了一次，果真如此 (dà jiā dōu shuō zhè ge dì fāng piào liang, wǒ qù le yí cì, guǒ zhēn rú cǐ) « tout le monde dit que cet endroit est beau, j\'y suis allé, et c\'est effectivement le cas ». Vérifier ce que d\'autres ont dit.\n' +
@@ -3597,7 +3597,7 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
       '- Tu attendais que ça arrive ? OUI → 果然.\n' +
       '- Tu attendais que ça arrive ? NON → 竟然.',
     bodyEn:
-      '果然 (guǒ rán) = « as I thought / indeed / no surprise ». Used when reality CONFIRMS what you predicted. Exact opposite of 竟然.\n' +
+      '果然 (guǒrán) = « as I thought / indeed / no surprise ». Used when reality CONFIRMS what you predicted. Exact opposite of 竟然.\n' +
       '\n' +
       'Structure: subject + 果然 + verb/adjective.\n' +
       '\n' +
@@ -3612,7 +3612,7 @@ export const b12NuancesGuoranJingranLearnSections: LessonV2LearnSection[] = [
       '- 果然如此 « that\'s exactly what I thought / that\'s just it ».\n' +
       '- 果然不出所料 « exactly as predicted / no wonder ».\n' +
       '\n' +
-      '果真 (guǒ zhēn): formal sister of 果然. The difference:\n' +
+      '果真 (guǒzhēn): formal sister of 果然. The difference:\n' +
       '- 果然 = « my prediction came true » (based on MY forecast).\n' +
       '- 果真 = « it really is the case » (verifying a rumor or hearsay).\n' +
       '- Ex: 大家都说这个地方漂亮，我去了一次，果真如此 « everyone says this place is beautiful, I went once, and it really is ». Verifying what others said.\n' +
@@ -3647,7 +3647,7 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
     titleEn: '哟, 呗, 嘛: three precious attitudes',
     body:
       '哟 (yō) : particule PLAYFUL/musicale, rappels amicaux et avertissements SUCRÉS. Comme un « hein ? » chaleureux.\n' +
-      '- Ex : 小心开车哟 ! (xiǎo xīn kāi chē yō) « fais gaffe en conduisant, hein ! » — souci sincère, pas critique.\n' +
+      '- Ex : 小心开车哟 ! (xiǎoxīn kāichē yō) « fais gaffe en conduisant, hein ! » — souci sincère, pas critique.\n' +
       '- Ex : 别忘了给我打电话哟 « oublie pas de m\'appeler, d\'accord ? ».\n' +
       '- Ex : 是你哟 ! (shì nǐ yō) « ah, c\'est toi ! » (surprise chaleureuse).\n' +
       '- Ton : féminin/sucré/enfantin. À utiliser entre amis proches, pas au travail.\n' +
@@ -3658,7 +3658,7 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
       '- Purement oral, familier. À bannir en pro.\n' +
       '\n' +
       '嘛 (ma) : NE PAS confondre avec 吗 (question). Ce 嘛 ajoute un ton EXPLICATIF, « ben oui c\'est évident ! ».\n' +
-      '- Ex : 他还是个孩子嘛 (tā hái shì gè hái zi ma) « c\'est encore un gamin, tu sais » — justification douce.\n' +
+      '- Ex : 他还是个孩子嘛 (tā háishì gè háizi ma) « c\'est encore un gamin, tu sais » — justification douce.\n' +
       '- Aussi pour requêtes persuasives : 帮我一下嘛 « aide-moi, allez ! » (ton câlin).\n' +
       '- Ton : sûr de soi, presque enjôleur.',
     bodyEn:
@@ -3697,16 +3697,16 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
     title: '罢了 et 而已 : minimiser avec élégance',
     titleEn: '罢了 and 而已: minimize with elegance',
     body:
-      '罢了 (bà le) : particule LITTÉRAIRE composée. Signifie « rien de plus que / juste ça, un point c\'est tout ». Sert à MINIMISER quelque chose.\n' +
+      '罢了 (bàle) : particule LITTÉRAIRE composée. Signifie « rien de plus que / juste ça, un point c\'est tout ». Sert à MINIMISER quelque chose.\n' +
       '\n' +
       'Structure : [phrase minimisante] + 罢了. Souvent avec 只是 ou 不过 en amont.\n' +
-      '- Ex : 我只是开玩笑罢了 (wǒ zhǐ shì kāi wán xiào bà le) « je plaisantais, c\'est tout ». Excuse élégante.\n' +
+      '- Ex : 我只是开玩笑罢了 (wǒ zhǐshì kāiwánxiào bàle) « je plaisantais, c\'est tout ». Excuse élégante.\n' +
       '- Ex : 不过是小事罢了 « ce n\'est qu\'un détail, rien de plus ».\n' +
       '- Ex : 说说罢了，别当真 « ce ne sont que des paroles, ne les prends pas au sérieux ».\n' +
       '\n' +
       'Registre : écrit, semi-formel, littéraire. Peut sonner intello à l\'oral décontracté.\n' +
       '\n' +
-      '而已 (ér yǐ) : QUASI-SYNONYME plus oral et courant.\n' +
+      '而已 (éryǐ) : QUASI-SYNONYME plus oral et courant.\n' +
       '- Ex : 我只是开个玩笑而已 « je faisais juste une blague ». Plus naturel en conversation quotidienne.\n' +
       '- Ex : 不过五块钱而已 « c\'est juste 5 yuan, franchement ».\n' +
       '\n' +
@@ -3715,7 +3715,7 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
       '- 而已 : oral naturel, sans façon.\n' +
       '- Les 2 minimisent, mais 罢了 monte d\'un cran en registre.',
     bodyEn:
-      '罢了 (bà le): LITERARY compound particle. Means « nothing more than / just that, that\'s all ». Used to MINIMIZE something.\n' +
+      '罢了 (bàle): LITERARY compound particle. Means « nothing more than / just that, that\'s all ». Used to MINIMIZE something.\n' +
       '\n' +
       'Structure: [minimizing sentence] + 罢了. Often paired with 只是 or 不过 upstream.\n' +
       '- Ex: 我只是开玩笑罢了 « I was just joking, that\'s all ». Elegant excuse.\n' +
@@ -3724,7 +3724,7 @@ export const b12NuancesSentenceParticlesAdvancedLearnSections: LessonV2LearnSect
       '\n' +
       'Register: written, semi-formal, literary. Can sound bookish in casual speech.\n' +
       '\n' +
-      '而已 (ér yǐ): QUASI-SYNONYM, more oral and common.\n' +
+      '而已 (éryǐ): QUASI-SYNONYM, more oral and common.\n' +
       '- Ex: 我只是开个玩笑而已 « I was just kidding ». More natural in daily talk.\n' +
       '- Ex: 不过五块钱而已 « it\'s just 5 yuan, seriously ».\n' +
       '\n' +
@@ -3833,16 +3833,16 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
     body:
       '还 + adjectif = évaluation MODESTE et polie : « assez, plutôt, pas mal ». Reflète le goût chinois d\'éviter les compliments extrêmes.\n' +
       '- Ex : 还不错 (hái bú cuò) « pas mal » (mais souvent signifie « très bien » en modestie).\n' +
-      '- Ex : 还可以 (hái kě yǐ) « ça va, c\'est OK ».\n' +
-      '- Ex : 还好 (hái hǎo) « pas mal, plutôt bien ».\n' +
+      '- Ex : 还可以 (hái kěyǐ) « ça va, c\'est OK ».\n' +
+      '- Ex : 还好 (háihǎo) « pas mal, plutôt bien ».\n' +
       '- Ex : 还行 (hái xíng) « ça marche ».\n' +
       '- Ex : 这个电影还不错 (zhè ge diàn yǐng hái bú cuò) « ce film est pas mal du tout » (traduction souvent « il est très bien » selon contexte).\n' +
       '\n' +
       'Attention : « 还不错 » n\'est pas négatif ! C\'est une façon POLIE et MODESTE de dire du bien.\n' +
       '\n' +
       'A 比 B 还 + adjectif = « A est ENCORE PLUS X que B », avec surprise.\n' +
-      '- Ex : 今天比昨天还热 (jīn tiān bǐ zuó tiān hái rè) « aujourd\'hui il fait ENCORE PLUS chaud qu\'hier ».\n' +
-      '- Ex : 他比老板还忙 (tā bǐ lǎo bǎn hái máng) « il est encore plus occupé que le boss ».\n' +
+      '- Ex : 今天比昨天还热 (jīntiān bǐ zuótiān hái rè) « aujourd\'hui il fait ENCORE PLUS chaud qu\'hier ».\n' +
+      '- Ex : 他比老板还忙 (tā bǐ lǎobǎn hái máng) « il est encore plus occupé que le boss ».\n' +
       '- Nuance vs 更 : 更 = « encore plus » (constat neutre), 还 = « encore plus, ça m\'étonne / c\'est fort ! ».',
     bodyEn:
       '还 + adjective = MODEST and polite evaluation: «pretty, rather, not bad». Reflects the Chinese taste for avoiding extreme compliments.\n' +
@@ -3883,7 +3883,7 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
       '1. CHOIX dans une question : « ou / ou bien ». N\'ajoute PAS 吗 (还是 signale déjà la question).\n' +
       '- Ex : 你要咖啡还是茶 ? (nǐ yào kā fēi hái shi chá) « tu veux du café ou du thé ? ».\n' +
       '- Ex : 我们今天去还是明天去 ? « on y va aujourd\'hui ou demain ? ».\n' +
-      '- Rappel : pour dire « ou » dans une AFFIRMATION, c\'est 或者 (huò zhě), pas 还是.\n' +
+      '- Rappel : pour dire « ou » dans une AFFIRMATION, c\'est 或者 (huòzhě), pas 还是.\n' +
       '\n' +
       '2. SUGGESTION DOUCE : 还是 + action + 吧 = « le mieux serait de... / plutôt que... ».\n' +
       '- Ex : 太累了，我们还是回家吧 (tài lèi le, wǒ men hái shi huí jiā ba) « on est trop crevés, autant rentrer à la maison ».\n' +
@@ -3900,7 +3900,7 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
       '1. CHOICE in a question: «or». Does NOT take 吗 (还是 already signals the question).\n' +
       '- Ex: 你要咖啡还是茶? «coffee or tea?».\n' +
       '- Ex: 我们今天去还是明天去? «are we going today or tomorrow?».\n' +
-      '- Reminder: to say «or» in a STATEMENT, use 或者 (huò zhě), not 还是.\n' +
+      '- Reminder: to say «or» in a STATEMENT, use 或者 (huòzhě), not 还是.\n' +
       '\n' +
       '2. SOFT SUGGESTION: 还是 + action + 吧 = «better to... / rather than...».\n' +
       '- Ex: 太累了，我们还是回家吧 «we\'re too tired, let\'s just head home».\n' +
@@ -3936,8 +3936,8 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
       '- Ex : 忘记带伞了，还好没下雨 (wàng jì dài sǎn le, hái hǎo méi xià yǔ) « j\'ai oublié mon parapluie, heureusement il n\'a pas plu ».\n' +
       '- Ex : 还好你来了 « heureusement que tu es venu ».\n' +
       '\n' +
-      '还不如 (hái bù rú) = « autant / mieux vaut... que... » — suggère une alternative meilleure face à une situation insatisfaisante. Littéralement « pas aussi bien que ».\n' +
-      '- Ex : 这样等下去还不如走路去 (zhè yàng děng xià qù hái bù rú zǒu lù qù) « à ce rythme, autant y aller à pied ».\n' +
+      '还不如 (hái bùrú) = « autant / mieux vaut... que... » — suggère une alternative meilleure face à une situation insatisfaisante. Littéralement « pas aussi bien que ».\n' +
+      '- Ex : 这样等下去还不如走路去 (zhèyàng děng xiàqù hái bùrú zǒulù qù) « à ce rythme, autant y aller à pied ».\n' +
       '- Ex : 天天加班还不如换工作 « à faire des heures sup tous les jours, autant changer de boulot ».\n' +
       '\n' +
       '还用问吗 ? / 还用说吗 ? (hái yòng wèn ma / hái yòng shuō ma) = questions RHÉTORIQUES = « bien sûr ! / c\'est évident ! ».\n' +
@@ -3955,7 +3955,7 @@ export const b12NuancesHaiAdvancedLearnSections: LessonV2LearnSection[] = [
       '- Ex: 忘记带伞了，还好没下雨 «I forgot my umbrella, luckily it didn\'t rain».\n' +
       '- Ex: 还好你来了 «lucky you came».\n' +
       '\n' +
-      '还不如 (hái bù rú) = «might as well / better to... than...» — suggests a better alternative when facing an unsatisfactory situation. Literally «not as good as».\n' +
+      '还不如 (hái bùrú) = «might as well / better to... than...» — suggests a better alternative when facing an unsatisfactory situation. Literally «not as good as».\n' +
       '- Ex: 这样等下去还不如走路去 «at this rate, might as well walk».\n' +
       '- Ex: 天天加班还不如换工作 «doing overtime every day, might as well switch jobs».\n' +
       '\n' +
@@ -4053,7 +4053,7 @@ export const b12GrammarReduplicationAdvancedLearnSections: LessonV2LearnSection[
       '\n' +
       'Ce pattern est DESCRIPTIF (peint une scène), pas adoucissant.',
     bodyEn:
-      'This pattern describes an action that REPEATS in DIFFERENT DIRECTIONS, «back and forth», «this way and that». Structure: verb + 来 + same verb + 去. Physical movement: 走来走去 (zǒu lái zǒu qù) «pace back and forth». Ex: 他在房间里走来走去 «he paces in the room». 跑来跑去 «run all over». Ex: 孩子们在花园里跑来跑去 «kids run all around the garden». 飞来飞去 «fly around» (butterflies, birds). Mental or verbal movement: 想来想去 (xiǎng lái xiǎng qù) «mull over». Ex: 我想来想去，还是不明白 «I turned it over and over, still don\'t get it». 说来说去 (shuō lái shuō qù) «repeat the same thing» or «in the end». Ex: 说来说去还是那句话 «he keeps coming back to the same line». Typical context: often with a LOCATION (在...里/在...上) to situate the back-and-forth. Restriction: doesn\'t work with ALL verbs. Natural with motion verbs (走/跑/飞/搬) and a few mental ones (想/说). Weird with «eat» (吃来吃去 doesn\'t work). This pattern is DESCRIPTIVE (paints a scene), not softening.',
+      'This pattern describes an action that REPEATS in DIFFERENT DIRECTIONS, «back and forth», «this way and that». Structure: verb + 来 + same verb + 去. Physical movement: 走来走去 (zǒuláizǒuqù) «pace back and forth». Ex: 他在房间里走来走去 «he paces in the room». 跑来跑去 «run all over». Ex: 孩子们在花园里跑来跑去 «kids run all around the garden». 飞来飞去 «fly around» (butterflies, birds). Mental or verbal movement: 想来想去 (xiǎngláixiǎngqù) «mull over». Ex: 我想来想去，还是不明白 «I turned it over and over, still don\'t get it». 说来说去 (shuōláishuōqù) «repeat the same thing» or «in the end». Ex: 说来说去还是那句话 «he keeps coming back to the same line». Typical context: often with a LOCATION (在...里/在...上) to situate the back-and-forth. Restriction: doesn\'t work with ALL verbs. Natural with motion verbs (走/跑/飞/搬) and a few mental ones (想/说). Weird with «eat» (吃来吃去 doesn\'t work). This pattern is DESCRIPTIVE (paints a scene), not softening.',
     items: [
       { hanzi: '走来走去', pinyin: 'zǒuláizǒuqù', meaning: 'faire les cent pas', meaningEn: 'pace back and forth', audio: 'audio/hsk2/hsk2_走.wav' },
       { hanzi: '跑来跑去', pinyin: 'pǎoláipǎoqù', meaning: 'courir dans tous les sens', meaningEn: 'run all over', audio: 'audio/hsk2/hsk2_跑.wav' },
@@ -4138,10 +4138,10 @@ export const b12GrammarReduplicationAdvancedLearnSections: LessonV2LearnSection[
       '\n' +
       'Common combos:\n' +
       '\n' +
-      '- 家家 (jiā jiā) — «every household»\n' +
-      '- 个个 (gè gè) — «each one»\n' +
+      '- 家家 (jiājiā) — «every household»\n' +
+      '- 个个 (gègè) — «each one»\n' +
       '\n' +
-      'Ex: 他们个个都很聪明 «they\'re all smart (each one)». 人人 (rén rén) «everyone». Ex: 人人都喜欢猫 «everyone loves cats». 天天 (tiān tiān) «every day». Ex: 我天天喝咖啡 «I drink coffee every day». 年年 «every year». 处处 «everywhere». Often with 都 to reinforce universality. Ex: 春节的时候，家家都挂红灯笼 «during Chinese New Year, every home hangs red lanterns». Nuance vs 每 + MW: 每家 = «each family» (neutral). 家家(都) = «every family, no exception» (with emphasis and vivid image). Number + reduplicated MW = «one by one / step by step». Describes progression, repetition or grouping. Structure: (Nb+MW) + (Nb+MW) + (地/的) + verb/noun. 一天一天 «day after day». Ex: 时间一天一天过去 «time passes day after day». 一次一次 «over and over». 两个两个 «two by two». Ex: 学生们两个两个走进教室 «students enter 2 by 2». 一遍一遍地 «again and again». Ex: 妈妈一遍一遍地告诉我要注意安全 «mom told me over and over to be careful». Variant with 又: 一次又一次 «again and again», 一遍又一遍 «over and over».',
+      'Ex: 他们个个都很聪明 «they\'re all smart (each one)». 人人 (rénrén) «everyone». Ex: 人人都喜欢猫 «everyone loves cats». 天天 (tiāntiān) «every day». Ex: 我天天喝咖啡 «I drink coffee every day». 年年 «every year». 处处 «everywhere». Often with 都 to reinforce universality. Ex: 春节的时候，家家都挂红灯笼 «during Chinese New Year, every home hangs red lanterns». Nuance vs 每 + MW: 每家 = «each family» (neutral). 家家(都) = «every family, no exception» (with emphasis and vivid image). Number + reduplicated MW = «one by one / step by step». Describes progression, repetition or grouping. Structure: (Nb+MW) + (Nb+MW) + (地/的) + verb/noun. 一天一天 «day after day». Ex: 时间一天一天过去 «time passes day after day». 一次一次 «over and over». 两个两个 «two by two». Ex: 学生们两个两个走进教室 «students enter 2 by 2». 一遍一遍地 «again and again». Ex: 妈妈一遍一遍地告诉我要注意安全 «mom told me over and over to be careful». Variant with 又: 一次又一次 «again and again», 一遍又一遍 «over and over».',
     items: [
       { hanzi: '家家', pinyin: 'jiājiā', meaning: 'chaque foyer', meaningEn: 'every household', audio: 'audio/hsk1/hsk1_家.wav' },
       { hanzi: '个个', pinyin: 'gègè', meaning: 'chacun', meaningEn: 'each one', audio: 'audio/hsk1/hsk1_个.wav' },
@@ -4179,7 +4179,7 @@ export const b12NuancesNeAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Fonctionne aussi sans 在, juste avec 呢 en fin. Ex : 我做饭呢 « je fais la cuisine ». Un peu plus court, oral.',
     bodyEn:
-      'Combine 在 (progressive) + verb + 呢 to signal an ongoing action AND add the subtext «so I\'m busy, don\'t bother me». Structure: subject + (在/正在) + verb + (object) + 呢. Ex: 我在打电话呢 (wǒ zài dǎ diàn huà ne) «I\'m on the phone». Context: someone asks to talk to you, you reply this way to signal you can\'t. Ex: 我在做饭呢 «I\'m cooking (don\'t bother)». Ex: 妈妈在睡觉呢 «Mom\'s sleeping (keep it down)». Typical subtext: «...so I don\'t have time», «...that\'s why I can\'t», «...so leave me alone». Without 呢: 我在打电话 = neutral statement. With 呢: 我在打电话呢 = «I\'m on a call, come back later». Also works without 在, just 呢 at the end. Ex: 我做饭呢 «I\'m cooking». Shorter, colloquial.',
+      'Combine 在 (progressive) + verb + 呢 to signal an ongoing action AND add the subtext «so I\'m busy, don\'t bother me». Structure: subject + (在/正在) + verb + (object) + 呢. Ex: 我在打电话呢 (wǒ zài dǎdiànhuà ne) «I\'m on the phone». Context: someone asks to talk to you, you reply this way to signal you can\'t. Ex: 我在做饭呢 «I\'m cooking (don\'t bother)». Ex: 妈妈在睡觉呢 «Mom\'s sleeping (keep it down)». Typical subtext: «...so I don\'t have time», «...that\'s why I can\'t», «...so leave me alone». Without 呢: 我在打电话 = neutral statement. With 呢: 我在打电话呢 = «I\'m on a call, come back later». Also works without 在, just 呢 at the end. Ex: 我做饭呢 «I\'m cooking». Shorter, colloquial.',
     items: [
       { hanzi: '在...呢', pinyin: 'zài ... ne', meaning: 'être en train de... (avec « je suis occupé »)', meaningEn: 'in the middle of... (with «I\'m busy»)', audio: 'audio/hsk2/hsk2_在.wav' },
       { hanzi: '正在', pinyin: 'zhèngzài', meaning: 'être justement en train de', meaningEn: 'right in the middle of', audio: 'audio/hsk2/hsk2_正在.wav' },
@@ -4280,7 +4280,7 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Structure : sujet + 宁可 / 宁愿 + action A，也不 + action B.\n' +
       '\n' +
-      '宁可 (nìng kě) et 宁愿 (nìng yuàn) sont largement interchangeables. 宁愿 sonne un poil plus formel/expressif.\n' +
+      '宁可 (nìngkě) et 宁愿 (nìngyuàn) sont largement interchangeables. 宁愿 sonne un poil plus formel/expressif.\n' +
       '\n' +
       '- Ex : 她宁愿少赚点钱，也不愿违背良心 (py tā nìng yuàn shǎo zhuàn diǎn qián, yě bù yuàn wéi bèi liáng xīn) « elle préfère gagner moins d\'argent que trahir sa conscience ». Choix moral.\n' +
       '- Ex : 我宁可自己吃苦，也不让家人受累 « je préfère souffrir moi-même plutôt que faire souffrir ma famille ». Sacrifice personnel.\n' +
@@ -4291,7 +4291,7 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       'Variante : 宁可/宁愿 A，不 B (sans 也) — version plus courte, orale.\n' +
       '- Ex : 宁可信其有，不可信其无 « mieux vaut y croire que ne pas y croire » (chengyu, référence aux superstitions).',
     bodyEn:
-      'Pattern for STRONG PREFERENCE when both options are unappealing: «rather A than B» — you pick the lesser evil. Structure: subject + 宁可 / 宁愿 + action A, 也不 + action B. 宁可 (nìng kě) and 宁愿 (nìng yuàn) are largely interchangeable. 宁愿 sounds a touch more formal/expressive. Ex: 她宁愿少赚点钱，也不愿违背良心 «she\'d rather earn less than betray her conscience» — moral stakes. Ex: 我宁可自己吃苦，也不让家人受累 «I\'d rather suffer myself than burden my family» — personal sacrifice. Ex: 他宁愿走路，也不坐爸爸的车 «he\'d rather walk than get in his dad\'s car». Tone: flat rejection of option 2, often ethical stakes. Shortened variant: 宁可/宁愿 A, 不 B (no 也) — punchier, oral. Ex: 宁可信其有，不可信其无 «better to believe it than not» — famous chengyu on superstitions.',
+      'Pattern for STRONG PREFERENCE when both options are unappealing: «rather A than B» — you pick the lesser evil. Structure: subject + 宁可 / 宁愿 + action A, 也不 + action B. 宁可 (nìngkě) and 宁愿 (nìngyuàn) are largely interchangeable. 宁愿 sounds a touch more formal/expressive. Ex: 她宁愿少赚点钱，也不愿违背良心 «she\'d rather earn less than betray her conscience» — moral stakes. Ex: 我宁可自己吃苦，也不让家人受累 «I\'d rather suffer myself than burden my family» — personal sacrifice. Ex: 他宁愿走路，也不坐爸爸的车 «he\'d rather walk than get in his dad\'s car». Tone: flat rejection of option 2, often ethical stakes. Shortened variant: 宁可/宁愿 A, 不 B (no 也) — punchier, oral. Ex: 宁可信其有，不可信其无 «better to believe it than not» — famous chengyu on superstitions.',
     items: [
       { hanzi: '宁可', pinyin: 'nìngkě', meaning: 'plutôt (que)', meaningEn: 'rather (than)', audio: 'audio/hsk5/hsk5_宁可.wav' },
       { hanzi: '宁愿', pinyin: 'nìngyuàn', meaning: 'préférer plutôt', meaningEn: 'would rather', audio: 'audio/hsk5/hsk5_宁愿.wav' },
@@ -4315,12 +4315,12 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Structure : 与其 + [option A]，不如 + [option B].\n' +
       '\n' +
-      '与其 (yǔ qí) introduit l\'option MOINS bonne. 不如 (bù rú) introduit la RECOMMANDÉE.\n' +
+      '与其 (yǔqí) introduit l\'option MOINS bonne. 不如 (bùrú) introduit la RECOMMANDÉE.\n' +
       '\n' +
       '- Ex : 与其堵在路上着急，不如坐地铁去吧 (py yǔ qí dǔ zài lù shang zháo jí, bù rú zuò dì tiě qù ba) « plutôt que s\'énerver dans les bouchons, autant prendre le métro ». Suggestion pragmatique. Le 吧 en fin adoucit.\n' +
       '- Ex : 与其一个人在家难过，不如出去散散步 « plutôt que rester triste seul à la maison, sors donc marcher un peu ». Conseil bienveillant.\n' +
       '\n' +
-      'Renforcements : 倒不如 (dào bù rú) ou 还不如 (hái bù rú) pour insister sur « il vaut CARRÉMENT mieux ».\n' +
+      'Renforcements : 倒不如 (dàobùrú) ou 还不如 (hái bùrú) pour insister sur « il vaut CARRÉMENT mieux ».\n' +
       '- Ex : 与其等他，倒不如自己去 « plutôt qu\'attendre lui, autant y aller soi-même ».\n' +
       '\n' +
       'Nuance vs 宁可...也不 :\n' +
@@ -4330,7 +4330,7 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       'Variante avec préférence : 与其...宁可/宁愿... = « plutôt que A, je préfère B ». Combine analyse et préférence personnelle.\n' +
       '- Ex : 与其看那部没营养的电影，我宁愿在家睡觉 (py yǔ qí kàn nà bù méi yíng yǎng de diàn yǐng, wǒ nìng yuàn zài jiā shuì jiào) « plutôt que regarder ce film sans intérêt, je préfère dormir chez moi ». Ton délibératif.',
     bodyEn:
-      'Pattern for JUDGING option B objectively BETTER than A. Great for advising or recommending. Structure: 与其 + [A], 不如 + [B]. 与其 introduces the WORSE option; 不如 introduces the RECOMMENDED one. Ex: 与其堵在路上着急，不如坐地铁去吧 «rather than fume in traffic, let\'s just take the subway» — pragmatic suggestion, 吧 softens. Ex: 与其一个人在家难过，不如出去散散步 «rather than mope alone, go for a walk» — caring advice. Intensifiers: 倒不如 (dào bù rú) or 还不如 (hái bù rú) push «it\'s DEFINITELY better»: 与其等他，倒不如自己去. Nuance vs 宁可...也不: 与其...不如 = objective JUDGMENT; 宁可...也不 = personal PREFERENCE. Combo variant 与其...宁可/宁愿... mixes analysis and preference: 与其看那部没营养的电影，我宁愿在家睡觉 «rather than watch that empty movie, I\'d rather sleep at home».',
+      'Pattern for JUDGING option B objectively BETTER than A. Great for advising or recommending. Structure: 与其 + [A], 不如 + [B]. 与其 introduces the WORSE option; 不如 introduces the RECOMMENDED one. Ex: 与其堵在路上着急，不如坐地铁去吧 «rather than fume in traffic, let\'s just take the subway» — pragmatic suggestion, 吧 softens. Ex: 与其一个人在家难过，不如出去散散步 «rather than mope alone, go for a walk» — caring advice. Intensifiers: 倒不如 (dàobùrú) or 还不如 (hái bùrú) push «it\'s DEFINITELY better»: 与其等他，倒不如自己去. Nuance vs 宁可...也不: 与其...不如 = objective JUDGMENT; 宁可...也不 = personal PREFERENCE. Combo variant 与其...宁可/宁愿... mixes analysis and preference: 与其看那部没营养的电影，我宁愿在家睡觉 «rather than watch that empty movie, I\'d rather sleep at home».',
     items: [
       { hanzi: '与其', pinyin: 'yǔqí', meaning: 'plutôt que', meaningEn: 'rather than', audio: 'audio/hsk5/hsk5_与其.wav' },
       { hanzi: '不如', pinyin: 'bùrú', meaning: 'autant / mieux vaut', meaningEn: 'better to / not as good as', audio: 'audio/hsk4/hsk4_不如.wav' },
@@ -4430,25 +4430,25 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
     title: '由于 et 因此 : registre écrit et professionnel',
     titleEn: '由于 and 因此: written and professional register',
     body:
-      '由于 (yóu yú) = « en raison de / du fait de » — version FORMELLE de 因为. Presse, rapports officiels, écrits pro.\n' +
+      '由于 (yóuyú) = « en raison de / du fait de » — version FORMELLE de 因为. Presse, rapports officiels, écrits pro.\n' +
       '\n' +
       'Structure : 由于 + [cause]，(所以 / 因此) + [résultat].\n' +
       '- Ex : 由于雪下得太大，因此火车晚点了 (py yóu yú xuě xià de tài dà, yīn cǐ huǒ chē wǎn diǎn le) « en raison de fortes chutes de neige, le train a été retardé ». Sonne comme un communiqué.\n' +
       '- Ex : 由于交通堵塞，会议推迟了半小时 « suite à un embouteillage, la réunion a été retardée d\'une demi-heure ».\n' +
       '- Peut se combiner avec 所以, 因此, ou seul.\n' +
       '\n' +
-      '因此 (yīn cǐ) = « par conséquent / dès lors » — connecteur formel, académique. Peut se combiner avec 由于 mais PAS avec 因为 (redondance : 因为...因此 ✗).\n' +
+      '因此 (yīncǐ) = « par conséquent / dès lors » — connecteur formel, académique. Peut se combiner avec 由于 mais PAS avec 因为 (redondance : 因为...因此 ✗).\n' +
       '\n' +
       'Structure : [cause]，因此 + [résultat].\n' +
       '- Ex : 他提前完成了任务，因此有时间帮助别人 « il a fini sa tâche à l\'avance, il a donc du temps pour aider les autres ». Version formelle de 所以.\n' +
       '- Registre : essais, articles, présentations pro.\n' +
       '\n' +
-      '因而 (yīn ér) = quasi-synonyme de 因此, encore un chouïa plus littéraire. Souvent interchangeable.\n' +
+      '因而 (yīnér) = quasi-synonyme de 因此, encore un chouïa plus littéraire. Souvent interchangeable.\n' +
       '- Ex : 他饮食很健康，也经常锻炼，因而身体很棒 « il mange sainement et fait du sport régulièrement, d\'où sa forme éclatante ».\n' +
       '\n' +
       'Ordre du registre : 所以 (oral neutre) < 因此 (écrit pro) < 因而 (écrit littéraire).',
     bodyEn:
-      '由于 (yóu yú) = «due to / owing to» — FORMAL version of 因为. Press, official reports, professional writing. Structure: 由于 + [cause], (所以 / 因此) + [result]. Ex: 由于雪下得太大，因此火车晚点了 «due to heavy snowfall, the train was delayed» — sounds like a bulletin. Ex: 由于交通堵塞，会议推迟了半小时 «due to traffic, the meeting was pushed back 30 min». Combines with 所以, 因此, or stands alone. 因此 (yīn cǐ) = «consequently / therefore» — formal, academic connector. Pairs with 由于 but NOT with 因为 (redundant: 因为...因此 ✗). Structure: [cause], 因此 + [result]. Ex: 他提前完成了任务，因此有时间帮助别人 «he finished his task early, therefore has time to help others». Formal version of 所以. Register: essays, articles, pro presentations. 因而 (yīn ér) = near-synonym of 因此, slightly more literary. Often interchangeable. Ex: 他饮食很健康，也经常锻炼，因而身体很棒. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary written).',
+      '由于 (yóuyú) = «due to / owing to» — FORMAL version of 因为. Press, official reports, professional writing. Structure: 由于 + [cause], (所以 / 因此) + [result]. Ex: 由于雪下得太大，因此火车晚点了 «due to heavy snowfall, the train was delayed» — sounds like a bulletin. Ex: 由于交通堵塞，会议推迟了半小时 «due to traffic, the meeting was pushed back 30 min». Combines with 所以, 因此, or stands alone. 因此 (yīncǐ) = «consequently / therefore» — formal, academic connector. Pairs with 由于 but NOT with 因为 (redundant: 因为...因此 ✗). Structure: [cause], 因此 + [result]. Ex: 他提前完成了任务，因此有时间帮助别人 «he finished his task early, therefore has time to help others». Formal version of 所以. Register: essays, articles, pro presentations. 因而 (yīnér) = near-synonym of 因此, slightly more literary. Often interchangeable. Ex: 他饮食很健康，也经常锻炼，因而身体很棒. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary written).',
     items: [
       { hanzi: '由于', pinyin: 'yóuyú', meaning: 'en raison de, du fait de', meaningEn: 'due to, owing to', audio: 'audio/hsk4/hsk4_由于.wav' },
       { hanzi: '因此', pinyin: 'yīncǐ', meaning: 'par conséquent', meaningEn: 'therefore, consequently', audio: 'audio/hsk4/hsk4_因此.wav' },
@@ -4468,7 +4468,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
     title: '可见 (conclusion) et 从而 (méthode → résultat)',
     titleEn: '可见 (conclusion) and 从而 (method → result)',
     body:
-      '可见 (kě jiàn) = « ça se voit / cela montre que ». Sert à tirer une CONCLUSION à partir d\'observations.\n' +
+      '可见 (kějiàn) = « ça se voit / cela montre que ». Sert à tirer une CONCLUSION à partir d\'observations.\n' +
       '\n' +
       'Structure : [preuve/observation]，可见 + [conclusion].\n' +
       '- Ex : 他每天加班到很晚，可见他的工作非常忙 (py tā měi tiān jiā bān dào hěn wǎn, kě jiàn tā de gōng zuò fēi cháng máng) « il fait des heures sup tous les jours jusqu\'à tard, ça montre que son boulot est super chargé ».\n' +
@@ -4476,7 +4476,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
       '\n' +
       'Registre : argumentation, essais, discussions rationnelles. Ton analytique.\n' +
       '\n' +
-      '从而 (cóng ér) = « ainsi / par ce moyen ». Lie une MÉTHODE ou ACTION à son résultat obtenu. Sens de « en faisant ceci, on accomplit cela ».\n' +
+      '从而 (cóngér) = « ainsi / par ce moyen ». Lie une MÉTHODE ou ACTION à son résultat obtenu. Sens de « en faisant ceci, on accomplit cela ».\n' +
       '\n' +
       'Structure : [méthode/action]，从而 + [résultat].\n' +
       '- Ex : 他每天练习一个小时，从而大大提高了汉语水平 (py tā měi tiān liàn xí yí ge xiǎo shí, cóng ér dà dà tí gāo le hàn yǔ shuǐ píng) « il s\'entraîne 1 h par jour, améliorant considérablement son niveau de chinois ».\n' +
@@ -4484,7 +4484,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
       '\n' +
       'Registres : rapports, écrits techniques, articles académiques. À l\'oral courant, on préfère 所以.',
     bodyEn:
-      '可见 (kě jiàn) = «you can tell / it shows that». Draws a CONCLUSION from observations. Structure: [proof/observation], 可见 + [conclusion]. Ex: 他每天加班到很晚，可见他的工作非常忙 «he works late every day, showing his job is super busy». Ex: 这本书卖了一百万本，可见非常受欢迎 «this book sold 1 million copies, proving it\'s hugely popular». Register: argument, essays, rational discussions. Analytical tone. 从而 (cóng ér) = «thereby / by which». Links a METHOD or ACTION to the result obtained. Sense: «by doing this, one accomplishes that». Structure: [method/action], 从而 + [result]. Ex: 他每天练习一个小时，从而大大提高了汉语水平 «he practices 1 h a day, greatly improving his Chinese». Ex: 政府降低了利率，从而刺激了经济 «the government lowered rates, thereby stimulating the economy» — econ report. Register: reports, technical writing, academic papers. In everyday speech, 所以 is preferred.',
+      '可见 (kějiàn) = «you can tell / it shows that». Draws a CONCLUSION from observations. Structure: [proof/observation], 可见 + [conclusion]. Ex: 他每天加班到很晚，可见他的工作非常忙 «he works late every day, showing his job is super busy». Ex: 这本书卖了一百万本，可见非常受欢迎 «this book sold 1 million copies, proving it\'s hugely popular». Register: argument, essays, rational discussions. Analytical tone. 从而 (cóngér) = «thereby / by which». Links a METHOD or ACTION to the result obtained. Sense: «by doing this, one accomplishes that». Structure: [method/action], 从而 + [result]. Ex: 他每天练习一个小时，从而大大提高了汉语水平 «he practices 1 h a day, greatly improving his Chinese». Ex: 政府降低了利率，从而刺激了经济 «the government lowered rates, thereby stimulating the economy» — econ report. Register: reports, technical writing, academic papers. In everyday speech, 所以 is preferred.',
     items: [
       { hanzi: '可见', pinyin: 'kějiàn', meaning: 'cela montre que', meaningEn: 'it shows that, evidently', audio: 'audio/hsk5/hsk5_可见.wav' },
       { hanzi: '从而', pinyin: 'cóngér', meaning: 'ainsi, par ce moyen', meaningEn: 'thereby, thus', audio: 'audio/hsk5/hsk5_从而.wav' },
@@ -4505,14 +4505,14 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
     body:
       'Attention : ces 2 se prononcent presque pareil (yǐ zhì) mais ont des USAGES distincts.\n' +
       '\n' +
-      '以致 (yǐ zhì) = « ce qui a entraîné » — résultat NÉGATIF ou non voulu. Ton de regret.\n' +
+      '以致 (yǐzhì) = « ce qui a entraîné » — résultat NÉGATIF ou non voulu. Ton de regret.\n' +
       '\n' +
       'Structure : (由于) + [cause]，以致 + [résultat malheureux].\n' +
       '- Ex : 他忽视了医生的建议，以致病情恶化 (py tā hū shì le yī shēng de jiàn yì, yǐ zhì bìng qíng è huà) « il a ignoré les conseils du médecin, ce qui a entraîné une aggravation de son état ». Regret.\n' +
       '- Ex : 由于疏忽，以致造成了损失 « en raison d\'une négligence, des pertes ont été occasionnées ».\n' +
       '- Fréquent dans les récits d\'accidents, échecs, mishaps.\n' +
       '\n' +
-      '以至于 (yǐ zhì yú) = « au point que » — résultat EXTRÊME (peut être positif ou négatif). Souligne l\'INTENSITÉ de la cause.\n' +
+      '以至于 (yǐzhìyú) = « au point que » — résultat EXTRÊME (peut être positif ou négatif). Souligne l\'INTENSITÉ de la cause.\n' +
       '\n' +
       'Structure : [cause intense]，以至于 + [résultat marquant].\n' +
       '- Ex : 他工作太忙，以至于没有时间陪家人 (py tā gōng zuò tài máng, yǐ zhì yú méi yǒu shí jiān péi jiā rén) « il est tellement occupé qu\'il n\'a pas le temps pour sa famille ».\n' +
@@ -4521,7 +4521,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
       '\n' +
       'Distinction : 以致 = résultat MALHEUREUX. 以至于 = résultat EXTRÊME (positif ou négatif). Homonyme à l\'oral, différencié à l\'écrit.',
     bodyEn:
-      'Careful: these 2 sound nearly identical (yǐ zhì) but have distinct USAGES. 以致 (yǐ zhì) = «which led to» — NEGATIVE or unwanted result. Regretful tone. Structure: (由于) + [cause], 以致 + [unfortunate result]. Ex: 他忽视了医生的建议，以致病情恶化 «he ignored the doctor\'s advice, which caused his condition to worsen» — regret. Ex: 由于疏忽，以致造成了损失 «due to negligence, losses ensued». Common in accident/failure stories. 以至于 (yǐ zhì yú) = «to the point that» — EXTREME result (positive or negative). Highlights the cause\'s INTENSITY. Structure: [intense cause], 以至于 + [striking result]. Ex: 他工作太忙，以至于没有时间陪家人 «he\'s so busy he has no time for family». Ex: 她跑得太快，以至于摔倒了 «she ran so fast she fell». Ex: 他的解释太清楚，以至于我们一下子就懂了 «his explanation was so clear we got it instantly» (positive). Distinction: 以致 = UNFORTUNATE. 以至于 = EXTREME (either polarity). Homophone spoken, split written.',
+      'Careful: these 2 sound nearly identical (yǐ zhì) but have distinct USAGES. 以致 (yǐzhì) = «which led to» — NEGATIVE or unwanted result. Regretful tone. Structure: (由于) + [cause], 以致 + [unfortunate result]. Ex: 他忽视了医生的建议，以致病情恶化 «he ignored the doctor\'s advice, which caused his condition to worsen» — regret. Ex: 由于疏忽，以致造成了损失 «due to negligence, losses ensued». Common in accident/failure stories. 以至于 (yǐzhìyú) = «to the point that» — EXTREME result (positive or negative). Highlights the cause\'s INTENSITY. Structure: [intense cause], 以至于 + [striking result]. Ex: 他工作太忙，以至于没有时间陪家人 «he\'s so busy he has no time for family». Ex: 她跑得太快，以至于摔倒了 «she ran so fast she fell». Ex: 他的解释太清楚，以至于我们一下子就懂了 «his explanation was so clear we got it instantly» (positive). Distinction: 以致 = UNFORTUNATE. 以至于 = EXTREME (either polarity). Homophone spoken, split written.',
     items: [
       { hanzi: '以致', pinyin: 'yǐzhì', meaning: 'ce qui a entraîné (négatif)', meaningEn: 'which led to (negative)', audio: 'audio/hsk5/hsk5_以致.wav' },
       { hanzi: '以至于', pinyin: 'yǐzhìyú', meaning: 'au point que', meaningEn: 'to the point that', audio: 'audio/hsk5/hsk5_以至于.wav' },
@@ -4548,7 +4548,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
       '- Version parallèle 之所以...是为了... = « la raison pour laquelle... c\'est pour... » (but au lieu de cause).\n' +
       '- Ex : 他之所以辞职，是为了专心创业 « s\'il a démissionné, c\'est pour se consacrer à son entreprise ». Attention : 是为了 = but ; 是因为 = cause. Deux structures parallèles.\n' +
       '\n' +
-      '鉴于 (jiàn yú) = « compte tenu de / vu que ». Introduit une SITUATION qui a été soigneusement pesée avant d\'agir. Registre officiel, administratif.\n' +
+      '鉴于 (jiànyú) = « compte tenu de / vu que ». Introduit une SITUATION qui a été soigneusement pesée avant d\'agir. Registre officiel, administratif.\n' +
       '- Ex : 鉴于近期安全问题，我们加强了校园巡逻 (py jiàn yú jìn qī ān quán wèn tí, wǒ men jiā qiáng le xiào yuán xún luó) « vu les récents problèmes de sécurité, nous avons renforcé les patrouilles du campus ». Communiqué officiel.\n' +
       '- Ex : 鉴于以上情况，公司决定... « au vu de ce qui précède, l\'entreprise décide de... ». Structure d\'email pro.\n' +
       '\n' +
@@ -4564,7 +4564,7 @@ export const b12NuancesCauseEffectAdvancedLearnSections: LessonV2LearnSection[] 
       '\n' +
       'Ordre du registre : 所以 (oral neutre) < 因此 (écrit pro) < 因而 (littéraire) < 故 (classique / juridique).',
     bodyEn:
-      '之所以...是因为... (zhī suǒ yǐ... shì yīn wèi...) = «the reason why... is that...». REVERSES the normal order: effect first, cause after. Analytical tone. Structure: subject + 之所以 + [result], 是因为 + [cause]. Ex: 他之所以成功，是因为他非常努力 «the reason he succeeded is that he works extremely hard». Parallel variant 之所以...是为了... = «the reason... is in order to...» (purpose, not cause). Ex: 他之所以辞职，是为了专心创业 «the reason he resigned is to focus on his startup». Careful: 是为了 = purpose; 是因为 = cause. 鉴于 (jiàn yú) = «in view of / given». Introduces a SITUATION carefully weighed before action. Official, administrative register. Ex: 鉴于近期安全问题，我们加强了校园巡逻 «in view of recent security issues, we\'ve reinforced campus patrols» — official bulletin. Ex: 鉴于以上情况，公司决定... «in view of the above, the company decides...» — pro email structure. 因...而... (yīn... ér...) = «because of X, Y». CONCISE and elegant, very frequent in elevated writing. Structure: subject + 因 + [cause] + 而 + [effect]. Ex: 他因表现出色而获得了奖励 «he received an award due to outstanding performance». Ex: 她因病请假 «she took leave due to illness» — ultra concise. 故 (gù) = «therefore / hence» CLASSICAL, single character. Very elevated register, official writing, ancient style. Ex: 他已经适应了国外的生活，故不打算再回国 «he adapted to life abroad, hence he doesn\'t plan to return». Combines with 因: 因...故... = «because... therefore...». Ex: 因下雨，故取消. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary) < 故 (classical / legal).',
+      '之所以...是因为... (zhī suǒ yǐ... shì yīn wèi...) = «the reason why... is that...». REVERSES the normal order: effect first, cause after. Analytical tone. Structure: subject + 之所以 + [result], 是因为 + [cause]. Ex: 他之所以成功，是因为他非常努力 «the reason he succeeded is that he works extremely hard». Parallel variant 之所以...是为了... = «the reason... is in order to...» (purpose, not cause). Ex: 他之所以辞职，是为了专心创业 «the reason he resigned is to focus on his startup». Careful: 是为了 = purpose; 是因为 = cause. 鉴于 (jiànyú) = «in view of / given». Introduces a SITUATION carefully weighed before action. Official, administrative register. Ex: 鉴于近期安全问题，我们加强了校园巡逻 «in view of recent security issues, we\'ve reinforced campus patrols» — official bulletin. Ex: 鉴于以上情况，公司决定... «in view of the above, the company decides...» — pro email structure. 因...而... (yīn... ér...) = «because of X, Y». CONCISE and elegant, very frequent in elevated writing. Structure: subject + 因 + [cause] + 而 + [effect]. Ex: 他因表现出色而获得了奖励 «he received an award due to outstanding performance». Ex: 她因病请假 «she took leave due to illness» — ultra concise. 故 (gù) = «therefore / hence» CLASSICAL, single character. Very elevated register, official writing, ancient style. Ex: 他已经适应了国外的生活，故不打算再回国 «he adapted to life abroad, hence he doesn\'t plan to return». Combines with 因: 因...故... = «because... therefore...». Ex: 因下雨，故取消. Register order: 所以 (neutral oral) < 因此 (pro written) < 因而 (literary) < 故 (classical / legal).',
     items: [
       { hanzi: '之所以...是因为...', pinyin: 'zhī suǒ yǐ ... shì yīn wèi ...', meaning: 'la raison pour laquelle... est que...', meaningEn: 'the reason why... is that...', audio: 'audio/hsk5/hsk5_之所以.wav' },
       { hanzi: '之所以...是为了...', pinyin: 'zhī suǒ yǐ ... shì wèi le ...', meaning: 'la raison pour laquelle... c\'est pour...', meaningEn: 'the reason why... is in order to...', audio: 'audio/hsk5/hsk5_之所以.wav' },
@@ -4594,21 +4594,21 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
     body:
       'Ces 3 connecteurs signalent qu\'on fait qch POUR ÉVITER un mauvais résultat. Ils partagent le sens de « pour éviter que / de peur que / sinon ». Diffèrent par leur REGISTRE.\n' +
       '\n' +
-      '以免 (yǐ miǎn) = le plus FORMEL. Écrit, avertissements officiels, instructions.\n' +
+      '以免 (yǐmiǎn) = le plus FORMEL. Écrit, avertissements officiels, instructions.\n' +
       '- Ex : 请带雨伞，以免被雨淋湿 (py qǐng dài yǔ sǎn, yǐ miǎn bèi yǔ lín shī) « prends un parapluie, pour ne pas te faire tremper ». Ton panneau d\'affichage.\n' +
       '- Ex : 关灯，以免浪费电 « éteins la lumière, pour éviter le gaspillage ».\n' +
       '\n' +
-      '免得 (miǎn de) = COURANT et oral. Conversation quotidienne.\n' +
+      '免得 (miǎnde) = COURANT et oral. Conversation quotidienne.\n' +
       '- Ex : 早点睡觉，免得明天起不来 (py zǎo diǎn shuì jiào, miǎn de míng tiān qǐ bù lái) « couche-toi tôt, sinon tu vas galérer à te lever demain ».\n' +
       '- Ex : 带件外套，免得着凉 « prends une veste, sinon tu vas prendre froid ». Conseil amical.\n' +
       '\n' +
-      '省得 (shěng de) = TRÈS DÉCONTRACTÉ, entre amis. Signifie « pour s\'épargner la peine de ».\n' +
+      '省得 (shěngde) = TRÈS DÉCONTRACTÉ, entre amis. Signifie « pour s\'épargner la peine de ».\n' +
       '- Ex : 我打车去，省得找停车位 (py wǒ dǎ chē qù, shěng de zhǎo tíng chē wèi) « je prends un taxi, comme ça pas besoin de chercher une place ». Style « la flemme ».\n' +
       '- Ex : 一起去吧，省得跑两次 « viens avec moi, comme ça pas besoin d\'y aller 2 fois ».\n' +
       '\n' +
       'Échelle : 以免 (formel écrit) < 免得 (oral standard) < 省得 (oral décontracté). Même sens de base.',
     bodyEn:
-      'These 3 connectors signal doing something TO AVOID a bad outcome. They share the meaning «to avoid / lest / otherwise», but differ by REGISTER. 以免 (yǐ miǎn) = the most FORMAL. Written, official warnings, instructions. Ex: 请带雨伞，以免被雨淋湿 «bring an umbrella so you don\'t get drenched» — signboard tone. Ex: 关灯，以免浪费电 «turn off the lights to avoid wasting electricity». 免得 (miǎn de) = COMMON and oral. Everyday conversation. Ex: 早点睡觉，免得明天起不来 «go to bed early, otherwise you\'ll struggle to wake up». Ex: 带件外套，免得着凉 «bring a jacket, otherwise you\'ll catch a cold» — friendly advice. 省得 (shěng de) = VERY CASUAL, among friends. Means «to save oneself the trouble of». Ex: 我打车去，省得找停车位 «I\'ll grab a taxi so I don\'t have to hunt for parking» — «can\'t be bothered» vibe. Ex: 一起去吧，省得跑两次 «come with me, saves us a second trip». Scale: 以免 (formal written) < 免得 (standard oral) < 省得 (casual oral). Same base meaning.',
+      'These 3 connectors signal doing something TO AVOID a bad outcome. They share the meaning «to avoid / lest / otherwise», but differ by REGISTER. 以免 (yǐmiǎn) = the most FORMAL. Written, official warnings, instructions. Ex: 请带雨伞，以免被雨淋湿 «bring an umbrella so you don\'t get drenched» — signboard tone. Ex: 关灯，以免浪费电 «turn off the lights to avoid wasting electricity». 免得 (miǎnde) = COMMON and oral. Everyday conversation. Ex: 早点睡觉，免得明天起不来 «go to bed early, otherwise you\'ll struggle to wake up». Ex: 带件外套，免得着凉 «bring a jacket, otherwise you\'ll catch a cold» — friendly advice. 省得 (shěngde) = VERY CASUAL, among friends. Means «to save oneself the trouble of». Ex: 我打车去，省得找停车位 «I\'ll grab a taxi so I don\'t have to hunt for parking» — «can\'t be bothered» vibe. Ex: 一起去吧，省得跑两次 «come with me, saves us a second trip». Scale: 以免 (formal written) < 免得 (standard oral) < 省得 (casual oral). Same base meaning.',
     items: [
       { hanzi: '以免', pinyin: 'yǐmiǎn', meaning: 'pour éviter que (formel)', meaningEn: 'to avoid (formal)', audio: 'audio/hsk5/hsk5_以免.wav' },
       { hanzi: '免得', pinyin: 'miǎnde', meaning: 'pour éviter, sinon', meaningEn: 'to avoid, lest', audio: 'audio/hsk4/hsk4_免得.wav' },
@@ -4629,7 +4629,7 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
     title: '以便 / 以 / 以期 : registre écrit et académique',
     titleEn: '以便 / 以 / 以期: written and academic register',
     body:
-      '以便 (yǐ biàn) = « afin que / de sorte que » FORMEL. Documents pro, instructions officielles. Version soutenue de 好.\n' +
+      '以便 (yǐbiàn) = « afin que / de sorte que » FORMEL. Documents pro, instructions officielles. Version soutenue de 好.\n' +
       '\n' +
       'Structure : [action]，以便 + [but].\n' +
       '- Ex : 我们提前准备材料，以便会议顺利进行 (py wǒ men tí qián zhǔn bèi cái liào, yǐ biàn huì yì shùn lì jìn xíng) « nous préparons les documents en amont afin que la réunion se déroule sans accroc ».\n' +
@@ -4643,7 +4643,7 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
       '- Ex : 他建立基金，以帮助贫困学生 (py tā jiàn lì jī jīn, yǐ bāng zhù pín kùn xué shēng) « il a fondé une association, afin d\'aider les élèves défavorisés ».\n' +
       '- Registre : textes juridiques, actes officiels, journalisme soutenu, littérature. Rarement à l\'oral.\n' +
       '\n' +
-      '以期 (yǐ qī) = « dans l\'espoir de » — action entreprise avec espoir d\'un résultat POSITIF non garanti.\n' +
+      '以期 (yǐqī) = « dans l\'espoir de » — action entreprise avec espoir d\'un résultat POSITIF non garanti.\n' +
       '\n' +
       'Structure : [action]，以期 + [résultat espéré].\n' +
       '- Ex : 公司投资新设备，以期提高竞争力 (py gōng sī tóu zī xīn shè bèi, yǐ qī tí gāo jìng zhēng lì) « l\'entreprise a investi dans du nouveau matériel, en espérant améliorer sa compétitivité ». Rapport annuel.\n' +
@@ -4651,7 +4651,7 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Différence 以便 vs 以期 : 以便 = résultat attendu (assez sûr). 以期 = résultat espéré (incertain).',
     bodyEn:
-      '以便 (yǐ biàn) = «so that / in order to» FORMAL. Pro documents, official instructions. Elevated version of 好. Structure: [action], 以便 + [purpose]. Ex: 我们提前准备材料，以便会议顺利进行 «we prepare materials early so the meeting runs smoothly». Often paired with 能 / 可以 for the capability nuance: 以便能够, 以便可以. Ex: 请提前预约，以便我们能更好地为您服务 «please book ahead so we can serve you better» — customer-service tone. 以 (yǐ) ALONE = ultra-formal, literary, classical. Shortened 以便. Structure: [action], 以 + [verb = purpose]. Ex: 他建立基金，以帮助贫困学生 «he founded a fund to help underprivileged students». Register: legal texts, official acts, high-register journalism, literature. Rarely oral. 以期 (yǐ qī) = «in the hope of» — action undertaken hoping for a POSITIVE but uncertain result. Structure: [action], 以期 + [hoped result]. Ex: 公司投资新设备，以期提高竞争力 «the company invested in new equipment, hoping to boost competitiveness» — annual report. Ex: 政府推行改革，以期改善民生 «the government launched reforms, in hopes of improving living standards». Difference 以便 vs 以期: 以便 = expected result (fairly sure); 以期 = hoped-for result (uncertain).',
+      '以便 (yǐbiàn) = «so that / in order to» FORMAL. Pro documents, official instructions. Elevated version of 好. Structure: [action], 以便 + [purpose]. Ex: 我们提前准备材料，以便会议顺利进行 «we prepare materials early so the meeting runs smoothly». Often paired with 能 / 可以 for the capability nuance: 以便能够, 以便可以. Ex: 请提前预约，以便我们能更好地为您服务 «please book ahead so we can serve you better» — customer-service tone. 以 (yǐ) ALONE = ultra-formal, literary, classical. Shortened 以便. Structure: [action], 以 + [verb = purpose]. Ex: 他建立基金，以帮助贫困学生 «he founded a fund to help underprivileged students». Register: legal texts, official acts, high-register journalism, literature. Rarely oral. 以期 (yǐqī) = «in the hope of» — action undertaken hoping for a POSITIVE but uncertain result. Structure: [action], 以期 + [hoped result]. Ex: 公司投资新设备，以期提高竞争力 «the company invested in new equipment, hoping to boost competitiveness» — annual report. Ex: 政府推行改革，以期改善民生 «the government launched reforms, in hopes of improving living standards». Difference 以便 vs 以期: 以便 = expected result (fairly sure); 以期 = hoped-for result (uncertain).',
     items: [
       { hanzi: '以便', pinyin: 'yǐbiàn', meaning: 'afin que, de sorte que', meaningEn: 'so that, in order to', audio: 'audio/hsk5/hsk5_以便.wav' },
       { hanzi: '以', pinyin: 'yǐ', meaning: 'afin de (littéraire)', meaningEn: 'in order to (literary)', audio: 'audio/hsk3/hsk3_以.wav' },
@@ -4677,8 +4677,8 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
       'Structure : 为 + [nom abstrait] + 起见，[action].\n' +
       '\n' +
       'Formules ULTRA fréquentes à mémoriser :\n' +
-      '- 为安全起见 (wèi ān quán qǐ jiàn) « par sécurité ». Ex : 为安全起见，请系好安全带 « par sécurité, attachez votre ceinture ».\n' +
-      '- 为保险起见 (wèi bǎo xiǎn qǐ jiàn) « au cas où / par précaution ». Ex : 为保险起见，我们再检查一遍 « pour être sûr, on revérifie ».\n' +
+      '- 为安全起见 (wèi ānquán qǐ jiàn) « par sécurité ». Ex : 为安全起见，请系好安全带 « par sécurité, attachez votre ceinture ».\n' +
+      '- 为保险起见 (wèi bǎoxiǎn qǐ jiàn) « au cas où / par précaution ». Ex : 为保险起见，我们再检查一遍 « pour être sûr, on revérifie ».\n' +
       '- 为公平起见 « par souci d\'équité ». Ex : 为公平起见，每个人得到同样的机会 « par équité, chacun a la même chance ».\n' +
       '\n' +
       'Registre : consignes, annonces, textes pro. Le pattern est FIGÉ.\n' +
@@ -4691,14 +4691,14 @@ export const b12NuancesPurposeFormalLearnSections: LessonV2LearnSection[] = [
       '- Ex : 为梦想而努力 « lutter pour son rêve ».\n' +
       '- Contextes : discours politiques, mottos d\'entreprise, engagements nobles. Fait très cérémonieux.\n' +
       '\n' +
-      '旨在 (zhǐ zài) = « viser à / avoir pour objectif de ». Langue officielle des institutions, politiques, projets.\n' +
+      '旨在 (zhǐzài) = « viser à / avoir pour objectif de ». Langue officielle des institutions, politiques, projets.\n' +
       '\n' +
       'Structure : [entité/action] + 旨在 + [but].\n' +
       '- Ex : 这项政策旨在减少环境污染 (py zhè xiàng zhèng cè zhǐ zài jiǎn shǎo huán jìng wū rǎn) « cette politique vise à réduire la pollution environnementale ». Style communiqué gouvernemental.\n' +
       '- Ex : 这个项目旨在帮助农民 « ce projet vise à aider les paysans ».\n' +
       '- Registre : presse, rapports institutionnels, présentations pro. LA formule pour décrire un objectif officiel.',
     bodyEn:
-      '为...起见 (wèi ... qǐ jiàn) = «for the sake of / out of concern for». Often in FIXED formulas. Structure: 为 + [abstract noun] + 起见, [action]. MUST-KNOW frozen phrases: 为安全起见 «for safety» (为安全起见，请系好安全带 «for safety, buckle up»); 为保险起见 «just in case / as a precaution» (为保险起见，我们再检查一遍 «to be safe, let\'s check again»); 为公平起见 «for fairness» (为公平起见，每个人得到同样的机会 «for fairness, everyone gets the same shot»). Register: guidelines, announcements, pro texts. The pattern is FIXED. 为...而... (wèi ... ér ...) = «for ... (grand purpose)... ». LITERARY register, slogans, noble commitments. Structure: subject + 为 + [grand purpose] + 而 + [action]. Ex: 我们为和平而奋斗 «we fight for peace» — solemn tone. Ex: 他们为祖国而牺牲 «they sacrificed themselves for the motherland». Ex: 为梦想而努力 «work hard for one\'s dream». Contexts: political speeches, corporate mottos, noble commitments. Very ceremonial. 旨在 (zhǐ zài) = «to aim at / have as objective». Official language of institutions, policies, projects. Structure: [entity/action] + 旨在 + [purpose]. Ex: 这项政策旨在减少环境污染 «this policy aims to reduce environmental pollution» — government communiqué style. Ex: 这个项目旨在帮助农民 «this project aims to help farmers». Register: press, institutional reports, pro presentations. THE formula for describing an official goal.',
+      '为...起见 (wèi ... qǐ jiàn) = «for the sake of / out of concern for». Often in FIXED formulas. Structure: 为 + [abstract noun] + 起见, [action]. MUST-KNOW frozen phrases: 为安全起见 «for safety» (为安全起见，请系好安全带 «for safety, buckle up»); 为保险起见 «just in case / as a precaution» (为保险起见，我们再检查一遍 «to be safe, let\'s check again»); 为公平起见 «for fairness» (为公平起见，每个人得到同样的机会 «for fairness, everyone gets the same shot»). Register: guidelines, announcements, pro texts. The pattern is FIXED. 为...而... (wèi ... ér ...) = «for ... (grand purpose)... ». LITERARY register, slogans, noble commitments. Structure: subject + 为 + [grand purpose] + 而 + [action]. Ex: 我们为和平而奋斗 «we fight for peace» — solemn tone. Ex: 他们为祖国而牺牲 «they sacrificed themselves for the motherland». Ex: 为梦想而努力 «work hard for one\'s dream». Contexts: political speeches, corporate mottos, noble commitments. Very ceremonial. 旨在 (zhǐzài) = «to aim at / have as objective». Official language of institutions, policies, projects. Structure: [entity/action] + 旨在 + [purpose]. Ex: 这项政策旨在减少环境污染 «this policy aims to reduce environmental pollution» — government communiqué style. Ex: 这个项目旨在帮助农民 «this project aims to help farmers». Register: press, institutional reports, pro presentations. THE formula for describing an official goal.',
     items: [
       { hanzi: '为...起见', pinyin: 'wèi ... qǐ jiàn', meaning: 'par souci de, pour le bien de', meaningEn: 'for the sake of', audio: 'audio/hsk3/hsk3_为.wav' },
       { hanzi: '为安全起见', pinyin: 'wèi ānquán qǐ jiàn', meaning: 'par sécurité', meaningEn: 'for safety', audio: 'audio/hsk3/hsk3_安全.wav' },
@@ -4727,7 +4727,7 @@ export const b12NuancesAllPart2LearnSections: LessonV2LearnSection[] = [
     title: '一切 : « tout » abstrait et englobant',
     titleEn: '一切: abstract, all-encompassing «all»',
     body:
-      '一切 (yī qiè) « tout, toute chose » désigne la TOTALITÉ ABSTRAITE : circonstances, situations, événements, choses en général. À la différence de 所有 qui balaie un ensemble concret, 一切 englobe une réalité VASTE.\n' +
+      '一切 (yīqiè) « tout, toute chose » désigne la TOTALITÉ ABSTRAITE : circonstances, situations, événements, choses en général. À la différence de 所有 qui balaie un ensemble concret, 一切 englobe une réalité VASTE.\n' +
       '\n' +
       'Structure : 一切 + (都) + Verbe / Adjectif. Peut aussi être objet en fin de phrase.\n' +
       '- Ex : 一切都很好 (py yī qiè dōu hěn hǎo) « tout va bien ». Réponse rassurante universelle.\n' +
@@ -4749,7 +4749,7 @@ export const b12NuancesAllPart2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Registre : légèrement soutenu, très fréquent à l\'écrit et dans les discours. Ton philosophique/englobant.',
     bodyEn:
-      '一切 (yī qiè) «all, everything» refers to ABSTRACT TOTALITY: circumstances, situations, events, things in general. Unlike 所有 which sweeps a concrete set, 一切 encompasses a VAST reality. Structure: 一切 + (都) + Verb / Adjective. Can also be an object at sentence end. Ex: 一切都很好 «everything\'s fine». Universal reassuring reply. Ex: 一切都变了 «everything has changed». Philosophical scope. Ex: 感谢你为我做的一切 «thank you for everything you\'ve done for me». 一切 as object. Ex: 一切皆有可能 «anything is possible». Poetic/slogan register. 一切 vs 所有: 所有 = «all the X» (X bounded, concrete): 所有的学生, 所有的书. 一切 = «everything, in its entirety» (abstract, without enumerating): 一切困难, 一切都好. You DON\'T say 所有困难 but 一切困难 «all difficulties (in the whole)». FIXED collocations with 一切: 一切都好 «all is well». 尽一切努力 «make every possible effort». 不惜一切代价 «at any cost, whatever it takes». 一切从头开始 «start everything from scratch». 一切按计划进行 «everything proceeds according to plan». Register: mildly formal, very common in writing and speeches. Philosophical/all-embracing tone.',
+      '一切 (yīqiè) «all, everything» refers to ABSTRACT TOTALITY: circumstances, situations, events, things in general. Unlike 所有 which sweeps a concrete set, 一切 encompasses a VAST reality. Structure: 一切 + (都) + Verb / Adjective. Can also be an object at sentence end. Ex: 一切都很好 «everything\'s fine». Universal reassuring reply. Ex: 一切都变了 «everything has changed». Philosophical scope. Ex: 感谢你为我做的一切 «thank you for everything you\'ve done for me». 一切 as object. Ex: 一切皆有可能 «anything is possible». Poetic/slogan register. 一切 vs 所有: 所有 = «all the X» (X bounded, concrete): 所有的学生, 所有的书. 一切 = «everything, in its entirety» (abstract, without enumerating): 一切困难, 一切都好. You DON\'T say 所有困难 but 一切困难 «all difficulties (in the whole)». FIXED collocations with 一切: 一切都好 «all is well». 尽一切努力 «make every possible effort». 不惜一切代价 «at any cost, whatever it takes». 一切从头开始 «start everything from scratch». 一切按计划进行 «everything proceeds according to plan». Register: mildly formal, very common in writing and speeches. Philosophical/all-embracing tone.',
     items: [
       { hanzi: '一切', pinyin: 'yīqiè', meaning: 'tout, toute chose (abstrait)', meaningEn: 'all, everything (abstract)', audio: 'audio/hsk4/hsk4_一切.wav' },
       { hanzi: '一切都很好', pinyin: 'yīqiè dōu hěn hǎo', meaning: 'tout va bien', meaningEn: 'everything\'s fine', audio: 'audio/hsk1/hsk1_好.wav' },
@@ -4773,7 +4773,7 @@ export const b12NuancesAllPart2LearnSections: LessonV2LearnSection[] = [
     title: '个个 : « chacun d\'entre eux » avec chaleur',
     titleEn: '个个: «each one of them» with warmth',
     body:
-      '个个 (gè gè) « chacun sans exception » est une reduplication de 个 qui insiste chaleureusement sur le fait que TOUS les membres d\'un groupe (personnes ou objets comptables) sont concernés. Ton oral et affectueux.\n' +
+      '个个 (gègè) « chacun sans exception » est une reduplication de 个 qui insiste chaleureusement sur le fait que TOUS les membres d\'un groupe (personnes ou objets comptables) sont concernés. Ton oral et affectueux.\n' +
       '\n' +
       'Structure : Sujet + 个个 + Verbe / Adjectif. Fonctionne comme 都 mais avec une touche personnelle.\n' +
       '- Ex : 同学们个个参加了比赛 (py tóng xué men gè gè cān jiā le bǐ sài) « chaque camarade a participé à la compétition ». Chaleur du groupe.\n' +
@@ -4797,7 +4797,7 @@ export const b12NuancesAllPart2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Ton : légèrement admiratif ou emphatique, très fréquent en oral. Fait partie du charme rhétorique du chinois parlé.',
     bodyEn:
-      '个个 (gè gè) «each one without exception» is a reduplication of 个 that warmly insists that ALL members of a group (people or countable objects) are concerned. Oral and affectionate tone. Structure: Subject + 个个 + Verb / Adjective. Works like 都 but with a personal touch. Ex: 同学们个个参加了比赛 «every classmate joined the competition». Group warmth. Ex: 他的孩子个个都很聪明 «his kids are all smart, each in their own way». Personal compliment. Ex: 我们班的女生个个漂亮 «the girls in our class are all pretty, each one». 个个 vs 每个: 每个 = neutral, distributive, formal: 每个学生都努力. 个个 = affective, spotlight on individuals: 学生们个个都努力. Makes the compliment/observation more vivid. Other classifier reduplications: the «CL + CL» pattern means «each, all» for other classifiers too. 天天 «every day»: 他天天来 «he comes every day». 家家 «every household»: 家家都有电视 «every household has a TV». 人人 «everyone»: 人人都想成功 «everyone wants to succeed». 处处 «everywhere»: 处处都是花 «there are flowers everywhere». Constraints: Don\'t use 个个 with non-countable nouns (water, sand...). The subject must be a DEFINED GROUP or identifiable in context. Often reinforced by 都: 个个都 «each without exception». Tone: mildly admiring or emphatic, very common in speech. Part of spoken Chinese\'s rhetorical charm.',
+      '个个 (gègè) «each one without exception» is a reduplication of 个 that warmly insists that ALL members of a group (people or countable objects) are concerned. Oral and affectionate tone. Structure: Subject + 个个 + Verb / Adjective. Works like 都 but with a personal touch. Ex: 同学们个个参加了比赛 «every classmate joined the competition». Group warmth. Ex: 他的孩子个个都很聪明 «his kids are all smart, each in their own way». Personal compliment. Ex: 我们班的女生个个漂亮 «the girls in our class are all pretty, each one». 个个 vs 每个: 每个 = neutral, distributive, formal: 每个学生都努力. 个个 = affective, spotlight on individuals: 学生们个个都努力. Makes the compliment/observation more vivid. Other classifier reduplications: the «CL + CL» pattern means «each, all» for other classifiers too. 天天 «every day»: 他天天来 «he comes every day». 家家 «every household»: 家家都有电视 «every household has a TV». 人人 «everyone»: 人人都想成功 «everyone wants to succeed». 处处 «everywhere»: 处处都是花 «there are flowers everywhere». Constraints: Don\'t use 个个 with non-countable nouns (water, sand...). The subject must be a DEFINED GROUP or identifiable in context. Often reinforced by 都: 个个都 «each without exception». Tone: mildly admiring or emphatic, very common in speech. Part of spoken Chinese\'s rhetorical charm.',
     items: [
       { hanzi: '个个', pinyin: 'gègè', meaning: 'chacun sans exception (chaleur)', meaningEn: 'each one without exception (warmth)', audio: 'audio/hsk1/hsk1_个.wav' },
       { hanzi: '天天', pinyin: 'tiāntiān', meaning: 'chaque jour', meaningEn: 'every day', audio: 'audio/hsk1/hsk1_天.wav' },

@@ -16,9 +16,9 @@ export const c22ConvM1LearnSections: LessonV2LearnSection[] = [
       'Tu interprètes en temps réel (cabine ou chuchotage), entre français et chinois. Le **registre** est exigeant : on parle de 同声传译 (tóngshēngchuányì) pour la **simultanée**, 交替传译 pour l\'**alternée**, et de 译员 pour l\'interprète.\n' +
       '\n' +
       'Techniques pro essentielles :\n' +
-      '- 跟读 (gēn dú) — suivre la voix avec un décalage de 3-5 secondes\n' +
+      '- 跟读 (gēndú) — suivre la voix avec un décalage de 3-5 secondes\n' +
       '- 概括 (gàikuò) — résumer quand le débit s\'emballe\n' +
-      '- 预判 (yù pàn) — anticiper la fin de phrase\n' +
+      '- 预判 (yùpàn) — anticiper la fin de phrase\n' +
       '\n' +
       'Phrases utiles : 译员请您稍微放慢一点 (l\'interprète vous prie de ralentir) ou 该词在中文中没有完全对应 (ce mot n\'a pas d\'équivalent exact).\n' +
       '\n' +
@@ -139,7 +139,7 @@ export const c22ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire :\n' +
       '- 字幕 (zìmù) — sous-titres\n' +
-      '- 字幕组 (zìmù zǔ) — équipe de fansub bénévole\n' +
+      '- 字幕组 (zìmùzǔ) — équipe de fansub bénévole\n' +
       '- 配音 (pèiyīn) — doublage\n' +
       '- 本地化 (běndìhuà) — localisation\n' +
       '\n' +
@@ -221,7 +221,7 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
     title: 'Shanghainais : reconnaître la 4e ville-langue',
     titleEn: 'Shanghainese: recognize the 4th city-language',
     body:
-      'Le shanghainais 上海话 (shànghǎihuà) appartient au sous-groupe 吴语 (wú yǔ) parlé dans le delta du Yangtze (~80M locuteurs).\n' +
+      'Le shanghainais 上海话 (shànghǎihuà) appartient au sous-groupe 吴语 (wúyǔ) parlé dans le delta du Yangtze (~80M locuteurs).\n' +
       '\n' +
       'Trois traits qui le distinguent du mandarin :\n' +
       '- **phonologie** très différente — consonnes voisées, voyelles nasales\n' +
@@ -239,7 +239,7 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : reconnaître le shanghainais à l’oreille = signe de **fin connaisseur** de la culture régionale chinoise.',
     bodyEn:
-      'Shanghainese 上海话 = dialect of the 吴语 (wú yǔ) subgroup, spoken in the Yangtze delta, ~80M speakers. Phonology very different from Mandarin (voiced consonants, nasal vowels). Politically marginalized since the 90s by Putonghua promotion, but stays alive in family speech and local pop culture. Greetings: 侬好 (nóng hǎo, hello, lit. «you good»), 谢谢侬 (xiè xiè nóng, thanks to you), 再会 (zài huì, goodbye). Pronoun 侬 (nóng) = Shanghainese «you» (≠ standard 你). Specific vocab: 阿拉 (ālā, we), 老克勒 (lǎokèlè, cosmopolitan gentleman — nod to 1930s Shanghai modernity). Recognizing Shanghainese by ear = sign of fine connoisseur of Chinese regional culture.',
+      'Shanghainese 上海话 = dialect of the 吴语 (wúyǔ) subgroup, spoken in the Yangtze delta, ~80M speakers. Phonology very different from Mandarin (voiced consonants, nasal vowels). Politically marginalized since the 90s by Putonghua promotion, but stays alive in family speech and local pop culture. Greetings: 侬好 (nóng hǎo, hello, lit. «you good»), 谢谢侬 (xiè xiè nóng, thanks to you), 再会 (zài huì, goodbye). Pronoun 侬 (nóng) = Shanghainese «you» (≠ standard 你). Specific vocab: 阿拉 (ālā, we), 老克勒 (lǎokèlè, cosmopolitan gentleman — nod to 1930s Shanghai modernity). Recognizing Shanghainese by ear = sign of fine connoisseur of Chinese regional culture.',
     items: [
       { hanzi: '上海话', pinyin: 'shànghǎi huà', meaning: 'shanghainais', meaningEn: 'Shanghainese', audio: 'audio/hsk6/hsk6_上海话.wav' },
       { hanzi: '吴语', pinyin: 'wúyǔ', meaning: 'famille wu', meaningEn: 'Wu language family', audio: 'audio/hsk6/hsk6_吴语.wav' },
@@ -307,7 +307,7 @@ export const c22ConvM4LearnSections: LessonV2LearnSection[] = [
     title: 'Littérature en ligne : phénomène 2000s+',
     titleEn: 'Online literature: 2000s+ phenomenon',
     body:
-      'La 网络文学 (wǎngluò wénxué) chinoise est un **phénomène mondial unique**.\n' +
+      'La 网络文学 (wǎngluòwénxué) chinoise est un **phénomène mondial unique**.\n' +
       '\n' +
       'Quatre repères clés :\n' +
       '- plateforme dominante — 起点中文网 (Qidian, fondé en 2002)\n' +
@@ -317,9 +317,9 @@ export const c22ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       '\n' +
       'Cinq genres majeurs à connaître :\n' +
-      '- 玄幻 (xuán huàn) — fantasy + arts martiaux\n' +
+      '- 玄幻 (xuánhuàn) — fantasy + arts martiaux\n' +
       '- 都市 (dūshì) — romance urbaine\n' +
-      '- 修仙 (xiū xiān) — immortalité taoïste\n' +
+      '- 修仙 (xiūxiān) — immortalité taoïste\n' +
       '- 穿越 (chuānyuè) — voyage temporel (souvent une héroïne moderne dans une dynastie)\n' +
       '- 末世 (mòshì) — post-apocalyptique\n' +
       '\n' +
@@ -443,7 +443,7 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocabulaire de base :\n' +
       '- 文化差异 (wénhuàchāyì) — différence culturelle\n' +
-      '- 文化冲突 (wénhuà chōngtū) — choc\n' +
+      '- 文化冲突 (wénhuàchōngtū) — choc\n' +
       '- 文化融合 (wénhuà rónghé) — fusion\n' +
       '- 跨文化 (kuàwénhuà) — interculturel\n' +
       '- 被视为 (bèi shì wéi) — être vu comme\n' +
@@ -489,8 +489,8 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
       'Le vocabulaire de la puissance douce :\n' +
       '- 软实力 (ruǎnshílì) — **soft power**\n' +
       '- 文化输出 (wénhuà shūchū) — exportation culturelle\n' +
-      '- 国际形象 (guójì xíngxiàng) — image internationale\n' +
-      '- 话语权 (huàyǔ quán) — **leverage discursif** (qui contrôle le récit)\n' +
+      '- 国际形象 (guójìxíngxiàng) — image internationale\n' +
+      '- 话语权 (huàyǔquán) — **leverage discursif** (qui contrôle le récit)\n' +
       '\n' +
       '\n' +
       'Phrases-types pour structurer l’analyse :\n' +
@@ -693,7 +693,7 @@ export const c22NuancesM2LearnSections: LessonV2LearnSection[] = [
       '- 一笑而过 (yíxiào’érguò) — « un rire et c’est passé »\n' +
       '- 一去不返 (yíqùbùfǎn) — « parti une fois, plus de retour »\n' +
       '- 一发不可收拾 (yìfābùkěshōushi) — « une fois lancé, on ne peut plus arrêter »\n' +
-      '- 一以贯之 (yī yǐ guàn zhī) — « garder un fil unique tout du long » (Confucius, 论语)\n' +
+      '- 一以贯之 (yīyǐguànzhī) — « garder un fil unique tout du long » (Confucius, 论语)\n' +
       '\n' +
       'Astuce : pour louer la **cohérence** d’un mentor — 您 X 年来一以贯之，令人敬佩 (vous avez gardé le même fil X années, c’est admirable). Compliment ultime de cohérence morale, signal C2.2 immédiat.',
     bodyEn:
@@ -719,13 +719,13 @@ export const c22NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Quatre indispensables à maîtriser :\n' +
       '- 一鼓作气 (yīgǔzuòqì) — **avancer en un seul élan**, sans relâche ; à utiliser pour exhorter à finir d’un coup\n' +
-      '- 三思而行 (sān sī ér xíng) — **réfléchir trois fois avant d’agir** ; à utiliser pour conseiller la prudence\n' +
+      '- 三思而行 (sānsīérxíng) — **réfléchir trois fois avant d’agir** ; à utiliser pour conseiller la prudence\n' +
       '- 五湖四海 (wǔhúsìhǎi) — « des 5 lacs et 4 mers » = du **monde entier** (来自五湖四海)\n' +
-      '- 九牛二虎之力 (jiǔ niú èr hǔ zhī lì) — « la force de 9 bœufs et 2 tigres » = **effort surhumain** (用了九牛二虎之力才完成)\n' +
+      '- 九牛二虎之力 (jiǔniúèrhǔzhīlì) — « la force de 9 bœufs et 2 tigres » = **effort surhumain** (用了九牛二虎之力才完成)\n' +
       '\n' +
       'Astuce : **三思而行** est un conseil de prudence universel — à utiliser quand quelqu’un est sur le point de prendre une décision irréversible. Plus puissant que « 慢慢想 », il connote la **sagesse** confucéenne.',
     bodyEn:
-      'NUMBERED chengyu are essential literate markers. 一鼓作气 (yī gǔ zuò qì) = advance in a single thrust, without pause. Use to exhort finishing a task at one go. 三思而行 (sān sī ér xíng) = think 3 times before acting. Use to counsel prudence. 五湖四海 (wǔhúsìhǎi) = from 5 lakes and 4 seas (= from all over the world). 来自五湖四海 = coming from everywhere. 九牛二虎之力 (jiǔ niú èr hǔ zhī lì) = strength of 9 oxen and 2 tigers = superhuman effort. 用了九牛二虎之力才完成 = took a superhuman effort to finish. These 4 numbered chengyu cover 80% of daily formal emotional Chinese situations.',
+      'NUMBERED chengyu are essential literate markers. 一鼓作气 (yīgǔzuòqì) = advance in a single thrust, without pause. Use to exhort finishing a task at one go. 三思而行 (sānsīérxíng) = think 3 times before acting. Use to counsel prudence. 五湖四海 (wǔhúsìhǎi) = from 5 lakes and 4 seas (= from all over the world). 来自五湖四海 = coming from everywhere. 九牛二虎之力 (jiǔniúèrhǔzhīlì) = strength of 9 oxen and 2 tigers = superhuman effort. 用了九牛二虎之力才完成 = took a superhuman effort to finish. These 4 numbered chengyu cover 80% of daily formal emotional Chinese situations.',
     items: [
       { hanzi: '一鼓作气', pinyin: 'yīgǔzuòqì', meaning: 'avancer en un élan', meaningEn: 'in a single thrust', audio: 'audio/hsk6/hsk6_一鼓.wav' },
       { hanzi: '三思而行', pinyin: 'sānsīérxíng', meaning: 'réfléchir avant d\'agir', meaningEn: 'think before acting', audio: 'audio/hsk6/hsk6_三思.wav' },
@@ -1013,12 +1013,12 @@ export const c22NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Trois chéngyǔ à maîtriser :\n' +
       '- 形影不离 (xíngyǐngbùlí) — « forme et ombre inséparables » = **toujours ensemble** (couples, amis fusionnels) — 这两兄弟形影不离\n' +
-      '- 唇齿相依 (chúnchǐ xiāngyī) — « lèvres et dents s’entraident » = **interdépendance** profonde, usage **géopolitique** classique — 中朝两国唇齿相依\n' +
+      '- 唇齿相依 (chúnchǐxiāngyī) — « lèvres et dents s’entraident » = **interdépendance** profonde, usage **géopolitique** classique — 中朝两国唇齿相依\n' +
       '- 千差万别 (qiānchāwànbié) — « mille différences, dix mille distinctions » = **diversité** immense — 各人的看法千差万别\n' +
       '\n' +
       'Astuce : pour décrire la diversité d’un marché ou d’une opinion publique — 现在的消费者口味千差万别 (les goûts des consommateurs sont infiniment divers). Plus puissant que 很多种, **千差万别** marque la nuance infinie — signal C2.2.',
     bodyEn:
-      'Chengyu for comparing / linking / opposing. 形影不离 (xíngyǐngbùlí) = form and shadow inseparable = ALWAYS TOGETHER (couple, fusional friends). 这两兄弟形影不离 (these 2 brothers are inseparable). 唇齿相依 (chúnchǐ xiāngyī) = lips and teeth help each other = DEEP INTERDEPENDENCE (often 2 allied countries). 中朝两国唇齿相依 (China and North Korea are interdependent — classic geopolitical use). 千差万别 (qiānchāwànbié) = a thousand differences, ten thousand distinctions = ALL DIFFERENT, immense diversity. 各人的看法千差万别 (people\'s views are infinitely varied). These comparison chengyu ENRICH C2.2 oral and written without pedantry.',
+      'Chengyu for comparing / linking / opposing. 形影不离 (xíngyǐngbùlí) = form and shadow inseparable = ALWAYS TOGETHER (couple, fusional friends). 这两兄弟形影不离 (these 2 brothers are inseparable). 唇齿相依 (chúnchǐxiāngyī) = lips and teeth help each other = DEEP INTERDEPENDENCE (often 2 allied countries). 中朝两国唇齿相依 (China and North Korea are interdependent — classic geopolitical use). 千差万别 (qiānchāwànbié) = a thousand differences, ten thousand distinctions = ALL DIFFERENT, immense diversity. 各人的看法千差万别 (people\'s views are infinitely varied). These comparison chengyu ENRICH C2.2 oral and written without pedantry.',
     items: [
       { hanzi: '形影不离', pinyin: 'xíngyǐngbùlí', meaning: 'inséparables', meaningEn: 'inseparable', audio: 'audio/hsk6/hsk6_形影.wav' },
       { hanzi: '唇齿相依', pinyin: 'chúnchǐxiāngyī', meaning: 'interdépendants', meaningEn: 'interdependent', audio: 'audio/hsk6/hsk6_唇齿.wav' },
@@ -1039,17 +1039,17 @@ export const c22NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Le chinois **soutenu** adore les **réduplications** qui créent un rythme et une musicalité **poétique**. Les maîtriser = signal de niveau littéraire et émotionnel maximal. Référence : 李清照 ouvre 《声声慢》 par 7 réduplications consécutives.\n' +
       '\n' +
       'Réduplications essentielles à maîtriser :\n' +
-      '- 莹莹 (yíng yíng) — **brillant**, scintillement (泪光莹莹 « les larmes scintillent »)\n' +
+      '- 莹莹 (yíngyíng) — **brillant**, scintillement (泪光莹莹 « les larmes scintillent »)\n' +
       '- 渐渐 (jiànjiàn) — **peu à peu**, graduellement (天渐渐亮了)\n' +
       '- 缓缓 (huǎnhuǎn) — **lentement**, calmement (缓缓地走)\n' +
       '- 默默 (mòmò) — **silencieusement**, discrètement (默默地工作)\n' +
-      '- 悠悠 (yōu yōu) — **paisiblement** ; 漫漫 (mànmàn) — longuement ; 茫茫 (mángmáng) — immense\n' +
+      '- 悠悠 (yōuyōu) — **paisiblement** ; 漫漫 (mànmàn) — longuement ; 茫茫 (mángmáng) — immense\n' +
       '\n' +
       'Astuce : pour louer un effort discret et long — 您 X 年来默默地付出，让人敬佩. **默默** reconnaît l’effort **invisible**, culturellement très valorisé en Chine — compliment ultime pour un mentor humble.',
     bodyEn:
       'Formal Chinese loves REDUPLICATIONS that create rhythm and musicality.\n' +
       '\n' +
-      '- 莹莹 (yíng yíng) — bright bright (twinkling eyes)\n' +
+      '- 莹莹 (yíngyíng) — bright bright (twinkling eyes)\n' +
       '- 泪光莹莹 (tears glisten) — \n' +
       '- 渐渐 (jiànjiàn) — gradually\n' +
       '- 天渐渐亮了 (day breaks gradually) — \n' +
@@ -1306,7 +1306,7 @@ export const c22TranslationM1LearnSections: LessonV2LearnSection[] = [
     title: 'Lu Xun vs Yan Fu — le grand débat traductologique',
     titleEn: 'Lu Xun vs Yan Fu — the great translation debate',
     body:
-      '鲁迅 (lǔ xùn), traducteur prolifique au début XXe, **réfute** la hiérarchie de Yan Fu. Sa formule 宁信而不顺 = « plutôt fidèle qu\'aisé ». Pour Lu Xun, traduire c\'est introduire de la **étrangeté** dans la langue cible, pas la lisser : préserver la résistance du texte source enrichit le chinois moderne en formation.\n' +
+      '鲁迅 (lǔxùn), traducteur prolifique au début XXe, **réfute** la hiérarchie de Yan Fu. Sa formule 宁信而不顺 = « plutôt fidèle qu\'aisé ». Pour Lu Xun, traduire c\'est introduire de la **étrangeté** dans la langue cible, pas la lisser : préserver la résistance du texte source enrichit le chinois moderne en formation.\n' +
       '\n' +
       'Le débat traductologique se cristallise autour de deux pôles :\n' +
       '- 异化 (**foreignisation**, Lu Xun) : garder les structures étrangères pour fertiliser la langue cible. Traduit Gogol, Tolstoï en gardant la syntaxe russe.\n' +
@@ -1406,7 +1406,7 @@ export const c22TranslationM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       '- 气功 (qigong) — cultivates this 气\n' +
       '- 元气 (yuánqì) — is original energy\n' +
-      '- 气场 (qì chǎng) — is a person\'s aura\n' +
+      '- 气场 (qìchǎng) — is a person\'s aura\n' +
       '\n' +
       'The translation «energy» misses the METAPHYSICAL dimension.',
     items: [
@@ -1486,7 +1486,7 @@ export const c22ModernLitM1LearnSections: LessonV2LearnSection[] = [
     body:
       '余华 (yúhuá, né 1960) publie 《活着》 (« Vivre ! ») en 1993 : roman court, simple, dévastateur. C\'est l\'œuvre la plus traduite de la **littérature** chinoise contemporaine.\n' +
       '\n' +
-      'L\'histoire suit le paysan 福贵 (fú guì) qui perd tout au fil du XXe siècle :\n' +
+      'L\'histoire suit le paysan 福贵 (fúguì) qui perd tout au fil du XXe siècle :\n' +
       '- sa fortune (ruiné au jeu)\n' +
       '- sa famille (père, fils, fille, femme, gendre, petit-fils)\n' +
       '- ses biens — à la fin, il reste vivant avec un seul bœuf\n' +
@@ -1555,7 +1555,7 @@ export const c22ModernLitM2LearnSections: LessonV2LearnSection[] = [
       'Femmes et **diaspora** :\n' +
       '- 张悦然 (zhāngyuèrán, génération 80), 残雪 (cánxuě, expérimentale, finaliste Nobel)\n' +
       '- 哈金 (hājīn, écrit en anglais aux US), 高行健 (gāoxíngjiàn, Nobel 2000, exilé en France)\n' +
-      '- nouvelle génération : 双雪涛 (shuāng xuě tāo), 班宇 (bān yǔ) — chronique du Nord-Est en déclin industriel\n' +
+      '- nouvelle génération : 双雪涛 (shuāngxuětāo), 班宇 (bānyǔ) — chronique du Nord-Est en déclin industriel\n' +
       '\n' +
       'Astuce : choisis 1 auteur par an. En 5 ans, 5 univers maîtrisés = capital culturel énorme.',
     bodyEn:
@@ -1622,7 +1622,7 @@ export const c22ModernLitM3LearnSections: LessonV2LearnSection[] = [
       '- 郝景芳 (hǎojǐngfāng, née 1984) — Hugo 2016 pour 《北京折叠》 (« Pékin pliée »), dystopie sur les inégalités urbaines\n' +
       '- 陈楸帆 (chénqiūfān, né 1981) — IA et travail dans 《荒潮》 (« Marée noxieuse »)\n' +
       '- 夏笳 (xiàjiā, née 1984) — SF poétique-féministe\n' +
-      '- 王晋康 (wáng jìn kāng) — pionnier, écrit depuis les années 80\n' +
+      '- 王晋康 (wángjìnkāng) — pionnier, écrit depuis les années 80\n' +
       '\n' +
       'Écosystème : Ken Liu (刘宇昆, sino-américain) est LE **traducteur** principal — sans lui, l\'export n\'aurait pas eu lieu. La revue 科幻世界 (Chengdu) lance les nouveaux talents. En Europe, ACTES SUD et BÉLIAL\' publient régulièrement.\n' +
       '\n' +
