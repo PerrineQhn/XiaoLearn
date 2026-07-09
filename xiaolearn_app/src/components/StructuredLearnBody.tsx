@@ -22,6 +22,7 @@
  */
 
 import { Fragment, useMemo, type ReactNode } from 'react';
+import AutoPinyin from './AutoPinyin';
 
 type Block =
   | { kind: 'paragraph'; text: string; listItems?: string[]; listIntro?: string }
@@ -407,28 +408,19 @@ function renderInlineMarkdown(text: string): ReactNode {
     i = j;
   }
 
-  /** Rend un texte en stylisant les parenthèses pinyin existantes.
+  /** Rend un texte avec :
+   *    1. Injection auto du pinyin sur les hanzi ORPHELINS (via AutoPinyin)
+   *    2. Stylisation des `(pinyin)` manuels déjà écrits par l'auteur
    *
-   *  IMPORTANT : on N'utilise PAS AutoPinyin ici car les bodies de leçon
-   *  contiennent DÉJÀ les pinyins écrits par l'auteur (à dessein, pour
-   *  contrôler le découpage par mots, érhua, etc.). Injecter en plus le
-   *  pinyin auto provoquerait un doublon visible : "爸爸 (bàba) (bà ba)".
-   *  On se contente donc d'harmoniser le STYLE des parenthèses existantes.
+   *  V24 — AutoPinyin gère lui-même le skip des hanzi déjà annotés
+   *  (isPinyinAnnotation dans AutoPinyin.tsx). Pas de risque de doublon
+   *  "爸爸 (bàba) (bà ba)" — AutoPinyin voit `(bàba)` juste après et skip.
+   *
+   *  Les hanzi orphelins (ex: "看电视 est la collocation") reçoivent
+   *  maintenant leur pinyin auto, ce qui manquait avant.
    */
   const renderWithPinyin = (raw: string): ReactNode => {
-    const sub = wrapPinyinParens(raw);
-    return sub.map((s, k) => {
-      if (s.kind === 'pinyin') {
-        return (
-          <span key={k} className="manual-pinyin">
-            <span aria-hidden> (</span>
-            {s.content}
-            <span aria-hidden>)</span>
-          </span>
-        );
-      }
-      return <Fragment key={k}>{s.content}</Fragment>;
-    });
+    return <AutoPinyin text={raw} />;
   };
 
   return tokens.map((t, idx) => {
