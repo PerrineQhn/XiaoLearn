@@ -2407,13 +2407,22 @@ function getExerciseBadge(
 }
 
 /**
+ * Convertit une string mixte (hanzi + ponctuation + espaces) en son pinyin
+ * inline, en ne transformant QUE les runs de hanzi. La ponctuation et les
+ * espaces sont préservés tels quels.
+ */
+function hanziToPinyinInline(text: string): string {
+  return text.replace(/[一-鿿㐀-䶿]+/g, (run) => getPinyinForHanzi(run) || run);
+}
+
+/**
  * Pour un `fill`, remplace le placeholder `___` par :
  *   - un trou stylé tant qu'on n'a pas répondu
  *   - la réponse choisie, colorée selon correct/wrong, une fois répondu
  *
- * V27 — Injecte le pinyin sous les hanzi du contexte via AutoPinyin.
- * Aide à la lecture : le user peut suivre la phrase même si un caractère
- * lui est inconnu (le trou étant le mot à deviner).
+ * V27 — Rendu à 2 lignes : la phrase chinoise en haut, sa transcription
+ * pinyin en dessous, alignée. Le trou `___` reste vertical sur les 2
+ * lignes. Aide à la lecture sans polluer avec des (pinyin) inline.
  */
 function renderFillSentence(
   sentence: string,
@@ -2423,26 +2432,61 @@ function renderFillSentence(
   correctIndex: number
 ): ReactNode {
   const parts = sentence.split('___');
-  if (parts.length === 1) return <AutoPinyin text={sentence} />;
+  if (parts.length === 1) {
+    return (
+      <span className="lv2-fill-two-rows">
+        <span className="lv2-fill-hanzi-row">{sentence}</span>
+        <span className="lv2-fill-pinyin-row">
+          {hanziToPinyinInline(sentence)}
+        </span>
+      </span>
+    );
+  }
 
-  const filler: ReactNode = (() => {
+  const fillerHanzi: ReactNode = (() => {
     if (!answered || selectedIndex === null) {
       return <span className="lv2-fill-blank">___</span>;
     }
     const ok = selectedIndex === correctIndex;
     return (
       <span className={`lv2-fill-filled ${ok ? 'is-correct' : 'is-wrong'}`}>
-        <AutoPinyin text={choices[selectedIndex]} />
+        {choices[selectedIndex]}
       </span>
     );
   })();
 
-  return parts.map((chunk, idx) => (
-    <span key={idx}>
-      <AutoPinyin text={chunk} />
-      {idx < parts.length - 1 && filler}
+  const fillerPinyin: ReactNode = (() => {
+    if (!answered || selectedIndex === null) {
+      return <span className="lv2-fill-blank">___</span>;
+    }
+    const ok = selectedIndex === correctIndex;
+    return (
+      <span className={`lv2-fill-filled ${ok ? 'is-correct' : 'is-wrong'}`}>
+        {hanziToPinyinInline(choices[selectedIndex])}
+      </span>
+    );
+  })();
+
+  return (
+    <span className="lv2-fill-two-rows">
+      <span className="lv2-fill-hanzi-row">
+        {parts.map((chunk, idx) => (
+          <span key={`h-${idx}`}>
+            {chunk}
+            {idx < parts.length - 1 && fillerHanzi}
+          </span>
+        ))}
+      </span>
+      <span className="lv2-fill-pinyin-row">
+        {parts.map((chunk, idx) => (
+          <span key={`p-${idx}`}>
+            {hanziToPinyinInline(chunk)}
+            {idx < parts.length - 1 && fillerPinyin}
+          </span>
+        ))}
+      </span>
     </span>
-  ));
+  );
 }
 
 // ============================================================================

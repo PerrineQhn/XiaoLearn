@@ -630,6 +630,25 @@
   font-style: italic;
 }
 
+/* V27 — Rendu à 2 lignes des exos fill : phrase hanzi + pinyin dessous. */
+.lesson-v2 .lv2-fill-two-rows {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.4;
+}
+.lesson-v2 .lv2-fill-hanzi-row {
+  font-family: var(--font-serif, inherit);
+  font-size: 1.15em;
+  color: var(--lv2-text);
+}
+.lesson-v2 .lv2-fill-pinyin-row {
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--lv2-text-muted, #6b7280);
+}
+
 .lesson-v2 .lv2-fill-blank {
   display: inline-block;
   min-width: 60px;
