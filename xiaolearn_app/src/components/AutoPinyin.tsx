@@ -192,6 +192,25 @@ export const getPinyin = (hanzi: string): string => {
 const PAREN_OPEN_RE = /^\s*([(\[（［])/;
 const TONE_DIACRITICS_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]/;
 const TONE_NUMBER_RE = /[a-z]+[1-5]\b/i;
+/**
+ * V28 — Un token pinyin doit finir par :
+ *   - une VOYELLE (avec ou sans ton diacritique) : a e i o u ü + variantes
+ *   - la nasale finale n ou ng
+ *   - r (fusion érhua)
+ *   - éventuellement suivi d'un ton numérique 1-5
+ *
+ * Rejette les faux positifs français / anglais qui contiennent un accent
+ * (é, è, à) mais ne sont PAS du pinyin : `dés` (finit par s), `très` (s),
+ * `près` (s), `résumé` (é OK, mais l'auteur écrit rarement ça en pinyin),
+ * `déjà` (à OK — vrai piège, mais peu fréquent en fiche pédagogique)…
+ *
+ * On accepte 'r' terminal pour érhua (nǎr, wánr) mais pas 's', 't', 'd', 'l',
+ * 'k' etc. qui sont interdits en pinyin standard.
+ */
+const VALID_PINYIN_TOKEN_END_RE = /(?:[aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜńňǹ]|n|ng|r)[1-5]?$/i;
+/** Caractères autorisés dans un contenu pinyin (aucune ponctuation FR). */
+const PINYIN_ONLY_CHARS_RE = /^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ'’\s1-5]+$/;
+
 function isPinyinAnnotation(after: string): boolean {
   const openMatch = PAREN_OPEN_RE.exec(after);
   if (!openMatch) return false;
@@ -203,7 +222,16 @@ function isPinyinAnnotation(after: string): boolean {
   const inner = after.slice(openIdx + 1, closeIdx).trim();
   if (!inner || inner.length > 60) return false;
   // Pinyin = au moins un ton (diacritique ou numérique)
-  return TONE_DIACRITICS_RE.test(inner) || TONE_NUMBER_RE.test(inner);
+  if (!TONE_DIACRITICS_RE.test(inner) && !TONE_NUMBER_RE.test(inner)) return false;
+  // V28 — Rejet des faux positifs : caractères non-pinyin (ponctuation FR
+  // type virgule, tiret, apostrophe française) → glose FR/EN.
+  if (!PINYIN_ONLY_CHARS_RE.test(inner)) return false;
+  // V28 — Chaque token doit respecter la phonotactique pinyin : finir par
+  // voyelle/n/ng/r ± ton numérique. Rejette `dés`, `très`, `plus`, etc.
+  const tokens = inner.split(/\s+/).filter(Boolean);
+  const allValid = tokens.every((t) => VALID_PINYIN_TOKEN_END_RE.test(t));
+  if (!allValid) return false;
+  return true;
 }
 
 export interface AutoPinyinProps {
@@ -234,6 +262,11 @@ function extractManualAnnotation(after: string): { pre: string; inner: string; e
   const inner = after.slice(openIdx + 1, closeIdx).trim();
   if (!inner || inner.length > 60) return null;
   if (!TONE_DIACRITICS_RE.test(inner) && !TONE_NUMBER_RE.test(inner)) return null;
+  // V28 — Mêmes garde-fous que isPinyinAnnotation.
+  if (!PINYIN_ONLY_CHARS_RE.test(inner)) return null;
+  const tokens = inner.split(/\s+/).filter(Boolean);
+  const allValid = tokens.every((t) => VALID_PINYIN_TOKEN_END_RE.test(t));
+  if (!allValid) return null;
   return { pre: after.slice(0, openIdx), inner, endIdx: closeIdx + 1 };
 }
 
