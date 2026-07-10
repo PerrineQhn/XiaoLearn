@@ -32,8 +32,17 @@ import { pinyin } from 'pinyin-pro';
 import segmentDictRaw from '../data/pinyin-segment-dict.json';
 import cfdictRaw from '../data/cfdict-compact.json';
 
-/** Détecte les runs de hanzi consécutifs (avec ponctuation chinoise interne tolérée). */
-const HANZI_RUN_RE = /[一-鿿㐀-䶿]+/g;
+/**
+ * Détecte les runs de hanzi consécutifs, en tolérant la ponctuation
+ * chinoise INTRA-PHRASE (virgule ，, virgule d'énumération 、, guillemets
+ * chinois 「」『』). Le run s'ARRÊTE à la ponctuation de fin de phrase
+ * (。！？) ou aux espaces/lettres latines.
+ *
+ * V29 — Avant, la regex s'arrêtait à la première virgule → une phrase
+ * comme `我不喜欢可乐，我要果汁` produisait 2 runs = 2 pinyins fragmentés.
+ * Maintenant la phrase entière est un seul run → un pinyin unique en fin.
+ */
+const HANZI_RUN_RE = /[一-鿿㐀-䶿]+(?:[，、][一-鿿㐀-䶿]+)*/g;
 
 /** Longueur max d'un mot dans le dico (pour borner la fenêtre du longest-match).
  *  Cap à 4 (chéngyǔ + mots usuels) : au-delà, on risque de greffer des phrases
@@ -121,44 +130,57 @@ function segmentHanziRun(text: string): string[] {
 
 /** Cache simple hanzi → pinyin pour éviter de recomputer dans le même render. */
 const pinyinCache = new Map<string, string>();
+
+/**
+ * Cœur du calcul pinyin sur un run PUR de hanzi (sans ponctuation).
+ * Extrait pour être appelé récursivement depuis getPinyin() qui découpe
+ * les virgules chinoises.
+ */
+function computePinyinForPureRun(hanzi: string): string {
+  const segments = segmentHanziRun(hanzi);
+  const pinyinPerSeg = segments.map((seg) => {
+    const raw = pinyin(seg, {
+      toneType: 'symbol',
+      type: 'string',
+      separator: '',
+      nonZh: 'consecutive'
+    }).trim();
+    return applyErhua(seg, raw);
+  });
+  for (let i = 0; i < segments.length; i++) {
+    if (segments[i].length === 1) {
+      const ch = segments[i];
+      const p = pinyinPerSeg[i];
+      if (ch === '了' && (p === 'liǎo' || p === 'liao3')) pinyinPerSeg[i] = 'le';
+      else if (ch === '着' && (p === 'zháo' || p === 'zhao2' || p === 'zhāo' || p === 'zhao1')) pinyinPerSeg[i] = 'zhe';
+      else if (ch === '地' && (p === 'dì' || p === 'di4')) pinyinPerSeg[i] = 'de';
+      else if (ch === '得' && (p === 'dé' || p === 'de2' || p === 'děi' || p === 'dei3')) pinyinPerSeg[i] = 'de';
+    }
+  }
+  return pinyinPerSeg.filter(Boolean).join(' ');
+}
+
 export const getPinyin = (hanzi: string): string => {
   const cached = pinyinCache.get(hanzi);
   if (cached !== undefined) return cached;
   try {
-    const segments = segmentHanziRun(hanzi);
-    // Pour chaque segment : pinyin-pro avec separator vide → pinyin du mot
-    // complet concaténé. Puis applyErhua pour fusionner -r quand pertinent.
-    // Enfin on joint les segments avec un espace.
-    const pinyinPerSeg = segments.map((seg) => {
-      const raw = pinyin(seg, {
-        toneType: 'symbol',
-        type: 'string',
-        separator: '',
-        nonZh: 'consecutive'
-      }).trim();
-      return applyErhua(seg, raw);
-    });
-    // V26 — Override particules aspectuelles.
-    // Sur un caractère isolé (pas dans un mot composé), pinyin-pro renvoie
-    // son pinyin le plus fréquent qui peut être TRONQUÉ du sens grammatical :
-    //   了  → 'liǎo' (verbe autonome) au lieu de 'le' (particule aspectuelle)
-    //   得  → 'dé' ou 'děi' (obtenir / devoir) au lieu de 'de' (compl. de degré)
-    //   地  → 'dì' (terre) au lieu de 'de' (adverbialisateur)
-    //   着  → 'zháo' (atteindre) au lieu de 'zhe' (particule durative)
-    // Le mot composé (了解 → liǎojiě, 得到 → dédào…) reste intact car
-    // segmentHanziRun les regroupe et pinyin-pro applique alors le bon
-    // contexte lexical.
-    for (let i = 0; i < segments.length; i++) {
-      if (segments[i].length === 1) {
-        const ch = segments[i];
-        const p = pinyinPerSeg[i];
-        if (ch === '了' && (p === 'liǎo' || p === 'liao3')) pinyinPerSeg[i] = 'le';
-        else if (ch === '着' && (p === 'zháo' || p === 'zhao2' || p === 'zhāo' || p === 'zhao1')) pinyinPerSeg[i] = 'zhe';
-        else if (ch === '地' && (p === 'dì' || p === 'di4')) pinyinPerSeg[i] = 'de';
-        else if (ch === '得' && (p === 'dé' || p === 'de2' || p === 'děi' || p === 'dei3')) pinyinPerSeg[i] = 'de';
-      }
+    // V29 — Si le run contient des virgules chinoises intra-phrase, on
+    // découpe, calcule le pinyin de chaque sous-run, puis rejoins avec
+    // « , » (virgule ASCII + espace) pour un rendu naturel.
+    if (/[，、]/.test(hanzi)) {
+      const parts = hanzi.split(/([，、])/);
+      const py = parts
+        .map((p) => {
+          if (p === '，' || p === '、') return ', ';
+          if (!p) return '';
+          return computePinyinForPureRun(p);
+        })
+        .filter(Boolean)
+        .join('');
+      pinyinCache.set(hanzi, py);
+      return py;
     }
-    const py = pinyinPerSeg.filter(Boolean).join(' ');
+    const py = computePinyinForPureRun(hanzi);
     pinyinCache.set(hanzi, py);
     return py;
   } catch {
