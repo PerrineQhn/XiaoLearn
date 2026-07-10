@@ -129,18 +129,36 @@ export const getPinyin = (hanzi: string): string => {
     // Pour chaque segment : pinyin-pro avec separator vide → pinyin du mot
     // complet concaténé. Puis applyErhua pour fusionner -r quand pertinent.
     // Enfin on joint les segments avec un espace.
-    const py = segments
-      .map((seg) => {
-        const raw = pinyin(seg, {
-          toneType: 'symbol',
-          type: 'string',
-          separator: '',
-          nonZh: 'consecutive'
-        }).trim();
-        return applyErhua(seg, raw);
-      })
-      .filter(Boolean)
-      .join(' ');
+    const pinyinPerSeg = segments.map((seg) => {
+      const raw = pinyin(seg, {
+        toneType: 'symbol',
+        type: 'string',
+        separator: '',
+        nonZh: 'consecutive'
+      }).trim();
+      return applyErhua(seg, raw);
+    });
+    // V26 — Override particules aspectuelles.
+    // Sur un caractère isolé (pas dans un mot composé), pinyin-pro renvoie
+    // son pinyin le plus fréquent qui peut être TRONQUÉ du sens grammatical :
+    //   了  → 'liǎo' (verbe autonome) au lieu de 'le' (particule aspectuelle)
+    //   得  → 'dé' ou 'děi' (obtenir / devoir) au lieu de 'de' (compl. de degré)
+    //   地  → 'dì' (terre) au lieu de 'de' (adverbialisateur)
+    //   着  → 'zháo' (atteindre) au lieu de 'zhe' (particule durative)
+    // Le mot composé (了解 → liǎojiě, 得到 → dédào…) reste intact car
+    // segmentHanziRun les regroupe et pinyin-pro applique alors le bon
+    // contexte lexical.
+    for (let i = 0; i < segments.length; i++) {
+      if (segments[i].length === 1) {
+        const ch = segments[i];
+        const p = pinyinPerSeg[i];
+        if (ch === '了' && (p === 'liǎo' || p === 'liao3')) pinyinPerSeg[i] = 'le';
+        else if (ch === '着' && (p === 'zháo' || p === 'zhao2' || p === 'zhāo' || p === 'zhao1')) pinyinPerSeg[i] = 'zhe';
+        else if (ch === '地' && (p === 'dì' || p === 'di4')) pinyinPerSeg[i] = 'de';
+        else if (ch === '得' && (p === 'dé' || p === 'de2' || p === 'děi' || p === 'dei3')) pinyinPerSeg[i] = 'de';
+      }
+    }
+    const py = pinyinPerSeg.filter(Boolean).join(' ');
     pinyinCache.set(hanzi, py);
     return py;
   } catch {
@@ -195,6 +213,30 @@ export interface AutoPinyinProps {
   enabled?: boolean;
 }
 
+/**
+ * Extrait l'annotation pinyin manuelle qui suit un run de hanzi.
+ * Retourne { pre, inner, endIdx } où pre = texte avant `(`, inner = contenu
+ * de la parenthèse, endIdx = offset relatif de la fin `)`. Ou null si pas
+ * d'annotation détectée.
+ *
+ * V25 : wrap AUSSI les (pinyin) manuels dans le span .auto-pinyin pour un
+ * rendu uniforme. Avant : les manuels restaient en texte brut noir, seuls
+ * les auto étaient stylés → incohérence visuelle.
+ */
+function extractManualAnnotation(after: string): { pre: string; inner: string; endIdx: number } | null {
+  const openMatch = PAREN_OPEN_RE.exec(after);
+  if (!openMatch) return null;
+  const open = openMatch[1];
+  const closeChar = open === '(' ? ')' : open === '[' ? ']' : open === '（' ? '）' : '］';
+  const openIdx = after.indexOf(open);
+  const closeIdx = after.indexOf(closeChar, openIdx + 1);
+  if (closeIdx < 0) return null;
+  const inner = after.slice(openIdx + 1, closeIdx).trim();
+  if (!inner || inner.length > 60) return null;
+  if (!TONE_DIACRITICS_RE.test(inner) && !TONE_NUMBER_RE.test(inner)) return null;
+  return { pre: after.slice(0, openIdx), inner, endIdx: closeIdx + 1 };
+}
+
 const AutoPinyin = ({ text, enabled = true }: AutoPinyinProps) => {
   if (!enabled || !text) return <>{text}</>;
   const parts: Array<React.ReactNode> = [];
@@ -212,15 +254,26 @@ const AutoPinyin = ({ text, enabled = true }: AutoPinyinProps) => {
     parts.push(hanzi);
     // Vérifie si le texte qui suit a déjà une annotation pinyin (avec un ton)
     const after = text.slice(end);
-    if (!isPinyinAnnotation(after)) {
+    const manual = extractManualAnnotation(after);
+    if (manual) {
+      // Annotation manuelle : on préserve l'espace pré-parenthèse tel quel
+      // et on wrap le pinyin+parenthèses dans le SPAN .auto-pinyin pour un
+      // rendu uniforme (italique gris) avec les injections automatiques.
+      if (manual.pre) parts.push(manual.pre);
+      parts.push(
+        <span key={`py-${key++}`} className="auto-pinyin">({manual.inner})</span>
+      );
+      lastEnd = end + manual.endIdx;
+      HANZI_RUN_RE.lastIndex = lastEnd;
+    } else {
       const py = getPinyin(hanzi);
       if (py) {
         parts.push(
           <span key={`py-${key++}`} className="auto-pinyin"> ({py})</span>
         );
       }
+      lastEnd = end;
     }
-    lastEnd = end;
   }
   // Texte restant après le dernier run
   if (lastEnd < text.length) parts.push(text.slice(lastEnd));
