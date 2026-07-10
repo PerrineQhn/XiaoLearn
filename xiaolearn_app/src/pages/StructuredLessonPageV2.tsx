@@ -2410,6 +2410,10 @@ function getExerciseBadge(
  * Pour un `fill`, remplace le placeholder `___` par :
  *   - un trou stylé tant qu'on n'a pas répondu
  *   - la réponse choisie, colorée selon correct/wrong, une fois répondu
+ *
+ * V27 — Injecte le pinyin sous les hanzi du contexte via AutoPinyin.
+ * Aide à la lecture : le user peut suivre la phrase même si un caractère
+ * lui est inconnu (le trou étant le mot à deviner).
  */
 function renderFillSentence(
   sentence: string,
@@ -2419,7 +2423,7 @@ function renderFillSentence(
   correctIndex: number
 ): ReactNode {
   const parts = sentence.split('___');
-  if (parts.length === 1) return sentence;
+  if (parts.length === 1) return <AutoPinyin text={sentence} />;
 
   const filler: ReactNode = (() => {
     if (!answered || selectedIndex === null) {
@@ -2428,14 +2432,14 @@ function renderFillSentence(
     const ok = selectedIndex === correctIndex;
     return (
       <span className={`lv2-fill-filled ${ok ? 'is-correct' : 'is-wrong'}`}>
-        {choices[selectedIndex]}
+        <AutoPinyin text={choices[selectedIndex]} />
       </span>
     );
   })();
 
   return parts.map((chunk, idx) => (
     <span key={idx}>
-      {chunk}
+      <AutoPinyin text={chunk} />
       {idx < parts.length - 1 && filler}
     </span>
   ));
