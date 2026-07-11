@@ -152,7 +152,7 @@ export const b11LeDurationLearnSections: LessonV2LearnSection[] = [
     title: 'Structure visuelle : action close vs action qui continue',
     titleEn: 'Visual structure: closed action vs ongoing action',
     body:
-      'Un seul 了 (après le verbe) = action finie. Deux 了 (un après V, un final) = action en cours qui dure encore. La différence se voit dans la dernière position.',
+      'Un seul 了 (après le verbe) = action finie. Deux 了 (un final) = action en cours qui dure encore. La différence se voit dans la dernière position.',
     bodyEn:
       'One 了 (after the verb) = finished action. Two 了 (after V + at end) = ongoing action still running. The difference is in the last slot.',
     tokenizedSentences: [
@@ -814,9 +814,9 @@ export const b11WorkJobsLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Most jobs follow a pattern.\n' +
       '\n' +
-      '- 员 (yuán, member) — = doer: 服务员, 售货员, 销售员, 公务员\n' +
-      '- 师 (shī, master) — = expert: 老师, 律师, 厨师, 医师\n' +
-      '- 家 (jiā, specialist) — = creator: 作家 (writer), 画家 (painter), 艺术家 (artist)\n' +
+      '- 员 (member) — = doer: 服务员, 售货员, 销售员, 公务员\n' +
+      '- 师 (master) — = expert: 老师, 律师, 厨师, 医师\n' +
+      '- 家 (specialist) — = creator: 作家 (writer), 画家 (painter), 艺术家 (artist)\n' +
       '\n' +
       'This spotting lets you decode a title before even knowing its meaning.',
     items: [
@@ -1127,8 +1127,8 @@ export const b11EmoComplimentLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Traditional reply:\n' +
       '\n' +
-      '- 哪里哪里 (nǎ li nǎ li, "not at all")\n' +
-      '- 过奖了 (guò jiǎng le, "you flatter me")\n' +
+      '- 哪里哪里 ("not at all")\n' +
+      '- 过奖了 ("you flatter me")\n' +
       '- 还差得远呢 (I\'m still far from it)\n' +
       '\n' +
       'When giving one: stay specific (avoid "you\'re nice"), prefer 你做得真好, 你的 [X] 真漂亮.',
@@ -1217,7 +1217,7 @@ export const b11HealthDoctorLearnSections: LessonV2LearnSection[] = [
     tip:
       'Hiérarchie des hôpitaux : 三甲 (sān jiǎ, niveau 3A, les plus réputés) > 二级 > 一级. Pour un souci sérieux, vise un 三甲 — file d\'attente longue mais qualité.',
     tipEn:
-      'Hospital tiers: 三甲 (sān jiǎ, 3A grade, top-ranked) > 二级 > 一级. For a serious issue, aim for a 三甲 — long queues but best quality.'
+      'Hospital tiers: 三甲 (3A grade, top-ranked) > 二级 > 一级. For a serious issue, aim for a 三甲 — long queues but best quality.'
   }
 ];
 
@@ -1478,7 +1478,7 @@ export const b11ConvM3LearnSections: LessonV2LearnSection[] = [
       'Gérer un imprévu en chinois suit toujours la même séquence : **annonce + cause + remède + excuse finale**.\n' +
       '\n' +
       'Annoncer :\n' +
-      '- 不好意思，我可能要迟到 (désolé, je vais être en retard)\n' +
+      '- 不好意思，我可能要迟到 (je vais être en retard)\n' +
       '- 突然有事，我去不了 (j\'ai un imprévu, je ne peux pas venir)\n' +
       '\n' +
       'Cause + remède + reprogrammer :\n' +
@@ -2832,7 +2832,7 @@ export const b11GrammarSeparableVerbsLearnSections: LessonV2LearnSection[] = [
       '- Ex : 打开 → 你的文件我打不开 (py nǐ de wén jiàn wǒ dǎ bù kāi) « je n\'arrive pas à ouvrir ton fichier ». 打 + 不 + 开.\n' +
       '- Version positive : 打得开 « peut être ouvert ».',
     bodyEn:
-      '了 (le, completion) slides JUST AFTER the verb part. Ex: 结婚 → 结了婚. 结了婚以后，她就不工作了 = «after getting married, she stopped working». Ex: 睡了觉, 吃了饭, 结了婚. ERROR: 我结婚了她 ✗ ; correct: 我跟她结婚了. 过 (guò, experience): same, between the two parts. Ex: 唱歌 → 我们一起唱过歌 «we\'ve sung together before». Ex: 结过婚 «has been married». 着 (zhe, ongoing): same. Ex: 开会 → 我们正开着会呢 «we\'re in the middle of a meeting». Ex: 上着课 «in the middle of class». RESULTATIVE complements go between the two parts. Verb + complement + object. Ex: 看病 → 病人看完病就去取药了 = «after the consultation, the patient went to fetch meds». 看 + 完 + 病. POTENTIAL complements 得/不 for verb-complement verbs. Ex: 完成 → 我们完不成这个任务 = «we can\'t finish this task». 完 + 不 + 成. Ex: 打开 → 你的文件我打不开 = «I can\'t open your file». Positive: 打得开 «can be opened».',
+      '了 (le, completion) slides JUST AFTER the verb part. Ex: 结婚 → 结了婚. 结了婚以后，她就不工作了 = «after getting married, she stopped working». Ex: 睡了觉, 吃了饭, 结了婚. ERROR: 我结婚了她 ✗ ; correct: 我跟她结婚了. 过 (experience): same, between the two parts. Ex: 唱歌 → 我们一起唱过歌 «we\'ve sung together before». Ex: 结过婚 «has been married». 着 (zhe, ongoing): same. Ex: 开会 → 我们正开着会呢 «we\'re in the middle of a meeting». Ex: 上着课 «in the middle of class». RESULTATIVE complements go between the two parts. Verb + complement + object. Ex: 看病 → 病人看完病就去取药了 = «after the consultation, the patient went to fetch meds». 看 + 完 + 病. POTENTIAL complements 得/不 for verb-complement verbs. Ex: 完成 → 我们完不成这个任务 = «we can\'t finish this task». 完 + 不 + 成. Ex: 打开 → 你的文件我打不开 = «I can\'t open your file». Positive: 打得开 «can be opened».',
     items: [
       { hanzi: '结了婚', pinyin: 'jiélehūn', meaning: 's\'est marié·e (了 au milieu)', meaningEn: 'got married', audio: 'audio/hsk3/hsk3_结婚.wav' },
       { hanzi: '唱过歌', pinyin: 'chàngguò gē', meaning: 'a déjà chanté (过 au milieu)', meaningEn: 'has sung before', audio: 'audio/hsk2/hsk2_唱歌.wav' },

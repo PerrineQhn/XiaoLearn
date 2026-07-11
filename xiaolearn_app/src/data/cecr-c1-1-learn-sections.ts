@@ -149,7 +149,7 @@ export const c11ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le combo de **concession + reprise** 诚然 X，然而 Y (certes X, cependant Y) est la **formule rhétorique** la plus prisée du **soutenu** C1. 坚信 (jiānxìn) marque l\'engagement intellectuel.',
     bodyEn:
-      'Opening: 我对 X 的看法是 Y, 我有三个主要论据 (I have 3 main arguments). Mark structure: 第一，X / 第二，Y / 第三，Z. Cite authority: 根据 X 的研究 (per X\'s research). Anticipate objection: 有人可能会反驳说 X，但 Y. Concession + recovery: 诚然 X，然而 Y (admittedly X, however Y) — very formal phrase. Close: 综上所述, 我坚信 X (in conclusion, I firmly believe X). 坚信 (jiānxìn, firmly believe) marks intellectual commitment.',
+      'Opening: 我对 X 的看法是 Y, 我有三个主要论据 (I have 3 main arguments). Mark structure: 第一，X / 第二，Y / 第三，Z. Cite authority: 根据 X 的研究 (per X\'s research). Anticipate objection: 有人可能会反驳说 X，但 Y. Concession + recovery: 诚然 X，然而 Y (admittedly X, however Y) — very formal phrase. Close: 综上所述, 我坚信 X (in conclusion, I firmly believe X). 坚信 (firmly believe) marks intellectual commitment.',
     items: [
       { hanzi: '论据', pinyin: 'lùnjù', meaning: 'argument, preuve', meaningEn: 'argument, evidence', audio: 'audio/hsk6/hsk6_论据.wav' },
       { hanzi: '反驳', pinyin: 'fǎnbó', meaning: 'réfuter', meaningEn: 'rebut', audio: 'audio/hsk6/hsk6_反驳.wav' },
@@ -401,7 +401,7 @@ export const c11ConvM6LearnSections: LessonV2LearnSection[] = [
     tip:
       '« 我可以为他作担保 » est l\'engagement MAXIMUM en recommandation chinoise. Ne l\'utilise que si tu connais vraiment la personne. Si elle déçoit, ta réputation chute aussi — c\'est le système de 信用 (xìnyòng, crédit social).',
     tipEn:
-      '«我可以为他作担保» is the MAXIMUM commitment in Chinese recommendation. Use only if you truly know the person. If they disappoint, your reputation falls too — that\'s the 信用 (xìnyòng, social credit) system.'
+      '«我可以为他作担保» is the MAXIMUM commitment in Chinese recommendation. Use only if you truly know the person. If they disappoint, your reputation falls too — that\'s the 信用 (social credit) system.'
   }
 ];
 
@@ -585,7 +585,7 @@ export const c11NuancesM2LearnSections: LessonV2LearnSection[] = [
       '- 一方面 X 一方面 Y = d\'un côté X, de l\'autre Y. Marque **contraste** ou parallèle. Ex : 一方面想去，一方面又害怕\n' +
       '\n' +
       'Hiérarchie de registre :\n' +
-      '- 既…又 (oral, coexistence) < 不仅…而且 (écrit, progression) < 一方面…一方面 (écrit, contraste)\n' +
+      '- 既…又 (oral, coexistence) < 不仅…而且 (progression) < 一方面…一方面 (contraste)\n' +
       '\n' +
       'RÈGLE D\'OR : la grammaire est dans le **rapport** entre X et Y. Pose-toi la question : Y enchérit-il, équivaut-il ou s\'oppose-t-il à X ?',
     bodyEn:
@@ -675,7 +675,7 @@ export const c11NuancesM4LearnSections: LessonV2LearnSection[] = [
       'Trois connecteurs « par conséquent » de **registres distincts** : 于是 narratif, 因而 logique, 从而 téléologique.\n' +
       '\n' +
       'Distinctions :\n' +
-      '- 于是 (yúshì, alors / sur quoi) = **conséquence narrative**. Ex : 他没听懂，于是又问了一次. Très utile en récit\n' +
+      '- 于是 (alors / sur quoi) = **conséquence narrative**. Ex : 他没听懂，于是又问了一次. Très utile en récit\n' +
       '- 因而 (yīn\'ér, de ce fait) = **conséquence logique**, formel écrit. Ex : 政策有效，因而经济增长 (la politique est efficace, de ce fait l\'économie croît)\n' +
       '- 从而 (cóng\'ér, et ainsi) = **conséquence qui mène à un résultat voulu**, formel écrit. Ex : 减税从而刺激消费 (baisser les impôts pour stimuler la consommation). Connotation **fonctionnelle**\n' +
       '\n' +
@@ -684,7 +684,7 @@ export const c11NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : « X 从而 Y » montre que tu comprends la **téléologie** chinoise (action visant un résultat). Très utilisé en éditorial économique — signal C1 indéniable.',
     bodyEn:
-      '于是 (yúshì, then / whereupon) marks a NARRATIVE consequence. 他没听懂，于是又问了一次 = he didn\'t get it, so asked again. Very useful in storytelling. 因而 (yīn\'ér, hence — formal written) marks a LOGICAL consequence. 政策有效，因而经济增长 = the policy works, hence the economy grows. More rigorous. 从而 (cóng\'ér, thereby — formal written) marks a consequence LEADING TO AN INTENDED RESULT. 减税从而刺激消费 = cut taxes to thereby stimulate consumption. FUNCTIONAL connotation. Hierarchy: 于是 (narrative) < 因而 (logical) < 从而 (teleological). In academic writing, 从而 shows mastery.',
+      '于是 (then / whereupon) marks a NARRATIVE consequence. 他没听懂，于是又问了一次 = he didn\'t get it, so asked again. Very useful in storytelling. 因而 (yīn\'ér, hence — formal written) marks a LOGICAL consequence. 政策有效，因而经济增长 = the policy works, hence the economy grows. More rigorous. 从而 (cóng\'ér, thereby — formal written) marks a consequence LEADING TO AN INTENDED RESULT. 减税从而刺激消费 = cut taxes to thereby stimulate consumption. FUNCTIONAL connotation. Hierarchy: 于是 (narrative) < 因而 (logical) < 从而 (teleological). In academic writing, 从而 shows mastery.',
     items: [
       { hanzi: '于是', pinyin: 'yúshì', meaning: 'alors, sur quoi', meaningEn: 'then, whereupon', audio: 'audio/hsk5/hsk5_于是.wav' },
       { hanzi: '因而', pinyin: 'yīnér', meaning: 'de ce fait', meaningEn: 'hence', audio: 'audio/hsk6/hsk6_因而.wav' },
@@ -741,12 +741,12 @@ export const c11NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Trois niveaux d\'intensité :\n' +
       '- 繁荣 (fánróng, prospère) = **état** général. Ex : 经济繁荣 / 城市繁荣. Le plus universel. Adjectif/nom\n' +
-      '- 兴盛 (xīngshèng, florissant) = **mouvement** de croissance. Ex : 文化兴盛 / 事业兴盛. Plus dynamique\n' +
+      '- 兴盛 (florissant) = **mouvement** de croissance. Ex : 文化兴盛 / 事业兴盛. Plus dynamique\n' +
       '- 鼎盛 (dǐngshèng, à l\'apogée) = **sommet** historique. Ex : 唐朝的鼎盛时期 (l\'apogée de la dynastie Tang). Très soutenu\n' +
       '\n' +
       'RÈGLE D\'OR : à l\'oral, 繁荣 partout. 兴盛/鼎盛 réservés au contexte **historique** ou très **soutenu**. Mauvais signal : 鼎盛 pour décrire son entreprise (sonne pompeux).',
     bodyEn:
-      '繁荣 (fánróng, prosperous) = general STATE of prosperity (economic, urban, commercial). 经济繁荣 / 城市繁荣. Most universal. Adjective/noun. 兴盛 (xīngshèng, flourishing, booming) = MOVEMENT of growth, dynamism. 文化兴盛 / 事业兴盛. More dynamic. 鼎盛 (dǐngshèng, at its peak) = SUMMIT, historical climax. 唐朝的鼎盛时期 = the peak of the Tang dynasty. Very formal, historical. Hierarchy: 繁荣 (stable state) < 兴盛 (rising momentum) < 鼎盛 (zenith). In speech, 繁荣 everywhere; 兴盛/鼎盛 in historical or very formal contexts.',
+      '繁荣 (prosperous) = general STATE of prosperity (economic, urban, commercial). 经济繁荣 / 城市繁荣. Most universal. Adjective/noun. 兴盛 (flourishing, booming) = MOVEMENT of growth, dynamism. 文化兴盛 / 事业兴盛. More dynamic. 鼎盛 (at its peak) = SUMMIT, historical climax. 唐朝的鼎盛时期 = the peak of the Tang dynasty. Very formal, historical. Hierarchy: 繁荣 (stable state) < 兴盛 (rising momentum) < 鼎盛 (zenith). In speech, 繁荣 everywhere; 兴盛/鼎盛 in historical or very formal contexts.',
     items: [
       { hanzi: '繁荣', pinyin: 'fánróng', meaning: 'prospère', meaningEn: 'prosperous', audio: 'audio/hsk5/hsk5_繁荣.wav' },
       { hanzi: '兴盛', pinyin: 'xīngshèng', meaning: 'florissant', meaningEn: 'flourishing', audio: 'audio/hsk6/hsk6_兴盛.wav' },
@@ -769,16 +769,16 @@ export const c11NuancesM5LearnSections: LessonV2LearnSection[] = [
       'Trois degrés de déclin :\n' +
       '- 衰退 (shuāituì, récession) = ralentissement mesurable, surtout **économique**. Ex : 经济衰退. Réversible, technique\n' +
       '- 衰落 (shuāiluò, déclin) = chute progressive d\'une **civilisation** ou institution. Ex : 帝国的衰落 (déclin d\'un empire). Connotation historique\n' +
-      '- 消亡 (xiāowáng, disparition) = **fin totale**, irréversible. Ex : 物种消亡 (extinction d\'une espèce), 文化消亡\n' +
+      '- 消亡 (disparition) = **fin totale**, irréversible. Ex : 物种消亡 (extinction d\'une espèce), 文化消亡\n' +
       '\n' +
       'RÈGLE D\'OR : réserve 消亡 à ce qui est **vraiment** terminé. L\'erreur de débutant — utiliser 消亡 pour un secteur en déclin temporaire — signale l\'absence de maîtrise du registre.',
     bodyEn:
-      '衰落 (shuāiluò, decline) = gradual fall of a CIVILIZATION / institution. 帝国的衰落 (the decline of an empire). Historical connotation.\n' +
+      '衰落 (decline) = gradual fall of a CIVILIZATION / institution. 帝国的衰落 (the decline of an empire). Historical connotation.\n' +
       '\n' +
-      '- 衰退 (shuāituì, recession / economic decline) — measurable slowdown, especially ECONOMIC\n' +
+      '- 衰退 (recession / economic decline) — measurable slowdown, especially ECONOMIC\n' +
       '- 经济衰退 (economic recession) — \n' +
       '\n' +
-      'Reversible, technical. 消亡 (xiāowáng, disappearance, extinction) = total END. 物种消亡 (species extinction), 文化消亡 (cultural extinction). Irreversible. Hierarchy: 衰退 (reversible technical) < 衰落 (historical gradual) < 消亡 (terminal). In a history thesis or op-ed, the right word signals your awareness of register.',
+      'Reversible, technical. 消亡 (disappearance, extinction) = total END. 物种消亡 (species extinction), 文化消亡 (cultural extinction). Irreversible. Hierarchy: 衰退 (reversible technical) < 衰落 (historical gradual) < 消亡 (terminal). In a history thesis or op-ed, the right word signals your awareness of register.',
     items: [
       { hanzi: '衰落', pinyin: 'shuāiluò', meaning: 'déclin', meaningEn: 'decline', audio: 'audio/hsk6/hsk6_衰落.wav' },
       { hanzi: '衰退', pinyin: 'shuāituì', meaning: 'récession', meaningEn: 'recession', audio: 'audio/hsk6/hsk6_衰退.wav' },
@@ -808,7 +808,7 @@ export const c11NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : « 这意味着 X » est la **formule magique** d\'éditorial pour énoncer une conséquence. À utiliser après un fait pour montrer ta capacité d\'analyse — marqueur C1+ d\'analyse politique/économique.',
     bodyEn:
-      '价值 (jiàzhí) = VALUE (economic, moral, social). 这本书很有价值 (this book is valuable). 价值观 (value system). Often QUANTIFIABLE or clearly appraisable. 意义 (yìyì) = MEANING / significance (felt importance). 这件事对我很有意义 (this matters a lot to me). More subjective/symbolic. 意味 (yìwèi, as verb: to signify) = hidden IMPLICATION/consequence. 这意味着 X = this implies X (X is the logical implication). 意味 is also a noun: 这话有别的意味 (these words carry another nuance). Hierarchy: 价值 (appraise value) ≠ 意义 (feel meaning) ≠ 意味 (deduce implication).',
+      '价值 (jiàzhí) = VALUE (economic, moral, social). 这本书很有价值 (this book is valuable). 价值观 (value system). Often QUANTIFIABLE or clearly appraisable. 意义 (yìyì) = MEANING / significance (felt importance). 这件事对我很有意义 (this matters a lot to me). More subjective/symbolic. 意味 (as verb: to signify) = hidden IMPLICATION/consequence. 这意味着 X = this implies X (X is the logical implication). 意味 is also a noun: 这话有别的意味 (these words carry another nuance). Hierarchy: 价值 (appraise value) ≠ 意义 (feel meaning) ≠ 意味 (deduce implication).',
     items: [
       { hanzi: '价值', pinyin: 'jiàzhí', meaning: 'valeur', meaningEn: 'value', audio: 'audio/hsk5/hsk5_价值.wav' },
       { hanzi: '意义', pinyin: 'yìyì', meaning: 'sens, signification', meaningEn: 'meaning', audio: 'audio/hsk5/hsk5_意义.wav' },
@@ -875,7 +875,7 @@ export const c11NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : « 大会将隆重举行 » est la **formule consacrée** des annonces officielles chinoises. 隆重 + 举行 est un binôme indissociable.',
     bodyEn:
-      '庄严 (zhuāngyán, solemn and imposing) = quality of a sacred OBJECT / place. 庄严的国旗 (the solemn flag), 庄严的承诺 (a solemn pledge). MAJESTY connotation. 肃然 (sùrán, in a grave silent attitude) = SUBJECTIVE STATE of respect. 肃然起敬 (chengyu: be moved to respect). Describes the person feeling it. 隆重 (lóngzhòng, grand, imposing — for ceremonies) = SCALE and pomp of an event. 隆重的婚礼 (grand wedding), 隆重举行 (hold with great ceremony). Hierarchy: 庄严 (majestic object) ≠ 肃然 (felt respect) ≠ 隆重 (ceremonial pomp). A wedding is 隆重; a flag is 庄严; one feels 肃然 facing a fallen hero.',
+      '庄严 (solemn and imposing) = quality of a sacred OBJECT / place. 庄严的国旗 (the solemn flag), 庄严的承诺 (a solemn pledge). MAJESTY connotation. 肃然 (in a grave silent attitude) = SUBJECTIVE STATE of respect. 肃然起敬 (chengyu: be moved to respect). Describes the person feeling it. 隆重 (grand, imposing — for ceremonies) = SCALE and pomp of an event. 隆重的婚礼 (grand wedding), 隆重举行 (hold with great ceremony). Hierarchy: 庄严 (majestic object) ≠ 肃然 (felt respect) ≠ 隆重 (ceremonial pomp). A wedding is 隆重; a flag is 庄严; one feels 肃然 facing a fallen hero.',
     items: [
       { hanzi: '庄严', pinyin: 'zhuāngyán', meaning: 'solennel, imposant', meaningEn: 'solemn, dignified', audio: 'audio/hsk6/hsk6_庄严.wav' },
       { hanzi: '肃然起敬', pinyin: 'sùránqǐjìng', meaning: 'saisi de respect', meaningEn: 'moved to respect', audio: 'audio/hsk6/hsk6_肃然.wav' },
@@ -954,9 +954,9 @@ export const c11ChengyuBasicM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '办法', pinyin: 'bànfǎ', meaning: 'méthode, moyen', meaningEn: 'method', audio: 'audio/hsk3/hsk3_办法.wav' }
     ],
     tip:
-      'Inverse parfait de 锦上添花 = 雪中送炭 (xuě zhōng sòng tàn, « apporter du charbon dans la neige »), aider quelqu\'un en difficulté. Pour un ami dans la galère, choisis 雪中送炭 — beaucoup plus puissant émotionnellement que 锦上添花.',
+      'Inverse parfait de 锦上添花 = 雪中送炭 (« apporter du charbon dans la neige »), aider quelqu\'un en difficulté. Pour un ami dans la galère, choisis 雪中送炭 — beaucoup plus puissant émotionnellement que 锦上添花.',
     tipEn:
-      'The exact opposite of 锦上添花 = 雪中送炭 (xuě zhōng sòng tàn, «bring coal in snow»), help someone in trouble. For a friend in difficulty, choose 雪中送炭 — far more emotionally powerful than 锦上添花.'
+      'The exact opposite of 锦上添花 = 雪中送炭 («bring coal in snow»), help someone in trouble. For a friend in difficulty, choose 雪中送炭 — far more emotionally powerful than 锦上添花.'
   },
   {
     id: 'c11-chengyu-pieges',
@@ -1093,7 +1093,7 @@ export const c11ChengyuBasicM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour calmer un proche paranoïaque, dis avec sourire « 别杯弓蛇影了 » — phrase intime qui montre l\'affection et invite à la rationalité sans condescendance.',
     bodyEn:
-      '杯弓蛇影: a man falls ill after thinking he saw a snake in his wine cup — it was the reflection of a bow on the wall. He recovers when he finds the truth. Meaning: scaring oneself, IMAGINED suspicions. 不要杯弓蛇影 (don\'t fear shadows). 草木皆兵 (cǎo mù jiē bīng, «grass and trees = soldiers») from the battle of Fei River (383): a defeated general sees soldiers everywhere. Meaning: paranoid general panic, extreme fear. Difference: 杯弓蛇影 = INDIVIDUAL imagined fear; 草木皆兵 = COLLECTIVE exaggerated panic. To analyze excessive reaction (politics, market, public opinion).',
+      '杯弓蛇影: a man falls ill after thinking he saw a snake in his wine cup — it was the reflection of a bow on the wall. He recovers when he finds the truth. Meaning: scaring oneself, IMAGINED suspicions. 不要杯弓蛇影 (don\'t fear shadows). 草木皆兵 («grass and trees = soldiers») from the battle of Fei River (383): a defeated general sees soldiers everywhere. Meaning: paranoid general panic, extreme fear. Difference: 杯弓蛇影 = INDIVIDUAL imagined fear; 草木皆兵 = COLLECTIVE exaggerated panic. To analyze excessive reaction (politics, market, public opinion).',
     items: [
       { hanzi: '杯弓蛇影', pinyin: 'bēigōngshéyǐng', meaning: 'soupçons imaginaires', meaningEn: 'imagined fear', audio: 'audio/hsk6/hsk6_杯弓.wav' },
       { hanzi: '草木皆兵', pinyin: 'cǎomùjiēbīng', meaning: 'panique générale', meaningEn: 'see enemies everywhere', audio: 'audio/hsk6/hsk6_草木.wav' },
@@ -1288,7 +1288,7 @@ export const c11MediaDiscourseM2LearnSections: LessonV2LearnSection[] = [
       'Les trois slogans-clés :\n' +
       '- 中国梦 (Rêve chinois, 2012, Xi Jinping) — 中华民族伟大复兴 (« grand renouveau de la nation »). Mêle prospérité personnelle et puissance nationale\n' +
       '- 一带一路 (Belt and Road, 2013) — projet géoéconomique d\'infrastructures reliant Chine-Europe via Asie centrale + Afrique\n' +
-      '- 共同富裕 (Prospérité commune, repris en 2021) — signal d\'une régulation des géants tech après une période d\'inégalités\n' +
+      '- 共同富裕 (repris en 2021) — signal d\'une régulation des géants tech après une période d\'inégalités\n' +
       '\n' +
       'RÈGLE D\'OR : suivre l\'évolution des slogans = suivre l\'évolution des priorités. Quand 共同富裕 a réémergé en 2021, c\'était LE signal annonçant la régulation des plateformes tech, **longtemps avant** les sanctions concrètes. Les slogans sont des annonces d\'orientation.',
     bodyEn:
@@ -1869,7 +1869,7 @@ export const c11StyleFormalM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : si tu ne bois pas d\'alcool, prépare ta phrase à l\'avance — « 不好意思，我对酒精过敏 / 我开车 / 医生建议我不要喝. 我以茶代酒，您随意 ». Phrase complète qui **sauve la face** de tout le monde.',
     bodyEn:
-      '干杯 (gānbēi, «empty the cup») = BOTTOMS UP. Total commitment. If someone says 干杯 and raises their glass, you MUST finish yours. Otherwise = lack of respect (you can refuse POLITELY saying 我以茶代酒 «I substitute tea for alcohol»). 随意 (suíyì, «at your discretion») = ONE SIP only. More modern and polite for non-drinkers. Cultural note: when toasting a SUPERIOR or ELDER, hold your glass LOWER than theirs (sign of respect). Get physically close to actually touch the glasses — important, the chime seals the commitment. Avoid drinking your glass BEFORE the toasted person has finished accepting.',
+      '干杯 («empty the cup») = BOTTOMS UP. Total commitment. If someone says 干杯 and raises their glass, you MUST finish yours. Otherwise = lack of respect (you can refuse POLITELY saying 我以茶代酒 «I substitute tea for alcohol»). 随意 («at your discretion») = ONE SIP only. More modern and polite for non-drinkers. Cultural note: when toasting a SUPERIOR or ELDER, hold your glass LOWER than theirs (sign of respect). Get physically close to actually touch the glasses — important, the chime seals the commitment. Avoid drinking your glass BEFORE the toasted person has finished accepting.',
     items: [
       { hanzi: '干杯', pinyin: 'gānbēi', meaning: 'cul sec', meaningEn: 'bottoms up', audio: 'audio/hsk2/hsk2_干杯.wav' },
       { hanzi: '随意', pinyin: 'suíyì', meaning: 'à sa guise', meaningEn: 'as you please', audio: 'audio/hsk6/hsk6_随意.wav' },

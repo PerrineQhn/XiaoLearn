@@ -882,9 +882,9 @@ export const b21ConvM1LearnSections: LessonV2LearnSection[] = [
       { hanzi: '安排', pinyin: 'ānpái', meaning: 'organiser', meaningEn: 'arrange', audio: 'audio/hsk4/hsk4_安排.wav' }
     ],
     tip:
-      'Après une réunion en Chine, envoie systématiquement le 会议纪要 (huìyì jìyào, compte-rendu) sur WeChat dans les 24 h. C\'est une preuve d\'engagement professionnel attendue.',
+      'Après une réunion en Chine, envoie systématiquement le 会议纪要 (compte-rendu) sur WeChat dans les 24 h. C\'est une preuve d\'engagement professionnel attendue.',
     tipEn:
-      'After a Chinese meeting, systematically send the 会议纪要 (huìyì jìyào, minutes) on WeChat within 24h. It\'s an expected mark of professional engagement.'
+      'After a Chinese meeting, systematically send the 会议纪要 (minutes) on WeChat within 24h. It\'s an expected mark of professional engagement.'
   }
 ];
 
@@ -1053,7 +1053,7 @@ export const b21ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'En culture chinoise, partager la responsabilité 50/50 conclut souvent un conflit même quand l\'autre a 80 % de torts.',
     bodyEn:
-      'Acknowledge tension: 我感觉我们之间有一些误会 (I feel there\'s a misunderstanding). Invite discussion: 我们能不能坐下来好好聊一下？(can we sit down to discuss?). 误会 (wùhuì, misunderstanding) is the key word: it EXTERNALIZES the cause without accusing. Always prefer «there\'s a misunderstanding» over «you made a mistake». To state your point: 从我的角度看 X, 让我们澄清一下 (let\'s clarify). To own your part: 我也有责任 (I also bear responsibility). In Chinese culture, splitting responsibility 50/50 often closes a conflict even when the other is 80% at fault.',
+      'Acknowledge tension: 我感觉我们之间有一些误会 (I feel there\'s a misunderstanding). Invite discussion: 我们能不能坐下来好好聊一下？(can we sit down to discuss?). 误会 (misunderstanding) is the key word: it EXTERNALIZES the cause without accusing. Always prefer «there\'s a misunderstanding» over «you made a mistake». To state your point: 从我的角度看 X, 让我们澄清一下 (let\'s clarify). To own your part: 我也有责任 (I also bear responsibility). In Chinese culture, splitting responsibility 50/50 often closes a conflict even when the other is 80% at fault.',
     items: [
       { hanzi: '误会', pinyin: 'wùhuì', meaning: 'malentendu', meaningEn: 'misunderstanding', audio: 'audio/hsk4/hsk4_误会.wav' },
       { hanzi: '澄清', pinyin: 'chéngqīng', meaning: 'clarifier', meaningEn: 'clarify', audio: 'audio/hsk6/hsk6_澄清.wav' },
@@ -1080,7 +1080,7 @@ export const b21ConvM4LearnSections: LessonV2LearnSection[] = [
       '- proposer un terrain commun — 我们能不能找一个双方都能接受的方案 ?\n' +
       '- conclure — 这件事就到这里 (l\'affaire s\'arrête là)',
     bodyEn:
-      'Neutral stance: 我不想偏袒任何一方 (I don\'t want to take sides). 偏袒 (piāntǎn, favor) is a heavy word, use to signal your neutrality. Invite each to speak: 你先说，我听 / 现在轮到你 (your turn). Synthesize: 我听到的是 X，对吗？(what I heard is X, correct?). Propose common ground: 我们能不能找一个双方都能接受的方案？(can we find a solution both sides accept?). 双方 (both parties) is key. Close: 这件事就到这里 (this case stops here) — invites each to move on.',
+      'Neutral stance: 我不想偏袒任何一方 (I don\'t want to take sides). 偏袒 (favor) is a heavy word, use to signal your neutrality. Invite each to speak: 你先说，我听 / 现在轮到你 (your turn). Synthesize: 我听到的是 X，对吗？(what I heard is X, correct?). Propose common ground: 我们能不能找一个双方都能接受的方案？(can we find a solution both sides accept?). 双方 (both parties) is key. Close: 这件事就到这里 (this case stops here) — invites each to move on.',
     items: [
       { hanzi: '偏袒', pinyin: 'piāntǎn', meaning: 'favoriser, prendre parti', meaningEn: 'be partial', audio: 'audio/hsk6/hsk6_偏袒.wav' },
       { hanzi: '中立', pinyin: 'zhōnglì', meaning: 'neutre', meaningEn: 'neutral', audio: 'audio/hsk6/hsk6_中立.wav' },
@@ -1197,7 +1197,7 @@ export const b21ConvM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : ne **jamais** commencer à boire avant le toast. La séquence chinoise = leader propose → tous boivent → on peut boire ensuite. Brûler l\'étape = manque de respect.',
     bodyEn:
-      'Raise glasses: 我提议大家举杯 (I propose we raise our glasses). Dedicate: 为我们的合作干杯！(to our collaboration, cheers!). 干杯 (gānbēi, lit. «empty the cup») = bottoms up in real ceremonies, but today «随意» (suíyì, as you please — small sip) is tolerated. Key phrases: 祝大家身体健康，工作顺利 (health and pro success to all). For a recent success: 庆祝我们项目的成功！NEVER start drinking before the toast. Chinese sequence = leader proposes → all drink → you can drink after. Skipping the step = disrespect.',
+      'Raise glasses: 我提议大家举杯 (I propose we raise our glasses). Dedicate: 为我们的合作干杯！(to our collaboration, cheers!). 干杯 (lit. «empty the cup») = bottoms up in real ceremonies, but today «随意» (suíyì, as you please — small sip) is tolerated. Key phrases: 祝大家身体健康，工作顺利 (health and pro success to all). For a recent success: 庆祝我们项目的成功！NEVER start drinking before the toast. Chinese sequence = leader proposes → all drink → you can drink after. Skipping the step = disrespect.',
     items: [
       { hanzi: '举杯', pinyin: 'jǔbēi', meaning: 'lever son verre', meaningEn: 'raise the glass', audio: 'audio/hsk6/hsk6_举杯.wav' },
       { hanzi: '干杯', pinyin: 'gānbēi', meaning: 'cul sec / santé', meaningEn: 'cheers / bottoms up', audio: 'audio/hsk2/hsk2_干杯.wav' },
@@ -1284,11 +1284,11 @@ export const b21NuancesM1LearnSections: LessonV2LearnSection[] = [
       'Trois variantes de « peu importe » à hiérarchiser par **registre** :\n' +
       '- 反正 (oral familier, « peu importe je tranche ») — ex : 反正我不去 (de toute façon je n\'y vais pas)\n' +
       '- 不管 (neutre, conditionnel) — ex : 不管下不下雨，我都去 (qu\'il pleuve ou non, j\'y vais)\n' +
-      '- 无论如何 (formel, engagement absolu) — ex : 无论如何，我们必须完成 (en tout état de cause, on doit finir)\n' +
+      '- 无论如何 (formel, engagement absolu) — ex : 无论如何，我们必须完成 (on doit finir)\n' +
       '\n' +
       'Attention : 反正 peut sonner **fataliste** ou désinvolte. 无论如何 au contraire montre la **détermination** — à privilégier en pro.',
     bodyEn:
-      '反正 (fǎnzheng, anyway, casual oral) = no matter what happened, here\'s the conclusion. 反正我不去 = anyway I\'m not going. 无论如何 (wúlùn rúhé, in any event, formal) = whatever the circumstances. 无论如何，我们必须完成 = in any event we must finish. 不管 (bùguǎn, no matter, neutral, oral and written) = no matter what X, Y still holds. 不管下不下雨，我都去 = whether it rains or not, I\'m going. Hierarchy: 反正 (oral, «whatever, I\'m deciding» attitude) < 不管 (neutral conditional) < 无论如何 (formal, absolute commitment). 反正 can sound fatalistic/dismissive; 无论如何 shows determination.',
+      '反正 (anyway, casual oral) = no matter what happened, here\'s the conclusion. 反正我不去 = anyway I\'m not going. 无论如何 (in any event, formal) = whatever the circumstances. 无论如何，我们必须完成 = in any event we must finish. 不管 (no matter, neutral, oral and written) = no matter what X, Y still holds. 不管下不下雨，我都去 = whether it rains or not, I\'m going. Hierarchy: 反正 (oral, «whatever, I\'m deciding» attitude) < 不管 (neutral conditional) < 无论如何 (formal, absolute commitment). 反正 can sound fatalistic/dismissive; 无论如何 shows determination.',
     items: [
       { hanzi: '反正', pinyin: 'fǎnzhèng', meaning: 'de toute façon', meaningEn: 'anyway', audio: 'audio/hsk5/hsk5_反正.wav' },
       { hanzi: '无论如何', pinyin: 'wúlùnrúhé', meaning: 'en tout cas (formel)', meaningEn: 'in any event', audio: 'audio/hsk6/hsk6_无论.wav' },
@@ -1316,7 +1316,7 @@ export const b21NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : **jamais** 故 à l\'oral spontané. Combo juridique classique — 由于 X，故 Y (étant donné X, donc Y).',
     bodyEn:
-      '所以 (suǒyǐ, so — NEUTRAL oral and written). The most universal. 因此 (yīncǐ, therefore — slightly more written). Sounds serious, structuring. 因而 (yīn\'ér, hence — FORMAL written). 故 (gù, thus — VERY FORMAL, academic/legal/literary writing, sometimes poetic). Hierarchy: 所以 (universal) < 因此 (mixed) < 因而 (written) < 故 (very formal). In speech, 所以 everywhere. In pro writing, alternate 因此 and 因而. NEVER 故 in spontaneous speech. Classic demonstration combo: 由于 X，故 Y (given X, thus Y) — very legal.',
+      '所以 (so — NEUTRAL oral and written). The most universal. 因此 (therefore — slightly more written). Sounds serious, structuring. 因而 (yīn\'ér, hence — FORMAL written). 故 (thus — VERY FORMAL, academic/legal/literary writing, sometimes poetic). Hierarchy: 所以 (universal) < 因此 (mixed) < 因而 (written) < 故 (very formal). In speech, 所以 everywhere. In pro writing, alternate 因此 and 因而. NEVER 故 in spontaneous speech. Classic demonstration combo: 由于 X，故 Y (given X, thus Y) — very legal.',
     items: [
       { hanzi: '所以', pinyin: 'suǒyǐ', meaning: 'donc (universel)', meaningEn: 'so (universal)', audio: 'audio/hsk2/hsk2_所以.wav' },
       { hanzi: '因此', pinyin: 'yīncǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
@@ -1344,7 +1344,7 @@ export const b21NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique — confondre 关于 (sujet) et 对于 (position). Le premier ouvre, le second engage.',
     bodyEn:
-      '关于 (guānyú, concerning) introduces the TOPIC of a discussion. 关于这个问题，我有几点想法 = on this question, I have some thoughts. Used to OPEN a topic. 对于 (duìyú, regarding, vis-à-vis) introduces the POSITION on a topic. 对于这个问题，我的态度是… = on this question, my stance is… More committing. 至于 (zhìyú, as for) introduces a SHIFT of topic/aspect. 这是大原则。至于细节，我们以后讨论 = that\'s the big principle. As for details, we\'ll discuss later. 至于 marks an organized transition. Common mistake: confusing 关于 (topic) and 对于 (position).',
+      '关于 (concerning) introduces the TOPIC of a discussion. 关于这个问题，我有几点想法 = on this question, I have some thoughts. Used to OPEN a topic. 对于 (duìyú, regarding, vis-à-vis) introduces the POSITION on a topic. 对于这个问题，我的态度是… = on this question, my stance is… More committing. 至于 (as for) introduces a SHIFT of topic/aspect. 这是大原则。至于细节，我们以后讨论 = that\'s the big principle. As for details, we\'ll discuss later. 至于 marks an organized transition. Common mistake: confusing 关于 (topic) and 对于 (position).',
     items: [
       { hanzi: '关于', pinyin: 'guānyú', meaning: 'concernant', meaningEn: 'concerning', audio: 'audio/hsk3/hsk3_关于.wav' },
       { hanzi: '对于', pinyin: 'duìyú', meaning: 'vis-à-vis de', meaningEn: 'regarding', audio: 'audio/hsk4/hsk4_对于.wav' },
@@ -1369,7 +1369,7 @@ export const b21NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique — 时间充分 ✗ → 时间足够 ✓. À mémoriser comme blocs figés : **充分准备**, **充足资金**, **足够时间**.',
     bodyEn:
-      '充分 (chōngfèn, full, complete — INTENSITY adjective/adverb). 充分准备 = thoroughly prepare / 充分理解 = fully understand. Often abstract: commitment, attention, understanding. 充足 (chōngzú, abundant — material QUANTITY adjective). 资金充足 = sufficient funds / 阳光充足 = abundant sunlight. Always concrete. 足够 (zúgòu, enough, sufficient — SIMPLE need adjective/verb). 时间足够 = there\'s enough time. Most oral and universal. Hierarchy: 足够 (simple oral) < 充足 (concrete abundant) < 充分 (abstract committed). Mistake: 时间充分 ✗ → 时间足够 ✓.',
+      '充分 (full, complete — INTENSITY adjective/adverb). 充分准备 = thoroughly prepare / 充分理解 = fully understand. Often abstract: commitment, attention, understanding. 充足 (abundant — material QUANTITY adjective). 资金充足 = sufficient funds / 阳光充足 = abundant sunlight. Always concrete. 足够 (enough, sufficient — SIMPLE need adjective/verb). 时间足够 = there\'s enough time. Most oral and universal. Hierarchy: 足够 (simple oral) < 充足 (concrete abundant) < 充分 (abstract committed). Mistake: 时间充分 ✗ → 时间足够 ✓.',
     items: [
       { hanzi: '充分', pinyin: 'chōngfèn', meaning: 'pleinement', meaningEn: 'fully', audio: 'audio/hsk5/hsk5_充分.wav' },
       { hanzi: '充足', pinyin: 'chōngzú', meaning: 'abondant', meaningEn: 'abundant', audio: 'audio/hsk5/hsk5_充足.wav' },
@@ -1422,7 +1422,7 @@ export const b21NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ajoute toujours la particule **吧** pour adoucir — 就这样吧 = OK c\'est bon. Sans 吧, ça sonne brusque. Cette particule est ton ami dans toutes les conclusions polies.',
     bodyEn:
-      '就这样 (jiù zhèyàng) = that\'s how it is, final. Often at the end of a discussion to close. 就好 (jiù hǎo, that\'s fine) marks simple SUFFICIENCY. 这样就好 = that\'s good as is (nothing to add). 就行 (jiù xíng, that\'ll do) marks FUNCTIONALITY. 简单一点就行 = something simple will do. Hierarchy: 就好 (emotional sufficiency) < 就行 (practical sufficiency) < 就这样 (final, sometimes blunt). To politely close an order/discussion, 就这样吧 (add 吧 to soften) = OK we\'re good.',
+      '就这样 (jiù zhèyàng) = that\'s how it is, final. Often at the end of a discussion to close. 就好 (that\'s fine) marks simple SUFFICIENCY. 这样就好 = that\'s good as is (nothing to add). 就行 (that\'ll do) marks FUNCTIONALITY. 简单一点就行 = something simple will do. Hierarchy: 就好 (emotional sufficiency) < 就行 (practical sufficiency) < 就这样 (final, sometimes blunt). To politely close an order/discussion, 就这样吧 (add 吧 to soften) = OK we\'re good.',
     items: [
       { hanzi: '就这样', pinyin: 'jiù zhèyàng', meaning: 'c\'est comme ça', meaningEn: 'that\'s it', audio: 'audio/hsk2/hsk2_就.wav' },
       { hanzi: '就好', pinyin: 'jiù hǎo', meaning: 'c\'est bien', meaningEn: 'that\'s fine', audio: 'audio/hsk1/hsk1_好.wav' },
@@ -1506,7 +1506,7 @@ export const b21NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 偏偏 + événement = sentiment de **fatalité**. Très expressif pour donner du relief émotionnel — utilise-le quand tu veux peindre une contrariété précise.',
     bodyEn:
-      '居然 (jūrán, would you believe / against all odds) = surprise + often NEGATIVE/incomprehension. 他居然忘了我的生日 = he had the nerve to forget my birthday (unbelievable). 竟然 (jìngrán, identical but more expressive ORAL). 你竟然来了！= you actually came! 偏偏 (piānpiān, precisely / as if on purpose) = mostly NEGATIVE, marks bad luck or stubbornness. 偏偏今天下雨 = it had to rain today of all days. 我说东，他偏偏要西 = I say east, he insists on west. Hierarchy: 居然 (written/oral surprise) ≈ 竟然 (expressive oral) ≠ 偏偏 (bad luck/contrariness).',
+      '居然 (would you believe / against all odds) = surprise + often NEGATIVE/incomprehension. 他居然忘了我的生日 = he had the nerve to forget my birthday (unbelievable). 竟然 (identical but more expressive ORAL). 你竟然来了！= you actually came! 偏偏 (precisely / as if on purpose) = mostly NEGATIVE, marks bad luck or stubbornness. 偏偏今天下雨 = it had to rain today of all days. 我说东，他偏偏要西 = I say east, he insists on west. Hierarchy: 居然 (written/oral surprise) ≈ 竟然 (expressive oral) ≠ 偏偏 (bad luck/contrariness).',
     items: [
       { hanzi: '居然', pinyin: 'jūrán', meaning: 'figure-toi (surprise)', meaningEn: 'unexpectedly', audio: 'audio/hsk5/hsk5_居然.wav' },
       { hanzi: '竟然', pinyin: 'jìngrán', meaning: 'figure-toi (oral)', meaningEn: 'actually (spoken)', audio: 'audio/hsk5/hsk5_竟然.wav' },
@@ -1527,11 +1527,11 @@ export const b21NuancesM5LearnSections: LessonV2LearnSection[] = [
       'Trois adverbes pour parler de l\'inévitable, chacun avec sa **fonction** :\n' +
       '- 难免 — inévitable doux, souvent négatif, sert à adoucir : 学语言难免会犯错 (en apprenant une langue, on fait forcément des erreurs)\n' +
       '- 必然 — formel, conclusion logique forte : 这是必然的结果 (c\'est le résultat nécessaire)\n' +
-      '- 难怪 — exclamation de **réalisation a posteriori** : 难怪你不来，原来你病了 (pas étonnant que tu ne viennes pas, en fait tu es malade)\n' +
+      '- 难怪 — exclamation de **réalisation a posteriori** : 难怪你不来，原来你病了 (en fait tu es malade)\n' +
       '\n' +
       'Astuce : 学语言难免会犯错 est la phrase de réconfort universelle pour un apprenant. Réponds-y avec 学中文难免有错误 — humilité parfaite.',
     bodyEn:
-      '难免 (nánmiǎn, inevitable, can\'t be avoided) = something is bound to happen, often NEGATIVE. 学语言难免会犯错 = learning a language, you\'re bound to make mistakes. Softens. 必然 (bìrán, necessarily, formally inevitable — formal) = strong logical conclusion. 这是必然的结果 = it\'s the necessary result. 难怪 (nánguài, no wonder) = exclamation of retrospective REALIZATION. 难怪你不来，原来你病了 = no wonder you\'re not coming, you\'re sick. Very useful for punctuating understanding. Hierarchy: 难免 (gentle inevitable) < 必然 (formal logical); 难怪 (after-the-fact realization).',
+      '难免 (inevitable, can\'t be avoided) = something is bound to happen, often NEGATIVE. 学语言难免会犯错 = learning a language, you\'re bound to make mistakes. Softens. 必然 (necessarily, formally inevitable — formal) = strong logical conclusion. 这是必然的结果 = it\'s the necessary result. 难怪 (no wonder) = exclamation of retrospective REALIZATION. 难怪你不来，原来你病了 = no wonder you\'re not coming, you\'re sick. Very useful for punctuating understanding. Hierarchy: 难免 (gentle inevitable) < 必然 (formal logical); 难怪 (after-the-fact realization).',
     items: [
       { hanzi: '难免', pinyin: 'nánmiǎn', meaning: 'inévitable', meaningEn: 'inevitable', audio: 'audio/hsk5/hsk5_难免.wav' },
       { hanzi: '必然', pinyin: 'bìrán', meaning: 'nécessairement', meaningEn: 'necessarily', audio: 'audio/hsk5/hsk5_必然.wav' },
@@ -1559,7 +1559,7 @@ export const b21NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : **何况 + question rhétorique** = formule très puissante. 大学生都做不到，何况小学生 ? (même les étudiants n\'y arrivent pas, alors les élèves ?) — argumentation à fortiori imparable.',
     bodyEn:
-      '何况 (hékuàng, all the more so / not to mention — formal, REINFORCES the argument). 这件事连专家都不知道，何况我？= even experts don\'t know, let alone me. Marks a fortiori. 况且 (kuàngqiě, moreover, formal written) = adds a supplementary argument in a demonstration. 这个方案有风险，况且费用高 = this plan is risky, and on top of that it\'s expensive. 再说 (zàishuō, besides, oral) = adds a supplementary argument less formally. 我不喜欢这部电影，再说太长了 = I don\'t like this film, besides it\'s too long. Hierarchy: 再说 (oral) < 况且 (formal written) < 何况 (a fortiori, punchy).',
+      '何况 (all the more so / not to mention — formal, REINFORCES the argument). 这件事连专家都不知道，何况我？= even experts don\'t know, let alone me. Marks a fortiori. 况且 (moreover, formal written) = adds a supplementary argument in a demonstration. 这个方案有风险，况且费用高 = this plan is risky, and on top of that it\'s expensive. 再说 (besides, oral) = adds a supplementary argument less formally. 我不喜欢这部电影，再说太长了 = I don\'t like this film, besides it\'s too long. Hierarchy: 再说 (oral) < 况且 (formal written) < 何况 (a fortiori, punchy).',
     items: [
       { hanzi: '何况', pinyin: 'hékuàng', meaning: 'd\'autant plus que', meaningEn: 'all the more so', audio: 'audio/hsk5/hsk5_何况.wav' },
       { hanzi: '况且', pinyin: 'kuàngqiě', meaning: 'en plus (formel)', meaningEn: 'moreover (formal)', audio: 'audio/hsk6/hsk6_况且.wav' },
@@ -1585,7 +1585,7 @@ export const b21NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Structure d\'essai par excellence : **首先 X，其次 Y，此外 Z** (premièrement, deuxièmement, en outre) — culturellement attendu dans l\'écrit académique chinois.',
     bodyEn:
-      '另外 (lìngwài, additionally / moreover — neutral, oral and written). 我喜欢这个，另外那个也不错 = I like this one, and additionally that one is also good. Versatile. 此外 (cǐwài, in addition — formal, written). 这个项目有几个特点。此外，它还有 X 个优势 = this project has several features. In addition, it has X advantages. More structured. In speech, NEVER 此外 (sounds pedantic). In B2.1+ writing, 此外 is the n°1 tool for CHAINING arguments in an essay/report. Classic combo: 首先 X，其次 Y，此外 Z (firstly X, secondly Y, in addition Z) — essay structure par excellence.',
+      '另外 (additionally / moreover — neutral, oral and written). 我喜欢这个，另外那个也不错 = I like this one, and additionally that one is also good. Versatile. 此外 (in addition — formal, written). 这个项目有几个特点。此外，它还有 X 个优势 = this project has several features. In addition, it has X advantages. More structured. In speech, NEVER 此外 (sounds pedantic). In B2.1+ writing, 此外 is the n°1 tool for CHAINING arguments in an essay/report. Classic combo: 首先 X，其次 Y，此外 Z (firstly X, secondly Y, in addition Z) — essay structure par excellence.',
     items: [
       { hanzi: '另外', pinyin: 'lìngwài', meaning: 'par ailleurs', meaningEn: 'additionally', audio: 'audio/hsk4/hsk4_另外.wav' },
       { hanzi: '此外', pinyin: 'cǐwài', meaning: 'en outre (formel)', meaningEn: 'in addition (formal)', audio: 'audio/hsk5/hsk5_此外.wav' },
@@ -1609,11 +1609,11 @@ export const b21NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Trois adverbes pour marquer un contraste, à distinguer par leur **effet** :\n' +
       '- 反而 — neutre, **inverse** l\'attente (surprise) : 我以为他会生气，他反而笑了 (je pensais qu\'il se fâcherait, au contraire il a ri)\n' +
       '- 反倒 — oral familier, plus expressif, même sens d\'inversion : 我以为他帮我，他反倒批评我\n' +
-      '- 却 — écrit, simple opposition légère **sans surprise** : 他答应了，却没来 (il a accepté, mais n\'est pas venu)\n' +
+      '- 却 — écrit, simple opposition légère **sans surprise** : 他答应了，却没来 (mais n\'est pas venu)\n' +
       '\n' +
       'Astuce : 反而 + verbe = retournement de situation. Utilise-le pour souligner un effet **inattendu** — très expressif.',
     bodyEn:
-      '反而 (fǎn\'ér, on the contrary — neutral/standard oral) = inverts expectation. 我以为他会生气，他反而笑了 = I thought he\'d be angry, on the contrary he laughed. 反倒 (fǎndào, casual oral) = same meaning, more colloquial/expressive tone. 我以为他帮我，他反倒批评我 = I thought he\'d help me, on the contrary he criticized me. 却 (què, however — adverb before verb, more written) = simple mild opposition. 他答应了，却没来 = he agreed, but didn\'t come. Difference: 反而/反倒 = INVERTS expectation (surprise); 却 = simple contrast without surprise.',
+      '反而 (fǎn\'ér, on the contrary — neutral/standard oral) = inverts expectation. 我以为他会生气，他反而笑了 = I thought he\'d be angry, on the contrary he laughed. 反倒 (casual oral) = same meaning, more colloquial/expressive tone. 我以为他帮我，他反倒批评我 = I thought he\'d help me, on the contrary he criticized me. 却 (however — adverb before verb, more written) = simple mild opposition. 他答应了，却没来 = he agreed, but didn\'t come. Difference: 反而/反倒 = INVERTS expectation (surprise); 却 = simple contrast without surprise.',
     items: [
       { hanzi: '反而', pinyin: 'fǎnér', meaning: 'au contraire', meaningEn: 'on the contrary', audio: 'audio/hsk4/hsk4_反而.wav' },
       { hanzi: '反倒', pinyin: 'fǎndào', meaning: 'au contraire (oral)', meaningEn: 'on the contrary (oral)', audio: 'audio/hsk6/hsk6_反.wav' },
@@ -1641,7 +1641,7 @@ export const b21NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Variantes formelles à l\'écrit : 日益 (de jour en jour — 经济日益发展) et le chengyu 与日俱增 (croître chaque jour).',
     bodyEn:
-      '越来越 + adjective/verb = more and more. 天气越来越冷 = the weather is getting colder. Marks continuous PROGRESSION. Most common structure. 越 X 越 Y = the more X, the more Y (TWO variables increasing together). 越说越生气 = the more we talk, the angrier we get. Difference: 越来越 = ONE variable progresses; 越…越 = relation between TWO variables. Common mistake: 越来越说越来越生气 ✗ → 越说越生气 ✓. Formal variants: 日益 (rìyì, day by day, formal written). 经济日益发展 = the economy develops day by day. 与日俱增 (chengyu: grows day by day).',
+      '越来越 + adjective/verb = more and more. 天气越来越冷 = the weather is getting colder. Marks continuous PROGRESSION. Most common structure. 越 X 越 Y = the more X, the more Y (TWO variables increasing together). 越说越生气 = the more we talk, the angrier we get. Difference: 越来越 = ONE variable progresses; 越…越 = relation between TWO variables. Common mistake: 越来越说越来越生气 ✗ → 越说越生气 ✓. Formal variants: 日益 (day by day, formal written). 经济日益发展 = the economy develops day by day. 与日俱增 (chengyu: grows day by day).',
     items: [
       { hanzi: '越来越', pinyin: 'yuèláiyuè', meaning: 'de plus en plus', meaningEn: 'more and more', audio: 'audio/hsk3/hsk3_越来越.wav' },
       { hanzi: '越…越', pinyin: 'yuè yuè', meaning: 'plus…plus', meaningEn: 'the more…the more', audio: 'audio/hsk3/hsk3_越.wav' },
@@ -1675,7 +1675,7 @@ export const b21NuancesConditionalAdvancedLearnSections: LessonV2LearnSection[] 
       '\n' +
       'Règle pratique : à l\'oral, garde 要是 ou 如果. À l\'écrit formel, tu peux monter à 假如 ou 若 selon le degré de sérieux.',
     bodyEn:
-      'Written and formal Chinese offers several alternatives to 如果 by register. Useful to RECOGNIZE, not essential to produce daily. Formality scale from casual to elevated: 要是 (oral, casual, mostly northern China); 如果 (neutral, universal); 假如 (jiǎ rú, serious advice, polished delivery — sounds a bit «literary» in casual speech); 若 (ruò, common in pro emails, signs, official notices — short and efficient); 倘若 (tǎng ruò, literary, formal prose — rare in daily speech); 假设 (jiǎ shè, «suppose that», academic or scientific). Practical rule: in speech, stick with 要是 or 如果. In formal writing, go up to 假如 or 若 depending on seriousness.',
+      'Written and formal Chinese offers several alternatives to 如果 by register. Useful to RECOGNIZE, not essential to produce daily. Formality scale from casual to elevated: 要是 (oral, casual, mostly northern China); 如果 (neutral, universal); 假如 (serious advice, polished delivery — sounds a bit «literary» in casual speech); 若 (common in pro emails, signs, official notices — short and efficient); 倘若 (literary, formal prose — rare in daily speech); 假设 («suppose that», academic or scientific). Practical rule: in speech, stick with 要是 or 如果. In formal writing, go up to 假如 or 若 depending on seriousness.',
     items: [
       { hanzi: '假如', pinyin: 'jiǎrú', meaning: 'si (soutenu, conseil)', meaningEn: 'if (elevated, advice)', audio: 'audio/hsk5/hsk5_假如.wav' },
       { hanzi: '若', pinyin: 'ruò', meaning: 'si (écrit pro, bref)', meaningEn: 'if (written, short)', audio: 'audio/hsk6/hsk6_若.wav' },

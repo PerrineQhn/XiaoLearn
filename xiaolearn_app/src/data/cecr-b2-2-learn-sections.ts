@@ -182,7 +182,7 @@ export const b22StructureM3LearnSections: LessonV2LearnSection[] = [
       'Exemples :\n' +
       '- 只有通过练习，才能说得流利 (c\'est uniquement par la pratique qu\'on parle couramment)\n' +
       '- 只有冷静，才能做出正确的判断 (seul le sang-froid permet le bon jugement)\n' +
-      '- 除非你同意，否则我不会做 (à moins que tu acceptes, je ne le ferai pas — variante avec 除非)\n' +
+      '- 除非你同意，否则我不会做 (je ne le ferai pas — variante avec 除非)\n' +
       '\n' +
       'Astuce : langage de presse, débat, essai — très fréquent aux examens **écrits**.',
     bodyEn:
@@ -424,7 +424,7 @@ export const b22HealthM3LearnSections: LessonV2LearnSection[] = [
       '- 食疗 (« soigner par l\'alimentation ») : pastèque rafraîchissante en été, soupes reconstituantes en hiver\n' +
       '- 喝热水 toute l\'année — le froid étant jugé nocif pour le 气\n' +
       '\n' +
-      'Remarque : côté sombre moderne — 亚健康 (fatigue chronique sans diagnostic) et 抑郁症 (dépression, dont la reconnaissance progresse depuis 2020).',
+      'Remarque : côté sombre moderne — 亚健康 (fatigue chronique sans diagnostic) et 抑郁症 (dont la reconnaissance progresse depuis 2020).',
     bodyEn:
       '养生 covers food, sleep, emotions, gentle exercise. Morning in the parks: seniors practicing 太极拳 and 气功, families doing 散步. Table: 食疗 ("healing through food") — cooling watermelon in summer, restorative soups in winter. Ritual: 喝热水 year-round, cold is deemed harmful to the 气. Modern dark side: 亚健康 (chronic fatigue without diagnosis), 抑郁症 (depression, whose recognition has been growing since 2020).',
     items: [
@@ -560,7 +560,7 @@ export const b22StructureM4LearnSections: LessonV2LearnSection[] = [
       'RÈGLE D\'OR : 既然 introduit une cause **déjà admise** par les deux interlocuteurs — on ne la justifie plus, on en tire la conséquence.\n' +
       '\n' +
       'Exemples :\n' +
-      '- 既然你已经决定了，就别后悔 (puisque tu as décidé, ne regrette plus)\n' +
+      '- 既然你已经决定了，就别后悔 (ne regrette plus)\n' +
       '- 既然这样，那就算了 (puisque c\'est comme ça, laisse tomber)\n' +
       '\n' +
       'Attention : différence majeure avec 因为 — 因为 **informe** la cause (l\'autre ne la connaît pas), 既然 la **présuppose** (l\'autre la connaît). Souvent suivi de 就 (logique) ou 那(就) (familier).',
@@ -846,9 +846,9 @@ export const b22ArtsM5LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'China has 300+ regional opera forms.\n' +
       '\n' +
-      '- 越剧 (yuèjù, Zhejiang) — — feminine, lyrical, famous for 《梁山伯与祝英台》\n' +
-      '- 川剧 (chuānjù, Sichuan) — famous for 变脸 (face-changing: actor switches masks in a second via a secret movement)\n' +
-      '- 粤剧 (yuèjù, Cantonese) — — popular in Hong Kong, Canton, and Chinese diasporas\n' +
+      '- 越剧 (Zhejiang) — — feminine, lyrical, famous for 《梁山伯与祝英台》\n' +
+      '- 川剧 (Sichuan) — famous for 变脸 (face-changing: actor switches masks in a second via a secret movement)\n' +
+      '- 粤剧 (Cantonese) — — popular in Hong Kong, Canton, and Chinese diasporas\n' +
       '\n' +
       'Each opera has its dialects, costumes, instruments. All recognized as UNESCO intangible heritage.',
     items: [
@@ -881,7 +881,7 @@ export const b22ArtsM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la **紫禁城** (Cité Interdite) est l\'extension impériale du même principe — 9 999 pièces autour de cours hiérarchisées. Le 四合院 a en grande partie disparu de Pékin avec les démolitions des années 90, mais reste classé patrimoine.',
     bodyEn:
-      '四合院 (sìhéyuàn, «4-sided courtyard»): traditional Beijing house, 4 buildings around a central courtyard. Symbol of the Chinese extended family. Curved roofs 屋顶 (wūdǐng) with tiles 瓦 (wǎ). Red doors 红门 and stone lion guardians 石狮子. Largely lost in Beijing during 90s demolitions, but heritage-listed. The 紫禁城 (Forbidden City) is the imperial extension: 9,999 rooms around hierarchically-ordered courtyards.',
+      '四合院 («4-sided courtyard»): traditional Beijing house, 4 buildings around a central courtyard. Symbol of the Chinese extended family. Curved roofs 屋顶 (wūdǐng) with tiles 瓦 (wǎ). Red doors 红门 and stone lion guardians 石狮子. Largely lost in Beijing during 90s demolitions, but heritage-listed. The 紫禁城 (Forbidden City) is the imperial extension: 9,999 rooms around hierarchically-ordered courtyards.',
     items: [
       { hanzi: '四合院', pinyin: 'sìhéyuàn', meaning: 'maison à cour', meaningEn: 'courtyard house', audio: 'audio/hsk6/hsk6_四合院.wav' },
       { hanzi: '紫禁城', pinyin: 'zǐjìnchéng', meaning: 'Cité Interdite', meaningEn: 'Forbidden City', audio: 'audio/hsk6/hsk6_紫禁城.wav' },
@@ -939,7 +939,7 @@ export const b22ArtsM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : très collectionnée — les pièces Ming/Qing peuvent atteindre des **millions** aux enchères.',
     bodyEn:
-      '瓷器 (cíqì, porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐngdézhèn) in Jiangxi, producing for 1,000 years.\n' +
+      '瓷器 (porcelain): a Chinese invention giving the country its English name. Capital: 景德镇 (jǐngdézhèn) in Jiangxi, producing for 1,000 years.\n' +
       '\n' +
       'Iconic styles:\n' +
       '\n' +
@@ -1090,10 +1090,10 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : **上火** (« monter en feu ») = excès d\'aliments chauds → bouton, mal de gorge.',
     bodyEn:
-      '- 营养 (yíngyǎng, nutrition) — central concept\n' +
+      '- 营养 (nutrition) — central concept\n' +
       '- 均衡饮食 (balanced diet) — \n' +
       '\n' +
-      'Food families: 蛋白质 (proteins), 碳水化合物 (carbs — often shortened to 碳水), 脂肪 (fats), 维生素 (vitamins), 矿物质 (minerals). In China, the TCM idea of «hot/cold» foods (热性/凉性) coexists with Western nutrition. 上火 (shànghuǒ, «going on fire») = excess of hot foods → pimple, sore throat.',
+      'Food families: 蛋白质 (proteins), 碳水化合物 (carbs — often shortened to 碳水), 脂肪 (fats), 维生素 (vitamins), 矿物质 (minerals). In China, the TCM idea of «hot/cold» foods (热性/凉性) coexists with Western nutrition. 上火 («going on fire») = excess of hot foods → pimple, sore throat.',
     items: [
       { hanzi: '营养', pinyin: 'yíngyǎng', meaning: 'nutrition', meaningEn: 'nutrition', audio: 'audio/hsk4/hsk4_营养.wav' },
       { hanzi: '均衡', pinyin: 'jūnhéng', meaning: 'équilibré', meaningEn: 'balanced', audio: 'audio/hsk6/hsk6_均衡.wav' },
@@ -1120,7 +1120,7 @@ export const b22HealthM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : le rebound — **报复性饮食** (manger compulsivement après un régime). Phrase utile : 我在减肥，少吃点.',
     bodyEn:
-      '- 减肥 (jiǎnféi, lose weight) — a huge topic in China, especially among young women\n' +
+      '- 减肥 (lose weight) — a huge topic in China, especially among young women\n' +
       '- 节食 (deprive yourself) — 间歇性禁食 (intermittent fasting — imported concept), 健身餐 (fitness meal)\n' +
       '\n' +
       'Trends: low-carb 低碳水, vegan 纯素, vegetarian 素食. But also the rebound: «报复性饮食» (compulsive eating after a diet). Useful phrase: 我在减肥，少吃点 = I\'m on a diet, I eat little.',
@@ -1226,7 +1226,7 @@ export const b22HealthM7LearnSections: LessonV2LearnSection[] = [
       '- 老龄化社会 (aging society) — a major challenge for China\n' +
       '- 老人 (elderly) — 退休 (retirement)\n' +
       '\n' +
-      'One-child policy (1979-2015) → 4-2-1 (4 grandparents, 2 parents, 1 child). Children carry the cultural duty 孝 (xiào, filial piety) of caring for parents. 养老院 (retirement home) still frowned upon but growing. Health vocab: 老花眼 (presbyopia), 高血压 (hypertension), 糖尿病 (diabetes).',
+      'One-child policy (1979-2015) → 4-2-1 (4 grandparents, 2 parents, 1 child). Children carry the cultural duty 孝 (filial piety) of caring for parents. 养老院 (retirement home) still frowned upon but growing. Health vocab: 老花眼 (presbyopia), 高血压 (hypertension), 糖尿病 (diabetes).',
     items: [
       { hanzi: '老龄化', pinyin: 'lǎolínghuà', meaning: 'vieillissement', meaningEn: 'aging', audio: 'audio/hsk6/hsk6_老龄化.wav' },
       { hanzi: '退休', pinyin: 'tuìxiū', meaning: 'retraite', meaningEn: 'retirement', audio: 'audio/hsk4/hsk4_退休.wav' },
@@ -1321,7 +1321,7 @@ export const b22DebateM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 相反 = surprise/retournement, 反之 = symétrie logique, 然而 = bémol mesuré.',
     bodyEn:
-      '相反 (xiāngfǎn, on the contrary) introduces strong opposition. 我以为他会拒绝，相反，他立刻同意了 = I thought he\'d refuse, on the contrary he agreed immediately. 反之 (fǎn zhī, conversely — formal) heavily used in writing. 然而 (rán\'ér, however) opposition + concession. 这个方案很好，然而成本太高 = this plan is good, however the cost is too high. Increasing force: 不过 < 但是 < 然而 < 相反.',
+      '相反 (on the contrary) introduces strong opposition. 我以为他会拒绝，相反，他立刻同意了 = I thought he\'d refuse, on the contrary he agreed immediately. 反之 (conversely — formal) heavily used in writing. 然而 (rán\'ér, however) opposition + concession. 这个方案很好，然而成本太高 = this plan is good, however the cost is too high. Increasing force: 不过 < 但是 < 然而 < 相反.',
     items: [
       { hanzi: '相反', pinyin: 'xiāngfǎn', meaning: 'au contraire', meaningEn: 'on the contrary', audio: 'audio/hsk4/hsk4_相反.wav' },
       { hanzi: '反之', pinyin: 'fǎnzhī', meaning: 'à l\'inverse', meaningEn: 'conversely', audio: 'audio/hsk6/hsk6_反之.wav' },
@@ -1460,7 +1460,7 @@ export const b22DebateM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 从而 introduit souvent une **conséquence positive** ou un objectif atteint — 减少了开支，从而提高了利润 (on a réduit les coûts, et ainsi augmenté les bénéfices). 因而 est plus neutre.',
     bodyEn:
-      '因此 (yīncǐ, therefore — formal), 所以 (suǒyǐ, so — neutral), 因而 (yīn\'ér, hence — formal), 从而 (cóng\'ér, thereby — formal, marks logical sequence). 从而 often introduces a positive consequence or achieved goal: 减少了开支，从而提高了利润 = we cut spending, thereby boosting profits. 因而 is more neutral. Hierarchy: 所以 (oral) < 因此 (mixed) < 因而/从而 (written).',
+      '因此 (therefore — formal), 所以 (so — neutral), 因而 (yīn\'ér, hence — formal), 从而 (cóng\'ér, thereby — formal, marks logical sequence). 从而 often introduces a positive consequence or achieved goal: 减少了开支，从而提高了利润 = we cut spending, thereby boosting profits. 因而 is more neutral. Hierarchy: 所以 (oral) < 因此 (mixed) < 因而/从而 (written).',
     items: [
       { hanzi: '因此', pinyin: 'yīncǐ', meaning: 'par conséquent', meaningEn: 'therefore', audio: 'audio/hsk4/hsk4_因此.wav' },
       { hanzi: '因而', pinyin: 'yīnér', meaning: 'de ce fait', meaningEn: 'hence', audio: 'audio/hsk6/hsk6_因而.wav' },
@@ -1510,7 +1510,7 @@ export const b22DebateM7LearnSections: LessonV2LearnSection[] = [
     body:
       'Pour ne pas finir sur une note plate, ouvrir vers l\'avenir avec trois formules :\n' +
       '- 展望未来 (regarder vers l\'avenir)\n' +
-      '- 期待 (espérer, attendre)\n' +
+      '- 期待 (attendre)\n' +
       '- 值得 (mériter de)\n' +
       '\n' +
       'Exemples :\n' +
@@ -1977,8 +1977,8 @@ export const b22ConvM6LearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Speaker distance:\n' +
       '\n' +
-      '- 据说 (jùshuō, it\'s said)\n' +
-      '- 听说 (tīngshuō, I heard)\n' +
+      '- 据说 (it\'s said)\n' +
+      '- 听说 (I heard)\n' +
       '- 大家都说 (everyone says)\n' +
       '- 有人说 (someone said)\n' +
       '\n' +
@@ -2096,7 +2096,7 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : dans un essai ou débat formel, préfère **认为**. Au quotidien, **觉得** est plus naturel.',
     bodyEn:
-      '觉得 (juéde, feel/find) : subjective opinion, intuition, sensation. 我觉得这个菜很好吃 = I find this dish tasty (personal sense). 认为 (rènwéi, consider/think) : reasoned opinion, considered conviction. 我认为这个政策不公平 = I judge this policy unfair (judgment). Simple rule : 觉得 = taste/sensation/intuition ; 认为 = judgment/analysis/conclusion. In an essay or formal debate, prefer 认为. In daily life, 觉得 is more natural.',
+      '觉得 (feel/find) : subjective opinion, intuition, sensation. 我觉得这个菜很好吃 = I find this dish tasty (personal sense). 认为 (consider/think) : reasoned opinion, considered conviction. 我认为这个政策不公平 = I judge this policy unfair (judgment). Simple rule : 觉得 = taste/sensation/intuition ; 认为 = judgment/analysis/conclusion. In an essay or formal debate, prefer 认为. In daily life, 觉得 is more natural.',
     items: [
       { hanzi: '觉得', pinyin: 'juéde', meaning: 'trouver, sentir', meaningEn: 'feel, find', audio: 'audio/hsk2/hsk2_觉得.wav' },
       { hanzi: '认为', pinyin: 'rènwéi', meaning: 'estimer, juger', meaningEn: 'consider, judge', audio: 'audio/hsk3/hsk3_认为.wav' },
@@ -2122,7 +2122,7 @@ export const b22NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : on ne peut pas dire « 我以为这是真的 » si c\'est effectivement vrai. Si la croyance est **vérifiée** → 我觉得 ou 我认为.',
     bodyEn:
-      '以为 (yǐwéi, mistakenly believe) ALWAYS implies the belief turned out false. A total semantic trap for English speakers. 我以为他会来 = I thought he\'d come (and he didn\'t — belief was wrong). You CANNOT say «我以为这是真的» if it\'s actually true. If belief is verified → 我觉得 or 我认为. 以为 = «I (mistakenly) thought». Often followed by a reveal : 我以为今天没课，结果有 = I thought there was no class today, turns out there is.',
+      '以为 (mistakenly believe) ALWAYS implies the belief turned out false. A total semantic trap for English speakers. 我以为他会来 = I thought he\'d come (and he didn\'t — belief was wrong). You CANNOT say «我以为这是真的» if it\'s actually true. If belief is verified → 我觉得 or 我认为. 以为 = «I (mistakenly) thought». Often followed by a reveal : 我以为今天没课，结果有 = I thought there was no class today, turns out there is.',
     items: [
       { hanzi: '以为', pinyin: 'yǐwéi', meaning: 'croire à tort', meaningEn: 'mistakenly think', audio: 'audio/hsk3/hsk3_以为.wav' },
       { hanzi: '其实', pinyin: 'qíshí', meaning: 'en fait', meaningEn: 'actually', audio: 'audio/hsk3/hsk3_其实.wav' },
@@ -2207,13 +2207,13 @@ export const b22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Différences clés :\n' +
       '- 已经 (yǐjīng) : constat factuel d\'accomplissement — 我已经吃了 (info brute)\n' +
-      '- 都 (dōu, emphatique) : surprise, exclamation, souvent avec un chiffre — 都十二点了，快睡吧 ! (il est déjà minuit !)\n' +
+      '- 都 (emphatique) : surprise, exclamation, souvent avec un chiffre — 都十二点了，快睡吧 ! (il est déjà minuit !)\n' +
       '\n' +
       'Astuce — test rapide :\n' +
       '- 他都八十了 (il a déjà 80 ans — **waouh** !)\n' +
       '- 他已经八十了 (il a 80 ans — info)',
     bodyEn:
-      '已经 (yǐjīng, already) = factual statement of completion. 我已经吃了 = I\'ve already eaten (fact). 都 (dōu, already — emphatic) = surprise, exclamation, often with a number. 都十二点了，快睡吧 = it\'s ALREADY midnight, go to bed! Subtlety : 都 emphasizes «that much already!» with surprise, 已经 stays neutral. 他都八十了 = he\'s already 80 (wow!). 他已经八十了 = he\'s 80 (info).',
+      '已经 (already) = factual statement of completion. 我已经吃了 = I\'ve already eaten (fact). 都 (already — emphatic) = surprise, exclamation, often with a number. 都十二点了，快睡吧 = it\'s ALREADY midnight, go to bed! Subtlety : 都 emphasizes «that much already!» with surprise, 已经 stays neutral. 他都八十了 = he\'s already 80 (wow!). 他已经八十了 = he\'s 80 (info).',
     items: [
       { hanzi: '已经', pinyin: 'yǐjīng', meaning: 'déjà (factuel)', meaningEn: 'already (fact)', audio: 'audio/hsk2/hsk2_已经.wav' },
       { hanzi: '都', pinyin: 'dōu', meaning: 'déjà (emphatique)', meaningEn: 'already (emphatic)', audio: 'audio/hsk1/hsk1_都.wav' },
@@ -2384,7 +2384,7 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : si tu peux dire « **brusquement** » → 突然. Si « soudain je… » → 忽然 marche mieux.',
     bodyEn:
-      '突然 (tūrán, sudden) : can be adjective AND adverb. Describes an objectively abrupt event. 一个突然的决定 = a sudden decision. 他突然来了 = he came suddenly. 忽然 (hūrán, all of a sudden) : adverb only. Stresses the subjective experience of surprise. 我忽然想起 = it suddenly came back to me. If you can say «abruptly» → 突然. If «suddenly I…» → 忽然 fits better.',
+      '突然 (sudden) : can be adjective AND adverb. Describes an objectively abrupt event. 一个突然的决定 = a sudden decision. 他突然来了 = he came suddenly. 忽然 (all of a sudden) : adverb only. Stresses the subjective experience of surprise. 我忽然想起 = it suddenly came back to me. If you can say «abruptly» → 突然. If «suddenly I…» → 忽然 fits better.',
     items: [
       { hanzi: '突然', pinyin: 'tūrán', meaning: 'soudain (adj+adv)', meaningEn: 'sudden (adj+adv)', audio: 'audio/hsk3/hsk3_突然.wav' },
       { hanzi: '忽然', pinyin: 'hūrán', meaning: 'tout à coup (adv)', meaningEn: 'all of a sudden', audio: 'audio/hsk3/hsk3_忽然.wav' },
@@ -2410,7 +2410,7 @@ export const b22NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : à ne pas confondre avec 一下 (« un peu », classifier verbal) — 看一下 = regarde un peu.',
     bodyEn:
-      '一下子 (yíxiàzi, in one go, in a flash) : marks absolute speed + complete result. 一下子就明白了 = I got it all in a flash. 一下子下了大雨 = it suddenly poured. Difference from 突然/忽然 : 一下子 adds completeness («in a split second, all done»). Common spoken synonym : 一下 (without 子). Don\'t confuse with 一下 («a bit», verbal classifier) : 看一下 = take a quick look.',
+      '一下子 (in one go, in a flash) : marks absolute speed + complete result. 一下子就明白了 = I got it all in a flash. 一下子下了大雨 = it suddenly poured. Difference from 突然/忽然 : 一下子 adds completeness («in a split second, all done»). Common spoken synonym : 一下 (without 子). Don\'t confuse with 一下 («a bit», verbal classifier) : 看一下 = take a quick look.',
     items: [
       { hanzi: '一下子', pinyin: 'yīxiàzi', meaning: 'd\'un coup', meaningEn: 'in one go', audio: 'audio/hsk4/hsk4_一下子.wav' },
       { hanzi: '明白', pinyin: 'míngbái', meaning: 'comprendre', meaningEn: 'understand', audio: 'audio/hsk3/hsk3_明白.wav' },
@@ -2440,7 +2440,7 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : 大概 a aussi un sens d\'« en gros » — 大概的内容 (le contenu en gros).',
     bodyEn:
-      '大约 (dàyuē, about) = NUMERIC/temporal approximation. 大约二十个人 = about 20 people. 大约三点 = around 3pm. Always followed by quantity or time. 大概 (dàgài, probably) = hypothesis, supposition. 他大概不会来 = he probably won\'t come. Also : 大概的内容 = the gist. Difference : 大约 = how many? (number), 大概 = is it? (probability). Frequent French speaker confusion.',
+      '大约 (about) = NUMERIC/temporal approximation. 大约二十个人 = about 20 people. 大约三点 = around 3pm. Always followed by quantity or time. 大概 (probably) = hypothesis, supposition. 他大概不会来 = he probably won\'t come. Also : 大概的内容 = the gist. Difference : 大约 = how many? (number), 大概 = is it? (probability). Frequent French speaker confusion.',
     items: [
       { hanzi: '大约', pinyin: 'dàyuē', meaning: 'environ (chiffre)', meaningEn: 'about (number)', audio: 'audio/hsk5/hsk5_大约.wav' },
       { hanzi: '大概', pinyin: 'dàgài', meaning: 'probablement', meaningEn: 'probably', audio: 'audio/hsk4/hsk4_大概.wav' },
@@ -2467,7 +2467,7 @@ export const b22NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : très utile à l\'oral, à **éviter** en pro où on attend du précis.',
     bodyEn:
-      '差不多 (chàbuduō, almost, about) : a Chinese cultural signature. Primary sense : «not much missing» = almost the same. Covers 3 uses : (1) similarity : 这两个差不多 = these two are about the same. (2) approximation : 差不多十块 = about 10 yuan. (3) sufficiency : 差不多了，可以了 = good enough, OK. Lin Yutang made it a national trait : Chinese prefer 差不多 to absolute precision. Very useful in speech, avoid in pro where precision is expected.',
+      '差不多 (almost, about) : a Chinese cultural signature. Primary sense : «not much missing» = almost the same. Covers 3 uses : (1) similarity : 这两个差不多 = these two are about the same. (2) approximation : 差不多十块 = about 10 yuan. (3) sufficiency : 差不多了，可以了 = good enough, OK. Lin Yutang made it a national trait : Chinese prefer 差不多 to absolute precision. Very useful in speech, avoid in pro where precision is expected.',
     items: [
       { hanzi: '差不多', pinyin: 'chàbuduō', meaning: 'presque, à peu près', meaningEn: 'almost', audio: 'audio/hsk2/hsk2_差不多.wav' },
       { hanzi: '差', pinyin: 'chà', meaning: 'manquer', meaningEn: 'lack', audio: 'audio/hsk3/hsk3_差.wav' },

@@ -359,9 +359,9 @@ export const numbersLearnSections: LessonV2LearnSection[] = [
     title: 'De 1 à 5',
     titleEn: 'From 1 to 5',
     body:
-      'Les chiffres chinois sont des caractères simples, à connaître par cœur. Attention : chaque chiffre a un ton précis, soigne particulièrement 一 (yī, 1er ton) et 五 (wǔ, 3e ton).',
+      'Les chiffres chinois sont des caractères simples, à connaître par cœur. Attention : chaque chiffre a un ton précis, soigne particulièrement 一 (1er ton) et 五 (3e ton).',
     bodyEn:
-      'Chinese numbers are simple characters to memorize. Each digit has a specific tone: pay attention to 一 (yī, 1st tone) and 五 (wǔ, 3rd tone).',
+      'Chinese numbers are simple characters to memorize. Each digit has a specific tone: pay attention to 一 (1st tone) and 五 (3rd tone).',
     items: [
       { hanzi: '一', pinyin: 'yī', meaning: 'un, 1', meaningEn: 'one, 1', audio: 'audio/hsk1/hsk1_一.wav' },
       { hanzi: '二', pinyin: 'èr', meaning: 'deux, 2', meaningEn: 'two, 2', audio: 'audio/hsk1/hsk1_二.wav' },

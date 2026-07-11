@@ -898,10 +898,10 @@ export const b12NarrTimeMarkersLearnSections: LessonV2LearnSection[] = [
     titleEn: 'The chain 首先 → 然后 → 后来 → 最后',
     body:
       'Pour structurer un récit, le chinois s\'appuie sur quatre marqueurs de séquence :\n' +
-      '- 首先 (shǒuxiān, d\'abord) pour ouvrir\n' +
-      '- 然后 (ránhòu, ensuite) pour enchaîner\n' +
+      '- 首先 (d\'abord) pour ouvrir\n' +
+      '- 然后 (ensuite) pour enchaîner\n' +
       '- 后来 (hòulái, plus tard — souvent après une pause narrative)\n' +
-      '- 最后 (zuìhòu, finalement) pour clore\n' +
+      '- 最后 (finalement) pour clore\n' +
       '\n' +
       'Astuce : cette chaîne suffit à tenir une anecdote de 5 minutes. Place chaque connecteur **en tête** de phrase, suivi d\'une virgule.',
     bodyEn:
@@ -1147,8 +1147,8 @@ export const b12EduSchoolLearnSections: LessonV2LearnSection[] = [
     body:
       'Le système scolaire chinois, de bas en haut :\n' +
       '- 幼儿园 (maternelle, 3-6 ans)\n' +
-      '- 小学 (primaire, 6 ans), 初中 (collège, 3 ans) — ces 9 années forment la scolarité **obligatoire**\n' +
-      '- 高中 (lycée, 3 ans), couronné par le 高考 (gāokǎo), l\'examen d\'entrée à l\'université\n' +
+      '- 小学 (primaire, 6 ans), 初中 (3 ans) — ces 9 années forment la scolarité **obligatoire**\n' +
+      '- 高中 (3 ans), couronné par le 高考 (gāokǎo), l\'examen d\'entrée à l\'université\n' +
       '- 大学 avec ses cycles : 本科 (licence, 4 ans), 研究生 (master), 博士 (doctorat)\n' +
       '\n' +
       'Remarque : le 高考 est un examen titanesque — tous les élèves du pays le passent le même jour, et son score décide à la fois de l\'université et souvent de toute la carrière.',
@@ -1171,9 +1171,9 @@ export const b12EduSchoolLearnSections: LessonV2LearnSection[] = [
       { hanzi: '研究生', pinyin: 'yánjiūshēng', meaning: 'étudiant en master', meaningEn: 'grad student', audio: 'audio/hsk4/hsk4_研究生.wav' }
     ],
     tip:
-      '清华 (qīnghuá) et 北大 (Běi dà, abrev. de 北京大学) sont LES deux universités au sommet. Dire « 清北 » regroupe les deux — équivalent d\'« Oxbridge » en GB.',
+      '清华 (qīnghuá) et 北大 (abrev. de 北京大学) sont LES deux universités au sommet. Dire « 清北 » regroupe les deux — équivalent d\'« Oxbridge » en GB.',
     tipEn:
-      '清华 (qīnghuá) and 北大 (Běi dà, short for 北京大学) are THE top two universities. Saying «清北» refers to both — the Chinese «Oxbridge».'
+      '清华 (qīnghuá) and 北大 (short for 北京大学) are THE top two universities. Saying «清北» refers to both — the Chinese «Oxbridge».'
   }
 ];
 
@@ -1185,14 +1185,14 @@ export const b12EduStudyLearnSections: LessonV2LearnSection[] = [
     titleEn: '学 (oral) vs 学习 (formal)',
     body:
       'Deux verbes pour « apprendre / étudier » :\n' +
-      '- 学 (xué, monosyllabe) — plus **oral**, accepte un COD précis : 学中文, 学开车, 学数学\n' +
-      '- 学习 (xuéxí, dissyllabe) — plus **écrit**, plus formel, plus abstrait : 努力学习 (étudier dur), 学习经验 (tirer des enseignements)\n' +
+      '- 学 (monosyllabe) — plus **oral**, accepte un COD précis : 学中文, 学开车, 学数学\n' +
+      '- 学习 (dissyllabe) — plus **écrit**, plus formel, plus abstrait : 努力学习 (étudier dur), 学习经验 (tirer des enseignements)\n' +
       '\n' +
       'Astuce : autour d\'eux, le vocabulaire scolaire — 复习 (réviser), 预习 (préparer avant le cours), 练习 (s\'exercer), 做作业 (faire les devoirs), 背 (apprendre par cœur).',
     bodyEn:
-      'Two verbs for «learn/study». 学 (xué, monosyllabic): more oral, takes a precise object. 学中文, 学开车, 学数学.\n' +
+      'Two verbs for «learn/study». 学 (monosyllabic): more oral, takes a precise object. 学中文, 学开车, 学数学.\n' +
       '\n' +
-      '- 学习 (xué xí, bisyllabic) — more written, more formal, more abstract\n' +
+      '- 学习 (bisyllabic) — more written, more formal, more abstract\n' +
       '- 努力学习 (study hard) — 学习经验 (draw lessons)\n' +
       '\n' +
       'Around them, school vocabulary: 复习 (review), 预习 (prep before class), 练习 (practice), 做作业 (do homework), 背 (memorize).',
@@ -1268,7 +1268,7 @@ export const b12SocFamilyLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Remarque : avec la génération enfant unique, ces termes sont devenus plus techniques que pratiques pour les jeunes, mais restent indispensables à la lecture.',
     bodyEn:
-      'Chinese sorts relatives by side. The prefix 外 (wài, «outer») always marks mother\'s side — echo of an old patriarchy where the daughter «left» for her in-laws. Grandparents: 爷爷/奶奶 (father\'s father, mother) vs 外公/外婆 (mother\'s father, mother).\n' +
+      'Chinese sorts relatives by side. The prefix 外 («outer») always marks mother\'s side — echo of an old patriarchy where the daughter «left» for her in-laws. Grandparents: 爷爷/奶奶 (father\'s father, mother) vs 外公/外婆 (mother\'s father, mother).\n' +
       '\n' +
       'Uncles/aunts:\n' +
       '\n' +
@@ -1327,7 +1327,7 @@ export const b12SocMarriageLearnSections: LessonV2LearnSection[] = [
       { hanzi: '孩子', pinyin: 'háizi', meaning: 'enfant', meaningEn: 'child', audio: 'audio/hsk2/hsk2_孩子.wav' }
     ],
     tip:
-      'Verbes sécables comme 结婚, 见面, 洗澡 : on insère entre les deux caractères. 结了婚 ✓, 结婚了 (sens différent, plus factuel), 结三年婚 (marié depuis 3 ans).',
+      'Verbes sécables comme 结婚, 见面, 洗澡 : on insère entre les deux caractères. 结了婚 ✓, 结婚了 (plus factuel), 结三年婚 (marié depuis 3 ans).',
     tipEn:
       'Separable verbs like 结婚, 见面, 洗澡: you insert between the two characters. 结了婚 ✓, 结婚了 (different meaning, more factual), 结三年婚 (married for 3 years).'
   }
@@ -1347,7 +1347,7 @@ export const b12SocGenerationsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : trois expressions incontournables pour suivre le débat — **躺平** (s\'allonger à plat, refus du surmenage), **内卷** (compétition absurde), **打工人** (le travailleur, auto-dérision).',
     bodyEn:
-      'In China, people heavily label by birth decade. 80后 (bā líng hòu, born in the 80s), 90后, 00后 (líng líng hòu). Each generation carries its clichés: 80后 = first one-child gen, hardworkers, first to buy apartments. 90后 = digital natives, often labeled «spoiled» but actually more open. 00后 = Chinese Z, TikTok (抖音), socially more liberal.\n' +
+      'In China, people heavily label by birth decade. 80后 (born in the 80s), 90后, 00后 (líng líng hòu). Each generation carries its clichés: 80后 = first one-child gen, hardworkers, first to buy apartments. 90后 = digital natives, often labeled «spoiled» but actually more open. 00后 = Chinese Z, TikTok (抖音), socially more liberal.\n' +
       '\n' +
       'Must-know expressions:\n' +
       '\n' +
@@ -1380,7 +1380,7 @@ export const b12SocJobMarketLearnSections: LessonV2LearnSection[] = [
       'Chercher un emploi = 求职 (qiúzhí). Le parcours candidat en quatre étapes :\n' +
       '- rédiger un 简历 (CV) ; passer un 面试 (entretien)\n' +
       '- espérer être 录取 (pris) ; négocier le 工资 (salaire)\n' +
-      '- choisir son secteur : 国企 (public, stable, moins payé), 外企 (étranger, bien payé, exigeant), 私企 (privé, variable), 创业 (créer sa boîte)\n' +
+      '- choisir son secteur : 国企 (public, stable, moins payé), 外企 (étranger, bien payé, exigeant), 私企 (variable), 创业 (créer sa boîte)\n' +
       '\n' +
       'Astuce : côté employeur, les **五险一金** (5 assurances + 1 fonds logement) sont des cotisations sociales obligatoires — un bon indicateur de sérieux.',
     bodyEn:
@@ -1437,13 +1437,13 @@ export const b12MedPressLearnSections: LessonV2LearnSection[] = [
     bodyEn:
       'Articles:\n' +
       '\n' +
-      '- 头条 (tóu tiáo, front page)\n' +
-      '- 报道 (bào dào, report)\n' +
-      '- 评论 (píng lùn, op-ed)\n' +
-      '- 专访 (zhuān fǎng, exclusive interview)\n' +
-      '- 社论 (shè lùn, editorial)\n' +
+      '- 头条 (front page)\n' +
+      '- 报道 (report)\n' +
+      '- 评论 (op-ed)\n' +
+      '- 专访 (exclusive interview)\n' +
+      '- 社论 (editorial)\n' +
       '\n' +
-      'Media: 报纸 (paper), 电视 (TV), 广播 (radio), 网站 (website), 公众号 (official WeChat account, like a blog/newsletter). People: 记者 (jì zhě, journalist), 编辑 (biān jí, editor), 主持人 (zhǔ chí rén, host).',
+      'Media: 报纸 (paper), 电视 (TV), 广播 (radio), 网站 (website), 公众号 (official WeChat account, like a blog/newsletter). People: 记者 (journalist), 编辑 (editor), 主持人 (host).',
     items: [
       { hanzi: '新闻', pinyin: 'xīnwén', meaning: 'actualités', meaningEn: 'news', audio: 'audio/hsk3/hsk3_新闻.wav' },
       { hanzi: '头条', pinyin: 'tóutiáo', meaning: 'Une, titre', meaningEn: 'headline', audio: 'audio/hsk5/hsk5_头条.wav' },
@@ -1521,7 +1521,7 @@ export const b12MedSocialLearnSections: LessonV2LearnSection[] = [
       '\n' +
       '- 微博 (Weibo ≈ Twitter)\n' +
       '- 抖音 (Douyin ≈ Chinese TikTok)\n' +
-      '- 小红书 (Xiǎo hóng shū, Red Note ≈ Instagram + Pinterest)\n' +
+      '- 小红书 (Red Note ≈ Instagram + Pinterest)\n' +
       '- 知乎 (Zhī hū ≈ Quora)\n' +
       '- 哔哩哔哩 (Bilibili ≈ YouTube for young people)\n' +
       '- 百度 (Bǎi dù ≈ Google)\n' +
@@ -1538,9 +1538,9 @@ export const b12MedSocialLearnSections: LessonV2LearnSection[] = [
       { hanzi: '网红', pinyin: 'wǎnghóng', meaning: 'influenceur', meaningEn: 'web star', audio: 'audio/hsk5/hsk5_网红.wav' }
     ],
     tip:
-      '翻墙 (fān qiáng, « sauter le mur ») = utiliser un VPN pour accéder aux sites bloqués. Terme familier mais juridiquement gris : ne le suggère pas à des Chinois sans contexte de confiance.',
+      '翻墙 (« sauter le mur ») = utiliser un VPN pour accéder aux sites bloqués. Terme familier mais juridiquement gris : ne le suggère pas à des Chinois sans contexte de confiance.',
     tipEn:
-      '翻墙 (fān qiáng, «jump the wall») = use a VPN to reach blocked sites. Slang but legally gray: don\'t suggest it to Chinese speakers without a trusting context.'
+      '翻墙 («jump the wall») = use a VPN to reach blocked sites. Slang but legally gray: don\'t suggest it to Chinese speakers without a trusting context.'
   }
 ];
 
@@ -1551,7 +1551,7 @@ export const b12MedFakeNewsLearnSections: LessonV2LearnSection[] = [
     title: 'Vérifier : 来源, 证据, 怀疑',
     titleEn: 'Verify: 来源, 证据, 怀疑',
     body:
-      '假新闻 (jiǎxīnwén, **fake news**) est un sujet central sur les réseaux chinois.\n' +
+      '假新闻 (**fake news**) est un sujet central sur les réseaux chinois.\n' +
       '\n' +
       'Vocabulaire pour vérifier :\n' +
       '- 谣言 (yáoyán) : rumeur\n' +
@@ -1564,17 +1564,17 @@ export const b12MedFakeNewsLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pense aux verbes critiques 相信 (croire), 怀疑 (douter), 确认 (confirmer), 证实 (prouver).',
     bodyEn:
-      '假新闻 (jiǎ xīn wén, fake news) is a core topic on Chinese networks.\n' +
+      '假新闻 (fake news) is a core topic on Chinese networks.\n' +
       '\n' +
       'Verification vocab:\n' +
       '\n' +
-      '- 谣言 (yáo yán, rumor)\n' +
-      '- 辟谣 (pì yáo, refute a rumor)\n' +
-      '- 真相 (zhēn xiàng, truth)\n' +
-      '- 来源 (lái yuán, source)\n' +
-      '- 证据 (zhèng jù, evidence)\n' +
+      '- 谣言 (rumor)\n' +
+      '- 辟谣 (refute a rumor)\n' +
+      '- 真相 (truth)\n' +
+      '- 来源 (source)\n' +
+      '- 证据 (evidence)\n' +
       '\n' +
-      'Questions to ask: 这条新闻的来源是哪里? / 有没有证据? / 是谁发布的? Critical verbs: 相信 (believe), 怀疑 (huái yí, doubt), 确认 (què rèn, confirm), 证实 (zhèng shí, prove).',
+      'Questions to ask: 这条新闻的来源是哪里? / 有没有证据? / 是谁发布的? Critical verbs: 相信 (believe), 怀疑 (doubt), 确认 (confirm), 证实 (prove).',
     items: [
       { hanzi: '假新闻', pinyin: 'jiǎxīnwén', meaning: 'fake news', meaningEn: 'fake news', audio: 'audio/hsk5/hsk5_假.wav' },
       { hanzi: '谣言', pinyin: 'yáoyán', meaning: 'rumeur', meaningEn: 'rumor', audio: 'audio/hsk6/hsk6_谣言.wav' },
@@ -1586,9 +1586,9 @@ export const b12MedFakeNewsLearnSections: LessonV2LearnSection[] = [
       { hanzi: '证实', pinyin: 'zhèngshí', meaning: 'prouver, confirmer', meaningEn: 'confirm, prove', audio: 'audio/hsk5/hsk5_证实.wav' }
     ],
     tip:
-      'Le terme 标题党 (biāo tí dǎng, « secte du titre ») désigne les sites à clickbait — titres racoleurs, contenu décevant. Bon test anti-fake : si le titre promet 震惊 (choquant !), méfie-toi.',
+      'Le terme 标题党 (« secte du titre ») désigne les sites à clickbait — titres racoleurs, contenu décevant. Bon test anti-fake : si le titre promet 震惊 (choquant !), méfie-toi.',
     tipEn:
-      'The term 标题党 (biāo tí dǎng, «headline cult») designates clickbait sites — flashy titles, disappointing content. Good anti-fake test: if the headline screams 震惊 (shocking!), be wary.'
+      'The term 标题党 («headline cult») designates clickbait sites — flashy titles, disappointing content. Good anti-fake test: if the headline screams 震惊 (shocking!), be wary.'
   }
 ];
 
@@ -1746,7 +1746,7 @@ export const b12ConvM2LearnSections: LessonV2LearnSection[] = [
       '- 那时候我们… (back then we…)\n' +
       '- 想起来真怀念 (thinking about it I really miss it)\n' +
       '\n' +
-      '怀念 (huáiniàn, miss, long for — emotional) is THE Chinese key word for nostalgia. 我很怀念那段时光 = I really miss that time. For childhood memories: 小时候我经常… (as a child I often…). Culturally charged phrase: 时间过得真快 (time flies) — almost ritual when speaking of the past. Expected reply: 是啊，转眼就… (yeah, in a blink…).',
+      '怀念 (miss, long for — emotional) is THE Chinese key word for nostalgia. 我很怀念那段时光 = I really miss that time. For childhood memories: 小时候我经常… (as a child I often…). Culturally charged phrase: 时间过得真快 (time flies) — almost ritual when speaking of the past. Expected reply: 是啊，转眼就… (yeah, in a blink…).',
     items: [
       { hanzi: '记得', pinyin: 'jìde', meaning: 'se souvenir', meaningEn: 'remember', audio: 'audio/hsk3/hsk3_记得.wav' },
       { hanzi: '怀念', pinyin: 'huáiniàn', meaning: 'manquer (émotionnel)', meaningEn: 'long for', audio: 'audio/hsk5/hsk5_怀念.wav' },
@@ -1772,9 +1772,9 @@ export const b12ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Pour conclure une discussion nostalgique : 那都是过去的事了 (c\'est du passé), 现在好好过 (vivons bien maintenant).\n' +
       '\n' +
-      'Attention : la phrase poétique 时光荏苒 (shíguāng rěnrǎn, le temps passe en silence) est un **chengyu lettré**, à utiliser avec parcimonie.',
+      'Attention : la phrase poétique 时光荏苒 (le temps passe en silence) est un **chengyu lettré**, à utiliser avec parcimonie.',
     bodyEn:
-      '这张照片让我想起 X = this photo reminds me of X. 这个东西陪了我很多年 = this object kept me company for years. 充满回忆 (full of memories). For lost-touch friends: 不知道他现在怎么样 (I wonder how he\'s doing now). To close a nostalgic discussion: 那都是过去的事了 (it\'s all past now), 现在好好过 (let\'s live well now). Poetic phrase: 时光荏苒 (shíguāng rěnrǎn, time flows quietly — literary chengyu, use sparingly).',
+      '这张照片让我想起 X = this photo reminds me of X. 这个东西陪了我很多年 = this object kept me company for years. 充满回忆 (full of memories). For lost-touch friends: 不知道他现在怎么样 (I wonder how he\'s doing now). To close a nostalgic discussion: 那都是过去的事了 (it\'s all past now), 现在好好过 (let\'s live well now). Poetic phrase: 时光荏苒 (time flows quietly — literary chengyu, use sparingly).',
     items: [
       { hanzi: '照片', pinyin: 'zhàopiān', meaning: 'photo', meaningEn: 'photo', audio: 'audio/hsk3/hsk3_照片.wav' },
       { hanzi: '陪', pinyin: 'péi', meaning: 'accompagner', meaningEn: 'accompany', audio: 'audio/hsk4/hsk4_陪.wav' },
@@ -1977,7 +1977,7 @@ export const b12ConvM5LearnSections: LessonV2LearnSection[] = [
       '- 硕士 (master)\n' +
       '- 博士 (PhD)\n' +
       '\n' +
-      'Degrees: 本科生 (undergrad), 研究生 (master/PhD student), 毕业生 (graduate). Verbs: 上课 (have class), 上学 (go to school), 考试 (take an exam), 复习 (review), 通过 (pass), 不及格 (fail). Phrase: 我大学学的是 X = at uni I studied X. Hot topic: 高考 (gāokǎo, the university entrance exam — equivalent to the SATs but with COLOSSAL stakes in China). Mentioning 高考 = immediately understood and charged.',
+      'Degrees: 本科生 (undergrad), 研究生 (master/PhD student), 毕业生 (graduate). Verbs: 上课 (have class), 上学 (go to school), 考试 (take an exam), 复习 (review), 通过 (pass), 不及格 (fail). Phrase: 我大学学的是 X = at uni I studied X. Hot topic: 高考 (the university entrance exam — equivalent to the SATs but with COLOSSAL stakes in China). Mentioning 高考 = immediately understood and charged.',
     items: [
       { hanzi: '本科', pinyin: 'běnkē', meaning: 'licence (Bac+3)', meaningEn: 'undergraduate', audio: 'audio/hsk5/hsk5_本科.wav' },
       { hanzi: '硕士', pinyin: 'shuòshì', meaning: 'master', meaningEn: 'master\'s', audio: 'audio/hsk5/hsk5_硕士.wav' },
@@ -2044,7 +2044,7 @@ export const b12ConvM6LearnSections: LessonV2LearnSection[] = [
       '- 这个教训我永远记得 : cette leçon, je m\'en souviendrai toujours\n' +
       '- 现在回头看，那次失败是宝贵的 : avec le recul, cet échec a été précieux\n' +
       '\n' +
-      'Vocabulaire : 失败 (échec), 教训 (**leçon** au sens « ce que ça m\'a appris »), 反思 (réfléchir, auto-critique), 改进 (améliorer).',
+      'Vocabulaire : 失败 (échec), 教训 (**leçon** au sens « ce que ça m\'a appris »), 反思 (auto-critique), 改进 (améliorer).',
     bodyEn:
       'Start humbly: 我之前犯过一个错误 (I made a mistake before), 那次经历让我学到很多 (that experience taught me a lot). Chinese people VALUE clear-eyed failure narratives — a sign of maturity 成熟 (chéngshú).\n' +
       '\n' +
@@ -2120,7 +2120,7 @@ export const b12ConvM7LearnSections: LessonV2LearnSection[] = [
     title: 'Donner et recevoir un feedback pro',
     titleEn: 'Give and receive professional feedback',
     body:
-      '反馈 (fǎnkuì, feedback) est le mot moderne ; à côté tu trouveras 总结 (bilan), 评价 (évaluation), 评估 (évaluer).\n' +
+      '反馈 (feedback) est le mot moderne ; à côté tu trouveras 总结 (bilan), 评价 (évaluation), 评估 (évaluer).\n' +
       '\n' +
       'Donner un feedback (sandwich obligatoire) :\n' +
       '- positif : 我觉得你做得很好，特别是 X (très bien fait, surtout X)\n' +
@@ -2141,7 +2141,7 @@ export const b12ConvM7LearnSections: LessonV2LearnSection[] = [
       '- 我会认真考虑 (I\'ll think seriously)\n' +
       '- 你能再具体一点吗？(can you be more specific?)\n' +
       '\n' +
-      '反馈 (fǎnkuì, feedback) is the modern word. Beyond: 总结 (summary), 评价 (evaluation), 评估 (assess). Always stay verbally open even if you disagree — reaction shows, thanks is heard.',
+      '反馈 (feedback) is the modern word. Beyond: 总结 (summary), 评价 (evaluation), 评估 (assess). Always stay verbally open even if you disagree — reaction shows, thanks is heard.',
     items: [
       { hanzi: '反馈', pinyin: 'fǎnkuì', meaning: 'feedback', meaningEn: 'feedback', audio: 'audio/hsk6/hsk6_反馈.wav' },
       { hanzi: '改进', pinyin: 'gǎijìn', meaning: 'améliorer', meaningEn: 'improve', audio: 'audio/hsk5/hsk5_改进.wav' },
@@ -2164,7 +2164,7 @@ export const b12ConvM7LearnSections: LessonV2LearnSection[] = [
       'Phrases-cadres :\n' +
       '- préface : 我有一个不同的想法，您看一下 (j\'ai une idée différente, qu\'en pensez-vous ?)\n' +
       '- proposer : 我们是不是可以考虑 X ? (et si on envisageait X ?)\n' +
-      '- en cas de refus : 好的，我明白了 (très bien, je comprends — puis accepter sans rancune)\n' +
+      '- en cas de refus : 好的，我明白了 (je comprends — puis accepter sans rancune)\n' +
       '- insister via le risque : 这个方案有一个潜在的风险 (cette proposition a un risque potentiel — focalise sur le **risque**, pas sur le supérieur)\n' +
       '- sortie de secours : 我只是从我的角度提一个建议 (c\'est juste une suggestion de mon point de vue)',
     bodyEn:
@@ -2222,7 +2222,7 @@ export const b12NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : à l\'oral, 马上 partout ; à l\'écrit pro, alterne 立刻 et 立即.',
     bodyEn:
-      '马上 (mǎshàng, right away — STANDARD oral). 我马上来 = I\'m coming right away. The most common promise in China; understand as «soon» rather than LITERAL «right away» (tolerance ~10 min). 立刻 (lìkè, immediately — slightly more written/serious). 我立刻处理 = I\'ll handle it immediately. 立即 (lìjí, this instant — formal, written, orders). 立即停止 = stop this instant. Hierarchy: 马上 (oral, elastic) < 立刻 (serious) < 立即 (formal/order). In speech, 马上 everywhere. In pro writing, alternate 立刻 and 立即.',
+      '马上 (right away — STANDARD oral). 我马上来 = I\'m coming right away. The most common promise in China; understand as «soon» rather than LITERAL «right away» (tolerance ~10 min). 立刻 (immediately — slightly more written/serious). 我立刻处理 = I\'ll handle it immediately. 立即 (this instant — formal, written, orders). 立即停止 = stop this instant. Hierarchy: 马上 (oral, elastic) < 立刻 (serious) < 立即 (formal/order). In speech, 马上 everywhere. In pro writing, alternate 立刻 and 立即.',
     items: [
       { hanzi: '马上', pinyin: 'mǎshàng', meaning: 'tout de suite', meaningEn: 'right away', audio: 'audio/hsk3/hsk3_马上.wav' },
       { hanzi: '立刻', pinyin: 'lìkè', meaning: 'immédiatement', meaningEn: 'immediately', audio: 'audio/hsk5/hsk5_立刻.wav' },
@@ -2498,11 +2498,11 @@ export const b12NuancesM6LearnSections: LessonV2LearnSection[] = [
       '- 要是 (yàoshì) : si — **oral familier**\n' +
       '- 如果 (rúguǒ) : si — **neutre**, oral et écrit. 如果你来 (si tu viens)\n' +
       '- 假如 (jiǎrú) : si — **écrit formel**\n' +
-      '- 一旦 (yídàn) : une fois que / dès que — hypothèse + **urgence/irréversibilité**. 一旦决定就不能改 (une fois décidé, on ne peut plus changer)\n' +
+      '- 一旦 (yídàn) : une fois que / dès que — hypothèse + **urgence/irréversibilité**. 一旦决定就不能改 (on ne peut plus changer)\n' +
       '\n' +
       'Astuce : 如果 = simple hypothèse ; 一旦 = hypothèse + **irréversibilité**. À l\'écrit B1.2, alterne pour le rythme.',
     bodyEn:
-      '如果 (rúguǒ) = if (hypothesis — neutral, oral and written). 如果你来 = if you come. 一旦 (yídàn) = once / as soon as (STRONG hypothesis + more formal). 一旦决定就不能改 = once decided, can\'t be changed. Difference: 如果 = simple hypothesis; 一旦 = hypothesis + URGENCY/IRREVERSIBILITY. In B1.2 writing, alternate for rhythm. Variants: 假如 (jiǎrú, if — formal written), 要是 (yàoshì, if — casual oral). Hierarchy: 要是 (casual oral) < 如果 (neutral) < 假如 (written) < 一旦 (urgency/irreversibility).',
+      '如果 (rúguǒ) = if (hypothesis — neutral, oral and written). 如果你来 = if you come. 一旦 (yídàn) = once / as soon as (STRONG hypothesis + more formal). 一旦决定就不能改 = once decided, can\'t be changed. Difference: 如果 = simple hypothesis; 一旦 = hypothesis + URGENCY/IRREVERSIBILITY. In B1.2 writing, alternate for rhythm. Variants: 假如 (if — formal written), 要是 (if — casual oral). Hierarchy: 要是 (casual oral) < 如果 (neutral) < 假如 (written) < 一旦 (urgency/irreversibility).',
     items: [
       { hanzi: '如果', pinyin: 'rúguǒ', meaning: 'si (hypothèse)', meaningEn: 'if (hypothesis)', audio: 'audio/hsk3/hsk3_如果.wav' },
       { hanzi: '一旦', pinyin: 'yídàn', meaning: 'dès que / une fois que', meaningEn: 'once', audio: 'audio/hsk5/hsk5_一旦.wav' },
@@ -2523,7 +2523,7 @@ export const b12NuancesM7LearnSections: LessonV2LearnSection[] = [
     title: '每 + 都 — chaque… (parallélisme obligatoire)',
     titleEn: '每 + 都 — every… (mandatory parallelism)',
     body:
-      '每 (měi, **chaque**) doit être suivi presque **obligatoirement** de 都 (tous) dans la 2e partie de la phrase. Sans 都, la phrase sonne incomplète.\n' +
+      '每 (**chaque**) doit être suivi presque **obligatoirement** de 都 (tous) dans la 2e partie de la phrase. Sans 都, la phrase sonne incomplète.\n' +
       '\n' +
       'Exemples-types :\n' +
       '- 每个人都喜欢 : chaque personne aime (tout le monde aime)\n' +
@@ -2542,7 +2542,7 @@ export const b12NuancesM7LearnSections: LessonV2LearnSection[] = [
       '- 每天 (every day)\n' +
       '- 每次 (every time)\n' +
       '\n' +
-      'Common mistake: 每个人喜欢 ✗ → 每个人都喜欢 ✓. Synonym: 任何 (rènhé, any) — 任何人都… (anyone…). Hierarchy: 每 (every, exhaustive enumeration) < 任何 (any, zero exception) < 凡是 (凡是…的人都…, formal: every X who…).',
+      'Common mistake: 每个人喜欢 ✗ → 每个人都喜欢 ✓. Synonym: 任何 (any) — 任何人都… (anyone…). Hierarchy: 每 (every, exhaustive enumeration) < 任何 (any, zero exception) < 凡是 (凡是…的人都…, formal: every X who…).',
     items: [
       { hanzi: '每', pinyin: 'měi', meaning: 'chaque', meaningEn: 'every', audio: 'audio/hsk2/hsk2_每.wav' },
       { hanzi: '任何', pinyin: 'rènhé', meaning: 'n\'importe quel', meaningEn: 'any', audio: 'audio/hsk4/hsk4_任何.wav' },
@@ -2663,7 +2663,7 @@ export const b12NuancesZenmeEmotionalLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Ex : 这个菜怎么这么贵 (zhège cài zěnme zhème guì) « il est HYPER cher, ce plat ! ». C\'est plus une plainte qu\'une demande de tarif détaillé.\n' +
       '\n' +
-      'Autres adjectifs qui marchent : 慢 (màn, lent), 冷 (lěng, froid), 难 (nán, difficile), 远 (yuǎn, loin)…',
+      'Autres adjectifs qui marchent : 慢 (lent), 冷 (froid), 难 (difficile), 远 (loin)…',
     bodyEn:
       'These 3 structures are NOT hunting for real info: the speaker REACTS to something shocking. 怎么会 + verb: «how is it possible that…?». 会 adds the sense of possibility. Ex: 你怎么会这么说 = «how can you say something like that?» (shock, not a real question). Can stand alone: 怎么会? = «no way». Or intensified: 怎么会呢? with 呢 for extra disbelief. 怎么这样: «what kind of way is that? / how can you be like that?». Compact, emotionally loaded. Ex: 你怎么这样 = «how can you act like that?» (disappointment, light reproach). Variant: 怎么会这样? leans toward disbelief rather than complaint. 怎么这么 + adjective: «why is it so X!». Surprise or complaint about a DEGREE. 这么 adds intensity. Ex: 这个菜怎么这么贵 = «this dish is SO expensive!». It\'s more a complaint than a request for a detailed price. Other adjectives that work: 慢 (slow), 冷 (cold), 难 (hard), 远 (far)…',
     items: [
@@ -3014,7 +3014,7 @@ export const b12NuancesAlmostAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Registre formel/écrit : 险些 (xiǎnxiē) — même sens, ton dramatique/littéraire. Ex : 他险些出事 (tā xiǎnxiē chūshì) « il a failli avoir un accident » (dans un rapport de presse).',
     bodyEn:
-      '差点儿 (chà diǎnr, also written 差一点儿) expresses that an action COULD have happened but DID NOT. It\'s the French «within a hair of», the narrow escape. CRUCIAL point: the action did NOT happen. If you say 我差点儿忘了 (wǒ chà diǎnr wàng le), you did NOT forget — you remembered just in time. Structure: subject + 差点儿 + verb + (了). Ex: 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) «he almost fell» (he didn\'t fall). Ex: 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) «I almost forgot your birthday» (but I remembered). Emotional coloring: relief, surprise, sometimes regret. Used in lively speech. Variant with 就: 差点儿就... to stress «by a hair». Ex: 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) «I REALLY almost was late» (but I wasn\'t). Formal/written register: 险些 (xiǎnxiē) — same meaning, dramatic/literary tone. Ex: 他险些出事 (tā xiǎnxiē chūshì) «he narrowly avoided an accident» (in a news report).',
+      '差点儿 (also written 差一点儿) expresses that an action COULD have happened but DID NOT. It\'s the French «within a hair of», the narrow escape. CRUCIAL point: the action did NOT happen. If you say 我差点儿忘了 (wǒ chà diǎnr wàng le), you did NOT forget — you remembered just in time. Structure: subject + 差点儿 + verb + (了). Ex: 他差点儿摔倒 (tā chà diǎnr shuāi dǎo) «he almost fell» (he didn\'t fall). Ex: 我差点儿忘了你的生日 (wǒ chà diǎnr wàng le nǐ de shēng rì) «I almost forgot your birthday» (but I remembered). Emotional coloring: relief, surprise, sometimes regret. Used in lively speech. Variant with 就: 差点儿就... to stress «by a hair». Ex: 我差点儿就迟到了 (wǒ chà diǎnr jiù chí dào le) «I REALLY almost was late» (but I wasn\'t). Formal/written register: 险些 (xiǎnxiē) — same meaning, dramatic/literary tone. Ex: 他险些出事 (tā xiǎnxiē chūshì) «he narrowly avoided an accident» (in a news report).',
     items: [
       { hanzi: '差点儿', pinyin: 'chàdiǎnér', meaning: 'à deux doigts de, failli', meaningEn: 'almost, nearly (didn\'t happen)', audio: 'audio/hsk4/hsk4_差点儿.wav' },
       { hanzi: '摔倒', pinyin: 'shuāidǎo', meaning: 'tomber, trébucher', meaningEn: 'to fall over', audio: 'audio/hsk4/hsk4_摔倒.wav' },
@@ -4091,7 +4091,7 @@ export const b12GrammarReduplicationAdvancedLearnSections: LessonV2LearnSection[
       '\n' +
       'Attention : 好好 n\'est PAS le sens de « pas mal » (qui est 还好). Ne pas confondre.',
     bodyEn:
-      '好好 (hǎo hāo, often 2nd syllable in 1st tone) looks like a simple 好 reduplication, but has become a SPECIAL, FROZEN ADVERB meaning «properly / well / thoroughly / neatly». Placed JUST BEFORE the verb, NO need for 地. Ultra-frequent contexts: 好好学习 (hǎo hāo xué xí) «study well». Famous slogan: 好好学习，天天向上 («study well, progress every day»). 好好吃饭 (hǎo hāo chī fàn) «eat properly». What parents say. 好好休息 «rest well». 好好想想 «think it over». Note: combines 好好 + reduplication. 好好玩 «have fun». Ex: 祝你们好好玩 «have fun!». Complement version 好好的 = «neatly done, perfectly». Ex: 他把车洗得好好的 «he washed the car nicely». Ex: 房间收拾得好好的 «room is perfectly tidy». Combines with verb reduplication for extra warmth: 好好看看 (hǎo hāo kàn kan) «take a good careful look». Ex: 好好听听 «listen carefully». Careful: 好好 is NOT «not bad» (that\'s 还好). Don\'t confuse.',
+      '好好 (often 2nd syllable in 1st tone) looks like a simple 好 reduplication, but has become a SPECIAL, FROZEN ADVERB meaning «properly / well / thoroughly / neatly». Placed JUST BEFORE the verb, NO need for 地. Ultra-frequent contexts: 好好学习 (hǎo hāo xué xí) «study well». Famous slogan: 好好学习，天天向上 («study well, progress every day»). 好好吃饭 (hǎo hāo chī fàn) «eat properly». What parents say. 好好休息 «rest well». 好好想想 «think it over». Note: combines 好好 + reduplication. 好好玩 «have fun». Ex: 祝你们好好玩 «have fun!». Complement version 好好的 = «neatly done, perfectly». Ex: 他把车洗得好好的 «he washed the car nicely». Ex: 房间收拾得好好的 «room is perfectly tidy». Combines with verb reduplication for extra warmth: 好好看看 (hǎo hāo kàn kan) «take a good careful look». Ex: 好好听听 «listen carefully». Careful: 好好 is NOT «not bad» (that\'s 还好). Don\'t confuse.',
     items: [
       { hanzi: '好好', pinyin: 'hǎohǎo', meaning: 'comme il faut, bien', meaningEn: 'properly, well', audio: 'audio/hsk1/hsk1_好.wav' },
       { hanzi: '好好学习', pinyin: 'hǎohǎoxuéxí', meaning: 'bien étudier', meaningEn: 'study well', audio: 'audio/hsk1/hsk1_学习.wav' },
@@ -4358,7 +4358,7 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       '\n' +
       '要不 (yào bu) = « ou sinon... / que dis-tu de... ». Encore plus décontracté, atmosphère de brainstorming.\n' +
       '\n' +
-      'Contraction de 要不然 (yào bù rán, « si ce n\'est pas ainsi »).\n' +
+      'Contraction de 要不然 (« si ce n\'est pas ainsi »).\n' +
       '\n' +
       'Structure : [situation]，要不 + [suggestion] + (吧/?).\n' +
       '- Ex : 今天有点累，要不我们改天再见 ? (py jīn tiān yǒu diǎn lèi, yào bù wǒmen gǎi tiān zài jiàn) « je suis un peu crevé aujourd\'hui, on se voit un autre jour ? ». Cherche l\'accord.\n' +
@@ -4369,7 +4369,7 @@ export const b12NuancesChoicesAdvancedLearnSections: LessonV2LearnSection[] = [
       '- 要不 = suggestion spontanée, « et si...? ».\n' +
       '- 与其...不如 = analyse comparée, « plutôt que... mieux vaut... ».',
     bodyEn:
-      '不如 ALONE (without 与其) = «what if we... / might as well...». Gentle suggestion based on the current situation. Structure: [current situation], 不如 + [alternative] + 吧. Ex: 外面太冷了，不如我们在家吃火锅吧 «it\'s too cold outside, how about hot pot at home?» — 吧 makes it friendly. Ex: 你不如给他打个电话 «why not give him a call?». 要不 (yào bu) = «or how about... / what if...». Even more casual, brainstorming vibe. Contraction of 要不然 (yào bù rán, «if not this»). Structure: [situation], 要不 + [suggestion] + (吧/?). Ex: 今天有点累，要不我们改天再见? «I\'m tired today, shall we meet another day?» — seeks agreement. Ex: 我们迷路了，要不问问那个人吧 «we\'re lost, how about asking that person?». Nuances between the 3 suggestions: 不如 = thoughtful, «might as well»; 要不 = spontaneous, «what if?»; 与其...不如 = comparative analysis, «rather than... better...».',
+      '不如 ALONE (without 与其) = «what if we... / might as well...». Gentle suggestion based on the current situation. Structure: [current situation], 不如 + [alternative] + 吧. Ex: 外面太冷了，不如我们在家吃火锅吧 «it\'s too cold outside, how about hot pot at home?» — 吧 makes it friendly. Ex: 你不如给他打个电话 «why not give him a call?». 要不 (yào bu) = «or how about... / what if...». Even more casual, brainstorming vibe. Contraction of 要不然 («if not this»). Structure: [situation], 要不 + [suggestion] + (吧/?). Ex: 今天有点累，要不我们改天再见? «I\'m tired today, shall we meet another day?» — seeks agreement. Ex: 我们迷路了，要不问问那个人吧 «we\'re lost, how about asking that person?». Nuances between the 3 suggestions: 不如 = thoughtful, «might as well»; 要不 = spontaneous, «what if?»; 与其...不如 = comparative analysis, «rather than... better...».',
     items: [
       { hanzi: '不如', pinyin: 'bùrú', meaning: 'et si... / autant...', meaningEn: 'how about / might as well', audio: 'audio/hsk4/hsk4_不如.wav' },
       { hanzi: '要不', pinyin: 'yào bu', meaning: 'ou sinon / et si', meaningEn: 'or how about / what if', audio: 'audio/hsk3/hsk3_要不.wav' },

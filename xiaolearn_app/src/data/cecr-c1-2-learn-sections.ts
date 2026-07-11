@@ -34,10 +34,10 @@ export const c12ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Vocab:\n' +
       '\n' +
-      '- 纠纷 (jiūfēn, dispute)\n' +
-      '- 起诉 (qǐsù, sue)\n' +
-      '- 仲裁 (zhòngcái, arbitration)\n' +
-      '- 调解 (tiáojiě, mediation)\n' +
+      '- 纠纷 (dispute)\n' +
+      '- 起诉 (sue)\n' +
+      '- 仲裁 (arbitration)\n' +
+      '- 调解 (mediation)\n' +
       '\n' +
       'Ask analysis: 您能否帮我分析一下风险？(could you analyze the risk?). Key phrase: 如果走法律程序，胜诉的可能性有多大？(if we litigate, what are the win chances?). In Chinese culture, 调解 (mediation) is PRIVILEGED over 诉讼 (lawsuit) — saying «我们先尝试调解吧» shows maturity. Lawsuits = wasted time + lost face.',
     items: [
@@ -116,7 +116,7 @@ export const c12ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Pour pousser sans braquer :\n' +
       '- 我们的诚意是希望长期合作 — notre sincérité vise une collaboration long-terme\n' +
-      '- Le mot-clé 长期 (chángqī, **long-terme**) est central en business chinois\n' +
+      '- Le mot-clé 长期 (**long-terme**) est central en business chinois\n' +
       '\n' +
       'RÈGLE D\'OR : **éviter le « non » direct**. En culture chinoise, dire 不 frontalement fait perdre la face aux deux parties. Préfère toujours l\'euphémisme.',
     bodyEn:
@@ -191,9 +191,9 @@ export const c12ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Key verbs:\n' +
       '\n' +
-      '- 倡导 (chàngdǎo, advocate)\n' +
-      '- 呼吁 (hūyù, call upon)\n' +
-      '- 推动 (tuīdòng, push forward)\n' +
+      '- 倡导 (advocate)\n' +
+      '- 呼吁 (call upon)\n' +
+      '- 推动 (push forward)\n' +
       '\n' +
       'Motivational combo: 让我们携手 X (let\'s join hands for X — 携手 is very formal). Close: 让我们共同努力，把这个梦想变成现实 (turn this dream into reality). Tone: FORMAL but not overly lyrical.',
     items: [
@@ -413,7 +413,7 @@ export const c12ConvM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : présenter un risque **sans mesures déjà prises** = perte de crédibilité immédiate. La séquence « risque → ce qu\'on a déjà fait → recommandation » montre que tu **maîtrises** la situation.',
     bodyEn:
-      'Structure: 风险描述 → 影响评估 → 当前应对措施 → 建议. Phrases: 我必须向各位董事报告一个潜在风险 (I must report a potential risk to the board). 潜在 (qiánzài, latent/potential) = governance keyword. Quantify: 影响可能在 X 之间. Measures: 我们已经采取的措施包括 X. Ask: 我建议董事会授权 X (I recommend the board authorize X). 授权 (authorize) is the governance keyword. Close: 我会随时向董事会汇报进展. Tone: SERIOUS, FACTUAL, never alarmist.',
+      'Structure: 风险描述 → 影响评估 → 当前应对措施 → 建议. Phrases: 我必须向各位董事报告一个潜在风险 (I must report a potential risk to the board). 潜在 (latent/potential) = governance keyword. Quantify: 影响可能在 X 之间. Measures: 我们已经采取的措施包括 X. Ask: 我建议董事会授权 X (I recommend the board authorize X). 授权 (authorize) is the governance keyword. Close: 我会随时向董事会汇报进展. Tone: SERIOUS, FACTUAL, never alarmist.',
     items: [
       { hanzi: '董事', pinyin: 'dǒngshì', meaning: 'administrateur', meaningEn: 'board director', audio: 'audio/hsk6/hsk6_董事.wav' },
       { hanzi: '潜在', pinyin: 'qiánzài', meaning: 'latent, potentiel', meaningEn: 'latent, potential', audio: 'audio/hsk6/hsk6_潜在.wav' },
@@ -1130,7 +1130,7 @@ export const c12ChengyuAdvancedM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les deux références **classiques** :\n' +
       '- **韦编三绝** (wéibiānsānjué, « lanières rompues 3 fois ») — Confucius aurait tant lu son 易经 que les sangles de cuir des lattes de bambou se sont brisées 3 fois. Sens : **lecture assidue et profonde**\n' +
-      '- **学而不厌** (xuéérbúyàn, « étudier sans se lasser ») — issu des 论语 : 学而不厌，诲人不倦 (étudier sans se lasser, enseigner sans se fatiguer). Devise du **professeur idéal**\n' +
+      '- **学而不厌** (xuéérbúyàn, « étudier sans se lasser ») — issu des 论语 : 学而不厌，诲人不倦 (enseigner sans se fatiguer). Devise du **professeur idéal**\n' +
       '\n' +
       'Usages dans la conversation lettrée :\n' +
       '- 这本书我已经韦编三绝 — j\'ai relu ce livre des dizaines de fois\n' +
@@ -1138,7 +1138,7 @@ export const c12ChengyuAdvancedM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer un mentor académique chinois, citer directement les 论语 — **您是学而不厌，诲人不倦**. Compliment **suprême** : tu signales connaissance des classiques **et** reconnaissance de sa qualité.',
     bodyEn:
-      '韦编三绝 («[book] straps broken 3 times»): Confucius, passionate reader of 易经 (Yìjīng, Book of Changes), reportedly read his copy so often that the leather straps binding the bamboo slats broke 3 times. Meaning: ASSIDUOUS and deep reading. For a monumental intellectual work: 这本书我已经韦编三绝 (I\'ve reread this book dozens of times). 学而不厌 («study without weariness») comes from 论语 (Analects): 学而不厌，诲人不倦 (study without tiring, teach without flagging). Motto of the ideal teacher. To praise a mentor: «老师真是学而不厌». Intellectual combo: citing these 2 chengyu in an education discussion = IMMEDIATE C1.2 signal.',
+      '韦编三绝 («[book] straps broken 3 times»): Confucius, passionate reader of 易经 (Book of Changes), reportedly read his copy so often that the leather straps binding the bamboo slats broke 3 times. Meaning: ASSIDUOUS and deep reading. For a monumental intellectual work: 这本书我已经韦编三绝 (I\'ve reread this book dozens of times). 学而不厌 («study without weariness») comes from 论语 (Analects): 学而不厌，诲人不倦 (study without tiring, teach without flagging). Motto of the ideal teacher. To praise a mentor: «老师真是学而不厌». Intellectual combo: citing these 2 chengyu in an education discussion = IMMEDIATE C1.2 signal.',
     items: [
       { hanzi: '韦编三绝', pinyin: 'wéibiānsānjué', meaning: 'lecture obsessionnelle', meaningEn: 'obsessive reading', audio: 'audio/hsk6/hsk6_韦编.wav' },
       { hanzi: '学而不厌', pinyin: 'xuéérbùyàn', meaning: 'étudier sans se lasser', meaningEn: 'study tirelessly', audio: 'audio/hsk6/hsk6_学而.wav' },
@@ -1170,7 +1170,7 @@ export const c12ChengyuAdvancedM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le 歇后语 est un **test de complicité culturelle**. Si l\'autre **rit** en complétant la chute, vous êtes au même niveau d\'initiation. S\'il demande « 然后呢 ? » — c\'est un débutant, adapte ton registre. Apprends 5-10 歇后语 standards pour les déployer.',
     bodyEn:
-      'A 歇后语 works in 2 steps: (1) an enigmatic scene, (2) a punchline revealing the meaning. Often the punchline rests on a PHONETIC PUN. Iconic example: 外甥打灯笼 — 照舅(旧). «The nephew holds the lantern: lights up his uncle (= as before)». 照舅 (zhào jiù, light the uncle) sounds like 照旧 (zhào jiù, as usual). Orally, you often say ONLY the 1st part: «这事啊，外甥打灯笼…» and the other laughs, completing internally. If you can place the 1st part + your listeners understand, it\'s a deep CULTURAL COMPLICITY moment. Learn 5-10 standard 歇后语 to deploy.',
+      'A 歇后语 works in 2 steps: (1) an enigmatic scene, (2) a punchline revealing the meaning. Often the punchline rests on a PHONETIC PUN. Iconic example: 外甥打灯笼 — 照舅(旧). «The nephew holds the lantern: lights up his uncle (= as before)». 照舅 (light the uncle) sounds like 照旧 (as usual). Orally, you often say ONLY the 1st part: «这事啊，外甥打灯笼…» and the other laughs, completing internally. If you can place the 1st part + your listeners understand, it\'s a deep CULTURAL COMPLICITY moment. Learn 5-10 standard 歇后语 to deploy.',
     items: [
       { hanzi: '歇后语', pinyin: 'xiēhòuyǔ', meaning: 'expression à chute', meaningEn: 'two-part allegorical', audio: 'audio/hsk6/hsk6_歇后.wav' },
       { hanzi: '外甥', pinyin: 'wàishēng', meaning: 'neveu (côté maternel)', meaningEn: 'nephew (maternal)', audio: 'audio/hsk6/hsk6_外甥.wav' },
@@ -1411,7 +1411,7 @@ export const c12BusinessM3LearnSections: LessonV2LearnSection[] = [
       '- 交货期 (jiāohuòqī) — date de livraison\n' +
       '- 工期 (gōngqī) — durée de chantier\n' +
       '\n' +
-      'RÈGLE D\'OR : pour qu\'un document soit légalement contraignant en Chine, il faut **signature ET sceau**. Le 公章 (gōngzhāng, sceau rouge rond officiel) prime sur la signature individuelle. Sans 公章, refuse poliment : « 麻烦请加盖公章 ».',
+      'RÈGLE D\'OR : pour qu\'un document soit légalement contraignant en Chine, il faut **signature ET sceau**. Le 公章 (sceau rouge rond officiel) prime sur la signature individuelle. Sans 公章, refuse poliment : « 麻烦请加盖公章 ».',
     bodyEn:
       'Vocab: 付款方式 (payment mode: 现金/转账/支票 cash/wire/check), 定金 (deposit, usually 30%), 尾款 (balance, on delivery), 分期 (installments), 押金 (refundable deposit). Timing: 交货期 (delivery date), 工期 (project duration). Penalty: 违约金 (breach penalty, fixed by contract). 盖章 (affix seal): IN CHINA, the company\'s OFFICIAL SEAL (公章, red round seal) prevails over individual signature. Without seal, a contract remains WEAK even if signed. For a doc to be legally binding: signature AND seal. Seals are strictly controlled by 财务 (finance dept) — their use is a solemn act.',
     items: [
@@ -1521,8 +1521,8 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
       'Tableau type d\'un Chinois né en 2010 :\n' +
       '- 2013-16 — 幼儿园 (maternelle, 3 ans)\n' +
       '- 2016-22 — 小学 (primaire, 6 ans, examens internes)\n' +
-      '- 2022-25 — 初中 (collège, 3 ans, fin par 中考)\n' +
-      '- 2025-28 — 高中 (lycée, 3 ans, fin par 高考)\n' +
+      '- 2022-25 — 初中 (3 ans, fin par 中考)\n' +
+      '- 2025-28 — 高中 (3 ans, fin par 高考)\n' +
       '- 2028-32 — 本科 (licence, 4 ans)\n' +
       '- Puis éventuellement 硕士 (master) et 博士 (doctorat)\n' +
       '\n' +
@@ -1540,7 +1540,7 @@ export const c12EducationSystemM1LearnSections: LessonV2LearnSection[] = [
       '- maybe 2032-35 master\n' +
       '- 2035-40 PhD\n' +
       '\n' +
-      '义务教育 (compulsory schooling) covers 9 years (primary + middle), free. High school and university paid (modest in public, expensive in private). Class hours: average Chinese child = 8am-5pm school + 7pm-10pm homework/private tutoring. 鸡娃 (jīwá, «chicken kid») phenomenon: parents who over-push children academically. Major SOCIETAL topic — burnout, teen suicide, psychological pressure.',
+      '义务教育 (compulsory schooling) covers 9 years (primary + middle), free. High school and university paid (modest in public, expensive in private). Class hours: average Chinese child = 8am-5pm school + 7pm-10pm homework/private tutoring. 鸡娃 («chicken kid») phenomenon: parents who over-push children academically. Major SOCIETAL topic — burnout, teen suicide, psychological pressure.',
     items: [
       { hanzi: '幼儿园', pinyin: 'yòuéryuán', meaning: 'maternelle', meaningEn: 'kindergarten', audio: 'audio/hsk5/hsk5_幼儿园.wav' },
       { hanzi: '义务教育', pinyin: 'yìwùjiàoyù', meaning: 'scolarité obligatoire', meaningEn: 'compulsory education', audio: 'audio/hsk6/hsk6_义务.wav' },
@@ -1624,7 +1624,7 @@ export const c12EducationSystemM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour souhaiter bonne chance à une famille — **祝您家孩子高考顺利，金榜题名 !** 金榜题名 = chéngyǔ impérial (réussir l\'examen mandarinal, son nom sur la liste rouge). Touche émotionnelle garantie.',
     bodyEn:
-      '高考 takes place every year June 7-9. Over 10 million candidates simultaneously. NATIONAL mobilization: traffic banned around exam centers, parents waiting all day, taxi drivers free for candidates, police present. Tradition: the mother wears a 旗袍 (qípáo, traditional dress) — 旗 sounds like «opening/success». The family eats a bowl of 鱼 (fish — homophone of 余 «surplus») the night before. The candidate holds a lucky charm (jade, Confucius medal). It\'s a NATIONAL event that suspends the country.\n' +
+      '高考 takes place every year June 7-9. Over 10 million candidates simultaneously. NATIONAL mobilization: traffic banned around exam centers, parents waiting all day, taxi drivers free for candidates, police present. Tradition: the mother wears a 旗袍 (traditional dress) — 旗 sounds like «opening/success». The family eats a bowl of 鱼 (fish — homophone of 余 «surplus») the night before. The candidate holds a lucky charm (jade, Confucius medal). It\'s a NATIONAL event that suspends the country.\n' +
       '\n' +
       'Vocab:\n' +
       '\n' +
@@ -1694,11 +1694,11 @@ export const c12EducationSystemM3LearnSections: LessonV2LearnSection[] = [
       '- Pandémie + tensions géopolitiques + xénophobie post-2020 ont déprécié certains diplômes étrangers\n' +
       '\n' +
       'Nouveau terme **ironique** :\n' +
-      '- 海带 (hǎidài, « algue marine ») — homophone de 海待 (« 海归 en attente ») = 海归 au chômage\n' +
+      '- 海带 (« algue marine ») — homophone de 海待 (« 海归 en attente ») = 海归 au chômage\n' +
       '\n' +
       'RÈGLE D\'OR : la valeur d\'un 海归 dépend désormais de l\'**université + du domaine**. 海归 d\'Oxford en physique = très valorisé ; 海归 d\'une école obscure en marketing = doute. Adapte ton CV : technique d\'abord, expérience culturelle ensuite.',
     bodyEn:
-      '海归 (hǎiguī, «sea turtle») = pun on 海归 («returned from overseas»). Designates a Chinese who studied abroad and returned. In 2000-2010: PRESTIGIOUS status, premium salaries, direct executive positions. Today (2020s): ambivalence. China educates its elites excellently, local universities rival Ivy League. Plus pandemic + geopolitical tensions + post-2020 xenophobia DEPRECIATED some foreign degrees. New term: 海带 (hǎidài, «seaweed» homophone of 海待 «海归 waiting») = unemployed 海归, ironic narrative. A 海归\'s value now depends on university + field. Oxford 海归 in physics = highly valued; obscure-school 海归 in marketing = doubt.',
+      '海归 («sea turtle») = pun on 海归 («returned from overseas»). Designates a Chinese who studied abroad and returned. In 2000-2010: PRESTIGIOUS status, premium salaries, direct executive positions. Today (2020s): ambivalence. China educates its elites excellently, local universities rival Ivy League. Plus pandemic + geopolitical tensions + post-2020 xenophobia DEPRECIATED some foreign degrees. New term: 海带 («seaweed» homophone of 海待 «海归 waiting») = unemployed 海归, ironic narrative. A 海归\'s value now depends on university + field. Oxford 海归 in physics = highly valued; obscure-school 海归 in marketing = doubt.',
     items: [
       { hanzi: '海归', pinyin: 'hǎiguī', meaning: 'diplômé d\'outre-mer rentré', meaningEn: 'returnee', audio: 'audio/hsk6/hsk6_海归.wav' },
       { hanzi: '留学', pinyin: 'liúxué', meaning: 'étudier à l\'étranger', meaningEn: 'study abroad', audio: 'audio/hsk5/hsk5_留学.wav' },

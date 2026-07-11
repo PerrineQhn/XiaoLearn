@@ -239,7 +239,7 @@ export const c22ConvM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : reconnaître le shanghainais à l’oreille = signe de **fin connaisseur** de la culture régionale chinoise.',
     bodyEn:
-      'Shanghainese 上海话 = dialect of the 吴语 (wúyǔ) subgroup, spoken in the Yangtze delta, ~80M speakers. Phonology very different from Mandarin (voiced consonants, nasal vowels). Politically marginalized since the 90s by Putonghua promotion, but stays alive in family speech and local pop culture. Greetings: 侬好 (nóng hǎo, hello, lit. «you good»), 谢谢侬 (xiè xiè nóng, thanks to you), 再会 (zài huì, goodbye). Pronoun 侬 (nóng) = Shanghainese «you» (≠ standard 你). Specific vocab: 阿拉 (ālā, we), 老克勒 (lǎokèlè, cosmopolitan gentleman — nod to 1930s Shanghai modernity). Recognizing Shanghainese by ear = sign of fine connoisseur of Chinese regional culture.',
+      'Shanghainese 上海话 = dialect of the 吴语 (wúyǔ) subgroup, spoken in the Yangtze delta, ~80M speakers. Phonology very different from Mandarin (voiced consonants, nasal vowels). Politically marginalized since the 90s by Putonghua promotion, but stays alive in family speech and local pop culture. Greetings: 侬好 (hello, lit. «you good»), 谢谢侬 (thanks to you), 再会 (goodbye). Pronoun 侬 (nóng) = Shanghainese «you» (≠ standard 你). Specific vocab: 阿拉 (we), 老克勒 (cosmopolitan gentleman — nod to 1930s Shanghai modernity). Recognizing Shanghainese by ear = sign of fine connoisseur of Chinese regional culture.',
     items: [
       { hanzi: '上海话', pinyin: 'shànghǎi huà', meaning: 'shanghainais', meaningEn: 'Shanghainese', audio: 'audio/hsk6/hsk6_上海话.wav' },
       { hanzi: '吴语', pinyin: 'wúyǔ', meaning: 'famille wu', meaningEn: 'Wu language family', audio: 'audio/hsk6/hsk6_吴语.wav' },
@@ -371,7 +371,7 @@ export const c22ConvM5LearnSections: LessonV2LearnSection[] = [
       '- Question miroir : 你自己是怎么想的 ? (toi, qu’en penses-tu ?)\n' +
       '- Encourager : 我相信你的判断 (j’ai confiance en ton jugement)\n' +
       '\n' +
-      'Attention : le 导师 chinois moderne respecte l’**autonomie** — il guide sans imposer. C’est la différence avec le 师傅 (shīfu, maître artisan) qui transmet une technique précise. 师傅 = obéissance ; 导师 = dialogue.',
+      'Attention : le 导师 chinois moderne respecte l’**autonomie** — il guide sans imposer. C’est la différence avec le 师傅 (maître artisan) qui transmet une technique précise. 师傅 = obéissance ; 导师 = dialogue.',
     bodyEn:
       'Frame: a Chinese junior asks for career advice. Stance: 我把你当作朋友，分享我的经验 (I treat you as a friend and share my experience).\n' +
       '\n' +
@@ -381,7 +381,7 @@ export const c22ConvM5LearnSections: LessonV2LearnSection[] = [
       '- 指导 (guide)\n' +
       '- 反馈 (feedback)\n' +
       '\n' +
-      'Phrase to avoid: «你应该 X» (too directive). Prefer: 你可以考虑 X / 一种思路是 X. Reflection-prompting question: 你自己是怎么想的？(what do YOU think?). Encourage: 我相信你的判断 (I trust your judgment). The Chinese 导师 respects AUTONOMY — guides without imposing. Difference with 师傅 (shīfu, master artisan) who transmits a precise technique. 师傅 = obedience; 导师 = dialogue.',
+      'Phrase to avoid: «你应该 X» (too directive). Prefer: 你可以考虑 X / 一种思路是 X. Reflection-prompting question: 你自己是怎么想的？(what do YOU think?). Encourage: 我相信你的判断 (I trust your judgment). The Chinese 导师 respects AUTONOMY — guides without imposing. Difference with 师傅 (master artisan) who transmits a precise technique. 师傅 = obedience; 导师 = dialogue.',
     items: [
       { hanzi: '导师', pinyin: 'dǎoshī', meaning: 'mentor', meaningEn: 'mentor', audio: 'audio/hsk6/hsk6_导师.wav' },
       { hanzi: '指导', pinyin: 'zhǐdǎo', meaning: 'orienter', meaningEn: 'guide', audio: 'audio/hsk5/hsk5_指导.wav' },
@@ -509,7 +509,7 @@ export const c22ConvM6LearnSections: LessonV2LearnSection[] = [
       '- 软实力 (soft power)\n' +
       '- 文化输出 (cultural export)\n' +
       '- 国际形象 (international image)\n' +
-      '- 话语权 (huàyǔquán, discursive leverage)\n' +
+      '- 话语权 (discursive leverage)\n' +
       '\n' +
       '话语权 is a KEY concept in Chinese geopolitical analysis — who CONTROLS the narrative. Phrases: 中国正在努力构建自己的话语体系 (China is building its own discursive system). To discuss: 中国的软实力还在起步阶段，但发展迅速 (Chinese soft power is starting but growing fast). Examples: 孔子学院, TikTok, 哪吒, 原神, 李子柒. Limits: 但西方对中国的认知仍存在偏见 (but Western perception of China remains biased). Close: 文化的影响力需要长期积累 (cultural influence accumulates long-term).',
     items: [
@@ -697,7 +697,7 @@ export const c22NuancesM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : pour louer la **cohérence** d’un mentor — 您 X 年来一以贯之，令人敬佩 (vous avez gardé le même fil X années, c’est admirable). Compliment ultime de cohérence morale, signal C2.2 immédiat.',
     bodyEn:
-      'Classical structure: «一 + noun + verb + 之 + reduplicated verb» creates poetic rhythm. Ex: 一笑而过 (one laugh and it passes), 一去不返 (gone once and never returns), 一发不可收拾 (once launched, cannot be stopped). All these forms are CHENGYU. Variant with 之: 一以贯之 (yī yǐ guàn zhī, keep a single thread throughout — Confucius in the Analects). Recognizing these structures lets you READ modernized classical texts. In speech, cultured Chinese slip in these forms to mark their literate level: «这件事一笑而过就好了» (laugh it off). Mastering 5-10 chengyu of this structure = immediate C2.2 signal.',
+      'Classical structure: «一 + noun + verb + 之 + reduplicated verb» creates poetic rhythm. Ex: 一笑而过 (one laugh and it passes), 一去不返 (gone once and never returns), 一发不可收拾 (once launched, cannot be stopped). All these forms are CHENGYU. Variant with 之: 一以贯之 (keep a single thread throughout — Confucius in the Analects). Recognizing these structures lets you READ modernized classical texts. In speech, cultured Chinese slip in these forms to mark their literate level: «这件事一笑而过就好了» (laugh it off). Mastering 5-10 chengyu of this structure = immediate C2.2 signal.',
     items: [
       { hanzi: '一笑而过', pinyin: 'yīxiàoérguò', meaning: 'rire et passer', meaningEn: 'laugh it off', audio: 'audio/hsk6/hsk6_一笑.wav' },
       { hanzi: '一去不返', pinyin: 'yīqùbùfǎn', meaning: 'parti sans retour', meaningEn: 'gone never to return', audio: 'audio/hsk6/hsk6_一去.wav' },
@@ -788,7 +788,7 @@ export const c22NuancesM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : visualiser la **signification graphique** des radicaux débloque la distinction — 礼 (示 + 乙 = autel + offrande), 理 (王 + 里 = polir le jade pour révéler ses veines = principe), 立 (homme debout), 力 (bras musclé), 利 (禾 + 刂 = blé + couteau = profit de la moisson). C2.2 = **zéro confusion** sur ces caractères.',
     bodyEn:
-      'Modern Chinese contains hundreds of PARONYMS pronounced identically but with VERY different meanings. Famous examples: 礼 (lǐ, rite/gift) ≠ 理 (lǐ, reason/principle) ≠ 立 (lì, stand/establish) ≠ 力 (lì, force) ≠ 利 (lì, profit/benefit). CRITICAL distinction: 礼物 (gift) ≠ 理由 (reason) ≠ 立场 (position) ≠ 力量 (strength) ≠ 利益 (interest). In speech, context decides; in writing, character mistake = IMMEDIATE signal of insufficient level. C2.2 = ZERO confusion on these characters. Typical HSK7 test: pick the right character among 礼/理/立/力/利 by context. Discriminative mastery = senior-level signal.',
+      'Modern Chinese contains hundreds of PARONYMS pronounced identically but with VERY different meanings. Famous examples: 礼 (rite/gift) ≠ 理 (reason/principle) ≠ 立 (stand/establish) ≠ 力 (force) ≠ 利 (profit/benefit). CRITICAL distinction: 礼物 (gift) ≠ 理由 (reason) ≠ 立场 (position) ≠ 力量 (strength) ≠ 利益 (interest). In speech, context decides; in writing, character mistake = IMMEDIATE signal of insufficient level. C2.2 = ZERO confusion on these characters. Typical HSK7 test: pick the right character among 礼/理/立/力/利 by context. Discriminative mastery = senior-level signal.',
     items: [
       { hanzi: '礼', pinyin: 'lǐ', meaning: 'rite, cadeau', meaningEn: 'rite, gift', audio: 'audio/hsk5/hsk5_礼.wav' },
       { hanzi: '理', pinyin: 'lǐ', meaning: 'raison, principe', meaningEn: 'reason, principle', audio: 'audio/hsk5/hsk5_理.wav' },
@@ -1158,7 +1158,7 @@ export const c22RhetoricM2LearnSections: LessonV2LearnSection[] = [
       'La **rhétorique** chinoise distingue trois saveurs de 比喻 (bǐyù, métaphore), de la plus explicite à la plus implicite. Maîtriser ce **spectre** = signature du style C2.2.\n' +
       '\n' +
       'Les trois niveaux :\n' +
-      '- 明喻 (míngyù, **comparaison** explicite) : avec mot de liaison 像/如/仿佛/好像. Ex 她像花一样美 (« belle comme une fleur ») — le plus simple.\n' +
+      '- 明喻 (**comparaison** explicite) : avec mot de liaison 像/如/仿佛/好像. Ex 她像花一样美 (« belle comme une fleur ») — le plus simple.\n' +
       '- 暗喻 (ànyù, métaphore **implicite**) : supprime le mot de liaison. Ex 她是花 (« elle est une fleur ») — rapprochement assertif, plus puissant.\n' +
       '- 借喻 (jièyù, métaphore par **substitution**) : remplace complètement le sujet. Ex 那朵花来了 (« la fleur est arrivée ») — au lecteur de deviner.\n' +
       '\n' +
@@ -1274,7 +1274,7 @@ export const c22TranslationM1LearnSections: LessonV2LearnSection[] = [
     title: '严复 et 信达雅 — la matrice fondatrice',
     titleEn: '严复 and 信达雅 — the founding matrix',
     body:
-      '严复 (yánfù, 1854-1921), traducteur de « Évolution et éthique » de T.H. Huxley, formule en 1898 dans sa préface : 译事三难 信达雅 — « trois difficultés en traduction : **fidélité**, **fluidité**, **élégance** ». La matrice fondatrice de la **traductologie** chinoise.\n' +
+      '严复 (1854-1921), traducteur de « Évolution et éthique » de T.H. Huxley, formule en 1898 dans sa préface : 译事三难 信达雅 — « trois difficultés en traduction : **fidélité**, **fluidité**, **élégance** ». La matrice fondatrice de la **traductologie** chinoise.\n' +
       '\n' +
       'Les trois critères :\n' +
       '- 信 (xìn, **fidélité**) : ne pas trahir le sens du texte source. Critère absolu, souvent en tension avec les 2 autres.\n' +
@@ -1373,7 +1373,7 @@ export const c22TranslationM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : cette mécompréhension a causé bien des malaises diplomatiques dans les années 80-90 — sois alerte.',
     bodyEn:
-      '爱人 (àirén, lit. «loved person») = SPOUSE (husband/wife) in modern Chinese, NOT «lover» as one might think. Standard pro question: «您爱人是做什么的?» (what does your spouse do?). 同志 (tóngzhì, lit. «same will») = COMRADE in communist political sense, BUT in modern slang (since 90s in Hong Kong) = HOMOSEXUAL. So 同志酒吧 = gay bar. Avoid calling someone 同志 except in formal political context. 厉害 (lìhai) = AMBIVALENT: can mean «impressive» (positive: 你真厉害 = you\'re great!) OR «terrible, severe» (negative: 这个老板很厉害 = this boss is tough). Context decides. These 3 false friends SYSTEMATICALLY trap French speakers — learn by heart.',
+      '爱人 (lit. «loved person») = SPOUSE (husband/wife) in modern Chinese, NOT «lover» as one might think. Standard pro question: «您爱人是做什么的?» (what does your spouse do?). 同志 (lit. «same will») = COMRADE in communist political sense, BUT in modern slang (since 90s in Hong Kong) = HOMOSEXUAL. So 同志酒吧 = gay bar. Avoid calling someone 同志 except in formal political context. 厉害 (lìhai) = AMBIVALENT: can mean «impressive» (positive: 你真厉害 = you\'re great!) OR «terrible, severe» (negative: 这个老板很厉害 = this boss is tough). Context decides. These 3 false friends SYSTEMATICALLY trap French speakers — learn by heart.',
     items: [
       { hanzi: '爱人', pinyin: 'àirén', meaning: 'conjoint(e)', meaningEn: 'spouse', audio: 'audio/hsk5/hsk5_爱人.wav' },
       { hanzi: '同志', pinyin: 'tóngzhì', meaning: 'camarade / homosexuel', meaningEn: 'comrade / homosexual', audio: 'audio/hsk5/hsk5_同志.wav' },
@@ -1398,7 +1398,7 @@ export const c22TranslationM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Les deux notions :\n' +
       '- 缘分 (yuánfèn) = **affinité prédestinée** entre deux êtres. Concept bouddhiste : nos rencontres ne sont pas accidentelles, un karma rapproche ce qui doit se rejoindre. Usage 我们有缘 (« nous étions destinés »). « Vous êtes destinés » est un équivalent fade.\n' +
-      '- 气 (qì) = **énergie vitale** cosmique, principe animique qui circule dans tout être et toute chose. Pas seulement « souffle ». Décliné en 气功 (qigong, le cultive), 元气 (yuánqì, énergie originelle), 气场 (qìchǎng, aura).\n' +
+      '- 气 (qì) = **énergie vitale** cosmique, principe animique qui circule dans tout être et toute chose. Pas seulement « souffle ». Décliné en 气功 (qigong, le cultive), 元气 (yuánqì, énergie originelle), 气场 (aura).\n' +
       '\n' +
       'Astuce : à une rencontre marquante, dire 我们真有缘 charge la situation d\'une **rhétorique** presque mystique très chinoise.',
     bodyEn:
@@ -1429,12 +1429,12 @@ export const c22TranslationM3LearnSections: LessonV2LearnSection[] = [
       'Deux concepts-monde **idiomatiques** structurent l\'imaginaire chinois. Aucun équivalent occidental ne les rend pleinement — il faut les charger d\'une **traduction** culturelle.\n' +
       '\n' +
       'Les deux notions :\n' +
-      '- 江湖 (jiānghú, « fleuves et lacs ») = **monde parallèle** des chevaliers errants 武侠 (wǔxiá), codes d\'honneur, hors-la-loi nobles. Univers des romans de 金庸 (Jin Yong, le Tolkien chinois). Sens étendu moderne : tout milieu marginal avec ses règles tacites — 商场如江湖 (le business est un 江湖).\n' +
-      '- 吃苦 (chīkǔ, « manger l\'amer ») = endurer les épreuves comme **prix** du succès. Vertu chinoise cardinale, pas un simple « souffrir » passif. 中国人能吃苦 = cliché auto-flatteur partagé.\n' +
+      '- 江湖 (« fleuves et lacs ») = **monde parallèle** des chevaliers errants 武侠 (wǔxiá), codes d\'honneur, hors-la-loi nobles. Univers des romans de 金庸 (Jin Yong, le Tolkien chinois). Sens étendu moderne : tout milieu marginal avec ses règles tacites — 商场如江湖 (le business est un 江湖).\n' +
+      '- 吃苦 (« manger l\'amer ») = endurer les épreuves comme **prix** du succès. Vertu chinoise cardinale, pas un simple « souffrir » passif. 中国人能吃苦 = cliché auto-flatteur partagé.\n' +
       '\n' +
       'RÈGLE D\'OR : demander à un junior 你能吃苦吗 ? lors d\'un entretien teste son **engagement** — la traduction « can you tolerate hardship? » manque la dimension de vertu.',
     bodyEn:
-      '江湖 (jiānghú, lit. «rivers and lakes») = PARALLEL WORLD of wandering knights 武侠 (wuxia), martial arts honor codes, noble outlaws. Universe of 金庸 (Jin Yong, the Chinese Tolkien) novels. Extended MODERN sense: any marginal milieu with unwritten rules — 商场如江湖 (business world is like 江湖). 吃苦 (chīkǔ, «eat the bitter») = ENDURE hardship, accept suffering as the PRICE of success. CARDINAL Chinese virtue — not just passive «suffer». 中国人能吃苦 (Chinese can endure) is a self-flattering cliché shared by Chinese. Asking a Chinese junior «你能吃苦吗?» (can you endure?) in an interview tests their COMMITMENT. The translation «can you tolerate hardship?» misses the VIRTUE dimension.',
+      '江湖 (lit. «rivers and lakes») = PARALLEL WORLD of wandering knights 武侠 (wuxia), martial arts honor codes, noble outlaws. Universe of 金庸 (Jin Yong, the Chinese Tolkien) novels. Extended MODERN sense: any marginal milieu with unwritten rules — 商场如江湖 (business world is like 江湖). 吃苦 («eat the bitter») = ENDURE hardship, accept suffering as the PRICE of success. CARDINAL Chinese virtue — not just passive «suffer». 中国人能吃苦 (Chinese can endure) is a self-flattering cliché shared by Chinese. Asking a Chinese junior «你能吃苦吗?» (can you endure?) in an interview tests their COMMITMENT. The translation «can you tolerate hardship?» misses the VIRTUE dimension.',
     items: [
       { hanzi: '江湖', pinyin: 'jiānghú', meaning: 'monde parallèle (chevalerie)', meaningEn: 'martial-arts world', audio: 'audio/hsk6/hsk6_江湖.wav' },
       { hanzi: '武侠', pinyin: 'wǔxiá', meaning: 'chevalier errant', meaningEn: 'wandering knight', audio: 'audio/hsk6/hsk6_武侠.wav' },
@@ -1658,7 +1658,7 @@ export const c22DialectsM1LearnSections: LessonV2LearnSection[] = [
     title: '普通话 — comment un dialecte devint norme',
     titleEn: '普通话 — how one dialect became the norm',
     body:
-      '普通话 (pǔtōnghuà, « langue commune ») est officialisé en 1956 comme langue nationale de la RPC. C\'est un construit linguistique combinant trois sources distinctes.\n' +
+      '普通话 (« langue commune ») est officialisé en 1956 comme langue nationale de la RPC. C\'est un construit linguistique combinant trois sources distinctes.\n' +
       '\n' +
       'Les trois bases :\n' +
       '- **prononciation** du mandarin de Pékin\n' +
@@ -1669,7 +1669,7 @@ export const c22DialectsM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : effet collatéral, déclin des langues régionales (cantonais à Canton, shanghaïen à Shanghai). Politique actuelle balancée — cours de cantonais à Canton, mais 普通话 reste prioritaire.',
     bodyEn:
-      '普通话 (pǔtōnghuà, lit. «common language») is officialized in 1956 as the PRC\'s national language.\n' +
+      '普通话 (lit. «common language») is officialized in 1956 as the PRC\'s national language.\n' +
       '\n' +
       'Its base:\n' +
       '\n' +
@@ -1697,15 +1697,15 @@ export const c22DialectsM1LearnSections: LessonV2LearnSection[] = [
     body:
       'Le mandarin connaît deux **variantes** officielles hors RPC : 国语 à Taïwan et 华语 dans la **diaspora** sino-singapourienne. La compréhension mutuelle avec 普通话 dépasse 95%, mais chaque variante reflète une histoire politique.\n' +
       '\n' +
-      'Quatre différences-clés du 国语 (guóyǔ, Taïwan) :\n' +
+      'Quatre différences-clés du 国语 (Taïwan) :\n' +
       '- prononciation plus **conservatrice** (plus de tons rétroflexes que Pékin moderne)\n' +
       '- écriture en 繁体字 (caractères traditionnels)\n' +
       '- transcription en 注音符号 (bopomofo, ㄅㄆㄇㄈ) plutôt que pinyin\n' +
       '- lexique parfois différent : 出租车 / 计程车, 自行车 / 脚踏车\n' +
       '\n' +
-      'Le 华语 (huáyǔ, Singapour/Malaisie) emploie les mêmes caractères simplifiés que la RPC mais avec accent local et emprunts au malais/anglais. Adopté à Singapour comme l\'une des 4 langues officielles en 1965.',
+      'Le 华语 (Singapour/Malaisie) emploie les mêmes caractères simplifiés que la RPC mais avec accent local et emprunts au malais/anglais. Adopté à Singapour comme l\'une des 4 langues officielles en 1965.',
     bodyEn:
-      '国语 (Guóyǔ, «national language») = Taiwan Mandarin. Same base as 普通话 but 4 key differences: (1) more CONSERVATIVE pronunciation (preserves more retroflex tones than modern Beijing), (2) writing in 繁体字 (traditional characters), (3) transcription system: 注音符号 (bopomofo, ㄅㄆㄇㄈ) rather than pinyin, (4) sometimes different lexicon (出租车 mainland / 计程车 Taiwan, 自行车 / 脚踏车). 华语 (Huáyǔ, «Sinophone language») = Mandarin of Singapore, Malaysia, and SE Asian diaspora. Same simplified characters as mainland but local accent + Malay/English borrowings. Mutual comprehension 普通话 / 国语 / 华语 = 95%. Each variant reflects political history (Taiwan post-1949 separates; Singapore adopts 普通话 as one of 4 official languages in 1965).',
+      '国语 («national language») = Taiwan Mandarin. Same base as 普通话 but 4 key differences: (1) more CONSERVATIVE pronunciation (preserves more retroflex tones than modern Beijing), (2) writing in 繁体字 (traditional characters), (3) transcription system: 注音符号 (bopomofo, ㄅㄆㄇㄈ) rather than pinyin, (4) sometimes different lexicon (出租车 mainland / 计程车 Taiwan, 自行车 / 脚踏车). 华语 («Sinophone language») = Mandarin of Singapore, Malaysia, and SE Asian diaspora. Same simplified characters as mainland but local accent + Malay/English borrowings. Mutual comprehension 普通话 / 国语 / 华语 = 95%. Each variant reflects political history (Taiwan post-1949 separates; Singapore adopts 普通话 as one of 4 official languages in 1965).',
     items: [
       { hanzi: '国语', pinyin: 'guóyǔ', meaning: 'mandarin de Taïwan', meaningEn: 'Taiwan Mandarin', audio: 'audio/hsk6/hsk6_国语.wav' },
       { hanzi: '华语', pinyin: 'huáyǔ', meaning: 'mandarin de Singapour', meaningEn: 'Singapore Mandarin', audio: 'audio/hsk6/hsk6_华语.wav' },
@@ -1766,7 +1766,7 @@ export const c22DialectsM2LearnSections: LessonV2LearnSection[] = [
       'Les trois leviers :\n' +
       '- **Cantopop** années 80-90 : 张国荣 (Leslie Cheung), 梅艳芳 (Anita Mui), 王菲 (Faye Wong, en cantonais ET mandarin), Beyond\n' +
       '- **Cinéma** hongkongais : 王家卫 (Wong Kar-wai, 《花样年华》, 2000), 吴宇森 (John Woo), 周星驰 (Stephen Chow), 成龙 (Jackie Chan), 李小龙 (Bruce Lee)\n' +
-      '- Romans **武侠** (wǔxiá) de 金庸 (jīnyōng, 1924-2018) — saga des 14 romans, la plus vendue de l\'histoire chinoise après le Petit Livre Rouge\n' +
+      '- Romans **武侠** (wǔxiá) de 金庸 (1924-2018) — saga des 14 romans, la plus vendue de l\'histoire chinoise après le Petit Livre Rouge\n' +
       '\n' +
       'Astuce : beaucoup de films sont d\'abord tournés en cantonais, puis doublés en mandarin pour le mainland. Mentionner 王家卫 à un Hongkongais nostalgique te place instantanément comme connaisseur de la **grande** époque.',
     bodyEn:
@@ -1801,12 +1801,12 @@ export const c22DialectsM3LearnSections: LessonV2LearnSection[] = [
       'La Chine compte officiellement 7 à 10 langues **sinitiques**, toutes écrites avec les mêmes caractères mais mutuellement inintelligibles à l\'oral. Le terme officiel 方言 (« dialecte ») est politiquement chargé : un linguiste préfère « langues chinoises ».\n' +
       '\n' +
       'Les sept familles majeures :\n' +
-      '- 官话 / 北方话 (guānhuà, mandarin, >70%, base du 普通话)\n' +
-      '- 粤语 (yuèyǔ, cantonais, 70M, Canton/HK/Macao)\n' +
-      '- 吴语 (wúyǔ, Wu, 80M, delta du Yangtze, inclut shanghaïen 上海话)\n' +
-      '- 闽南语 (mǐnnányǔ, Min Nan, 50M, Fujian + Taïwan, inclut taïwanais 台语)\n' +
+      '- 官话 / 北方话 (mandarin, >70%, base du 普通话)\n' +
+      '- 粤语 (cantonais, 70M, Canton/HK/Macao)\n' +
+      '- 吴语 (Wu, 80M, delta du Yangtze, inclut shanghaïen 上海话)\n' +
+      '- 闽南语 (Min Nan, 50M, Fujian + Taïwan, inclut taïwanais 台语)\n' +
       '- 客家话 (kèjiāhuà, Hakka, 50M, montagnes du Sud + diaspora dispersée)\n' +
-      '- 湘 (xiāng, Hunan), 赣 (gàn, Jiangxi)\n' +
+      '- 湘 (Hunan), 赣 (Jiangxi)\n' +
       '\n' +
       'Au-delà : 闽东语 (Fuzhou), 闽北语. Anecdote : la 民国 (1912-1949) a longtemps débattu pour adopter le cantonais comme langue nationale — décision finale en faveur du mandarin pour raisons démographiques.',
     bodyEn:
@@ -1832,7 +1832,7 @@ export const c22DialectsM3LearnSections: LessonV2LearnSection[] = [
       '\n' +
       '上海话 (shanghaïen, sous-groupe 吴语 Wu) — 80M de locuteurs dans le delta du Yangtze :\n' +
       '- phonologie très différente du mandarin (voyelles nasales, consonnes voisées)\n' +
-      '- pronoms star : 侬 (nóng, « tu ») au lieu de 你, 阿拉 (ālā, « nous ») au lieu de 我们\n' +
+      '- pronoms star : 侬 (« tu ») au lieu de 你, 阿拉 (« nous ») au lieu de 我们\n' +
       '- vocabulaire mythique : 老克勒 (lǎo kèlè), gentleman cosmopolite des années 30, nostalgique des Concessions\n' +
       '\n' +
       '台语 (taïwanais, sous-groupe 闽南 Min Nan) — 60% des Taïwanais le parlent :\n' +
@@ -1840,7 +1840,7 @@ export const c22DialectsM3LearnSections: LessonV2LearnSection[] = [
       '- réprimé à l\'école sous le KMT (1949-87)\n' +
       '- depuis la démocratisation, encouragé comme langue de la 本土 (běntǔ, identité indigène) — symbole politique fort',
     bodyEn:
-      '上海话 (Shanghainese, Wu 吴语 subgroup): 80M speakers in the Yangtze delta. Phonology very different from Mandarin (nasal vowels, voiced consonants). Star pronouns: 侬 (nóng, you) instead of 你, 阿拉 (ālā, we) instead of 我们. Marker of Shanghainese identity («we Shanghainese»). Mythical vocabulary: 老克勒 (lǎokèlè, cosmopolitan gentleman of the 30s — nostalgic image of Concessions). 台语 (Taiwanese, Min Nan 闽南 subgroup): 60% of Taiwanese speak it, identity language ANCHORED since 17th-c Hokkien colonization. Under the KMT (1949-87), Taiwanese was REPRESSED at school. Since democratization (90s), encouraged as language of 本土 (běntǔ, indigenous Taiwanese identity). Strong political symbol. The RESURGENCE of regional Chinese languages is a fundamental 21st-century cultural movement.',
+      '上海话 (Shanghainese, Wu 吴语 subgroup): 80M speakers in the Yangtze delta. Phonology very different from Mandarin (nasal vowels, voiced consonants). Star pronouns: 侬 (you) instead of 你, 阿拉 (we) instead of 我们. Marker of Shanghainese identity («we Shanghainese»). Mythical vocabulary: 老克勒 (cosmopolitan gentleman of the 30s — nostalgic image of Concessions). 台语 (Taiwanese, Min Nan 闽南 subgroup): 60% of Taiwanese speak it, identity language ANCHORED since 17th-c Hokkien colonization. Under the KMT (1949-87), Taiwanese was REPRESSED at school. Since democratization (90s), encouraged as language of 本土 (indigenous Taiwanese identity). Strong political symbol. The RESURGENCE of regional Chinese languages is a fundamental 21st-century cultural movement.',
     items: [
       { hanzi: '上海话', pinyin: 'shànghǎi huà', meaning: 'shanghaïen', meaningEn: 'Shanghainese', audio: 'audio/hsk6/hsk6_上海话.wav' },
       { hanzi: '侬', pinyin: 'nóng', meaning: 'tu (shanghaïen)', meaningEn: 'you (Shanghainese)', audio: 'audio/hsk6/hsk6_侬.wav' },
@@ -1963,21 +1963,21 @@ export const c22GlobalChinaM2LearnSections: LessonV2LearnSection[] = [
     body:
       'La **diaspora** chinoise s\'inscrit dans deux géographies miroir : les Chinatowns d\'accueil et les régions d\'origine en Chine. Les noms sont chargés d\'histoire.\n' +
       '\n' +
-      '唐人街 (tángrén jiē, « rue des gens de Tang ») désigne traditionnellement les Chinatowns. Les premiers émigrants (XIXe siècle) se réclamaient des « gens de Tang » plutôt que des Han (汉人), la dynastie Tang restant l\'âge d\'or de la mémoire **cantonaise**.\n' +
+      '唐人街 (« rue des gens de Tang ») désigne traditionnellement les Chinatowns. Les premiers émigrants (XIXe siècle) se réclamaient des « gens de Tang » plutôt que des Han (汉人), la dynastie Tang restant l\'âge d\'or de la mémoire **cantonaise**.\n' +
       '\n' +
       'Chinatowns mythiques :\n' +
       '- San Francisco (la plus ancienne d\'Amérique du Nord, 1848)\n' +
       '- New York Manhattan, Vancouver, Londres Soho\n' +
       '- Paris 13e (la plus grande d\'Europe, ~50K Chinois), Bangkok Yaowarat\n' +
       '\n' +
-      '侨乡 (qiáoxiāng, « village des outre-mer ») désigne les régions chinoises d\'origine :\n' +
+      '侨乡 (« village des outre-mer ») désigne les régions chinoises d\'origine :\n' +
       '- 广东 (Guangdong, surtout 台山/开平/江门) — origine de 80% des Chinois d\'Amérique du Nord du XIXe\n' +
       '- 福建 (Fujian) — origine des Hokkien d\'Asie SE\n' +
       '- 浙江温州 (Wenzhou) — origine de la diaspora moderne en Europe',
     bodyEn:
-      '唐人街 (tángrén jiē, «street of Tang people») = traditional Chinese name for Chinatowns. Historically, the first Chinese emigrants (19th c.) claimed «people of Tang» rather than «people of Han» (汉人) as the Tang dynasty (618-907) was the golden age the southern Cantonese diaspora kept in memory. Iconic Chinatowns: San Francisco (oldest in North America, 1848), New York Manhattan, Vancouver, London Soho, Paris 13th (largest in Europe, ~50K Chinese), Bangkok Yaowarat.\n' +
+      '唐人街 («street of Tang people») = traditional Chinese name for Chinatowns. Historically, the first Chinese emigrants (19th c.) claimed «people of Tang» rather than «people of Han» (汉人) as the Tang dynasty (618-907) was the golden age the southern Cantonese diaspora kept in memory. Iconic Chinatowns: San Francisco (oldest in North America, 1848), New York Manhattan, Vancouver, London Soho, Paris 13th (largest in Europe, ~50K Chinese), Bangkok Yaowarat.\n' +
       '\n' +
-      '侨乡 (qiáoxiāng, «overseas village») = Chinese regions of ORIGIN of the diaspora:\n' +
+      '侨乡 («overseas village») = Chinese regions of ORIGIN of the diaspora:\n' +
       '\n' +
       '- 广东 (Guangdong, especially 台山/开平/江门 — origin of 80% of 19th-c North American Chinese)\n' +
       '- 福建 (Fujian, origin of SE Asian Hokkien)\n' +
@@ -2002,7 +2002,7 @@ export const c22GlobalChinaM3LearnSections: LessonV2LearnSection[] = [
     title: '软实力 — les leviers chinois',
     titleEn: '软实力 — Chinese levers',
     body:
-      'Le concept de 软实力 (ruǎn shílì, soft power), emprunté à Joseph Nye (1990), devient objectif officiel chinois sous Hu Jintao (~2007). Cinq leviers structurent aujourd\'hui le déploiement.\n' +
+      'Le concept de 软实力 (soft power), emprunté à Joseph Nye (1990), devient objectif officiel chinois sous Hu Jintao (~2007). Cinq leviers structurent aujourd\'hui le déploiement.\n' +
       '\n' +
       'Les cinq leviers :\n' +
       '- **Instituts Confucius** (孔子学院) : 500+ centres mondiaux, modèle Goethe/Alliance française — controversés en Occident depuis ~2018 pour proximité avec MOFA\n' +

@@ -29,10 +29,10 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Philosophical vocab:\n' +
       '\n' +
-      '- 论述 (lùnshù, expound)\n' +
-      '- 阐释 (chǎnshì, elucidate)\n' +
-      '- 释义 (shìyì, exegesis)\n' +
-      '- 注疏 (zhùshū, classical commentary)\n' +
+      '- 论述 (expound)\n' +
+      '- 阐释 (elucidate)\n' +
+      '- 释义 (exegesis)\n' +
+      '- 注疏 (classical commentary)\n' +
       '\n' +
       'Citation: 朱熹《四书章句集注》中说 X (per Zhu Xi in his Commentaries on the Four Books). Frame a thesis: 我的论点可概括为以下几点. Close: 此乃笔者之拙见，敬请各位斧正 (this is the author\'s humble view, please give your corrections).',
     items: [
@@ -68,8 +68,8 @@ export const c21ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Citation verbs:\n' +
       '\n' +
-      '- 云 (yún, says — classical)\n' +
-      '- 曰 (yuē, says — very classical)\n' +
+      '- 云 (says — classical)\n' +
+      '- 曰 (says — very classical)\n' +
       '- 据载 (per the annals)\n' +
       '- 古书云 (ancient texts say)\n' +
       '\n' +
@@ -113,7 +113,7 @@ export const c21ConvM2LearnSections: LessonV2LearnSection[] = [
       '- 文学价值 (literary value)\n' +
       '- 艺术成就 (artistic achievement)\n' +
       '- 主题深度 (thematic depth)\n' +
-      '- 笔触 (bǐchù, narrative touch/style)\n' +
+      '- 笔触 (narrative touch/style)\n' +
       '\n' +
       'Stance: 我个人认为这部作品的核心价值在于 X (the core of this work is X). Elegant disagreement: 我对您的看法有些不同，我认为 X 反而是 Y. Formal refutation combo: 诚然 X，然而 Y (concession + recovery — C1+ formal rhetoric). Close: 文学评论本就见仁见智 (literary criticism is inherently subjective — consensus formula to close politely).',
     items: [
@@ -342,11 +342,11 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
       '- 我想表达的核心思想是 X — l\'idée centrale que je veux transmettre\n' +
       '- 目前正在构思下一部作品 — je conçois (gòusī) la suivante\n' +
       '\n' +
-      '构思 (gòusī, concevoir, réfléchir au plan) est très **soutenu** pour parler d\'une œuvre en gestation, et 灵感 (línggǎn, inspiration) reste incontournable.\n' +
+      '构思 (gòusī, concevoir, réfléchir au plan) est très **soutenu** pour parler d\'une œuvre en gestation, et 灵感 (inspiration) reste incontournable.\n' +
       '\n' +
       'RÈGLE D\'OR : conclure modestement par 希望读者能从中获得一些启示. L\'auto-promotion explicite est culturellement mal vue ; la modestie effacée renforce paradoxalement le prestige **lettré**.',
     bodyEn:
-      'Frame: interviewed as an author/researcher. Key phrases: 这次的写作灵感来自 X (this writing is inspired by X). 灵感 (línggǎn, inspiration). Describe process: 我前后修改了 X 次 (I revised X times). 我用了 X 年完成这部作品. Deep meaning: 我想表达的核心思想是 X (the central idea I want to convey is X). When asked about projects: 目前正在构思下一部作品 (I\'m currently conceiving the next work). 构思 (conceive, plan) is very formal for a work in gestation. Close modestly: 希望读者能从中获得一些启示 (I hope readers will draw some lessons).',
+      'Frame: interviewed as an author/researcher. Key phrases: 这次的写作灵感来自 X (this writing is inspired by X). 灵感 (inspiration). Describe process: 我前后修改了 X 次 (I revised X times). 我用了 X 年完成这部作品. Deep meaning: 我想表达的核心思想是 X (the central idea I want to convey is X). When asked about projects: 目前正在构思下一部作品 (I\'m currently conceiving the next work). 构思 (conceive, plan) is very formal for a work in gestation. Close modestly: 希望读者能从中获得一些启示 (I hope readers will draw some lessons).',
     items: [
       { hanzi: '灵感', pinyin: 'línggǎn', meaning: 'inspiration', meaningEn: 'inspiration', audio: 'audio/hsk6/hsk6_灵感.wav' },
       { hanzi: '修改', pinyin: 'xiūgǎi', meaning: 'réviser, corriger', meaningEn: 'revise', audio: 'audio/hsk5/hsk5_修改.wav' },
@@ -364,7 +364,7 @@ export const c21ConvM5LearnSections: LessonV2LearnSection[] = [
     title: 'Animer un cercle de lecture',
     titleEn: 'Lead a book club',
     body:
-      'Animer un cercle de lecture chinois exige un ton convivial mais structuré. L\'ouverture chaleureuse : 各位书友，大家好 — le terme 书友 (shūyǒu, ami du livre) est très chaleureux.\n' +
+      'Animer un cercle de lecture chinois exige un ton convivial mais structuré. L\'ouverture chaleureuse : 各位书友，大家好 — le terme 书友 (ami du livre) est très chaleureux.\n' +
       '\n' +
       'Phases-clés de l\'animation :\n' +
       '- Lancer — 这本书最让您印象深刻的是什么 ?\n' +
@@ -610,9 +610,9 @@ export const c21NuancesM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : pour louer une action courageuse altruiste, mobilise le chéngyǔ 见义勇为 : 这是见义勇为的精神. Phrase **socialement** honorée, signal de respect maximal.',
     bodyEn:
-      '仁 (rén, humanity, benevolence) = CARDINAL Confucian virtue. «仁者爱人» (the benevolent love others). 仁 is the basis of all. 义 (yì, justice/duty) = what one MUST do morally. 见义勇为 (see the just and dare to act). Often beyond personal gain.\n' +
+      '仁 (humanity, benevolence) = CARDINAL Confucian virtue. «仁者爱人» (the benevolent love others). 仁 is the basis of all. 义 (justice/duty) = what one MUST do morally. 见义勇为 (see the just and dare to act). Often beyond personal gain.\n' +
       '\n' +
-      '- 信 (xìn, faith/reliability) — keep one\'s word\n' +
+      '- 信 (faith/reliability) — keep one\'s word\n' +
       '- 信用 (moral credit) — \n' +
       '\n' +
       'Forms with 仁义礼智信 the 五常 (5 cardinal virtues) structuring Confucian ethics. Hierarchy: 仁 (humanity sentiment), 义 (moral duty), 礼 (social rites), 智 (practical wisdom), 信 (fidelity). Any Chinese ethical debate mobilizes these 5 words — mastering them opens up thought.',
@@ -781,7 +781,7 @@ export const c21NuancesM4LearnSections: LessonV2LearnSection[] = [
       '- 而 (ér) — ET, ALORS, MAIS — connecteur **classique** très productif. Vit dans 而且, 然而, 进而\n' +
       '- 于 (yú) — à, dans, par rapport à — préposition **classique**. Vit dans 出于 X (provenir de), 关于 X (concernant), 至于 X (quant à), 由于 X (à cause de)\n' +
       '\n' +
-      'RÈGLE D\'OR : la première phrase des 《论语》 — 学而时习之，不亦说乎 (apprendre et pratiquer régulièrement, n\'est-ce pas un plaisir ?) — déploie les trois en action. La citer en discussion signale immédiatement le niveau **lettré**.',
+      'RÈGLE D\'OR : la première phrase des 《论语》 — 学而时习之，不亦说乎 (n\'est-ce pas un plaisir ?) — déploie les trois en action. La citer en discussion signale immédiatement le niveau **lettré**.',
     bodyEn:
       '言 (yán) = speak / speech. Verb and noun in classical Chinese.\n' +
       '\n' +
@@ -1080,7 +1080,7 @@ export const c21WenyanIntroM1LearnSections: LessonV2LearnSection[] = [
     title: '1 caractère = 1 mot — la règle d\'or',
     titleEn: '1 character = 1 word — the golden rule',
     body:
-      'En chinois MODERNE, on a des bi-syllabes : 朋友 (péngyou, ami), 学习 (xuéxí, étudier), 国家 (guójiā, pays). En 文言, chaque caractère est UN MOT INDÉPENDANT.\n' +
+      'En chinois MODERNE, on a des bi-syllabes : 朋友 (ami), 学习 (xuéxí, étudier), 国家 (pays). En 文言, chaque caractère est UN MOT INDÉPENDANT.\n' +
       '\n' +
       'Exemples bi-syllabes vs **classique** :\n' +
       '- 朋友 → 朋 (ami) + 友 (compagnon)\n' +
@@ -1427,7 +1427,7 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
     title: '庄子 + 庄周梦蝶 — la parabole du papillon',
     titleEn: '庄子 + 庄周梦蝶 — the butterfly parable',
     body:
-      '庄子 (Zhuang Zi, ~369-286 av. JC) développe le **taoïsme** par PARABOLES poétiques (vs Lao Zi en aphorismes). La plus célèbre : 庄周梦蝶 (Zhuāng Zhōu mèng dié, « Zhuang Zhou rêve qu\'il est un papillon »).\n' +
+      '庄子 (Zhuang Zi, ~369-286 av. JC) développe le **taoïsme** par PARABOLES poétiques (vs Lao Zi en aphorismes). La plus célèbre : 庄周梦蝶 (« Zhuang Zhou rêve qu\'il est un papillon »).\n' +
       '\n' +
       'Le récit : « Un jour, Zhuang Zhou rêva qu\'il était un papillon, voletant librement. Il ignorait être Zhuang Zhou. Soudain il s\'éveilla, et était de nouveau Zhuang Zhou. Mais il ne savait plus : Zhuang Zhou avait-il rêvé d\'être papillon, ou un papillon rêvait-il maintenant d\'être Zhuang Zhou ? ».\n' +
       '\n' +
@@ -1436,7 +1436,7 @@ export const c21PhiloClassiqueM2LearnSections: LessonV2LearnSection[] = [
       '- L\'humain de la nature ?\n' +
       '- Le sujet de l\'objet ?\n' +
       '\n' +
-      'Le 物化 (wùhuà, transformation des choses) abolit les frontières. Cette parabole inspire Borges (Les ruines circulaires), films, et reste une des phrases les plus connues en Chine.\n' +
+      'Le 物化 (transformation des choses) abolit les frontières. Cette parabole inspire Borges (Les ruines circulaires), films, et reste une des phrases les plus connues en Chine.\n' +
       '\n' +
       'RÈGLE D\'OR : 庄周梦蝶 est une référence philosophique **passe-partout**. Pour évoquer la fluidité de l\'identité ou signaler ton niveau **lettré** : 这让我想起庄周梦蝶 (cela me fait penser à Zhuang Zhou et au papillon).',
     bodyEn:
@@ -1617,7 +1617,7 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : le 绝句 condense en 20-28 caractères ce qu\'un poème français mettrait 4 strophes à exprimer. Économie radicale = leçon de style. Pour l\'APPRÉCIER, lis-le À VOIX HAUTE en chinois — la musicalité tonale est la moitié du sens. Une traduction plate perd 50% du poème.',
     bodyEn:
-      '绝句 (juéjù, «cut quatrain») = 4 lines, each 5 characters (五绝) or 7 characters (七绝). Shortest and most popular form of classical poetry. Constraints: (1) RHYME between lines 2 and 4 (sometimes also line 1), (2) ALTERNATION of level tones (平 píng, tone 1 or 2 in modern Mandarin) and oblique (仄 zè, tones 3 and 4), (3) Possible PARALLELISM between lines (ex: «high sky» ↔ «deep water»). Iconic example: Li Bai\'s 《静夜思》 (5 char × 4 lines = only 20 chars). The 绝句 condenses in 20-28 characters what a French poem would take 4 stanzas to express. Radical economy = style lesson.',
+      '绝句 («cut quatrain») = 4 lines, each 5 characters (五绝) or 7 characters (七绝). Shortest and most popular form of classical poetry. Constraints: (1) RHYME between lines 2 and 4 (sometimes also line 1), (2) ALTERNATION of level tones (平 píng, tone 1 or 2 in modern Mandarin) and oblique (仄 zè, tones 3 and 4), (3) Possible PARALLELISM between lines (ex: «high sky» ↔ «deep water»). Iconic example: Li Bai\'s 《静夜思》 (5 char × 4 lines = only 20 chars). The 绝句 condenses in 20-28 characters what a French poem would take 4 stanzas to express. Radical economy = style lesson.',
     items: [
       { hanzi: '绝句', pinyin: 'juéjù', meaning: 'quatrain', meaningEn: 'quatrain', audio: 'audio/hsk6/hsk6_绝句.wav' },
       { hanzi: '五绝', pinyin: 'wǔjué', meaning: 'quatrain à 5 char.', meaningEn: '5-char quatrain', audio: 'audio/hsk6/hsk6_五绝.wav' },
@@ -1648,7 +1648,7 @@ export const c21PoetryM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'RÈGLE D\'OR : forme TRÈS difficile à composer, encore plus à traduire. Pour APPRÉCIER Du Fu, prends un 律诗 et passe 30 min à analyser : compte les 8 vers, repère les rimes en pinyin, identifie l\'antithèse 3-4 et 5-6. Investissement de 30 min, bénéfice durable.',
     bodyEn:
-      '律诗 (lǜshī, «regulated poem») = 8 lines, in 五律 or 七律. Much more demanding than the 绝句. Rules: (1) RHYME on lines 2, 4, 6, 8, (2) STRICT TONE ALTERNATION per a codified schema, (3) MANDATORY ANTITHESIS between lines 3-4 (central pair 1) and 5-6 (central pair 2). Antithesis imposes syntactic + semantic correspondences between lines: noun ↔ noun, verb ↔ verb, adjective ↔ adjective, and coherent semantic categories (color ↔ color, landscape ↔ landscape). Preferred form of Du Fu (杜甫), nicknamed «诗圣» (Sage of Poetry). 律诗 = summit of classical Chinese poetry in terms of TECHNICAL demand. VERY hard form to compose; even harder to translate.',
+      '律诗 («regulated poem») = 8 lines, in 五律 or 七律. Much more demanding than the 绝句. Rules: (1) RHYME on lines 2, 4, 6, 8, (2) STRICT TONE ALTERNATION per a codified schema, (3) MANDATORY ANTITHESIS between lines 3-4 (central pair 1) and 5-6 (central pair 2). Antithesis imposes syntactic + semantic correspondences between lines: noun ↔ noun, verb ↔ verb, adjective ↔ adjective, and coherent semantic categories (color ↔ color, landscape ↔ landscape). Preferred form of Du Fu (杜甫), nicknamed «诗圣» (Sage of Poetry). 律诗 = summit of classical Chinese poetry in terms of TECHNICAL demand. VERY hard form to compose; even harder to translate.',
     items: [
       { hanzi: '律诗', pinyin: 'lǜshī', meaning: 'poème régulé', meaningEn: 'regulated poem', audio: 'audio/hsk6/hsk6_律诗.wav' },
       { hanzi: '对仗', pinyin: 'duìzhàng', meaning: 'antithèse, parallélisme', meaningEn: 'parallelism', audio: 'audio/hsk6/hsk6_对仗.wav' },

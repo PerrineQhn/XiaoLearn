@@ -341,9 +341,9 @@ export const weekDaysLearnSections: LessonV2LearnSection[] = [
       { hanzi: '星期日', pinyin: 'xīngqīrì', meaning: 'dimanche', meaningEn: 'Sunday', audio: 'audio/hsk1/hsk1_星期日.wav' }
     ],
     tip:
-      'Deux variantes possibles : 星期 (plus formel) et 周 (zhōu, plus court et moderne). 周一 = lundi. Les deux sont interchangeables à l\'oral comme à l\'écrit.',
+      'Deux variantes possibles : 星期 (plus formel) et 周 (plus court et moderne). 周一 = lundi. Les deux sont interchangeables à l\'oral comme à l\'écrit.',
     tipEn:
-      'Two variants: 星期 (more formal) and 周 (zhōu, shorter and modern). 周一 = Monday. Both are interchangeable in speech and writing.'
+      'Two variants: 星期 (more formal) and 周 (shorter and modern). 周一 = Monday. Both are interchangeable in speech and writing.'
   },
   {
     id: 'week-relative',
@@ -1088,7 +1088,7 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : ajoute 没关系 (méi guānxi, ce n\'est rien — réponse à 对不起) et tu fonctionnes en société.',
     bodyEn:
-      '请 (qǐng, please / go ahead), 谢谢 (xièxie, thank you), 不客气 (bú kèqi, you\'re welcome — reply to 谢谢), 对不起 (duìbuqǐ, sorry). These 4 are the social backbone in China. 请 opens a request, never at the end (≠ English «please» at end). 不客气 is universal as reply to 谢谢. Add 没关系 (méi guānxi, no problem — reply to 对不起) and you function socially.',
+      '请 (please / go ahead), 谢谢 (thank you), 不客气 (you\'re welcome — reply to 谢谢), 对不起 (sorry). These 4 are the social backbone in China. 请 opens a request, never at the end (≠ English «please» at end). 不客气 is universal as reply to 谢谢. Add 没关系 (no problem — reply to 对不起) and you function socially.',
     items: [
       { hanzi: '请', pinyin: 'qǐng', meaning: 's\'il vous plaît', meaningEn: 'please', audio: 'audio/hsk1/hsk1_请.wav' },
       { hanzi: '谢谢', pinyin: 'xièxiè', meaning: 'merci', meaningEn: 'thank you', audio: 'audio/hsk1/hsk1_谢谢.wav' },
@@ -1113,7 +1113,7 @@ export const a1ConvM1LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : universel et chaleureux — l\'oublier sonne **froid**.',
     bodyEn:
-      '麻烦你 (máfan nǐ, sorry to trouble you) : to ask a favor, warmer than 请. 麻烦你帮我 = would you mind helping me. 辛苦了 (xīnkǔ le, thanks for the work) : to a delivery person, a colleague after a task, the taxi driver dropping you off. Universal and warm — skipping it sounds cold. 加油 (jiāyóu, chin up / you got this) : to encourage.',
+      '麻烦你 (sorry to trouble you) : to ask a favor, warmer than 请. 麻烦你帮我 = would you mind helping me. 辛苦了 (thanks for the work) : to a delivery person, a colleague after a task, the taxi driver dropping you off. Universal and warm — skipping it sounds cold. 加油 (chin up / you got this) : to encourage.',
     items: [
       { hanzi: '麻烦', pinyin: 'máfán', meaning: 'déranger, ennui', meaningEn: 'trouble', audio: 'audio/hsk4/hsk4_麻烦.wav' },
       { hanzi: '辛苦了', pinyin: 'xīnkǔ le', meaning: 'merci pour le travail', meaningEn: 'thanks for the work', audio: 'audio/hsk4/hsk4_辛苦.wav' },
@@ -1178,7 +1178,7 @@ export const a1ConvM2LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Astuce : la **phrase magique** de l\'apprenant : 我学中文，所以我说得不太好 (j\'apprends, donc je parle pas très bien). Désarme l\'interlocuteur et ajuste son débit.',
     bodyEn:
-      '怎么读 (zěnme dú, how is it pronounced). 这个字怎么读？= how is this character pronounced? For the tone: 第几声？(which tone?) — reply: 第一声 (1st), 第二声 (2nd), 第三声 (3rd), 第四声 (4th). To confirm: 是不是 X？(is it X?). Learner\'s magic phrase: 我学中文，所以我说得不太好 (I\'m learning, so I don\'t speak well yet) — disarms the listener, adjusts their pace.',
+      '怎么读 (how is it pronounced). 这个字怎么读？= how is this character pronounced? For the tone: 第几声？(which tone?) — reply: 第一声 (1st), 第二声 (2nd), 第三声 (3rd), 第四声 (4th). To confirm: 是不是 X？(is it X?). Learner\'s magic phrase: 我学中文，所以我说得不太好 (I\'m learning, so I don\'t speak well yet) — disarms the listener, adjusts their pace.',
     items: [
       { hanzi: '怎么读', pinyin: 'zěnme dú', meaning: 'comment ça se prononce', meaningEn: 'how to pronounce', audio: 'audio/hsk1/hsk1_读.wav' },
       { hanzi: '声', pinyin: 'shēng', meaning: 'ton, voix', meaningEn: 'tone, voice', audio: 'audio/hsk1/hsk1_声.wav' },
@@ -1280,7 +1280,7 @@ export const a1ConvM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : sans ces remplisseurs, un **silence trop long** en chinois est interprété comme « il n\'a pas compris ». Avec eux, tu signales « je réfléchis, ça vient ».',
     bodyEn:
-      'Chinese fillers buy you thinking time WITHOUT looking lost. 那个 (nèige, «uh…») — the equivalent of «um». 这个 (zhèige, same). 嗯… (ǹg) — neutral sound while searching. 怎么说呢 (zěnme shuō ne, how to put it). Crucial: without fillers, a long silence in Chinese is interpreted as «didn\'t understand». With them, you signal «I\'m thinking, it\'s coming».',
+      'Chinese fillers buy you thinking time WITHOUT looking lost. 那个 («uh…») — the equivalent of «um». 这个 (same). 嗯… (ǹg) — neutral sound while searching. 怎么说呢 (how to put it). Crucial: without fillers, a long silence in Chinese is interpreted as «didn\'t understand». With them, you signal «I\'m thinking, it\'s coming».',
     items: [
       { hanzi: '那个', pinyin: 'nàge', meaning: 'euh, ce/cet', meaningEn: 'um, that', audio: 'audio/hsk1/hsk1_那.wav' },
       { hanzi: '这个', pinyin: 'zhège', meaning: 'euh, ce/cet', meaningEn: 'um, this', audio: 'audio/hsk1/hsk1_这.wav' },
@@ -1384,9 +1384,9 @@ export const a1ConvM5LearnSections: LessonV2LearnSection[] = [
       { hanzi: '滴滴', pinyin: 'dīdī', meaning: 'Didi (Uber chinois)', meaningEn: 'Didi (Chinese Uber)', audio: 'audio/hsk6/hsk6_滴滴.wav' }
     ],
     tip:
-      'Astuce : pour éviter de mal prononcer une adresse, montre l\'écran du téléphone au chauffeur en disant 这里 (zhèlǐ, ici). Plus efficace que de batailler avec les tons.',
+      'Astuce : pour éviter de mal prononcer une adresse, montre l\'écran du téléphone au chauffeur en disant 这里 (ici). Plus efficace que de batailler avec les tons.',
     tipEn:
-      'Tip: to avoid mispronouncing an address, show your phone screen to the driver saying 这里 (zhèlǐ, here). More efficient than struggling with tones.'
+      'Tip: to avoid mispronouncing an address, show your phone screen to the driver saying 这里 (here). More efficient than struggling with tones.'
   }
 ];
 
@@ -1629,20 +1629,20 @@ export const a1NuancesM2LearnSections: LessonV2LearnSection[] = [
     titleEn: 'Marks of respect: 老师, 师傅, 先生',
     body:
       'Au-delà de 您, on respecte par des **titres** :\n' +
-      '- 老师 (lǎoshī, professeur) — pour **tout** enseignant ou expert dans son domaine, même hors école\n' +
-      '- 师傅 (shīfu, maître) — pour les artisans, taxis, chauffeurs : 师傅，请去 X\n' +
+      '- 老师 (professeur) — pour **tout** enseignant ou expert dans son domaine, même hors école\n' +
+      '- 师傅 (maître) — pour les artisans, taxis, chauffeurs : 师傅，请去 X\n' +
       '- 先生 (xiānsheng) — Mr/sir, formel\n' +
       '- 女士 (nǚshì) — Mrs/ma\'am, formel\n' +
       '\n' +
-      'Attention : 小姐 (xiǎojiě, mademoiselle) est devenu un **piège** — connote « péripatéticienne » dans certaines régions. Préfère 美女 (oral) ou 女士 (formel).',
+      'Attention : 小姐 (mademoiselle) est devenu un **piège** — connote « péripatéticienne » dans certaines régions. Préfère 美女 (oral) ou 女士 (formel).',
     bodyEn:
       'Beyond 您, respect is shown via TITLES.\n' +
       '\n' +
-      '- 老师 (lǎoshī, teacher) — — used for ANY educator or expert\n' +
-      '- 师傅 (shīfu, master) — for artisans, taxis, drivers: 师傅，请去 X\n' +
-      '- 先生 (xiānsheng, mister) — — Mr/sir, formal\n' +
-      '- 女士 (nǚshì, madam) — — Mrs/ma\'am formal\n' +
-      '- 小姐 (xiǎojiě, miss) — NOW A TRAP: connotes «sex worker» in some regions\n' +
+      '- 老师 (teacher) — — used for ANY educator or expert\n' +
+      '- 师傅 (master) — for artisans, taxis, drivers: 师傅，请去 X\n' +
+      '- 先生 (mister) — — Mr/sir, formal\n' +
+      '- 女士 (madam) — — Mrs/ma\'am formal\n' +
+      '- 小姐 (miss) — NOW A TRAP: connotes «sex worker» in some regions\n' +
       '\n' +
       'Prefer 美女 (spoken) or 女士 (formal).',
     items: [
@@ -1734,7 +1734,7 @@ export const a1NuancesM4LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique francophone « j\'aime aussi ça » → 我喜欢也 ✗. Correct : 我也喜欢.',
     bodyEn:
-      '也 (yě, also). Links a subject to a previous one. 我喜欢茶，他也喜欢茶 = I like tea, he also likes tea. 都 (dōu, all). Sums up several subjects into one verb. 我们都喜欢茶 = we all like tea. TRAP: they can COEXIST. 我也都喜欢 = me too I like them all. POSITION: 也 and 都 go BEFORE the verb. Common mistake: «I also like that» → 我喜欢也 ✗; correct → 我也喜欢.',
+      '也 (also). Links a subject to a previous one. 我喜欢茶，他也喜欢茶 = I like tea, he also likes tea. 都 (all). Sums up several subjects into one verb. 我们都喜欢茶 = we all like tea. TRAP: they can COEXIST. 我也都喜欢 = me too I like them all. POSITION: 也 and 都 go BEFORE the verb. Common mistake: «I also like that» → 我喜欢也 ✗; correct → 我也喜欢.',
     items: [
       { hanzi: '也', pinyin: 'yě', meaning: 'aussi', meaningEn: 'also, too', audio: 'audio/hsk1/hsk1_也.wav' },
       { hanzi: '都', pinyin: 'dōu', meaning: 'tous, tout', meaningEn: 'all', audio: 'audio/hsk1/hsk1_都.wav' },
@@ -1796,7 +1796,7 @@ export const a1NuancesM5LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : erreur classique — utiliser 几 pour un prix → 几钱 ✗. Correct : 多少钱.',
     bodyEn:
-      '几 (jǐ, how many — for 1 to 10 roughly): used when expecting a SMALL number. 你有几个朋友？ = how many friends? (3-4 expected). Always followed by a classifier. 多少 (duōshao, how much — for 10+, or unknown): big number, unknown sum. 多少钱？ = how much money? Not necessarily followed by a classifier. Common mistake: using 几 for a price → 几钱 ✗; correct → 多少钱.',
+      '几 (how many — for 1 to 10 roughly): used when expecting a SMALL number. 你有几个朋友？ = how many friends? (3-4 expected). Always followed by a classifier. 多少 (how much — for 10+, or unknown): big number, unknown sum. 多少钱？ = how much money? Not necessarily followed by a classifier. Common mistake: using 几 for a price → 几钱 ✗; correct → 多少钱.',
     items: [
       { hanzi: '多少', pinyin: 'duōshǎo', meaning: 'combien (grand)', meaningEn: 'how much (big)', audio: 'audio/hsk1/hsk1_多少.wav' },
       { hanzi: '几', pinyin: 'jǐ', meaning: 'combien (petit)', meaningEn: 'how many (small)', audio: 'audio/hsk1/hsk1_几.wav' },
@@ -1853,7 +1853,7 @@ export const a1NuancesM6LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Attention : piège francophone — « je viens à ton bureau » se dit 我去你的办公室 (du point de vue du locuteur). Si tu téléphones de ta maison à un ami au resto, tu dis 我去找你.',
     bodyEn:
-      '去 (qù, go) = movement AWAY from the speaker. 我去北京 = I\'m going to Beijing. 来 (lái, come) = movement TOWARDS the speaker. 你来我家 = you come to my place. ENGLISH TRAP: «I\'m coming to your office» is 我去你的办公室 (from the SPEAKER\'s POV, not the listener\'s). In Chinese, the pivot is ALWAYS where the speaker IS PHYSICALLY. If you phone from home to a friend at the restaurant: 我去找你.',
+      '去 (go) = movement AWAY from the speaker. 我去北京 = I\'m going to Beijing. 来 (come) = movement TOWARDS the speaker. 你来我家 = you come to my place. ENGLISH TRAP: «I\'m coming to your office» is 我去你的办公室 (from the SPEAKER\'s POV, not the listener\'s). In Chinese, the pivot is ALWAYS where the speaker IS PHYSICALLY. If you phone from home to a friend at the restaurant: 我去找你.',
     items: [
       { hanzi: '去', pinyin: 'qù', meaning: 'aller', meaningEn: 'go', audio: 'audio/hsk1/hsk1_去.wav' },
       { hanzi: '来', pinyin: 'lái', meaning: 'venir', meaningEn: 'come', audio: 'audio/hsk1/hsk1_来.wav' },
@@ -1924,7 +1924,7 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'Exemple combiné : « Je peux conduire mais pas aujourd\'hui » → 我会开车，但今天不能.',
     bodyEn:
-      '会 (huì, know how to — LEARNED ability). 我会说中文 = I can speak Chinese (I learned). 我会开车 = I can drive. 能 (néng, can — currently POSSIBLE). 我今天能来 = I can come today. 我今天不能开车，我喝了酒 = I can\'t drive today, I drank. Radical difference: 会 = LEARNED; 能 = POSSIBLE right now. «I can drive but not today» → 我会开车，但今天不能.',
+      '会 (know how to — LEARNED ability). 我会说中文 = I can speak Chinese (I learned). 我会开车 = I can drive. 能 (can — currently POSSIBLE). 我今天能来 = I can come today. 我今天不能开车，我喝了酒 = I can\'t drive today, I drank. Radical difference: 会 = LEARNED; 能 = POSSIBLE right now. «I can drive but not today» → 我会开车，但今天不能.',
     items: [
       { hanzi: '会', pinyin: 'huì', meaning: 'savoir faire', meaningEn: 'know how to', audio: 'audio/hsk1/hsk1_会.wav' },
       { hanzi: '能', pinyin: 'néng', meaning: 'pouvoir', meaningEn: 'can, be able', audio: 'audio/hsk1/hsk1_能.wav' },
@@ -1954,7 +1954,7 @@ export const a1NuancesM7LearnSections: LessonV2LearnSection[] = [
       '\n' +
       'À l\'oral pour accepter : 可以 (OK), 不可以 (non, pas OK).',
     bodyEn:
-      '可以 (kěyǐ, be allowed / can with permission). 我可以坐这里吗？= may I sit here? Difference from 能: 可以 often implies PERMISSION (social, legal), 能 a material CAPACITY. 你可以走了 = you may leave (I permit it). 你能走吗？= are you able to leave? In speech to accept: 可以 (OK), 不可以 (no, not OK).',
+      '可以 (be allowed / can with permission). 我可以坐这里吗？= may I sit here? Difference from 能: 可以 often implies PERMISSION (social, legal), 能 a material CAPACITY. 你可以走了 = you may leave (I permit it). 你能走吗？= are you able to leave? In speech to accept: 可以 (OK), 不可以 (no, not OK).',
     items: [
       { hanzi: '可以', pinyin: 'kěyǐ', meaning: 'pouvoir (permission)', meaningEn: 'can (allowed)', audio: 'audio/hsk1/hsk1_可以.wav' },
       { hanzi: '坐', pinyin: 'zuò', meaning: 's\'asseoir', meaningEn: 'sit', audio: 'audio/hsk1/hsk1_坐.wav' },
