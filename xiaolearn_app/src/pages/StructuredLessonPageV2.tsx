@@ -1706,7 +1706,7 @@ const ExerciseCard = ({
           )}
         </div>
       )}
-      <div className="lv2-exercise-prompt">{renderMarkdownInline(displayedPromptText)}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(displayedPromptText, showPinyin)}</div>
 
       {translationSentence && (
         <div className="lv2-exercise-sentence lv2-exercise-sentence--translation">
@@ -1953,7 +1953,7 @@ const DialogueResponseCard = ({
         </div>
         <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
       </div>
-      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText, showPinyin)}</div>
 
       <div className="lv2-dialogue-chat">
         {beforeLast.map((line, i) => (
@@ -2135,7 +2135,7 @@ const ContextReactCard = ({
           <span className="lv2-context-text">{renderMarkdownInline(contextText)}</span>
         </div>
       )}
-      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText, showPinyin)}</div>
 
       <div className="lv2-exercise-choices" role="radiogroup">
         {exercise.choices.map((choice, idx) => {
@@ -2335,7 +2335,7 @@ const OrderExerciseCard = ({
             partage survit au passage a l'exo suivant). */}
         <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
       </div>
-      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
+      <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText, showPinyin)}</div>
 
       {hintText && (
         <div className="lv2-exercise-meaning">

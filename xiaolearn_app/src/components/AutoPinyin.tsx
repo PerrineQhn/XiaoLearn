@@ -292,8 +292,36 @@ function extractManualAnnotation(after: string): { pre: string; inner: string; e
   return { pre: after.slice(0, openIdx), inner, endIdx: closeIdx + 1 };
 }
 
+/**
+ * V30 — Retire les annotations pinyin MANUELLES (écrites en dur dans le
+ * texte : « 您扫我 (nín sǎo wǒ) ») qui suivent un run de hanzi. Utilisé
+ * quand enabled=false (toggle « Masquer pinyin ») : sinon le pinyin
+ * hard-codé restait visible alors que les injections auto disparaissaient.
+ */
+function stripManualPinyinAnnotations(text: string): string {
+  let out = '';
+  let lastEnd = 0;
+  HANZI_RUN_RE.lastIndex = 0;
+  let m: RegExpExecArray | null;
+  while ((m = HANZI_RUN_RE.exec(text)) !== null) {
+    const end = m.index + m[0].length;
+    out += text.slice(lastEnd, end);
+    const manual = extractManualAnnotation(text.slice(end));
+    if (manual) {
+      // Skip l'annotation (et l'éventuel espace pré-parenthèse).
+      lastEnd = end + manual.endIdx;
+      HANZI_RUN_RE.lastIndex = lastEnd;
+    } else {
+      lastEnd = end;
+    }
+  }
+  out += text.slice(lastEnd);
+  return out;
+}
+
 const AutoPinyin = ({ text, enabled = true }: AutoPinyinProps) => {
-  if (!enabled || !text) return <>{text}</>;
+  if (!text) return <>{text}</>;
+  if (!enabled) return <>{stripManualPinyinAnnotations(text)}</>;
   const parts: Array<React.ReactNode> = [];
   let lastEnd = 0;
   let key = 0;
