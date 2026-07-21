@@ -35,6 +35,7 @@ import {
 } from '../../services/pronunciationServiceAzure';
 import PronunciationFeedback from '../PronunciationFeedback';
 import HanziTracer from '../HanziTracer';
+import ToneColoredHanzi from '../ToneColoredHanzi';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -84,6 +85,12 @@ export interface StudyModeProps {
    * n'a de données de traits sur le CDN — on ne pénalise pas le SRS).
    */
   onSkip?: () => void;
+  /**
+   * Coloration des hanzi par ton (schéma Pleco) — réglage utilisateur
+   * `xl_tone_colors_v1`, drillé depuis SessionView ← FlashcardPageV5.
+   * Défaut : activé.
+   */
+  toneColors?: boolean;
 }
 
 // ============================================================================
@@ -165,7 +172,7 @@ function inferCategory(card: StudyCard, language: 'fr' | 'en'): string {
   return 'expression';
 }
 
-export function FlipCard({ card, direction, language, onReveal, externalFlipSignal }: StudyModeProps) {
+export function FlipCard({ card, direction, language, onReveal, externalFlipSignal, toneColors }: StudyModeProps) {
   const [flipped, setFlipped] = useState(false);
   const frontFr = direction === 'hanzi-to-fr';
   // Le parent remount FlipCard via key={card.id}, donc plus besoin de reset
@@ -267,7 +274,13 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
           <div className="fc4-card-body">
             {frontFr ? (
               <>
-                <div className="fc4-front-hanzi">{frontLabel}</div>
+                <div className="fc4-front-hanzi">
+                  <ToneColoredHanzi
+                    hanzi={card.hanzi}
+                    pinyin={card.pinyin}
+                    enabled={toneColors ?? true}
+                  />
+                </div>
                 <div className="fc4-front-pinyin">{card.pinyin}</div>
               </>
             ) : (
@@ -320,7 +333,18 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
             </div>
           </div>
           <div className="fc4-card-body">
-            <div className="fc4-back-meaning">{backMain}</div>
+            <div className="fc4-back-meaning">
+              {/* En mode FR→ZH le verso EST le hanzi → coloration par ton. */}
+              {frontFr ? (
+                backMain
+              ) : (
+                <ToneColoredHanzi
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  enabled={toneColors ?? true}
+                />
+              )}
+            </div>
             {/* En mode FR→ZH : backMain est DÉJÀ le hanzi, on ajoute juste
                 le pinyin sous lui. En mode ZH→FR : backMain est la trad,
                 on ajoute le pinyin pour rappel. Dans les deux cas, pas de
@@ -365,7 +389,7 @@ export function FlipCard({ card, direction, language, onReveal, externalFlipSign
 //  MCQ CARD — 4 choix
 // ============================================================================
 
-export function McqCard({ card, direction, language, onReveal, onSubmit, distractorPool }: StudyModeProps) {
+export function McqCard({ card, direction, language, onReveal, onSubmit, distractorPool, toneColors }: StudyModeProps) {
   const frontFr = direction === 'hanzi-to-fr';
 
   const choices = useMemo(() => {
@@ -434,7 +458,13 @@ export function McqCard({ card, direction, language, onReveal, onSubmit, distrac
         <div className="fc4-card-body">
           {frontFr ? (
             <>
-              <div className="fc4-front-hanzi">{prompt}</div>
+              <div className="fc4-front-hanzi">
+                <ToneColoredHanzi
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  enabled={toneColors ?? true}
+                />
+              </div>
               <div className="fc4-front-pinyin">{card.pinyin}</div>
             </>
           ) : (
@@ -474,7 +504,7 @@ export function McqCard({ card, direction, language, onReveal, onSubmit, distrac
 //  TYPING CARD — input libre
 // ============================================================================
 
-export function TypingCard({ card, direction, language, onReveal, onSubmit }: StudyModeProps) {
+export function TypingCard({ card, direction, language, onReveal, onSubmit, toneColors }: StudyModeProps) {
   const frontFr = direction === 'hanzi-to-fr';
   const [input, setInput] = useState('');
   const [submitted, setSubmitted] = useState<'correct' | 'wrong' | null>(null);
@@ -534,7 +564,13 @@ export function TypingCard({ card, direction, language, onReveal, onSubmit }: St
         <div className="fc4-card-body">
           {frontFr ? (
             <>
-              <div className="fc4-front-hanzi">{card.hanzi}</div>
+              <div className="fc4-front-hanzi">
+                <ToneColoredHanzi
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  enabled={toneColors ?? true}
+                />
+              </div>
               <div className="fc4-front-pinyin">{card.pinyin}</div>
             </>
           ) : (
@@ -603,7 +639,7 @@ export function TypingCard({ card, direction, language, onReveal, onSubmit }: St
 //  LISTENING CARD — TTS audio → saisie
 // ============================================================================
 
-export function ListeningCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+export function ListeningCard({ card, language, onReveal, onSubmit, toneColors }: StudyModeProps) {
   // En mode écoute, la "question" est toujours le son du hanzi ; l'utilisateur
   // tape soit le pinyin, soit la traduction (au choix). On accepte les deux
   // réponses correctes.
@@ -700,7 +736,13 @@ export function ListeningCard({ card, language, onReveal, onSubmit }: StudyModeP
       {submitted ? (
         <div className={`fc4-typing-feedback fc4-typing-feedback--${submitted}`}>
           <div className="fc4-typing-feedback-line">
-            <span className="fc4-typing-feedback-value fc4-back-hanzi">{card.hanzi}</span>
+            <span className="fc4-typing-feedback-value fc4-back-hanzi">
+              <ToneColoredHanzi
+                hanzi={card.hanzi}
+                pinyin={card.pinyin}
+                enabled={toneColors ?? true}
+              />
+            </span>
           </div>
           <div className="fc4-typing-feedback-line fc4-typing-feedback-line--muted">
             <span>{card.pinyin}</span> —{' '}
@@ -729,7 +771,7 @@ export function ListeningCard({ card, language, onReveal, onSubmit }: StudyModeP
  *   - Si le navigateur n'a pas SpeechRecognition, on tombe sur un message
  *     d'erreur + bouton "Valider sans micro" pour ne pas bloquer la session.
  */
-export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+export function PronunciationCard({ card, language, onReveal, onSubmit, toneColors }: StudyModeProps) {
   const [state, setState] = useState<
     | { kind: 'idle' }
     | { kind: 'listening' }
@@ -812,7 +854,13 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
           </button>
         </div>
         <div className="fc4-card-body fc4-pronunciation-body">
-          <div className="fc4-front-hanzi">{card.hanzi}</div>
+          <div className="fc4-front-hanzi">
+            <ToneColoredHanzi
+              hanzi={card.hanzi}
+              pinyin={card.pinyin}
+              enabled={toneColors ?? true}
+            />
+          </div>
           <div className="fc4-front-pinyin">{card.pinyin}</div>
           <div className="fc4-pronunciation-meaning">{meaning}</div>
 

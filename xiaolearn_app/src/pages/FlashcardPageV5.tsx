@@ -52,6 +52,7 @@ import type { StudyCard } from '../components/FlashcardV4/StudyModeComponents';
 import { SRS_SKILLS, type SrsSkill, type SkillState } from '../hooks/useWordSRS';
 import { playHanziAudio } from '../utils/audio';
 import { matchesSearch } from '../utils/search-normalize';
+import { TONE_COLORS, readToneColorsSetting, type Tone } from '../utils/toneColors';
 import '../styles/flashcards-v2.css';
 import '../styles/flashcards-v3.css';
 import '../styles/flashcards-v4.css'; // ⚠ requis : session/flip/mcq/typing utilisent les classes fc4-*
@@ -621,6 +622,11 @@ export default function FlashcardPageV5({
   // Mode d'étude de la session : cartes classiques (flip) ou traçage des
   // caractères (writing → HanziTracer, skill SRS 'writing').
   const [studyMode, setStudyMode] = useState<SessionStudyMode>('flip');
+
+  // Réglage « Couleurs par ton » (schéma Pleco) — lu au mount depuis
+  // localStorage (`xl_tone_colors_v1`, défaut activé), même pattern que
+  // `xl_show_pinyin_v1` dans StructuredLessonPageV2. Drillé vers SessionView.
+  const [toneColors] = useState<boolean>(() => readToneColorsSetting());
 
   // Modal "Ajouter une carte perso"
   const [addOpen, setAddOpen] = useState(false);
@@ -1509,6 +1515,7 @@ export default function FlashcardPageV5({
           onCardReviewed={handleCardReviewed}
           onFinish={handleFinish}
           onAbort={handleAbort}
+          toneColors={toneColors}
         />
       </div>
     );
@@ -1559,6 +1566,7 @@ export default function FlashcardPageV5({
             language={language}
             selectedDeckLabel={selectedDeck.label}
             selectedDeckTotal={selectedDeck.items.length}
+            showToneLegend={toneColors}
           />
         ) : null}
       </div>
@@ -1751,6 +1759,7 @@ export default function FlashcardPageV5({
           onClose={closeModal}
           onStart={startSession}
           language={language}
+          showToneLegend={toneColors}
         />
       ) : null}
 
@@ -2478,7 +2487,8 @@ function SessionSetupModal({
   onStart,
   language,
   selectedDeckLabel,
-  selectedDeckTotal
+  selectedDeckTotal,
+  showToneLegend
 }: {
   copy: CopyType;
   counts: { due: number; inProgress: number; newN: number; difficult: number };
@@ -2496,6 +2506,8 @@ function SessionSetupModal({
   language: 'fr' | 'en';
   selectedDeckLabel?: string;
   selectedDeckTotal?: number;
+  /** Affiche la mini-légende du code couleur des tons (réglage activé). */
+  showToneLegend?: boolean;
 }) {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -2667,6 +2679,42 @@ function SessionSetupModal({
             </button>
           </div>
         </div>
+        ) : null}
+
+        {/* Mini-légende du code couleur des tons (schéma Pleco) — discrète. */}
+        {showToneLegend ? (
+          <div
+            className="fc5-tone-legend"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 10,
+              margin: '10px 0 2px',
+              fontSize: 12,
+              color: '#8a8a8a'
+            }}
+          >
+            <span>{language === 'fr' ? 'Tons :' : 'Tones:'}</span>
+            {([1, 2, 3, 4] as Tone[]).map((t) => (
+              <span
+                key={t}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}
+              >
+                <span
+                  aria-hidden
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: TONE_COLORS[t],
+                    display: 'inline-block'
+                  }}
+                />
+                {t}
+              </span>
+            ))}
+          </div>
         ) : null}
 
         <button

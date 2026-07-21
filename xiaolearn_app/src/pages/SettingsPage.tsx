@@ -125,6 +125,7 @@ const SettingsPage = ({
     return (['chill', 'regular', 'intense', 'extreme'] as const).includes(raw) ? raw : 'regular';
   });
   const [showPinyin, setShowPinyin] = useState(() => readLS('xl_show_pinyin_v1', '1') === '1');
+  const [toneColors, setToneColors] = useState(() => readLS('xl_tone_colors_v1', '1') === '1');
   const [autoPlayAudio, setAutoPlayAudio] = useState(() => readLS('xl_auto_audio_v1', '0') === '1');
   const [parkLanguage, setParkLanguage] = useState<Language>(() => (readLS('xl_park_lang_v1', language) as Language) || language);
   const [parkDetail, setParkDetail] = useState<'concise' | 'normal' | 'detailed'>(() => {
@@ -266,6 +267,7 @@ const SettingsPage = ({
   const handleSaveLearning = () => {
     persistStr('xl_daily_goal_v1', dailyGoal);
     persistBool('xl_show_pinyin_v1', showPinyin);
+    persistBool('xl_tone_colors_v1', toneColors);
     persistBool('xl_auto_audio_v1', autoPlayAudio);
     persistStr('xl_park_lang_v1', parkLanguage);
     persistStr('xl_park_detail_v1', parkDetail);
@@ -1331,6 +1333,14 @@ const SettingsPage = ({
                 language === 'fr' ? 'Affiche "nǐ hǎo" sous "你好"' : 'Shows "nǐ hǎo" under "你好"',
                 showPinyin,
                 setShowPinyin
+              )}
+              {renderRowToggle(
+                language === 'fr' ? 'Couleurs par ton' : 'Tone colors',
+                language === 'fr'
+                  ? 'Colore chaque caractère selon son ton (rouge=1, vert=2, bleu=3, violet=4)'
+                  : 'Colors each character by its tone (red=1, green=2, blue=3, purple=4)',
+                toneColors,
+                setToneColors
               )}
               {renderRowToggle(
                 language === 'fr' ? 'Lecture audio automatique' : 'Automatic audio playback',

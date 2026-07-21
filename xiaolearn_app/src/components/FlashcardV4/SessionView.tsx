@@ -40,6 +40,8 @@ import {
   WritingCard,
   type StudyCard
 } from './StudyModeComponents';
+import ToneColoredHanzi from '../ToneColoredHanzi';
+import { readToneColorsSetting } from '../../utils/toneColors';
 
 // ============================================================================
 //  SKILL MAPPING
@@ -99,6 +101,11 @@ export interface SessionViewProps {
   onFinish: (summary: FlashcardSessionSummary) => void;
   /** Appelé quand l'utilisateur quitte en cours de session. */
   onAbort?: () => void;
+  /**
+   * Coloration des hanzi par ton (schéma Pleco). Si absent, on lit le
+   * réglage `xl_tone_colors_v1` directement (défaut : activé).
+   */
+  toneColors?: boolean;
 }
 
 // ============================================================================
@@ -114,9 +121,14 @@ export function SessionView({
   onRate,
   onCardReviewed,
   onFinish,
-  onAbort
+  onAbort,
+  toneColors
 }: SessionViewProps) {
   const startedAtRef = useRef<number>(Date.now());
+  // Résolu UNE fois au mount si non fourni par le parent (réglage stable
+  // pendant une session — pas besoin de re-lire localStorage à chaque rendu).
+  const toneColorsRef = useRef<boolean>(toneColors ?? readToneColorsSetting());
+  const toneColorsEnabled = toneColors ?? toneColorsRef.current;
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [lastAutoResult, setLastAutoResult] = useState<boolean | null>(null);
@@ -283,7 +295,8 @@ export function SessionView({
     language,
     onReveal: handleReveal,
     onSubmit: handleAutoResult,
-    distractorPool
+    distractorPool,
+    toneColors: toneColorsEnabled
   };
 
   // IMPORTANT : on passe `key={card.id}` pour forcer un remount complet
@@ -322,7 +335,7 @@ export function SessionView({
         return <FlipCard key={card.id} {...modeProps} externalFlipSignal={flipSignal} />;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, card.id, direction, language, flipSignal]);
+  }, [mode, card.id, direction, language, flipSignal, toneColorsEnabled]);
 
   // -- Raccourcis clavier (espace/flèches) — façon Seonsaengnim --------------
   const forbidGood =
@@ -497,6 +510,8 @@ export interface SpeedRoundProps {
   onAbort?: () => void;
   onCardReviewed?: (rating: ReviewRating) => void;
   onRate: (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => void;
+  /** Coloration des hanzi par ton — cf. SessionViewProps.toneColors. */
+  toneColors?: boolean;
 }
 
 /**
@@ -511,9 +526,12 @@ export function SpeedRound({
   onFinish,
   onAbort,
   onCardReviewed,
-  onRate
+  onRate,
+  toneColors
 }: SpeedRoundProps) {
   const startedAtRef = useRef<number>(Date.now());
+  const toneColorsRef = useRef<boolean>(toneColors ?? readToneColorsSetting());
+  const toneColorsEnabled = toneColors ?? toneColorsRef.current;
   const [remaining, setRemaining] = useState<number>(durationSec);
   const [index, setIndex] = useState(0);
   const [correct, setCorrect] = useState(0);
@@ -598,7 +616,13 @@ export function SpeedRound({
         <div className="fc4-speed-card">
           {frontFr ? (
             <>
-              <div className="fc4-speed-hanzi">{card.hanzi}</div>
+              <div className="fc4-speed-hanzi">
+                <ToneColoredHanzi
+                  hanzi={card.hanzi}
+                  pinyin={card.pinyin}
+                  enabled={toneColorsEnabled}
+                />
+              </div>
               <div className="fc4-speed-pinyin">{card.pinyin}</div>
             </>
           ) : (
