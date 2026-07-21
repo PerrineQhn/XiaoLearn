@@ -413,6 +413,35 @@ function App() {
       }
     }
   );
+  // V17 — Indicateur « Synchronisation… » au premier login sur un navigateur
+  // vierge. Si un user est connecté mais que localStorage n'a AUCUNE des clés
+  // critiques de progression, on est très probablement sur un nouveau
+  // navigateur : le reconcile Firestore va remplir les states d'ici 1-2 s.
+  // Plutôt que d'afficher des leçons à 0 (panique utilisateur), on montre un
+  // petit banner informatif non-bloquant pendant max 5 s ou jusqu'à ce que
+  // les données cloud arrivent.
+  const [showFirstSyncBanner, setShowFirstSyncBanner] = useState(false);
+  const firstSyncCheckedRef = useRef(false);
+  useEffect(() => {
+    if (!user || firstSyncCheckedRef.current) return;
+    firstSyncCheckedRef.current = true;
+    let hasLocalProgress = false;
+    try {
+      hasLocalProgress =
+        !!window.localStorage.getItem('cl_learned_words') ||
+        !!window.localStorage.getItem(COMPLETED_LESSONS_KEY);
+    } catch { /* private mode */ }
+    if (hasLocalProgress) return;
+    setShowFirstSyncBanner(true);
+    const timer = window.setTimeout(() => setShowFirstSyncBanner(false), 5000);
+    return () => window.clearTimeout(timer);
+  }, [user]);
+  // Cache le banner dès que la progression cloud est effectivement arrivée.
+  useEffect(() => {
+    if (showFirstSyncBanner && completedLessons.length > 0) {
+      setShowFirstSyncBanner(false);
+    }
+  }, [completedLessons, showFirstSyncBanner]);
   // Hook unifié pour streak / minutes / daily activity (sync Firestore).
   const { learningStats, applyLearningSession: applyLearningSessionSync } =
     useLearningStats();
@@ -2561,6 +2590,19 @@ function App() {
           autour du curseur. Premier enfant pour rester derrière le reste
           (z-index 0, sidebar/main ont z-index ≥ 1). */}
       <InteractiveGridBackground />
+      {/* V17 — Banner « Synchronisation… » au premier login sur navigateur
+          vierge : évite l'effet « toutes mes leçons sont à 0 ! » pendant que
+          le reconcile Firestore ramène la progression du compte. */}
+      {showFirstSyncBanner && (
+        <div className="first-sync-banner" role="status" aria-live="polite">
+          <span className="first-sync-banner-spinner" aria-hidden="true">⟳</span>
+          <span>
+            {language === 'fr'
+              ? 'Synchronisation de ta progression…'
+              : 'Syncing your progress…'}
+          </span>
+        </div>
+      )}
       {/* Overlay sombre cliquable derrière le drawer mobile */}
       <div
         className="xl-sidebar-overlay"

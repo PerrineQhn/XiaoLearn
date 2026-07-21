@@ -234,8 +234,18 @@ export function useFirestoreSync(
     });
     let cancelled = false;
 
-    (async () => {
-      try {
+    // V17 — Résilience du reconcile : si le getDoc initial échoue (réseau
+    // lent au premier chargement d'un navigateur vierge, timeout Firestore),
+    // l'ancien code abandonnait silencieusement → UI à 0 jusqu'au prochain
+    // reload. On retente maintenant avec un backoff court (3 s puis 6 s,
+    // max 2 retries — PAS de boucle infinie). Le gating V12 est libéré dès
+    // la fin de la 1re tentative (succès OU échec), comme avant, pour ne
+    // pas bloquer les saves ; les retries tournent en arrière-plan et
+    // n'appliquent le cloud que via onUpdate (merges défensifs côté
+    // consumers) ou localStorage.
+    const RECONCILE_RETRY_DELAYS_MS = [3000, 6000];
+
+    const runReconcile = async (): Promise<void> => {
         const userDocRef = doc(db, 'users', user.uid);
         const snap = await getDoc(userDocRef);
         const cloudData = snap.exists() ? snap.data() : null;
@@ -314,16 +324,38 @@ export function useFirestoreSync(
 
         // Cas 4 : timestamps égaux → rien à faire
         lastWrittenValueRef.current = cloudValue;
-      } catch (err) {
-        console.error('[useFirestoreSync] reconcile error', key, err);
-      } finally {
-        // Quoi qu'il arrive (succès, échec, cancel), on libère le gating
-        // pour que les saves en attente puissent se faire. Sinon le hook
-        // bloquerait indéfiniment sur une erreur Firestore réseau.
-        if (!reconciledRef.current) {
-          reconciledRef.current = true;
-          reconcileResolveRef.current?.();
+    };
+
+    (async () => {
+      let attempt = 0;
+      // 1 tentative initiale + jusqu'à RECONCILE_RETRY_DELAYS_MS.length retries.
+      for (;;) {
+        let failed = false;
+        try {
+          await runReconcile();
+        } catch (err) {
+          failed = true;
+          console.error('[useFirestoreSync] reconcile error', key, err);
+        } finally {
+          // Quoi qu'il arrive (succès, échec, cancel), on libère le gating
+          // dès la fin de la 1re tentative pour que les saves en attente
+          // puissent se faire. Sinon le hook bloquerait indéfiniment sur
+          // une erreur Firestore réseau. (No-op aux tentatives suivantes.)
+          if (!reconciledRef.current) {
+            reconciledRef.current = true;
+            reconcileResolveRef.current?.();
+          }
         }
+        if (!failed || cancelled || attempt >= RECONCILE_RETRY_DELAYS_MS.length) {
+          return;
+        }
+        const delayMs = RECONCILE_RETRY_DELAYS_MS[attempt];
+        attempt += 1;
+        console.info(
+          `[xl-sync] reconcile retry ${attempt}/${RECONCILE_RETRY_DELAYS_MS.length} key="${key}" dans ${delayMs}ms`
+        );
+        await new Promise((r) => setTimeout(r, delayMs));
+        if (cancelled) return;
       }
     })();
 

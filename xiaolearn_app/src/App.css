@@ -13148,3 +13148,44 @@ select:focus {
 .btn-solid-danger:hover {
   background: #b91c1c;
 }
+
+/* ============================================================
+   V17 — Banner « Synchronisation… » (premier login, navigateur vierge)
+   Pill fixe discrète en haut de l'écran, non-bloquante (pointer-events
+   none), affichée max 5 s ou jusqu'à l'arrivée des données cloud.
+   ============================================================ */
+.first-sync-banner {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  pointer-events: none;
+  animation: firstSyncFadeIn 0.25s ease;
+}
+
+.first-sync-banner-spinner {
+  display: inline-block;
+  color: var(--gold-accent);
+  animation: firstSyncSpin 1.2s linear infinite;
+}
+
+@keyframes firstSyncSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes firstSyncFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
