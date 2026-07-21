@@ -45,6 +45,15 @@ export interface HanziTracerProps {
   onGiveUp?: () => void;
   /** Appelé si AUCUN caractère du mot n'a de données de traits. */
   onAllUnavailable?: () => void;
+  /**
+   * Notifie le parent du caractère courant (index 0-based, total) — permet
+   * d'afficher la progression « 1/2 » dans le header de la carte plutôt que
+   * dans le pad lui-même (cf. WritingCard).
+   */
+  onCharChange?: (charIndex: number, total: number) => void;
+  /** Masque la rangée de progression interne (dots + 1/2) — utilisé quand le
+   *  parent affiche la progression lui-même via `onCharChange`. */
+  hideProgress?: boolean;
   language?: 'fr' | 'en';
   className?: string;
 }
@@ -87,6 +96,8 @@ const HanziTracer = ({
   onComplete,
   onGiveUp,
   onAllUnavailable,
+  onCharChange,
+  hideProgress = false,
   language = 'fr',
   className
 }: HanziTracerProps) => {
@@ -103,11 +114,18 @@ const HanziTracer = ({
   const onCompleteRef = useRef(onComplete);
   const onGiveUpRef = useRef(onGiveUp);
   const onAllUnavailableRef = useRef(onAllUnavailable);
+  const onCharChangeRef = useRef(onCharChange);
   useEffect(() => {
     onCompleteRef.current = onComplete;
     onGiveUpRef.current = onGiveUp;
     onAllUnavailableRef.current = onAllUnavailable;
-  }, [onComplete, onGiveUp, onAllUnavailable]);
+    onCharChangeRef.current = onCharChange;
+  }, [onComplete, onGiveUp, onAllUnavailable, onCharChange]);
+
+  // Remonte la progression (1/2, 2/2) au parent — idempotent, via ref.
+  useEffect(() => {
+    onCharChangeRef.current?.(charIndex, chars.length);
+  }, [charIndex, chars.length]);
 
   /** Erreurs par caractère complété. */
   const mistakesRef = useRef<number[]>([]);
@@ -298,7 +316,7 @@ const HanziTracer = ({
 
   return (
     <div className={`hzt ${className ?? ''}`.trim()}>
-      {isMulti && (
+      {isMulti && !hideProgress && (
         <div className="hzt-progress" aria-label={copy.progressLabel}>
           {chars.map((c, i) => (
             <span

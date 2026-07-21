@@ -1924,7 +1924,8 @@
    vertical pour empiler le "stage" (carte blanche) + les widgets d'action. */
 .fc5-session-shell .fc4-mcq-card,
 .fc5-session-shell .fc4-typing-card,
-.fc5-session-shell .fc4-listening-card {
+.fc5-session-shell .fc4-listening-card,
+.fc5-session-shell .fc4-writing-card {
   background: transparent;
   border: none;
   border-radius: 0;
@@ -3704,13 +3705,52 @@
    WritingCard (mode 'writing') — pad Hanzi Writer + indices pinyin/meaning
    =========================================================================== */
 
+/* Variante writing du stage : hauteur ADAPTATIVE au contenu (prompt + canvas
+   ~260px + boutons) au lieu du ratio 23/15 des flip cards (≈340px de haut)
+   qui clippait le canvas sur le header et poussait les boutons hors carte.
+   Additive : ne touche pas aux stages mcq/typing/listening. */
+.fc5-session-shell .fc4-writing-card .fc4-study-stage {
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 480px;
+  overflow: visible;
+  padding: 20px 24px 24px;
+}
+
 .fc4-writing-card .fc4-card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 16px 20px;
+  gap: 14px;
+  padding: 16px 12px 0;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Header writing : ✍️ Écriture + compteur 1/2 à droite, avant le 🔊.
+   Le compteur des caractères du mot vit ICI (pas dans le pad — cf.
+   hideProgress sur HanziTracer). */
+.fc4-writing-mode-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  white-space: nowrap;
+}
+.fc4-writing-char-count {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary, #6b7280);
+  background: #f1efe8;
+  border: 1px solid #e3ded2;
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
 }
 
 .fc4-writing-pinyin {
@@ -3794,21 +3834,51 @@
   transform: scale(0.97);
 }
 
-/* Prompt « Trace : bonjour — nǐ hǎo » au-dessus du pad */
+/* Prompt « terre — dì » au-dessus du pad : c'est l'information CLÉ (ce que
+   l'utilisateur doit tracer de mémoire) → typographie généreuse, centrée. */
 .fc4-writing-prompt {
-  font-size: 16px;
-  color: var(--text-secondary, #6b7280);
-  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   text-align: center;
+  margin-bottom: 2px;
+}
+.fc4-writing-prompt-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary, #6b7280);
+}
+.fc4-writing-prompt-main {
+  font-size: 20px;
+  line-height: 1.35;
 }
 .fc4-writing-prompt strong {
   color: var(--text-primary, #1f2233);
   font-weight: 700;
 }
 .fc4-writing-pinyin-inline {
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--primary-red, #c6302c);
   letter-spacing: 0.02em;
+}
+
+/* Responsive mobile (<640px) : canvas ~220px côté JS, stage plus compacte,
+   les boutons hzt-actions wrappent déjà (flex-wrap) sur 2 lignes si besoin. */
+@media (max-width: 640px) {
+  .fc5-session-shell .fc4-writing-card .fc4-study-stage {
+    min-height: 420px;
+    padding: 16px 14px 20px;
+  }
+  .fc4-writing-prompt-main {
+    font-size: 18px;
+  }
+  .fc4-writing-pinyin-inline {
+    font-size: 16px;
+  }
 }
 
 /* ===========================================================================

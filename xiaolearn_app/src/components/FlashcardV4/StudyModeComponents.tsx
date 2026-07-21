@@ -1013,15 +1013,22 @@ export function WritingCard({
 }: StudyModeProps) {
   const chars = Array.from(card.hanzi.trim()).filter((c) => /[一-鿿]/.test(c));
   const finishedRef = useRef(false);
+  // Progression des caractères du mot (0-based), remontée par HanziTracer via
+  // onCharChange — affichée « 1/2 » dans le header de la carte.
+  const [charPos, setCharPos] = useState(0);
 
   useEffect(() => {
     finishedRef.current = false;
+    setCharPos(0);
   }, [card.id]);
 
-  // Taille responsive du pad : ~280px desktop, réduit sur petits écrans.
+  // Taille responsive du pad : ~260px desktop, ~220px sur mobile (<640px) —
+  // le canvas doit rester contenu dans la carte sans déborder.
   const padSize = useMemo(() => {
-    if (typeof window === 'undefined') return 280;
-    return Math.max(200, Math.min(280, window.innerWidth - 120));
+    if (typeof window === 'undefined') return 260;
+    const w = window.innerWidth;
+    if (w < 640) return Math.max(180, Math.min(220, w - 96));
+    return 260;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [card.id]);
 
@@ -1103,21 +1110,42 @@ export function WritingCard({
       <div className="fc4-study-stage">
         <div className="fc4-card-topbar">
           <span className="fc4-card-badge">{category}</span>
-          <button
-            type="button"
-            className="fc4-card-speaker"
-            onClick={playAudio}
-            aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
-            title={language === 'fr' ? 'Écouter' : 'Listen'}
-          >
-            <SpeakerIcon size={20} />
-          </button>
+          <div className="fc4-card-actions">
+            <span className="fc4-writing-mode-label" aria-hidden>
+              ✍️ {language === 'fr' ? 'Écriture' : 'Writing'}
+            </span>
+            {chars.length > 1 && (
+              <span
+                className="fc4-writing-char-count"
+                aria-label={
+                  language === 'fr'
+                    ? `Caractère ${Math.min(charPos + 1, chars.length)} sur ${chars.length}`
+                    : `Character ${Math.min(charPos + 1, chars.length)} of ${chars.length}`
+                }
+              >
+                {Math.min(charPos + 1, chars.length)}/{chars.length}
+              </span>
+            )}
+            <button
+              type="button"
+              className="fc4-card-speaker"
+              onClick={playAudio}
+              aria-label={language === 'fr' ? 'Écouter' : 'Listen'}
+              title={language === 'fr' ? 'Écouter' : 'Listen'}
+            >
+              <SpeakerIcon size={20} />
+            </button>
+          </div>
         </div>
         <div className="fc4-card-body fc4-writing-body">
           <div className="fc4-writing-prompt">
-            {language === 'fr' ? 'Trace :' : 'Trace:'}{' '}
-            <strong>{meaning}</strong>
-            <span className="fc4-writing-pinyin-inline"> — {card.pinyin}</span>
+            <span className="fc4-writing-prompt-label">
+              {language === 'fr' ? 'Trace de mémoire :' : 'Trace from memory:'}
+            </span>
+            <span className="fc4-writing-prompt-main">
+              <strong>{meaning}</strong>
+              <span className="fc4-writing-pinyin-inline"> — {card.pinyin}</span>
+            </span>
           </div>
 
           <HanziTracer
@@ -1125,6 +1153,8 @@ export function WritingCard({
             hanzi={card.hanzi}
             size={padSize}
             language={language}
+            hideProgress
+            onCharChange={(i) => setCharPos(i)}
             onComplete={handleComplete}
             onGiveUp={handleGiveUp}
             onAllUnavailable={handleAllUnavailable}
