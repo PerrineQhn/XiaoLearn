@@ -49,7 +49,7 @@ import {
 } from '../hooks/useFlashcardBadges';
 import { SessionView } from '../components/FlashcardV4/SessionView';
 import type { StudyCard } from '../components/FlashcardV4/StudyModeComponents';
-import type { SrsSkill } from '../hooks/useWordSRS';
+import { SRS_SKILLS, type SrsSkill, type SkillState } from '../hooks/useWordSRS';
 import { playHanziAudio } from '../utils/audio';
 import { matchesSearch } from '../utils/search-normalize';
 import '../styles/flashcards-v2.css';
@@ -92,6 +92,12 @@ export interface FlashcardPageV5Props {
   dueIds?: Set<string> | string[];
   masteredIds?: Set<string> | string[];
   difficultIds?: Set<string> | string[];
+  /** V13 — Stats par compétence SRS (jauges 👁 reconnaissance / 🗣 prononciation
+   *  / ✍️ écriture). Sous-ensemble de useWordSRS pour éviter de passer tout
+   *  le hook : lecture seule. */
+  getSkillState?: (id: string, skill: SrsSkill) => SkillState;
+  dueIdsBySkill?: Record<SrsSkill, Set<string>>;
+  masteredIdsBySkill?: Record<SrsSkill, Set<string>>;
   /** Leçons vues par l'utilisateur — source canonique des decks.
    *  Si absent, fallback sur le groupement level×theme (legacy). */
   lessonsFromUser?: FlashcardLessonSource[];
@@ -169,6 +175,7 @@ const COPY = {
     deckTableStatus: 'Statut',
     deckTableWord: 'Mot',
     deckTableTrans: 'Traduction',
+    deckTableSkills: 'Compétences',
     deckTableActions: 'Actions',
     deckWordStatusMastered: 'Maîtrisé',
     deckWordStatusProgress: 'En cours',
@@ -245,7 +252,16 @@ const COPY = {
     summaryEasy: 'Simple',
     summaryBack: 'Retour au dashboard',
     noRateWarning:
-      'Mode preview — ta progression SRS ne sera pas sauvegardée (aucun onRate branché).'
+      'Mode preview — ta progression SRS ne sera pas sauvegardée (aucun onRate branché).',
+    // Compétences SRS (V13 — 3 jauges 👁/🗣/✍️)
+    skillNames: {
+      recognition: 'Reconnaissance',
+      pronunciation: 'Prononciation',
+      writing: 'Écriture'
+    } as Record<SrsSkill, string>,
+    skillTooltip: (name: string, lvl: number) => `${name} : niveau ${lvl}/6`,
+    skillDueLabel: 'À réviser',
+    skillMasteredLabel: 'Maîtrisés'
   },
   en: {
     title: 'Flashcards',
@@ -305,6 +321,7 @@ const COPY = {
     deckTableStatus: 'Status',
     deckTableWord: 'Word',
     deckTableTrans: 'Translation',
+    deckTableSkills: 'Skills',
     deckTableActions: 'Actions',
     deckWordStatusMastered: 'Mastered',
     deckWordStatusProgress: 'In progress',
@@ -378,7 +395,16 @@ const COPY = {
     summaryEasy: 'Easy',
     summaryBack: 'Back to dashboard',
     noRateWarning:
-      'Preview mode — SRS progress will not be saved (onRate not wired).'
+      'Preview mode — SRS progress will not be saved (onRate not wired).',
+    // SRS skills (V13 — 3 gauges 👁/🗣/✍️)
+    skillNames: {
+      recognition: 'Recognition',
+      pronunciation: 'Pronunciation',
+      writing: 'Writing'
+    } as Record<SrsSkill, string>,
+    skillTooltip: (name: string, lvl: number) => `${name}: level ${lvl}/6`,
+    skillDueLabel: 'Due',
+    skillMasteredLabel: 'Mastered'
   }
 };
 
@@ -566,6 +592,9 @@ export default function FlashcardPageV5({
   dueIds,
   masteredIds,
   difficultIds,
+  getSkillState,
+  dueIdsBySkill,
+  masteredIdsBySkill,
   lessonsFromUser,
   onRate,
   onAddCard
@@ -607,6 +636,26 @@ export default function FlashcardPageV5({
   const dueSet = useMemo(() => toSet(dueIds), [dueIds]);
   const masteredSet = useMemo(() => toSet(masteredIds), [masteredIds]);
   const difficultSet = useMemo(() => toSet(difficultIds), [difficultIds]);
+
+  // V13 — Compteurs par compétence SRS (👁/🗣/✍️), restreints aux MOTS
+  // affichés (mêmes règles que `stats` : on ne compte pas des ids SRS
+  // orphelins). `null` si les props *BySkill ne sont pas branchées.
+  const skillCounts = useMemo(() => {
+    if (!dueIdsBySkill || !masteredIdsBySkill) return null;
+    const wordIdSet = new Set(wordItems.map((w) => w.id));
+    const count = (set: Set<string>): number => {
+      let n = 0;
+      for (const id of set) if (wordIdSet.has(id)) n++;
+      return n;
+    };
+    const due = {} as Record<SrsSkill, number>;
+    const mastered = {} as Record<SrsSkill, number>;
+    for (const skill of SRS_SKILLS) {
+      due[skill] = count(dueIdsBySkill[skill]);
+      mastered[skill] = count(masteredIdsBySkill[skill]);
+    }
+    return { due, mastered };
+  }, [wordItems, dueIdsBySkill, masteredIdsBySkill]);
 
   // Stats globales (sur l'onglet actif)
   const stats = useMemo(() => {
@@ -1487,6 +1536,7 @@ export default function FlashcardPageV5({
           masteredSet={masteredSet}
           dueSet={dueSet}
           difficultSet={difficultSet}
+          getSkillState={getSkillState}
           language={language}
           onBack={handleBackToDecks}
           onStudy={handleStartCollectionStudy}
@@ -1599,6 +1649,10 @@ export default function FlashcardPageV5({
       ) : null}
 
       <StatGrid stats={stats} copy={copy} />
+
+      {activeTab === 'words' && skillCounts ? (
+        <SkillSummary counts={skillCounts} copy={copy} />
+      ) : null}
 
       <div className="fc5-search-row">
         {/* Layout flex: l'icône est un *vrai* enfant du flex container,
@@ -1742,6 +1796,86 @@ export default function FlashcardPageV5({
 // ============================================================================
 //  SUB-COMPONENTS
 // ============================================================================
+
+// ----------------------------------------------------------------------------
+//  COMPÉTENCES SRS (V13) — pastilles 👁 reconnaissance / 🗣 prononciation /
+//  ✍️ écriture, colorées par niveau (gris 0 / rouge 1-2 / ambre 3 / vert 4+).
+// ----------------------------------------------------------------------------
+
+const SKILL_EMOJI: Record<SrsSkill, string> = {
+  recognition: '👁',
+  pronunciation: '🗣',
+  writing: '✍️'
+};
+
+function skillLevelClass(level: number): string {
+  if (level <= 0) return 'fc5-skill-dot--lv0';
+  if (level <= 2) return 'fc5-skill-dot--lv1';
+  if (level === 3) return 'fc5-skill-dot--lv3';
+  return 'fc5-skill-dot--lv4';
+}
+
+/** Les 3 pastilles compactes d'un mot (colonne "Compétences" du deck detail). */
+function SkillDots({
+  id,
+  getSkillState,
+  copy
+}: {
+  id: string;
+  getSkillState: (id: string, skill: SrsSkill) => SkillState;
+  copy: CopyType;
+}) {
+  return (
+    <span className="fc5-skill-dots">
+      {SRS_SKILLS.map((skill) => {
+        const st = getSkillState(id, skill);
+        const label = copy.skillTooltip(copy.skillNames[skill], st.level);
+        return (
+          <span
+            key={skill}
+            className={`fc5-skill-dot ${skillLevelClass(st.level)}`}
+            title={label}
+            aria-label={label}
+            role="img"
+          >
+            {SKILL_EMOJI[skill]}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
+/** Récap dashboard : "À réviser : 👁 12 · 🗣 8 · ✍️ 23 / Maîtrisés : …". */
+function SkillSummary({
+  counts,
+  copy
+}: {
+  counts: { due: Record<SrsSkill, number>; mastered: Record<SrsSkill, number> };
+  copy: CopyType;
+}) {
+  const renderRow = (label: string, values: Record<SrsSkill, number>) => (
+    <div className="fc5-skill-summary-row">
+      <span className="fc5-skill-summary-label">{label}</span>
+      {SRS_SKILLS.map((skill) => (
+        <span
+          key={skill}
+          className="fc5-skill-summary-item"
+          title={copy.skillNames[skill]}
+        >
+          <span aria-hidden="true">{SKILL_EMOJI[skill]}</span>
+          <span className="fc5-skill-summary-count">{values[skill]}</span>
+        </span>
+      ))}
+    </div>
+  );
+  return (
+    <div className="fc5-skill-summary">
+      {renderRow(copy.skillDueLabel, counts.due)}
+      {renderRow(copy.skillMasteredLabel, counts.mastered)}
+    </div>
+  );
+}
 
 function StatGrid({
   stats,
@@ -2105,6 +2239,7 @@ function DeckDetailView({
   masteredSet,
   dueSet,
   difficultSet,
+  getSkillState,
   language,
   onBack,
   onStudy
@@ -2114,6 +2249,8 @@ function DeckDetailView({
   masteredSet: Set<string>;
   dueSet: Set<string>;
   difficultSet: Set<string>;
+  /** V13 — si fourni, affiche la colonne "Compétences" (3 pastilles 👁/🗣/✍️). */
+  getSkillState?: (id: string, skill: SrsSkill) => SkillState;
   language: 'fr' | 'en';
   onBack: () => void;
   onStudy: () => void;
@@ -2255,7 +2392,10 @@ function DeckDetailView({
       </div>
 
       {/* Word table */}
-      <div className="fc5-deck-table" role="table">
+      <div
+        className={`fc5-deck-table ${getSkillState ? 'fc5-deck-table--skills' : ''}`}
+        role="table"
+      >
         <div className="fc5-deck-table-head" role="row">
           <div className="fc5-deck-col fc5-deck-col--status" role="columnheader">
             {copy.deckTableStatus}
@@ -2266,6 +2406,13 @@ function DeckDetailView({
           <div className="fc5-deck-col fc5-deck-col--trans" role="columnheader">
             {copy.deckTableTrans}
           </div>
+          {getSkillState ? (
+            <div className="fc5-deck-col fc5-deck-col--skills" role="columnheader">
+              <span className="fc5-deck-col-skills-label">
+                {copy.deckTableSkills}
+              </span>
+            </div>
+          ) : null}
           <div className="fc5-deck-col fc5-deck-col--actions" role="columnheader">
             {copy.deckTableActions}
           </div>
@@ -2287,6 +2434,11 @@ function DeckDetailView({
               <div className="fc5-deck-col fc5-deck-col--trans" role="cell">
                 {translationOf(r)}
               </div>
+              {getSkillState ? (
+                <div className="fc5-deck-col fc5-deck-col--skills" role="cell">
+                  <SkillDots id={r.id} getSkillState={getSkillState} copy={copy} />
+                </div>
+              ) : null}
               <div className="fc5-deck-col fc5-deck-col--actions" role="cell">
                 <button
                   type="button"

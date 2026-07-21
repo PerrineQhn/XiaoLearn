@@ -2586,6 +2586,127 @@
 }
 
 /* ============================================================================
+   COMPÉTENCES SRS (V13) — pastilles 👁 reconnaissance / 🗣 prononciation /
+   ✍️ écriture. Colorées par niveau SRS :
+     lv0  = gris (jamais travaillé)
+     lv1  = rouge doux (niveaux 1-2, fragile)
+     lv3  = ambre (niveau 3, en consolidation)
+     lv4  = vert (niveaux 4+, maîtrisé)
+   ============================================================================ */
+
+.fc5-skill-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fc5-skill-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: default;
+  flex: none;
+}
+.fc5-skill-dot--lv0 {
+  background: var(--fc5-surface-muted);
+  border-color: var(--fc5-border);
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+.fc5-skill-dot--lv1 {
+  background: var(--fc5-danger-tint);
+  border-color: rgba(198, 48, 44, 0.28);
+}
+.fc5-skill-dot--lv3 {
+  background: var(--fc5-info-tint);
+  border-color: rgba(201, 162, 39, 0.32);
+}
+.fc5-skill-dot--lv4 {
+  background: var(--fc5-success-tint);
+  border-color: rgba(47, 157, 138, 0.32);
+}
+
+/* Variante table deck : 5 colonnes quand la colonne Compétences est active. */
+.fc5-deck-table--skills .fc5-deck-table-head,
+.fc5-deck-table--skills .fc5-deck-table-row {
+  grid-template-columns: 140px 1fr 1fr 96px 80px;
+}
+.fc5-deck-col--skills {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+@media (max-width: 720px) {
+  .fc5-deck-table--skills .fc5-deck-table-head,
+  .fc5-deck-table--skills .fc5-deck-table-row {
+    grid-template-columns: 84px 1.2fr 1fr 24px 40px;
+  }
+  /* Mobile : pastilles empilées + réduites, header texte masqué. */
+  .fc5-deck-col--skills .fc5-skill-dots {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .fc5-deck-col--skills .fc5-skill-dot {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+  .fc5-deck-col-skills-label {
+    display: none;
+  }
+}
+
+/* Récap dashboard : "À réviser : 👁 12 · 🗣 8 · ✍️ 23" + "Maîtrisés : …". */
+.fc5-skill-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  background: var(--fc5-surface);
+  border: 1px solid var(--fc5-border);
+  border-radius: var(--fc5-radius-md);
+  box-shadow: var(--fc5-shadow-sm);
+  padding: 10px 16px;
+  margin: -12px 0 24px;
+  font-size: 13px;
+}
+.fc5-skill-summary-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.fc5-skill-summary-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fc5-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.fc5-skill-summary-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 700;
+  color: var(--fc5-text);
+  cursor: default;
+}
+.fc5-skill-summary-item + .fc5-skill-summary-item::before {
+  content: '·';
+  margin-right: 6px;
+  color: var(--fc5-text-muted);
+  font-weight: 400;
+}
+.fc5-skill-summary-count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================================
    MODAL — refonte Seonsaengnim
    (tile "Collection actuelle" quand une collection est sélectionnée)
    ============================================================================ */

@@ -1903,6 +1903,11 @@ function App() {
           dueIds={wordSrs.dueIds}
           masteredIds={wordSrs.masteredIds}
           difficultIds={wordSrs.difficultIds}
+          // V13 — Stats par compétence SRS (👁/🗣/✍️) : sous-ensemble
+          // lecture seule de useWordSRS (pas tout le hook).
+          getSkillState={wordSrs.getSkillState}
+          dueIdsBySkill={wordSrs.dueIdsBySkill}
+          masteredIdsBySkill={wordSrs.masteredIdsBySkill}
           onRate={wordSrs.rate}
           onStartGlobalReview={() => setView('review')}
           onStartSentenceReview={() => setView('review')}
