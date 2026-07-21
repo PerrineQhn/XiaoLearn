@@ -311,6 +311,10 @@ export default defineConfig(({ mode }) => {
             /^\/icons\//,
             /^\/profs\//,
             /^\/data\//,
+            // Handler d'auth Firebase proxifié par le Worker Cloudflare
+            // (app.xiaolearn.com/__/auth/* → firebaseapp.com). Sans cette
+            // exclusion, le SW détourne le popup OAuth vers index.html.
+            /^\/__\//,
             /\.(png|jpg|jpeg|webp|gif|svg|mp3|wav|ogg|json|webmanifest)$/i
           ],
           runtimeCaching: [
