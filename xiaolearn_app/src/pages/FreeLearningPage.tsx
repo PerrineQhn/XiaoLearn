@@ -22,6 +22,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SessionView } from '../components/FlashcardV4/SessionView';
 import type { StudyCard } from '../components/FlashcardV4/StudyModeComponents';
+import type { SrsSkill } from '../hooks/useWordSRS';
 import {
   type FlashcardSessionSummary,
   type StudyMode
@@ -257,7 +258,9 @@ export interface FreeLearningPageProps {
   dueIds?: Set<string> | string[];
   masteredIds?: Set<string> | string[];
   difficultIds?: Set<string> | string[];
-  onRate: (cardId: string, quality: 1 | 2 | 3 | 4) => void;
+  /** `skill` : compétence SRS testée, fournie par SessionView selon le mode
+   *  (listening→recognition, typing→pronunciation, mcq→selon direction). */
+  onRate: (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => void;
   /**
    * Callback optionnel pour ouvrir la page Lecture standalone
    * (`ReadingPageV2`). Quand fourni, le tuile « Lire un texte »

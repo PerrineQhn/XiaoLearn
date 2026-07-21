@@ -23,6 +23,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FlashcardDirection } from '../../types/flashcard-v3';
 import { resolveEffectiveDirection } from '../../types/flashcard-v3';
+import type { SrsSkill } from '../../hooks/useWordSRS';
 import {
   type FlashcardSessionSummary,
   type ReviewRating,
@@ -41,6 +42,40 @@ import {
 } from './StudyModeComponents';
 
 // ============================================================================
+//  SKILL MAPPING
+// ============================================================================
+
+/**
+ * Compétence SRS testée selon le mode d'étude et la direction effective :
+ *   - listening              → recognition (entendre le hanzi → comprendre)
+ *   - typing                 → pronunciation (produire la forme depuis le sens)
+ *   - pronunciation (micro)  → pronunciation
+ *   - writing (HanziWriter)  → writing
+ *   - flip / mcq / speed     → selon la direction effective de la carte :
+ *       hanzi→fr = recognition (on voit le hanzi, on retrouve le sens)
+ *       fr→hanzi = pronunciation (on doit produire le mot chinois)
+ */
+export function skillForStudyMode(
+  mode: StudyMode,
+  effectiveDirection: 'hanzi-to-fr' | 'fr-to-hanzi'
+): SrsSkill {
+  switch (mode) {
+    case 'listening':
+      return 'recognition';
+    case 'typing':
+    case 'pronunciation':
+      return 'pronunciation';
+    case 'writing':
+      return 'writing';
+    case 'flip':
+    case 'mcq':
+    case 'speed':
+    default:
+      return effectiveDirection === 'hanzi-to-fr' ? 'recognition' : 'pronunciation';
+  }
+}
+
+// ============================================================================
 //  PROPS
 // ============================================================================
 
@@ -53,9 +88,11 @@ export interface SessionViewProps {
   distractorPool?: StudyCard[];
   /**
    * Appelé quand l'utilisateur note une carte — passe la *qualité* 1-4
-   * directement compatible avec answerCard() de useFlashcardSRS.
+   * directement compatible avec answerCard() de useFlashcardSRS, plus la
+   * compétence SRS testée (recognition / pronunciation / writing), dérivée
+   * du mode d'étude et de la direction effective de la carte.
    */
-  onRate: (cardId: string, quality: 1 | 2 | 3 | 4) => void;
+  onRate: (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => void;
   /** Appelé à chaque carte revue (pour heatmap / daily activity). */
   onCardReviewed?: (rating: ReviewRating) => void;
   /** Appelé quand la dernière carte est soumise. */
@@ -153,7 +190,10 @@ export function SessionView({
 
   const handleRate = (rating: ReviewRating) => {
     const quality = RATING_TO_QUALITY[rating];
-    onRate(card.id, quality);
+    // Compétence SRS testée : dépend du mode et, pour flip/mcq, de la
+    // direction EFFECTIVE de la carte courante (résolue par carte en 'mixed').
+    const skill = skillForStudyMode(mode, resolveEffectiveDirection(direction, card.id));
+    onRate(card.id, quality, skill);
     onCardReviewed?.(rating);
     const xpInc = XP_PER_RATING[rating];
     setXp((x) => x + xpInc);
@@ -422,7 +462,7 @@ export interface SpeedRoundProps {
   onFinish: (summary: FlashcardSessionSummary) => void;
   onAbort?: () => void;
   onCardReviewed?: (rating: ReviewRating) => void;
-  onRate: (cardId: string, quality: 1 | 2 | 3 | 4) => void;
+  onRate: (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => void;
 }
 
 /**
@@ -491,7 +531,9 @@ export function SpeedRound({
 
   const handleMark = (ok: boolean) => {
     if (!card || finished) return;
-    onRate(card.id, ok ? 3 : 1);
+    // Speed round : même mapping que flip — hanzi affiché = recognition,
+    // sens affiché (fr→hanzi ou mixed) = production orale.
+    onRate(card.id, ok ? 3 : 1, skillForStudyMode('speed', frontFr ? 'hanzi-to-fr' : 'fr-to-hanzi'));
     onCardReviewed?.(ok ? 'good' : 'again');
     setXp((x) => x + (ok ? XP_PER_RATING.good : XP_PER_RATING.again));
     if (ok) setCorrect((c) => c + 1);

@@ -49,6 +49,7 @@ import {
 } from '../hooks/useFlashcardBadges';
 import { SessionView } from '../components/FlashcardV4/SessionView';
 import type { StudyCard } from '../components/FlashcardV4/StudyModeComponents';
+import type { SrsSkill } from '../hooks/useWordSRS';
 import { playHanziAudio } from '../utils/audio';
 import { matchesSearch } from '../utils/search-normalize';
 import '../styles/flashcards-v2.css';
@@ -94,7 +95,9 @@ export interface FlashcardPageV5Props {
   /** Leçons vues par l'utilisateur — source canonique des decks.
    *  Si absent, fallback sur le groupement level×theme (legacy). */
   lessonsFromUser?: FlashcardLessonSource[];
-  onRate?: (cardId: string, quality: 1 | 2 | 3 | 4) => void;
+  /** `skill` : compétence SRS testée (recognition/pronunciation/writing),
+   *  fournie par SessionView selon le mode + la direction effective. */
+  onRate?: (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => void;
   /** Callback optionnel pour ouvrir un flow "Ajouter une carte perso". */
   onAddCard?: () => void;
   /** Legacy V3 fallbacks (conservés pour compat, non utilisés). */
@@ -1378,8 +1381,8 @@ export default function FlashcardPageV5({
   }, [selectedDeck]);
 
   const handleRate = useCallback(
-    (cardId: string, quality: 1 | 2 | 3 | 4) => {
-      if (onRate) onRate(cardId, quality);
+    (cardId: string, quality: 1 | 2 | 3 | 4, skill?: SrsSkill) => {
+      if (onRate) onRate(cardId, quality, skill);
     },
     [onRate]
   );
