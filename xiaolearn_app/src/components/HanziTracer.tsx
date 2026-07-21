@@ -135,6 +135,11 @@ const HanziTracer = ({
   const tracedAnyRef = useRef(false);
   /** Garde anti double-fin (onComplete/onGiveUp appelés une seule fois). */
   const finishedRef = useRef(false);
+  /** V31 — Pénalité d'aide : +2 si outline révélé, +1 par highlight de trait.
+   *  Ajoutée au totalMistakes pour que le score auto reflète l'usage d'aides. */
+  const hintPenaltyRef = useRef(0);
+  /** V31 — Outline révélé pour le caractère courant ? (reset à chaque char) */
+  const outlineShownRef = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Reset complet quand le mot change.
@@ -143,6 +148,8 @@ const HanziTracer = ({
     tracedAnyRef.current = false;
     finishedRef.current = false;
     strokeNumRef.current = 0;
+    hintPenaltyRef.current = 0;
+    outlineShownRef.current = false;
     setCharIndex(0);
     setStatus('loading');
   }, [hanzi]);
@@ -155,7 +162,8 @@ const HanziTracer = ({
       onAllUnavailableRef.current?.();
       return;
     }
-    const totalMistakes = mistakesRef.current.reduce((a, b) => a + (b || 0), 0);
+    const totalMistakes =
+      mistakesRef.current.reduce((a, b) => a + (b || 0), 0) + hintPenaltyRef.current;
     onCompleteRef.current({ totalMistakes });
   }, []);
 
@@ -210,6 +218,8 @@ const HanziTracer = ({
     }
     let disposed = false;
     node.innerHTML = '';
+    // V31 — Nouveau caractère : le calque redémarre masqué.
+    outlineShownRef.current = false;
     setStatus('loading');
     try {
       const writer = HanziWriter.create(node, char, {
@@ -217,7 +227,11 @@ const HanziTracer = ({
         height: size,
         padding: 5,
         showCharacter: false,
-        showOutline: true,
+        // V31 — Pas de calque par défaut : « trace de mémoire » signifie
+        // vraiment DE MÉMOIRE. Le bouton Indice révèle l'outline (1er appui)
+        // puis highlight le trait courant (appuis suivants), avec pénalité
+        // douce sur le score auto.
+        showOutline: false,
         highlightOnComplete: true,
         strokeColor: '#1f2937',
         outlineColor: '#ddd',
@@ -263,7 +277,17 @@ const HanziTracer = ({
     const writer = writerRef.current;
     if (!writer || status !== 'quiz') return;
     try {
-      writer.highlightStroke(strokeNumRef.current);
+      if (!outlineShownRef.current) {
+        // V31 — 1er appui : révèle le calque du caractère (aide majeure,
+        // pénalité +2 sur le score auto).
+        outlineShownRef.current = true;
+        hintPenaltyRef.current += 2;
+        writer.showOutline();
+      } else {
+        // Appuis suivants : highlight du trait courant (aide fine, +1).
+        hintPenaltyRef.current += 1;
+        writer.highlightStroke(strokeNumRef.current);
+      }
     } catch {
       /* trait hors limites — noop */
     }
