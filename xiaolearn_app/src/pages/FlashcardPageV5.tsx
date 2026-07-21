@@ -219,6 +219,10 @@ const COPY = {
     dirFrToHanzi: { emoji: '🇫🇷 → 🇨🇳', sub: 'Traduction → Chinois' },
     dirMixed: { emoji: '🔀', sub: 'Mélangé (les deux sens)' },
     modeTitle: 'Mode d\'étude',
+    studyFlip: { emoji: '🃏', sub: 'Cartes (retourner)' },
+    studyWriting: { emoji: '✍️', sub: 'Écriture (tracer les traits)' },
+    studyWritingHint:
+      'Le sens des cartes ne s\'applique pas au mode Écriture : tu traces le mot chinois depuis sa traduction.',
     cta: "C'est parti !",
     // Sections bottom
     wotdTitle: 'Mot du jour',
@@ -350,6 +354,10 @@ const COPY = {
     dirFrToHanzi: { emoji: '🇬🇧 → 🇨🇳', sub: 'Translation → Chinese' },
     dirMixed: { emoji: '🔀', sub: 'Mixed (both directions)' },
     modeTitle: 'Study mode',
+    studyFlip: { emoji: '🃏', sub: 'Cards (flip)' },
+    studyWriting: { emoji: '✍️', sub: 'Writing (trace the strokes)' },
+    studyWritingHint:
+      'Card direction does not apply to Writing mode: you trace the Chinese word from its translation.',
     cta: "Let's go!",
     wotdTitle: 'Word of the day',
     wotdEmpty: 'Complete a lesson to unlock the word of the day',
@@ -479,6 +487,9 @@ type SessionSource =
 
 type ModalMode = 'revise' | 'new' | 'difficult' | 'collection';
 
+/** Modes d'étude proposés dans le modal de setup (sous-ensemble de StudyMode). */
+type SessionStudyMode = 'flip' | 'writing';
+
 // ---- Deck summary (groupement par level × theme côté Flashcards) ----
 type DeckSummary = {
   id: string;
@@ -578,6 +589,9 @@ export default function FlashcardPageV5({
   const [modalMode, setModalMode] = useState<ModalMode>('revise');
   const [modalCount, setModalCount] = useState<number>(20);
   const [direction, setDirection] = useState<FlashcardDirection>('hanzi-to-fr');
+  // Mode d'étude de la session : cartes classiques (flip) ou traçage des
+  // caractères (writing → HanziTracer, skill SRS 'writing').
+  const [studyMode, setStudyMode] = useState<SessionStudyMode>('flip');
 
   // Modal "Ajouter une carte perso"
   const [addOpen, setAddOpen] = useState(false);
@@ -1437,7 +1451,7 @@ export default function FlashcardPageV5({
     return (
       <div className="fc5-root fc5-session-shell">
         <SessionView
-          mode="flip"
+          mode={studyMode}
           direction={direction}
           cards={activeCards}
           language={language}
@@ -1487,6 +1501,8 @@ export default function FlashcardPageV5({
             setModalCount={setModalCount}
             direction={direction}
             setDirection={setDirection}
+            studyMode={studyMode}
+            setStudyMode={setStudyMode}
             available={modalAvailable}
             onClose={closeModal}
             onStart={startSession}
@@ -1675,6 +1691,8 @@ export default function FlashcardPageV5({
           setModalCount={setModalCount}
           direction={direction}
           setDirection={setDirection}
+          studyMode={studyMode}
+          setStudyMode={setStudyMode}
           available={modalAvailable}
           onClose={closeModal}
           onStart={startSession}
@@ -2301,6 +2319,8 @@ function SessionSetupModal({
   setModalCount,
   direction,
   setDirection,
+  studyMode,
+  setStudyMode,
   available,
   onClose,
   onStart,
@@ -2316,6 +2336,8 @@ function SessionSetupModal({
   setModalCount: (n: number) => void;
   direction: FlashcardDirection;
   setDirection: (d: FlashcardDirection) => void;
+  studyMode: SessionStudyMode;
+  setStudyMode: (m: SessionStudyMode) => void;
   available: number;
   onClose: () => void;
   onStart: () => void;
@@ -2436,7 +2458,34 @@ function SessionSetupModal({
           ) : null}
         </div>
 
-        {/* Direction */}
+        {/* Mode d'étude : cartes classiques vs traçage écriture */}
+        <div className="fc5-modal-section">
+          <h3 className="fc5-modal-h3">{copy.modeTitle}</h3>
+          <div className="fc5-dir-row fc5-study-row">
+            <button
+              type="button"
+              className={`fc5-dir-btn ${studyMode === 'flip' ? 'is-active' : ''}`}
+              onClick={() => setStudyMode('flip')}
+            >
+              <div className="fc5-dir-btn-emoji">{copy.studyFlip.emoji}</div>
+              <div className="fc5-dir-btn-label">{copy.studyFlip.sub}</div>
+            </button>
+            <button
+              type="button"
+              className={`fc5-dir-btn ${studyMode === 'writing' ? 'is-active' : ''}`}
+              onClick={() => setStudyMode('writing')}
+            >
+              <div className="fc5-dir-btn-emoji">{copy.studyWriting.emoji}</div>
+              <div className="fc5-dir-btn-label">{copy.studyWriting.sub}</div>
+            </button>
+          </div>
+          {studyMode === 'writing' ? (
+            <p className="fc5-count-hint">{copy.studyWritingHint}</p>
+          ) : null}
+        </div>
+
+        {/* Direction — sans objet en mode Écriture (trad → traçage du hanzi) */}
+        {studyMode !== 'writing' ? (
         <div className="fc5-modal-section">
           <h3 className="fc5-modal-h3">{copy.dirTitle}</h3>
           <div className="fc5-dir-row">
@@ -2466,6 +2515,7 @@ function SessionSetupModal({
             </button>
           </div>
         </div>
+        ) : null}
 
         <button
           type="button"

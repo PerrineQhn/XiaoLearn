@@ -34,9 +34,7 @@ import {
   type AzurePronunciationResult
 } from '../../services/pronunciationServiceAzure';
 import PronunciationFeedback from '../PronunciationFeedback';
-import HanziWriterPad, {
-  type HanziWriterQuizStats
-} from '../HanziWriterPad';
+import HanziTracer from '../HanziTracer';
 
 // ============================================================================
 //  TYPES PARTAGÉS
@@ -75,6 +73,17 @@ export interface StudyModeProps {
    * raccourci clavier Espace). À chaque incrément, FlipCard se retourne.
    */
   externalFlipSignal?: number;
+  /**
+   * Rating automatique (mode 'writing') : le composant note lui-même la
+   * carte selon la performance (erreurs de traçage) au lieu de laisser
+   * l'utilisateur choisir via les boutons. SessionView avance ensuite.
+   */
+  onAutoRate?: (rating: 'again' | 'hard' | 'good' | 'easy') => void;
+  /**
+   * Saute la carte SANS la noter (mode 'writing' : aucun caractère du mot
+   * n'a de données de traits sur le CDN — on ne pénalise pas le SRS).
+   */
+  onSkip?: () => void;
 }
 
 // ============================================================================
@@ -930,46 +939,83 @@ export function PronunciationCard({ card, language, onReveal, onSubmit }: StudyM
 // ============================================================================
 
 /**
- * Mode "Écriture" :
+ * Mode "Écriture" (traçage interactif Hanzi Writer via HanziTracer) :
  *   - Affiche le pinyin + traduction (mais PAS le hanzi en gros — sinon
  *     l'exercice est trivial). Le hanzi est visible uniquement dans le pad
- *     en outline gris très clair (option Hanzi Writer).
- *   - L'utilisateur trace chaque caractère du mot l'un après l'autre.
- *     Pour 你好 : on drille 你 puis 好, avec un mini stepper visible.
- *   - Verdict global = agrégat des verdicts par caractère :
- *       au moins un mismatch → wasCorrect: false
- *       sinon → wasCorrect: true
- *     La SRS est mise à jour une seule fois à la fin du dernier caractère.
+ *     en silhouette grise (outline Hanzi Writer).
+ *   - L'utilisateur trace chaque caractère du mot l'un après l'autre
+ *     (progression 1/2, 2/2 gérée par HanziTracer).
+ *   - Rating AUTOMATIQUE à la fin du mot, selon les erreurs cumulées :
+ *       0 erreur   → 'easy'  (quality 4)
+ *       1-2        → 'good'  (quality 3)
+ *       3-5        → 'hard'  (quality 2)
+ *       >5 / Révéler → 'again' (quality 1)
+ *     via `onAutoRate` — SessionView applique la note (skill 'writing')
+ *     et avance à la carte suivante.
+ *   - Si aucun caractère n'a de données de traits (CDN) → `onSkip` (carte
+ *     sautée sans impact SRS).
  */
-export function WritingCard({ card, language, onReveal, onSubmit }: StudyModeProps) {
+export function WritingCard({
+  card,
+  language,
+  onReveal,
+  onSubmit,
+  onAutoRate,
+  onSkip
+}: StudyModeProps) {
   const chars = Array.from(card.hanzi.trim()).filter((c) => /[一-鿿]/.test(c));
-  const [charIndex, setCharIndex] = useState(0);
-  const [verdicts, setVerdicts] = useState<HanziWriterQuizStats['verdict'][]>([]);
-  const [submitted, setSubmitted] = useState(false);
+  const finishedRef = useRef(false);
 
   useEffect(() => {
-    setCharIndex(0);
-    setVerdicts([]);
-    setSubmitted(false);
+    finishedRef.current = false;
   }, [card.id]);
 
-  const handleComplete = (stats: HanziWriterQuizStats) => {
-    if (submitted) return;
-    const nextVerdicts = [...verdicts, stats.verdict];
-    setVerdicts(nextVerdicts);
+  // Taille responsive du pad : ~280px desktop, réduit sur petits écrans.
+  const padSize = useMemo(() => {
+    if (typeof window === 'undefined') return 280;
+    return Math.max(200, Math.min(280, window.innerWidth - 120));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [card.id]);
 
-    const isLast = charIndex + 1 >= chars.length;
-    if (isLast) {
-      // Agrégat final : si au moins un mismatch, on note "difficile".
-      const hasMismatch = nextVerdicts.some((v) => v === 'mismatch');
-      setSubmitted(true);
+  const ratingForMistakes = (n: number): 'again' | 'hard' | 'good' | 'easy' => {
+    if (n === 0) return 'easy';
+    if (n <= 2) return 'good';
+    if (n <= 5) return 'hard';
+    return 'again';
+  };
+
+  const handleComplete = ({ totalMistakes }: { totalMistakes: number }) => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    const rating = ratingForMistakes(totalMistakes);
+    onSubmit?.({ wasCorrect: rating === 'good' || rating === 'easy' });
+    if (onAutoRate) {
+      onAutoRate(rating);
+    } else {
+      // Fallback (parent sans auto-rate) : révèle les boutons de notation.
       onReveal();
-      onSubmit?.({ wasCorrect: !hasMismatch });
     }
   };
 
-  const handleNext = () => {
-    if (charIndex + 1 < chars.length) setCharIndex(charIndex + 1);
+  const handleGiveUp = () => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    onSubmit?.({ wasCorrect: false });
+    if (onAutoRate) {
+      onAutoRate('again');
+    } else {
+      onReveal();
+    }
+  };
+
+  const handleAllUnavailable = () => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    if (onSkip) {
+      onSkip();
+    } else {
+      onReveal();
+    }
   };
 
   const playAudio = () => {
@@ -980,25 +1026,29 @@ export function WritingCard({ card, language, onReveal, onSubmit }: StudyModePro
   const meaning =
     language === 'fr' ? card.translationFr : card.translationEn ?? card.translationFr;
 
-  // Cas dégénéré : pas de hanzi dans la carte
+  // Cas dégénéré : pas de hanzi dans la carte → skip propre.
   if (chars.length === 0) {
     return (
       <div className="fc4-writing-card">
         <div className="fc4-study-stage">
-          <div className="fc4-card-body">
-            {language === 'fr'
-              ? 'Aucun hanzi à écrire pour cette carte.'
-              : 'No hanzi to write on this card.'}
+          <div className="fc4-card-body fc4-writing-body">
+            <p>
+              {language === 'fr'
+                ? 'Aucun hanzi à écrire pour cette carte.'
+                : 'No hanzi to write on this card.'}
+            </p>
+            <button
+              type="button"
+              className="fc4-writing-next-btn"
+              onClick={handleAllUnavailable}
+            >
+              {language === 'fr' ? 'Passer' : 'Skip'} →
+            </button>
           </div>
         </div>
       </div>
     );
   }
-
-  const currentChar = chars[charIndex];
-  const currentVerdict = verdicts[charIndex];
-  const isMulti = chars.length > 1;
-  const showNextBtn = isMulti && currentVerdict !== undefined && charIndex + 1 < chars.length;
 
   return (
     <div className="fc4-writing-card">
@@ -1016,46 +1066,21 @@ export function WritingCard({ card, language, onReveal, onSubmit }: StudyModePro
           </button>
         </div>
         <div className="fc4-card-body fc4-writing-body">
-          <div className="fc4-writing-pinyin">{card.pinyin}</div>
-          <div className="fc4-writing-meaning">{meaning}</div>
+          <div className="fc4-writing-prompt">
+            {language === 'fr' ? 'Trace :' : 'Trace:'}{' '}
+            <strong>{meaning}</strong>
+            <span className="fc4-writing-pinyin-inline"> — {card.pinyin}</span>
+          </div>
 
-          {/* Stepper visuel des caractères du mot (verdicts colorés) */}
-          {isMulti && (
-            <div className="fc4-writing-stepper" aria-hidden>
-              {chars.map((c, i) => {
-                const v = verdicts[i];
-                const cls =
-                  i === charIndex
-                    ? 'fc4-writing-step fc4-writing-step--current'
-                    : v
-                      ? `fc4-writing-step fc4-writing-step--${v}`
-                      : 'fc4-writing-step';
-                return (
-                  <span key={i} className={cls} title={c}>
-                    {v ? (v === 'match' ? '✓' : v === 'close' ? '~' : '✗') : i + 1}
-                  </span>
-                );
-              })}
-            </div>
-          )}
-
-          <HanziWriterPad
-            key={`${card.id}-${charIndex}`}
-            hanzi={currentChar}
-            size={240}
+          <HanziTracer
+            key={card.id}
+            hanzi={card.hanzi}
+            size={padSize}
             language={language}
             onComplete={handleComplete}
+            onGiveUp={handleGiveUp}
+            onAllUnavailable={handleAllUnavailable}
           />
-
-          {showNextBtn && (
-            <button
-              type="button"
-              className="fc4-writing-next-btn"
-              onClick={handleNext}
-            >
-              {language === 'fr' ? 'Caractère suivant' : 'Next character'} →
-            </button>
-          )}
         </div>
       </div>
     </div>

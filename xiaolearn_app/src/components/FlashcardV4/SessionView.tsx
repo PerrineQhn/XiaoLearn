@@ -227,6 +227,25 @@ export function SessionView({
     }
   };
 
+  /**
+   * Mode 'writing' : saute la carte SANS la noter (aucune donnée de traits
+   * disponible pour le mot — on ne veut pas polluer le SRS).
+   */
+  const handleSkipCard = () => {
+    if (index + 1 >= total) {
+      finish({
+        againInc: 0,
+        hardInc: 0,
+        goodInc: 0,
+        easyInc: 0,
+        xpInc: 0,
+        correctInc: 0
+      });
+    } else {
+      setIndex((i) => i + 1);
+    }
+  };
+
   const finish = (deltas: {
     againInc: number;
     hardInc: number;
@@ -285,7 +304,17 @@ export function SessionView({
       case 'pronunciation':
         return <PronunciationCard key={card.id} {...modeProps} />;
       case 'writing':
-        return <WritingCard key={card.id} {...modeProps} />;
+        // Rating automatique selon les erreurs de traçage (0→easy, 1-2→good,
+        // 3-5→hard, >5 ou Révéler→again) — voir WritingCard. onSkip avance
+        // sans noter (mot sans données de traits sur le CDN).
+        return (
+          <WritingCard
+            key={card.id}
+            {...modeProps}
+            onAutoRate={handleRate}
+            onSkip={handleSkipCard}
+          />
+        );
       case 'speed':
       default:
         // Le mode speed est géré par un composant distinct — ce cas ne
@@ -386,7 +415,9 @@ export function SessionView({
       {/* Boutons rating — 3 niveaux exposés (Difficile / Bien / Simple).
           Mapping quality : Difficile=1 (again), Bien=3 (good), Simple=4 (easy).
           Le rating quality=2 (hard) reste dispo côté SRS mais n'est plus
-          exposé à l'UI. */}
+          exposé à l'UI. Masqués en mode 'writing' : la note est automatique
+          (dérivée des erreurs de traçage). */}
+      {mode !== 'writing' && (
       <div className={`fc4-session-ratings fc4-session-ratings--3 ${revealed ? 'is-visible' : ''}`}>
         <button
           type="button"
@@ -439,13 +470,16 @@ export function SessionView({
           <span className="fc4-rating-kbd" aria-hidden>3</span>
         </button>
       </div>
+      )}
 
       {/* Indices clavier sous la carte */}
-      <div className={`fc4-session-kbd ${revealed ? 'is-visible' : ''}`}>
-        {language === 'fr'
-          ? 'Espace : retourner · 1 Difficile · 2 Bien · 3 Simple'
-          : 'Space: flip · 1 Hard · 2 Good · 3 Easy'}
-      </div>
+      {mode !== 'writing' && (
+        <div className={`fc4-session-kbd ${revealed ? 'is-visible' : ''}`}>
+          {language === 'fr'
+            ? 'Espace : retourner · 1 Difficile · 2 Bien · 3 Simple'
+            : 'Space: flip · 1 Hard · 2 Good · 3 Easy'}
+        </div>
+      )}
     </div>
   );
 }

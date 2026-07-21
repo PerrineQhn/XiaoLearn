@@ -3672,3 +3672,166 @@
 .fc4-writing-next-btn:active {
   transform: scale(0.97);
 }
+
+/* Prompt « Trace : bonjour — nǐ hǎo » au-dessus du pad */
+.fc4-writing-prompt {
+  font-size: 16px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 4px;
+  text-align: center;
+}
+.fc4-writing-prompt strong {
+  color: var(--text-primary, #1f2233);
+  font-weight: 700;
+}
+.fc4-writing-pinyin-inline {
+  font-size: 15px;
+  color: var(--primary-red, #c6302c);
+  letter-spacing: 0.02em;
+}
+
+/* ===========================================================================
+   HanziTracer — traçage interactif d'un mot (mode 'writing' V5)
+   Carte blanche centrée + ombre douce sur fond crème XiaoLearn.
+   =========================================================================== */
+
+.hzt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Progression multi-caractères (1/2, 2/2) */
+.hzt-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hzt-progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e8e4da;
+  border: 1.5px solid #d3d1c7;
+}
+.hzt-progress-dot--current {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #c6302c);
+}
+.hzt-progress-dot--done {
+  background: var(--primary-red, #c6302c);
+  border-color: var(--primary-red, #c6302c);
+}
+.hzt-progress-count {
+  margin-left: 4px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Canvas : carte blanche, ombre douce, coins arrondis */
+.hzt-canvas-wrap {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(31, 34, 51, 0.08);
+}
+.hzt-canvas {
+  touch-action: none;
+  cursor: crosshair;
+}
+/* Force le touch-action sur le SVG interne (fix Safari iPad — le scroll
+   consommait les pointer events pendant le traçage). */
+.hzt-canvas svg,
+.hzt-canvas svg * {
+  touch-action: none;
+}
+
+/* Overlays chargement / caractère indisponible */
+.hzt-overlay {
+  position: absolute;
+  inset: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 250, 243, 0.94);
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+}
+.hzt-overlay--error {
+  color: var(--text-primary, #1f2233);
+}
+.hzt-error-msg {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Boutons Indice / Recommencer / Révéler */
+.hzt-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hzt-btn {
+  border: 1.5px solid #e3ded2;
+  background: #fffaf3;
+  color: var(--text-primary, #1f2233);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.hzt-btn:hover:not(:disabled) {
+  background: #f6efe2;
+  border-color: #d3cbb8;
+}
+.hzt-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.hzt-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.hzt-btn--danger {
+  color: var(--primary-red, #c6302c);
+  border-color: rgba(198, 48, 44, 0.35);
+}
+.hzt-btn--danger:hover:not(:disabled) {
+  background: var(--primary-red-light, #fae0dc);
+  border-color: var(--primary-red, #c6302c);
+}
+.hzt-btn--primary {
+  background: var(--primary-red, #c6302c);
+  border-color: var(--primary-red, #c6302c);
+  color: #fff;
+}
+.hzt-btn--primary:hover:not(:disabled) {
+  background: var(--primary-red-hover, #a8241f);
+}
+
+/* Responsive mobile : le pad se réduit (la taille px est calculée côté JS,
+   on borne juste le wrapper pour éviter tout débordement) */
+@media (max-width: 480px) {
+  .hzt-canvas-wrap {
+    max-width: calc(100vw - 48px);
+    padding: 8px;
+  }
+  .hzt-btn {
+    padding: 7px 12px;
+    font-size: 12.5px;
+  }
+}
