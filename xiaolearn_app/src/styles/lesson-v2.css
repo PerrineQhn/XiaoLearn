@@ -811,6 +811,22 @@
    V8 — badges & order type
    ========================= */
 
+/* Barre haute de la card d'exercice : badge type a gauche, toggle pinyin
+   a droite. Le badge peut etre absent (mcq simple) : le toggle reste alors
+   colle a droite via margin-left:auto. */
+.lesson-v2 .lv2-exercise-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lesson-v2 .lv2-exercise-topbar .lv2-exercise-badge {
+  margin-bottom: 0;
+}
+.lesson-v2 .lv2-ex-pinyin-toggle {
+  margin-left: auto;
+}
+
 .lesson-v2 .lv2-exercise-badge {
   display: inline-block;
   align-self: flex-start;

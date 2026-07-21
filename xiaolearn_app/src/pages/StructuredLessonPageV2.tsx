@@ -1271,7 +1271,7 @@ function dispatchAskAiWhy(args: {
  * Conservateur — n'interprète pas les ** au sein d'une parenthèse pinyin.
  * Combine avec AutoPinyin pour les hanzi.
  */
-function renderMarkdownInline(text: string): React.ReactNode {
+function renderMarkdownInline(text: string, pinyinEnabled = true): React.ReactNode {
   if (!text) return null;
   const tokens: { kind: 'text' | 'bold' | 'italic'; content: string }[] = [];
   let i = 0;
@@ -1308,18 +1308,18 @@ function renderMarkdownInline(text: string): React.ReactNode {
     if (t.kind === 'bold') {
       return (
         <strong key={idx} className="lv2-md-bold">
-          <AutoPinyin text={t.content} />
+          <AutoPinyin text={t.content} enabled={pinyinEnabled} />
         </strong>
       );
     }
     if (t.kind === 'italic') {
       return (
         <em key={idx}>
-          <AutoPinyin text={t.content} />
+          <AutoPinyin text={t.content} enabled={pinyinEnabled} />
         </em>
       );
     }
-    return <AutoPinyin key={idx} text={t.content} />;
+    return <AutoPinyin key={idx} text={t.content} enabled={pinyinEnabled} />;
   });
 }
 
@@ -1331,7 +1331,7 @@ function renderMarkdownInline(text: string): React.ReactNode {
  *     les exos Nuances avec mise en valeur des mots-clés s'affichent
  *     correctement (sinon **二** apparaît en brut)
  */
-function renderChoice(s: string, language: LessonV2Language): React.ReactNode {
+function renderChoice(s: string, language: LessonV2Language, pinyinEnabled = true): React.ReactNode {
   if (s === '' || /^\s*$/.test(s)) {
     return (
       <span className="lv2-choice-empty">
@@ -1341,8 +1341,33 @@ function renderChoice(s: string, language: LessonV2Language): React.ReactNode {
     );
   }
   // Délègue à renderMarkdownInline pour gérer **gras** + *italique* + AutoPinyin
-  return renderMarkdownInline(s);
+  return renderMarkdownInline(s, pinyinEnabled);
 }
+
+/**
+ * Bouton toggle « Afficher/Masquer pinyin » de la phase Pratique, affiché
+ * en haut de chaque card d'exercice à côté du badge de type. Le state vit
+ * dans le composant principal (survit au passage d'un exo au suivant) et
+ * est persisté dans localStorage `xl_ex_pinyin_v1`.
+ */
+const ExercisePinyinToggle = ({
+  language,
+  showPinyin,
+  onToggle
+}: {
+  language: LessonV2Language;
+  showPinyin: boolean;
+  onToggle: () => void;
+}) => (
+  <button
+    type="button"
+    className={`lv2-inline-toggle lv2-ex-pinyin-toggle ${showPinyin ? 'is-on' : ''}`}
+    onClick={onToggle}
+    aria-pressed={showPinyin}
+  >
+    {showPinyin ? getCopy(language, 'hidePinyin') : getCopy(language, 'showPinyin')}
+  </button>
+);
 
 const ExerciseCard = ({
   exercise: rawExercise,
@@ -1352,7 +1377,9 @@ const ExerciseCard = ({
   onSelect,
   onValidate,
   onNext,
-  lessonTitle
+  lessonTitle,
+  showPinyin,
+  onTogglePinyin
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -1362,6 +1389,8 @@ const ExerciseCard = ({
   onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
+  showPinyin: boolean;
+  onTogglePinyin: () => void;
 }) => {
   let exercise = rawExercise;
   // Rendu dédié pour le type 'dialogue-response' — affiche le mini-dialogue
@@ -1377,6 +1406,8 @@ const ExerciseCard = ({
         onValidate={onValidate}
         onNext={onNext}
         lessonTitle={lessonTitle}
+        showPinyin={showPinyin}
+        onTogglePinyin={onTogglePinyin}
       />
     );
   }
@@ -1393,6 +1424,8 @@ const ExerciseCard = ({
         onValidate={onValidate}
         onNext={onNext}
         lessonTitle={lessonTitle}
+        showPinyin={showPinyin}
+        onTogglePinyin={onTogglePinyin}
       />
     );
   }
@@ -1407,6 +1440,8 @@ const ExerciseCard = ({
         onValidate={onValidate}
         onNext={onNext}
         lessonTitle={lessonTitle}
+        showPinyin={showPinyin}
+        onTogglePinyin={onTogglePinyin}
       />
     );
   }
@@ -1622,7 +1657,10 @@ const ExerciseCard = ({
 
   return (
     <div className="lv2-exercise">
-      {badge && <div className={`lv2-exercise-badge lv2-exercise-badge--${badge.kind}`}>{badge.label}</div>}
+      <div className="lv2-exercise-topbar">
+        {badge && <div className={`lv2-exercise-badge lv2-exercise-badge--${badge.kind}`}>{badge.label}</div>}
+        <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
+      </div>
       {hasAudio && (
         <button
           type="button"
@@ -1673,7 +1711,7 @@ const ExerciseCard = ({
       {translationSentence && (
         <div className="lv2-exercise-sentence lv2-exercise-sentence--translation">
           <div className="lv2-exercise-sentence-hanzi">{translationSentence.hanzi}</div>
-          {translationSentence.pinyin && (
+          {showPinyin && translationSentence.pinyin && (
             <div className="lv2-exercise-sentence-pinyin">{translationSentence.pinyin}</div>
           )}
         </div>
@@ -1682,7 +1720,7 @@ const ExerciseCard = ({
       {showSentenceText && sentenceText && !errorCorrectionSegments && !translationSentence && (
         <div className="lv2-exercise-sentence">
           {exercise.type === 'fill'
-            ? renderFillSentence(sentenceText, answered, selectedIndex, exercise.choices, exercise.correctIndex)
+            ? renderFillSentence(sentenceText, answered, selectedIndex, exercise.choices, exercise.correctIndex, showPinyin)
             : sentenceText}
         </div>
       )}
@@ -1714,7 +1752,7 @@ const ExerciseCard = ({
               disabled={answered}
               onClick={() => onSelect(idx)}
             >
-              {renderChoice(choice, language)}
+              {renderChoice(choice, language, showPinyin)}
             </button>
           );
         })}
@@ -1800,7 +1838,9 @@ const DialogueResponseCard = ({
   onSelect,
   onValidate,
   onNext,
-  lessonTitle
+  lessonTitle,
+  showPinyin,
+  onTogglePinyin
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -1810,6 +1850,8 @@ const DialogueResponseCard = ({
   onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
+  showPinyin: boolean;
+  onTogglePinyin: () => void;
 }) => {
   const lines = exercise.dialogue ?? [];
 
@@ -1900,13 +1942,16 @@ const DialogueResponseCard = ({
 
   return (
     <div className="lv2-exercise lv2-exercise--dialogue">
-      <div className="lv2-exercise-badge lv2-exercise-badge--dialogue">
-        {language === 'en' ? 'Dialogue' : 'Dialogue'}
-        {isMultiStep && (
-          <span style={{ marginLeft: 8, opacity: 0.7 }}>
-            {subStep + 1}/{emptyTurnIndices.length}
-          </span>
-        )}
+      <div className="lv2-exercise-topbar">
+        <div className="lv2-exercise-badge lv2-exercise-badge--dialogue">
+          {language === 'en' ? 'Dialogue' : 'Dialogue'}
+          {isMultiStep && (
+            <span style={{ marginLeft: 8, opacity: 0.7 }}>
+              {subStep + 1}/{emptyTurnIndices.length}
+            </span>
+          )}
+        </div>
+        <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
       </div>
       <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
@@ -1928,7 +1973,7 @@ const DialogueResponseCard = ({
                   </button>
                 ) : null}
               </div>
-              {line.pinyin && <div className="lv2-dialogue-pinyin">{line.pinyin}</div>}
+              {showPinyin && line.pinyin && <div className="lv2-dialogue-pinyin">{line.pinyin}</div>}
               {(language === 'en' ? line.translationEn ?? line.translationFr : line.translationFr ?? line.translationEn) && (
                 <div className="lv2-dialogue-trad">
                   {language === 'en' ? line.translationEn ?? line.translationFr : line.translationFr ?? line.translationEn}
@@ -1976,7 +2021,7 @@ const DialogueResponseCard = ({
               disabled={answered}
               onClick={() => handleSelect(idx)}
             >
-              {renderChoice(choice, language)}
+              {renderChoice(choice, language, showPinyin)}
             </button>
           );
         })}
@@ -2050,7 +2095,9 @@ const ContextReactCard = ({
   onSelect,
   onValidate,
   onNext,
-  lessonTitle
+  lessonTitle,
+  showPinyin,
+  onTogglePinyin
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -2060,6 +2107,8 @@ const ContextReactCard = ({
   onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
+  showPinyin: boolean;
+  onTogglePinyin: () => void;
 }) => {
   const promptText = language === 'en' && exercise.promptEn ? exercise.promptEn : exercise.prompt;
   const contextText =
@@ -2074,8 +2123,11 @@ const ContextReactCard = ({
 
   return (
     <div className="lv2-exercise lv2-exercise--context">
-      <div className="lv2-exercise-badge lv2-exercise-badge--context">
-        {language === 'en' ? 'Situation' : 'Situation'}
+      <div className="lv2-exercise-topbar">
+        <div className="lv2-exercise-badge lv2-exercise-badge--context">
+          {language === 'en' ? 'Situation' : 'Situation'}
+        </div>
+        <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
       </div>
       {contextText && (
         <div className="lv2-context-card">
@@ -2103,7 +2155,7 @@ const ContextReactCard = ({
               disabled={answered}
               onClick={() => onSelect(idx)}
             >
-              {renderChoice(choice, language)}
+              {renderChoice(choice, language, showPinyin)}
             </button>
           );
         })}
@@ -2175,7 +2227,9 @@ const OrderExerciseCard = ({
   onSelect,
   onValidate,
   onNext,
-  lessonTitle
+  lessonTitle,
+  showPinyin,
+  onTogglePinyin
 }: {
   exercise: LessonV2Exercise;
   language: LessonV2Language;
@@ -2184,6 +2238,8 @@ const OrderExerciseCard = ({
   onValidate: (correct: boolean) => void;
   onNext: () => void;
   lessonTitle?: string;
+  showPinyin: boolean;
+  onTogglePinyin: () => void;
 }) => {
   // Ordre mélangé, fixé une fois par exercice.id.
   const shuffledIndices = useMemo(() => {
@@ -2270,8 +2326,14 @@ const OrderExerciseCard = ({
 
   return (
     <div className="lv2-exercise lv2-exercise--order">
-      <div className="lv2-exercise-badge lv2-exercise-badge--order">
-        {language === 'en' ? 'Reorder' : 'Remise dans l\u2019ordre'}
+      <div className="lv2-exercise-topbar">
+        <div className="lv2-exercise-badge lv2-exercise-badge--order">
+          {language === 'en' ? 'Reorder' : 'Remise dans l\u2019ordre'}
+        </div>
+        {/* Les tuiles order sont en hanzi brut (pas de pinyin rendu), mais on
+            garde le toggle pour la coherence UI entre exercices (le state
+            partage survit au passage a l'exo suivant). */}
+        <ExercisePinyinToggle language={language} showPinyin={showPinyin} onToggle={onTogglePinyin} />
       </div>
       <div className="lv2-exercise-prompt">{renderMarkdownInline(promptText)}</div>
 
@@ -2429,16 +2491,19 @@ function renderFillSentence(
   answered: boolean,
   selectedIndex: number | null,
   choices: string[],
-  correctIndex: number
+  correctIndex: number,
+  showPinyin = true
 ): ReactNode {
   const parts = sentence.split('___');
   if (parts.length === 1) {
     return (
       <span className="lv2-fill-two-rows">
         <span className="lv2-fill-hanzi-row">{sentence}</span>
-        <span className="lv2-fill-pinyin-row">
-          {hanziToPinyinInline(sentence)}
-        </span>
+        {showPinyin && (
+          <span className="lv2-fill-pinyin-row">
+            {hanziToPinyinInline(sentence)}
+          </span>
+        )}
       </span>
     );
   }
@@ -2477,14 +2542,16 @@ function renderFillSentence(
           </span>
         ))}
       </span>
-      <span className="lv2-fill-pinyin-row">
-        {parts.map((chunk, idx) => (
-          <span key={`p-${idx}`}>
-            {hanziToPinyinInline(chunk)}
-            {idx < parts.length - 1 && fillerPinyin}
-          </span>
-        ))}
-      </span>
+      {showPinyin && (
+        <span className="lv2-fill-pinyin-row">
+          {parts.map((chunk, idx) => (
+            <span key={`p-${idx}`}>
+              {hanziToPinyinInline(chunk)}
+              {idx < parts.length - 1 && fillerPinyin}
+            </span>
+          ))}
+        </span>
+      )}
     </span>
   );
 }
@@ -2519,6 +2586,32 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
   const [completedAt, setCompletedAt] = useState<number | null>(null);
   /** Toggle de la liste détaillée des questions ratées sur l'écran récap. */
   const [showMistakes, setShowMistakes] = useState(false);
+  /**
+   * Toggle pinyin de la phase Pratique — vit ici (et pas dans ExerciseCard)
+   * pour SURVIVRE au passage d'un exercice au suivant. Persisté dans la clé
+   * dédiée `xl_ex_pinyin_v1` (séparée du réglage global `xl_show_pinyin_v1`
+   * pour ne pas l'écraser) ; initialisé depuis le global si jamais réglé.
+   */
+  const [showExercisePinyin, setShowExercisePinyin] = useState<boolean>(() => {
+    try {
+      const ex = localStorage.getItem('xl_ex_pinyin_v1');
+      if (ex !== null) return ex !== '0';
+      return localStorage.getItem('xl_show_pinyin_v1') !== '0';
+    } catch {
+      return true;
+    }
+  });
+  const toggleExercisePinyin = useCallback(() => {
+    setShowExercisePinyin((v) => {
+      const next = !v;
+      try {
+        localStorage.setItem('xl_ex_pinyin_v1', next ? '1' : '0');
+      } catch {
+        /* localStorage indisponible (private mode) — toggle en mémoire seulement */
+      }
+      return next;
+    });
+  }, []);
 
   const xpReward = lesson.xpReward ?? 50;
   const total = lesson.exercises.length;
@@ -2806,6 +2899,8 @@ const StructuredLessonPageV2 = (props: StructuredLessonPageV2Props) => {
           onValidate={handleValidate}
           onNext={handleNextExercise}
           lessonTitle={title}
+          showPinyin={showExercisePinyin}
+          onTogglePinyin={toggleExercisePinyin}
         />
       </section>
     );
