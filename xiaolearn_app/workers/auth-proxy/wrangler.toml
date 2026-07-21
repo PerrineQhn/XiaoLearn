@@ -1,0 +1,10 @@
+name = "xiaolearn-auth-proxy"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# Route : toutes les requêtes /__/auth/* et /__/firebase/* du domaine app
+# passent par ce worker (le reste continue vers Cloudflare Pages).
+routes = [
+  { pattern = "app.xiaolearn.com/__/auth/*", zone_name = "xiaolearn.com" },
+  { pattern = "app.xiaolearn.com/__/firebase/*", zone_name = "xiaolearn.com" }
+]
