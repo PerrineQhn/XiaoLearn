@@ -1,8 +1,9 @@
 /**
- * grammar-lessons-hsk3-4-essentials.ts — 4 fiches grammaire essentielles HSK3-4
+ * grammar-lessons-hsk3-4-essentials.ts — 5 fiches grammaire essentielles HSK3-4
  * ---------------------------------------------------------------------------
  * Comble des gaps critiques du catalogue :
- *   - HSK3 (B1) : 虽然...但是 (concession), 的/得/地 (les 3 « de »)
+ *   - HSK3 (B1) : 虽然...但是 (concession), 的/得/地 (les 3 « de »),
+ *     和 vs 并且 (les deux « et »)
  *   - HSK4 (B2) : 越来越 (de plus en plus), directionnels figuratifs (起来/下去/下来/出来)
  *
  * Chaque entrée respecte le shape `LessonItem` avec `grammarExplanation`
@@ -213,6 +214,57 @@ export const grammarLessonsHsk34Essentials: LessonItem[] = [
       explanation: '下来 marque l\'idée de FIXER / GARDER EN TRACE. 记下来 = « noter pour retenir », 写下来 = « mettre par écrit ».'
     },
     tags: ['grammaire', 'directionnels', 'figuratif'],
+    theme: 'grammar'
+  },
+
+  // ============================================
+  // HSK3 — 和 vs 并且 (les deux « et »)
+  // ============================================
+  {
+    id: 'grammar-he-vs-bing',
+    level: 'hsk3',
+    hanzi: '和 vs 并且',
+    pinyin: 'hé / bìngqiě',
+    translation: '"and": 和 (nouns) vs 并且 (verbs/clauses)',
+    translationFr: '« et » : 和 (noms) vs 并且 (verbes/propositions)',
+    category: 'grammaire',
+    explanation: 'Le français « et » se traduit par DEUX mots différents selon ce qui est connecté : 和 pour les noms, 并且 pour les verbes/propositions. Piège n°1 du calque francophone.',
+    grammarExplanation: {
+      whenToUse: 'En français, « et » connecte TOUT. En chinois, le mot change selon la NATURE de ce qui est connecté : 和 pour les noms, 并且/并 pour les verbes et propositions. Registre : 和 universel ; 并且 plutôt écrit.\n\n**Sous-cas typiques :**\n1. **和 entre noms / groupes nominaux** : 苹果和香蕉 = « des pommes et des bananes ».\n2. **和 entre personnes / pronoms** : 我和我的朋友 = « moi et mon ami ».\n3. **并且 entre propositions** : 他完成了作业，并且检查了两遍 = « il a fini ses devoirs et les a vérifiés deux fois ».\n4. **并 seul entre verbes (très écrit)** : 我们讨论并通过了这个计划 = « nous avons discuté et adopté ce plan ».\n5. **并不 / 并没(有) emphatique** (SENS DIFFÉRENT !) : 我并不喜欢他 = « je ne l\'aime pas du tout (contrairement à ce que tu crois) ».\n\n**Variantes de 和 (registres) :**\n• 和 (hé) = neutre, UNIVERSEL — le plus fréquent.\n• 跟 (gēn) = plus oral, courant dans le nord.\n• 与 (yǔ) = écrit/formel — titres, style soutenu (中国与世界).\n• 同 (tóng) = sud / formel.\n\n**Alternatives orales à 并且 :** à l\'oral on préfère 而且, 也, ou la simple juxtaposition des propositions. 而且 est plus courant/oral, 并且 plus formel.\n\nFréquence : distinction OBLIGATOIRE dès HSK3. Connecter deux verbes avec 和 est l\'erreur de calque la plus repérable chez un francophone.',
+      whenToUseEn: 'In French (and English), "and" connects EVERYTHING. In Chinese, the word changes with the NATURE of what is connected: 和 for nouns, 并且/并 for verbs and clauses. Register: 和 universal; 并且 rather written.\n\n**Typical sub-cases:**\n1. **和 between nouns / noun phrases**: 苹果和香蕉 = "apples and bananas".\n2. **和 between people / pronouns**: 我和我的朋友 = "me and my friend".\n3. **并且 between clauses**: 他完成了作业，并且检查了两遍 = "he finished his homework and checked it twice".\n4. **并 alone between verbs (very written)**: 我们讨论并通过了这个计划 = "we discussed and adopted this plan".\n5. **Emphatic 并不 / 并没(有)** (DIFFERENT MEANING!): 我并不喜欢他 = "I don\'t like him at all (contrary to what you think)".\n\n**Variants of 和 (registers):**\n• 和 (hé) = neutral, UNIVERSAL — most frequent.\n• 跟 (gēn) = more spoken, common in the north.\n• 与 (yǔ) = written/formal — titles, elevated style (中国与世界).\n• 同 (tóng) = southern / formal.\n\n**Spoken alternatives to 并且:** in speech, prefer 而且, 也, or simple juxtaposition of clauses. 而且 is more common/spoken, 并且 more formal.\n\nFrequency: MANDATORY distinction from HSK3. Connecting two verbs with 和 is the most recognizable calque error among French speakers.',
+      howToUse: '**Structure 1 : Nom + 和 + Nom (noms UNIQUEMENT).**\n• Ex : 我喜欢苹果和香蕉 (wǒ xǐhuān píngguǒ hé xiāngjiāo) = j\'aime les pommes et les bananes\n• Ex : 我和我的朋友去公园 = moi et mon ami allons au parc\n• Ex : 咖啡和茶，你要哪个？ = café ou thé, lequel veux-tu ?\n• Variante orale : 我跟你一起去 (gēn, oral/nord) = j\'y vais avec toi\n• Variante écrite : 中国与世界 (yǔ, formel, titres) = la Chine et le monde\n• Variante sud/formelle : 我同你 (tóng)\n\n**Structure 2 : Proposition + 并且 + Proposition (verbes / propositions, registre écrit).**\n• Ex : 他完成了作业，并且检查了两遍 (tā wánchéng le zuòyè, bìngqiě jiǎnchá le liǎng biàn) = il a fini ses devoirs et les a vérifiés deux fois\n• Ex : 这个方案可行，并且成本不高 = ce plan est faisable, et de plus peu coûteux\n• Ex : 我们讨论并通过了这个计划 (bìng seul, très écrit) = nous avons discuté et adopté ce plan\n• À l\'oral, préférer 而且 : 这个工作很有意思，而且工资不错\n• Ou 也 : 他会说中文，也会说法语\n• Ou la juxtaposition : 我吃了饭，然后睡觉\n\n**Structure 3 : 并不 / 并没(有) + Verbe — négation EMPHATIQUE (autre sens de 并 !).**\n• Ex : 我并不喜欢他 (wǒ bìng bù xǐhuān tā) = je ne l\'aime pas du tout (contrairement à ce que tu crois)\n• Ex : 事情并没有那么简单 (shìqing bìng méiyǒu nàme jiǎndān) = les choses ne sont pas si simples (qu\'on le dit)\n• Nuance : 并 RÉFUTE une attente ou une présupposition. Sans 并, la négation est neutre.\n\n**Structure 4 : Corriger le calque « verbe 和 verbe ».**\n• ❌ 我吃饭和睡觉 → selon le sens :\n• ✅ 我吃饭，然后睡觉 = je mange, PUIS je dors (séquence)\n• ✅ 我又吃饭又睡觉 = je mange ET je dors (accumulation)\n• ✅ 我一边吃饭一边看电视 = simultanéité (avec 2 actions compatibles)',
+      howToUseEn: '**Structure 1: Noun + 和 + Noun (nouns ONLY).**\n• Ex: 我喜欢苹果和香蕉 = I like apples and bananas\n• Ex: 我和我的朋友去公园 = my friend and I go to the park\n• Ex: 咖啡和茶，你要哪个？ = coffee or tea, which one?\n• Spoken variant: 我跟你一起去 (gēn, spoken/north) = I\'ll go with you\n• Written variant: 中国与世界 (yǔ, formal, titles) = China and the world\n• Southern/formal variant: 我同你 (tóng)\n\n**Structure 2: Clause + 并且 + Clause (verbs / clauses, written register).**\n• Ex: 他完成了作业，并且检查了两遍 = he finished his homework and checked it twice\n• Ex: 这个方案可行，并且成本不高 = this plan is feasible, and moreover inexpensive\n• Ex: 我们讨论并通过了这个计划 (并 alone, very written) = we discussed and adopted this plan\n• In speech, prefer 而且: 这个工作很有意思，而且工资不错\n• Or 也: 他会说中文，也会说法语\n• Or juxtaposition: 我吃了饭，然后睡觉\n\n**Structure 3: 并不 / 并没(有) + Verb — EMPHATIC negation (other meaning of 并!).**\n• Ex: 我并不喜欢他 = I don\'t like him at all (contrary to what you think)\n• Ex: 事情并没有那么简单 = things aren\'t that simple (despite what people say)\n• Nuance: 并 REFUTES an expectation or presupposition. Without 并, the negation is neutral.\n\n**Structure 4: Fixing the "verb 和 verb" calque.**\n• ❌ 我吃饭和睡觉 → depending on meaning:\n• ✅ 我吃饭，然后睡觉 = I eat, THEN sleep (sequence)\n• ✅ 我又吃饭又睡觉 = I both eat AND sleep (accumulation)\n• ✅ 我一边吃饭一边看电视 = simultaneity (with 2 compatible actions)',
+      commonMistakes: '❌ **LE calque francophone n°1** : 我吃饭和睡觉 (« je mange et je dors » — 和 ne connecte JAMAIS des verbes) ; ✅ 我吃饭，然后睡觉 (séquence) ou 我又吃饭又睡觉 (accumulation).\n❌ **并且 entre noms** : 苹果并且香蕉 (faux, 并且 ne connecte pas des noms) ; ✅ 苹果和香蕉.\n❌ **Confondre 并 conjonctif et 并 emphatique** : dans 我并不喜欢他, 并 ne veut PAS dire « et » ; il renforce la négation (« pas du tout »).\n❌ **并且 en conversation décontractée** : ça sonne pédant ; ✅ 而且 à l\'oral.\n❌ **与 à l\'oral quotidien** : 我与你去吃饭 (livresque, bizarre) ; ✅ 我和你 / 我跟你.\n❌ **Relier des adjectifs prédicats avec 和** : 她聪明和漂亮 (faux) ; ✅ 她又聪明又漂亮.\n❌ **« Et » en début de phrase traduit par 和** : 和我们去了公园 (faux) ; ✅ juxtaposition, 然后 ou 而且.\n❌ **Croire que 并 = version courte neutre de 并且 partout** : 并 conjonctif est TRÈS écrit (rapports, presse) ; à l\'oral il n\'apparaît quasiment que dans 并不/并没.',
+      commonMistakesEn: '❌ **THE #1 French-speaker calque**: 我吃饭和睡觉 ("I eat and sleep" — 和 NEVER connects verbs); ✅ 我吃饭，然后睡觉 (sequence) or 我又吃饭又睡觉 (accumulation).\n❌ **并且 between nouns**: 苹果并且香蕉 (wrong, 并且 doesn\'t connect nouns); ✅ 苹果和香蕉.\n❌ **Confusing conjunctive 并 and emphatic 并**: in 我并不喜欢他, 并 does NOT mean "and"; it strengthens the negation ("not at all").\n❌ **并且 in casual conversation**: sounds pedantic; ✅ 而且 in speech.\n❌ **与 in everyday speech**: 我与你去吃饭 (bookish, odd); ✅ 我和你 / 我跟你.\n❌ **Linking predicate adjectives with 和**: 她聪明和漂亮 (wrong); ✅ 她又聪明又漂亮.\n❌ **Sentence-initial "and" as 和**: 和我们去了公园 (wrong); ✅ juxtaposition, 然后 or 而且.\n❌ **Assuming 并 = neutral short form of 并且 everywhere**: conjunctive 并 is VERY written (reports, press); in speech it almost only appears in 并不/并没.',
+      tips: '💡 **Mnémo** : 和 = ET NOMINAL (relie des CHOSES), 并且 = ET VERBAL (relie des ACTIONS).\n💡 **Test rapide** : regarde ce qu\'il y a de chaque côté du « et ». Deux noms → 和. Deux verbes/propositions → 并且 (écrit) ou 而且 (oral), JAMAIS 和.\n💡 **Échelle de registre pour « et » nominal** : 跟 (oral, nord) < 和 (neutre, universel) < 与 / 同 (écrit, formel).\n💡 **Échelle de registre pour « et » verbal** : juxtaposition / 也 (oral) < 而且 (oral standard) < 并且 (écrit) < 并 seul (très écrit).\n💡 **Détecteur 并不/并没** : si tu entends 并 devant une négation, ce n\'est pas « et » — c\'est « pas du tout, contrairement à ce qu\'on croit ». 事情并没有那么简单.\n💡 **Renvoi** : pour « non seulement...mais aussi », voir 不但...而且 ; pour le registre 并且 vs 而且, voir la fiche dédiée.\n💡 **Astuce production** : en cas de doute à l\'oral, coupe la phrase en deux — la juxtaposition est toujours correcte en chinois, alors qu\'un mauvais « et » est immédiatement repéré.',
+      tipsEn: '💡 **Mnemonic**: 和 = NOMINAL "and" (links THINGS), 并且 = VERBAL "and" (links ACTIONS).\n💡 **Quick test**: look at both sides of the "and". Two nouns → 和. Two verbs/clauses → 并且 (written) or 而且 (spoken), NEVER 和.\n💡 **Register scale for nominal "and"**: 跟 (spoken, north) < 和 (neutral, universal) < 与 / 同 (written, formal).\n💡 **Register scale for verbal "and"**: juxtaposition / 也 (spoken) < 而且 (standard spoken) < 并且 (written) < 并 alone (very written).\n💡 **并不/并没 detector**: if you hear 并 before a negation, it\'s not "and" — it\'s "not at all, contrary to expectation". 事情并没有那么简单.\n💡 **Cross-reference**: for "not only...but also", see 不但...而且; for the 并且 vs 而且 register nuance, see the dedicated card.\n💡 **Production tip**: when in doubt in speech, split the sentence in two — juxtaposition is always correct in Chinese, while a wrong "and" is instantly spotted.',
+      relatedGrammar: ['grammar-budan-erqie', 'grammar-suiran-danshi']
+    },
+    audio: 'audio/grammar/he-vs-bing.wav',
+    examples: [
+      { hanzi: '我喜欢苹果和香蕉', pinyin: 'wǒ xǐhuān píngguǒ hé xiāngjiāo', translation: 'I like apples and bananas (和 — nouns)', translationFr: 'J\'aime les pommes et les bananes (和 — noms)' },
+      { hanzi: '我和我的朋友去公园', pinyin: 'wǒ hé wǒ de péngyou qù gōngyuán', translation: 'My friend and I go to the park (和 — people)', translationFr: 'Mon ami et moi allons au parc (和 — personnes)' },
+      { hanzi: '他完成了作业，并且检查了两遍', pinyin: 'tā wánchéng le zuòyè, bìngqiě jiǎnchá le liǎng biàn', translation: 'He finished his homework and checked it twice (并且 — clauses)', translationFr: 'Il a fini ses devoirs et les a vérifiés deux fois (并且 — propositions)' },
+      { hanzi: '我们讨论并通过了这个计划', pinyin: 'wǒmen tǎolùn bìng tōngguò le zhège jìhuà', translation: 'We discussed and adopted this plan (并 — very written)', translationFr: 'Nous avons discuté et adopté ce plan (并 — très écrit)' },
+      { hanzi: '我跟你一起去', pinyin: 'wǒ gēn nǐ yīqǐ qù', translation: 'I\'ll go with you (跟 — spoken variant)', translationFr: 'J\'y vais avec toi (跟 — variante orale)' },
+      { hanzi: '我并不喜欢他', pinyin: 'wǒ bìng bù xǐhuān tā', translation: 'I don\'t like him at all (并不 — emphatic)', translationFr: 'Je ne l\'aime pas du tout (并不 — emphatique)' },
+      { hanzi: '事情并没有那么简单', pinyin: 'shìqing bìng méiyǒu nàme jiǎndān', translation: 'Things aren\'t that simple (并没有 — refutes expectation)', translationFr: 'Les choses ne sont pas si simples (并没有 — réfute une attente)' }
+    ],
+    quiz: {
+      prompt: 'Quel mot pour « et » entre deux noms ?',
+      choices: ['和', '并且', '并', '然后'],
+      correctChoiceIndex: 0
+    },
+    grammarQuiz: {
+      type: 'fill-blank',
+      sentence: '我喜欢苹果___香蕉',
+      translation: 'J\'aime les pommes et les bananes',
+      translationEn: 'I like apples and bananas',
+      choices: ['和', '并且', '并', '而且'],
+      correctChoice: '和',
+      explanation: '和 connecte des NOMS (苹果, 香蕉). 并且/而且 connectent des propositions, jamais deux noms. Rappel : 和 ne connecte pas des verbes non plus — ❌ 我吃饭和睡觉.'
+    },
+    tags: ['grammaire', 'connecteur', 'et'],
     theme: 'grammar'
   }
 ];

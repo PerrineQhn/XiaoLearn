@@ -2193,6 +2193,35 @@ export const b11NuancesM7LearnSections: LessonV2LearnSection[] = [
       'Hierarchy oral → écrit pour « de plus » : 还 (oral, basique) < 而且 (oral standard) < 并且 (écrit) < 此外 (très soutenu, écrit). Choisis selon le registre attendu.',
     tipEn:
       'Hierarchy oral → written for «moreover»: 还 (oral, basic) < 而且 (oral standard) < 并且 (written) < 此外 (very formal, written). Choose by expected register.'
+  },
+  {
+    id: 'b11-he-vs-bingqie',
+    title: '和 vs 并且 — les deux « et »',
+    titleEn: '和 vs 并且 — the two "and"s',
+    body:
+      'Le français « et » se traduit par **deux mots différents** selon la nature de ce qu\'on connecte : des choses ou des actions.\n' +
+      '\n' +
+      'Les deux « et » :\n' +
+      '- **和** (hé) — relie des **noms** uniquement : 苹果和香蕉 « des pommes et des bananes », 我和我的朋友 « moi et mon ami ». Variantes : 跟 (gēn, plus oral, nord), 与 (yǔ, écrit/formel, titres)\n' +
+      '- **并且** (bìngqiě) — relie des **verbes / propositions**, registre plutôt **écrit** : 他完成了作业，并且检查了两遍 « il a fini ses devoirs et les a vérifiés deux fois ». À l\'oral, préfère 而且, 也, ou la simple juxtaposition\n' +
+      '\n' +
+      'Piège calque : 我吃饭和睡觉 ✗ — 和 ne relie **jamais** des verbes. Corrige selon le sens : 我吃饭，然后睡觉 (séquence) ou 我又吃饭又睡觉 (accumulation).\n' +
+      '\n' +
+      'Astuce : **并不 / 并没(有)** = négation **emphatique**, autre usage de 并 : « pas du tout, contrairement à ce qu\'on croit ». 事情并没有那么简单 « les choses ne sont pas si simples (qu\'on le dit) ».',
+    bodyEn:
+      'The French/English "and" maps to TWO different Chinese words depending on what you connect: things or actions. 和 (hé) links NOUNS only: 苹果和香蕉 = apples and bananas, 我和我的朋友 = me and my friend. Variants: 跟 (gēn, more spoken, northern), 与 (yǔ, written/formal, titles). 并且 (bìngqiě) links VERBS / CLAUSES, rather written register: 他完成了作业，并且检查了两遍 = he finished his homework and checked it twice. In speech, prefer 而且, 也, or simple juxtaposition. Calque trap: 我吃饭和睡觉 ✗ — 和 never links verbs. Fix by meaning: 我吃饭，然后睡觉 (sequence) or 我又吃饭又睡觉 (accumulation). Bonus: 并不 / 并没(有) = EMPHATIC negation, another use of 并: "not at all, contrary to expectation". 事情并没有那么简单 = things aren\'t that simple.',
+    items: [
+      { hanzi: '和', pinyin: 'hé', meaning: 'et (entre noms)', meaningEn: 'and (between nouns)', audio: 'audio/hsk1/hsk1_和.wav' },
+      { hanzi: '跟', pinyin: 'gēn', meaning: 'et, avec (oral)', meaningEn: 'and, with (spoken)', audio: 'audio/hsk3/hsk3_跟.wav' },
+      { hanzi: '与', pinyin: 'yǔ', meaning: 'et (écrit, formel)', meaningEn: 'and (written, formal)', audio: 'audio/hsk4/hsk4_与.wav' },
+      { hanzi: '并且', pinyin: 'bìngqiě', meaning: 'et (entre propositions)', meaningEn: 'and (between clauses)', audio: 'audio/hsk5/hsk5_并且.wav' },
+      { hanzi: '并', pinyin: 'bìng', meaning: 'et (très écrit) / 并不 pas du tout', meaningEn: 'and (very written) / 并不 not at all', audio: 'audio/hsk3/hsk3_并.wav' },
+      { hanzi: '而且', pinyin: 'érqiě', meaning: 'et de plus (oral)', meaningEn: 'and moreover (spoken)', audio: 'audio/hsk3/hsk3_而且.wav' }
+    ],
+    tip:
+      'Mnémo : 和 relie des CHOSES, 并且 relie des ACTIONS. Deux noms → 和. Deux verbes/propositions → 并且 (écrit) ou 而且 (oral), jamais 和.',
+    tipEn:
+      'Mnemonic: 和 links THINGS, 并且 links ACTIONS. Two nouns → 和. Two verbs/clauses → 并且 (written) or 而且 (spoken), never 和.'
   }
 ];
 
