@@ -20,6 +20,7 @@ import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import AnnouncementsPage from './pages/AnnouncementsPage';
 import IdeasRoadmapPage from './pages/IdeasRoadmapPage';
+import ReviewsPage from './pages/ReviewsPage';
 import ConversationsPage from './pages/ConversationsPage';
 import BattlesPage from './pages/BattlesPage';
 import BattleSessionPage from './pages/BattleSessionPage';
@@ -181,6 +182,8 @@ export type View =
   | 'pronunciation-coach'
   | 'community'
   | 'ideas'
+  // Avis utilisateurs (note 5 étoiles + commentaire, un avis par compte)
+  | 'reviews'
   | 'messages'
   | 'errors'
   | 'battles'
@@ -1601,6 +1604,15 @@ function App() {
             unreadAnnouncements > 0
               ? { text: String(unreadAnnouncements), tone: 'unread' }
               : undefined
+        },
+        {
+          // Avis utilisateurs — pas de PNG étoile dans /public/icons pour
+          // l'instant : le slug 'star' n'existe pas → onError affiche le
+          // fallback emoji ⭐ (comportement prévu par le renderer sidebar).
+          id: 'reviews',
+          label: language === 'fr' ? 'Avis' : 'Reviews',
+          iconSlug: 'star',
+          fallback: '⭐'
         }
       ] satisfies NavEntry[],
     [language, unreadAnnouncements, myRankPosition]
@@ -2254,6 +2266,10 @@ function App() {
     case 'ideas':
       // Page Idées & Roadmap — propositions communautaires + roadmap curatée.
       content = <IdeasRoadmapPage language={language} />;
+      break;
+    case 'reviews':
+      // Avis utilisateurs — note 5 étoiles + commentaire, un avis par compte.
+      content = <ReviewsPage language={language} />;
       break;
     case 'messages':
       // Messagerie 1-1 temps réel entre apprenants.

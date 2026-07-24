@@ -320,5 +320,24 @@ service cloud.firestore {
         allow delete: if false;
       }
     }
+
+    // ========================================================================
+    //  REVIEWS — avis utilisateurs (note 1-5 + commentaire).
+    //  Un doc par utilisateur, docId == uid. Lecture PUBLIQUE (affichable
+    //  sur la landing). Écriture : uniquement son propre doc, note 1..5,
+    //  texte <= 1000 chars.
+    // ========================================================================
+
+    match /reviews/{reviewId} {
+      allow read: if true;                            // lecture publique
+      allow create, update: if request.auth != null
+                            && request.auth.uid == reviewId
+                            && request.resource.data.uid == request.auth.uid
+                            && request.resource.data.rating >= 1
+                            && request.resource.data.rating <= 5
+                            && request.resource.data.text is string
+                            && request.resource.data.text.size() <= 1000;
+      allow delete: if request.auth != null && request.auth.uid == reviewId;
+    }
   }
 }
