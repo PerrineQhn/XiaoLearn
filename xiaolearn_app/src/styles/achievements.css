@@ -1,0 +1,511 @@
+/*
+ * achievements.css — styles scopés sous `.ach-page`
+ * ---------------------------------------------------------------------------
+ * Page « Mes hauts-faits » : cartes à collectionner mythologie chinoise.
+ * Base XiaoLearn (crème / rouge / or, inspiration Seonsaengnim), mais les
+ * cartes débloquées portent le gradient de leur palier :
+ *   Commun = gris-vert · Rare = bleu · Épique = violet · Légendaire = or.
+ * Aucune image bitmap : emblème = grand hanzi calligraphique + motifs CSS
+ * (double cadre, coins ornés) façon carte de tarot.
+ */
+
+.ach-page {
+  --ach-bg: #fffaf3;
+  --ach-card-bg: #ffffff;
+  --ach-cream: #fdf3e3;
+  --ach-text: #1f2937;
+  --ach-text-muted: #6b7280;
+  --ach-text-soft: #9aa0a6;
+  --ach-border: #ece4d5;
+  --ach-border-strong: #e0d4ba;
+  --ach-accent: #c6302c;
+  --ach-accent-soft: #fae0dc;
+  --ach-gold: #b45309;
+  --ach-gold-soft: #fdeecd;
+  --ach-radius: 14px;
+  --ach-shadow-sm: 0 1px 2px rgba(28, 24, 18, 0.04);
+  --ach-shadow-md: 0 4px 14px rgba(28, 24, 18, 0.08);
+  --ach-shadow-lg: 0 14px 36px rgba(28, 24, 18, 0.16);
+
+  /* Gradients de palier */
+  --ach-grad-common: linear-gradient(165deg, #86988a 0%, #566a5d 100%);
+  --ach-grad-rare: linear-gradient(165deg, #4f8ff0 0%, #2451b8 100%);
+  --ach-grad-epic: linear-gradient(165deg, #9b66ee 0%, #5e21ba 100%);
+  --ach-grad-legendary: linear-gradient(165deg, #f6c14d 0%, #c05e10 100%);
+
+  color: var(--ach-text);
+  background: var(--ach-bg);
+  min-height: 100%;
+  padding: 40px 20px 90px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+ * Header
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.ach-page .ach-hero-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f6c14d 0%, #c6302c 100%);
+  box-shadow: 0 8px 22px rgba(198, 48, 44, 0.28);
+}
+
+.ach-page .ach-title {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 6vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.ach-page .ach-subtitle {
+  margin: 0 auto;
+  color: var(--ach-text-muted);
+  font-size: 15.5px;
+  line-height: 1.55;
+  max-width: 580px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Progression globale
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-global-progress {
+  max-width: 560px;
+  margin: 0 auto 26px;
+}
+
+.ach-page .ach-global-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.ach-page .ach-global-progress-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ach-text);
+}
+
+.ach-page .ach-global-progress-pct {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ach-accent);
+}
+
+.ach-page .ach-global-progress-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: #f0e7d6;
+  overflow: hidden;
+}
+
+.ach-page .ach-global-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f6c14d 0%, #c6302c 100%);
+  transition: width 0.4s ease;
+}
+
+/* ---------------------------------------------------------------------------
+ * Stat-cards
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
+
+.ach-page .ach-stat-card {
+  background: var(--ach-card-bg);
+  border: 1px solid var(--ach-border);
+  border-radius: var(--ach-radius);
+  box-shadow: var(--ach-shadow-sm);
+  padding: 16px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.ach-page .ach-stat-icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.ach-page .ach-stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ach-page .ach-stat-value.ach-stat-tier-common { color: #566a5d; }
+.ach-page .ach-stat-value.ach-stat-tier-rare { color: #2451b8; }
+.ach-page .ach-stat-value.ach-stat-tier-epic { color: #6d28d9; }
+.ach-page .ach-stat-value.ach-stat-tier-legendary { color: #b45309; }
+
+.ach-page .ach-stat-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--ach-text-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Toolbar : recherche + chips
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.ach-page .ach-search {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ach-page .ach-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.ach-page .ach-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 16px 11px 40px;
+  border: 1px solid var(--ach-border-strong);
+  border-radius: 999px;
+  background: var(--ach-card-bg);
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--ach-text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ach-page .ach-search-input:focus {
+  border-color: var(--ach-accent);
+  box-shadow: 0 0 0 3px var(--ach-accent-soft);
+}
+
+.ach-page .ach-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ach-page .ach-chip {
+  appearance: none;
+  border: 1px solid var(--ach-border-strong);
+  background: var(--ach-card-bg);
+  color: var(--ach-text-muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.ach-page .ach-chip:hover {
+  border-color: var(--ach-accent);
+  color: var(--ach-accent);
+}
+
+.ach-page .ach-chip.is-active {
+  background: var(--ach-accent);
+  border-color: var(--ach-accent);
+  color: #ffffff;
+}
+
+.ach-page .ach-chip-status.is-active {
+  background: #1f2937;
+  border-color: #1f2937;
+}
+
+/* ---------------------------------------------------------------------------
+ * Sections
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-section {
+  margin-bottom: 36px;
+}
+
+.ach-page .ach-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ach-page .ach-section-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ach-page .ach-section-count {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ach-text-soft);
+}
+
+.ach-page .ach-no-results {
+  text-align: center;
+  color: var(--ach-text-muted);
+  font-size: 14.5px;
+  padding: 40px 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Grille de cartes — 4 / 3 / 2 colonnes
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1000px) {
+  .ach-page .ach-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .ach-page .ach-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .ach-page .ach-stats {
+    gap: 10px;
+  }
+
+  .ach-page .ach-stat-value {
+    font-size: 19px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Carte à collectionner — format portrait ~2:3, cadre tarot
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-card {
+  aspect-ratio: 2 / 3;
+  border-radius: 16px;
+  padding: 7px;
+  box-sizing: border-box;
+  box-shadow: var(--ach-shadow-md);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ach-page .ach-card.is-unlocked:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: var(--ach-shadow-lg);
+}
+
+/* Fond gradient selon palier (débloquée) */
+.ach-page .ach-card.is-unlocked.ach-tier-common { background: var(--ach-grad-common); }
+.ach-page .ach-card.is-unlocked.ach-tier-rare { background: var(--ach-grad-rare); }
+.ach-page .ach-card.is-unlocked.ach-tier-epic { background: var(--ach-grad-epic); }
+.ach-page .ach-card.is-unlocked.ach-tier-legendary { background: var(--ach-grad-legendary); }
+
+/* Léger halo doré supplémentaire pour les Légendaires */
+.ach-page .ach-card.is-unlocked.ach-tier-legendary {
+  box-shadow: 0 4px 18px rgba(192, 94, 16, 0.35), 0 0 0 1px rgba(246, 193, 77, 0.55);
+}
+
+/* Verrouillée : grisée, désaturée */
+.ach-page .ach-card.is-locked {
+  background: linear-gradient(165deg, #b9b4a8 0%, #8d897f 100%);
+  filter: grayscale(1);
+  opacity: 0.92;
+}
+
+/* Cadre intérieur (double bordure façon tarot) */
+.ach-page .ach-card-frame {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  outline: 1px solid rgba(255, 255, 255, 0.22);
+  outline-offset: 2px;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px 12px;
+  color: #ffffff;
+}
+
+/* Coins ornés */
+.ach-page .ach-card-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(255, 255, 255, 0.75);
+  border-style: solid;
+  border-width: 0;
+}
+
+.ach-page .ach-corner-tl { top: 4px; left: 4px; border-top-width: 2px; border-left-width: 2px; border-top-left-radius: 6px; }
+.ach-page .ach-corner-tr { top: 4px; right: 4px; border-top-width: 2px; border-right-width: 2px; border-top-right-radius: 6px; }
+.ach-page .ach-corner-bl { bottom: 4px; left: 4px; border-bottom-width: 2px; border-left-width: 2px; border-bottom-left-radius: 6px; }
+.ach-page .ach-corner-br { bottom: 4px; right: 4px; border-bottom-width: 2px; border-right-width: 2px; border-bottom-right-radius: 6px; }
+
+/* Palier (bandeau haut) */
+.ach-page .ach-card-tier {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 4px;
+}
+
+/* Emblème hanzi calligraphique */
+.ach-page .ach-card-emblem-zone {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ach-page .ach-card-emblem {
+  font-family: 'Kaiti SC', 'KaiTi', 'STKaiti', 'Noto Serif SC', serif;
+  font-size: clamp(40px, 6.5vw, 64px);
+  line-height: 1.1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  user-select: none;
+}
+
+.ach-page .ach-card.is-locked .ach-card-emblem {
+  opacity: 0.28;
+}
+
+.ach-page .ach-card-lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Nom + description */
+.ach-page .ach-card-name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ach-page .ach-card.is-locked .ach-card-name {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.ach-page .ach-card-desc {
+  font-size: 10.5px;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+/* Footer : date + XP (débloquée) ou progression (verrouillée) */
+.ach-page .ach-card-footer {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ach-page .ach-card-date {
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ach-page .ach-card-xp {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.ach-page .ach-card-progress-bar {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+
+.ach-page .ach-card-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  transition: width 0.3s ease;
+}
+
+.ach-page .ach-card-progress-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}

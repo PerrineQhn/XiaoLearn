@@ -333,9 +333,9 @@
   border-radius: 999px;
 }
 
-/* ------------------------ Flashcards card (V11) --------------------------
-   Focus mis sur le nombre de cartes à réviser (gros chiffre), petit anneau
-   de maîtrise sur le côté, CTA sombre en bas, façon Seonsaengnim. */
+/* ------------------------ Flashcards card (V19) --------------------------
+   Façon Seonsaengnim : gros compteur de cartes dues, mini-flashcard d'aperçu
+   (hanzi + pinyin), jauge de maîtrise horizontale + pastille %, CTA sombre. */
 
 .flashcards-card { display: flex; flex-direction: column; gap: 14px; }
 
@@ -374,66 +374,87 @@
   box-shadow: 0 0 0 3px rgba(47, 158, 106, 0.18);
 }
 
-.fc-mastered {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 14px;
+/* Mini-flashcard d'aperçu : carte blanche arrondie, ombre douce, hanzi en
+   grand + pinyin entre parenthèses, le tout centré (posée sur le fond crème
+   très léger pour se détacher du fond blanc de la card parente). */
+.fc-preview {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 4px;
+  padding: 18px 16px 16px;
+  background: #ffffff;
+  border: 1px solid #f0e8dd;
+  border-radius: 14px;
+  box-shadow: 0 2px 4px rgba(20, 12, 8, 0.05), 0 10px 22px rgba(20, 12, 8, 0.07);
+  text-align: center;
+}
+.fc-preview-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dv-muted);
+  margin-bottom: 2px;
+}
+.fc-preview-hanzi {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dv-ink);
+}
+.fc-preview-pinyin {
+  font-size: 14px;
+  color: var(--dv-muted);
+  font-weight: 500;
+}
+
+/* Jauge de maîtrise : "X / Y mots maîtrisés" + pastille % + barre. */
+.fc-gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 12px 14px;
   background: #faf5ee;
   border: 1px solid #efe6d8;
   border-radius: 12px;
 }
-.fc-ring-wrap {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-}
-.fc-ring-wrap .fc-ring {
-  width: 60px;
-  height: 60px;
-  display: block;
-  transform: rotate(-90deg);
-}
-.fc-ring-bg {
-  fill: none;
-  stroke: #f1ebe0;
-  stroke-width: 5;
-}
-.fc-ring-fg {
-  fill: none;
-  stroke: var(--dv-accent);
-  stroke-width: 5;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.5s ease;
-}
-.fc-ring-val {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--dv-accent);
-}
-.fc-mastered-meta {
+.fc-gauge-head {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.fc-gauge-label {
+  font-size: 13px;
+  color: var(--dv-muted);
+  font-weight: 600;
   min-width: 0;
 }
-.fc-mastered-count {
-  font-size: 16px;
-  font-weight: 800;
+.fc-gauge-label strong {
   color: var(--dv-ink);
+  font-weight: 800;
 }
-.fc-mastered-label {
+.fc-gauge-pct {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
   font-size: 12px;
-  color: var(--dv-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-weight: 600;
+  font-weight: 700;
+  background: var(--dv-accent-soft);
+  color: var(--dv-accent);
+}
+.fc-gauge-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #f1ebe0;
+  overflow: hidden;
+}
+.fc-gauge-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--dv-accent), var(--dv-gold));
+  transition: width 0.5s ease;
 }
 
 .btn-secondary.full-w { width: 100%; justify-self: stretch; }

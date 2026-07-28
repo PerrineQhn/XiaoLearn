@@ -20,6 +20,8 @@ import EvaluationHubPage from './pages/EvaluationHubPage';
 import CommunityPageV2 from './pages/CommunityPageV2';
 import AnnouncementsPage from './pages/AnnouncementsPage';
 import IdeasRoadmapPage from './pages/IdeasRoadmapPage';
+import NotesPage from './pages/NotesPage';
+import AchievementsPage from './pages/AchievementsPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ConversationsPage from './pages/ConversationsPage';
 import BattlesPage from './pages/BattlesPage';
@@ -2580,24 +2582,16 @@ function App() {
       break;
     }
     case 'notes':
-      // Placeholder « Mes notes » (hub personnel) — remplacer le <div> par le
-      // vrai composant page quand il sera prêt (garder le `case` tel quel).
-      content = (
-        <div className="placeholder-page">
-          <h2>{language === 'fr' ? 'Mes notes' : 'My notes'}</h2>
-          <p>{language === 'fr' ? 'Bientôt disponible…' : 'Coming soon…'}</p>
-        </div>
-      );
+      // Hub personnel « Mes notes » — notes libres localStorage + Firestore.
+      content = <NotesPage language={language} />;
       break;
     case 'achievements':
-      // Placeholder « Mes hauts-faits » (cartes à collectionner) — remplacer
-      // le <div> par le vrai composant page quand il sera prêt.
-      content = (
-        <div className="placeholder-page">
-          <h2>{language === 'fr' ? 'Mes hauts-faits' : 'My achievements'}</h2>
-          <p>{language === 'fr' ? 'Bientôt disponible…' : 'Coming soon…'}</p>
-        </div>
-      );
+      // « Mes hauts-faits » — cartes à collectionner mythologie chinoise.
+      // La prop `metrics` (optionnelle) reste à câbler : lessonsCompleted,
+      // charsTraced, bilansPassed, hasReview, xpLevel, cecrLevelsCompleted…
+      // (révisions cumulées + streak ont déjà un fallback interne via
+      // useDailyActivity). Voir AchievementMetrics dans useAchievements.ts.
+      content = <AchievementsPage language={language === 'en' ? 'en' : 'fr'} />;
       break;
     case 'home':
     default:

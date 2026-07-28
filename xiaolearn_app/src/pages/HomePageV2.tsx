@@ -88,6 +88,23 @@ export interface HomePageV2Props {
   /** Nombre de cartes individuelles dues en SRS (≠ leçons à revoir). */
   dueFlashcardsCount?: number;
   /**
+   * V19 — Carte Flashcards du dashboard (aperçu Seonsaengnim).
+   * `flashcardsPreview` : première carte due du deck (hanzi + pinyin) affichée
+   * dans la mini-flashcard d'aperçu. À câbler dans App.tsx depuis
+   * `allFlashcardItems` filtré sur `wordSrs.dueIds` (première carte due).
+   * Sans cette prop : placeholder 你好 (nǐ hǎo), ou un mot déjà appris si
+   * aucune carte n'est due.
+   */
+  flashcardsPreview?: { hanzi: string; pinyin: string } | null;
+  /**
+   * V19 — Jauge de maîtrise de la carte Flashcards.
+   * `flashcardsMasteredCount` = wordSrs.masteredIds.size (filtré sur le
+   * catalogue), `flashcardsTotalCount` = allFlashcardItems.length.
+   * Si l'une des deux props manque, la jauge est masquée (dégradation propre).
+   */
+  flashcardsMasteredCount?: number;
+  flashcardsTotalCount?: number;
+  /**
    * V13 — Objectifs quotidiens configurables (Réglages → Apprentissage) et
    * compteurs de progression du jour. `0` ou `undefined` = pas d'objectif
    * quantifié (fallback sur le comportement historique dans DailyGoalCard).
@@ -971,82 +988,91 @@ const CompactPathCard = ({
 };
 
 // --------------------------------------------------------------------------
-// 🃏 Flashcards (teaser condensé)
+// 🀄 Flashcards (V19 — Seonsaengnim : héro + aperçu de carte + jauge + CTA)
 // --------------------------------------------------------------------------
 
 const FlashcardsCard = ({
   language,
-  totalLearned,
-  totalCorpus,
-  dueCardsCount,
-  onStartReview
+  dueCount,
+  preview,
+  masteredCount,
+  totalCount,
+  onReview
 }: {
   language: Language;
-  totalLearned: number;
-  totalCorpus: number;
-  dueCardsCount: number;
-  onStartReview: () => void;
+  /** Cartes SRS individuelles dues (déjà filtrées sur le catalogue). */
+  dueCount: number;
+  /** Carte affichée dans la mini-flashcard d'aperçu (déjà résolue en amont). */
+  preview: { hanzi: string; pinyin: string };
+  /** Jauge masquée si l'un des deux manque (props App.tsx pas encore câblées). */
+  masteredCount?: number;
+  totalCount?: number;
+  onReview: () => void;
 }) => {
-  const pct = totalCorpus > 0 ? Math.round((totalLearned / totalCorpus) * 100) : 0;
-  const allCaught = dueCardsCount === 0;
+  const allCaught = dueCount === 0;
+  const hasGauge =
+    masteredCount !== undefined && totalCount !== undefined && totalCount > 0;
+  const masteredPct = hasGauge
+    ? Math.round((masteredCount / totalCount) * 100)
+    : 0;
+
   return (
     <section className="card flashcards-card">
       <header className="card-head">
         <h2>
-          <span className="emoji">🃏</span>
+          <span className="emoji">🀄</span>
           {language === 'fr' ? 'Flashcards' : 'Flashcards'}
         </h2>
       </header>
 
+      {/* Compteur héro : nombre de cartes dues en très gros. */}
       <div className="fc-due">
         <span className={`fc-due-num ${allCaught ? 'caught' : 'pending'}`}>
-          {dueCardsCount}
+          {dueCount}
         </span>
         <span className={`fc-due-status ${allCaught ? 'caught' : 'pending'}`}>
           <span className="fc-due-dot" aria-hidden="true" />
           {allCaught
-            ? language === 'fr' ? 'Tout est à jour !' : 'All caught up!'
+            ? language === 'fr' ? 'Tout est à jour ✓' : 'All caught up ✓'
             : language === 'fr' ? 'cartes à réviser' : 'cards to review'}
         </span>
       </div>
 
-      <div className="fc-mastered">
-        <FcRing value={pct} />
-        <div className="fc-mastered-meta">
-          <strong className="fc-mastered-count">
-            {totalLearned} / {totalCorpus}
-          </strong>
-          <span className="fc-mastered-label">
-            {language === 'fr' ? 'mots maîtrisés' : 'words mastered'}
-          </span>
-        </div>
+      {/* Aperçu : mini-flashcard blanche (première carte due, ou mot appris /
+          placeholder si les props ne sont pas câblées). */}
+      <div className="fc-preview" aria-hidden="true">
+        <span className="fc-preview-tag">
+          {allCaught
+            ? language === 'fr' ? 'Déjà maîtrisé' : 'Already mastered'
+            : language === 'fr' ? 'Prochaine carte' : 'Next card'}
+        </span>
+        <span className="fc-preview-hanzi">{preview.hanzi}</span>
+        <span className="fc-preview-pinyin">({preview.pinyin})</span>
       </div>
 
-      <button type="button" className="btn-dark full-w" onClick={onStartReview}>
-        {language === 'fr' ? 'Voir mes flashcards' : 'See my flashcards'} →
+      {/* Jauge de maîtrise : barre + "X / Y mots maîtrisés" + pastille %. */}
+      {hasGauge && (
+        <div className="fc-gauge">
+          <div className="fc-gauge-head">
+            <span className="fc-gauge-label">
+              <strong>{masteredCount}</strong> / {totalCount}{' '}
+              {language === 'fr' ? 'mots maîtrisés' : 'words mastered'}
+            </span>
+            <span className="fc-gauge-pct">{masteredPct}%</span>
+          </div>
+          <div className="fc-gauge-bar">
+            <div
+              className="fc-gauge-fill"
+              style={{ width: `${Math.max(masteredPct, masteredCount > 0 ? 2 : 0)}%` }}
+            />
+          </div>
+        </div>
+      )}
+
+      <button type="button" className="btn-dark full-w" onClick={onReview}>
+        {language === 'fr' ? 'Réviser maintenant' : 'Review now'} →
       </button>
     </section>
-  );
-};
-
-const FcRing = ({ value }: { value: number }) => {
-  const radius = 22;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (value / 100) * circumference;
-  return (
-    <div className="fc-ring-wrap">
-      <svg viewBox="0 0 60 60" className="fc-ring" aria-hidden="true">
-        <circle cx="30" cy="30" r={radius} className="fc-ring-bg" />
-        <circle
-          cx="30"
-          cy="30"
-          r={radius}
-          className="fc-ring-fg"
-          style={{ strokeDasharray: circumference, strokeDashoffset: offset }}
-        />
-      </svg>
-      <span className="fc-ring-val">{value}%</span>
-    </div>
   );
 };
 
@@ -1760,6 +1786,9 @@ const HomePageV2 = (props: HomePageV2Props) => {
     onStartReview,
     onOpenFlashcards,
     dueFlashcardsCount,
+    flashcardsPreview,
+    flashcardsMasteredCount,
+    flashcardsTotalCount,
     onOpenLesson,
     onOpenAiTutor,
     onOpenPath,
@@ -1822,12 +1851,22 @@ const HomePageV2 = (props: HomePageV2Props) => {
     return pool[dayIndex % pool.length];
   }, [progress.allLearnedItems, progress.todaySummary]);
 
-  const totalLearned = Object.values(progress.totals).reduce((a, b) => a + b, 0);
-  // Total du corpus HSK 1-7 (aligné sur les cibles historiques). Seonsaengnim
-  // n'affiche pas de graph HSK séparé sur la home — on supprime le bloc
-  // ProgressChart pour coller à sa disposition, mais on garde le total pour
-  // l'anneau Flashcards.
-  const totalCorpus = 500 + 1000 + 1500 + 2000 + 2500 + 3000 + 5000; // 15 500
+  // V19 — Carte Flashcards : compteur due (SRS individuel prioritaire) et
+  // aperçu de carte. Résolution de l'aperçu :
+  //   1. `flashcardsPreview` fourni par App.tsx (première carte due) ;
+  //   2. sinon, si rien n'est dû, un mot déjà appris (état "Tout est à jour") ;
+  //   3. sinon placeholder 你好 (nǐ hǎo).
+  const fcDueCount = dueFlashcardsCount ?? dueCardsCount;
+  const fcPreview = useMemo<{ hanzi: string; pinyin: string }>(() => {
+    if (flashcardsPreview) {
+      return { hanzi: flashcardsPreview.hanzi, pinyin: flashcardsPreview.pinyin };
+    }
+    if (fcDueCount === 0 && progress.allLearnedItems.length > 0) {
+      const learned = progress.allLearnedItems[0];
+      return { hanzi: learned.hanzi, pinyin: learned.pinyin };
+    }
+    return { hanzi: '你好', pinyin: 'nǐ hǎo' };
+  }, [flashcardsPreview, fcDueCount, progress.allLearnedItems]);
 
   return (
     <div className="dashboard-v2">
@@ -1877,10 +1916,11 @@ const HomePageV2 = (props: HomePageV2Props) => {
           <div className="main-duo">
             <FlashcardsCard
               language={language}
-              totalLearned={totalLearned}
-              totalCorpus={totalCorpus}
-              dueCardsCount={dueCardsCount}
-              onStartReview={onStartReview}
+              dueCount={fcDueCount}
+              preview={fcPreview}
+              masteredCount={flashcardsMasteredCount}
+              totalCount={flashcardsTotalCount}
+              onReview={onOpenFlashcards ?? onStartReview}
             />
             <AiTutorCard language={language} onOpenAiTutor={onOpenAiTutor} />
           </div>
