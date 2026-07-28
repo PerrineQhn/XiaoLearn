@@ -202,6 +202,12 @@ export type View =
   | 'bilan'
   // Profil utilisateur (clic sur le nom dans la sidebar).
   | 'profile'
+  // Hub personnel « Mes notes » (sidebar > Pratique) — placeholder en
+  // attendant le branchement de la vraie page.
+  | 'notes'
+  // « Mes hauts-faits » / achievements (sidebar > Communauté) — placeholder
+  // en attendant le branchement de la vraie page.
+  | 'achievements'
   // V10 — Dictionnaire CFDICT (hub + niveau + fiche détail).
   | 'dictionary'
   | 'dictionary-level'
@@ -1515,10 +1521,12 @@ function App() {
   // `learningStats` est maintenant réactif via le hook — plus besoin d'effets
   // de rafraîchissement à la navigation ou au focus fenêtre.
 
-  // Structure alignée sur Seonsaengnim (dashboard de référence) :
-  //   APPRENDRE / COMMUNAUTÉ / EXCLUSIF (premium).
-  // Structure alignée sur Seonsaengnim (dashboard de référence) :
-  //   APPRENDRE / COMMUNAUTÉ / EXCLUSIF (premium).
+  // Sidebar réorganisée façon Seonsaengnim (référence UX) :
+  //   - bloc épinglé en haut (Accueil / Parcours / Flashcards / Prof. Xiao),
+  //     toujours visible, sans header de section ;
+  //   - sections COLLAPSIBLES (chevron, état persisté en localStorage) :
+  //     Pratique / Lecture & dictionnaire / Communauté / Exclusif ;
+  //   - bloc bas fixe (Avis ★★★★★ / Signaler / Réglages / Déconnexion).
   //
   // Chaque entrée mappe sur un slug dont le PNG existe dans /public/icons
   // (`icon_{slug}_{theme}.png`) pour éviter tout fallback emoji à l'affichage.
@@ -1530,81 +1538,147 @@ function App() {
     iconSlug: string;
     fallback: string;
     icon?: string; // nom de fichier direct dans /public/icons (prioritaire sur iconSlug)
-    /** Badge optionnel à droite de l'entrée (ex: rang, compteur non-lus). */
-    badge?: { text: string; tone: 'rank' | 'unread' };
+    /** Badge optionnel à droite de l'entrée (ex: rang, non-lus, cartes dues). */
+    badge?: { text: string; tone: 'rank' | 'unread' | 'due' };
+    /** 5 petites étoiles dorées à droite du label (entrée « Avis »). */
+    stars?: boolean;
   };
-  const primaryNavEntries = useMemo<NavEntry[]>(
+  type NavSection = {
+    id: string;
+    label: string;
+    items: NavEntry[];
+  };
+
+  // Compteur de cartes dues pour le badge Flashcards — même logique que le
+  // `dueFlashcardsCount` passé à HomePageV2 : on filtre `wordSrs.dueIds` sur
+  // les cartes qui existent réellement dans le catalogue (les entrées SRS
+  // orphelines ne doivent pas gonfler le compteur).
+  const dueFlashcardsBadgeCount = useMemo(() => {
+    const valid = new Set(allFlashcardItems.map((i) => i.id));
+    let n = 0;
+    for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
+    return n;
+  }, [allFlashcardItems, wordSrs.dueIds]);
+
+  // Bloc épinglé en haut — toujours visible, pas de section.
+  const pinnedNavEntries = useMemo<NavEntry[]>(
     () =>
       [
         { id: 'home', label: language === 'fr' ? 'Accueil' : 'Home', iconSlug: 'home', fallback: '🏠' },
-        { id: 'cecr', label: language === 'fr' ? 'Leçons' : 'Lessons', iconSlug: 'lecons', fallback: '📚' },
-        { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' },
-        { id: 'flashcards', label: 'Flashcards', iconSlug: 'flash-card', fallback: '🃏' },
-        { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
-        { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
-        { id: 'atelier', label: language === 'fr' ? 'Atelier' : 'Practice', iconSlug: 'today', fallback: '🎓', icon: 'audio-en-langue-etrangere.png' },
+        { id: 'cecr', label: language === 'fr' ? 'Parcours' : 'Path', iconSlug: 'lecons', fallback: '📚' },
         {
-          id: 'errors',
-          label: language === 'fr' ? 'Mes erreurs' : 'My errors',
-          iconSlug: 'reviser',
-          fallback: '📝',
+          id: 'flashcards',
+          label: 'Flashcards',
+          iconSlug: 'flash-card',
+          fallback: '🃏',
           badge:
-            errorJournal.unlockedCount > 0
-              ? { text: String(errorJournal.unlockedCount), tone: 'rank' }
+            dueFlashcardsBadgeCount > 0
+              ? { text: String(dueFlashcardsBadgeCount), tone: 'due' }
               : undefined
         },
-        { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
-        { id: 'tutor', label: language === 'fr' ? 'Prof. Xiao' : 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
+        // Prof. Xiao : pas de badge applicable pour l'instant.
+        { id: 'tutor', label: 'Prof. Xiao', iconSlug: 'ia', fallback: '💬', icon: 'ia.png' }
+      ] satisfies NavEntry[],
+    [language, dueFlashcardsBadgeCount]
+  );
+  // Sections collapsibles (le label est capitalisé en CSS via text-transform).
+  const navSections = useMemo<NavSection[]>(
+    () =>
+      [
+        {
+          id: 'pratique',
+          label: language === 'fr' ? 'Pratique' : 'Practice',
+          items: [
+            { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
+            { id: 'atelier', label: language === 'fr' ? 'Atelier' : 'Practice lab', iconSlug: 'today', fallback: '🎓', icon: 'audio-en-langue-etrangere.png' },
+            {
+              id: 'errors',
+              label: language === 'fr' ? 'Mes erreurs' : 'My errors',
+              iconSlug: 'reviser',
+              fallback: '📝',
+              badge:
+                errorJournal.unlockedCount > 0
+                  ? { text: String(errorJournal.unlockedCount), tone: 'rank' }
+                  : undefined
+            },
+            { id: 'evaluation', label: language === 'fr' ? 'Évaluation' : 'Evaluation', iconSlug: 'progres', fallback: '🎯', icon: 'evaluation.png' },
+            { id: 'notes', label: language === 'fr' ? 'Mes notes' : 'My notes', iconSlug: 'notes', fallback: '🗒️', icon: 'carnet-de-notes.png' }
+          ]
+        },
+        {
+          id: 'lecture',
+          label: language === 'fr' ? 'Lecture & dictionnaire' : 'Reading & dictionary',
+          items: [
+            { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' },
+            { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
+            { id: 'reading', label: language === 'fr' ? 'Lecture' : 'Reading', iconSlug: 'lecture', fallback: '📕', icon: 'document.png' },
+            { id: 'dialogue', label: language === 'fr' ? 'Dialogues' : 'Dialogues', iconSlug: 'dialogue', fallback: '💬', icon: 'discussion-sur-les-bulles.png' }
+          ]
+        },
+        {
+          id: 'communaute',
+          label: language === 'fr' ? 'Communauté' : 'Community',
+          items: [
+            {
+              id: 'ideas',
+              label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
+              iconSlug: 'culture',
+              fallback: '💡',
+              icon: 'idea.png'
+            },
+            {
+              id: 'messages',
+              label: language === 'fr' ? 'Messages' : 'Messages',
+              iconSlug: 'culture',
+              fallback: '💬',
+              icon: 'messager.png'
+            },
+            { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
+            {
+              id: 'leaderboard',
+              label: language === 'fr' ? 'Classement' : 'Leaderboard',
+              iconSlug: 'culture',
+              fallback: '🏆',
+              icon: 'trophy.png',
+              badge:
+                myRankPosition && myRankPosition > 0
+                  ? { text: `#${myRankPosition}`, tone: 'rank' }
+                  : undefined
+            },
+            {
+              id: 'community',
+              label: language === 'fr' ? 'Annonces' : 'Announcements',
+              iconSlug: 'culture',
+              fallback: '📣',
+              icon: 'annoucement.png',
+              badge:
+                unreadAnnouncements > 0
+                  ? { text: String(unreadAnnouncements), tone: 'unread' }
+                  : undefined
+            },
+            { id: 'achievements', label: language === 'fr' ? 'Mes hauts-faits' : 'My achievements', iconSlug: 'medal', fallback: '🏅' }
+          ]
+        },
+        {
+          id: 'exclusif',
+          label: language === 'fr' ? 'Exclusif' : 'Exclusive',
+          items: [
+            { id: 'simulator', label: language === 'fr' ? 'Simulateur' : 'Simulator', iconSlug: 'themes', fallback: '🎭', icon: 'simulator.png' },
+            { id: 'free-learning', label: language === 'fr' ? 'Apprentissage libre' : 'Free learning', iconSlug: 'today', fallback: '🎯', icon: 'self-learning.png' }
+          ]
+        }
         // Onglets retirés (routes conservées pour deep links éventuels) :
         //   - 'writing-corrector'    → Correcteur IA
         //   - 'conversation-partner' → Partenaire IA
         //   - 'ai-quiz'              → Quiz IA
         //   - 'pronunciation-coach'  → Prononciation IA
-      ] satisfies NavEntry[],
-    [language, errorJournal.unlockedCount]
+      ] satisfies NavSection[],
+    [language, errorJournal.unlockedCount, unreadAnnouncements, myRankPosition]
   );
-  const communityNavEntries = useMemo<NavEntry[]>(
+  // Bloc bas — toujours visible (séparé par le divider du .sidebar-footer).
+  const footerNavEntries = useMemo<NavEntry[]>(
     () =>
       [
-        {
-          id: 'ideas',
-          label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
-          iconSlug: 'culture',
-          fallback: '💡',
-          icon: 'idea.png'
-        },
-        {
-          id: 'messages',
-          label: language === 'fr' ? 'Messages' : 'Messages',
-          iconSlug: 'culture',
-          fallback: '💬',
-          icon: 'messager.png'
-        },
-        { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
-        {
-          id: 'leaderboard',
-          label: language === 'fr' ? 'Classement' : 'Leaderboard',
-          iconSlug: 'culture',
-          fallback: '🏆',
-          icon: 'trophy.png',
-          badge:
-            myRankPosition && myRankPosition > 0
-              ? { text: `#${myRankPosition}`, tone: 'rank' }
-              : undefined
-        },
-        // Annonces placée en bas de la section Communauté (à l'ancien
-        // emplacement du Bilan, dont la page d'index a été retirée).
-        {
-          id: 'community',
-          label: language === 'fr' ? 'Annonces' : 'Announcements',
-          iconSlug: 'culture',
-          fallback: '📣',
-          icon: 'annoucement.png',
-          badge:
-            unreadAnnouncements > 0
-              ? { text: String(unreadAnnouncements), tone: 'unread' }
-              : undefined
-        },
         {
           // Avis utilisateurs — pas de PNG étoile dans /public/icons pour
           // l'instant : le slug 'star' n'existe pas → onError affiche le
@@ -1612,26 +1686,81 @@ function App() {
           id: 'reviews',
           label: language === 'fr' ? 'Avis' : 'Reviews',
           iconSlug: 'star',
-          fallback: '⭐'
-        }
-      ] satisfies NavEntry[],
-    [language, unreadAnnouncements, myRankPosition]
-  );
-  const exclusiveNavEntries = useMemo<NavEntry[]>(
-    () =>
-      [
-        { id: 'simulator', label: language === 'fr' ? 'Simulateur' : 'Simulator', iconSlug: 'themes', fallback: '🎭', icon: 'simulator.png' },
-        { id: 'free-learning', label: language === 'fr' ? 'Apprentissage libre' : 'Free learning', iconSlug: 'today', fallback: '🎯', icon: 'self-learning.png' }
+          fallback: '⭐',
+          stars: true
+        },
+        { id: 'assistant', label: language === 'fr' ? 'Signaler un problème' : 'Report a problem', iconSlug: 'bouee-de-sauvetage', fallback: '🛟' },
+        { id: 'settings', label: language === 'fr' ? 'Réglages' : 'Settings', iconSlug: 'settings', fallback: '⚙️' }
       ] satisfies NavEntry[],
     [language]
   );
-  const secondaryNavEntries = useMemo<NavEntry[]>(
-    () =>
-      [
-        { id: 'settings', label: language === 'fr' ? 'Réglages' : 'Settings', iconSlug: 'settings', fallback: '⚙️' },
-        { id: 'assistant', label: language === 'fr' ? 'Signaler un problème' : 'Report a problem', iconSlug: 'bouee-de-sauvetage', fallback: '🛟' }
-      ] satisfies NavEntry[],
-    [language]
+
+  // Collapse des sections de la sidebar — { [sectionId]: true } = repliée.
+  // Défaut : tout déplié. Persisté en localStorage (clé versionnée).
+  const SIDEBAR_SECTIONS_KEY = 'xl_sidebar_sections_v1';
+  const [collapsedNavSections, setCollapsedNavSections] = useState<Record<string, boolean>>(() => {
+    if (typeof window === 'undefined') return {};
+    try {
+      const raw = window.localStorage.getItem(SIDEBAR_SECTIONS_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+    } catch {
+      return {};
+    }
+  });
+  const toggleNavSection = useCallback((sectionId: string) => {
+    setCollapsedNavSections((prev) => {
+      const next = { ...prev, [sectionId]: !prev[sectionId] };
+      try {
+        window.localStorage.setItem(SIDEBAR_SECTIONS_KEY, JSON.stringify(next));
+      } catch {
+        /* stockage indisponible — non bloquant */
+      }
+      return next;
+    });
+  }, []);
+
+  // Renderer commun d'une entrée de sidebar (bloc épinglé, sections, footer).
+  const handleNavEntryClick = (entry: NavEntry) => {
+    // Marque les annonces comme lues dès que l'utilisateur entre sur la page
+    // Annonces (l'icône cloche reste séparée).
+    if (entry.id === 'community') {
+      announcementsRead.markAllRead(DEFAULT_ANNOUNCEMENTS);
+    }
+    setView(entry.id);
+  };
+  const renderNavEntry = (entry: NavEntry) => (
+    <button
+      key={entry.id}
+      type="button"
+      className={`nav-item ${entry.id === view ? 'active' : ''}`}
+      title={sidebarCollapsed ? entry.label : undefined}
+      onClick={() => handleNavEntryClick(entry)}
+    >
+      <span className="nav-icon">
+        <img
+          src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
+          alt=""
+          loading="lazy"
+          draggable="false"
+          onError={(event) => {
+            (event.currentTarget as HTMLImageElement).style.display = 'none';
+            (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
+          }}
+        />
+      </span>
+      <span className="nav-label">{entry.label}</span>
+      {entry.stars && (
+        <span className="nav-stars" aria-hidden="true">
+          ★★★★★
+        </span>
+      )}
+      {entry.badge && (
+        <span className={`nav-badge nav-badge--${entry.badge.tone}`}>
+          {entry.badge.text}
+        </span>
+      )}
+    </button>
   );
   const reviewItemsForPlan =
     appAccess.reviewItemLimit === null
@@ -2450,6 +2579,26 @@ function App() {
       );
       break;
     }
+    case 'notes':
+      // Placeholder « Mes notes » (hub personnel) — remplacer le <div> par le
+      // vrai composant page quand il sera prêt (garder le `case` tel quel).
+      content = (
+        <div className="placeholder-page">
+          <h2>{language === 'fr' ? 'Mes notes' : 'My notes'}</h2>
+          <p>{language === 'fr' ? 'Bientôt disponible…' : 'Coming soon…'}</p>
+        </div>
+      );
+      break;
+    case 'achievements':
+      // Placeholder « Mes hauts-faits » (cartes à collectionner) — remplacer
+      // le <div> par le vrai composant page quand il sera prêt.
+      content = (
+        <div className="placeholder-page">
+          <h2>{language === 'fr' ? 'Mes hauts-faits' : 'My achievements'}</h2>
+          <p>{language === 'fr' ? 'Bientôt disponible…' : 'Coming soon…'}</p>
+        </div>
+      );
+      break;
     case 'home':
     default:
       content = (
@@ -2767,144 +2916,55 @@ function App() {
         */}
 
         <div className="sidebar-scroll">
-        <section className="sidebar-nav-section">
-          <header className="sidebar-section-header">
-            <span>{language === 'fr' ? 'APPRENDRE' : 'LEARN'}</span>
-          </header>
+        {/* Bloc épinglé — toujours visible, sans header de section. */}
+        <nav className="sidebar-nav sidebar-nav--pinned">
+          {pinnedNavEntries.map(renderNavEntry)}
+        </nav>
 
-          <nav className="sidebar-nav">
-            {primaryNavEntries.map((entry) => (
+        {/* Sections collapsibles (chevron, état persisté en localStorage). */}
+        {navSections.map((section) => {
+          const isCollapsed = Boolean(collapsedNavSections[section.id]);
+          return (
+            <section
+              key={section.id}
+              className={`sidebar-nav-section ${isCollapsed ? 'is-collapsed' : ''}`}
+            >
               <button
-                key={entry.id}
                 type="button"
-                className={`nav-item ${entry.id === view ? 'active' : ''}`}
-                title={sidebarCollapsed ? entry.label : undefined}
-                onClick={() => setView(entry.id)}
+                className="sidebar-section-header sidebar-section-toggle"
+                onClick={() => toggleNavSection(section.id)}
+                aria-expanded={!isCollapsed}
               >
-                <span className="nav-icon">
-                  <img
-                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
-                    alt=""
-                    loading="lazy"
-                    draggable="false"
-                    onError={(event) => {
-                      (event.currentTarget as HTMLImageElement).style.display = 'none';
-                      (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
-                    }}
+                <span>{section.label}</span>
+                <svg
+                  className="sidebar-section-chevron"
+                  viewBox="0 0 16 16"
+                  width="12"
+                  height="12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 10l4-4 4 4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                </span>
-                <span className="nav-label">{entry.label}</span>
-                {entry.badge && (
-                  <span className={`nav-badge nav-badge--${entry.badge.tone}`}>
-                    {entry.badge.text}
-                  </span>
-                )}
+                </svg>
               </button>
-            ))}
-          </nav>
-        </section>
-
-        <section className="sidebar-nav-section">
-          <header className="sidebar-section-header">
-            <span>{language === 'fr' ? 'COMMUNAUTÉ' : 'COMMUNITY'}</span>
-          </header>
-
-          <nav className="sidebar-nav">
-            {communityNavEntries.map((entry) => (
-              <button
-                key={entry.id}
-                type="button"
-                className={`nav-item ${entry.id === view ? 'active' : ''}`}
-                title={sidebarCollapsed ? entry.label : undefined}
-                onClick={() => {
-                  // Marque les annonces comme lues dès que l'utilisateur entre
-                  // sur la page Annonces (l'icône cloche reste séparée).
-                  if (entry.id === 'community') {
-                    announcementsRead.markAllRead(DEFAULT_ANNOUNCEMENTS);
-                  }
-                  setView(entry.id);
-                }}
-              >
-                <span className="nav-icon">
-                  <img
-                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
-                    alt=""
-                    loading="lazy"
-                    draggable="false"
-                    onError={(event) => {
-                      (event.currentTarget as HTMLImageElement).style.display = 'none';
-                      (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
-                    }}
-                  />
-                </span>
-                <span className="nav-label">{entry.label}</span>
-                {entry.badge && (
-                  <span className={`nav-badge nav-badge--${entry.badge.tone}`}>
-                    {entry.badge.text}
-                  </span>
-                )}
-              </button>
-            ))}
-          </nav>
-        </section>
-
-        <section className="sidebar-nav-section">
-          <header className="sidebar-section-header">
-            <span>{language === 'fr' ? 'EXCLUSIF' : 'EXCLUSIVE'}</span>
-          </header>
-
-          <nav className="sidebar-nav">
-            {exclusiveNavEntries.map((entry) => (
-              <button
-                key={entry.id}
-                type="button"
-                className={`nav-item ${entry.id === view ? 'active' : ''}`}
-                title={sidebarCollapsed ? entry.label : undefined}
-                onClick={() => setView(entry.id)}
-              >
-                <span className="nav-icon">
-                  <img
-                    src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
-                    alt=""
-                    loading="lazy"
-                    draggable="false"
-                    onError={(event) => {
-                      (event.currentTarget as HTMLImageElement).style.display = 'none';
-                      (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
-                    }}
-                  />
-                </span>
-                <span className="nav-label">{entry.label}</span>
-              </button>
-            ))}
-          </nav>
-        </section>
+              <div className="sidebar-section-body">
+                <nav className="sidebar-nav">
+                  {section.items.map(renderNavEntry)}
+                </nav>
+              </div>
+            </section>
+          );
+        })}
         </div>
 
         <div className="sidebar-footer">
-          {secondaryNavEntries.map((entry) => (
-            <button
-              key={entry.id}
-              type="button"
-              className={`nav-item ${entry.id === view ? 'active' : ''}`}
-                title={sidebarCollapsed ? entry.label : undefined}
-              onClick={() => setView(entry.id)}
-            >
-              <span className="nav-icon">
-                <img
-                  src={entry.icon ? `/icons/${entry.icon}` : `/icons/icon_${entry.iconSlug}_${colorTheme}.png`}
-                  alt=""
-                  loading="lazy"
-                  draggable="false"
-                  onError={(event) => {
-                    (event.currentTarget as HTMLImageElement).style.display = 'none';
-                    (event.currentTarget.parentElement ?? event.currentTarget).textContent = entry.fallback;
-                  }}
-                />
-              </span>
-              <span className="nav-label">{entry.label}</span>
-            </button>
-          ))}
+          {footerNavEntries.map(renderNavEntry)}
           <button type="button" className="nav-item" onClick={() => void signOut()}>
             <span className="nav-icon">
               <img

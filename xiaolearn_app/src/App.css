@@ -636,6 +636,122 @@ body {
   border-color: #d4a537;
 }
 
+/* Cartes dues (badge Flashcards) — pastille orange, pattern Seonsaengnim. */
+.nav-badge--due {
+  background: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fdba74;
+  min-width: 22px;
+  text-align: center;
+}
+
+.nav-item.active .nav-badge--due {
+  background: #fff;
+  border-color: #fb923c;
+}
+
+/* 5 petites étoiles dorées de l'entrée « Avis » (bloc bas, style Seonsaengnim). */
+.nav-stars {
+  flex-shrink: 0;
+  color: #f2b01e;
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  line-height: 1;
+}
+
+/* Étoiles masquées en sidebar rétractée (comme les badges/labels). */
+@media (min-width: 1024px) {
+  .sidebar-collapsed .nav-stars {
+    display: none !important;
+  }
+}
+
+/* ===== Sections collapsibles de la sidebar (pattern Seonsaengnim) ===== */
+/* Bloc épinglé en haut : pas de header, padding bas réduit. */
+.sidebar-nav--pinned {
+  flex: none;
+  overflow: visible;
+  padding-bottom: var(--spacing-xs);
+}
+
+/* Header de section cliquable (reprend le style petites-capitales grises
+   de .sidebar-section-header + chevron à droite). */
+.sidebar-section-toggle {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  text-transform: uppercase;
+  font-family: inherit;
+  transition: color var(--transition-base);
+}
+
+.sidebar-section-toggle:hover {
+  color: var(--text-secondary);
+}
+
+.sidebar-section-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-nav-section.is-collapsed .sidebar-section-chevron {
+  transform: rotate(180deg);
+}
+
+/* Collapse animé sans mesurer les hauteurs : grid-template-rows 1fr → 0fr.
+   Le contenu reste monté (transition douce + accessibilité du focus gérée
+   par le repli visuel uniquement). */
+.sidebar-section-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.sidebar-section-body > .sidebar-nav {
+  overflow: hidden;
+  min-height: 0;
+  /* visibility est "discrete" : avec une transition, `hidden` ne s'applique
+     qu'en fin d'animation → le repli reste fluide, puis le contenu sort du
+     flux d'accessibilité/focus. */
+  transition: visibility 0.25s;
+}
+
+.sidebar-nav-section.is-collapsed .sidebar-section-body {
+  grid-template-rows: 0fr;
+}
+
+.sidebar-nav-section.is-collapsed .sidebar-section-body > .sidebar-nav {
+  visibility: hidden;
+}
+
+/* ===== Pages placeholder (Mes notes / Mes hauts-faits, en attendant les
+   vraies pages) ===== */
+.placeholder-page {
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.placeholder-page h2 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Mode rail (sidebar rétractée, desktop) : les headers de section sont
+   masqués (cf. règles .sidebar-collapsed plus haut) → on force les sections
+   dépliées pour que toutes les icônes restent accessibles. */
+@media (min-width: 1024px) {
+  .sidebar-collapsed .sidebar-nav-section.is-collapsed .sidebar-section-body {
+    grid-template-rows: 1fr;
+  }
+  .sidebar-collapsed .sidebar-nav-section.is-collapsed .sidebar-section-body > .sidebar-nav {
+    visibility: visible;
+  }
+}
+
 /* ===== Main Content ===== */
 .main-content {
   /* Padding-top réduit à 0 — la topbar (search bar) est juste au-dessus, on
