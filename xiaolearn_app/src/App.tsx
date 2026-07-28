@@ -45,6 +45,7 @@ import LevelBilanBanner from './components/LevelBilanBanner';
 import { useLessonMastery } from './hooks/useLessonMastery';
 import { useLevelBilans } from './hooks/useLevelBilans';
 import { usePersonalFlashcards } from './hooks/usePersonalFlashcards';
+import type { AchievementMetrics } from './hooks/useAchievements';
 import type { CecrLevelSlug } from './types/simulator';
 import type { LessonMasteryMap } from './types/review-v3';
 import type { BilanCompletionMap } from './types/bilan';
@@ -1562,6 +1563,78 @@ function App() {
     return n;
   }, [allFlashcardItems, wordSrs.dueIds]);
 
+  // V19 — Carte Flashcards du dashboard : aperçu de la première carte due
+  // (intersection catalogue × wordSrs.dueIds, dans l'ordre du catalogue).
+  // null si rien n'est dû : HomePageV2 retombe alors sur un mot appris,
+  // puis sur le placeholder 你好.
+  const flashcardsPreviewCard = useMemo<{ hanzi: string; pinyin: string } | null>(() => {
+    const first = allFlashcardItems.find((item) => wordSrs.dueIds.has(item.id));
+    return first ? { hanzi: first.hanzi, pinyin: first.pinyin } : null;
+  }, [allFlashcardItems, wordSrs.dueIds]);
+
+  // V19 — Jauge de maîtrise de la carte Flashcards : masteredIds filtrés sur
+  // les cartes qui existent réellement dans le catalogue (même logique que
+  // `dueFlashcardsBadgeCount` ci-dessus — les entrées SRS orphelines ne
+  // doivent pas gonfler la jauge).
+  const flashcardsMasteredBadgeCount = useMemo(() => {
+    const valid = new Set(allFlashcardItems.map((i) => i.id));
+    let n = 0;
+    for (const id of wordSrs.masteredIds) if (valid.has(id)) n++;
+    return n;
+  }, [allFlashcardItems, wordSrs.masteredIds]);
+
+  // « Mes hauts-faits » — métriques d'évaluation passées à AchievementsPage.
+  // `hasReview` est volontairement ABSENT : la page appelle useReviews() en
+  // interne (le getDocs des avis ne doit pas tourner au mount de l'app,
+  // seulement quand la page achievements est visitée).
+  const achievementMetrics = useMemo<AchievementMetrics>(() => {
+    // Caractères tracés : entrées SRS dont la compétence écriture a été
+    // commencée (mêmes critères que `skillStarted` dans useWordSRS).
+    let charsTraced = 0;
+    for (const entry of Object.values(wordSrs.map)) {
+      const w = entry.skills.writing;
+      if (w.dueAt > 0 || w.level > 0) charsTraced += 1;
+    }
+    // Bilans de niveau réussis (passed=true, legacy inclus).
+    let bilansPassed = 0;
+    for (const bilan of Object.values(levelBilans.bilans)) {
+      if (bilan?.passed === true) bilansPassed += 1;
+    }
+    // Niveaux CECR dont TOUTES les leçons sont complétées.
+    const completedSet = new Set(completedLessons);
+    const pathsById = new Map(cecrPathsState.map((p) => [p.id, p]));
+    let cecrLevelsCompleted = 0;
+    for (const meta of cecrLevels) {
+      const lessons = meta.pathIds.flatMap(
+        (pid) => pathsById.get(pid)?.lessons ?? []
+      );
+      if (lessons.length > 0 && lessons.every((l) => completedSet.has(l.id))) {
+        cecrLevelsCompleted += 1;
+      }
+    }
+    return {
+      // Valeurs canoniques App.tsx (priment sur le fallback interne
+      // useDailyActivity de la page).
+      totalCardsReviewed: dailyActivity.totals.totalCards,
+      currentStreak: dashboardState.streak.current,
+      bestStreak: dashboardState.streak.best,
+      lessonsCompleted: completedLessons.length,
+      charsTraced,
+      bilansPassed,
+      xpLevel: dashboardState.xp.level,
+      cecrLevelsCompleted
+    };
+  }, [
+    wordSrs.map,
+    levelBilans.bilans,
+    completedLessons,
+    cecrPathsState,
+    dailyActivity.totals.totalCards,
+    dashboardState.streak.current,
+    dashboardState.streak.best,
+    dashboardState.xp.level
+  ]);
+
   // Bloc épinglé en haut — toujours visible, pas de section.
   const pinnedNavEntries = useMemo<NavEntry[]>(
     () =>
@@ -2587,11 +2660,15 @@ function App() {
       break;
     case 'achievements':
       // « Mes hauts-faits » — cartes à collectionner mythologie chinoise.
-      // La prop `metrics` (optionnelle) reste à câbler : lessonsCompleted,
-      // charsTraced, bilansPassed, hasReview, xpLevel, cecrLevelsCompleted…
-      // (révisions cumulées + streak ont déjà un fallback interne via
-      // useDailyActivity). Voir AchievementMetrics dans useAchievements.ts.
-      content = <AchievementsPage language={language === 'en' ? 'en' : 'fr'} />;
+      // `metrics` câblé depuis `achievementMetrics` (voir le useMemo plus
+      // haut). `hasReview` est résolu en interne par la page via useReviews()
+      // pour ne pas déclencher le getDocs des avis au mount de l'app.
+      content = (
+        <AchievementsPage
+          language={language === 'en' ? 'en' : 'fr'}
+          metrics={achievementMetrics}
+        />
+      );
       break;
     case 'home':
     default:
@@ -2631,6 +2708,11 @@ function App() {
             for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
             return n;
           })()}
+          // V19 — Aperçu + jauge de maîtrise de la carte Flashcards
+          // (memos `flashcardsPreviewCard` / `flashcardsMasteredBadgeCount`).
+          flashcardsPreview={flashcardsPreviewCard}
+          flashcardsMasteredCount={flashcardsMasteredBadgeCount}
+          flashcardsTotalCount={allFlashcardItems.length}
           userDisplayName={user?.displayName ?? undefined}
           cecrPaths={cecrPathsState}
           cecrLevels={cecrLevels}

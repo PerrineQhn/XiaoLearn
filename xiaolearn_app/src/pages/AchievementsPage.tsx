@@ -32,6 +32,7 @@ import {
   type EvaluatedAchievement
 } from '../hooks/useAchievements';
 import { useDailyActivity } from '../hooks/useDailyActivity';
+import { useReviews } from '../hooks/useReviews';
 
 type Language = 'fr' | 'en';
 type StatusFilter = 'all' | 'unlocked' | 'inProgress' | 'locked';
@@ -130,14 +131,24 @@ export default function AchievementsPage({
   // (hook autonome, localStorage + Firestore). Les props App.tsx, quand
   // elles seront câblées, PRIMENT sur ce fallback.
   const dailyActivity = useDailyActivity();
+  // `hasReview` est résolu ICI et pas dans App.tsx : useReviews() fait un
+  // getDocs de tous les avis, coût acceptable seulement quand la page est
+  // montée (visitée), pas au mount de l'app entière.
+  const { myReview } = useReviews();
   const mergedMetrics = useMemo<AchievementMetrics>(
     () => ({
       ...metrics,
       totalCardsReviewed:
         metrics?.totalCardsReviewed ?? dailyActivity.totals.totalCards,
-      currentStreak: metrics?.currentStreak ?? dailyActivity.currentStreak
+      currentStreak: metrics?.currentStreak ?? dailyActivity.currentStreak,
+      hasReview: metrics?.hasReview ?? myReview !== null
     }),
-    [metrics, dailyActivity.totals.totalCards, dailyActivity.currentStreak]
+    [
+      metrics,
+      dailyActivity.totals.totalCards,
+      dailyActivity.currentStreak,
+      myReview
+    ]
   );
 
   const {
