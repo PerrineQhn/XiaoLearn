@@ -2,11 +2,23 @@
  * achievements.css — styles scopés sous `.ach-page`
  * ---------------------------------------------------------------------------
  * Page « Mes hauts-faits » : cartes à collectionner mythologie chinoise.
- * Base XiaoLearn (crème / rouge / or, inspiration Seonsaengnim), mais les
- * cartes débloquées portent le gradient de leur palier :
- *   Commun = gris-vert · Rare = bleu · Épique = violet · Légendaire = or.
- * Aucune image bitmap : emblème = grand hanzi calligraphique + motifs CSS
- * (double cadre, coins ornés) façon carte de tarot.
+ * Base XiaoLearn (crème / rouge / or, inspiration Seonsaengnim).
+ * Chaque carte affiche sa VRAIE illustration (public/img/cards/<id>.jpg,
+ * assets mobiles 900×1342) + cadre tarot par-dessus.
+ *
+ * Palette de palier ALIGNÉE SUR LE MOBILE (data/cards.ts → RARITY_META) :
+ *   Commun #78909C · Rare #2F9D8A · Épique #9C27B0 · Légendaire #F9A825.
+ *
+ * Effets des cartes débloquées = adaptation CSS du CardShimmer mobile
+ * (components/CardShimmer.tsx) :
+ *   holo   — voile arc-en-ciel dérivant (±26px, 4200 ms aller, sinus),
+ *            opacité 0.06 (rare) / 0.11 (épique) / 0.16 (légendaire) ;
+ *   sparks — étincelles blanches en décalé (montée 620 ms / descente 700 ms,
+ *            pauses 1.4–3.6 s), 3 / 5 / 7 par rareté ;
+ *   sweep  — balayage lumineux légendaire (bande 46px inclinée 18°,
+ *            traversée 1150 ms puis pause 3400 ms).
+ * + glow box-shadow de la couleur de rareté (pulsant pour légendaire).
+ * `prefers-reduced-motion` fige tout (voile statique, pas de balayage).
  */
 
 .ach-page {
@@ -27,11 +39,17 @@
   --ach-shadow-md: 0 4px 14px rgba(28, 24, 18, 0.08);
   --ach-shadow-lg: 0 14px 36px rgba(28, 24, 18, 0.16);
 
-  /* Gradients de palier */
-  --ach-grad-common: linear-gradient(165deg, #86988a 0%, #566a5d 100%);
-  --ach-grad-rare: linear-gradient(165deg, #4f8ff0 0%, #2451b8 100%);
-  --ach-grad-epic: linear-gradient(165deg, #9b66ee 0%, #5e21ba 100%);
-  --ach-grad-legendary: linear-gradient(165deg, #f6c14d 0%, #c05e10 100%);
+  /* Gradients de palier — paires exactes du mobile (RARITY_META.gradient).
+     Servent de fond de secours pendant le chargement des JPG. */
+  --ach-grad-common: linear-gradient(165deg, #8d9ba6 0%, #5c6b73 100%);
+  --ach-grad-rare: linear-gradient(165deg, #3fbfa6 0%, #1e7a6a 100%);
+  --ach-grad-epic: linear-gradient(165deg, #b65ac8 0%, #6a1b7a 100%);
+  --ach-grad-legendary: linear-gradient(165deg, #ffc947 0%, #e08a00 100%);
+
+  /* Couleurs de glow — valeurs exactes du mobile (RARITY_META.glow). */
+  --ach-glow-rare: 95, 211, 188;      /* #5FD3BC */
+  --ach-glow-epic: 206, 147, 216;     /* #CE93D8 */
+  --ach-glow-legendary: 255, 213, 79; /* #FFD54F */
 
   color: var(--ach-text);
   background: var(--ach-bg);
@@ -160,10 +178,10 @@
   letter-spacing: -0.01em;
 }
 
-.ach-page .ach-stat-value.ach-stat-tier-common { color: #566a5d; }
-.ach-page .ach-stat-value.ach-stat-tier-rare { color: #2451b8; }
-.ach-page .ach-stat-value.ach-stat-tier-epic { color: #6d28d9; }
-.ach-page .ach-stat-value.ach-stat-tier-legendary { color: #b45309; }
+.ach-page .ach-stat-value.ach-stat-tier-common { color: #5c6b73; }
+.ach-page .ach-stat-value.ach-stat-tier-rare { color: #1e7a6a; }
+.ach-page .ach-stat-value.ach-stat-tier-epic { color: #6a1b7a; }
+.ach-page .ach-stat-value.ach-stat-tier-legendary { color: #e08a00; }
 
 .ach-page .ach-stat-label {
   font-size: 10.5px;
@@ -342,27 +360,226 @@
   box-shadow: var(--ach-shadow-lg);
 }
 
-/* Fond gradient selon palier (débloquée) */
-.ach-page .ach-card.is-unlocked.ach-tier-common { background: var(--ach-grad-common); }
-.ach-page .ach-card.is-unlocked.ach-tier-rare { background: var(--ach-grad-rare); }
-.ach-page .ach-card.is-unlocked.ach-tier-epic { background: var(--ach-grad-epic); }
-.ach-page .ach-card.is-unlocked.ach-tier-legendary { background: var(--ach-grad-legendary); }
+/* Fond gradient de palier = secours pendant le chargement du JPG */
+.ach-page .ach-card.ach-tier-common { background: var(--ach-grad-common); }
+.ach-page .ach-card.ach-tier-rare { background: var(--ach-grad-rare); }
+.ach-page .ach-card.ach-tier-epic { background: var(--ach-grad-epic); }
+.ach-page .ach-card.ach-tier-legendary { background: var(--ach-grad-legendary); }
 
-/* Léger halo doré supplémentaire pour les Légendaires */
-.ach-page .ach-card.is-unlocked.ach-tier-legendary {
-  box-shadow: 0 4px 18px rgba(192, 94, 16, 0.35), 0 0 0 1px rgba(246, 193, 77, 0.55);
+/* Glow de rareté (couleurs mobiles RARITY_META.glow) */
+.ach-page .ach-card.is-unlocked.ach-tier-rare {
+  box-shadow: var(--ach-shadow-md), 0 0 16px rgba(var(--ach-glow-rare), 0.35);
 }
 
-/* Verrouillée : grisée, désaturée */
+.ach-page .ach-card.is-unlocked.ach-tier-epic {
+  box-shadow: var(--ach-shadow-md), 0 0 20px rgba(var(--ach-glow-epic), 0.45);
+}
+
+.ach-page .ach-card.is-unlocked.ach-tier-legendary {
+  box-shadow:
+    var(--ach-shadow-md),
+    0 0 0 1px rgba(246, 193, 77, 0.55),
+    0 0 20px rgba(var(--ach-glow-legendary), 0.4);
+  animation: ach-glow-pulse 2.6s ease-in-out infinite;
+}
+
+.ach-page .ach-card.is-unlocked.ach-tier-legendary:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+@keyframes ach-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      var(--ach-shadow-md),
+      0 0 0 1px rgba(246, 193, 77, 0.55),
+      0 0 18px rgba(var(--ach-glow-legendary), 0.35);
+  }
+  50% {
+    box-shadow:
+      var(--ach-shadow-md),
+      0 0 0 1px rgba(246, 193, 77, 0.75),
+      0 0 32px rgba(var(--ach-glow-legendary), 0.65);
+  }
+}
+
+/* Verrouillée : grisée, assombrie */
 .ach-page .ach-card.is-locked {
-  background: linear-gradient(165deg, #b9b4a8 0%, #8d897f 100%);
   filter: grayscale(1);
   opacity: 0.92;
+}
+
+/* ---------------------------------------------------------------------------
+ * Illustration — JPG mobile 900×1342 en couverture totale de la carte
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-card-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ach-page .ach-card.is-locked .ach-card-art {
+  filter: brightness(0.62);
+}
+
+/* ---------------------------------------------------------------------------
+ * Effets par rareté (cartes débloquées) — adaptation CSS de CardShimmer
+ * (mobile). Couches : .ach-card-fx (::before holo + ::after sweep) puis
+ * .ach-card-sparks (étincelles). Uniquement opacity/transform : compositable.
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-card-fx,
+.ach-page .ach-card-sparks {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Voile holographique : gradient arc-en-ciel HOLO_COLORS du mobile,
+   surdimensionné (±90px) pour dériver sans découvrir de bord.
+   Dérive : ±26px en 4200 ms (sinus), aller-retour — comme le mobile. */
+.ach-page .ach-card-fx::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -90px;
+  right: -90px;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 138, 196, 0.95) 20%,
+    rgba(255, 214, 120, 0.85) 40%,
+    rgba(126, 232, 255, 0.95) 60%,
+    rgba(186, 148, 255, 0.9) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: ach-holo-drift 4.2s ease-in-out infinite alternate;
+}
+
+.ach-page .ach-tier-rare .ach-card-fx::before { opacity: 0.06; }
+.ach-page .ach-tier-epic .ach-card-fx::before { opacity: 0.11; }
+.ach-page .ach-tier-legendary .ach-card-fx::before { opacity: 0.16; }
+
+@keyframes ach-holo-drift {
+  from { transform: translateX(-26px); }
+  to { transform: translateX(26px); }
+}
+
+/* Balayage lumineux — légendaires uniquement. Bande blanche 46px inclinée
+   18°, traversée 1150 ms puis pause 3400 ms (cycle 4550 ms, comme le
+   Animated.sequence mobile). */
+.ach-page .ach-tier-legendary .ach-card-fx::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  bottom: -40px;
+  left: 0;
+  width: 46px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transform: translateX(-80px) rotate(18deg);
+  animation: ach-sweep 4.55s ease-in-out infinite;
+}
+
+@keyframes ach-sweep {
+  0% { transform: translateX(-80px) rotate(18deg); opacity: 0; }
+  5% { opacity: 0.75; }
+  20% { opacity: 0.75; }
+  25.3% { transform: translateX(340px) rotate(18deg); opacity: 0; }
+  100% { transform: translateX(340px) rotate(18deg); opacity: 0; }
+}
+
+/* Étincelles : points blancs qui s'allument en décalé (montée 620 ms /
+   descente 700 ms + pause, comme les Spark mobiles). Deux couches de dots
+   (élément + ::before) + une troisième (::after) pour les légendaires :
+   rare = 3, épique = 5, légendaire = 7 étincelles. */
+.ach-page .ach-card-sparks::before,
+.ach-page .ach-card-sparks::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.ach-page .ach-card-sparks,
+.ach-page .ach-card-sparks::before,
+.ach-page .ach-card-sparks::after {
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+/* Couche A (élément) — 2 dots (rare/épique) */
+.ach-page .ach-tier-rare .ach-card-sparks,
+.ach-page .ach-tier-epic .ach-card-sparks {
+  background-image:
+    radial-gradient(circle 5px at 22% 18%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 4px at 74% 62%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 3.4s ease-in-out 0.4s infinite;
+}
+
+/* Couche B (::before) — 1 dot (rare) / 3 dots (épique) */
+.ach-page .ach-tier-rare .ach-card-sparks::before {
+  background-image:
+    radial-gradient(circle 4px at 58% 34%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 4.1s ease-in-out 1.9s infinite;
+}
+
+.ach-page .ach-tier-epic .ach-card-sparks::before {
+  background-image:
+    radial-gradient(circle 4px at 58% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 5px at 36% 74%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 3px at 84% 22%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 3.9s ease-in-out 1.7s infinite;
+}
+
+/* Légendaire : 3 + 2 + 2 = 7 étincelles */
+.ach-page .ach-tier-legendary .ach-card-sparks {
+  background-image:
+    radial-gradient(circle 5px at 20% 16%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 4px at 76% 58%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 3px at 46% 42%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 3.3s ease-in-out 0.2s infinite;
+}
+
+.ach-page .ach-tier-legendary .ach-card-sparks::before {
+  background-image:
+    radial-gradient(circle 5px at 62% 24%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 4px at 30% 66%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 3.8s ease-in-out 1.5s infinite;
+}
+
+.ach-page .ach-tier-legendary .ach-card-sparks::after {
+  background-image:
+    radial-gradient(circle 4px at 86% 36%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%),
+    radial-gradient(circle 3px at 14% 44%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: ach-spark-twinkle 4.3s ease-in-out 2.6s infinite;
+}
+
+/* Cycle ≈ mobile : montée 620 ms, descente 700 ms, longue pause éteinte */
+@keyframes ach-spark-twinkle {
+  0% { opacity: 0; }
+  16% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 /* Cadre intérieur (double bordure façon tarot) */
 .ach-page .ach-card-frame {
   position: relative;
+  z-index: 2;
   height: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -374,6 +591,23 @@
   align-items: center;
   padding: 10px 10px 12px;
   color: #ffffff;
+  /* Scrim : garantit la lisibilité du texte par-dessus l'illustration */
+  background: linear-gradient(
+    180deg,
+    rgba(15, 10, 5, 0.34) 0%,
+    rgba(15, 10, 5, 0) 22%,
+    rgba(15, 10, 5, 0) 42%,
+    rgba(15, 10, 5, 0.82) 92%
+  );
+}
+
+.ach-page .ach-card.is-locked .ach-card-frame {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 10, 5, 0.45) 0%,
+    rgba(15, 10, 5, 0.18) 30%,
+    rgba(15, 10, 5, 0.85) 92%
+  );
 }
 
 /* Coins ornés */
@@ -415,18 +649,20 @@
   width: 100%;
 }
 
-.ach-page .ach-card-emblem {
+/* Petit sceau hanzi au-dessus du nom (l'illustration occupe la carte) */
+.ach-page .ach-card-hanzi {
   font-family: 'Kaiti SC', 'KaiTi', 'STKaiti', 'Noto Serif SC', serif;
-  font-size: clamp(40px, 6.5vw, 64px);
+  font-size: 15px;
   line-height: 1.1;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  margin-bottom: 2px;
   user-select: none;
 }
 
-.ach-page .ach-card.is-locked .ach-card-emblem {
-  opacity: 0.28;
+.ach-page .ach-card.is-locked .ach-card-hanzi {
+  opacity: 0.4;
 }
 
 .ach-page .ach-card-lock {
@@ -446,7 +682,7 @@
   letter-spacing: -0.01em;
   text-align: center;
   margin-bottom: 4px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.55);
 }
 
 .ach-page .ach-card.is-locked .ach-card-name {
@@ -457,7 +693,8 @@
   font-size: 10.5px;
   line-height: 1.4;
   text-align: center;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -508,4 +745,39 @@
   font-size: 10px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------------------------------------------------------------------------
+ * Accessibilité — « Réduire les animations » (équivalent AccessibilityInfo
+ * du CardShimmer mobile) : voile holo figé, étincelles semi-allumées fixes
+ * (opacité 0.45 comme le mobile), pas de balayage ni de glow pulsant.
+ * ------------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ach-page .ach-card-fx::before {
+    animation: none;
+    transform: none;
+  }
+
+  .ach-page .ach-tier-legendary .ach-card-fx::after {
+    animation: none;
+    display: none;
+  }
+
+  .ach-page .ach-card-sparks,
+  .ach-page .ach-card-sparks::before,
+  .ach-page .ach-card-sparks::after {
+    animation: none;
+    opacity: 0.45;
+  }
+
+  .ach-page .ach-card.is-unlocked.ach-tier-legendary {
+    animation: none;
+  }
+
+  .ach-page .ach-card,
+  .ach-page .ach-card-progress-fill,
+  .ach-page .ach-global-progress-fill {
+    transition: none;
+  }
 }

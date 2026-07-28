@@ -1616,13 +1616,19 @@ function App() {
       // Valeurs canoniques App.tsx (priment sur le fallback interne
       // useDailyActivity de la page).
       totalCardsReviewed: dailyActivity.totals.totalCards,
+      reviewSessions: dailyActivity.totals.totalSessions,
+      masteredWords: flashcardsMasteredBadgeCount,
       currentStreak: dashboardState.streak.current,
       bestStreak: dashboardState.streak.best,
       lessonsCompleted: completedLessons.length,
       charsTraced,
       bilansPassed,
+      totalXp: dashboardState.xp.xp,
       xpLevel: dashboardState.xp.level,
       cecrLevelsCompleted
+      // TODO(metrics) : perfectBilans / gamesPlayed / readingsRead /
+      // pronunciationBest pas encore comptés — les cartes correspondantes
+      // restent « À débloquer » (progression 0).
     };
   }, [
     wordSrs.map,
@@ -1630,8 +1636,11 @@ function App() {
     completedLessons,
     cecrPathsState,
     dailyActivity.totals.totalCards,
+    dailyActivity.totals.totalSessions,
+    flashcardsMasteredBadgeCount,
     dashboardState.streak.current,
     dashboardState.streak.best,
+    dashboardState.xp.xp,
     dashboardState.xp.level
   ]);
 

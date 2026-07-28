@@ -53,6 +53,20 @@ export interface AchievementMetrics {
   xpLevel?: number;
   /** Nombre de niveaux CECR dont TOUTES les leçons sont complétées. */
   cecrLevelsCompleted?: number;
+  /** Sessions de révision terminées (useDailyActivity → totals.totalSessions). */
+  reviewSessions?: number;
+  /** Mots maîtrisés — niveau SRS max (masteredIds filtrés catalogue). */
+  masteredWords?: number;
+  /** Bilans réussis avec un score parfait. TODO : pas encore compté côté web. */
+  perfectBilans?: number;
+  /** XP cumulés (useDashboardState → xp.xp). */
+  totalXp?: number;
+  /** Parties de mini-jeux jouées. TODO : pas encore compté côté web. */
+  gamesPlayed?: number;
+  /** Textes de lecture lus. TODO : pas encore compté côté web. */
+  readingsRead?: number;
+  /** Meilleur score de prononciation en %. TODO : pas encore câblé côté web. */
+  pronunciationBest?: number;
 }
 
 export interface UnlockRecord {
@@ -157,16 +171,24 @@ const metricValueFor = (def: AchievementDef, m: AchievementMetrics): number => {
       return m.lessonsCompleted ?? 0;
     case 'streak':
       return Math.max(m.currentStreak ?? 0, m.bestStreak ?? 0);
-    case 'charsTraced':
-      return m.charsTraced ?? 0;
     case 'bilansPassed':
       return m.bilansPassed ?? 0;
-    case 'hasReview':
-      return m.hasReview ? 1 : 0;
-    case 'xpLevel':
-      return m.xpLevel ?? 0;
     case 'cecrLevelsCompleted':
       return m.cecrLevelsCompleted ?? 0;
+    case 'reviewSessions':
+      return m.reviewSessions ?? 0;
+    case 'masteredWords':
+      return m.masteredWords ?? 0;
+    case 'perfectBilans':
+      return m.perfectBilans ?? 0;
+    case 'totalXp':
+      return m.totalXp ?? 0;
+    case 'gamesPlayed':
+      return m.gamesPlayed ?? 0;
+    case 'readingsRead':
+      return m.readingsRead ?? 0;
+    case 'pronunciationBest':
+      return m.pronunciationBest ?? 0;
     default:
       return 0;
   }
@@ -236,7 +258,14 @@ export function useAchievements(
     metrics.bilansPassed,
     metrics.hasReview,
     metrics.xpLevel,
-    metrics.cecrLevelsCompleted
+    metrics.cecrLevelsCompleted,
+    metrics.reviewSessions,
+    metrics.masteredWords,
+    metrics.perfectBilans,
+    metrics.totalXp,
+    metrics.gamesPlayed,
+    metrics.readingsRead,
+    metrics.pronunciationBest
     // eslint-disable-next-line react-hooks/exhaustive-deps
   ]);
 
@@ -274,7 +303,14 @@ export function useAchievements(
       metrics.bilansPassed,
       metrics.hasReview,
       metrics.xpLevel,
-      metrics.cecrLevelsCompleted
+      metrics.cecrLevelsCompleted,
+      metrics.reviewSessions,
+      metrics.masteredWords,
+      metrics.perfectBilans,
+      metrics.totalXp,
+      metrics.gamesPlayed,
+      metrics.readingsRead,
+      metrics.pronunciationBest
     ]
   );
 

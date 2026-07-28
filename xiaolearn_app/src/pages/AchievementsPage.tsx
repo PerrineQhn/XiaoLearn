@@ -7,9 +7,12 @@
  *   - barre de progression globale « X / N obtenues » + pourcentage
  *   - 3 stat-cards (obtenues / XP gagnés / meilleur palier)
  *   - recherche + filtres par catégorie (chips) + par état
- *   - grille de cartes portrait 2:3 par catégorie (verrouillées = grisées
- *     avec cadenas + progression ; débloquées = gradient de palier + grand
- *     hanzi calligraphique + date + XP)
+ *   - grille de cartes portrait 2:3 par catégorie. Chaque carte affiche sa
+ *     VRAIE illustration (public/img/cards/<id>.jpg — assets mobiles).
+ *     Verrouillée = grisée + assombrie + cadenas + progression ;
+ *     débloquée = image pleine couleur + effets par rareté (voile holo,
+ *     étincelles, balayage lumineux — paramètres repris du CardShimmer
+ *     mobile, adaptés en CSS pur)
  *
  * Données : useAchievements(metrics) — les métriques arrivent en prop
  * OPTIONNELLE `metrics` (à câbler dans App.tsx). En attendant, la page se
@@ -32,7 +35,6 @@ import {
   type EvaluatedAchievement
 } from '../hooks/useAchievements';
 import { useDailyActivity } from '../hooks/useDailyActivity';
-import { useReviews } from '../hooks/useReviews';
 
 type Language = 'fr' | 'en';
 type StatusFilter = 'all' | 'unlocked' | 'inProgress' | 'locked';
@@ -62,10 +64,10 @@ const COPY = {
     catAll: 'Toutes',
     categories: {
       reviews: 'Révisions',
+      levels: 'Niveaux',
       lessons: 'Leçons',
       streak: 'Série',
-      writing: 'Écriture',
-      special: 'Spéciaux'
+      special: 'Spéciales'
     } as Record<AchievementCategory, string>,
     statusAll: 'Tous',
     statusUnlocked: 'Obtenus',
@@ -95,9 +97,9 @@ const COPY = {
     catAll: 'All',
     categories: {
       reviews: 'Reviews',
+      levels: 'Level tests',
       lessons: 'Lessons',
       streak: 'Streak',
-      writing: 'Writing',
       special: 'Special'
     } as Record<AchievementCategory, string>,
     statusAll: 'All',
@@ -131,23 +133,22 @@ export default function AchievementsPage({
   // (hook autonome, localStorage + Firestore). Les props App.tsx, quand
   // elles seront câblées, PRIMENT sur ce fallback.
   const dailyActivity = useDailyActivity();
-  // `hasReview` est résolu ICI et pas dans App.tsx : useReviews() fait un
-  // getDocs de tous les avis, coût acceptable seulement quand la page est
-  // montée (visitée), pas au mount de l'app entière.
-  const { myReview } = useReviews();
   const mergedMetrics = useMemo<AchievementMetrics>(
     () => ({
       ...metrics,
       totalCardsReviewed:
         metrics?.totalCardsReviewed ?? dailyActivity.totals.totalCards,
       currentStreak: metrics?.currentStreak ?? dailyActivity.currentStreak,
-      hasReview: metrics?.hasReview ?? myReview !== null
+      reviewSessions:
+        metrics?.reviewSessions ?? dailyActivity.totals.totalSessions,
+      totalXp: metrics?.totalXp ?? dailyActivity.totals.totalXp
     }),
     [
       metrics,
       dailyActivity.totals.totalCards,
-      dailyActivity.currentStreak,
-      myReview
+      dailyActivity.totals.totalSessions,
+      dailyActivity.totals.totalXp,
+      dailyActivity.currentStreak
     ]
   );
 
@@ -176,7 +177,8 @@ export default function AchievementsPage({
       if (q) {
         const name = language === 'fr' ? a.nameFr : a.nameEn;
         const desc = language === 'fr' ? a.descFr : a.descEn;
-        const haystack = `${name} ${desc} ${a.emblem}`.toLowerCase();
+        const lore = language === 'fr' ? a.loreFr : a.loreEn;
+        const haystack = `${name} ${desc} ${lore} ${a.emblem}`.toLowerCase();
         if (!haystack.includes(q)) return false;
       }
       return true;
@@ -208,13 +210,39 @@ export default function AchievementsPage({
   const renderCard = (a: EvaluatedAchievement) => {
     const isUnlocked = a.status === 'unlocked';
     const name = language === 'fr' ? a.nameFr : a.nameEn;
-    const desc = language === 'fr' ? a.descFr : a.descEn;
+    // Débloquée : le récit (lore) ; verrouillée : la condition à remplir.
+    const desc = isUnlocked
+      ? language === 'fr'
+        ? a.loreFr
+        : a.loreEn
+      : language === 'fr'
+        ? a.descFr
+        : a.descEn;
+    const showFx = isUnlocked && a.tier !== 'common';
     return (
       <article
         key={a.id}
         className={`ach-card ach-tier-${a.tier}${isUnlocked ? ' is-unlocked' : ' is-locked'}`}
         aria-label={name}
       >
+        {/* Illustration (asset mobile 900×1342, object-fit cover) */}
+        <img
+          className="ach-card-art"
+          src={a.image}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+        {/* Effets par rareté (rare/épique/légendaire uniquement) :
+            voile holographique + étincelles + balayage (légendaire) —
+            adaptation CSS du CardShimmer mobile. */}
+        {showFx && (
+          <>
+            <div className="ach-card-fx" aria-hidden="true" />
+            <div className="ach-card-sparks" aria-hidden="true" />
+          </>
+        )}
         <div className="ach-card-frame">
           <div className="ach-card-corner ach-corner-tl" aria-hidden="true" />
           <div className="ach-card-corner ach-corner-tr" aria-hidden="true" />
@@ -224,9 +252,6 @@ export default function AchievementsPage({
           <div className="ach-card-tier">{t.tiers[a.tier]}</div>
 
           <div className="ach-card-emblem-zone">
-            <span className="ach-card-emblem" aria-hidden="true">
-              {a.emblem}
-            </span>
             {!isUnlocked && (
               <span className="ach-card-lock" aria-hidden="true">
                 🔒
@@ -234,6 +259,9 @@ export default function AchievementsPage({
             )}
           </div>
 
+          <span className="ach-card-hanzi" aria-hidden="true">
+            {a.emblem}
+          </span>
           <div className="ach-card-name">{isUnlocked ? name : t.hiddenName}</div>
           <div className="ach-card-desc">{desc}</div>
 
