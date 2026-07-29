@@ -2684,6 +2684,7 @@ function App() {
         <AchievementsPage
           language={language === 'en' ? 'en' : 'fr'}
           metrics={achievementMetrics}
+          onNavigate={(v) => setView(v as View)}
         />
       );
       break;

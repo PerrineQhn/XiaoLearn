@@ -753,6 +753,339 @@
  * (opacité 0.45 comme le mobile), pas de balayage ni de glow pulsant.
  * ------------------------------------------------------------------------ */
 
+/* ---------------------------------------------------------------------------
+ * Cartes de la grille cliquables (ouvrent le modal de détail)
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-card {
+  cursor: pointer;
+}
+
+.ach-page .ach-card:focus-visible {
+  outline: 3px solid var(--ach-accent);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Modal de détail (CardDetailModal) — hero gradient de rareté / gris,
+ * carte en grand (mêmes classes shimmer que la grille), badges, lore,
+ * « COMMENT L'OBTENIR », « RÉCOMPENSE », CTA noir. + lightbox loupe.
+ * ------------------------------------------------------------------------ */
+
+.ach-page .ach-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20, 14, 8, 0.66);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.ach-page .ach-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--ach-card-bg);
+  border-radius: 22px;
+  box-shadow: var(--ach-shadow-lg);
+}
+
+/* Hero — gris si verrouillée, gradient de rareté (paires mobiles) sinon */
+.ach-page .ach-modal-hero {
+  position: relative;
+  padding: 30px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ach-page .ach-modal-hero-locked {
+  background: linear-gradient(165deg, #9aa3ab 0%, #4d565e 100%);
+}
+
+.ach-page .ach-modal-hero-common { background: var(--ach-grad-common); }
+.ach-page .ach-modal-hero-rare { background: var(--ach-grad-rare); }
+.ach-page .ach-modal-hero-epic { background: var(--ach-grad-epic); }
+.ach-page .ach-modal-hero-legendary { background: var(--ach-grad-legendary); }
+
+.ach-page .ach-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.ach-page .ach-modal-close:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.ach-page .ach-modal-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* La carte en grand — réutilise .ach-card + shimmer, sans hover ni curseur */
+.ach-page .ach-modal-card,
+.ach-page .ach-modal-card.is-unlocked {
+  width: 240px;
+  cursor: default;
+}
+
+.ach-page .ach-modal-card.is-unlocked:hover,
+.ach-page .ach-modal-card.is-unlocked.ach-tier-legendary:hover {
+  transform: none;
+}
+
+/* Loupe en coin de carte → lightbox */
+.ach-page .ach-modal-zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.42);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.ach-page .ach-modal-zoom:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.ach-page .ach-modal-zoom:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Badges pill : rareté (couleur du palier) + catégorie */
+.ach-page .ach-modal-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ach-page .ach-modal-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.ach-page .ach-modal-badge-common { color: #5c6b73; }
+.ach-page .ach-modal-badge-rare { color: #1e7a6a; }
+.ach-page .ach-modal-badge-epic { color: #6a1b7a; }
+.ach-page .ach-modal-badge-legendary { color: #c07600; }
+.ach-page .ach-modal-badge-cat { color: #374151; }
+
+.ach-page .ach-modal-name {
+  margin: 2px 0 0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Sous-titre : emblème mythologique en hanzi calligraphique */
+.ach-page .ach-modal-emblem {
+  margin: 0;
+  font-family: 'Kaiti SC', 'KaiTi', 'STKaiti', 'Noto Serif SC', serif;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ach-page .ach-modal-lore {
+  margin: 4px 0 0;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 400px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Corps blanc : condition + récompense + CTA */
+.ach-page .ach-modal-body {
+  padding: 18px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--ach-card-bg);
+}
+
+.ach-page .ach-modal-section-title {
+  margin: 8px 0 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--ach-text-soft);
+}
+
+.ach-page .ach-modal-howto {
+  border: 1px solid var(--ach-border-strong);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.ach-page .ach-modal-desc {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ach-text);
+}
+
+.ach-page .ach-modal-progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #f0e7d6;
+  overflow: hidden;
+}
+
+.ach-page .ach-modal-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f6c14d 0%, #c6302c 100%);
+  transition: width 0.3s ease;
+}
+
+.ach-page .ach-modal-progress-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ach-text-muted);
+  text-align: right;
+}
+
+/* ✓ Obtenue le [date] — badge vert */
+.ach-page .ach-modal-earned {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e7f4ea;
+  border: 1px solid #bfe3c8;
+  color: #1d7a3f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Card ambrée « +15 XP » (palette du xpBox mobile) */
+.ach-page .ach-modal-reward {
+  border: 1px solid rgba(249, 168, 37, 0.33);
+  background: rgba(249, 168, 37, 0.08);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.ach-page .ach-modal-reward-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #e08a00;
+}
+
+/* CTA noir pleine largeur */
+.ach-page .ach-modal-cta {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 15px 18px;
+  background: #1f2937;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.ach-page .ach-modal-cta:hover {
+  background: #111827;
+  transform: translateY(-1px);
+}
+
+.ach-page .ach-modal-cta:focus-visible {
+  outline: 3px solid var(--ach-accent);
+  outline-offset: 2px;
+}
+
+/* Lightbox loupe : overlay noir, image max 90vh, clic pour fermer */
+.ach-page .ach-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: zoom-out;
+}
+
+.ach-page .ach-lightbox-img {
+  max-width: min(92vw, 640px);
+  max-height: 90vh;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile : le modal devient plein écran */
+@media (max-width: 640px) {
+  .ach-page .ach-modal-overlay {
+    padding: 0;
+  }
+
+  .ach-page .ach-modal {
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+
+  .ach-page .ach-modal-card,
+  .ach-page .ach-modal-card.is-unlocked {
+    width: 200px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ach-page .ach-card-fx::before {
     animation: none;

@@ -22,7 +22,7 @@
  * Styles : ../styles/achievements.css (scoped sous .ach-page).
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import '../styles/achievements.css';
 import {
   ACHIEVEMENT_CATEGORY_ORDER,
@@ -44,6 +44,12 @@ interface AchievementsPageProps {
   language?: Language;
   /** Métriques d'évaluation — optionnelles, câblées depuis App.tsx. */
   metrics?: AchievementMetrics;
+  /**
+   * Navigation depuis le modal de détail (CTA « Faire une session de
+   * révision »…) — optionnelle, câblée depuis App.tsx avec les ids du type
+   * `View`. Absente → les CTA sont masqués.
+   */
+  onNavigate?: (view: string) => void;
 }
 
 // ============================================================================
@@ -82,7 +88,19 @@ const COPY = {
     unlockedOn: 'Obtenue le',
     hiddenName: '???',
     noResults: 'Aucune carte ne correspond à ta recherche.',
-    cardsCount: (n: number) => `${n} carte${n > 1 ? 's' : ''}`
+    cardsCount: (n: number) => `${n} carte${n > 1 ? 's' : ''}`,
+    // Modal de détail
+    detailHowTo: 'COMMENT L’OBTENIR',
+    detailReward: 'RÉCOMPENSE',
+    detailClose: 'Fermer',
+    detailZoom: 'Voir l’illustration en plein écran',
+    ctaReviews: 'Faire une session de révision',
+    ctaPath: 'Continuer le parcours',
+    ctaStreak: 'Étudier aujourd’hui',
+    ctaXp: 'Gagner de l’XP sur le parcours',
+    ctaGames: 'Jouer aux mini-jeux',
+    ctaReading: 'Lire un texte',
+    ctaPronunciation: 'S’entraîner à la prononciation'
   },
   en: {
     title: 'My achievements',
@@ -115,7 +133,62 @@ const COPY = {
     unlockedOn: 'Unlocked on',
     hiddenName: '???',
     noResults: 'No card matches your search.',
-    cardsCount: (n: number) => `${n} card${n > 1 ? 's' : ''}`
+    cardsCount: (n: number) => `${n} card${n > 1 ? 's' : ''}`,
+    // Detail modal
+    detailHowTo: 'HOW TO GET IT',
+    detailReward: 'REWARD',
+    detailClose: 'Close',
+    detailZoom: 'View the artwork full screen',
+    ctaReviews: 'Do a review session',
+    ctaPath: 'Continue the course',
+    ctaStreak: 'Study today',
+    ctaXp: 'Earn XP on the course',
+    ctaGames: 'Play mini-games',
+    ctaReading: 'Read a passage',
+    ctaPronunciation: 'Practice pronunciation'
+  }
+};
+
+type Copy = (typeof COPY)[Language];
+
+// ============================================================================
+//  CTA du modal — mapping catégorie (+ source pour les Spéciales) → vue App
+// ============================================================================
+
+interface DetailCta {
+  /** Id de vue du type `View` d'App.tsx. */
+  view: string;
+  label: string;
+}
+
+/**
+ * Action proposée sous une carte NON débloquée : emmène l'utilisateur là où
+ * la condition se remplit (même logique que les catégories du mobile,
+ * data/cards.ts — le web navigue au lieu de fermer simplement la fiche).
+ */
+const getDetailCta = (a: EvaluatedAchievement, t: Copy): DetailCta => {
+  if (a.category === 'special') {
+    switch (a.progressSource) {
+      case 'gamesPlayed':
+        return { view: 'games', label: t.ctaGames };
+      case 'readingsRead':
+        return { view: 'reading', label: t.ctaReading };
+      case 'pronunciationBest':
+        return { view: 'pronunciation-coach', label: t.ctaPronunciation };
+      default:
+        // totalXp (Pixiu, Dragon) : l'XP se gagne surtout sur le parcours
+        return { view: 'cecr', label: t.ctaXp };
+    }
+  }
+  switch (a.category) {
+    case 'reviews':
+      return { view: 'flashcards', label: t.ctaReviews };
+    case 'lessons':
+    case 'levels':
+      return { view: 'cecr', label: t.ctaPath };
+    default:
+      // streak : n'importe quelle étude du jour compte → accueil
+      return { view: 'home', label: t.ctaStreak };
   }
 };
 
@@ -125,7 +198,8 @@ const COPY = {
 
 export default function AchievementsPage({
   language = 'fr',
-  metrics
+  metrics,
+  onNavigate
 }: AchievementsPageProps) {
   const t = COPY[language] ?? COPY.fr;
 
@@ -163,6 +237,8 @@ export default function AchievementsPage({
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
+  /** Carte ouverte dans le modal de détail (null = fermé). */
+  const [selected, setSelected] = useState<EvaluatedAchievement | null>(null);
 
   const percent =
     totalCount > 0 ? Math.round((unlockedCount / totalCount) * 100) : 0;
@@ -224,6 +300,16 @@ export default function AchievementsPage({
         key={a.id}
         className={`ach-card ach-tier-${a.tier}${isUnlocked ? ' is-unlocked' : ' is-locked'}`}
         aria-label={name}
+        role="button"
+        aria-haspopup="dialog"
+        tabIndex={0}
+        onClick={() => setSelected(a)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setSelected(a);
+          }
+        }}
       >
         {/* Illustration (asset mobile 900×1342, object-fit cover) */}
         <img
@@ -412,6 +498,245 @@ export default function AchievementsPage({
             <div className="ach-grid">{section.items.map(renderCard)}</div>
           </section>
         ))
+      )}
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Modal de détail (clic sur une carte)                             */}
+      {/* ---------------------------------------------------------------- */}
+      {selected && (
+        <CardDetailModal
+          achievement={selected}
+          language={language}
+          t={t}
+          formatDate={formatDate}
+          onClose={() => setSelected(null)}
+          onNavigate={onNavigate}
+        />
+      )}
+    </div>
+  );
+}
+
+// ============================================================================
+//  MODAL DE DÉTAIL — parité avec la fiche CardDetail du mobile
+//  (xiaolearn_mobile/app/collection.tsx) : hero teinté par la rareté, carte
+//  en grand, badges rareté + catégorie, nom, emblème, lore, « COMMENT
+//  L'OBTENIR » (condition + progression ou date d'obtention), « RÉCOMPENSE »
+//  (+XP). En plus du mobile : loupe → lightbox plein écran, et CTA de
+//  navigation vers l'écran où la condition se remplit.
+// ============================================================================
+
+interface CardDetailModalProps {
+  achievement: EvaluatedAchievement;
+  language: Language;
+  t: Copy;
+  formatDate: (iso: string) => string;
+  onClose: () => void;
+  onNavigate?: (view: string) => void;
+}
+
+function CardDetailModal({
+  achievement: a,
+  language,
+  t,
+  formatDate,
+  onClose,
+  onNavigate
+}: CardDetailModalProps) {
+  /** Lightbox loupe (2e niveau au-dessus du modal). */
+  const [lightbox, setLightbox] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Scroll lock du body + focus initial sur la croix (focus trap léger).
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, []);
+
+  // Échap : ferme la lightbox si ouverte, sinon le modal.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      e.stopPropagation();
+      if (lightbox) setLightbox(false);
+      else onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightbox, onClose]);
+
+  const isUnlocked = a.status === 'unlocked';
+  const name = language === 'fr' ? a.nameFr : a.nameEn;
+  const desc = language === 'fr' ? a.descFr : a.descEn;
+  const lore = language === 'fr' ? a.loreFr : a.loreEn;
+  const showFx = isUnlocked && a.tier !== 'common';
+  // Comme sur mobile : le nom et le lore ne sont PAS masqués sur une carte
+  // verrouillée — le principe de la collection est qu'on sache ce qu'on vise.
+  const cta = !isUnlocked && onNavigate ? getDetailCta(a, t) : null;
+
+  return (
+    <div className="ach-modal-overlay" onClick={onClose}>
+      <div
+        className="ach-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label={name}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Hero : gradient de rareté (débloquée) / gris (verrouillée) */}
+        <div
+          className={`ach-modal-hero ${
+            isUnlocked ? `ach-modal-hero-${a.tier}` : 'ach-modal-hero-locked'
+          }`}
+        >
+          <button
+            ref={closeRef}
+            type="button"
+            className="ach-modal-close"
+            onClick={onClose}
+            aria-label={t.detailClose}
+          >
+            ✕
+          </button>
+
+          {/* La carte en grand — mêmes classes que la grille (art + shimmer) */}
+          <div
+            className={`ach-card ach-modal-card ach-tier-${a.tier}${
+              isUnlocked ? ' is-unlocked' : ' is-locked'
+            }`}
+          >
+            <img
+              className="ach-card-art"
+              src={a.image}
+              alt=""
+              decoding="async"
+              draggable={false}
+            />
+            {showFx && (
+              <>
+                <div className="ach-card-fx" aria-hidden="true" />
+                <div className="ach-card-sparks" aria-hidden="true" />
+              </>
+            )}
+            <div className="ach-card-frame">
+              <div className="ach-card-corner ach-corner-tl" aria-hidden="true" />
+              <div className="ach-card-corner ach-corner-tr" aria-hidden="true" />
+              <div className="ach-card-corner ach-corner-bl" aria-hidden="true" />
+              <div className="ach-card-corner ach-corner-br" aria-hidden="true" />
+              <div className="ach-card-tier">{t.tiers[a.tier]}</div>
+              <div className="ach-card-emblem-zone">
+                {!isUnlocked && (
+                  <span className="ach-card-lock" aria-hidden="true">
+                    🔒
+                  </span>
+                )}
+              </div>
+              <span className="ach-card-hanzi" aria-hidden="true">
+                {a.emblem}
+              </span>
+              <div className="ach-card-name">{name}</div>
+            </div>
+            {/* Loupe → lightbox plein écran */}
+            <button
+              type="button"
+              className="ach-modal-zoom"
+              onClick={() => setLightbox(true)}
+              aria-label={t.detailZoom}
+            >
+              🔍
+            </button>
+          </div>
+
+          {/* Badges pill : rareté + catégorie */}
+          <div className="ach-modal-badges">
+            <span className={`ach-modal-badge ach-modal-badge-${a.tier}`}>
+              {t.tiers[a.tier]}
+            </span>
+            <span className="ach-modal-badge ach-modal-badge-cat">
+              {t.categories[a.category]}
+            </span>
+          </div>
+
+          <h2 className="ach-modal-name">{name}</h2>
+          <p className="ach-modal-emblem" lang="zh">
+            {a.emblem}
+          </p>
+          <p className="ach-modal-lore">{lore}</p>
+        </div>
+
+        {/* Corps blanc : condition + récompense + CTA */}
+        <div className="ach-modal-body">
+          <h3 className="ach-modal-section-title">
+            <span aria-hidden="true">⊙ </span>
+            {t.detailHowTo}
+          </h3>
+          <div className="ach-modal-howto">
+            <p className="ach-modal-desc">{desc}</p>
+            {isUnlocked ? (
+              <div className="ach-modal-earned">
+                <span aria-hidden="true">✓</span>
+                {t.unlockedOn}
+                {a.unlockedAt ? ` ${formatDate(a.unlockedAt)}` : ''}
+              </div>
+            ) : (
+              <>
+                <div
+                  className="ach-modal-progress-bar"
+                  role="progressbar"
+                  aria-valuemin={0}
+                  aria-valuemax={a.threshold}
+                  aria-valuenow={a.progress}
+                >
+                  <div
+                    className="ach-modal-progress-fill"
+                    style={{ width: `${Math.round(a.progressRatio * 100)}%` }}
+                  />
+                </div>
+                <div className="ach-modal-progress-label">
+                  {a.progress}/{a.threshold}
+                </div>
+              </>
+            )}
+          </div>
+
+          <h3 className="ach-modal-section-title">{t.detailReward}</h3>
+          <div className="ach-modal-reward">
+            <span className="ach-modal-reward-value">+{a.xpReward} XP</span>
+          </div>
+
+          {cta && (
+            <button
+              type="button"
+              className="ach-modal-cta"
+              onClick={() => {
+                onNavigate?.(cta.view);
+                onClose();
+              }}
+            >
+              {cta.label}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Lightbox : overlay noir, image max 90vh, clic pour fermer */}
+      {lightbox && (
+        <div
+          className="ach-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={name}
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightbox(false);
+          }}
+        >
+          <img className="ach-lightbox-img" src={a.image} alt={name} />
+        </div>
       )}
     </div>
   );
