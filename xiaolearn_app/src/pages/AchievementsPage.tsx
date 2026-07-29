@@ -723,7 +723,10 @@ function CardDetailModal({
         </div>
       </div>
 
-      {/* Lightbox : overlay noir, image max 90vh, clic pour fermer */}
+      {/* Lightbox : overlay noir, image max 90vh, clic pour fermer.
+          V2 — la carte zoomée garde ses effets de rareté (holo/sparks/
+          sweep) : wrapper avec les mêmes classes tier + fx que la carte
+          du modal, au lieu de l'img brute. */}
       {lightbox && (
         <div
           className="ach-lightbox"
@@ -735,7 +738,19 @@ function CardDetailModal({
             setLightbox(false);
           }}
         >
-          <img className="ach-lightbox-img" src={a.image} alt={name} />
+          <div
+            className={`ach-lightbox-card ach-tier-${a.tier} ${
+              isUnlocked ? 'is-unlocked' : 'is-locked'
+            }`}
+          >
+            <img className="ach-lightbox-img" src={a.image} alt={name} />
+            {isUnlocked && (
+              <>
+                <div className="ach-card-fx" aria-hidden="true" />
+                <div className="ach-card-sparks" aria-hidden="true" />
+              </>
+            )}
+          </div>
         </div>
       )}
     </div>

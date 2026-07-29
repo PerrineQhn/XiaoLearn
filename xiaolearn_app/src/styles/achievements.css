@@ -1060,11 +1060,27 @@
   cursor: zoom-out;
 }
 
+/* V2 — wrapper de la carte zoomée : porte les couches d'effets de
+   rareté (.ach-card-fx / .ach-card-sparks, absolues inset-0) par-dessus
+   l'image. overflow hidden + radius pour que le holo/sweep épousent
+   les bords de la carte. */
+.ach-page .ach-lightbox-card {
+  position: relative;
+  display: inline-block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.ach-page .ach-lightbox-card.is-locked .ach-lightbox-img {
+  filter: grayscale(1) brightness(0.62);
+}
+
 .ach-page .ach-lightbox-img {
+  display: block;
   max-width: min(92vw, 640px);
   max-height: 90vh;
   border-radius: 14px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 /* Mobile : le modal devient plein écran */
