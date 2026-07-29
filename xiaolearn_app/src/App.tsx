@@ -102,7 +102,7 @@ import LoginModal from './components/Auth/LoginModal';
 import UserProfile from './components/Auth/UserProfile';
 import { useLessonProgress } from './hooks/useLessonProgress';
 import { useLearningStats } from './hooks/useLearningStats';
-import { useFirestoreSync } from './hooks/useFirestoreSync';
+import { useFirestoreSync, useSyncBlockedDetector } from './hooks/useFirestoreSync';
 import { useWordSRS } from './hooks/useWordSRS';
 import { useQuizEngine } from './hooks/useQuizEngine';
 import { useEntitlements } from './hooks/useEntitlements';
@@ -434,6 +434,14 @@ function App() {
   // les données cloud arrivent.
   const [showFirstSyncBanner, setShowFirstSyncBanner] = useState(false);
   const firstSyncCheckedRef = useRef(false);
+  // V18 — Détection « sync bloquée » (Brave Shields, uBlock, extension
+  // privacy qui bloque firestore.googleapis.com). Après 3 échecs réseau
+  // consécutifs sans AUCUN succès, on affiche un banner d'aide explicite.
+  // Dismissible pendant la session, mais réapparaît au prochain mount si
+  // toujours bloqué (pas de persistance du dismiss).
+  const syncBlocked = useSyncBlockedDetector();
+  const [syncBlockedDismissed, setSyncBlockedDismissed] = useState(false);
+  const showSyncBlockedBanner = syncBlocked && !!user && !syncBlockedDismissed;
   useEffect(() => {
     if (!user || firstSyncCheckedRef.current) return;
     firstSyncCheckedRef.current = true;
@@ -2843,7 +2851,34 @@ function App() {
       {/* V17 — Banner « Synchronisation… » au premier login sur navigateur
           vierge : évite l'effet « toutes mes leçons sont à 0 ! » pendant que
           le reconcile Firestore ramène la progression du compte. */}
-      {showFirstSyncBanner && (
+      {/* V18 — Banner « sync bloquée » (adblock/Shields) : prioritaire sur
+          le banner premier-sync. Après 3 échecs Firestore consécutifs sans
+          aucun succès, on explique comment débloquer la synchronisation. */}
+      {showSyncBlockedBanner ? (
+        <div className="sync-blocked-banner" role="alert">
+          <span className="sync-blocked-banner-icon" aria-hidden="true">🛡️</span>
+          <span className="sync-blocked-banner-text">
+            {language === 'fr'
+              ? 'Ton navigateur semble bloquer la synchronisation (Brave Shields, bloqueur de pub…). Ta progression ne peut pas se charger ni se sauvegarder en ligne. Désactive le blocage pour app.xiaolearn.com puis recharge la page.'
+              : "Your browser seems to block syncing (Brave Shields, ad-blocker…). Your progress can't load or save online. Disable blocking for app.xiaolearn.com and reload."}
+          </span>
+          <button
+            type="button"
+            className="sync-blocked-banner-reload"
+            onClick={() => window.location.reload()}
+          >
+            {language === 'fr' ? 'Recharger' : 'Reload'}
+          </button>
+          <button
+            type="button"
+            className="sync-blocked-banner-close"
+            onClick={() => setSyncBlockedDismissed(true)}
+            aria-label={language === 'fr' ? 'Fermer' : 'Close'}
+          >
+            ✕
+          </button>
+        </div>
+      ) : showFirstSyncBanner && (
         <div className="first-sync-banner" role="status" aria-live="polite">
           <span className="first-sync-banner-spinner" aria-hidden="true">⟳</span>
           <span>

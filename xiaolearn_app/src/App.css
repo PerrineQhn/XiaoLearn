@@ -13315,3 +13315,78 @@ select:focus {
   from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
+
+/* ============================================================
+   V18 — Banner « sync bloquée » (Brave Shields / adblock)
+   Variante warning du banner sync : fixe en haut, fond ambre doux,
+   interactif (bouton Recharger + croix de fermeture).
+   ============================================================ */
+.sync-blocked-banner {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4001; /* au-dessus du first-sync-banner (4000) */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(680px, calc(100vw - 24px));
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fef3c7; /* ambre doux */
+  border: 1px solid #f59e0b;
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.12));
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #92400e;
+  animation: firstSyncFadeIn 0.25s ease;
+}
+
+.dark-mode .sync-blocked-banner {
+  background: #3a2c10;
+  border-color: #b45309;
+  color: #fcd34d;
+}
+
+.sync-blocked-banner-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.sync-blocked-banner-text {
+  line-height: 1.35;
+}
+
+.sync-blocked-banner-reload {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sync-blocked-banner-reload:hover {
+  background: #d97706;
+}
+
+.sync-blocked-banner-close {
+  flex-shrink: 0;
+  padding: 4px 6px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.sync-blocked-banner-close:hover {
+  opacity: 1;
+}

@@ -22,13 +22,62 @@
  *   - `<key>__ts`     : timestamp ISO de la dernière modif locale connue
  */
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
 
 const LOCAL_TS_SUFFIX = '__ts';
 const CLOUD_TS_FIELD_SUFFIX = '__updatedAt';
+
+/** V18 — Détection sync bloquée (adblock/Shields). Compte les échecs
+ *  réseau Firestore (reconcile getDoc + onSnapshot errors + saveToFirestore
+ *  setDoc) et les succès. Si N échecs consécutifs SANS AUCUN succès,
+ *  on notifie l'app : la connexion Firestore est probablement bloquée
+ *  par le navigateur (Brave Shields, uBlock, extension privacy).
+ *  État module-level : partagé entre TOUTES les instances du hook. */
+let syncFailureCount = 0;
+let syncEverSucceeded = false;
+const SYNC_BLOCKED_THRESHOLD = 3;
+const syncBlockedListeners = new Set<(blocked: boolean) => void>();
+
+function reportSyncSuccess() {
+  syncEverSucceeded = true;
+  if (syncFailureCount >= SYNC_BLOCKED_THRESHOLD) {
+    // On était considéré bloqué → signale le rétablissement.
+    syncBlockedListeners.forEach((l) => l(false));
+  }
+  syncFailureCount = 0;
+}
+
+function reportSyncFailure() {
+  if (syncEverSucceeded) return; // au moins un succès → réseau OK, échec ponctuel
+  // Vrai offline ≠ blocage : ne compte pas les échecs sans réseau.
+  if (typeof navigator !== 'undefined' && !navigator.onLine) return;
+  syncFailureCount++;
+  if (syncFailureCount === SYNC_BLOCKED_THRESHOLD) {
+    console.warn('[xl-sync] Firestore semble BLOQUÉ (adblock/Shields ?)');
+    syncBlockedListeners.forEach((l) => l(true));
+  }
+}
+
+/** Abonne un listener aux changements d'état « sync bloquée ». Appelle
+ *  immédiatement le listener si on est déjà en état bloqué. Retourne la
+ *  fonction de désabonnement. */
+export function onSyncBlockedChange(listener: (blocked: boolean) => void): () => void {
+  syncBlockedListeners.add(listener);
+  // État courant immédiat
+  if (!syncEverSucceeded && syncFailureCount >= SYNC_BLOCKED_THRESHOLD) listener(true);
+  return () => { syncBlockedListeners.delete(listener); };
+}
+
+/** Hook consommateur léger : true si la connexion Firestore semble bloquée
+ *  par le navigateur (Brave Shields, uBlock…). */
+export function useSyncBlockedDetector(): boolean {
+  const [blocked, setBlocked] = useState(false);
+  useEffect(() => onSyncBlockedChange(setBlocked), []);
+  return blocked;
+}
 
 const readLocalTs = (key: string): number => {
   if (typeof window === 'undefined') return 0;
@@ -248,6 +297,8 @@ export function useFirestoreSync(
     const runReconcile = async (): Promise<void> => {
         const userDocRef = doc(db, 'users', user.uid);
         const snap = await getDoc(userDocRef);
+        // V18 — getDoc réussi = la connexion Firestore passe.
+        reportSyncSuccess();
         const cloudData = snap.exists() ? snap.data() : null;
         const cloudValue: string | undefined = cloudData?.[key];
         const cloudTsIso: string | undefined = cloudData?.[key + CLOUD_TS_FIELD_SUFFIX] ?? cloudData?.lastUpdated;
@@ -336,6 +387,8 @@ export function useFirestoreSync(
         } catch (err) {
           failed = true;
           console.error('[useFirestoreSync] reconcile error', key, err);
+          // V18 — Chaque tentative échouée alimente le détecteur de blocage.
+          reportSyncFailure();
         } finally {
           // Quoi qu'il arrive (succès, échec, cancel), on libère le gating
           // dès la fin de la 1re tentative pour que les saves en attente
@@ -372,6 +425,8 @@ export function useFirestoreSync(
     const unsubscribe = onSnapshot(
       userDocRef,
       (snap) => {
+        // V18 — Chaque snapshot reçu = la connexion Firestore marche.
+        reportSyncSuccess();
         if (!snap.exists()) return;
         const data = snap.data();
         const value: string | undefined = data?.[key];
@@ -393,7 +448,11 @@ export function useFirestoreSync(
           if (cloudTsIso) writeLocalTs(key, cloudTsIso);
         }
       },
-      (err) => console.warn('[useFirestoreSync] onSnapshot error', key, err)
+      (err) => {
+        console.warn('[useFirestoreSync] onSnapshot error', key, err);
+        // V18 — Erreur de stream temps réel : alimente le détecteur de blocage.
+        reportSyncFailure();
+      }
     );
 
     return () => unsubscribe();
@@ -506,11 +565,15 @@ export function useFirestoreSync(
           { merge: true }
         );
         lastWrittenValueRef.current = stringData;
+        // V18 — setDoc réussi = la connexion Firestore passe.
+        reportSyncSuccess();
         // V15 — En cas de retry pending pour cette clé, on retire les
         // anciennes versions superseded par cet écrit réussi.
         removeFromPending(currentKey, stringData);
       } catch (err) {
         console.error('[useFirestoreSync] saveToFirestore error', currentKey, err);
+        // V18 — Alimente le détecteur de blocage (adblock/Shields).
+        reportSyncFailure();
         // V15 — En cas d'échec (réseau down, Firestore offline, app gelée),
         // on enqueue le write dans la pending queue. Il sera re-tenté au
         // prochain mount du hook ou au prochain visibilitychange.
