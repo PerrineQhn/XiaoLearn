@@ -544,8 +544,9 @@ body {
   letter-spacing: 0.08em;
   font-size: 0.72rem;
   font-weight: 700;
-  /* V2 densité Seonsaengnim : header compact ~40px, symétrique. */
-  padding: var(--spacing-sm) var(--spacing-lg);
+  /* V4 rythme Seonsaengnim : headers aérés (~46px) mais sans vide
+     résiduel au repli (le padding du BODY est animé à 0, cf. plus bas). */
+  padding: 12px var(--spacing-lg);
   min-height: 0;
   line-height: 1.2;
 }
@@ -668,11 +669,15 @@ body {
 }
 
 /* ===== Sections collapsibles de la sidebar (pattern Seonsaengnim) ===== */
-/* Bloc épinglé en haut : pas de header, padding bas réduit. */
+/* Bloc épinglé en haut : pas de header, séparé des sections par un trait
+   fin (V4, référence Seonsaengnim) + items un peu plus respirants. */
 .sidebar-nav--pinned {
   flex: none;
   overflow: visible;
-  padding-bottom: var(--spacing-xs);
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--border-light);
 }
 
 /* Header de section cliquable (reprend le style petites-capitales grises
