@@ -515,11 +515,9 @@ body {
   text-align: left;
 }
 
+/* V3 — pas de séparateurs entre sections (référence Seonsaengnim) :
+   la hiérarchie est portée par les headers petites-capitales seuls. */
 .sidebar-nav-section {
-  border-top: 1px solid var(--border-light);
-}
-
-.sidebar-nav-section:first-of-type {
   border-top: none;
 }
 
