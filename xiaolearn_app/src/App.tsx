@@ -1683,6 +1683,12 @@ function App() {
           items: [
             { id: 'review', label: language === 'fr' ? 'Révisions' : 'Reviews', iconSlug: 'reviser', fallback: '🧠', icon: 'revision.png' },
             { id: 'atelier', label: language === 'fr' ? 'Atelier' : 'Practice lab', iconSlug: 'today', fallback: '🎓', icon: 'audio-en-langue-etrangere.png' },
+            // V2 — Dialogues : pratique interactive (écoute/réponse), pas de
+            // la consultation → déplacé depuis « Lecture & dictionnaire ».
+            { id: 'dialogue', label: language === 'fr' ? 'Dialogues' : 'Dialogues', iconSlug: 'dialogue', fallback: '💬', icon: 'discussion-sur-les-bulles.png' },
+            // V2 — Batailles : mode d'ENTRAÎNEMENT compétitif (référence
+            // Seonsaengnim : rangé sous Pratique, pas Communauté).
+            { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
             {
               id: 'errors',
               label: language === 'fr' ? 'Mes erreurs' : 'My errors',
@@ -1700,11 +1706,12 @@ function App() {
         {
           id: 'lecture',
           label: language === 'fr' ? 'Lecture & dictionnaire' : 'Reading & dictionary',
+          // V2 — Consultation / matériel de référence uniquement : Lecture en
+          // tête (nom de la section), puis Dictionnaire et Grammaire.
           items: [
-            { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' },
-            { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' },
             { id: 'reading', label: language === 'fr' ? 'Lecture' : 'Reading', iconSlug: 'lecture', fallback: '📕', icon: 'document.png' },
-            { id: 'dialogue', label: language === 'fr' ? 'Dialogues' : 'Dialogues', iconSlug: 'dialogue', fallback: '💬', icon: 'discussion-sur-les-bulles.png' }
+            { id: 'dictionary', label: language === 'fr' ? 'Dictionnaire' : 'Dictionary', iconSlug: 'dict', fallback: '📖' },
+            { id: 'drills', label: language === 'fr' ? 'Grammaire' : 'Grammar', iconSlug: 'reviser', fallback: '📐', icon: 'grammar.png' }
           ]
         },
         {
@@ -1712,20 +1719,12 @@ function App() {
           label: language === 'fr' ? 'Communauté' : 'Community',
           items: [
             {
-              id: 'ideas',
-              label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
-              iconSlug: 'culture',
-              fallback: '💡',
-              icon: 'idea.png'
-            },
-            {
               id: 'messages',
               label: language === 'fr' ? 'Messages' : 'Messages',
               iconSlug: 'culture',
               fallback: '💬',
               icon: 'messager.png'
             },
-            { id: 'battles', label: language === 'fr' ? 'Batailles' : 'Battles', iconSlug: 'culture', fallback: '⚔️', icon: 'swords.png' },
             {
               id: 'leaderboard',
               label: language === 'fr' ? 'Classement' : 'Leaderboard',
@@ -1737,6 +1736,15 @@ function App() {
                   ? { text: `#${myRankPosition}`, tone: 'rank' }
                   : undefined
             },
+            { id: 'achievements', label: language === 'fr' ? 'Mes hauts-faits' : 'My achievements', iconSlug: 'medal', fallback: '🏅' }
+          ]
+        },
+        {
+          // V2 — Section dédiée façon Seonsaengnim (« Actualités & feedback ») :
+          // les infos produit sortent de Communauté.
+          id: 'actus',
+          label: language === 'fr' ? 'Actualités & feedback' : 'News & feedback',
+          items: [
             {
               id: 'community',
               label: language === 'fr' ? 'Annonces' : 'Announcements',
@@ -1748,7 +1756,13 @@ function App() {
                   ? { text: String(unreadAnnouncements), tone: 'unread' }
                   : undefined
             },
-            { id: 'achievements', label: language === 'fr' ? 'Mes hauts-faits' : 'My achievements', iconSlug: 'medal', fallback: '🏅' }
+            {
+              id: 'ideas',
+              label: language === 'fr' ? 'Idées & Roadmap' : 'Ideas & Roadmap',
+              iconSlug: 'culture',
+              fallback: '💡',
+              icon: 'idea.png'
+            }
           ]
         },
         {
