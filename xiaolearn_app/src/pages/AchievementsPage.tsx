@@ -327,6 +327,10 @@ export default function AchievementsPage({
           <>
             <div className="ach-card-fx" aria-hidden="true" />
             <div className="ach-card-sparks" aria-hidden="true" />
+            {/* V3 — lucioles montantes (épique / légendaire) */}
+            {(a.tier === 'epic' || a.tier === 'legendary') && (
+              <div className="ach-card-motes" aria-hidden="true" />
+            )}
           </>
         )}
         <div className="ach-card-frame">
@@ -603,7 +607,13 @@ function CardDetailModal({
             ✕
           </button>
 
-          {/* La carte en grand — mêmes classes que la grille (art + shimmer) */}
+          {/* La carte en grand — mêmes classes que la grille (art + shimmer).
+              V3 — wrapper relatif : porte le halo de rayons rotatif
+              (légendaire débloquée) DERRIÈRE la carte opaque. */}
+          <div className="ach-card-rays-wrap">
+            {isUnlocked && a.tier === 'legendary' && (
+              <div className="ach-card-rays" aria-hidden="true" />
+            )}
           <div
             className={`ach-card ach-modal-card ach-tier-${a.tier}${
               isUnlocked ? ' is-unlocked' : ' is-locked'
@@ -620,6 +630,10 @@ function CardDetailModal({
               <>
                 <div className="ach-card-fx" aria-hidden="true" />
                 <div className="ach-card-sparks" aria-hidden="true" />
+                {/* V3 — lucioles montantes (épique / légendaire) */}
+                {(a.tier === 'epic' || a.tier === 'legendary') && (
+                  <div className="ach-card-motes" aria-hidden="true" />
+                )}
               </>
             )}
             <div className="ach-card-frame">
@@ -649,6 +663,7 @@ function CardDetailModal({
             >
               🔍
             </button>
+          </div>
           </div>
 
           {/* Badges pill : rareté + catégorie */}
@@ -738,18 +753,28 @@ function CardDetailModal({
             setLightbox(false);
           }}
         >
-          <div
-            className={`ach-lightbox-card ach-tier-${a.tier} ${
-              isUnlocked ? 'is-unlocked' : 'is-locked'
-            }`}
-          >
-            <img className="ach-lightbox-img" src={a.image} alt={name} />
-            {isUnlocked && (
-              <>
-                <div className="ach-card-fx" aria-hidden="true" />
-                <div className="ach-card-sparks" aria-hidden="true" />
-              </>
+          {/* V3 — wrapper relatif pour le halo de rayons légendaire */}
+          <div className="ach-card-rays-wrap">
+            {isUnlocked && a.tier === 'legendary' && (
+              <div className="ach-card-rays" aria-hidden="true" />
             )}
+            <div
+              className={`ach-lightbox-card ach-tier-${a.tier} ${
+                isUnlocked ? 'is-unlocked' : 'is-locked'
+              }`}
+            >
+              <img className="ach-lightbox-img" src={a.image} alt={name} />
+              {isUnlocked && (
+                <>
+                  <div className="ach-card-fx" aria-hidden="true" />
+                  <div className="ach-card-sparks" aria-hidden="true" />
+                  {/* V3 — lucioles montantes (épique / légendaire) */}
+                  {(a.tier === 'epic' || a.tier === 'legendary') && (
+                    <div className="ach-card-motes" aria-hidden="true" />
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
