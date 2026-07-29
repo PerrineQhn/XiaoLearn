@@ -546,7 +546,10 @@ body {
   letter-spacing: 0.08em;
   font-size: 0.72rem;
   font-weight: 700;
-  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-xs);
+  /* V2 densité Seonsaengnim : header compact ~40px, symétrique. */
+  padding: var(--spacing-sm) var(--spacing-lg);
+  min-height: 0;
+  line-height: 1.2;
 }
 
 .nav-item {
@@ -713,10 +716,17 @@ body {
 .sidebar-section-body > .sidebar-nav {
   overflow: hidden;
   min-height: 0;
+  /* V2 densité Seonsaengnim — le padding vertical de .sidebar-nav (16px
+     haut+bas) ne se COMPRESSE PAS avec la track 0fr (il s'ajoute à la
+     hauteur utilisée) : chaque section repliée gardait ~32px de vide.
+     On réduit le padding vertical des corps de section et on l'anime
+     à 0 au repli. Le padding horizontal est conservé. */
+  padding-top: 2px;
+  padding-bottom: var(--spacing-sm);
   /* visibility est "discrete" : avec une transition, `hidden` ne s'applique
      qu'en fin d'animation → le repli reste fluide, puis le contenu sort du
      flux d'accessibilité/focus. */
-  transition: visibility 0.25s;
+  transition: visibility 0.25s, padding-top 0.25s ease, padding-bottom 0.25s ease;
 }
 
 .sidebar-nav-section.is-collapsed .sidebar-section-body {
@@ -725,6 +735,8 @@ body {
 
 .sidebar-nav-section.is-collapsed .sidebar-section-body > .sidebar-nav {
   visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* ===== Pages placeholder (Mes notes / Mes hauts-faits, en attendant les
