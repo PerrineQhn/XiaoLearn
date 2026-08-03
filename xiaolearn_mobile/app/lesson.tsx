@@ -17,9 +17,16 @@ import { LESSON_DATA } from '@/data/cecrLessons';
 import { LEARN_SECTIONS, type LearnSection, type TokenRole } from '@/data/cecrLearnSections';
 import { EXERCISES, type Exercise } from '@/data/cecrExercises';
 import { getAllCards } from '@/hooks/useSrsData';
+import ToneColoredHanzi from '@/components/ToneColoredHanzi';
+import { useDisplaySettings } from '@/contexts/DisplaySettingsContext';
+import { useI18n } from '@/contexts/LanguageContext';
+import { useEntitlements } from '@/hooks/useEntitlements';
+import { canOpenLesson } from '@/utils/lessonGate';
 import { useAudio } from '@/hooks/useAudio';
 import { usePronunciation } from '@/hooks/usePronunciation';
 import { useUserStats } from '@/hooks/useUserStats';
+import { useCardUnlocks } from '@/contexts/CardsContext';
+import { logError } from '@/data/errorLog';
 
 const SW = Dimensions.get('window').width;
 
@@ -79,19 +86,22 @@ const ROLE_LABEL: Record<TokenRole, string> = {
   modificateur: 'Modificateur', copule: 'Copule', connecteur: 'Connecteur',
 };
 const TONE_COLOR = ['', '#06B6D4', '#22C55E', '#F59E0B', '#EF4444', '#9CA3AF'];
-const TONE_NAME  = ['', 'Ton 1 — plat', 'Ton 2 — montant', 'Ton 3 — courbe', 'Ton 4 — descendant', 'Ton neutre'];
-const DIFFICULTY_LABEL: Record<string, string> = {
-  beginner: 'Débutant', intermediate: 'Intermédiaire', advanced: 'Avancé',
+const TONE_KEY = ['', 'tone.1', 'tone.2', 'tone.3', 'tone.4', 'tone.5'] as const;
+const DIFFICULTY_LABEL: Record<string, { fr: string; en: string }> = {
+  beginner:     { fr: 'Débutant',      en: 'Beginner' },
+  intermediate: { fr: 'Intermédiaire', en: 'Intermediate' },
+  advanced:     { fr: 'Avancé',        en: 'Advanced' },
 };
-const CATEGORY_META: Record<string, { label: string; icon: string }> = {
-  pronunciation: { label: 'Prononciation', icon: '🎵' },
-  vocabulary:    { label: 'Vocabulaire',   icon: '📝' },
-  grammar:       { label: 'Grammaire',     icon: '⚙️' },
-  conversation:  { label: 'Conversation',  icon: '💬' },
-  culture:       { label: 'Culture',       icon: '🏮' },
-  nuances:       { label: 'Nuances',       icon: '🔬' },
-  reading:       { label: 'Lecture',       icon: '📖' },
-  writing:       { label: 'Écriture',      icon: '✍️' },
+// Libellés bilingues : ils s'affichaient en français quelle que soit la langue
+const CATEGORY_META: Record<string, { label: string; labelEn: string; icon: string }> = {
+  pronunciation: { label: 'Prononciation', labelEn: 'Pronunciation', icon: '🎵' },
+  vocabulary:    { label: 'Vocabulaire',   labelEn: 'Vocabulary',    icon: '📝' },
+  grammar:       { label: 'Grammaire',     labelEn: 'Grammar',       icon: '⚙️' },
+  conversation:  { label: 'Conversation',  labelEn: 'Conversation',  icon: '💬' },
+  culture:       { label: 'Culture',       labelEn: 'Culture',       icon: '🏮' },
+  nuances:       { label: 'Nuances',       labelEn: 'Nuances',       icon: '🔬' },
+  reading:       { label: 'Lecture',       labelEn: 'Reading',       icon: '📖' },
+  writing:       { label: 'Écriture',      labelEn: 'Writing',       icon: '✍️' },
 };
 
 // ─── Utilitaires ──────────────────────────────────────────────
@@ -199,12 +209,13 @@ const prog = StyleSheet.create({
 
 // ─── Contour tonal ────────────────────────────────────────────
 function ToneContour({ tone }: { tone: number }) {
+  const { t } = useI18n();
   const color = TONE_COLOR[tone] ?? '#9CA3AF';
   const shapes = ['', '▬▬', '↗', '↘↗', '↘', '·'];
   return (
     <View style={[tc.box, { backgroundColor: color + '14', borderColor: color + '40' }]}>
       <Text style={[tc.shape, { color }]}>{shapes[tone]}</Text>
-      <Text style={[tc.name, { color }]}>{TONE_NAME[tone]}</Text>
+      <Text style={[tc.name, { color }]}>{TONE_KEY[tone] ? t(TONE_KEY[tone]) : ''}</Text>
     </View>
   );
 }
@@ -273,17 +284,19 @@ function ItemsList({ items, accent, c, onPlay }: {
   items: NonNullable<LearnSection['items']>; accent: string;
   c: typeof Colors.light; onPlay: (h: string) => void;
 }) {
+  const { toneColors } = useDisplaySettings();
+  const { pick } = useI18n();
   return (
     <View style={il.wrap}>
       {items.map((item, i) => (
         <View key={i} style={[il.row, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
           <TouchableOpacity style={[il.box, { backgroundColor: accent + '12' }]} onPress={() => onPlay(item.hanzi)} activeOpacity={0.7}>
-            <Text style={[il.hanzi, { color: accent }]}>{item.hanzi}</Text>
+            <ToneColoredHanzi hanzi={item.hanzi} pinyin={item.pinyin} enabled={toneColors} style={[il.hanzi, { color: accent }]} />
             <Ionicons name="volume-medium-outline" size={11} color={accent + '90'} style={{ marginTop: 2 }} />
           </TouchableOpacity>
           <View style={il.mid}>
             <Text style={[il.pinyin, { color: c.textTertiary }]}>{item.pinyin}</Text>
-            <Text style={[il.meaning, { color: c.textPrimary }]}>{item.meaning}</Text>
+            <Text style={[il.meaning, { color: c.textPrimary }]}>{pick(item.meaning, item.meaningEn)}</Text>
           </View>
           <View style={{ paddingRight: 10 }}>
             <InlinePronBtn hanzi={item.hanzi} accent={accent} c={c} />
@@ -297,7 +310,7 @@ const il = StyleSheet.create({
   wrap: { gap: 6 },
   row: { flexDirection: 'row', alignItems: 'center', borderRadius: 12, borderWidth: 1, overflow: 'hidden' },
   box: { width: 64, alignItems: 'center', justifyContent: 'center', paddingVertical: 12, gap: 2 },
-  hanzi: { fontSize: 22, fontWeight: '700' },
+  hanzi: { fontSize: 22, fontWeight: '500' },
   mid: { flex: 1, paddingHorizontal: 14, paddingVertical: 10 },
   pinyin: { fontSize: 11, marginBottom: 2 },
   meaning: { fontSize: 14, fontWeight: '500' },
@@ -311,12 +324,14 @@ function MinimalPairs({ pairs, c, onPlay }: {
   onPlay: (h: string) => void;
 }) {
   const { width } = useWindowDimensions();
+  const { toneColors } = useDisplaySettings();
+  const { pick, t } = useI18n();
   // 4 paires → grille 2×2, sinon 3 colonnes
   const cols = pairs.length === 4 ? 2 : 3;
   const cardWidth = (width - 40 - 8 * (cols - 1)) / cols;
   return (
     <View style={mp.wrap}>
-      <Text style={[mp.label, { color: c.textTertiary }]}>🔊 Paires minimales — touche pour écouter</Text>
+      <Text style={[mp.label, { color: c.textTertiary }]}>{t('lesson.minimalPairs')}</Text>
       <View style={mp.grid}>
         {pairs.map((p, i) => {
           const col = p.tone ? TONE_COLOR[p.tone] : c.textSecondary;
@@ -324,9 +339,9 @@ function MinimalPairs({ pairs, c, onPlay }: {
             <TouchableOpacity key={i} onPress={() => onPlay(p.hanzi)} activeOpacity={0.7}
               style={[mp.card, { width: cardWidth, backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
               {p.tone ? <Text style={[mp.toneTag, { color: col }]}>T{p.tone}</Text> : null}
-              <Text style={[mp.hanzi, { color: c.textPrimary }]}>{p.hanzi}</Text>
+              <ToneColoredHanzi hanzi={p.hanzi} pinyin={p.pinyin} enabled={toneColors} style={[mp.hanzi, { color: c.textPrimary }]} />
               <Text style={[mp.pinyin, { color: c.textSecondary }]}>{p.pinyin}</Text>
-              <Text style={[mp.meaning, { color: c.textTertiary }]} numberOfLines={2}>{p.meaning}</Text>
+              <Text style={[mp.meaning, { color: c.textTertiary }]} numberOfLines={2}>{pick(p.meaning, p.meaningEn)}</Text>
               <Ionicons name="volume-medium-outline" size={12} color={c.textTertiary} style={{ marginTop: 2 }} />
             </TouchableOpacity>
           );
@@ -341,14 +356,25 @@ const mp = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   card: { borderRadius: 12, borderWidth: 1, padding: 10, alignItems: 'center', gap: 3 },
   toneTag: { fontSize: 10, fontWeight: '700' },
-  hanzi: { fontSize: 20, fontWeight: '700' },
+  hanzi: { fontSize: 20, fontWeight: '500' },
   pinyin: { fontSize: 11 },
   meaning: { fontSize: 10, textAlign: 'center' },
 });
 
 // ─── Phrases tokenisées ───────────────────────────────────────
 function TokenSentences({ sentences, c }: { sentences: NonNullable<LearnSection['tokenizedSentences']>; c: typeof Colors.light }) {
+  const { pick } = useI18n();
   const roles = new Set<TokenRole>(sentences.flatMap(s => s.zh.map(t => t.role as TokenRole)));
+  /**
+   * Glose mot à mot, dans la langue de l'interface.
+   *
+   * Le composant rendait `sent.fr` sans passer par pick() : en anglais, la
+   * décomposition sous la phrase chinoise restait en français. À noter que
+   * `en` est encore vide pour la grande majorité des phrases — pick() renvoie
+   * alors le français, ce qui reste préférable à un bloc vide.
+   */
+  const gloss = (sent: NonNullable<LearnSection['tokenizedSentences']>[number]) =>
+    pick(sent.fr, sent.en);
   return (
     <View style={ts.wrap}>
       <View style={ts.legend}>
@@ -371,14 +397,16 @@ function TokenSentences({ sentences, c }: { sentences: NonNullable<LearnSection[
               </View>
             ))}
           </View>
-          {sent.fr.length > 0 && (
+          {gloss(sent).length > 0 && (
             <View style={ts.frRow}>
-              {sent.fr.map((t, ti) => (
+              {gloss(sent).map((t, ti) => (
                 <Text key={ti} style={[ts.frTok, { color: ROLE_COLOR[t.role as TokenRole] }]}>{t.text}{' '}</Text>
               ))}
             </View>
           )}
-          {sent.note ? <Text style={[ts.note, { color: c.textTertiary }]}>{sent.note}</Text> : null}
+          {pick(sent.note, sent.noteEn) ? (
+            <Text style={[ts.note, { color: c.textTertiary }]}>{pick(sent.note, sent.noteEn)}</Text>
+          ) : null}
         </View>
       ))}
     </View>
@@ -395,7 +423,7 @@ const ts = StyleSheet.create({
   cell: { alignItems: 'center', gap: 3 },
   tokPinyin: { fontSize: 10, color: '#9CA3AF' },
   tokChip: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 5 },
-  tokHanzi: { fontSize: 18, fontWeight: '700' },
+  tokHanzi: { fontSize: 18, fontWeight: '400' },
   frRow: { flexDirection: 'row', flexWrap: 'wrap' },
   frTok: { fontSize: 14, fontWeight: '600' },
   note: { fontSize: 12, fontStyle: 'italic' },
@@ -405,6 +433,7 @@ const ts = StyleSheet.create({
 function PronunciationBtn({ referenceText, accent, c }: {
   referenceText: string; accent: string; c: typeof Colors.light;
 }) {
+  const { t } = useI18n();
   const { startRecording, stopAndScore, reset, status, result } = usePronunciation();
   const isRecording = status === 'recording';
   const isLoading   = status === 'loading';
@@ -433,7 +462,7 @@ function PronunciationBtn({ referenceText, accent, c }: {
           : <Ionicons name={isRecording ? 'stop-circle' : isDone ? 'refresh' : 'mic'} size={16} color="#FFF" />
         }
         <Text style={pron.btnTxt}>
-          {isRecording ? 'Arrêter' : isLoading ? 'Analyse…' : isDone ? 'Réessayer' : 'Prononcer'}
+          {isRecording ? t('hard.stop') : isLoading ? t('hard.analyzing') : isDone ? t('hard.retry') : t('hard.speak')}
         </Text>
       </TouchableOpacity>
 
@@ -441,9 +470,9 @@ function PronunciationBtn({ referenceText, accent, c }: {
         <View style={[pron.result, { borderColor: scoreColor + '50', backgroundColor: scoreColor + '10' }]}>
           <Text style={[pron.score, { color: scoreColor }]}>{result.pronunciationScore}/100</Text>
           <Text style={[pron.verdict, { color: scoreColor }]}>
-            {result.verdict === 'match' ? '✅ Excellent !' : result.verdict === 'close' ? '🟡 Proche' : '❌ À retravailler'}
+            {result.verdict === 'match' ? t('hard.verdictMatch') : result.verdict === 'close' ? t('hard.verdictClose') : t('hard.verdictRetry')}
           </Text>
-          {result.recognized ? <Text style={[pron.recognized, { color: c.textTertiary }]}>Reconnu : {result.recognized}</Text> : null}
+          {result.recognized ? <Text style={[pron.recognized, { color: c.textTertiary }]}>{t('hard.recognized', { x: result.recognized })}</Text> : null}
         </View>
       )}
     </View>
@@ -464,22 +493,25 @@ function SectionView({ sec, accent, c, onPlay }: {
   sec: LearnSection; accent: string; c: typeof Colors.light;
   onPlay: (h: string) => void;
 }) {
+  const { pick } = useI18n();
   // Texte de référence pour la prononciation = premier item ou titre
   const refText = sec.items?.[0]?.hanzi ?? sec.title;
+  const body = pick(sec.body, sec.bodyEn);
+  const tip = pick(sec.tip, sec.tipEn);
 
   return (
     <View style={sv.wrap}>
-      <Text style={[sv.title, { color: c.textPrimary }]}>{sec.title}</Text>
+      <Text style={[sv.title, { color: c.textPrimary }]}>{pick(sec.title, sec.titleEn)}</Text>
       {sec.tone ? <ToneContour tone={sec.tone} /> : null}
-      {sec.body ? <BodyText text={sec.body} color={c.textSecondary} accent={accent} /> : null}
+      {body ? <BodyText text={body} color={c.textSecondary} accent={accent} /> : null}
       {sec.items?.length ? <ItemsList items={sec.items} accent={accent} c={c} onPlay={onPlay} /> : null}
       {sec.minimalPairs?.length ? <MinimalPairs pairs={sec.minimalPairs} c={c} onPlay={onPlay} /> : null}
       {sec.tokenizedSentences?.length ? <TokenSentences sentences={sec.tokenizedSentences} c={c} /> : null}
-      {sec.tip ? (
+      {tip ? (
         <View style={[sv.tip, { backgroundColor: accent + '10', borderLeftColor: accent, borderColor: accent + '25' }]}>
           <Text style={sv.tipIcon}>💡</Text>
           <View style={{ flex: 1 }}>
-            <BodyText text={sec.tip} color={c.textSecondary} accent={accent} />
+            <BodyText text={tip} color={c.textSecondary} accent={accent} />
           </View>
         </View>
       ) : null}
@@ -530,6 +562,7 @@ function OrderExercise({
   onRemove: (i: number) => void; answered: boolean; correct: boolean;
   c: typeof Colors.light; accent: string;
 }) {
+  const { t: tr } = useI18n();
   const available = choices.map((w, i) => ({ w, i, used: built.includes(w) && built.indexOf(w) >= 0 }));
   // Simple: track usage by count
   const usedCount: Record<string, number> = {};
@@ -544,7 +577,7 @@ function OrderExercise({
       {/* Zone de construction */}
       <View style={[ord.buildZone, { borderColor: answered ? (correct ? '#22C55E' : '#EF4444') : c.borderMedium, backgroundColor: c.cardBg }]}>
         {built.length === 0
-          ? <Text style={[ord.placeholder, { color: c.textTertiary }]}>Touche les mots ci-dessous pour construire la phrase</Text>
+          ? <Text style={[ord.placeholder, { color: c.textTertiary }]}>{tr('lesson.buildHint')}</Text>
           : <View style={ord.builtRow}>
               {built.map((w, i) => (
                 <TouchableOpacity key={i} onPress={() => !answered && onRemove(i)} style={[ord.builtChip, { backgroundColor: accent + '20', borderColor: accent + '60' }]}>
@@ -587,6 +620,8 @@ const ord = StyleSheet.create({
 
 // ─── Exercice : Dialogue ──────────────────────────────────────
 function DialogueBubbles({ turns, c }: { turns: NonNullable<Exercise['dialogue']>; c: typeof Colors.light }) {
+  const { toneColors, showPinyin } = useDisplaySettings();
+  const { pick, t: tr } = useI18n();
   return (
     <View style={dlg.wrap}>
       {turns.map((t, i) => {
@@ -595,14 +630,14 @@ function DialogueBubbles({ turns, c }: { turns: NonNullable<Exercise['dialogue']
             {t.hanzi ? (
               // Tour utilisateur déjà joué — afficher son contenu
               <View style={[dlg.userBubble, { backgroundColor: '#E5E7EB' }]}>
-                <Text style={dlg.hanzi}>{t.hanzi}</Text>
-                {t.pinyin ? <Text style={[dlg.pinyin, { color: '#6B7280' }]}>{t.pinyin}</Text> : null}
-                {t.translationFr ? <Text style={[dlg.translation, { color: '#6B7280' }]}>{t.translationFr}</Text> : null}
+                <ToneColoredHanzi hanzi={t.hanzi} pinyin={t.pinyin} enabled={toneColors} style={dlg.hanzi} />
+                {showPinyin && t.pinyin ? <Text style={[dlg.pinyin, { color: '#6B7280' }]}>{t.pinyin}</Text> : null}
+                {t.translationFr ? <Text style={[dlg.translation, { color: '#6B7280' }]}>{pick(t.translationFr, t.translationEn)}</Text> : null}
               </View>
             ) : (
               // Tour vide — c'est celui à compléter
               <View style={[dlg.userBubble, { backgroundColor: '#D1D5DB' }]}>
-                <Text style={dlg.ghostTxt}>À toi…</Text>
+                <Text style={dlg.ghostTxt}>{tr('lesson.yourTurn')}</Text>
               </View>
             )}
             <View style={[dlg.avatar, { backgroundColor: '#9CA3AF' }]}>
@@ -616,9 +651,9 @@ function DialogueBubbles({ turns, c }: { turns: NonNullable<Exercise['dialogue']
               <Text style={dlg.avatarTxt}>{(t.speaker ?? '?')[0]}</Text>
             </View>
             <View style={[dlg.bubble, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
-              <Text style={[dlg.hanzi, { color: c.textPrimary }]}>{t.hanzi}</Text>
-              {t.pinyin ? <Text style={[dlg.pinyin, { color: c.textTertiary }]}>{t.pinyin}</Text> : null}
-              {t.translationFr ? <Text style={[dlg.translation, { color: c.textSecondary }]}>{t.translationFr}</Text> : null}
+              <ToneColoredHanzi hanzi={t.hanzi} pinyin={t.pinyin} enabled={toneColors} style={[dlg.hanzi, { color: c.textPrimary }]} />
+              {showPinyin && t.pinyin ? <Text style={[dlg.pinyin, { color: c.textTertiary }]}>{t.pinyin}</Text> : null}
+              {t.translationFr ? <Text style={[dlg.translation, { color: c.textSecondary }]}>{pick(t.translationFr, t.translationEn)}</Text> : null}
             </View>
           </View>
         );
@@ -634,7 +669,7 @@ const dlg = StyleSheet.create({
   avatarTxt: { color: '#FFF', fontSize: 13, fontWeight: '700' },
   bubble: { flex: 1, borderRadius: 14, borderWidth: 1, padding: 12, gap: 3 },
   userBubble: { borderRadius: 14, paddingHorizontal: 16, paddingVertical: 12 },
-  hanzi: { fontSize: 16, fontWeight: '600' },
+  hanzi: { fontSize: 16, fontWeight: '400' },
   pinyin: { fontSize: 11 },
   translation: { fontSize: 12, fontStyle: 'italic' },
   ghostTxt: { fontSize: 14, color: '#9CA3AF', fontStyle: 'italic' },
@@ -646,7 +681,7 @@ function QuizCard({
 }: {
   ex: Exercise; idx: number; total: number;
   accent: string; c: typeof Colors.light;
-  onAnswer: (correct: boolean) => void;
+  onAnswer: (correct: boolean, given: string) => void;
   onPlayHanzi: (h: string) => void;
 }) {
   const [chosen, setChosen] = useState<number | null>(null);
@@ -654,6 +689,8 @@ function QuizCard({
   const [answered, setAnswered] = useState(false);
   const [correct, setCorrect] = useState(false);
   const shake = useRef(new Animated.Value(0)).current;
+  const { showPinyin } = useDisplaySettings();
+  const { pick, t: tr } = useI18n();
 
   // ── Multi-step dialogue support ───────────────────────────────
   // Pour les dialogue-response avec N tours vides → N sous-étapes séquentielles.
@@ -666,11 +703,11 @@ function QuizCard({
   // Textes choisis pour les sous-étapes précédentes (pour les afficher dans le dialogue)
   const [prevChoices, setPrevChoices] = useState<string[]>([]);
 
-  // Choices/correctIndex pour la sous-étape courante
+  // Choices/correctIndex pour la sous-étape courante (bilingue via pick)
   const currentStepDef = ex.steps?.[subStep];
-  const currentChoices = currentStepDef?.choices ?? ex.choices;
+  const currentChoices = pick(currentStepDef?.choices ?? ex.choices, currentStepDef?.choicesEn ?? ex.choicesEn);
   const currentCorrect = currentStepDef?.correctIndex ?? ex.correctIndex;
-  const currentExplanation = currentStepDef?.explanation ?? ex.explanation;
+  const currentExplanation = pick(currentStepDef?.explanation ?? ex.explanation, currentStepDef?.explanationEn ?? ex.explanationEn);
   const isLastSubStep = subStep >= emptyTurnIndices.length - 1;
 
   // Dialogue avec les réponses précédentes injectées et visibilité limitée
@@ -736,7 +773,12 @@ function QuizCard({
       setAnswered(false);
       setCorrect(false);
     } else {
-      onAnswer(correct);
+      // On remonte aussi ce qui a été répondu : sans ça, « Mes erreurs » ne
+      // peut afficher que la bonne réponse, ce qui n'apprend rien.
+      const given = isOrder
+        ? built.join('')
+        : chosen !== null ? currentChoices[chosen] ?? '' : '';
+      onAnswer(correct, given);
     }
   }
 
@@ -764,7 +806,7 @@ function QuizCard({
         {/* Compteur — avec indicateur de sous-étape si multi-step */}
         <Text style={[qz.counter, { color: c.textTertiary }]}>
           {idx + 1} / {total}
-          {isMultiStep ? `  ·  Réplique ${subStep + 1}/${emptyTurnIndices.length}` : ''}
+          {isMultiStep ? `  ·  ${tr('lesson.reply')} ${subStep + 1}/${emptyTurnIndices.length}` : ''}
         </Text>
 
         {/* Context / dialogue */}
@@ -784,24 +826,24 @@ function QuizCard({
             activeOpacity={0.75}
           >
             <Ionicons name="volume-high" size={22} color={accent} />
-            <Text style={[qz.audioBtnTxt, { color: accent }]}>Réécouter</Text>
+            <Text style={[qz.audioBtnTxt, { color: accent }]}>{tr('lesson.replay')}</Text>
           </TouchableOpacity>
         ) : null}
 
         {/* Prompt */}
-        <Text style={[qz.prompt, { color: c.textPrimary }]}>{ex.prompt}</Text>
-        {/* Pinyin sous le prompt quand il contient du chinois */}
-        {HANZI_RE.test(ex.prompt) && (() => {
+        <Text style={[qz.prompt, { color: c.textPrimary }]}>{pick(ex.prompt, ex.promptEn)}</Text>
+        {/* Pinyin sous le prompt quand il contient du chinois (si activé dans les réglages) */}
+        {showPinyin && HANZI_RE.test(ex.prompt) && (() => {
           const py = chineseToPinyin(extractChinese(ex.prompt));
           return py ? <Text style={[qz.promptPinyin, { color: c.textTertiary }]}>{py}</Text> : null;
         })()}
 
         {/* Phrase à trous */}
         {isFill && ex.sentence ? (
-          <FillSentence sentence={ex.sentence} chosen={chosen !== null ? ex.choices[chosen] : null} c={c} />
+          <FillSentence sentence={ex.sentence} chosen={chosen !== null ? currentChoices[chosen] : null} c={c} />
         ) : null}
         {isFill && ex.sentenceFr ? (
-          <Text style={[qz.sentenceFr, { color: c.textTertiary }]}>{ex.sentenceFr}</Text>
+          <Text style={[qz.sentenceFr, { color: c.textTertiary }]}>{pick(ex.sentenceFr, ex.sentenceEn)}</Text>
         ) : null}
 
         {/* Remise en ordre */}
@@ -845,11 +887,11 @@ function QuizCard({
         {answered ? (
           <View style={[qz.feedback, { backgroundColor: correct ? '#F0FDF4' : '#FEF2F2', borderColor: correct ? '#86EFAC' : '#FECACA' }]}>
             <Text style={[qz.feedbackTitle, { color: correct ? '#15803D' : '#B91C1C' }]}>
-              {correct ? '✅ Correct !' : '❌ Pas tout à fait'}
+              {correct ? tr('lesson.correct') : tr('lesson.wrongAnswer')}
             </Text>
             {!correct ? (
               <Text style={[qz.feedbackCorrect, { color: '#15803D' }]}>
-                Réponse : <Text style={{ fontWeight: '700' }}>{currentChoices[currentCorrect]}</Text>
+                {tr('common.answer')} <Text style={{ fontWeight: '700' }}>{currentChoices[currentCorrect]}</Text>
               </Text>
             ) : null}
             {currentExplanation ? <Text style={qz.feedbackExpl}>{currentExplanation}</Text> : null}
@@ -862,7 +904,7 @@ function QuizCard({
         <View style={[qz.footer, { borderTopColor: c.borderLight, backgroundColor: c.appBg }]}>
           <TouchableOpacity style={[qz.ctaBtn, { backgroundColor: accent }]} onPress={handleNext}>
             <Text style={qz.ctaTxt}>
-              {isMultiStep && !isLastSubStep ? 'Réplique suivante' : 'Question suivante'}
+              {isMultiStep && !isLastSubStep ? tr('lesson.replyNext') : tr('lesson.questionNext')}
             </Text>
             <Ionicons name="arrow-forward" size={18} color="#FFF" />
           </TouchableOpacity>
@@ -909,7 +951,11 @@ export default function LessonScreen() {
   const scheme = useColorScheme();
   const c = Colors[scheme];
   const { playHanzi, playing: audioPlaying } = useAudio();
-  const { addXp, markLessonComplete } = useUserStats();
+  const { addXp, markLessonComplete, bumpDaily } = useUserStats();
+  const { checkCards } = useCardUnlocks();
+  const { access } = useEntitlements();
+  const { t: tr, pick, lang } = useI18n();
+  const premiumLocked = !canOpenLesson(access, moduleId);
   const content  = LESSON_CONTENT[lessonId];
   const sections = LEARN_SECTIONS[lessonId] ?? [];
   const exercises = EXERCISES[lessonId] ?? [];
@@ -944,11 +990,27 @@ export default function LessonScreen() {
     await Promise.all([
       markLessonComplete(lessonId),
       addXp(xpEarned),
+      bumpDaily('lessons'),
     ]);
     setStepIdx(totalSteps - 1);
+    void checkCards();
   }
 
-  function handleAnswer(correct: boolean) {
+  function handleAnswer(correct: boolean, given = '') {
+    if (!correct && content) {
+      const ex = exercises[exIdx];
+      void logError({
+        exerciseId: `${lessonId}:${ex.id}`,
+        source: 'lesson',
+        lessonId,
+        lessonTitle: pick(content.title, content.titleEn ?? content.title),
+        prompt: pick(ex.prompt, ex.promptEn ?? ex.prompt),
+        correctAnswer: ex.choices[ex.correctIndex] ?? '',
+        userAnswer: given || tr('err.noAnswer'),
+        audioHanzi: ex.audioHanzi,
+        explanation: ex.explanation ? pick(ex.explanation, ex.explanationEn ?? ex.explanation) : undefined,
+      });
+    }
     const addCorrect = correct ? 1 : 0;
     setScore(s => ({ correct: s.correct + addCorrect, total: s.total + 1 }));
     // Si c'est le dernier exercice, déclencher finish() avec le score à jour
@@ -966,20 +1028,46 @@ export default function LessonScreen() {
           <Ionicons name="arrow-back" size={24} color={c.textPrimary} />
         </TouchableOpacity>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ color: c.textSecondary }}>Leçon introuvable</Text>
+          <Text style={{ color: c.textSecondary }}>{tr('lesson.notFound')}</Text>
         </View>
       </SafeAreaView>
     );
   }
 
-  const cat = CATEGORY_META[content.category] ?? { label: content.category, icon: '📚' };
+  // ── Verrou Premium (accès direct à une leçon A2+ en gratuit) ──
+  if (premiumLocked) {
+    return (
+      <SafeAreaView style={[root.s, { backgroundColor: c.appBg }]}>
+        <TouchableOpacity style={{ padding: 20 }} onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color={c.textPrimary} />
+        </TouchableOpacity>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32, gap: 12 }}>
+          <Text style={{ fontSize: 52 }}>💎</Text>
+          <Text style={{ color: c.textPrimary, fontSize: 20, fontWeight: '800', textAlign: 'center' }}>
+            {tr('lesson.premiumLocked')}
+          </Text>
+          <Text style={{ color: c.textSecondary, fontSize: 14, textAlign: 'center', lineHeight: 20 }}>
+            {tr('lesson.premiumSub')}
+          </Text>
+          <TouchableOpacity
+            style={{ backgroundColor: c.primaryRed, borderRadius: 14, paddingVertical: 14, paddingHorizontal: 28, marginTop: 8 }}
+            onPress={() => router.replace('/abonnement' as any)}
+          >
+            <Text style={{ color: '#FFF', fontSize: 15.5, fontWeight: '700' }}>{tr('lesson.seeOffers')}</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  const cat = CATEGORY_META[content.category] ?? { label: content.category, labelEn: content.category, icon: '📚' };
 
   // Libellé de phase pour le header
   function phaseLabel() {
-    if (isIntro)    return `${cat.icon} ${cat.label}`;
-    if (isSection)  return `Section ${secIdx + 1} / ${nSections}`;
+    if (isIntro)    return `${cat.icon} ${pick(cat.label, (cat as any).labelEn)}`;
+    if (isSection)  return tr('hard.sectionN', { n: secIdx + 1, total: nSections });
     if (isExercise) return `Quiz · ${exIdx + 1} / ${nExercises}`;
-    return 'Terminé';
+    return tr('lesson.finished');
   }
 
   // ── TERMINÉ ──────────────────────────────────────────────────
@@ -993,23 +1081,23 @@ export default function LessonScreen() {
           <View style={done.circle}>
             <Text style={done.emoji}>🎉</Text>
           </View>
-          <Text style={[done.title, { color: c.textPrimary }]}>Leçon terminée !</Text>
-          <Text style={[done.sub, { color: c.textSecondary }]}>{content.title}</Text>
+          <Text style={[done.title, { color: c.textPrimary }]}>{tr('lesson.lessonDone')}</Text>
+          <Text style={[done.sub, { color: c.textSecondary }]}>{pick(content.title, content.titleEn ?? content.title)}</Text>
 
           {pct !== null && (
             <View style={[done.scoreCard, { backgroundColor: scoreColor + '12', borderColor: scoreColor + '40' }]}>
               <Text style={[done.scoreNum, { color: scoreColor }]}>{pct}%</Text>
               <Text style={[done.scoreLbl, { color: scoreColor }]}>
-                {pct === 100 ? 'Parfait !' : pct >= 80 ? 'Excellent !' : pct >= 50 ? 'Bien !' : 'Continue !'}
+                {pct === 100 ? tr('hard.perfect') : pct >= 80 ? tr('hard.excellent') : pct >= 50 ? tr('hard.good') : tr('hard.keepGoing')}
               </Text>
-              <Text style={[done.scoreSub, { color: c.textTertiary }]}>{score.correct}/{score.total} bonnes réponses</Text>
+              <Text style={[done.scoreSub, { color: c.textTertiary }]}>{tr('lesson.correctAnswers', { n: score.correct, total: score.total })}</Text>
             </View>
           )}
 
-          {content.objectives.length > 0 && (
+          {pick(content.objectives, content.objectivesEn ?? []).length > 0 && (
             <View style={[done.card, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
-              <Text style={[done.cardTitle, { color: c.textPrimary }]}>✅ Tu as appris</Text>
-              {content.objectives.slice(0, 3).map((o, i) => (
+              <Text style={[done.cardTitle, { color: c.textPrimary }]}>{tr('lesson.youLearned')}</Text>
+              {pick(content.objectives, content.objectivesEn ?? []).slice(0, 3).map((o, i) => (
                 <View key={i} style={done.objRow}>
                   <Ionicons name="checkmark-circle" size={15} color={accent} style={{ marginTop: 2 }} />
                   <Text style={[done.objTxt, { color: c.textSecondary }]}>{o}</Text>
@@ -1023,12 +1111,12 @@ export default function LessonScreen() {
               style={[done.cta, { backgroundColor: accent }]}
               onPress={() => router.replace({ pathname: '/lesson', params: { id: nextLesson.id, moduleId, accent } })}
             >
-              <Text style={done.ctaTxt}>Leçon suivante</Text>
+              <Text style={done.ctaTxt}>{tr('lesson.next')}</Text>
               <Ionicons name="arrow-forward" size={18} color="#FFF" />
             </TouchableOpacity>
           ) : null}
           <TouchableOpacity style={[done.outline, { borderColor: accent }]} onPress={() => router.canGoBack() ? router.back() : router.replace('/cours')}>
-            <Text style={[done.outlineTxt, { color: accent }]}>Retour aux cours</Text>
+            <Text style={[done.outlineTxt, { color: accent }]}>{tr('hard.backToCourses')}</Text>
           </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
@@ -1048,7 +1136,7 @@ export default function LessonScreen() {
           </TouchableOpacity>
           <View style={[hdr.quizBadge, { backgroundColor: accent + '18' }]}>
             <Ionicons name="bulb-outline" size={13} color={accent} />
-            <Text style={[hdr.quizTxt, { color: accent }]}>Quiz</Text>
+            <Text style={[hdr.quizTxt, { color: accent }]}>{tr('hard.quiz')}</Text>
           </View>
           <View style={{ flex: 1 }} />
           <Text style={[hdr.step, { color: c.textTertiary }]}>{exIdx + 1}/{nExercises}</Text>
@@ -1091,41 +1179,46 @@ export default function LessonScreen() {
           <View style={{ gap: 14 }}>
             {/* Hero */}
             <View style={[intro.hero, { backgroundColor: accent + '10', borderColor: accent + '28' }]}>
-              <Text style={[intro.title, { color: c.textPrimary }]}>{content.title}</Text>
+              <Text style={[intro.title, { color: c.textPrimary }]}>{pick(content.title, content.titleEn ?? content.title)}</Text>
               <View style={intro.chips}>
                 <View style={[intro.chip, { backgroundColor: accent + '22' }]}>
-                  <Text style={[intro.chipTxt, { color: accent }]}>{DIFFICULTY_LABEL[content.difficulty] ?? content.difficulty}</Text>
+                  <Text style={[intro.chipTxt, { color: accent }]}>{(() => { const d = DIFFICULTY_LABEL[content.difficulty]; return d ? pick(d.fr, d.en) : content.difficulty; })()}</Text>
                 </View>
                 {nSections > 0 && (
                   <View style={[intro.chip, { backgroundColor: c.cardBg, borderWidth: 1, borderColor: c.borderMedium }]}>
-                    <Text style={[intro.chipTxt, { color: c.textSecondary }]}>📚 {nSections} sections</Text>
+                    <Text style={[intro.chipTxt, { color: c.textSecondary }]}>📚 {nSections} {tr('lesson.sections')}</Text>
                   </View>
                 )}
                 {nExercises > 0 && (
                   <View style={[intro.chip, { backgroundColor: c.cardBg, borderWidth: 1, borderColor: c.borderMedium }]}>
-                    <Text style={[intro.chipTxt, { color: c.textSecondary }]}>✏️ {nExercises} exercices</Text>
+                    <Text style={[intro.chipTxt, { color: c.textSecondary }]}>✏️ {nExercises} {tr('lesson.exercises')}</Text>
                   </View>
                 )}
               </View>
             </View>
 
-            {/* Intro */}
-            {(content.introTitle || content.introContent) && (
-              <View style={[card.box, { backgroundColor: c.cardBg, borderColor: c.borderLight, borderLeftWidth: 4, borderLeftColor: accent }]}>
-                {content.introTitle ? (
-                  <Text style={[card.title, { color: c.textPrimary }]}>💡 {content.introTitle}</Text>
-                ) : null}
-                {content.introContent ? (
-                  <BodyText text={content.introContent} color={c.textSecondary} accent={accent} />
-                ) : null}
-              </View>
-            )}
+            {/* Intro — en EN, affichée seulement si traduite (sinon masquée, zéro FR) */}
+            {(() => {
+              const iTitle = lang === 'en' ? (content.introTitleEn ?? '') : content.introTitle;
+              const iBody  = lang === 'en' ? (content.introContentEn ?? '') : content.introContent;
+              if (!iTitle && !iBody) return null;
+              return (
+                <View style={[card.box, { backgroundColor: c.cardBg, borderColor: c.borderLight, borderLeftWidth: 4, borderLeftColor: accent }]}>
+                  {iTitle ? (
+                    <Text style={[card.title, { color: c.textPrimary }]}>💡 {iTitle}</Text>
+                  ) : null}
+                  {iBody ? (
+                    <BodyText text={iBody} color={c.textSecondary} accent={accent} />
+                  ) : null}
+                </View>
+              );
+            })()}
 
-            {/* Objectifs */}
-            {content.objectives.length > 0 && (
+            {/* Objectifs — en EN, affichés seulement si traduits */}
+            {pick(content.objectives, content.objectivesEn ?? []).length > 0 && (
               <View style={[card.box, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
-                <Text style={[card.title, { color: c.textPrimary }]}>🎯 Objectifs</Text>
-                {content.objectives.map((o, i) => (
+                <Text style={[card.title, { color: c.textPrimary }]}>{tr('lesson.objectives')}</Text>
+                {pick(content.objectives, content.objectivesEn ?? []).map((o, i) => (
                   <View key={i} style={obj.row}>
                     <View style={[obj.num, { backgroundColor: accent }]}>
                       <Text style={obj.numTxt}>{i + 1}</Text>
@@ -1139,17 +1232,17 @@ export default function LessonScreen() {
             {/* Au programme */}
             {(nSections > 0 || nExercises > 0) && (
               <View style={[card.box, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
-                <Text style={[card.title, { color: c.textPrimary }]}>📋 Au programme</Text>
+                <Text style={[card.title, { color: c.textPrimary }]}>{tr('lesson.program')}</Text>
                 {sections.map((sec, i) => (
                   <View key={`s${i}`} style={prog2.row}>
                     <View style={[prog2.dot, { backgroundColor: accent }]} />
-                    <Text style={[prog2.txt, { color: c.textSecondary }]}>{sec.title}</Text>
+                    <Text style={[prog2.txt, { color: c.textSecondary }]}>{pick(sec.title, sec.titleEn)}</Text>
                   </View>
                 ))}
                 {nExercises > 0 && (
                   <View style={prog2.row}>
                     <View style={[prog2.dot, { backgroundColor: '#8B5CF6' }]} />
-                    <Text style={[prog2.txt, { color: c.textSecondary }]}>{nExercises} exercices interactifs</Text>
+                    <Text style={[prog2.txt, { color: c.textSecondary }]}>{tr('lesson.exercisesCount', { n: nExercises })}</Text>
                   </View>
                 )}
               </View>
@@ -1166,15 +1259,15 @@ export default function LessonScreen() {
           <TouchableOpacity style={[footer.cta, { backgroundColor: accent }]} onPress={goNext}>
             <Text style={footer.ctaTxt}>
               {isIntro
-                ? nSections > 0 ? 'Commencer' : nExercises > 0 ? 'Passer au quiz' : 'Terminer'
-                : secIdx + 1 < nSections ? 'Section suivante'
-                : nExercises > 0 ? 'Passer au quiz' : 'Terminer'}
+                ? nSections > 0 ? tr('lesson.start') : nExercises > 0 ? tr('lesson.toQuiz') : tr('lesson.finish')
+                : secIdx + 1 < nSections ? tr('lesson.sectionNext')
+                : nExercises > 0 ? tr('lesson.toQuiz') : tr('lesson.finish')}
             </Text>
             <Ionicons name="arrow-forward" size={18} color="#FFF" />
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity style={[footer.cta, { backgroundColor: accent }]} onPress={finish}>
-            <Text style={footer.ctaTxt}>Terminer la leçon</Text>
+          <TouchableOpacity style={[footer.cta, { backgroundColor: accent }]} onPress={() => void finish()}>
+            <Text style={footer.ctaTxt}>{tr('lesson.finishLesson')}</Text>
             <Ionicons name="checkmark" size={18} color="#FFF" />
           </TouchableOpacity>
         )}

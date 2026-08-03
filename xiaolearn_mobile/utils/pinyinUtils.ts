@@ -49,3 +49,71 @@ export function spacePinyin(raw: string): string {
   }
   return out.trim();
 }
+
+// ─── Pinyin d'une phrase avec ponctuation ────────────────────────────────────
+import { pinyin as _pinyinPro } from 'pinyin-pro';
+
+/** Ponctuation chinoise → latine pour le rendu pinyin. */
+const _ZH_PUNCT: Record<string, string> = {
+  '，': ',', '。': '.', '！': '!', '？': '?', '：': ':', '；': ';',
+  '、': ',', '（': '(', '）': ')', '「': '"', '」': '"', '《': '"', '》': '"',
+  '”': '"', '“': '"', '…': '…',
+};
+
+const _HAN = /[㐀-鿿]/;
+
+/** Nombre de syllabes dans un token pinyin (runs de voyelles). */
+function _sylCount(token: string): number {
+  let n = 0, inRun = false;
+  for (const ch of token.toLowerCase()) {
+    const isV = _UNTONED_V.has(ch) || _TONED.has(ch);
+    if (isV && !inRun) { n++; inRun = true; }
+    else if (!isV) inRun = false;
+  }
+  return Math.max(1, n);
+}
+
+/**
+ * Fusionne la ponctuation des hanzi dans un pinyin SOURCE existant, en
+ * conservant EXACTEMENT le découpage des mots du pinyin source
+ * (ex: 你好 → "nǐhǎo" reste groupé). La ponctuation chinoise est convertie
+ * en latin et insérée à la bonne position.
+ *
+ * ex: hanzi="喂，你好！", pinyin="wèi nǐhǎo" → "wèi, nǐhǎo!"
+ */
+export function mergePinyinPunct(hanzi: string, srcPinyin: string): string {
+  if (!hanzi) return '';
+  // Pas de pinyin source → repli pinyin-pro (par syllabe).
+  if (!srcPinyin || !srcPinyin.trim()) {
+    try {
+      const raw = _pinyinPro(hanzi, { toneType: 'symbol' });
+      return _tidy(raw.replace(/[，。！？：；、（）「」《》”“…]/g, c => _ZH_PUNCT[c] ?? c));
+    } catch { return ''; }
+  }
+
+  const tokens = srcPinyin.trim().split(/\s+/).filter(Boolean)
+    .map(t => ({ text: t, syl: _sylCount(t) }));
+
+  let out = '';
+  let ti = 0, used = 0;
+  for (const ch of Array.from(hanzi)) {
+    if (_HAN.test(ch)) {
+      if (ti >= tokens.length) continue;
+      if (used === 0) out += (out ? ' ' : '') + tokens[ti].text; // émet le token entier
+      used++;
+      if (used >= tokens[ti].syl) { ti++; used = 0; }
+    } else if (_ZH_PUNCT[ch]) {
+      out += _ZH_PUNCT[ch]; // ponctuation collée au token précédent
+    }
+  }
+  return _tidy(out);
+}
+
+/** Espacement propre : pas d'espace avant ponctuation, un espace après. */
+function _tidy(s: string): string {
+  return s
+    .replace(/\s+([,.!?:;)…])/g, '$1')
+    .replace(/([,.!?:;])(?=\S)/g, '$1 ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}

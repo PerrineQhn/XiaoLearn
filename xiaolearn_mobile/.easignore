@@ -1,0 +1,26 @@
+# ── Dépendances (réinstallées par EAS : npm install) ──────────────
+node_modules/
+
+# ── Artefacts natifs iOS (réinstallés par EAS : pod install) ───────
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+
+# ── Artefacts natifs Android (régénérés par EAS : gradle) ──────────
+android/build/
+android/.gradle/
+android/app/build/
+android/.cxx/
+
+# ── Caches & divers ───────────────────────────────────────────────
+.git/
+.expo/
+dist/
+web-build/
+*.log
+.DS_Store
+
+# ── Fichiers d'environnement locaux (les secrets vont dans EAS) ────
+.env.local

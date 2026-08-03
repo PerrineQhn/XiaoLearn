@@ -1,0 +1,38 @@
+# ── Dépendances ───────────────────────────────────────────────────
+node_modules/
+
+# ── Expo ──────────────────────────────────────────────────────────
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# ── Natif iOS (régénéré : pod install) ────────────────────────────
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/.xcode.env.local
+*.xcuserstate
+project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# ── Natif Android (régénéré : gradle) ─────────────────────────────
+android/build/
+android/.gradle/
+android/app/build/
+android/.cxx/
+*.keystore
+!debug.keystore
+
+# ── Métro / caches ────────────────────────────────────────────────
+.metro-health-check*
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# ── Divers ────────────────────────────────────────────────────────
+.DS_Store
+*.orig.*
+.env*.local
+.env

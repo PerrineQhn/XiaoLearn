@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "XiaoLearn",
+    "slug": "xiaolearn-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fffaf3"
+    },
+    "scheme": "xiaolearn",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.xiaolearn.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "XiaoLearn utilise le micro pour évaluer ta prononciation du mandarin.",
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.820279434994-6bp6f54gg1gp9r8vi4ennlj0rmpsgg60"
+            ]
+          }
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#fffaf3"
+      },
+      "package": "com.xiaolearn.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-av",
+        {
+          "microphonePermission": "XiaoLearn utilise le micro pour évaluer ta prononciation du mandarin."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#D8483E"
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6a217588-352d-4e99-97e4-fc5fcf27a01a"
+      }
+    }
+  }
+}
