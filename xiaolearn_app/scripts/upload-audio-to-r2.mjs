@@ -49,6 +49,13 @@ const DRY_RUN = args.includes('--dry-run');
 const FORCE = args.includes('--force');
 const SUBDIR_ARG = args.find((a) => a.startsWith('--dir='));
 const SUBDIR = SUBDIR_ARG ? SUBDIR_ARG.slice(6) : null;
+// --files=<liste.txt> : n'envoie que les chemins listés (un par ligne, relatifs
+// à public/). Le balayage complet parcourt 174 000 fichiers pour ne rien faire
+// dans 99,9 % des cas ; quand on sait exactement ce qui vient d'être généré,
+// autant ne poser que les HEAD utiles. Reste idempotent : chaque fichier passe
+// par la même comparaison d'ETag.
+const FILES_ARG = args.find((a) => a.startsWith('--files='));
+const FILES_LIST = FILES_ARG ? FILES_ARG.slice(8) : null;
 const CONCURRENCY = parseInt(process.env.UPLOAD_CONCURRENCY ?? '16', 10);
 
 // ---------------------------------------------------------------------------
@@ -221,22 +228,44 @@ async function runPool(items, worker, concurrency, onProgress) {
 // ---------------------------------------------------------------------------
 async function main() {
   const targetDir = SUBDIR ? join(AUDIO_DIR, SUBDIR) : AUDIO_DIR;
-  if (!existsSync(targetDir)) {
+  if (!FILES_LIST && !existsSync(targetDir)) {
     console.error(`[FATAL] Dossier introuvable : ${targetDir}`);
     process.exit(1);
   }
 
   console.log(`Account  : ${cfg.accountId}`);
   console.log(`Bucket   : ${cfg.bucket}`);
-  console.log(`Source   : ${relative(ROOT, targetDir)}`);
+  console.log(`Source   : ${FILES_LIST ? `liste ${relative(ROOT, FILES_LIST)}` : relative(ROOT, targetDir)}`);
   console.log(`Mode     : ${DRY_RUN ? 'DRY RUN (aucun upload)' : 'PRODUCTION'}`);
   console.log(`Force    : ${FORCE ? 'oui (re-upload tout)' : 'non (skip identiques)'}`);
   console.log(`Parallel : ${CONCURRENCY}`);
   console.log('');
 
-  console.log('Énumération des fichiers…');
   const files = [];
-  for await (const f of walkAudioFiles(targetDir)) files.push(f);
+  if (FILES_LIST) {
+    if (!existsSync(FILES_LIST)) {
+      console.error(`[FATAL] Liste introuvable : ${FILES_LIST}`);
+      process.exit(1);
+    }
+    const missing = [];
+    for (const line of (await readFile(FILES_LIST, 'utf8')).split(/\r?\n/)) {
+      const rel = line.trim();
+      if (!rel || rel.startsWith('#')) continue;
+      const full = join(ROOT, 'public', rel);
+      if (existsSync(full)) files.push(full);
+      else missing.push(rel);
+    }
+    // Un chemin listé mais absent du disque signale une liste périmée. On le
+    // dit plutôt que d'annoncer « 0 échec » sur un fichier jamais envoyé.
+    if (missing.length) {
+      console.error(`[ATTENTION] ${missing.length} fichier(s) listé(s) absent(s) du disque :`);
+      for (const m of missing.slice(0, 10)) console.error(`  ${m}`);
+      process.exitCode = 1;
+    }
+  } else {
+    console.log('Énumération des fichiers…');
+    for await (const f of walkAudioFiles(targetDir)) files.push(f);
+  }
 
   let totalBytes = 0;
   for (const f of files) totalBytes += (await stat(f)).size;

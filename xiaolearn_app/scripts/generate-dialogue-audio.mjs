@@ -119,7 +119,27 @@ const SPEAKER_HINTS = {
   '女儿': 'zh-CN-XiaoyiNeural',
   '朋友': 'zh-CN-YunxiNeural',
   '医生': 'zh-CN-XiaohanNeural',
-  '病人': 'zh-CN-YunjianNeural'
+  '病人': 'zh-CN-YunjianNeural',
+  // Personnages nommés : sans indice explicite ils tombaient dans le
+  // round-robin, qui donnait une voix d'homme à 王丽 et une voix de femme à
+  // 小明 — l'inverse du genre porté par leur prénom.
+  '小明': 'zh-CN-YunxiNeural',        // M - prénom masculin classique
+  '王丽': 'zh-CN-XiaoxiaoNeural',     // F - 丽
+  '小李': 'zh-CN-YunjianNeural',      // M
+  '小王': 'zh-CN-XiaoyiNeural',       // F
+  '张经理': 'zh-CN-YunfengNeural',    // M - cadre
+  '经理': 'zh-CN-YunfengNeural',      // M - cadre
+  '李工程师': 'zh-CN-YunyangNeural',  // M - technique
+  '应聘者': 'zh-CN-XiaomoNeural',     // F - candidate
+  '工作人员': 'zh-CN-XiaohanNeural',  // F - guichet
+  '游客': 'zh-CN-YunxiNeural',        // M - visiteur
+  '张军': 'zh-CN-YunxiNeural',        // M - 军
+  '王蒙': 'zh-CN-YunjianNeural',      // M
+  '李娜': 'zh-CN-XiaoxiaoNeural',     // F - 娜
+  '陈先生': 'zh-CN-YunjianNeural',    // M - 先生
+  '周医生': 'zh-CN-XiaohanNeural',    // F - médecin
+  '师父': 'zh-CN-YunfengNeural',      // M - maître, voix grave
+  '小陈': 'zh-CN-YunxiNeural'         // M - jeune
 };
 
 /**
