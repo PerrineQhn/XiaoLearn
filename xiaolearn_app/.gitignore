@@ -37,6 +37,10 @@ data/translation-zh-cache.json
 
 # Scripts : cache local de transpilation TS (generate-dialogue-audio.mjs)
 scripts/.cache-dialogue-audio/
+# Inventaire du bucket R2 : 7 Mo de cache reconstructible, et périmé
+# dès le prochain envoi.
+scripts/.r2-inventory.json
+scripts/r2-to-upload.txt
 data/cfdict.xml
 data/hsk30-expanded.csv
 data/pinyin/
