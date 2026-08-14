@@ -74,6 +74,16 @@ const RELUS_ET_ACCEPTES = new Set<string>([
  * Textes où un caractère chinois au milieu du français est voulu : la fiche
  * parle du caractère lui-même, ou nomme une génération (les 90后).
  */
+/**
+ * Explications qui opposent volontairement le mot enseigné à un voisin non
+ * proposé : contraster 晚上 avec 晚安 est utile même si 晚安 n'est pas un choix.
+ */
+const CONTRASTE_VOULU = new Set<string>([
+  'cecr-a2-city-m2-trans-zh2fr',   // 多长时间 contre 多少钱 et 什么时候
+  'cecr-a2-day-m1-listen1',        // 晚上 contre 晚安 et 晚饭
+  'a2-q14',                        // 一点儿 contre 有点儿
+]);
+
 const CHINOIS_VOULU = new Set<string>([
   'dico 偏旁', 'dialogue dlg-a1-classroom#1',
   'dialogue dlg-b12-generations#0', 'dialogue dlg-b12-generations#1',
@@ -340,6 +350,49 @@ for (const d of dialogues)
   for (const d of dialogues) (d.dialogue.quiz ?? []).forEach((q, i) =>
     paire(`${d.dialogue.id}#${i}`, q.choicesFr, q.choicesEn));
   verifier('QCM · version anglaise désalignée', bilingue, true);
+
+  // Une explication qui cite un choix retiré depuis. Le cas s'est produit en
+  // remplaçant des distracteurs : « À ne pas confondre avec 要不然 » alors que
+  // 要不然 n'était plus proposé nulle part.
+  const orphelines: string[] = [];
+  const citation = /(?:confondre avec|confused with|contrairement à|unlike|au lieu de|instead of)\s+\*{0,2}([一-鿿]{2,8})/g;
+  const citer = (id: string, choix: string[], ...textes: (string | undefined)[]) => {
+    if (CONTRASTE_VOULU.has(id)) return;
+    for (const t of textes) {
+      if (!t) continue;
+      for (const m of t.matchAll(citation))
+        if (!choix.some(c => (c ?? '').includes(m[1])))
+          orphelines.push(`${id} — cite « ${m[1]} », absent des choix`);
+    }
+  };
+  for (const list of Object.values(EXERCISES)) for (const ex of list)
+    if (ex.choices?.length) citer(ex.id, ex.choices, ex.explanation, ex.explanationEn);
+  for (const b of Object.values(cecrBilans)) for (const q of b.questions)
+    citer(q.id, q.choices, q.explanationFr, q.explanationEn);
+  verifier('QCM · explication citant un choix disparu', orphelines, false);
+
+  // Accents et ligatures perdus dans les textes français — la faute la plus
+  // fréquente quand un texte transite par un outil qui normalise l'unicode.
+  // Les frontières de mot de JavaScript ignorent les lettres accentuées :
+  // « centimètres » contient « tres » pour \b. D'où les gardes explicites.
+  const SANS_ACCENT = new RegExp(
+    '(?<![a-zà-ÿ])(?:tres|apres|deja|etre|meme|prefere|eleve|reponse|probleme|francais|' +
+    'ecole|bientot|plutot|hopital|theatre|fenetre|necessaire|premiere|derniere|celebre|' +
+    'paraitre|disparait|apparait|connait|coeur|soeur|oeuvre|oeil|voeu|noeud)(?![a-zà-ÿ])', 'i');
+  const accents: string[] = [];
+  const lireFr = (id: string, ...textes: (string | undefined)[]) => {
+    for (const t of textes) {
+      const m = t?.replace(/[一-鿿]/g, ' ').match(SANS_ACCENT);
+      if (m) accents.push(`${id} — « ${m[0]} » : ${t!.slice(0, 60)}`);
+    }
+  };
+  for (const list of Object.values(EXERCISES)) for (const ex of list)
+    lireFr(ex.id, ex.prompt, ex.explanation, ...(ex.choices ?? []));
+  for (const b of Object.values(cecrBilans)) for (const q of b.questions)
+    lireFr(q.id, q.promptFr, q.explanationFr, ...q.choices);
+  for (const d of dialogues) for (const [i, l] of d.dialogue.lines.entries())
+    lireFr(`${d.dialogue.id}#${i}`, l.translationFr, l.note);
+  verifier('français · accent ou ligature perdus', accents, true);
 
   // Presque tous les QCM ont quatre choix ; les positions 5+ sont trop rares
   // pour qu'un écart y signifie quoi que ce soit.
