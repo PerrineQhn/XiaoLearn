@@ -27,6 +27,8 @@ import { usePronunciation } from '@/hooks/usePronunciation';
 import { useUserStats } from '@/hooks/useUserStats';
 import { useCardUnlocks } from '@/contexts/CardsContext';
 import { logError } from '@/data/errorLog';
+import { readableContent } from '@/components/TabletFrame';
+import { READABLE_WIDTH } from '@/hooks/useLayout';
 
 const SW = Dimensions.get('window').width;
 
@@ -328,7 +330,13 @@ function MinimalPairs({ pairs, c, onPlay }: {
   const { pick, t } = useI18n();
   // 4 paires → grille 2×2, sinon 3 colonnes
   const cols = pairs.length === 4 ? 2 : 3;
-  const cardWidth = (width - 40 - 8 * (cols - 1)) / cols;
+  // La largeur se calcule sur le CONTENEUR, pas sur la fenêtre : le corps de
+  // la leçon est borné à READABLE_WIDTH, et se fier à `width` faisait déborder
+  // la grille hors du bloc de lecture dès qu'on ouvrait la leçon sur une
+  // tablette. Le défaut ne se voyait pas sur téléphone, où les deux valeurs
+  // coïncident.
+  const contenu = Math.min(width, READABLE_WIDTH);
+  const cardWidth = (contenu - 40 - 8 * (cols - 1)) / cols;
   return (
     <View style={mp.wrap}>
       <Text style={[mp.label, { color: c.textTertiary }]}>{t('lesson.minimalPairs')}</Text>
@@ -530,18 +538,46 @@ const sv = StyleSheet.create({
 
 // ─── Exercice : Fill (phrase à trous) ────────────────────────
 // placeholder peut être __ (2) ou ___ (3+) selon les données
+/**
+ * Phrase à trous.
+ *
+ * Certaines phrases en portent DEUX, parce que la réponse est une structure
+ * corrélative : 又…又, 所有…都, 仁/义. La version précédente ne lisait que les
+ * deux premiers morceaux du découpage et laissait tomber le reste — dans
+ * « 这本书___有趣___有用。» l'apprenant ne voyait que « 这本书 ___ 有趣 », la
+ * moitié de la phrase ayant disparu, et l'exercice n'avait plus de sens.
+ *
+ * On rend donc tous les morceaux, et l'on répartit la réponse choisie sur les
+ * trous quand elle se laisse découper autant de fois qu'il y en a.
+ */
 function FillSentence({ sentence, chosen, c }: { sentence: string; chosen: string | null; c: typeof Colors.light }) {
-  const parts = sentence.split(/_{2,}/);  // split sur 2+ underscores
-  const before = parts[0] ?? '';
-  const after  = parts[1] ?? '';
+  const parts = sentence.split(/_{2,}/);        // n trous → n+1 morceaux
+  const trous = parts.length - 1;
+
+  // « 又…又 », « 所有...都 », « 仁/义 » : une réponse par trou.
+  const morceaux = (chosen ?? '').split(/\s*(?:…|\.{3}|\/)\s*/).filter(Boolean);
+  const remplit = (i: number): string => {
+    if (!chosen) return '_____';
+    if (trous > 1 && morceaux.length === trous) return morceaux[i];
+    return i === 0 ? chosen : '_____';
+  };
+
   return (
     <View style={fill.sentRow}>
       <Text style={[fill.txt, { color: c.textPrimary }]}>
-        {before}
-        <Text style={[fill.blank, { color: chosen ? accent_placeholder : c.textTertiary, fontWeight: chosen ? '700' : '400' }]}>
-          {chosen ?? '_____'}
-        </Text>
-        {after}
+        {parts.map((part, i) => (
+          <Text key={i}>
+            {part}
+            {i < trous && (
+              <Text style={[fill.blank, {
+                color: chosen ? accent_placeholder : c.textTertiary,
+                fontWeight: chosen ? '700' : '400',
+              }]}>
+                {remplit(i)}
+              </Text>
+            )}
+          </Text>
+        ))}
       </Text>
     </View>
   );
@@ -802,7 +838,7 @@ function QuizCard({
 
   return (
     <Animated.View style={{ transform: [{ translateX: shake }], flex: 1 }}>
-      <ScrollView contentContainerStyle={qz.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={[qz.scroll, readableContent]} showsVerticalScrollIndicator={false}>
         {/* Compteur — avec indicateur de sous-étape si multi-step */}
         <Text style={[qz.counter, { color: c.textTertiary }]}>
           {idx + 1} / {total}
@@ -879,7 +915,7 @@ function QuizCard({
             disabled={built.length < ex.choices.length}
             onPress={validateOrder}
           >
-            <Text style={qz.validateTxt}>Valider</Text>
+            <Text style={qz.validateTxt}>{tr('lesson.verify')}</Text>
           </TouchableOpacity>
         ) : null}
 
@@ -1077,7 +1113,7 @@ export default function LessonScreen() {
     return (
       <SafeAreaView style={[root.s, { backgroundColor: c.appBg }]}>
         <ProgressBar current={totalSteps} total={totalSteps} color={accent} />
-        <ScrollView contentContainerStyle={done.scroll}>
+        <ScrollView contentContainerStyle={[done.scroll, readableContent]}>
           <View style={done.circle}>
             <Text style={done.emoji}>🎉</Text>
           </View>
@@ -1174,7 +1210,7 @@ export default function LessonScreen() {
         )}
       </View>
 
-      <ScrollView contentContainerStyle={sc.content} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={[sc.content, readableContent]} showsVerticalScrollIndicator={false}>
         {isIntro ? (
           <View style={{ gap: 14 }}>
             {/* Hero */}

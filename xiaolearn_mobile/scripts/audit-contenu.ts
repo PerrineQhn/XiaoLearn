@@ -82,6 +82,11 @@ const CONTRASTE_VOULU = new Set<string>([
   'cecr-a2-city-m2-trans-zh2fr',   // 多长时间 contre 多少钱 et 什么时候
   'cecr-a2-day-m1-listen1',        // 晚上 contre 晚安 et 晚饭
   'a2-q14',                        // 一点儿 contre 有点儿
+  // Anciens distracteurs devenus des contrastes : ils étaient acceptables
+  // comme réponse, on les a retirés des choix et gardés dans l'explication.
+  'cecr-b22-debate-m1-gen1',       // 因为 contre 由于
+  'cecr-b11-conversation-m7-gen1', // 换工作 contre 跳槽
+  'cecr-a2-grammar-m6-gen3',       // 不必 contre 不用
 ]);
 
 const CHINOIS_VOULU = new Set<string>([
@@ -350,6 +355,25 @@ for (const d of dialogues)
   for (const d of dialogues) (d.dialogue.quiz ?? []).forEach((q, i) =>
     paire(`${d.dialogue.id}#${i}`, q.choicesFr, q.choicesEn));
   verifier('QCM · version anglaise désalignée', bilingue, true);
+
+  // Une phrase à trous doit avoir autant de trous que la réponse a de
+  // morceaux. Dix exercices portaient deux trous pour une réponse corrélative
+  // (又…又, 所有…都) que le composant ne savait pas répartir : la fin de la
+  // phrase disparaissait à l'écran.
+  const trous: string[] = [];
+  for (const list of Object.values(EXERCISES)) for (const ex of list) {
+    if (ex.type !== 'fill') continue;
+    const phrase = (ex as any).sentence as string | undefined;
+    if (!phrase) { trous.push(`${ex.id} — texte à trous sans phrase`); continue; }
+    const n = (phrase.match(/_{2,}/g) ?? []).length;
+    if (n === 0) { trous.push(`${ex.id} — phrase sans trou : ${phrase.slice(0, 40)}`); continue; }
+    if (n === 1) continue;
+    const bonne = ex.choices?.[ex.correctIndex] ?? '';
+    const morceaux = bonne.split(/\s*(?:…|\.{3}|\/)\s*/).filter(Boolean).length;
+    if (morceaux !== n)
+      trous.push(`${ex.id} — ${n} trous mais la réponse « ${bonne} » en comble ${morceaux}`);
+  }
+  verifier('textes à trous · trous et réponse discordants', trous, true, undefined);
 
   // Le désalignement d'ORDRE, lui, ne se voit pas à la longueur : `choicesEn`
   // peut être une permutation de `choices`, et `correctIndex` désigne alors la
