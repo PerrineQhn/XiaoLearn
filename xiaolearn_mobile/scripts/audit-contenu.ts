@@ -32,6 +32,53 @@ import { simulatorScenarios } from '@/data/simulatorScenarios';
 
 const details = process.argv.includes('--details');
 
+/**
+ * Cas relus un par un et jugés corrects malgré l'alerte.
+ *
+ * Sans cette liste, vingt-sept avertissements permanents finissent par être
+ * ignorés en bloc, et le vingt-huitième — le vrai — avec eux. Un identifiant
+ * n'entre ici qu'après examen, et la raison est écrite à côté.
+ */
+const RELUS_ET_ACCEPTES = new Set<string>([
+  // Le trait signalé EST la compétence évaluée : l'exercice demande justement
+  // de reconnaître la négation, l'aspect ou la forme interrogative.
+  'cecr-a1-daily-m4-listen1',        // reconnaître 没有 à l'écoute
+  'cecr-a2-food-m2-gq1',             // 吃不了 : complément potentiel, pas une négation ordinaire
+  'cecr-a2-nuances-m4-usg1',         // 正在…呢 contre 了 et 着
+  'cecr-a2-nuances-m4-tr1',          // même opposition, en traduction
+  'cecr-b11-jiucai-m1-contrast-4',   // 就 contre 才, le 了 fait partie de la forme correcte
+  'cecr-b21-grammar-conj-m2-mcq2',   // 无论…来不来 : l'alternative interrogative est le point
+  'cecr-b12-nuances-m7-gen1',
+  'cecr-b12-nuances-m13-q3',
+  'cecr-b21-nuances-m8-q3',
+  'cecr-c11-media-discourse-m3-q3',
+  'cecr-c12-chengyu-advanced-m3-q3',
+  'cecr-c12-education-system-m1-q3',
+  'cecr-c22-nuances-m7-dlg1',
+  'b11-q9',
+  'c12-q9',                          // choix de la particule finale : les options SONT des particules
+  'cecr-b11-de-m1-contrast-3',       // 的 / 地 / 得 et l'ordre des mots : exercice de forme
+  // Faux positifs du détecteur : le caractère repéré n'a pas ici sa valeur
+  // grammaticale — 过 de 不过 ou de 过敏, 不 de 不但 ou de 差不多.
+  'cecr-b22-conv-m6-ctx1',
+  'cecr-c21-nuances-m3-dlg1',
+  // Le trait porte sur le sens même de la réponse attendue : réagir avec
+  // modestie, refuser, réfuter — la négation y est inévitable.
+  'cecr-b11-conv-m4-dlg1', 'cecr-b11-conv-m4-dlg2',
+  'cecr-b22-conv-m2-dlg2', 'cecr-c11-conv-m4-mcq1', 'cecr-c11-conv-m6-dlg1',
+  'cecr-c12-conv-m3-ctx2', 'cecr-c12-conv-m6-dlg2', 'cecr-c21-conv-m1-mcq1',
+  'cecr-c21-conv-m3-ctx1', 'cecr-c22-conv-m4-mcq1', 'cecr-c22-conv-m4-trans1',
+]);
+
+/**
+ * Textes où un caractère chinois au milieu du français est voulu : la fiche
+ * parle du caractère lui-même, ou nomme une génération (les 90后).
+ */
+const CHINOIS_VOULU = new Set<string>([
+  'dico 偏旁', 'dialogue dlg-a1-classroom#1',
+  'dialogue dlg-b12-generations#0', 'dialogue dlg-b12-generations#1',
+]);
+
 // ---------------------------------------------------------------------------
 // Outils
 // ---------------------------------------------------------------------------
@@ -241,7 +288,7 @@ for (const d of dialogues)
     if (q.choix.some(c => !c || !c.trim()))
       vides.push(`${q.source} · ${q.id}`);
     const t = seTrahit(q.choix, q.correct);
-    if (t) trahis.push(`${q.source} · ${q.id} — ${t} : ${q.choix.join(' | ')}`);
+    if (t && !RELUS_ET_ACCEPTES.has(q.id)) trahis.push(`${q.source} · ${q.id} — ${t} : ${q.choix.join(' | ')}`);
   }
   verifier('QCM · index de bonne réponse hors bornes', bornes, true, qcms.length);
   verifier('QCM · choix dupliqués', doublons, true, qcms.length);
@@ -264,6 +311,36 @@ for (const d of dialogues)
   }
   verifier('QCM · distracteurs bouche-trou (formules recollées)', bouchetrou, true, qcms.length);
 
+  // Variante du même défaut : les distracteurs ne sont pas des formules
+  // connues mais de simples bribes de deux ou trois caractères, face à une
+  // bonne réponse développée. Le déséquilibre suffit à la désigner.
+  const bribes: string[] = [];
+  for (const q of qcms) {
+    const bonne = q.choix[q.correct];
+    if (!bonne || q.choix.length < 3 || !q.choix.every(c => HAN.test(c ?? ''))) continue;
+    if (RELUS_ET_ACCEPTES.has(q.id)) continue;
+    const autres = q.choix.filter((_, i) => i !== q.correct);
+    const plusLong = Math.max(...autres.map(c => (c ?? '').length));
+    if (bonne.length >= 2.5 * plusLong && plusLong <= 8 && bonne.length >= 12)
+      bribes.push(`${q.source} · ${q.id} — ${q.choix.join(' | ')}`);
+  }
+  verifier('QCM · distracteurs réduits à des bribes', bribes, true, qcms.length);
+
+  // Un QCM bilingue porte deux tableaux de choix que `correctIndex` indexe
+  // tous les deux. S'ils n'ont pas la même longueur, l'app en anglais désigne
+  // la mauvaise réponse — et rien ne le signale tant qu'on reste en français.
+  const bilingue: string[] = [];
+  const paire = (id: string, fr: string[], en?: string[]) => {
+    if (!en?.length) return;
+    if (en.length !== fr.length) bilingue.push(`${id} — ${fr.length} choix en français, ${en.length} en anglais`);
+  };
+  for (const list of Object.values(EXERCISES)) for (const ex of list) paire(ex.id, ex.choices ?? [], ex.choicesEn);
+  for (const b of Object.values(cecrBilans)) for (const q of b.questions) paire(q.id, q.choices, q.choicesEn);
+  for (const q of EVAL_QUESTIONS) paire(q.q.slice(0, 40), q.choices, q.choicesEn);
+  for (const d of dialogues) (d.dialogue.quiz ?? []).forEach((q, i) =>
+    paire(`${d.dialogue.id}#${i}`, q.choicesFr, q.choicesEn));
+  verifier('QCM · version anglaise désalignée', bilingue, true);
+
   // Presque tous les QCM ont quatre choix ; les positions 5+ sont trop rares
   // pour qu'un écart y signifie quoi que ce soit.
   const quatre = [0, 1, 2, 3].map(p => positions[p] ?? 0);
@@ -283,6 +360,7 @@ for (const d of dialogues)
   const melange: string[] = [];
   const majuscules: string[] = [];
   const regarde = (source: string, fr?: string, en?: string) => {
+    if (CHINOIS_VOULU.has(source)) return;
     if (fr && HAN.test(fr) && !/[«»"]/.test(fr)) melange.push(`${source} — chinois en français : ${fr.slice(0, 70)}`);
     if (en && HAN.test(en) && !/[«»"]/.test(en)) melange.push(`${source} — chinois en anglais : ${en.slice(0, 70)}`);
     for (const [t, lg] of [[fr, 'fr'], [en, 'en']] as const) {
@@ -356,8 +434,8 @@ for (const c of controles) {
   if (n && c.bloquant) bloquants += n;
   const sur = c.total ? `  (sur ${c.total.toLocaleString('fr-FR')})` : '';
   console.log(`  ${marque} ${c.nom.padEnd(52)} ${String(n).padStart(5)}${sur}`);
-  if (details && n) for (const x of c.cas.slice(0, 20)) console.log(`        · ${x}`);
-  if (details && n > 20) console.log(`        … et ${n - 20} autres`);
+  if (details && n) for (const x of c.cas.slice(0, 200)) console.log(`        · ${x}`);
+  if (details && n > 200) console.log(`        … et ${n - 200} autres`);
 }
 console.log(`\n╰─ ${bloquants === 0 ? 'aucune anomalie bloquante' : `${bloquants} anomalies bloquantes`}\n`);
 process.exit(bloquants ? 1 : 0);

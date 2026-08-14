@@ -91,12 +91,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« je suis français »).",
         "choices": [
-          "是",
+          "不",
           "有",
           "在",
-          "不"
-        ],
-        "correctIndex": 0,
+          "是"],
+        "correctIndex": 3,
         "explanationFr": "是 (shì) signifie « être ». La structure A 是 B = A est B. « 我是法国人 » = « je suis français ».",
         "contextFr": "我 ___ 法国人。",
         "topic": "grammar",
@@ -109,12 +108,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel chiffre correspond à 三 ?",
         "choices": [
-          "1",
-          "2",
           "3",
+          "2",
+          "1",
           "4"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "三 (sān) = 3. Les chiffres 1-10 : 一 (yī), 二 (èr), 三 (sān), 四 (sì), 五 (wǔ), 六 (liù), 七 (qī), 八 (bā), 九 (jiǔ), 十 (shí).",
         "topic": "characters",
         "promptEn": "Which number matches 三?",
@@ -141,12 +140,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel est le ton de 妈 dans 妈妈 (maman) ?",
         "choices": [
-          "1er ton (ā)",
-          "2e ton (á)",
           "3e ton (ǎ)",
+          "2e ton (á)",
+          "1er ton (ā)",
           "4e ton (à)"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "妈 se prononce mā, au 1er ton (haut et plat). C'est d'ailleurs l'exemple classique qu'on oppose à 马 (mǎ, cheval, 3e ton).",
         "topic": "tones",
         "promptEn": "What tone does 妈 carry in 妈妈 (mom)?",
@@ -164,11 +163,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Complète la phrase ci-dessous pour dire « je n'ai pas de livre ».",
         "choices": [
           "不有",
-          "没有",
+          "没是",
           "不是",
-          "没是"
-        ],
-        "correctIndex": 1,
+          "没有"],
+        "correctIndex": 3,
         "explanationFr": "La négation de 有 est TOUJOURS 没有, jamais 不有. 不 ne nie pas 有. Exception unique du système : partout ailleurs, 不 est la négation standard.",
         "contextFr": "我 ___ 书。",
         "topic": "grammar",
@@ -181,12 +179,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment dit-on « merci » ?",
         "choices": [
-          "对不起",
+          "谢谢",
           "请",
           "没关系",
-          "谢谢"
-        ],
-        "correctIndex": 3,
+          "对不起"],
+        "correctIndex": 0,
         "explanationFr": "谢谢 (xièxie) = merci. 对不起 = désolé, 请 = s'il vous plaît (en tête de demande), 没关系 = ce n'est rien.",
         "topic": "vocab",
         "promptEn": "How do you say \"thank you\"?",
@@ -198,11 +195,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quel classificateur (mot de mesure) s'utilise avec la plupart des noms communs en A1 ?",
         "choices": [
           "只 (zhī)",
-          "本 (běn)",
           "个 (gè)",
+          "本 (běn)",
           "条 (tiáo)"
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
         "explanationFr": "个 est le classificateur passe-partout : 一个人 (une personne), 一个朋友 (un ami). 本 = pour les livres, 只 = animaux, 条 = objets longs.",
         "topic": "grammar",
         "promptEn": "Which classifier (measure word) is used with most common nouns at A1?",
@@ -214,11 +211,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie le dialogue ci-dessous ?",
         "choices": [
           "A: Tu as quel âge ? B: J'ai vingt ans, merci.",
-          "A: Comment vas-tu ? B: Je vais très bien, merci.",
           "A: Tu es d'où ? B: Je suis de Paris, merci.",
+          "A: Comment vas-tu ? B: Je vais très bien, merci.",
           "A: Comment t'appelles-tu ? B: Je m'appelle Li, merci."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "你好吗 = « comment vas-tu ? » (litt. « tu bien ? »). 很 = très, placé devant un adjectif prédicat. 我很好 = « je vais très bien ».",
         "topic": "dialogue",
         "contextFr": "A: 你好吗？\nB: 我很好，谢谢。",
@@ -238,11 +235,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quel pinyin correspond au caractère 谢 (« remercier ») ?",
         "choices": [
           "xié",
-          "xiè",
+          "shè",
           "jié",
-          "shè"
-        ],
-        "correctIndex": 1,
+          "xiè"],
+        "correctIndex": 3,
         "explanationFr": "谢 se prononce xiè au 4e ton (descendant). Le doublement 谢谢 (xièxie) atténue souvent le second ton (neutre).",
         "topic": "tones",
         "promptEn": "Which pinyin matches the character 谢 (\"to thank\")?",
@@ -253,12 +249,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment se dit « grand-père paternel » en chinois ?",
         "choices": [
-          "爸爸 (bàba)",
-          "哥哥 (gēge)",
           "爷爷 (yéye)",
+          "哥哥 (gēge)",
+          "爸爸 (bàba)",
           "叔叔 (shūshu)"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "爷爷 = grand-père paternel. 奶奶 = grand-mère paternelle. La famille chinoise distingue côté paternel et maternel : 外公/外婆 côté maternel.",
         "topic": "vocab",
         "promptEn": "How do you say \"paternal grandfather\" in Chinese?",
@@ -270,11 +266,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quel chiffre s'écrit 八 ?",
         "choices": [
           "6",
-          "7",
           "8",
+          "7",
           "9"
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
         "explanationFr": "八 (bā) = 8. Le 8 est considéré comme chiffre porte-bonheur en Chine car 八 se prononce comme 发 (fā, « prospérer »).",
         "topic": "characters",
         "promptEn": "Which digit is written 八?",
@@ -285,12 +281,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète : « Bonjour, professeur ! »",
         "choices": [
-          "老师好",
-          "好老师",
           "老师你",
+          "好老师",
+          "老师好",
           "你老师好"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "La formule de salutation respectueuse est NOM + 好 : 老师好 (bonjour professeur), 大家好 (bonjour tout le monde). Construction figée à connaître.",
         "contextFr": "A: ___ ！\nB: 你们好！",
         "topic": "dialogue",
@@ -303,12 +299,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle est la différence de ton entre 妈 (mā) et 马 (mǎ) ?",
         "choices": [
-          "1er ton plat vs 3e ton creux (bas-remontant)",
+          "Aucune différence",
           "2e ton montant vs 4e ton descendant",
           "3e ton vs 4e ton",
-          "Aucune différence"
-        ],
-        "correctIndex": 0,
+          "1er ton plat vs 3e ton creux (bas-remontant)"],
+        "correctIndex": 3,
         "explanationFr": "妈 = 1er ton haut et plat (mā). 马 = 3e ton, bas avec une légère remontée (mǎ). Confondre les tons change le sens : maman vs cheval.",
         "topic": "tones",
         "promptEn": "What is the tonal difference between 妈 (mā) and 马 (mǎ)?",
@@ -341,12 +336,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel est le sens de 大 et de 小 ?",
         "choices": [
-          "大 = grand / 小 = petit",
           "大 = petit / 小 = grand",
+          "大 = grand / 小 = petit",
           "大 = vieux / 小 = jeune",
           "大 = beau / 小 = laid"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "大 (dà) = grand, 小 (xiǎo) = petit. Ce sont aussi des préfixes affectifs : 小李 = « petit Li » (familier), 大家 = « tout le monde » (litt. grande famille).",
         "topic": "characters",
         "promptEn": "What do 大 and 小 mean?",
@@ -364,11 +359,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans le dialogue ci-dessous, comment A est-il salué ?",
         "choices": [
           "On lui demande son nom.",
-          "On lui dit au revoir.",
           "On lui souhaite la bienvenue.",
+          "On lui dit au revoir.",
           "On lui présente quelqu'un."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "再见 (zàijiàn) = « au revoir » (litt. « à se revoir »). 明天 = demain. C'est une formule de séparation polie standard.",
         "topic": "dialogue",
         "contextFr": "A: 我走了。\nB: 再见，明天见！",
@@ -399,12 +394,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« il est allé à Pékin »).",
         "choices": [
-          "去 / 了",
+          "在 / 吗",
           "去 / 吗",
           "要 / 了",
-          "在 / 吗"
-        ],
-        "correctIndex": 0,
+          "去 / 了"],
+        "correctIndex": 3,
         "explanationFr": "Le marqueur 了 en fin de phrase (ou après le verbe) indique un changement d'état ou un événement accompli. 他去北京了 = « il est allé / parti à Pékin ».",
         "contextFr": "他 ___ 北京 ___ 。",
         "topic": "grammar",
@@ -423,12 +417,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment demander « où » en chinois ?",
         "choices": [
-          "什么",
-          "谁",
           "哪里",
+          "谁",
+          "什么",
           "几"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "哪里 (nǎlǐ) ou 哪儿 (nǎr, plus oral) = « où ». 什么 = quoi, 谁 = qui, 几 = combien (petit nombre).",
         "topic": "grammar",
         "promptEn": "How do you ask \"where\" in Chinese?",
@@ -455,12 +449,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« le livre de mon ami »).",
         "choices": [
-          "的",
-          "得",
           "地",
+          "得",
+          "的",
           "了"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "的 marque la possession ou la qualification : 我朋友的书 = le livre de mon ami. 得 et 地 sont des particules différentes (complément / adverbe).",
         "contextFr": "我朋友 ___ 书。",
         "topic": "grammar",
@@ -474,11 +468,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 他在图书馆 » ?",
         "choices": [
           "Il va à la bibliothèque.",
-          "Il est à la bibliothèque.",
+          "Il sort de la bibliothèque.",
           "Il va rentrer à la bibliothèque.",
-          "Il sort de la bibliothèque."
-        ],
-        "correctIndex": 1,
+          "Il est à la bibliothèque."],
+        "correctIndex": 3,
         "explanationFr": "在 + lieu = « se trouver à » (verbe localisatif). À distinguer de 去 (aller à). 他在图书馆 = il est à la bibliothèque.",
         "topic": "grammar",
         "promptEn": "What does \"他在图书馆\" mean?",
@@ -495,12 +488,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel jour vient après 星期四 ?",
         "choices": [
-          "星期一",
-          "星期三",
           "星期五",
+          "星期三",
+          "星期一",
           "星期天"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "星期 + chiffre : 星期一 lundi, 星期二 mardi, 星期三 mercredi, 星期四 jeudi, 星期五 vendredi, 星期六 samedi, 星期天 (ou 星期日) dimanche.",
         "topic": "vocab",
         "promptEn": "Which day comes after 星期四?",
@@ -545,12 +538,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Combien coûte ceci en chinois se dit :",
         "choices": [
-          "这个多少钱？",
+          "这个什么钱？",
           "这个几钱？",
           "这个哪钱？",
-          "这个什么钱？"
-        ],
-        "correctIndex": 0,
+          "这个多少钱？"],
+        "correctIndex": 3,
         "explanationFr": "多少 sert à demander une quantité potentiellement grande (prix, population). 几 sert pour un petit nombre attendu (< 10). 多少钱 = combien ça coûte.",
         "topic": "dialogue",
         "promptEn": "\"How much does this cost?\" in Chinese is:",
@@ -561,12 +553,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue ci-dessous, que veut dire B ?",
         "choices": [
-          "J'ai deux petites sœurs.",
           "J'ai deux grandes sœurs.",
+          "J'ai deux petites sœurs.",
           "J'ai deux frères.",
           "J'ai deux cousins."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "姐姐 = grande sœur (aînée). 妹妹 = petite sœur, 哥哥 = grand frère, 弟弟 = petit frère. Le chinois distingue systématiquement aîné/cadet dans la fratrie.",
         "topic": "dialogue",
         "contextFr": "A: 你有几个兄弟姐妹？\nB: 我有两个姐姐。",
@@ -585,12 +577,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment dire « il est 3h de l'après-midi » ?",
         "choices": [
-          "下午三点",
           "上午三点",
+          "下午三点",
           "晚上三点",
           "早上三点"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "下午 = après-midi, 上午 = matin (avant midi), 早上 = tôt le matin, 晚上 = soir. 点 = heure. 下午三点 = 15h.",
         "topic": "vocab",
         "promptEn": "How do you say \"it's 3pm\"?",
@@ -601,12 +593,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« je rentre chez moi en bus »).",
         "choices": [
-          "坐 / 回家",
-          "开 / 回家",
           "走 / 回家",
+          "开 / 回家",
+          "坐 / 回家",
           "骑 / 回家"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "坐 + véhicule = prendre (un transport assis). 我坐公共汽车回家 = je rentre en bus. 开车 = conduire, 骑 = enfourcher (vélo, moto).",
         "contextFr": "我 ___ 公共汽车 ___ 。",
         "topic": "grammar",
@@ -625,12 +617,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle phrase est correcte pour exprimer la date du 5 mars ?",
         "choices": [
-          "三月五号",
+          "号五三月",
           "五月三号",
           "三五号月",
-          "号五三月"
-        ],
-        "correctIndex": 0,
+          "三月五号"],
+        "correctIndex": 3,
         "explanationFr": "Ordre chinois pour la date : ANNÉE + MOIS + JOUR. 三月五号 = 5 mars (litt. « mois 3 jour 5 »). 号 est la version orale de 日.",
         "topic": "vocab",
         "promptEn": "Which sentence correctly expresses the date \"March 5\"?",
@@ -641,12 +632,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie 一点儿 dans « 我会说一点儿汉语 » ?",
         "choices": [
-          "Beaucoup",
           "Un peu",
+          "Beaucoup",
           "Pas du tout",
           "Couramment"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "一点儿 = « un peu » (quantité réduite). 我会说一点儿汉语 = « je parle un peu chinois ». À ne pas confondre avec 有点儿 (légèrement, avec nuance négative).",
         "topic": "grammar",
         "promptEn": "What does 一点儿 mean in \"我会说一点儿汉语\"?",
@@ -663,12 +654,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète : « ce vêtement est très joli » (avec mise en relief avec 的).",
         "choices": [
-          "是 / 的",
           "在 / 的",
+          "是 / 的",
           "了 / 的",
           "不 / 的"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "是...的 met en relief un élément de la phrase (ici la qualité). 这件衣服是很漂亮的 = « ce vêtement est vraiment joli ».",
         "contextFr": "这件衣服 ___ 很漂亮 ___ 。",
         "topic": "grammar",
@@ -687,12 +678,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment dire « j'aime beaucoup le café » ?",
         "choices": [
-          "我很喜欢咖啡",
-          "我喜欢很咖啡",
           "我咖啡很喜欢",
+          "我喜欢很咖啡",
+          "我很喜欢咖啡",
           "咖啡我喜欢很"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "Ordre standard : SUJET + 很 + VERBE/ADJ + COD. 很 se place TOUJOURS devant le prédicat (verbe d'état ou adjectif), jamais après l'objet.",
         "topic": "grammar",
         "promptEn": "How do you say \"I really like coffee\"?",
@@ -703,12 +694,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire 一起 ?",
         "choices": [
-          "Ensemble",
+          "Encore",
           "Seul",
           "Une fois",
-          "Encore"
-        ],
-        "correctIndex": 0,
+          "Ensemble"],
+        "correctIndex": 3,
         "explanationFr": "一起 (yīqǐ) = ensemble. 我们一起去 = « on y va ensemble ». À distinguer de 一次 (une fois) et 一下 (un petit instant).",
         "topic": "vocab",
         "promptEn": "What does 一起 mean?",
@@ -725,12 +715,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« j'ai déjà mangé »).",
         "choices": [
-          "过",
           "了",
+          "过",
           "着",
           "在"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "了 marque ici l'accompli (action achevée). 我已经吃了 = « j'ai déjà mangé ». 过 marque l'expérience (avoir déjà fait au moins une fois), 着 l'état persistant.",
         "contextFr": "我已经吃 ___ 。",
         "topic": "grammar",
@@ -765,12 +755,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue ci-dessous, que propose A ?",
         "choices": [
-          "Aller voir un film ensemble.",
-          "Rester à la maison.",
           "Refuser une invitation.",
+          "Rester à la maison.",
+          "Aller voir un film ensemble.",
           "Acheter un cadeau."
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "一起 = ensemble, 看电影 = regarder un film, 怎么样 = qu'en penses-tu ? Formule typique d'invitation. 好啊 = oui d'accord (registre amical).",
         "topic": "dialogue",
         "contextFr": "A: 我们一起去看电影，怎么样？\nB: 好啊！",
@@ -789,12 +779,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle phrase exprime correctement « il aime jouer au foot » ?",
         "choices": [
-          "他喜欢踢足球",
+          "他喜欢做足球",
           "他喜欢打足球",
           "他喜欢玩足球",
-          "他喜欢做足球"
-        ],
-        "correctIndex": 0,
+          "他喜欢踢足球"],
+        "correctIndex": 3,
         "explanationFr": "En chinois, on utilise 踢 (kicker) pour le foot : 踢足球. 打 pour les sports de raquette ou de main : 打篮球 (basket), 打网球 (tennis). 玩 = jouer (général).",
         "topic": "vocab",
         "promptEn": "Which sentence correctly says \"he likes to play soccer\"?",
@@ -859,10 +848,9 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "choices": [
           "在",
           "正在",
-          "了",
-          "A et B sont corrects"
-        ],
-        "correctIndex": 3,
+          "A et B sont corrects",
+          "了"],
+        "correctIndex": 2,
         "explanationFr": "正在 et 在 expriment tous deux l'aspect progressif. 正在 insiste sur le moment précis, 在 est plus neutre. 他（正）在看书 = « il est (en train) de lire ».",
         "contextFr": "他 ___ 看书。",
         "topic": "grammar",
@@ -882,11 +870,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 听懂 » ?",
         "choices": [
           "Écouter attentivement",
-          "Écouter et comprendre",
+          "Ne pas écouter",
           "Entendre par hasard",
-          "Ne pas écouter"
-        ],
-        "correctIndex": 1,
+          "Écouter et comprendre"],
+        "correctIndex": 3,
         "explanationFr": "懂 est un complément résultatif signifiant « comprendre ». 听懂 = « écouter-et-comprendre » = saisir ce qu'on entend. Comparer : 看懂 (lire-et-comprendre).",
         "topic": "grammar",
         "promptEn": "What does \"听懂\" mean?",
@@ -928,11 +915,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quel complément de degré correspond à « extrêmement bon » ?",
         "choices": [
           "很好",
-          "好很",
           "好极了",
+          "好很",
           "很好了"
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
         "explanationFr": "极了 se place APRÈS l'adjectif pour marquer l'extrême : 好极了 = excellent / extra. Équivalents : 太...了, ...死了 (familier).",
         "topic": "grammar",
         "promptEn": "Which degree complement corresponds to \"extremely good\"?",
@@ -961,10 +948,9 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "choices": [
           "D'un côté... et de l'autre...",
           "Soit... soit...",
-          "Faire deux actions simultanément",
-          "Un peu, puis encore un peu"
-        ],
-        "correctIndex": 2,
+          "Un peu, puis encore un peu",
+          "Faire deux actions simultanément"],
+        "correctIndex": 3,
         "explanationFr": "一边 V1 一边 V2 = faire V1 et V2 en même temps. 他一边吃饭一边看电视 = « il mange en regardant la télé ».",
         "topic": "grammar",
         "promptEn": "What does \"一边...一边...\" mean?",
@@ -981,12 +967,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle phrase utilise correctement 没 ?",
         "choices": [
-          "我明天没去",
           "我没去过中国",
+          "我明天没去",
           "我不没想",
           "我没会说"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "没 nie les actions accomplies ou l'expérience (avec 过). 我没去过中国 = « je ne suis jamais allé en Chine ». Pour le futur ou les généralités, on utilise 不.",
         "topic": "grammar",
         "promptEn": "Which sentence uses 没 correctly?",
@@ -1021,12 +1007,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous avec le résultatif adéquat (« j'ai correctement compris »).",
         "choices": [
-          "对",
-          "完",
           "好",
+          "完",
+          "对",
           "到"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "对 comme résultatif signifie « correctement, juste ». 听懂 = comprendre, 听对 = avoir compris correctement (sans erreur). 听完 = avoir fini d'écouter, 听好 = bien écouter.",
         "contextFr": "我听 ___ 了。",
         "topic": "grammar",
@@ -1039,12 +1025,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment dire « la pomme rouge sur la table » ?",
         "choices": [
-          "桌子上的红苹果",
+          "上桌子的红苹果",
           "红苹果的桌子上",
           "苹果红桌子上的",
-          "上桌子的红苹果"
-        ],
-        "correctIndex": 0,
+          "桌子上的红苹果"],
+        "correctIndex": 3,
         "explanationFr": "Le chinois place les compléments AVANT le nom modifié, avec 的. 桌子上的红苹果 = « la pomme rouge (qui est) sur la table ». L'ordre suit : déterminant + 的 + noyau.",
         "topic": "grammar",
         "promptEn": "How do you say \"the red apple on the table\"?",
@@ -1077,12 +1062,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« je vais demain au cinéma »).",
         "choices": [
-          "去 / 看",
           "看 / 去",
+          "去 / 看",
           "到 / 看",
           "在 / 看"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "Structure de plusieurs verbes en série : 我明天去电影院看电影 = « je vais demain au cinéma voir un film ». 去 introduit la destination, le 2e verbe le but.",
         "contextFr": "我明天 ___ 电影院 ___ 电影。",
         "topic": "grammar",
@@ -1102,11 +1087,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie 差不多 ?",
         "choices": [
           "Très différent",
-          "À peu près / presque pareil",
           "Tout à fait différent",
+          "À peu près / presque pareil",
           "Complètement faux"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "差不多 (chàbuduō) = « à peu près / presque ». Très utilisé pour relativiser, approximer. 差不多 = ils sont à peu près pareils.",
         "topic": "vocab",
         "promptEn": "What does 差不多 mean?",
@@ -1123,12 +1108,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment exprimer « il pleut depuis ce matin » ?",
         "choices": [
-          "从今天早上开始下雨",
+          "今天早上从下雨开始",
           "今天早上开始下雨从",
           "下雨开始从今天早上",
-          "今天早上从下雨开始"
-        ],
-        "correctIndex": 0,
+          "从今天早上开始下雨"],
+        "correctIndex": 3,
         "explanationFr": "Structure : 从 + DÉBUT + 开始 + ACTION. 从今天早上开始下雨 = « il pleut depuis ce matin ». 从 = depuis, 开始 = commencer.",
         "topic": "grammar",
         "promptEn": "How do you express \"it has been raining since this morning\"?",
@@ -1139,12 +1123,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« j'ai déjà été en Chine »).",
         "choices": [
-          "了",
           "过",
+          "了",
           "着",
           "到"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "过 marque l'expérience vécue au moins une fois. 我去过中国 = « j'ai déjà été en Chine (au moins une fois) ». À distinguer de 了 (action achevée précise).",
         "contextFr": "我去 ___ 中国。",
         "topic": "grammar",
@@ -1179,12 +1163,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle phrase utilise correctement 着 (état persistant) ?",
         "choices": [
-          "他坐着看书",
-          "他着坐看书",
           "他坐看着书",
+          "他着坐看书",
+          "他坐着看书",
           "着他坐看书"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "着 se place IMMÉDIATEMENT après le verbe principal pour marquer un état/posture maintenu. 他坐着看书 = « il lit assis (en restant assis) ». Structure : V1 + 着 + V2.",
         "topic": "grammar",
         "promptEn": "Which sentence uses 着 (persistent state) correctly?",
@@ -1195,12 +1179,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète : Il est plus jeune que moi de 3 ans.",
         "choices": [
-          "比 / 小",
+          "和 / 少",
           "比 / 少",
           "从 / 小",
-          "和 / 少"
-        ],
-        "correctIndex": 0,
+          "比 / 小"],
+        "correctIndex": 3,
         "explanationFr": "Structure du comparatif chiffré : A + 比 + B + ADJ + ÉCART. 他比我小三岁 = « il a 3 ans de moins que moi ». 小 s'emploie pour l'âge, pas 少.",
         "contextFr": "他 ___ 我 ___ 三岁。",
         "topic": "grammar",
@@ -1219,12 +1202,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue ci-dessous, que veut dire B ?",
         "choices": [
-          "Il est libre demain.",
           "Il est occupé demain mais libre après-demain.",
+          "Il est libre demain.",
           "Il refuse de venir.",
           "Il ne sait pas encore."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "没空 = ne pas avoir le temps. 后天 = après-demain. 怎么样 = ça te va ? B propose un report : pas dispo demain mais OK après-demain.",
         "topic": "dialogue",
         "contextFr": "A: 明天有空吗？\nB: 明天没空，后天怎么样？",
@@ -1279,12 +1262,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle phrase utilise correctement le passif 被 ?",
         "choices": [
-          "我被他看见了",
-          "他被写完作业了",
           "书被了他",
+          "他被写完作业了",
+          "我被他看见了",
           "我被去了"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "Structure du passif : PATIENT + 被 + AGENT + VERBE + COMPLÉMENT. 我被他看见了 = « j'ai été vu par lui ». 被 introduit l'agent, pas le patient.",
         "topic": "grammar",
         "promptEn": "Which sentence uses the passive 被 correctly?",
@@ -1296,11 +1279,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie 让 dans « 妈妈让我做作业 » ?",
         "choices": [
           "Permettre",
-          "Demander / faire faire",
+          "Céder la place",
           "Laisser tomber",
-          "Céder la place"
-        ],
-        "correctIndex": 1,
+          "Demander / faire faire"],
+        "correctIndex": 3,
         "explanationFr": "让 + qqn + VERBE = « faire en sorte que qqn fasse... » (causation douce). 妈妈让我做作业 = « maman me fait faire mes devoirs ». 叫 + qqn a un sens similaire plus ferme.",
         "topic": "grammar",
         "promptEn": "What does 让 mean in \"妈妈让我做作业\"?",
@@ -1342,11 +1324,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Comment exprimer « de plus en plus difficile » ?",
         "choices": [
           "很难很难",
-          "难死了",
           "越来越难",
+          "难死了",
           "更难更难"
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
         "explanationFr": "越来越 + ADJ/V = « de plus en plus ». 越来越难 = de plus en plus difficile. C'est une structure figée très fréquente.",
         "topic": "grammar",
         "promptEn": "How do you express \"more and more difficult\"?",
@@ -1358,11 +1340,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Complète la phrase ci-dessous (« si tu as le temps, appelle-moi »).",
         "choices": [
           "因为 / 所以",
-          "如果 / 就",
           "虽然 / 但是",
+          "如果 / 就",
           "一边 / 一边"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "如果...就... = conditionnelle « si... alors... ». 如果你有时间，就给我打电话 = « si tu as le temps, appelle-moi ». 就 est optionnel mais très courant.",
         "contextFr": "___ 你有时间，___ 给我打电话。",
         "topic": "grammar",
@@ -1382,11 +1364,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 即使下雨，我们也要去 » ?",
         "choices": [
           "S'il pleut, nous irons.",
-          "Même s'il pleut, nous irons.",
+          "Quand il pleuvra, nous irons.",
           "Parce qu'il pleut, nous irons.",
-          "Quand il pleuvra, nous irons."
-        ],
-        "correctIndex": 1,
+          "Même s'il pleut, nous irons."],
+        "correctIndex": 3,
         "explanationFr": "即使...也... = « même si... quand même... ». C'est une concession hypothétique plus forte que 如果...就.",
         "topic": "grammar",
         "promptEn": "What does \"即使下雨，我们也要去\" mean?",
@@ -1403,12 +1384,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quelle est la différence entre 能, 会 et 可以 ?",
         "choices": [
-          "Aucune, ils sont interchangeables.",
           "会 = savoir par apprentissage, 能 = capacité physique/possibilité, 可以 = permission / proposition.",
+          "Aucune, ils sont interchangeables.",
           "会 = permission, 能 = savoir, 可以 = capacité.",
           "Tous signifient « vouloir »."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "Distinction clé : 会 (compétence apprise — 我会说汉语), 能 (capacité contextuelle ou possibilité — 我今天能来), 可以 (permission ou proposition — 我可以进来吗?).",
         "topic": "grammar",
         "promptEn": "What is the difference between 能, 会 and 可以?",
@@ -1448,11 +1429,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans le dialogue ci-dessous, que fait B en ce moment ?",
         "choices": [
           "Il a fini ses devoirs.",
-          "Il est en train de faire ses devoirs.",
           "Il n'a pas commencé ses devoirs.",
+          "Il est en train de faire ses devoirs.",
           "Il refuse de faire ses devoirs."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "还没...呢 = « pas encore... ». 正在 + V = « en train de V ». Donc B n'a pas fini mais est en train de faire ses devoirs.",
         "topic": "dialogue",
         "contextFr": "A: 你做完作业了吗？\nB: 还没呢，我正在做。",
@@ -1472,11 +1453,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 把...当作... » ?",
         "choices": [
           "Mettre... contre...",
-          "Considérer... comme...",
+          "Choisir entre... et...",
           "Échanger... avec...",
-          "Choisir entre... et..."
-        ],
-        "correctIndex": 1,
+          "Considérer... comme..."],
+        "correctIndex": 3,
         "explanationFr": "把 X 当作 Y = « considérer X comme Y / prendre X pour Y ». 他把我当作朋友 = « il me considère comme un ami ». Très utile pour exprimer une relation perçue.",
         "topic": "grammar",
         "promptEn": "What does \"把...当作...\" mean?",
@@ -1517,12 +1497,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire le chengyu 半途而废 ?",
         "choices": [
-          "Abandonner à mi-chemin.",
           "Réussir à mi-temps.",
+          "Abandonner à mi-chemin.",
           "Voyager dans deux directions.",
           "Diviser en deux parts égales."
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "半途而废 (bàn tú ér fèi) : « à mi-route, on abandonne ». Critique de ceux qui laissent tomber avant la fin. Origine : Liji.",
         "topic": "culture",
         "promptEn": "What does the chengyu 半途而废 mean?",
@@ -1555,12 +1535,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« le travail est trop fatigant, je ne veux plus le faire »).",
         "choices": [
-          "得 / 不",
+          "着 / 没",
           "了 / 没",
           "过 / 不",
-          "着 / 没"
-        ],
-        "correctIndex": 0,
+          "得 / 不"],
+        "correctIndex": 3,
         "explanationFr": "V + 得 + 太 + ADJ + 了 = complément de degré. Puis 不想 + V = ne veut plus faire. 工作累得不想做了 marque la conséquence d'un état excessif.",
         "contextFr": "工作累 ___ 我 ___ 想做了。",
         "topic": "grammar",
@@ -1618,11 +1597,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans le dialogue ci-dessous, que dit B ?",
         "choices": [
           "Elle n'a pas trouvé son téléphone.",
-          "Quelqu'un lui a volé son téléphone.",
           "Elle a cassé son téléphone.",
+          "Quelqu'un lui a volé son téléphone.",
           "Elle a oublié son téléphone à la maison."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "Passif avec 被 : 手机被偷了 = « le téléphone a été volé ». Structure typique pour exprimer un événement subi. 怎么了 = qu'est-ce qui se passe ?",
         "topic": "dialogue",
         "contextFr": "A: 你怎么了？\nB: 我的手机被偷了！",
@@ -1654,11 +1633,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Complète la phrase ci-dessous (« il court vite »).",
         "choices": [
           "的",
-          "得",
+          "了",
           "地",
-          "了"
-        ],
-        "correctIndex": 1,
+          "得"],
+        "correctIndex": 3,
         "explanationFr": "得 introduit un complément de degré / manière APRÈS le verbe : 跑得快 = « court vite ». 的 = possessif, 地 = transforme adjectif en adverbe avant le verbe.",
         "contextFr": "他跑 ___ 很快。",
         "topic": "grammar",
@@ -1671,12 +1649,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie « 连小孩都知道 » ?",
         "choices": [
-          "Les enfants savent ensemble.",
           "Même les enfants le savent.",
+          "Les enfants savent ensemble.",
           "Reliez les enfants qui savent.",
           "Seuls les enfants savent."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "连 + N + 都/也 = « même... » (inclusion extrême). 连小孩都知道 = « même les enfants le savent » — emphase sur l'évidence.",
         "topic": "grammar",
         "promptEn": "What does \"连小孩都知道\" mean?",
@@ -1692,37 +1670,27 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "b21-q3",
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« non seulement il parle chinois, mais il parle aussi japonais »).",
-        "choices": [
-          "不但 / 而且",
-          "虽然 / 但是",
-          "因为 / 所以",
-          "如果 / 就"
-        ],
-        "correctIndex": 0,
+        "choices": ["虽然 / 但是", "不但 / 而且", "不管 / 都", "不是 / 就是"],
+        "correctIndex": 1,
         "explanationFr": "不但...而且... = « non seulement... mais aussi... ». 不但他会说中文，而且（他）还会说日文 = il parle non seulement chinois mais aussi japonais.",
         "contextFr": "___ 他会说中文，___ 会说日文。",
         "topic": "grammar",
         "promptEn": "Fill in the sentence below (\"not only does he speak Chinese, he also speaks Japanese\").",
         "contextEn": "___ 他会说中文，___ 会说日文。",
         "explanationEn": "不但...而且... = \"not only... but also...\". 不但他会说中文，而且（他）还会说日文 = he speaks not only Chinese but also Japanese.",
-        "choicesEn": [
-          "不但 / 而且",
-          "虽然 / 但是",
-          "因为 / 所以",
-          "如果 / 就"
-        ]
+        "choicesEn": ["虽然 / 但是", "不但 / 而且", "不管 / 都", "不是 / 就是"]
       },
       {
         "id": "b21-q4",
         "type": "mcq",
         "promptFr": "Quelle phrase utilise correctement 除了...以外 ?",
         "choices": [
-          "除了他以外，别人都来了。",
-          "除了他以外，别人来都了。",
           "他除了以外，别人来了。",
+          "除了他以外，别人来都了。",
+          "除了他以外，别人都来了。",
           "除了以外他，别人都来了。"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "除了 + NOM + 以外，主语 + 都/也... = « sauf / hormis + NOM, les autres... ». 除了他以外，别人都来了 = « sauf lui, les autres sont tous venus ».",
         "topic": "grammar",
         "promptEn": "Which sentence uses 除了...以外 correctly?",
@@ -1734,11 +1702,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que veut dire « 他不是中国人，而是韩国人 » ?",
         "choices": [
           "Il est chinois mais aussi coréen.",
-          "Il n'est pas chinois, mais coréen.",
+          "Il n'est ni chinois ni coréen.",
           "Il est soit chinois, soit coréen.",
-          "Il n'est ni chinois ni coréen."
-        ],
-        "correctIndex": 1,
+          "Il n'est pas chinois, mais coréen."],
+        "correctIndex": 3,
         "explanationFr": "不是...而是... = « ce n'est pas... mais... » (correction / précision). C'est une structure contrastive très courante en expression écrite.",
         "topic": "grammar",
         "promptEn": "What does \"他不是中国人，而是韩国人\" mean?",
@@ -1771,12 +1738,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« elle parle très poliment »).",
         "choices": [
-          "得很",
           "的很",
+          "得很",
           "地很",
           "了很"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "得 + ADJ + 很 (ou 得很 en fin) = complément de degré. 她说话说得很礼貌 = « elle parle très poliment ». 很 suit l'adjectif porté par 得.",
         "contextFr": "她说话 ___ 礼貌。",
         "topic": "grammar",
@@ -1796,11 +1763,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie 幸亏 dans « 幸亏你提醒我 » ?",
         "choices": [
           "Hélas",
-          "Heureusement",
           "Évidemment",
+          "Heureusement",
           "Malheureusement"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "幸亏 = heureusement (que) — introduit un événement positif qui a évité un malheur. 幸亏你提醒我 = « heureusement que tu m'as prévenu ».",
         "topic": "vocab",
         "promptEn": "What does 幸亏 mean in \"幸亏你提醒我\"?",
@@ -1816,13 +1783,8 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "b21-q9",
         "type": "mcq",
         "promptFr": "Comment rendre l'idée de « partout / où qu'il aille » ?",
-        "choices": [
-          "无论他去哪儿，都带着相机",
-          "他去哪儿无论都相机",
-          "他都去无论哪儿相机",
-          "无论都他去哪儿带相机"
-        ],
-        "correctIndex": 0,
+        "choices": ["无论都他去哪儿带着相机", "他去哪儿无论都带着相机", "他都去无论哪儿带着相机", "无论他去哪儿，都带着相机"],
+        "correctIndex": 3,
         "explanationFr": "无论...都... = « quel que soit... » (universalité). 无论 X 都 Y = « peu importe X, Y ». 无论他去哪儿，都带着相机 = « où qu'il aille, il emporte son appareil ».",
         "topic": "grammar",
         "promptEn": "How do you convey the idea of \"everywhere / wherever he goes\"?",
@@ -1833,12 +1795,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue ci-dessous, B exprime :",
         "choices": [
-          "Une certitude absolue",
           "Une hésitation prudente",
+          "Une certitude absolue",
           "Un refus catégorique",
           "De l'enthousiasme"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "似乎 = « il semble que / on dirait que » — nuance de prudence, d'hésitation. Combiné avec 有点儿 (un peu) et 觉得 (trouver / penser), B donne un avis prudent et nuancé.",
         "topic": "dialogue",
         "contextFr": "A: 你怎么看这件事？\nB: 我觉得似乎有点儿问题。",
@@ -1857,12 +1819,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie 既然 dans « 既然你来了，就坐一会儿吧 » ?",
         "choices": [
-          "Puisque (cause connue)",
           "Si jamais",
+          "Puisque (cause connue)",
           "Bien que",
           "Au cas où"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "既然...就... = « puisque... alors... ». Introduit une cause considérée comme acquise. Distinct de 因为 (cause objective) : 既然 présuppose la situation comme un fait partagé.",
         "topic": "grammar",
         "promptEn": "What does 既然 mean in \"既然你来了，就坐一会儿吧\"?",
@@ -1880,11 +1842,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie 一旦 dans « 一旦决定，就不要后悔 » ?",
         "choices": [
           "Un matin",
-          "Une fois que / dès que",
           "Tout à coup",
+          "Une fois que / dès que",
           "Lentement"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "一旦 = « une fois que / dès lors que ». Hypothèse à conséquence forte. 一旦决定就不要后悔 = « une fois la décision prise, pas de regrets ».",
         "topic": "grammar",
         "promptEn": "What does 一旦 mean in \"一旦决定，就不要后悔\"?",
@@ -1901,12 +1863,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel terme signifie « environnement (naturel) » ?",
         "choices": [
-          "环境",
+          "范围",
           "场所",
           "位置",
-          "范围"
-        ],
-        "correctIndex": 0,
+          "环境"],
+        "correctIndex": 3,
         "explanationFr": "环境 = environnement, milieu. 场所 = lieu (public), 位置 = position, 范围 = portée. 保护环境 = protéger l'environnement.",
         "topic": "vocab",
         "promptEn": "Which word means \"(natural) environment\"?",
@@ -1941,12 +1902,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire le chengyu 名副其实 ?",
         "choices": [
-          "Le nom correspond à la réalité (mérité).",
           "Avoir mauvaise réputation.",
+          "Le nom correspond à la réalité (mérité).",
           "Changer de nom.",
           "Sans nom officiel."
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "名副其实 (míng fù qí shí) = « le nom répond à la réalité ». Désigne quelqu'un ou quelque chose qui mérite réellement sa réputation. Contraire : 名不副实.",
         "topic": "culture",
         "promptEn": "What does the chengyu 名副其实 mean?",
@@ -1964,11 +1925,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quelle est la nuance de 反而 par rapport à 但是 ?",
         "choices": [
           "Identique, interchangeable.",
-          "反而 = contraire à l'attente, 但是 = simple opposition.",
           "反而 = renforcement, 但是 = contradiction.",
+          "反而 = contraire à l'attente, 但是 = simple opposition.",
           "反而 = cause, 但是 = conséquence."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "但是 marque une simple opposition. 反而 marque un résultat CONTRAIRE à ce qui était attendu. 我以为他生气，他反而笑了 = « je pensais qu'il se fâcherait, au contraire il a ri ».",
         "topic": "grammar",
         "promptEn": "What is the nuance of 反而 compared to 但是?",
@@ -1997,12 +1958,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie « 这件事万一出问题，我们就麻烦了 » ?",
         "choices": [
-          "Si jamais cette affaire pose problème, on aura des soucis.",
+          "Ce problème est très grave.",
           "10 000 de ces affaires posent problème.",
           "Cette affaire pose toujours problème.",
-          "Ce problème est très grave."
-        ],
-        "correctIndex": 0,
+          "Si jamais cette affaire pose problème, on aura des soucis."],
+        "correctIndex": 3,
         "explanationFr": "万一 = « si jamais / au cas où » — condition hypothétique peu probable mais redoutée. 麻烦 = ennui, souci.",
         "topic": "grammar",
         "promptEn": "What does \"这件事万一出问题，我们就麻烦了\" mean?",
@@ -2019,12 +1979,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Choisissez la meilleure traduction de « 宁可多花点儿钱，也要买好的 ».",
         "choices": [
-          "Dépenser plus d'argent et acheter des bonnes choses.",
           "Je préfère dépenser plus, mais acheter de la qualité.",
+          "Dépenser plus d'argent et acheter des bonnes choses.",
           "Si on dépense plus, on achète mieux.",
           "Ne pas dépenser d'argent mais acheter bien."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "宁可 A 也要 B = « préférer A pour obtenir B » (choix assumé malgré un coût). Implique une préférence forte et volontaire.",
         "topic": "grammar",
         "promptEn": "Choose the best translation for \"宁可多花点儿钱，也要买好的\".",
@@ -2041,12 +2001,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous avec la particule de mise en relief.",
         "choices": [
-          "是",
           "被",
+          "是",
           "把",
           "给"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "Ici 是...的 met en relief le complément (qui a offert). 是妈妈送给我的 = « c'est maman qui me l'a offert ». 被 serait incorrect sémantiquement dans ce cadre relationnel.",
         "contextFr": "这本书 ___ 妈妈送给我的，特别珍贵。",
         "topic": "grammar",
@@ -2065,12 +2025,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel est le sens du chengyu 一举两得 ?",
         "choices": [
-          "Faire d'une pierre deux coups",
-          "Échouer deux fois",
           "Payer deux fois",
+          "Échouer deux fois",
+          "Faire d'une pierre deux coups",
           "Deux personnes main dans la main"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "一举两得 (yī jǔ liǎng dé) = « en un geste, deux gains » = faire d'une pierre deux coups. Chengyu très fréquent.",
         "topic": "culture",
         "promptEn": "What is the meaning of the chengyu 一举两得?",
@@ -2088,11 +2048,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 记者 » ?",
         "choices": [
           "Professeur",
-          "Journaliste",
+          "Fonctionnaire",
           "Étudiant",
-          "Fonctionnaire"
-        ],
-        "correctIndex": 1,
+          "Journaliste"],
+        "correctIndex": 3,
         "explanationFr": "记者 = journaliste / reporter. Vocabulaire média de base. 记 (enregistrer, noter) + 者 (suffixe « celui qui »).",
         "topic": "vocab",
         "promptEn": "What does \"记者\" mean?",
@@ -2109,12 +2068,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous avec le marqueur d'état persistant.",
         "choices": [
-          "了",
-          "的",
           "着",
+          "的",
+          "了",
           "过"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "着 marque un état persistant résultant d'une action. 挂着 / 放着 / 留着. 他把钥匙留着在门上 est moins courant ; mieux : 钥匙还挂着 « la clé est toujours accrochée ». 着 est le marqueur d'état résiduel.",
         "contextFr": "他把钥匙 ___ 在门上。",
         "topic": "grammar",
@@ -2156,11 +2115,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Quelle nuance porte 反而 dans « 我以为他会生气，他反而笑了 » ?",
         "choices": [
           "Cause",
-          "Contrairement aux attentes",
           "Conséquence",
+          "Contrairement aux attentes",
           "Addition"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "反而 = « au contraire / à l'inverse de ce qu'on attendait ». Exprime un résultat contraire aux attentes : « je pensais qu'il se fâcherait, au contraire il a ri ».",
         "topic": "grammar",
         "promptEn": "What nuance does 反而 carry in \"我以为他会生气，他反而笑了\"?",
@@ -2178,11 +2137,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Comment exprimer « quel que soit ce qu'il fasse, il réussit » ?",
         "choices": [
           "他做什么成功都",
-          "无论他做什么，都能成功",
+          "他做都无论成功什么",
           "什么都他做能成功",
-          "他做都无论成功什么"
-        ],
-        "correctIndex": 1,
+          "无论他做什么，都能成功"],
+        "correctIndex": 3,
         "explanationFr": "Structure figée : 无论 + QUESTION (什么 / 怎么 / 谁...), 都 + RÉSULTAT. 无论他做什么，都能成功 = « peu importe ce qu'il fait, il réussit ».",
         "topic": "grammar",
         "promptEn": "How do you express \"whatever he does, he succeeds\"?",
@@ -2193,12 +2151,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue ci-dessous, B pense :",
         "choices": [
-          "Le projet a plus d'inconvénients que d'avantages.",
           "À long terme, les avantages l'emportent sur les inconvénients.",
+          "Le projet a plus d'inconvénients que d'avantages.",
           "Les avantages et inconvénients s'équilibrent.",
           "Le projet n'a ni avantage ni inconvénient."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "从长远来看 = « vu à long terme / à long terme ». 利大于弊 = « bénéfices supérieurs aux pertes ». Formulation typique du registre argumentatif / médiatique.",
         "topic": "dialogue",
         "contextFr": "A: 这个方案你觉得怎么样？\nB: 从长远来看，利大于弊。",
@@ -2217,12 +2175,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel terme signifie « publier (un article, une nouvelle) » au sens éditorial ?",
         "choices": [
-          "发表",
           "出现",
+          "发表",
           "发生",
           "表现"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "发表 = publier (un article, un discours, une opinion). 出现 = apparaître, 发生 = se produire, 表现 = manifester / performance. Vocabulaire média.",
         "topic": "vocab",
         "promptEn": "Which term means \"to publish (an article, a piece of news)\" in the editorial sense?",
@@ -2234,11 +2192,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie « 难免 » dans « 工作中难免出错 » ?",
         "choices": [
           "Impossible",
-          "Inévitablement / on ne peut éviter que",
           "Sans difficulté",
+          "Inévitablement / on ne peut éviter que",
           "Très évident"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "难免 = « difficile à éviter / inévitablement ». Souligne qu'un événement (souvent négatif) est statistiquement attendu. 工作中难免出错 = « au travail, on ne peut pas éviter de faire des erreurs ».",
         "topic": "vocab",
         "promptEn": "What does \"难免\" mean in \"工作中难免出错\"?",
@@ -2255,12 +2213,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire le chengyu 入木三分 ?",
         "choices": [
-          "Pénétrer profondément, perçant et incisif (analyse).",
+          "Diviser un arbre en trois.",
           "Trois personnes entrent dans le bois.",
           "Sculpter pendant trois minutes.",
-          "Diviser un arbre en trois."
-        ],
-        "correctIndex": 0,
+          "Pénétrer profondément, perçant et incisif (analyse)."],
+        "correctIndex": 3,
         "explanationFr": "入木三分 (rù mù sān fēn) : « pénétrer trois fen dans le bois ». Origine : la calligraphie de Wang Xizhi laissait sa trace profondément. Désigne une analyse particulièrement perspicace.",
         "topic": "culture",
         "promptEn": "What does the chengyu 入木三分 mean?",
@@ -2276,12 +2233,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "b22-q14",
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« non seulement c'est rapide, mais c'est aussi pas cher »).",
-        "choices": [
-          "不仅 / 而且 / 还",
-          "虽然 / 但是 / 又",
-          "因为 / 所以 / 而",
-          "既然 / 就 / 也"
-        ],
+        "choices": ["不仅 / 而且 / 还", "虽然 / 但是 / 又", "不是 / 就是 / 也", "不管 / 都 / 还"],
         "correctIndex": 0,
         "explanationFr": "Structure tripartite renforcée : 不仅 X，而且 Y，还 Z. 不仅快，而且便宜，还方便 = « non seulement rapide, mais aussi pas cher, en plus pratique ». 不仅 = équivalent soutenu de 不但.",
         "contextFr": "___ 快，___ 便宜，___ 方便。",
@@ -2289,12 +2241,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "Fill in the sentence below (\"not only is it fast, it's also cheap\").",
         "contextEn": "___ 快，___ 便宜，___ 方便。",
         "explanationEn": "Reinforced tripartite structure: 不仅 X，而且 Y，还 Z. 不仅快，而且便宜，还方便 = \"not only fast, but also cheap, and convenient too\". 不仅 = formal equivalent of 不但.",
-        "choicesEn": [
-          "不仅 / 而且 / 还",
-          "虽然 / 但是 / 又",
-          "因为 / 所以 / 而",
-          "既然 / 就 / 也"
-        ]
+        "choicesEn": ["不仅 / 而且 / 还", "虽然 / 但是 / 又", "不是 / 就是 / 也", "不管 / 都 / 还"]
       }
     ]
   },
@@ -2313,12 +2260,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie le chengyu 画蛇添足 ?",
         "choices": [
-          "Dessiner un serpent et ajouter des pattes — compliquer inutilement",
           "Peindre un serpent pour lui donner vie",
+          "Dessiner un serpent et ajouter des pattes — compliquer inutilement",
           "Observer un serpent marcher",
           "Serpent agile comme un pied"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "画蛇添足 (huàshétiānzú) : « dessiner un serpent et lui ajouter des pattes » = rendre quelque chose moins bien en voulant l'améliorer. Origine : fable du royaume de Chu.",
         "topic": "culture",
         "promptEn": "What does the chengyu 画蛇添足 mean?",
@@ -2335,12 +2282,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« bien qu'il pleuve, nous y allons quand même »).",
         "choices": [
-          "尽管 / 还是",
-          "虽然 / 但是",
           "如果 / 就",
+          "虽然 / 但是",
+          "尽管 / 还是",
           "万一 / 都"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "尽管...还是... = « bien que... malgré tout... ». Proche de 虽然...但是 mais registre légèrement plus élevé et plus insistant sur la persévérance.",
         "contextFr": "___ 下雨，我们 ___ 去爬山。",
         "topic": "grammar",
@@ -2360,11 +2307,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que veut dire « 何况 » ?",
         "choices": [
           "Comment se porte-t-il ?",
-          "À plus forte raison / sans parler de",
+          "Très peu",
           "Comment et pourquoi",
-          "Très peu"
-        ],
-        "correctIndex": 1,
+          "À plus forte raison / sans parler de"],
+        "correctIndex": 3,
         "explanationFr": "何况 = « à plus forte raison / d'autant plus que » — renforce un argument en ajoutant une raison plus forte. 他连一只狗都怕，何况是狮子？= « il a peur d'un chien, alors d'un lion ! ».",
         "topic": "grammar",
         "promptEn": "What does \"何况\" mean?",
@@ -2381,12 +2327,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie « 以免 » ?",
         "choices": [
-          "Afin de",
           "Afin d'éviter que",
+          "Afin de",
           "Sauf si",
           "Grâce à"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "以免 = « de peur que / pour éviter que ». 请保持安静，以免打扰别人 = « restez silencieux pour ne pas déranger ». Registre écrit.",
         "topic": "grammar",
         "promptEn": "What does \"以免\" mean?",
@@ -2403,12 +2349,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel mot correspond à « concept » (au sens philosophique/idéologique) ?",
         "choices": [
-          "观念",
           "观点",
+          "观念",
           "意见",
           "主张"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "观念 = concept / notion (plus abstrait, souvent culturel ou moral). 观点 = point de vue, 意见 = avis (concret), 主张 = position défendue.",
         "topic": "vocab",
         "promptEn": "Which word corresponds to \"concept\" (in a philosophical / ideological sense)?",
@@ -2419,12 +2365,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie 责任 ?",
         "choices": [
-          "Responsabilité",
-          "Liberté",
           "Justice",
+          "Liberté",
+          "Responsabilité",
           "Droit"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "责任 = responsabilité. 自由 = liberté, 公正/正义 = justice, 权利 = droit. Vocabulaire abstrait de débat.",
         "topic": "vocab",
         "promptEn": "What does 责任 mean?",
@@ -2443,10 +2389,9 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "choices": [
           "我想笑一想",
           "一想就我笑",
-          "我一想就想笑",
-          "想笑一就我"
-        ],
-        "correctIndex": 2,
+          "想笑一就我",
+          "我一想就想笑"],
+        "correctIndex": 3,
         "explanationFr": "一 + V1 + 就 + V2 = « dès que V1, V2 ». 我一想就想笑 = « dès que j'y pense, j'ai envie de rire ». Structure figée pour relier action et conséquence immédiate.",
         "topic": "grammar",
         "promptEn": "How do you convey \"just thinking about it makes me want to laugh\"?",
@@ -2457,12 +2402,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Le chengyu 守株待兔 évoque :",
         "choices": [
-          "La persévérance dans le travail",
           "Attendre passivement la chance (et rater les occasions)",
+          "La persévérance dans le travail",
           "Protéger ses biens",
           "Être rapide comme un lièvre"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "守株待兔 : « garder sa souche en attendant un lièvre ». Un paysan ayant vu un lièvre se tuer contre une souche abandonne son travail pour attendre d'autres lièvres. = croire à une chance reproductible, être passif.",
         "topic": "culture",
         "promptEn": "The chengyu 守株待兔 evokes:",
@@ -2479,12 +2424,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire « 与其...不如... » ?",
         "choices": [
-          "Plutôt que... autant...",
           "Ni... ni...",
+          "Plutôt que... autant...",
           "Soit... soit...",
           "À la fois... et..."
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "与其 A 不如 B = « plutôt que de A, mieux vaut B » — comparaison préférentielle. 与其等他，不如自己去 = « plutôt que de l'attendre, vas-y toi-même ».",
         "topic": "grammar",
         "promptEn": "What does \"与其...不如...\" mean?",
@@ -2502,11 +2447,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans un texte argumentatif, lire « 然而 » suggère :",
         "choices": [
           "Une cause",
-          "Un contraste formel",
           "Une conclusion",
+          "Un contraste formel",
           "Un exemple"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "然而 = « cependant / toutefois » (registre écrit, formel). Équivalent soutenu de 但是 / 可是. Souvent utilisé en début de paragraphe pour pivoter.",
         "topic": "grammar",
         "promptEn": "In an argumentative text, seeing \"然而\" signals:",
@@ -2524,11 +2469,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que veut dire le chengyu 一举两得 dans un cadre stratégique ?",
         "choices": [
           "Échouer deux fois.",
-          "Atteindre deux objectifs en une action.",
+          "Hésiter longtemps.",
           "Choisir entre deux options.",
-          "Hésiter longtemps."
-        ],
-        "correctIndex": 1,
+          "Atteindre deux objectifs en une action."],
+        "correctIndex": 3,
         "explanationFr": "一举两得 = « en une action, double gain » = faire d'une pierre deux coups. Très utilisé en argumentation pour vanter l'efficacité d'une stratégie.",
         "topic": "culture",
         "promptEn": "What does the chengyu 一举两得 mean in a strategic context?",
@@ -2573,12 +2517,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie « 以质量为本 » ?",
         "choices": [
-          "Considérer la qualité comme fondamentale",
           "Avec la qualité on fait la base",
+          "Considérer la qualité comme fondamentale",
           "La qualité est un livre",
           "Fabriquer avec qualité"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "以 X 为 Y = « prendre X pour Y / considérer X comme Y ». Structure figée du discours formel. 以质量为本 = « placer la qualité au fondement ».",
         "topic": "grammar",
         "promptEn": "What does \"以质量为本\" mean?",
@@ -2595,12 +2539,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire « 反之 » dans un raisonnement ?",
         "choices": [
-          "Au contraire / inversement",
-          "En revanche (contraste faible)",
           "Par conséquent",
+          "En revanche (contraste faible)",
+          "Au contraire / inversement",
           "En d'autres termes"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "反之 = « inversement / dans le sens opposé ». Registre écrit, typique du raisonnement académique ou scientifique. 反之亦然 = « et réciproquement ».",
         "topic": "grammar",
         "promptEn": "What does \"反之\" mean in an argument?",
@@ -2618,11 +2562,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signale « 倒 » dans « 他倒不生气 » ?",
         "choices": [
           "Intensification de la colère",
-          "Étonnement / contraste avec l'attente",
+          "Politesse excessive",
           "Négation renforcée",
-          "Politesse excessive"
-        ],
-        "correctIndex": 1,
+          "Étonnement / contraste avec l'attente"],
+        "correctIndex": 3,
         "explanationFr": "倒 (dào) modal exprime un léger étonnement ou un contraste avec une attente. 他倒不生气 = « étonnamment, il ne se fâche pas ». Registre oral nuancé.",
         "topic": "grammar",
         "promptEn": "What does \"倒\" signal in \"他倒不生气\"?",
@@ -2639,12 +2582,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Une question rhétorique typique est « 难道你不懂吗？ ». Elle signifie :",
         "choices": [
-          "Ne pourrait-il pas que tu ne comprennes pas ?",
           "Serait-il possible que tu ne comprennes pas ?! (emphase accusatoire)",
+          "Ne pourrait-il pas que tu ne comprennes pas ?",
           "Tu comprends difficilement.",
           "Comprends-tu avec difficulté ?"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "难道...吗？ = question rhétorique marquant surprise indignée. 难道你不懂吗？ = « tu ne comprends pas, vraiment ?! ».",
         "topic": "grammar",
         "promptEn": "A typical rhetorical question is \"难道你不懂吗？\". It means:",
@@ -2677,12 +2620,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie le chengyu 百闻不如一见 ?",
         "choices": [
-          "Entendre cent fois ne vaut pas voir une fois",
-          "Répéter cent fois avant de voir",
           "Un entendu vaut cent vus",
+          "Répéter cent fois avant de voir",
+          "Entendre cent fois ne vaut pas voir une fois",
           "Tout voir en une fois"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "百闻不如一见 : « cent ouï-dire ne valent pas une vision ». Importance de l'expérience directe. Souvent cité par les touristes étrangers arrivant en Chine.",
         "topic": "culture",
         "promptEn": "What does the chengyu 百闻不如一见 mean?",
@@ -2700,11 +2643,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Le mot 趋势 signifie :",
         "choices": [
           "Attitude",
-          "Tendance / évolution",
+          "Tradition",
           "Pouvoir",
-          "Tradition"
-        ],
-        "correctIndex": 1,
+          "Tendance / évolution"],
+        "correctIndex": 3,
         "explanationFr": "趋势 = tendance, évolution, courant. Typique du discours analytique/économique. 未来的趋势 = les tendances futures.",
         "topic": "vocab",
         "promptEn": "The word 趋势 means:",
@@ -2721,12 +2663,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie « 动不动就 » ?",
         "choices": [
-          "Rester immobile",
-          "Continuellement en mouvement",
           "À la moindre occasion / pour un rien",
+          "Continuellement en mouvement",
+          "Rester immobile",
           "Ne pas bouger"
         ],
-        "correctIndex": 2,
+        "correctIndex": 0,
         "explanationFr": "动不动就 = « à tout bout de champ / pour un rien ». Exprime un comportement répétitif disproportionné. 他动不动就生气 = « il se fâche pour un rien ».",
         "topic": "grammar",
         "promptEn": "What does \"动不动就\" mean?",
@@ -2744,11 +2686,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Le registre écrit soutenu privilégierait :",
         "choices": [
           "吧",
-          "啊",
           "矣 (classique) ou absence de particule finale",
+          "啊",
           "呢"
         ],
-        "correctIndex": 2,
+        "correctIndex": 1,
         "explanationFr": "À l'écrit formel / littéraire, les particules modales finales (吧/啊/呢) sont réduites ou absentes. 矣 est une trace classique (guwen). Les textes académiques utilisent rarement les particules orales.",
         "topic": "grammar",
         "promptEn": "Formal written register would prefer:",
@@ -2766,11 +2708,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans le dialogue ci-dessous, B pense :",
         "choices": [
           "Le télétravail est à éviter.",
-          "Vu la tendance actuelle, c'est probablement inévitable.",
           "Le télétravail restera marginal.",
+          "Vu la tendance actuelle, c'est probablement inévitable.",
           "Il faut craindre le télétravail."
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "恐怕 = « je crains que / probablement » (nuance prudente). 不可避免 = inévitable. Registre analytique / argumentatif.",
         "topic": "dialogue",
         "contextFr": "A: 你觉得远程办公会成为主流吗？\nB: 从目前的趋势来看，恐怕是不可避免的。",
@@ -2802,11 +2744,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Que signifie 赋予 ?",
         "choices": [
           "Priver",
-          "Conférer / attribuer",
+          "Gérer",
           "Accumuler",
-          "Gérer"
-        ],
-        "correctIndex": 1,
+          "Conférer / attribuer"],
+        "correctIndex": 3,
         "explanationFr": "赋予 (fùyǔ) = conférer, attribuer (sens solennel). 赋予权力 = conférer un pouvoir. Registre écrit, souvent juridique ou institutionnel.",
         "topic": "vocab",
         "promptEn": "What does 赋予 mean?",
@@ -2845,12 +2786,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire « 莫非 » ?",
         "choices": [
-          "Ne pourrait-ce pas être que... (supposition prudente)",
           "Certainement pas",
+          "Ne pourrait-ce pas être que... (supposition prudente)",
           "Exactement",
           "N'importe quoi"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "莫非 = « serait-ce que... ? » — conjecture prudente, souvent rhétorique. Registre littéraire. 莫非你忘了？ = « aurais-tu donc oublié ? ».",
         "topic": "grammar",
         "promptEn": "What does \"莫非\" mean?",
@@ -2868,11 +2809,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Le terme 改革 signifie :",
         "choices": [
           "Révolution",
-          "Réforme",
           "Renversement",
+          "Réforme",
           "Régression"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "改革 = réforme. 革命 = révolution, 推翻 = renverser. Vocabulaire politique standard.",
         "topic": "vocab",
         "promptEn": "The term 改革 means:",
@@ -2888,35 +2829,25 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "c21-q5",
         "type": "mcq",
         "promptFr": "Que veut dire « 岂非 » (岂有不...之理) ?",
-        "choices": [
-          "N'est-ce pas évidemment...?",
-          "Comment pourrait-on...?",
-          "Il y a peut-être...",
-          "C'est interdit."
-        ],
-        "correctIndex": 0,
+        "choices": ["Ce n'est pas permis.", "Comment pourrait-on...?", "Ce n'est pas certain.", "N'est-ce pas évidemment...?"],
+        "correctIndex": 3,
         "explanationFr": "岂非 = « n'est-ce pas manifestement... ? ». Registre élevé. 岂有此理 = « c'est absurde ! ». Marqueurs héritiers du chinois classique.",
         "topic": "grammar",
         "promptEn": "What does \"岂非\" mean (岂有不...之理)?",
         "explanationEn": "岂非 = \"is it not manifestly...?\". Elevated register. 岂有此理 = \"this is absurd!\". Markers inherited from classical Chinese.",
-        "choicesEn": [
-          "Is it not obviously...?",
-          "How could one...?",
-          "Perhaps there is...",
-          "It is forbidden."
-        ]
+        "choicesEn": ["It is not allowed.", "How could one...?", "It is not certain.", "Is it not obviously...?"]
       },
       {
         "id": "c21-q6",
         "type": "mcq",
         "promptFr": "Le mot 通货膨胀 signifie :",
         "choices": [
-          "Déflation",
           "Inflation",
+          "Déflation",
           "Chômage",
           "Taux de change"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "通货膨胀 = inflation (litt. « la monnaie s'enfle »). Vocabulaire économique HSK 6. 通货紧缩 = déflation.",
         "topic": "vocab",
         "promptEn": "The word 通货膨胀 means:",
@@ -2933,12 +2864,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment traduire « il est non seulement intelligent, mais encore plus travailleur » ?",
         "choices": [
-          "他不但聪明，而且更勤奋",
           "他聪明而且工作",
+          "他不但聪明，而且更勤奋",
           "他聪明不但勤奋",
           "他更聪明勤奋而且"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "不但...而且（更）... = « non seulement... mais (encore plus)... ». La présence de 更 renforce la gradation. Structure soignée à l'écrit.",
         "topic": "grammar",
         "promptEn": "How do you translate \"he is not only smart, but even more hard-working\"?",
@@ -2949,12 +2880,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie l'expression 以身作则 ?",
         "choices": [
-          "Donner l'exemple par sa conduite",
-          "Travailler avec son corps",
           "Suivre les règles strictement",
+          "Travailler avec son corps",
+          "Donner l'exemple par sa conduite",
           "Être ferme et juste"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "以身作则 : « prendre son propre corps pour règle » = donner l'exemple. Applicable aux parents, aux enseignants, aux dirigeants.",
         "topic": "culture",
         "promptEn": "What does the expression 以身作则 mean?",
@@ -2972,11 +2903,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Dans un essai, 综上所述 signifie :",
         "choices": [
           "En introduction",
-          "Pour résumer / en conclusion",
+          "Selon la tradition",
           "Par ailleurs",
-          "Selon la tradition"
-        ],
-        "correctIndex": 1,
+          "Pour résumer / en conclusion"],
+        "correctIndex": 3,
         "explanationFr": "综上所述 = « en résumé de ce qui précède / en conclusion ». Formule figée de clôture de paragraphe ou d'essai.",
         "topic": "grammar",
         "promptEn": "In an essay, 综上所述 means:",
@@ -2993,12 +2923,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Dans le dialogue formel ci-dessous, B dit :",
         "choices": [
-          "La politique est rétrograde.",
           "Elle a un certain caractère visionnaire, mais reste perfectible.",
+          "La politique est rétrograde.",
           "Elle est parfaite.",
           "Il ne prend pas position."
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "前瞻性 = « caractère visionnaire / tourné vers l'avenir ». 改进空间 = marge d'amélioration. 具有 = posséder / comporter. Registre institutionnel soigné.",
         "topic": "dialogue",
         "contextFr": "A: 对这项政策，您持何种看法？\nB: 我认为它具有一定的前瞻性，但仍有改进空间。",
@@ -3017,12 +2947,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que signifie 鉴于 dans un texte officiel ?",
         "choices": [
-          "Considérant que / vu que",
           "À l'opposé de",
+          "Considérant que / vu que",
           "Malgré",
           "Au-delà de"
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "鉴于 = « considérant que / vu que » (registre juridique et institutionnel). Ouvre une justification officielle. 鉴于上述情况 = « vu ce qui précède ».",
         "topic": "grammar",
         "promptEn": "What does 鉴于 mean in an official text?",
@@ -3039,12 +2969,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Le chengyu 厚积薄发 évoque :",
         "choices": [
-          "Une accumulation patiente avant un déploiement maîtrisé.",
-          "Acheter beaucoup et vendre peu.",
           "Économiser sans dépenser.",
+          "Acheter beaucoup et vendre peu.",
+          "Une accumulation patiente avant un déploiement maîtrisé.",
           "Travailler peu mais bien."
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "厚积薄发 (hòu jī bó fā) : « accumuler épaissement, déployer parcimonieusement ». Cite Su Shi. Valeur cardinale du travail à long terme avant l'éclat public.",
         "topic": "culture",
         "promptEn": "The chengyu 厚积薄发 evokes:",
@@ -3061,12 +2991,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Quel terme désigne le « patrimoine culturel » au sens institutionnel ?",
         "choices": [
-          "文化遗产",
+          "文化差异",
           "文化背景",
           "文化交流",
-          "文化差异"
-        ],
-        "correctIndex": 0,
+          "文化遗产"],
+        "correctIndex": 3,
         "explanationFr": "文化遗产 = patrimoine culturel. 文化背景 = contexte culturel, 文化交流 = échanges culturels, 文化差异 = différences culturelles. Vocabulaire UNESCO / institutionnel.",
         "topic": "vocab",
         "promptEn": "Which term designates \"cultural heritage\" in an institutional sense?",
@@ -3134,11 +3063,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Le caractère classique 亦 (yì) signifie :",
         "choices": [
           "Si",
-          "Aussi / également (registre classique)",
           "Pas",
+          "Aussi / également (registre classique)",
           "Seulement"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "亦 = 也 en chinois classique. Toujours trouvé dans les textes lettrés, les citations philosophiques, ou certains chengyu (不亦乐乎 « n'est-ce pas réjouissant ? »).",
         "topic": "culture",
         "promptEn": "The classical character 亦 (yì) means:",
@@ -3156,11 +3085,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Qu'exprime « 矣 » à la fin d'une phrase classique ?",
         "choices": [
           "Une question",
-          "Un accompli / état atteint (équivalent ~了)",
+          "Un doute",
           "Un ordre",
-          "Un doute"
-        ],
-        "correctIndex": 1,
+          "Un accompli / état atteint (équivalent ~了)"],
+        "correctIndex": 3,
         "explanationFr": "矣 marque l'accompli ou un changement d'état en chinois classique. Proche de 了 moderne. 天命矣 = « c'est la volonté du ciel ». Souvent cité dans les textes traditionnels.",
         "topic": "culture",
         "promptEn": "What does \"矣\" express at the end of a classical sentence?",
@@ -3199,12 +3127,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Le chengyu 杯弓蛇影 évoque :",
         "choices": [
-          "Une frayeur imaginaire causée par sa propre imagination.",
           "Un serpent qui boit dans une coupe.",
+          "Une frayeur imaginaire causée par sa propre imagination.",
           "Une amitié sincère.",
           "La beauté des reflets."
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "杯弓蛇影 : « l'ombre de l'arc dans la coupe ressemblant à un serpent ». Un convive effrayé par le reflet d'un arc suspendu. = s'alarmer pour rien, peur imaginaire.",
         "topic": "culture",
         "promptEn": "The chengyu 杯弓蛇影 evokes:",
@@ -3221,12 +3149,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Le mot 寄予 signifie :",
         "choices": [
-          "Attribuer (un espoir, une attente — sens solennel)",
-          "Envoyer par la poste",
           "Donner un cadeau",
+          "Envoyer par la poste",
+          "Attribuer (un espoir, une attente — sens solennel)",
           "Trahir"
         ],
-        "correctIndex": 0,
+        "correctIndex": 2,
         "explanationFr": "寄予 = « placer (un espoir, une confiance) en ». 寄予厚望 = nourrir de grands espoirs pour. Registre très soutenu, médiatique / officiel.",
         "topic": "vocab",
         "promptEn": "The word 寄予 means:",
@@ -3243,12 +3171,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Que veut dire « 耐人寻味 » ?",
         "choices": [
-          "Qui donne à réfléchir / savoureux à méditer",
+          "Être indécis",
           "Supporter la fatigue",
           "Goûter patiemment",
-          "Être indécis"
-        ],
-        "correctIndex": 0,
+          "Qui donne à réfléchir / savoureux à méditer"],
+        "correctIndex": 3,
         "explanationFr": "耐人寻味 : « qui mérite d'être savouré / médité ». Utilisé pour un livre, un propos, une œuvre d'art qui invite à la réflexion.",
         "topic": "culture",
         "promptEn": "What does \"耐人寻味\" mean?",
@@ -3265,12 +3192,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Comment rendre « il se distingue dans son domaine » dans un registre soutenu ?",
         "choices": [
-          "他在领域里很好",
           "他在该领域独树一帜",
+          "他在领域里很好",
           "他做得不错在领域",
           "他好领域的"
         ],
-        "correctIndex": 1,
+        "correctIndex": 0,
         "explanationFr": "独树一帜 : « planter son propre drapeau » = se démarquer, avoir son propre style. 在该领域 = « dans ce domaine » (registre formel avec 该 démonstratif lettré).",
         "topic": "culture",
         "promptEn": "How do you render \"he stands out in his field\" in a formal register?",
@@ -3281,12 +3208,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "type": "mcq",
         "promptFr": "Le vers de Du Fu « 国破山河在 » évoque :",
         "choices": [
-          "L'État est détruit, mais fleuves et monts demeurent.",
           "Il pleut sur les montagnes.",
+          "L'État est détruit, mais fleuves et monts demeurent.",
           "Les rivières sont fières.",
           "Les États guerroient."
         ],
-        "correctIndex": 0,
+        "correctIndex": 1,
         "explanationFr": "« 国破山河在 » : premier vers du poème « 春望 » (« Vue printanière ») de Du Fu (杜甫), Tang. Réflexion sur la permanence de la nature face à la chute dynastique. Culture lettrée de base au niveau C2.",
         "topic": "culture",
         "promptEn": "The line by Du Fu \"国破山河在\" evokes:",
@@ -3304,11 +3231,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptFr": "Essai formel : quelle phrase est la plus soignée pour conclure ?",
         "choices": [
           "所以我觉得这样就好了",
-          "综上所述，此议具有深远影响，值得进一步探讨",
           "我觉得很好",
+          "综上所述，此议具有深远影响，值得进一步探讨",
           "说得对"
         ],
-        "correctIndex": 1,
+        "correctIndex": 2,
         "explanationFr": "综上所述 = « en résumé ». 此议 = « cette proposition » (此 démonstratif lettré). 具有深远影响 = « a une portée profonde ». 值得进一步探讨 = « mérite d'être approfondi ». Formule complète de conclusion académique.",
         "topic": "grammar",
         "promptEn": "Formal essay: which sentence is the most polished conclusion?",
