@@ -4832,7 +4832,7 @@ En Chine, 中医 et **西医** (médecine occidentale) coexistent — les ordonn
     category: `vocabulary`,
     difficulty: `superior`,
     introTitle: `L'art de critiquer avec 4 caractères`,
-    introContent: `自相矛盾 (zì xiāng máo dùn) (zì xiāng máodùn, « se contredire — lance contre bouclier ») vient du paradoxe classique du vendeur d'armes prétendant que sa lance perce TOUT et son bouclier est imperçable. Ces chengyu permettent une critique lettrée et voilée.
+    introContent: `自相矛盾 (zì xiāng máo dùn) (zì xiāng máodùn, « se contredire — lance contre bouclier ») vient du paradoxe classique du vendeur d'armes prétendant que sa lance perce TOUT et son bouclier est impénétrable. Ces chengyu permettent une critique lettrée et voilée.
 
 - 自相矛盾 (zì xiāng máo dùn) : quand quelqu'un dit A puis non-A → 你的话自相矛盾 (nǐ dehuà zì xiāng máo dùn) 
 - 画蛇添足 (huàshé-tiānzú) (huà shé tiān zú, « dessiner un serpent et lui ajouter des pattes » = gâcher par excès de zèle)
