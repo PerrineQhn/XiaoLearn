@@ -328,7 +328,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "妈", pinyin: "mā", meaning: "maman (m + a + ton 1)", meaningEn: "mom (m + a + tone 1)" },
         { hanzi: "爸", pinyin: "bà", meaning: "papa (b + a + ton 4)", meaningEn: "dad (b + a + tone 4)" },
-        { hanzi: "朋友", pinyin: "péngyǒu", meaning: "ami·e", meaningEn: "friend" },
+        { hanzi: "朋友", pinyin: "péngyou", meaning: "ami·e", meaningEn: "friend" },
         { hanzi: "老师", pinyin: "lǎoshī", meaning: "professeur", meaningEn: "teacher" },
         { hanzi: "茶", pinyin: "chá", meaning: "thé (ch + a + ton 2)", meaningEn: "tea (ch + a + tone 2)" },
         { hanzi: "喝", pinyin: "hē", meaning: "boire (h + e + ton 1)", meaningEn: "to drink (h + e + tone 1)" },
@@ -417,7 +417,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "In a professional context, 明天见 (míngtiān jiàn) \"see you tomorrow\" or 下次见 (xiàcìjiàn) \"see you next time\" are common. The final 见 works as a reusable template.",
       items: [
         { hanzi: "再见", pinyin: "zàijiàn", meaning: "au revoir", meaningEn: "goodbye" },
-        { hanzi: "谢谢", pinyin: "xièxiè", meaning: "merci", meaningEn: "thank you" }
+        { hanzi: "谢谢", pinyin: "xièxie", meaning: "merci", meaningEn: "thank you" }
       ],
     }
   ],
@@ -431,8 +431,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "请 est aussi un verbe : 请进 (« entrez s'il vous plaît »), 请坐 (« asseyez-vous »). On le place toujours en début de phrase, comme le « please » anglais avec un impératif.",
       tipEn: "请 is also a verb: 请进 (\"please come in\"), 请坐 (\"please sit\"). It is always placed at the start, like English \"please\" with an imperative.",
       items: [
-        { hanzi: "谢谢", pinyin: "xièxiè", meaning: "merci", meaningEn: "thank you" },
-        { hanzi: "不客气", pinyin: "bù kèqì", meaning: "pas de quoi, je t'en prie", meaningEn: "you're welcome" },
+        { hanzi: "谢谢", pinyin: "xièxie", meaning: "merci", meaningEn: "thank you" },
+        { hanzi: "不客气", pinyin: "bú kèqi", meaning: "pas de quoi, je t'en prie", meaningEn: "you're welcome" },
         { hanzi: "请", pinyin: "qǐng", meaning: "s'il vous plaît, je vous prie", meaningEn: "please" }
       ],
     },
@@ -446,7 +446,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "对不起 is for real apologies. For a casual \"excuse me\" in passing, prefer 不好意思 (bùhǎoyìsi) — softer and more social.",
       items: [
         { hanzi: "对不起", pinyin: "duìbùqǐ", meaning: "pardon, je suis désolé", meaningEn: "sorry, I apologize" },
-        { hanzi: "没关系", pinyin: "méiguānxì", meaning: "ce n'est rien, pas grave", meaningEn: "no problem, it's OK" },
+        { hanzi: "没关系", pinyin: "méiguānxi", meaning: "ce n'est rien, pas grave", meaningEn: "no problem, it's OK" },
         { hanzi: "没事", pinyin: "méishì", meaning: "ce n'est rien (familier)", meaningEn: "it's nothing (casual)" },
         { hanzi: "打扰", pinyin: "dǎrǎo", meaning: "déranger", meaningEn: "to bother, disturb" }
       ],
@@ -726,8 +726,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "La répétition (爸爸, 妈妈, 哥哥…) marque l'affection et l'oral courant. Les formes simples 父, 母 existent aussi mais sont surtout littéraires ou administratives.",
       tipEn: "The reduplication (爸爸, 妈妈, 哥哥…) marks affection and spoken usage. The single forms 父, 母 exist but are mostly literary or formal.",
       items: [
-        { hanzi: "爸爸", pinyin: "bàbà", meaning: "papa", meaningEn: "dad" },
-        { hanzi: "妈妈", pinyin: "māmā", meaning: "maman", meaningEn: "mom" },
+        { hanzi: "爸爸", pinyin: "bàba", meaning: "papa", meaningEn: "dad" },
+        { hanzi: "妈妈", pinyin: "māma", meaning: "maman", meaningEn: "mom" },
         { hanzi: "家", pinyin: "jiā", meaning: "famille, foyer", meaningEn: "family, home" }
       ],
     },
@@ -740,10 +740,10 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Par extension, on appelle 姐姐 (jiějie) une femme un peu plus âgée qu'on apprécie, même sans lien familial. Pareil pour 哥哥 avec un homme.",
       tipEn: "By extension, 姐姐 (jiějie) is used for a slightly older woman you like, even without family ties. Same with 哥哥 for a man.",
       items: [
-        { hanzi: "哥哥", pinyin: "gēgē", meaning: "grand frère", meaningEn: "older brother" },
+        { hanzi: "哥哥", pinyin: "gēge", meaning: "grand frère", meaningEn: "older brother" },
         { hanzi: "弟弟", pinyin: "dìdi", meaning: "petit frère", meaningEn: "younger brother" },
-        { hanzi: "姐姐", pinyin: "jiějiě", meaning: "grande sœur", meaningEn: "older sister" },
-        { hanzi: "妹妹", pinyin: "mèimèi", meaning: "petite sœur", meaningEn: "younger sister" }
+        { hanzi: "姐姐", pinyin: "jiějie", meaning: "grande sœur", meaningEn: "older sister" },
+        { hanzi: "妹妹", pinyin: "mèimei", meaning: "petite sœur", meaningEn: "younger sister" }
       ],
     },
     {
@@ -756,10 +756,10 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "\"Do you have children?\" is asked 你有孩子吗? (nǐ yǒu háizi ma). Typical answers: 有两个 (I have two) or 没有 (I don't have any).",
       items: [
         { hanzi: "儿子", pinyin: "érzi", meaning: "fils", meaningEn: "son" },
-        { hanzi: "女儿", pinyin: "nǚér", meaning: "fille (enfant)", meaningEn: "daughter" },
+        { hanzi: "女儿", pinyin: "nǚ'ér", meaning: "fille (enfant)", meaningEn: "daughter" },
         { hanzi: "孩子", pinyin: "háizi", meaning: "enfant", meaningEn: "child" },
-        { hanzi: "丈夫", pinyin: "zhàngfū", meaning: "mari", meaningEn: "husband" },
-        { hanzi: "妻子", pinyin: "qīzǐ", meaning: "épouse", meaningEn: "wife" }
+        { hanzi: "丈夫", pinyin: "zhàngfu", meaning: "mari", meaningEn: "husband" },
+        { hanzi: "妻子", pinyin: "qīzi", meaning: "épouse", meaningEn: "wife" }
       ],
     }
   ],
@@ -1111,7 +1111,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "菜", pinyin: "cài", meaning: "plat, légume", meaningEn: "dish, vegetable" },
         { hanzi: "米饭", pinyin: "mǐfàn", meaning: "riz cuit", meaningEn: "cooked rice" },
         { hanzi: "苹果", pinyin: "píngguǒ", meaning: "pomme", meaningEn: "apple" },
-        { hanzi: "喜欢", pinyin: "xǐhuān", meaning: "aimer (apprécier)", meaningEn: "to like" }
+        { hanzi: "喜欢", pinyin: "xǐhuan", meaning: "aimer (apprécier)", meaningEn: "to like" }
       ],
     }
   ],
@@ -1257,10 +1257,10 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "请 ALWAYS goes at the start of the phrase, never at the end: 请坐 (sit, please), not 坐请. Opposite of French structure.",
       items: [
         { hanzi: "请", pinyin: "qǐng", meaning: "s'il vous plaît", meaningEn: "please" },
-        { hanzi: "谢谢", pinyin: "xièxiè", meaning: "merci", meaningEn: "thank you" },
-        { hanzi: "不客气", pinyin: "bù kèqì", meaning: "de rien", meaningEn: "you're welcome" },
+        { hanzi: "谢谢", pinyin: "xièxie", meaning: "merci", meaningEn: "thank you" },
+        { hanzi: "不客气", pinyin: "bú kèqi", meaning: "de rien", meaningEn: "you're welcome" },
         { hanzi: "对不起", pinyin: "duìbùqǐ", meaning: "pardon", meaningEn: "sorry" },
-        { hanzi: "没关系", pinyin: "méiguānxì", meaning: "pas grave", meaningEn: "no problem" }
+        { hanzi: "没关系", pinyin: "méiguānxi", meaning: "pas grave", meaningEn: "no problem" }
       ],
     },
     {
@@ -1272,7 +1272,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "辛苦了 est culturellement énorme. À retenir : DÈS qu'un Chinois vient de faire quelque chose pour toi (te servir, te livrer, t'aider), 辛苦了 est attendu. Plus chaud que 谢谢.",
       tipEn: "辛苦了 is culturally huge. AS SOON as a Chinese person has done something for you (served, delivered, helped), 辛苦了 is expected. Warmer than 谢谢.",
       items: [
-        { hanzi: "麻烦", pinyin: "máfán", meaning: "déranger, ennui", meaningEn: "trouble" },
+        { hanzi: "麻烦", pinyin: "máfan", meaning: "déranger, ennui", meaningEn: "trouble" },
         { hanzi: "辛苦了", pinyin: "xīnkǔ le", meaning: "merci pour le travail", meaningEn: "thanks for the work" },
         { hanzi: "加油", pinyin: "jiāyóu", meaning: "bon courage", meaningEn: "go for it" },
         { hanzi: "帮", pinyin: "bāng", meaning: "aider", meaningEn: "help" },
@@ -1340,7 +1340,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "知道了 quand on te donne une consigne (par ex. « 你要早点来 » → 知道了). 明白了 quand on t'explique un concept (par ex. « 这个字是 X 的意思 » → 明白了).",
       tipEn: "知道了 when given an instruction (e.g. «你要早点来» → 知道了). 明白了 when something is explained (e.g. «这个字是 X 的意思» → 明白了).",
       items: [
-        { hanzi: "明白", pinyin: "míngbái", meaning: "comprendre", meaningEn: "understand" },
+        { hanzi: "明白", pinyin: "míngbai", meaning: "comprendre", meaningEn: "understand" },
         { hanzi: "知道", pinyin: "zhīdào", meaning: "savoir", meaningEn: "know" },
         { hanzi: "然后", pinyin: "ránhòu", meaning: "ensuite", meaningEn: "then" },
         { hanzi: "真的", pinyin: "zhēnde", meaning: "vraiment", meaningEn: "really" },
@@ -1442,7 +1442,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Si tu sors d'un magasin/restaurant chinois, le commerçant te dira presque toujours 慢走 (« va doucement »). Pas une vraie demande, juste une formule de politesse. Tu peux répondre 谢谢 ou un signe de tête.",
       tipEn: "When leaving a Chinese shop/restaurant, the owner will almost always say 慢走 («take it easy»). Not a real request, just a courtesy. Reply 谢谢 or a head nod.",
       items: [
-        { hanzi: "路上", pinyin: "lùshàng", meaning: "sur la route", meaningEn: "on the road" },
+        { hanzi: "路上", pinyin: "lùshang", meaning: "sur la route", meaningEn: "on the road" },
         { hanzi: "小心", pinyin: "xiǎoxīn", meaning: "fais attention", meaningEn: "be careful" },
         { hanzi: "慢走", pinyin: "mànzǒu", meaning: "va doucement", meaningEn: "take it easy" },
         { hanzi: "联系", pinyin: "liánxì", meaning: "contact", meaningEn: "contact" },
@@ -1463,7 +1463,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "能", pinyin: "néng", meaning: "pouvoir", meaningEn: "can, be able" },
         { hanzi: "可不可以", pinyin: "kěbùkěyǐ", meaning: "est-ce possible", meaningEn: "is it possible" },
         { hanzi: "帮我", pinyin: "bāng wǒ", meaning: "m'aider", meaningEn: "help me" },
-        { hanzi: "不好意思", pinyin: "bùhǎoyìsī", meaning: "pardon, désolé", meaningEn: "excuse me, sorry" },
+        { hanzi: "不好意思", pinyin: "bùhǎoyìsi", meaning: "pardon, désolé", meaningEn: "excuse me, sorry" },
         { hanzi: "事", pinyin: "shì", meaning: "affaire, chose", meaningEn: "matter, thing" }
       ],
     },
@@ -1546,7 +1546,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "老师", pinyin: "lǎoshī", meaning: "professeur", meaningEn: "teacher" },
         { hanzi: "师傅", pinyin: "shīfù", meaning: "maître, monsieur", meaningEn: "master, sir" },
-        { hanzi: "先生", pinyin: "xiānshēng", meaning: "monsieur", meaningEn: "mister" },
+        { hanzi: "先生", pinyin: "xiānsheng", meaning: "monsieur", meaningEn: "mister" },
         { hanzi: "女士", pinyin: "nǚshì", meaning: "madame", meaningEn: "madam" },
         { hanzi: "美女", pinyin: "měinǚ", meaning: "mademoiselle (oral)", meaningEn: "miss (spoken)" }
       ],
@@ -1599,7 +1599,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "也", pinyin: "yě", meaning: "aussi", meaningEn: "also, too" },
         { hanzi: "都", pinyin: "dōu", meaning: "tous, tout", meaningEn: "all" },
         { hanzi: "我们", pinyin: "wǒmen", meaning: "nous", meaningEn: "we" },
-        { hanzi: "喜欢", pinyin: "xǐhuān", meaning: "aimer", meaningEn: "like" },
+        { hanzi: "喜欢", pinyin: "xǐhuan", meaning: "aimer", meaningEn: "like" },
         { hanzi: "茶", pinyin: "chá", meaning: "thé", meaningEn: "tea" }
       ],
     },
@@ -1633,7 +1633,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "多少", pinyin: "duōshǎo", meaning: "combien (grand)", meaningEn: "how much (big)" },
         { hanzi: "几", pinyin: "jǐ", meaning: "combien (petit)", meaningEn: "how many (small)" },
         { hanzi: "钱", pinyin: "qián", meaning: "argent", meaningEn: "money" },
-        { hanzi: "朋友", pinyin: "péngyǒu", meaning: "ami", meaningEn: "friend" },
+        { hanzi: "朋友", pinyin: "péngyou", meaning: "ami", meaningEn: "friend" },
         { hanzi: "人", pinyin: "rén", meaning: "personne", meaningEn: "person" }
       ],
     },
@@ -1991,7 +1991,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "牛肉", pinyin: "niúròu", meaning: "bœuf", meaningEn: "beef" },
         { hanzi: "猪肉", pinyin: "zhūròu", meaning: "porc", meaningEn: "pork" },
         { hanzi: "鱼", pinyin: "yú", meaning: "poisson", meaningEn: "fish" },
-        { hanzi: "豆腐", pinyin: "dòufǔ", meaning: "tofu", meaningEn: "tofu" },
+        { hanzi: "豆腐", pinyin: "dòufu", meaning: "tofu", meaningEn: "tofu" },
         { hanzi: "菜", pinyin: "cài", meaning: "légume / plat", meaningEn: "vegetable / dish" }
       ],
     },
@@ -2092,7 +2092,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "穿", pinyin: "chuān", meaning: "porter (vêtements)", meaningEn: "wear (clothes)" },
         { hanzi: "戴", pinyin: "dài", meaning: "porter (accessoires)", meaningEn: "wear (accessory)" },
-        { hanzi: "衣服", pinyin: "yīfú", meaning: "vêtement", meaningEn: "clothing" },
+        { hanzi: "衣服", pinyin: "yīfu", meaning: "vêtement", meaningEn: "clothing" },
         { hanzi: "鞋", pinyin: "xié", meaning: "chaussure", meaningEn: "shoe" },
         { hanzi: "帽子", pinyin: "màozi", meaning: "chapeau", meaningEn: "hat" },
         { hanzi: "眼镜", pinyin: "yǎnjìng", meaning: "lunettes", meaningEn: "glasses" }
@@ -2250,7 +2250,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "冷", pinyin: "lěng", meaning: "froid", meaningEn: "cold" },
         { hanzi: "热", pinyin: "rè", meaning: "chaud", meaningEn: "hot" },
         { hanzi: "暖和", pinyin: "nuǎnhuo", meaning: "doux, tiède", meaningEn: "mild" },
-        { hanzi: "凉快", pinyin: "liángkuài", meaning: "frais", meaningEn: "cool" }
+        { hanzi: "凉快", pinyin: "liángkuai", meaning: "frais", meaningEn: "cool" }
       ],
     },
     {
@@ -2482,7 +2482,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "都", pinyin: "dōu", meaning: "tous, toutes", meaningEn: "all" },
         { hanzi: "他们", pinyin: "tāmen", meaning: "ils, elles", meaningEn: "they" },
-        { hanzi: "喜欢", pinyin: "xǐhuān", meaning: "aimer", meaningEn: "like" },
+        { hanzi: "喜欢", pinyin: "xǐhuan", meaning: "aimer", meaningEn: "like" },
         { hanzi: "这两本书", pinyin: "zhè liǎngběnshū", meaning: "ces deux livres", meaningEn: "these two books" },
         { hanzi: "看过", pinyin: "kànguò", meaning: "avoir lu / vu", meaningEn: "have read / seen" }
       ],
@@ -2550,7 +2550,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "个", pinyin: "ge", meaning: "MW générique (personnes, abstrait)", meaningEn: "generic MW (people, abstract)" },
         { hanzi: "本", pinyin: "běn", meaning: "MW livres reliés", meaningEn: "MW bound books" },
         { hanzi: "位", pinyin: "wèi", meaning: "MW personne (poli)", meaningEn: "MW person (polite)" },
-        { hanzi: "朋友", pinyin: "péngyǒu", meaning: "ami", meaningEn: "friend" },
+        { hanzi: "朋友", pinyin: "péngyou", meaning: "ami", meaningEn: "friend" },
         { hanzi: "问题", pinyin: "wèntí", meaning: "question, problème", meaningEn: "question, problem" },
         { hanzi: "咖啡", pinyin: "kāfēi", meaning: "café", meaningEn: "coffee" }
       ],
@@ -2626,8 +2626,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "得", pinyin: "děi", meaning: "il faut, je dois (oral)", meaningEn: "must (oral)" },
         { hanzi: "必须", pinyin: "bìxū", meaning: "obligatoirement", meaningEn: "must, mandatory" },
         { hanzi: "一定要", pinyin: "yídìng yào", meaning: "il faut absolument", meaningEn: "really must" },
-        { hanzi: "不用", pinyin: "bùyòng", meaning: "pas besoin", meaningEn: "no need" },
-        { hanzi: "不必", pinyin: "bùbì", meaning: "pas nécessaire", meaningEn: "not necessary" }
+        { hanzi: "不用", pinyin: "búyòng", meaning: "pas besoin", meaningEn: "no need" },
+        { hanzi: "不必", pinyin: "búbì", meaning: "pas nécessaire", meaningEn: "not necessary" }
       ],
     },
     {
@@ -2701,10 +2701,10 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "次", pinyin: "cì", meaning: "fois (générique)", meaningEn: "time(s) (generic)" },
         { hanzi: "遍", pinyin: "biàn", meaning: "fois (cycle complet)", meaningEn: "time(s) (full cycle)" },
         { hanzi: "回", pinyin: "huí", meaning: "fois (oral, nord)", meaningEn: "time(s) (oral, northern)" },
-        { hanzi: "一点儿", pinyin: "yìdiǎnér", meaning: "un peu (petit écart)", meaningEn: "a bit (small gap)" },
+        { hanzi: "一点儿", pinyin: "yìdiǎnr", meaning: "un peu (petit écart)", meaningEn: "a bit (small gap)" },
         { hanzi: "得多", pinyin: "de duō", meaning: "beaucoup plus (écart grand)", meaningEn: "much more (big gap)" },
         { hanzi: "多了", pinyin: "duō le", meaning: "beaucoup plus (oral)", meaningEn: "much more (oral)" },
-        { hanzi: "一些", pinyin: "yīxiē", meaning: "un peu, quelques", meaningEn: "a bit, some" },
+        { hanzi: "一些", pinyin: "yìxiē", meaning: "un peu, quelques", meaningEn: "a bit, some" },
         { hanzi: "比", pinyin: "bǐ", meaning: "comparé à", meaningEn: "compared to" }
       ],
     }
@@ -3061,7 +3061,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "En Chine, pas de médecin généraliste de quartier comme en France. On va directement à l'hôpital (公立医院 = public, ou 私立医院 = privé), on prend un ticket 挂号, on attend, on consulte. Plus rapide qu'on ne pense pour les urgences.",
       tipEn: "In China, no neighborhood GP like in France. You go directly to the hospital (公立医院 = public, or 私立医院 = private), take a 挂号 ticket, wait, consult. Faster than expected for emergencies.",
       items: [
-        { hanzi: "舒服", pinyin: "shūfú", meaning: "à l'aise", meaningEn: "comfortable" },
+        { hanzi: "舒服", pinyin: "shūfu", meaning: "à l'aise", meaningEn: "comfortable" },
         { hanzi: "感冒", pinyin: "gǎnmào", meaning: "rhume", meaningEn: "cold" },
         { hanzi: "发烧", pinyin: "fāshāo", meaning: "fièvre", meaningEn: "fever" },
         { hanzi: "疼", pinyin: "téng", meaning: "douloureux", meaningEn: "painful" },
@@ -3080,7 +3080,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "累", pinyin: "lèi", meaning: "fatigué", meaningEn: "tired" },
         { hanzi: "睡觉", pinyin: "shuìjiào", meaning: "dormir", meaningEn: "sleep" },
         { hanzi: "压力", pinyin: "yālì", meaning: "pression", meaningEn: "pressure" },
-        { hanzi: "休息", pinyin: "xiūxī", meaning: "se reposer", meaningEn: "rest" },
+        { hanzi: "休息", pinyin: "xiūxi", meaning: "se reposer", meaningEn: "rest" },
         { hanzi: "身体", pinyin: "shēntǐ", meaning: "corps, santé", meaningEn: "body, health" }
       ],
     }
@@ -3112,7 +3112,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "At a Chinese restaurant with friends, DON'T propose to split the bill upfront. Let the other say 我请你 and accept. You'll treat next time (for real, not just a formula). Otherwise perceived as cold/individualistic.",
       items: [
         { hanzi: "请", pinyin: "qǐng", meaning: "inviter, payer pour", meaningEn: "invite, treat" },
-        { hanzi: "不用", pinyin: "bùyòng", meaning: "pas besoin", meaningEn: "no need" },
+        { hanzi: "不用", pinyin: "búyòng", meaning: "pas besoin", meaningEn: "no need" },
         { hanzi: "自己", pinyin: "zìjǐ", meaning: "soi-même", meaningEn: "oneself" },
         { hanzi: "下次", pinyin: "xiàcì", meaning: "la prochaine fois", meaningEn: "next time" },
         { hanzi: "AA制", pinyin: "A A zhì", meaning: "partage à parts égales", meaningEn: "split bill" }
@@ -3197,11 +3197,11 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Question CULTURELLE qu'on te posera VITE : « 你结婚了吗？» (es-tu marié ?). Pas une intrusion en Chine, juste de la curiosité sociale normale. Réponds franchement : 还没 (pas encore) ou 结婚了 (oui).",
       tipEn: "CULTURAL question you'll be asked QUICKLY: «你结婚了吗？» (are you married?). Not an intrusion in China, just normal social curiosity. Reply honestly: 还没 (not yet) or 结婚了 (yes).",
       items: [
-        { hanzi: "朋友", pinyin: "péngyǒu", meaning: "ami", meaningEn: "friend" },
+        { hanzi: "朋友", pinyin: "péngyou", meaning: "ami", meaningEn: "friend" },
         { hanzi: "同事", pinyin: "tóngshì", meaning: "collègue", meaningEn: "colleague" },
         { hanzi: "老板", pinyin: "lǎobǎn", meaning: "patron", meaningEn: "boss" },
         { hanzi: "同学", pinyin: "tóngxué", meaning: "camarade de classe", meaningEn: "classmate" },
-        { hanzi: "男朋友", pinyin: "nánpéngyǒu", meaning: "petit copain", meaningEn: "boyfriend" }
+        { hanzi: "男朋友", pinyin: "nánpéngyou", meaning: "petit copain", meaningEn: "boyfriend" }
       ],
     },
     {
@@ -3213,7 +3213,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "« 他人很好 » (« il est très bien comme personne ») est l'éloge passe-partout. Si on te le dit de quelqu'un, c'est une vraie recommandation. À l'inverse, dire « 他人不太好 » est très lourd — réservé aux situations vraiment claires.",
       tipEn: "«他人很好» («he's a good person») is the all-purpose praise. If said about someone, it's a real recommendation. Conversely, «他人不太好» is very heavy — reserved for truly clear-cut situations.",
       items: [
-        { hanzi: "聪明", pinyin: "cōngmíng", meaning: "intelligent", meaningEn: "smart" },
+        { hanzi: "聪明", pinyin: "cōngming", meaning: "intelligent", meaningEn: "smart" },
         { hanzi: "热情", pinyin: "rèqíng", meaning: "chaleureux", meaningEn: "warm" },
         { hanzi: "幽默", pinyin: "yōumò", meaning: "humour, drôle", meaningEn: "humor, funny" },
         { hanzi: "害羞", pinyin: "hàixiū", meaning: "timide", meaningEn: "shy" },
@@ -3251,7 +3251,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "一个", pinyin: "yígè", meaning: "un (chose)", meaningEn: "one (thing)" },
         { hanzi: "本", pinyin: "běn", meaning: "classif. livres", meaningEn: "classif. books" },
         { hanzi: "足够", pinyin: "zúgòu", meaning: "suffisant", meaningEn: "enough" },
-        { hanzi: "不够", pinyin: "bùgòu", meaning: "pas assez", meaningEn: "not enough" }
+        { hanzi: "不够", pinyin: "búgòu", meaning: "pas assez", meaningEn: "not enough" }
       ],
     }
   ],
@@ -3571,7 +3571,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "If you expect a DESCRIPTION → 什么样(的). If you expect a JUDGMENT → 怎么样.",
       items: [
         { hanzi: "什么样", pinyin: "shénmeyàng", meaning: "quel genre", meaningEn: "what kind" },
-        { hanzi: "男朋友", pinyin: "nánpéngyǒu", meaning: "petit ami", meaningEn: "boyfriend" },
+        { hanzi: "男朋友", pinyin: "nánpéngyou", meaning: "petit ami", meaningEn: "boyfriend" },
         { hanzi: "方法", pinyin: "fāngfǎ", meaning: "méthode", meaningEn: "method" },
         { hanzi: "工作", pinyin: "gōngzuò", meaning: "travail", meaningEn: "work, job" },
         { hanzi: "哪种", pinyin: "nǎ zhǒng", meaning: "quel type (parmi)", meaningEn: "which type (among)" }
@@ -3624,7 +3624,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "岁", pinyin: "suì", meaning: "ans (âge)", meaningEn: "years old" },
         { hanzi: "多大", pinyin: "duōdà", meaning: "quel âge", meaningEn: "how old" },
-        { hanzi: "喜欢", pinyin: "xǐhuān", meaning: "aimer", meaningEn: "to like" },
+        { hanzi: "喜欢", pinyin: "xǐhuan", meaning: "aimer", meaningEn: "to like" },
         { hanzi: "对", pinyin: "duì", meaning: "correct, c'est ça", meaningEn: "right, correct" },
         { hanzi: "是的", pinyin: "shì de", meaning: "oui (poli/formel)", meaningEn: "yes (polite/formal)" },
         { hanzi: "不", pinyin: "bù", meaning: "ne pas (négation)", meaningEn: "not (negation)" }
@@ -3772,11 +3772,11 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "In 90 % of situations, 很高兴认识你 works perfectly. Save the other phrasings for more specific situations.",
       items: [
         { hanzi: "很高兴认识你", pinyin: "hěn gāoxìng rènshí nǐ", meaning: "ravi de te rencontrer", meaningEn: "nice to meet you" },
-        { hanzi: "认识", pinyin: "rènshí", meaning: "connaître, faire connaissance", meaningEn: "to know, get acquainted" },
+        { hanzi: "认识", pinyin: "rènshi", meaning: "connaître, faire connaissance", meaningEn: "to know, get acquainted" },
         { hanzi: "见到", pinyin: "jiàndào", meaning: "voir (rencontrer)", meaningEn: "to see (meet)" },
         { hanzi: "高兴", pinyin: "gāoxìng", meaning: "content, ravi", meaningEn: "happy, glad" },
         { hanzi: "我也是", pinyin: "wǒ yě shì", meaning: "moi aussi", meaningEn: "me too" },
-        { hanzi: "朋友", pinyin: "péngyǒu", meaning: "ami", meaningEn: "friend" }
+        { hanzi: "朋友", pinyin: "péngyou", meaning: "ami", meaningEn: "friend" }
       ],
     },
     {
@@ -3827,7 +3827,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "喜不喜欢", pinyin: "xǐbùxǐhuān", meaning: "aimer ou pas", meaningEn: "like or not" },
         { hanzi: "累不累", pinyin: "lèibùlèi", meaning: "fatigué ou pas", meaningEn: "tired or not" },
         { hanzi: "明不明白", pinyin: "míng bù míngbái", meaning: "comprendre ou pas", meaningEn: "understand or not" },
-        { hanzi: "在乎", pinyin: "zàihū", meaning: "se soucier de", meaningEn: "care about" }
+        { hanzi: "在乎", pinyin: "zàihu", meaning: "se soucier de", meaningEn: "care about" }
       ],
     },
     {
@@ -3856,7 +3856,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Le test rapide — si tu peux traduire par « soit A soit B » → 还是. Si c'est « X ou pas X » → V-不-V.",
       tipEn: "Quick test — if you can translate as « either A or B » → 还是. If it's « X or not X » → V-不-V.",
       items: [
-        { hanzi: "还是", pinyin: "háishì", meaning: "ou bien (choix)", meaningEn: "or (choice)" },
+        { hanzi: "还是", pinyin: "háishi", meaning: "ou bien (choix)", meaningEn: "or (choice)" },
         { hanzi: "或者", pinyin: "huòzhě", meaning: "ou (affirmatif)", meaningEn: "or (affirmative)" },
         { hanzi: "真的", pinyin: "zhēnde", meaning: "vraiment / vrai", meaningEn: "really / true" },
         { hanzi: "故事", pinyin: "gùshì", meaning: "histoire", meaningEn: "story" },
@@ -4071,7 +4071,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Astuce mnémo : question → 还是 ; affirmation → 或者. Erreur ultra fréquente : dire « 你喜欢茶或者咖啡 ? » ✗ (mixer les deux).",
       tipEn: "Memory hook: question → 还是; statement → 或者. Super common mistake: saying «你喜欢茶或者咖啡?» ✗ (mixing the two).",
       items: [
-        { hanzi: "还是", pinyin: "háishì", meaning: "ou (dans une question)", meaningEn: "or (in a question)" },
+        { hanzi: "还是", pinyin: "háishi", meaning: "ou (dans une question)", meaningEn: "or (in a question)" },
         { hanzi: "或者", pinyin: "huòzhě", meaning: "ou (dans une affirmation)", meaningEn: "or (in a statement)" },
         { hanzi: "或是", pinyin: "huòshì", meaning: "ou (formel / Taïwan)", meaningEn: "or (formal / Taiwan)" },
         { hanzi: "你喜欢茶还是咖啡", pinyin: "nǐ xǐhuān chá háishì kāfēi", meaning: "tu préfères le thé ou le café ?", meaningEn: "do you prefer tea or coffee?" },
@@ -4238,7 +4238,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Tip: orally with friends, 一块儿 sounds warm. In a work meeting, an email or written context, always stick with 一起.",
       items: [
         { hanzi: "一起", pinyin: "yìqǐ", meaning: "ensemble (neutre)", meaningEn: "together (neutral)" },
-        { hanzi: "一块儿", pinyin: "yīkuàiér", meaning: "ensemble (oral, nord)", meaningEn: "together (oral, northern)" },
+        { hanzi: "一块儿", pinyin: "yíkuàir", meaning: "ensemble (oral, nord)", meaningEn: "together (oral, northern)" },
         { hanzi: "和", pinyin: "hé", meaning: "et, avec", meaningEn: "and, with" },
         { hanzi: "跟", pinyin: "gēn", meaning: "avec (oral)", meaningEn: "with (oral)" },
         { hanzi: "我们一起去公园散步", pinyin: "wǒmen yìqǐ qù gōngyuán sànbù", meaning: "on va se promener au parc ensemble", meaningEn: "let's walk in the park together" },
@@ -4258,8 +4258,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Astuce : dans une invitation carton d'un mariage chinois, on lira 请与我们一同分享. Dans un texto entre amis, on écrira 一起吃饭吧. Choisis selon le canal.",
       tipEn: "Tip: on a Chinese wedding invitation card, you'll read 请与我们一同分享. In a text between friends, you'll write 一起吃饭吧. Choose by channel.",
       items: [
-        { hanzi: "一齐", pinyin: "yīqí", meaning: "ensemble (au même instant)", meaningEn: "together (at the same moment)" },
-        { hanzi: "一同", pinyin: "yītóng", meaning: "ensemble (soutenu)", meaningEn: "together (formal)" },
+        { hanzi: "一齐", pinyin: "yìqí", meaning: "ensemble (au même instant)", meaningEn: "together (at the same moment)" },
+        { hanzi: "一同", pinyin: "yìtóng", meaning: "ensemble (soutenu)", meaningEn: "together (formal)" },
         { hanzi: "与", pinyin: "yǔ", meaning: "avec, et (soutenu)", meaningEn: "with, and (formal)" },
         { hanzi: "他们一齐举手", pinyin: "tāmen yīqí jǔshǒu", meaning: "ils ont levé la main tous en même temps", meaningEn: "they all raised their hands at the same time" },
         { hanzi: "大家一齐鼓掌", pinyin: "dàjiā yīqí gǔzhǎng", meaning: "tout le monde a applaudi en cœur", meaningEn: "everyone applauded in unison" },
@@ -4359,7 +4359,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "都", pinyin: "dōu", meaning: "tous, tous ensemble", meaningEn: "all, altogether" },
         { hanzi: "什么", pinyin: "shénme", meaning: "quoi ; (avec 都) tout", meaningEn: "what; (with 都) anything" },
-        { hanzi: "哪儿", pinyin: "nǎér", meaning: "où ; (avec 都) partout", meaningEn: "where; (with 都) everywhere" },
+        { hanzi: "哪儿", pinyin: "nǎr", meaning: "où ; (avec 都) partout", meaningEn: "where; (with 都) everywhere" },
         { hanzi: "他们都来了", pinyin: "tāmen dōu lái le", meaning: "ils sont tous venus", meaningEn: "they all came" },
         { hanzi: "我们都喜欢中国菜", pinyin: "wǒmen dōu xǐhuān zhōngguó cài", meaning: "nous aimons tous la cuisine chinoise", meaningEn: "we all like Chinese food" },
         { hanzi: "学生都在教室", pinyin: "xuéshēng dōu zài jiàoshì", meaning: "les étudiants sont tous en classe", meaningEn: "students are all in class" },
@@ -4623,7 +4623,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "的", pinyin: "de", meaning: "particule 的", meaningEn: "的 particle" },
         { hanzi: "我的", pinyin: "wǒ de", meaning: "le mien / mon", meaningEn: "mine / my" },
         { hanzi: "他的", pinyin: "tā de", meaning: "le sien / son", meaningEn: "his / his" },
-        { hanzi: "漂亮", pinyin: "piàoliàng", meaning: "joli", meaningEn: "pretty" },
+        { hanzi: "漂亮", pinyin: "piàoliang", meaning: "joli", meaningEn: "pretty" },
         { hanzi: "红", pinyin: "hóng", meaning: "rouge", meaningEn: "red" }
       ],
     }
@@ -4790,7 +4790,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "去休息一会儿", pinyin: "qù xiūxī yīhuìer", meaning: "va te reposer un peu", meaningEn: "go rest a bit" },
         { hanzi: "明天下雨", pinyin: "míngtiān xiàyǔ", meaning: "s'il pleut demain", meaningEn: "if it rains tomorrow" },
         { hanzi: "我不去了", pinyin: "wǒ bú qù le", meaning: "je n'y vais plus", meaningEn: "I'm not going anymore" },
-        { hanzi: "休息", pinyin: "xiūxī", meaning: "se reposer", meaningEn: "rest" }
+        { hanzi: "休息", pinyin: "xiūxi", meaning: "se reposer", meaningEn: "rest" }
       ],
     },
     {
@@ -4826,7 +4826,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "想想", pinyin: "xiǎngxiǎng", meaning: "réfléchir un peu", meaningEn: "think a bit" },
         { hanzi: "休息休息", pinyin: "xiūxī xiūxī", meaning: "se reposer un peu", meaningEn: "rest a bit" },
         { hanzi: "讨论讨论", pinyin: "tǎolùn tǎolùn", meaning: "discuter un peu", meaningEn: "discuss a bit" },
-        { hanzi: "一下", pinyin: "yīxià", meaning: "un petit peu, une seconde", meaningEn: "a little bit" },
+        { hanzi: "一下", pinyin: "yíxià", meaning: "un petit peu, une seconde", meaningEn: "a little bit" },
         { hanzi: "等一下", pinyin: "děng yīxià", meaning: "attendre une seconde", meaningEn: "wait a sec" },
         { hanzi: "试试看", pinyin: "shìshìkàn", meaning: "essaie voir", meaningEn: "give it a try" }
       ],
@@ -4862,7 +4862,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "一...就", pinyin: "yī...jiù", meaning: "dès que... alors", meaningEn: "as soon as... then" },
         { hanzi: "越来越", pinyin: "yuèláiyuè", meaning: "de plus en plus", meaningEn: "more and more" },
         { hanzi: "越...越...", pinyin: "yuè...yuè...", meaning: "plus... plus...", meaningEn: "the more... the more..." },
-        { hanzi: "一边", pinyin: "yībiān", meaning: "à la fois, en même temps", meaningEn: "at the same time" },
+        { hanzi: "一边", pinyin: "yìbiān", meaning: "à la fois, en même temps", meaningEn: "at the same time" },
         { hanzi: "一到家就", pinyin: "yīdào jiā jiù", meaning: "dès que je rentre", meaningEn: "as soon as I get home" },
         { hanzi: "越来越冷", pinyin: "yuèláiyuè lěng", meaning: "de plus en plus froid", meaningEn: "colder and colder" },
         { hanzi: "一边吃一边看", pinyin: "yībiān chī yībiān kàn", meaning: "manger et regarder en même temps", meaningEn: "eat and watch at once" },
@@ -5192,10 +5192,10 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "哪里", pinyin: "nǎlǐ", meaning: "mais non (refus compliment)", meaningEn: "not at all" },
         { hanzi: "过奖了", pinyin: "guòjiǎng le", meaning: "vous flattez trop", meaningEn: "you flatter me" },
-        { hanzi: "聪明", pinyin: "cōngmíng", meaning: "intelligent", meaningEn: "smart" },
-        { hanzi: "漂亮", pinyin: "piàoliàng", meaning: "joli", meaningEn: "pretty" },
+        { hanzi: "聪明", pinyin: "cōngming", meaning: "intelligent", meaningEn: "smart" },
+        { hanzi: "漂亮", pinyin: "piàoliang", meaning: "joli", meaningEn: "pretty" },
         { hanzi: "真好", pinyin: "zhēn hǎo", meaning: "vraiment bien", meaningEn: "really good" },
-        { hanzi: "客气", pinyin: "kèqì", meaning: "poli, formel", meaningEn: "polite" }
+        { hanzi: "客气", pinyin: "kèqi", meaning: "poli, formel", meaningEn: "polite" }
       ],
     }
   ],
@@ -5210,11 +5210,11 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Synonym of 疼: 痛 (tòng). Interchangeable in 我头疼/头痛. 痛 is slightly more literary and frequent in the south; 疼 more common in the north and orally.",
       items: [
         { hanzi: "头", pinyin: "tóu", meaning: "tête", meaningEn: "head" },
-        { hanzi: "眼睛", pinyin: "yǎnjīng", meaning: "yeux", meaningEn: "eyes" },
+        { hanzi: "眼睛", pinyin: "yǎnjing", meaning: "yeux", meaningEn: "eyes" },
         { hanzi: "鼻子", pinyin: "bízi", meaning: "nez", meaningEn: "nose" },
         { hanzi: "嘴", pinyin: "zuǐ", meaning: "bouche", meaningEn: "mouth" },
         { hanzi: "手", pinyin: "shǒu", meaning: "main", meaningEn: "hand" },
-        { hanzi: "肚子", pinyin: "dǔzi", meaning: "ventre", meaningEn: "belly" },
+        { hanzi: "肚子", pinyin: "dùzi", meaning: "ventre", meaningEn: "belly" },
         { hanzi: "疼", pinyin: "téng", meaning: "douloureux, faire mal", meaningEn: "painful, hurt" }
       ],
     }
@@ -5232,7 +5232,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "医院", pinyin: "yīyuàn", meaning: "hôpital", meaningEn: "hospital" },
         { hanzi: "挂号", pinyin: "guàhào", meaning: "enregistrement hospitalier", meaningEn: "hospital registration" },
         { hanzi: "发烧", pinyin: "fāshāo", meaning: "avoir de la fièvre", meaningEn: "have a fever" },
-        { hanzi: "咳嗽", pinyin: "késòu", meaning: "tousser", meaningEn: "cough" },
+        { hanzi: "咳嗽", pinyin: "késou", meaning: "tousser", meaningEn: "cough" },
         { hanzi: "感冒", pinyin: "gǎnmào", meaning: "rhume", meaningEn: "cold" },
         { hanzi: "开药", pinyin: "kāiyào", meaning: "prescrire un médicament", meaningEn: "prescribe medicine" }
       ],
@@ -5624,7 +5624,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Comparison tip: 跟…一样 (equality) vs 比 (comparison with difference). 他跟我一样高 = he's as tall as me (equal). 他比我高 = he's taller than me (different).",
       items: [
         { hanzi: "似的", pinyin: "shìde", meaning: "comme (final)", meaningEn: "like (final)" },
-        { hanzi: "一样", pinyin: "yīyàng", meaning: "pareil", meaningEn: "same" },
+        { hanzi: "一样", pinyin: "yíyàng", meaning: "pareil", meaningEn: "same" },
         { hanzi: "不一样", pinyin: "bù yīyàng", meaning: "différent", meaningEn: "different" },
         { hanzi: "跟…一样", pinyin: "gēn yí yàng", meaning: "comme, aussi…que", meaningEn: "same as, as…as" },
         { hanzi: "比", pinyin: "bǐ", meaning: "que (compare)", meaningEn: "than" }
@@ -5709,7 +5709,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Test rapide : VERBE simultané → 一边…一边. ADJECTIF coexistant → 又…又. « marcher en parlant » → 一边走一边说. « grand et fort » → 又高又壮.",
       tipEn: "Quick test: simultaneous VERB → 一边…一边. Coexisting ADJECTIVE → 又…又. «Walk while talking» → 一边走一边说. «Tall and strong» → 又高又壮.",
       items: [
-        { hanzi: "一边", pinyin: "yībiān", meaning: "d'une part / en même temps", meaningEn: "while" },
+        { hanzi: "一边", pinyin: "yìbiān", meaning: "d'une part / en même temps", meaningEn: "while" },
         { hanzi: "又", pinyin: "yòu", meaning: "aussi, à la fois", meaningEn: "also, both" },
         { hanzi: "同时", pinyin: "tóngshí", meaning: "en même temps", meaningEn: "simultaneously" },
         { hanzi: "看电视", pinyin: "kàndiànshì", meaning: "regarder la télé", meaningEn: "watch TV" },
@@ -5779,7 +5779,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "一点", pinyin: "yìdiǎn", meaning: "un peu", meaningEn: "a little" },
         { hanzi: "一点都不", pinyin: "yìdiǎn dōu bù", meaning: "pas du tout", meaningEn: "not at all" },
         { hanzi: "一点也不", pinyin: "yìdiǎn yě bù", meaning: "pas du tout (variante)", meaningEn: "not at all (variant)" },
-        { hanzi: "麻烦", pinyin: "máfán", meaning: "compliqué, ennuyeux", meaningEn: "complicated, bothersome" },
+        { hanzi: "麻烦", pinyin: "máfan", meaning: "compliqué, ennuyeux", meaningEn: "complicated, bothersome" },
         { hanzi: "累", pinyin: "lèi", meaning: "fatigué", meaningEn: "tired" },
         { hanzi: "困", pinyin: "kùn", meaning: "somnolent", meaningEn: "sleepy" }
       ],
@@ -6241,7 +6241,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "比较", pinyin: "bǐjiào", meaning: "relativement", meaningEn: "relatively" },
         { hanzi: "更", pinyin: "gèng", meaning: "encore plus", meaningEn: "even more" },
         { hanzi: "没有", pinyin: "méiyǒu", meaning: "moins...que (dans 没有...)", meaningEn: "less than (in 没有...)" },
-        { hanzi: "一样", pinyin: "yīyàng", meaning: "pareil", meaningEn: "same" },
+        { hanzi: "一样", pinyin: "yíyàng", meaning: "pareil", meaningEn: "same" },
         { hanzi: "不比", pinyin: "bùbǐ", meaning: "pas plus que (égalité)", meaningEn: "no more than (equal)" }
       ],
     },
@@ -6287,7 +6287,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "跟", pinyin: "gēn", meaning: "avec, comme", meaningEn: "with, like" },
         { hanzi: "和", pinyin: "hé", meaning: "et, avec", meaningEn: "and, with" },
-        { hanzi: "一样", pinyin: "yīyàng", meaning: "pareil", meaningEn: "same" },
+        { hanzi: "一样", pinyin: "yíyàng", meaning: "pareil", meaningEn: "same" },
         { hanzi: "不一样", pinyin: "bù yīyàng", meaning: "différent", meaningEn: "different" },
         { hanzi: "相同", pinyin: "xiāngtóng", meaning: "identique (écrit)", meaningEn: "identical (written)" },
         { hanzi: "有", pinyin: "yǒu", meaning: "atteindre (question niveau)", meaningEn: "reach (level question)" },
@@ -6307,7 +6307,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "还", pinyin: "hái", meaning: "encore (émotionnel)", meaningEn: "even (emotional)" },
         { hanzi: "贵", pinyin: "guì", meaning: "cher", meaningEn: "expensive" },
         { hanzi: "冷", pinyin: "lěng", meaning: "froid", meaningEn: "cold" },
-        { hanzi: "聪明", pinyin: "cōngmíng", meaning: "intelligent", meaningEn: "smart" },
+        { hanzi: "聪明", pinyin: "cōngming", meaning: "intelligent", meaningEn: "smart" },
         { hanzi: "手机", pinyin: "shǒujī", meaning: "téléphone", meaningEn: "phone" }
       ],
     }
@@ -6322,8 +6322,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Ordre à mémoriser : A + 比 + B + adjectif + modificateur d'écart. Le modificateur ne vient JAMAIS avant l'adjectif.",
       tipEn: "Order to memorize: A + 比 + B + adjective + gap modifier. The modifier NEVER goes before the adjective.",
       items: [
-        { hanzi: "一点儿", pinyin: "yìdiǎnér", meaning: "un peu", meaningEn: "a bit" },
-        { hanzi: "一些", pinyin: "yīxiē", meaning: "un peu, quelques", meaningEn: "a bit, some" },
+        { hanzi: "一点儿", pinyin: "yìdiǎnr", meaning: "un peu", meaningEn: "a bit" },
+        { hanzi: "一些", pinyin: "yìxiē", meaning: "un peu, quelques", meaningEn: "a bit, some" },
         { hanzi: "得多", pinyin: "de duō", meaning: "beaucoup plus (post-adj)", meaningEn: "much more (post-adj)" },
         { hanzi: "多了", pinyin: "duō le", meaning: "beaucoup plus (oral)", meaningEn: "much more (spoken)" },
         { hanzi: "快", pinyin: "kuài", meaning: "rapide", meaningEn: "fast" },
@@ -6620,7 +6620,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "告诉 is ALWAYS followed by the recipient: 告诉我, 告诉他. «He told me that...» = 他告诉我... Never say 他告诉... without a pronoun.",
       items: [
         { hanzi: "说", pinyin: "shuō", meaning: "dire", meaningEn: "say" },
-        { hanzi: "告诉", pinyin: "gàosù", meaning: "dire à", meaningEn: "tell" },
+        { hanzi: "告诉", pinyin: "gàosu", meaning: "dire à", meaningEn: "tell" },
         { hanzi: "问", pinyin: "wèn", meaning: "demander", meaningEn: "ask" },
         { hanzi: "回答", pinyin: "huídá", meaning: "répondre", meaningEn: "answer" },
         { hanzi: "解释", pinyin: "jiěshì", meaning: "expliquer", meaningEn: "explain" },
@@ -6710,7 +6710,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "清华 (qīnghuá) et 北大 (abrev. de 北京大学) sont LES deux universités au sommet. Dire « 清北 » regroupe les deux — équivalent d'« Oxbridge » en GB.",
       tipEn: "清华 (qīnghuá) and 北大 (short for 北京大学) are THE top two universities. Saying «清北» refers to both — the Chinese «Oxbridge».",
       items: [
-        { hanzi: "幼儿园", pinyin: "yòuéryuán", meaning: "maternelle", meaningEn: "kindergarten" },
+        { hanzi: "幼儿园", pinyin: "yòu'éryuán", meaning: "maternelle", meaningEn: "kindergarten" },
         { hanzi: "小学", pinyin: "xiǎoxué", meaning: "école primaire", meaningEn: "primary school" },
         { hanzi: "初中", pinyin: "chūzhōng", meaning: "collège", meaningEn: "middle school" },
         { hanzi: "高中", pinyin: "gāozhōng", meaning: "lycée", meaningEn: "high school" },
@@ -6773,12 +6773,12 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Avec la génération enfant unique (1980-2015), ces termes sont devenus plus techniques que pratiques pour les jeunes Chinois — mais restent indispensables pour lire un roman ou une biographie.",
       tipEn: "With the one-child generation (1980-2015), these terms grew more technical than practical for young Chinese — but remain essential for reading a novel or biography.",
       items: [
-        { hanzi: "爷爷", pinyin: "yéyé", meaning: "grand-père paternel", meaningEn: "paternal grandpa" },
-        { hanzi: "奶奶", pinyin: "nǎinǎi", meaning: "grand-mère paternelle", meaningEn: "paternal grandma" },
+        { hanzi: "爷爷", pinyin: "yéye", meaning: "grand-père paternel", meaningEn: "paternal grandpa" },
+        { hanzi: "奶奶", pinyin: "nǎinai", meaning: "grand-mère paternelle", meaningEn: "paternal grandma" },
         { hanzi: "外公", pinyin: "wàigōng", meaning: "grand-père maternel", meaningEn: "maternal grandpa" },
         { hanzi: "外婆", pinyin: "wàipó", meaning: "grand-mère maternelle", meaningEn: "maternal grandma" },
-        { hanzi: "叔叔", pinyin: "shūshū", meaning: "oncle (cadet du père)", meaningEn: "uncle (dad's younger bro)" },
-        { hanzi: "姑姑", pinyin: "gūgū", meaning: "tante paternelle", meaningEn: "paternal aunt" },
+        { hanzi: "叔叔", pinyin: "shūshu", meaning: "oncle (cadet du père)", meaningEn: "uncle (dad's younger bro)" },
+        { hanzi: "姑姑", pinyin: "gūgu", meaning: "tante paternelle", meaningEn: "paternal aunt" },
         { hanzi: "舅舅", pinyin: "jiùjiù", meaning: "oncle maternel", meaningEn: "maternal uncle" },
         { hanzi: "姨妈", pinyin: "yímā", meaning: "tante maternelle", meaningEn: "maternal aunt" }
       ],
@@ -6997,7 +6997,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "记得", pinyin: "jìde", meaning: "se souvenir", meaningEn: "remember" },
         { hanzi: "怀念", pinyin: "huáiniàn", meaning: "manquer (émotionnel)", meaningEn: "long for" },
-        { hanzi: "小时候", pinyin: "xiǎoshíhòu", meaning: "enfance", meaningEn: "childhood" },
+        { hanzi: "小时候", pinyin: "xiǎoshíhou", meaning: "enfance", meaningEn: "childhood" },
         { hanzi: "回忆", pinyin: "huíyì", meaning: "souvenir, mémoire", meaningEn: "memory" },
         { hanzi: "转眼", pinyin: "zhuǎnyǎn", meaning: "en un clin d'œil", meaningEn: "in a blink" }
       ],
@@ -7011,7 +7011,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Sur WeChat Moments, partager une vieille photo + « 陪了我很多年 » + emoji 🥹 est un format social très chinois. Tes amis chinois réagiront avec émotions partagées.",
       tipEn: "On WeChat Moments, sharing an old photo + «陪了我很多年» + 🥹 emoji is a very Chinese social format. Your Chinese friends will react with shared emotion.",
       items: [
-        { hanzi: "照片", pinyin: "zhàopiān", meaning: "photo", meaningEn: "photo" },
+        { hanzi: "照片", pinyin: "zhàopiàn", meaning: "photo", meaningEn: "photo" },
         { hanzi: "陪", pinyin: "péi", meaning: "accompagner", meaningEn: "accompany" },
         { hanzi: "充满", pinyin: "chōngmǎn", meaning: "rempli de", meaningEn: "full of" },
         { hanzi: "过去", pinyin: "guòqù", meaning: "passé", meaningEn: "past" },
@@ -7079,7 +7079,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Si tu as un vrai problème en voyage, va voir le 工作人员 (le personnel) plutôt qu'un passager — solidarité institutionnelle plus efficace que l'aide spontanée en Chine.",
       tipEn: "If you hit a real travel problem, find the 工作人员 (staff) rather than a fellow passenger — institutional solidarity is more efficient than spontaneous help in China.",
       items: [
-        { hanzi: "行李", pinyin: "xínglǐ", meaning: "bagage", meaningEn: "luggage" },
+        { hanzi: "行李", pinyin: "xíngli", meaning: "bagage", meaningEn: "luggage" },
         { hanzi: "丢", pinyin: "diū", meaning: "perdre", meaningEn: "lose" },
         { hanzi: "错过", pinyin: "cuòguò", meaning: "rater, manquer", meaningEn: "miss" },
         { hanzi: "晚点", pinyin: "wǎndiǎn", meaning: "en retard (transport)", meaningEn: "delayed" },
@@ -7202,7 +7202,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "刚", pinyin: "gāng", meaning: "juste (adv)", meaningEn: "just (adv)" },
         { hanzi: "刚才", pinyin: "gāngcái", meaning: "à l'instant (nom)", meaningEn: "a moment ago (noun)" },
         { hanzi: "回家", pinyin: "huíjiā", meaning: "rentrer", meaningEn: "go home" },
-        { hanzi: "一会儿", pinyin: "yīhuìer", meaning: "un moment", meaningEn: "a while" },
+        { hanzi: "一会儿", pinyin: "yíhuìr", meaning: "un moment", meaningEn: "a while" },
         { hanzi: "马上", pinyin: "mǎshàng", meaning: "tout de suite", meaningEn: "right away" }
       ],
     },
@@ -7370,7 +7370,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "For «during»: 在…期间 (formal, written). 在会议期间 = during the meeting. 期间 only works for PERIODS, not specific moments.",
       items: [
         { hanzi: "当", pinyin: "dāng", meaning: "quand (formel)", meaningEn: "when (formal)" },
-        { hanzi: "时候", pinyin: "shíhòu", meaning: "moment, époque", meaningEn: "time, moment" },
+        { hanzi: "时候", pinyin: "shíhou", meaning: "moment, époque", meaningEn: "time, moment" },
         { hanzi: "时", pinyin: "shí", meaning: "temps (formel)", meaningEn: "time (formal)" },
         { hanzi: "期间", pinyin: "qījiān", meaning: "pendant", meaningEn: "during" },
         { hanzi: "一旦", pinyin: "yídàn", meaning: "dès que / une fois que", meaningEn: "once" }
@@ -7729,7 +7729,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "有赖于", pinyin: "yǒulàiyú", meaning: "reposer sur (littéraire)", meaningEn: "rely on (literary)" },
         { hanzi: "有待", pinyin: "yǒudài", meaning: "en attente de", meaningEn: "awaiting" },
         { hanzi: "以...为准", pinyin: "yǐ...wéi zhǔn", meaning: "prendre... comme référence", meaningEn: "take... as reference" },
-        { hanzi: "合同", pinyin: "hétóng", meaning: "contrat", meaningEn: "contract" },
+        { hanzi: "合同", pinyin: "hétong", meaning: "contrat", meaningEn: "contract" },
         { hanzi: "依据", pinyin: "yījù", meaning: "fondement, base", meaningEn: "basis, foundation" },
         { hanzi: "创新", pinyin: "chuàngxīn", meaning: "innovation, innover", meaningEn: "innovate, innovation" },
         { hanzi: "确认", pinyin: "quèrèn", meaning: "confirmer", meaningEn: "confirm" },
@@ -7751,7 +7751,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "烦恼", pinyin: "fánnǎo", meaning: "tracas, être tracassé", meaningEn: "trouble, be bothered" },
         { hanzi: "发愁", pinyin: "fāchóu", meaning: "se ronger, broyer du noir", meaningEn: "to fret, brood" },
         { hanzi: "瞎操心", pinyin: "xiācāoxīn", meaning: "s'inquiéter pour rien", meaningEn: "worry needlessly" },
-        { hanzi: "事情", pinyin: "shìqíng", meaning: "affaire, chose", meaningEn: "matter, affair" }
+        { hanzi: "事情", pinyin: "shìqing", meaning: "affaire, chose", meaningEn: "matter, affair" }
       ],
     },
     {
@@ -7819,7 +7819,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "居然", pinyin: "jūrán", meaning: "contre toute attente (fort)", meaningEn: "unexpectedly (strong)" },
         { hanzi: "竟", pinyin: "jìng", meaning: "pourtant (littéraire)", meaningEn: "yet (literary)" },
         { hanzi: "没想到", pinyin: "méixiǎngdào", meaning: "je ne m'attendais pas à", meaningEn: "didn't expect" },
-        { hanzi: "不料", pinyin: "bùliào", meaning: "contre toute attente (littéraire)", meaningEn: "unexpectedly (literary)" },
+        { hanzi: "不料", pinyin: "búliào", meaning: "contre toute attente (littéraire)", meaningEn: "unexpectedly (literary)" },
         { hanzi: "通知", pinyin: "tōngzhī", meaning: "annonce, notification", meaningEn: "notice, notification" },
         { hanzi: "迟到", pinyin: "chídào", meaning: "être en retard", meaningEn: "be late" },
         { hanzi: "提前", pinyin: "tíqián", meaning: "en avance", meaningEn: "in advance" }
@@ -7838,8 +7838,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "果真", pinyin: "guǒzhēn", meaning: "c'est vraiment le cas", meaningEn: "it really is the case" },
         { hanzi: "果然如此", pinyin: "guǒránrúcǐ", meaning: "c'est bien ça", meaningEn: "just as I thought" },
         { hanzi: "不出所料", pinyin: "bùchūsuǒliào", meaning: "sans surprise, comme prédit", meaningEn: "as predicted, no surprise" },
-        { hanzi: "答应", pinyin: "dāyìng", meaning: "promettre, accepter", meaningEn: "promise, agree" },
-        { hanzi: "凉快", pinyin: "liángkuài", meaning: "frais, agréable", meaningEn: "cool, pleasant" },
+        { hanzi: "答应", pinyin: "dāying", meaning: "promettre, accepter", meaningEn: "promise, agree" },
+        { hanzi: "凉快", pinyin: "liángkuai", meaning: "frais, agréable", meaningEn: "cool, pleasant" },
         { hanzi: "传说", pinyin: "chuánshuō", meaning: "légende, on raconte que", meaningEn: "legend, it's said that" }
       ],
     }
@@ -7876,7 +7876,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "罢了", pinyin: "bàle", meaning: "rien de plus, un point c'est tout", meaningEn: "nothing more, that's all" },
         { hanzi: "而已", pinyin: "éryǐ", meaning: "juste ça (oral)", meaningEn: "just that (spoken)" },
         { hanzi: "只是", pinyin: "zhǐshì", meaning: "seulement, juste", meaningEn: "only, just" },
-        { hanzi: "不过", pinyin: "bùguò", meaning: "seulement, mais", meaningEn: "only, but" },
+        { hanzi: "不过", pinyin: "búguò", meaning: "seulement, mais", meaningEn: "only, but" },
         { hanzi: "开玩笑", pinyin: "kāiwánxiào", meaning: "plaisanter", meaningEn: "joke" },
         { hanzi: "当真", pinyin: "dàngzhēn", meaning: "prendre au sérieux", meaningEn: "take seriously" },
         { hanzi: "我只是开玩笑罢了", pinyin: "wǒ zhǐshì kāiwánxiào bàle", meaning: "je plaisantais, c'est tout", meaningEn: "I was just joking, that's all" },
@@ -7933,7 +7933,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Tip: when offering a choice to someone you don't want to rush (guests, elders, boss), use this softened form.",
       items: [
         { hanzi: "还是...呢", pinyin: "hái shi ... ne", meaning: "ou bien... (adouci)", meaningEn: "or... (softened)" },
-        { hanzi: "还是", pinyin: "háishì", meaning: "ou bien", meaningEn: "or (choice)" },
+        { hanzi: "还是", pinyin: "háishi", meaning: "ou bien", meaningEn: "or (choice)" },
         { hanzi: "披萨", pinyin: "pīsà", meaning: "pizza", meaningEn: "pizza" },
         { hanzi: "中餐", pinyin: "zhōngcān", meaning: "cuisine chinoise", meaningEn: "Chinese cuisine" },
         { hanzi: "打车", pinyin: "dǎchē", meaning: "prendre un taxi", meaningEn: "take a cab" },
@@ -8303,7 +8303,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "一口", pinyin: "yīkǒu", meaning: "une gorgée / bouchée", meaningEn: "a sip / a bite" },
         { hanzi: "一句", pinyin: "yījù", meaning: "une phrase", meaningEn: "one sentence" },
         { hanzi: "一声", pinyin: "yīshēng", meaning: "un son / un bonjour", meaningEn: "one sound / a hello" },
-        { hanzi: "一下", pinyin: "yīxià", meaning: "un bref instant", meaningEn: "a moment" }
+        { hanzi: "一下", pinyin: "yíxià", meaning: "un bref instant", meaningEn: "a moment" }
       ],
     }
   ],
@@ -8351,11 +8351,11 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Piège fréquent : 不但 se place APRÈS le sujet si celui-ci est commun aux deux parties (他不但…, 而且…), mais AVANT le sujet si les sujets diffèrent (不但他来，而且他妈也来). Inverser = faute classique.",
       tipEn: "Common trap: 不但 goes AFTER the subject if it's shared (他不但…, 而且…), but BEFORE the subject if subjects differ (不但他来，而且他妈也来). Swapping = classic error.",
       items: [
-        { hanzi: "不但", pinyin: "bùdàn", meaning: "non seulement", meaningEn: "not only" },
+        { hanzi: "不但", pinyin: "búdàn", meaning: "non seulement", meaningEn: "not only" },
         { hanzi: "而且", pinyin: "érqiě", meaning: "mais aussi", meaningEn: "but also" },
         { hanzi: "不仅", pinyin: "bùjǐn", meaning: "non seulement (écrit)", meaningEn: "not only (written)" },
         { hanzi: "并且", pinyin: "bìngqiě", meaning: "et en outre", meaningEn: "and furthermore" },
-        { hanzi: "聪明", pinyin: "cōngmíng", meaning: "intelligent", meaningEn: "smart" },
+        { hanzi: "聪明", pinyin: "cōngming", meaning: "intelligent", meaningEn: "smart" },
         { hanzi: "努力", pinyin: "nǔlì", meaning: "travailleur", meaningEn: "hard-working" }
       ],
     },
@@ -8390,7 +8390,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "不管", pinyin: "bùguǎn", meaning: "peu importe (oral)", meaningEn: "no matter (spoken)" },
         { hanzi: "欢迎", pinyin: "huānyíng", meaning: "accueillir", meaningEn: "welcome" },
         { hanzi: "天气", pinyin: "tiānqì", meaning: "temps, météo", meaningEn: "weather" },
-        { hanzi: "还是", pinyin: "háishì", meaning: "ou (alternative)", meaningEn: "or (alternative)" }
+        { hanzi: "还是", pinyin: "háishi", meaning: "ou (alternative)", meaningEn: "or (alternative)" }
       ],
     },
     {
@@ -8859,7 +8859,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Adding someone on WeChat = nothing much. The CONNECTION FORMS in the next 48h via 1-2 personalized messages. Without follow-up, the contact sleeps forever. Chinese networking discipline n°1.",
       items: [
         { hanzi: "加微信", pinyin: "jiāwēixìn", meaning: "ajouter sur WeChat", meaningEn: "add on WeChat" },
-        { hanzi: "认识", pinyin: "rènshí", meaning: "connaître, faire connaissance", meaningEn: "know, meet" },
+        { hanzi: "认识", pinyin: "rènshi", meaning: "connaître, faire connaissance", meaningEn: "know, meet" },
         { hanzi: "联系", pinyin: "liánxì", meaning: "contacter", meaningEn: "contact" },
         { hanzi: "活动", pinyin: "huódòng", meaning: "événement, activité", meaningEn: "event" },
         { hanzi: "名片", pinyin: "míngpiàn", meaning: "carte de visite", meaningEn: "business card" }
@@ -8945,7 +8945,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "主题", pinyin: "zhǔtí", meaning: "sujet", meaningEn: "subject" },
         { hanzi: "收到", pinyin: "shōudào", meaning: "recevoir", meaningEn: "receive" },
         { hanzi: "邮件", pinyin: "yóujiàn", meaning: "email", meaningEn: "email" },
-        { hanzi: "麻烦", pinyin: "máfán", meaning: "déranger, demander", meaningEn: "trouble, ask" },
+        { hanzi: "麻烦", pinyin: "máfan", meaning: "déranger, demander", meaningEn: "trouble, ask" },
         { hanzi: "顺祝商祺", pinyin: "shùnzhù shāngqí", meaning: "vœux de prospérité comm.", meaningEn: "business prosperity wish" }
       ],
     }
@@ -9032,7 +9032,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "算了", pinyin: "suànle", meaning: "laisse tomber", meaningEn: "forget it" },
         { hanzi: "算上", pinyin: "suànshàng", meaning: "inclure, compter", meaningEn: "count in" },
         { hanzi: "算", pinyin: "suàn", meaning: "compter, calculer", meaningEn: "count, calculate" },
-        { hanzi: "不错", pinyin: "bùcuò", meaning: "pas mal", meaningEn: "not bad" }
+        { hanzi: "不错", pinyin: "búcuò", meaning: "pas mal", meaningEn: "not bad" }
       ],
     },
     {
@@ -9066,7 +9066,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "只是", pinyin: "zhǐshì", meaning: "simplement", meaningEn: "just, simply" },
         { hanzi: "仅仅", pinyin: "jǐnjǐn", meaning: "seulement (insistant)", meaningEn: "merely" },
         { hanzi: "仅", pinyin: "jǐn", meaning: "seulement (formel)", meaningEn: "only (formal)" },
-        { hanzi: "不过", pinyin: "bùguò", meaning: "mais (atténuation)", meaningEn: "but (mild)" }
+        { hanzi: "不过", pinyin: "búguò", meaning: "mais (atténuation)", meaningEn: "but (mild)" }
       ],
     },
     {
@@ -9078,7 +9078,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "« 这不仅仅是钱的问题 » = ce n'est pas QU'une question d'argent. Formule rhétorique percutante en débat ou éditorial. Niveau B2.1+ qui montre la maîtrise.",
       tipEn: "«这不仅仅是钱的问题» = it's not JUST a money issue. Punchy rhetorical formula in debate or op-ed. B2.1+ level showing mastery.",
       items: [
-        { hanzi: "不但", pinyin: "bùdàn", meaning: "non seulement", meaningEn: "not only" },
+        { hanzi: "不但", pinyin: "búdàn", meaning: "non seulement", meaningEn: "not only" },
         { hanzi: "不只", pinyin: "bù zhǐ", meaning: "pas seulement", meaningEn: "not just" },
         { hanzi: "不仅", pinyin: "bùjǐn", meaning: "non seulement (formel)", meaningEn: "not only (formal)" },
         { hanzi: "不仅仅", pinyin: "bùjǐnjǐn", meaning: "pas seulement (insistant)", meaningEn: "not just (emphatic)" },
@@ -9168,7 +9168,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "反倒", pinyin: "fǎndào", meaning: "au contraire (oral)", meaningEn: "on the contrary (oral)" },
         { hanzi: "却", pinyin: "què", meaning: "mais cependant", meaningEn: "however" },
         { hanzi: "相反", pinyin: "xiāngfǎn", meaning: "à l'inverse", meaningEn: "on the contrary" },
-        { hanzi: "答应", pinyin: "dāyìng", meaning: "accepter, promettre", meaningEn: "agree, promise" }
+        { hanzi: "答应", pinyin: "dāying", meaning: "accepter, promettre", meaningEn: "agree, promise" }
       ],
     },
     {
@@ -9287,7 +9287,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "饿", pinyin: "è", meaning: "avoir faim", meaningEn: "hungry" },
         { hanzi: "剩饭", pinyin: "shèngfàn", meaning: "restes (repas)", meaningEn: "leftovers" },
         { hanzi: "辞职", pinyin: "cízhí", meaning: "démissionner", meaningEn: "resign" },
-        { hanzi: "委屈", pinyin: "wěiqū", meaning: "être lésé, avaler une humiliation", meaningEn: "feel wronged" },
+        { hanzi: "委屈", pinyin: "wěiqu", meaning: "être lésé, avaler une humiliation", meaningEn: "feel wronged" },
         { hanzi: "坚持", pinyin: "jiānchí", meaning: "tenir bon", meaningEn: "stand firm" }
       ],
     }
@@ -9389,7 +9389,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "荣", pinyin: "róng", meaning: "honneur, gloire", meaningEn: "honor, glory" },
         { hanzi: "耻", pinyin: "chǐ", meaning: "honte", meaningEn: "shame" },
-        { hanzi: "骄傲", pinyin: "jiāoào", meaning: "fier", meaningEn: "proud" },
+        { hanzi: "骄傲", pinyin: "jiāo'ào", meaning: "fier", meaningEn: "proud" },
         { hanzi: "悠久", pinyin: "yōujiǔ", meaning: "ancien, long", meaningEn: "long-standing" },
         { hanzi: "历史", pinyin: "lìshǐ", meaning: "histoire", meaningEn: "history" }
       ],
@@ -9455,7 +9455,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Si tu hésites entre 即使 et 哪怕 : 即使 = neutre logique, 哪怕 = chargé d'émotion (engagement, pari, sacrifice).",
       tipEn: "When choosing 即使 vs 哪怕: 即使 = logical neutral, 哪怕 = emotionally charged (commitment, bet, sacrifice).",
       items: [
-        { hanzi: "一线", pinyin: "yīxiàn", meaning: "une lueur", meaningEn: "a glimmer" },
+        { hanzi: "一线", pinyin: "yíxiàn", meaning: "une lueur", meaningEn: "a glimmer" },
         { hanzi: "希望", pinyin: "xīwàng", meaning: "espoir", meaningEn: "hope" },
         { hanzi: "放弃", pinyin: "fàngqì", meaning: "renoncer", meaningEn: "give up" },
         { hanzi: "爱", pinyin: "ài", meaning: "aimer", meaningEn: "love" },
@@ -9732,7 +9732,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "扭伤", pinyin: "niǔshāng", meaning: "entorse", meaningEn: "sprain" },
         { hanzi: "热身", pinyin: "rèshēn", meaning: "échauffement", meaningEn: "warm-up" },
         { hanzi: "按摩", pinyin: "ànmó", meaning: "massage", meaningEn: "massage" },
-        { hanzi: "休息", pinyin: "xiūxī", meaning: "se reposer", meaningEn: "rest" }
+        { hanzi: "休息", pinyin: "xiūxi", meaning: "se reposer", meaningEn: "rest" }
       ],
     }
   ],
@@ -9832,7 +9832,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "广场舞", pinyin: "guǎngchǎng wǔ", meaning: "danse de place", meaningEn: "square dance" },
         { hanzi: "公园", pinyin: "gōngyuán", meaning: "parc", meaningEn: "park" },
-        { hanzi: "麻将", pinyin: "májiāng", meaning: "mahjong", meaningEn: "mahjong" },
+        { hanzi: "麻将", pinyin: "májiàng", meaning: "mahjong", meaningEn: "mahjong" },
         { hanzi: "孙子", pinyin: "sūnzi", meaning: "petit-fils", meaningEn: "grandson" },
         { hanzi: "退休金", pinyin: "tuìxiūjīn", meaning: "pension", meaningEn: "pension" }
       ],
@@ -9870,7 +9870,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "的确", pinyin: "díquè", meaning: "certes, en effet", meaningEn: "admittedly, indeed" },
         { hanzi: "不可否认", pinyin: "bùkěfǒurèn", meaning: "on ne peut nier", meaningEn: "undeniable" },
-        { hanzi: "不过", pinyin: "bùguò", meaning: "cependant", meaningEn: "however" },
+        { hanzi: "不过", pinyin: "búguò", meaning: "cependant", meaningEn: "however" },
         { hanzi: "然而", pinyin: "ránér", meaning: "toutefois", meaningEn: "yet, however" },
         { hanzi: "其实", pinyin: "qíshí", meaning: "en réalité", meaningEn: "actually" },
         { hanzi: "一般来说", pinyin: "yìbānláishuō", meaning: "en général", meaningEn: "generally speaking" },
@@ -10079,9 +10079,9 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "你的中文真好 est la phrase entendue 1000x. Pour féliciter QUELQU'UN qui parle français/anglais, varie : 你的发音很地道 (ta prononciation est authentique), 你的语法非常准 (ta grammaire est précise).",
       tipEn: "你的中文真好 is heard 1000x. To compliment someone speaking French/English, vary: 你的发音很地道 (your pronunciation is authentic), 你的语法非常准 (your grammar is accurate).",
       items: [
-        { hanzi: "漂亮", pinyin: "piàoliàng", meaning: "beau, joli", meaningEn: "beautiful" },
+        { hanzi: "漂亮", pinyin: "piàoliang", meaning: "beau, joli", meaningEn: "beautiful" },
         { hanzi: "适合", pinyin: "shìhé", meaning: "aller bien à", meaningEn: "suit" },
-        { hanzi: "厉害", pinyin: "lìhài", meaning: "impressionnant", meaningEn: "impressive" },
+        { hanzi: "厉害", pinyin: "lìhai", meaning: "impressionnant", meaningEn: "impressive" },
         { hanzi: "眼光", pinyin: "yǎnguāng", meaning: "goût, perspicacité", meaningEn: "taste, vision" },
         { hanzi: "周到", pinyin: "zhōudào", meaning: "attentionné", meaningEn: "thoughtful" }
       ],
@@ -10097,7 +10097,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "哪里", pinyin: "nǎlǐ", meaning: "où (mais non)", meaningEn: "where (= no no)" },
         { hanzi: "过奖", pinyin: "guòjiǎng", meaning: "flatter", meaningEn: "over-praise" },
-        { hanzi: "客气", pinyin: "kèqì", meaning: "poli, courtois", meaningEn: "polite" },
+        { hanzi: "客气", pinyin: "kèqi", meaning: "poli, courtois", meaningEn: "polite" },
         { hanzi: "谦虚", pinyin: "qiānxū", meaning: "modeste", meaningEn: "modest" },
         { hanzi: "差得远", pinyin: "chàdeyuǎn", meaning: "loin du compte", meaningEn: "far from it" }
       ],
@@ -10116,7 +10116,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "不一定", pinyin: "bù yídìng", meaning: "pas forcément", meaningEn: "not necessarily" },
         { hanzi: "不同意", pinyin: "bù tóngyì", meaning: "pas d'accord", meaningEn: "disagree" },
         { hanzi: "倒", pinyin: "dào", meaning: "plutôt, au contraire", meaningEn: "rather, on the contrary" },
-        { hanzi: "不过", pinyin: "bùguò", meaning: "mais (léger)", meaningEn: "but (mild)" },
+        { hanzi: "不过", pinyin: "búguò", meaning: "mais (léger)", meaningEn: "but (mild)" },
         { hanzi: "建议", pinyin: "jiànyì", meaning: "suggérer", meaningEn: "suggest" }
       ],
     },
@@ -10131,7 +10131,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "看法", pinyin: "kànfǎ", meaning: "point de vue", meaningEn: "viewpoint" },
         { hanzi: "讨论", pinyin: "tǎolùn", meaning: "discuter", meaningEn: "discuss" },
-        { hanzi: "方案", pinyin: "fāngàn", meaning: "plan, proposition", meaningEn: "plan, proposal" },
+        { hanzi: "方案", pinyin: "fāng'àn", meaning: "plan, proposition", meaningEn: "plan, proposal" },
         { hanzi: "小建议", pinyin: "xiǎo jiànyì", meaning: "petite suggestion", meaningEn: "small suggestion" },
         { hanzi: "想法", pinyin: "xiǎngfǎ", meaning: "idée", meaningEn: "idea, thought" }
       ],
@@ -10166,7 +10166,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "微信", pinyin: "wēixìn", meaning: "WeChat", meaningEn: "WeChat" },
         { hanzi: "方便", pinyin: "fāngbiàn", meaning: "pratique, dispo", meaningEn: "convenient" },
         { hanzi: "抱歉", pinyin: "bàoqiàn", meaning: "désolé", meaningEn: "sorry" },
-        { hanzi: "麻烦", pinyin: "máfán", meaning: "déranger, ennui", meaningEn: "trouble, bother" },
+        { hanzi: "麻烦", pinyin: "máfan", meaning: "déranger, ennui", meaningEn: "trouble, bother" },
         { hanzi: "辛苦了", pinyin: "xīnkǔ le", meaning: "merci pour le travail", meaningEn: "thanks for your work" }
       ],
     }
@@ -10181,7 +10181,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Culturellement, en Chine on n'annonce JAMAIS une mauvaise nouvelle à brûle-pourpoint. Toujours un préambule (« je dois te dire quelque chose »), même 5 secondes. Sauter cette étape est perçu comme brutal.",
       tipEn: "Culturally in China, you NEVER drop bad news cold. Always a preamble («I have to tell you something»), even 5 seconds. Skipping this feels brutal.",
       items: [
-        { hanzi: "告诉", pinyin: "gàosù", meaning: "dire à", meaningEn: "tell" },
+        { hanzi: "告诉", pinyin: "gàosu", meaning: "dire à", meaningEn: "tell" },
         { hanzi: "出事", pinyin: "chūshì", meaning: "arriver un problème", meaningEn: "something happens" },
         { hanzi: "取消", pinyin: "qǔxiāo", meaning: "annuler", meaningEn: "cancel" },
         { hanzi: "失败", pinyin: "shībài", meaning: "échouer", meaningEn: "fail" },
@@ -10197,7 +10197,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "不好意思 sert à BEAUCOUP plus que s'excuser : aussi pour interpeller (« excusez-moi madame »), pour décliner (« 不好意思，我有事 »). Couteau suisse social.",
       tipEn: "不好意思 is for FAR more than apology: also for getting attention («excuse me ma'am»), declining («不好意思，我有事»). Social swiss army knife.",
       items: [
-        { hanzi: "不好意思", pinyin: "bùhǎoyìsī", meaning: "excuse-moi", meaningEn: "excuse me" },
+        { hanzi: "不好意思", pinyin: "bùhǎoyìsi", meaning: "excuse-moi", meaningEn: "excuse me" },
         { hanzi: "对不起", pinyin: "duìbùqǐ", meaning: "pardon, désolé", meaningEn: "sorry" },
         { hanzi: "抱歉", pinyin: "bàoqiàn", meaning: "désolé (écrit)", meaningEn: "sorry (written)" },
         { hanzi: "道歉", pinyin: "dàoqiàn", meaning: "présenter ses excuses", meaningEn: "apologize" },
@@ -10216,7 +10216,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Classic mistake: forgetting that 告诉 requires an object (告诉 + whom). Say «他告诉我X», NEVER «他告诉X» alone. Fundamental difference from 说.",
       items: [
         { hanzi: "说", pinyin: "shuō", meaning: "dire", meaningEn: "say" },
-        { hanzi: "告诉", pinyin: "gàosù", meaning: "dire à qqn", meaningEn: "tell" },
+        { hanzi: "告诉", pinyin: "gàosu", meaning: "dire à qqn", meaningEn: "tell" },
         { hanzi: "问", pinyin: "wèn", meaning: "demander", meaningEn: "ask" },
         { hanzi: "回答", pinyin: "huídá", meaning: "répondre", meaningEn: "reply" },
         { hanzi: "提到", pinyin: "tídào", meaning: "mentionner", meaningEn: "mention" }
@@ -10253,7 +10253,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "改天", pinyin: "gǎitiān", meaning: "un autre jour", meaningEn: "another day" },
         { hanzi: "联系", pinyin: "liánxì", meaning: "contacter", meaningEn: "contact" },
         { hanzi: "小心", pinyin: "xiǎoxīn", meaning: "fais attention", meaningEn: "be careful" },
-        { hanzi: "路上", pinyin: "lùshàng", meaning: "sur la route", meaningEn: "on the way" }
+        { hanzi: "路上", pinyin: "lùshang", meaning: "sur la route", meaningEn: "on the way" }
       ],
     },
     {
@@ -10466,7 +10466,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "Tip : 一下子 almost always adds INTENSITY + COMPLETENESS. Compare : 突然下雨了 (it started raining) vs 一下子下大雨了 (it suddenly poured in a flash).",
       items: [
         { hanzi: "一下子", pinyin: "yīxiàzi", meaning: "d'un coup", meaningEn: "in one go" },
-        { hanzi: "明白", pinyin: "míngbái", meaning: "comprendre", meaningEn: "understand" },
+        { hanzi: "明白", pinyin: "míngbai", meaning: "comprendre", meaningEn: "understand" },
         { hanzi: "下雨", pinyin: "xiàyǔ", meaning: "pleuvoir", meaningEn: "rain" },
         { hanzi: "马上", pinyin: "mǎshàng", meaning: "tout de suite", meaningEn: "right away" },
         { hanzi: "立刻", pinyin: "lìkè", meaning: "immédiatement", meaningEn: "immediately" }
@@ -10689,7 +10689,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "比 N 还 N pour l'oral ludique (« il est plus X que X ! ») ; 于 compounds pour la presse et les rapports. Deux registres opposés, mêmes idées.",
       tipEn: "比 N 还 N for playful speech («more X than X!»); 于 compounds for press and reports. Two opposite registers, same ideas.",
       items: [
-        { hanzi: "狐狸", pinyin: "húlí", meaning: "renard (rusé)", meaningEn: "fox (cunning)" },
+        { hanzi: "狐狸", pinyin: "húli", meaning: "renard (rusé)", meaningEn: "fox (cunning)" },
         { hanzi: "高于", pinyin: "gāoyú", meaning: "supérieur à", meaningEn: "above, higher than" },
         { hanzi: "低于", pinyin: "dīyú", meaning: "inférieur à", meaningEn: "below, lower than" },
         { hanzi: "大于", pinyin: "dàyú", meaning: "plus grand que", meaningEn: "greater than" },
@@ -10711,7 +10711,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "The exact opposite of 锦上添花 = 雪中送炭 («bring coal in snow»), help someone in trouble. For a friend in difficulty, choose 雪中送炭 — far more emotionally powerful than 锦上添花.",
       items: [
         { hanzi: "成语", pinyin: "chéngyǔ", meaning: "expression idiomatique", meaningEn: "idiom" },
-        { hanzi: "一举两得", pinyin: "yījǔliǎngdé", meaning: "2 en 1", meaningEn: "2-in-1" },
+        { hanzi: "一举两得", pinyin: "yìjǔliǎngdé", meaning: "2 en 1", meaningEn: "2-in-1" },
         { hanzi: "马到成功", pinyin: "mǎdàochénggōng", meaning: "succès immédiat", meaningEn: "instant success" },
         { hanzi: "锦上添花", pinyin: "jǐnshàngtiānhuā", meaning: "cerise sur le gâteau", meaningEn: "icing on the cake" },
         { hanzi: "办法", pinyin: "bànfǎ", meaning: "méthode, moyen", meaningEn: "method" }
@@ -11204,7 +11204,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "干杯", pinyin: "gānbēi", meaning: "cul sec", meaningEn: "bottoms up" },
         { hanzi: "随意", pinyin: "suíyì", meaning: "à sa guise", meaningEn: "as you please" },
-        { hanzi: "一帆风顺", pinyin: "yīfānfēngshùn", meaning: "bon vent", meaningEn: "smooth sailing" },
+        { hanzi: "一帆风顺", pinyin: "yìfānfēngshùn", meaning: "bon vent", meaningEn: "smooth sailing" },
         { hanzi: "万事如意", pinyin: "wànshìrúyì", meaning: "que tout vous soit favorable", meaningEn: "all wishes come true" },
         { hanzi: "健康", pinyin: "jiànkāng", meaning: "santé", meaningEn: "health" }
       ],
@@ -11374,7 +11374,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "礼物", pinyin: "lǐwù", meaning: "cadeau", meaningEn: "gift" },
         { hanzi: "收下", pinyin: "shōuxià", meaning: "accepter (cadeau)", meaningEn: "accept (gift)" },
-        { hanzi: "客气", pinyin: "kèqì", meaning: "poli, formel", meaningEn: "polite" },
+        { hanzi: "客气", pinyin: "kèqi", meaning: "poli, formel", meaningEn: "polite" },
         { hanzi: "不成敬意", pinyin: "bùchéngjìngyì", meaning: "modeste cadeau", meaningEn: "small token" },
         { hanzi: "送", pinyin: "sòng", meaning: "offrir, accompagner", meaningEn: "give, see off" }
       ],
@@ -11478,7 +11478,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "之", pinyin: "zhī", meaning: "de (classique)", meaningEn: "of (classical)" },
         { hanzi: "乎", pinyin: "hū", meaning: "particule classique", meaningEn: "classical particle" },
         { hanzi: "学者", pinyin: "xuézhě", meaning: "érudit", meaningEn: "scholar" },
-        { hanzi: "不亦乐乎", pinyin: "bùyìlèhū", meaning: "extrêmement", meaningEn: "extremely" }
+        { hanzi: "不亦乐乎", pinyin: "búyìlèhū", meaning: "extrêmement", meaningEn: "extremely" }
       ],
     }
   ],
@@ -11765,8 +11765,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "歇后语 is a CULTURAL COMPLICITY test: if the other LAUGHS completing the punchline, you're at the same level of Chinese cultural initiation. If they ask «然后呢?» (and then?), you have a beginner before you. Adapt your register.",
       items: [
         { hanzi: "歇后语", pinyin: "xiēhòuyǔ", meaning: "expression à chute", meaningEn: "two-part allegorical" },
-        { hanzi: "外甥", pinyin: "wàishēng", meaning: "neveu (côté maternel)", meaningEn: "nephew (maternal)" },
-        { hanzi: "灯笼", pinyin: "dēnglóng", meaning: "lanterne", meaningEn: "lantern" },
+        { hanzi: "外甥", pinyin: "wàisheng", meaning: "neveu (côté maternel)", meaningEn: "nephew (maternal)" },
+        { hanzi: "灯笼", pinyin: "dēnglong", meaning: "lanterne", meaningEn: "lantern" },
         { hanzi: "照旧", pinyin: "zhàojiù", meaning: "comme d'habitude", meaningEn: "as usual" },
         { hanzi: "谐音", pinyin: "xiéyīn", meaning: "jeu phonétique", meaningEn: "homophonic pun" }
       ],
@@ -11934,7 +11934,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "Pour discuter le 鸡娃 avec un parent chinois : ne JAMAIS critiquer frontalement. Cela touche aux choix EXISTENTIELS de la famille. Préfère : « 我能想象这种压力 » (j'imagine cette pression) + « 您觉得有平衡的方法吗 ? » (voyez-vous un moyen d'équilibrer ?). Empathie + question ouverte = ouverture de dialogue.",
       tipEn: "To discuss 鸡娃 with a Chinese parent: NEVER frontally criticize. It touches the family's EXISTENTIAL choices. Prefer: «我能想象这种压力» (I imagine this pressure) + «您觉得有平衡的方法吗?» (do you see a way to balance?). Empathy + open question = dialogue opening.",
       items: [
-        { hanzi: "幼儿园", pinyin: "yòuéryuán", meaning: "maternelle", meaningEn: "kindergarten" },
+        { hanzi: "幼儿园", pinyin: "yòu'éryuán", meaning: "maternelle", meaningEn: "kindergarten" },
         { hanzi: "义务教育", pinyin: "yìwùjiàoyù", meaning: "scolarité obligatoire", meaningEn: "compulsory education" },
         { hanzi: "中考", pinyin: "zhōngkǎo", meaning: "examen entrée lycée", meaningEn: "high school entry exam" },
         { hanzi: "鸡娃", pinyin: "jīwá", meaning: "enfant sur-poussé", meaningEn: "over-pushed child" },
@@ -12154,7 +12154,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "TOUS les contrats sino-étrangers doivent inclure une clause 争议解决 (résolution des différends) qui précise : juridiction (中国/香港/新加坡), langue de procédure, et préférence pour 仲裁 vs 诉讼. SANS cette clause, en cas de litige tu dépendras de la juridiction par défaut, qui peut être très défavorable.",
       tipEn: "ALL Sino-foreign contracts must include a 争议解决 (dispute resolution) clause specifying: jurisdiction (中国/香港/新加坡), procedural language, and preference for 仲裁 vs 诉讼. WITHOUT this clause, you depend on the default jurisdiction, which can be very unfavorable.",
       items: [
-        { hanzi: "合同", pinyin: "hétóng", meaning: "contrat", meaningEn: "contract" },
+        { hanzi: "合同", pinyin: "hétong", meaning: "contrat", meaningEn: "contract" },
         { hanzi: "甲方", pinyin: "jiǎfāng", meaning: "partie A", meaningEn: "party A" },
         { hanzi: "违约", pinyin: "wéiyuē", meaning: "rupture de contrat", meaningEn: "breach" },
         { hanzi: "不可抗力", pinyin: "bùkěkànglì", meaning: "force majeure", meaningEn: "force majeure" },
@@ -12701,7 +12701,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "乎", pinyin: "hū", meaning: "particule interrogative", meaningEn: "interrogative particle" },
         { hanzi: "哉", pinyin: "zāi", meaning: "particule exclamative", meaningEn: "exclamative particle" },
         { hanzi: "不亦", pinyin: "bú yì", meaning: "n'est-ce pas", meaningEn: "is it not" },
-        { hanzi: "说", pinyin: "yuè", meaning: "= 悦 joie (classique)", meaningEn: "= 悦 joy (classical)" },
+        { hanzi: "说", pinyin: "shuō", meaning: "= 悦 joie (classique)", meaningEn: "= 悦 joy (classical)" },
         { hanzi: "善哉", pinyin: "shànzāi", meaning: "comme c'est bien !", meaningEn: "how good!" }
       ],
     }
@@ -13468,7 +13468,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "知", pinyin: "zhī", meaning: "connaître, savoir", meaningEn: "know" },
         { hanzi: "识", pinyin: "shí", meaning: "reconnaître, discerner", meaningEn: "recognize" },
         { hanzi: "智慧", pinyin: "zhìhuì", meaning: "sagesse", meaningEn: "wisdom" },
-        { hanzi: "见识", pinyin: "jiànshí", meaning: "expérience, ouverture", meaningEn: "experience, breadth" }
+        { hanzi: "见识", pinyin: "jiànshi", meaning: "expérience, ouverture", meaningEn: "experience, breadth" }
       ],
     },
     {
@@ -13518,7 +13518,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "下联", pinyin: "xiàlián", meaning: "vers du bas", meaningEn: "lower line" },
         { hanzi: "横批", pinyin: "héngpī", meaning: "bandeau horizontal", meaningEn: "horizontal banner" },
         { hanzi: "吉祥", pinyin: "jíxiáng", meaning: "auspicieux", meaningEn: "auspicious" },
-        { hanzi: "一帆风顺", pinyin: "yīfānfēngshùn", meaning: "navigation paisible", meaningEn: "smooth sailing" }
+        { hanzi: "一帆风顺", pinyin: "yìfānfēngshùn", meaning: "navigation paisible", meaningEn: "smooth sailing" }
       ],
     }
   ],
@@ -13652,8 +13652,8 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       items: [
         { hanzi: "爱人", pinyin: "àirén", meaning: "conjoint(e)", meaningEn: "spouse" },
         { hanzi: "同志", pinyin: "tóngzhì", meaning: "camarade / homosexuel", meaningEn: "comrade / homosexual" },
-        { hanzi: "厉害", pinyin: "lìhài", meaning: "formidable / sévère", meaningEn: "great / severe" },
-        { hanzi: "配偶", pinyin: "pèiǒu", meaning: "conjoint (formel)", meaningEn: "spouse (formal)" },
+        { hanzi: "厉害", pinyin: "lìhai", meaning: "formidable / sévère", meaningEn: "great / severe" },
+        { hanzi: "配偶", pinyin: "pèi'ǒu", meaning: "conjoint (formel)", meaningEn: "spouse (formal)" },
         { hanzi: "歧义", pinyin: "qíyì", meaning: "ambiguïté", meaningEn: "ambiguity" }
       ],
     }
@@ -13668,7 +13668,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "À une rencontre fortuite avec quelqu'un qui te plaît (ami potentiel, futur partenaire pro), dis : « 我们真有缘 » (nous avons vraiment du yuanfen). Phrase chargée culturellement, signale ta sensibilité à la dimension presque mystique des rencontres. Effet émotionnel chez l'interlocuteur chinois.",
       tipEn: "On a fortuitous meeting with someone you like (potential friend, future business partner), say: «我们真有缘» (we really have yuanfen). Culturally loaded phrase, signals your sensitivity to the almost mystical dimension of meetings. Emotional effect on Chinese interlocutor.",
       items: [
-        { hanzi: "缘分", pinyin: "yuánfēn", meaning: "affinité prédestinée", meaningEn: "predestined affinity" },
+        { hanzi: "缘分", pinyin: "yuánfèn", meaning: "affinité prédestinée", meaningEn: "predestined affinity" },
         { hanzi: "气", pinyin: "qì", meaning: "énergie vitale", meaningEn: "vital energy" },
         { hanzi: "气功", pinyin: "qìgōng", meaning: "qigong", meaningEn: "qigong" },
         { hanzi: "元气", pinyin: "yuánqì", meaning: "énergie originelle", meaningEn: "original energy" },
@@ -13688,7 +13688,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "武侠", pinyin: "wǔxiá", meaning: "chevalier errant", meaningEn: "wandering knight" },
         { hanzi: "金庸", pinyin: "jīnyōng", meaning: "Jin Yong", meaningEn: "Jin Yong" },
         { hanzi: "吃苦", pinyin: "chīkǔ", meaning: "endurer (vertu)", meaningEn: "endure hardship" },
-        { hanzi: "委屈", pinyin: "wěiqū", meaning: "sentir l'injustice", meaningEn: "feel wronged" }
+        { hanzi: "委屈", pinyin: "wěiqu", meaning: "sentir l'injustice", meaningEn: "feel wronged" }
       ],
     }
   ],
@@ -14163,7 +14163,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
         { hanzi: "调整", pinyin: "tiáozhěng", meaning: "ajuster", meaningEn: "adjust" },
         { hanzi: "角度", pinyin: "jiǎodù", meaning: "angle, perspective", meaningEn: "angle" },
         { hanzi: "换", pinyin: "huàn", meaning: "changer", meaningEn: "change" },
-        { hanzi: "部分", pinyin: "bùfèn", meaning: "partie", meaningEn: "part" },
+        { hanzi: "部分", pinyin: "bùfen", meaning: "partie", meaningEn: "part" },
         { hanzi: "建议", pinyin: "jiànyì", meaning: "suggestion", meaningEn: "suggestion" }
       ],
     }
@@ -14247,7 +14247,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tipEn: "«抓住时机» (seize the opportunity) is a Chinese business combo. To praise a strategic decision: «这是抓住了时机» (you seized the opportunity). More powerful than «做对了» (you did right) — connotes strategic insight.",
       items: [
         { hanzi: "时间", pinyin: "shíjiān", meaning: "temps (durée)", meaningEn: "time (duration)" },
-        { hanzi: "时候", pinyin: "shíhòu", meaning: "moment, quand", meaningEn: "moment, when" },
+        { hanzi: "时候", pinyin: "shíhou", meaning: "moment, quand", meaningEn: "moment, when" },
         { hanzi: "时刻", pinyin: "shíkè", meaning: "instant crucial", meaningEn: "crucial instant" },
         { hanzi: "时机", pinyin: "shíjī", meaning: "opportunité", meaningEn: "opportunity" },
         { hanzi: "关键", pinyin: "guānjiàn", meaning: "crucial, clé", meaningEn: "crucial, key" }
@@ -14296,7 +14296,7 @@ export const LEARN_SECTIONS: Record<string, LearnSection[]> = {
       tip: "« 三思而行 » est UN conseil de prudence universel. À utiliser quand quelqu'un est sur le point de prendre une décision irréversible. Plus puissant que « 慢慢想 » (réfléchis lentement) — connote la SAGESSE confucéenne. Effet immédiat sur l'auditeur.",
       tipEn: "«三思而行» is a universal counsel of prudence. Use when someone is about to make an irreversible decision. More powerful than «慢慢想» (think slowly) — connotes Confucian WISDOM. Immediate effect on the listener.",
       items: [
-        { hanzi: "一鼓作气", pinyin: "yīgǔzuòqì", meaning: "avancer en un élan", meaningEn: "in a single thrust" },
+        { hanzi: "一鼓作气", pinyin: "yìgǔzuòqì", meaning: "avancer en un élan", meaningEn: "in a single thrust" },
         { hanzi: "三思而行", pinyin: "sānsīérxíng", meaning: "réfléchir avant d'agir", meaningEn: "think before acting" },
         { hanzi: "五湖四海", pinyin: "wǔhúsìhǎi", meaning: "du monde entier", meaningEn: "from all over" },
         { hanzi: "九牛二虎之力", pinyin: "jiǔniúèrhǔzhīlì", meaning: "effort surhumain", meaningEn: "superhuman effort" },
