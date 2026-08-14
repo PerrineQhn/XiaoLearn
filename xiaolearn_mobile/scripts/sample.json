@@ -1,0 +1,2918 @@
+[
+ {
+  "unit": "cecr-a1-conversation-m6",
+  "id": "cecr-a1-conversation-m6-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 联系 (liánxì) ?",
+  "promptEn": "Listen, then read: what does 联系 (liánxì) mean?",
+  "choices": [
+   "partir, marcher",
+   "plus tard (oral)",
+   "la prochaine fois",
+   "contact"
+  ],
+  "choicesEn": [
+   "leave, walk",
+   "later (spoken)",
+   "next time",
+   "contact"
+  ],
+  "correctIndex": 3,
+  "explanation": "联系 (liánxì) = contact.",
+  "explanationEn": "联系 (liánxì) = contact.",
+  "audioHanzi": "联系"
+ },
+ {
+  "unit": "cecr-a1-daily-m3",
+  "id": "cecr-a1-daily-m3-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 起床 (qǐchuáng) ?",
+  "promptEn": "Listen, then read: what does 起床 (qǐchuáng) mean?",
+  "choices": [
+   "se lever",
+   "professeur",
+   "dormir",
+   "aller à l'école"
+  ],
+  "choicesEn": [
+   "to get up",
+   "teacher",
+   "to sleep",
+   "to go to school"
+  ],
+  "correctIndex": 0,
+  "explanation": "起床 (qǐchuáng) = se lever.",
+  "explanationEn": "起床 (qǐchuáng) = to get up.",
+  "audioHanzi": "起床"
+ },
+ {
+  "unit": "cecr-a1-pinyin-m1",
+  "id": "cecr-a1-pinyin-m1-grammar1",
+  "type": "grammar-quiz",
+  "prompt": "Combien de tons distinctifs existe-t-il en mandarin standard ?",
+  "promptEn": "How many distinctive tones are there in Standard Mandarin?",
+  "choices": [
+   "3 tons",
+   "4 tons + 1 ton neutre (léger)",
+   "5 tons distinctifs",
+   "6 tons comme en cantonais"
+  ],
+  "choicesEn": [
+   "3 tones",
+   "4 tones + 1 neutral tone (light)",
+   "5 distinctive tones",
+   "6 tones as in Cantonese"
+  ],
+  "correctIndex": 1,
+  "explanation": "Le mandarin a 4 tons principaux (plat, montant, descendant-montant, descendant) + un ton léger dit « neutre » (ex. 的, 了). Changer le ton change le sens : mā/má/mǎ/mà = mère/chanvre/cheval/gronder. Le cantonais en a 6-9, mais pas le mandarin.",
+  "explanationEn": "Mandarin has 4 main tones (flat, rising, dipping, falling) + a light «neutral» tone (e.g. 的, 了). Changing the tone changes the meaning: mā/má/mǎ/mà = mother/hemp/horse/scold. Cantonese has 6-9, Mandarin doesn’t."
+ },
+ {
+  "unit": "cecr-a1-grammar-m2",
+  "id": "cecr-a1-grammar-m2-listen1",
+  "type": "mcq",
+  "prompt": "Écoute — tu entends 不 + quel verbe ?",
+  "promptEn": "Listen — what verb follows 不?",
+  "choices": [
+   "不去 (ne pas y aller)",
+   "不喜欢 (ne pas aimer)",
+   "不要 (ne pas vouloir)",
+   "不是 (ne pas être)"
+  ],
+  "choicesEn": [
+   "不去 (not to go)",
+   "不喜欢 (to not like)",
+   "不要 (to not want)",
+   "不是 (to not be)"
+  ],
+  "correctIndex": 3,
+  "explanation": "不是 = bú shì (le 不 passe au ton 2 devant le ton 4 de 是 : sandhi automatique). Même règle pour 不去 (bú qù), 不要 (búyào).",
+  "explanationEn": "不是 = bú shì (不 shifts to tone 2 before tone-4 是: automatic sandhi). Same rule for 不去 (bú qù), 不要 (búyào).",
+  "audioHanzi": "不是"
+ },
+ {
+  "unit": "cecr-a1-daily-m3",
+  "id": "cecr-a1-daily-m3-gen2",
+  "type": "error-correction",
+  "prompt": "Une seule de ces traductions est fausse. Laquelle ?",
+  "promptEn": "Only one of these translations is wrong. Which one?",
+  "choices": [
+   "我每天工作。 — Je travaille tous les jours.",
+   "明天上学吗？ — Demain, tu vas aller à l'école ?",
+   "他每天晚上都睡觉。 — Il dort chaque soir.",
+   "我的老师很好。 — Tu vas au travail aujourd'hui ?"
+  ],
+  "choicesEn": [
+   "我每天工作。 — I work every day.",
+   "明天上学吗？ — Are you going to school tomorrow?",
+   "他每天晚上都睡觉。 — He sleeps every evening.",
+   "我的老师很好。 — Are you going to work today?"
+  ],
+  "correctIndex": 3,
+  "sentence": "Phrases et traductions",
+  "explanation": "我的老师很好。 veut dire « Mon professeur est très bon ». La traduction affichée est en réalité celle de 今天上班吗？.",
+  "explanationEn": "我的老师很好。 means «My teacher is very good». The translation shown actually belongs to 今天上班吗？."
+ },
+ {
+  "unit": "cecr-a1-pinyin-m2",
+  "id": "cecr-a1-pinyin-m2-grammar1",
+  "type": "grammar-quiz",
+  "prompt": "Qu’est-ce qui distingue b- et p- en mandarin ?",
+  "promptEn": "What distinguishes b- and p- in Mandarin?",
+  "choices": [
+   "b- est voisé, p- ne l’est pas",
+   "b- est non aspirée, p- est aspirée (souffle d’air)",
+   "b- est nasale, p- est orale",
+   "Ils sont identiques"
+  ],
+  "choicesEn": [
+   "b- is voiced, p- is not",
+   "b- is unaspirated, p- is aspirated (puff of air)",
+   "b- is nasal, p- is oral",
+   "They are identical"
+  ],
+  "correctIndex": 1,
+  "explanation": "En mandarin, ni b- ni p- ne sont voisés (contrairement au français). La différence est l’ASPIRATION : p- produit un souffle marqué, b- non. Mets la main devant la bouche : tu sens l’air sur p-, pas sur b-.",
+  "explanationEn": "In Mandarin, neither b- nor p- is voiced (unlike French). The difference is ASPIRATION: p- has a clear puff, b- doesn’t. Put your hand before your mouth: you feel air on p-, not on b-."
+ },
+ {
+  "unit": "cecr-a1-daily-m1",
+  "id": "cecr-a1-daily-m1-err1",
+  "type": "error-correction",
+  "prompt": "Quel mot est inapproprié : « 我喝苹果 » ?",
+  "promptEn": "Which word is inappropriate in «我喝苹果»?",
+  "choices": [
+   "喝",
+   "我",
+   "苹果",
+   "Tout est correct"
+  ],
+  "choicesEn": [
+   "喝",
+   "我",
+   "苹果",
+   "Everything is correct"
+  ],
+  "correctIndex": 0,
+  "sentence": "我 喝 苹果",
+  "explanation": "苹果 = pomme (solide) → 吃. 喝苹果 n’a pas de sens (sauf « boire du jus de pomme » = 喝苹果汁). Correct : 我吃苹果.",
+  "explanationEn": "苹果 = apple (solid) → 吃. 喝苹果 makes no sense (except «drink apple juice» = 喝苹果汁). Correct: 我吃苹果."
+ },
+ {
+  "unit": "cecr-a1-pinyin-m4",
+  "id": "cecr-a1-pinyin-m4-err1",
+  "type": "error-correction",
+  "prompt": "Trouve la mauvaise association hanzi / initiale.",
+  "promptEn": "Find the wrong hanzi / initial match.",
+  "choices": [
+   "中 / zh- (rétroflexe)",
+   "四 / s- (sifflante)",
+   "是 / z- (sifflante)",
+   "人 / r-"
+  ],
+  "choicesEn": [
+   "中 / zh- (retroflex)",
+   "四 / s- (sibilant)",
+   "是 / z- (sibilant)",
+   "人 / r-"
+  ],
+  "correctIndex": 2,
+  "sentence": "Paires",
+  "explanation": "是 = shì (rétroflexe), PAS zì. Erreur classique : confondre 是 et 四 (sì). Langue recourbée pour shì, plate pour sì. Cette distinction change complètement le sens.",
+  "explanationEn": "是 = shì (retroflex), NOT zì. Classic mix-up: confusing 是 with 四 (sì). Tongue curled for shì, flat for sì. This distinction totally changes meaning."
+ },
+ {
+  "unit": "cecr-a1-hello-m2",
+  "id": "cecr-a1-hello-m2-trans-zh2fr",
+  "type": "translation",
+  "prompt": "Traduis : « 麻烦你，请帮我一下。»",
+  "promptEn": "Translate: «麻烦你，请帮我一下。»",
+  "choices": [
+   "Merci de votre aide, je vous en prie.",
+   "Excusez-moi, s’il vous plaît aidez-moi un instant.",
+   "Désolé, je ne peux pas vous aider.",
+   "Bonjour, pouvez-vous m’aider ?"
+  ],
+  "choicesEn": [
+   "Thank you for your help, you're welcome.",
+   "Excuse me, please help me for a moment.",
+   "Sorry, I can't help you.",
+   "Hello, can you help me?"
+  ],
+  "correctIndex": 1,
+  "explanation": "麻烦你 = « excusez-moi de vous déranger » (poli pour demander un service). 一下 atténue la demande (« un petit peu »).",
+  "explanationEn": "麻烦你 = «sorry to trouble you» (polite for favors). 一下 softens the request («just a moment»)."
+ },
+ {
+  "unit": "cecr-a1-pinyin-m4",
+  "id": "cecr-a1-pinyin-m4-grammar1",
+  "type": "grammar-quiz",
+  "prompt": "Qu’est-ce qui distingue les rétroflexes (zh/ch/sh/r) des sifflantes (z/c/s) ?",
+  "promptEn": "What distinguishes retroflexes (zh/ch/sh/r) from sibilants (z/c/s)?",
+  "choices": [
+   "Le volume sonore",
+   "La voyelle qui suit",
+   "L’intonation",
+   "La position de la langue (recourbée vs plate)"
+  ],
+  "choicesEn": [
+   "The volume",
+   "The following vowel",
+   "The intonation",
+   "The tongue position (curled vs flat)"
+  ],
+  "correctIndex": 3,
+  "explanation": "Rétroflexes : langue RECOURBÉE vers l’arrière du palais. Sifflantes : langue PLATE, pointe contre les incisives. Même opposition aspirée/non pour chaque paire (zh/z = non aspiré, ch/c = aspiré, sh/s = fricatives).",
+  "explanationEn": "Retroflexes: tongue CURLED back toward the palate. Sibilants: tongue FLAT, tip against incisors. Same aspirated/unaspirated opposition for each pair (zh/z = unaspirated, ch/c = aspirated, sh/s = fricatives)."
+ },
+ {
+  "unit": "cecr-a1-pinyin-m5",
+  "id": "cecr-a1-pinyin-m5-listen-ai",
+  "type": "mcq",
+  "prompt": "Écoute : quelle finale ?",
+  "promptEn": "Listen: which final?",
+  "choices": [
+   "-ao",
+   "-ei (comme « eï »)",
+   "-ai (comme « aïe »)",
+   "-an"
+  ],
+  "choicesEn": [
+   "-ao",
+   "-ei (like \"ay\")",
+   "-ai (like \"eye\")",
+   "-an"
+  ],
+  "correctIndex": 2,
+  "explanation": "爱 (ài, aimer) = finale -ai : bouche grande ouverte au début, ferme progressivement. Bien distinct de -ei (bouche plus fermée).",
+  "explanationEn": "爱 (ài, to love) = final -ai: mouth wide open at the start, closes gradually. Clearly distinct from -ei (more closed).",
+  "audioHanzi": "爱"
+ },
+ {
+  "unit": "cecr-a1-grammar-m4",
+  "id": "cecr-a1-grammar-m4-err1",
+  "type": "error-correction",
+  "prompt": "Quel segment doit être ajouté entre « 老师 » et « 书 » dans « 老师 书 » ?",
+  "promptEn": "What segment must be added between «老师» and «书» in «老师 书»?",
+  "choices": [
+   "Rien, la juxtaposition suffit",
+   "Ajouter 是",
+   "Ajouter 的",
+   "Ajouter 有"
+  ],
+  "choicesEn": [
+   "Nothing, juxtaposition is enough",
+   "Add 是",
+   "Add 的",
+   "Add 有"
+  ],
+  "correctIndex": 2,
+  "sentence": "老师 ? 书",
+  "explanation": "Deux noms ne peuvent pas s’accoler pour exprimer une possession. Il faut 的 : 老师的书 = « le livre du prof ». Sans 的, ça ressemble à un composé inconnu.",
+  "explanationEn": "Two nouns can’t just butt up to express possession. Insert 的: 老师的书 = «the teacher’s book». Without 的, it looks like an unknown compound."
+ },
+ {
+  "unit": "cecr-a1-pinyin-m4",
+  "id": "cecr-a1-pinyin-m4-listen-ch",
+  "type": "mcq",
+  "prompt": "Écoute : quelle initiale ?",
+  "promptEn": "Listen: which initial?",
+  "choices": [
+   "ch- (rétroflexe, aspirée)",
+   "zh- (rétroflexe, silencieuse)",
+   "c- (sifflante aspirée)",
+   "q-"
+  ],
+  "choicesEn": [
+   "ch- (retroflex, aspirated)",
+   "zh- (retroflex, silent)",
+   "c- (aspirated sibilant)",
+   "q-"
+  ],
+  "correctIndex": 0,
+  "explanation": "吃 (chī, manger) commence par ch- : langue recourbée + souffle d'air marqué. Écoute l'aspiration qui la distingue de zh-.",
+  "explanationEn": "吃 (chī, to eat) starts with ch-: curled tongue + clear puff of air. The puff distinguishes it from zh-.",
+  "audioHanzi": "吃"
+ },
+ {
+  "unit": "cecr-a2-grammar-mw-m1",
+  "id": "cecr-a2-grammar-mw-m1-gen7",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 排 (pái) ?",
+  "promptEn": "Listen, then read: what does 排 (pái) mean?",
+  "choices": [
+   "MW tranche fine",
+   "heure",
+   "MW rangée",
+   "MW tasse, verre"
+  ],
+  "choicesEn": [
+   "MW thin slice",
+   "hour",
+   "MW row",
+   "MW cup, glass"
+  ],
+  "correctIndex": 2,
+  "explanation": "排 (pái) = MW rangée.",
+  "explanationEn": "排 (pái) = MW row.",
+  "audioHanzi": "排"
+ },
+ {
+  "unit": "cecr-a2-day-m4",
+  "id": "cecr-a2-day-m4-trans-zh2fr",
+  "type": "translation",
+  "prompt": "Traduis : « 今天星期天。»",
+  "promptEn": "Translate: «今天星期天。»",
+  "choices": [
+   "Aujourd’hui c’est dimanche.",
+   "Aujourd’hui c’est samedi.",
+   "Aujourd’hui c’est lundi.",
+   "Aujourd’hui c’est un jour férié."
+  ],
+  "choicesEn": [
+   "Today is Sunday.",
+   "Today is Saturday.",
+   "Today is Monday.",
+   "Today is a public holiday."
+  ],
+  "correctIndex": 0,
+  "explanation": "星期天 (xīngqītiān) OU 星期日 = dimanche. Le seul jour qui ne suit pas un chiffre (星期一 lundi, 二 mardi...). Pas de 是 requis avec 星期+jour.",
+  "explanationEn": "星期天 (xīngqītiān) OR 星期日 = Sunday. The only day not following a digit (星期一 Mon, 二 Tue...). No 是 needed with 星期+day."
+ },
+ {
+  "unit": "cecr-a2-nuances-m6",
+  "id": "cecr-a2-nuances-m6-gen1",
+  "type": "error-correction",
+  "prompt": "Une seule de ces traductions est fausse. Laquelle ?",
+  "promptEn": "Only one of these translations is wrong. Which one?",
+  "choices": [
+   "他总是早起。 — Il se lève toujours tôt.",
+   "从未见过面 — Jamais vu personne",
+   "从来不迟到 — Je ne suis jamais en retard",
+   "我要离家去旅行。 — Nous irons à Beijing demain."
+  ],
+  "choicesEn": [
+   "他总是早起。 — He always gets up early.",
+   "从未见过面 — Never met face to face",
+   "从来不迟到 — I am never late",
+   "我要离家去旅行。 — We will arrive in Beijing tomorrow."
+  ],
+  "correctIndex": 3,
+  "sentence": "Phrases et traductions",
+  "explanation": "我要离家去旅行。 veut dire « Je vais quitter la maison pour voyager ». La traduction affichée est en réalité celle de 我们明天到北京。.",
+  "explanationEn": "我要离家去旅行。 means «I want to leave home for a trip». The translation shown actually belongs to 我们明天到北京。."
+ },
+ {
+  "unit": "cecr-a2-conversation-m6",
+  "id": "cecr-a2-conversation-m6-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 清淡 (qīngdàn) ?",
+  "promptEn": "Listen, then read: what does 清淡 (qīngdàn) mean?",
+  "choices": [
+   "bon (à manger)",
+   "léger, peu relevé",
+   "sucré",
+   "salé"
+  ],
+  "choicesEn": [
+   "tasty",
+   "mild, light",
+   "sweet",
+   "salty"
+  ],
+  "correctIndex": 1,
+  "explanation": "清淡 (qīngdàn) = léger, peu relevé.",
+  "explanationEn": "清淡 (qīngdàn) = mild, light.",
+  "audioHanzi": "清淡"
+ },
+ {
+  "unit": "cecr-a2-day-m2",
+  "id": "cecr-a2-day-m2-gq1",
+  "type": "grammar-quiz",
+  "prompt": "Où place-t-on le temps (« chaque jour ») en chinois ?",
+  "promptEn": "Where does time («every day») go in Chinese?",
+  "choices": [
+   "Avant le verbe",
+   "Après le verbe",
+   "En fin de phrase",
+   "Après l’objet"
+  ],
+  "choicesEn": [
+   "Before the verb",
+   "After the verb",
+   "At the end of the sentence",
+   "After the object"
+  ],
+  "correctIndex": 0,
+  "explanation": "En chinois, le temps est TOUJOURS avant le verbe. 我每天起床 ✓ / 我起床每天 ✗. Peut aussi être avant le sujet : 每天我起床.",
+  "explanationEn": "In Chinese, time ALWAYS comes before the verb. 我每天起床 ✓ / 我起床每天 ✗. Can also precede the subject: 每天我起床."
+ },
+ {
+  "unit": "cecr-a2-city-m2",
+  "id": "cecr-a2-city-m2-listen1",
+  "type": "mcq",
+  "prompt": "Écoute — quel moyen de transport ?",
+  "promptEn": "Listen — which transport?",
+  "choices": [
+   "Le métro (地铁)",
+   "Le taxi (出租车)",
+   "Le bus (公共汽车)",
+   "L’avion (飞机)"
+  ],
+  "choicesEn": [
+   "The subway (地铁)",
+   "The taxi (出租车)",
+   "The bus (公共汽车)",
+   "The plane (飞机)"
+  ],
+  "correctIndex": 0,
+  "explanation": "地铁 (dì tiě, ton 4 + ton 3) = métro. Littéralement « fer souterrain ». Différent de 火车 (huǒchē) = train.",
+  "explanationEn": "地铁 (dì tiě, tone 4 + tone 3) = subway. Literally «underground iron». Different from 火车 (huǒchē) = train.",
+  "audioHanzi": "地铁"
+ },
+ {
+  "unit": "cecr-a2-shopping-m4",
+  "id": "cecr-a2-shopping-m4-listen1",
+  "type": "mcq",
+  "prompt": "Écoute — quel classificateur entends-tu ?",
+  "promptEn": "Listen — which classifier do you hear?",
+  "choices": [
+   "张 (objets plats)",
+   "条 (objets longs)",
+   "件 (vêtements)",
+   "把 (à poignée)"
+  ],
+  "choicesEn": [
+   "张 (flat objects)",
+   "条 (long objects)",
+   "件 (clothing)",
+   "把 (with a handle)"
+  ],
+  "correctIndex": 2,
+  "explanation": "件 (jiàn, ton 4) = classificateur pour les vêtements (une pièce : chemise, robe) et certains événements (affaires : 一件事 « une affaire »).",
+  "explanationEn": "件 (jiàn, tone 4) = classifier for clothing items (shirt, dress) and certain events/matters (一件事 «one matter»).",
+  "audioHanzi": "件"
+ },
+ {
+  "unit": "cecr-a2-day-m1",
+  "id": "cecr-a2-day-m1-err1",
+  "type": "error-correction",
+  "prompt": "Trouve l’erreur d’ordre : « 我三点下午见他。»",
+  "promptEn": "Find the order error: «我三点下午见他。»",
+  "choices": [
+   "我",
+   "L’ordre 下午/三点",
+   "三点",
+   "他"
+  ],
+  "choicesEn": [
+   "我",
+   "The order 下午/三点",
+   "三点",
+   "他"
+  ],
+  "correctIndex": 1,
+  "sentence": "我三点下午见他。",
+  "explanation": "La période (下午) doit précéder l’heure précise, jamais l’inverse. Correct : 我下午三点见他. Règle : du plus grand au plus petit.",
+  "explanationEn": "The period (下午) must precede the precise time, never the reverse. Correct: 我下午三点见他. Rule: big before small."
+ },
+ {
+  "unit": "cecr-a2-phone-m2",
+  "id": "cecr-a2-phone-m2-listen1",
+  "type": "mcq",
+  "prompt": "Écoute — quelle application ?",
+  "promptEn": "Listen — which app?",
+  "choices": [
+   "Douyin (抖音)",
+   "Weibo (微博)",
+   "WeChat (微信)",
+   "QQ"
+  ],
+  "choicesEn": [
+   "Douyin (抖音)",
+   "Weibo (微博)",
+   "WeChat (微信)",
+   "QQ"
+  ],
+  "correctIndex": 2,
+  "explanation": "微信 (wēixìn) = WeChat. Ton 1 + ton 4. L’app chinoise la plus utilisée, largement plus qu’un messenger : portefeuille, mini-apps, réseau social...",
+  "explanationEn": "微信 (wēixìn) = WeChat. Tone 1 + tone 4. China’s most-used app, far more than a messenger: wallet, mini-apps, social network...",
+  "audioHanzi": "微信"
+ },
+ {
+  "unit": "cecr-a2-grammar-m1",
+  "id": "cecr-a2-grammar-m1-grammar1",
+  "type": "grammar-quiz",
+  "prompt": "Où se place le 了 perfectif ?",
+  "promptEn": "Where does the perfective 了 go?",
+  "choices": [
+   "Juste après le verbe",
+   "Avant le verbe",
+   "À la fin de la phrase",
+   "Avant le sujet"
+  ],
+  "choicesEn": [
+   "Right after the verb",
+   "Before the verb",
+   "At the end of the sentence",
+   "Before the subject"
+  ],
+  "correctIndex": 0,
+  "explanation": "Le 了 perfectif se colle DIRECTEMENT après le verbe : V + 了 + objet. 我吃了饭. Attention, le 了 modal (fin de phrase) est un autre 了 distinct, traité plus tard.",
+  "explanationEn": "Perfective 了 sticks DIRECTLY after the verb: V + 了 + object. 我吃了饭. Careful: sentence-final 了 is a different 了, covered later."
+ },
+ {
+  "unit": "cecr-a2-city-m3",
+  "id": "cecr-a2-city-m3-err1",
+  "type": "error-correction",
+  "prompt": "Trouve l’erreur : « 我是超市。»",
+  "promptEn": "Find the error: «我是超市。»",
+  "choices": [
+   "是",
+   "我",
+   "超市",
+   "L’ordre"
+  ],
+  "choicesEn": [
+   "是",
+   "我",
+   "超市",
+   "The order"
+  ],
+  "correctIndex": 0,
+  "sentence": "我是超市。",
+  "explanation": "Pour se situer on utilise 在 (« être à »), pas 是 (« être = »). Correct : 我在超市 = « je suis au supermarché ». 我是超市 = « je SUIS un supermarché » (absurde).",
+  "explanationEn": "To locate, use 在 («to be at»), not 是 («to be = »). Correct: 我在超市 = «I’m at the supermarket». 我是超市 = «I AM a supermarket» (absurd)."
+ },
+ {
+  "unit": "cecr-a2-shopping-m3",
+  "id": "cecr-a2-shopping-m3-trans-zh2fr",
+  "type": "translation",
+  "prompt": "Traduis : « 这里不收现金，只能用微信或支付宝。»",
+  "promptEn": "Translate: «这里不收现金，只能用微信或支付宝。»",
+  "choices": [
+   "Ici on ne prend plus WeChat, seulement du cash.",
+   "Ici on ne prend pas d’espèces, il faut payer par WeChat ou Alipay.",
+   "Ici on accepte WeChat mais pas Alipay.",
+   "Ici on n’accepte aucun paiement."
+  ],
+  "choicesEn": [
+   "Here we no longer take WeChat, only cash.",
+   "Here we don't take cash, you have to pay by WeChat or Alipay.",
+   "Here we accept WeChat but not Alipay.",
+   "Here we accept no payment."
+  ],
+  "correctIndex": 1,
+  "explanation": "收 = recevoir/accepter (pour un paiement). 只能 = « seulement pouvoir » (on ne peut que...). 或 = ou (écrit ; 还是 en question, 或者 à l’affirmatif).",
+  "explanationEn": "收 = to receive/accept (payment). 只能 = «can only». 或 = or (written; 还是 in questions, 或者 in statements)."
+ },
+ {
+  "unit": "cecr-a2-nuances-m19",
+  "id": "cecr-a2-nuances-m19-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 我们星期六去还是星期天去 (wǒmen xīngqīliù qù háishì xīngqītiān qù) ?",
+  "promptEn": "Listen, then read: what does 我们星期六去还是星期天去 (wǒmen xīngqīliù qù háishì xīngqītiān qù) mean?",
+  "choices": [
+   "à Canton, il fait beau ou il pleut",
+   "on y va samedi ou dimanche ?",
+   "au meeting sportif, soit course soit saut en hauteur",
+   "ou (dans une affirmation)"
+  ],
+  "choicesEn": [
+   "in Canton, it's either sunny or rainy",
+   "shall we go Saturday or Sunday?",
+   "at the sports meet, either running or high jump",
+   "or (in a statement)"
+  ],
+  "correctIndex": 1,
+  "explanation": "我们星期六去还是星期天去 (wǒmen xīngqīliù qù háishì xīngqītiān qù) = on y va samedi ou dimanche.",
+  "explanationEn": "我们星期六去还是星期天去 (wǒmen xīngqīliù qù háishì xīngqītiān qù) = shall we go Saturday or Sunday.",
+  "audioHanzi": "我们星期六去还是星期天去"
+ },
+ {
+  "unit": "cecr-b11-grammar-redup-m1",
+  "id": "cecr-b11-grammar-redup-m1-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 看看 (kànkàn) ?",
+  "promptEn": "Listen, then read: what does 看看 (kànkàn) mean?",
+  "choices": [
+   "particule adverbiale",
+   "plus... plus...",
+   "jeter un œil",
+   "essaie voir"
+  ],
+  "choicesEn": [
+   "adverbial particle",
+   "the more... the more...",
+   "take a look",
+   "give it a try"
+  ],
+  "correctIndex": 2,
+  "explanation": "看看 (kànkàn) = jeter un œil.",
+  "explanationEn": "看看 (kànkàn) = take a look.",
+  "audioHanzi": "看看"
+ },
+ {
+  "unit": "cecr-b11-conversation-m5",
+  "id": "cecr-b11-conversation-m5-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 合作 (hézuò) ?",
+  "promptEn": "Listen, then read: what does 合作 (hézuò) mean?",
+  "choices": [
+   "environ",
+   "collaborer",
+   "diplômé",
+   "réunion"
+  ],
+  "choicesEn": [
+   "approximately",
+   "collaborate",
+   "graduate",
+   "meeting"
+  ],
+  "correctIndex": 1,
+  "explanation": "合作 (hézuò) = collaborer.",
+  "explanationEn": "合作 (hézuò) = collaborate.",
+  "audioHanzi": "合作"
+ },
+ {
+  "unit": "cecr-b11-ba-m1",
+  "id": "cecr-b11-ba-m1-err-1",
+  "type": "error-correction",
+  "prompt": "Trouve l'erreur : « 把门关。»",
+  "promptEn": "Find the error in «把门关。»",
+  "choices": [
+   "Manque complément",
+   "门",
+   "关",
+   "把"
+  ],
+  "choicesEn": [
+   "Missing complement",
+   "门",
+   "关",
+   "把"
+  ],
+  "correctIndex": 0,
+  "sentence": "把门关",
+  "explanation": "Avec 把, le verbe doit AVOIR un complément (上, 了, 好, etc.). 把门关 est incomplet. Forme correcte : 把门关上. Cette règle est stricte — c'est le principal piège de 把.",
+  "explanationEn": "With 把, the verb MUST have a complement (上, 了, 好, etc.). 把门关 is incomplete. Correct: 把门关上."
+ },
+ {
+  "unit": "cecr-b11-conversation-m4",
+  "id": "cecr-b11-conv-m4-mcq1",
+  "type": "mcq",
+  "prompt": "Que veut dire « 哪里哪里 » dans une réponse à un compliment ?",
+  "promptEn": "What does \"哪里哪里\" mean replying to a compliment?",
+  "choices": [
+   "Où ça ?",
+   "Mais non (modestie)",
+   "Pas grave",
+   "Merci"
+  ],
+  "choicesEn": [
+   "Où ça ?",
+   "Not at all (modesty)",
+   "No big deal",
+   "Thank you"
+  ],
+  "correctIndex": 1,
+  "explanation": "Rituel culturel : refuser le compliment par modestie obligée.",
+  "explanationEn": "Cultural ritual: deflect compliment by required modesty."
+ },
+ {
+  "unit": "cecr-b11-health-m1",
+  "id": "cecr-b11-health-m1-mcq-1",
+  "type": "mcq",
+  "prompt": "Que signifie « 头 » ?",
+  "promptEn": "What does \"头\" mean?",
+  "choices": [
+   "pied",
+   "yeux",
+   "tête; début; \"en tête\"",
+   "ventre"
+  ],
+  "choicesEn": [
+   "foot",
+   "eyes",
+   "head; beginning; \"at the head\"",
+   "belly"
+  ],
+  "correctIndex": 2,
+  "explanation": "头 (tóu) — tête; début; \"en tête\"",
+  "explanationEn": "头 (tóu) — tête; début; \"en tête\""
+ },
+ {
+  "unit": "cecr-b11-emo-m3",
+  "id": "cecr-b11-emo-m3-mcq-2",
+  "type": "mcq",
+  "prompt": "Que signifie « 过奖了 » ?",
+  "promptEn": "What does \"过奖了\" mean?",
+  "choices": [
+   "non non (modeste)",
+   "vous me flattez",
+   "poli; courtois",
+   "où"
+  ],
+  "choicesEn": [
+   "no no (modest)",
+   "you flatter me",
+   "polite; courteous",
+   "où"
+  ],
+  "correctIndex": 1,
+  "explanation": "过奖了 (guò jiǎng le) — vous me flattez",
+  "explanationEn": "过奖了 (guò jiǎng le) — vous me flattez"
+ },
+ {
+  "unit": "cecr-b11-grammar-redup-m1",
+  "id": "cecr-b11-grammar-redup-m1-gen1",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 等一下 (děng yīxià) ?",
+  "promptEn": "Listen, then read: what does 等一下 (děng yīxià) mean?",
+  "choices": [
+   "attendre une seconde",
+   "de plus en plus",
+   "réfléchir un peu",
+   "dès que je rentre"
+  ],
+  "choicesEn": [
+   "wait a sec",
+   "more and more",
+   "think a bit",
+   "as soon as I get home"
+  ],
+  "correctIndex": 0,
+  "explanation": "等一下 (děng yīxià) = attendre une seconde.",
+  "explanationEn": "等一下 (děng yīxià) = wait a sec.",
+  "audioHanzi": "等一下"
+ },
+ {
+  "unit": "cecr-b11-conversation-m7",
+  "id": "cecr-b11-conv-m7-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 用户体验 » ?",
+  "promptEn": "What does \"用户体验\" mean?",
+  "choices": [
+   "Test utilisateur",
+   "Service client",
+   "Expérience utilisateur (UX)",
+   "Manuel utilisateur"
+  ],
+  "choicesEn": [
+   "User testing",
+   "Customer service",
+   "User experience (UX)",
+   "User manual"
+  ],
+  "correctIndex": 2,
+  "explanation": "用户体验 (yònghù tǐyàn) = UX. Calque direct de l'anglais user experience.",
+  "explanationEn": "用户体验 = UX. Direct calque of \"user experience\"."
+ },
+ {
+  "unit": "cecr-b11-health-m1",
+  "id": "cecr-b11-health-m1-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 眼睛 » ?",
+  "promptEn": "What does \"眼睛\" mean?",
+  "choices": [
+   "yeux",
+   "réciter, dos",
+   "main",
+   "pied"
+  ],
+  "choicesEn": [
+   "eyes",
+   "recite, back",
+   "hand",
+   "foot"
+  ],
+  "correctIndex": 0,
+  "explanation": "眼睛 (yǎnjing) — yeux",
+  "explanationEn": "眼睛 (yǎnjing) — yeux"
+ },
+ {
+  "unit": "cecr-b11-nuances-m9",
+  "id": "cecr-b11-nuances-m9-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 主意 (zhǔyì) ?",
+  "promptEn": "Listen, then read: what does 主意 (zhǔyì) mean?",
+  "choices": [
+   "idée, avis",
+   "espoir, espérer",
+   "être d'accord",
+   "comment"
+  ],
+  "choicesEn": [
+   "idea, mind",
+   "hope",
+   "agree",
+   "how"
+  ],
+  "correctIndex": 0,
+  "explanation": "主意 (zhǔyì) = idée, avis.",
+  "explanationEn": "主意 (zhǔyì) = idea, mind.",
+  "audioHanzi": "主意"
+ },
+ {
+  "unit": "cecr-b11-shide-m1",
+  "id": "cecr-b11-shide-m1-contrast-6",
+  "type": "mcq",
+  "prompt": "Différence clé entre 我昨天来了 et 我是昨天来的 :",
+  "promptEn": "Key difference between 我昨天来了 and 我是昨天来的:",
+  "choices": [
+   "Le premier est incorrect",
+   "Les deux sont synonymes exacts",
+   "Le premier est au futur, le second au passé",
+   "Le premier narre, le second met en relief la circonstance"
+  ],
+  "choicesEn": [
+   "The first is incorrect",
+   "Both are exact synonyms",
+   "The first is future, the second past",
+   "The first narrates, the second highlights the circumstance"
+  ],
+  "correctIndex": 3,
+  "explanation": "了 narre une action comme un fait accompli (« je suis venu hier »). 是...的 présuppose que l'action a eu lieu et met en relief UNE circonstance (« c'est HIER que je suis venu », pas un autre jour). C'est un outil de focus, pas un temps.",
+  "explanationEn": "了 narrates a completed fact. 是...的 presupposes the action and highlights ONE circumstance (focus/emphasis tool, not a tense)."
+ },
+ {
+  "unit": "cecr-b11-health-m2",
+  "id": "cecr-b11-health-m2-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « yīyuàn » : quelle traduction ?",
+  "promptEn": "🔊 For \"yīyuàn\": which translation?",
+  "choices": [
+   "avoir de la fièvre",
+   "rhume",
+   "hôpital",
+   "mal de tête"
+  ],
+  "choicesEn": [
+   "to have a fever",
+   "common cold",
+   "hospital",
+   "headache"
+  ],
+  "correctIndex": 2,
+  "explanation": "医院 (yīyuàn) — hôpital.",
+  "explanationEn": "医院 (yīyuàn) — hôpital."
+ },
+ {
+  "unit": "cecr-b11-work-m3",
+  "id": "cecr-b11-work-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 期待 (qīdài) ?",
+  "promptEn": "Listen, then read: what does 期待 (qīdài) mean?",
+  "choices": [
+   "salutations (fin de lettre)",
+   "attendre (avec impatience)",
+   "bonjour (poli)",
+   "répondre"
+  ],
+  "choicesEn": [
+   "yours sincerely",
+   "look forward to",
+   "hello (polite)",
+   "reply"
+  ],
+  "correctIndex": 1,
+  "explanation": "期待 (qīdài) = attendre (avec impatience).",
+  "explanationEn": "期待 (qīdài) = look forward to.",
+  "audioHanzi": "期待"
+ },
+ {
+  "unit": "cecr-b12-soc-m4",
+  "id": "cecr-b12-soc-m4-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « qiúzhí » : quelle traduction ?",
+  "promptEn": "🔊 For \"qiúzhí\": which translation?",
+  "choices": [
+   "entreprise étrangère (abrégé)",
+   "salaire",
+   "chercher un emploi; postuler",
+   "entreprise privée (abrégé)"
+  ],
+  "choicesEn": [
+   "foreign company (abbrev.)",
+   "salary",
+   "seek a job; apply",
+   "private company (abbrev.)"
+  ],
+  "correctIndex": 2,
+  "explanation": "求职 (qiúzhí) — chercher un emploi; postuler.",
+  "explanationEn": "求职 (qiúzhí) — chercher un emploi; postuler."
+ },
+ {
+  "unit": "cecr-b12-nuances-m1",
+  "id": "cecr-b12-nuances-m1-usg1",
+  "type": "mcq",
+  "prompt": "Un Chinois te dit « 马上来 » au téléphone. Tu peux prévoir :",
+  "promptEn": "A Chinese person says \"马上来\" on the phone. Expect:",
+  "choices": [
+   "Au moins 1 heure.",
+   "1 seconde exactement.",
+   "Entre 5 et 15 minutes, c'est culturel.",
+   "Toute la journée."
+  ],
+  "choicesEn": [
+   "At least 1 hour.",
+   "Exactly 1 second.",
+   "Between 5 and 15 minutes, it's cultural.",
+   "All day long."
+  ],
+  "correctIndex": 2,
+  "explanation": "**马上** est ÉLASTIQUE en culture chinoise — tolérance ~5-15 min. C'est une donnée culturelle clé.",
+  "explanationEn": "**马上** is ELASTIC in Chinese culture — ~5-15 min tolerance. Key cultural data point."
+ },
+ {
+  "unit": "cecr-b12-edu-m2",
+  "id": "cecr-b12-edu-m2-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 作业 (zuòyè) ?",
+  "promptEn": "Listen, then read: what does 作业 (zuòyè) mean?",
+  "choices": [
+   "réviser",
+   "apprendre",
+   "étudier (formel)",
+   "devoirs"
+  ],
+  "choicesEn": [
+   "review",
+   "learn",
+   "study (formal)",
+   "homework"
+  ],
+  "correctIndex": 3,
+  "explanation": "作业 (zuòyè) = devoirs.",
+  "explanationEn": "作业 (zuòyè) = homework.",
+  "audioHanzi": "作业"
+ },
+ {
+  "unit": "cecr-b12-conversation-m1",
+  "id": "cecr-b12-conversation-m1-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 理想 (lǐxiǎng) ?",
+  "promptEn": "Listen, then read: what does 理想 (lǐxiǎng) mean?",
+  "choices": [
+   "idéal",
+   "style",
+   "point faible",
+   "rythme"
+  ],
+  "choicesEn": [
+   "ideal",
+   "style",
+   "weakness",
+   "pace"
+  ],
+  "correctIndex": 0,
+  "explanation": "理想 (lǐxiǎng) = idéal.",
+  "explanationEn": "理想 (lǐxiǎng) = ideal.",
+  "audioHanzi": "理想"
+ },
+ {
+  "unit": "cecr-b12-conversation-m4",
+  "id": "cecr-b12-conversation-m4-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 热闹 (rènào) ?",
+  "promptEn": "Listen, then read: what does 热闹 (rènào) mean?",
+  "choices": [
+   "animé",
+   "en retard (transport)",
+   "grandiose",
+   "ancien"
+  ],
+  "choicesEn": [
+   "lively, bustling",
+   "delayed",
+   "spectacular",
+   "ancient"
+  ],
+  "correctIndex": 0,
+  "explanation": "热闹 (rènào) = animé.",
+  "explanationEn": "热闹 (rènào) = lively, bustling.",
+  "audioHanzi": "热闹"
+ },
+ {
+  "unit": "cecr-b12-conversation-m7",
+  "id": "cecr-b12-conv-m7-mcq1",
+  "type": "mcq",
+  "prompt": "Que veut dire « 担心 » ?",
+  "promptEn": "What does \"担心\" mean?",
+  "choices": [
+   "Espérer",
+   "Être content",
+   "S'inquiéter",
+   "Refuser"
+  ],
+  "choicesEn": [
+   "Hope",
+   "To be happy",
+   "Worry",
+   "Refuse"
+  ],
+  "correctIndex": 2,
+  "explanation": "担心 (dānxīn) = s'inquiéter.",
+  "explanationEn": "担心 = worry."
+ },
+ {
+  "unit": "cecr-b12-conversation-m1",
+  "id": "cecr-b12-conv-m1-mcq1",
+  "type": "mcq",
+  "prompt": "Que signifie « 剧情 » ?",
+  "promptEn": "What does \"剧情\" mean?",
+  "choices": [
+   "Acteur",
+   "Intrigue / scénario",
+   "Musique",
+   "Décor"
+  ],
+  "choicesEn": [
+   "Actor",
+   "Plot / storyline",
+   "Music",
+   "Set design"
+  ],
+  "correctIndex": 1,
+  "explanation": "剧情 (jùqíng) = intrigue (cinéma/série).",
+  "explanationEn": "剧情 = plot / storyline."
+ },
+ {
+  "unit": "cecr-b12-nuances-m2",
+  "id": "cecr-b12-nuances-m2-min1",
+  "type": "mcq",
+  "prompt": "Quelle distinction entre 完成 et 结束 ?",
+  "promptEn": "Distinction between 完成 and 结束?",
+  "choices": [
+   "Aucune.",
+   "**完成** = achever un OBJECTIF (résultat). **结束** = un ÉVÉNEMENT se termine (neutre).",
+   "**完成** = oral, **结束** = écrit.",
+   "**完成** = passé, **结束** = futur."
+  ],
+  "choicesEn": [
+   "None.",
+   "**完成** = to complete an OBJECTIVE (result). **结束** = an EVENT comes to an end (neutral).",
+   "**完成** = spoken, **结束** = written.",
+   "**完成** = past, **结束** = future."
+  ],
+  "correctIndex": 1,
+  "explanation": "Tâche/projet → 完成 ; événement/film/réunion → 结束. 会议完成了 ✗ (faute classique).",
+  "explanationEn": "Task/project → 完成; event/film/meeting → 结束. 会议完成了 ✗ (classic mistake)."
+ },
+ {
+  "unit": "cecr-b12-med-m3",
+  "id": "cecr-b12-med-m3-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « guānzhù » : quelle traduction ?",
+  "promptEn": "🔊 For \"guānzhù\": which translation?",
+  "choices": [
+   "fans",
+   "suivre",
+   "Douyin (TikTok chinois)",
+   "blogueur, vlogger"
+  ],
+  "choicesEn": [
+   "fans",
+   "follow",
+   "Douyin",
+   "blogger, vlogger"
+  ],
+  "correctIndex": 1,
+  "explanation": "关注 (guānzhù) — suivre.",
+  "explanationEn": "关注 (guānzhù) — suivre."
+ },
+ {
+  "unit": "cecr-b12-soc-m2",
+  "id": "cecr-b12-soc-m2-mcq-2",
+  "type": "mcq",
+  "prompt": "Que signifie « 离婚 » ?",
+  "promptEn": "What does \"离婚\" mean?",
+  "choices": [
+   "fiançailles",
+   "mariage; cérémonie de mariage",
+   "divorcer",
+   "sortir avec / flirter"
+  ],
+  "choicesEn": [
+   "engagement",
+   "marriage; wedding ceremony",
+   "get divorced",
+   "date / flirt"
+  ],
+  "correctIndex": 2,
+  "explanation": "离婚 (líhūn) — divorcer",
+  "explanationEn": "离婚 (líhūn) — divorcer"
+ },
+ {
+  "unit": "cecr-b12-nuances-m3",
+  "id": "cecr-b12-nuances-m3-min1",
+  "type": "mcq",
+  "prompt": "Quelle est la hiérarchie de registre 不一定 / 不见得 / 未必 ?",
+  "promptEn": "Register hierarchy 不一定 / 不见得 / 未必?",
+  "choices": [
+   "不一定 = écrit, 不见得 = oral, 未必 = soutenu (mais sens différent).",
+   "Trois synonymes.",
+   "**不一定** = neutre (universel) ; **不见得** = oral sceptique léger ; **未必** = formel écrit littéraire.",
+   "Aucune."
+  ],
+  "choicesEn": [
+   "不一定 = written, 不见得 = spoken, 未必 = formal (but different meaning).",
+   "Three synonyms.",
+   "**不一定** = neutral (universal); **不见得** = spoken, mildly skeptical; **未必** = formal written literary.",
+   "None."
+  ],
+  "correctIndex": 2,
+  "explanation": "Avec un supérieur, **不一定** (neutre, sûr). À l'écrit B1.2+, alterne 不一定 / 未必 pour le rythme.",
+  "explanationEn": "With a superior, **不一定** (neutral, safe). In B1.2+ writing, alternate 不一定 / 未必 for rhythm."
+ },
+ {
+  "unit": "cecr-b12-nuances-m14",
+  "id": "cecr-b12-nuances-m14-gen4",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 传说 (chuánshuō) ?",
+  "promptEn": "Listen, then read: what does 传说 (chuánshuō) mean?",
+  "choices": [
+   "légende, on raconte que",
+   "être en retard",
+   "en avance",
+   "pourtant, cependant"
+  ],
+  "choicesEn": [
+   "legend, it's said that",
+   "be late",
+   "in advance",
+   "however, yet"
+  ],
+  "correctIndex": 0,
+  "explanation": "传说 (chuánshuō) = légende, on raconte que.",
+  "explanationEn": "传说 (chuánshuō) = legend, it's said that.",
+  "audioHanzi": "传说"
+ },
+ {
+  "unit": "cecr-b12-conversation-m2",
+  "id": "cecr-b12-conv-m2-mcq1",
+  "type": "mcq",
+  "prompt": "Que signifie « 怀念 » ?",
+  "promptEn": "What does \"怀念\" mean?",
+  "choices": [
+   "Se souvenir vaguement",
+   "Oublier",
+   "Avoir la nostalgie",
+   "Détester"
+  ],
+  "choicesEn": [
+   "Vaguely remember",
+   "Forget",
+   "Feel nostalgic",
+   "Hate"
+  ],
+  "correctIndex": 2,
+  "explanation": "怀念 (huáiniàn) = nostalgie / regret affectif.",
+  "explanationEn": "怀念 = feel nostalgic."
+ },
+ {
+  "unit": "cecr-b21-env-m2",
+  "id": "cecr-b21-env-m2-err1",
+  "type": "error-correction",
+  "prompt": "Trouve la donnée INCORRECTE sur les objectifs climat de la Chine.",
+  "promptEn": "Find the INCORRECT data point on China’s climate goals.",
+  "choices": [
+   "2030 : objectif de pic des émissions (碳达峰)",
+   "2040 : sortie totale du charbon déjà actée",
+   "Annonce par Xi Jinping à l’ONU en 2020",
+   "2060 : objectif de neutralité carbone (碳中和)"
+  ],
+  "choicesEn": [
+   "2030: emissions peak target (碳达峰)",
+   "2040: full coal phase-out already agreed",
+   "Announced by Xi Jinping at the UN in 2020",
+   "2060: carbon neutrality target (碳中和)"
+  ],
+  "correctIndex": 1,
+  "sentence": "中国的气候目标",
+  "sentenceEn": "China’s climate goals",
+  "explanation": "La Chine n’a PAS acté de sortie du charbon en 2040 — elle augmente même ses capacités charbon à court terme malgré la transition.",
+  "explanationEn": "China has NOT committed to a 2040 coal exit — it’s even adding coal capacity short-term despite the transition."
+ },
+ {
+  "unit": "cecr-b21-grammar-conj-m3",
+  "id": "cecr-b21-grammar-conj-m3-gq1",
+  "type": "grammar-quiz",
+  "prompt": "« 即使 » vs « 虽然 » : laquelle est hypothétique ?",
+  "promptEn": "«即使» vs «虽然»: which is hypothetical?",
+  "choices": [
+   "Les deux",
+   "虽然",
+   "即使",
+   "Ni l’une ni l’autre"
+  ],
+  "choicesEn": [
+   "Both",
+   "虽然",
+   "即使",
+   "Neither one"
+  ],
+  "correctIndex": 2,
+  "explanation": "即使 = hypothèse (« même si, peut-être »). 虽然 = fait réel constaté (« bien que, effectivement »).",
+  "explanationEn": "即使 = hypothesis; 虽然 = actual fact."
+ },
+ {
+  "unit": "cecr-b21-conversation-m5",
+  "id": "cecr-b21-conv-m5-mcq2",
+  "type": "mcq",
+  "prompt": "Que signifie « 互利共赢 » ?",
+  "promptEn": "What does \"互利共赢\" mean?",
+  "choices": [
+   "Domination",
+   "Concurrence",
+   "Bénéfice mutuel",
+   "Échec partagé"
+  ],
+  "choicesEn": [
+   "Domination",
+   "Competition",
+   "Mutual benefit",
+   "Shared failure"
+  ],
+  "correctIndex": 2,
+  "explanation": "互 = mutuel. 利 = bénéfice. 共 = ensemble. 赢 = gagner.",
+  "explanationEn": "互 = mutual. 利 = benefit. 共 = together. 赢 = win."
+ },
+ {
+  "unit": "cecr-b21-tech-m4",
+  "id": "cecr-b21-tech-m4-mcq1",
+  "type": "mcq",
+  "prompt": "物联网 :",
+  "promptEn": "物联网:",
+  "choices": [
+   "Internet mobile",
+   "Réseau 5G",
+   "Internet des objets (IoT)",
+   "Ville intelligente"
+  ],
+  "choicesEn": [
+   "Mobile internet",
+   "5G network",
+   "Internet of Things (IoT)",
+   "Smart city"
+  ],
+  "correctIndex": 2,
+  "explanation": "物 (objet) + 联 (connecter) + 网 (réseau) = IoT.",
+  "explanationEn": "物 (object) + 联 (connect) + 网 (network) = IoT."
+ },
+ {
+  "unit": "cecr-b21-economics-m3",
+  "id": "cecr-b21-economics-m3-mcq2",
+  "type": "mcq",
+  "prompt": "跳槽 :",
+  "promptEn": "跳槽:",
+  "choices": [
+   "ÊTre promu",
+   "Fonder sa boîte",
+   "Prendre sa retraite",
+   "Changer de job"
+  ],
+  "choicesEn": [
+   "To be promoted",
+   "Start a business",
+   "Retire",
+   "Change jobs"
+  ],
+  "correctIndex": 3,
+  "explanation": "跳 (sauter) + 槽 (mangeoire) — « sauter d’une mangeoire à l’autre » = changer de job.",
+  "explanationEn": "跳 (jump) + 槽 (trough) — «jump trough» = change jobs."
+ },
+ {
+  "unit": "cecr-b21-tech-m2",
+  "id": "cecr-b21-tech-m2-mcq1",
+  "type": "mcq",
+  "prompt": "人工智能 (réngōngzhìnéng) signifie :",
+  "promptEn": "人工智能 means:",
+  "choices": [
+   "Robotique",
+   "Algorithmique",
+   "Intelligence artificielle",
+   "Big data"
+  ],
+  "choicesEn": [
+   "Robotics",
+   "Algorithmic",
+   "Artificial intelligence",
+   "Big data"
+  ],
+  "correctIndex": 2,
+  "explanation": "人工 (fabriqué par l’homme) + 智能 (intelligence) = IA.",
+  "explanationEn": "人工 (man-made) + 智能 (intelligence) = AI."
+ },
+ {
+  "unit": "cecr-b21-economics-m2",
+  "id": "cecr-b21-economics-m2-mcq1",
+  "type": "mcq",
+  "prompt": "独角兽 dans le contexte start-up :",
+  "promptEn": "独角兽 in start-up context:",
+  "choices": [
+   "Start-up en difficulté",
+   "Jeune entrepreneur",
+   "Start-up valorisée > 1 milliard $",
+   "Concurrent international"
+  ],
+  "choicesEn": [
+   "Struggling start-up",
+   "Young entrepreneur",
+   "Start-up valued > $1 billion",
+   "International competitor"
+  ],
+  "correctIndex": 2,
+  "explanation": "Unicorn = start-up privée valorisée > 1 G$.",
+  "explanationEn": "Unicorn = private start-up valued > $1B."
+ },
+ {
+  "unit": "cecr-b21-tech-m4",
+  "id": "cecr-b21-tech-m4-mcq2",
+  "type": "mcq",
+  "prompt": "智慧城市 :",
+  "promptEn": "智慧城市:",
+  "choices": [
+   "Ville historique",
+   "Ville jumelée",
+   "Ville portuaire",
+   "Ville intelligente (smart city)"
+  ],
+  "choicesEn": [
+   "Historic city",
+   "Sister city",
+   "Port city",
+   "Intelligent city (smart city)"
+  ],
+  "correctIndex": 3,
+  "explanation": "智慧 (intelligent) + 城市 (ville) = smart city.",
+  "explanationEn": "智慧 (smart) + 城市 (city) = smart city."
+ },
+ {
+  "unit": "cecr-b21-env-m2",
+  "id": "cecr-b21-env-m2-listen1",
+  "type": "mcq",
+  "prompt": "🔊 « jíduan tiānqì » :",
+  "promptEn": "🔊 «jíduan tiānqì»:",
+  "choices": [
+   "Temps normal",
+   "Météo extrême",
+   "Température douce",
+   "Changement saisonnier"
+  ],
+  "choicesEn": [
+   "Normal weather",
+   "Extreme weather",
+   "Mild temperature",
+   "Seasonal change"
+  ],
+  "correctIndex": 1,
+  "explanation": "极端天气 = météo extrême (canicules, ouragans).",
+  "explanationEn": "极端天气 = extreme weather (heatwaves, hurricanes)."
+ },
+ {
+  "unit": "cecr-b21-tech-m3",
+  "id": "cecr-b21-tech-m3-mcq1",
+  "type": "mcq",
+  "prompt": "扫码 (sǎomǎ) signifie :",
+  "promptEn": "扫码 means:",
+  "choices": [
+   "Payer en cash",
+   "Fermer un compte",
+   "Scanner un QR code",
+   "Appeler un taxi"
+  ],
+  "choicesEn": [
+   "Pay in cash",
+   "Close an account",
+   "Scan a QR code",
+   "Call a taxi"
+  ],
+  "correctIndex": 2,
+  "explanation": "扫 (scanner) + 码 (code) = scanner un QR code, omniprésent en Chine.",
+  "explanationEn": "扫 (scan) + 码 (code) = scan a QR code, ubiquitous in China."
+ },
+ {
+  "unit": "cecr-b21-grammar-conj-m4",
+  "id": "cecr-b21-grammar-conj-m4-gq2",
+  "type": "grammar-quiz",
+  "prompt": "« 然而 » appartient à quel registre ?",
+  "promptEn": "What register is «然而»?",
+  "choices": [
+   "Oral familier",
+   "Écrit/soutenu",
+   "Registres mélangés",
+   "Argotique"
+  ],
+  "choicesEn": [
+   "Colloquial spoken",
+   "Written/formal",
+   "Mixed registers",
+   "Slang"
+  ],
+  "correctIndex": 1,
+  "explanation": "然而 (« toutefois, cependant ») est écrit/formel ; à l’oral on préfère 但是.",
+  "explanationEn": "然而 is formal/written; orally we prefer 但是."
+ },
+ {
+  "unit": "cecr-b21-grammar-lian-m2",
+  "id": "cecr-b21-grammar-lian-m2-gq2",
+  "type": "grammar-quiz",
+  "prompt": "Quel sentiment exprime 连 V 也没 V ?",
+  "promptEn": "What feeling does 连 V 也没 V express?",
+  "choices": [
+   "La fierté",
+   "Le doute",
+   "La confirmation",
+   "L’étonnement ou l’indignation"
+  ],
+  "choicesEn": [
+   "Pride",
+   "Doubt",
+   "Confirmation",
+   "Surprise or indignation"
+  ],
+  "correctIndex": 3,
+  "explanation": "Cette structure est idiomatique pour souligner un manque surprenant, souvent avec indignation.",
+  "explanationEn": "Idiomatic structure to stress a surprising lack, often with indignation."
+ },
+ {
+  "unit": "cecr-b21-conversation-m3",
+  "id": "cecr-b21-conv-m3-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 交付 » ?",
+  "promptEn": "What does \"交付\" mean?",
+  "choices": [
+   "Annuler",
+   "Acheter",
+   "Tester",
+   "Livrer (pro)"
+  ],
+  "choicesEn": [
+   "Cancel",
+   "Buy",
+   "Test",
+   "Deliver (pro)"
+  ],
+  "correctIndex": 3,
+  "explanation": "交付 (jiāofù) = livrer (verbe pro). 交付日期 = date de livraison.",
+  "explanationEn": "交付 = deliver (pro verb). 交付日期 = delivery date."
+ },
+ {
+  "unit": "cecr-b22-debate-m5",
+  "id": "cecr-b22-debate-m5-gen4",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 譬如 (pìrú) ?",
+  "promptEn": "Listen, then read: what does 譬如 (pìrú) mean?",
+  "choices": [
+   "prix immobilier",
+   "statistique",
+   "par exemple (soutenu)",
+   "données"
+  ],
+  "choicesEn": [
+   "housing prices",
+   "statistics",
+   "for instance (formal)",
+   "data"
+  ],
+  "correctIndex": 2,
+  "explanation": "譬如 (pìrú) = par exemple (soutenu).",
+  "explanationEn": "譬如 (pìrú) = for instance (formal).",
+  "audioHanzi": "譬如"
+ },
+ {
+  "unit": "cecr-b22-conversation-m3",
+  "id": "cecr-b22-conversation-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 看法 (kànfǎ) ?",
+  "promptEn": "Listen, then read: what does 看法 (kànfǎ) mean?",
+  "choices": [
+   "plutôt, au contraire",
+   "point de vue",
+   "pas forcément",
+   "discuter"
+  ],
+  "choicesEn": [
+   "rather, on the contrary",
+   "viewpoint",
+   "not necessarily",
+   "discuss"
+  ],
+  "correctIndex": 1,
+  "explanation": "看法 (kànfǎ) = point de vue.",
+  "explanationEn": "看法 (kànfǎ) = viewpoint.",
+  "audioHanzi": "看法"
+ },
+ {
+  "unit": "cecr-b22-arts-m3",
+  "id": "cecr-b22-arts-m3-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 歌手 (gēshǒu) ?",
+  "promptEn": "Listen, then read: what does 歌手 (gēshǒu) mean?",
+  "choices": [
+   "chanteur",
+   "album",
+   "concert",
+   "Teresa Teng"
+  ],
+  "choicesEn": [
+   "singer",
+   "album",
+   "concert",
+   "Teresa Teng"
+  ],
+  "correctIndex": 0,
+  "explanation": "歌手 (gēshǒu) = chanteur.",
+  "explanationEn": "歌手 (gēshǒu) = singer.",
+  "audioHanzi": "歌手"
+ },
+ {
+  "unit": "cecr-b22-health-m6",
+  "id": "cecr-b22-health-m6-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 调节 (tiáojié) ?",
+  "promptEn": "Listen, then read: what does 调节 (tiáojié) mean?",
+  "choices": [
+   "réguler",
+   "insomnie",
+   "méditer",
+   "se détendre"
+  ],
+  "choicesEn": [
+   "regulate",
+   "insomnia",
+   "meditate",
+   "relax"
+  ],
+  "correctIndex": 0,
+  "explanation": "调节 (tiáojié) = réguler.",
+  "explanationEn": "调节 (tiáojié) = regulate.",
+  "audioHanzi": "调节"
+ },
+ {
+  "unit": "cecr-b22-grammar-complement-m1",
+  "id": "cecr-b22-grammar-complement-m1-gq1",
+  "type": "grammar-quiz",
+  "prompt": "Dans « 他跑得很快 », quel type de complément est 很快 ?",
+  "promptEn": "In 他跑得很快, what type of complement is 很快?",
+  "choices": [
+   "complément de résultat",
+   "complément directionnel",
+   "complément potentiel",
+   "complément de degré"
+  ],
+  "choicesEn": [
+   "resultative complement",
+   "directional complement",
+   "potential complement",
+   "degree complement"
+  ],
+  "correctIndex": 3,
+  "explanation": "得 + adjectif = complément de degré (qualifie la manière ou le niveau).",
+  "explanationEn": "得 + adjective = degree complement (qualifies the manner or level)."
+ },
+ {
+  "unit": "cecr-b22-grammar-complement-m1",
+  "id": "cecr-b22-grammar-complement-m1-gq2",
+  "type": "grammar-quiz",
+  "prompt": "Dans « 我听懂了 », que signale le complément 懂 ?",
+  "promptEn": "In 我听懂了, what does the complement 懂 signal?",
+  "choices": [
+   "le résultat (réussi)",
+   "la direction",
+   "la durée",
+   "la possibilité"
+  ],
+  "choicesEn": [
+   "the result (successful)",
+   "direction",
+   "duration",
+   "possibility"
+  ],
+  "correctIndex": 0,
+  "explanation": "懂 après 听 est un complément de résultat : comprendre (résultat de l'écoute).",
+  "explanationEn": "懂 after 听 is a result complement: to understand (result of listening)."
+ },
+ {
+  "unit": "cecr-b22-nuances-m9",
+  "id": "cecr-b22-nuances-m9-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 宁愿 (nìngyuàn) ?",
+  "promptEn": "Listen, then read: what does 宁愿 (nìngyuàn) mean?",
+  "choices": [
+   "plutôt que",
+   "ne pas pouvoir rivaliser",
+   "inférieur à",
+   "préférer (rhétorique)"
+  ],
+  "choicesEn": [
+   "rather than",
+   "can't beat",
+   "below, lower than",
+   "would rather"
+  ],
+  "correctIndex": 3,
+  "explanation": "宁愿 (nìngyuàn) = préférer (rhétorique).",
+  "explanationEn": "宁愿 (nìngyuàn) = would rather.",
+  "audioHanzi": "宁愿"
+ },
+ {
+  "unit": "cecr-b22-grammar-structure-m7",
+  "id": "cecr-b22-grammar-structure-m7-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 爱 (ài) ?",
+  "promptEn": "Listen, then read: what does 爱 (ài) mean?",
+  "choices": [
+   "aimer",
+   "espoir",
+   "renoncer",
+   "même si"
+  ],
+  "choicesEn": [
+   "love",
+   "hope",
+   "give up",
+   "even if"
+  ],
+  "correctIndex": 0,
+  "explanation": "爱 (ài) = aimer.",
+  "explanationEn": "爱 (ài) = love.",
+  "audioHanzi": "爱"
+ },
+ {
+  "unit": "cecr-b22-nuances-m4",
+  "id": "cecr-b22-nuances-m4-min1",
+  "type": "mcq",
+  "prompt": "Quelle distinction entre 突然, 忽然, 一下子 et 马上 ?",
+  "promptEn": "Distinction between 突然, 忽然, 一下子 and 马上?",
+  "choices": [
+   "突然 = oral, 忽然 = écrit (mais sens identique).",
+   "Quatre synonymes.",
+   "Selon le dialecte.",
+   "**突然** = adj+adv (événement abrupt objectif). **忽然** = adv seul (vécu subjectif). **一下子** = intensité + complétude. **马上** = imminence séquentielle."
+  ],
+  "choicesEn": [
+   "突然 = spoken, 忽然 = written (but same meaning).",
+   "Four synonyms.",
+   "Depends on the dialect.",
+   "**突然** = adj+adv (objective abrupt event). **忽然** = adv only (subjective experience). **一下子** = intensity + completeness. **马上** = sequential imminence."
+  ],
+  "correctIndex": 3,
+  "explanation": "Quatre rapports DIFFÉRENTS à la rapidité : abruptie objective / subjective / complétude / séquence.",
+  "explanationEn": "Four DIFFERENT relations to speed: objective abruptness / subjective / completion / sequence."
+ },
+ {
+  "unit": "cecr-b22-debate-m2",
+  "id": "cecr-b22-debate-m2-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 不过 » ?",
+  "promptEn": "What does \"不过\" mean?",
+  "choices": [
+   "pas forcément",
+   "mais; seulement",
+   "en général",
+   "cependant; toutefois"
+  ],
+  "choicesEn": [
+   "not necessarily",
+   "but; only",
+   "in general",
+   "however; nevertheless"
+  ],
+  "correctIndex": 1,
+  "explanation": "不过 (búguò) — mais; seulement",
+  "explanationEn": "不过 (búguò) — mais; seulement"
+ },
+ {
+  "unit": "cecr-b22-nuances-m5",
+  "id": "cecr-b22-nuances-m5-min1",
+  "type": "mcq",
+  "prompt": "Quels sont les 3 sens de 差不多 ?",
+  "promptEn": "What are the 3 meanings of 差不多?",
+  "choices": [
+   "Deux sens : avant et après.",
+   "Un seul sens : environ.",
+   "(1) **similarité** (这两个差不多). (2) **approximation numérique** (差不多十块). (3) **suffisance** (差不多了，可以了).",
+   "Aucune nuance."
+  ],
+  "choicesEn": [
+   "Two meanings: before and after.",
+   "Only one meaning: approximately.",
+   "(1) **similarity** (这两个差不多). (2) **numerical approximation** (差不多十块). (3) **sufficiency** (差不多了，可以了).",
+   "No nuance."
+  ],
+  "correctIndex": 2,
+  "explanation": "3 sens distincts. Lin Yutang en a fait un trait culturel chinois (philosophie du « assez bon »).",
+  "explanationEn": "3 distinct meanings. Lin Yutang made it a Chinese cultural trait (philosophy of \"good enough\")."
+ },
+ {
+  "unit": "cecr-b22-nuances-m2",
+  "id": "cecr-b22-nuances-m2-min1",
+  "type": "mcq",
+  "prompt": "Quelle hiérarchie 应该 / 得 / 一定 / 必须 / 不得不 ?",
+  "promptEn": "Hierarchy 应该 / 得 / 一定 / 必须 / 不得不?",
+  "choices": [
+   "Cinq synonymes.",
+   "**应该** (recommandation) < **得** (nécessité orale) < **一定要** (insistance perso) < **必须** (règle externe) < **不得不** (contraint contre son gré).",
+   "应该 = oral, 必须 = écrit (mais sens identique).",
+   "Aucune nuance."
+  ],
+  "choicesEn": [
+   "Five synonyms.",
+   "**应该** (recommendation) < **得** (spoken necessity) < **一定要** (personal insistence) < **必须** (external rule) < **不得不** (forced against one's will).",
+   "应该 = spoken, 必须 = written (but same meaning).",
+   "No nuance."
+  ],
+  "correctIndex": 1,
+  "explanation": "Cinq forces différentes du « devoir ». Choisir selon la SOURCE (interne/externe) et le REGISTRE.",
+  "explanationEn": "Five different strengths of \"must\". Choose by SOURCE (internal/external) and REGISTER."
+ },
+ {
+  "unit": "cecr-b22-grammar-structure-m4",
+  "id": "cecr-b22-grammar-structure-m4-gen3",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 既 (jì) ?",
+  "promptEn": "Listen, then read: what does 既 (jì) mean?",
+  "choices": [
+   "à la fois",
+   "qualité",
+   "bon (à manger)",
+   "puisque"
+  ],
+  "choicesEn": [
+   "both",
+   "quality",
+   "tasty",
+   "since"
+  ],
+  "correctIndex": 0,
+  "explanation": "既 (jì) = à la fois.",
+  "explanationEn": "既 (jì) = both.",
+  "audioHanzi": "既"
+ },
+ {
+  "unit": "cecr-c11-conversation-m2",
+  "id": "cecr-c11-conv-m2-mcq2",
+  "type": "mcq",
+  "prompt": "Que veut dire « 三思而后行 » ?",
+  "promptEn": "What does \"三思而后行\" mean?",
+  "choices": [
+   "Agir avant de penser",
+   "Réfléchir trois fois avant d'agir",
+   "Demander à trois personnes",
+   "Compter trois fois"
+  ],
+  "choicesEn": [
+   "Act before thinking",
+   "Think three times before acting",
+   "Ask three people",
+   "Count three times"
+  ],
+  "correctIndex": 1,
+  "explanation": "Chéngyǔ classique : prudence avant action.",
+  "explanationEn": "Classical chéngyǔ: think before acting."
+ },
+ {
+  "unit": "cecr-c11-conversation-m7",
+  "id": "cecr-c11-conv-m7-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 不舍 » ?",
+  "promptEn": "What does \"不舍\" mean?",
+  "choices": [
+   "Oublier",
+   "Refuser",
+   "Avoir du mal à partir",
+   "Mépriser"
+  ],
+  "choicesEn": [
+   "Forget",
+   "Refuse",
+   "Find it hard to leave",
+   "Despise"
+  ],
+  "correctIndex": 2,
+  "explanation": "不舍 (bù shě) = ne pas pouvoir se résoudre à se séparer.",
+  "explanationEn": "不舍 = reluctance to part."
+ },
+ {
+  "unit": "cecr-c11-media-discourse-m2",
+  "id": "cecr-c11-media-discourse-m2-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 战略 (zhànlüè) ?",
+  "promptEn": "Listen, then read: what does 战略 (zhànlüè) mean?",
+  "choices": [
+   "prospérité commune",
+   "développement",
+   "stratégie",
+   "ouverture"
+  ],
+  "choicesEn": [
+   "common prosperity",
+   "development",
+   "strategy",
+   "opening"
+  ],
+  "correctIndex": 2,
+  "explanation": "战略 (zhànlüè) = stratégie.",
+  "explanationEn": "战略 (zhànlüè) = strategy.",
+  "audioHanzi": "战略"
+ },
+ {
+  "unit": "cecr-c11-conversation-m5",
+  "id": "cecr-c11-conv-m5-mcq1",
+  "type": "mcq",
+  "prompt": "Que veut dire « 学识渊博 » ?",
+  "promptEn": "What does \"学识渊博\" mean?",
+  "choices": [
+   "Débutant",
+   "Jeune talent",
+   "Érudition vaste",
+   "Spécialiste étroit"
+  ],
+  "choicesEn": [
+   "Beginner",
+   "Young talent",
+   "Vast erudition",
+   "Narrow specialist"
+  ],
+  "correctIndex": 2,
+  "explanation": "学识 = savoir. 渊博 = vaste/profond.",
+  "explanationEn": "学识 = knowledge. 渊博 = vast/deep."
+ },
+ {
+  "unit": "cecr-c11-chengyu-basic-m2",
+  "id": "cecr-c11-chengyu-basic-m2-gen3",
+  "type": "error-correction",
+  "prompt": "Une seule de ces traductions est fausse. Laquelle ?",
+  "promptEn": "Only one of these translations is wrong. Which one?",
+  "choices": [
+   "天气千变万化。 — Le temps peut changer d'une minute à l'autre.",
+   "我们的城市很美。 — Notre ville est très belle.",
+   "他们两个的实力不相上下。 — Ils sont également partagés en termes de force.",
+   "他是一位候选人。 — Des fruits de toutes sortes"
+  ],
+  "choicesEn": [
+   "天气千变万化。 — The weather changes constantly.",
+   "我们的城市很美。 — Excellent grades",
+   "他们两个的实力不相上下。 — Their strengths are evenly matched",
+   "他是一位候选人。 — a variety of fruits"
+  ],
+  "correctIndex": 3,
+  "sentence": "Phrases et traductions",
+  "explanation": "他是一位候选人。 veut dire « Il est un candidat ». La traduction affichée est en réalité celle de 五花八门的水果.",
+  "explanationEn": "他是一位候选人。 means «He is a candidate». The translation shown actually belongs to 五花八门的水果."
+ },
+ {
+  "unit": "cecr-c11-nuances-m2",
+  "id": "cecr-c11-nuances-m2-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 改革一方面促进经济，另一方面改善公共服务。 » ?",
+  "promptEn": "What register does this sentence belong to: « On one hand the reform boosts the economy, on the other improves public services. »?",
+  "choices": [
+   "Soutenu / lettré",
+   "Académique / philosophique",
+   "Journalistique / éditorial",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Formal / literary",
+   "Academic / philosophical",
+   "Journalistic / editorial",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 1,
+  "explanation": "Structure **académique** canonique : sujet + **一方面**…，**另一方面**…",
+  "explanationEn": "Canonical academic structure: subject + **一方面**…，**另一方面**…"
+ },
+ {
+  "unit": "cecr-c11-history-m2",
+  "id": "cecr-c11-history-m2-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 毛泽东 » ?",
+  "promptEn": "What does \"毛泽东\" mean?",
+  "choices": [
+   "Sun Yat-sen",
+   "Mao Zedong",
+   "Deng Xiaoping",
+   "Grand Bond en avant (1958)"
+  ],
+  "choicesEn": [
+   "Sun Yat-sen",
+   "Mao Zedong",
+   "Deng Xiaoping",
+   "Great Leap Forward (1958)"
+  ],
+  "correctIndex": 1,
+  "explanation": "毛泽东 (máozédōng) — Mao Zedong",
+  "explanationEn": "毛泽东 (máozédōng) — Mao Zedong"
+ },
+ {
+  "unit": "cecr-c11-history-m3",
+  "id": "cecr-c11-history-m3-mcq-1",
+  "type": "mcq",
+  "prompt": "Que signifie « 四大名著 » ?",
+  "promptEn": "What does \"四大名著\" mean?",
+  "choices": [
+   "les quatre grands romans classiques",
+   "Le Rêve dans le Pavillon rouge (roman classique)",
+   "Zhuge Liang (stratège)",
+   "le Roi des Singes"
+  ],
+  "choicesEn": [
+   "the four great classic novels",
+   "Dream of the Red Chamber (classic novel)",
+   "Zhuge Liang",
+   "the Monkey King"
+  ],
+  "correctIndex": 0,
+  "explanation": "四大名著 (sìdàmíngzhù) — les quatre grands romans classiques",
+  "explanationEn": "四大名著 (sìdàmíngzhù) — les quatre grands romans classiques"
+ },
+ {
+  "unit": "cecr-c11-media-discourse-m1",
+  "id": "cecr-c11-media-discourse-m1-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 预计 (yùjì) ?",
+  "promptEn": "Listen, then read: what does 预计 (yùjì) mean?",
+  "choices": [
+   "Xinhua",
+   "Caixin",
+   "prévoir",
+   "corps (presse)"
+  ],
+  "choicesEn": [
+   "Xinhua",
+   "Caixin",
+   "forecast",
+   "body (press)"
+  ],
+  "correctIndex": 2,
+  "explanation": "预计 (yùjì) = prévoir.",
+  "explanationEn": "预计 (yùjì) = forecast.",
+  "audioHanzi": "预计"
+ },
+ {
+  "unit": "cecr-c11-history-m1",
+  "id": "cecr-c11-history-m1-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 唐 » ?",
+  "promptEn": "What does \"唐\" mean?",
+  "choices": [
+   "dynastie Tang (618-907)",
+   "dynastie Qin (-221/-206)",
+   "Révolution de 1911",
+   "dynastie Song (960-1279)"
+  ],
+  "choicesEn": [
+   "Tang dynasty (618-907)",
+   "Qin dynasty (-221/-206)",
+   "1911 Revolution",
+   "Song dynasty (960-1279)"
+  ],
+  "correctIndex": 0,
+  "explanation": "唐 (táng) — dynastie Tang (618-907)",
+  "explanationEn": "唐 (táng) — dynastie Tang (618-907)"
+ },
+ {
+  "unit": "cecr-c11-chengyu-basic-m3",
+  "id": "cecr-c11-chengyu-basic-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 影子 (yǐngzi) ?",
+  "promptEn": "Listen, then read: what does 影子 (yǐngzi) mean?",
+  "choices": [
+   "gâcher par excès",
+   "douter, soupçonner",
+   "ombre",
+   "se contredire"
+  ],
+  "choicesEn": [
+   "overdo it",
+   "suspect",
+   "shadow",
+   "self-contradict"
+  ],
+  "correctIndex": 2,
+  "explanation": "影子 (yǐngzi) = ombre.",
+  "explanationEn": "影子 (yǐngzi) = shadow.",
+  "audioHanzi": "影子"
+ },
+ {
+  "unit": "cecr-c11-nuances-m3",
+  "id": "cecr-c11-nuances-m3-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 首先要明确概念，其次分析原因。 » ?",
+  "promptEn": "What register does this sentence belong to: « First clarify the concept, then analyze the causes. »?",
+  "choices": [
+   "Soutenu / lettré",
+   "Oral familier / argot",
+   "Académique / philosophique",
+   "Journalistique / éditorial"
+  ],
+  "choicesEn": [
+   "Formal / literary",
+   "Colloquial spoken / slang",
+   "Academic / philosophical",
+   "Journalistic / editorial"
+  ],
+  "correctIndex": 3,
+  "explanation": "**首先…其次…** = articulation **académique** d'ordre logique. 起初 ne convient pas ici (pas de narration).",
+  "explanationEn": "**首先…其次…** = academic logical sequence. 起初 = narrative only."
+ },
+ {
+  "unit": "cecr-c11-style-formal-m3",
+  "id": "cecr-c11-style-formal-m3-gen3",
+  "type": "error-correction",
+  "prompt": "Une seule de ces traductions est fausse. Laquelle ?",
+  "promptEn": "Only one of these translations is wrong. Which one?",
+  "choices": [
+   "谢谢你的热情款待 — Merci pour ton accueil chaleureux",
+   "为友谊干杯 — Terminer la tâche sans difficulté",
+   "我提议我们去旅行。 — Je propose que nous allions en voyage.",
+   "他可以随意选择课程。 — Il peut choisir librement ses cours."
+  ],
+  "choicesEn": [
+   "谢谢你的热情款待 — Thank you for your warm hospitality.",
+   "为友谊干杯 — Completed the task smoothly",
+   "我提议我们去旅行。 — I suggest we go traveling",
+   "他可以随意选择课程。 — He can choose his courses freely."
+  ],
+  "correctIndex": 1,
+  "sentence": "Phrases et traductions",
+  "explanation": "为友谊干杯 veut dire « Trinquer à l'amitié ». La traduction affichée est en réalité celle de 一帆风顺地完成任务.",
+  "explanationEn": "为友谊干杯 means «Toast to friendship». The translation shown actually belongs to 一帆风顺地完成任务."
+ },
+ {
+  "unit": "cecr-c12-chengyu-advanced-m1",
+  "id": "cecr-c12-chengyu-advanced-m1-gen4",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 三顾茅庐 (sāngùmáolú) ?",
+  "promptEn": "Listen, then read: what does 三顾茅庐 (sāngùmáolú) mean?",
+  "choices": [
+   "3 visites pour recruter",
+   "stratégie",
+   "ressources",
+   "Cao Cao"
+  ],
+  "choicesEn": [
+   "3 humble visits",
+   "strategy",
+   "resources",
+   "Cao Cao"
+  ],
+  "correctIndex": 0,
+  "explanation": "三顾茅庐 (sāngùmáolú) = 3 visites pour recruter.",
+  "explanationEn": "三顾茅庐 (sāngùmáolú) = 3 humble visits.",
+  "audioHanzi": "三顾茅庐"
+ },
+ {
+  "unit": "cecr-c12-business-m2",
+  "id": "cecr-c12-business-m2-mcq-1",
+  "type": "mcq",
+  "prompt": "Que signifie « 酒桌文化 » ?",
+  "promptEn": "What does \"酒桌文化\" mean?",
+  "choices": [
+   "contrat",
+   "alcool blanc chinois; baijiu",
+   "culture de la table à alcool",
+   "petit geste de politesse (cadeau)"
+  ],
+  "choicesEn": [
+   "contract",
+   "Chinese white spirit; baijiu",
+   "drinking-table culture",
+   "small token of courtesy (gift)"
+  ],
+  "correctIndex": 2,
+  "explanation": "酒桌文化 (jiǔ zhuō wénhuà) — culture de la table à alcool",
+  "explanationEn": "酒桌文化 (jiǔ zhuō wénhuà) — culture de la table à alcool"
+ },
+ {
+  "unit": "cecr-c12-business-m2",
+  "id": "cecr-c12-business-m2-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 普洱 (pǔěr) ?",
+  "promptEn": "Listen, then read: what does 普洱 (pǔěr) mean?",
+  "choices": [
+   "rapprocher",
+   "thé d'affaires",
+   "thé puer",
+   "table de banquet"
+  ],
+  "choicesEn": [
+   "bring closer",
+   "business tea",
+   "pu'er tea",
+   "banquet table"
+  ],
+  "correctIndex": 2,
+  "explanation": "普洱 (pǔěr) = thé puer.",
+  "explanationEn": "普洱 (pǔěr) = pu'er tea.",
+  "audioHanzi": "普洱"
+ },
+ {
+  "unit": "cecr-c12-conversation-m1",
+  "id": "cecr-c12-conv-m1-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 补充 » ?",
+  "promptEn": "What does \"补充\" mean?",
+  "choices": [
+   "Annuler",
+   "Compléter / ajouter",
+   "Résumer",
+   "Refuser"
+  ],
+  "choicesEn": [
+   "Cancel",
+   "Add / supplement",
+   "Summarize",
+   "Refuse"
+  ],
+  "correctIndex": 1,
+  "explanation": "补充 (bǔchōng) = compléter, ajouter à un propos.",
+  "explanationEn": "补充 = supplement, add to."
+ },
+ {
+  "unit": "cecr-c12-nuances-m1",
+  "id": "cecr-c12-nuances-m1-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 双方最终达成了战略合作协议。 » ?",
+  "promptEn": "What register does this sentence belong to: « The two sides finally reached a strategic cooperation agreement. »?",
+  "choices": [
+   "Journalistique / éditorial",
+   "Soutenu / lettré",
+   "Académique / philosophique",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Journalistic / editorial",
+   "Formal / literary",
+   "Academic / philosophical",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 0,
+  "explanation": "Structure **business** : 双方 + 最终 + **达成** + 协议. 双方 = formule symétrique soutenue.",
+  "explanationEn": "Business structure: 双方 + 最终 + **达成** + 协议."
+ },
+ {
+  "unit": "cecr-c12-business-m1",
+  "id": "cecr-c12-business-m1-mcq-2",
+  "type": "mcq",
+  "prompt": "Que signifie « 面子 » ?",
+  "promptEn": "What does \"面子\" mean?",
+  "choices": [
+   "relation",
+   "face; dignité; réputation",
+   "offrir un cadeau",
+   "donner la face"
+  ],
+  "choicesEn": [
+   "relationship",
+   "face; dignity; reputation",
+   "give a gift",
+   "give face"
+  ],
+  "correctIndex": 1,
+  "explanation": "面子 (miànzi) — face; dignité; réputation",
+  "explanationEn": "面子 (miànzi) — face; dignité; réputation"
+ },
+ {
+  "unit": "cecr-c12-nuances-m3",
+  "id": "cecr-c12-nuances-m3-min1",
+  "type": "mcq",
+  "prompt": "Quelle est la VRAIE différence entre 提出 et 提倡 ?",
+  "promptEn": "What is the REAL difference between 提出 et 提倡?",
+  "choices": [
+   "**提出** = avancer une idée/proposition (rapport officiel) ; **提倡** = prôner/encourager une valeur (politique publique)",
+   "Aucune différence, les deux sont synonymes parfaits",
+   "**提出** est familier, **提倡** est lettré",
+   "**提出** = pratique, **提倡** = théorique"
+  ],
+  "choicesEn": [
+   "**提出** = to put forward an idea/proposal (official report); **提倡** = to advocate/encourage a value (public policy)",
+   "No difference, both are perfect synonyms",
+   "**提出** is colloquial, **提倡** is literary",
+   "**提出** = practical, **提倡** = theoretical"
+  ],
+  "correctIndex": 0,
+  "explanation": "**用途广泛** = collocation **botanique/pharma** type. 用途 = champ d'application (registre **technique**).",
+  "explanationEn": "**用途广泛** = botanical/pharma collocation."
+ },
+ {
+  "unit": "cecr-c12-business-m4",
+  "id": "cecr-c12-business-m4-mcq-1",
+  "type": "mcq",
+  "prompt": "Que signifie « 各位领导 » ?",
+  "promptEn": "What does \"各位领导\" mean?",
+  "choices": [
+   "coopération gagnant-gagnant",
+   "chers supérieurs",
+   "cœur de compétitivité",
+   "siège social; quartier général"
+  ],
+  "choicesEn": [
+   "win-win cooperation",
+   "esteemed leaders",
+   "core competitiveness",
+   "headquarters; head office"
+  ],
+  "correctIndex": 1,
+  "explanation": "各位领导 (gèwèi lǐngdǎo) — chers supérieurs",
+  "explanationEn": "各位领导 (gèwèi lǐngdǎo) — chers supérieurs"
+ },
+ {
+  "unit": "cecr-c12-nuances-m3",
+  "id": "cecr-c12-nuances-m3-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 研究团队提出了一种新的技术方案。 » ?",
+  "promptEn": "What register does this sentence belong to: « The research team proposed a new technical solution. »?",
+  "choices": [
+   "Soutenu / lettré",
+   "Académique / philosophique",
+   "Journalistique / éditorial",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Formal / literary",
+   "Academic / philosophical",
+   "Journalistic / editorial",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 2,
+  "explanation": "Structure **rapport R&D** : sujet + **提出** + 一种 + adj + 方案. 一种 = classificateur formel.",
+  "explanationEn": "R&D report structure: subject + **提出** + 一种 + 方案."
+ },
+ {
+  "unit": "cecr-c12-education-system-m1",
+  "id": "cecr-c12-education-system-m1-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 学区房 (xuéqū fáng) ?",
+  "promptEn": "Listen, then read: what does 学区房 (xuéqū fáng) mean?",
+  "choices": [
+   "pression",
+   "logement de quartier scolaire",
+   "double réduction",
+   "examen entrée lycée"
+  ],
+  "choicesEn": [
+   "pressure",
+   "school district housing",
+   "double reduction",
+   "high school entry exam"
+  ],
+  "correctIndex": 1,
+  "explanation": "学区房 (xuéqū fáng) = logement de quartier scolaire.",
+  "explanationEn": "学区房 (xuéqū fáng) = school district housing.",
+  "audioHanzi": "学区房"
+ },
+ {
+  "unit": "cecr-c12-nuances-m5",
+  "id": "cecr-c12-nuances-m5-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 公司将运营成本降低了百分之十五。 » ?",
+  "promptEn": "What register does this sentence belong to: « The company reduced operational costs by 15%. »?",
+  "choices": [
+   "Soutenu / lettré",
+   "Académique / philosophique",
+   "Journalistique / éditorial",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Formal / literary",
+   "Academic / philosophical",
+   "Journalistic / editorial",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 2,
+  "explanation": "Structure **rapport financier** avec **将** (ba-construction soutenue) : 公司 + 将 + 成本 + 降低 + X%.",
+  "explanationEn": "Financial-report structure with **将**: subject + 将 + cost + 降低 + X%."
+ },
+ {
+  "unit": "cecr-c12-nuances-m7",
+  "id": "cecr-c12-nuances-m7-min1",
+  "type": "mcq",
+  "prompt": "Quelle est la VRAIE différence entre 品质 et 素质 ?",
+  "promptEn": "What is the REAL difference between 品质 and 素质?",
+  "choices": [
+   "**品质** = pratique, **素质** = théorique",
+   "Aucune différence, les deux sont synonymes parfaits",
+   "**品质** est familier, **素质** est lettré",
+   "**品质** = qualité morale/personnalité (intégrité, vertu) ; **素质** = qualités acquises par éducation/culture"
+  ],
+  "choicesEn": [
+   "**品质** = practical, **素质** = theoretical",
+   "No difference, both are perfect synonyms",
+   "**品质** is colloquial, **素质** is literary",
+   "**品质** = moral quality/character (integrity, virtue); **素质** = qualities acquired through education/culture"
+  ],
+  "correctIndex": 3,
+  "explanation": "**品质高尚** = collocation **éloge moral** soutenue. **深受敬重** = passif soutenu (« profondément respecté »).",
+  "explanationEn": "**品质高尚** = formal moral praise. **深受敬重** = formal passive."
+ },
+ {
+  "unit": "cecr-c12-conversation-m4",
+  "id": "cecr-c12-conv-m4-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 涉及 » ?",
+  "promptEn": "What does \"涉及\" mean?",
+  "choices": [
+   "Décider",
+   "Exclure",
+   "Voter",
+   "Concerner / impliquer"
+  ],
+  "choicesEn": [
+   "Decide",
+   "Exclude",
+   "To vote",
+   "Involve / concern"
+  ],
+  "correctIndex": 3,
+  "explanation": "涉及 (shèjí) = concerner, toucher à un domaine.",
+  "explanationEn": "涉及 = involve, touch upon."
+ },
+ {
+  "unit": "cecr-c21-poetry-m2",
+  "id": "cecr-c21-poetry-m2-mcq-1",
+  "type": "mcq",
+  "prompt": "Que signifie « 李白 » ?",
+  "promptEn": "What does \"李白\" mean?",
+  "choices": [
+   "mal du pays",
+   "pays natal",
+   "lune brillante",
+   "Li Bai (poète Tang)"
+  ],
+  "choicesEn": [
+   "homesickness",
+   "native village",
+   "bright moon",
+   "Li Bai (Tang poet)"
+  ],
+  "correctIndex": 3,
+  "explanation": "李白 (lǐbái) — Li Bai (poète Tang)",
+  "explanationEn": "李白 (lǐbái) — Li Bai (poète Tang)"
+ },
+ {
+  "unit": "cecr-c21-conversation-m1",
+  "id": "cecr-c21-conv-m1-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 时光易逝 » ?",
+  "promptEn": "What does \"时光易逝\" mean?",
+  "choices": [
+   "Le temps suffit",
+   "Le temps s'arrête",
+   "Le temps revient",
+   "Le temps file vite"
+  ],
+  "choicesEn": [
+   "There is enough time",
+   "Time stops",
+   "Time comes back",
+   "Time flies"
+  ],
+  "correctIndex": 3,
+  "explanation": "易逝 (yì shì) = facile à s'écouler. Tournure littéraire poétique.",
+  "explanationEn": "易逝 = swift to pass. Poetic literary phrase."
+ },
+ {
+  "unit": "cecr-c21-conversation-m5",
+  "id": "cecr-c21-conversation-m5-gen1",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 印象 (yìnxiàng) ?",
+  "promptEn": "Listen, then read: what does 印象 (yìnxiàng) mean?",
+  "choices": [
+   "impression",
+   "exprimer",
+   "concevoir (œuvre)",
+   "réviser, corriger"
+  ],
+  "choicesEn": [
+   "impression",
+   "express",
+   "conceive (work)",
+   "revise"
+  ],
+  "correctIndex": 0,
+  "explanation": "印象 (yìnxiàng) = impression.",
+  "explanationEn": "印象 (yìnxiàng) = impression.",
+  "audioHanzi": "印象"
+ },
+ {
+  "unit": "cecr-c21-philo-classique-m4",
+  "id": "cecr-c21-philo-classique-m4-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 佛教 (fójiào) ?",
+  "promptEn": "Listen, then read: what does 佛教 (fójiào) mean?",
+  "choices": [
+   "Guanyin (bodhisattva)",
+   "bouddhisme",
+   "méditation Chan",
+   "Bodhidharma"
+  ],
+  "choicesEn": [
+   "Guanyin",
+   "Buddhism",
+   "Chan meditation",
+   "Bodhidharma"
+  ],
+  "correctIndex": 1,
+  "explanation": "佛教 (fójiào) = bouddhisme.",
+  "explanationEn": "佛教 (fójiào) = Buddhism.",
+  "audioHanzi": "佛教"
+ },
+ {
+  "unit": "cecr-c21-wenyan-intro-m1",
+  "id": "cecr-c21-wenyan-intro-m1-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 朋 (péng) ?",
+  "promptEn": "Listen, then read: what does 朋 (péng) mean?",
+  "choices": [
+   "réservoir",
+   "hors de doute",
+   "ami (classique)",
+   "franchir, transgresser"
+  ],
+  "choicesEn": [
+   "reserve",
+   "beyond doubt",
+   "friend (classical)",
+   "cross over"
+  ],
+  "correctIndex": 2,
+  "explanation": "朋 (péng) = ami (classique).",
+  "explanationEn": "朋 (péng) = friend (classical).",
+  "audioHanzi": "朋"
+ },
+ {
+  "unit": "cecr-c21-poetry-m2",
+  "id": "cecr-c21-poetry-m2-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 霜 (shuāng) ?",
+  "promptEn": "Listen, then read: what does 霜 (shuāng) mean?",
+  "choices": [
+   "givre",
+   "pays natal",
+   "baisser la tête",
+   "Immortel de la poésie"
+  ],
+  "choicesEn": [
+   "frost",
+   "native village",
+   "lower head",
+   "Immortal of Poetry"
+  ],
+  "correctIndex": 0,
+  "explanation": "霜 (shuāng) = givre.",
+  "explanationEn": "霜 (shuāng) = frost.",
+  "audioHanzi": "霜"
+ },
+ {
+  "unit": "cecr-c21-philo-classique-m3",
+  "id": "cecr-c21-philo-classique-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 韩非 (hánfēi) ?",
+  "promptEn": "Listen, then read: what does 韩非 (hánfēi) mean?",
+  "choices": [
+   "Shang Yang",
+   "Han Fei",
+   "confucéen façade, légiste fond",
+   "position de pouvoir"
+  ],
+  "choicesEn": [
+   "Shang Yang",
+   "Han Fei",
+   "Confucian outside, Legalist inside",
+   "positional power"
+  ],
+  "correctIndex": 1,
+  "explanation": "韩非 (hánfēi) = Han Fei.",
+  "explanationEn": "韩非 (hánfēi) = Han Fei.",
+  "audioHanzi": "韩非"
+ },
+ {
+  "unit": "cecr-c21-poetry-m1",
+  "id": "cecr-c21-poetry-m1-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « cí » : quelle traduction ?",
+  "promptEn": "🔊 For \"cí\": which translation?",
+  "choices": [
+   "mélodie-type (poésie ci)",
+   "mot; vocabulaire",
+   "plat; calme; égal",
+   "poème régulé (8 vers)"
+  ],
+  "choicesEn": [
+   "tune pattern (ci poetry)",
+   "word; vocabulary",
+   "flat; calm; even",
+   "regulated poem (8 lines)"
+  ],
+  "correctIndex": 1,
+  "explanation": "词 (cí) — mot; vocabulaire.",
+  "explanationEn": "词 (cí) — mot; vocabulaire."
+ },
+ {
+  "unit": "cecr-c21-nuances-m5",
+  "id": "cecr-c21-nuances-m5-min1",
+  "type": "mcq",
+  "prompt": "Quelle est la VRAIE différence entre 心 et 灵 ?",
+  "promptEn": "What is the REAL difference between 心 and 灵?",
+  "choices": [
+   "**心** est familier, **灵** est lettré",
+   "Aucune différence, les deux sont synonymes parfaits",
+   "**心** = cœur-esprit (siège des sentiments, intérieur psychologique) ; **灵** = âme subtile, esprit transcendant (spirituel/religieux)",
+   "**心** = pratique, **灵** = théorique"
+  ],
+  "choicesEn": [
+   "**心** is colloquial, **灵** is literary",
+   "No difference, both are perfect synonyms",
+   "**心** = heart-mind (seat of feelings, psychological interior); **灵** = subtle soul, transcendent spirit (spiritual/religious)",
+   "**心** = practical, **灵** = theoretical"
+  ],
+  "correctIndex": 2,
+  "explanation": "**心静神安** + **灵与万物合一** = registre **méditation bouddhiste-taoïste**. 心 (intérieur) + 灵 (transcendant).",
+  "explanationEn": "**心静神安 + 灵与万物合一** = Buddhist-Taoist meditation register."
+ },
+ {
+  "unit": "cecr-c21-conversation-m6",
+  "id": "cecr-c21-conversation-m6-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 夸张 (kuāzhāng) ?",
+  "promptEn": "Listen, then read: what does 夸张 (kuāzhāng) mean?",
+  "choices": [
+   "question rhétorique",
+   "commémorer (deuil)",
+   "inspirer",
+   "hyperbole"
+  ],
+  "choicesEn": [
+   "rhetorical question",
+   "commemorate",
+   "inspire",
+   "hyperbole"
+  ],
+  "correctIndex": 3,
+  "explanation": "夸张 (kuāzhāng) = hyperbole.",
+  "explanationEn": "夸张 (kuāzhāng) = hyperbole.",
+  "audioHanzi": "夸张"
+ },
+ {
+  "unit": "cecr-c21-conversation-m3",
+  "id": "cecr-c21-conv-m3-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 重新审视 » ?",
+  "promptEn": "What does \"重新审视\" mean?",
+  "choices": [
+   "Approuver vite",
+   "Survoler",
+   "Confirmer",
+   "Réexaminer attentivement"
+  ],
+  "choicesEn": [
+   "Approve quickly",
+   "Skim over",
+   "Confirm",
+   "Re-examine carefully"
+  ],
+  "correctIndex": 3,
+  "explanation": "审视 (shěnshì) = examiner avec attention. 重新 = à nouveau.",
+  "explanationEn": "审视 = scrutinize. 重新 = anew."
+ },
+ {
+  "unit": "cecr-c21-poetry-m4",
+  "id": "cecr-c21-poetry-m4-mcq-2",
+  "type": "mcq",
+  "prompt": "Que signifie « 声声慢 » ?",
+  "promptEn": "What does \"声声慢\" mean?",
+  "choices": [
+   "Li Qingzhao (poétesse Song)",
+   "mot; vocabulaire",
+   "« Son par son, lente » (Li Qingzhao)",
+   "première talentueuse de l'histoire (Li Qingzhao)"
+  ],
+  "choicesEn": [
+   "Li Qingzhao (Song poetess)",
+   "word; vocabulary",
+   "\"Slow, Slow Tune\" (Li Qingzhao)",
+   "foremost talented woman in history (Li Qingzhao)"
+  ],
+  "correctIndex": 2,
+  "explanation": "声声慢 (shēng shēng màn) — « Son par son, lente » (Li Qingzhao)",
+  "explanationEn": "声声慢 (shēng shēng màn) — « Son par son, lente » (Li Qingzhao)"
+ },
+ {
+  "unit": "cecr-c21-poetry-m4",
+  "id": "cecr-c21-poetry-m4-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « cí » : quelle traduction ?",
+  "promptEn": "🔊 For \"cí\": which translation?",
+  "choices": [
+   "mot; vocabulaire",
+   "Li Qingzhao (poétesse Song)",
+   "première talentueuse de l'histoire (Li Qingzhao)",
+   "« Son par son, lente » (Li Qingzhao)"
+  ],
+  "choicesEn": [
+   "word; vocabulary",
+   "Li Qingzhao (Song poetess)",
+   "foremost talented woman in history (Li Qingzhao)",
+   "\"Slow, Slow Tune\" (Li Qingzhao)"
+  ],
+  "correctIndex": 0,
+  "explanation": "词 (cí) — mot; vocabulaire.",
+  "explanationEn": "词 (cí) — mot; vocabulaire."
+ },
+ {
+  "unit": "cecr-c22-rhetoric-m3",
+  "id": "cecr-c22-rhetoric-m3-mcq-2",
+  "type": "mcq",
+  "prompt": "Que signifie « 书面语 » ?",
+  "promptEn": "What does \"书面语\" mean?",
+  "choices": [
+   "langage courant / vulgarisé",
+   "mandarin standard",
+   "particule classique (de, lui/elle, y)",
+   "langue écrite"
+  ],
+  "choicesEn": [
+   "everyday / popularized language",
+   "Standard Mandarin",
+   "classical particle (of, him/her, there)",
+   "written language"
+  ],
+  "correctIndex": 3,
+  "explanation": "书面语 (shūmiàn yǔ) — langue écrite",
+  "explanationEn": "书面语 (shūmiàn yǔ) — langue écrite"
+ },
+ {
+  "unit": "cecr-c22-translation-m3",
+  "id": "cecr-c22-translation-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 委屈 (wěiqū) ?",
+  "promptEn": "Listen, then read: what does 委屈 (wěiqū) mean?",
+  "choices": [
+   "endurer (vertu)",
+   "aura",
+   "sentir l'injustice",
+   "affinité prédestinée"
+  ],
+  "choicesEn": [
+   "endure hardship",
+   "aura",
+   "feel wronged",
+   "predestined affinity"
+  ],
+  "correctIndex": 2,
+  "explanation": "委屈 (wěiqū) = sentir l'injustice.",
+  "explanationEn": "委屈 (wěiqū) = feel wronged.",
+  "audioHanzi": "委屈"
+ },
+ {
+  "unit": "cecr-c22-dialects-m1",
+  "id": "cecr-c22-dialects-m1-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 华语 » ?",
+  "promptEn": "What does \"华语\" mean?",
+  "choices": [
+   "langue nationale (mandarin à Taïwan)",
+   "bopomofo (Taïwan)",
+   "mandarin standard",
+   "mandarin (locuteurs sinophones)"
+  ],
+  "choicesEn": [
+   "national language (Mandarin in Taiwan)",
+   "bopomofo",
+   "Standard Mandarin",
+   "Mandarin (Chinese speakers)"
+  ],
+  "correctIndex": 3,
+  "explanation": "华语 (huáyǔ) — mandarin (locuteurs sinophones)",
+  "explanationEn": "华语 (huáyǔ) — mandarin (locuteurs sinophones)"
+ },
+ {
+  "unit": "cecr-c22-translation-m1",
+  "id": "cecr-c22-translation-m1-listening-v2",
+  "type": "mcq",
+  "prompt": "🔊 Pour « xìn » : quelle traduction ?",
+  "promptEn": "🔊 For \"xìn\": which translation?",
+  "choices": [
+   "fidélité, fluidité, élégance (Yan Fu)",
+   "Yan Fu (penseur, traducteur, 1854-1921)",
+   "lettre; croire",
+   "élégance (信达雅)"
+  ],
+  "choicesEn": [
+   "faithfulness, fluency, elegance (Yan Fu)",
+   "Yan Fu (thinker, translator, 1854-1921)",
+   "letter; believe",
+   "elegance (信达雅)"
+  ],
+  "correctIndex": 2,
+  "explanation": "信 (xìn) — lettre; croire.",
+  "explanationEn": "信 (xìn) — lettre; croire."
+ },
+ {
+  "unit": "cecr-c22-conversation-m7",
+  "id": "cecr-c22-conv-m7-mcq2",
+  "type": "mcq",
+  "prompt": "Que veut dire « 一锤定音 » ?",
+  "promptEn": "What does \"一锤定音\" mean?",
+  "choices": [
+   "Hésiter longuement",
+   "Trancher d'un seul coup",
+   "Reporter",
+   "Voter"
+  ],
+  "choicesEn": [
+   "Hesitate at length",
+   "Cut it off in one stroke",
+   "Postpone",
+   "To vote"
+  ],
+  "correctIndex": 1,
+  "explanation": "Litt. « un coup de marteau fixe le son ». Décision finale autoritaire.",
+  "explanationEn": "Lit. \"one hammer-blow sets the tone\". Final authoritative call."
+ },
+ {
+  "unit": "cecr-c22-nuances-m4",
+  "id": "cecr-c22-nuances-m4-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 临危方显本色。 » ?",
+  "promptEn": "What register does this sentence belong to: « Facing danger reveals true nature. »?",
+  "choices": [
+   "Académique / philosophique",
+   "Journalistique / éditorial",
+   "Soutenu / lettré",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Academic / philosophical",
+   "Journalistic / editorial",
+   "Formal / literary",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 2,
+  "explanation": "Wenyan : **临X方显Y** = c'est en X que se manifeste Y. **方** = alors seulement (classique).",
+  "explanationEn": "Wenyan: **临X方显Y**. **方** = only then (classical)."
+ },
+ {
+  "unit": "cecr-c22-nuances-m2",
+  "id": "cecr-c22-nuances-m2-gen4",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 一去不返 (yīqùbùfǎn) ?",
+  "promptEn": "Listen, then read: what does 一去不返 (yīqùbùfǎn) mean?",
+  "choices": [
+   "incontrôlable",
+   "parti sans retour",
+   "achever",
+   "garder un fil unique"
+  ],
+  "choicesEn": [
+   "out of control",
+   "gone never to return",
+   "complete",
+   "keep one thread"
+  ],
+  "correctIndex": 1,
+  "explanation": "一去不返 (yīqùbùfǎn) = parti sans retour.",
+  "explanationEn": "一去不返 (yīqùbùfǎn) = gone never to return.",
+  "audioHanzi": "一去不返"
+ },
+ {
+  "unit": "cecr-c22-modern-lit-m3",
+  "id": "cecr-c22-modern-lit-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 科幻 (kēhuàn) ?",
+  "promptEn": "Listen, then read: what does 科幻 (kēhuàn) mean?",
+  "choices": [
+   "science-fiction",
+   "Pékin pliée",
+   "Chen Qiufan",
+   "traducteur (titre)"
+  ],
+  "choicesEn": [
+   "science fiction",
+   "Folding Beijing",
+   "Chen Qiufan",
+   "translator"
+  ],
+  "correctIndex": 0,
+  "explanation": "科幻 (kēhuàn) = science-fiction.",
+  "explanationEn": "科幻 (kēhuàn) = science fiction.",
+  "audioHanzi": "科幻"
+ },
+ {
+  "unit": "cecr-c22-nuances-m7",
+  "id": "cecr-c22-nuances-m7-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 缓缓 (huǎnhuǎn) ?",
+  "promptEn": "Listen, then read: what does 缓缓 (huǎnhuǎn) mean?",
+  "choices": [
+   "silencieusement",
+   "lentement",
+   "inséparables",
+   "point de vue"
+  ],
+  "choicesEn": [
+   "silently",
+   "slowly",
+   "inseparable",
+   "viewpoint"
+  ],
+  "correctIndex": 1,
+  "explanation": "缓缓 (huǎnhuǎn) = lentement.",
+  "explanationEn": "缓缓 (huǎnhuǎn) = slowly.",
+  "audioHanzi": "缓缓"
+ },
+ {
+  "unit": "cecr-c22-nuances-m2",
+  "id": "cecr-c22-nuances-m2-usg1",
+  "type": "mcq",
+  "prompt": "À quel registre appartient cette phrase : « 一时之间，世界为之一变。 » ?",
+  "promptEn": "What register does this sentence belong to: « In an instant, the world changed. »?",
+  "choices": [
+   "Soutenu / lettré",
+   "Journalistique / éditorial",
+   "Académique / philosophique",
+   "Oral familier / argot"
+  ],
+  "choicesEn": [
+   "Formal / literary",
+   "Journalistic / editorial",
+   "Academic / philosophical",
+   "Colloquial spoken / slang"
+  ],
+  "correctIndex": 0,
+  "explanation": "Structure **wenyan littéraire** : **一时之间** (en un instant) + **为之一变** (en changea d'un coup). **之** = pronom objet repris.",
+  "explanationEn": "Literary wenyan: **一时之间** + **为之一变**. **之** = resumptive pronoun."
+ },
+ {
+  "unit": "cecr-c22-conversation-m3",
+  "id": "cecr-c22-conv-m3-trans2",
+  "type": "translation",
+  "prompt": "Que signifie : « 这波操作 » ?",
+  "promptEn": "What does \"这波操作\" mean?",
+  "choices": [
+   "Ce coup-là (argot ironique)",
+   "Cette opération chirurgicale",
+   "Cette vague de mer",
+   "Cette danse"
+  ],
+  "choicesEn": [
+   "That move (ironic slang)",
+   "That surgical operation",
+   "That sea wave",
+   "That dance"
+  ],
+  "correctIndex": 0,
+  "explanation": "这波 + 操作 = expression ironique 2020s pour « ce coup d'opération inattendu ».",
+  "explanationEn": "这波 + 操作 = 2020s ironic phrase for \"that unexpected move\"."
+ },
+ {
+  "unit": "cecr-c22-rhetoric-m3",
+  "id": "cecr-c22-rhetoric-m3-gen2",
+  "type": "mcq",
+  "prompt": "Écoute puis lis : que signifie 抵达 (dǐdá) ?",
+  "promptEn": "Listen, then read: what does 抵达 (dǐdá) mean?",
+  "choices": [
+   "quoi (familier)",
+   "regarder (familier)",
+   "arriver (formel)",
+   "embouteillage (formel)"
+  ],
+  "choicesEn": [
+   "what (casual)",
+   "look (casual)",
+   "arrive (formal)",
+   "traffic jam (formal)"
+  ],
+  "correctIndex": 2,
+  "explanation": "抵达 (dǐdá) = arriver (formel).",
+  "explanationEn": "抵达 (dǐdá) = arrive (formal).",
+  "audioHanzi": "抵达"
+ },
+ {
+  "unit": "cecr-c22-translation-m3",
+  "id": "cecr-c22-translation-m3-mcq-3",
+  "type": "mcq",
+  "prompt": "Que signifie « 江湖 » ?",
+  "promptEn": "What does \"江湖\" mean?",
+  "choices": [
+   "se sentir lésé; se sentir maltraité",
+   "piété filiale",
+   "air; souffle; colère",
+   "monde flottant (rivières et lacs)"
+  ],
+  "choicesEn": [
+   "feel wronged; feel mistreated",
+   "filial piety",
+   "air; breath; anger",
+   "floating world (rivers and lakes)"
+  ],
+  "correctIndex": 3,
+  "explanation": "江湖 (jiānghú) — monde flottant (rivières et lacs)",
+  "explanationEn": "江湖 (jiānghú) — monde flottant (rivières et lacs)"
+ }
+]

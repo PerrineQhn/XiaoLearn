@@ -116,7 +116,7 @@ export const dialogues: DialogueEntry[] = [
           explanationEn: "\"我叫王丽\" — her name is Wang Li.",
         },
         {
-          questionFr: "Que disent-ils à la fin de l'échange ?",
+          questionFr: "Que se disent-ils juste après s'être présentés ?",
           questionEn: "What do they say at the end?",
           choicesFr: ["« Au revoir »","« Enchanté de te rencontrer »","« Bonne chance »","« Bonne nuit »"],
           choicesEn: ["\"Goodbye\"","\"Nice to meet you\"","\"Good luck\"","\"Good night\""],
@@ -507,7 +507,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Que veut dire 还要别的吗？",
           questionEn: "What does 还要别的吗？mean?",
-          choicesFr: ["« C'est tout ? »","« Vous payez maintenant ? »","« Vous voulez la même chose ? »","« Vous voulez autre chose ? »"],
+          choicesFr: ["« C'est pour emporter ? »","« Vous payez maintenant ? »","« Vous voulez la même chose ? »","« Vous voulez autre chose ? »"],
           choicesEn: ["\"Is that all?\"","\"Are you paying now?\"","\"Do you want the same thing?\"","\"Would you like anything else?\""],
           correct: 3,
           explanationFr: "别的 signifie « autre chose » ; 还要别的吗 demande si le client souhaite ajouter quelque chose.",
@@ -613,7 +613,7 @@ export const dialogues: DialogueEntry[] = [
           choicesFr: ["Du riz frit","Du poulet Kung Pao avec du riz","Des nouilles au bœuf","Des raviolis"],
           choicesEn: ["Fried rice","Kung Pao chicken with rice","Beef noodles","Dumplings"],
           correct: 1,
-          explanationFr: "« 宫保鸡丁和米饭 » — Kung Pao chicken + riz.",
+          explanationFr: "« 宫保鸡丁和米饭 » — du poulet Kung Pao et du riz.",
           explanationEn: "\"宫保鸡丁和米饭\" — Kung Pao chicken + rice.",
         },
         {
@@ -1145,7 +1145,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Pourquoi postule-t-il dans cette entreprise ?",
           questionEn: "Why is he applying to this company?",
-          choicesFr: ["Pour le salaire","Parce qu'il s'intéresse aux produits + spécialité adaptée","Pour la localisation","Parce qu'un ami l'a recommandé"],
+          choicesFr: ["Pour le salaire","Parce que les produits de l'entreprise l'intéressent et que sa spécialité correspond au poste","Pour la localisation","Parce qu'un ami l'a recommandé"],
           choicesEn: ["For the salary","Interested in the products + matching major","For the location","Because a friend referred him"],
           correct: 1,
           explanationFr: "« 对贵公司的产品很感兴趣，而且我的专业很对口 ».",
@@ -1283,7 +1283,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Combien coûte le forfait retenu, et que comprend-il ?",
           questionEn: "How much does the chosen plan cost, and what does it include?",
-          choicesFr: ["99 yuans par mois, avec 100 minutes d'appels inclus.","119 yuans par mois, avec 100 minutes d'appels inclus.","99 yuans par mois, mais les appels sont facturés en plus.","79 yuans par mois, une fois la réduction de 20 yuans appliquée."],
+          choicesFr: ["99 yuans par mois, avec 100 minutes d'appels inclus.","119 yuans par mois, avec 100 minutes d'appels inclus.","99 yuans par mois, mais les appels sont facturés en plus.","89 yuans par mois, avec 50 minutes d'appels inclus."],
           choicesEn: ["99 yuan a month, with 100 minutes of calls included.","119 yuan a month, with 100 minutes of calls included.","99 yuan a month, but calls are billed separately.","79 yuan a month, once the 20-yuan discount is applied."],
           correct: 0,
           explanationFr: "L'employé annonce «每个月九十九块，还包括一百分钟通话».",
@@ -1911,7 +1911,7 @@ export const dialogues: DialogueEntry[] = [
           explanationEn: "那边有些课是英语授课: it's the actual teaching there that makes the score useful.",
         },
         {
-          questionFr: "Combien de bourses l'université accorde-t-elle chaque année ?",
+          questionFr: "Combien de places l'université accorde-t-elle chaque année pour cet échange ?",
           questionEn: "How many scholarships does the university award each year?",
           choicesFr: ["Trois.","Cinq.","Dix.","Une par département."],
           choicesEn: ["Three.","Five.","Ten.","One per department."],
@@ -2038,7 +2038,7 @@ export const dialogues: DialogueEntry[] = [
       },
       quiz: [
         {
-          questionFr: "Quel modèle Li recommande-t-il principalement ?",
+          questionFr: "Quelle marque Li recommande-t-il principalement ?",
           questionEn: "Which model does Li mainly recommend?",
           choicesFr: ["Tesla","BYD (比亚迪)","NIO","Xpeng"],
           choicesEn: ["Tesla","BYD (比亚迪)","NIO","Xpeng"],
@@ -2049,7 +2049,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Pourquoi acheter électrique à Shanghai est-il pertinent ?",
           questionEn: "Why does electric make sense in Shanghai?",
-          choicesFr: ["Pas besoin d'assurance","Plaque immatriculation thermique difficile + bornes en hausse","Voitures gratuites","Pas de circulation"],
+          choicesFr: ["Pas besoin d'assurance","Parce que la plaque d'immatriculation est difficile à obtenir pour une thermique et que les bornes se multiplient","Voitures gratuites","Pas de circulation"],
           choicesEn: ["No insurance needed","Combustion plate hard to get + charging stations spreading","Free cars","No traffic"],
           correct: 1,
           explanationFr: "Texte : 油车牌照难拿+ 充电站越来越方便.",
@@ -2388,7 +2388,7 @@ export const dialogues: DialogueEntry[] = [
           choicesFr: ["Il admet que les règles de notation restent confidentielles","Il admet que la procédure de réclamation manque de fluidité et évoque une réponse en deux ou trois jours","Il admet que les livreurs n'ont pas le droit de refuser une commande","Il admet que les notes sont attribuées par les responsables de station"],
           choicesEn: ["He admits the scoring rules remain confidential","He admits the complaints procedure lacks fluidity and mentions a two-to-three-day reply","He admits riders have no right to decline an order","He admits scores are set by station managers"],
           correct: 1,
-          explanationFr: "Il concède « 申诉渠道确实还不够顺畅 » tout en mettant en avant un référent dédié. Il soutient au contraire que les règles sont publiques et attribuées par le système.",
+          explanationFr: "Il concède « 申诉渠道确实还不够顺畅 » tout en mettant en avant un référent dédié et une réponse sous deux ou trois jours. Il soutient au contraire que les règles de notation sont publiques et que les notes sont attribuées par le système, non par les responsables de station.",
           explanationEn: "He concedes \"申诉渠道确实还不够顺畅\" while pointing to a dedicated case handler. He argues the opposite about rules being public and scores being set by the system.",
         },
         {
@@ -2823,7 +2823,7 @@ export const dialogues: DialogueEntry[] = [
           choicesFr: ["Dresser une liste unique de métiers pénibles branche par branche.","Laisser les syndicats déclarer eux-mêmes l'état de santé de leurs adhérents.","Calculer à partir d'indicateurs vérifiables : heures de nuit, port de charges, substances nocives.","S'en remettre à un examen médical effectué au moment du départ."],
           choicesEn: ["Drawing up a single sector-by-sector list of arduous occupations.","Letting unions themselves report their members' state of health.","Calculating from auditable indicators: night hours, load-bearing, harmful substances.","Relying on a medical examination carried out at the time of retirement."],
           correct: 2,
-          explanationFr: "La proposition 0 est précisément ce que l'« exposition » doit remplacer, puisque l'intitulé de branche se prête au lobbying. L'avantage revendiqué est que le critère devient « 可核查 ».",
+          explanationFr: "Dresser une liste de métiers pénibles branche par branche est précisément ce que l'« exposition » doit remplacer, puisque l'intitulé de branche se prête au lobbying. L'avantage revendiqué est que le critère devient « 可核查 », vérifiable : heures de nuit, port de charges, substances nocives.",
           explanationEn: "Option 0 is exactly what 'exposure' is meant to replace, since sector labels invite lobbying. The claimed advantage is that the criterion becomes '可核查' (auditable).",
         },
         {
@@ -2910,7 +2910,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Quel résultat l'entreprise présente-t-elle après ses réformes ?",
           questionEn: "Which result does the company report after reforms?",
-          choicesFr: ["+30 % de profit","Turnover en baisse d'environ 15 % + moins d'anxiété","Doublement du chiffre d'affaires","Aucun changement"],
+          choicesFr: ["+30 % de profit","Rotation du personnel en baisse d'environ 15 % et moins d'anxiété","Doublement du chiffre d'affaires","Aucun changement"],
           choicesEn: ["+30% profit","Turnover down ~15% + less anxiety","Revenue doubled","No change"],
           correct: 1,
           explanationFr: "« 员工流失率下降了大约百分之十五 ».",
@@ -2979,7 +2979,7 @@ export const dialogues: DialogueEntry[] = [
         {
           questionFr: "Quel concurrent fait du tort au thé traditionnel ?",
           questionEn: "Which competitor hurts traditional tea?",
-          choicesFr: ["Le café","Le bubble tea (奶茶)","Les jus de fruits","L'eau pétillante"],
+          choicesFr: ["Le café","Le thé au lait (奶茶)","Les jus de fruits","L'eau pétillante"],
           choicesEn: ["Coffee","Bubble tea (奶茶)","Fruit juices","Sparkling water"],
           correct: 1,
           explanationFr: "« 一窝蜂地去喝奶茶 » — la mode du 奶茶.",

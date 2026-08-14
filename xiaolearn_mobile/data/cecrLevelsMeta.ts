@@ -64,6 +64,8 @@ export const CECR_LEVELS: CecrLevel[] = [
     modules:[
       {id:'cecr-b22-grammar-structure', name:'Structures argumentatives fines', nameEn:'Fine argumentative structures'},
       {id:'cecr-b22-debate',            name:'Argumentation et débat', nameEn:'Argumentation and debate'},
+      {id:'cecr-b22-arts',              name:'Arts et culture', nameEn:'Arts and culture'},
+      {id:'cecr-b22-health',            name:'Santé et bien-être', nameEn:'Health and well-being'},
       {id:'cecr-b22-conversation',      name:'Conversation avancée', nameEn:'Advanced conversation'},
       {id:'cecr-b22-nuances',           name:'Nuances : paires de mots subtils', nameEn:'Nuances: subtle word pairs'},
     ]},
@@ -71,12 +73,17 @@ export const CECR_LEVELS: CecrLevel[] = [
     modules:[
       {id:'cecr-c11-chengyu-basic',  name:'成语 : expressions à 4 caractères (essentiels)', nameEn:'成语: four-character expressions (essentials)'},
       {id:'cecr-c11-style-formal',   name:'Style formel et écrits professionnels', nameEn:'Formal style and professional writing'},
+      {id:'cecr-c11-history',        name:'Histoire et patrimoine littéraire', nameEn:'History and literary heritage'},
+      {id:'cecr-c11-media-discourse',name:'Presse et discours institutionnel', nameEn:'Press and institutional discourse'},
       {id:'cecr-c11-conversation',   name:'Conversation soutenue C1.1', nameEn:'Formal C1.1 conversation'},
       {id:'cecr-c11-nuances',        name:'Nuances soutenues C1.1', nameEn:'Formal C1.1 nuances'},
     ]},
   { id:'cecr-c1-2',  label:'C1.2',  name:'Autonome confirmé', nameEn:'Autonomous Confirmed', icon:'📚', color:LEVEL_COLOR.indigo,
     modules:[
       {id:'cecr-c12-chengyu-advanced', name:'成语 avancés et allusions classiques', nameEn:'Advanced chengyu and classical allusions'},
+      {id:'cecr-c12-business',         name:'Monde des affaires : 关系, 面子, négociation', nameEn:'Business world: 关系, 面子, negotiation'},
+      {id:'cecr-c12-education-system', name:'Système éducatif et 高考', nameEn:'Education system and the 高考'},
+      {id:'cecr-c12-law-society',      name:'Droit et débats de société', nameEn:'Law and social debates'},
       {id:'cecr-c12-conversation',     name:'Conversation business / juridique C1.2', nameEn:'Business / legal conversation C1.2'},
       {id:'cecr-c12-nuances',          name:'Nuances pro/business C1.2', nameEn:'Pro/business nuances C1.2'},
     ]},
@@ -90,8 +97,14 @@ export const CECR_LEVELS: CecrLevel[] = [
     ]},
   { id:'cecr-c2-2',  label:'C2.2',  name:'Maîtrise', nameEn:'Mastery',          icon:'☯️', color:LEVEL_COLOR.rose,
     modules:[
-      {id:'cecr-c22-wenyan-advanced', name:'文言文 avancé : textes authentiques', nameEn:'Advanced 文言文: authentic texts'},
-      {id:'cecr-c22-discourse',       name:'Discours, rhétorique et stylistique', nameEn:'Discourse, rhetoric and stylistics'},
+      // `cecr-c22-discourse` portait ce libellé sans avoir jamais eu de leçon ;
+      // `cecr-c22-rhetoric-translation`, qui en a six et traite exactement ce
+      // sujet, n'était rattaché à aucun niveau. Le module vide est donc
+      // remplacé par celui qui existe, plutôt que gardé à côté.
+      {id:'cecr-c22-rhetoric-translation', name:'Rhétorique, style et traduction', nameEn:'Rhetoric, style and translation'},
+      {id:'cecr-c22-modern-lit',      name:'Littérature moderne et contemporaine', nameEn:'Modern and contemporary literature'},
+      {id:'cecr-c22-dialects',        name:'Langues et variétés du monde sinophone', nameEn:'Languages and varieties of the Sinophone world'},
+      {id:'cecr-c22-global-china',    name:'La Chine dans le monde', nameEn:'China in the world'},
       {id:'cecr-c22-conversation',    name:'Conversation lettrée C2.2', nameEn:'Mastery conversation C2.2'},
       {id:'cecr-c22-nuances',         name:'Nuances ultimes C2.2', nameEn:'Ultimate C2.2 nuances'},
     ]},

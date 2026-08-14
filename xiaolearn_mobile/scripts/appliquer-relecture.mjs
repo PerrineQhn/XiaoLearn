@@ -123,6 +123,32 @@ for (const fichier of process.argv.slice(2)) {
     const fin = Math.min(...['\n    },', '\n      },', '\n  },']
       .map(x => { const i = s.indexOf(x, debut); return i < 0 ? Infinity : i; }));
 
+    // --- clé refaite : la bonne réponse elle-même était fautive -------------
+    if (v.choix && Array.isArray(v.choix)) {
+      const b = bornesTableau(s, debut, d.choix);
+      if (!b) { compte.refus.push([v.id, 'tableau des choix introuvable']); continue; }
+      const anciens = JSON.parse(s.slice(b[0], b[1] + 1).replace(/\n/g, ' '));
+      const bonne = v.bonne ?? o.bonne;
+      if (v.choix.length !== anciens.length) { compte.refus.push([v.id, 'longueur des choix modifiée']); continue; }
+      if (new Set(v.choix).size !== v.choix.length) { compte.refus.push([v.id, 'créerait un doublon']); continue; }
+      if (!(bonne >= 0 && bonne < v.choix.length)) { compte.refus.push([v.id, 'index hors bornes']); continue; }
+      s = s.slice(0, b[0]) + JSON.stringify(v.choix) + s.slice(b[1] + 1);
+      const be = bornesTableau(s, debut, d.choixEn);
+      if (be) {
+        const en = JSON.parse(s.slice(be[0], be[1] + 1).replace(/\n/g, ' '));
+        if (en.length === anciens.length && en.every((x, i) => x === anciens[i]))
+          s = s.slice(0, be[0]) + JSON.stringify(v.choix) + s.slice(be[1] + 1);
+      }
+      const zone = s.slice(debut, debut + 6000);
+      const mi = zone.match(new RegExp(`${d.index}\\s*\\d+`));
+      if (mi) s = s.slice(0, debut + mi.index) + `${d.index} ${bonne}` + s.slice(debut + mi.index + mi[0].length);
+      compte.choix++;
+      SRC.set(d.f, s);
+      // La clé a changé : la référence locale `o.bonne` ne vaut plus.
+      o.bonne = bonne;
+      continue;
+    }
+
     // --- choix remplacés ---------------------------------------------------
     if (v.remplacements && Object.keys(v.remplacements).length) {
       const b = bornesTableau(s, debut, d.choix);
@@ -157,6 +183,13 @@ for (const fichier of process.argv.slice(2)) {
       s = a;
       if (v.promptEn) s = poserChaine(s, debut, fin, d.promptEn, v.promptEn) ?? s;
       compte.consigne++;
+    }
+
+    // --- phrase cible d'un exercice de remise en ordre ---------------------
+    if (v.contexte) {
+      const a = poserChaine(s, debut, fin, 'sentence:', v.contexte);
+      if (a) { s = a; compte.consigne++; }
+      else compte.refus.push([v.id, 'phrase cible introuvable']);
     }
 
     // --- explication réécrite ----------------------------------------------

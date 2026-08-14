@@ -24,18 +24,25 @@
  *
  * ## Identifiants
  *
- * Les cartes créées portent un identifiant préfixé `custom:` — c'est ce qui
- * permet de les reconnaître partout ailleurs sans table de correspondance, et
- * garantit qu'elles n'entreront jamais en collision avec un identifiant du
- * dictionnaire.
+ * Les cartes créées portent un identifiant préfixé `p:`, défini par
+ * `data/cardIdentity.ts` — le même contrat que côté web. C'est ce qui permet
+ * de les reconnaître partout ailleurs sans table de correspondance, et garantit
+ * qu'elles n'entreront jamais en collision avec une carte du dictionnaire
+ * (`w:`) ni avec une phrase (`s:`).
+ *
+ * Le préfixe était auparavant `custom:`, propre au mobile, quand le web
+ * utilisait `pf-`. Les cartes déjà enregistrées sont renommées à la lecture :
+ * voir `migratePersonalId`.
  */
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { cardIdForHanzi, isPersonalId, migratePersonalId, newPersonalCardId } from './cardIdentity';
+import { LEARN_SECTIONS } from './cecrLearnSections';
 
 export const CUSTOM_CARDS_KEY = 'xl_custom_cards_v1';
 export const CARD_OVERRIDES_KEY = 'xl_card_overrides_v1';
 
 export interface CustomCard {
-  /** Toujours préfixé `custom:`. */
+  /** Toujours préfixé `p:` — voir `data/cardIdentity.ts`. */
   id: string;
   hanzi: string;
   pinyin: string;
@@ -56,12 +63,14 @@ export interface CardOverride {
   updatedAt: string;
 }
 
-export const isCustomId = (id: string) => id.startsWith('custom:');
-
-/** Identifiant stable, lisible dans les journaux et sans collision possible. */
-export function newCustomId(): string {
-  return `custom:${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
-}
+/**
+ * Ces deux fonctions viennent du contrat partagé et sont simplement
+ * ré-exportées : les écrans qui manipulent des cartes personnalisées n'ont pas
+ * à savoir qu'il existe un fichier d'identité, mais il ne doit y avoir qu'une
+ * seule définition.
+ */
+export const isCustomId = isPersonalId;
+export const newCustomId = newPersonalCardId;
 
 // ─── Lecture ──────────────────────────────────────────────────────────────────
 
@@ -71,8 +80,71 @@ async function readJson<T>(key: string, fallback: T): Promise<T> {
   try { return JSON.parse(raw) as T; } catch { return fallback; }
 }
 
-export const readCustomCards = () => readJson<CustomCard[]>(CUSTOM_CARDS_KEY, []);
-export const readOverrides = () => readJson<Record<string, CardOverride>>(CARD_OVERRIDES_KEY, {});
+/**
+ * Cartes personnelles, identifiants normalisés au passage.
+ *
+ * La migration `custom:` → `p:` se fait ici, à la lecture, plutôt que par un
+ * script de démarrage : une carte n'est réécrite sur le disque que le jour où
+ * elle est modifiée, et une version de l'application antérieure à ce changement
+ * continuerait de lire ses propres données sans rien casser. Une carte déjà au
+ * nouveau format traverse la fonction sans être touchée.
+ */
+export async function readCustomCards(): Promise<CustomCard[]> {
+  const list = await readJson<CustomCard[]>(CUSTOM_CARDS_KEY, []);
+  return list.map(c => (c?.id ? { ...c, id: migratePersonalId(c.id) } : c));
+}
+/**
+ * Table de correspondance des ANCIENNES clés de surcharge vers les nouvelles.
+ *
+ * Les surcharges sont indexées par identifiant de carte. Or cet identifiant est
+ * passé de positionnel — `${sectionId}:${sIdx}:${idx}` — à `w:{hanzi}`. Sans
+ * cette table, chaque surcharge déjà enregistrée pointerait dans le vide : le
+ * pinyin corrigé et la note mnémotechnique tapés par l'utilisateur seraient
+ * toujours sur le disque, mais plus rattachés à aucune carte.
+ *
+ * La reconstruction est exacte tant que le contenu du cours n'a pas bougé
+ * depuis l'écriture de la surcharge — on reparcourt `LEARN_SECTIONS` dans le
+ * même ordre que l'ancien code pour retrouver quel hanzi occupait cette
+ * position. Une position devenue introuvable est simplement ignorée : mieux
+ * vaut perdre une surcharge que la recoller sur le mauvais mot.
+ */
+let _legacyOverrideKeys: Map<string, string> | null = null;
+
+function legacyOverrideKeys(): Map<string, string> {
+  if (_legacyOverrideKeys) return _legacyOverrideKeys;
+  const map = new Map<string, string>();
+  for (const [sectionId, sections] of Object.entries(LEARN_SECTIONS)) {
+    sections.forEach((section, sIdx) => {
+      section.items?.forEach((item, idx) => {
+        if (item?.hanzi) map.set(`${sectionId}:${sIdx}:${idx}`, cardIdForHanzi(item.hanzi));
+      });
+    });
+  }
+  _legacyOverrideKeys = map;
+  return map;
+}
+
+/**
+ * Surcharges, clés normalisées au passage.
+ *
+ * Deux surcharges héritées peuvent viser le même mot — il est enseigné à
+ * plusieurs endroits du cours, et l'ancien schéma en faisait autant de cartes
+ * distinctes. La plus récemment modifiée l'emporte, ce qui est le seul
+ * arbitrage défendable : c'est la dernière intention exprimée.
+ */
+export async function readOverrides(): Promise<Record<string, CardOverride>> {
+  const raw = await readJson<Record<string, CardOverride>>(CARD_OVERRIDES_KEY, {});
+  const legacy = legacyOverrideKeys();
+  const out: Record<string, CardOverride> = {};
+  for (const [key, ov] of Object.entries(raw)) {
+    const id = key.startsWith('w:') || isPersonalId(key) ? key : legacy.get(key);
+    if (!id) continue;
+    const prev = out[id];
+    if (prev && (prev.updatedAt ?? '') > (ov?.updatedAt ?? '')) continue;
+    out[id] = ov;
+  }
+  return out;
+}
 
 // ─── Écriture ─────────────────────────────────────────────────────────────────
 
