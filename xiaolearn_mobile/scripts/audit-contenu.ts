@@ -351,6 +351,30 @@ for (const d of dialogues)
     paire(`${d.dialogue.id}#${i}`, q.choicesFr, q.choicesEn));
   verifier('QCM · version anglaise désalignée', bilingue, true);
 
+  // Le désalignement d'ORDRE, lui, ne se voit pas à la longueur : `choicesEn`
+  // peut être une permutation de `choices`, et `correctIndex` désigne alors la
+  // bonne réponse en français et une autre en anglais. Le cas s'est produit sur
+  // 66 questions de lecture et 68 de bilan, où l'anglophone qui répondait juste
+  // était compté faux. On ne peut pas juger une traduction automatiquement,
+  // mais on peut repérer la signature du défaut : un même libellé français
+  // rendu par deux libellés anglais différents ailleurs dans le corpus.
+  const traductions = new Map<string, Set<string>>();
+  const noterPaire = (fr: string[], en?: string[]) => {
+    if (!en || en.length !== fr.length) return;
+    for (const [i, f] of fr.entries()) {
+      if (!f || HAN.test(f) || f === en[i]) continue;
+      (traductions.get(f) ?? traductions.set(f, new Set()).get(f)!).add(en[i]);
+    }
+  };
+  for (const list of Object.values(EXERCISES)) for (const ex of list) noterPaire(ex.choices ?? [], ex.choicesEn);
+  for (const b of Object.values(cecrBilans)) for (const q of b.questions) noterPaire(q.choices, q.choicesEn);
+  for (const L of LECTURES) for (const q of L.questions) noterPaire(q.choices, (q as any).choicesEn);
+  for (const d of dialogues) (d.dialogue.quiz ?? []).forEach(q => noterPaire(q.choicesFr, q.choicesEn));
+  const incoherentes = [...traductions.entries()]
+    .filter(([f, v]) => v.size > 1 && f.length > 6)
+    .map(([f, v]) => `« ${f} » traduit tantôt « ${[...v].join(' », tantôt « ')} »`);
+  verifier('traductions · un même libellé rendu de deux façons', incoherentes, false);
+
   // Une explication qui cite un choix retiré depuis. Le cas s'est produit en
   // remplaçant des distracteurs : « À ne pas confondre avec 要不然 » alors que
   // 要不然 n'était plus proposé nulle part.

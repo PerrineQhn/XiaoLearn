@@ -63,8 +63,8 @@ Grand-père et grand-mère habitent aussi chez nous.`,
   questions: [
     lq('a1f-q1', 'Comment s\'appelle le narrateur ?', ['Xiǎohóng', 'Xiǎomíng', 'Xiǎolì', 'Xiǎowáng'], 1, '我叫小明 = je m\'appelle Xiaoming.'),
     lq('a1f-q2', 'Combien de personnes compte la famille ?', ['3', '4', '5', '6'], 2, '我家有五口人 = ma famille compte cinq personnes (五 = 5).'),
-    lq('a1f-q3', 'Où habite la famille ?', ['Shanghai', 'Guangzhou', 'Pékin', 'Chengdu'], 2, '我们住在北京 = nous habitons à Pékin.'),
-    lq('a1f-q4', 'Quel lien de parenté est mentionné en dernier ?', ['Papa et maman', 'Grand-frère', 'Grand-père et grand-mère', 'Petite sœur'], 2, 'La dernière phrase mentionne 爷爷和奶奶 (grand-père et grand-mère paternels).'),
+    lq('a1f-q3', 'Où habite la famille ?', ['Shanghai', 'Guangzhou', 'Chengdu', 'Pékin'], 3, '我们住在北京 = nous habitons à Pékin.'),
+    lq('a1f-q4', 'Quel lien de parenté est mentionné en dernier ?', ['Grand-père et grand-mère', 'Grand-frère', 'Papa et maman', 'Petite sœur'], 0, 'La dernière phrase mentionne 爷爷和奶奶 (grand-père et grand-mère paternels).'),
   ],
 };
 
@@ -89,10 +89,10 @@ J'ai trois livres.
 À 15h, je rentre chez moi.
 J'aime beaucoup l'école.`,
   questions: [
-    lq('a1e-q1', 'Quel jour est-ce ?', ['Mardi', 'Mercredi', 'Lundi', 'Jeudi'], 2, '今天是星期一 = aujourd\'hui c\'est lundi (星期一).'),
+    lq('a1e-q1', 'Quel jour est-ce ?', ['Mardi', 'Lundi', 'Mercredi', 'Jeudi'], 1, '今天是星期一 = aujourd\'hui c\'est lundi (星期一).'),
     lq('a1e-q2', 'Combien de livres a le narrateur ?', ['1', '2', '3', '4'], 2, '我有三本书 = j\'ai trois livres (三 = 3).'),
-    lq('a1e-q3', 'À quelle heure rentre-t-il ?', ['14h', '15h', '16h', '17h'], 1, '下午三点 = 15h (trois heures de l\'après-midi).'),
-    lq('a1e-q4', 'Quel est le sentiment du narrateur envers l\'école ?', ['Il la déteste', 'Il l\'aime beaucoup', 'Il est indifférent', 'Il a peur'], 1, '我很喜欢学校 = j\'aime beaucoup l\'école.'),
+    lq('a1e-q3', 'À quelle heure rentre-t-il ?', ['14h', '17h', '16h', '15h'], 3, '下午三点 = 15h (trois heures de l\'après-midi).'),
+    lq('a1e-q4', 'Quel est le sentiment du narrateur envers l\'école ?', ['Il l\'aime beaucoup', 'Il la déteste', 'Il est indifférent', 'Il a peur'], 0, '我很喜欢学校 = j\'aime beaucoup l\'école.'),
   ],
 };
 
@@ -120,10 +120,10 @@ L'après-midi, nous sommes allés dans un café boire un café.
 Nous avons beaucoup discuté et nous étions très heureux.
 Le soir je suis rentré à 20h, très fatigué mais très content.`,
   questions: [
-    lq('a2w-q1', 'Où sont allés le narrateur et son ami ?', ['Au cinéma', 'Au restaurant', 'Au parc', 'À la bibliothèque'], 2, '我和朋友一起去了公园 = nous sommes allés au parc.'),
-    lq('a2w-q2', 'Quel sport ont-ils pratiqué ?', ['Foot', 'Tennis', 'Natation', 'Basket'], 3, '打了篮球 = ont joué au basket. 打 + 篮球.'),
-    lq('a2w-q3', 'À quelle heure le narrateur est-il rentré ?', ['17h', '19h', '20h', '22h'], 2, '晚上八点 = 20h (huit heures du soir).'),
-    lq('a2w-q4', 'Comment était le narrateur en rentrant ?', ['Triste et reposé', 'Fatigué mais content', 'Fatigué et triste', 'Énergique et heureux'], 1, '非常累，但是很高兴 = très fatigué, mais très content.'),
+    lq('a2w-q1', 'Où sont allés le narrateur et son ami ?', ['Au cinéma', 'Au parc', 'Au restaurant', 'À la bibliothèque'], 1, '我和朋友一起去了公园 = nous sommes allés au parc.'),
+    lq('a2w-q2', 'Quel sport ont-ils pratiqué ?', ['Foot', 'Tennis', 'Basket', 'Natation'], 2, '打了篮球 = ont joué au basket. 打 + 篮球.'),
+    lq('a2w-q3', 'À quelle heure le narrateur est-il rentré ?', ['17h', '19h', '22h', '20h'], 3, '晚上八点 = 20h (huit heures du soir).'),
+    lq('a2w-q4', 'Comment était le narrateur en rentrant ?', ['Fatigué mais content', 'Triste et reposé', 'Fatigué et triste', 'Énergique et heureux'], 0, '非常累，但是很高兴 = très fatigué, mais très content.'),
   ],
 };
 
@@ -148,10 +148,10 @@ Les pommes coûtent 5 yuans la livre, les bananes 3 yuans la livre.
 Maman trouvait que le prix n'était pas cher.
 Nous avons aussi acheté un poisson, prévu pour le dîner.`,
   questions: [
-    lq('a2m-q1', 'Qui a emmené le narrateur au marché ?', ['Papa', 'Grand-mère', 'Maman', 'Un ami'], 2, '妈妈带我去市场 = maman m\'a emmené au marché.'),
-    lq('a2m-q2', 'Combien coûtent les bananes la livre ?', ['2 yuans', '3 yuans', '5 yuans', '8 yuans'], 1, '香蕉三块钱一斤 = les bananes coûtent 3 yuans la livre.'),
+    lq('a2m-q1', 'Qui a emmené le narrateur au marché ?', ['Papa', 'Maman', 'Grand-mère', 'Un ami'], 1, '妈妈带我去市场 = maman m\'a emmené au marché.'),
+    lq('a2m-q2', 'Combien coûtent les bananes la livre ?', ['2 yuans', '5 yuans', '3 yuans', '8 yuans'], 2, '香蕉三块钱一斤 = les bananes coûtent 3 yuans la livre.'),
     lq('a2m-q3', 'Quel animal est acheté ?', ['Poulet', 'Crabe', 'Crevettes', 'Poisson'], 3, '买了一条鱼 = ont acheté un poisson. 条 est le classificateur pour les poissons.'),
-    lq('a2m-q4', 'Que pense maman des prix ?', ['Trop chers', 'Pas chers', 'Normaux', 'Elle ne sait pas'], 1, '妈妈觉得价格不贵 = maman trouve que les prix ne sont pas chers.'),
+    lq('a2m-q4', 'Que pense maman des prix ?', ['Pas chers', 'Trop chers', 'Normaux', 'Elle ne sait pas'], 0, '妈妈觉得价格不贵 = maman trouve que les prix ne sont pas chers.'),
   ],
 };
 
@@ -179,10 +179,10 @@ Nous avons visité le Bund et le jardin Yu.
 Le panorama nocturne du Bund est magnifique, ça m'a beaucoup impressionné.
 Nous avons passé trois jours à Shanghai et mangé beaucoup de bonnes choses, comme les xiaolongbao.`,
   questions: [
-    lq('b11v-q1', 'Comment ont-ils voyagé à Shanghai ?', ['En avion', 'En bus', 'En TGV', 'En voiture'], 2, '坐高铁去的 = y sont allés en TGV (高铁).'),
-    lq('b11v-q2', 'Combien de temps dure le trajet ?', ['1 heure', '2 heures', '3 heures', '4 heures'], 1, '大概两个小时就到了 = environ deux heures pour arriver.'),
-    lq('b11v-q3', 'Qu\'est-ce qui a particulièrement impressionné le narrateur ?', ['Les gratte-ciels', 'Le jardin Yu', 'Le panorama nocturne du Bund', 'Les xiaolongbao'], 2, '外滩的夜景...让我印象深刻 = le panorama nocturne du Bund m\'a beaucoup impressionné.'),
-    lq('b11v-q4', 'Combien de jours ont-ils passé à Shanghai ?', ['2', '3', '4', '5'], 1, '在上海待了三天 = ont passé trois jours à Shanghai.'),
+    lq('b11v-q1', 'Comment ont-ils voyagé à Shanghai ?', ['En avion', 'En TGV', 'En bus', 'En voiture'], 1, '坐高铁去的 = y sont allés en TGV (高铁).'),
+    lq('b11v-q2', 'Combien de temps dure le trajet ?', ['1 heure', '3 heures', '2 heures', '4 heures'], 2, '大概两个小时就到了 = environ deux heures pour arriver.'),
+    lq('b11v-q3', 'Qu\'est-ce qui a particulièrement impressionné le narrateur ?', ["Le métro de Shanghai","Le jardin Yu","Les xiaolongbao","Le panorama nocturne du Bund"], 3, '外滩的夜景...让我印象深刻 = le panorama nocturne du Bund m\'a beaucoup impressionné.'),
+    lq('b11v-q4', 'Combien de jours ont-ils passé à Shanghai ?', ['3', '2', '4', '5'], 0, '在上海待了三天 = ont passé trois jours à Shanghai.'),
     lq('b11v-q5', 'Quelle spécialité culinaire est mentionnée ?', ['Raviolis frits', 'Xiaolongbao', 'Canard laqué', 'Raviolis au wonton'], 1, '小笼包 = xiaolongbao, célèbres raviolis vapeur de Shanghai.'),
   ],
 };
@@ -208,10 +208,10 @@ La cuisine du Sichuan est très épicée, la cuisine cantonaise est plutôt lég
 Les Chinois aiment manger avec des baguettes, une tradition vieille de plusieurs millénaires.
 Aujourd'hui, de plus en plus de jeunes apprécient aussi la cuisine occidentale.`,
   questions: [
-    lq('b11h-q1', 'Que signifie l\'expression « 民以食为天 » ?', ['Cuisiner chaque jour', 'La nourriture est primordiale pour le peuple', 'Partager la nourriture', 'Le ciel nourrit le peuple'], 1, '民以食为天 = « le peuple prend la nourriture comme son ciel » → la nourriture est essentielle.'),
-    lq('b11h-q2', 'Quelle préférence alimentaire distingue le Nord du Sud ?', ['Nord : riz / Sud : pâtes', 'Nord : pâtes / Sud : riz', 'Nord : épicé / Sud : sucré', 'Nord : viande / Sud : légumes'], 1, '南方人喜欢吃米饭，北方人更喜欢吃面食 = Sud : riz, Nord : pâtes.'),
-    lq('b11h-q3', 'Comment est décrite la cuisine cantonaise ?', ['Très épicée', 'Très sucrée', 'Plutôt légère', 'Très grasse'], 2, '广东菜比较清淡 = la cuisine cantonaise est plutôt légère.'),
-    lq('b11h-q4', 'Quelle tendance est observée chez les jeunes ?', ['Ils mangent moins', 'Ils préfèrent la cuisine du Sichuan', 'Ils apprécient aussi la cuisine occidentale', 'Ils abandonnent les baguettes'], 2, '越来越多的年轻人也喜欢吃西餐 = de plus en plus de jeunes aiment la cuisine occidentale.'),
+    lq('b11h-q1', 'Que signifie l\'expression « 民以食为天 » ?', ['Cuisiner chaque jour', 'Partager la nourriture', 'La nourriture est primordiale pour le peuple', 'Le ciel nourrit le peuple'], 2, '民以食为天 = « le peuple prend la nourriture comme son ciel » → la nourriture est essentielle.'),
+    lq('b11h-q2', 'Quelle préférence alimentaire distingue le Nord du Sud ?', ['Nord : riz / Sud : pâtes', 'Nord : viande / Sud : légumes', 'Nord : épicé / Sud : sucré', 'Nord : pâtes / Sud : riz'], 3, '南方人喜欢吃米饭，北方人更喜欢吃面食 = Sud : riz, Nord : pâtes.'),
+    lq('b11h-q3', 'Comment est décrite la cuisine cantonaise ?', ['Plutôt légère', 'Très sucrée', 'Très épicée', 'Très grasse'], 0, '广东菜比较清淡 = la cuisine cantonaise est plutôt légère.'),
+    lq('b11h-q4', 'Quelle tendance est observée chez les jeunes ?', ['Ils mangent moins', 'Ils apprécient aussi la cuisine occidentale', 'Ils préfèrent la cuisine du Sichuan', 'Ils abandonnent les baguettes'], 1, '越来越多的年轻人也喜欢吃西餐 = de plus en plus de jeunes aiment la cuisine occidentale.'),
   ],
 };
 
@@ -239,9 +239,9 @@ Pour résoudre ce problème, le gouvernement a mis en place une série de politi
 Par exemple, limiter le nombre de voitures et développer activement les transports en commun.
 En tant que citoyens ordinaires, nous pouvons aussi prendre moins la voiture, faire plus de vélo et contribuer à l'écologie.`,
   questions: [
-    lq('b12e-q1', 'Quelle est la cause principale de la pollution de l\'air mentionnée ?', ['Le tourisme', 'Le développement industriel', 'Les feux de forêt', 'L\'agriculture'], 1, '由于工业发展，空气污染越来越严重 = en raison du développement industriel.'),
-    lq('b12e-q2', 'Que sont obligés de faire beaucoup d\'habitants ?', ['Partir à la campagne', 'Porter un masque', 'Arrêter de travailler', 'Acheter un filtre à air'], 1, '不得不戴口罩出门 = obligés de porter un masque pour sortir.'),
-    lq('b12e-q3', 'Quelle mesure gouvernementale est citée ?', ['Fermer les usines', 'Planter des arbres', 'Limiter le nombre de voitures', 'Taxer les pollueurs'], 2, '限制汽车数量 = limiter le nombre de voitures.'),
+    lq('b12e-q1', 'Quelle est la cause principale de la pollution de l\'air mentionnée ?', ['Le tourisme', 'Les feux de forêt', 'Le développement industriel', 'L\'agriculture'], 2, '由于工业发展，空气污染越来越严重 = en raison du développement industriel.'),
+    lq('b12e-q2', 'Que sont obligés de faire beaucoup d\'habitants ?', ['Partir à la campagne', 'Acheter un filtre à air', 'Arrêter de travailler', 'Porter un masque'], 3, '不得不戴口罩出门 = obligés de porter un masque pour sortir.'),
+    lq('b12e-q3', 'Quelle mesure gouvernementale est citée ?', ['Limiter le nombre de voitures', 'Planter des arbres', 'Fermer les usines', 'Taxer les pollueurs'], 0, '限制汽车数量 = limiter le nombre de voitures.'),
     lq('b12e-q4', 'Que peut faire chaque citoyen selon le texte ?', ['Manifester', 'Prendre moins la voiture et faire plus de vélo', 'Payer des impôts écologiques', 'Déménager à la campagne'], 1, '少开车，多骑自行车，为环保出一份力 = conduire moins, faire plus de vélo.'),
   ],
 };
@@ -267,10 +267,10 @@ Cependant, une utilisation excessive des réseaux sociaux peut aussi engendrer d
 Par exemple, certaines personnes passent trop de temps à scroller sur leur téléphone, ce qui affecte leur travail et leur sommeil.
 C'est pourquoi il est très important d'apprendre à utiliser les réseaux sociaux de façon raisonnable.`,
   questions: [
-    lq('b12r-q1', 'Quelles sont les deux plateformes chinoises mentionnées ?', ['TikTok et Baidu', 'WeChat et Weibo', 'Alibaba et Taobao', 'Douyin et Bilibili'], 1, '微信 (WeChat) 和微博 (Weibo) sont les plateformes citées.'),
-    lq('b12r-q2', 'Quel avantage principal des réseaux sociaux est cité ?', ['Gagner de l\'argent', 'Rester en contact à tout moment', 'Apprendre des langues', 'Trouver un emploi'], 1, '随时随地与朋友保持联系 = rester en contact partout et à tout moment.'),
-    lq('b12r-q3', 'Quel problème est mentionné ?', ['Piratage informatique', 'Dépenser trop d\'argent', 'Trop de temps sur le téléphone, nuisant au sommeil', 'Informations fausses'], 2, '花太多时间刷手机，影响工作和睡眠 = trop de temps sur le téléphone, affectant travail et sommeil.'),
-    lq('b12r-q4', 'Quelle est la conclusion du texte ?', ['Arrêter d\'utiliser les réseaux', 'Les réseaux sont dangereux', 'Apprendre à utiliser les réseaux de façon raisonnable', 'Préférer le contact direct'], 2, '学会合理使用社交媒体非常重要 = il est important d\'apprendre à les utiliser raisonnablement.'),
+    lq('b12r-q1', 'Quelles sont les deux plateformes chinoises mentionnées ?', ['TikTok et Baidu', 'Alibaba et Taobao', 'WeChat et Weibo', 'Douyin et Bilibili'], 2, '微信 (WeChat) 和微博 (Weibo) sont les plateformes citées.'),
+    lq('b12r-q2', 'Quel avantage principal des réseaux sociaux est cité ?', ['Gagner de l\'argent', 'Trouver un emploi', 'Apprendre des langues', 'Rester en contact à tout moment'], 3, '随时随地与朋友保持联系 = rester en contact partout et à tout moment.'),
+    lq('b12r-q3', 'Quel problème est mentionné ?', ['Trop de temps sur le téléphone, nuisant au sommeil', 'Dépenser trop d\'argent', 'Piratage informatique', 'Informations fausses'], 0, '花太多时间刷手机，影响工作和睡眠 = trop de temps sur le téléphone, affectant travail et sommeil.'),
+    lq('b12r-q4', 'Quelle est la conclusion du texte ?', ['Arrêter d\'utiliser les réseaux', 'Apprendre à utiliser les réseaux de façon raisonnable', 'Les réseaux sont dangereux', 'Préférer le contact direct'], 1, '学会合理使用社交媒体非常重要 = il est important d\'apprendre à les utiliser raisonnablement.'),
   ],
 };
 
@@ -298,10 +298,10 @@ Ces dernières années, le terme « neijuan » (involution) est de plus en plus 
 De nombreux experts appellent à réformer le système éducatif, alléger la charge des élèves et mettre l'accent sur le développement de la créativité.
 Comment garantir la qualité de l'éducation tout en donnant aux élèves plus d'espace pour se développer librement — c'est là un enjeu majeur de l'éducation chinoise actuelle.`,
   questions: [
-    lq('b21ed-q1', 'Qu\'est-ce que le gaokao ?', ['Un diplôme universitaire', 'L\'examen national d\'entrée dans le supérieur', 'Un concours de bourses', 'Un examen régional'], 1, '全国统一高等学校招生考试 = examen national unifié d\'entrée dans l\'enseignement supérieur.'),
-    lq('b21ed-q2', 'Combien d\'élèves participent chaque année au gaokao ?', ['500 000', '5 millions', 'Plus de 10 millions', '20 millions'], 2, '超过一千万 = plus de dix millions.'),
-    lq('b21ed-q3', 'Que reflète le terme 内卷 ?', ['La réforme en cours', 'L\'énorme pression subie par les étudiants', 'Le succès du système éducatif', 'La coopération entre élèves'], 1, '内卷 反映了学生们面临的巨大压力 = reflète l\'énorme pression des étudiants.'),
-    lq('b21ed-q4', 'Que préconisent les experts ?', ['Plus d\'examens', 'Fermer des universités', 'Réformer, alléger la charge et développer la créativité', 'Augmenter les heures de cours'], 2, '改革教育体制，减轻学生负担，注重创新能力的培养.'),
+    lq('b21ed-q1', 'Qu\'est-ce que le gaokao ?', ['Un diplôme universitaire', 'Un concours de bourses', 'L\'examen national d\'entrée dans le supérieur', 'Un examen régional'], 2, '全国统一高等学校招生考试 = examen national unifié d\'entrée dans l\'enseignement supérieur.'),
+    lq('b21ed-q2', 'Combien d\'élèves participent chaque année au gaokao ?', ['500 000', '5 millions', '20 millions', 'Plus de 10 millions'], 3, '超过一千万 = plus de dix millions.'),
+    lq('b21ed-q3', 'Que reflète le terme 内卷 ?', ['L\'énorme pression subie par les étudiants', 'La réforme en cours', 'Le succès du système éducatif', 'La coopération entre élèves'], 0, '内卷 反映了学生们面临的巨大压力 = reflète l\'énorme pression des étudiants.'),
+    lq('b21ed-q4', 'Que préconisent les experts ?', ['Plus d\'examens', 'Réformer, alléger la charge et développer la créativité', 'Fermer des universités', 'Augmenter les heures de cours'], 1, '改革教育体制，减轻学生负担，注重创新能力的培养.'),
   ],
 };
 
@@ -326,9 +326,9 @@ Les aînés donnent des enveloppes rouges aux plus jeunes, symbole de bonheur et
 Avec l'évolution des temps, de plus en plus de gens choisissent d'envoyer des hongbao électroniques par téléphone pour les vœux.
 La Fête du Printemps n'est pas seulement un moment de réunion familiale, c'est aussi une occasion importante de transmettre la culture et de perpétuer les traditions.`,
   questions: [
-    lq('b21ch-q1', 'À quand correspond généralement la Fête du Printemps ?', ['Mi-décembre', 'Fin janvier ou début février', 'Mars', 'Début avril'], 1, '通常在每年一月底或二月初 = généralement fin janvier ou début février.'),
-    lq('b21ch-q2', 'Que symbolisent les enveloppes rouges offertes aux jeunes ?', ['La force physique', 'Le rang social', 'Le bonheur et la chance', 'La gratitude'], 2, '寓意吉祥如意 = symbolise bonheur et chance.'),
-    lq('b21ch-q3', 'Quelle nouvelle pratique se développe pour les vœux ?', ['Envoyer des lettres', 'Faire des feux d\'artifice', 'Envoyer des hongbao électroniques par téléphone', 'Planter un arbre'], 2, '越来越多的人选择用手机发电子红包来拜年.'),
+    lq('b21ch-q1', 'À quand correspond généralement la Fête du Printemps ?', ['Mi-décembre', 'Mars', 'Fin janvier ou début février', 'Début avril'], 2, '通常在每年一月底或二月初 = généralement fin janvier ou début février.'),
+    lq('b21ch-q2', 'Que symbolisent les enveloppes rouges offertes aux jeunes ?', ['La force physique', 'Le rang social', 'La gratitude', 'Le bonheur et la chance'], 3, '寓意吉祥如意 = symbolise bonheur et chance.'),
+    lq('b21ch-q3', 'Quelle nouvelle pratique se développe pour les vœux ?', ['Envoyer des hongbao électroniques par téléphone', 'Faire des feux d\'artifice', 'Envoyer des lettres', 'Planter un arbre'], 0, '越来越多的人选择用手机发电子红包来拜年.'),
     lq('b21ch-q4', 'Quel double rôle joue la Fête du Printemps selon le texte ?', ['Fête religieuse et commerciale', 'Réunion familiale et transmission culturelle', 'Repos et fête gastronomique', 'Fête des enfants et des aînés'], 1, '不仅是家庭团聚的时刻，也是传承文化、延续传统的重要时机.'),
   ],
 };
@@ -357,9 +357,9 @@ La question des « enfants laissés derrière » est particulièrement saillante
 L'écart de revenus et les disparités de services publics entre ville et campagne restent des enjeux majeurs urgents.
 Comment réaliser une croissance inclusive permettant aux fruits de l'urbanisation de bénéficier à un plus large public — c'est ce qui met à l'épreuve la sagesse des décideurs.`,
   questions: [
-    lq('b22u-q1', 'Depuis quand date ce processus d\'urbanisation ?', ['La Révolution culturelle', 'La réforme et l\'ouverture', 'La Seconde Guerre mondiale', 'La fondation de la RPC'], 1, '改革开放以来 = depuis la réforme et l\'ouverture.'),
-    lq('b22u-q2', 'Qui sont les 留守儿童 ?', ['Enfants des villes scolarisés à la campagne', 'Enfants laissés à la campagne pendant que les parents travaillent en ville', 'Orphelins pris en charge par l\'État', 'Enfants migrants en ville'], 1, '父母进城务工，孩子留在农村由祖父母照看 = parents en ville, enfants restés à la campagne.'),
-    lq('b22u-q3', 'Quel défi principal est mentionné entre ville et campagne ?', ['Différences linguistiques', 'Écart de revenus et disparités de services publics', 'Rivalités culturelles', 'Différences climatiques'], 1, '收入差距和公共服务差异 = écart de revenus et disparités de services publics.'),
+    lq('b22u-q1', 'Depuis quand date ce processus d\'urbanisation ?', ['La Révolution culturelle', 'La Seconde Guerre mondiale', 'La réforme et l\'ouverture', 'La fondation de la RPC'], 2, '改革开放以来 = depuis la réforme et l\'ouverture.'),
+    lq('b22u-q2', 'Qui sont les 留守儿童 ?', ['Enfants des villes scolarisés à la campagne', 'Enfants migrants en ville', 'Orphelins pris en charge par l\'État', 'Enfants laissés à la campagne pendant que les parents travaillent en ville'], 3, '父母进城务工，孩子留在农村由祖父母照看 = parents en ville, enfants restés à la campagne.'),
+    lq('b22u-q3', 'Quel défi principal est mentionné entre ville et campagne ?', ['Écart de revenus et disparités de services publics', 'Différences linguistiques', 'Rivalités culturelles', 'Différences climatiques'], 0, '收入差距和公共服务差异 = écart de revenus et disparités de services publics.'),
     lq('b22u-q4', 'Que signifie 包容性增长 dans le texte ?', ['Croissance rapide', 'Croissance inclusive bénéficiant à tous', 'Croissance verte', 'Croissance exportatrice'], 1, '包容性增长 = croissance inclusive, qui profite au plus grand nombre.'),
   ],
 };
@@ -385,10 +385,10 @@ Historiquement, Wang Xizhi est vénéré comme le « saint de la calligraphie »
 Aujourd'hui, la calligraphie est inscrite au patrimoine culturel immatériel de l'UNESCO.
 De plus en plus de jeunes reprennent le pinceau, cherchant une forme de sérénité dans la vie moderne trépidante.`,
   questions: [
-    lq('b22a-q1', 'Comment la calligraphie est-elle décrite métaphoriquement ?', ['Peinture vivante', 'Poésie silencieuse, danse sans forme', 'Musique visible', 'Architecture du pinceau'], 1, '被誉为"无声的诗，无形的舞" = poésie silencieuse, danse sans forme.'),
-    lq('b22a-q2', 'Quel calligraphe est surnommé 书圣 ?', ['Su Shi', 'Ouyang Xun', 'Wang Xizhi', 'Yan Zhenqing'], 2, '王羲之被尊为"书圣" = Wang Xizhi est le « saint de la calligraphie ».'),
-    lq('b22a-q3', 'Quelle reconnaissance internationale a obtenu la calligraphie ?', ['Prix Nobel de la paix', 'Patrimoine immatériel de l\'UNESCO', 'Monument mondial de l\'art', 'Médaille d\'or olympique'], 1, '被列入联合国教科文组织非物质文化遗产名录 = inscrite au patrimoine immatériel de l\'UNESCO.'),
-    lq('b22a-q4', 'Pourquoi des jeunes reprennent-ils la calligraphie ?', ['Pour trouver un emploi', 'Pour impressionner leurs parents', 'Pour trouver la sérénité dans la vie moderne', 'Pour voyager en Chine'], 2, '在快节奏的现代生活中寻找一份宁静 = chercher la sérénité dans la vie trépidante.'),
+    lq('b22a-q1', 'Comment la calligraphie est-elle décrite métaphoriquement ?', ['Peinture vivante', 'Musique visible', 'Poésie silencieuse, danse sans forme', 'Architecture du pinceau'], 2, '被誉为"无声的诗，无形的舞" = poésie silencieuse, danse sans forme.'),
+    lq('b22a-q2', 'Quel calligraphe est surnommé 书圣 ?', ['Su Shi', 'Ouyang Xun', 'Yan Zhenqing', 'Wang Xizhi'], 3, '王羲之被尊为"书圣" = Wang Xizhi est le « saint de la calligraphie ».'),
+    lq('b22a-q3', 'Quelle reconnaissance internationale a obtenu la calligraphie ?', ['Patrimoine immatériel de l\'UNESCO', 'Prix Nobel de la paix', 'Monument mondial de l\'art', 'Médaille d\'or olympique'], 0, '被列入联合国教科文组织非物质文化遗产名录 = inscrite au patrimoine immatériel de l\'UNESCO.'),
+    lq('b22a-q4', 'Pourquoi des jeunes reprennent-ils la calligraphie ?', ['Pour trouver un emploi', 'Pour trouver la sérénité dans la vie moderne', 'Pour impressionner leurs parents', 'Pour voyager en Chine'], 1, '在快节奏的现代生活中寻找一份宁静 = chercher la sérénité dans la vie trépidante.'),
   ],
 };
 
@@ -414,10 +414,10 @@ Le « li » (礼) est un autre concept clé confucéen, mettant l'accent sur les
 La vision éducative confucéenne considère que l'apprentissage n'est pas seulement l'acquisition de connaissances, mais aussi un chemin pour forger le caractère et cultiver soi-même.
 Bien qu'ayant évolué sur des millénaires, la pensée confucéenne joue encore un rôle non négligeable dans la société chinoise contemporaine.`,
   questions: [
-    lq('c11p-q1', 'Quel est le concept central de la pensée de Confucius ?', ['礼 (les rites)', '仁 (l\'amour/bienveillance envers autrui)', '义 (la justice)', '智 (la sagesse)'], 1, '其思想核心是"仁"——即对他人的爱与关怀.'),
-    lq('c11p-q2', 'Que représente le concept de 礼 ?', ['L\'amour fraternel', 'Le sacrifice personnel', 'Les normes et l\'ordre dans les relations sociales', 'La connaissance académique'], 2, '礼 强调社会关系中的规范与秩序 = normes et ordre dans les relations sociales.'),
-    lq('c11p-q3', 'Selon la vision éducative confucéenne, l\'apprentissage sert à :', ['Accumuler des richesses', 'Forger le caractère et cultiver soi-même', 'Dominer les autres', 'Obéir aux dirigeants'], 1, '学习是塑造人格、修身齐家的途径 = forger le caractère et se cultiver.'),
-    lq('c11p-q4', 'Quelle est la portée géographique de l\'influence confucéenne selon le texte ?', ['La seule Chine', 'L\'Asie du Sud-Est', 'L\'Est de l\'Asie', 'Le monde entier'], 2, '对东亚文明的塑造产生了深远影响 = influence sur la civilisation est-asiatique.'),
+    lq('c11p-q1', 'Quel est le concept central de la pensée de Confucius ?', ['礼 (les rites)', '义 (la justice)', '仁 (l\'amour/bienveillance envers autrui)', '智 (la sagesse)'], 2, '其思想核心是"仁"——即对他人的爱与关怀.'),
+    lq('c11p-q2', 'Que représente le concept de 礼 ?', ['L\'amour fraternel', 'Le sacrifice personnel', 'La connaissance académique', 'Les normes et l\'ordre dans les relations sociales'], 3, '礼 强调社会关系中的规范与秩序 = normes et ordre dans les relations sociales.'),
+    lq('c11p-q3', 'Selon la vision éducative confucéenne, l\'apprentissage sert à :', ['Forger le caractère et se cultiver soi-même', 'Accumuler des richesses', 'Dominer les autres', 'Obéir aux dirigeants'], 0, '学习是塑造人格、修身齐家的途径 = forger le caractère et se cultiver.'),
+    lq('c11p-q4', 'Quelle est la portée géographique de l\'influence confucéenne selon le texte ?', ['La seule Chine', 'L\'Est de l\'Asie', 'L\'Asie du Sud-Est', 'Le monde entier'], 1, '对东亚文明的塑造产生了深远影响 = influence sur la civilisation est-asiatique.'),
   ],
 };
 
@@ -440,10 +440,10 @@ Cependant, avec la hausse des coûts du travail et le vieillissement de la popul
 Du « fabriqué en Chine » au « créé en Chine », l'innovation technologique est devenue le nouveau moteur de croissance.
 Les investissements croissants dans l'IA, les nouvelles énergies et les biotechnologies témoignent de la détermination de la Chine à passer à une économie fondée sur l'innovation.`,
   questions: [
-    lq('c11e-q1', 'Quel rang économique mondial la Chine a-t-elle atteint ?', ['1ère puissance', '2ème puissance', '3ème puissance', '5ème puissance'], 1, '世界第二大经济体 = deuxième puissance économique mondiale.'),
-    lq('c11e-q2', 'Quel facteur a alimenté le miracle économique selon le texte ?', ['Les exportations de pétrole', 'Le tourisme international', 'Le dividende démographique des travailleurs migrants', 'L\'aide étrangère'], 2, '数亿农民工进城务工所释放的巨大人口红利 = dividende démographique des migrants.'),
-    lq('c11e-q3', 'Quelle transition exprime la formule « 中国制造 → 中国创造 » ?', ['Du communisme au capitalisme', 'De la production à faible coût à l\'économie innovante', 'De l\'agriculture à l\'industrie', 'De l\'exportation à la consommation intérieure'], 1, 'Passer de la simple fabrication à la création et à l\'innovation.'),
-    lq('c11e-q4', 'Quels secteurs sont cités comme moteurs futurs ?', ['Textile et automobile', 'Agriculture et tourisme', 'IA, nouvelles énergies et biotechnologies', 'Finance et immobilier'], 2, '人工智能、新能源和生物技术 = IA, nouvelles énergies, biotechnologies.'),
+    lq('c11e-q1', 'Quel rang économique mondial la Chine a-t-elle atteint ?', ['1ère puissance', '3ème puissance', '2ème puissance', '5ème puissance'], 2, '世界第二大经济体 = deuxième puissance économique mondiale.'),
+    lq('c11e-q2', 'Quel facteur a alimenté le miracle économique selon le texte ?', ['Les exportations de pétrole', 'Le tourisme international', 'L\'aide étrangère', 'Le dividende démographique des travailleurs migrants'], 3, '数亿农民工进城务工所释放的巨大人口红利 = dividende démographique des migrants.'),
+    lq('c11e-q3', 'Quelle transition exprime la formule « 中国制造 → 中国创造 » ?', ['De la production à faible coût à l\'économie innovante', 'Du communisme au capitalisme', 'De l\'agriculture à l\'industrie', 'De l\'exportation à la consommation intérieure'], 0, 'Passer de la simple fabrication à la création et à l\'innovation.'),
+    lq('c11e-q4', 'Quels secteurs sont cités comme moteurs futurs ?', ['Textile et automobile', 'IA, nouvelles énergies et biotechnologies', 'Agriculture et tourisme', 'Finance et immobilier'], 1, '人工智能、新能源和生物技术 = IA, nouvelles énergies, biotechnologies.'),
   ],
 };
 
@@ -469,9 +469,9 @@ const c12_1: Lecture = {
 Il abandonna la médecine pour la littérature car il estimait qu'éveiller l'esprit du peuple était plus urgent que soigner les corps.
 Aujourd'hui encore, l'œuvre de Lu Xun est une composante essentielle de l'enseignement du chinois, et sa pensée garde une profonde résonance contemporaine.`,
   questions: [
-    lq('c12l-q1', 'Quelle est la première œuvre en langue vernaculaire de Lu Xun ?', ['阿Q正传', '故乡', '狂人日记', '祝福'], 2, '《狂人日记》是他的第一篇白话小说 = « Le Journal d\'un fou » est son premier roman vernaculaire.'),
-    lq('c12l-q2', 'Quel thème central révèle 狂人日记 ?', ['La beauté de la nature', 'L\'amour entre une femme et un homme', 'Les rites qui dévorent les hommes', 'La gloire de la révolution'], 2, '"礼教吃人"的主题 = le thème des rites qui dévorent les hommes.'),
-    lq('c12l-q3', 'Pourquoi Lu Xun abandonna-t-il la médecine ?', ['Il échouait aux examens', 'Il estimait que l\'éveil spirituel était plus urgent que la médecine', 'Il n\'aimait pas les patients', 'La médecine ne rapportait pas'], 1, '唤醒国民的精神，比治疗身体更为紧迫 = éveiller l\'esprit est plus urgent que soigner.'),
+    lq('c12l-q1', 'Quelle est la première œuvre en langue vernaculaire de Lu Xun ?', ['阿Q正传', '故乡', '狂人日记', '祝福'], 2, "《狂人日记》是他的第一篇白话小说 = « Le Journal d'un fou » est sa première nouvelle en langue vernaculaire (baihua)."),
+    lq('c12l-q2', 'Quel thème central révèle 狂人日记 ?', ['La beauté de la nature', 'L\'amour entre une femme et un homme', 'La gloire de la révolution', 'Les rites qui dévorent les hommes'], 3, '"礼教吃人"的主题 = le thème des rites qui dévorent les hommes.'),
+    lq('c12l-q3', 'Pourquoi Lu Xun abandonna-t-il la médecine ?', ['Il estimait que l\'éveil spirituel était plus urgent que la médecine', 'Il échouait aux examens', 'Il n\'aimait pas les patients', 'La médecine ne rapportait pas'], 0, '唤醒国民的精神，比治疗身体更为紧迫 = éveiller l\'esprit est plus urgent que soigner.'),
     lq('c12l-q4', 'Quel rôle joue Lu Xun dans l\'éducation chinoise actuelle ?', ['Aucun, il est oublié', 'Ses œuvres font partie de l\'enseignement du chinois', 'Il est surtout étudié à l\'université', 'Son œuvre est interdite'], 1, '其作品仍然是中国语文教育的重要组成部分.'),
   ],
 };
@@ -495,9 +495,9 @@ De l'autre, l'expansion des cultures dominantes se fait souvent au détriment de
 Prenons la Chine en exemple : la jeune génération, tout en adoptant la culture pop occidentale, redécouvre le charme de la culture traditionnelle — hanfu, poésie classique.
 Ce retour à la « conscience culturelle » est peut-être justement une voie efficace pour résister à l'homogénéisation culturelle.`,
   questions: [
-    lq('c12m-q1', 'Quel effet positif de la mondialisation est cité ?', ['La paix mondiale', 'La diffusion de connaissances réduisant les écarts de développement', 'L\'augmentation du tourisme', 'L\'unification linguistique'], 1, '促进了知识与技术的传播，有助于缩小发展差距.'),
-    lq('c12m-q2', 'Quel risque est évoqué ?', ['La pollution', 'La montée des nationalismes', 'Le déclin des cultures minoritaires face aux cultures dominantes', 'La désinformation'], 2, '强势文化的扩张往往以弱势文化的式微为代价 = déclin des cultures minoritaires.'),
-    lq('c12m-q3', 'Quelle tendance est observée chez les jeunes Chinois ?', ['Abandon total de la tradition', 'Rejet de la culture occidentale', 'Redécouverte de la culture traditionnelle (hanfu, poésie)', 'Émigration massive'], 2, '重新发现汉服、古典诗词等传统文化的魅力 = redécouverte du hanfu et de la poésie classique.'),
+    lq('c12m-q1', 'Quel effet positif de la mondialisation est cité ?', ['La paix mondiale', 'L\'augmentation du tourisme', 'La diffusion de connaissances réduisant les écarts de développement', 'L\'unification linguistique'], 2, '促进了知识与技术的传播，有助于缩小发展差距.'),
+    lq('c12m-q2', 'Quel risque est évoqué ?', ['La pollution', 'La montée des nationalismes', 'La désinformation', 'Le déclin des cultures minoritaires face aux cultures dominantes'], 3, '强势文化的扩张往往以弱势文化的式微为代价 = déclin des cultures minoritaires.'),
+    lq('c12m-q3', 'Quelle tendance est observée chez les jeunes Chinois ?', ['Redécouverte de la culture traditionnelle (hanfu, poésie)', 'Rejet de la culture occidentale', 'Abandon total de la tradition', 'Émigration massive'], 0, '重新发现汉服、古典诗词等传统文化的魅力 = redécouverte du hanfu et de la poésie classique.'),
     lq('c12m-q4', 'Que désigne la 文化自觉 ?', ['Une politique gouvernementale', 'La conscience et le retour à sa propre culture', 'Un mouvement artistique', 'La censure culturelle'], 1, '文化自觉 = conscience culturelle, retour à ses racines culturelles.'),
   ],
 };
@@ -524,9 +524,9 @@ Les partisans estiment que l'accent confucéen sur la vertu et le peuple n'est p
 Les critiques soulignent que refuser les valeurs universelles au nom de la tradition culturelle peut devenir un outil à des fins politiques.
 Comment préserver l'identité culturelle tout en restant ouvert et respectueux des droits humains universels — c'est la question urgente que la pensée chinoise contemporaine doit résoudre.`,
   questions: [
-    lq('c21p-q1', 'Que désigne la notion confucéenne de 仁政 ?', ['Gouvernement des lettrés', 'Gouvernement bienveillant centré sur la vertu', 'Gouvernement militaire', 'Gouvernement par les lois'], 1, '仁政 = gouvernement bienveillant (rén = bienveillance, zhèng = gouvernement).'),
-    lq('c21p-q2', 'Que soutiennent les partisans du confucianisme en politique ?', ['Qu\'il faut remplacer la démocratie', 'Qu\'il est compatible et complémentaire avec la démocratie', 'Qu\'il faut fermer la Chine', 'Qu\'il s\'oppose aux droits de l\'homme'], 1, '与现代民主政治并非格格不入，甚至可以互为补充 = compatible et complémentaire.'),
-    lq('c21p-q3', 'Quelle critique est formulée envers un usage politique du confucianisme ?', ['Il est trop ancien', 'Il peut servir d\'outil pour refuser les valeurs universelles', 'Il est inaccessible au peuple', 'Il n\'a aucune influence réelle'], 1, '以文化传统为由拒绝普世价值，可能成为某些政治目的的工具.'),
+    lq('c21p-q1', 'Que désigne la notion confucéenne de 仁政 ?', ['Gouvernement des lettrés', 'Gouvernement militaire', 'Gouvernement bienveillant centré sur la vertu', 'Gouvernement par les lois'], 2, '仁政 = gouvernement bienveillant (rén = bienveillance, zhèng = gouvernement).'),
+    lq('c21p-q2', 'Que soutiennent les partisans du confucianisme en politique ?', ['Qu\'il faut remplacer la démocratie', 'Qu\'il s\'oppose aux droits de l\'homme', 'Qu\'il faut fermer la Chine', 'Qu\'il est compatible et complémentaire avec la démocratie'], 3, '与现代民主政治并非格格不入，甚至可以互为补充 = compatible et complémentaire.'),
+    lq('c21p-q3', 'Quelle critique est formulée envers un usage politique du confucianisme ?', ['Il peut servir d\'outil pour refuser les valeurs universelles', 'Il est trop ancien', 'Il est inaccessible au peuple', 'Il n\'a aucune influence réelle'], 0, '以文化传统为由拒绝普世价值，可能成为某些政治目的的工具.'),
     lq('c21p-q4', 'Quelle tension centrale le texte met-il en lumière ?', ['Tradition vs modernité économique', 'Identité culturelle vs ouverture aux droits humains universels', 'Religion vs État', 'Est vs Ouest géographique'], 1, '坚守文化主体性 vs 对普世人权价值的开放与尊重.'),
   ],
 };
@@ -550,9 +550,9 @@ Sa poésie est appelée « histoire en vers » : avec un réalisme saisissant, i
 Dans « Vue du printemps », le célèbre distique « l'État est en ruines, mais fleuves et monts demeurent ; au printemps, dans la cité, herbes et arbres poussent touffus » oppose la permanence de la nature à la douleur de la chute — une émotion bouleversante.
 L'influence de Du Fu sur les poètes ultérieurs est immense ; son principe créatif « ne pas s'arrêter tant que les mots n'ont pas frappé les esprits » est devenu le symbole de la quête de perfection littéraire.`,
   questions: [
-    lq('c21po-q1', 'Quel surnom est donné à Du Fu ?', ['诗仙 (génie immortel des poètes)', '诗圣 (saint des poètes)', '诗鬼 (fantôme des poètes)', '诗王 (roi des poètes)'], 1, '被后世尊称为"诗圣" = honoré du titre de saint des poètes.'),
-    lq('c21po-q2', 'Pourquoi la poésie de Du Fu est-elle appelée 诗史 ?', ['Elle est la plus ancienne', 'Elle décrit des batailles', 'Elle témoigne réalistement de l\'histoire et des souffrances du peuple', 'Elle est écrite en style épique'], 2, '以现实主义手法记录了历史的沧桑与百姓的疾苦 = témoignage réaliste de l\'histoire.'),
-    lq('c21po-q3', 'Dans le vers cité, qu\'est-ce qui s\'oppose à la destruction de l\'État ?', ['La cité en ruines', 'La permanence des fleuves et des montagnes', 'Le retour des soldats', 'Les fleurs du printemps'], 1, '国破山河在 = l\'État est détruit mais les fleuves et monts demeurent.'),
+    lq('c21po-q1', 'Quel surnom est donné à Du Fu ?', ['诗仙 (génie immortel des poètes)', '诗鬼 (fantôme des poètes)', '诗圣 (saint des poètes)', '诗王 (roi des poètes)'], 2, '被后世尊称为"诗圣" = honoré du titre de saint des poètes.'),
+    lq('c21po-q2', 'Pourquoi la poésie de Du Fu est-elle appelée 诗史 ?', ['Elle est la plus ancienne', 'Elle décrit des batailles', 'Elle est écrite en style épique', 'Elle témoigne réalistement de l\'histoire et des souffrances du peuple'], 3, '以现实主义手法记录了历史的沧桑与百姓的疾苦 = témoignage réaliste de l\'histoire.'),
+    lq('c21po-q3', 'Dans le vers cité, qu\'est-ce qui s\'oppose à la destruction de l\'État ?', ['La permanence des fleuves et des montagnes', 'La cité en ruines', 'Le retour des soldats', 'Les fleurs du printemps'], 0, '国破山河在 = l\'État est détruit mais les fleuves et monts demeurent.'),
     lq('c21po-q4', 'Que signifie 语不惊人死不休 ?', ['Parler doucement jusqu\'à la mort', 'Ne pas s\'arrêter de créer tant que les mots ne frappent pas les esprits', 'Mourir pour ses idéaux poétiques', 'Rester silencieux plutôt que de mal parler'], 1, '语不惊人死不休 = ne s\'arrêter qu\'une fois les mots capables de frapper les esprits.'),
   ],
 };
@@ -579,9 +579,9 @@ Cette valorisation de « l'utilité de l'inutile » contraste nettement avec l'a
 Zhuangzi développa davantage l'esprit de liberté taoïste : « par le non-agir, rien n'est laissé sans être fait » — en suivant la nature sans forcer, toutes choses se transforment d'elles-mêmes.
 La philosophie taoïste, par sa pensée dialectique profonde, offre à l'homme moderne des ressources spirituelles pour trouver la paix intérieure dans un monde bruyant.`,
   questions: [
-    lq('c22t-q1', 'Que signifie « 道可道，非常道 » ?', ['Le Tao est facile à comprendre', 'Le Tao que l\'on peut nommer n\'est pas l\'éternel Tao', 'Le nom du Tao est constant', 'Le Tao change constamment'], 1, 'Le Tao exprimable en mots n\'est pas le Tao éternel et absolu.'),
-    lq('c22t-q2', 'Comment Laozi illustre-t-il l\'utilité du vide ?', ['Par la rivière qui coule', 'Par la chambre dont le vide crée l\'utilité', 'Par le silence de la forêt', 'Par la vacuité de l\'esprit'], 1, '"当其无，有室之用" = c\'est le vide de la pièce qui crée son utilité.'),
-    lq('c22t-q3', 'Que signifie 无为而无不为 chez Zhuangzi ?', ['Ne rien faire du tout', 'Par le non-agir forcé, tout est fait naturellement', 'Travailler sans récompense', 'Agir sans penser'], 1, '无为 = non-agir (pas de force), 无不为 = rien n\'est laissé sans être fait : l\'harmonie naturelle accomplit tout.'),
+    lq('c22t-q1', 'Que signifie « 道可道，非常道 » ?', ['Le Tao est facile à comprendre', 'Le nom du Tao est constant', 'Le Tao que l\'on peut nommer n\'est pas l\'éternel Tao', 'Le Tao change constamment'], 2, 'Le Tao exprimable en mots n\'est pas le Tao éternel et absolu.'),
+    lq('c22t-q2', 'Comment Laozi illustre-t-il l\'utilité du vide ?', ['Par la rivière qui coule', 'Par la vacuité de l\'esprit', 'Par le silence de la forêt', 'Par la chambre dont le vide crée l\'utilité'], 3, '"当其无，有室之用" = c\'est le vide de la pièce qui crée son utilité.'),
+    lq('c22t-q3', 'Que signifie 无为而无不为 chez Zhuangzi ?', ['Par le non-agir, tout s\'accomplit naturellement', 'Ne rien faire du tout', 'Travailler sans récompense', 'Agir sans penser'], 0, '无为 = non-agir (pas de force), 无不为 = rien n\'est laissé sans être fait : l\'harmonie naturelle accomplit tout.'),
     lq('c22t-q4', 'Quelle pertinence le texte attribue-t-il au taoïsme aujourd\'hui ?', ['Une réforme politique', 'Des ressources spirituelles pour trouver la paix intérieure', 'Un modèle économique', 'Un guide de conduite sociale'], 1, '为现代人提供...寻求内心宁静的精神资源 = ressources pour la paix intérieure.'),
   ],
 };
@@ -605,9 +605,9 @@ Le linguiste français Saussure a souligné que la langue est un « système de 
 Pourtant, le système logographique du chinois construit le sens d'une autre façon : la forme même des caractères recèle souvent des images, de l'histoire et une réflexion philosophique.
 Sous le double choc de la mondialisation et du numérique, comment préserver la richesse de la langue et éviter l'appauvrissement de la langue maternelle — c'est la question de notre époque pour les sciences humaines.`,
   questions: [
-    lq('c22l-q1', 'Selon le texte, quel double rôle joue la langue ?', ['Communication et distraction', 'Outil de communication et vecteur de mémoire collective', 'Moyen d\'expression et source de conflits', 'Identité nationale et économie'], 1, '语言是交流的工具，更是集体记忆的载体与文化基因的传承媒介.'),
-    lq('c22l-q2', 'Que souligne Saussure sur la nature du langage ?', ['Les mots ont un sens universel', 'Le sens vient des oppositions entre mots, pas des mots eux-mêmes', 'Toutes les langues sont équivalentes', 'L\'écriture prime sur l\'oral'], 1, '意义并非源于词汇本身，而是源于词汇与其他词汇的对立关系.'),
-    lq('c22l-q3', 'En quoi les caractères chinois diffèrent-ils selon le texte ?', ['Ils sont plus faciles à apprendre', 'Leur forme renferme images, histoire et réflexion philosophique', 'Ils sont uniquement phonétiques', 'Ils ont moins de nuances que l\'alphabet'], 1, '字形本身往往蕴含着意象、历史与哲思 = la forme recèle images, histoire et philosophie.'),
+    lq('c22l-q1', 'Selon le texte, quel double rôle joue la langue ?', ['Communication et distraction', 'Moyen d\'expression et source de conflits', 'Outil de communication et vecteur de mémoire collective', 'Identité nationale et économie'], 2, '语言是交流的工具，更是集体记忆的载体与文化基因的传承媒介.'),
+    lq('c22l-q2', 'Que souligne Saussure sur la nature du langage ?', ['Les mots ont un sens universel', 'L\'écriture prime sur l\'oral', 'Toutes les langues sont équivalentes', 'Le sens vient des oppositions entre mots, pas des mots eux-mêmes'], 3, '意义并非源于词汇本身，而是源于词汇与其他词汇的对立关系.'),
+    lq('c22l-q3', 'En quoi les caractères chinois diffèrent-ils selon le texte ?', ['Leur forme renferme images, histoire et réflexion philosophique', 'Ils sont plus faciles à apprendre', 'Ils sont uniquement phonétiques', 'Ils ont moins de nuances que l\'alphabet'], 0, '字形本身往往蕴含着意象、历史与哲思 = la forme recèle images, histoire et philosophie.'),
     lq('c22l-q4', 'Quelle menace double pèse sur la richesse des langues ?', ['Guerres et famines', 'Mondialisation et numérique', 'Urbanisation et exode rural', 'Standardisation scolaire et médias'], 1, '全球化与数字化的双重冲击 = double choc de la mondialisation et du numérique.'),
   ],
 };
@@ -663,8 +663,8 @@ Grandpa and grandma also live with us.`,
     q: {
       'a1f-q1': { promptEn: "What is the narrator's name?", choicesEn: ['Xiǎohóng', 'Xiǎomíng', 'Xiǎolì', 'Xiǎowáng'], explanationEn: '我叫小明 = my name is Xiaoming.' },
       'a1f-q2': { promptEn: 'How many people are in the family?', choicesEn: ['3', '4', '5', '6'], explanationEn: '我家有五口人 = my family has five people (五 = 5).' },
-      'a1f-q3': { promptEn: 'Where does the family live?', choicesEn: ['Shanghai', 'Guangzhou', 'Beijing', 'Chengdu'], explanationEn: '我们住在北京 = we live in Beijing.' },
-      'a1f-q4': { promptEn: 'Which family relation is mentioned last?', choicesEn: ['Dad and mom', 'Older brother', 'Grandpa and grandma', 'Little sister'], explanationEn: 'The last sentence mentions 爷爷和奶奶 (paternal grandpa and grandma).' },
+      'a1f-q3': { promptEn: 'Where does the family live?', choicesEn: ["Shanghai", "Guangzhou", "Chengdu", "Beijing"], explanationEn: '我们住在北京 = we live in Beijing.' },
+      'a1f-q4': { promptEn: 'Which family relation is mentioned last?', choicesEn: ["Grandpa and grandma", "Older brother", "Dad and mom", "Little sister"], explanationEn: 'The last sentence mentions 爷爷和奶奶 (paternal grandpa and grandma).' },
     },
   },
   'a1-ecole': {
@@ -676,10 +676,10 @@ I have three books.
 At 3 p.m. I go home.
 I really like school.`,
     q: {
-      'a1e-q1': { promptEn: 'What day is it?', choicesEn: ['Tuesday', 'Wednesday', 'Monday', 'Thursday'], explanationEn: '今天是星期一 = today is Monday (星期一).' },
+      'a1e-q1': { promptEn: 'What day is it?', choicesEn: ["Tuesday", "Monday", "Wednesday", "Thursday"], explanationEn: '今天是星期一 = today is Monday (星期一).' },
       'a1e-q2': { promptEn: 'How many books does the narrator have?', choicesEn: ['1', '2', '3', '4'], explanationEn: '我有三本书 = I have three books (三 = 3).' },
-      'a1e-q3': { promptEn: 'What time does he go home?', choicesEn: ['2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.'], explanationEn: '下午三点 = 3 p.m. (three in the afternoon).' },
-      'a1e-q4': { promptEn: "What is the narrator's feeling about school?", choicesEn: ['He hates it', 'He likes it a lot', 'He is indifferent', 'He is afraid'], explanationEn: '我很喜欢学校 = I really like school.' },
+      'a1e-q3': { promptEn: 'What time does he go home?', choicesEn: ["2 p.m.", "5 p.m.", "4 p.m.", "3 p.m."], explanationEn: '下午三点 = 3 p.m. (three in the afternoon).' },
+      'a1e-q4': { promptEn: "What is the narrator's feeling about school?", choicesEn: ["He likes it a lot", "He hates it", "He is indifferent", "He is afraid"], explanationEn: '我很喜欢学校 = I really like school.' },
     },
   },
   'a2-weekend': {
@@ -691,10 +691,10 @@ In the afternoon, we went to a café for coffee.
 We chatted a lot and were very happy.
 In the evening I got home at 8 p.m., very tired but very glad.`,
     q: {
-      'a2w-q1': { promptEn: 'Where did the narrator and his friend go?', choicesEn: ['The cinema', 'The restaurant', 'The park', 'The library'], explanationEn: '我和朋友一起去了公园 = we went to the park.' },
-      'a2w-q2': { promptEn: 'Which sport did they play?', choicesEn: ['Soccer', 'Tennis', 'Swimming', 'Basketball'], explanationEn: '打了篮球 = played basketball. 打 + 篮球.' },
-      'a2w-q3': { promptEn: 'What time did the narrator get home?', choicesEn: ['5 p.m.', '7 p.m.', '8 p.m.', '10 p.m.'], explanationEn: '晚上八点 = 8 p.m. (eight in the evening).' },
-      'a2w-q4': { promptEn: 'How did the narrator feel on the way home?', choicesEn: ['Sad and rested', 'Tired but happy', 'Tired and sad', 'Energetic and happy'], explanationEn: '非常累，但是很高兴 = very tired, but very happy.' },
+      'a2w-q1': { promptEn: 'Where did the narrator and his friend go?', choicesEn: ["The cinema", "The park", "The restaurant", "The library"], explanationEn: '我和朋友一起去了公园 = we went to the park.' },
+      'a2w-q2': { promptEn: 'Which sport did they play?', choicesEn: ["Soccer", "Tennis", "Basketball", "Swimming"], explanationEn: '打了篮球 = played basketball. 打 + 篮球.' },
+      'a2w-q3': { promptEn: 'What time did the narrator get home?', choicesEn: ["5 p.m.", "7 p.m.", "10 p.m.", "8 p.m."], explanationEn: '晚上八点 = 8 p.m. (eight in the evening).' },
+      'a2w-q4': { promptEn: 'How did the narrator feel on the way home?', choicesEn: ["Tired but happy", "Sad and rested", "Tired and sad", "Energetic and happy"], explanationEn: '非常累，但是很高兴 = very tired, but very happy.' },
     },
   },
   'a2-marche': {
@@ -706,10 +706,10 @@ Apples cost 5 yuan per catty, bananas 3 yuan per catty.
 Mom thought the prices were not expensive.
 We also bought a fish, planned for dinner.`,
     q: {
-      'a2m-q1': { promptEn: 'Who took the narrator to the market?', choicesEn: ['Dad', 'Grandma', 'Mom', 'A friend'], explanationEn: '妈妈带我去市场 = mom took me to the market.' },
-      'a2m-q2': { promptEn: 'How much do bananas cost per catty?', choicesEn: ['2 yuan', '3 yuan', '5 yuan', '8 yuan'], explanationEn: '香蕉三块钱一斤 = bananas cost 3 yuan per catty.' },
+      'a2m-q1': { promptEn: 'Who took the narrator to the market?', choicesEn: ["Dad", "Mom", "Grandma", "A friend"], explanationEn: '妈妈带我去市场 = mom took me to the market.' },
+      'a2m-q2': { promptEn: 'How much do bananas cost per catty?', choicesEn: ["2 yuan", "5 yuan", "3 yuan", "8 yuan"], explanationEn: '香蕉三块钱一斤 = bananas cost 3 yuan per catty.' },
       'a2m-q3': { promptEn: 'Which animal is bought?', choicesEn: ['Chicken', 'Crab', 'Shrimp', 'Fish'], explanationEn: '买了一条鱼 = bought a fish. 条 is the classifier for fish.' },
-      'a2m-q4': { promptEn: 'What does mom think of the prices?', choicesEn: ['Too expensive', 'Not expensive', 'Normal', "She doesn't know"], explanationEn: '妈妈觉得价格不贵 = mom thinks the prices are not expensive.' },
+      'a2m-q4': { promptEn: 'What does mom think of the prices?', choicesEn: ["Not expensive", "Too expensive", "Normal", "She doesn't know"], explanationEn: '妈妈觉得价格不贵 = mom thinks the prices are not expensive.' },
     },
   },
   'b11-voyage': {
@@ -721,10 +721,10 @@ We visited the Bund and the Yu Garden.
 The Bund's night view is magnificent; it impressed me deeply.
 We spent three days in Shanghai and ate many delicious things, like xiaolongbao.`,
     q: {
-      'b11v-q1': { promptEn: 'How did they travel to Shanghai?', choicesEn: ['By plane', 'By bus', 'By high-speed train', 'By car'], explanationEn: '坐高铁去的 = went by high-speed train (高铁).' },
-      'b11v-q2': { promptEn: 'How long is the journey?', choicesEn: ['1 hour', '2 hours', '3 hours', '4 hours'], explanationEn: '大概两个小时就到了 = about two hours to arrive.' },
-      'b11v-q3': { promptEn: 'What impressed the narrator most?', choicesEn: ['The skyscrapers', 'The Yu Garden', "The Bund's night view", 'The xiaolongbao'], explanationEn: '外滩的夜景...让我印象深刻 = the Bund night view impressed me deeply.' },
-      'b11v-q4': { promptEn: 'How many days did they spend in Shanghai?', choicesEn: ['2', '3', '4', '5'], explanationEn: '在上海待了三天 = spent three days in Shanghai.' },
+      'b11v-q1': { promptEn: 'How did they travel to Shanghai?', choicesEn: ["By plane", "By high-speed train", "By bus", "By car"], explanationEn: '坐高铁去的 = went by high-speed train (高铁).' },
+      'b11v-q2': { promptEn: 'How long is the journey?', choicesEn: ["1 hour", "3 hours", "2 hours", "4 hours"], explanationEn: '大概两个小时就到了 = about two hours to arrive.' },
+      'b11v-q3': { promptEn: 'What impressed the narrator most?', choicesEn: ["The Shanghai metro", "The Yu Garden", "Xiaolongbao", "The Bund's night view"], explanationEn: '外滩的夜景...让我印象深刻 = the Bund night view impressed me deeply.' },
+      'b11v-q4': { promptEn: 'How many days did they spend in Shanghai?', choicesEn: ["3", "2", "4", "5"], explanationEn: '在上海待了三天 = spent three days in Shanghai.' },
       'b11v-q5': { promptEn: 'Which culinary specialty is mentioned?', choicesEn: ['Fried dumplings', 'Xiaolongbao', 'Peking duck', 'Wonton dumplings'], explanationEn: '小笼包 = xiaolongbao, famous Shanghai steamed dumplings.' },
     },
   },
@@ -737,10 +737,10 @@ Sichuan cuisine is very spicy, Cantonese cuisine is rather light.
 Chinese people like to eat with chopsticks, a tradition thousands of years old.
 Today, more and more young people also enjoy Western food.`,
     q: {
-      'b11h-q1': { promptEn: 'What does the expression "民以食为天" mean?', choicesEn: ['Cook every day', 'Food is essential for the people', 'Share food', 'Heaven feeds the people'], explanationEn: '民以食为天 = "the people take food as their heaven" → food is essential.' },
-      'b11h-q2': { promptEn: 'Which food preference distinguishes North from South?', choicesEn: ['North: rice / South: wheat', 'North: wheat / South: rice', 'North: spicy / South: sweet', 'North: meat / South: vegetables'], explanationEn: '南方人喜欢吃米饭，北方人更喜欢吃面食 = South: rice, North: wheat food.' },
-      'b11h-q3': { promptEn: 'How is Cantonese cuisine described?', choicesEn: ['Very spicy', 'Very sweet', 'Rather light', 'Very oily'], explanationEn: '广东菜比较清淡 = Cantonese cuisine is rather light.' },
-      'b11h-q4': { promptEn: 'What trend is observed among young people?', choicesEn: ['They eat less', 'They prefer Sichuan cuisine', 'They also enjoy Western food', 'They give up chopsticks'], explanationEn: '越来越多的年轻人也喜欢吃西餐 = more and more young people like Western food.' },
+      'b11h-q1': { promptEn: 'What does the expression "民以食为天" mean?', choicesEn: ["Cook every day", "Share food", "Food is essential for the people", "Heaven feeds the people"], explanationEn: '民以食为天 = "the people take food as their heaven" → food is essential.' },
+      'b11h-q2': { promptEn: 'Which food preference distinguishes North from South?', choicesEn: ["North: rice / South: wheat", "North: meat / South: vegetables", "North: spicy / South: sweet", "North: wheat / South: rice"], explanationEn: '南方人喜欢吃米饭，北方人更喜欢吃面食 = South: rice, North: wheat food.' },
+      'b11h-q3': { promptEn: 'How is Cantonese cuisine described?', choicesEn: ["Rather light", "Very sweet", "Very spicy", "Very oily"], explanationEn: '广东菜比较清淡 = Cantonese cuisine is rather light.' },
+      'b11h-q4': { promptEn: 'What trend is observed among young people?', choicesEn: ["They eat less", "They also enjoy Western food", "They prefer Sichuan cuisine", "They give up chopsticks"], explanationEn: '越来越多的年轻人也喜欢吃西餐 = more and more young people like Western food.' },
     },
   },
   'b12-environnement': {
@@ -752,9 +752,9 @@ To solve this problem, the government has introduced a series of policies.
 For example, limiting the number of cars and vigorously developing public transport.
 As ordinary citizens, we can also drive less, cycle more, and do our part for the environment.`,
     q: {
-      'b12e-q1': { promptEn: 'What is the main cause of air pollution mentioned?', choicesEn: ['Tourism', 'Industrial development', 'Forest fires', 'Agriculture'], explanationEn: '由于工业发展，空气污染越来越严重 = due to industrial development.' },
-      'b12e-q2': { promptEn: 'What are many residents forced to do?', choicesEn: ['Move to the countryside', 'Wear a mask', 'Stop working', 'Buy an air filter'], explanationEn: '不得不戴口罩出门 = forced to wear a mask to go out.' },
-      'b12e-q3': { promptEn: 'Which government measure is cited?', choicesEn: ['Close factories', 'Plant trees', 'Limit the number of cars', 'Tax polluters'], explanationEn: '限制汽车数量 = limit the number of cars.' },
+      'b12e-q1': { promptEn: 'What is the main cause of air pollution mentioned?', choicesEn: ["Tourism", "Forest fires", "Industrial development", "Agriculture"], explanationEn: '由于工业发展，空气污染越来越严重 = due to industrial development.' },
+      'b12e-q2': { promptEn: 'What are many residents forced to do?', choicesEn: ["Move to the countryside", "Buy an air filter", "Stop working", "Wear a mask"], explanationEn: '不得不戴口罩出门 = forced to wear a mask to go out.' },
+      'b12e-q3': { promptEn: 'Which government measure is cited?', choicesEn: ["Limit the number of cars", "Plant trees", "Close factories", "Tax polluters"], explanationEn: '限制汽车数量 = limit the number of cars.' },
       'b12e-q4': { promptEn: 'What can each citizen do according to the text?', choicesEn: ['Protest', 'Drive less and cycle more', 'Pay green taxes', 'Move to the countryside'], explanationEn: '少开车，多骑自行车，为环保出一份力 = drive less, cycle more.' },
     },
   },
@@ -767,10 +767,10 @@ However, excessive use of social media can also bring some problems.
 For example, some people spend too much time scrolling on their phones, affecting work and sleep.
 Therefore, learning to use social media sensibly is very important.`,
     q: {
-      'b12r-q1': { promptEn: 'Which two Chinese platforms are mentioned?', choicesEn: ['TikTok and Baidu', 'WeChat and Weibo', 'Alibaba and Taobao', 'Douyin and Bilibili'], explanationEn: '微信 (WeChat) 和微博 (Weibo) are the platforms cited.' },
-      'b12r-q2': { promptEn: 'What main advantage of social media is cited?', choicesEn: ['Making money', 'Staying in touch anytime', 'Learning languages', 'Finding a job'], explanationEn: '随时随地与朋友保持联系 = staying in touch anywhere, anytime.' },
-      'b12r-q3': { promptEn: 'What problem is mentioned?', choicesEn: ['Hacking', 'Spending too much money', 'Too much phone time, harming sleep', 'Fake news'], explanationEn: '花太多时间刷手机，影响工作和睡眠 = too much phone time, affecting work and sleep.' },
-      'b12r-q4': { promptEn: "What is the text's conclusion?", choicesEn: ['Stop using social media', 'Social media is dangerous', 'Learn to use social media sensibly', 'Prefer face-to-face contact'], explanationEn: '学会合理使用社交媒体非常重要 = it is important to learn to use it sensibly.' },
+      'b12r-q1': { promptEn: 'Which two Chinese platforms are mentioned?', choicesEn: ["TikTok and Baidu", "Alibaba and Taobao", "WeChat and Weibo", "Douyin and Bilibili"], explanationEn: '微信 (WeChat) 和微博 (Weibo) are the platforms cited.' },
+      'b12r-q2': { promptEn: 'What main advantage of social media is cited?', choicesEn: ["Making money", "Finding a job", "Learning languages", "Staying in touch anytime"], explanationEn: '随时随地与朋友保持联系 = staying in touch anywhere, anytime.' },
+      'b12r-q3': { promptEn: 'What problem is mentioned?', choicesEn: ["Too much phone time, harming sleep", "Spending too much money", "Hacking", "Fake news"], explanationEn: '花太多时间刷手机，影响工作和睡眠 = too much phone time, affecting work and sleep.' },
+      'b12r-q4': { promptEn: "What is the text's conclusion?", choicesEn: ["Stop using social media", "Learn to use social media sensibly", "Social media is dangerous", "Prefer face-to-face contact"], explanationEn: '学会合理使用社交媒体非常重要 = it is important to learn to use it sensibly.' },
     },
   },
   'b21-education': {
@@ -782,10 +782,10 @@ In recent years, the term "neijuan" (involution) has become more and more widesp
 Many experts call for reforming the education system, easing students' burden and emphasizing the development of creativity.
 How to guarantee education quality while giving students more room to develop freely — that is a major challenge for China's education today.`,
     q: {
-      'b21ed-q1': { promptEn: 'What is the gaokao?', choicesEn: ['A university degree', 'The national college entrance exam', 'A scholarship contest', 'A regional exam'], explanationEn: '全国统一高等学校招生考试 = national unified college entrance exam.' },
-      'b21ed-q2': { promptEn: 'How many students take the gaokao each year?', choicesEn: ['500,000', '5 million', 'More than 10 million', '20 million'], explanationEn: '超过一千万 = more than ten million.' },
-      'b21ed-q3': { promptEn: 'What does the term 内卷 reflect?', choicesEn: ['The ongoing reform', 'The enormous pressure on students', 'The success of the education system', 'Cooperation among students'], explanationEn: '内卷 反映了学生们面临的巨大压力 = reflects the enormous pressure on students.' },
-      'b21ed-q4': { promptEn: 'What do experts recommend?', choicesEn: ['More exams', 'Closing universities', 'Reform, ease the burden and develop creativity', 'Increase class hours'], explanationEn: '改革教育体制，减轻学生负担，注重创新能力的培养.' },
+      'b21ed-q1': { promptEn: 'What is the gaokao?', choicesEn: ["A university degree", "A scholarship contest", "The national college entrance exam", "A regional exam"], explanationEn: '全国统一高等学校招生考试 = national unified college entrance exam.' },
+      'b21ed-q2': { promptEn: 'How many students take the gaokao each year?', choicesEn: ["500,000", "5 million", "20 million", "More than 10 million"], explanationEn: '超过一千万 = more than ten million.' },
+      'b21ed-q3': { promptEn: 'What does the term 内卷 reflect?', choicesEn: ["The enormous pressure on students", "The ongoing reform", "The success of the education system", "Cooperation among students"], explanationEn: '内卷 反映了学生们面临的巨大压力 = reflects the enormous pressure on students.' },
+      'b21ed-q4': { promptEn: 'What do experts recommend?', choicesEn: ["More exams", "Reform, ease the burden and develop creativity", "Closing universities", "Increase class hours"], explanationEn: '改革教育体制，减轻学生负担，注重创新能力的培养.' },
     },
   },
   'b21-tradition': {
@@ -797,9 +797,9 @@ Elders give red envelopes to the young, a symbol of happiness and good fortune.
 As times change, more and more people choose to send electronic red envelopes by phone to give New Year greetings.
 The Spring Festival is not only a time of family reunion, but also an important occasion to pass on culture and continue traditions.`,
     q: {
-      'b21ch-q1': { promptEn: 'When does the Spring Festival usually fall?', choicesEn: ['Mid-December', 'Late January or early February', 'March', 'Early April'], explanationEn: '通常在每年一月底或二月初 = usually late January or early February.' },
-      'b21ch-q2': { promptEn: 'What do the red envelopes given to the young symbolize?', choicesEn: ['Physical strength', 'Social rank', 'Happiness and good fortune', 'Gratitude'], explanationEn: '寓意吉祥如意 = symbolizes happiness and good fortune.' },
-      'b21ch-q3': { promptEn: 'What new practice is developing for greetings?', choicesEn: ['Sending letters', 'Setting off fireworks', 'Sending electronic red envelopes by phone', 'Planting a tree'], explanationEn: '越来越多的人选择用手机发电子红包来拜年.' },
+      'b21ch-q1': { promptEn: 'When does the Spring Festival usually fall?', choicesEn: ["Mid-December", "March", "Late January or early February", "Early April"], explanationEn: '通常在每年一月底或二月初 = usually late January or early February.' },
+      'b21ch-q2': { promptEn: 'What do the red envelopes given to the young symbolize?', choicesEn: ["Physical strength", "Social rank", "Gratitude", "Happiness and good fortune"], explanationEn: '寓意吉祥如意 = symbolizes happiness and good fortune.' },
+      'b21ch-q3': { promptEn: 'What new practice is developing for greetings?', choicesEn: ["Sending electronic red envelopes by phone", "Setting off fireworks", "Sending letters", "Planting a tree"], explanationEn: '越来越多的人选择用手机发电子红包来拜年.' },
       'b21ch-q4': { promptEn: 'What dual role does the Spring Festival play according to the text?', choicesEn: ['Religious and commercial festival', 'Family reunion and cultural transmission', 'Rest and food festival', 'Festival of children and elders'], explanationEn: '不仅是家庭团聚的时刻，也是传承文化、延续传统的重要时机.' },
     },
   },
@@ -812,9 +812,9 @@ The issue of "left-behind children" is particularly salient: parents go to work 
 The income gap and disparities in public services between city and countryside remain major urgent challenges.
 How to achieve inclusive growth so the fruits of urbanization benefit a wider public — that is what tests the wisdom of decision-makers.`,
     q: {
-      'b22u-q1': { promptEn: 'When did this urbanization process begin?', choicesEn: ['The Cultural Revolution', 'The reform and opening-up', 'World War II', 'The founding of the PRC'], explanationEn: '改革开放以来 = since the reform and opening-up.' },
-      'b22u-q2': { promptEn: 'Who are the 留守儿童?', choicesEn: ['City children schooled in the countryside', 'Children left in the countryside while parents work in the city', 'Orphans cared for by the state', 'Migrant children in the city'], explanationEn: '父母进城务工，孩子留在农村由祖父母照看 = parents in the city, children left in the countryside.' },
-      'b22u-q3': { promptEn: 'What main challenge is mentioned between city and countryside?', choicesEn: ['Language differences', 'Income gap and public service disparities', 'Cultural rivalries', 'Climate differences'], explanationEn: '收入差距和公共服务差异 = income gap and public service disparities.' },
+      'b22u-q1': { promptEn: 'When did this urbanization process begin?', choicesEn: ["The Cultural Revolution", "World War II", "The reform and opening-up", "The founding of the PRC"], explanationEn: '改革开放以来 = since the reform and opening-up.' },
+      'b22u-q2': { promptEn: 'Who are the 留守儿童?', choicesEn: ["City children schooled in the countryside", "Migrant children in the city", "Orphans cared for by the state", "Children left in the countryside while parents work in the city"], explanationEn: '父母进城务工，孩子留在农村由祖父母照看 = parents in the city, children left in the countryside.' },
+      'b22u-q3': { promptEn: 'What main challenge is mentioned between city and countryside?', choicesEn: ["Income gap and public service disparities", "Language differences", "Cultural rivalries", "Climate differences"], explanationEn: '收入差距和公共服务差异 = income gap and public service disparities.' },
       'b22u-q4': { promptEn: 'What does 包容性增长 mean in the text?', choicesEn: ['Rapid growth', 'Inclusive growth benefiting all', 'Green growth', 'Export-driven growth'], explanationEn: '包容性增长 = inclusive growth, benefiting the greatest number.' },
     },
   },
@@ -827,10 +827,10 @@ Historically, Wang Xizhi is revered as the "sage of calligraphy"; his work "Pref
 Today, calligraphy is inscribed on UNESCO's Intangible Cultural Heritage list.
 More and more young people are taking up the brush again, seeking serenity in the fast-paced modern life.`,
     q: {
-      'b22a-q1': { promptEn: 'How is calligraphy described metaphorically?', choicesEn: ['Living painting', 'Silent poetry, formless dance', 'Visible music', 'Architecture of the brush'], explanationEn: '被誉为"无声的诗，无形的舞" = silent poetry, formless dance.' },
-      'b22a-q2': { promptEn: 'Which calligrapher is nicknamed 书圣?', choicesEn: ['Su Shi', 'Ouyang Xun', 'Wang Xizhi', 'Yan Zhenqing'], explanationEn: '王羲之被尊为"书圣" = Wang Xizhi is the "sage of calligraphy".' },
-      'b22a-q3': { promptEn: 'What international recognition has calligraphy received?', choicesEn: ['Nobel Peace Prize', 'UNESCO Intangible Heritage', 'World art monument', 'Olympic gold medal'], explanationEn: '被列入联合国教科文组织非物质文化遗产名录 = inscribed on UNESCO Intangible Heritage.' },
-      'b22a-q4': { promptEn: 'Why are young people taking up calligraphy again?', choicesEn: ['To find a job', 'To impress their parents', 'To find serenity in modern life', 'To travel to China'], explanationEn: '在快节奏的现代生活中寻找一份宁静 = to find serenity in a hectic life.' },
+      'b22a-q1': { promptEn: 'How is calligraphy described metaphorically?', choicesEn: ["Living painting", "Visible music", "Silent poetry, formless dance", "Architecture of the brush"], explanationEn: '被誉为"无声的诗，无形的舞" = silent poetry, formless dance.' },
+      'b22a-q2': { promptEn: 'Which calligrapher is nicknamed 书圣?', choicesEn: ["Su Shi", "Ouyang Xun", "Yan Zhenqing", "Wang Xizhi"], explanationEn: '王羲之被尊为"书圣" = Wang Xizhi is the "sage of calligraphy".' },
+      'b22a-q3': { promptEn: 'What international recognition has calligraphy received?', choicesEn: ["UNESCO Intangible Heritage", "Nobel Peace Prize", "World art monument", "Olympic gold medal"], explanationEn: '被列入联合国教科文组织非物质文化遗产名录 = inscribed on UNESCO Intangible Heritage.' },
+      'b22a-q4': { promptEn: 'Why are young people taking up calligraphy again?', choicesEn: ["To find a job", "To find serenity in modern life", "To impress their parents", "To travel to China"], explanationEn: '在快节奏的现代生活中寻找一份宁静 = to find serenity in a hectic life.' },
     },
   },
   'c11-philosophie': {
@@ -841,10 +841,10 @@ Confucius (551-479 BC) is the founder of the Confucian school; the central conce
 The Confucian view of education holds that learning is not only acquiring knowledge, but also a path to forge one's character and cultivate oneself.
 Although it has evolved over millennia, Confucian thought still plays a significant role in contemporary Chinese society.`,
     q: {
-      'c11p-q1': { promptEn: 'What is the central concept of Confucius’s thought?', choicesEn: ['礼 (the rites)', '仁 (love/benevolence toward others)', '义 (justice)', '智 (wisdom)'], explanationEn: '其思想核心是"仁"——即对他人的爱与关怀.' },
-      'c11p-q2': { promptEn: 'What does the concept of 礼 represent?', choicesEn: ['Brotherly love', 'Self-sacrifice', 'Norms and order in social relations', 'Academic knowledge'], explanationEn: '礼 强调社会关系中的规范与秩序 = norms and order in social relations.' },
-      'c11p-q3': { promptEn: 'According to the Confucian view of education, learning serves to:', choicesEn: ['Accumulate wealth', 'Forge character and cultivate oneself', 'Dominate others', 'Obey rulers'], explanationEn: '学习是塑造人格、修身齐家的途径 = forge character and cultivate oneself.' },
-      'c11p-q4': { promptEn: 'What is the geographic scope of Confucian influence according to the text?', choicesEn: ['China only', 'Southeast Asia', 'East Asia', 'The whole world'], explanationEn: '对东亚文明的塑造产生了深远影响 = influence on East Asian civilization.' },
+      'c11p-q1': { promptEn: 'What is the central concept of Confucius’s thought?', choicesEn: ["礼 (the rites)", "义 (justice)", "仁 (love/benevolence toward others)", "智 (wisdom)"], explanationEn: '其思想核心是"仁"——即对他人的爱与关怀.' },
+      'c11p-q2': { promptEn: 'What does the concept of 礼 represent?', choicesEn: ["Brotherly love", "Self-sacrifice", "Academic knowledge", "Norms and order in social relations"], explanationEn: '礼 强调社会关系中的规范与秩序 = norms and order in social relations.' },
+      'c11p-q3': { promptEn: 'According to the Confucian view of education, learning serves to:', choicesEn: ["Forge character and cultivate oneself", "Accumulate wealth", "Dominate others", "Obey rulers"], explanationEn: '学习是塑造人格、修身齐家的途径 = forge character and cultivate oneself.' },
+      'c11p-q4': { promptEn: 'What is the geographic scope of Confucian influence according to the text?', choicesEn: ["China only", "East Asia", "Southeast Asia", "The whole world"], explanationEn: '对东亚文明的塑造产生了深远影响 = influence on East Asian civilization.' },
     },
   },
   'c11-economie': {
@@ -855,10 +855,10 @@ However, with rising labor costs and an aging population, China's economy urgent
 From "made in China" to "created in China", technological innovation has become the new engine of growth.
 Growing investment in AI, new energy and biotechnology reflects China's determination to shift to an innovation-driven economy.`,
     q: {
-      'c11e-q1': { promptEn: 'What global economic rank has China reached?', choicesEn: ['1st power', '2nd power', '3rd power', '5th power'], explanationEn: '世界第二大经济体 = world’s second-largest economy.' },
-      'c11e-q2': { promptEn: 'What factor fueled the economic miracle according to the text?', choicesEn: ['Oil exports', 'International tourism', 'The demographic dividend of migrant workers', 'Foreign aid'], explanationEn: '数亿农民工进城务工所释放的巨大人口红利 = demographic dividend of migrants.' },
-      'c11e-q3': { promptEn: 'What transition does the phrase "中国制造 → 中国创造" express?', choicesEn: ['From communism to capitalism', 'From low-cost production to an innovative economy', 'From agriculture to industry', 'From exports to domestic consumption'], explanationEn: 'Moving from mere manufacturing to creation and innovation.' },
-      'c11e-q4': { promptEn: 'Which sectors are cited as future engines?', choicesEn: ['Textiles and automotive', 'Agriculture and tourism', 'AI, new energy and biotechnology', 'Finance and real estate'], explanationEn: '人工智能、新能源和生物技术 = AI, new energy, biotechnology.' },
+      'c11e-q1': { promptEn: 'What global economic rank has China reached?', choicesEn: ["1st power", "3rd power", "2nd power", "5th power"], explanationEn: '世界第二大经济体 = world’s second-largest economy.' },
+      'c11e-q2': { promptEn: 'What factor fueled the economic miracle according to the text?', choicesEn: ["Oil exports", "International tourism", "Foreign aid", "The demographic dividend of migrant workers"], explanationEn: '数亿农民工进城务工所释放的巨大人口红利 = demographic dividend of migrants.' },
+      'c11e-q3': { promptEn: 'What transition does the phrase "中国制造 → 中国创造" express?', choicesEn: ["From low-cost production to an innovative economy", "From communism to capitalism", "From agriculture to industry", "From exports to domestic consumption"], explanationEn: 'Moving from mere manufacturing to creation and innovation.' },
+      'c11e-q4': { promptEn: 'Which sectors are cited as future engines?', choicesEn: ["Textiles and automotive", "AI, new energy and biotechnology", "Agriculture and tourism", "Finance and real estate"], explanationEn: '人工智能、新能源和生物技术 = AI, new energy, biotechnology.' },
     },
   },
   'c12-litterature': {
@@ -870,8 +870,8 @@ He abandoned medicine for literature because he believed that awakening the peop
 To this day, Lu Xun's work remains an essential part of Chinese language education, and his thought still deeply resonates today.`,
     q: {
       'c12l-q1': { promptEn: "What is Lu Xun's first vernacular-language work?", choicesEn: ['阿Q正传', '故乡', '狂人日记', '祝福'], explanationEn: '《狂人日记》是他的第一篇白话小说 = "A Madman’s Diary" is his first vernacular novel.' },
-      'c12l-q2': { promptEn: 'What central theme does 狂人日记 reveal?', choicesEn: ['The beauty of nature', 'Love between a man and a woman', 'The rites that devour people', 'The glory of revolution'], explanationEn: '"礼教吃人"的主题 = the theme of the rites that devour people.' },
-      'c12l-q3': { promptEn: 'Why did Lu Xun abandon medicine?', choicesEn: ['He failed exams', 'He believed spiritual awakening was more urgent than medicine', "He didn't like patients", 'Medicine did not pay'], explanationEn: '唤醒国民的精神，比治疗身体更为紧迫 = awakening the spirit is more urgent than healing.' },
+      'c12l-q2': { promptEn: 'What central theme does 狂人日记 reveal?', choicesEn: ["The beauty of nature", "Love between a man and a woman", "The glory of revolution", "The rites that devour people"], explanationEn: '"礼教吃人"的主题 = the theme of the rites that devour people.' },
+      'c12l-q3': { promptEn: 'Why did Lu Xun abandon medicine?', choicesEn: ["He believed spiritual awakening was more urgent than medicine", "He failed exams", "He didn't like patients", "Medicine did not pay"], explanationEn: '唤醒国民的精神，比治疗身体更为紧迫 = awakening the spirit is more urgent than healing.' },
       'c12l-q4': { promptEn: "What role does Lu Xun play in today's Chinese education?", choicesEn: ['None, he is forgotten', 'His works are part of Chinese language education', 'He is mainly studied at university', 'His work is banned'], explanationEn: '其作品仍然是中国语文教育的重要组成部分.' },
     },
   },
@@ -883,9 +883,9 @@ On the other, the expansion of dominant cultures often comes at the expense of m
 Take China as an example: while embracing Western pop culture, the younger generation is also rediscovering the charm of traditional culture — hanfu, classical poetry.
 This return to "cultural awareness" may be precisely an effective way to resist cultural homogenization.`,
     q: {
-      'c12m-q1': { promptEn: 'What positive effect of globalization is cited?', choicesEn: ['World peace', 'Spreading knowledge to narrow development gaps', 'Increased tourism', 'Linguistic unification'], explanationEn: '促进了知识与技术的传播，有助于缩小发展差距.' },
-      'c12m-q2': { promptEn: 'What risk is raised?', choicesEn: ['Pollution', 'The rise of nationalism', 'The decline of minority cultures against dominant ones', 'Disinformation'], explanationEn: '强势文化的扩张往往以弱势文化的式微为代价 = decline of minority cultures.' },
-      'c12m-q3': { promptEn: 'What trend is observed among young Chinese?', choicesEn: ['Total abandonment of tradition', 'Rejection of Western culture', 'Rediscovery of traditional culture (hanfu, poetry)', 'Massive emigration'], explanationEn: '重新发现汉服、古典诗词等传统文化的魅力 = rediscovery of hanfu and classical poetry.' },
+      'c12m-q1': { promptEn: 'What positive effect of globalization is cited?', choicesEn: ["World peace", "Increased tourism", "Spreading knowledge to narrow development gaps", "Linguistic unification"], explanationEn: '促进了知识与技术的传播，有助于缩小发展差距.' },
+      'c12m-q2': { promptEn: 'What risk is raised?', choicesEn: ["Pollution", "The rise of nationalism", "Disinformation", "The decline of minority cultures against dominant ones"], explanationEn: '强势文化的扩张往往以弱势文化的式微为代价 = decline of minority cultures.' },
+      'c12m-q3': { promptEn: 'What trend is observed among young Chinese?', choicesEn: ["Rediscovery of traditional culture (hanfu, poetry)", "Rejection of Western culture", "Total abandonment of tradition", "Massive emigration"], explanationEn: '重新发现汉服、古典诗词等传统文化的魅力 = rediscovery of hanfu and classical poetry.' },
       'c12m-q4': { promptEn: 'What does 文化自觉 refer to?', choicesEn: ['A government policy', "Awareness of and return to one's own culture", 'An artistic movement', 'Cultural censorship'], explanationEn: '文化自觉 = cultural awareness, returning to one’s cultural roots.' },
     },
   },
@@ -897,9 +897,9 @@ Supporters believe that the Confucian emphasis on virtue and the people is not i
 Critics point out that rejecting universal values in the name of cultural tradition can become a tool for certain political ends.
 How to preserve cultural identity while remaining open to and respectful of universal human rights — that is the urgent question contemporary Chinese thought must answer.`,
     q: {
-      'c21p-q1': { promptEn: 'What does the Confucian notion of 仁政 mean?', choicesEn: ['Government of scholars', 'Benevolent government centered on virtue', 'Military government', 'Government by laws'], explanationEn: '仁政 = benevolent government (rén = benevolence, zhèng = government).' },
-      'c21p-q2': { promptEn: 'What do supporters of Confucianism in politics argue?', choicesEn: ['That democracy should be replaced', 'That it is compatible with and complementary to democracy', 'That China should close off', 'That it opposes human rights'], explanationEn: '与现代民主政治并非格格不入，甚至可以互为补充 = compatible and complementary.' },
-      'c21p-q3': { promptEn: 'What criticism is made of a political use of Confucianism?', choicesEn: ['It is too old', 'It can serve as a tool to reject universal values', 'It is inaccessible to the people', 'It has no real influence'], explanationEn: '以文化传统为由拒绝普世价值，可能成为某些政治目的的工具.' },
+      'c21p-q1': { promptEn: 'What does the Confucian notion of 仁政 mean?', choicesEn: ["Government of scholars", "Military government", "Benevolent government centered on virtue", "Government by laws"], explanationEn: '仁政 = benevolent government (rén = benevolence, zhèng = government).' },
+      'c21p-q2': { promptEn: 'What do supporters of Confucianism in politics argue?', choicesEn: ["That democracy should be replaced", "That it opposes human rights", "That China should close off", "That it is compatible with and complementary to democracy"], explanationEn: '与现代民主政治并非格格不入，甚至可以互为补充 = compatible and complementary.' },
+      'c21p-q3': { promptEn: 'What criticism is made of a political use of Confucianism?', choicesEn: ["It can serve as a tool to reject universal values", "It is too old", "It is inaccessible to the people", "It has no real influence"], explanationEn: '以文化传统为由拒绝普世价值，可能成为某些政治目的的工具.' },
       'c21p-q4': { promptEn: 'What central tension does the text highlight?', choicesEn: ['Tradition vs economic modernity', 'Cultural identity vs openness to universal human rights', 'Religion vs state', 'East vs West geographically'], explanationEn: '坚守文化主体性 vs 对普世人权价值的开放与尊重.' },
     },
   },
@@ -911,9 +911,9 @@ His poetry is called "poetic history": with striking realism, he recorded the vi
 In "Spring View", the famous couplet "the nation is shattered, yet mountains and rivers remain; in spring, the city's grass and trees grow deep" contrasts the permanence of nature with the grief of the fall — deeply moving.
 Du Fu's influence on later poets is immense; his creative principle "not to rest until the words startle" became the symbol of the literary pursuit of perfection.`,
     q: {
-      'c21po-q1': { promptEn: 'What nickname is given to Du Fu?', choicesEn: ['诗仙 (immortal genius of poets)', '诗圣 (sage of poets)', '诗鬼 (ghost of poets)', '诗王 (king of poets)'], explanationEn: '被后世尊称为"诗圣" = honored as the sage of poets.' },
-      'c21po-q2': { promptEn: "Why is Du Fu's poetry called 诗史?", choicesEn: ['It is the oldest', 'It describes battles', 'It realistically documents history and the people’s suffering', 'It is written in epic style'], explanationEn: '以现实主义手法记录了历史的沧桑与百姓的疾苦 = realistic documentation of history.' },
-      'c21po-q3': { promptEn: 'In the cited verse, what stands opposed to the destruction of the nation?', choicesEn: ['The ruined city', 'The permanence of rivers and mountains', 'The return of soldiers', 'The spring flowers'], explanationEn: '国破山河在 = the nation is destroyed but rivers and mountains remain.' },
+      'c21po-q1': { promptEn: 'What nickname is given to Du Fu?', choicesEn: ["诗仙 (immortal genius of poets)", "诗鬼 (ghost of poets)", "诗圣 (sage of poets)", "诗王 (king of poets)"], explanationEn: '被后世尊称为"诗圣" = honored as the sage of poets.' },
+      'c21po-q2': { promptEn: "Why is Du Fu's poetry called 诗史?", choicesEn: ["It is the oldest", "It describes battles", "It is written in epic style", "It realistically documents history and the people’s suffering"], explanationEn: '以现实主义手法记录了历史的沧桑与百姓的疾苦 = realistic documentation of history.' },
+      'c21po-q3': { promptEn: 'In the cited verse, what stands opposed to the destruction of the nation?', choicesEn: ["The permanence of rivers and mountains", "The ruined city", "The return of soldiers", "The spring flowers"], explanationEn: '国破山河在 = the nation is destroyed but rivers and mountains remain.' },
       'c21po-q4': { promptEn: 'What does 语不惊人死不休 mean?', choicesEn: ['To speak softly until death', 'Not to stop creating until the words startle', 'To die for poetic ideals', 'To stay silent rather than speak poorly'], explanationEn: '语不惊人死不休 = not stopping until the words can startle people.' },
     },
   },
@@ -925,9 +925,9 @@ This valuing of "the usefulness of the useless" sharply contrasts with the Weste
 Zhuangzi further developed the Taoist spirit of freedom: "through non-action, nothing is left undone" — by following nature without forcing, all things transform of themselves.
 Taoist philosophy, through its profound dialectical thinking, offers modern people spiritual resources to seek inner peace in a noisy world.`,
     q: {
-      'c22t-q1': { promptEn: 'What does "道可道，非常道" mean?', choicesEn: ['The Tao is easy to understand', 'The Tao that can be named is not the eternal Tao', 'The name of the Tao is constant', 'The Tao changes constantly'], explanationEn: 'The Tao expressible in words is not the eternal, absolute Tao.' },
-      'c22t-q2': { promptEn: 'How does Laozi illustrate the usefulness of emptiness?', choicesEn: ['By the flowing river', 'By the room whose emptiness creates usefulness', 'By the silence of the forest', 'By the emptiness of the mind'], explanationEn: '"当其无，有室之用" = it is the emptiness of the room that creates its usefulness.' },
-      'c22t-q3': { promptEn: 'What does 无为而无不为 mean in Zhuangzi?', choicesEn: ['To do nothing at all', 'Through non-forcing action, all is done naturally', 'To work without reward', 'To act without thinking'], explanationEn: '无为 = non-action (no force), 无不为 = nothing left undone: natural harmony accomplishes all.' },
+      'c22t-q1': { promptEn: 'What does "道可道，非常道" mean?', choicesEn: ["The Tao is easy to understand", "The name of the Tao is constant", "The Tao that can be named is not the eternal Tao", "The Tao changes constantly"], explanationEn: 'The Tao expressible in words is not the eternal, absolute Tao.' },
+      'c22t-q2': { promptEn: 'How does Laozi illustrate the usefulness of emptiness?', choicesEn: ["By the flowing river", "By the emptiness of the mind", "By the silence of the forest", "By the room whose emptiness creates usefulness"], explanationEn: '"当其无，有室之用" = it is the emptiness of the room that creates its usefulness.' },
+      'c22t-q3': { promptEn: 'What does 无为而无不为 mean in Zhuangzi?', choicesEn: ["Through non-action, everything is accomplished naturally", "To do nothing at all", "To work without reward", "To act without thinking"], explanationEn: '无为 = non-action (no force), 无不为 = nothing left undone: natural harmony accomplishes all.' },
       'c22t-q4': { promptEn: 'What relevance does the text attribute to Taoism today?', choicesEn: ['A political reform', 'Spiritual resources to find inner peace', 'An economic model', 'A guide to social conduct'], explanationEn: '为现代人提供...寻求内心宁静的精神资源 = resources for inner peace.' },
     },
   },
@@ -939,9 +939,9 @@ The French linguist Saussure pointed out that language is a "system of differenc
 Yet the Chinese logographic writing system constructs meaning in another way: the very form of the characters often contains imagery, history and philosophical reflection.
 Under the twin shocks of globalization and digitization, how to safeguard the richness of language and prevent the impoverishment of the mother tongue — that is the question of our era for the humanities.`,
     q: {
-      'c22l-q1': { promptEn: 'According to the text, what dual role does language play?', choicesEn: ['Communication and entertainment', 'Tool of communication and vehicle of collective memory', 'Means of expression and source of conflict', 'National identity and economy'], explanationEn: '语言是交流的工具，更是集体记忆的载体与文化基因的传承媒介.' },
-      'c22l-q2': { promptEn: 'What does Saussure emphasize about the nature of language?', choicesEn: ['Words have universal meaning', 'Meaning comes from oppositions between words, not the words themselves', 'All languages are equivalent', 'Writing prevails over speech'], explanationEn: '意义并非源于词汇本身，而是源于词汇与其他词汇的对立关系.' },
-      'c22l-q3': { promptEn: 'How do Chinese characters differ according to the text?', choicesEn: ['They are easier to learn', 'Their form contains imagery, history and philosophical reflection', 'They are purely phonetic', 'They have fewer nuances than the alphabet'], explanationEn: '字形本身往往蕴含着意象、历史与哲思 = their form holds imagery, history and philosophy.' },
+      'c22l-q1': { promptEn: 'According to the text, what dual role does language play?', choicesEn: ["Communication and entertainment", "Means of expression and source of conflict", "Tool of communication and vehicle of collective memory", "National identity and economy"], explanationEn: '语言是交流的工具，更是集体记忆的载体与文化基因的传承媒介.' },
+      'c22l-q2': { promptEn: 'What does Saussure emphasize about the nature of language?', choicesEn: ["Words have universal meaning", "Writing prevails over speech", "All languages are equivalent", "Meaning comes from oppositions between words, not the words themselves"], explanationEn: '意义并非源于词汇本身，而是源于词汇与其他词汇的对立关系.' },
+      'c22l-q3': { promptEn: 'How do Chinese characters differ according to the text?', choicesEn: ["Their form contains imagery, history and philosophical reflection", "They are easier to learn", "They are purely phonetic", "They have fewer nuances than the alphabet"], explanationEn: '字形本身往往蕴含着意象、历史与哲思 = their form holds imagery, history and philosophy.' },
       'c22l-q4': { promptEn: 'What twofold threat weighs on the richness of languages?', choicesEn: ['Wars and famines', 'Globalization and digitization', 'Urbanization and rural exodus', 'School standardization and media'], explanationEn: '全球化与数字化的双重冲击 = twin shocks of globalization and digitization.' },
     },
   },

@@ -150,12 +150,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "tones",
         "promptEn": "What tone does 妈 carry in 妈妈 (mom)?",
         "explanationEn": "妈 is pronounced mā, first tone (high and flat). It's the classic contrast to 马 (mǎ, horse, third tone).",
-        "choicesEn": [
-          "1st tone (ā)",
-          "2nd tone (á)",
-          "3rd tone (ǎ)",
-          "4th tone (à)"
-        ]
+        "choicesEn": ["3rd tone (ǎ)", "2nd tone (á)", "1st tone (ā)", "4th tone (à)"]
       },
       {
         "id": "a1-q7",
@@ -222,12 +217,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "What does the dialogue below mean?",
         "contextEn": "A: 你好吗？\nB: 我很好，谢谢。",
         "explanationEn": "你好吗 = \"how are you?\" (lit. \"you good?\"). 很 = very, placed before a predicate adjective. 我很好 = \"I am very well\".",
-        "choicesEn": [
-          "A: How old are you? B: I am twenty, thank you.",
-          "A: How are you? B: I am very well, thank you.",
-          "A: Where are you from? B: I am from Paris, thank you.",
-          "A: What's your name? B: My name is Li, thank you."
-        ]
+        "choicesEn": ["A: How old are you? B: I am twenty, thank you.", "A: Where are you from? B: I am from Paris, thank you.", "A: How are you? B: I am very well, thank you.", "A: What's your name? B: My name is Li, thank you."]
       },
       {
         "id": "a1-q11",
@@ -308,12 +298,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "tones",
         "promptEn": "What is the tonal difference between 妈 (mā) and 马 (mǎ)?",
         "explanationEn": "妈 = first tone, high and flat (mā). 马 = third tone, low with a slight rise (mǎ). Confusing the tones changes the meaning: mom vs horse.",
-        "choicesEn": [
-          "1st tone (flat) vs 3rd tone (low, dipping)",
-          "2nd tone (rising) vs 4th tone (falling)",
-          "3rd tone vs 4th tone",
-          "No difference"
-        ]
+        "choicesEn": ["No difference", "2nd tone (rising) vs 4th tone (falling)", "3rd tone vs 4th tone", "1st tone (flat) vs 3rd tone (low, dipping)"]
       },
       {
         "id": "a1-q16",
@@ -370,12 +355,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, how is A being addressed?",
         "contextEn": "A: 我走了。\nB: 再见，明天见！",
         "explanationEn": "再见 (zàijiàn) = \"goodbye\" (lit. \"see again\"). 明天 = tomorrow. A standard polite parting phrase.",
-        "choicesEn": [
-          "They're asked for their name.",
-          "They're being told goodbye.",
-          "They're being welcomed.",
-          "They're being introduced to someone."
-        ]
+        "choicesEn": ["They're asked for their name.", "They're being welcomed.", "They're being told goodbye.", "They're being introduced to someone."]
       }
     ]
   },
@@ -476,12 +456,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"他在图书馆\" mean?",
         "explanationEn": "在 + place = \"to be at\" (locative verb). To be distinguished from 去 (to go to). 他在图书馆 = he is at the library.",
-        "choicesEn": [
-          "He's going to the library.",
-          "He's at the library.",
-          "He's about to head back to the library.",
-          "He's leaving the library."
-        ]
+        "choicesEn": ["He's going to the library.", "He's leaving the library.", "He's about to head back to the library.", "He's at the library."]
       },
       {
         "id": "a2-q6",
@@ -565,12 +540,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, what does B say?",
         "contextEn": "A: 你有几个兄弟姐妹？\nB: 我有两个姐姐。",
         "explanationEn": "姐姐 = older sister. 妹妹 = younger sister, 哥哥 = older brother, 弟弟 = younger brother. Chinese systematically distinguishes older/younger siblings.",
-        "choicesEn": [
-          "I have two younger sisters.",
-          "I have two older sisters.",
-          "I have two brothers.",
-          "I have two cousins."
-        ]
+        "choicesEn": ["I have two older sisters.", "I have two younger sisters.", "I have two brothers.", "I have two cousins."]
       },
       {
         "id": "a2-q11",
@@ -642,12 +612,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does 一点儿 mean in \"我会说一点儿汉语\"?",
         "explanationEn": "一点儿 = \"a little\" (small quantity). 我会说一点儿汉语 = \"I speak a little Chinese\". Don't confuse with 有点儿 (slightly, with a mild negative nuance).",
-        "choicesEn": [
-          "A lot",
-          "A little",
-          "Not at all",
-          "Fluently"
-        ]
+        "choicesEn": ["A little", "A lot", "Not at all", "Fluently"]
       },
       {
         "id": "a2-q15",
@@ -703,12 +668,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does 一起 mean?",
         "explanationEn": "一起 (yīqǐ) = together. 我们一起去 = \"let's go together\". Don't confuse with 一次 (once) or 一下 (a brief moment).",
-        "choicesEn": [
-          "Together",
-          "Alone",
-          "Once",
-          "Again"
-        ]
+        "choicesEn": ["Again", "Alone", "Once", "Together"]
       },
       {
         "id": "a2-q18",
@@ -767,12 +727,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, what does A suggest?",
         "contextEn": "A: 我们一起去看电影，怎么样？\nB: 好啊！",
         "explanationEn": "一起 = together, 看电影 = to watch a movie, 怎么样 = how about it? A typical invitation formula. 好啊 = yes, sure (friendly register).",
-        "choicesEn": [
-          "Going to see a movie together.",
-          "Staying home.",
-          "Turning down an invitation.",
-          "Buying a gift."
-        ]
+        "choicesEn": ["Turning down an invitation.", "Staying home.", "Going to see a movie together.", "Buying a gift."]
       },
       {
         "id": "a2-q21",
@@ -829,12 +784,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "b11-q2",
         "type": "mcq",
         "promptFr": "Comment exprimer « Il est plus grand que moi » ?",
-        "choices": [
-          "他很高比我",
-          "他比我高",
-          "他和我一样高",
-          "他比我更高"
-        ],
+        "choices": ["他很高比我","他比我高","他和我一样高","他没有我高"],
         "correctIndex": 1,
         "explanationFr": "Structure du comparatif : A + 比 + B + ADJ. 他比我高 = il est plus grand que moi. 比 ne s'accompagne PAS de 很 ni 更 (sauf nuance spéciale).",
         "topic": "grammar",
@@ -857,12 +807,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "Fill in the sentence below (\"he is reading right now\").",
         "contextEn": "他 ___ 看书。",
         "explanationEn": "Both 正在 and 在 express the progressive aspect. 正在 emphasizes the precise moment, 在 is more neutral. 他（正）在看书 = \"he is (currently) reading\".",
-        "choicesEn": [
-          "在",
-          "正在",
-          "了",
-          "A and B are both correct"
-        ]
+        "choicesEn": ["在", "正在", "A and B are both correct", "了"]
       },
       {
         "id": "b11-q4",
@@ -878,23 +823,13 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"听懂\" mean?",
         "explanationEn": "懂 is a resultative complement meaning \"to understand\". 听懂 = \"listen-and-understand\" = to grasp what you hear. Compare: 看懂 (read-and-understand).",
-        "choicesEn": [
-          "To listen attentively",
-          "To listen and understand",
-          "To overhear",
-          "To not listen"
-        ]
+        "choicesEn": ["To listen attentively", "To not listen", "To overhear", "To listen and understand"]
       },
       {
         "id": "b11-q5",
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« j'ai offert un cadeau à ma mère »).",
-        "choices": [
-          "送 / 给",
-          "给 / 送",
-          "给 / 了",
-          "对 / 送"
-        ],
+        "choices": ["送 / 给","把 / 送","给 / 了","对 / 送"],
         "correctIndex": 0,
         "explanationFr": "送给 est le verbe + préposition ditransitif pour « offrir à ». 我送给妈妈一个礼物 = « j'ai offert un cadeau à maman ». On peut aussi inverser avec 我把礼物送给了妈妈.",
         "contextFr": "我 ___ 妈妈 ___ 一个礼物。",
@@ -902,12 +837,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "Fill in the sentence below (\"I gave my mother a present\").",
         "contextEn": "我 ___ 妈妈 ___ 一个礼物。",
         "explanationEn": "送给 is the ditransitive verb + preposition for \"to give to\". 我送给妈妈一个礼物 = \"I gave a gift to mom\". You can also invert with 我把礼物送给了妈妈.",
-        "choicesEn": [
-          "送 / 给",
-          "给 / 送",
-          "给 / 了",
-          "对 / 送"
-        ]
+        "choicesEn": ["送 / 给","把 / 送","给 / 了","对 / 送"]
       },
       {
         "id": "b11-q6",
@@ -955,12 +885,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"一边...一边...\" mean?",
         "explanationEn": "一边 V1 一边 V2 = to do V1 and V2 at the same time. 他一边吃饭一边看电视 = \"he eats while watching TV\".",
-        "choicesEn": [
-          "On one hand... on the other...",
-          "Either... or...",
-          "To do two actions simultaneously",
-          "A bit, then a bit more"
-        ]
+        "choicesEn": ["On one hand... on the other...", "Either... or...", "A bit, then a bit more", "To do two actions simultaneously"]
       },
       {
         "id": "b11-q9",
@@ -1013,7 +938,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "到"
         ],
         "correctIndex": 2,
-        "explanationFr": "对 comme résultatif signifie « correctement, juste ». 听懂 = comprendre, 听对 = avoir compris correctement (sans erreur). 听完 = avoir fini d'écouter, 听好 = bien écouter.",
+        "explanationFr": "Le résultatif 对 indique que l'action a été faite sans erreur : 我听对了 = « j'ai bien entendu, j'ai entendu juste ». Comparer : 听完了 = avoir fini d'écouter, 听到了 = avoir entendu (perçu), 听懂了 = avoir compris.",
         "contextFr": "我听 ___ 了。",
         "topic": "grammar",
         "promptEn": "Fill in the sentence below with the right resultative (\"I understood correctly\").",
@@ -1061,12 +986,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "b11-q14",
         "type": "fill",
         "promptFr": "Complète la phrase ci-dessous (« je vais demain au cinéma »).",
-        "choices": [
-          "看 / 去",
-          "去 / 看",
-          "到 / 看",
-          "在 / 看"
-        ],
+        "choices": ["看 / 去","去 / 看","从 / 看","在 / 看"],
         "correctIndex": 1,
         "explanationFr": "Structure de plusieurs verbes en série : 我明天去电影院看电影 = « je vais demain au cinéma voir un film ». 去 introduit la destination, le 2e verbe le but.",
         "contextFr": "我明天 ___ 电影院 ___ 电影。",
@@ -1092,16 +1012,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "Complètement faux"
         ],
         "correctIndex": 2,
-        "explanationFr": "差不多 (chàbuduō) = « à peu près / presque ». Très utilisé pour relativiser, approximer. 差不多 = ils sont à peu près pareils.",
+        "explanationFr": "差不多 (chàbuduō) = « à peu près, presque ». Très utilisé pour approximer ou relativiser : 他们两个差不多 = « tous les deux se valent à peu près » ; 差不多十点了 = « il est presque dix heures ».",
         "topic": "vocab",
         "promptEn": "What does 差不多 mean?",
-        "explanationEn": "差不多 (chàbuduō) = \"about / almost\". Very commonly used to relativize or approximate. 差不多 = they're about the same.",
-        "choicesEn": [
-          "Very different",
-          "About / almost the same",
-          "Completely different",
-          "Completely wrong"
-        ]
+        "explanationEn": "差不多 (chàbuduō) means \"more or less, almost.\" It is very common for approximating: 他们两个差不多 = \"the two of them are about the same\"; 差不多十点了 = \"it's almost ten o'clock.\"",
+        "choicesEn": ["Very different", "Completely different", "About / almost the same", "Completely wrong"]
       },
       {
         "id": "b11-q16",
@@ -1147,10 +1062,10 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "Peut-être"
         ],
         "correctIndex": 1,
-        "explanationFr": "千万 (qiānwàn) en début de phrase = « surtout / absolument » (recommandation insistante). 你千万要小心 = « surtout, fais attention ! ». À l'origine litt. « 10 millions ».",
+        "explanationFr": "千万 (qiānwàn) se place devant le verbe ou l'auxiliaire et signifie « surtout, absolument » (recommandation insistante) : 你千万要小心 = « surtout, fais bien attention ! ». Littéralement, 千万 = « dix millions ».",
         "topic": "vocab",
         "promptEn": "What does 千万 mean in \"你千万要小心\"?",
-        "explanationEn": "千万 (qiānwàn) at the start of a clause = \"above all / by all means\" (strong recommendation). 你千万要小心 = \"please, be careful!\". Literally 10 million originally.",
+        "explanationEn": "千万 (qiānwàn) goes before the verb or auxiliary and means \"be sure to, whatever you do\" (an emphatic warning): 你千万要小心 = \"Do be careful!\" Literally, 千万 means \"ten million.\"",
         "choicesEn": [
           "Ten million",
           "Absolutely / above all",
@@ -1214,12 +1129,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, what does B say?",
         "contextEn": "A: 明天有空吗？\nB: 明天没空，后天怎么样？",
         "explanationEn": "没空 = to not have time. 后天 = the day after tomorrow. 怎么样 = does that work? B suggests a reschedule: not free tomorrow but OK the day after.",
-        "choicesEn": [
-          "He's free tomorrow.",
-          "He's busy tomorrow but free the day after.",
-          "He refuses to come.",
-          "He doesn't know yet."
-        ]
+        "choicesEn": ["He's busy tomorrow but free the day after.", "He's free tomorrow.", "He refuses to come.", "He doesn't know yet."]
       }
     ]
   },
@@ -1287,12 +1197,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does 让 mean in \"妈妈让我做作业\"?",
         "explanationEn": "让 + someone + VERB = \"to make/have someone do...\" (soft causation). 妈妈让我做作业 = \"mom has me do my homework\". 叫 + someone has a similar but firmer sense.",
-        "choicesEn": [
-          "To allow",
-          "To have someone do / to make someone do",
-          "To let go",
-          "To yield the way"
-        ]
+        "choicesEn": ["To allow", "To yield the way", "To let go", "To have someone do / to make someone do"]
       },
       {
         "id": "b12-q4",
@@ -1372,12 +1277,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"即使下雨，我们也要去\" mean?",
         "explanationEn": "即使...也... = \"even if... still...\". A stronger hypothetical concession than 如果...就.",
-        "choicesEn": [
-          "If it rains, we'll go.",
-          "Even if it rains, we'll go.",
-          "Because it's raining, we'll go.",
-          "When it rains, we'll go."
-        ]
+        "choicesEn": ["If it rains, we'll go.", "When it rains, we'll go.", "Because it's raining, we'll go.", "Even if it rains, we'll go."]
       },
       {
         "id": "b12-q8",
@@ -1394,12 +1294,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What is the difference between 能, 会 and 可以?",
         "explanationEn": "Key distinction: 会 (learned skill — 我会说汉语), 能 (contextual capacity or possibility — 我今天能来), 可以 (permission or suggestion — 我可以进来吗?).",
-        "choicesEn": [
-          "None, they're interchangeable.",
-          "会 = learned skill, 能 = physical capacity / possibility, 可以 = permission / suggestion.",
-          "会 = permission, 能 = knowing, 可以 = capacity.",
-          "They all mean \"to want\"."
-        ]
+        "choicesEn": ["会 = learned skill, 能 = physical capacity / possibility, 可以 = permission / suggestion.", "None, they're interchangeable.", "会 = permission, 能 = knowing, 可以 = capacity.", "They all mean \"to want\"."]
       },
       {
         "id": "b12-q9",
@@ -1440,12 +1335,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, what is B doing right now?",
         "contextEn": "A: 你做完作业了吗？\nB: 还没呢，我正在做。",
         "explanationEn": "还没...呢 = \"not yet...\". 正在 + V = \"in the middle of V-ing\". So B hasn't finished but is currently doing homework.",
-        "choicesEn": [
-          "He has finished his homework.",
-          "He is doing his homework right now.",
-          "He hasn't started his homework.",
-          "He refuses to do his homework."
-        ]
+        "choicesEn": ["He has finished his homework.", "He hasn't started his homework.", "He is doing his homework right now.", "He refuses to do his homework."]
       },
       {
         "id": "b12-q11",
@@ -1461,12 +1351,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"把...当作...\" mean?",
         "explanationEn": "把 X 当作 Y = \"to consider X as Y / to take X for Y\". 他把我当作朋友 = \"he considers me a friend\". Very useful for expressing a perceived relationship.",
-        "choicesEn": [
-          "To put... against...",
-          "To consider... as...",
-          "To exchange... with...",
-          "To choose between... and..."
-        ]
+        "choicesEn": ["To put... against...", "To choose between... and...", "To exchange... with...", "To consider... as..."]
       },
       {
         "id": "b12-q12",
@@ -1507,12 +1392,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 半途而废 mean?",
         "explanationEn": "半途而废 (bàn tú ér fèi): \"halfway along, one gives up\". A critique of those who quit before the end. Origin: Liji.",
-        "choicesEn": [
-          "To give up halfway.",
-          "To succeed part-time.",
-          "To travel in two directions.",
-          "To split into two equal parts."
-        ]
+        "choicesEn": ["To succeed part-time.", "To give up halfway.", "To travel in two directions.", "To split into two equal parts."]
       },
       {
         "id": "b12-q14",
@@ -1540,12 +1420,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "过 / 不",
           "得 / 不"],
         "correctIndex": 3,
-        "explanationFr": "V + 得 + 太 + ADJ + 了 = complément de degré. Puis 不想 + V = ne veut plus faire. 工作累得不想做了 marque la conséquence d'un état excessif.",
+        "explanationFr": "ADJ + 得 + (sujet) + proposition = complément de degré exprimant la conséquence : 工作累得我不想做了 = « le travail est fatigant au point que je n'ai plus envie de le faire ». 不想 + V = ne plus vouloir faire.",
         "contextFr": "工作累 ___ 我 ___ 想做了。",
         "topic": "grammar",
         "promptEn": "Fill in the sentence below (\"the work is too tiring, I don't want to do it anymore\").",
         "contextEn": "工作累 ___ 我 ___ 想做了。",
-        "explanationEn": "V + 得 + 太 + ADJ + 了 = degree complement. Then 不想 + V = doesn't want to anymore. 工作累得不想做了 marks the consequence of an excessive state.",
+        "explanationEn": "ADJ + 得 + (subject) + clause is a degree complement expressing consequence: 工作累得我不想做了 = \"the work is so tiring that I no longer feel like doing it.\" 不想 + V = to no longer want to do something.",
         "choicesEn": [
           "得 / 不",
           "了 / 没",
@@ -1608,12 +1488,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, what does B say?",
         "contextEn": "A: 你怎么了？\nB: 我的手机被偷了！",
         "explanationEn": "Passive with 被: 手机被偷了 = \"the phone was stolen\". Typical structure for expressing an event undergone. 怎么了 = what's going on?",
-        "choicesEn": [
-          "She couldn't find her phone.",
-          "Her phone was stolen.",
-          "She broke her phone.",
-          "She forgot her phone at home."
-        ]
+        "choicesEn": ["She couldn't find her phone.", "She broke her phone.", "Her phone was stolen.", "She forgot her phone at home."]
       }
     ]
   },
@@ -1659,12 +1534,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"连小孩都知道\" mean?",
         "explanationEn": "连 + N + 都/也 = \"even...\" (extreme inclusion). 连小孩都知道 = \"even children know it\" — emphasis on how obvious it is.",
-        "choicesEn": [
-          "Children know together.",
-          "Even children know it.",
-          "Link the children who know.",
-          "Only children know."
-        ]
+        "choicesEn": ["Even children know it.", "Children know together.", "Link the children who know.", "Only children know."]
       },
       {
         "id": "b21-q3",
@@ -1710,12 +1580,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"他不是中国人，而是韩国人\" mean?",
         "explanationEn": "不是...而是... = \"it's not... but rather...\" (correction / precision). Very common contrastive structure, especially in writing.",
-        "choicesEn": [
-          "He is Chinese but also Korean.",
-          "He is not Chinese, but Korean.",
-          "He is either Chinese or Korean.",
-          "He is neither Chinese nor Korean."
-        ]
+        "choicesEn": ["He is Chinese but also Korean.", "He is neither Chinese nor Korean.", "He is either Chinese or Korean.", "He is not Chinese, but Korean."]
       },
       {
         "id": "b21-q6",
@@ -1744,7 +1609,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "了很"
         ],
         "correctIndex": 1,
-        "explanationFr": "得 + ADJ + 很 (ou 得很 en fin) = complément de degré. 她说话说得很礼貌 = « elle parle très poliment ». 很 suit l'adjectif porté par 得.",
+        "explanationFr": "Avec un verbe suivi de son objet (说话), on répète le verbe avant 得 : 她说话说得很礼貌 = « elle parle très poliment ». 得 introduit le complément de degré et 很 précède l'adjectif. 的 (possessif) et 地 (adverbial, placé avant le verbe) sont exclus ici.",
         "contextFr": "她说话 ___ 礼貌。",
         "topic": "grammar",
         "promptEn": "Fill in the sentence below (\"she speaks very politely\").",
@@ -1772,12 +1637,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does 幸亏 mean in \"幸亏你提醒我\"?",
         "explanationEn": "幸亏 = fortunately (that) — introduces a positive event that averted misfortune. 幸亏你提醒我 = \"luckily you reminded me\".",
-        "choicesEn": [
-          "Alas",
-          "Fortunately",
-          "Obviously",
-          "Unfortunately"
-        ]
+        "choicesEn": ["Alas", "Obviously", "Fortunately", "Unfortunately"]
       },
       {
         "id": "b21-q9",
@@ -1807,12 +1667,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, B expresses:",
         "contextEn": "A: 你怎么看这件事？\nB: 我觉得似乎有点儿问题。",
         "explanationEn": "似乎 = \"it seems that / one would say that\" — a cautious, hedging nuance. Combined with 有点儿 (a bit) and 觉得 (to feel / think), B gives a careful, nuanced opinion.",
-        "choicesEn": [
-          "Absolute certainty",
-          "Cautious hesitation",
-          "A flat refusal",
-          "Enthusiasm"
-        ]
+        "choicesEn": ["Cautious hesitation", "Absolute certainty", "A flat refusal", "Enthusiasm"]
       },
       {
         "id": "b21-q11",
@@ -1829,12 +1684,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does 既然 mean in \"既然你来了，就坐一会儿吧\"?",
         "explanationEn": "既然...就... = \"since... then...\". Introduces a cause taken as given. Different from 因为 (objective cause): 既然 presupposes the situation as a shared fact.",
-        "choicesEn": [
-          "Since (known cause)",
-          "Should ever",
-          "Although",
-          "In case"
-        ]
+        "choicesEn": ["Should ever", "Since (known cause)", "Although", "In case"]
       },
       {
         "id": "b21-q12",
@@ -1851,12 +1701,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does 一旦 mean in \"一旦决定，就不要后悔\"?",
         "explanationEn": "一旦 = \"once / as soon as\". A hypothesis with strong consequences. 一旦决定就不要后悔 = \"once the decision is made, no regrets\".",
-        "choicesEn": [
-          "One morning",
-          "Once / as soon as",
-          "Suddenly",
-          "Slowly"
-        ]
+        "choicesEn": ["One morning", "Suddenly", "Once / as soon as", "Slowly"]
       },
       {
         "id": "b21-q13",
@@ -1912,12 +1757,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 名副其实 mean?",
         "explanationEn": "名副其实 (míng fù qí shí) = \"the name matches the reality\". Refers to someone or something that truly deserves its reputation. Opposite: 名不副实.",
-        "choicesEn": [
-          "The name matches the reality (deserved).",
-          "To have a bad reputation.",
-          "To change one's name.",
-          "With no official name."
-        ]
+        "choicesEn": ["To have a bad reputation.", "The name matches the reality (deserved).", "To change one's name.", "With no official name."]
       },
       {
         "id": "b21-q16",
@@ -1934,12 +1774,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What is the nuance of 反而 compared to 但是?",
         "explanationEn": "但是 marks a simple opposition. 反而 marks a result CONTRARY to what was expected. 我以为他生气，他反而笑了 = \"I thought he'd be angry, but instead he laughed\".",
-        "choicesEn": [
-          "Identical, interchangeable.",
-          "反而 = contrary to expectation, 但是 = simple opposition.",
-          "反而 = reinforcement, 但是 = contradiction.",
-          "反而 = cause, 但是 = consequence."
-        ]
+        "choicesEn": ["Identical, interchangeable.", "反而 = reinforcement, 但是 = contradiction.", "反而 = contrary to expectation, 但是 = simple opposition.", "反而 = cause, 但是 = consequence."]
       }
     ]
   },
@@ -1967,12 +1802,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"这件事万一出问题，我们就麻烦了\" mean?",
         "explanationEn": "万一 = \"if by any chance / in case\" — an unlikely but dreaded hypothesis. 麻烦 = trouble, hassle.",
-        "choicesEn": [
-          "If this matter happens to go wrong, we'll be in trouble.",
-          "10,000 of these matters go wrong.",
-          "This matter is always a problem.",
-          "This problem is very serious."
-        ]
+        "choicesEn": ["This problem is very serious.", "10,000 of these matters go wrong.", "This matter is always a problem.", "If this matter happens to go wrong, we'll be in trouble."]
       },
       {
         "id": "b22-q2",
@@ -1989,12 +1819,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "Choose the best translation for \"宁可多花点儿钱，也要买好的\".",
         "explanationEn": "宁可 A 也要 B = \"to prefer A in order to get B\" (an accepted trade-off). Implies a strong, deliberate preference.",
-        "choicesEn": [
-          "Spending more money and buying good things.",
-          "I'd rather spend more, but buy quality.",
-          "If you spend more, you buy better.",
-          "Don't spend money but buy good things."
-        ]
+        "choicesEn": ["I'd rather spend more, but buy quality.", "Spending more money and buying good things.", "If you spend more, you buy better.", "Don't spend money but buy good things."]
       },
       {
         "id": "b22-q3",
@@ -2035,12 +1860,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What is the meaning of the chengyu 一举两得?",
         "explanationEn": "一举两得 (yī jǔ liǎng dé) = \"one action, two gains\" = killing two birds with one stone. A very common chengyu.",
-        "choicesEn": [
-          "Killing two birds with one stone",
-          "Failing twice",
-          "Paying twice",
-          "Two people hand in hand"
-        ]
+        "choicesEn": ["Paying twice", "Failing twice", "Killing two birds with one stone", "Two people hand in hand"]
       },
       {
         "id": "b22-q5",
@@ -2056,12 +1876,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does \"记者\" mean?",
         "explanationEn": "记者 = journalist / reporter. Basic media vocabulary. 记 (to record, to note) + 者 (suffix \"one who\").",
-        "choicesEn": [
-          "Teacher",
-          "Journalist",
-          "Student",
-          "Civil servant"
-        ]
+        "choicesEn": ["Teacher", "Civil servant", "Student", "Journalist"]
       },
       {
         "id": "b22-q6",
@@ -2074,12 +1889,12 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "过"
         ],
         "correctIndex": 0,
-        "explanationFr": "着 marque un état persistant résultant d'une action. 挂着 / 放着 / 留着. 他把钥匙留着在门上 est moins courant ; mieux : 钥匙还挂着 « la clé est toujours accrochée ». 着 est le marqueur d'état résiduel.",
+        "explanationFr": "着 marque un état ou une action qui accompagne une autre action : 他坐着看电视 = « il regarde la télévision assis ». 了 (action accomplie), 过 (expérience vécue) et 的 ne conviennent pas dans cette position.",
         "contextFr": "他把钥匙 ___ 在门上。",
         "topic": "grammar",
         "promptEn": "Fill in the sentence below with the persistent-state marker.",
         "contextEn": "他把钥匙 ___ 在门上。",
-        "explanationEn": "着 marks a persistent state resulting from an action. 挂着 / 放着 / 留着. 他把钥匙留着在门上 is less common; better: 钥匙还挂着 \"the key is still hanging\". 着 is the residual-state marker.",
+        "explanationEn": "着 marks a state or an ongoing action accompanying another action: 他坐着看电视 = \"he watches TV sitting down.\" 了 (completed action), 过 (past experience) and 的 do not work in this slot.",
         "choicesEn": [
           "了",
           "的",
@@ -2124,12 +1939,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What nuance does 反而 carry in \"我以为他会生气，他反而笑了\"?",
         "explanationEn": "反而 = \"on the contrary / against expectation\". Expresses a result contrary to what was expected: \"I thought he'd be angry, but instead he laughed\".",
-        "choicesEn": [
-          "Cause",
-          "Against expectation",
-          "Consequence",
-          "Addition"
-        ]
+        "choicesEn": ["Cause", "Consequence", "Against expectation", "Addition"]
       },
       {
         "id": "b22-q9",
@@ -2157,18 +1967,13 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "Le projet n'a ni avantage ni inconvénient."
         ],
         "correctIndex": 0,
-        "explanationFr": "从长远来看 = « vu à long terme / à long terme ». 利大于弊 = « bénéfices supérieurs aux pertes ». Formulation typique du registre argumentatif / médiatique.",
+        "explanationFr": "从长远来看 = « à long terme, si l'on se place dans la durée ». 利大于弊 = « les avantages l'emportent sur les inconvénients » (利 bénéfice / 弊 inconvénient, méfait). Formulation typique du registre argumentatif et médiatique.",
         "topic": "dialogue",
         "contextFr": "A: 这个方案你觉得怎么样？\nB: 从长远来看，利大于弊。",
         "promptEn": "In the dialogue below, B thinks:",
         "contextEn": "A: 这个方案你觉得怎么样？\nB: 从长远来看，利大于弊。",
-        "explanationEn": "从长远来看 = \"seen from a long-term view / in the long run\". 利大于弊 = \"benefits outweigh costs\". A typical argumentative / media phrasing.",
-        "choicesEn": [
-          "The project has more downsides than upsides.",
-          "In the long run, benefits outweigh drawbacks.",
-          "Pros and cons balance out.",
-          "The project has neither benefit nor drawback."
-        ]
+        "explanationEn": "从长远来看 = \"in the long run, taking a long-term view.\" 利大于弊 = \"the advantages outweigh the drawbacks\" (利 benefit / 弊 drawback, harm). Typical of argumentative and media register.",
+        "choicesEn": ["In the long run, benefits outweigh drawbacks.", "The project has more downsides than upsides.", "Pros and cons balance out.", "The project has neither benefit nor drawback."]
       },
       {
         "id": "b22-q11",
@@ -2201,12 +2006,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does \"难免\" mean in \"工作中难免出错\"?",
         "explanationEn": "难免 = \"hard to avoid / inevitably\". Emphasizes that an event (often a negative one) is statistically to be expected. 工作中难免出错 = \"at work, mistakes are bound to happen\".",
-        "choicesEn": [
-          "Impossible",
-          "Inevitably / unavoidably",
-          "Without difficulty",
-          "Very obvious"
-        ]
+        "choicesEn": ["Impossible", "Without difficulty", "Inevitably / unavoidably", "Very obvious"]
       },
       {
         "id": "b22-q13",
@@ -2222,12 +2022,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 入木三分 mean?",
         "explanationEn": "入木三分 (rù mù sān fēn): \"to penetrate three fen into the wood\". Origin: Wang Xizhi's calligraphy left deep marks on the wood. Describes a particularly incisive analysis.",
-        "choicesEn": [
-          "To penetrate deeply, incisive and sharp (analysis).",
-          "Three people enter the woods.",
-          "To sculpt for three minutes.",
-          "To split a tree into three."
-        ]
+        "choicesEn": ["To split a tree into three.", "Three people enter the woods.", "To sculpt for three minutes.", "To penetrate deeply, incisive and sharp (analysis)."]
       },
       {
         "id": "b22-q14",
@@ -2270,12 +2065,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 画蛇添足 mean?",
         "explanationEn": "画蛇添足 (huàshétiānzú): \"to draw a snake and add feet to it\" = to make something worse by overdoing it. Origin: a fable from the Kingdom of Chu.",
-        "choicesEn": [
-          "Drawing a snake and adding feet — overdoing it uselessly",
-          "Painting a snake to give it life",
-          "Watching a snake walk",
-          "A snake as agile as a foot"
-        ]
+        "choicesEn": ["Painting a snake to give it life", "Drawing a snake and adding feet — overdoing it uselessly", "Watching a snake walk", "A snake as agile as a foot"]
       },
       {
         "id": "c11-q2",
@@ -2315,12 +2105,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"何况\" mean?",
         "explanationEn": "何况 = \"let alone / all the more so\" — strengthens an argument by adding a stronger reason. 他连一只狗都怕，何况是狮子？= \"he's afraid of a dog, let alone a lion!\".",
-        "choicesEn": [
-          "How is he doing?",
-          "Let alone / all the more so",
-          "How and why",
-          "Very little"
-        ]
+        "choicesEn": ["How is he doing?", "Very little", "How and why", "Let alone / all the more so"]
       },
       {
         "id": "c11-q4",
@@ -2337,12 +2122,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"以免\" mean?",
         "explanationEn": "以免 = \"for fear that / in order to avoid\". 请保持安静，以免打扰别人 = \"please stay quiet so as not to disturb others\". Written register.",
-        "choicesEn": [
-          "In order to",
-          "In order to avoid",
-          "Unless",
-          "Thanks to"
-        ]
+        "choicesEn": ["In order to avoid", "In order to", "Unless", "Thanks to"]
       },
       {
         "id": "c11-q5",
@@ -2375,12 +2155,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does 责任 mean?",
         "explanationEn": "责任 = responsibility. 自由 = freedom, 公正/正义 = justice, 权利 = right. Abstract debate vocabulary.",
-        "choicesEn": [
-          "Responsibility",
-          "Freedom",
-          "Justice",
-          "Right"
-        ]
+        "choicesEn": ["Justice", "Freedom", "Responsibility", "Right"]
       },
       {
         "id": "c11-q7",
@@ -2412,12 +2187,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "The chengyu 守株待兔 evokes:",
         "explanationEn": "守株待兔: \"guarding a stump waiting for a rabbit\". A farmer who saw a rabbit kill itself against a stump abandoned his work to wait for more rabbits. = believing luck will repeat itself, being passive.",
-        "choicesEn": [
-          "Perseverance at work",
-          "Waiting passively for luck (and missing opportunities)",
-          "Protecting one's belongings",
-          "Being as fast as a hare"
-        ]
+        "choicesEn": ["Waiting passively for luck (and missing opportunities)", "Perseverance at work", "Protecting one's belongings", "Being as fast as a hare"]
       },
       {
         "id": "c11-q9",
@@ -2434,12 +2204,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"与其...不如...\" mean?",
         "explanationEn": "与其 A 不如 B = \"rather than A, it's better to B\" — preferential comparison. 与其等他，不如自己去 = \"rather than wait for him, go yourself\".",
-        "choicesEn": [
-          "Rather than... it's better to...",
-          "Neither... nor...",
-          "Either... or...",
-          "Both... and..."
-        ]
+        "choicesEn": ["Neither... nor...", "Rather than... it's better to...", "Either... or...", "Both... and..."]
       },
       {
         "id": "c11-q10",
@@ -2456,12 +2221,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "In an argumentative text, seeing \"然而\" signals:",
         "explanationEn": "然而 = \"however / nevertheless\" (formal, written register). Formal equivalent of 但是 / 可是. Often used at the start of a paragraph to pivot.",
-        "choicesEn": [
-          "A cause",
-          "A formal contrast",
-          "A conclusion",
-          "An example"
-        ]
+        "choicesEn": ["A cause", "A conclusion", "A formal contrast", "An example"]
       },
       {
         "id": "c11-q11",
@@ -2477,12 +2237,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 一举两得 mean in a strategic context?",
         "explanationEn": "一举两得 = \"one action, two gains\" = killing two birds with one stone. Heavily used in argumentation to praise strategic efficiency.",
-        "choicesEn": [
-          "Failing twice.",
-          "Achieving two goals in one action.",
-          "Choosing between two options.",
-          "Hesitating for a long time."
-        ]
+        "choicesEn": ["Failing twice.", "Hesitating for a long time.", "Choosing between two options.", "Achieving two goals in one action."]
       },
       {
         "id": "c11-q12",
@@ -2516,23 +2271,13 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "id": "c12-q1",
         "type": "mcq",
         "promptFr": "Que signifie « 以质量为本 » ?",
-        "choices": [
-          "Avec la qualité on fait la base",
-          "Considérer la qualité comme fondamentale",
-          "La qualité est un livre",
-          "Fabriquer avec qualité"
-        ],
+        "choices": ["Améliorer la qualité des produits","Considérer la qualité comme fondamentale","La qualité est un livre","Fabriquer avec qualité"],
         "correctIndex": 1,
         "explanationFr": "以 X 为 Y = « prendre X pour Y / considérer X comme Y ». Structure figée du discours formel. 以质量为本 = « placer la qualité au fondement ».",
         "topic": "grammar",
         "promptEn": "What does \"以质量为本\" mean?",
         "explanationEn": "以 X 为 Y = \"to take X as Y / to consider X as Y\". A fixed formal-discourse structure. 以质量为本 = \"to place quality at the foundation\".",
-        "choicesEn": [
-          "To consider quality as foundational",
-          "With quality you make the base",
-          "Quality is a book",
-          "Manufacturing with quality"
-        ]
+        "choicesEn": ["To improve product quality", "To consider quality as foundational", "Quality is a book", "Manufacturing with quality"]
       },
       {
         "id": "c12-q2",
@@ -2549,12 +2294,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"反之\" mean in an argument?",
         "explanationEn": "反之 = \"conversely / in the opposite direction\". Written register, typical of academic or scientific reasoning. 反之亦然 = \"and vice versa\".",
-        "choicesEn": [
-          "Conversely / on the contrary",
-          "On the other hand (mild contrast)",
-          "Consequently",
-          "In other words"
-        ]
+        "choicesEn": ["Consequently", "On the other hand (mild contrast)", "Conversely / on the contrary", "In other words"]
       },
       {
         "id": "c12-q3",
@@ -2570,12 +2310,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"倒\" signal in \"他倒不生气\"?",
         "explanationEn": "Modal 倒 (dào) expresses a mild surprise or a contrast with expectations. 他倒不生气 = \"surprisingly, he isn't angry\". Nuanced spoken register.",
-        "choicesEn": [
-          "An intensification of anger",
-          "Surprise / contrast with expectation",
-          "Reinforced negation",
-          "Excessive politeness"
-        ]
+        "choicesEn": ["An intensification of anger", "Excessive politeness", "Reinforced negation", "Surprise / contrast with expectation"]
       },
       {
         "id": "c12-q4",
@@ -2592,12 +2327,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "A typical rhetorical question is \"难道你不懂吗？\". It means:",
         "explanationEn": "难道...吗？ = a rhetorical question marking indignant surprise. 难道你不懂吗？ = \"you really don't understand?!\".",
-        "choicesEn": [
-          "Could it be that you don't understand?",
-          "Could it be you really don't understand?! (accusatory emphasis)",
-          "You have trouble understanding.",
-          "Do you understand with difficulty?"
-        ]
+        "choicesEn": ["Could it be you really don't understand?! (accusatory emphasis)", "Could it be that you don't understand?", "You have trouble understanding.", "Do you understand with difficulty?"]
       },
       {
         "id": "c12-q5",
@@ -2630,12 +2360,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the chengyu 百闻不如一见 mean?",
         "explanationEn": "百闻不如一见: \"a hundred hearings are not worth one seeing\". The importance of direct experience. Often quoted by foreign visitors arriving in China.",
-        "choicesEn": [
-          "Hearing a hundred times is not worth seeing once",
-          "Repeating a hundred times before seeing",
-          "One hearing is worth a hundred sights",
-          "Seeing everything at once"
-        ]
+        "choicesEn": ["One hearing is worth a hundred sights", "Repeating a hundred times before seeing", "Hearing a hundred times is not worth seeing once", "Seeing everything at once"]
       },
       {
         "id": "c12-q7",
@@ -2651,12 +2376,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "The word 趋势 means:",
         "explanationEn": "趋势 = trend, evolution, current. Typical of analytical / economic discourse. 未来的趋势 = future trends.",
-        "choicesEn": [
-          "Attitude",
-          "Trend / evolution",
-          "Power",
-          "Tradition"
-        ]
+        "choicesEn": ["Attitude", "Tradition", "Power", "Trend / evolution"]
       },
       {
         "id": "c12-q8",
@@ -2673,12 +2393,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"动不动就\" mean?",
         "explanationEn": "动不动就 = \"at the drop of a hat / for no good reason\". Expresses disproportionate repetitive behavior. 他动不动就生气 = \"he gets angry over the slightest thing\".",
-        "choicesEn": [
-          "Staying still",
-          "Continuously in motion",
-          "At the slightest thing / for no reason",
-          "Not moving"
-        ]
+        "choicesEn": ["At the slightest thing / for no reason", "Continuously in motion", "Staying still", "Not moving"]
       },
       {
         "id": "c12-q9",
@@ -2719,12 +2434,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the dialogue below, B thinks:",
         "contextEn": "A: 你觉得远程办公会成为主流吗？\nB: 从目前的趋势来看，恐怕是不可避免的。",
         "explanationEn": "恐怕 = \"I'm afraid that / probably\" (a cautious nuance). 不可避免 = inevitable. An analytical / argumentative register.",
-        "choicesEn": [
-          "Remote work should be avoided.",
-          "Given the current trend, it's probably inevitable.",
-          "Remote work will stay marginal.",
-          "Remote work is to be feared."
-        ]
+        "choicesEn": ["Remote work should be avoided.", "Remote work will stay marginal.", "Given the current trend, it's probably inevitable.", "Remote work is to be feared."]
       }
     ]
   },
@@ -2752,12 +2462,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "What does 赋予 mean?",
         "explanationEn": "赋予 (fùyǔ) = to confer, to bestow (solemn sense). 赋予权力 = to confer power. Written register, often legal or institutional.",
-        "choicesEn": [
-          "To deprive",
-          "To confer / to bestow",
-          "To accumulate",
-          "To manage"
-        ]
+        "choicesEn": ["To deprive", "To manage", "To accumulate", "To confer / to bestow"]
       },
       {
         "id": "c21-q2",
@@ -2796,12 +2501,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does \"莫非\" mean?",
         "explanationEn": "莫非 = \"could it be that...?\" — cautious, often rhetorical conjecture. Literary register. 莫非你忘了？ = \"could it be you've forgotten?\".",
-        "choicesEn": [
-          "Could it be that... (cautious supposition)",
-          "Certainly not",
-          "Exactly",
-          "Nonsense"
-        ]
+        "choicesEn": ["Certainly not", "Could it be that... (cautious supposition)", "Exactly", "Nonsense"]
       },
       {
         "id": "c21-q4",
@@ -2818,12 +2518,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "The term 改革 means:",
         "explanationEn": "改革 = reform. 革命 = revolution, 推翻 = to overthrow. Standard political vocabulary.",
-        "choicesEn": [
-          "Revolution",
-          "Reform",
-          "Overthrow",
-          "Regression"
-        ]
+        "choicesEn": ["Revolution", "Overthrow", "Reform", "Regression"]
       },
       {
         "id": "c21-q5",
@@ -2852,12 +2547,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "The word 通货膨胀 means:",
         "explanationEn": "通货膨胀 = inflation (lit. \"currency swells\"). HSK 6 economic vocabulary. 通货紧缩 = deflation.",
-        "choicesEn": [
-          "Deflation",
-          "Inflation",
-          "Unemployment",
-          "Exchange rate"
-        ]
+        "choicesEn": ["Inflation", "Deflation", "Unemployment", "Exchange rate"]
       },
       {
         "id": "c21-q7",
@@ -2890,12 +2580,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does the expression 以身作则 mean?",
         "explanationEn": "以身作则: \"to take one's own body as the rule\" = to set an example. Applicable to parents, teachers, leaders.",
-        "choicesEn": [
-          "To set an example through one's conduct",
-          "To work with one's body",
-          "To follow rules strictly",
-          "To be firm and fair"
-        ]
+        "choicesEn": ["To follow rules strictly", "To work with one's body", "To set an example through one's conduct", "To be firm and fair"]
       },
       {
         "id": "c21-q9",
@@ -2911,12 +2596,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "In an essay, 综上所述 means:",
         "explanationEn": "综上所述 = \"summarizing the above / in conclusion\". A fixed closing formula for a paragraph or essay.",
-        "choicesEn": [
-          "In the introduction",
-          "To summarize / in conclusion",
-          "Furthermore",
-          "According to tradition"
-        ]
+        "choicesEn": ["In the introduction", "According to tradition", "Furthermore", "To summarize / in conclusion"]
       },
       {
         "id": "c21-q10",
@@ -2935,12 +2615,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "promptEn": "In the formal dialogue below, B says:",
         "contextEn": "A: 对这项政策，您持何种看法？\nB: 我认为它具有一定的前瞻性，但仍有改进空间。",
         "explanationEn": "前瞻性 = \"forward-looking character\". 改进空间 = room for improvement. 具有 = to possess / to bear. Polished institutional register.",
-        "choicesEn": [
-          "The policy is regressive.",
-          "It has a certain forward-looking character but still has room for improvement.",
-          "It is perfect.",
-          "He takes no position."
-        ]
+        "choicesEn": ["It has a certain forward-looking character but still has room for improvement.", "The policy is regressive.", "It is perfect.", "He takes no position."]
       },
       {
         "id": "c21-q11",
@@ -2957,12 +2632,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "grammar",
         "promptEn": "What does 鉴于 mean in an official text?",
         "explanationEn": "鉴于 = \"whereas / given that\" (legal and institutional register). Opens an official justification. 鉴于上述情况 = \"given the above circumstances\".",
-        "choicesEn": [
-          "Whereas / given that",
-          "In contrast to",
-          "Despite",
-          "Beyond"
-        ]
+        "choicesEn": ["In contrast to", "Whereas / given that", "Despite", "Beyond"]
       },
       {
         "id": "c21-q12",
@@ -2979,12 +2649,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "The chengyu 厚积薄发 evokes:",
         "explanationEn": "厚积薄发 (hòu jī bó fā): \"to accumulate thickly, to release sparingly\". Quotes Su Shi. A cardinal value of long-term work before public brilliance.",
-        "choicesEn": [
-          "Patient accumulation before a measured release.",
-          "Buying a lot and selling little.",
-          "Saving without spending.",
-          "Working little but well."
-        ]
+        "choicesEn": ["Saving without spending.", "Buying a lot and selling little.", "Patient accumulation before a measured release.", "Working little but well."]
       },
       {
         "id": "c21-q13",
@@ -3072,12 +2737,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "The classical character 亦 (yì) means:",
         "explanationEn": "亦 = 也 in Classical Chinese. Always found in literary texts, philosophical quotations, or certain chengyu (不亦乐乎 \"is this not delightful?\").",
-        "choicesEn": [
-          "If",
-          "Also / as well (classical register)",
-          "Not",
-          "Only"
-        ]
+        "choicesEn": ["If", "Not", "Also / as well (classical register)", "Only"]
       },
       {
         "id": "c22-q3",
@@ -3089,16 +2749,11 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
           "Un ordre",
           "Un accompli / état atteint (équivalent ~了)"],
         "correctIndex": 3,
-        "explanationFr": "矣 marque l'accompli ou un changement d'état en chinois classique. Proche de 了 moderne. 天命矣 = « c'est la volonté du ciel ». Souvent cité dans les textes traditionnels.",
+        "explanationFr": "矣 marque l'accompli ou le changement d'état en chinois classique, à la manière du 了 moderne. Exemple : 大势去矣 = « la partie est désormais perdue ». Fréquent dans les textes anciens.",
         "topic": "culture",
         "promptEn": "What does \"矣\" express at the end of a classical sentence?",
-        "explanationEn": "矣 marks completion or a change of state in Classical Chinese. Close to modern 了. 天命矣 = \"it is the will of Heaven\". Often quoted in traditional texts.",
-        "choicesEn": [
-          "A question",
-          "Completion / attained state (equivalent to ~了)",
-          "A command",
-          "A doubt"
-        ]
+        "explanationEn": "矣 marks completion or a change of state in Classical Chinese, much like modern 了. Example: 大势去矣 = 'the game is now lost'. Frequent in classical texts.",
+        "choicesEn": ["A question", "A doubt", "A command", "Completion / attained state (equivalent to ~了)"]
       },
       {
         "id": "c22-q4",
@@ -3137,12 +2792,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "The chengyu 杯弓蛇影 evokes:",
         "explanationEn": "杯弓蛇影: \"the reflection of the bow in the cup looking like a snake\". A guest scared by the reflection of a hanging bow. = to worry about nothing, imaginary fears.",
-        "choicesEn": [
-          "An imagined fright caused by one's own imagination.",
-          "A snake drinking from a cup.",
-          "A sincere friendship.",
-          "The beauty of reflections."
-        ]
+        "choicesEn": ["A snake drinking from a cup.", "An imagined fright caused by one's own imagination.", "A sincere friendship.", "The beauty of reflections."]
       },
       {
         "id": "c22-q6",
@@ -3159,12 +2809,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "vocab",
         "promptEn": "The word 寄予 means:",
         "explanationEn": "寄予 = \"to place (hope, trust) in\". 寄予厚望 = to hold high hopes for. Very formal register, media / official.",
-        "choicesEn": [
-          "To place (a hope, an expectation — solemn sense)",
-          "To send by post",
-          "To give a gift",
-          "To betray"
-        ]
+        "choicesEn": ["To give a gift", "To send by post", "To place (a hope, an expectation — solemn sense)", "To betray"]
       },
       {
         "id": "c22-q7",
@@ -3180,12 +2825,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "What does \"耐人寻味\" mean?",
         "explanationEn": "耐人寻味: \"worth savoring / meditating on\". Used for a book, a remark, or a work of art that invites reflection.",
-        "choicesEn": [
-          "Thought-provoking / worth pondering",
-          "To endure fatigue",
-          "To taste patiently",
-          "To be indecisive"
-        ]
+        "choicesEn": ["To be indecisive", "To endure fatigue", "To taste patiently", "Thought-provoking / worth pondering"]
       },
       {
         "id": "c22-q8",
@@ -3218,12 +2858,7 @@ export const cecrBilans: Record<CecrLevelSlug, LevelBilan> = {
         "topic": "culture",
         "promptEn": "The line by Du Fu \"国破山河在\" evokes:",
         "explanationEn": "\"国破山河在\": opening line of the poem \"春望\" (\"Spring View\") by Du Fu (杜甫), Tang dynasty. A reflection on the permanence of nature against the fall of a dynasty. Basic literary culture at C2.",
-        "choicesEn": [
-          "The state is destroyed, but rivers and mountains remain.",
-          "It rains on the mountains.",
-          "The rivers are proud.",
-          "States wage war."
-        ]
+        "choicesEn": ["It rains on the mountains.", "The state is destroyed, but rivers and mountains remain.", "The rivers are proud.", "States wage war."]
       },
       {
         "id": "c22-q10",
