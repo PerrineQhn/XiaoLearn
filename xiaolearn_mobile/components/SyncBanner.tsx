@@ -10,9 +10,10 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '@/contexts/AuthContext';
+import { useI18n } from '@/contexts/LanguageContext';
 
 /** Clés dont la présence locale indique que la progression est synchronisée. */
-const PROGRESS_KEYS = ['cl_word_srs_v1', 'cl_completed_lessons', 'xl_xp_total'];
+const PROGRESS_KEYS = ['cl_word_srs_v2', 'cl_completed_lessons', 'xl_xp_total'];
 
 export default function SyncBanner() {
   const { user } = useAuth();
@@ -63,10 +64,12 @@ export default function SyncBanner() {
 
   if (!visible) return null;
 
+  const { t } = useI18n();
+
   return (
     <View style={[s.banner, { top: insets.top + 6 }]} pointerEvents="none">
       <ActivityIndicator size="small" color="#FFF" />
-      <Text style={s.txt}>Synchronisation de ta progression…</Text>
+      <Text style={s.txt}>{t('sync.inProgress')}</Text>
     </View>
   );
 }

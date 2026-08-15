@@ -13,6 +13,7 @@ import { useCards, triggerProgress } from '@/hooks/useCards';
 import { CardArt } from '@/components/CardArt';
 import { CARDS } from '@/data/cards';
 
+/** Largeur visée par vignette en grille — la carte reste lisible autour de 90 pt. */
 export function CardRail({ colors, px = 16 }: { colors: typeof Colors.light; px?: number }) {
   const router = useRouter();
   const { t, pick } = useI18n();
@@ -40,6 +41,21 @@ export function CardRail({ colors, px = 16 }: { colors: typeof Colors.light; px?
     return [...owned, ...locked];
   }, [unlocked, snapshot]);
 
+  const tiles = ordered.map(card => (
+    <TouchableOpacity
+      key={card.id}
+      style={{ width: 74 }}
+      activeOpacity={0.85}
+      onPress={() => router.push('/collection' as any)}
+    >
+      <CardArt card={card} unlocked={!!unlocked[card.id]} />
+    </TouchableOpacity>
+  ));
+
+  const empty = ordered.length === 0
+    ? <Text style={[s.empty, { color: colors.textTertiary }]}>{t('cards2.seeCollection')}</Text>
+    : null;
+
   return (
     <View>
       <View style={[s.head, { paddingHorizontal: px }]}>
@@ -50,25 +66,22 @@ export function CardRail({ colors, px = 16 }: { colors: typeof Colors.light; px?
         </TouchableOpacity>
       </View>
 
+      {/*
+        Bandeau qui défile, en toutes largeurs.
+
+        Une grille avait été essayée sur tablette pour donner à voir tout le
+        catalogue d'un bloc. Elle rend en réalité l'accueil interminable : les
+        24 cartes repoussent la priorité du jour et les objectifs hors de
+        l'écran, et l'accueil cesse d'être une vue d'ensemble. La collection
+        complète a son propre écran, c'est là qu'elle se déploie.
+      */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: px, gap: 10, paddingVertical: 8 }}
       >
-        {ordered.map(card => (
-          <TouchableOpacity
-            key={card.id}
-            style={{ width: 74 }}
-            activeOpacity={0.85}
-            onPress={() => router.push('/collection' as any)}
-          >
-            <CardArt card={card} unlocked={!!unlocked[card.id]} />
-          </TouchableOpacity>
-        ))}
-
-        {ordered.length === 0 && (
-          <Text style={[s.empty, { color: colors.textTertiary }]}>{t('cards2.seeCollection')}</Text>
-        )}
+        {tiles}
+        {empty}
       </ScrollView>
     </View>
   );

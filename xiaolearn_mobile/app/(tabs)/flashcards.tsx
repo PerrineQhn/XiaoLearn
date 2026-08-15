@@ -6,11 +6,13 @@ import {
   View, Text, StyleSheet, TouchableOpacity, ScrollView,
   ActivityIndicator, Modal, Pressable, Animated, FlatList,
 } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useFocusEffect } from '@react-navigation/native';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useLayout } from '@/hooks/useLayout';
 import Colors from '@/constants/Colors';
 import { useSrsData, type DeckStats, type SrsCard, type SrsEntry } from '@/hooks/useSrsData';
 import { useSrs } from '@/contexts/SrsContext';
@@ -78,7 +80,12 @@ function StatBubble({
 
 // ─── DeckCard ─────────────────────────────────────────────────────────────────
 
-function DeckCard({ deck, colors, onPress }: { deck: DeckStats; colors: typeof Colors.light; onPress: () => void }) {
+function DeckCard({ deck, colors, onPress, style }: {
+  deck: DeckStats; colors: typeof Colors.light; onPress: () => void;
+  // Laisse l'appelant imposer une largeur quand les decks sont en grille : la
+  // carte n'a pas à savoir combien de colonnes l'écran a décidé d'afficher.
+  style?: StyleProp<ViewStyle>;
+}) {
   const { t } = useI18n();
   const pct = deck.total > 0 ? Math.round((deck.mastered / deck.total) * 100) : 0;
   const dueLabel = deck.dueNow > 0 ? t('cards.toReviewShort', { n: deck.dueNow }) : t('cards.newShort', { n: deck.newCards });
@@ -86,7 +93,7 @@ function DeckCard({ deck, colors, onPress }: { deck: DeckStats; colors: typeof C
 
   return (
     <TouchableOpacity
-      style={[s.deckCard, { backgroundColor: colors.cardBg, borderColor: colors.borderLight }]}
+      style={[s.deckCard, { backgroundColor: colors.cardBg, borderColor: colors.borderLight }, style]}
       onPress={onPress}
       activeOpacity={0.75}
     >
@@ -109,6 +116,27 @@ function DeckCard({ deck, colors, onPress }: { deck: DeckStats; colors: typeof C
   );
 }
 
+// ─── Feuilles modales ─────────────────────────────────────────────────────────
+
+/** Largeur au-delà de laquelle une feuille cesse d'être confortable. */
+const SHEET_MAX_WIDTH = 560;
+
+/**
+ * Marges latérales des feuilles ancrées en bas.
+ *
+ * Étirée sur toute la largeur d'un iPad, une feuille éparpille ses contrôles
+ * aux deux extrémités de l'écran et ses lignes deviennent des rubans. On la
+ * borne donc, en la recentrant par des marges symétriques plutôt qu'en
+ * remplaçant `left`/`right` par un `alignSelf` : sur un enfant en position
+ * absolue, ce sont les bords qui décident, l'alignement serait ignoré.
+ */
+function useSheetSide(): ViewStyle | null {
+  const { tablet, width } = useLayout();
+  if (!tablet) return null;
+  const side = Math.max(0, (width - SHEET_MAX_WIDTH) / 2);
+  return { left: side, right: side };
+}
+
 // ─── Session Options Sheet ────────────────────────────────────────────────────
 
 function SessionSheet({
@@ -125,12 +153,13 @@ function SessionSheet({
   const [study, setStudy] = useState<StudyMode>('flip');
   const { translateY, overlayOpacity, panResponder, open } = useSwipeToDismiss(onClose);
   const insets = useSafeAreaInsets();
+  const sheetSide = useSheetSide();
 
   return (
     <Modal visible={visible} transparent animationType="none" onRequestClose={onClose} onShow={open}>
       <Animated.View style={[StyleSheet.absoluteFillObject, { backgroundColor: 'rgba(0,0,0,0.45)', opacity: overlayOpacity }]} pointerEvents="none" />
       <Pressable style={StyleSheet.absoluteFillObject} onPress={onClose} />
-      <Animated.View style={[s.sheet, { backgroundColor: colors.cardBg, transform: [{ translateY }], paddingBottom: insets.bottom + 20 }]}>
+      <Animated.View style={[s.sheet, sheetSide, { backgroundColor: colors.cardBg, transform: [{ translateY }], paddingBottom: insets.bottom + 20 }]}>
         <View {...panResponder.panHandlers} style={s.handleArea}>
           <View style={[s.sheetHandle, { backgroundColor: colors.borderMedium }]} />
         </View>
@@ -198,12 +227,13 @@ function WordListSheet({
   const router = useRouter();
   const { translateY, overlayOpacity, panResponder, open } = useSwipeToDismiss(onClose);
   const insets = useSafeAreaInsets();
+  const sheetSide = useSheetSide();
 
   return (
     <Modal visible={visible} transparent animationType="none" onRequestClose={onClose} onShow={open}>
       <Animated.View style={[StyleSheet.absoluteFillObject, { backgroundColor: 'rgba(0,0,0,0.5)', opacity: overlayOpacity }]} pointerEvents="none" />
       <Pressable style={StyleSheet.absoluteFillObject} onPress={onClose} />
-      <Animated.View style={[wl.sheet, { backgroundColor: colors.cardBg, transform: [{ translateY }] }]}>
+      <Animated.View style={[wl.sheet, sheetSide, { backgroundColor: colors.cardBg, transform: [{ translateY }] }]}>
         {/* Handle */}
         <View {...panResponder.panHandlers} style={wl.handleArea}>
           <View style={[wl.handle, { backgroundColor: colors.borderMedium }]} />
@@ -284,6 +314,7 @@ export default function FlashcardsScreen() {
   const colors = Colors[scheme];
   const router = useRouter();
   const { stats, loaded, reload, allCards, srsState } = useSrs();
+  const { tablet, wide, gutter, gap, columns, itemWidth } = useLayout();
 
   const { access } = useEntitlements();
   const [listFilter, setListFilter] = useState<ListFilter | null>(null);
@@ -358,9 +389,48 @@ export default function FlashcardsScreen() {
 
   const hasDue = stats.dueNow > 0;
 
+  /**
+   * Un deck reste lisible autour de 280 pt : en dessous, le libellé de niveau
+   * et le compteur de mots se chevauchent. Au-delà, la carte s'étire sans rien
+   * gagner — d'où une grille sur tablette plutôt qu'une colonne à rallonge où
+   * l'on défile pour rien.
+   */
+  const deckCols = tablet ? columns(280) : 1;
+  const deckW = itemWidth(deckCols);
+
+  // Extraits du JSX pour n'exister qu'en un exemplaire : côte à côte ou
+  // empilés, ce sont les mêmes blocs, seul leur conteneur change. Les marges
+  // basses ne servent qu'à l'empilement et sont neutralisées en rangée.
+  const cta = (
+    <TouchableOpacity
+      onPress={() => { setPendingMode(hasDue ? 'due' : 'new'); setPendingLevel(undefined); setSessionOpen(true); }}
+      activeOpacity={0.85}
+      style={wide ? { flex: 5 } : undefined}
+    >
+      <BrandGradient style={[s.reviseNow, wide && { marginBottom: 0, flex: 1 }]}>
+        <View>
+          <Text style={s.reviseNowTitle}>{hasDue ? t('cards.reviewNow') : t('cards.learnWords')}</Text>
+          <Text style={s.reviseNowSub}>{hasDue ? t('cards.dueToday', { n: stats.dueNow }) : t('cards.newAvailable', { n: stats.newCards })}</Text>
+        </View>
+        {hasDue
+          ? <View style={[s.reviseNowBadge, { backgroundColor: 'rgba(255,255,255,0.25)' }]}><Text style={s.reviseNowBadgeText}>{stats.dueNow}</Text></View>
+          : <Ionicons name="sparkles" size={28} color="rgba(255,255,255,0.9)" />
+        }
+      </BrandGradient>
+    </TouchableOpacity>
+  );
+
+  const statsRow = (
+    <View style={[s.statsRow, wide && { flex: 7, marginBottom: 0 }]}>
+      <StatBubble label={t('cards.mastered')} value={stats.mastered} color="#4CAF50" onPress={() => openFilter('mastered')} />
+      <StatBubble label={t('cards.learning')} value={stats.learning} color="#FF9800" onPress={() => openFilter('learning')} />
+      <StatBubble label={t('cards.new')} value={stats.newCards} color={colors.primaryRed} onPress={() => openFilter('new')} />
+    </View>
+  );
+
   return (
     <SafeAreaView style={[s.root, { backgroundColor: colors.appBg }]}>
-      <View style={[s.header, { backgroundColor: colors.appBg }]}>
+      <View style={[s.header, { backgroundColor: colors.appBg, paddingHorizontal: gutter }]}>
         <Text style={[s.pageTitle, { color: colors.textPrimary }]}>{t('cards.title')}</Text>
         <View style={{ flex: 1 }} />
         {/* Création d'une carte personnalisée. */}
@@ -381,31 +451,18 @@ export default function FlashcardsScreen() {
           <Text style={[s.loadingTxt, { color: colors.textTertiary }]}>{t('hard.loadingVocab')}</Text>
         </View>
       ) : (
-        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 40 }}>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: gutter, paddingBottom: 40 }}>
 
-          {/* CTA principal */}
-          <TouchableOpacity
-            onPress={() => { setPendingMode(hasDue ? 'due' : 'new'); setPendingLevel(undefined); setSessionOpen(true); }}
-            activeOpacity={0.85}
-          >
-            <BrandGradient style={s.reviseNow}>
-              <View>
-                <Text style={s.reviseNowTitle}>{hasDue ? t('cards.reviewNow') : t('cards.learnWords')}</Text>
-                <Text style={s.reviseNowSub}>{hasDue ? t('cards.dueToday', { n: stats.dueNow }) : t('cards.newAvailable', { n: stats.newCards })}</Text>
-              </View>
-              {hasDue
-                ? <View style={[s.reviseNowBadge, { backgroundColor: 'rgba(255,255,255,0.25)' }]}><Text style={s.reviseNowBadgeText}>{stats.dueNow}</Text></View>
-                : <Ionicons name="sparkles" size={28} color="rgba(255,255,255,0.9)" />
-              }
-            </BrandGradient>
-          </TouchableOpacity>
-
-          {/* Stats cliquables */}
-          <View style={s.statsRow}>
-            <StatBubble label={t('cards.mastered')} value={stats.mastered} color="#4CAF50" onPress={() => openFilter('mastered')} />
-            <StatBubble label={t('cards.learning')} value={stats.learning} color="#FF9800" onPress={() => openFilter('learning')} />
-            <StatBubble label={t('cards.new')} value={stats.newCards} color={colors.primaryRed} onPress={() => openFilter('new')} />
-          </View>
+          {/* Appel à l'action + statistiques.
+              Empilés, ils repoussent les decks sous la ligne de flottaison alors
+              qu'un écran large a de la place à revendre en horizontal. Le 5/7
+              donne au CTA la largeur d'un bouton, pas d'une bannière, et laisse
+              aux trois bulles de quoi rester rondes. */}
+          {wide ? (
+            <View style={[s.topRow, { gap }]}>{cta}{statsRow}</View>
+          ) : (
+            <>{cta}{statsRow}</>
+          )}
 
           {/* Total */}
           <View style={[s.totalRow, { backgroundColor: colors.cardBgAlt, borderColor: colors.borderLight }]}>
@@ -417,9 +474,24 @@ export default function FlashcardsScreen() {
 
           {/* Decks par niveau */}
           <Text style={[s.sectionTitle, { color: colors.textPrimary }]}>{t('cards.byPath')}</Text>
-          {stats.decks.map(deck => (
-            <DeckCard key={deck.levelKey} deck={deck} colors={colors} onPress={() => openDeck(deck)} />
-          ))}
+          {tablet ? (
+            // En grille, l'espacement vient du conteneur : on retire la marge
+            // basse de la carte, sinon les rangées s'écartent deux fois plus
+            // que les colonnes.
+            <View style={[s.deckGrid, { gap }]}>
+              {stats.decks.map(deck => (
+                <DeckCard
+                  key={deck.levelKey} deck={deck} colors={colors}
+                  onPress={() => openDeck(deck)}
+                  style={{ width: deckW, marginBottom: 0 }}
+                />
+              ))}
+            </View>
+          ) : (
+            stats.decks.map(deck => (
+              <DeckCard key={deck.levelKey} deck={deck} colors={colors} onPress={() => openDeck(deck)} />
+            ))
+          )}
         </ScrollView>
       )}
 
@@ -465,6 +537,11 @@ const s = StyleSheet.create({
   reviseNowSub:   { color: 'rgba(255,255,255,0.8)', fontSize: 13, marginTop: 2 },
   reviseNowBadge: { width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center' },
   reviseNowBadgeText: { color: '#FFF', fontSize: 20, fontWeight: '700' },
+
+  // Rangée haute des écrans larges : `stretch` pour que le CTA et les bulles
+  // partagent la même hauteur, quel que soit le plus grand des deux.
+  topRow: { flexDirection: 'row', alignItems: 'stretch', marginBottom: 16 },
+  deckGrid: { flexDirection: 'row', flexWrap: 'wrap' },
 
   statsRow: { flexDirection: 'row', gap: 10, marginBottom: 14 },
   statBubble: { flex: 1, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },

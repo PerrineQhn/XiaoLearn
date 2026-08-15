@@ -4,13 +4,15 @@
  */
 import { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import {
-  View, Text, ScrollView, StyleSheet, TouchableOpacity, useWindowDimensions,
+  View, Text, ScrollView, StyleSheet, TouchableOpacity,
+  type StyleProp, type ViewStyle,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useLayout } from '@/hooks/useLayout';
 import Colors from '@/constants/Colors';
 import { LESSON_DATA } from '@/data/cecrLessons';
 import { cecrBilans, type CecrLevelSlug } from '@/data/cecrBilans';
@@ -20,6 +22,13 @@ import { isLevelPremiumLocked } from '@/utils/lessonGate';
 import { useI18n } from '@/contexts/LanguageContext';
 
 const LEVEL_SLUG = LEVEL_SLUG_IMPORT;
+
+/**
+ * Largeur du rail de niveaux. 300 pt laissent tenir « B1.2 — Intermédiaire »
+ * sur une ligne, ce qui est la raison d'être du rail : voir où l'on en est
+ * sans faire défiler.
+ */
+const LEVEL_RAIL_WIDTH = 300;
 
 // ─────────────────────────────────────────────
 // Composant leçon
@@ -60,7 +69,7 @@ function LessonRow({
 // Composant module (parcours)
 // ─────────────────────────────────────────────
 function ModuleCard({
-  mod, completedIds, accent, colors, expanded, onToggle,
+  mod, completedIds, accent, colors, expanded, onToggle, style,
 }: {
   mod: CecrModule;
   completedIds: Set<string>;
@@ -68,6 +77,8 @@ function ModuleCard({
   colors: typeof Colors.light;
   expanded: boolean;
   onToggle: () => void;
+  /** Largeur imposée par la grille appelante, le cas échéant. */
+  style?: StyleProp<ViewStyle>;
 }) {
   const { t, pick } = useI18n();
   const lessons = LESSON_DATA[mod.id] ?? [];
@@ -77,7 +88,7 @@ function ModuleCard({
   const modDone = completedIds.has(mod.id);
 
   return (
-    <View style={styles.moduleWrap}>
+    <View style={[styles.moduleWrap, style]}>
       <TouchableOpacity
         style={[styles.moduleHeader, {
           backgroundColor: expanded ? accent+'12' : colors.cardBg,
@@ -222,9 +233,7 @@ interface LevelInfo {
 export default function CoursScreen() {
   const scheme = useColorScheme();
   const colors = Colors[scheme];
-  const { width } = useWindowDimensions();
-  const isTablet = width >= 768;
-  const px = isTablet ? 24 : 16;
+  const { tablet, wide, gutter: px } = useLayout();
 
   const router = useRouter();
   const { t, pick } = useI18n();
@@ -293,6 +302,102 @@ export default function CoursScreen() {
     setSelectedId(li.level.id);
   }
 
+  // Les pastilles de niveau alimentent deux contenants — ruban horizontal
+  // sous le seuil, rail vertical au-dessus — d'où cette définition unique.
+  const levelChips = levelInfos.map(li => {
+    const isSel = li.level.id === selected?.level.id;
+    const accent = li.level.color;
+    return (
+      <TouchableOpacity
+        key={li.level.id}
+        activeOpacity={0.85}
+        onPress={() => onSelectLevel(li)}
+        style={[
+          chip.wrap,
+          {
+            backgroundColor: isSel ? accent + '14' : colors.cardBg,
+            borderColor: isSel ? accent : colors.borderLight,
+            borderWidth: isSel ? 2 : 1,
+            opacity: li.locked && !isSel ? 0.65 : 1,
+          },
+        ]}
+      >
+        <View style={chip.titleRow}>
+          {li.locked
+            ? <Ionicons name="lock-closed" size={13} color={colors.textTertiary} style={{ marginRight: 5 }} />
+            : <Text style={chip.emoji}>{li.level.icon}</Text>}
+          <Text
+            style={[chip.title, { color: li.locked ? colors.textTertiary : colors.textPrimary }]}
+            numberOfLines={1}
+          >
+            {li.level.label} — {pick(li.level.name, li.level.nameEn)}
+          </Text>
+        </View>
+        <Text style={[chip.sub, { color: li.locked ? colors.textTertiary : accent }]}>
+          {li.locked
+            ? t('cours.locked')
+            : `${li.done}/${li.total} · ${li.pct}%`}
+        </Text>
+      </TouchableOpacity>
+    );
+  });
+
+  const moduleCards = selected && !selected.locked
+    ? selected.level.modules.map(mod => (
+        <ModuleCard
+          key={mod.id}
+          mod={mod}
+          completedIds={completedIds}
+          accent={selected.level.color}
+          colors={colors}
+          expanded={!!expandedModules[mod.id]}
+          onToggle={() => toggleModule(mod.id)}
+          style={wide ? styles.moduleHalf : undefined}
+        />
+      ))
+    : null;
+
+  const body = (
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={wide ? { flex: 1 } : undefined}
+      contentContainerStyle={[
+        { paddingHorizontal: px, paddingBottom: 120, paddingTop: 8 },
+        // Le plafond de 680 pt garde une colonne unique lisible ; en deux
+        // colonnes il ne ferait que rétrécir la grille sans rien protéger.
+        tablet && !wide && { maxWidth: 680, alignSelf: 'center' as const },
+      ]}
+    >
+      {selected && selected.bilanLocked && (
+        <View style={[styles.noticeCard, { backgroundColor: colors.cardBgAlt, borderColor: colors.borderLight }]}>
+          <Text style={styles.noticeEmoji}>🔒</Text>
+          <Text style={[styles.noticeText, { color: colors.textSecondary }]}>
+            {t('cours.bilanLock', { label: selected.prevLabel ?? '' })}
+          </Text>
+        </View>
+      )}
+
+      {selected && !selected.locked && (
+        <>
+          {wide
+            ? <View style={styles.moduleGrid}>{moduleCards}</View>
+            : moduleCards}
+          {LEVEL_SLUG[selected.level.id] && (
+            <BilanBanner
+              levelLabel={selected.level.label}
+              emoji={selected.level.icon}
+              completionPct={selected.pct}
+              entry={bilanEntries[LEVEL_SLUG[selected.level.id]!]}
+              accent={selected.level.color}
+              colors={colors}
+              onStart={() => router.push({ pathname: '/bilan', params: { level: LEVEL_SLUG[selected.level.id] } })}
+            />
+          )}
+        </>
+      )}
+    </ScrollView>
+  );
+
   return (
     <SafeAreaView style={[styles.root, { backgroundColor: colors.appBg }]}>
       <View style={[styles.pageHeader, { paddingHorizontal: px }]}>
@@ -302,95 +407,44 @@ export default function CoursScreen() {
         </Text>
       </View>
 
-      {/* Sélecteur de niveaux horizontal */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingHorizontal: px, gap: 10, paddingVertical: 8 }}
-        style={{ flexGrow: 0 }}
-      >
-        {levelInfos.map(li => {
-          const isSel = li.level.id === selected?.level.id;
-          const accent = li.level.color;
-          return (
-            <TouchableOpacity
-              key={li.level.id}
-              activeOpacity={0.85}
-              onPress={() => onSelectLevel(li)}
-              style={[
-                chip.wrap,
-                {
-                  backgroundColor: isSel ? accent + '14' : colors.cardBg,
-                  borderColor: isSel ? accent : colors.borderLight,
-                  borderWidth: isSel ? 2 : 1,
-                  opacity: li.locked && !isSel ? 0.65 : 1,
-                },
-              ]}
-            >
-              <View style={chip.titleRow}>
-                {li.locked
-                  ? <Ionicons name="lock-closed" size={13} color={colors.textTertiary} style={{ marginRight: 5 }} />
-                  : <Text style={chip.emoji}>{li.level.icon}</Text>}
-                <Text
-                  style={[chip.title, { color: li.locked ? colors.textTertiary : colors.textPrimary }]}
-                  numberOfLines={1}
-                >
-                  {li.level.label} — {pick(li.level.name, li.level.nameEn)}
-                </Text>
-              </View>
-              <Text style={[chip.sub, { color: li.locked ? colors.textTertiary : accent }]}>
-                {li.locked
-                  ? t('cours.locked')
-                  : `${li.done}/${li.total} · ${li.pct}%`}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+      {wide ? (
+        /*
+          Rail vertical : les dix niveaux CECR tiennent en hauteur, alors qu'en
+          ruban horizontal la moitié d'entre eux restait hors champ derrière un
+          défilement que rien ne signale. On voit sa progression d'ensemble et
+          on change de niveau sans quitter la liste des modules.
+        */
+        <View style={styles.railRow}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={[styles.levelRail, { borderRightColor: colors.borderLight }]}
+            contentContainerStyle={{ paddingHorizontal: px, gap: 10, paddingVertical: 8, paddingBottom: 120 }}
+          >
+            {levelChips}
+          </ScrollView>
+          {body}
+        </View>
+      ) : (
+        <>
+          {/* Sélecteur de niveaux horizontal */}
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: px, gap: 10, paddingVertical: 8 }}
+            // `flexShrink: 0` : `flexGrow: 0` empêche la rangée de s'étirer,
+            // pas de se faire comprimer. Sans lui, un contenu débordant en
+            // dessous rogne les pastilles — le défaut corrigé sur Collection,
+            // Lectures et Dialogues. Cet écran garde sa propre structure (sur
+            // tablette les niveaux passent en rail vertical), il n'utilise donc
+            // pas `FilterChipRow`, mais il lui fallait la même protection.
+            style={{ flexGrow: 0, flexShrink: 0 }}
+          >
+            {levelChips}
+          </ScrollView>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={[
-          { paddingHorizontal: px, paddingBottom: 120, paddingTop: 8 },
-          isTablet && { maxWidth: 680, alignSelf: 'center' as const },
-        ]}
-      >
-        {selected && selected.bilanLocked && (
-          <View style={[styles.noticeCard, { backgroundColor: colors.cardBgAlt, borderColor: colors.borderLight }]}>
-            <Text style={styles.noticeEmoji}>🔒</Text>
-            <Text style={[styles.noticeText, { color: colors.textSecondary }]}>
-              {t('cours.bilanLock', { label: selected.prevLabel ?? '' })}
-            </Text>
-          </View>
-        )}
-
-        {selected && !selected.locked && (
-          <>
-            {selected.level.modules.map(mod => (
-              <ModuleCard
-                key={mod.id}
-                mod={mod}
-                completedIds={completedIds}
-                accent={selected.level.color}
-                colors={colors}
-                expanded={!!expandedModules[mod.id]}
-                onToggle={() => toggleModule(mod.id)}
-              />
-            ))}
-            {LEVEL_SLUG[selected.level.id] && (
-              <BilanBanner
-                levelLabel={selected.level.label}
-                emoji={selected.level.icon}
-                completionPct={selected.pct}
-                entry={bilanEntries[LEVEL_SLUG[selected.level.id]!]}
-                accent={selected.level.color}
-                colors={colors}
-                onStart={() => router.push({ pathname: '/bilan', params: { level: LEVEL_SLUG[selected.level.id] } })}
-              />
-            )}
-          </>
-        )}
-      </ScrollView>
+          {body}
+        </>
+      )}
     </SafeAreaView>
   );
 }
@@ -418,6 +472,12 @@ const styles = StyleSheet.create({
   },
   noticeEmoji: { fontSize: 22 },
   noticeText: { flex: 1, fontSize: 13, lineHeight: 19, fontWeight: '500' },
+
+  // Rail de niveaux + grille de modules (grand écran uniquement)
+  railRow: { flex: 1, flexDirection: 'row' },
+  levelRail: { width: LEVEL_RAIL_WIDTH, flexGrow: 0, borderRightWidth: 1 },
+  moduleGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
+  moduleHalf: { width: '48%' },
 
   // Modules container
   moduleWrap: { marginBottom: 8 },

@@ -11,6 +11,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import { SrsProvider } from '@/contexts/SrsContext';
 import { CardsProvider } from '@/contexts/CardsContext';
 import SyncBanner from '@/components/SyncBanner';
+import DeletionBanner from '@/components/DeletionBanner';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import LoginScreen from '@/app/login';
@@ -75,6 +76,10 @@ function AppStack() {
   return (
     <>
       <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
+      {/* Plein écran sur tablette. Le cadrage global à 560 points laissait
+          deux larges bandes vides : un tableau de bord fait de cartes gagne à
+          s'étaler. Seuls les écrans de lecture bornent leur colonne de texte,
+          via `readableContent`. */}
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="login" options={{ headerShown: false, presentation: 'modal' }} />
@@ -83,6 +88,7 @@ function AppStack() {
         <Stack.Screen name="+not-found" />
       </Stack>
       <SyncBanner />
+      <DeletionBanner />
     </>
   );
 }

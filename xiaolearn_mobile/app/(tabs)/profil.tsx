@@ -25,6 +25,7 @@ import { useEntitlements } from '@/hooks/useEntitlements';
 import {
   loadNotifPrefs, enableNotifications, disableNotifications,
 } from '@/services/notificationService';
+import Constants from 'expo-constants';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -170,7 +171,7 @@ export default function ProfilScreen() {
 
   async function handleSignOut() {
     Alert.alert(t('dlg.signOut'), t('dlg.signOutSure'), [
-      { text: 'Annuler', style: 'cancel' },
+      { text: t('common.cancel'), style: 'cancel' },
       {
         text: t('dlg.signOut'), style: 'destructive', onPress: async () => {
           setSigningOut(true);
@@ -410,10 +411,22 @@ export default function ProfilScreen() {
                   : <Ionicons name="chevron-forward" size={16} color={c.primaryRed} />
               }
             />
+            {/* Exigé par App Store 5.1.1(v) : la suppression doit se demander
+                depuis l'application, et se trouver sans chercher. */}
+            {user && (
+              <SettingRow
+                icon="trash-outline"
+                label={t('del.title')}
+                colors={c}
+                onPress={() => router.push('/supprimer-compte' as any)}
+              />
+            )}
           </View>
         </View>
 
-        <Text style={[styles.version, { color: c.textTertiary }]}>XiaoLearn Mobile v1.0.0</Text>
+        <Text style={[styles.version, { color: c.textTertiary }]}>
+          XiaoLearn Mobile v{Constants.expoConfig?.version ?? '1.0.0'}
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );

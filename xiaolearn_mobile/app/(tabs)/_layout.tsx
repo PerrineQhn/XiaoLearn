@@ -1,16 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
-import { Tabs, useRouter } from 'expo-router';
+import { Tabs, useRouter, usePathname } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import {
   View, Text, StyleSheet, TouchableOpacity, Platform,
   Modal, ScrollView, Switch, Pressable, Animated, PanResponder, Image,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useLayout } from '@/hooks/useLayout';
 import { useSwipeToDismiss } from '@/hooks/useSwipeToDismiss';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import Colors from '@/constants/Colors';
+import { CatalogIcon } from '@/components/CatalogIcon';
+import { readErrors } from '@/data/errorLog';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '@/contexts/AuthContext';
+import { screensInGroup, railScreens } from '@/data/screenCatalog';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useI18n } from '@/contexts/LanguageContext';
 import { useSrs } from '@/contexts/SrsContext';
@@ -43,56 +48,20 @@ function PlusSheet({ visible, onClose }: { visible: boolean; onClose: () => void
 
   // Organisation alignée sur la sidebar du web (référence Seonsaengnim) :
   // Épinglé / Pratique / Lecture & dictionnaire / Communauté / Actualités &
-  // feedback. Les entrées sans écran mobile (Mes notes, Annonces, Idées &
-  // Roadmap, Exclusif) sont omises ; Dictée et Mini-jeux, propres au mobile,
-  // rejoignent Pratique ; « Mes hauts-faits » du web correspond à Collection.
-  // Libellés par CLÉ i18n : en dur, le menu restait français en interface anglaise.
-  const shortcuts = [
-    { key: 'nav.home',       icon: 'home-outline'                as IoniconName, route: '/(tabs)' },
-    { key: 'nav.path',       icon: 'book-outline'                as IoniconName, route: '/(tabs)/cours' },
-    { key: 'nav.flashcards', icon: 'layers-outline'              as IoniconName, route: '/(tabs)/flashcards' },
-    { key: 'sc.prof',        icon: 'chatbubble-ellipses-outline' as IoniconName, route: '/(tabs)/messages' },
-  ];
+  // feedback. Les entrées sans écran mobile (Annonces, Idées & Roadmap,
+  // Exclusif) sont omises ; Dictée et Mini-jeux, propres au mobile, rejoignent
+  // Pratique ; « Mes hauts-faits » du web correspond à Collection.
+  //
+  // Le contenu vient de `data/screenCatalog.ts`, partagé avec l'accès rapide
+  // de l'accueil. Les deux listes étaient tenues séparément et avaient fini
+  // par diverger de six écrans.
+  const shortcuts = screensInGroup('pinned');
 
   const explorer = [
-    {
-      key: 'nav.practice',
-      items: [
-        { key: 'sc.revisions', icon: 'fitness-outline'         as IoniconName, route: '/review' },
-        { key: 'sc.stats', icon: 'stats-chart-outline'  as IoniconName, route: '/statistiques' },
-        { key: 'sc.hsk',   icon: 'ribbon-outline'        as IoniconName, route: '/simulateur' },
-        { key: 'sc.studio',    icon: 'mic-outline'             as IoniconName, route: '/atelier' },
-        { key: 'nav.dialogues',icon: 'chatbubbles-outline'     as IoniconName, route: '/dialogues' },
-        { key: 'nav.battles',  icon: 'flash-outline'           as IoniconName, route: '/battle' },
-        { key: 'sc.errors',    icon: 'warning-outline'         as IoniconName, route: '/erreurs' },
-        { key: 'nav.notes',    icon: 'document-text-outline'   as IoniconName, route: '/notes' },
-        { key: 'sc.eval',      icon: 'trophy-outline'          as IoniconName, route: '/evaluation' },
-        { key: 'sc.dictation', icon: 'pencil-outline'          as IoniconName, route: '/dictee' },
-        { key: 'sc.minigames', icon: 'game-controller-outline' as IoniconName, route: '/minijeux' },
-      ],
-    },
-    {
-      key: 'nav.readingDict',
-      items: [
-        { key: 'nav.reading', icon: 'reader-outline' as IoniconName, route: '/lectures' },
-        { key: 'sc.dico',     icon: 'search-outline' as IoniconName, route: '/dictionnaire' },
-        { key: 'sc.grammar',  icon: 'school-outline' as IoniconName, route: '/grammaire' },
-      ],
-    },
-    {
-      key: 'nav.community',
-      items: [
-        { key: 'nav.messages',   icon: 'mail-outline'   as IoniconName, route: '/dm' },
-        { key: 'sc.ranking',     icon: 'podium-outline' as IoniconName, route: '/classement' },
-        { key: 'nav.collection', icon: 'ribbon-outline' as IoniconName, route: '/collection' },
-      ],
-    },
-    {
-      key: 'nav.news',
-      items: [
-        { key: 'nav.reviews', icon: 'star-outline' as IoniconName, route: '/avis' },
-      ],
-    },
+    { key: 'nav.practice',    items: screensInGroup('practice') },
+    { key: 'nav.readingDict', items: screensInGroup('readingDict') },
+    { key: 'nav.community',   items: screensInGroup('community') },
+    { key: 'nav.news',        items: screensInGroup('news') },
   ];
 
   return (
@@ -151,13 +120,15 @@ function PlusSheet({ visible, onClose }: { visible: boolean; onClose: () => void
           <Text style={[sh.sectionLabel, { color: c.textTertiary }]}>{t('common.pinned')}</Text>
           {shortcuts.map(item => (
             <TouchableOpacity
-              key={item.key}
+              key={item.id}
               style={[sh.navRow, { borderBottomColor: c.borderLight }]}
               onPress={() => nav(item.route)}
               activeOpacity={0.7}
             >
-              <Ionicons name={item.icon} size={20} color={c.textPrimary} style={sh.navIcon} />
-              <Text style={[sh.navLabel, { color: c.textPrimary }]}>{t(item.key as any)}</Text>
+              <CatalogIcon entry={item} size={20} color={c.textPrimary} style={sh.navIcon} />
+              <Text style={[sh.navLabel, { color: c.textPrimary }]}>
+                {t((item.navLabelKey ?? item.labelKey) as any)}
+              </Text>
             </TouchableOpacity>
           ))}
 
@@ -179,13 +150,15 @@ function PlusSheet({ visible, onClose }: { visible: boolean; onClose: () => void
               </TouchableOpacity>
               {expanded[section.key] && section.items.map(item => (
                 <TouchableOpacity
-                  key={item.key}
+                  key={item.id}
                   style={[sh.explorerItem, { borderBottomColor: c.borderLight }]}
                   onPress={() => nav(item.route)}
                   activeOpacity={0.7}
                 >
-                  <Ionicons name={item.icon} size={17} color={c.textSecondary} style={sh.subIcon} />
-                  <Text style={[sh.navLabel, { color: c.textSecondary }]}>{t(item.key as any)}</Text>
+                  <CatalogIcon entry={item} size={17} color={c.textSecondary} style={sh.subIcon} />
+                  <Text style={[sh.navLabel, { color: c.textSecondary }]}>
+                    {t((item.navLabelKey ?? item.labelKey) as any)}
+                  </Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -291,12 +264,169 @@ function FlatTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   );
 }
 
+// ── Rail latéral (tablette) ───────────────────────────────────────────────────
+
+/** Largeur du rail, en points. Assez pour une icône et son libellé sur une ligne. */
+export const RAIL_WIDTH = 104;
+
+/**
+ * Navigation verticale sur grand écran.
+ *
+ * La barre d'onglets flottante s'étire sur toute la largeur d'une tablette :
+ * cinq cellules `flex: 1` qui éparpillent leurs icônes dans le vide, et une
+ * hauteur perdue en bas d'un écran déjà très haut. Le rail règle les deux, et
+ * offre en prime la place d'exposer des entrées aujourd'hui enfouies sous
+ * « Plus » — Collection, Lectures, Révisions — qu'on n'atteignait qu'en
+ * dépliant une feuille.
+ *
+ * Il s'appuie sur le chemin courant plutôt que sur l'état du navigateur
+ * d'onglets : il vit à côté de `<Tabs>`, pas dedans, et peut donc aussi
+ * pointer vers des écrans hors onglets.
+ */
+function SideRail({ onPlus }: { onPlus: () => void }) {
+  const scheme = useColorScheme();
+  const c = Colors[scheme];
+  const router = useRouter();
+  const pathname = usePathname();
+  const { t } = useI18n();
+  const { stats } = useSrs();
+  const { user } = useAuth();
+  const insets = useSafeAreaInsets();
+  const dueMots = Math.min(stats.dueNow, 999);
+
+  /**
+   * Fautes en attente de révision — le compteur du cahier d'erreurs.
+   * Relu à chaque changement d'écran : on en ajoute depuis une leçon, une
+   * dictée ou la copie du simulateur, et la pastille doit suivre.
+   */
+  const [nbErreurs, setNbErreurs] = useState(0);
+  useEffect(() => {
+    let vivant = true;
+    readErrors().then(l => { if (vivant) setNbErreurs(l.length); }).catch(() => {});
+    return () => { vivant = false; };
+  }, [pathname]);
+
+  /**
+   * Les entrées viennent du catalogue partagé, groupées par famille : le rail
+   * suit la journée de l'apprenant — on apprend, on mémorise ce qu'on a vu,
+   * on s'entraîne, on cherche un mot — et non l'arborescence du menu.
+   */
+  const ENTREES = railScreens().map(s => ({
+    ...s,
+    label: t((s.railLabelKey ?? s.navLabelKey ?? s.labelKey) as any),
+    badge: s.railBadge === 'due' ? dueMots : s.railBadge === 'errors' ? nbErreurs : undefined,
+  }));
+
+  const actif = (route: string) =>
+    route === '/(tabs)' ? pathname === '/' : pathname.startsWith(route.replace('/(tabs)', ''));
+
+  return (
+    <View style={[rail.bloc, {
+      backgroundColor: c.tabBarBg, borderRightColor: c.borderLight,
+      paddingTop: insets.top + 12, paddingBottom: insets.bottom + 12,
+    }]}>
+      <Image
+        source={scheme === 'dark'
+          ? require('@/assets/logo_long_dark.png')
+          : require('@/assets/logo_long.png')}
+        style={rail.logo}
+        resizeMode="contain"
+      />
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 2 }}>
+        {ENTREES.map((e, i) => {
+          const on = actif(e.route);
+          // Un filet sépare deux familles : sans lui, onze entrées d'affilée
+          // forment un mur qu'on ne parcourt plus qu'en lisant tout.
+          const nouvelleBande = i > 0 && ENTREES[i - 1].railBand !== e.railBand;
+          return (
+            <View key={e.route}>
+            {nouvelleBande && (
+              <View style={[rail.sep, { backgroundColor: c.borderLight }]} />
+            )}
+            <TouchableOpacity
+              style={[rail.item, on && { backgroundColor: c.primaryRedLight }]}
+              onPress={() => router.push(e.route as any)}
+              activeOpacity={0.75}
+            >
+              <View>
+                <CatalogIcon entry={e} size={21} color={on ? c.primaryRed : c.textTertiary} />
+                {!!e.badge && e.badge > 0 && (
+                  <View style={[rail.badge, { backgroundColor: c.primaryRed }]}>
+                    <Text style={rail.badgeTxt}>{e.badge > 99 ? '99+' : String(e.badge)}</Text>
+                  </View>
+                )}
+              </View>
+              <Text
+                style={[rail.label, { color: on ? c.primaryRed : c.textTertiary }]}
+                numberOfLines={1}
+              >
+                {e.label}
+              </Text>
+            </TouchableOpacity>
+            </View>
+          );
+        })}
+      </ScrollView>
+      {/* « Plus » donne accès à ce que le rail ne peut pas montrer — Atelier,
+          Mini-jeux, Battle, Statistiques, Réglages. Sans lui, ces écrans
+          n'étaient atteignables sur tablette que par un lien depuis l'accueil,
+          et le rail promettait une navigation qu'il ne tenait pas. */}
+      <TouchableOpacity style={rail.item} onPress={onPlus} activeOpacity={0.75}>
+        <Ionicons name="menu" size={21} color={c.textTertiary} />
+        <Text style={[rail.label, { color: c.textTertiary }]} numberOfLines={1}>
+          {t('tab.more')}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={rail.item}
+        onPress={() => router.push('/(tabs)/profil' as any)}
+        activeOpacity={0.75}
+      >
+        {/* La photo du compte plutôt qu'une silhouette générique : c'est la
+            seule entrée du rail qui désigne une personne et non une rubrique,
+            et son visage la rend reconnaissable sans lire l'étiquette. Le
+            repli sur l'icône couvre les comptes sans photo — création par
+            e-mail, ou fournisseur qui n'en transmet pas. */}
+        {user?.photoURL ? (
+          <Image source={{ uri: user.photoURL }} style={rail.avatar} />
+        ) : (
+          <Ionicons name="person-circle-outline" size={21} color={c.textTertiary} />
+        )}
+        <Text style={[rail.label, { color: c.textTertiary }]} numberOfLines={1}>
+          {t('nav.profile')}
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const rail = StyleSheet.create({
+  sep: { height: StyleSheet.hairlineWidth, marginVertical: 6, marginHorizontal: 14 },
+  bloc: { width: RAIL_WIDTH, borderRightWidth: 1, alignItems: 'center', paddingHorizontal: 6 },
+  logo: { width: 76, height: 26, marginBottom: 14 },
+  // 21 pt, comme les icônes du rail : la photo occupe exactement la place
+  // qu'occupait la silhouette, l'alignement des étiquettes ne bouge pas.
+  avatar: { width: 21, height: 21, borderRadius: 11 },
+  item: { width: 88, paddingVertical: 9, borderRadius: 12, alignItems: 'center', gap: 3 },
+  label: { fontSize: 10, fontWeight: '700', textAlign: 'center' },
+  badge: {
+    position: 'absolute', top: -5, right: -10, minWidth: 16, height: 16, borderRadius: 8,
+    alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4,
+  },
+  badgeTxt: { color: '#FFF', fontSize: 9, fontWeight: '800' },
+});
+
 // ── Layout principal ──────────────────────────────────────────────────────────
 
 export default function TabLayout() {
-  return (
+  const { wide } = useLayout();
+  const [plusOpen, setPlusOpen] = useState(false);
+
+  const navigateur = (
     <Tabs
-      tabBar={props => <FlatTabBar {...props} />}
+      // Au-delà du seuil, le rail remplace la barre : en garder les deux
+      // donnerait deux navigations concurrentes pour les mêmes destinations.
+      tabBar={props => (wide ? null : <FlatTabBar {...props} />)}
       screenOptions={{
         headerShown: false,
         // La tab bar est absolue, on retire l'inset automatique
@@ -309,6 +439,16 @@ export default function TabLayout() {
       <Tabs.Screen name="messages" />
       <Tabs.Screen name="profil" options={{ href: null }} />
     </Tabs>
+  );
+
+  if (!wide) return navigateur;
+
+  return (
+    <View style={{ flex: 1, flexDirection: 'row' }}>
+      <SideRail onPlus={() => setPlusOpen(true)} />
+      <View style={{ flex: 1 }}>{navigateur}</View>
+      <PlusSheet visible={plusOpen} onClose={() => setPlusOpen(false)} />
+    </View>
   );
 }
 

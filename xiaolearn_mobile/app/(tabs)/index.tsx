@@ -3,8 +3,7 @@
  */
 import {
   View, Text, ScrollView, StyleSheet, TouchableOpacity,
-  useWindowDimensions, Image, Modal, Pressable,
-  Animated, PanResponder,
+  Image, Animated, PanResponder,
 } from 'react-native';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,8 +11,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useLayout } from '@/hooks/useLayout';
 import { useTheme } from '@/contexts/ThemeContext';
 import Colors from '@/constants/Colors';
+import { CatalogIcon } from '@/components/CatalogIcon';
 import { useAuth } from '@/contexts/AuthContext';
 import { useUserStats, type UserStats } from '@/hooks/useUserStats';
 import { LESSON_DATA } from '@/data/cecrLessons';
@@ -23,11 +24,13 @@ import { useSrs } from '@/contexts/SrsContext';
 import { spacePinyin, mergePinyinPunct } from '@/utils/pinyinUtils';
 import { useAudio } from '@/hooks/useAudio';
 import { LEARN_SECTIONS } from '@/data/cecrLearnSections';
+import { SRS_KEY, cardIdForHanzi } from '@/hooks/useSrsData';
 import { EXERCISES } from '@/data/cecrExercises';
 import { DICTATION_PHRASES } from '@/data/dictationPhrases';
 import ToneColoredHanzi from '@/components/ToneColoredHanzi';
 import { useDisplaySettings } from '@/contexts/DisplaySettingsContext';
 import { useI18n } from '@/contexts/LanguageContext';
+import { QUICK_SCREENS, type ScreenEntry } from '@/data/screenCatalog';
 import { BrandGradient } from '@/components/BrandGradient';
 import { CardRail } from '@/components/CardRail';
 import { ProfileSummary } from '@/components/ProfileSummary';
@@ -56,127 +59,10 @@ type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 // ──────────────────────────────────────────────────────────────
 // Raccourcis disponibles
 // ──────────────────────────────────────────────────────────────
-type ShortcutDef = { id: string; label: string; icon: IoniconName; route: string };
-
-const SC_KEYS: Record<string, any> = {
-  revisions:'sc.revisions', cartes:'sc.cards', prof:'sc.prof', cours:'sc.lessons',
-  lectures:'sc.readings', minijeux:'sc.minigames', battle:'sc.battle', dico:'sc.dico',
-  grammaire:'sc.grammar', erreurs:'sc.errors', evaluation:'sc.eval', classement:'sc.ranking',
-  atelier:'sc.studio', dictee:'sc.dictation', collection:'sc.collection',
-};
-
-const ALL_SHORTCUTS: ShortcutDef[] = [
-  { id: 'revisions',  label: 'Révisions',    icon: 'fitness-outline',             route: '/review' },
-  { id: 'cartes',     label: 'Cartes',        icon: 'layers-outline',              route: '/(tabs)/flashcards' },
-  { id: 'prof',       label: 'Prof. Xiao',    icon: 'chatbubble-ellipses-outline', route: '/(tabs)/messages' },
-  { id: 'cours',      label: 'Leçons',        icon: 'book-outline',                route: '/(tabs)/cours' },
-  { id: 'lectures',   label: 'Lectures',      icon: 'reader-outline',              route: '/lectures' },
-  { id: 'collection', label: 'Collection',   icon: 'ribbon-outline',              route: '/collection' },
-  { id: 'minijeux',  label: 'Mini-jeux',     icon: 'game-controller-outline',     route: '/minijeux' },
-  { id: 'battle',    label: 'Battle',        icon: 'flash-outline',               route: '/battle' },
-  { id: 'dico',       label: 'Dictionnaire',  icon: 'search-outline',              route: '/dictionnaire' },
-  { id: 'grammaire',  label: 'Grammaire',     icon: 'school-outline',              route: '/grammaire' },
-  { id: 'erreurs',    label: 'Mes erreurs',   icon: 'warning-outline',             route: '/erreurs' },
-  { id: 'evaluation', label: 'Évaluation',    icon: 'trophy-outline',              route: '/evaluation' },
-  { id: 'classement', label: 'Classement',    icon: 'podium-outline',              route: '/classement' },
-  { id: 'atelier',    label: 'Atelier',       icon: 'mic-outline',                 route: '/atelier' },
-  { id: 'dictee',     label: 'Dictée',        icon: 'ear-outline',                 route: '/dictee' },
-];
-
-
-// ──────────────────────────────────────────────────────────────
-// Sidebar
-// ──────────────────────────────────────────────────────────────
-function AppSidebar({ open, onClose, colors, name }: {
-  open: boolean; onClose: () => void;
-  colors: typeof Colors.light; name: string;
-}) {
-  const { t } = useI18n();
-  const router = useRouter();
-  const { colorScheme } = useTheme();
-  const sidebarLogo = colorScheme === 'dark'
-    ? require('@/assets/logo_long_dark.png')
-    : require('@/assets/logo_long.png');
-
-  const sections = [
-    {
-      title: 'APPRENDRE',
-      items: [
-        { label: 'Accueil',       icon: 'home-outline' as IoniconName,                route: '/(tabs)' },
-        { label: 'Leçons',        icon: 'book-outline' as IoniconName,                route: '/(tabs)/cours' },
-        { label: 'Révisions',     icon: 'fitness-outline' as IoniconName,             route: '/review' },
-        { label: 'Flashcards',    icon: 'layers-outline' as IoniconName,              route: '/(tabs)/flashcards' },
-        { label: 'Lectures',      icon: 'reader-outline' as IoniconName,              route: '/lectures' },
-        { label: 'Collection',    icon: 'ribbon-outline' as IoniconName,              route: '/collection' },
-        { label: 'Mini-jeux 🎮', icon: 'game-controller-outline' as IoniconName,     route: '/minijeux' },
-        { label: 'Battle ⚔️',    icon: 'flash-outline' as IoniconName,               route: '/battle' },
-        { label: 'Dictionnaire',  icon: 'search-outline' as IoniconName,              route: '/dictionnaire' },
-        { label: 'Grammaire',     icon: 'school-outline' as IoniconName,              route: '/grammaire' },
-        { label: 'Mes erreurs',   icon: 'warning-outline' as IoniconName,             route: '/erreurs' },
-        { label: 'Évaluation',    icon: 'trophy-outline' as IoniconName,              route: '/evaluation' },
-        { label: 'Atelier',       icon: 'mic-outline' as IoniconName,                 route: '/atelier' },
-      ],
-    },
-    {
-      title: 'COMMUNAUTÉ',
-      items: [
-        { label: 'Classement',    icon: 'podium-outline' as IoniconName,              route: '/classement' },
-        { label: 'Messages',      icon: 'mail-outline' as IoniconName,                route: '/(tabs)/messages' },
-      ],
-    },
-    {
-      title: 'PROF. XIAO LIN',
-      items: [
-        { label: 'Prof. Xiao',    icon: 'chatbubble-ellipses-outline' as IoniconName, route: '/(tabs)/messages' },
-      ],
-    },
-  ];
-
-  const nav = (route: string) => { onClose(); router.push(route as any); };
-
-  return (
-    <Modal visible={open} transparent animationType="none" onRequestClose={onClose}>
-      <Pressable style={sb.overlay} onPress={onClose} />
-      <View style={[sb.drawer, { backgroundColor: colors.cardBg }]}>
-        <View style={sb.drawerHeader}>
-          <Image source={sidebarLogo} style={sb.drawerLogo} resizeMode="contain" />
-          <TouchableOpacity onPress={onClose} style={sb.closeBtn}>
-            <Ionicons name="close" size={22} color={colors.textSecondary} />
-          </TouchableOpacity>
-        </View>
-
-        {/* Prof Xiao banner */}
-        <TouchableOpacity
-          style={[sb.profBanner, { backgroundColor: colors.primaryRedLight, borderColor: colors.primaryRed + '30' }]}
-          onPress={() => nav('/(tabs)/messages')}
-        >
-          <Image source={require('@/assets/professeur_xiao_profil.png')} style={sb.profImg} />
-          <View style={{ flex: 1 }}>
-            <Text style={[sb.profName, { color: colors.textPrimary }]}>Prof. Xiao Lin</Text>
-            <Text style={[sb.profSub, { color: colors.textTertiary }]}>{t('home.aiAssistant')}</Text>
-          </View>
-          <Ionicons name="chevron-forward" size={14} color={colors.textTertiary} />
-        </TouchableOpacity>
-
-        <ScrollView showsVerticalScrollIndicator={false}>
-          {sections.slice(0, 2).map(sec => (
-            <View key={sec.title} style={sb.section}>
-              <Text style={[sb.sectionTitle, { color: colors.textTertiary }]}>{sec.title}</Text>
-              {sec.items.map(item => (
-                <TouchableOpacity key={item.label} style={sb.navItem} onPress={() => nav(item.route)} activeOpacity={0.7}>
-                  <View style={[sb.navIconWrap, { backgroundColor: colors.primaryRedLight }]}>
-                    <Ionicons name={item.icon} size={18} color={colors.primaryRed} />
-                  </View>
-                  <Text style={[sb.navLabel, { color: colors.textPrimary }]}>{item.label}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          ))}
-        </ScrollView>
-      </View>
-    </Modal>
-  );
-}
+// La liste vient de `data/screenCatalog.ts`, partagée avec le menu « Plus ».
+// Tenue à part, elle avait pris six écrans de retard sur lui — Dialogues,
+// Statistiques, Simulateur HSK, Notes, Messages privés et Avis n'avaient
+// aucun raccourci, sans que rien ne le signale.
 
 // ──────────────────────────────────────────────────────────────
 // Header avec logo + cloche
@@ -187,30 +73,48 @@ function Header({ colors, px }: {
   const router = useRouter();
   const { colorScheme, toggleTheme } = useTheme();
   const { user } = useAuth();
+  const { wide } = useLayout();
   const isDark = colorScheme === 'dark';
+
+  const logo = (
+    <Image
+      source={isDark ? require('@/assets/logo_long_dark.png') : require('@/assets/logo_long.png')}
+      style={hdr.logo}
+      resizeMode="contain"
+    />
+  );
 
   return (
     <View style={[hdr.wrap, { paddingHorizontal: px }]}>
-      <View style={hdr.logoWrap} pointerEvents="none">
-        <Image
-          source={isDark ? require('@/assets/logo_long_dark.png') : require('@/assets/logo_long.png')}
-          style={hdr.logo}
-          resizeMode="contain"
-        />
-      </View>
+      {/* Centrer le logo sur toute la largeur n'a de sens que si cette largeur
+          est celle d'un téléphone : sur un écran large il flotte au milieu d'un
+          vide, sans rapport avec quoi que ce soit. On le remet alors dans le
+          flux, contre l'avatar, où il redevient la marque du coin supérieur. */}
+      {!wide && (
+        <View style={hdr.logoWrap} pointerEvents="none">{logo}</View>
+      )}
 
       {/* Photo de profil — le personnage pixel, lui, ne vit que sur le tableau
-          de bord : ici on attend la vraie identité, pas l'avatar de jeu. */}
-      <TouchableOpacity
-        style={[hdr.avatar, { backgroundColor: colors.primaryRed }]}
-        onPress={() => router.push('/(tabs)/profil')}
-      >
-        {user?.photoURL ? (
-          <Image source={{ uri: user.photoURL }} style={hdr.avatarImg} />
-        ) : (
-          <Ionicons name="person" size={16} color="#FFF" />
-        )}
-      </TouchableOpacity>
+          de bord : ici on attend la vraie identité, pas l'avatar de jeu.
+          En mode large, le rail porte déjà une entrée « Mon profil » : deux
+          accès au même écran à quelques centimètres l'un de l'autre. */}
+      {!wide && (
+        <TouchableOpacity
+          style={[hdr.avatar, { backgroundColor: colors.primaryRed }]}
+          onPress={() => router.push('/(tabs)/profil')}
+        >
+          {user?.photoURL ? (
+            <Image source={{ uri: user.photoURL }} style={hdr.avatarImg} />
+          ) : (
+            <Ionicons name="person" size={16} color="#FFF" />
+          )}
+        </TouchableOpacity>
+      )}
+
+      {/* En mode large, le rail latéral porte déjà la marque : la répéter ici
+          faisait deux logos côte à côte sur la même ligne. L'espaceur reste,
+          lui, pour pousser le bouton de thème à droite. */}
+      {wide && <View style={{ flex: 1 }} />}
 
       {/* Thème sombre/clair à droite */}
       <TouchableOpacity
@@ -431,7 +335,7 @@ function DiscoverChecklist({ colors, px }: { colors: typeof Colors.light; px: nu
                 </View>
               ) : (
                 <View style={[dc.iconWrap, { borderColor: colors.borderMedium }]}>
-                  <Ionicons name={item.icon} size={16} color={colors.textSecondary} />
+                  <CatalogIcon entry={item} size={16} color={colors.textSecondary} />
                 </View>
               )}
               <View style={{ flex: 1 }}>
@@ -475,26 +379,33 @@ const QA_ITEM_W = 72 + 14; // largeur carte + gap
 function QuickAccess({ colors, px }: { colors: typeof Colors.light; px: number }) {
   const { t } = useI18n();
   const router = useRouter();
+  // Bandeau horizontal en toutes largeurs, tablette comprise.
+  //
+  // Une grille avait été essayée sur grand écran : les quinze raccourcis y
+  // étaient visibles d'un coup, mais l'accueil devenait interminable — la
+  // grille pousse la priorité du jour et les objectifs hors de l'écran. Un
+  // bandeau tient sur une ligne, garde la page compacte, et conserve le
+  // glisser-déposer, dont le calcul est unidimensionnel.
 
   // Ordre personnalisable (persisté)
-  const [order, setOrder] = useState<string[]>(ALL_SHORTCUTS.map(s => s.id));
+  const [order, setOrder] = useState<string[]>(QUICK_SCREENS.map(s => s.id));
   useEffect(() => {
     AsyncStorage.getItem(QA_ORDER_KEY).then(raw => {
       if (!raw) return;
       try {
         const saved: string[] = JSON.parse(raw);
         // Réconcilier avec les raccourcis actuels (ajouts/suppressions)
-        const known = new Set(ALL_SHORTCUTS.map(s => s.id));
+        const known = new Set(QUICK_SCREENS.map(s => s.id));
         const kept = saved.filter(id => known.has(id));
-        const added = ALL_SHORTCUTS.map(s => s.id).filter(id => !kept.includes(id));
+        const added = QUICK_SCREENS.map(s => s.id).filter(id => !kept.includes(id));
         setOrder([...kept, ...added]);
       } catch {}
     }).catch(() => {});
   }, []);
 
   const shortcuts = order
-    .map(id => ALL_SHORTCUTS.find(s => s.id === id))
-    .filter((s): s is ShortcutDef => !!s);
+    .map(id => QUICK_SCREENS.find(s => s.id === id))
+    .filter((s): s is ScreenEntry => !!s);
 
   // ── Drag & drop (maintenir puis déplacer) ────────────────────
   const [dragIdx, setDragIdx] = useState<number | null>(null);
@@ -546,6 +457,28 @@ function QuickAccess({ colors, px }: { colors: typeof Colors.light; px: number }
 
   const dragging = dragIdx !== null;
 
+  /** Une tuile, indépendante du conteneur : seule sa largeur change. */
+  const tile = (s: ScreenEntry, idx: number, isDragged: boolean) => (
+    <TouchableOpacity
+      style={qa.item}
+      onPress={() => !dragging && router.push(s.route as any)}
+      onLongPress={() => startDrag(idx)}
+      delayLongPress={250}
+      activeOpacity={0.7}
+    >
+      <View style={[qa.iconBox, {
+        backgroundColor: colors.cardBg,
+        borderColor: isDragged ? colors.primaryRed : colors.borderLight,
+        borderWidth: isDragged ? 1.5 : 1,
+      }]}>
+        <CatalogIcon entry={{ icon: s.quickIcon ?? s.icon, iconText: s.iconText }} size={26} color={colors.textPrimary} />
+      </View>
+      <Text style={[qa.label, { color: colors.textSecondary }]} numberOfLines={1}>
+        {t(s.labelKey as any)}
+      </Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={qa.section}>
       <View style={[qa.titleRow, { paddingHorizontal: px }]}>
@@ -555,50 +488,35 @@ function QuickAccess({ colors, px }: { colors: typeof Colors.light; px: number }
         </Text>
       </View>
 
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        scrollEnabled={!dragging}
-        contentContainerStyle={[qa.grid, { paddingHorizontal: px }]}
-        {...panResponder.panHandlers}
-      >
-        {shortcuts.map((s, idx) => {
-          const isDragged = idx === dragIdx;
-          // Décalage visuel des autres cartes pour montrer le point de dépôt
-          let offset = 0;
-          if (dragging && !isDragged && dragIdx !== null && hoverIdx !== null) {
-            if (dragIdx < hoverIdx && idx > dragIdx && idx <= hoverIdx) offset = -QA_ITEM_W;
-            else if (dragIdx > hoverIdx && idx < dragIdx && idx >= hoverIdx) offset = QA_ITEM_W;
-          }
-          return (
-            <Animated.View
-              key={s.id}
-              style={[
-                isDragged
-                  ? { transform: [{ translateX: dragX }, { scale: 1.12 }], zIndex: 10, elevation: 8 }
-                  : { transform: [{ translateX: offset }] },
-                isDragged && { opacity: 0.95 },
-              ]}
-            >
-              <TouchableOpacity
-                style={qa.item}
-                onPress={() => !dragging && router.push(s.route as any)}
-                onLongPress={() => startDrag(idx)}
-                delayLongPress={250}
-                activeOpacity={0.7}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          scrollEnabled={!dragging}
+          contentContainerStyle={[qa.grid, { paddingHorizontal: px }]}
+          {...panResponder.panHandlers}
+        >
+          {shortcuts.map((s, idx) => {
+            const isDragged = idx === dragIdx;
+            // Décalage visuel des autres cartes pour montrer le point de dépôt
+            let offset = 0;
+            if (dragging && !isDragged && dragIdx !== null && hoverIdx !== null) {
+              if (dragIdx < hoverIdx && idx > dragIdx && idx <= hoverIdx) offset = -QA_ITEM_W;
+              else if (dragIdx > hoverIdx && idx < dragIdx && idx >= hoverIdx) offset = QA_ITEM_W;
+            }
+            return (
+              <Animated.View
+                key={s.id}
+                style={[
+                  isDragged
+                    ? { transform: [{ translateX: dragX }, { scale: 1.12 }], zIndex: 10, elevation: 8 }
+                    : { transform: [{ translateX: offset }] },
+                  isDragged && { opacity: 0.95 },
+                ]}
               >
-                <View style={[qa.iconBox, {
-                  backgroundColor: colors.cardBg,
-                  borderColor: isDragged ? colors.primaryRed : colors.borderLight,
-                  borderWidth: isDragged ? 1.5 : 1,
-                }]}>
-                  <Ionicons name={s.icon} size={26} color={colors.textPrimary} />
-                </View>
-                <Text style={[qa.label, { color: colors.textSecondary }]} numberOfLines={1}>{t(SC_KEYS[s.id] ?? 'sc.cards')}</Text>
-              </TouchableOpacity>
-            </Animated.View>
-          );
-        })}
+                {tile(s, idx, isDragged)}
+              </Animated.View>
+            );
+          })}
       </ScrollView>
     </View>
   );
@@ -685,7 +603,7 @@ function WordOfDay({ colors, px }: { colors: typeof Colors.light; px: number }) 
   // Vérifier si la carte est déjà dans les flashcards au montage
   useEffect(() => {
     if (!card) return;
-    AsyncStorage.getItem('cl_word_srs_v1').then(raw => {
+    AsyncStorage.getItem(SRS_KEY).then(raw => {
       if (!raw) return;
       const state = JSON.parse(raw);
       if (state[card.id]) setAdded(true);
@@ -695,14 +613,14 @@ function WordOfDay({ colors, px }: { colors: typeof Colors.light; px: number }) 
   const addToFlashcards = async () => {
     if (!card || added) return;
     try {
-      const raw = await AsyncStorage.getItem('cl_word_srs_v1');
+      const raw = await AsyncStorage.getItem(SRS_KEY);
       const state: Record<string, any> = raw ? JSON.parse(raw) : {};
       if (!state[card.id]) {
         state[card.id] = {
           id: card.id, level: 0, dueAt: Date.now(),
           lastReviewedAt: 0, consecutiveAgain: 0, reviewCount: 0,
         };
-        await AsyncStorage.setItem('cl_word_srs_v1', JSON.stringify(state));
+        await AsyncStorage.setItem(SRS_KEY, JSON.stringify(state));
       }
       setAdded(true);
     } catch {}
@@ -1040,8 +958,8 @@ function PathProgress({ colors, px, completedIds, reloadKey }: {
 export default function HomeScreen() {
   const scheme = useColorScheme();
   const colors = Colors[scheme];
-  const { width } = useWindowDimensions();
-  const px = width >= 768 ? 24 : 16;
+  const { wide, gutter, gap } = useLayout();
+  const px = gutter;
   const { stats, reload } = useUserStats();
   // Passage de palier : on le célèbre ici, c'est l'écran où vit l'avatar.
   const { avatarId } = useAvatar();
@@ -1059,20 +977,68 @@ export default function HomeScreen() {
         {/* Ne s'affiche que pendant l'essai — voir TrialBanner. */}
         <TrialBanner colors={colors} px={px} />
         <View style={styles.spacer} />
-        <CollectionPanel colors={colors} px={px} stats={stats} />
-        <View style={styles.spacer} />
-        <PriorityCard colors={colors} px={px} />
-        <View style={styles.spacer} />
-        {/* Objectif du jour — juste après la priorité : celle-ci dit quoi faire
-            maintenant, celui-là ce qu'il reste à faire dans la journée. */}
-        <DailyGoalCard colors={colors} px={px} stats={stats} />
-        <View style={styles.spacer} />
-        <DiscoverChecklist colors={colors} px={px} />
-        <View style={styles.spacer} />
 
-        <PathProgress colors={colors} px={px} completedIds={stats.completedLessonIds} reloadKey={stats.completedLessonsCount} />
-        <View style={styles.spacer} />
-        <WordOfDay colors={colors} px={px} />
+        {/*
+          Deux colonnes plutôt qu'une pile à rallonge : empilés, ces blocs
+          repoussent le parcours et le mot du jour à deux ou trois écrans de
+          défilement alors que la largeur reste inutilisée.
+
+          Le partage 5/7 sépare deux natures de contenu. À gauche, ce qui décrit
+          l'état du compte — profil, cartes, raccourcis — un bloc dense qui ne
+          gagne rien à s'élargir. À droite, ce qui appelle une action ou se lit :
+          priorité, objectif, parcours, mot du jour, dont les titres et les
+          listes ont besoin de place. La salutation et la bannière d'essai
+          restent au-dessus, pleine largeur : elles s'adressent à l'écran entier,
+          pas à l'une des colonnes.
+
+          `px={0}` dans les colonnes : la marge latérale est portée une seule
+          fois par la rangée, sinon chaque bloc la rajouterait à l'intérieur de
+          sa propre colonne.
+        */}
+        {wide ? (
+          <View style={[styles.twoCol, { paddingHorizontal: px, gap }]}>
+            {/*
+              Répartition par NATURE, pas par ordre d'apparition.
+
+              Le premier découpage mettait le seul bloc d'identité à gauche et
+              les cinq autres à droite : une colonne courte face à une colonne
+              interminable, et il fallait faire défiler pour atteindre le mot du
+              jour. On regroupe donc à gauche ce qui décrit l'apprenant — son
+              profil, sa collection, ses raccourcis, sa découverte de l'app, le
+              mot du jour — et à droite ce qu'il a à FAIRE : la priorité, les
+              objectifs, la suite du parcours.
+            */}
+            <View style={styles.colLeft}>
+              <CollectionPanel colors={colors} px={0} stats={stats} />
+              <DiscoverChecklist colors={colors} px={0} />
+              <WordOfDay colors={colors} px={0} />
+            </View>
+            <View style={styles.colRight}>
+              <PriorityCard colors={colors} px={0} />
+              {/* Objectif du jour — juste après la priorité : celle-ci dit quoi
+                  faire maintenant, celui-là ce qu'il reste à faire dans la journée. */}
+              <DailyGoalCard colors={colors} px={0} stats={stats} />
+              <PathProgress colors={colors} px={0} completedIds={stats.completedLessonIds} reloadKey={stats.completedLessonsCount} />
+            </View>
+          </View>
+        ) : (
+          <>
+            <CollectionPanel colors={colors} px={px} stats={stats} />
+            <View style={styles.spacer} />
+            <PriorityCard colors={colors} px={px} />
+            <View style={styles.spacer} />
+            {/* Objectif du jour — juste après la priorité : celle-ci dit quoi faire
+                maintenant, celui-là ce qu'il reste à faire dans la journée. */}
+            <DailyGoalCard colors={colors} px={px} stats={stats} />
+            <View style={styles.spacer} />
+            <DiscoverChecklist colors={colors} px={px} />
+            <View style={styles.spacer} />
+
+            <PathProgress colors={colors} px={px} completedIds={stats.completedLessonIds} reloadKey={stats.completedLessonsCount} />
+            <View style={styles.spacer} />
+            <WordOfDay colors={colors} px={px} />
+          </>
+        )}
       </ScrollView>
 
       {pending && avatarId && (
@@ -1093,6 +1059,14 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1 },
   spacer: { height: 24 },
+  // `alignItems: 'flex-start'` : chaque colonne s'arrête à la hauteur de son
+  // contenu. Étirées, la plus courte hériterait de la hauteur de l'autre et sa
+  // dernière carte s'allongerait sans raison.
+  twoCol: { flexDirection: 'row', alignItems: 'flex-start' },
+  colLeft: { flex: 6, gap: 24 },
+  // L'écart entre blocs est repris du `spacer` de la pile, pour que les deux
+  // dispositions respirent pareil.
+  colRight: { flex: 6, gap: 24 },
   section: {},
   sectionTitle: { fontSize: 17, fontWeight: '700', marginBottom: 12 },
   card: {
@@ -1114,6 +1088,7 @@ const styles = StyleSheet.create({
 const hdr = StyleSheet.create({
   wrap: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, paddingBottom: 8 },
   logoWrap: { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
+  logoInline: { marginLeft: 12 },
   logo: { height: 34, width: 150 },
   iconBtn: { width: 34, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center', position: 'relative' },
   badge: {
@@ -1152,24 +1127,6 @@ const qa = StyleSheet.create({
     elevation: 3,
   },
   label: { fontSize: 10, fontWeight: '600', textAlign: 'center' },
-});
-
-// Sidebar
-const sb = StyleSheet.create({
-  overlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.45)' },
-  drawer: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 280, shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 16, shadowOffset: { width: 4, height: 0 }, elevation: 10 },
-  drawerHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 56, paddingBottom: 12 },
-  drawerLogo: { height: 26, width: 120 },
-  closeBtn: { padding: 4 },
-  profBanner: { flexDirection: 'row', alignItems: 'center', gap: 12, marginHorizontal: 12, borderRadius: 14, padding: 12, marginBottom: 8, borderWidth: 1 },
-  profImg: { width: 44, height: 44, borderRadius: 22 },
-  profName: { fontSize: 14, fontWeight: '700' },
-  profSub: { fontSize: 11, marginTop: 1 },
-  section: { paddingHorizontal: 12, paddingTop: 8, paddingBottom: 4 },
-  sectionTitle: { fontSize: 10, fontWeight: '700', letterSpacing: 1, marginBottom: 4, paddingHorizontal: 4 },
-  navItem: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 9, paddingHorizontal: 4, borderRadius: 10 },
-  navIconWrap: { width: 32, height: 32, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
-  navLabel: { fontSize: 14, fontWeight: '500' },
 });
 
 // Word of Day
