@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supprimer mon compte XiaoLearn — Delete my XiaoLearn account</title>
+<!--
+  Page de suppression de compte accessible depuis un navigateur.
+
+  Google Play l'exige depuis 2023 : la demande doit pouvoir se faire SANS
+  installer l'application, et l'URL est déclarée dans la fiche du Play Store.
+  Apple accepte le chemin in-app, mais cette page sert aussi de référence à
+  l'écran mobile et au support.
+
+  Elle n'efface rien elle-même : la connexion et l'appel à la fonction
+  `requestAccountDeletion` posent une échéance à sept jours, annulable en se
+  reconnectant. Voir functions/src/accountDeletion.ts.
+-->
+<style>
+  :root { --rouge:#D8483E; --texte:#2B2B2B; --gris:#6B6B6B; --bord:#E6E1DA; --fond:#FFFAF3; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:32px 20px 64px; background:var(--fond); color:var(--texte);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width:640px; margin:0 auto; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:17px; margin:28px 0 8px; }
+  .lang { color:var(--gris); font-size:14px; margin:0 0 28px; }
+  .carte { background:#fff; border:1px solid var(--bord); border-radius:14px; padding:18px; margin:16px 0; }
+  .alerte { background:#FFFBEB; border-color:#FDE68A; }
+  .alerte h2 { color:#92400E; margin-top:0; }
+  ul { margin:8px 0 0; padding-left:20px; }
+  li { margin:4px 0; }
+  button { width:100%; height:48px; border-radius:12px; border:0; font-size:15px; font-weight:700;
+           cursor:pointer; margin-top:8px; }
+  .primaire { background:var(--rouge); color:#fff; }
+  .danger { background:#fff; color:#B91C1C; border:2px solid #B91C1C; }
+  .etat { margin-top:14px; padding:12px; border-radius:10px; font-size:14px; display:none; }
+  .ok { background:#F0FDF4; border:1px solid #86EFAC; color:#15803D; }
+  .ko { background:#FEF2F2; border:1px solid #FECACA; color:#B91C1C; }
+  footer { color:var(--gris); font-size:13px; margin-top:32px; }
+  hr { border:0; border-top:1px solid var(--bord); margin:36px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Supprimer mon compte XiaoLearn</h1>
+  <p class="lang">English version below.</p>
+
+  <div class="carte">
+    <h2 style="margin-top:0">Comment ça marche</h2>
+    <p>Ta demande n'efface rien immédiatement. Le compte est supprimé <strong>7 jours</strong>
+       après la demande. Pendant ce délai, il te suffit de te reconnecter — dans l'application
+       ou ici — pour tout annuler.</p>
+  </div>
+
+  <div class="carte">
+    <h2>Ce qui sera effacé</h2>
+    <ul>
+      <li>Ta progression, tes révisions, tes statistiques et tes cartes</li>
+      <li>Ton profil, ton avatar et ta place au classement</li>
+      <li>Tes notes, tes erreurs enregistrées et tes flashcards personnalisées</li>
+      <li>Ton compte : tu ne pourras plus te connecter</li>
+    </ul>
+    <h2>Ce qui est conservé</h2>
+    <ul>
+      <li>Les pièces comptables liées à un achat, sans ton nom ni ton adresse e-mail :
+          la loi impose de les conserver dix ans.</li>
+    </ul>
+  </div>
+
+  <div class="carte alerte">
+    <h2>Ton abonnement ne sera pas résilié</h2>
+    <p>Un abonnement souscrit sur l'App Store ou Google Play appartient à ton compte du magasin,
+       pas à ton compte XiaoLearn : nous n'avons aucun moyen technique de l'arrêter.
+       <strong>Supprimer ton compte ici n'interrompt pas les prélèvements.</strong>
+       Résilie-le toi-même avant :</p>
+    <p>
+      <a href="https://apps.apple.com/account/subscriptions">Abonnements App Store</a> ·
+      <a href="https://play.google.com/store/account/subscriptions">Abonnements Google Play</a>
+    </p>
+  </div>
+
+  <button class="primaire" id="connexion">Se connecter avec Google</button>
+  <button class="danger" id="supprimer" style="display:none">Demander la suppression</button>
+  <button class="primaire" id="annuler" style="display:none">Annuler la suppression en cours</button>
+  <div class="etat" id="etat"></div>
+
+  <footer>
+    Tu peux aussi écrire à <a href="mailto:contact@xiaolearn.com">contact@xiaolearn.com</a>.
+    La demande sera traitée dans les mêmes conditions.
+  </footer>
+
+  <hr>
+
+  <h1>Delete my XiaoLearn account</h1>
+  <div class="carte">
+    <h2 style="margin-top:0">How it works</h2>
+    <p>Your request does not erase anything immediately. The account is deleted
+       <strong>7 days</strong> after the request. During that window, simply signing back in —
+       in the app or here — cancels it.</p>
+    <h2>What is erased</h2>
+    <ul>
+      <li>Your progress, reviews, statistics and cards</li>
+      <li>Your profile, avatar and leaderboard position</li>
+      <li>Your notes, saved mistakes and custom flashcards</li>
+      <li>Your account: you will no longer be able to sign in</li>
+    </ul>
+    <h2>What is kept</h2>
+    <ul>
+      <li>Accounting records tied to a purchase, without your name or email — retained
+          for ten years as required by law.</li>
+    </ul>
+  </div>
+  <div class="carte alerte">
+    <h2>Your subscription will NOT be cancelled</h2>
+    <p>An App Store or Google Play subscription belongs to your store account, not to your
+       XiaoLearn account, and we have no technical way to stop it.
+       <strong>Deleting your account here does not stop the charges.</strong>
+       Cancel it yourself first using the links above.</p>
+  </div>
+</main>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
+    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+  import { getFunctions, httpsCallable }
+    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js';
+  import { getFirestore, doc, getDoc }
+    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+  // Configuration publique, recopiée de .env.production. Ces valeurs sont déjà
+  // dans le bundle JavaScript du site : une apiKey Firebase identifie le projet,
+  // elle n'accorde aucun droit. Ce sont les règles Firestore et la vérification
+  // du jeton côté fonction qui protègent les données.
+  //
+  // `authDomain` doit rester celui du projet (domaine d'authentification
+  // personnalisé), sinon la fenêtre de connexion Google échoue.
+  const app = initializeApp({
+    apiKey: 'AIzaSyBfAEPu5DrGpW3UKmlJNO-qH56UGTl3dEc',
+    authDomain: 'app.xiaolearn.com',
+    projectId: 'xiaolearn-db9e6',
+    appId: '1:820279434994:web:b529b3c4581b517094ba6b',
+  });
+  const auth = getAuth(app);
+  const fns = getFunctions(app, 'europe-west1');
+  const db = getFirestore(app);
+
+  const $ = id => document.getElementById(id);
+  const etat = (texte, ok) => {
+    const el = $('etat');
+    el.textContent = texte;
+    el.className = 'etat ' + (ok ? 'ok' : 'ko');
+    el.style.display = 'block';
+  };
+
+  $('connexion').onclick = async () => {
+    try { await signInWithPopup(auth, new GoogleAuthProvider()); }
+    catch (e) { etat('Connexion impossible : ' + e.message, false); }
+  };
+
+  onAuthStateChanged(auth, async user => {
+    $('connexion').style.display = user ? 'none' : 'block';
+    if (!user) { $('supprimer').style.display = 'none'; $('annuler').style.display = 'none'; return; }
+
+    const snap = await getDoc(doc(db, 'users', user.uid)).catch(() => null);
+    const d = snap?.data()?.deletion;
+    const enCours = d?.status === 'pending';
+    $('supprimer').style.display = enCours ? 'none' : 'block';
+    $('annuler').style.display = enCours ? 'block' : 'none';
+    if (enCours) {
+      const date = new Date(d.scheduledFor).toLocaleDateString('fr-FR',
+        { day: 'numeric', month: 'long', year: 'numeric' });
+      etat(`Connecté : ${user.email}. Suppression programmée le ${date}.`, false);
+    } else {
+      etat(`Connecté : ${user.email}`, true);
+    }
+  });
+
+  $('supprimer').onclick = async () => {
+    if (!confirm("Confirmer la demande ? Le compte sera supprimé dans 7 jours.")) return;
+    try {
+      const { data } = await httpsCallable(fns, 'requestAccountDeletion')();
+      const date = new Date(data.scheduledFor).toLocaleDateString('fr-FR',
+        { day: 'numeric', month: 'long', year: 'numeric' });
+      etat(`Suppression programmée le ${date}. Reconnecte-toi avant cette date pour annuler.`, true);
+      $('supprimer').style.display = 'none';
+      $('annuler').style.display = 'block';
+    } catch (e) { etat('La demande a échoué : ' + e.message, false); }
+  };
+
+  $('annuler').onclick = async () => {
+    try {
+      await httpsCallable(fns, 'cancelAccountDeletion')();
+      etat('Demande annulée. Ton compte est conservé.', true);
+      $('annuler').style.display = 'none';
+      $('supprimer').style.display = 'block';
+    } catch (e) { etat("L'annulation a échoué : " + e.message, false); }
+  };
+</script>
+</body>
+</html>

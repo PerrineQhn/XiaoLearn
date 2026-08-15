@@ -46,6 +46,17 @@ export { geminiTtsProxy } from './geminiTtsProxy';
 // Proxy Azure Speech Pronunciation Assessment : reconnaissance vocale +
 // scoring pédagogique pour le drill de prononciation (cf. azureSpeechProxy.ts).
 export { azureSpeechProxy } from './azureSpeechProxy';
+// Webhook RevenueCat : achats mobile (iOS/Android) → même schéma
+// entitlements.app Firestore que Stripe (cf. revenueCatWebhook.ts).
+export { revenueCatWebhook } from './revenueCatWebhook';
+// Suppression de compte : demande, annulation, purge à J+7 (App Store 5.1.1(v),
+// Google Play). Cf. accountDeletion.ts pour le détail du différé.
+export {
+  requestAccountDeletion,
+  cancelAccountDeletion,
+  purgeDeletedAccounts,
+  accountDeletionInfo,
+} from './accountDeletion';
 
 // ---------------------------------------------------------------------------
 // CORS helper : nos requêtes viennent de app.xiaolearn.com (origin cross-domain
@@ -59,6 +70,42 @@ const ALLOWED_ORIGINS = new Set([
   'http://localhost:5173', // Vite dev server
   'http://localhost:4173'  // Vite preview
 ]);
+
+/**
+ * Vérifie le jeton Firebase de l'appelant et renvoie son uid.
+ *
+ * ## Pourquoi c'est indispensable ici
+ *
+ * `createPortal` lisait l'`uid` dans le corps de la requête. Les fonctions
+ * HTTP v2 sont publiquement invocables, et le CORS ci-dessus n'émet que des
+ * en-têtes — il ne bloque jamais l'exécution, donc un simple `curl` passe.
+ *
+ * Restait à connaître un uid : `firestore.rules` autorise `list` sur
+ * `publicProfiles`, donc un compte gratuit suffit à tous les énumérer.
+ * N'importe qui pouvait ainsi obtenir une session Stripe Billing Portal pour
+ * un autre client — factures, adresse, moyen de paiement, et résiliation de
+ * son abonnement.
+ *
+ * L'uid transmis dans le corps n'est plus lu nulle part : seule la valeur
+ * signée par Firebase fait foi.
+ *
+ * Même mécanisme que `geminiProxy.ts`, `geminiTtsProxy.ts` et
+ * `azureSpeechProxy.ts`, qui le faisaient déjà correctement.
+ */
+async function requireAuth(req: any): Promise<string | null> {
+  const header = req.headers.authorization as string | undefined;
+  if (!header || !header.startsWith('Bearer ')) return null;
+  const token = header.slice('Bearer '.length).trim();
+  if (!token) return null;
+  try {
+    const { getAuth } = await import('firebase-admin/auth');
+    const decoded = await getAuth().verifyIdToken(token);
+    return decoded.uid;
+  } catch (err) {
+    logger.warn('jeton Firebase invalide', { err });
+    return null;
+  }
+}
 
 function applyCors(req: { headers: Record<string, string | string[] | undefined> }, res: any): boolean {
   const origin = (req.headers.origin as string | undefined) ?? '';
@@ -91,15 +138,19 @@ export const createCheckout = onRequest(
       return;
     }
 
+    // L'uid vient du jeton, jamais du corps : sans cela, un tiers pourrait
+    // ouvrir un checkout au nom d'un autre compte.
+    const uid = await requireAuth(req);
+    if (!uid) {
+      res.status(401).json({ error: 'Authentication required' });
+      return;
+    }
+
     try {
-      const { productId, uid, email } = req.body ?? {};
+      const { productId, email } = req.body ?? {};
 
       if (!productId || typeof productId !== 'string') {
         res.status(400).json({ error: 'productId is required' });
-        return;
-      }
-      if (!uid || typeof uid !== 'string') {
-        res.status(400).json({ error: 'uid is required' });
         return;
       }
 
@@ -176,12 +227,16 @@ export const createPortal = onRequest(
       return;
     }
 
+    // Le portail donne accès aux factures, au moyen de paiement et à la
+    // résiliation : l'uid ne peut venir que du jeton signé.
+    const uid = await requireAuth(req);
+    if (!uid) {
+      res.status(401).json({ error: 'Authentication required' });
+      return;
+    }
+
     try {
-      const { uid, returnUrl } = req.body ?? {};
-      if (!uid || typeof uid !== 'string') {
-        res.status(400).json({ error: 'uid is required' });
-        return;
-      }
+      const { returnUrl } = req.body ?? {};
 
       // Lookup du customerId Stripe à partir de l'uid Firebase. On l'a stocké
       // dans users/{uid}.entitlements.app.customerId lors du premier checkout.

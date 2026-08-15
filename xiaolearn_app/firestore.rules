@@ -13,7 +13,28 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      // Le client ne pose plus lui-même ses droits payants : `entitlements` et
+      // `deletion` ne sont écrits que par les webhooks et les fonctions, en
+      // Admin SDK. Sans cette restriction, n'importe qui pouvait s'accorder
+      // l'accès premium depuis le SDK client.
+      allow write: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.diff(resource.data).affectedKeys()
+             .hasAny(['entitlements', 'deletion']);
+      allow create: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.keys().hasAny(['entitlements', 'deletion']);
+    }
+
+    // Sous-collections de l'utilisateur : la règle ci-dessus ne cascade pas en
+    // rules_version 2, et `users/{uid}/notifications` était donc refusé.
+    match /users/{userId}/{document=**} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Traces comptables conservées après suppression de compte : écrites par
+    // la fonction de purge, jamais lues ni modifiées par un client.
+    match /billing_archive/{uid} {
+      allow read, write: if false;
     }
 
     match /pending_entitlements/{email} {
@@ -263,6 +284,35 @@ service cloud.firestore {
         && request.resource.data.displayName is string;
       allow delete: if isSignedIn() && resource.data.uid == request.auth.uid;
       allow update: if false;
+    }
+
+    // ========================================================================
+    //  SIGNALEMENTS — modération de la messagerie (App Store guideline 1.2).
+    //
+    //  Un utilisateur peut DÉPOSER un signalement, jamais le lire ni le
+    //  modifier : la boîte de signalements se dépouille dans la console
+    //  Firebase (ou par l'Admin SDK), pas depuis un client. L'exposer en
+    //  lecture permettrait à la personne signalée de savoir qui l'a signalée.
+    //
+    //  Le champ `messages` porte les derniers échanges au moment du
+    //  signalement : sans eux, chaque signalement obligerait à aller
+    //  fouiller la conversation — que la modération n'a pas le droit de
+    //  lire par les règles ci-dessous.
+    // ========================================================================
+
+    match /reports/{reportId} {
+      allow create: if isSignedIn()
+        && request.resource.data.reporterUid == request.auth.uid
+        && request.resource.data.reportedUid is string
+        && request.resource.data.reportedUid != request.auth.uid
+        && request.resource.data.reason is string
+        && request.resource.data.reason.size() > 0
+        && request.resource.data.reason.size() <= 100
+        && request.resource.data.status == 'open'
+        // Contexte borné : au plus 20 messages, déjà tronqués côté client.
+        && request.resource.data.messages is list
+        && request.resource.data.messages.size() <= 20;
+      allow read, update, delete: if false;
     }
 
     // ========================================================================
