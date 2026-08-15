@@ -104,6 +104,7 @@ import { useLessonProgress } from './hooks/useLessonProgress';
 import { useLearningStats } from './hooks/useLearningStats';
 import { useFirestoreSync, useSyncBlockedDetector } from './hooks/useFirestoreSync';
 import { useWordSRS } from './hooks/useWordSRS';
+import { cardIdForHanzi, cardIdForSentence } from './utils/srs-identity';
 import { useQuizEngine } from './hooks/useQuizEngine';
 import { useEntitlements } from './hooks/useEntitlements';
 import { useUserProfileSync } from './hooks/useUserProfileSync';
@@ -1200,10 +1201,18 @@ function App() {
     // n'ont pas leur place dans les flashcards ni en révision puisqu'il
     // n'y a aucun caractère à reconnaître/écrire/réviser visuellement.
     const HANZI_RE = /[一-鿿]/;
+    // Dédoublonnage sur l'identifiant SRS, pas sur `word.id` : le même mot a
+    // souvent plusieurs entrées de catalogue (HSK + supplément + vocab CECR),
+    // ce qui produisait autant de cartes distinctes pour un seul mot — on
+    // pouvait le maîtriser d'un côté et l'avoir « nouveau » de l'autre.
+    // La première occurrence gagne : c'est celle du niveau le plus bas, donc
+    // celle du moment où le mot est introduit.
     const pushUnique = (word: LessonItem | undefined) => {
-      if (!word || seen.has(word.id)) return;
+      if (!word) return;
       if (!HANZI_RE.test(word.hanzi)) return;
-      seen.add(word.id);
+      const cardId = cardIdForHanzi(word.hanzi);
+      if (seen.has(cardId)) return;
+      seen.add(cardId);
       items.push(word);
     };
     lessonProgress.allLearnedItems.forEach(pushUnique);
@@ -1222,7 +1231,10 @@ function App() {
     // inversés pour retrouver l'itemId canonique à partir du hanzi ou du
     // pinyin (normalisés) — tout en conservant le support direct par id au
     // cas où certaines leçons référencent déjà des ids.
-    const ownedItemIds = new Set<string>();
+    // Les index résolvent vers l'identifiant SRS et non vers `it.id` : ces
+    // `itemIds` servent à FlashcardPageV5 pour rattacher une carte à sa leçon,
+    // et les cartes qu'elle manipule sont nommées par `cardIdForHanzi`.
+    const ownedItemIds = new Map<string, string>();
     const byHanzi = new Map<string, string>();
     const byPinyin = new Map<string, string>();
     const normalizePinyin = (s: string) =>
@@ -1232,19 +1244,20 @@ function App() {
         .replace(/\s+/g, '')
         .toLowerCase();
     for (const it of allFlashcardItems) {
-      ownedItemIds.add(it.id);
-      if (it.hanzi && !byHanzi.has(it.hanzi)) byHanzi.set(it.hanzi, it.id);
+      const cardId = cardIdForHanzi(it.hanzi);
+      ownedItemIds.set(it.id, cardId);
+      if (it.hanzi && !byHanzi.has(it.hanzi)) byHanzi.set(it.hanzi, cardId);
       if (it.pinyin) {
         const np = normalizePinyin(it.pinyin);
-        if (np && !byPinyin.has(np)) byPinyin.set(np, it.id);
+        if (np && !byPinyin.has(np)) byPinyin.set(np, cardId);
         // Conserve aussi la forme exacte tonale (ex: "mā") pour matcher les
         // leçons de tons qui utilisent la forme avec accents.
-        if (!byPinyin.has(it.pinyin)) byPinyin.set(it.pinyin, it.id);
+        if (!byPinyin.has(it.pinyin)) byPinyin.set(it.pinyin, cardId);
       }
     }
 
     const resolveRef = (ref: string): string | undefined => {
-      if (ownedItemIds.has(ref)) return ref;
+      if (ownedItemIds.has(ref)) return ownedItemIds.get(ref);
       if (byHanzi.has(ref)) return byHanzi.get(ref);
       if (byPinyin.has(ref)) return byPinyin.get(ref);
       const np = normalizePinyin(ref);
@@ -1334,10 +1347,16 @@ function App() {
    * Phrases présentées comme SentenceFlashcard dans l'onglet "Phrases"
    * de FlashcardPageV5. Deux sources cumulées :
    *   1. Lignes des `dialogue.lines` des leçons CECR complétées
-   *      → id `sent-{lessonId}-{lineIndex}`
    *   2. `examples[]` portés par chaque vocab (LessonItem) résolu depuis
    *      les `flashcards` array des leçons complétées
-   *      → id `ex-{lessonId}-{vocabId}-{exampleIndex}`
+   *
+   * Les deux sources produisent des identifiants `s:{hanzi}` — voir
+   * `cardIdForSentence` dans `utils/srs-identity.ts`. Auparavant chacune avait
+   * son schéma positionnel (`sent-{leçon}-{ligne}`, `ex-{leçon}-{vocab}-{i}`),
+   * ce qui réattribuait l'historique de révision aux mauvaises phrases dès
+   * qu'une ligne était insérée dans un dialogue. La liste étant de toute façon
+   * dédupliquée par hanzi juste en dessous, l'identifiant par contenu est ce
+   * qu'elle décrivait déjà implicitement.
    *
    * Avant ce useMemo couvrait UNIQUEMENT les dialogues — du coup les
    * exemples (10 000+ phrases courtes, présentes sur chaque entrée HSK)
@@ -1393,11 +1412,13 @@ function App() {
           : undefined;
         lesson.dialogue.lines.forEach((line, idx) => {
           const manifestUrl = manifestEntry?.lines?.[idx];
-          const sentId = `sent-${lessonId}-${idx}`;
-          const srsEntry = wordSrs.map[sentId];
           if (seenHanzi.has(line.hanzi)) return;
           if (!isRealPhrase(line.hanzi)) return;
           seenHanzi.add(line.hanzi);
+          // L'identifiant se calcule APRÈS les filtres : il dérive du hanzi,
+          // il n'y a donc rien à en tirer sur une ligne qu'on écarte.
+          const sentId = cardIdForSentence(line.hanzi);
+          const srsEntry = wordSrs.map[sentId];
           out.push({
             id: sentId,
             lessonId,
@@ -1438,12 +1459,12 @@ function App() {
       }
       vocabItems.forEach((vocab) => {
         if (!vocab.examples || vocab.examples.length === 0) return;
-        vocab.examples.forEach((ex, exIdx) => {
+        vocab.examples.forEach((ex) => {
           if (!ex.hanzi || !ex.pinyin) return;
           if (seenHanzi.has(ex.hanzi)) return;
           if (!isRealPhrase(ex.hanzi)) return;
           seenHanzi.add(ex.hanzi);
-          const sentId = `ex-${lessonId}-${vocab.id}-${exIdx}`;
+          const sentId = cardIdForSentence(ex.hanzi);
           const srsEntry = wordSrs.map[sentId];
           out.push({
             id: sentId,
@@ -1565,7 +1586,7 @@ function App() {
   // les cartes qui existent réellement dans le catalogue (les entrées SRS
   // orphelines ne doivent pas gonfler le compteur).
   const dueFlashcardsBadgeCount = useMemo(() => {
-    const valid = new Set(allFlashcardItems.map((i) => i.id));
+    const valid = new Set(allFlashcardItems.map((i) => cardIdForHanzi(i.hanzi)));
     let n = 0;
     for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
     return n;
@@ -1576,7 +1597,9 @@ function App() {
   // null si rien n'est dû : HomePageV2 retombe alors sur un mot appris,
   // puis sur le placeholder 你好.
   const flashcardsPreviewCard = useMemo<{ hanzi: string; pinyin: string } | null>(() => {
-    const first = allFlashcardItems.find((item) => wordSrs.dueIds.has(item.id));
+    const first = allFlashcardItems.find((item) =>
+      wordSrs.dueIds.has(cardIdForHanzi(item.hanzi))
+    );
     return first ? { hanzi: first.hanzi, pinyin: first.pinyin } : null;
   }, [allFlashcardItems, wordSrs.dueIds]);
 
@@ -1585,7 +1608,7 @@ function App() {
   // `dueFlashcardsBadgeCount` ci-dessus — les entrées SRS orphelines ne
   // doivent pas gonfler la jauge).
   const flashcardsMasteredBadgeCount = useMemo(() => {
-    const valid = new Set(allFlashcardItems.map((i) => i.id));
+    const valid = new Set(allFlashcardItems.map((i) => cardIdForHanzi(i.hanzi)));
     let n = 0;
     for (const id of wordSrs.masteredIds) if (valid.has(id)) n++;
     return n;
@@ -2723,7 +2746,9 @@ function App() {
           // `reviewItems.length` qui compte des LEÇONS, pas des cartes — d'où
           // le mismatch utilisateur (Objectif=19 cartes vs widget=3 leçons).
           dueCardsCount={(() => {
-            const valid = new Set(allFlashcardItems.map((i) => i.id));
+            const valid = new Set(
+              allFlashcardItems.map((i) => cardIdForHanzi(i.hanzi))
+            );
             let n = 0;
             for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
             return n;
@@ -2735,7 +2760,9 @@ function App() {
           // pouvoir être révisées par l'utilisateur (elles ne s'affichent
           // pas dans la page Flashcards) → compteur "stuck" à vie.
           dueFlashcardsCount={(() => {
-            const valid = new Set(allFlashcardItems.map((i) => i.id));
+            const valid = new Set(
+              allFlashcardItems.map((i) => cardIdForHanzi(i.hanzi))
+            );
             let n = 0;
             for (const id of wordSrs.dueIds) if (valid.has(id)) n++;
             return n;

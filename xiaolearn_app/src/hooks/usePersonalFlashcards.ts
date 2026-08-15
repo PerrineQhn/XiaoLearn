@@ -10,8 +10,20 @@
 import { useCallback, useMemo, useState } from 'react';
 import { PERSONAL_FLASHCARDS_MAX, type PersonalFlashcard } from '../types/flashcard-v3';
 import { useFirestoreSync } from './useFirestoreSync';
+import { migratePersonalId, newPersonalCardId } from '../utils/srs-identity';
 
 const STORAGE_KEY = 'cl_personal_flashcards_v7';
+
+/**
+ * Normalise les identifiants `pf-` hérités vers le préfixe partagé `p:`.
+ *
+ * Appliqué aux DEUX sources — localStorage et snapshot Firestore. Ne migrer
+ * que le local ne suffirait pas : le cloud réinjecterait ses `pf-` au premier
+ * snapshot, et la fusion par identifiant produirait deux entrées pour une
+ * seule carte, l'ancienne et la nouvelle.
+ */
+const migrateIds = (list: PersonalFlashcard[]): PersonalFlashcard[] =>
+  list.map((c) => (c?.id ? { ...c, id: migratePersonalId(c.id) } : c));
 
 const readInitial = (): PersonalFlashcard[] => {
   if (typeof window === 'undefined') return [];
@@ -19,7 +31,7 @@ const readInitial = (): PersonalFlashcard[] => {
   if (!raw) return [];
   try {
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) return parsed as PersonalFlashcard[];
+    if (Array.isArray(parsed)) return migrateIds(parsed as PersonalFlashcard[]);
   } catch {
     /* ignore */
   }
@@ -27,7 +39,7 @@ const readInitial = (): PersonalFlashcard[] => {
 };
 
 const nowISO = () => new Date().toISOString();
-const nextId = () => `pf-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+const nextId = newPersonalCardId;
 
 export interface UsePersonalFlashcardsOptions {
   syncEnabled?: boolean;
@@ -59,7 +71,7 @@ export const usePersonalFlashcards = (options: UsePersonalFlashcardsOptions = {}
         // récente (updatedAt si présent, sinon la version locale par défaut
         // car probablement plus à jour qu'un snapshot cloud potentiellement
         // périmé).
-        const cloudCards = data as PersonalFlashcard[];
+        const cloudCards = migrateIds(data as PersonalFlashcard[]);
         setCards((prev) => {
           const byId = new Map<string, PersonalFlashcard>();
           for (const c of prev) byId.set(c.id, c);

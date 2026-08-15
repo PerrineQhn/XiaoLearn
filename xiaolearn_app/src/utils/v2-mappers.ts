@@ -42,6 +42,7 @@ import { cecrExercisesV2All as cecrExercisesV2 } from '../data/cecr-exercises-al
 // example?} construites depuis le dico HSK. Cf scripts/lesson-vocab-gap-report
 // et scripts/build-vocab-supplement.py.
 import lessonVocabSupplementRaw from '../data/lesson-vocab-supplement.json';
+import { cardIdForHanzi } from './srs-identity';
 
 type SupplementEntry = {
   hanzi: string;
@@ -240,6 +241,18 @@ const levelToV2: Record<string, FlashcardsV2HskLevel> = {
   hsk7: 'hsk7'
 };
 
+/**
+ * Frontière entre les deux espaces de noms d'identifiants du web :
+ *   - `item.id` (`hsk1-0001`) désigne une ENTRÉE DE CATALOGUE. Il reste la
+ *     référence pour les leçons, la progression et le dictionnaire.
+ *   - `cardIdForHanzi(item.hanzi)` désigne une CARTE SRS, et c'est ce que
+ *     l'app mobile utilise aussi.
+ *
+ * Les cartes produites ici partent en révision et remontent via `onRate`, donc
+ * elles portent l'identifiant SRS. Attention : `learnedIds` vient de
+ * `useLessonProgress` et reste dans l'espace catalogue — c'est le seul
+ * ensemble qui se consulte encore avec `item.id`.
+ */
 export function lessonItemToFlashcardV2(
   item: LessonItem,
   masteredIds?: Set<string>,
@@ -248,9 +261,11 @@ export function lessonItemToFlashcardV2(
   reviewedIds?: Set<string>,
   srsMap?: Record<string, { lastReviewedAt?: number }>
 ): FlashcardV2Item {
+  const cardId = cardIdForHanzi(item.hanzi);
+
   let srsState: FlashcardV2SrsState = 'new';
-  if (masteredIds?.has(item.id)) srsState = 'mastered';
-  else if (difficultIds?.has(item.id)) srsState = 'difficult';
+  if (masteredIds?.has(cardId)) srsState = 'mastered';
+  else if (difficultIds?.has(cardId)) srsState = 'difficult';
   else if (learnedIds?.has(item.id)) srsState = 'learning';
 
   // Source canonique : timestamp réel issu de la SRS (`useWordSRS.map`).
@@ -258,16 +273,16 @@ export function lessonItemToFlashcardV2(
   // la carte est dans `reviewedIds` mais qu'on n'a pas le map sous la main.
   // Le marqueur reste compatible avec la table plate V5 (classement
   // "En cours" vs "Nouveau") sans introduire de date erronée.
-  const realTs = srsMap?.[item.id]?.lastReviewedAt;
+  const realTs = srsMap?.[cardId]?.lastReviewedAt;
   const lastReviewedAt =
     realTs && realTs > 0
       ? realTs
-      : reviewedIds?.has(item.id)
+      : reviewedIds?.has(cardId)
         ? 1
         : undefined;
 
   return {
-    id: item.id,
+    id: cardId,
     hanzi: item.hanzi,
     pinyin: item.pinyin,
     translation: item.translationFr ?? item.translation,

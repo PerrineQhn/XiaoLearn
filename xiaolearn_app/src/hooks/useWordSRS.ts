@@ -25,11 +25,18 @@
  * reconnaissance, donc level/dueAt/consecutiveAgain → skills.recognition,
  * les deux autres skills démarrent à zéro (non commencées). Les champs
  * legacy top-level sont conservés en lecture mais ne sont plus écrits.
+ *
+ * Les `id` manipulés ici sont ceux produits par `cardIdForHanzi`
+ * (`src/utils/srs-identity.ts`) — le même contrat que l'app mobile, pour que
+ * les deux plateformes révisent bien les mêmes cartes. Ce hook ne fabrique
+ * aucun identifiant lui-même : il reçoit ceux du catalogue.
  */
 import { useCallback, useMemo, useState } from 'react';
 import { useFirestoreSync } from './useFirestoreSync';
-
-const STORAGE_KEY = 'cl_word_srs_v1';
+// La clé n'est PAS redéclarée ici : elle vit dans srs-identity avec
+// l'identifiant de carte, parce que les deux forment un seul contrat partagé
+// avec le mobile et doivent changer ensemble.
+import { WORD_SRS_STORAGE_KEY } from '../utils/srs-identity';
 
 export type SrsSkill = 'recognition' | 'pronunciation' | 'writing';
 
@@ -165,7 +172,7 @@ const normalizeMap = (raw: unknown): WordSrsMap => {
 
 const readInitial = (): WordSrsMap => {
   if (typeof window === 'undefined') return {};
-  const raw = window.localStorage.getItem(STORAGE_KEY);
+  const raw = window.localStorage.getItem(WORD_SRS_STORAGE_KEY);
   if (!raw) return {};
   try {
     return normalizeMap(JSON.parse(raw));
@@ -189,7 +196,7 @@ export const useWordSRS = (options: UseWordSrsOptions = {}) => {
   const [map, setMap] = useState<WordSrsMap>(readInitial);
 
   const { saveToFirestore } = useFirestoreSync(
-    STORAGE_KEY,
+    WORD_SRS_STORAGE_KEY,
     (data) => {
       if (!data || typeof data !== 'object') return;
       // Merge par ID puis par compétence : ne JAMAIS perdre un rating local
@@ -222,7 +229,7 @@ export const useWordSRS = (options: UseWordSrsOptions = {}) => {
   const persist = useCallback(
     (next: WordSrsMap) => {
       if (typeof window !== 'undefined') {
-        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        window.localStorage.setItem(WORD_SRS_STORAGE_KEY, JSON.stringify(next));
       }
       saveToFirestore(next);
     },

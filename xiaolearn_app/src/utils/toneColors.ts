@@ -21,11 +21,11 @@ import { pinyin as pinyinPro } from 'pinyin-pro';
 export type Tone = 1 | 2 | 3 | 4 | 5; // 5 = ton neutre
 
 export const TONE_COLORS: Record<Tone, string> = {
-  1: '#e53935', // ton 1 (ā) — rouge
-  2: '#43a047', // ton 2 (á) — vert
-  3: '#1e88e5', // ton 3 (ǎ) — bleu
-  4: '#8e24aa', // ton 4 (à) — violet
-  5: '#9e9e9e' // ton neutre (a) — gris
+  1: '#E53935', // ton 1 (ā) — rouge
+  2: '#FB8C00', // ton 2 (á) — orange
+  3: '#43A047', // ton 3 (ǎ) — vert
+  4: '#1E88E5', // ton 4 (à) — bleu
+  5: '#9E9E9E' // ton neutre (a) — gris
 };
 
 /** Clé localStorage du réglage utilisateur (Settings → Affichage du chinois). */
