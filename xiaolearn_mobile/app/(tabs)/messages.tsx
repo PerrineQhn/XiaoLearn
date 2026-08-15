@@ -11,11 +11,12 @@ import {
   View, Text, StyleSheet, TextInput, TouchableOpacity,
   FlatList, ScrollView, KeyboardAvoidingView, Keyboard, Platform,
   Image, ActivityIndicator, Modal, Pressable, Animated, PanResponder, Dimensions,
+  Alert,
 } from 'react-native';
 import { useSwipeToDismiss } from '@/hooks/useSwipeToDismiss';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import Colors from '@/constants/Colors';
@@ -23,6 +24,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useI18n } from '@/contexts/LanguageContext';
 import { type TransKey } from '@/i18n/translations';
 import { useConversations, type Conversation } from '@/hooks/useConversations';
+import { useModeration } from '@/hooks/useModeration';
 import { useUserSearch } from '@/hooks/useUserSearch';
 import { askProfXiao, type ChatMessage, type AiCorrection } from '@/services/geminiService';
 import { logError } from '@/data/errorLog';
@@ -76,8 +78,13 @@ function NewMessageModal({
 
   return (
     <Modal transparent animationType="fade" onRequestClose={onClose}>
-      <Pressable style={m.backdrop} onPress={onClose}>
-        <Pressable style={[m.modal, { backgroundColor: colors.cardBg }]} onPress={() => {}}>
+      {/* Couche de fermeture séparée : en parent du panneau, elle privait la
+          liste de résultats de ses gestes — sur iOS, un Pressable ancêtre
+          s'empare du défilement avant la FlatList. */}
+      <View style={{ flex: 1 }}>
+        <Pressable style={[StyleSheet.absoluteFill, m.scrim]} onPress={onClose} />
+        <View style={m.backdrop} pointerEvents="box-none">
+        <View style={[m.modal, { backgroundColor: colors.cardBg }]}>
           <View style={[m.header, { borderBottomColor: colors.borderLight }]}>
             <Text style={[m.title, { color: colors.textPrimary }]}>{t('msg.newMessage')}</Text>
             <TouchableOpacity onPress={onClose} style={m.closeBtn}>
@@ -130,8 +137,9 @@ function NewMessageModal({
               );
             }}
           />
-        </Pressable>
-      </Pressable>
+        </View>
+        </View>
+      </View>
     </Modal>
   );
 }
@@ -143,17 +151,44 @@ export function MessagesTab({ colors }: { colors: typeof Colors.light }) {
   const { user } = useAuth();
   const { t: tr, lang } = useI18n();
   const { conversations, loading, openOrCreate } = useConversations();
+  const { isBlocked, unblock } = useModeration();
   const [modalOpen, setModalOpen] = useState(false);
   const [filter, setFilter] = useState('');
 
+  // Les conversations avec un utilisateur bloqué sortent de la liste : c'est
+  // la substance même du blocage — ses messages ne m'atteignent plus. Le
+  // déblocage (dans la conversation, ou en le recontactant) les fait revenir,
+  // rien n'est effacé.
+  const visibles = conversations.filter(c =>
+    !c.participantIds.some(uid => uid !== user?.uid && isBlocked(uid))
+  );
+
   const filtered = filter.trim()
-    ? conversations.filter(c =>
+    ? visibles.filter(c =>
         Object.values(c.participantNames).join(' ').toLowerCase().includes(filter.trim().toLowerCase())
       )
-    : conversations;
+    : visibles;
 
   async function handlePick(uid: string, name: string) {
     setModalOpen(false);
+    if (isBlocked(uid)) {
+      // La conversation bloquée n'apparaît plus dans la liste : c'est donc ICI,
+      // en retombant volontairement sur la personne, que le déblocage se
+      // propose. Recontacter quelqu'un qu'on a bloqué doit être un geste
+      // explicite, jamais un accident.
+      Alert.alert(tr('mod.pickBlockedTitle'), tr('mod.pickBlockedBody', { name }), [
+        { text: tr('common.cancel'), style: 'cancel' },
+        {
+          text: tr('mod.unblock'),
+          onPress: async () => {
+            if (!(await unblock(uid))) return;
+            const convId = await openOrCreate({ uid, displayName: name });
+            if (convId) router.push({ pathname: '/conversation', params: { convId, otherName: name, otherUid: uid } });
+          },
+        },
+      ]);
+      return;
+    }
     const convId = await openOrCreate({ uid, displayName: name });
     if (convId) {
       router.push({ pathname: '/conversation', params: { convId, otherName: name, otherUid: uid } });
@@ -271,30 +306,47 @@ export function MessagesTab({ colors }: { colors: typeof Colors.light }) {
  * Rend du markdown minimal dans une bulle de chat :
  * **gras**, *italique*, `code`, lignes vides → paragraphes, "- " → bullet
  */
-function MarkdownText({ text, color, baseStyle }: { text: string; color: string; baseStyle?: object }) {
+export function MarkdownText({ text, color, baseStyle }: { text: string; color: string; baseStyle?: object }) {
   const lines = text.split('\n');
 
   return (
     <View style={{ gap: 3 }}>
       {lines.map((line, li) => {
         const trimmed = line.trimStart();
-        const isBullet = trimmed.startsWith('- ') || trimmed.startsWith('• ');
-        const content = isBullet ? trimmed.slice(2) : line;
-        const isHeading = trimmed.startsWith('## ') || trimmed.startsWith('### ');
-        const headingContent = isHeading ? trimmed.replace(/^#{2,3}\s/, '') : '';
 
+        // Puces : le modèle écrit indifféremment « - », « • », « * » ou
+        // « 1. ». L'astérisque n'était pas reconnu comme puce, il partait donc
+        // dans l'analyse en ligne où il s'appariait avec le premier astérisque
+        // du gras suivant — d'où les italiques parasites et l'astérisque
+        // orphelin en fin de ligne.
+        const puce = trimmed.match(/^([-•*]|\d+\.)\s+/);
+        const isBullet = !!puce;
+        const content = isBullet ? trimmed.slice(puce![0].length) : line;
+
+        // Filet horizontal : « --- », « *** » ou une longue suite de tirets.
+        if (/^\s*([-*_])\1{2,}\s*$/.test(line)) {
+          return (
+            <View key={li} style={{ height: 1, backgroundColor: color + '33', marginVertical: 6 }} />
+          );
+        }
+
+        const isHeading = /^#{1,4}\s/.test(trimmed);
         if (isHeading) {
           return (
-            <Text key={li} style={[baseStyle, { color, fontWeight: '700', fontSize: 14, marginTop: 6 }]}>
-              {renderInline(headingContent, color)}
+            <Text key={li} selectable style={[baseStyle, { color, fontWeight: '700', fontSize: 14, marginTop: 6 }]}>
+              {renderInline(trimmed.replace(/^#{1,4}\s+/, ''), color)}
             </Text>
           );
         }
 
         return (
           <View key={li} style={isBullet ? { flexDirection: 'row', gap: 6, paddingLeft: 2 } : undefined}>
-            {isBullet && <Text style={{ color, fontSize: 13, marginTop: 2 }}>•</Text>}
-            <Text style={[baseStyle, { color, flex: isBullet ? 1 : undefined }]}>
+            {isBullet && (
+              <Text style={{ color, fontSize: 13, marginTop: 2 }}>
+                {/^\d/.test(puce![1]) ? puce![1] : '•'}
+              </Text>
+            )}
+            <Text selectable style={[baseStyle, { color, flex: isBullet ? 1 : undefined }]}>
               {renderInline(content, color)}
             </Text>
           </View>
@@ -304,9 +356,25 @@ function MarkdownText({ text, color, baseStyle }: { text: string; color: string;
   );
 }
 
+/**
+ * Rend **gras**, *italique* et `code` dans une ligne.
+ *
+ * ## Le piège de l'astérisque
+ *
+ * L'ancienne expression, `\*[^*]+\*` pour l'italique, s'appariait avec
+ * n'importe quelle paire d'astérisques, espaces compris. Sur une ligne comme
+ * « *   **Indiquer l'achèvement** : … », elle prenait la puce et le premier
+ * astérisque du gras comme une italique contenant trois espaces ; le reste se
+ * décalait, et la ligne s'affichait en italique avec un astérisque orphelin à
+ * la fin. C'est exactement ce qu'on voyait à l'écran.
+ *
+ * Deux corrections : les puces sont retirées en amont (voir `MarkdownText`),
+ * et l'italique suit la règle de CommonMark — le marqueur d'ouverture ne peut
+ * pas être suivi d'une espace, ni celui de fermeture précédé d'une espace.
+ * « 2 * 3 * 4 » n'est donc plus transformé en italique.
+ */
 function renderInline(text: string, color: string): React.ReactNode[] {
-  // Parse **bold**, *italic*, `code`
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^\s*][^*]*[^\s*]\*|\*[^\s*]\*|`[^`]+`)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <Text key={i} style={{ fontWeight: '700', color }}>{part.slice(2, -2)}</Text>;
@@ -325,7 +393,7 @@ function renderInline(text: string, color: string): React.ReactNode[] {
 
 const SEV_COLOR = { mineure: '#F59E0B', importante: '#EF4444', critique: '#7C3AED' } as Record<string, string>;
 
-function CorrectionsBlock({ corrections, colors }: { corrections: AiCorrection[]; colors: typeof Colors.light }) {
+export function CorrectionsBlock({ corrections, colors }: { corrections: AiCorrection[]; colors: typeof Colors.light }) {
   const { t } = useI18n();
   if (!corrections.length) return null;
   return (
@@ -351,14 +419,14 @@ function CorrectionsBlock({ corrections, colors }: { corrections: AiCorrection[]
 
 // ─── Onglet Prof. Xiao (IA) ───────────────────────────────────────────────────
 
-interface AiMsg {
+export interface AiMsg {
   id: string;
   role: 'user' | 'assistant';
   text: string;
   corrections?: AiCorrection[];
 }
 
-interface XiaoSession {
+export interface XiaoSession {
   id: string;
   startedAt: string;
   preview: string;
@@ -366,8 +434,8 @@ interface XiaoSession {
   history: ChatMessage[];
 }
 
-const XIAO_SESSIONS_KEY = 'cl_xiao_sessions';
-const MAX_SESSIONS = 20;
+export const XIAO_SESSIONS_KEY = 'cl_xiao_sessions';
+export const MAX_SESSIONS = 20;
 
 const SUGGESTION_KEYS: TransKey[] = ['msg.sugg1', 'msg.sugg2', 'msg.sugg3', 'msg.sugg4'];
 
@@ -541,7 +609,10 @@ function HistoryModal({
 
 // ─── Prof. Xiao Tab ───────────────────────────────────────────────────────────
 
-function ProfXiaoTab({ colors, kbVisible }: { colors: typeof Colors.light; kbVisible: boolean }) {
+function ProfXiaoTab({ colors, kbVisible, prefill, prefillKey }: {
+  colors: typeof Colors.light; kbVisible: boolean;
+  prefill?: string; prefillKey?: string;
+}) {
   const { t, lang } = useI18n();
   const { access } = useEntitlements();
   const router = useRouter();
@@ -556,6 +627,16 @@ function ProfXiaoTab({ colors, kbVisible }: { colors: typeof Colors.light; kbVis
   const sessionStartRef = useRef<string>(new Date().toISOString());
   const scrollRef = useRef<ScrollView>(null);
   const historyRef = useRef<ChatMessage[]>([]);
+
+  // Contexte envoyé par la bulle « Demander à Prof Xiao » : posé dans la
+  // saisie, jamais envoyé tout seul — c'est une amorce, la question appartient
+  // à l'utilisateur. Chaque clé n'est consommée qu'une fois.
+  const consumedPrefillKey = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (!prefill || !prefillKey || prefillKey === consumedPrefillKey.current) return;
+    consumedPrefillKey.current = prefillKey;
+    setInput(prefill);
+  }, [prefill, prefillKey]);
 
   // Charger les sessions sauvegardées au montage
   useEffect(() => {
@@ -805,6 +886,12 @@ function ProfXiaoTab({ colors, kbVisible }: { colors: typeof Colors.light; kbVis
           </ScrollView>
         )}
 
+        {/* Clavier ouvert : header, suggestions et saisie s'empilaient en HAUT
+            et tout l'espace restant s'ouvrait entre la saisie et le clavier —
+            très visible sur iPad. Ce ressort pousse la barre de saisie contre
+            le clavier, là où le pouce l'attend. */}
+        {kbVisible && <View style={{ flex: 1 }} />}
+
         {inputBar}
 
         {historyOpen && (
@@ -927,6 +1014,12 @@ export default function MessagesScreen() {
   const colors = Colors[scheme];
   const [kbVisible, setKbVisible] = useState(false);
 
+  // Préremplissage envoyé par la bulle « Demander à Prof Xiao » des écrans de
+  // contenu. `pfk` change à chaque appui : les paramètres de route persistent,
+  // et sans cette clé le même contexte se réappliquerait à chaque retour sur
+  // l'onglet, écrasant ce que l'utilisateur est en train d'écrire.
+  const { prefill, pfk } = useLocalSearchParams<{ prefill?: string; pfk?: string }>();
+
   useEffect(() => {
     const show = Keyboard.addListener('keyboardWillShow', () => setKbVisible(true));
     const hide  = Keyboard.addListener('keyboardWillHide', () => setKbVisible(false));
@@ -938,7 +1031,7 @@ export default function MessagesScreen() {
       {/* Pas de bandeau ici : ProfXiaoTab affiche déjà son propre en-tête
           (avatar, « Prof. Xiao Lin », statut en ligne). En ajouter un second
           faisait doublon. */}
-      <ProfXiaoTab colors={colors} kbVisible={kbVisible} />
+      <ProfXiaoTab colors={colors} kbVisible={kbVisible} prefill={prefill} prefillKey={pfk} />
     </SafeAreaView>
   );
 }
@@ -989,7 +1082,8 @@ const t = StyleSheet.create({
 
 // Modal
 const m = StyleSheet.create({
-  backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.45)', justifyContent: 'center', alignItems: 'center', padding: 24 },
+  backdrop: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center', padding: 24 },
+  scrim: { backgroundColor: 'rgba(0,0,0,0.45)' },
   modal: { width: '100%', maxWidth: 440, borderRadius: 20, overflow: 'hidden', maxHeight: '80%' },
   header: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',

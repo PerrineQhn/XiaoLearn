@@ -4,7 +4,7 @@
  */
 import { useState, useCallback } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, TouchableOpacity,
+  View, Text, StyleSheet, ScrollView, TouchableOpacity, Image,
   useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -17,6 +17,7 @@ import Colors from '@/constants/Colors';
 import { useAudio } from '@/hooks/useAudio';
 import { useI18n } from '@/contexts/LanguageContext';
 import { ERRORS_KEY, readErrors, clearError, type ErrorEntry, type ErrorSource } from '@/data/errorLog';
+import { XiaoQuickChat } from '@/components/AskXiaoBubble';
 
 // La clé et le type vivent dans data/errorLog.ts, avec le point d'écriture.
 // Réexportés ici : d'anciens imports pointaient sur cet écran.
@@ -29,7 +30,7 @@ export default function ErreursScreen() {
   const { width } = useWindowDimensions();
   const px = width >= 768 ? 24 : 16;
   const { playHanzi } = useAudio();
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [errors, setErrors] = useState<ErrorEntry[]>([]);
 
   // Les plus récentes en tête : le journal est stocké dans l'ordre d'ajout.
@@ -46,6 +47,54 @@ export default function ErreursScreen() {
     setErrors(prev => prev.filter(e => e.exerciseId !== exerciseId));
     await clearError(exerciseId);
   }, []);
+
+  /**
+   * Faute dont on a demandé l'explication à Prof. Xiao. Le journal dit CE
+   * QUI est faux (ta réponse, la bonne) mais pas POURQUOI : le voir écrit
+   * ne suffit pas à ne plus refaire la faute. La question est formée ici,
+   * complète, et part toute seule à l'ouverture.
+   */
+  const [asked, setAsked] = useState<ErrorEntry | null>(null);
+
+  const questionPour = (e: ErrorEntry) => {
+    // La question est posée dans la langue de l'interface : Prof. Xiao
+    // répond dans celle où on l'interroge.
+    if (lang === 'en') {
+      const src = e.source === 'hsk' ? 'an HSK mock exam'
+        : e.source === 'dictation' ? 'a dictation'
+        : e.source === 'chat' ? 'our conversation'
+        : 'a lesson exercise';
+      return [
+        `I got something wrong in ${e.lessonTitle} (${src}) and I'd like to understand why.`,
+        '',
+        `Question: ${e.prompt}`,
+        `My answer: ${e.userAnswer}`,
+        `Expected answer: ${e.correctAnswer}`,
+        e.explanation ? `Correction given: ${e.explanation}` : '',
+        '',
+        'Explain why my answer is wrong and what the right one actually says,',
+        'starting from the rule or the meaning at play. Give me one or two close',
+        'examples so it sticks, and tell me the trap to watch out for next time.',
+      ].filter(Boolean).join('\n');
+    }
+    const src = e.source === 'hsk' ? "d'une épreuve blanche HSK"
+      : e.source === 'dictation' ? "d'une dictée"
+      : e.source === 'chat' ? 'de notre conversation'
+      : "d'un exercice de leçon";
+    return [
+      `J'ai fait une erreur dans ${e.lessonTitle} (${src}) et je voudrais comprendre.`,
+      '',
+      `Énoncé : ${e.prompt}`,
+      `Ma réponse : ${e.userAnswer}`,
+      `Réponse attendue : ${e.correctAnswer}`,
+      e.explanation ? `Correction indiquée : ${e.explanation}` : '',
+      '',
+      'Explique-moi pourquoi ma réponse est fausse et ce que dit la bonne,',
+      'en partant de la règle ou du sens en jeu. Donne-moi un ou deux exemples',
+      'proches pour que je retienne, et dis-moi le piège à surveiller la',
+      'prochaine fois.',
+    ].filter(Boolean).join('\n');
+  };
 
   return (
     <SafeAreaView style={[s.root, { backgroundColor: c.appBg }]}>
@@ -109,33 +158,65 @@ export default function ErreursScreen() {
               {err.explanation && (
                 <Text style={[s.explain, { color: c.textSecondary }]}>{err.explanation}</Text>
               )}
-              {err.audioHanzi && (
+              {/* Ordre fixe : « Prof. Xiao explique » toujours en premier,
+                  donc toujours au même endroit d'une carte à l'autre. Les
+                  deux boutons se dimensionnent sur leur contenu (pas de
+                  `flex`) : l'écoute, présente une fois sur deux, ne doit pas
+                  déplacer son voisin selon qu'elle est là ou non. */}
+              <View style={s.actionsRow}>
                 <TouchableOpacity
-                  style={[s.audioBtn, { backgroundColor: c.primaryRedLight }]}
-                  onPress={() => playHanzi(err.audioHanzi!)}
+                  style={[s.askBtn, { borderColor: c.borderMedium }]}
+                  onPress={() => setAsked(err)}
+                  activeOpacity={0.75}
                 >
-                  <Ionicons name="volume-high-outline" size={16} color={c.primaryRed} />
-                  <Text style={[s.audioBtnTxt, { color: c.primaryRed }]}>{t('err.listen')} : {err.audioHanzi}</Text>
+                  <Image
+                    source={require('@/assets/professeur_xiao_profil.png')}
+                    style={s.askAvatar}
+                  />
+                  <Text style={[s.askTxt, { color: c.textPrimary }]} numberOfLines={1}>
+                    {t('err.explain')}
+                  </Text>
                 </TouchableOpacity>
-              )}
+                {err.audioHanzi && (
+                  <TouchableOpacity
+                    style={[s.audioBtn, { backgroundColor: c.primaryRedLight, flexShrink: 1 }]}
+                    onPress={() => playHanzi(err.audioHanzi!)}
+                  >
+                    <Ionicons name="volume-high-outline" size={16} color={c.primaryRed} />
+                    <Text style={[s.audioBtnTxt, { color: c.primaryRed }]} numberOfLines={1}>
+                      {t('err.listen')} : {err.audioHanzi}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+              </View>
             </View>
           ))}
         </ScrollView>
+      )}
+
+      {asked && (
+        <XiaoQuickChat
+          prompt={questionPour(asked)}
+          autoSend
+          onClose={() => setAsked(null)}
+        />
       )}
     </SafeAreaView>
   );
 }
 
 /** Icône et fond par provenance — l'étiquette dit d'où vient la faute. */
-const SOURCE_ICON: Record<ErrorSource, 'school-outline' | 'chatbubble-outline' | 'ear-outline'> = {
+const SOURCE_ICON: Record<ErrorSource, 'school-outline' | 'chatbubble-outline' | 'ear-outline' | 'document-text-outline'> = {
   lesson: 'school-outline',
   chat: 'chatbubble-outline',
   dictation: 'ear-outline',
+  hsk: 'document-text-outline',
 };
 const SOURCE_TINT: Record<ErrorSource, (c: typeof Colors.light) => string> = {
   lesson: c => c.primaryRedLight,
   chat: c => c.cardBgAlt,
   dictation: c => c.jadeGreenLight,
+  hsk: c => c.cardBgAlt,
 };
 
 const s = StyleSheet.create({
@@ -155,7 +236,17 @@ const s = StyleSheet.create({
   answersRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
   answerBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 8, borderWidth: 1 },
   answerTxt: { fontSize: 12, fontWeight: '600' },
-  audioBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 10, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 10, alignSelf: 'flex-start' },
+  actionsRow: { flexDirection: 'row', gap: 8, alignItems: 'stretch', marginTop: 10 },
+  askBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7,
+    borderWidth: 1, borderRadius: 10, paddingVertical: 9, paddingHorizontal: 12,
+  },
+  askAvatar: { width: 20, height: 20, borderRadius: 10 },
+  askTxt: { fontSize: 13, fontWeight: '600' },
+  audioBtn: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+    paddingHorizontal: 12, paddingVertical: 9, borderRadius: 10,
+  },
   audioBtnTxt: { fontSize: 13, fontWeight: '600' },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
   emptyIcon: { fontSize: 52, marginBottom: 12 },
