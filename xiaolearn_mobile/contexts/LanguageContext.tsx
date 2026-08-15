@@ -29,20 +29,44 @@ const LANG_KEY = 'xl_language';
  * touché au réglage, c'est son choix qui prime, sur ce téléphone comme après
  * réinstallation (la valeur est persistée).
  */
+/**
+ * Langue de l'appareil.
+ *
+ * ## Pourquoi ne pas se fier d'abord à `Intl`
+ *
+ * `Intl.DateTimeFormat().resolvedOptions().locale` renvoie la langue **de
+ * l'application**, pas celle de l'appareil. Or iOS déduit la première des
+ * `CFBundleLocalizations` déclarées : tant que l'app n'annonçait pas le
+ * français, iOS la considérait anglophone et `Intl` répondait « en-US » sur un
+ * iPad réglé en français. L'interface s'affichait donc en anglais chez un
+ * utilisateur francophone.
+ *
+ * `CFBundleLocalizations` déclare désormais fr et en, ce qui suffirait. Mais on
+ * interroge d'abord les préférences système, qui décrivent l'appareil et non le
+ * paquet : c'est la seule source qui reste juste si quelqu'un retire une
+ * localisation du plist un jour.
+ */
 function detectDeviceLang(): Lang {
-  let raw = '';
+  const candidats: string[] = [];
   try {
-    raw = Intl.DateTimeFormat().resolvedOptions().locale ?? '';
-  } catch { /* Intl absent : on tente les modules natifs */ }
-  if (!raw) {
-    try {
-      raw = Platform.OS === 'ios'
-        ? (NativeModules.SettingsManager?.settings?.AppleLocale
-           ?? NativeModules.SettingsManager?.settings?.AppleLanguages?.[0] ?? '')
-        : (NativeModules.I18nManager?.localeIdentifier ?? '');
-    } catch { /* on retombera sur l'anglais */ }
-  }
-  return raw.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    if (Platform.OS === 'ios') {
+      const s = NativeModules.SettingsManager?.settings;
+      // AppleLanguages liste les langues préférées de l'appareil, dans l'ordre.
+      const langues = s?.AppleLanguages;
+      if (Array.isArray(langues) && langues.length) candidats.push(String(langues[0]));
+      if (s?.AppleLocale) candidats.push(String(s.AppleLocale));
+    } else {
+      const l = NativeModules.I18nManager?.localeIdentifier;
+      if (l) candidats.push(String(l));
+    }
+  } catch { /* modules natifs indisponibles : on passera à Intl */ }
+
+  try {
+    const l = Intl.DateTimeFormat().resolvedOptions().locale;
+    if (l) candidats.push(l);
+  } catch { /* Intl absent */ }
+
+  return candidats.some(c => c.toLowerCase().startsWith('fr')) ? 'fr' : 'en';
 }
 
 interface LanguageCtx {

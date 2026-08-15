@@ -12,11 +12,15 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import Colors from '@/constants/Colors';
 import { useAuth } from '@/contexts/AuthContext';
 import { useI18n } from '@/contexts/LanguageContext';
+import * as AppleAuthentication from 'expo-apple-authentication';
 
 export default function LoginScreen() {
   const scheme = useColorScheme();
   const c = Colors[scheme];
-  const { user, signInWithEmail, signUpWithEmail, signInWithGoogle, googleLoading, googleAvailable } = useAuth();
+  const {
+    user, signInWithEmail, signUpWithEmail, signInWithGoogle, googleLoading, googleAvailable,
+    signInWithApple, appleLoading, appleAvailable,
+  } = useAuth();
   const { t } = useI18n();
   const router = useRouter();
 
@@ -55,23 +59,39 @@ export default function LoginScreen() {
     }
   }
 
+  /**
+   * Signale une erreur, y compris sur le web.
+   *
+   * `Alert.alert` n'est pas implémenté par react-native-web : l'appel ne lève
+   * rien et n'affiche rien. C'est ce qui rendait l'échec invisible — on tapait
+   * le bouton, et il ne se passait littéralement rien.
+   */
+  const signaler = (titre: string, corps: string) => {
+    if (Platform.OS === 'web') window.alert(`${titre}\n\n${corps}`);
+    else Alert.alert(titre, corps, [{ text: 'OK' }]);
+  };
+
   async function handleGoogle() {
-    if (Platform.OS === 'web') {
-      Alert.alert(
-        t('dlg.googleUnavail'),
-        t('dlg.googleUnavailBody'),
-        [{ text: 'OK' }]
-      );
-      return;
-    }
+    // Le web sortait ici sans rien tenter, sur un Alert invisible. La
+    // connexion Google y est pourtant gérée (fenêtre surgissante, repli par
+    // redirection) : on la tente, et si elle échoue on le DIT.
     try {
       await signInWithGoogle();
     } catch (e: any) {
-      Alert.alert('Erreur Google', e?.message ?? t('dlg.googleFailed'));
+      signaler(t('common.error'), e?.message ?? t('dlg.googleFailed'));
     }
   }
 
-  const busy = loading || googleLoading;
+  async function handleApple() {
+    try {
+      await signInWithApple();
+    } catch (e: any) {
+      // L'annulation est déjà avalée dans le contexte ; ici, c'est un vrai échec.
+      signaler(t('common.error'), e?.message ?? t('dlg.appleFailed'));
+    }
+  }
+
+  const busy = loading || googleLoading || appleLoading;
 
   return (
     <KeyboardAvoidingView
@@ -98,7 +118,12 @@ export default function LoginScreen() {
           style={[
             styles.googleBtn,
             { backgroundColor: c.cardBg, borderColor: c.borderMedium },
-            (Platform.OS === 'web' || !googleAvailable || busy) && { opacity: 0.5 },
+            // L'opacité doit refléter `disabled`, et rien d'autre. Le web y
+            // était grisé en dur — vestige d'une époque où la connexion Google
+            // n'y fonctionnait pas — alors que le bouton restait cliquable et
+            // que `signInWithGoogle` gère le web depuis, par redirection. Un
+            // bouton qui a l'air éteint mais qui marche, personne ne le tente.
+            (!googleAvailable || busy) && { opacity: 0.5 },
           ]}
           onPress={handleGoogle}
           disabled={busy || !googleAvailable}
@@ -115,6 +140,24 @@ export default function LoginScreen() {
             </>
           )}
         </TouchableOpacity>
+
+        {/* Bouton Apple — au-dessus du séparateur, avec Google.
+            Le composant natif d'Apple est obligatoire pour la revue : couleur,
+            libellé et rayon sont ceux du système, pas les nôtres. Sa hauteur
+            reprend celle du bouton Google pour que la pile reste régulière.
+            Le rendu suit le thème : bouton noir sur fond clair, blanc sur
+            fond sombre, comme le demandent les règles d'usage. */}
+        {appleAvailable && (
+          <AppleAuthentication.AppleAuthenticationButton
+            buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+            buttonStyle={scheme === 'dark'
+              ? AppleAuthentication.AppleAuthenticationButtonStyle.WHITE
+              : AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
+            cornerRadius={12}
+            style={[styles.appleBtn, busy && { opacity: 0.5 }]}
+            onPress={busy ? () => {} : handleApple}
+          />
+        )}
 
         {/* Séparateur */}
         <View style={styles.separator}>
@@ -217,6 +260,9 @@ const styles = StyleSheet.create({
     fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
   },
   googleText: { fontSize: 15, fontWeight: '600' },
+  // 48 pt : la hauteur du bouton Google (14 + 14 de padding + la ligne de
+  // texte), et le minimum requis par les règles d'usage d'Apple (44 pt).
+  appleBtn: { height: 48, marginBottom: 20 },
 
   separator: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 20 },
   sepLine: { flex: 1, height: 1 },

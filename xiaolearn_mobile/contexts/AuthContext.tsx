@@ -11,13 +11,17 @@ import {
   signInWithRedirect,
   getRedirectResult,
   GoogleAuthProvider,
+  OAuthProvider,
   updateProfile,
 } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as WebBrowser from 'expo-web-browser';
 import * as AuthSession from 'expo-auth-session';
 import * as Google from 'expo-auth-session/providers/google';
+import * as AppleAuthentication from 'expo-apple-authentication';
+import * as Crypto from 'expo-crypto';
 import { auth } from '@/firebase/config';
+import { readDeletionState, type DeletionState } from '@/services/accountDeletion';
 
 // Requis pour fermer proprement le navigateur OAuth sur iOS/Android
 WebBrowser.maybeCompleteAuthSession();
@@ -37,12 +41,33 @@ interface AuthContextType {
    * vérité désormais, celle qui décide aussi si la connexion peut aboutir.
    */
   googleAvailable: boolean;
+  appleLoading: boolean;
+  /**
+   * Sign in with Apple est-il utilisable ICI ?
+   *
+   * Faux partout sauf sur un appareil iOS où le système le confirme
+   * (`isAvailableAsync`). Même logique que `googleAvailable` : c'est la seule
+   * source de vérité, l'écran de connexion ne re-décide rien. Un bouton Apple
+   * affiché sur Android serait pire qu'inutile — il violerait aussi les
+   * règles d'usage du bouton.
+   */
+  appleAvailable: boolean;
   signInWithEmail: (email: string, password: string) => Promise<void>;
   signUpWithEmail: (email: string, password: string, displayName?: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
+  signInWithApple: () => Promise<void>;
   signOut: () => Promise<void>;
   /** À appeler après updateProfile (photo, nom) — onAuthStateChanged ne se déclenche pas. */
   refreshUser: () => Promise<void>;
+  /**
+   * Demande de suppression en cours, ou null.
+   *
+   * Exposée ici plutôt que lue dans chaque écran : le bandeau de rappel, la
+   * page de réglages et l'écran de suppression doivent voir le même état, et
+   * l'utilisateur doit être averti dès l'ouverture qu'un compte est en sursis.
+   */
+  deletion: DeletionState | null;
+  reloadDeletion: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -74,6 +99,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [appleLoading, setAppleLoading] = useState(false);
+  const [appleAvailable, setAppleAvailable] = useState(false);
+  const [deletion, setDeletion] = useState<DeletionState | null>(null);
+
+  // La disponibilité se demande au système, pas à la plateforme : un iPhone
+  // sous iOS 12 ou un Mac Catalyst mal configuré répondraient non. La réponse
+  // arrive de façon asynchrone — le bouton apparaît une frame plus tard, ce
+  // qui est invisible à l'œil et évite de le promettre à tort.
+  useEffect(() => {
+    if (Platform.OS !== 'ios') return;
+    AppleAuthentication.isAvailableAsync()
+      .then(setAppleAvailable)
+      .catch(() => setAppleAvailable(false));
+  }, []);
 
   const PLACEHOLDER = 'not-configured.apps.googleusercontent.com';
   const iosClientId     = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID     || undefined;
@@ -103,11 +142,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Traiter le retour du flow OAuth
   useEffect(() => {
-    console.log('[Google OAuth] response =', JSON.stringify(response));
+    // On ne journalise que l'issue du flow. Sérialiser `response` entière
+    // écrivait `id_token` et `access_token` en clair dans les logs de
+    // production, où ils sont conservés et consultables — un jeton d'identité
+    // Google suffit à ouvrir la session du compte.
+    console.log('[Google OAuth] type =', response?.type ?? 'aucune réponse');
     if (!response) return;
 
     if (response.type === 'error' || response.type === 'dismiss') {
-      console.warn('[Google OAuth] flow annulé/erreur', response);
+      // `response.error` porte le motif sans les jetons ; l'objet complet, si.
+      console.warn('[Google OAuth] flow annulé/erreur', response.type,
+        'error' in response ? response.error?.message : '');
       setGoogleLoading(false);
       return;
     }
@@ -147,9 +192,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await purgeUserData(nextUser?.uid ?? null);
       setUser(nextUser);
       setLoading(false);
+      // Une demande de suppression se lit à la connexion : c'est là que
+      // l'utilisateur peut encore l'annuler, et l'ignorer reviendrait à le
+      // laisser perdre son compte sans l'avoir revu passer.
+      setDeletion(nextUser ? await readDeletionState(nextUser.uid) : null);
     });
     return unsub;
   }, []);
+
+  const reloadDeletion = async () => {
+    setDeletion(user ? await readDeletionState(user.uid) : null);
+  };
 
   async function signInWithEmail(email: string, password: string) {
     await signInWithEmailAndPassword(auth, email, password);
@@ -166,11 +219,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setGoogleLoading(true);
     try {
       if (Platform.OS === 'web') {
-        // Sur web : redirect (popup bloquée par COOP de Google)
-        console.log('[Google Auth] signInWithRedirect...');
         const provider = new GoogleAuthProvider();
-        await signInWithRedirect(auth, provider);
-        // La page va recharger — getRedirectResult() récupère le résultat au retour
+        // Fenêtre surgissante d'abord, redirection en repli.
+        //
+        // La redirection seule ne suffit plus : quand le domaine
+        // d'authentification diffère de l'origine de la page — ici
+        // `app.xiaolearn.com` contre l'adresse du serveur de développement —
+        // Safari et Firefox cloisonnent le stockage tiers et le retour de
+        // redirection se perd. La page revient sans session, sans erreur, et
+        // l'utilisateur croit que le bouton ne fait rien.
+        //
+        // La fenêtre surgissante porte sa propre origine et traverse ce
+        // cloisonnement. Si le navigateur la bloque, on retombe alors sur la
+        // redirection, qui reste le bon choix en production, où l'origine et
+        // le domaine d'authentification concordent.
+        try {
+          await signInWithPopup(auth, provider);
+        } catch (err: any) {
+          const bloquee = ['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment',
+            'auth/cancelled-popup-request'].includes(err?.code);
+          if (!bloquee) throw err;
+          console.warn('[Google Auth] fenêtre bloquée, repli sur la redirection');
+          await signInWithRedirect(auth, provider);
+        }
       } else {
         // Sur iOS/Android : expo-auth-session
         if (!googleAvailable || !request) {
@@ -193,6 +264,74 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (err) {
       console.error('[Google Auth] erreur :', err);
       setGoogleLoading(false);
+      // L'erreur remonte à l'appelant : c'est lui qui sait l'afficher. La
+      // consigner sans la relancer laissait l'écran de connexion muet.
+      throw err;
+    }
+  }
+
+  /**
+   * Sign in with Apple → Firebase.
+   *
+   * ## Le nonce, et pourquoi il y en a deux
+   *
+   * Firebase exige un nonce pour lier le jeton Apple à CETTE tentative de
+   * connexion — sans lui, un jeton intercepté serait rejouable. Apple reçoit
+   * le SHA-256 du nonce, Firebase reçoit le nonce en clair et vérifie que le
+   * haché embarqué dans le jeton correspond. Envoyer le même des deux côtés
+   * ferait échouer la vérification (`auth/missing-or-invalid-nonce`).
+   *
+   * ## Le nom : maintenant ou jamais
+   *
+   * Apple ne transmet `fullName` qu'à la PREMIÈRE autorisation ; toutes les
+   * suivantes le laissent vide. Si on ne le pose pas immédiatement sur le
+   * profil Firebase, l'utilisateur reste « null null » au classement pour
+   * toujours — sauf à révoquer l'app dans ses réglages Apple et tout refaire.
+   * D'où l'écriture inconditionnelle dès que le profil n'a pas encore de nom.
+   *
+   * L'utilisateur peut aussi masquer son e-mail (relais `@privaterelay`) :
+   * aucun code ici n'a le droit de supposer qu'un e-mail est réel ou durable.
+   */
+  async function signInWithApple() {
+    if (!auth || !appleAvailable) return;
+    setAppleLoading(true);
+    try {
+      const rawNonce = Crypto.randomUUID();
+      const hashedNonce = await Crypto.digestStringAsync(
+        Crypto.CryptoDigestAlgorithm.SHA256,
+        rawNonce,
+      );
+
+      const apple = await AppleAuthentication.signInAsync({
+        requestedScopes: [
+          AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+          AppleAuthentication.AppleAuthenticationScope.EMAIL,
+        ],
+        nonce: hashedNonce,
+      });
+
+      if (!apple.identityToken) throw new Error('Jeton Apple absent de la réponse');
+
+      const credential = new OAuthProvider('apple.com').credential({
+        idToken: apple.identityToken,
+        rawNonce,
+      });
+      const result = await signInWithCredential(auth, credential);
+
+      // Première autorisation : le nom n'existe que dans CETTE réponse.
+      const nom = [apple.fullName?.givenName, apple.fullName?.familyName]
+        .filter(Boolean).join(' ').trim();
+      if (nom && !result.user.displayName) {
+        await updateProfile(result.user, { displayName: nom }).catch(() => {});
+      }
+      console.log('[Apple Auth] connecté, uid =', result.user.uid);
+    } catch (err: any) {
+      // Fermer la feuille Apple est un choix, pas une panne : silence.
+      if (err?.code === 'ERR_REQUEST_CANCELED') return;
+      console.error('[Apple Auth] erreur :', err?.code ?? err);
+      throw err;
+    } finally {
+      setAppleLoading(false);
     }
   }
 
@@ -215,8 +354,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider value={{
       user, loading, googleLoading, googleAvailable,
-      signInWithEmail, signUpWithEmail, signInWithGoogle, signOut,
-      refreshUser,
+      appleLoading, appleAvailable,
+      signInWithEmail, signUpWithEmail, signInWithGoogle, signInWithApple, signOut,
+      refreshUser, deletion, reloadDeletion,
     }}>
       {children}
     </AuthContext.Provider>
