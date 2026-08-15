@@ -142,13 +142,17 @@ async function resolveHanzi(hanzi: string, explicit?: string | null): Promise<st
 export function useAudio() {
   const soundRef = useRef<Audio.Sound | null>(null);
   const [playing, setPlaying] = useState(false);
+  /** Jeton de séquence : incrémenté par stop(), il interrompt playHanziSeq. */
+  const seqToken = useRef(0);
 
   const stop = useCallback(async () => {
+    seqToken.current++;
     if (soundRef.current) {
       try { await soundRef.current.stopAsync(); } catch {}
       try { await soundRef.current.unloadAsync(); } catch {}
       soundRef.current = null;
     }
+    try { Speech.stop(); } catch {}
     setPlaying(false);
   }, []);
 
@@ -216,5 +220,60 @@ export function useAudio() {
     });
   }, [stop]);
 
-  return { playUrl, playHanzi, playing, stop };
+  /**
+   * Joue une réplique et ATTEND sa fin — brique de playHanziSeq.
+   * `pitch` ne s'applique qu'au repli TTS : c'est lui qui différencie les
+   * deux locuteurs d'un dialogue quand on n'a pas d'enregistrements joués
+   * par des comédiens.
+   */
+  const playLineAwait = useCallback(async (hanzi: string, pitch = 1.0, explicitPath?: string | null): Promise<void> => {
+    // Une piste dédiée (dialogues doublés par Azure, une voix par locuteur)
+    // prime sur la résolution par hash des phrases d'exemple.
+    const url = (explicitPath ? await findFirstUrl(candidates(explicitPath)) : null)
+      ?? await resolveHanzi(hanzi);
+    if (url) {
+      try {
+        await Audio.setAudioModeAsync({ playsInSilentModeIOS: true });
+        const { sound } = await Audio.Sound.createAsync({ uri: url }, { shouldPlay: true });
+        soundRef.current = sound;
+        await new Promise<void>(resolve => {
+          sound.setOnPlaybackStatusUpdate(s => {
+            if (s.isLoaded && s.didJustFinish) {
+              sound.unloadAsync().catch(() => {});
+              if (soundRef.current === sound) soundRef.current = null;
+              resolve();
+            }
+          });
+        });
+        return;
+      } catch {}
+    }
+    await new Promise<void>(resolve => {
+      Speech.speak(hanzi, {
+        language: 'zh-CN', rate: 0.8, pitch,
+        onDone: () => resolve(),
+        onError: () => resolve(),
+      });
+    });
+  }, []);
+
+  /**
+   * Joue les répliques d'un dialogue l'une après l'autre, en alternant le
+   * timbre (via le pitch TTS) entre les deux locuteurs. Interrompue par
+   * stop() — le jeton de séquence invalide la boucle en cours.
+   */
+  const playHanziSeq = useCallback(async (lines: string[], urls?: (string | null)[]) => {
+    await stop();
+    const token = ++seqToken.current;
+    setPlaying(true);
+    for (let i = 0; i < lines.length; i++) {
+      if (seqToken.current !== token) return;   // stoppée entre deux répliques
+      await playLineAwait(lines[i], i % 2 === 0 ? 1.0 : 0.82, urls?.[i]);
+      // Petite respiration entre les répliques, comme sur les bandes du HSK.
+      await new Promise(r => setTimeout(r, 420));
+    }
+    if (seqToken.current === token) setPlaying(false);
+  }, [stop, playLineAwait]);
+
+  return { playUrl, playHanzi, playHanziSeq, playing, stop };
 }

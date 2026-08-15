@@ -18,6 +18,7 @@ import { CARDS, type CollectibleCard, type CardTrigger } from '@/data/cards';
 import { LESSON_DATA } from '@/data/cecrLessons';
 import { CECR_LEVELS } from '@/data/cecrLevelsMeta';
 import { stageForCompleted } from '@/data/avatarEvolution';
+import { SRS_KEY } from '@/hooks/useSrsData';
 
 // ─── Clés de stockage ─────────────────────────────────────────────────────────
 
@@ -83,7 +84,7 @@ export async function buildSnapshot(): Promise<ProgressSnapshot> {
   const [
     srs, bilans, completed, minijeux, lectures, counters, xp, streakStored, webStats,
   ] = await Promise.all([
-    readJson<Record<string, { level?: number; skills?: Record<string, { level?: number }> }>>('cl_word_srs_v1', {}),
+    readJson<Record<string, { level?: number; skills?: Record<string, { level?: number }> }>>(SRS_KEY, {}),
     readJson<Record<string, { passed?: boolean; bestScore?: number }>>('cl_bilans_v7', {}),
     readJson<string[]>('cl_completed_lessons', []),
     readJson<Record<string, { plays?: number }>>('cl_minijeux_v1', {}),

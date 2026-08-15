@@ -24,7 +24,7 @@ const KEYS = {
   studyDays:        'xl_study_days',           // ['2026-07-28', …] jours pratiqués
   // Clés web lues en lecture seule pour la sync cross-platform
   webStats:         'cl_learning_stats_v1',   // {streak, totalMinutes, dailyMinutes, lastDate}
-  webWordSrs:       'cl_word_srs_v1',         // {wordId: {level, ...}} level>=4 = maîtrisé
+  webWordSrs:       'cl_word_srs_v2',         // {wordId: {level, ...}} level>=4 = maîtrisé
   webBilans:        'cl_bilans_v7',           // {a1: {passed, bestScore, attempts}, ...}
   // Clés du TABLEAU DE BORD web — l'autre dialecte de l'XP/série/activité.
   // On les synchronise et on les alimente pour que le web voie la progression
@@ -35,7 +35,7 @@ const KEYS = {
 };
 
 // Tableau stable (référence fixe) pour éviter la boucle infinie dans
-// useFirestoreSync. cl_word_srs_v1 en est EXCLU : le SRS a sa propre
+// useFirestoreSync. cl_word_srs_v2 en est EXCLU : le SRS a sa propre
 // synchronisation à fusion par entrée (useSrsData) — le laisser ici créait
 // une seconde voie d'écriture en « dernier gagne » qui pouvait écraser des
 // révisions faites sur un autre appareil.
@@ -115,7 +115,7 @@ function parseStudyDays(raw: string | null, streak: number, lastStudy: string | 
   return out;
 }
 
-/** Compte les mots maîtrisés depuis cl_word_srs_v1 (level >= 4) */
+/** Compte les mots maîtrisés depuis cl_word_srs_v2 (level >= 4) */
 function parseWebMastered(raw: string | null): number {
   if (!raw) return 0;
   try {
@@ -170,7 +170,7 @@ export function useUserStats() {
     try { dashXp = Number(JSON.parse(map[KEYS.webXp] ?? '0')) || 0; } catch {}
     const xp = Math.max(mobileXp, dashXp);
 
-    // Cartes maîtrisées : mobile OU web cl_word_srs_v1
+    // Cartes maîtrisées : mobile OU web cl_word_srs_v2
     const mobileMastered = Number(map[KEYS.masteredCards] ?? 0);
     const webMastered    = parseWebMastered(map[KEYS.webWordSrs]);
     const masteredCards  = Math.max(mobileMastered, webMastered);

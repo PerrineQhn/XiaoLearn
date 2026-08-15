@@ -136,7 +136,7 @@ const mergeLearningStats: Merger = (l, c) => {
 
 /**
  * Registre clé → fusion. Toute clé absente reste en « plus récent gagne ».
- * NB : cl_word_srs_v1 n'est PAS ici — le SRS a sa propre synchronisation à
+ * NB : cl_word_srs_v2 n'est PAS ici — le SRS a sa propre synchronisation à
  * fusion par entrée dans useSrsData, il ne doit pas passer par ce mécanisme.
  */
 const MERGERS: Record<string, Merger> = {

@@ -6,7 +6,7 @@
  * paramètre de route qui tranche.
  *
  *   /carte                     → création d'une carte de toutes pièces
- *   /carte?id=custom:xyz       → modification d'une carte créée
+ *   /carte?id=p:xyz            → modification d'une carte créée
  *   /carte?id=<carte du dico>  → personnalisation : seuls les champs modifiés
  *                                sont enregistrés, le hanzi reste en lecture
  *                                seule puisqu'il identifie la carte d'origine

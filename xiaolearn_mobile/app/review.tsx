@@ -21,6 +21,7 @@ import { useSrs } from '@/contexts/SrsContext';
 import ToneColoredHanzi from '@/components/ToneColoredHanzi';
 import { useDisplaySettings } from '@/contexts/DisplaySettingsContext';
 import { useI18n } from '@/contexts/LanguageContext';
+import { useLayout } from '@/hooks/useLayout';
 import { useCardUnlocks } from '@/contexts/CardsContext';
 import { cardGoalForStudy } from '@/data/dailyGoals';
 import { useEntitlements } from '@/hooks/useEntitlements';
@@ -135,6 +136,7 @@ function FlipCard({ card, flipped, onFlip, colors, direction = 'zh_fr', entry, o
   const anim = useRef(new Animated.Value(0)).current;
   const { toneColors } = useDisplaySettings();
   const { t, pick } = useI18n();
+  const { tablet } = useLayout();
 
   // Audio
   const { playHanzi, playing } = useAudio();
@@ -202,156 +204,162 @@ function FlipCard({ card, flipped, onFlip, colors, direction = 'zh_fr', entry, o
 
   return (
     <>
-      <TouchableOpacity activeOpacity={0.95} onPress={onFlip} style={styles.cardWrap}>
-        {/* ── Face AVANT ── */}
-        <Animated.View style={[
-          styles.card,
-          { backgroundColor: colors.cardBg, borderColor: colors.borderLight,
-            transform: [{ rotateY: frontRotate }], opacity: frontOpacity },
-        ]}>
-          <Text style={[styles.cardHint, { color: colors.textTertiary }]}>{t('review.tapReveal')}</Text>
-          {direction === 'fr_zh' ? (
-            <>
-              <Text style={[styles.cardTranslation, { color: colors.primaryRed, textAlign: 'center', fontSize: 28 }]}>
-                {pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}
-              </Text>
-              {card.partOfSpeech ? (
-                <View style={[styles.posPill, { backgroundColor: colors.cardBgAlt, marginTop: 8 }]}>
-                  <Text style={[styles.posPillText, { color: colors.textTertiary }]}>{card.partOfSpeech}</Text>
-                </View>
-              ) : null}
-            </>
-          ) : (
-            <>
-              <ToneColoredHanzi hanzi={card.hanzi} pinyin={card.pinyin} enabled={toneColors} style={[styles.cardHanzi, { color: colors.textPrimary }]} />
-              <Text style={[styles.cardPinyin, { color: colors.textSecondary }]}>{card.pinyin}</Text>
-            </>
-          )}
-          <View style={[styles.tapHint, { backgroundColor: colors.cardBgAlt }]}>
-            <Ionicons name="eye-outline" size={14} color={colors.textTertiary} />
-            <Text style={[styles.tapHintText, { color: colors.textTertiary }]}>
-              {direction === 'fr_zh' ? t('review.revealHanzi') : t('review.revealTranslation')}
-            </Text>
-          </View>
-        </Animated.View>
-
-        {/* ── Face ARRIÈRE ── */}
-        <Animated.View style={[
-          styles.card, styles.cardBack,
-          { backgroundColor: colors.cardBg, borderColor: colors.primaryRedLight,
-            transform: [{ rotateY: backRotate }], opacity: backOpacity },
-        ]}>
-          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 8, flexGrow: 1, justifyContent: 'center' }}>
+      <TouchableOpacity activeOpacity={0.95} onPress={onFlip} style={[styles.cardWrap, tablet && styles.cardWrapCentered]}>
+        {/* La boîte intermédiaire porte la taille de la carte. Les deux faces
+            restent en absolu l'une sur l'autre (indispensable au flip), donc
+            elles ne peuvent pas être bornées elles-mêmes : c'est leur conteneur
+            qu'on plafonne, et le centrage du parent fait le reste. */}
+        <View style={[styles.cardBox, tablet && styles.cardBoxTablet]}>
+          {/* ── Face AVANT ── */}
+          <Animated.View style={[
+            styles.card,
+            { backgroundColor: colors.cardBg, borderColor: colors.borderLight,
+              transform: [{ rotateY: frontRotate }], opacity: frontOpacity },
+          ]}>
+            <Text style={[styles.cardHint, { color: colors.textTertiary }]}>{t('review.tapReveal')}</Text>
             {direction === 'fr_zh' ? (
               <>
-                <ToneColoredHanzi hanzi={card.hanzi} pinyin={card.pinyin} enabled={toneColors} style={[styles.cardHanzi, { color: colors.textPrimary }]} />
-                <Text style={[styles.cardPinyin, { color: colors.textSecondary }]}>{card.pinyin}</Text>
-                <View style={[styles.divider, { backgroundColor: colors.borderLight }]} />
-                <Text style={[styles.cardTranslation, { color: colors.primaryRed }]}>{pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}</Text>
+                <Text style={[styles.cardTranslation, { color: colors.primaryRed, textAlign: 'center', fontSize: 28 }]}>
+                  {pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}
+                </Text>
+                {card.partOfSpeech ? (
+                  <View style={[styles.posPill, { backgroundColor: colors.cardBgAlt, marginTop: 8 }]}>
+                    <Text style={[styles.posPillText, { color: colors.textTertiary }]}>{card.partOfSpeech}</Text>
+                  </View>
+                ) : null}
               </>
             ) : (
               <>
                 <ToneColoredHanzi hanzi={card.hanzi} pinyin={card.pinyin} enabled={toneColors} style={[styles.cardHanzi, { color: colors.textPrimary }]} />
                 <Text style={[styles.cardPinyin, { color: colors.textSecondary }]}>{card.pinyin}</Text>
-                <View style={[styles.divider, { backgroundColor: colors.borderLight }]} />
-                <Text style={[styles.cardTranslation, { color: colors.primaryRed }]}>{pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}</Text>
               </>
             )}
-            {card.partOfSpeech ? (
-              <View style={[styles.posPill, { backgroundColor: colors.cardBgAlt }]}>
-                <Text style={[styles.posPillText, { color: colors.textTertiary }]}>{card.partOfSpeech}</Text>
-              </View>
-            ) : card.levelLabel ? (
-              <View style={[styles.posPill, { backgroundColor: (card.levelColor ?? '#999') + '18' }]}>
-                <Text style={[styles.posPillText, { color: card.levelColor ?? '#999' }]}>{card.levelLabel}</Text>
-              </View>
-            ) : null}
-            {/* 3 compteurs SRS indépendants 👁🗣✍️ */}
-            <SkillBadges entry={entry} colors={colors} />
-            {card.example ? (
-              <View style={[styles.exampleBox, { backgroundColor: colors.appBg, borderColor: colors.borderLight }]}>
-                <Text style={[styles.exampleHanzi, { color: colors.textPrimary }]}>{card.example}</Text>
-                {card.exampleFr ? (
-                  <Text style={[styles.exampleFr, { color: colors.textSecondary }]}>{card.exampleFr}</Text>
-                ) : null}
-              </View>
-            ) : null}
-
-            {/* ── Barre outils ── */}
-            <View style={styles.toolRow}>
-              {/* Audio */}
-              <TouchableOpacity
-                style={[styles.toolBtn, { backgroundColor: colors.primaryRedLight }]}
-                onPress={() => playHanzi(card.hanzi)}
-                activeOpacity={0.75}
-              >
-                <Ionicons
-                  name={playing ? 'volume-high' : 'volume-medium-outline'}
-                  size={22} color={colors.primaryRed}
-                />
-                <Text style={[styles.toolLabel, { color: colors.primaryRed }]}>{t('common.listen')}</Text>
-              </TouchableOpacity>
-
-              {/* Prononciation */}
-              <TouchableOpacity
-                style={[styles.toolBtn, {
-                  backgroundColor: pronStatus === 'recording' ? '#FEE2E2' : colors.primaryRedLight,
-                }]}
-                onPress={() => {
-                  if (pronStatus === 'recording') stopAndScore(card.hanzi);
-                  else if (pronStatus === 'done') resetPron();
-                  else startRecording();
-                }}
-                activeOpacity={0.75}
-              >
-                <Ionicons
-                  name={pronStatus === 'recording' ? 'stop-circle' : pronStatus === 'loading' ? 'hourglass-outline' : 'mic-outline'}
-                  size={22}
-                  color={pronStatus === 'recording' ? '#DC2626' : colors.primaryRed}
-                />
-                <Text style={[styles.toolLabel, {
-                  color: pronStatus === 'recording' ? '#DC2626' : colors.primaryRed,
-                }]}>
-                  {pronStatus === 'loading' ? '...'
-                    : pronStatus === 'done' && pronResult
-                      ? `${pronResult.pronunciationScore}%`
-                      : 'Prononciation'}
-                </Text>
-              </TouchableOpacity>
-
-              {/* Écriture */}
-              <TouchableOpacity
-                style={[styles.toolBtn, { backgroundColor: colors.primaryRedLight }]}
-                onPress={() => { setWriterCharIdx(0); setWriterPhase('animate'); setWriterOpen(true); }}
-                activeOpacity={0.75}
-              >
-                <Ionicons name="pencil-outline" size={22} color={colors.primaryRed} />
-                <Text style={[styles.toolLabel, { color: colors.primaryRed }]}>{t('common.writing')}</Text>
-              </TouchableOpacity>
+            <View style={[styles.tapHint, { backgroundColor: colors.cardBgAlt }]}>
+              <Ionicons name="eye-outline" size={14} color={colors.textTertiary} />
+              <Text style={[styles.tapHintText, { color: colors.textTertiary }]}>
+                {direction === 'fr_zh' ? t('review.revealHanzi') : t('review.revealTranslation')}
+              </Text>
             </View>
+          </Animated.View>
 
-            {/* Score prononciation */}
-            {pronStatus === 'done' && pronResult ? (
-              <View style={[styles.pronScore, { backgroundColor: scoreBg, borderColor: scoreBorder }]}>
-                <Text style={[styles.pronScoreTxt, { color: scoreColor }]}>
-                  {pronResult.pronunciationScore >= 80 ? '✅ Excellente prononciation' :
-                   pronResult.pronunciationScore >= 55 ? '⚠️ Correct, peut mieux faire' :
-                   t('hard.verdictRetry')}
-                  {` (${pronResult.pronunciationScore}%)`}
-                </Text>
-                <Text style={[styles.pronScoreSub, { color: scoreColor + 'AA' }]}>
-                  {pronFeedbackMsg(pronResult.recognized, card.hanzi, t)}
-                </Text>
+          {/* ── Face ARRIÈRE ── */}
+          <Animated.View style={[
+            styles.card, styles.cardBack,
+            { backgroundColor: colors.cardBg, borderColor: colors.primaryRedLight,
+              transform: [{ rotateY: backRotate }], opacity: backOpacity },
+          ]}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 8, flexGrow: 1, justifyContent: 'center' }}>
+              {direction === 'fr_zh' ? (
+                <>
+                  <ToneColoredHanzi hanzi={card.hanzi} pinyin={card.pinyin} enabled={toneColors} style={[styles.cardHanzi, { color: colors.textPrimary }]} />
+                  <Text style={[styles.cardPinyin, { color: colors.textSecondary }]}>{card.pinyin}</Text>
+                  <View style={[styles.divider, { backgroundColor: colors.borderLight }]} />
+                  <Text style={[styles.cardTranslation, { color: colors.primaryRed }]}>{pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}</Text>
+                </>
+              ) : (
+                <>
+                  <ToneColoredHanzi hanzi={card.hanzi} pinyin={card.pinyin} enabled={toneColors} style={[styles.cardHanzi, { color: colors.textPrimary }]} />
+                  <Text style={[styles.cardPinyin, { color: colors.textSecondary }]}>{card.pinyin}</Text>
+                  <View style={[styles.divider, { backgroundColor: colors.borderLight }]} />
+                  <Text style={[styles.cardTranslation, { color: colors.primaryRed }]}>{pick(cleanTranslation(card.translation), cleanTranslation(card.translationEn ?? card.translation))}</Text>
+                </>
+              )}
+              {card.partOfSpeech ? (
+                <View style={[styles.posPill, { backgroundColor: colors.cardBgAlt }]}>
+                  <Text style={[styles.posPillText, { color: colors.textTertiary }]}>{card.partOfSpeech}</Text>
+                </View>
+              ) : card.levelLabel ? (
+                <View style={[styles.posPill, { backgroundColor: (card.levelColor ?? '#999') + '18' }]}>
+                  <Text style={[styles.posPillText, { color: card.levelColor ?? '#999' }]}>{card.levelLabel}</Text>
+                </View>
+              ) : null}
+              {/* 3 compteurs SRS indépendants 👁🗣✍️ */}
+              <SkillBadges entry={entry} colors={colors} />
+              {card.example ? (
+                <View style={[styles.exampleBox, { backgroundColor: colors.appBg, borderColor: colors.borderLight }]}>
+                  <Text style={[styles.exampleHanzi, { color: colors.textPrimary }]}>{card.example}</Text>
+                  {card.exampleFr ? (
+                    <Text style={[styles.exampleFr, { color: colors.textSecondary }]}>{card.exampleFr}</Text>
+                  ) : null}
+                </View>
+              ) : null}
+
+              {/* ── Barre outils ── */}
+              <View style={styles.toolRow}>
+                {/* Audio */}
+                <TouchableOpacity
+                  style={[styles.toolBtn, { backgroundColor: colors.primaryRedLight }]}
+                  onPress={() => playHanzi(card.hanzi)}
+                  activeOpacity={0.75}
+                >
+                  <Ionicons
+                    name={playing ? 'volume-high' : 'volume-medium-outline'}
+                    size={22} color={colors.primaryRed}
+                  />
+                  <Text style={[styles.toolLabel, { color: colors.primaryRed }]}>{t('common.listen')}</Text>
+                </TouchableOpacity>
+
+                {/* Prononciation */}
+                <TouchableOpacity
+                  style={[styles.toolBtn, {
+                    backgroundColor: pronStatus === 'recording' ? '#FEE2E2' : colors.primaryRedLight,
+                  }]}
+                  onPress={() => {
+                    if (pronStatus === 'recording') stopAndScore(card.hanzi);
+                    else if (pronStatus === 'done') resetPron();
+                    else startRecording();
+                  }}
+                  activeOpacity={0.75}
+                >
+                  <Ionicons
+                    name={pronStatus === 'recording' ? 'stop-circle' : pronStatus === 'loading' ? 'hourglass-outline' : 'mic-outline'}
+                    size={22}
+                    color={pronStatus === 'recording' ? '#DC2626' : colors.primaryRed}
+                  />
+                  <Text style={[styles.toolLabel, {
+                    color: pronStatus === 'recording' ? '#DC2626' : colors.primaryRed,
+                  }]}>
+                    {pronStatus === 'loading' ? '...'
+                      : pronStatus === 'done' && pronResult
+                        ? `${pronResult.pronunciationScore}%`
+                        : t('review.pronunciation')}
+                  </Text>
+                </TouchableOpacity>
+
+                {/* Écriture */}
+                <TouchableOpacity
+                  style={[styles.toolBtn, { backgroundColor: colors.primaryRedLight }]}
+                  onPress={() => { setWriterCharIdx(0); setWriterPhase('animate'); setWriterOpen(true); }}
+                  activeOpacity={0.75}
+                >
+                  <Ionicons name="pencil-outline" size={22} color={colors.primaryRed} />
+                  <Text style={[styles.toolLabel, { color: colors.primaryRed }]}>{t('common.writing')}</Text>
+                </TouchableOpacity>
               </View>
-            ) : null}
-          </ScrollView>
-        </Animated.View>
+
+              {/* Score prononciation */}
+              {pronStatus === 'done' && pronResult ? (
+                <View style={[styles.pronScore, { backgroundColor: scoreBg, borderColor: scoreBorder }]}>
+                  <Text style={[styles.pronScoreTxt, { color: scoreColor }]}>
+                    {pronResult.pronunciationScore >= 80 ? t('hard.verdictGreat') :
+                     pronResult.pronunciationScore >= 55 ? t('hard.verdictOk') :
+                     t('hard.verdictRetry')}
+                    {` (${pronResult.pronunciationScore}%)`}
+                  </Text>
+                  <Text style={[styles.pronScoreSub, { color: scoreColor + 'AA' }]}>
+                    {pronFeedbackMsg(pronResult.recognized, card.hanzi, t)}
+                  </Text>
+                </View>
+              ) : null}
+            </ScrollView>
+          </Animated.View>
+        </View>
       </TouchableOpacity>
 
       {/* ── Modal HanziWriter ── */}
       <Modal visible={writerOpen} transparent animationType="fade" onRequestClose={() => setWriterOpen(false)}>
         <Pressable style={styles.writerOverlay} onPress={() => setWriterOpen(false)}>
-          <Pressable style={[styles.writerSheet, { backgroundColor: colors.cardBg }]} onPress={e => e.stopPropagation()}>
+          <Pressable style={[styles.writerSheet, { backgroundColor: colors.cardBg }, tablet && styles.writerSheetTablet]} onPress={e => e.stopPropagation()}>
 
             {/* Phase indicator */}
             <View style={styles.phaseRow}>
@@ -407,7 +415,7 @@ function FlipCard({ card, flipped, onFlip, colors, direction = 'zh_fr', entry, o
                   onPress={() => setWriterPhase('animate')}
                 >
                   <Ionicons name="play-outline" size={16} color={colors.primaryRed} />
-                  <Text style={{ color: colors.primaryRed, fontWeight: '600', fontSize: 14 }}>Revoir</Text>
+                  <Text style={{ color: colors.primaryRed, fontWeight: '600', fontSize: 14 }}>{t('review.replay')}</Text>
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity
@@ -415,14 +423,14 @@ function FlipCard({ card, flipped, onFlip, colors, direction = 'zh_fr', entry, o
                   onPress={() => setWriterPhase('quiz')}
                 >
                   <Ionicons name="pencil-outline" size={16} color={colors.primaryRed} />
-                  <Text style={{ color: colors.primaryRed, fontWeight: '600', fontSize: 14 }}>Tracer</Text>
+                  <Text style={{ color: colors.primaryRed, fontWeight: '600', fontSize: 14 }}>{t('review.trace')}</Text>
                 </TouchableOpacity>
               )}
               <TouchableOpacity
                 style={[styles.writerClose, { backgroundColor: colors.primaryRed }]}
                 onPress={() => setWriterOpen(false)}
               >
-                <Text style={{ color: '#FFF', fontWeight: '700', fontSize: 15 }}>Fermer</Text>
+                <Text style={{ color: '#FFF', fontWeight: '700', fontSize: 15 }}>{t('common.close')}</Text>
               </TouchableOpacity>
             </View>
           </Pressable>
@@ -444,12 +452,16 @@ function SessionSummary({
   colors: typeof Colors.light;
 }) {
   const { t } = useI18n();
+  const { tablet } = useLayout();
   const hard = results.filter(r => r.rating === 'hard').length;
   const ok   = results.filter(r => r.rating === 'ok').length;
   const easy = results.filter(r => r.rating === 'easy').length;
 
+  // Le résumé tient en cinq éléments : étalé sur toute la dalle, les trois
+  // compteurs se retrouvent aux quatre coins. On le garde à la largeur de la
+  // carte de révision pour ne pas rompre la continuité avec l'écran quitté.
   return (
-    <ScrollView contentContainerStyle={styles.summary}>
+    <ScrollView contentContainerStyle={[styles.summary, tablet && styles.summaryTablet]}>
       <Text style={styles.summaryEmoji}>🎉</Text>
       <Text style={[styles.summaryTitle, { color: colors.textPrimary }]}>{t('review.finish')} !</Text>
       <Text style={[styles.summaryXp, { color: colors.primaryRed }]}>+{totalXp} XP</Text>
@@ -488,18 +500,22 @@ function WriteCard({ card, colors, revealed, onReveal, onTraced }: {
   const { t, pick } = useI18n();
   const { toneColors } = useDisplaySettings();
   const { playHanzi, playing } = useAudio();
+  const { tablet } = useLayout();
   const chars = Array.from(card.hanzi);
   const [charIdx, setCharIdx] = useState(0);
 
   useEffect(() => { setCharIdx(0); }, [card.id]);
 
   return (
-    <View style={styles.cardWrap}>
+    <View style={[styles.cardWrap, tablet && styles.cardWrapCentered]}>
+      {/* Même plafond que la carte flip : la grille de tracé du HanziWriter
+          fait 200 pt, la diluer dans 900 pt de large éloigne le doigt du
+          modèle à recopier. */}
       <View style={[styles.card, {
         position: 'relative', backfaceVisibility: 'visible',
         backgroundColor: colors.cardBg, borderColor: colors.borderLight,
         alignItems: 'stretch', justifyContent: 'flex-start',
-      }]}>
+      }, tablet && styles.cardBoxTablet]}>
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: 10, flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Text style={[styles.cardHint, { color: colors.textTertiary }]}>{t('review.writePrompt')}</Text>
           <Text style={[styles.cardTranslation, { color: colors.primaryRed, fontSize: 24 }]}>
@@ -564,6 +580,7 @@ export default function ReviewScreen() {
   const { addXp, bumpDaily } = useUserStats();
   const { t } = useI18n();
   const { trackAndCheck } = useCardUnlocks();
+  const { tablet } = useLayout();
   const params = useLocalSearchParams<{ mode?: string; level?: string; maxCards?: string; direction?: string; study?: string }>();
   const mode = (params.mode as 'due' | 'new' | 'level' | 'mastered') ?? 'due';
   const levelFilter = params.level as string | undefined;
@@ -680,7 +697,7 @@ export default function ReviewScreen() {
             {mode === 'due' ? t('hard.allCaughtUp') : t('hard.deckEmpty')}
           </Text>
           <TouchableOpacity style={[styles.doneBtn, { backgroundColor: c.primaryRed, marginTop: 24 }]} onPress={goBack}>
-            <Text style={styles.doneBtnText}>Retour</Text>
+            <Text style={styles.doneBtnText}>{t('common.back')}</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -743,33 +760,46 @@ export default function ReviewScreen() {
         />
       )}
 
-      {/* Boutons notation (visibles uniquement côté verso / après tracé) */}
-      {flipped ? (
-        <View style={styles.ratingRow}>
-          <TouchableOpacity style={[styles.ratingBtn, styles.hardBtn]} onPress={() => rate('hard')}>
-            <Text style={styles.ratingIcon}>😓</Text>
-            <Text style={[styles.ratingLabel, { color: '#FF5722' }]}>{t('review.hard')}</Text>
-            <Text style={styles.ratingXp}>+{XP_BY_RATING.hard} XP</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.ratingBtn, styles.okBtn]} onPress={() => rate('ok')}>
-            <Text style={styles.ratingIcon}>🙂</Text>
-            <Text style={[styles.ratingLabel, { color: '#2196F3' }]}>{t('review.ok')}</Text>
-            <Text style={styles.ratingXp}>+{XP_BY_RATING.ok} XP</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.ratingBtn, styles.easyBtn]} onPress={() => rate('easy')}>
-            <Text style={styles.ratingIcon}>😎</Text>
-            <Text style={[styles.ratingLabel, { color: '#4CAF50' }]}>{t('review.easy')}</Text>
-            <Text style={styles.ratingXp}>+{XP_BY_RATING.easy} XP</Text>
-          </TouchableOpacity>
+      {/* Boutons notation (visibles uniquement côté verso / après tracé)
+          La barre d'action est bornée comme la carte : sans cela, les trois
+          boutons traversent la dalle pendant que la carte reste au centre, et
+          le pouce doit viser à 40 cm de ce qu'il vient de lire.
+
+          Le conteneur `actionArea` réserve la MÊME hauteur au recto (un seul
+          bouton « Révéler ») qu'au verso (trois boutons d'évaluation). Sans
+          lui, le pied de page changeait de hauteur au retournement et la
+          carte, centrée dans l'espace restant, sautait de quelques dizaines
+          de points — chaque carte semblait « bouger » en se révélant. */}
+      {(flipped || study === 'flip') && (
+        <View style={[styles.actionArea, tablet && styles.actionBarTablet]}>
+          {flipped ? (
+            <View style={styles.ratingRow}>
+              <TouchableOpacity style={[styles.ratingBtn, styles.hardBtn]} onPress={() => rate('hard')}>
+                <Text style={styles.ratingIcon}>😓</Text>
+                <Text style={[styles.ratingLabel, { color: '#FF5722' }]}>{t('review.hard')}</Text>
+                <Text style={styles.ratingXp}>+{XP_BY_RATING.hard} XP</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.ratingBtn, styles.okBtn]} onPress={() => rate('ok')}>
+                <Text style={styles.ratingIcon}>🙂</Text>
+                <Text style={[styles.ratingLabel, { color: '#2196F3' }]}>{t('review.ok')}</Text>
+                <Text style={styles.ratingXp}>+{XP_BY_RATING.ok} XP</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.ratingBtn, styles.easyBtn]} onPress={() => rate('easy')}>
+                <Text style={styles.ratingIcon}>😎</Text>
+                <Text style={[styles.ratingLabel, { color: '#4CAF50' }]}>{t('review.easy')}</Text>
+                <Text style={styles.ratingXp}>+{XP_BY_RATING.easy} XP</Text>
+              </TouchableOpacity>
+            </View>
+          ) : (
+            <TouchableOpacity
+              style={[styles.flipBtn, { backgroundColor: c.primaryRed }]}
+              onPress={() => setFlipped(true)}
+            >
+              <Text style={styles.flipBtnText}>{t('review.revealAnswer')}</Text>
+            </TouchableOpacity>
+          )}
         </View>
-      ) : study === 'flip' ? (
-        <TouchableOpacity
-          style={[styles.flipBtn, { backgroundColor: c.primaryRed }]}
-          onPress={() => setFlipped(true)}
-        >
-          <Text style={styles.flipBtnText}>{t('review.revealAnswer')}</Text>
-        </TouchableOpacity>
-      ) : null}
+      )}
     </SafeAreaView>
   );
 }
@@ -790,6 +820,22 @@ const styles = StyleSheet.create({
 
   cardWrap: {
     flex: 1, marginHorizontal: 16, marginBottom: 12,
+  },
+  /** Sur tablette, la zone restante sert de scène : la carte s'y centre au
+   *  lieu de s'y étirer. */
+  cardWrapCentered: { alignItems: 'center', justifyContent: 'center' },
+  /** Sur téléphone, la boîte épouse le conteneur : géométrie inchangée. */
+  cardBox: { flex: 1 },
+  /**
+   * Une carte de révision n'a que trois lignes à montrer. Au-delà de 620 × 460
+   * le hanzi flotte au milieu d'un vide et l'œil doit balayer la dalle entière
+   * pour retrouver le pinyin. Les `maxWidth`/`maxHeight` en pourcentage
+   * couvrent le Split View, où la « tablette » peut être plus étroite que 620.
+   */
+  cardBoxTablet: {
+    flex: 0,
+    width: 620, maxWidth: '100%',
+    height: 460, maxHeight: '100%',
   },
   card: {
     position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
@@ -833,6 +879,10 @@ const styles = StyleSheet.create({
   // Modal HanziWriter
   writerOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 24 },
   writerSheet: { borderRadius: 24, padding: 24, alignItems: 'center', gap: 10, width: '100%' },
+  /** Le `width: '100%'` visait le téléphone : sur iPad il étale une feuille de
+   *  1 100 pt autour d'un tracé de 220 pt. Le plafond la ramène à son contenu,
+   *  le `alignItems: center` de l'overlay la recentre. */
+  writerSheetTablet: { maxWidth: 480 },
   writerTitle: { fontSize: 17, fontWeight: '700' },
   writerHanzi: { fontSize: 44, fontWeight: '400', letterSpacing: 4 },
   charPicker: { flexDirection: 'row', gap: 8, flexWrap: 'wrap', justifyContent: 'center' },
@@ -846,7 +896,26 @@ const styles = StyleSheet.create({
   writerClose: { flex: 1, borderRadius: 14, paddingVertical: 12, alignItems: 'center', justifyContent: 'center' },
 
   // Boutons de notation
-  ratingRow: { flexDirection: 'row', paddingHorizontal: 16, paddingBottom: 16, gap: 10 },
+  /**
+   * Pied de page commun aux deux faces. Le `minHeight` vaut la hauteur de la
+   * variante la plus haute (les trois boutons d'évaluation) : le recto réserve
+   * donc le même espace, et la carte ne bouge plus d'un point au retournement.
+   */
+  actionArea: {
+    minHeight: 106, justifyContent: 'center',
+    paddingHorizontal: 16, paddingBottom: 16,
+  },
+  ratingRow: { flexDirection: 'row', gap: 10 },
+  /**
+   * Barre d'action alignée sur la carte. On annule les marges/paddings
+   * latéraux d'origine plutôt que de les compenser : la largeur utile vaut
+   * alors exactement les 620 pt de la carte, donc les boutons tombent sous
+   * elle au lieu de partir chercher les bords de la dalle.
+   */
+  actionBarTablet: {
+    alignSelf: 'center', width: '100%', maxWidth: 620,
+    paddingHorizontal: 0, marginHorizontal: 0,
+  },
   ratingBtn: {
     flex: 1, borderRadius: 16, paddingVertical: 14,
     alignItems: 'center', gap: 2,
@@ -859,13 +928,14 @@ const styles = StyleSheet.create({
   ratingXp: { fontSize: 10, color: '#999', fontWeight: '500' },
 
   flipBtn: {
-    marginHorizontal: 16, marginBottom: 16, borderRadius: 16,
+    borderRadius: 16,
     paddingVertical: 16, alignItems: 'center',
   },
   flipBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
 
   // Résumé de session
   summary: { padding: 24, alignItems: 'center', gap: 12 },
+  summaryTablet: { width: '100%', maxWidth: 620, alignSelf: 'center' },
   summaryEmoji: { fontSize: 56 },
   summaryTitle: { fontSize: 24, fontWeight: '700' },
   summaryXp: { fontSize: 40, fontWeight: '800' },

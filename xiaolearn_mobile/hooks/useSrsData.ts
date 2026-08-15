@@ -16,18 +16,19 @@
  *
  * Sync Firestore :
  *   - Au montage : lit AsyncStorage, puis Firestore (last-write-wins
- *     par timestamp `cl_word_srs_v1__updatedAt`), merge par entry PAR
+ *     par timestamp `cl_word_srs_v2__updatedAt`), merge par entry PAR
  *     COMPÉTENCE (jamais de perte de progression)
  *   - Écoute temps réel onSnapshot pour sync cross-device
  *   - Sur save : AsyncStorage + Firestore en parallèle
  *
- * Clé Firestore : `users/{uid}.cl_word_srs_v1` (string JSON)
+ * Clé Firestore : `users/{uid}.cl_word_srs_v2` (string JSON)
  */
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   readCustomCards, readOverrides, type CustomCard, type CardOverride,
 } from '@/data/customCards';
+import { cardIdForHanzi } from '@/data/cardIdentity';
 import { CECR_LEVELS } from '@/data/cecrLevelsMeta';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase/config';
@@ -166,8 +167,23 @@ const CUSTOM_SECTION_ID = '__custom__';
 const LEVEL_LABEL_OF: Record<string, string> = Object.fromEntries(CECR_LEVELS.map(l => [l.id, l.label]));
 const LEVEL_COLOR_OF: Record<string, string> = Object.fromEntries(CECR_LEVELS.map(l => [l.id, l.color]));
 
-const SRS_KEY = 'cl_word_srs_v1';
-const SRS_TS_KEY = 'cl_word_srs_v1__ts';
+/**
+ * Clé de l'état SRS — version 2.
+ *
+ * La v1 mélangeait deux schémas d'identifiants incompatibles, celui du mobile
+ * (positionnel) et celui du web. Un même compte y avait donc deux historiques
+ * étrangers l'un à l'autre, et le mobile perdait le sien à chaque
+ * modification du cours.
+ *
+ * La v2 est commune aux deux plateformes et repose sur `cardIdForHanzi`. On
+ * ne migre pas la v1 : ses clés positionnelles ne désignent plus rien de sûr
+ * — un mot déplacé depuis leur écriture pointerait sur un autre mot, et
+ * ressusciter une progression fausse serait pire que de repartir à zéro. La
+ * v1 est laissée en place, intacte, plutôt qu'effacée : elle ne coûte rien et
+ * permettrait un retour en arrière.
+ */
+export const SRS_KEY = 'cl_word_srs_v2';
+const SRS_TS_KEY = 'cl_word_srs_v2__ts';
 const CLOUD_TS_SUFFIX = '__updatedAt';
 const COMPLETED_KEY = 'cl_completed_lessons';
 
@@ -209,16 +225,49 @@ function cleanMeaning(raw: string): string {
   return raw.replace(/\s*\([^)]*\)\s*$/, '').trim();
 }
 
+/**
+ * Nommage des cartes : ré-exporté depuis `data/cardIdentity.ts`, qui est le
+ * contrat partagé avec l'application web et porte le raisonnement complet.
+ *
+ * Il est ré-exporté ici parce que la quasi-totalité du code appelant importe
+ * déjà `cardIdForHanzi` depuis ce hook. Une seule définition, deux chemins
+ * d'accès — pas deux définitions.
+ *
+ * ## Effet de bord recherché : la déduplication
+ *
+ * 茶 est enseigné dans plusieurs leçons. Avec les identifiants positionnels
+ * d'avant, c'étaient autant de cartes séparées : on pouvait le maîtriser dans
+ * une leçon et l'avoir « nouveau » dans une autre, ce qui n'a aucun sens pour
+ * de la répétition espacée. Sur 4 396 items enseignés, 1 421 sont des reprises
+ * — le catalogue passe donc à 2 975 cartes, une par mot.
+ *
+ * La première occurrence gagne : c'est celle du niveau le plus bas, donc celle
+ * qui rattache la carte au moment où le mot est introduit.
+ */
+export {
+  cardIdForHanzi,
+  cardIdForSentence,
+  newPersonalCardId,
+  isWordId,
+  isSentenceId,
+  isPersonalId,
+} from '@/data/cardIdentity';
+
+
 function buildAllCards(): SrsCard[] {
   const cards: SrsCard[] = [];
+  const vus = new Set<string>();
   for (const [sectionId, sections] of Object.entries(LEARN_SECTIONS)) {
     const level = getLevelMeta(sectionId);
-    sections.forEach((section, sIdx) => {
-      if (!section.items) return;
-      section.items.forEach((item, idx) => {
-        if (!item.hanzi || !isRealHanzi(item.hanzi)) return;
+    for (const section of sections) {
+      if (!section.items) continue;
+      for (const item of section.items) {
+        if (!item.hanzi || !isRealHanzi(item.hanzi)) continue;
+        const id = cardIdForHanzi(item.hanzi);
+        if (vus.has(id)) continue;
+        vus.add(id);
         cards.push({
-          id: `${sectionId}:${sIdx}:${idx}`,
+          id,
           hanzi: item.hanzi,
           pinyin: item.pinyin,
           translation: cleanMeaning(item.meaning),
@@ -228,8 +277,8 @@ function buildAllCards(): SrsCard[] {
           levelLabel: level.label,
           levelColor: level.color,
         });
-      });
-    });
+      }
+    }
   }
   return cards;
 }

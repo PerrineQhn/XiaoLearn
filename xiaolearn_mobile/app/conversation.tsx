@@ -14,7 +14,9 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import Colors from '@/constants/Colors';
 import { useAuth } from '@/contexts/AuthContext';
 import { useMessages, useConversations, type ConvMessage } from '@/hooks/useConversations';
+import { useModeration, type ReportReason } from '@/hooks/useModeration';
 import { useI18n } from '@/contexts/LanguageContext';
+import { Alert } from 'react-native';
 
 // ─── Helper avatar ────────────────────────────────────────────────────────────
 const AVATAR_COLORS = ['#E53935','#D81B60','#8E24AA','#5E35B1','#1E88E5','#00897B','#43A047','#FB8C00'];
@@ -51,6 +53,8 @@ export default function ConversationScreen() {
 
   const { messages, loading } = useMessages(convId);
   const { sendMessage, markRead } = useConversations();
+  const { isBlocked, block, unblock, report } = useModeration();
+  const blocked = isBlocked(otherUid);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
   const [kbVisible, setKbVisible] = useState(false);
@@ -71,11 +75,70 @@ export default function ConversationScreen() {
 
   async function send() {
     const text = input.trim();
-    if (!text || sending) return;
+    if (!text || sending || blocked) return;
     setSending(true);
     setInput('');
     await sendMessage(convId, text);
     setSending(false);
+  }
+
+  /**
+   * Signalement en deux temps : le motif d'abord, la confirmation ensuite.
+   * Le signalement emporte les derniers messages — voir useModeration pour
+   * la raison (la modération ne peut pas lire les conversations).
+   */
+  function askReport() {
+    const motifs: { key: ReportReason; label: string }[] = [
+      { key: 'harassment', label: t('mod.reasonHarassment') },
+      { key: 'spam', label: t('mod.reasonSpam') },
+      { key: 'inappropriate', label: t('mod.reasonInappropriate') },
+      { key: 'other', label: t('mod.reasonOther') },
+    ];
+    Alert.alert(
+      t('mod.reportTitle'),
+      t('mod.reportBody', { name: otherName }),
+      [
+        ...motifs.map(m => ({
+          text: m.label,
+          onPress: async () => {
+            const ok = await report({
+              reportedUid: otherUid, reportedName: otherName,
+              convId, reason: m.key, messages,
+            });
+            Alert.alert(ok ? t('mod.reportSentTitle') : t('common.error'),
+              ok ? t('mod.reportSentBody') : t('mod.reportFailed'));
+          },
+        })),
+        { text: t('common.cancel'), style: 'cancel' as const },
+      ],
+    );
+  }
+
+  function askBlock() {
+    Alert.alert(
+      t('mod.blockTitle', { name: otherName }),
+      t('mod.blockBody'),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('mod.blockConfirm'),
+          style: 'destructive',
+          onPress: async () => {
+            // La conversation disparaît de la liste au retour : partir tout de
+            // suite évite de laisser l'utilisateur sur un écran mort.
+            if (await block(otherUid)) router.back();
+          },
+        },
+      ],
+    );
+  }
+
+  function openActions() {
+    Alert.alert(otherName, undefined, [
+      { text: t('mod.actionReport'), onPress: askReport },
+      { text: t('mod.actionBlock'), style: 'destructive', onPress: askBlock },
+      { text: t('common.cancel'), style: 'cancel' },
+    ]);
   }
 
   const color = avatarColor(otherUid);
@@ -125,6 +188,11 @@ export default function ConversationScreen() {
         <View style={{ flex: 1 }}>
           <Text style={[s.headerName, { color: colors.textPrimary }]} numberOfLines={1}>{otherName}</Text>
         </View>
+        {/* Signaler / bloquer : accessibles depuis la conversation elle-même,
+            là où l'abus se constate — pas au fond d'un écran de réglages. */}
+        <TouchableOpacity onPress={openActions} style={s.backBtn} hitSlop={8}>
+          <Ionicons name="ellipsis-horizontal" size={20} color={colors.textSecondary} />
+        </TouchableOpacity>
       </View>
 
       <KeyboardAvoidingView
@@ -155,7 +223,22 @@ export default function ConversationScreen() {
           )
         }
 
+        {/* Utilisateur bloqué : la zone de saisie cède la place à un bandeau
+            explicite avec le chemin inverse. Une saisie simplement désactivée
+            ressemblerait à une panne. */}
+        {blocked && (
+          <View style={[s.blockedBar, { backgroundColor: colors.cardBgAlt, borderTopColor: colors.borderLight, paddingBottom: insets.bottom + 10 }]}>
+            <Text style={[s.blockedTxt, { color: colors.textSecondary }]}>
+              {t('mod.blockedBanner', { name: otherName })}
+            </Text>
+            <TouchableOpacity onPress={() => unblock(otherUid)}>
+              <Text style={[s.unblockTxt, { color: colors.primaryRed }]}>{t('mod.unblock')}</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
         {/* Input */}
+        {!blocked && (
         <View style={[
           s.inputBar,
           { backgroundColor: colors.cardBg, borderTopColor: colors.borderLight },
@@ -186,6 +269,7 @@ export default function ConversationScreen() {
             }
           </TouchableOpacity>
         </View>
+        )}
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -226,4 +310,10 @@ const s = StyleSheet.create({
   sendBtn: {
     width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center',
   },
+  blockedBar: {
+    flexDirection: 'row', alignItems: 'center', gap: 12,
+    paddingHorizontal: 16, paddingTop: 12, borderTopWidth: 1,
+  },
+  blockedTxt: { flex: 1, fontSize: 13, lineHeight: 18 },
+  unblockTxt: { fontSize: 13.5, fontWeight: '700' },
 });

@@ -12,11 +12,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useFocusEffect } from '@react-navigation/native';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useLayout } from '@/hooks/useLayout';
 import Colors from '@/constants/Colors';
 import { useI18n } from '@/contexts/LanguageContext';
 import { useCards, triggerProgress } from '@/hooks/useCards';
 import { CardArt } from '@/components/CardArt';
 import { Card3D } from '@/components/Card3D';
+import { FilterChipRow } from '@/components/FilterChipRow';
 import {
   CARDS, CARD_CATEGORIES, CATEGORY_META, RARITY_META,
   type CollectibleCard, type CardCategory,
@@ -27,7 +29,7 @@ export default function CartesScreen() {
   const c = Colors[scheme];
   const router = useRouter();
   const { t, pick, lang } = useI18n();
-  const { width } = useWindowDimensions();
+  const { compact, gutter, gap, columns, itemWidth } = useLayout();
   const insets = useSafeAreaInsets();
 
   const { unlocked, unlockedCount, total, snapshot, loading, reload } = useCards();
@@ -50,20 +52,55 @@ export default function CartesScreen() {
 
   useFocusEffect(useCallback(() => { void reload(); }, [reload]));
 
-  const cols = width >= 768 ? 4 : 3;
-  const gap = 10;
-  const px = 16;
-  const cardW = (width - px * 2 - gap * (cols - 1)) / cols;
+  /**
+   * Une carte à collectionner est une illustration, pas une tuile extensible :
+   * au-delà d'environ 150 pt elle ne montre rien de plus, elle occupe juste la
+   * place. Raisonner en largeur d'élément plutôt qu'en nombre de colonnes fait
+   * qu'une tablette en affiche davantage au lieu de les grossir.
+   *
+   * Le téléphone garde ses 3 colonnes en dur : à 390 pt de large, viser 150 pt
+   * n'en laisserait que 2, ce qui serait une régression sur l'écran d'origine.
+   */
+  const cols = compact ? 3 : columns(150, 8);
+  const cardW = itemWidth(cols);
 
   const data = useMemo(
     () => (filter === 'all' ? CARDS : CARDS.filter(x => x.category === filter)),
     [filter]
   );
 
+  // Les puces sont extraites pour que les deux conteneurs possibles (défilant
+  // en compact, replié en tablette) montrent exactement les mêmes filtres.
+  const chips = (['all', ...CARD_CATEGORIES] as const).map(cat => {
+    const active = filter === cat;
+    const label = cat === 'all'
+      ? t('cards2.all')
+      : pick(CATEGORY_META[cat].labelFr, CATEGORY_META[cat].labelEn);
+    return (
+      <TouchableOpacity
+        key={cat}
+        onPress={() => pickFilter(cat as CardCategory | 'all')}
+        style={[
+          s.chip,
+          { borderColor: active ? c.primaryRed : c.borderLight, backgroundColor: active ? c.primaryRed + '15' : c.cardBg },
+        ]}
+      >
+        {cat !== 'all' && (
+          <Ionicons
+            name={CATEGORY_META[cat].icon as any}
+            size={13}
+            color={active ? c.primaryRed : c.textTertiary}
+          />
+        )}
+        <Text style={[s.chipTxt, { color: active ? c.primaryRed : c.textSecondary }]}>{label}</Text>
+      </TouchableOpacity>
+    );
+  });
+
   return (
     <SafeAreaView style={[s.root, { backgroundColor: c.appBg }]}>
       {/* Header */}
-      <View style={[s.header, { paddingHorizontal: px }]}>
+      <View style={[s.header, { paddingHorizontal: gutter }]}>
         <TouchableOpacity
           onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)' as any))}
           style={s.backBtn}
@@ -82,54 +119,14 @@ export default function CartesScreen() {
       </View>
 
       {/* Barre de progression globale */}
-      <View style={[s.track, { backgroundColor: c.borderLight, marginHorizontal: px }]}>
+      <View style={[s.track, { backgroundColor: c.borderLight, marginHorizontal: gutter }]}>
         <View style={[s.bar, { width: `${(unlockedCount / total) * 100}%` as any, backgroundColor: c.primaryRed }]} />
       </View>
 
-      {/* Filtres par catégorie */}
-      <ScrollView
-        horizontal showsHorizontalScrollIndicator={false}
-        // flexShrink: 0 est le point clé.
-        //
-        // La FlatList voisine n'avait pas de flex : elle se dimensionnait sur
-        // son contenu, donc sur « Toutes » (8 rangées) la colonne débordait et
-        // Yoga compressait ses frères. Cette rangée, seul frère compressible,
-        // encaissait tout : 52 pt déclarés ramenés à 44 sur « Toutes », 52
-        // conservés sur une catégorie. D'où les 8 pt d'écart, mesurés entre les
-        // deux captures. Avec flexShrink: 0 ici et flex: 1 sur la liste, la
-        // rangée garde sa hauteur quoi qu'il arrive en dessous.
-        //
-        // La hauteur explicite reste nécessaire : sans elle la ScrollView
-        // horizontale se réduit à la hauteur de police et rogne les jambages.
-        style={{ flexGrow: 0, flexShrink: 0, height: 44, marginTop: 12 }}
-        contentContainerStyle={{ paddingHorizontal: px, gap: 8, paddingVertical: 3, alignItems: 'center' }}
-      >
-        {(['all', ...CARD_CATEGORIES] as const).map(cat => {
-          const active = filter === cat;
-          const label = cat === 'all'
-            ? t('cards2.all')
-            : pick(CATEGORY_META[cat].labelFr, CATEGORY_META[cat].labelEn);
-          return (
-            <TouchableOpacity
-              key={cat}
-              onPress={() => pickFilter(cat as CardCategory | 'all')}
-              style={[
-                s.chip,
-                { borderColor: active ? c.primaryRed : c.borderLight, backgroundColor: active ? c.primaryRed + '15' : c.cardBg },
-              ]}
-            >
-              {cat !== 'all' && (
-                <Ionicons
-                  name={CATEGORY_META[cat].icon as any}
-                  size={13}
-                  color={active ? c.primaryRed : c.textTertiary}
-                />
-              )}
-              <Text style={[s.chipTxt, { color: active ? c.primaryRed : c.textSecondary }]}>{label}</Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+      {/* Filtres par catégorie — voir `FilterChipRow` pour le raisonnement,
+          d'abord établi ici puis partagé avec Lectures et Dialogues, qui
+          souffraient du même écrasement. */}
+      <FilterChipRow gutter={gutter}>{chips}</FilterChipRow>
 
       {loading ? (
         <View style={s.center}><ActivityIndicator color={c.primaryRed} size="large" /></View>
@@ -140,10 +137,13 @@ export default function CartesScreen() {
           // de la colonne et écrase la rangée d'onglets au-dessus.
           style={{ flex: 1 }}
           data={data}
+          // La `key` change avec le nombre de colonnes : FlatList refuse de
+          // modifier `numColumns` sur une liste montée, il faut la remonter —
+          // cas qui arrive vraiment ici, à chaque rotation de tablette.
           key={cols}
           numColumns={cols}
           keyExtractor={x => x.id}
-          contentContainerStyle={{ paddingHorizontal: px, paddingTop: 14, paddingBottom: insets.bottom + 30, gap }}
+          contentContainerStyle={{ paddingHorizontal: gutter, paddingTop: 14, paddingBottom: insets.bottom + 30, gap }}
           columnWrapperStyle={{ gap }}
           ListEmptyComponent={
             <Text style={[s.empty, { color: c.textTertiary }]}>{t('cards2.emptyCategory')}</Text>

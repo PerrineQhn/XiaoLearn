@@ -19,6 +19,7 @@ import { getPhrasesByLevel, type DictationPhrase } from '@/data/dictationPhrases
 import ToneColoredHanzi from '@/components/ToneColoredHanzi';
 import { useDisplaySettings } from '@/contexts/DisplaySettingsContext';
 import { useI18n } from '@/contexts/LanguageContext';
+import { useLayout } from '@/hooks/useLayout';
 import { bumpDailyCounter } from '@/data/dailyGoals';
 import { logError } from '@/data/errorLog';
 import { useEntitlements } from '@/hooks/useEntitlements';
@@ -54,6 +55,7 @@ export default function DicteeScreen() {
   const { toneColors, showPinyin } = useDisplaySettings();
   const { t, pick } = useI18n();
   const { access } = useEntitlements();
+  const { tablet } = useLayout();
 
   const [level, setLevel] = useState<DictLevel>(
     LEVELS.includes(params.level as DictLevel) ? (params.level as DictLevel) : 'hsk1'
@@ -164,7 +166,9 @@ export default function DicteeScreen() {
           <Text style={[s.headerTitle, { color: c.textPrimary }]}>{t('dictee.title')}</Text>
           <View style={{ width: 38 }} />
         </View>
-        <ScrollView contentContainerStyle={{ padding: 20, gap: 16 }}>
+        {/* Même colonne que l'écran de jeu : passer d'une intro pleine dalle à
+            un exercice étroit donnerait l'impression de changer d'application. */}
+        <ScrollView contentContainerStyle={[{ padding: 20, gap: 16 }, tablet && s.column]}>
           <Text style={[s.introSub, { color: c.textSecondary }]}>
             {t('dictee.intro')}
           </Text>
@@ -221,7 +225,7 @@ export default function DicteeScreen() {
   if (completed) {
     return (
       <SafeAreaView style={[s.root, { backgroundColor: c.appBg }]}>
-        <View style={s.center}>
+        <View style={[s.center, tablet && s.column]}>
           <Text style={s.bigEmoji}>{pct >= 80 ? '🏆' : pct >= 50 ? '👏' : '💪'}</Text>
           <Text style={[s.doneTitle, { color: c.textPrimary }]}>{t('dictee.doneTitle')}</Text>
           <Text style={[s.doneScore, { color: accent }]}>{score}/{phrases.length}</Text>
@@ -260,10 +264,15 @@ export default function DicteeScreen() {
           <View style={[s.progressFill, { backgroundColor: accent, width: `${((idx + (revealed ? 1 : 0)) / phrases.length) * 100}%` }]} />
         </View>
 
-        <ScrollView contentContainerStyle={{ padding: 20, gap: 16, flexGrow: 1 }} keyboardShouldPersistTaps="handled">
-          {/* Bouton écoute */}
+        {/* L'exercice n'a que trois éléments — écouter, écrire, valider. Étalés
+            sur 1 000 pt, le bouton d'écoute devient une bande et le champ de
+            saisie une ligne d'horizon pour trois caractères. */}
+        <ScrollView contentContainerStyle={[{ padding: 20, gap: 16, flexGrow: 1 }, tablet && s.column]} keyboardShouldPersistTaps="handled">
+          {/* Bouton écoute — sur tablette, un carré : une cible d'appui se
+              reconnaît à sa forme, pas à sa surface, et un bandeau de 1 000 pt
+              de large ne se lit plus comme un bouton. */}
           <TouchableOpacity
-            style={[s.playBtn, { backgroundColor: accent + '15', borderColor: accent }]}
+            style={[s.playBtn, { backgroundColor: accent + '15', borderColor: accent }, tablet && s.playBtnSquare]}
             onPress={() => current && playUrl(audioPath(current)).catch(() => {})}
             disabled={playing}
             activeOpacity={0.8}
@@ -323,7 +332,11 @@ export default function DicteeScreen() {
             </View>
           )}
 
-          <View style={{ flex: 1 }} />
+          {/* Cale qui plaque les actions en bas de l'écran. Sur une dalle de
+              1 300 pt de haut, elle les envoie à plusieurs centaines de points
+              du champ de saisie : on la neutralise pour que « Vérifier » reste
+              sous ce qu'on vient de taper. */}
+          {tablet ? null : <View style={{ flex: 1 }} />}
 
           {/* Actions */}
           {!revealed ? (
@@ -353,6 +366,12 @@ export default function DicteeScreen() {
 
 const s = StyleSheet.create({
   root: { flex: 1 },
+  /**
+   * Colonne unique de la dictée. 560 pt et non la largeur de lecture usuelle :
+   * il n'y a pas de texte suivi ici, seulement un champ de saisie et deux
+   * boutons, qui n'ont rien à gagner à s'élargir davantage.
+   */
+  column: { width: '100%', maxWidth: 560, alignSelf: 'center' },
   header: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingHorizontal: 16, paddingTop: 8, paddingBottom: 12,
@@ -379,6 +398,9 @@ const s = StyleSheet.create({
     borderRadius: 16, borderWidth: 1.5, paddingVertical: 28,
     alignItems: 'center', justifyContent: 'center', gap: 8,
   },
+  /** Carré de 190 pt : la hauteur ne vient plus du padding vertical, on le
+   *  remet donc à zéro pour que l'icône et son libellé restent centrés. */
+  playBtnSquare: { width: 190, height: 190, alignSelf: 'center', paddingVertical: 0 },
   playTxt: { fontSize: 14, fontWeight: '700' },
 
   slowToggle: {

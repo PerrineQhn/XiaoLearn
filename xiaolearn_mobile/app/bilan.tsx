@@ -14,6 +14,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import Colors from '@/constants/Colors';
 import { cecrBilans, sampleBilanQuestions, type CecrLevelSlug, type BilanQuestion } from '@/data/cecrBilans';
 import { useI18n } from '@/contexts/LanguageContext';
+import { useLayout, READABLE_WIDTH } from '@/hooks/useLayout';
 import { useCardUnlocks } from '@/contexts/CardsContext';
 import { useUserStats } from '@/hooks/useUserStats';
 
@@ -29,6 +30,7 @@ export default function BilanScreen() {
   const router = useRouter();
   const { t, pick } = useI18n();
   const { checkCards } = useCardUnlocks();
+  const { tablet, wide } = useLayout();
   const { addXp } = useUserStats();
   const { level } = useLocalSearchParams<{ level: CecrLevelSlug }>();
 
@@ -127,7 +129,10 @@ export default function BilanScreen() {
           <View style={{ width: 38 }} />
         </View>
 
-        <ScrollView contentContainerStyle={s.introBody}>
+        {/* Une description de bilan étirée sur 1 200 pt donne des lignes de
+            180 caractères : l'œil perd la ligne suivante en revenant à la
+            marge. On la garde à une largeur de lecture. */}
+        <ScrollView contentContainerStyle={[s.introBody, tablet && s.readable]}>
           <Text style={s.introEmoji}>{bilan.emoji}</Text>
           <Text style={[s.introTitle, { color: c.textPrimary }]}>{pick(bilan.titleFr, bilan.titleEn ?? bilan.titleFr)}</Text>
           <Text style={[s.introDesc, { color: c.textSecondary }]}>{pick(bilan.descriptionFr, bilan.descriptionEn ?? bilan.descriptionFr)}</Text>
@@ -183,7 +188,10 @@ export default function BilanScreen() {
           <View style={[s.progBar, { width: `${((current) / totalQ) * 100}%` as any, backgroundColor: c.primaryRed }]} />
         </View>
 
-        <ScrollView contentContainerStyle={s.quizBody}>
+        {/* Même colonne de lecture pour la question : les 4 réponses forment
+            une liste à comparer, des lignes pleine dalle obligeraient à
+            balayer horizontalement à chaque choix. */}
+        <ScrollView contentContainerStyle={[s.quizBody, tablet && s.readable]}>
           {question.topic && (
             <View style={[s.topicBadge, { backgroundColor: c.primaryRedLight }]}>
               <Text style={[s.topicTxt, { color: c.primaryRed }]}>{question.topic}</Text>
@@ -240,8 +248,10 @@ export default function BilanScreen() {
 
         {answered && (
           <View style={[s.nextBar, { backgroundColor: c.appBg, borderTopColor: c.borderLight }]}>
+            {/* Le bouton suit la colonne de questions : détaché sur toute la
+                largeur, il ne pointerait plus rien. */}
             <TouchableOpacity
-              style={[s.nextBtn, { backgroundColor: c.primaryRed }]}
+              style={[s.nextBtn, { backgroundColor: c.primaryRed }, tablet && s.readable]}
               onPress={handleNext}
             >
               <Text style={s.nextBtnTxt}>
@@ -269,42 +279,56 @@ export default function BilanScreen() {
         <View style={{ width: 38 }} />
       </View>
 
-      <ScrollView contentContainerStyle={s.resultBody}>
-        <Text style={s.resultEmoji}>{passed ? '🎉' : '📖'}</Text>
-        <Text style={[s.resultScore, { color: passed ? '#4CAF50' : c.primaryRed }]}>
-          {score}/{totalQ}
-        </Text>
-        <Text style={[s.resultPct, { color: c.textSecondary }]}>{pct}%</Text>
-        <Text style={[s.resultTitle, { color: c.textPrimary }]}>
-          {passed ? t('bilan.passed') : t('bilan.notPassed')}
-        </Text>
-        <Text style={[s.resultSub, { color: c.textSecondary }]}>
-          {passed
-            ? t('bilan.passedSub', { score, xp: bilan.xpReward })
-            : t('bilan.failSub', { score })}
-        </Text>
+      {/* Deux largeurs cohabitent ici : le bloc entier peut aller à 900 pt sur
+          grand écran pour loger la revue en deux colonnes, mais l'en-tête, lui,
+          reste dans une largeur de lecture — un « Bravo » centré sur 900 pt
+          sépare le score de son commentaire. */}
+      <ScrollView contentContainerStyle={[s.resultBody, tablet && (wide ? s.resultBodyWide : s.readable)]}>
+        <View style={[s.resultHead, tablet && s.readable]}>
+          <Text style={s.resultEmoji}>{passed ? '🎉' : '📖'}</Text>
+          <Text style={[s.resultScore, { color: passed ? '#4CAF50' : c.primaryRed }]}>
+            {score}/{totalQ}
+          </Text>
+          <Text style={[s.resultPct, { color: c.textSecondary }]}>{pct}%</Text>
+          <Text style={[s.resultTitle, { color: c.textPrimary }]}>
+            {passed ? t('bilan.passed') : t('bilan.notPassed')}
+          </Text>
+          <Text style={[s.resultSub, { color: c.textSecondary }]}>
+            {passed
+              ? t('bilan.passedSub', { score, xp: bilan.xpReward })
+              : t('bilan.failSub', { score })}
+          </Text>
+        </View>
 
-        {/* Revue des réponses */}
+        {/* Revue des réponses — 10 fiches courtes : en une seule colonne sur
+            grand écran, la liste impose de faire défiler pour un contenu qui
+            tient à l'écran. Le passage à deux colonnes se fait par `flexWrap`
+            plutôt que par une grille calculée : les fiches n'ont pas la même
+            hauteur selon que la mauvaise réponse est affichée ou non. */}
         <Text style={[s.reviewTitle, { color: c.textPrimary }]}>{t('bilan.reviewTitle')}</Text>
-        {sessionQuestions.map((q, i) => {
-          const userAns = answers[i] ?? null;
-          const correct = userAns === q.correctIndex;
-          return (
-            <View key={q.id} style={[s.reviewRow, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
-              <View style={[s.reviewNum, { backgroundColor: correct ? '#4CAF5020' : '#F4433620' }]}>
-                <Ionicons name={correct ? 'checkmark' : 'close'} size={14} color={correct ? '#4CAF50' : '#F44336'} />
+        <View style={[s.reviewList, wide && s.reviewListWide]}>
+          {sessionQuestions.map((q, i) => {
+            const userAns = answers[i] ?? null;
+            const correct = userAns === q.correctIndex;
+            return (
+              <View key={q.id} style={[s.reviewRow, { backgroundColor: c.cardBg, borderColor: c.borderLight }, wide && s.reviewRowHalf]}>
+                <View style={[s.reviewNum, { backgroundColor: correct ? '#4CAF5020' : '#F4433620' }]}>
+                  <Ionicons name={correct ? 'checkmark' : 'close'} size={14} color={correct ? '#4CAF50' : '#F44336'} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={[s.reviewPrompt, { color: c.textPrimary }]}>{pick(q.promptFr, q.promptEn ?? q.promptFr)}</Text>
+                  <Text style={[s.reviewAnswer, { color: '#4CAF50' }]}>✓ {pick(q.choices[q.correctIndex], q.choicesEn?.[q.correctIndex] ?? q.choices[q.correctIndex])}</Text>
+                  {!correct && userAns !== null && (
+                    <Text style={[s.reviewAnswer, { color: '#F44336' }]}>✗ {pick(q.choices[userAns], q.choicesEn?.[userAns] ?? q.choices[userAns])}</Text>
+                  )}
+                </View>
               </View>
-              <View style={{ flex: 1 }}>
-                <Text style={[s.reviewPrompt, { color: c.textPrimary }]}>{pick(q.promptFr, q.promptEn ?? q.promptFr)}</Text>
-                <Text style={[s.reviewAnswer, { color: '#4CAF50' }]}>✓ {pick(q.choices[q.correctIndex], q.choicesEn?.[q.correctIndex] ?? q.choices[q.correctIndex])}</Text>
-                {!correct && userAns !== null && (
-                  <Text style={[s.reviewAnswer, { color: '#F44336' }]}>✗ {pick(q.choices[userAns], q.choicesEn?.[userAns] ?? q.choices[userAns])}</Text>
-                )}
-              </View>
-            </View>
-          );
-        })}
+            );
+          })}
+        </View>
 
+        {/* `width: 100%` suffit : la rangée hérite de la largeur du bloc, donc
+            elle suit la revue à 900 pt comme la colonne à 760. */}
         <View style={s.resultActions}>
           <TouchableOpacity
             style={[s.retryBtn, { borderColor: c.primaryRed, borderWidth: 1.5 }]}
@@ -327,6 +351,12 @@ export default function BilanScreen() {
 
 const s = StyleSheet.create({
   root: { flex: 1 },
+  /**
+   * Colonne de lecture commune aux trois phases. `width: '100%'` avant
+   * `maxWidth` : sans lui, un conteneur en `alignSelf: center` se rétracterait
+   * sur son contenu au lieu d'occuper la largeur disponible jusqu'au plafond.
+   */
+  readable: { width: '100%', maxWidth: READABLE_WIDTH, alignSelf: 'center' },
   header: {
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: 1,
@@ -386,6 +416,12 @@ const s = StyleSheet.create({
 
   // Résultat
   resultBody: { padding: 20, gap: 14, alignItems: 'center' },
+  /** Plafond du bloc entier : 900 pt, soit deux fiches de revue plus l'écart. */
+  resultBodyWide: { width: '100%', maxWidth: 900, alignSelf: 'center' },
+  /** Reprend `gap` et `alignItems` du parent : espacement inchangé sur mobile. */
+  resultHead: { width: '100%', alignItems: 'center', gap: 14 },
+  reviewList: { width: '100%', gap: 14 },
+  reviewListWide: { flexDirection: 'row', flexWrap: 'wrap' },
   resultEmoji: { fontSize: 64, marginTop: 8 },
   resultScore: { fontSize: 52, fontWeight: '800' },
   resultPct: { fontSize: 18, fontWeight: '600', marginTop: -8 },
@@ -396,6 +432,8 @@ const s = StyleSheet.create({
     flexDirection: 'row', gap: 12, borderRadius: 12, borderWidth: 1,
     padding: 12, width: '100%',
   },
+  /** 48 % et non 50 % : l'écart de 14 pt doit tenir entre les deux colonnes. */
+  reviewRowHalf: { width: '48%' },
   reviewNum: { width: 28, height: 28, borderRadius: 8, alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
   reviewPrompt: { fontSize: 13, fontWeight: '600', marginBottom: 4 },
   reviewAnswer: { fontSize: 12 },
