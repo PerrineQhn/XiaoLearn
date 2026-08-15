@@ -47,15 +47,43 @@ export interface AppAccess {
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
-/** Comptes débloqués manuellement (mêmes que le web). */
-const LESSON_UNLOCK_DISPLAY_NAMES = ['Perrine Qhn'];
+/**
+ * Comptes débloqués manuellement (mêmes que le web).
+ *
+ * ## Pourquoi plus par nom d'affichage
+ *
+ * La liste portait sur `displayName`, comparé sans tenir compte de la casse ni
+ * des espaces. Or `displayName` se change librement — `updateProfile()` côté
+ * SDK, et l'app propose elle-même le renommage. N'importe quel compte gratuit
+ * qui se rebaptisait « perrine qhn » déverrouillait A2 → C2, sur les deux
+ * plateformes, la chaîne étant lisible en clair dans le bundle.
+ *
+ * On s'appuie donc sur des identifiants que le porteur ne choisit pas :
+ *
+ *   - `uid`, attribué par Firebase, immuable — c'est le plus sûr ;
+ *   - `email`, qui exige de posséder la boîte et une réauthentification pour
+ *     être modifié.
+ *
+ * Reste un contrôle côté client : quelqu'un qui modifie le bundle contourne
+ * tout. Un custom claim Firebase vérifié côté serveur serait la seule réponse
+ * complète, mais c'est le contenu lui-même qui est embarqué dans le binaire —
+ * le gain serait faible pour le coût.
+ */
+const LESSON_UNLOCK_OVERRIDE = {
+  uids: [] as string[],
+  emails: ['p.quenn27@gmail.com'] as string[],
+};
 
 const norm = (v: string | null | undefined) => (v ?? '').trim().toLowerCase();
 
 const hasLessonUnlockOverride = (user: User | null): boolean => {
   if (!user) return false;
-  const dn = norm(user.displayName);
-  return dn.length > 0 && LESSON_UNLOCK_DISPLAY_NAMES.map(norm).includes(dn);
+  const uid = norm(user.uid);
+  const email = norm(user.email);
+  return (
+    (uid.length > 0 && LESSON_UNLOCK_OVERRIDE.uids.map(norm).includes(uid)) ||
+    (email.length > 0 && LESSON_UNLOCK_OVERRIDE.emails.map(norm).includes(email))
+  );
 };
 
 const getTrialEnd = (user: User | null): Date | null => {

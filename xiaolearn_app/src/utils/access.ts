@@ -55,11 +55,17 @@ const MS_PER_DAY = 24 * 60 * 60 * 1000;
 /**
  * Override local pour débloquer toutes les leçons sur des comptes spécifiques
  * sans activer toutes les fonctionnalités premium.
+ *
+ * Le vecteur `displayNames` a été retiré : ce champ se modifie librement via
+ * `updateProfile()`, donc n'importe quel visiteur qui se renommait
+ * « Perrine Qhn » débloquait tout le contenu payant. Ne restent que des
+ * identifiants que le porteur ne choisit pas — l'`uid` attribué par Firebase,
+ * et l'`email`, dont le changement exige de posséder la boîte et une
+ * réauthentification.
  */
 const LESSON_UNLOCK_OVERRIDE = {
-  emails: [] as string[],
-  uids: [] as string[],
-  displayNames: ['Perrine Qhn'] as string[]
+  emails: ['p.quenn27@gmail.com'] as string[],
+  uids: [] as string[]
 };
 
 const normalizeIdentity = (value: string | null | undefined) => (value ?? '').trim().toLowerCase();
@@ -69,16 +75,13 @@ const hasLessonUnlockOverride = (user: User | null): boolean => {
 
   const email = normalizeIdentity(user.email);
   const uid = normalizeIdentity(user.uid);
-  const displayName = normalizeIdentity(user.displayName);
 
   const emails = LESSON_UNLOCK_OVERRIDE.emails.map(normalizeIdentity);
   const uids = LESSON_UNLOCK_OVERRIDE.uids.map(normalizeIdentity);
-  const displayNames = LESSON_UNLOCK_OVERRIDE.displayNames.map(normalizeIdentity);
 
   return (
     (email.length > 0 && emails.includes(email)) ||
-    (uid.length > 0 && uids.includes(uid)) ||
-    (displayName.length > 0 && displayNames.includes(displayName))
+    (uid.length > 0 && uids.includes(uid))
   );
 };
 

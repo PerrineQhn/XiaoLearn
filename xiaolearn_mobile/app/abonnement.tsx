@@ -29,20 +29,31 @@ const PRIVACY_URL = 'https://xiaolearn-pay.web.app/privacy.html';
 
 const BENEFIT_KEYS = ['sub.benefit1', 'sub.benefit2', 'sub.benefit3', 'sub.benefit4', 'sub.benefit5'] as const;
 
-// Plans affichés : mensuel + accès à vie. Les prix `price` sont des valeurs
-// de repli — le prix RÉEL (localisé) est lu depuis RevenueCat quand dispo.
+/**
+ * Plans affichés : mensuel et accès à vie.
+ *
+ * Aucun prix n'est écrit ici. La version précédente portait « 99 € » et
+ * « 14 € / mois » en repli, ce qui produisait deux défauts : un prix français
+ * s'affichait au milieu d'une interface anglaise, et surtout un montant en
+ * euros était montré à un utilisateur dont le magasin facture en dollars ou en
+ * yens. Apple fixe les prix par territoire — le seul montant juste est celui
+ * que renvoie le magasin.
+ *
+ * Quand le magasin ne répond pas, on n'invente pas : on le dit et on empêche
+ * l'achat.
+ */
 const PLANS = [
   {
     id: PRODUCT_LIFETIME,
     labelKey: 'sub.lifetime', descKey: 'sub.lifetimeDesc',
-    price: '99 €', priceNoteKey: 'sub.oneTime',
+    priceNoteKey: 'sub.oneTime',
     badgeKey: 'sub.best', highlight: true,
     featureKeys: ['sub.lifeFeat1', 'sub.lifeFeat2', 'sub.lifeFeat3'],
   },
   {
     id: PRODUCT_MONTHLY,
     labelKey: 'sub.monthly', descKey: 'sub.monthlyDesc',
-    price: '14 € / mois', priceNoteKey: 'sub.noCommit',
+    priceNoteKey: 'sub.noCommit',
     badgeKey: null, highlight: false,
     featureKeys: ['sub.monFeat1', 'sub.monFeat2', 'sub.monFeat3'],
   },
@@ -71,9 +82,9 @@ export default function AbonnementScreen() {
       (p: any) => p.product?.identifier === productId
     ) ?? null;
 
-  /** Prix RÉEL localisé depuis le store (ex. "9,99 €"), sinon repli codé. */
-  const livePrice = (productId: string, fallback: string): string =>
-    packageFor(productId)?.product?.priceString ?? fallback;
+  /** Prix localisé du magasin, ou null s'il n'a pas répondu. */
+  const livePrice = (productId: string): string | null =>
+    packageFor(productId)?.product?.priceString ?? null;
 
   const buy = async (productId: string) => {
     if (!user) { router.push('/login'); return; }
@@ -85,24 +96,40 @@ export default function AbonnementScreen() {
       return;
     }
     const pkg = packageFor(productId);
-    if (!pkg) { Alert.alert('Erreur', t('sub.offerUnavailable')); return; }
+    if (!pkg) { Alert.alert(t('common.error'), t('sub.offerUnavailable')); return; }
     setBusy(productId);
-    const info = await purchasePackage(pkg);
+    const outcome = await purchasePackage(pkg);
     setBusy(null);
-    if (info) {
+
+    // Trois issues distinctes. L'ancienne version n'en traitait qu'une : un
+    // paiement refusé laissait l'écran identique, sans le moindre message.
+    if (outcome.status === 'ok') {
       await refreshRC();
       Alert.alert('🎉', t('sub.thanks'));
       goBack();
+      return;
     }
+    // Renoncer est un choix, pas une erreur : on ne dit rien.
+    if (outcome.status === 'cancelled') return;
+    Alert.alert(t('sub.purchaseFailedTitle'),
+      outcome.message ? `${t('sub.purchaseFailedBody')}\n\n${outcome.message}` : t('sub.purchaseFailedBody'));
   };
 
   const restore = async () => {
     if (!isRevenueCatAvailable()) return;
     setBusy('restore');
-    await restorePurchases();
+    const outcome = await restorePurchases();
     await refreshRC();
     setBusy(null);
-    Alert.alert('✓', t('sub.restored'));
+
+    if (outcome.status !== 'ok') {
+      Alert.alert(t('sub.restoreFailedTitle'), t('sub.restoreFailedBody'));
+      return;
+    }
+    // L'appel peut réussir sans rien trouver — cas d'un compte sans achat, ou
+    // d'un identifiant de magasin différent de celui utilisé à l'époque.
+    if (outcome.restored) Alert.alert('✓', t('sub.restored'));
+    else Alert.alert(t('sub.nothingToRestoreTitle'), t('sub.nothingToRestoreBody'));
   };
 
   // Déjà premium → écran de confirmation
@@ -158,6 +185,10 @@ export default function AbonnementScreen() {
         {/* Plans */}
         {PLANS.map(plan => {
           const loading = busy === plan.id;
+          const prix = livePrice(plan.id);
+          // Sans prix, pas d'achat : proposer un bouton qui échouera, ou pire
+          // afficher un montant inventé, serait trompeur.
+          const achetable = !!prix;
           return (
             <View
               key={plan.id}
@@ -175,9 +206,21 @@ export default function AbonnementScreen() {
               <Text style={[s.planLabel, { color: c.textPrimary }]}>{t(plan.labelKey)}</Text>
               <Text style={[s.planDesc, { color: c.textTertiary }]}>{t(plan.descKey)}</Text>
               <View style={s.priceRow}>
-                <Text style={[s.price, { color: c.textPrimary }]}>{livePrice(plan.id, plan.price)}</Text>
-                <Text style={[s.priceNote, { color: c.textTertiary }]}>{t(plan.priceNoteKey)}</Text>
+                <Text style={[s.price, { color: prix ? c.textPrimary : c.textTertiary }]}>
+                  {prix ?? '—'}
+                </Text>
+                <Text style={[s.priceNote, { color: c.textTertiary }]}>
+                  {prix ? t(plan.priceNoteKey) : t('sub.priceUnavailable')}
+                </Text>
               </View>
+              {/* Guideline 3.1.2 : la durée, le prix par période et le
+                  renouvellement automatique doivent figurer sur l'écran
+                  d'achat lui-même, pas seulement dans la FAQ ou les CGU. */}
+              {plan.id === PRODUCT_MONTHLY && prix && (
+                <Text style={[s.renewNote, { color: c.textTertiary }]}>
+                  {t('sub.renewNotice').replace('{price}', prix)}
+                </Text>
+              )}
               {plan.featureKeys.map((k, i) => (
                 <View key={i} style={s.featureRow}>
                   <Ionicons name="checkmark" size={15} color={c.jadeGreen} />
@@ -187,13 +230,13 @@ export default function AbonnementScreen() {
               <TouchableOpacity
                 style={[s.buyBtn, { backgroundColor: plan.highlight ? c.primaryRed : c.cardBgAlt, borderColor: c.borderMedium, borderWidth: plan.highlight ? 0 : 1 }]}
                 onPress={() => buy(plan.id)}
-                disabled={loading}
+                disabled={loading || (!achetable && !!user)}
                 activeOpacity={0.85}
               >
                 {loading
                   ? <ActivityIndicator size="small" color={plan.highlight ? '#FFF' : c.textPrimary} />
                   : <Text style={[s.buyTxt, { color: plan.highlight ? '#FFF' : c.textPrimary }]}>
-                      {user ? t('sub.choose') : t('sub.loginToBuy')}
+                      {!user ? t('sub.loginToBuy') : achetable ? t('sub.choose') : t('sub.storeUnreachable')}
                     </Text>}
               </TouchableOpacity>
             </View>
@@ -255,6 +298,7 @@ const s = StyleSheet.create({
   buyBtn: { borderRadius: 14, paddingVertical: 14, alignItems: 'center', marginTop: 12 },
   buyTxt: { fontSize: 15.5, fontWeight: '700' },
 
+  renewNote: { fontSize: 11.5, lineHeight: 17, marginTop: 2, marginBottom: 6 },
   restore: { textAlign: 'center', fontSize: 14, fontWeight: '600', marginTop: 4 },
   legal: { fontSize: 11, lineHeight: 16, textAlign: 'center' },
   legalLinks: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: 4 },

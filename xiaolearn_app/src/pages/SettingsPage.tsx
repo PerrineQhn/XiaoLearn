@@ -28,6 +28,7 @@ import { useEmailPrefs } from '../hooks/useEmailPrefs';
 import { useEntitlements } from '../hooks/useEntitlements';
 import { useDevMode } from '../hooks/useDevMode';
 import { buildAppAccess, applyDevMode } from '../utils/access';
+import { WORD_SRS_STORAGE_KEY } from '../utils/srs-identity';
 
 type SettingsTab =
   | 'account'
@@ -311,7 +312,9 @@ const SettingsPage = ({
     'cl_personal_flashcards_v7',
     'cl_lesson_mastery_v7',
     'cl_learning_stats_v1',
-    'cl_word_srs_v3',
+    // Était figé sur un 'cl_word_srs_v3' qui n'a jamais existé : la clé se lit
+    // maintenant depuis le contrat partagé, elle ne peut plus se désynchroniser.
+    WORD_SRS_STORAGE_KEY,
     'cl_flashcard_srs_v2',
     'xl_xp_v2',
     'xl_streak_v2',
@@ -365,13 +368,42 @@ const SettingsPage = ({
     }
   };
 
+  /**
+   * Demande de suppression, différée de sept jours.
+   *
+   * Le bouton existait mais n'appelait rien : il affichait « pas encore
+   * disponible », ce qui est précisément le motif de rejet 5.1.1(v) côté Apple
+   * et une non-conformité Google Play, qui exige en plus ce chemin depuis un
+   * navigateur.
+   *
+   * Rien n'est effacé ici : la fonction serveur pose une échéance, et se
+   * reconnecter avant celle-ci l'annule.
+   */
   const handleDeleteAccount = async () => {
-    alert(
-      language === 'fr'
-        ? "La suppression de compte n'est pas encore disponible. Contacte le support."
-        : 'Account deletion is not available yet. Please contact support.'
-    );
-    setShowDeleteConfirm(false);
+    const fr = language === 'fr';
+    try {
+      const { getFunctions, httpsCallable } = await import('firebase/functions');
+      const call = httpsCallable<void, { scheduledFor: string; graceDays: number }>(
+        getFunctions(undefined, 'europe-west1'), 'requestAccountDeletion');
+      const { data } = await call();
+      const date = new Date(data.scheduledFor).toLocaleDateString(fr ? 'fr-FR' : 'en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric',
+      });
+      alert(fr
+        ? `Ton compte sera supprimé le ${date}. Reconnecte-toi avant cette date pour annuler.\n\n`
+          + "Attention : cela ne résilie PAS un abonnement souscrit sur l'App Store ou Google Play. "
+          + 'Un abonnement appartient à ton compte du magasin — résilie-le toi-même dans ses réglages.'
+        : `Your account will be deleted on ${date}. Sign back in before that date to cancel.\n\n`
+          + 'Note: this does NOT cancel an App Store or Google Play subscription. '
+          + 'A subscription belongs to your store account — cancel it yourself in its settings.');
+    } catch (err) {
+      console.error('[suppression de compte]', err);
+      alert(fr
+        ? "La demande n'a pas pu aboutir. Vérifie ta connexion et réessaie, ou écris à contact@xiaolearn.com."
+        : 'The request could not be completed. Check your connection and try again, or write to contact@xiaolearn.com.');
+    } finally {
+      setShowDeleteConfirm(false);
+    }
   };
 
   // --- Définition des onglets ---------------------------------------
@@ -1522,9 +1554,15 @@ const SettingsPage = ({
               <div className="settings-danger-block">
                 <h3>{language === 'fr' ? 'Supprimer le compte' : 'Delete account'}</h3>
                 <p>
+                  {/* Deux affirmations étaient fausses : la suppression n'est
+                      plus immédiate (7 jours de rétractation), et elle n'annule
+                      PAS l'abonnement — celui-ci appartient au compte du
+                      magasin, et aucune API ne permet de l'arrêter. Le laisser
+                      écrit exposerait l'utilisateur à continuer de payer un
+                      service auquel il n'a plus accès. */}
                   {language === 'fr'
-                    ? 'Supprime définitivement ton compte et toutes tes données. Cette action est irréversible et annulera ton abonnement Premium.'
-                    : 'Permanently deletes your account and all your data. This action is irreversible and will cancel your Premium subscription.'}
+                    ? "Ton compte et toutes tes données seront supprimés 7 jours après ta demande. Tu peux annuler à tout moment d'ici là en te reconnectant. Attention : cela ne résilie pas un abonnement souscrit sur l'App Store ou Google Play — il faut le résilier toi-même dans les réglages de ton magasin."
+                    : 'Your account and all your data will be deleted 7 days after your request. You can cancel any time before then by signing back in. Note: this does not cancel an App Store or Google Play subscription — you must cancel it yourself in your store settings.'}
                 </p>
                 <button
                   type="button"
@@ -1575,8 +1613,8 @@ const SettingsPage = ({
             </h2>
             <p className="modal-description">
               {language === 'fr'
-                ? 'Cette action supprimera définitivement ton compte et toutes tes données. Es-tu absolument sûr ?'
-                : 'This will permanently delete your account and all your data. Are you absolutely sure?'}
+                ? "Ton compte sera supprimé dans 7 jours. Rien n'est effacé maintenant : reconnecte-toi avant cette date pour annuler. Un abonnement en cours n'est pas résilié pour autant — fais-le dans les réglages de ton magasin."
+                : 'Your account will be deleted in 7 days. Nothing is erased now: sign back in before that date to cancel. An active subscription is not cancelled by this — do that in your store settings.'}
             </p>
             <div className="modal-actions">
               <button
@@ -1587,7 +1625,7 @@ const SettingsPage = ({
                 {language === 'fr' ? 'Annuler' : 'Cancel'}
               </button>
               <button type="button" className="btn-danger" onClick={handleDeleteAccount}>
-                {language === 'fr' ? 'Oui, supprimer' : 'Yes, delete'}
+                {language === 'fr' ? 'Oui, programmer la suppression' : 'Yes, schedule deletion'}
               </button>
             </div>
           </div>

@@ -70,6 +70,11 @@ export async function initRevenueCat(appUserId?: string): Promise<boolean> {
     return false;
   }
   try {
+    // Le SDK natif est très bavard par défaut : tant que les produits ne sont
+    // pas actifs dans App Store Connect, il déverse une erreur rouge à chaque
+    // démarrage, qui masque les vrais problèmes dans le journal. On garde les
+    // avertissements, on coupe le reste.
+    Purchases.setLogLevel?.('WARN');
     Purchases.configure({ apiKey: key, appUserID: appUserId ?? null });
     configured = true;
     return true;
@@ -107,23 +112,49 @@ export function isPremiumActive(customerInfo: any): boolean {
   return Boolean(customerInfo?.entitlements?.active?.[ENTITLEMENT_ID]);
 }
 
-/** Lance l'achat d'un package. Retourne les customerInfo à jour ou null. */
-export async function purchasePackage(pkg: any): Promise<any | null> {
-  if (!Purchases || !configured) return null;
+/**
+ * Issue d'un achat ou d'une restauration.
+ *
+ * `null` ne suffisait pas : l'écran ne pouvait pas distinguer « l'utilisateur
+ * a renoncé » de « le paiement a échoué ». Il ne disait donc rien dans les
+ * deux cas, et un achat raté laissait l'écran strictement inchangé — le
+ * réflexe naturel étant alors de réessayer, puis de croire l'app cassée.
+ */
+export type PurchaseOutcome =
+  | { status: 'ok'; customerInfo: any }
+  | { status: 'cancelled' }
+  | { status: 'error'; message?: string };
+
+/** Lance l'achat d'un package. */
+export async function purchasePackage(pkg: any): Promise<PurchaseOutcome> {
+  if (!Purchases || !configured) return { status: 'error' };
   try {
     const { customerInfo } = await Purchases.purchasePackage(pkg);
-    return customerInfo;
+    return { status: 'ok', customerInfo };
   } catch (e: any) {
-    if (!e?.userCancelled) console.warn('[RevenueCat] purchase failed', e);
-    return null;
+    if (e?.userCancelled) return { status: 'cancelled' };
+    console.warn('[RevenueCat] purchase failed', e);
+    return { status: 'error', message: e?.message };
   }
 }
 
-/** Restaure les achats (obligatoire côté Apple). */
-export async function restorePurchases(): Promise<any | null> {
-  if (!Purchases || !configured) return null;
-  try { return await Purchases.restorePurchases(); }
-  catch (e) { console.warn('[RevenueCat] restore', e); return null; }
+/**
+ * Restaure les achats (bouton exigé par la revue Apple).
+ *
+ * On renvoie aussi `restored`, faux quand l'appel a réussi mais n'a rien
+ * trouvé : l'écran affichait « ✓ restauré » quoi qu'il arrive, y compris sur
+ * un compte sans achat — une confirmation qui ment est pire que pas de
+ * confirmation du tout.
+ */
+export async function restorePurchases(): Promise<PurchaseOutcome & { restored?: boolean }> {
+  if (!Purchases || !configured) return { status: 'error' };
+  try {
+    const customerInfo = await Purchases.restorePurchases();
+    return { status: 'ok', customerInfo, restored: isPremiumActive(customerInfo) };
+  } catch (e: any) {
+    console.warn('[RevenueCat] restore', e);
+    return { status: 'error', message: e?.message };
+  }
 }
 
 /** Lit les infos client courantes (entitlements). */
