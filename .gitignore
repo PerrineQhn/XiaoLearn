@@ -2,6 +2,7 @@
 
 # OS / editors
 .DS_Store
+.fuse_hidden*
 .idea/
 .vscode/
 
@@ -84,3 +85,21 @@ xiaolearn_posts/
 
 # Anki decks générés — trop volumineux pour GitHub
 xiaolearn_anki/*.apkg
+
+# Sources brutes des illustrations — 1,4 Go. Seuls les rendus optimisés
+# (assets/avatars, assets/cards en .webp) sont versionnés ; ces PNG haute
+# définition et la bibliothèque LPC servent à les régénérer, hors dépôt.
+/avatar_sources/
+/card_sources/
+/lpc/
+
+# Sorties intermédiaires des campagnes de relecture
+/result_batch*.json
+
+# Configurations Expo créées par erreur en lançant `eas` hors de
+# xiaolearn_mobile/ : elles déclarent des projets fantômes. Le seul app.json
+# qui compte est xiaolearn_mobile/app.json.
+/app.json
+/xiaolearn_app/app.json
+/xiaolearn_app/functions/app.json
+/xiaolearn_app/functions/eas.json

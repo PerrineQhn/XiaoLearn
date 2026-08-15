@@ -36,3 +36,4 @@ yarn-error.*
 *.orig.*
 .env*.local
 .env
+scripts/rejected-pics/
