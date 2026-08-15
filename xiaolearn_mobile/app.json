@@ -18,15 +18,29 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.xiaolearn.app",
+      "usesAppleSignIn": true,
       "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
         "NSMicrophoneUsageDescription": "XiaoLearn utilise le micro pour évaluer ta prononciation du mandarin.",
         "CFBundleURLTypes": [
           {
+            "CFBundleURLName": "com.xiaolearn.app",
+            "CFBundleURLSchemes": [
+              "xiaolearn"
+            ]
+          },
+          {
+            "CFBundleURLName": "com.googleusercontent.apps",
             "CFBundleURLSchemes": [
               "com.googleusercontent.apps.820279434994-6bp6f54gg1gp9r8vi4ennlj0rmpsgg60"
             ]
           }
-        ]
+        ],
+        "CFBundleLocalizations": [
+          "fr",
+          "en"
+        ],
+        "CFBundleDevelopmentRegion": "fr"
       }
     },
     "android": {
@@ -44,6 +58,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-apple-authentication",
       [
         "expo-av",
         {
