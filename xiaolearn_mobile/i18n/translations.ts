@@ -200,6 +200,16 @@ export const TRANSLATIONS = {
 
   // ── Profil ─────────────────────────────────────────────────
   'profil.title':    { fr: 'Profil', en: 'Profile' },
+  'profil.nameTitle':       { fr: 'Ton nom', en: 'Your name' },
+  'profil.nameHelp':        { fr: "C'est le nom que voient les autres apprenants dans les classements et la recherche.", en: 'This is the name other learners see in the leaderboard and in search.' },
+  'profil.namePlaceholder': { fr: 'Ton nom', en: 'Your name' },
+  'profil.nameSave':        { fr: 'Enregistrer', en: 'Save' },
+  'profil.nameCancel':      { fr: 'Annuler', en: 'Cancel' },
+  'profil.nameFailed':      { fr: 'Impossible de changer le nom.', en: 'Could not change the name.' },
+  'profil.nameErr.vide':       { fr: 'Le nom ne peut pas être vide.', en: 'The name cannot be empty.' },
+  'profil.nameErr.trop-court': { fr: 'Deux caractères au minimum.', en: 'Two characters minimum.' },
+  'profil.nameErr.trop-long':  { fr: 'Trente caractères au maximum.', en: 'Thirty characters maximum.' },
+  'profil.nameErr.inchange':   { fr: 'Nom inchangé.', en: 'Name unchanged.' },
   'profil.free':     { fr: 'Compte gratuit', en: 'Free account' },
   'profil.premium':  { fr: '💎 Premium', en: '💎 Premium' },
   'profil.premiumLife': { fr: '💎 Premium à vie', en: '💎 Lifetime Premium' },

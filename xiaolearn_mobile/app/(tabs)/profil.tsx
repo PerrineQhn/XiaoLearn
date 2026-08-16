@@ -4,7 +4,8 @@
 import { useState, useEffect } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, ScrollView,
-  Switch, Alert, ActivityIndicator, Image,
+  Switch, Alert, ActivityIndicator, Image, Modal, TextInput,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { updateProfile } from 'firebase/auth';
@@ -25,6 +26,7 @@ import { useEntitlements } from '@/hooks/useEntitlements';
 import {
   loadNotifPrefs, enableNotifications, disableNotifications,
 } from '@/services/notificationService';
+import { changerNom, validerNom, NOM_MAX, type ErreurNom } from '@/services/profileName';
 import Constants from 'expo-constants';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
@@ -127,6 +129,41 @@ export default function ProfilScreen() {
     }
   };
 
+  // ── Changement de nom ──────────────────────────────────────────────────
+  const [nomOuvert, setNomOuvert] = useState(false);
+  const [nomSaisi, setNomSaisi] = useState('');
+  const [nomErreur, setNomErreur] = useState<ErreurNom | null>(null);
+  const [nomEnCours, setNomEnCours] = useState(false);
+
+  const ouvrirNom = () => {
+    setNomSaisi(user?.displayName ?? '');
+    setNomErreur(null);
+    setNomOuvert(true);
+  };
+
+  const enregistrerNom = async () => {
+    if (!user || nomEnCours) return;
+    const v = validerNom(nomSaisi, user.displayName);
+    if (!v.ok) {
+      // « Inchangé » n'est pas une faute : on referme sans rien écrire.
+      if (v.raison === 'inchange') { setNomOuvert(false); return; }
+      setNomErreur(v.raison);
+      return;
+    }
+    try {
+      setNomEnCours(true);
+      await changerNom(user, v.nom);
+      // onAuthStateChanged ne se déclenche pas sur un updateProfile : sans ce
+      // rafraîchissement, l'en-tête garderait l'ancien nom jusqu'au redémarrage.
+      await refreshUser();
+      setNomOuvert(false);
+    } catch (e: any) {
+      Alert.alert(t('dlg.error'), e?.message ?? t('profil.nameFailed'));
+    } finally {
+      setNomEnCours(false);
+    }
+  };
+
   // Charger les préférences de notif au montage
   useEffect(() => {
     loadNotifPrefs().then(({ enabled, hour }) => {
@@ -226,7 +263,12 @@ export default function ProfilScreen() {
                 : <Ionicons name="camera" size={13} color="#FFF" />}
             </View>
           </TouchableOpacity>
-          <Text style={[styles.userName, { color: c.textPrimary }]}>{displayName}</Text>
+          {/* Le nom est modifiable : on le signale par un crayon plutôt que
+              par un réglage enfoui, puisque c'est ici qu'on vient le lire. */}
+          <TouchableOpacity onPress={ouvrirNom} activeOpacity={0.7} style={styles.nameRow}>
+            <Text style={[styles.userName, { color: c.textPrimary }]}>{displayName}</Text>
+            <Ionicons name="pencil" size={15} color={c.textTertiary} />
+          </TouchableOpacity>
           <Text style={[styles.userEmail, { color: c.textSecondary }]}>{user.email}</Text>
           <View style={[styles.levelBadge, { backgroundColor: isPremium ? '#F59E0B' : c.primaryRed }]}>
             <Text style={styles.levelBadgeText}>
@@ -428,6 +470,65 @@ export default function ProfilScreen() {
           XiaoLearn Mobile v{Constants.expoConfig?.version ?? '1.0.0'}
         </Text>
       </ScrollView>
+
+      {/* Changement de nom — modale plutôt qu'écran : la saisie tient en un
+          champ, et revenir au profil ne doit pas coûter une navigation. */}
+      <Modal visible={nomOuvert} transparent animationType="fade" onRequestClose={() => setNomOuvert(false)}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          style={styles.nomFond}
+        >
+          {/* Le fond ferme au toucher, mais il est frère du panneau et non son
+              parent : un Pressable ancêtre capterait le geste du champ. */}
+          <TouchableOpacity
+            style={StyleSheet.absoluteFill}
+            activeOpacity={1}
+            onPress={() => !nomEnCours && setNomOuvert(false)}
+          />
+          <View style={[styles.nomPanneau, { backgroundColor: c.cardBg, borderColor: c.borderLight }]}>
+            <Text style={[styles.nomTitre, { color: c.textPrimary }]}>{t('profil.nameTitle')}</Text>
+            <Text style={[styles.nomAide, { color: c.textSecondary }]}>{t('profil.nameHelp')}</Text>
+
+            <TextInput
+              value={nomSaisi}
+              onChangeText={txt => { setNomSaisi(txt); setNomErreur(null); }}
+              placeholder={t('profil.namePlaceholder')}
+              placeholderTextColor={c.textTertiary}
+              maxLength={NOM_MAX}
+              autoFocus
+              returnKeyType="done"
+              onSubmitEditing={enregistrerNom}
+              style={[styles.nomChamp, {
+                color: c.textPrimary,
+                backgroundColor: c.cardBgAlt,
+                borderColor: nomErreur ? c.primaryRed : c.borderMedium,
+              }]}
+            />
+            <Text style={[styles.nomCompteur, { color: nomErreur ? c.primaryRed : c.textTertiary }]}>
+              {nomErreur ? t(`profil.nameErr.${nomErreur}`) : `${nomSaisi.trim().length} / ${NOM_MAX}`}
+            </Text>
+
+            <View style={styles.nomBoutons}>
+              <TouchableOpacity
+                onPress={() => setNomOuvert(false)}
+                disabled={nomEnCours}
+                style={[styles.nomBtn, { borderColor: c.borderMedium }]}
+              >
+                <Text style={[styles.nomBtnTxt, { color: c.textSecondary }]}>{t('profil.nameCancel')}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={enregistrerNom}
+                disabled={nomEnCours}
+                style={[styles.nomBtn, styles.nomBtnPlein, { backgroundColor: c.primaryRed }]}
+              >
+                {nomEnCours
+                  ? <ActivityIndicator size="small" color="#FFF" />
+                  : <Text style={[styles.nomBtnTxt, { color: '#FFF' }]}>{t('profil.nameSave')}</Text>}
+              </TouchableOpacity>
+            </View>
+          </View>
+        </KeyboardAvoidingView>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -457,8 +558,29 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
   },
   avatarInitials: { fontSize: 32, fontWeight: '700' },
+  nameRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   userName: { fontSize: 22, fontWeight: '700' },
   userEmail: { fontSize: 13, marginTop: 2, marginBottom: 10 },
+
+  nomFond: {
+    flex: 1, justifyContent: 'center', paddingHorizontal: 28,
+    backgroundColor: 'rgba(0,0,0,0.45)',
+  },
+  nomPanneau: { borderRadius: 18, borderWidth: 1, padding: 20, gap: 4 },
+  nomTitre: { fontSize: 17, fontWeight: '800' },
+  nomAide: { fontSize: 12.5, lineHeight: 17, marginBottom: 10 },
+  nomChamp: {
+    borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 14,
+    paddingVertical: 11, fontSize: 16,
+  },
+  nomCompteur: { fontSize: 11.5, marginTop: 6, marginLeft: 2 },
+  nomBoutons: { flexDirection: 'row', gap: 10, marginTop: 16 },
+  nomBtn: {
+    flex: 1, borderWidth: 1.5, borderRadius: 12, paddingVertical: 11,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  nomBtnPlein: { borderColor: 'transparent' },
+  nomBtnTxt: { fontSize: 14.5, fontWeight: '700' },
   levelBadge: { paddingHorizontal: 14, paddingVertical: 5, borderRadius: 20 },
   levelBadgeText: { color: '#FFF', fontSize: 12, fontWeight: '600' },
   premiumBanner: {

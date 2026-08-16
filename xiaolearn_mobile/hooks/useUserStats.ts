@@ -308,9 +308,14 @@ export function useUserStats() {
       studyDays: [...new Set([...s.studyDays, today])].sort(),
     }));
 
-    // publicProfiles : lu par le classement et par l'affichage XP des deux apps
+    // publicProfiles : lu par le classement et par l'affichage XP des deux apps.
+    // `uid` doit figurer dans la charge — la règle Firestore exige
+    // `request.resource.data.uid == uid`, et un profil encore inexistant n'a
+    // rien d'où le merge pourrait le reprendre : l'écriture serait refusée et
+    // le compte n'apparaîtrait jamais au classement.
     if (user && db) {
       setDoc(doc(db, 'publicProfiles', user.uid), {
+        uid: user.uid,
         totalXp: newXp,
         updatedAt: new Date().toISOString(),
       }, { merge: true }).catch(() => {});
