@@ -44,6 +44,7 @@
 import { initializeApp, applicationDefault, getApps } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
+import fs from 'node:fs';
 import readline from 'node:readline';
 import { Writable } from 'node:stream';
 
@@ -60,6 +61,46 @@ const sansPremium = args.includes('--sans-premium');
 if (!email) {
   console.error('Usage : node creer-compte-demo.mjs --email <adresse> [--nom "…"] [--sans-premium]');
   process.exit(1);
+}
+
+// --- identifiants, AVANT toute saisie ----------------------------------------
+// La bibliothèque Google ne résout les identifiants qu'au premier appel réseau.
+// Sans ce contrôle, on tape son mot de passe pour s'entendre dire, ensuite,
+// que la clé est introuvable — et il faut tout recommencer.
+{
+  const chemin = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+  const aide =
+    "Authentifie-toi d'abord, au choix :\n" +
+    '  • clé de compte de service (console Firebase → Paramètres du projet →\n' +
+    '    Comptes de service → Générer une nouvelle clé privée), puis\n' +
+    '        export GOOGLE_APPLICATION_CREDENTIALS=/chemin/reel/vers/la-cle.json\n' +
+    '  • ou, sans fichier de clé :\n' +
+    '        gcloud auth application-default login';
+
+  if (chemin) {
+    if (!fs.existsSync(chemin)) {
+      console.error(`Clé introuvable : ${chemin}\n\n${aide}`);
+      process.exit(1);
+    }
+    try {
+      const j = JSON.parse(fs.readFileSync(chemin, 'utf8'));
+      if (j.type !== 'service_account' || !j.private_key) {
+        console.error(`Ce fichier n'est pas une clé de compte de service : ${chemin}`);
+        process.exit(1);
+      }
+      console.log(`Projet : ${j.project_id}`);
+    } catch (e) {
+      console.error(`Clé illisible (${e.message})\n\n${aide}`);
+      process.exit(1);
+    }
+  } else {
+    // Identifiants par défaut de l'utilisateur, posés par gcloud.
+    const parDefaut = `${process.env.HOME}/.config/gcloud/application_default_credentials.json`;
+    if (!fs.existsSync(parDefaut)) {
+      console.error(`Aucun identifiant Google trouvé.\n\n${aide}`);
+      process.exit(1);
+    }
+  }
 }
 
 /** Saisie masquée — le mot de passe ne s'affiche pas et ne part pas dans l'historique. */
