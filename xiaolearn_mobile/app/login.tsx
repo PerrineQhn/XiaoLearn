@@ -232,10 +232,6 @@ export default function LoginScreen() {
             }
           </TouchableOpacity>
         </View>
-
-        <Text style={[styles.footer, { color: c.textTertiary }]}>
-          {t('common.sameAccount')}
-        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -287,5 +283,4 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   submitText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
-  footer: { textAlign: 'center', fontSize: 12, marginTop: 28 },
 });

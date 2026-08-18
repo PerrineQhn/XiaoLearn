@@ -79,6 +79,49 @@ export function useSyncBlockedDetector(): boolean {
   return blocked;
 }
 
+/**
+ * V19 — « Cette valeur ne contient-elle aucune progression ? »
+ *
+ * La version précédente ne reconnaissait que les défauts *nus* : `[]`, `{}`,
+ * `0`, `null`. Or la plupart des états de l'app ont une forme, pas seulement
+ * un contenu. `cl_learning_stats_v1` vaut au démarrage
+ *
+ *     {"dailyMinutes":{},"totalMinutes":0,"streak":0,"lastDate":null}
+ *
+ * — un objet à quatre clés, donc « non-défaut » pour l'ancienne garde, alors
+ * qu'il ne contient rigoureusement rien. Il passait la garde et écrasait les
+ * statistiques réelles. C'est ce qui a remis à zéro streak et minutes.
+ *
+ * On raisonne donc sur les FEUILLES : une valeur est vide si, en la
+ * parcourant récursivement, on ne trouve aucune feuille porteuse
+ * d'information. `0`, `null`, `false`, `""` et les conteneurs vides ne
+ * comptent pas ; tout le reste, oui.
+ */
+function estVide(s: string): boolean {
+  const trimmed = s.trim();
+  if (trimmed === '') return true;
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(trimmed);
+  } catch {
+    // Pas du JSON : c'est une chaîne libre, elle porte de l'information.
+    return false;
+  }
+
+  const vide = (v: unknown, profondeur = 0): boolean => {
+    // Garde-fou : une structure absurdement profonde n'est pas un défaut.
+    if (profondeur > 12) return false;
+    if (v === null || v === undefined || v === false || v === 0 || v === '') return true;
+    if (Array.isArray(v)) return v.every((x) => vide(x, profondeur + 1));
+    if (typeof v === 'object') return Object.values(v as Record<string, unknown>)
+      .every((x) => vide(x, profondeur + 1));
+    return false;
+  };
+
+  return vide(parsed);
+}
+
 const readLocalTs = (key: string): number => {
   if (typeof window === 'undefined') return 0;
   const raw = window.localStorage.getItem(key + LOCAL_TS_SUFFIX);
@@ -322,8 +365,13 @@ export function useFirestoreSync(
         if (cancelled) return;
 
         // Cas 1 : rien côté cloud → on push local (si local existe)
+        //
+        // V19 — …mais pas s'il est vide. Pousser `[]` ici posait un
+        // `__updatedAt` tout frais sur une valeur sans contenu : au prochain
+        // démarrage d'un autre appareil, ce vide devenait le plus récent et
+        // gagnait le last-write-wins. Un vide n'a rien à propager.
         if (!cloudValue) {
-          if (localValue) {
+          if (localValue && !estVide(localValue)) {
             const nowIso = new Date().toISOString();
             await setDoc(
               userDocRef,
@@ -362,7 +410,26 @@ export function useFirestoreSync(
         }
 
         // Cas 3 : local strictement plus récent que cloud → on push local
+        //
+        // V19 — Ce chemin écrivait sans aucune garde, alors que
+        // `saveToFirestore` en a une depuis V16. Un horodatage local plus
+        // frais ne prouve pas que la valeur locale est plus RICHE : un
+        // navigateur dont le stockage vient d'être vidé écrit ses défauts,
+        // date la clé de maintenant, et écrase au reconcile suivant une
+        // progression que le cloud détenait seul. On refuse le vide sur du
+        // plein — la date ne tranche qu'entre deux valeurs qui existent.
         if (localTs > cloudTs) {
+          if (estVide(localValue!) && !estVide(cloudValue)) {
+            console.warn(
+              '[xl-sync] reconcile : refus de pousser une valeur vide sur du contenu',
+              key, { localTs: new Date(localTs).toISOString(), cloudTs: cloudTsIso }
+            );
+            if (onUpdateRef.current) {
+              try { onUpdateRef.current(JSON.parse(cloudValue)); } catch { onUpdateRef.current(cloudValue); }
+            }
+            lastWrittenValueRef.current = cloudValue;
+            return;
+          }
           const nowIso = new Date(localTs).toISOString();
           await setDoc(
             userDocRef,
@@ -507,33 +574,16 @@ export function useFirestoreSync(
       // s'est connecté, son state local était à [] (defaults au mount), il
       // a pushé [] vers Firestore, écrasant la version pleine que les
       // autres devices avaient déjà sync.
-      const looksLikeDefault = (s: string): boolean => {
-        const trimmed = s.trim();
-        if (trimmed === '' || trimmed === '0' || trimmed === '""') return true;
-        if (trimmed === '[]' || trimmed === '{}') return true;
-        if (trimmed === 'null' || trimmed === 'false') return true;
-        try {
-          const parsed = JSON.parse(trimmed);
-          if (parsed === null || parsed === false || parsed === 0) return true;
-          if (Array.isArray(parsed) && parsed.length === 0) return true;
-          if (
-            typeof parsed === 'object' &&
-            parsed !== null &&
-            Object.keys(parsed).length === 0
-          ) {
-            return true;
-          }
-        } catch { /* not JSON, ok */ }
-        return false;
-      };
-
-      if (looksLikeDefault(stringData)) {
+      // V19 — la reconnaissance des défauts vit maintenant dans `estVide`,
+      // partagée avec le reconcile, et raisonne sur les feuilles plutôt que
+      // sur la forme du conteneur. Voir son commentaire.
+      if (estVide(stringData)) {
         try {
           const userDocRef = doc(db, 'users', currentUser.uid);
           const snap = await getDoc(userDocRef);
           if (snap.exists()) {
             const cloudValue = snap.data()?.[currentKey];
-            if (typeof cloudValue === 'string' && !looksLikeDefault(cloudValue)) {
+            if (typeof cloudValue === 'string' && !estVide(cloudValue)) {
               console.warn(
                 '[xl-sync] SKIP push default value over non-default cloud',
                 currentKey,

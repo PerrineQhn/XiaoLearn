@@ -365,7 +365,14 @@ export default function CoursScreen() {
         { paddingHorizontal: px, paddingBottom: 120, paddingTop: 8 },
         // Le plafond de 680 pt garde une colonne unique lisible ; en deux
         // colonnes il ne ferait que rétrécir la grille sans rien protéger.
-        tablet && !wide && { maxWidth: 680, alignSelf: 'center' as const },
+        //
+        // `width: '100%'` n'est pas décoratif. Seul, `alignSelf: 'center'`
+        // retire au conteneur son étirement par défaut : il se réduit alors à
+        // la largeur de son contenu, et comme les cartes n'ont pas de largeur
+        // propre, elles se réduisent à leur tour — chacune tombait à la taille
+        // de son icône, titres disparus. Ce n'était visible qu'entre 700 et
+        // 1 000 pt, la seule plage où cette ligne s'applique.
+        tablet && !wide && { width: '100%' as const, maxWidth: 680, alignSelf: 'center' as const },
       ]}
     >
       {selected && selected.bilanLocked && (
