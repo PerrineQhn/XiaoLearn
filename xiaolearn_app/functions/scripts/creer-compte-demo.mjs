@@ -102,12 +102,20 @@ if (!email) {
       process.exit(1);
     }
   } else {
-    // Identifiants par défaut de l'utilisateur, posés par gcloud.
-    const parDefaut = `${process.env.HOME}/.config/gcloud/application_default_credentials.json`;
-    if (!fs.existsSync(parDefaut)) {
+    // Sans variable d'environnement, on cherche aux deux endroits habituels :
+    // la clé rangée dans le dépôt, puis les identifiants posés par gcloud.
+    // La première trouvée est déclarée à la bibliothèque Google, qui autrement
+    // ne regarde que `GOOGLE_APPLICATION_CREDENTIALS` et le chemin gcloud.
+    const candidats = [
+      `${process.env.HOME}/Developer/XiaoLearn/.config/xiaolearn-admin.json`,
+      `${process.env.HOME}/.config/gcloud/application_default_credentials.json`,
+    ];
+    const trouve = candidats.find(c => fs.existsSync(c));
+    if (!trouve) {
       console.error(`Aucun identifiant Google trouvé.\n\n${aide}`);
       process.exit(1);
     }
+    if (trouve.endsWith('xiaolearn-admin.json')) process.env.GOOGLE_APPLICATION_CREDENTIALS = trouve;
     console.log(`Projet : ${PROJET}`);
   }
 }

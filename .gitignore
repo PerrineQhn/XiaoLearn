@@ -11,6 +11,7 @@
 .claude/
 .venv_hsk/
 .git_nested_backups/
+.config/
 
 # Dependencies
 **/node_modules/
@@ -111,3 +112,7 @@ xiaolearn_anki/*.apkg
 *service-account*.json
 *-adminsdk-*.json
 gcloud-key*.json
+# Les motifs ci-dessus ne valent que si le fichier a gardé son nom d'origine.
+# Renommé — xiaolearn-admin.json, cle.json — il redevient visible de git. On
+# exclut donc le dossier entier, qui n'a aucune raison d'être versionné.
+.config/
