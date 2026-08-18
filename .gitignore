@@ -103,3 +103,11 @@ xiaolearn_anki/*.apkg
 /xiaolearn_app/app.json
 /xiaolearn_app/functions/app.json
 /xiaolearn_app/functions/eas.json
+
+# Clés de compte de service Google — pouvoirs d'administration complets sur le
+# projet Firebase. Une seule fuite suffit à donner l'accès à la base entière,
+# et l'historique git ne s'oublie pas.
+*serviceAccount*.json
+*service-account*.json
+*-adminsdk-*.json
+gcloud-key*.json
