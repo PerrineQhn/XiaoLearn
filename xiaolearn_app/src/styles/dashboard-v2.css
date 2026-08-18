@@ -939,8 +939,12 @@
 }
 
 /* ------------------------ Buttons ---------------------------------------- */
+/* IMPORTANT : toujours scoper sous .dashboard-v2 ! Ce fichier est bundlé
+   APRÈS App.css : une règle nue .btn-primary écrase la version globale sur
+   TOUTES les pages (ex : bouton login invisible car var(--dv-accent)
+   inexistante hors dashboard → background transparent + color #fff). */
 
-.btn-primary {
+.dashboard-v2 .btn-primary {
   background: var(--dv-accent);
   color: #fff;
   border: 0;
@@ -950,11 +954,11 @@
   cursor: pointer;
   transition: filter 0.12s, transform 0.08s;
 }
-.btn-primary:hover { filter: brightness(1.05); }
-.btn-primary:active { transform: scale(0.98); }
-.btn-primary.big { padding: 12px 22px; font-size: 15px; }
+.dashboard-v2 .btn-primary:hover { filter: brightness(1.05); }
+.dashboard-v2 .btn-primary:active { transform: scale(0.98); }
+.dashboard-v2 .btn-primary.big { padding: 12px 22px; font-size: 15px; }
 
-.btn-secondary {
+.dashboard-v2 .btn-secondary {
   background: #fff;
   color: var(--dv-ink);
   border: 1px solid var(--dv-border);
@@ -964,9 +968,9 @@
   cursor: pointer;
   transition: all 0.12s;
 }
-.btn-secondary:hover { background: #faf5ee; }
+.dashboard-v2 .btn-secondary:hover { background: #faf5ee; }
 
-.btn-ghost {
+.dashboard-v2 .btn-ghost {
   background: transparent;
   border: 0;
   color: var(--dv-accent);
@@ -975,9 +979,9 @@
   padding: 4px 8px;
   border-radius: 8px;
 }
-.btn-ghost:hover { background: var(--dv-accent-soft); }
+.dashboard-v2 .btn-ghost:hover { background: var(--dv-accent-soft); }
 
-.btn-link {
+.dashboard-v2 .btn-link {
   background: transparent;
   border: 0;
   color: var(--dv-accent);
@@ -985,9 +989,9 @@
   font-weight: 600;
   font-size: 13px;
 }
-.btn-link:hover { text-decoration: underline; }
+.dashboard-v2 .btn-link:hover { text-decoration: underline; }
 
-.btn-link-small {
+.dashboard-v2 .btn-link-small {
   background: transparent;
   border: 0;
   color: var(--dv-muted);
@@ -996,7 +1000,7 @@
   font-weight: 500;
   padding: 2px 6px;
 }
-.btn-link-small:hover:not(:disabled) { color: var(--dv-ink); }
+.dashboard-v2 .btn-link-small:hover:not(:disabled) { color: var(--dv-ink); }
 .btn-link-small:disabled { opacity: 0.55; cursor: not-allowed; }
 
 /* Variante sombre de bouton principal (façon CTA Seonsaengnim) */
@@ -1312,7 +1316,7 @@
   padding: 0;
 }
 .daily-timer-sep { color: var(--dv-accent); margin: 0 1px; }
-.btn-primary.full-w { width: 100%; }
+.dashboard-v2 .btn-primary.full-w { width: 100%; }
 .daily-timer .btn-primary {
   padding: 8px 14px;
   font-size: 13px;
