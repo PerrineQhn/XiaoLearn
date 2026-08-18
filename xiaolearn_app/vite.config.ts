@@ -298,9 +298,11 @@ export default defineConfig(({ mode }) => {
         workbox: {
           // Précache l'app shell + assets critiques au build.
           globPatterns: ['**/*.{js,css,html,svg,woff2}'],
-          // Plafond par fichier à 10 Mo pour éviter de précacher d'énormes
-          // JSON HSK qui sont déjà chunkés à la demande.
-          maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+          // Plafond par fichier pour éviter de précacher d'énormes JSON HSK
+          // déjà chunkés à la demande. Relevé à 12 Mo (le bundle principal
+          // atteint 10,6 Mo depuis les features achievements/notes/writing —
+          // TODO : code-splitting via manualChunks pour redescendre).
+          maximumFileSizeToCacheInBytes: 12 * 1024 * 1024,
           // Empêche le SPA navigateFallback (index.html) de manger les URLs
           // d'assets statiques. Si on tape https://.../img/announcements/foo.png
           // dans la barre d'adresse, on doit voir l'image — pas la home.
