@@ -58,11 +58,29 @@ const mergeMaxByKey: Merger = (l, c) => {
   return JSON.stringify(out);
 };
 
-/** Nombre : max (l'XP ne redescend jamais). */
+/**
+ * Nombre : max (l'XP ne redescend jamais).
+ *
+ * On rend la chaîne d'ORIGINE du gagnant plutôt que de la re-sérialiser. Ces
+ * compteurs n'ont pas tous le même encodage — `xl_xp_total` vaut `"5208"`,
+ * un nombre dans une chaîne, là où `xl_xp_v2` vaut `0` nu. Réécrire changeait
+ * la forme sans changer la valeur : f(x, x) ≠ x, donc chaque réconciliation
+ * se croyait porteuse de nouveauté, réécrivait, et relançait un instantané
+ * qui relançait une réconciliation.
+ */
 const mergeMaxNumber: Merger = (l, c) => {
+  if (l == null) return c;
+  if (c == null) return l;
   const a = Number(parse<number>(l) ?? l ?? 0) || 0;
   const b = Number(parse<number>(c) ?? c ?? 0) || 0;
-  return JSON.stringify(Math.max(a, b));
+  return a >= b ? l : c;
+};
+
+/** Date « YYYY-MM-DD » : la plus récente. Comparaison lexicale = chronologique. */
+const mergeDateMax: Merger = (l, c) => {
+  const a = (parse<string>(l) ?? l ?? '') as string;
+  const b = (parse<string>(c) ?? c ?? '') as string;
+  return a >= b ? (l ?? c) : c;
 };
 
 /** Bilans {niveau: {passed, bestScore, attempts}} : passed OR, scores max. */
@@ -147,6 +165,22 @@ const MERGERS: Record<string, Merger> = {
   xl_xp_v2: mergeMaxNumber,
   xl_activity_v2: mergeMaxByKey,
   xl_streak_v2: mergeStreakV2,
+
+  // Le mobile écrit quinze clés ; sept seulement étaient fusionnées, les
+  // autres restaient en « dernier gagne ». Trois d'entre elles sont des
+  // compteurs cumulés, donc exactement le cas où une installation neuve
+  // pousse un zéro par-dessus le total réel. C'est l'autre dialecte de l'XP :
+  // le web tient `xl_xp_v2`, le tableau de bord `xl_xp_total`, et seul le
+  // premier était protégé.
+  xl_xp_total: mergeMaxNumber,
+  xl_streak_days: mergeMaxNumber,
+  xl_mastered_cards_count: mergeMaxNumber,
+  xl_last_study_date: mergeDateMax,
+
+  // Volontairement absents : `xl_xp_today`, `xl_xp_goal_daily` et les
+  // compteurs du jour. Ils se remettent à zéro chaque matin — en prendre le
+  // maximum figerait la valeur de la veille et l'objectif quotidien ne
+  // redescendrait jamais. « Dernier gagne » y est le comportement juste.
 };
 
 export function useFirestoreSync(keys: string[], onSync?: () => void) {
