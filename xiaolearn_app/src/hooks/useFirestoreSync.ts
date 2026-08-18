@@ -26,6 +26,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
+import { mergerPour, estVide } from '../utils/sync-merge';
 
 const LOCAL_TS_SUFFIX = '__ts';
 const CLOUD_TS_FIELD_SUFFIX = '__updatedAt';
@@ -77,49 +78,6 @@ export function useSyncBlockedDetector(): boolean {
   const [blocked, setBlocked] = useState(false);
   useEffect(() => onSyncBlockedChange(setBlocked), []);
   return blocked;
-}
-
-/**
- * V19 — « Cette valeur ne contient-elle aucune progression ? »
- *
- * La version précédente ne reconnaissait que les défauts *nus* : `[]`, `{}`,
- * `0`, `null`. Or la plupart des états de l'app ont une forme, pas seulement
- * un contenu. `cl_learning_stats_v1` vaut au démarrage
- *
- *     {"dailyMinutes":{},"totalMinutes":0,"streak":0,"lastDate":null}
- *
- * — un objet à quatre clés, donc « non-défaut » pour l'ancienne garde, alors
- * qu'il ne contient rigoureusement rien. Il passait la garde et écrasait les
- * statistiques réelles. C'est ce qui a remis à zéro streak et minutes.
- *
- * On raisonne donc sur les FEUILLES : une valeur est vide si, en la
- * parcourant récursivement, on ne trouve aucune feuille porteuse
- * d'information. `0`, `null`, `false`, `""` et les conteneurs vides ne
- * comptent pas ; tout le reste, oui.
- */
-function estVide(s: string): boolean {
-  const trimmed = s.trim();
-  if (trimmed === '') return true;
-
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(trimmed);
-  } catch {
-    // Pas du JSON : c'est une chaîne libre, elle porte de l'information.
-    return false;
-  }
-
-  const vide = (v: unknown, profondeur = 0): boolean => {
-    // Garde-fou : une structure absurdement profonde n'est pas un défaut.
-    if (profondeur > 12) return false;
-    if (v === null || v === undefined || v === false || v === 0 || v === '') return true;
-    if (Array.isArray(v)) return v.every((x) => vide(x, profondeur + 1));
-    if (typeof v === 'object') return Object.values(v as Record<string, unknown>)
-      .every((x) => vide(x, profondeur + 1));
-    return false;
-  };
-
-  return vide(parsed);
 }
 
 const readLocalTs = (key: string): number => {
@@ -364,6 +322,41 @@ export function useFirestoreSync(
 
         if (cancelled) return;
 
+        // ── Cas 0 : la clé a une fusion déclarée ─────────────────────────
+        //
+        // V20 — On ne choisit plus entre local et cloud, on combine. Le
+        // résultat est au moins aussi riche que chacun des deux, donc aucun
+        // ordre d'arrivée ni aucun horodatage ne peut appauvrir la donnée.
+        // C'est ce qui remplace les gardes heuristiques des versions V16 à
+        // V19 : il n'y a plus rien à deviner.
+        const fusion = mergerPour(key);
+        if (fusion) {
+          const fusionne = fusion(localValue, cloudValue ?? null);
+          if (fusionne != null) {
+            // Vers le local, si la fusion apporte quelque chose.
+            if (fusionne !== localValue) {
+              if (onUpdateRef.current) {
+                try { onUpdateRef.current(JSON.parse(fusionne)); } catch { onUpdateRef.current(fusionne); }
+              } else {
+                window.localStorage.setItem(key, fusionne);
+              }
+            }
+            // Vers le cloud, de même. On date de maintenant : la version
+            // fusionnée est bien postérieure aux deux qu'elle englobe.
+            if (fusionne !== (cloudValue ?? null)) {
+              const nowIso = new Date().toISOString();
+              await setDoc(
+                userDocRef,
+                { [key]: fusionne, [key + CLOUD_TS_FIELD_SUFFIX]: nowIso, lastUpdated: nowIso },
+                { merge: true }
+              );
+              writeLocalTs(key, nowIso);
+            }
+            lastWrittenValueRef.current = fusionne;
+            return;
+          }
+        }
+
         // Cas 1 : rien côté cloud → on push local (si local existe)
         //
         // V19 — …mais pas s'il est vide. Pousser `[]` ici posait un
@@ -506,12 +499,20 @@ export function useFirestoreSync(
         const cloudTs = cloudTsIso ? Date.parse(cloudTsIso) : 0;
         if (cloudTs && cloudTs <= localTs) return;
 
-        // Applique le changement (cf. note même cas dans la réconciliation)
-        lastWrittenValueRef.current = value;
+        // V20 — Même principe qu'à la réconciliation : si la clé a une
+        // fusion, on combine l'arrivage avec ce qu'on a plutôt que de le
+        // remplacer. Un autre appareil qui pousse une version amputée ne
+        // peut plus vider l'écran de celui-ci.
+        const fusion = mergerPour(key);
+        const aAppliquer = fusion
+          ? (fusion(window.localStorage.getItem(key), value) ?? value)
+          : value;
+
+        lastWrittenValueRef.current = aAppliquer;
         if (onUpdateRef.current) {
-          try { onUpdateRef.current(JSON.parse(value)); } catch { onUpdateRef.current(value); }
+          try { onUpdateRef.current(JSON.parse(aAppliquer)); } catch { onUpdateRef.current(aAppliquer); }
         } else {
-          window.localStorage.setItem(key, value);
+          window.localStorage.setItem(key, aAppliquer);
           if (cloudTsIso) writeLocalTs(key, cloudTsIso);
         }
       },
@@ -544,7 +545,7 @@ export function useFirestoreSync(
       const currentKey = keyRef.current;
       const currentUser = userRef.current;
       const currentEnabled = enabledRef.current;
-      const stringData = typeof data === 'string' ? data : JSON.stringify(data);
+      let stringData = typeof data === 'string' ? data : JSON.stringify(data);
       const nowIso = new Date().toISOString();
 
       // V12 — Avant reconcile, on écrit localStorage MAIS PAS le timestamp.
@@ -574,10 +575,32 @@ export function useFirestoreSync(
       // s'est connecté, son state local était à [] (defaults au mount), il
       // a pushé [] vers Firestore, écrasant la version pleine que les
       // autres devices avaient déjà sync.
-      // V19 — la reconnaissance des défauts vit maintenant dans `estVide`,
-      // partagée avec le reconcile, et raisonne sur les feuilles plutôt que
-      // sur la forme du conteneur. Voir son commentaire.
-      if (estVide(stringData)) {
+      // V20 — Clé à fusion : on combine avec le cloud avant d'écrire, plutôt
+      // que d'écraser. Une écriture ne peut donc plus retirer ce qu'un autre
+      // appareil a ajouté, même si elle part d'un état local incomplet.
+      const fusion = mergerPour(currentKey);
+      if (fusion) {
+        try {
+          const userDocRef = doc(db, 'users', currentUser.uid);
+          const snap = await getDoc(userDocRef);
+          const cloudValue = snap.exists() ? snap.data()?.[currentKey] : null;
+          const fusionne = fusion(stringData, typeof cloudValue === 'string' ? cloudValue : null);
+          if (fusionne != null && fusionne !== stringData) {
+            stringData = fusionne;
+            try { window.localStorage.setItem(currentKey, fusionne); } catch { /* quota */ }
+          }
+        } catch (err) {
+          // Lecture impossible : on écrit quand même notre version. La
+          // fusion se fera au prochain reconcile, qui est commutatif — rien
+          // ne se perd, l'opération est simplement différée.
+          console.warn('[xl-sync] fusion impossible, écriture directe', currentKey, err);
+        }
+      }
+
+      // Clés SANS fusion : elles restent en « plus récent gagne », et c'est
+      // voulu (langue, thème, objectifs chiffrés). `estVide` reste leur
+      // filet — une préférence remise à son défaut n'écrase pas un choix.
+      if (!fusion && estVide(stringData)) {
         try {
           const userDocRef = doc(db, 'users', currentUser.uid);
           const snap = await getDoc(userDocRef);
