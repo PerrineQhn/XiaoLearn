@@ -58,6 +58,14 @@ const email = lire('--email');
 const nom = lire('--nom') ?? 'Compte de démonstration';
 const sansPremium = args.includes('--sans-premium');
 
+/**
+ * Le projet visé. Une clé de compte de service le porte en elle ; les
+ * identifiants posés par `gcloud auth application-default login` ne le portent
+ * pas — l'Admin SDK échouerait alors sur « Unable to detect a Project Id ».
+ * D'où cette valeur de repli, lue dans `.firebaserc`.
+ */
+const PROJET = lire('--projet') ?? process.env.GOOGLE_CLOUD_PROJECT ?? 'xiaolearn-db9e6';
+
 if (!email) {
   console.error('Usage : node creer-compte-demo.mjs --email <adresse> [--nom "…"] [--sans-premium]');
   process.exit(1);
@@ -100,6 +108,7 @@ if (!email) {
       console.error(`Aucun identifiant Google trouvé.\n\n${aide}`);
       process.exit(1);
     }
+    console.log(`Projet : ${PROJET}`);
   }
 }
 
@@ -126,7 +135,7 @@ if (motDePasse.length < 6) {
 // Un défaut d'identifiants ne se manifeste qu'au premier appel réseau, avec un
 // message opaque. On préfère le dire tout de suite et en français.
 try {
-  if (!getApps().length) initializeApp({ credential: applicationDefault() });
+  if (!getApps().length) initializeApp({ credential: applicationDefault(), projectId: PROJET });
 } catch {
   console.error(
     "Identifiants Google introuvables. Authentifie-toi d'abord :\n" +
