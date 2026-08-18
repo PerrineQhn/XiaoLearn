@@ -97,6 +97,10 @@ xiaolearn_anki/*.apkg
 # Sorties intermédiaires des campagnes de relecture
 /result_batch*.json
 
+# Mise à l'écart avant suppression définitive — voir le LISEZMOI de chaque
+# sous-dossier. Rien ici n'est nécessaire à la construction du projet.
+/.corbeille/
+
 # Configurations Expo créées par erreur en lançant `eas` hors de
 # xiaolearn_mobile/ : elles déclarent des projets fantômes. Le seul app.json
 # qui compte est xiaolearn_mobile/app.json.
