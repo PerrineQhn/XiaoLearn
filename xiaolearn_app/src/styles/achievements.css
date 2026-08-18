@@ -59,7 +59,9 @@
   --ach-glow-legendary: 255, 213, 79; /* #FFD54F */
 
   color: var(--ach-text);
-  background: var(--ach-bg);
+  /* Fond transparent pour hériter du main-content de l'app (même pattern
+     que le Bilan V18) — demande user : pas de fond crème plaqué sur la page. */
+  background: transparent;
   min-height: 100%;
   padding: 40px 20px 90px;
   max-width: 1100px;
@@ -659,20 +661,23 @@
   to { transform: rotate(360deg); }
 }
 
-/* Révélation de l'anneau : l'illustration recule de l'épaisseur du liseré
-   (width/height auto pour que l'inset dimensionne, radius concentrique). */
+/* Révélation de l'anneau : l'illustration recule de l'épaisseur du liseré.
+   ATTENTION : pas de width/height auto ici — pour un élément REMPLACÉ (img)
+   positionné en absolu, auto = taille intrinsèque (900×1342 !), pas
+   l'étirement entre insets → l'art s'affichait zoomé sur le coin haut-gauche.
+   On dimensionne explicitement via calc. */
 .ach-page .ach-card.is-unlocked.ach-tier-rare .ach-card-art,
 .ach-page .ach-card.is-unlocked.ach-tier-epic .ach-card-art {
   inset: 2px;
-  width: auto;
-  height: auto;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   border-radius: 14px;
 }
 
 .ach-page .ach-card.is-unlocked.ach-tier-legendary .ach-card-art {
   inset: 2.5px;
-  width: auto;
-  height: auto;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
   border-radius: 13.5px;
 }
 
