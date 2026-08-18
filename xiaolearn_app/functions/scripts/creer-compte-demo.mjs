@@ -18,11 +18,23 @@
  * interdisent au SDK client d'écrire `entitlements`, précisément pour que
  * personne ne s'accorde le premium tout seul. Il faut l'Admin SDK.
  *
+ * ## Où vit ce fichier, et pourquoi ici
+ *
+ * Il est dans `functions/scripts/` et non dans `xiaolearn_app/scripts/`, parce
+ * que Node résout les imports depuis l'emplacement du FICHIER et non depuis le
+ * dossier courant : seul `functions/node_modules` contient firebase-admin.
+ *
  * ## Usage
  *
- *   cd xiaolearn_app/functions
- *   GOOGLE_APPLICATION_CREDENTIALS=/chemin/vers/serviceAccount.json \
- *     node ../scripts/creer-compte-demo.mjs --email demo@xiaolearn.com
+ * S'authentifier d'abord, au choix :
+ *
+ *   gcloud auth application-default login        (rien à télécharger)
+ *   export GOOGLE_APPLICATION_CREDENTIALS=…json  (clé de compte de service)
+ *
+ * puis, depuis n'importe où :
+ *
+ *   node xiaolearn_app/functions/scripts/creer-compte-demo.mjs \
+ *     --email demo@xiaolearn.com --nom "Compte de démonstration"
  *
  * Le mot de passe est demandé de façon interactive : il ne passe ni par la
  * ligne de commande (visible dans l'historique du shell et dans `ps`), ni par
@@ -70,7 +82,18 @@ if (motDePasse.length < 6) {
 }
 
 // --- initialisation ----------------------------------------------------------
-if (!getApps().length) initializeApp({ credential: applicationDefault() });
+// Un défaut d'identifiants ne se manifeste qu'au premier appel réseau, avec un
+// message opaque. On préfère le dire tout de suite et en français.
+try {
+  if (!getApps().length) initializeApp({ credential: applicationDefault() });
+} catch {
+  console.error(
+    "Identifiants Google introuvables. Authentifie-toi d'abord :\n" +
+    '  gcloud auth application-default login\n' +
+    'ou     export GOOGLE_APPLICATION_CREDENTIALS=/chemin/reel/vers/serviceAccount.json'
+  );
+  process.exit(1);
+}
 const auth = getAuth();
 const db = getFirestore();
 
