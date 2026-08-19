@@ -27,6 +27,7 @@ import { doc, setDoc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
 import { mergerPour, estVide } from '../utils/sync-merge';
+import { RESET_EPOCH_FIELD, CLES_DE_PROGRESSION, EPOCH_APPLIQUEE_KEY } from '../utils/sync-reset';
 
 const LOCAL_TS_SUFFIX = '__ts';
 const CLOUD_TS_FIELD_SUFFIX = '__updatedAt';
@@ -88,6 +89,48 @@ const readLocalTs = (key: string): number => {
   return Number.isFinite(t) ? t : 0;
 };
 
+/**
+ * V21 — Applique une remise à zéro décidée ailleurs.
+ *
+ * Renvoie `true` si une purge a eu lieu et qu'un rechargement est en cours :
+ * l'appelant doit alors abandonner son travail, la page va disparaître.
+ *
+ * Le marqueur `xl_reset_epoch_applied` retient la dernière époque honorée.
+ * Sans lui, chaque montage du hook re-purgerait et re-rechargerait : une
+ * boucle de rechargement, c'est-à-dire une app inutilisable. On le pose AVANT
+ * la purge, pour qu'un échec en cours de route ne laisse pas la boucle
+ * ouverte — mieux vaut une purge incomplète qu'une page qui se recharge sans
+ * fin, d'autant que le prochain reconcile la terminera.
+ */
+const PENDING_KEY = 'xl_sync_pending_v1';
+
+let remiseEnCours = false;
+
+function appliquerRemiseAZero(epochIso: string | undefined): boolean {
+  if (!epochIso || remiseEnCours) return remiseEnCours;
+  if (typeof window === 'undefined') return false;
+  let dejaVue: string | null = null;
+  try { dejaVue = window.localStorage.getItem(EPOCH_APPLIQUEE_KEY); } catch { return false; }
+  if (dejaVue === epochIso) return false;
+
+  // Une remise à zéro plus ANCIENNE que celle déjà honorée n'apprend rien.
+  if (dejaVue && Date.parse(epochIso) <= Date.parse(dejaVue)) return false;
+
+  remiseEnCours = true;
+  console.info(`[xl-sync] remise à zéro du ${epochIso} — purge locale puis rechargement`);
+  try {
+    window.localStorage.setItem(EPOCH_APPLIQUEE_KEY, epochIso);
+    for (const cle of CLES_DE_PROGRESSION) {
+      window.localStorage.removeItem(cle);
+      window.localStorage.removeItem(cle + LOCAL_TS_SUFFIX);
+    }
+    // La file d'attente peut contenir des écritures d'avant la remise à zéro.
+    window.localStorage.removeItem(PENDING_KEY);
+  } catch { /* quota / mode privé */ }
+  window.location.reload();
+  return true;
+}
+
 const writeLocalTs = (key: string, iso: string) => {
   if (typeof window === 'undefined') return;
   try {
@@ -106,7 +149,6 @@ const writeLocalTs = (key: string, iso: string) => {
  * background). Comme ça, si l'iPhone perd la connexion ou s'éteint juste
  * après la complétion d'une leçon, la save sera retentée au prochain réveil.
  */
-const PENDING_KEY = 'xl_sync_pending_v1';
 const MAX_RETRY_ATTEMPTS = 5;
 
 interface PendingWrite {
@@ -304,6 +346,18 @@ export function useFirestoreSync(
         const cloudValue: string | undefined = cloudData?.[key];
         const cloudTsIso: string | undefined = cloudData?.[key + CLOUD_TS_FIELD_SUFFIX] ?? cloudData?.lastUpdated;
         const cloudTs = cloudTsIso ? Date.parse(cloudTsIso) : 0;
+
+        // V21 — Remise à zéro demandée sur un autre appareil.
+        //
+        // La fusion étant croissante, elle ne peut pas effacer : c'est ce qui
+        // protège la progression. L'effacement volontaire passe donc par un
+        // signal hors-bande, traité AVANT toute fusion. Le traitement est
+        // global et non clé par clé, parce qu'écarter la valeur locale ne
+        // suffirait pas : les consommateurs fusionnent aussi en mémoire
+        // (`new Set([...prev, ...data])`), et leur état React ressusciterait
+        // ce qu'on vient d'écarter. On purge, on note l'époque appliquée, on
+        // recharge une fois. Le marqueur empêche la boucle.
+        if (appliquerRemiseAZero(cloudData?.[RESET_EPOCH_FIELD] as string | undefined)) return;
 
         const localValue = window.localStorage.getItem(key);
         const localTs = readLocalTs(key);

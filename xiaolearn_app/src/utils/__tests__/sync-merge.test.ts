@@ -26,6 +26,9 @@
  */
 import { describe, it, expect } from 'vitest';
 import { MERGERS, estVide } from '../sync-merge';
+import {
+  CLES_DE_PROGRESSION, VALEUR_REMISE_A_ZERO, EPOCH_APPLIQUEE_KEY, RESET_EPOCH_FIELD,
+} from '../sync-reset';
 
 /** Nombre de feuilles porteuses d'information — mesure de « richesse ». */
 function richesse(raw: string | null): number {
@@ -170,6 +173,66 @@ describe('registre de fusions', () => {
       });
     });
   }
+});
+
+describe('remise à zéro volontaire', () => {
+  it('chaque clé effaçable a une valeur de remise à zéro', () => {
+    const sans = CLES_DE_PROGRESSION.filter((k) => !(k in VALEUR_REMISE_A_ZERO));
+    expect(sans).toEqual([]);
+  });
+
+  it('chaque valeur de remise à zéro est du JSON valide et sans progression', () => {
+    for (const cle of CLES_DE_PROGRESSION) {
+      const v = VALEUR_REMISE_A_ZERO[cle];
+      expect(() => JSON.parse(v), cle).not.toThrow();
+      // `estVide` ne suffit pas ici, et c'est volontaire de sa part : les
+      // compteurs stockés encodés en chaîne remettent à `"0"`, qui est une
+      // chaîne NON vide. Élargir `estVide` aux chaînes numériquement nulles
+      // casserait la remise à zéro quotidienne de `xl_xp_today` — sa garde
+      // refuserait alors d'écrire le 0 de minuit par-dessus le score de la
+      // veille. Le compteur resterait figé au maximum historique.
+      const parse = JSON.parse(v);
+      const sansProgression = estVide(v)
+        || (typeof parse === 'string' && Number(parse) === 0);
+      expect(sansProgression, `${cle} → ${v}`).toBe(true);
+    }
+  });
+
+  it('la valeur de remise à zéro a la forme que la fusion de la clé attend', () => {
+    // Une remise à zéro qui donnerait `[]` à une clé lue comme un objet ferait
+    // planter son lecteur au démarrage suivant, sur un compte déjà vidé — donc
+    // sans moyen simple de s'en sortir.
+    for (const [cle, a] of ECHANTILLONS) {
+      const zero = VALEUR_REMISE_A_ZERO[cle];
+      if (zero === undefined) continue;
+      expect(typeof JSON.parse(zero), cle).toBe(typeof JSON.parse(a));
+      expect(Array.isArray(JSON.parse(zero)), cle).toBe(Array.isArray(JSON.parse(a)));
+    }
+  });
+
+  it('démontre pourquoi l’époque est nécessaire : la fusion seule ne peut pas effacer', () => {
+    // Ce test ne vérifie pas un correctif, il documente une impossibilité.
+    // Si un jour il échoue, c'est que la fusion est devenue capable
+    // d'appauvrir — et c'est la garantie principale qui aurait sauté.
+    const ancien = '["cecr-a1-hello-m1","cecr-a1-pinyin-m1"]';
+    const remiseAZero = VALEUR_REMISE_A_ZERO.cl_completed_lessons;
+    expect(MERGERS.cl_completed_lessons(ancien, remiseAZero)).toBe(ancien);
+    expect(richesse(MERGERS.cl_completed_lessons(remiseAZero, ancien))).toBe(richesse(ancien));
+  });
+
+  it('n’efface pas les préférences ni l’abonnement', () => {
+    for (const cle of ['xl_language', 'cl_daily_goals_v1', 'cl_color_theme',
+      'xl_dark_mode', 'entitlements', 'xl_xp_goal_daily']) {
+      expect(CLES_DE_PROGRESSION as readonly string[], cle).not.toContain(cle);
+    }
+  });
+
+  it('le marqueur local n’est pas lui-même une clé de progression', () => {
+    // Sinon la purge l'emporterait, l'époque serait redécouverte au
+    // démarrage suivant, et l'app se rechargerait une fois de trop.
+    expect(CLES_DE_PROGRESSION as readonly string[]).not.toContain(EPOCH_APPLIQUEE_KEY);
+    expect(EPOCH_APPLIQUEE_KEY).not.toBe(RESET_EPOCH_FIELD);
+  });
 });
 
 describe('estVide — filet des clés sans fusion', () => {

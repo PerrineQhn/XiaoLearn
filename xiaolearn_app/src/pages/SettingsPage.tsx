@@ -21,7 +21,8 @@ import { storage, db } from '../firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../firebase/config';
-import { doc, deleteDoc, collection, getDocs } from 'firebase/firestore';
+import { doc, deleteDoc, collection, getDocs, setDoc } from 'firebase/firestore';
+import { RESET_EPOCH_FIELD, CLES_DE_PROGRESSION, VALEUR_REMISE_A_ZERO, EPOCH_APPLIQUEE_KEY } from '../utils/sync-reset';
 import { useSrsPreferences } from '../hooks/useSrsPreferences';
 import { useDailyGoals } from '../hooks/useDailyGoals';
 import { useEmailPrefs } from '../hooks/useEmailPrefs';
@@ -306,7 +307,14 @@ const SettingsPage = ({
 
   /** Sous-collections/docs Firestore à supprimer sous users/{uid}/.
    *  ⚠ La sous-collection 'entitlements' / 'subscription' est PRÉSERVÉE
-   *  pour ne pas perdre l'abonnement Premium. */
+   *  pour ne pas perdre l'abonnement Premium.
+   *
+   *  ⚠ Ces documents ne sont PAS l'endroit où vit la progression : la
+   *  synchronisation range ses valeurs en CHAMPS de `users/{uid}`, jamais en
+   *  sous-documents. Les supprimer était donc sans effet — c'est pourquoi la
+   *  progression revenait au rechargement. On les efface quand même, par
+   *  hygiène, car d'anciennes versions ont pu en écrire. Le vrai effacement
+   *  se fait plus bas, sur les champs. */
   const RESET_FIRESTORE_DOCS = [
     'cl_completed_lessons',
     'cl_personal_flashcards_v7',
@@ -328,12 +336,44 @@ const SettingsPage = ({
   const handleResetProgress = async () => {
     setShowResetConfirm(false);
     try {
+      // 0) L'époque de remise à zéro, posée AVANT toute autre écriture.
+      //
+      //    Depuis que la synchronisation fusionne au lieu de choisir, elle ne
+      //    peut plus appauvrir une valeur — c'est ce qui protège la
+      //    progression d'un appareil neuf. Mais c'est aussi ce qui rendait
+      //    cette remise à zéro impossible : l'appareil qui efface pousse du
+      //    vide, un autre garde l'ancien en local, et la fusion le ramène.
+      //
+      //    Cette date est le signal hors-bande que les autres appareils
+      //    respectent avant de fusionner : tout ce qu'ils détiennent
+      //    d'antérieur est ce que l'utilisateur vient d'effacer.
+      const uidPourEpoque = auth.currentUser?.uid;
+      const epoque = new Date().toISOString();
+      if (uidPourEpoque) {
+        // Les champs sont remis à leur valeur vide ET datés de l'époque, pour
+        // qu'aucun appareil ne puisse les considérer comme périmés et
+        // repousser sa version. C'est ici que l'effacement a réellement lieu.
+        const champs: Record<string, string> = { [RESET_EPOCH_FIELD]: epoque };
+        for (const cle of CLES_DE_PROGRESSION) {
+          champs[cle] = VALEUR_REMISE_A_ZERO[cle] ?? '';
+          champs[`${cle}__updatedAt`] = epoque;
+        }
+        await setDoc(doc(db, 'users', uidPourEpoque), champs, { merge: true });
+        // Cet appareil a déjà appliqué cette époque : sans ce marqueur, il se
+        // rechargerait en boucle en la découvrant au prochain reconcile.
+        try { window.localStorage.setItem(EPOCH_APPLIQUEE_KEY, epoque); } catch { /* quota */ }
+      }
+
       // 1) Purge localStorage : toutes les clés cl_*/xl_* qui contiennent
       //    de la progression. Préserve les prefs UI globales (thème, etc.)
       const localKeys: string[] = [];
       for (let i = 0; i < window.localStorage.length; i++) {
         const key = window.localStorage.key(i);
         if (!key) continue;
+        // Le marqueur d'époque commence par `xl_` mais n'est pas de la
+        // progression : l'effacer ferait redécouvrir la remise à zéro au
+        // démarrage suivant, donc repurger, donc recharger une fois de trop.
+        if (key === EPOCH_APPLIQUEE_KEY) continue;
         if (PROGRESSION_KEY_PREFIXES.some((p) => key.startsWith(p))) {
           localKeys.push(key);
         }

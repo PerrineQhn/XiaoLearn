@@ -7,6 +7,17 @@ import { useAuth } from '@/contexts/AuthContext';
 const TS_SUFFIX = '__ts';
 const CLOUD_TS_SUFFIX = '__updatedAt';
 
+/**
+ * Remise à zéro volontaire — mêmes noms que côté web, à dessein.
+ *
+ * Ces deux constantes forment un contrat entre les deux plateformes : le web
+ * pose l'époque sur le document du compte, le mobile la lit. Les renommer
+ * d'un seul côté romprait le lien en silence, sans qu'aucun type ne s'en
+ * plaigne — d'où ce commentaire plutôt qu'un simple `const`.
+ */
+const RESET_EPOCH_FIELD = 'xl_reset_epoch';
+const EPOCH_APPLIQUEE_KEY = 'xl_reset_epoch_applied';
+
 async function readLocalTs(key: string): Promise<number> {
   const raw = await AsyncStorage.getItem(key + TS_SUFFIX).catch(() => null);
   if (!raw) return 0;
@@ -206,6 +217,32 @@ export function useFirestoreSync(keys: string[], onSync?: () => void) {
       return;
     }
     const cloudData = snap.data() ?? {};
+
+    // Remise à zéro demandée depuis un autre appareil.
+    //
+    // La fusion étant croissante, elle ne peut pas effacer — c'est ce qui
+    // protège la progression d'une réinstallation. L'effacement volontaire
+    // passe donc par un signal hors-bande, honoré AVANT toute fusion : sans
+    // lui, ce téléphone repousserait fidèlement la progression que
+    // l'utilisatrice vient de supprimer depuis le web.
+    //
+    // Le marqueur retient la dernière époque appliquée. On purge le stockage
+    // local des clés concernées puis on laisse la réconciliation suivre son
+    // cours : local vide, le cloud fait foi, et il porte les valeurs remises
+    // à zéro. Contrairement au web, aucun rechargement n'est nécessaire — le
+    // rappel `onSync` relit l'état depuis AsyncStorage.
+    const epoque = cloudData[RESET_EPOCH_FIELD] as string | undefined;
+    if (epoque) {
+      const dejaVue = await AsyncStorage.getItem(EPOCH_APPLIQUEE_KEY).catch(() => null);
+      const nouvelle = !dejaVue || Date.parse(epoque) > Date.parse(dejaVue);
+      if (nouvelle) {
+        await AsyncStorage.setItem(EPOCH_APPLIQUEE_KEY, epoque).catch(() => {});
+        await AsyncStorage.multiRemove(
+          keys.flatMap((k) => [k, k + TS_SUFFIX]),
+        ).catch(() => {});
+      }
+    }
+
     const localEntries: Record<string, unknown> = {};
     let didPull = false;
 
